@@ -3,7 +3,7 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.7 1999/04/02 13:31:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/02 19:44:01 espie Exp $
 
 # for patch-list
 NEED_VERSION=1.52
@@ -61,7 +61,7 @@ post-extract:
 # common C flags
 #
 CFLAGS=		-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
--DPGP_DOC_DIR=\"${PGP_DOC_DIR}\"
+-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
 # RSAREF parameters
 #
