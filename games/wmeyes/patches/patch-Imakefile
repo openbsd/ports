@@ -1,0 +1,9 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/01/13 16:12:04 naddy Exp $
+--- Imakefile.orig	Mon May  4 05:17:00 1998
++++ Imakefile	Fri Jan 12 14:57:38 2001
+@@ -7,4 +7,4 @@ LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) 
+ SRCS = wmeyes.c
+ OBJS = wmeyes.o
+ 
+-ComplexProgramTarget(wmeyes)
++ComplexProgramTargetNoMan(wmeyes)

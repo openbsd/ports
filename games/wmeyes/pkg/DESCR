@@ -1,0 +1,17 @@
+WMeyes is a pretty simple application: it sits in the
+WindowMaker dock, and a pair of eyes track your cursor.
+Actually, the program should work in all window managers,
+but then you don't have a dock to sit it in, in which case
+you might as well use xeyes. 
+
+The 'time' parameter on the command line affects both the
+update time of the pupil moving around, and the time it
+takes for the eyelids to open or close.  These two can't be
+separated.
+
+The standard method of starting it up under WindowMaker is
+'wmeyes -w -s &'.
+
+'wmeyes -h' gives you usage info.
+
+WWW: ${HOMEPAGE}
