@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 1998/12/23 23:16:17 downsj Exp $
-# NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp
-# FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp
+# $OpenBSD: Makefile,v 1.7 1999/03/07 04:41:00 brad Exp $
+# $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
+# $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 #
 
-DISTNAME=		linux_lib-2.6
+DISTNAME=		linux_lib-2.6.1
 CATEGORIES=		emulators
 
 ONLY_FOR_ARCHS=		i386
 NO_CDROM=		"GPL: must distribute with source"
 MIRROR_DISTFILE=	no
-
 
 MAINTAINER=		form@OpenBSD.ORG
 
