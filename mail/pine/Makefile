@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2002/02/09 21:10:04 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2002/02/18 14:43:06 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -47,16 +47,18 @@ LIB_DEPENDS=	c-client.4:c-client->=4.41:mail/c-client
 LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 .endif
 
+PINE_BUILD_FLAGS=	CC="${CC}" LOCALBASE="${LOCALBASE}"
+
 .if ${FLAVOR:L} == "ldap"
-MAKE_FLAGS=	LDAPLIBS="-lldap -llber" \
-		LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
+PINE_BUILD_FLAGS+=	LDAPLIBS="-lldap -llber" \
+			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .endif
 
 do-build:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 		${WRKSRC}/doc/tech-notes.txt > ${WRKSRC}/doc/tech-notes.txt.new
 	@mv ${WRKSRC}/doc/tech-notes.txt.new ${WRKSRC}/doc/tech-notes.txt
-	@cd ${WRKSRC}; ./build bso CC="${CC}"
+	@cd ${WRKSRC}; ./build ${PINE_BUILD_FLAGS} bso
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
