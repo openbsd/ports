@@ -1,7 +1,7 @@
 #! /bin/sh
-# $OpenBSD: meta.in,v 1.2 2004/04/12 10:35:27 matthieu Exp $
+# $OpenBSD: meta.in,v 1.3 2004/11/08 22:00:09 mbalmer Exp $
 
-# Copyright (c) 2003 Marc Espie.
+# Copyright (c) 2003,2004 Marc Espie.
 # 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -24,11 +24,11 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-case "x$AUTOCONF_VERSION" in
+case "x$@PROG_VERSION" in
 x)	# figure out manually what to do
-	echo "Provide an AUTOCONF_VERSION environment variable, please"
+	echo "Provide an @PROG_VERSION environment variable, please"
 	;;
 x*)	
-	exec @LOCALBASE@/bin/@SCRIPT@-$AUTOCONF_VERSION "$@"
+	exec @LOCALBASE@/bin/@SCRIPT@-$@PROG_VERSION "$@"
 	;;
 esac
