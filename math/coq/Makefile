@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/31 17:07:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/07/11 12:18:44 espie Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
@@ -18,19 +18,18 @@ MASTER_SITES=		ftp://ftp.inria.fr/INRIA/coq/V7.3.1/
 MASTER_SITES0=		${MASTER_SITES:S@$@doc/@}
 MASTER_SITES1=		http://coq.inria.fr/
 MASTER_SITES2=		http://coq.inria.fr/ps/
+MASTER_SITES3=		ftp://quatramaran.ens.fr/pub/espie/coq/
 DISTFILES=		${DISTNAME}.tar.gz \
-			doc-html.tar.gz:0 \
+			doc-html-20040711.tar.gz:3 \
 			Changes.html:0 \
 			Reference-Manual-all.ps.gz:0 \
 			library.tar.gz:1 \
 			RecTutorial.v.ps:2
 PATCHFILES=		patch-coq-7.3.1-ocaml-3.07
 
-IGNOREFILES=		doc-html.tar.gz
-
 DIST_SUBDIR=		coq
 EXTRACT_ONLY=		${DISTNAME}.tar.gz \
-			doc-html.tar.gz \
+			doc-html-20040711.tar.gz \
 			library.tar.gz  \
 
 FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
