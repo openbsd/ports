@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/05 15:20:02 peter Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/05 21:12:41 peter Exp $
 
 COMMENT=	"perl5 interface to GnuPG"
 
@@ -9,6 +9,8 @@ CATEGORIES=	security perl5
 NEED_VERSION=	1.386
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GnuPG
+
+RUN_DEPENDS=	${LOCALBASE}/bin/gpg::security/gnupg
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
 
