@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/21 16:32:52 kevlo Exp $
+libdata/perl5/site_perl/I18N/Charset.pm
+man/man3/I18N::Charset.3p
