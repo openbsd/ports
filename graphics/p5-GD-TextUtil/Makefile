@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2000/09/19 18:42:41 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/19 18:44:42 brad Exp $
 
 DISTNAME=	GDTextUtil-0.80
 PKGNAME=	p5-GD-TextUtil-0.80
