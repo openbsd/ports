@@ -3,13 +3,12 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.12 2000/04/09 17:38:15 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/09 22:37:38 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
 NEED_VERSION=		1.210
-FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 
@@ -23,13 +22,14 @@ EXTRACT_SUFX=		.tgz
 
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=         \
-			--with-sbindir=${PREFIX}/sbin \
-			--with-filterdir=${PREFIX}/libexec/filters \
-			--with-lpd_conf_path=/etc/lpd.conf \
-			--with-lpd_perms_path=/etc/lpd.perms \
-			--with-printcap_path=/etc/printcap
+HAS_CONFIGURE=		Yes
+CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
+		--sysconfdir='$${DESTDIR}${SYSCONFDIR}' \
+		--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
+		--with-filterdir='$${DESTDIR}${PREFIX}/libexec/filters' \
+		--with-lpd_conf_path='$${DESTDIR}${SYSCONFDIR}/lpd.conf' \
+		--with-lpd_perms_path='$${DESTDIR}${SYSCONFDIR}/lpd.perms' \
+		--with-printcap_path='$${DESTDIR}${SYSCONFDIR}/printcap'
 
 MAKE_FILE=		Makefile.bsd
 
@@ -49,8 +49,8 @@ post-install:
 	test -f /etc/lpd.conf || ${INSTALL_DATA} ${WRKSRC}/lpd.conf /etc
 	test -f /etc/lpd.perms || ${INSTALL_DATA} ${WRKSRC}/lpd.perms /etc
 	mkdir -p ${PREFIX}/share/doc/LPRng
-	(cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
-		${PREFIX}/share/doc/LPRng )
+	cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
+		${PREFIX}/share/doc/LPRng
 	@cat ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
