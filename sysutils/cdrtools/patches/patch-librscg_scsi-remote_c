@@ -1,0 +1,17 @@
+$OpenBSD: patch-librscg_scsi-remote_c,v 1.1 2004/09/16 02:13:34 brad Exp $
+--- librscg/scsi-remote.c.orig	Fri Sep 10 23:34:37 2004
++++ librscg/scsi-remote.c	Fri Sep 10 23:39:16 2004
+@@ -1078,6 +1078,13 @@ _rcmdrsh(ahost, inport, locuser, remuser
+ 			_exit(EX_BAD);
+ 			/* NOTREACHED */
+ 		}
++		if (getuid() != geteuid() &&
++		    seteuid(pw->pw_uid) == -1) {
++			errmsg("seteuid(%lld) failed.\n",
++							(Llong)pw->pw_uid);
++			_exit(EX_BAD);
++			/* NOTREACHED */
++		}
+ 
+ 		/*
+ 		 * Fork again to completely detach from parent
