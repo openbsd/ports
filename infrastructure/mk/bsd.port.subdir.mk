@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.29 2000/07/17 07:11:50 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.30 2000/07/26 12:47:16 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -54,12 +54,15 @@ _PORTSDIR!=	cd ${PORTSDIR} && pwd -P
 _CURDIR!=	cd ${.CURDIR} && pwd -P
 .  if ${_PORTSDIR} == ${_CURDIR}
 PKGPATH=
-_SEP=
 .  else
 PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
 .  endif
 .endif
-_SEP?=/
+.if empty(PKGPATH)
+_SEP=
+.else
+_SEP=/
+.endif
 
 ECHO_MSG?=	echo
 
