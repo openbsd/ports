@@ -1,0 +1,10 @@
+--- configure.orig	Tue May  4 20:17:46 1999
++++ configure	Fri May  7 11:57:01 1999
+@@ -2481,6 +2481,7 @@
+ s%@X_PRE_LIBS@%$X_PRE_LIBS%g
+ s%@X_LIBS@%$X_LIBS%g
+ s%@X_EXTRA_LIBS@%$X_EXTRA_LIBS%g
++s%@X_INC@%$x_includes%g
+ 
+ CEOF
+ EOF

@@ -1,0 +1,28 @@
+--- we_fl_unix.c.orig	Tue May  4 20:17:45 1999
++++ we_fl_unix.c	Fri May  7 12:03:26 1999
+@@ -14,6 +14,10 @@
+ #include <sys/stat.h>
+ #include <errno.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ struct dirfile *e_make_win_list(FENSTER *f);
+ extern char *e_tmp_dir;
+ extern int (*e_u_system)(char *exe);
+@@ -3050,7 +3054,13 @@
+   if(getenv("MANPATH"))
+     strcpy(manpath, getenv("MANPATH"));
+   if(manpath[0] == '\0')
+-    strcpy(manpath, "/usr/man:/usr/local/man");
++    strcpy(manpath, 
++#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
++		"/usr/share/man:/usr/local/man");
++#else
++		"/usr/man:/usr/local/man");
++#endif
++
+   while(manpath[i])
+   {
+     for(n = 0; (subpath[n] = manpath[i]) && manpath[i] != PTHD; i++, n++);
