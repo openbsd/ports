@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Nov  4 13:15:54 1999
-+++ Makefile.in	Thu Nov  4 13:37:50 1999
-@@ -12,7 +12,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/04/01 23:41:24 pvalchev Exp $
+--- Makefile.in.orig	Tue Sep  7 19:31:58 1999
++++ Makefile.in	Mon Apr  1 16:31:57 2002
+@@ -12,7 +12,7 @@ DEFINES += -DGUNZIP="\"gunzip\""
  # 2) Otherwise, if your system supports standard Unix "uncompress",
  #    then uncomment the following line to support on-the-fly
  #    decompression of ".Z" files...
@@ -9,7 +10,7 @@
  # - we'll do path search on the string you specify.  If the program
  #    isn't in your path, you'll need to give the absolute path name.
  # - if you want other formats, see the "compress.h" file.
-@@ -30,8 +30,8 @@
+@@ -30,8 +30,8 @@ DEFINES += -DGUNZIP="\"gunzip\""
  # 
  ################################################################## 
  PCAP_LDLIBS = -lpcap
@@ -20,7 +21,7 @@
  
  
  
-@@ -125,7 +125,7 @@
+@@ -125,7 +125,7 @@ INCLS = -I. @V_INCLS@ ${PCAP_INCS}
  # Probably want full optimization
  # FreeBSD needs	-Ae
  # HP needs	-Ae
@@ -29,7 +30,7 @@
  
  # Standard LIBS
  LDLIBS = @LIBS@ ${PCAP_LDLIBS}
-@@ -170,21 +170,13 @@
+@@ -170,21 +170,13 @@ version.o: ${CFILES} Makefile
  	${CC} ${CFLAGS} -o version.o -c version.c \
  	-DBUILT_USER="\"`whoami`\"" -DBUILT_HOST="\"`hostname`\"" -DBUILT_DATE="\"`date`\""
  

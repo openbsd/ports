@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/04/01 22:16:53 naddy Exp $
-
-BROKEN=		"confuses struct timeval and bpf_timeval"
+# $OpenBSD: Makefile,v 1.11 2002/04/01 23:41:24 pvalchev Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
