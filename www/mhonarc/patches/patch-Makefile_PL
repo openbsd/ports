@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile.PL,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
---- Makefile.PL.orig	Sat Jun 26 03:23:23 1999
-+++ Makefile.PL	Fri Sep 29 22:49:21 2000
-@@ -11,8 +11,8 @@ open(MAKEFILE, ">Makefile") ||
- %vars = ( map { split(/=/, $_) } @ARGV );
+$OpenBSD: patch-Makefile_PL,v 1.1 2002/09/15 01:09:47 pvalchev Exp $
+--- Makefile.PL.orig	Thu Apr  4 08:07:48 2002
++++ Makefile.PL	Tue Sep 10 21:31:06 2002
+@@ -21,8 +21,8 @@ foreach (@ARGV) {
+ }
  my $opt_prefix  = defined($vars{'PREFIX'}) ?
  			"-prefix $vars{'PREFIX'}" : "";
 -my $opt_binpath = defined($vars{'INSTALLSCRIPT'}) ?
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile.PL,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
  my $opt_libpath = defined($vars{'LIB'}) ?
  			"-libpath $vars{'LIB'}" :
  		  defined($vars{'INSTALLSITELIB'}) ?
-@@ -20,7 +20,7 @@ my $opt_libpath = defined($vars{'LIB'}) 
+@@ -30,7 +30,7 @@ my $opt_libpath = defined($vars{'LIB'}) 
  		  defined($vars{'INSTALLPRIVLIB'}) ?
  			"-libpath $vars{'INSTALLPRIVLIB'}" : "";
  my $opt_manpath = defined($vars{'INSTALLMAN1DIR'}) ?
@@ -21,8 +21,8 @@ $OpenBSD: patch-Makefile.PL,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
     $opt_manpath =~ s/man1$//;
  
  my $instme_args = "$opt_prefix $opt_binpath $opt_libpath $opt_manpath";
-@@ -43,7 +43,7 @@ default: pod2man
- 	\$(CHMOD) -R a+r,a+X .
+@@ -70,7 +70,7 @@ default: pod2man
+ release-prep: autodoc relnotes bugs install-doc
  
  install:
 -	\$(PERL) \$(INSTALLPRG) -batch $instme_args
@@ -30,3 +30,11 @@ $OpenBSD: patch-Makefile.PL,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
  
  install-ask:
  	\$(PERL) \$(INSTALLPRG) $instme_args
+@@ -79,7 +79,6 @@ install-doc:
+ 	w3m doc/install.html -cols 76 > INSTALL
+ 
+ pod2man:
+-	-\@\$(MKDIR) man
+ 	\@for i in \$(PRGS) ; \\
+ 	    do( \\
+ 		echo "Manifying \$\$i ..."; \\

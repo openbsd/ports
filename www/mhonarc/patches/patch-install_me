@@ -1,7 +1,7 @@
-$OpenBSD: patch-install.me,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
---- install.me.orig	Fri Sep 29 23:00:12 2000
-+++ install.me	Fri Sep 29 23:04:09 2000
-@@ -397,9 +397,6 @@
+$OpenBSD: patch-install_me,v 1.1 2002/09/15 01:09:47 pvalchev Exp $
+--- install.me.orig	Wed Sep  4 05:17:50 2002
++++ install.me	Sun Sep  8 22:04:01 2002
+@@ -423,9 +423,6 @@ my %OptValues	= ();
      ## Install files
      ## -------------
      print STDERR "($OptValues{'perl'})\n";
@@ -11,7 +11,7 @@ $OpenBSD: patch-install.me,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
      my($file, $destfile);
      if ($dobin) {
  	print STDOUT qq(Installing programs to "$OptValues{'binpath'}":\n);
-@@ -409,11 +406,11 @@
+@@ -435,11 +432,11 @@ my %OptValues	= ();
  	    ($file = $_) =~ s%.*/%%o;
  	    $destfile = join('', $OptValues{'binpath'}, $DIRSEP, $file);
  	    print STDOUT $destfile, "\n";
