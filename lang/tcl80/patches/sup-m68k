@@ -1,5 +1,5 @@
---- unix/Makefile.in2	Fri Apr 16 15:46:04 1999
-+++ unix/Makefile.in	Fri Apr 16 15:46:21 1999
+--- Makefile.in2	Fri Apr 16 15:46:04 1999
++++ Makefile.in		Fri Apr 16 15:46:21 1999
 @@ -652,7 +652,7 @@
  	$(CC) -c $(CC_SWITCHES) $(GENERIC_DIR)/tclEvent.c
  
