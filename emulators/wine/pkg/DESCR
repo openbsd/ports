@@ -7,7 +7,7 @@ to your kernel config file (/sys/i386/conf/<YourMachine>):
 
 options		USER_LDT
 
-Wine relies on the configuration file /usr/local/etc/wine.conf to
+Wine relies on the configuration file /etc/wine.conf to
 contain valid assignments of Unix directories to DOS drive letters,
 and for certain other options (see "man wine" for details).
-You will most probably have to to edit it, after the install ...
+You will most probably have to to edit it, after the install...

@@ -1,36 +1,28 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/18 05:02:07 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/12 18:29:06 rohee Exp $
 #
 
-DATE=		980628
-DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-98.06.28
-CATEGORIES=	emulators x11
+DATE			= 	990131
+DISTNAME		= 	Wine-${DATE}
+PKGNAME			=	wine-${DATE}
+CATEGORIES		=	emulators x11
 
-#BROKEN=	"newer version available"
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS		= 	i386
 
-MAINTAINER=	todd@OpenBSD.ORG
+MAINTAINER		=	rohee@OpenBSD.ORG	# was todd@OpenBSD.ORG
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/wine/development
+MASTER_SITES		=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR	=	ALPHA/wine/development
 
-GNU_CONFIGURE=	yes
+USE_X11			=	yes
+GNU_CONFIGURE		=	yes
+CONFIGURE_ARGS		+=	--sysconfdir=/etc
 
-WRKSRC=		${WRKDIR}/wine-${DATE}
-
-pre-configure:
-	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
-		>> ${WRKSRC}/autoconf.h
+WRKSRC			=	${WRKDIR}/${PKGNAME}
 
 post-configure:
-		cd ${WRKSRC} && make depend
+	cd ${WRKSRC} && make depend
 
-do-install:
-	${INSTALL} -c ${WRKSRC}/wine ${PREFIX}/bin
-	-@${MKDIR} ${PREFIX}/etc 2>/dev/null
-	[ -f ${PREFIX}/etc/wine.conf ] \
-		|| ${CP} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
-	${CP} ${WRKSRC}/wine.sym ${PREFIX}/etc
-	${CP} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
+post-install:
+	[ -f /etc/wine.conf ] || ${CP} ${WRKSRC}/wine.ini /etc/wine.conf
 
 .include <bsd.port.mk>
