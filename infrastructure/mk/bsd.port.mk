@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.370 2001/03/28 11:48:12 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.371 2001/03/28 11:52:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1369,7 +1369,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} distpatch
 .  endif 
 	@if cd ${PATCHDIR} 2>/dev/null; then \
-		error=0; \
+		error=false; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
 				*.orig|*.rej|*~) \
@@ -1383,19 +1383,19 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 						esac; \
 						${PATCH} ${PATCH_ARGS} < $$i || \
 							{ echo "***>   $$i did not apply cleanly"; \
-							error=1; }\
+							error=true; }\
 					else \
 						echo "===>   Can't find patch matching $$i"; \
 						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
 							"${PATCHDIR}/patch-*" ]; then \
 								echo "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
-								error=1; \
+								error=true; \
 						fi; \
 					fi; \
 					;; \
 			esac; \
 		done;\
-		case $$error in 1) exit 1;; esac; \
+		if $$error; then exit 1; fi; \
 	fi
 # End of PATCH.
 .endif
