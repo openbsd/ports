@@ -1,0 +1,11 @@
+--- lib/ftp.h.orig	Fri Nov 23 12:23:29 2001
++++ lib/ftp.h	Fri Nov 23 12:24:04 2001
+@@ -28,7 +28,7 @@ CURLcode Curl_ftp_done(struct connectdat
+ CURLcode Curl_ftp_connect(struct connectdata *conn);
+ CURLcode Curl_ftp_disconnect(struct connectdata *conn);
+ 
+-size_t Curl_ftpsendf(struct connectdata *, const char *fmt, ...);
++CURLcode Curl_ftpsendf(struct connectdata *, const char *fmt, ...);
+ 
+ /* The kerberos stuff needs this: */
+ int Curl_GetFTPResponse(char *buf, struct connectdata *conn,
