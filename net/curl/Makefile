@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2000/12/26 02:09:27 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/01/04 21:06:09 brad Exp $
 
-DISTNAME=	curl-7.5.1
+DISTNAME=	curl-7.5.2
 CATEGORIES=	net
 NEED_VERSION=	1.336
 MASTER_SITES=	http://curl.haxx.se/download/ \
@@ -28,7 +28,7 @@ FLAVOR?=
 CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV"
 .endif
 
-DOCS=	CHANGES LEGAL MPL-1.0.txt README
+DOCS=	CHANGES LEGAL MITX.txt README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/curl
