@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2003/01/21 01:43:46 margarida Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/25 15:34:08 sturm Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.2.3
+DISTNAME=	lyx-1.3.4
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
@@ -12,10 +12,10 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/ \
 		ftp://ftp.chg.ru/pub/TeX/lyx/stable/
 
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
+MAINTAINER=	Zvezdan Petkovic <zvezdan@cs.wm.edu>
 
-# quasi-GPL (linked to closed source library)
-# no limitation of license; considered GPL
+# In XForms flavor: quasi-GPL (linked to closed source library)
+# In Qt flavor: GPL (this should be preferred for CD distribution)
 # see http://www.lyx.org/about/license.php3 for additional info
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,19 +24,41 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS+=		:teTeX_base-*:print/teTeX/base
-RUN_DEPENDS+=		:teTeX_base-*:print/teTeX/base \
-			:ispell-*:textproc/ispell
-LIB_DEPENDS+=		forms.1::x11/xforms
+BUILD_DEPENDS+=	:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS+=	:teTeX_base-*:print/teTeX/base \
+		:ispell-*:textproc/ispell
+USE_GMAKE=	Yes
+
+FLAVORS=	qt xforms
+FLAVOR?=	qt
+
+.if ${FLAVOR:L} == "qt"
+MODULES+=	qt3
+MODQT_MT=	Yes
+CONFIGURE_ARGS=	--with-frontend=qt ${MODQT_CONFIGURE_ARGS}
+CONFIGURE_ENV=	LIBS=-pthread
+# A hack until LyX developers apply the patch to qt.m4 to respect $MOC and $UIC
+CONFIGURE_ENV+=	ac_moc1=${MODQT_MOC} ac_uic=${MODQT_UIC}
+.elif ${FLAVOR:L} == "xforms"
+LIB_DEPENDS+=	forms.1::x11/xforms
+.else
+ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
+.endif
 
 CONFIGURE_STYLE=		gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
-CONFIGURE_ARGS=		--with-extra-lib=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-extra-inc="${LOCALBASE}/include \
-			${LOCALBASE}/include/X11"
+CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
+		--with-extra-inc="${LOCALBASE}/include \
+		${LOCALBASE}/include/X11" \
+		--without-latex-config
 
-post-install:
-	@strip ${PREFIX}/bin/lyx
+# Necessary because of compilation error.  See:
+# http://www.boost.org/libs/graph/doc/trouble_shooting.html
+CXXFLAGS+=	-ftemplate-depth-30
+
+NO_REGRESS=	Yes
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
