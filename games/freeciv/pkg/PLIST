@@ -1,0 +1,7 @@
+bin/civserver
+bin/civclient
+lib/X11/freeciv/Freeciv
+lib/X11/freeciv/intro.xpm
+lib/X11/freeciv/radar.xpm
+lib/X11/freeciv/tiles.xpm
+@dirrm lib/X11/freeciv

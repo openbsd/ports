@@ -1,0 +1,41 @@
+*** Imakefile.orig	Sun Mar  8 19:47:28 1998
+--- Imakefile	Tue May 19 19:40:14 1998
+***************
+*** 22,28 ****
+  XCOMM if your Xpm library/includes are located in a non-standard directory
+  XCOMM then specify it below - follow the /users/pjunold example below.
+  XCOMM
+! XPM_INCLUDE_DIR=/usr/include/X11
+  XCOMM XPM_INCLUDE_DIR=/users/pjunold/xpm-3.4i/lib
+  XCOMM XPM_LIB_DIR=-L/users/pjunold/xpm-3.4i/lib
+  
+--- 22,28 ----
+  XCOMM if your Xpm library/includes are located in a non-standard directory
+  XCOMM then specify it below - follow the /users/pjunold example below.
+  XCOMM
+! XPM_INCLUDE_DIR=/usr/X11R6/include/X11
+  XCOMM XPM_INCLUDE_DIR=/users/pjunold/xpm-3.4i/lib
+  XCOMM XPM_LIB_DIR=-L/users/pjunold/xpm-3.4i/lib
+  
+***************
+*** 65,72 ****
+  CLI_LIBS = $(XPM_LIB_DIR) -lXpm XawClientLibs $(SOCKLIB) 
+  SER_LIBS = $(SOCKLIB) 
+  
+  .c.o:
+! 	$(CC) $(CFLAGS) -c $< -o $@
+  
+  ComplexProgramTarget_1(civclient, $(CLI_LIBS), $(SYSLIBS))
+  ComplexProgramTarget_2(civserver, $(SER_LIBS), $(SYSLIBS))
+--- 65,75 ----
+  CLI_LIBS = $(XPM_LIB_DIR) -lXpm XawClientLibs $(SOCKLIB) 
+  SER_LIBS = $(SOCKLIB) 
+  
++ PREFIX?= /usr/X11R6
++ FREECIV_DATADIR = $(PREFIX)/lib/X11/freeciv
++ 
+  .c.o:
+! 	$(CC) -DFREECIV_DATADIR=\"$(FREECIV_DATADIR)\" $(CFLAGS) -c $< -o $@
+  
+  ComplexProgramTarget_1(civclient, $(CLI_LIBS), $(SYSLIBS))
+  ComplexProgramTarget_2(civserver, $(SER_LIBS), $(SYSLIBS))
