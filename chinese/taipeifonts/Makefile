@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/22 04:13:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/31 07:25:46 kevlo Exp $
 
 DISTNAME=       chinese-fonts-taipei
 CATEGORIES=     chinese x11
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   No fee
 PERMIT_PACKAGE_FTP=     Yes
 
-FONTS=		taipei15.pcf.gz taipei16.pcf.gz taipei24.pcf.gz \
-		taipeik24.pcf.gz
+FONTS=		taipei16.pcf.gz taipeik20.pcf.gz taipeim20.pcf.gz \
+		taipei24.pcf.gz taipeik24.pcf.gz taipeim24.pcf.gz
 
 DISTFILES=	${FONTS}
 NO_BUILD=	Yes
