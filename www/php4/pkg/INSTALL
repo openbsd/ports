@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2001/07/17 22:46:45 avsm Exp $
+# $OpenBSD: INSTALL,v 1.4 2001/08/17 21:42:01 pvalchev Exp $
 #
 # php4 installation
 
@@ -20,7 +20,7 @@ do_notice()
     echo "|       $PREFIX/sbin/php4-enable"
     echo "|"
     echo "| Copy the sample file below into /var/www/conf/php.ini"
-    echo "| ${PREFIX}/share/doc/php.ini-dist"
+    echo "| ${PREFIX}/share/doc/php4/php.ini-dist"
     echo "+---------------"
     echo
 }
