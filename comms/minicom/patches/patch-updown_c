@@ -1,9 +1,8 @@
-# $OpenBSD $
-
---- updown.c.orig	Thu Jul  9 14:49:47 1998
-+++ updown.c	Sun Dec 13 18:34:51 1998
-@@ -230,7 +230,7 @@
-   do_log(cmdline);   /* jl 22.06.97 */
+$OpenBSD: patch-updown_c,v 1.1 2001/10/12 02:49:03 brad Exp $
+--- updown.c.orig	Thu Mar 16 04:44:26 2000
++++ updown.c	Thu Oct 11 22:16:06 2001
+@@ -238,7 +238,7 @@ int nr;
+     do_log(cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {
 -    win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);

@@ -1,7 +1,6 @@
-# $OpenBSD: patch-minicom-users,v 1.1 2000/05/18 04:41:32 form Exp $
-
---- minicom.users.orig	Thu Jan 18 22:08:02 1996
-+++ minicom.users	Wed May 17 13:19:45 2000
+$OpenBSD: patch-minicom_users,v 1.1 2001/10/12 02:49:03 brad Exp $
+--- minicom.users.orig	Thu Jan 18 11:08:02 1996
++++ minicom.users	Thu Oct 11 22:16:05 2001
 @@ -26,7 +26,10 @@
  #
  

@@ -1,8 +1,7 @@
-# $OpenBSD: patch-port-h,v 1.1 2000/05/18 04:41:32 form Exp $
-
---- port.h.orig	Sun Oct 24 23:28:33 1999
-+++ port.h	Wed May 17 13:40:24 2000
-@@ -103,7 +103,11 @@
+$OpenBSD: patch-port_h,v 1.1 2001/10/12 02:49:03 brad Exp $
+--- port.h.orig	Mon Apr 24 09:31:59 2000
++++ port.h	Thu Oct 11 22:16:06 2001
+@@ -105,7 +105,11 @@
  
  /* Availability of setreuid(uid_t, uid_t) */
  #if defined(__linux__) || defined(_BSD43) || (defined(BSD) && (BSD >= 199103))

@@ -1,8 +1,7 @@
-# $OpenBSD: patch-rwconf-c,v 1.1 2000/05/18 04:41:32 form Exp $
-
---- rwconf.c.orig	Sun Apr 28 07:22:28 1996
-+++ rwconf.c	Sun Nov 24 00:41:47 1996
-@@ -70,12 +70,12 @@
+$OpenBSD: patch-rwconf_c,v 1.1 2001/10/12 02:49:03 brad Exp $
+--- rwconf.c.orig	Thu Jun  1 13:19:11 2000
++++ rwconf.c	Thu Oct 11 22:16:06 2001
+@@ -83,12 +83,12 @@ struct pars mpars[] = {
    { "/usr/bin/kermit -i -l %l -r", PUBLIC, "pprog8" },
  #else
    /* Most sites have this in /usr/local, except Linux. */

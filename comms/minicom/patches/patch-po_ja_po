@@ -1,6 +1,6 @@
-$OpenBSD: patch-po_ja_po,v 1.1 2001/06/07 13:40:27 naddy Exp $
---- po/ja.po.orig	Mon May 14 23:07:51 2001
-+++ po/ja.po	Mon May 14 23:08:01 2001
+$OpenBSD: patch-po_ja_po,v 1.2 2001/10/12 02:49:03 brad Exp $
+--- po/ja.po.orig	Wed May 10 14:23:42 2000
++++ po/ja.po	Thu Oct 11 22:16:05 2001
 @@ -10,7 +10,7 @@ msgstr ""
  "Last-Translator: Tomohiro KUBOTA <kubota@debian.or.jp>\n"
  "Language-Team:\tJapanese\n"

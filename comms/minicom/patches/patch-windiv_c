@@ -1,16 +1,15 @@
-# $OpenBSD: patch-windiv-c,v 1.1 2000/05/18 04:41:32 form Exp $
-
---- windiv.c.orig	Mon Mar  2 14:28:51 1998
-+++ windiv.c	Tue Aug 11 02:48:32 1998
+$OpenBSD: patch-windiv_c,v 1.1 2001/10/12 02:49:03 brad Exp $
+--- windiv.c.orig	Thu Jul 30 12:48:23 1998
++++ windiv.c	Thu Oct 11 22:16:07 2001
 @@ -12,6 +12,7 @@
   *
-  * hgk+jl 02.98 File selection window
+  * hgk+jl 02.98 File selection window (no longer used this way..)
   */
 +#include <sys/types.h>
  #include <dirent.h>
  #include <sys/stat.h>
  #include "port.h"
-@@ -244,8 +245,14 @@
+@@ -244,8 +245,14 @@ char *file_dir;
  
        /* get regular files */
        dirlist[nCnt].d_ino    = dirent->d_ino;
