@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/10/04 20:09:47 xsa Exp $
 bin/i-ls
 @info info/integrit.info
 @man man/man1/i-ls.1
@@ -13,7 +13,10 @@ share/doc/integrit/install_db
 share/doc/integrit/integrit_check
 share/doc/integrit/viewreport
 share/examples/integrit/
+@sample ${SYSCONFDIR}/integrit/
 share/examples/integrit/root.conf
+@sample ${SYSCONFDIR}/integrit/root.conf
 share/examples/integrit/src.conf
+@sample ${SYSCONFDIR}/integrit/src.conf
 share/examples/integrit/usr.conf
-@extraunexec rm -rf ${SYSCONFDIR}/integrit
+@sample ${SYSCONFDIR}/integrit/usr.conf
