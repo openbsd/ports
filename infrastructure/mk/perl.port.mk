@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.9 2004/06/08 20:28:19 sturm Exp $
+# $OpenBSD: perl.port.mk,v 1.10 2004/06/23 03:20:17 msf Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -17,7 +17,7 @@ MODPERL_configure= \
 	/usr/bin/perl Build.PL \
 		install_path=lib="${PREFIX}/libdata/perl5/site_perl" \
 		install_path=arch="${PREFIX}/libdata/perl5/site_perl/$$arch" \
-		install_path=libdoc="${PREFIX}/man/man3" \
+		install_path=libdoc="${PREFIX}/man/man3p" \
 		install_path=bindoc="${PREFIX}/man/man1" \
 		install_path=bin="${PREFIX}/bin" \
 		install_path=script="${PREFIX}/bin" ${CONFIGURE_ARGS} 
