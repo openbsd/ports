@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/12 04:17:51 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 15:11:06 fgsch Exp $
 
 COMMENT=	"Differential GPS over IP communication device"
 DISTNAME=	dgpsip-1.32
 CATEGORIES=	astro
-NEED_VERSION=	1.364
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
 HOMEPAGE=	http://www.wsrcc.com/wolfgang/gps/dgps-ip.html
