@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/26 00:55:27 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/01/17 17:03:15 brad Exp $
 
-DISTNAME=	vim-5.5
+DISTNAME=	vim-5.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -10,16 +10,6 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
 DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 DIST_SUBDIR=	vim
-
-PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 04 05 06 08 09 11 12 13 14 15 17 18 19 20 21 22 23 25 26 27 29 30 32 33 34 35 36 37 38 39 40 41 42 43 44 45 47 48 49 50 51 52 53 54 55 56 57 58 59 61 63 64 65 66 67 68 69 70 71
-PATCHFILES+=	5.5.0${p}
-.endfor
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -42,8 +32,7 @@ CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 .elif defined(USE_ATHENA) && ${USE_ATHENA:U} == YES
 CONFIGURE_ARGS+=--enable-gui="athena"
 .else
-LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
-		gtk.1.2:${PORTSDIR}/x11/gtk+
+LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" 
 .endif
 .endif

@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Dec 25 19:47:08 1999
-+++ Makefile	Sat Dec 25 19:50:23 1999
-@@ -1625,6 +1625,12 @@
+--- Makefile.orig	Sun Jan 16 09:03:04 2000
++++ Makefile	Mon Jan 17 10:50:31 2000
+@@ -1634,6 +1634,12 @@
  		-I$(PYTHON_CONFDIR) -DHAVE_CONFIG_H -DNO_MAIN \
  		$(ALL_CFLAGS)
  
