@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.59 2003/08/04 14:54:29 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.60 2003/08/04 15:05:24 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -72,36 +72,26 @@ _FULLSUBDIR:=${SUBDIR:S@^@${PKGPATH}/@g}
 
 _SKIPPED=
 .for i in ${SKIPDIR}
-_SKIPPED+:=${_FULLSUBDIR:M$i}
+_SKIPPED:+=${_FULLSUBDIR:M$i}
 _FULLSUBDIR:=${_FULLSUBDIR:N$i}
 .endfor
 
 
-_SUBDIRUSE: .USE
-.  for i in ${_SKIPPED}
-	@echo "===> $i skipped"
-.  endfor
-.  for d in ${_FULLSUBDIR}
-	@dir=$d; ${_flavor_fragment}; \
-	${ECHO_MSG} "===> $d"; \
-	set +e; \
-	if eval  $$toset ${MAKE} ${.TARGET}; then :; \
-	else ${REPORT_PROBLEM}; fi
-.endfor
-
-_SUBDIRUSE_DEP: .USE
-.  for i in ${_SKIPPED}
-	@echo "===> $i skipped"
-.  endfor
-	@${_depfile_fragment}; for d in ${_FULLSUBDIR}; do \
+_subdir_fragment= \
+	: $${echo_msg:=${ECHO_MSG}}; \
+	: $${target:=${.TARGET}}; \
+	for i in ${_SKIPPED}; do \
+		$${echo_msg} "===> $$i skipped"; \
+	done; \
+	for d in ${_FULLSUBDIR}; do \
 		dir=$$d; \
 		${_flavor_fragment}; \
-		${ECHO_MSG} "===> $$d"; \
+		$${echo_msg} "===> $$d"; \
 		set +e; \
-		if ! eval  $$toset ${MAKE} ${.TARGET}; then \
+		if ! eval  $$toset ${MAKE} $$target; then \
 			${REPORT_PROBLEM}; \
 		fi; \
-	done
+	done; set -e
 
 .for __target in all fetch package fake extract configure \
 		 build describe distclean deinstall install \
@@ -109,39 +99,33 @@ _SUBDIRUSE_DEP: .USE
 		 link-categories unlink-categories regress lib-depends-check \
 		 homepage-links manpages-check
 
-${__target}: _SUBDIRUSE
+${__target}:
+	@${_subdir_fragment}
 .endfor
 
 .for __target in all-dir-depends build-dir-depends run-dir-depends
 
-${__target}: _SUBDIRUSE_DEP
+${__target}: 
+	@${_depfile_fragment}; ${_subdir_fragment}
 .endfor
 
-.if defined(clean) && ${clean:L:Mdepends}
 clean:
-.  for i in ${_SKIPPED}
-	@echo "===> $i skipped"
-.  endfor
-	@${_depfile_fragment}; for d in ${_FULLSUBDIR}; do \
-		dir=$$d; \
-		${_flavor_fragment}; \
-		set +e; \
-		if ! eval  $$toset ${MAKE} all-dir-depends ECHO_MSG=:; then \
-			${REPORT_PROBLEM}; \
-		fi; \
-	done| tsort -r|while read dir; do \
+.if defined(clean) && ${clean:L:Mdepends}
+	@{ target=all-dir-depends; echo_msg=:; \
+	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r|while read dir; do \
 		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
 .else
-clean: _SUBDIRUSE
+	@${_subdir_fragment}
 .endif
 .if defined(clean) && ${clean:L:Mreadmes}
 	rm -f ${.CURDIR}/README.html
 .endif
 
-readmes: _SUBDIRUSE
+readmes:
+	@${_subdir_fragment}
 	@rm -f ${.CURDIR}/README.html
 	@cd ${.CURDIR} && exec ${MAKE} README.html
 
