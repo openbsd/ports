@@ -200,5 +200,7 @@ lib/slashdir/slash
 @exec mkdir %D/lib/slashdir/save
 @exec chown games:games %D/lib/slashdir/save
 @exec chmod -R 575 %D/lib/slashdir/save
+@unexec rm %D/lib/slashdir/record
+@unexec rm %D/lib/slashdir/logfile
 @unexec rm -rf %D/lib/slashdir/save
 @dirrm lib/slashdir

@@ -4,7 +4,7 @@
  	beholder.des caves.des darkelf.des dragons.des giants.des guild.des \
  	kobold-1.des kobold-2.des lich.des mall-1.des mall-2.des mineend.des \
  	minefill.des mtemple.des newmall.des nymph.des rats.des sea.des \
--	spiders.des stor-1.des stor-2.des stor-3.des tomb.des 
+-	spiders.des stor-1.des stor-2.des stor-3.des tomb.des
 +	spiders.des stor-1.des stor-2.des stor-3.des tomb.des blkmar.des
  	../util/lev_comp bigroom.des
  	../util/lev_comp castle.des
