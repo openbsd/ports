@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.17 2000/02/01 21:31:30 jasoni Exp $
+# $OpenBSD: Makefile,v 1.18 2000/02/01 21:43:50 brad Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
 CATEGORIES=	editors
-NEED_VERSION=	1.175
-
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.oce.nl/pub/vim/unix/  \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
+MASTER_SITES0=	${MASTER_SITES:S/unix/patches/}
 DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 EXTRACT_ONLY=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 
-MASTER_SITES0=	${MASTER_SITES:S/unix/patches/}
+NEED_VERSION=	1.175
+
 .for p in 01 02 03 05 06 10 11
 DISTFILES+=	5.6.0${p}:0
 PATCHFILES+=	5.6.0${p}
 .endfor
-
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 .else
