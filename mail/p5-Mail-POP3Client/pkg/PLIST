@@ -1,5 +1,0 @@
-libdata/perl5/site_perl/Mail/POP3Client.pm
-libdata/perl5/site_perl/auto/Mail/POP3Client/autosplit.ix
-libdata/perl5/site_perl/i386-openbsd/auto/Mail/POP3Client/.packlist
-@dirrm libdata/perl5/site_perl/auto/Mail/POP3Client
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/Mail/POP3Client
