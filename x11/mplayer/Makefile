@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/09/04 05:40:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.32 2002/09/14 12:19:15 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -37,7 +37,7 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		dvdread.::devel/libdvdread \
 		mp3lame::audio/lame \
-		ungif::graphics/libungif \
+		ungif,gif::graphics/libungif \
 		vorbis.0,vorbisfile.1::audio/libvorbis
 
 .if ${ELF_TOOLCHAIN} == "no"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/18 12:37:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/14 12:19:15 naddy Exp $
 
 CATEGORIES=	x11
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
-LIB_DEPENDS=	dvdcontrol.5::x11/ogle \
+LIB_DEPENDS=	dvdcontrol.5,msgevents.5::x11/ogle \
 		xml2::textproc/libxml \
 		glade.5.0::devel/libglade \
 		gtk.1.2::x11/gtk+

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/18 11:30:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/14 12:19:15 naddy Exp $
 
 DISTNAME=mplayer-fontmaker-0.90pre6
 CATEGORIES=x11
 COMMENT='subtitle fonts generator for mplayer'
 
-BUILD_DEPENDS=::x11/mplayer,iconv:configure
+MODULES=	iconv
+BUILD_DEPENDS=	::x11/mplayer,iconv:configure
 DISTFILES=
 NO_CHECKSUM=	Yes
 
