@@ -1,0 +1,16 @@
+Welcome to WMFishTime, winner of the "Best Waste Of CPU Power"
+award!  This is a dockable clock application for WMaker, BlackBox,
+E, SawFish...
+
+Features
+--------
+* gradient backdrop
+* anti-aliased hour, minute, second hands
+* alpha-blended bubbles
+* real-time sprite engine
+* precision accuracy
+* Very Fast!
+* shows if you have unread mail (in the form of swaying weed blocking
+  the day/month numbers
+
+WWW: ${HOMEPAGE}

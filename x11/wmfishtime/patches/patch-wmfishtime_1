@@ -1,0 +1,24 @@
+$OpenBSD: patch-wmfishtime_1,v 1.1.1.1 2001/08/28 14:28:19 wilfried Exp $
+--- wmfishtime.1.orig	Sat May 26 22:48:25 2001
++++ wmfishtime.1	Mon Aug 27 15:29:22 2001
+@@ -54,16 +54,16 @@ If $MAIL is not set, nothing happens.
+ 
+ .SH OPTIONS
+ .TP
+-.B \-h, ,\-help, \-\-help
++.B \-h
+ Show summary of options.
+ .TP
+-.B \-v, ,\-version, \-\-version
++.B \-v
+ Show version of program.
+ .TP
+-.B \-c, \-check\-mail, \-\-check\-mail
++.B \-c
+ Enables mail checking.
+ .TP
+-.B \-b, \-broken, \-\-broken
++.B \-b
+ Activate fix for broken window managers.
+ .SH SEE ALSO
+ http://www.ne.jp/asahi/linux/timecop/
