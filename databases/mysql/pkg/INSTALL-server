@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.5 2002/02/20 18:03:33 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.6 2002/02/26 03:42:06 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -61,7 +61,7 @@ do_socket_install()
 case $2 in 
     PRE-INSTALL)
 	if [ -d $DB_DIR ]; then
-	    do_notice_existingdir $1
+	  do_notice_existingdir $1
 	fi
 	do_usergroup_install
 	;;
