@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/28 17:47:04 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/12/05 20:11:28 brad Exp $
 
-DISTNAME=	curl-7.3
+DISTNAME=	curl-7.5
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
