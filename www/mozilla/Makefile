@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 04:22:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/22 16:32:51 fgsch Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
 
 COMMENT=	"free version of the Netscape browser"
 
+VER=		0.9.1
 DISTNAME=	mozilla
-M=		17
-PKGNAME=	mozilla-$M
-DISTFILES=	mozilla-source-M$M.tar.bz2
+PKGNAME=	mozilla-${VER}
+DISTFILES=	mozilla-source-${VER}.tar.bz2
 
 BROKEN=		core dumps in dynamic library constructor
 
@@ -17,9 +17,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/m$M/src/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.mozilla.org/pub/mozilla/source/ \
-	ftp://mirror.aarnet.edu.au/pub/mozilla/mozilla/source/
+MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
 LIB_DEPENDS=	IDL.4::devel/ORBit
 
