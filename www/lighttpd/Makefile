@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/01 06:23:40 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/17 15:11:46 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"secure, fast, compliant, and very flexible web-server"
 
-DISTNAME=	lighttpd-1.3.2
+DISTNAME=	lighttpd-1.3.3
 CATEGORIES=	www net
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
@@ -14,7 +14,7 @@ HOMEPAGE=	http://jan.kneschke.de/projects/lighttpd/
 LIB_DEPENDS+=	bz2::archivers/bzip2 \
 		pcre::devel/pcre
 
-# QPL
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

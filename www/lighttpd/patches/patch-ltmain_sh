@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2004/10/01 06:23:40 brad Exp $
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/10/17 15:11:46 brad Exp $
 --- ltmain.sh.orig	Sun Aug 22 13:22:48 2004
-+++ ltmain.sh	Wed Sep 22 23:54:59 2004
++++ ltmain.sh	Sun Oct 17 10:54:57 2004
 @@ -2611,7 +2611,7 @@ EOF
  	    add_dir=
  	    add=

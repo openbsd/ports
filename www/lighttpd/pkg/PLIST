@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/01 06:23:40 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/10/17 15:11:46 brad Exp $
 lib/lighttpd/
 @comment lib/lighttpd/mod_access.la
 lib/lighttpd/mod_access.so
@@ -26,6 +26,8 @@ lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 @comment lib/lighttpd/mod_rewrite.la
 lib/lighttpd/mod_rewrite.so
+@comment lib/lighttpd/mod_rrdtool.la
+lib/lighttpd/mod_rrdtool.so
 @comment lib/lighttpd/mod_secdownload.la
 lib/lighttpd/mod_secdownload.so
 @comment lib/lighttpd/mod_simple_vhost.la
