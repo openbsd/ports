@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/08/29 03:22:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.30 2000/09/22 22:08:36 brad Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -37,7 +37,7 @@
      SUBDIR += magicpoint
      SUBDIR += mc
      SUBDIR += mmv
-#    SUBDIR += most
+     SUBDIR += most
      SUBDIR += mshell
 #    SUBDIR += nwrite
 #    SUBDIR += p5-Array-PrintCols
