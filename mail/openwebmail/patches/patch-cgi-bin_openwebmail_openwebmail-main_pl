@@ -1,11 +1,11 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.5 2004/07/12 05:54:53 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-main.pl.orig	Tue May 25 17:53:48 2004
-+++ cgi-bin/openwebmail/openwebmail-main.pl	Mon Jul 12 10:54:24 2004
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.6 2004/11/21 17:01:45 naddy Exp $
+--- cgi-bin/openwebmail/openwebmail-main.pl.orig	Fri Nov 12 10:37:28 2004
++++ cgi-bin/openwebmail/openwebmail-main.pl	Fri Nov 12 10:39:57 2004
 @@ -1,14 +1,14 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
  #
- # openwebmail-main.pl - message list browing program
+ # openwebmail-main.pl - message list browsing program
  #
  
  use vars qw($SCRIPT_DIR);
@@ -18,4 +18,4 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.5 2004/07/12 05:54:5
 +if ($SCRIPT_DIR eq '') { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
  push (@INC, $SCRIPT_DIR);
  
- foreach (qw(PATH ENV BASH_ENV CDPATH IFS TERM)) { $ENV{$_}='' }	# secure ENV
+ foreach (qw(ENV BASH_ENV CDPATH IFS TERM)) {delete $ENV{$_}}; $ENV{PATH}='/bin:/usr/bin'; # secure ENV

@@ -1,13 +1,13 @@
-$OpenBSD: patch-cgi-bin_openwebmail_shares_ow-shared_pl,v 1.1 2004/03/04 06:34:11 kevlo Exp $
---- cgi-bin/openwebmail/shares/ow-shared.pl.orig	Thu Mar  4 12:37:54 2004
-+++ cgi-bin/openwebmail/shares/ow-shared.pl	Thu Mar  4 12:38:50 2004
-@@ -222,14 +222,14 @@
+$OpenBSD: patch-cgi-bin_openwebmail_shares_ow-shared_pl,v 1.2 2004/11/21 17:01:46 naddy Exp $
+--- cgi-bin/openwebmail/shares/ow-shared.pl.orig	Fri Nov 12 10:38:07 2004
++++ cgi-bin/openwebmail/shares/ow-shared.pl	Fri Nov 12 14:12:41 2004
+@@ -231,14 +231,14 @@
  ########## USERENV_INIT ##########################################
  # init user globals, switch euid
  sub userenv_init {
--   load_owconf(\%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+-   load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
 -   read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+   load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
++   load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
 +   read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
     loadlang($config{'default_language'});	# so %lang... can be used in error msg
  

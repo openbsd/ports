@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.8 2004/07/21 00:26:11 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Jul 20 18:24:51 2004
-+++ cgi-bin/openwebmail/openwebmail.pl	Wed Jul 21 08:14:47 2004
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.9 2004/11/21 17:01:46 naddy Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Fri Nov 12 10:37:38 2004
++++ cgi-bin/openwebmail/openwebmail.pl	Fri Nov 12 14:11:33 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
@@ -19,14 +19,14 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.8 2004/07/21 00:26:11 kev
 +if ($SCRIPT_DIR eq '') { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
  push (@INC, $SCRIPT_DIR);
  
- foreach (qw(PATH ENV BASH_ENV CDPATH IFS TERM)) { $ENV{$_}='' }	# secure ENV
+ foreach (qw(ENV BASH_ENV CDPATH IFS TERM)) {delete $ENV{$_}}; $ENV{PATH}='/bin:/usr/bin'; # secure ENV
 @@ -63,8 +63,8 @@
  $SIG{PIPE}=\&openwebmail_exit;	# for user stop
  $SIG{TERM}=\&openwebmail_exit;	# for user stop
  
--load_owconf(\%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+-load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
 -read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
++load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
 +read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
  loadlang($config{'default_language'});	# so %lang... can be used in error msg
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.8 2004/07/21 00:26:11 kev
     my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
     if ( !($fmode & 0100000) ) {
        open (LOGFILE,">>$config{'logfile'}") or
-@@ -230,7 +230,7 @@
+@@ -251,7 +251,7 @@
  
     # create domain logfile
     if ($config{'logfile'}) {
@@ -49,3 +49,30 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.8 2004/07/21 00:26:11 kev
        my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
        if ( !($fmode & 0100000) ) {
           open (LOGFILE,">>$config{'logfile'}") or
+@@ -322,7 +322,7 @@
+          if (!-d $domainhome) {
+             mkdir($domainhome, 0750);
+             openwebmailerror(__FILE__, __LINE__, "Couldn't create domain homedir $domainhome") if (! -d $domainhome);
+-            my $mailgid=getgrnam('mail');
++            my $mailgid=getgrnam('_mail');
+             chown($uuid, $mailgid, $domainhome);
+          }
+       }
+@@ -383,7 +383,7 @@
+ 
+       umask(0077);
+       if ( $>==0 ) {			# switch to uuid:mailgid if script is setuid root.
+-         my $mailgid=getgrnam('mail');	# for better compatibility with other mail progs
++         my $mailgid=getgrnam('_mail');	# for better compatibility with other mail progs
+          ow::suid::set_euid_egids($uuid, $mailgid, split(/\s+/,$ugid));
+          if ( $)!~/\b$mailgid\b/) {	# group mail doesn't exist?
+             openwebmailerror(__FILE__, __LINE__, "Set effective gid to mail($mailgid) failed!");
+@@ -595,7 +595,7 @@
+       writelog("login error - $config{'auth_module'}, ret $errorcode, $errormsg");
+       umask(0077);
+       if ( $>==0 ) {	# switch to uuid:mailgid if script is setuid root.
+-         my $mailgid=getgrnam('mail');
++         my $mailgid=getgrnam('_mail');
+          ow::suid::set_euid_egids($uuid, $mailgid, split(/\s+/,$ugid));
+       }
+       my $historyfile=ow::tool::untaint(dotpath('history.log'));

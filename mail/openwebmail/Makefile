@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2004/07/12 05:54:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/21 17:01:45 naddy Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-2.32
+DISTNAME=	openwebmail-2.41
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -14,12 +14,11 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${HOMEPAGE}/openwebmail/download/ \
-		http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
-		http://turtle.ee.ncku.edu.tw/openwebmail/download/old/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${HOMEPAGE}/openwebmail/download/release/ \
+		http://turtle.ee.ncku.edu.tw/openwebmail/download/release/
 
 RUN_DEPENDS=	::textproc/ispell \
+		::mail/tnef \
 		:p5-Text-Iconv->=1.2:converters/p5-Text-Iconv \
 		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI \
 		:p5-Compress-Zlib->=1.22:archivers/p5-Compress-Zlib \
@@ -59,7 +58,11 @@ do-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${CONFDIR}/openwebmail
-	${TAR} -C ${WRKSRC} -cpf- cgi-bin conf htdocs | \
+	${TAR} -C ${WRKSRC} -cf- cgi-bin conf htdocs | \
 		${TAR} -C ${PREFIX} -xpf-
+
+post-install:
+	@echo "/var/www/cgi-bin/openwebmail/" \
+		> ${CONFDIR}/openwebmail/openwebmail_path.conf
 
 .include <bsd.port.mk>
