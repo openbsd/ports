@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/09 03:41:26 mark Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/12 07:37:31 jsyn Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
-DISTNAME=		flawfinder-1.20
+DISTNAME=		flawfinder-1.21
 CATEGORIES=    		devel security
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
@@ -15,10 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.dwheeler.com/flawfinder/ \
-			${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
+MASTER_SITES=		http://www.dwheeler.com/flawfinder/ 
 
-PYTHON_VER=		2.1
+PYTHON_VER=		2.2
 RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 NO_BUILD=		Yes
