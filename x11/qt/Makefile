@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/05/22 10:48:55 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2000/05/22 11:31:15 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -26,7 +26,7 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	tetrix tictac timestmp tooltip validator widgets xform
 
 # for the qt image extension
-BUILD_DEPENDS=${PREFIX}/include/libjpeg.h::graphics/jpeg
+BUILD_DEPENDS=${PREFIX}/include/jpeglib.h::graphics/jpeg
 
 IMAGEIODIR=${WRKSRC}/extensions/imageio/src
 
