@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/03 16:24:42 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/05 00:31:28 brad Exp $
 
-DISTNAME=	vic
-DISTFILES=	vic-2.8ucl4.tar.gz
+DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
@@ -10,8 +9,10 @@ MAINTAINER=	angelos@openbsd.org
 LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
 		tk80.1.5:${PORTSDIR}/x11/tk80
 
-USE_AUTOCONF=	yes
 USE_X11=	yes
+USE_AUTOCONF=	yes
+
+WRKSRC=		${WRKDIR}/vic
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vic ${PREFIX}/bin
