@@ -1,12 +1,12 @@
 # Makefile for:		nessus
-# Version required:	981016
+# Version required:	990201
 # Date created:		18 Jan 1999
 # Whom:			dugsong@monkey.org
 # Related URLs:		http://www.nessus.org/
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/02/01 00:29:02 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/07 23:11:33 dugsong Exp $
 
-DISTNAME=	nessus-981016
+DISTNAME=	nessus-990201
 
 CATEGORIES=	security
 

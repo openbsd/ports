@@ -1,5 +1,5 @@
 *** src/plugins/land/land.c.orig	Mon Jan 18 11:36:30 1999
---- src/plugins/land/land.c	Mon Jan 18 11:43:00 1999
+--- src/plugins/land/land.c		Mon Jan 18 11:43:00 1999
 ***************
 *** 11,23 ****
   

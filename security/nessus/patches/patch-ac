@@ -1,0 +1,19 @@
+*** src/plugins/mountd_overflow/Makefile.orig	Mon Feb  1 13:51:07 1999
+--- src/plugins/mountd_overflow/Makefile	Mon Feb  1 13:51:13 1999
+***************
+*** 1,7 ****
+  # Generated automatically from Makefile.in by configure.
+  include ../../../nessus.tmpl
+  
+! LIBS=-L${rootdir}/libs -lnessus $(RPCSVC_LIB)
+  PLUGNAME=mountd_overflow
+  
+  all : $(PLUGNAME).nes
+--- 1,7 ----
+  # Generated automatically from Makefile.in by configure.
+  include ../../../nessus.tmpl
+  
+! LIBS=-L${rootdir}/libs -lnessus
+  PLUGNAME=mountd_overflow
+  
+  all : $(PLUGNAME).nes
