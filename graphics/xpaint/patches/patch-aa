@@ -1,36 +1,20 @@
-*** misc.h.orig	Tue Mar 24 03:39:38 1998
---- misc.h	Wed May 20 16:16:04 1998
-***************
-*** 23,29 ****
-  long random(void);
-  #endif
-  
-! #if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__)
-  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX) || defined(_SCO_DS)
-  void srandom(unsigned int);
-  #else
---- 23,29 ----
-  long random(void);
-  #endif
-  
-! #if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__) & !defined(__OpenBSD__)
-  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX) || defined(_SCO_DS)
-  void srandom(unsigned int);
-  #else
-***************
-*** 102,108 ****
-  void GetDefaultWH(int *w, int *h);
-  char *GetDefaultRC(void);
-  void SetIconImage(Widget w);
-! void main(int argc, char *argv[]);
-  
-  /* misc.c */
-  Widget GetToplevel(Widget w);
---- 102,108 ----
-  void GetDefaultWH(int *w, int *h);
-  char *GetDefaultRC(void);
-  void SetIconImage(Widget w);
-! int main(int argc, char *argv[]);
-  
-  /* misc.c */
-  Widget GetToplevel(Widget w);
+--- misc.h.orig	Tue Jun  9 17:07:47 1998
++++ misc.h	Fri Oct 29 18:06:35 1999
+@@ -23,7 +23,7 @@
+ long random(void);
+ #endif
+ 
+-#if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__)
++#if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__) & !defined(__OpenBSD__)
+ #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX) || defined(_SCO_DS)
+ void srandom(unsigned int);
+ #else
+@@ -102,7 +102,7 @@
+ void GetDefaultWH(int *w, int *h);
+ char *GetDefaultRC(void);
+ void SetIconImage(Widget w);
+-void main(int argc, char *argv[]);
++int main(int argc, char *argv[]);
+ 
+ /* misc.c */
+ Widget GetToplevel(Widget w);

@@ -1,56 +1,37 @@
-*** readRC.c.orig	Sat May 30 13:39:30 1998
---- readRC.c	Sat May 30 13:41:19 1998
-***************
-*** 30,41 ****
-  #include <unistd.h>
-  #endif
-  
-- #ifdef __STDC__
-- extern char *mktemp(char *);
-- #else
-- extern char *mktemp();
-- #endif /* __STDC__ */
-- 
-  #define RC_FILENAME	".XPaintrc"
-  
-  static String defaultRC[] =
---- 30,35 ----
-***************
-*** 66,82 ****
-  {
-      char *n;
-      char xx[256];
-  
-      if ((n = getenv("TMPDIR")) == NULL)
-  	n = "/tmp";
-  
-      strcpy(xx, n);
-      strcat(xx, "/XPaintXXXXXXX");
-!     n = mktemp(xx);
-      tempName[++tempIndex] = XtNewString(n);
-      if (np != NULL)
-  	*np = tempName[tempIndex];
-!     return fopen(tempName[tempIndex], "w");
-  }
-  
-  static void 
---- 60,78 ----
-  {
-      char *n;
-      char xx[256];
-+     int fd;
-  
-      if ((n = getenv("TMPDIR")) == NULL)
-  	n = "/tmp";
-  
-      strcpy(xx, n);
-      strcat(xx, "/XPaintXXXXXXX");
-!     fd = mkstemp(xx);
-!     n = xx;
-      tempName[++tempIndex] = XtNewString(n);
-      if (np != NULL)
-  	*np = tempName[tempIndex];
-!     return fdopen(fd, "w");
-  }
-  
-  static void 
+--- readRC.c.orig	Tue Jun 25 04:50:39 1996
++++ readRC.c	Fri Oct 29 18:08:12 1999
+@@ -30,12 +30,6 @@
+ #include <unistd.h>
+ #endif
+ 
+-#ifdef __STDC__
+-extern char *mktemp(char *);
+-#else
+-extern char *mktemp();
+-#endif /* __STDC__ */
+-
+ #define RC_FILENAME	".XPaintrc"
+ 
+ static String defaultRC[] =
+@@ -66,17 +60,19 @@
+ {
+     char *n;
+     char xx[256];
++    int fd;
+ 
+     if ((n = getenv("TMPDIR")) == NULL)
+ 	n = "/tmp";
+ 
+     strcpy(xx, n);
+     strcat(xx, "/XPaintXXXXXXX");
+-    n = mktemp(xx);
++    fd = mkstemp(xx);
++    n = xx;
+     tempName[++tempIndex] = XtNewString(n);
+     if (np != NULL)
+ 	*np = tempName[tempIndex];
+-    return fopen(tempName[tempIndex], "w");
++    return fdopen(fd, "w");
+ }
+ 
+ static void 

@@ -1,19 +1,11 @@
-*** main.c.orig	Wed May 20 16:13:32 1998
---- main.c	Wed May 20 16:13:43 1998
-***************
-*** 275,281 ****
-  }
-  
-  
-! void 
-  main(int argc, char *argv[])
-  {
-      Display *dpy;
---- 275,281 ----
-  }
-  
-  
-! int
-  main(int argc, char *argv[])
-  {
-      Display *dpy;
+--- main.c.orig	Tue Jun  9 17:14:27 1998
++++ main.c	Fri Oct 29 18:07:30 1999
+@@ -275,7 +275,7 @@
+ }
+ 
+ 
+-void 
++int
+ main(int argc, char *argv[])
+ {
+     Display *dpy;
