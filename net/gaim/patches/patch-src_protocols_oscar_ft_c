@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_protocols_oscar_ft_c,v 1.1 2004/01/27 01:03:54 brad Exp $
+--- src/protocols/oscar/ft.c.orig	2004-01-26 14:53:17.000000000 -0500
++++ src/protocols/oscar/ft.c	2004-01-26 14:53:38.000000000 -0500
+@@ -49,6 +49,7 @@
+ #ifndef _WIN32
+ #include <stdio.h>
+ #include <netdb.h>
++#include <limits.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <sys/utsname.h> /* for aim_odc_initiate */
