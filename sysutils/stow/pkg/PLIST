@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/08 19:06:57 sturm Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/stow.info
+bin/stow
+info/stow.info
+man/man8/stow.8
+@exec install-info --info-dir=%D/info %D/info/stow.info
