@@ -1,0 +1,13 @@
+bin/jv-convert
+bin/zip
+lib/libgcj.a
+lib/libgcj.la
+lib/libgcj.so.0.0
+lib/libgcj.spec
+lib/libgcjgc.a
+lib/libgcjgc.la
+lib/libgcjgc.so.0.0
+lib/libzgcj.a
+lib/libzgcj.la
+lib/libzgcj.so.0.0
+share/libgcj.zip
