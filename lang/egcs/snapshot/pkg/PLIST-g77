@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST-g77,v 1.3 2002/06/05 23:58:50 espie Exp $
+@comment $OpenBSD: PLIST-g77,v 1.4 2003/11/13 19:04:10 espie Exp $
 @pkgcfl egcs-*-core
+@unexec install-info --delete --info-dir=%D/info %D/info/g77.info
 bin/eg77
-IFPIC:lib/fpic/libfrtbegin.a
-IFPIC:lib/fpic/libg2c.a
-IFPIC:lib/fpic/libg2c.la
-lib/libfrtbegin.a
+info/g77.info
 lib/gcc-lib/${CONFIG}/${V}/f771
 lib/gcc-lib/${CONFIG}/${V}/include/g2c.h
+lib/libfrtbegin.a
 lib/libg2c.a
 lib/libg2c.la
 man/man1/eg77.1
+IFPIC:lib/fpic/libfrtbegin.a
+IFPIC:lib/fpic/libg2c.a
+IFPIC:lib/fpic/libg2c.la
+%%SHARED%%
+@exec install-info --info-dir=%D/info %D/info/g77.info

@@ -1,38 +1,55 @@
-# $OpenBSD: Makefile,v 1.94 2003/08/26 17:11:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.95 2003/11/13 19:04:09 espie Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
+ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
-MAKE_ADA=Yes
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
-
 # Java is still mostly broken (boehm-gc)
-MAKE_JAVA=Yes
-BROKEN=	Waiting for a recent snapshot that #??#@ works
 
+
+.if ${MACHINE_ARCH} == "i386"
+MAKE_JAVA=Yes
+#MAKE_ADA=Yes
+#AS_PATH=/usr/bin/as
+#LD_PATH=/usr/bin/ld
+.endif
+
+MAKE_GXX?=No
+MAKE_FORTRAN?=No
+MAKE_OBJC?=No
+MAKE_JAVA?=No
+MAKE_ADA?=No
 
 # This is a configuration file for gcc
 
 COM=		'GNU compiler collection'
-COMMENT=	"${COM}: core C compiler"
-COMMENT-c++ =	"${COM}: C++ compiler"
-COMMENT-chill=	"${COM}: Chill compiler"
-COMMENT-g77=	"${COM}: f77 compiler"
-COMMENT-java=	"${COM}: java compiler"
-COMMENT-objc=	"${COM}: obj C compiler"
-COMMENT-ada=	"${COM}: Ada compiler"
+COMMENT=	${COM}: core C compiler
+COMMENT-c++ =	${COM}: C++ compiler
+COMMENT-estdc=	${COM}: C++ compiler library
+COMMENT-chill=	${COM}: Chill compiler
+COMMENT-g77=	${COM}: f77 compiler
+COMMENT-java=	${COM}: java compiler
+COMMENT-objc=	${COM}: obj C compiler
+COMMENT-ada=	${COM}: Ada compiler
 
-PKGNAME=	gcc-${FULLV}
-PKGNAME-c++ =	g++-${FULLV}
-PKGNAME-chill=	gchill-${FULLV}
-PKGNAME-g77=	g77-${FULLV}
-PKGNAME-java=	gcj-${FULLV}
-PKGNAME-objc=	gobjc-${FULLV}
-PKGNAME-ada=	gnat-${FULLV}
+PKGNAME=	gcc-$V
+PKGNAME-c++ =	g++-$V
+PKGNAME-estdc =	libstdc++-$V
+PKGNAME-chill=	gchill-$V
+PKGNAME-g77=	g77-$V
+PKGNAME-java=	gcj-$V
+PKGNAME-objc=	gobjc-$V
+PKGNAME-ada=	gnat-$V
 
-# use autoconf dependency framework
-#BUILD_DEPENDS=	::devel/autoconf
+BUILD_DEPENDS=	::devel/autoconf/2.13
+BUILD_DEPENDS+=	::devel/metaauto
+SUBPACKAGE?=
+.if ${MAKE_JAVA:L} == "yes"
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
+LIB_DEPENDS+=gc::devel/boehm-gc
+.  endif
+.endif
 
 # This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
@@ -51,7 +68,7 @@ PERMIT_DISTFILES_CDROM=Yes
 # see files/tests for precise testing procedure
 
 
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 MAKE_GXX=Yes
 .endif
 
@@ -62,46 +79,26 @@ DESCR=${PKGDIR}/DESCR
 REGRESS_DEPENDS=::devel/dejagnu
 
 # No way around it, java wants a pure parser
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
-LATEST_DATE=2002-06-17
 
 #### fetch section
-# configuration is built so that you can test the next snapshot easily,
-# define NEXT_DATE to the next snapshot... 
 
-# You also may have to remove/add some patches, as these things ARE
-# usually passed along to the egcs ml.
-#NEXT_DATE=2000-02-21
-#PATCH_DEBUG=yes
-
-V=3.1.1
-LATEST=${LATEST_DATE:S/-//g}
-DIRECTORY=snapshots/%DATE%/
-.if defined(NEXT_DATE)
-NEXT=${NEXT_DATE:S/-//g}
-DISTNAME=	gcc-${NEXT}
-FULLV=$V_${NEXT}
-.else
-DISTNAME=   gcc-${LATEST}
-FULLV=$V_${LATEST}
-.endif
+V=3.3.2
+DIRECTORY=releases/${DISTNAME}/
+DISTNAME=   gcc-$V
 
 # getting the right archives where they should be
 MASTER_SITE_SUBDIR=${LATEST_DATE}
-PATCH_SITE_SUBDIR=${NEXT_DATE}
 
 DIST_SUBDIR=egcs
 
-PATCH_DIST_STRIP=-p1
-
-DISTFILES=  gcc-${LATEST}${EXTRACT_SUFX}
+DISTFILES=  gcc-$V.tar.bz2
 
 SITES=	
 
-SITES+=	ftp://gcc.gnu.org/pub/gcc/${DIRECTORY}
-SITES+= ftp://ftp.uvsq.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.uvsq.fr/pub/gcc/${DIRECTORY}
 SITES+= ftp://ftp.grolier.fr/pub/egcs/${DIRECTORY}
 SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
 SITES+= ftp://chardonnay.elis.rug.ac.be/pub/mirrors/gcc.cygnus.com/pub/gcc/${DIRECTORY}
@@ -127,7 +124,6 @@ SITES+= ftp://ftp.dti.ad.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.win.or.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.lab.kdd.co.jp/lang/egcs/${DIRECTORY}
-SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
 SITES+= ftp://ftp.crc.ca/pub/packages/egcs/${DIRECTORY}
 SITES+= ftp://ftp.nc.orc.ru/pub/egcs/${DIRECTORY}
 SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/egcs/${DIRECTORY}
@@ -145,6 +141,10 @@ SITES+= ftp://linux.ihep.su/pub/cygnus/egcs/${DIRECTORY}
 SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/egcs/${DIRECTORY}
 SITES+= ftp://ftp.ninemoons.com/pub/mirrors/egcs/${DIRECTORY}
 
+# Only contains empty gcc-3.0 directory - maybe it gets updated at 
+# some point?
+SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+
 # Bad mirrors (no snapshot)
 # ftp.lip6.fr, ftp.ilog.fr, ftp.irisa.fr
 # No route to host
@@ -154,41 +154,31 @@ SITES+= ftp://ftp.ninemoons.com/pub/mirrors/egcs/${DIRECTORY}
 #SITES+= ftp://ftp.irisa.fr/pub/mirrors/egcs.cygwin.com/gcc/${DIRECTORY}
 MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
-.if defined(NEXT)
-PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
-.endif
-
-makesum:
-	@echo 1>&2 ">>>Please make addsum to avoid clobbering old checksums"
-	@exit 1
-
-# synch the date
-.if defined(NEXT)
-post-extract:
-	mv ${WRKDIR}/egcs-${LATEST} ${WRKSRC}
-.endif
-
+# add a possible next snapshot
 
 #### 
 # Patch section
+
+#ac_dirs=gcc libiberty libstdc++-v3 libf2c/libI77 libffi fastjar libjava
+ac_dirs=gcc libiberty libf2c/libI77 libffi fastjar libjava
+rm_dirs=zlib texinfo boehm-gc
 
 # get openbsd configuration files where they should be
 post-patch:
 #	cp -R ${FILESDIR}/config/* ${WRKSRC}
 #	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
+	cp ${FILESDIR}/config/gcc/config/i386/openbsdelf.h \
+	    ${WRKSRC}/gcc/config/i386/openbsdelf.h 
+	cp ${FILESDIR}/config/gcc/config/exec-stack.h \
+	    ${WRKSRC}/gcc/config/exec-stack.h 
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoheader
-	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libffi && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/fastjar && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libjava && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC} && rm -rf texinfo
-	cd ${WRKSRC} && rm -rf zlib
+#	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoheader
+.for ac_dir in ${ac_dirs}
+	cd ${WRKSRC}/${ac_dir} && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoconf
+.endfor
+	cd ${WRKSRC} && rm -rf ${rm_dirs}
 
 
 
@@ -200,33 +190,37 @@ post-patch:
 # This should not be used for regular releases, but if you're using this
 # snapshot, you know what you're doing, don't you ?
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS=c
-.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
+.if ${MAKE_GXX:L} == "yes"
 LANGS:=${LANGS},c++
-MULTI_PACKAGES+=-c++
+MULTI_PACKAGES+=-c++ -estdc
 .endif
-.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
+.if ${MAKE_FORTRAN:L} == "yes"
 LANGS:=${LANGS},f77
 MULTI_PACKAGES+=-g77
 .endif
-.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
+.if ${MAKE_OBJC:L} == "yes"
 LANGS:=${LANGS},objc
 MULTI_PACKAGES+=-objc
 .endif
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 LANGS:=${LANGS},java
 MULTI_PACKAGES+=-java
+CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .endif
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+.if ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
 
 CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
+CC=${LOCALBASE}/bin/egcc
+BUILD_DEPENDS+=:gnat-*:lang/egcs/stable,-ada
 .endif
+CONFIGURE_ENV+=am_cv_func_iconv=no
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
@@ -241,13 +235,14 @@ CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 CONFIGURE_ARGS+=--enable-cpp
 CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
+
 .endif
 
 
 # if you wish to try your luck
-#CONFIGURE_ARGS+= --enable-threads=yes
+#CONFIGURE_ARGS+= --enable-threads=posix
 
 .if defined(AS_PATH)
 CONFIGURE_ARGS += --with-as=${AS_PATH}
@@ -280,8 +275,6 @@ ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
 MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
-FAKE_FLAGS=DESTDIR=${WRKINST}
-
 # desactivate the fixincludes mechanism by supplying a script which does
 # nothing
 pre-build:
@@ -298,31 +291,31 @@ post-build:
 	find ${WRKBUILD} -name \*.orig|xargs rm
 	mkdir -p ${WRKBUILD}/gcc/include/machine
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+.if ${MAKE_ADA:L} == "yes"
 	cd ${WRKBUILD}/gcc && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} gnatlib_and_tools
 .endif
 
 
 post-install:
-	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/fpic
+	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/. ${PREFIX}/lib/fpic ${PREFIX}/lib/nof
 
 # Tests still need to be performed at the end of install, I don't know why.
 
-REGRESS_DEPENDS+=::lang/egcs/snapshot
-.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/snapshot,-c++
+REGRESS_DEPENDS+=::lang/egcs/stable
+.if ${MAKE_GXX:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-c++,-estdc
 .endif
-.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/snapshot,-g77
+.if ${MAKE_FORTRAN:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-g77
 .endif
-.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/snapshot,-objc
+.if ${MAKE_OBJC:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-objc
 .endif
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/snapshot,-java
+.if ${MAKE_JAVA:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-java
 .endif
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/snapshot,-ada
+.if ${MAKE_ADA:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-ada
 .endif
 
 TEST_RESULT=${WRKBUILD}/test.result
@@ -338,20 +331,30 @@ send-results:
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
 
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
 SED_PLIST=|sed -e '/^IFPIC:/s///'
 .else
 SED_PLIST=|sed -e '/^IFPIC:/d'
 .endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+SED_PLIST+=|sed -e '/^IFPPC:/s///'
+.else
+SED_PLIST+=|sed -e '/^IFPPC:/d'
+.endif
+
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
-.  if !empty(SUBPACKAGE)
-RUN_DEPENDS+=::lang/egcs/snapshot
+.  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
+RUN_DEPENDS+=::lang/egcs/stable
+.  endif
+.  if ${SUBPACKAGE} == "-c++"
+RUN_DEPENDS+=::lang/egcs/stable,-estdc
 .  endif
 .endif
 
 CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
-SUBST_VARS=V CONFIG
+SUBST_VARS=CONFIG V
 .include <bsd.port.mk>
 
