@@ -1,0 +1,39 @@
+$OpenBSD: patch-interp_c,v 1.1.1.1 2001/02/04 18:44:01 reinhard Exp $
+--- interp.c.orig	Mon May 11 18:43:36 1992
++++ interp.c	Mon Jan 22 11:11:01 2001
+@@ -476,7 +476,7 @@ double
+ dodts(mo, day, yr)
+ int mo, day, yr;
+ {
+-    long trial;
++    time_t trial;
+     register struct tm *tp; 
+     register int i;
+     register long jdate;
+@@ -484,7 +484,7 @@ int mo, day, yr;
+     mdays[1] = 28 + (yr%4 == 0);
+ 
+     if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||
+-		yr > 1999 || yr < 1970) {
++		yr > 2099 || yr < 1970) {
+ 	error("@dts: invalid argument");
+ 	cellerror = CELLERROR;
+ 	return(0.0);
+@@ -551,15 +551,13 @@ dotime(which, when)
+ int which;
+ double when;
+ {
+-	long time();
+-
+ 	static long t_cache;
+ 	static struct tm tm_cache;
+ 	struct tm *tp;
+-	long tloc;
++	time_t tloc;
+ 
+ 	if (which == NOW) 
+-	    return (double)time((long *)0);
++	    return (double)time(NULL);
+ 
+ 	tloc = (long)when;
+ 

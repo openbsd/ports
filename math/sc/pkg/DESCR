@@ -1,0 +1,10 @@
+Sc is a spreadsheet calculator based on rectangular tables
+like a financial spreadsheet. When invoked it presents you
+with a table organized as rows and columns of cells. If
+invoked without a file argument, by default the initial
+table is empty.
+
+Each cell can be associated with a numeric value, a label
+string and/or an expression which evaluates to a numeric
+value or label string, often based on other cell values
+(formula). 

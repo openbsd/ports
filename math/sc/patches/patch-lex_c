@@ -1,0 +1,17 @@
+$OpenBSD: patch-lex_c,v 1.1.1.1 2001/02/04 18:44:01 reinhard Exp $
+--- lex.c.orig	Mon May 11 18:43:36 1992
++++ lex.c	Mon Jan 22 11:11:01 2001
+@@ -384,11 +384,11 @@ char dont_use[] = {
+ 	ctl('z'), 0
+ };
+ 
+-void
++int
+ charout(c)
+ int c;
+ {
+-	(void)putchar(c);
++	return putchar(c);
+ }
+ 
+ void

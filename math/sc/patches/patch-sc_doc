@@ -1,0 +1,21 @@
+$OpenBSD: patch-sc_doc,v 1.1.1.1 2001/02/04 18:44:01 reinhard Exp $
+--- sc.doc.orig	Mon Jan 22 11:56:26 2001
++++ sc.doc	Mon Jan 22 11:57:09 2001
+@@ -64,7 +64,7 @@ often based on other cell values.
+ .LP
+ For a on-line tutorial, type the command:
+ .IP
+-pname #LIBDIR#/tutorial.pname
++pname /usr/local/share/sc/tutorial.pname
+ .LP
+ To print a quick reference card, type the command:
+ .IP
+@@ -2182,7 +2182,7 @@ Returns the number of iterations perform
+ .\" ==========
+ .SH FILES
+ .TP 4in
+-#LIBDIR#/tutorial.pname
++/usr/local/share/sc/tutorial.pname
+ tutorial spreadsheet
+ .SH SEE ALSO
+ bc(1), dc(1), crypt(1), ppname(1)

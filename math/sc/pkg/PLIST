@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/04 18:44:00 reinhard Exp $
+bin/psc
+bin/sc
+bin/scqref
+man/man1/psc.1
+man/man1/sc.1
+share/sc/tutorial.sc
+@dirrm share/sc
