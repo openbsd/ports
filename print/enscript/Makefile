@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/11 22:31:24 matt Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/14 11:49:22 fgsch Exp $
 
 COMMENT=		"convert ASCII files to PostScript"
 
 DISTNAME=		enscript-1.6.3
-NEED_VERSION=		1.527
+NEED_VERSION=		1.528
 CATEGORIES=     	print
 
 MAINTAINER=		Matt Behrens <matt@openbsd.org>
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://people.ssh.fi/mtr/genscript/ \
-			${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	enscript
+			${MASTER_SITE_GNU:=enscript/}
 
 CONFIGURE_STYLE=	gnu automake
 CONFIGURE_ARGS+=	--with-media=Letter

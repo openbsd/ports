@@ -1,17 +1,14 @@
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.17 2002/04/05 22:07:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/14 11:49:22 fgsch Exp $
 
 COMMENT=	"TeX distribution, executables"
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
-NEED_VERSION=	1.402
+NEED_VERSION=	1.528
 DIST_SUBDIR=	teTeX
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=systems/unix/teTeX/1.0/distrib/sources/}
 #${MASTER_SITE_TEX_CTAN}/biblio/bibtex/8-bit/bt371src.zip
 
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
 DISTFILES=	${TETEX_SRC} 
 WRKDIST=	${WRKDIR}/teTeX-1.0
 
