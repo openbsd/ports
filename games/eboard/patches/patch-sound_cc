@@ -1,6 +1,6 @@
-$OpenBSD: patch-sound_cc,v 1.1 2002/05/02 07:46:24 fgsch Exp $
---- sound.cc.orig	Wed May  1 21:56:47 2002
-+++ sound.cc	Wed May  1 22:05:06 2002
+$OpenBSD: patch-sound_cc,v 1.2 2002/05/02 09:38:10 fgsch Exp $
+--- sound.cc.orig	Tue Apr 23 22:16:33 2002
++++ sound.cc	Thu May  2 05:33:34 2002
 @@ -45,6 +45,8 @@
  
  #ifdef HAVE_SYS_SOUNDCARD_H
@@ -10,6 +10,15 @@ $OpenBSD: patch-sound_cc,v 1.1 2002/05/02 07:46:24 fgsch Exp $
  #endif
  
  SoundEvent::SoundEvent() {
+@@ -52,7 +54,7 @@ SoundEvent::SoundEvent() {
+   Pitch=800;
+   Duration=250;
+   Count=1;
+-  strcpy(Device,"/dev/dsp");
++  strcpy(Device,"/dev/audio");
+   ExtraData[0]=0;
+ }
+ 
 @@ -219,6 +221,58 @@ void SoundEvent::sine_beep(char *device,
      i+=::write(fd,&wave[i],ts-i);
  
