@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.568 2003/07/30 19:51:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.569 2003/07/30 19:59:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -510,7 +510,7 @@ _PACKAGE_COOKIE_DEPS=${_INSTALL_COOKIE}
 _PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
 .if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE}:
-	@${MAKE} ${_PACKAGE_COOKIE_DEPS}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .else
 ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .endif
@@ -524,7 +524,7 @@ _PACKAGE_COOKIE${_s} = ${PKGFILE${_s}}
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE${_s}}
 .  if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE${_s}}:
-	@${MAKE} ${_PACKAGE_COOKIE_DEPS}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .  else
 ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 .  endif
@@ -1360,7 +1360,7 @@ checksum: fetch
 		done; \
 		if ! $$OK; then \
 		  if ${REFETCH}; then \
-		  	cd ${.CURDIR} && ${MAKE} refetch _PROBLEMS="$$list"; \
+		  	cd ${.CURDIR} && ${MAKE} _refetch _PROBLEMS="$$list"; \
 		  else \
 			echo "Make sure the Makefile and checksum file ($$checksum_file)"; \
 			echo "are up to date.  If you want to fetch a good copy of this"; \
@@ -1372,11 +1372,11 @@ checksum: fetch
   fi
 .  endif
 
-refetch:
+_refetch:
 .  for file cipher value in ${_PROBLEMS}
-		@rm ${DISTDIR}/${file}
-		@cd ${.CURDIR} && ${MAKE} ${DISTDIR}/${file} \
-			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
+	@rm ${DISTDIR}/${file}
+	@cd ${.CURDIR} && exec ${MAKE} ${DISTDIR}/${file} \
+		MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
 .  endfor
 	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
 
@@ -1428,9 +1428,9 @@ ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS}
 	@${ECHO_MSG} "===> Running ${_i}"
-	@exec ${MAKE} ${_i} ${BULK_FLAGS}
+	@cd ${.CURDIR} && exec ${MAKE} ${_i} ${BULK_FLAGS}
 .endfor
-	@exec ${SUDO} ${MAKE} clean
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} clean
 	@${_MAKE_COOKIE} $@
 
 # The real targets. Note that some parts always get run, some parts can be
@@ -1761,7 +1761,7 @@ _package: ${_PKG_PREREQ}
 	@cd ${.CURDIR} && \
 	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
-	    ${MAKE} package-links; \
+	    ${MAKE} _package-links; \
 	  else \
 	    ${SUDO} ${MAKE} clean=package; \
 	    exit 1; \
@@ -1803,8 +1803,8 @@ ${_F}:
 
 # Some support rules for do-package
 
-package-links:
-	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
+_package-links:
+	@cd ${.CURDIR} && exec ${MAKE} _delete-package-links
 .for _l in FTP CDROM
 .  if ${PERMIT_PACKAGE_${_l}:L} == "yes"
 	@echo "Link to ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}"
@@ -1817,7 +1817,7 @@ package-links:
 .  endif
 .endfor
 
-delete-package-links:
+_delete-package-links:
 .for _l in FTP CDROM
 	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 .endfor
@@ -1873,20 +1873,17 @@ clean:
 	rm -f ${_PACKAGE_COOKIES}
 .    if defined(MULTI_PACKAGES)
 .      for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} delete-package-links
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _delete-package-links
 .      endfor
 .    endif
 .  elif ${clean:L:Mpackage}
-	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
+	@cd ${.CURDIR} && exec ${MAKE} _delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
 .  endif
 .  if ${clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
 .  endif
 .endif
-
-distclean:
-	@${MAKE} clean=dist
 
 RECURSIVE_FETCH_LIST?=	Yes
 
@@ -2407,7 +2404,10 @@ checkpatch:
 	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
 
 clean-depends:
-	@exec ${MAKE} clean=depends
+	@cd ${.CURDIR} && exec ${MAKE} clean=depends
+
+distclean:
+	@cd ${.CURDIR} && exec ${MAKE} clean=dist
 
 delete-package:
 	@cd ${.CURDIR} && exec ${MAKE} clean=package
@@ -2439,14 +2439,17 @@ uninstall deinstall:
 .endif
 
 .PHONY: \
-	_build-dir-depends _fetch-makefile _package \
-	_print-packagename _recurse-all-dir-depends _recurse-run-dir-depends \
-	_recurse-solve-package-depends _recursive-lib-depends-check addsum \
+	_build-dir-depends _delete-package-links _fetch-makefile \
+	_package _package-links _print-packagename \
+	_recurse-all-dir-depends _recurse-lib-depends-check \ 
+	_recurse-run-dir-depends _recurse-solve-package-depends _refetch \
+	addsum \
 	all all-dir-depends build \
 	build-depends build-depends-list build-dir-depends \
 	checkpatch checksum clean \
 	clean-depends configure deinstall \
-	delete-package delete-package-links depends \
+	delete-package \
+	depends \
 	describe distclean distpatch \
 	do-build do-configure do-distpatch \
 	do-extract do-fetch do-install \
@@ -2456,7 +2459,7 @@ uninstall deinstall:
 	full-run-depends homepage-links install \
 	lib-depends lib-depends-check lib-depends-list \
 	link-categories makesum manpages-check \
-	package package-links patch \
+	package patch \
 	plist post-build post-configure \
 	post-distpatch post-extract post-fetch \
 	post-install post-package post-patch \
@@ -2465,7 +2468,7 @@ uninstall deinstall:
 	pre-install pre-package pre-patch \
 	pre-regress print-build-depends print-run-depends \
 	readme readmes rebuild \
-	refetch regress regress-depends \
+	regress regress-depends \
 	reinstall repackage run-depends \
 	run-depends-list run-dir-depends show \
 	uninstall unlink-categories update-patches \
