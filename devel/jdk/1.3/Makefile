@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/17 18:22:48 kurt Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -50,7 +50,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 
 FLAVORS=		no_plugin
 PSEUDO_FLAVORS=		native_bootstrap
-FLAVOR?=
+FLAVOR?=		no_plugin
 
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		:jdk-1.3*:devel/jdk/1.3
@@ -64,6 +64,7 @@ NO_SYSTRACE=		Yes
 WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio pthread
 
 .if !${FLAVOR:L:Mno_plugin}
+BROKEN=			"Security Vulnerability With Java Plug-in in JRE/SDK (SunSolve \#57591)"
 LIB_DEPENDS=		glib.1::devel/glib \
 			gtk.1.2::x11/gtk+ \
 			nspr4.1::devel/nspr
