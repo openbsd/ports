@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2003/05/18 05:39:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.40 2003/05/18 15:22:45 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -6,8 +6,7 @@ COMMENT=	"open source version of the Netscape browser"
 VER=		1.4b
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
-DISTFILES=	mozilla-source-${VER}.tar.bz2 \
-		${EXTRA_FILE}:0
+DISTFILES=	mozilla-source-${VER}.tar.bz2
 
 CATEGORIES=	www
 
@@ -19,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
-MASTER_SITES0=	http://w1.402.telia.com/~u40214514/
 
 MODULES=	iconv
 MODULES+=	gcc3
@@ -57,7 +55,6 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla
-EXTRA_FILE=	mozilla-${VER}-openbsd-p1.tgz
 
 pre-configure:
 	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
@@ -71,8 +68,7 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/mozilla ${MOB}/mozilla-config ${MOB}/run-mozilla.sh ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/compreg.dat ${WRKDIR}/xpti.dat ${MOZ}/components
 	${INSTALL_DATA} ${MOB}/LICENSE ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/mozilla-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/mozilla-bin ${MOZ}
 
 .include <bsd.port.mk>
