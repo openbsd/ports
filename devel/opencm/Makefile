@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/16 21:11:10 todd Exp $
+# $OpenBSD: Makefile,v 1.17 2003/12/19 00:11:48 espie Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -29,7 +29,7 @@ USE_GMAKE=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -DUSE_SYSTEM_ZLIB" \
 			vl_cv_lib_kerberos=1
 
 LDFLAGS=-L${LOCALBASE}/lib
