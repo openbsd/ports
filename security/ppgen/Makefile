@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/19 00:17:52 matt Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/11 23:01:14 matt Exp $
 
 COMMENT=	"secure passphrase generator"
 
@@ -8,6 +8,7 @@ NEED_VERSION=	1.361
 
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
+# Public domain
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/ppgen/
 DISTFILES=	${DISTNAME}.tar.gz en.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-CONFIGURE_STYLE=autoconf old dest
+CONFIGURE_STYLE=autoconf dest
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ppgen
