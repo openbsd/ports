@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.493 2001/11/12 14:14:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.494 2001/11/12 14:19:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1219,7 +1219,7 @@ _flavor_fragment= \
 			echo 1>&2 ">> Broken dependency: $$dir is a symbolic link"; \
 			exit 1; \
 		fi; \
-		if cd $$dir 2>/dev/null; then \
+		if cd $$dir 2>/dev/null || cd mystuff/$$dir 2>/dev/null; then \
 			:; \
 		else \
 			echo 1>&2 ">> Broken dependency: $$dir non existent"; \
