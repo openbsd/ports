@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xwnmo_xwnmo_do_xjpdrct_c,v 1.1 2002/02/28 06:03:27 pvalchev Exp $
+--- Xwnmo/xwnmo/do_xjpdrct.c.orig	Sun Aug 21 23:04:23 1994
++++ Xwnmo/xwnmo/do_xjpdrct.c	Wed Feb 27 22:49:12 2002
+@@ -87,8 +87,6 @@ extern int	cur_sock;
+ #define	sock_clr(array,pos)	(array[pos/BINTSIZE] &= ~(1<<(pos%BINTSIZE)))
+ #define	sock_tst(array,pos)	(array[pos/BINTSIZE] & (1<<(pos%BINTSIZE)))
+ 
+-extern int read(), write();
+-
+ extern XJpClientRec *xjp_clients;
+ extern XJpClientRec *xjp_cur_client;
+ extern XJpInputRec *xjp_inputs;
