@@ -1,10 +1,4 @@
-# OpenBSD makefile for:    9wm
-# Version required:     1.1
-# Date created:         May 16 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 03:04:45 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/05/12 19:11:35 brad Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9

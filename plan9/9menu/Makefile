@@ -1,10 +1,4 @@
-# OpenBSD makefile for:    9menu
-# Version required:     1.5
-# Date created:         December 1, 1997
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/09 04:16:44 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/05/12 19:11:35 brad Exp $
 
 DISTNAME=	9menu-1.5
 CATEGORIES=	plan9
