@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2002/05/20 10:51:16 jsyn Exp $
+# $OpenBSD: Makefile,v 1.103 2002/05/25 16:22:32 naddy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -50,8 +50,6 @@
      SUBDIR += mhash
      SUBDIR += nbaudit
      SUBDIR += nessus
-     SUBDIR += nessus,experimental
-     SUBDIR += nessus,experimental,no_x11
      SUBDIR += nessus,no_x11
      SUBDIR += nfsshell
      SUBDIR += outguess
