@@ -1,0 +1,79 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
+--- configure.orig	Sat Sep  6 19:15:25 2003
++++ configure	Mon Jul  5 22:10:46 2004
+@@ -8691,11 +8691,11 @@ ASFLAGS=
+ 
+ 
+ 
+-COMMON_CFLAGS=" -finline-functions -Wall -Wno-unused -Winline"
++COMMON_CFLAGS="$CFLAGS -finline-functions -Wall -Wno-unused -Winline"
+ PROFILE_CFLAGS=" -pg -fprofile-arcs -ftest-coverage"
+ DEBUG_CFLAGS=" -g3"
+ 
+-
++if test "x$OPTIMIZE" = "xyes"; then
+ OPTIMIZE_CFLAGS="-O3"
+ 
+ echo "$as_me:$LINENO: checking if $CC supports -funroll-all-loops flags" >&5
+@@ -8938,6 +8938,7 @@ echo "${ECHO_T}$ac_cv_try_cflags_ok" >&6
+     else
+         :
+     fi
++fi # OPTIMIZE = yes
+ 
+ # large file support
+ COMMON_FLAGS="$COMMON_FLAGS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+@@ -9181,7 +9182,7 @@ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_pthread_create" = no; then
+   for ac_lib in gthread pthread c_r; do
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9217,7 +9218,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_search_pthread_create="-l$ac_lib"
++  ac_cv_search_pthread_create="-$ac_lib"
+ break
+ else
+   echo "$as_me: failed program was:" >&5
+@@ -12316,7 +12317,7 @@ rm -f conftest.$ac_objext conftest$ac_ex
+   rm -f conf.glibtest
+ 
+ 
+-LIBS="$GLIB_LIBS -ldv"
++LIBS="$GLIB_LIBS -ldv -pthread"
+ CFLAGS=$GLIB_CFLAGS
+ 
+ if test x$have_glib = xtrue; then
+@@ -12979,7 +12980,7 @@ fi;
+     VORBIS_LIBDIR="-L$prefix/lib"
+   fi
+ 
+-  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -lm"
++  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -logg -lm"
+   VORBISFILE_LIBS="-lvorbisfile"
+   VORBISENC_LIBS="-lvorbisenc"
+ 
+@@ -13276,7 +13277,7 @@ fi
+ have_libavcodec=false
+ 
+ OLD_LIBS=$LIBS
+-LIBS="-lavcodec -lm"
++LIBS="-lavcodec -logg -lm"
+ 
+ echo "$as_me:$LINENO: checking for libavcodec" >&5
+ echo $ECHO_N "checking for libavcodec... $ECHO_C" >&6
+@@ -13516,7 +13517,7 @@ fi
+ 
+ # Set CPU specific compiler options
+ 
+-if test "x$RPM_OPT_FLAGS" = "x" ; then
++if test "x$OPTIMIZE" = "xyes" ; then
+     # detect Athlon CPU
+     # the idea is to use -mcpu=athlon to get the important optimization
+     # but keep -march=${host_cpu} from the command line. -march=i686

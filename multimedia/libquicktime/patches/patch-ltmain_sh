@@ -1,0 +1,18 @@
+$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
+--- ltmain.sh.orig	2004-05-10 17:48:34.000000000 -0700
++++ ltmain.sh	2004-05-10 17:52:19.000000000 -0700
+@@ -1775,10 +1775,10 @@ compiler."
+ 	    continue
+ 	  fi
+ 
+-	  if test "$installed" = no; then
+-	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+-	  fi
++	  #if test "$installed" = no; then
++	  #  notinst_deplibs="$notinst_deplibs $lib"
++	  #  need_relink=yes
++	  #fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
+ 	    # figure out the soname

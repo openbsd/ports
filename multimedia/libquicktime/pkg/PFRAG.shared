@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
+lib/libquicktime.so.0.0
+lib/libquicktime_mjpeg.so.0.0
+DYNLIBDIR(%D/lib)

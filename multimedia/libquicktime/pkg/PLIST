@@ -1,0 +1,63 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
+bin/libquicktime_config
+bin/lqt-config
+bin/lqtplay
+bin/qtdechunk
+bin/qtdump
+bin/qtinfo
+bin/qtrechunk
+bin/qtrecover
+bin/qtstreamize
+bin/qtyuv4toyuv
+include/quicktime/colormodels.h
+include/quicktime/jpeg.h
+include/quicktime/libmjpeg.h
+include/quicktime/lqt.h
+include/quicktime/lqt1394_config.h
+include/quicktime/lqt_codecapi.h
+include/quicktime/lqt_codecinfo.h
+include/quicktime/lqt_version.h
+include/quicktime/qtprivate.h
+include/quicktime/quicktime.h
+lib/libquicktime.a
+lib/libquicktime.la
+lib/libquicktime/lqt_audiocodec.a
+@comment lib/libquicktime/lqt_audiocodec.la
+lib/libquicktime/lqt_audiocodec.so
+lib/libquicktime/lqt_dv.a
+@comment lib/libquicktime/lqt_dv.la
+lib/libquicktime/lqt_dv.so
+lib/libquicktime/lqt_ferguson.a
+@comment lib/libquicktime/lqt_ferguson.la
+lib/libquicktime/lqt_ferguson.so
+lib/libquicktime/lqt_mjpeg.a
+@comment lib/libquicktime/lqt_mjpeg.la
+lib/libquicktime/lqt_mjpeg.so
+lib/libquicktime/lqt_opendivx.a
+@comment lib/libquicktime/lqt_opendivx.la
+lib/libquicktime/lqt_opendivx.so
+lib/libquicktime/lqt_png.a
+@comment lib/libquicktime/lqt_png.la
+lib/libquicktime/lqt_png.so
+lib/libquicktime/lqt_rtjpeg.a
+@comment lib/libquicktime/lqt_rtjpeg.la
+lib/libquicktime/lqt_rtjpeg.so
+lib/libquicktime/lqt_svq.a
+@comment lib/libquicktime/lqt_svq.la
+lib/libquicktime/lqt_svq.so
+lib/libquicktime/lqt_videocodec.a
+@comment lib/libquicktime/lqt_videocodec.la
+lib/libquicktime/lqt_videocodec.so
+lib/libquicktime/lqt_vorbis.a
+@comment lib/libquicktime/lqt_vorbis.la
+lib/libquicktime/lqt_vorbis.so
+lib/libquicktime/lqt_xanim.a
+@comment lib/libquicktime/lqt_xanim.la
+lib/libquicktime/lqt_xanim.so
+lib/libquicktime_mjpeg.a
+@comment lib/libquicktime_mjpeg.la
+man/man1/lqtplay.1
+share/aclocal/lqt.m4
+%%SHARED%%
+@dirrm lib/libquicktime
+@dirrm include/quicktime
