@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/29 17:15:37 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2000/05/30 11:37:40 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
 DISTNAME=		abook-0.4.7
@@ -18,13 +18,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 MASTER_SITES=		${HOMEPAGE}
-DISTFILES=		abook-0.4.7
 
 USE_AUTOCONF=		Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abook ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/abook.1 ${PREFIX}/man/man1
+CONFIGURE_ARGS=		--prefix=${PREFIX} 
 
 post-install:
 	strip ${PREFIX}/bin/abook
