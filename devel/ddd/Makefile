@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/08/19 16:32:33 kevlo Exp $
-
-BROKEN=		"Lots of genuine tmpnam() warnings"
+# $OpenBSD: Makefile,v 1.24 2000/12/19 15:26:16 espie Exp $
 
 DISTNAME=	ddd-3.2.1
 CATEGORIES=	devel
@@ -19,9 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
+
+MAKE_FLAGS=	MAINTAINER=${MAINTAINER}
 
 pre-build:
 	@echo ""
