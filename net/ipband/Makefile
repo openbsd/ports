@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/20 20:00:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/17 21:42:12 naddy Exp $
 
 COMMENT=	"pcap based IP traffic monitor"
 
-VERSION=	0.7.1
-DISTNAME=	ipband-${VERSION}
+DISTNAME=	ipband-0.7.2
 CATEGORIES=	net
-NEED_VERSION=	1.504
+NEED_VERSION=	1.518
 
 HOMEPAGE=	http://ipband.sourceforge.net/
 
