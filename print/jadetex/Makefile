@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/24 02:28:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/11 23:53:21 avsm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
-DISTNAME=		jadetex-3.6
+DISTNAME=		jadetex-3.11
 CATEGORIES=     	print
 NEED_VERSION=		1.364
 
-HOMEPAGE=		http://www.tug.org/applications/jadetex/
+HOMEPAGE=		http://jadetex.sourceforge.net/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,8 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.tug.org/applications/jadetex/
-EXTRACT_SUFX=		.zip
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	jadetex
+
 WRKDIST=		${WRKDIR}/jadetex
 
 LIB_DEPENDS=		png.2::graphics/png
@@ -23,7 +24,7 @@ BUILD_DEPENDS=		tex::print/teTeX/base \
 			${LOCALBASE}/share/texmf/web2c/texmf.cnf::print/teTeX/texmf
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
-ALL_TARGET=		default
+ALL_TARGET=		jadetex.fmt pdfjadetex.fmt
 TEXMFLOC=		${PREFIX}/share/texmf
 
 pre-fake:
