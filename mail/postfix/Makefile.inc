@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2003/03/02 05:37:24 david Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2003/03/16 05:55:51 pvalchev Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -18,9 +18,9 @@ HOMEPAGE=	http://www.postfix.org/
 TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
 SUBST_VARS+=	TLSHOMEPAGE
 
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_CDROM=	"cannot be sold, see section 4 of license"
 PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=
