@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/18 13:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/31 14:40:11 brad Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -11,9 +11,9 @@ DISTNAME=		xmms-${VERSION}
 FULLPKGNAME=		xmms-${VERSION}
 FULLPKGNAME-esd=	xmms-esd-${VERSION}
 FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
-DISTDRIVER=		xmms_sun-${VERSION}-p1
+DISTDRIVER=		xmms_sun-${VERSION}-p2
 CATEGORIES=		audio
-NEED_VERSION=		1.402
+NEED_VERSION=		1.435
 HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
