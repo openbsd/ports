@@ -1,0 +1,7 @@
+Squeak is a comprehensive smalltalk 80 system, that was originally
+fostered by Apple and Disney.
+
+Not everything is perfect yet. Sound seems to finally been working.
+Full screen mode does lose the keyboard.
+
+WWW: ${HOMEPAGE}

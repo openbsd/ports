@@ -1,0 +1,13 @@
+#!/bin/sh
+prefix=@PREFIX@
+V=@V@
+
+echo "Installing per-user files for Squeak3.0 in `pwd`"
+
+d=${prefix}/share/squeak
+
+zcat $d/Squeak${V}final.image.gz >Squeak$V.image
+zcat $d/Squeak${V}final.changes.gz >Squeak$V.changes
+zcat $d/ReadMe.txt.gz >ReadMe.txt
+ln -sf $d/SqueakV3.sources
+exec ${prefix}/bin/squeak "$@"

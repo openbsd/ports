@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+bin/inisqueak
+bin/squeak
+lib/squeak/3.0/inisqueak
+lib/squeak/3.0/libProfiler.la
+lib/squeak/3.0/libSystem.la
+lib/squeak/3.0/squeak
+lib/squeak/3.0/squeak.map
+man/man1/squeak.1
+share/doc/squeak-3.0/BUILD.UnixSqueak
+share/doc/squeak-3.0/COPYING
+share/doc/squeak-3.0/COPYRIGHT
+share/doc/squeak-3.0/LICENSE
+share/doc/squeak-3.0/README.CodingStandards
+share/squeak/Squeak3.0final.changes.gz
+share/squeak/Squeak3.0final.image.gz
+share/squeak/SqueakV3.sources
+share/squeak/ReadMe.txt.gz
+%%SHARED%%
+@dirrm share/squeak
+@dirrm share/doc/squeak-3.0
+@dirrm lib/squeak/3.0
+@dirrm lib/squeak

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_unix_Makefile_in,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+--- src/unix/Makefile.in.orig	Tue Mar 13 23:47:37 2001
++++ src/unix/Makefile.in	Tue Mar 13 23:48:00 2001
+@@ -96,6 +96,7 @@ INSTALL_DATA=	@INSTALL_DATA@
+ UNINSTALL=	$(SHELL) $(utldir)/uninstall
+ 
+ AS=		@AS@
++RANLIB=		@RANLIB@
+ AWK=		@AWK@
+ LIBTOOL=	@LIBTOOL@
+ NM=		@NM@
+@@ -163,6 +164,7 @@ sqUnixConfig.h : $(unxdir)/sqUnixConfig.
+ 
+ squeak.a : $(UNX_O) $(VER_O) $(GEN_O)
+ 	$(AR) -rc $@.tmp $(UNX_O) $(VER_O) $(GEN_O)
++	$(RANLIB) $@.tmp
+ 	mv $@.tmp $@
+ 
+ squeak : squeak.a

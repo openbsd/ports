@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_unix_sqUnixSound_c,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+--- src/unix/sqUnixSound.c.orig	Tue Mar 13 23:43:29 2001
++++ src/unix/sqUnixSound.c	Tue Mar 13 23:44:39 2001
+@@ -70,9 +70,13 @@
+ # include <fcntl.h>
+ # include <sys/time.h>
+ # include <sys/ioctl.h>
+-# include <sys/soundcard.h>
++# ifdef __OpenBSD__
++#  include <soundcard.h>
++# else
++#  include <sys/soundcard.h>
++# endif
+ 
+-# if !defined(OPEN_SOUND_SYSTEM) && !defined(__FreeBSD__)
++# if !defined(OPEN_SOUND_SYSTEM) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #    warning: 
+ #    warning: sys/soundcard.h did not define OPEN_SOUND_SYSTEM
+ #    warning: SOUND SUPPORT DISABLED

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix_util_relpath,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+--- src/unix/util/relpath.orig	Wed Feb 28 18:13:45 2001
++++ src/unix/util/relpath	Wed Feb 28 18:13:52 2001
+@@ -44,7 +44,7 @@ cwd=$1
+ path=$2
+ 
+ for dir in `echo $cwd | tr '/' ' '`; do
+-  if expr match $path "/$dir" >/dev/null; then
++  if expr $path : "/$dir" >/dev/null; then
+     path=`echo $path | sed "s,^/$dir,,"`
+     cwd=`echo $cwd | sed "s,^/$dir,,"`
+   fi

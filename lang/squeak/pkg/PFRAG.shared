@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+lib/squeak/3.0/libProfiler.so.0.0
+lib/squeak/3.0/libSystem.so.0.0
+NEWDYNLIBDIR(%D/lib/squeak/3.0)

@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_unix_configure,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+--- src/unix/configure.orig	Mon Feb 12 23:10:09 2001
++++ src/unix/configure	Tue Mar 13 23:42:44 2001
+@@ -3724,42 +3724,12 @@ if test "$GCC" = "yes"; then
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+-echo $ac_n "checking for Open Sound System""... $ac_c" 1>&6
+-echo "configure:3729: checking for Open Sound System" >&5
+-if eval "test \"`echo '$''{'ac_cv_oss'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 3734 "configure"
+-#include "confdefs.h"
+-#include <sys/soundcard.h>
+-int main() {
+-OPEN_SOUND_SYSTEM;
+-; return 0; }
+-EOF
+-if { (eval echo configure:3741: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+-  rm -rf conftest*
+-  ac_cv_oss="yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  ac_cv_oss="no"
+-fi
+-rm -f conftest*
+-fi
+-
+-echo "$ac_t""$ac_cv_oss" 1>&6
+-if $test "$ac_cv_oss" = "yes" -a -e /dev/dsp; then
+-  cat >> confdefs.h <<\EOF
++ac_cv_oss="yes"
++cat >> confdefs.h <<\EOF
+ #define HAVE_OSS 1
++#define OSS_DEVICE "/dev/audio"
+ EOF
+ 
+-  cat >> confdefs.h <<\EOF
+-#define OSS_DEVICE "/dev/dsp"
+-EOF
+-
+-fi
+ echo $ac_n "checking for prefix to use for loadable modules""... $ac_c" 1>&6
+ echo "configure:3765: checking for prefix to use for loadable modules" >&5
+ if eval "test \"`echo '$''{'ac_cv_module_prefix'+set}'`\" = set"; then
