@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2000/06/28 02:15:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2000/07/23 02:37:12 brad Exp $
 bin/gimp
 bin/gimp-config
 bin/gimptool
@@ -72,11 +72,11 @@ include/libgimp/gimptile.h
 include/libgimp/gimptools_pdb.h
 include/libgimp/gimptypes.h
 include/libgimp/gimpui.h
+include/libgimp/gimpundo_pdb.h
 include/libgimp/gimpunit.h
 include/libgimp/gimpunit_pdb.h
 include/libgimp/gimpunitmenu.h
 include/libgimp/gimputils.h
-include/libgimp/gimpundo_pdb.h
 include/libgimp/gimpvector.h
 include/libgimp/gimpwidgets.h
 lib/gimp/1.1/modules/libcdisplay_gamma.a
@@ -365,9 +365,9 @@ share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptexttool.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptile.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptools.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpui.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpundo.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpunit.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimputils.html
-share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpundo.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpvector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpwidgets.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpwire.html

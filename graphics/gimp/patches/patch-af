@@ -1,14 +1,5 @@
---- po/Makefile.in.in.orig	Fri Feb 11 19:31:57 2000
-+++ po/Makefile.in.in	Wed Mar  8 02:20:42 2000
-@@ -18,7 +18,7 @@
- 
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
-+datadir = $(prefix)/share
- localedir = $(datadir)/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
+--- po/Makefile.in.in.orig	Thu Jun 22 16:48:49 2000
++++ po/Makefile.in.in	Sat Jul 22 15:35:19 2000
 @@ -111,9 +111,9 @@
  install-data-no: all
  install-data-yes: all
@@ -46,3 +37,21 @@
  	else \
  	  : ; \
  	fi
+@@ -171,12 +171,12 @@
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
+-	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
++	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
++	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
+ 	done
+-	rm -f $(gettextsrcdir)/po-Makefile.in.in
++	rm -f $(DESTDIR)$(gettextsrcdir)/po-Makefile.in.in
+ 
+ check: all
+ 

@@ -1,11 +1,20 @@
 --- configure.orig	Thu Jun 22 16:49:05 2000
-+++ configure	Tue Jun 27 14:55:45 2000
-@@ -7150,7 +7150,7 @@
- 
- gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
- gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
--localedir='${prefix}/${DATADIRNAME}/locale'
-+localedir='${prefix}/share/locale'
- 
- brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
- gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
++++ configure	Sat Jul 22 15:14:01 2000
+@@ -3478,7 +3478,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -3740,7 +3740,7 @@
+ 		 USE_INCLUDED_LIBINTL=yes
+ 		 CATOBJEXT=.cat
+ 		 INSTOBJEXT=.cat
+-		 DATADIRNAME=lib
++		 DATADIRNAME=share
+ 		 INTLDEPS='$(top_builddir)/intl/libintl.a'
+ 		 INTLLIBS=$INTLDEPS
+ 		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`

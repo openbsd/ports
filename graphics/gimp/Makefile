@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2000/07/04 02:09:21 krw Exp $
+# $OpenBSD: Makefile,v 1.50 2000/07/23 02:37:11 brad Exp $
 
 DISTNAME=	gimp-1.1.24
 CATEGORIES=	graphics
@@ -30,25 +30,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# People that installed a previous version of gimp wound up with
-# shared libs that might not contain all the functions needed to
-# link the current objects.
-# Check that out here (and bitch if necessary).
-pre-extract:
-	@if [ -f ${X11BASE}/lib/libgimp.so.?.? -o \
-	      -f ${LOCALBASE}/lib/libgimp.so.?.? ]; then \
-	   echo "+-------------------"; \
-	   echo "| ERROR: you MUST remove the existing gimp installation"; \
-	   echo "| before compiling this version. To fully remove run"; \
-	   echo "| these commands as user root"; \
-	   echo "|"; \
-	   echo "|      pkg_delete -f `pkg_info -e 'gimp-*'`"; \
-	   echo "|      ldconfig -R"; \
-	   echo "|"; \
-	   echo "+-------------------"; \
-	   exit 1; \
-	fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
