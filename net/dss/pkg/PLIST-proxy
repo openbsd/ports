@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-proxy,v 1.1.1.1 2003/05/23 16:19:28 jakob Exp $
+sbin/streamingproxy
+share/doc/dss/StreamingProxy.html
+share/examples/dss/streamingproxy.conf
+@unexec rmdir %D/share/examples/dss 2>/dev/null || true
+@unexec rmdir %D/share/doc/dss 2>/dev/null || true
