@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/09/23 05:42:37 jolan Exp $
 
 COMMENT=	"graphical tetris clone"
-DISTNAME=	Tutris-1.0.0
+DISTNAME=	Tutris-1.0.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
