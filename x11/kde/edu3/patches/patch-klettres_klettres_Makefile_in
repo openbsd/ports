@@ -1,0 +1,28 @@
+$OpenBSD: patch-klettres_klettres_Makefile_in,v 1.1 2002/09/15 19:19:48 naddy Exp $
+--- klettres/klettres/Makefile.in.orig	Sun Sep 15 20:52:04 2002
++++ klettres/klettres/Makefile.in	Sun Sep 15 20:55:10 2002
+@@ -641,10 +641,9 @@ install-data-local:
+ #	$(INSTALL_DATA) $(srcdir)/lo32-app-klettres.png $(kde_icondir)/locolor/32x32/apps/klettres.png
+ #	$(mkinstalldirs) $(kde_icondir)/locolor/16x16/apps/
+ #	$(INSTALL_DATA) $(srcdir)/lo16-app-klettres.png $(kde_icondir)/locolor/16x16/apps/klettres.png
+-	$(mkinstalldirs) $(kde_datadir)/klettres/
+-	$(INSTALL_DATA) $(srcdir)/level1.txt $(kde_datadir)/klettres/level1.txt
+-	$(mkinstalldirs) $(kde_datadir)/klettres/
+-	$(INSTALL_DATA) $(srcdir)/level3.txt $(kde_datadir)/klettres/level3.txt
++	$(mkinstalldirs) $(DESTDIR)$(kde_datadir)/klettres/
++	$(INSTALL_DATA) $(srcdir)/level1.txt $(DESTDIR)$(kde_datadir)/klettres/level1.txt
++	$(INSTALL_DATA) $(srcdir)/level3.txt $(DESTDIR)$(kde_datadir)/klettres/level3.txt
+ 
+ uninstall-local:
+ #>- 	-rm -f $(kde_appsdir)/Edutainment/Frenchklettres.desktop
+@@ -652,8 +651,8 @@ uninstall-local:
+ 	-rm -f $(DESTDIR)$(kde_appsdir)/Edutainment/Frenchklettres.desktop
+ #	-rm -f $(kde_icondir)/locolor/32x32/apps/klettres.png
+ #	-rm -f $(kde_icondir)/locolor/16x16/apps/klettres.png
+-	-rm -f $(kde_datadir)/klettres/level1.txt
+-	-rm -f $(kde_datadir)/klettres/level3.txt
++	-rm -f $(DESTDIR)$(kde_datadir)/klettres/level1.txt
++	-rm -f $(DESTDIR)$(kde_datadir)/klettres/level3.txt
+ 
+ messages: rc.cpp
+ 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \

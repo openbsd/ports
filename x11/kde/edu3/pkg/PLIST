@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/09/15 19:19:48 naddy Exp $
 @pkgcfl klettres-*
 @pkgcfl kmessedwords-*
 @pkgcfl kstars-*
@@ -93,6 +93,8 @@ share/apps/kgeo/toolbar/tracer.png
 share/apps/kgeo/toolbar/triangle.png
 share/apps/kgeo/toolbar/vector.png
 share/apps/kgeo/toolbar/window_fullscreen.png
+share/apps/klettres/level1.txt
+share/apps/klettres/level3.txt
 share/apps/klettres/pics/klettres_back.jpeg
 share/apps/klettres/pics/klettres_splash.png
 share/apps/klettres/sons/a-0.wav
