@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/03/05 16:09:07 naddy Exp $
+
+BROKEN=		"does not build with Qt 3.1"
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
