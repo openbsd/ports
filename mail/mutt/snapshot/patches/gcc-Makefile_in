@@ -1,11 +1,13 @@
-$OpenBSD: gcc-Makefile_in,v 1.1 2002/03/04 20:17:23 lebel Exp $
---- Makefile.in	Sun Mar  3 02:19:37 2002
-+++ Makefile.in-	Mon Mar  4 14:59:53 2002
-@@ -710,6 +710,7 @@
- 	mutt_curses.h rfc2047.h rfc2231.h mx.h mailbox.h mime.h copy.h \
- 	pager.h pgp.h pgplib.h
- sha1.o: sha1.c sha1.h config.h
+$OpenBSD: gcc-Makefile_in,v 1.2 2002/03/31 17:14:24 lebel Exp $
+--- Makefile.in.orig	Sun Mar 31 11:43:40 2002
++++ Makefile.in	Sun Mar 31 11:46:57 2002
+@@ -294,6 +294,9 @@ uninstall-binPROGRAMS:
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
+ 
++sha1.o: sha1.c
 +	$(COMPILE) -O0 -c $<
- signal.o: signal.c mutt.h config.h rfc822.h hash.h charset.h \
- 	mutt_regex.h ascii.h protos.h mbyte.h lib.h globals.h \
- 	mutt_curses.h
++
+ .c.o:
+ 	$(COMPILE) -c $<
+ 
