@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2003/09/29 05:41:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2003/12/07 19:45:42 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.6
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -32,6 +32,7 @@ CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
+		 --disable-ltdl \
 		 --enable-pthread-sem
 
 # XXX gcc 3/nasm issue.
