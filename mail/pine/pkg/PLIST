@@ -4,9 +4,10 @@ bin/pine
 bin/pgpencrypt
 bin/pgpdecode
 bin/pgpsign
-etc/dot.pinerc.pgp.sample
 man/man1/pico.1
 man/man1/pilot.1
 man/man1/pine.1
+@exec mkdir -p %D/share/doc/pine
 share/doc/pine/tech-notes.txt
+share/doc/pine/dot.pinerc.pgp.sample
 @dirrm share/doc/pine
