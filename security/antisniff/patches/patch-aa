@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat Aug 21 15:14:36 1999
++++ Makefile	Thu Oct 28 19:22:33 1999
+@@ -9,7 +9,7 @@
+ # DEFAULTS, possibly overridden by <systype> recursive call:
+ #debugging
+ # DFLAGS = -DDEBUG -Wall -g
+-CFLAGS = -O
++CFLAGS ?= -O
+ XFLAGS =	# xtra cflags, set by systype targets
+ XLIBS =		# xtra libs if necessary?
+ STATIC =
+@@ -84,7 +84,7 @@
+ ####ALL####
+ OpenBSD-all :
+ 	make -e $(BSD-ALL) $(MFLAGS) XFLAGS='-D_OpenBSD_ -D_BIT_FIELDS_LTOH' \
+-	XLIBS='-lkvm'
++	XLIBS='-lkvm -lpcap'
+ 
+ solaris25-all :
+ 	make -e $(SOLARIS-ALL) $(MFLAGS) XFLAGS='-DSOLARIS -DSOLARIS25' \

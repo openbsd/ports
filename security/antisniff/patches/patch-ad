@@ -1,0 +1,20 @@
+--- etherping.c.orig	Sat Dec 12 15:40:06 1998
++++ etherping.c	Thu Oct 28 19:15:03 1999
+@@ -48,6 +48,7 @@
+   struct ether_addr e_src;
+   struct in_addr iaddr;
+   char promiscGuy[MAX_LEN];
++  static char *dev = NULL;
+ 
+   fromlen = sizeof(from);
+ 
+@@ -92,7 +93,8 @@
+ #else
+   snprintf(ether_src, sizeof(ether_src), "%s", ether_ntoa(&e_src));
+ #endif
+-  getipaddr(DEVICENAME, &iaddr);
++  if (!dev) dev = strdup(pcap_lookupdev(NULL));
++  getipaddr(dev, &iaddr);
+   icmp_pack = (char *)make_icmp_echo(ether_addr, ether_src, target_ip, inet_ntoa(iaddr), ident, &len);
+ /*   send_raw_frame(fd, icmp_pack, len, 0);  */
+ 

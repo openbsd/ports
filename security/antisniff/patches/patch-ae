@@ -1,0 +1,10 @@
+--- includes.h.orig	Sat Dec 12 15:40:07 1998
++++ includes.h	Thu Oct 28 19:14:52 1999
+@@ -60,6 +60,7 @@
+ #endif
+ 
+ #include <arpa/nameser.h>
++#include <pcap.h>
+ 
+ #include "ip_icmp.h"
+ 

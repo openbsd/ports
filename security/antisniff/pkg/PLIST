@@ -1,0 +1,4 @@
+bin/antisniff
+share/doc/antisniff/ANTI_SNIFFER_DOCS
+share/doc/antisniff/LICENSE
+@dirrm share/doc/antisniff

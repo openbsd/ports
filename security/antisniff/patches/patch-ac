@@ -1,0 +1,15 @@
+--- bpf_readwrite.c.orig	Wed Oct  1 15:51:36 1997
++++ bpf_readwrite.c	Thu Oct 28 19:21:27 1999
+@@ -48,8 +48,10 @@
+ 
+ /*	(void) strncpy(ifr.ifr_name, device, sizeof(ifr.ifr_name)); */
+   intName = getenv(ANTI_INTERFACE);
+-  if (!intName)
+-    (void) strncpy(ifr.ifr_name, DEVICENAME, sizeof(ifr.ifr_name)); 
++  if (!intName) {
++    intName = strdup(pcap_lookupdev(NULL));
++    (void) strncpy(ifr.ifr_name, intName, sizeof(ifr.ifr_name));
++  }
+   else {
+     intPtr = strrchr(intName, '/');
+     if (intPtr)
