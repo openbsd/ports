@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/03 02:29:50 jolan Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
@@ -33,7 +33,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mplugin}
 MOZ=mozilla
-BUILD_DEPENDS=	:mozilla-devel->=1.4b:www/mozilla,-devel
+BUILD_DEPENDS=	:mozilla-devel->=1.4:www/mozilla,-devel
 CFLAGS+=	-DMOZ_X11
 PORTPATH+=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/${MOZ}
 .endif
