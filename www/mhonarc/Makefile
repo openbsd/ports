@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/07 21:37:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
@@ -20,7 +20,7 @@ MASTER_SITES=		http://www.mhonarc.org/tar/ \
 			http://www.oac.uci.edu/indiv/ehood/tar/ \
 			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ 
 
-BUILD_DEPENDS=		::security/p5-Digest-MD5
+BUILD_DEPENDS=		:p5-Digest-MD5-*:security/p5-Digest-MD5
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 post-extract:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2002/06/10 03:14:35 wilfried Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -9,7 +9,7 @@
 
 .if ${EMUL_TYPE} == "linux"
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-BUILD_DEPENDS=	::emulators/redhat/base 
+BUILD_DEPENDS=	:redhat_base-*:emulators/redhat/base 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 SUPPORTED=	supported
 ONLY_FOR_ARCHS=	i386

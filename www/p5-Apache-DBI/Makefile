@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
@@ -9,8 +9,8 @@ CATEGORIES=	www databases perl5
 NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-RUN_DEPENDS=	::www/mod_perl \
-		::databases/p5-DBI
+RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
+		:p5-DBI-*:databases/p5-DBI
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 		

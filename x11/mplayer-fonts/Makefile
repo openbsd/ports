@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/28 11:51:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/10 03:18:35 wilfried Exp $
 
 COMMENT='subtitle font for mplayer'
 CATEGORIES=x11
-BUILD_DEPENDS=::x11/mplayer-fontmaker
-RUN_DEPENDS=::x11/mplayer
+BUILD_DEPENDS=:mplayer-fontmaker-*:x11/mplayer-fontmaker
+RUN_DEPENDS=:mplayer-*:x11/mplayer
 
 FLAVORS=luxi-sans luxi-sans-bold luxi-sans-italic
 FLAVOR?=luxi-sans

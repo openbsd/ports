@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/06/08 00:48:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/06/10 03:18:35 wilfried Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -27,7 +27,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
 .include <bsd.own.mk>
 
 .if ${ELF_TOOLCHAIN} == "no"
-BUILD_DEPENDS=	::devel/binutils/stable
+BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
 .endif
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
@@ -111,7 +111,7 @@ pre-fetch:
 	@echo "           kernel does not have this option enabled by default."
 	@echo
 .endif
-RUN_DEPENDS+=	win32/divx.dll::graphics/win32-codecs
+RUN_DEPENDS+=	win32/divx.dll:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
 .endif

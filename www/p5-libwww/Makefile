@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/16 04:43:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
@@ -8,12 +8,12 @@ CATEGORIES=	www perl5
 NEED_VERSION=	1.526
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=LWP/}
 
-BUILD_DEPENDS=  ::www/p5-URI \
-		::www/p5-HTML-Parser \
-		::net/p5-libnet \
-		::security/p5-Digest-MD5 \
-		::security/p5-Crypt-SSLeay \
-		::www/p5-HTTP-GHTTP
+BUILD_DEPENDS=  :p5-URI->1.10:www/p5-URI \
+		:p5-HTML-Parser->=2.20:www/p5-HTML-Parser \
+		:p5-libnet-*:net/p5-libnet \
+		:p5-Digest-MD5-*:security/p5-Digest-MD5 \
+		:p5-Crypt-SSLeay-*:security/p5-Crypt-SSLeay \
+		:p5-HTTP-GHTTP-*:www/p5-HTTP-GHTTP
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/09 01:36:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2002/06/10 03:18:35 wilfried Exp $
 
 COMMENT=	"Tk 8.0 bindings for Perl"
 COMMENT-demo=	"demonstrate the features of ptk"
@@ -14,7 +14,7 @@ MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 
-BUILD_DEPENDS=	::www/p5-HTML-Parser
+BUILD_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

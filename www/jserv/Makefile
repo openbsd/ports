@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 14:21:30 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/10 03:14:35 wilfried Exp $
 
 BROKEN=	"HANDLER THREAD PROBLEM: java.net.SocketException: Resource temporarily unavailable"
 
@@ -22,7 +22,7 @@ HOMEPAGE=	http://jakarta.apache.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-RUN_DEPENDS=	::www/jakarta-tomcat/v3
+RUN_DEPENDS=	:jakarta-tomcat-3.*:www/jakarta-tomcat/v3
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/10 03:14:34 wilfried Exp $
 
 COMMENT=	"html editor designed for the experienced web designer"
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=   ${HOMEPAGE}
 
-RUN_DEPENDS=    ::www/weblint \
-		::graphics/ImageMagick \
-		::x11/tk/8.3
+RUN_DEPENDS=    :weblint-*:www/weblint \
+		:ImageMagick-*:graphics/ImageMagick \
+		:tk-8.3.*:x11/tk/8.3
 
 NO_BUILD=	Yes
 

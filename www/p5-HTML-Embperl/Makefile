@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=	"embperl allows you to embed perl in your HTML documents"
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::www/mod_perl
-RUN_DEPENDS=	::www/mod_perl
+BUILD_DEPENDS=	:mod_perl->=1.22:www/mod_perl
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	EPHTTPD="/usr/sbin/httpd" APACHE_SRC="/usr/lib/apache"

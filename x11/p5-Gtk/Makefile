@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/07 21:37:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/10 03:18:35 wilfried Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -26,8 +26,8 @@ USE_X11=	Yes
 LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
 		gdk_pixbuf.2::graphics/gdk-pixbuf \
 		gdk_imlib.19::graphics/imlib
-BUILD_DEPENDS=	::textproc/p5-XML-Parser \
-		::textproc/p5-XML-Writer
+BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
+		:p5-XML-Writer-*:textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

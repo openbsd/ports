@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/07 21:37:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=	"modules for use in writing cgi scripts"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=CGI/}
 
-BUILD_DEPENDS=	::www/p5-libwww
+BUILD_DEPENDS=	:p5-libwww-*:www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

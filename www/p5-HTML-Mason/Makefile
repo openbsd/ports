@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/07 21:37:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/10 03:14:35 wilfried Exp $
 
 COMMENT=	"high-performance dynamic web authoring system"
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::devel/p5-Time-HiRes \
-		::devel/p5-MLDBM \
-		::devel/p5-Params-Validate \
-		::www/mod_perl
+BUILD_DEPENDS=	:p5-Time-HiRes->=1.19:devel/p5-Time-HiRes \
+		:p5-MLDBM->=2:devel/p5-MLDBM \
+		:p5-Params-Validate->=0.04:devel/p5-Params-Validate \
+		:mod_perl-*:www/mod_perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
