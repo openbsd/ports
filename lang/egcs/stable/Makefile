@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/07/09 10:26:18 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2001/07/10 09:38:32 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -291,8 +291,10 @@ send-results:
 
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
+.if defined(PACKAGING) && defined(SUBPACKAGE)
+.  if !empty(SUBPACKAGE)
 RUN_DEPENDS+=egcc::lang/egcs/stable
+.  endif
 .endif
 
 .include <bsd.port.mk>
