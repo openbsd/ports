@@ -1,7 +1,11 @@
-*** icb/unix.c.orig	Wed Jul 15 20:39:27 1998
---- icb/unix.c	Wed Jul 15 20:44:24 1998
+*** icb/unix.c.orig	Sat Feb 25 03:20:31 1995
+--- icb/unix.c	Thu Oct 22 12:47:12 1998
 ***************
-*** 13,19 ****
+*** 9,19 ****
+  #include "externs.h"
+  #include <pwd.h>
+  #include <sys/dir.h>
+  
   #undef stty
   #undef gtty
   
@@ -9,7 +13,14 @@
   
   #ifdef linux
   #include <bsd/sgtty.h>
---- 13,40 ----
+--- 9,43 ----
+  #include "externs.h"
+  #include <pwd.h>
+  #include <sys/dir.h>
++ #include <sys/types.h>
++ #include <sys/stat.h>
++ #include <unistd.h>
+  
   #undef stty
   #undef gtty
   
@@ -39,7 +50,7 @@
   #ifdef linux
   #include <bsd/sgtty.h>
 ***************
-*** 22,35 ****
+*** 22,39 ****
   #endif
   
   #define TTYSTRUCT sgttyb
@@ -54,7 +65,11 @@
   
   char *getlogin();
   
---- 43,51 ----
+  struct TTYSTRUCT origtty;	/* holds the user's original term settings */
+  
+  int badttyinfo = 0;	/* used when running under some weird modes */
+  
+--- 46,60 ----
   #endif
   
   #define TTYSTRUCT sgttyb
@@ -63,6 +78,12 @@
 ! #endif
   
   char *getlogin();
+  
+  struct TTYSTRUCT origtty;	/* holds the user's original term settings */
++ struct stat origtty_stats;	/* holds termainal stats */
++ char *mytty = NULL;		/* holds terminal name */
+  
+  int badttyinfo = 0;	/* used when running under some weird modes */
   
 ***************
 *** 79,91 ****
@@ -79,7 +100,7 @@
   }
   
   
---- 95,107 ----
+--- 100,112 ----
   pushback(c)
   char c;
   {
@@ -120,10 +141,15 @@
   	/* get local special chars */
    	if (ioctl(0, TIOCGLTC, &lt) < 0) {
   		ttyinfo.redraw = '\022'; /* ^R */
---- 110,134 ----
+--- 115,144 ----
   
   getterm()
   {
+! 	/* get terminal stats */
+! 	if ((mytty = ttyname(STDERR_FILENO))) {
+! 		if (stat(mytty, &origtty_stats)) mytty = NULL;
+! 	}
+! 
 ! #ifndef USE_TERMIO
   	struct ltchars lt;
 ! #endif /* USE_TERMIO */
@@ -158,7 +184,7 @@
   
   	/* get the current window size */
   	getwinsize();
---- 137,146 ----
+--- 147,156 ----
   		ttyinfo.redraw = lt.t_rprntc;
   		ttyinfo.werase = lt.t_werasc;
   	}
@@ -170,7 +196,14 @@
   	/* get the current window size */
   	getwinsize();
 ***************
-*** 145,158 ****
+*** 138,158 ****
+  {
+  	struct TTYSTRUCT tty;
+  
+  	if (badttyinfo)
+  		return;
+  
+- 
   	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
   
   	/* turn on cbreak - turn off echo */
@@ -185,7 +218,17 @@
   
   	echomode = 0;
   	/* set the new flags */
---- 161,174 ----
+--- 164,187 ----
+  {
+  	struct TTYSTRUCT tty;
+  
++ 	/* disable biff/mesg */
++ 	if (mytty)
++ 		chmod(mytty, origtty_stats.st_mode & ~(S_IXUSR | S_IWGRP));
++ 
+  	if (badttyinfo)
+  		return;
+  
   	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
   
   	/* turn on cbreak - turn off echo */
@@ -201,6 +244,19 @@
   	echomode = 0;
   	/* set the new flags */
 ***************
+*** 167,172 ****
+--- 196,205 ----
+  
+  restoreterm()
+  {
++ 	/* restore terminal stats */
++ 	if (mytty)
++ 		chmod(mytty, origtty_stats.st_mode);
++ 
+  	if (badttyinfo)
+  		return;
+  
+***************
 *** 258,268 ****
   	}
   
@@ -213,7 +269,7 @@
   
   	echomode = 1;
   
---- 274,284 ----
+--- 291,301 ----
   	}
   
   	/* turn on echo */
@@ -238,7 +294,7 @@
   
   	echomode = 0;
   
---- 303,313 ----
+--- 320,330 ----
   	}
   
   	/* turn off echo */
@@ -249,3 +305,4 @@
 ! #endif /* USE_TERMIO */
   
   	echomode = 0;
+  

@@ -1,9 +1,10 @@
-@cwd /usr/local
-@name icb-5.0.9
 bin/icb
 lib/icb/sample.icbrc
 lib/icb/bartender
 lib/icb/confuse
 lib/icb/echofile
-lib/icbserverdb
 @dirrm lib/icb
+@unexec echo "***"
+@unexec echo "*** Leaving %D/lib/icbserverdb. You should delete it"
+@unexec echo "*** manually if you don't want to keep ICB servers database."
+@unexec echo "***"

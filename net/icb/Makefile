@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/10/20 08:39:47 form Exp $
+# $OpenBSD: Makefile,v 1.8 1998/10/22 06:31:47 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
@@ -20,7 +20,12 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/lib
+	@if [ -f ${PREFIX}/lib/icbserverdb ]; then \
+		${ECHO} "*** Found ${PREFIX}/lib/icbserverdb - not replacing"; \
+	else \
+		${ECHO} "Installing default ${PREFIX}/lib/icbserverdb."; \
+		${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/lib; \
+	fi
 	${INSTALL} -d ${PREFIX}/lib/icb
 	${INSTALL_DATA} ${WRKSRC}/sample.icbrc \
 			${WRKSRC}/contrib/bartender \
