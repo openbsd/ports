@@ -1,0 +1,5 @@
+GtkHTML is a lightweight HTML rendering/printing/editing engine.
+It was originally based on KHTMLW, part of the KDE project, but is
+now being developed independently.
+
+WWW: ${HOMEPAGE}
