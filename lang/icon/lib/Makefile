@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.8 2000/08/01 12:38:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/08/02 23:03:27 espie Exp $
 
 VERSION=9.3.3
 DISTNAME=icon_lib-${VERSION}
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=Yes
 # Anyway, since source is available, using pre-compiled binaries is not
 # OpenBSD policy...
 
-MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/library/
+MASTER_SITES=ftp://ftp.cs.arizona.edu/icon/library/
 DISTFILES=bipl.tgz gipl.tgz info.tgz
 WRKDIST=	${WRKDIR}
 
