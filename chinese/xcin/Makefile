@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/30 16:01:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/01/28 07:28:07 kevlo Exp $
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
 CATEGORIES=	chinese
 NEED_VERSION=   1.307
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/old/ \
-		ftp://ftp.ncu.edu.tw/OS/Linux/Chinese/xcin/xcin/ \
-		ftp://linux.cis.nctu.edu.tw/packages/chinese/X/xcin/xcin/
+		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
 HOMEPAGE=	http://xcin.linux.org.tw/
 

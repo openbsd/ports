@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/19 02:53:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/01/28 07:28:10 kevlo Exp $
 
 DISTNAME=       zh-fonts-taipei
 CATEGORIES=     chinese x11
@@ -6,7 +6,8 @@ NEED_VERSION=	1.319
 DIST_SUBDIR=    zh-fonts
 
 MASTER_SITES=	ftp://ftp.nsysu.edu.tw/Linux/packages/chinese/fonts/taipeifont/ \
-		ftp://ftp.ee.ncku.edu.tw/pub/Linux/packages/chinese/fonts/taipeifont/
+		ftp://ftp.ee.ncku.edu.tw/pub/Linux/packages/chinese/fonts/taipeifont/ \
+		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

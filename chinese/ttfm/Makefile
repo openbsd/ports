@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/21 15:04:38 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.3 2001/01/28 07:28:12 kevlo Exp $ 
 
 DISTNAME=       ttfm-0.9.2
 PKGNAME=        zh-${DISTNAME}
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/ \
+		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
 LIB_DEPENDS=	tiff.35::graphics/tiff
 
