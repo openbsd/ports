@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2004/06/15 02:19:56 brad Exp $
+# $OpenBSD: Makefile,v 1.71 2004/06/22 08:13:11 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-nas \
 		--disable-liblzo \
 		--disable-caca \
+		--disable-vidix \
 		--enable-select \
-		--enable-vidix \
 		--enable-vorbis \
 		--enable-menu \
 		--enable-iconv \
@@ -63,16 +63,15 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--confdir=${CONFDIR}
-CONFIGURE_ENV+="TMPDIR=${WRKBUILD}"
+CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
 .if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
 .if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS+=--target=ppc-openbsd \
-		--disable-altivec
-.endif
+CONFIGURE_ARGS+=--disable-altivec
+ .endif
 
 FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 aa
 FLAVOR?=

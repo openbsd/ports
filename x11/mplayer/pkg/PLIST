@@ -1,16 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/05/06 07:27:49 biorn Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/06/22 08:13:12 brad Exp $
 bin/mencoder
 bin/mplayer
-lib/mplayer/vidix/cyberblade_vid.so
-lib/mplayer/vidix/mach64_vid.so
-lib/mplayer/vidix/mga_crtc2_vid.so
-lib/mplayer/vidix/mga_vid.so
-lib/mplayer/vidix/nvidia_vid.so
-lib/mplayer/vidix/pm3_vid.so
-lib/mplayer/vidix/radeon_vid.so
-lib/mplayer/vidix/rage128_vid.so
-lib/mplayer/vidix/sis_vid.so
-%%SHARED%%
 man/man1/mencoder.1
 man/man1/mplayer.1
 share/doc/mplayer/amiga.html
@@ -91,6 +81,4 @@ share/examples/mplayer/mplayer.conf
 @comment @dirrm share/mplayer
 @dirrm share/examples/mplayer
 @dirrm share/doc/mplayer
-@dirrm lib/mplayer/vidix
-@dirrm lib/mplayer
 @extraunexec rm -rf ${CONFDIR}
