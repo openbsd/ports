@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/08/18 19:00:05 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/19 04:08:53 fgsch Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
@@ -25,6 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-metamail \
+			--without-pgp \
+			--without-pgpk \
 			--with-gpg=${LOCALBASE}/bin/gpg \
 			--with-screen=ncurses \
 			--enable-break-long-lines \
