@@ -1,0 +1,200 @@
+$OpenBSD: patch-src_main-cmd_c,v 1.1 2002/03/20 16:19:52 espie Exp $
+--- src/main-cmd.c.orig	Wed Mar 20 16:15:00 2002
++++ src/main-cmd.c	Wed Mar 20 16:55:43 2002
+@@ -19,11 +19,14 @@
+ 
+ #include "config.h"
+ 
+-#ifdef HAVE_ARGP_H
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <argp.h>
++#ifdef HAVE_ARGP_H
++# include <argp.h>
++#else
++# include <unistd.h>
++#endif
+ #include <math.h>
+ #include <string.h>
+ #include <time.h>
+@@ -51,6 +54,7 @@ int score_old = 0;
+ int dump = 0;
+ int dump_internal = 0;
+ 
++#ifdef HAVE_ARGP
+ static error_t parse_opt (int key, char *arg, struct argp_state *state)
+ {
+   char *p;
+@@ -260,6 +264,160 @@ struct argp argp = 
+   "%s for the score, %t for the title, %a for the author and %f for the filename. "
+   "The default format string is '%4r %7s %-25t %a'.",
+ };
++#else
++void
++usage(int c)
++{
++	fprintf(stderr, "%s, by %s\n", argp_program_version,
++	    argp_program_bug_address);
++	if (c)
++	    fprintf(stderr, "Invalid argument for -%c\n", c);
++	fprintf(stderr, "Usage:\n"
++	"\tcorewars [-bghHinopxy] [-a SCORE] [-c SCORE] [-d NUMBER]\n"
++		"\t\t[-e CELLS] [-f FORMAT] [-k SCORE] [-l COREWARS|REDCODE]\n"
++		"\t\t[-m CYCLES] [-r NUMBER] [-s SIZE] [-t THREADS]\n"
++		"\t\t[-z CELLS]\n");
++	exit(1);
++}
++
++void
++description()
++{
++	fprintf(stderr, "%s, by %s\n", argp_program_version,
++	    argp_program_bug_address);
++	fprintf(stderr, 
++"  -l LANGUAGE Select language (COREWARS or REDCODE, default COREWARS)\n"
++"  -s SIZE     Set memory size (cells, 625<=SIZE<=1000000, default 6400)\n"
++"  -m CYCLES   Set maximum number of cycles to execute (default 1000000)\n"
++"  -t THREADS  Set maximum threads a process may have (default 1000)\n"
++"  -e CELLS    Set maximum program size (default 200)\n"
++"  -z CELLS    Set minimum distance (default 100)\n"
++"  -y          Don't stop when only one process left\n"
++"  -d NUMBER   Set number of copies to load per default (default 1)\n"
++"  -r NUMBER   Set number of games to play (default 1)\n"
++"  -i          Forbid self move instruction (default off)\n"
++"  -a SCORE    Score for every step the process was alive (default 1)\n"
++"  -c SCORE    Score for every cell the process owns (default 1)\n"
++"  -k SCORE    Score for evey other process the process has killed (default 100)\n"
++"  -o          Old-Style scoring, the only surviving process gets 3 points,\n"
++"                  a surviving process gets 1 point\n"
++"  -n          Use rank in each game to create final score\n"
++"                  (instead of the game score)\n"
++"  -b          Use score from best copy (instead of summing the scores\n"
++"                  of all copies)\n"
++"  -x          Suppress initialisation of the random number generator\n"
++"  -f FORMAT   Set the format for the highscore table\n"
++"  -h          Suppress highscore table header\n"
++"  -p          Dump the programs and exit\n"
++"  -g          Dump the programs using an internal format and exit\n"
++"  -H          Display this page\n");
++	exit(0);
++}
++
++void
++old_fashioned_parse(int argc, char *argv[], char ***file_list)
++{
++	int c;
++	char *p;
++
++	while (c = getopt(argc, argv, 
++	    "Hl:s:m:t:e:z:yd:r:ia:c:k:onbxf:hpg") != -1)
++	    switch(c) {
++	    case 'l':
++	    	if (strcmp(optarg, "COREWARS") == 0)
++			LANGUAGE = LANGUAGE_CW;
++		else if (strcmp(optarg, "REDCODE") == 0)
++			LANGUAGE = LANGUAGE_RC;
++	    	else
++			usage(0);
++		break;
++	    case 's':
++	    	SIZE = atoi(optarg);
++		if (SIZE < SIZE_MIN || SIZE > SIZE_MAX) {
++			usage(c);
++		}
++		DIMENSIONX = (int) sqrt(SIZE);
++		DIMENSIONY = (SIZE+DIMENSIONX-1) / DIMENSIONX;
++		break;
++	    case 'm':
++	    	MAX_CYCLES = atoi(optarg);
++		if (MAX_CYCLES < 1)
++			usage(c);
++		break;
++	    case 't':
++	    	MAX_THREADS = atoi(optarg);
++		if (MAX_THREADS < 1)
++			usage(c);
++		break;
++	    case 'e':
++	    	MAX_LENGTH = atoi(optarg);
++		if (MAX_LENGTH < 1)
++			usage(c);
++	    	break;
++	    case 'z':
++	    	MIN_DISTANCE = strtol(optarg, &p, 0);
++		if (*optarg == '\0' || *p != '\0')
++			usage(c);
++		break;
++	    case 'y':
++	    	STOP_EARLY = 0;
++		break;
++	    case 'd':
++	    	default_count = atoi(optarg);
++		if (default_count < 1)
++			usage(c);
++		break;
++	    case 'r':
++	    	repeats = atoi(optarg);
++		if (repeats < 1)
++			usage(c);
++		break;
++	    case 'i':
++	    	ALLOW_SELF_MOVE = 0;
++		break;
++	    case 'a':
++	    	SCORE_ALIVE = strtol(optarg, &p, 0);
++		if (*optarg == '\0' || *p != '\0')
++			usage(c);
++		break;
++	    case 'c':
++	    	SCORE_CELLS = strtol(optarg, &p, 0);
++		if (*optarg == '\0' || *p != '\0')
++			usage(c);
++	    	break;
++	    case 'k':
++	    	SCORE_KILLS = strtol(optarg, &p, 0);
++		if (*optarg == '\0' || *p != '\0')
++			usage(c);
++		break;
++	    case 'o':
++	    	score_old = 1;
++		break;
++	    case 'n':
++	    	SCORE_RANK = 1;
++	    	break;
++	    case 'b':
++	    	SCORE_BEST = 1;
++		break;
++	    case 'x':
++	    	reproducible = 1;
++		break;
++	    case 'f':
++	    	format = optarg;
++		break;
++	    case 'p':
++	    	dump = 1;
++		break;
++	    case 'g':
++	    	dump_internal = 1;
++		break;
++	    default:
++		description();
++		break;
++	    }
++	*file_list = argv+optind;
++}
++#endif
+ 
+ int main(int argc,char *argv[])
+ {
+@@ -271,7 +429,10 @@ int main(int argc,char *argv[])
+   struct program **table;
+   char *s;
+ 
++#ifdef HAVE_ARGP
+   argp_parse (&argp, argc, argv,0 ,0 , &file_list);
++#else
++  old_fashioned_parse(argc, argv, &file_list);
+ 
+   if (!reproducible)
+     srandom (time (0));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-corewars_6,v 1.1 2002/03/20 16:19:52 espie Exp $
+--- corewars.6.orig	Wed Mar 20 16:39:36 2002
++++ corewars.6	Wed Mar 20 16:55:54 2002
+@@ -38,7 +38,7 @@ called \fBRedcode\fP, is harder to learn
+ .\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+ .\" respectively.
+ .SH OPTIONS
+-Use \fBcorewars-cmd --help\fP to get a list of supported command line options.
++Use \fBcorewars-cmd -H\fP to get a list of supported command line options.
+ .br
+ .SH AUTHORS
+ This manual page was written by Michael Vogt <mvogt@acm.org>,

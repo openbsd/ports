@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1 2002/03/20 16:19:51 espie Exp $
+--- configure.orig	Wed Mar 20 16:35:40 2002
++++ configure	Wed Mar 20 16:36:02 2002
+@@ -2310,14 +2310,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
+ EOF
+  COREWARSCMD=corewars-cmd
+ else
+-  echo "$ac_t""no" 1>&6
+-echo "configure: warning: 
+-
+-   ********************************************************************************
+-   *** glibc >= 2.1 not installed - cannot build command line client without it ***
+-   ***                        (but this is ok if you want the GTK+ client only) ***
+-   ********************************************************************************
+-" 1>&2
++ COREWARSCMD=corewars-cmd
+ fi
+ done
+ 
