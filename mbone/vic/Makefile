@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/18 14:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2005/03/08 07:56:44 alek Exp $
 
 COMMENT=	"MBONE video tool"
 
 DISTNAME=	vic-2.8ucl4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mbone
 
 # License: BSD
@@ -10,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m stdc++ c X11 Xext
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
