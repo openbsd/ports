@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2002/06/15 04:27:35 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2002/11/24 03:40:08 brad Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
-DISTNAME=	curl-7.9.8
+DISTNAME=	curl-7.10.2
 CATEGORIES=	net
-NEED_VERSION=	1.528
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://cool.haxx.se/curl/ \
@@ -18,6 +17,7 @@ HOMEPAGE=	http://curl.haxx.se/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -37,10 +37,11 @@ CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV" \
 		 --disable-ipv6
 .endif
 
-DOCS=	CHANGES LEGAL MITX.txt README
+DOCS=	CHANGES COPYING README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/curl
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/curl
+	cd ${WRKSRC}; ${INSTALL_DATA} curl-mode.el ${PREFIX}/share/curl
 
 .include <bsd.port.mk>
