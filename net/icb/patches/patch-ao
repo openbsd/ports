@@ -1,0 +1,43 @@
+*** icb/tcl.c.orig	Thu Oct 22 11:33:41 1998
+--- icb/tcl.c	Thu Oct 22 11:35:11 1998
+***************
+*** 145,151 ****
+  
+  	if ((homedir = getenv("HOME")) == NULL) {
+  		printf("icb: warning - $HOME not set.\r\n");
+! 		return(0);
+  	}
+  
+  	for (p=names; p && *p; ++p)
+--- 145,151 ----
+  
+  	if ((homedir = getenv("HOME")) == NULL) {
+  		printf("icb: warning - $HOME not set.\r\n");
+! 		return(NULL);
+  	}
+  
+  	for (p=names; p && *p; ++p)
+***************
+*** 153,164 ****
+  		sprintf(rcpath, "%s/%s", homedir, *p);
+  		rcfile = rcpath;
+  		if (access(rcfile, R_OK)==0)
+! 			break;
+  	}
+! 	if (p)
+! 		return rcfile;
+! 
+! 	return(0);
+  }
+  
+  tclrestrict()
+--- 153,161 ----
+  		sprintf(rcpath, "%s/%s", homedir, *p);
+  		rcfile = rcpath;
+  		if (access(rcfile, R_OK)==0)
+! 			return rcfile;
+  	}
+! 	return(NULL);
+  }
+  
+  tclrestrict()
