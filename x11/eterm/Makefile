@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/09 08:21:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/24 03:37:27 kevlo Exp $
 
 PKGNAME=	eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://eterm.sourceforge.net/pub/eterm/ \
 		http://eterm.is.nontoxic.org/download/ \
 
 MAINTAINER=	halogen@nol.net
+
+LICENSE_TYPE=         GPL
+PERMIT_PACKAGE_CDROM= YES
+PERMIT_PACKAGE_FTP=   YES
+PERMIT_DISTFILES_CDROM=       YES
+PERMIT_DISTFILES_FTP= YES
 
 LIB_DEPENDS=	Imlib.19:${PORTSDIR}/graphics/imlib
 
