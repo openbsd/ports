@@ -1,11 +1,11 @@
---- RULES/mk-gmake.id-distr	Sun Jun 22 18:50:49 1997
-+++ RULES/mk-gmake.id	Sun Jun  7 12:14:37 1998
+--- RULES/mk-gmake.id.orig	Wed Jan 20 14:40:41 1999
++++ RULES/mk-gmake.id	Wed Jan 20 14:46:10 1999
 @@ -37,7 +37,7 @@
  
  ifndef		ARCH_DONE
  
--_MACHCMD=	(mach || uname -p || true) 2> /dev/null
-+_MACHCMD=	(mach || machine || uname -p || true) 2> /dev/null
- _ARCHCMD=	(arch || true)             2> /dev/null
+-_MACHCMD=	(mach || uname -p || true)	2> /dev/null
++_MACHCMD=	(mach || machine || uname -p || true)	2> /dev/null
+ _ARCHCMD=	(arch || /usr/ucb/arch || true)	2> /dev/null
  
  XP_ARCH:=	$(shell $(_MACHCMD) | tr '[A-Z]' '[a-z]' | tr ', /\\' ',---')

@@ -1,6 +1,6 @@
---- include/btorder.h-	Wed Dec 17 09:05:59 1997
-+++ include/btorder.h	Wed Dec 17 09:05:42 1997
-@@ -26,6 +26,14 @@
+--- include/btorder.h.orig	Mon Jul 20 09:28:10 1998
++++ include/btorder.h	Wed Jan 20 14:49:17 1999
+@@ -26,6 +26,13 @@
  
  #include <sys/types.h>			/* try to load isa_defs.h on Solaris */
  
@@ -11,7 +11,6 @@
 +#define _BIT_FIELDS_HTOL
 +#endif
 +#endif
-+
- #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
- #elif	defined(_BIT_FIELDS_HTOL)	/* Motorola byteorder */
- #else
+ 
+ #if	defined(_BIT_FIELDS_LTOH) || defined(_BIT_FIELDS_HTOL)
+ /*

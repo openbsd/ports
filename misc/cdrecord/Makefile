@@ -3,23 +3,23 @@
 # Date created:				7 Jun 1998
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.2 1998/11/23 04:00:49 downsj Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/20 05:50:40 d Exp $
 #
 
-DISTNAME=	cdrecord-1.6
+DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	niklas@openbsd.org
 
-WRKSRC=		${WRKDIR}/cdrecord-1.6
+#WRKSRC=		${WRKDIR}/cdrecord-1.6
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.
 ONLY_FOR_ARCHS=	alpha amiga arc i386 mac68k mvme68k powerpc sparc sun3
 
 USE_GMAKE=	yes
-GMAKE=		./Gmake
+GMAKE=		${WRKSRC}/Gmake
 
 # Cdrecord's standard install rule installs some unnecessary stuff,
 # we instead explicitly install what we want.
