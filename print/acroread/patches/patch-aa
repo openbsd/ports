@@ -1,81 +1,56 @@
-*** INSTALL.orig	Mon May 24 10:31:43 1999
---- INSTALL	Mon Jul 12 17:38:26 1999
-***************
-*** 115,120 ****
---- 115,122 ----
-      if [ "$i" -a -f "$i" ] ; then
-          if [ `uname -s` = "Linux" ] ; then
-            size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
-+         elif [ `uname -s` = "OpenBSD" ] ; then
-+           size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
-          else
-            size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
-          fi
-***************
-*** 151,157 ****
-  
-  ExtractFiles ()
-  {
-!   ( cd "$1" ; tar xfo "$2" )
-  }
-  
-  InstallFiles ()
---- 153,159 ----
-  
-  ExtractFiles ()
-  {
-!   ( cd "$1" ; tar xf "$2" )
-  }
-  
-  InstallFiles ()
-***************
-*** 481,487 ****
-    SearchPlatformTar="$3"
-    CustomPlatformTar="$4"
-  
-!   OutputLicense "$ReadLicense"
-    ReadLicense=""
-  
-    PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
---- 483,489 ----
-    SearchPlatformTar="$3"
-    CustomPlatformTar="$4"
-  
-! #  OutputLicense "$ReadLicense"
-    ReadLicense=""
-  
-    PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
-***************
-*** 554,560 ****
-    *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
-  esac
-  
-! if [ "`type uname`" != "uname not found" ] ; then
-    OSname=`uname -s`
-    if [ "$OSname" = "AIX" ] ; then
-      OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
---- 556,562 ----
-    *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
-  esac
-  
-! if [ "`uname`" != "uname not found" ] ; then
-    OSname=`uname -s`
-    if [ "$OSname" = "AIX" ] ; then
-      OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
-***************
-*** 1039,1045 ****
-      DistDefaultNum="$DistIntelBSDINum"
-      DefaultName="Intel/BSDI"
-      ;;
-!   Linux)
-      AcroDefaultNum="$AcroIntelLinuxNum"
-      ExchDefaultNum="$ExchIntelLinuxNum"
-      ReadDefaultNum="$ReadIntelLinuxNum"
---- 1041,1047 ----
-      DistDefaultNum="$DistIntelBSDINum"
-      DefaultName="Intel/BSDI"
-      ;;
-!   OpenBSD|Linux)
-      AcroDefaultNum="$AcroIntelLinuxNum"
-      ExchDefaultNum="$ExchIntelLinuxNum"
-      ReadDefaultNum="$ReadIntelLinuxNum"
+--- INSTALL.orig	Mon May 24 10:31:43 1999
++++ INSTALL	Thu Mar  9 02:48:58 2000
+@@ -115,6 +115,8 @@
+     if [ "$i" -a -f "$i" ] ; then
+         if [ `uname -s` = "Linux" ] ; then
+           size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
++        elif [ `uname -s` = "OpenBSD" ] ; then
++          size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
+         else
+           size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
+         fi
+@@ -151,7 +153,7 @@
+ 
+ ExtractFiles ()
+ {
+-  ( cd "$1" ; tar xfo "$2" )
++  ( cd "$1" ; tar xf "$2" )
+ }
+ 
+ InstallFiles ()
+@@ -189,7 +191,7 @@
+ 
+       case "$product" in
+         Exchange|Reader)
+-          replacement="$topdir"/"$product"
++          replacement="${TRUEPREFIX}/Acrobat4"/"$product"
+           ;;
+         Distillr)
+           replacement="$topdir"
+@@ -481,7 +483,7 @@
+   SearchPlatformTar="$3"
+   CustomPlatformTar="$4"
+ 
+-  OutputLicense "$ReadLicense"
++#  OutputLicense "$ReadLicense"
+   ReadLicense=""
+ 
+   PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
+@@ -554,7 +556,7 @@
+   *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
+ esac
+ 
+-if [ "`type uname`" != "uname not found" ] ; then
++if [ "`uname`" != "uname not found" ] ; then
+   OSname=`uname -s`
+   if [ "$OSname" = "AIX" ] ; then
+     OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
+@@ -1039,7 +1041,7 @@
+     DistDefaultNum="$DistIntelBSDINum"
+     DefaultName="Intel/BSDI"
+     ;;
+-  Linux)
++  OpenBSD|Linux)
+     AcroDefaultNum="$AcroIntelLinuxNum"
+     ExchDefaultNum="$ExchIntelLinuxNum"
+     ReadDefaultNum="$ReadIntelLinuxNum"

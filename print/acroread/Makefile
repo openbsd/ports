@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/09 01:58:24 espie Exp $
 #
 
 DISTNAME=	linux-ar-40
@@ -23,6 +23,7 @@ WRKDIST=	${WRKDIR}/ILINXR.install
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
+FAKE=Yes
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat4
 	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL
@@ -33,6 +34,7 @@ post-install:
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
 	     ${PREFIX}/bin/acroread && rm acroread.orig
 	@chmod +x ${PREFIX}/bin/acroread
+	@chmod a+r ${PREFIX}/Acrobat4/Reader/ReadMe
 	@echo "Be sure to read the license agreement in"
 	@echo "${PREFIX}/Acrobat4/Reader/License.pdf"
 
