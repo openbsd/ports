@@ -1,19 +1,33 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/24 02:25:06 avsm Exp $
---- Makefile.orig	Fri Feb 11 12:02:10 2000
-+++ Makefile	Sat Mar 24 02:08:48 2001
-@@ -1,13 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.2 2002/07/29 21:34:42 naddy Exp $
+--- Makefile.orig	Fri Feb 11 13:02:00 2000
++++ Makefile	Mon Jul 29 23:13:15 2002
+@@ -1,14 +1,24 @@
  # "Artistic Style" Makefile
  
 -CPPFLAGS = -Wall -Wno-sign-compare -O2
++CXXFLAGS += -Wall -Wno-sign-compare
  OBJS = ASResource.o ASBeautifier.o ASFormatter.o astyle_main.o
++CXX ?= g++
  
- astyle: $(OBJS)
+-astyle: $(OBJS)
 -	g++ $(CPPFLAGS) -o astyle  $(OBJS)
-+	${CXX} $(CFLAGS) -o astyle  $(OBJS)
++all: astyle
  
++astyle: ${OBJS}
++	${CXX} ${CXXFLAGS} -o $@ ${OBJS}
++
++.SUFFIXES: .cpp .o
  .cpp.o:
 -	g++ $(CPPFLAGS) -c $<
-+	${CXX} $(CFLAGS) -c $<
- .SUFFIXES: .cpp .c .o
+-.SUFFIXES: .cpp .c .o
++	${CXX} ${CXXFLAGS} -c -o $@ $<
  
  clean:
+ 	rm *.o
++
++install: astyle
++	${BSD_INSTALL_PROGRAM} astyle ${PREFIX}/bin
++	${BSD_INSTALL_DATA_DIR} ${PREFIX}/share/doc/astyle
++	${BSD_INSTALL_DATA} astyle.html ${PREFIX}/share/doc/astyle
++	${BSD_INSTALL_DATA} astyle_release_notes.html ${PREFIX}/share/doc/astyle
++	${BSD_INSTALL_DATA} license.html ${PREFIX}/share/doc/astyle
