@@ -1,0 +1,443 @@
+$OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
+--- wmmon/wmmon.c.orig	Tue May 19 23:13:16 1998
++++ wmmon/wmmon.c	Tue Oct 10 21:59:35 2000
+@@ -28,6 +28,10 @@
+ 	Changes:
+ 	----
+ 
++	28/09/2000 (Vladimir Popov, pva48@mail.ru)
++		* Ported to OpenBSD
++		  Based on FreeBSD port by Stephen Kiernan,
++		  OpenBSD top and vmstat
+ 	18/05/1998 (Antoine Nulle, warp@xs4all.nl)
+ 		* MEM/SWAP/UPTIME only updated when visible
+ 		* Using global file descriptors to reduce file
+@@ -72,10 +76,21 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ 
++#include <errno.h>
++
+ #include <sys/wait.h>
+ #include <sys/param.h>
+ #include <sys/types.h>
+ 
++#include <kvm.h>
++#include <limits.h>
++#include <nlist.h>
++#include <sys/disk.h>
++#include <sys/dkstat.h>
++#include <sys/malloc.h>
++#include <sys/swap.h>
++#include <sys/sysctl.h>
++
+ #include <X11/Xlib.h>
+ #include <X11/xpm.h>
+ #include <X11/extensions/shape.h>
+@@ -102,9 +117,28 @@
+ 
+ char	*ProgName;
+ int	stat_current = 0; /* now global */
+-FILE	*fp_meminfo;
+-FILE	*fp_stat;
+-FILE	*fp_loadavg;
++kvm_t *kd = NULL;
++struct nlist nlst[] = {
++#define X_CP_TIME		0
++	{ "_cp_time" },
++#define X_AVERUN		1
++	{ "_averunnable" },
++#define X_DISK_COUNT	2
++	{ "_disk_count" },
++#define X_DISKLIST		3
++	{ "_disklist" },
++#define X_KMEMBUCKETS	4
++	{ "_bucket" },
++#define X_KMEMSTAT		5
++	{ "_kmemstats" },
++	{ 0 }
++};
++int ndrives;
++struct disklist_head disk_head;
++struct disk *dk_drivehead;
++static int pagesize;
++static int pageshift;
++char errbuf[_POSIX2_LINE_MAX];
+ 
+ /* functions */
+ void usage(void);
+@@ -114,7 +148,12 @@ void DrawStats_io(int *, int, int, int, 
+ 
+ void wmmon_routine(int, char **);
+ 
+-void main(int argc, char *argv[]) {
++/* OpenBSD specific functions */
++#define	pagetok(size)	((size) << pageshift)
++int swapmode(long *, long *);
++int check_nlist(struct nlist *nlst);
++
++int main(int argc, char *argv[]) {
+ 
+ 	int		i;
+ 	
+@@ -155,6 +194,8 @@ void main(int argc, char *argv[]) {
+ 	}
+ 
+ 	wmmon_routine(argc, argv);
++
++	return 0;
+ }
+ 
+ /*******************************************************************************\
+@@ -213,8 +254,9 @@ void wmmon_routine(int argc, char **argv
+ 	long		istat;
+ 	long		idle;
+ 
+-	FILE		*fp;
+-	char		temp[128];
++	int			mib[2];
++	size_t		size;
++	struct	timeval boottime;
+ 	char		*p;
+ 
+ 	int			xpm_X = 0, xpm_Y = 0;
+@@ -223,16 +265,57 @@ void wmmon_routine(int argc, char **argv
+ 	long		ref_time = 0;
+ 	long		cnt_time;
+ 
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_BOOTTIME;
++	size = sizeof(boottime);
++	if ( (sysctl(mib, 2, &boottime, &size, NULL, 0) != -1) && (boottime.tv_sec != 0) ) {
++		ref_time = time(NULL);
++		online_time = ref_time - boottime.tv_sec + 30;
++	}
++
++	/* get the page size and calculate pageshift from it */
++	pagesize = sysconf(_SC_PAGESIZE);
++	pageshift = 0;
++	while (pagesize > 1)
++	{
++		pageshift++;
++		pagesize >>= 1;
++	}
++
++	/* we only need the amount of log(2)1024 for our conversion */
++	pageshift -= 10;
++
++	if ((kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, errbuf)) == NULL) {
++		fprintf(stderr, "kvm_openfiles: %s\n", errbuf);
++		exit(errno);
++	}
++
++	/* drop privs */
++	setegid(getgid());
++	setgid(getgid());
++	
++	if (kd) {
++		if (kvm_nlist(kd, nlst) >= 0) {
++
++			if ( check_nlist(nlst) > 0 ) {
++				kvm_close(kd);
++				exit(-1);
++			}
+ 
+-	fp = fopen("/proc/uptime", "r");
+-	fp_meminfo = fopen("/proc/meminfo", "r");
+-	fp_loadavg = fopen("/proc/loadavg", "r");
+-	fp_stat = fopen("/proc/stat", "r");
+-
+-	if (fp) {
+-		fscanf(fp, "%ld", &online_time);
+-		ref_time = time(0);
+-		fclose(fp);
++			if (nlst[0].n_type != 0) {
++				(void) kvm_read(kd, nlst[X_DISK_COUNT].n_value, (char *)&ndrives, sizeof(ndrives));
++				if ( ndrives > 0 ) {
++					kvm_read(kd, nlst[X_DISKLIST].n_value, &disk_head, sizeof(disk_head));
++					dk_drivehead = disk_head.tqh_first;
++				}
++			}
++
++			//fprintf (stderr, "Monitoring %d devices for activity.\n", ndrives);
++
++		}
++		else {
++			fprintf(stderr, "kvm_nlist: %s\n", kvm_geterr(kd));
++		}
+ 	}
+ 
+ 	for (i=0; i<MAX_STAT_DEVICES; i++) {
+@@ -246,16 +329,20 @@ void wmmon_routine(int argc, char **argv
+ 	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
+ 	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
+ 
+-	strcpy(temp, "/etc/wmmonrc");
+-	parse_rcfile(temp, wmmon_keys);
++	parse_rcfile("/etc/wmmonrc", wmmon_keys);
+ 
+-	p = getenv("HOME");
+-	strcpy(temp, p);
+-	strcat(temp, "/.wmmonrc");
+-	parse_rcfile(temp, wmmon_keys);
+-	
+-	strcpy(temp, "/etc/wmmonrc.fixed");
+-	parse_rcfile(temp, wmmon_keys);
++	if ((p = getenv("HOME")) != NULL) {
++#define RCFILE "/.wmmonrc"
++		int tmpsize = strlen(p) + sizeof(RCFILE) + 1;
++		char *tmp = malloc(tmpsize);
++		if (tmp != NULL) {
++			snprintf(tmp, tmpsize, "%s" RCFILE, p);
++			parse_rcfile(tmp, wmmon_keys);
++			free(tmp);
++		}
++	}
++
++	parse_rcfile("/etc/wmmonrc.fixed", wmmon_keys);
+ 
+ 	stat_online = checksysdevs();
+ 
+@@ -266,7 +353,7 @@ void wmmon_routine(int argc, char **argv
+ 	AddMouseRegion(0, 12, 13, 58, 57);
+ 	AddMouseRegion(1, 5, 5, 24, 14);
+ 
+-	starttime = time(0);
++	starttime = time(NULL);
+ 	nexttime = starttime + 10;
+ 
+ 	for (i=0; i<stat_online; i++) {
+@@ -288,7 +375,7 @@ void wmmon_routine(int argc, char **argv
+ 	DrawActive(stat_device[stat_current].name);
+ 
+ 	while (1) {
+-		curtime = time(0);
++		curtime = time(NULL);
+ 
+ 		waitpid(0, NULL, WNOHANG);
+ 
+@@ -338,7 +425,7 @@ void wmmon_routine(int argc, char **argv
+ 
+ 			/*----------- online tijd neerzetten! ----------*/
+ 			
+-			cnt_time = time(0) - ref_time + online_time;
++			cnt_time = time(NULL) - ref_time + online_time;
+ 
+ 			/* cnt_time = uptime in seconden */
+ 			/*
+@@ -404,7 +491,8 @@ void wmmon_routine(int argc, char **argv
+ 				break;
+ 			case DestroyNotify:
+ 				XCloseDisplay(display);
+-				exit(0);
++				if (kd) kvm_close(kd);
++				return;
+ 				break;
+ 			case ButtonPress:
+ 				but_stat = CheckMouseRegion(Event.xbutton.x, Event.xbutton.y);
+@@ -499,43 +587,24 @@ void update_stat_io(stat_dev *st) {
+ 
+ void update_stat_mem(stat_dev *st, stat_dev *st2) {
+ 
+-	char	temp[128];
+-	unsigned long free, shared, buffers, cached;
+-
+-	freopen("/proc/meminfo", "r", fp_meminfo);
+-	while (fgets(temp, 128, fp_meminfo)) {
+-		if (strstr(temp, "Mem:")) {
+-			sscanf(temp, "Mem: %ld %ld %ld %ld %ld %ld",
+-			       &st->rt_idle, &st->rt_stat,
+-			       &free, &shared, &buffers, &cached);
+-			st->rt_idle >>= 10;
+-			st->rt_stat -= buffers+cached;
+-			st->rt_stat >>= 10;
+-//			break;
+-		}
+-		if (strstr(temp, "Swap:")) {
+-			sscanf(temp, "Swap: %ld %ld", &st2->rt_idle, &st2->rt_stat);
+-			st2->rt_idle >>= 10;
+-			st2->rt_stat >>= 10;
+-			break;
+-		}
+-	}
+-}
+-
+-void update_stat_swp(stat_dev *st) {
+-
+-	char	temp[128];
+-
+-	fseek(fp_meminfo, 0, SEEK_SET);
+-	while (fgets(temp, 128, fp_meminfo)) {
+-		if (strstr(temp, "Swap:")) {
+-			sscanf(temp, "Swap: %ld %ld", &st->rt_idle, &st->rt_stat);
+-			st->rt_idle >>= 10;
+-			st->rt_stat >>= 10;
+-			break;
+-		}
++	struct vmtotal total;
++	size_t size = sizeof(total);
++	static int mib[] = { CTL_VM, VM_METER };
++
++	/* get total -- systemwide main memory usage structure */
++	if ( sysctl(mib, 2, &total, &size, NULL, 0) < 0 ) {
++		fprintf(stderr, "sysctl failed");
++		bzero(&total, sizeof(total));
++	}
++
++	/* FIXME: is it right to count memory like this */
++	st->rt_idle = pagetok(total.t_rm);
++	st->rt_stat = pagetok(total.t_arm);
++
++	if ( !swapmode(&st2->rt_stat, &st2->rt_idle) ) {
++		st2->rt_idle = 0;
++		st2->rt_stat = 0;
+ 	}
+-
+ }
+ 
+ /*******************************************************************************\
+@@ -545,10 +614,8 @@ void update_stat_swp(stat_dev *st) {
+ void get_statistics(char *devname, long *is, long *ds, long *idle) {
+ 
+ 	int	i;
+-	char	temp[128];
+-	char	*p;
+-	char	*tokens = " \t\n";
+-	float	f;
++	long	averun[3];
++	long	cp_time[CPUSTATES];
+ 	long	maxdiskio=0;
+ 
+ 	*is = 0;
+@@ -556,34 +623,37 @@ void get_statistics(char *devname, long 
+ 	*idle = 0;
+ 
+ 	if (!strncmp(devname, "cpu", 3)) {
+-		fseek(fp_stat, 0, SEEK_SET);
+-		while (fgets(temp, 128, fp_stat)) {
+-			if (strstr(temp, "cpu")) {
+-				p = strtok(temp, tokens);
+-				/* 1..3, 4 == idle, we don't want idle! */
+-				for (i=0; i<3; i++) {
+-					p = strtok(NULL, tokens);
+-					*ds += atol(p);
++		if (kd) {
++			if (kvm_nlist(kd, nlst) >= 0) {
++				if (nlst[0].n_type != 0) {
++					if ((kvm_read(kd, nlst[X_CP_TIME].n_value, (char *)&cp_time, sizeof(cp_time))==sizeof(cp_time)) &&
++							(kvm_read(kd, nlst[X_AVERUN].n_value, (char *)&averun, sizeof(averun))==sizeof(averun))) {
++						*is = (long) (100 * ((double)averun[0] / FSCALE));
++
++						for (i = 0; i < CPUSTATES; i++) {
++							if (i != CP_IDLE) *ds += cp_time[i];
++						}
++						*idle = cp_time[CP_IDLE];
++					}
+ 				}
+-				p = strtok(NULL, tokens);
+-				*idle = atol(p);
+ 			}
+ 		}
+-		fp_loadavg = freopen("/proc/loadavg", "r", fp_loadavg);
+-		fscanf(fp_loadavg, "%f", &f);
+-		*is = (long) (100 * f);
+ 	}
+ 
+ 	if (!strncmp(devname, "i/o", 3)) {
++		struct disk     cur_disk, *p;
++
++		p = dk_drivehead;
+ 
+-		fseek(fp_stat, 0, SEEK_SET);
+-		while (fgets(temp, 128, fp_stat)) {
+-			if (strstr(temp, "disk_rio") || strstr(temp, "disk_wio")) {
+-				p = strtok(temp, tokens);
+-				/* 1..4 */
+-				for (i=0; i<4; i++) {
+-					p = strtok(NULL, tokens);
+-					*ds += atol(p);
++		if (kd) {
++			if (kvm_nlist(kd, nlst) >= 0) {
++				if (nlst[0].n_type != 0) {
++					for (i = 0; i < ndrives; i++) {
++						if ( kvm_read(kd, (u_long)p, &cur_disk, sizeof(cur_disk)) == sizeof(cur_disk) ) {
++							*ds += cur_disk.dk_seek;
++							p = cur_disk.dk_link.tqe_next;
++						}
++					}
+ 				}
+ 			}
+ 		}
+@@ -597,9 +667,9 @@ void get_statistics(char *devname, long 
+ 
+ int checksysdevs(void) {
+ 
+-	strcpy(stat_device[0].name, "cpu0");
+-	strcpy(stat_device[1].name, "i/o");
+-	strcpy(stat_device[2].name, "sys");
++	strncpy(stat_device[0].name, "cpu0", 5);
++	strncpy(stat_device[1].name, "i/o", 5);
++	strncpy(stat_device[2].name, "sys", 5);
+ 
+ 	return 3;
+ }
+@@ -737,3 +807,59 @@ void printversion(void) {
+ 		fprintf(stderr, "%s\n", WMMON_VERSION);
+ 	}
+ }
++
++int swapmode(long *used, long *total) {
++	int nswap, rnswap, i;
++	struct swapent *swdev;
++
++	nswap = swapctl(SWAP_NSWAP, 0, 0);
++	if (nswap == 0) 
++		return 0;
++
++	swdev = malloc(nswap * sizeof(*swdev));
++	if(swdev == NULL)
++		return 0;
++
++	rnswap = swapctl(SWAP_STATS, swdev, nswap);
++	if(rnswap == -1)
++		return 0;
++
++	/* if rnswap != nswap, then what? */
++
++	/* Total things up */
++	*total = *used = 0;
++	for (i = 0; i < nswap; i++) {
++		if (swdev[i].se_flags & SWF_ENABLE) {
++			*used += (swdev[i].se_inuse / (1024/DEV_BSIZE));
++			*total += (swdev[i].se_nblks / (1024/DEV_BSIZE));
++		}
++	}
++
++	free (swdev);
++	return 1;
++}
++
++int check_nlist(struct nlist *nlst)
++{
++	register int i;
++
++	/* check to see if we got ALL the symbols we requested */
++	/* this will write one line to stderr for every symbol not found */
++
++	i = 0;
++	while (nlst->n_name != NULL)
++	{
++		if (nlst->n_type == 0)
++		{
++			/* this one wasn't found */
++			(void) fprintf(stderr, "kernel: no symbol named `%s'\n", nlst->n_name);
++
++			i = 1;
++		}
++		nlst++;
++	}
++
++	return(i);
++}
++
++/* vim:ts=4:sw=4: */

@@ -1,0 +1,45 @@
+$OpenBSD: patch-wmmon_Makefile,v 1.1.1.1 2000/11/18 13:53:32 naddy Exp $
+--- wmmon/Makefile.orig	Tue May 19 23:13:16 1998
++++ wmmon/Makefile	Tue Oct 10 22:02:42 2000
+@@ -1,19 +1,27 @@
+-LIBDIR = -L/usr/X11R6/lib
+-LIBS   = -lXpm -lXext -lX11
+-OBJS =  wmmon.o \
+-		../wmgeneral/wmgeneral.o \
+-		../wmgeneral/misc.o \
+-		../wmgeneral/list.o
+-
++LIBDIR		= -L${X11BASE}/lib
++LIBS		= -lXpm -lXext -lX11 -lkvm
++CFLAGS		?= -O2 -Wall
++CFLAGS		+= -I${X11BASE}/include
++OBJS		=	wmmon.o \
++			../wmgeneral/wmgeneral.o \
++			../wmgeneral/misc.o \
++			../wmgeneral/list.o
++PROG	= wmmon
++PREFIX	?= /usr/local
+ 
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o
++	${CC} -c $(CFLAGS) $< -o $*.o
++
++$(PROG): $(OBJS)
++	${CC} -o $@ $> $(LIBDIR) $(LIBS)
+ 
+-wmmon: $(OBJS)
+-	cc -o wmmon $^ $(LIBDIR) $(LIBS)
++all:: $(PROG)
+ 
+ clean::
+-	for i in $(OBJS) ; do \
+-		rm $$i;\
+-	done
+-	rm wmmon
++	rm -f $(OBJS)
++	rm -f $(PROG)
++
++install::
++	mkdir -p $(PREFIX)/bin
++	install -c -s -o root -g kmem -m 2555 $(PROG) ${PREFIX}/bin
++
