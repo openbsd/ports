@@ -1,7 +1,7 @@
-$OpenBSD: patch-intl_spanish_lng,v 1.3 2003/04/07 19:30:21 fgsch Exp $
---- intl/spanish.lng.orig	Sat Dec 14 16:15:15 2002
-+++ intl/spanish.lng	Fri Apr  4 00:23:28 2003
-@@ -395,6 +395,7 @@ T_ASPECT_CORRECTION_ON, NULL,
+$OpenBSD: patch-intl_spanish_lng,v 1.4 2003/06/12 13:47:44 brad Exp $
+--- intl/spanish.lng.orig	Thu May 22 03:29:33 2003
++++ intl/spanish.lng	Wed Jun  4 08:57:14 2003
+@@ -399,6 +399,7 @@ T_ASPECT_CORRECTION_ON, NULL,
  T_KEYBOARD_CODEPAGE, NULL,
  T_COPY_LINK_LOCATION, NULL,
  T_COPY_URL_LOCATION, NULL,

@@ -1,15 +1,15 @@
-$OpenBSD: patch-http_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
---- http.c.orig	Wed May 22 12:37:48 2002
-+++ http.c	Sat Nov 30 21:51:38 2002
+$OpenBSD: patch-http_c,v 1.2 2003/06/12 13:47:44 brad Exp $
+--- http.c.orig	Thu May 22 03:29:13 2003
++++ http.c	Wed Jun  4 09:17:11 2003
 @@ -157,6 +157,7 @@ void http_send_header(struct connection 
  	int l = 0;
  	unsigned char *post;
- 	unsigned char *host = upcase(c->url[0]) != 'P' ? c->url : get_url_data(c->url);
+ 	unsigned char *host;
 +	unsigned char *host_data;
- 	set_timeout(c);
- 	if (!(info = mem_alloc(sizeof(struct http_connection_info)))) {
- 		setcstate(c, S_OUT_OF_MEM);
-@@ -306,6 +307,14 @@ void http_send_header(struct connection 
+ 
+ 	find_in_cache(c->url, &c->cache);
+ 
+@@ -316,6 +317,13 @@ void http_send_header(struct connection 
  		add_num_to_str(&hdr, &l, c->from);
  		add_to_str(&hdr, &l, "-\r\n");
  	}
@@ -20,11 +20,10 @@ $OpenBSD: patch-http_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
 +		add_to_str(&hdr, &l, "\r\n");
 +		mem_free(host_data);
 +	}
-+
  	if (post) {
  		unsigned char *pd = strchr(post, '\n');
  		if (pd) {
-@@ -564,6 +573,23 @@ void http_got_header(struct connection *
+@@ -590,6 +598,22 @@ void http_got_header(struct connection *
  			e->redirect_get = h == 303;
  		}
  	}
@@ -44,7 +43,6 @@ $OpenBSD: patch-http_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
 +			mem_free(d);
 +		}
 +  	}
-+
  	kill_buffer_data(rb, a);
  	c->cache = e;
  	info->close = 0;
