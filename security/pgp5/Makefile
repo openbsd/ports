@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/21 18:52:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 1999/12/24 06:22:13 brad Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -51,12 +51,6 @@ pre-fetch:
 
 post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1
-
-pre-configure:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@mv ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c \
-		${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c-
-.endif
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp5

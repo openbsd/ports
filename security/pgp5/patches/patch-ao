@@ -1,14 +1,14 @@
 --- configure.in.orig	Sat Feb  7 14:54:56 1998
-+++ configure.in	Mon Dec 13 00:05:31 1999
-@@ -148,6 +148,25 @@
++++ configure.in	Thu Dec 23 23:59:20 1999
+@@ -148,13 +148,30 @@
  #source files (pgpRSAGlue[12].c, pgpRSAKeyGen.c and pgpAltRSAGlu.c)
  #is handled with the make distribution-* flags.
  
-+AC_MSG_CHECKING(whether to use rsaref)
-+AC_ARG_WITH(rsaref,
-+[  --with-rsaref           Use RSAREF (try to avoid patent problems in U.S.)],
-+[
 +WITH_RSAREF=0
++AC_MSG_CHECKING(whether to use RSAREF)
++AC_ARG_WITH(rsaref,
++[  --with-rsaref           Use RSAREF],
++[
 + case "$withval" in
 +  yes)
 +       AC_MSG_RESULT(yes)
@@ -16,22 +16,29 @@
 +       ;;
 +  *)
 +       AC_MSG_RESULT(no)
-+       AC_DEFINE(WITH_RSAREF)
 +       ;;
 +  esac ],
 +  AC_MSG_RESULT(no)
 +)
 +
-+if test "x$WITH_RSAREF" = "x1"; then
  AC_MSG_CHECKING(for internal RSA encrypt/sign support)
  RSALIB=""
  RSAINCS=""
-@@ -170,15 +189,14 @@
+ RSAKEYGEN=""
+ RSAKEY="pgpRSAKey.o"
+ HAVE_RSAREF=0
+-if test -f "lib/pgp/pubkey/pgpRSAGlue1.c"; then
++if test -f "lib/pgp/pubkey/pgpRSAGlue1.c" -a "x$WITH_RSAREF" = "x0"; then
+   AC_MSG_RESULT(yes)
+   RSAGLUE="pgpRSAGlue1.o pgpRSAGlue2.o"
+   AC_MSG_CHECKING(for lib/pgp/pubkey/pgpRSAKeyGen.c)
+@@ -170,15 +187,15 @@
    AC_MSG_CHECKING(for lib/pgp/pubkey/pgpAltRSAGlu.c)
    if test -f "lib/pgp/pubkey/pgpAltRSAGlu.c"; then
      AC_MSG_RESULT(yes)
 -    AC_MSG_CHECKING(for RSAREF in ../rsaref/install/unix)
 -    if test -f "../rsaref/install/unix/rsaref.a"; then
++    if test "x$WITH_RSAREF" = "x1"; then
 +    AC_MSG_CHECKING(for RSAREF in ${LOCALBASE})
 +    if test -f "${LOCALBASE}/lib/librsaref.a"; then
        HAVE_RSAREF=1
@@ -46,11 +53,11 @@
        AC_MSG_CHECKING(for lib/pgp/pubkey/pgpRSAKeyGen.c)
        if test -f "lib/pgp/pubkey/pgpRSAKeyGen.c"; then
          AC_MSG_RESULT(yes)
-@@ -221,6 +239,7 @@
- AC_SUBST(RSAINCS)
- AC_SUBST(RSAKEYGEN)
- AC_SUBST(RSAKEY)
-+fi
- 
- BETALICENSE=""
- FREEWARELICENSE=""
+@@ -189,6 +206,7 @@
+       fi
+     else
+       AC_MSG_RESULT(no)
++    fi
+     fi
+   else
+     AC_MSG_RESULT(no)
