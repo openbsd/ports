@@ -1,0 +1,33 @@
+*** Makefile.in.orig	Mon Oct 19 19:25:51 1998
+--- Makefile.in	Sun Jan 17 00:44:05 1999
+***************
+*** 20,33 ****
+  
+  
+  FIREWALK    =   firewalk
+! FIREWALK_LOC=   /usr/local
+  FIREWALK_MAN=   $(FIREWALK).1
+  INSTALL     =   ./install-sh
+  VER         =   0.6
+  DEFINES     +=  @OS_S_DEFINES@
+! CFLAGS      =   @CFLAGS@
+  CPPFLAGS    =   @CPPFLAGS@
+! LIBS        =   -lnet -lpcap @ADDITIONAL_LIBS@
+  OBJECTS     =   main.o firewalk.o ifaddrlist.o listener.o p_cap.o signal.o \
+  		packet.o udptcpwalk.o port_list.o
+  .c.o:
+--- 20,33 ----
+  
+  
+  FIREWALK    =   firewalk
+! FIREWALK_LOC=   $(PREFIX)
+  FIREWALK_MAN=   $(FIREWALK).1
+  INSTALL     =   ./install-sh
+  VER         =   0.6
+  DEFINES     +=  @OS_S_DEFINES@
+! CFLAGS      =   @CFLAGS@ -I$(PREFIX)/include
+  CPPFLAGS    =   @CPPFLAGS@
+! LIBS        =   -L$(PREFIX)/lib -lnet -lpcap @ADDITIONAL_LIBS@
+  OBJECTS     =   main.o firewalk.o ifaddrlist.o listener.o p_cap.o signal.o \
+  		packet.o udptcpwalk.o port_list.o
+  .c.o:
