@@ -1,5 +1,5 @@
 --- doc/Makefile.in.orig	Sat May 23 22:40:42 1998
-+++ doc/Makefile.in	Mon Dec 13 22:45:54 1999
++++ doc/Makefile.in	Fri Aug  4 13:14:52 2000
 @@ -22,7 +22,7 @@
  SHELL = /bin/sh
  
@@ -14,7 +14,7 @@
  
  MAN        = wget.$(manext)
 -WGETRC     = $(sysconfdir)/wgetrc
-+WGETRCDIR  = $(prefix)/lib/wget
++WGETRCDIR  = $(prefix)/share/examples/wget
  
  #
  # Dependencies for building

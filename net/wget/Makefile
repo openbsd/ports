@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/01 16:22:35 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/08/04 17:39:36 brad Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= wget
 
 HOMEPAGE=	http://www.gnu.org/software/wget/
 
-LIB_DEPENDS=	intl::devel/gettext
+LIB_DEPENDS=	intl.1::devel/gettext
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # Less broken way to force Rebuild...
 post-patch:
-	@echo '.PHONY: $${SUBDIRS}' >>${WRKBUILD}/Makefile.in
+	@echo '.PHONY: $${SUBDIRS}' >> ${WRKBUILD}/Makefile.in
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
