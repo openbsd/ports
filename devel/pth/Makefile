@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/27 17:51:20 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2002/02/26 03:57:38 brad Exp $
 
 COMMENT=	"GNU portable threads"
 
@@ -19,11 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --enable-pthread \
-		 --enable-syscall-soft --enable-optimize \
-		 --enable-batch \
-		 --includedir="${PREFIX}/include/pth" \
-		 --libdir="${PREFIX}/lib/pth"
+CONFIGURE_ARGS+= --enable-static \
+		 --enable-syscall-soft \
+		 --enable-optimize \
+		 --enable-batch
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
