@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/02 12:57:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS+= --with-saslauthd="/var/sasl2" \
 		 --enable-login \
 		 --enable-static \
 		 --disable-sample
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 
 FLAVORS=	db4 sql ldap
 FLAVOR?=

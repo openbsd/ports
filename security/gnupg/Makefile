@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/02/24 19:48:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -31,7 +31,7 @@ MODULES= gettext
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.52
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/scripts
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-ldap
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

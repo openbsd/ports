@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/04 14:51:31 naddy Exp $
 # Uses pthreads
 
 COMMENT=	"resource manager for PCSC"
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 		--enable-syslog		\
 		--enable-threadsafe
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

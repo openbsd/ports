@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/02/16 12:33:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--sysconfdir=${SYSCONFDIR} \
 			--localstatedir=/var \
 			${CONFIGURE_SHARED}
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_REGRESS=		Yes
 
 do-install:

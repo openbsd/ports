@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/09/25 06:25:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"universal steganography tool"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu dest
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/jpeg-6b-steg
 
 WRKDIST=	${WRKDIR}/outguess
 

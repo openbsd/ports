@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/05/07 15:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcap-0.4 ${WRKSRC}/Libnet-0.99b
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/libpcap-0.4 ${WRKSRC}/Libnet-0.99b
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/02/25 13:59:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 WRKDIST=	${WRKDIR}/pgp50i/src
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 14:51:31 naddy Exp $
 
 COMMENT=	"remote administration software"
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS+=--with-radminddir='$${${DESTDIRNAME}}/var/radmind'
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/libsnet
 
 ALL_TARGET=	all man
 
