@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/04/24 00:48:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2001/05/22 11:18:26 naddy Exp $
 
 COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 
@@ -29,6 +29,7 @@ FLAVORS=	esd
 FLAVOR?=
 
 .if ${FLAVOR:L:Mesd}
+LIB_DEPENDS=	esd.2::audio/esound
 ALL_TARGET=	openbsd-esd
 .else
 ALL_TARGET=	openbsd
