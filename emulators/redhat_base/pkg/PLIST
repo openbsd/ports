@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/04/09 02:38:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/05/08 21:32:48 jasoni Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -191,6 +191,7 @@ usr/bin/as
 usr/bin/bashbug
 usr/bin/captoinfo
 usr/bin/catchsegv
+usr/bin/cjpeg
 usr/bin/clear
 usr/bin/db_archive
 usr/bin/db_checkpoint
@@ -204,6 +205,7 @@ usr/bin/db_stat
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname
+usr/bin/djpeg
 usr/bin/du
 usr/bin/env
 usr/bin/expr
@@ -222,6 +224,7 @@ usr/bin/id
 usr/bin/infocmp
 usr/bin/infotocap
 usr/bin/install
+usr/bin/jpegtran
 usr/bin/ld
 usr/bin/ldd
 usr/bin/lddlibc4
@@ -240,6 +243,7 @@ usr/bin/pinky
 usr/bin/printenv
 usr/bin/printf
 usr/bin/ranlib
+usr/bin/rdjpgcom
 usr/bin/readelf
 usr/bin/reset
 usr/bin/resetall
@@ -264,6 +268,7 @@ usr/bin/users
 usr/bin/vdir
 usr/bin/who
 usr/bin/whoami
+usr/bin/wrjpgcom
 usr/bin/yes
 usr/i486-linux-libc5/lib/libICE.so.6
 usr/i486-linux-libc5/lib/libPEX5.so.6
@@ -477,6 +482,8 @@ usr/lib/libgtk-1.2.so.0
 usr/lib/libgtk-1.2.so.0.5.1
 usr/lib/libhistory.so.3
 usr/lib/libiberty.a
+usr/lib/libjpeg.so.62
+usr/lib/libjpeg.so.62.0.0
 usr/lib/libmenu.so.4
 usr/lib/libncurses.so.4
 usr/lib/libopcodes-2.9.5.0.22.so
@@ -484,6 +491,8 @@ usr/lib/libopcodes.a
 usr/lib/libopcodes.la
 usr/lib/libopcodes.so
 usr/lib/libpanel.so.4
+usr/lib/libpng.so.2
+usr/lib/libpng.so.2.1.0.5
 usr/lib/libreadline.so.3
 usr/lib/librpm.so.0
 usr/lib/librpm.so.0.0.0
@@ -4926,6 +4935,9 @@ usr/lib/libpanel.so.4.0
 usr/lib/libreadline.so.3.0
 usr/lib/libstdc++.so.2.8
 usr/lib/libstdc++.so.2.9
+NEWDYNLIBDIR(%D/usr/X11R6/lib)
+NEWDYNLIBDIR(%D/usr/i486-linux-libc5/lib)
+NEWDYNLIBDIR(%D/usr/lib)
 @exec mkdir -p %D/var/state/misc
 @dirrm var/state/misc
 @dirrm var/state
@@ -5350,6 +5362,10 @@ usr/lib/libstdc++.so.2.9
 @dirrm usr/doc/rpm-3.0.4
 @exec mkdir -p %D/usr/doc/ncurses-5.0
 @dirrm usr/doc/ncurses-5.0
+@exec mkdir -p %D/usr/doc/libpng-1.0.5
+@dirrm usr/doc/libpng-1.0.5
+@exec mkdir -p %D/usr/doc/libjpeg-6b
+@dirrm usr/doc/libjpeg-6b
 @exec mkdir -p %D/usr/doc/ldconfig-1.9.5
 @dirrm usr/doc/ldconfig-1.9.5
 @exec mkdir -p %D/usr/doc/gtk+-1.2.6

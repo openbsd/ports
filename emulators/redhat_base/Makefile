@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/09 03:53:44 jasoni Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/08 21:32:48 jasoni Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"linux compatibility package based on Redhat"
+COMMENT=	"linux compatibility package based on Redhat 6.2"
 
 PKGNAME=	redhat_base-6.2
 CATEGORIES=	emulators
 NEED_VERSION=	1.364
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/%SUBDIR%/ \
-		ftp://sunsite.ualberta.ca/pub/Mirror/Linux/redhat/linux/6.2/i386/ \
-		ftp://ftp.freesoftware.com/pub/linux/redhat/%SUBDIR%/
-MASTER_SITE_SUBDIR= redhat-6.2-en/os/i386/RedHat/RPMS
+MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
+		ftp://sunsite.ualberta.ca/pub/unix/Linux/redhat/%SUBDIR%/ \
+		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/%SUBDIR%/
+MASTER_SITE_SUBDIR= 6.2/en/os/i386/RedHat/RPMS
 DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	
@@ -56,7 +56,9 @@ RPM_SET2=	ldconfig-1.9.5-16.i386.rpm \
 		glib-1.2.6-3.i386.rpm \
 		gtk+-1.2.6-7.i386.rpm \
 		ld.so-1.9.5-13.i386.rpm \
-		libc-5.3.12-31.i386.rpm
+		libc-5.3.12-31.i386.rpm \
+		libjpeg-6b-10.i386.rpm \
+		libpng-1.0.5-3.i386.rpm
 
 REMOVE_DIRS=	/tmp /var/tmp /usr/tmp /home /root /proc /dev /mnt /boot /opt
 REMOVE_FILES=	/bin/df /bin/su /etc/exports /etc/group /etc/passwd \
