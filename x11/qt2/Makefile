@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/12 16:21:34 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/21 23:56:50 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
+COMMENT=		C++ X11 GUI toolkit
+COMMENT-examples=	examples and tutorial for qt2
+COMMENT-html=		off-line html documentation for qt2
 
 VERSION=	3.0
 DISTNAME=	qt-2.${VERSION}
-PKGNAME=	qt2-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.361
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 
@@ -18,17 +20,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+#CXXFLAGS+=	-g
+
 USE_X11=	Yes
 USE_GMAKE=	Yes
-MAKE_ENV=	QTDIR="${WRKSRC}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
+MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
-		LD_LIBRARY_PATH="${WRKSRC}/lib"
+		LD_LIBRARY_PATH="${WRKDIST}/lib"
+MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
-		-system-zlib -no-thread -sm
+		-system-zlib -no-thread -sm -no-g++-exceptions \
+		-kde
+#CONFIGURE_ARGS+=-static -debug
+
 # For XFree 4
-# CONFIGURE_ARGS+=-xft
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
+#CONFIGURE_ARGS+=-xft
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}" KDEDIR="${LOCALBASE}"
 
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
@@ -39,8 +47,12 @@ FLAVOR?=
 MODULES=	tools kernel widgets dialogs \
 		iconview workspace network canvas table xml
 EXTRA_SAMPLES=
+
+
+LIB_DEPENDS=
+
 .if ${SUBPACKAGE} != "-html"
-LIB_DEPENDS=	png.1.::graphics/png \
+LIB_DEPENDS+=	png.1.::graphics/png \
 		mng.1.::graphics/libmng
 .  if ${FLAVOR:L} == "gl"
 LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
@@ -87,9 +99,9 @@ pre-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
-	${INSTALL_DATA_DIR} ${QT_MANDIR}/man3
+	${INSTALL_MAN_DIR} ${QT_MANDIR}/man1
+	${INSTALL_MAN_DIR} ${QT_MANDIR}/man3
 	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin
-	${INSTALL_DATA_DIR} ${QT_LIBDIR}/tools/designer/templates
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
 	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
@@ -99,22 +111,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.so.2.30 ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.30 ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
-	fi
-	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0 ${PREFIX}/lib/qt2; \
-	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
+	${INSTALL_MAN} ${WRKSRC}/moc/moc.1 ${QTMANDIR}/man1/moc2.1
 	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
-	echo "#! /bin/sh" >${WRKBUILD}/designer
-	echo "QTDIR=${TRUEDIR} exec ${TRUEDIR}/bin/designer" \
-	    >>${WRKBUILD}/designer
-	${INSTALL_DATA} ${WRKBUILD}/tools/designer/templates/* \
-		${QT_LIBDIR}/tools/designer/templates
-	${INSTALL_SCRIPT} ${WRKBUILD}/designer ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/designer ${QT_LIBDIR}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/uic ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qtrename140 ${PREFIX}/bin
@@ -143,14 +142,9 @@ do-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 
-.include <bsd.port.mk>
+PKGNAME=		qt2-${VERSION}
+PKGNAME-examples-gl=	qt2-examples-${VERSION}-gl
+PKGNAME-examples=	qt2-examples-${VERSTION}
+PKGNAME-html=		qt2-html-${VERSION}
 
-.if ${SUBPACKAGE} == "-examples"
-.  if ${FLAVOR:L} == "gl"
-PKGNAME:=	qt2-examples-${VERSION}-gl
-.  else
-PKGNAME:=	qt2-examples-${VERSION}
-.  endif
-.elif ${SUBPACKAGE} == "-html"
-PKGNAME:=	qt2-html-${VERSION}
-.endif
+.include <bsd.port.mk>

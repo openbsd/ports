@@ -1,0 +1,17 @@
+--- tools/Makefile.in.orig	Mon Mar  5 19:12:55 2001
++++ tools/Makefile.in	Thu Mar 22 00:49:43 2001
+@@ -5,10 +5,13 @@
+ #    Template: subdirs
+ #############################################################################
+ 
+-SUBDIRS =	designer
++DESIGNER_SUBDIR=	designer
++SUBDIRS =	${DESIGNER_SUBDIR}
+ 
+ all:
+ 	$(MAKE) $(SUBDIRS)
++
++dummy:
+ 
+ 
+ $(SUBDIRS): FORCE

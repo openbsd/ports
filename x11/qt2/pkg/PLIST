@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/03/12 16:21:35 espie Exp $
-bin/designer
+@comment $OpenBSD: PLIST,v 1.11 2001/03/21 23:56:52 espie Exp $
 bin/findtr
 bin/moc2
 bin/qt20fix
 bin/qtrename140
-bin/uic
 include/X11/qt2/jri.h
 include/X11/qt2/jritypes.h
 include/X11/qt2/npapi.h
@@ -285,8 +283,8 @@ include/X11/qt2/qwmatrix.h
 include/X11/qt2/qworkspace.h
 include/X11/qt2/qxml.h
 include/X11/qt2/qxt.h
-lib/qt2/bin/designer
 lib/qt2/bin/moc
+lib/qt2/man/man1/moc.1
 lib/qt2/man/man3/QAccel.3
 lib/qt2/man/man3/QAction.3
 lib/qt2/man/man3/QActionGroup.3
@@ -945,10 +943,6 @@ lib/qt2/man/man3/qxmlreader.3
 lib/qt2/man/man3/qxmlsimplereader.3
 lib/qt2/man/man3/qxtapplication.3
 lib/qt2/man/man3/qxtwidget.3
-lib/qt2/tools/designer/templates/Configuration_Dialog.ui
-lib/qt2/tools/designer/templates/Dialog_with_Buttons_(Bottom).ui
-lib/qt2/tools/designer/templates/Dialog_with_Buttons_(Right).ui
-lib/qt2/tools/designer/templates/Tab-Dialog.ui
 share/doc/qt2/ANNOUNCE
 share/doc/qt2/FAQ
 share/doc/qt2/LICENSE.GPL
@@ -958,9 +952,6 @@ share/doc/qt2/changes-2.3.0
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
 %%SHARED%%
 @dirrm share/doc/qt2
-@dirrm lib/qt2/tools/designer/templates
-@dirrm lib/qt2/tools/designer
-@dirrm lib/qt2/tools
 @dirrm lib/qt2/man/man3
 @dirrm lib/qt2/man
 @dirrm lib/qt2/bin

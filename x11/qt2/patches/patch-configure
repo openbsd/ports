@@ -1,5 +1,5 @@
---- configure.orig	Wed Nov  8 18:06:56 2000
-+++ configure	Tue Nov 21 10:30:32 2000
+--- configure.orig	Mon Mar  5 19:12:49 2001
++++ configure	Wed Mar 21 23:48:39 2001
 @@ -52,7 +52,10 @@ else
  fi
  
@@ -12,7 +12,7 @@
  
  # Qt/Embedded?
  if [ -f configs/linux-generic-g++-shared ]
-@@ -77,6 +80,7 @@ then
+@@ -78,6 +81,7 @@ then
      Licensee=you
      while true
      do
@@ -20,3 +20,24 @@
  	echo
  	echo "This is the Qt$EMB Free Edition."
  	echo
+@@ -1331,19 +1335,7 @@ echo Creating makefiles...
+ 
+ sepath=`echo $relpath | sed -e 's/\\./\\\\./g'`
+ 
+-if [ $KDE = yes ]
+-then
+-    if [ '!' -f $KDEDIR/bin/dcopserver ]
+-    then
+-	KDE=no
+-	echo ""
+-	echo "You wanted to compile the Qt Designer with"
+-	echo "KDE 2 support, but \$KDEDIR does not point"
+-	echo "to a valid KDE 2 installation. KDE 2 support"
+-	echo "has been turned off."
+-	echo ""
+-    fi
+-fi
++# KDE check removed, as this will happen later.
+ 
+ for a in `find $relpath/. -name Makefile.in -print | sort` ; do
+     dir=`dirname $a`
