@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/13 08:22:47 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/24 01:55:22 mark Exp $
 
 COMMENT=		"parallelized login hacker"
 
-DISTNAME=		hydra-2.1
+DISTNAME=		hydra-2.2
 CATEGORIES=    		security
-NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.thehackerschoice.com/
 
