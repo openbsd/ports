@@ -1,6 +1,6 @@
 To enable bitlbee you have to add a line like:
 
-127.0.0.1:6667    stream  tcp     nowait _bitlbee /usr/local/libexec/bitlbee bitlbee
+127.0.0.1:6667    stream  tcp     nowait _bitlbee ${LOCALBASE}/libexec/bitlbee bitlbee
 
 to your /etc/inetd.conf and restart inetd with
 
