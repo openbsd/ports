@@ -1,4 +1,4 @@
-makeself is a small shell script that generates a self-extractible
+makeself is a small shell script that generates a self-extractable
 tar.gz archive from a directory. The resulting file appears as a
 shell script, and can be launched as is. The archive will then
 uncompress itself to a temporary directory and an arbitrary command
