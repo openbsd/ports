@@ -1,7 +1,7 @@
-#	$OpenBSD: Makefile,v 1.4 1999/08/10 19:31:04 espie Exp $
+#	$OpenBSD: Makefile,v 1.5 1999/08/22 17:29:41 espie Exp $
 #
 
-SUBDIR += base
 SUBDIR += texmf
+SUBDIR += base
 
 .include <bsd.port.subdir.mk>
