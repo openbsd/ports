@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/04 21:15:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/25 20:03:49 jakob Exp $
 
 DISTNAME=	php-4.0.2
 PKGNAME=	php4-4.0.2
@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-config-file-path=/var/www/conf \
 			--enable-calendar \
 			--enable-bcmath \
-			--disable-ftp \
 			--enable-trans-sid \
 			--enable-versioning \
 			--with-yp \
@@ -44,33 +43,59 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-xml \
 			--with-zlib
 
-# gdbm
-CONFIGURE_ARGS+=	--with-gdbm
-BUILD_DEPENDS+=		${PREFIX}/lib/libgdbm.a::databases/gdbm
-
-# gettext
-CONFIGURE_ARGS+=	--with-gettext
-BUILD_DEPENDS+=		${PREFIX}/lib/libintl.a::devel/gettext
-
-# imap
-CONFIGURE_ARGS+=	--with-imap=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
-
-# mm
-CONFIGURE_ARGS+=	--with-mm
-BUILD_DEPENDS+=		${PREFIX}/lib/libmm.a::devel/mm
-
-# recode
-CONFIGURE_ARGS+=	--with-recode
-BUILD_DEPENDS+=		${PREFIX}/lib/librecode.a::converters/recode
-
-# snmp
-CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack --with-openssl
-BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
-
-FLAVORS=	dbase filepro mysql mysql_bundled postgresql no_x11
+FLAVORS+=	gdbm gettext ftp imap mm recode snmp gd no_x11
+FLAVORS+=	dbase filepro mysql mysql_bundled postgresql
 FLAVOR?=
 
+.if ${FLAVOR:L:Mgdbm}
+CONFIGURE_ARGS+=	--with-gdbm
+BUILD_DEPENDS+=		${PREFIX}/lib/libgdbm.a::databases/gdbm
+.else
+CONFIGURE_ARGS+=	--without-gdbm
+.endif
+
+.if ${FLAVOR:L:Mgettext}
+CONFIGURE_ARGS+=	--with-gettext
+BUILD_DEPENDS+=		${PREFIX}/lib/libintl.a::devel/gettext
+.else
+CONFIGURE_ARGS+=	--without-gettext
+.endif
+
+.if ${FLAVOR:L:Mftp}
+CONFIGURE_ARGS+=	--enable-ftp
+.else
+CONFIGURE_ARGS+=	--disable-ftp
+.endif
+
+.if ${FLAVOR:L:Mimap}
+CONFIGURE_ARGS+=	--with-imap=${PREFIX}
+BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
+.else
+CONFIGURE_ARGS+=	--without-imap
+.endif
+
+.if ${FLAVOR:L:Mmm}
+CONFIGURE_ARGS+=	--with-mm
+BUILD_DEPENDS+=		${PREFIX}/lib/libmm.a::devel/mm
+.else
+CONFIGURE_ARGS+=	--without-mm
+.endif
+
+.if ${FLAVOR:L:Mrecode}
+CONFIGURE_ARGS+=	--with-recode
+BUILD_DEPENDS+=		${PREFIX}/lib/librecode.a::converters/recode
+.else
+CONFIGURE_ARGS+=	--without-recode
+.endif
+
+.if ${FLAVOR:L:Msnmp}
+CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack --with-openssl
+BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
+.else
+CONFIGURE_ARGS+=	--without-snmp --without-openssl
+.endif
+
+.if ${FLAVOR:L:Mgd}
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-gd \
 			--with-jpeg-dir=${PREFIX} 
@@ -83,6 +108,9 @@ CONFIGURE_ARGS+=	--with-gd \
 			--with-ttf
 BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd \
 			${PREFIX}/lib/libttf.a::print/freetype
+.endif
+.else
+CONFIGURE_ARGS+=	--without-gd
 .endif
 
 .if ${FLAVOR:L:Mdbase}
