@@ -1,10 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2003/06/17 23:09:00 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2003/07/05 06:50:17 jakob Exp $
 lib/libsasl.so.8.10
 lib/sasl/libanonymous.so.1.16
 lib/sasl/libcrammd5.so.1.17
 lib/sasl/libdigestmd5.so.0.19
 lib/sasl/libgssapiv2.so.1.18
-lib/sasl/libkerberos4.so.1.17
 lib/sasl/liblogin.so.0.6
 lib/sasl/libplain.so.1.15
 DYNLIBDIR(%D/lib)
@@ -12,13 +11,11 @@ DYNLIBDIR(%D/lib)
 @unexec rm -f %D/lib/sasl/libcrammd5.so
 @unexec rm -f %D/lib/sasl/libdigestmd5.so
 @unexec rm -f %D/lib/sasl/libgssapiv2.so
-@unexec rm -f %D/lib/sasl/libkerberos4.so
 @unexec rm -f %D/lib/sasl/liblogin.so
 @unexec rm -f %D/lib/sasl/libplain.so
 @exec cd %D/lib/sasl && ln -sf libanonymous.so.1.16 libanonymous.so
 @exec cd %D/lib/sasl && ln -sf libcrammd5.so.1.17 libcrammd5.so
 @exec cd %D/lib/sasl && ln -sf libdigestmd5.so.0.19 libdigestmd5.so
 @exec cd %D/lib/sasl && ln -sf libgssapiv2.so.1.18 libgssapiv2.so
-@exec cd %D/lib/sasl && ln -sf libkerberos4.so.1.17 libkerberos4.so
 @exec cd %D/lib/sasl && ln -sf liblogin.so.0.6 liblogin.so
 @exec cd %D/lib/sasl && ln -sf libplain.so.1.15 libplain.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/07/26 16:14:47 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/07/05 06:50:17 jakob Exp $
 @pkgcfl cyrus-sasl2-*
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -16,8 +16,6 @@ lib/sasl/libdigestmd5.a
 lib/sasl/libdigestmd5.la
 lib/sasl/libgssapiv2.a
 lib/sasl/libgssapiv2.la
-lib/sasl/libkerberos4.a
-lib/sasl/libkerberos4.la
 lib/sasl/liblogin.a
 lib/sasl/liblogin.la
 lib/sasl/libplain.a
