@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.6 2002/09/15 03:52:04 brad Exp $
---- ltmain.sh.orig	Sun Dec 10 19:02:22 2000
-+++ ltmain.sh	Wed Feb 21 09:59:59 2001
+$OpenBSD: patch-ltmain_sh,v 1.7 2003/06/30 20:41:15 sturm Exp $
+--- ltmain.sh.orig	Mon Dec 11 01:02:00 2000
++++ ltmain.sh	Sat Jun 28 22:04:17 2003
 @@ -1097,7 +1097,18 @@ EOF
  	    # These systems don't actually have c library (as such)
  	    continue
@@ -31,7 +31,17 @@ $OpenBSD: patch-ltmain_sh,v 1.6 2002/09/15 03:52:04 brad Exp $
        -module)
  	module=yes
  	continue
-@@ -2602,6 +2617,9 @@ EOF
+@@ -1682,6 +1697,9 @@ EOF
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  continue
++	  ;;
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
+@@ -2602,6 +2620,9 @@ EOF
  	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
  	    # these systems don't actually have a c library (as such)!
  	    ;;
@@ -41,7 +51,7 @@ $OpenBSD: patch-ltmain_sh,v 1.6 2002/09/15 03:52:04 brad Exp $
  	  *)
   	    # Add libc to deplibs on all other systems if necessary.
   	    if test $build_libtool_need_lc = "yes"; then
-@@ -4505,40 +4523,6 @@ relink_command=\"$relink_command\""
+@@ -4505,40 +4526,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
