@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/08 17:30:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/18 17:00:51 pvalchev Exp $
 # losely based on the FreeBSD port
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"
 BROKEN=		"hangs at runtime during build process"
 .endif
 
