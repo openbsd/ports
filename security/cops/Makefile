@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/09 05:19:29 obecian Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	cops.1.04
@@ -6,7 +6,7 @@ PKGNAME=	cops-1.04
 CATEGORIES=	security
 NO_CDROM=	"NOFEE:	Can not sell"
 
-MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/cops/
+MASTER_SITES= ftp://ftp.cerias.purdue.edu/pub/tools/unix/scanners/cops/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
