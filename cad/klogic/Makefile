@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/15 05:59:22 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/15 14:32:26 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT= 	"logic circuit simulator for kde"
+COMMENT= 	"logic circuit simulator for KDE"
 
 DISTNAME=	klogic-1.6
 CATEGORIES=	cad education x11 x11/kde
