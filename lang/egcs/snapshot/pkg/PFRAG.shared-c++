@@ -1,0 +1,4 @@
+lib/libstdc++.so.32.0
+lib/libstdc++.so.2.10.0
+lib/gcc-lib/@GCCARCH@/@VERSION@/libstdc++.so
+lib/gcc-lib/@GCCARCH@/@VERSION@/libstdc++.a

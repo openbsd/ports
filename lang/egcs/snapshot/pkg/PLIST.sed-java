@@ -1,0 +1,7 @@
+@pkgdep @COREPKG@
+bin/egcj
+bin/gcjh
+bin/jcf-dump
+bin/jv-scan
+lib/gcc-lib/@GCCARCH@/@VERSION@/jc1
+lib/gcc-lib/@GCCARCH@/@VERSION@/jvgenmain

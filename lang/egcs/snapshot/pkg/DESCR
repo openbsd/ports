@@ -5,7 +5,7 @@ egcs people strove trying to implement as much of it as possible.
 Egcs proved to be a succesful project, to the extent that it now is
 the official gnu compiler, relabelled gcc 2.95 for its first release.
 
-OpenBSD 2.6 ships with gcc 2.95.1, which should be adequate for most
+OpenBSD 2.7 ships with gcc 2.95.2, which should be adequate for most
 people.
 
 The main reason for the egcs/snapshot port is to make it easier for 
@@ -16,7 +16,7 @@ are ready to integrate it.
 From a user point of view, you may need some features that the port
 provides.
 
-There have been a lot of changes since gcc 2.95.1, this is just a quick
+There have been a lot of changes since gcc 2.95.2, this is just a quick
 summary of a few:
 
 * the intel scheduler has been revamped. It's more efficient on hundreds

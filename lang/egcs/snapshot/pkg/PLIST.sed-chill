@@ -1,0 +1,8 @@
+@pkgdep @COREPKG@
+@unexec install-info --delete --info-dir=%D/info %D/info/chill.info
+bin/chill
+info/chill.info
+lib/gcc-lib/@GCCARCH@/@VERSION@/cc1chill
+lib/gcc-lib/@GCCARCH@/@VERSION@/chillrt0.o
+lib/gcc-lib/@GCCARCH@/@VERSION@/libchill.a
+@exec install-info --info-dir=%D/info %D/info/chill.info

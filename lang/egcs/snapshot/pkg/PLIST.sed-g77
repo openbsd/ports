@@ -1,0 +1,30 @@
+@pkgdep @COREPKG@
+@unexec install-info --delete --info-dir=%D/info %D/info/eg77.info
+bin/eg77
+info/eg77.info
+info/eg77.info-1
+info/eg77.info-10
+info/eg77.info-11
+info/eg77.info-12
+info/eg77.info-13
+info/eg77.info-14
+info/eg77.info-15
+info/eg77.info-16
+info/eg77.info-17
+info/eg77.info-18
+info/eg77.info-19
+info/eg77.info-2
+info/eg77.info-20
+info/eg77.info-21
+info/eg77.info-3
+info/eg77.info-4
+info/eg77.info-5
+info/eg77.info-6
+info/eg77.info-7
+info/eg77.info-8
+info/eg77.info-9
+lib/gcc-lib/@GCCARCH@/@VERSION@/f771
+lib/gcc-lib/@GCCARCH@/@VERSION@/include/g2c.h
+lib/gcc-lib/@GCCARCH@/@VERSION@/libg2c.a
+man/man1/eg77.1
+@exec install-info --info-dir=%D/info %D/info/eg77.info

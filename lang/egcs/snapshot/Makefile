@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2000/03/29 23:26:17 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2000/04/18 23:23:15 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -18,7 +18,7 @@ MAINTAINER=	Marc.Espie@openbsd.org
 # experimental port, changes once a week, don't bother remirroring distfiles.
 
 PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_FTP="Yes, but wasteful"
+PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM="Probably meaningless"
 PERMIT_DISTFILES_CDROM="Probably meaningless"
 
@@ -39,12 +39,43 @@ PERMIT_DISTFILES_CDROM="Probably meaningless"
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
 #MAKE_TESTS=yes
-MAKE_GXX=yes
-MAKE_FORTRAN=yes
+MAKE_GXX=Yes
+MAKE_FORTRAN=Yes
 # we don't care about chill
 #MAKE_CHILL=yes
-MAKE_OBJC=yes
-MAKE_JAVA=yes
+MAKE_OBJC=Yes
+MAKE_JAVA=Yes
+
+MULTI_PACKAGES=
+# No sub packages description
+DESCR=${PKGDIR}/DESCR
+SUBPACKAGE?=
+.if empty(SUBPACKAGE)
+PKGNAME=${DISTNAME}-core
+.endif
+
+
+PATCH_LIST=patch-core-*
+.if defined(MAKE_GXX)
+PATCH_LIST+=patch-g++-*
+MULTI_PACKAGES+=-c++
+.endif
+.if defined(MAKE_OBJC)
+PATCH_LIST+=patch-objc-*
+MULTI_PACKAGES+=-objc
+.endif
+.if defined(MAKE_CHILL)
+PATCH_LIST+=patch-chill-*
+MULTI_PACKAGES+=-chill
+.endif
+.if defined(MAKE_FORTRAN)
+PATCH_LIST+=patch-g77-*
+MULTI_PACKAGES+=-g77
+.endif
+.if defined(MAKE_JAVA)
+PATCH_LIST+=patch-java-*
+MULTI_PACKAGES+=-java
+.endif
 
 .if defined(MAKE_TESTS)
 BUILD_DEPENDS+=	runtest::devel/dejagnu
@@ -147,23 +178,6 @@ post-extract:
 
 #### 
 # Patch section
-
-PATCH_LIST=patch-core-*
-.if defined(MAKE_GXX)
-PATCH_LIST+=patch-g++-*
-.endif
-.if defined(MAKE_OBJC)
-PATCH_LIST+=patch-objc-*
-.endif
-.if defined(MAKE_CHILL)
-PATCH_LIST+=patch-chill-*
-.endif
-.if defined(MAKE_FORTRAN)
-PATCH_LIST+=patch-g77-*
-.endif
-.if defined(MAKE_JAVA)
-PATCH_LIST+=patch-java-*
-.endif
 
 # get openbsd configuration files where they should be
 post-patch:
@@ -298,33 +312,11 @@ send-results:
 .else
 .endif
 
-PLIST=${WRKBUILD}/PLIST
-
-M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
-.if defined(MAKE_GXX)
-M4FLAGS+= -DGXX
-.endif
-.if defined(MAKE_FORTRAN)
-M4FLAGS+= -DFORTRAN
-.endif
-.if defined(MAKE_CHILL)
-M4FLAGS+= -DCHILL
-.endif
-.if defined(MAKE_OBJC)
-M4FLAGS+= -DOBJC
-.endif
-.if defined(MAKE_JAVA)
-M4FLAGS+= -DJAVA
-.endif
+SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
+	-e s/@VERSION@/`${GCC_NAME} -dumpversion`/ \
+	-e 's/@COREPKG@/${DISTNAME}-core/'
 
 GCC_NAME=${WRKBUILD}/gcc/xgcc
-pre-install:
-	m4 ${M4FLAGS} -DARCH=`${GCC_NAME} -dumpmachine` \
-	-DVERSION=`${GCC_NAME} -dumpversion` \
-	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
 
-.if !defined(NO_SHARED_LIBS)
-M4FLAGS+= -DDYNAMIC
-.endif
