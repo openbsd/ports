@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/09 19:15:39 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/03 21:31:07 xsa Exp $
 
 COMMENT=	"Python module for GnuPG interface"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=py-gnupg/}
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:gnupg-*:security/gnupg

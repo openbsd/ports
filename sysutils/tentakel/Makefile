@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/18 19:14:38 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/03 21:31:07 xsa Exp $
 
 COMMENT=	"distributed command execution"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tentakel/}
 EXTRACT_SUFX=	.tgz
 
-MODULES=	python
+MODULES=	lang/python
 
 WRKSRC=		${WRKDIST}/py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/05/15 09:25:17 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/03 21:31:07 xsa Exp $
 
 COMMENT=	"Python implementation of the Rijndael encryption algorithm"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	python
+MODULES=	lang/python
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 

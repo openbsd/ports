@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/03 21:34:43 xsa Exp $
 
 
 COMMENT=	"Python library for creating postscript or PDF charts"
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	python
+MODULES=	lang/python
 
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 

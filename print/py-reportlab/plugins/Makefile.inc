@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/08/03 21:31:08 xsa Exp $
 
 CATEGORIES=	print graphics
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=	.tgz
 
-MODULES=	python
+MODULES=	lang/python
 
 RUN_DEPENDS=	::print/py-reportlab/reportlab
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/03 21:34:44 xsa Exp $
 
 COMMENT=	"Python tool for generate Python API documents"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 WRKSRC=		${WRKDIR}/HappyDoc-r2_1

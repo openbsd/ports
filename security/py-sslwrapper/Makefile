@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/26 07:38:11 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/03 21:31:07 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pow/}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

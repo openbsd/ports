@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/03 21:31:07 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyopenssl/}
 
-MODULES=	python
+MODULES=	lang/python
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openssl
 

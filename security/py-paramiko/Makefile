@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/02 08:41:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 21:31:06 xsa Exp $
 
 COMMENT=	"Python module that implements the SSH2 protocol"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.zip
 
-MODULES=	python
+MODULES=	lang/python
 
 RUN_DEPENDS=	::security/py-crypto
 

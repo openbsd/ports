@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/09 09:34:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/03 21:31:07 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cryptkit/}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

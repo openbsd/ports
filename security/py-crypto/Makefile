@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/03 07:19:06 ish Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 21:31:07 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.amk.ca/files/python/crypto/
 
-MODULES=	python
+MODULES=	lang/python
 
-DOCSDIR=       ${PREFIX}/share/doc/py-crypto
+DOCSDIR=	${PREFIX}/share/doc/py-crypto
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}

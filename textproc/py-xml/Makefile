@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/03 21:34:44 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${LOCALBASE}
 

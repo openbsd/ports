@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/03 21:53:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 21:34:44 xsa Exp $
 
 COMMENT=	"Python module to easily generate XML/XHTML/HTML documents"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.librelogiciel.com/software/jaxml/tarballs/
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/01 13:39:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/03 21:34:43 xsa Exp $
 
 COMMENT=	"Python program to create FAQ's list from formatted data file"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makefaq/}
 EXTRACT_SUFX=	.tgz
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
