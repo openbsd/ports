@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2003/01/17 19:24:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.33 2003/04/10 10:30:07 jsyn Exp $
 
-COMMENT=		interactive spelling checker
-COMMENT-dutch=		ispell dictionary for Dutch
-COMMENT-french=		ispell dictionary for French
-COMMENT-german=		ispell dictionary for German
-COMMENT-russian=	ispell dictionary for Russian
-COMMENT-portuguese=	ispell dictionary for Rortuguese
-COMMENT-slovak=		ispell dictionary for Slovak
-COMMENT-spanish=	ispell dictionary for Spanish
-COMMENT-swedish=	ispell dictionary for Swedish
+COMMENT=		"interactive spelling checker"
+COMMENT-dutch=		"ispell dictionary for Dutch"
+COMMENT-french=		"ispell dictionary for French"
+COMMENT-german=		"ispell dictionary for German"
+COMMENT-russian=	"ispell dictionary for Russian"
+COMMENT-portuguese=	"ispell dictionary for Portuguese"
+COMMENT-slovak=		"ispell dictionary for Slovak"
+COMMENT-spanish=	"ispell dictionary for Spanish"
+COMMENT-swedish=	"ispell dictionary for Swedish"
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
