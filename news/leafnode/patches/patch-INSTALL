@@ -1,5 +1,6 @@
---- INSTALL.orig	Mon May 22 14:31:49 2000
-+++ INSTALL	Sat Jun 10 03:21:05 2000
+$OpenBSD: patch-INSTALL,v 1.1 2001/02/24 18:04:55 fgsch Exp $
+--- INSTALL.orig	Mon Jan  8 04:37:44 2001
++++ INSTALL	Sat Feb 24 14:50:13 2001
 @@ -64,11 +64,11 @@
  9. Edit /etc/inetd.conf so that $(BINDIR)/leafnode is executed for incoming
     NNTP connections.  Here is my inetd.conf line:

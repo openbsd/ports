@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon May 22 14:31:49 2000
-+++ Makefile.in	Sat Jun 10 06:51:14 2000
-@@ -32,7 +32,9 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/02/24 18:04:55 fgsch Exp $
+--- Makefile.in.orig	Mon Jan  8 04:37:44 2001
++++ Makefile.in	Sat Feb 24 14:50:13 2001
+@@ -32,7 +32,9 @@ BINDIR = $(PREFIX_USR)/sbin
  MANDIR = $(PREFIX_USR)/man
  SPOOLDIR = $(PREFIX_VAR)/spool/news
  LIBDIR   = /etc/leafnode
@@ -11,7 +12,7 @@
  
  # RPM crap
  RPM = @RPM@
-@@ -123,51 +125,15 @@
+@@ -123,51 +125,15 @@ config.o: config.c Makefile
  		-DVERSION=\"$(VERSION)\" $<
  
  install: liblnutil.a nntpd fetchnews texpire checkgroups applyfilter newsq
