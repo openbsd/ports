@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/01/18 18:13:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1999/01/19 00:08:58 espie Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -11,7 +11,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
