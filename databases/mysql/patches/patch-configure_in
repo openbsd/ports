@@ -1,0 +1,118 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/07/11 15:42:17 brad Exp $
+--- configure.in.orig	Thu Feb 14 12:30:15 2002
++++ configure.in	Thu Jul 11 10:43:19 2002
+@@ -365,38 +365,7 @@ AC_SUBST(PERL5)
+ AC_PATH_PROG(PS, ps, ps)
+ AC_MSG_CHECKING("how to check if pid exists")
+ PS=$ac_cv_path_PS
+-# Linux style
+-if $PS p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
+-# Solaris
+-elif $PS -p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
+-# BSD style
+-elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# SysV style
+-elif $PS -ef 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# Do anybody use this?
+-elif $PS $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
+-else
+-  case $SYSTEM_TYPE in
+-    *darwin*)
+-      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
+-    *cygwin*)
+-      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
+-    *)
+-      AC_MSG_ERROR([Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual.])
+-  esac
+-fi
++FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+ AC_SUBST(FIND_PROC)
+ AC_MSG_RESULT("$FIND_PROC")
+ 
+@@ -583,14 +552,23 @@ AC_ARG_WITH(mysqld-user,
+     )
+ AC_SUBST(MYSQLD_USER)
+ 
+-# compile with strings functions in assembler
++# If we should allow LOAD DATA LOCAL
++AC_MSG_CHECKING(if we should enable LOAD DATA LOCAL by default)
+ AC_ARG_ENABLE(local-infile,
+     [  --enable-local-infile
+-                          If LOAD DATA LOCAL INFILE is enabled by default.],
+-    [ ENABLED_LOCAL_INFILE=$enablewal ],
++                          Enable LOAD DATA LOCAL INFILE (default: disabled)],
++    [ ENABLED_LOCAL_INFILE=$enableval ],
+     [ ENABLED_LOCAL_INFILE=no ]
+     )
+ 
++if test "$ENABLED_LOCAL_INFILE" = "yes"
++then
++  AC_MSG_RESULT([yes])
++  AC_DEFINE([ENABLED_LOCAL_INFILE])
++else
++  AC_MSG_RESULT([no])
++fi
++
+ # Use Paul Eggerts macros from GNU tar to check for large file support.
+ MYSQL_SYS_LARGEFILE
+ 
+@@ -655,7 +633,8 @@ AC_ARG_WITH(libwrap,
+     AC_CHECK_HEADER(tcpd.h,
+       LIBS="$LIBS -lwrap"
+       AC_MSG_CHECKING(for TCP wrappers library -lwrap)
+-      AC_TRY_LINK([#include <tcpd.h>
++      AC_TRY_LINK([#include <stdio.h>
++#include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;
+ 
+@@ -1205,7 +1184,7 @@ then
+   AC_CHECK_LIB(c_r,strtok_r)
+   case "$with_osf32_threads---$target_os" in
+     # Don't keep -lc_r in LIBS; -pthread handles it magically
+-    yes---* | *---freebsd* ) LIBS="$my_save_LIBS" ;;
++    yes---* | *---freebsd* | *---openbsd* ) LIBS="$my_save_LIBS" ;;
+   esac
+   AC_CHECK_FUNCS(strtok_r pthread_init)
+ else
+@@ -1227,28 +1206,6 @@ AC_SUBST(LIBDL)
+ # System characteristics
+ AC_SYS_RESTARTABLE_SYSCALLS
+ 
+-# Build optimized or debug version ?
+-# First check for gcc and g++
+-if test "$ac_cv_prog_gcc" = "yes"
+-then
+-  DEBUG_CFLAGS="-g"
+-  DEBUG_OPTIMIZE_CC="-O"
+-  OPTIMIZE_CFLAGS="$MAX_C_OPTIMIZE"
+-else
+-  DEBUG_CFLAGS="-g"
+-  DEBUG_OPTIMIZE_CC=""
+-  OPTIMIZE_CFLAGS="-O"
+-fi
+-if test "$ac_cv_prog_cxx_g" = "yes"
+-then
+-  DEBUG_CXXFLAGS="-g"
+-  DEBUG_OPTIMIZE_CXX="-O"
+-  OPTIMIZE_CXXFLAGS="-O3"
+-else
+-  DEBUG_CXXFLAGS="-g"
+-  DEBUG_OPTIMIZE_CXX=""
+-  OPTIMIZE_CXXFLAGS="-O"
+-fi
+ AC_ARG_WITH(debug,
+     [  --without-debug         Build a production version without debugging code],
+     [with_debug=$withval],

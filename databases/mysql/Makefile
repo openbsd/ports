@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2002/05/20 03:26:27 brad Exp $
+# $OpenBSD: Makefile,v 1.80 2002/07/11 15:42:17 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -46,7 +46,8 @@ SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 CXX=		${CC}
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
-CONFIGURE_STYLE= gnu
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/mit-pthreads/config
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
@@ -62,6 +63,7 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-bench \
 		 --without-mit-threads \
 		 --without-gemini
+CONFIGURE_ENV=	HOSTNAME="/bin/hostname -s"
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
