@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/01 06:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/05/30 06:27:41 brad Exp $
 
 VER=		20.3
 DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
-
-MAINTAINER=	ports@OpenBSD.ORG
-
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
-#USE_AUTOCONF=	yes
+MAINTAINER=	ports@OpenBSD.ORG
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -29,7 +27,6 @@ CONFIGURE_ARGS=	${GCCARCH} --with-x-toolkit
 # stripped after install. (emacs crashes if stripped on an alpha)
 # To do the job correctly temacs should be stripped, not emacs
 # (which is created from temacs).
-#
 INSTALL_STRIP=
 STRIP_PROGS=	emacsclient etags ctags b2m
 .if (${MACHINE_ARCH} != "alpha")
@@ -39,7 +36,6 @@ STRIP_EXECS=	cvtmail digest-doc emacsserver fakemail hexl movemail \
 		profile sorted-doc yow
 
 # Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
-#
 PLIST=		${WRKDIR}/PLIST
 
 pre-install pre-package:
