@@ -1,6 +1,6 @@
-# $OpenBSD: kde.port.mk,v 1.11 2004/08/03 11:37:52 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.12 2004/08/03 11:39:37 espie Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY?=	Yes
 
 MODULES+=	x11/qt3
 MODQT_OVERRIDE_UIC?=No
