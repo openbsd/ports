@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2004/11/21 22:53:59 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/01/28 21:00:28 alek Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	converters textproc
 
@@ -29,7 +29,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
 		patch-*
 
-REGRESS_DEPENDS=	:python-*:lang/python
+REGRESS_DEPENDS=	:python-2.3*:lang/python/2.3
 
 post-extract:
 	@cd ${WRKSRC}/lib && cp -p error.c ../src

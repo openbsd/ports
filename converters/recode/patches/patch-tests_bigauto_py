@@ -1,0 +1,26 @@
+$OpenBSD: patch-tests_bigauto_py,v 1.1 2005/01/28 21:00:28 alek Exp $
+--- tests/bigauto.py.orig	Mon Jan 17 21:00:16 2005
++++ tests/bigauto.py	Mon Jan 17 21:01:43 2005
+@@ -81,16 +81,20 @@ class Report:
+         lensep = len(os.linesep)
+         line = readline()
+         while line:
+-            type, request = string.split(line[:-lensep], ':', 1)
++            split = string.split(line[:-lensep], ':', 1)
++            type = split[0]
+             if type == 'Request':
++                request = split[1]
+                 steps = self.get_steps(request)
+                 self.count_original_request(steps, request)
+                 line = readline()
+                 if line:
+                     if len(string.split(line[:-lensep], ':', 1)) != 2:
+                         print '*', line,
+-                    type, shrunk_to = string.split(line[:-lensep], ':', 1)
++                    split = string.split(line[:-lensep], ':', 1) 
++                    type = split[0]
+                     if type == 'Shrunk to':
++                        shrunk_to = split[1] 
+                         steps = self.get_steps(shrunk_to)
+                         self.count_shrunk_request(steps, shrunk_to)
+                         line = readline()
