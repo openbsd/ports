@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/18 15:01:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:39 lebel Exp $
+
+COMMENT=	"Motif tool for editing X11 bitmap fonts"
 
 DISTNAME=	xmbdfed-4.4
 CATEGORIES=	x11
-NEED_VERSION=	1.400
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
 LIB_DEPENDS=	ttf.1.3::print/freetype

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 15:44:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:41 lebel Exp $
+
+COMMENT=	"PostIt (R) messages onto your X11 screen"
 
 DISTNAME=	XPostitPlus-2.3
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 

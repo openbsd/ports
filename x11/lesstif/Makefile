@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2001/01/22 02:43:34 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/05/06 04:41:18 lebel Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
+
+COMMENT=	"API compatible clone of the Motif toolkit"
 
 DISTNAME=	lesstif-0.92.6
 CATEGORIES=	x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/

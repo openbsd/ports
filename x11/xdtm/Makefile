@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 04:41:33 lebel Exp $
+
+COMMENT=	"Desktop Manager: a graphical shell for X11"
 
 
 DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11
-NEED_VERSION=		1.305
+NEED_VERSION=	1.402
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

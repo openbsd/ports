@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:41:24 lebel Exp $
+
+COMMENT=	"extensible window manager for the X Window System."
 
 VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.356
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= sawmill
 

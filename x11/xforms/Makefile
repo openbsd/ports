@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/02/13 02:06:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 04:41:36 lebel Exp $
+
+COMMENT=	"GUI toolkit for X11"
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
 
@@ -11,7 +13,7 @@ XFORMS_ARCH=	${MACHINE_ARCH}
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
 CATEGORIES=	x11
-NEED_VERSION=	1.320
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/xforms/%SUBDIR%/
 MASTER_SITE_SUBDIR= openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=	.tgz

@@ -3,13 +3,15 @@
 # Date created:        25 January 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/12/25 12:59:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:38 lebel Exp $
 #
+
+COMMENT=	"moving mascot on your X11 screen"
 
 DISTNAME=	xmascot2.6a
 PKGNAME=        xmascot-2.6a
 CATEGORIES=	x11
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/
 
 HOMEPAGE=	http://cclub-flying.dsl.gr.jp/products/xmascot/

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/26 08:34:39 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:41:09 lebel Exp $
+
+COMMENT=	"pager for the Blackbox window manager."
 
 DISTNAME=	bbpager-0.3.0
 CATEGORIES=	x11
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/ \
 		http://openbsd.rutgers.edu/
 HOMEPAGE=	http://bbtools.thelinuxcommunity.org/available.phtml#bbpager

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/05 00:27:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:41:14 lebel Exp $
+
+COMMENT=	"C++ interface for gtk+"
 
 DISTNAME=	gtkmm-1.2.1
 CATEGORIES=	devel x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://download.sourceforge.net/gtkmm/
 
 BUILD_DEPENDS=	gm4::devel/m4

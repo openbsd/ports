@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/01/22 21:55:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:17 lebel Exp $
+
+COMMENT=	"extra libs and utils for kde"
 
 DISTNAME=	kdesupport-1.1.2	
 CATEGORIES=	x11 converters	
-NEED_VERSION=	1.328
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_KDE}	
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 EXTRACT_SUFX=	.tar.bz2

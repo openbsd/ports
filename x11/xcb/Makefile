@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:30 lebel Exp $
+
+COMMENT=	"tool for managing X11 cut-buffers"
 
 DISTNAME=	xcb-2.3
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= utilities
 

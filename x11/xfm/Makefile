@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/01 09:47:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:36 lebel Exp $
+
+COMMENT=	"X11 File Manager"
 
 DISTNAME=		xfm-1.4.2
 CATEGORIES=		x11
-NEED_VERSION=		1.319
+NEED_VERSION=	1.402
 MASTER_SITES=		ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 MAINTAINER=		ports@openbsd.org

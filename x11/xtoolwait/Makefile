@@ -2,12 +2,14 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/10/22 15:44:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 04:41:44 lebel Exp $
 #
+
+COMMENT=	"tool startup utility for X11"
 
 DISTNAME=	xtoolwait-1.1
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.x.org/contrib/utilities/		\
 		ftp://ftp.hacom.nl/pub/users/richard/
 

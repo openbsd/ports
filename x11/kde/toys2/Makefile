@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/30 12:35:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 04:41:17 lebel Exp $
+
+COMMENT=	"some useless kde applications"
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.305
+NEED_VERSION=	1.402
 VERSION=		2.1.1
 DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde

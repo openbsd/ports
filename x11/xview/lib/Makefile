@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/07/16 06:36:15 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:46 lebel Exp $
+
+COMMENT=	"OpenLook Toolkit libs, includes, and man pages"
 
 PKGNAME=	xview-lib-${XVIEW_VERSION}
 EXTRACT_ONLY=	
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

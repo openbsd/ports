@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:23 lebel Exp $
+
+COMMENT=	"analog clock for X11 w/appoint. reminder and mail notif"
 
 PKGNAME=	rclock-2.6.1
 DISTNAME=	rxvt-2.6.1
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
 		${MASTER_SITE_SUNSITE}

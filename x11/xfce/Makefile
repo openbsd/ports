@@ -3,12 +3,14 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.11 2000/11/30 05:28:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:34 lebel Exp $
 #
+
+COMMENT=	"CDE like desktop with GTK"
 
 DISTNAME=	xfce-3.6.3
 CATEGORIES=	x11
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.xfce.org/archive/
 
 HOMEPAGE=	http://www.xfce.org/

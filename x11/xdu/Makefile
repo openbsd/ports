@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:44:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:33 lebel Exp $
+
+COMMENT=	"graphic disk usage viewer"
 
 DISTNAME=		xdu-3.0
 CATEGORIES=     	x11
-NEED_VERSION=		1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 

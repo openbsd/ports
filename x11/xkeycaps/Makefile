@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 17:01:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:38 lebel Exp $
+
+COMMENT=	"keymap editor for the X window system"
 
 DISTNAME=	xkeycaps-2.46
 CATEGORIES=	x11 sysutils
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
 

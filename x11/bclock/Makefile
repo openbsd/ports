@@ -3,11 +3,13 @@
 # Date created:		8 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 2000/07/05 02:09:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:09 lebel Exp $
+
+COMMENT=	"round, analog X11 clock with bezier curve hands"
 
 DISTNAME=	bclock-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=     X11/clocks
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/12 12:41:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:26 lebel Exp $
+
+COMMENT=	"graphical toolkit for Tcl"
 
 DISTNAME=	tk8.3.2
 PKGNAME=	tk-8.3.2
 CATEGORIES=	x11 tk83
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_3
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 15:43:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/06 04:41:20 lebel Exp $
+
+COMMENT=	"OpenLook Virtual Window manager"
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 

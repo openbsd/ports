@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/05/05 20:24:25 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2001/05/06 04:41:22 lebel Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt2
 VERSION=	3.0
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.361
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:21 lebel Exp $
 #
+
+COMMENT=	"tvtwm with pie (circular) menus"
 
 DISTNAME=	piewm
 PKGNAME=	piewm-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@OpenBSD.ORG
 

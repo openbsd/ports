@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/12 12:41:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:41:27 lebel Exp $
+
+COMMENT=	"tk extension"
 
 DISTNAME=	Tktable2.6
 PKGNAME=	Tktable-2.6
 CATEGORIES=	x11
-NEED_VERSION=	1.338
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www.hobbs.wservice.com/tcl/capp/tkTable/
 
 HOMEPAGE=       http://www.hobbs.wservice.com/tcl/capp/main.html

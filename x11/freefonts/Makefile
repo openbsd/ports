@@ -3,12 +3,14 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.9 2000/12/23 15:32:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:13 lebel Exp $
 #
+
+COMMENT=	"collection of ATM fonts from the CICA archives"
 
 DISTNAME=	freefonts-0.10
 CATEGORIES=	x11
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 HOMEPAGE=	http://www.gimp.org/fonts.html

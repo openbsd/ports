@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 16:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:26 lebel Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
+
+COMMENT=	"graphical toolkit for Tcl"
 
 DISTNAME=	tk8.0.5
 PKGNAME=	tk-8.0.5
 CATEGORIES=	x11 tk80
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_0
 

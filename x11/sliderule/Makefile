@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:25 lebel Exp $
 #
+
+COMMENT=	"the part of X11R3's xcalc featuring a slide rule"
 
 DISTNAME=	sliderule
 PKGNAME=	sliderule-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@OpenBSD.ORG
 

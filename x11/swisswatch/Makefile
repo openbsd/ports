@@ -3,12 +3,14 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 04:41:25 lebel Exp $
 #
+
+COMMENT=	"Swiss railway clock emulation"
 
 DISTNAME=	swisswatch-0.06
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/X/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

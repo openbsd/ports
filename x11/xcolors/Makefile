@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:41:32 lebel Exp $
+
+COMMENT=	"display all (ok, most of) the colors in the universe"
 
 DISTNAME=	xcolors
 PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
 		ftp://ftp.weird.com/pub/mirror/
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/22 21:55:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:15 lebel Exp $
+
+COMMENT=	"games for KDE"
 
 DISTNAME=	kdegames-1.1.2	
 CATEGORIES=	x11 games
-NEED_VERSION=	1.328
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 EXTRACT_SUFX=	.tar.bz2

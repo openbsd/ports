@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/26 04:51:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:08 lebel Exp $
+
+COMMENT=	"X keygrabber for blackbox"
 
 DISTNAME=	bbkeys-0.3.5
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://movingparts.windsofstorm.net/bbkeys/	\
 		http://openbsd.rutgers.edu/
 HOMEPAGE=	http://movingparts.windsofstorm.net/bbkeys.shtml

@@ -3,12 +3,14 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:42 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:41:19 lebel Exp $
 #
+
+COMMENT=	"display the current time using the X11 root cursor"
 
 DISTNAME=	mouseclock-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 

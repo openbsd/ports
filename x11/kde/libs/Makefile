@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2000/11/01 15:44:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/06 04:41:16 lebel Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
+
+COMMENT=	"X11 libraries + a windows manager and much more"
 
 DISTNAME=	kdelibs-1.1.2
 CATEGORIES=	x11
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 EXTRACT_SUFX=	.tar.bz2

@@ -3,12 +3,14 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.14 2001/03/12 17:48:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 04:41:12 lebel Exp $
 #
+
+COMMENT=	"file manager with same look and feel as Windows95(tm)"
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
 
 MAINTAINER=	ports@openbsd.org

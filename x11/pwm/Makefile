@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/19 15:48:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:41:21 lebel Exp $
+
+COMMENT=	"a lightweight window manager with emphasis on usability"
 
 DISTNAME=	pwm-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.students.tut.fi/~tuomov/pwm/
 
