@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2002/01/07 18:16:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2002/01/20 22:17:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
 COMMENT-japanese=	"Japanese text-based web browser/pager"
+COMMENT-image=		"text-based web browser/pager with inline image support"
+COMMENT-japanese-image=	"Japanese text-based web browser/pager with image support"
 
-DISTNAME=	w3m-0.2.4
+VERSION=	0.2.4
+IMG_VERSION=	1.18
+
+DISTNAME=	w3m-${VERSION}
 CATEGORIES=	www
 NEED_VERSION=	1.498
 HOMEPAGE=	http://w3m.sourceforge.net/
@@ -19,8 +24,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w3m
+MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+SUPDISTFILES=		${DISTFILES} ${IMG_PATCH}
+IMG_PATCH=		w3m-${VERSION}-img-${IMG_VERSION}.patch.gz:0
+PATCH_DIST_STRIP=	-p1
 
-FLAVORS=	japanese
+FLAVORS=	japanese image
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
@@ -38,9 +47,21 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
+.if ${FLAVOR:L:Mimage}
+PKGNAME=	w3m-${VERSION}.${IMG_VERSION}
+PATCHFILES=	${IMG_PATCH}
+LIB_DEPENDS=	Imlib.19::graphics/imlib
+CONFIGURE_ENV+=	use_image=y
+DOCS+=		README.img
+.endif
+
 .if ${FLAVOR:L:Mjapanese}
 
+.  if ${FLAVOR:L:Mimage}
+FULLPKGNAME=	ja-${PKGNAME}-image
+.  else
 FULLPKGNAME=	ja-${PKGNAME}
+.  endif
 CATEGORIES+=	japanese
 CONFIGURE_ARGS+= --lang=ja --code=n
 DOCS+=		README.SSL README.cookie README.keymap \
