@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2001/11/24 11:59:11 shell Exp $
+# $OpenBSD: Makefile,v 1.114 2001/12/31 09:37:23 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += atlas
      SUBDIR += autobook
      SUBDIR += autoconf
+     SUBDIR += autoconf-new
      SUBDIR += automake
      SUBDIR += bison
      SUBDIR += boehm-gc
