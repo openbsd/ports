@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/10 08:13:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/10 09:00:49 avsm Exp $
 
 PKGNAME=	php4-gd-${V}
 
@@ -22,10 +22,6 @@ GD_DEPENDS=		gd.18::graphics/gd
 
 LIB_DEPENDS+=		${GD_DEPENDS} ${JPEG_DEPENDS} ${PNG_DEPENDS} \
 			${TIFF_DEPENDS}
-
-.for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}=	php4${i}-${V}
-.endfor
 
 # bz2
 MULTI_PACKAGES+=	-bz2
@@ -156,6 +152,10 @@ COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared=${LOCALBASE} \
 			--with-expat-dir=shared,${LOCALBASE}
 XSLT_DEPENDS=		sablot.90::textproc/sablotron expat.2::textproc/expat
+
+.for i in ${MULTI_PACKAGES}
+FULLPKGNAME${i}=	php4${i}-${V}
+.endfor
 
 .if defined(PACKAGING)
 .if (empty(SUBPACKAGE))
