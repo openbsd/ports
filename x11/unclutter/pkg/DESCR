@@ -1,0 +1,15 @@
+unclutter is a program which runs permanently in the background of an X11
+session.  It checks on the X11 pointer (cursor) position every few seconds, and
+when it finds it has not moved (and no buttons are pressed on the mouse, and
+the cursor is not in the root window) it creates a small sub-window as a child
+of the window the cursor is in.  The new window installs a cursor of size 1x1
+but a mask of all 0, ie an invisible cursor.  This allows you to see all the
+text in an xterm or xedit, for example.  The human factors crowd would agree it
+should make things less distracting.
+
+Once created, the program waits for the pointer to leave the window and then
+destroys it, restoring the original situation.  Button events are passed
+transparently through to the parent window.  They will usually cause the cursor
+to reappear because an active grab will be made by the program while the button
+is down, so the pointer will apparently leave the window, even though its x-y
+position doesn't change.
