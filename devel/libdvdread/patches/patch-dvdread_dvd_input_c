@@ -1,7 +1,7 @@
-$OpenBSD: patch-dvdread_dvd_input_c,v 1.1 2002/05/28 14:14:15 espie Exp $
---- dvdread/dvd_input.c.orig	Thu May  9 23:32:46 2002
-+++ dvdread/dvd_input.c	Tue May 28 16:05:10 2002
-@@ -237,6 +237,32 @@ static int file_close(dvd_input_t dev)
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.2 2003/02/24 22:54:03 espie Exp $
+--- dvdread/dvd_input.c.orig	Thu Feb 13 22:48:24 2003
++++ dvdread/dvd_input.c	Mon Feb 24 23:37:30 2003
+@@ -257,6 +257,32 @@ static int file_close(dvd_input_t dev)
    return 0;
  }
  
@@ -34,9 +34,9 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.1 2002/05/28 14:14:15 espie Exp $
  
  /**
   * Setup read functions with either libdvdcss or minimal DVD access.
-@@ -247,6 +273,10 @@ int DVDInputSetup(void)
-   char **dvdcss_version = NULL;
-   
+@@ -275,6 +301,10 @@ int dvdinput_setup(void)
+ #else
+   /* dlopening libdvdcss */
    dvdcss_library = dlopen("libdvdcss.so.2", RTLD_LAZY);
 +#if defined(__OpenBSD__)
 +  if (!dvdcss_library)
