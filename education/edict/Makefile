@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/11 02:08:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/04 07:10:29 kevlo Exp $
 
 COMMENT=	"commandline interface to online dictionaries"
 
-DISTNAME=	edict-1.2
+DISTNAME=	edict-2.0
 CATEGORIES=	education
 
 HOMEPAGE=	http://edictionary.sourceforge.net/
