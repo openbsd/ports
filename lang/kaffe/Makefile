@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/05 16:10:27 ian Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/12 13:02:25 espie Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -8,6 +8,7 @@
 DISTNAME=	kaffe-1.0.5
 CATEGORIES=	lang
 NEED_VERSION=	1.319
+BROKEN=		"Does not build with the libgmp in ports (mpz_add -> gmpz_add)"
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
@@ -17,7 +18,8 @@ BUILD_DEPENDS=	libtool::devel/libtool
 # (if you don't, I think it will build a command-line-only Java--untested).
 LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
 		gif.4.::graphics/giflib \
-		png.1.::graphics/png
+		png.1.::graphics/png \
+		gmp.4.::devel/gmp
 
 HOMEPAGE=	http://www.kaffe.org/
 
