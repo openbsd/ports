@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.4 2004/08/21 19:43:03 sturm Exp $
---- src/sysdeps/openbsd.c.orig	2004-05-01 11:46:38.000000000 -0600
-+++ src/sysdeps/openbsd.c	2004-06-20 11:27:05.000000000 -0600
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.5 2004/10/16 16:33:56 sturm Exp $
+--- src/sysdeps/openbsd.c.orig	Sun Sep  5 12:57:34 2004
++++ src/sysdeps/openbsd.c	Mon Oct 11 00:11:29 2004
 @@ -53,27 +53,21 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
@@ -21,9 +21,9 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.4 2004/08/21 19:43:03 sturm Exp $
 -		{ "_cp_time" },
 -		{ "" }
 -	};
--
 +	size_t len;
  
+-
 -	if (kvmd == NULL)
 -		return;
 -	if (nl[0].n_type == 0)

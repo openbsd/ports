@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/16 16:33:56 sturm Exp $
 
 COMMENT=	"Analog clock for GkrellM2"
 
-VERSION=	0.3.2
+VERSION=	0.3.2.1
 DISTNAME=	gkrellaclock-${VERSION}
 CATEGORIES=	misc sysutils/gkrellm
 

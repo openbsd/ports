@@ -1,7 +1,7 @@
-$OpenBSD: patch-gkrellsun_c,v 1.3 2004/06/04 01:45:58 naddy Exp $
---- gkrellsun.c.orig	2004-05-07 00:16:38.000000000 -0600
-+++ gkrellsun.c	2004-06-03 19:44:08.000000000 -0600
-@@ -194,8 +194,8 @@ struct _Sun
+$OpenBSD: patch-gkrellsun_c,v 1.4 2004/10/16 16:33:56 sturm Exp $
+--- gkrellsun.c.orig	Sun Jun  6 06:34:21 2004
++++ gkrellsun.c	Mon Oct 11 14:34:03 2004
+@@ -214,8 +214,8 @@ struct _Sun
     SunData data;
  };
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-gkrellsun_c,v 1.3 2004/06/04 01:45:58 naddy Exp $
  static Sun sununit;
  
  static gchar *sun_data_dir;
-@@ -211,9 +211,9 @@ static void update_sun_data(Sun * sun)
+@@ -231,9 +231,9 @@ static void update_sun_data(Sun * sun)
     glong date;
     gint day_of_month, month, year;
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-gkrellsun_c,v 1.3 2004/06/04 01:45:58 naddy Exp $
     /* It may return NULL when the year does not fit into an integer.*/
     if (time_struc == NULL) {
        g_message("Error:  gmtime returned NULL\n"); exit(EXIT_FAILURE);
-@@ -238,7 +238,7 @@ static void update_sun_data(Sun * sun)
+@@ -258,7 +258,7 @@ static void update_sun_data(Sun * sun)
           year, month, day_of_month, date);
     }
  
@@ -33,20 +33,3 @@ $OpenBSD: patch-gkrellsun_c,v 1.3 2004/06/04 01:45:58 naddy Exp $
     if (time_struc == NULL) {
        g_message("Error: localtime returned NULL\n"); exit(EXIT_FAILURE);
     }
-@@ -839,6 +839,7 @@ update_tooltip(Sun *sun)
-    double      val, altnoon;
-    int         H,M;
-    int         ampm_digit;
-+   gint        moonphase;
- 
-    if (tooltip == NULL)
-       return;
-@@ -932,7 +933,7 @@ update_tooltip(Sun *sun)
-          (void)g_string_append_printf(mboxes, _("\nMoon Altitude: %4.1f"), sun->data.h_moon);
-          (void)g_string_append_printf(mboxes, _("\nMoon Phase: %4.1f\n"), sun->data.MoonPhase);
-          /* MoonPhase: 0 -> 1; there are 8 phase names */
--         gint moonphase = (gint) ((sun->data.MoonPhase * 8.0) + 0.4);
-+         moonphase = (gint) ((sun->data.MoonPhase * 8.0) + 0.4);
-          (void)g_string_append_printf(mboxes, _("Moon Phase: %s"), moonPhases[moonphase]);
-    }
- 

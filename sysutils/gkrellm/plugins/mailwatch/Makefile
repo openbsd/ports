@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/16 16:33:56 sturm Exp $
 
 COMMENT=	"GkrellM2 plugin to monitor multiple mailboxes"
 
-DISTNAME=	gkrellm-mailwatch-2.4.2
+DISTNAME=	gkrellm-mailwatch-2.4.3
 CATEGORIES=	mail sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellm.luon.net/mailwatch.phtml

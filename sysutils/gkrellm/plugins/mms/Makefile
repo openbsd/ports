@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/18 14:49:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/16 16:33:56 sturm Exp $
 
 COMMENT=	"XMMS plugin for Gkrellm2"
 
-DISTNAME=	gkrellmms-2.1.19
+DISTNAME=	gkrellmms-2.1.20
 CATEGORIES=	audio sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellm.luon.net/gkrellmms.phtml
