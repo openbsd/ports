@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/15 03:28:05 jcs Exp $
 
-DISTNAME=	xscavenger-143
+DISTNAME=	xscavenger-1.4.4
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
-PKGNAME=	xscavenger-1.4.3
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -15,7 +14,7 @@ COMMENT=	"Lode Runner clone"
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
-MAINTAINER=	Joshua Stein <jcs@openbsd.org>
+MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
