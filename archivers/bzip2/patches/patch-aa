@@ -1,5 +1,5 @@
---- Makefile.~1~	Wed Sep  9 04:30:41 1998
-+++ Makefile	Sun Sep 13 22:31:15 1998
+--- Makefile.orig	Thu Oct 22 21:27:22 1998
++++ Makefile	Wed Oct 28 10:25:29 1998
 @@ -20,6 +20,7 @@
  lib: $(OBJS)
  	rm -f libbz2.a
@@ -8,3 +8,12 @@
  
  test: bzip2
  	@cat words1
+@@ -38,7 +39,7 @@
+ clean: 
+ 	rm -f *.o libbz2.a bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
+ 
+-.c.o: $*.o bzlib.h bzlib_private.h
++.c.o: bzlib.h bzlib_private.h
+ 	$(CC) $(CFLAGS) -c $*.c -o $*.o
+ 
+ tarfile:

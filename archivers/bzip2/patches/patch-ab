@@ -1,0 +1,39 @@
+--- bzip2.c.orig	Sun Oct 18 03:34:28 1998
++++ bzip2.c	Tue Feb  9 01:45:29 1999
+@@ -160,8 +160,8 @@
+ 
+ #   define PATH_SEP    '/'
+ #   define MY_LSTAT    lstat
+-#   define MY_S_IFREG  S_ISREG
+ #   define MY_STAT     stat
++#   define MY_S_IFREG  S_ISREG
+ 
+ #   define APPEND_FILESPEC(root, name) \
+       root=snocString((root), (name))
+@@ -777,6 +777,17 @@
+    return True;
+ }
+ 
++Bool notARegularFile ( Char* name )
++{
++   IntNative      i;
++   struct MY_STAT statBuf;
++
++   i = MY_STAT ( name, &statBuf );
++   if (i != 0) return True;
++   if (MY_S_IFREG(statBuf.st_mode)) return False;
++   return True;
++}
++
+ 
+ /*---------------------------------------------*/
+ void copyDatePermissionsAndOwner ( Char *srcName, Char *dstName )
+@@ -1002,7 +1013,7 @@
+                 progName, inName );
+       return;
+    }
+-   if ( srcMode != SM_I2O && notAStandardFile ( inName )) {
++   if ( srcMode != SM_I2O && notARegularFile ( inName )) {
+       fprintf ( stderr, "%s: Input file %s is not a normal file, skipping.\n",
+                 progName, inName );
+       return;
