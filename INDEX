@@ -419,9 +419,9 @@ qmailanalog-0.70|mail/qmailanalog||tools to analyze qmail-send's activity record
 serialmail-0.75|mail/serialmail||tools for passing mail across serial links|mail/serialmail/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||ucspi-tcp-0.88 qmail-1.03 daemontools-0.70|any|y|y|y|y
 solid-pop3d-0.15|mail/solid-pop3d||flexible POP3 server|mail/solid-pop3d/pkg/DESCR|Dan Harnett <danh@openbsd.org>|mail|||any|y|y|y|y
 solid-pop3d-0.15-apop|mail/solid-pop3d,apop||flexible POP3 server|mail/solid-pop3d/pkg/DESCR|Dan Harnett <danh@openbsd.org>|mail|||any|y|y|y|y
-tkrat-2.0b9|mail/tkrat||mail user agent for X in C with a Tcl/Tk frontend|mail/tkrat/pkg/DESCR|riks@wni.com|mail x11|tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
+tkrat-2.0b9|mail/tkrat||mail user agent for X in C with a Tcl/Tk frontend|mail/tkrat/pkg/DESCR|Rik Schneider <rik@deranged.schneider.org>|mail x11|tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
 vrfy-99.05.22|mail/vrfy||verify email addresses and mailing lists|mail/vrfy/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|mail|||any|y|y|y|y
-wmbiff-0.2|mail/wmbiff||xbiff-like Window Maker dock app|mail/wmbiff/pkg/DESCR|opcode@skylab.2y.net|mail|||any|y|y|y|y
+wmbiff-0.2|mail/wmbiff||xbiff-like Window Maker dock app|mail/wmbiff/pkg/DESCR|Cameron Lerch <opcode@skylab.2y.net>|mail|||any|y|y|y|y
 xfaces-3.3|mail/xfaces||mail image display for X11|mail/xfaces/pkg/DESCR|ports@openbsd.org|mail|faces-1.6.1|faces-1.6.1|any|n|n|n|n
 xfmail-1.4.6|mail/xfmail||xforms-based mail application for Unix|mail/xfmail/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail x11|bzip2-1.0.1 glib-1.2.8 xforms-0.88|glib-1.2.8 xforms-0.88|i386 sparc m68k hp300|n|y|n|y
 xlbiff-3.0|mail/xlbiff||display from/subject from incoming mails using X11|mail/xlbiff/pkg/DESCR|ports@openbsd.org|mail x11|||any|y|y|y|y
@@ -877,7 +877,7 @@ qvwm-1.1.8-esound|x11/qvwm,esound||Windows 95/98/NT like window manager |x11/qvw
 qvwm-1.1.8-esound-imlib|x11/qvwm,esound,imlib||Windows 95/98/NT like window manager |x11/qvwm/pkg/DESCR|Dan Harnett <danh@openbsd.org>|x11|gettext-0.10.35 jpeg-6b glib-1.2.8 libaudiofile-0.1.10 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 esound-0.2.20 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 libaudiofile-0.1.10 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 esound-0.2.20 imlib-1.9.8.1|any|y|y|y|y
 qvwm-1.1.8-imlib|x11/qvwm,imlib||Windows 95/98/NT like window manager |x11/qvwm/pkg/DESCR|Dan Harnett <danh@openbsd.org>|x11|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|any|y|y|y|y
 rclock-2.6.1|x11/rclock||analog clock for X11 w/appoint. reminder and mail notif|x11/rclock/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|x11|||any|y|y|y|y
-root-tail-0.0.6|x11/root-tail||tails a given file anywhere on your X11 root window|x11/root-tail/pkg/DESCR|opcode@skylab.2y.net|x11|||any|y|y|y|y
+root-tail-0.0.6|x11/root-tail||tails a given file anywhere on your X11 root window|x11/root-tail/pkg/DESCR|Cameron Lerch <opcode@skylab.2y.net>|x11|||any|y|y|y|y
 rxvt-2.7.3|x11/rxvt||color, low memory usage, xterm replacement|x11/rxvt/pkg/DESCR|Jason Ish <jasoni@openbsd.org>|x11|||any|y|y|y|y
 sliderule-1.0|x11/sliderule||the part of X11R3's xcalc featuring a slide rule|x11/sliderule/pkg/DESCR|ports@OpenBSD.ORG|x11|||any|n|y|n|y
 swisswatch-0.06|x11/swisswatch||Swiss railway clock emulation|x11/swisswatch/pkg/DESCR|ports@OpenBSD.ORG|x11|||any|y|y|y|y
