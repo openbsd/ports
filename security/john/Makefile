@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/04/06 03:44:11 pvalchev Exp $
 
 COMMENT=	"extremely fast password cracker"
 
 DISTNAME=	john-1.6
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=     security
+MASTER_SITES=	http://www.openwall.com/john/
 
-MASTER_SITES=	http://www.openwall.com/john/ \
-		http://www.false.com/security/john/ \
-		ftp://ftp.false.com/pub/security/john/
+HOMEPAGE=	http://www.openwall.com/john/
 
-MAINTAINER=	Dug Song <dugsong@monkey.org>
+MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
+
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" \
 		CFLAGS="-c -Wall ${CFLAGS} -fomit-frame-pointer"
@@ -39,14 +42,10 @@ ALL_TARGET=	linux-alpha
 ALL_TARGET=	generic
 .endif
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
-
 do-configure:
 	@cd ${WRKDIST} && \
 	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' < params.h > \
 		params.h.new && mv -f params.h.new params.h
-
-NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
