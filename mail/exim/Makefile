@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/12 08:29:36 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/23 13:43:56 peter Exp $
 #
 
-DISTNAME=	exim-3.12
+DISTNAME=	exim-3.13
 CATEGORIES=	mail
 
 MAINTAINER=	peter.galbavy@knowledge.com
 
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
-DISTFILES=	exim-3.12.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
 
 do-configure:
 	@mkdir -p ${WRKSRC}/Local
