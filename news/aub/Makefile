@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/28 01:50:16 naddy Exp $
 
 COMMENT=	"assemble usenet binaries"
 
 PKGNAME=	aub-2.0.5
 DISTNAME=	aub
 CATEGORIES=	news
-NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -23,6 +22,7 @@ DIST_SUBDIR=	aub
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive . ;;
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 do-install:

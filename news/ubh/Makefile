@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/12 02:49:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:50:16 naddy Exp $
 
 COMMENT=	"download and decode binaries posted to Usenet"
 
 DISTNAME=	ubh-2.5
 CATEGORIES=	news
-NEED_VERSION=	1.509
 
 HOMEPAGE=	http://ubh.sourceforge.net/
 
@@ -23,6 +22,7 @@ RUN_DEPENDS=	::mail/p5-MIME-tools \
 		::devel/p5-String-CRC32
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ubh

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/28 01:50:16 naddy Exp $
 
 COMMENT=	"frontend to dejanews for searching usenet archives"
 
 DISTNAME=	dejasearch-1.9.0
 CATEGORIES=	news
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://homemade.hypermart.net/dejasearch/
 
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${HOMEPAGE}
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 DOCS=	COPYING FAQ HISTORY README
 

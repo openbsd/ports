@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/01/03 16:27:55 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 01:50:16 naddy Exp $
 
 COMMENT=	'full-screen easy to use Usenet reader'
 
 DISTNAME=	tin-1.4.5
 CATEGORIES=	news
-NEED_VERSION=	1.500
+
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
 		ftp://ftp.nuxi.com/pub/tin/stable/ \
@@ -33,5 +33,7 @@ CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
 ALL_TARGET=	build
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:50:16 naddy Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -8,7 +8,6 @@ DISTNAME=		linleech_2.2.1.orig
 
 PKGNAME=		linleech-2.2.1
 CATEGORIES=     	news
-NEED_VERSION=		1.515
 
 MAINTAINER=		J Shoemaker <shoemaker@softhome.net>
 
@@ -25,6 +24,8 @@ MASTER_SITES=		ftp://ftp.grolier.fr/pub/mirrors/ftp.debian.org/debian/dists/pota
 
 LIB_DEPENDS=    	slang.::devel/libslang
 WRKDIST=		${WRKDIR}/linleech-2.2.1.orig
+
+NO_REGRESS=		Yes
 
 DOCDIR=${PREFIX}/share/doc/linleech
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/28 01:50:16 naddy Exp $
 
 COMMENT=	"threaded newsreader"
 
 CATEGORIES=	news
 MAINTAINER= 	Marc Espie <espie@openbsd.org>
-NEED_VERSION=	1.515
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=76
@@ -33,5 +32,7 @@ FAKE_FLAGS= \
 	inewsbin=${WRKINST}${PREFIX}/bin \
 	mansrc=${WRKINST}${PREFIX}/man/man1 \
 	installfilexp=${WRKINST}${PREFIX}/lib/trn/filexp
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
