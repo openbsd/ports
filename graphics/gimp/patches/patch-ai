@@ -1,0 +1,12 @@
+--- modules/Makefile.in.orig	Wed Feb  2 21:37:00 2000
++++ modules/Makefile.in	Sat Feb  5 16:26:12 2000
+@@ -181,8 +181,7 @@
+ CPPFLAGS =  	-DMODULE_COMPILATION
+ 
+ 
+-INCLUDES =          -I$(top_srcdir)                         -I$(top_srcdir)/intl                    $(GTK_CFLAGS)                           -I$(includedir)
+-
++INCLUDES =          -I$(top_srcdir)                         -I$(top_srcdir)/intl                    $(GTK_CFLAGS)                           -I$(includedir)		-I/usr/local/include
+ 
+ EXTRA_DIST =  	makefile.cygwin			makefile.msc			module.def			modregister.c			modregister.h
+ 

@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	Thu Dec 16 14:35:16 1999
-+++ docs/Makefile.in	Wed Jan  5 14:24:00 2000
-@@ -139,7 +139,7 @@
+--- docs/Makefile.in.orig	Wed Feb  2 21:44:12 2000
++++ docs/Makefile.in	Sat Feb  5 16:25:30 2000
+@@ -138,7 +138,7 @@
  LT_REVISION = @LT_REVISION@
  MAILER = @MAILER@
  MAINT = @MAINT@

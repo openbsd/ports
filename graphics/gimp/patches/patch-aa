@@ -1,6 +1,6 @@
---- libgimp/Makefile.in.orig	Thu Dec 16 14:20:21 1999
-+++ libgimp/Makefile.in	Wed Jan  5 14:22:59 2000
-@@ -185,7 +185,7 @@
+--- libgimp/Makefile.in.orig	Wed Feb  2 21:36:14 2000
++++ libgimp/Makefile.in	Sat Feb  5 16:24:33 2000
+@@ -183,7 +183,7 @@
  AM_CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@
  
  
@@ -9,8 +9,8 @@
  
  
  EXTRA_DIST =  	gimpfeatures.h.in		makefile.msc			makefile.cygwin			gimp.def			gimpui.def
-@@ -208,11 +208,11 @@
- gimpinclude_HEADERS =  	color_display.h			color_selector.h		gimp.h				gimpchainbutton.h		gimpcolorbutton.h	        gimpcompat.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimppatheditor.h		gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpintl.h			gserialize.h			parasite.h			parasiteF.h			parasiteP.h			parasiteio.h
+@@ -206,11 +206,11 @@
+ gimpinclude_HEADERS =  	color_display.h			color_selector.h		gimp.h				gimpchainbutton.h		gimpcolorbutton.h		gimpcolorspace.h	        gimpcompat.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimphelpui.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimppatheditor.h		gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpwidgets.h			gimpintl.h			gserialize.h			parasite.h			parasiteF.h			parasiteP.h			parasiteio.h
  
  
 -libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
