@@ -3,42 +3,25 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/01/30 00:29:20 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/18 19:18:55 marc Exp $
 #
 
-DISTNAME=	irc2.9.2p3
-PKGNAME=	irc-2.9.2.3
+DISTNAME=	irc2.9.5
 CATEGORIES=	net
+
+MAINTAINER=	marc@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/
-
-MAINTAINER=	joey@OpenBSD.ORG
-
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		yes
-.endif
-
-# the NOTE command is disabled by default
-# ENABLE_NOTE=yes
-
-# Syslog-Facility to use for logging
-# default:
-SYSLOG_FACILITY=LOG_LOCAL5
-
 EXTRACT_SUFX=	.tgz
-SCRIPTS_ENV=	SYSLOG_FACILITY="${SYSLOG_FACILITY}"
 
-MAN8=		ircd.8
-
-do-configure:
-	@(cd ${WRKSRC} && make CONFIGARGS=--prefix=${PREFIX})
+GNU_CONFIGURE=	yes
 
 do-build:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/rev.sh` && make all)
+	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
 do-install:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/rev.sh` && make install)
-
-pre-install:
-	@${MKDIR} ${PREFIX}/lib/ircd
+	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>

@@ -1,6 +1,10 @@
-lib/ircd/example.conf
-lib/ircd/ircd.motd
+@cwd /usr/local
+@name irc2.9.5
+bin/irc
 lib/ircd/ircd.m4
+lib/ircd/example.conf
+man/man1/irc.1
 man/man8/ircd.8
 sbin/ircd
 sbin/chkconf
+@dirrm lib/ircd
