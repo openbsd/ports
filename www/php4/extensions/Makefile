@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/09/14 00:46:02 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2002/09/14 15:22:06 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -10,8 +10,10 @@ FLAVORS=	no_x11
 FLAVOR?= 
 
 RUN_DEPENDS=	:php4-core-${V}:www/php4/core
+MODULES=	gettext iconv
 
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs 
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
+			--with-iconv-dir=${LOCALBASE} --with-iconv=${LOCALBASE}
 
 GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
 			png.3::graphics/png \
@@ -278,7 +280,7 @@ CONFIGURE_ARGS+=	--disable-xslt
 .else
 MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
-CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared=${LOCALBASE} \
+CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
 			--with-expat-dir=shared,${LOCALBASE}
 XSLT_DEPENDS=		sablot.96::textproc/sablotron expat.2::textproc/expat
 .endif
