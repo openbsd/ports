@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2002/01/10 11:08:56 shell Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/06/10 01:12:24 shell Exp $
 bin/xchat
 bin/xchat-text
 share/doc/xchat/README
@@ -43,4 +43,5 @@ share/locale/tr/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
+share/pixmaps/xchat.png
 @dirrm share/doc/xchat
