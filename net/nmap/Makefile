@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2003/12/12 05:11:47 margarida Exp $
+# $OpenBSD: Makefile,v 1.48 2004/01/29 20:30:33 sturm Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
-DISTNAME=	nmap-3.48
+DISTNAME=	nmap-3.50
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
