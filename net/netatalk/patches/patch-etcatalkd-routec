@@ -1,5 +1,6 @@
+$OpenBSD: patch-etcatalkd-routec,v 1.2 2001/03/19 13:50:01 wilfried Exp $
 --- etc/atalkd/route.c.orig	Sun Aug 17 09:20:18 1997
-+++ etc/atalkd/route.c	Tue Nov 30 14:18:52 1999
++++ etc/atalkd/route.c	Fri Mar 16 15:23:59 2001
 @@ -3,6 +3,8 @@
   * All Rights Reserved. See COPYRIGHT.
   */
@@ -18,7 +19,7 @@
  route( message, dst, gate, flags )
      int			message;
      struct sockaddr	*dst, *gate;
-@@ -20,7 +22,7 @@
+@@ -20,7 +22,7 @@ route( message, dst, gate, flags )
  {
      struct rtentry	rtent;
  
@@ -27,7 +28,7 @@
      rtent.rt_dst = *dst;
      rtent.rt_gateway = *gate;
      rtent.rt_flags = flags;
-@@ -30,10 +32,10 @@
+@@ -30,11 +32,12 @@ route( message, dst, gate, flags )
  #else BSD4_4
  
  struct sockaddr_m {
@@ -35,14 +36,17 @@
 -    u_char	sam_family;
 -    u_short	sam_pad;
 -    u_short	sam_mask;
+-} mask = { sizeof( struct sockaddr_m ), 0, 0, 0xffff };
 +    u_int8_t	sam_len;
 +    u_int8_t	sam_family;
 +    u_int16_t	sam_pad;
 +    u_int16_t	sam_mask;
- } mask = { sizeof( struct sockaddr_m ), 0, 0, 0xffff };
++    u_int16_t	sam_pad2;
++} mask = { sizeof( struct sockaddr_m ), 0, 0, 0xffff, 0 };
  
  struct rt_msg_at {
-@@ -43,6 +45,7 @@
+     struct rt_msghdr	rtma_rtm;
+@@ -43,6 +46,7 @@ struct rt_msg_at {
      struct sockaddr_m	rtma_mask;
  } rtma;
  
@@ -50,7 +54,7 @@
  route( message, dst, gate, flags )
      int			message;
      struct sockaddr_at	*dst, *gate;
-@@ -50,7 +53,7 @@
+@@ -50,7 +54,7 @@ route( message, dst, gate, flags )
  {
      int			rc;
  

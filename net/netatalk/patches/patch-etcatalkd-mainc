@@ -1,5 +1,6 @@
+$OpenBSD: patch-etcatalkd-mainc,v 1.2 2001/03/19 13:50:01 wilfried Exp $
 --- etc/atalkd/main.c.orig	Mon Oct  6 01:50:47 1997
-+++ etc/atalkd/main.c	Tue Nov 30 18:16:08 1999
++++ etc/atalkd/main.c	Thu Mar 15 19:26:37 2001
 @@ -23,10 +23,11 @@
  #include <syslog.h>
  #include <stdio.h>
@@ -13,7 +14,7 @@
  
  #include <netatalk/endian.h>
  #include <netatalk/at.h>
-@@ -60,6 +61,10 @@
+@@ -60,6 +61,10 @@ extern int	rtmp_packet();
  extern int	nbp_packet();
  extern int	aep_packet();
  extern int	zip_packet();
@@ -24,7 +25,7 @@
  
  int		rtfd;
  
-@@ -100,9 +105,9 @@
+@@ -100,9 +105,9 @@ as_timer()
      struct ziptab	*zt;
      char		*data, *end, packet[ 587 ];
      int			sentzipq = 0;
@@ -36,7 +37,22 @@
  
      for ( iface = interfaces; iface; iface = iface->i_next ) {
  	if ( iface->i_flags & IFACE_LOOPBACK ) {
-@@ -261,7 +266,8 @@
+@@ -190,12 +195,12 @@ as_timer()
+ 		     */
+ 		    syslog( LOG_INFO, "config for no router" );
+ 		    if ( iface->i_flags & IFACE_PHASE2 ) {
+-			iface->i_rt->rt_firstnet = 0;
++			iface->i_rt->rt_firstnet = htons(1);
+ 			iface->i_rt->rt_lastnet = htons( STARTUP_LASTNET );
+ 			setaddr( iface, IFACE_PHASE2,
+ 				iface->i_addr.sat_addr.s_net,
+ 				iface->i_addr.sat_addr.s_node,
+-				0, htons( STARTUP_LASTNET ));
++				htons(1), htons( STARTUP_LASTNET ));
+ 		    }
+ 		    if ( looproute( iface, RTMP_ADD ) < 0 ) {
+ 			syslog( LOG_ERR,
+@@ -261,20 +266,21 @@ as_timer()
  		 * as having no router, we will notice when a router
  		 * comes back up.
  		 */
@@ -46,7 +62,23 @@
  		    gate->g_iface->i_flags |= IFACE_NOROUTER;
  		    gate->g_iface->i_flags &= ~IFACE_CONFIG;
  		    syslog( LOG_INFO, "as_timer last gateway down" );
-@@ -286,8 +292,8 @@
+ 
+-		    /* Set netrange to 0-fffe.  */
++		    /* Set netrange to 1-fffe.  */
+ 		    if ( gate->g_iface->i_flags & IFACE_PHASE2 ) {
+-			gate->g_iface->i_rt->rt_firstnet = 0;
++			gate->g_iface->i_rt->rt_firstnet = htons(1);
+ 			gate->g_iface->i_rt->rt_lastnet =
+ 				htons( STARTUP_LASTNET );
+ 			setaddr( iface, IFACE_PHASE2,
+ 				iface->i_addr.sat_addr.s_net,
+ 				iface->i_addr.sat_addr.s_node,
+-				0, htons( STARTUP_LASTNET ));
++				htons(1), htons( STARTUP_LASTNET ));
+ 		    }
+ 		}
+ 		continue;
+@@ -286,8 +292,8 @@ as_timer()
  	     */
  	    if (( iface->i_rt->rt_flags & RTMPTAB_HASZONES ) == 0 ) {
  		iface->i_rt->rt_flags |= RTMPTAB_ZIPQUERY;
@@ -57,7 +89,7 @@
  		n++;
  	    }
  
-@@ -332,14 +338,14 @@
+@@ -332,14 +338,14 @@ as_timer()
  		 */
  		if ( rtmp->rt_iprev &&
  			( rtmp->rt_flags & RTMPTAB_HASZONES ) == 0 ) {
@@ -74,7 +106,7 @@
  
  			if ( sendto( zap->ap_fd, packet, cc, 0,
  				(struct sockaddr *)&sat,
-@@ -375,8 +381,8 @@
+@@ -375,8 +381,8 @@ as_timer()
  			sentzipq = 1;
  		    }
  		    rtmp->rt_flags |= RTMPTAB_ZIPQUERY;
@@ -85,7 +117,7 @@
  		    n++;
  		}
  		rtmp = rtmp->rt_next;
-@@ -389,7 +395,7 @@
+@@ -389,7 +395,7 @@ as_timer()
  		cc = data - packet;
  		data = packet;
  		*data++ = DDPTYPE_ZIP;
@@ -94,7 +126,7 @@
  
  		if ( sendto( zap->ap_fd, packet, cc, 0, (struct sockaddr *)&sat,
  			sizeof( struct sockaddr_at )) < 0 ) {
-@@ -420,7 +426,7 @@
+@@ -420,7 +426,7 @@ as_timer()
  	    rh.rh_net = iface->i_addr.sat_addr.s_net;
  	    rh.rh_nodelen = 8;
  	    rh.rh_node = iface->i_addr.sat_addr.s_node;
@@ -103,7 +135,7 @@
  	    data += sizeof( struct rtmp_head );
  	    n = 0;
  
-@@ -428,17 +434,17 @@
+@@ -428,17 +434,17 @@ as_timer()
  	    if ( iface->i_flags & IFACE_PHASE1 ) {
  		rt.rt_net = 0;
  		rt.rt_dist = 0x82;
@@ -124,7 +156,7 @@
  		data += SZ_RTMPTUPLE;
  	    }
  
-@@ -488,13 +494,13 @@
+@@ -488,13 +494,13 @@ as_timer()
  		    if ( rtmp->rt_flags & RTMPTAB_EXTENDED ) {
  			rt.rt_dist |= 0x80;
  		    }
@@ -140,7 +172,7 @@
  			data += SZ_RTMPTUPLE;
  		    }
  		    n++;
-@@ -561,6 +567,7 @@
+@@ -561,6 +567,7 @@ as_timer()
  /*
  * Consistency check...
  */
@@ -148,7 +180,7 @@
  consistency()
  {
      struct rtmptab	*rtmp;
-@@ -734,6 +741,7 @@
+@@ -734,6 +741,7 @@ as_down()
      exit( 0 );
  }
  
@@ -156,7 +188,7 @@
  main( ac, av )
      int		ac;
      char	**av;
-@@ -794,7 +802,7 @@
+@@ -794,7 +802,7 @@ main( ac, av )
  	exit( 1 );
      }
  
@@ -165,7 +197,7 @@
  	prog = av[ 0 ];
      } else {
  	prog++;
-@@ -1128,10 +1136,10 @@
+@@ -1128,10 +1136,10 @@ main( ac, av )
   * and rtmp_packet()) to set the initial "bootstrapping" address
   * on an interface.
   */
@@ -177,7 +209,7 @@
  
      if ( iface == 0 ) {
  	return;
-@@ -1182,12 +1190,13 @@
+@@ -1182,12 +1190,13 @@ bootaddr( iface )
   * Change setaddr()
   * to manage the i_ports field and the fds for select().
   */
@@ -195,7 +227,7 @@
  {
      int			i;
      struct atserv	*as;
-@@ -1232,7 +1241,7 @@
+@@ -1232,7 +1241,7 @@ setaddr( iface, phase, net, node, first,
      nr.nr_phase = phase;
      nr.nr_firstnet = first;
      nr.nr_lastnet = last;
@@ -204,7 +236,7 @@
  
      if ( ifconfig( iface->i_name, SIOCSIFADDR, &iface->i_addr )) {
  	syslog( LOG_ERR, "setifaddr: %s: %m", iface->i_name );
-@@ -1250,7 +1259,7 @@
+@@ -1250,7 +1259,7 @@ setaddr( iface, phase, net, node, first,
  	    exit( 1 );
  	}
  
@@ -213,7 +245,7 @@
  #ifdef BSD4_4
  	sat.sat_len = sizeof( struct sockaddr_at );
  #endif BSD4_4
-@@ -1282,37 +1291,39 @@
+@@ -1282,37 +1291,39 @@ setaddr( iface, phase, net, node, first,
      return;
  }
  
@@ -257,7 +289,7 @@
  	printf( " -seed" );
      }
      printf( " -phase" );
-@@ -1337,6 +1348,7 @@
+@@ -1337,6 +1348,7 @@ dumpconfig( iface )
  }
  
  #ifdef DEBUG
@@ -265,7 +297,7 @@
  dumproutes()
  {
      struct interface	*iface;
-@@ -1385,6 +1397,7 @@
+@@ -1385,6 +1397,7 @@ dumproutes()
      fflush( stdout );
  }
  
