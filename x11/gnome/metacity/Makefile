@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 19:02:26 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 20:07:18 marcm Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
-DISTNAME=		metacity-2.4.5
-CATEGORIES=		x11
+DISTNAME=		metacity-2.4.34
+CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
 
@@ -21,9 +21,9 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
-RUN_DEPENDS=		:control-center2-*:x11/gnome/controlcenter2
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			glade-2.0.0.0::devel/libglade2
+			glade-2.0.0.0::devel/libglade2 \
+			startup-notification-1::devel/startup-notification
 
 MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 

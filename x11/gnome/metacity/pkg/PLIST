@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:02:26 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:07:18 marcm Exp $
 bin/metacity
 bin/metacity-message
-bin/metacity-properties
 bin/metacity-theme-viewer
 bin/metacity-window-demo
 include/metacity-1/metacity-private/common.h
@@ -14,26 +13,34 @@ lib/libmetacity-private.a
 lib/libmetacity-private.la
 lib/pkgconfig/libmetacity-private.pc
 libexec/metacity-dialog
-share/control-center-2.0/capplets/metacity-properties.desktop
 share/doc/metacity/README
 share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
 share/gnome/wm-properties/metacity.desktop
+share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/az/LC_MESSAGES/metacity.mo
+share/locale/bg/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/el/LC_MESSAGES/metacity.mo
+share/locale/en_GB/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
+share/locale/et/LC_MESSAGES/metacity.mo
+share/locale/fi/LC_MESSAGES/metacity.mo
 share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
+share/locale/he/LC_MESSAGES/metacity.mo
 share/locale/hu/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
+share/locale/mk/LC_MESSAGES/metacity.mo
+share/locale/mn/LC_MESSAGES/metacity.mo
 share/locale/ms/LC_MESSAGES/metacity.mo
+share/locale/nl/LC_MESSAGES/metacity.mo
 share/locale/no/LC_MESSAGES/metacity.mo
 share/locale/pl/LC_MESSAGES/metacity.mo
 share/locale/pt/LC_MESSAGES/metacity.mo
@@ -41,6 +48,7 @@ share/locale/pt_BR/LC_MESSAGES/metacity.mo
 share/locale/ro/LC_MESSAGES/metacity.mo
 share/locale/ru/LC_MESSAGES/metacity.mo
 share/locale/sk/LC_MESSAGES/metacity.mo
+share/locale/sl/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
@@ -134,13 +142,20 @@ share/themes/Crux/metacity-1/inactive-top-right-corner.png
 share/themes/Crux/metacity-1/metacity-theme-1.xml
 share/themes/Esco/metacity-1/metacity-theme-1.xml
 share/themes/Metabox/metacity-1/metacity-theme-1.xml
+share/themes/Simple/metacity-1/close.png
+share/themes/Simple/metacity-1/maximize.png
+share/themes/Simple/metacity-1/maximized.png
+share/themes/Simple/metacity-1/metacity-theme-1.xml
+share/themes/Simple/metacity-1/minimize.png
 %%SHARED%%
+@dirrm share/themes/Simple/metacity-1
+@unexec rmdir %D/share/themes/Simple 2>/dev/null || true
 @dirrm share/themes/Metabox/metacity-1
 @dirrm share/themes/Metabox
 @dirrm share/themes/Esco/metacity-1
 @dirrm share/themes/Esco
 @dirrm share/themes/Crux/metacity-1
-@dirrm share/themes/Crux
+@unexec rmdir %D/share/themes/Crux 2>/dev/null || true
 @dirrm share/themes/Bright/metacity-1
 @dirrm share/themes/Bright
 @dirrm share/themes/Atlanta/metacity-1
@@ -165,6 +180,8 @@ share/themes/Metabox/metacity-1/metacity-theme-1.xml
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
 @comment @dirrm share/locale/sk
 @comment @dirrm share/locale/ru/LC_MESSAGES
@@ -179,8 +196,14 @@ share/themes/Metabox/metacity-1/metacity-theme-1.xml
 @comment @dirrm share/locale/pl
 @comment @dirrm share/locale/no/LC_MESSAGES
 @comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mn/LC_MESSAGES
+@comment @dirrm share/locale/mn
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/ko/LC_MESSAGES
@@ -191,12 +214,20 @@ share/themes/Metabox/metacity-1/metacity-theme-1.xml
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
 @comment @dirrm share/locale/el/LC_MESSAGES
 @comment @dirrm share/locale/el
 @comment @dirrm share/locale/de/LC_MESSAGES
@@ -207,12 +238,19 @@ share/themes/Metabox/metacity-1/metacity-theme-1.xml
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
 @comment @dirrm share/locale/az/LC_MESSAGES
 @comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @comment @dirrm share/gnome/wm-properties
 @comment @dirrm share/gnome
 @dirrm share/doc/metacity
+@comment @exec mkdir -p %D/share/control-center-2.0/capplets
+@comment @dirrm share/control-center-2.0/capplets
+@comment @dirrm share/control-center-2.0
 @comment @dirrm lib/pkgconfig
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1
