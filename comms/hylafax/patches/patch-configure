@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2003/01/27 13:42:48 todd Exp $
---- configure.orig	Thu Jun 27 10:46:08 2002
-+++ configure	Wed Jul 31 12:37:28 2002
+$OpenBSD: patch-configure,v 1.2 2003/01/31 15:53:50 brad Exp $
+--- configure.orig	Tue Oct  1 10:05:55 2002
++++ configure	Fri Jan 31 10:32:21 2003
 @@ -37,10 +37,10 @@
  #
  # Setup general configuration parameters.
@@ -22,8 +22,8 @@ $OpenBSD: patch-configure,v 1.1 2003/01/27 13:42:48 todd Exp $
  UTMP=auto
 -LIBTIFF="-L/usr/local/lib -ltiff"
 -TIFFINC=/usr/local/include
-+LIBTIFF="-L${PREFIX}/lib -ltiff"
-+TIFFINC=${PREFIX}/include
++LIBTIFF="-L${LOCALBASE}/lib -ltiff"
++TIFFINC=${LOCALBASE}/include
  TIFFBIN=
  LIBZ=
  ZLIBINC=
@@ -33,8 +33,8 @@ $OpenBSD: patch-configure,v 1.1 2003/01/27 13:42:48 todd Exp $
  DBLIB=no
 -LIBDB="-L/usr/local/lib -ldb"
 -DBLIBINC=/usr/local/include
-+LIBDB="-L${PREFIX}/lib -ldb"
-+DBLIBINC=${PREFIX}/include
++LIBDB="-L${LOCALBASE}/lib -ldb"
++DBLIBINC=${LOCALBASE}/include
  FAXD=
  LIBFAXSERVER='libfaxserver.${DSO}'
  LIBUTIL='${UTIL}/libfaxutil.${DSO}'

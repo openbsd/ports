@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2003/01/27 13:42:48 todd Exp $
+# $OpenBSD: Makefile,v 1.38 2003/01/31 15:53:50 brad Exp $
 
 COMMENT=		"send/receive faxes and share modems"
 DISTNAME=		hylafax-4.1.5
@@ -29,26 +29,28 @@ CONFIGURE_ARGS+=	--with-CC="${CC}"
 CONFIGURE_ARGS+=	--with-CXX="${CXX}"
 CONFIGURE_ARGS+=        --with-INSTALL=""
 
-CONFIGURE_ENV+=		PREFIX="${PREFIX}"
+CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
+			GCOPTS="${CFLAGS}" GCXXOPTS="${CXXFLAGS}" \
+			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
 
 .if ${FLAVOR:L} == "a4"
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 .endif
 
+FAKE_FLAGS=	ROOT=${WRKINST} ${DESTDIRNAME}=${WRKINST}
+
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 post-install:
-	@: ${SUDO} chown uucp.dialer ${SUID_EXES}
-	@: ${SUDO} chmod a=rx,u+s ${SUID_EXES}
-	${SUDO} ${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
+	@chown uucp.dialer ${SUID_EXES}
+	@chmod a=rx,u+s ${SUID_EXES}
+	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
 
 pre-package:
-	${SUDO} rm -f ${WRKINST}/${PREFIX}/hylafax
-	${SUDO} ln -s ${WRKINST}/var/spool/hylafax ${WRKINST}/${PREFIX}/hylafax
+	@${SUDO} rm -f ${WRKINST}/${PREFIX}/hylafax
+	@${SUDO} ln -s ${WRKINST}/var/spool/hylafax ${WRKINST}/${PREFIX}/hylafax
 
 post-package:
-	${SUDO} rm -f ${WRKINST}/${PREFIX}/hylafax
-
-FAKE_FLAGS=ROOT=${WRKINST} ${DESTDIRNAME}=${WRKINST}
+	@${SUDO} rm -f ${WRKINST}/${PREFIX}/hylafax
 
 .include <bsd.port.mk>
