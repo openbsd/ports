@@ -1,45 +1,45 @@
-$OpenBSD: patch-master.cf,v 1.5 2003/01/13 15:44:09 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.6 2003/01/28 16:41:32 jakob Exp $
 
---- conf/master.cf.orig	Sun Jan 12 18:04:35 2003
-+++ conf/master.cf	Mon Jan 13 09:13:45 2003
+--- conf/master.cf.orig	Thu Jan 16 13:44:58 2003
++++ conf/master.cf	Sat Jan 25 14:18:07 2003
 @@ -69,25 +69,25 @@
- # service type	private	unpriv	chroot	wakeup	maxproc	command + args
- # 		(yes)	(yes)	(yes)	(never)	(100)
+ # service type  private unpriv  chroot  wakeup  maxproc command + args
+ #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
--smtp	  inet	n	-	n	-	-	smtpd
--#628	  inet	n	-	n	-	-	qmqpd
--pickup	  fifo	n	-	n	60	1	pickup
--cleanup	  unix	n	-	n	-	0	cleanup
--qmgr	  fifo	n	-	n	300	1	qmgr
--#qmgr	  fifo	n	-	n	300	1	nqmgr
--rewrite	  unix	-	-	n	-	-	trivial-rewrite
--bounce	  unix	-	-	n	-	0	bounce
--defer	  unix	-	-	n	-	0	bounce
--flush	  unix	n	-	n	1000?	0	flush
-+smtp	  inet	n	-	-	-	-	smtpd
-+#628	  inet	n	-	-	-	-	qmqpd
-+pickup	  fifo	n	-	-	60	1	pickup
-+cleanup	  unix	n	-	-	-	0	cleanup
-+qmgr	  fifo	n	-	-	300	1	qmgr
-+#qmgr	  fifo	n	-	-	300	1	nqmgr
-+rewrite	  unix	-	-	-	-	-	trivial-rewrite
-+bounce	  unix	-	-	-	-	0	bounce
-+defer	  unix	-	-	-	-	0	bounce
-+flush	  unix	n	-	-	1000?	0	flush
- proxymap  unix	-	-	n	-	-	proxymap
--smtp	  unix	-	-	n	-	-	smtp
--relay	  unix	-	-	n	-	-	smtp
-+smtp	  unix	-	-	-	-	-	smtp
-+relay	  unix	-	-	-	-	-	smtp
- #	-o smtp_helo_timeout=5 -o smtp_connect_timeout=5
--showq     unix	n	-	n	-	-	showq
--error     unix	-	-	n	-	-	error
-+showq     unix	n	-	-	-	-	showq
-+error     unix	-	-	-	-	-	error
- local	  unix	-	n	n	-	-	local
- virtual	  unix	-	n	n	-	-	virtual
--lmtp	  unix	-	-	n	-	-	lmtp
-+lmtp	  unix	-	-	-	-	-	lmtp
+-smtp      inet  n       -       n       -       -       smtpd
+-#628      inet  n       -       n       -       -       qmqpd
+-pickup    fifo  n       -       n       60      1       pickup
+-cleanup   unix  n       -       n       -       0       cleanup
+-qmgr      fifo  n       -       n       300     1       qmgr
+-#qmgr     fifo  n       -       n       300     1       nqmgr
+-rewrite   unix  -       -       n       -       -       trivial-rewrite
+-bounce    unix  -       -       n       -       0       bounce
+-defer     unix  -       -       n       -       0       bounce
+-flush     unix  n       -       n       1000?   0       flush
++smtp      inet  n       -       -       -       -       smtpd
++#628      inet  n       -       -       -       -       qmqpd
++pickup    fifo  n       -       -       60      1       pickup
++cleanup   unix  n       -       -       -       0       cleanup
++qmgr      fifo  n       -       -       300     1       qmgr
++#qmgr     fifo  n       -       -       300     1       nqmgr
++rewrite   unix  -       -       -       -       -       trivial-rewrite
++bounce    unix  -       -       -       -       0       bounce
++defer     unix  -       -       -       -       0       bounce
++flush     unix  n       -       -       1000?   0       flush
+ proxymap  unix  -       -       n       -       -       proxymap
+-smtp      unix  -       -       n       -       -       smtp
+-relay     unix  -       -       n       -       -       smtp
++smtp      unix  -       -       -       -       -       smtp
++relay     unix  -       -       -       -       -       smtp
+ #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
+-showq     unix  n       -       n       -       -       showq
+-error     unix  -       -       n       -       -       error
++showq     unix  n       -       -       -       -       showq
++error     unix  -       -       -       -       -       error
+ local     unix  -       n       n       -       -       local
+ virtual   unix  -       n       n       -       -       virtual
+-lmtp      unix  -       -       n       -       -       lmtp
++lmtp      unix  -       -       -       -       -       lmtp
  #
  # Interfaces to non-Postfix software. Be sure to examine the manual
  # pages of the non-Postfix software to find out what options it wants.
