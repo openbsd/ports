@@ -1,11 +1,11 @@
---- libjbig/Makefile.orig	Fri Apr 10 21:33:27 1998
-+++ libjbig/Makefile	Wed Mar 22 20:31:42 2000
-@@ -7,21 +7,40 @@
+--- libjbig/Makefile.orig	Sat Apr  8 07:15:46 2000
++++ libjbig/Makefile	Sat Sep 23 22:21:30 2000
+@@ -7,16 +7,29 @@
  # Options for the compiler: A high optimization level is suggested
  CFLAGS = -O -Wall -ansi -pedantic
  
 -all: libjbig.a tstcodec
-+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 +all: libjbig.a
 +.else
 +all: libjbig.a libjbig.so.$(VERSION)
@@ -25,22 +25,16 @@
 +
 +libjbig.so.$(VERSION): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
-+	ld -Bshareable -Bforcearchive -o ${.TARGET} ${.ALLSRC}
++	${CC} -shared -o ${.TARGET} ${.ALLSRC}
 +	
-+.SUFFIXES: .c .o .so
-+
-+.c.o:
-+	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++.SUFFIXES: .o .so
 +
 +.c.so:
 +	${CC} ${CFLAGS} -fpic -DPIC -c ${.IMPSRC} -o ${.TARGET}
  
  jbig.o: jbig.c jbig.h
-+jbig_tab.o: jbig_tab.c jbig.h
-+jbig.so: jbig.c jbig.h
-+jbig_tab.so: jbig_tab.c jbig.h
  
- test: tstcodec
+@@ -24,4 +37,4 @@
  	./tstcodec
  
  clean:

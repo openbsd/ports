@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/07/04 02:09:24 krw Exp $
+# $OpenBSD: Makefile,v 1.18 2000/09/24 02:38:01 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/ \
 		http://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall"
+FAKE_FLAGS+=	${MAKE_FLAGS}
 
 WRKDIST=	${WRKDIR}/jbigkit
 
@@ -27,6 +28,6 @@ test:	build
 
 .include <bsd.port.mk>
 
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 MAKE_ENV=	NO_SHARED_LIBS=Yes
 .endif

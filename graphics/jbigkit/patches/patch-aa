@@ -1,20 +1,15 @@
 --- Makefile.orig	Sat Apr  8 07:19:41 2000
-+++ Makefile	Tue Jun 20 15:21:53 2000
-@@ -16,7 +16,12 @@
++++ Makefile	Sat Sep 23 22:23:53 2000
+@@ -16,7 +16,7 @@
  	@echo "Enter 'make test' in order to start some automatic tests."
  
  lib:
 -	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
-+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
-+	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" "VERSION=$(VERSION)" "NO_SHARED_LIBS=Yes")
-+.else
 +	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" "VERSION=$(VERSION)")
-+.endif
-+
  
  pbm: lib
  	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
-@@ -45,3 +50,16 @@
+@@ -45,3 +45,16 @@
  	scp ANNOUNCE \
  	  $(DISTUID)@$(DISTHOST):$(DISTPATH)/jbigkit-$(VERSION)-announce.txt
  	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/.www/download/
@@ -29,5 +24,5 @@
 +	${BSD_INSTALL_DATA} libjbig/jbig.h ${PREFIX}/include
 +	${BSD_INSTALL_DATA} libjbig/libjbig.a ${PREFIX}/lib
 +	@if [ -f libjbig/libjbig.so.$(VERSION) ]; then \
-+	 ${BSD_INSTALL_DATA} libjbig/libjbig.so.$(VERSION) ${PREFIX}/lib;\
++	 ${BSD_INSTALL_DATA} libjbig/libjbig.so.$(VERSION) ${PREFIX}/lib; \
 +	fi
