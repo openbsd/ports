@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.bsd,v 1.1.1.1 2001/08/06 00:33:25 brad Exp $
+# $OpenBSD: Makefile.bsd,v 1.2 2002/11/30 01:21:28 margarida Exp $
 
 PROG =	http_ping
 SRCS =	http_ping.c
@@ -10,4 +10,3 @@ BINDIR =	${PREFIX}/bin
 MANDIR =	${PREFIX}/man/cat
 
 .include <bsd.prog.mk>
-
