@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/29 19:12:34 jasoni Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/01 08:11:31 jasoni Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
@@ -26,5 +26,7 @@ CONFIGURE_ARGS+=--disable-wordview
 .endif
 
 CONFIGURE_STYLE=gnu dest
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
