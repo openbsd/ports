@@ -1,0 +1,5 @@
+
+ssh-1.2.27: patch-ai fixes the buffer overflow in RSAREF rsaglue code.
+
+OpenSSH (integrated into OpenBSD-2.6) does not have this bug.
+
