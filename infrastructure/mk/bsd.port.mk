@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.398 2001/04/17 16:45:14 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.399 2001/04/17 21:40:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -358,12 +358,12 @@ _FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
-_INSTALL_COOKIE=	${WRKBUILD}/.install_done
+_INSTALL_COOKIE=	${WRKBUILD}/.install_done${SUBPACKAGE}
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
 _PACKAGE_COOKIE=	${WRKBUILD}/.package_done
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
-_INSTALL_COOKIE=	${WRKDIR}/.install_done
+_INSTALL_COOKIE=	${WRKDIR}/.install_done${SUBPACKAGE}
 _BUILD_COOKIE=		${WRKDIR}/.build_done
 _PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
