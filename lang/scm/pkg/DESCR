@@ -29,3 +29,5 @@ SLIB is a portable Scheme library which SCM uses.
 	Two interpreters, scm and scm-sicp, are compiled by default.
 	scm conforms to R^5, scm-sicp to SCIP. If you don't know what I'm
 	talking about, use scm.
+
+WWW: ${HOMEPAGE}

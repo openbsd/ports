@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/30 15:31:37 espie Exp $
 # losely based on the FreeBSD port
 
 CATEGORIES=	lang
@@ -8,6 +8,8 @@ DISTNAME=	scm5d3
 PKGNAME=	scm-5d3_2c9
 
 DISTFILES=	scm5d3.zip slib2c9.zip
+
+HOMEPAGE=	http://swissnet.ai.mit.edu/~jaffer/SCM.html
 
 MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
 
