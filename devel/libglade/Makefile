@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/24 12:13:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/25 01:58:55 brad Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
 DISTNAME=		libglade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.473
+NEED_VERSION=   	1.474
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=		gnome
 FLAVOR?=
 
-LIB_DEPENDS=		intl.1::devel/gettext \
-			xml.9::textproc/libxml1 \
+MODULES=		gettext
+LIB_DEPENDS=		xml.9::textproc/libxml1 \
 			gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_X11=		Yes

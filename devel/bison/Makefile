@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/07/13 11:47:00 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/25 01:58:54 brad Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= bison
 
 HOMEPAGE=	http://www.gnu.org/software/bison/
 
-LIB_DEPENDS=	intl.1::devel/gettext
+MODULES=	gettext
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 

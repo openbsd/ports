@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/07 10:57:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/25 01:58:55 brad Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	"like make(1), but more powerful and clean"
 
 DISTNAME=	cook-2.17
 CATEGORIES=	devel
-NEED_VERSION=	1.408
+NEED_VERSION=	1.474
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
 
-LIB_DEPENDS=    intl::devel/gettext
+MODULES=	gettext
 
 MAINTAINER=	Gregory Steuck <greg@nest.cx>
 

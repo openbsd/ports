@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/11 21:47:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 01:58:55 brad Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
 DISTNAME=		libgtop-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.473
+NEED_VERSION=   	1.474
 HOMEPAGE=		http://www.home-of-linux.org/gnome/libgtop/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -28,8 +28,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=		intl.1::devel/gettext \
-			glib.1.2::devel/glib
+MODULES=		gettext
+LIB_DEPENDS=		glib.1.2::devel/glib
 
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=   	gnome.36,gnomesupport::x11/gnome/libs
