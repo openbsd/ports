@@ -1,0 +1,51 @@
+#! /bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/10/26 22:12:41 jasoni Exp $
+#
+# Pre/port-installation setup of xfstt
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+	cat <<END
+
+***
+
+To start the TrueType font server for X11 at boot time, put something like 
+the following in /etc/rc.local:
+
+if [ -x /usr/X11R6/bin/xfstt ]; then
+        echo -n ' xfstt';       /usr/X11R6/bin/xfstt &
+fi
+
+You should also add the following to your FontPath in /etc/XF86Config:
+
+FontPath "unix/:7100"
+
+You should also put some TrueType fonts in /usr/X11R6/lib/X11/fonts/TrueType.
+Additional documentation can be found in /usr/X11R6/share/doc/xfstt.
+
+***
+END
+}
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        do_notice $1
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

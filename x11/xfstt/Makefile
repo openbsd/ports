@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/07/12 08:53:39 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/26 22:12:41 jasoni Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
@@ -12,7 +12,6 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		jasoni@openbsd.org
 
 WRKSRC=			${WRKDIR}/xfstt0910
-
 USE_X11=		yes
 
 do-install:
@@ -27,5 +26,6 @@ post-install:
 	$(INSTALL_DATA) $(WRKSRC)/INSTALL $(PREFIX)/share/doc/xfstt
 	$(INSTALL_DATA) $(WRKSRC)/THANKS.txt $(PREFIX)/share/doc/xfstt
 	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${PREFIX}/share/doc/xfstt
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
