@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/12 18:10:26 fgsch Exp $
-
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
-.endif
+# $OpenBSD: Makefile,v 1.13 2001/08/30 01:43:35 brad Exp $
 
 COMMENT=	"Internet based broadcasting system"
 
+# archs that have pthreads library in
+# good enough shape to run this app.
+ONLY_FOR_ARCHS=	i386
+
 DISTNAME=	icecast-1.3.11
 CATEGORIES=	net audio www
-NEED_VERSION=	1.434
+NEED_VERSION=	1.435
 MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/
