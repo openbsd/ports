@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/12/14 15:33:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2002/01/07 15:48:50 shell Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
@@ -25,6 +25,7 @@
 #    SUBDIR += nvi-big5
 #    SUBDIR += nvi-euc-cn
 #    SUBDIR += nvi-euc-tw
+     SUBDIR += py-zhCodecs
      SUBDIR += taipeifonts
 #    SUBDIR += samba
 #    SUBDIR += ted
