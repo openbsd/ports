@@ -1,0 +1,13 @@
+$OpenBSD: patch-kghostview_kpswidget_cpp,v 1.2 2003/04/12 15:37:01 espie Exp $
+--- kghostview/kpswidget.cpp.orig	Wed Apr  9 20:32:14 2003
++++ kghostview/kpswidget.cpp	Sat Apr 12 17:32:42 2003
+@@ -513,7 +513,8 @@ void KPSWidget::startInterpreter()
+         *_process <<
+         // The following two lines are their to ensure that we are allowed to read _fileName
+         "-dDELAYSAFER" << "-sInputFile="+_fileName << "-c" <<
+-        "<< /PermitFileReading [ InputFile ] /PermitFileWriting [] /PermitFileControl [] >> setuserparams .locksafe";
++        "<< /PermitFileReading [ InputFile ] /PermitFileWriting [] /PermitFileControl [] >> setuserparams .locksafe" <<
++        "-";
+     else
+ 	*_process << _fileName << "-c" << "quit";
+ 
