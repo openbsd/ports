@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/07/10 18:56:30 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2004/09/15 17:39:04 sturm Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
@@ -56,7 +56,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 
-X11_DEVICE_DEVS=\
+X11_DEVICE_DEVS1=\
 $$(DD)x11.dev $$(DD)x11alpha.dev $$(DD)x11cmyk.dev $$(DD)x11cmyk2.dev $$(DD)x11cmyk4.dev \
 $$(DD)x11cmyk8.dev $$(DD)x11gray2.dev $$(DD)x11gray4.dev $$(DD)x11mono.dev
 
