@@ -1,0 +1,4 @@
+lib/menus/sample.men
+lib/menus/menulogin
+man/man1/mshell.1
+bin/mshell
