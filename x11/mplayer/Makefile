@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.80 2005/03/16 12:33:35 biorn Exp $
+# $OpenBSD: Makefile,v 1.81 2005/03/27 04:10:51 pvalchev Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
