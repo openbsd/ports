@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2003/05/17 22:58:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2003/08/03 00:13:22 fgsch Exp $
 
 COMMENT=	'full-screen easy to use Usenet reader'
 
 DISTNAME=	tin-1.4.7
 CATEGORIES=	news
 
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
-		ftp://ftp.nuxi.com/pub/tin/stable/ \
-		ftp://uiarchive.uiuc.edu/pub/packages/news/client/tin/unoff/ \
-		ftp://ftp.eee.hku.hk/pub/tin-unoff/
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.4/ \
+		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/v1.4/
 
 HOMEPAGE=	http://www.tin.org/
 
