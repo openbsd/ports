@@ -1,0 +1,18 @@
+--- Makefile.orig	Sat Mar 17 17:49:33 2001
++++ Makefile	Sat Mar 17 17:50:28 2001
+@@ -5,13 +5,11 @@
+ #
+ # $Id: patch-Makefile,v 1.1 2001/03/18 02:20:36 obecian Exp $
+ 
+-CC = gcc
+ INSTALL_DIR = /usr/bin/install -c -o root -g bin
+ INSTALL_SBIN = /usr/bin/install -c -s -o root -g bin -m 555
+ INSTALL_MAN = /usr/bin/install -c -o root -g bin -m 444
+-CFLAGS = -O2 -Wall
+-INCLUDE = -I/usr/local/include
+-LIBS = -L/usr/local/lib `libnet-config --libs` -lpcap
++INCLUDE = -I${LOCALBASE}/include
++LIBS = -L${LOCALBASE}/lib `libnet-config --libs` -lpcap
+ DEFINE = `libnet-config --defines` #-DDEBUG
+ OBJS = main.o active.o enable.o help.o host.o pcap.o signal.o util.o
+ 
