@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/14 19:34:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/23 08:51:58 pvalchev Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
 
@@ -9,7 +9,7 @@ CATEGORIES=		misc x11
 HOMEPAGE=		http://www.xcdroast.org
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 
-MAINTAINER=		Jolan Luff <jolan@enteract.com>
+MAINTAINER=		Jolan Luff <jolan@cryptonomicon.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

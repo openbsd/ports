@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/15 07:00:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/08/23 08:51:57 pvalchev Exp $
 
 COMMENT=		"wm-dockapp; multiple pop3 mailbox checker"
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail x11/windowmaker
 
 HOMEPAGE=		http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 
-MAINTAINER=		Jolan Luff <jolan@enteract.com>
+MAINTAINER=		Jolan Luff <jolan@cryptonomicon.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
