@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/18 00:32:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/03/01 00:04:08 jcs Exp $
 ${P5ARCH}/Sybase/BCP.pm
 ${P5ARCH}/Sybase/BLK.pm
 ${P5ARCH}/Sybase/CTlib.pm
@@ -92,6 +92,4 @@ man/man3p/sybperl.3
 @dirrm ${P5ARCH}/auto/Sybase/DBlib
 @dirrm ${P5ARCH}/auto/Sybase/CTlib
 @dirrm ${P5ARCH}/auto/Sybase
-@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/Sybase
-@dirrm ${P5ARCH}
