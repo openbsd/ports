@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/01/03 21:33:12 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/14 09:25:20 niklas Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += bzip2
      SUBDIR += freeze
      SUBDIR += gshar+gunshar
+     SUBDIR += gtar
      SUBDIR += ha
 #    SUBDIR += hpack.non-usa.only
      SUBDIR += lha
