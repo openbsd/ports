@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2001/07/20 17:43:01 shell Exp $
+# $OpenBSD: Makefile,v 1.93 2001/07/28 07:25:02 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
+     SUBDIR += atlas
      SUBDIR += autobook
      SUBDIR += autoconf
      SUBDIR += automake
@@ -48,6 +49,7 @@
      SUBDIR += libslang
      SUBDIR += libtai
      SUBDIR += libtool
+     SUBDIR += libuta
      SUBDIR += lincvs
      SUBDIR += m4
      SUBDIR += mico
