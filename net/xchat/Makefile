@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/09/02 03:09:35 shell Exp $
+# $OpenBSD: Makefile,v 1.33 2001/09/02 05:02:47 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 # Uses pthreads
 
@@ -8,7 +8,7 @@ MAJOR=		1.8
 VERSION=	${MAJOR}.3
 DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.427
+NEED_VERSION=	1.448
 
 MASTER_SITES=	http://xchat.org/files/source/${MAJOR}/ \
 		http://xchat.linuxpower.org/files/source/${MAJOR}/
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 
-FLAVORS=	ssl thread
+FLAVORS=	no_ssl
 FLAVOR?=
 
 CONFIGURE_ARGS+= --disable-imlib --disable-python --disable-gnome
@@ -36,10 +36,9 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_pixbuf::graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf::graphics/gdk-pixbuf
 
-.if ${FLAVOR:L:Mssl}
+.if ${FLAVOR} != "no_ssl"
 CONFIGURE_ARGS+= --enable-openssl="/usr"
 .endif
 

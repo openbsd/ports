@@ -4,6 +4,6 @@ all around.
 
 Flavor :
 
-	ssl - Enable SSL Support
+	no_ssl - Disable SSL Support
 
 WWW: ${HOMEPAGE}
