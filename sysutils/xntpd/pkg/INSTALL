@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/07/01 17:14:31 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/07/14 01:35:08 matt Exp $
 #
 # Pre/post-installation setup of xntpd
 
@@ -16,14 +16,14 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| html documentation for $1 can be found in the directory"
-    echo "| ${PREFIX}/share/doc/ntp.  To use this application you must"
+    echo "| HTML documentation for $1 can be found in the directory"
+    echo "| ${PREFIX}/share/doc/ntp.  To use this application you must:"
     echo "|"
     echo "| 1) create/update the file ${CONFIG_FILE} (see the documentation)"
     echo "| 2) restart your system"
     echo "|"
-    echo "| The system restart is necessary as $1 is started from"
-    echo "| /etc/rc.securelevel before the system securelevel is changed"
+    echo "| The system restart is necessary as tickadj is run from"
+    echo "| /etc/rc.securelevel before the system securelevel is changed."
     echo "+---------------"
     echo
 }
