@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/08 18:08:41 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/03/11 13:10:59 xsa Exp $
 lib/zope/lib/python/Products/COREBlog/
-@comment lib/zope/lib/python/Products/COREBlog/.DS_Store
 lib/zope/lib/python/Products/COREBlog/AuthBridge.py
 lib/zope/lib/python/Products/COREBlog/AuthBridge.pyc
 lib/zope/lib/python/Products/COREBlog/COREBlog.py
@@ -17,7 +16,7 @@ lib/zope/lib/python/Products/COREBlog/__init__.py
 lib/zope/lib/python/Products/COREBlog/__init__.pyc
 lib/zope/lib/python/Products/COREBlog/changelog.txt
 lib/zope/lib/python/Products/COREBlog/dtml/
-@comment lib/zope/lib/python/Products/COREBlog/dtml/.DS_Store
+lib/zope/lib/python/Products/COREBlog/dtml/additional_css.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/coreblog_script_widget.js.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/manage_addCOREBlogForm.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/manage_addCategoryForm.dtml
@@ -36,7 +35,6 @@ lib/zope/lib/python/Products/COREBlog/dtml/manage_listTrackbackForm.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/manage_sendPINGTrackback.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/manage_sendTrackback.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/modules/
-@comment lib/zope/lib/python/Products/COREBlog/dtml/modules/.DS_Store
 lib/zope/lib/python/Products/COREBlog/dtml/modules/about.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/modules/archives.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/modules/calendar.dtml
@@ -50,9 +48,7 @@ lib/zope/lib/python/Products/COREBlog/dtml/rdf10_xml.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/rdf91_xml.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/rsd_xml.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/
-@comment lib/zope/lib/python/Products/COREBlog/dtml/skin/.DS_Store
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/
-@comment lib/zope/lib/python/Products/COREBlog/dtml/skin/default/.DS_Store
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/blog_banner.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/blog_footer.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/blog_header.dtml
@@ -74,7 +70,6 @@ lib/zope/lib/python/Products/COREBlog/dtml/skin/default/style_css.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/trackback_body.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/trackbackResult.dtml
 lib/zope/lib/python/Products/COREBlog/help/
-@comment lib/zope/lib/python/Products/COREBlog/help/.DS_Store
 lib/zope/lib/python/Products/COREBlog/help/COREBlog.py
 lib/zope/lib/python/Products/COREBlog/help/COREBlog.pyc
 lib/zope/lib/python/Products/COREBlog/help/Categories.stx
@@ -85,13 +80,20 @@ lib/zope/lib/python/Products/COREBlog/help/Entry.pyc
 lib/zope/lib/python/Products/COREBlog/help/ObjectBase.py
 lib/zope/lib/python/Products/COREBlog/help/ObjectBase.pyc
 lib/zope/lib/python/Products/COREBlog/help/Settings.stx
+lib/zope/lib/python/Products/COREBlog/i18n/
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogi18n.rpo
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi-en.po
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi-ja.po
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi_buttons-ja.po
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi_labels-ja.po
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi_tabs-en.po
+lib/zope/lib/python/Products/COREBlog/i18n/COREBlogzmi_tabs-ja.po
 lib/zope/lib/python/Products/COREBlog/jmimetool.py
 lib/zope/lib/python/Products/COREBlog/jmimetool.pyc
 lib/zope/lib/python/Products/COREBlog/permissions.py
 lib/zope/lib/python/Products/COREBlog/permissions.pyc
 lib/zope/lib/python/Products/COREBlog/refresh.txt
 lib/zope/lib/python/Products/COREBlog/stripogram/
-@comment lib/zope/lib/python/Products/COREBlog/stripogram/.DS_Store
 lib/zope/lib/python/Products/COREBlog/stripogram/HTMLParser.py
 lib/zope/lib/python/Products/COREBlog/stripogram/HTMLParser.pyc
 lib/zope/lib/python/Products/COREBlog/stripogram/__init__.py

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/08 18:08:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/11 13:10:59 xsa Exp $
 
 COMMENT=	"weblog system for Zope"
 
-V=		1.0
+V=		1.11
 DISTNAME=	COREBlog${V:S/.//}
 PKGNAME=	zope-coreblog-${V}
 CATEGORIES=	www
