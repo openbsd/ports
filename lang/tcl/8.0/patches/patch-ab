@@ -1,6 +1,16 @@
---- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Sat Apr  1 06:59:31 2000
-@@ -331,14 +331,18 @@
+--- Makefile.in.orig	Tue Mar  9 06:51:26 1999
++++ Makefile.in	Tue Feb 27 09:31:10 2001
+@@ -34,6 +34,9 @@
+ # when installing files.
+ INSTALL_ROOT =
+ 
++# Path for the platform independent Tcl scripting generic header files:
++TCL_INCLUDE_GENERIC =	$(prefix)/include/tcl$(VERSION)/generic
++
+ # Directory from which applications will reference the library of Tcl
+ # scripts (note: you can set the TCL_LIBRARY environment variable at
+ # run-time to override this value):
+@@ -331,14 +334,18 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -21,7 +31,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -433,7 +437,7 @@
+@@ -433,7 +440,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -30,7 +40,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -445,16 +449,19 @@
+@@ -445,16 +452,19 @@
  	    done;
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -54,7 +64,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -472,8 +479,15 @@
+@@ -472,8 +482,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -72,15 +82,15 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -525,6 +539,13 @@
+@@ -525,6 +542,13 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
-+	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
-+	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
++	@echo "tclConfig.sh in $(TCL_LIBRARY)/tclConfig.sh"
++	@echo "tcl.h        in $(TCL_INCLUDE_GENERIC)/tcl.h"
 +	@echo "These are NOT in the default place, but in a good place to avoid"
 +	@echo "conflicting with another version of Tcl/Tk."
  
