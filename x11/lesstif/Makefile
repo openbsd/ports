@@ -1,13 +1,13 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.85
+# Version required:	0.86.0
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.10 1998/07/23 09:17:40 form Exp $
+# $OpenBSD: Makefile,v 1.11 1998/08/17 17:37:53 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
-DISTNAME=	lesstif-0.85.3
+DISTNAME=	lesstif-0.86.0
 CATEGORIES=	x11
 
 MAINTAINER=	form@vs.itam.nsc.ru
@@ -61,10 +61,3 @@ post-install:
 
 .include <bsd.port.mk>
 
-#	Shared lib versions
-#	dist version		BSD shared lib version
-#	------------		----------------------
-#	0.78			0.0
-#	0.79			0.1
-#	0.80			0.1
-#       0.83			1.2

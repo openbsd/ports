@@ -1,6 +1,6 @@
---- Makefile.in.~1~	Thu Jun 18 13:00:46 1998
-+++ Makefile.in	Tue Jun 23 12:57:29 1998
-@@ -105,7 +105,7 @@
+--- Makefile.in.orig	Tue Aug 11 18:37:09 1998
++++ Makefile.in	Sun Aug 16 20:31:40 1998
+@@ -106,7 +106,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # poluting /usr/local for default installs.
  #

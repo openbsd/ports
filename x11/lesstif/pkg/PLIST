@@ -140,6 +140,7 @@ lib/libXm.a
 @exec ranlib %D/%F
 lib/libXm.la
 lib/libXm.so.1.2
+lib/libXm.so.2.0
 @exec /sbin/ldconfig -m %D/lib
 man/man1/mwm.1
 man/man1/xmbind.1
@@ -207,6 +208,8 @@ man/man3/XmToggleButtonGCacheObj.3
 man/man3/XmWorld.3
 man/man3/XmToggleButtonGadget.3
 man/man3/XmVendorShellExt.3
+share/LessTif/doc/html/imgs/lesstif.jpg
+share/LessTif/doc/html/imgs/ltsunlogo.gif
 share/LessTif/doc/html/images/hungry.gif
 share/LessTif/doc/html/images/lesstif-realsmall.gif
 share/LessTif/doc/html/images/lesstif-small.gif
@@ -217,15 +220,24 @@ share/LessTif/doc/html/FAQ.html
 share/LessTif/doc/html/bug-reporting.html
 share/LessTif/doc/html/core.html
 share/LessTif/doc/html/current.html
-share/LessTif/doc/html/get.html
-share/LessTif/doc/html/lesstif.html
 share/LessTif/doc/html/links.html
-share/LessTif/doc/html/mailing-lists.html
 share/LessTif/doc/html/platforms.html
 share/LessTif/doc/html/release-policy.html
 share/LessTif/doc/html/versions.html
-share/LessTif/doc/html/working.html
 share/LessTif/doc/html/INSTALL.html
+share/LessTif/doc/html/apps.html
+share/LessTif/doc/html/bugs.html
+share/LessTif/doc/html/button.html
+share/LessTif/doc/html/cdrom.html
+share/LessTif/doc/html/cvs.html
+share/LessTif/doc/html/download.html
+share/LessTif/doc/html/index.html
+share/LessTif/doc/html/lists.html
+share/LessTif/doc/html/mirrors.html
+share/LessTif/doc/html/test_policy.html
+share/LessTif/doc/html/test_summary.html
+share/LessTif/doc/html/testers.html
+share/LessTif/doc/html/web_button.html
 share/LessTif/AUTHORS
 share/LessTif/BUG-REPORTING
 share/LessTif/COPYING
@@ -241,6 +253,7 @@ share/LessTif/TODO
 @dirrm lib/X11/lesstif
 @dirrm include/Xm
 @dirrm include/Mrm
+@dirrm share/LessTif/doc/html/imgs
 @dirrm share/LessTif/doc/html/images
 @dirrm share/LessTif/doc/html
 @dirrm share/LessTif/doc

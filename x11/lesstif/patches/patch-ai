@@ -1,6 +1,6 @@
---- doc/lessdox/clients/Makefile.in.~1~	Thu Jun 18 13:01:01 1998
-+++ doc/lessdox/clients/Makefile.in	Tue Jun 23 12:54:52 1998
-@@ -99,10 +99,10 @@
+--- doc/lessdox/clients/Makefile.in.orig	Tue Aug 11 18:37:37 1998
++++ doc/lessdox/clients/Makefile.in	Sun Aug 16 20:31:41 1998
+@@ -100,10 +100,10 @@
  EXTRA_DIST = $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES=	.1 .3 .5 .html
  
@@ -15,7 +15,7 @@
  
  man1_DATA=	mwm.1 xmbind.1 lesstif.1
  man3_DATA=
-@@ -117,7 +117,7 @@
+@@ -118,7 +118,7 @@
  # build them.
  #
  

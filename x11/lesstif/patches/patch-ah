@@ -1,6 +1,6 @@
---- doc/Makefile.in.~1~	Thu Jun 18 13:01:00 1998
-+++ doc/Makefile.in	Tue Jun 23 11:54:06 1998
-@@ -101,7 +101,7 @@
+--- doc/Makefile.in.orig	Tue Aug 11 18:37:30 1998
++++ doc/Makefile.in	Sun Aug 16 20:31:41 1998
+@@ -102,7 +102,7 @@
  
  SUBDIRS	= www.lesstif.org lessdox
  
