@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/05/07 05:41:25 angelos Exp $
+# $OpenBSD: Makefile,v 1.31 2001/05/09 18:30:29 millert Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += tcplist
      SUBDIR += upsd
      SUBDIR += usbutil
+     SUBDIR += wdsetup
      SUBDIR += webmin
      SUBDIR += whowatch
      SUBDIR += wmapm
