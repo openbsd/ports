@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/06/06 00:52:18 shell Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
-libdata/perl5/site_perl/Text/PDF/Array.pm
-libdata/perl5/site_perl/Text/PDF/Bool.pm
-libdata/perl5/site_perl/Text/PDF/Dict.pm
-libdata/perl5/site_perl/Text/PDF/File.pm
-libdata/perl5/site_perl/Text/PDF/Filter.pm
-libdata/perl5/site_perl/Text/PDF/Name.pm
-libdata/perl5/site_perl/Text/PDF/Number.pm
-libdata/perl5/site_perl/Text/PDF/Objind.pm
-libdata/perl5/site_perl/Text/PDF/Page.pm
-libdata/perl5/site_perl/Text/PDF/Pages.pm
-libdata/perl5/site_perl/Text/PDF/SFont.pm
-libdata/perl5/site_perl/Text/PDF/String.pm
-libdata/perl5/site_perl/Text/PDF/TTFont.pm
-libdata/perl5/site_perl/Text/PDF/TTFont0.pm
-libdata/perl5/site_perl/Text/PDF/Utils.pm
-libdata/perl5/site_perl/Text/PDF/changes
+${P5SITE}/Text/PDF/Array.pm
+${P5SITE}/Text/PDF/Bool.pm
+${P5SITE}/Text/PDF/Dict.pm
+${P5SITE}/Text/PDF/File.pm
+${P5SITE}/Text/PDF/Filter.pm
+${P5SITE}/Text/PDF/Name.pm
+${P5SITE}/Text/PDF/Number.pm
+${P5SITE}/Text/PDF/Objind.pm
+${P5SITE}/Text/PDF/Page.pm
+${P5SITE}/Text/PDF/Pages.pm
+${P5SITE}/Text/PDF/SFont.pm
+${P5SITE}/Text/PDF/String.pm
+${P5SITE}/Text/PDF/TTFont.pm
+${P5SITE}/Text/PDF/TTFont0.pm
+${P5SITE}/Text/PDF/Utils.pm
+${P5SITE}/Text/PDF/changes
 man/man3p/Text::PDF::Array.3p
 man/man3p/Text::PDF::Bool.3p
 man/man3p/Text::PDF::Dict.3p
@@ -43,4 +43,4 @@ share/examples/p5-Text-PDF/pdfgetobj.pl
 share/examples/p5-Text-PDF/pdflines.pl
 share/examples/p5-Text-PDF/test.pdf
 @dirrm share/examples/p5-Text-PDF
-@dirrm libdata/perl5/site_perl/Text/PDF
+@dirrm ${P5SITE}/Text/PDF
