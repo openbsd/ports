@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/17 02:52:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/03 10:39:42 turan Exp $
+
+BROKEN=		sources missing
 
 DISTNAME=	freeciv-1.9.0
 PKGNAME=	freeciv-1.9.0-gtk
