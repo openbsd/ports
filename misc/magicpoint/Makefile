@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2005/02/25 13:34:37 alek Exp $
+# $OpenBSD: Makefile,v 1.37 2005/03/01 18:19:52 jcs Exp $
 
 COMMENT=	"X11-based presentation tool"
 
-DISTNAME=	magicpoint-1.11b
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	magicpoint-1.09a
+# hack
+PKGNAME=	magicpoint-1.11bp1
 CATEGORIES=	misc productivity
-MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
+MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-HOMEPAGE=	http://www.mew.org/mgp/
+HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -33,9 +34,6 @@ CONFIGURE_ARGS+= --enable-freetype-charset16
 
 NO_REGRESS=	Yes
 
-pre-patch:
-	perl -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/image/new.c
-
 post-configure:
 	@cd ${WRKSRC}/contrib/xmindpath && \
 		./configure --prefix='$${DESTDIR}${PREFIX}'
@@ -45,7 +43,7 @@ post-build:
 	@cd ${WRKSRC}/contrib/xwintoppm && ${XMKMF}
 
 DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
-	README.lang README.xft SYNTAX USAGE USAGE.jp
+	README.lang SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		embed-jp.mgp embed.mgp gradation-jp.mgp \
 		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
@@ -71,9 +69,7 @@ post-install:
 			 ${PREFIX}/share/mgp/emacs; \
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/eqn2eps.sh \
-		${PREFIX}/bin/eqn2eps
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/latex2eps.sh \
-		${PREFIX}/bin/latex2eps
+		 ${PREFIX}/bin/eqn2eps
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/mgp2html.pl \
 		${PREFIX}/bin/mgp2html
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/mgp2latex.pl \

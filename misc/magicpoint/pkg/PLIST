@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/11/26 03:42:15 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/03/01 18:19:52 jcs Exp $
 bin/eqn2eps
-bin/latex2eps
 bin/mgp
 bin/mgp2html
 bin/mgp2latex
@@ -29,8 +28,8 @@ share/doc/mgp/README
 share/doc/mgp/README.fonts
 share/doc/mgp/README.fonts.jp
 share/doc/mgp/README.lang
-share/doc/mgp/README.xft
 share/doc/mgp/SYNTAX
+share/doc/mgp/TODO.jp
 share/doc/mgp/USAGE
 share/doc/mgp/USAGE.jp
 share/doc/mgp/sample/
