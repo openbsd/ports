@@ -3,7 +3,7 @@
 # Date created:				7 Jun 1998
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.4 1999/01/20 05:56:46 d Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/08 03:26:13 marc Exp $
 #
 
 DISTNAME=	cdrecord-1.6.1
@@ -17,7 +17,7 @@ MAINTAINER=	niklas@openbsd.org
 ONLY_FOR_ARCHS=	alpha amiga arc i386 mac68k mvme68k powerpc sparc sun3
 
 USE_GMAKE=	yes
-GMAKE=		${WRKSRC}/Gmake
+MAKE_ENV=	MAKEPROG=gmake
 
 # Cdrecord's standard install rule installs some unnecessary stuff,
 # we instead explicitly install what we want.
