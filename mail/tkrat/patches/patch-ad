@@ -1,0 +1,23 @@
+--- ./util/Makefile.in.orig	Sun Dec  5 22:40:51 1999
++++ ./util/Makefile.in	Fri Feb  4 05:51:37 2000
+@@ -67,9 +67,9 @@ BUSYSRC = blt_busy.c blt_window.c
+ BUSYOBJ = ${BUSYSRC:.c=.o}
+ 
+ TARGETS = rat_tabbed.tcl rat_list.tcl rat_fbox.tcl rat_balloon.tcl \
+-	  rat_edit.tcl rat_textlist.tcl rat_ed.tcl ${BUSYLIB}
++	  rat_edit.tcl rat_textlist.tcl rat_ed.tcl
+ 
+-all: ${TARGETS} pkgIndex.tcl ${DUMMYLIB}
++all: ${TARGETS} ${BUSYLIB} pkgIndex.tcl ${DUMMYLIB}
+ 
+ ${BUSYLIB}: ${BUSYOBJ}
+ 	${SHLIB_LD} -o ${BUSYLIB} ${BUSYOBJ} $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
+@@ -87,7 +87,7 @@ install:  ${TARGETS} pkgIndex.tcl
+ 	if test ! -d ${INSTALL_PREFIX}${LIB_DIR} ; then\
+ 	    ${INSTALL} -d ${INSTALL_PREFIX}${LIB_DIR} ;\
+ 	fi
+-	for i in ${TARGETS} pkgIndex.tcl; \
++	for i in ${TARGETS} ${BUSYLIB} pkgIndex.tcl; \
+ 	do \
+ 	    ${INSTALL} $$i ${INSTALL_PREFIX}${LIB_DIR} ;\
+ 	done

@@ -1,0 +1,40 @@
+--- ./lib/Makefile.in.orig	Sun Dec  5 22:40:51 1999
++++ ./lib/Makefile.in	Fri Feb  4 03:41:29 2000
+@@ -79,7 +79,7 @@ SRC = ratAppInit.c ratFolder.c ratStdFol
+       ratDisFolder.c ratPrint.c
+ OBJ = ${SRC:.c=.o}
+ 
+-all: ${RATLIB} pkgIndex.tcl
++all: ${RATLIB} 
+ 
+ clean:
+ 	rm -f ${OBJ} ${RATLIB} ratDummy.o ${DUMMYLIB} core pkgIndex.tcl
+@@ -90,22 +90,18 @@ ${RATLIB}: ${OBJ} ${C_CLIENT_LIB}
+ ${DUMMYLIB}: ratDummy.o
+ 	${SHLIB_LD} -o ${DUMMYLIB} ratDummy.o $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
+ 
+-pkgIndex.tcl: ${RATLIB} ${DUMMYLIB}
+-	echo "if [catch {load ./${DUMMYLIB}; \
+-			 load ./${RATLIB}; \
+-			 pkg_mkIndex -verbose . ${RATLIB}} error] \
+-		  {puts \$$error; exit 1}" | ${TCLSH}
+-
+ install: ${RATLIB}
+ 	if test ! -d ${INSTALL_PREFIX}${LIB_DIR} ; then\
+ 	    ${INSTALL} -d ${INSTALL_PREFIX}${LIB_DIR} ;\
+ 	fi
+ 	${INSTALL} ${RATLIB} ${INSTALL_PREFIX}${LIB_DIR}/${RATLIB}
+-	${INSTALL} ${DUMMYLIB} ${INSTALL_PREFIX}${LIB_DIR}/${DUMMYLIB}
++	if test -f ${DUMMYLIB} ; then\
++	${INSTALL} ${DUMMYLIB} ${INSTALL_PREFIX}${LIB_DIR}/${DUMMYLIB}\
+ 	cd ${INSTALL_PREFIX}${LIB_DIR}; \
+-	    echo "load ./${DUMMYLIB}; pkg_mkIndex . ratatosk*${SHLIB_SUFFIX}" |\
+-	    ${TCLSH}
+-	rm -f ${INSTALL_PREFIX}${LIB_DIR}/${DUMMYLIB}
++	    echo "load ./${DUMMYLIB}; pkg_mkIndex . ratatosk${RATLIB_SUFFIX}" |\
++	    ${TCLSH} \
++	rm -f ${INSTALL_PREFIX}${LIB_DIR}/${DUMMYLIB} ;\
++	fi
+ 
+ ratAddress.o: ratAddress.c rat.h ../config.h
+ ratAppInit.o: Makefile ratAppInit.c ratFolder.h rat.h ../config.h ratPGP.h

@@ -1,0 +1,29 @@
+--- ./tkrat/Makefile.in.orig	Tue Oct 12 13:31:46 1999
++++ ./tkrat/Makefile.in	Fri Feb  4 01:58:57 2000
+@@ -23,7 +23,11 @@
+        CSUFFIX = @csuffix@
+      TRANSFORM = @program_transform_name@
+        LIB_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
++ RATLIB_SUFFIX = @RATLIB_SUFFIX@
+      RATLIBDIR = ${libdir}/`echo ratatosk | sed '${TRANSFORM}'`
++        RATLIB = ratatosk${RATLIB_SUFFIX}
++BUSYLIB_SUFFIX = @BUSYLIB_SUFFIX@
++       BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
+ INSTALL_PREFIX = @INSTALL_PREFIX@
+ 
+ #-------- No changes should be done below --------
+@@ -71,7 +75,13 @@ tkrat.install: Makefile
+ 	echo "set env(CONFIG_DIR) ${sysconfdir}/ratatosk" >>$@
+ 	echo "set env(COMPRESS) ${COMPRESS}" >>$@
+ 	echo "set env(CSUFFIX) ${CSUFFIX}" >>$@
+-	echo "foreach dir {${LIB_DIR}/util ${RATLIBDIR}} {" >>$@
++	echo "foreach dir {${LIB_DIR}/util } {" >>$@
++	echo '    cd $$dir ; load ./${BUSYLIB} ' >>$@
++	echo "}" >>$@
++	echo "foreach dir {${RATLIBDIR}} {" >>$@
++	echo '    cd $$dir ; load ./${RATLIB} ' >>$@
++	echo "}" >>$@
++	echo "foreach dir {${LIB_DIR}/util } {" >>$@
+ 	echo '    source $$dir/pkgIndex.tcl' >>$@
+ 	echo "}" >>$@
+ 	echo "lappend auto_path ${LIB_DIR}" >>$@

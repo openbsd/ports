@@ -1,0 +1,5 @@
+I have not done an audit of the code.  
+
+Do not use the remember password option for IMAP and POP.
+If you choose to remember passwords they end up stored in plain text in a
+file.
