@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/14 21:17:54 turan Exp $
+# $OpenBSD: Makefile,v 1.8 1999/11/14 22:39:16 jakob Exp $
 
-BROKEN=		SEVERE SECURITY PROBLEMS.  Do not use until fixed.
-
-DISTNAME=	bind-19991020-snapshot
-PKGNAME=	bind-8.2.2
+DISTNAME=	bind-openbsd-8.2.2-P5
+PKGNAME=	bind-8.2.2-P5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
