@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/01/26 01:02:51 avsm Exp $
+# $OpenBSD: Makefile,v 1.42 2001/01/31 10:03:23 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += antiword
      SUBDIR += c2html
      SUBDIR += catdoc
+     SUBDIR += clo++
      SUBDIR += docbook
      SUBDIR += docbook-modular
      SUBDIR += expat
