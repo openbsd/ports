@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/06/23 07:56:36 mark Exp $
-lib/libSDL_net.so.0.4
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2003/04/04 02:18:00 margarida Exp $
+lib/libSDL_net.so.0.5
+DYNLIBDIR(%D/lib)
