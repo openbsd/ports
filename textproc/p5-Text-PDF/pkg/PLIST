@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/20 02:56:31 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/30 02:29:21 kevlo Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
@@ -33,4 +33,13 @@ man/man3/Text::PDF::String.3p
 man/man3/Text::PDF::TTFont.3p
 man/man3/Text::PDF::TTFont0.3p
 man/man3/Text::PDF::Utils.3p
+share/examples/p5-Text-PDF/CD.CFG
+share/examples/p5-Text-PDF/graph.pl
+share/examples/p5-Text-PDF/hello.pl
+share/examples/p5-Text-PDF/pdfaddobj.pl
+share/examples/p5-Text-PDF/pdfaddpg.pl
+share/examples/p5-Text-PDF/pdfcrop.pl
+share/examples/p5-Text-PDF/pdfgetobj.pl
+share/examples/p5-Text-PDF/test.pdf
+@dirrm share/examples/p5-Text-PDF      
 @dirrm libdata/perl5/site_perl/Text/PDF
