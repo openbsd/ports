@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2003/12/27 23:42:03 jose Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.6
@@ -19,11 +19,11 @@ FAKE_FLAGS=BINDIR=${WRKINST}${PREFIX}/bin \
 WRKDIST=	${WRKDIR}/xcd
 
 MAKE_ENV=	CC="${CC}"
-RUN_DEPENDS=	::x11/tk/8.3
+RUN_DEPENDS=	::x11/tk/8.4
 
 do-configure:
 	cd ${WRKDIST} && \
-		sed -e 's,wish4.1,wish8.3,' <xcd.in >xcd.in.new && \
+		sed -e 's,wish4.1,wish8.4,' <xcd.in >xcd.in.new && \
 		mv -f xcd.in.new xcd.in
 
 NO_REGRESS=	Yes

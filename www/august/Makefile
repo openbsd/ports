@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/12/27 23:42:29 jose Exp $
 
 COMMENT=	"html editor designed for the experienced web designer"
 
@@ -20,7 +20,7 @@ MASTER_SITES=   ${HOMEPAGE}
 
 RUN_DEPENDS=    :weblint-*:www/weblint \
 		:ImageMagick-*:graphics/ImageMagick \
-		:tk-8.3.*:x11/tk/8.3
+		:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
