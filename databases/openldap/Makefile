@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/02/11 10:44:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/18 22:22:30 brad Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
@@ -33,9 +33,8 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 
 EXTRACT_SUFX=		.tgz
 
-CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
-USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--without-kerberos \
 			--enable-slapd \
