@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/07 00:17:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/07 01:47:11 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -18,8 +18,8 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 MODULES=qt3
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3
- kwin::x11/kde/base3
+LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3 \
+    kwin::x11/kde/base3
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
