@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2003/10/18 19:44:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.62 2003/12/04 15:01:38 wilfried Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.4
+VER=		1.6a
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
@@ -43,8 +43,7 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		mng.1::graphics/libmng
+		png.3::graphics/png
 .endif
 
 USE_X11=	Yes
@@ -55,7 +54,6 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=					\
 		--with-system-jpeg=${LOCALBASE}	\
-		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
@@ -103,5 +101,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/package/rpm/SOURCES/${file}.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/package/rpm/SOURCES/${file}-icon.* ${PREFIX}/share/pixmaps
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

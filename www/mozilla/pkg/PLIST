@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2003/07/04 06:59:15 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.23 2003/12/04 15:01:39 wilfried Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -130,6 +130,8 @@ mozilla/components/msglocal.xpt
 mozilla/components/msgnews.xpt
 mozilla/components/msgsearch.xpt
 mozilla/components/msgsmime.xpt
+mozilla/components/myspell/en-US.aff
+mozilla/components/myspell/en-US.dic
 mozilla/components/necko.xpt
 mozilla/components/necko_about.xpt
 mozilla/components/necko_cache.xpt
@@ -157,6 +159,7 @@ mozilla/components/nsResetPref.js
 mozilla/components/nsSidebar.js
 mozilla/components/nsUpdateNotifier.js
 mozilla/components/nsXmlRpcClient.js
+mozilla/components/offlineStartup.js
 mozilla/components/oji.xpt
 mozilla/components/p3p.xpt
 mozilla/components/pipboot.xpt
@@ -177,7 +180,7 @@ mozilla/components/shistory.xpt
 mozilla/components/sidebar.xpt
 mozilla/components/signonviewer.xpt
 mozilla/components/smime-service.js
-mozilla/components/timebomb.xpt
+mozilla/components/spellchecker.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt
@@ -214,6 +217,8 @@ mozilla/components/xuldoc.xpt
 mozilla/components/xultmpl.xpt
 mozilla/defaults/autoconfig/platform.js
 mozilla/defaults/autoconfig/prefcalls.js
+mozilla/defaults/isp/US/movemail.rdf
+mozilla/defaults/isp/movemail.rdf
 mozilla/defaults/messenger/US/mailViews.dat
 mozilla/defaults/messenger/mailViews.dat
 mozilla/defaults/pref/all.js
@@ -281,6 +286,7 @@ mozilla/res/fonts/mathfontMath4.properties
 mozilla/res/fonts/mathfontPUA.properties
 mozilla/res/fonts/mathfontSymbol.properties
 mozilla/res/forms.css
+mozilla/res/grabber.gif
 mozilla/res/html.css
 mozilla/res/html/gopher-audio.gif
 mozilla/res/html/gopher-binary.gif
@@ -300,22 +306,11 @@ mozilla/res/loading-image.gif
 mozilla/res/mathml.css
 mozilla/res/platform-forms.css
 mozilla/res/quirk.css
-mozilla/res/rdf/article.gif
-mozilla/res/rdf/document.gif
-mozilla/res/rdf/dom-test-1.xul
-mozilla/res/rdf/dom-test-2.xul
-mozilla/res/rdf/dom-test-3.xul
 mozilla/res/rdf/dom-test-4.css
-mozilla/res/rdf/dom-test-4.xul
-mozilla/res/rdf/dom-test-5.xul
-mozilla/res/rdf/dom-test-6.xul
-mozilla/res/rdf/dom-test-7.xul
-mozilla/res/rdf/dom-test-8.xul
 mozilla/res/rdf/folder-closed.gif
 mozilla/res/rdf/folder-open.gif
 mozilla/res/rdf/ignore-test.xul
 mozilla/res/rdf/loading.gif
-mozilla/res/rdf/xpidl-test-1.xul
 mozilla/res/sample.unixpsfonts.properties
 mozilla/res/samples/Anieyes.gif
 mozilla/res/samples/aform.css
@@ -385,6 +380,24 @@ mozilla/res/samples/treeTest1.xul
 mozilla/res/samples/widgets.xul
 mozilla/res/samples/xpmenu.xul
 mozilla/res/samples/xulTest.css
+mozilla/res/table-add-column-after-active.gif
+mozilla/res/table-add-column-after-hover.gif
+mozilla/res/table-add-column-after.gif
+mozilla/res/table-add-column-before-active.gif
+mozilla/res/table-add-column-before-hover.gif
+mozilla/res/table-add-column-before.gif
+mozilla/res/table-add-row-after-active.gif
+mozilla/res/table-add-row-after-hover.gif
+mozilla/res/table-add-row-after.gif
+mozilla/res/table-add-row-before-active.gif
+mozilla/res/table-add-row-before-hover.gif
+mozilla/res/table-add-row-before.gif
+mozilla/res/table-remove-column-active.gif
+mozilla/res/table-remove-column-hover.gif
+mozilla/res/table-remove-column.gif
+mozilla/res/table-remove-row-active.gif
+mozilla/res/table-remove-row-hover.gif
+mozilla/res/table-remove-row.gif
 mozilla/res/throbber/anim.gif
 mozilla/res/throbber/anims00.gif
 mozilla/res/throbber/anims01.gif
@@ -464,8 +477,11 @@ share/pixmaps/mozilla-mail-icon.gif
 @dirrm mozilla/defaults/pref
 @dirrm mozilla/defaults/messenger/US
 @dirrm mozilla/defaults/messenger
+@dirrm mozilla/defaults/isp/US
+@dirrm mozilla/defaults/isp
 @dirrm mozilla/defaults/autoconfig
 @dirrm mozilla/defaults
+@dirrm mozilla/components/myspell
 @dirrm mozilla/components
 @exec mkdir -p %D/mozilla/chrome/venkman/skin/modern/venkman/images
 @dirrm mozilla/chrome/venkman/skin/modern/venkman/images
@@ -745,12 +761,12 @@ share/pixmaps/mozilla-mail-icon.gif
 @dirrm mozilla/chrome/en-US/locale/en-US/content-packs
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xml
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/xml
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/webservices
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/webservices
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/wallet
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/wallet
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/timebomb
-@dirrm mozilla/chrome/en-US/locale/en-US/communicator/timebomb
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/sidebar
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/sidebar
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/security
@@ -822,8 +838,6 @@ share/pixmaps/mozilla-mail-icon.gif
 @dirrm mozilla/chrome/comm/content/communicator/xml
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/wallet
 @dirrm mozilla/chrome/comm/content/communicator/wallet
-@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/timebomb
-@dirrm mozilla/chrome/comm/content/communicator/timebomb
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/sidebar
 @dirrm mozilla/chrome/comm/content/communicator/sidebar
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/search
