@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/05/23 21:26:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.60 2001/05/29 15:54:23 lebel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += latex2html
      SUBDIR += lgrind
      SUBDIR += libxml
+     SUBDIR += libxml1
      SUBDIR += libxslt
      SUBDIR += linuxdoc
      SUBDIR += mgdiff
