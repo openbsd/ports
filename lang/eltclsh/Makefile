@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/29 11:24:57 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/03 09:30:22 matthieu Exp $
 
 COMMENT=	"Libedit interface to Tcl/Tk interpreters"
 
-VERSION=	1.4
+VERSION=	1.5
 DISTNAME=	eltclsh-${VERSION}
 CATEGORIES=	lang x11
 
