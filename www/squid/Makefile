@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2002/03/16 18:18:30 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2002/03/16 19:05:26 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
@@ -38,6 +38,10 @@ CONFIGURE_ARGS=	--enable-removal-policies="lru heap" \
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+= --enable-pf-transparent
 .endif
+
+# remove stale autoconf.h left in the distfile
+post-extract:
+	@rm -f ${WRKSRC}/include/autoconf.h
 
 post-install:
 	@chown -R root:wheel ${PREFIX}/share/examples/squid
