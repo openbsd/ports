@@ -1,0 +1,24 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/05 18:53:29 wilfried Exp $
+--- Imakefile.orig	Sat Jul 24 19:23:14 1999
++++ Imakefile	Mon Feb  5 16:21:50 2001
+@@ -1,16 +1,13 @@
+-PREFIX = /usr/local/GNUstep/Apps/Mixer.app
+-INSTALLDIR = $(PREFIX)
+-BINDIR = $(PREFIX)
++INSTALLDIR = $(TRUEPREFIX)/GNUstep/Apps/Mixer.app
++BINDIR = $(TRUEPREFIX)/GNUstep/Apps/Mixer.app
+ 
+ XPMLIB = -lXpm 
+-LOCAL_LIBRARIES = $(XLIB) $(XPMLIB)
++LOCAL_LIBRARIES = $(XLIB) $(XPMLIB) -lossaudio
+ DEPLIBS = $(DEPXLIB) 
+ LINTLIBS = $(LINTXLIB)
+-CC = c++
+-CXXFLAGS += -Wall -O6 -mpentium
+ 
+ SRCS = Main.cc Mixer.cc Xpm.cc
+ OBJS = Main.o Mixer.o Xpm.o
+ 
+-ComplexProgramTarget(Mixer)
++ComplexProgramTargetNoMan(Mixer)
+ 

@@ -1,0 +1,43 @@
+.\" $OpenBSD: Mixer.1,v 1.1.1.1 2001/02/05 18:53:29 wilfried Exp $
+.Dd Feb 21, 2000
+.Dt MIXER.APP 1
+.Os
+.Sh NAME
+.Nm Mixer.app
+.Sh SYNOPSIS
+.Nm Mixer.app
+.Sh Hints for Mixer.app
+
+.Sh Error led:
+If the led on Mixer.app is red an error message has
+been printed to stderr and something is not working
+correctly. If the led is green everything is working ok.
+
+.Sh Mute:
+Right click on a volume controller to mute the sound
+source. The button will then have a red led in one corner.
+Right click again to restore the volume. If a muted sound
+source is modified by another application Mixer.app will
+automaticaly release its muted state.
+
+.Sh Wheel mouse:
+If you have a wheel mouse (where the wheel is configured as
+Button4 and Button5) you can control the volume by just moving
+the mouse over Mixer.app and roll the wheel up and down. Use
+the command line option -w to specify which slider that should
+react to the wheel movement.
+
+.Sh Label:
+If you run multiple instances of Mixer.app you might want
+to be able to tell them apart. This can easily be done
+by setting a label to each one of them. By using the -l
+option you can add a little text label at the bottom of
+the mixer.
+
+.Sh Save volume settings:
+Use the option -s or -S <file> if you want the volume
+settings to be saved when Mixer.app exits, and then
+loaded again when Mixer.app is started the next time.
+When using -s the settings are saved in/loaded from
+~/GNUstep/Defaults/Mixer. Use the -S <file> option
+if you want to use a different file.

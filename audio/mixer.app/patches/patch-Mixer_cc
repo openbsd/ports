@@ -1,0 +1,12 @@
+$OpenBSD: patch-Mixer_cc,v 1.1.1.1 2001/02/05 18:53:29 wilfried Exp $
+--- Mixer.cc.orig	Wed Feb  2 01:31:42 2000
++++ Mixer.cc	Mon Feb  5 16:19:30 2001
+@@ -35,6 +35,8 @@
+ #include <linux/soundcard.h>
+ #elif defined(__FreeBSD__)
+ #include <machine/soundcard.h>
++#elif defined(__OpenBSD__)
++#include <soundcard.h>
+ #else
+ #include <sys/soundcard.h>
+ #endif
