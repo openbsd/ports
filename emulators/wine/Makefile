@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/15 04:52:45 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/18 05:02:07 marc Exp $
 #
 
 DATE=		980628
@@ -6,7 +6,7 @@ DISTNAME=	Wine-${DATE}
 PKGNAME=	wine-98.06.28
 CATEGORIES=	emulators x11
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 ONLY_FOR_ARCHS= i386
 
 MAINTAINER=	todd@OpenBSD.ORG

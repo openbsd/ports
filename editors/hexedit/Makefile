@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 23:03:32 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:06 marc Exp $
 # FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp
 #
 
 DISTNAME=	hexedit-0.9.3
 CATEGORIES=	editors
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	form@vs.itam.nsc.ru
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/07 18:43:11 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/18 05:01:59 marc Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 #
 
@@ -6,7 +6,7 @@ DISTNAME=	mgetty1.1.17-Aug07
 PKGNAME=	mgetty-1.1.17
 CATEGORIES=	comms
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	form@vs.itam.nsc.ru
 

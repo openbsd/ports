@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/09 00:26:02 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/18 05:02:05 marc Exp $
 #
 
 DISTNAME=       make-3.76.1
 PKGNAME=        gmake-3.76.1
 CATEGORIES=	devel
 
-# Sigh.. this should be flagged as broken, but too many other non
-# broken ports depend upon it and the old source is still available.
-#
 #BROKEN=	"newer version available"
 
 MAINTAINER=	todd@OpenBSD.org

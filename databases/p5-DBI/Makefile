@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 04:33:15 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:04 marc Exp $
 #
 
 DISTNAME=	DBI-0.93
 PKGNAME=	p5-DBI-0.93
 CATEGORIES=	databases perl5
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	ports@0penbsd.org
 

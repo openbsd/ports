@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:22:13 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:04 marc Exp $
 #
 
 DISTNAME=	automake-1.2
 CATEGORIES=	devel
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	joey@OpenBSD.ORG
 

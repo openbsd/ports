@@ -1,26 +1,19 @@
-# OpenBSD makefile for:	p5-Compress-Zlib
-# Version required:			0.50
-# Date created:				24 November 1887
-# Whom:	      				angelos
-#
-# $OpenBSD: Makefile,v 1.2 1998/10/06 20:48:02 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:01:59 marc Exp $
 #
 
-BROKEN=		"current version is 1.01"
 DISTNAME=	Compress-Zlib-0.50
 PKGNAME=	p5-Compress-Zlib-0.50
 CATEGORIES=	archivers perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Compress
+
+#BROKEN=		"current version is 1.01"
 
 MAINTAINER=	angelos@openbsd.org
 
-USE_PERL5=	YES
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Compress
 
-MAN3=		Compress::Zlib.3
-MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
 
 .include <bsd.port.mk>

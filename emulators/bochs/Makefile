@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/15 04:33:25 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:06 marc Exp $
 # FreeBSD: Makefile,v 1.9 1998/05/18 23:49:17 alex Exp
 #
 
@@ -10,7 +10,7 @@ DISTNAME=	bochs-${DATE}a
 CATEGORIES= 	emulators
 
 ONLY_FOR_ARCHS=	i386
-BROKEN=		"BROKEN: newer version available"
+#BROKEN=	"BROKEN: newer version available"
 RESTRICTED=	"COMM: Commercial software"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 04:43:01 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/18 05:01:59 marc Exp $
 #
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
 
-BROKEN=		"version changed; home site moved"
+#BROKEN=	"version changed; home site moved"
 
 MAINTAINER=	joey@OpenBSD.ORG
 

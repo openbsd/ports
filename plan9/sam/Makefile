@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	sam
-# Version required:	4.3
-# Date created:		Sep 3 1998
-# Whom:			msfriedl@cs.fau.de
-#
-# $Id: Makefile,v 1.1.1.1 1998/09/28 21:01:53 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:09 marc Exp $
 #
 
 DISTNAME=		sam-4.3-19980506

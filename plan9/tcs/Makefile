@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	tcs
-# Version required:	19950325
-# Date created:		Sep 23 1998
-# Whom:			msfriedl@cs.fau.de
-#
-# $Id: Makefile,v 1.1.1.1 1998/09/28 21:00:48 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:09 marc Exp $
 #
 
 DISTNAME=		tcs-19950325

@@ -1,9 +1,4 @@
-# OpenBSD makefile for:		cfs
-# Version required:	1.3.3
-# Date created:		26 November 1997
-# Whom:			Angelos D. Keromytis
-#
-# $Id: Makefile,v 1.2 1998/04/12 21:40:56 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:10 marc Exp $
 #
 
 DISTNAME=	cfs-1.3.3

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/08 22:59:00 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/18 05:02:05 marc Exp $
 #
 
 DISTNAME=	beav_140-7
 PKGNAME=	beav-1.40.7
 CATEGORIES=	editors
 
-BROKEN=		"sources moved and/or no longer available"
+#BROKEN=	"sources moved and/or no longer available"
 
 MAINTAINER=	joey@OpenBSD.org
 

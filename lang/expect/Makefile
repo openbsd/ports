@@ -1,9 +1,4 @@
-# New ports collection makefile for:	expect
-# Date created:		29 January 1998
-# Whom:			niklas
-# Version required:	5.26
-#
-# $Id: Makefile,v 1.4 1998/08/27 04:36:32 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/18 05:02:08 marc Exp $
 #
 
 DISTNAME=	expect

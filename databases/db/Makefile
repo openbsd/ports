@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/08 04:23:55 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/10/18 05:02:03 marc Exp $
 #
 
 DISTNAME=	db-2.3.16
 CATEGORIES=	databases
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	tacho@openbsd.org
 

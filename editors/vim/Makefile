@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 23:57:13 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:06 marc Exp $
 #
 
 DISTNAME=	vim-5.1
 CATEGORIES=	editors
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=     downsj@downsj.com
 

@@ -8,4 +8,4 @@ MOZILLA_HOME=y0y0y0
 
 export MOZILLA_HOME
 
-exec $MOZILLA_HOME/netscape
+exec $MOZILLA_HOME/netscape $*

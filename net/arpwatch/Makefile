@@ -1,9 +1,4 @@
-# New ports collection makefile for:    arpwatch
-# Version required:     2.1a3
-# Date created:         March 24 1998
-# Whom:                 mickey@openbsd.org
-#
-# $Id: Makefile,v 1.1.1.1 1998/03/25 20:13:23 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:08 marc Exp $
 #
 
 DISTNAME=	arpwatch-2.1a3
