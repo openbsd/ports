@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/20 10:30:17 reinhard Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/15 04:07:29 brad Exp $
 
 # Build just the Tomcat connector for our in-tree Apache
 COMMENT=	"Tomcat (Servlet/JSP) - Apache Connector"
+
+# This port currently only works with archs supporting dynamic loading
+# and has Apache that supports DSO's.
+ONLY_FOR_ARCHS=	i386 m68k sparc
 
 V=		3.2.3
 PKGNAME=	jserv-${V}
