@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/20 00:35:43 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/20 03:24:24 brad Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=	BSD
+LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
