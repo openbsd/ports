@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/11 21:00:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/24 02:40:42 jolan Exp $
 
 COMMENT=	"portable lossless data compression library"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://www.oberhumer.com/opensource/ucl
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

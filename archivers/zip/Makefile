@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/12/29 15:15:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2003/05/24 02:40:42 jolan Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -13,6 +13,7 @@ DISTFILES=	zip23.tar.gz zcrypt29.zip
 
 HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/Zip.html
 
+# Conditional
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

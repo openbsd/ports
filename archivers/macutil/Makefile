@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/24 02:40:42 jolan Exp $
 
 COMMENT=		"several programs to handle macintosh files and archives"
 DISTNAME=		macutil2.0b3
@@ -7,11 +7,11 @@ CATEGORIES=		archivers
 
 MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 
-# very unclear blather
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+# None
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
 
 MASTER_SITES=		ftp://ftp.cwi.nl/pub/dik/
 EXTRACT_SUFX=		.shar.Z

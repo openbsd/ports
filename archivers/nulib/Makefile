@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/24 02:40:42 jolan Exp $
 
 COMMENT=	"NuFX archiver"
 
@@ -8,6 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
+# Restrictive
 PERMIT_PACKAGE_CDROM=	"May not sell"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"May not sell"

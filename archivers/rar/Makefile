@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2002/12/29 15:15:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.36 2003/05/24 02:40:42 jolan Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -27,8 +27,9 @@ MASTER_SITES=	${HOMEPAGE}/rar/ \
 EXTRACT_CASES=	*.sfx) ${SUDO} chmod a+x ${FULLDISTDIR}/$$archive && \
 			${FULLDISTDIR}/$$archive;;
 
-HOMEPAGE=	http://www.rarsoft.com
+HOMEPAGE=	http://www.rarsoft.com/
 
+# Restrictive
 PERMIT_PACKAGE_CDROM=	"Shareware.  Requires registration."
 PERMIT_PACKAGE_FTP=	"Shareware.  Requires registration."
 PERMIT_DISTFILES_CDROM=	"Shareware.  Requires registration."

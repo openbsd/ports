@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/04/16 20:59:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/05/24 02:40:42 jolan Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
@@ -8,6 +8,7 @@ CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
 
+# Restrictive
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_DISTFILES_CDROM=	"no fee"
