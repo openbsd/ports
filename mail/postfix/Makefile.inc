@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.12 2001/11/11 13:48:17 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2001/11/15 07:36:35 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
 CATEGORIES=	mail
-NEED_VERSION=	1.474
+NEED_VERSION=	1.491
 
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/%SUBDIR%/ \
