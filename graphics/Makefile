@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/04/05 03:46:25 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2001/04/13 20:56:58 lebel Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += png
      SUBDIR += pngcrush
 #    SUBDIR += povray
+     SUBDIR += qiv
 #    SUBDIR += qvplay
 #    SUBDIR += sced
 #    SUBDIR += spigot
