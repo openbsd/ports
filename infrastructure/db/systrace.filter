@@ -32,7 +32,7 @@
 	native-fsread: true then permit
 	native-fstat: permit
 	native-fstatfs: permit
-	native-fswrite: filename eq "" then permit
+	native-fswrite: filename eq "" then deny[enoent]
 	native-fswrite: filename eq "/dev/crypto" then permit
 	native-fswrite: filename eq "/dev/null" then permit
 	native-fswrite: filename eq "/dev/stdout" then permit
