@@ -1,8 +1,7 @@
-$OpenBSD: patch-src_utility.c,v 1.1 2000/08/29 04:36:33 brad Exp $
-
+$OpenBSD: patch-src_utility_c,v 1.1 2001/03/06 06:52:42 fgsch Exp $
 --- src/utility.c.orig	Wed Jul  5 16:52:40 2000
-+++ src/utility.c	Mon Aug 28 23:06:20 2000
-@@ -102,7 +102,6 @@
++++ src/utility.c	Tue Mar  6 03:23:41 2001
+@@ -102,7 +102,6 @@ int password_match(const char *crypted, 
  
  	return 0;
  #else
@@ -10,7 +9,7 @@ $OpenBSD: patch-src_utility.c,v 1.1 2000/08/29 04:36:33 brad Exp $
  	char *test_crypted;
  	extern char *crypt(const char *, const char *);
  
-@@ -111,18 +110,8 @@
+@@ -111,18 +110,8 @@ int password_match(const char *crypted, 
  		return 0;
  	}
  
