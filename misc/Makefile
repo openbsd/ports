@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/04/17 13:35:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.45 2001/05/06 14:37:25 lebel Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -19,6 +19,7 @@
      SUBDIR += delay
      SUBDIR += dialog
 #    SUBDIR += dotfile
+     SUBDIR += dnetc
 #    SUBDIR += ecc
 #    SUBDIR += estic
 #    SUBDIR += fd
