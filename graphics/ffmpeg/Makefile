@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/10/13 01:38:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2004/11/30 01:06:34 espie Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	ffmpeg-0.4.9-pre1
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	"patents"
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		X11 Xext c m ogg ossaudio pthread usbhid z
 
 BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	SDL.2.0::devel/sdl \

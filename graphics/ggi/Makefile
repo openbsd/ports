@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/09/15 00:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2004/11/30 01:06:34 espie Exp $
 # Uses pthreads
 
 COMMENT=	"Generic Graphics Library"
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xxf86dg Xxf86vm c m ncurses pthread
 
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/
 EXTRACT_SUFX=	.src.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/02/21 00:14:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/30 01:06:38 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/A/AD/ADDI/} \
 		http://www.eecs.umich.edu/~addi/perl/Imager/

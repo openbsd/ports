@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/30 01:06:34 espie Exp $
 
 COMMENT=	"mpeg-1 video player"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 MASTER_SITES=	${HOMEPAGE}
 

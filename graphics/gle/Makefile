@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/30 01:06:35 espie Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"unclear"
 PERMIT_PACKAGE_FTP=	"unclear"
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		Xi m
 
 MASTER_SITES=		http://www.linas.org/gle/pub/
 

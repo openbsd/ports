@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/19 00:10:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/30 01:06:37 espie Exp $
 # $FreeBSD: ports/graphics/mpeg_encode/Makefile,v 1.11 2000/10/28 13:05:25 lioux Exp $
 
 COMMENT=	"UCB's MPEG-I video stream encoder"
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=   patents
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= patents
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c m
 
 MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 

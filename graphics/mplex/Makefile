@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/30 01:06:38 espie Exp $
 # $FreeBSD: ports/graphics/mplex/Makefile,v 1.8 2000/05/29 23:54:39 steve Exp $
 #
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/general/graphics/mpeg/mplex/ \
 		http://mirror.csoft.org/mplex/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/04/22 12:53:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/30 01:06:35 espie Exp $
 
 COMMENT=	"handle GIF89a transparent option and interlace mode"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 

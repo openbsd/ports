@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/11/04 22:14:11 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2004/11/30 01:06:39 espie Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-examples=	"examples for Python imaging library"
 
 VERSION=		1.1.4
 DISTNAME=		Imaging-${VERSION}
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		freetype tcl84 z
 
 MASTER_SITES=		http://www.pythonware.net/storage/
 
@@ -28,7 +29,7 @@ MODULES=		lang/python
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tk84::x11/tk/8.4
+			tk84:tk-8.4.*:x11/tk/8.4
 
 MULTI_PACKAGES=		-examples
 SUBPACKAGE?=

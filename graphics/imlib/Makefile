@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2004/09/15 19:41:44 robert Exp $
+# $OpenBSD: Makefile,v 1.49 2004/11/30 01:06:36 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xi c glib gmodule m z
 
 VMEM_WARNING=	Yes
 

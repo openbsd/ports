@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/08/04 12:33:33 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2004/11/30 01:06:34 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -29,6 +29,8 @@ PERMIT_PACKAGE_CDROM=	"Runtime dependencies have patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xxf86dga Xxf86vm c m \
+			ossaudio z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

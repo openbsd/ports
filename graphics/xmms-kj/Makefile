@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/15 18:41:36 wcobb Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/30 01:06:40 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m z
 
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/xmms-kj/

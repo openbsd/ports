@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/02/23 08:20:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2004/11/30 01:06:38 espie Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -31,6 +31,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 .else
 PERMIT_PACKAGE_CDROM=	Yes
 .endif
+WANTLIB=		c m z
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${WRKINST}${TRUEPREFIX}"

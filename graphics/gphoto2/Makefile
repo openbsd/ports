@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/08 21:01:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/30 01:06:35 espie Exp $
 
 COMMENT=	'digital camera command-line interface'
 CATEGORIES=	graphics
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		c exif m ncurses readline
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.57

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/10/27 00:03:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/30 01:06:40 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
@@ -33,6 +33,7 @@ PERMIT_PACKAGE_CDROM=	"Must buy license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"Must buy license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m z
 
 CONFIGURE_STYLE= imake
 

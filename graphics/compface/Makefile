@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/30 01:06:33 espie Exp $
 
 COMMENT=	"programs and library for the 'X-face' mail and news header"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>
 
