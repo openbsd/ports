@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/18 21:45:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 16:28:58 naddy Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 V=			1.4.0.1
@@ -10,6 +10,7 @@ MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-applets
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
 			gtop::devel/libgtop,gnome
