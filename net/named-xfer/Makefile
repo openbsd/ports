@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/13 21:26:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/25 22:04:40 jakob Exp $
 
 COMMENT=	"zone transfer program from BIND v8"
 
-VERSION=	8.4.1
-PKGNAME=	named-xfer-${VERSION}p1
+VERSION=	8.4.4
+PKGNAME=	named-xfer-${VERSION}
 DISTNAME=	named-xfer-${VERSION}
 CATEGORIES=	net
 
 DIST_SUBDIR=	bind-${VERSION}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
-MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/src/DEPRECATED/${VERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind/src/DEPRECATED/${VERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind/src/DEPRECATED/${VERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind/src/DEPRECATED/${VERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/src/DEPRECATED/${VERSION}/ \
-		ftp://ftp.iij.ad.jp/pub/network/isc/bind/src/DEPRECATED/${VERSION}/ \
+MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/src/${VERSION}/ \
+		ftp://ftp.epix.net/pub/isc/bind/src/${VERSION}/ \
+		ftp://ftp.nominum.com/pub/isc/bind/src/${VERSION}/ \
+		ftp://ftp.sunet.se/pub/network/isc/bind/src/${VERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/src/${VERSION}/ \
+		ftp://ftp.iij.ad.jp/pub/network/isc/bind/src/${VERSION}/ \
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 
