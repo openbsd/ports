@@ -1,4 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/02/26 02:10:28 kevlo Exp $
 libdata/perl5/site_perl/Class/MethodMaker.pm
+libdata/perl5/site_perl/auto/Class/MethodMaker/_add_hash_methods.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/_add_list_methods.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/_ancestry.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/_make_get_set.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/abstract.al
@@ -21,12 +24,17 @@ libdata/perl5/site_perl/auto/Class/MethodMaker/listed_attrib.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/method.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/new.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/new_hash_init.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/new_with_args.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/new_with_init.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/object.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/object_list.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/object_tie_hash.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/object_tie_list.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/static_get_set.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/static_hash.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/struct.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/tie_hash.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/tie_list.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/tie_scalar.al
 man/man3/Class::MethodMaker.3p
 @dirrm libdata/perl5/site_perl/auto/Class/MethodMaker
