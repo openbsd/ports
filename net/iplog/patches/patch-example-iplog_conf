@@ -1,7 +1,7 @@
-$OpenBSD: patch-example-iplog_conf,v 1.1.1.1 2001/01/05 10:16:18 danh Exp $
---- example-iplog.conf.orig	Mon Jul  3 14:32:42 2000
-+++ example-iplog.conf	Wed Jan  3 18:01:03 2001
-@@ -32,11 +32,11 @@ set log_dest false
+$OpenBSD: patch-example-iplog_conf,v 1.2 2004/01/04 23:19:41 espie Exp $
+--- example-iplog.conf.orig	2000-12-31 19:40:40.000000000 +0100
++++ example-iplog.conf	2004-01-05 00:14:31.000000000 +0100
+@@ -35,11 +35,11 @@ set log_dest false
  # Ignore DNS traffic from nameservers in /etc/resolv.conf.
  set ignore_dns
  
