@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2003/08/01 22:29:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/08/25 16:11:10 naddy Exp $
+
+BROKEN=		"fails to build or run"
 
 COMMENT=	"official AT&T release of KornShell 93"
 
