@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/28 19:12:05 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/20 17:35:32 brad Exp $
 # $FreeBSD: ports/archivers/fastjar/Makefile,v 1.4 2000/04/24 15:51:08 knu Exp $
 
 COMMENT=	"Sun JDK's jar command written entirely in C"
 
 DISTNAME=	fastjar-0.90
 CATEGORIES=     archivers
-NEED_VERSION=	1.364
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= fastjar
 EXTRACT_SUFX=	.tgz

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/29 11:41:38 obecian Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/20 17:35:33 brad Exp $
 
 COMMENT=	"packing and unpacking of shell archives"
 
 DISTNAME=	sharutils-4.2.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.364
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sharutils
 

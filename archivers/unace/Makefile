@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/24 22:37:59 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/04/20 17:35:35 brad Exp $
 
 COMMENT=	"extract, view & test ACE archives"
 
 DISTNAME=	unacepub
 PKGNAME=	unace-1.2b
 CATEGORIES=	archivers
-NEED_VERSION=	1.363
+NEED_VERSION=	1.384
 MASTER_SITES=	http://members.aol.com/mlemke6413/
 EXTRACT_SUFX=	.zip
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2001/04/20 15:09:11 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2001/04/20 17:35:32 brad Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.364
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v100/
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -Winline \
 		-fomit-frame-pointer -fno-strength-reduce"
-FAKE_FLAGS+=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
+FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
 
 test:   build
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \

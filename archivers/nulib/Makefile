@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/29 15:01:58 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/20 17:35:34 brad Exp $
 
 COMMENT=	"NuFX archiver"
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
 CATEGORIES=	archivers
-NEED_VERSION=	1.364
+NEED_VERSION=	1.384
 MASTER_SITES=	http://people.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 

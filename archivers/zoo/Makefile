@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/29 15:02:06 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/20 17:35:37 brad Exp $
 
 COMMENT=	"handle the old .ZOO archive format"
 
 DISTNAME=	zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.364
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
