@@ -3,13 +3,12 @@
 # Date created:				May 22, 1999
 # Whom:					Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.2 1999/05/23 01:48:35 angelos Exp $
-# $OpenBSD: Makefile,v 1.2 1999/05/23 01:48:35 angelos Exp $
+# $Id: Makefile,v 1.3 1999/08/18 01:54:08 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1999/08/18 01:54:08 angelos Exp $
 #
 
 DISTNAME=		mp3info-0.2.16
 CATEGORIES=		audio
-MASTER_SITES=		ftp://bimbo.hive.no/pub/mp3info/
 
 MAINTAINER=		angelos@openbsd.org
 
