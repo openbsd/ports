@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/02/11 17:46:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2004/02/23 00:33:34 naddy Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}rar/
 
-# - work around optimizer bug in gcc 2.95
 # - exceptions don't work on sparc64
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-patch-*

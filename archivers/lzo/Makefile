@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.31 2004/02/23 00:33:34 naddy Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
@@ -16,15 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-# Internal Compiler Error
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* sup-sparc64
-.endif
 
 REGRESS_TARGET=	test
 

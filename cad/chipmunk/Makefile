@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/21 00:14:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/23 00:33:34 naddy Exp $
 
 COMMENT=	"electronic CAD system"
 
@@ -22,10 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 #MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
 MASTER_SITES=	http://www.sightly.net/distfiles/
 DIST_SUBDIR=	chipmunk
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
-.endif
 
 WRKDIST=	${WRKDIR}
 ALL_TARGET=	makeonly
