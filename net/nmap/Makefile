@@ -1,17 +1,12 @@
-# OpenBSD makefile for:	nmap
-# Version required:	2.06
-# Date created:		10 January 1999
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.3 1999/02/08 19:36:23 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/17 05:43:15 marc Exp $
 #
 
-DISTNAME=		nmap-2.06
+DISTNAME=		nmap-2.08
 CATEGORIES=     	net
 
 MAINTAINER=		angelos@openbsd.org
 
-MASTER_SITES=		http://www.insecure.org/nmap/
+MASTER_SITES=		http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=		.tgz
 
 GNU_CONFIGURE=		yes
