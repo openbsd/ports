@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/05 08:54:41 kevlo Exp $
 
-DISTNAME=	beav_140-7
-PKGNAME=	beav-1.40.7
+DISTNAME=	beav_1.40-13
+PKGNAME=	beav-1.40-13
 CATEGORIES=	editors
 
-#BROKEN=	"sources moved and/or no longer available"
+MAINTAINER=	kevlo@openbsd.org
 
-MAINTAINER=	ports@openbsd.org
+MASTER_SITES=	ftp://ftp.debian.org/debian/dists/stable/main/source/editors/
 
-MASTER_SITES=	ftp://ftp.debian.org/debian/bo/source/editors/ \
-		ftp://theta.iis.u-tokyo.ac.jp/pub2/Linux/distributions/debian/bo/source/editors/
-
-WRKSRC=		${WRKDIR}/beav-140
+WRKSRC=		${WRKDIR}/beav-1.40
 PATCH_STRIP=	-p1
 
 .include <bsd.port.mk>
