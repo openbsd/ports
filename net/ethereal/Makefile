@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/24 23:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/25 23:13:01 brad Exp $
 
 DISTNAME=	ethereal-0.8.4
 CATEGORIES=	net x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/ \
 		http://ethereal.zing.org/distribution/old-versions/ \
 		http://ethereal.boehm.org/distribution/old-versions/
+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -17,13 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=		Yes
 
-LIB_DEPENDS=	glib.1.2::devel/glib \
-		gtk.1.2::x11/gtk+
-
 USE_X11=	Yes
 SYSCONFDIR=	${PREFIX}/share/ethereal
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 .include <bsd.port.mk>
