@@ -71,8 +71,8 @@
   endif
 ! cp -p pgpsendmail ${sendmail_dir}
   cd ${sendmail_dir}
-  mv sendmail sendmail.real
-  ln -s pgpsendmail sendmail
+! mv sendmail sendmail.real
+! ln -s pgpsendmail sendmail
   
 --- 95,111 ----
       if ("$?USRBINPATH" != "0") then
@@ -89,6 +89,6 @@
 ! cp pgpsendmail ${sendmail_dir}
   cd ${sendmail_dir}
 + chmod 4555 pgpsendmail
-  mv sendmail sendmail.real
-  ln -s pgpsendmail sendmail
+!#mv sendmail sendmail.real
+!#ln -s pgpsendmail sendmail
   
