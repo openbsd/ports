@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2001/09/28 03:57:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2002/02/28 22:56:41 brad Exp $
 
 COMMENT=	"Battle.net(r) server emulator"
+
+IGNORE=		"has been removed due to legal reasons"
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
