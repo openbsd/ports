@@ -1,16 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/11 00:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/13 23:16:06 naddy Exp $
 
-DISTNAME=	aumix-2.6.1
+DISTNAME=	aumix-2.7
 CATEGORIES=	audio
-NEED_VERSION=	1.311
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://jpj.net/~trevor/aumix/ \
-		http://jpj.net/~trevor/aumix/old/
-MASTER_SITE_SUBDIR= aumix
+NEED_VERSION=	1.312
 
-HOMEPAGE=	http://www.jpj.net/~trevor/aumix.html
-
-LIB_DEPENDS=	intl.1::devel/gettext
+HOMEPAGE=	http://jpj.net/~trevor/aumix.html
 
 MAINTAINER=	naddy@openbsd.org
 
@@ -19,13 +13,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://jpj.net/~trevor/aumix/ \
+		http://jpj.net/~trevor/aumix/old/
+MASTER_SITE_SUBDIR= aumix
+
+LIB_DEPENDS=	intl.1::devel/gettext
+
 FLAVORS=	no_x11 no_curses dummy
 FLAVOR?=
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-own-labels
+CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
+		LDFLAGS='-L${LOCALBASE}/lib'
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-gtk

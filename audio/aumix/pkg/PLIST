@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/11 00:56:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/07/13 23:16:07 naddy Exp $
 bin/aumix
 man/man1/aumix.1
 !%%no_curses%%
@@ -9,8 +9,10 @@ share/locale/de/LC_MESSAGES/aumix.mo
 share/locale/es/LC_MESSAGES/aumix.mo
 share/locale/fr/LC_MESSAGES/aumix.mo
 share/locale/gl/LC_MESSAGES/aumix.mo
+share/locale/ja/LC_MESSAGES/aumix.mo
 share/locale/pl/LC_MESSAGES/aumix.mo
 share/locale/pt_BR/LC_MESSAGES/aumix.mo
 share/locale/ru/LC_MESSAGES/aumix.mo
+share/locale/sv/LC_MESSAGES/aumix.mo
 share/locale/uk/LC_MESSAGES/aumix.mo
 @dirrm share/aumix
