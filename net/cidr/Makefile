@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/16 17:21:09 david Exp $
 
 COMMENT=	"RFC 1878 subnet calculator / helper"
 
@@ -10,10 +10,8 @@ MASTER_SITES=	http://home.netcom.com/~naym/cidr/
 
 HOMEPAGE=	http://home.netcom.com/~naym/cidr.html
 
-MAINTAINER=	Jonas Eriksson <je@sekure.net>
-
 ALL_TARGET=	cidr
-WRKSRC=         ${WRKDIR}/${PKGNAME}
+WRKDIST=         ${WRKDIR}/${PKGNAME}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
