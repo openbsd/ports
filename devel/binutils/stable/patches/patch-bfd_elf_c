@@ -1,0 +1,19 @@
+$OpenBSD: patch-bfd_elf_c,v 1.4 2003/06/05 04:29:16 brad Exp $
+--- bfd/elf.c.orig	Wed Mar 19 22:34:28 2003
++++ bfd/elf.c	Wed Mar 19 22:37:10 2003
+@@ -4013,9 +4013,12 @@ get_program_header_size (abfd)
+       return elf_tdata (abfd)->program_header_size;
+     }
+ 
+-  /* Assume we will need exactly two PT_LOAD segments: one for text
+-     and one for data.  */
+-  segs = 2;
++  /* We used to assume that two PT_LOAD segments would be enough,
++     code and data, with the change to pad the PLT and GOT, this is no
++     longer true. Now there can be several PT_LOAD sections. 7 seems
++     to be enough with BSS_PLT and .rodata-X, where we have text, data,
++     GOT, dynamic, PLT, bss */
++  segs = 7;
+ 
+   s = bfd_get_section_by_name (abfd, ".interp");
+   if (s != NULL && (s->flags & SEC_LOAD) != 0)

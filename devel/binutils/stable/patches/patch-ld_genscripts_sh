@@ -1,0 +1,16 @@
+$OpenBSD: patch-ld_genscripts_sh,v 1.3 2003/06/05 04:29:16 brad Exp $
+--- ld/genscripts.sh.orig	Wed Mar 19 23:00:26 2003
++++ ld/genscripts.sh	Thu Mar 20 18:18:09 2003
+@@ -175,6 +175,12 @@ if test -n "$GENERATE_SHLIB_SCRIPT"; the
+   fi
+ fi
+ 
++LD_FLAG=Z
++DATA_ALIGNMENT=${DATA_ALIGNMENT_}
++RELOCATING=" "
++(. ${srcdir}/scripttempl/${SCRIPT_NAME}.sc) | sed -e '/^ *$/d' > \
++  ldscripts/${EMULATION_NAME}.xz
++
+ case " $EMULATION_LIBPATH " in
+     *" ${EMULATION_NAME} "*) COMPILE_IN=true;;
+ esac
