@@ -1,45 +1,36 @@
-*** Makefile.in~	Thu Feb 25 11:13:47 1999
---- Makefile.in	Thu Feb 25 11:20:41 1999
+*** Makefile.in.orig	Tue Apr 13 14:13:36 1999
+--- Makefile.in	Thu Apr 22 16:12:01 1999
 ***************
-*** 9,15 ****
-  #   Disabled:   Doesn't.
-  #   default:    disabled.
-  DEFINES     +=  #-D__DEBUG 
-! prefix      =   @prefix@
-  srcdir      =   @srcdir@
-  
-  LIBNET      =   libnet
---- 9,15 ----
-  #   Disabled:   Doesn't.
-  #   default:    disabled.
-  DEFINES     +=  #-D__DEBUG 
-! PREFIX      =   @prefix@
-  srcdir      =   @srcdir@
-  
-  LIBNET      =   libnet
-***************
-*** 55,68 ****
-  	@(cd test/ethernet; make all)
+*** 56,72 ****
+  	cd test; make
   
   install: libnet
 ! 	$(ENSUREDIR) $(DESTDIR)$(prefix)    755
 ! 	$(ENSUREDIR) $(DESTDIR)@LIB_PREFIX@ 755
 ! 	$(ENSUREDIR) $(DESTDIR)@INC_PREFIX@ 755
 ! 	$(ENSUREDIR) $(DESTDIR)@MAN_PREFIX@ 755
+! 	$(ENSUREDIR) $(DESTDIR)@BIN_PREFIX@ 755
 ! 	$(INSTALL) -c -m 0644 $(LIB)            $(DESTDIR)@LIB_PREFIX@
+! 	$(LN) -sf  $(DESTDIR)@LIB_PREFIX@$(LIBNET).a $(DESTDIR)@LIB_PREFIX@$(LIBPWRITE)
 ! 	$(INSTALL) -c -m 0644 $(INCLUDE)        $(DESTDIR)@INC_PREFIX@
 ! 	$(INSTALL) -c -m 0644 $(INCLUDE-H)      $(DESTDIR)@INC_PREFIX@
+! 	$(INSTALL) -c -m 0644 $(INCLUDE-ASN)    $(DESTDIR)@INC_PREFIX@
 ! 	$(INSTALL) -c -m 0644 $(MAN)            $(DESTDIR)@MAN_PREFIX@
   
   clean:
   	rm -f *.core src/*.o $(LIB)
---- 55,64 ----
-  	@(cd test/ethernet; make all)
+--- 56,70 ----
+  	cd test; make
   
   install: libnet
+! 	$(ENSUREDIR) $(PREFIX) 755
+! 	$(ENSUREDIR) $(PREFIX)/lib 755
+! 	$(ENSUREDIR) $(PREFIX)/include 755
+! 	$(ENSUREDIR) $(PREFIX)/man/man3 755
 ! 	$(INSTALL) -c -m 0644 $(LIB)            $(PREFIX)/lib
 ! 	$(INSTALL) -c -m 0644 $(INCLUDE)        $(PREFIX)/include
 ! 	$(INSTALL) -c -m 0644 $(INCLUDE-H)      $(PREFIX)/include
+! 	$(INSTALL) -c -m 0644 $(INCLUDE-ASN)    $(PREFIX)/include
 ! 	$(INSTALL) -c -m 0644 $(MAN)            $(PREFIX)/man/man3
   
   clean:

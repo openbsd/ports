@@ -1,4 +1,5 @@
 lib/libnet.a
 include/libnet.h
 include/libnet-headers.h
+include/libnet-asn1.h
 man/man3/libnet.3

@@ -1,25 +1,22 @@
 # OpenBSD makefile for:	libnet
-# Version required:	0.10a
+# Version required:	0.99
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/02/25 17:02:34 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/22 20:18:22 dugsong Exp $
 #
 
-PKGNAME=	libnet-0.10a
-DISTNAME=	libnet
+DISTNAME=	libnet-0.99
+EXTRACT_SUFX=	.tgz
 
 CATEGORIES=     net
 
-MASTER_SITES=	http://www.infonexus.com/~daemon9/Projects/Libnet/
+MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 
 MAINTAINER=	dugsong@monkey.org
 
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/Libnet
-
-post-extract:
-		@chmod 755 ${WRKDIR}/Libnet/src/CVS
+WRKSRC=		${WRKDIR}/Libnet-0.99
 
 .include <bsd.port.mk>
