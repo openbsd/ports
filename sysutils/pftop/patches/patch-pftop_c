@@ -1,0 +1,20 @@
+--- pftop.c.orig	Thu Jun 10 23:05:58 2004
++++ pftop.c	Thu Jun 10 23:06:27 2004
+@@ -1802,7 +1802,7 @@
+ 			 PF_AZERO(PT_MASK(src), AF_INET6))
+ 			tbprintf("any ");
+ 		else {
+-			if (src->not)
++			if (src->neg)
+ 				tbprintf("! ");
+ #ifdef HAVE_ADDR_WRAP
+ 			tb_print_addrw(&src->addr, PT_MASK(src), af);
+@@ -1823,7 +1823,7 @@
+ 			 PF_AZERO(PT_MASK(dst), AF_INET6))
+ 			tbprintf("any ");
+ 		else {
+-			if (dst->not)
++			if (dst->neg)
+ 				tbprintf("! ");
+ #ifdef HAVE_ADDR_WRAP
+ 			tb_print_addrw(&dst->addr, PT_MASK(dst), af);
