@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/02/22 07:50:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.20 2001/02/26 02:47:41 brad Exp $
 
 DISTNAME=	libnet-1.0.2a
 CATEGORIES=	net
@@ -17,9 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 
 WRKDIST=	${WRKDIR}/Libnet-1.0.2a
-
-# remove this incorrect symlink so bsd.port.mk does not complain about it.
-post-install:
-	@rm -f ${PREFIX}/lib/libpwrite
 
 .include <bsd.port.mk>
