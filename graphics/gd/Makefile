@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/02/26 16:29:35 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/03/07 21:15:06 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -28,14 +28,15 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG -DHAVE_LIBTTF" \
-		INCLUDEDIRS="-I. -I${LOCALBASE}/include" \
+		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib"
 FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
 USE_X11=	Yes
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
-		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${X11BASE}/include -I${X11BASE}/include/X11" \
+		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype \
+			-I${X11BASE}/include -I${X11BASE}/include/X11" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib -L${X11BASE}/lib"
 FAKE_FLAGS+=	${MAKE_FLAGS}
