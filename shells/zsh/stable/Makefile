@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/18 18:24:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/12/04 14:43:47 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -8,6 +8,7 @@ DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
+		http://www.zsh.org/pub/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
