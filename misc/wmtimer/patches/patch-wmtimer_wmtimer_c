@@ -1,0 +1,34 @@
+$OpenBSD: patch-wmtimer_wmtimer_c,v 1.1.1.1 2001/01/11 22:45:21 naddy Exp $
+--- wmtimer/wmtimer.c.orig	Wed Dec 20 22:18:15 2000
++++ wmtimer/wmtimer.c	Thu Jan 11 17:20:19 2001
+@@ -80,9 +80,9 @@ int main (int argc, char *argv[])
+   int i;
+   XEvent Event;
+   int buttonStatus = -1;
+-  long starttime;
+-  long curtime;
+-  long nexttime;
++  time_t starttime;
++  time_t curtime;
++  time_t nexttime;
+   struct tm *time_struct;
+   struct tm old_time_struct;
+ 
+@@ -107,7 +107,7 @@ int main (int argc, char *argv[])
+ 	  mode = 3;
+ 	  break;
+ 	case 'e':
+-	  strcpy (command, argv[i + 1]);
++	  strlcpy (command, argv[i + 1], sizeof(command));
+ 	  action = 1;
+ 	  break;
+ 	case 't':
+@@ -478,7 +478,7 @@ void callback (GtkWidget * widget, gpoin
+   }
+   if ((char *) data == "ok") {
+     if (tmp_action == 1)
+-      strcpy (command, gtk_entry_get_text (GTK_ENTRY (entry)));
++      strlcpy (command, gtk_entry_get_text (GTK_ENTRY (entry)), sizeof(command));
+ 
+     ihr = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner1));
+     imin = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner2));

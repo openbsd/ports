@@ -1,0 +1,23 @@
+WMTimer is a dockable alarm clock for WindowMaker which can
+be run in alarm, countdown timer, or chronograph mode.  In
+alarm or timer mode, you can either execute a command or
+sound the system bell when the time is reached.  Wmtimer is
+configurable through the command line or the GTK GUI.
+
+The "gold" flavor provides an alternative appearance.
+
+WMTimer can be configured either at run time via the command
+line or the GTK interface by clicking on the main part of the
+window (anywhere except the buttons).
+
+To switch to the chrono function simply click on the right
+arrow button to start the chronograph.  You can pause the
+chronogaph by clicking on the center, rectangle button and
+resume again by clicking the right arrow button.  You can
+reset the timer by clicking on the left arrow button.
+
+Time entered via the command line must be in the form of x:x:x  
+You dont need to have 2 digits for each number but you must
+have at least zero's in as placeholders for hrs, mins and secs. 
+
+WWW: ${HOMEPAGE}

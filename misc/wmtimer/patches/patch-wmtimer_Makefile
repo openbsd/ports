@@ -1,0 +1,26 @@
+$OpenBSD: patch-wmtimer_Makefile,v 1.1.1.1 2001/01/11 22:45:21 naddy Exp $
+--- wmtimer/Makefile.orig	Wed Dec 20 22:59:20 2000
++++ wmtimer/Makefile	Thu Jan 11 17:48:38 2001
+@@ -1,16 +1,17 @@
+-LIBDIR = -L/usr/X11R6/lib -L/usr/lib
+-LIBS   = -lXpm -lXext -lX11 -lm  -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl 
+-CFLAGS = -I/usr/X11R6/include -I/usr/lib/glib/include
++LIBS   = `gtk-config --libs` -lXpm
++CFLAGS += `gtk-config --cflags`
+ OBJS =	wmtimer.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+ 		../wmgeneral/list.o
+ 
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	cc -c $(CFLAGS) $< -o $*.o
+ 
+ wmtimer: $(OBJS)
+-	cc -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
++	cc -o wmtimer $(OBJS) $(LIBS)
++
++all:: wmtimer
+ 
+ clean::
+ 	for i in $(OBJS) ; do \
