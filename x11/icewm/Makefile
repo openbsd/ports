@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/04 17:25:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2005/03/23 21:43:31 naddy Exp $
 
 COMMENT=		"small, fast window manager"
 
-DISTNAME=		icewm-1.2.17
+DISTNAME=		icewm-1.2.20
 CATEGORIES=     	x11	
 
 HOMEPAGE=		http://www.icewm.org/
 
-MAINTAINER=		Peter Williams <peter@pbw.us>
+MAINTAINER=		Peter Williams <peterbw@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
