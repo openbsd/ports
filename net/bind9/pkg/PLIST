@@ -1,32 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/05/02 06:41:38 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.13 2002/07/07 11:21:59 jakob Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
-bind/include/arpa/inet.h
-bind/include/arpa/nameser.h
-bind/include/arpa/nameser_compat.h
-bind/include/fd_setsize.h
-bind/include/hesiod.h
-bind/include/irp.h
-bind/include/irs.h
-bind/include/isc/assertions.h
-bind/include/isc/ctl.h
-bind/include/isc/dst.h
-bind/include/isc/eventlib.h
-bind/include/isc/heap.h
-bind/include/isc/irpmarshall.h
-bind/include/isc/list.h
-bind/include/isc/logging.h
-bind/include/isc/memcluster.h
-bind/include/isc/misc.h
-bind/include/isc/tree.h
-bind/include/netdb.h
-bind/include/netgroup.h
-bind/include/res_update.h
-bind/include/resolv.h
-bind/include/sys/bitypes.h
 include/dns/a6.h
 include/dns/acl.h
 include/dns/adb.h
@@ -188,8 +165,6 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
-lib/libbind.a
-lib/libbind.la
 lib/libdns.a
 lib/libdns.la
 lib/libisc.a

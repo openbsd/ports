@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2002/06/13 15:27:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.32 2002/07/07 11:21:59 jakob Exp $
 
-COMMENT=	Berkeley Internet Name Daemon
+COMMENT=		Berkeley Internet Name Daemon
+COMMENT-libbind=	BIND 8 compatible stub resolver library
 
 VERSION=	9.2.1
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.499
+
+MULTI_PACKAGES=		-libbind
+PKGNAME-libbind=	libbind-${VERSION}
 
 MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind9/${VERSION}/ \

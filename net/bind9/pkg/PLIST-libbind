@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST-libbind,v 1.1 2002/07/07 11:21:59 jakob Exp $
+bind/include/arpa/inet.h
+bind/include/arpa/nameser.h
+bind/include/arpa/nameser_compat.h
+bind/include/fd_setsize.h
+bind/include/hesiod.h
+bind/include/irp.h
+bind/include/irs.h
+bind/include/isc/assertions.h
+bind/include/isc/ctl.h
+bind/include/isc/dst.h
+bind/include/isc/eventlib.h
+bind/include/isc/heap.h
+bind/include/isc/irpmarshall.h
+bind/include/isc/list.h
+bind/include/isc/logging.h
+bind/include/isc/memcluster.h
+bind/include/isc/misc.h
+bind/include/isc/tree.h
+bind/include/netdb.h
+bind/include/netgroup.h
+bind/include/res_update.h
+bind/include/resolv.h
+bind/include/sys/bitypes.h
+lib/libbind.a
+lib/libbind.la
+@dirrm bind/include/sys
+@dirrm bind/include/isc
+@dirrm bind/include/arpa
+@dirrm bind/include
+@dirrm bind
+@dirrm lib

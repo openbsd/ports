@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2002/05/02 06:41:38 jakob Exp $
-lib/libbind.so.0.1
+@comment $OpenBSD: PFRAG.shared,v 1.9 2002/07/07 11:21:59 jakob Exp $
 lib/libdns.so.8.0
 lib/libisc.so.5.0
 lib/libisccc.so.0.1
