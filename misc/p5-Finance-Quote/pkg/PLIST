@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/16 02:28:08 kevlo Exp $
-libdata/perl5/site_perl/Finance/Quote.pm
-libdata/perl5/site_perl/Finance/Quote/AEX.pm
-libdata/perl5/site_perl/Finance/Quote/ASX.pm
-libdata/perl5/site_perl/Finance/Quote/Cdnfundlibrary.pm
-libdata/perl5/site_perl/Finance/Quote/DWS.pm
-libdata/perl5/site_perl/Finance/Quote/Fidelity.pm
-libdata/perl5/site_perl/Finance/Quote/Fool.pm
-libdata/perl5/site_perl/Finance/Quote/Tdwaterhouse.pm
-libdata/perl5/site_perl/Finance/Quote/Tiaacref.pm
-libdata/perl5/site_perl/Finance/Quote/Troweprice.pm
-libdata/perl5/site_perl/Finance/Quote/Trustnet.pm
-libdata/perl5/site_perl/Finance/Quote/UserAgent.pm
-libdata/perl5/site_perl/Finance/Quote/VWD.pm
-libdata/perl5/site_perl/Finance/Quote/Yahoo/Asia.pm
-libdata/perl5/site_perl/Finance/Quote/Yahoo/Australia.pm
-libdata/perl5/site_perl/Finance/Quote/Yahoo/Base.pm
-libdata/perl5/site_perl/Finance/Quote/Yahoo/Europe.pm
-libdata/perl5/site_perl/Finance/Quote/Yahoo/USA.pm
+@comment $OpenBSD: PLIST,v 1.4 2004/01/18 00:20:32 naddy Exp $
+${P5SITE}/Finance/Quote.pm
+${P5SITE}/Finance/Quote/AEX.pm
+${P5SITE}/Finance/Quote/ASX.pm
+${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
+${P5SITE}/Finance/Quote/DWS.pm
+${P5SITE}/Finance/Quote/Fidelity.pm
+${P5SITE}/Finance/Quote/Fool.pm
+${P5SITE}/Finance/Quote/Tdwaterhouse.pm
+${P5SITE}/Finance/Quote/Tiaacref.pm
+${P5SITE}/Finance/Quote/Troweprice.pm
+${P5SITE}/Finance/Quote/Trustnet.pm
+${P5SITE}/Finance/Quote/UserAgent.pm
+${P5SITE}/Finance/Quote/VWD.pm
+${P5SITE}/Finance/Quote/Yahoo/Asia.pm
+${P5SITE}/Finance/Quote/Yahoo/Australia.pm
+${P5SITE}/Finance/Quote/Yahoo/Base.pm
+${P5SITE}/Finance/Quote/Yahoo/Europe.pm
+${P5SITE}/Finance/Quote/Yahoo/USA.pm
+@comment ${P5ARCH}/auto/Finance/Quote/.packlist
 man/man3p/Finance::Quote.3p
 man/man3p/Finance::Quote::AEX.3p
 man/man3p/Finance::Quote::ASX.3p
@@ -34,5 +35,8 @@ man/man3p/Finance::Quote::Yahoo::Australia.3p
 man/man3p/Finance::Quote::Yahoo::Base.3p
 man/man3p/Finance::Quote::Yahoo::Europe.3p
 man/man3p/Finance::Quote::Yahoo::USA.3p
-@dirrm libdata/perl5/site_perl/Finance/Quote/Yahoo
-@dirrm libdata/perl5/site_perl/Finance/Quote
+@comment @dirrm ${P5ARCH}/auto/Finance/Quote
+@comment @dirrm ${P5ARCH}/auto/Finance
+@dirrm ${P5SITE}/Finance/Quote/Yahoo
+@dirrm ${P5SITE}/Finance/Quote
+@dirrm ${P5SITE}/Finance

@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/05 21:11:55 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/18 00:20:32 naddy Exp $
 ${P5ARCH}/Quota.pm
+@comment ${P5ARCH}/auto/Quota/.packlist
 ${P5ARCH}/auto/Quota/Quota.bs
 ${P5ARCH}/auto/Quota/Quota.so
 ${P5ARCH}/auto/Quota/autosplit.ix
 man/man3p/Quota.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Quota
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}
