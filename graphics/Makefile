@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2001/06/20 18:58:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.70 2001/06/27 02:38:12 kevlo Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -44,6 +44,7 @@
      SUBDIR += indexpage
      SUBDIR += jbigkit
      SUBDIR += jpeg
+     SUBDIR += kuickshow
      SUBDIR += libart
      SUBDIR += libmng
      SUBDIR += mpeg-lib
