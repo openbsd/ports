@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/05 01:59:34 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2003/02/15 14:37:19 espie Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -18,7 +18,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=	::devel/autoconf \
+AUTOCONF_VERSION=	2.13
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
+		::devel/metaauto \
 		::devel/automake
 LIB_DEPENDS=	utf8::misc/libutf8 
 
@@ -35,6 +37,6 @@ CONFIGURE_ENV=	LIBS="-lutf8" \
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 pre-configure:
-	@cd ${WRKDIST} && ${MAKE_PROGRAM} -f Makefile.cvs all
+	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} ${MAKE_PROGRAM} -f Makefile.cvs all
 
 .include <bsd.port.mk>
