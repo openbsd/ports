@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dblib_bcp_c,v 1.1 2002/12/13 07:38:04 pvalchev Exp $
+--- src/dblib/bcp.c.orig	Thu Dec 12 00:39:21 2002
++++ src/dblib/bcp.c	Thu Dec 12 00:39:38 2002
+@@ -858,7 +858,7 @@ RETCODE _bcp_get_term_data(FILE *hostfil
+ 
+ int   j = 0; 
+ int   termfound = 1;
+-char  x;
++int   x;
+ char *tester = NULL;
+ int   bufpos = 0;
+ int   found  = 0;
