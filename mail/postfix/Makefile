@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/06 06:03:45 turan Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/09 20:50:29 jakob Exp $
 
 #BROKEN=		auto installs files in /etc
 
-DISTNAME=	postfix-19991231-pl04
+DISTNAME=	postfix-19991231-pl05
 CATEGORIES=     mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/official/ \
