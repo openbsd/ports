@@ -3,13 +3,13 @@
 # Date created:         26 Dec 1994
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/24 19:57:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/29 17:19:51 joey Exp $
 #
 
 DISTNAME=       lha-114c
 PKGNAME=        lha-1.14c
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.leo.chubu.ac.jp/pub/tools/
+MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/distfile/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     angelos@openbsd.org
