@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2001/01/11 00:21:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/13 16:43:58 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
-DISTNAME=	ghostscript-5.50
+COMMENT=	"GNU Postscript interpreter"
+VERSION=	5.50
+DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print
-NEED_VERSION=	1.241
+NEED_VERSION=	1.395
 
-DIR=		gnu/gs550
+DIR=		gnu/gs${VERSION:S/.//}
 
 # Eventually, the FSF should wake up...
 MASTER_SITE_SUBDIR=     ghostscript
@@ -18,7 +20,7 @@ MASTER_SITES0=  http://www.erdw.ethz.ch/%7Ebonk/ftp/gs-driver-distrib/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}:0 
 
-SUBST_VARS=		OSREV
+SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
 
 # png and jpeg sources are under a BSD license
@@ -40,7 +42,7 @@ BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
 LIB_DEPENDS=	png.1::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
-WRKDIST=	${WRKDIR}/gs5.50
+WRKDIST=	${WRKDIR}/gs${VERSION}
 BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
 		SHARE_LIBPNG=1 \
@@ -56,13 +58,15 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSGENDIR=./objects \
 		DEVICE_DEVS="`cat ${FILESDIR}/devices`"
 
+PDFDIR=${PREFIX}/share/ghostscript/${VERSION}
+
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 FAKE_FLAGS=	${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
 
 MAKE_FILE=	unixansi.mak
 MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2ps.1
 
-GS_SOURCES=	gnu-gs-5.50.tar.gz
+GS_SOURCES=	gnu-gs-${VERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -106,8 +110,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/unix-lpr.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/lprsetup.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
-		${PREFIX}/share/ghostscript/5.50/doc
+		${PREFIX}/share/ghostscript/${VERSION}/doc
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
-		${PREFIX}/share/ghostscript/5.50/doc
+		${PREFIX}/share/ghostscript/${VERSION}/doc
 
 .include <bsd.port.mk>
