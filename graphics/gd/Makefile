@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2002/03/25 14:52:21 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2002/04/26 14:48:19 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 COMMENT=	"graphics library for fast PNG creation"
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.522
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	COMPILER="${CC}" prefix="${PREFIX}" \
 		CFLAGS="${CFLAGS} -DHAVE_JPEG -DHAVE_LIBTTF" \
-		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
+		INCLUDEDIRS="-I. -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype -I${LOCALBASE}/include" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib"
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
