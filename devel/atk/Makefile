@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/07/29 14:40:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/09 21:28:59 nino Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
-DISTNAME=		atk-1.0.2
+DISTNAME=		atk-1.0.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
@@ -20,12 +20,15 @@ EXTRACT_SUFX=           .tar.bz2
 MODULES=		gettext
 LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
-RUN_DEPENDS=		${BUILD_DEPENDS}
+
+# library version (major:minor)
+LIBATK_VERSION=		0:2
 
 SEPARATE_BUILD=		simple
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
+MAKE_ENV=		LIBATK_VERSION="${LIBATK_VERSION}"
 
 .include <bsd.port.mk>
