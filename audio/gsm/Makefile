@@ -3,7 +3,7 @@
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/05 02:07:59 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/30 23:27:18 niklas Exp $
 #
 
 DISTNAME=       gsm-1.0.10
@@ -17,6 +17,12 @@ MAN1=		toast.1
 MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3
 
 post-install:
+.if ${MACHINE_ARCH} != "alpha"
+.if ${MACHINE_ARCH} == "mips"
+	${LDCONFIG} -n ${PREFIX}/lib
+.else
 	${LDCONFIG} -m ${PREFIX}/lib
+.endif
+.endif
 
 .include <bsd.port.mk>
