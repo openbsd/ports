@@ -1,3 +1,4 @@
+$OpenBSD: patch-mktemp2,v 1.2 2003/02/16 00:04:52 brad Exp $
 --- autoheader.sh.orig	Mon Nov 22 21:50:45 1999
 +++ autoheader.sh	Mon Nov 22 21:52:02 1999
 @@ -194,7 +194,7 @@
