@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/19 17:01:19 mickey Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/GD.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/GD.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/GD.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/autosplit.ix
+libdata/perl5/site_perl/${ARCH}-openbsd/qd.pl
+man/man3/GD.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD
