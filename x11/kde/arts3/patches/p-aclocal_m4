@@ -1,6 +1,6 @@
-$OpenBSD: p-aclocal_m4,v 1.5 2003/01/05 16:58:57 espie Exp $
---- aclocal.m4.orig	Tue Dec 17 15:02:21 2002
-+++ aclocal.m4	Sun Jan  5 16:41:22 2003
+$OpenBSD: p-aclocal_m4,v 1.6 2003/01/27 19:10:47 espie Exp $
+--- aclocal.m4.orig	Fri Jan 24 15:15:51 2003
++++ aclocal.m4	Mon Jan 27 17:17:21 2003
 @@ -6075,8 +6075,8 @@ nto-qnx)
  
  openbsd*)
