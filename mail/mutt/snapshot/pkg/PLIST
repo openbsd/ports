@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/16 18:28:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/26 02:36:57 brad Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -120,3 +120,4 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 @dirrm share/examples/mutt
 @dirrm share/doc/mutt/html
 @dirrm share/doc/mutt
+@extraunexec rm -rf ${CONFDIR}
