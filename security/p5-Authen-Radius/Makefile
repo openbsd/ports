@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/14 23:38:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/28 16:30:34 naddy Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
+
+REGRESS_IS_INTERACTIVE=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/Authen/
