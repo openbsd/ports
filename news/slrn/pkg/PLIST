@@ -1,3 +1,4 @@
 bin/slrn
 share/examples/slrn/slrn.rc
+@dirrm share/examples/slrn
 man/man1/slrn.1

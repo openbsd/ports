@@ -1,13 +1,8 @@
-# OpenBSD makefile for:   slrn
-# Version required:    0.9.4.2
-# Date created:        19 Dec 1997
-# Whom:                joey
-# 
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/20 02:46:05 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/20 05:17:27 marc Exp $
 #
 
-DISTNAME=	slrn0.9.4.3
-PKGNAME=	slrn-0.9.4.3
+DISTNAME=	slrn0.9.5.4
+PKGNAME=	slrn-0.9.5.4
 CATEGORIES=	news
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/ \
@@ -15,7 +10,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 
 MAINTAINER=	joey@OpenBSD.ORG
 
-LIB_DEPENDS=	slang\\.0\\.99[0-9][0-9]:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1.22:${PORTSDIR}/devel/libslang
 
 WRKSRC=		${WRKDIR}/slrn
 GNU_CONFIGURE=	yes
