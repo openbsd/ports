@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/02/15 21:06:06 danh Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/05/11 21:38:15 danh Exp $
 @pkgcfl radiusd-lucent-*
 bin/builddbm
 bin/radclient
@@ -19,6 +19,7 @@ man/man8/builddbm.8
 man/man8/radiusd.8
 man/man8/radrelay.8
 man/man8/radwatch.8
+sbin/checkrad
 sbin/radiusd
 sbin/radrelay
 share/doc/radiusd-cistron/README
