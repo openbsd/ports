@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/23 22:23:04 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/04 12:58:52 brad Exp $
 
 COMMENT=	"small, fast & useable window manager"
 
-DISTNAME=	openbox-1.2.4
+DISTNAME=	openbox-2.1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --enable-xinerama
 
 .include <bsd.port.mk>
