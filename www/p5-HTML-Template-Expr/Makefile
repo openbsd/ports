@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/01 20:55:12 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/11 16:40:43 margarida Exp $
 
 COMMENT=	"use HTML Templates which allows expressions"
 
@@ -21,8 +21,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-HTML-Template-*:www/p5-HTML-Template \
-		:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent \
-		:p5-Text-Balanced-*:textproc/p5-Text-Balanced
+		:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
 
 CONFIGURE_STYLE=perl
 
