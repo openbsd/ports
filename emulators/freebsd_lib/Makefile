@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/16 00:29:06 turan Exp $
+
+BROKEN=		horrible bug.  clobbers ld.so.hints.
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
