@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/05 14:16:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/06 02:57:22 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-1.60
+DISTNAME=	openwebmail-1.61
 CATEGORIES=	mail
 NEED_VERSION=	1.504
 
@@ -24,6 +24,7 @@ EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 RUN_DEPENDS=	::net/p5-libnet \
 		::www/p5-CGI \
 		::converters/p5-MIME-Base64 \
+		::databases/p5-ldap \
 		::textproc/ispell \
 		::chinese/hc
 

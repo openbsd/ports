@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/05 04:53:17 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/06 02:57:24 kevlo Exp $
+cgi-bin/openwebmail/auth_ldap.pl
 cgi-bin/openwebmail/auth_pam.pl
 cgi-bin/openwebmail/auth_unix.pl
 cgi-bin/openwebmail/checkmail.pl
@@ -678,6 +679,7 @@ conf/openwebmail/templates/zh_TW.Big5/rebuildfailed.template
 conf/openwebmail/templates/zh_TW.Big5/sessiontimeout.template
 conf/openwebmail/templates/zh_TW.Big5/spellcheck.template
 conf/openwebmail/templates/zh_TW.Big5/viewfolder.template
+conf/openwebmail/users.conf/SAMPLE
 htdocs/openwebmail/doc/RedHat-README.txt
 htdocs/openwebmail/doc/changes.txt
 htdocs/openwebmail/doc/copyright.txt
@@ -834,6 +836,54 @@ htdocs/openwebmail/images/iconsets/Cool3D.English/trash.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/unread.a.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/unread.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/up.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/addrbook.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/addrbook.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/attach.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/backtofolder.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/big52gb.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/blockemail.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/blockrelay.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/clearaddress.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/compose.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/down.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/download.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/download.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/download.s.ow.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/editdraft.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/editfroms.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/export.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/filtersetup.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/first-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/first.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/folder.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/follow.down.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/follow.up.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forward.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forwardasatt.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/gb2big5.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/group.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/import.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/import.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/important.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/last-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/last.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/left-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/left.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/logout.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/pop3.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/pop3setup.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/prefs.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/read.a.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/read.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/refresh.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/reply.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/replyall.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/right-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/right.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/trash.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/unread.a.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/unread.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/addrbook.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/addrbook.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/attach.gif
@@ -1101,6 +1151,7 @@ htdocs/openwebmail/yougotmail.wav
 @dirrm htdocs/openwebmail/images/iconsets/Default
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Spanish
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Slovak
+@dirrm htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.English
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Catalan
@@ -1110,6 +1161,7 @@ htdocs/openwebmail/yougotmail.wav
 @dirrm htdocs/openwebmail/images
 @dirrm htdocs/openwebmail/doc
 @dirrm htdocs/openwebmail
+@dirrm conf/openwebmail/users.conf
 @exec mkdir -p %D/conf/openwebmail/users
 @dirrm conf/openwebmail/users
 @dirrm conf/openwebmail/templates/zh_TW.Big5
