@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2004/01/28 04:59:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.307 2004/02/16 21:17:01 xsa Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -121,6 +121,7 @@
      SUBDIR += netpipes
      SUBDIR += netsed
      SUBDIR += ngrep
+     SUBDIR += nicotine
      SUBDIR += nmap
      SUBDIR += nmap,no_x11
      SUBDIR += no-ip
