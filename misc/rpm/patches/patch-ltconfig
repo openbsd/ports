@@ -1,0 +1,11 @@
+$OpenBSD: patch-ltconfig,v 1.1 2000/12/06 09:45:02 espie Exp $
+--- ltconfig.orig	Tue Dec  5 05:43:21 2000
++++ ltconfig	Tue Dec  5 05:44:11 2000
+@@ -2028,6 +2028,7 @@ openbsd*)
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method=pass_all
+   ;;
+ 
+ os2*)

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 19:33:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/12/06 09:45:02 espie Exp $
 
-DISTNAME=	rpm-3.0.4
+DISTNAME=	rpm-3.0.6
 CATEGORIES=	misc archivers emulators
 NEED_VERSION=	1.310
 
@@ -24,7 +24,12 @@ CONFIGURE_STYLE=	gnu
 
 # Enforce check for pgp, so no build-time depend is needed
 CONFIGURE_ENV=		PGPBIN=$(LOCALBASE)/bin/pgp
+CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		varprefix=/var
+
+MAKE_FLAGS=librpm_la_LDFLAGS='-version-info 0:1:0'
+
 SEPARATE_BUILD=		simple
 
 .include <bsd.port.mk>
