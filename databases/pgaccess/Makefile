@@ -3,11 +3,11 @@
 # Date created:		6 May 1998 19:57 NOVST
 # Whom:			Oleg Form <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/06 13:10:01 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/21 11:09:16 form Exp $
 # FreeBSD: Makefile,v 1.11 1998/04/21 21:30:21 andreas Exp
 #
 
-DISTNAME=	pgaccess-0.86
+DISTNAME=	pgaccess-0.88
 CATEGORIES=	databases
 MASTER_SITES=	http://www.flex.ro/pgaccess/
 
