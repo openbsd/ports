@@ -15,7 +15,11 @@ unzip-5.3.1|/d/c1d/ports/archivers/unzip|/usr/local|List, test and extract compr
 zip-2.1|/d/c1d/ports/archivers/zip|/usr/local|Create/update ZIP files compatabile with pkzip.|/d/c1d/ports/archivers/zip/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
 zip+crypt-2.2s|/d/c1d/ports/archivers/zip.with_encryption|/usr/local|Create/update ZIP files compatible with pkzip, passwords enabled|/d/c1d/ports/archivers/zip.with_encryption/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
 zoo-2.10.1|/d/c1d/ports/archivers/zoo|/usr/local|Manipulate archives of files in compressed form.|/d/c1d/ports/archivers/zoo/pkg/DESCR|angelos@openbsd.org|archivers||
+xearth-1.0|/d/c1d/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/d/c1d/ports/astro/xearth/pkg/DESCR|ports@FreeBSD.ORG|astro x11||
+xphoon-91.9.18|/d/c1d/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/d/c1d/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11||
+xcd-1.6|/d/c1d/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/d/c1d/ports/audio/xcd/pkg/DESCR|angelos@openbsd.org|audio tk80||
 bonnie-1.0|/d/c1d/ports/benchmarks/bonnie|/usr/local|Performance Test of Filesystem I/O.|/d/c1d/ports/benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks||
+bytebench-3.1|/d/c1d/ports/benchmarks/bytebench|/usr/local|The BYTE magazine benchmark suite.|/d/c1d/ports/benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks||
 iozone-2.01|/d/c1d/ports/benchmarks/iozone|/usr/local|Performance Test of Sequential File I/O.|/d/c1d/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks||
 lmbench-1.1|/d/c1d/ports/benchmarks/lmbench|/usr/local|A system performance measurement tool|/d/c1d/ports/benchmarks/lmbench/pkg/DESCR|joey@OpenBSD.ORG|benchmarks||
 tcpblast-1.0|/d/c1d/ports/benchmarks/tcpblast|/usr/local|Measures the throughput of a tcp connection.|/d/c1d/ports/benchmarks/tcpblast/pkg/DESCR|ports@FreeBSD.ORG|net benchmarks||
@@ -25,14 +29,24 @@ zh-lunar-2.1|/d/c1d/ports/chinese/lunar|/usr/local|convert between the Gregorian
 rzsz-3.47|/d/c1d/ports/comms/rzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol.|/d/c1d/ports/comms/rzsz/pkg/DESCR|gene@OpenBSD.ORG|comms|unzip-5.3.1|
 db-2.3.12|/d/c1d/ports/databases/db|/usr/local|the Berkeley DB package, revision 2|/d/c1d/ports/databases/db/pkg/DESCR|tacho@openbsd.org|databases||
 postgresql-6.2.1|/d/c1d/ports/databases/postgresql|/usr/local|a robust, next generation, object-relational DBMS|/d/c1d/ports/databases/postgresql/pkg/DESCR|mickey@openbsd.org|databases|gmake-3.76.1|
+autoconf-2.12|/d/c1d/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/d/c1d/ports/devel/autoconf/pkg/DESCR|joey@OpenBSD.ORG|devel||
+automake-1.2|/d/c1d/ports/devel/automake|/usr/local|GNU Standards-compliant Makefile generator|/d/c1d/ports/devel/automake/pkg/DESCR|joey@OpenBSD.ORG|devel||
+indent-1.9.1|/d/c1d/ports/devel/gindent|/usr/local|GNU indent.|/d/c1d/ports/devel/gindent/pkg/DESCR|joey@OpenBSD.ORG|devel||
 gmake-3.76.1|/d/c1d/ports/devel/gmake|/usr/local|GNU version of 'make' utility|/d/c1d/ports/devel/gmake/pkg/DESCR|todd@OpenBSD.org|devel||
+id-utils-3.2|/d/c1d/ports/devel/id-utils|/usr/local|The classic Berkeley gid/lid tools for looking up variables in code.|/d/c1d/ports/devel/id-utils/pkg/DESCR|joey@OpenBSD.ORG|devel|emacs-20.2 gmake-3.76.1|
 libslang-0.99.38|/d/c1d/ports/devel/libslang|/usr/local|Routines for rapid alpha-numeric terminal applications development|/d/c1d/ports/devel/libslang/pkg/DESCR|todd@OpenBSD.org|devel||
+makedepend-95.07.05|/d/c1d/ports/devel/makedepend|/usr/local|A dependency generator for makefiles.|/d/c1d/ports/devel/makedepend/pkg/DESCR|joey@OpenBSD.ORG|devel||
+swig-1.1|/d/c1d/ports/devel/swig|/usr/local|Simplified Wrapper and Interface Generator.|/d/c1d/ports/devel/swig/pkg/DESCR|joey@OpenBSD.ORG|devel||
+xmake-1.01|/d/c1d/ports/devel/xmake|/usr/local|A powerful make utility|/d/c1d/ports/devel/xmake/pkg/DESCR|joey@OpenBSD.ORG|devel||
 aXe-6.1.2|/d/c1d/ports/editors/axe|/usr/X11R6|Simple to use text editor for X.|/d/c1d/ports/editors/axe/pkg/DESCR|ports@FreeBSD.ORG|editors||
 beav-1.40.7|/d/c1d/ports/editors/beav|/usr/local|Binary Editor And Viewer, a full featured binary file editor.|/d/c1d/ports/editors/beav/pkg/DESCR|joey@OpenBSD.org|editors||
 emacs-20.2|/d/c1d/ports/editors/emacs|/usr/local|GNU editing macros.|/d/c1d/ports/editors/emacs/pkg/DESCR|joey@OpenBSD.ORG|editors|gmake-3.76.1|
 jed-0.98.4|/d/c1d/ports/editors/jed|/usr/local|The JED text editor|/d/c1d/ports/editors/jed/pkg/DESCR|joey@OpenBSD.ORG|editors|libslang-0.99.38|libslang-0.99.38
 joe-2.8|/d/c1d/ports/editors/joe|/usr/local|Joe's own editor.|/d/c1d/ports/editors/joe/pkg/DESCR|ports@FreeBSD.ORG|editors||
 jove-4.16|/d/c1d/ports/editors/jove|/usr/local|Jonathan's Own Version of Emacs.|/d/c1d/ports/editors/jove/pkg/DESCR|joey@OpenBSD.org|editors||
+This port is only for i386,
+and you are running alpha.
+x48-0.4.0|/d/c1d/ports/emulators/x48|/usr/X11R6|an HP48sx emulator|/d/c1d/ports/emulators/x48/pkg/DESCR|todd@OpenBSD.org|emulators||
 abuse_pd|/d/c1d/ports/games/abuse|/usr/local|Crack.Com public domain release of Abuse|/d/c1d/ports/games/abuse/pkg/DESCR|ports@FreeBSD.ORG|games|gmake-3.76.1|
 xpm-3.4j|/d/c1d/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/d/c1d/ports/graphics/xpm/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
 elm-2.4ME+32|/d/c1d/ports/mail/elm|/usr/local|ELM Mail User Agent|/d/c1d/ports/mail/elm/pkg/DESCR|gene@OpenBSD.ORG|mail||
@@ -55,7 +69,9 @@ samba-1.9.17p4|/d/c1d/ports/net/samba|/usr/local|A LanManager(R)-compatible serv
 strobe-1.03|/d/c1d/ports/net/strobe|/usr/local|Fast scatter/gather TCP port scanner|/d/c1d/ports/net/strobe/pkg/DESCR|joey@OpenBSD.ORG|net security||
 tintin-1.5.6|/d/c1d/ports/net/tintin++|/usr/local|A client program to help playing muds.|/d/c1d/ports/net/tintin++/pkg/DESCR|joey@OpenBSD.ORG|net games||
 ytalk-3.0.2|/d/c1d/ports/net/ytalk|/usr/local|A new "talk" that can talk to multiple parties at once|/d/c1d/ports/net/ytalk/pkg/DESCR|joey@OpenBSD.ORG|net||
+aub-2.0.5|/d/c1d/ports/news/aub|/usr/local|assemble usenet binaries|/d/c1d/ports/news/aub/pkg/DESCR|angelos@openbsd.org|news||
 tin-1.3.970930|/d/c1d/ports/news/tin|/usr/local|TIN newsreader (termcap based)|/d/c1d/ports/news/tin/pkg/DESCR|gene@OpenBSD.ORG|news||
+9menu-1.5|/d/c1d/ports/plan9/9menu|/usr/local|A simple menu patterened after plan9|/d/c1d/ports/plan9/9menu/pkg/DESCR|angelos@openbsd.org|plan9||
 cfs-1.3.3|/d/c1d/ports/security/cfs|/usr/local|A cryptographic file system implemented as a user-space NFS server.|/d/c1d/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security||
 cops-1.04|/d/c1d/ports/security/cops|/usr/local|A system secureness checker.|/d/c1d/ports/security/cops/pkg/DESCR|joey@OpenBSD.ORG|security||
 crack-5.0|/d/c1d/ports/security/crack|/usr/local|the "Sensible" Unix Password Cracker.|/d/c1d/ports/security/crack/pkg/DESCR|joey@OpenBSD.ORG|security||
@@ -77,9 +93,12 @@ socket-1.1|/d/c1d/ports/sysutils/socket|/usr/local|create tcp socket and connect
 stat-1.3|/d/c1d/ports/sysutils/stat|/usr/local|Print inode contents.|/d/c1d/ports/sysutils/stat/pkg/DESCR|joey@openbsd.org|sysutils||
 tcplist-2.2|/d/c1d/ports/sysutils/tcplist|/usr/local|lists tcp connections to/from the local machine (+username on both sides)|/d/c1d/ports/sysutils/tcplist/pkg/DESCR|joey@openbsd.org|sysutils net||lsof-4.15
 xntp3-5.90-export|/d/c1d/ports/sysutils/xntpd|/usr/local|Network Time Protocol Implementation.|/d/c1d/ports/sysutils/xntpd/pkg/DESCR|mickey@openbsd.org|sysutils||
+agrep-2.04|/d/c1d/ports/textproc/agrep|/usr/local|Approximate grep (fast approximate pattern-matching tool)|/d/c1d/ports/textproc/agrep/pkg/DESCR|angelos@openbsd.org|textproc||
+c2html-0.1|/d/c1d/ports/textproc/c2html|/usr/local|C-language sources to HTML converter|/d/c1d/ports/textproc/c2html/pkg/DESCR|angelos@openbsd.org|textproc www||
+html-4.0|/d/c1d/ports/textproc/html|/usr/local|All W3C published SGML DTDs for HTML|/d/c1d/ports/textproc/html/pkg/DESCR|angelos@openbsd.org|textproc||
 isearch-1.14|/d/c1d/ports/textproc/isearch|/usr/local|Text Search Engine by CNIDR|/d/c1d/ports/textproc/isearch/pkg/DESCR|joey@OpenBSD.ORG|textproc databases||
 ispell-3.1.20|/d/c1d/ports/textproc/ispell|/usr/local|An interactive spelling checker.|/d/c1d/ports/textproc/ispell/pkg/DESCR|joey@OpenBSD.ORG|textproc||
 rman-3.0.3a12|/d/c1d/ports/textproc/rman|/usr/local|Reverse compile man pages from formatted form.|/d/c1d/ports/textproc/rman/pkg/DESCR|joey@OpenBSD.ORG|textproc||
 apache-1.3a1|/d/c1d/ports/www/apache|/usr/local|The extremely popular Apache http server.  Very fast, very clean.|/d/c1d/ports/www/apache/pkg/DESCR|joey@OpenBSD.ORG|www||
-lynx-2.7.1ac-0.95|/d/c1d/ports/www/lynx|/usr/local|An alphanumeric display oriented World-Wide Web Client.|/d/c1d/ports/www/lynx/pkg/DESCR|gene@OpenBSD.ORG|www||
+lynx-2.7.1ac-0.97|/d/c1d/ports/www/lynx|/usr/local|An alphanumeric display oriented World-Wide Web Client.|/d/c1d/ports/www/lynx/pkg/DESCR|gene@OpenBSD.ORG|www||
 wwwcount-2.3|/d/c1d/ports/www/wwwcount|/usr/local|Access counter, clock and date for WWW pages|/d/c1d/ports/www/wwwcount/pkg/DESCR|joey@OpenBSD.ORG|www||
