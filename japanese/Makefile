@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/13 06:54:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/28 15:13:55 espie Exp $
 
      SUBDIR += Wnn
-     SUBDIR += Wnn-data
      SUBDIR += canna
      SUBDIR += kbanner
      SUBDIR += kinput2,wnn
@@ -20,7 +19,7 @@
      SUBDIR += jvim,wnn,canna
      SUBDIR += kanjips
      SUBDIR += kterm
-     SUBDIR += kterm:xaw3d
+     SUBDIR += kterm,xaw3d
      SUBDIR += less
      SUBDIR += nkf
 
