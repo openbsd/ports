@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2002/07/24 18:14:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/09/20 01:27:11 brad Exp $
 bin/RunAccel
 bin/RunCache
 bin/squidclient
@@ -98,7 +98,6 @@ share/examples/squid/errors/Danish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Danish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Danish/ERR_CACHE_MGR_ACCESS_DENIED
 share/examples/squid/errors/Danish/ERR_CANNOT_FORWARD
-share/examples/squid/errors/Danish/ERR_CLIENT_ABORT
 share/examples/squid/errors/Danish/ERR_CONNECT_FAIL
 share/examples/squid/errors/Danish/ERR_DNS_FAIL
 share/examples/squid/errors/Danish/ERR_FORWARDING_DENIED
@@ -215,7 +214,6 @@ share/examples/squid/errors/Finnish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Finnish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Finnish/ERR_CACHE_MGR_ACCESS_DENIED
 share/examples/squid/errors/Finnish/ERR_CANNOT_FORWARD
-share/examples/squid/errors/Finnish/ERR_CLIENT_ABORT
 share/examples/squid/errors/Finnish/ERR_CONNECT_FAIL
 share/examples/squid/errors/Finnish/ERR_DNS_FAIL
 share/examples/squid/errors/Finnish/ERR_FORWARDING_DENIED
