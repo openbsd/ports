@@ -1,0 +1,143 @@
+--- libapm.c.orig	Thu Jun 18 18:28:23 1998
++++ libapm.c	Sat Jul  1 12:45:57 2000
+@@ -8,15 +8,24 @@
+ /*                                                         */
+ /***********************************************************/
+ 
++#ifdef __linux__
++#define HAVE_GETOPT_LONG 1
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+ #include <string.h>
+ #include <ctype.h>
++#ifdef HAVE_GETOPT_LONG
+ #include <getopt.h>
++#endif
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
++#if defined(__OpenBSD__) || defined(__NetBSD__)
++#include <machine/sysarch.h>
++#endif
+ #include "libapm.h"
+ 
+ #ifndef CMOS_ACCESS
+@@ -63,6 +72,7 @@
+     int r;
+     char c;
+ 
++#ifdef HAVE_GETOPT_LONG
+     struct option longopts[] = {
+       { "Help",        0, 0, 'h' },
+       { "Version",     0, 0, 'v' },
+@@ -78,6 +88,7 @@
+ #endif /* CMOS_ACCESS */
+       {0, 0, 0, 0}
+     };
++#endif
+ 
+     if( 0 != geteuid() ){
+         printf("%s: Only root can execute !!\n", argv[0]);
+@@ -98,8 +109,12 @@
+ 
+     get_status();
+ 
++#ifdef HAVE_GETOPT_LONG
+     while ((c = getopt_long(argc,argv,
+                             "hvP:T:a:S:A:L:V:O:", longopts, NULL)) != -1) {
++#else
++    while ((c = getopt(argc,argv, "hvP:T:a:S:A:L:V:O:")) != -1) {
++#endif
+       switch (c) {
+         case 'h':
+           usage();
+@@ -215,8 +230,9 @@
+ void usage(void)
+ {
+ #ifdef CMOS_ACCESS
++# ifdef HAVE_GETOPT_LONG
+     printf("
+-usage: libapm [-v --Version]
++usage: libretto-config [-v --Version]
+               [-h --Help]
+               [-P --PowerUp {boot,hibernation}]
+               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+@@ -225,9 +241,24 @@
+               [-A --AlarmOn {disable,<time>}]
+               [-L --LcdPower {0,1,2,3}]
+           \n");
+-#else
++# else /* not HAVE_GETOPT_LONG */
++    printf("
++usage: libretto-config [-v			: Version]
++              [-h				: Help]
++              [-P {boot,hibernation}		: PowerUp]
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]
++              [-S {disable,enable}		: PanelSwitch]
++              [-A {disable,<time>}		: AlarmOn]
++              [-L {0,1,2,3}			: LcdPower]
++          \n");
++# endif /* HAVE_GETOPT_LONG */
++
++#else /* not CMOS_ACCESS */
++
++# ifdef HAVE_GETOPT_LONG
+     printf("
+-usage: libapm [-v --Version]
++usage: libretto-config [-v --Version]
+               [-h --Help]
+               [-P --PowerUp {boot,hibernation}]
+               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+@@ -238,6 +269,21 @@
+               [-V --Volume {0,1,2,3}]
+               [-O --Off {suspend|hibernation}  Use Only >= Libretto100]
+           \n");
++# else /* not HAVE_GETOPT_LONG */
++    printf("
++usage: libretto-config [-v			: Version]
++              [-h				: Help]
++              [-P {boot,hibernation}		: PowerUp]
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]
++              [-S {disable,enable}		: PanelSwitch]
++              [-A {disable,<time>}		: AlarmOn]
++              [-L {0,1,2,3}			: LcdPower]
++              [-V {0,1,2,3}			: Volume]
++              [-O {suspend|hibernation}		: Off (Use Only>=Libretto100)]
++          \n");
++# endif /* HAVE_GETOPT_LONG */
++
+ #endif /* CMOS_ACCESS */
+     exit(1);
+ }
+@@ -246,7 +292,26 @@
+ void init(void)
+ {
+   /* SMI port */
++#ifdef __linux__
+   ioperm(0xb2, 1, 1);
++#elif defined(__OpenBSD__) || defined(__NetBSD__)
++  u_long iomap[32];
++
++  if (i386_get_ioperm(iomap)) {
++    perror("Cannot get ioperm table");
++    exit(1);
++  }
++  /* Allow access to SMI port (0x0b2) */
++  iomap[0x0b2 / 32] &= ~(1 << (0x0b2 % 32));
++  if (i386_set_ioperm(iomap)) {
++    perror("Cannot set ioperm table");
++    exit(1);
++  }
++#elif defined(__FreeBSD__)
++  open("/dev/io", O_RDWR, 0);
++#else
++# error cannot determine I/O port access method
++#endif
+ }
+ #endif /* CMOS_ACCESS */
+ 

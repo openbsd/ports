@@ -1,0 +1,6 @@
+sbin/libretto-config
+share/doc/libretto-config/README.1st
+share/doc/libretto-config/APM-EXBIOS.txt
+man/man8/libretto-config.8
+@dirrm share/doc/libretto-config
+@comment $OpenBSD: PLIST,v 1.1 2000/07/02 16:57:48 millert Exp $

@@ -1,0 +1,27 @@
+--- ../libapm.DIST/smi.S	Thu May  7 10:12:51 1998
++++ smi.S	Sat Jul  1 10:35:35 2000
+@@ -1,6 +1,6 @@
+-	.text
+-	.globl	smi
+-smi:
++#include <machine/asm.h>
++
++ENTRY(smi)
+ 	pushl	%ebp
+ 	movl	%esp,%ebp
+ 	pushl	%ebx
+@@ -17,8 +17,7 @@
+ 	popl	%ebp
+ 	ret
+ 
+-	.globl	smi2
+-smi2:
++ENTRY(smi2)
+ 	pushl	%ebp
+ 	movl	%esp,%ebp
+ 	pushl	%ebx
+@@ -35,4 +34,3 @@
+ 	movl	%ebp,%esp
+ 	popl	%ebp
+ 	ret
+-	.end

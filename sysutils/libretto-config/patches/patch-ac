@@ -1,0 +1,75 @@
+--- libapm.h.orig	Mon May 11 20:05:49 1998
++++ libapm.h	Sat Jul  1 12:48:42 2000
+@@ -32,34 +32,72 @@
+ #define outb(port, value) port_out(value, port)
+ #define outw(port, value) port_outw(value, port)
+ 
++#ifdef __linux__
+ int io_enable(void)
+ {
+   ioperm(0x70, 1, 1);
+   ioperm(0x71, 1, 1);
+   return 0;
+ }
++#elif defined(__OpenBSD__) || defined(__NetBSD__)
++int io_enable(void)
++{
++  u_long iomap[32];
++
++  if (i386_get_ioperm(iomap))
++    return 1;
++  iomap[0x70 / 32] &= ~(1 << (0x70 % 32));
++  iomap[0x71 / 32] &= ~(1 << (0x71 % 32));
++  if (i386_set_ioperm(iomap))
++    return 1;
++
++  return 0;
++}
++#endif
+ 
++#ifdef __linux__
+ int io_disable(void)
+ {
+   ioperm(0x70, 0, 1);
+   ioperm(0x71, 0, 1);
+   return 0;
+ }
++#elif defined(__OpenBSD__) || defined(__NetBSD__)
++int io_disable(void)
++{
++  u_long iomap[32];
++
++  if (i386_get_ioperm(iomap))
++    return 1;
++  iomap[0x70 / 32] |= (1 << (0x70 % 32));
++  iomap[0x71 / 32] |= (1 << (0x71 % 32));
++  if (i386_set_ioperm(iomap))
++    return 1;
++
++  return 0;
++}
++#endif
+ 
+ int get_cmos(int index)
+ {
+   int r;
+ 
++#ifndef __FreeBSD__
+   io_enable();
++#endif
+   outb(0x70, index);
+   r = inb(0x71);
++#ifndef __FreeBSD__
+   io_disable();
++#endif
+   return r;
+ }
+ 
+ int set_cmos(int index, int value)
+ {
++#ifndef __FreeBSD__
+   io_enable();
++#endif
+   outb(0x70, index);
+   outb(0x71, value);
+   return 0;
