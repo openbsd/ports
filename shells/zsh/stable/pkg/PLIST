@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/07/04 11:25:18 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/03/12 17:42:21 pvalchev Exp $
 
 bin/zsh
 bin/zsh-${VERSION}
@@ -394,7 +394,6 @@ share/zsh/${VERSION}/functions/_zcat
 share/zsh/${VERSION}/functions/_zcompile
 share/zsh/${VERSION}/functions/_zdump
 share/zsh/${VERSION}/functions/_zed
-share/zsh/${VERSION}/functions/_zftp
 share/zsh/${VERSION}/functions/_zip
 share/zsh/${VERSION}/functions/_zle
 share/zsh/${VERSION}/functions/_zmodload
