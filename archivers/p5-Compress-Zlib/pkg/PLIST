@@ -1,5 +1,10 @@
-@unexec echo ""
-@unexec echo "*** Automatic de-installation not performed.  See the file"
-@unexec echo "*** /usr/lib/perl5/site_perl/`uname -m`-openbsd/auto/Compress/Zlib/.packlist"
-@unexec echo "*** for the list of things to remove."
-@unexec echo ""
+libdata/perl5/site_perl/i386-openbsd/Compress/Zlib.pm
+libdata/perl5/site_perl/i386-openbsd/auto/Compress/Zlib/.packlist
+libdata/perl5/site_perl/i386-openbsd/auto/Compress/Zlib/Zlib.bs
+libdata/perl5/site_perl/i386-openbsd/auto/Compress/Zlib/Zlib.so
+libdata/perl5/site_perl/i386-openbsd/auto/Compress/Zlib/autosplit.ix
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto/Compress/Zlib
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto/Compress
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto
+@dirrm libdata/perl5/site_perl/i386-openbsd/Compress
+@dirrm libdata/perl5/site_perl/i386-openbsd
