@@ -1,5 +1,5 @@
---- ispell.texinfo.~1~	Wed Nov  2 10:44:23 1994
-+++ ispell.texinfo	Sun Jul 12 18:54:33 1998
+--- ispell.texinfo.orig	Wed Nov  2 13:44:23 1994
++++ ispell.texinfo	Sun Jun 20 23:36:24 1999
 @@ -9,6 +9,14 @@
  @end iftex
  
@@ -15,3 +15,22 @@
  This file documents ISPELL, an interactive spelling corrector.
  
  Copyright 1988, 1990, 1991, 1992, 1993  Free Software Foundation, Inc.
+@@ -73,6 +81,9 @@
+ by the Foundation.
+ 
+ @end titlepage
++
++@node Top, Emacs, (dir), (dir)
++
+ @menu
+ * Emacs::			Using ispell from emacs
+ * Old Emacs::			Old Emacs
+@@ -90,8 +101,6 @@
+ * Region::			Checking a region
+ * Multiple Dictionaries::	Using Multiple Dictionaries
+ @end menu
+-
+-@node Top, Emacs, (dir), (dir)
+ 
+ @iftex
+ @chapter ISPELL

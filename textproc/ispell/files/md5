@@ -1,4 +1,7 @@
 MD5 (francais-IREQ-1.4.tar.gz) = 3871371b0f8e57b554f8895ce3a43b5a
 MD5 (ispell-3.1.20.tar.gz) = 92986f940548fe4116428d21b16fd356
+MD5 (ispell-html-mode.patch) = 1b44441a3748e55b3d509fcff21af4b7
 RMD160 (ispell-3.1.20.tar.gz) = 97ff82cdd3289d9c911093ca41974bc61314a36d
+RMD160 (ispell-html-mode.patch) = 0a25a3f437cbf132fc90a83180cb39790634654a
 SHA1 (ispell-3.1.20.tar.gz) = f8f849a3868ef3d88c1ba6fe5b49505f75de786e
+SHA1 (ispell-html-mode.patch) = 70819796a3873453c63d939935f78c398ec98003
