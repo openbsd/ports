@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/21 23:57:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 15:24:31 espie Exp $
 
 COMMENT=	designer for qt2
 
 VERSION=	3.0
 DISTNAME=	qt-designer-2.${VERSION}
-CATEGORIES=	x11
+CATEGORIES=	x11 devel
 NEED_VERSION=	1.361
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
