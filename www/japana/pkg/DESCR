@@ -1,0 +1,2 @@
+Japana is a small proxy written in Perl that converts Hiragana,
+Katakana and Kanji into Romaji on the fly.

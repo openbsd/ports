@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/27 21:05:01 espie Exp $
+man/cat1/japana.0
+sbin/japana
+share/examples/japana/
+share/examples/japana/japana.conf
+@sample /etc/japana.conf
