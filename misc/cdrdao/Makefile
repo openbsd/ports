@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/12 22:32:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/15 08:45:49 fgsch Exp $
 
 DISTNAME= 	cdrdao-1.1.3
 CATEGORIES=	audio misc
@@ -11,7 +11,6 @@ MAINTAINER=	fgsch@openbsd.org
 # Only tested on i386
 ONLY_FOR_ARCH=	i386
 
-LICENSE_TYPE=		Unknown
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
