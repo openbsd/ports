@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/28 23:00:40 margarida Exp $
 bin/pork
 share/doc/pork/QUICK_START
 share/doc/pork/README
@@ -100,6 +100,7 @@ share/pork/help/main/history
 share/pork/help/main/idle
 share/pork/help/main/input
 share/pork/help/main/keys
+share/pork/help/main/lastlog
 share/pork/help/main/load
 share/pork/help/main/msg
 share/pork/help/main/perl

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
---- src/Makefile.in.orig	Fri Jan 31 13:17:31 2003
-+++ src/Makefile.in	Tue Feb  4 16:07:52 2003
-@@ -124,7 +124,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/04/28 23:00:40 margarida Exp $
+--- src/Makefile.in.orig	Sat Apr 26 20:57:43 2003
++++ src/Makefile.in	Mon Apr 28 16:55:39 2003
+@@ -125,7 +125,7 @@ target_alias = @target_alias@
  SUBDIRS = missing libfaim
  bin_PROGRAMS = pork
  
