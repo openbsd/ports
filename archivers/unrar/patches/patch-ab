@@ -1,0 +1,23 @@
+*** os.c.bak	Mon May 19 23:58:11 1997
+--- os.c	Tue May 20 00:22:57 1997
+***************
+*** 67,73 ****
+  
+  void GetPswStr(char *Str)
+  {
+!   gets(Str);
+  }
+  
+  
+--- 67,77 ----
+  
+  void GetPswStr(char *Str)
+  {
+!   char *s;
+!   *Str = '\0';
+!   fgets(Str, 128, stdin);
+!   if ((s = strchr(Str, '\n')) != NULL)
+! 	*s = '\0';
+  }
+  
+  

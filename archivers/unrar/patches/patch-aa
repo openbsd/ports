@@ -1,0 +1,45 @@
+*** smallfn.c.bak	Mon May 19 23:58:11 1997
+--- smallfn.c	Tue May 20 00:19:28 1997
+***************
+*** 92,99 ****
+        }
+        if (Choice==4)
+        {
+          mprintf(MAskNewName);
+!         gets(Name);
+          continue;
+        }
+        if (Choice==5)
+--- 92,103 ----
+        }
+        if (Choice==4)
+        {
++ 	char *s;
+          mprintf(MAskNewName);
+! 	*Name = '\0';
+! 	fgets(Name, NM, stdin);
+! 	if ((s = strchr(Name, '\n')) != NULL)
+! 		*s = '\0';
+          continue;
+        }
+        if (Choice==5)
+***************
+*** 110,116 ****
+  int GetKey(void)
+  {
+    char Str[80];
+!   gets(Str);
+    return(Str[0]);
+  }
+  
+--- 114,123 ----
+  int GetKey(void)
+  {
+    char Str[80];
+!   *Str = '\0';
+!   fgets(Str, 80, stdin);
+!   if (*Str == '\n')
+! 	*Str = '\0';
+    return(Str[0]);
+  }
+  
