@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2001/09/15 14:50:08 naddy Exp $
+--- lib/Makefile.in.orig	Fri Sep  7 02:13:04 2001
++++ lib/Makefile.in	Fri Sep  7 02:13:19 2001
+@@ -444,6 +444,7 @@ $(srcdir)/getdate.c: getdate.y
+ 	cd $(srcdir) && \
+ 	  $(YACC) $(YFLAGS) getdate.y && \
+ 	  mv -f y.tab.c getdate.c
++getdate.o: $(srcdir)/getdate.c
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
