@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/08/18 01:30:20 kevlo Exp $
+lib/libswigpl.so.0.0
+lib/libswigpy.so.0.0
+lib/libswigtcl8.so.0.0
+DYNLIBDIR(%B)

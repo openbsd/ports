@@ -1,59 +1,62 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/13 14:32:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/08/18 01:30:20 kevlo Exp $
 bin/swig
-lib/swig1.3/tcl/constarray.i
-lib/swig1.3/tcl/consthash.i
-lib/swig1.3/tcl/ptrlang.i
-lib/swig1.3/tcl/tclsh.i
-lib/swig1.3/tcl/typemaps.i
-lib/swig1.3/tcl/wish.i
-lib/swig1.3/tcl/object.swg
-lib/swig1.3/tcl/swigtcl8.swg
-lib/swig1.3/perl5/perlmain.i
-lib/swig1.3/perl5/ptrlang.i
-lib/swig1.3/perl5/typemaps.i
-lib/swig1.3/perl5/headers.swg
-lib/swig1.3/perl5/perl5.swg
-lib/swig1.3/perl5/perl5mg.swg
-lib/swig1.3/perl5/Makefile.pl
-lib/swig1.3/python/embed.i
-lib/swig1.3/python/embed13.i
-lib/swig1.3/python/embed14.i
-lib/swig1.3/python/embed15.i
-lib/swig1.3/python/ptrlang.i
-lib/swig1.3/python/typemaps.i
-lib/swig1.3/python/typemaps_old.i
-lib/swig1.3/python/defarg.swg
-lib/swig1.3/python/python.swg
-lib/swig1.3/guile/guilemain.i
-lib/swig1.3/guile/interpreter.i
-lib/swig1.3/guile/typemaps.i
-lib/swig1.3/guile/guile.swg
-lib/swig1.3/java/typemaps.i
-lib/swig1.3/java/java.swg
+lib/libswigpl.a
+lib/libswigpl.la
+lib/libswigpy.a
+lib/libswigpy.la
+lib/libswigtcl8.a
+lib/libswigtcl8.la
 lib/swig1.3/array.i
 lib/swig1.3/autodoc.i
 lib/swig1.3/carray.i
 lib/swig1.3/constraints.i
 lib/swig1.3/ctype.i
 lib/swig1.3/exception.i
+lib/swig1.3/guile/guile.swg
+lib/swig1.3/guile/guiledec.swg
+lib/swig1.3/guile/guilemain.i
+lib/swig1.3/guile/interpreter.i
+lib/swig1.3/guile/typemaps.i
+lib/swig1.3/java/java.swg
+lib/swig1.3/java/typemaps.i
 lib/swig1.3/malloc.i
 lib/swig1.3/math.i
 lib/swig1.3/memory.i
+lib/swig1.3/mzscheme/mzscheme.swg
+lib/swig1.3/mzscheme/typemaps.i
 lib/swig1.3/objc.i
+lib/swig1.3/perl5/Makefile.pl
+lib/swig1.3/perl5/headers.swg
+lib/swig1.3/perl5/perl5.swg
+lib/swig1.3/perl5/perl5mg.swg
+lib/swig1.3/perl5/perlmain.i
+lib/swig1.3/perl5/ptrlang.i
+lib/swig1.3/perl5/typemaps.i
 lib/swig1.3/pointer.i
+lib/swig1.3/python/defarg.swg
+lib/swig1.3/python/embed.i
+lib/swig1.3/python/embed13.i
+lib/swig1.3/python/embed14.i
+lib/swig1.3/python/embed15.i
+lib/swig1.3/python/ptrlang.i
+lib/swig1.3/python/python.swg
+lib/swig1.3/python/typemaps.i
+lib/swig1.3/python/typemaps_old.i
 lib/swig1.3/stdlib.i
+lib/swig1.3/tcl/constarray.i
+lib/swig1.3/tcl/consthash.i
+lib/swig1.3/tcl/object.swg
+lib/swig1.3/tcl/ptrlang.i
+lib/swig1.3/tcl/swigtcl8.swg
+lib/swig1.3/tcl/tclsh.i
+lib/swig1.3/tcl/typemaps.i
+lib/swig1.3/tcl/wish.i
 lib/swig1.3/timers.i
-lib/swig1.3/swigptr.swg
-lib/libswigpl.a
-lib/libswigpl.so.0.0
-lib/libswigpy.a
-lib/libswigpy.so.0.0
-lib/libswigtcl8.a
-lib/libswigtcl8.so.0.0 
-@exec /sbin/ldconfig -m %B
-@dirrm lib/swig1.3/guile
-@dirrm lib/swig1.3/java
+%%SHARED%%
+@dirrm lib/swig1.3/tcl
 @dirrm lib/swig1.3/python
 @dirrm lib/swig1.3/perl5
-@dirrm lib/swig1.3/tcl
+@dirrm lib/swig1.3/mzscheme
+@dirrm lib/swig1.3/java
+@dirrm lib/swig1.3/guile
 @dirrm lib/swig1.3

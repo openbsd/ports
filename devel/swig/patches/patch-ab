@@ -1,0 +1,11 @@
+--- Runtime/Makefile.in.orig	Fri Aug 18 01:33:44 2000
++++ Runtime/Makefile.in	Fri Aug 18 01:34:18 2000
+@@ -25,7 +25,7 @@
+ 	@for i in $(LIBS); \
+ 	do \
+ 	if [ -f $$i ]; then \
+-	   $(LIBTOOL) install -c $$i $(LIB_DIR)/$$i; \
++	   $(LIBTOOL) install -c $$i $(DESTDIR)$(LIB_DIR)/$$i; \
+         fi; \
+ 	done;
+ 

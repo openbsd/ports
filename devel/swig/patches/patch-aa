@@ -1,50 +1,84 @@
---- Makefile.in.orig	Wed Mar  1 04:31:50 2000
-+++ Makefile.in	Wed Jun 14 02:10:03 2000
-@@ -123,7 +123,7 @@
+--- Makefile.in.orig	Thu Jun 15 10:03:25 2000
++++ Makefile.in	Thu Aug 17 10:04:06 2000
+@@ -111,9 +111,9 @@
  # TARGETS: install & friends
  #####################################################################
  
--INSTALL        = ./install-sh -c
-+INSTALL        = /usr/bin/install -c
- INSTALL_DATA   = ${INSTALL} -m 644
- INSTALL_PROGRAM= ${INSTALL} -m 755
+-INSTALL         = install-sh -c
++INSTALL         = /usr/bin/install -c
+ INSTALL_DATA    = ${INSTALL} -m 644
+-INSTALL_PROGRAM = $(srcdir)/${INSTALL} -m 755
++INSTALL_PROGRAM = ${INSTALL} -m 755
+ MKINSTDIRS      = $(srcdir)/mkinstalldirs
  
-@@ -171,32 +171,32 @@
- 	@cd Lib; for i in *.i *.swg; \
+ install: install-main install-lib install-runtime
+@@ -125,54 +125,54 @@
+ 	@if [ -f swig.exe ]; then					\
+ 		$(INSTALL_PROGRAM) swig.exe $(BIN_DIR)/swig.exe;	\
+ 	else								\
+-		$(INSTALL_PROGRAM) swig $(BIN_DIR)/swig;		\
++		$(INSTALL_PROGRAM) swig $(DESTDIR)$(BIN_DIR)/swig;		\
+ 	fi
+ 
+ install-lib:
+ 	@echo "Installing the SWIG library"
+-	@$(MKINSTDIRS) $(SWIG_LIB)
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)
+ #	cd $(SWIG_LIB); rm -rf *
+ #	The following line has `*.swg' removed -- add it back if needed.
+ 	@cd $(srcdir)/Lib; for i in *.i; \
  	    do \
  	    echo "Installing Lib/$$i"; \
 -            ../$(INSTALL_DATA) $$i $(SWIG_LIB)/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/$$i; \
  	    done;
- 	@cd Lib/tcl; for i in *.i *.swg; \
+-	@$(MKINSTDIRS) $(SWIG_LIB)/tcl
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/tcl
+ 	@cd $(srcdir)/Lib/tcl; for i in *.i *.swg; \
  	    do \
  	    echo "Installing Lib/tcl/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/tcl/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/tcl/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/tcl/$$i; \
  	    done;
- 	@cd Lib/perl5; for i in *.i *.swg Makefile.pl; \
+-	@$(MKINSTDIRS) $(SWIG_LIB)/perl5
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/perl5
+ 	@cd $(srcdir)/Lib/perl5; for i in *.i *.swg Makefile.pl; \
  	    do \
  	    echo "Installing Lib/perl5/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/perl5/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/perl5/$$i; \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/perl5/$$i; \
  	    done;
- 	@cd Lib/python; for i in *.i *.swg; \
+-	@$(MKINSTDIRS) $(SWIG_LIB)/python
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/python
+ 	@cd $(srcdir)/Lib/python; for i in *.i *.swg; \
  	    do \
  	    echo "Installing Lib/python/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/python/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/python/$$i; \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/python/$$i; \
  	    done;
- 	@cd Lib/guile; for i in *.i *.swg; \
+-	@$(MKINSTDIRS) $(SWIG_LIB)/guile
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/guile
+ 	@cd $(srcdir)/Lib/guile; for i in *.i *.swg; \
  	    do \
  	    echo "Installing Lib/guile/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/guile/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/guile/$$i; \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/guile/$$i; \
  	    done;
- 	@cd Lib/java; for i in *.i *.swg; \
+-	@$(MKINSTDIRS) $(SWIG_LIB)/java
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/java
+ 	@cd $(srcdir)/Lib/java; for i in *.i *.swg; \
  	    do \
  	    echo "Installing Lib/java/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/java/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/java/$$i; \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/java/$$i; \
+ 	    done;
+-	@$(MKINSTDIRS) $(SWIG_LIB)/mzscheme
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/mzscheme
+ 	@cd $(srcdir)/Lib/mzscheme; for i in *.i *.swg; \
+ 	    do \
+ 	    echo "Installing Lib/mzscheme/$$i"; \
+-            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/mzscheme/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/mzscheme/$$i; \
  	    done;
  
  install-runtime:
