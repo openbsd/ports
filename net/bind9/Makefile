@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/18 09:32:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2001/01/18 14:25:15 jakob Exp $
 
 VERSION=	9.1.0
 DISTNAME=	bind-${VERSION}
@@ -19,11 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--sysconfdir=/etc \
-			--localstatedir=/var \
-			--with-randomdev=/dev/srandom \
-			--with-openssl=/usr \
+CONFIGURE_ARGS+=	--localstatedir=/var \
+			--with-randomdev="/dev/srandom" \
+			--with-openssl="/usr" \
 			--with-libtool
 
 FLAVORS=		debug static threads
@@ -62,7 +60,8 @@ post-install:
 .for file in ${EXAMPLEFILES}
 	${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/share/examples/bind9
 .endfor
-	sed s,y0y0y0,${TRUEPREFIX}, <${FILESDIR}/bind9-enable >${PREFIX}/sbin/bind9-enable
+	sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/bind9-enable \
+		> ${PREFIX}/sbin/bind9-enable
 	${CHMOD} 555 ${PREFIX}/sbin/bind9-enable
 	${CHOWN} root:wheel ${PREFIX}/sbin/bind9-enable
 
