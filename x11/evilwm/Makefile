@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/05 18:32:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/29 17:37:57 sturm Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
-V=			0.99.14
+V=			0.99.17
 DISTNAME=		evilwm-${V}.orig
 PKGNAME=		evilwm-${V}
 CATEGORIES=		x11
 HOMEPAGE=		http://evilwm.sourceforge.net/
 
-MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=		David Snyder <dasnyderx@yahoo.com>
 
 # 9wm license
 PERMIT_PACKAGE_CDROM=	Yes
