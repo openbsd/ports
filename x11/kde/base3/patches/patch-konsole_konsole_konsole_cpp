@@ -1,0 +1,12 @@
+$OpenBSD: patch-konsole_konsole_konsole_cpp,v 1.1 2002/12/02 23:13:22 espie Exp $
+--- konsole/konsole/konsole.cpp.orig	Mon Dec  2 23:56:15 2002
++++ konsole/konsole/konsole.cpp	Tue Dec  3 00:05:03 2002
+@@ -357,7 +357,7 @@ void Konsole::makeGUI()
+    // Remove the empty separator Qt inserts if the menu is empty on popup,
+    // not sure if this will be "fixed" in Qt, for now use this hack (malte)
+    if(!(isRestored)) {
+-     if (sender()->inherits("QPopupMenu") &&
++     if (sender() && sender()->inherits("QPopupMenu") &&
+        static_cast<const QPopupMenu *>(sender())->count() == 1)
+        const_cast<QPopupMenu *>(static_cast<const QPopupMenu *>(sender()))->removeItemAt(0);
+        }
