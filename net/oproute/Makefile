@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/03 02:40:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/03 19:12:55 jsyn Exp $
 
 COMMENT=		"network performance measuring tool"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.opnix.com/pub/oproute/ \
 			http://www.wiretapped.net/security/network-monitoring/oproute/ 
+
+MAKE_FLAGS=		CXX="${CXX}" CFLAGS="${CFLAGS}"
 			
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/oproute
