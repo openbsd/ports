@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 09:37:31 jakob Exp $
+libexec/postgrey
