@@ -1,0 +1,82 @@
+Using PostgreSQL package in OpenBSD environment:
+------------------------------------------------
+
+If you are installing PostgreSQL for the first time, the following steps
+required:
+
+1. Create PostgreSQL user and group:
+
+	# adduser -batch pgsql "" "PostgreSQL pseudo-user" "*" \
+		-home /var -noconfig -group pgsql -shell nologin
+
+2. Initialize PostgreSQL databases:
+
+	# install -d -o pgsql -g pgsql -m 755 /var/pgsql
+	# install -d -o pgsql -g pgsql -m 700 /var/pgsql/data
+	# pgwrap initdb
+
+If you are upgrading PostgreSQL you don't need these steps. Read
+@PREFIX@/share/doc/pgsql/INSTALL for more information on how to
+upgrade your existing databases. See also `Special notes for OpenBSD
+port' below.
+
+If you wish to start PostgreSQL automatically during system startup,
+add the following lines to /etc/rc.local:
+
+if [ -x @PREFIX@/bin/pgwrap -a -x @PREFIX@/pgsql/bin/postmaster ]; then
+	@PREFIX@/bin/pgwrap -o /var/pgsql/log postmaster -i -S -o -F
+	echo -n 'pgsql'
+fi
+
+Don't forget to add @PREFIX@/pgsql/lib directory to shared libraries path in
+/etc/rc.conf (if your architecture supports shared libraries):
+
+shlib_dirs="@PREFIX@/pgsql/lib"
+
+Add @PREFIX@/pgsql/man to ${MANPATH} if you wish to use PostgreSQL
+manual pages.
+
+Please note that OpenBSD port of PostgreSQL requires a kernel compiled
+with SYSVMSG, SYSVSEM and SYSVSHM options for proper operation.
+The GENERIC kernel contains these options.
+
+
+Special notes for OpenBSD port:
+-------------------------------
+
+OpenBSD port of PostgreSQL does NOT use shell startup files to
+set up environment for postgres administrative programs (such as
+initdb). This mean that you should use a wrapper program `pgwrap'
+to run these programs instead of `su'. For example, you
+should execute
+	# pgwrap initdb
+instead of
+	# su -l pgsql -c 'exec initdb'
+
+The `pgwrap' automatically sets up proper environment and permissions
+for PostgreSQL programs. The syntax for `pgwrap' program is:
+
+pgwrap [-n] [-o file] cmd [arg ...]
+	-n	- Do not add @PREFIX@/pgsql/bin prefix to cmd.
+	-o file	- Redirect stdout & atderr to file (write permissions
+		  for `pgsql' user or group required).
+
+`pgwrap' automatically sets up the following environment variables:
+
+System variables (these variables are always set to the following values):
+
+	PATH=@PREFIX@/pgsql/bin:/bin:/usr/bin
+	USER=pgsql
+	LOGNAME=pgsql
+	SHELL=/bin/sh
+	HOME=/var/pgsql
+
+PostgreSQL variables (these variables are set to the following values,
+unless already set):
+
+	PGLIB=@PREFIX@/pgsql/lib
+	PGDATA=/var/pgsql/data
+
+You must have root privilegies to run `pgwrap'.
+
+$OpenBSD: README.OpenBSD.in,v 1.1 1999/11/11 02:40:05 kevlo Exp $
