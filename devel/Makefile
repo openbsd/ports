@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2000/09/16 15:18:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.42 2000/09/19 05:28:04 mickey Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -83,7 +83,7 @@
      SUBDIR += p5-File-Tail
 #    SUBDIR += p5-File-Tools
 #    SUBDIR += p5-Filter
-#    SUBDIR += p5-FreezeThaw
+     SUBDIR += p5-FreezeThaw
 #    SUBDIR += p5-Include
 #    SUBDIR += p5-IniConf
 #    SUBDIR += p5-Ioctl
