@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2004/08/11 20:55:50 naddy Exp $
---- configure.orig	Fri Apr  5 14:48:26 2002
-+++ configure	Wed Aug 11 14:29:49 2004
+$OpenBSD: patch-configure,v 1.4 2005/02/21 14:29:47 alek Exp $
+--- configure.orig	Fri Apr  5 23:48:26 2002
++++ configure	Mon Feb 21 15:17:11 2005
 @@ -3722,7 +3722,7 @@ _ACEOF
  
  
@@ -44,3 +44,12 @@ $OpenBSD: patch-configure,v 1.3 2004/08/11 20:55:50 naddy Exp $
    ;
    return 0;
  }
+@@ -14667,7 +14665,7 @@ s,@USE_NLS@,$USE_NLS,;t t
+ s,@LIBICONV@,$LIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t
