@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Oct 16 19:35:07 2000
-+++ ltmain.sh	Mon Feb 12 06:10:21 2001
-@@ -1079,6 +1079,10 @@
+--- ltmain.sh.orig	Sat May 27 07:15:01 2000
++++ ltmain.sh	Thu Feb 15 22:36:07 2001
+@@ -1079,6 +1079,17 @@
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
@@ -8,10 +8,28 @@
 +	    # Do not include libc due to us having libc/libc_r.
 +	    continue
 +	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
  	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
-@@ -1795,6 +1799,9 @@
+@@ -1091,6 +1102,10 @@
+ 	deplibs="$deplibs $arg"
+ 	;;
+ 
++      -?thread)
++	deplibs="$deplibs $arg"
++	;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1795,6 +1810,9 @@
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
@@ -21,7 +39,7 @@
          *-*-rhapsody*)
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
-@@ -3567,40 +3574,6 @@
+@@ -3567,40 +3585,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
