@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/06 18:59:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/16 01:03:56 krw Exp $
 
 COMMENT=	object oriented script language with threads
-VERSION=	1.6.6
+VERSION=	1.6.7
 DISTNAME=	ruby-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.362

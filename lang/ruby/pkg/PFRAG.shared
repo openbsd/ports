@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2002/02/23 14:10:49 krw Exp $
-lib/libruby.so.${REV}6
+@comment $OpenBSD: PFRAG.shared,v 1.11 2002/03/16 01:03:56 krw Exp $
+lib/libruby.so.${REV}7
 DYNLIBDIR(%B)
 lib/ruby/${REV}/${SUB}/curses.so
 lib/ruby/${REV}/${SUB}/dbm.so
