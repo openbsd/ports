@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/22 10:52:22 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/22 23:33:42 naddy Exp $
 
 COMMENT=	"perl interface to tar archives"
 VERSION=	0.22
@@ -7,8 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
 NEED_VERSION=	1.502
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Archive
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Archive/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
