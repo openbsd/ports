@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/07 14:55:21 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/01 15:26:59 ho Exp $
 
 DISTNAME=	mpg123-0.59q
 CATEGORIES=	audio
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.mpg123.de/mpg123 \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123
 
-MAINTAINER=	provos@openbsd.org
+MAINTAINER=	ho@openbsd.org
 
 HOMEPAGE=	http://www.mpg123.de/
 
