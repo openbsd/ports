@@ -1,9 +1,9 @@
-# $OpenBSD: config.site,v 1.4 2004/11/27 12:01:16 sturm Exp $
+# $OpenBSD: config.site,v 1.5 2004/12/31 12:47:25 espie Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
-ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
-ac_cv_func_getservbyport_r=${ac_cv_func_getservbyport_r=no}
-ac_cv_func_getprotobyname_r=${ac_cv_func_getprotobyname_r=no}
+#ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
+#ac_cv_func_getservbyport_r=${ac_cv_func_getservbyport_r=no}
+#ac_cv_func_getprotobyname_r=${ac_cv_func_getprotobyname_r=no}
 # can't define this because ntp fucks with it
 #ac_cv_lib_readline_readline=${ac_cv_lib_readline_readline=yes}
 # probably okay, to discuss...
