@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib-storage_mail-storage_h,v 1.1 2003/07/23 06:03:01 jolan Exp $
---- src/lib-storage/mail-storage.h.orig	Sat Jun 14 22:43:05 2003
-+++ src/lib-storage/mail-storage.h	Tue Jul 15 15:18:15 2003
+$OpenBSD: patch-src_lib-storage_mail-storage_h,v 1.2 2004/07/21 14:19:19 brad Exp $
+--- src/lib-storage/mail-storage.h.orig	Tue Jul 13 06:57:22 2004
++++ src/lib-storage/mail-storage.h	Thu Jul 15 00:12:05 2004
 @@ -5,6 +5,12 @@ struct message_size;
  
  #include "imap-util.h"
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_lib-storage_mail-storage_h,v 1.1 2003/07/23 06:03:01 jolan E
  enum mailbox_list_flags {
  	MAILBOX_LIST_SUBSCRIBED	= 0x01,
  	MAILBOX_LIST_FAST_FLAGS	= 0x02,
-@@ -148,7 +154,7 @@ struct mail_storage {
+@@ -149,7 +155,7 @@ struct mail_storage {
  	   with possibly different readonly-state. */
  	struct mailbox *(*open_mailbox)(struct mail_storage *storage,
  					const char *name,
