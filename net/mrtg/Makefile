@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2000/06/12 17:42:45 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/07/25 10:03:29 brad Exp $
 
 DISTNAME=	mrtg-2.8.12
 CATEGORIES=	net
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/mrtg/ \
 		http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
@@ -27,6 +27,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/mrtg
+	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mrtg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mrtg
 	${INSTALL_DATA} ${WRKSRC}/images/*.png ${PREFIX}/share/mrtg
@@ -36,7 +37,7 @@ do-install:
 	cd ${WRKSRC}/run; ${INSTALL_SCRIPT} cfgmaker cfgmaker_ip \
 		indexmaker mrtg ${PREFIX}/bin
 	cd ${WRKSRC}/run; ${INSTALL_SCRIPT} locales_mrtg.pm BER.pm \
-		SNMP_Session.pm SNMP_util.pm ${PREFIX}/lib/mrtg
+		SNMP_Session.pm SNMP_util.pm ${PREFIX}/libdata/perl5/site_perl
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/lib/mrtg/mrtg.cfg.sample
 
 .include <bsd.port.mk>
