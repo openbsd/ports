@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/19 21:37:01 wilfried Exp $
+${P5SITE}/Mail/Audit.pm
+${P5SITE}/Mail/Audit/KillDups.pm
+${P5SITE}/Mail/Audit/List.pm
+${P5SITE}/Mail/Audit/MAPS.pm
+${P5SITE}/Mail/Audit/MailInternet.pm
+${P5SITE}/Mail/Audit/MimeEntity.pm
+${P5SITE}/Mail/Audit/PGP.pm
+${P5SITE}/Mail/Audit/Razor.pm
+man/man3p/Mail::Audit.3p
+man/man3p/Mail::Audit::KillDups.3p
+man/man3p/Mail::Audit::List.3p
+man/man3p/Mail::Audit::MAPS.3p
+man/man3p/Mail::Audit::PGP.3p
+man/man3p/Mail::Audit::Razor.3p
+share/doc/Mail-Audit/FAQ
+@dirrm share/doc/Mail-Audit
+@dirrm ${P5SITE}/Mail/Audit

@@ -1,0 +1,10 @@
+Mail::Audit itself isn't a mail filter - it's a toolkit that makes
+it very easy for you to build mail filters. You write a program
+that describes what should happen to your mail, and this replaces
+your procmail command in your .forward or .qmail file.
+
+Mail::Audit provides the functionality for extracting mail headers,
+bouncing, accepting, rejecting, forwarding, and filtering incoming
+mail.
+
+WWW: ${HOMEPAGE}
