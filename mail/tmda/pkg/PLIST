@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/19 00:57:07 lebel Exp $
+bin/tmda-address
+bin/tmda-check-address
+bin/tmda-clean
+bin/tmda-filter
+bin/tmda-inject
+bin/tmda-keygen
+bin/tmda-rfilter
+bin/tmda-sendmail
+lib/python${PYTHON_VER}/TMDA/Cookie.py
+lib/python${PYTHON_VER}/TMDA/Cookie.pyc
+lib/python${PYTHON_VER}/TMDA/Defaults.py
+lib/python${PYTHON_VER}/TMDA/Defaults.pyc
+lib/python${PYTHON_VER}/TMDA/Errors.py
+lib/python${PYTHON_VER}/TMDA/Errors.pyc
+lib/python${PYTHON_VER}/TMDA/FilterParser.py
+lib/python${PYTHON_VER}/TMDA/FilterParser.pyc
+lib/python${PYTHON_VER}/TMDA/HMAC.py
+lib/python${PYTHON_VER}/TMDA/HMAC.pyc
+lib/python${PYTHON_VER}/TMDA/MTA.py
+lib/python${PYTHON_VER}/TMDA/MTA.pyc
+lib/python${PYTHON_VER}/TMDA/Util.py
+lib/python${PYTHON_VER}/TMDA/Util.pyc
+lib/python${PYTHON_VER}/TMDA/Version.py
+lib/python${PYTHON_VER}/TMDA/Version.pyc
+lib/python${PYTHON_VER}/TMDA/__init__.py
+lib/python${PYTHON_VER}/TMDA/__init__.pyc
+share/doc/tmda/sample.tmdarc
+share/tmda/confirm_accept.txt
+share/tmda/confirm_request.txt
+@dirrm share/tmda
+@dirrm share/doc/tmda
+@dirrm lib/python${PYTHON_VER}/TMDA
