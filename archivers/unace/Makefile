@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.25 2003/06/04 22:16:22 jolan Exp $
 
 COMMENT=	"extract, view & test ACE archives"
 
@@ -6,11 +6,11 @@ DISTNAME=	unace-1.2b
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=utils/compress/}
 
-# Copyrighted but freely distributable.
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# Vague
+PERMIT_PACKAGE_CDROM=	"no terms"
+PERMIT_PACKAGE_FTP=	"no terms"
+PERMIT_DISTFILES_CDROM=	"unclear terms"
+PERMIT_DISTFILES_FTP=	"unclear terms"
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"
 MAKE_FILE=	unix/makefile

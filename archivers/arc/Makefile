@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/05/24 01:43:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2003/06/04 22:16:22 jolan Exp $
 
 COMMENT=	"create & extract files from DOS .ARC files"
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=   .tar.Z
 # Restrictive
 PERMIT_PACKAGE_CDROM=	"no modifications"
 PERMIT_PACKAGE_FTP=	"no modifications"
-PERMIT_DISTFILES_CDROM=	"source may not be sold"
+PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}"
