@@ -1,14 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2002/04/26 03:35:34 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.6 2002/11/24 10:04:59 brad Exp $
 #
 # Pre/post-installation setup of icecast
 
-# exit on errors, use a sane path and install prefix
-#
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${SYSCONFDIR}/icecast
 CONFIG_FILE=$CONFIG_DIR/icecast.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/icecast
 LOG_DIR=/var/log/icecast

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2002/03/08 16:02:14 fgsch Exp $
---- configure.orig	Tue Aug  7 23:59:26 2001
-+++ configure	Fri Mar  8 12:26:19 2002
+$OpenBSD: patch-configure,v 1.7 2002/11/24 10:04:59 brad Exp $
+--- configure.orig	Wed Apr 10 18:50:20 2002
++++ configure	Sun Nov 24 04:45:56 2002
 @@ -876,16 +876,16 @@ if test "x$enable_fsstd" = "xyes"; then
  else
  	ICECAST_BINDIR=${prefix}/bin
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.6 2002/03/08 16:02:14 fgsch Exp $
 -	ICECAST_STATICDIR=static
 -	ICECAST_STATICDIR_INST=${prefix}/static
 -	ICECAST_DOCDIR=${prefix}/doc
-+	ICECAST_ETCDIR=${sysconfdir}
++	ICECAST_ETCDIR=${sysconfdir}/icecast
 +	ICECAST_ETCDIR_INST=${prefix}/share/examples/icecast
 +	ICECAST_SHAREDIR=${prefix}/share/icecast
 +	ICECAST_LOGDIR=/var/log/icecast
