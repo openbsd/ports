@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/09/22 22:09:37 obecian Exp $
-bin/ettercap
+@comment $OpenBSD: PLIST,v 1.6 2001/11/14 18:19:40 obecian Exp $
+lib/ettercap/ec_H00_lurker.so
+lib/ettercap/ec_H10_phantom.so
+lib/ettercap/ec_H20_dwarf.so
+lib/ettercap/ec_H99_dummy.so
+lib/ettercap/ec_arpcop.so
+lib/ettercap/ec_banshee.so
+lib/ettercap/ec_basilisk.so
+lib/ettercap/ec_beholder.so
+lib/ettercap/ec_dummy.so
+lib/ettercap/ec_golem.so
+lib/ettercap/ec_imp.so
+lib/ettercap/ec_leech.so
+lib/ettercap/ec_ooze.so
+lib/ettercap/ec_phantom.so
+lib/ettercap/ec_shadow.so
+lib/ettercap/ec_spectre.so
+lib/ettercap/ec_triton.so
 man/man8/ettercap.8
+sbin/ettercap
 share/doc/ettercap/AUTHORS
 share/doc/ettercap/CHANGELOG
 share/doc/ettercap/COPYING
@@ -10,27 +27,9 @@ share/doc/ettercap/KNOWN-BUGS
 share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
-share/doc/ettercap/README.PLUGINS.fr
-share/doc/ettercap/README.PLUGINS.it
-share/doc/ettercap/README.fr
-share/doc/ettercap/README.it
 share/doc/ettercap/THANKS
 share/doc/ettercap/TODO
 share/doc/ettercap/ettercap.fr.8.in
-share/ettercap/ec_arpcop.so
-share/ettercap/ec_banshee.so
-share/ettercap/ec_basilisk.so
-share/ettercap/ec_beholder.so
-share/ettercap/ec_dummy.so
-share/ettercap/ec_golem.so
-share/ettercap/ec_imp.so
-share/ettercap/ec_leech.so
-share/ettercap/ec_lurker.so
-share/ettercap/ec_ooze.so
-share/ettercap/ec_phantom.so
-share/ettercap/ec_shadow.so
-share/ettercap/ec_spectre.so
-share/ettercap/ec_triton.so
 share/ettercap/etter.conf
 share/ettercap/etter.dns
 share/ettercap/etter.filter
@@ -40,3 +39,4 @@ share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
 @dirrm share/ettercap
 @dirrm share/doc/ettercap
+@dirrm lib/ettercap
