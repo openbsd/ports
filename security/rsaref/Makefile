@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 1999/12/26 10:09:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2000/01/09 00:33:52 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
 DISTNAME=	rsaref20.1996
 CATEGORIES=	security
-MASTER_SITES=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
+MASTER_SITES=	ftp://ftp.replay.com/pub/crypto/crypto/LIBS/rsa/ \
+		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
 		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
 EXTRACT_SUFX=	.tar.Z
 
@@ -33,8 +34,8 @@ do-install:
 	    ${PREFIX}/share/doc/rsaref
 	${INSTALL_DATA} ${WRKSRC}/librsaref.a ${PREFIX}/lib
 	@if [ -f ${WRKSRC}/librsaref.so.2.0 ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
-	    ${LDCONFIG} -m ${PREFIX}/lib; \
+	 ${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
+	 ${LDCONFIG} -m ${PREFIX}/lib; \
 	fi
 
 .include <bsd.port.mk>
