@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/24 07:04:15 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/11/01 15:44:19 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.2
 CATEGORIES=	x11
 NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	kde
 

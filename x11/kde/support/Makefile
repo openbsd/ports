@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/01 15:44:26 kevlo Exp $
 
 DISTNAME=	kdesupport-1.1.2	
 CATEGORIES=	x11 converters	
 NEED_VERSION=	1.328
 MASTER_SITES=	${MASTER_SITE_KDE}	
-MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	kde
 
