@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/29 12:56:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2003/03/09 14:54:04 lebel Exp $
 
-COMMENT=		"easy to use bayesonian spam filter"
+COMMENT=		"easy to use Bayesian spam filter"
 DISTNAME=		bmf-0.9.4
 CATEGORIES=		mail
 HOMEPAGE=		http://sourceforge.net/projects/bmf
