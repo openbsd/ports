@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/01/09 05:57:48 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/01/20 04:10:26 brad Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
@@ -21,7 +21,7 @@ LIB_DEPENDS=	bz2.9.5:${PORTSDIR}/archivers/bzip2 \
 		mpeg.13:${PORTSDIR}/graphics/mpeg-lib \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.35:${PORTSDIR}/graphics/tiff \
-		ttf.1.2:${PORTSDIR}/print/freetype
+		ttf.1.3:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gs:${PORTSDIR}/print/ghostscript5 \
 		picttoppm:${PORTSDIR}/graphics/netpbm
