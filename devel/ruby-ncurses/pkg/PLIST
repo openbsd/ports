@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/10 16:01:02 couderc Exp $
+lib/ruby/site_ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/ncurses.so
+lib/ruby/site_ruby/1.6/ncurses.rb
+share/doc/ruby/ruby-ncurses/README
+share/examples/ruby/ruby-ncurses/LICENSES_for_examples
+share/examples/ruby/ruby-ncurses/example.rb
+share/examples/ruby/ruby-ncurses/hello_ncurses.rb
+share/examples/ruby/ruby-ncurses/rain.rb
+share/examples/ruby/ruby-ncurses/tclock.rb
+@dirrm share/examples/ruby/ruby-ncurses
+@dirrm share/doc/ruby/ruby-ncurses

@@ -1,0 +1,6 @@
+Ruby interface which provides access to the functions, macros, global
+variables and constants of the ncurses library.  These are simply 
+mapped to a Module named Ncurses.  Functions and external variables
+are implemented as module functions of the Module Ncurses.
+
+WWW: ${HOMEPAGE}
