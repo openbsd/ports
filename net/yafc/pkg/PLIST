@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/18 03:51:25 kevlo Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/yafc.info
+@comment $OpenBSD: PLIST,v 1.2 2000/09/02 00:28:33 brad Exp $
 bin/yafc
+@unexec install-info --delete --info-dir=%D/info %D/info/yafc.info
 info/yafc.info
-man/man1/yafc.1
-share/examples/yafc/yafcrc.sample
-@dirrm share/examples/yafc
 @exec install-info --info-dir=%D/info %D/info/yafc.info
+man/man1/yafc.1
+share/doc/yafc/NEWS
+share/doc/yafc/README
+share/doc/yafc/TODO
+share/examples/yafc/yafcrc.sample
+@dirrm share/doc/yafc
+@dirrm share/examples/yafc
