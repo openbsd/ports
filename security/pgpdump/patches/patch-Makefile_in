@@ -1,5 +1,6 @@
---- Makefile.in~	Sat Dec 22 03:12:12 2001
-+++ Makefile.in	Sat Dec 22 03:12:48 2001
+$OpenBSD: patch-Makefile_in,v 1.2 2002/09/03 05:45:22 mark Exp $
+--- Makefile.in.orig	Wed Jun 26 23:28:34 2002
++++ Makefile.in	Mon Sep  2 21:42:46 2002
 @@ -4,6 +4,8 @@ bindir = @bindir@
  mandir = @mandir@/man1
  LIBS = @LIBS@

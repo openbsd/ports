@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/16 17:38:13 mark Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/03 05:45:22 mark Exp $
 
 COMMENT=	"PGP packet visualizer"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://pgp.iijlab.net/pgpdump.html
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
