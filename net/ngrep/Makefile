@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/09 15:26:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/12 07:20:08 kevlo Exp $
 
 COMMENT=	"network grep"
 
-DISTNAME=	ngrep-1.39.2
+DISTNAME=	ngrep-1.40
 CATEGORIES=     net
 NEED_VERSION=	1.408
 MASTER_SITES=	http://prdownloads.sourceforge.net/ngrep/
