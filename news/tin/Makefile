@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/08/10 09:26:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/02 19:19:59 alek Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/28 01:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/02 19:19:59 alek Exp $
 
 COMMENT=	"threaded newsreader"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=Yes
 # Technically, we could put trn on CD-Rom, provided we include the distfile
 # as well...
 PERMIT_PACKAGE_CDROM=No
+WANTLIB=c curses m 
 
 
 CONFIGURE_STYLE=simple

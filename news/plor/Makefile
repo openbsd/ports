@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/02 19:19:59 alek Exp $
 
 COMMENT=	"alpha-release readers for reading SOUP and QWK packets"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://linux.psy.unipd.it/pub/pluto/developers/utils/
 

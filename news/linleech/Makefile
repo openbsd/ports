@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/18 17:11:42 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/02 19:19:59 alek Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m termcap 
 
 MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
 			http://people.montana.com/~drrom/

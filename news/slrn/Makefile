@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/09/15 00:40:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2004/12/02 19:19:59 alek Exp $
 
 COMMENT=		"SLang-based newsreader"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ssl termcap 
 
 PFILES=			ranges post mime ranges2
 MASTER_SITES0=  	http://slrn.sourceforge.net/patches/
