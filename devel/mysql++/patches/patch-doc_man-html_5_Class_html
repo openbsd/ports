@@ -1,0 +1,30 @@
+$OpenBSD: patch-doc_man-html_5_Class_html,v 1.1 2001/06/08 08:55:23 wilfried Exp $
+--- doc/man-html/5_Class.html.orig	Sat May 19 18:44:46 2001
++++ doc/man-html/5_Class.html	Fri Jun  8 10:40:04 2001
+@@ -124,7 +124,7 @@ original version by:  Nikos Drakos, CBLU
+ <LI><A NAME="tex2html1592"
+   HREF="5_Class.html#SECTION03232600000000000000">public operator bool ()</A>
+ <LI><A NAME="tex2html1593"
+-  HREF="5_Class.html#SECTION03232700000000000000">public string clinet_info ()</A>
++  HREF="5_Class.html#SECTION03232700000000000000">public string client_info ()</A>
+ <LI><A NAME="tex2html1594"
+   HREF="5_Class.html#SECTION03232800000000000000">public void close ()</A>
+ <LI><A NAME="tex2html1595"
+@@ -3123,7 +3123,7 @@ Public methods</A>
+ <LI>operator  <B>bool</B> () 
+ <BR><EM>returns success()</EM>
+ </LI>
+-<LI>string  <B>clinet_info</B> ()
++<LI>string  <B>client_info</B> ()
+ </LI>
+ <LI>void  <B>close</B> ()
+ </LI>
+@@ -3381,7 +3381,7 @@ public operator bool ()</A>
+ <P>
+ 
+ <H3><A NAME="SECTION03232700000000000000">
+-public string clinet_info ()</A>
++public string client_info ()</A>
+ </H3>
+ 
+ 		

@@ -1,0 +1,21 @@
+$OpenBSD: patch-main_cc,v 1.1 2001/06/08 08:55:21 wilfried Exp $
+--- main.cc.orig	Wed Apr 11 21:12:20 2001
++++ main.cc	Fri Jun  8 10:29:21 2001
+@@ -461,7 +461,7 @@ void if_disconn (void) { 
+ }
+ 
+ static void if_conn (void) {
+-  unsigned int j = 0, counter = 0;  c_info=con->clinet_info(); s_info=con->server_info();
++  unsigned int j = 0, counter = 0;  c_info=con->client_info(); s_info=con->server_info();
+   try {
+ 		Query query = con->query(); if (ldb) {ddd=(string)ldb; ldb=(char*)ddd.c_str();}
+     query << "show databases";
+@@ -526,7 +526,7 @@ static void if_conn (void) {
+ 			tables.insert(tables.end(),xx);
+ 		}
+ 		qSortHelp (0, (size_t) tables.size(), Fcmp, Exchange); 	
+-		ldb = (char *)databases[j].c_str(); c_info=con->clinet_info(); s_info=con->server_info();
++		ldb = (char *)databases[j].c_str(); c_info=con->client_info(); s_info=con->server_info();
+ 		b_connect->set();    down_group->activate();  query_browser->activate();
+ 		if (databases.size()) choice_db->activate();  choice_db->redraw(); 
+ 		; if (query_menus) hier->activate();
