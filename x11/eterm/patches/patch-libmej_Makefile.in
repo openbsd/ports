@@ -1,5 +1,5 @@
---- libmej/Makefile.in.orig	Wed Feb  9 15:59:13 2000
-+++ libmej/Makefile.in	Wed Feb  9 15:59:33 2000
+--- libmej/Makefile.in.orig	Fri Nov  5 14:03:53 1999
++++ libmej/Makefile.in	Mon Jul  3 01:58:10 2000
 @@ -107,7 +107,7 @@
  
  INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src -I.. -I$(includedir) -I$(prefix)/include $(X_CFLAGS)

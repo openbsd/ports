@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Wed Feb  9 15:45:19 2000
-+++ src/Makefile.in	Wed Feb  9 15:46:06 2000
+--- src/Makefile.in.orig	Fri Nov  5 14:03:54 1999
++++ src/Makefile.in	Mon Jul  3 01:58:09 2000
 @@ -106,7 +106,7 @@
  libEterm_la_SOURCES = activeconfig.c activeeterm.c activetags.c command.c 		graphics.c grkelot.c menubar.c misc.c netdisp.c options.c 		pixmap.c screen.c scrollbar.c system.c threads.c utmp.c
  
