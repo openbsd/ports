@@ -1,0 +1,23 @@
+$OpenBSD: patch-states_hl_Makefile_am,v 1.1 2002/05/11 22:31:24 matt Exp $
+
+        This patch has been sent to the author (Markku Rossi
+        <mtr@iki.fi>).
+
+--- states/hl/Makefile.am.orig	Tue Apr  3 12:46:17 2001
++++ states/hl/Makefile.am	Sat May 11 18:10:09 2002
+@@ -45,11 +45,11 @@ states = $(misc) $(styles) $(languages) 
+ EXTRA_DIST = $(states)
+ 
+ install-data-local:
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript/hl
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript/hl
+ 	for f in $(states); do \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(datadir)/enscript/hl/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(datadir)/enscript/hl/$$f; \
+ 	done
+ 
+ uninstall-local:
+-	rm -rf $(datadir)/enscript/hl
++	rm -rf $(DESTDIR)$(datadir)/enscript/hl

@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Wed Jul  1 02:28:28 1998
-+++ lib/Makefile.in	Sat Apr  3 00:43:56 1999
-@@ -240,12 +240,8 @@
+--- lib/Makefile.in.orig	Thu Jan 24 02:39:27 2002
++++ lib/Makefile.in	Sat May 11 11:03:21 2002
+@@ -254,12 +254,8 @@ mostlyclean distclean maintainer-clean
  all-local: enscript.cfg
  
  install-data-local: enscript.cfg

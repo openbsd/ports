@@ -1,0 +1,23 @@
+$OpenBSD: patch-afm_Makefile_am,v 1.1 2002/05/11 22:31:24 matt Exp $
+
+        This patch has been sent to the author (Markku Rossi
+        <mtr@iki.fi>).
+
+--- afm/Makefile.am.orig	Thu Jul  8 10:36:36 1999
++++ afm/Makefile.am	Sat May 11 18:11:02 2002
+@@ -36,11 +36,11 @@ public_fonts = matrix.afm matrix.pfa
+ EXTRA_DIST = font.map $(default_afm) $(public_fonts)
+ 
+ install-data-local:
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript/afm
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript/afm
+ 	for f in $(EXTRA_DIST); do \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(datadir)/enscript/afm/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(datadir)/enscript/afm/$$f; \
+ 	done
+ 
+ uninstall-local:
+-	rm -rf $(datadir)/enscript/afm
++	rm -rf $(DESTDIR)$(datadir)/enscript/afm
