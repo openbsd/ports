@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Apr 20 19:56:55 2000
++++ Makefile	Thu Apr 20 19:57:51 2000
+@@ -1,10 +1,16 @@
++INSTALL_PROGRAM = install -c -s -o root -g bin -m 555
++INSTALL_MAN = install -c -o root -g bin -m 444
++
+ all:	mmv mmv.1
+ 
+ mmv:	mmv.c
+ 	$(CC) -o mmv $(CFLAGS) mmv.c
+ install:	all
+-	@echo "Install mmv according to local convention,"
+-	@echo "then make links named mcp, mad, and mln to mmv."
+-	@echo "Under System V, edit mmv.1 to uncomment the .nr O 1 line."
++	${INSTALL_PROGRAM} mmv ${PREFIX}/bin ; \
++        ln -fs mmv ${PREFIX}/bin/mad ; \
++        ln -fs mmv ${PREFIX}/bin/mcp ; \
++        ln -fs mmv ${PREFIX}/bin/mln ; \
++        ${INSTALL_MAN} mmv.1 ${PREFIX}/man/man1
++
+ clean:
+ 	rm -f core a.out mmv mmv.o

@@ -3,14 +3,13 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/20 05:03:36 kevlo Exp $
 #
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
 
@@ -27,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}
 PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
-MAN1=		mmv.1
+FAKE=		Yes
 
 do-extract:
 	@rm -rf ${WRKDIR}
@@ -41,13 +40,5 @@ do-extract:
 	     ${SH} ${SCRIPTDIR}/unshar $$file; \
 	 done ; \
 	 cat mmv.c.? >mmv.c ; rm mmv.c.? 
-
-do-install:
-	cd ${PREFIX}/bin ; rm -f mmv mad mcp mln ; \
-	 ${INSTALL_PROGRAM} ${WRKSRC}/mmv ${PREFIX}/bin ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
-	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
