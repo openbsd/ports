@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/19 21:39:20 wilfried Exp $
+bin/spamassassin
+bin/spamc
+bin/spamd
+bin/spamproxyd
+${P5SITE}/Mail/SpamAssassin.pm
+${P5SITE}/Mail/SpamAssassin/AuditMessage.pm
+${P5SITE}/Mail/SpamAssassin/AutoWhitelist.pm
+${P5SITE}/Mail/SpamAssassin/Conf.pm
+${P5SITE}/Mail/SpamAssassin/ConfSourceSQL.pm
+${P5SITE}/Mail/SpamAssassin/DBBasedAddrList.pm
+${P5SITE}/Mail/SpamAssassin/Dns.pm
+${P5SITE}/Mail/SpamAssassin/EncappedMessage.pm
+${P5SITE}/Mail/SpamAssassin/EvalTests.pm
+${P5SITE}/Mail/SpamAssassin/ExposedMessage.pm
+${P5SITE}/Mail/SpamAssassin/Locales.pm
+${P5SITE}/Mail/SpamAssassin/Message.pm
+${P5SITE}/Mail/SpamAssassin/NoMailAudit.pm
+${P5SITE}/Mail/SpamAssassin/PerMsgStatus.pm
+${P5SITE}/Mail/SpamAssassin/PersistentAddrList.pm
+${P5SITE}/Mail/SpamAssassin/PhraseFreqs.pm
+${P5SITE}/Mail/SpamAssassin/Replier.pm
+${P5SITE}/Mail/SpamAssassin/Reporter.pm
+${P5SITE}/Mail/SpamAssassin/SMTP/SmartHost.pm
+${P5SITE}/auto/Mail/SpamAssassin/SMTP/SmartHost/autosplit.ix
+man/man1/spamassassin.1
+man/man1/spamc.1
+man/man1/spamd.1
+man/man1/spamproxyd.1
+man/man3p/Mail::SpamAssassin.3p
+man/man3p/Mail::SpamAssassin::Conf.3p
+man/man3p/Mail::SpamAssassin::PerMsgStatus.3p
+man/man3p/Mail::SpamAssassin::PersistentAddrList.3p
+man/man3p/Mail::SpamAssassin::SMTP::SmartHost.3p
+share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
+share/doc/SpamAssassin/README
+share/doc/SpamAssassin/procmailrc.example
+share/doc/SpamAssassin/sample-nonspam.txt
+share/doc/SpamAssassin/sample-spam.txt
+share/spamassassin/10_misc.cf
+share/spamassassin/20_body_tests.cf
+share/spamassassin/20_head_tests.cf
+share/spamassassin/25_body_tests_pl.cf
+share/spamassassin/25_head_tests_pl.cf
+share/spamassassin/30_text_es.cf
+share/spamassassin/30_text_pl.cf
+share/spamassassin/40_spam_phrases.cf
+share/spamassassin/50_scores.cf
+share/spamassassin/60_whitelist.cf
+share/spamassassin/user_prefs.template
+@dirrm share/spamassassin
+@dirrm share/doc/SpamAssassin
+@dirrm ${P5SITE}/auto/Mail/SpamAssassin/SMTP/SmartHost
+@dirrm ${P5SITE}/auto/Mail/SpamAssassin/SMTP
+@dirrm ${P5SITE}/auto/Mail/SpamAssassin
+@dirrm ${P5SITE}/Mail/SpamAssassin/SMTP
+@dirrm ${P5SITE}/Mail/SpamAssassin
