@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2002/12/26 18:51:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.32 2003/01/17 19:24:26 jakob Exp $
 
 COMMENT=		interactive spelling checker
+COMMENT-dutch=		ispell dictionary for Dutch
 COMMENT-french=		ispell dictionary for French
 COMMENT-german=		ispell dictionary for German
-COMMENT-swedish=	ispell dictionary for Swedish
 COMMENT-russian=	ispell dictionary for Russian
 COMMENT-portuguese=	ispell dictionary for Rortuguese
 COMMENT-slovak=		ispell dictionary for Slovak
 COMMENT-spanish=	ispell dictionary for Spanish
+COMMENT-swedish=	ispell dictionary for Swedish
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
@@ -19,17 +20,19 @@ HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		ftp://ftp.netsw.org/dict/tools/
-MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
-MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
-MASTER_SITES2=	http://www.sslug.dk/locale/ispell/iswedish/
-MASTER_SITES3=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
+MASTER_SITES0=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES1=	ftp://ftp.robot.ireq.ca/pub/ispell/
+MASTER_SITES2=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
+MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
+MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
-MASTER_SITES4=	http://natura.di.uminho.pt/~jj/pln/
-MASTER_SITES5=	http://ispell.hq.sk/
-MASTER_SITES6=	http://www.datsi.fi.upm.es/~coes/
+MASTER_SITES5=	http://natura.di.uminho.pt/~jj/pln/
+MASTER_SITES6=	http://ispell.hq.sk/
+MASTER_SITES7=	http://www.datsi.fi.upm.es/~coes/
 
 DIST_SUBDIR=	ispell
 
+DUTCH_DICT=		ispell-nl-1.0.0
 FRENCH_DICT=		francais-IREQ-1.4
 GERMAN_DICT=		hk2-deutsch
 SWEDISH_DICT=		iswedish-1.2.1
@@ -39,15 +42,17 @@ SLOVAK_DICT=		ispell-sk-0.1.10
 SPANISH_DICT=		espa~nol-1.7
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		${FRENCH_DICT}.tar.gz:0 \
-		${GERMAN_DICT}.tar.gz:1 \
-		${SWEDISH_DICT}.tar.gz:2 \
-		${RUSSIAN_DICT}.tar.gz:3 \
-		${PORTUGUESE_DICT}.tgz:4 \
-		${SLOVAK_DICT}.tar.gz:5  \
-		${SPANISH_DICT}.tar.gz:6
+		${DUTCH_DICT}.tar.gz:0 \
+		${FRENCH_DICT}.tar.gz:1 \
+		${GERMAN_DICT}.tar.gz:2 \
+		${SWEDISH_DICT}.tar.gz:3 \
+		${RUSSIAN_DICT}.tar.gz:4 \
+		${PORTUGUESE_DICT}.tgz:5 \
+		${SLOVAK_DICT}.tar.gz:6  \
+		${SPANISH_DICT}.tar.gz:7
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
+		${DUTCH_DICT}.tar.gz \
 		${SWEDISH_DICT}.tar.gz \
 		${PORTUGUESE_DICT}.tgz \
 		${SLOVAK_DICT}.tar.gz  \
@@ -55,7 +60,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 
 SUBST_VARS+=	VERSION
 
-MULTI_PACKAGES=	-french -german -swedish -russian -portuguese -slovak -spanish
+MULTI_PACKAGES=	-dutch -french -german -swedish -russian -portuguese \
+		-slovak -spanish
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
@@ -100,6 +106,9 @@ post-patch:
 post-build:
 	@sed "s%/usr/local%${PREFIX}%g" ${FILESDIR}/ispell-config > \
 		${WRKDIST}/ispell-config
+
+	@(cd ${WRKDIR}/${DUTCH_DICT}; \
+	${WRKDIST}/buildhash words-nl.ispell nederlands.aff nederlands.hash)
 
 	@(cd ${WRKDIR}/french; \
 	$(MAKE) RM='rm -f' HASH=${WRKDIST}/buildhash)
@@ -160,6 +169,8 @@ do-install:
 	ln -s american.aff ${PREFIX}/lib/ispell/default.aff
 	ln -s american.hash ${PREFIX}/lib/ispell/default.hash
 
+	${INSTALL_DATA} ${WRKDIR}/${DUTCH_DICT}/nederlands.{aff,hash} \
+		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/german/deutsch.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/french/francais.{aff,hash} \
