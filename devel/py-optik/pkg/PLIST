@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/24 11:58:24 shell Exp $
+lib/python${PYTHON_VER}/site-packages/optik/__init__.py
+lib/python${PYTHON_VER}/site-packages/optik/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/optik/errors.py
+lib/python${PYTHON_VER}/site-packages/optik/errors.pyc
+lib/python${PYTHON_VER}/site-packages/optik/option.py
+lib/python${PYTHON_VER}/site-packages/optik/option.pyc
+lib/python${PYTHON_VER}/site-packages/optik/option_parser.py
+lib/python${PYTHON_VER}/site-packages/optik/option_parser.pyc
+@dirrm lib/python${PYTHON_VER}/site-packages/optik
