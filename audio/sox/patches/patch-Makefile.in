@@ -1,7 +1,8 @@
---- Makefile.in.orig	Sun Sep 10 09:55:19 2000
-+++ Makefile.in	Sun Sep 10 09:59:15 2000
-@@ -10,6 +10,8 @@
- srcdir = @srcdir@
+$OpenBSD: patch-Makefile.in,v 1.2 2001/10/27 14:02:22 naddy Exp $
+--- Makefile.in.orig	Wed Sep  5 18:06:01 2001
++++ Makefile.in	Sun Oct 21 01:34:07 2001
+@@ -11,6 +11,8 @@ srcdir = @srcdir@
+ VPATH	= @srcdir@
  prefix = @prefix@
  
 +DESTDIR = 
@@ -9,7 +10,16 @@
  # Shell commands.
  
  CC	= @CC@
-@@ -82,30 +84,30 @@
+@@ -74,7 +76,7 @@ sox: libst.a sox.o
+ 	$(CC) $(LDFLAGS) -o sox sox.o $(LIBS)
+ 
+ soxmix.o: sox.c
+-	$(CC) $(CFLAGS) -DSOXMIX -c -o soxmix.o $<
++	$(CC) $(CFLAGS) -DSOXMIX -c -o soxmix.o $?
+ 
+ soxmix: libst.a soxmix.o
+ 	$(CC) $(LDFLAGS) -o soxmix soxmix.o $(LIBS)
+@@ -95,30 +97,30 @@ PLAY_INSTALL_0    =
  PLAY_INSTALL_1    = install-play
  
  install: sox $(PLAY_INSTALL_$(PLAY_SUPPORT))
@@ -37,7 +47,7 @@
 +	if [ -f $(DESTDIR)$(MANDIR)/man1/rec.1 ]; then $(RM) $(DESTDIR)$(MANDIR)/man1/rec.1; fi
 +	$(srcdir)/mkinstalldirs $(DESTDIR)$(MANDIR)/man1
 +	$(srcdir)/mkinstalldirs $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -c -m 755 $(srcdir)/play $(DESTDIR)$(BINDIR)
++	$(INSTALL) -c -m 755 play $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -c -m 644 $(srcdir)/play.1 $(DESTDIR)$(MANDIR)/man1
 +	cd $(DESTDIR)$(BINDIR) && ln -s play rec
 +	cd $(DESTDIR)$(MANDIR)/man1 && ln -s play.1 rec.1

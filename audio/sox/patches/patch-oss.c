@@ -1,6 +1,7 @@
---- oss.c.orig	Sun Sep 10 09:39:12 2000
-+++ oss.c	Sun Sep 10 09:39:38 2000
-@@ -31,6 +31,9 @@
+$OpenBSD: patch-oss.c,v 1.2 2001/10/27 14:02:22 naddy Exp $
+--- oss.c.orig	Wed Feb 21 21:57:01 2001
++++ oss.c	Sun Oct 21 00:56:31 2001
+@@ -30,6 +30,9 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <fcntl.h>
