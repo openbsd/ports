@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/19 00:24:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/24 17:57:02 espie Exp $
 
-DISTNAME=	ghostscript-6.0
-CATEGORIES=	print
+DISTNAME=	ghostscript-6.01
+CATEGORIES=	print lang
+NEED_VERSION=	1.218
 
-DIR=		aladdin/gs600
+DIR=		aladdin/gs601
 MASTER_SITES=	${GS_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/%7Eghost/
@@ -24,7 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-NEED_VERSION=	1.218
 
 MAINTAINER=	ports@openbsd.org
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:patch \
 LIB_DEPENDS=	png.1.3:${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
-WRKDIST=	${WRKDIR}/gs6.0
+WRKDIST=	${WRKDIR}/gs6.01
 BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
 		SHARE_LIBPNG=1 \
@@ -59,7 +59,7 @@ MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 
 MAKE_FILE=	src/unixansi.mak
 
-GS_SOURCES=	ghostscript-6.0.tar.gz
+GS_SOURCES=	ghostscript-6.01.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -102,8 +102,8 @@ pre-install:
 post-install:
 	strip ${PREFIX}/bin/gs
 	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
-		${PREFIX}/share/ghostscript/6.0/doc
+		${PREFIX}/share/ghostscript/6.01/doc
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
-		${PREFIX}/share/ghostscript/6.0/doc
+		${PREFIX}/share/ghostscript/6.01/doc
 
 .include <bsd.port.mk>

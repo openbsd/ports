@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/15 14:48:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 17:57:03 espie Exp $
 
 CATEGORIES=	print
 NEED_VERSION=	1.223
@@ -18,7 +18,7 @@ NO_BUILD=Yes
 
 .if defined(ALADDIN)
 DISTNAME=	aladdin-ghostscript-encrypt
-GSDIR=${PREFIX}/share/ghostscript/6.0/lib
+GSDIR=${PREFIX}/share/ghostscript/6.01/lib
 RUN_DEPENDS=${GSDIR}:print/ghostscript/aladdin
 PLIST=${PKGDIR}/PLIST.aladdin
 .else
