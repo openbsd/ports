@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/28 18:24:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/02/11 04:16:26 brad Exp $
 
-COMMENT=	"xml editor for KDE"
+COMMENT=	"XML editor for KDE"
 
 DISTNAME=	kxmleditor-0.7.2
 CATEGORIES=	editors
@@ -9,6 +9,7 @@ HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
@@ -18,24 +19,20 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts::x11/kde/libs3
 
-MODULES=	qt3
-PATCH_LIST=	${PORTSDIR}/x11/kde/arts3/patches/p-* patch-*
+MODKDE_VERSION=	3.1
+MODULES=	kde
 
-MAKE_ENV=	${CONFIGURE_ENV}
-# Ensure qt2 will always be at the front
-MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
+PORTHOME=	${WRKDIR}
+
+MAKE_ENV=	KDEDIR="${LOCALBASE}"
+MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-AUTOCONF_NEW=	Yes
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+= --disable-mt --enable-final --disable-threading
-CONFIGURE_ARGS+= --enable-static
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
+AUTOCONF_NEW=	Yes
+MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 
 .include <bsd.port.mk>

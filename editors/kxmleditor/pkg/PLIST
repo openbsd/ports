@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/06/25 02:41:10 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/02/11 04:16:26 brad Exp $
 bin/kxmleditor
-lib/libkxmleditorpart.a
 lib/libkxmleditorpart.la
+%%SHARED%%
 share/applnk/Applications/kxmleditor.desktop
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_prev.png
