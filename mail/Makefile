@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2004/07/26 10:58:56 peter Exp $
+# $OpenBSD: Makefile,v 1.126 2004/07/30 09:02:00 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += kbiff
      SUBDIR += mailcrypt
      SUBDIR += maildrop
+     SUBDIR += mailgraph
      SUBDIR += mailman
      SUBDIR += mailman,postfix
      SUBDIR += majordomo
