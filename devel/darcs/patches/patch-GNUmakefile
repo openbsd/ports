@@ -1,10 +1,11 @@
-$OpenBSD: patch-GNUmakefile,v 1.4 2004/07/31 03:18:29 dons Exp $
+$OpenBSD: patch-GNUmakefile,v 1.5 2004/08/10 02:33:01 dons Exp $
 
 Make the install a bit more standard, get rid of sysconfdir stuff.
-Put cgi-bin stuff in darcs dir instead. Don't try to install .ps docs
+Put cgi-bin stuff in darcs dir instead. 
+Don't try to build or install .ps docs, and don't regen the .html docs.
 
 --- GNUmakefile.orig	2004-07-26 22:22:34.000000000 +1000
-+++ GNUmakefile	2004-07-31 11:54:37.000000000 +1000
++++ GNUmakefile	2004-08-09 16:03:55.000000000 +1000
 @@ -91,15 +91,14 @@ installbin:	all
  	$(INSTALL) -d $(DESTDIR)/$(bindir)
  	$(INSTALL) darcs $(DESTDIR)/$(bindir)
@@ -17,7 +18,8 @@ Put cgi-bin stuff in darcs dir instead. Don't try to install .ps docs
  	$(INSTALL) -d $(DESTDIR)/$(mandir)/man1
  	$(INSTALL) -m 0644 darcs.1 $(DESTDIR)/$(mandir)/man1/
  
- installdocs:	darcs.ps manual/index.html
+-installdocs:	darcs.ps manual/index.html
++installdocs:
  	$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/manual
 -	$(INSTALL) -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
  	$(INSTALL) -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/darcs/manual
