@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.245 2000/04/01 15:49:06 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.246 2000/04/02 10:47:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1427,7 +1427,14 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .    endif
 .    if defined(USE_IMAKE)
+.      if exists(${X11BASE}/lib/X11/config/ports.cf)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
+.      else
+	@echo >&2 "Error: your X installation is not recent enough"
+	@echo >&2 "Update to a more recent version, or use a ports tree"
+	@echo >&2 "that predates March 18, 2000"
+	@exit 1
+.      endif
 .    endif
 # End of CONFIGURE.
 .  endif
