@@ -705,7 +705,6 @@ solid-pop3d-0.15p1-apop|mail/solid-pop3d,apop||flexible POP3 server|mail/solid-p
 sylpheed-0.5.1-pixbuf|mail/sylpheed,pixbuf||mail/news client in gtk+|mail/sylpheed/pkg/DESCR|Damien Couderc <couderc.damien@wanadoo.fr>|mail news x11|graphics/gdk-pixbuf x11/gtk+|graphics/gdk-pixbuf x11/gtk+|any|y|y|y|y
 tkrat-2.0.2|mail/tkrat||mail user agent for X in C with a Tcl/Tk frontend|mail/tkrat/pkg/DESCR|Rik Schneider <rik@deranged.schneider.org>|mail x11|lang/tcl/8.3 x11/tk/8.3|lang/tcl/8.3 x11/tk/8.3|any|y|y|y|y
 tnef-1.0.1|mail/tnef||decode MS-TNEF MIME attachments|mail/tnef/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|||any|y|y|y|y
-vmailmgr-0.96.9|mail/vmailmgr||virtual mail manager to qmail for multiple domains|mail/vmailmgr/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|mail||net/ucspi-unix sysutils/daemontools|any|y|y|y|y
 vrfy-99.05.22|mail/vrfy||verify email addresses and mailing lists|mail/vrfy/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|mail|||any|y|y|y|y
 wmbiff-0.2p|mail/wmbiff||xbiff-like Window Maker dock app|mail/wmbiff/pkg/DESCR|Cameron Lerch <opcode@skylab.saturn5.yi.org>|mail x11 x11/windowmaker|||any|y|y|y|y
 wmmail-0.64|mail/wmmail||wm-dockapp; mail notifier|mail/wmmail/pkg/DESCR|Peter Stromberg <wilfried@openbsd.org>|mail x11 x11/windowmaker|devel/gmake devel/libproplist|devel/libproplist x11/windowmaker|any|y|y|y|y
