@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2001/11/22 20:29:20 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2001/12/01 23:22:58 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
 COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
-VERSION=	4.42
+VERSION=	4.43
 PICO_VERSION=	4.2
 DISTNAME=	pine${VERSION}
 PKGNAME=	pine+pico-${VERSION}
 FULLPKGNAME-pico=pico-${PICO_VERSION}
 PKGNAME-pine=	pine-${VERSION}
-NEED_VERSION=	1.489
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
@@ -22,6 +22,8 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
 
 FLAVORS=	ldap
 FLAVOR?=
