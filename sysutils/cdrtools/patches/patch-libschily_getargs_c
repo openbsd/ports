@@ -1,0 +1,14 @@
+$OpenBSD: patch-libschily_getargs_c,v 1.1 2004/11/30 05:44:03 jolan Exp $
+--- libschily/getargs.c.orig	Mon Oct  6 04:01:07 2003
++++ libschily/getargs.c	Thu Oct  7 20:48:29 2004
+@@ -266,8 +266,8 @@ LOCAL int
+ doflag(pac, pav, argp, fmt, setargs, oargs)
+ 		int		*pac;
+ 		char	*const	**pav;
+-	register const char	*argp;
+-	register const char	*fmt;
++		const char	*argp;
++		const char	*fmt;
+ 		BOOL		setargs;
+ 		va_list		oargs;
+ {

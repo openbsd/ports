@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/09/16 02:13:34 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/30 05:44:02 jolan Exp $
 
 COMMENT=		"ISO 9660 filesystem and CD creation tools"
 
-DISTNAME=		cdrtools-2.00.3
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		cdrtools-2.01
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
 
@@ -19,32 +18,37 @@ MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/
 
 USE_GMAKE=		Yes
 
-FAKE_FLAGS=		INS_BASE=${WRKINST}${PREFIX} \
-			INSUSR=${BINOWN} \
-			INSGRP=${BINGRP} \
-			INSMODEX=${BINMODE} \
-			INSMODEF=${SHAREMODE} \
-			MANSECT=man1 \
-			MANSUFFIX=1
-
 MAKE_ENV=		MAKEPROG=${MAKE_PROGRAM} \
 			CCOM=${CC}
 
 NO_REGRESS=		Yes
 
+CDRMACH=		${MACHINE}-openbsd-${CC}
+
 .if ${MACHINE} != "i386" || ${CC} != "cc"
 do-configure:
 	@ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
+		${WRKSRC}/RULES/${CDRMACH}.rul
 .endif
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrtools
-	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${PREFIX}/share/doc/cdrtools
-	@strip ${PREFIX}/bin/* 
+do-install:
+	@cp ${WRKSRC}/mkisofs/mkisofs.8 ${WRKSRC}/mkisofs/mkisofs.1
+.for PROG in cdda2wav cdrecord mkisofs readcd
+	${INSTALL_PROGRAM} ${WRKBUILD}/${PROG}/OBJ/${CDRMACH}/${PROG} \
+		${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PROG}/${PROG}.1 ${PREFIX}/man/man1
+.endfor
+.for PROG in devdump isodebug isodump isoinfo isovfy
+	${INSTALL_PROGRAM} ${WRKBUILD}/mkisofs/diag/OBJ/${CDRMACH}/${PROG} \
+		${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 \
+		${PREFIX}/man/man1/isoinfo.1
 	@cd ${PREFIX}/man/man1; \
 		for i in devdump.1 isovfy.1 ; do \
 			ln -s isoinfo.1 $$i ; \
 		done
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrtools
+	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${PREFIX}/share/doc/cdrtools
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:11:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/11/30 05:44:03 jolan Exp $
 @conflict cdrecord-*
 bin/cdda2wav
 bin/cdrecord
@@ -7,31 +7,14 @@ bin/isodebug
 bin/isodump
 bin/isoinfo
 bin/isovfy
-@comment bin/mkhybrid
 bin/mkisofs
 bin/readcd
-@comment bin/scgcheck
-@comment include/align.h
-@comment include/avoffset.h
-@comment lib/libdeflt.a
-@comment lib/libedc_ecc.a
-@comment lib/libfile.a
-@comment lib/libhfs.a
-@comment lib/libparanoia.a
-@comment lib/librscg.a
-@comment lib/libscg.a
-@comment lib/libschily.a
-@comment lib/libunls.a
-@comment @man man/man1/cdda2ogg.1
 @man man/man1/cdda2wav.1
 @man man/man1/cdrecord.1
 @man man/man1/devdump.1
 @man man/man1/isoinfo.1
 @man man/man1/isovfy.1
-@comment @man man/man1/mkhybrid.1
 @man man/man1/mkisofs.1
 @man man/man1/readcd.1
-@comment @man man/man1/scgcheck.1
-@comment sbin/rscsi
 share/doc/cdrtools/
 share/doc/cdrtools/README.OpenBSD

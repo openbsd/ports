@@ -1,16 +1,16 @@
-$OpenBSD: patch-RULES_rules1_top,v 1.2 2003/02/17 15:32:58 naddy Exp $
---- RULES/rules1.top.orig	Sun Jan 27 22:59:10 2002
-+++ RULES/rules1.top	Fri May 24 16:57:34 2002
-@@ -204,7 +204,7 @@ PARCH=		$(__PARCH:$(_UNIQ)%=%)
- # interested to fix the bug.
+$OpenBSD: patch-RULES_rules1_top,v 1.3 2004/11/30 05:44:03 jolan Exp $
+--- RULES/rules1.top.orig	2004-01-22 16:55:16.000000000 -0800
++++ RULES/rules1.top	2004-03-08 19:45:37.000000000 -0800
+@@ -226,7 +226,7 @@ PARCH=		$(__PARCH:$(_UNIQ)%=%)
+ # See notes about $(SRCROOT)/ vs. $(SRCROOTSL) above.
  #
  ###########################################################################
--__DCC= $(SRCROOT)/incs/Dcc.$(PARCH)$(-O_ARCH)
-+__DCC= $(SRCROOT)/incs/Dcc.$(K_ARCH)$(-O_ARCH)
- _DCC=  $(__DCC:./%=%)
+-_DCC=	$(SRCROOTSL)incs/Dcc.$(PARCH)$(-O_ARCH)
++_DCC=	$(SRCROOTSL)incs/Dcc.$(K_ARCH)$(-O_ARCH)
  
  $(_DCC):
-@@ -228,7 +228,7 @@ include		$(_DCC)
+ 	sh $(SRCROOTSL)conf/cc-config.sh $(C_ARCH) $@
+@@ -249,7 +249,7 @@ include		$(_DCC)
  #
  ###########################################################################
  #OARCH=		$(MARCH)$(-O_ARCH)-$(C_ARCH)
