@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/02 15:47:07 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/08 22:26:44 naddy Exp $
 
 COMMENT= 	"vi clone, many additional features"
 
@@ -8,7 +8,7 @@ CATEGORIES=	editors
 NEED_VERSION=	1.361
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.oce.nl/pub/vim/unix/  \
+		ftp://ftp.home.vim.org/pub/vim/unix/  \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
