@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/16 13:34:34 couderc Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/17 18:35:32 couderc Exp $
 
-COMMENT=		"Ruby extension library for GTK Toolkit"
+COMMENT=		"Ruby interface to LBL Packet Capture library"
 
 VERSION=		0.6
 DISTNAME=		ruby-pcap-${VERSION}
