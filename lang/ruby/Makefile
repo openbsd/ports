@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/09/20 14:58:38 couderc Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/27 14:10:23 naddy Exp $
 
 COMMENT=	"object oriented script language with threads"
 VERSION=	1.6.7
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.3 \
 CONFIGURE_ARGS+=	--without-x11
 .endif
 
+REGRESS_TARGET=	test
 
 # Force rebuild of parse.c with yacc
 post-extract: 

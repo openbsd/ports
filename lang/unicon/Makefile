@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/09 16:07:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/27 14:10:23 naddy Exp $
 
 # XXX crashes & hangs on macppc, to be dealt with
 NOT_FOR_ARCHS=	powerpc
@@ -13,7 +13,6 @@ HOMEPAGE=	http://icon.cs.unlv.edu/
 
 MASTER_SITES=	http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-NEED_VERSION=	1.515
 
 # GPL
 PERMIT_DISTFILES_FTP= Yes
@@ -31,6 +30,8 @@ CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Unicon
 
 CONFIGURE_TARGET=X-Configure
+
+REGRESS_TARGET=	Test
 
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
