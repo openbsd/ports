@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/10/31 12:01:04 form Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/31 12:24:01 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=	"X11/Motif GUI text editor"
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nc ${PREFIX}/bin/ncl
 	${INSTALL_MAN} ${WRKSRC}/doc/nedit.man ${PREFIX}/man/man1/nedit.1
 	${INSTALL_MAN} ${WRKSRC}/doc/nc.man ${PREFIX}/man/man1/ncl.1
-	${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
+	${INSTALL_DATA} ${WRKSRC}/doc/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA} ${WRKSRC}/doc/nedit.doc ${PREFIX}/share/doc/nedit
 
