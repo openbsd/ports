@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/12 06:24:18 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/08/28 23:00:43 deraadt Exp $
 #
 
 DISTNAME=	SSLeay-0.8.1b
@@ -21,7 +21,9 @@ fetch-depends:
 	@${ECHO}
 	@${ECHO} You must set the variable USA_RESIDENT to YES if you are a USA
 	@${ECHO} resident or NO otherwise. USA residents must use the RSAREF2
-	@${ECHO} library to build this program \(RSA Inc. holds the patent on
+	@${ECHO} library to build this program \(RSA Inc. holds
+	@${ECHO} a patent on RSA in the USA - using RSA implementations
+	@${ECHO} other than RSAREF in the USA will violate the US patent\).
 	@${ECHO} the RSA algorithm and public key crypto in general - using RSA
 	@${ECHO} implementations other than RSAREF violate US patent law\).
 	@${ECHO} ""

@@ -3,7 +3,7 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1998/04/12 21:41:01 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/08/28 23:00:45 deraadt Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -38,9 +38,8 @@ fetch-depends:
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
 	@${ECHO} resident or NO otherwise.  USA residents must obtain the
 	@${ECHO} RSAREF2 library to generate this program.  \(RSA Inc. holds
-	@${ECHO} a patent on RSA and public key cypto in general - using RSA
-	@${ECHO} implementations other than RSAREF will violate the US patent
-	@${ECHO} law\).
+	@${ECHO} a patent on RSA in the USA - using RSA implementations
+	@${ECHO} other than RSAREF in the USA will violate the US patent\).
 	@${ECHO} ""
 	@${ECHO} RSAREF2 will be automatically obtained and used to generate
 	@${ECHO} this program when given the command \"make USA_RESIDENT=YES\"
