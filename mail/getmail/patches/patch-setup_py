@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/10/31 20:30:15 sturm Exp $
+--- setup.py.orig	Sun Aug 29 17:10:57 2004
++++ setup.py	Sun Aug 29 17:11:06 2004
+@@ -44,7 +44,6 @@ GETMAILDOCDIR = os.path.join(
+ 
+ GETMAILMANDIR = os.path.join(
+     datadir or prefix,
+-    'share',
+     'man',
+     'man1'
+ )
