@@ -3,7 +3,7 @@
 # Date created:			17 November 1997
 # Whom:				gene
 #
-# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:55 joey Exp $
+# $OpenBSD: Makefile,v 1.4 1997/12/15 06:54:00 gene Exp $
 #
 
 DISTNAME=       zsh-3.0.5
@@ -32,5 +32,12 @@ post-install:
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
+	@$(ECHO)
+	@$(ECHO) "Finished installing $(DISTNAME)"
+	@$(ECHO) "To complete the install, you should notify the system"
+	@$(ECHO) "that $(PREFIX)/bin/zsh is a valid shell by adding it to"
+	@$(ECHO) "/etc/shells."
+	@$(ECHO) "If you are unfamiliar with this file, consult the shells(5)"
+	@$(ECHO) "manual page."
 
 .include <bsd.port.mk>
