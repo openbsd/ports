@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2000/06/29 06:56:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.78 2000/07/13 05:43:10 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -52,7 +52,7 @@
 #    SUBDIR += kdenetwork
 #    SUBDIR += kirc
 #    SUBDIR += ldap
-#    SUBDIR += lftp
+     SUBDIR += lftp
 #    SUBDIR += libsocket++
      SUBDIR += libnet
      SUBDIR += libnids
