@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.2 2002/09/19 22:38:03 naddy Exp $
---- configure.orig	Mon Aug 26 05:29:53 2002
-+++ configure	Thu Sep 19 00:33:00 2002
+$OpenBSD: patch-configure,v 1.3 2003/06/22 20:05:06 pvalchev Exp $
+--- configure.orig	Mon Aug 26 06:29:53 2002
++++ configure	Fri Jun 13 01:40:24 2003
+@@ -1397,7 +1397,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1403 "configure"
+ #include "confdefs.h"
+@@ -1431,7 +1431,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lintl $LIBS"
++  LIBS="-lintl -liconv $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
 @@ -2820,7 +2820,7 @@ case "$libdir" in
  */cook/* | */cook )
  	;;
