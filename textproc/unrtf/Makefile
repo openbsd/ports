@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2004/02/21 01:11:46 pvalchev Exp $
+
 COMMENT=	"RTF document converter"
 
 VERSION=	0.18.1
@@ -6,7 +8,7 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.geocities.com/tuorfa/unrtf.html
 
-MASTER_SITES=		${MASTER_SITE_GNU:=unrtf/}
+MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
 
 MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net> \
 		Patroklos Argyroudis <argp@ieee.org>
@@ -17,8 +19,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WRKDIST=		${WRKDIR}/unrtf
-MAKE_FLAGS=CFLAGS='${CFLAGS}' CC='${CC}'
+WRKDIST=	${WRKDIR}/unrtf
+MAKE_FLAGS=	CFLAGS='${CFLAGS}' CC='${CC}'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin
@@ -26,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/unrtf.html ${PREFIX}/share/doc/unrtf/unrtf.html
 	${INSTALL_MAN} ${WRKSRC}/unrtf.1 ${PREFIX}/man/man1
 
-REGRESS_TARGET=tests
-REGRESS_FLAGS=PATH=${WRKSRC}
+REGRESS_TARGET=	tests
+REGRESS_FLAGS=	PATH=${WRKSRC}
 
 .include <bsd.port.mk>
