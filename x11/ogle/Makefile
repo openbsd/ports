@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/03/31 14:59:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/16 22:29:59 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -20,9 +20,8 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
-BUILD_DEPENDS=	::audio/liba52 
-
-LIB_DEPENDS=	dvdread.3.0::devel/libdvdread \
+LIB_DEPENDS=	a52::audio/liba52 \
+		dvdread.3.0::devel/libdvdread \
 		xml2.6.19:libxml>=2.4.19:textproc/libxml \
 		jpeg.62::graphics/jpeg \
 		mad::audio/mad
