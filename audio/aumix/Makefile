@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/11/25 22:39:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2004/04/13 18:36:57 naddy Exp $
 
 COMMENT=	"full-screen ncurses or GTK-based audio mixer"
 
@@ -25,14 +25,16 @@ FLAVORS=	no_x11 no_curses dummy
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-own-labels --without-gtk
+CONFIGURE_ARGS=	--enable-own-labels --without-gtk1
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib'
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+= --without-gtk1
+CONFIGURE_ARGS+= --without-gtk
 .else
-LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS+=	gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
+USE_X11=	Yes
 .endif
 
 .if ${FLAVOR:L:Mno_curses} 
