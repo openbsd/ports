@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST-shmop,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+@comment $OpenBSD: PLIST-shmop,v 1.2 2004/12/21 12:15:02 espie Exp $
+@conflict php4-shmop-*
 lib/php/modules/shmop.so

@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST-dbx,v 1.1 2003/04/03 14:04:26 avsm Exp $
+@comment $OpenBSD: PLIST-dbx,v 1.2 2004/12/21 12:15:02 espie Exp $
+@conflict php5-dbx-*
 lib/php/modules/dbx.so

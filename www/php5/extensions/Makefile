@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/21 12:15:02 espie Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--without-mcrypt
 MULTI_PACKAGES+=	-mcrypt
 COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php5"
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool
+MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool,-ltdl
 .endif
 
 # mhash
@@ -272,7 +272,7 @@ XMLRPC_DEPENDS=		expat.2::textproc/expat
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}
+FULLPKGNAME${i}=	php5${i}-${V}p0
 .endif
 .endfor
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.37 2004/12/21 12:15:01 espie Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -169,7 +169,7 @@ CONFIGURE_ARGS+=	--without-mcrypt
 MULTI_PACKAGES+=	-mcrypt
 COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php4"
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool
+MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool,-ltdl
 .endif
 
 # mhash
@@ -294,7 +294,7 @@ XSLT_DEPENDS=		sablot.96::textproc/sablotron expat.2::textproc/expat
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php4${i}-${V}
+FULLPKGNAME${i}=	php4${i}-${V}p0
 .endif
 .endfor
 
