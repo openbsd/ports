@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_ui_c,v 1.1 2001/01/19 09:02:09 form Exp $
+--- util_ui.c.orig	Fri Jan 19 14:30:30 2001
++++ util_ui.c	Fri Jan 19 14:30:37 2001
+@@ -442,7 +442,7 @@ void add_tab( DWORD uin )
+ {
+    int i, j;
+    char *new=NULL;
+-   char *temp;
++   char *temp=NULL;
+    char *orig;
+    
+    for ( i=0; i < Num_Contacts; i++ )

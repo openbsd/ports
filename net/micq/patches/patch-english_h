@@ -1,0 +1,11 @@
+$OpenBSD: patch-english_h,v 1.1 2001/01/19 09:02:08 form Exp $
+--- english.h.orig	Sat Jun 10 05:18:39 2000
++++ english.h	Fri Jan 19 14:57:17 2001
+@@ -282,6 +282,7 @@
+ /* Having 2 strings with the nickname inserted in the middle */
+ /* will hopefully solve any potential word order problems */
+ #define MESSAGE_SENT_1_STR  "Message sent to "
++#define MESSAGE_SENT_1a_STR "Sending message to "
+ #define MESSAGE_SENT_2_STR  "!\n"
+ 
+ /********************************************************************/

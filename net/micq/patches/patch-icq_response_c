@@ -1,0 +1,12 @@
+$OpenBSD: patch-icq_response_c,v 1.1 2001/01/19 09:02:08 form Exp $ 
+--- icq_response.c.orig	Sat Jun 10 05:18:39 2000
++++ icq_response.c	Fri Jan 19 14:28:16 2001
+@@ -876,7 +876,7 @@ void Do_Msg( SOK_T sok, DWORD type, WORD
+       char_conv ("wc",data);
+       strcpy (url_data,data);
+       
+-      sprintf (message,"Description: %s \n                          URL: %s",url_desc,url_data);  
++      snprintf (message, sizeof(message), "Description: %s \n                          URL: %s",url_desc,url_data);  
+       if ( UIN2nick( uin ) != NULL )
+          log_event( uin, LOG_MESS, "You received URL message from %s\n%s\n", UIN2nick(uin), message );
+       else

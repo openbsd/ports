@@ -1,0 +1,59 @@
+$OpenBSD: patch-ui_c,v 1.1 2001/01/19 09:02:09 form Exp $
+--- ui.c.orig	Fri Jan 19 14:50:09 2001
++++ ui.c	Fri Jan 19 14:56:24 2001
+@@ -51,6 +51,10 @@ Changes :
+ #ifdef __BEOS__
+ #include "beos.h"
+ #endif
++
++#ifndef MESSAGE_SENT_1a_STR
++#define MESSAGE_SENT_1a_STR MESSAGE_SENT_1_STR
++#endif
+  
+ MORE_INFO_STRUCT user;
+ 
+@@ -176,7 +180,7 @@ BOOL Do_Multiline( SOK_T sok, char *buf 
+    if ( strcmp( buf, END_MSG_STR ) == 0 )
+    {
+       icq_sendmsg( sok, multi_uin, msg, NORM_MESS );
+-      M_print( MESSAGE_SENT_1_STR );
++      M_print( MESSAGE_SENT_1a_STR );
+       Print_UIN_Name( multi_uin );
+       M_print( MESSAGE_SENT_2_STR );
+       last_uin = multi_uin;
+@@ -202,7 +206,7 @@ BOOL Do_Multiline( SOK_T sok, char *buf 
+       else
+       {
+          M_print( MESSAGE_BUFFER_FULL_STR );
+-         M_print( MESSAGE_SENT_1_STR );
++         M_print( MESSAGE_SENT_1a_STR );
+          Print_UIN_Name( multi_uin );
+          M_print( MESSAGE_SENT_2_STR );
+          icq_sendmsg( sok, multi_uin, msg, NORM_MESS );
+@@ -1694,7 +1698,7 @@ static void Message_Function( SOK_T sok 
+    if ( arg1 != NULL )
+    {
+       icq_sendmsg( sok, uin, arg1, NORM_MESS );
+-      M_print( MESSAGE_SENT_1_STR );
++      M_print( MESSAGE_SENT_1a_STR );
+       Print_UIN_Name( last_uin );
+       M_print( MESSAGE_SENT_2_STR );
+    }
+@@ -1733,7 +1737,7 @@ static void Reply_Function( SOK_T sok )
+    if ( arg1 != NULL )
+    {
+       icq_sendmsg( sok, last_recv_uin, arg1, NORM_MESS );
+-      M_print( MESSAGE_SENT_1_STR );
++      M_print( MESSAGE_SENT_1a_STR );
+       Print_UIN_Name( last_recv_uin );
+       M_print( MESSAGE_SENT_2_STR );
+    }
+@@ -1768,7 +1772,7 @@ static void Again_Function( SOK_T sok )
+    if ( arg1 != NULL )
+    {
+       icq_sendmsg( sok, last_uin, arg1, NORM_MESS );
+-      M_print( MESSAGE_SENT_1_STR );
++      M_print( MESSAGE_SENT_1a_STR );
+       Print_UIN_Name( last_uin );
+       M_print( MESSAGE_SENT_2_STR );					 
+    } else {

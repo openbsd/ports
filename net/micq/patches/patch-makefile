@@ -1,25 +1,22 @@
-# $OpenBSD: patch-makefile,v 1.1 2000/04/03 16:01:32 form Exp $
-
---- Makefile.orig	Mon Apr  3 22:33:39 2000
-+++ Makefile	Mon Apr  3 22:41:23 2000
-@@ -1,14 +1,18 @@
- # Anyone who knows how to make Makefiles please help out.
- # I have no clue but this appears to work fairly well
- # be sure to use gmake
+$OpenBSD: patch-makefile,v 1.2 2001/01/19 09:02:08 form Exp $
+--- Makefile.orig	Fri Jun  9 17:18:38 2000
++++ Makefile	Thu Jan 18 04:21:09 2001
+@@ -5,9 +5,16 @@
+ # Most options that were here and soem that weren't have been moved to config.h
+ # edit that file to set up options.
+ #
 -CC = gcc
--CFLAGS = -O4 -Wall -DUNIX -DANSI_COLOR 
+-CFLAGS = -O4 -Wall -DUNIX 
 +#CC = gcc
-+CFLAGS += -DUNIX -DANSI_COLOR 
- CFLAGS += -DMAX_CONTACTS=255
- CFLAGS += -DUSE_MREADLINE
- #CFLAGS += -DCOLOR_SCHEME_A
- #CFLAGS += -DCOLOR_SCHEME_B
- #CFLAGS += -DCOLOR_SCHEME_M
++CFLAGS += -O4 -Wall -DUNIX
++
 +.if defined(MICQ_LANG)
 +CFLAGS += -D${MICQ_LANG}_LANG
 +.else
  CFLAGS += -DENGLISH_LANG
 +.endif
++
++#CFLAGS += -DENGLISH_LANG
  #CFLAGS += -DBULGARIAN_LANG
  #CFLAGS += -DPOLISH_LANG
  #CFLAGS += -DSPANISH_LANG

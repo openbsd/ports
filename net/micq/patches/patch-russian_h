@@ -1,0 +1,11 @@
+$OpenBSD: patch-russian_h,v 1.1 2001/01/19 09:02:08 form Exp $
+--- russian.h.orig	Sat Jun 10 05:18:39 2000
++++ russian.h	Fri Jan 19 14:57:17 2001
+@@ -282,6 +282,7 @@ slightly corrected: sts@card.ru 19990525
+ /* Having 2 strings with the nickname inserted in the middle */
+ /* will hopefully solve any potential word order problems */
+ #define MESSAGE_SENT_1_STR  "Сообщение ушло "
++#define MESSAGE_SENT_1a_STR "Отправка сообщения "
+ #define MESSAGE_SENT_2_STR  "!\n"
+ 
+ /********************************************************************/
