@@ -1,10 +1,10 @@
---- man/Makefile.in.orig	Mon Nov 29 11:42:44 1999
-+++ man/Makefile.in	Tue Dec 21 18:20:00 1999
+--- man/Makefile.in.orig	Mon Nov 29 17:42:44 1999
++++ man/Makefile.in	Mon Mar  6 17:39:00 2000
 @@ -41,6 +41,7 @@
  SED	= sed
  MV	= mv
  RM	= rm -f
-+LN	= ln -sf
++LN     = ln -sf
  INSTALL	= @INSTALL@
  
  #
@@ -13,7 +13,7 @@
  # up alternate files for multi-function manual pages.
  #
 -#MANDIR	= man3/
-+MANDIR	=
++MANDIR	= 
  
  MANTOOLS=\
  	apps/fax2tiff.1 \
@@ -74,59 +74,77 @@
 -lib/TIFFmemcmp.3t:;		${ECHO} ".so ${MANDIR}TIFFmemory.3t" > $@
 -lib/TIFFReadBufferSetup.3t:;	${ECHO} ".so ${MANDIR}TIFFbuffer.3t" > $@
 -lib/TIFFWriteBufferSetup.3t:;	${ECHO} ".so ${MANDIR}TIFFbuffer.3t" > $@
-+lib/TIFFComputeTile.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFCheckTile.3t:;		${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFNumberOfTiles.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFComputeStrip.3t:;	${LN} ${MANDIR}TIFFstrip.3t $@
-+lib/TIFFNumberOfStrips.3t:;	${LN} ${MANDIR}TIFFstrip.3t $@
-+lib/TIFFCurrentDirectory.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFCurrentRow.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFCurrentStrip.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFCurrentTile.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFFdOpen.3t:;		${LN} ${MANDIR}TIFFOpen.3t $@
-+lib/TIFFFileName.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFFileno.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFFlushData.3t:;		${LN} ${MANDIR}TIFFFlush.3t $@
-+lib/TIFFGetMode.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFIsTiled.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFIsByteSwapped.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFIsUpSampled.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFIsMSB2LSB.3t:;		${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFLastDirectory.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
-+lib/TIFFReverseBits.3t:;	${LN} ${MANDIR}TIFFswab.3t $@
-+lib/TIFFRGBAImageOK.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
-+lib/TIFFRGBAImageBegin.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
-+lib/TIFFRGBAImageGet.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
-+lib/TIFFRGBAImageEnd.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
-+lib/TIFFSetErrorHandler.3t:;	${LN} ${MANDIR}TIFFError.3t $@
-+lib/TIFFSetSubDirectory.3t:;	${LN} ${MANDIR}TIFFSetDirectory.3t $@
-+lib/TIFFSetWarningHandler.3t:;	${LN} ${MANDIR}TIFFWarning.3t $@
-+lib/TIFFSwabArrayOfLong.3t:;	${LN} ${MANDIR}TIFFswab.3t $@
-+lib/TIFFSwabArrayOfShort.3t:;	${LN} ${MANDIR}TIFFswab.3t $@
-+lib/TIFFSwabLong.3t:;		${LN} ${MANDIR}TIFFswab.3t $@
-+lib/TIFFSwabShort.3t:;		${LN} ${MANDIR}TIFFswab.3t $@
-+lib/TIFFScanlineSize.3t:;	${LN} ${MANDIR}TIFFsize.3t $@
-+lib/TIFFRasterScanlineSize.3t:;	${LN} ${MANDIR}TIFFsize.3t $@
-+lib/TIFFDefaultStripSize.3t:;	${LN} ${MANDIR}TIFFstrip.3t $@
-+lib/TIFFStripSize.3t:;		${LN} ${MANDIR}TIFFstrip.3t $@
-+lib/TIFFVStripSize.3t:;		${LN} ${MANDIR}TIFFstrip.3t $@
-+lib/TIFFTileSize.3t:;		${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFVTileSize.3t:;		${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFDefaultTileSize.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFTileRowSize.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
-+lib/TIFFVGetField.3t:;		${LN} ${MANDIR}TIFFGetField.3t $@
-+lib/TIFFVSetField.3t:;		${LN} ${MANDIR}TIFFSetField.3t $@
-+lib/TIFFFindCODEC.3t:;		${LN} ${MANDIR}TIFFcodec.3t $@
-+lib/TIFFRegisterCODEC.3t:;	${LN} ${MANDIR}TIFFcodec.3t $@
-+lib/TIFFUnRegisterCODEC.3t:;	${LN} ${MANDIR}TIFFcodec.3t $@
-+lib/TIFFmalloc.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFrealloc.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFfree.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFmemset.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFmemcpy.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFmemcmp.3t:;		${LN} ${MANDIR}TIFFmemory.3t $@
-+lib/TIFFReadBufferSetup.3t:;	${LN} ${MANDIR}TIFFbuffer.3t $@
-+lib/TIFFWriteBufferSetup.3t:;	${LN} ${MANDIR}TIFFbuffer.3t $@
++lib/TIFFComputeTile.3t:;       ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFCheckTile.3t:;         ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFNumberOfTiles.3t:;     ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFComputeStrip.3t:;      ${LN} ${MANDIR}TIFFstrip.3t $@
++lib/TIFFNumberOfStrips.3t:;    ${LN} ${MANDIR}TIFFstrip.3t $@
++lib/TIFFCurrentDirectory.3t:;  ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFCurrentRow.3t:;                ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFCurrentStrip.3t:;      ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFCurrentTile.3t:;       ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFFdOpen.3t:;            ${LN} ${MANDIR}TIFFOpen.3t $@
++lib/TIFFFileName.3t:;          ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFFileno.3t:;            ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFFlushData.3t:;         ${LN} ${MANDIR}TIFFFlush.3t $@
++lib/TIFFGetMode.3t:;           ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFIsTiled.3t:;           ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFIsByteSwapped.3t:;     ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFIsUpSampled.3t:;       ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFIsMSB2LSB.3t:;         ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFLastDirectory.3t:;     ${LN} ${MANDIR}TIFFquery.3t $@
++lib/TIFFReverseBits.3t:;       ${LN} ${MANDIR}TIFFswab.3t $@
++lib/TIFFRGBAImageOK.3t:;       ${LN} ${MANDIR}TIFFRGBAImage.3t $@
++lib/TIFFRGBAImageBegin.3t:;    ${LN} ${MANDIR}TIFFRGBAImage.3t $@
++lib/TIFFRGBAImageGet.3t:;      ${LN} ${MANDIR}TIFFRGBAImage.3t $@
++lib/TIFFRGBAImageEnd.3t:;      ${LN} ${MANDIR}TIFFRGBAImage.3t $@
++lib/TIFFSetErrorHandler.3t:;   ${LN} ${MANDIR}TIFFError.3t $@
++lib/TIFFSetSubDirectory.3t:;   ${LN} ${MANDIR}TIFFSetDirectory.3t $@
++lib/TIFFSetWarningHandler.3t:; ${LN} ${MANDIR}TIFFWarning.3t $@
++lib/TIFFSwabArrayOfLong.3t:;   ${LN} ${MANDIR}TIFFswab.3t $@
++lib/TIFFSwabArrayOfShort.3t:;  ${LN} ${MANDIR}TIFFswab.3t $@
++lib/TIFFSwabLong.3t:;          ${LN} ${MANDIR}TIFFswab.3t $@
++lib/TIFFSwabShort.3t:;         ${LN} ${MANDIR}TIFFswab.3t $@
++lib/TIFFScanlineSize.3t:;      ${LN} ${MANDIR}TIFFsize.3t $@
++lib/TIFFRasterScanlineSize.3t:;        ${LN} ${MANDIR}TIFFsize.3t $@
++lib/TIFFDefaultStripSize.3t:;  ${LN} ${MANDIR}TIFFstrip.3t $@
++lib/TIFFStripSize.3t:;         ${LN} ${MANDIR}TIFFstrip.3t $@
++lib/TIFFVStripSize.3t:;                ${LN} ${MANDIR}TIFFstrip.3t $@
++lib/TIFFTileSize.3t:;          ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFVTileSize.3t:;         ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFDefaultTileSize.3t:;   ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFTileRowSize.3t:;       ${LN} ${MANDIR}TIFFtile.3t $@
++lib/TIFFVGetField.3t:;         ${LN} ${MANDIR}TIFFGetField.3t $@
++lib/TIFFVSetField.3t:;         ${LN} ${MANDIR}TIFFSetField.3t $@
++lib/TIFFFindCODEC.3t:;         ${LN} ${MANDIR}TIFFcodec.3t $@
++lib/TIFFRegisterCODEC.3t:;     ${LN} ${MANDIR}TIFFcodec.3t $@
++lib/TIFFUnRegisterCODEC.3t:;   ${LN} ${MANDIR}TIFFcodec.3t $@
++lib/TIFFmalloc.3t:;            ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFrealloc.3t:;           ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFfree.3t:;              ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFmemset.3t:;            ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFmemcpy.3t:;            ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFmemcmp.3t:;            ${LN} ${MANDIR}TIFFmemory.3t $@
++lib/TIFFReadBufferSetup.3t:;   ${LN} ${MANDIR}TIFFbuffer.3t $@
++lib/TIFFWriteBufferSetup.3t:;  ${LN} ${MANDIR}TIFFbuffer.3t $@
  
  apps/Makefile:
  	test -d apps || mkdir apps
+@@ -336,7 +337,7 @@
+ 	 ${ECHO} 'install:';						\
+ 	 for i in *.1; do						\
+ 	    f=${MANAPPNAME};						\
+-	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F ${MAN}/${MANAPPS}	\
++	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F $${DESTDIR}${MAN}/${MANAPPS}\
+ 		-idb tiff.man.tools -src' apps/"$$i" '-O' "$$f";	\
+ 	 done								\
+ 	)>apps/Makefile
+@@ -348,7 +349,7 @@
+ 	 ${ECHO} 'install:';						\
+ 	 for i in *.3t; do						\
+ 	    f=${MANLIBNAME};						\
+-	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F ${MAN}/${MANLIB}	\
++	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F $${DESTDIR}${MAN}/${MANLIB}	\
+ 		-idb tiff.man.dev -src' lib/"$$i" '-O' "$$f";		\
+ 	 done								\
+ 	)>lib/Makefile

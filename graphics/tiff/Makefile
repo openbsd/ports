@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/06 16:48:26 espie Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
 CATEGORIES=	graphics
-NEED_VERSION=	1.223
 MASTER_SITES=	http://www.libtiff.org/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	brad@openbsd.org
 
@@ -14,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    jpeg.62:graphics/jpeg
+LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN="${PREFIX}/bin" \
-		--with-DIR_LIB="${PREFIX}/lib" \
-		--with-DIR_INC="${PREFIX}/include" \
-		--with-DIR_MAN="${PREFIX}/man" \
+CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
+		--with-DIR_LIB='$${DESTDIR}${PREFIX}/lib' \
+		--with-DIR_INC='$${DESTDIR}${PREFIX}/include' \
+		--with-DIR_MAN='$${DESTDIR}${PREFIX}/man' \
 		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
 		--with-DIRS_LIBINC="${PREFIX}/include" \
 		--with-DIR_GZLIB="/usr/lib" \
@@ -30,6 +31,8 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN="${PREFIX}/bin" \
 		--noninteractive
 
 DOCDIR=	${PREFIX}/share/doc/tiff
+
+FAKE=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/images
