@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/21 15:07:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/13 17:04:02 kevlo Exp $
 lib/X11/fonts/TrueType/bkai00mp.ttf
 lib/X11/fonts/TrueType/bsmi00lp.ttf
 lib/X11/fonts/TrueType/gbsn00lp.ttf
 lib/X11/fonts/TrueType/gkai00mp.ttf
+@exec echo "Remember to add %B to your font path."
 @unexec echo "Remove %B manually if it's now empty"
