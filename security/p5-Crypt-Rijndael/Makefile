@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/04 15:46:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/03/01 09:22:50 david Exp $
 
-COMMENT=	"interface to the rijndael encryption alogorithm aka AES"
+COMMENT=	"interface to the rijndael encryption algorithm aka AES"
 
 DISTNAME=	Crypt-Rijndael-0.05
 PKGNAME=	p5-${DISTNAME}

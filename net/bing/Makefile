@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/03/01 09:22:50 david Exp $
 
-COMMENT=	"point-to-point bandwith measurement tool"
+COMMENT=	"point-to-point bandwidth measurement tool"
 
 DISTNAME=	bing-1.0.4
 PKGNAME=	${DISTNAME}p1

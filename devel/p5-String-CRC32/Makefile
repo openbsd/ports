@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/03/01 09:22:50 david Exp $
 
-COMMENT=	"interface for cyclic redundency check generation"
+COMMENT=	"interface for cyclic redundancy check generation"
 
 DISTNAME=	String-CRC32-1.2
 PKGNAME=	p5-${DISTNAME}

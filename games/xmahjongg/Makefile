@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/17 19:01:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2003/03/01 09:22:50 david Exp $
 
-COMMENT=	Colorful solitarie Mah jongg game for X11
+COMMENT=	Colorful solitaire Mah Jongg game for X11
 
 DISTNAME=	xmahjongg-3.6.1
 CATEGORIES=	games x11

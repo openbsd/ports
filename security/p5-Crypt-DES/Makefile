@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/12 16:01:17 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2003/03/01 09:22:50 david Exp $
 
-COMMENT= 	"interface to the DES encryption alogorithm"
+COMMENT= 	"interface to the DES encryption algorithm"
 
 VERSION=	2.03
 DISTNAME=	Crypt-DES-${VERSION}

@@ -1,6 +1,6 @@
 +------------
 | In order to use fvwm95 as your window manager, you must change your
-| .xinitrc or .xsession appropriately and add a line similiar to the
+| .xinitrc or .xsession appropriately and add a line similar to the
 | following:
 |
 | 	exec ${PREFIX}/bin/fvwm95
