@@ -1,0 +1,37 @@
+
+MPlayer is a movie player for LINUX (runs on many other Unices, and
+non-x86 CPUs, see the documentation). It plays most MPEG, VOB, AVI,
+VIVO, ASF/WMV, QT/MOV, FLI, NuppelVideo, yuv4mpeg, FILM, RoQ, and some
+RealMedia files, supported by many native, XAnim, and Win32 DLL codecs.
+You can watch VideoCD, SVCD, DVD, 3ivx, FLI, and even DivX movies too
+(and you don't need the avifile library at all!).
+
+Another big feature of mplayer is the wide range of supported output
+drivers.  It works with X11, Xv, DGA, OpenGL, SVGAlib, fbdev, AAlib, but
+you can use SDL (and this way all drivers of SDL), VESA (on every VESA
+compatible card, even without X!), and some lowlevel card-specific
+drivers (for Matrox, 3Dfx and Radeon) too! Most of them supports
+software or hardware scaling, so you can enjoy movies in fullscreen.
+MPlayer supports displaying through some hardware MPEG decoder boards,
+such as the DVB and DXR3/Hollywood+ !  And what about the nice big
+antialiased shaded subtitles (9 supported types!!!) with european/ISO
+8859-1,2 (hungarian, english, czech, etc), cyrillic, korean fonts, and
+OSD?
+
+Flavors:
+
+  sdl: enables sdl, requires devel/sdl
+
+  ggi: enables ggi, requires graphics/ggi
+
+  debug: enables debugging information
+
+  mad: enables mad, requires audio/mad
+
+  oss: enables oss audio
+
+  win32: enables win32 codecs
+
+  dvd: enables dvd reading, requires devel/libdvdread
+
+WWW: ${HOMEPAGE}

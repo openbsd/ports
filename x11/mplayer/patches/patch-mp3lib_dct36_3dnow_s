@@ -1,0 +1,247 @@
+$OpenBSD: patch-mp3lib_dct36_3dnow_s,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+--- mp3lib/dct36_3dnow.s.orig	Fri May  3 20:29:19 2002
++++ mp3lib/dct36_3dnow.s	Fri May  3 20:31:37 2002
+@@ -26,9 +26,9 @@
+ /// this program. Use it at your own risk.
+ /// 
+ 
+-	.globl dct36_3dnow
+-	.type	 dct36_3dnow,@function
+-dct36_3dnow:
++	.globl _dct36_3dnow
++	.type	 _dct36_3dnow,@function
++_dct36_3dnow:
+ 	pushl %ebp
+ 	movl %esp,%ebp
+ 	subl $120,%esp
+@@ -120,9 +120,9 @@ dct36_3dnow:
+ 
+ 	movq 24(%eax),%mm0
+ 	movq 48(%eax),%mm1
+-	movd COS9+12,%mm2
++	movd _COS9+12,%mm2
+ 	punpckldq %mm2,%mm2
+-	movd COS9+24,%mm3
++	movd _COS9+24,%mm3
+ 	punpckldq %mm3,%mm3
+ 	pfmul %mm2,%mm0
+ 	pfmul %mm3,%mm1
+@@ -132,41 +132,41 @@ dct36_3dnow:
+ 	pi2fd %mm7,%mm7
+ 	popl %eax
+ 	movq 8(%eax),%mm2
+-	movd COS9+4,%mm3
++	movd _COS9+4,%mm3
+ 	punpckldq %mm3,%mm3
+ 	pfmul %mm3,%mm2
+ 	pfadd %mm0,%mm2
+ 	movq 40(%eax),%mm3
+-	movd COS9+20,%mm4
++	movd _COS9+20,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfadd %mm3,%mm2
+ 	movq 56(%eax),%mm3
+-	movd COS9+28,%mm4
++	movd _COS9+28,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfadd %mm3,%mm2
+ 	movq (%eax),%mm3
+ 	movq 16(%eax),%mm4
+-	movd COS9+8,%mm5
++	movd _COS9+8,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfadd %mm4,%mm3
+ 	movq 32(%eax),%mm4
+-	movd COS9+16,%mm5
++	movd _COS9+16,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfadd %mm4,%mm3
+ 	pfadd %mm1,%mm3
+ 	movq 64(%eax),%mm4
+-	movd COS9+32,%mm5
++	movd _COS9+32,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfadd %mm4,%mm3
+ 	movq %mm2,%mm4
+ 	pfadd %mm3,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+0,%mm5
++	punpckldq _tfcos36+0,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -192,7 +192,7 @@ dct36_3dnow:
+ 	movq %mm3,%mm4
+ 	pfsub %mm2,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+32,%mm5
++	punpckldq _tfcos36+32,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -220,7 +220,7 @@ dct36_3dnow:
+ 	pfsub %mm3,%mm2
+ 	movq 56(%eax),%mm3
+ 	pfsub %mm3,%mm2
+-	movd COS9+12,%mm3
++	movd _COS9+12,%mm3
+ 	punpckldq %mm3,%mm3
+ 	pfmul %mm3,%mm2
+ 	movq 16(%eax),%mm3
+@@ -228,7 +228,7 @@ dct36_3dnow:
+ 	pfsub %mm4,%mm3
+ 	movq 64(%eax),%mm4
+ 	pfsub %mm4,%mm3
+-	movd COS9+24,%mm4
++	movd _COS9+24,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	movq 48(%eax),%mm4
+@@ -238,7 +238,7 @@ dct36_3dnow:
+ 	movq %mm2,%mm4
+ 	pfadd %mm3,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+4,%mm5
++	punpckldq _tfcos36+4,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -264,7 +264,7 @@ dct36_3dnow:
+ 	movq %mm3,%mm4
+ 	pfsub %mm2,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+28,%mm5
++	punpckldq _tfcos36+28,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -289,41 +289,41 @@ dct36_3dnow:
+ 	movd %mm5,2048(%ebx)
+ 
+ 	movq 8(%eax),%mm2
+-	movd COS9+20,%mm3
++	movd _COS9+20,%mm3
+ 	punpckldq %mm3,%mm3
+ 	pfmul %mm3,%mm2
+ 	pfsub %mm0,%mm2
+ 	movq 40(%eax),%mm3
+-	movd COS9+28,%mm4
++	movd _COS9+28,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfsub %mm3,%mm2
+ 	movq 56(%eax),%mm3
+-	movd COS9+4,%mm4
++	movd _COS9+4,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfadd %mm3,%mm2
+ 	movq (%eax),%mm3
+ 	movq 16(%eax),%mm4
+-	movd COS9+32,%mm5
++	movd _COS9+32,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfsub %mm4,%mm3
+ 	movq 32(%eax),%mm4
+-	movd COS9+8,%mm5
++	movd _COS9+8,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfsub %mm4,%mm3
+ 	pfadd %mm1,%mm3
+ 	movq 64(%eax),%mm4
+-	movd COS9+16,%mm5
++	movd _COS9+16,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfadd %mm4,%mm3
+ 	movq %mm2,%mm4
+ 	pfadd %mm3,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+8,%mm5
++	punpckldq _tfcos36+8,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -349,7 +349,7 @@ dct36_3dnow:
+ 	movq %mm3,%mm4
+ 	pfsub %mm2,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+24,%mm5
++	punpckldq _tfcos36+24,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -373,41 +373,41 @@ dct36_3dnow:
+ 	psrlq $32,%mm5
+ 	movd %mm5,1920(%ebx)
+ 	movq 8(%eax),%mm2
+-	movd COS9+28,%mm3
++	movd _COS9+28,%mm3
+ 	punpckldq %mm3,%mm3
+ 	pfmul %mm3,%mm2
+ 	pfsub %mm0,%mm2
+ 	movq 40(%eax),%mm3
+-	movd COS9+4,%mm4
++	movd _COS9+4,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfadd %mm3,%mm2
+ 	movq 56(%eax),%mm3
+-	movd COS9+20,%mm4
++	movd _COS9+20,%mm4
+ 	punpckldq %mm4,%mm4
+ 	pfmul %mm4,%mm3
+ 	pfsub %mm3,%mm2
+ 	movq (%eax),%mm3
+ 	movq 16(%eax),%mm4
+-	movd COS9+16,%mm5
++	movd _COS9+16,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfsub %mm4,%mm3
+ 	movq 32(%eax),%mm4
+-	movd COS9+32,%mm5
++	movd _COS9+32,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfadd %mm4,%mm3
+ 	pfadd %mm1,%mm3
+ 	movq 64(%eax),%mm4
+-	movd COS9+8,%mm5
++	movd _COS9+8,%mm5
+ 	punpckldq %mm5,%mm5
+ 	pfmul %mm5,%mm4
+ 	pfsub %mm4,%mm3
+ 	movq %mm2,%mm4
+ 	pfadd %mm3,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+12,%mm5
++	punpckldq _tfcos36+12,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -433,7 +433,7 @@ dct36_3dnow:
+ 	movq %mm3,%mm4
+ 	pfsub %mm2,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+20,%mm5
++	punpckldq _tfcos36+20,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5
+@@ -467,7 +467,7 @@ dct36_3dnow:
+ 	movq 64(%eax),%mm3
+ 	pfadd %mm3,%mm4
+ 	movq %mm7,%mm5
+-	punpckldq tfcos36+16,%mm5
++	punpckldq _tfcos36+16,%mm5
+ 	pfmul %mm5,%mm4
+ 	movq %mm4,%mm5
+ 	pfacc %mm5,%mm5

@@ -1,0 +1,59 @@
+$OpenBSD: patch-libdha_Makefile,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+--- libdha/Makefile.orig	Sat Feb  2 05:14:56 2002
++++ libdha/Makefile	Wed May  8 19:34:06 2002
+@@ -7,27 +7,34 @@ VERSION = 0.1
+ ifeq ($(TARGET_OS),CYGWIN)
+ SHORTNAME = libdha.dll
+ else
++ifeq ($(TARGET_OS),OpenBSD)
++SHORTNAME = libdha.so.0.1
++else
+ SHORTNAME = libdha.so
+ endif
+-LIBNAME = libdha-$(VERSION).so
++endif
++LIBNAME = $(SHORTNAME)
+ 
+ SRCS=libdha.c mtrr.c pci.c pci_names.c
+ OBJS=$(SRCS:.c=.o)
+ 
+ CFLAGS  = $(OPTFLAGS) -fPIC -I. -I.. -Wall -W
++LIBS = 
++ifeq ($(TARGET_OS),OpenBSD)
++LIBS += -li386
++endif
+ 
+ .SUFFIXES: .c .o
+ 
+ # .PHONY: all clean
+ 
+ .c.o:
+-	$(CC) -c $(CFLAGS) -o $@ $<
++	PATH=/bin:/usr/bin $(CC) -c $(CFLAGS) -o $@ $<
+ 
+ $(LIBNAME):     $(OBJS)
+-	$(CC) -shared -o $(LIBNAME) $(OBJS)
+-	ln -sf $(LIBNAME) $(SHORTNAME)
++	$(CC) -shared -o $(LIBNAME) $(OBJS) $(LIBS)
+ 
+-all:    $(LIBNAME) $(SHORTNAME)
++all:    $(LIBNAME)
+ 
+ pci_names.c:
+ 	gzip -d -c oth/pci.db.gz >pci.db
+@@ -52,10 +59,12 @@ install:
+ 	mkdir -p $(prefix)/lib
+ 	install -m 755 -s -p $(LIBNAME) $(prefix)/lib/$(LIBNAME)
+ 	rm -f $(prefix)/lib/libdha.so
+-	ln -sf $(LIBNAME) $(prefix)/lib/libdha.so
++	ln -sf $(LIBNAME) $(prefix)/lib/$(SHORTNAME)
++ifeq ($(TARGET_OS),OpenBSD)
++	ldconfig -R
++else
+ 	ldconfig
+-
+-#
++endif #
+ # include dependency files if they exist
+ #
+ ifneq ($(wildcard .depend),)

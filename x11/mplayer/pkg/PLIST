@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+bin/gmplayer
+bin/mencoder
+bin/mplayer
+lib/mplayer/vidix/genfb_vid.so
+lib/mplayer/vidix/mach64_vid.so
+lib/mplayer/vidix/mga_crtc2_vid.so
+lib/mplayer/vidix/mga_vid.so
+lib/mplayer/vidix/nvidia_vid.so
+lib/mplayer/vidix/radeon_vid.so
+lib/mplayer/vidix/rage128_vid.so
+%%SHARED%%
+man/man1/mencoder.1
+man/man1/mplayer.1
+share/mplayer/Skin/default/README
+share/mplayer/Skin/default/VERSION
+share/mplayer/Skin/default/about.png
+share/mplayer/Skin/default/back.png
+share/mplayer/Skin/default/eq.png
+share/mplayer/Skin/default/eqb.png
+share/mplayer/Skin/default/exit.png
+share/mplayer/Skin/default/font.fnt
+share/mplayer/Skin/default/font.png
+share/mplayer/Skin/default/forward.png
+share/mplayer/Skin/default/fsb.png
+share/mplayer/Skin/default/iconify.png
+share/mplayer/Skin/default/load.png
+share/mplayer/Skin/default/main.png
+share/mplayer/Skin/default/menu.png
+share/mplayer/Skin/default/menus.png
+share/mplayer/Skin/default/next.png
+share/mplayer/Skin/default/pause.png
+share/mplayer/Skin/default/play.png
+share/mplayer/Skin/default/plb.png
+share/mplayer/Skin/default/pos.png
+share/mplayer/Skin/default/prev.png
+share/mplayer/Skin/default/skin
+share/mplayer/Skin/default/stop.png
+share/mplayer/Skin/default/sub.png
+share/mplayer/Skin/default/subload.png
+share/mplayer/Skin/default/symbols.fnt
+share/mplayer/Skin/default/symbols.png
+share/mplayer/Skin/default/volume.png
+share/mplayer/codecs.conf
+@exec mkdir -p %D/share/mplayer/font
+@dirrm share/mplayer/font
+@dirrm share/mplayer/Skin/default
+@dirrm share/mplayer/Skin
+@dirrm share/mplayer
+@dirrm lib/mplayer/vidix
+@dirrm lib/mplayer

@@ -1,0 +1,10 @@
+$OpenBSD: patch-libvo_sub_h,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+--- libvo/sub.h.orig	Sat May  4 02:05:39 2002
++++ libvo/sub.h	Sat May  4 02:06:40 2002
+@@ -105,5 +105,6 @@ int vo_osd_changed(int new_value);
+ 
+ extern int vo_osd_changed_flag;
+ 
++int vo_osd_check_range_update(int,int,int,int);
+ #endif
+ #endif

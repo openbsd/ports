@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+--- configure.orig	Sat May  4 00:13:06 2002
++++ configure	Wed May  8 01:19:24 2002
+@@ -1390,8 +1390,8 @@ if test "$_malloc" = yes ; then
+ else
+   _def_malloc='#undef HAVE_MALLOC_H'
+ fi
+-# malloc.h emits a warning in FreeBSD
+-freebsd && _def_malloc='#undef HAVE_MALLOC_H'
++# malloc.h emits a warning in FreeBSD and OpenBSD
++freebsd || openbsd && _def_malloc='#undef HAVE_MALLOC_H'
+ echores "$_malloc"
+ 
+ 
+@@ -3522,8 +3522,11 @@ test "$_xanim" = yes && _ld_dl_dynamic='
+ 
+ _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
+ bsdos && _ld_arch="$_ld_arch -ldvd"
+-netbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
+-openbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
++
++if netbsd || openbsd  ; then
++  _ld_arch="$_ld_arch -lossaudio"
++  x86  && _ld_arch="$_ld_arch -li386"
++fi
+ 
+ _def_debug='#undef MP_DEBUG'
+ test "$_debug" && _def_debug='#define MP_DEBUG 1'
+@@ -3590,11 +3593,10 @@ cat > config.mak << EOF
+ 
+ LANG = C
+ TARGET_OS = $system_name
+-prefix = $_prefix
+-DATADIR = $_datadir
+-CONFDIR = $_confdir
+-LIBDIR = $_libdir
+-AR = ar
++prefix = \$(DESTDIR)$_prefix
++DATADIR = \$(DESTDIR)$_datadir
++CONFDIR = \$(DESTDIR)$_confdir
++LIBDIR = \$(DESTDIR)$_libdir
+ CC = $_cc
+ AWK = $_awk
+ # OPTFLAGS = -O4 $_profile $_debug $_march $_mcpu -pipe -fomit-frame-pointer -ffast-math

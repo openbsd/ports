@@ -1,0 +1,11 @@
+$OpenBSD: patch-libmpcodecs_vd_c,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+--- libmpcodecs/vd.c.orig	Sat May  4 01:44:56 2002
++++ libmpcodecs/vd.c	Sat May  4 01:46:53 2002
+@@ -18,6 +18,7 @@
+ #include "stream.h"
+ #include "demuxer.h"
+ #include "stheader.h"
++#include "dec_video.h"
+ 
+ #include "vd.h"
+ #include "vf.h"
