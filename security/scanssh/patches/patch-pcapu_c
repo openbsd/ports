@@ -1,0 +1,22 @@
+$OpenBSD: patch-pcapu_c,v 1.1 2003/03/03 16:04:17 naddy Exp $
+--- pcapu.c.orig	Mon Mar  3 16:44:16 2003
++++ pcapu.c	Mon Mar  3 16:45:36 2003
+@@ -39,6 +39,7 @@
+ #include <arpa/inet.h>
+ 
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <pcap.h>
+ #include <errno.h>
+@@ -47,8 +48,8 @@
+ #include "config.h"
+ 
+ struct phdr { 
+-  unsigned long saddr;
+-  unsigned long daddr;
++  in_addr_t saddr;
++  in_addr_t daddr;
+   char zero;
+   unsigned char protocol;
+   unsigned short length;
