@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/09 13:50:10 wilfried Exp $
+@group games
+@mode 2555
+bin/xwelltris
+@group
+@mode
+share/xwelltris/README.keys
+share/xwelltris/board2.gif
+share/xwelltris/font2.gif
+share/xwelltris/polyomino.dat
+share/xwelltris/topnine.gif
+share/xwelltris/wellcuts.gif
+share/xwelltris/wellintro.gif
+@exec install -m 664 -o root -g games /dev/null %B/welltris.scores
+@unexec rm -f %B/welltris.scores
+@dirrm share/xwelltris
