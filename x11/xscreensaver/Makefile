@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/17 15:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/24 14:16:13 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
+NO_REGRESS=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-subdir="${PREFIX}/libexec/xscreensaver"
