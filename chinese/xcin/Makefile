@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/06/27 02:23:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/01 12:31:12 kevlo Exp $
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
@@ -31,7 +31,7 @@ BINS=	cin2tab et.kbm et26.kbm hsu.kbm lphrase phs_out pho.sel1st \
 
 post-configure:
 	mv ${WRKSRC}/config.status ${WRKSRC}/config.status.orig
-	sed -e '/OPT_XCIN_CFONT/s/=.*/=-taipei-ming16-medium-r-normal-*-16-160-*-*-*-*-big5-0/' -e '/OPT_XCIN_EFONT/s/=.*/=8x16/' -e '/PATH_XCIN_DIR/s!=.*!=/usr/local/lib/xcin!' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
+	sed -e '/OPT_XCIN_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' -e '/OPT_XCIN_EFONT/s/=.*/=8x16/' -e '/PATH_XCIN_DIR/s!=.*!=/usr/local/lib/xcin!' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
 
 post-extract:
 	mv ${WRKSRC}/script/os_def/FreeBSD ${WRKSRC}/script/os_def/FreeBSD.orig

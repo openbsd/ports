@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/23 02:31:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2000/09/01 12:31:09 kevlo Exp $
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-${DISTNAME}
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 post-configure:
 	mv ${WRKSRC}/config.status ${WRKSRC}/config.status.orig
-	sed -e '/OPT_CRXVT_CFONT/s/=.*/=-taipei-ming16-medium-r-normal-*-16-160-*-*-*-*-big5-0/' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
+	sed -e '/OPT_CRXVT_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
 	
 post-extract:
 	mv ${WRKSRC}/script/os_def/FreeBSD ${WRKSRC}/script/os_def/FreeBSD.orig
