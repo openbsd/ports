@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2004/11/17 11:10:55 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.130 2004/11/25 15:20:37 xsa Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -84,6 +84,7 @@
      SUBDIR += postfix
      SUBDIR += prepop
      SUBDIR += procmail
+     SUBDIR += py-milter
      SUBDIR += razor-agents
      SUBDIR += relaydb
      SUBDIR += signify
