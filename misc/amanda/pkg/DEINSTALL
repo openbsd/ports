@@ -1,0 +1,31 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 1999/01/27 00:22:40 marc Exp $
+#
+# de-installation of amanda
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+
+if [ $# -ne 2 -o "$2" != "DEINSTALL" ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+if [ -d /var/amanda ]; then
+   /bin/rm -rf /var/amanda
+fi
+
+# Don't actually do anything, but let the user know what can b
+# done to fully de-install the package
+#
+if [ -d /etc/amanda ]; then
+   echo ""
+   echo "** The directory /etc/amanda and any files within the directory"
+   echo "** have not been removed.  You MAY want to remove these files to"
+   echo "** completely remove the package.  Also, amanda should be removed"
+   echo "** from /etc/inetd.conf"
+   echo ""
+fi
+
+exit 0

@@ -1,1 +1,1 @@
-A daemon that logs out idle users and those users hogging resources.
+log out idle users and those hogging resources

@@ -1,28 +1,35 @@
-# OpenBSD makefile for:	amanda
-# Version required:			2.3.0
-# Date created:				9 Dec 1997
-# Whom:					ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1998/01/16 11:29:25 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/27 00:22:35 marc Exp $
 #
 
-DISTNAME=	amanda-2.3.0
+DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
+
+MAINTAINER=	marc@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 
-MAINTAINER=	joey@OpenBSD.ORG
+GNU_CONFIGURE=	yes
 
-BUILD_DEPENDS=	${PREFIX}/bin/gtar:${PORTSDIR}/archivers/gtar
+CONFIGURE_ARGS=	--sysconfdir=/etc \
+		--localstatedir=/var \
+		--with-user=operator \
+		--with-group=operator
 
-PATCH_STRIP=	
-MAN8=		amanda.8 amadmin.8 amcheck.8 amcleanup.8 amdump.8 \
-		amflush.8 amlabel.8 amrestore.8  amtape.8
-
-pre-configure:
-	echo "${CFLAGS}" > /tmp/build-ports-misc-amanda-cflags
+EXAMPLE_DIR=	${PREFIX}/share/examples/amanda
+pre-install:
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
 post-install:
-	mkdir -p ${PREFIX}/share/examples/amanda
-	cp -R ${WRKSRC}/example/* ${PREFIX}/share/examples/amanda
+	@(cd ${WRKSRC}; \
+	  ${INSTALL_DATA_DIR} ${EXAMPLE_DIR}; \
+	  ${INSTALL_DATA} docs/* ${EXAMPLE_DIR}; \
+	  ${INSTALL_DATA} example/*.ps ${EXAMPLE_DIR}; \
+	  (cd example; \
+	   for f in *.conf; do \
+	     sed -e 's,usr/adm,var,' \
+		 -e 's,/usr/local,,' $$f > ${EXAMPLE_DIR}/$$f; \
+	   done))
+	@PREFIX="${PREFIX}" EXAMPLE_DIR="${EXAMPLE_DIR}" \
+	 ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

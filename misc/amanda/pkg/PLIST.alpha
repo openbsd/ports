@@ -1,15 +1,11 @@
 @cwd /usr/local
 @name amanda-2.4.1p1
-lib/libamanda-2.4.1p1.so.0.0
 lib/libamanda.a
 lib/libamanda.la
-lib/libamclient-2.4.1p1.so.0.0
 lib/libamtape.a
 lib/libamclient.la
 lib/libamclient.a
-lib/libamtape-2.4.1p1.so.0.0
 lib/libamtape.la
-lib/libamserver-2.4.1p1.so.0.0
 lib/libamserver.la
 lib/libamserver.a
 libexec/versionsuffix
