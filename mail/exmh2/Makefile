@@ -3,7 +3,7 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/17 04:01:30 turan Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	wish8.0:x11/tk80
 BUILD_DEPENDS=	tclsh8.0:lang/tcl80
