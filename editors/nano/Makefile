@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/03 13:06:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2000/12/12 18:31:30 naddy Exp $
 
-DISTNAME=	nano-0.9.22
+DISTNAME=	nano-0.9.23
 CATEGORIES=	editors
 NEED_VERSION=	1.338
 HOMEPAGE=	http://www.nano-editor.org
