@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 1999/06/09 20:34:57 brad Exp $
+# $OpenBSD: Makefile,v 1.24 1999/09/05 04:17:42 brad Exp $
 
-DISTNAME=	gtk+-1.2.3
+DISTNAME=	gtk+-1.2.4
 CATEGORIES=     x11
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \

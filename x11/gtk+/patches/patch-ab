@@ -1,11 +1,11 @@
---- gdk/Makefile.in.orig	Thu Mar 25 23:49:59 1999
-+++ gdk/Makefile.in	Thu Mar 25 23:50:56 1999
-@@ -140,7 +140,7 @@
- LDADDS =  	@x_ldflags@		@x_libs@		@GLIB_LIBS@		-lm
+--- gdk/Makefile.in.orig	Mon Aug 23 18:08:02 1999
++++ gdk/Makefile.in	Sat Aug 28 02:05:29 1999
+@@ -136,7 +136,7 @@
+ 
+ # libtool stuff: set version and export symbols for resolving
+ libgdkincludedir = $(includedir)/gdk
+-libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
++libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0 	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
  
  
--libgdk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)          @GLIB_DEPLIBS@	         @x_ldflags@	         @x_libs@	         -lm
-+libgdk_la_LDFLAGS =  	-version-info 1:2:0		@GLIB_DEPLIBS@		@x_ldflags@	         @x_libs@	         -lm
- 
- 
- EXTRA_PROGRAMS = gxid
+ #

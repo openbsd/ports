@@ -1,6 +1,15 @@
---- configure.orig	Tue May 11 13:12:48 1999
-+++ configure	Tue May 11 13:13:08 1999
-@@ -4062,7 +4062,7 @@
+--- configure.orig	Mon Aug 23 17:31:31 1999
++++ configure	Sat Sep  4 20:58:33 1999
+@@ -2280,7 +2280,7 @@
+ 
+ 
+ # i18n stuff
+-ALL_LINGUAS="ca cs de es fi fr hr hu it ja ko nl no pl pt ru sl sk sv wa zh_TW.Big5"
++ALL_LINGUAS="ca cs de es fi fr hr hu it ja ko no pl pt ru sl sk sv wa zh_TW.Big5"
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:2286: checking how to run the C preprocessor" >&5
+ # On Suns, sometimes $CPP names a directory.
+@@ -4076,7 +4076,7 @@
  
  # AM_GTK_GNU_GETTEXT above substs $DATADIRNAME
  # this is the directory where the *.{mo,gmo} files are installed

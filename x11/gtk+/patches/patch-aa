@@ -1,11 +1,11 @@
---- gtk/Makefile.in.orig	Thu Mar 25 23:47:35 1999
-+++ gtk/Makefile.in	Thu Mar 25 23:48:55 1999
-@@ -153,7 +153,7 @@
- gdk_headers =  	../gdk/gdktypes.h 	../gdk/gdkrgb.h
+--- gtk/Makefile.in.orig	Mon Aug 23 18:08:04 1999
++++ gtk/Makefile.in	Sat Aug 28 02:04:32 1999
+@@ -136,7 +136,7 @@
  
- 
--libgtk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
-+libgtk_la_LDFLAGS =  	-version-info 1:2:0			@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
+ # libtool stuff: set version and export symbols for resolving
+ libgtkincludedir = $(includedir)/gtk
+-libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
++libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
  
  #	$(top_builddir)/gdk/libgdk.la
  
