@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/03/26 07:17:03 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/03/30 02:00:31 brad Exp $
 
 DISTNAME=	gtk+-1.2.1
 CATEGORIES=     x11
@@ -11,19 +11,18 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=    glib.1.2:${PORTSDIR}/devel/glib
+LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
+		intl:${PORTSDIR}/devel/gettext
 
 USE_X11=	yes
 USE_PERL5=	yes
 SYSCONFDIR=	${PREFIX}/lib
 SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--enable-static --sysconfdir=${SYSCONFDIR}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static --sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # People that installed an older version of gtk+ wound up with
 # libglib.a and other things in /usr/X11R6/lib... these files

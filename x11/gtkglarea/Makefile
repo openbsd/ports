@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/22 16:18:16 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/30 02:02:52 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.1
 CATEGORIES=	x11 graphics
@@ -12,7 +12,7 @@ MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL \
 		MesaGLU:${PORTSDIR}/graphics/MesaGL \
-		gtk\\.1\\.2:${PORTSDIR}/x11/gtk+
+		gtk.1.2:${PORTSDIR}/x11/gtk+
 
 USE_X11=	yes
 SEPARATE_BUILD=	yes
