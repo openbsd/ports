@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/18 01:04:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/12 06:16:49 jolan Exp $
 
 COMMENT=	"c reimplementation of the BitTorrent core protocols"
-DISTNAME=	libbt-1.01
+DISTNAME=	libbt-1.03
 CATEGORIES=	devel net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libbt/}
 
@@ -29,8 +29,8 @@ do-install:
 .for p in btcheck btget btlist
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/${p} ${PREFIX}/bin
 .endfor
-.for i in benc bitset bterror bts context peer random segmenter strbuf stream \
-	types util
+.for i in benc bitset bterror btmessage bts context peer random segmenter \
+	strbuf stream types util
 	${INSTALL_DATA} ${WRKSRC}/include/${i}.h ${PREFIX}/include/libbt
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${PREFIX}/man/man1

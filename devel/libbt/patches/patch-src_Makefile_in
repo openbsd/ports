@@ -1,25 +1,18 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/04/15 03:37:43 jolan Exp $
---- src/Makefile.in.orig	2004-04-07 00:05:07.000000000 -0500
-+++ src/Makefile.in	2004-04-14 21:01:24.000000000 -0500
-@@ -25,17 +25,17 @@ SRCS:=\
+$OpenBSD: patch-src_Makefile_in,v 1.2 2004/07/12 06:16:50 jolan Exp $
+--- src/Makefile.in.orig	Sat Jul 10 01:49:54 2004
++++ src/Makefile.in	Mon Jul 12 01:02:57 2004
+@@ -25,11 +25,11 @@ SRCS:=\
  	bterror.c
  OBJS:= ${SRCS:.c=.o}
  
 -CPPFLAGS:=@CPPFLAGS@
 -CFLAGS:=-g -Wall -I../include -I$(top_srcdir)/include
-+CPPFLAGS+=@CPPFLAGS@ `curl-config --cflags`
-+CFLAGS+=-Wall -I../include -I$(top_srcdir)/include
++CPPFLAGS:=@CPPFLAGS@ `curl-config --cflags`
++CFLAGS:=$(CPPFLAGS) @CFLAGS@ -Wall -I../include -I$(top_srcdir)/include
  
  LIBS:=@LIBS@ `curl-config --libs` -lm
 -LDFLAGS:=-g -L. @LDFLAGS@
 +LDFLAGS:=-L. @LDFLAGS@
- 
- all: ${LIBBT} ${PROGRAMS}
- docs: 
- 	doxygen *.c
- depend:
--	makedepend -- ${CFLAGS} - ${SRCS} 
-+	makedepend -- ${CPPFLAGS} ${CFLAGS} - ${SRCS} 
- btcheck: libbt.a btcheck.o
- 	${CC} ${LDFLAGS} -o btcheck btcheck.o -lbt ${LIBS}
+ VERSION=1.03
+ MAKEDEPEND=@MAKEDEPEND@
  
