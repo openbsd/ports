@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/01/18 08:01:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.29 2004/11/19 22:12:28 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -21,6 +21,8 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 PREFIX?=	${LOCALBASE}/emul/freebsd
+
+SYSTRACE_SUBST_VARS=	TRUEPREFIX
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}
