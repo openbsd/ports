@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/17 22:44:28 obecian Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/18 00:25:30 obecian Exp $
 
 DISTNAME=	antiword-0.31
 CATEGORIES=	textproc
@@ -29,6 +29,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/antiword
 	${INSTALL_DATA_DIR} ${PREFIX}/share/antiword
 	${INSTALL_DATA_DIR} ${PREFIX}/share/antiword/kde
+	${INSTALL_DATA_DIR} ${PREFIX}/share/antiword/resources
 .for file in ${DOC}
 	${INSTALL_DATA} ${WRKSRC}/Docs/${file} ${PREFIX}/share/doc/antiword
 .endfor
@@ -36,5 +37,6 @@ do-install:
 		${PREFIX}/share/antiword/kde
 	${INSTALL_DATA} ${WRKSRC}/Unix-only/KDE-only/antiword.xpm \
 		${PREFIX}/share/antiword
+	${INSTALL_DATA} ${WRKSRC}/Resources/* ${PREFIX}/share/antiword/resources
 
 .include <bsd.port.mk>
