@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/02/18 16:04:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/02/19 11:42:50 sturm Exp $
 @pkgcfl dvipdfm-*
 !%%no_x11%%
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
@@ -409,7 +409,7 @@ share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
 @comment no checksum
 share/texmf/web2c/texmf.cnf
-share/texmf/xdvi/xdvi.cfg
+@comment share/texmf/xdvi/xdvi.cfg
 @dirrm share/texmf/texconfig/x
 @dirrm share/texmf/texconfig/v
 @dirrm share/texmf/texconfig/g

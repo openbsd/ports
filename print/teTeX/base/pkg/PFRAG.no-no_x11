@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2003/02/18 16:04:50 sturm Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2003/02/19 11:42:50 sturm Exp $
 bin/mf-nowin
 bin/mfw
 bin/oxdvi
@@ -12,3 +12,4 @@ man/man1/xdvi.1
 man/man1/xdvizilla.1
 @comment no checksum
 share/texmf/web2c/mfw.base
+share/texmf/xdvi/xdvi.cfg
