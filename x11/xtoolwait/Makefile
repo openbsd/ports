@@ -2,7 +2,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 2000/03/23 22:44:36 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/05 01:21:32 espie Exp $
 #
 
 DISTNAME=	xtoolwait-1.1
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
-MAN1=		xtoolwait.1
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
