@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_Makefile_in,v 1.1.1.1 2003/11/13 18:50:39 espie Exp $
+--- utils/Makefile.in.orig	2003-11-10 16:11:23.000000000 +0100
++++ utils/Makefile.in	2003-11-10 16:11:37.000000000 +0100
+@@ -113,7 +113,7 @@ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ reswrap_OBJECTS =  reswrap.$(OBJEXT)
+-reswrap_LDADD = $(LDADD)
++reswrap_LDADD = $(LDADD) $(X_LIBS)
+ reswrap_DEPENDENCIES = 
+ reswrap_LDFLAGS = 
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
