@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Apr 12 07:45:06 2001
-+++ Makefile.in	Fri Jun 22 13:33:38 2001
+--- Makefile.in.orig	Wed Oct 31 12:44:29 2001
++++ Makefile.in	Wed Oct 31 12:44:48 2001
 @@ -9,7 +9,7 @@ VPATH =		@srcdir@
  first_rule: all
  dummy:
  
--subdirs = src doc rclock src/graphics src/test
-+subdirs = src doc # rclock src/graphics src/test
+-subdirs = src doc rclock src/graphics
++subdirs = src doc # rclock src/graphics
  
  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
  

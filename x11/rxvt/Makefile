@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2001/10/31 20:43:59 jasoni Exp $
+# $OpenBSD: Makefile,v 1.23 2001/11/01 21:34:13 jasoni Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
-DISTNAME=	rxvt-2.7.6
-PKGNAME=        ${DISTNAME}p1
+DISTNAME=	rxvt-2.6.3
 CATEGORIES=	x11
 NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
-		ftp://mason.primenet.com.au/pub/rxvt/ 
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
+		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt
 
 HOMEPAGE=	http://www.rxvt.org/
 
@@ -28,11 +28,9 @@ CONFIGURE_ARGS=		--enable-utmp \
 			--enable-xpm-background \
 			--enable-transparency \
 			--enable-xgetdefault \
-			--enable-languages \
 			--enable-xim \
-			--enable-rxvt-scroll \
 			--enable-mousewheel
 
-REGRESS_TARGET=		tests
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

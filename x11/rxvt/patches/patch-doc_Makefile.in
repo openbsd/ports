@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue May  2 23:40:54 2000
-+++ doc/Makefile.in	Fri Jun 22 13:33:38 2001
-@@ -38,7 +38,7 @@ DIST	  = Makefile.in README.greek README
+--- doc/Makefile.in.orig	Wed Oct 31 12:45:34 2001
++++ doc/Makefile.in	Wed Oct 31 12:45:57 2001
+@@ -39,7 +39,7 @@ DIST	  = Makefile.in README.greek README
  
  #-------------------------------------------------------------------------
  
--all:	rxvt.1
-+all:	# rxvt.1
+-all: rxvt.1
++all: # rxvt.1
  
- rxvt.1: rxvt.tbl Makefile
+ rxvt.1: Makefile
  	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi
