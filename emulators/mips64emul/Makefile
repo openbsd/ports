@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/08 09:17:32 grange Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/12 07:21:34 grange Exp $
 
 COMMENT=		"MIPS machine emulator"
 DISTNAME=		mips64emul-0.2.3
@@ -33,5 +33,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mips64emul ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mips64emul
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/mips64emul
+	${INSTALL_DATA} ${WRKSRC}/man/mips64emul.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
