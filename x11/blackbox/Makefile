@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 1999/09/21 01:39:22 rohee Exp $
+# $OpenBSD: Makefile,v 1.15 1999/09/22 00:05:47 rohee Exp $
 
 DISTNAME=	blackbox-0.51.3.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/
+MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
+		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
 MAINTAINER=	ports@openbsd.org
 
