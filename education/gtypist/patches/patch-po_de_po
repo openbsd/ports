@@ -1,0 +1,14 @@
+$OpenBSD: patch-po_de_po,v 1.1.1.1 2001/08/01 20:41:07 naddy Exp $
+--- po/de.po.orig	Thu May 17 17:38:32 2001
++++ po/de.po	Thu May 17 17:38:54 2001
+@@ -9,8 +9,8 @@ msgstr ""
+ "Last-Translator: Kester Habermann <kester@linuxtag.de>\n"
+ "Language-Team:\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type:\n"
+-"Content-Transfer-Encoding:\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #. print out the error message and stop
+ #: gtypist.c:268
