@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/10 13:39:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/27 04:12:40 lebel Exp $
 COMMENT=		HTTP daemons designed to complement publicfile
 
-DISTNAME=		shttpd-0.52
+DISTNAME=		shttpd-0.53
 HOMEPAGE=		http://www.superscript.com/shttpd/intro.html
 
 CATEGORIES=		www
