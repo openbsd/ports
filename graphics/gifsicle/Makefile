@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/24 19:55:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/03/25 18:17:18 jakob Exp $
 
-COMMENT=	creating & editing GIF images and animations
+COMMENT=	"creating & editing GIF images and animations"
 
 DISTNAME=	gifsicle-1.25
 CATEGORIES=    	graphics
