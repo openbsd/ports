@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/12 09:33:01 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/28 07:38:13 marcm Exp $
 lib/gtk-2.0/2.0.0/engines/libmetal.la
 lib/gtk-2.0/2.0.0/engines/libpixmap.la
 lib/gtk-2.0/2.0.0/engines/libredmond95.la
@@ -22,4 +22,3 @@ share/themes/Redmond95/gtk-2.0/gtkrc
 @dirrm share/themes/Metal/gtk-2.0
 @unexec rmdir %D/share/themes/Metal || true
 @comment @dirrm share/themes
-@dirrm lib/gtk-2.0/2.0.0/engines
