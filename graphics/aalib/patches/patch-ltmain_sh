@@ -1,7 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2001/02/20 21:38:54 danh Exp $
 --- ltmain.sh.orig	Thu Sep 25 08:22:11 1997
-+++ ltmain.sh	Tue Feb 20 16:33:47 2001
-@@ -365,7 +365,28 @@ if test -z "$show_help"; then
++++ ltmain.sh	Tue Feb 20 20:16:56 2001
+@@ -365,7 +365,28 @@
  	deplibs="$deplibs $arg"
  	;;
  
@@ -31,33 +30,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2001/02/20 21:38:54 danh Exp $
  
        -o) prev=output ;;
  
-@@ -737,6 +758,25 @@ if test -z "$show_help"; then
- 	allow_undefined_flag=
-       fi
- 
-+      dependency_libs="$deplibs"
-+      case "$host" in
-+      *-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
-+        # these systems don't actually have a c library (as such)!
-+        ;;
-+      *-*-openbsd*)
-+        # Do not include libc due to us having libc/libc_r.
-+        ;;
-+      *-*-rhapsody*)
-+        # rhapsody is a little odd...
-+        deplibs="$deplibs -framework System"
-+        ;;
-+      *)
-+        # Add libc to deplibs on all other systems.
-+        deplibs="$deplibs -lc"
-+        ;;
-+      esac
-+
-+
-       if test "$build_libtool_libs" = yes; then
- 	# Get the real and link names of the library.
- 	library_names=`eval echo \"$library_names_spec\"`
-@@ -1575,11 +1615,6 @@ EOF
+@@ -1575,11 +1596,6 @@
        done
      fi
  
