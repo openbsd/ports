@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 17:27:44 todd Exp $
-${P5SITE}/Convert/
-${P5SITE}/Convert/BinHex.pm
-@man man/man3p/Convert::BinHex.3p
