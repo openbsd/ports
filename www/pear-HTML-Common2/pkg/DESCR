@@ -1,0 +1,10 @@
+Abstract base class for HTML classes (PHP5 port of HTML_Common package).
+
+The HTML_Common2 package provides methods for HTML code display and
+attributes handling.
+
+* Methods to set, remove, update html attributes.
+* Handles comments in HTML code.
+* Handles global document options (encoding, linebreak and indentation
+characters).
+* Handles indentation for nicer HTML code.
