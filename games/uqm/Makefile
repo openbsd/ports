@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/31 04:09:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2003/11/12 23:18:26 jolan Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	i386 powerpc
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS=	i386 powerpc
 COMMENT=		"ur-quan masters: sdl port of star control 2"
 COMMENT-3domusic=	"ur-quan masters: 3DO music content"
 COMMENT-remix1=		"ur-quan masters: remix pack number one"
+COMMENT-remix2=		"ur-quan masters: remix pack number two"
 COMMENT-voice=		"ur-quan masters: speech content"
 
 VER=			0.3
@@ -16,13 +17,15 @@ CDIST=			uqm-${VER}-content.zip
 MDIST=			uqm-${VER}-3domusic.zip
 VDIST=			uqm-${VER}-voice.zip
 RM1DIST=		uqm-remix-pack1.zip
+RM2DIST=		uqm-remix-pack2.zip
 DISTFILES=		${PDIST} ${CDIST}
-SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST}
+SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
 PKGNAME=		uqm-${VER}
 PKGNAME-3domusic=	uqm-3domusic-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
+PKGNAME-remix2=		uqm-remix2-${VER}
 PKGNAME-voice=		uqm-voice-${VER}
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
@@ -44,7 +47,7 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-PSEUDO_FLAVORS=	3domusic remix1 voice
+PSEUDO_FLAVORS=	3domusic remix1 remix2 voice
 FLAVOR?=
 
 MULTI_PACKAGES=
@@ -55,6 +58,10 @@ MULTI_PACKAGES+=-3domusic
 .if ${FLAVOR:L:Mremix1}
 DISTFILES+=	${RM1DIST}
 MULTI_PACKAGES+=-remix1
+.endif
+.if ${FLAVOR:L:Mremix2}
+DISTFILES+=	${RM2DIST}
+MULTI_PACKAGES+=-remix2
 .endif
 .if ${FLAVOR:L:Mvoice}
 DISTFILES+=	${VDIST}
@@ -69,6 +76,9 @@ RUN_DEPENDS=	::games/uqm
 . endif
 . if ${SUBPACKAGE} == "-remix1"
 RUN_DEPENDS=	::games/uqm
+. endif
+. if ${SUBPACKAGE} == "-remix2"
+RUN_DEPENDS=    ::games/uqm
 . endif
 . if ${SUBPACKAGE} == "-voice"
 RUN_DEPENDS=	::games/uqm
@@ -109,6 +119,10 @@ do-install:
 .endif
 .if ${FLAVOR:L:Mremix1}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM1DIST} \
+		${PREFIX}/share/uqm/content/packages/addons/uqmremix
+.endif
+.if ${FLAVOR:L:Mremix2}
+	${INSTALL_DATA} ${FULLDISTDIR}/${RM2DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
 .endif
 .if ${FLAVOR:L:Mvoice}
