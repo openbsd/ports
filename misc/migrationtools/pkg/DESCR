@@ -1,0 +1,6 @@
+The MigrationTools are a set of Perl scripts for migrating users,
+groups, aliases, hosts, netgroups, networks, protocols, RPCs, and
+services from existing nameservices (flat files, NIS, and NetInfo)
+to LDAP.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
+share/${PKGNAME}/README
+share/${PKGNAME}/migrate_aliases.pl
+share/${PKGNAME}/migrate_all_netinfo_offline.sh
+share/${PKGNAME}/migrate_all_netinfo_online.sh
+share/${PKGNAME}/migrate_all_nis_offline.sh
+share/${PKGNAME}/migrate_all_nis_online.sh
+share/${PKGNAME}/migrate_all_nisplus_offline.sh
+share/${PKGNAME}/migrate_all_nisplus_online.sh
+share/${PKGNAME}/migrate_all_offline.sh
+share/${PKGNAME}/migrate_all_online.sh
+share/${PKGNAME}/migrate_automount.pl
+share/${PKGNAME}/migrate_base.pl
+share/${PKGNAME}/migrate_common.ph
+share/${PKGNAME}/migrate_fstab.pl
+share/${PKGNAME}/migrate_group.pl
+share/${PKGNAME}/migrate_hosts.pl
+share/${PKGNAME}/migrate_netgroup.pl
+share/${PKGNAME}/migrate_netgroup_byhost.pl
+share/${PKGNAME}/migrate_netgroup_byuser.pl
+share/${PKGNAME}/migrate_networks.pl
+share/${PKGNAME}/migrate_passwd.pl
+share/${PKGNAME}/migrate_profile.pl
+share/${PKGNAME}/migrate_protocols.pl
+share/${PKGNAME}/migrate_rpc.pl
+share/${PKGNAME}/migrate_services.pl
+share/${PKGNAME}/migrate_slapd_conf.pl
+@dirrm share/${PKGNAME}

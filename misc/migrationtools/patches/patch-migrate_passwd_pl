@@ -1,0 +1,21 @@
+$OpenBSD: patch-migrate_passwd_pl,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
+--- migrate_passwd.pl.orig	Sun Oct 13 01:19:14 2002
++++ migrate_passwd.pl	Sun Oct 13 01:19:46 2002
+@@ -32,7 +32,7 @@
+ # SUCH DAMAGE.
+ #
+ #
+-# Password migration tool. Migrates /etc/shadow as well, if it exists.
++# Password migration tool. Migrates /etc/master.passwd as well, if it exists.
+ #
+ # Thanks to Peter Jacob Slot <peter@vision.auk.dk>.
+ #
+@@ -181,7 +181,7 @@ if (OUTFILE != STDOUT) { close(OUTFILE);
+ 
+ sub read_shadow_file
+ {
+-	open(SHADOW, "/etc/shadow") || return;
++	open(SHADOW, "/etc/master.passwd") || return;
+ 	while(<SHADOW>) {
+ 		chop;
+ 		($shadowUser) = split(/:/, $_);
