@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2004/02/21 22:30:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.88 2004/03/01 21:21:45 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.2
-REVISION=	270
+REVISION=	307
 VERSION=	6.2.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
@@ -23,8 +23,8 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-PATCHFILES=	6.2.001-100.gz:0 6.2.101-200.gz:0
-_patches!=	jot -w%03d - 201 ${REVISION} 1
+PATCHFILES=	6.2.001-100.gz:0 6.2.101-200.gz:0 6.2.201-300.gz:0
+_patches!=	jot -w%03d - 301 ${REVISION} 1
 .for p in ${_patches}
 PATCHFILES+=	6.2.${p}:0
 .endfor
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--enable-perlinterp
 .endif
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=     2.2
+PYTHON_VER=     2.3
 CONFIGURE_ENV+=	vi_cv_path_python=${LOCALBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config

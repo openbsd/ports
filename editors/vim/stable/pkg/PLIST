@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/06/27 17:57:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/03/01 21:21:45 lebel Exp $
 !%%no_x11%%
 bin/ex
 bin/rview
@@ -125,6 +125,7 @@ share/vim/${P}/doc/repeat.txt
 share/vim/${P}/doc/rileft.txt
 share/vim/${P}/doc/scroll.txt
 share/vim/${P}/doc/sign.txt
+share/vim/${P}/doc/sponsor.txt
 share/vim/${P}/doc/starting.txt
 share/vim/${P}/doc/syntax.txt
 share/vim/${P}/doc/tags
@@ -335,10 +336,12 @@ share/vim/${P}/macros/matchit.txt
 share/vim/${P}/macros/matchit.vim
 share/vim/${P}/macros/maze/Makefile
 share/vim/${P}/macros/maze/README.txt
+share/vim/${P}/macros/maze/main.aap
 share/vim/${P}/macros/maze/maze.c
 share/vim/${P}/macros/maze/maze_5.78
 share/vim/${P}/macros/maze/maze_mac
 share/vim/${P}/macros/maze/mazeansi.c
+share/vim/${P}/macros/maze/mazeclean.c
 share/vim/${P}/macros/maze/poster
 share/vim/${P}/macros/shellmenu.vim
 share/vim/${P}/macros/swapmous.vim
@@ -433,6 +436,7 @@ share/vim/${P}/syntax/change.vim
 share/vim/${P}/syntax/changelog.vim
 share/vim/${P}/syntax/chaskell.vim
 share/vim/${P}/syntax/cheetah.vim
+share/vim/${P}/syntax/chill.vim
 share/vim/${P}/syntax/cl.vim
 share/vim/${P}/syntax/clean.vim
 share/vim/${P}/syntax/clipper.vim
