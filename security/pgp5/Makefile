@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/09/06 18:14:04 marc Exp $
+# $OpenBSD: Makefile,v 1.23 2000/09/07 04:30:44 brad Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.311
+NEED_VERSION=	1.326
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -26,16 +26,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
+CONFIGURE_STYLE= gnu
 
 WRKDIST=	${WRKDIR}/pgp50i/src
 
 post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1
-
-post-configure:
-	@find ${WRKSRC} -name Makefile | xargs perl -pi.bak -e 's,MFLAGS,AM_MAKEFLAGS,'
 
 post-install:
 	@strip ${PREFIX}/bin/pgp5
