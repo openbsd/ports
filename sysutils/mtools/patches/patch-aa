@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb 28 07:17:39 1999
-+++ Makefile.in	Sun Feb 28 07:22:16 1999
+--- Makefile.in.orig	Thu Jul  1 13:21:58 1999
++++ Makefile.in	Fri Jul  9 00:08:05 1999
 @@ -25,7 +25,7 @@
  srcdir=@srcdir@
  VPATH=@srcdir@
@@ -9,13 +9,14 @@
  exec_prefix = @exec_prefix@
  bindir      = @bindir@
  infodir     = @infodir@
-@@ -45,9 +45,10 @@
+@@ -47,10 +47,10 @@
  MACHDEPLIBS = @MACHDEPLIBS@	
  LN_S        = @LN_S@
  
 -INSTALL         = @INSTALL@
 -INSTALL_PROGRAM = @INSTALL_PROGRAM@
 -INSTALL_DATA    = @INSTALL_DATA@
+-INSTALL_INFO	= @INSTALL_INFO@
 +INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_SCRIPT  = ${BSD_INSTALL_SCRIPT}
@@ -23,7 +24,23 @@
  
  .SUFFIXES:
  .SUFFIXES: .o .c
-@@ -200,7 +201,7 @@
+@@ -195,12 +195,12 @@
+ 	    $(INSTALL_DATA) $$i $(infodir)/`echo $$i | sed 's|^$(srcdir)/||'`; \
+ 	  done; \
+ 	fi; \
+-	if [ -n "$(INSTALL_INFO)" ] ; then \
++	if [ -n "$(INSTALL_DATA)" ] ; then \
+ 		if [ -f $(infodir)/dir.info ] ; then \
+-			$(INSTALL_INFO) $(infodir)/mtools.info $(infodir)/dir.info; \
++			$(INSTALL_DATA) $(infodir)/mtools.info $(infodir)/dir.info; \
+ 		fi; \
+ 		if [ -f $(infodir)/dir ] ; then \
+-			$(INSTALL_INFO) $(infodir)/mtools.info $(infodir)/dir; \
++			$(INSTALL_DATA) $(infodir)/mtools.info $(infodir)/dir; \
+ 		fi; \
+ 	fi
+ 
+@@ -248,7 +248,7 @@
  install-scripts: $(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(bindir)
  	@for j in $(SCRIPTS) ; do \
@@ -32,7 +49,7 @@
  		echo $(bindir)/$$j ; \
  	done
  	rm -f $(bindir)/lz
-@@ -209,12 +210,12 @@
+@@ -257,12 +257,12 @@
  install-man:
  	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)
  	@for j in $(MAN1); do \
