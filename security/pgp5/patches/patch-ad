@@ -1,17 +1,13 @@
 --- man/pgp.1.orig	Sat Feb  7 17:08:26 1998
 +++ man/pgp.1	Mon Jan 25 23:59:40 1999
-@@ -1,38 +1,38 @@
+@@ -1,5 +1,5 @@
  .\"
 -.\" pgp.1
 +.\" pgp5.1
  .\"
  .\" Copyright (C) 1997 Pretty Good Privacy, Inc.  All rights reserved.
  .\"
- .\" $Id: patch-ad,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
- .\"
- .\" Process this file with
- .\" groff -man -Tascii pgp.1
- .\"
+@@ -11,28 +11,28 @@
 -.TH PGP 1 "JULY 1997 (v5.0)" PGP "User Manual"
 +.TH PGP5 1 "JULY 1997 (v5.0)" PGP "User Manual"
  .SH NAME

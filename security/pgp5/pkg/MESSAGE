@@ -1,0 +1,21 @@
+----------------------------------------------------------------------
+There are a number of large changes from the 2.6.2 distribution.  Most
+notable is that the command line has changed substantially.  See
+the pgp5(1) man page for a discussion of how to use the new command
+line.
+
+Also, to allow easy interoperation with older versions on the same
+system, a number of filename changes have been made:
+
+~/.pgp/pubring.pgp is now ~/.pgp/pubring.pkr
+~/.pgp/secring.pgp is now ~/.pgp/secring.skr
+~/.pgp/config.txt is now ~/.pgp/pgp.cfg
+~/.pgp/language.txt is now ~/.pgp/language50.txt
+
+The application will NOT automatically migrate these files for you; if
+you wish to retain your existing keyrings and configuration files, you
+should copy them yourself.  Note that copying language.txt to
+language50.txt is a decidedly bad idea.  Also note that language50.txt
+is entirely optional; US English is the only language it contains at
+this time.
+----------------------------------------------------------------------

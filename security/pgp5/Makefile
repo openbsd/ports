@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/05 07:14:21 fgsch Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -86,6 +86,6 @@ pre-configure:
 
 pre-install:
 	-${MKDIR} ${PREFIX}/lib/pgp5
-	@${INSTALL_DATA} ${WRKSRC}/language50.txt ${PREFIX}/lib/pgp
+	@${INSTALL_DATA} ${WRKSRC}/language50.txt ${PREFIX}/lib/pgp5
 
 .include <bsd.port.mk>
