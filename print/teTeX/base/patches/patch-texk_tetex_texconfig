@@ -1,5 +1,5 @@
---- texk/tetex/texconfig.orig	Tue Apr 25 20:31:32 2000
-+++ texk/tetex/texconfig	Tue Apr 25 20:48:01 2000
+--- texk/tetex/texconfig.orig	Mon Jan 31 13:05:00 2000
++++ texk/tetex/texconfig	Sat Feb  2 00:42:14 2002
 @@ -122,26 +122,13 @@ find_fmt()
  
  cls() { test -z "$NO_CLEAR" && clear; }
@@ -36,12 +36,13 @@
  check_environ
  require_binary kpsewhich pwd
  
-@@ -1696,6 +1682,13 @@ PAGER=${PAGER-$std_pager}
+@@ -1696,6 +1682,14 @@ PAGER=${PAGER-$std_pager}
  
  check_for_binary dialog >/dev/null
  dialogok=$?
 +if [ $dialogok == 0 ]; then
 +	own_dialog=true
++	DIALOG_PROG=`/usr/bin/which dialog`
 +else
 +	check_for_binary tetex-dialog >/dev/null
 +	own_dialog=false
