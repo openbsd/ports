@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/13 01:47:58 kevlo Exp $
+# Whom:	Oliver Sessink <oliver@lx.student.wau.nl>
+# $OpenBSD: Makefile,v 1.2 2000/01/13 05:42:13 kevlo Exp $
 
 DISTNAME=	bluefish-0.3.4
 CATEGORIES=	www 
