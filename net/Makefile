@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2001/08/23 07:54:54 peter Exp $
+# $OpenBSD: Makefile,v 1.165 2001/09/02 05:03:28 shell Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -152,7 +152,7 @@
      SUBDIR += wmwave
      SUBDIR += xarchie
      SUBDIR += xchat
-     SUBDIR += xchat,ssl
+     SUBDIR += xchat,no_ssl
      SUBDIR += xprobe
      SUBDIR += yafc
      SUBDIR += ytalk
