@@ -1,0 +1,17 @@
+--- gdk/gdkimage.c.orig	Mon Jan  4 10:33:27 1999
++++ gdk/gdkimage.c	Sat Jan 16 02:01:30 1999
+@@ -18,12 +18,14 @@
+  */
+ #include <config.h>
+ 
++#ifdef __linux__
+ /* gcc -ansi -pedantic on GNU/Linux causes warnings and errors
+  * unless this is defined:
+  * warning: #warning "Files using this header must be compiled with _SVID_SOURCE or _XOPEN_SOURCE"
+  */
+ #ifndef _XOPEN_SOURCE
+ #  define _XOPEN_SOURCE 1
++#endif
+ #endif
+ 
+ #include <stdlib.h>

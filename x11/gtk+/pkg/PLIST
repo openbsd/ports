@@ -119,20 +119,20 @@ include/gtk/gtkwindow.h
 include/gtk/gtkfeatures.h
 include/gtk/gtkmarshal.h
 include/gtk/gtktypebuiltins.h
-lib/locale/cs/LC_MESSAGES/gtk+.mo
-lib/locale/de/LC_MESSAGES/gtk+.mo
-lib/locale/es/LC_MESSAGES/gtk+.mo
-lib/locale/fr/LC_MESSAGES/gtk+.mo
-lib/locale/hu/LC_MESSAGES/gtk+.mo
-lib/locale/it/LC_MESSAGES/gtk+.mo
-lib/locale/ja/LC_MESSAGES/gtk+.mo
-lib/locale/ko/LC_MESSAGES/gtk+.mo
-lib/locale/nl/LC_MESSAGES/gtk+.mo
-lib/locale/no/LC_MESSAGES/gtk+.mo
-lib/locale/pl/LC_MESSAGES/gtk+.mo
-lib/locale/pt/LC_MESSAGES/gtk+.mo
-lib/locale/ru/LC_MESSAGES/gtk+.mo
-lib/locale/sv/LC_MESSAGES/gtk+.mo
+share/locale/cs/LC_MESSAGES/gtk+.mo
+share/locale/de/LC_MESSAGES/gtk+.mo
+share/locale/es/LC_MESSAGES/gtk+.mo
+share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/hu/LC_MESSAGES/gtk+.mo
+share/locale/it/LC_MESSAGES/gtk+.mo
+share/locale/ja/LC_MESSAGES/gtk+.mo
+share/locale/ko/LC_MESSAGES/gtk+.mo
+share/locale/nl/LC_MESSAGES/gtk+.mo
+share/locale/no/LC_MESSAGES/gtk+.mo
+share/locale/pl/LC_MESSAGES/gtk+.mo
+share/locale/pt/LC_MESSAGES/gtk+.mo
+share/locale/ru/LC_MESSAGES/gtk+.mo
+share/locale/sv/LC_MESSAGES/gtk+.mo
 lib/libgdk.so.1.2
 lib/libgdk.la
 lib/libgdk.a
@@ -156,3 +156,6 @@ lib/gtk/gtkrc.ru
 @dirrm lib/gtk
 @dirrm include/gtk
 @dirrm include/gdk
+@dirrm share/themes/Default/gtk
+@dirrm share/themes/Default
+@dirrm share/themes
