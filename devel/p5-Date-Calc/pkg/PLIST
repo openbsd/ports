@@ -1,21 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/09/19 07:30:52 kevlo Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc/Object.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc/Object.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Profiles.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Profiles.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Year.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Year.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc/Calc.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc/Calc.so
+@comment $OpenBSD: PLIST,v 1.7 2003/12/24 01:07:54 naddy Exp $
+${P5ARCH}/Carp/Clan.pm
+${P5ARCH}/Carp/Clan.pod
+${P5ARCH}/Date/Calc.pm
+${P5ARCH}/Date/Calc.pod
+${P5ARCH}/Date/Calc/Object.pm
+${P5ARCH}/Date/Calc/Object.pod
+${P5ARCH}/Date/Calendar.pm
+${P5ARCH}/Date/Calendar.pod
+${P5ARCH}/Date/Calendar/Profiles.pm
+${P5ARCH}/Date/Calendar/Profiles.pod
+${P5ARCH}/Date/Calendar/Year.pm
+${P5ARCH}/Date/Calendar/Year.pod
+@comment ${P5ARCH}/auto/Date/Calc/.packlist
+${P5ARCH}/auto/Date/Calc/Calc.bs
+${P5ARCH}/auto/Date/Calc/Calc.so
+man/man3p/Carp::Clan.3p
 man/man3p/Date::Calc.3p
 man/man3p/Date::Calc::Object.3p
 man/man3p/Date::Calendar.3p
 man/man3p/Date::Calendar::Profiles.3p
 man/man3p/Date::Calendar::Year.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Date/Calc
+@dirrm ${P5ARCH}/auto/Date
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Date/Calendar
+@dirrm ${P5ARCH}/Date/Calc
+@dirrm ${P5ARCH}/Date
+@dirrm ${P5ARCH}/Carp
+@dirrm ${P5ARCH}

@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/24 14:30:05 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/24 01:07:54 naddy Exp $
 ${P5SITE}/Time/Period.pm
+@comment ${P5ARCH}/auto/Time/Period/.packlist
 man/man3p/Time::Period.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Time/Period
+@comment @dirrm ${P5ARCH}/auto/Time
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Time

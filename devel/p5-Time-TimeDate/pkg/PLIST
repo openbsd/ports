@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/11/02 19:00:38 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/24 01:07:54 naddy Exp $
 ${P5SITE}/Date/Format.pm
 ${P5SITE}/Date/Language.pm
 ${P5SITE}/Date/Language/Afar.pm
@@ -26,8 +26,14 @@ ${P5SITE}/Date/Language/TigrinyaEritrean.pm
 ${P5SITE}/Date/Language/TigrinyaEthiopian.pm
 ${P5SITE}/Date/Parse.pm
 ${P5SITE}/Time/Zone.pm
+@comment ${P5ARCH}/auto/TimeDate/.packlist
 man/man3p/Date::Format.3p
 man/man3p/Date::Parse.3p
 man/man3p/Time::Zone.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/TimeDate
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Time
 @dirrm ${P5SITE}/Date/Language
 @dirrm ${P5SITE}/Date
