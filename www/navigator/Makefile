@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/03/20 03:20:50 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2000/03/22 03:24:12 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -79,7 +79,7 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
-FAKE=		Yes
+FAKE=	Yes
 
 NO_CONFIGURE=	Yes
 OBJMACHINE=	Yes
