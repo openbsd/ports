@@ -1,0 +1,16 @@
+$OpenBSD: patch-mk_hash_mk,v 1.1 2003/07/22 18:30:41 naddy Exp $
+--- mk/hash.mk.orig	Tue Jul 22 20:17:07 2003
++++ mk/hash.mk	Tue Jul 22 20:17:22 2003
+@@ -64,12 +64,6 @@ HAVE_SHA1	= no
+ endif # 1.6A
+ endif # NetBSD
+ 
+-ifeq (${HOST_OS}, OpenBSD)
+-ifeq ($(shell ${TEST} ${OSVER} -le 200305 && ${ECHO} yes), yes) # 3.3
+-HAVE_SHA1	= no
+-endif # 3.3
+-endif # OpenBSD
+-
+ ifeq (${HOST_OS}, SunOS)
+ HAVE_SHA1	= no
+ LIBS   += -lmd5

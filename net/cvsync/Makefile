@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2003/07/13 21:03:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2003/07/22 18:30:40 naddy Exp $
 
 COMMENT=	"portable CVS repository synchronization utility"
 
-DISTNAME=	cvsync-0.24.0
+DISTNAME=	cvsync-0.24.1
 CATEGORIES=	net
-HOMEPAGE=	http://www.daemon-systems.org/cvsync/
+HOMEPAGE=	http://www.cvsync.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.daemon-systems.org/pub/cvsync/ \
+MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
 
 USE_GMAKE=	Yes
