@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.621 2004/07/12 08:45:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.622 2004/07/18 22:44:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -159,6 +159,9 @@ show:
 .  endfor
 .elif defined(clean)
 .MAIN: clean
+.elif defined(_internal-clean)
+clean=${_internal-clean}
+.MAIN: _internal-clean
 .else
 .MAIN: all
 .endif
@@ -1102,6 +1105,27 @@ _LIB_DEP2= ${LIB_DEPENDS}
 README_NAME?=	${TEMPLATES}/README.port
 
 REORDER_DEPENDENCIES?=
+
+# Lock infrastructure:
+# nothing happens unless LOCKDIR, LOCK_CMD and UNLOCK_CMD are defined
+
+LOCK_VERBOSE?=No
+.if defined(LOCKDIR) && defined(LOCK_CMD) && defined(UNLOCK_CMD)
+.  if ${LOCK_VERBOSE:L} == "yes"
+_LOCK=echo "Locking $$lock from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_UNLOCK=echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
+.  else
+_LOCK=${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_UNLOCK=${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
+.  endif
+.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+_DO_LOCK=: $${lock:=${PKGNAME}}; ${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
+.  else
+_DO_LOCK=: $${lock:=${FULLPKGNAME}}; ${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
+.  endif
+.else
+_DO_LOCK=:
+.endif
 ###
 ### end of variable setup. Only targets now
 ###
@@ -1235,7 +1259,8 @@ addsum: fetch-all
 
 
 
-depends: lib-depends build-depends run-depends regress-depends
+_internal-depends: _internal-lib-depends _internal-build-depends \
+	_internal-run-depends _internal-regress-depends
 
 # and the rules for the actual dependencies
 
@@ -1298,7 +1323,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 .    endfor
 .  endif
-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
+_internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
 # Do a brute-force ldd/objdump on all files under WRKINST.
@@ -1337,8 +1362,10 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
-fetch checksum extract patch configure all build install regress \
-uninstall deinstall fake package lib-depends-check manpages-check license-check:
+_internal-fetch _internal-checksum _internal-extract _internal-patch \
+_internal-configure _internal-all _internal-build _internal-install \
+_internal-regress _internal-uninstall _internal-deinstall _internal-fake \
+_internal-package _internal-lib-depends-check _internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
@@ -1352,14 +1379,14 @@ uninstall deinstall fake package lib-depends-check manpages-check license-check:
 # depend upon, but not the actual list of lib depends, since this list is
 # going to be tweaked as a result of running lib-depends-check.
 #
-lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
+_internal-lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
 	@${_depfile_fragment}; \
 	LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" \
 	PKG_DBDIR='${PKG_DBDIR}' \
 		perl ${_CHECK_LIBS_SCRIPT} \
 		${_LIBLIST} ${_BUILDLIBLIST}
 
-manpages-check: ${_FAKE_COOKIE}
+_internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
 		${SUDO} /usr/libexec/makewhatis -p . && \
 		cat whatis.db
@@ -1376,7 +1403,7 @@ manpages-check: ${_FAKE_COOKIE}
 # IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
 # can be run several times in a row.
 
-fetch:
+_internal-fetch:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-fetch)
@@ -1396,7 +1423,7 @@ fetch:
 .  endif
 
 
-checksum: fetch
+_internal-checksum: _internal-fetch
 .  if ! defined(NO_CHECKSUM)
 	@checksum_file=${CHECKSUM_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
@@ -1448,35 +1475,53 @@ _refetch:
 	@cd ${.CURDIR} && exec ${MAKE} ${DISTDIR}/${file} \
 		MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
 .  endfor
-	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
+	cd ${.CURDIR} && exec ${MAKE} _internal-checksum REFETCH=false
 
 
 # The cookie's recipe hold the real rule for each of those targets.
 
-extract: ${_EXTRACT_COOKIE}
-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-extract: ${_EXTRACT_COOKIE}
+_internal-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_PATCH_COOKIE}
-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_DISTPATCH_COOKIE}
-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_CONFIGURE_COOKIE}
-all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_BUILD_COOKIE}
-install: ${_INSTALL_DEPS}
-fake: ${_FAKE_COOKIE}
-package: ${_PACKAGE_DEPS}
+_internal-install: ${_INSTALL_DEPS}
+_internal-fake: ${_FAKE_COOKIE}
+_internal-package: ${_PACKAGE_DEPS}
 
 
 .  if defined(_IGNORE_REGRESS)
-regress:
+_internal-regress:
 .    if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_REGRESS}."
 .    endif
 .  else
-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
+_internal-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 .  endif
 
 .endif # IGNORECMD
+
+
+# Top-level targets redirect to the real _internal-target, along with locking
+# if locking exists.
+
+_TOP_TARGETS=extract patch distpatch configure build all install fake package \
+fetch checksum regress depends lib-depends build-depends run-depends \
+regress-depends clean lib-depends-check manpages-check plist update-plist
+.if defined(_LOCK)
+.  for _t in ${_TOP_TARGETS}
+${_t}:
+	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
+.  endfor
+.else
+.    for _t in ${_TOP_TARGETS}
+${_t}: _internal-${_t}
+.  endfor
+.endif
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
@@ -1484,7 +1529,7 @@ ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@${ECHO_MSG} "===> Running ${_i}"
 	@cd ${.CURDIR} && exec ${MAKE} ${_i} ${BULK_FLAGS}
 .endfor
-	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} clean
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} _internal-clean
 	@${_MAKE_COOKIE} $@
 
 # The real targets. Note that some parts always get run, some parts can be
@@ -1496,7 +1541,7 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends
+	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -1577,7 +1622,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
 .  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES)
-	@cd ${.CURDIR} && exec ${MAKE} distpatch
+	@cd ${.CURDIR} && exec ${MAKE} _internal-distpatch
 .  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
 		error=false; \
@@ -1764,7 +1809,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 # The real install
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
-	@cd ${.CURDIR} && DEPENDS_TARGET=install exec ${MAKE} run-depends lib-depends
+	@cd ${.CURDIR} && DEPENDS_TARGET=install exec ${MAKE} _internal-run-depends _internal-lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${PKGFILE${SUBPACKAGE}}"
 .  for _m in ${MODULES}
 .    if defined(MOD${_m:U}_pre_install)
@@ -1805,7 +1850,7 @@ _package: ${_PKG_PREREQ}
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
 	    ${MAKE} _package-links; \
 	  else \
-	    ${SUDO} ${MAKE} clean=package; \
+	    ${SUDO} ${MAKE} _internal-clean=package; \
 	    exit 1; \
 	  fi
 # End of PACKAGE.
@@ -1827,7 +1872,7 @@ ${_F}:
 .    endfor
 	@exit 1
 .  else
-	@mkdir -p ${_F:H}; \
+	@lock=${_F:T}; ${_DO_LOCK}; mkdir -p ${_F:H}; \
 	cd ${_F:H}; \
 	select=${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
@@ -1866,7 +1911,7 @@ _delete-package-links:
 
 # Cleaning up
 
-clean:
+_internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@${MAKE} all-dir-depends|tsort -r|while read dir; do \
 		unset FLAVOR SUBPACKAGE || true; \
@@ -1938,7 +1983,7 @@ clean:
 # when port is installed or package created.
 #
 .if ${FAKE:L} == "yes"
-plist update-plist: fake ${_DEPrun_COOKIES}
+_internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
@@ -2498,4 +2543,11 @@ uninstall deinstall:
 	run-depends-list run-dir-depends show \
 	uninstall unlink-categories update-patches \
 	update-plist \
-	license-check _license-check
+	license-check _license-check \
+	_internal-extract _internal-distpatch _internal-configure \
+	_internal-build _internal-all _internal_install _internal-fake \
+	_internal-package _internal_fetch _internal-checksum \
+	_internal-depends _internal-lib-depends _internal-build-depends \
+	_internal-run-depends _internal-regress-depends \
+	_internal-regress _internal-clean _internal-lib-depends-check \
+	_internal-manpages-check _internal-plist _internal-update-plist
