@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/02/06 20:47:48 brad Exp $
 
 COMMENT=	"mailing list manager"
 
 DISTNAME=	majordomo-1.94.5
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     mail
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/
