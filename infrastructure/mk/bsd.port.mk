@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.199 2000/02/15 07:28:20 turan Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.200 2000/02/15 17:58:32 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -697,7 +697,7 @@ PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`${MAKE} package-depends|${_SORT_DEPENDS}`"
+PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && make package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL)
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL
 .  endif
@@ -1465,7 +1465,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 	@cd ${.CURDIR} && make do-package
 .  else
 # What PACKAGE normally does:
-	@if [ -e ${PLIST} ]; then \
+	@cd ${.CURDIR} && if [ -e ${PLIST} ]; then \
 		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
 		if [ -d ${PACKAGES} ]; then \
 			if [ ! -d ${PKGREPOSITORY} ]; then \
@@ -1529,7 +1529,7 @@ ${_F}:
 # re-distributed freely
 mirror-distfiles:
 .if (${MIRROR_DISTFILE:L} == "yes")
-	@make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
 # list the distribution and patch files used by a port.  Typical
@@ -1574,7 +1574,7 @@ obj:
 
 .if !target(package-links)
 package-links:
-	@make delete-package-links
+	@cd ${.CURDIR} && make delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! mkdir -p ${PACKAGES}/$$cat; then \
@@ -1593,7 +1593,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package:
-	@make delete-package-links
+	@cd ${.CURDIR} && make delete-package-links
 	@rm -f ${PKGFILE}
 .endif
 
@@ -1613,7 +1613,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
-	@DEPENDS_TARGET=${DEPENDS_TARGET} make install
+	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} make install
 .endif
 
 # Deinstall
@@ -1641,7 +1641,7 @@ pre-clean:
 .if !target(clean)
 clean: pre-clean
 .  if ${CLEANDEPENDS:L}=="yes"
-	@make clean-depends
+	@cd ${.CURDIR} && make clean-depends
 .  endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
@@ -1674,12 +1674,12 @@ RECURSIVE_FETCH_LIST?=	Yes
 
 .if !target(fetch-list)
 fetch-list:
-	@make fetch-list-recursive RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} | sort -u
+	@cd ${.CURDIR} && make fetch-list-recursive RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} | sort -u
 .endif # !target(fetch-list)
 
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
-	@make fetch-list-one-pkg 
+	@cd ${.CURDIR} && make fetch-list-one-pkg 
 .  if ${RECURSIVE_FETCH_LIST:L} != "no"
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 	| tr '\040' '\012' | sort -u`; do \
@@ -1974,10 +1974,10 @@ describe:
 README.html:
 	@echo ${PKGNAME} | ${HTMLIFY} > $@.tmp3
 .if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
-	@make depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
+	@cd ${.CURDIR} && make depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
 .endif
 .if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
-	@make package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
+	@cd ${.CURDIR} && make package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
 .endif
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
@@ -2008,7 +2008,7 @@ README.html:
 print-depends-list:
 .  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `make ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
+	@echo -n `cd ${.CURDIR} && make ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
 	@echo '" to build.'
 .  endif
 .endif
@@ -2017,7 +2017,7 @@ print-depends-list:
 print-package-depends:
 .  if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `make ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
+	@echo -n `cd ${.CURDIR} && make ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
 	@echo '" to run.'
 .  endif
 .endif
@@ -2026,7 +2026,7 @@ print-package-depends:
 .if !target(recurse-build-depends)
 recurse-build-depends:
 .  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
-	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2040,7 +2040,7 @@ recurse-build-depends:
 		fi; \
 	done 
 .  else
-	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
+	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
 .  endif
 .endif
 
@@ -2066,7 +2066,7 @@ depends-list:
 .if !target(recurse-package-depends)
 recurse-package-depends:
 .  if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
-	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2080,7 +2080,7 @@ recurse-package-depends:
 		fi; \
 	done
 .  else
-	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
+	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
 .  endif
 .endif
 
@@ -2123,7 +2123,7 @@ PKGDEPTH!=make package-path|sed -e 's|[^./][^/]*|..|g'
 
 .if !target(print-depends)
 print-depends: 
-	@make FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
+	@cd ${.CURDIR} && make FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 .endif
 
 # Fake installation of package so that user can pkg_delete it later.
@@ -2159,7 +2159,7 @@ fake-pkg:
 		if [ -f ${PKGDIR}/MESSAGE ]; then \
 			cp ${PKGDIR}/MESSAGE ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `make package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
+		for dep in `cd ${.CURDIR} && make package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
 				if ! grep ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
