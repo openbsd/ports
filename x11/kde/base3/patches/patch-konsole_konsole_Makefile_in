@@ -1,0 +1,12 @@
+$OpenBSD: patch-konsole_konsole_Makefile_in,v 1.1 2003/01/09 19:27:05 espie Exp $
+--- konsole/konsole/Makefile.in.orig	Thu Jan  9 20:18:17 2003
++++ konsole/konsole/Makefile.in	Thu Jan  9 20:18:37 2003
+@@ -440,7 +440,7 @@ am_konsole_grantpty_OBJECTS = konsole_gr
+ #>- konsole_grantpty_OBJECTS = $(am_konsole_grantpty_OBJECTS)
+ #>+ 1
+ konsole_grantpty_OBJECTS = konsole_grantpty.$(OBJEXT)
+-konsole_grantpty_LDADD = $(LDADD)
++konsole_grantpty_LDADD = $(LDADD) $(LIBUTIL)
+ konsole_grantpty_DEPENDENCIES =
+ am_kwrited_OBJECTS = dummy.$(OBJEXT)
+ #>- kwrited_OBJECTS = $(am_kwrited_OBJECTS)

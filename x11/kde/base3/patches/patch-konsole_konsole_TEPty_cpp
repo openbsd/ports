@@ -1,0 +1,81 @@
+$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.1 2003/01/09 19:27:05 espie Exp $
+--- konsole/konsole/TEPty.cpp.orig	Thu Jan  9 18:47:14 2003
++++ konsole/konsole/TEPty.cpp	Thu Jan  9 20:17:10 2003
+@@ -120,6 +120,10 @@
+         #include <errno.h>
+         #include <utmp.h>
+ #endif
++#ifdef __OpenBSD__
++#define HAVE_OPENPTY
++#undef USE_LOGIN
++#endif
+ 
+ #include <signal.h>
+ 
+@@ -179,7 +183,7 @@ FILE* syslog_file = NULL; //stdout;
+ #define PTY_FILENO 3
+ #define BASE_CHOWN "konsole_grantpty"
+ 
+-int chownpty(int fd, int grant)
++int chownpty(int fd, int grant, const char *name)
+ // param fd: the fd of a master pty.
+ // param grant: 1 to grant, 0 to revoke
+ // returns 1 on success 0 on fail
+@@ -200,10 +204,13 @@ int chownpty(int fd, int grant)
+   }
+   if (pid == 0)
+   {
++    if (fd == -1)
++    	close(PTY_FILENO);
++    else
+     /* We pass the master pseudo terminal as file descriptor PTY_FILENO. */
+-    if (fd != PTY_FILENO && dup2(fd, PTY_FILENO) < 0) exit(1);
++	if (fd != PTY_FILENO && dup2(fd, PTY_FILENO) < 0) exit(1);
+     QString path = locate("exe", BASE_CHOWN);
+-    execle(path.ascii(), BASE_CHOWN, grant?"--grant":"--revoke", NULL, NULL);
++    execle(path.ascii(), BASE_CHOWN, grant?"--grant":"--revoke", name, NULL, NULL);
+     exit(1); // should not be reached
+   }
+ 
+@@ -259,7 +266,12 @@ void TEPty::donePty()
+         logout(tty_name);
+   }
+ #endif
+-  if (needGrantPty) chownpty(fd,FALSE);
++#ifdef __OpenBSD__
++  	chownpty(-1, FALSE, ttynam);
++#else
++	chownpty(fd, FALSE, ttynam);
++#endif
++
+   emit done(status);
+ }
+ 
+@@ -316,8 +328,8 @@ int TEPty::openPty()
+ 
+   // We try, as we know them, one by one.
+ 
+-#if defined(HAVE_OPENPTY) && 0 //FIXME: some work needed.
+-#warning wheee
++
++#if defined(HAVE_OPENPTY) //FIXME: some work needed.
+   if (ptyfd < 0)
+   {
+     int master_fd, slave_fd;
+@@ -327,6 +339,7 @@ int TEPty::openPty()
+       strncpy(ptynam, name, 50);
+       strncpy(ttynam, name, 50);
+       ttynam[5]='t';
++      ptynam[5]='p';
+       // one needs to look into who owns what to make sure chownpty is needed
+       // FIXME: further, the logic of openPty has to adjusted to pass a file
+       //        handle instead of a name.
+@@ -421,7 +434,7 @@ int TEPty::openPty()
+     fprintf(stderr,"Can't open a pseudo teletype\n"); exit(1);
+   }
+ 
+-  if (needGrantPty && !chownpty(ptyfd,TRUE))
++  if (needGrantPty && !chownpty(ptyfd,TRUE, ttynam))
+   {
+     fprintf(stderr,"konsole: chownpty failed for device %s::%s.\n",ptynam,ttynam);
+     fprintf(stderr,"       : This means the session can be eavesdroped.\n");
