@@ -1,5 +1,7 @@
+#-*- mode: Makefile; tab-width: 4; -*-
+# ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.51 2003/07/29 22:27:09 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.52 2003/08/02 09:53:27 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -38,6 +40,7 @@
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
 .endif
+PORTSDIR ?= /usr/ports
 
 .if defined(show)
 .MAIN: show
@@ -55,95 +58,37 @@ STRIP?=	-s
 OPSYS=	OpenBSD
 .endif
 
-.if !defined(PKGPATH)
-_PORTSDIR!=	cd ${PORTSDIR} && pwd -P
-_CURDIR!=	cd ${.CURDIR} && pwd -P
-.  if ${_PORTSDIR} == ${_CURDIR}
-PKGPATH=
-.  else
-PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
-.  endif
-.endif
-.if empty(PKGPATH)
-_SEP=
-.else
-_SEP=/
-.endif
+.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
 ECHO_MSG?=	echo
 
-RECURSIVE_FETCH_LIST?=	No
-
 REPORT_PROBLEM?=exit 1
 
-# Need an actual list of all subdirs to complete SKIPPED
-_ALL_SUBDIR:=${SUBDIR}
-SKIPPED=
-.if defined(SKIPDIR)
-.  for i in ${SKIPDIR:S/:/,/}
-SKIPPED+=${_ALL_SUBDIR:M$i}
-SUBDIR:=${SUBDIR:N$i}
-.  endfor
+# create a full list of SUBDIRS...
+.if empty(PKGPATH)
+FULLSUBDIR:=${SUBDIR}
+.else
+FULLSUBDIR:=${SUBDIR:S@^@${PKGPATH}/@g}
 .endif
+
+SKIPPED=
+.for i in ${SKIPDIR}
+SKIPPED+=${FULLSUBDIR:M$i}
+SUBDIR:=${FULLSUBDIR:N$i}
+.endfor
+
 
 _SUBDIRUSE: .USE
 .  for i in ${SKIPPED}
-	@echo "===> ${PKGPATH}${_SEP}$i skipped"
+	@echo "===> $i skipped"
 .  endfor
-	@for dir in ${SUBDIR}; do \
-	    multi=''; flavor=''; sawflavor=false; toset=''; \
-	    case "$$dir" in \
-	    *[,:]*) \
-		IFS=',:'; first=true; insert=''; for i in $$dir; do \
-		    if $$first; then \
-			dir=$$i; first=false; \
-		    else \
-			case X"$$i" in \
-			X-*) \
-			    multi="$$i";; \
-			*) \
-			    sawflavor=true; \
-			    flavor="$$flavor$$insert$$i"; \
-			    insert=' ';; \
-			esac \
-		    fi; \
-		done; unset IFS; \
-		case X$$multi in "X");; *) \
-		    toset="$$toset SUBPACKAGE=\"$$multi\"";; \
-		esac; \
-	    esac; \
-	    if $$sawflavor; then \
-		toset="$$toset FLAVOR=\"$$flavor\""; \
-		display=" ($$flavor)"; \
-	    else \
-	    	display=''; \
-	    fi; \
-	    if cd ${.CURDIR}/$${dir}.${MACHINE} 2>/dev/null; then \
-		edir=$${dir}.${MACHINE}; \
-	    elif cd ${.CURDIR}/$${dir} 2>/dev/null; then \
-		edir=$${dir}; \
-	    else \
-		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${dir} non-existent"; \
-		${REPORT_PROBLEM}; \
-		continue; \
-	    fi; \
-	    ${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
-	    set +e; \
-	    if eval  $$toset \
-		PKGPATH=${PKGPATH}${_SEP}$$edir \
-		RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
-		${MAKE} ${.TARGET}; \
-	    then :; else ${REPORT_PROBLEM}; fi; \
-	    set -e; \
-	done
-
-${SUBDIR}::
-	@if test -d ${.TARGET}.${MACHINE}; then \
-		cd ${.CURDIR}/${.TARGET}.${MACHINE}; \
-	else \
-		cd ${.CURDIR}/${.TARGET}; \
-	fi; \
-	${MAKE} all
+.  for d in ${FULLSUBDIR}
+	@dir=$d; ${_flavor_fragment}; \
+	${ECHO_MSG} "===> $d"; \
+	set +e; \
+	if eval  $$toset ${MAKE} ${.TARGET}; then :; \
+	else ${REPORT_PROBLEM}; fi
+.endfor
 
 .for __target in all fetch fetch-list package fake extract configure \
 		 build clean describe distclean deinstall install \
@@ -163,7 +108,6 @@ readme:
 	@rm -f README.html
 	@${MAKE} README.html
 
-PORTSDIR ?= /usr/ports
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
 README=	${TEMPLATES}/README.top
@@ -172,26 +116,26 @@ README=	${TEMPLATES}/README.category
 .endif
 
 README.html:
-	@> $@.tmp
-.for entry in ${SUBDIR}
-	@echo -n '<dt><a href="'${entry}/README.html'">'"`cd ${entry} && make package-name 2>/dev/null||echo ${entry}`</a><dd>" >> $@.tmp
-.  if exists(${entry}/pkg/COMMENT)
-	@cat ${entry}/pkg/COMMENT >> $@.tmp
-.  else
-	@echo "(no description)" >> $@.tmp
-.  endif
+	@>$@.tmp
+.for entry in ${FULLSUBDIR}
+	@dir=${entry}; ${_flavor_fragment}; \
+	name=`eval $$toset ${MAKE} _print-packagename`; \
+	case $$name in \
+		README) comment='';; \
+		*) comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`;; \
+	esac; \
+	cd ${.CURDIR}; \
+	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">${entry}</a><dd>$$comment" >>$@.tmp
 .endfor
-	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
 	@cat ${README} | \
 		sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
 			-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' -e '//d' \
-			-e '/%%SUBDIR%%/r$@.tmp2' -e '//d' \
+			-e '/%%SUBDIR%%/r$@.tmp' -e '//d' \
 		> $@
-	@rm -f $@.tmp $@.tmp2
+	@rm $@.tmp
 
 _print-packagename:
-	@echo 1>&2 "Error in dependency: ${PKGPATH} is not a package location"
-	@exit 1
+	@echo "README"
 
 .PHONY: all fetch fetch-list package extract configure build clean \
 	describe distclean deinstall reinstall checksum mirror-distfiles \

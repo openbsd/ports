@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.574 2003/08/01 09:07:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.575 2003/08/02 09:53:27 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -538,13 +538,8 @@ ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
 
-.if !defined(PKGPATH)
-_PORTSDIR!=	cd ${PORTSDIR} && pwd -P
-_CURDIR!=	cd ${.CURDIR} && pwd -P
-PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
-.endif
+.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
-PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}
 .if empty(SUBPACKAGE)
 FULLPKGPATH=${PKGPATH}${_FLAVOR_EXT2:S/-/,/g}
 .else
@@ -1073,44 +1068,6 @@ addsum: fetch-all
 # Dependency checking
 ################################################################
 
-# Code to invoke to split dir,-multi,flavor
-
-_flavor_fragment= \
-		multi=''; flavor=''; sawflavor=false; \
-		case "$$dir" in \
-		*,*) \
-			IFS=,; first=true; for i in $$dir; do \
-				if $$first; then \
-					dir=$$i; first=false; \
-				else \
-					case X"$$i" in \
-						X-*) \
-							multi="$$i";; \
-						*) \
-							sawflavor=true; \
-							flavor="$$flavor $$i";; \
-					esac \
-				fi; \
-			done; unset IFS;; \
-		esac; \
-		toset="PKGPATH=$$dir"; \
-		case X$$multi in "X");; *) \
-			toset="$$toset SUBPACKAGE=\"$$multi\"";; \
-		esac; \
-		if $$sawflavor; then \
-			toset="$$toset FLAVOR=\"$$flavor\""; \
-		fi; \
-		cd ${PORTSDIR}; \
-		if [ -L $$dir ]; then \
-			echo 1>&2 ">> Broken dependency: $$dir is a symbolic link"; \
-			exit 1; \
-		fi; \
-		if cd $$dir 2>/dev/null || cd mystuff/$$dir 2>/dev/null; then \
-			:; \
-		else \
-			echo 1>&2 ">> Broken dependency: $$dir non existent"; \
-			exit 1; \
-		fi
 
 # Various dependency styles
 
@@ -2119,8 +2076,6 @@ readme readmes:
 .endif
 
 
-HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
-
 ${FULLPKGNAME${SUBPACKAGE}}.html:
 	@echo ${_COMMENT} | ${HTMLIFY} >$@.tmp-comment
 	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
@@ -2129,12 +2084,29 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 .else
 	@echo "" >$@.tmp4
 .endif
+.if defined(MULTI_PACKAGES) 
+.  if empty(SUBPACKAGE)
+	@echo "<h2>Subpackages</h2>" >$@.tmp-subpackages
+	@echo "<ul>" >>$@.tmp-subpackages
+
+.    for _S in ${MULTI_PACKAGES}
+	@name=`SUBPACKAGE=${_S} ${MAKE} _print-packagename _FULL_PACKAGE_NAME=No`; \
+	echo "<li><a href=\"$$name.html\">$$name</a>" >>$@.tmp-subpackages
+.    endfor
+	@echo "</ul>" >>$@.tmp-subpackages
+.  else
+	@name=`unset SUBPACKAGE; ${MAKE} _print-packagename _FULL_PACKAGE_NAME=No`; \
+	echo "<h2>Subpackage of <a href=\"$$name.html\">$$name</a></h2>" >$@.tmp-subpackages
+.  endif
+.else
+	@>$@.tmp-subpackages
+.endif
 .for _I in build run
 .  if !empty(_ALWAYS_DEP) || !empty(_${_I:U}_DEP)
 	@cd ${.CURDIR} && ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
 		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
-			echo "<li><a href=\"${PKGDEPTH}/$$j/$$k.html\">$$k</a>"; \
+			echo "<li><a href=\"${PKGDEPTH}$$j/$$k.html\">$$k</a>"; \
 		 done  >$@.tmp-${_I}
 .  else
 	@echo "<li>none" >$@.tmp-${_I}
@@ -2148,6 +2120,7 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
 			-e '/%%BUILD_DEPENDS%%/r$@.tmp-build' -e '//d' \
 			-e '/%%RUN_DEPENDS%%/r$@.tmp-run' -e '//d' \
+ 			-e '/%%SUBPACKAGES%%/r$@.tmp-subpackages' -e '//d' \
 		>> $@
 	@rm -f $@.tmp*
 
