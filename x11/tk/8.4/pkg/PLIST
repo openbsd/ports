@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 12:37:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 19:07:05 naddy Exp $
+@option no-default-conflict
+@pkgcfl tk-8.4.*
 bin/wish8.4
 include/tk8.4/
 include/tk8.4/generic/
