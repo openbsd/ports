@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2000/12/28 17:53:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2000/12/28 23:37:22 avsm Exp $
 
 DISTNAME=	php-4.0.4
 PKGNAME=	php4-4.0.4
 CATEGORIES=	www lang
 NEED_VERSION=	1.346
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://www.php.net/
 
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://us.php.net/distributions/ \
 		http://se.php.net/distributions/ \
-		http://no.php.net/distributions/
-
-MASTER_SITES0=	http://www.php.net/extra/ \
-		http://us.php.net/extra/ \
-		http://se.php.net/extra/ \
-		http://no.php.net/extra/
+		http://no.php.net/distributions/ \
+		http://uk.php.net/distributions/ 
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
