@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/04 14:48:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/07 07:58:42 obecian Exp $
+
+COMMENT=	visio-like technical drawing
 
 DISTNAME=	dia-0.86
 # patch in -stable
 PKGNAME=	dia-0.86p1
 CATEGORIES=	graphics
-NEED_VERSION=	1.320
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/dia
 
