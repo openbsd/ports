@@ -17,4 +17,6 @@ share/icons/knapster.xpm
 share/icons/mini/knapster.xpm
 share/locale/fr/LC_MESSAGES/knapster.mo
 share/locale/ja/LC_MESSAGES/knapster.mo
+share/locale/pt_BR/LC_MESSAGES/knapster.mo
+share/locale/sv/LC_MESSAGES/knapster.mo
 @dirrm share/doc/HTML/en/knapster

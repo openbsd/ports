@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/10 15:46:05 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/17 19:00:04 jakob Exp $
 
-DISTNAME=		knapster-0.9
+DISTNAME=		knapster-0.10
 CATEGORIES=     	audio
 
 HOMEPAGE=		http://knapster.netpedia.net/
