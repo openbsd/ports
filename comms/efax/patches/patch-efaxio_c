@@ -1,0 +1,12 @@
+$OpenBSD: patch-efaxio_c,v 1.1 2002/07/17 22:45:09 lebel Exp $
+--- efaxio.c.orig	Tue Mar  2 01:15:44 1999
++++ efaxio.c	Wed Jul 17 18:25:19 2002
+@@ -246,7 +246,7 @@ int cmd ( TFILE *f, char *s, int t )
+     if ( strlen(s) >= CMDBUFSIZE-4 ) {
+       msg ( "E modem command \"%s\" too long", s ) ;
+     } else {
+-      sprintf ( buf, "AT%s\r", s ) ;
++      snprintf ( buf, sizeof buf, "AT%s\r", s ) ;
+       tput ( f, buf, strlen(buf) ) ;
+     }
+   }
