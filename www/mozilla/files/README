@@ -11,8 +11,8 @@ get it to a state where it is ready for prime time.  Here are the
 general caveats:
 
 1) Only checked with lesstif 0.86.0, older versions will probably not
-   Use the OpenBSD lesstif port -- it fixes a problem where the 2.0
-   version of libXm.a overwrites the 1.2 version.
+   work. Use the OpenBSD lesstif port -- it fixes a problem where the
+   2.0 version of libXm.a overwrites the 1.2 version.
 
 2) This warning is spit out on occasion
 
@@ -36,7 +36,7 @@ general caveats:
 
    HOWEVER: that only makes it compile.  Try to run and you'll get
    `Memory fault' in 5-10 seconds.  Perfect opportunity for sparc
-   developers to get their debugger skills in shape :-)
+   developers to get their debuging skills in shape :-)
 
 5) I've used it less than 10 minutes on an i386.  It didn't crash
    in that time :-)
