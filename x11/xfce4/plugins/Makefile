@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/08 01:59:26 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/09 23:23:47 jolan Exp $
 
      SUBDIR+= xfce4-battery-plugin
      SUBDIR+= xfce4-clipman-plugin 
@@ -12,6 +12,7 @@
      SUBDIR+= xfce4-showdesktop-plugin
      SUBDIR+= xfce4-systemload-plugin
      SUBDIR+= xfce4-systray
+     SUBDIR+= xfce4-taskbar-plugin
      SUBDIR+= xfce4-toys
      SUBDIR+= xfce4-trigger-launcher
      SUBDIR+= xfce4-wavelan-plugin
