@@ -10,7 +10,7 @@
 ! LDADD=	-lX11/X11 -lm
   
   .include <bsd.prog.mk>
---- 1,21 ----
+--- 1,20 ----
   #	@(#)Makefile	8.1 (Berkeley) 5/31/93
   
   PROG=	xneko
@@ -19,11 +19,10 @@
 ! xneko.cat1: xneko.6
 ! 	nroff -man xneko.6 > xneko.cat1
 ! 
-! X11BASE=	/usr/X11R6/
+! X11BASE=	/usr/X11R6
 ! DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
 ! CFLAGS+=	-I${X11BASE}/include
-! LDDESTDIR+=	-L${X11BASE}/lib
-! LDADD+=		-lX11 -lm
+! LDADD+=		-L${X11BASE}/lib -lX11 -lm
 ! 
 ! MANDIR=        ${X11BASE}/man/man
 ! 
