@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/18 00:20:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/27 13:03:13 kevlo Exp $
 ${P5SITE}/Finance/Quote.pm
 ${P5SITE}/Finance/Quote/AEX.pm
 ${P5SITE}/Finance/Quote/ASX.pm
+${P5SITE}/Finance/Quote/BMONesbittBurns.pm
 ${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
 ${P5SITE}/Finance/Quote/DWS.pm
+${P5SITE}/Finance/Quote/FTPortfolios.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
 ${P5SITE}/Finance/Quote/Fool.pm
+${P5SITE}/Finance/Quote/IndiaMutual.pm
 ${P5SITE}/Finance/Quote/Tdwaterhouse.pm
 ${P5SITE}/Finance/Quote/Tiaacref.pm
 ${P5SITE}/Finance/Quote/Troweprice.pm
@@ -21,10 +24,13 @@ ${P5SITE}/Finance/Quote/Yahoo/USA.pm
 man/man3p/Finance::Quote.3p
 man/man3p/Finance::Quote::AEX.3p
 man/man3p/Finance::Quote::ASX.3p
+man/man3p/Finance::Quote::BMONesbittBurns.3p
 man/man3p/Finance::Quote::Cdnfundlibrary.3p
 man/man3p/Finance::Quote::DWS.3p
+man/man3p/Finance::Quote::FTPortfolios.3p
 man/man3p/Finance::Quote::Fidelity.3p
 man/man3p/Finance::Quote::Fool.3p
+man/man3p/Finance::Quote::IndiaMutual.3p
 man/man3p/Finance::Quote::Tdwaterhouse.3p
 man/man3p/Finance::Quote::Tiaacref.3p
 man/man3p/Finance::Quote::Troweprice.3p
