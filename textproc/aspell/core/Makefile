@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/22 05:34:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/18 01:27:08 jolan Exp $
 
 COMMENT=	"spell checker designed to eventually replace Ispell"
 VER=		0.50.4.1
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
+MODGCC3_ARCHES=	powerpc sparc64
 MODGCC3_LANGS=	C++
 
 CONFIGURE_STYLE=gnu
