@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/05/08 21:32:48 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/05/08 22:13:30 jasoni Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -4935,9 +4935,6 @@ usr/lib/libpanel.so.4.0
 usr/lib/libreadline.so.3.0
 usr/lib/libstdc++.so.2.8
 usr/lib/libstdc++.so.2.9
-NEWDYNLIBDIR(%D/usr/X11R6/lib)
-NEWDYNLIBDIR(%D/usr/i486-linux-libc5/lib)
-NEWDYNLIBDIR(%D/usr/lib)
 @exec mkdir -p %D/var/state/misc
 @dirrm var/state/misc
 @dirrm var/state
