@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 1999/06/20 23:54:29 brad Exp $
+# $OpenBSD: Makefile,v 1.24 1999/11/30 02:32:22 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -12,7 +12,6 @@ MAINTAINER=	brad@openbsd.org
 LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
 		MesaGLU.3.0:${PORTSDIR}/graphics/Mesa
 
-USE_EGXX=	yes
 USE_GMAKE=	yes
 USE_X11=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC} SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
@@ -23,9 +22,13 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	tetrix tictac timestmp tooltip validator widgets xform
 
 post-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${USE_TARGET}
+	@cd ${WRKSRC} && env ${MAKE_ENV} gmake ${USE_TARGET}
 
 do-install:
+	@mkdir -p ${PREFIX}/include/X11/qt
+	@mkdir -p ${PREFIX}/lib/qt/examples
+	@mkdir -p ${PREFIX}/lib/qt/tutorial
+	@mkdir -p ${PREFIX}/share/doc/qt
 	@if [ -f ${WRKSRC}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
 	fi
@@ -33,31 +36,27 @@ do-install:
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${X11BASE}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
-	${LDCONFIG} -m ${PREFIX}/lib
-	${MKDIR} -p ${PREFIX}/include/X11/qt
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${PREFIX}/man/man3
-	${MKDIR} -p ${PREFIX}/share/doc/qt
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
 	${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
-	${MKDIR} -p ${PREFIX}/lib/qt/tutorial
-	@${ECHO} -n "Installing tutorials:"
+	@echo -n "Installing tutorials:"
 .for n in 1 2 3 4 5 6 7 8 9 10 11 12 13 14
-	@${ECHO} -n " ${n}"
+	@echo -n " ${n}"
 	@${INSTALL_PROGRAM} ${WRKSRC}/tutorial/t${n}/t${n} \
 		${PREFIX}/lib/qt/tutorial
 .endfor
-	@${ECHO} "."
-	${MKDIR} -p ${PREFIX}/lib/qt/examples
-	@${ECHO} -n "Installing examples:"
+	@echo "."
+	@echo -n "Installing examples:"
 .for f in ${EXAMPLES}
-	@${ECHO} -n " ${f}"
+	@echo -n " ${f}"
 	@${INSTALL_PROGRAM} ${WRKSRC}/examples/${f}/${f} \
 	${PREFIX}/lib/qt/examples
 .endfor
-	@${ECHO} "."
+	@echo "."
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/lib/qt/examples
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
