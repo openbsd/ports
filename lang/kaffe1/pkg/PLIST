@@ -1,35 +1,57 @@
+@cwd /usr/local
+@name kaffe-1.0.b3
+@pkgdep jpeg-6b
+man/man1/kaffe.1
+lib/kaffe/libnative.so.1.00
+lib/kaffe/libnative.so
+lib/kaffe/libio.so.1.00
+lib/kaffe/libio.so
+lib/kaffe/libnet.so.1.00
+lib/kaffe/libnet.so
+lib/kaffe/libzip.so.1.00
+lib/kaffe/libzip.so
+lib/kaffe/libmath.so.1.00
+lib/kaffe/libmath.so
+lib/kaffe/libmanagement.so.1.00
+lib/kaffe/libmanagement.so
+lib/kaffe/libawt.so.1.00
+lib/kaffe/libawt.so
+lib/libkaffevm.so.1.00
+lib/libkaffevm.so
 bin/Kaffe
+bin/kaffeh
+bin/pizza
+bin/pizzadoc
 bin/appletviewer
-bin/install-jar
 bin/jar
-bin/java
 bin/javac
 bin/javadoc
 bin/javakey
 bin/javap
 bin/jdb
-bin/kaffe
-bin/kaffeh
 bin/native2ascii
-bin/pizza
-bin/pizzadoc
-bin/report-kaffe-bug
 bin/rmic
 bin/rmiregistry
 bin/serialver
-lib/libawt.so
-lib/libawt.so.1.00
-lib/libkaffevm.so
-lib/libkaffevm.so.1.00
-lib/libmanagement.so
-lib/libmanagement.so.1.00
-lib/libmath.so
-lib/libmath.so.1.00
-lib/libnative.so
-lib/libnative.so.1.00
-lib/libnet.so
-lib/libnet.so.1.00
-lib/libzip.so
-lib/libzip.so.1.00
+bin/report-kaffe-bug
+bin/install-jar
+bin/kaffe
+bin/java
+include/kaffe/jtypes.h
+include/kaffe/native.h
+include/kaffe/jmalloc.h
+include/kaffe/jsyscall.h
+include/kaffe/jni.h
+include/kaffe/Arrays.h
+include/kaffe/java_lang_Object.h
+include/kaffe/java_lang_String.h
+include/kaffe/java_lang_Throwable.h
+include/kaffe/java_lang_Thread.h
+include/kaffe/java_lang_ThreadGroup.h
 share/kaffe/Klasses.jar
 share/kaffe/pizza.jar
+share/kaffe/ENVIRONMENT
+@dirrm share/kaffe
+@dirrm include/kaffe
+@dirrm lib/kaffe
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
