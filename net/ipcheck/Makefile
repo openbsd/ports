@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/06 14:12:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/13 15:35:15 lebel Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
 MV=			0
-V=			101
+V=			116
 PKGNAME=		ipcheck-${MV}.${V}
 DISTNAME=		ipcheck.v${V}
 CATEGORIES=		net
