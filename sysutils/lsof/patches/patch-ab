@@ -1,0 +1,21 @@
+--- Configure-	Fri Aug 15 15:13:52 1997
++++ Configure	Mon Dec 22 01:05:12 1997
+@@ -1342,6 +1342,9 @@
+       2.1*)
+ 	LSOF_VERS=2010
+ 	;;
++      2.2*)
++	LSOF_VERS=2020
++	;;
+       *)
+ 	echo Unknown OpenBSD release: `uname -r`
+ 	echo Assuming OpenBSD 1.2
+@@ -1353,7 +1356,7 @@
+     # Test for legal OpenBSD version.
+ 
+     case $LSOF_VERS in
+-    1020|2000|2010)
++    1020|2000|2010|2020)
+       ;;
+     *)
+       echo "Illegal OpenBSD versio: $LSOF_VERS"
