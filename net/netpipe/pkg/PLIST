@@ -1,8 +1,16 @@
+@cwd /usr/local
+@name netpipes-4.1.1-export
 bin/faucet
 bin/hose
 bin/sockdown
 bin/getpeername
+bin/timelimit
+bin/encapsulate
+bin/getsockname
+man/man1/netpipes.1
 man/man1/faucet.1
 man/man1/hose.1
 man/man1/sockdown.1
 man/man1/getpeername.1
+man/man1/timelimit.1
+man/man1/encapsulate.1

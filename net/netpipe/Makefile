@@ -1,18 +1,18 @@
 # OpenBSD makefile for:	netpipes3.2
-# Version required:	3.2
-# Date created:	17 Nov 1997
-# Whom:		ejovi
+# Version required:	4.1.1
+# Date created:		17 Nov 1997
+# Whom:			ejovi
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/18 03:28:20 joey Exp $
+# $Id: Makefile,v 1.2 1998/07/25 23:18:38 marc Exp $
 #
 
-DISTNAME=	netpipes3.2
-PKGNAME=        netpipes-3.2
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cis.ufl.edu/pub/staff/thoth/
+DISTNAME=		netpipes-4.1.1-export
+CATEGORIES=		net
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=		marc@OpenBSD.ORG
 
-MAN1=		faucet.1 hose.1 sockdown.1 getpeername.1
+MASTER_SITES=		ftp://ftp.purplefrog.com/pub/netpipes/
+
+NO_WRKSUBDIR=		yes
 
 .include <bsd.port.mk>
