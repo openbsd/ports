@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2003/07/25 11:10:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.100 2003/08/02 11:39:46 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += an
      SUBDIR += angband
      SUBDIR += angband,no_x11
+     SUBDIR += bass
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bombermaze
