@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_dircolors_c,v 1.1 2001/03/15 18:17:54 wilfried Exp $
+--- src/dircolors.c.orig	Sat Sep 19 13:09:23 1998
++++ src/dircolors.c	Thu Mar 15 08:11:07 2001
+@@ -68,13 +68,15 @@ static const char *const slack_codes[] =
+   "NORMAL", "NORM", "FILE", "DIR", "LNK", "LINK",
+   "SYMLINK", "ORPHAN", "MISSING", "FIFO", "PIPE", "SOCK", "BLK", "BLOCK",
+   "CHR", "CHAR", "EXEC", "LEFT", "LEFTCODE", "RIGHT", "RIGHTCODE", "END",
+-  "ENDCODE", NULL
++  "ENDCODE", "SUID", "SETUID", "SGID", "SETGID", "WRO", "WRITEOTHERS",
++  "WT", "WROT", "WRITEOTHERSSTICKY", NULL
+ };
+ 
+ static const char *const ls_codes[] =
+ {
+   "no", "no", "fi", "di", "ln", "ln", "ln", "or", "mi", "pi", "pi",
+   "so", "bd", "bd", "cd", "cd", "ex", "lc", "lc", "rc", "rc", "ec", "ec"
++  "su", "su", "sg", "sg", "wo", "wo", "wo", "wt", "wt", "wt", NULL
+ };
+ 
+ static struct option const long_options[] =

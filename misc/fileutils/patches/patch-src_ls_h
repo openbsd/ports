@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ls_h,v 1.1 2001/03/15 18:17:55 wilfried Exp $
+--- src/ls.h.orig	Sun Jan  4 23:35:28 1998
++++ src/ls.h	Thu Mar 15 08:11:07 2001
+@@ -7,4 +7,7 @@
+ /* This is for the `vdir' program.  */
+ #define LS_LONG_FORMAT 3
+ 
++#define MODE_WT 01002
++#define MODE_WRO 02
++
+ extern int ls_mode;
