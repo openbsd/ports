@@ -1,0 +1,12 @@
+$OpenBSD: patch-pbmtools_Makefile,v 1.1 2004/01/11 08:20:06 brad Exp $
+--- pbmtools/Makefile.orig	2000-04-08 07:15:52.000000000 -0400
++++ pbmtools/Makefile	2004-01-11 03:03:23.000000000 -0500
+@@ -9,7 +9,7 @@ CFLAGS = -g -Wall -ansi -pedantic -I../l
+ 
+ .SUFFIXES: .1 .5 .txt $(SUFFIXES)
+ 
+-all: pbmtojbg jbgtopbm pbmtojbg.txt jbgtopbm.txt pbm.txt pgm.txt
++all: pbmtojbg jbgtopbm
+ 
+ pbmtojbg: pbmtojbg.o ../libjbig/libjbig.a
+ 	$(CC) $(CFLAGS) -o pbmtojbg pbmtojbg.o -L../libjbig -ljbig
