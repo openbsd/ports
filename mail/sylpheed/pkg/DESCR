@@ -11,4 +11,3 @@ WWW: ${HOMEPAGE}
 FLAVORS:
 	* compface: support X-Face header
 	* gpgme: compile with gnupg made easy support
-	* imlib: use imlib instead of gdk_pixbuf as graphic library
