@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/03/26 19:04:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2005/04/01 19:24:07 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}
+PKGNAME=	mozilla-thunderbird-${VER}p0
 
 CATEGORIES=	mail news
 
@@ -18,23 +18,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xi Xp Xrender Xt c fontconfig freetype \
-			iconv intl m pthread stdc++ z
+			m pthread z
+.  if empty(MACHINE_ARCH:Malpha)
+WANTLIB+=		stdc++
+.  endif
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/ \
 		http://ftp.mozilla.org/pub/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
-MODULES=	gcc3
+MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
-BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
+RUN_DEPENDS=	:esound-*:audio/esound
+BUILD_DEPENDS=	:ORBit-*:devel/ORBit \
+		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
-		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		esd.2::audio/esound
+		png.3::graphics/png
 
 VMEM_WARNING=	Yes
 
