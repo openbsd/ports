@@ -1,16 +1,16 @@
-# OpenBSD makefile for:	setquota
-# Version required:	0.1
-# Date created:		06 Nov 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:43 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/25 04:32:32 marc Exp $
 #
 
 DISTNAME=	setquota-0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
+
+# Maybe someone who cares will fix this.  It could be a simple task.
+#
+BROKEN=		"port fails to build, and what does '#ifdef 0' mean"
 
 MAINTAINER= 	joey@openbsd.org
+
+MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 
 WRKSRC=		${WRKDIR}/setquota/
 
