@@ -4,7 +4,7 @@
 # OpenBSD port by: Gregory Steuck <greg@nest.cx>
 #
 # $FreeBSD: ports/devel/cook/Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/26 03:46:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/27 02:06:12 kevlo Exp $
 #
 
 DISTNAME=	cook-2.15
@@ -29,8 +29,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/cook/en/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/cook/en/LC_MESSAGES
+CONFIGURE_ARGS= --libdir=${PREFIX}/share/locale
 
 .include <bsd.port.mk>

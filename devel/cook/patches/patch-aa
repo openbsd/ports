@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jun 27 17:42:56 2000
++++ configure	Tue Jun 27 17:43:45 2000
+@@ -2751,7 +2751,7 @@
+ */cook/* | */cook )
+ 	;;
+ *)
+-	libdir="${libdir}/cook"
++	libdir="${libdir}"
+ 	;;
+ esac
+ case "$datadir" in

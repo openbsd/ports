@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/26 03:46:21 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/06/27 02:06:28 kevlo Exp $
 bin/c_incl
 bin/cook
 bin/cook_bom
@@ -7,15 +7,15 @@ bin/cooktime
 bin/find_libs
 bin/make2cook
 bin/roffpp
-lib/cook/en/LC_MESSAGES/c_incl.mo
-lib/cook/en/LC_MESSAGES/cook.mo
-lib/cook/en/LC_MESSAGES/cook_bom.mo
-lib/cook/en/LC_MESSAGES/cookfp.mo
-lib/cook/en/LC_MESSAGES/cooktime.mo
-lib/cook/en/LC_MESSAGES/find_libs.mo
-lib/cook/en/LC_MESSAGES/fstrcmp.mo
-lib/cook/en/LC_MESSAGES/make2cook.mo
-lib/cook/en/LC_MESSAGES/roffpp.mo
+share/locale/en/LC_MESSAGES/c_incl.mo
+share/locale/en/LC_MESSAGES/cook.mo
+share/locale/en/LC_MESSAGES/cook_bom.mo
+share/locale/en/LC_MESSAGES/cookfp.mo
+share/locale/en/LC_MESSAGES/cooktime.mo
+share/locale/en/LC_MESSAGES/find_libs.mo
+share/locale/en/LC_MESSAGES/fstrcmp.mo
+share/locale/en/LC_MESSAGES/make2cook.mo
+share/locale/en/LC_MESSAGES/roffpp.mo
 man/man1/c_incl.1
 man/man1/cook.1
 man/man1/cook_bom.1
@@ -25,15 +25,6 @@ man/man1/cooktime.1
 man/man1/find_libs.1
 man/man1/make2cook.1
 man/man1/roffpp.1
-share/cook/en/man1/c_incl.1
-share/cook/en/man1/cook.1
-share/cook/en/man1/cook_bom.1
-share/cook/en/man1/cook_lic.1
-share/cook/en/man1/cookfp.1
-share/cook/en/man1/cooktime.1
-share/cook/en/man1/find_libs.1
-share/cook/en/man1/make2cook.1
-share/cook/en/man1/roffpp.1
 share/cook/en/building.ps
 share/cook/en/building.dvi
 share/cook/en/building.txt
@@ -72,9 +63,7 @@ share/cook/usr
 share/cook/usr.local
 share/cook/yacc
 share/cook/yacc_many
-@dirrm lib/cook/en/LC_MESSAGES
-@dirrm lib/cook/en
-@dirrm lib/cook
-@dirrm share/cook/en/man1
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
 @dirrm share/cook/en
 @dirrm share/cook
