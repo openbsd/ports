@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/16 19:09:25 millert Exp $
-@man man/man1/aterm.1
-@group utmp
+@comment $OpenBSD: PLIST,v 1.7 2004/09/17 14:34:02 millert Exp $
 @mode 2755
+@group utmp
 bin/aterm
+@mode
+@group
+@man man/man1/aterm.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/09/16 17:07:11 millert Exp $
+# $OpenBSD: Makefile,v 1.35 2004/09/17 14:34:02 millert Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
@@ -48,5 +48,9 @@ CONFIGURE_ARGS+= --with-xpm --enable-transparency \
 .endif
 
 NO_REGRESS=	Yes
+
+post-install:
+	chgrp utmp ${PREFIX}/bin/aterm
+	chmod 2755 ${PREFIX}/bin/aterm
 
 .include <bsd.port.mk>
