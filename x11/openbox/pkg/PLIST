@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/10/04 12:58:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/12/08 04:37:20 brad Exp $
 @pkgcfl fluxbox-*
 @pkgcfl blackbox-*
 bin/bsetbg
@@ -12,6 +12,16 @@ man/man1/epist.1
 man/man1/openbox.1
 man/man1/xftlsfonts.1
 man/man5/epistrc.5
+share/openbox/buttons/close.xbm
+share/openbox/buttons/fieron-bullet.xbm
+share/openbox/buttons/fieron-bulletl.xbm
+share/openbox/buttons/fieron-close.xbm
+share/openbox/buttons/fieron-icon.xbm
+share/openbox/buttons/fieron-max.xbm
+share/openbox/buttons/fieron-stick.xbm
+share/openbox/buttons/icon.xbm
+share/openbox/buttons/max.xbm
+share/openbox/buttons/stick.xbm
 share/openbox/epistrc
 share/openbox/menu
 share/openbox/nls/C/openbox.cat
@@ -56,6 +66,7 @@ share/openbox/styles/bluebox
 share/openbox/styles/cthulhain
 share/openbox/styles/deep
 share/openbox/styles/fieron
+share/openbox/styles/fieron2
 share/openbox/styles/flux
 share/openbox/styles/frobozz
 share/openbox/styles/frobust
@@ -68,6 +79,14 @@ share/openbox/styles/operation
 share/openbox/styles/outcomes
 share/openbox/styles/paper
 share/openbox/styles/purplehaaze
+share/openbox/styles/shade
+share/openbox/styles/steelblue
+share/openbox/styles/steelblue2
+share/openbox/styles/steelblue3
+share/openbox/styles/the_orange
+share/openbox/styles/trisb
+share/openbox/styles/twice
+share/openbox/styles/warp-xp
 @dirrm share/openbox/styles
 @dirrm share/openbox/nls/zh_TW
 @dirrm share/openbox/nls/zh_CN
@@ -92,4 +111,5 @@ share/openbox/styles/purplehaaze
 @dirrm share/openbox/nls/da_DK
 @dirrm share/openbox/nls/C
 @dirrm share/openbox/nls
+@dirrm share/openbox/buttons
 @dirrm share/openbox
