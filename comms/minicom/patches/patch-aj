@@ -1,0 +1,19 @@
+*** main.c.orig	Fri Dec 18 15:06:49 1998
+--- main.c	Fri Dec 18 15:06:53 1998
+***************
+*** 393,399 ****
+  
+    if (old_online == online) return;
+    if ((old_online >= 0) && (online < 0)) {
+!     snprintf(buf, sizeof(buf), _("Gone offline (%ld:%02ld:%02ld)"),
+  	    old_online / 3600, (old_online / 60) % 60, old_online % 60);
+      do_log(buf);
+    }
+--- 393,399 ----
+  
+    if (old_online == online) return;
+    if ((old_online >= 0) && (online < 0)) {
+!     snprintf(buf, sizeof(buf), _("Gone offline (%d:%02d:%02d)"),
+  	    old_online / 3600, (old_online / 60) % 60, old_online % 60);
+      do_log(buf);
+    }

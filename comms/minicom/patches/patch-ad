@@ -1,19 +1,11 @@
-*** updown.c.orig	Tue May  5 12:20:12 1998
---- updown.c	Tue May  5 12:20:27 1998
-***************
-*** 18,24 ****
-  #include "port.h"
-  #include "minicom.h"
-  
-! #define LOG_XFER	  debugging option
-  /* */
-  static int udpid;
-  
---- 18,24 ----
-  #include "port.h"
-  #include "minicom.h"
-  
-! /* #define LOG_XFER	  debugging option */
-  /* */
-  static int udpid;
-  
+--- updown.c.orig	Thu Jul  9 14:49:47 1998
++++ updown.c	Sun Dec 13 18:34:51 1998
+@@ -230,7 +230,7 @@
+   do_log(cmdline);   /* jl 22.06.97 */
+ 
+   if (P_PFULL(g) == 'N') {
+-    win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
++    win = wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
+     snprintf(title, sizeof(title), _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
+ 	    what == 'U' ? _("upload") : _("download"));
+     wtitle(win, TMID, title);

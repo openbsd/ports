@@ -1,0 +1,30 @@
+*** config.h.orig	Sat Nov  1 01:48:00 1997
+--- config.h	Fri Dec 18 14:49:44 1998
+***************
+*** 58,64 ****
+  
+  #ifdef __FreeBSD__
+  #  define DFL_PORT "/dev/modem"
+! #  define DEF_BAUD "19200"
+  #  define CALLOUT  ""
+  #  define CALLIN   ""
+  #endif
+--- 58,75 ----
+  
+  #ifdef __FreeBSD__
+  #  define DFL_PORT "/dev/modem"
+! #  define DEF_BAUD "38400"
+! #  define CALLOUT  ""
+! #  define CALLIN   ""
+! #endif
+! 
+! #ifdef __OpenBSD__
+! #  ifdef sparc
+! #    define DFL_PORT "/dev/ttya"
+! #  else
+! #    define DFL_PORT "/dev/tty00"
+! #  endif
+! #  define DEF_BAUD "38400"
+  #  define CALLOUT  ""
+  #  define CALLIN   ""
+  #endif

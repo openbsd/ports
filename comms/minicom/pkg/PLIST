@@ -1,19 +1,24 @@
 bin/minicom
-bin/xminicom
 bin/runscript
+bin/xminicom
 bin/ascii-xfr
-share/examples/minicom/minicom.users
-share/examples/minicom/htsalogin
-share/examples/minicom/saralogin
-share/examples/minicom/scriptdemo
-share/examples/minicom/unixlogin     
-@dirrm share/examples/minicom
 man/man1/minicom.1
 man/man1/runscript.1
 man/man1/ascii-xfr.1
-@exec if [ ! -d /etc/minicom ]; then mkdir /etc/minicom; chown uucp.dialer /etc/minicom; chmod 755 /etc/minicom; fi
-@exec if [ ! -f /etc/minicom/minicom.users ]; then cp %D/share/examples/minicom/minicom.users /etc/minicom; chown uucp.dialer /etc/minicom/minicom.users; chmod 644 /etc/minicom/minicom.users; fi
+share/minicom/minicom.users
+share/minicom/demos/htsalogin
+share/minicom/demos/saralogin
+share/minicom/demos/unixlogin
+share/minicom/demos/scriptdemo
+share/minicom/tables/mc.pc8
+share/minicom/tables/mc.sf7
+share/minicom/tables/mc.iso
+share/minicom/tables/mc.noconv
+@dirrm share/minicom/tables
+@dirrm share/minicom/demos
+@dirrm share/minicom
 @unexec echo "***"
-@unexec echo "*** Remove /etc/minicom directory and it's contents"
-@unexec echo "*** if you won't install minicom again."
+@unexec echo "*** Finished uninstalling minicom."
+@unexec echo "*** Please remove /etc/minicom directory if you"
+@unexec echo "*** don't want to keep minicom configuration files."
 @unexec echo "***"
