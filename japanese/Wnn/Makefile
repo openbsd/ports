@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.19 2000/04/20 23:58:24 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/04/21 00:25:25 espie Exp $
 
 DISTNAME=	Wnn4.2
 MULTI_PACKAGES=-dict
@@ -29,6 +29,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	Wnn4.2.tar.gz
 WRKDIST=	${WRKDIR}/Xsi
+# `User' configuration file
+CONFIG_FILE=	${WRKDIST}/config/config.h
 
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
 DOC_FROM=	${WRKSRC}/Wnn
@@ -43,6 +45,19 @@ RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn-data
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
+
+# do those as post-patch, because of the $Id: Makefile,v 1.20 2000/04/21 00:25:25 espie Exp $
+post-patch:
+	@cd ${WRKDIST}; \
+	for file in Wnn/jd/jserverrc cWnn/cd/cserverrc kWnn/kd/kserverrc; do\
+	perl -pi.bak -e 's,\@LIBDIR/\@LANG/dic,/var/dict/\@LANG,' $$file; done
+
+pre-configure:
+	@echo "#define BuildWnn		YES" >${CONFIG_FILE}
+	@echo "#define BuildCWnn	NO"  >>${CONFIG_FILE}
+	@echo "#define BuildKWnn	NO"  >>${CONFIG_FILE}
+	@echo "#define BuildXnmo	NO"  >>${CONFIG_FILE}
+	@echo "#define BuildJlibV3	NO"  >>${CONFIG_FILE}
 
 do-configure:
 	cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
