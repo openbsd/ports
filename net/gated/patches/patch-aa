@@ -1,8 +1,8 @@
---- src/configs/freebsd.orig	Thu Jul  2 14:12:48 1998
-+++ src/configs/freebsd	Sun Mar 14 11:09:48 1999
+--- src/configs/freebsd.orig	Tue Apr 20 18:09:34 1999
++++ src/configs/freebsd	Tue Apr 20 18:13:06 1999
 @@ -1,27 +1,29 @@
  #
- #	$Id: patch-aa,v 1.2 1999/03/14 19:17:03 brad Exp $
+ #	$Id: patch-aa,v 1.3 1999/04/20 22:26:32 brad Exp $
 -#       Configuration for freebsd-2.0 alpha (i386)
 +#       Configuration for FreeBSD-3.0 (and hopefully 2.2)
  #
@@ -26,13 +26,13 @@
 -lflags  -p -C -I
 +lflags  -p -Cfe
 +
-+yflags	-d -v
++yflags -d -v
  
  mkdep   mkdep -flag -MM
  
 -options INCLUDE_UNISTD INCLUDE_PATHS GID_T=int
 -options POSIX_SIGNALS HAVE_WAITPID
-+options INCLUDE_UNISTD INCLUDE_PATHS INCLUDE_IF_NEEDS_TIME GID_T=gid_t
++options INCLUDE_UNISTD INCLUDE_PATHS INCLUDE_IF_NEEDS_TIME GID_T=int
 +options POSIX_SIGNALS HAVE_WAITPID USE_SETSID
  options VARIABLE_MASKS SOCKET_LENGTHS SOCKADDR_DL INCLUDE_IF_DL
  options KRT_RTREAD_KINFO KRT_IFREAD_KINFO KRT_RT_SOCK USE_SYSCTL
@@ -42,4 +42,4 @@
  
  #protocols      bgp egp  icmp rip ospf iso slsp isis rdisc
 -protocols        icmp rip ospf
-+protocols      bgp icmp rip ospf rdisc
++protocols       bgp icmp rip ospf rdisc
