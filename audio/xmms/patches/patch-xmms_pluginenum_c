@@ -1,7 +1,18 @@
-$OpenBSD: patch-xmms_pluginenum_c,v 1.4 2002/02/05 04:07:57 pvalchev Exp $
---- xmms/pluginenum.c.orig	Fri Jan 18 06:44:35 2002
-+++ xmms/pluginenum.c	Fri Jan 18 06:47:26 2002
-@@ -431,6 +431,12 @@
+$OpenBSD: patch-xmms_pluginenum_c,v 1.5 2002/04/06 19:32:39 pvalchev Exp $
+--- xmms/pluginenum.c.orig	Wed Jan  2 07:21:32 2002
++++ xmms/pluginenum.c	Sat Apr  6 12:15:28 2002
+@@ -35,6 +35,10 @@
+ # define RTLD_NOW 0
+ #endif
+ 
++#if defined(__OpenBSD__) && !defined(__ELF__)
++# define SYMBOL_PREFIX "_"
++#endif
++
+ 
+ gchar *plugin_dir_list[] =
+ {
+@@ -431,6 +435,12 @@ void cleanup_plugins(void)
  	while (node)
  	{
  		op = (OutputPlugin *) node->data;
