@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/07/10 00:17:55 d Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/14 17:50:13 espie Exp $
 
 DISTNAME=	w3m-0.1.10
 CATEGORIES=	www
@@ -16,11 +16,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FLAVORS=		kanji
+FLAVOR?=
+
+.if ${FLAVOR:L:Mkanji}
+CATEGORIES+=		japanese
+CONFIGURE_ARGS+=	-lang=ja
+# XXX w3m resets kterm to jis before displaying a page anyway.
+CONFIGURE_ARGS+=	-code=n
+.else
+CONFIGURE_ARGS+=	-lang=en
+.endif
+
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	-nonstop
 CONFIGURE_ARGS+=	-prefix "${PREFIX}" -cflags="${CPPFLAGS}"
-CONFIGURE_ARGS+=	-lang=en
-CONFIGURE_ARGS+=	-model=monster
 CONFIGURE_ARGS+=	-model=monster
 CONFIGURE_ENV+=		dmail=mail
 CONFIGURE_ENV+=		ded=vi
@@ -44,3 +54,10 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
+# XXX Tweak PKGNAME
+.if ${FLAVOR:L:Mkanji}
+PKGNAME:=	ja-${PKGNAME:S/-kanji//}
+PKG_ARGS+=	-C 'w3m-*'
+.else
+PKG_ARGS+=	-C 'ja-w3m-*'
+.endif
