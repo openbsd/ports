@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2004/02/09 17:30:05 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"system to store and display time-series data"
 
-VERSION=	1.0.40
+VERSION=	1.0.46
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
@@ -15,6 +15,7 @@ HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
@@ -25,8 +26,12 @@ SUBST_VARS=	VERSION
 FLAVORS=	tcl
 FLAVOR?=
 
+LIB_DEPENDS=	png.4::graphics/png
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
+		--enable-local-libpng \
+		--enable-local-zlib
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 
 .if ${FLAVOR:L:Mtcl}
@@ -38,16 +43,11 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.4"
 CONFIGURE_ARGS+= --without-tcllib
 .endif
 
+MAKE_FLAGS=	CFLAGS="-I${LOCALBASE}/include/libpng"
+
 .if ${FLAVOR:L:Mtcl}
 post-install:
 	cd ${WRKSRC} && ${MAKE} site-tcl-install
 .endif
-
-post-patch:
-	@cd ${WRKSRC}/config; \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig && \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh
 
 .include <bsd.port.mk>
