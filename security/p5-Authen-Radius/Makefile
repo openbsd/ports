@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 02:58:38 jcs Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
 CATEGORIES=	security perl
-NEED_VERSION=	1.462
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR= Authen
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 PERL_MODULES=	libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-BUILD_DEPENDS=	::security/p5-Digest-MD5
+BUILD_DEPENDS=	::security/p5-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
