@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 03:04:57 msf Exp $
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/Stem/
+${P5SITE}/Lingua/Stem/It.pm
+@man man/man3p/Lingua::Stem::It.3p
