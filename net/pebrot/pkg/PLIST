@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/11/30 07:20:10 kevlo Exp $
 bin/pebrot
 lib/python${MODPY_VERSION}/site-packages/pypebrot/
 lib/python${MODPY_VERSION}/site-packages/pypebrot/MSN.py
@@ -15,9 +15,9 @@ share/doc/pebrot/COPYING
 share/doc/pebrot/ChangeLog
 share/doc/pebrot/README
 share/doc/pebrot/logos/
-share/doc/pebrot/logos/README
 share/doc/pebrot/logos/moo.txt
 share/doc/pebrot/logos/pebrot.txt
+share/doc/pebrot/logos/readme
 share/doc/pebrot/pebrotrc
 share/doc/pebrot/utils/
 share/doc/pebrot/utils/enc.py
@@ -25,10 +25,16 @@ share/doc/pebrot/utils/example.py
 share/doc/pebrot/utils/getkeys.py
 share/doc/pebrot/utils/keymap.py
 share/doc/pebrot/utils/transparent_bg/
-share/doc/pebrot/utils/transparent_bg/README
+share/doc/pebrot/utils/transparent_bg/readme
 share/doc/pebrot/utils/transparent_bg/setup.py
 share/doc/pebrot/utils/transparent_bg/usedefault.c
 share/locale/
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/pebrot.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/pebrot.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/pebrot.mo
