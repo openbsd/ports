@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/12/06 02:51:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/02 14:12:12 brad Exp $
 #
 # See http://www.freebsd.org/java/ for software updates, etc.
 
@@ -15,7 +15,7 @@ JDK_PATH=	${PREFIX}/jdk${JDK_VERSION}
 
 MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
 
-RUN_DEPENDS=	/emul/freebsd/usr/lib/libc.so.3.1::emulators/freebsd_lib
+RUN_DEPENDS=	/emul/freebsd/usr/lib/compat/aout/libc.so.3.1::emulators/freebsd_lib
 
 LICENSE_TYPE=		NOFEE
 PERMIT_PACKAGE_CDROM=	No
