@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/11/02 00:02:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/29 00:46:38 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
@@ -17,14 +17,16 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		audiofile.::devel/libaudiofile
 
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
-# Not yet, too much time to compile
-#CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ARGS+=	--enable-mitshm
+#CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
+
+#CONFIGURE_ARGS+=	--enable-static --disable-shared
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
