@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/07/13 04:32:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.49 2001/07/16 13:05:15 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -113,6 +113,7 @@
      SUBDIR += xroach
 #    SUBDIR += xrobots
 #    SUBDIR += xrubik
+     SUBDIR += xscavenger
      SUBDIR += xscrabble
 #    SUBDIR += xshisen
 #    SUBDIR += xshogi
