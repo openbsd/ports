@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_src_common_Revision_c,v 1.3 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/Revision.c.orig	Mon Jul 29 22:48:34 2002
++++ base/src/common/Revision.c	Tue Sep  3 23:34:47 2002
+@@ -47,8 +47,8 @@ revision_show(const void *vp)
+   
+   xprintf("mutURI:     %s\n", r->mutURI);
+   xprintf("Seq Num:    0x%08x%08x\n",
+-      (unsigned long) (r->seq_number >> 32),
+-      (unsigned long) (r->seq_number));
++      (u_int32_t) (r->seq_number >> 32),
++      (u_int32_t) (r->seq_number));
+   xprintf("ReviseTime: %s\n", r->reviseTime);
+   xprintf("Revisor:    %s\n", r->revisor);
+   xprintf("NewObject:  %s\n", r->newObject);

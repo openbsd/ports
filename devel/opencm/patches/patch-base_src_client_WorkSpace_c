@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
+$OpenBSD: patch-base_src_client_WorkSpace_c,v 1.2 2002/09/04 16:21:43 todd Exp $
 --- base/src/client/WorkSpace.c.orig	Mon Aug  5 20:07:37 2002
-+++ base/src/client/WorkSpace.c	Wed Aug 28 14:26:39 2002
++++ base/src/client/WorkSpace.c	Tue Sep  3 23:34:47 2002
 @@ -193,7 +193,6 @@ ws_Init(struct command *cmd, const char 
   */
  
@@ -253,7 +253,42 @@ $OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
  }
  
  static OC_bool
-@@ -843,7 +864,8 @@ ws_Rename(WorkSpace *ws, const char *old
+@@ -784,19 +805,14 @@ void
+ ws_Rename(WorkSpace *ws, const char *old, const char *new)
+ {
+   StrVec *fsvec;
+-
+-#if 0
+-  WsEntity *wse;
+-  const char *orig_old = old;
+-#endif
+   const char *orig_new = new;
+   
+   /* Don't allow user to rename config dir! (... or any
+    * contents thereof, for that matter) */
+-  if (nmequal(path_car(path_cdr(old)), CM_CONFIG_DIR))
++  if (path_cdr(old) && nmequal(path_car(path_cdr(old)), CM_CONFIG_DIR))
+     THROW(ExBadValue, "Can't move the config directory or its contents!");
+ 
+-  if (nmequal(path_car(path_cdr(new)), CM_CONFIG_DIR))
++  if (path_cdr(new) && nmequal(path_car(path_cdr(new)), CM_CONFIG_DIR))
+     THROW(ExBadValue, "Don't try to move a file into the config directory!");
+ 
+   /* There are three cases to handle:
+@@ -820,9 +836,9 @@ ws_Rename(WorkSpace *ws, const char *old
+ 	  format("File/directory \"%s\" not found", old));
+ 
+   /* Make sure we won't overwrite something. Note that if the target
+-     is a directory name this will prevent the directory overwrite: */
+-  if ( pendingchange_FindEntity(ws->pc, new) ||
+-       ws_hasFsDir(ws, new) || path_exists(new) )
++     is a directory name then "old" will be moved into "target". */
++  if (pendingchange_FindEntity(ws->pc, new) || ws_hasFsDir(ws, new) || 
++      (!path_isdir(new) && path_exists(new)) )
+     THROW(ExObjectExists, 
+ 	  format("Rename would clobber \"%s\"", orig_new));
+ 
+@@ -843,7 +859,8 @@ ws_Rename(WorkSpace *ws, const char *old
       non-OpenCM files as well as workspace entities, and it's quite
       astonishing how many ways there are for these to collide. */
  
@@ -263,7 +298,7 @@ $OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
    strvec_sort(fsvec);
  
    /* First, go through the OpenCM workspace entries: */
-@@ -1034,7 +1056,7 @@ ws_Commit(WorkSpace *ws, StrVec *names)
+@@ -1034,7 +1051,7 @@ ws_Commit(WorkSpace *ws, StrVec *names)
       */
  
      pendingchange_addNote(ws->pc, opt_Message);
@@ -272,7 +307,7 @@ $OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
  
      /* Smash opt_Message to point to the result of the combination in
       * order to preserve the silent commit behavior:
-@@ -1232,7 +1254,6 @@ ws_Commit(WorkSpace *ws, StrVec *names)
+@@ -1232,7 +1249,6 @@ ws_Commit(WorkSpace *ws, StrVec *names)
    ws->pc->isSorted = FALSE;
  
    SER_MODIFIED(ws->pc);
@@ -280,7 +315,7 @@ $OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
  }
  
  void
-@@ -1278,7 +1299,6 @@ ws_Update(WorkSpace *ws)
+@@ -1278,7 +1294,6 @@ ws_Update(WorkSpace *ws)
    ws->pc->baseCmtInfoName = topChange->commitInfoTrueName;
  
    SER_MODIFIED(ws->pc);

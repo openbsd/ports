@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_ServerReply_c,v 1.1 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/ServerReply.c.orig	Mon Jul 29 22:48:37 2002
++++ base/src/common/ServerReply.c	Tue Sep  3 23:34:47 2002
+@@ -96,7 +96,7 @@ reply_deserialize(const DeserializeInfo 
+ }
+ 
+ Reply *
+-reply_create(unsigned int reqid, Serializable *s)
++reply_create(u_int32_t reqid, Serializable *s)
+ {
+   Reply *r = (Reply *) GC_MALLOC(sizeof(Reply));
+ 

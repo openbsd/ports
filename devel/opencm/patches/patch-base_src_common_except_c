@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_except_c,v 1.3 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/except.c.orig	Mon Jul  8 16:31:09 2002
++++ base/src/common/except.c	Tue Sep  3 23:34:47 2002
+@@ -73,7 +73,7 @@ DEFEXCEPTION(ExUnspecified, "Unspecified
+ excpt_unwind *exit_unwind_list = 0;
+ 
+ void
+-_throw(catch_t *_cb, const char *fname, unsigned long line, 
++_throw(catch_t *_cb, const char *fname, u_int32_t line, 
+        Exception ex, const char *s)
+ {
+   _curCatch = _cb;

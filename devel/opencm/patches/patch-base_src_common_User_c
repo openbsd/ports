@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_User_c,v 1.1 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/User.c.orig	Mon Jul 29 22:48:39 2002
++++ base/src/common/User.c	Tue Sep  3 23:34:47 2002
+@@ -185,7 +185,7 @@ user_GetFP(User *u)
+   const char *strkey;
+   void *tmpbuf;
+   long num = 0;
+-  unsigned int n;
++  u_int32_t n;
+   int j;
+   int offset = 0;
+   char *fp;

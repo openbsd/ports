@@ -1,0 +1,47 @@
+$OpenBSD: patch-base_src_common_sxdelta_c,v 1.3 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/sxdelta.c.orig	Mon Aug  5 16:03:05 2002
++++ base/src/common/sxdelta.c	Tue Sep  3 23:34:47 2002
+@@ -133,7 +133,7 @@
+    something using limits.h to choose the proper value. */
+ typedef unsigned char uint8_t;
+ typedef unsigned short uint16_t;
+-typedef unsigned long uint32_t;
++typedef u_int32_t uint32_t;
+ #endif
+ 
+ typedef struct hashpos_t {
+@@ -597,9 +597,9 @@ emit_finish(sxdelta_t *xd)
+ #define HT_SHA1  0
+ 
+ typedef struct xdirent_t {
+-  unsigned long insOffset;	/* of start of insert pool list */
+-  unsigned long cmdOffset;	/* of start of CMD list */
+-  unsigned long cmdLen;		/* of CMD list */
++  u_int32_t insOffset;	/* of start of insert pool list */
++  u_int32_t cmdOffset;	/* of start of CMD list */
++  u_int32_t cmdLen;		/* of CMD list */
+   unsigned const char *name;	/* entry name */
+ } xdirent_t;
+ 
+@@ -608,9 +608,9 @@ typedef struct XDeltaArchive_t {
+   unsigned short version;	/* currently 1 */
+   unsigned short flags;		/* currently 0 */
+ 
+-  unsigned long nDirent;	/* number of entries */
+-  unsigned long maxDirent;	/* allocated dir space */
+-  unsigned long nContent;		/* number of stored deltas */
++  u_int32_t nDirent;	/* number of entries */
++  u_int32_t maxDirent;	/* allocated dir space */
++  u_int32_t nContent;		/* number of stored deltas */
+   struct xdirent_t *dir;
+   
+   Buffer *content;		/* sequence of serialized xdeltas */
+@@ -694,7 +694,7 @@ xda_rewriteWith(XDeltaArchive_t *xda, sx
+   unsigned u;
+ 
+   ocmoff_t contentLen = buffer_length(xda->content);
+-  unsigned long newLen = contentLen;
++  u_int32_t newLen = contentLen;
+   newLen +=  stream_length(xd->ins);
+   newLen +=  stream_length(xd->cmd);
+   xda->nContent = newLen;

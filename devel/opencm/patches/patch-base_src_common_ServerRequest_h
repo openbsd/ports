@@ -1,0 +1,30 @@
+$OpenBSD: patch-base_src_common_ServerRequest_h,v 1.3 2002/09/04 16:21:43 todd Exp $
+--- base/src/common/ServerRequest.h.orig	Tue Jul 16 21:49:02 2002
++++ base/src/common/ServerRequest.h	Tue Sep  3 23:34:47 2002
+@@ -41,13 +41,14 @@
+  * POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-typedef unsigned long reqlen_t;
++/* future 64bit value (Jack Lloyd) */
++typedef u_int32_t reqlen_t;
+ 
+ typedef struct Request {
+   Serializable ser;
+   
+-  unsigned int opcode;
+-  unsigned int reqID;
++  u_int32_t opcode;
++  u_int32_t reqID;
+ 
+   /* Some commands take arguments.  Store
+    * any such arguments here:
+@@ -59,7 +60,7 @@ typedef struct Request {
+ 
+ } Request;
+ 
+-Request *request_create (unsigned int ocode, unsigned int reqid);
++Request *request_create (u_int32_t ocode, u_int32_t reqid);
+ void request_trace(const Request *);
+ 
+ /* 
