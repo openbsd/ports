@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/19 17:36:32 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/01/13 03:23:09 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"Tk 8.0 bindings for Perl"
+COMMENT=	"Tk 8.4 bindings for Perl"
 COMMENT-demo=	"demonstrate the features of ptk"
 
-VERSION=	800.024
+VERSION=	804.027
 DISTNAME=	Tk-${VERSION}
 PKGNAME=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
@@ -29,9 +29,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_X11=	Yes
 
-CONFIGURE_STYLE=perl
-
-WRKDIST=	${WRKDIR}/Tk${VERSION}
+CONFIGURE_STYLE= perl
 
 REGRESS_IS_INTERACTIVE=	Yes
 MAKE_ENV=	XAUTHORITY=${HOME}/.Xauthority
