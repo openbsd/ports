@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2004/07/31 01:01:03 jcs Exp $
+# $OpenBSD: Makefile,v 1.52 2004/10/09 14:44:09 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += scite
 #    SUBDIR += staroffice
      SUBDIR += ted
+     SUBDIR += texmaker
      SUBDIR += textedit
 #    SUBDIR += thoteditor
      SUBDIR += uemacs
