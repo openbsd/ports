@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 00:12:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/07 18:23:21 brad Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
-DISTNAME=	automake-1.4
+DISTNAME=	automake-1.4-p1
 CATEGORIES=	devel
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}

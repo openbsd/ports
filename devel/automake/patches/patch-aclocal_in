@@ -1,13 +1,13 @@
-$OpenBSD: patch-aclocal_in,v 1.1 2001/04/21 14:13:23 espie Exp $
---- aclocal.in.orig	Sat Apr 21 15:31:53 2001
-+++ aclocal.in	Sat Apr 21 16:10:27 2001
+$OpenBSD: patch-aclocal_in,v 1.2 2001/06/07 18:23:22 brad Exp $
+--- aclocal.in.orig	Sun Jan 10 13:37:04 1999
++++ aclocal.in	Thu May 10 12:26:54 2001
 @@ -346,6 +346,10 @@ sub add_file
  	    push (@rlist, $1);
  	}
  
-+        # Remove comments from current line.
-+        s/\bdnl\b.*$//;
-+        s/\#.*$//;
++	# Remove comments from current line.
++	s/\bdnl\b.*$//;
++	s/\#.*$//;
 +
  	# This function constructed dynamically.
  	if (! &search && /(^|\s+)(AM_[A-Z_]+)/)

@@ -1,5 +1,6 @@
---- automake.texi.orig	Wed Nov 24 18:04:08 1999
-+++ automake.texi	Wed Nov 24 18:05:53 1999
+$OpenBSD: patch-automake_texi,v 1.1 2001/06/07 18:23:22 brad Exp $
+--- automake.texi.orig	Wed Jan  6 08:01:26 1999
++++ automake.texi	Thu May 10 12:33:10 2001
 @@ -1,6 +1,7 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header

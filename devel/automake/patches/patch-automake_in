@@ -1,6 +1,6 @@
---- automake.in.orig	Fri Jan 15 07:42:36 1999
-+++ automake.in	Fri Dec 29 23:46:31 2000
-@@ -1957,7 +1957,7 @@ sub handle_texinfo
+--- automake.in.orig	Thu May 10 12:27:15 2001
++++ automake.in	Thu May 10 12:28:28 2001
+@@ -1969,7 +1969,7 @@ sub handle_texinfo
  	# dependency list.
  	@texi_deps = ();
  	push (@texi_deps, $info_cursor);
@@ -9,12 +9,3 @@
  
  	# Canonicalize name first.
  	($canonical = $infobase) =~ tr/A-Za-z0-9_/_/c;
-@@ -2367,7 +2367,7 @@ sub handle_dist_worker
- 	$output_rules .= "\t  d=\$(srcdir); \\\n";
-     }
-     $output_rules .= ("\t  if test -d \$\$d/\$\$file; then \\\n"
--		      . "\t    cp -pr \$\$/\$\$file \$(distdir)/\$\$file; \\\n"
-+		      . "\t    cp -pr \$\$d/\$\$file \$(distdir)/\$\$file; \\\n"
- 		      . "\t  else \\\n"
- 		      . "\t    test -f \$(distdir)/\$\$file \\\n"
- 		      . "\t    || ln \$\$d/\$\$file \$(distdir)/\$\$file 2> /dev/null \\\n"
