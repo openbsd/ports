@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/21 04:59:15 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/02 05:29:29 shell Exp $
 
 COMMENT=		"Perl bindings for Tk 8.0"
+COMMENT-demo=		"demonstrate the features of ptk"
 
 VERSION=		800.023
 DISTNAME=		Tk${VERSION}
 PKGNAME=		p5-Tk-${VERSION}
+PKGNAME-demo=		p5-Tk-demo-${VERSION}
 CATEGORIES=		x11 devel perl5
-NEED_VERSION=		1.408
+NEED_VERSION=		1.448
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 
@@ -21,5 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	perl
+
+MULTI_PACKAGES=		-demo
+SUBPACKAGE?=
 
 .include <bsd.port.mk>
