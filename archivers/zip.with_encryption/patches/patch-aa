@@ -1,0 +1,87 @@
+*** zipnote.c.orig	Sat Aug 23 15:33:02 1997
+--- zipnote.c	Mon Nov 24 04:37:55 1997
+***************
+*** 349,355 ****
+  
+    /* Process stdin, replacing comments */
+    z = zfiles;
+!   while (gets(a) != NULL && (a[0] != MARK || strcmp(a + 1, MARKZ)))
+    {                                     /* while input and not file comment */
+      if (a[0] != MARK || a[1] != ' ')    /* better be "@ name" */
+        ziperr(ZE_NOTE, "unexpected input");
+--- 349,355 ----
+  
+    /* Process stdin, replacing comments */
+    z = zfiles;
+!   while (fgets(a, FNMAX, stdin) != NULL && (a[0] != MARK || strcmp(a + 1, MARKZ)))
+    {                                     /* while input and not file comment */
+      if (a[0] != MARK || a[1] != ' ')    /* better be "@ name" */
+        ziperr(ZE_NOTE, "unexpected input");
+***************
+*** 357,363 ****
+        z = z->nxt;                       /* allow missing entries in order */
+      if (z == NULL)
+        ziperr(ZE_NOTE, "unknown entry name");
+!     if (gets(a) != NULL && a[0] == MARK && a[1] == '=')
+      {
+        if (z->name != z->iname)
+          free((zvoid *)z->iname);
+--- 357,363 ----
+        z = z->nxt;                       /* allow missing entries in order */
+      if (z == NULL)
+        ziperr(ZE_NOTE, "unknown entry name");
+!     if (fgets(a, FNMAX, stdin) != NULL && a[0] == MARK && a[1] == '=')
+      {
+        if (z->name != z->iname)
+          free((zvoid *)z->iname);
+***************
+*** 373,379 ****
+   * Don't update z->nam here, we need the old value a little later.....
+   * The update is handled in zipcopy().
+   */
+!       gets(a);
+      }
+      if (z->com)                         /* change zip entry comment */
+        free((zvoid *)z->comment);
+--- 373,379 ----
+   * Don't update z->nam here, we need the old value a little later.....
+   * The update is handled in zipcopy().
+   */
+!       fgets(a, FNMAX, stdin);
+      }
+      if (z->com)                         /* change zip entry comment */
+        free((zvoid *)z->comment);
+***************
+*** 382,388 ****
+      {
+        if ((r = catalloc(&(z->comment), a)) != ZE_OK)
+          ziperr(r, "was building new comments");
+!       gets(a);
+      }
+      z->com = strlen(z->comment);
+      z = z->nxt;                         /* point to next entry */
+--- 382,388 ----
+      {
+        if ((r = catalloc(&(z->comment), a)) != ZE_OK)
+          ziperr(r, "was building new comments");
+!       fgets(a, FNMAX, stdin);
+      }
+      z->com = strlen(z->comment);
+      z = z->nxt;                         /* point to next entry */
+***************
+*** 390,396 ****
+    if (a != NULL)                        /* change zip file comment */
+    {
+      zcomment = malloc(1);  *zcomment = 0;
+!     while (gets(a) != NULL)
+        if ((r = catalloc(&zcomment, a)) != ZE_OK)
+          ziperr(r, "was building new comments");
+      zcomlen = strlen(zcomment);
+--- 390,396 ----
+    if (a != NULL)                        /* change zip file comment */
+    {
+      zcomment = malloc(1);  *zcomment = 0;
+!     while (fgets(a, FNMAX, stdin) != NULL)
+        if ((r = catalloc(&zcomment, a)) != ZE_OK)
+          ziperr(r, "was building new comments");
+      zcomlen = strlen(zcomment);
