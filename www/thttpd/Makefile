@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/20 10:05:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/20 21:47:31 jakob Exp $
 
 DISTNAME=		thttpd-2.19
 CATEGORIES=     	www
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.acme.com/software/thttpd/
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thttpd   ${PREFIX}/sbin
