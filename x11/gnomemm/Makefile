@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/04 07:39:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/08 19:26:23 sturm Exp $
 
 COMMENT=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
@@ -23,6 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtkmm/}
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
+BUILD_DEPENDS=		gm4::devel/m4
 .if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		gdkmm.2,gtkmm.2::x11/gtkmm \
 			art_lgpl.4,gnome.36,gnomesupport.0,gnomeui.46::x11/gnome/libs
