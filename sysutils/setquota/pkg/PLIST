@@ -1,4 +1,4 @@
-sbin/setquota
+man/man8/getquota.0
+man/man8/setquota.0
 sbin/getquota
-man/man8/setquota.8
-man/man8/getquota.8
+sbin/setquota
