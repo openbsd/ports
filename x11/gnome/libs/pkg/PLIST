@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/11 19:03:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/10/11 21:47:12 espie Exp $
 @pkgcfl libart-*
+@pkgcfl libgtop-*
 bin/dns-helper
 bin/gconfigger
 bin/gnome-bug

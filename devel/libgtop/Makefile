@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/11 21:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/11 21:47:12 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
@@ -32,7 +32,6 @@ LIB_DEPENDS=		intl.1::devel/gettext \
 			glib.1.2::devel/glib
 
 .if ${FLAVOR:L:Mgnome}
-BROKEN="Package conflicts with gnome/libs"
 LIB_DEPENDS+=   	gnome.36,gnomesupport::x11/gnome/libs
 .else
 CONFIGURE_ARGS+= 	--without-gnome

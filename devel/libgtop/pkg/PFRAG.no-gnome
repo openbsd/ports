@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.no-gnome,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
+@comment $OpenBSD: PFRAG.no-gnome,v 1.2 2001/10/11 21:47:12 espie Exp $
+@pkgcfl gnome-libs-*
 include/popt-gnome.h
 lib/libgnomesupport.a
 lib/libgnomesupport.la
