@@ -1,8 +1,4 @@
 bin/ex
-bin/gview
-bin/gvim
-bin/rgview
-bin/rgvim
 bin/rview
 bin/rvim
 bin/view
@@ -12,10 +8,6 @@ bin/vim-etags
 bin/vimtutor
 bin/xxd
 man/man1/ex.1
-man/man1/gview.1
-man/man1/gvim.1
-man/man1/rgview.1
-man/man1/rgvim.1
 man/man1/rview.1
 man/man1/rvim.1
 man/man1/view.1
@@ -24,6 +16,7 @@ man/man1/vim-etags.1
 man/man1/vim.1
 man/man1/vimtutor.1
 man/man1/xxd.1
+!%%no_x11%%
 share/vim/vim56/bugreport.vim
 share/vim/vim56/doc/autocmd.txt
 share/vim/vim56/doc/change.txt
