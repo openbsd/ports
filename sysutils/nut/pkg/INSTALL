@@ -1,22 +1,22 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.4 2003/02/26 15:13:04 david Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/03/30 16:19:25 marcm Exp $
 
 P_NAME=nut
 
 DIRS='
-.
+nut
 '
 
 FILES='
-ups.conf
-upssched.conf
+nut/ups.conf
+nut/upssched.conf
 '
 
 PRIVATE_FILES='
-upsmon.conf
-upsd.conf
-upsd.users
+nut/upsmon.conf
+nut/upsd.conf
+nut/upsd.users
 '
 
 set -e
@@ -26,7 +26,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 do_post() {
 
 	DEST_PFX=${SYSCONFDIR}
-	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
+	SOURCE_PFX=${PREFIX}/share/examples
 
 	echo 
 	echo "+--------------- ${P_NAME}"

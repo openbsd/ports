@@ -1,26 +1,23 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2002/10/14 16:14:33 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/03/30 16:19:25 marcm Exp $
 #
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 FILES='
-hosts.conf
-multimon.conf
-ups.conf
-upssched.conf
-upsset.conf
-upsmon.conf
-upsd.conf
-upsd.users
+nut/ups.conf
+nut/upssched.conf
+nut/upsmon.conf
+nut/upsd.conf
+nut/upsd.users
 '
 
 echo
 echo "+--------------- $1"
 echo "| To fully remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+echo "| remove the configuration files from the ${SYSCONFDIR}/nut directory."
 echo "| Remove the directories in which the files reside as well if empty."
 echo "|"
 echo "| If you are planning on installing $1 again in the future"

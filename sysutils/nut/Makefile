@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/01/16 23:42:18 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/03/30 16:19:25 marcm Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
@@ -25,7 +25,6 @@ FAKE_FLAGS=		INSTALLROOT="${WRKINST}"
 
 CGI_CFG=		hosts.conf upsset.conf upsstats.html upsstats-single.html
 WEB_ROOT=		/var/www
-SYSCONFDIR=		/etc/nut
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-statepath="/var/db/nut"
 CONFIGURE_ARGS+=	--with-user=uucp
@@ -68,9 +67,9 @@ post-install:
 # it will get properly handled by the packaging.
 	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut
 .for file in ${CGI_CFG}
-	mv ${WRKINST}/${SYSCONFDIR}/${file}.sample ${WRKINST}${WEB_ROOT}/conf/nut/
+	mv ${WRKINST}/${SYSCONFDIR}/nut/${file}.sample ${WRKINST}${WEB_ROOT}/conf/nut/
 .endfor
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/nut/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/nut/* ${PREFIX}/share/examples/nut/
 
 .include <bsd.port.mk>
