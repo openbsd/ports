@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/20 15:01:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/21 14:18:26 espie Exp $
 
-SUBDIR+= libs
-SUBDIR+= base
-SUBDIR+= support
-SUBDIR+= games
+#SUBDIR+= libs
+#SUBDIR+= base
+#SUBDIR+= support
+#SUBDIR+= games
 
 # Conflicts, who cares ? use REPORT_PROBLEM
 SUBDIR+= libs2
