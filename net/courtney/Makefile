@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/22 19:39:58 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/24 14:32:30 jsyn Exp $
 
 COMMENT=	"simple port scan detector"
 
 DISTNAME=	courtney-1.3
 CATEGORIES=	net security
-NEED_VERSION=	1.394
+NEED_VERSION=	1.504
 MASTER_SITES=	ftp://ciac.llnl.gov/pub/ciac/sectools/unix/courtney/ \
-		http://www.packetstormsecurity.org/UNIX/audit/
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/audit
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
@@ -17,6 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courtney
