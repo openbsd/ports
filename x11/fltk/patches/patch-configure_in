@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_in,v 1.4 2002/09/30 06:44:17 wilfried Exp $
+--- configure.in.orig	Mon Aug 12 21:42:54 2002
++++ configure.in	Sat Sep 28 10:39:45 2002
+@@ -612,7 +612,7 @@ if test -n "$GCC"; then
+ 	    ;;
+     esac
+ 
+-    CXX="$CC"
++    : # CXX="$CC"
+ 
+     # Show all standard warnings + unused variables when compiling...
+     OPTIM="-Wall -Wunused $OPTIM"
+@@ -639,7 +639,7 @@ if test -n "$GCC"; then
+         if test "x$with_optim" != x; then
+ 	    OPTIM="$with_optim $OPTIM"
+ 	else
+-            OPTIM="-O2 $OPTIM"
++            : # OPTIM="-O2 $OPTIM"
+ 	fi
+     fi
+ 
