@@ -1,0 +1,11 @@
+--- fig2dev/read.c.orig	Fri Jun 20 14:55:50 1997
++++ fig2dev/read.c	Mon Aug 25 21:42:00 1997
+@@ -56,7 +56,7 @@
+ strerror(e)
+ 	int e;
+ {
+-#if (! (defined(BSD) && (BSD >= 199306)) && !defined(__NetBSD__))
++#if !defined(BSD) || (BSD < 199306)
+ 	extern char *sys_errlist[];
+ #endif
+ 	return sys_errlist[e];

@@ -1,0 +1,11 @@
+--- fig2dev/dev/genps.c.orig	Fri Aug 22 14:33:56 1997
++++ fig2dev/dev/genps.c	Mon Aug 25 21:40:30 1997
+@@ -48,7 +48,7 @@
+ #include <pwd.h>
+ #include <errno.h>
+ #ifndef __NetBSD__
+-#if (! (defined(BSD) && (BSD >= 199306)))
++#if !defined(BSD) || (BSD < 199306)
+ extern char *sys_errlist[];
+ #endif
+ #endif

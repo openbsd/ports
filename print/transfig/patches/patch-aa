@@ -1,0 +1,20 @@
+--- fig2dev/read1_3.c.orig	Mon Mar  3 14:38:36 1997
++++ fig2dev/read1_3.c	Mon Aug 25 21:44:46 1997
+@@ -29,6 +29,7 @@
+ /*******************************************************************/
+ #include <stdio.h>
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/stat.h>
+ #include <errno.h>
+ #include "alloc.h"
+@@ -52,7 +53,9 @@
+ extern F_arrow		*forward_arrow(), *backward_arrow();
+ extern int		figure_modified;
+ #ifndef __NetBSD__
++#if !defined(BSD) || (BSD < 199306) 
+ extern char		*sys_errlist[];
++#endif
+ extern int		sys_nerr, errno;
+ #endif
+ 
