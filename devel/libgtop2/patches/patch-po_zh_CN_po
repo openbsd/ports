@@ -1,0 +1,47 @@
+$OpenBSD: patch-po_zh_CN_po,v 1.1 2003/03/08 20:39:07 naddy Exp $
+--- po/zh_CN.po.orig	Sat Mar  8 18:16:25 2003
++++ po/zh_CN.po	Sat Mar  8 18:16:28 2003
+@@ -591,8 +591,8 @@ msgid ""
+ "\n"
+ "The math bit should be a decimal 4, and the traced bit is decimal 10."
+ msgstr ""
+-"Linux进程标志当前每个标志有数学位设置,因为crt0.s要检查�"
+-"�在输出中并不包括"
++"Linux进程标志当前每个标志有数学位设置,因为crt0.s要检查这"
++"在输出中并不包括"
+ 
+ #. Min_Flt
+ #: sysdeps/names/prockernel.c:59
+@@ -638,8 +638,8 @@ msgid ""
+ "textual name.  (If you have an up-to-date /etc/psdatabase, then try ps -l to "
+ "see the WCHAN field in action)"
+ msgstr ""
+-"这是进程等待的通道,一个系统调用的地址并且如果你需要�"
+-"��本名的话可以从名字列表中搜索到名字如果你有最新的/et"
++"这是进程等待的通道,一个系统调用的地址并且如果你需要文"
++"本名的话可以从名字列表中搜索到名字如果你有最新的/et"
+ "c/psdatabase,那试用ps -l命令来看WCHAN域"
+ 
+ #. WChan
+@@ -690,8 +690,8 @@ msgid ""
+ "space. This does not include pages which have not been demand-loaded in, or "
+ "which are swapped out."
+ msgstr ""
+-"进程在实存的页面数,为管理目的减3这里仅仅计算文本,数�"
+-"�和堆栈空间页数这并不包括哪些没有被装入和交换出的页"
++"进程在实存的页面数,为管理目的减3这里仅仅计算文本,数据"
++"和堆栈空间页数这并不包括哪些没有被装入和交换出的页"
+ 
+ #: sysdeps/names/procmem.c:62
+ msgid ""
+@@ -905,8 +905,8 @@ msgid ""
+ "The time (in jiffies) before the next SIGALRM is sent to the process due to "
+ "an interval timer."
+ msgstr ""
+-"由于间隔计时器在下一个SIGALRM信号被发送到进程时的瞬间�"
+-"��间"
++"由于间隔计时器在下一个SIGALRM信号被发送到进程时的瞬间时"
++"间"
+ 
+ #: sysdeps/names/proctime.c:60
+ msgid "Tick frequency"
