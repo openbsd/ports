@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 03:45:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/30 02:53:50 brad Exp $
 
 COMMENT=	"extremely fast password cracker"
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" \
 		CFLAGS="-c -Wall ${CFLAGS} -fomit-frame-pointer"
 
-FLAVORS=k6
+FLAVORS=	k6
 FLAVOR?=
 
 .if ${FLAVOR:L} == "k6"
-ONLY_FOR_ARCHS=i386
+ONLY_FOR_ARCHS=	i386
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
@@ -41,9 +41,9 @@ ALL_TARGET=	generic
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 do-configure:
-	cd ${WRKDIST} && \
-	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' <params.h >params.h.new \
-	    && mv -f params.h.new params.h
+	@cd ${WRKDIST} && \
+	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' < params.h > \
+		params.h.new && mv -f params.h.new params.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
