@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeg2_video_Makefile_in,v 1.1.1.1 2001/10/14 15:35:04 espie Exp $
+--- mpeg2_video/Makefile.in.orig	Sat Oct 13 18:23:13 2001
++++ mpeg2_video/Makefile.in	Sat Oct 13 18:23:35 2001
+@@ -310,7 +310,7 @@ uninstall-pkglibPROGRAMS:
+ 	done
+ 
+ .c.o:
+-	$(COMPILE) -c $<
++	PATH=${WRKDIR}:$$PATH $(COMPILE) -c $<
+ 
+ # FIXME: We should only use cygpath when building on Windows,
+ # and only if it is available.
+@@ -321,7 +321,7 @@ uninstall-pkglibPROGRAMS:
+ 	$(COMPILE) -c $<
+ 
+ .S.o:
+-	$(COMPILE) -c $<
++	PATH=${WRKDIR}:$$PATH $(COMPILE) -c $<
+ 
+ mostlyclean-compile:
+ 	-rm -f *.o core *.core

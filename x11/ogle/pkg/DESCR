@@ -1,0 +1,39 @@
+Ogle is a dvd player with support for menus and 
+subtitles.  Currently, it lacks some audio formats
+support (PCM and ???), so a few DVDs will work
+with sound.
+
+As shipped, ogle cannot descramble DVDs. There are
+a few DVDs out there with no scramble protection.
+However, ogle will recognize and use an installed
+descrambling library.
+
+To run ogle, you need a graphics card well supported 
+by XFree, including the Xvideo extension in YUV mode,
+and a sound card with 48KHz output (ATI card owners
+may wish to use the ATI-4.1.0.i386.tgz package)
+You can check your display Xvideo capabilities with
+xdpyinfo (presence of the Xvideo extension) and
+xvinfo (presence of an adapter with YUV capabilities).
+
+
+Alternately, at the expense of more cpu power,
+ogle can also use systemV shared memory, but the
+shared memory requirements exceed GENERIC parameters.
+You will need to crank them up. Configure a kernel with
+option 	SHMMAXPGS=4096
+and edit param.c to set SHMSEG to 16, then recompile.
+
+
+The graphical interface add-on  ogle-gui currently
+does not work on OpenBSD, but the program can be fully
+controlled from the keyboard anyways, see oglerc(5).
+
+Overall, ogle needs about 50% cpu for full-framerate decoding
+on a PIII700 with an ATI Mach64 Mobility and an ESS 
+Maestro 2.
+
+If Xvideo YUV is not available, ogle roughly needs 100% cpu
+on the same machine, and full screen rescale is not available.
+
+WWW: ${HOMEPAGE}
