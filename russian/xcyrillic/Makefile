@@ -3,14 +3,11 @@
 # Date created:         21 Jul 1998
 # Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.5 1998/12/16 22:26:34 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/17 04:36:19 marc Exp $
 #
 
 DISTNAME=	xcyrillic-1.1
 CATEGORIES=	russian x11
-
-BROKEN=		"sources not available"
-MIRROR_DISTFILE=no
 
 MASTER_SITES=	ftp://vs.itam.nsc.ru/pub/Unix/cyrillic/x11/
 ALL_TARGET=	X11R6
