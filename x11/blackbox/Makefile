@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2001/07/09 17:10:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2002/04/28 17:15:55 brad Exp $
 
 COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
-DISTNAME=	blackbox-0.61.1
+DISTNAME=	blackbox-0.62.1
 CATEGORIES=	x11
-NEED_VERSION=	1.384
-MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
-		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.6x.x/
+NEED_VERSION=	1.522
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= blackboxwm
 
-HOMEPAGE=	http://blackbox.alug.org/
+HOMEPAGE=	http://blackboxwm.sourceforge.net/
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-
 CONFIGURE_STYLE= gnu
 
 DOCS=	AUTHORS ChangeLog ChangeLog-0.40.x ChangeLog-0.50.x \
