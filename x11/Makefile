@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2001/01/03 14:10:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2001/01/06 16:46:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -9,18 +9,7 @@
      SUBDIR += afterstep
 #    SUBDIR += amiwm
      SUBDIR += asapm
-     SUBDIR += asclock:english
-     SUBDIR += asclock:german
-     SUBDIR += asclock:portuguese
-     SUBDIR += asclock:dutch
-     SUBDIR += asclock:norwegian
-     SUBDIR += asclock:italian
-     SUBDIR += asclock:swedish
-     SUBDIR += asclock:spanish
-     SUBDIR += asclock:hungarian
-     SUBDIR += asclock:breton
-     SUBDIR += asclock:french
-     SUBDIR += asclock:czech
+     SUBDIR += asclock:classic,english
 #    SUBDIR += asfiles
      SUBDIR += aterm
 #    SUBDIR += auis
