@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/05 14:18:16 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.1 2002/10/06 13:15:55 jakob Exp $
 man/man5/syslog-ng.conf.5
 man/man8/syslog-ng.8
 sbin/syslog-ng
 share/doc/syslog-ng/syslog-ng.html/book1.html
+share/doc/syslog-ng/syslog-ng.html/destinations.html
 share/doc/syslog-ng/syslog-ng.html/index.html
 share/doc/syslog-ng/syslog-ng.html/intro.html
+share/doc/syslog-ng/syslog-ng.html/logpath.html
 share/doc/syslog-ng/syslog-ng.html/msgroute.html
 share/doc/syslog-ng/syslog-ng.html/reference.html
 share/doc/syslog-ng/syslog-ng.html/tuning.html
-share/doc/syslog-ng/syslog-ng.html/x133.html
-share/doc/syslog-ng/syslog-ng.html/x170.html
-share/doc/syslog-ng/syslog-ng.html/x175.html
-share/doc/syslog-ng/syslog-ng.html/x340.html
-share/doc/syslog-ng/syslog-ng.html/x459.html
-share/doc/syslog-ng/syslog-ng.html/x462.html
-share/doc/syslog-ng/syslog-ng.html/x477.html
-share/doc/syslog-ng/syslog-ng.html/x483.html
-share/doc/syslog-ng/syslog-ng.html/x95.html
+share/doc/syslog-ng/syslog-ng.html/x172.html
+share/doc/syslog-ng/syslog-ng.html/x324.html
+share/doc/syslog-ng/syslog-ng.html/x530.html
+share/doc/syslog-ng/syslog-ng.html/x564.html
+share/doc/syslog-ng/syslog-ng.html/x692.html
+share/doc/syslog-ng/syslog-ng.html/x698.html
+share/doc/syslog-ng/syslog-ng.html/x97.html
 share/doc/syslog-ng/syslog-ng.ps
 share/doc/syslog-ng/syslog-ng.sgml
 share/doc/syslog-ng/syslog-ng.txt
