@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/15 16:51:16 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/10 21:35:18 robert Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
 DISTNAME=	${PKGNAME:S,-,,}
-PKGNAME=	bnc-2.8.9
+PKGNAME=	bnc-2.9.1
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}files/
 
