@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/06 19:10:15 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/07 04:54:44 angelos Exp $
 
 DISTNAME=	amp-0.7.6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=   FREE
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
