@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_users_guide_Makefile_in,v 1.1 2004/05/07 02:07:31 dons Exp $
+$OpenBSD: patch-docs_users_guide_Makefile_in,v 1.2 2005/03/24 07:35:03 dons Exp $
 
 Can't build the user's guide, so don't try
 
---- docs/users_guide/Makefile.in.orig	2004-05-02 11:35:47.000000000 +1000
-+++ docs/users_guide/Makefile.in	2004-05-02 11:35:50.000000000 +1000
-@@ -19,7 +19,7 @@ HTML         = $(ROOT)/license.html
+--- docs/users_guide/Makefile.in.orig	Thu Mar 10 21:49:13 2005
++++ docs/users_guide/Makefile.in	Thu Mar 24 13:55:08 2005
+@@ -56,7 +56,7 @@ distclean: clean
  
- all: html dvi ps pdf
+ veryclean: distclean
  
 -html: $(HTML)
 +html:

@@ -1,26 +1,23 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/21 20:24:21 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/03/24 07:35:03 dons Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
-V=		Nov2003
+V=		Mar2005
 DISTNAME=	hugs98-${V}
 CATEGORIES=	lang
 MAINTAINER=	Don Stewart <dons@openbsd.org>
 HOMEPAGE=	http://www.haskell.org/hugs/
+
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${V}/
 MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/hugs98/
 
-DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME}-regress.tar.bz2:0
+DISTFILES=	${DISTNAME}-patched.tar.gz ${DISTNAME}-regress.tar.bz2:0
+WRKDIST=	${WRKDIR}/${DISTNAME}-patched
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}"
-CONFIGURE_ARGS+=--with-pthreads --disable-ffi --libdir=${PREFIX}/share
+CONFIGURE_ARGS+=--with-pthreads --disable-ffi --libdir=${PREFIX}/lib
 
-WRKBUILD=	${WRKDIST}/src
-WRKCONF=	${WRKBUILD}/unix
-ALL_TARGET=
-
-CONFIG_SITE=
 do-regress:
 	@cd ${WRKDIST}/tests && sh testScript static tcheck rts libs
 

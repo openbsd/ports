@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2005/03/24 07:35:03 dons Exp $
+
+Don't force -O2
+
+--- configure.orig	Thu Mar 24 13:55:34 2005
++++ configure	Thu Mar 24 13:55:44 2005
+@@ -1721,7 +1721,7 @@ You need to install 'bison' and re-run t
+ fi
+ 
+ : ${CFLAGS=-g}
+-OPTFLAGS="-O2"
++: OPTFLAGS="-O2"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
