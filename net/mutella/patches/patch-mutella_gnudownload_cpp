@@ -1,0 +1,11 @@
+$OpenBSD: patch-mutella_gnudownload_cpp,v 1.1 2004/01/02 22:26:35 espie Exp $
+--- mutella/gnudownload.cpp.orig	2004-01-02 23:21:02.000000000 +0100
++++ mutella/gnudownload.cpp	2004-01-02 23:21:10.000000000 +0100
+@@ -47,6 +47,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#include <assert.h>
+ 
+ #define MAX_DOWNLOADERS 16
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-mutella_gnushare_cpp,v 1.1 2004/01/02 22:26:35 espie Exp $
+--- mutella/gnushare.cpp.orig	2004-01-02 23:20:36.000000000 +0100
++++ mutella/gnushare.cpp	2004-01-02 23:20:45.000000000 +0100
+@@ -50,6 +50,7 @@
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <ctype.h>
++#include <assert.h>
+ 
+ #define SHARE_QUEUE_MAX 100
+ 
