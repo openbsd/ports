@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2004/07/24 12:47:14 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2004/08/15 22:31:53 sturm Exp $
 
 FLAVORS=ar az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
 	hr hsb hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru sk sl \
 	sr sr@Latn sv tg tr uk uz zh_CN zh_TW
 FLAVOR?=fr
+
+.for i in ${FLAVORS}
+.  if ${FLAVOR:L} == ${i:L}
+FLAVOR=		${i}
+.  endif
+.endfor
 
 FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
 

@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2004/03/14 19:52:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/15 22:31:53 sturm Exp $
 
 FLAVORS=af bg ca cs da de el en_GB eo es et fa fi fr he hu \
     it ja lo mt nb nl nn pl pt pt_BR ru sk sl sr sv th tr ven \
     xh zh_CN zh_TW zu
 FLAVOR?=fr
+
+.for i in ${FLAVORS}
+.  if ${FLAVOR:L} == ${i:L}
+FLAVOR=		${i}
+.  endif
+.endfor
 
 FULLPKGNAME=	koffice-i18n-${FLAVOR}-${VERSION}
 
