@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/11 15:14:35 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Perl extension to access the unix process table"
 
-DISTNAME=	Proc-ProcessTable-0.38
+DISTNAME=	Proc-ProcessTable-0.39
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
