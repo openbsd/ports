@@ -1,6 +1,6 @@
- ================
- KAFFE OpenVM 1.0
- ================
+================
+KAFFE OpenVM 1.0
+================
 
 This is "Kaffe OpenVM", a complete virtual machine and class library
 set which allows the execution of Java code without any code from
@@ -14,4 +14,4 @@ The 0.8 BSD licensed version can possibly be obtained by checking out
 with a date code of 1998, but you may have trouble finding the
 distfiles, which we no longer fetch or track.
 
-For more information see http://www.transvirtual.com/.
+WWW: http://www.kaffe.org/

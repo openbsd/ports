@@ -1,4 +1,4 @@
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib/kaffe
+@comment $OpenBSD: PLIST,v 1.8 2000/07/27 23:34:57 matt Exp $
 bin/appletviewer
 bin/install-jar
 bin/jar
@@ -30,41 +30,21 @@ include/kaffe/jtypes.h
 include/kaffe/native.h
 lib/kaffe/libawt.a
 lib/kaffe/libawt.la
-lib/kaffe/libio-1.0.5.so.0.0
 lib/kaffe/libio.la
-lib/kaffe/libio.so.0.0
-lib/kaffe/libmanagement-1.0.5.so.0.0
 lib/kaffe/libmanagement.la
-lib/kaffe/libmanagement.so.0.0
 lib/kaffe/libmath.a
 lib/kaffe/libmath.la
-lib/kaffe/libmicrosoft-1.0.5.so.0.0
 lib/kaffe/libmicrosoft.la
-lib/kaffe/libmicrosoft.so.0.0
 lib/kaffe/libnative.a
 lib/kaffe/libnative.la
-lib/kaffe/libnet-1.0.5.so.0.0
 lib/kaffe/libnet.la
-lib/kaffe/libnet.so.0.0
-lib/kaffe/libsecurity-1.0.5.so.0.0
 lib/kaffe/libsecurity.la
-lib/kaffe/libsecurity.so.0.0
 lib/kaffe/libzip.a
 lib/kaffe/libzip.la
 lib/kaffe/security/java.security
-lib/libkaffevm-1.0.5.so.0.0
 lib/libkaffevm.la
-lib/libkaffevm.so.0.0
 libexec/Kaffe
 man/man1/kaffe.1
-share/kaffe/Klasses.jar
-share/kaffe/comm.jar
-share/kaffe/kjc.jar
-share/kaffe/microsoft.jar
-share/kaffe/pjava.jar
-share/kaffe/rmi.jar
-share/kaffe/servlet.jar
-share/kaffe/tools.jar
 share/kaffe/FAQ.BeOS
 share/kaffe/FAQ.Known-Bugs
 share/kaffe/FAQ.amigaos
@@ -89,10 +69,16 @@ share/kaffe/FAQ.staticnative
 share/kaffe/FAQ.timing
 share/kaffe/FAQ.unicode
 share/kaffe/FAQ.win32
+share/kaffe/Klasses.jar
+share/kaffe/comm.jar
+share/kaffe/kjc.jar
+share/kaffe/microsoft.jar
+share/kaffe/pjava.jar
+share/kaffe/rmi.jar
+share/kaffe/servlet.jar
+share/kaffe/tools.jar
+%%SHARED%%
 @dirrm share/kaffe
 @dirrm lib/kaffe/security
 @dirrm lib/kaffe
 @dirrm include/kaffe
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib/kaffe

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/27 23:34:57 matt Exp $
+lib/kaffe/libio-1.0.5.so.0.0
+lib/kaffe/libio.so.0.0
+lib/kaffe/libmanagement-1.0.5.so.0.0
+lib/kaffe/libmanagement.so.0.0
+lib/kaffe/libmicrosoft-1.0.5.so.0.0
+lib/kaffe/libmicrosoft.so.0.0
+lib/kaffe/libnet-1.0.5.so.0.0
+lib/kaffe/libnet.so.0.0
+lib/kaffe/libsecurity-1.0.5.so.0.0
+lib/kaffe/libsecurity.so.0.0
+lib/libkaffevm-1.0.5.so.0.0
+lib/libkaffevm.so.0.0
+DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/kaffe)

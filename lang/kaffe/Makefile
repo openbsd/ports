@@ -1,18 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/27 23:34:56 matt Exp $
 #
-# Relevant URLs:	http://www.transvirtual.com/kaffe/
-
 # If you are getting compile errors like these:
-#	Undefined symbol `_postOutOfMemory' referenced from text segment
-#	Undefined symbol `_PtrClass' referenced from text segment
+#     Undefined symbol `_postOutOfMemory' referenced from text segment
+#     Undefined symbol `_PtrClass' referenced from text segment
 # please read the file pkg/COMPILATION
-
-#BROKEN=		bad packing lists
 
 DISTNAME=	kaffe-1.0.5
 CATEGORIES=	lang
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.319
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
@@ -21,15 +16,17 @@ BUILD_DEPENDS=	libtool::devel/libtool
 # You must have the X11 client packages installed; no good way to DEPEND this
 # (if you don't, I think it will build a command-line-only Java--untested).
 LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
-			gif.4.::graphics/giflib \
-			png.1.::graphics/png
+		gif.4.::graphics/giflib \
+		png.1.::graphics/png
+
+HOMEPAGE=	http://www.kaffe.org/
 
 # This port REQUIRES shared libs, and will not work without them
 # (dynamic linking is an essential element of Java).
 # At present it is only known to work on i386. 
 # Builds nicely, but does not run at all, on sparc (gets 
 # nullpointerexceptions everywhere).
-ONLY_FOR_ARCHS = i386 # sparc m68k
+ONLY_FOR_ARCHS=	i386 # sparc m68k
 
 MAINTAINER=	ian@OpenBSD.ORG
 
@@ -39,13 +36,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # build/configuration variables
-GNU_CONFIGURE=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-
-CONFIGURE_ENV=		${SETENV} CPPFLAGS=-I/usr/local/include \
-					LDFLAGS=-L/usr/local/lib
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+CONFIGURE_ENV=	${SETENV} CPPFLAGS=-I/usr/local/include \
+			LDFLAGS=-L/usr/local/lib
 
 post-install:
-		@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/kaffe
+	@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/kaffe
 
 .include <bsd.port.mk>
