@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/14 13:19:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/24 19:55:35 jakob Exp $
+
+COMMENT=	socks client and server
 
 ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
 DISTNAME=	dante-1.1.9
 CATEGORIES=	security
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 
 HOMEPAGE=	http://www.inet.no/dante/

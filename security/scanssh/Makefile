@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/15 12:45:42 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/24 19:55:34 jakob Exp $
+
+COMMENT=	SSH remote version scanner
 
 DISTNAME=	scanssh-1.5
 CATEGORIES=	security
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
+
 MASTER_SITES=	http://www.monkey.org/~provos/ \
 		ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/scanssh/
 

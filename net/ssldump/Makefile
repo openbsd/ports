@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/15 12:15:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/24 19:55:46 jakob Exp $
 
-DISTNAME=		ssldump-0.9b1
-PKGNAME=		ssldump-0.9b1p1
-CATEGORIES=     	net
-NEED_VERSION=		1.319
+COMMENT=	SSLv3/TLS network protocol analyzer
 
-HOMEPAGE=		http://www.rtfm.com/ssldump/
+DISTNAME=	ssldump-0.9b1
+PKGNAME=	ssldump-0.9b1p1
+CATEGORIES=    	net
+NEED_VERSION=	1.363
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+HOMEPAGE=	http://www.rtfm.com/ssldump/
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/18 22:06:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 19:55:52 jakob Exp $
+
+COMMENT=	University of Washington IMAP utilities
 
 DISTNAME=	imap-utils
-
 PKGNAME=	imaputils-uw-20001219
 CATEGORIES=	mail
-NEED_VERSION=	1.302
+NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.washington.edu/imap/
 

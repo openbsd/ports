@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/11/20 16:56:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/24 19:55:40 jakob Exp $
+
+COMMENT=	cisco NetFlow utilities
 
 DISTNAME=	flow-tools-0.34
 CATEGORIES=	net
+NEED_VERSION=	1.363
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 

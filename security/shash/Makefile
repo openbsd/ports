@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 12:45:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/24 19:55:28 jakob Exp $
 
-DISTNAME=		shash-0.2.3
-CATEGORIES=     	security
-NEED_VERSION=		1.338
+COMMENT=	generates or checks digests or mac
 
-HOMEPAGE=		http://mcrypt.hellug.gr/shash/
+DISTNAME=	shash-0.2.3
+CATEGORIES=     security
+NEED_VERSION=	1.363
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+HOMEPAGE=	http://mcrypt.hellug.gr/shash/
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2001/03/06 19:50:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.44 2001/03/24 19:55:39 jakob Exp $
+
+COMMENT=	network protocol analyzer
 
 DISTNAME=	ethereal-0.8.16
 CATEGORIES=	net x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.363
 
 MASTER_SITES=	http://www.ethereal.com/distribution/ \
 		http://ethereal.zing.org/distribution/ \

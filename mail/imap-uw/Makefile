@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2001/02/18 15:28:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/24 19:55:51 jakob Exp $
+
+COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 DISTNAME=	imap-2000c
-
 PKGNAME=	imap-uw-2000c
 CATEGORIES=	mail
-NEED_VERSION=	1.302
+NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.washington.edu/imap/
 

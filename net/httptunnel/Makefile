@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/10 18:57:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/24 19:55:42 jakob Exp $
+
+COMMENT=	HTTP tunneling utility
 
 DISTNAME=	httptunnel-3.0.5
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.363
+
 MASTER_SITES=	http://www.nocrew.org/software/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/
 

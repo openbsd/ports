@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/05 16:02:33 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/24 19:55:27 jakob Exp $
+
+COMMENT=	perl-compatible regular expression library
 
 DISTNAME=	pcre-3.4
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pcre
 

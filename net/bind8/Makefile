@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2001/01/29 14:48:05 ho Exp $
+# $OpenBSD: Makefile,v 1.22 2001/03/24 19:55:43 jakob Exp $
+
+COMMENT=	Berkeley Internet Name Daemon
 
 DISTNAME=	bind-openbsd-8.2.3-20010129
 PKGNAME=	bind-8.2.3
 CATEGORIES=	net
-NEED_VERSION=	1.317
+NEED_VERSION=	1.363
+
 MASTER_SITES=	ftp://ftp.gsnig.org/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 

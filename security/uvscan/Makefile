@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/02 02:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/24 19:55:36 jakob Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
+
+COMMENT=	evaluation version of a DOS/Windows file virus scanner
 
 DISTNAME=	vlnx407e
 PKGNAME=	uvscan-4.07e
 CATEGORIES=	security
-NEED_VERSION=	1.302
+NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.nai.com/asp_set/buy_try/try/products_evals.asp
 
