@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/08 06:04:54 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/20 01:16:43 d Exp $
 
-DISTNAME=       bison-1.25
+DISTNAME=       bison-1.27
 CATEGORIES=	devel
 
 MAINTAINER=	d@openbsd.org
