@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2003/01/29 02:02:51 margarida Exp $
---- configure.orig	Tue Jan 28 19:01:15 2003
-+++ configure	Tue Jan 28 19:00:13 2003
-@@ -10057,7 +10057,7 @@ if test $check_ssh -ne 0; then
+$OpenBSD: patch-configure,v 1.12 2003/06/18 14:19:39 avsm Exp $
+--- configure.orig	Thu Jan 30 21:35:59 2003
++++ configure	Wed Jun 18 15:10:25 2003
+@@ -10041,7 +10041,7 @@ if test $check_ssh -ne 0; then
  
     if test -f $ssl_path/include/openssl/ssl.h; then
        COPTS="$COPTS -I$ssl_path/include"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.11 2003/01/29 02:02:51 margarida Exp $
        cat >>confdefs.h <<\_ACEOF
  #define HAVE_OPENSSL 1
  _ACEOF
-@@ -10067,7 +10067,7 @@ _ACEOF
+@@ -10051,7 +10051,7 @@ _ACEOF
  echo "${ECHO_T}yes" >&6
     elif test -f $ssl_path/ssl/include/openssl/ssl.h; then
        COPTS="$COPTS -I$ssl_path/ssl/include"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.11 2003/01/29 02:02:51 margarida Exp $
        cat >>confdefs.h <<\_ACEOF
  #define HAVE_OPENSSL 1
  _ACEOF
-@@ -10076,7 +10076,7 @@ _ACEOF
+@@ -10060,7 +10060,7 @@ _ACEOF
        echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
     elif test -f /usr/include/openssl/ssl.h; then
