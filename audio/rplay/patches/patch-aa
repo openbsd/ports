@@ -1,5 +1,16 @@
-*** configure.bak	Fri Feb  2 03:30:38 1996
---- configure	Fri Jun 13 19:14:52 1997
+*** configure.orig	Thu Feb  1 19:30:38 1996
+--- configure	Mon Dec 29 20:39:33 1997
+***************
+*** 2560,2565 ****
+--- 2560,2567 ----
+  fi
+  fi
+  
++ echo "Setting appropriate target for OpenBSD..."
++ RPLAY_TARGET="generic"
+  
+  if test -z "$RPLAY_TARGET"; then
+  	echo 'Sorry, I could not figure out what type of system you have.'
 ***************
 *** 2589,2597 ****
   
@@ -11,7 +22,7 @@
   fi
   
   
---- 2589,2597 ----
+--- 2591,2599 ----
   
   
   if test "$no_x" = "yes" -o "$HAVE_FORMS" = "no"; then
