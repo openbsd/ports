@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/28 16:33:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/05 16:17:13 lebel Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
-VERSION=	2.6.1
+VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
 CATEGORIES=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/
@@ -17,9 +17,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://www.zangband.org/
 
+BUILD_DEPENDS=  	autoconf::devel/autoconf \
+	                automake::devel/automake
+
+USE_GMAKE=		Yes
 MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		TRUEPREFIX="${TRUEPREFIX}"
+
+WRKDIST=		${WRKDIR}/zangband
 
 FLAVORS=		no_x11
 FLAVOR?=	
@@ -30,6 +36,9 @@ CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif
+
+pre-configure:
+	@cd ${WRKSRC}; ${WRKSRC}/bootstrap
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zangband

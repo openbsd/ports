@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/11 16:30:13 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/10/05 16:17:13 lebel Exp $
 bin/zangband
 share/zangband/apex/readme.txt
 share/zangband/apex/z_scores.raw
@@ -9,12 +9,16 @@ share/zangband/edit/k_info.txt
 share/zangband/edit/misc.txt
 share/zangband/edit/q_info.txt
 share/zangband/edit/q_oberon.txt
+share/zangband/edit/q_pref.txt
 share/zangband/edit/q_random.txt
 share/zangband/edit/q_serpen.txt
 share/zangband/edit/r_info.txt
 share/zangband/edit/t_info.txt
+share/zangband/edit/thieves.map
+share/zangband/edit/town1.map
 share/zangband/edit/v_info.txt
 share/zangband/edit/w_info.txt
+share/zangband/edit/wild.map
 share/zangband/file/a_cursed.txt
 share/zangband/file/a_high.txt
 share/zangband/file/a_low.txt
@@ -115,15 +119,41 @@ share/zangband/pref/user.prf
 share/zangband/pref/xtra-gcu.prf
 share/zangband/pref/xtra-new.prf
 share/zangband/pref/xtra-xxx.prf
-@exec mkdir -p %D/share/zangband/xtra
-@exec mkdir -p %D/share/zangband/script
+share/zangband/xtra/font/10X20.FON
+share/zangband/xtra/font/12X24.FON
+share/zangband/xtra/font/5X8.FON
+share/zangband/xtra/font/6X10.FON
+share/zangband/xtra/font/6X12.FON
+share/zangband/xtra/font/6X13.FON
+share/zangband/xtra/font/6X13B.FON
+share/zangband/xtra/font/6X9.FON
+share/zangband/xtra/font/7X13.FON
+share/zangband/xtra/font/7X13B.FON
+share/zangband/xtra/font/8X13.FON
+share/zangband/xtra/font/8X13B.FON
+share/zangband/xtra/font/9X15.FON
+share/zangband/xtra/font/9X15B.FON
+share/zangband/xtra/font/16x16.txt
+share/zangband/xtra/font/xm8x16b.fnt
+share/zangband/xtra/graf/16x16.bmp
+share/zangband/xtra/graf/8x13.bmp
+share/zangband/xtra/graf/8x8.bmp
+share/zangband/xtra/graf/mask.bmp
+share/zangband/xtra/graf/readme.txt
+share/zangband/xtra/sound/sound.cfg
+@exec mkdir -p %D/share/zangband/xtra/music
+@exec mkdir -p %D/share/zangband/xtra/help
 @exec mkdir -p %D/share/zangband/info
+@dirrm share/zangband/xtra/sound
+@dirrm share/zangband/xtra/music
+@dirrm share/zangband/xtra/help
+@dirrm share/zangband/xtra/graf
+@dirrm share/zangband/xtra/font
 @dirrm share/zangband/xtra
-@dirrm share/zangband/script
 @dirrm share/zangband/pref
 @dirrm share/zangband/info
-@dirrm share/zangband/apex
 @dirrm share/zangband/help
 @dirrm share/zangband/file
 @dirrm share/zangband/edit
+@dirrm share/zangband/apex
 @dirrm share/zangband

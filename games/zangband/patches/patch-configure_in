@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/10/05 16:17:13 lebel Exp $
+--- configure.in.orig	Sun Jul  8 16:13:34 2001
++++ configure.in	Fri Oct  5 11:43:05 2001
+@@ -28,8 +28,8 @@ else
+   MY_EXPAND_DIR(game_datadir, "./lib/")
+   bindir=".."
+ fi
+-AC_DEFINE_UNQUOTED(DEFAULT_PATH, "$game_datadir")
+-DEFAULT_PATH="$game_datadir"
++AC_DEFINE_UNQUOTED(DEFAULT_PATH, "$TRUEPREFIX/share/zangband")
++DEFAULT_PATH="$TRUEPREFIX/share/zangband"
+ AC_SUBST(DEFAULT_PATH)
+ 
+ dnl Checks for programs.
+@@ -50,7 +50,7 @@ dnl Checks for header files.
+ AC_PATH_XTRA
+ 
+ if test "$no_x" != "yes"; then
+-  LIBS="$LIBS -lX11"
++  LIBS="$LIBS -lX11 -lXt -lXmu"
+   AC_DEFINE(USE_X11)
+   AC_DEFINE(USE_XPJ)
+   AC_DEFINE(USE_TRANSPARENCY)
+@@ -97,4 +97,4 @@ AC_FUNC_STRFTIME
+ AC_FUNC_VPRINTF
+ AC_CHECK_FUNCS(gethostname mkdir select strstr strtol usleep mkstemp)
+ 
+-AC_OUTPUT(Makefile src/makefile lib/Makefile lib/apex/Makefile lib/bone/Makefile lib/data/Makefile lib/edit/Makefile lib/file/Makefile lib/help/Makefile lib/info/Makefile lib/pref/Makefile lib/save/Makefile lib/script/Makefile lib/user/Makefile lib/xtra/Makefile)
++AC_OUTPUT(Makefile src/makefile lib/Makefile lib/apex/Makefile lib/bone/Makefile lib/data/Makefile lib/edit/Makefile lib/file/Makefile lib/help/Makefile lib/info/Makefile lib/pref/Makefile lib/save/Makefile lib/user/Makefile lib/xtra/Makefile)
