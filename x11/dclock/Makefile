@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/01 03:47:24 kevlo Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 PKGNAME=	dclock-pl4
@@ -18,13 +18,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
+FAKE=		Yes
+USE_X11=	Yes
 
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-cd
 EXTRACT_AFTER_ARGS=	|sh -
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 
 WRKDIST=	${WRKDIR}
 
