@@ -1,0 +1,51 @@
+$OpenBSD: patch-Database_cell_c,v 1.1 2005/04/03 16:14:44 espie Exp $
+--- Database/cell.c.orig	Sun Apr  3 18:06:33 2005
++++ Database/cell.c	Sun Apr  3 18:07:48 2005
+@@ -1306,47 +1306,6 @@ copymod3 (cell1, cell2, incr)
+   return 0;
+ }
+ 
+-char *
+-tolower (char *s)
+-{
+-  int j;
+-  int len;
+-  len = strlen (s);
+-  for (j = 0; j < len; j++)
+-    if (s[j] >= 'A' && s[j] <= 'Z')
+-      s[j] = 'a' + s[j] - 'A';
+-  return s;
+-}
+-
+-char *
+-strcasestr (char *str1, char *str2)
+-{
+-  char *s1;
+-  char *s2;
+-  char *pos = NULL;
+-  int l1;
+-  s1 = strdup (str1);
+-  if (s1 == NULL)
+-    return NULL;
+-  s2 = strdup (str2);
+-  if (s2 == NULL)
+-    {
+-      free (s1);
+-      return NULL;
+-    }
+-
+-  tolower (s1);
+-  tolower (s2);
+-  pos = strstr (s1, s2);
+-  l1 = pos - s1;
+-  free (s1);
+-  free (s2);
+-  if (pos == NULL)
+-    return NULL;
+-
+-  return str1 + l1;
+-}
+-
+ int
+ cell_chgwksname (Cell * cell, char *oldname, char *newname)
+ {

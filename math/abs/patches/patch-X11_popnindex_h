@@ -1,6 +1,6 @@
---- X11/popnindex.h.orig	Thu Dec 28 20:41:57 2000
-+++ X11/popnindex.h	Thu Dec 28 20:42:09 2000
-@@ -29,7 +29,7 @@
+--- X11/popnindex.h.orig	Wed Nov 15 22:10:42 2000
++++ X11/popnindex.h	Sun Apr  3 18:06:11 2005
+@@ -29,7 +29,7 @@ Concact: abs@ping.be or abs@pi.be
  
  #include <stdio.h>
  #include "param.h"

@@ -1,6 +1,6 @@
---- X11/button.h.orig	Thu Dec 28 20:40:57 2000
-+++ X11/button.h	Thu Dec 28 20:41:10 2000
-@@ -28,7 +28,7 @@
+--- X11/button.h.orig	Wed Nov 15 22:10:42 2000
++++ X11/button.h	Sun Apr  3 18:06:11 2005
+@@ -28,7 +28,7 @@ Concact: abs@ping.be or abs@pi.be
  #define WIDGET_BUTTON_H
  
  #include "param.h"
