@@ -1,7 +1,7 @@
-$OpenBSD: patch-nbase_configure,v 1.4 2004/05/16 08:38:12 jolan Exp $
---- nbase/configure.orig	2004-01-11 21:23:12.000000000 -0600
-+++ nbase/configure	2004-05-16 01:53:17.000000000 -0500
-@@ -3318,6 +3318,9 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-nbase_configure,v 1.5 2004/10/31 18:06:14 sturm Exp $
+--- nbase/configure.orig	Sat Oct 16 01:03:33 2004
++++ nbase/configure	Wed Oct 20 11:54:11 2004
+@@ -3324,6 +3324,9 @@ cat >>conftest.$ac_ext <<_ACEOF
  #if HAVE_SYS_TYPES_H
  # include <sys/types.h>
  # endif

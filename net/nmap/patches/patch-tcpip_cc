@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcpip_cc,v 1.1 2003/12/09 18:42:37 brad Exp $
---- tcpip.cc.orig	2003-09-20 02:03:00.000000000 -0700
-+++ tcpip.cc	2003-10-10 13:51:44.000000000 -0700
-@@ -1524,7 +1524,8 @@ if (!pd) fatal("NULL packet device passe
+$OpenBSD: patch-tcpip_cc,v 1.2 2004/10/31 18:06:14 sturm Exp $
+--- tcpip.cc.orig	Mon Oct 18 12:59:15 2004
++++ tcpip.cc	Wed Oct 20 11:54:12 2004
+@@ -1649,7 +1649,8 @@ if (!pd) fatal("NULL packet device passe
     gettimeofday(&tv_end, NULL);
     *rcvdtime = tv_end;
  #else

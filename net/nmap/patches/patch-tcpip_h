@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcpip_h,v 1.1 2003/12/09 18:42:37 brad Exp $
---- tcpip.h.orig	2003-10-10 14:02:14.000000000 -0700
-+++ tcpip.h	2003-10-10 14:00:52.000000000 -0700
-@@ -239,7 +239,7 @@ extern "C" {
+$OpenBSD: patch-tcpip_h,v 1.2 2004/10/31 18:06:14 sturm Exp $
+--- tcpip.h.orig	Sun Aug 29 05:11:42 2004
++++ tcpip.h	Wed Oct 20 11:54:12 2004
+@@ -254,7 +254,7 @@ extern "C" {
  #endif
  
  #ifndef BSDFIX

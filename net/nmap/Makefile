@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2004/10/08 08:22:28 xsa Exp $
+# $OpenBSD: Makefile,v 1.53 2004/10/31 18:06:14 sturm Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
-DISTNAME=	nmap-3.50
+DISTNAME=	nmap-3.75
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
@@ -15,8 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= 	gnu dest
-CONFIGURE_ARGS=		--with-libpcap=/usr --with-libpcre=${LOCALBASE}
+CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS=		--with-libpcap=/usr \
+			--with-libpcre=${LOCALBASE} \
+			--with-openssl=/usr
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcre \
 				${WRKSRC}/nsock/src \
 				${WRKSRC}/libpcap-possiblymodified
