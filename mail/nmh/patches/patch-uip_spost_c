@@ -1,6 +1,7 @@
---- uip/spost.c.orig	Sun Feb  6 04:41:00 2000
-+++ uip/spost.c	Tue Feb 29 17:52:41 2000
-@@ -727,8 +727,8 @@
+$OpenBSD: patch-uip_spost_c,v 1.1 2002/09/30 00:29:02 pvalchev Exp $
+--- uip/spost.c.orig	Fri Feb  4 13:28:24 2000
++++ uip/spost.c	Mon Sep 30 18:22:06 2002
+@@ -727,8 +727,8 @@ make_bcc_file (void)
      char *vec[6];
      FILE * in, *out;
  

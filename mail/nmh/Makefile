@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/09/30 00:29:02 pvalchev Exp $
 
 COMMENT=	"new MH mail handling program"
 
 DISTNAME=		nmh-1.0.4
 CATEGORIES=     	mail
-NEED_VERSION=	1.402
 MASTER_SITES=           ftp://ftp.mhost.com/pub/nmh/ 
 HOMEPAGE=		http://www.mhost.com/nmh/
 

@@ -1,5 +1,6 @@
---- config.h.in.~1~	Sun Feb  6 04:40:21 2000
-+++ config.h.in	Tue Feb 29 19:06:41 2000
+$OpenBSD: patch-config_h_in,v 1.1 2002/09/30 00:29:02 pvalchev Exp $
+--- config.h.in.orig	Fri Mar 17 13:19:43 2000
++++ config.h.in	Mon Sep 30 18:22:06 2002
 @@ -23,8 +23,8 @@
   * other programs which may modify your maildrops.
   * Currently you can only use one type.

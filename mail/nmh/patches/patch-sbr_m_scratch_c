@@ -1,6 +1,7 @@
---- sbr/m_scratch.c.orig	Sat Jan 29 10:52:43 2000
-+++ sbr/m_scratch.c	Tue Feb 29 17:58:33 2000
-@@ -15,16 +15,20 @@
+$OpenBSD: patch-sbr_m_scratch_c,v 1.1 2002/09/30 00:29:02 pvalchev Exp $
+--- sbr/m_scratch.c.orig	Fri Jan 28 16:30:17 2000
++++ sbr/m_scratch.c	Mon Sep 30 18:22:06 2002
+@@ -15,16 +15,20 @@ m_scratch (char *file, char *template)
      static char buffer[BUFSIZ], tmpfil[BUFSIZ];
  
      snprintf (tmpfil, sizeof(tmpfil), "%sXXXXXX", template);
