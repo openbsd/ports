@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/10/30 15:07:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/09/29 20:17:49 sturm Exp $
+bin/mixmaster
 man/man1/mixmaster.1
-sbin/mixmaster
 share/examples/mixmaster/README
 share/examples/mixmaster/abuse.txt.in
 share/examples/mixmaster/adminkey.txt
+share/examples/mixmaster/allpingers.txt
 share/examples/mixmaster/blocked.txt.in
 share/examples/mixmaster/dest.alw
 share/examples/mixmaster/dest.blk
@@ -14,6 +15,7 @@ share/examples/mixmaster/mix.cfg
 share/examples/mixmaster/mix.cfg.ex
 @comment share/examples/mixmaster/mix.cfg.orig
 share/examples/mixmaster/mix.hlp
+share/examples/mixmaster/mixmaster-update.pl
 share/examples/mixmaster/mlist.txt
 share/examples/mixmaster/news.hlp
 share/examples/mixmaster/pgp.hlp

@@ -6,11 +6,11 @@
 # ANY KIND, either express or implied. See the file COPYRIGHT for
 # details.
 
-# $Id: Makefile,v 1.2 2002/10/30 15:07:54 naddy Exp $
+# $Id: Makefile,v 1.3 2003/09/29 20:17:49 sturm Exp $
 
 # Edit according to the libraries you want to use:
 INC =  -Ipcre-2.08
-DEF =  -DUSE_ZLIB -DUSE_PCRE -DUSE_NCURSES -DHAVE_NCURSES_H -DUSE_SOCK -DSPOOL='"$(SYSCONFDIR)"'
+DEF =  -DUSE_ZLIB -DUSE_PCRE -DUSE_NCURSES -DHAVE_NCURSES_H -DUSE_SOCK
 LIBS =   pcre-2.08/libpcre.a  
 LDFLAGS =  -lz  -lcrypto -lcurses
 

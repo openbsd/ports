@@ -19,5 +19,3 @@ remailers did this by removing all headers, except the subject line,
 from any message you sent to them and then forwarding them a
 destination of your choice. The recipient of such a message would
 not know who had sent it.
-
-WWW: ${HOMEPAGE}
