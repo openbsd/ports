@@ -1,0 +1,35 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/03/30 14:05:25 espie Exp $
+--- Makefile.orig	Sun Dec  1 14:29:19 2002
++++ Makefile	Fri Feb  7 03:45:05 2003
+@@ -1,6 +1,6 @@
+ # $Header: /home/cvs/ports/games/scummvm/patches/Attic/patch-Makefile,v 1.1.1.1 2003/03/30 14:05:25 espie Exp $
+ 
+-CXX      = c++
++#CXX      = c++
+ AR        = ar cru
+ RANLIB = ranlib
+ RM      = rm -f
+@@ -17,10 +17,10 @@ CP  = cp
+ # Default compilation parameters. Normally don't edit these           #
+ #######################################################################
+ 
+-CFLAGS  := -g -O -Wall -Wstrict-prototypes -Wuninitialized -Wno-long-long -Wno-multichar -Wno-unknown-pragmas
++CXXFLAGS += -Wall -Wstrict-prototypes -Wuninitialized -Wno-long-long -Wno-multichar -Wno-unknown-pragmas
+ DEFINES :=
+ LDFLAGS :=
+-INCLUDES:= -I. -Icommon
++INCLUDES:= -I. -Icommon -I${LOCALBASE}/include
+ LIBS	:=
+ OBJS	:=
+ 
+@@ -40,8 +40,8 @@ DEFINES += -DUSE_MAD
+ LIBS    += -lmad
+ 
+ # Uncomment this to activate the Ogg Vorbis lib for compressed sound files
+-# DEFINES += -DUSE_VORBIS
+-# LIBS    += -lvorbisfile -lvorbis
++DEFINES += -DUSE_VORBIS
++LIBS    += -lvorbisfile -lvorbis
+ 
+ # Uncomment this to activate the ALSA lib for midi
+ # DEFINES += -DUSE_ALSA

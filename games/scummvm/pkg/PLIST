@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/03/30 14:05:25 espie Exp $
+bin/scummvm
+man/man6/scummvm.6
+share/doc/scummvm/README
+share/pixmaps/scummvm.xpm
+@comment @dirrm share/pixmaps
+@dirrm share/doc/scummvm

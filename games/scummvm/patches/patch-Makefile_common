@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_common,v 1.1.1.1 2003/03/30 14:05:25 espie Exp $
+--- Makefile.common.orig	Tue Nov 26 14:11:46 2002
++++ Makefile.common	Fri Feb  7 03:44:28 2003
+@@ -52,7 +52,7 @@ DEPFILES = $(wildcard $(patsubst %,%/*.d
+ 
+ .cpp.o:
+ 	$(MKDIR) $(*D)/$(DEPDIR)
+-	$(CXX) -Wp,-MMD,"$(*D)/$(DEPDIR)/$(*F).d2" $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
++	$(CXX) -Wp,-MMD,"$(*D)/$(DEPDIR)/$(*F).d2" $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ 	$(ECHO) "$(*D)/" > $(*D)/$(DEPDIR)/$(*F).d
+ 	$(CAT) "$(*D)/$(DEPDIR)/$(*F).d2" >> "$(*D)/$(DEPDIR)/$(*F).d"
+ 	$(RM) "$(*D)/$(DEPDIR)/$(*F).d2"

@@ -1,0 +1,10 @@
+ScummVM is an implementation of LucasArts S.C.U.M.M. (Script Creation
+Utility for Maniac Mansion) interpreter, used in games such as Monkey
+Island, Indiana Jones, Day Of The Tentacle, Sam and Max, and many more.
+Some things are still missing, and some games cannot be completeted yet.
+There are quite a few known bugs.  Regardless of the bugs it is already
+possible to play some games all the way through to the end.
+
+Note that you must own the original games to play.
+
+WWW: ${HOMEPAGE}
