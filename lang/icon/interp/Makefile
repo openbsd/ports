@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/08 18:22:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/09 21:50:32 espie Exp $
 
 VERSION=	9.3.2
 DISTNAME=	icon_interp-${VERSION}
@@ -7,7 +7,8 @@ NEED_VERSION=	1.224
 MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
 DIST_SUBDIR=	icon/${VERSION}
 DISTFILES=	unix.tgz
-LICENSE_TYPE=	PD
+
+# Public domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,10 +18,18 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}
 
+FLAVORS=	no_x11
+FLAVOR?=	
+
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Icon-icont
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_TARGET=Configure
+.else
+CONFIGURE_TARGET=X-Configure
+.endif
 
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
@@ -28,7 +37,12 @@ pre-configure:
 		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
 	else \
 		touch ${CONF_DIR}/rswitch.c ;\
+		echo "#define NoCoexpr" \
+		    >>${WRKSRC}/config/unix/openbsd/define.h;\
 	fi 
+
+do-configure:
+	cd ${WRKSRC} && make ${CONFIGURE_TARGET} name=openbsd
 
 # We put a wrapper around icont for finding the library files when
 # they're installed

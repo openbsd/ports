@@ -8,12 +8,6 @@
 #define MaxHdr 13400
 #define MaxStatSize 20480
 
-/* to implement on some architectures yet ... */
-#if defined(__i386__)
-#else
-#define NoCoexpr
-#endif
-
 #define GenericBSD
 #define BSD_4_4_LITE    1	/* This is new, for 4.4Lite specific stuff */
 #define UNIX 1
