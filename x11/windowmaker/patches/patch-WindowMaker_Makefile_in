@@ -1,12 +1,21 @@
-$OpenBSD: patch-WindowMaker_Makefile_in,v 1.2 2001/08/01 09:04:41 wilfried Exp $
---- WindowMaker/Makefile.in.orig	Sat Jul 28 14:06:07 2001
-+++ WindowMaker/Makefile.in	Sat Jul 28 14:06:33 2001
-@@ -98,7 +98,7 @@ SUBDIRS = Backgrounds Defaults IconSets 
- 
- prefsdatadir = $(pkgdatadir)
- 
--prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cz 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.se 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW.Big5 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	wmmacros 	xtree.dat
-+prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cs 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.sv 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW.Big5 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	wmmacros 	xtree.dat
- 
- 
- EXTRA_DIST = $(prefsdata_DATA) mkMakefile
+$OpenBSD: patch-WindowMaker_Makefile_in,v 1.3 2001/10/24 13:54:38 wilfried Exp $
+--- WindowMaker/Makefile.in.orig	Fri Oct  5 02:52:32 2001
++++ WindowMaker/Makefile.in	Wed Oct 24 10:40:21 2001
+@@ -114,7 +114,7 @@ prefsdata_DATA = \
+ 	menu\
+ 	menu.bg\
+ 	menu.ca\
+-	menu.cz\
++	menu.cs\
+ 	menu.da\
+ 	menu.de\
+ 	menu.el\
+@@ -134,7 +134,7 @@ prefsdata_DATA = \
+ 	menu.pt\
+ 	menu.ro\
+ 	menu.ru\
+-	menu.se\
++	menu.sv\
+ 	menu.sk\
+ 	menu.sl\
+ 	menu.tr\

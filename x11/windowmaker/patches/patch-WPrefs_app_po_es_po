@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_es_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/es.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/es.po	Mon May 21 15:27:55 2001
+$OpenBSD: patch-WPrefs_app_po_es_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/es.po.orig	Sun Jan  7 02:06:10 2001
++++ WPrefs.app/po/es.po	Wed Oct 24 10:36:55 2001
 @@ -10,7 +10,7 @@ msgstr ""
  "Language-Team:  Spanish \n"
  "MIME-Version: 1.0\n"

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2001/10/05 19:28:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.48 2001/10/24 13:54:38 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
-DISTNAME=		WindowMaker-0.65.1
+DISTNAME=		WindowMaker-0.70.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.460
+NEED_VERSION=		1.481
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -20,16 +20,12 @@ MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
 EXTRACT_SUFX=		.tar.bz2
 
-PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-			${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-			patch-*
-
-LIB_DEPENDS=		PropList.2::devel/libproplist \
-			jpeg.62::graphics/jpeg \
+LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png \
 			gif.4.1::graphics/giflib
 
+NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
@@ -37,7 +33,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
 			--with-nlsdir="${LOCALBASE}/share/locale" \
-			--enable-gnome
+			--disable-dependency-tracking \
+			--enable-gnome \
+			--enable-kde
 
 FLAVORS=		i18n
 FLAVOR?=

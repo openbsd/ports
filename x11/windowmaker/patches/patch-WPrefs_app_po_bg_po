@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_bg_po,v 1.1 2001/05/21 14:05:59 wilfried Exp $
---- WPrefs.app/po/bg.po.orig	Fri Sep 15 00:10:30 2000
-+++ WPrefs.app/po/bg.po	Mon May 21 15:38:36 2001
+$OpenBSD: patch-WPrefs_app_po_bg_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/bg.po.orig	Tue Aug 29 16:46:20 2000
++++ WPrefs.app/po/bg.po	Wed Oct 24 10:36:30 2001
 @@ -10,7 +10,7 @@ msgstr ""
  "Last-Translator: Anton Zinoviev <anton@lml.bas.bg>\n"
  "Language-Team: Bulgarian <dict@linux.home.bg>\n"
@@ -10,3 +10,9 @@ $OpenBSD: patch-WPrefs_app_po_bg_po,v 1.1 2001/05/21 14:05:59 wilfried Exp $
  "Content-Transfer-Encoding: 8bit\n"
  
  #: ../../WPrefs.app/main.c:74
+@@ -1979,4 +1979,4 @@ msgstr ""
+ #~ "switch to first workspace when switching past the last workspace and "
+ #~ "vice-versa"
+ #~ msgstr ""
+-#~ "да се мине към първото работно място след задминаване на последното и обратно"
++#~ "да се мине към първото работно място след задминаване на последното и обратно"

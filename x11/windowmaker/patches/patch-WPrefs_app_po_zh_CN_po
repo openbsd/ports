@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_zh_CN_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
+$OpenBSD: patch-WPrefs_app_po_zh_CN_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
 --- WPrefs.app/po/zh_CN.po.orig	Wed Jul  7 01:15:26 1999
-+++ WPrefs.app/po/zh_CN.po	Mon May 21 15:38:54 2001
++++ WPrefs.app/po/zh_CN.po	Wed Oct 24 10:38:20 2001
 @@ -10,7 +10,7 @@ msgstr ""
  "Last-Translator: Wang Jian <larkw@263.net>\n"
  "Language-Team: chinese <zh@li.org>\n"

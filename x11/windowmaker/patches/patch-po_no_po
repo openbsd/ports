@@ -1,6 +1,6 @@
-$OpenBSD: patch-po_no_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+$OpenBSD: patch-po_no_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
 --- po/no.po.orig	Wed Sep 30 00:36:34 1998
-+++ po/no.po	Mon May 21 14:47:52 2001
++++ po/no.po	Wed Oct 24 11:08:28 2001
 @@ -11,8 +11,8 @@ msgstr ""
  "Last-Translator: Marcus Ramberg <draven@mo.himolde.no>\n"
  "Language-Team: Norwegian \n"

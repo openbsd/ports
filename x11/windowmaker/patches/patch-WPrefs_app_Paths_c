@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_Paths_c,v 1.1 2001/02/15 17:57:55 wilfried Exp $
---- WPrefs.app/Paths.c.orig	Thu Feb  8 22:54:13 2001
-+++ WPrefs.app/Paths.c	Tue Feb 13 15:20:59 2001
+$OpenBSD: patch-WPrefs_app_Paths_c,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/Paths.c.orig	Wed Oct 24 10:28:41 2001
++++ WPrefs.app/Paths.c	Wed Oct 24 10:35:27 2001
 @@ -85,8 +85,8 @@ showData(_Panel *panel)
  	addPathToList(panel->icoL, -1, "~/pixmaps");
  	addPathToList(panel->icoL, -1, "~/GNUstep/Library/Icons");
@@ -11,7 +11,7 @@ $OpenBSD: patch-WPrefs_app_Paths_c,v 1.1 2001/02/15 17:57:55 wilfried Exp $
 +	addPathToList(panel->icoL, -1, "%%PREFIX%%/share/WindowMaker/Pixmaps");
  	addPathToList(panel->icoL, -1, "/usr/share/WindowMaker/Icons");
      } else {
- 	for (i=0; i<PLGetNumberOfElements(array); i++) {
+ 	for (i=0; i<WMGetPropListItemCount(array); i++) {
 @@ -101,7 +101,7 @@ showData(_Panel *panel)
  	    wwarning(_("bad value in option PixmapPath. Using default path list"));
  	addPathToList(panel->pixL, -1, "~/pixmaps");
@@ -19,5 +19,5 @@ $OpenBSD: patch-WPrefs_app_Paths_c,v 1.1 2001/02/15 17:57:55 wilfried Exp $
 -	addPathToList(panel->pixL, -1, "/usr/local/share/WindowMaker/Pixmaps");
 +	addPathToList(panel->pixL, -1, "%%PREFIX%%/share/WindowMaker/Pixmaps");
      } else {
- 	for (i=0; i<PLGetNumberOfElements(array); i++) {
- 	    val = PLGetArrayElement(array, i);
+ 	for (i=0; i<WMGetPropListItemCount(array); i++) {
+ 	    val = WMGetFromPLArray(array, i);

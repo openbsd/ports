@@ -1,12 +1,12 @@
-$OpenBSD: patch-WPrefs_app_po_it_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/it.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/it.po	Mon May 21 15:30:12 2001
+$OpenBSD: patch-WPrefs_app_po_it_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/it.po.orig	Tue May 29 00:33:26 2001
++++ WPrefs.app/po/it.po	Wed Oct 24 10:37:07 2001
 @@ -12,7 +12,7 @@ msgstr ""
- "Last-Translator: Michele Campeotto <micampe@tv.record.unipd.it>\n"
+ "Last-Translator: Michele Campeotto <micampe@f2s.com\n"
  "MIME-Version: 1.0\n"
  "Content-Type: text/plain; charset=ISO-8859-1\n"
 -"Content-Transfer-Encoding: unknown\n"
 +"Content-Transfer-Encoding: 8bit\n"
  
  #: ../../WPrefs.app/main.c:74
- msgid "usage: %s [options]\n"
+ #, c-format

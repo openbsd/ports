@@ -1,6 +1,6 @@
-$OpenBSD: patch-po_pl_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+$OpenBSD: patch-po_pl_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
 --- po/pl.po.orig	Wed Feb 17 12:06:47 1999
-+++ po/pl.po	Mon May 21 14:48:03 2001
++++ po/pl.po	Wed Oct 24 11:08:33 2001
 @@ -14,8 +14,8 @@ msgstr ""
  "Last-Translator: Piotr Dembiñski <pdemb@fanthom.math.put.poznan.pl>\n"
  "Language-Team: Polish <pl@li.org>\n"

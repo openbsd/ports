@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_sk_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/sk.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/sk.po	Mon May 21 15:31:10 2001
+$OpenBSD: patch-WPrefs_app_po_sk_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/sk.po.orig	Tue Jul 24 11:51:04 2001
++++ WPrefs.app/po/sk.po	Wed Oct 24 10:38:15 2001
 @@ -18,7 +18,7 @@ msgstr ""
  "Language-Team: Slovak <sk@li.org>\n"
  "MIME-Version: 1.0\n"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-WINGs_string_c,v 1.1 2001/08/01 09:04:41 wilfried Exp $
---- WINGs/string.c.orig	Sat Jul 28 13:32:38 2001
-+++ WINGs/string.c	Sat Jul 28 13:32:53 2001
+$OpenBSD: patch-WINGs_string_c,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WINGs/string.c.orig	Sun May 27 15:50:48 2001
++++ WINGs/string.c	Wed Oct 24 10:34:35 2001
 @@ -1,4 +1,4 @@
 -
 +#include <assert.h>

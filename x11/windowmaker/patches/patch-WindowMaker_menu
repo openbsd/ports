@@ -1,6 +1,6 @@
-$OpenBSD: patch-WindowMaker_menu,v 1.1 2001/09/07 14:11:28 wilfried Exp $
+$OpenBSD: patch-WindowMaker_menu,v 1.2 2001/10/24 13:54:38 wilfried Exp $
 --- WindowMaker/menu.orig	Tue Jul 25 02:07:44 2000
-+++ WindowMaker/menu	Fri Sep  7 15:16:40 2001
++++ WindowMaker/menu	Wed Oct 24 10:42:14 2001
 @@ -205,7 +205,7 @@
  		"Background" END
  		"Save Theme" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name,Enter file name:)"

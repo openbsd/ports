@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_de_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/de.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/de.po	Mon May 21 15:27:48 2001
+$OpenBSD: patch-WPrefs_app_po_de_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/de.po.orig	Sat Oct  2 22:46:35 1999
++++ WPrefs.app/po/de.po	Wed Oct 24 10:36:46 2001
 @@ -2,7 +2,8 @@ msgid ""
  msgstr ""
  "Date: 1999-06-08 19:26:33+0200\n"

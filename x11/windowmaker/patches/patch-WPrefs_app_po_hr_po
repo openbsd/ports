@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_hr_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/hr.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/hr.po	Mon May 21 15:28:09 2001
+$OpenBSD: patch-WPrefs_app_po_hr_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/hr.po.orig	Mon Jan 25 20:06:53 1999
++++ WPrefs.app/po/hr.po	Wed Oct 24 10:36:59 2001
 @@ -3,7 +3,8 @@ msgstr ""
  "Date: 1998-08-24 14:36:41-0300\n"
  "From: Toni Biliæ tbilic@oliver.efos.hr \n"

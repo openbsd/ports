@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2001/05/21 14:06:02 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.24 2001/10/24 13:54:38 wilfried Exp $
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
@@ -73,6 +73,7 @@ bin/geticonset
 bin/getstyle
 bin/seticons
 bin/setstyle
+bin/wcopy
 bin/wdread
 bin/wdwrite
 bin/wkdemenu.pl
@@ -83,12 +84,14 @@ bin/wmaker.inst
 bin/wmchlocale
 bin/wmsetbg
 bin/wmsetup
+bin/wpaste
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
 include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
+include/WINGs/proplist-compat.h
 include/WINGs/wtabledelegates.h
 include/WINGs/wtableview.h
 include/WMaker.h

@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_po_ru_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- WPrefs.app/po/ru.po.orig	Mon May 21 15:26:31 2001
-+++ WPrefs.app/po/ru.po	Mon May 21 15:31:01 2001
+$OpenBSD: patch-WPrefs_app_po_ru_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- WPrefs.app/po/ru.po.orig	Sat Oct  2 22:46:35 1999
++++ WPrefs.app/po/ru.po	Wed Oct 24 10:38:10 2001
 @@ -3,6 +3,7 @@ msgstr ""
  "Date: 1999-05-31 19:29:53+0400\n"
  "From: Igor P. Roboul,,,<igorr@russia.crosswinds.net>\n"

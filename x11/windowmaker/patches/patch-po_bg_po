@@ -1,6 +1,6 @@
-$OpenBSD: patch-po_bg_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
---- po/bg.po.orig	Sat Feb 24 01:35:15 2001
-+++ po/bg.po	Mon May 21 15:38:20 2001
+$OpenBSD: patch-po_bg_po,v 1.2 2001/10/24 13:54:38 wilfried Exp $
+--- po/bg.po.orig	Sat Feb 24 03:19:53 2001
++++ po/bg.po	Wed Oct 24 10:42:33 2001
 @@ -15,7 +15,7 @@ msgstr ""
  "Last-Translator:\n"
  "Language-Team: Bulgarian <dict@linux.home.bg>\n"
