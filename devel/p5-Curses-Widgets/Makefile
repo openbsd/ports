@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/11/30 19:39:13 margarida Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
-DISTNAME=	CursesWidgets-1.992
-PKGNAME=	p5-Curses-Widgets-1.992
-
+VERSION=	1.997
+DISTNAME=	CursesWidgets-${VERSION}
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.502
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 HOMEPAGE=	http://www.odinicfoundation.org/arthur/
 
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
+
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
+
+# Artistic 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,22 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/30 19:39:13 margarida Exp $
 @option no-default-conflict
 @pkgcfl p5-Curses-Widgets-[0-9\.]*
-libdata/perl5/site_perl/Curses/Widgets.pm
-libdata/perl5/site_perl/Curses/Widgets/ButtonSet.pm
-libdata/perl5/site_perl/Curses/Widgets/Calendar.pm
-libdata/perl5/site_perl/Curses/Widgets/ComboBox.pm
-libdata/perl5/site_perl/Curses/Widgets/ListBox.pm
-libdata/perl5/site_perl/Curses/Widgets/ProgressBar.pm
-libdata/perl5/site_perl/Curses/Widgets/TextField.pm
-libdata/perl5/site_perl/Curses/Widgets/TextMemo.pm
-libdata/perl5/site_perl/Curses/Widgets/Tutorial.pod
-libdata/perl5/site_perl/Curses/Widgets/Tutorial/Creation.pod
-libdata/perl5/site_perl/Curses/testw.pl
+${P5SITE}/Curses/Widgets.pm
+${P5SITE}/Curses/Widgets/ButtonSet.pm
+${P5SITE}/Curses/Widgets/Calendar.pm
+${P5SITE}/Curses/Widgets/ComboBox.pm
+${P5SITE}/Curses/Widgets/Label.pm
+${P5SITE}/Curses/Widgets/ListBox.pm
+${P5SITE}/Curses/Widgets/ListBox/MultiColumn.pm
+${P5SITE}/Curses/Widgets/Menu.pm
+${P5SITE}/Curses/Widgets/ProgressBar.pm
+${P5SITE}/Curses/Widgets/TextField.pm
+${P5SITE}/Curses/Widgets/TextMemo.pm
+${P5SITE}/Curses/Widgets/Tutorial.pod
+${P5SITE}/Curses/Widgets/Tutorial/Creation.pod
 man/man3p/Curses::Widgets.3p
 man/man3p/Curses::Widgets::ButtonSet.3p
 man/man3p/Curses::Widgets::Calendar.3p
 man/man3p/Curses::Widgets::ComboBox.3p
+man/man3p/Curses::Widgets::Label.3p
 man/man3p/Curses::Widgets::ListBox.3p
+man/man3p/Curses::Widgets::ListBox::MultiColumn.3p
+man/man3p/Curses::Widgets::Menu.3p
 man/man3p/Curses::Widgets::ProgressBar.3p
 man/man3p/Curses::Widgets::TextField.3p
 man/man3p/Curses::Widgets::TextMemo.3p
@@ -24,5 +29,6 @@ man/man3p/Curses::Widgets::Tutorial.3p
 man/man3p/Curses::Widgets::Tutorial::Creation.3p
 share/examples/p5-Curses-Widgets/demo.pl
 @dirrm share/examples/p5-Curses-Widgets
-@dirrm libdata/perl5/site_perl/Curses/Widgets/Tutorial
-@dirrm libdata/perl5/site_perl/Curses/Widgets
+@dirrm ${P5SITE}/Curses/Widgets/Tutorial
+@dirrm ${P5SITE}/Curses/Widgets/ListBox
+@dirrm ${P5SITE}/Curses/Widgets
