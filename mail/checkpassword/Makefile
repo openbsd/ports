@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/13 09:43:27 camield Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/26 14:43:51 camield Exp $
 
 DISTNAME=	checkpassword-0.81
 HOMEPAGE=	http://cr.yp.to/checkpwd.html
@@ -21,13 +21,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
+
+pre-install:
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

@@ -1,15 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.1 2000/03/13 09:43:27 camield Exp $
+$OpenBSD: patch-Makefile,v 1.2 2000/04/26 14:43:52 camield Exp $
 
-Needed for fake installation.
+Needed for fake installation. This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
 
---- Makefile.orig	Mon Mar 13 10:36:02 2000
-+++ Makefile	Mon Mar 13 10:36:22 2000
-@@ -14,7 +14,7 @@
+--- Makefile.orig	Sat Nov 21 21:29:52 1998
++++ Makefile	Wed Apr 26 16:41:04 2000
+@@ -29,7 +29,7 @@
+ 	./compile byte_cr.c
  
- auto_home.c: \
- auto-str conf-home
--	./auto-str auto_home `head -1 conf-home` > auto_home.c
-+	./auto-str auto_home ${WRKINST}`head -1 conf-home` > auto_home.c
+ check: \
+-it instcheck
++instcheck
+ 	./instcheck
  
- auto_home.o: \
- compile auto_home.c
+ checkpassword: \
+@@ -187,7 +187,7 @@
+ 	rm -f tryslib.o tryslib
+ 
+ setup: \
+-it install
++install
+ 	./install
+ 
+ shadow.lib: \
