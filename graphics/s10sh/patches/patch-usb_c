@@ -1,7 +1,6 @@
-$OpenBSD: patch-usb_c,v 1.3 2002/12/30 08:44:36 pvalchev Exp $
---- usb.c.orig	Tue Mar 13 06:46:18 2001
-+++ usb.c	Mon Dec 30 00:30:02 2002
-@@ -84,11 +84,23 @@ int USB_camera_init(struct usb_device **
+--- usb.c.orig	Tue Mar 13 15:46:18 2001
++++ usb.c	Sun Sep 19 23:03:00 2004
+@@ -84,11 +84,29 @@
  						printf("Canon S20 found\n");
  					return USB_INIT_S20;
  					break;
@@ -10,6 +9,12 @@ $OpenBSD: patch-usb_c,v 1.3 2002/12/30 08:44:36 pvalchev Exp $
 +					if (opt_debug)
 +						printf("Canon S40 found\n");
 +					return USB_INIT_S40;
++					break;
++				case PRODUCT_ID_A70:
++					*camera_dev = dev;
++					if (opt_debug)
++						printf("Canon A70 found\n");
++					return USB_INIT_A70;
 +					break;
  				case PRODUCT_ID_S100_EU:
  				case PRODUCT_ID_S100_US:
