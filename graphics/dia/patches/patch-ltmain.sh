@@ -1,6 +1,46 @@
 --- ltmain.sh.orig	Sun Aug  6 01:46:51 2000
-+++ ltmain.sh	Sun Sep 10 20:19:16 2000
-@@ -3555,40 +3555,6 @@
++++ ltmain.sh	Tue Feb 20 16:47:52 2001
+@@ -1079,7 +1079,18 @@ compiler."
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
+ 	  esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+ 	  *-*-cygwin* | *-*-beos*)
+@@ -1091,6 +1102,10 @@ compiler."
+ 	deplibs="$deplibs $arg"
+ 	;;
+ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1795,6 +1810,9 @@ compiler."
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++        *-*-openbsd*)
++          # Do not include libc due to us having libc/libc_r.
++          ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3555,40 +3573,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
