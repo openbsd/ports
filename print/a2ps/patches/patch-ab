@@ -5,7 +5,7 @@
   subcontract (struct file_job * file, 
   	     struct delegation * contractor)
   {
-!   char * command, stdin_content_filename = NULL;
+!   char * command, * stdin_content_filename = NULL;
     FILE * in_stream, * out_stream;
     int lines_read = 0;
     char buf[512];
@@ -13,7 +13,7 @@
   subcontract (struct file_job * file, 
   	     struct delegation * contractor)
   {
-!   char * command, * stdin_content_filename[40];
+!   char * command, stdin_content_filename[40];
     FILE * in_stream, * out_stream;
     int lines_read = 0;
     char buf[512];
