@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2001/03/17 15:47:59 wilfried Exp $
+--- src/Makefile.in.orig	Thu Sep 17 21:37:05 1998
++++ src/Makefile.in	Fri Mar 16 20:29:27 2001
+@@ -60,7 +60,7 @@ DEFINES=-DSYSTEMRC=\"$(SYSTEMRC)\" -DUSE
+  -DREPL_EXT=\"$(REPL_EXT)\" -DUNKNOWN_CHAR=\'$(UNKNOWN_CHAR)\'\
+  -DSOURCE_CHARSET=\"$(SOURCE_CHARSET)\" -DTARGET_CHARSET=\"$(TARGET_CHARSET)\"
+ 
+-CFLAGS=$(FLAGS) $(DEFINES)
++CFLAGS=@CFLAGS@ $(DEFINES)
+ OBJ=catdoc.o charsets.o substmap.o reader.o writer.o fileutil.o
+ #.c.o:
+ #	$(CC) -c $(CFLAGS) $*
