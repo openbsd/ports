@@ -1,11 +1,11 @@
---- x.c.orig	Wed Mar 14 02:27:15 2001
-+++ x.c	Wed Apr  4 13:09:46 2001
-@@ -341,7 +341,7 @@
- 	XGrabPointer(dpy, topLevel, True,
- 		     PointerMotionMask | ButtonPressMask | ButtonReleaseMask,
- 		     GrabModeAsync, GrabModeAsync,
--		     None, grabCursor, CurrentTime);
-+		     DefaultRootWindow(dpy), grabCursor, CurrentTime);
- 	XGrabKeyboard(dpy, topLevel, True, 
- 		      GrabModeAsync, GrabModeAsync,
- 		      CurrentTime);
+--- x.c.orig	Mon May 27 18:43:32 2002
++++ x.c	Sun Oct 13 22:33:24 2002
+@@ -372,7 +372,7 @@ static void grabit(int x, int y, int sta
+   XGrabPointer(dpy, topLevel, True,
+ 	       PointerMotionMask | ButtonPressMask | ButtonReleaseMask,
+ 	       GrabModeAsync, GrabModeAsync,
+-	       None, grabCursor, CurrentTime);
++	       DefaultRootWindow(dpy), grabCursor, CurrentTime);
+   XGrabKeyboard(dpy, topLevel, True, 
+ 		GrabModeAsync, GrabModeAsync,
+ 		CurrentTime);

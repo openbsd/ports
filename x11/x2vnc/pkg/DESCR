@@ -1,7 +1,7 @@
-from http://www.hubbe.net/~hubbe/x2vnc.html:
-
 This program will let you use two screens on two different computers
 as if they were connected to the same computer. Even if one of the
 computers runs Windows 95/98/NT and the other one runs X-windows.
+
+WWW: ${HOMEPAGE}
 
 -d.
