@@ -1,7 +1,16 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2001/09/19 14:13:28 espie Exp $
---- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Mon Sep  3 12:35:22 2001
-+++ ksysguard/ksysguardd/FreeBSD/Memory.c	Mon Sep  3 12:37:47 2001
-@@ -67,7 +67,13 @@ updateMemory(void)
+--- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Fri Jul 28 01:59:28 2000
++++ ksysguard/ksysguardd/FreeBSD/Memory.c	Tue Nov 13 10:00:49 2001
+@@ -29,7 +29,9 @@
+ 
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
++#ifndef __OpenBSD__
+ #include <vm/vm_param.h>
++#endif
+ #include <sys/vmmeter.h>
+ #include <string.h>
+ #include <unistd.h>
+@@ -67,7 +69,13 @@ updateMemory(void)
          char buf[256];
  
          len = sizeof (Total);
@@ -15,7 +24,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2001/09/19 14:13:28 
          Total /= 1024;
  
          /* Q&D hack for swap display. Borrowed from xsysinfo-1.4 */
-@@ -93,20 +99,30 @@ updateMemory(void)
+@@ -93,20 +101,30 @@ updateMemory(void)
  
  
          len = sizeof (Buffers);
