@@ -1,3 +1,4 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2002/01/26 05:58:41 jsyn Exp $
 --- doc/Makefile.in.orig	Sat Dec  1 20:31:02 2001
 +++ doc/Makefile.in	Sat Dec  1 20:31:14 2001
 @@ -75,7 +75,7 @@
