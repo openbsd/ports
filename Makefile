@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1998/04/29 05:04:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 1998/05/17 04:32:00 angelos Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -21,7 +21,7 @@ SUBDIR += graphics
 #SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
-#SUBDIR += math
+SUBDIR += math
 #SUBDIR += mbone
 SUBDIR += misc
 SUBDIR += net
