@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/16 23:06:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/03 19:26:12 danh Exp $
 # Original from: FreeLSD <freelsd@freelsd.net>
 
 DISTNAME=		radiusniff-0.2
 CATEGORIES=     	security
 
-MAINTAINER=		nny@sinister.com
+MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"not specified, vague license"
 PERMIT_PACKAGE_FTP=	Yes

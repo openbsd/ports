@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/03 19:26:12 danh Exp $
 #
 
 DISTNAME=	slirp-1.0c
@@ -7,7 +7,7 @@ NEED_VERSION=	1.305
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 
-MAINTAINER=	A.C.P.M.Kalker@student.utwente.nl
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

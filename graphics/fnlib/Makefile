@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/03 18:39:17 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/03 19:26:10 danh Exp $
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=	graphics
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.squish.org/pub/enlightenment/enlightenment/libs/ \
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 
-MAINTAINER=	op21@squish.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
