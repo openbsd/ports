@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.129 1999/09/30 21:07:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.130 1999/10/08 11:38:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1563,10 +1563,10 @@ do-package:
 		fi; \
 		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 			if [ -d ${PACKAGES} ]; then \
-				${MAKE} ${.MAKEFLAGS} package-links; \
+				${MAKE} package-links; \
 			fi; \
 		else \
-			${MAKE} ${.MAKEFLAGS} delete-package; \
+			${MAKE} delete-package; \
 			exit 1; \
 		fi; \
 	fi
@@ -1576,7 +1576,7 @@ do-package:
 
 .if !target(package-links)
 package-links:
-	@${MAKE} ${.MAKEFLAGS} delete-package-links
+	@${MAKE} delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
@@ -1595,7 +1595,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package:
-	@${MAKE} ${.MAKEFLAGS} delete-package-links
+	@${MAKE} delete-package-links
 	@${RM} -f ${PKGFILE}
 .endif
 
@@ -1606,10 +1606,10 @@ delete-package:
 
 _PORT_USE: .USE
 .if make(real-fetch)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch-depends
+	@cd ${.CURDIR} && ${MAKE} fetch-depends
 .endif
 .if make(real-extract)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} build-depends lib-depends misc-depends
+	@cd ${.CURDIR} && ${MAKE} build-depends lib-depends misc-depends
 .endif
 .if make(real-install)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
@@ -1628,7 +1628,7 @@ _PORT_USE: .USE
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends lib-depends
+	@cd ${.CURDIR} && ${MAKE} run-depends lib-depends
 .endif
 .if make(real-install)
 .if !defined(NO_MTREE)
@@ -1650,13 +1650,13 @@ _PORT_USE: .USE
 .endif
 	@touch ${INSTALL_PRE_COOKIE}
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/pre-/}
+	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/do-/}
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/post-/}
+	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/do-/}
+	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/post-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
@@ -1685,7 +1685,7 @@ _PORT_USE: .USE
 	@${CAT}	${PKGDIR}/MESSAGE
 .endif
 .if make(real-install) && !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fake-pkg
+	@cd ${.CURDIR} && ${MAKE} fake-pkg
 .endif
 .if make(real-extract)
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
@@ -1720,11 +1720,11 @@ _PORT_USE: .USE
 
 .if !target(fetch)
 fetch:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-fetch
+	@cd ${.CURDIR} && ${MAKE} real-fetch
 .endif
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} __FETCH_ALL=Yes real-fetch
+	@cd ${.CURDIR} && ${MAKE} __FETCH_ALL=Yes real-fetch
 .endif
 
 
@@ -1753,17 +1753,17 @@ package: install ${PACKAGE_COOKIE}
 .endif
 
 ${EXTRACT_COOKIE}: 
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} checksum real-extract
+	@cd ${.CURDIR} && ${MAKE} checksum real-extract
 ${PATCH_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-patch
+	@cd ${.CURDIR} && ${MAKE} real-patch
 ${CONFIGURE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-configure
+	@cd ${.CURDIR} && ${MAKE} real-configure
 ${BUILD_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-build
+	@cd ${.CURDIR} && ${MAKE} real-build
 ${INSTALL_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-install
+	@cd ${.CURDIR} && ${MAKE} real-install
 ${PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-package
+	@cd ${.CURDIR} && ${MAKE} real-package
 
 # And call the macros
 
@@ -1803,7 +1803,7 @@ post-${name}:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=Yes ${.MAKEFLAGS} patch
+	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=Yes patch
 .endif
 
 # Reinstall
@@ -2115,7 +2115,7 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} PACKAGE_NOINSTALL=Yes real-package
+	@cd ${.CURDIR} && ${MAKE} PACKAGE_NOINSTALL=Yes real-package
 .endif
 
 ################################################################
@@ -2124,9 +2124,9 @@ package-noinstall:
 
 .if !target(depends)
 depends: lib-depends misc-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} build-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends
+	@cd ${.CURDIR} && ${MAKE} fetch-depends
+	@cd ${.CURDIR} && ${MAKE} build-depends
+	@cd ${.CURDIR} && ${MAKE} run-depends
 
 .if make(fetch-depends)
 DEPENDS_TMP+=	${FETCH_DEPENDS}
@@ -2175,7 +2175,7 @@ _DEPENDS_USE:	.USE
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} ">> No directory for $$prog.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+				(cd $$dir; ${MAKE} $$target) ; \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -2211,7 +2211,7 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} ">> No directory for $$lib.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+				(cd $$dir; ${MAKE} $$target) ; \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -2235,7 +2235,7 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} ">> No directory for $$libname.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+				(cd $$dir; ${MAKE} $$target) ; \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			fi; \
 		else \
@@ -2263,7 +2263,7 @@ misc-depends:
 		if [ ! -d $$dir ]; then \
 			${ECHO_MSG} ">> No directory for $$dir.  Skipping.."; \
 		else \
-			(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+			(cd $$dir; ${MAKE} $$target) ; \
 		fi \
 	done
 	@${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"
