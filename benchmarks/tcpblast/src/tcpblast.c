@@ -73,7 +73,7 @@ int argc; char **argv;
 
 	nblocks = atoi(argv[1]);
 	if (nblocks<=1 || nblocks>=10000) {
-		fprintf(stderr, "tcpblast: 1 < nblocks <= 10000 \n");
+		fprintf(stderr, "tcpblast: 1 < nblocks < 10000 \n");
 		exit(1);
 	}
 
