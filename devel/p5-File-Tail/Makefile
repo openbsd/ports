@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/16 14:57:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/19 15:43:49 brad Exp $
 
 DISTNAME=	File-Tail-0.96
 PKGNAME=	p5-${DISTNAME}
@@ -19,7 +19,5 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE= perl
-
-ALL_TARGET=	test
 
 .include <bsd.port.mk>
