@@ -1,5 +1,5 @@
-Can view niff, sunraster, gif, jpeg, tiff, fbm, cmuraster, pbm, faces, rle,
-xwd, vff, mcidas, vicar, pcx, gem, macpaint, xpm and xbm files.  Can view
-images, put them on the root window, or dump them.  Does a variety of
-processing, including: clipping, dithering, depth reduction, zoom,
-brightening/darkening and merging.
+Can view png, jpeg, gif, tiff, niff, sunraster, fbm, cmuraster,
+pbm, faces, rle, xwd, vff, mcidas, vicar, pcx, gem, macpaint, xpm
+and xbm files.  Can view images, put them on the root window, or
+dump them.  Does a variety of processing, including: clipping,
+dithering, depth reduction, zoom, brightening/darkening and merging.
