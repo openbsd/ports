@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:32:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/14 21:38:16 naddy Exp $
 
 COMMENT=	"perl module to create/verify PGP signatures"
 
@@ -19,11 +19,11 @@ FLAVORS=	pgp pgp5
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mpgp}
-RUN_DEPENDS=	:pgp-*:security/pgp
+RUN_DEPENDS=	:pgp-2.*:security/pgp
 CONFIGURE_ARGS=	PGPV="${LOCALBASE}/bin/pgpv" PGPS="${LOCALBASE}/bin/pgps" PGPSTYLE="PGP"
 
 .elif ${FLAVOR:L:Mpgp5}
-RUN_DEPENDS=	:pgp5-*:security/pgp5
+RUN_DEPENDS=	:pgp-5.*:security/pgp5
 CONFIGURE_ARGS=	PGPV="${LOCALBASE}/bin/pgpv" PGPS="${LOCALBASE}/bin/pgps" PGPSTYLE="PGP5"
 
 .else
