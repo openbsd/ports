@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/01 22:05:11 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/07/08 02:25:28 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
-DISTNAME=	libtool-1.3.2
+DISTNAME=	libtool-1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= libtool
