@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/08/21 16:30:26 pvalchev Exp $
+
+BROKEN=		"very old and with broken build system"
 
 COMMENT=	"PalmPilot(tm) development environment"
 
