@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/11/19 15:10:09 naddy Exp $
---- src/Makefile.in.orig	2003-11-19 15:12:49.000000000 +0100
-+++ src/Makefile.in	2003-11-19 15:14:07.000000000 +0100
-@@ -904,8 +904,6 @@ stamp-oldxmenu: ${OLDXMENU} ../src/$(OLD
+$OpenBSD: patch-src_Makefile_in,v 1.2 2004/08/11 21:14:01 pvalchev Exp $
+--- src/Makefile.in.orig	Thu Jan 23 03:34:06 2003
++++ src/Makefile.in	Tue Aug  3 12:22:29 2004
+@@ -875,6 +875,7 @@ temacs: MAKE_PARALLEL $(LOCALCPP) $(STAR
+ 	$(LD) YMF_PASS_LDFLAGS (${STARTFLAGS} ${ALL_LDFLAGS}) \
+     -o temacs ${STARTFILES} ${obj} ${otherobj}  \
+     OBJECTS_MACHINE ${LIBES}
++	strip temacs
+ 
+ /* We don't use ALL_LDFLAGS because LD_SWITCH_SYSTEM and LD_SWITCH_MACHINE
+    often contain options that have to do with using Emacs's crt0,
+@@ -904,8 +905,6 @@ stamp-oldxmenu: ${OLDXMENU} ../src/$(OLD
  ../src/$(OLDXMENU): ${OLDXMENU}
  
  #ifdef USE_X_TOOLKIT
@@ -10,7 +18,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/11/19 15:10:09 naddy Exp $
  /* Encode the values of these two macros in Make variables,
     so we can use $(...) to substitute their values within "...".  */
  C_SWITCH_MACHINE_1 = C_SWITCH_MACHINE
-@@ -914,7 +912,7 @@ C_SWITCH_SITE_1 = C_SWITCH_SITE
+@@ -914,7 +913,7 @@ C_SWITCH_SITE_1 = C_SWITCH_SITE
  C_SWITCH_X_SITE_1 = C_SWITCH_X_SITE
  C_SWITCH_X_MACHINE_1 = C_SWITCH_X_MACHINE
  C_SWITCH_X_SYSTEM_1 = C_SWITCH_X_SYSTEM
@@ -19,7 +27,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/11/19 15:10:09 naddy Exp $
  	cd ${lwlibdir}; ${MAKE} ${MFLAGS} LWLIB_OPTIONS \
      CC='${CC}' CFLAGS='${CFLAGS}' MAKE='${MAKE}' \
      "C_SWITCH_X_SITE=$(C_SWITCH_X_SITE_1)" \
-@@ -923,11 +921,7 @@ really-lwlib:
+@@ -923,11 +922,7 @@ really-lwlib:
      "C_SWITCH_SITE=$(C_SWITCH_SITE_1)" \
      "C_SWITCH_MACHINE=$(C_SWITCH_MACHINE_1)" \
      "C_SWITCH_SYSTEM=$(C_SWITCH_SYSTEM_1)"
@@ -31,7 +39,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/11/19 15:10:09 naddy Exp $
  /* Encode the values of these two macros in Make variables,
     so we can use $(...) to substitute their values within "...".  */
  C_SWITCH_MACHINE_1 = C_SWITCH_MACHINE
-@@ -936,7 +930,7 @@ C_SWITCH_SITE_1 = C_SWITCH_SITE
+@@ -936,7 +931,7 @@ C_SWITCH_SITE_1 = C_SWITCH_SITE
  C_SWITCH_X_SITE_1 = C_SWITCH_X_SITE
  C_SWITCH_X_MACHINE_1 = C_SWITCH_X_MACHINE
  C_SWITCH_X_SYSTEM_1 = C_SWITCH_X_SYSTEM
@@ -40,7 +48,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/11/19 15:10:09 naddy Exp $
  	cd ${oldXMenudir}; ${MAKE} ${MFLAGS} OLDXMENU_OPTIONS \
      CC='${CC}' CFLAGS='${CFLAGS}' MAKE='${MAKE}' \
      "C_SWITCH_X_SITE=$(C_SWITCH_X_SITE_1)" \
-@@ -945,8 +939,6 @@ really-oldXMenu:
+@@ -945,8 +940,6 @@ really-oldXMenu:
      "C_SWITCH_SITE=$(C_SWITCH_SITE_1)" \
      "C_SWITCH_MACHINE=$(C_SWITCH_MACHINE_1)" \
      "C_SWITCH_SYSTEM=$(C_SWITCH_SYSTEM_1)"
