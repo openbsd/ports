@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2002/02/08 06:52:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.101 2002/03/07 17:39:10 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += its4
      SUBDIR += john
      SUBDIR += john,k6
+     SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
      SUBDIR += libident
