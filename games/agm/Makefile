@@ -1,20 +1,18 @@
-# OpenBSD makefile for:			agm
-# Version required:			1.1
-# Date created:				May 19 1998
-# Whom:					Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 01:09:31 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/15 17:09:19 marc Exp $
 #
 
 DISTNAME=		agm-1.1
 CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/amusements
+
+BROKEN=			"newer version available"
+NO_CDROM=		"NOFEE: Can not charge for distribution"
 
 MAINTAINER=		angelos@openbsd.org
 
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/amusements
+
 WRKSRC=			${WRKDIR}
-MAN6=			agm.6
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/agm ${PREFIX}/bin
