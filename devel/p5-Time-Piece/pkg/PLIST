@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/06 20:44:37 sturm Exp $
+${P5ARCH}/Time/Piece.pm
+${P5ARCH}/Time/Seconds.pm
+${P5ARCH}/auto/Time/Piece/Piece.bs
+${P5ARCH}/auto/Time/Piece/Piece.so
+man/man3p/Time::Piece.3p
+man/man3p/Time::Seconds.3p
+@dirrm ${P5ARCH}/auto/Time/Piece
