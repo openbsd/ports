@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/28 22:21:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/26 17:40:40 brad Exp $
 
 COMMENT=	"SDL image library"
 
@@ -7,7 +7,7 @@ PROJ=		SDL_image
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-image-${VER}
 CATEGORIES=	devel graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.525
 MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -28,7 +28,8 @@ USE_X11=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+			LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \

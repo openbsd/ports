@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/03 02:42:34 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/26 17:35:53 brad Exp $
 
 COMMENT=	"converts TIFF images to PNG format"
 
 DISTNAME=	tiff2png-0.81c
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.525
 MASTER_SITES=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 
 HOMEPAGE=	http://www.libpng.org/pub/png/apps/tiff2png.html
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" OPTIMFLAGS="${CFLAGS}" DEBUGFLAGS="-Wall -W" \
-		CFLAGS='$$(TIFF_VERSION) -DFAXPECT $$(MIN_INVERT) $$(OPTIMFLAGS) $$(DEBUGFLAGS) -I${LOCALBASE}/include' \
+		CFLAGS='$$(TIFF_VERSION) -DFAXPECT $$(MIN_INVERT) $$(OPTIMFLAGS) $$(DEBUGFLAGS) -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include' \
 		LDFLAGS="-L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm"
 
 MAKE_FILE=	Makefile.unx
