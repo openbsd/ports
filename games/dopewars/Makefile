@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/01/02 04:53:53 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2004/02/26 23:12:31 brad Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -44,12 +44,6 @@ LIB_DEPENDS+=	gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 		pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
-
-# make auto*shit not try to regenerate when it shouldn't be trying to and then just fail.
-pre-build:
-	@find ${WRKSRC} -name 'Makefile.in' -exec touch {} \;
-	@find ${WRKSRC} -name 'Makefile' -exec touch {} \;
-	@cd ${WRKSRC}; touch aclocal.m4 stamp-h.in configure stamp-h config.status
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
