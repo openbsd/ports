@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:06:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/02 21:18:37 alek Exp $
 @conflict logcheck-1.1.1
 bin/logtail
 share/doc/logsentry/
@@ -8,10 +8,27 @@ share/doc/logsentry/README
 share/doc/logsentry/README.how.to.interpret
 share/doc/logsentry/README.keywords
 share/examples/logsentry/
+@mode 600
+@sample ${SYSCONFDIR}/logsentry/
+@mode
 share/examples/logsentry/logsentry.hacking
+@mode 600
+@sample ${SYSCONFDIR}/logsentry/logsentry.hacking
+@mode
 share/examples/logsentry/logsentry.ignore
+@mode 600
+@sample ${SYSCONFDIR}/logsentry/logsentry.ignore
+@mode
 share/examples/logsentry/logsentry.sh
+@mode 700
+@sample ${SYSCONFDIR}/logsentry/logsentry.sh
+@mode
 share/examples/logsentry/logsentry.violations
+@mode 600
+@sample ${SYSCONFDIR}/logsentry/logsentry.violations
+@mode
 share/examples/logsentry/logsentry.violations.ignore
-@extraunexec rm -rf ${SYSCONFDIR}/logsentry
+@mode 600
+@sample ${SYSCONFDIR}/logsentry/logsentry.violations.ignore
+@sample /var/tmp/logsentry/
 @extraunexec rm -rf /var/tmp/logsentry
