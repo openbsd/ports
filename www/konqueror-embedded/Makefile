@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/28 15:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/08/16 19:49:27 brad Exp $
 
 COMMENT='stand-alone web browser'
 CATEGORIES=www x11
@@ -7,7 +7,7 @@ MODULES=	qt2
 
 DATE=	20020311
 DISTNAME=konqueror-embedded-snapshot-${DATE}
-PKGNAME=konqueror-${DATE}
+PKGNAME=konqueror-${DATE}p1
 HOMEPAGE=http://www.konqueror.org/embedded.html
 MASTER_SITES= http://devel-home.kde.org/~hausmann/snapshots/
 
