@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Mon Mar 29 15:48:31 1999
-+++ doc/Makefile.in	Mon Mar 29 15:48:42 1999
+--- doc/Makefile.in.orig	Sat May 23 19:40:42 1998
++++ doc/Makefile.in	Fri Apr  9 18:49:50 1999
 @@ -22,7 +22,7 @@
  SHELL = /bin/sh
  
@@ -9,3 +9,34 @@
  # Program to format Texinfo source into DVI files.
  TEXI2DVI = texi2dvi
  # Program to convert DVI files to PostScript
+@@ -45,7 +45,7 @@
+ RM = rm -f
+ 
+ MAN        = wget.$(manext)
+-WGETRC     = $(sysconfdir)/wgetrc
++WGETRCDIR  = $(prefix)/lib/wget
+ 
+ #
+ # Dependencies for building
+@@ -99,19 +99,8 @@
+ 
+ # install sample.wgetrc
+ install.wgetrc:
+-	$(top_srcdir)/mkinstalldirs $(sysconfdir)
+-	@if test -f $(WGETRC); then \
+-	  if cmp -s $(srcdir)/sample.wgetrc $(WGETRC); then echo ""; \
+-	     else \
+-	     echo ' $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC).new'; \
+-	     $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC).new; \
+-	     echo "WARNING: File \`$(WGETRC)' already exists and is spared."; \
+-	     echo "         You might want to consider \`$(WGETRC).new',"; \
+-	     echo "         and merge both into \`$(WGETRC)', for the best."; \
+-	  fi; \
+-	else \
+-	  $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC); \
+-	fi
++	$(top_srcdir)/mkinstalldirs $(WGETRCDIR)
++	$(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRCDIR);
+ 
+ # uninstall info pages
+ uninstall.info:

@@ -1,0 +1,20 @@
+--- doc/sample.wgetrc.~1~	Thu Feb 13 17:16:18 1997
++++ doc/sample.wgetrc	Fri Apr  9 18:43:05 1999
+@@ -7,7 +7,7 @@
+ ## not contain a comprehensive list of commands -- look at the manual
+ ## to find out what you can put into this file.
+ ## 
+-## Wget initialization file can reside in /usr/local/etc/wgetrc
++## Wget initialization file can reside in /etc/wgetrc
+ ## (global, for all users) or $HOME/.wgetrc (for a single user).
+ ##
+ ## To use any of the settings in this file, you will have to uncomment
+@@ -15,7 +15,7 @@
+ 
+ 
+ ##
+-## Global settings (useful for setting up in /usr/local/etc/wgetrc).
++## Global settings (useful for setting up in /etc/wgetrc).
+ ## Think well before you change them, since they may reduce wget's
+ ## functionality, and make it behave contrary to the documentation:
+ ##

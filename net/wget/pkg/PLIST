@@ -1,14 +1,13 @@
 bin/wget
 @unexec install-info --delete %D/info/wget.info %D/info/dir
 info/wget.info
-lib/wget/wgetrc.sample
-@exec if [ ! -f /etc/wgetrc ]; then cp %D/%F /etc/wgetrc; fi
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/wget.info %D/info/dir
+lib/wget/sample.wgetrc
 share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/hr/LC_MESSAGES/wget.mo
 share/locale/it/LC_MESSAGES/wget.mo
 share/locale/no/LC_MESSAGES/wget.mo
 share/locale/pt_BR/LC_MESSAGES/wget.mo
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/wget.info %D/info/dir
 @dirrm lib/wget
