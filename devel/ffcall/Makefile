@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/09 18:43:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/21 00:05:52 jolan Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
+
+NOT_FOR_ARCHS=	sparc64
 
 COMMENT=	"foreign function call libraries"
 
 DISTNAME=	ffcall-1.8
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.santafe.edu/pub/gnu/
-HOMEPAGE=	http://clisp.cons.org/~haible/packages-ffcall.html
-
-MAINTAINER=	Christian Edward Gruber <cgruber@israfil.net>
+MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
+HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
