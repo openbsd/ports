@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/26 18:48:07 espie Exp $
 bin/startxfce4
 bin/xfce4-about
 bin/xfhelp4
@@ -12,7 +12,9 @@ lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/xftaskbar_plugin.a
 lib/xfce4/mcs-plugins/xftaskbar_plugin.la
 share/examples/xfce-utils/
+@sample ${SYSCONFDIR}/xfce4/
 share/examples/xfce-utils/xinitrc
+@sample ${SYSCONFDIR}/xfce4/xinitrc
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
