@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/07 01:05:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/05 09:03:47 kevlo Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
-DISTNAME=	vicq-0.3
+DISTNAME=	vicq-0.4
 CATEGORIES=     net
-NEED_VERSION=	1.500
+NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://gonzo.kiev.ua/projects/vicq/
@@ -18,13 +18,16 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	::devel/p5-Term-ReadLine-Gnu
 
-NO_BUILD=	Yes
+CONFIGURE_STYLE= perl
 
 WRKDIST=	${WRKDIR}/vicq
 
 NO_REGRESS=	Yes
 
-do-install:
+post-extract:
+	@mv ${WRKSRC}/Net/vICQ/* ${WRKSRC}
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vicq
 	${INSTALL_PROGRAM} ${WRKSRC}/vicq ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/vicqrc.example ${PREFIX}/share/examples/vicq
