@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.10 2002/12/12 01:25:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/02/04 14:42:59 lebel Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
+@comment bin/tmda-gui
 bin/tmda-inject
 bin/tmda-keygen
+@comment bin/tmda-manager
 bin/tmda-ofmipd
 bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
+lib/python${PYTHON_VER}/TMDA/Address.py
+lib/python${PYTHON_VER}/TMDA/Address.pyc
+lib/python${PYTHON_VER}/TMDA/Auth.py
+lib/python${PYTHON_VER}/TMDA/Auth.pyc
 lib/python${PYTHON_VER}/TMDA/AutoResponse.py
 lib/python${PYTHON_VER}/TMDA/AutoResponse.pyc
 lib/python${PYTHON_VER}/TMDA/Cookie.py
@@ -26,6 +32,8 @@ lib/python${PYTHON_VER}/TMDA/MTA.py
 lib/python${PYTHON_VER}/TMDA/MTA.pyc
 lib/python${PYTHON_VER}/TMDA/MessageLogger.py
 lib/python${PYTHON_VER}/TMDA/MessageLogger.pyc
+lib/python${PYTHON_VER}/TMDA/Pending.py
+lib/python${PYTHON_VER}/TMDA/Pending.pyc
 lib/python${PYTHON_VER}/TMDA/SMTP.py
 lib/python${PYTHON_VER}/TMDA/SMTP.pyc
 lib/python${PYTHON_VER}/TMDA/Util.py
@@ -102,11 +110,15 @@ share/doc/tmda/howtos.html
 share/doc/tmda/index.html
 share/doc/tmda/install.html
 share/doc/tmda/inuse.html
+share/doc/tmda/mirrors.html
 share/doc/tmda/press.html
 share/doc/tmda/requirements.html
 share/doc/tmda/resources.html
 share/doc/tmda/results.html
+share/doc/tmda/support-commercial.html
+share/doc/tmda/tmda-cgi.html
 share/doc/tmda/tmda-ofmipd.html
+share/doc/tmda/tmda-vdomains.html
 share/doc/tmda/trouble.html
 share/examples/tmda/sample.config
 share/tmda/bounce.txt

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/12 01:25:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/02/04 14:42:59 lebel Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.65
+VERSION=		0.69
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
@@ -32,7 +32,7 @@ do-build:
 		'import compileall; compileall.compile_dir(".", force=1)'
 
 do-install:
-	@perl -pi -e 's:%%PREFIX%%:${TRUEPREFIX}:' ${WRKSRC}/INSTALL
+	@perl -pi -e 's:htdocs:${TRUEPREFIX}/share/doc/tmda:' ${WRKSRC}/INSTALL
 	${INSTALL_DATA_DIR} ${PREFIX}/${PYTHON_LIBDIR}/TMDA/pythonlib/email
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PREFIX}/${PYTHON_LIBDIR}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
