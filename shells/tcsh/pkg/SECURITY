@@ -1,6 +1,0 @@
-$OpenBSD: SECURITY,v 1.2 2000/12/13 14:27:08 brad Exp $
-
-patches/patch-sh.dol.c
-${WRKSRC}/sh.dol.c
-	fix for insecure tmp file creation with the '<<' operator,
-	reported on BugTraq by proton <proton@ENERGYMECH.NET>.
