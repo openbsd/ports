@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/01 04:13:07 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/29 18:23:40 sturm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -41,8 +41,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 SUBST_VARS=		CONFDIR
-
-NO_SYSTRACE=		"Sig 9 error on linking"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs2; \
