@@ -1,4 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 21:13:47 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/06 14:09:17 danh Exp $
 bin/perltidy
 man/man1/perl2web.1
 man/man1/perltidy.1
+share/doc/perltidy/BUGS.html
+share/doc/perltidy/BUGS.pod
+share/doc/perltidy/BUGS.txt
+share/doc/perltidy/COPYING
+share/doc/perltidy/ChangeLog.html
+share/doc/perltidy/ChangeLog.pod
+share/doc/perltidy/ChangeLog.txt
+share/doc/perltidy/README
+share/doc/perltidy/perl2web.html
+share/doc/perltidy/perl2web.pod
+share/doc/perltidy/perl2web.txt
+share/doc/perltidy/perltidy.html
+share/doc/perltidy/perltidy.pod
+share/doc/perltidy/perltidy.txt
+share/doc/perltidy/tutorial.html
+share/doc/perltidy/tutorial.pod
+share/doc/perltidy/tutorial.txt
+@dirrm share/doc/perltidy
