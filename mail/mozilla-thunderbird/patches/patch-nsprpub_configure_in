@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_configure_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
---- nsprpub/configure.in.orig	2003-11-16 02:09:06.000000000 +0100
-+++ nsprpub/configure.in	2003-12-12 11:07:27.000000000 +0100
-@@ -1485,6 +1485,7 @@ mips-sony-newsos*)
+$OpenBSD: patch-nsprpub_configure_in,v 1.2 2004/02/15 19:41:58 wilfried Exp $
+--- nsprpub/configure.in.orig	2004-02-10 20:56:23.000000000 +0100
++++ nsprpub/configure.in	2004-02-10 20:57:42.000000000 +0100
+@@ -1482,6 +1482,7 @@ mips-sony-newsos*)
      AC_DEFINE(XP_UNIX)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
@@ -9,7 +9,7 @@ $OpenBSD: patch-nsprpub_configure_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp 
      CFLAGS="$CFLAGS -ansi -Wall"
      CXXFLAGS="$CXXFLAGS -ansi -Wall"
      DLL_SUFFIX=so.1.0
-@@ -1492,12 +1493,8 @@ mips-sony-newsos*)
+@@ -1489,12 +1490,8 @@ mips-sony-newsos*)
      MDCPUCFG_H=_openbsd.cfg
      PR_MD_CSRCS=openbsd.c
      USE_NSPR_THREADS=1
@@ -24,7 +24,7 @@ $OpenBSD: patch-nsprpub_configure_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp 
      ;;
  
  *-openvms*)
-@@ -2189,7 +2186,8 @@ if test -n "$USE_PTHREADS"; then
+@@ -2186,7 +2183,8 @@ if test -n "$USE_PTHREADS"; then
  	    AC_DEFINE(_THREAD_SAFE)
  	    dnl -pthread links in -lc_r, so don't specify it explicitly.
  	    if test "$ac_cv_have_dash_pthread" = "yes"; then

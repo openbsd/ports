@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/18 11:48:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/15 19:41:58 wilfried Exp $
 bin/mozilla-thunderbird
 bin/thunderbird
 mozilla-thunderbird/LICENSE
@@ -193,8 +193,6 @@ mozilla-thunderbird/defaults/wallet/SchemaConcat.tbl
 mozilla-thunderbird/defaults/wallet/SchemaStrings.tbl
 mozilla-thunderbird/defaults/wallet/StateSchema.tbl
 mozilla-thunderbird/defaults/wallet/VcardSchema.tbl
-mozilla-thunderbird/icons/mozicon16.xpm
-mozilla-thunderbird/icons/mozicon50.xpm
 mozilla-thunderbird/regchrome
 mozilla-thunderbird/regxpcom
 mozilla-thunderbird/res/EditorOverride.css
@@ -362,10 +360,6 @@ mozilla-thunderbird/res/viewsource.css
 mozilla-thunderbird/run-mozilla.sh
 mozilla-thunderbird/thunderbird-bin
 %%SHARED%%
-@comment @exec mkdir -p %D/share/pixmaps
-@comment @dirrm share/pixmaps
-@comment @exec mkdir -p %D/share/applications
-@comment @dirrm share/applications
 @dirrm mozilla-thunderbird/res/throbber
 @dirrm mozilla-thunderbird/res/samples/sampleimages
 @dirrm mozilla-thunderbird/res/samples
@@ -376,8 +370,6 @@ mozilla-thunderbird/thunderbird-bin
 @dirrm mozilla-thunderbird/res/dtd
 @dirrm mozilla-thunderbird/res/builtin
 @dirrm mozilla-thunderbird/res
-@dirrm mozilla-thunderbird/plugins
-@dirrm mozilla-thunderbird/icons
 @dirrm mozilla-thunderbird/defaults/wallet
 @dirrm mozilla-thunderbird/defaults/profile/chrome
 @dirrm mozilla-thunderbird/defaults/profile/US/chrome
@@ -391,6 +383,8 @@ mozilla-thunderbird/thunderbird-bin
 @dirrm mozilla-thunderbird/defaults
 @dirrm mozilla-thunderbird/components/myspell
 @dirrm mozilla-thunderbird/components
+@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall
+@dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall
 @exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/mozapps/downloads
 @dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps/downloads
 @dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps
@@ -475,6 +469,8 @@ mozilla-thunderbird/thunderbird-bin
 @dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/necko
 @exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/navigator
 @dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/navigator
+@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/xpinstall
+@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/xpinstall
 @exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/downloads
 @dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/downloads
 @dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps
@@ -588,6 +584,8 @@ mozilla-thunderbird/thunderbird-bin
 @exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/navigator/btn1
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/navigator/btn1
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/navigator
+@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/xpinstall
+@dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps/xpinstall
 @exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/pref
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps/pref
 @exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/downloads
@@ -610,8 +608,7 @@ mozilla-thunderbird/thunderbird-bin
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/toolbar
 @exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/splitter
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/splitter
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar/slider
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar/slider
+@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar
 @exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/radio
 @dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/radio

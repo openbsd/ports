@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/01/18 11:48:09 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/02/15 19:41:58 wilfried Exp $
 mozilla-thunderbird/components/libaccessibility.so.1.0
 mozilla-thunderbird/components/libappcomps.so.1.0
 mozilla-thunderbird/components/libcaps.so.1.0
@@ -12,7 +12,6 @@ mozilla-thunderbird/components/libgfx_gtk.so.1.0
 mozilla-thunderbird/components/libgfxps.so.1.0
 mozilla-thunderbird/components/libgfxxprint.so.1.0
 mozilla-thunderbird/components/libgklayout.so.1.0
-mozilla-thunderbird/components/libgkplugin.so.1.0
 mozilla-thunderbird/components/libhtmlpars.so.1.0
 mozilla-thunderbird/components/libi18n.so.1.0
 mozilla-thunderbird/components/libimglib2.so.1.0
@@ -65,7 +64,5 @@ mozilla-thunderbird/libxlibrgb.so.1.0
 mozilla-thunderbird/libxpcom.so.1.0
 mozilla-thunderbird/libxpcom_compat.so.1.0
 mozilla-thunderbird/libxpistub.so.1.0
-mozilla-thunderbird/plugins/libnullplugin.so.1.0
 @comment NEWDYNLIBDIR(%D/mozilla-thunderbird)
 @comment NEWDYNLIBDIR(%D/mozilla-thunderbird/components)
-@comment NEWDYNLIBDIR(%D/mozilla-thunderbird/plugins)
