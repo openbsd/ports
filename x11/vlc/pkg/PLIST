@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/04/18 00:42:14 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/04/28 01:30:53 jolan Exp $
 !%%no_dvd%%
 bin/gvlc
 bin/vlc
@@ -55,6 +55,7 @@ lib/vlc/codec/libcinepak_plugin.so
 lib/vlc/codec/libcvdsub_plugin.so
 lib/vlc/codec/libdts_plugin.so
 lib/vlc/codec/libdvbsub_plugin.so
+lib/vlc/codec/libfaad_plugin.so
 lib/vlc/codec/liblibmpeg2_plugin.so
 lib/vlc/codec/liblpcm_plugin.so
 lib/vlc/codec/libmpeg_audio_plugin.so

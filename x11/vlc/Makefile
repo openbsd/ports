@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/04/18 00:42:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/04/28 01:30:53 jolan Exp $
 
 COMMENT=	"videolan client; multimedia player"
 
 VER=		0.7.1
 DISTNAME=	vlc-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/ \
 		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
@@ -33,7 +34,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		dvbpsi.1.1::graphics/libdvbpsi \
 		mpeg2::graphics/libmpeg2 \
 		avcodec::graphics/ffmpeg \
-		fribidi::devel/fribidi
+		fribidi::devel/fribidi \
+		faad::audio/faad
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
@@ -47,7 +49,8 @@ CONFIGURE_ARGS+=--disable-oss \
 		--disable-dvd \
 		--disable-cddax \
 		--disable-skins2 \
-		--disable-speex
+		--disable-speex \
+		--enable-faad
 
 
 FLAVORS=	no_dvd
