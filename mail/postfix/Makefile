@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/02/17 06:28:59 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/03 11:54:44 turan Exp $
+
+BROKEN=		auto installs files in /etc
 
 DISTNAME=	postfix-19991231-pl04
 CATEGORIES=     mail
