@@ -1,0 +1,47 @@
+--- include/db_cxx.h.orig	Fri Jun 18 01:42:14 1999
++++ include/db_cxx.h	Fri Jun 18 01:44:44 1999
+@@ -286,7 +286,7 @@
+ 
+     // no copying
+     DbLog(const DbLog &);
+-    operator = (const DbLog &);
++    DbLog& operator = (const DbLog &);
+ 
+     DEFINE_DB_CLASS(DbLog);
+ };
+@@ -330,7 +330,7 @@
+ private:
+     // no copying
+     DbMpoolFile(const DbMpoolFile &);
+-    operator = (const DbMpoolFile &);
++    DbMpoolFile &operator = (const DbMpoolFile &);
+ 
+     DEFINE_DB_CLASS(DbMpoolFile);
+ };
+@@ -415,7 +415,7 @@
+ 
+     // no copying
+     DbTxnMgr(const DbTxnMgr &);
+-    operator = (const DbTxnMgr &);
++    DbTxnMgr &operator = (const DbTxnMgr &);
+ 
+     DEFINE_DB_CLASS(DbTxnMgr);
+ };
+@@ -443,7 +443,7 @@
+ 
+     // no copying
+     DbTxn(const DbTxn &);
+-    operator = (const DbTxn &);
++    DbTxn &operator = (const DbTxn &);
+ 
+     DEFINE_DB_CLASS(DbTxn);
+ };
+@@ -760,7 +760,7 @@
+ 
+     // no copying
+     DbEnv(const DbEnv &);
+-    operator = (const DbEnv &);
++    DbEnv &operator = (const DbEnv &);
+ 
+     ErrorModel error_model_;
+     static void stream_error_function(const char *, char *);
