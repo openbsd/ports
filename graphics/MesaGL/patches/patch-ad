@@ -1,24 +1,5 @@
---- src/copypix.c.orig	Sun Mar  7 19:12:34 1999
-+++ src/copypix.c	Sun Mar  7 19:13:11 1999
-@@ -1,4 +1,4 @@
--/* $Id: patch-ad,v 1.1 1999/03/09 02:09:09 brad Exp $ */
-+/* $Id: patch-ad,v 1.1 1999/03/09 02:09:09 brad Exp $ */
- 
- /*
-  * Mesa 3-D graphics library
-@@ -23,6 +23,9 @@
- 
- /*
-  * $Log: patch-ad,v $
-  * Revision 1.1  1999/03/09 02:09:09  brad
-  * fixups and add currently available patches from Mesa web page
-  *
-+ * Revision 3.9  1998/09/25 03:03:01  brianp
-+ * fixed front/back alpha copy bug per Sam Jordan
-+ *
-  * Revision 3.8  1998/07/17 03:24:16  brianp
-  * added Pixel.ScaleOrBiasRGBA field
-  *
+--- src/copypix.c.orig	Mon Mar  8 22:33:30 1999
++++ src/copypix.c	Mon Mar  8 22:35:18 1999
 @@ -71,9 +74,10 @@
  
  

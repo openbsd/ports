@@ -1,18 +1,5 @@
 --- src/misc.c.orig	Sun Mar  7 19:14:46 1999
 +++ src/misc.c	Sun Mar  7 19:14:51 1999
-@@ -23,6 +23,9 @@
- 
- /*
-  * $Log: patch-af,v $
-  * Revision 1.1  1999/03/09 02:09:09  brad
-  * fixups and add currently available patches from Mesa web page
-  *
-+ * Revision 3.14.1  1999/02/17 22:00:00  brianp
-+ * fixed bug when clearing color buffer with RGBA or index masking
-+ *
-  * Revision 3.14  1998/09/18 02:32:02  brianp
-  * fixed alpha clear problem reported by Sam Jordan
-  *
 @@ -260,8 +263,17 @@
        width  = ctx->Buffer->Xmax - ctx->Buffer->Xmin + 1;
  

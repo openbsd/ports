@@ -1,24 +1,5 @@
 --- src/pixel.c.orig	Sun Mar  7 19:15:18 1999
 +++ src/pixel.c	Sun Mar  7 19:15:22 1999
-@@ -1,4 +1,4 @@
--/* $Id: patch-ag,v 1.1 1999/03/09 02:09:09 brad Exp $ */
-+/* $Id: patch-ag,v 1.1 1999/03/09 02:09:09 brad Exp $ */
- 
- /*
-  * Mesa 3-D graphics library
-@@ -23,6 +23,9 @@
- 
- /*
-  * $Log: patch-ag,v $
-  * Revision 1.1  1999/03/09 02:09:09  brad
-  * fixups and add currently available patches from Mesa web page
-  *
-+ * Revision 3.7  1998/09/29 01:35:41  brianp
-+ * glPixelStore() now handles GL_PACK/UNPACK_IMAGE_HEIGHT
-+ *
-  * Revision 3.6  1998/07/17 03:23:47  brianp
-  * added a bunch of const's
-  *
 @@ -113,6 +116,12 @@
  	    ctx->Pack.RowLength = param;
  	 }

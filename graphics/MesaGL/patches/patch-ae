@@ -1,29 +1,5 @@
 --- src/get.c.orig	Sun Mar  7 19:14:22 1999
 +++ src/get.c	Sun Mar  7 19:14:27 1999
-@@ -1,8 +1,8 @@
--/* $Id: patch-ae,v 1.1 1999/03/09 02:09:09 brad Exp $ */
-+/* $Id: patch-ae,v 1.1 1999/03/09 02:09:09 brad Exp $ */
- 
- /*
-  * Mesa 3-D graphics library
-- * Version:  3.0
-+ * Version:  3.1
-  * Copyright (C) 1995-1998  Brian Paul
-  *
-  * This library is free software; you can redistribute it and/or
-@@ -23,6 +23,9 @@
- 
- /*
-  * $Log: patch-ae,v $
-  * Revision 1.1  1999/03/09 02:09:09  brad
-  * fixups and add currently available patches from Mesa web page
-  *
-+ * Revision 3.16  1998/10/01 02:51:39  brianp
-+ * added GL_MAX_3D_TEXTURE_SIZE support to glGet*()
-+ *
-  * Revision 3.15  1998/07/29 04:09:33  brianp
-  * getting polygon stipple on/off state was broken
-  *
 @@ -588,6 +591,7 @@
  	 *params = INT_TO_BOOL(MAX_PROJECTION_STACK_DEPTH);
  	 break;

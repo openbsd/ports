@@ -1,24 +1,5 @@
 --- src/teximage.c.orig	Sun Mar  7 19:15:47 1999
 +++ src/teximage.c	Sun Mar  7 19:15:52 1999
-@@ -1,4 +1,4 @@
--/* $Id: patch-ah,v 1.1 1999/03/09 02:09:10 brad Exp $ */
-+/* $Id: patch-ah,v 1.1 1999/03/09 02:09:10 brad Exp $ */
- 
- /*
-  * Mesa 3-D graphics library
-@@ -23,6 +23,9 @@
- 
- /*
-  * $Log: patch-ah,v $
-  * Revision 1.1  1999/03/09 02:09:10  brad
-  * fixups and add currently available patches from Mesa web page
-  *
-+ * Revision 3.13  1998/09/25 03:07:34  brianp
-+ * fixed out-of-bounds memory access on X86 (Sven Panne)
-+ *
-  * Revision 3.12  1998/09/18 02:32:40  brianp
-  * fixed proxy texture internal format bug reported by Sam Jordon
-  *
 @@ -279,6 +282,16 @@
  
  
