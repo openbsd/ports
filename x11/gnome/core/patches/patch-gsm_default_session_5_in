@@ -1,0 +1,14 @@
+$OpenBSD: patch-gsm_default_session_5_in,v 1.1 2002/04/02 03:31:50 espie Exp $
+--- gsm/default.session.5.in.orig	Tue Apr  2 05:22:13 2002
++++ gsm/default.session.5.in	Tue Apr  2 05:24:51 2002
+@@ -7,8 +7,8 @@
+ .\"
+ .TH GNOME 1 "GNOME 1.0" 
+ .SH NAME
+-GNOME Default session configuration file.
+-.PP
++default.session - GNOME Default session configuration file.
++.SH DESCRIPTION
+ The 
+ .I @datadir@/gnome/default.session
+ file contains a list of programs to be launched the first time a user
