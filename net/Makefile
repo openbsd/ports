@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2001/06/14 14:48:26 camield Exp $
+# $OpenBSD: Makefile,v 1.146 2001/06/25 23:06:25 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += arping
      SUBDIR += arpwatch
      SUBDIR += axyftp
+     SUBDIR += balance
      SUBDIR += bind8
      SUBDIR += bind9
      SUBDIR += bing
