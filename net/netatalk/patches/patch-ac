@@ -1,29 +1,159 @@
---- etc/afpd/unix.c.orig	Fri Mar 27 00:00:03 1998
-+++ etc/afpd/unix.c	Fri Mar 27 00:14:18 1998
-@@ -37,14 +37,14 @@
+--- etc/afpd/unix.c.orig	Wed Oct  2 05:26:52 1996
++++ etc/afpd/unix.c	Tue Aug 19 11:32:59 1997
+@@ -37,14 +37,15 @@
  #include <sys/mnttab.h>
  #endif __svr4__
  
 -#ifdef __FreeBSD__
-+#if defined( __FreeBSD__ ) || defined( __OpenBSD__ )
++#ifdef BSD4_4
  #include <ufs/ufs/quota.h>
  #include <sys/mount.h>
  #define dqb_btimelimit	dqb_btime
 -#endif __FreeBSD__
-+#endif __FreeBSD__ __OpenBSD__
++#include <stdlib.h>
++#endif BSD4_4
  
  #if !defined( linux ) && !defined( ultrix ) && !defined( __svr4__ ) && \
 -	!defined( __FreeBSD__ )
-+	!defined( __FreeBSD__ ) && !defined( __OpenBSD__ )
++	!defined( BSD4_4 )
  #include <ufs/quota.h>
  #include <mntent.h>
  #endif linux ultrix __svr4__
-@@ -169,7 +169,7 @@
+@@ -77,24 +78,37 @@
+ #else ultrix
+     struct statfs	sfs;
+ #endif ultrix
++    u_long	multi;
+ 
+     if ( statfs( vol->v_path, &sfs ) < 0 ) {
+ 	return( AFPERR_PARAM );
+     }
+-
+ #ifdef ultrix
+-    *bfree = sfs.fd_req.bfreen * 1024;
++    multi = 1024;
++    *bfree = sfs.fd_req.bfreen;
+ #else
+-    *bfree = sfs.f_bavail * sfs.f_frsize;
++    multi = sfs.f_frsize;
++    *bfree = sfs.f_bavail;
+ #endif ultrix
+ 
++    if ( *bfree > 0x7fffffff / multi ) {
++	*bfree = 0x7fffffff;
++    } else {
++	*bfree *= multi;
++    }
++
+ #ifdef ultrix
+-    *btotal = ( sfs.fd_req.btot - ( sfs.fd_req.bfree - sfs.fd_req.bfreen )) *
+-	    1024;
++    *btotal = sfs.fd_req.btot - ( sfs.fd_req.bfree - sfs.fd_req.bfreen );
+ #else ultrix
+-    *btotal = ( sfs.f_blocks - ( sfs.f_bfree - sfs.f_bavail )) * sfs.f_frsize;
++    *btotal = sfs.f_blocks - ( sfs.f_bfree - sfs.f_bavail );
+ #endif ultrix
+ 
++    if ( *btotal > 0x7fffffff / multi ) {
++	*btotal = 0x7fffffff;
++    } else {
++	*btotal *= multi;
++    }
++
+     return( AFP_OK );
+ }
+ 
+@@ -156,7 +170,8 @@
  }
  
  #else ultrix
 -#ifdef __FreeBSD__
-+#if defined ( __FreeBSD__ ) || ( __OpenBSD__ )
++
++#ifdef BSD4_4
  
      char *
  special( file )
+@@ -170,7 +185,7 @@
+     return( sfs.f_mntfromname );
+ }
+ 
+-#else __FreeBSD__
++#else BSD4_4
+ 
+     char *
+ special( file )
+@@ -201,7 +216,7 @@
+     return( NULL );
+ }
+ 
+-#endif __FreeBSD__
++#endif BSD4_4
+ #endif ultrix
+ #endif __svr4__
+ 
+@@ -253,15 +268,15 @@
+ 	return( AFPERR_PARAM );
+     }
+ #else ultrix
+-#ifdef __FreeBSD__
++#ifdef BSD4_4
+     if ( quotactl( vol->v_gvs, Q_GETQUOTA, uuid, (char *)dq ) != 0 ) {
+ 	return( AFPERR_PARAM );
+     }
+-#else __FreeBSD__
++#else BSD4_4
+     if ( quotactl( Q_GETQUOTA, vol->v_gvs, uuid, dq ) != 0 ) {
+ 	return( AFPERR_PARAM );
+     }
+-#endif __FreeBSD__
++#endif BSD4_4
+ #endif ultrix
+ #endif __svr4__
+ 
+@@ -306,10 +321,16 @@
+ 	syslog( LOG_ERR, "overquota: gettimeofday: %m" );
+ 	return( AFPERR_PARAM );
+     }
++#if defined (__NetBSD__)
++    if ( !dqblk->dqb_btime || dqblk->dqb_btime > tv.tv_sec ) {
++	return( 0 );
++    }
++#else
+     if ( !dqblk->dqb_btimelimit || dqblk->dqb_btimelimit > tv.tv_sec ) {
+ 	return( 0 );
+     }
+-#endif ultrix
++#endif /* __NetBSD__ */
++#endif /* ultrix */
+     return( 1 );
+ }
+ 
+@@ -633,21 +654,25 @@
+     closedir( dir );
+ 
+     /*
+-     * We cheat: we know that chown doesn't do anything.
++     * We cheat when we know that chown doesn't do anything.
++     * Ignore these errors, there are cases where the Mac tries to
++     * set the group and it's just not possible.
+      */
+     if ( stat( ".AppleDouble", &st ) < 0 ) {
+ 	syslog( LOG_ERR, "setdirowner: stat .AppleDouble: %m" );
+ 	return( -1 );
+     }
+     if ( gid && gid != st.st_gid && chown( ".AppleDouble", uid, gid ) < 0 ) {
+-	return( -1 );
++	syslog( LOG_DEBUG, "setdirowner: chown %d/%d %s: %m",
++		uid, gid, ".AppleDouble" );
+     }
+ 
+     if ( stat( ".", &st ) < 0 ) {
+ 	return( -1 );
+     }
+     if ( gid && gid != st.st_gid && chown( ".", uid, gid ) < 0 ) {
+-	return( -1 );
++	syslog( LOG_DEBUG, "setdirowner: chown %d/%d %s: %m",
++		uid, gid, "." );
+     }
+ 
+     return( 0 );

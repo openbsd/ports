@@ -1,11 +1,447 @@
---- etc/afpd/auth.c.orig	Sun Jan 10 21:57:06 1999
-+++ etc/afpd/auth.c	Sun Jan 10 22:00:21 1999
-@@ -39,7 +39,7 @@
- #if defined( KRB ) || defined( UAM_AFSKRB )
- #include <krb.h>
- #include <des.h>
--#include <prot.h>
-+
+--- etc/afpd/desktop.c.orig	Sat Jul 20 05:22:43 1996
++++ etc/afpd/desktop.c	Sun Aug 17 12:00:44 1997
+@@ -283,6 +283,7 @@
+ 	    return( AFPERR_NOITEM );
+ 	}
+ 	bcopy( ih + 10, &bsize, sizeof( u_short ));
++	bsize = ntohs( bsize );
+ 	if ( lseek( si.sdt_fd, (long)bsize, SEEK_CUR ) < 0 ) {
+ 	    syslog( LOG_ERR, "afp_iconinfo: lseek: %m" );
+ 	    return( AFPERR_PARAM );
+@@ -553,7 +554,7 @@
+ 	return( AFPERR_NOOBJ );
+     }
  
- C_Block			seskey;
- Key_schedule		seskeysched;
+-    if ((int)ibuf & 1 ) {
++    if ((long)ibuf & 1 ) {
+ 	ibuf++;
+     }
+ 
+--- etc/afpd/directory.c.orig	Fri Jul 26 06:13:44 1996
++++ etc/afpd/directory.c	Sun Aug 17 09:20:04 1997
+@@ -15,6 +15,8 @@
+ #include <atalk/adouble.h>
+ #include <atalk/afp.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <strings.h>
+ #include <dirent.h>
+ #include <fcntl.h>
+ #include <grp.h>
+@@ -477,7 +479,7 @@
+     /*
+      * If ibuf is odd, make it even.
+      */
+-    if ((int)ibuf & 1 ) {
++    if ((long)ibuf & 1) {
+ 	ibuf++;
+     }
+ 
+@@ -917,12 +919,16 @@
+ {
+     struct passwd	*pw;
+     struct group	*gr;
+-    int			len, sfunc, id;
++    int			len, ibl, sfunc, id;
+ 
+     ibuf++;
+-    sfunc = *ibuf++;
+-    len = *ibuf++;
++    sfunc = *(unsigned char *)ibuf++;
++    len = *(unsigned char *)ibuf++;
+     ibuf[ len ] = '\0';
++    ibl = len;
++    while ( ibl-- ) {
++	ibuf[ ibl ] = tolower( ibuf[ ibl ] );
++    }
+ 
+     if ( len != 0 ) {
+ 	switch ( sfunc ) {
+
+--- etc/afpd/enumerate.c.orig	Sat Jul 20 05:24:53 1996
++++ etc/afpd/enumerate.c	Sun Aug 17 09:20:06 1997
+@@ -12,6 +12,8 @@
+ #include <atalk/afp.h>
+ #include <atalk/adouble.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <strings.h>
+ #include <dirent.h>
+ 
+ #include "desktop.h"
+--- etc/afpd/filedir.c.orig	Mon Sep 23 04:06:34 1996
++++ etc/afpd/filedir.c	Sun Aug 17 09:20:09 1997
+@@ -12,6 +12,8 @@
+ #include <atalk/adouble.h>
+ #include <atalk/afp.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <strings.h>
+ #include <fcntl.h>
+ #include <dirent.h>
+ 
+@@ -141,7 +143,7 @@
+     /*
+      * If ibuf is odd, make it even.
+      */
+-    if ((int)ibuf & 1 ) {
++    if ((long)ibuf & 1 ) {
+ 	ibuf++;
+     }
+ 
+--- etc/afpd/fork.c.orig	Wed Sep 25 01:20:25 1996
++++ etc/afpd/fork.c	Fri Oct  3 11:14:45 1997
+@@ -21,11 +21,13 @@
+ #include <atalk/asp.h>
+ #include <atalk/adouble.h>
+ #include <stdio.h>
++#include <strings.h>
+ #include <fcntl.h>
+ #include <dirent.h>
+ 
+ #include "fork.h"
+ #include "file.h"
++#include "desktop.h"
+ #include "globals.h"
+ #include "directory.h"
+ #include "volume.h"
+@@ -94,14 +96,16 @@
+ 
+     if ( ad_open( mtoupath( path ), adflags, oflags, 0,
+ 		&ofork->of_ad ) < 0 ) {
+-	if ( errno == ENOENT && adflags != ADFLAGS_HF ) {
++	if ( errno == ENOENT ) {
+ 	    ad_close( &ofork->of_ad, adflags );
+-	    if ( ad_open( mtoupath( path ), ADFLAGS_DF, oflags, 0,
+-		    &ofork->of_ad ) < 0 ) {
+-		ad_close( &ofork->of_ad, ADFLAGS_DF );
+-		of_dealloc( ofork );
+-		*rbuflen = 0;
+-		return( AFPERR_NOOBJ );
++	    if ( adflags != ADFLAGS_HF ) {
++		if ( ad_open( mtoupath( path ), ADFLAGS_DF, oflags, 0,
++			&ofork->of_ad ) < 0 ) {
++		    ad_close( &ofork->of_ad, ADFLAGS_DF );
++		    of_dealloc( ofork );
++		    *rbuflen = 0;
++		    return( AFPERR_NOOBJ );
++		}
+ 	    }
+ 	} else {
+ 	    of_dealloc( ofork );
+@@ -170,6 +174,9 @@
+ 	lockfd = ad_dfileno( &ofork->of_ad );
+     } else {
+ 	lockfd = ad_hfileno( &ofork->of_ad );
++	if ( lockfd == -1 ) {
++	    lockop = 0;
++	}
+     }
+     if ( lockop && flock( lockfd, lockop|LOCK_NB ) < 0 ) {
+ 	ret = errno;
+@@ -317,8 +324,11 @@
+ 
+     if ( ad_dfileno( &ofork->of_ad ) != -1 ) {
+ 	eid = ADEID_DFORK;
+-    } else {
++    } else if ( ad_hfileno( &ofork->of_ad ) != -1 ) {
+ 	eid = ADEID_RFORK;
++    } else {
++	*rbuflen = 0;
++	return( AFPERR_EOF );
+     }
+ 
+     if ( reqcount < 0 ) {
+@@ -547,8 +557,8 @@
+ 	    *rbuflen = 0;
+ 	    return( AFPERR_DFULL );
+ 	default :
+-	    syslog( LOG_ERR, "afp_write: ad_write: %m" );
+ 	    *rbuflen = 0;
++	    syslog( LOG_ERR, "afp_write: ad_write: %m" );
+ 	    return( AFPERR_PARAM );
+ 	}
+     }
+@@ -641,8 +651,8 @@
+     }
+     if ( bitmap & ( 1<<FILPBIT_DFLEN | 1<<FILPBIT_FNUM )) {
+ 	if ( ad_dfileno( &ofork->of_ad ) == -1 ) {
+-	    if ( fstat( ad_hfileno( &ofork->of_ad ), &st ) < 0 ) {
+-		return( AFPERR_BITMAP );
++	    if ( stat( mtoupath( ofork->of_name ), &st ) < 0 ) {
++		return( AFPERR_NOOBJ );
+ 	    }
+ 	} else {
+ 	    if ( fstat( ad_dfileno( &ofork->of_ad ), &st ) < 0 ) {
+@@ -709,15 +719,15 @@
+ 	    break;
+ 
+ 	case FILPBIT_FINFO :
+-	    if ( !isad || bcmp( ad_entry( &ofork->of_ad, ADEID_FINDERI ),
+-		    ufinderi, 8 ) == 0 ) {
++	    if ( !isad ) {
+ 		bcopy( ufinderi, data, 32 );
+-		if (( em = getextmap( ofork->of_name )) != NULL ) {
+-		    bcopy( em->em_type, data, sizeof( em->em_type ));
+-		    bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+-		}
+ 	    } else {
+ 		bcopy( ad_entry( &ofork->of_ad, ADEID_FINDERI ), data, 32 );
++	    }
++	    if ( bcmp( data, ufinderi, 8 ) == 0 &&
++		    ( em = getextmap( ofork->of_name )) != NULL ) {
++		bcopy( em->em_type, data, sizeof( em->em_type ));
++		bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+ 	    }
+ 	    data += 32;
+ 	    break;
+--- etc/afpd/fork.h.orig	Sat Apr 20 05:18:08 1996
++++ etc/afpd/fork.h	Tue Mar 31 02:21:14 1998
+@@ -23,3 +23,4 @@
+ 
+ struct ofork	*of_alloc();
+ struct ofork	*of_find();
++struct ofork	*of_findfile();
+--- etc/afpd/main.c.orig	Tue Oct 22 08:44:48 1996
++++ etc/afpd/main.c	Sun Oct  5 04:26:10 1997
+@@ -19,6 +19,7 @@
+ #include <termios.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <strings.h>
+ #include <netdb.h>
+ #include <unistd.h>
+@@ -265,22 +266,24 @@
+ 	}
+     }
+ 
++#ifdef ultrix
++    openlog( p, LOG_PID );
++#else ultrix
++    openlog( p, LOG_NDELAY|LOG_PID, LOG_DAEMON );
++#endif ultrix
++
+     if ( pidfile ) {
+ 	FILE		*pf;
+ 
+ 	if (( pf = fdopen( pidfd, "w" )) == NULL ) {
+-	    fprintf( stderr, "Can't fdopen pidfile!\n" );
++	    syslog( LOG_ERR, "can't fdopen pidfile!" );
+ 	    exit( 1 );
+ 	}
+ 	fprintf( pf, "%d\n", getpid());
+ 	fflush( pf );
+     }
+ 
+-#ifdef ultrix
+-    openlog( p, LOG_PID );
+-#else ultrix
+-    openlog( p, LOG_NDELAY|LOG_PID, LOG_DAEMON );
+-#endif ultrix
++    of_init();
+ 
+     if (( status = (char *)malloc( ATP_MAXDATA )) == NULL ) {
+ 	syslog( LOG_ERR, "main: malloc: %m" );
+@@ -526,28 +529,3 @@
+     status->as_flags |= AFPSRVRINFO_FASTBOZO;
+     status->as_flags = htons( status->as_flags );
+ }
+-
+-#ifdef notdef
+-pdesc( f )
+-    FILE	*f;
+-{
+-    int		i, o, d;
+-    extern int	errno;
+-
+-    d = getdtablesize();
+-
+-    for ( i = 0; i < d; i++ ) {
+-	if ( ioctl( i, FIOGETOWN, &o ) < 0 ) {
+-	    if ( errno == EBADF ) {
+-		fputs( "0", f );
+-	    } else {
+-		fputs( "1", f );
+-	    }
+-	} else {
+-	    fputs( "1", f );
+-	}
+-    }
+-    fputs( "\n", f );
+-    fflush( f );
+-}
+-#endif notdef
+--- etc/afpd/ofork.c.orig	Sun Apr 21 00:26:36 1996
++++ etc/afpd/ofork.c	Fri Apr 17 14:01:42 1998
+@@ -1,10 +1,14 @@
+ /*
+- * Copyright (c) 1996 Regents of The University of Michigan.
++ * Copyright (c) 1996,1997 Regents of The University of Michigan.
+  * All Rights Reserved.  See COPYRIGHT.
+  */
+ 
+ #include <sys/param.h>
++#include <sys/time.h>
++#include <sys/resource.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <strings.h>
+ #include <syslog.h>
+ 
+ #include <atalk/adouble.h>
+@@ -12,8 +16,8 @@
+ #include "directory.h"
+ #include "fork.h"
+ 
+-static struct ofork	*oforks[ ( NOFILE - 10 ) / 2 ];
+-int			nforks = sizeof( oforks ) / sizeof( oforks[ 0 ] );
++static struct ofork	**oforks;
++static int		nforks;
+ static u_short		lastrefnum = 0;
+ 
+ pforkdesc( f )
+@@ -21,14 +25,39 @@
+ {
+     u_short	ofrefnum;
+ 
+-    for ( ofrefnum = 0; ofrefnum < sizeof( oforks ) / sizeof( oforks[ 0 ] );
+-	    ofrefnum++ ) {
++    for ( ofrefnum = 0; ofrefnum < nforks; ofrefnum++ ) {
+ 	if ( oforks[ ofrefnum ] != NULL ) {
+ 	    fprintf( f, "%hu <%s>\n", ofrefnum, oforks[ ofrefnum ]->of_name );
+ 	}
+     }
+ }
+ 
++of_init()
++{
++    struct rlimit	rl;
++
++    if ( getrlimit( RLIMIT_NOFILE, &rl ) < 0 ) {
++	syslog( LOG_ERR, "of_init: getrlimit: %m" );
++	exit( 1 );
++    }
++    if ( rl.rlim_cur < rl.rlim_max ) {
++	rl.rlim_cur = rl.rlim_max;
++	if ( setrlimit( RLIMIT_NOFILE, &rl ) < 0 ) {
++	    syslog( LOG_ERR, "of_init: setrlimit: %m" );
++	    exit( 1 );
++	}
++    }
++
++    nforks = ( rl.rlim_cur - 10 ) / 2;
++    if (( oforks = (struct ofork **)calloc( nforks, sizeof( struct ofork ))) ==
++	    NULL ) {
++	syslog( LOG_ERR, "of_init: malloc: %m" );
++	exit( 1 );
++    }
++
++    return;
++}
++
+ of_flush()
+ {
+     u_short	refnum;
+@@ -102,4 +131,24 @@
+     free( of->of_name );
+     oforks[ refnum ] = NULL;
+     return;
++}
++
++    struct ofork *
++of_findfile( dir, path )
++    struct dir	*dir;
++    char	*path;
++{
++    u_short		refnum;
++    int			i;
++
++    for ( i = 0; i < nforks; i++ ) {
++	if ( oforks[ i ] != NULL && oforks[ i ]->of_dir == dir &&
++		strcmp( oforks[ i ]->of_name, path ) == 0 )  {
++	    break;
++	}
++    }
++    if ( i == nforks ) {
++	return( NULL );
++    }
++    return( oforks[ i ] );
+ }
+--- etc/afpd/volume.c.orig	Wed Oct 23 06:29:04 1996
++++ etc/afpd/volume.c	Tue Mar 31 02:57:11 1998
+@@ -15,6 +15,7 @@
+ #include <dirent.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <strings.h>
+ #include <pwd.h>
+@@ -29,16 +30,9 @@
+ char		*Trash = "\02\024Network Trash Folder";
+ struct extmap	*extmap = NULL, *defextmap = NULL;
+ 
+-afp_getsrvrparms( ibuf, ibuflen, rbuf, rbuflen )
+-    char	*ibuf, *rbuf;
+-    int		ibuflen, *rbuflen;
++initvolumes()
+ {
+-    struct timeval	tv;
+-    struct stat		st;
+-    struct vol		*volume;
+     struct passwd	*pwent;
+-    char		*data;
+-    int			vcnt, len;
+ 
+     if ( !uservolfirst ) {
+ 	readvolfile( systemvol, NULL, 0 );
+@@ -72,6 +66,22 @@
+ 	readvolfile( systemvol, NULL, 0 );
+     }
+ 
++    return;
++}
++
++afp_getsrvrparms( ibuf, ibuflen, rbuf, rbuflen )
++    char	*ibuf, *rbuf;
++    int		ibuflen, *rbuflen;
++{
++    struct timeval	tv;
++    struct stat		st;
++    struct vol		*volume;
++    struct passwd	*pwent;
++    char		*data;
++    int			vcnt, len;
++
++    initvolumes();
++
+     data = rbuf + 5;
+     for ( vcnt = 0, volume = volumes; volume; volume = volume->v_next ) {
+ 	if ( stat( volume->v_path, &st ) < 0 ) {
+@@ -359,6 +369,8 @@
+     bcopy( ibuf, volname, len );
+     volname[ len ] = '\0';
+ 
++    initvolumes();
++
+     for ( volume = volumes; volume; volume = volume->v_next ) {
+ 	if ( strcasecmp( volname, volume->v_name ) == 0 ) {
+ 	    break;
+@@ -701,9 +713,12 @@
+ {
+     struct timeval	tv;
+ 
+-    if ( gettimeofday( &tv, 0 ) < 0 ) {
+-	syslog( LOG_ERR, "setvoltime: gettimeofday: %m" );
+-	exit( 1 );
++    /* utime() suggested by Roland Schulz */
++    if ( utime( vol->v_path, NULL ) < 0 ) {
++	if ( gettimeofday( &tv, 0 ) < 0 ) {
++	    syslog( LOG_ERR, "setvoltime: gettimeofday: %m" );
++	    exit( 1 );
++	}
++	vol->v_time = tv.tv_sec;
+     }
+-    vol->v_time = tv.tv_sec;
+ }
