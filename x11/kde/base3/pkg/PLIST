@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2004/02/01 14:59:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2004/02/03 21:31:21 espie Exp $
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -3775,3 +3775,8 @@ share/wallpapers/triplegears.jpg
 @dirrm include/ksplash
 @dirrm include/ksgrd
 @dirrm include/kate/utils
+@extra ${SYSCONFDIR}/xdg/menus/kde-settings.menu
+@extra ${SYSCONFDIR}/xdg/menus/kde-information.menu
+@extra ${SYSCONFDIR}/xdg/menus/kde-screensavers.menu
+@extra ${SYSCONFDIR}/xdg/menus/applications-merged/kde-essential.menu
+@extra ${SYSCONFDIR}/ksysguarddrc

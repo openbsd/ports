@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/02/01 14:59:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/02/03 21:31:21 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -4539,3 +4539,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
+@extra ${SYSCONFDIR}/xdg/menus/applications.menu
+@extra ${SYSCONFDIR}/xdg/menus/
+@extra ${SYSCONFDIR}/xdg/
