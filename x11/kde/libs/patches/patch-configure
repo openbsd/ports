@@ -1,0 +1,68 @@
+--- configure.orig	Tue Sep  7 11:23:19 1999
++++ configure	Tue Sep 14 19:08:38 1999
+@@ -1861,7 +1861,7 @@
+ aix*)
+   ac_symcode='[BCDTU]'
+   ;;
+-sunos* | cygwin32* | mingw32*)
++sunos* | cygwin32* | mingw32* | openbsd*)
+   ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
+   ac_symxfrm='_\1 \1'
+   ;;
+@@ -3094,12 +3094,13 @@
+    The main things grep needs to know about mmap are:
+    * does it exist and is it safe to write into the mmap'd area
+    * how to use it (BSD variants)  */
++#include <stdlib.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <fcntl.h>
+ #include <sys/mman.h>
+ 
+ /* This mess was copied from the GNU getpagesize.h.  */
+-#ifndef HAVE_GETPAGESIZE
+ # ifdef HAVE_UNISTD_H
+ #  include <unistd.h>
+ # endif
+@@ -3137,14 +3138,6 @@
+ #  endif /* no HAVE_SYS_PARAM_H */
+ # endif /* no _SC_PAGESIZE */
+ 
+-#endif /* no HAVE_GETPAGESIZE */
+-
+-#ifdef __cplusplus
+-extern "C" { void *malloc(unsigned); }
+-#else
+-char *malloc();
+-#endif
+-
+ int
+ main()
+ {
+@@ -3157,7 +3150,7 @@
+ 	/*
+ 	 * First, make a file with some known garbage in it.
+ 	 */
+-	data = malloc(pagesize);
++	data = (char *)malloc(pagesize);
+ 	if (!data)
+ 		exit(1);
+ 	for (i = 0; i < pagesize; ++i)
+@@ -3178,7 +3171,7 @@
+ 	fd = open("conftestmmap", O_RDWR);
+ 	if (fd < 0)
+ 		exit(1);
+-	data2 = malloc(2 * pagesize);
++	data2 = (char *)malloc(2 * pagesize);
+ 	if (!data2)
+ 		exit(1);
+ 	data2 += (pagesize - ((int) data2 & (pagesize - 1))) & (pagesize - 1);
+@@ -3196,7 +3189,7 @@
+ 	 */
+ 	for (i = 0; i < pagesize; ++i)
+ 		*(data2 + i) = *(data2 + i) + 1;
+-	data3 = malloc(pagesize);
++	data3 = (char *)malloc(pagesize);
+ 	if (!data3)
+ 		exit(1);
+ 	if (read(fd, data3, pagesize) != pagesize)
