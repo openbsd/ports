@@ -14,7 +14,7 @@
 +char *NETDEV[]={"ppp","be","hme","ie","le","qe"};
 +int HEADSIZE[]={4,14,14,14,14,14};
 +#elif defined(__m68k__)
-+#defined NETDEV_NR    9
++#define NETDEV_NR    9
 +char *NETDEV[]={"ppp","ae","ed","es","le","mc","ne","qn","sn"};
 +int HEADSIZE[]={4,14,14,14,14,14,14,14,14};
 +#elif defined(__mips__)
@@ -22,7 +22,7 @@
 +char *NETDEV[]={"ppp","ec","ep","le","ne","we"};
 +int HEADSIZE[]={4,14,14,14,14,14};
 +#elif defined(__powerpc__)
-+#defined NETDEV_NR    5
++#define NETDEV_NR    5
 +char *NETDEV[]={"ppp","bm","de","fxp","gm"};
 +int HEADSIZE[]={4,14,14,14,14};
 +#else
