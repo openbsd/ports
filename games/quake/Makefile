@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/09 22:29:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/10 02:53:55 pvalchev Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -30,7 +30,7 @@ FLAVORS=		sdl ggi
 FLAVOR?=		sdl
 
 .if ${FLAVOR:L:Msdl} && ${FLAVOR:L:Mggi}
-ERROR="Fatal: Choose only one flavor: sdl or ggi"
+ERRORS="Fatal: Choose only one flavor: sdl or ggi"
 .endif
 
 SUBPACKAGE?=
