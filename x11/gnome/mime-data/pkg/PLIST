@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/08 20:01:36 nino Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/12 19:52:11 marcm Exp $
 lib/pkgconfig/gnome-mime-data-2.0.pc
 @comment man/man5/gnome-vfs-mime.5
 share/application-registry/gnome-vfs.applications
@@ -36,7 +36,9 @@ share/pixmaps/document-icons/gnome-application-x-compress.png
 share/pixmaps/document-icons/gnome-application-x-dc-rom.png
 share/pixmaps/document-icons/gnome-application-x-deb.png
 share/pixmaps/document-icons/gnome-application-x-dia-diagram.png
+share/pixmaps/document-icons/gnome-application-x-dvi.png
 share/pixmaps/document-icons/gnome-application-x-e-theme.png
+share/pixmaps/document-icons/gnome-application-x-flac.png
 share/pixmaps/document-icons/gnome-application-x-font-sunos-news.png
 share/pixmaps/document-icons/gnome-application-x-gameboy-rom.png
 share/pixmaps/document-icons/gnome-application-x-genesis-rom.png
@@ -157,20 +159,24 @@ share/pixmaps/document-icons/i-dvd.png
 share/pixmaps/document-icons/i-executable.png
 share/pixmaps/document-icons/i-fifo.png
 share/pixmaps/document-icons/i-floppy.png
+share/pixmaps/document-icons/i-ftp.png
 share/pixmaps/document-icons/i-harddisk.png
 share/pixmaps/document-icons/i-manual.png
 share/pixmaps/document-icons/i-music-12.png
 share/pixmaps/document-icons/i-music-24.png
 share/pixmaps/document-icons/i-music-36.png
 share/pixmaps/document-icons/i-music.png
+share/pixmaps/document-icons/i-network.png
 share/pixmaps/document-icons/i-nfs.png
 share/pixmaps/document-icons/i-printer.png
 share/pixmaps/document-icons/i-regular-72.png
 share/pixmaps/document-icons/i-regular-96.png
 share/pixmaps/document-icons/i-regular.png
 share/pixmaps/document-icons/i-regular.xml
+share/pixmaps/document-icons/i-smb.png
 share/pixmaps/document-icons/i-sock.png
 share/pixmaps/document-icons/i-spreadsheet.png
+share/pixmaps/document-icons/i-web.png
 share/pixmaps/document-icons/i-zipdisk.png
 @comment @dirrm share/pixmaps/document-icons
 @comment @dirrm share/pixmaps
