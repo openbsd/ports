@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.9 2004/11/14 11:46:15 sturm Exp $
+# $OpenBSD: dpb,v 1.10 2004/12/26 07:48:46 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -412,6 +412,22 @@ sub parse_dependency_file()
  	while (<$fh>) {
  		chomp;
  		my ($a, $b) = split /\s+/;
+
+		# ensure $a and $b are really port specs and not gibberish
+		# category/{subcategory/}*port{\,flavor}*{\,-subpackage}
+		my $borked = 0;
+		foreach my $p ($a, $b) {
+			if (not defined $p or $p eq "") {
+				warn "*** empty port spec in deplist\n";
+				$borked = 1;
+				last;
+			}
+			if (not $p =~ /(\w*\/)+[-.\w]+(,\w+)*(,-[\w]+)*/) {
+				warn "*** broken deplist entry: $p\n";
+				$borked = 1;
+			}
+		}
+		next if $borked == 1;
 
  		# ensure every port depends on itself, needed by build logic
  		# ports depending on the key
