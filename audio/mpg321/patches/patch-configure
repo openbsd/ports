@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/07/26 10:45:23 naddy Exp $
+--- configure.orig	Sat Jul 21 22:44:34 2001
++++ configure	Wed Jul 25 21:57:36 2001
+@@ -2069,7 +2069,10 @@ fi;
+     AO_LIBS="-L$ao_prefix/lib"
+   fi
+ 
+-  AO_LIBS="$AO_LIBS -lao -ldl"
++  AO_LIBS="$AO_LIBS -lao"
++  if test -f /usr/lib/libdl.a; then
++    AO_LIBS="$AO_LIBS -ldl"
++  fi
+ 
+   echo "$as_me:2074: checking for ao" >&5
+ echo $ECHO_N "checking for ao... $ECHO_C" >&6
+@@ -2294,7 +2297,7 @@ done
+ # Because of `break', _AC_PREPROC_IFELSE's cleaning code was skipped.
+ rm -f conftest.err conftest.$ac_ext
+ if $ac_preproc_ok; then
+-  break 2
++  break
+ fi
+ 
+     done

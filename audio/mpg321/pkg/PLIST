@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/26 10:45:23 naddy Exp $
+bin/mpg321
+man/man1/mpg321.1
