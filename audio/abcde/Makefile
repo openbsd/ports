@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/09 10:52:24 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/03/02 14:14:35 lebel Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MS=		http://frantica.lly.org/~rcw/
 MASTER_SITES=	${MS}abcde/
-MASTER_SITES0=	${MS}cd-discid/
+MASTER_SITES0=	${MS}cd-discid/old/
 MASTER_SITES1=	${MS}id3/
 DISTFILES=	${DISTNAME}.tar.gz \
 		cd-discid_0.7.orig.tar.gz:0
