@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/06 08:07:48 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/28 08:33:55 obecian Exp $
+
+COMMENT=	"classical (pen-and-paper) cipher cryptanalysis toolkit"
 
 DISTNAME=	crank-0.0.5
 CATEGORIES=	security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crank
 
