@@ -1,0 +1,16 @@
+$OpenBSD: p-lib_libolgx_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- lib/libolgx/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ lib/libolgx/Imakefile	2003-12-30 01:58:17.000000000 +0100
+@@ -6,9 +6,9 @@
+ #include <Library.tmpl>
+ 
+ 
+-/**/########################################################################
+-/**/# @(#)Imakefile	1.8 28 Jun 1993 SMI
+-/**/# Imakefile for building libxolgx.
++XCOMM #######################################################################
++XCOMM  @(#)Imakefile	1.8 28 Jun 1993 SMI
++XCOMM  Imakefile for building libxolgx.
+ 
+ LIBTARGET = olgx
+ SOREV = $(SOOLGXREV)

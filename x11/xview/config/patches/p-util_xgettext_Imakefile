@@ -1,0 +1,11 @@
+$OpenBSD: p-util_xgettext_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- util/xgettext/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ util/xgettext/Imakefile	2003-12-30 01:53:25.000000000 +0100
+@@ -1,5 +1,5 @@
+-/**/# @(#)Imakefile	1.5 28 Jun 1993 SMI
+-/**/# Imakefile for util/xgettext
++XCOMM  @(#)Imakefile	1.5 28 Jun 1993 SMI
++XCOMM  Imakefile for util/xgettext
+ 
+ #include	<XView.tmpl>
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: p-fonts_bdf_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- fonts/bdf/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ fonts/bdf/Imakefile	2003-12-30 01:51:29.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile	1.6 28 Jun 1993 SMI
+-/**/# Imakefile for fonts/bdf directory.
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile	1.6 28 Jun 1993 SMI
++XCOMM  Imakefile for fonts/bdf directory.
+ 
+ #define IHaveSubdirs
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'

@@ -1,5 +1,13 @@
---- util/Imakefile.orig	Tue Jun 29 07:14:22 1993
-+++ util/Imakefile	Fri Apr  7 02:51:47 2000
+--- util/Imakefile.orig	1993-06-29 07:14:22.000000000 +0200
++++ util/Imakefile	2003-12-30 01:53:41.000000000 +0100
+@@ -1,5 +1,5 @@
+-/**/# @(#)Imakefile	1.8 28 Jun 1993 SMI
+-/**/# Imakefile for util
++XCOMM  @(#)Imakefile	1.8 28 Jun 1993 SMI
++XCOMM  Imakefile for util
+ 
+ #include <XView.tmpl>
+ 
 @@ -16,7 +16,9 @@ SOELIM_DIR = soelim
  
  CONV_DIR = conversion

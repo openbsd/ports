@@ -1,0 +1,15 @@
+$OpenBSD: p-contrib_examples_extensions_panel_items_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- contrib/examples/extensions/panel_items/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ contrib/examples/extensions/panel_items/Imakefile	2003-12-30 01:52:10.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile	1.5 1/7/92 SMI
+-/**/# Imakefile for examples/extensions
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile	1.5 1/7/92 SMI
++XCOMM  Imakefile for examples/extensions
+ 
+ #define InstallSrcs YES
+ LOCATION = examples/extensions/panel_items

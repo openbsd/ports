@@ -1,5 +1,17 @@
 --- clients/cmdtool/Imakefile.orig	1993-06-29 07:12:08.000000000 +0200
-+++ clients/cmdtool/Imakefile	2003-12-30 01:31:11.000000000 +0100
++++ clients/cmdtool/Imakefile	2003-12-30 01:51:03.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile	1.16 28 Jun 1993 SMI
+-/**/# Imakefile for cmdtool and shelltool.
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile	1.16 28 Jun 1993 SMI
++XCOMM  Imakefile for cmdtool and shelltool.
+ 
+ DEFINES = -DSTANDALONE  $(XVCLIENTDEFINES)
+ INCLUDES = -I$(HEADER_DEST) -I$(TOP) $(XVCLIENTINCLUDES)
 @@ -20,7 +20,7 @@ ALLFILES = ${HEADERS} ${INFOFILES} ${MAN
  
  ComplexProgramTarget(cmdtool)

@@ -1,0 +1,28 @@
+$OpenBSD: p-fonts_bdf_100dpi_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- fonts/bdf/100dpi/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ fonts/bdf/100dpi/Imakefile	2003-12-30 01:51:26.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/#####################################################################
+-/**/# @(#)Imakefile	1.8 28 Jun 1993 SMI
+-/**/# Imakefile for text fonts.
++XCOMM ####################################################################
++XCOMM  @(#)Imakefile	1.8 28 Jun 1993 SMI
++XCOMM  Imakefile for text fonts.
+ 
+ SRCS = \
+ 	luBIS08.bdf luBIS10.bdf luBIS12.bdf luBIS14.bdf luBIS18.bdf \
+@@ -115,9 +115,9 @@ FontTarget(lubR19)
+ FontTarget(lutBS19)
+ FontTarget(lutRS19)
+ 
+-/**/#####################################################################
+-/**/# In order to install these fonts, InstallOpenLookFonts must be
+-/**/# YES in either your site.def or XView.cf file.
++XCOMM ####################################################################
++XCOMM  In order to install these fonts, InstallOpenLookFonts must be
++XCOMM  YES in either your site.def or XView.cf file.
+ 
+ InstallFonts($(TEXTFONT_FONTINSTDIR)/ol100dpi)
+ InstallFontAliases($(TEXTFONT_FONTINSTDIR)/ol100dpi)

@@ -1,0 +1,16 @@
+$OpenBSD: p-lib_libxview_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- lib/libxview/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ lib/libxview/Imakefile	2003-12-30 01:54:48.000000000 +0100
+@@ -5,9 +5,9 @@
+ #endif
+ #include <Library.tmpl>
+ 
+-/**/###########################################################################
+-/**/# @(#)Imakefile	1.5 24 Mar 1992 SMI
+-/**/# makefile rules for Imakefile in libxview library directory.
++XCOMM ##########################################################################
++XCOMM  @(#)Imakefile	1.5 24 Mar 1992 SMI
++XCOMM  makefile rules for Imakefile in libxview library directory.
+ 
+ LIBTARGET = xview
+ SOREV = $(SOXVIEWREV)

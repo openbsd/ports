@@ -1,0 +1,15 @@
+$OpenBSD: p-contrib_examples_frames_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- contrib/examples/frames/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ contrib/examples/frames/Imakefile	2003-12-30 01:52:26.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile 1.7 90/08/02 SMI
+-/**/# Imakefile for examples/frames
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile 1.7 90/08/02 SMI
++XCOMM  Imakefile for examples/frames
+ 
+ #define InstallSrcs YES
+ LOCATION = examples/frames

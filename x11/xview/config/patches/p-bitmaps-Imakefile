@@ -1,5 +1,17 @@
---- bitmaps/Imakefile.orig	Tue Jun 29 07:19:54 1993
-+++ bitmaps/Imakefile	Tue Apr  4 02:59:36 2000
+--- bitmaps/Imakefile.orig	1993-06-29 07:19:54.000000000 +0200
++++ bitmaps/Imakefile	2003-12-30 01:58:31.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/########################################################################
+-/**/# @(#)Imakefile	1.6 28 Jun 1993 SMI
+-/**/# Imakefile for images directory.  XView release 2.0.
++XCOMM #######################################################################
++XCOMM  @(#)Imakefile	1.6 28 Jun 1993 SMI
++XCOMM  Imakefile for images directory.  XView release 2.0.
+ 
+ 
+ CORE_BITMAPS = \ 
 @@ -34,12 +34,12 @@ SRCS =  \
  
  ALLFILES = $(BITMAPS) 

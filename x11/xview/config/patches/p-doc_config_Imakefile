@@ -1,0 +1,15 @@
+$OpenBSD: p-doc_config_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- doc/config/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ doc/config/Imakefile	2003-12-30 01:51:41.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile 1.1 89/07/21 SMI
+-/**/# Imakefile for doc/config directory.
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile 1.1 89/07/21 SMI
++XCOMM  Imakefile for doc/config directory.
+ 
+ #define IHaveSubdirs 
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'

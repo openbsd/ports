@@ -1,0 +1,15 @@
+$OpenBSD: p-contrib_examples_selection_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- contrib/examples/selection/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ contrib/examples/selection/Imakefile	2003-12-30 01:53:02.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile	1.4 1/7/92 SMI
+-/**/# Imakefile for examples/cursor
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile	1.4 1/7/92 SMI
++XCOMM  Imakefile for examples/cursor
+ 
+ #define InstallSrcs YES
+ LOCATION = examples/selection

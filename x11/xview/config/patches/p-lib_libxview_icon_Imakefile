@@ -1,0 +1,14 @@
+$OpenBSD: p-lib_libxview_icon_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- lib/libxview/icon/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ lib/libxview/icon/Imakefile	2003-12-30 01:54:55.000000000 +0100
+@@ -5,8 +5,8 @@
+ #endif
+ #include <Library.tmpl>
+ 
+-/**/###########################################################################
+-/**/# @(#)Imakefile	1.8 28 Jun 1993 SMI
++XCOMM ##########################################################################
++XCOMM  @(#)Imakefile	1.8 28 Jun 1993 SMI
+ 
+ #ifndef SubdirHasTextObjs
+ #define SubdirHasTextObjs YES

@@ -1,0 +1,14 @@
+$OpenBSD: p-lib_libxview_canvas_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- lib/libxview/canvas/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ lib/libxview/canvas/Imakefile	2003-12-30 01:53:54.000000000 +0100
+@@ -5,8 +5,8 @@
+ #endif
+ #include <Library.tmpl>
+ 
+-/**/###########################################################################
+-/**/# @(#)Imakefile	1.5 24 Mar 1992 SMI
++XCOMM ##########################################################################
++XCOMM  @(#)Imakefile	1.5 24 Mar 1992 SMI
+ 
+ #ifndef SubdirHasTextObjs
+ #define SubdirHasTextObjs YES

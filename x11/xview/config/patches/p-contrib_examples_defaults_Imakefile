@@ -1,0 +1,15 @@
+$OpenBSD: p-contrib_examples_defaults_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- contrib/examples/defaults/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ contrib/examples/defaults/Imakefile	2003-12-30 01:52:07.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile 1.7 90/08/02 SMI
+-/**/# Imakefile for examples/defaults
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile 1.7 90/08/02 SMI
++XCOMM  Imakefile for examples/defaults
+ 
+ #define InstallSrcs YES
+ LOCATION = examples/defaults

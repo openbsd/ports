@@ -1,5 +1,5 @@
 --- config/XView.tmpl.orig	1994-06-27 04:10:00.000000000 +0200
-+++ config/XView.tmpl	2003-12-29 22:21:48.000000000 +0100
++++ config/XView.tmpl	2003-12-30 01:49:57.000000000 +0100
 @@ -2,10 +2,10 @@
  #define XViewTmpl YES
  
@@ -8,10 +8,10 @@
 -/**/# @(#)XView.tmpl	1.15 12 May 1993 SMI
 -/**/# XView.tmpl for XView release 3.2.  Template to add additional config
 -/**/# rules to those supplied with X Version 11 release 5.
-+/**/XCOMM
-+/**/XCOMM @(#)XView.tmpl	1.15 12 May 1993 SMI
-+/**/XCOMM XView.tmpl for XView release 3.2.  Template to add additional config
-+/**/XCOMM rules to those supplied with X Version 11 release 5.
++XCOMM ##########################################################################
++XCOMM @(#)XView.tmpl	1.15 12 May 1993 SMI
++XCOMM XView.tmpl for XView release 3.2.  Template to add additional config
++XCOMM rules to those supplied with X Version 11 release 5.
  
  /***************************************************************************/
  /***************************************************************************/

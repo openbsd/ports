@@ -1,5 +1,16 @@
 --- lib/libxview/file_chooser/Imakefile.orig	1993-06-29 07:17:58.000000000 +0200
-+++ lib/libxview/file_chooser/Imakefile	2003-12-30 01:31:12.000000000 +0100
++++ lib/libxview/file_chooser/Imakefile	2003-12-30 01:58:09.000000000 +0100
+@@ -6,8 +6,8 @@
+ #include <Library.tmpl>
+ 
+ 
+-/**/###########################################################################
+-/**/# @(#)Imakefile 1.10 90/01/11 SMI
++XCOMM ##########################################################################
++XCOMM  @(#)Imakefile 1.10 90/01/11 SMI
+ 
+ #ifndef SubdirHasTextObjs
+ #define SubdirHasTextObjs YES
 @@ -27,35 +27,35 @@ HDRSPRIVATE=	fchsr_impl.h flist_impl.h x
  		path_impl.h hist_impl.h
  

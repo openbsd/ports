@@ -1,0 +1,15 @@
+$OpenBSD: p-fonts_bdf_75dpi_Imakefile,v 1.1 2003/12/30 01:05:58 espie Exp $
+--- fonts/bdf/75dpi/Imakefile.orig	2003-12-30 01:50:29.000000000 +0100
++++ fonts/bdf/75dpi/Imakefile	2003-12-30 01:51:13.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/#####################################################################
+-/**/# @(#)Imakefile	1.10 28 Jun 1993 SMI
+-/**/# Imakefile for text fonts.
++XCOMM ####################################################################
++XCOMM  @(#)Imakefile	1.10 28 Jun 1993 SMI
++XCOMM  Imakefile for text fonts.
+ 
+ SRCS = \
+ 	luBIS08.bdf luBIS10.bdf luBIS12.bdf luBIS14.bdf luBIS18.bdf \
