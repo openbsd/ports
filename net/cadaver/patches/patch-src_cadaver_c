@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_cadaver_c,v 1.1 2004/04/14 17:10:34 lebel Exp $
+--- src/cadaver.c.orig	Wed Apr 14 18:43:11 2004
++++ src/cadaver.c	Wed Apr 14 18:45:10 2004
+@@ -711,7 +711,7 @@
+     char *sep = strchr(rl_line_buffer, ' ');
+ 
+     if (start == 0) {
+-	matches = rl_completion_matches(text, command_generator);
++	matches = rl_completion_matches((char *)text, command_generator);
+     }
+     else if (sep != NULL) {
+ 	char *cname = ne_strndup(rl_line_buffer, sep - rl_line_buffer);
+@@ -723,7 +723,7 @@
+ 	    case parmscope_none:
+ 		break;
+ 	    case parmscope_local:
+-		matches = rl_completion_matches(text, 
++		matches = rl_completion_matches((char *)text, 
+ 						rl_filename_completion_function);
+ 		break;
+ 	    case parmscope_option:
+@@ -731,7 +731,7 @@
+ 		break;
+ 	    case parmscope_remote:
+ 		if (have_connection) {
+-		    matches = rl_completion_matches(text, remote_completion);
++		    matches = rl_completion_matches((char *)text, remote_completion);
+ 		}
+ 		break;
+ 	    }

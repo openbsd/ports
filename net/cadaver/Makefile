@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/27 16:42:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2004/04/14 17:10:34 lebel Exp $
 
 COMMENT=		"command-line WebDAV client"
 
-VERSION=		0.22.0
+VERSION=		0.22.1
 DISTNAME=		cadaver-${VERSION}
 CATEGORIES=     	net www
 
@@ -19,9 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.webdav.org/cadaver/
+MASTER_SITES=		${HOMEPAGE}
 
-ALL_TARGET=		
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		--with-ssl --with-xml2 --with-included-neon
