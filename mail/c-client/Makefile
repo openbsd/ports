@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/16 23:23:10 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/11 16:32:45 brad Exp $
 
-DISTNAME=	imap-4.7c2
-PKGNAME=	c-client-4.7c2
+DISTNAME=	imap-2000
+PKGNAME=	c-client-2000
 CATEGORIES=	mail devel
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/
+NEED_VERSION=	1.336
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-SHLIB=	libc-client.so.1.0
+SHLIB=	libc-client.so.2.0
 SUBST_VARS=	SHLIB
 
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}"
 
 ALL_TARGET=	bso
 
-WRKDIST=	${WRKDIR}/imap-4.7c
-
 HEADERS=	dummy.h env.h env_unix.h fdstring.h flstring.h fs.h ftl.h \
 		imap4r1.h linkage.c linkage.h mail.h misc.h nl.h nntp.h \
-		osdep.h pop3.h rfc822.h smtp.h tcp.h
+		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/c-client
