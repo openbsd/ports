@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 03:59:02 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/01 20:55:50 millert Exp $
 
 COMMENT=	"Libretto BIOS Setting Program"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
-EXTRACT_SUFX=	.tar.gz
 
 WRKDIST=	${WRKDIR}/libapm
 DOCDIR=		${PREFIX}/share/doc/libretto-config
