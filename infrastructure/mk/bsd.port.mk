@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-#	$OpenBSD: bsd.port.mk,v 1.92 1999/05/23 22:45:15 brad Exp $
+#	$OpenBSD: bsd.port.mk,v 1.93 1999/05/25 20:38:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -27,7 +27,7 @@ OpenBSD_MAINTAINER= ports-admin@openbsd.org
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build
 
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.92 1999/05/23 22:45:15 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.93 1999/05/25 20:38:33 espie Exp $$
 .if defined(NEED_VERSION)
 _VERSION_REVISION=${FULL_REVISION:M[0-9]*.*}
 
