@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2004/01/14 19:51:40 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2004/02/27 21:04:50 pvalchev Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -158,7 +158,7 @@ CONFIGURE_ARGS+=	--with-fpectl --with-threads
 
 REGRESS_TARGET=	test
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "amd64"
 NO64BIT=	\#
 .endif
 
