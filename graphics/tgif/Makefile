@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/02 18:30:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/09/10 14:10:41 jakob Exp $
 
-BROKEN=	"All sorts of mktemp warnings, most of them genuine"
-
-DISTNAME=	tgif-4.1.27
+DISTNAME=	tgif-4.1.39
 CATEGORIES=	graphics
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
+
+HOMEPAGE=	http://bourbon.cs.umd.edu:8001/tgif/
+
+MAINTAINER=	jakob@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
-MAINTAINER=	jakob@openbsd.org
-HOMEPAGE=	http://bourbon.cs.umd.edu:8001/tgif/
-
 RUN_DEPENDS=	giftopnm::graphics/netpbm
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 
 TGIFDOC=	${PREFIX}/share/doc/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
@@ -27,7 +26,7 @@ READMES=	Copyright HISTORY README
 
 post-extract:
 	@rm -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
-	@cp ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
+	@cp ${WRKDIR}/${DISTNAME}/Tgif.tmpl-openbsd \
 		${WRKDIR}/${DISTNAME}/Tgif.tmpl
 
 post-install:
