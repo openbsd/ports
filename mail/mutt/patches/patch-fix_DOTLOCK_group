@@ -1,0 +1,11 @@
+--- configure.orig	Sun Feb 28 03:08:02 1999
++++ configure	Fri Mar 19 14:31:58 1999
+@@ -2961,7 +2961,7 @@
+ 
+ 
+ if test x$mutt_cv_setgid = xyes; then
+-	DOTLOCK_GROUP='mail'
++	DOTLOCK_GROUP='wheel'
+ 	DOTLOCK_PERMISSION=2755
+ else
+ 	DOTLOCK_GROUP=''
