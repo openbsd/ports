@@ -1,6 +1,6 @@
---- Makefile.orig	Sun May 28 19:20:57 2000
-+++ Makefile	Sun May 28 19:21:49 2000
-@@ -40,6 +40,13 @@
+--- Makefile.orig	Thu Nov  4 19:43:51 1999
++++ Makefile	Wed Jun 14 13:39:28 2000
+@@ -40,12 +40,17 @@
  endif
  
  #
@@ -14,7 +14,13 @@
  # CFLAGS
  #
  ifneq ($(DEBUG),NO)
-@@ -74,7 +81,7 @@
+   override CFLAGS          = -DDEBUG -g
+-else
+-  override CFLAGS          = -O2 -m486
+ endif
+ C_WARN_FLAG                = -Wall
+ override CFLAGS           += $(C_WARN_FLAG) $(INC) $(CF_VERS)
+@@ -74,7 +79,7 @@
    override LDFLAGS        := -g $(LDFLAGS)
  endif
  
@@ -23,7 +29,7 @@
  
  override CSRC              = $(wildcard *.c)
  override PIXMAPS           = $(wildcard bitmaps/*.x?m)
-@@ -102,11 +109,11 @@
+@@ -102,11 +107,11 @@
  	mkdir -p $(FXTV_LIBDIR)/bitmaps
  	install -c -m 444 -o root $(PIXMAPS) $(FXTV_LIBDIR)/bitmaps
  	install -c -m 444 -o root README $(FXTV_LIBDIR)
