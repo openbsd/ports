@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/03/27 01:04:46 ian Exp $
+
 COMMENT="compile Java source into .class files (quickly!)"
 
-# Jikes, a fast Java compiler. As of OpenBSD 2.8, compilation needs
-# lots of space - up your limits and/or add swap space as appropriate.
+# Jikes, a fast Java compiler. 
 
-DISTNAME=	jikes-1.18
+DISTNAME=	jikes-1.22
 CATEGORIES=	lang
 HOMEPAGE=	http://oss.software.ibm.com/developerworks/opensource/jikes/
-MASTER_SITES=	ftp://www-126.ibm.com/pub/jikes/1.18/
+MASTER_SITES=	ftp://www-126.ibm.com/pub/jikes/1.22/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>

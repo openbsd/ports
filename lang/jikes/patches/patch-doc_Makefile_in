@@ -1,11 +1,12 @@
---- doc/Makefile.in.orig	Thu Nov  1 15:29:10 2001
-+++ doc/Makefile.in	Thu Nov  1 15:29:32 2001
-@@ -75,7 +75,7 @@
- 
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2005/03/27 01:04:46 ian Exp $
+--- doc/Makefile.in.orig	Fri Mar 25 17:33:51 2005
++++ doc/Makefile.in	Fri Mar 25 17:34:01 2005
+@@ -158,7 +158,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  man_MANS = jikes.1
- 
--docdir = $(prefix)/doc/${PACKAGE}-${VERSION}
+-docdir = $(datadir)/doc/${PACKAGE}-${VERSION}
 +docdir = $(prefix)/share/doc/${PACKAGE}
- 
  doc_DATA = \
  license.htm
+ 
