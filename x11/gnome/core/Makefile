@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/13 22:25:12 lebel Exp $
 
 COMMENT=		"the core GNOME system"
 V=			1.4.0.4
@@ -15,7 +15,7 @@ LIB_DEPENDS=		glade.4::devel/libglade,gnome \
 			gnome.36::x11/gnome/libs \
 			ghttp.1::www/libghttp \
 			gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
-			capplet::x11/controlcenter
+			capplet::x11/gnome/controlcenter
 
 BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
 RUN_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
