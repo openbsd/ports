@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/02/16 20:41:27 sturm Exp $
 bin/dcalc
 bin/dcat
+bin/diskstat
 bin/dls
 bin/dstat
 bin/ffind
@@ -11,15 +12,19 @@ bin/icat
 bin/ifind
 bin/ils
 bin/istat
+bin/jcat
+bin/jls
 bin/mactime
 bin/mmls
+bin/sigfind
 bin/sorter
+bin/sstrings
 @man man/man1/dcalc.1
 @man man/man1/dcat.1
+@man man/man1/diskstat.1
 @man man/man1/dls.1
 @man man/man1/dstat.1
 @man man/man1/ffind.1
-@man man/man1/file.1
 @man man/man1/fls.1
 @man man/man1/fsstat.1
 @man man/man1/hfind.1
@@ -27,13 +32,18 @@ bin/sorter
 @man man/man1/ifind.1
 @man man/man1/ils.1
 @man man/man1/istat.1
+@man man/man1/jcat.1
+@man man/man1/jls.1
 @man man/man1/mactime.1
 @man man/man1/mmls.1
+@man man/man1/sigfind.1
 @man man/man1/sorter.1
+@comment man/man1/sorter.1.orig
 share/doc/sleuthkit/
 share/doc/sleuthkit/CHANGES.FROM.TCT
 share/doc/sleuthkit/README
 share/doc/sleuthkit/README.FIRST
+share/doc/sleuthkit/README.txt
 share/doc/sleuthkit/additional-resources
 share/doc/sleuthkit/bibliography
 share/doc/sleuthkit/help-recovering-file
@@ -44,11 +54,12 @@ share/doc/sleuthkit/ref_fs.txt
 share/doc/sleuthkit/ref_timeline.txt
 share/doc/sleuthkit/skins_fat.txt
 share/doc/sleuthkit/skins_ntfs.txt
-share/examples/sleuthkit/
-share/examples/sleuthkit/default.sort
-share/examples/sleuthkit/freebsd.sort
-share/examples/sleuthkit/images.sort
-share/examples/sleuthkit/linux.sort
-share/examples/sleuthkit/openbsd.sort
-share/examples/sleuthkit/solaris.sort
-share/examples/sleuthkit/windows.sort
+share/sleuthkit/
+share/sleuthkit/sorter/
+share/sleuthkit/sorter/default.sort
+share/sleuthkit/sorter/freebsd.sort
+share/sleuthkit/sorter/images.sort
+share/sleuthkit/sorter/linux.sort
+share/sleuthkit/sorter/openbsd.sort
+share/sleuthkit/sorter/solaris.sort
+share/sleuthkit/sorter/windows.sort

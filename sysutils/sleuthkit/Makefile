@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/16 20:41:27 sturm Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
-VERSION=		1.66
+VERSION=		1.73
 DISTNAME=		sleuthkit-${VERSION}
 CATEGORIES=		sysutils security
 
@@ -18,23 +18,32 @@ PERMIT_DISTFILES_CDROM=	"commercial contributor must indemnify all others"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+RUN_DEPENDS=		:p5-DateManip-*:converters/p5-DateManip
+
 MAKE_FLAGS=		CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 
 NO_REGRESS=		Yes
 
 SCRIPTS=		mactime sorter
-PROGRAMS=		dcalc dcat dls dstat ffind icat fls fsstat \
-			icat ifind ils istat hfind mmls
-DOCS=			README docs/* tct.docs/*
-EXAMPLES=		share/sorter/*
+PROGRAMS=		dcalc dcat diskstat dls dstat ffind fls fsstat \
+			hfind icat ifind ils istat jcat jls mmls sigfind \
+			sstrings
+DOCS=			README.txt docs/* tct.docs/*
+SORTFILES=		share/sorter/*
+
+pre-configure:
+	@perl -pi -e "s:%%PREFIX%%:${PREFIX}:" ${WRKSRC}/src/sorter/install \
+		${WRKSRC}/man/man1/sorter.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sleuthkit
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sleuthkit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sleuthkit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sleuthkit/sorter
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} * ${PREFIX}/man/man1
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/sleuthkit
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/sleuthkit
+	cd ${WRKSRC} && ${INSTALL_DATA} ${SORTFILES} \
+		${PREFIX}/share/sleuthkit/sorter
 	 
 .include <bsd.port.mk>
