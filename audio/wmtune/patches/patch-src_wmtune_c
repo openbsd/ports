@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_wmtune_c,v 1.1.1.1 2001/03/16 15:30:48 wilfried Exp $
+$OpenBSD: patch-src_wmtune_c,v 1.2 2001/12/20 21:18:02 naddy Exp $
 --- src/wmtune.c.orig	Sat Sep 11 11:49:24 1999
-+++ src/wmtune.c	Tue Jan 30 22:19:45 2001
-@@ -18,27 +18,24 @@
++++ src/wmtune.c	Mon Dec 10 08:44:12 2001
+@@ -18,102 +18,76 @@
   ****************************************************************
   */
  
@@ -20,64 +20,146 @@ $OpenBSD: patch-src_wmtune_c,v 1.1.1.1 2001/03/16 15:30:48 wilfried Exp $
 -#	include <asm/io.h>
 -#endif
 -
- #include <stdlib.h>
+-#include <stdlib.h>
++#include <err.h>
++#include <fcntl.h>
  #include <stdio.h>
++#include <stdlib.h>
  #include <string.h>
-+#include <errno.h>
++#include <time.h>
  #include <unistd.h>
- #include <fcntl.h>
+-#include <fcntl.h>
  
-+#ifdef linux
-+#warning Compiling for Linux using ioperm/iopl style IO.
-+#include <asm/io.h>
-+#elif (defined __NetBSD__ || defined __OpenBSD__)
-+#include <machine/pio.h>
+-#include <X11/xpm.h>
++#ifdef ZOLTRIX
++#include <sys/syscall.h>
 +#include <machine/sysarch.h>
-+#elif defined __FreeBSD__
-+#warning Compiling for FreeBSD using /dev/io style IO.
-+#include <machine/cpufunc.h>
-+#endif
-+
- #include <X11/xpm.h>
++#include <machine/pio.h>
++#else
++#include <sys/ioctl.h>
++#include <sys/radioio.h>
++#endif /* ZOLTRIX */
  
- #include <time.h>
-@@ -55,7 +52,10 @@
- #define OFF 0
- #define TRUE 1
- #define FALSE 0
-+
-+#ifdef RADIOTRACK
- #define FCODE(f)    ((int)(((float)(f)-88.0)*40)+0xf6c)
-+#endif
+-#include <time.h>
++#include <X11/xpm.h>
  
- /* #define RADIOTRACK */
- /* #define KERNEL     */
-@@ -68,17 +68,19 @@
- 	#include <linux/ioctl.h>
+ #include "wmgeneral/wmgeneral.h"
+ #include "wmtune-master.xpm"
+ #include "wmtune-mask.xbm"
+ 
+-// Defines
+-#define VERSION "1.0"
+-#define RCFILE "wmtunerc"
+-#define LIMBO 3
+-#define ON 1
+-#define OFF 0
+-#define TRUE 1
+-#define FALSE 0
+-#define FCODE(f)    ((int)(((float)(f)-88.0)*40)+0xf6c)
+-
+-/* #define RADIOTRACK */
+-/* #define KERNEL     */
+-/* #define ZOLTRIX    */
+-
+-#ifdef KERNEL
+-	/* Kernel driver support */
+-	#include <linux/types.h>
+-	#include <linux/videodev.h>
+-	#include <linux/ioctl.h>
++/* Defines */
++const char *VERSION = "1.2-OpenBSD"
++#ifdef ZOLTRIX
++	"-zoltrix"
  #endif
++;
++const char *RCFILE = "wmtunerc";
++#define TMPBUFLEN	128
++#define LIMBO	3
++#define ON	1
++#define OFF	0
++#define TRUE	1
++#define FALSE	0
++
++/* Data Types */
++unsigned int max_presets;
++unsigned int hour, minute;
++struct tm *time_struct;
++long current_time;
++
++int preset_count = 1;
++int cmdline_preset = OFF;
++int radio_status = OFF;
++int auto_radio_on = OFF;
++int auto_alarm_start = OFF;
++
++int volume = 0;
++
++struct presets_t {
++	double freq;
++} *presets;
  
 -#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
 -	#define OUTW(word,port)  outw(port,word)
 -	#define OUTB(byte,port)  outb(port,byte)
--#else
-+#ifdef linux 
- 	#define OUTW(word,port)  outw(word,port)
- 	#define OUTB(byte,port)  outb(byte,port)
-+#else
-+	#define OUTW(word,port)  outw(port,word)
-+	#define OUTB(byte,port)  outb(port,byte)
- #endif
- 
- // Data Types
++#ifdef ZOLTRIX
++unsigned long iomap[32];
++struct i386_set_ioperm_args ioperms;
++unsigned int rport = 0x000;
+ #else
+-	#define OUTW(word,port)  outw(word,port)
+-	#define OUTB(byte,port)  outb(byte,port)
+-#endif
+-
+-// Data Types
 -#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
-+#if (defined __FreeBSD__ || defined __NetBSD__)
- 	int fpiopl;
-+#elif defined __OpenBSD__
-+	unsigned long iomap[32];
- #endif
+-	int fpiopl;
+-#endif
+-
+-	unsigned int max_presets;
+-	unsigned int hour=0,minute=0;
+-
+-	struct tm *time_struct;
+-	long current_time;
+-
+-	unsigned int rport=0x000;
+-	double freqf=0.0;
+-	int volume = 0;
+-
+-	char *myname;
+-	char temp[128];
+-
+-	int i;
+-
+-	XEvent Event;
+-
+-	int but_stat=-1;
+-	int but_timer=0;
+-	
+-	int auto_radio_on = OFF;
+-	int auto_alarm_start = OFF;
+-	int cmdline_preset = OFF;
+-	int preset_count=1;
+-	int radio_status=OFF;
+-	int alarm_state=0;
+-
+-struct { double freq; } *presets;
++int VOLUME_STEP;
++static struct radio_info ri;
++char *radiodevice = NULL;
++#define	GET_INFO	0
++#define	SET_INFO	1
++#endif /* ZOLTRIX */
  
- 	unsigned int max_presets;
-@@ -127,7 +129,6 @@ void VolumeUp(void);
+-// Functions
+-void ParseCMDLine(int argc, char *argv[]);
++/* Functions */
++void ParseCMDLine(int, char **);
+ int ParseRCFile(char *);
+-void CheckIOPerms(void);
+ void RadioOff(void);
+ void RadioOn(void);
+ void DrawDigitalFreq(void);
+@@ -127,7 +101,6 @@ void VolumeUp(void);
  void VolumeDown(void);
  void TuneUp(void);
  void TuneDown(void);
@@ -85,252 +167,1689 @@ $OpenBSD: patch-src_wmtune_c,v 1.1.1.1 2001/03/16 15:30:48 wilfried Exp $
  void PresetHandler(int);
  void ScanUp(void);
  void ScanDown(void);
-@@ -139,10 +140,16 @@ int TestTune(void);
+@@ -137,333 +110,251 @@ void FastFreqUpdate(void);
+ void TuneRadio(void);
+ int TestTune(void);
  void TestFreq(void);
++void usage(void);
++
  #ifdef ZOLTRIX
- void tuneFreq(double freq,int fast);
-+#elif defined RADIOTRACK
-+void RadioOut(int, int);
-+#elif defined AZTECH
-+void Change_Frequency(unsigned long);
-+void send_zero(void);
-+void send_one(void);
+-void tuneFreq(double freq,int fast);
++void tuneFreq(double, int);
++void CheckIOPerms(void);
++inline int cardRead(int);
++inline void cardWrite(int);
++#else
++int SetGetRadioInfo(int);
++void GetVolumeStep(void);
  #endif
  
- // Main
+-// Main
 -void main(int argc,char *argv[])
-+int main(int argc,char *argv[])
- {
- 	myname = argv[0];
- 	ParseCMDLine(argc,argv);
-@@ -214,13 +221,18 @@ while (1)
- 			break;
+-{
+-	myname = argv[0];
+-	ParseCMDLine(argc,argv);
+-
+-	strcpy(temp,(char*)getenv("HOME"));
+-	strcat(temp,"/.");
+-	strcat(temp,RCFILE);
+-	if (ParseRCFile(temp) == 1)
+-	{
+-		strcpy(temp, "/etc/");
+-		strcat(temp, RCFILE);
++int main(int argc,char **argv) {
++	char temp[TMPBUFLEN];
++	char *home;
++	XEvent Event;
++	int but_stat = -1;
++	int but_timer = 0;
++	int alarm_state = 0;
++	int i = 0;
++
++	ParseCMDLine(argc, argv);
++
++	home = getenv("HOME");
++	if (home == NULL)
++		home = ".";
++	strlcpy(temp, home, TMPBUFLEN);
++	strlcat(temp, "/.", TMPBUFLEN);
++	strlcat(temp, RCFILE, TMPBUFLEN);
++
++	if (ParseRCFile(temp) == 1) {
++		strlcpy(temp, "/etc/", TMPBUFLEN);
++		strlcat(temp, RCFILE, TMPBUFLEN);
+ 		if (ParseRCFile(temp) == 1)
+-		{
+-			fprintf(stderr,"User(~/.%s) or global(/etc/%s) configuration files not found.\n",RCFILE,RCFILE);
+-			exit(1);
+-		}
++			errx(1, "~/.%s or /etc/%s configuration files not found", RCFILE, RCFILE);
+ 	}
+ 
+-#ifndef KERNEL
++#ifdef ZOLTRIX
+ 	CheckIOPerms();
++#else
++	if (SetGetRadioInfo(GET_INFO) < 0)
++		errx(1, "Cannot manage the FM tuner");
++	GetVolumeStep();
+ #endif
++
+ 	if (cmdline_preset == ON)
+-	{
+-		if (!(preset_count <= max_presets && preset_count >= 1))
+-		{
+-			fprintf(stderr,"Selected preset number is not valid in your %s file.\n",RCFILE);
+-			exit(1);
+-		}
+-	}
++		if (preset_count > max_presets || preset_count < 1)
++			errx(1, "Selected preset number is not valid in your %s file", RCFILE);
+ 
+-	freqf = presets[preset_count].freq;
++	presets[0].freq = presets[preset_count].freq;
+ 
+ 	openXwindow(argc,argv,wmtune_master_xpm,wmtune_mask_bits,
+ 				wmtune_mask_width,wmtune_mask_height);
+ 
+-	AddMouseRegion(0,47,48,59,59);		// ON/OFF BUTTON
+-	AddMouseRegion(1,5,35,16,44);		// FINE TUNE UP (+)
+-	AddMouseRegion(2,16,35,27,44);		// FINE TUNE DOWN (-)
+-	AddMouseRegion(3,27,35,38,44);		// SCAN UP
+-	AddMouseRegion(4,38,35,49,44);		// SCAN DOWN
+-	AddMouseRegion(5,49,35,59,44);		// ALARM BUTTON
+-	AddMouseRegion(6,23,48,35,59);		// LEFT PRESET SCAN BUTTON
+-	AddMouseRegion(7,35,48,47,59);		// RIGHT PRESET SCAN BUTTON
++	AddMouseRegion(0, 47, 48, 59, 59);	/* ON/OFF BUTTON */
++	AddMouseRegion(1, 5, 35, 16, 44);	/* FINE TUNE UP (+) */
++	AddMouseRegion(2, 16, 35, 27, 44);	/* FINE TUNE DOWN (-) */
++	AddMouseRegion(3, 27, 35, 38, 44);	/* SCAN UP */
++	AddMouseRegion(4, 38, 35, 49, 44);	/* SCAN DOWN */
++	AddMouseRegion(5, 49, 35, 59, 44);	/* ALARM BUTTON */
++	AddMouseRegion(6, 23, 48, 35, 59);	/* LEFT PRESET SCAN BUTTON */
++	AddMouseRegion(7, 35, 48, 47, 59);	/* RIGHT PRESET SCAN BUTTON */
+ 
+-	if (auto_alarm_start == ON)
+-	{
++	if (auto_alarm_start == ON) {
+ 		alarm_state = ON;
+ 		DrawDigitalTime(hour,minute);
+-		copyXPMArea(117, 70, 5, 6, 6, 23); // Light On
++		copyXPMArea(117, 70, 5, 6, 6, 23); /* Light On */
+ 		usleep(300000L);
+ 		RedrawWindow();
+ 	}
+ 
+-	if (auto_radio_on == ON)
+-	{
++	if (auto_radio_on == ON) {
+ 		RadioOn();
+ 		RedrawWindow();
+ 	}
+ 
+-while (1)
+-{
+-	while (XPending(display))
+-	{
+-		XNextEvent(display, &Event);
+-		switch (Event.type) 
+-		{
++	while (1) {
++		while (XPending(display)) {
++			XNextEvent(display, &Event);
++			switch (Event.type) {
+ 			case Expose:
+ 				RedrawWindow();
+-			break;
++				break;
  			case DestroyNotify:
  				XCloseDisplay(display);
 -				#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
-+				#if (defined __FreeBSD__ || defined __NetBSD__)
- 				close(fpiopl);
-+				#elif defined __OpenBSD__
+-				close(fpiopl);
+-				#else
+-					#ifdef RADIOTRACK
+-					ioperm(rport,2,0);
+-					#elif defined ZOLTRIX
+-					ioperm(rport,4,0);
+-					#endif
+-				#endif
++#ifdef ZOLTRIX
 +				memset(iomap, 0xFFFF, sizeof(iomap));
-+				i386_set_ioperm(iomap);
- 				#else
- 					#ifdef RADIOTRACK
- 					ioperm(rport,2,0);
- 					#elif defined ZOLTRIX
- 					ioperm(rport,4,0);
-+					#elif defined AZTECH
-+					ioperm(rport,1,0);
- 					#endif
- 				#endif
++				ioperms.iomap = iomap;
++				sysarch(I386_SET_IOPERM, (char *)&ioperms);
++#endif /* NATIVE */
  				exit(0);
-@@ -434,8 +446,8 @@ while (1)
- 	usleep(5000);
- 	if (alarm_state == ON)
- 	{
+-			break;
++				break;
+ 			case ButtonPress:
+ 				i = CheckMouseRegion(Event.xbutton.x, Event.xbutton.y);
+-					switch (i)
+-					{
+-					case 0:			// ON/OFF BUTTON
+-						ButtonDown(0);
+-					break;
+-					case 1:			// FINE TUNE UP (+)
+-						ButtonDown(1);
+-						but_timer = 0;
+-					break;
+-					case 2:			// FINE TUNE DOWN (-)
+-						ButtonDown(2);
+-						but_timer = 0;
+-					break;
+-					case 3:			// SCAN UP
+-						ButtonDown(3);
+-						but_timer = 0;
+-					break;
+-					case 4:			// SCAN DOWN
+-						ButtonDown(4);
+-						but_timer = 0;
+-					break;
+-					case 5:			// ALARM BUTTON
+-						ButtonDown(5);
+-					break;
+-					case 6:			// LEFT PRESET SCAN BUTTON
+-						ButtonDown(6);
+-					break;
+-					case 7:			// RIGHT PRESET SCAN BUTTON
+-						ButtonDown(7);
+-					break;
+-				}
++				ButtonDown(i);
++				if (i > 0 && i < 5)
++					but_timer = 0;
+ 				but_stat = i;
+-			break;
++				break;
+ 			case ButtonRelease:
+-				switch (but_stat) 
+-				{
+-					case 0:			// ON/OFF BUTTON
+-						ButtonUp(0);
+-					break;
+-					case 1:			// FINE TUNE UP (+)
+-						ButtonUp(1);
+-					break;
+-					case 2:			// FINE TUNE DOWN (-)
+-						ButtonUp(2);
+-					break;
+-					case 3:			// SCAN UP
+-						ButtonUp(3);
+-					break;
+-					case 4:			// SCAN DOWN
+-						ButtonUp(4);
+-					break;
+-					case 5:			// ALARM BUTTON
+-						ButtonUp(5);
+-					break;
+-					case 6:			// LEFT PRESET SCAN BUTTON
+-						ButtonUp(6);
+-					break;
+-					case 7:			// RIGHT PRESET SCAN BUTTON
+-						ButtonUp(7);
+-					break;
+-				}
+-				if (i == but_stat && but_stat >= 0)
+-				{
+-			if  (radio_status == OFF || alarm_state == LIMBO)
+-			{
+-				if (alarm_state == LIMBO)
+-				{
+-					switch (i)
+-					{
+-						case 3:			// TIME UP
+-							if (!(but_timer >= 5))
+-							{
+-								TimeUp();
+-							}
+-						break;
+-						case 4:			// TIME DOWN
+-							if (!(but_timer >= 5))
+-							{
+-								TimeDown();
++				ButtonUp(but_stat);
++				if (i == but_stat && but_stat >= 0) {
++					if (radio_status == OFF ||
++							alarm_state == LIMBO) {
++						if (alarm_state == LIMBO) {
++							switch (i) {
++							case 3:	// TIME UP
++								if (!(but_timer >= 5))
++									TimeUp();
++								break;
++							case 4:	// TIME DOWN
++								if (!(but_timer >= 5))
++									TimeDown();
++								break;
++							case 5:	// ALARM BUTTON SET
++								alarm_state = ON;
++								copyXPMArea(117, 70, 5, 6, 6, 23); // Light On
++								RedrawWindowXYWH(6, 23, 5, 6);
++								break;
+ 							}
+-						break;
+-						case 5:			// ALARM BUTTON SET
+-							alarm_state = ON;
+-							copyXPMArea(117, 70, 5, 6, 6, 23); // Light On
+-							RedrawWindowXYWH(6, 23, 5, 6);
+-						break;
+-					}
+-				}
+-				else
+-				{
+-					switch (i)
+-					{
+-						case 0:
+-							RadioOn();
+-						break;
+-					}
+-				}
+-				but_stat = -1;
+-			}
+-			else
+-			{	
+-					switch (i)
+-					{
+-						case 0:			// ON/OFF BUTTON
+-								RadioOff();
+-						break;
+-						case 1:			// FINE TUNE UP (+)
++						} else {
++							if (i == 0)
++								RadioOn();
++						}
++						but_stat = -1;
++					} else {	
++						switch (i) {
++						case 0:	// ON/OFF BUTTON
++							RadioOff();
++							break;
++						case 1:	// FINE TUNE UP (+)
+ 							if (!(but_timer >= 5))
+-							{
+ 								TuneUp();
+-							}
+ 							OnPreset();
+ 							FastFreqUpdate();
+ 							TestFreq();
+-						break;
+-						case 2:			// FINE TUNE DOWN (-)
++							break;
++						case 2:	// FINE TUNE DOWN (-)
+ 							if (!(but_timer >= 5))
+-							{
+ 								TuneDown();
+-							}
+ 							OnPreset();
+ 							FastFreqUpdate();
+ 							TestFreq();
+-						break;
+-						case 3:			// SCAN UP
+-							switch (Event.xbutton.button)
+-							{
+-								case 1:
+-									ScanUp();
+-									OnPreset();
++							break;
++						case 3:	// SCAN UP
++							switch (Event.xbutton.button) {
++							case 1:
++								ScanUp();
++								OnPreset();
+ 								break;
+-								case 3:
+-									VolumeUp();
++							case 3:
++								VolumeUp();
+ 								break;
+ 							}
+-						break;
+-						case 4:			// SCAN DOWN
+-							switch (Event.xbutton.button)
+-							{
+-								case 1:
+-									ScanDown();
+-									OnPreset();
++							break;
++						case 4:	// SCAN DOWN
++							switch (Event.xbutton.button) {
++							case 1:
++								ScanDown();
++								OnPreset();
+ 								break;
+-								case 3:
+-									VolumeDown();
++							case 3:
++								VolumeDown();
+ 								break;
+ 							}
+-						break;
+-						case 5:			// ALARM BUTTON
+-							if (alarm_state == ON)
+-							{
++							break;
++						case 5:	// ALARM BUTTON
++							if (alarm_state == ON) {
+ 								alarm_state = OFF;
+ 								copyXPMArea(76, 55, 34, 7, 6, 22);
+ 								RedrawWindowXYWH(6, 22, 34, 7);
+-							}
+-							else
+-							{
++							} else {
+ 								alarm_state = LIMBO;
+ 								DrawDigitalTime(hour,minute);
+ 							}
+-						break;
+-						case 6:			// LEFT PRESET SCAN BUTTON
++							break;
++						case 6:	// LEFT PRESET SCAN BUTTON
+ 							PresetHandler(-1);
+-						break;
+-						case 7:			// RIGHT PRESET SCAN BUTTON
++							break;
++						case 7:	// RIGHT PRESET SCAN BUTTON
+ 							PresetHandler(1);
+-						break;
++							break;
+ 						}
+ 					}
+-				but_stat = -1;
++					but_stat = -1;
++				}
+ 			}
+-		}
+-	} 
+-	if (((i == but_stat && but_stat >= 0)) && (radio_status == ON))
+-	{
+-		but_timer++;
+-		if(but_timer >= 5)
+-		{
+-			if (alarm_state == LIMBO)
+-			{
+-				switch (i)
+-				{
+-					case 3:			// TIME UP, AUTO-REPEAT
++		} 
++		if (((i == but_stat && but_stat >= 0)) && (radio_status == ON)) {
++			but_timer++;
++			if(but_timer >= 5) {
++				if (alarm_state == LIMBO) {
++					switch (i) {
++					case 3:	// TIME UP, AUTO-REPEAT
+ 						TimeUp();
+-					break;
+-					case 4:			// TIME DOWN, AUTO-REPEAT
++						break;
++					case 4:	// TIME DOWN, AUTO-REPEAT
+ 						TimeDown();
+-					break;
+-				}
+-			}
+-			else
+-			{
+-				switch (i)
+-				{
+-					case 1:			// FINE TUNE UP (+) AUTO-REPEAT
++						break;
++					}
++				} else {
++					switch (i) {
++					case 1:	// FINE TUNE UP (+) AUTO-REPEAT
+ 						TuneUp();
+-					break;
+-					case 2:			// FINE TUNE DOWN (-) AUTO-REPEAT
++						break;
++					case 2:	// FINE TUNE DOWN (-) AUTO-REPEAT
+ 						TuneDown();
+-					break;
+-				}
+-			}
+-		}	
+-	}
+-	usleep(5000);
+-	if (alarm_state == ON)
+-	{
 -		current_time = time(0);
 -		time_struct = localtime(&current_time);
-+		current_time = time(NULL);
-+		time_struct = localtime((time_t *)&current_time);
- 		if(hour == time_struct->tm_hour);
- 		{
- 			if (minute == time_struct->tm_min)
-@@ -455,11 +467,14 @@ while (1)
- 		}		
- 	}
- } // while
+-		if(hour == time_struct->tm_hour);
+-		{
+-			if (minute == time_struct->tm_min)
+-			{
+-				alarm_state = OFF;
+-				copyXPMArea(76, 55, 34, 7, 6, 22);
+-				RedrawWindowXYWH(6, 22, 34, 7);
+-				if (radio_status == ON)
+-				{
+-					RadioOff();
++						break;
++					}
+ 				}
+-				else
+-				{
+-					RadioOn();
++			}	
++		}
++		usleep(5000);
++		if (alarm_state == ON) {
++			current_time = time(NULL);
++			time_struct = localtime((time_t *)&current_time);
++			if(hour == time_struct->tm_hour) {
++				if (minute == time_struct->tm_min) {
++					alarm_state = OFF;
++					copyXPMArea(76, 55, 34, 7, 6, 22);
++					RedrawWindowXYWH(6, 22, 34, 7);
++					if (radio_status == ON)
++						RadioOff();
++					else
++						RadioOn();
+ 				}
+-			}
+-		}		
+-	}
+-} // while
+-} // main
++			}		
++		}
++	} /* while */
 +
-+return 0;
- } // main
++	return 0;
++} /* main */
  
  void RadioOn(void)
  {
  	radio_status = ON;
-+	if ( volume == 0 ) volume = 1;
++
++	if (volume == 0)
++		volume = 1;
++
  	copyXPMArea(93, 90, 13, 5, 44, 9); 
- 	RedrawWindowXYWH(44, 9, 13, 5); 	// Mhz/Khz
+-	RedrawWindowXYWH(44, 9, 13, 5); 	// Mhz/Khz
++	RedrawWindowXYWH(44, 9, 13, 5); /* MHz/KHz */
  	copyXPMArea(96, 79, 11, 7, 45, 22);
-@@ -503,6 +518,8 @@ void FastFreqUpdate(void)
- 	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
- 	ioctl (fd, VIDIOCSFREQ, &xl_freq);
- 	close (fd);
-+#elif defined AZTECH
-+	Change_Frequency(freqf*100);
- #endif
+-	RedrawWindowXYWH(45, 22, 11, 7); 	// FM/AM
++	RedrawWindowXYWH(45, 22, 11, 7); /* FM/AM */
++
+ 	GeneralFreqUpdate();
  }
  
-@@ -683,23 +700,35 @@ void ScanDown(void)
+@@ -475,110 +366,65 @@ void GeneralFreqUpdate(void)
+ 	DrawDigitalFreq();
+ }
  
- void CheckIOPerms(void)
+-#ifdef KERNEL
+-/* Determine and return the appropriate frequency multiplier for
+-   the first tuner on the open video device with handle FD. */
+-
+-static double
+-get_freq_fact (int fd)
+-{
+-       struct video_tuner tuner;
+-       tuner.tuner = 0;
+-       if (-1 == ioctl (fd, VIDIOCGTUNER, &tuner)
+-           || (tuner.flags & VIDEO_TUNER_LOW) == 0)
+-                return .16;
+-       return 160.;
+-}
+-#endif
+-
+-void FastFreqUpdate(void)
+-{
+-#ifdef RADIOTRACK
+-	RadioOut(FCODE(freqf),16);
+-	RadioOut(0xa0,8);
+-#elif defined ZOLTRIX
+-	tuneFreq(freqf,1);
+-#elif defined KERNEL
+-	int fd = open ("/dev/radio", O_RDONLY);
+-	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
+-	ioctl (fd, VIDIOCSFREQ, &xl_freq);
+-	close (fd);
+-#endif
+-}
+-
+ void DrawDigitalTime(int hr, int min) 
+ {
+-    char    temp[10];
+-    char    *p = temp;
+-    int     i,j,k=13;
+-
+-    sprintf(temp, "%02d:%02d", hr, min);
+-
+-    for (i=0; i<2; i++)
+-	{
+-        for (j=0; j<2; j++)
+-		{
+-            copyXPMArea((*p-'0')*6 + 1, 79, 6, 7, k, 22);
+-            k += 6;
+-            p++;
+-        }
+-        if (*p == ':')
+-		{
+-            copyXPMArea(61, 79, 2, 7, k, 22);
+-            k += 4;
+-            p++;
+-        }
+-    }
++	char	 temp[TMPBUFLEN + 1];
++	char	*p = temp;
++	int	 i, j, k = 13;
++
++	snprintf(temp, TMPBUFLEN, "%02d:%02d", hr, min);
++	temp[TMPBUFLEN] = '\0';
++
++	for (i = 0; i < 2; i++) {
++		for (j = 0; j < 2; j++) {
++			copyXPMArea((*p-'0')*6 + 1, 79, 6, 7, k, 22);
++			k += 6;
++			p++;
++		}
++		if (*p == ':') {
++			copyXPMArea(61, 79, 2, 7, k, 22);
++			k += 4;
++            		p++;
++		}
++	}
+ 	RedrawWindowXYWH(13, 22, 27, 7);
+ }
+ 
+ void PresetHandler(int preset_hint)
+ {
+-	if (preset_hint < 0)
+-	{
++	if (preset_hint < 0) {
+ 		if (preset_count == 1)
+-		{
+ 			preset_count = max_presets;
+-		}
+ 		else
+-		{
+ 			preset_count--;
+-		}
+-	} 
+-	else
+-	{
++	} else {
+ 		if (preset_count == max_presets)
+-		{
+ 			preset_count = 1;
+-		}
+ 		else
+-		{
+ 			preset_count++;
+-		}
+ 	}
+ 	
+-	freqf = presets[preset_count].freq;
++	presets[0].freq = presets[preset_count].freq;
+ 
+ 	GeneralFreqUpdate();
+ }
+ 
+ void DrawDigitalPreset(void)
+ {
+-	char temp[10];
+-	char *p = temp;
+-	int j=0,k=6;
++	char	 temp[TMPBUFLEN + 1];
++	char	*p = temp;
++	int	 j = 0, k = 6;
+ 
+-	sprintf(temp,"%02d",preset_count);
++	snprintf(temp, TMPBUFLEN, "%02d", preset_count);
++	temp[TMPBUFLEN] = '\0';
+ 
+-	if (*p == '0')
+-	{
++	if (*p == '0') {
+ 		copyXPMArea(66, 79, 5, 7, k, 50);
+ 		k += 6;
+ 		j++;
+ 		p++;
+ 	}
+-	while (j<2) 
+-	{
++	while (j < 2) {
+ 		copyXPMArea((*p-'0')*6 + 1, 79, 5, 7, k, 50);
+ 		k += 6;
+ 		p++;
+@@ -589,16 +435,15 @@ void DrawDigitalPreset(void)
+ 	
+ void DrawDigitalFreq(void)
+ {
+-	char temp[10];
+-	char *p = temp;
+-	int i=5,j=0,k=6;
+-
+-	sprintf(temp,"%0f",freqf);
+-
+-	while (j<i) 
+-	{
+-		if (j == 0 && *p != '1')
+-		{
++	char	 temp[TMPBUFLEN + 1];
++	char	*p = temp;
++	int	 i = 5, j = 0, k = 6;
++
++	snprintf(temp, TMPBUFLEN, "%0f", presets[0].freq);
++	temp[TMPBUFLEN] = '\0';
++
++	while (j < i) {
++		if (j == 0 && *p != '1') {
+ 			copyXPMArea(76, 40, 6, 9, k, 7);
+ 			k += 7;
+ 			i--;
+@@ -606,8 +451,7 @@ void DrawDigitalFreq(void)
+ 		copyXPMArea((*p-'0')*7 + 1, 66, 7, 9, k, 7);
+ 		k += 7;
+ 		p++;
+-		if (*p == '.')
+-		{
++		if (*p == '.') {
+ 			copyXPMArea(71, 66, 3, 9, k, 7);
+ 			k += 3;
+ 			p++;
+@@ -619,30 +463,22 @@ void DrawDigitalFreq(void)
+ 
+ void ScanUp(void)
+ {
+-	copyXPMArea(114, 49, 13, 4, 44, 16);	// POSSIBLE SIGNAL LOSS (0)
+-	RedrawWindowXYWH(44, 16, 13, 4); 		// Test Freq Field Only
+-	while (1)
+-	{
+-		if ((float)freqf != 108.0)
+-		{
+-			freqf += .01;
+-		}
++	int i;
++
++	copyXPMArea(114, 49, 13, 4, 44, 16); /* POSSIBLE SIGNAL LOSS (0) */
++	RedrawWindowXYWH(44, 16, 13, 4); /* Test Freq Field Only */
++	while (1) {
++		if (presets[0].freq != 108.0)
++			presets[0].freq += .01;
+ 		else
+-		{
+-			freqf = 88.0;
+-		}
++			presets[0].freq = 88.0;
+ 		FastFreqUpdate();
+ 		DrawDigitalFreq();
+-		if ((i = TestTune()) != 0)
+-		{
++		if ((i = TestTune()) != 0) {
+ 			if (i == 1)
+-			{
+-				copyXPMArea(92, 100, 13, 4, 44, 16);	// SIGNAL & STEREO (1)
+-			}
++				copyXPMArea(92, 100, 13, 4, 44, 16); // SIGNAL & STEREO (1)
+ 			else
+-			{
+-			copyXPMArea(92, 105, 13, 4, 44, 16);		// POSSIBLY MONO :)	(2)
+-			}
++				copyXPMArea(92, 105, 13, 4, 44, 16); // POSSIBLY MONO :)	(2)
+ 			RedrawWindowXYWH(44, 16, 13, 4); 			// Test Freq Field Only
+ 			return;
+ 		}
+@@ -651,333 +487,155 @@ void ScanUp(void)
+ 
+ void ScanDown(void)
+ {
+-	copyXPMArea(114, 49, 13, 4, 44, 16);	// POSSIBLE SIGNAL LOSS (0)
+-	RedrawWindowXYWH(44, 16, 13, 4); 		// Test Freq Field Only
+-	while (1)
+-	{
+-		if ((float)freqf != 88.0)
+-		{
+-			freqf -= .01;
+-		}
++	int i = 0;
++
++	copyXPMArea(114, 49, 13, 4, 44, 16); /* POSSIBLE SIGNAL LOSS (0) */
++	RedrawWindowXYWH(44, 16, 13, 4); /* Test Freq Field Only */
++	while (1) {
++		if (presets[0].freq != 88.0)
++			presets[0].freq -= .01;
+ 		else
+-		{
+-			freqf = 108.0;
+-		}
++			presets[0].freq = 108.0;
+ 		FastFreqUpdate();
+ 		DrawDigitalFreq();
+-		if ((i = TestTune()) != 0)
+-		{
++		if ((i = TestTune()) != 0) {
+ 			if (i == 1)
+-			{
+-				copyXPMArea(92, 100, 13, 4, 44, 16);	// SIGNAL & STEREO (1)
+-			}
++				copyXPMArea(92, 100, 13, 4, 44, 16); // SIGNAL & STEREO (1)
+ 			else
+-			{
+-			copyXPMArea(92, 105, 13, 4, 44, 16);		// POSSIBLY MONO :)	(2)
+-			}
+-			RedrawWindowXYWH(44, 16, 13, 4); 			// Test Freq Field Only
++				copyXPMArea(92, 105, 13, 4, 44, 16); // POSSIBLY MONO :)	(2)
++			RedrawWindowXYWH(44, 16, 13, 4); // Test Freq Field Only
+ 			return;
+ 		}
+ 	}
+ }
+ 
+-void CheckIOPerms(void)
++void ParseCMDLine(int argc,char **argv)
  {
 -	#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
-+#if (defined __FreeBSD__ || defined __NetBSD__) /* Platform dependent */
- 	if ((fpiopl = open( "/dev/io", O_RDONLY ) < 0) )
+-	if ((fpiopl = open( "/dev/io", O_RDONLY ) < 0) )
 -	{
 -		fprintf(stderr, "Failed to gain IO privledges.  Am I setuid root?  Is /dev/io accessable by me?\n");
 -		exit(1);
 -	}
 -	#else
 -#ifdef RADIOTRACK
-+#elif defined linux
-+#ifdef RADIOTRACK /* Card dependent for linux */
- 	if (ioperm(rport,2,1) < 0)
- #elif defined ZOLTRIX
- 	if (ioperm(rport,4,0xFFFF) < 0)
+-	if (ioperm(rport,2,1) < 0)
+-#elif defined ZOLTRIX
+-	if (ioperm(rport,4,0xFFFF) < 0)
 -#endif
-+#elif defined AZTECH
-+	if (ioperm(rport,1,1) < 0)
-+#endif /* Card dependent for linux */
-+#elif defined __OpenBSD__
-+	int offset;
-+	unsigned long mask;
-+	offset = rport/32;
-+#ifdef RADIOTRACK /* Card dependent for OpenBSD */
-+	mask = 0x03 << rport%32;
-+#elif defined ZOLTRIX
-+	mask = 0x0F << rport%32;
-+#elif defined AZTECH
-+	mask = 0x01 << rport%32;
-+#endif /* Card dependent for OpenBSD */
-+	memset(iomap, 0xFFFF, sizeof(iomap));
-+	iomap[offset] ^= mask;
-+	if ( i386_set_ioperm(iomap) < 0 )
-+#endif /* Platform dependent */
- 	{
+-	{
 -		fprintf(stderr, "Failed to gain IO privledges.  Am I setuid root?\n");
-+		fprintf(stderr, "wmtune: Failed to gain IO privledges: %s\n", strerror(errno));
- 		exit(1);
- 	}
+-		exit(1);
+-	}
 -	#endif
- }
+-}
+-
+-void ParseCMDLine(int argc,char *argv[])
+-{
+-	char *cmdline;
+-	int i;
++	int optchar;
  
- void ParseCMDLine(int argc,char *argv[])
-@@ -827,6 +856,8 @@ void RadioOff(void)
- 	cardWrite(0);
- 	cardWrite(0);
- 	cardRead(3);
-+#elif defined AZTECH
-+	 OUTB(0, rport);
- #elif defined KERNEL
- 	struct video_audio va;
- 	int fd = open ("/dev/radio", O_RDONLY);
-@@ -854,6 +885,8 @@ void TuneRadio(void)
- 	OUTB(0xc8,rport);
- #elif defined ZOLTRIX
- 	tuneFreq(freqf,0);
-+#elif defined AZTECH
-+	Change_Frequency(freqf*100);
- #elif defined KERNEL
- 	int fd = open ("/dev/radio", O_RDONLY);
- 	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
-@@ -862,6 +895,7 @@ void TuneRadio(void)
- #endif
- }
- 
-+#ifdef RADIOTRACK
- void RadioOut(int v,int n)
- {
-     while (n--) 
-@@ -883,6 +917,7 @@ void RadioOut(int v,int n)
- 	v>>=1;
+-	for (i = 1; i < argc; i++) 
+-	{
+-		cmdline = argv[i];
+-		if (cmdline[0] == '-') 
+-		{
+-			switch(cmdline[1]) 
+-			{
+-			case 'n':
+-				auto_radio_on = ON;
++#ifdef ZOLTRIX
++	while ((optchar = getopt(argc, argv, "hnt:p:")) != -1) {
++#else
++	radiodevice = getenv("RADIODEVICE");
++	if (radiodevice == NULL)
++		radiodevice = "/dev/radio";
++
++	while ((optchar = getopt(argc, argv, "hnt:p:f:")) != -1) {
++#endif /* ZOLTRIX */
++		switch (optchar) {
++		case 'n':
++			auto_radio_on = ON;
+ 			break;
+-			case 't':
+-				auto_alarm_start = ON;
+-				sscanf(cmdline+3,"%d",&hour);
+-				if ((cmdline = strchr(cmdline+3,':')) != NULL)
+-				{
+-					sscanf(cmdline+1,"%d",&minute);
+-				}
+-				if (!((hour >= 0 && hour <= 23) 
+-					&& (minute >= 0 && minute <= 59)))
+-				{
+-					fprintf(stderr,"Invalid timer setting, valid is ##:@@ where ## is 0-23 and @@ is 0-59.\n");
+-					exit(1);
+-				}
++		case 't':
++			auto_alarm_start = ON;
++			hour = strtol(optarg, (char **)NULL, 10);
++			if ((optarg = strchr(optarg, ':')) != NULL)
++				minute = strtol(optarg + 1, (char **)NULL, 10);
++			if (hour < 0 || hour > 23 || minute < 0 || minute > 59)
++				errx(1, "Invalid timer setting, valid is ##:@@ where ## is 0-23 and @@ is 0-59.");
+ 			break;
+-			case 'p':
+-				sscanf(cmdline+3,"%d",&preset_count);
+-				cmdline_preset = ON;
++		case 'p':
++			preset_count = strtol(optarg, (char **)NULL, 10);
++			cmdline_preset = ON;
+ 			break;
+-			case 'd':
++#ifndef ZOLTRIX
++		case 'f':
++			radiodevice = optarg;
+ 			break;
+-			default:
+-				printf("\nwmtune v%s, by soren@leiden.org, design & art by warp@xs4all.nl\n",VERSION);
+-				printf("http://soren.org/linux/wmtune & http://windowmaker.mezaway.org\n\n");
+-				printf("usage:\n");
+-				printf("\t-n\t\tturn radio on initially on startup\n");
+-				printf("\t-t <##:##>\tset timer on startup, military time\n");
+-				printf("\t-p <##>\t\tset startup preset # listed in %s file\n",RCFILE);
+-				printf("\t-d <display>\tselects target display\n");
+-				printf("\t-h\t\tdisplay this screen\n");
+-				printf("\n");
+-				printf("examples:\n");
+-				printf("\t\tturn on radio on startup using preset 5\n");
+-				printf("\twmtune -n -p 5\n");
+-				printf("\t\tturn radio on at 2:35pm using preset 2\n");
+-				printf("\twmtune -p 2 -t 14:35\n");
+-				printf("\t\tturn on radio on startup and turn radio off at midnight\n");
+-				printf("\twmtune -n -t 0:0\n");
+-				printf("\n");
+-				exit(0);
+-			}
+-		}
+-	}
+-}
+-
+-#ifdef ZOLTRIX
+-inline void cardWrite(int k)
+-{
+-	usleep(0);
+-	OUTB(k,rport);
+-}
+-
+-inline int cardRead(int offset)
+-{
+-	return inb(rport+offset);
+-}
+-
+-void tuneFreq(double freq, int fast)
+-{
+-      /* tunes the radio to the desired frequency */
+-      unsigned long long bitmask, f;
+-      int i;
+-
+-      f = (unsigned long long)(((float)(freq-88.0))*200.0)+0x4d1c;
+-      bitmask = 0xc480402c10080000ull;
+-      i = 45;
+-      if (!fast)
+-	{
+-           cardWrite (0x00);
+-           cardWrite (0x00);
+-           cardRead(3);
+-	}
+-      cardWrite (0x40);
+-      cardWrite (0xc0);
+-      bitmask = (bitmask ^ ((f & 0xff) << 47) ^ ((f & 0xff00) << 30) ^ (/*stereo*/ 0 << 31));
+-      while (i--)
+-        {
+-          if ((bitmask & 0x8000000000000000ull) != 0)
+-            {
+-              cardWrite (0x80);
+-              cardWrite (0x00);
+-              cardWrite (0x80);
+-            }
+-          else
+-            {
+-              cardWrite (0xc0);
+-              cardWrite (0x40);
+-              cardWrite (0xc0);
+-            }
+-          bitmask *= 2;
+-        }
+-      /* termination sequence */
+-      cardWrite (0x80);
+-      cardWrite (0xc0);
+-      cardWrite (0x40);
+-      usleep (20000);
+-      cardWrite (volume);
+-      usleep (10000);
+-      cardRead(2);
+-}
+-#endif
+-
+-void RadioOff(void)
+-{
+-#ifdef RADIOTRACK
+-	OUTB(0,rport);
+-	OUTB(0xc0,rport);
+-#elif defined ZOLTRIX
+-	cardWrite(0);
+-	cardWrite(0);
+-	cardRead(3);
+-#elif defined KERNEL
+-	struct video_audio va;
+-	int fd = open ("/dev/radio", O_RDONLY);
+-	va.flags = VIDEO_AUDIO_MUTE;
+-	va.audio = 0;
+-	ioctl (fd, VIDIOCSAUDIO, &va);
+-	close (fd);
+-#endif
+-	radio_status = OFF;	
+-	copyXPMArea(76, 40, 51, 13, 6, 7); 
+-	copyXPMArea(115, 55, 11, 7, 45, 22);
+-	copyXPMArea(83, 55, 11, 7, 6, 50);
+-	RedrawWindowXYWH(6, 50, 11, 7); // Full Preset Field
+-	RedrawWindowXYWH(6, 7, 51, 22); // Full Upper Field
+-}
+-
+-void TuneRadio(void)
+-{
+-#ifdef RADIOTRACK
+-	RadioOut(FCODE(freqf),16);
+-	RadioOut(0xa0,8);
+-	usleep(1000);
+-	OUTB(0,rport);
+-	usleep(50000);
+-	OUTB(0xc8,rport);
+-#elif defined ZOLTRIX
+-	tuneFreq(freqf,0);
+-#elif defined KERNEL
+-	int fd = open ("/dev/radio", O_RDONLY);
+-	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
+-	ioctl (fd, VIDIOCSFREQ, &xl_freq);
+-	close (fd);
+-#endif
+-}
+-
+-void RadioOut(int v,int n)
+-{
+-    while (n--) 
+-	{
+-		if (v&1) 
+-		{
+-			OUTW (5,rport);
+-			OUTW (5,rport);
+-			OUTW (7,rport);
+-			OUTW (7,rport);
++#endif /* !ZOLTRIX */
++		case 'h':
++		default:
++			usage();
++			exit(0);
+ 		}
+-		else 
+-		{
+-			OUTW (1,rport);
+-			OUTW (1,rport);
+-			OUTW (3,rport);
+-			OUTW (3,rport);
+-	    }
+-	v>>=1;
  	}
  }
-+#endif /* RADIOTRACK */
  
  void ButtonDown(int button)
  {
-@@ -1016,6 +1051,15 @@ void VolumeUp(void)
- 	cardWrite(volume);
- 	usleep(10000);
- 	cardRead(2);
-+#elif defined AZTECH
-+	if (volume < 5) {
-+		switch (volume) {
-+			case 0: volume = 1; break;
-+			case 1: volume = 4; break;
-+			case 4: volume = 5; break;
+-	switch (button)
+-	{
+-		case 0:			// ON/OFF BUTTON
+-			copyXPMArea(79, 100, 12, 11, 47, 48);
+-			RedrawWindowXYWH(47, 48, 12, 11);
+-		break;
+-		case 1:			// FINE TUNE UP (+)
+-			copyXPMArea(0, 98, 11, 9, 5, 35);
+-			RedrawWindowXYWH(5, 35, 11, 9);
+-		break;
+-		case 2:			// FINE TUNE DOWN (-)
+-			copyXPMArea(11, 98, 11, 9, 16, 35);
+-			RedrawWindowXYWH(16, 35, 11, 9);
+-		break;
+-		case 3:			// SCAN UP & TIME UP
+-			copyXPMArea(22, 98, 11, 9, 27, 35);
+-			RedrawWindowXYWH(27, 35, 11, 9);
+-		break;
+-		case 4:			// SCAN DOWN & TIME DOWN
+-			copyXPMArea(33, 98, 11, 9, 38, 35);
+-			RedrawWindowXYWH(38, 35, 11, 9);
+-		break;
+-		case 5:			// ALARM BUTTON
+-			copyXPMArea(44, 98, 10, 9, 49, 35);
+-			RedrawWindowXYWH(49, 35, 10, 9);
+-		break;
+-		case 6:			// LEFT PRESET SCAN BUTTON
+-			copyXPMArea(55, 100, 12, 11, 23, 48);
+-			RedrawWindowXYWH(23, 48, 12, 11);
+-		break;
+-		case 7:			// RIGHT PRESET SCAN BUTTON
+-			copyXPMArea(67, 100, 12, 11, 35, 48);
+-			RedrawWindowXYWH(35, 48, 12, 11);
++	switch (button) {
++	case 0:	// ON/OFF BUTTON
++		copyXPMArea(79, 100, 12, 11, 47, 48);
++		RedrawWindowXYWH(47, 48, 12, 11);
++		break;
++	case 1:	// FINE TUNE UP (+)
++		copyXPMArea(0, 98, 11, 9, 5, 35);
++		RedrawWindowXYWH(5, 35, 11, 9);
++		break;
++	case 2:	// FINE TUNE DOWN (-)
++		copyXPMArea(11, 98, 11, 9, 16, 35);
++		RedrawWindowXYWH(16, 35, 11, 9);
++		break;
++	case 3:	// SCAN UP & TIME UP
++		copyXPMArea(22, 98, 11, 9, 27, 35);
++		RedrawWindowXYWH(27, 35, 11, 9);
++		break;
++	case 4:	// SCAN DOWN & TIME DOWN
++		copyXPMArea(33, 98, 11, 9, 38, 35);
++		RedrawWindowXYWH(38, 35, 11, 9);
++		break;
++	case 5:	// ALARM BUTTON
++		copyXPMArea(44, 98, 10, 9, 49, 35);
++		RedrawWindowXYWH(49, 35, 10, 9);
++		break;
++	case 6:	// LEFT PRESET SCAN BUTTON
++		copyXPMArea(55, 100, 12, 11, 23, 48);
++		RedrawWindowXYWH(23, 48, 12, 11);
++		break;
++	case 7:	// RIGHT PRESET SCAN BUTTON
++		copyXPMArea(67, 100, 12, 11, 35, 48);
++		RedrawWindowXYWH(35, 48, 12, 11);
+ 		break;
+ 	}
+ }
+ 
+ void ButtonUp(int button)
+ {
+-	switch (button)
+-	{
+-		case 0:			// ON/OFF BUTTON
+-			copyXPMArea(79, 88, 12, 11, 47, 48);
+-			RedrawWindowXYWH(47, 48, 12, 11);
+-		break;
+-		case 1:			// FINE TUNE UP (+)
+-			copyXPMArea(0, 88, 11, 9, 5, 35);
+-			RedrawWindowXYWH(5, 35, 11, 9);
+-		break;
+-		case 2:			// FINE TUNE DOWN (-)
+-			copyXPMArea(11, 88, 11, 9, 16, 35);
+-			RedrawWindowXYWH(16, 35, 11, 9);
+-		break;
+-		case 3:			// SCAN UP
+-			copyXPMArea(22, 88, 11, 9, 27, 35);
+-			RedrawWindowXYWH(27, 35, 11, 9);
+-		break;
+-		case 4:			// SCAN DOWN
+-			copyXPMArea(33, 88, 11, 9, 38, 35);
+-			RedrawWindowXYWH(38, 35, 11, 9);
+-		break;
+-		case 5:			// ALARM BUTTON
+-			copyXPMArea(44, 88, 10, 9, 49, 35);
+-			RedrawWindowXYWH(49, 35, 10, 9);
+-		break;
+-		case 6:			// LEFT PRESET SCAN BUTTON
+-			copyXPMArea(55, 88, 12, 11, 23, 48);
+-			RedrawWindowXYWH(23, 48, 12, 11);
+-		break;
+-		case 7:			// RIGHT PRESET SCAN BUTTON
+-			copyXPMArea(67, 88, 12, 11, 35, 48);
+-			RedrawWindowXYWH(35, 48, 12, 11);
++	switch (button) {
++	case 0:	// ON/OFF BUTTON
++		copyXPMArea(79, 88, 12, 11, 47, 48);
++		RedrawWindowXYWH(47, 48, 12, 11);
++		break;
++	case 1:	// FINE TUNE UP (+)
++		copyXPMArea(0, 88, 11, 9, 5, 35);
++		RedrawWindowXYWH(5, 35, 11, 9);
++		break;
++	case 2:	// FINE TUNE DOWN (-)
++		copyXPMArea(11, 88, 11, 9, 16, 35);
++		RedrawWindowXYWH(16, 35, 11, 9);
++		break;
++	case 3:	// SCAN UP
++		copyXPMArea(22, 88, 11, 9, 27, 35);
++		RedrawWindowXYWH(27, 35, 11, 9);
++		break;
++	case 4:	// SCAN DOWN
++		copyXPMArea(33, 88, 11, 9, 38, 35);
++		RedrawWindowXYWH(38, 35, 11, 9);
++		break;
++	case 5:	// ALARM BUTTON
++		copyXPMArea(44, 88, 10, 9, 49, 35);
++		RedrawWindowXYWH(49, 35, 10, 9);
++		break;
++	case 6:	// LEFT PRESET SCAN BUTTON
++		copyXPMArea(55, 88, 12, 11, 23, 48);
++		RedrawWindowXYWH(23, 48, 12, 11);
++		break;
++	case 7:	// RIGHT PRESET SCAN BUTTON
++		copyXPMArea(67, 88, 12, 11, 35, 48);
++		RedrawWindowXYWH(35, 48, 12, 11);
+ 		break;
+ 	}
+ }
+ 
+ void TimeUp(void)
+ {
+-	if (minute == 59)
+-	{
++	if (minute == 59) {
+ 		if (hour == 23)
+-		{
+ 			hour = 0;
+-		}
+ 		else
+-		{
+ 			hour++;
+-		}
+ 		minute = 0;
+-	}
+-	else 
+-	{
++	} else {
+ 		minute++;
+ 	}
+ 	DrawDigitalTime(hour,minute);
+@@ -985,113 +643,48 @@ void TimeUp(void)
+ 
+ void TimeDown(void)
+ {
+-	if (minute == 0)
+-	{
++	if (minute == 0) {
+ 		if (hour == 0)
+-		{
+ 			hour = 23;
+-		}
+ 		else
+-		{
+ 			hour--;
+-		}
+ 		minute = 59;
+-	}
+-	else
+-	{
++	} else {
+ 		minute--;
+ 	}
+ 	DrawDigitalTime(hour,minute);
+ }
+ 
+-void VolumeUp(void)
+-{
+-#ifdef RADIOTRACK
+-	OUTB(0x88,rport);
+-	usleep(200000);
+-	OUTB(0xc8,rport);
+-#elif defined ZOLTRIX
+-	if (volume < 16)
+-		volume++;
+-	cardWrite(volume);
+-	usleep(10000);
+-	cardRead(2);
+-#elif defined KERNEL
+-	if (volume < 10) {
+-	   struct video_audio va;
+-	   int fd = open ("/dev/radio", O_RDONLY);
+-	   va.flags = VIDEO_AUDIO_VOLUME;
+-	   va.audio = 0;
+-	   va.volume = (++volume) * (65535/10);
+-	   ioctl (fd, VIDIOCSAUDIO, &va);
+-	   close (fd);
+-	}
+-#endif
+-}
+-
+-void VolumeDown(void)
+-{
+-#ifdef RADIOTRACK
+-	OUTB(0x48,rport);
+-	usleep(200000);
+-	OUTB(0xc8,rport);
+-#elif defined ZOLTRIX
+-	if (volume > 0)
+-		volume--;
+-	cardWrite(volume);
+-	usleep(10000);
+-	cardRead(2);
+-#elif defined KERNEL
+-	if (volume > 0) {
+-	   struct video_audio va;
+-	   int fd = open ("/dev/radio", O_RDONLY);
+-	   va.flags = VIDEO_AUDIO_VOLUME;
+-	   va.audio = 0;
+-	   va.volume = (--volume) * (65535/10);
+-	   ioctl (fd, VIDIOCSAUDIO, &va);
+-	   close (fd);
+-	}
+-#endif
+-}
+ 
+ void TuneUp(void)
+ {
+-	if ((float)freqf != 108.0)
+-	{
+-		freqf += .01;
+-	}
++	if (presets[0].freq != 108.0)
++		presets[0].freq += .01;
+ 	else
+-	{
+-		freqf = 88.0;
+-	}
++		presets[0].freq = 88.0;
+ 	DrawDigitalFreq();
+ }
+ 
+ void TuneDown(void)
+ {
+-	if ((float)freqf != 88.0)
+-	{
+-		freqf -= .01;
+-	}
++	if (presets[0].freq != 88.0)
++		presets[0].freq -= .01;
+ 	else
+-	{
+-		freqf = 108.0;
+-	}
++		presets[0].freq = 108.0;
+ 	DrawDigitalFreq();
+ }
+ 
+ void TestFreq(void)
+ {
+-	switch (TestTune())
+-	{
+-		case 0:
+-			copyXPMArea(114, 49, 13, 4, 44, 16);	// POSSIBLE SIGNAL LOSS (0)
++	switch (TestTune()) {
++	case 0: /* POSSIBLE SIGNAL LOSS		(0) */
++		copyXPMArea(114, 49, 13, 4, 44, 16);
+ 		break;
+-		case 1:
+-			copyXPMArea(92, 100, 13, 4, 44, 16);	// SIGNAL & STEREO 		(1)
++	case 1: /* SIGNAL & STEREO 		(1) */
++		copyXPMArea(92, 100, 13, 4, 44, 16);
+ 		break;
+-		case 2:
+-			copyXPMArea(92, 105, 13, 4, 44, 16);	// POSSIBLY MONO :) 	(2)
++	case 2: /* POSSIBLY MONO :) 		(2) */
++		copyXPMArea(92, 105, 13, 4, 44, 16);
+ 		break;
+ 	}
+ 	RedrawWindowXYWH(44, 16, 13, 4);
+@@ -1099,12 +692,10 @@ void TestFreq(void)
+ 
+ void OnPreset(void)
+ {
+-	int count=1;
++	int count = 1;
+ 
+-	while (count < max_presets+1)
+-	{
+-		if ((float)freqf == (float)presets[count].freq)
+-		{
++	while (count < (max_presets + 1)) {
++		if (presets[0].freq == presets[count].freq) {
+ 			preset_count = count;
+ 			DrawDigitalPreset();
+ 			return;
+@@ -1113,28 +704,129 @@ void OnPreset(void)
+ 	}
+ }
+ 
+-int TestTune(void)
++int ParseRCFile(char *filename)
+ {
+-#ifdef RADIOTRACK
+-	int res;
++	char temp[TMPBUFLEN + 1], *p;
++	FILE *fp;
++	int ln = 1, count = -1;
++	char *tokens = " \t\n";
+ 
+-	OUTB(0xf8,rport);
+-	usleep(150000);
+-	res = (int)inb(rport);
+-	if (res == 0x0fd)
+-	{
+-		return 1;				// SIGNAL & STEREO 		(1)
+-	}
+-	else if (res != 0xff)
+-	{
+-		return 2;				// POSSIBLY MONO :) 	(2)
++	presets = malloc(sizeof(struct presets_t));
++	if (presets == NULL)
++		err(1, "memory allocation error");
++
++	if ((fp = fopen(filename, "r")) == NULL)
++		return 1;
++
++	while (fgets(temp, TMPBUFLEN, fp)) {
++		if ((p = strtok(temp, tokens)) != NULL) {
++			if ((p = strchr(temp, '#')) != NULL) 
++				*p = '\0';
++
++			if ((strlen(temp)) != 0) {
++#ifdef ZOLTRIX
++				if (count == -1)
++					rport = strtol(temp, (char **)NULL, 10);
++#endif /* ZOLTRIX */
++				if (count > 0) {
++					max_presets++;
++
++					presets = realloc(presets, (count + 1) * sizeof(struct presets_t));
++					if (presets == NULL)
++						err(1, "memory reallocation error");
++
++					presets[count].freq = atof(temp);
++					if (presets[count].freq < 88.0 || presets[count].freq > 108.0)
++						errx(1, "Invalid preset in %s line %d.", filename, ln);
++				}
++				count++;
++			}
 +		}
-+		OUTB(volume, rport);
-+	}
- #elif defined KERNEL
- 	if (volume < 10) {
- 	   struct video_audio va;
-@@ -1041,6 +1085,15 @@ void VolumeDown(void)
- 	cardWrite(volume);
++		ln++;
+ 	}
+-	return 0;					// POSSIBLE SIGNAL LOSS (0)
+-#elif defined ZOLTRIX
++
++	fclose(fp);
++	return 0;
++}
++
++void
++usage(void) {
++	const char usagestr[] =
++	"\nwmtune v%s, by soren@leiden.org, design & art by warp@xs4all.nl\n"
++	"http://soren.org/linux/wmtune & http://windowmaker.mezaway.org\n\n"
++	"usage:\n"
++	"\t-n\t\tturn radio on initially on startup\n"
++	"\t-t <##:##>\tset timer on startup, military time\n"
++	"\t-p <##>\t\tset startup preset # listed in %s file\n"
++#ifndef ZOLTRIX
++	"\t-f <filename>\tuse filename as a radio device file\n"
++#endif
++	"\t-h\t\tdisplay this screen\n\n"
++	"examples:\n"
++	"\t\tturn on radio on startup using preset 5\n"
++	"\twmtune -n -p 5\n"
++	"\t\tturn radio on at 2:35pm using preset 2\n"
++	"\twmtune -p 2 -t 14:35\n"
++	"\t\tturn on radio on startup and turn radio off at midnight\n"
++	"\twmtune -n -t 0:0\n\n";
++
++	printf(usagestr, VERSION, RCFILE);
++}
++
++/* CARD MANAGEMENT ROUTINES */
++void RadioOff(void)
++{
++#ifdef ZOLTRIX
++	cardWrite(0);
++	cardWrite(0);
++	cardRead(3);
++#else
++	ri.mute = 1;
++	SetGetRadioInfo(SET_INFO);
++#endif /* ZOLTRIX */
++	radio_status = OFF;	
++	copyXPMArea(76, 40, 51, 13, 6, 7); 
++	copyXPMArea(115, 55, 11, 7, 45, 22);
++	copyXPMArea(83, 55, 11, 7, 6, 50);
++	RedrawWindowXYWH(6, 50, 11, 7); /* Full Preset Field */
++	RedrawWindowXYWH(6, 7, 51, 22); /* Full Upper Field */
++}
++
++void FastFreqUpdate(void)
++{
++#ifdef ZOLTRIX
++	tuneFreq(presets[0].freq, 1);
++#else
++	ri.freq = presets[0].freq * 1000;
++	SetGetRadioInfo(SET_INFO);
++	usleep(50000);
++	SetGetRadioInfo(GET_INFO);
++	presets[0].freq = (float)ri.freq / 1000.;
++#endif
++}
++
++void TuneRadio(void)
++{
++#ifdef ZOLTRIX
++	tuneFreq(presets[0].freq, 0);
++#else
++	ri.freq = presets[0].freq * 1000;
++	ri.volume = volume * VOLUME_STEP;
++	ri.mute = 0;
++	SetGetRadioInfo(SET_INFO);
++	usleep(200000);
++	SetGetRadioInfo(GET_INFO);
++	presets[0].freq = (float)ri.freq / 1000.;
++#endif /* ZOLTRIX */
++}
++
++int TestTune(void)
++{
++#ifdef ZOLTRIX
+ 	int x1,x2;
+ 
+-	OUTB(0x00, rport);         // This stuff I found to do nothing
+-	OUTB(volume, rport);
++	outb(0x00, rport); /* This stuff I found to do nothing */
++	outb(volume, rport);
  	usleep(10000);
- 	cardRead(2);
-+#elif defined AZTECH
-+	if (volume > 0) {
-+		switch (volume) {
-+			case 5: volume = 4; break;
-+			case 4: volume = 1; break;
-+			case 1: volume = 0; break;
-+		}
-+		OUTB(volume, rport);
-+	}
- #elif defined KERNEL
- 	if (volume > 0) {
- 	   struct video_audio va;
-@@ -1144,6 +1197,13 @@ int TestTune(void)
+ 
+ 	x1 = inb(rport);
+@@ -1143,73 +835,165 @@ int TestTune(void)
+ 
  	if ((x1 == x2) && (x1 == 0xdf)) 
  	   return 1;
- 	else return 0;
-+#elif defined AZTECH
-+	int res = inb(rport) & 3;
-+	switch ( res ) {
-+		case 2:
-+		case 1: return 2;
-+		case 0: return 1;
+-	else return 0;
+-#elif defined KERNEL
+-	struct video_tuner v;
+-	int fd = open ("/dev/radio", O_RDONLY);
+-	v.tuner = 0;
+-	ioctl (fd, VIDIOCGTUNER, &v);
+-	close (fd);
+-	return (v.signal != 0)?1:0;
+-#endif
++#else
++	int ret = 0;
++
++	SetGetRadioInfo(GET_INFO);
++	if (ri.info & RADIO_INFO_SIGNAL)
++		ret  = 1;
++	if (ri.info & RADIO_INFO_STEREO)
++		ret |= 2;
++	switch (ret) {
++	case 0: return 0;
++	case 1: return 2;
++	default:
++		return 1;
 +	}
- #elif defined KERNEL
- 	struct video_tuner v;
- 	int fd = open ("/dev/radio", O_RDONLY);
-@@ -1213,3 +1273,49 @@ int ParseRCFile(char *filename)
- 	fclose(fp);
++#endif /* ZOLTRIX */
  	return 0;
  }
+ 
+-int ParseRCFile(char *filename)
++void VolumeUp(void)
+ {
+-	char temp[128];
+-	char *p;
+-	FILE *fp;
+-	int ln=1;
+-	int count=-1;
+-	char *tokens = " \t\n";
++#ifdef ZOLTRIX
++	if (volume < 16)
++		volume++;
++	cardWrite(volume);
++	usleep(10000);
++	cardRead(2);
++#else
++	if (volume < 255 / VOLUME_STEP)
++		volume++;
+ 
+-	if ((fp = fopen(filename,"r")) == NULL)
+-	{
+-		return 1;
++	ri.volume = volume * VOLUME_STEP;
++	SetGetRadioInfo(SET_INFO);
++#endif
++}
 +
-+#ifdef AZTECH
-+void
-+Change_Frequency(unsigned long frequency) {
++void VolumeDown(void)
++{
++	if (volume > 0)
++		volume--;
++
++#ifdef ZOLTRIX
++	cardWrite(volume);
++	usleep(10000);
++	cardRead(2);
++#else
++	ri.volume = volume * VOLUME_STEP;
++	SetGetRadioInfo(SET_INFO);
++#endif
++}
++
++/* ZOLTRIX & NATIVE STUFF */
++#ifdef ZOLTRIX
++inline void cardWrite(int k)
++{
++	usleep(0);
++	outb(k,rport);
++}
++
++inline int cardRead(int offset)
++{
++	return inb(rport + offset);
++}
++
++void tuneFreq(double freq, int fast)
++{
++/* tunes the radio to the desired frequency */
++	unsigned long long bitmask, f;
 +	int i;
 +
-+	frequency += 1070;
-+	frequency /= 5;
++	f = (unsigned long long)(((float)(freq - 88.0)) * 200.0) + 0x4d1c;
++	bitmask = 0xc480402c10080000ull;
++	i = 45;
++	if (!fast) {
++		cardWrite(0x00);
++		cardWrite(0x00);
++		cardRead(3);
++	}
++	cardWrite(0x40);
++	cardWrite(0xc0);
++	bitmask = (bitmask ^ ((f & 0xff) << 47) ^ ((f & 0xff00) << 30) ^ (/*stereo*/ 0 << 31));
++	while (i--) {
++		if ((bitmask & 0x8000000000000000ull) != 0) {
++			cardWrite(0x80);
++			cardWrite(0x00);
++			cardWrite(0x80);
++		} else {
++			cardWrite(0xc0);
++			cardWrite(0x40);
++			cardWrite(0xc0);
++		}
++		bitmask *= 2;
++	}
++	/* termination sequence */
++	cardWrite(0x80);
++	cardWrite(0xc0);
++	cardWrite(0x40);
++	usleep (20000);
++	cardWrite(volume);
++	usleep (10000);
++	cardRead(2);
++}
 +
-+	send_zero();
++void CheckIOPerms(void)
++{
++	int offset;
++	unsigned long mask = 0;
++	offset = rport / 32;
 +
-+	for ( i = 0; i < 16; i++ )
-+		if ( frequency & (1 << i) )
-+			send_one();
-+		else
-+			send_zero();
++	mask = 0x0F << rport % 32;
++	memset(iomap, 0xFFFF, sizeof(iomap));
++	iomap[offset] ^= mask;
++	ioperms.iomap = iomap;
++	if (sysarch(I386_SET_IOPERM, (char *)&ioperms) < 0)
++		err(1, "Unsufficient IO privledges");
++}
++#else /* !ZOLTRIX */
++int
++SetGetRadioInfo(int setinfo) {
++	int rd;
 +
-+	send_one();
-+	send_one();
-+	send_zero();
-+	send_zero();
-+	send_one();
-+	send_zero();
-+	send_one();
++	rd = open(radiodevice, O_RDONLY);
++	if (rd < 0) {
++		warn("%s open error", radiodevice);
++		return -1;
++	}
 +
-+	OUTB(0x80+0x40+volume, rport);
-+	OUTB(0x80+0x40+volume, rport);
++	if (ioctl(rd, setinfo == SET_INFO ? RIOCSINFO : RIOCGINFO, &ri) < 0) {
++		warn("%s", setinfo == SET_INFO ? "RIOCSINFO" : "RIOCGINFO");
++		return -1;
++	}
++
++	if (close(rd) < 0) {
++		warn("%s close error", radiodevice);
++		return -1;
+ 	}
+-	while(fgets(temp, 128, fp)) 
+-	{
+-		if ((p = strtok(temp,tokens)) != NULL)
+-		{
+-			if ((p = strchr(temp,'#')) != NULL) 
+-			{
+-				*p = '\0';
+-			}
+-			if ((strlen(temp)) != 0)
+-			{
+-				if (count == -1)
+-				{
+-					sscanf(temp,"%x",&rport);
+-				}
+-				if (count == 0)
+-				{
+-					sscanf(temp,"%d",&max_presets);
+-					presets = malloc(sizeof(*presets) * (max_presets+1));
+-					if (!(max_presets >= 1 && max_presets <= 99))
+-					{
+-						fprintf(stderr,"Invalid number of presets (1-99) in %s line %d.\n",filename,ln);
+-						exit(1);
+-					}
+-				}
+-				else
+-				{
+-					if (!(count > max_presets))
+-					{
+-						sscanf(temp,"%lf",&presets[count].freq);
+-						if (!(presets[count].freq >= 88.0
+-							&& presets[count].freq <= 108.0))
+-						{
+-							fprintf(stderr,"Invalid preset in %s line %d.\n",filename,ln);
+-							exit(1);
+-						}
+-					}
+-				}
+-				count++;
+-			}
++
++	return 0;
 +}
 +
 +void
-+send_zero(void) {
-+	OUTB(0x02+volume, rport);
-+	OUTB(0x02+volume, rport);
-+	OUTB(0x40+0x02+volume, rport);
-+	OUTB(0x40+0x02+volume, rport);
-+}
++GetVolumeStep(void) {
++	int i;
++	int oldvol;
 +
-+void
-+send_one(void) {
-+	OUTB(0x80+0x02+volume, rport);
-+	OUTB(0x80+0x02+volume, rport);
-+	OUTB(0x80+0x40+0x02+volume, rport);
-+	OUTB(0x80+0x40+0x02+volume, rport);
-+}
++	oldvol = ri.volume;
 +
-+#endif /* AZTECH */
++	for (i = 0; i < 256; i++) {
++		ri.volume = i;
++		if (SetGetRadioInfo(SET_INFO) < 0)
++			break;
++		if (SetGetRadioInfo(GET_INFO) < 0)
++			break;
++		if (ri.volume) {
++			VOLUME_STEP = ri.volume;
++			break;
+ 		}
+-		ln++;
+ 	}
+-	fclose(fp);
+-	return 0;
++
++	ri.volume = oldvol;
++	SetGetRadioInfo(SET_INFO);
+ }
++#endif
