@@ -1,5 +1,3 @@
-$OpenBSD: patch-ac,v 1.2 1999/11/01 22:06:48 rohee Exp $
-
 --- abuse/Makefile.in.orig	Wed Jul  9 00:55:21 1997
 +++ abuse/Makefile.in	Sat Aug 29 04:31:24 1998
 @@ -37,10 +37,10 @@

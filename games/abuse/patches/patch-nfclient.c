@@ -1,5 +1,3 @@
-$OpenBSD: patch-nfclient.c,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
 Make the method prototypes match the new superclass
 
 --- abuse/src/nfclient.c.orig	Fri Oct 29 00:26:21 1999

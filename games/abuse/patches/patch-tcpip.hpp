@@ -1,5 +1,3 @@
-$OpenBSD: patch-tcpip.hpp,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
 Use the good type, stricter type checking now...
 
 --- abuse/src/net/mac/tcpip.hpp.orig	Tue Jul  8 01:03:29 1997

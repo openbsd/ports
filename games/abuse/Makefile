@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/11/01 22:06:48 rohee Exp $
+# $OpenBSD: Makefile,v 1.12 1999/12/07 01:30:20 brad Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
@@ -23,7 +23,7 @@ SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 
 post-extract:
-	@${MV} ${WRKDIR}/addon ${WRKDIR}/art ${WRKDIR}/levels ${WRKDIR}/lisp \
+	@mv ${WRKDIR}/addon ${WRKDIR}/art ${WRKDIR}/levels ${WRKDIR}/lisp \
 	${WRKDIR}/music ${WRKDIR}/sfx ${WRKSRC}/abuse
 
 .include <bsd.port.mk>

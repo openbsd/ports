@@ -1,5 +1,3 @@
-$OpenBSD: patch-specs.hpp,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
 Need const here...
 
 --- imlib/include/specs.hpp.orig	Mon Apr 15 21:25:42 1996

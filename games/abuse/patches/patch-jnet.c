@@ -1,6 +1,4 @@
-$OpenBSD: patch-jnet.c,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
-Using the good type to make it compile with g++-2.9.x
+Using the good type to make it compile with g++-2.95.x
 
 --- imlib/port/unix/jnet.c.orig	Fri Oct 29 00:07:47 1999
 +++ imlib/port/unix/jnet.c	Fri Oct 29 00:09:28 1999

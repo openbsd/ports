@@ -1,6 +1,4 @@
-$OpenBSD: patch-specs.c,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
-Need const because of stricter type checking with g++-2.9+...
+Need const because of stricter type checking with g++-2.95.x...
 
 --- imlib/specs.c.orig	Tue Jul  8 12:00:50 1997
 +++ imlib/specs.c	Thu Oct 28 23:52:45 1999

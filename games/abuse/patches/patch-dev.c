@@ -1,5 +1,3 @@
-$OpenBSD: patch-dev.c,v 1.1 1999/11/01 22:06:48 rohee Exp $
-
 "foo" is now a 'const char *' in C++ and thus can't be passed to a method
 requiring a 'char *'.
 
