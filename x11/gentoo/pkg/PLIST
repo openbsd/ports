@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 08:07:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 18:23:21 xsa Exp $
 bin/gentoo
-man/man1/gentoo.1
+@man man/man1/gentoo.1
+share/doc/gentoo/
 share/doc/gentoo/FAQ
 share/doc/gentoo/acks.html
 share/doc/gentoo/buttons.html
 share/doc/gentoo/columns.html
 share/doc/gentoo/commands.html
+share/doc/gentoo/config/
 share/doc/gentoo/config/cfg_dirpane.html
 share/doc/gentoo/config/cfg_gui.html
 share/doc/gentoo/config/cfg_styles.html
@@ -18,6 +20,7 @@ share/doc/gentoo/dirpanes.html
 share/doc/gentoo/gentoo.css
 share/doc/gentoo/gpl.html
 share/doc/gentoo/history.html
+share/doc/gentoo/images/
 share/doc/gentoo/images/bullet.gif
 share/doc/gentoo/images/cfg_dirpane.gif
 share/doc/gentoo/images/cfg_gui.gif
@@ -61,6 +64,7 @@ share/doc/gentoo/menus.txt
 share/doc/gentoo/misc.html
 share/doc/gentoo/quick.html
 share/doc/gentoo/relnotes.html
+share/doc/gentoo/scratch/
 share/doc/gentoo/scratch/README
 share/doc/gentoo/scratch/command_args.txt
 share/doc/gentoo/scratch/command_howto.txt
@@ -81,8 +85,11 @@ share/doc/gentoo/template.html
 share/doc/gentoo/template_toc.html
 share/doc/gentoo/types.html
 share/doc/gentoo/usage.html
+share/gentoo/
 share/gentoo/gentoogtkrc
 share/gentoo/gentoorc
+@sample ${SYSCONFDIR}/gentoorc
+share/gentoo/icons/
 share/gentoo/icons/AbiWord.xpm
 share/gentoo/icons/Amiga.xpm
 share/gentoo/icons/Animation.xpm
@@ -206,14 +213,13 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
+share/locale/
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gentoo.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gentoo.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gentoo.mo
-@dirrm share/gentoo/icons
-@dirrm share/gentoo
-@dirrm share/doc/gentoo/scratch
-@dirrm share/doc/gentoo/images
-@dirrm share/doc/gentoo/config
-@dirrm share/doc/gentoo
-@cwd ${SYSCONFDIR}
-@extra gentoorc
