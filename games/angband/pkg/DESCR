@@ -1,8 +1,6 @@
 Angband is a "graphical" dungeon adventure game in the vein of
 "rogue", "hack", "nethack", and "moria".
 
-There are some ascii "on line help" files in /usr/local/share/angband/help
+There are some ascii "on line help" files in ${PREFIX}/share/angband/help
 
-Angband Home Page http://thangorodrim.angband.org/
-Newsgroup rec.games.roguelike.angband
-
+WWW: ${HOMEPAGE}
