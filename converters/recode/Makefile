@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/05 02:38:09 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/08/18 02:39:59 angelos Exp $
 
-DISTNAME=	recode-3.4
+DISTNAME=	recode-3.5
 CATEGORIES=	converters
 
 MAINTAINER=	angelos@openbsd.org
