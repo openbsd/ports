@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2003/07/06 17:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2003/07/06 18:51:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -50,8 +50,6 @@
 #    SUBDIR += xcoral
 #    SUBDIR += xed
 #    SUBDIR += xemacs
-#    SUBDIR += xemacs20
-#    SUBDIR += xemacs20,mule
      SUBDIR += xemacs21
      SUBDIR += xemacs21,mule
      SUBDIR += xemacs21-sumo
