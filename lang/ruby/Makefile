@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/02/21 00:48:11 krw Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/06 18:59:21 lebel Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=	1.6.6
@@ -29,6 +29,11 @@ LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
 
 CONFIGURE_STYLE=	autoconf
 SEPARATE_BUILD=		concurrent
+
+# XXX workaround gcc bugs on sparc64 (for sha1.o)
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=	-O0
+.endif
 
 CONFIGURE_ENV=	YACC=yacc
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
