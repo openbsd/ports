@@ -1,9 +1,9 @@
 # New ports collection makefile for:	bash
 # Version required:     1.14.7
-# Date created:		21 August 1994
-# Whom:			jkh
+# Date created:		17 November 1997
+# Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 01:20:02 gene Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:38 gene Exp $
 # Id: Makefile,v 1.25 1997/06/26 06:23:23 fenner Exp $
 #
 

@@ -1,9 +1,9 @@
 # New ports collection makefile for:    scsh
 # Version required:     0.5.1
-# Date created:         Jul, 15, 1997
-# Whom:                 cracauer@cons.org "Martin Cracauer"
+# Date created:         17 November 1997
+# Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 01:20:01 gene Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:42 gene Exp $
 # Id: Makefile,v 1.4 1997/07/15 15:00:30 cracauer Exp $
 #
 
@@ -11,7 +11,7 @@ DISTNAME=	scsh-0.5.1
 CATEGORIES=	shells lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 
-MAINTAINER= 	cracauer@cons.org
+MAINTAINER= 	gene@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 
