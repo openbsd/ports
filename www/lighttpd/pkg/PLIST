@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/01/31 03:42:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/08 22:49:39 brad Exp $
 bin/spawn-fcgi
 lib/lighttpd/
 @comment lib/lighttpd/mod_access.la
@@ -44,6 +44,7 @@ lib/lighttpd/mod_userdir.so
 @comment lib/lighttpd/mod_usertrack.la
 lib/lighttpd/mod_usertrack.so
 @man man/man1/lighttpd.1
+@man man/man1/spawn-fcgi.1
 sbin/lighttpd
 share/examples/lighttpd/
 share/examples/lighttpd/lighttpd.conf
