@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/14 12:49:46 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/28 13:00:40 sturm Exp $
 
 COMMENT=	"common library functions used by the UCL multicast utils"
 
 DISTNAME=	common-1.0.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mbone
 
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
@@ -25,6 +25,6 @@ WRKDIST=	${WRKDIR}/common
 NO_REGRESS=	Yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libcommon.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libcommon.a ${PREFIX}/lib/libuclcommon.a
 
 .include <bsd.port.mk>
