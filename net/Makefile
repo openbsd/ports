@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.299 2003/12/29 14:10:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.300 2004/01/05 17:48:03 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -142,6 +142,7 @@
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-SEC
      SUBDIR += p5-Net-Daemon
+     SUBDIR += p5-Net-Dict
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-IP
      SUBDIR += p5-Net-IPv4Addr
