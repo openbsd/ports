@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.parc.xerox.com/pub/gc/ \
 
 MAINTAINER=	niklas@openbsd.org
 
-FETCH_BEFORE_ARGS=	-b
 EXTRACT_AFTER_ARGS=	|| true
 
 WRKSRC=		${WRKDIR}/gc
