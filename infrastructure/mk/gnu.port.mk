@@ -1,10 +1,9 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.8 2002/03/18 03:18:24 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.9 2002/07/06 09:24:06 pvalchev Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
-NEED_VERSION+=1.513
 AUTOCONF_NEW?=	No
 .if ${CONFIGURE_STYLE:L:Mautomake}
 BUILD_DEPENDS+=		::devel/automake

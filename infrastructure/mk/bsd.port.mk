@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.531 2002/05/20 05:18:18 mpech Exp $$
+#	$OpenBSD: bsd.port.mk,v 1.532 2002/07/06 09:24:06 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -611,23 +611,6 @@ MODULES+=${_i}
 _MODULES_DONE=
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
-
-# NEED_VERSION: we need at least this version of bsd.port.mk for this 
-# port  to build
-
-_VERSION_REVISION=${FULL_REVISION:M[0-9]*.*}
-
-_VERSION=${_VERSION_REVISION:C/\..*//}
-_REVISION=${_VERSION_REVISION:C/.*\.//}
-
-.for _v in ${NEED_VERSION}
-_VERSION_NEEDED=${_v:C/\..*//}
-_REVISION_NEEDED=${_v:C/.*\.//}
-.  if ${_VERSION_NEEDED} > ${_VERSION} || \
-   (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
-ERRORS+=	"Fatal: Need version ${NEED_VERSION} of bsd.port.mk."
-.  endif
-.endfor
 
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
