@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/20 13:00:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.22 2001/06/19 04:43:37 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
-VERSION=	2.3.9
+VERSION=	2.3.10
 DISTNAME=	libxml2-${VERSION}
 PKGNAME=	libxml-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.384
+NEED_VERSION=	1.414
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/libxml
 
@@ -21,7 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --without-iconv
+CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ARGS+= --with-html-dir="${PREFIX}/share"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Sun Apr  8 04:24:52 2001
-+++ doc/Makefile.in	Fri Apr 13 14:59:59 2001
-@@ -113,7 +113,7 @@ XPTR_OBJ = @XPTR_OBJ@
+--- doc/Makefile.in.orig	Tue Jun 19 11:07:12 2001
++++ doc/Makefile.in	Tue Jun 19 11:07:52 2001
+@@ -118,7 +118,7 @@
  Z_CFLAGS = @Z_CFLAGS@
  Z_LIBS = @Z_LIBS@
  
@@ -9,7 +9,7 @@
  
  # The top-level SGML file.
  DOC_MAIN_SGML_FILE = gnome-xml.sgml
-@@ -262,7 +262,6 @@ install-data-local: 
+@@ -267,7 +267,6 @@
  	-@INSTALL@ -m 0644 $(srcdir)/xml.html $(srcdir)/encoding.html $(srcdir)/FAQ.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(DESTDIR)$(TARGET_DIR)
  	-@INSTALL@ -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(TARGET_DIR)
  	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)
