@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/03/02 04:41:08 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/09/14 10:01:31 espie Exp $
 #
 
 DISTNAME=	a2ps-4.10.4
@@ -14,12 +14,12 @@ MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 # Note: You can get by without these
 #
 BUILD_DEPENDS=	gv:${PORTSDIR}/print/gv \
-		dvips:${PORTSDIR}/print/teTeX \
+		dvips:${PORTSDIR}/print/teTeX/base \
 		ps2pdf:${PORTSDIR}/print/ghostscript5 \
 		psselect:${PORTSDIR}/print/psutils \
 		convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
-		dvips:${PORTSDIR}/print/teTeX \
+		dvips:${PORTSDIR}/print/teTeX/base \
 		ps2pdf:${PORTSDIR}/print/ghostscript5 \
 		psselect:${PORTSDIR}/print/psutils \
 		convert:${PORTSDIR}/graphics/ImageMagick
