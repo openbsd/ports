@@ -1,0 +1,11 @@
+--- econfig.h.orig	Sun Apr 18 23:35:10 1999
++++ econfig.h	Sun Apr 18 23:35:39 1999
+@@ -58,7 +58,7 @@
+ #define HAVE_STRCASECMP 1
+ 
+ /* Define if you have the <alloca.h> header file.  */
+-#define HAVE_ALLOCA_H 1
++/* #undef HAVE_ALLOCA_H */
+ 
+ /* Define if you have the Fridge library (-lFridge).  */
+ /* #undef HAVE_LIBFRIDGE */
