@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2001/01/06 16:46:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2001/01/07 00:02:41 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -13,6 +13,9 @@
 #    SUBDIR += asfiles
      SUBDIR += aterm
 #    SUBDIR += auis
+     SUBDIR += bbdate
+     SUBDIR += bbkeys
+     SUBDIR += bbkeys:qt
      SUBDIR += bclock
      SUBDIR += blackbox
      SUBDIR += blast
