@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-Makefile_in,v 1.1 2004/02/16 12:33:18 jakob Exp $
 --- Makefile.in.orig	Mon Sep  2 11:21:17 2002
 +++ Makefile.in	Mon Sep  2 11:21:21 2002
 @@ -78,7 +78,7 @@ VERSION = @VERSION@

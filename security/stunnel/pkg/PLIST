@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/10/31 18:02:36 jakob Exp $
-share/examples/stunnel/stunnel.conf-sample
+@comment $OpenBSD: PLIST,v 1.5 2004/02/16 12:33:18 jakob Exp $
 man/man8/stunnel.8
 sbin/stunnel
+share/examples/stunnel/stunnel.conf-sample
 @dirrm share/examples/stunnel

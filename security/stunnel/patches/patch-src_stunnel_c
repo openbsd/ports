@@ -1,0 +1,12 @@
+--- src/stunnel.c.orig	2004-02-14 15:12:27.000000000 +0100
++++ src/stunnel.c	2004-02-16 13:06:48.000000000 +0100
+@@ -176,8 +176,8 @@ static void daemon_loop(void) {
+ #if !defined (USE_WIN32) && !defined (__vms)
+     if(!(options.option.foreground))
+         daemonize();
+-    drop_privileges();
+     create_pid();
++    drop_privileges();
+ #endif /* !defined USE_WIN32 && !defined (__vms) */
+ 
+     /* create exec+connect services */

@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.28 2003/11/23 02:06:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2004/02/16 12:33:18 jakob Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
-DISTNAME=	stunnel-4.04
+VERSION=	4.05
+DISTNAME=	stunnel-${VERSION}
 CATEGORIES=	security
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://stunnel.mirt.net/
+HOMEPAGE=	http://www.stunnel.org/
 
 MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 		http://www.stunnel.org/download/stunnel/src/ \
@@ -25,9 +27,9 @@ MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
-			--with-pem-dir=${SYSCONFDIR}/ssl \
 			--with-random=/dev/arandom \
 			--with-ssl=/usr \
+			--sysconfdir=${SYSCONFDIR} \
 			--localstatedir=/var \
 			${CONFIGURE_SHARED}
 NO_REGRESS=		Yes
