@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/07/25 12:52:24 espie Exp $
-@comment $Id: PLIST,v 1.2 2001/07/25 12:52:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/02/05 04:07:57 pvalchev Exp $
 bin/xmms-config
 bin/xmms
 bin/wmxmms
 %%SHARED%%
 man/man1/xmms.1
+man/man1/wmxmms.1
 include/xmms/configfile.h
 include/xmms/dirbrowser.h
 include/xmms/formatter.h
@@ -13,14 +13,8 @@ include/xmms/plugin.h
 include/xmms/titlestring.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
-share/doc/xmms/AUTHORS
-share/doc/xmms/COPYING
-share/doc/xmms/ChangeLog
-share/doc/xmms/FAQ
-share/doc/xmms/INSTALL
 share/doc/xmms/NEWS
 share/doc/xmms/README
-share/doc/xmms/TODO
 share/xmms/wmxmms.xpm
 share/aclocal/xmms.m4
 share/locale/af/LC_MESSAGES/xmms.mo
@@ -33,6 +27,7 @@ share/locale/de/LC_MESSAGES/xmms.mo
 share/locale/el/LC_MESSAGES/xmms.mo
 share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
+share/locale/eu/LC_MESSAGES/xmms.mo
 share/locale/fr/LC_MESSAGES/xmms.mo
 share/locale/ga/LC_MESSAGES/xmms.mo
 share/locale/gl/LC_MESSAGES/xmms.mo
@@ -44,6 +39,7 @@ share/locale/ja/LC_MESSAGES/xmms.mo
 share/locale/ko/LC_MESSAGES/xmms.mo
 share/locale/lt/LC_MESSAGES/xmms.mo
 share/locale/lv/LC_MESSAGES/xmms.mo
+share/locale/nn/LC_MESSAGES/xmms.mo
 share/locale/nl/LC_MESSAGES/xmms.mo
 share/locale/no/LC_MESSAGES/xmms.mo
 share/locale/pl/LC_MESSAGES/xmms.mo
@@ -54,11 +50,14 @@ share/locale/ru/LC_MESSAGES/xmms.mo
 share/locale/sk/LC_MESSAGES/xmms.mo
 share/locale/sr/LC_MESSAGES/xmms.mo
 share/locale/sv/LC_MESSAGES/xmms.mo
+share/locale/tg/LC_MESSAGES/xmms.mo
+share/locale/th/LC_MESSAGES/xmms.mo
 share/locale/tr/LC_MESSAGES/xmms.mo
 share/locale/uk/LC_MESSAGES/xmms.mo
+share/locale/vi/LC_MESSAGES/xmms.mo
 share/locale/wa/LC_MESSAGES/xmms.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
 @dirrm include/xmms
 @dirrm share/xmms
 @dirrm share/doc/xmms

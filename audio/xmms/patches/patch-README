@@ -1,25 +1,23 @@
-$OpenBSD: patch-README,v 1.2 2001/07/25 15:48:26 naddy Exp $
---- README.orig	Wed Dec 20 15:30:36 2000
-+++ README	Wed Jul 25 16:47:42 2001
-@@ -31,6 +31,7 @@ TABLE OF CONTENTS
+--- README.orig	Tue Jan  8 11:59:15 2002
++++ README	Wed Jan 23 12:25:33 2002
+@@ -39,6 +39,7 @@
              3.6.2.1 OSS Driver
              3.6.2.2 Disk Writer
              3.6.2.3 eSound Output
-+            3.6.2.4 Sun Output
++            3.6.2.4 BSD Sun Output
        3.6.3 Effect plugins
              3.6.3.1 Echo
              3.6.3.2 Extra Stereo
-@@ -763,6 +764,37 @@ and port to send to. This is probably on
+@@ -874,6 +875,35 @@
  the audio data is sent uncompressed to the remote ESD.
  
  The 'Buffering' tab works just like the 'OSS Driver' one.
 +
 +
-+
-+3.6.2.4 Sun Output
++3.6.2.4 BSD Sun Output
 +----------------------
 +The 'Sun' output plugin will use the native audio(4) interface provided
-+notably in OpenBSD and NetBSD, for playback and mixing.
++by OpenBSD and NetBSD for playback and mixing.
 +
 +The $AUDIODEVICE and $MIXERDEVICE environment variables will override the
 +current configuration settings. Defaults are /dev/audio and /dev/mixer.
@@ -32,18 +30,17 @@ $OpenBSD: patch-README,v 1.2 2001/07/25 15:48:26 naddy Exp $
 +buffer. The 'Buffer size' ranges from 200 - 10000ms. If you want the plugin
 +to wait for the buffer to be filled before it starts playing the music,
 +change the 'Pre-buffer' value, this ranges from 0% - 90% of the 'Buffer size'
-+value. Increasing the buffer size might help on slow systems.
++value.
 +
 +In the 'Mixer' tab you can select the volume device to be affected when you
 +alter the volume from XMMS. `XMMS uses mixer exclusively' causes XMMS to
-+keep the mixer device open instead of re-opening it for every operation.
-+Concurrent mixer operations does not seem to be a problem anyway.
++keep the mixer device open instead of re-opening it for each operation.
 +
 +There may also be some more options depending on what your audio mixer
-+supports (eg. loudness, spatial, surround, preamp).
++device supports (eg. loudness, spatial, surround, preamp).
 +
 +In the 'Status' tab you can see audio device information and real-time
-+playback/buffering status.
++playback status.
  
  
  3.6.3 Effect plugins

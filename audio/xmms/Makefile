@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.18 2002/01/16 19:25:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/02/05 04:07:57 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
+COMMENT-diskwriter=	"Disk writer output plugin for XMMS"
 COMMENT-esd=		"Esound output plugin for XMMS"
 COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
+COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 
-VERSION=		1.2.5
+VERSION=		1.2.6
 DISTNAME=		xmms-${VERSION}
-FULLPKGNAME=		xmms-${VERSION}p1
-FULLPKGNAME-esd=	xmms-esd-${VERSION}p1
-FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}p1
-DISTDRIVER=		xmms_sun-${VERSION}-p2
+FULLPKGNAME=		xmms-${VERSION}
+FULLPKGNAME-diskwriter=	xmms-diskwriter-${VERSION}
+FULLPKGNAME-esd=	xmms-esd-${VERSION}
+FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
+FULLPKGNAME-mikmod=	xmms-mikmod-${VERSION}
+SUNDRIVER=		xmms_sun-${VERSION}
 CATEGORIES=		audio
-NEED_VERSION=		1.475
+NEED_VERSION=		1.504
 HOMEPAGE=		http://www.xmms.org
 
-MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
+MAINTAINER=		Wilbern Cobb <vedge@csoft.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,20 +34,20 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 			ftp://ftp.stealth.net/xmms/%SUBDIR%/
 
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
-			ftp://vedge.com.ar/pub/xmms/
+			ftp://vedge.com.ar/pub/xmms/ \
+			http://mirror.csoft.org/xmms/
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
-
-FLAVORS=		no_esd no_vorbis
+FLAVORS=		no_esd no_vorbis no_mikmod
 FLAVOR?=
-MULTI_PACKAGES=
+MULTI_PACKAGES=		-diskwriter
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=	-esd
 .endif
 .if !${FLAVOR:L:Mno_vorbis}
 MULTI_PACKAGES+=	-vorbis
+.endif
+.if !${FLAVOR:L:Mno_mikmod}
+MULTI_PACKAGES+=	-mikmod
 .endif
 
 SUBPACKAGE?=
@@ -54,54 +58,61 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		XML_CONFIG="${LOCALBASE}/bin/xml-config" \
-		LIBMIKMOD_CONFIG=/usr/bin/false
+		XML_CONFIG="${LOCALBASE}/bin/xml-config"
 
 DISTFILES=		${DISTNAME}.tar.gz \
-			${DISTDRIVER}.tar.gz:0
+			${SUNDRIVER}.tar.gz:0
 
-DOCS=			AUTHORS COPYING ChangeLog FAQ INSTALL NEWS \
-			README TODO
-
-SUBST_VARS=		MAINTAINER PKGNAME-vorbis PKGNAME-esd
+DOCS=			README NEWS
+SUBST_VARS=		PKGNAME-diskwriter PKGNAME-vorbis PKGNAME-esd \
+			PKGNAME-mikmod
 
 .if defined(PACKAGING) 
-
-.  if ${SUBPACKAGE} == "-esd"
+. if ${SUBPACKAGE} == "-diskwriter"
+RUN_DEPENDS=		::audio/xmms
+. endif
+. if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
 RUN_DEPENDS=		::audio/xmms
-.  endif
-.  if ${SUBPACKAGE} == "-vorbis"
+. endif
+. if ${SUBPACKAGE} == "-vorbis"
 LIB_DEPENDS=		vorbis.0,vorbisfile.1::audio/libvorbis
 RUN_DEPENDS=		::audio/xmms
-.  endif
+. endif
+. if ${SUBPACKAGE} == "-mikmod"
+LIB_DEPENDS=		mikmod.0::audio/libmikmod
+RUN_DEPENDS=		::audio/xmms
+. endif
 .else
-.  if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS +=		esd.2::audio/esound
+. if ${MULTI_PACKAGES:M-esd}
+LIB_DEPENDS+=		esd.2::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
-.  else
-CONFIGURE_ENV+=		ESD_CONFIG=/usr/bin/false
-.  endif
-
-.  if ${MULTI_PACKAGES:M-vorbis}
-LIB_DEPENDS +=		vorbis.0,vorbisfile.1::audio/libvorbis
+. else
+CONFIGURE_ARGS+=	--disable-esd
+. endif
+. if ${MULTI_PACKAGES:M-vorbis}
+LIB_DEPENDS+=		vorbis.0,vorbisfile.1::audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
-.  else
-CONFIGURE_ENV+=		OGG_LIBS=its-not-my-godamn-planet-understand-monkey-boy
-CONFIGURE_ENV+=		VORBIS_LIBS=its-not-my-godamn-planet-understand-monkey-boy
-.  endif
+. else
+CONFIGURE_ARGS+=	--disable-vorbis
+. endif
+. if ${MULTI_PACKAGES:M-mikmod}
+LIB_DEPENDS+=		mikmod.2::audio/libmikmod
+CONFIGURE_ARGS+=	--with-mikmod-prefix=${LOCALBASE}
+. else
+CONFIGURE_ARGS+=	--disable-mikmod
+. endif
 .endif
 
 post-extract:
-	@mv -f ${WRKDIR}/${DISTDRIVER}/Output/sun ${WRKSRC}/Output/sun
+	@mv -f ${WRKDIR}/${SUNDRIVER} ${WRKSRC}/Output/sun
 
 pre-configure:
 	@cd ${WRKSRC}/libxmms && autoconf

@@ -1,5 +1,3 @@
-XMMS - Esound output plugin
-
-This is a XMMS output plugin for the Enlightened Sound Daemon.
+XMMS output plugin for the Enlightened Sound Daemon.
 
 WWW: ${HOMEPAGE}

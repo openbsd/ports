@@ -1,96 +1,16 @@
-$OpenBSD: patch-xmms_pluginenum_c,v 1.3 2001/07/25 16:05:19 naddy Exp $
---- xmms/pluginenum.c.orig	Mon Oct 16 15:37:56 2000
-+++ xmms/pluginenum.c	Wed Jul 25 16:47:43 2001
-@@ -33,6 +33,19 @@
- # define RTLD_NOW 0
- #endif
- 
-+#ifdef WITH_SYMBOL_UNDERSCORE
-+# define IPLUGIN_SYM "_get_iplugin_info"
-+# define OPLUGIN_SYM "_get_oplugin_info"
-+# define EPLUGIN_SYM "_get_eplugin_info"
-+# define GPLUGIN_SYM "_get_gplugin_info"
-+# define VPLUGIN_SYM "_get_vplugin_info"
-+#else
-+# define IPLUGIN_SYM "get_iplugin_info"
-+# define OPLUGIN_SYM "get_oplugin_info"
-+# define EPLUGIN_SYM "get_eplugin_info"
-+# define GPLUGIN_SYM "get_gplugin_info"
-+# define VPLUGIN_SYM "get_vplugin_info"
-+#endif
- 
- gchar *plugin_dir_list[] =
- {
-@@ -264,9 +277,9 @@ void add_plugin(gchar * filename)
- #endif /* HPUX */
- 	{
- #ifdef HPUX
-- 		if ((shl_findsym(&h, "get_iplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
-+ 		if ((shl_findsym(&h, IPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
- #else
--		if ((gpi = dlsym(h, "get_iplugin_info")) != NULL)
-+		if ((gpi = dlsym(h, IPLUGIN_SYM)) != NULL)
- #endif
- 		{
- 			InputPlugin *p;
-@@ -282,9 +295,9 @@ void add_plugin(gchar * filename)
- 			ip_data->input_list = g_list_prepend(ip_data->input_list, p);
- 		}
- #ifdef HPUX
--		else if ((shl_findsym(&h, "get_oplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
-+		else if ((shl_findsym(&h, OPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
- #else
--		else if ((gpi = dlsym(h, "get_oplugin_info")) != NULL)
-+		else if ((gpi = dlsym(h, OPLUGIN_SYM)) != NULL)
- #endif
- 		{
- 			OutputPlugin *p;
-@@ -295,9 +308,9 @@ void add_plugin(gchar * filename)
- 			op_data->output_list = g_list_prepend(op_data->output_list, p);
- 		}
- #ifdef HPUX
--		else if ((shl_findsym(&h, "get_eplugin_info", TYPE_PROCEDURE, (void *) &gpi)) == 0)
-+		else if ((shl_findsym(&h, EPLUGIN_SYM, TYPE_PROCEDURE, (void *) &gpi)) == 0)
- #else
--		else if ((gpi = dlsym(h, "get_eplugin_info")) != NULL)
-+		else if ((gpi = dlsym(h, EPLUGIN_SYM)) != NULL)
- #endif
- 		{
- 			EffectPlugin *p;
-@@ -308,9 +321,9 @@ void add_plugin(gchar * filename)
- 			ep_data->effect_list = g_list_prepend(ep_data->effect_list, p);
- 		}
- #ifdef HPUX
--		else if ((shl_findsym(&h, "get_gplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
-+		else if ((shl_findsym(&h, GPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
- #else
--		else if ((gpi = dlsym(h, "get_gplugin_info")) != NULL)
-+		else if ((gpi = dlsym(h, GPLUGIN_SYM)) != NULL)
- #endif 
- 		{
- 			GeneralPlugin *p;
-@@ -322,9 +335,9 @@ void add_plugin(gchar * filename)
- 			gp_data->general_list = g_list_prepend(gp_data->general_list, p);
- 		}
- #ifdef HPUX
--		else if ((shl_findsym(&h, "get_vplugin_info", TYPE_PROCEDURE, (void *) &gpi)) == 0)
-+		else if ((shl_findsym(&h, VPLUGIN_SYM, TYPE_PROCEDURE, (void *) &gpi)) == 0)
- #else
--		else if ((gpi = dlsym(h, "get_vplugin_info")) != NULL)
-+		else if ((gpi = dlsym(h, VPLUGIN_SYM)) != NULL)
- #endif
- 		{
- 			VisPlugin *p;
-@@ -422,6 +434,12 @@ void cleanup_plugins(void)
+$OpenBSD: patch-xmms_pluginenum_c,v 1.4 2002/02/05 04:07:57 pvalchev Exp $
+--- xmms/pluginenum.c.orig	Fri Jan 18 06:44:35 2002
++++ xmms/pluginenum.c	Fri Jan 18 06:47:26 2002
+@@ -431,6 +431,12 @@
  	while (node)
  	{
  		op = (OutputPlugin *) node->data;
-+		if(op && op->cleanup) {
-+		    op->cleanup();
-+		    GDK_THREADS_LEAVE();
-+		    while(g_main_iteration(FALSE));
-+		    GDK_THREADS_ENTER();
++		if (op != NULL && op->cleanup != NULL) {
++			op->cleanup();
++			GDK_THREADS_LEAVE();
++			while (g_main_iteration(FALSE));
++			GDK_THREADS_ENTER();
 +		}
- #ifdef HPUX
-                 h = op->handle;
-                 shl_unload(*h);
+ 		close_dynamic_lib(op->handle);
+ 		node = node->next;
+ 	}

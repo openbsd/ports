@@ -1,13 +1,6 @@
-XMMS - Multimedia player for the X Window System
-
 X Multimedia System is a sound player written from scratch. Since it
 uses the WinAmp GUI, it can use WinAmp skins. It can play mp3s, mods,
-s3ms and other formats. It has now support for input, output, general,
-and visualization plugins.
-
-Packages can be built with additional FLAVORs:
-
-    esd:	Built with Esound Output plugin.
-    vorbis:	Built with Ogg Vorbis plugin.
+s3ms and other formats. It has support for input, output, general, and
+visualization plugins.
 
 WWW: ${HOMEPAGE}

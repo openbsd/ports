@@ -1,5 +1,3 @@
-XMMS - Ogg Vorbis input plugin
-
-This is a XMMS input plugin for the Ogg Vorbis files.
+Plays Ogg Vorbis files and HTTP streams from XMMS.
 
 WWW: ${HOMEPAGE}
