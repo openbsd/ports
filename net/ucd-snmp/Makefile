@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2001/10/08 16:07:12 danh Exp $
+# $OpenBSD: Makefile,v 1.31 2001/10/11 19:16:19 danh Exp $
 
 COMMENT=	"extendable SNMP implementation"
 
-DISTNAME=	ucd-snmp-4.2.1
+DISTNAME=	ucd-snmp-4.2.2
 CATEGORIES=     net
 NEED_VERSION=	1.456
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} 
@@ -17,24 +17,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-CONFIGURE_STYLE= autoconf dest
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-persistent-directory='/var/ucd-snmp' \
 		 --with-libwrap='/usr' --with-openssl --with-zlib \
 		 --with-sys-contact='default@' \
 		 --with-sys-location='Default Location'
-CONFIGURE_ENV=	VERSION_INFO='42:0:0'
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
+CONFIGURE_ENV=	VERSION_INFO='42:2:0'
 
 SNMP_BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
 		snmpdf snmpget snmpgetnext snmpnetstat snmpset snmpstatus \
 		snmptable snmptest snmptranslate snmptrap snmpusm snmpvacm \
 		snmpwalk 
 SNMP_SBIN=	snmpd snmptrapd
+
+post-extract:
+	@cp ${FILESDIR}/openbsd3.h ${WRKSRC}/s/openbsd3.h
 
 post-install:
 	@cd ${PREFIX}/bin && strip ${SNMP_BIN}

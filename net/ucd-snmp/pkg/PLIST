@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/05/22 19:21:34 danh Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/10/11 19:16:19 danh Exp $
 @unexec rm -f %D/share/snmp/mibs/.index
 @mode 0555
 bin/encode_keychange
@@ -39,10 +39,12 @@ include/ucd-snmp/header_complex.h
 include/ucd-snmp/int64.h
 include/ucd-snmp/keytools.h
 include/ucd-snmp/mib.h
+include/ucd-snmp/mib_module_config.h
 include/ucd-snmp/mibincl.h
 include/ucd-snmp/parse.h
 include/ucd-snmp/read_config.h
 include/ucd-snmp/scapi.h
+include/ucd-snmp/snmp-tc.h
 include/ucd-snmp/snmp.h
 include/ucd-snmp/snmp_agent.h
 include/ucd-snmp/snmp_alarm.h
@@ -65,13 +67,6 @@ include/ucd-snmp/ucd-snmp-includes.h
 include/ucd-snmp/util_funcs.h
 include/ucd-snmp/var_struct.h
 include/ucd-snmp/version.h
-lib/libsnmp.a
-lib/libsnmp.la
-lib/libucdagent.a
-lib/libucdagent.la
-lib/libucdmibs.a
-lib/libucdmibs.la
-%%SHARED%%
 man/man1/snmpbulkget.1
 man/man1/snmpbulkwalk.1
 man/man1/snmpcmd.1
@@ -113,9 +108,12 @@ man/man3/shutdown_mib.3
 man/man3/snmp_agent_api.3
 man/man3/snmp_alarm.3
 man/man3/snmp_api.3
+man/man3/snmp_api_errstring.3
 man/man3/snmp_close.3
+man/man3/snmp_error.3
 man/man3/snmp_free_pdu.3
 man/man3/snmp_open.3
+man/man3/snmp_perror.3
 man/man3/snmp_read.3
 man/man3/snmp_select_info.3
 man/man3/snmp_send.3
@@ -125,6 +123,7 @@ man/man3/snmp_sess_close.3
 man/man3/snmp_sess_error.3
 man/man3/snmp_sess_init.3
 man/man3/snmp_sess_open.3
+man/man3/snmp_sess_perror.3
 man/man3/snmp_sess_read.3
 man/man3/snmp_sess_select_info.3
 man/man3/snmp_sess_send.3
@@ -206,6 +205,14 @@ share/snmp/snmpconf/snmpd.conf/system
 share/snmp/snmpconf/snmpd.conf/trapsinks
 share/snmp/snmpconf/snmptrapd.conf/formatting
 share/snmp/snmpconf/snmptrapd.conf/traphandle
+@mode
+lib/libsnmp.a
+lib/libsnmp.la
+lib/libucdagent.a
+lib/libucdagent.la
+lib/libucdmibs.a
+lib/libucdmibs.la
+%%SHARED%%
 @dirrm share/snmp/snmpconf/snmptrapd.conf
 @dirrm share/snmp/snmpconf/snmpd.conf
 @dirrm share/snmp/snmpconf/snmp.conf
