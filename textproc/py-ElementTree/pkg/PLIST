@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/22 02:33:43 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/elementtree/
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementInclude.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementInclude.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementPath.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementPath.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementTree.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/ElementTree.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/HTMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/HTMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/SgmlopXMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/SgmlopXMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/SimpleXMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/SimpleXMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/SimpleXMLWriter.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/SimpleXMLWriter.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/TidyHTMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/TidyHTMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/TidyTools.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/TidyTools.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/XMLTreeBuilder.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/XMLTreeBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/elementtree/__init__.py
+lib/python${MODPY_VERSION}/site-packages/elementtree/__init__.pyc
