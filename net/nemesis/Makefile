@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/25 00:50:38 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/25 01:51:40 brad Exp $
 
 DISTNAME=	nemesis-1.1
 CATEGORIES=	net security
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --with-net-lib="${LOCALBASE}/lib" \
-		--with-net-inc="${LOCALBASE}/include"
 
 WRKDIST=	${WRKDIR}/nemesis
 
