@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/03 01:00:58 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/15 17:11:44 naddy Exp $
 bin/enigma
 man/man6/enigma.6
 share/applications/enigma.desktop
@@ -1671,7 +1671,7 @@ share/enigma/sound/switch.wav
 share/enigma/startup.lua
 share/icons/hicolor/48x48/apps/enigma.png
 share/pixmaps/enigma.png
-@comment @dirrm share/pixmaps
+@dirrm share/pixmaps
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor
@@ -1685,4 +1685,4 @@ share/pixmaps/enigma.png
 @dirrm share/doc/enigma/reference
 @dirrm share/doc/enigma/images
 @dirrm share/doc/enigma
-@comment @dirrm share/applications
+@dirrm share/applications

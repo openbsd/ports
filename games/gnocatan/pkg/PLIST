@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/23 07:23:48 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:11:44 naddy Exp $
 bin/gnocatan
 bin/gnocatan-meta-server
 bin/gnocatan-server-console
@@ -84,12 +84,12 @@ share/pixmaps/gnocatan/tick.png
 share/pixmaps/gnocatan/trade.png
 share/pixmaps/gnome-gnocatan.png
 @dirrm share/pixmaps/gnocatan
-@comment @dirrm share/pixmaps
+@dirrm share/pixmaps
 @dirrm share/gnome/help/gnocatan/C/images
 @dirrm share/gnome/help/gnocatan/C
 @dirrm share/gnome/help/gnocatan
-@comment @dirrm share/gnome/help
-@comment @dirrm share/gnome/apps/Games
-@comment @dirrm share/gnome/apps
-@comment @dirrm share/gnome
+@dirrm share/gnome/help
+@dirrm share/gnome/apps/Games
+@dirrm share/gnome/apps
+@dirrm share/gnome
 @dirrm share/gnocatan
