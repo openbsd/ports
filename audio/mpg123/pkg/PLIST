@@ -1,2 +1,4 @@
 bin/mpg123
 man/man1/mpg123.1
+share/mpg123/COPYING
+@dirrm share/mpg123

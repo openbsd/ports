@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/23 17:28:06 ho Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/03 02:21:54 ho Exp $
 
 DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
@@ -10,6 +10,12 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 PATCHFILES=	mpg123-059r-v6-20000111.diff.gz:0
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP= -p1
+
+LICENSE_TYPE=		COPY
+PERMIT_DISTFILES_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_PACKAGE_CDROM=	yes
 
 MAINTAINER=	ho@openbsd.org
 
@@ -28,5 +34,9 @@ MAKE_ENV+=     USE_INET6=YES
 
 post-patch:
 	@cp ${FILESDIR}/{audio_openbsd.c,term.c} ${WRKSRC}
+
+post-install:
+	${INSTALL_DATA_DIR} ${LOCALBASE}/share/mpg123
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${LOCALBASE}/share/mpg123
 
 .include <bsd.port.mk>
