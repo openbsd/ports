@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2005/01/20 03:00:00 brad Exp $
+# $OpenBSD: Makefile,v 1.105 2005/01/25 16:01:07 alek Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ncurses pthread readline ssl wrap z
+WANTLIB=		c crypto m pthread ssl z
 
 DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
@@ -79,10 +79,14 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	:mysql-client-4.0.*:databases/mysql \
 		:p5-DBD-mysql-*:databases/p5-DBD-mysql
+WANTLIB+=	wrap		
+.elif empty(SUBPACKAGE)
+WANTLIB+=	ncurses readline
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tests"
 PKG_ARCH=	*
+WANTLIB=
 .endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
