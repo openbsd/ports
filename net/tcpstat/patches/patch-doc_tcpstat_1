@@ -1,0 +1,57 @@
+$OpenBSD: patch-doc_tcpstat_1,v 1.1.1.1 2001/01/30 15:22:54 avsm Exp $
+--- doc/tcpstat.1.orig	Tue Jan 30 01:26:46 2001
++++ doc/tcpstat.1	Tue Jan 30 01:30:17 2001
+@@ -73,11 +73,11 @@ Default is 5 seconds.
+ When reading data from
+ .Ar filename ,
+ .Nm
+-will exit immediately after the entire file has been procesed.  When
++will exit immediately after the entire file has been processed.  When
+ collecting data from
+ .Ar interface ,
+ .Nm
+-will exit upon recieving a SIGINT, or (if the
++will exit upon receiving a SIGINT, or (if the
+ .Fl s
+ option is specified) after
+ .Ar seconds
+@@ -92,7 +92,7 @@ minute, hour, day, and month.
+ .It Fl b Ar bps
+ Bandwidth mode.
+ Displays the total number of seconds the
+-data-throughput exceded
++data-throughput exceeded
+ .Ar bps ,
+ and the percentage of total time this was,
+ as if the interface were limited to
+@@ -111,7 +111,7 @@ and the percentage of total time this wa
+ section below to see difference between "dumb" and normal
+ bandwidth modes.
+ .It Fl e
+-Supresses the display of empty intervals.
++Suppresses the display of empty intervals.
+ .It Fl F
+ Flush the output streams after printing each interval.  Sometimes useful
+ when redirecting output into a file, or piping tcpstat into another
+@@ -216,10 +216,10 @@ the number of UDP packets
+ .It % Ns V
+ the number of IPv6 packets
+ .It % Ns Ar number
+-switch the output to the file desciptor
++switch the output to the file descriptor
+ .Ar number
+ at this point in the string.  All output for each interval before this
+-parameter is by default the standard output (file descriptor 1).  Usefull
++parameter is by default the standard output (file descriptor 1).  Useful
+ when redirecting the output into more than one file (or fifo) for separate
+ statisics.  Be sure you know where they are going.  Writing to "dangling"
+ file descriptors (without directing them to a specific destination) may
+@@ -293,7 +293,7 @@ samples of data), the bandwidth numbers 
+ variable.  Generally speaking, if you often have rapid bursts of packet data,
+ the bandwidth reported will not reflect this when
+ .Ar interval
+-is sufficently large.  This results in an "averaging" effect, which may or
++is sufficiently large.  This results in an "averaging" effect, which may or
+ may not be desired.  On the other hand, if
+ .Ar interval
+ is too small (say < 0.01), this results in unrealisticaly large

@@ -1,0 +1,6 @@
+tcpstat reports certain network interface statistics much like
+vmstat does for system statistics. tcpstat gets its information by
+either monitoring a specific interface, or by reading previously
+saved tcpdump data from a file.
+
+WWW: ${HOMEPAGE}
