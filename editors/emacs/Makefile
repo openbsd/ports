@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2000/04/22 10:22:15 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/21 05:33:03 marc Exp $
 
-VER=		20.3
+VER=		20.7
 DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
 NEED_VERSION=	1.218
@@ -31,6 +31,13 @@ M_ARCH=		${MACHINE_ARCH}
 .endif
 
 GCCARCH=	${M_ARCH}-unknown-openbsd${OPSYS_VER}
+
+# Uncomment for POP support
+#CONFIGURE_ARGS+=--with-pop
+# Uncomment for Kerberos support
+#CONFIGURE_ARGS+=--with-kerberos
+# Uncomment for Hesiod support
+#CONFIGURE_ARGS+=--with-hesiod
 
 .if defined(FLAVOR) && ${FLAVOR} == "no_X11"
 CONFIGURE_ARGS+=--without-x
