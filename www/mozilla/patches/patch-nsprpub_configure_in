@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_configure_in,v 1.1 2003/05/14 21:50:59 wilfried Exp $
---- nsprpub/configure.in.orig	Thu May  8 23:59:47 2003
-+++ nsprpub/configure.in	Fri May  9 00:02:46 2003
-@@ -1490,12 +1490,8 @@ mips-sony-newsos*)
+$OpenBSD: patch-nsprpub_configure_in,v 1.2 2003/05/17 05:56:23 wilfried Exp $
+--- nsprpub/configure.in.orig	Tue Mar 25 18:35:49 2003
++++ nsprpub/configure.in	Fri May 16 23:35:08 2003
+@@ -1490,12 +1490,8 @@
      MDCPUCFG_H=_openbsd.cfg
      PR_MD_CSRCS=openbsd.c
      USE_NSPR_THREADS=1
@@ -16,3 +16,13 @@ $OpenBSD: patch-nsprpub_configure_in,v 1.1 2003/05/14 21:50:59 wilfried Exp $
      ;;
  
  *-openvms*)
+@@ -2166,7 +2162,8 @@
+ 	    AC_DEFINE(_THREAD_SAFE)
+ 	    dnl -pthread links in -lc_r, so don't specify it explicitly.
+ 	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+-	        _PTHREAD_LDFLAGS=
++	        _PTHREAD_LDFLAGS=-pthread
++	        LDFLAGS="${_PTHREAD_LDFLAGS} ${LDFLAGS}"
+ 	    fi
+ 	    ;;
+     *-linux*)

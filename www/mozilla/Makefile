@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/05/17 05:52:25 wilfried Exp $
+# $OpenBSD: Makefile,v 1.34 2003/05/17 05:56:22 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -40,13 +40,12 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-pthreads			\
 		--enable-crypto			\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-profilesharing	\
 		--disable-ldap
-# does not pass NSPR tests
-#		--with-pthreads			\
 # enable these once Mozilla actually runs
 #		--enable-optimize="${CFLAGS}"	\
 
