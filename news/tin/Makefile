@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/05 00:26:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/13 20:43:30 naddy Exp $
 
-DISTNAME=	tin-1.4.4
+COMMENT=	'full-screen easy to use Usenet reader'
+
+DISTNAME=	tin-1.4.5
 CATEGORIES=	news
-NEED_VERSION=	1.311
+NEED_VERSION=	1.395
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.aak.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
 		ftp://ftp.nuxi.com/pub/tin/stable/ \
-		ftp://uiarchive.uiuc.edu/pub/packages/news/client/tin/unoff/
+		ftp://uiarchive.uiuc.edu/pub/packages/news/client/tin/unoff/ \
+		ftp://ftp.eee.hku.hk/pub/tin-unoff/
 
 HOMEPAGE=	http://www.tin.org/
 
-MAINTAINER=     ports@openbsd.org
+MAINTAINER=     Shell Hung <i@shellhung.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
@@ -29,7 +32,6 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
-MAKE_FILE=		makefile
-ALL_TARGET=		build
+ALL_TARGET=	build
 
 .include <bsd.port.mk>
