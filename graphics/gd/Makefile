@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/22 03:48:45 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/22 06:18:38 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -22,20 +22,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_LIBTOOL=	Yes
 MAKE_FLAGS=	COMPILER="${CC}"
 
 FLAVORS=	no_x11
 
 .if defined(FLAVOR) && ${FLAVOR:L} == "no_x11"
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
-		LIBS="-lm -lgd -lpng -ljpeg -lz" \
+		LIBS="libgd.la -lm -lpng -ljpeg -lz" \
 		INCLUDEDIRS="-I. -I/usr/local/include" \
 		LIBDIRS="-L. -L/usr/local/lib"
+FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
-		LIBS="-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11" \
+		LIBS="libgd.la -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		INCLUDEDIRS="-I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11" \
 		LIBDIRS="-L. -L/usr/local/lib -L/usr/X11R6/lib"
+FAKE_FLAGS+=	${MAKE_FLAGS}
 .endif
 
 post-install:
@@ -45,7 +48,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/index.html ${PREFIX}/share/examples/gd
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
-MAKE_ENV=	NO_SHARED_LIBS=	Yes
-.endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/12 17:25:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/06/22 06:18:39 brad Exp $
 bin/bdftogd
 bin/pngtogd
 bin/pngtogd2
@@ -16,6 +16,7 @@ include/gdfontmb.h
 include/gdfontl.h
 include/gdfontg.h
 lib/libgd.a
+lib/libgd.la
 %%SHARED%%
 share/examples/gd/demoin.png
 share/examples/gd/demoout.png
