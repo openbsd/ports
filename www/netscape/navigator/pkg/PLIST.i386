@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.i386,v 1.3 2000/08/04 20:54:19 brad Exp $
+@comment $OpenBSD: PLIST.i386,v 1.4 2000/12/15 14:53:33 brad Exp $
 @pkgcfl communicator-*
 bin/netscape
 netscape/LICENSE
@@ -6,6 +6,23 @@ netscape/Netscape.ad
 netscape/README
 netscape/XKeysymDB
 netscape/bookmark.htm
+netscape/java/classes/awt.properties
+netscape/java/classes/font.properties
+netscape/java/classes/font.properties.cs
+netscape/java/classes/font.properties.el
+netscape/java/classes/font.properties.hu
+netscape/java/classes/font.properties.ja
+netscape/java/classes/font.properties.ko
+netscape/java/classes/font.properties.lt
+netscape/java/classes/font.properties.lv
+netscape/java/classes/font.properties.pl
+netscape/java/classes/font.properties.ru
+netscape/java/classes/font.properties.tr
+netscape/java/classes/font.properties.zh
+netscape/java/classes/font.properties.zh_GB2312
+netscape/java/classes/font.properties.zh_TW
+netscape/java/classes/font.properties.zh_TW_Big5
+netscape/java/classes/font.properties.zh_TW_CNS11643
 netscape/java/classes/ifc11.jar
 netscape/java/classes/iiop10.jar
 netscape/java/classes/jae40.jar
@@ -86,13 +103,13 @@ netscape/nls/nls.dir
 netscape/plugins/cpPack1.jar
 netscape/registry
 netscape/vreg
-@dirrm netscape/plugins
-@dirrm netscape/nls
-@dirrm netscape/nethelp/netscape/shared
-@dirrm netscape/nethelp/netscape/navigatr
-@dirrm netscape/nethelp/netscape/home
-@dirrm netscape/nethelp/netscape
-@dirrm netscape/nethelp
 @dirrm netscape/java/classes
 @dirrm netscape/java
+@dirrm netscape/nethelp/netscape/home
+@dirrm netscape/nethelp/netscape/navigatr
+@dirrm netscape/nethelp/netscape/shared
+@dirrm netscape/nethelp/netscape
+@dirrm netscape/nethelp
+@dirrm netscape/nls
+@dirrm netscape/plugins
 @dirrm netscape

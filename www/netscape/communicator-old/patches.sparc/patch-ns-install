@@ -1,6 +1,6 @@
---- communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:18:29 1999
-+++ communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 16:27:26 1999
-@@ -84,22 +84,10 @@
+--- communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install.orig	Mon Jun 14 12:42:18 1999
++++ communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install	Thu Dec 14 21:49:10 2000
+@@ -84,22 +84,10 @@ then
  	exit 1
  fi
  #
@@ -26,7 +26,7 @@
  #
  #
  # See if we have to use the lame SYS-V echo command flags.
-@@ -137,63 +125,22 @@
+@@ -137,63 +125,22 @@ do
  	fi
  done
  #
@@ -97,7 +97,7 @@
  	if test ${flag} -eq 0
  	then
  		(echo "Write test." 2>/dev/null > ${TARGET}/${TESTFILE}) 2>/dev/null
-@@ -217,13 +164,6 @@
+@@ -217,13 +164,6 @@ echo ""
  echo ""
  echo "Installing ${PRODUCT} files..."
  #
@@ -111,7 +111,7 @@
  # Keep a log of this installation for reference.
  #
  LOGFILE="ns-install.log-$$"
-@@ -231,30 +171,6 @@
+@@ -231,30 +171,6 @@ date > ${LOGFILE}
  echo "Files installed:" >> ${LOGFILE}
  echo "================" >> ${LOGFILE}
  #
@@ -142,14 +142,7 @@
  # Actually install the package in TARGET.
  #
  ${GZIP} -dc ${PACKAGE} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
-@@ -269,33 +185,28 @@
- then
- 	echo ""
- 	echo "Installing ${PRODUCT} Java files..."
-+	/bin/rm -rf ${TARGET}/java
- 	if test ! -d ${TARGET}/java/classes
- 	then
- 		(cd ${TARGET}; mkdir -p java/classes)
+@@ -275,27 +191,21 @@ then
  	fi
  	for i in *.jar
  	do
@@ -181,7 +174,7 @@
  			AIX)
  				PLATFORM="aix"
  				;;
-@@ -317,19 +228,6 @@
+@@ -317,19 +227,6 @@ then
  			mv ${TARGET}/java/classes/${PLATFORM}/* ${TARGET}/java/classes/.
  		fi
  	fi
@@ -201,7 +194,7 @@
  fi
  #
  echo ""
-@@ -356,7 +254,6 @@
+@@ -356,7 +253,6 @@ do
  	esac
  	${GZIP} -dc ${pkg} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
  	echo "${pkg},${BLDVERS},${TARGET}" >> ${REG_INFILE}
@@ -209,7 +202,7 @@
  done
  #
  #
-@@ -374,20 +271,7 @@
+@@ -374,20 +270,7 @@ fi
  #
  # Install the vreg binary in the TARGET directory.
  #
@@ -231,7 +224,7 @@
  #
  #
  # Register the product so Automatic Software Download can work.
-@@ -413,7 +297,6 @@
+@@ -413,7 +296,6 @@ then
  	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
  	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
  	echo ""
@@ -239,7 +232,7 @@
  	exit 3
  fi
  #
-@@ -422,11 +305,6 @@
+@@ -422,11 +304,6 @@ echo ""
  echo "The Netscape ${PRODUCT} software installation is complete."
  echo ""
  echo ""
