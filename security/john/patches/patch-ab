@@ -1,0 +1,14 @@
+*** params.h-orig	Wed Apr  7 04:41:03 1999
+--- params.h	Wed Apr  7 04:41:34 1999
+***************
+*** 51,57 ****
+--- 51,59 ----
+   * File names.
+   */
+  #define LOG_NAME			"~/john.pot"
++ #ifndef CFG_NAME
+  #define CFG_NAME			"~/john.ini"
++ #endif
+  #define RECOVERY_NAME			"~/restore"
+  
+  /*

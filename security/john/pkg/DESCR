@@ -1,0 +1,92 @@
+
+ John the Ripper -- Password Cracker
+=====================================
+
+John the Ripper is a UNIX password cracker, currently available for UNIX,
+DOS, WinNT/Win95. Version 1.5 has been tested with Linux x86/Alpha/SPARC,
+FreeBSD x86, OpenBSD x86, Solaris 2.x SPARC and x86, Digital UNIX. There's
+also a generic make target that should work on most other UNIX systems.
+
+The DOS and Win32 ports are done with DJGPP and Cygnus Developer's Kit,
+respectively.
+
+ How to Install
+----------------
+
+See doc/INSTALL for information on installing John on your system.
+
+ How to Use
+------------
+
+To run John, you need to supply it with some password files, and specify a
+cracking mode, like this, using the "single crack" mode, and assuming that
+passwd is a copy of your password file:
+
+	john -single passwd
+
+and then, with a wordlist:
+
+	john -wordfile:/usr/dict/words -rules passwd
+
+Cracked passwords will be printed to the terminal and saved in file called
+~/john.pot (in this text '~' means John's "home directory", that is, the
+directory you installed John's binary in). This file is also used not to
+load passwords that you already cracked, when you run John the next time.
+To retrieve the cracked passwords, run:
+
+	john -show passwd
+
+While cracking, you can press any key for status, or Ctrl+C to abort the
+session, saving point information to a file (~/restore by default). By the
+way, if you press Ctrl+C twice John will abort immediately without saving.
+The point information is also saved every 10 minutes (see src/params.h) in
+case of a crash. To continue an interrupted session, run:
+
+	john -restore
+
+Anyway, you probably should have a look at doc/OPTIONS for a list of all
+the command line options, and at doc/EXAMPLES for more John usage examples
+with other cracking modes.
+
+ Features and Performance
+--------------------------
+
+John the Ripper is designed to be both powerful and fast. It combines
+several cracking modes in one program, and is fully configurable for your
+particular needs (you can even define a custom cracking mode using the
+built-in compiler supporting a subset of C). Also, John is available for
+several different platforms, which enables you to use the same cracker
+everywhere (for example even continue a cracking session that you started
+on another platform).
+
+Out of the box, John supports (and autodetects) the following ciphertext
+formats: standard and double-length DES-based, BSDI's extended DES-based,
+FreeBSD's (and not only) MD5-based, and OpenBSD's Blowfish-based.
+
+Unlike other crackers, John doesn't use a crypt(3)-style routine. Instead,
+it has its own highly optimized modules for different ciphertext formats
+and architectures. Some of the algorithms used couldn't be implemented in
+a crypt(3)-style routine: they require a more powerful interface (bitslice
+DES is an example). Additionally, there're assembly routines for several
+processors and architectures (special Intel Pentium version, x86 with MMX,
+generic x86, Alpha EV4, SPARC V8).
+
+ Documentation
+---------------
+
+The rest of documentation is located in separate files, listed here in the
+recommended reading order:
+
+INSTALL		- you've probably read it already
+OPTIONS		- command line options, and additional utilities
+MODES		- cracking modes: what they are
+CONFIG   (*)	- how to customize
+RULES    (*)	- wordlist rules syntax
+EXTERNAL (*)	- defining an external mode
+EXAMPLES	- usage examples -- strongly recommended
+FAQ		- guess
+NEWS		- history of changes
+CREDITS		- credits, and how to contact me
+(*) most users can safely skip these
+
+Happy reading!

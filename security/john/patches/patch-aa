@@ -1,0 +1,32 @@
+--- Makefile.orig	Wed Dec  2 19:29:50 1998
++++ Makefile	Mon May 31 11:54:07 1999
+@@ -14,6 +14,7 @@
+ NULL = /dev/null
+ CPPFLAGS = -E
+ CFLAGS = -c -Wall -O2 -fomit-frame-pointer
++CFLAGS += -DCFG_NAME=\\\"$(PREFIX)/etc/john.ini\\\"
+ ASFLAGS = -c
+ LDFLAGS = -s
+ OPT_NORMAL = -funroll-loops
+@@ -92,6 +93,7 @@
+ 	@echo "freebsd-x86-mmx-elf      FreeBSD, x86 with MMX, ELF binaries"
+ 	@echo "freebsd-x86-k6-elf       FreeBSD, AMD K6, ELF binaries"
+ 	@echo "openbsd-x86-any          OpenBSD, x86"
++	@echo "openbsd-x86-mmx		OpenBSD, x86 with MMX"
+ 	@echo "openbsd-x86-k6           OpenBSD, AMD K6"
+ 	@echo "solaris-sparc-gcc        Solaris, SPARC, gcc"
+ 	@echo "solaris-sparc-v8-cc      Solaris, SPARC V8, cc"
+@@ -191,6 +193,13 @@
+ 
+ openbsd-x86-any:
+ 	$(LN) x86-any.h arch.h
++	$(MAKE) $(PROJ) \
++		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
++		CFLAGS="$(CFLAGS) -m486" \
++		ASFLAGS="$(ASFLAGS) -DUNDERSCORES -DALIGN_LOG -DBSD"
++
++openbsd-x86-mmx:
++	$(LN) x86-mmx.h arch.h
+ 	$(MAKE) $(PROJ) \
+ 		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
+ 		CFLAGS="$(CFLAGS) -m486" \
