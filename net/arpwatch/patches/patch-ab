@@ -1,0 +1,11 @@
+--- p.awk.orig	Wed Mar 25 15:01:16 1998
++++ p.awk	Wed Mar 25 15:01:43 1998
+@@ -3,7 +3,7 @@
+ {
+ 	e = $1
+ 	if (seen[e])
+-		continue
++		next
+ 	seen[e] = 1
+ 	print $0
+ }
