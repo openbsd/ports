@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/08 22:04:32 espie Exp $
 
 DISTNAME=	gnuplot-3.7
 PKGNAME=	gnuplot-3.7
@@ -16,12 +16,14 @@ PERMIT_PACKAGE_CDROM=	"no modify"
 PERMIT_PACKAGE_FTP=	"no modify"
 PERMIT_DISTFILES_CDROM=	"no modify"
 PERMIT_DISTFILES_FTP=	Yes
+FAKE=			Yes
 
 LIB_DEPENDS=	png::graphics/png
 
-GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--includedir=${PREFIX}/include --libdir=${PREFIX}/lib \
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_ARGS+=	--exec-prefix='$$(prefix)' \
+		--includedir='$$(prefix)/include' --libdir='$$(prefix)/lib' \
 		--with-x --without-linux-vga --without-gd \
 		--with-gnu-readline --with-lasergnu --with-png 
 
