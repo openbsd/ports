@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2005/02/02 19:37:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2005/03/05 23:31:58 kurt Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
+COMMENT-examples="example applications and documentation"
 
 V=		4.1.31
 DISTNAME=	jakarta-tomcat-${V}
+PKGNAME=	${DISTNAME}p0
+PKGNAME-examples=jakarta-tomcat-examples-${V}p0
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=jakarta/tomcat-4/v$V/bin/} \
@@ -13,10 +16,18 @@ HOMEPAGE=	http://jakarta.apache.org/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
+MULTI_PACKAGES=	-examples
+SUBPACKAGE?=
+
 BUILD_DEPENDS=	::archivers/gtar
 
 JAVA_HOME=	${LOCALBASE}/jdk1.3.1-linux
 RUN_DEPENDS=	:jdk*->=1.3:devel/jdk/1.3-linux
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
+PREFIX=		${CATALINA_BASE}
+RUN_DEPENDS=    ::www/jakarta-tomcat/v4
+.endif
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +43,7 @@ NO_REGRESS=	Yes
 CONFDIR=	${SYSCONFDIR}/tomcat
 CATALINA_BASE=	/var/tomcat
 SAMPLEDIR=	${PREFIX}/share/examples/tomcat
-SUBST_VARS+=	DISTNAME CONFDIR CATALINA_BASE SAMPLEDIR
+SUBST_VARS+=	DISTNAME CONFDIR CATALINA_BASE
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DISTNAME}
@@ -40,23 +51,28 @@ do-install:
 		tar cf - bin common server `find * -prune -type f` | \
 		tar -C ${PREFIX}/${DISTNAME} -xf -
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}
+	${INSTALL_DATA} ${WRKDIST}/conf/* ${SAMPLEDIR}
+	${INSTALL_DATA_DIR} ${WRKINST}/${CATALINA_BASE}
 	cd ${WRKDIST} && \
-		tar cf - conf webapps | \
-		tar -C ${SAMPLEDIR} -xf -
+		tar cf - webapps | \
+		tar -C ${WRKINST}/${CATALINA_BASE} -xf -
 	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
 		xargs rm
 	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
 		${PREFIX}/${DISTNAME}/bin/setclasspath.sh
 	@perl -pi -e 's,%%PREFIX%%,${TRUEPREFIX},;s,%%DISTNAME%%,${DISTNAME},' \
-		${SAMPLEDIR}/webapps/admin.xml ${SAMPLEDIR}/webapps/manager.xml
+		${WRKINST}/${CATALINA_BASE}/webapps/admin.xml \
+		${WRKINST}/${CATALINA_BASE}/webapps/manager.xml
 	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		-e 's,%%DISTNAME%%,${DISTNAME},' \
 		-e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
+		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
 		< ${FILESDIR}/README.OpenBSD \
 		> ${PREFIX}/${DISTNAME}/README.OpenBSD
 	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		-e 's,%%DISTNAME%%,${DISTNAME},' \
 		-e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
-		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/conf/tomcat.rc
+		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
+		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
 
 .include "bsd.port.mk"
