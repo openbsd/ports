@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2002/05/13 14:10:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2002/06/11 22:32:12 jsyn Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
-#
 
      SUBDIR += LPRng
      SUBDIR += apc-upsd
      SUBDIR += bchunk
-     SUBDIR += bubblemon-dockapp
      SUBDIR += bubblemon
+     SUBDIR += bubblemon-dockapp
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += colorls
