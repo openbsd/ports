@@ -1,0 +1,25 @@
+XPilot is a multi-player 2D space game for Unix workstations with X11.
+Players move along in an artificial world and shoot each other using
+various kinds of weapons, bullets, mines and bombs, rockets (smarts,
+torpedos and nuclear), lasers; defend using cloaking devices, sensors,
+transporters, autopilot etc. 
+
+XPilot's highlights include:
+* True client/server based game; optimal speed for every player.
+* Meta server with up to date information about servers hosting games
+around the world.
+* 'Real physics'; particles of explosions and sparks from your engines
+all affect you if you're hit by them. This makes it possible to kill
+someone by blowing them into a wall with engine thrust or shock waves
+from explosions.
+* Specialized editors for editing ship-shapes and maps.
+* Adjustable gravity; adjustable by putting special attractors or
+deflectors in the world, or by adjusting the global gravity in various
+ways.
+
+Some features are borrowed from classics like the Atari coin-ups
+Asteriods and Gravitar, and the home-computer games Thrust (Commdore 64)
+and Gravity Force (Commodore Amiga).
+The main idea of the game is scoring points and having lots of fun.
+
+WWW: ${HOMEPAGE}
