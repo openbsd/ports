@@ -1,6 +1,6 @@
-$OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
---- src/pcscdaemon.c.orig	Thu Nov  8 06:54:30 2001
-+++ src/pcscdaemon.c	Wed Dec 12 02:58:14 2001
+$OpenBSD: patch-src-pcscdaemon_c,v 1.2 2004/01/02 22:53:09 espie Exp $
+--- src/pcscdaemon.c.orig	2001-11-07 23:54:30.000000000 +0100
++++ src/pcscdaemon.c	2004-01-02 23:47:08.000000000 +0100
 @@ -26,9 +26,17 @@
  #include <stdio.h>
  #include <unistd.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  
  extern int errno;
  
-@@ -55,9 +63,9 @@
+@@ -55,9 +63,9 @@ void SVCServiceRunLoop() {
    rsp = SHMInitializeCommonSegment();
  
    if ( rsp == -1 ) {
@@ -31,7 +31,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
    }
  
    /* Solaris sends a SIGALRM and it is annoying */
-@@ -82,8 +90,7 @@
+@@ -82,8 +90,7 @@ void SVCServiceRunLoop() {
  	MSGCleanupClient( &msgStruct ); 
  	SYS_MutexUnLock(&usbNotifierMutex);
  	snprintf(errMessage, sizeof(errMessage), "%s%d%s",
@@ -41,7 +41,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  #ifdef PCSC_DEBUG
  	DebugLogA(errMessage, __FILE__, __LINE__);
  #endif
-@@ -108,8 +115,7 @@
+@@ -108,8 +115,7 @@ void SVCServiceRunLoop() {
  
      case -1:
  #ifdef PCSC_DEBUG
@@ -51,7 +51,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  #endif
  	break;
  
-@@ -137,8 +143,7 @@
+@@ -137,8 +143,7 @@ int main(int argc, char **argv) {
      printf("pcscd -help    - This help menu\n");
      return 0;
    } else if ( argc == 3 && (strcmp(argv[1], "-c") == 0) ) {
@@ -61,7 +61,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
      newReaderConfig = argv[2];
    } else if ( argc == 1 ) {
      /* All OK Here */
-@@ -150,7 +155,7 @@
+@@ -150,7 +155,7 @@ int main(int argc, char **argv) {
  #ifdef USE_DAEMON
    /* standard daemonizing actions */
  #ifndef HAVE_DAEMON
@@ -70,7 +70,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
      case -1:
        return (-1);
      case 0:
-@@ -167,22 +172,47 @@
+@@ -167,22 +172,47 @@ int main(int argc, char **argv) {
  #endif
  #endif
  
@@ -126,7 +126,7 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  
    /* Allocate memory for reader structures     */
    RFAllocateReaderSpace( PCSCLITE_MAX_CONTEXTS );
-@@ -199,13 +229,58 @@
+@@ -199,13 +229,58 @@ int main(int argc, char **argv) {
    g_rgSCardT1Pci.dwProtocol  = SCARD_PROTOCOL_T1;  
    g_rgSCardRawPci.dwProtocol = SCARD_PROTOCOL_RAW;
    
@@ -185,6 +185,6 @@ $OpenBSD: patch-src-pcscdaemon_c,v 1.1 2001/12/11 19:11:59 shell Exp $
 +void at_exit_signal(int sig)
 +{
 +	/* will call at_exit() */
-+	exit();
++	exit(0);
 +}
 +
