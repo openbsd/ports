@@ -1,13 +1,21 @@
---- Makefile.in.orig	Sun Apr  2 01:51:13 2000
-+++ Makefile.in	Sun Apr  2 01:53:53 2000
-@@ -34,15 +34,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2000/07/13 21:36:54 naddy Exp $
+--- Makefile.in.orig	Mon Apr 17 23:31:14 2000
++++ Makefile.in	Wed Jul 12 16:49:24 2000
+@@ -29,21 +29,21 @@ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ datadir = @datadir@
+ pkgdatadir = @pkgdatadir@
+-pixmapsdir = /usr/share/pixmaps
++pixmapsdir = @pkgdatadir@
+ 
+ INSTALL = @INSTALL@
  
  bluefish:all
  all:
 -	@$(MAKE) -C intl all
 -	@$(MAKE) -C po all
 -	@$(MAKE) -C man all
-+	@cd intl; $(MAKE) all
++	@cd intl;  $(MAKE) all
 +	@cd po; $(MAKE) all
 +	@cd man; $(MAKE) all
  	@cd ${srcdir}/ && $(MAKE) all
@@ -22,7 +30,7 @@
  	rm -f core *~
  	@cd ${srcdir}/ && $(MAKE) clean
  
-@@ -51,16 +51,16 @@
+@@ -52,16 +52,16 @@ patchclean: clean
  	@cd ${srcdir}/ && $(MAKE) patchclean  
  
  distclean:
@@ -33,7 +41,7 @@
 +	@cd po; $(MAKE) distclean
 +	@cd man; $(MAKE) distclean
  	@cd ${srcdir}/ && $(MAKE) distclean
- 	rm -f Makefile ${srcdir}/Makefile config.status config.cache config.log
+ 	rm -f Makefile ${srcdir}/Makefile ${srcdir}/.depends config.status config.cache config.log
  	rm -f *.orig *.rej
  
  install:
@@ -41,13 +49,13 @@
 -	@$(MAKE) -C man install
 +	@cd po; $(MAKE) install
 +	@cd man; $(MAKE) install
- 	$(INSTALL) -d -m 755 $(install_location)
- 	$(INSTALL) -m 644 ./data/php3_functions $(install_location)/php3_functions
- 	$(INSTALL) -m 644 ./data/ssi_functions $(install_location)/ssi_functions
-@@ -72,7 +72,7 @@
- 	rm $(install_location)/php3_functions
- 	rm $(install_location)/ssi_functions
- 	rm $(install_location)/rxml_functions	
+ 	$(INSTALL) -d -m 755 $(datadir)
+ 	$(INSTALL) -d -m 755 $(pkgdatadir)
+ 	$(INSTALL) -d -m 755 $(pixmapsdir)
+@@ -76,7 +76,7 @@ uninstall:
+ 	rm $(pkgdatadir)/php3_functions
+ 	rm $(pkgdatadir)/ssi_functions
+ 	rm $(pkgdatadir)/rxml_functions	
 -	@$(MAKE) -C man uninstall
 +	@cd man; $(MAKE) uninstall
  	rm -f $(install_location)
