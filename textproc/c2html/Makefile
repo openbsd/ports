@@ -3,10 +3,10 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/11 02:15:08 angelos Exp $
 #
 
-DISTNAME=		c2html-0.6.1
+DISTNAME=		c2html-0.9
 CATEGORIES=		textproc www
 FAKE=No
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
