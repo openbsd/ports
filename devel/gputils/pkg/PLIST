@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/03 01:02:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/14 22:19:29 naddy Exp $
 bin/gpasm
 bin/gpdasm
 bin/gplib
@@ -17,6 +17,7 @@ share/doc/gputils/gputils.pdf
 share/doc/gputils/gputils.ps
 share/gputils/header/mcp250xx.inc
 share/gputils/header/memory.inc
+share/gputils/header/migrate.inc
 share/gputils/header/p12c508.inc
 share/gputils/header/p12c508a.inc
 share/gputils/header/p12c509.inc
@@ -107,6 +108,7 @@ share/gputils/header/p16f630.inc
 share/gputils/header/p16f648a.inc
 share/gputils/header/p16f676.inc
 share/gputils/header/p16f684.inc
+share/gputils/header/p16f688.inc
 share/gputils/header/p16f716.inc
 share/gputils/header/p16f72.inc
 share/gputils/header/p16f73.inc
@@ -200,7 +202,7 @@ share/gputils/header/p18f8620.inc
 share/gputils/header/p18f8621.inc
 share/gputils/header/p18f8680.inc
 share/gputils/header/p18f8720.inc
-share/gputils/header/p18macro.inc
+share/gputils/header/ps500.inc
 share/gputils/header/rf509af.inc
 share/gputils/header/rf509ag.inc
 share/gputils/header/rf675f.inc
@@ -219,6 +221,7 @@ share/gputils/lkr/12ce674.lkr
 share/gputils/lkr/12cr509a.lkr
 share/gputils/lkr/12f629.lkr
 share/gputils/lkr/12f629i.lkr
+share/gputils/lkr/12f635.lkr
 share/gputils/lkr/12f675.lkr
 share/gputils/lkr/12f675i.lkr
 share/gputils/lkr/14000.lkr
@@ -323,11 +326,14 @@ share/gputils/lkr/16f628a.lkr
 share/gputils/lkr/16f628ai.lkr
 share/gputils/lkr/16f630.lkr
 share/gputils/lkr/16f630i.lkr
+share/gputils/lkr/16f636.lkr
 share/gputils/lkr/16f648a.lkr
 share/gputils/lkr/16f648ai.lkr
 share/gputils/lkr/16f676.lkr
 share/gputils/lkr/16f676i.lkr
 share/gputils/lkr/16f684.lkr
+share/gputils/lkr/16f688.lkr
+share/gputils/lkr/16f688i.lkr
 share/gputils/lkr/16f716.lkr
 share/gputils/lkr/16f72.lkr
 share/gputils/lkr/16f73.lkr
@@ -349,8 +355,6 @@ share/gputils/lkr/16f819i.lkr
 share/gputils/lkr/16f83.lkr
 share/gputils/lkr/16f84.lkr
 share/gputils/lkr/16f84a.lkr
-share/gputils/lkr/16f85.lkr
-share/gputils/lkr/16f86.lkr
 share/gputils/lkr/16f87.lkr
 share/gputils/lkr/16f870.lkr
 share/gputils/lkr/16f870i.lkr
@@ -408,9 +412,11 @@ share/gputils/lkr/18f2220i.lkr
 share/gputils/lkr/18f2320.lkr
 share/gputils/lkr/18f2320i.lkr
 share/gputils/lkr/18f2331.lkr
+share/gputils/lkr/18f2331i.lkr
 share/gputils/lkr/18f242.lkr
 share/gputils/lkr/18f242i.lkr
 share/gputils/lkr/18f2431.lkr
+share/gputils/lkr/18f2431i.lkr
 share/gputils/lkr/18f2439.lkr
 share/gputils/lkr/18f2439i.lkr
 share/gputils/lkr/18f248.lkr
@@ -426,14 +432,18 @@ share/gputils/lkr/18f258i.lkr
 share/gputils/lkr/18f2610.lkr
 share/gputils/lkr/18f2620.lkr
 share/gputils/lkr/18f2620_e.lkr
+share/gputils/lkr/18f2620i.lkr
+share/gputils/lkr/18f2620i_e.lkr
 share/gputils/lkr/18f4220.lkr
 share/gputils/lkr/18f4220i.lkr
 share/gputils/lkr/18f4320.lkr
 share/gputils/lkr/18f4320i.lkr
 share/gputils/lkr/18f4331.lkr
+share/gputils/lkr/18f4331i.lkr
 share/gputils/lkr/18f442.lkr
 share/gputils/lkr/18f442i.lkr
 share/gputils/lkr/18f4431.lkr
+share/gputils/lkr/18f4431i.lkr
 share/gputils/lkr/18f4439.lkr
 share/gputils/lkr/18f4439i.lkr
 share/gputils/lkr/18f448.lkr
@@ -449,6 +459,8 @@ share/gputils/lkr/18f458i.lkr
 share/gputils/lkr/18f4610.lkr
 share/gputils/lkr/18f4620.lkr
 share/gputils/lkr/18f4620_e.lkr
+share/gputils/lkr/18f4620i.lkr
+share/gputils/lkr/18f4620i_e.lkr
 share/gputils/lkr/18f6520.lkr
 share/gputils/lkr/18f6520i.lkr
 share/gputils/lkr/18f6525.lkr
@@ -479,6 +491,7 @@ share/gputils/lkr/18f8720.lkr
 share/gputils/lkr/18f8720i.lkr
 share/gputils/lkr/hcs1365.lkr
 share/gputils/lkr/hcs1370.lkr
+share/gputils/lkr/ps500.lkr
 share/gputils/lkr/rf509af.lkr
 share/gputils/lkr/rf509ag.lkr
 share/gputils/lkr/rf675f.lkr

@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgputils_gparchive_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+$OpenBSD: patch-libgputils_gparchive_c,v 1.2 2004/01/14 22:19:29 naddy Exp $
 --- libgputils/gparchive.c.orig	2003-03-31 16:49:39.000000000 +1000
-+++ libgputils/gparchive.c	2003-10-14 23:08:45.000000000 +1000
++++ libgputils/gparchive.c	2003-11-23 12:55:02.000000000 +1100
 @@ -50,7 +50,7 @@ gp_archive_member_name(gp_archive_type *
    char name[256];
    char *end;
@@ -102,7 +102,20 @@ $OpenBSD: patch-libgputils_gparchive_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
  
    newmember->next = archive;
    archive = newmember;
-@@ -601,7 +609,7 @@ gp_archive_print_table(struct symbol_tab
+@@ -493,8 +501,10 @@ gp_archive_add_index(struct symbol_table
+ 
+   /* write the symbol names to the member */
+   for (i = 0; i < table->count; i++) {
+-    strcpy(ptr, get_symbol_name(lst[i]));
+-    ptr += strlen(get_symbol_name(lst[i])) + 1;
++    const char*  symbol_name = get_symbol_name(lst[i]);
++    const size_t symbol_len  = strlen(symbol_name) + 1;
++    memcpy(ptr, symbol_name, symbol_len);
++    ptr += symbol_len;
+   }
+   
+   return archive;
+@@ -601,7 +611,7 @@ gp_archive_print_table(struct symbol_tab
      member = get_symbol_annotation(lst[i]);
      assert(member != NULL);
      /* determine the archive member name */

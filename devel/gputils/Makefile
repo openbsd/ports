@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/03 01:02:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/14 22:19:28 naddy Exp $
 
 COMMENT=		"GNU PIC assembler and utilities"
 
-VERSION=		0.11.7
+VERSION=		0.11.8
 DISTNAME=		gputils-${VERSION}
 DIST_SUBDIR=		gputils
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gputils-testsuite-${VERSION}${EXTRACT_SUFX}:0
@@ -33,13 +33,14 @@ CONFIGURE_ENV=		"CC=${CC}" "CPP=${CPP}" "CFLAGS=${CFLAGS}" "CPPFLAGS=${CPPFLAGS}
 
 # Commands used to create the testsuite tarball
 # I put these here mainly for documentation, but if you can't fetch
-# the tarball from MASTER_SITES0, this should be 100% reproducable.
+# the tarball from MASTER_SITES0, this should be 100% reproducible.
+# (I use find|pax to create the tarballs without directory timestamps.)
 create-testsuite-tarball:
 	rm -fr gputils/ gputils-${VERSION}
+	cvs -z3 -d:pserver:anonymous@cvs.gputils.sourceforge.net:/cvsroot/gputils login
 	cvs -z3 -d:pserver:anonymous@cvs.gputils.sourceforge.net:/cvsroot/gputils export -r gputils-${VERSION:S/./_/g} gputils/gpasm/testsuite > /dev/null
 	mv gputils gputils-${VERSION}
-	find gputils-${VERSION} -type d -print0 | xargs -0 touch -am -t 0000000000
-	tar czf ${FULLDISTDIR}/gputils-testsuite-${VERSION}.tar.gz gputils-${VERSION}/gpasm/testsuite/
+	find gputils-${VERSION}/gpasm/testsuite/ -type f | pax -wzf ${FULLDISTDIR}/gputils-testsuite-${VERSION}.tar.gz 
 	rm -fr gputils/ gputils-${VERSION}
 
 do-regress:
