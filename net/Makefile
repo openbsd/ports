@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2000/09/28 17:48:24 brad Exp $
+# $OpenBSD: Makefile,v 1.96 2000/11/14 14:50:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -18,6 +18,8 @@
 #    SUBDIR += cvsup
      SUBDIR += cvsup-bin
      SUBDIR += cvsup-bin:no_x11
+     SUBDIR += cvsup-bin-old
+     SUBDIR += cvsup-bin-old:no_x11
 #    SUBDIR += cvsup-mirror
      SUBDIR += djbdns
      SUBDIR += dxpc
