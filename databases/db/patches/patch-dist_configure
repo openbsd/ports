@@ -1,4 +1,4 @@
-$OpenBSD: patch-dist_configure,v 1.2 2001/09/07 16:06:08 heko Exp $
+$OpenBSD: patch-dist_configure,v 1.3 2002/10/28 16:22:24 brad Exp $
 --- dist/configure.orig	Mon Jul 31 19:58:18 2000
 +++ dist/configure	Fri Aug 31 16:03:44 2001
 @@ -1602,7 +1602,6 @@ echo "configure:1601: checking libtool c
@@ -18,3 +18,12 @@ $OpenBSD: patch-dist_configure,v 1.2 2001/09/07 16:06:08 heko Exp $
  	SOFLAGS="-rpath \$(libdir)"
  	o=".lo"
  fi
+@@ -3911,7 +3910,7 @@
+ #line 3912 "configure"
+ #include "confdefs.h"
+ main(){
+-#if defined(i386)
++#if defined(__i386__)
+ #if defined(__GNUC__)
+ 	exit(0);
+ #endif
