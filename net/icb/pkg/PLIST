@@ -1,7 +1,7 @@
 bin/icb
-lib/icb/sample.icbrc
-lib/icb/sample.icbserverdb
 lib/icb/bartender
 lib/icb/confuse
 lib/icb/echofile
+lib/icb/sample.icbrc
+lib/icb/sample.icbserverdb
 @dirrm lib/icb
