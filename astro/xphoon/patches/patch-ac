@@ -1,0 +1,36 @@
+*** dtime.c.orig	Mon Dec  1 20:27:44 1997
+--- dtime.c	Mon Dec  1 20:28:26 1997
+***************
+*** 26,32 ****
+  #include <sys/timeb.h>
+  #endif /*SYS5*/
+  
+! extern long time();
+  struct tm* localtime();
+  
+  struct tws*
+--- 26,32 ----
+  #include <sys/timeb.h>
+  #endif /*SYS5*/
+  
+! extern time_t time(time_t *);
+  struct tm* localtime();
+  
+  struct tws*
+***************
+*** 40,46 ****
+  
+  struct tws*
+  dlocaltime( clock )
+!     long* clock;
+      {
+      register struct tm* tm;
+  #ifndef SYS5
+--- 40,46 ----
+  
+  struct tws*
+  dlocaltime( clock )
+!     time_t* clock;
+      {
+      register struct tm* tm;
+  #ifndef SYS5
