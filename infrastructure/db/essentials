@@ -21,7 +21,6 @@ graphics/jpeg
 graphics/mpeg-lib
 graphics/png
 graphics/tiff34
-lang/egcs-stable
 lang/tcl80
 mail/fetchmail
 mail/mm
