@@ -1,8 +1,8 @@
-$OpenBSD: patch-wireless_h,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
---- wireless.h.orig	Fri Dec  6 07:01:13 2002
-+++ wireless.h	Sat May 10 16:10:28 2003
-@@ -42,6 +42,19 @@
-   #include <dev/pcmcia/if_wi_ieee.h>
+$OpenBSD: patch-wireless_h,v 1.2 2004/11/28 00:00:51 fgsch Exp $
+--- wireless.h.orig	Sat Dec  6 10:19:55 2003
++++ wireless.h	Sat Nov 27 20:04:37 2004
+@@ -49,6 +49,19 @@
+   #include <sys/ioctl.h>
  #endif
  
 +#ifdef __OpenBSD__
@@ -13,7 +13,7 @@ $OpenBSD: patch-wireless_h,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
 +  #include <netinet/in.h>
 +  #include <netinet/if_ether.h>
 +  #include <net/if_media.h>
-+  #include <net/if_ieee80211.h>
++  #include <net80211/ieee80211.h>
 +  #include <dev/ic/if_wi_ieee.h>
 +  #include <dev/ic/anvar.h>
 +#endif
