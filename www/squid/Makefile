@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/09 20:21:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/10 06:27:25 brad Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 NEED_VERSION=	1.295
-HOMEPAGE=	http://squid.nlanr.net/Squid/
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.2/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.2/bugs/
 EXTRACT_SUFX=	-src.tar.gz
@@ -19,6 +18,8 @@ PATCH_DIST_ARGS=-d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
+
+HOMEPAGE=	http://www.squid-cache.org/
 
 MAINTAINER=	brad@openbsd.org
 
