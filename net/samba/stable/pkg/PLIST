@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/05/07 10:03:33 dhartmei Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/06/21 13:07:01 dhartmei Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -151,22 +151,25 @@ share/doc/samba/textdocs/WinNT.txt
 share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/security_level.txt
 share/examples/samba/LDAP/README
-share/examples/samba/LDAP/export2_smbpasswd.pl
 share/examples/samba/LDAP/export_smbpasswd.pl
-share/examples/samba/LDAP/import2_smbpasswd.pl
 share/examples/samba/LDAP/import_smbpasswd.pl
 share/examples/samba/LDAP/ldapchpasswd
 share/examples/samba/LDAP/ldapsync.pl
 share/examples/samba/LDAP/samba.schema
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
-share/examples/samba/VFS/Makefile
+share/examples/samba/VFS/Makefile.in
 share/examples/samba/VFS/README
 share/examples/samba/VFS/audit.c
-share/examples/samba/VFS/block/Makefile
 share/examples/samba/VFS/block/block.c
 share/examples/samba/VFS/block/samba-block.conf
 share/examples/samba/VFS/block/smb.conf
+share/examples/samba/VFS/configure
+share/examples/samba/VFS/configure.in
+share/examples/samba/VFS/recycle/README
+share/examples/samba/VFS/recycle/cleanup_recycle.pl
+share/examples/samba/VFS/recycle/recycle.c
+share/examples/samba/VFS/recycle/recycle.conf
 share/examples/samba/VFS/skel.c
 share/examples/samba/appliance/Makefile
 share/examples/samba/appliance/README
@@ -176,6 +179,8 @@ share/examples/samba/appliance/smb.conf-appliance
 share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/libsmbclient/Makefile
+share/examples/samba/libsmbclient/README
 share/examples/samba/libsmbclient/testsmbc.c
 share/examples/samba/libsmbclient/tree.c
 share/examples/samba/misc/extra_smbstatus
@@ -442,6 +447,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/appliance
+@dirrm share/examples/samba/VFS/recycle
 @dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
 @dirrm share/examples/samba/LDAP
