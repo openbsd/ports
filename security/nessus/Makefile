@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2002/09/28 03:18:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2002/10/12 13:04:22 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
 
-VERS=		1.2.5
+VERS=		1.2.6
 
 DIST_SUBDIR=	nessus
 
@@ -41,8 +41,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
-
-LIB_DEPENDS=	net::net/libnet
 
 FLAVORS=no_x11
 FLAVOR?=

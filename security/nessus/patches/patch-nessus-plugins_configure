@@ -1,7 +1,7 @@
-$OpenBSD: patch-nessus-plugins_configure,v 1.1 2002/07/04 15:37:03 reinhard Exp $
---- nessus-plugins/configure.orig	Wed Feb  6 04:56:12 2002
-+++ nessus-plugins/configure	Mon Jun 24 18:16:07 2002
-@@ -5314,7 +5314,7 @@ fi
+$OpenBSD: patch-nessus-plugins_configure,v 1.2 2002/10/12 13:04:22 reinhard Exp $
+--- nessus-plugins/configure.orig	Thu Sep 26 16:29:17 2002
++++ nessus-plugins/configure	Sat Oct 12 09:27:00 2002
+@@ -5325,7 +5325,7 @@ fi
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
  # Always use our own libtool.
