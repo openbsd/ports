@@ -1,24 +1,16 @@
-# OpenBSD makefile for:	kaffe
-# Version required:	0.8.4
-# Date created:		1998-Sep-2
-# Whom:			dugsong@monkey.org
-#
-# Relevant URLs:	ftp://ftp.kaffe.org/pub/kaffe/
+# $OpenBSD: Makefile,v 1.5 1999/11/03 05:27:36 fgsch Exp $
 
-BROKEN=		In file included from System.c:31: ../../../include/system.h:33: #error "Seperators undefined for this system"
-
-DISTNAME=	kaffe-1.0.b2
+DISTNAME=	kaffe-1.0.5
 CATEGORIES=     lang
-DIST_SUBDIR=	${PKGNAME}
 
-MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
+MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
-MAINTAINER=	ports@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
-CONFIGURE_ENV=	LDFLAGS="-L/usr/local/lib"
 GNU_CONFIGURE=	yes
 
 post-install:
-		@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/kaffe
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kaffe
+	@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/doc/kaffe
 
 .include <bsd.port.mk>
