@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 1999/04/09 04:51:39 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/04/09 05:12:32 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.42
 CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 NEED_VERSION=	1.64
 
-MAINTAINER=	brad@OpenBSD.ORG
-
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+MAINTAINER=	brad@openbsd.org
 
 .if defined(USE_MESAGL)
-LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL
+LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL \
+		MesaGLU:${PORTSDIR}/graphics/MesaGL
 .endif
 
 .if ${MACHINE_ARCH} == "sparc"
@@ -37,7 +37,6 @@ do-install:
 	fi
 	if [ -f ${WRKSRC}/lib/libqt.so.1.42 ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.42 ${X11BASE}/lib; \
-	 ${LN} -sf ${X11BASE}/lib/libqt.so.1.42 ${X11BASE}/lib/libqt.so; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
 	${LDCONFIG} -m ${PREFIX}/lib
