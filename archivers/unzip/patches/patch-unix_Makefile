@@ -1,6 +1,7 @@
---- unix/Makefile.orig	Sat Apr 15 23:27:18 2000
-+++ unix/Makefile	Sun Jul 23 22:35:38 2000
-@@ -61,8 +61,8 @@
+$OpenBSD: patch-unix_Makefile,v 1.2 2002/07/05 01:07:26 brad Exp $
+--- unix/Makefile.orig	Sat Feb 16 12:00:38 2002
++++ unix/Makefile	Thu Jul  4 21:00:37 2002
+@@ -61,8 +61,8 @@ FL2 = $(LF2)
  
  # general-purpose stuff
  #CP = cp
@@ -11,11 +12,11 @@
  RM = rm -f
  CHMOD = chmod
  BINPERMS = 755
-@@ -411,18 +411,16 @@
+@@ -450,18 +450,16 @@ svr4package:	unzips
  
  install:	$(MANS)
  	-$(INSTALL_D) $(BINDIR)
--	$(INSTALL) $(UNZIPS) $(BINDIR)
+-	$(INSTALL_PROGRAM) $(UNZIPS) $(BINDIR)
 -	$(INSTALL) unix/zipgrep $(BINDIR)
 +	$(BSD_INSTALL_PROGRAM) $(UNZIPS) $(BINDIR)
 +	$(BSD_INSTALL_SCRIPT) unix/zipgrep $(BINDIR)
@@ -38,7 +39,7 @@
  
  uninstall:
  	$(RM) $(INSTALLEDBIN) $(INSTALLEDMAN)
-@@ -530,8 +528,8 @@
+@@ -569,8 +567,8 @@ generic_shlib:	unix_make
  	$(MAKE) objsdll CC=gcc CF="-O3 -Wall -I. -fPIC -DDLL $(LOC)"
  	gcc -shared -Wl,-soname,libunzip.so.0 -o libunzip.so.0.4 $(OBJSDLL)
  	$(RM) libunzip.so.0 libunzip.so
