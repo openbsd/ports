@@ -1,0 +1,6 @@
+PUBLIC "-//Davenport//DTD DocBook V2.4.1//EN" "docbook.dtd"
+PUBLIC "-//Davenport//ELEMENTS CALS-Based DocBook Table Model V2.4.1//EN" "calstbl.mod"
+PUBLIC "-//Davenport//ELEMENTS DocBook Information Pool V2.4.1//EN" "dbpool.mod"
+PUBLIC "-//Davenport//ELEMENTS DocBook Document Hierarchy V2.4.1//EN" "dbhier.mod"
+PUBLIC "-//Davenport//ELEMENTS DocBook Additional General Entities//EN" "dbgenent.mod"
+CATALOG ../../iso8879/catalog

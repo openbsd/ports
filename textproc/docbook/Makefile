@@ -1,20 +1,26 @@
-# $OpenBSD: Makefile,v 1.11 2000/11/10 13:47:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/31 10:20:44 avsm Exp $
 
-DISTNAME=	docbook-4.1
+COMMENT=	"technical documentation XML/SGML definitions"
+
+DISTNAME=	docbook-4.1.2
+DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
-NEED_VERSION= 	1.340
+NEED_VERSION= 	1.378
 
-ROOT_SITE=	http://www.oasis-open.org/docbook/sgml
-MIRROR_SITE=	http://www.docbook.org/sgml
+ROOT_SITE=	http://www.oasis-open.org/docbook/
+MIRROR_SITE=	http://www.docbook.org/
 HOMEPAGE=	http://www.oasis-open.org/docbook/
 
-MASTER_SITES0=	${ROOT_SITE}/2.4.1/ 
-MASTER_SITES1=	${ROOT_SITE}/3.0/
-MASTER_SITES2=	${ROOT_SITE}/3.1/ ${MIRROR_SITE}/3.1/
-MASTER_SITES3=	${ROOT_SITE}/4.0/ ${MIRROR_SITE}/4.0/
-MASTER_SITES4=	${ROOT_SITE}/4.1/ ${MIRROR_SITE}/4.1/
+MASTER_SITES0=	${ROOT_SITE}/sgml/2.4.1/ 
+MASTER_SITES1=	${ROOT_SITE}/sgml/3.0/
+MASTER_SITES2=	${ROOT_SITE}/sgml/3.1/ ${MIRROR_SITE}/sgml/3.1/
+MASTER_SITES3=	${ROOT_SITE}/sgml/4.0/ ${MIRROR_SITE}/sgml/4.0/
+MASTER_SITES4=	${ROOT_SITE}/sgml/4.1/ ${MIRROR_SITE}/sgml/4.1/
+MASTER_SITES5=	${ROOT_SITE}/xml/4.1/ ${MIRROR_SITE}/xml/4.1/
+MASTER_SITES6=	${ROOT_SITE}/xml/4.1.2/ ${MIRROR_SITE}/xml/4.1.2/
+MASTER_SITES7=	http://www.docbook.org/tdg/
 
-DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4
+DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4 docbkx41.zip:5 docbkx412.zip:6 examples.zip:7
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -26,24 +32,36 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=       Yes
 SEPARATE_BUILD=	concurrent
-DB_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1
 
-INSTDIR=	${PREFIX}/share/sgml/docbook
+SGML_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1
+XML_VERSIONS=	4.1 4.1.2
+
+SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
+XML_INSTDIR=	${PREFIX}/share/xml/docbook
+
 RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879/catalog::textproc/iso8879 \
-		${INSTDIR}/dsssl/modular/catalog::textproc/docbook-modular
+		${SGML_INSTDIR}/dsssl/modular/catalog::textproc/docbook-modular
 
-.for i in ${DB_VERSIONS}
-EXTRACT_CASES+=	*${i:S/.//g}.zip) unzip -qa ${DISTDIR}/$$archive -d ${WRKDIR}/$i;;
+.for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
+EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;
 .endfor
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR}
-	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml
-	${INSTALL_DATA} ${FILESDIR}/db_catalog ${INSTDIR}/catalog
-.for i in ${DB_VERSIONS}
-	${INSTALL_DATA_DIR} ${INSTDIR}/$i
-	${INSTALL_DATA} ${WRKDIR}/$i/* ${INSTDIR}/$i
-	${INSTALL_DATA} ${FILESDIR}/db${i:S/.//g}_catalog ${INSTDIR}/$i/catalog
+	${INSTALL_DATA_DIR} ${SGML_INSTDIR} ${XML_INSTDIR}
+	${INSTALL_DATA} ${FILESDIR}/sgml_catalog ${PREFIX}/share/sgml/catalog
+	${INSTALL_DATA} ${FILESDIR}/sgml_db_catalog ${SGML_INSTDIR}/catalog
+	${INSTALL_DATA} ${FILESDIR}/xml_catalog ${PREFIX}/share/xml/catalog
+	${INSTALL_DATA} ${FILESDIR}/xml_db_catalog ${XML_INSTDIR}/catalog
+.for i in ${SGML_VERSIONS}
+	${INSTALL_DATA_DIR} ${SGML_INSTDIR}/$i
+	${INSTALL_DATA} ${WRKDIR}/$i/* ${SGML_INSTDIR}/$i
+	${INSTALL_DATA} ${FILESDIR}/sgml_db${i:S/.//g}_catalog ${SGML_INSTDIR}/$i/catalog
+.endfor
+.for i in ${XML_VERSIONS}
+	${INSTALL_DATA_DIR} ${XML_INSTDIR}/$i ${XML_INSTDIR}/$i/ent
+	${INSTALL_DATA} ${WRKDIR}/x$i/*.* ${XML_INSTDIR}/$i
+	${INSTALL_DATA} ${WRKDIR}/x$i/ent/* ${XML_INSTDIR}/$i/ent
+	${INSTALL_DATA} ${FILESDIR}/xml_db${i:S/.//g}_catalog ${XML_INSTDIR}/$i/catalog
 .endfor
 
 .include <bsd.port.mk>

@@ -14,6 +14,9 @@ of free software environments.
 
 This ports installs all versions of the DocBook SGML DTD from 
 versions 3.x and 4.x, and the last major release on the 2.x branch.
+The XML versions include the latest one, and a few other commonly
+used revisions.
+
 If you are creating a new document, always try to use the latest 
 version of the DTD.
 
