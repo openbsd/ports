@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.55 2004/11/10 12:58:29 naddy Exp $
-@lib lib/libxml2.so.8.15
+@comment $OpenBSD: PFRAG.shared,v 1.56 2004/11/11 15:03:51 naddy Exp $
+@lib lib/libxml2.so.8.16
