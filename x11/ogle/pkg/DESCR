@@ -1,7 +1,8 @@
 Ogle is a dvd player with support for menus and 
 subtitles.  Currently, it lacks some audio formats
-support (PCM and ???), so a few DVDs will work
-with sound.
+support (PCM, mp3, etc) so a few DVDs will work
+without sound. mplayer ought to be able to play these,
+but it doesn't have navigational menus supports.
 
 As shipped, ogle cannot descramble DVDs. There are
 a few DVDs out there with no scramble protection.

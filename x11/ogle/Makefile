@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/04/02 03:50:35 drahn Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/19 00:27:06 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -29,6 +29,8 @@ LIB_DEPENDS=	dvdread::devel/libdvdread \
 
 FLAVORS=	altivec
 FLAVOR?=
+
+CONFIGURE_ARGS=--disable-oss --enable-sunaudio
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/binutils/stable

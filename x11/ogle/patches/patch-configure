@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2002/01/08 11:05:53 espie Exp $
+$OpenBSD: patch-configure,v 1.3 2002/05/19 00:27:06 espie Exp $
 --- configure.orig	Fri Dec  7 18:45:21 2001
-+++ configure	Tue Jan  8 11:53:37 2002
++++ configure	Sun May 19 01:18:35 2002
 @@ -2419,7 +2419,7 @@ CCDEPMODE="depmode=$am_cv_CC_dependencie
  
  # By default we simply use the C compiler to build assembly code.
@@ -18,6 +18,15 @@ $OpenBSD: patch-configure,v 1.2 2002/01/08 11:05:53 espie Exp $
  #include <X11/extensions/XShm.h>
  _ACEOF
  rm -f conftest.$ac_objext
+@@ -17296,7 +17297,7 @@ if test "${enable_sunaudio+set}" = set; 
+ fi;
+ if test x"$enable_sunaudio" != x"no"; then
+     case "$host" in
+-    *-sun-solaris*|*-netbsd*)
++    *-sun-solaris*|*-netbsd*|*-openbsd*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define LIBAO_SUNAUDIO
 @@ -17622,6 +17623,7 @@ cat >conftest.$ac_ext <<_ACEOF
  #line 17622 "configure"
  #include "confdefs.h"
