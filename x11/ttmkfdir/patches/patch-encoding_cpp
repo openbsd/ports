@@ -1,0 +1,11 @@
+--- encoding.cpp.orig	2002-11-07 05:28:44.000000000 +0000
++++ encoding.cpp	2004-02-11 17:04:21.000000000 +0000
+@@ -44,7 +44,7 @@ namespace {
+ 	
+ 	    strcat (name, file_name);
+ 
+-	    sprintf (command, "exec %s < %s", (toupper(name[strlen (name) - 1]) == 'Z')
++	    snprintf (command, sizeof(command), "exec %s < %s", (toupper(name[strlen (name) - 1]) == 'Z')
+ 		     ? "gzip -d" : "cat", name);
+ 	    return popen (command, "r");
+ 	}
