@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/11/06 08:40:57 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2001/11/06 08:57:44 shell Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -74,5 +74,4 @@ share/libxml2/html/structure.gif
 share/libxml2/html/xml.html
 @dirrm share/libxml2/html
 @dirrm share/libxml2
-@dirrm lib/pkgconfig
 @dirrm include/libxml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/11/06 08:40:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.35 2001/11/06 08:57:44 shell Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -29,5 +29,6 @@ CONFIGURE_ARGS+= --with-html-dir="${PREFIX}/share"
 CONFIGURE_ARGS+= --with-iconv=${PREFIX}
 
 MODULES=	iconv
+REGRESS_TARGET=	tests
 
 .include <bsd.port.mk>
