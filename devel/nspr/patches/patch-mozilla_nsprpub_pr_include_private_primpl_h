@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_include_private_primpl_h,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
+--- mozilla/nsprpub/pr/include/private/primpl.h.orig	2004-01-06 22:44:43.000000000 -0500
++++ mozilla/nsprpub/pr/include/private/primpl.h	2004-01-06 22:45:28.000000000 -0500
+@@ -1857,6 +1857,7 @@ extern void _PR_DestroyZones(void);
+         && !defined(DARWIN) \
+         && !defined(NEXTSTEP) \
+         && !defined(QNX) \
++        && !defined(__OpenBSD__) \
+         && !(defined (UNIXWARE) && defined (USE_SVR4_THREADS))
+ #define _PR_OVERRIDE_MALLOC
+ #endif

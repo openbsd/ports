@@ -1,0 +1,10 @@
+Netscape Portable Runtime (NSPR) provides a platform-neutral
+API for system level and libc like functions. The API is used
+in the Mozilla client, many of Netscape/AOL/iPlanet's and other
+software offerings.
+
+NSPR provides platform independence for non-GUI operating
+system facilities. These facilities include threads, thread
+synchronization, normal file and network I/O, interval timing
+and calendar time, basic memory management (malloc and free)
+and shared library linking.
