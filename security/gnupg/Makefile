@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2005/01/05 19:45:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2005/01/29 19:27:18 sturm Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
-DISTNAME=	gnupg-1.2.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gnupg-1.4.0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -31,16 +30,16 @@ WANTLIB=		c z
 MODULES= devel/gettext
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.52
+AUTOCONF_VERSION= 2.59
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-ldap
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	idea
+FLAVORS=	idea card
 FLAVOR?=
 
-.if ${FLAVOR:L} == "idea"
+.if ${FLAVOR:L:Midea}
 PERMIT_PACKAGE_CDROM=	"a patented algorithm"
 PERMIT_DISTFILES_CDROM=	"a patented algorithm"
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} idea.c.gz:0
@@ -50,6 +49,13 @@ post-extract:
 .else
 SUPDISTFILES=	idea.c.gz:0
 .endif
+
+.if ${FLAVOR:L:Mcard}
+LIB_DEPENDS+=		usb::devel/libusb
+.else
+CONFIGURE_ARGS+=	--disable-card-support
+.endif
+
 
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
