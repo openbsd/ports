@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.51 2003/11/22 23:04:42 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2003/11/26 19:30:24 brad Exp $
 
-DISTNAME=	gaim-0.73
+DISTNAME=	gaim-0.74
 PATCHFILES=	${DISTNAME}-openssl.patch.gz:0
 PATCH_DIST_STRIP=-p1
 CATEGORIES=	net

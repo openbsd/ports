@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2003/11/22 23:04:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.27 2003/11/26 19:30:24 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -59,6 +59,7 @@ share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
+share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
 share/pixmaps/gaim.png
@@ -310,6 +311,8 @@ share/sounds/gaim/send.wav
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES
