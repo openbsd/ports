@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/20 20:12:11 sturm Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/gtk-gnutella/
@@ -10,6 +10,8 @@ share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
 share/gtk-gnutella/pixmaps/bookshav.xpm
+share/gtk-gnutella/pixmaps/clanbomber_red.xpm
+share/gtk-gnutella/pixmaps/clanbomber_yellow.xpm
 share/gtk-gnutella/pixmaps/download.xpm
 share/gtk-gnutella/pixmaps/exit.xpm
 share/gtk-gnutella/pixmaps/filter.xpm
@@ -28,6 +30,9 @@ share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
 share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/gtk-gnutella.mo
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
