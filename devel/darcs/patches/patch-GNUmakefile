@@ -1,51 +1,47 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2003/08/03 18:16:46 avsm Exp $
---- GNUmakefile.orig	2003-07-31 11:00:43.000000000 +0100
-+++ GNUmakefile	2003-08-03 19:05:15.000000000 +0100
-@@ -53,23 +53,23 @@ install:	all
- 	install -d $(DESTDIR)/$(bindir)
- 	install -c darcs $(DESTDIR)/$(bindir)
+$OpenBSD: patch-GNUmakefile,v 1.3 2004/04/29 03:49:51 dons Exp $
+
+Make the install a bit more standard.
+Don't try and install .ps docs
+
+--- GNUmakefile.orig	2004-04-04 02:57:00.000000000 +1000
++++ GNUmakefile	2004-04-24 13:10:56.000000000 +1000
+@@ -87,15 +87,14 @@ installbin:	all
+ 	$(INSTALL) -d $(DESTDIR)/$(bindir)
+ 	$(INSTALL) darcs $(DESTDIR)/$(bindir)
  
--	install -d $(DESTDIR)/$(datadir)/doc/manual
--	install -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc
--	install -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/manual
--
--	install -d $(DESTDIR)/$(datadir)/doc/examples
--	install -m 0644 zsh_completion_new $(DESTDIR)/$(datadir)/doc/examples/
--	install -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/doc/examples/
-+	install -d $(DESTDIR)/$(datadir)/doc/darcs
-+	install -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
-+	install -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/darcs
-+
-+	install -d $(DESTDIR)/$(datadir)/darcs
-+	install -m 0644 zsh_completion_new $(DESTDIR)/$(datadir)/darcs
-+	install -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/darcs
+-	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/bash_completion.d/
+-	$(INSTALL) -m 0644 darcs_completion $(DESTDIR)/$(sysconfdir)/bash_completion.d/darcs
++	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs/bash_completion.d/
++	$(INSTALL) -m 0644 darcs_completion $(DESTDIR)/$(datadir)/darcs/bash_completion.d/darcs
  
--	install -d $(DESTDIR)/$(sysconfdir)/bash_completion.d/
--	install -m 0644 darcs_completion $(DESTDIR)/$(sysconfdir)/bash_completion.d/darcs
-+	install -d $(DESTDIR)/$(datadir)/darcs/bash_completion.d/
-+	install -m 0644 darcs_completion $(DESTDIR)/$(datadir)/darcs/bash_completion.d/darcs
+ 	$(INSTALL) -d $(DESTDIR)/$(mandir)/man1
+ 	$(INSTALL) -m 0644 darcs.1 $(DESTDIR)/$(mandir)/man1/
  
- 	install -d $(DESTDIR)/$(mandir)/man1
- 	install -m 0644 darcs.1 $(DESTDIR)/$(mandir)/man1/
+-installdocs:	darcs.ps manual/index.html
++installdocs:
+ 	$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/manual
+-	$(INSTALL) -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
+ 	$(INSTALL) -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/darcs/manual
  
- installserver:	darcs_cgi darcs-patcher darcs-createrepo
--	install -d $(DESTDIR)/$(libexecdir)/cgi-bin
--	install darcs_cgi $(DESTDIR)/$(libexecdir)/cgi-bin/darcs
-+	install -d $(DESTDIR)/$(libexecdir)
-+	install darcs_cgi $(DESTDIR)/$(libexecdir)/darcs.cgi
+ 	$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/examples
+@@ -103,15 +102,15 @@ installdocs:	darcs.ps manual/index.html
+ 	$(INSTALL) -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/doc/darcs/examples/
  
- 	install -d $(DESTDIR)/$(sbindir)
- 	install darcs-createrepo $(DESTDIR)/$(sbindir)
-@@ -77,9 +77,9 @@ installserver:	darcs_cgi darcs-patcher d
- 	install -d $(DESTDIR)/$(libexecdir)
- 	install darcs-patcher $(DESTDIR)/$(libexecdir)
+ installserver:	darcs_cgi darcs-createrepo
+-	$(INSTALL) -d $(DESTDIR)/$(libexecdir)/cgi-bin
+-	$(INSTALL) darcs_cgi $(DESTDIR)/$(libexecdir)/cgi-bin/darcs
++	$(INSTALL) -d $(DESTDIR)/$(libexecdir)/darcs
++	$(INSTALL) darcs_cgi $(DESTDIR)/$(libexecdir)/darcs/darcs.cgi
  
--	install -d $(DESTDIR)/$(sysconfdir)/darcs
+ 	$(INSTALL) -d $(DESTDIR)/$(sbindir)
+ 	$(INSTALL) darcs-createrepo $(DESTDIR)/$(sbindir)
+ 
+-	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/darcs
 -	test -e $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf || \
--	    install -m 0644 cgi.conf $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf
-+	install -d $(DESTDIR)/$(datadir)/darcs
+-	    $(INSTALL) -m 0644 cgi.conf $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf
++	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs
 +	test -e $(DESTDIR)/$(datadir)/darcs/cgi.conf || \
-+	    install -m 0644 cgi.conf $(DESTDIR)/$(datadir)/darcs/cgi.conf
++		$(INSTALL) -m 0644 cgi.conf $(DESTDIR)/$(datadir)/darcs/cgi.conf
  
  dist:		darcs
  	./darcs dist --dist-name darcs-`./darcs --version`

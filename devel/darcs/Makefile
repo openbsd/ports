@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/03 18:16:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/29 03:49:51 dons Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-V=		0.9.12
+V=		0.9.19
 DISTNAME=	darcs-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.abridgegame.org/darcs/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Don Stewart <dons@openbsd.org>
 
 MODULES=	ghc
 LIB_DEPENDS=	curl.2::net/curl
-BUILD_DEPENDS+=	latex::print/teTeX/base
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share --libexecdir=${PREFIX}/libexec
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS=""
