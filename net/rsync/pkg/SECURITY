@@ -1,0 +1,6 @@
+$OpenBDS$
+
+${WRKDIR}/receiver.c
+	call to mktemp (wrapper function do_mktemp) does seem to be correct.
+
+The server makes extensive use of strlcpy/strlcat/snprintf.
