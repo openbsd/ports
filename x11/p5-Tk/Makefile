@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/02 05:29:29 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/21 18:15:38 shell Exp $
 
-COMMENT=		"Perl bindings for Tk 8.0"
+COMMENT=		"Tk 8.0 bindings for Perl"
 COMMENT-demo=		"demonstrate the features of ptk"
 
 VERSION=		800.023

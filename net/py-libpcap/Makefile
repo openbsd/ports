@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/20 11:38:24 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/21 18:15:38 shell Exp $
 
-COMMENT=	"Python bindings for libpcap"
+COMMENT=	"libpcap bindings for Python"
 
 V=		0.2
 DISTNAME=	pylibpcap-${V}
