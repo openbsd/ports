@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.8 1998/06/27 22:18:34 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1998/07/02 07:29:45 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -62,7 +62,7 @@ MANPREFIX=	${PREFIX}/pgsql
 
 # Spit this message out right away.
 #
-pre-fetch:
+pre-build:
 .if !defined(USE_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
 	@${ECHO_MSG} "    make USE_TCL=yes"
@@ -81,7 +81,7 @@ post-install:
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
 		${ECHO} "PATH=${PATH}:${PREFIX}/pgsql/bin" \
 			> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/bin" \
+		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/man" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "PGLIB=${PREFIX}/pgsql/lib" \
 			>> ${PREFIX}/pgsql/.profile; \
