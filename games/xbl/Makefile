@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/14 03:09:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1999/01/14 03:10:35 angelos Exp $
 #
 
 DISTNAME=	xbl-1.0j
 CATEGORIES=	games
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=	angelos@openbsd.org
 
