@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2001/09/27 16:52:40 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2001/09/27 23:37:30 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -6,9 +6,9 @@ COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
 VERSION=	4.40
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine+pico-${VERSION}
+PKGNAME=	pine+pico-${VERSION}p1
 FULLPKGNAME-pico=pico-${VERSION}
-PKGNAME-pine=	pine-${VERSION}
+PKGNAME-pine=	pine-${VERSION}p1
 NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
@@ -32,10 +32,10 @@ SUBPACKAGE?=
 CATEGORIES=	editors
 .elif ${SUBPACKAGE} == "-pine"
 CATEGORIES=	mail news
-LIB_DEPENDS=	c-client.2::mail/c-client
+LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
 .else
 CATEGORIES=	mail news editors
-LIB_DEPENDS=	c-client.2::mail/c-client
+LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
 .endif
 
 .if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
