@@ -1,0 +1,21 @@
+$OpenBSD: patch-CubesU_c,v 1.1 2002/02/20 22:47:52 pvalchev Exp $
+--- CubesU.c.orig	Thu Jul 29 12:58:58 1999
++++ CubesU.c	Wed Feb 20 15:43:14 2002
+@@ -183,7 +183,7 @@ void
+ ScanMoves(FILE * fp, CubesWidget w, int moves)
+ {
+ 	int         direction, l;
+-	char        c;
++	int         c;
+ 
+ 	for (l = 0; l < moves; l++) {
+ 		while ((c = getc(fp)) != EOF && c != SYMBOL);
+@@ -212,7 +212,7 @@ void
+ ScanStartPosition(FILE * fp, CubesWidget w)
+ {
+ 	int         i, num;
+-	char        c;
++	int         c;
+ 
+ 	while ((c = getc(fp)) != EOF && c != SYMBOL);
+ 	for (i = 0; i < w->cubes.sizeBlock; i++) {
