@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+libexec/dovecot/dovecot-auth
+libexec/dovecot/imap
+libexec/dovecot/imap-login
+libexec/dovecot/pop3
+libexec/dovecot/pop3-login
+sbin/dovecot
+sbin/dovecot-mkcert.sh
+share/doc/dovecot/auth.txt
+share/doc/dovecot/configuration.txt
+share/doc/dovecot/design.txt
+share/doc/dovecot/index.txt
+share/doc/dovecot/mail-storages.txt
+share/doc/dovecot/multiaccess.txt
+share/doc/dovecot/nfs.txt
+share/examples/dovecot/dovecot-example.conf
+share/examples/dovecot/dovecot-openssl.cnf
+@dirrm share/examples/dovecot
+@dirrm share/doc/dovecot
+@dirrm libexec/dovecot

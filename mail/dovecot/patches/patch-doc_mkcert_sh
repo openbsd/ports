@@ -1,0 +1,29 @@
+$OpenBSD: patch-doc_mkcert_sh,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+--- doc/mkcert.sh.orig	Mon Feb 24 13:38:23 2003
++++ doc/mkcert.sh	Sun Jul  6 03:10:59 2003
+@@ -5,17 +5,18 @@
+ 
+ OPENSSL=${OPENSSL-openssl}
+ SSLDIR=${SSLDIR-/etc/ssl}
+-OPENSSLCONFIG=${OPENSSLCONFIG-dovecot-openssl.cnf}
++OPENSSLCONFIG=${OPENSSLCONFIG-${SSLDIR}/dovecot-openssl.cnf}
+ 
+-CERTFILE=$SSLDIR/certs/imapd.pem
+-KEYFILE=$SSLDIR/private/imapd.pem
++CERTFILE=$SSLDIR/dovecotcert.pem
++KEYFILE=$SSLDIR/private/dovecot.pem
+ 
+-if [ ! -d $SSLDIR/certs ]; then
+-  echo $SSLDIR/certs directory doesn't exist
+-fi
++#if [ ! -d $SSLDIR/certs ]; then
++#  echo $SSLDIR/certs directory doesn't exist
++#fi
+ 
+ if [ ! -d $SSLDIR/private ]; then
+-  echo $SSLDIR/private directory doesn't exist
++  echo "$SSLDIR/private directory doesn't exist"
++  exit 1
+ fi
+ 
+ if [ -f $CERTFILE ]; then

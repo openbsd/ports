@@ -1,0 +1,7 @@
+If you wish to have Dovecot started automatically at boot time,
+simply add the follow lines to /etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/dovecot ]; then
+	echo -n ' dovecot';       ${PREFIX}/sbin/dovecot
+fi
+

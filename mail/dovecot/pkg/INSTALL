@@ -1,0 +1,116 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SYSCONFDIR=${SYSCONFDIR:-/etc}
+CONFIG_FILE=${SYSCONFDIR}/dovecot.conf
+SSL_DIR=/etc/ssl
+SSL_FILE=$SSL_DIR/dovecot-openssl.cnf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/dovecot
+SAMPLE_CONFIG_FILE=$SAMPLE_CONFIG_DIR/dovecot-example.conf
+SAMPLE_SSL_FILE=$SAMPLE_CONFIG_DIR/dovecot-openssl.cnf
+DOVECOTUSER=_dovecot
+DOVECOTGROUP=_dovecot
+ID=518
+
+do_usergroup_install()
+{
+  # Create Opennap user and group
+  if groupinfo -e $DOVECOTGROUP; then
+    echo "===> Using $DOVECOTGROUP group for dovecot"
+  else
+    echo "===> Creating $DOVECOTGROUP group for dovecot"
+    groupadd -g $ID $DOVECOTGROUP
+  fi
+  if userinfo -e $DOVECOTUSER; then
+    echo "===> Using $DOVECOTUSER user for dovecot"
+  else
+    echo "===> Creating $DOVECOTUSER user for dovecot"
+    useradd -g $DOVECOTGROUP -d /nonexistent -L daemon -c 'Dovecot Account' -s /sbin/nologin -u $ID $DOVECOTUSER
+  fi
+}
+
+do_config_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file $CONFIG_FILE"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample file $SAMPLE_CONFIG_FILE,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+}
+
+do_ssl_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file $SSL_FILE"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample file $SAMPLE_SSL_FILE,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+do_config_install()
+{
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| A $1 configuration file has been installed to:"
+    echo "| $CONFIG_FILE.  Please view this file and"
+    echo "| adjust it to suit your needs."
+    echo "+---------------"
+}
+
+do_ssl_install()
+{
+    install -o root -g wheel -m 644 $SAMPLE_SSL_FILE $SSL_FILE
+    echo
+    echo "+---------------"
+    echo "| Files to facilitate the generation of a self-signed"
+    echo "| certificate and key for Dovecot have been installed:"
+    echo "| $SSL_FILE	(Edit this accordingly!)"
+    echo "| $PREFIX/sbin/dovecot-mkcert.sh"
+    echo "|"
+    echo "| If this has been or will be accomplished by other means,"
+    echo "| use the following paths for the files:"
+    echo "| $SSL_DIR/dovecotcert.pem"
+    echo "| $SSL_DIR/private/dovecot.pem"
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_usergroup_install
+	;;
+    POST-INSTALL)
+	if [ ! -f $CONFIG_FILE ]; then
+	    do_config_install $1
+	else
+	    do_config_notice $1
+	fi
+        if [ ! -f $SSL_FILE ]; then
+            do_ssl_install $1
+        else
+            do_ssl_notice $1
+        fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
