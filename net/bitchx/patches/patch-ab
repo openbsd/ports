@@ -1,6 +1,6 @@
---- configure.orig	Fri Oct 29 02:08:41 1999
-+++ configure	Mon Dec  6 10:03:33 1999
-@@ -8920,11 +8920,11 @@
+--- configure.orig	Mon Jan 10 04:34:24 2000
++++ configure	Sat Jan 29 23:56:58 2000
+@@ -8985,11 +8985,11 @@
  MV="mv"
  
  INSTALL_IRC=\${bindir}/\$\(_VERSION_\)
@@ -13,8 +13,8 @@
 +INSTALL_WSERV=\$\(libexecdir\)/wserv-bitchx
  INSTALL_SCRBX=\${bindir}/scr-bx
  INSTALL_SCRIPT=\$\(IRCLIB\)/script
- INSTALL_HELP_CMD="cp -pr bitchx-docs/* \$(HELPDIR)"
-@@ -9361,27 +9361,3 @@
+ 
+@@ -9458,27 +9458,3 @@
  
  
  

@@ -1,5 +1,5 @@
 bin/BitchX
-bin/BitchX-1.0c13
+bin/BitchX-1.0c16
 bin/scr-bx
 libexec/wserv-bitchx
 share/bitchx/BitchX.help
@@ -11,10 +11,27 @@ share/bitchx/help/1_General/4op
 share/bitchx/help/1_General/about
 share/bitchx/help/1_General/addforward
 share/bitchx/help/1_General/addidle
+share/bitchx/help/1_General/addlamenick
+share/bitchx/help/1_General/addnoflood
+share/bitchx/help/1_General/addshit
 share/bitchx/help/1_General/adduser
+share/bitchx/help/1_General/addword
+share/bitchx/help/1_General/ajoin
+share/bitchx/help/1_General/ajoinlist
 share/bitchx/help/1_General/away
+share/bitchx/help/1_General/awaylog
+share/bitchx/help/1_General/awaymsg
+share/bitchx/help/1_General/b
+share/bitchx/help/1_General/back
+share/bitchx/help/1_General/ban
+share/bitchx/help/1_General/banstat
+share/bitchx/help/1_General/bantype
+share/bitchx/help/1_General/banwords
+share/bitchx/help/1_General/bk
+share/bitchx/help/1_General/bki
 share/bitchx/help/1_General/bye
 share/bitchx/help/1_General/channel
+share/bitchx/help/1_General/chat
 share/bitchx/help/1_General/ctcp/action
 share/bitchx/help/1_General/ctcp/bdcc
 share/bitchx/help/1_General/ctcp/cdcc
@@ -35,46 +52,86 @@ share/bitchx/help/1_General/ctcp/utc
 share/bitchx/help/1_General/ctcp/version
 share/bitchx/help/1_General/ctcp/whoami
 share/bitchx/help/1_General/ctcp/xdcc
+share/bitchx/help/1_General/dcc/activecount
+share/bitchx/help/1_General/dcc/autoget
+share/bitchx/help/1_General/dcc/autooverwrite
+share/bitchx/help/1_General/dcc/autorename
+share/bitchx/help/1_General/dcc/bot
 share/bitchx/help/1_General/dcc/chat
 share/bitchx/help/1_General/dcc/close
 share/bitchx/help/1_General/dcc/closeall
 share/bitchx/help/1_General/dcc/dcc
+share/bitchx/help/1_General/dcc/exempt
+share/bitchx/help/1_General/dcc/ftp
 share/bitchx/help/1_General/dcc/get
 share/bitchx/help/1_General/dcc/list
+share/bitchx/help/1_General/dcc/quietmode
 share/bitchx/help/1_General/dcc/raw
+share/bitchx/help/1_General/dcc/reget
 share/bitchx/help/1_General/dcc/rename
+share/bitchx/help/1_General/dcc/resend
 share/bitchx/help/1_General/dcc/resume
 share/bitchx/help/1_General/dcc/send
+share/bitchx/help/1_General/dcc/showpaths
+share/bitchx/help/1_General/dcc/stats
+share/bitchx/help/1_General/dcc/tget
+share/bitchx/help/1_General/dcc/treget
+share/bitchx/help/1_General/dcc/tresend
+share/bitchx/help/1_General/dcc/tsend
 share/bitchx/help/1_General/describe
 share/bitchx/help/1_General/disconnect
+share/bitchx/help/1_General/gone
 share/bitchx/help/1_General/help
 share/bitchx/help/1_General/ignore
 share/bitchx/help/1_General/invite
+share/bitchx/help/1_General/j
 share/bitchx/help/1_General/join
+share/bitchx/help/1_General/k
+share/bitchx/help/1_General/kb
+share/bitchx/help/1_General/kbi
 share/bitchx/help/1_General/kick
+share/bitchx/help/1_General/kickidle
+share/bitchx/help/1_General/l
+share/bitchx/help/1_General/lamenicklist
 share/bitchx/help/1_General/lastlog
+share/bitchx/help/1_General/leave
+share/bitchx/help/1_General/m
 share/bitchx/help/1_General/me
 share/bitchx/help/1_General/mode
 share/bitchx/help/1_General/msg
 share/bitchx/help/1_General/nick
+share/bitchx/help/1_General/nochat
 share/bitchx/help/1_General/noforward
 share/bitchx/help/1_General/notice
 share/bitchx/help/1_General/notify
 share/bitchx/help/1_General/nslookup
+share/bitchx/help/1_General/offers
+share/bitchx/help/1_General/p
 share/bitchx/help/1_General/part
+share/bitchx/help/1_General/partall
 share/bitchx/help/1_General/ping
 share/bitchx/help/1_General/query
 share/bitchx/help/1_General/quit
 share/bitchx/help/1_General/reconnect
 share/bitchx/help/1_General/say
 share/bitchx/help/1_General/server
+share/bitchx/help/1_General/shitlist
+share/bitchx/help/1_General/showwordkick
 share/bitchx/help/1_General/silence
 share/bitchx/help/1_General/spam
+share/bitchx/help/1_General/t
 share/bitchx/help/1_General/topic
+share/bitchx/help/1_General/unajoin
 share/bitchx/help/1_General/unforward
 share/bitchx/help/1_General/unidle
+share/bitchx/help/1_General/unlamenick
+share/bitchx/help/1_General/unshit
 share/bitchx/help/1_General/unuser
+share/bitchx/help/1_General/unwordkick
+share/bitchx/help/1_General/uping
 share/bitchx/help/1_General/url
+share/bitchx/help/1_General/ver
+share/bitchx/help/1_General/wordlist
 share/bitchx/help/2_Queries/2_Queries
 share/bitchx/help/2_Queries/admin
 share/bitchx/help/2_Queries/flush
@@ -85,7 +142,16 @@ share/bitchx/help/2_Queries/list
 share/bitchx/help/2_Queries/lusers
 share/bitchx/help/2_Queries/map
 share/bitchx/help/2_Queries/motd
+share/bitchx/help/2_Queries/n
 share/bitchx/help/2_Queries/names
+share/bitchx/help/2_Queries/sc
+share/bitchx/help/2_Queries/scan
+share/bitchx/help/2_Queries/scanf
+share/bitchx/help/2_Queries/scani
+share/bitchx/help/2_Queries/scann
+share/bitchx/help/2_Queries/scano
+share/bitchx/help/2_Queries/scans
+share/bitchx/help/2_Queries/scanv
 share/bitchx/help/2_Queries/stats
 share/bitchx/help/2_Queries/time
 share/bitchx/help/2_Queries/trace
@@ -96,6 +162,7 @@ share/bitchx/help/2_Queries/version
 share/bitchx/help/2_Queries/who
 share/bitchx/help/2_Queries/whois
 share/bitchx/help/2_Queries/whowas
+share/bitchx/help/2_Queries/wi
 share/bitchx/help/2_Queries/wii
 share/bitchx/help/2_Queries/wilc
 share/bitchx/help/2_Queries/wilcr
@@ -418,6 +485,8 @@ share/bitchx/help/5_Programming/hook
 share/bitchx/help/5_Programming/if
 share/bitchx/help/5_Programming/input
 share/bitchx/help/5_Programming/load
+share/bitchx/help/5_Programming/loaddll
+share/bitchx/help/5_Programming/loadtcl
 share/bitchx/help/5_Programming/local
 share/bitchx/help/5_Programming/menu
 share/bitchx/help/5_Programming/menuitem
@@ -466,7 +535,6 @@ share/bitchx/help/5_Programming/on/notify_signoff
 share/bitchx/help/5_Programming/on/notify_signon
 share/bitchx/help/5_Programming/on/odd_server_stuff
 share/bitchx/help/5_Programming/on/on
-share/bitchx/help/5_Programming/on/on~
 share/bitchx/help/5_Programming/on/oper_notice
 share/bitchx/help/5_Programming/on/pong
 share/bitchx/help/5_Programming/on/public
@@ -514,6 +582,7 @@ share/bitchx/help/5_Programming/redirect
 share/bitchx/help/5_Programming/repeat
 share/bitchx/help/5_Programming/return
 share/bitchx/help/5_Programming/save
+share/bitchx/help/5_Programming/saveirc
 share/bitchx/help/5_Programming/send
 share/bitchx/help/5_Programming/sendline
 share/bitchx/help/5_Programming/setenv
@@ -836,6 +905,7 @@ share/bitchx/help/README_FIRST
 share/bitchx/script/actplug.gmz
 share/bitchx/script/bxglobal
 share/bitchx/script/bxtcl.tcl
+share/bitchx/script/example-.bitchxrc
 share/bitchx/script/file.tcl
 share/bitchx/script/fserve+vfs.tar.gz
 share/bitchx/script/menu.bx
@@ -872,17 +942,19 @@ share/bitchx/translation/SWEDISH_NAMES_COM
 share/bitchx/translation/SWISS
 share/bitchx/translation/UNITED_KINGDOM
 share/bitchx/translation/UNITED_KINGDOM_COM
-@dirrm share/bitchx/help/1_General
 @dirrm share/bitchx/help/1_General/ctcp
 @dirrm share/bitchx/help/1_General/dcc
+@dirrm share/bitchx/help/1_General
 @dirrm share/bitchx/help/2_Queries
 @dirrm share/bitchx/help/3_Operators
-@dirrm share/bitchx/help/4_Misc
 @dirrm share/bitchx/help/4_Misc/bind
+@dirrm share/bitchx/help/4_Misc/fset
 @dirrm share/bitchx/help/4_Misc/set
 @dirrm share/bitchx/help/4_Misc/window
-@dirrm share/bitchx/help/5_Programming
+@dirrm share/bitchx/help/4_Misc/wset
+@dirrm share/bitchx/help/4_Misc
 @dirrm share/bitchx/help/5_Programming/on
+@dirrm share/bitchx/help/5_Programming
 @dirrm share/bitchx/help/6_Functions
 @dirrm share/bitchx/help/7_Docs
 @dirrm share/bitchx/help/8_Scripts

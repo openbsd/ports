@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Dec 20 08:57:35 1999
-+++ Makefile.in	Mon Dec 20 08:58:05 1999
-@@ -108,8 +108,8 @@
+--- Makefile.in.orig	Sun Jan  9 05:11:01 2000
++++ Makefile.in	Sat Jan 29 23:58:32 2000
+@@ -106,8 +106,8 @@
  LN = @LN@
  CP = @CP@
  MV = @MV@
--INSTALL = ./bsdinstall -c -s -m 755
--INSTALL_DATA = $(topdir)/bsdinstall -c -m 644
+-INSTALL = $(topdir)/$(srcdir)/bsdinstall -c -s -m 755
+-INSTALL_DATA = $(topdir)/$(srcdir)/bsdinstall -c -m 644
 +INSTALL = $(BSD_INSTALL_PROGRAM)
 +INSTALL_DATA = $(BSD_INSTALL_DATA)
  
