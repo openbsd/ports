@@ -1,7 +1,7 @@
---- Doc/zsh.texi.orig	Fri Mar  5 09:00:10 1999
-+++ Doc/zsh.texi	Fri Mar  5 09:01:05 1999
-@@ -2,6 +2,10 @@
- @c %**start of header
+--- Doc/zsh.texi.orig	Tue Aug  3 00:40:39 1999
++++ Doc/zsh.texi	Tue Aug  3 00:43:38 1999
+@@ -7,6 +7,10 @@
+ @end iftex
  @setfilename zsh.info
  @settitle zsh
 +@dircategory Shells
