@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/30 07:32:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/07 18:47:43 wilfried Exp $
 
 COMMENT=		"wm-dockapp; multiple pop3 mailbox checker"
 
@@ -9,7 +9,7 @@ NEED_VERSION=		1.515
 
 HOMEPAGE=		http://sumpan.campus.luth.se/software/wmmultipop3/
 
-MAINTAINER=		Jolan Luff <jolan@encryptedemail.net>
+MAINTAINER=		Jolan Luff <jolan@enteract.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
-#USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/${DISTNAME}
