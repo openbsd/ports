@@ -1,15 +1,15 @@
---- Makefile.in.orig	Thu Sep 23 13:46:00 1999
-+++ Makefile.in	Tue Oct 26 16:12:29 1999
-@@ -67,7 +67,7 @@
- GETCONF = @GETCONF@
+--- Makefile.in.orig	Fri Jun 23 12:35:23 2000
++++ Makefile.in	Sat Jul  1 19:06:31 2000
+@@ -72,7 +72,7 @@
+ GLOBINC = @GLOBINC@
  GLOBLIB = @GLOBLIB@
  LIBOBJS = @LIBOBJS@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
+ MOFILES = @MOFILES@
  PACKAGE = @PACKAGE@
  PERL = @PERL@
- RANLIB = @RANLIB@
-@@ -322,13 +322,6 @@
+@@ -346,13 +346,6 @@
  	  done; \
  	done
  	@$(POST_INSTALL)
