@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/06/09 18:39:44 lebel Exp $
+
+Needed for fake installation. This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
+
+--- Makefile.orig	Mon Apr 23 08:30:01 2001
++++ Makefile	Sat Jun  9 14:19:01 2001
+@@ -306,8 +306,8 @@ strerr.h error.h exit.h
+ test: prog rts rts.tests rts.exp
+ 	./rts | cmp - rts.exp >&2
+ 
+-setup: it install
++setup: install
+ 	./install
+ 
+-check: it instcheck
++check: instcheck
+ 	./instcheck
