@@ -1,25 +1,33 @@
-# OpenBSD makefile for:	STk
-# Version required:	3.1
-# Date created:		3 Febuary 1998
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.3 1999/10/29 10:31:02 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/11/24 04:22:21 brad Exp $
 
-BROKEN=		bad packing lists
-
-DISTNAME=       STk-3.1
+VER=		3.1.1
+DISTNAME=       STk-${VER}
 CATEGORIES=	lang
+MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
+
 NO_CDROM=	"NOFEE:	Can not sell"
-MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
-MAINTAINER=	don@openBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
-PATCH_STRIP=      -p1
 GNU_CONFIGURE=	yes
-MAKE_FLAGS=  	"prefix=${PREFIX}" -f
 
-post-install:
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arc" || \
+${MACHINE_ARCH} == "pmax" || ${MACHINE_ARCH} == "powerpc")
+CONFIGURE_ARGS+= --disable-dynload
+.endif
+
+PLIST=	${WRKDIR}/PLIST
+
+pre-install:
+	@rm -f ${PLIST}
+	@sed -e's:%%STK_VERSION%%:${VER}:' \
+	     -e's:%%STK_ARCH%%:$(OPSYS)-$(OPSYS_VER)-$(MACHINE):' \
+		${PLIST_ORIG} > ${PLIST}
 
 .include <bsd.port.mk>
+
+.if (defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.template.noshared))
+PLIST_ORIG=	${FILESDIR}/PLIST.template.noshared
+.else
+PLIST_ORIG=	${FILESDIR}/PLIST
+.endif

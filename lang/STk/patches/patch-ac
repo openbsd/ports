@@ -1,31 +1,26 @@
-*** configure.orig	Wed Feb  4 20:44:28 1998
---- configure	Wed Feb  4 20:50:12 1998
-***************
-*** 658,663 ****
---- 658,664 ----
-    HP*)	     OS=HPUX; DFLGS="$DFLGS -Dhpux";;
-    Linux*)    OS=LINUX;;
-    NetBSD-1*) OS=NETBSD1;;
-+   OpenBSD*)  OS=OPENBSD;;
-    FreeBSD*)  OS=FREEBSD;;
-    IRIX-5*)   OS=IRIX5;;
-    *)         OS=unknown_system;;
-***************
-*** 1526,1531 ****
---- 1527,1542 ----
-       SH_LDFLAGS="-Bshareable -o"
-       SH_LOADER="ld"
-       SH_SUFFIX='so';;
-+    OPENBSD)
-+      case $machine in
-+        alpha) 
-+ 	echo "Alpha does not support shared libraries.";;
-+        *)
-+      	SH_CCFLAGS="-fpic"
-+      	SH_LDFLAGS="-Bshareable -o"
-+      	SH_LOADER="ld"
-+      	SH_SUFFIX='so';;
-+      esac;;
-     HPUX)
-       SH_CCFLAGS="+Z"
-       SH_LDFLAGS="-b -o"
+--- Tk/unix/Makefile.in.orig	Wed Sep 25 10:01:59 1996
++++ Tk/unix/Makefile.in	Sat Oct 30 23:08:04 1999
+@@ -75,12 +75,12 @@
+ # X11 include files accessible (the configure script will try to
+ # set this value, and will cause it to be an empty string if the
+ # include files are accessible via /usr/include).
+-X11_INCLUDES =		@XINCLUDES@
++X11_INCLUDES =		-I/usr/X11R6/include
+ 
+ # Linker switch(es) to use to link with the X11 library archive (the
+ # configure script will try to set this value automatically, but you
+ # can override it).
+-X11_LIB_SWITCHES =	@XLIBSW@
++X11_LIB_SWITCHES =	-L/usr/X11R6/lib
+ 
+ # Libraries to use when linking:  must include at least Tk, Tcl, Xlib,
+ # and the math library (in that order).  The "LIBS" part will be
+@@ -90,7 +90,7 @@
+ 
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # To turn off the security checks that disallow incoming sends when
+ # the X server appears to be insecure, reverse the comments on the

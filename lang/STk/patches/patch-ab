@@ -1,9 +1,29 @@
---- STk-3.1/Tk/configure.orig	Sat Nov  8 11:22:57 1997
-+++ STk-3.1/Tk/configure	Sat Nov  8 11:23:14 1997
-@@ -1,5 +1,5 @@
- #! /bin/sh
- 
--cd unix; configure
-+cd unix; ./configure
- 
- # Simple no?
+--- configure.orig	Sat Oct 30 21:20:01 1999
++++ configure	Sat Oct 30 21:18:49 1999
+@@ -659,6 +659,7 @@
+   HP*)	     OS=HPUX; DFLGS="$DFLGS -Dhpux";;
+   Linux*)    OS=LINUX;;
+   NetBSD-1*) OS=NETBSD1;;
++  OpenBSD*)  OS=OPENBSD;;
+   FreeBSD*)  OS=FREEBSD;;
+   IRIX-5*)   OS=IRIX5;;
+   *)         OS=unknown_system;;
+@@ -1528,6 +1529,18 @@
+      SH_LDFLAGS="-Bshareable -o"
+      SH_LOADER="ld"
+      SH_SUFFIX='so';;
++   OPENBSD)
++     case $machine in
++       alpha)
++      echo "Alpha does not support shared libraries.";;
++       powerpc)
++      echo "PowerPC does not support shared libraries.";;
++       *)
++      SH_CCFLAGS="-fpic"
++      SH_LDFLAGS="-Bshareable -Bforcearchive -o"
++      SH_LOADER="ld"
++      SH_SUFFIX='so';;
++     esac;;
+    HPUX)
+      SH_CCFLAGS="+Z"
+      SH_LDFLAGS="-b -o"
