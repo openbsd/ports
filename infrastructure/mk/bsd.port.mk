@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.487 2001/10/28 12:34:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.488 2001/10/29 12:51:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -605,13 +605,10 @@ MODULES+=${_i}
 .  endif
 .endfor
 
-.for _m in ${MODULES:L}
-.  if exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
-.    include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
-.  else
-ERRORS+="Missing support for modules ${_m}."
-.  endif
-.endfor
+.if defined(MODULES)
+_MODULES_DONE=
+.  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
+.endif
 
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build
