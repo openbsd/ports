@@ -1,0 +1,11 @@
+--- gcc/cp/Make-lang.in.orig	Fri Apr 23 23:23:34 1999
++++ gcc/cp/Make-lang.in	Fri Apr 23 23:23:50 1999
+@@ -185,7 +185,7 @@
+ # Don't try to do write if `.' is not writable;
+ # in that case, we're installing from someone else's directory.
+ # But go ahead and fail if that directory hasn't been properly built.
+-cplib2.ready: $(GCC_PASSES) $(LANGUAGES) $(LIBGCC2_DEPS) stmp-int-hdrs
++cplib2.ready: $(GCC_PASSES) $(LIBGCC2_DEPS) stmp-int-hdrs
+ 	@if [ -r cplib2.txt -a -w . ]; then \
+ 	  case " $(LANGUAGES) " in \
+ 	  *" "[cC]"++ "*) \
