@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/22 18:56:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/06/03 21:30:42 naddy Exp $
 bin/civclient
 bin/civserver
 share/freeciv/Freeciv
@@ -146,10 +146,10 @@ share/locale/pt_BR/LC_MESSAGES/freeciv.mo
 share/locale/ru/LC_MESSAGES/freeciv.mo
 @dirrm share/freeciv/trident
 @dirrm share/freeciv/scenario
+@dirrm share/freeciv/nation
 @dirrm share/freeciv/misc
 @dirrm share/freeciv/engels
 @dirrm share/freeciv/default
-@dirrm share/freeciv/classic
 @dirrm share/freeciv/civ2
 @dirrm share/freeciv/civ1
 @dirrm share/freeciv

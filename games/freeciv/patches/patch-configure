@@ -1,6 +1,7 @@
---- configure.orig	Sat Jul 22 14:14:11 2000
-+++ configure	Sat Jul 22 14:14:50 2000
-@@ -2882,7 +2882,7 @@
+$OpenBSD: patch-configure,v 1.2 2001/06/03 21:30:41 naddy Exp $
+--- configure.orig	Thu Jul 20 19:26:32 2000
++++ configure	Sun Jun  3 23:25:42 2001
+@@ -2882,7 +2882,7 @@ else
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,7 +10,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -3144,7 +3144,7 @@
+@@ -3144,7 +3144,7 @@ fi
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat
@@ -18,3 +19,39 @@
  		 INTLDEPS='$(top_builddir)/intl/libintl.a'
  		 INTLLIBS=$INTLDEPS
  		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+@@ -5878,7 +5878,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lreadline $SERVER_LIBS $LIBS"
++LIBS="-lreadline -lcurses $SERVER_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5884 "configure"
+ #include "confdefs.h"
+@@ -5906,7 +5906,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  SERVER_LIBS="-lreadline $SERVER_LIBS"
++  SERVER_LIBS="-lreadline -lcurses $SERVER_LIBS"
+ 	     cat >> confdefs.h <<EOF
+ #define HAVE_LIBREADLINE 1
+ EOF
+@@ -5994,7 +5994,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lreadline $SERVER_LIBS $LIBS"
++LIBS="-lreadline -lcurses $SERVER_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6000 "configure"
+ #include "confdefs.h"
+@@ -6022,7 +6022,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  SERVER_LIBS="-lreadline $SERVER_LIBS"
++  SERVER_LIBS="-lreadline -lcurses $SERVER_LIBS"
+ 		 cat >> confdefs.h <<EOF
+ #define HAVE_LIBREADLINE 1
+ EOF
