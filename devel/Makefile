@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2004/05/19 09:28:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.229 2004/05/19 21:19:29 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -123,7 +123,9 @@
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
+     SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
+     SUBDIR += p5-B-Keywords
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
@@ -186,6 +188,7 @@
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-YAML
      SUBDIR += pango
      SUBDIR += pccts
      SUBDIR += pcre
