@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 08:40:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/17 15:28:55 avsm Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 
 COMMENT=	"Sandia Internet path characterization tool"
 
-DISTNAME=	pchar-1.4
+V=		1.4
+DISTNAME=	pchar-${V}
+PKGNAME=	pchar-${V}p1
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}
@@ -13,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.ca.sandia.gov/~bmah/Software/pchar/
+HOMEPAGE=	http://www.employees.org/~bmah/Software/pchar/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ipv6 --with-pcap
