@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2001/11/01 09:03:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2001/12/28 09:29:40 pvalchev Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
 COMMENT-fvwm2=	"multiple virtual desktop window manager, without icons"
 
-VERSION=	2.4.3
+VERSION=	2.4.4
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
 CATEGORIES=     x11
-NEED_VERSION=	1.482
+NEED_VERSION=	1.502
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz:0
 
@@ -36,7 +36,7 @@ FLAVORS=	rplay debug i18n
 FLAVOR?=
 
 .if ${FLAVOR:L:Mrplay} && !${SUBPACKAGE} == "-fvicons"
-LIB_DEPENDS=	rplay.0.:rplay-*:audio/rplay
+LIB_DEPENDS+=	rplay.0.:rplay-*:audio/rplay
 CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
 		 --with-rplay-library="${LOCALBASE}/lib"
 .else
