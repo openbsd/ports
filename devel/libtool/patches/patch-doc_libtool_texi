@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_libtool_texi,v 1.1 2001/02/20 18:26:38 danh Exp $
+$OpenBSD: patch-doc_libtool_texi,v 1.2 2001/08/27 01:16:48 brad Exp $
 --- doc/libtool.texi.orig	Tue Nov  2 07:36:23 1999
-+++ doc/libtool.texi	Tue Feb 20 13:25:13 2001
-@@ -11,7 +11,7 @@
++++ doc/libtool.texi	Sun Aug 26 21:06:13 2001
+@@ -11,14 +11,14 @@
  @set MAILLIST the libtool mailing list @email{libtool@@gnu.org}
  @set objdir .libs
  
@@ -10,3 +10,11 @@ $OpenBSD: patch-doc_libtool_texi,v 1.1 2001/02/20 18:26:38 danh Exp $
  @direntry
  * Libtool: (libtool).           Generic shared library support script.
  @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* libtoolize: (libtool)Invoking libtoolize.     Adding libtool support.
++* Libtoolize: (libtool)         Invoking libtoolize. Adding libtool support.
+ @end direntry
+ 
+ @ifinfo
