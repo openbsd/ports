@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1998/05/14 03:39:10 form Exp $
+# $OpenBSD: Makefile,v 1.15 1998/05/19 04:38:38 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -31,7 +31,7 @@
      SUBDIR += fvwm2
 #    SUBDIR += fvwm2-english
 #    SUBDIR += fvwm95
-#    SUBDIR += getbdf
+     SUBDIR += getbdf
 #    SUBDIR += gtk
 #    SUBDIR += gwm
 #    SUBDIR += icewm
@@ -84,10 +84,10 @@
      SUBDIR += xdaliclock
 #    SUBDIR += xdtm
 #    SUBDIR += xfce
-#    SUBDIR += xfed
+     SUBDIR += xfed
 #    SUBDIR += xfedor
 #    SUBDIR += xfishtank
-#    SUBDIR += xfm
+     SUBDIR += xfm
 #    SUBDIR += xforms
      SUBDIR += xgrab
 #    SUBDIR += xkeycaps
