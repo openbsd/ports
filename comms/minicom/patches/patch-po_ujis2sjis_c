@@ -1,0 +1,11 @@
+$OpenBSD: patch-po_ujis2sjis_c,v 1.1 2001/06/07 13:40:27 naddy Exp $
+--- po/ujis2sjis.c.orig	Mon May 14 23:16:20 2001
++++ po/ujis2sjis.c	Mon May 14 23:16:35 2001
+@@ -33,7 +33,6 @@ int decode_line(unsigned char buf[],int 
+ 			c=ujis2sjis((kanji&127)-32,(*p&127)-32);
+ 			c1=c>>8; c2=c&255;
+ 			putchar(c1); putchar(c2);
+-			if (c2=='\\') putchar('\\');
+ 			if (c2=='%' && format) putchar('%');
+ 			kanji=0;
+ 		} else {
