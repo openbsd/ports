@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/11/27 02:51:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/08/01 01:26:57 brad Exp $
 bin/khangman
 share/applnk/Applications/khangman.desktop
+share/apps/khangman/data/animals.txt
 share/apps/khangman/data/easy.txt
-share/apps/khangman/data/level2.txt
-share/apps/khangman/data/level3.txt
-share/apps/khangman/data/level4.txt
+share/apps/khangman/data/hard.txt
+share/apps/khangman/data/medium.txt
+share/apps/khangman/pics/c_bg.png
 share/apps/khangman/pics/hg1.jpg
 share/apps/khangman/pics/hg10.jpg
 share/apps/khangman/pics/hg12.jpg
@@ -19,8 +20,12 @@ share/apps/khangman/pics/hg7.jpg
 share/apps/khangman/pics/hg8.jpg
 share/apps/khangman/pics/hg9.jpg
 share/apps/khangman/pics/khm_splash.png
+share/apps/khangman/sounds/new_game.ogg
 share/apps/khangman/sounds/new_game.wav
+share/apps/khangman/sounds/splash.ogg
 share/apps/khangman/sounds/splash.wav
+share/icons/hicolor/16x16/apps/khangman.png
+share/icons/hicolor/32x32/apps/khangman.png
 share/icons/locolor/16x16/apps/khangman.png
 share/icons/locolor/32x32/apps/khangman.png
 @dirrm share/apps/khangman/sounds

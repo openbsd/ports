@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/24 20:58:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/08/01 01:26:57 brad Exp $
 
 COMMENT=	"classical hangman game"
 
-DISTNAME=	khangman-0.71
+DISTNAME=	khangman-0.8
 CATEGORIES=	education
-NEED_VERSION=	1.516
 
 HOMEPAGE=	http://edu.kde.org/khangman/
 
@@ -17,23 +16,30 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	::x11/qt2-designer
+LIB_DEPENDS=	kdecore.4,DCOP,kdeui,kdefx::x11/kde/libs3
 
-LIB_DEPENDS=	kdecore.3,DCOP,kdeui::x11/kde/libs2
+MODULES=	qt3
 
-MODULES=	qt2
+PORTHOME=	${WRKDIR}
 
-MAKE_ENV=	${CONFIGURE_ENV}
+MAKE_ENV=	KDEDIR="${LOCALBASE}"
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
-CONFIGURE_STYLE= autoconf automake
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
+CONFIGURE_ARGS+= --disable-debug --enable-final
+CONFIGURE_ARGS+= --disable-threading --disable-mt
+CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
+CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include"
+CONFIGURE_ARGS+= --with-xinerama
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" KDEDIR="${LOCALBASE}"
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applnk/Applications
+	${INSTALL_DATA} ${WRKSRC}/khangman/khangman.desktop \
+		${PREFIX}/share/applnk/Applications
 
 .include <bsd.port.mk>
