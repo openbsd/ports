@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/04 00:24:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/07 05:59:35 pvalchev Exp $
 bin/scsh
 include/scheme48.h
 include/write-barrier.h
@@ -85,6 +85,7 @@ share/doc/scsh/s48-manual/html/s48manual_60.html
 share/doc/scsh/s48-manual/html/s48manual_61.html
 share/doc/scsh/s48-manual/html/s48manual_62.html
 share/doc/scsh/s48-manual/html/s48manual_63.html
+share/doc/scsh/s48-manual/html/s48manual_64.html
 share/doc/scsh/s48-manual/html/s48manual_7.html
 share/doc/scsh/s48-manual/html/s48manual_8.html
 share/doc/scsh/s48-manual/html/s48manual_9.html
@@ -105,9 +106,15 @@ share/doc/scsh/s48-manual/thread.tex
 share/doc/scsh/s48-manual/user-guide.tex
 share/doc/scsh/s48-manual/utilities.tex
 share/doc/scsh/s48-manual/version-number.tex
+share/doc/scsh/scsh-manual/array.sty
 share/doc/scsh/scsh-manual/awk.tex
+share/doc/scsh/scsh-manual/boxedminipage.sty
+share/doc/scsh/scsh-manual/code.sty
+share/doc/scsh/scsh-manual/ct.sty
 share/doc/scsh/scsh-manual/decls.tex
+share/doc/scsh/scsh-manual/draftfooters.sty
 share/doc/scsh/scsh-manual/front.tex
+share/doc/scsh/scsh-manual/headings.sty
 share/doc/scsh/scsh-manual/html/man-Z-C.css
 share/doc/scsh/scsh-manual/html/man-Z-G-D-1.gif
 share/doc/scsh/scsh-manual/html/man-Z-H-1.html
@@ -126,10 +133,15 @@ share/doc/scsh/scsh-manual/html/man-Z-H-9.html
 share/doc/scsh/scsh-manual/html/man.html
 share/doc/scsh/scsh-manual/intro.tex
 share/doc/scsh/scsh-manual/man.dvi
+share/doc/scsh/scsh-manual/man.pdf
 share/doc/scsh/scsh-manual/man.ps
 share/doc/scsh/scsh-manual/man.tex
+share/doc/scsh/scsh-manual/mantitle.sty
+share/doc/scsh/scsh-manual/matter.sty
 share/doc/scsh/scsh-manual/miscprocs.tex
+share/doc/scsh/scsh-manual/mysize10.sty
 share/doc/scsh/scsh-manual/network.tex
+share/doc/scsh/scsh-manual/pdfcond.tex
 share/doc/scsh/scsh-manual/procnotation.tex
 share/doc/scsh/scsh-manual/rdelim.tex
 share/doc/scsh/scsh-manual/running.tex
@@ -140,6 +152,16 @@ share/doc/scsh/scsh-manual/test.tex
 share/doc/scsh/scsh-manual/threads.tex
 share/doc/scsh/scsh-manual/tty.tex
 share/doc/scsh/scsh-manual/xman.tex
+share/doc/scsh/scsh-paper/boxedminipage.sty
+share/doc/scsh/scsh-paper/code.sty
+share/doc/scsh/scsh-paper/ct.sty
+share/doc/scsh/scsh-paper/headings.tex
+share/doc/scsh/scsh-paper/html
+share/doc/scsh/scsh-paper/lcs-note.sty
+share/doc/scsh/scsh-paper/mitlogo.ps
+share/doc/scsh/scsh-paper/scsh-paper.dvi
+share/doc/scsh/scsh-paper/scsh-paper.ps
+share/doc/scsh/scsh-paper/scsh-paper.tex
 share/doc/scsh/threads.txt
 share/doc/scsh/todo.txt
 share/doc/scsh/type.txt
@@ -151,6 +173,7 @@ share/scsh/big/compose-cont.scm
 share/scsh/big/defrecord.scm
 share/scsh/big/destructure.scm
 share/scsh/big/dump.scm
+share/scsh/big/either.scm
 share/scsh/big/enum-set.scm
 share/scsh/big/external.scm
 share/scsh/big/filename.scm
@@ -291,6 +314,7 @@ share/scsh/scsh/ndbm.scm
 share/scsh/scsh/netconst.scm
 share/scsh/scsh/network.scm
 share/scsh/scsh/newports.scm
+share/scsh/scsh/odbc.scm
 share/scsh/scsh/oldfuns.scm
 share/scsh/scsh/packages-old.scm
 share/scsh/scsh/packages-old2.scm
@@ -345,6 +369,7 @@ share/scsh/scsh/tty.scm
 share/scsh/scsh/utilities.scm
 share/scsh/scsh/waitcodes.scm
 share/scsh/scsh/weaktables.scm
+share/scsh/srfi
 @dirrm share/scsh/scsh
 @dirrm share/scsh/rts
 @dirrm share/scsh/opt
@@ -354,6 +379,7 @@ share/scsh/scsh/weaktables.scm
 @dirrm share/scsh/emacs
 @dirrm share/scsh/big
 @dirrm share/scsh
+@dirrm share/doc/scsh/scsh-paper
 @dirrm share/doc/scsh/scsh-manual/html
 @dirrm share/doc/scsh/scsh-manual
 @dirrm share/doc/scsh/s48-manual/html
