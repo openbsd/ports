@@ -1,17 +1,16 @@
-$OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
-
---- cddb.pl.orig	Thu Oct 10 02:55:24 2002
-+++ cddb.pl	Sat Nov  9 09:37:21 2002
-@@ -26,7 +26,7 @@ use strict;
+$OpenBSD: patch-cddb_pl,v 1.3 2003/09/23 05:09:06 jolan Exp $
+--- cddb.pl.orig	2003-08-23 12:00:32.000000000 -0700
++++ cddb.pl	2003-08-23 12:02:49.000000000 -0700
+@@ -27,7 +27,7 @@ use Getopt::Std;
+ use strict;
  
- use Getopt::Std;
  my %option = ();
--getopts("oghdtsiSfDlO", \%option);
-+getopts("oghdtsSfDlO", \%option);
+-getopts("oghdtsiSfDlOFc:", \%option); 
++getopts("oghdtsSfDlOFc:", \%option); 
  
  if($option{h}) {
    print "$0: gets CDDB info of a CD\n";
-@@ -34,8 +34,7 @@ if($option{h}) {
+@@ -36,8 +36,7 @@ if($option{h}) {
    print "  -o  offline mode - just stores CD info\n";
    print "  -d  output in xmcd format\n";
    print "  -s  save in xmcd format\n";
@@ -21,16 +20,7 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
    print "  -t  output toc\n";
    print "  -l  output lame command\n";
    print "  -f  http mode (e.g. through firewalls)\n";
-@@ -58,7 +57,7 @@ my $xmcddir="/tmp/xmcd";
- # $config{CDDB_HOST}="freedb.freedb.org";	# set cddb host
- # $config{CDDB_PORT}=888; 			# set cddb port
- # $config{CDDB_MODE}="cddb";			# set cddb mode: cddb or http, this is switched with -f
--# $config{CD_DEVICE}="/dev/cdrom";		# set cd device
-+# $config{CD_DEVICE}="/dev/cd0c";		# set cd device
- 
- # $config{HELLO_ID} ="root nowhere.com fastrip 0.77"; # hello string: username hostname clientname version
- 
-@@ -77,19 +76,6 @@ $config{input}=1;   # 1: ask user if mor
+@@ -87,19 +86,6 @@ $config{input}=1;   # 1: ask user if mor
  $config{multi}=0;   # 1: do not ask user and get all of them
                      # 0: just the first one
  
@@ -50,7 +40,7 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
  if($option{o}) {
    my $ids=get_discids($config{CD_DEVICE});
  
-@@ -150,8 +136,6 @@ if($option{g}) {
+@@ -160,8 +146,6 @@ if($option{g}) {
  
      if($option{d} || $option{s}) {
        print_xmcd(\%cd,$option{s});
@@ -59,7 +49,7 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
      } elsif($option{l}) {
        print_lame(\%cd);
      } else {
-@@ -186,8 +170,6 @@ unless($config{multi}) {
+@@ -196,8 +180,6 @@ unless($config{multi}) {
  
    if($option{d} || $option{s}) {
      print_xmcd(\%cd,$option{s});
@@ -68,7 +58,7 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
    } elsif($option{l}) {
      print_lame(\%cd);
    } else {
-@@ -216,8 +198,6 @@ unless($config{multi}) {
+@@ -226,8 +208,6 @@ unless($config{multi}) {
  
      if($option{d} || $option{s}) {
        print_xmcd($c,$option{s});
@@ -77,11 +67,10 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
      } elsif($option{l}) {
        print_lame($c);
        print "\n";
-@@ -291,67 +271,6 @@ sub print_xmcd {
-     close OUT;
+@@ -304,67 +284,6 @@ sub print_xmcd {
    }
  }  
--
+ 
 -sub insert_db {
 -  my $cd=shift;
 -  my $db=shift;
@@ -142,6 +131,7 @@ $OpenBSD: patch-cddb_pl,v 1.2 2002/11/10 12:14:44 wilfried Exp $
 -
 -  $dbh->disconnect();
 -} 
- 
+-
  sub print_lame {
    my $cd=shift;
+ 
