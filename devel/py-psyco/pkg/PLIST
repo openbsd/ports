@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/11 00:01:36 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/17 19:36:44 fgsch Exp $
 %%SHARED%%
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/psyco/
 lib/python${MODPY_VERSION}/site-packages/psyco/__init__.py
 lib/python${MODPY_VERSION}/site-packages/psyco/__init__.pyc
@@ -7,6 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/psyco/classes.py
 lib/python${MODPY_VERSION}/site-packages/psyco/classes.pyc
 lib/python${MODPY_VERSION}/site-packages/psyco/core.py
 lib/python${MODPY_VERSION}/site-packages/psyco/core.pyc
+lib/python${MODPY_VERSION}/site-packages/psyco/kdictproxy.py
+lib/python${MODPY_VERSION}/site-packages/psyco/kdictproxy.pyc
 lib/python${MODPY_VERSION}/site-packages/psyco/logger.py
 lib/python${MODPY_VERSION}/site-packages/psyco/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/psyco/profiler.py
