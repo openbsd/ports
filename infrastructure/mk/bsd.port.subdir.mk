@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.13 1999/11/20 17:54:09 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.14 1999/11/20 17:56:57 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -41,28 +41,35 @@
 STRIP?=	-s
 .endif
 
-OPSYS?=	OpenBSD
+.if !defined(OPSYS)	# XXX !!
+OPSYS=	OpenBSD
+.endif
 
 ECHO_MSG?=	echo
 
 _SUBDIRUSE: .USE
 	@for entry in ${SUBDIR}; do \
+		OK=""; \
 		for dud in $$DUDS; do \
 			if [ $${dud} = $${entry} ]; then \
+				OK="false"; \
 				${ECHO_MSG} "===> ${DIRPRFX}$${entry} skipped"; \
-				continue 2; \
 			fi; \
 		done; \
-		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
+		if test -d ${.CURDIR}/$${entry}.${MACHINE}; then \
 			edir=$${entry}.${MACHINE}; \
-		elif cd ${.CURDIR}/$${entry} 2>/dev/null; then \
+		elif test -d ${.CURDIR}/$${entry}; then \
 			edir=$${entry}; \
 		else \
+			OK="false"; \
 			${ECHO_MSG} "===> ${DIRPRFX}$${entry} non-existent"; \
-			continue; \
 		fi; \
-		${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
-		${MAKE} ${.TARGET:realinstall=install} DIRPRFX=${DIRPRFX}$$edir/; \
+		if [ "$$OK" = "" ]; then \
+			${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
+			cd ${.CURDIR}/$${edir}; \
+			${MAKE} ${.TARGET:realinstall=install} \
+				DIRPRFX=${DIRPRFX}$$edir/; \
+		fi; \
 	done
 
 ${SUBDIR}::
@@ -76,7 +83,7 @@ ${SUBDIR}::
 .for __target in all fetch fetch-list package extract configure \
 		 build clean depend describe distclean deinstall \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
-		 obj link-categories unlink-categories
+		 obj
 .if !target(${__target})
 ${__target}: _SUBDIRUSE
 .endif
@@ -104,8 +111,11 @@ readme:
 	@make README.html
 .endif
 
+.if (${OPSYS} == "NetBSD")
+PORTSDIR ?= /usr/opt
+.else
 PORTSDIR ?= /usr/ports
-
+.endif
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
 README=	${TEMPLATES}/README.top
@@ -135,5 +145,5 @@ README.html:
 
 .PHONY: all fetch fetch-list package extract configure build clean depend \
 	describe distclean deinstall reinstall tags checksum mirror-distfiles \
-	list-distfiles obj link-categories unlink-categories readmes readme \
+	list-distfiles obj readmes readme \
 	beforeinstall afterinstall install realinstall
