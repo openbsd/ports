@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/13 17:27:10 pvalchev Exp $
+bin/tempest
+share/doc/tempest/README
+share/tempest/Makefile.am
+share/tempest/Makefile.in
+share/tempest/forelise
+share/tempest/fruehling
+share/tempest/jonny
+share/tempest/oldmacdonald
+share/tempest/saints
+share/tempest/tempest
+share/tempest/ungarian
+@dirrm share/tempest
+@dirrm share/doc/tempest
