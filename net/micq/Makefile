@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/03 16:01:31 form Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:09 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 DISTNAME=       micq-0.4.5
@@ -13,9 +13,6 @@ PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
-
-NO_CONFIGURE=	Yes
-FAKE=		Yes
 
 WRKDIST=	${WRKDIR}/micq-0.4.4
 

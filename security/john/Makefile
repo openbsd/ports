@@ -3,7 +3,7 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:11 espie Exp $
 
 DISTNAME=	john-1.6
 
@@ -24,8 +24,6 @@ MASTER_SITES=	http://www.openwall.com/john/ \
 		ftp://ftp.false.com/pub/security/john/
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
-
-NO_CONFIGURE=	yes
 
 .if (${MACHINE_ARCH} == "i386")
 PTYPE!=		uname -p | cut -f2 -d' '

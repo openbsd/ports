@@ -3,7 +3,7 @@
 # Date created:		12 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/21 16:05:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:09 espie Exp $
 
 PKGNAME=	nsping-0.8
 
@@ -22,9 +22,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
-
-NO_CONFIGURE=	Yes
-FAKE=		Yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/nsping ${PREFIX}/sbin

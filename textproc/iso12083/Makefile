@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/04/21 23:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/16 23:06:15 espie Exp $
 #
 
 DISTNAME=	iso12083-1993
@@ -22,11 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 DIST_SUBDIR=	iso12083
 
 NO_BUILD=	Yes
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	# empty
-FAKE=		Yes
 
 INSTDIR=	${PREFIX}/share/sgml/iso12083
 

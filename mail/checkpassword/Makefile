@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/26 14:43:51 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/16 23:06:05 espie Exp $
 
 DISTNAME=	checkpassword-0.81
 HOMEPAGE=	http://cr.yp.to/checkpwd.html
@@ -20,11 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-
-FAKE=	Yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

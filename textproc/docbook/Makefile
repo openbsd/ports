@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:14 espie Exp $
 #
 
 DISTNAME=	docbook-3.0
@@ -21,14 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	${ISOCAT}::textproc/iso8879
 
-NO_MTREE=       Yes
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 
-FAKE=		Yes
 INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/11 00:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:10 espie Exp $
 # Original from: Marc Espie
 
 PKGNAME=	teTeX_texmf-1.0.2
@@ -20,11 +20,8 @@ TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
 WRKDIST=	${WRKDIR}
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
 
-FAKE=		Yes
 TEXMF_DIR=	${PREFIX}/share/texmf
 
 do-install:

@@ -3,12 +3,12 @@
 # Date created:		24 Jan 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/04/30 10:07:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:11 espie Exp $
 
 DISTNAME=	isic-0.05
 
 CATEGORIES=	security
-NEED_VERSION=	 1.230
+NEED_VERSION=	 1.301
 
 MASTER_SITES=	http://expert.cc.purdue.edu/~frantzen/
 
@@ -23,9 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
-NO_PATCH=	Yes
-
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

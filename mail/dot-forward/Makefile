@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/26 15:18:30 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/16 23:06:06 espie Exp $
 
 DISTNAME=	dot-forward-0.71
 HOMEPAGE=	http://cr.yp.to/dot-forward.html
@@ -22,11 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX=		/var/qmail
-NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-
-FAKE=	Yes
 
 RUN_DEPENDS=	${PREFIX}/bin/qmail-local::mail/qmail
 

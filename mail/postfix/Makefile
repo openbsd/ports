@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/05/29 06:31:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2000/06/16 23:06:07 espie Exp $
 
 DISTNAME=	postfix-19991231-pl08
 CATEGORIES=     mail
@@ -14,10 +14,6 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-
-FAKE=		yes
-
-NO_CONFIGURE=	yes
 
 MAKE_FLAGS=	CC="${CC}" DEBUG="" OPT="${CFLAGS}" \
 		OPTS="CC=\"${CC}\" DEBUG=\"\" OPT=\"${CFLAGS}\""

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/05/29 07:31:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:10 espie Exp $
 
 DISTNAME=	snort-1.6
 CATEGORIES=	net security
+NEED_VERSION=	1.302
 MASTER_SITES=	http://www.clark.net/~roesch/ \
 		ftp://gd.tuwien.ac.at/infosys/security/snort/ \
 		http://snort.whitehats.com/
@@ -16,9 +17,7 @@ PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
-NO_PATCH=     	Yes
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/snort.8 ${PREFIX}/man/man8

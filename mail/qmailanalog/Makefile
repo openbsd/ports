@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/26 15:18:32 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:08 espie Exp $
 
 DISTNAME=	qmailanalog-0.70
 HOMEPAGE=	http://cr.yp.to/qmailanalog.html
@@ -24,11 +24,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 # only used for RUN_DEPENDS, below
 QMAILDIR=	/var/qmail
 
-NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-
-FAKE=	Yes
 
 RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 

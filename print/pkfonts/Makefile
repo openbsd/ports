@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:10 espie Exp $
 #
 
 DISTNAME=	pkfonts
@@ -14,20 +14,18 @@ MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
+EXTRACT_ONLY=	
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
-# NO_EXTRACT is waiting for a bsd.port.mk fix to be approved.
-# For the interim, redefine do-extract.
-#NO_EXTRACT=	extracted in install target
 NO_BUILD=	yes
 
 .if !defined(RESOLUTION)
@@ -54,9 +52,6 @@ pre-fetch:
 	@/usr/bin/false
 .endif
 .endif
-
-do-extract:
-	mkdir -p ${WRKDIR}
 
 do-install:
 	mkdir -p ${PREFIX}/lib/fonts

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/21 23:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:15 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 DISTNAME=	isoENTS
@@ -16,11 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 USE_ZIP=	Yes
-FAKE=		Yes
 
 INSTDIR=	${PREFIX}/share/sgml/iso8879
 

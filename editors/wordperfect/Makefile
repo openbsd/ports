@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/29 23:21:45 reinhard Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:05 espie Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
@@ -27,7 +27,6 @@ ONLY_FOR_ARCHS=	i386
 IS_INTERACTIVE=	yes
 
 WRKDIST=	${WRKDIR}
-NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
 NO_PACKAGE=	interactive port
 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/22 00:33:12 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:15 espie Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
 NEED_VERSION=	 1.230
-FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -18,7 +17,6 @@ RUN_DEPENDS=	ppmtogif::graphics/netpbm \
 		pnmtopng::graphics/netpbm \
 		gs::print/ghostscript/gnu
 
-NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
 FAKE=		Yes
 

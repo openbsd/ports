@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/05/31 13:36:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/16 23:06:04 espie Exp $
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
 
 CATEGORIES=	comms
 NEED_VERSION=	 1.230
-FAKE=		Yes
 
 DISTFILES=	malsync_1_6.source.tar.gz \
 		mal-0_7_tar.gz:0
@@ -24,8 +23,6 @@ MASTER_SITES0=	http://corp.avantgo.com/mal/source/
 LIB_DEPENDS=	pisock.3::comms/pilot-link
 
 WRKDIST=	${WRKDIR}
-
-NO_CONFIGURE=	yes
 
 ALL_TARGET=	malsync
 

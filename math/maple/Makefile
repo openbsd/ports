@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/01 17:47:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:08 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -28,8 +28,6 @@ PERMIT_PACKAGE_CDROM=	Commercial
 MAINTAINER=	espie@cvs.openbsd.org
 
 WRKDIST=	${WRKDIR}
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 
 # verify that it makes sense to install maple here
 pre-fetch:
@@ -67,7 +65,6 @@ do-fetch:
 
 MAPLE_SCRIPTS=maple march mint updtsrc xmaple
 
-FAKE=	Yes
 do-install:
 	@mkdir -p ${MAPLE_DIR} || echo "${MAPLE_DIR} already exists"
 	@cd ${MAPLE_DIR} && yes | ${FULLDISTDIR}/install

@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/06 20:45:01 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/16 23:06:10 espie Exp $
 
 PKGNAME=	ADMfzap-0.1
 
@@ -16,13 +16,9 @@ DISTNAME=	ADMfzap
 MASTER_SITES=	http://ADM.isp.at/ADM/ \
 		ftp://ADM.isp.at/ADM/
 
-NO_CONFIGURE=	yes
-
 MAKE_ENV+=	LIB_PATH=`/bin/ls -1 /usr/lib/libc.so.* | tail -1`
 
 ALL_TARGET=	openbsd
-
-FAKE=		yes
 
 # these should really just be defaults.
 PERMIT_PACKAGE_CDROM=	yes

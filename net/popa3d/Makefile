@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/14 07:30:45 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/16 23:06:09 espie Exp $
 
 DISTNAME=	popa3d-0.4
 HOMEPAGE=	http://www.openwall.com/popa3d/
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_CONFIGURE=	Yes
 ALL_TARGET=	popa3d
 MAKE_FLAGS=	CC=${CC} LD=${CC} CFLAGS="-c ${CFLAGS}"
 

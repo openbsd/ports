@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/23 15:40:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/16 23:06:09 espie Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
@@ -11,9 +11,6 @@ MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
 WRKDIST=	${WRKDIR}/named
 PREFIX=		/
-FAKE=		yes
-NO_MTREE=	yes
-NO_CONFIGURE=	yes
 SAMPLEDIR=	${DESTDIR}/usr/local/share/examples/bind8
 
 RESTRICTED=		"Unclear status of crypto components."

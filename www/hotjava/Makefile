@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/23 14:42:15 maja Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/16 23:06:16 espie Exp $
 
 #
 # From:
@@ -28,8 +28,6 @@ EXTRACT_ONLY=
 WRKSRC=		${WRKDIR}
 JDK_VERSION=    1.1.8
 NO_BUILD=	Yes
-NO_PATCH=	Yes
-NO_CONFIGURE=	Yes
 NO_PACKAGE=	Yes
 
 HOMEPAGE= http://java.sun.com/products/hotjava/

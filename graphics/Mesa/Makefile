@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:05 espie Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 PKGNAME=	Mesa-3.0
@@ -19,10 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=	Yes
-
-NO_CONFIGURE=	Yes
 
 WRKDIST=	${WRKDIR}/Mesa-3.0
 

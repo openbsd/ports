@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/05/06 07:14:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/16 23:06:14 espie Exp $
 
 PKGNAME=	rdp-1.0
 
@@ -24,9 +24,6 @@ MASTER_SITES=	http://www.l0pht.com/advisories/
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
 WRKDIST=	${WRKDIR}
-
-NO_CONFIGURE=	Yes
-FAKE=		Yes
 
 do-build:
 		cd ${WRKSRC} && ${CC} ${CFLAGS} -I${PREFIX}/include -o rdp \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/26 14:12:14 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:10 espie Exp $
 
 DISTNAME=	ucspi-tcp-0.88
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
@@ -20,11 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-
-FAKE=	Yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

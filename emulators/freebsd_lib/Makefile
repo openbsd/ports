@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/27 11:35:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:05 espie Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
@@ -20,10 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PREFIX=		/emul/freebsd
 
 NO_BUILD=	Yes
-NO_CONFIGURE=	Yes
-NO_MTREE=	Yes
 NO_PACKAGE=	Yes
-NO_PATCH=	Yes
 
 WRKDIST=	${WRKDIR}
 

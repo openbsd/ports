@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.9 2000/05/17 18:48:34 dugsong Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:11 espie Exp $
 
 PKGNAME=	antisniff-1.1
 
@@ -23,11 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/anti_sniff
 
-NO_CONFIGURE=	Yes
-
 ALL_TARGET=	OpenBSD-all
-
-FAKE=		yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/anti_sniffer \

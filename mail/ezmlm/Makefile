@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/26 15:18:31 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:06 espie Exp $
 
 DISTNAME=	ezmlm-0.53
 HOMEPAGE=	http://cr.yp.to/ezmlm.html
@@ -22,11 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 QMAILDIR=	/var/qmail
-NO_CONFIGURE=	Yes
 ALL_TARGET=	it man
 INSTALL_TARGET=	setup
-
-FAKE=	Yes
 
 RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 

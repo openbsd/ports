@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/30 10:08:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:12 espie Exp $
 
 PKGNAME=	l0phtcrack-2.52
 
@@ -25,9 +25,6 @@ USE_ZIP=	Yes
 MASTER_SITES=	http://www.l0pht.com/l0phtcrack/dist/
 
 WRKDIST=	${WRKDIR}
-
-NO_CONFIGURE=	Yes
-FAKE=		Yes
 
 post-extract:
 		@cp ${FULLDISTDIR}/readsmb.c ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/27 23:49:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:03 espie Exp $
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
@@ -6,7 +6,6 @@ CATEGORIES=	comms
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
-FAKE=Yes
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,8 +20,6 @@ EXTRACT_SUFX=	.shar.gz
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
-
-NO_CONFIGURE=	yes
 
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''

@@ -4,7 +4,7 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
-# $OpenBSD: Makefile,v 1.8 2000/06/10 00:35:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:15 espie Exp $
 #
 
 DISTNAME=	linuxdoc-1.1
@@ -22,9 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=    ${ISOCAT}::textproc/iso8879
 
-NO_MTREE=       Yes
 NO_BUILD=       Yes
-NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 
 INSTDIR=	${PREFIX}/share/sgml/linuxdoc

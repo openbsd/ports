@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/16 05:25:28 chris Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/16 23:06:04 espie Exp $
 #
 # See http://www.freebsd.org/java/ for software updates, etc.
 
@@ -26,10 +26,7 @@ PERMIT_DISTFILES_FTP=	No
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	Yes
-NO_CONFIGURE=	Yes
-NO_PATCH=	Yes
 EXTRACT_ONLY=
-FAKE=		Yes
 
 DISTFILES=	jdk${JDK_VERSION}_AOUT.V1999-11-9.tar.gz
 
