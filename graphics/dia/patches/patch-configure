@@ -1,24 +1,15 @@
---- configure.orig	Sun Aug  6 05:47:04 2000
-+++ configure	Sun Mar  4 22:19:38 2001
-@@ -4835,7 +4835,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -5390,7 +5390,7 @@
+--- configure.orig	Fri Jun  1 00:02:01 2001
++++ configure	Fri Jun  1 00:03:20 2001
+@@ -8626,7 +8626,7 @@ localedir='${prefix}/${DATADIRNAME}/loca
  
  
  # Extract the first word of "xml-config", so it can be a program name with args.
 -set dummy xml-config; ac_word=$2
 +set dummy xml2-config; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:5396: checking for $ac_word" >&5
+ echo "configure:8632: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_prog_XML_CONFIG'+set}'`\" = set"; then
-@@ -5404,7 +5404,7 @@
+@@ -8640,7 +8640,7 @@ else
    for ac_dir in $ac_dummy; do
      test -z "$ac_dir" && ac_dir=.
      if test -f $ac_dir/$ac_word; then

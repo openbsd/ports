@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/10 21:56:05 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/02 10:55:47 obecian Exp $
 bin/dia
 lib/dia/libcgm_filter.a
 lib/dia/libcgm_filter.la
@@ -8,6 +8,8 @@ lib/dia/libcustom_objects.a
 lib/dia/libcustom_objects.la
 lib/dia/libdxf_filter.a
 lib/dia/libdxf_filter.la
+lib/dia/libeml_objects.a
+lib/dia/libeml_objects.la
 lib/dia/liber_objects.a
 lib/dia/liber_objects.la
 lib/dia/libflowchart_objects.a
@@ -24,6 +26,8 @@ lib/dia/libpstricks_filter.a
 lib/dia/libpstricks_filter.la
 lib/dia/libsadt_objects.a
 lib/dia/libsadt_objects.la
+lib/dia/libshape_filter.a
+lib/dia/libshape_filter.la
 lib/dia/libstandard_objects.a
 lib/dia/libstandard_objects.la
 lib/dia/libsvg_filter.a
@@ -34,30 +38,46 @@ lib/dia/libuml_objects.a
 lib/dia/libuml_objects.la
 lib/dia/libwpg_filter.a
 lib/dia/libwpg_filter.la
-%%SHARED%%
-share/locale/ca/LC_MESSAGES/dia.mo
-share/locale/da/LC_MESSAGES/dia.mo
-share/locale/de/LC_MESSAGES/dia.mo
-share/locale/el/LC_MESSAGES/dia.mo
-share/locale/en_GB/LC_MESSAGES/dia.mo
-share/locale/fi/LC_MESSAGES/dia.mo
-share/locale/fr/LC_MESSAGES/dia.mo
-share/locale/ga/LC_MESSAGES/dia.mo
-share/locale/hu/LC_MESSAGES/dia.mo
-share/locale/it/LC_MESSAGES/dia.mo
-share/locale/ja/LC_MESSAGES/dia.mo
-share/locale/ko/LC_MESSAGES/dia.mo
-share/locale/no/LC_MESSAGES/dia.mo
-share/locale/pl/LC_MESSAGES/dia.mo
-share/locale/pt/LC_MESSAGES/dia.mo
-share/locale/ru/LC_MESSAGES/dia.mo
-share/locale/sl/LC_MESSAGES/dia.mo
-share/locale/sv/LC_MESSAGES/dia.mo
-share/locale/tr/LC_MESSAGES/dia.mo
-share/locale/uk/LC_MESSAGES/dia.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/dia.mo
+lib/dia/libxfig_filter.a
+lib/dia/libxfig_filter.la
 man/man1/dia.1
 share/dia/dia_logo.png
+share/dia/help/C
+share/dia/help/en/background-color.html
+share/dia/help/en/canvas-chapter.html
+share/dia/help/en/colors.html
+share/dia/help/en/creating-canvas.html
+share/dia/help/en/docbook.css
+share/dia/help/en/graphics/greendots.png
+share/dia/help/en/graphics/home_network.png
+share/dia/help/en/graphics/line_props.png
+share/dia/help/en/gridlines.html
+share/dia/help/en/index.html
+share/dia/help/en/ln9.html
+share/dia/help/en/making-diagram.html
+share/dia/help/en/object-properties.html
+share/dia/help/en/objects-chapter.html
+share/dia/help/en/quickstart-chapter.html
+share/dia/help/en/quickstart-intro.html
+share/dia/help/en/rulers.html
+share/dia/help/en/save-print-diagram.html
+share/dia/help/en/starting-dia.html
+share/dia/help/en/stylesheet-images/caution.gif
+share/dia/help/en/stylesheet-images/home.gif
+share/dia/help/en/stylesheet-images/important.gif
+share/dia/help/en/stylesheet-images/next.gif
+share/dia/help/en/stylesheet-images/note.gif
+share/dia/help/en/stylesheet-images/prev.gif
+share/dia/help/en/stylesheet-images/tip.gif
+share/dia/help/en/stylesheet-images/toc-blank.gif
+share/dia/help/en/stylesheet-images/toc-minus.gif
+share/dia/help/en/stylesheet-images/toc-plus.gif
+share/dia/help/en/stylesheet-images/up.gif
+share/dia/help/en/stylesheet-images/warning.gif
+share/dia/help/en/topic.dat
+share/dia/help/en/using-objects.html
+share/dia/help/en/who-appeal-too.html
+share/dia/help/en/zooming.html
 share/dia/shapes/Circuit/ground.shape
 share/dia/shapes/Circuit/ground.xpm
 share/dia/shapes/Circuit/hcapacitor.shape
@@ -117,6 +137,40 @@ share/dia/shapes/Circuit/vzener.shape
 share/dia/shapes/Circuit/vzener.xpm
 share/dia/shapes/Civil/bvrest.shape
 share/dia/shapes/Civil/bvrest.xpm
+share/dia/shapes/Civil/civil_aerator.shape
+share/dia/shapes/Civil/civil_aerator.xpm
+share/dia/shapes/Civil/civil_arrow_right.shape
+share/dia/shapes/Civil/civil_arrow_right.xpm
+share/dia/shapes/Civil/civil_arrow_up.shape
+share/dia/shapes/Civil/civil_arrow_up.xpm
+share/dia/shapes/Civil/civil_backflow_preventer.shape
+share/dia/shapes/Civil/civil_backflow_preventer.xpm
+share/dia/shapes/Civil/civil_basin.shape
+share/dia/shapes/Civil/civil_basin.xpm
+share/dia/shapes/Civil/civil_container.shape
+share/dia/shapes/Civil/civil_container.xpm
+share/dia/shapes/Civil/civil_final-settling_basin.shape
+share/dia/shapes/Civil/civil_final-settling_basin.xpm
+share/dia/shapes/Civil/civil_frequency_converter.shape
+share/dia/shapes/Civil/civil_frequency_converter.xpm
+share/dia/shapes/Civil/civil_gas_bottle.shape
+share/dia/shapes/Civil/civil_gas_bottle.xpm
+share/dia/shapes/Civil/civil_horizontal_limiting_line.shape
+share/dia/shapes/Civil/civil_horizontal_limiting_line.xpm
+share/dia/shapes/Civil/civil_horizontal_valve.shape
+share/dia/shapes/Civil/civil_horizontal_valve.xpm
+share/dia/shapes/Civil/civil_motor.shape
+share/dia/shapes/Civil/civil_motor.xpm
+share/dia/shapes/Civil/civil_preliminary_clarification_tank.shape
+share/dia/shapes/Civil/civil_preliminary_clarification_tank.xpm
+share/dia/shapes/Civil/civil_rotor.shape
+share/dia/shapes/Civil/civil_rotor.xpm
+share/dia/shapes/Civil/civil_soil.shape
+share/dia/shapes/Civil/civil_soil.xpm
+share/dia/shapes/Civil/civil_vertical_limiting_line.shape
+share/dia/shapes/Civil/civil_vertical_limiting_line.xpm
+share/dia/shapes/Civil/civil_vertical_propeller.shape
+share/dia/shapes/Civil/civil_vertical_propeller.xpm
 share/dia/shapes/Civil/hcompressor.shape
 share/dia/shapes/Civil/hcompressor.xpm
 share/dia/shapes/Civil/hpump.shape
@@ -229,14 +283,68 @@ share/dia/shapes/Flowchart/transaction.shape
 share/dia/shapes/Flowchart/transaction.xpm
 share/dia/shapes/Flowchart/transmittape.shape
 share/dia/shapes/Flowchart/transmittape.xpm
+share/dia/shapes/Logic/and.png
+share/dia/shapes/Logic/and.shape
+share/dia/shapes/Logic/buffer.png
+share/dia/shapes/Logic/buffer.shape
+share/dia/shapes/Logic/connector.png
+share/dia/shapes/Logic/connector.shape
+share/dia/shapes/Logic/inverter.png
+share/dia/shapes/Logic/inverter.shape
+share/dia/shapes/Logic/nand.png
+share/dia/shapes/Logic/nand.shape
+share/dia/shapes/Logic/nor.png
+share/dia/shapes/Logic/nor.shape
+share/dia/shapes/Logic/not.png
+share/dia/shapes/Logic/not.shape
+share/dia/shapes/Logic/or.png
+share/dia/shapes/Logic/or.shape
+share/dia/shapes/Logic/xor.png
+share/dia/shapes/Logic/xor.shape
+share/dia/shapes/MSE/demultiplexer.shape
+share/dia/shapes/MSE/demultiplexer.xpm
+share/dia/shapes/MSE/large_extension_node.shape
+share/dia/shapes/MSE/large_extension_node.xpm
+share/dia/shapes/MSE/multiplexer.shape
+share/dia/shapes/MSE/multiplexer.xpm
+share/dia/shapes/MSE/node_center.shape
+share/dia/shapes/MSE/node_center.xpm
+share/dia/shapes/MSE/small_extension_node.shape
+share/dia/shapes/MSE/small_extension_node.xpm
+share/dia/shapes/MSE/tacsat.shape
+share/dia/shapes/MSE/tacsat.xpm
+share/dia/shapes/Network/dat_external.shape
+share/dia/shapes/Network/dat_external.xpm
+share/dia/shapes/Network/diskette.shape
+share/dia/shapes/Network/diskette.xpm
+share/dia/shapes/Network/mobile_phone.shape
+share/dia/shapes/Network/mobile_phone.xpm
+share/dia/shapes/Network/monitor.shape
+share/dia/shapes/Network/monitor.xpm
 share/dia/shapes/Network/nwcloud.shape
 share/dia/shapes/Network/nwcloud.xpm
+share/dia/shapes/Network/pc_bigtower.shape
+share/dia/shapes/Network/pc_bigtower.xpm
+share/dia/shapes/Network/pc_desktop.shape
+share/dia/shapes/Network/pc_desktop.xpm
+share/dia/shapes/Network/pc_miditower.shape
+share/dia/shapes/Network/pc_miditower.xpm
+share/dia/shapes/Network/pc_minitower.shape
+share/dia/shapes/Network/pc_minitower.xpm
 share/dia/shapes/Network/router-symbol.shape
 share/dia/shapes/Network/router-symbol.xpm
+share/dia/shapes/Network/speaker.shape
+share/dia/shapes/Network/speaker.xpm
+share/dia/shapes/Network/speaker_amp.shape
+share/dia/shapes/Network/speaker_amp.xpm
 share/dia/shapes/Network/switch-atm-symbol.shape
 share/dia/shapes/Network/switch-atm-symbol.xpm
 share/dia/shapes/Network/switch-symbol.shape
 share/dia/shapes/Network/switch-symbol.xpm
+share/dia/shapes/Network/workstation.shape
+share/dia/shapes/Network/workstation.xpm
+share/dia/shapes/Network/zip-disk.shape
+share/dia/shapes/Network/zip-disk.xpm
 share/dia/shapes/Pneumatic/cnx.shape
 share/dia/shapes/Pneumatic/cnx.xpm
 share/dia/shapes/Pneumatic/comelec1.shape
@@ -275,8 +383,75 @@ share/dia/shapes/Pneumatic/seijack.shape
 share/dia/shapes/Pneumatic/seijack.xpm
 share/dia/shapes/Pneumatic/seojack.shape
 share/dia/shapes/Pneumatic/seojack.xpm
+share/dia/shapes/SDL/block.shape
+share/dia/shapes/SDL/block.xpm
+share/dia/shapes/SDL/comment.shape
+share/dia/shapes/SDL/comment.xpm
+share/dia/shapes/SDL/decision.shape
+share/dia/shapes/SDL/decision.xpm
+share/dia/shapes/SDL/function.shape
+share/dia/shapes/SDL/function.xpm
+share/dia/shapes/SDL/header.shape
+share/dia/shapes/SDL/header.xpm
+share/dia/shapes/SDL/inout.shape
+share/dia/shapes/SDL/inout.xpm
+share/dia/shapes/SDL/macro.shape
+share/dia/shapes/SDL/macro.xpm
+share/dia/shapes/SDL/note.shape
+share/dia/shapes/SDL/note.xpm
+share/dia/shapes/SDL/process.shape
+share/dia/shapes/SDL/process.xpm
+share/dia/shapes/SDL/receive.shape
+share/dia/shapes/SDL/receive.xpm
+share/dia/shapes/SDL/return.shape
+share/dia/shapes/SDL/return.xpm
+share/dia/shapes/SDL/save.shape
+share/dia/shapes/SDL/save.xpm
+share/dia/shapes/SDL/send.shape
+share/dia/shapes/SDL/send.xpm
+share/dia/shapes/SDL/service.shape
+share/dia/shapes/SDL/service.xpm
+share/dia/shapes/SDL/state.shape
+share/dia/shapes/SDL/state.xpm
+share/dia/shapes/SDL/stop.shape
+share/dia/shapes/SDL/stop.xpm
+share/dia/shapes/SDL/task.shape
+share/dia/shapes/SDL/task.xpm
+share/dia/shapes/jigsaw/part_iiii.shape
+share/dia/shapes/jigsaw/part_iiii.xpm
+share/dia/shapes/jigsaw/part_iiio.shape
+share/dia/shapes/jigsaw/part_iiio.xpm
+share/dia/shapes/jigsaw/part_iioi.shape
+share/dia/shapes/jigsaw/part_iioi.xpm
+share/dia/shapes/jigsaw/part_iioo.shape
+share/dia/shapes/jigsaw/part_iioo.xpm
+share/dia/shapes/jigsaw/part_ioii.shape
+share/dia/shapes/jigsaw/part_ioii.xpm
+share/dia/shapes/jigsaw/part_ioio.shape
+share/dia/shapes/jigsaw/part_ioio.xpm
+share/dia/shapes/jigsaw/part_iooi.shape
+share/dia/shapes/jigsaw/part_iooi.xpm
+share/dia/shapes/jigsaw/part_iooo.shape
+share/dia/shapes/jigsaw/part_iooo.xpm
+share/dia/shapes/jigsaw/part_oiii.shape
+share/dia/shapes/jigsaw/part_oiii.xpm
+share/dia/shapes/jigsaw/part_oiio.shape
+share/dia/shapes/jigsaw/part_oiio.xpm
+share/dia/shapes/jigsaw/part_oioi.shape
+share/dia/shapes/jigsaw/part_oioi.xpm
+share/dia/shapes/jigsaw/part_oioo.shape
+share/dia/shapes/jigsaw/part_oioo.xpm
+share/dia/shapes/jigsaw/part_ooii.shape
+share/dia/shapes/jigsaw/part_ooii.xpm
+share/dia/shapes/jigsaw/part_ooio.shape
+share/dia/shapes/jigsaw/part_ooio.xpm
+share/dia/shapes/jigsaw/part_oooi.shape
+share/dia/shapes/jigsaw/part_oooi.xpm
+share/dia/shapes/jigsaw/part_oooo.shape
+share/dia/shapes/jigsaw/part_oooo.xpm
 share/dia/sheets/Circuit.sheet
 share/dia/sheets/Contact.sheet
+share/dia/sheets/EML.sheet
 share/dia/sheets/ER.sheet
 share/dia/sheets/ER/weakentity.xpm
 share/dia/sheets/Electric.sheet
@@ -289,31 +464,72 @@ share/dia/sheets/GRAFCET/etapeme.xpm
 share/dia/sheets/GRAFCET/etapems.xpm
 share/dia/sheets/GRAFCET/etapesp.xpm
 share/dia/sheets/GRAFCET/vergent_and.xpm
+share/dia/sheets/Logic.sheet
+share/dia/sheets/MSE.sheet
 share/dia/sheets/Pneumatic.sheet
 share/dia/sheets/SADT.sheet
+share/dia/sheets/SDL.sheet
 share/dia/sheets/UML.sheet
 share/dia/sheets/UML/aggregation.xpm
 share/dia/sheets/UML/umlclass_template.xpm
 share/dia/sheets/chronogram.sheet
+share/dia/sheets/civil.sheet
+share/dia/sheets/jigsaw.sheet
 share/dia/sheets/network.sheet
 share/dia/sheets/sybase.sheet
+share/gnome/apps/Applications/dia.desktop
+share/locale/az/LC_MESSAGES/dia.mo
+share/locale/ca/LC_MESSAGES/dia.mo
+share/locale/da/LC_MESSAGES/dia.mo
+share/locale/de/LC_MESSAGES/dia.mo
+share/locale/el/LC_MESSAGES/dia.mo
+share/locale/en_GB/LC_MESSAGES/dia.mo
+share/locale/es/LC_MESSAGES/dia.mo
+share/locale/fi/LC_MESSAGES/dia.mo
+share/locale/fr/LC_MESSAGES/dia.mo
+share/locale/ga/LC_MESSAGES/dia.mo
+share/locale/hu/LC_MESSAGES/dia.mo
+share/locale/it/LC_MESSAGES/dia.mo
+share/locale/ja/LC_MESSAGES/dia.mo
+share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/nl/LC_MESSAGES/dia.mo
+share/locale/no/LC_MESSAGES/dia.mo
+share/locale/pl/LC_MESSAGES/dia.mo
+share/locale/pt/LC_MESSAGES/dia.mo
+share/locale/pt_BR/LC_MESSAGES/dia.mo
+share/locale/ru/LC_MESSAGES/dia.mo
+share/locale/sl/LC_MESSAGES/dia.mo
+share/locale/sv/LC_MESSAGES/dia.mo
+share/locale/tr/LC_MESSAGES/dia.mo
+share/locale/uk/LC_MESSAGES/dia.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/dia.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/dia.mo
 share/mime-info/dia.keys
 share/mime-info/dia.mime
 share/pixmaps/dia-diagram.png
 share/pixmaps/dia_gnome_icon.png
-@dirrm lib/dia
-@dirrm share/dia/sheets/ER
-@dirrm share/dia/sheets/GRAFCET
-@dirrm share/dia/sheets/UML
-@dirrm share/dia/sheets
-@dirrm share/dia/shapes/Circuit
-@dirrm share/dia/shapes/Civil
-@dirrm share/dia/shapes/Contact
-@dirrm share/dia/shapes/Electric
-@dirrm share/dia/shapes/Flowchart
-@dirrm share/dia/shapes/Network
-@dirrm share/dia/shapes/Pneumatic
-@dirrm share/dia/shapes
-@dirrm share/dia
-@dirrm share/mime-info
+%%SHARED%%
 @dirrm share/pixmaps
+@dirrm share/mime-info
+@dirrm share/dia/sheets/UML
+@dirrm share/dia/sheets/GRAFCET
+@dirrm share/dia/sheets/ER
+@dirrm share/dia/sheets
+@dirrm share/dia/shapes/jigsaw
+@dirrm share/dia/shapes/SDL
+@dirrm share/dia/shapes/Pneumatic
+@dirrm share/dia/shapes/Network
+@dirrm share/dia/shapes/MSE
+@dirrm share/dia/shapes/Logic
+@dirrm share/dia/shapes/Flowchart
+@dirrm share/dia/shapes/Electric
+@dirrm share/dia/shapes/Contact
+@dirrm share/dia/shapes/Civil
+@dirrm share/dia/shapes/Circuit
+@dirrm share/dia/shapes
+@dirrm share/dia/help/en/stylesheet-images
+@dirrm share/dia/help/en/graphics
+@dirrm share/dia/help/en
+@dirrm share/dia/help
+@dirrm share/dia
+@dirrm lib/dia

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/22 23:53:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/02 10:55:44 obecian Exp $
 
 COMMENT=	visio-like technical drawing
 
-DISTNAME=	dia-0.86
-# patch in -stable
-PKGNAME=	dia-0.86p1
+DISTNAME=	dia-0.88.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.364
+NEED_VERSION=	1.409
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/dia
 
 HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 
-LIB_DEPENDS=	gdk_imlib.19::graphics/imlib \
+LIB_DEPENDS= gdk_pixbuf.2::graphics/gdk-pixbuf \
 		art_lgpl.5::graphics/libart \
 		popt::devel/popt \
 		xml2.5::textproc/libxml

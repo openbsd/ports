@@ -1,48 +1,49 @@
---- ltmain.sh.orig	Sun Aug  6 01:46:51 2000
-+++ ltmain.sh	Tue Feb 20 16:47:52 2001
-@@ -1079,7 +1079,18 @@ compiler."
- 	    # These systems don't actually have c library (as such)
+--- ltmain.sh.orig	Fri Jun  1 00:07:10 2001
++++ ltmain.sh	Fri Jun  1 00:20:32 2001
+@@ -1027,15 +1027,30 @@ compiler."
+ 	    # These systems don't actually have a C or math library (as such)
  	    continue
  	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
- 	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
-+          esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1091,6 +1102,10 @@ compiler."
- 	deplibs="$deplibs $arg"
- 	;;
- 
-+      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
 +
+ 	  *-*-mingw* | *-*-os2*)
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++      # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
+ 	  esac
+ 	fi
+ 	deplibs="$deplibs $arg"
+ 	continue
+ 	;;
++	-?thread)
++	  deplibs="$deplibs $arg"
++	  ;;
+ 
        -module)
  	module=yes
- 	continue
-@@ -1795,6 +1810,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3555,40 +3573,6 @@ libdir='$install_libdir'\
+@@ -2408,6 +2423,9 @@ compiler."
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r
++	    ;;
+ 	  *)
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test $build_libtool_need_lc = "yes"; then
+@@ -4412,40 +4430,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -52,7 +53,7 @@
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
