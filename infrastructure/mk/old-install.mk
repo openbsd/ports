@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.3 2001/02/15 21:51:32 wilfried Exp $
+# $OpenBSD: old-install.mk,v 1.4 2001/03/22 00:23:15 espie Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -11,20 +11,20 @@
 # Corresponding obsolescent variables
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
-#				  registration information in ${PKG_DBDIR}/${PKGNAME}.
+#				  registration information in ${PKG_DBDIR}/${FULLPKGNAME}.
 
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
 
 
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
-	@echo 1>&2 "*** ${PKGNAME} does not use fake installation yet"
+	@echo 1>&2 "*** ${FULLPKGNAME} does not use fake installation yet"
 
 # The real install, old version
 ${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
 	@cd ${.CURDIR} && exec ${MAKE} run-depends lib-depends 
 .if !defined(NO_INSTALL)
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+	@${ECHO_MSG} "===>  Installing for ${FULLPKGNAME}"
 # Kludge
 .  if ${CONFIGURE_STYLE:Mimake}
 	@mkdir -p /usr/local/lib/X11
@@ -33,11 +33,11 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	fi
 .  endif
 .  if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
-		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+	@if [ -d ${PKG_DBDIR}/${FULLPKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${FULLPKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
+		echo "===>  ${FULLPKGNAME} is already installed - perhaps an older version?"; \
 		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
 		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		echo "      If you really wish to overwrite the old port of ${FULLPKGNAME}"; \
 		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
 		echo "      in your environment or the \"make install\" command line."; \
 		exit 1; \
@@ -64,12 +64,12 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${FULLPKGNAME}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
 	@${GUNZIP_CMD} ${manpage}.gz
 .      endfor
 .    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
+	@${ECHO_MSG} "===>   Compressing manual pages for ${FULLPKGNAME}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
 	@if [ -L ${manpage} ]; then \
 		set - `file ${manpage}`; \
@@ -114,31 +114,31 @@ fake-pkg: ${_PKG_PREREQ}
 	 fi
 	@if [ ! -d ${PKG_DBDIR} ]; then rm -f ${PKG_DBDIR}; mkdir -p ${PKG_DBDIR}; fi
 .if defined(FORCE_PKG_REGISTER)
-	@rm -rf ${PKG_DBDIR}/${PKGNAME}
+	@rm -rf ${PKG_DBDIR}/${FULLPKGNAME}
 .endif
-	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		${ECHO_MSG} "===>  Registering installation for ${PKGNAME}"; \
-		mkdir -p ${PKG_DBDIR}/${PKGNAME}; \
-		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		cp ${WRKPKG}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		cp ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+	@if [ ! -d ${PKG_DBDIR}/${FULLPKGNAME} ]; then \
+		${ECHO_MSG} "===>  Registering installation for ${FULLPKGNAME}"; \
+		mkdir -p ${PKG_DBDIR}/${FULLPKGNAME}; \
+		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${FULLPKGNAME}/+CONTENTS; \
+		cp ${WRKPKG}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+DESC; \
+		cp ${COMMENT} ${PKG_DBDIR}/${FULLPKGNAME}/+COMMENT; \
 		if [ -f ${WRKPKG}/INSTALL${SUBPACKAGE} ]; then \
-			cp ${WRKPKG}/INSTALL${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
+			cp ${WRKPKG}/INSTALL${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+INSTALL; \
 		fi; \
 		if [ -f ${WRKPKG}/DEINSTALL${SUBPACKAGE} ]; then \
-			cp ${WRKPKG}/DEINSTALL${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
+			cp ${WRKPKG}/DEINSTALL${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+DEINSTALL; \
 		fi; \
 		if [ -f ${WRKPKG}/REQ${SUBPACKAGE} ]; then \
-			cp ${WRKPKG}}/REQ${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+REQ; \
+			cp ${WRKPKG}}/REQ${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+REQ; \
 		fi; \
 		if [ -f ${WRKPKG}/MESSAGE${SUBPACKAGE} ]; then \
-			cp ${WRKPKG}/MESSAGE${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+			cp ${WRKPKG}/MESSAGE${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+DISPLAY; \
 		fi; \
 		for dep in `cd ${.CURDIR} && ${MAKE} package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
-				if ! grep ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
+				if ! grep ^${FULLPKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
-					echo ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
+					echo ${FULLPKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
 			fi; \
 		done; \
