@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/08/07 05:15:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.57 2001/08/10 17:02:32 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += gtkballs
      SUBDIR += gtkpool
      SUBDIR += hackdata
+     SUBDIR += heroes
      SUBDIR += icebreaker
 #    SUBDIR += imaze
 #    SUBDIR += jetpack
