@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/10 04:58:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/03 16:06:16 naddy Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set 
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
+MAKE_FLAGS=    COPT="${CFLAGS}"
 
 ALL_TARGET=
 
