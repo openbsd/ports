@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2001/11/15 07:33:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2001/11/15 20:05:40 jakob Exp $
 
-DISTNAME=	snapshot-20011114
+DISTNAME=	snapshot-20011115
 PKGNAME=	postfix-${DISTNAME}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
