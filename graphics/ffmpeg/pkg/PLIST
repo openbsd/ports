@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/04 06:08:22 jolan Exp $
+bin/ffmpeg
 include/ffmpeg/avcodec.h
 include/ffmpeg/common.h
 include/postproc/postprocess.h
