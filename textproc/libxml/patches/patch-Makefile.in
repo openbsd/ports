@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jan  5 02:13:43 2001
-+++ Makefile.in	Tue Jan  9 09:17:34 2001
+--- Makefile.in.orig	Sat Mar  3 23:47:19 2001
++++ Makefile.in	Sat Mar  3 23:48:39 2001
 @@ -205,7 +205,7 @@
  MANS = $(man_MANS)
  
@@ -9,16 +9,16 @@
  
  DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING COPYING.LIB ChangeLog \
  INSTALL Makefile.am Makefile.in NEWS TODO acconfig.h acinclude.m4 \
-@@ -823,7 +823,7 @@
+@@ -829,7 +829,7 @@
  		install-binSCRIPTS install-confexecDATA
  install-exec: install-exec-recursive
  
 -install-data-am: install-man install-m4dataDATA install-pkgconfigDATA
-+install-data-am: install-man install-m4dataDATA
++install-data-am: install-man install-m4dataDATA 
  install-data: install-data-recursive
  
  install-am: all-am
-@@ -843,8 +843,7 @@
+@@ -849,8 +849,7 @@
  installdirs-am:
  	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
  		$(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1 \

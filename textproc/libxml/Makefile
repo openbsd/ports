@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2001/01/09 14:49:31 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/04 14:41:23 kevlo Exp $
 
-DISTNAME=	libxml2-2.2.11
-PKGNAME=	libxml-2.2.11
+DISTNAME=	libxml2-2.3.2
+PKGNAME=	libxml-2.3.2
 CATEGORIES=	textproc
 NEED_VERSION=	1.341
 MASTER_SITES=	${MASTER_SITE_GNOME}
