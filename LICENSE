@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.8 1998/10/08 04:45:44 marc Exp $
+$OpenBSD: LICENSE,v 1.9 1998/10/09 00:13:06 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -17,7 +17,7 @@ BSD:	BSD (or a BSD like) license.
 	need to include owners copyright.
 COMM:	Commercial software.
 	For fee software.
-COPY:	Copyright that explicitly allows or denys distribution
+COPY:	Copyright that allows or denys distribution
 	Read copyright before use, there may be usage restrictions even
 	if distribution is allowed.
 CRYPTO:	Third party crypto not allowed.
@@ -134,30 +134,31 @@ Y	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
 Y	devel/autoconf			autoconf-2.12.tar.gz		GPL
 Y	devel/automake			automake-1.2.tar.gz		GPL
 Y	devel/bison			bison-1.25.tar.gz		GPL
-?	devel/ddd			ddd-3.0.tar.gz			GPL
+Y	devel/ddd			ddd-3.0.tar.gz			GPL
 Y	devel/dejagnu			dejagnu-1.3.tar.gz		GPL
 Y	devel/gindent			indent-1.9.1.tar.gz		GPL
 Y	devel/gmake			make-3.76.1.tar.gz		GPL
 Y	devel/id-utils			id-utils-3.2.tar.gz		GPL
 Y	devel/libslang			slang0.99-38.tar.gz		GPL/PERL
 Y	devel/m4			m4-1.4.tar.gz			GPL
-?	devel/nasm			nasm-0.97.tar.gz		???
+Y	devel/nasm			nasm-0.97.tar.gz		COPY
 Y	devel/swig			swig1.1.tar.gz			BSD
 N	devel/tkcvs			-none-				NONE
 Y	devel/xmake			xmake-1.01.tgz			NONE
 N	editors/axe			aXe-6.1.2.tar.Z			NOFEE
 Y	editors/beav			beav_140-7.tar.gz		GPL
 Y	editors/emacs			emacs-20.3.tar.gz		GPL
-?	editors/hexedit			hexedit-0.9.3.src.tgz		???
+Y	editors/hexedit			hexedit-0.9.3.src.tgz		GPL
 Y	editors/jed			jed0.98-7.tar.gz		GPL
 Y	editors/joe			joe2.8.tar.Z			GPL
 N	editors/jove			jove-4.16.tar.gz		NOFEE
-?	editors/nedit			nedit.app-defaults		???
-?	editors/nedit			nedit_source.tar.gz		???
-?	editors/textedit		textedit.tar.gz			???
-?	editors/uemacs			ue400dev.zip			???
-?	editors/vim			vim-5.1.tar.gz			???
-?	editors/xwpe			xwpe-1.5.9a.tgz			???
+N	editors/nedit			nedit.app-defaults		NOFEE
+N	editors/nedit			nedit_source.tar.gz		NOFEE
+Y	editors/textedit		textedit.tar.gz			COPY
+Y	editors/uemacs			ue400dev.zip			NOFEE
+Y	editors/vim			vim-5.1.tar.gz			COPY
+Y	editors/xwpe			xwpe-1.5.9a.tgz			GPL
+
 ?	emulators/bochs			bochs-980513a.tar.gz		???
 ?	emulators/linux_lib		linux_lib-2.4.tar.gz		???
 ?	emulators/wine			Wine-980628.tar.gz		BSD

@@ -8,9 +8,29 @@
 The OpenBSD ports tree is always growing. Therefor it is essential
 that you continue to update your ports dir thru cvs or ftp.
 
-If you are interested in creating a new port or contributing please 
-visit
+No matter how fast we update the tree it seems that we are always
+behind.  For this reason you will sometimes find a port that is
+marked as BROKEN.  If you try to build the port you will see a
+message something like:
+
+   ===> xxx-1.0 is marked as broken: newer version available.
+
+This means we know there is a newer version of the application but
+have not yet had time to update the port.  If you get this message
+all may not be lost.  If the old sources are still available (and
+this is often the case) you can force a build using the old sources
+using the command:
+
+	make NO_IGNORE=yes
+	sudo make NO_IGNORE=yes install
+
+If youre feeling generous a better solution is to update the port
+to use the new sources and feed the changes back to the project.
+If you are interested in contributing (or creating a new port)
+please visit
+
 	http://www.openbsd.org/porting.html
+
 If you would like to search for a given port, you can do so easily
 by saying:
 
