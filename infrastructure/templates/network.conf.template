@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.1 1999/09/26 10:43:51 espie Exp $
+# $OpenBSD: network.conf.template,v 1.2 2000/01/27 15:28:08 espie Exp $
 
 #
 #
@@ -11,13 +11,26 @@ _MASTER_SITE_OPENBSD?=	\
 	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/ \
 	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 
-# default backup master site is
-MASTER_SITE_BACKUP?=	\
-	${_MASTER_SITE_OPENBSD} \
+
+# Default FreeBSD backup site
+_MASTER_SITE_FREEBSD?=  \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
 
 # Uncomment to retrieve from the OpenBSD sites only
 # MASTER_SITE_OPENBSD=Yes
+# Uncomment to retrieve from the FreeBSD sites only
+# MASTER_SITE_OPENBSD=Yes
+
+.if defined(MASTER_SITE_OPENBSD)
+MASTER_SITE_BACKUP= ${_MASTER_SITE_OPENBSD}
+.elsif defined(MASTER_SITE_FREEBSD)
+MASTER_SITE_BACKUP= ${_MASTER_SITE_FREEBSD}
+.endif
+
+# default backup master site
+MASTER_SITE_BACKUP?=	\
+	${_MASTER_SITE_OPENBSD} \
+	${_MASTER_SITE_FREEBSD}
 
 # Uncomment to retrieve from the MASTER_SITE_BACKUP first
 # MASTER_SITE_OVERRIDE=${MASTER_SITE_BACKUP}
