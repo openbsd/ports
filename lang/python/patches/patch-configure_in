@@ -1,6 +1,6 @@
 --- configure.in.orig	Mon Jul 16 12:07:26 2001
-+++ configure.in	Fri Oct 26 14:00:22 2001
-@@ -599,7 +599,20 @@
++++ configure.in	Fri Oct 26 23:48:10 2001
+@@ -599,7 +599,20 @@ then
  	Linux*) LDSHARED="gcc -shared";;
  	dgux*) LDSHARED="ld -G";;
  	BSD/OS*/4*) LDSHARED="gcc -shared";;
@@ -22,7 +22,7 @@
  	NetBSD*)
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
-@@ -642,8 +655,7 @@
+@@ -642,8 +655,7 @@ then
  		 fi;;
  	Linux*) CCSHARED="-fPIC";;
  	BSD/OS*/4*) CCSHARED="-fpic";;
@@ -32,7 +32,7 @@
  	UnixWare*)
  		if test "$GCC" = "yes"
  		then CCSHARED="-fPIC"
-@@ -681,7 +693,7 @@
+@@ -681,7 +693,7 @@ then
  	UnixWare*) LINKFORSHARED="-dy -Bdynamic -Wl,-Bexport";;
  	SCO_SV*) LINKFORSHARED="-Bdynamic -dy -Wl,-Bexport";;
  	ReliantUNIX*) LINKFORSHARED="-W1 -Blargedynsym";;
@@ -41,3 +41,33 @@
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
  			LINKFORSHARED="-Wl,--export-dynamic"
+@@ -813,14 +825,28 @@ if test "$with_threads" = "no"
+ then
+     USE_THREAD_MODULE="#"
+ else
++    have_threads=no
+     if test "$ac_sys_system" = "UnixWare"
+      then
++	have_threads=yes
+ 	CC="${CC} -Kthread"
+ 	LIBOBJS="$LIBOBJS thread.o"
+ 	AC_DEFINE(WITH_THREAD)
+ 	AC_DEFINE(_POSIX_THREADS)
+ 	USE_THREAD_MODULE=""
+-    else
++    fi
++    if test "$have_threads" = "no" -a "$ac_sys_system" = "OpenBSD"
++     then
++	have_threads=yes
++	LIBS="-pthread $LIBS"
++	LIBOBJS="$LIBOBJS thread.o"
++	AC_DEFINE(WITH_THREAD)
++	AC_DEFINE(_REENTRANT)
++	AC_DEFINE(_POSIX_THREADS)
++	USE_THREAD_MODULE=""
++    fi
++    if test "$have_threads" = "no"
++     then
+ 	if test ! -z "$with_threads" -a -d "$with_threads"
+ 	then LDFLAGS="$LDFLAGS -L$with_threads"
+ 	fi
