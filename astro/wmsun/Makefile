@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/15 09:30:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/17 20:34:23 lebel Exp $
 
 COMMENT=		'wm-dockapp; shows sunrise/sunset times'
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
+MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
 NO_REGRESS=		Yes
 
