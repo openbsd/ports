@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/06/13 04:17:12 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2003/06/15 04:43:31 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 
 # cross-tools
 FLAVORS=		alpha hppa i386 m68k m88k mips powerpc sparc \
-			sparc64 vax
+			sparc64 vax x86_64
 FLAVOR?=
 
 # XXX: special handling needed for powerpc arch's and bootstraping
@@ -37,6 +37,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
 TARGET_ARCH=		${FLAVOR:L}
 PLIST=			${PKGDIR}/PLIST.cross
+.if ${FLAVOR} == "x86_64" || ${FLAVOR} == "sparc64" || ${FLAVOR} == "alpha"
+CONFIGURE_ARGS+=	--enable-64-bit-bfd
+.endif
 .else
 TARGET_ARCH=		${MACHINE_ARCH}
 .endif
