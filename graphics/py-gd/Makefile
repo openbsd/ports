@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/27 09:21:46 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/27 12:43:45 xsa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,8 @@ MODPY_SETUP=	Setup.py
 
 LIB_DEPENDS=	gd.18::graphics/gd
 
+NO_REGRESS=	Yes
+
 EXAMPLESDIR=	${PREFIX}/share/examples/py-gd
 DOCSDIR=	${PREFIX}/share/doc/py-gd
 
@@ -33,8 +35,6 @@ do-configure:
 	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g;" \
 		-e "s,%%LIBPNG%%,${LOCALBASE}/include/libpng,g" \
 			${WRKSRC}/${MODPY_SETUP}
-	@perl -pi -e "s,%%PYTHON%%,python${MODPY_VERSION},g" \
-		${WRKSRC}/_gdmodule.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
