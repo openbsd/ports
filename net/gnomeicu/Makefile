@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/09/23 21:15:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/09/28 10:41:09 sturm Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
@@ -10,8 +10,8 @@ MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnomeicu/}
 
-LIB_DEPENDS=		panel_applet::x11/gnome/core \
-			gdbm.::databases/gdbm
+#LIB_DEPENDS=		panel_applet::x11/gnome/core \
+#			gdbm.::databases/gdbm
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
