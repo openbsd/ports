@@ -1,0 +1,12 @@
+--- config/imake/Imakefile.orig	Thu Apr  5 22:23:13 2001
++++ config/imake/Imakefile	Thu Apr  5 22:24:01 2001
+@@ -30,7 +30,9 @@
+ #else
+ SimpleProgramTarget(imake)
+ #endif
++#if defined(XFree86Version) && XFree86Version < 4000
+ InstallLinkKitNamedProg(imake,imake,$(LINKKITDIR)/config/imake)
++#endif
+ 
+ #if HasClearmake
+ bootstrapdepend: depend
