@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2004/08/10 09:14:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.23 2004/10/18 01:23:51 brad Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"image viewer for KDE"
 
