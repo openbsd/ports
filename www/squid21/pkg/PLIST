@@ -1,0 +1,8 @@
+libexec/cachemgr.cgi
+libexec/dnsserver
+libexec/pinger
+libexec/unlinkd
+sbin/RunAccel
+sbin/RunCache
+sbin/client
+sbin/squid
