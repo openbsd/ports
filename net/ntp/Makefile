@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/19 14:51:27 danh Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/10 19:08:51 danh Exp $
 
 COMMENT=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
-VERSION=	4.0.99k23
+VERSION=	4.1.0
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION}
 PKGNAME-doc=	ntp-doc-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.399
+NEED_VERSION=	1.434
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ntp4/
