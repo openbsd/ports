@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/01 11:28:24 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/01 12:36:03 shell Exp $
 
 COMMENT=	"perl interface to the SAX2 XML Parser"
 
@@ -17,5 +17,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+# Install parser template
+post-install:
+	@${INSTALL_DATA} ${FILESDIR}/ParserDetails.ini	\
+		${PREFIX}/libdata/perl5/site_perl/XML/SAX/
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/01 11:28:24 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/01 12:36:03 shell Exp $
 libdata/perl5/site_perl/XML/SAX.pm
 libdata/perl5/site_perl/XML/SAX/Base.pm
 libdata/perl5/site_perl/XML/SAX/Exception.pm
+libdata/perl5/site_perl/XML/SAX/ParserDetails.ini
 libdata/perl5/site_perl/XML/SAX/ParserFactory.pm
 libdata/perl5/site_perl/XML/SAX/PurePerl.pm
 libdata/perl5/site_perl/XML/SAX/PurePerl/DTDDecls.pm
