@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.25 1999/02/04 13:21:12 espie Exp $
+# $OpenBSD: Makefile,v 1.26 1999/02/06 16:31:14 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -320,7 +320,7 @@ do-build:
 ####
 # Install section
 
-PLIST=${WRKDIR}/PLIST
+PLIST=${WRKBUILD}/PLIST
 
 M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
 .if defined(MAKE_GXX)

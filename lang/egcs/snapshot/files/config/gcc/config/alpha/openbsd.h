@@ -1,6 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.9 1999/02/03 18:04:30 espie Exp $ */
-/* vi:ts=8: 
- */
+/* $OpenBSD: openbsd.h,v 1.10 1999/02/06 16:31:14 espie Exp $ */
 
 /* We settle for little endian for now */
 #define TARGET_ENDIAN_DEFAULT 0
@@ -10,9 +8,15 @@
 #define OBSD_NO_DYNAMIC_LIBRARIES
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #define OBSD_HAS_DECLARE_FUNCTION_SIZE
-#define OBSD_HAS_DECLARE_OBJECT_NAME
+#define OBSD_HAS_DECLARE_OBJECT
+
+/* alpha ecoff supports only weak aliases, see below. */
+#define ASM_WEAKEN_LABEL(FILE,NAME) ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,0)
+
 #include <openbsd.h>
-#undef ASM_WEAKEN_LABEL
+
+/* Controlling the compilation driver
+ * ---------------------------------- */
 /* alpha needs __start */
 #undef LINK_SPEC
 #define LINK_SPEC \
@@ -22,8 +26,7 @@
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) \
 -D__OpenBSD__ -D__alpha__ -D__alpha"
 
-
-/* layout of source language data types
+/* Layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -47,28 +50,29 @@
 /* We don't have an init section yet */
 #undef HAS_INIT_SECTION
 
-/* collect2 support (Macros for initialization) 
- * -------------------------------------------- */
-
+/* collect2 support (assembler format: macros for initialization) 
+ * -------------------------------------------------------------- */
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will
    default to using nm. */
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
 
+/* Assembler format: exception region output 
+ * ----------------------------------------- */
 /* all configurations that don't use elf must be explicit about not using
- * dwarf unwind information. egcs doesn't try too hard to check internal
- * configuration files...
- */
+   dwarf unwind information. egcs doesn't try too hard to check internal
+   configuration files...  */
 #ifdef INCOMING_RETURN_ADDR_RTX
 #undef DWARF2_UNWIND_INFO
 #define DWARF2_UNWIND_INFO 0
 #endif
 
+/* Assembler format: file framework 
+ * -------------------------------- */
 /* taken from alpha/osf.h. This used to be common to all alpha
- * configurations, but elf has departed from it.
- * Check alpha/alpha.h, alpha/osf.h for it when egcs is upgraded.
- */
+   configurations, but elf has departed from it.
+   Check alpha/alpha.h, alpha/osf.h for it when egcs is upgraded.  */
 #ifndef ASM_FILE_START
 #define ASM_FILE_START(FILE)					\
 {								\
@@ -87,4 +91,17 @@
 }
 #endif
 
+/* Assembler format: label output
+ * ------------------------------ */
+#define ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,VALUE)	\
+ do {						\
+  fputs ("\t.weakext\t", FILE);			\
+  assemble_name (FILE, NAME);			\
+  if (VALUE)					\
+    {						\
+      fputs (" , ", FILE);			\
+      assemble_name (FILE, VALUE);		\
+    }						\
+  fputc ('\n', FILE);				\
+ } while (0)
 

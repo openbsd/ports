@@ -1,11 +1,11 @@
 /* OpenBSD specific configuration for rs6000 */
 
-#include "rs6000/sysv4.h"
+#include <rs6000/sysv4.h>
 
 #define OBSD_HAS_CORRECT_SPECS
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #define OBSD_HAS_DECLARE_FUNCTION_SIZE
-#define OBSD_HAS_DECLARE_OBJECT_NAME
+#define OBSD_HAS_DECLARE_OBJECT
 
 #include <openbsd.h>
 /* XXX need to check ASM_WEAKEN_LABEL/ASM_GLOBALIZE_LABEL */

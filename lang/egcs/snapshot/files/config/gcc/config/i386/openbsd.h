@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.6 1999/01/12 11:27:40 espie Exp $	*/
+/* $OpenBSD: openbsd.h,v 1.7 1999/02/06 16:31:14 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -17,8 +17,7 @@
 /* run-time target specifications */
 #define CPP_PREDEFINES "-D__unix__ -D__i386__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(i386) -Amachine(i386)"
 
-
-/* layout of source language data types
+/* Layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -33,34 +32,42 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* assembler format: overall framework
- * -----------------------------------
- */
+/* Assembler format: overall framework
+ * ----------------------------------- */
 #undef ASM_APP_ON
 #define ASM_APP_ON "#APP\n"
 
 #undef ASM_APP_OFF
 #define ASM_APP_OFF "#NO_APP\n"
-
+
 /* The following macros were originally stolen from i386v4.h */
 /* These have to be defined to get PIC code correct */
 
-/* This is how to output an element of a case-vector that is relative.
+/* Assembler format: dispatch tables 
+ * --------------------------------- */
+/* How to output an element of a case-vector that is relative.
    This is only used for PIC code.  See comments by the `casesi' insn in
    i386.md for an explanation of the expression this outputs. */
 #undef ASM_OUTPUT_ADDR_DIFF_ELT
 #define ASM_OUTPUT_ADDR_DIFF_ELT(FILE, BODY, VALUE, REL) \
   fprintf (FILE, "\t.long _GLOBAL_OFFSET_TABLE_+[.-%s%d]\n", LPREFIX, VALUE)
 
+/* Assembler format: sections
+ * -------------------------- */
 /* Indicate when jump tables go in the text section.  This is
    necessary when compiling PIC code.  */
 #define JUMP_TABLES_IN_TEXT_SECTION  (flag_pic)
 
+/* Stack & calling: aggregate returns
+ * ---------------------------------- */
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
-
-/* check for a recent version of gas */
+
+/* Assembler format: alignment output
+ * ---------------------------------- */
+/* Kludgy test: when gas is upgraded, it will have p2align, and no problems
+   with nops. */
 #ifndef HAVE_GAS_MAX_SKIP_P2ALIGN
 /* i386 openbsd still uses an older gas that doesn't insert nops by default
    when the .align directive demands to insert extra space in the text
@@ -69,32 +76,30 @@
 #define ASM_OUTPUT_ALIGN(FILE,LOG) \
   if ((LOG)!=0) fprintf ((FILE), "\t.align %d,0x90\n", (LOG))
 #endif
-
-/* Profiling routines, partially copied from i386/osfrose.h.  */
 
-/* Redefine this to use %eax instead of %edx.  */
+/* Stack & calling: profiling
+ * -------------------------- */
+/* OpenBSD's profiler recovers all information from the stack pointer.
+   The icky part is not here, but in machine/profile.h. */
 #undef FUNCTION_PROFILER
 #define FUNCTION_PROFILER(FILE, LABELNO)  \
-{									\
-  if (flag_pic)								\
-    {									\
-      fprintf (FILE, "\tcall mcount@PLT\n");				\
-    }									\
-  else									\
-    {									\
-      fprintf (FILE, "\tcall mcount\n");				\
-    }									\
-}
+  fputs(flag_pic ? "\tcall mcount@PLT\n": "\tcall mcount\n", FILE);
 
-/* aout-i386-openbsd does not handle dwarf2 unwinds and initialization info
-   correctly. */
+/* Assembler format: exception region output 
+ * ----------------------------------------- */
+/* all configurations that don't use elf must be explicit about not using
+   dwarf unwind information. egcs doesn't try too hard to check internal
+   configuration files...  */
 #define DWARF2_UNWIND_INFO 0
 
+/* Assembler format: alignment output
+ * ---------------------------------- */
 /* A C statement to output to the stdio stream FILE an assembler
    command to advance the location counter to a multiple of 1<<LOG
    bytes if it is within MAX_SKIP bytes.
 
-   This is used to align code labels according to Intel recommendations.  */
+   This will be used to align code labels according to Intel 
+   recommendations, in prevision of binutils upgrade.  */
 #ifdef HAVE_GAS_MAX_SKIP_P2ALIGN
 #define ASM_OUTPUT_MAX_SKIP_ALIGN(FILE,LOG,MAX_SKIP)			\
   do {									\
@@ -104,5 +109,4 @@
   } while (0)
 #endif
 
-
-/* We pick up ASM_OUTPUT_MI_THUNK from unix.h */
+/* Note that we pick up ASM_OUTPUT_MI_THUNK from unix.h. */

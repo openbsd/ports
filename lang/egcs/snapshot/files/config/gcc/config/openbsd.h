@@ -1,8 +1,27 @@
-/*	$OpenBSD: openbsd.h,v 1.9 1999/02/04 13:21:13 espie Exp $	*/
-/* vi:ts=8: 
- */
+/* $OpenBSD: openbsd.h,v 1.10 1999/02/06 16:31:14 espie Exp $	*/
 
-/* common OpenBSD configuration. */
+/* common OpenBSD configuration. 
+   All OpenBSD architectures include this file, which is intended as
+   a repository for common defines. 
+
+   Some defines are common to all architectures, a few of them are
+   triggered by OBSD_* guards, so that we won't override architecture
+   defaults by mistakes.
+
+   OBSD_HAS_CORRECT_SPECS: 
+      another mechanism provides correct specs already.
+   OBSD_NO_DYNAMIC_LIBRARIES: 
+      no implementation of dynamic libraries.
+   OBSD_OLD_GAS: 
+      older flavor of gas which needs help for PIC.
+   OBSD_HAS_DECLARE_FUNCTION_NAME, OBSD_HAS_DECLARE_FUNCTION_SIZE,
+   OBSD_HAS_DECLARE_OBJECT: 
+      PIC support, FUNCTION_NAME/FUNCTION_SIZE are independent, whereas
+      the corresponding logic for OBJECTS is necessarily coupled.
+
+   There are also a few `default' defines such as ASM_WEAKEN_LABEL,
+   intended as common ground for arch that don't provide anything suitable.
+ */
 
 /* OPENBSD_NATIVE is defined only when gcc is configured as part of
    the OpenBSD source tree, specifically through Makefile.bsd-wrapper.
@@ -33,9 +52,11 @@
 
 #endif
 
-#ifndef OBSD_HAS_CORRECT_SPECS
+
 /* Controlling the compilation driver 
  * ---------------------------------- */
+#ifndef OBSD_HAS_CORRECT_SPECS
+
 #ifndef OBSD_NO_DYNAMIC_LIBRARIES
 #undef SWITCH_TAKES_ARG
 #define SWITCH_TAKES_ARG(CHAR) \
@@ -43,10 +64,12 @@
    || (CHAR) == 'R')
 #endif
 
-/* CPP_SPEC appropriate for OpenBSD. We deal with -posix and -pthread */
+/* CPP_SPEC appropriate for OpenBSD. We deal with -posix and -pthread.
+   XXX the way threads are handling currently is not very satisfying,
+   since all code must be compiled with -pthread to work.
+ */
 #undef CPP_SPEC
 #define CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
-
 
 #ifdef OBSD_OLD_GAS
 /* ASM_SPEC appropriate for OpenBSD.  For some architectures, OpenBSD 
@@ -62,7 +85,6 @@
 #endif
 #endif
 
-
 /* LINK_SPEC appropriate for OpenBSD.  Support for GCC options 
    -static, -assert, and -nostdlib.  */
 #undef LINK_SPEC
@@ -76,46 +98,40 @@
 
 /* LIB_SPEC appropriate for OpenBSD.  Select the appropriate libc, 
    depending on profiling and threads.
-   Basically, -lc(_r)?(_p)?, select _r for threads, and _p for p or pg
- */
+   Basically, -lc(_r)?(_p)?, select _r for threads, and _p for p or pg.  */
 #undef LIB_SPEC
 #define LIB_SPEC "-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}"
 #endif
 
+
 /* Runtime target specification 
  * ---------------------------- */
-
-/* You must redefine CPP_PREDEFINES in any arch specific file */
+/* You must redefine CPP_PREDEFINES in any arch specific file. */
 #undef CPP_PREDEFINES
-
-/* recent snapshots of egcs use a correct call to mkstemps, 
-   and define MKTEMP_EACH_FILE appropriately.  */
-#undef MKTEMP_EACH_FILE
 
 /* Implicit calls to library routines
  * ---------------------------------- */
-/* Use memcpy and memset instead of bcopy and bzero */
+/* Use memcpy and memset instead of bcopy and bzero. */
 #define TARGET_MEM_FUNCTIONS
 
 /* Miscellaneous parameters
  * ------------------------ */
-/* tell libgcc2.c that OpenBSD targets support atexit */
+/* tell libgcc2.c that OpenBSD targets support atexit. */
 #define HAVE_ATEXIT
 
+/* Controlling debugging info: dbx options 
+ * --------------------------------------- */
 /* Don't use the `xsTAG;' construct in DBX output; OpenBSD systems that
  * use DBX don't support it. */
 #define DBX_NO_XREFS
+
 
 /* Support of shared libraries, mostly imported from svr4.h through netbsd. */
 /* Two differences from svr4.h:
    - we use . - _func instead of a local label,
    - we put extra spaces in expressions such as 
      .type _func , @function
-     This is more readable for a human being and confuses c++filt less.
- */
-/* These macros are needed for correct pic code generation, but they
-   should not break anything even if that specific system does not yet handle
-   dynamic libraries.  */
+     This is more readable for a human being and confuses c++filt less.  */
 
 /* Assembler format: output and generation of labels
  * ------------------------------------------------- */
@@ -139,8 +155,8 @@
 #undef TYPE_OPERAND_FMT
 #define TYPE_OPERAND_FMT	"@%s"
 
-/* Provision if extra assembler code is needed to declare a function's result.
- */
+/* Provision if extra assembler code is needed to declare a function's result
+   (taken from svr4, not needed yet actually).  */
 #ifndef ASM_DECLARE_RESULT
 #define ASM_DECLARE_RESULT(FILE, RESULT)
 #endif
@@ -183,7 +199,7 @@
   } while (0)
 #endif
 
-#ifndef OBSD_HAS_DECLARE_OBJECT_NAME
+#ifndef OBSD_HAS_DECLARE_OBJECT
 /* Extra assembler code needed to declare an object properly.  */
 #undef ASM_DECLARE_OBJECT_NAME
 #define ASM_DECLARE_OBJECT_NAME(FILE, NAME, DECL)			\
@@ -233,8 +249,8 @@ do {									 \
    before including this file.  */
 
 /* Tell the assembler that a symbol is weak.  */
-/* XXX binutils assembler should make weak labels global itself.  If you 
-   need to emit a .globl here, it's likely your assembler is broken.  */
+/* Note: netbsd arm32 assembler needs a .globl here. An override may 
+   be needed when/if we go for arm32 support. */
 #ifndef ASM_WEAKEN_LABEL
 #define ASM_WEAKEN_LABEL(FILE,NAME) \
   do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
@@ -249,6 +265,8 @@ do {									 \
 #endif
 
 
+/* Storage layout 
+ * -------------- */
 /* Use VTABLE_THUNKS always: we don't have to worry about binary
    compatibility with older C++ code. */
 #define DEFAULT_VTABLE_THUNKS 1

@@ -1,5 +1,5 @@
 /* GCC configuration for  OpenBSD Mips ABI32 */
-/* $OpenBSD: openbsd.h,v 1.1 1999/01/18 10:23:26 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.2 1999/02/06 16:31:15 espie Exp $ */
 
 /* Default mips is little endian, unless otherwise specified */
 
@@ -9,7 +9,7 @@
 
 /* Get generic openbsd definitions */
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
-#define OBSD_HAS_DECLARE_OBJECT_NAME
+#define OBSD_HAS_DECLARE_OBJECT
 #include <openbsd.h>
 
 
