@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/30 04:38:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/16 21:28:19 xsa Exp $
 
 COMMENT=		"per-line Perl profiler"
 
-DISTNAME=		Devel-SmallProf-0.9
+DISTNAME=		Devel-SmallProf-1.15
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
