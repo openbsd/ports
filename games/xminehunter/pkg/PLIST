@@ -1,4 +1,4 @@
 bin/xminehunter
 @exec mkdir %D/lib/X11/xminehunter
-@exec chmod 333 %D/lib/X11/xminehunter
-@dirrm lib/X11/xminehunter
+@exec chmod  666 %D/lib/X11/xminehunter
+@unexec rm -rf %D/lib/X11/xminehunter

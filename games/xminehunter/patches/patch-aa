@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Jul 22 08:11:34 1996
-+++ Makefile	Thu Jan  9 17:28:57 1997
++++ Makefile	Fri Jun  2 21:26:29 2000
 @@ -1,8 +1,8 @@
 -INSTALL_BIN_PATH = /usr/local/bin
 -INSTALL_SCORE_PATH = /usr/local/lib/xminehunter
@@ -13,3 +13,12 @@
  
  
  CC = g++
+@@ -50,7 +50,7 @@ bitmap.o: ${HEADERS} bitmap.cc
+ 
+ install:
+ 	mkdir -p ${INSTALL_SCORE_PATH}
+-	chmod 333 ${INSTALL_SCORE_PATH}
++	chmod 666 ${INSTALL_SCORE_PATH}
+ 	cp xminehunter ${INSTALL_BIN_PATH}
+ 
+ clean:
