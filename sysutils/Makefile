@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2003/05/04 17:49:02 margarida Exp $
+# $OpenBSD: Makefile,v 1.68 2003/05/12 13:18:16 margarida Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -38,12 +38,12 @@
      SUBDIR += sdd
      SUBDIR += setquota
      SUBDIR += skill
+     SUBDIR += sleuthkit
      SUBDIR += socket
      SUBDIR += stat
      SUBDIR += symon
      SUBDIR += sysgen
      SUBDIR += syslog-ng
-     SUBDIR += task
      SUBDIR += tcplist
      SUBDIR += tentakel
      SUBDIR += upsd
