@@ -1,0 +1,13 @@
+$OpenBSD: gcc-kfile-plugins_jpeg_Makefile_in,v 1.1 2004/03/21 19:43:47 sturm Exp $
+--- kfile-plugins/jpeg/Makefile.in.orig	2004-02-29 22:44:41.000000000 +0100
++++ kfile-plugins/jpeg/Makefile.in	2004-03-21 11:43:38.000000000 +0100
+@@ -510,6 +510,9 @@ distclean-depend:
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
++kfile_jpeg_la.all_cpp.lo: kfile_jpeg_la.all_cpp.cpp
++	$(LTCXXCOMPILE) -O0 -c -o kfile_jpeg_la.all_cpp.lo `test -f '$<' || echo '$(srcdir)/'`kfile_jpeg_la.all_cpp.cpp
++
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
