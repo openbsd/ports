@@ -1,4 +1,9 @@
-@comment $OpenBSD: PFRAG.zope,v 1.3 2004/09/14 23:31:46 espie Exp $
+@comment $OpenBSD: PLIST-zope,v 1.1 2004/10/24 20:44:36 alek Exp $
+lib/zope/
+lib/zope/lib/
+lib/zope/lib/python/
+lib/zope/lib/python/Products/
+@unexec rm -f %D/lib/zope/lib/python/Products/ZPsycopgDA/*.pyo
 lib/zope/lib/python/Products/ZPsycopgDA/
 lib/zope/lib/python/Products/ZPsycopgDA/DA.py
 lib/zope/lib/python/Products/ZPsycopgDA/DABase.py
@@ -21,5 +26,3 @@ lib/zope/lib/python/Products/ZPsycopgDA/icons/time.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/view.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/what.gif
 lib/zope/lib/python/Products/ZPsycopgDA/table_info.dtml
-@unexec rm -f %D/lib/zope/lib/python/Products/ZPsycopgDA/*.pyo
-@unexec rmdir %D/lib/zope/lib/python/Products/ZPsycopgDA

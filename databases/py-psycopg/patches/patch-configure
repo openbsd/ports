@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2003/02/10 14:59:42 lebel Exp $
---- configure.orig	Mon Jan 20 12:10:21 2003
-+++ configure	Mon Feb 10 11:40:18 2003
-@@ -1458,6 +1458,8 @@
+$OpenBSD: patch-configure,v 1.2 2004/10/24 20:44:36 alek Exp $
+--- configure.orig	Fri Jul 30 00:04:49 2004
++++ configure	Tue Aug  3 22:12:14 2004
+@@ -1442,6 +1442,8 @@ echo "${ECHO_T}$PYTHON_EXEC_PREFIX" >&6
+ exec_prefix=$PYTHON_EXEC_PREFIX
  
- fi
  
 +LIBS="-lc"
 +
  
- echo $ac_n "checking for PQconnectStart in -lpq""... $ac_c" 1>&6
- echo "configure:1464: checking for PQconnectStart in -lpq" >&5
+ echo "$as_me:$LINENO: checking definitions in Python library makefile" >&5
+ echo $ECHO_N "checking definitions in Python library makefile... $ECHO_C" >&6

@@ -19,3 +19,6 @@ psycopg is still in development but that does not mean that it is
 unstable. It just does not support the Python DBAPI-2.0 completely
 and is missing some of the more esoteric features we want it to
 have.
+
+Flavors:
+   no_zope - do not build package that contains Zope database adapter
