@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/19 15:06:23 alek Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -36,7 +36,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xp Xt c m 
 
 MULTI_PACKAGES=	-demos -debuglibs
 SUBPACKAGE?=
@@ -96,8 +95,13 @@ post-install:
 	@for i in ${DOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; done
 	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
-.if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
-LIB_DEPENDS+=	Xm.2.1::x11/openmotif
+.if ${SUBPACKAGE} == "-demos"
+LIB_DEPENDS+=	Xm.2.1,Uil.2.1,Mrm.2.1::x11/openmotif
+.endif
+.if ${SUBPACKAGE} == "-debuglibs"
+RUN_DEPENDS+=	::x11/openmotif
+.else
+WANTLIB=	ICE SM X11 Xext Xp Xt c m 
 .endif
 
 # XXX  Large, complicated, only partially automated test suite available
