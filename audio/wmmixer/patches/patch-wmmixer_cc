@@ -1,0 +1,25 @@
+$OpenBSD: patch-wmmixer_cc,v 1.1.1.1 2001/02/06 11:54:55 wilfried Exp $
+--- wmmixer.cc.orig	Sat Sep  5 17:11:33 1998
++++ wmmixer.cc	Mon Feb  5 19:29:21 2001
+@@ -110,8 +110,8 @@ int rpttimer=0;
+ bool dragging=false;
+ 
+ int channels=0;
+-int channel[20];
+-int icon[20]={0, 7, 8, 2, 1, 6, 4, 5, 3, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
++int channel[25];
++int icon[25]={0, 7, 8, 2, 1, 6, 4, 5, 3, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
+ 
+ MixCtl *mixctl;
+ 
+@@ -191,8 +191,8 @@ int main(int argc, char **argv)
+       fprintf(stderr,"%s : Unable to open mixer device '%s'.\n", NAME, mixdev);
+    else{
+       for(int i=0;i<mixctl->getNrDevices();i++){
+-	 if(i==20){
+-            fprintf(stderr,"%s : Sorry, can only use channels 0-19\n", NAME);
++	 if(i==25){
++            fprintf(stderr,"%s : Sorry, can only use channels 0-24\n", NAME);
+             break;
+ 	 }
+          if(mixctl->getSupport(i)){

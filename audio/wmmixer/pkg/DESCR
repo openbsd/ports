@@ -1,0 +1,7 @@
+This is an audio mixer that can run within the Window Maker
+"Dock" or Aftersteps Wharf.
+
+You can configure wmmixer by using a ~/.wmmixer file,
+copy a sample from ${SAMPLE_DIR}.
+
+WWW: ${HOMEPAGE}
