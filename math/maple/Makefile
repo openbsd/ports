@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/13 19:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/13 18:43:33 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 # Directory where the maple CDROM was mounted
 CDROM?=/cdrom
-NEED_VERSION=1.191
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
+TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	maple-5.5
 CATEGORIES=     math
+NEED_VERSION=	1.223
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
 ONLY_FOR_ARCHS=	i386
 
 LICENSE_TYPE=COMM
-# This should imply the following
-NO_CDROM=	"Commercial"
-MIRROR_DISTFILE=no
+PERMIT_DISTFILES_CDROM=	Commercial
+PERMIT_DISTFILES_FTP=	Commercial
+PERMIT_PACKAGE_FTP=	Commercial
+PERMIT_PACKAGE_CDROM=	Commercial
 
 MAINTAINER=	espie@cvs.openbsd.org
 
 WRKDIST=	${WRKDIR}
 NO_PATCH=	Yes
 NO_CONFIGURE=	Yes
-NO_PACKAGE=	Yes
 
 # verify that it makes sense to install maple here
 pre-fetch:
@@ -64,17 +65,18 @@ do-fetch:
 
 MAPLE_SCRIPTS=maple march mint updtsrc xmaple
 
+FAKE=	Yes
 do-install:
 	@mkdir -p ${MAPLE_DIR} || echo "${MAPLE_DIR} already exists"
 	@cd ${MAPLE_DIR} && yes | ${FULLDISTDIR}/install
 	@echo "But this installation script does it for you"
 	@for file in ${MAPLE_SCRIPTS}; do\
-		sed -e 's,/usr/local/maple,${MAPLE_DIR},' ${MAPLE_DIR}/bin/$$file >${WRKDIST}/$$file; \
+		sed -e 's,/usr/local/maple,${TRUEMAPLE_DIR},' ${MAPLE_DIR}/bin/$$file >${WRKDIST}/$$file; \
 		cp ${WRKDIST}/$$file ${MAPLE_DIR}/bin; \
-		ln -sf ${MAPLE_DIR}/bin/$$file ${PREFIX}/bin; \
+		ln -sf ${TRUEMAPLE_DIR}/bin/$$file ${PREFIX}/bin; \
 	done
 	@for file in ${MAPLE_DIR}/man/man1/*; do \
-		ln -s $$file ${PREFIX}/man/man1; \
+		ln -s ${TRUEMAPLE_DIR}/man/man1/`basename $$file` ${PREFIX}/man/man1; \
 	done
 	@cd ${MAPLE_DIR} && cat ${PATCHDIR}/patch-*| patch -s && \
 		rm ${MAPLE_DIR}/bin/*.orig
