@@ -1,0 +1,12 @@
+$OpenBSD: patch-utilities_cgimagick_c,v 1.1 2002/02/21 02:08:30 pvalchev Exp $
+--- utilities/cgimagick.c.orig	Sun Dec 10 16:16:29 2000
++++ utilities/cgimagick.c	Mon Feb 18 17:31:39 2002
+@@ -131,7 +131,7 @@ int CGIFifo(const Image *image,const voi
+ */
+ int DecodeHex(const char **input,size_t outmax)
+ {
+-  static char
++  static signed char
+     hex_to_bin [128] = {
+       -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,    /*            */
+       -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,    /*            */
