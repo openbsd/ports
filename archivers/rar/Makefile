@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/06/02 02:40:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/06/02 20:20:56 brad Exp $
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
@@ -6,6 +6,8 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rarsoft.com/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=
+
+NEED_VERSION=	1.92
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"NOFEE: Can not charge for distribution"
