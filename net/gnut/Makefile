@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/10 11:05:26 naddy Exp $
 
 COMMENT=	"command line gnutella client"
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/tars/
+MASTER_SITES=	http://tesla.desy.de/~nsturm/distfiles/ \
+		${HOMEPAGE}/tars/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gfind:findutils-*:misc/findutils
 
