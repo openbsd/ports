@@ -11,6 +11,7 @@ lib/libgmodule.so.1.2
 lib/libgmodule.la
 lib/libgmodule.a
 lib/libgthread.so.1.2
+@exec /sbin/ldconfig -m %B
 lib/libgthread.la
 lib/libgthread.a
 man/man1/glib-config.1
@@ -19,4 +20,3 @@ include/glib.h
 include/gmodule.h
 @dirrm lib/glib/include
 @dirrm lib/glib
-@exec /sbin/ldconfig -m %B
