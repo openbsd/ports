@@ -1,6 +1,6 @@
-$OpenBSD: patch-preserve_c,v 1.1 2002/04/17 16:17:45 danh Exp $
---- preserve.c.orig	Wed Apr 17 11:52:17 2002
-+++ preserve.c	Wed Apr 17 11:58:14 2002
+$OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
+--- preserve.c.orig	Wed Oct 24 02:22:42 2001
++++ preserve.c	Mon Jan 20 23:51:14 2003
 @@ -196,38 +196,38 @@ int save_state()
     /* Saving current run data... */
     if (verbose>1)
@@ -136,73 +136,66 @@ $OpenBSD: patch-preserve_c,v 1.1 2002/04/17 16:17:45 danh Exp $
     if ((fgets(buffer,BUFSIZE,fp)) != NULL)                 /* Header record */
       {if (strncmp(buffer,tmp_buf,17)) return 99;} /* bad magic? */
     else return 1;   /* error exit */
-@@ -493,8 +493,7 @@ int restore_state()
+@@ -493,7 +493,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXURLH);
--      tmp_buf[strlen(tmp_buf)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(tmp_buf)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 10;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 10;  /* error exit */
-@@ -524,8 +523,7 @@ int restore_state()
+@@ -524,7 +524,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXHOST);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 8;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 8;  /* error exit */
-@@ -564,8 +562,7 @@ int restore_state()
+@@ -564,7 +564,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXHOST);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 9;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 9;  /* error exit */
-@@ -603,8 +600,7 @@ int restore_state()
+@@ -603,7 +603,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXREFH);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 11;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 11;  /* error exit */
-@@ -628,8 +624,7 @@ int restore_state()
+@@ -628,7 +628,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXAGENT);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 12;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 12;  /* error exit */
-@@ -653,8 +648,7 @@ int restore_state()
+@@ -653,7 +653,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXSRCH);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 13;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 13;  /* error exit */
-@@ -678,8 +672,7 @@ int restore_state()
+@@ -678,7 +678,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
 -      strncpy(tmp_buf,buffer,MAXIDENT);
--      tmp_buf[strlen(buffer)-1]=0;
 +      strncpy(tmp_buf,buffer,sizeof tmp_buf);
+       tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 14;  /* error exit */
-       if (!isdigit((int)buffer[0])) return 14;  /* error exit */
