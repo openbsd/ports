@@ -10,3 +10,7 @@ SHA1 (astrolog/CHI_24) = 62a65ebdc73aa2f55f2baab2d98cb925712e910a
 SHA1 (astrolog/CPJV_24) = e9ecc057a1aa7a8423fad31b9e6c9cfdf4316b63
 SHA1 (astrolog/LRZ5_24) = 9c0006c445c2da31d25a202992dff96cfee12ed2
 SHA1 (astrolog/ast53unx.shr) = 45db30019e11d2a00d934ec055e86cff9ee2dd07
+SIZE (astrolog/CHI_24) = 15000
+SIZE (astrolog/CPJV_24) = 60000
+SIZE (astrolog/LRZ5_24) = 75000
+SIZE (astrolog/ast53unx.shr) = 1455135
