@@ -1,7 +1,7 @@
-$OpenBSD: patch-history_c,v 1.1 2002/11/21 17:53:23 pvalchev Exp $
---- history.c.orig	Wed Nov 20 21:43:31 2002
-+++ history.c	Wed Nov 20 21:43:52 2002
-@@ -331,7 +331,7 @@ next:	s = getcommand();
+$OpenBSD: patch-history_c,v 1.2 2002/12/03 19:51:26 markus Exp $
+--- history.c.orig	Mon Dec  2 11:15:01 2002
++++ history.c	Mon Dec  2 11:15:20 2002
+@@ -339,7 +339,7 @@ next:	s = getcommand();
  			fprintf(stderr, "%s\n", s);
  		if (shell == NULL)
  			shell = "/bin/sh";
