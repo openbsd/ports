@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/21 09:50:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2002/01/24 13:40:29 naddy Exp $
 
 COMMENT=	"desktop planetarium"
 
@@ -38,8 +38,6 @@ CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} \
 		CONFIG_SHELL=${WRKBUILD}/sh
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
-
-WRKDIST=	${WRKDIR}/kstars-0.8
 
 pre-configure:
 	# Let zsh act as an sh replacement
