@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/04/18 13:40:27 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/06/09 19:34:31 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -87,7 +87,9 @@ MIRROR_MK?= ${.CURDIR}/distfiles/Makefile
 
 mirror-maker:
 	@mkdir -p ${MIRROR_MK:H}
-	@echo "default:: ftp cdrom" >${MIRROR_MK}
+# Indirection needed for broken OSes that don't grok this exec
+	@echo "EXEC=exec" >${MIRROR_MK}
+	@echo "default:: ftp cdrom" >>${MIRROR_MK}
 	@echo ".PHONY: default all ftp cdrom" >>${MIRROR_MK}
 	@make fetch-makefile \
 		ECHO_MSG='echo >&2' \
