@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/06/20 18:55:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.34 2000/06/26 03:47:13 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += boehm-gc
 #    SUBDIR += cccc
 #    SUBDIR += cflow
+     SUBDIR += cook
 #    SUBDIR += crossgo32
 #    SUBDIR += crossgo32-djgpp2
 #    SUBDIR += crossgo32-djgpp2-pdcurses
