@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2000/11/30 04:41:37 dugsong Exp $
+# $OpenBSD: Makefile,v 1.45 2001/01/10 01:21:21 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.5
 CATEGORIES=     graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
 		ftp://ftp.cdrom.com/pub/ImageMagick/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.wizards.dupont.com/pub/ImageMagick/
@@ -27,6 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

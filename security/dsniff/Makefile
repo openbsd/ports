@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2000/12/18 13:16:41 dugsong Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/10 01:19:49 brad Exp $
 
 DISTNAME=	dsniff-2.3
-
 CATEGORIES=	security
-NEED_VERSION=	1.310
-
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.monkey.org/~dugsong/dsniff/
+
 HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet \
@@ -23,8 +22,10 @@ CONFIGURE_STYLE= gnu
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L} == no_x11
-CONFIGURE_ARGS+=--without-x
+.if ${FLAVOR:L} == "no_x11"
+CONFIGURE_ARGS=	--without-x
+.else
+USE_X11=	Yes
 .endif
 
 FAKE_FLAGS=	install_prefix="${WRKINST}"
