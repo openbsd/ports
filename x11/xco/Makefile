@@ -1,24 +1,16 @@
-# OpenBSD makefile for:	xco
-# Version required:	1.3
-# Date created:		25 January 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/02/06 13:43:45 niklas Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/12/24 21:11:40 fgsch Exp $
 
 DISTNAME=	xco
 PKGNAME=	xco-1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.cs.purdue.edu:/pub/bingle/
+MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/
 
 MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
-MAN1=		xco.1
-DOCDIR=		${PREFIX}/share/doc/xco
 
 post-install:
-		@${MKDIR} ${DOCDIR}
-		@${INSTALL_DATA} ${FILESDIR}/copyright ${DOCDIR}
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xco
+		${INSTALL_DATA} ${FILESDIR}/copyright ${PREFIX}/share/doc/xco
 
 .include <bsd.port.mk>
