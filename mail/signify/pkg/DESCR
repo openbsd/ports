@@ -1,0 +1,10 @@
+Signify is a neat little Perl program that allows a semi-random email
+signature to be generated from a set of rules.  You can create multiple
+sections where each section can be one of an unlimited number of
+possibilities, each with its own weighting so those really cool quotes
+can appear more often than others.  Sections can be placed next to each
+other vertically to create columns.  You can even format each section
+independently as left/right/center and top/bottom/vcenter.
+
+Some email clients, such as Mutt, can be made to automatically invoke
+signify when you write a new email message.
