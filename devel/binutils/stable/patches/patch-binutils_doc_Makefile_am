@@ -1,0 +1,11 @@
+$OpenBSD: patch-binutils_doc_Makefile_am,v 1.1 2004/01/18 23:54:32 brad Exp $
+--- binutils/doc/Makefile.am.orig	2004-01-18 17:19:14.000000000 -0500
++++ binutils/doc/Makefile.am	2004-01-18 17:19:25.000000000 -0500
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to generate Makefile.in
+ 
+-AUTOMAKE_OPTIONS = cygnus
++AUTOMAKE_OPTIONS = cygnus no-installman
+ 
+ # What version of the manual you want; "all" includes everything
+ CONFIG=all
