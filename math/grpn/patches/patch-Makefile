@@ -1,0 +1,32 @@
+--- Makefile.orig	Fri Oct 20 21:20:10 2000
++++ Makefile	Fri Oct 20 21:23:30 2000
+@@ -17,9 +17,9 @@ GTK_DIR =
+ # add -DUSE_GNOME if you want to make grpn GNOME compliant.
+ 
+ 
+-CFLAGS = -g -O2 -I/usr/X11/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
++CFLAGS = -g -O2 -I/usr/X11R6/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
+ 
+-DFLAGS =  -L/usr/X11/lib 
++DFLAGS =  -L/usr/X11R6/lib 
+ 
+ # end of user configurable section
+ 
+@@ -36,7 +36,7 @@ OBJS = test_gtk_ver.o real.o complex.o m
+ 
+ LIBS   = `$(GTK_DIR)gtk-config --libs` -lX11 -lm 
+ 
+-
++all:	grpn
+ grpn:	$(OBJS)
+ 	$(CC) $(DFLAGS) -o $@ $(OBJS) $(LIBS) 
+ 
+@@ -44,8 +44,6 @@ pure:	$(OBJS)
+ 	$(PURIFY) $(CC) $(DFLAGS) -o $@ $(OBJS) $(LIBS) 
+ 
+ install:	grpn
+-	cp grpn /usr/local/bin
+-	chmod 755 /usr/local/bin/grpn
+ 
+ .c.o:
+ 	$(CC) -c -o $@ $(CFLAGS) $*.c

@@ -1,0 +1,11 @@
+GRPN is a graphical (GTK) reverse polish notation (RPN) calculator.
+GRPN works with real numbers and complex numbers.  Numbers can be
+displayed in 4 different radix modes, and complex numbers can be
+displayed in either Cartesian or polar form.
+
+General Math Functions: + - * / sqrt sqr pow neg
+Exponential and Logarithmic Functions: log alog exp ln
+Trigonometric Functions: sin asin cos acos tan atan
+Numerical Bases: binary, octal, decimal and hex
+
+WWW: ${HOMEPAGE}
