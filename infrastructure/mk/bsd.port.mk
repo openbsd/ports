@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.158 1999/12/08 17:11:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.159 1999/12/11 16:14:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2049,12 +2049,12 @@ ${_DEP}-depends:
 				${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
 			fi; \
 		else \
-			for d in `echo $$PATH | tr ':' ' '`; do \
+			IFS=:; for d in $$PATH; do \
 				if [ -x $$d/$$prog ]; then \
 					found="$$d/$$prog"; \
 					break; \
 				fi \
-			done; \
+			done; unset IFS; \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on executable: $$prog - $$found found"; \
 		fi; \
 		if [ X"$$found" = Xnot ]; then \
