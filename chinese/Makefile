@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/05/31 02:24:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/05/31 09:55:17 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
@@ -24,5 +24,6 @@
      SUBDIR += taipeifonts
 #    SUBDIR += samba
 #    SUBDIR += ted
+     SUBDIR += xcin
 
 .include <bsd.port.subdir.mk>
