@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/12/01 23:22:58 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2001/12/16 21:57:47 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 HOMEPAGE=	http://www.washington.edu/pine/
+
+BUILD_DEPENDS=	:c-client->=4.41:mail/c-client
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
