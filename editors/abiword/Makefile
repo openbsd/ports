@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2001/01/18 05:04:00 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/18 18:44:57 brad Exp $
+
+BROKEN=		"needs to be updated"
 
 VERSION=	0.7.10
 PKGNAME=	abiword-${VERSION}
