@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/12 19:42:44 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/17 06:49:52 brad Exp $
 
 COMMENT=		"library for tracking application startup"
 
 DISTNAME=		startup-notification-0.5
-CATEGORIES=		devel x11/gnome
+CATEGORIES=		devel x11 x11/gnome
 
-HOMEPAGE=		http://www.gnome.org/
+HOMEPAGE=		http://www.freedesktop.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
@@ -20,7 +20,5 @@ EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
