@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2004/09/22 21:26:40 fgsch Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -62,6 +62,7 @@ PATCH_DIST_STRIP=	-p1
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	--enable-hcache
 BUILD_DEPENDS+=		::databases/gdbm
+LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
 SUPDISTFILES+=		mutt-cvs-maildir-header-cache.18:1
 .endif
