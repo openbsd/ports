@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/05/06 05:00:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.28 2001/06/26 21:03:29 naddy Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
@@ -12,7 +12,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		gdk_pixbuf::graphics/gdk-pixbuf
 
 MAINTAINER=	Couderc Damien <couderc.damien@wanadoo.fr>
 
