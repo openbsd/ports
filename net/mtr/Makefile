@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2003/10/09 08:40:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2004/06/14 07:10:46 jakob Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
 DISTNAME=	mtr-0.54
+PKGNAME=	mtr-0.54p0
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.lysator.liu.se/mirror/unix/mtr/
 
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	mtr-054-v6-20030624.diff.gz:0
+PATCHFILES=	mtr-054-v6-20040216.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	gnu
