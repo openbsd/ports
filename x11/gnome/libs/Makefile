@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/22 20:08:05 nino Exp $
+# $OpenBSD: Makefile,v 1.18 2002/09/16 05:15:23 marcm Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		gnome-libs-1.4.1.4
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.504
 HOMEPAGE=		http://www.gnome.org/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -13,6 +12,11 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-libs/}
 PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 			${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 			patch-*
+
+# fix for Alpha
+.if (${MACHINE_ARCH} == "alpha")
+PATCH_LIST+=		sup-alpha-*
+.endif
 
 LIB_DEPENDS=		Imlib,gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \

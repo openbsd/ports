@@ -1,0 +1,12 @@
+$OpenBSD: sup-alpha-libgnorba_Makefile_in,v 1.1 2002/09/16 05:15:23 marcm Exp $
+--- libgnorba/Makefile.in.orig	Thu Sep  5 09:32:04 2002
++++ libgnorba/Makefile.in	Thu Sep  5 09:32:14 2002
+@@ -450,7 +450,7 @@ goad-browser: $(goad_browser_OBJECTS) $(
+ 
+ gnome-name-service: $(gnome_name_service_OBJECTS) $(gnome_name_service_DEPENDENCIES)
+ 	@rm -f gnome-name-service
+-	$(LINK) $(gnome_name_service_LDFLAGS) $(gnome_name_service_OBJECTS) $(gnome_name_service_LDADD) $(LIBS)
++	$(LINK) $(gnome_name_service_LDFLAGS) $(gnome_name_service_OBJECTS) $(gnome_name_service_LDADD) $(LIBS) -liconv -all-static
+ 
+ install-man1:
+ 	$(mkinstalldirs) $(DESTDIR)$(man1dir)
