@@ -1,3 +1,5 @@
+@cwd /usr/local
+@name jove-4.16
 bin/jove
 bin/teachjove
 libexec/jove/portsrv
@@ -9,19 +11,32 @@ man/man1/jovetool.1
 share/jove/teach-jove
 share/jove/cmds.doc
 share/jove/jove.rc.sun
-share/jove/keychart.
-share/jove/keychart.3022
-share/jove/jove.rc.3022
-share/jove/keychart.z29
-share/jove/jove.rc.z29
-share/jove/keychart.xterm
-share/jove/jove.rc.xterm
-share/jove/keychart.wyse
-share/jove/jove.rc.wyse
-share/jove/keychart.vt100
-share/jove/jove.rc.vt100
-share/jove/keychart.sun-cmd
-share/jove/jove.rc.sun-cmd
 share/jove/keychart.sun
+share/jove/jove.rc.sun-cmd
+share/jove/keychart.sun-cmd
+share/jove/jove.rc.vt100
+share/jove/keychart.vt100
+share/jove/jove.rc.wyse
+share/jove/keychart.wyse
+share/jove/jove.rc.xterm
+share/jove/keychart.xterm
+share/jove/jove.rc.z29
+share/jove/keychart.z29
+share/jove/jove.rc.3022
+share/jove/keychart.3022
+share/jove/keychart.
 share/jove/XTermresource
 share/jove/jove.rc
+share/jove/README
+@dirrm share/jove
+@dirrm libexec/jove
+@exec echo ""
+@exec echo "*** See %D/share/jove/README about changes to /etc/rc or"
+@exec echo "*** /etc/rc.local so that the system recovers jove files"
+@exec echo "*** on reboot after a system crash"
+@exec echo ""
+@unexec echo ""
+@unexec echo "*** If you changed your /etc/rc or /etc/rc.local files"
+@unexec echo "*** to recover jove files on reboot after a system crash"
+@unexec echo "*** you should back out those changes now."
+@unexec echo ""

@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 18 22:44:33 1996
-+++ Makefile	Sun Sep 22 10:30:41 1996
+--- Makefile.orig	Mon Mar 18 20:44:33 1996
++++ Makefile	Fri Jul 24 21:01:06 1998
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -22,20 +22,32 @@
  
  # The install commands of BSD and System V differ in unpleasant ways:
  # -c: copy (BSD); -c dir: destination directory (SysV)
-@@ -51,11 +51,11 @@
+@@ -50,12 +50,12 @@
+ INSTALLFLAGS = # -g bin -o root
  
  # to install executable files
- XINSTALL=cp
+-XINSTALL=cp
 -#XINSTALL=/usr/ucb/install $(INSTALLFLAGS) -c -m 755 # -s
-+XINSTALL=install $(INSTALLFLAGS) -c -m 755 # -s
++#XINSTALL=cp
++XINSTALL=${BSD_INSTALL_PROGRAM}
  
  # to install text files
- TINSTALL=cp
+-TINSTALL=cp
 -#TINSTALL=/usr/ucb/install $(INSTALLFLAGS) -c -m 644
-+#TINSTALL=install $(INSTALLFLAGS) -c -m 644
++#TINSTALL=cp
++TINSTALL=${BSD_INSTALL_DATA}
  
  # These should all just be right if the above ones are.
  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
+@@ -79,7 +79,7 @@
+ # compiler, adding -Xa -v will increase compiler checking.
+ # On DEC OSF/1, -std1 -O
+ 
+-OPTFLAGS = -O
++OPTFLAGS = -O2
+ 
+ # For making dependencies under BSD systems
+ DEPENDFLAG = -M
 @@ -163,7 +163,7 @@
  #
  # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
@@ -45,3 +57,18 @@
  
  # for SCO Xenix, set
  #	MEMFLAGS = -Mle
+@@ -329,8 +329,12 @@
+ 	 $(TEACH-JOVE) $(CMDS.DOC) $(TERMSDIR)docs \
+ 	 $(PORTSRVINST) $(RECOVER) $(JOVE) $(TEACHJOVE) $(MANUALS)
+ 	$(TINSTALL) doc/jove.rc $(JOVERC)
+-	@echo See the README about changes to /etc/rc or /etc/rc.local
+-	@echo so that the system recovers jove files on reboot after a crash
++	$(TINSTALL) README $(SHAREDIR)
++	@echo ""
++	@echo "*** See $(SHAREDIR)/README about changes to /etc/rc or"
++	@echo "*** /etc/rc.local so that the system recovers jove files"
++	@echo "*** on reboot after a system crash"
++	@echo ""
+ 
+ $(LIBDIR)::
+ 	test -d $(LIBDIR) || mkdir $(LIBDIR)
