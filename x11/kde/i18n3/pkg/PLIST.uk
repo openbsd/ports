@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.10 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.11 2003/12/07 20:19:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -45,20 +45,17 @@ ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
 ${DOC}kaddressbook/common
-${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
 ${DOC}kdebase/kate_plugins.po
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kinfocenter/protocols/common
-${DOC}kinfocenter/protocols/${C}
 ${DOC}kinfocenter/protocols/${I}
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
@@ -77,7 +74,6 @@ ${DOC}kioslave/http.docbook
 ${DOC}kioslave/https.docbook
 ${DOC}kioslave/imap.docbook
 ${DOC}kioslave/imaps.docbook
-${DOC}kioslave/${C}
 ${DOC}kioslave/${I}
 ${DOC}kioslave/info.docbook
 ${DOC}kioslave/lan.docbook
@@ -103,7 +99,6 @@ ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
 ${DOC}kspell/common
-${DOC}kspell/${C}
 ${DOC}kspell/${I}
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
@@ -313,6 +308,7 @@ ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
 ${LOC}kfouleggs.mo
+${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpgcertmanager.mo
@@ -371,6 +367,7 @@ ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}konsolekalendar.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo

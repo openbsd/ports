@@ -1,11 +1,11 @@
-$OpenBSD: patch-kalarm_kalarmapp_cpp,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
---- kalarm/kalarmapp.cpp.orig	Mon Dec 23 15:38:39 2002
-+++ kalarm/kalarmapp.cpp	Mon Dec 23 15:38:52 2002
-@@ -51,6 +51,7 @@
+$OpenBSD: patch-kalarm_kalarmapp_cpp,v 1.2 2003/12/07 20:19:15 espie Exp $
+--- kalarm/kalarmapp.cpp.orig	2003-02-22 00:07:01.000000000 +0100
++++ kalarm/kalarmapp.cpp	2003-12-04 23:10:16.000000000 +0100
+@@ -57,6 +57,7 @@
  #include "kalarmapp.moc"
  
  #include <netwm.h>
 +#undef Unsorted
  
- #define     DAEMON_APP_NAME_DEF       "kalarmd"
- const char* DCOP_OBJECT_NAME        = "display";
+ extern QCString execArguments;
+ 

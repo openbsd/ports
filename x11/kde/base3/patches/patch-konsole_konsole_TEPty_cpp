@@ -1,7 +1,7 @@
-$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
---- konsole/konsole/TEPty.cpp.orig	Sun Jan 12 15:09:42 2003
-+++ konsole/konsole/TEPty.cpp	Mon Jan 13 10:04:37 2003
-@@ -130,6 +130,9 @@
+$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.4 2003/12/07 20:19:13 espie Exp $
+--- konsole/konsole/TEPty.cpp.orig	2003-09-01 13:32:01.000000000 +0200
++++ konsole/konsole/TEPty.cpp	2003-12-04 02:59:16.000000000 +0100
+@@ -137,6 +137,9 @@
          #include <errno.h>
          #include <utmp.h>
  #endif
@@ -11,9 +11,9 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
  
  #include <signal.h>
  
-@@ -201,7 +204,13 @@ FILE* syslog_file = NULL; //stdout;
- #define PTY_FILENO 3
- #define BASE_CHOWN "konsole_grantpty"
+@@ -229,7 +232,13 @@ void TEPtyInit()
+ #endif
+ }
  
 -int chownpty(int fd, bool grant)
 +const int PTY_GRANT=0,
@@ -26,7 +26,7 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
  // param fd: the fd of a master pty.
  // param grant: true to grant, false to revoke
  // returns 1 on success 0 on fail
-@@ -222,10 +231,25 @@ int chownpty(int fd, bool grant)
+@@ -252,6 +261,7 @@ int chownpty(int fd, bool grant)
    }
    if (pid == 0)
    {
@@ -34,7 +34,11 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
      /* We pass the master pseudo terminal as file descriptor PTY_FILENO. */
      if (fd != PTY_FILENO && dup2(fd, PTY_FILENO) < 0) exit(1);
      QString path = locate("exe", BASE_CHOWN);
--    execle(path.ascii(), BASE_CHOWN, grant?"--grant":"--revoke", NULL, NULL);
+@@ -260,7 +270,21 @@ int chownpty(int fd, bool grant)
+     ** to be constant, we need an additional parameter.
+     */
+     QString fdnumber = QString::number(PTY_FILENO);
+-    execle(path.ascii(), BASE_CHOWN, grant?"--grant":"--revoke", fdnumber.ascii(), NULL, NULL);
 +    switch(mode) {
 +    case PTY_REVOKE:
 +    	arg = "--revoke";
@@ -49,11 +53,11 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
 +    	arg = "--logout";
 +	break;
 +    }
-+    execle(path.ascii(), BASE_CHOWN, arg, NULL, NULL);
++    execle(path.ascii(), BASE_CHOWN, arg, fdnumber.ascii(), NULL, NULL);
      exit(1); // should not be reached
    }
  
-@@ -273,7 +297,7 @@ void TEPty::commClose()
+@@ -308,7 +332,7 @@ void TEPty::commClose()
       utmp.start(KProcess::Block);
    }
  #elif defined(USE_LOGIN)
@@ -62,7 +66,7 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
    if (tty_name)
    {
    	if (strncmp(tty_name, "/dev/", 5) == 0)
-@@ -281,7 +305,10 @@ void TEPty::commClose()
+@@ -316,7 +340,10 @@ void TEPty::commClose()
          logout(tty_name);
    }
  #endif
@@ -74,7 +78,7 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
  
    KProcess::commClose();
  }
-@@ -357,7 +384,7 @@ void TEPty::openPty()
+@@ -392,7 +419,7 @@ void TEPty::openPty()
    // be opened by several different methods.
  
    // We try, as we know them, one by one.
@@ -83,7 +87,7 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
    if (m_MasterFd < 0) {
      int master_fd, slave_fd;
      if (openpty(&master_fd, &slave_fd, NULL, NULL, NULL) == 0) {
-@@ -453,7 +480,7 @@ void TEPty::openPty()
+@@ -488,7 +515,7 @@ void TEPty::openPty()
      return;
    }
  
@@ -92,7 +96,7 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
    {
      fprintf(stderr,"konsole: chownpty failed for device %s::%s.\n",ptynam,ttynam);
      fprintf(stderr,"       : This means the session can be eavesdroped.\n");
-@@ -462,7 +489,6 @@ void TEPty::openPty()
+@@ -497,7 +524,6 @@ void TEPty::openPty()
              KGlobal::dirs()->findResourceDir("exe",
                                               "konsole").local8Bit().data());
    }
@@ -100,22 +104,22 @@ $OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
    fcntl(m_MasterFd,F_SETFL,O_NDELAY);
  }
  
-@@ -530,7 +556,7 @@ int TEPty::makePty(bool _addutmp)
-      l_struct.ut_host[UT_HOSTSIZE]=0;
+@@ -603,7 +629,7 @@ int TEPty::makePty(bool _addutmp)
    }
+ #endif
  
 -  if (! (str_ptr=ttyname(tt)) ) {
 +  if (! (str_ptr=ttyname(tt)) && !(str_ptr=ttynam)) {
-     abort();
-   }
-   if (strncmp(str_ptr, "/dev/", 5) == 0)
-@@ -539,6 +565,9 @@ int TEPty::makePty(bool _addutmp)
-   time(&l_struct.ut_time);
+ #ifdef Q_OS_FREEBSD
+     /*
+     ** In FreeBSD, the ttyname() call always returns NULL
+@@ -628,6 +654,9 @@ int TEPty::makePty(bool _addutmp)
  
    login(&l_struct);
-+#endif
+ #endif
 +#ifdef __OpenBSD__
 +  chownpty(tt, PTY_LOGIN);
- #endif
++#endif
    return tt;
  }
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_systray_Makefile_in,v 1.5 2003/06/12 19:16:17 espie Exp $
---- noatun/modules/systray/Makefile.in.orig	Wed May  7 14:05:29 2003
-+++ noatun/modules/systray/Makefile.in	Tue Jun 10 10:58:32 2003
-@@ -381,7 +381,7 @@ kde_module_LTLIBRARIES = noatun_systray.
+$OpenBSD: patch-noatun_modules_systray_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- noatun/modules/systray/Makefile.in.orig	2003-09-11 21:15:36.000000000 +0200
++++ noatun/modules/systray/Makefile.in	2003-12-04 19:31:13.000000000 +0100
+@@ -382,7 +382,7 @@ kde_module_LTLIBRARIES = noatun_systray.
  noatun_systray_la_SOURCES = systray.cpp noatunui.cpp kitsystemtray.cpp cmodule.cpp
  
  noatun_systray_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_systray_Makefile_in,v 1.5 2003/06/12 19:16:17 esp
                          -lqtmcop -lkmedia2_idl -lsoundserver_idl
  
  
-@@ -400,7 +400,7 @@ CONFIG_CLEAN_FILES =
+@@ -401,7 +401,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_systray_la_DEPENDENCIES = \

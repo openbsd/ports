@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib_artsplug/Makefile.in.orig	Wed May  7 14:05:29 2003
-+++ mpeglib_artsplug/Makefile.in	Tue Jun 10 10:58:31 2003
-@@ -448,7 +448,7 @@ libarts_mpeglib_la_LDFLAGS = $(all_libra
+$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib_artsplug/Makefile.in.orig	2003-09-11 21:15:32.000000000 +0200
++++ mpeglib_artsplug/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -449,7 +449,7 @@ libarts_mpeglib_la_LDFLAGS = $(all_libra
  					-release $(MPEGLIB_ARTS_VERSION) \
  					-version-info $(MPEGLIB_ARTS_MAJOR_VERSION):$(MPEGLIB_ARTS_MINOR_VERSION):$(MPEGLIB_ARTS_MICRO_VERSION)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp
  
  libarts_splay_la_SOURCES = splayPlayObject.cc \
  					splayPlayObject_impl.cpp
-@@ -457,7 +457,7 @@ libarts_splay_la_SOURCES = splayPlayObje
+@@ -458,7 +458,7 @@ libarts_splay_la_SOURCES = splayPlayObje
  libarts_splay_la_LDFLAGS = $(all_libraries) \
  					-module
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp
  
  bin_PROGRAMS = mpeglibartsplay
  
-@@ -476,7 +476,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -477,7 +477,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp
  am_libarts_mpeglib_la_OBJECTS = decoderBaseObject.lo splayPlayObject.lo \
  	decoderBaseObject_impl.lo oggPlayObject_impl.lo \
  	mpgPlayObject_impl.lo wavPlayObject_impl.lo \
-@@ -492,7 +492,7 @@ libarts_mpeglib_la_nofinal_OBJECTS = dec
+@@ -493,7 +493,7 @@ libarts_mpeglib_la_nofinal_OBJECTS = dec
  	vcdPlayObject_impl.lo nullPlayObject_impl.lo
  @KDE_USE_FINAL_FALSE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_final_OBJECTS)

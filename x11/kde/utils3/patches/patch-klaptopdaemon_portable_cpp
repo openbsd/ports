@@ -1,6 +1,6 @@
-$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.2 2003/03/17 21:00:59 ian Exp $
---- klaptopdaemon/portable.cpp.orig	Fri Jan  3 00:07:53 2003
-+++ klaptopdaemon/portable.cpp	Wed Feb 26 18:19:51 2003
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.3 2003/12/07 20:19:15 espie Exp $
+--- klaptopdaemon/portable.cpp.orig	2003-05-07 13:49:02.000000000 +0200
++++ klaptopdaemon/portable.cpp	2003-12-04 21:42:04.000000000 +0100
 @@ -40,6 +40,7 @@
  //	Linux 		(#if __linux__)
  //	FreeBSD		(#elif __FreeBSD__)
@@ -9,7 +9,7 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.2 2003/03/17 21:00:59 ian Exp $
  //	generic nothing	(#else)
  //
  //
-@@ -1327,6 +1328,248 @@ int laptop_portable::poll_activity()
+@@ -1336,6 +1337,248 @@ int laptop_portable::poll_activity()
  {
         return(1);
  }

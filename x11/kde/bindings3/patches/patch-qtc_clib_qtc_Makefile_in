@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.2 2003/06/12 19:16:15 espie Exp $
---- qtc/clib/qtc/Makefile.in.orig	Mon May 12 17:16:43 2003
-+++ qtc/clib/qtc/Makefile.in	Wed Jun 11 11:35:53 2003
-@@ -331,7 +331,7 @@ include_HEADERS = 
+$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.3 2003/12/07 20:19:14 espie Exp $
+--- qtc/clib/qtc/Makefile.in.orig	2003-09-03 03:25:52.000000000 +0200
++++ qtc/clib/qtc/Makefile.in	2003-12-04 23:59:23.000000000 +0100
+@@ -332,7 +332,7 @@ include_HEADERS = 
  # here you should add all header files, which shouldn´t be installed
  noinst_HEADERS = 
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.2 2003/06/12 19:16:15 espie Exp $
  
  # add here the libraries which have to be include
  # for building the shared lib
-@@ -343,7 +343,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
+@@ -344,7 +344,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
  #  in here.
  #  The following line is only a suggestion!
  #

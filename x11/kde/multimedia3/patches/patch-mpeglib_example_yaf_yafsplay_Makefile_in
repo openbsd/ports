@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafsplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/example/yaf/yafsplay/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/example/yaf/yafsplay/Makefile.in	Wed Jun 11 09:34:22 2003
-@@ -388,11 +388,11 @@ yaf_splay_SOURCES = splay_control.cpp
+$OpenBSD: patch-mpeglib_example_yaf_yafsplay_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/example/yaf/yafsplay/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/example/yaf/yafsplay/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -389,11 +389,11 @@ yaf_splay_SOURCES = splay_control.cpp
  
  noinst_HEADERS = 
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-mpeglib_example_yaf_yafsplay_Makefile_in,v 1.5 2003/06/12 19:16:
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yafsplay
-@@ -407,7 +407,7 @@ am_yaf_splay_OBJECTS = splay_control.$(O
+@@ -408,7 +408,7 @@ am_yaf_splay_OBJECTS = splay_control.$(O
  #>+ 1
  yaf_splay_OBJECTS = splay_control.$(OBJEXT)
  yaf_splay_DEPENDENCIES = ../yafxplayer/libyafxplayer.la \

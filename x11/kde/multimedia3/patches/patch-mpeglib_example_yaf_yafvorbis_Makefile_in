@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafvorbis_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/example/yaf/yafvorbis/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/example/yaf/yafvorbis/Makefile.in	Wed Jun 11 09:37:34 2003
-@@ -388,12 +388,12 @@ yaf_vorbis_SOURCES = vorbis_control.cpp
+$OpenBSD: patch-mpeglib_example_yaf_yafvorbis_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/example/yaf/yafvorbis/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/example/yaf/yafvorbis/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -389,12 +389,12 @@ yaf_vorbis_SOURCES = vorbis_control.cpp
  
  noinst_HEADERS = 
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-mpeglib_example_yaf_yafvorbis_Makefile_in,v 1.5 2003/06/12 19:16
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yafvorbis
-@@ -408,7 +408,7 @@ am_yaf_vorbis_OBJECTS = vorbis_control.$
+@@ -409,7 +409,7 @@ am_yaf_vorbis_OBJECTS = vorbis_control.$
  #>+ 1
  yaf_vorbis_OBJECTS = vorbis_control.$(OBJEXT)
  yaf_vorbis_DEPENDENCIES = ../yafcore/libyafcore.la \

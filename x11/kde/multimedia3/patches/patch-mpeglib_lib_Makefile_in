@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/lib/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/lib/Makefile.in	Tue Jun 10 11:00:44 2003
-@@ -399,16 +399,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
+$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/lib/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/lib/Makefile.in	2003-12-04 19:31:13.000000000 +0100
+@@ -400,16 +400,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
  			yuv/libyuvPlugin.la
  
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/lib
-@@ -417,15 +417,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -418,15 +418,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
-@@ -452,7 +452,7 @@ CXXLD = $(CXX)
+@@ -453,7 +453,7 @@ CXXLD = $(CXX)
  #>+ 2
  CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -51,7 +51,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
  	ps-recursive install-info-recursive uninstall-info-recursive \
-@@ -461,7 +461,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+@@ -462,7 +462,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
  	check-recursive installcheck-recursive
  DIST_COMMON = README Makefile.am Makefile.in
  DIST_SUBDIRS = $(SUBDIRS)
@@ -60,7 +60,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  #>- all: all-recursive
  #>+ 1
-@@ -506,8 +506,8 @@ clean-libLTLIBRARIES:
+@@ -507,8 +507,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/08/20 09:27:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/12/07 20:19:15 espie Exp $
 @pkgcfl sirc-*
 bin/dsirc
 bin/kdict
@@ -100,6 +100,7 @@ share/applnk/Utilities/kdict.desktop
 share/applnk/Utilities/kmailcvt.desktop
 share/apps/kconf_update/kmail-3.1-update-new-mail-notification-settings.pl
 share/apps/kconf_update/kmail-3.1-use-UOID-for-identities.pl
+share/apps/kconf_update/kmail-3.1.4-dont-use-UOID-0-for-any-identity.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd

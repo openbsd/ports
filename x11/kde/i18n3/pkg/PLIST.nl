@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.9 2003/12/07 20:19:14 espie Exp $
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -22,6 +22,8 @@ share/apps/ktuberling/sounds/nl/wenkbrauw.wav
 share/apps/ktuberling/sounds/nl/zonnebril.wav
 ${DOC}artsbuilder/digitalaudio.docbook
 ${DOC}artsbuilder/gui.docbook
+${DOC}babel/common
+${DOC}babel/${I}
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -70,12 +72,29 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}crashes/common
+${DOC}crashes/${I}
+${DOC}dirfilter/common
+${DOC}dirfilter/${I}
+${DOC}domtreeviewer/common
+${DOC}domtreeviewer/${I}
+${DOC}imgallery/common
+${DOC}imgallery/${I}
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
 ${DOC}kaphorism/common
 ${DOC}kaphorism/${C}
 ${DOC}kaphorism/${I}
+${DOC}kate-plugins/common
+${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/${I}
+${DOC}kate-plugins/insertcommand.docbook
+${DOC}kate-plugins/openheader.docbook
+${DOC}kate-plugins/projectmanager.docbook
+${DOC}kate-plugins/textfilter.docbook
+${DOC}kate-plugins/xmlcheck.docbook
+${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
 ${DOC}kate/common
 ${DOC}kate/configuring.docbook
@@ -157,7 +176,6 @@ ${DOC}kcontrol/khtml/${C}
 ${DOC}kcontrol/khtml/${I}
 ${DOC}kcontrol/khtml/nsplugin.docbook
 ${DOC}kcontrol/kmixcfg/common
-${DOC}kcontrol/kmixcfg/${C}
 ${DOC}kcontrol/kmixcfg/${I}
 ${DOC}kcontrol/kthememgr/common
 ${DOC}kcontrol/kthememgr/${C}
@@ -285,6 +303,12 @@ ${DOC}khelpcenter/visualdict/pict8.png
 ${DOC}khelpcenter/visualdict/pict9.png
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}khtmlsettings/common
+${DOC}khtmlsettings/${I}
+${DOC}kicker-applets/common
+${DOC}kicker-applets/${I}
+${DOC}kicker-applets/kolourpicker.docbook
+${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
@@ -363,12 +387,17 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}klipper/common
+${DOC}klipper/${C}
+${DOC}klipper/${I}
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}konq-plugins/common
+${DOC}konq-plugins/${I}
 ${DOC}konsole/konsole.png
 ${DOC}kpager/common
 ${DOC}kpager/${C}
@@ -379,12 +408,24 @@ ${DOC}kspell/${I}
 ${DOC}ksysguard/common
 ${DOC}ksysguard/${C}
 ${DOC}ksysguard/${I}
+${DOC}kuick/common
+${DOC}kuick/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
+${DOC}mediaplayer/common
+${DOC}mediaplayer/${I}
+${DOC}smbmounter/common
+${DOC}smbmounter/${I}
+${DOC}uachanger/common
+${DOC}uachanger/${I}
+${DOC}validators/common
+${DOC}validators/${I}
+${DOC}webarchiver/common
+${DOC}webarchiver/${I}
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -813,14 +854,22 @@ share/locale/nl/flag.png
 @comment @dirrm share/locale/nl/LC_MESSAGES
 @comment @dirrm share/locale/nl
 @comment @dirrm share/locale
+@dirrm ${DOC}webarchiver
+@dirrm ${DOC}validators
+@dirrm ${DOC}uachanger
+@dirrm ${DOC}smbmounter
+@dirrm ${DOC}mediaplayer
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
+@dirrm ${DOC}kuick
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kpager
 @dirrm ${DOC}konsole
+@dirrm ${DOC}konq-plugins
 @dirrm ${DOC}kompare
 @dirrm ${DOC}kmoon
+@dirrm ${DOC}klipper
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kinfocenter/xserver
 @dirrm ${DOC}kinfocenter/usb
@@ -835,6 +884,8 @@ share/locale/nl/flag.png
 @dirrm ${DOC}kinfocenter/dma
 @dirrm ${DOC}kinfocenter/blockdevices
 @dirrm ${DOC}kinfocenter
+@dirrm ${DOC}kicker-applets
+@dirrm ${DOC}khtmlsettings
 @dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter/userguide
 @dirrm ${DOC}khelpcenter/quickstart
@@ -880,10 +931,16 @@ share/locale/nl/flag.png
 @dirrm ${DOC}kcontrol/arts
 @dirrm ${DOC}kcontrol
 @dirrm ${DOC}kbugbuster
+@dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate
 @dirrm ${DOC}kaphorism
 @dirrm ${DOC}kaddressbook
+@dirrm ${DOC}imgallery
+@dirrm ${DOC}domtreeviewer
+@dirrm ${DOC}dirfilter
+@dirrm ${DOC}crashes
 @dirrm ${DOC}common
+@dirrm ${DOC}babel
 @dirrm ${DOC}artsbuilder
 @dirrm share/doc/HTML/nl
 @comment @dirrm share/doc/HTML

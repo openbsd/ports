@@ -1,25 +1,20 @@
-@comment $OpenBSD: PLIST.nn,v 1.9 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.nn,v 1.10 2003/12/07 20:19:14 espie Exp $
 ${DOC}kaddressbook/common
-${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
 ${DOC}kcontrol/common
-${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
 ${DOC}kcontrol/screenshot.png
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kinfocenter/common
-${DOC}kinfocenter/${C}
 ${DOC}kinfocenter/${I}
 ${DOC}klipper/common
-${DOC}klipper/${C}
 ${DOC}klipper/${I}
 ${DOC}kmail/common
 ${DOC}kmail/configure.docbook
@@ -27,7 +22,6 @@ ${DOC}kmail/credits-and-licenses.docbook
 ${DOC}kmail/faq.docbook
 ${DOC}kmail/getting-started.docbook
 ${DOC}kmail/importing.docbook
-${DOC}kmail/${C}
 ${DOC}kmail/${I}
 ${DOC}kmail/intro.docbook
 ${DOC}kmail/menus.docbook

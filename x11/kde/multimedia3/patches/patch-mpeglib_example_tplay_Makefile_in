@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/example/tplay/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/example/tplay/Makefile.in	Wed Jun 11 09:32:09 2003
-@@ -388,9 +388,9 @@ tplay_SOURCES = tplay.cpp
+$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/example/tplay/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/example/tplay/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -389,9 +389,9 @@ tplay_SOURCES = tplay.cpp
  
  noinst_HEADERS = 
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espi
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/tplay
-@@ -404,7 +404,7 @@ am_tplay_OBJECTS = tplay.$(OBJEXT)
+@@ -405,7 +405,7 @@ am_tplay_OBJECTS = tplay.$(OBJEXT)
  #>- tplay_OBJECTS = $(am_tplay_OBJECTS)
  #>+ 1
  tplay_OBJECTS = tplay.$(OBJEXT)

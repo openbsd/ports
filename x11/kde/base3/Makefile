@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2003/07/30 12:59:22 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2003/12/07 20:19:13 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.3
+VERSION=		3.1.4
 DISTNAME=		kdebase-${VERSION}
 
 FLAVORS=		debug

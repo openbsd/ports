@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdesu_process_cpp,v 1.4 2003/04/05 14:53:39 espie Exp $
---- kdesu/process.cpp.orig	Sun Mar  2 20:00:58 2003
-+++ kdesu/process.cpp	Sun Mar 30 16:24:08 2003
+$OpenBSD: patch-kdesu_process_cpp,v 1.5 2003/12/07 20:19:14 espie Exp $
+--- kdesu/process.cpp.orig	2003-05-07 13:46:21.000000000 +0200
++++ kdesu/process.cpp	2003-12-04 02:08:43.000000000 +0100
 @@ -38,6 +38,9 @@
  #include <stropts.h>
  #include <sys/stream.h>
@@ -27,13 +27,13 @@ $OpenBSD: patch-kdesu_process_cpp,v 1.4 2003/04/05 14:53:39 espie Exp $
          if (ret == -1) 
          {
              if (errno == EINTR) continue;
-@@ -457,6 +465,9 @@ int PtyProcess::SetupTTY(int fd)
-     ioctl(slave, I_PUSH, "ptem");
+@@ -458,6 +466,9 @@ int PtyProcess::SetupTTY(int fd)
      ioctl(slave, I_PUSH, "ldterm");
  
-+#endif
+ #endif
 +#ifdef __OpenBSD__
 +    ioctl(slave, TIOCSCTTY, (char *)NULL);
- #endif
++#endif
  
  #ifdef __OpenBSD__
+     ioctl(slave, TIOCSCTTY, (char *)NULL);

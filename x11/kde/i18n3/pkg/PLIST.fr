@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.9 2003/07/30 12:59:22 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.10 2003/12/07 20:19:14 espie Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
@@ -147,6 +147,9 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}flashkard/common
+${DOC}flashkard/${C}
+${DOC}flashkard/${I}
 ${DOC}kaboodle/common
 ${DOC}kaboodle/${C}
 ${DOC}kaboodle/${I}
@@ -754,6 +757,9 @@ ${DOC}kmenuedit/icon_sets.png
 ${DOC}kmenuedit/icons.png
 ${DOC}kmenuedit/${C}
 ${DOC}kmenuedit/${I}
+${DOC}kmessedwords/common
+${DOC}kmessedwords/${C}
+${DOC}kmessedwords/${I}
 ${DOC}kmid/common
 ${DOC}kmid/${C}
 ${DOC}kmid/${I}
@@ -953,6 +959,7 @@ ${DOC}kpat/diamonds.png
 ${DOC}kpat/hearts.png
 ${DOC}kpat/${C}
 ${DOC}kpat/${I}
+${DOC}kpat/man.docbook
 ${DOC}kpat/playfield.png
 ${DOC}kpat/spades.png
 ${DOC}kpercentage/commands.docbook
@@ -1159,6 +1166,9 @@ ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
 ${DOC}kuser/kuser.png
+${DOC}kverbos/common
+${DOC}kverbos/${C}
+${DOC}kverbos/${I}
 ${DOC}kview/common
 ${DOC}kview/${C}
 ${DOC}kview/${I}
@@ -1698,6 +1708,7 @@ share/locale/fr/flag.png
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kview
+@dirrm ${DOC}kverbos
 @dirrm ${DOC}kuser
 @dirrm ${DOC}kuickshow
 @dirrm ${DOC}ktuberling
@@ -1764,6 +1775,7 @@ share/locale/fr/flag.png
 @dirrm ${DOC}kmines
 @dirrm ${DOC}kmidi
 @dirrm ${DOC}kmid
+@dirrm ${DOC}kmessedwords
 @dirrm ${DOC}kmenuedit
 @dirrm ${DOC}kmathtool
 @dirrm ${DOC}kmail
@@ -1894,6 +1906,7 @@ share/locale/fr/flag.png
 @dirrm ${DOC}kalarm
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kaboodle
+@dirrm ${DOC}flashkard
 @dirrm ${DOC}common
 @dirrm ${DOC}cervisia
 @dirrm ${DOC}atlantik

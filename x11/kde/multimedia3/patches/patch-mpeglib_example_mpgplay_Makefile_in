@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/example/mpgplay/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/example/mpgplay/Makefile.in	Wed Jun 11 09:29:52 2003
-@@ -388,9 +388,9 @@ mpgplay_SOURCES = mpgplay.cpp
+$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/example/mpgplay/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/example/mpgplay/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -389,9 +389,9 @@ mpgplay_SOURCES = mpgplay.cpp
  
  noinst_HEADERS = 
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.5 2003/06/12 19:16:16 es
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/mpgplay
-@@ -404,7 +404,7 @@ am_mpgplay_OBJECTS = mpgplay.$(OBJEXT)
+@@ -405,7 +405,7 @@ am_mpgplay_OBJECTS = mpgplay.$(OBJEXT)
  #>- mpgplay_OBJECTS = $(am_mpgplay_OBJECTS)
  #>+ 1
  mpgplay_OBJECTS = mpgplay.$(OBJEXT)

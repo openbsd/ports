@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.tr,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.tr,v 1.8 2003/12/07 20:19:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -47,14 +47,12 @@ ${DOC}common/xml.dcl
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kinfocenter/protocols/common
-${DOC}kinfocenter/protocols/${C}
 ${DOC}kinfocenter/protocols/${I}
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
@@ -73,7 +71,6 @@ ${DOC}kioslave/http.docbook
 ${DOC}kioslave/https.docbook
 ${DOC}kioslave/imap.docbook
 ${DOC}kioslave/imaps.docbook
-${DOC}kioslave/${C}
 ${DOC}kioslave/${I}
 ${DOC}kioslave/info.docbook
 ${DOC}kioslave/lan.docbook

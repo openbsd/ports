@@ -1,7 +1,7 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- kscd/libwm/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ kscd/libwm/Makefile.in	Tue Jun 10 10:59:35 2003
-@@ -385,11 +385,11 @@ subdirs = include
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- kscd/libwm/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ kscd/libwm/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -386,11 +386,11 @@ subdirs = include
  
  INCLUDES = $(all_includes) 
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  database.c index.c scsi.c \
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -402,24 +402,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -403,24 +403,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -48,7 +48,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
-@@ -465,9 +465,9 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+@@ -466,9 +466,9 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -60,7 +60,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  #>- all: all-am
  #>+ 1
-@@ -512,8 +512,8 @@ clean-libLTLIBRARIES:
+@@ -513,8 +513,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -71,7 +71,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT) core *.core
-@@ -790,16 +790,16 @@ force-reedit:
+@@ -791,16 +791,16 @@ force-reedit:
  
  #>+ 2
  final:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
---- mpeglib/example/cddaplay/Makefile.in.orig	Wed May  7 14:05:28 2003
-+++ mpeglib/example/cddaplay/Makefile.in	Wed Jun 11 09:33:05 2003
-@@ -388,9 +388,9 @@ cddaplay_SOURCES = cddaplay.cpp
+$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.6 2003/12/07 20:19:15 espie Exp $
+--- mpeglib/example/cddaplay/Makefile.in.orig	2003-09-11 21:15:30.000000000 +0200
++++ mpeglib/example/cddaplay/Makefile.in	2003-12-04 19:31:12.000000000 +0100
+@@ -389,9 +389,9 @@ cddaplay_SOURCES = cddaplay.cpp
  
  noinst_HEADERS = 
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.5 2003/06/12 19:16:16 e
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/cddaplay
-@@ -404,7 +404,7 @@ am_cddaplay_OBJECTS = cddaplay.$(OBJEXT)
+@@ -405,7 +405,7 @@ am_cddaplay_OBJECTS = cddaplay.$(OBJEXT)
  #>- cddaplay_OBJECTS = $(am_cddaplay_OBJECTS)
  #>+ 1
  cddaplay_OBJECTS = cddaplay.$(OBJEXT)

@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST.xh,v 1.9 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.xh,v 1.10 2003/12/07 20:19:14 espie Exp $
 ${DOC}amor/common
-${DOC}amor/${C}
 ${DOC}amor/${I}
 ${DOC}artsbuilder/gui.docbook
 ${DOC}kaddressbook/common
-${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
 ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/openheader.docbook
@@ -17,7 +15,6 @@ ${DOC}kdeprint/rlpr.docbook
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
@@ -41,7 +38,6 @@ ${DOC}kioslave/http.docbook
 ${DOC}kioslave/https.docbook
 ${DOC}kioslave/imap.docbook
 ${DOC}kioslave/imaps.docbook
-${DOC}kioslave/${C}
 ${DOC}kioslave/${I}
 ${DOC}kioslave/info.docbook
 ${DOC}kioslave/lan.docbook
@@ -67,16 +63,12 @@ ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
 ${DOC}kmail/common
-${DOC}kmail/${C}
 ${DOC}kmail/${I}
 ${DOC}kmenuedit/common
-${DOC}kmenuedit/${C}
 ${DOC}kmenuedit/${I}
 ${DOC}konqueror/common
-${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
 ${DOC}kspell/common
-${DOC}kspell/${C}
 ${DOC}kspell/${I}
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
