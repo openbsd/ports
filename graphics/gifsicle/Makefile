@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/16 07:52:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/20 20:00:22 jakob Exp $
 
-DISTNAME=		gifsicle-1.17
+DISTNAME=		gifsicle-1.19
 CATEGORIES=     	graphics
+NEED_VERSION=		1.302
 
 MAINTAINER=		jakob@openbsd.org
 
@@ -13,9 +14,8 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=		http://www.lcdf.org/gifsicle/
 HOMEPAGE=		http://www.lcdf.org/gifsicle/
 
-FAKE=			yes
+CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
-GNU_CONFIGURE=		yes
 USE_X11=		yes
 
 .include <bsd.port.mk>
