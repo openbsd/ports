@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.71 2003/04/23 18:23:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.72 2003/06/27 17:57:52 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-6.1
-REVISION=	474
-VERSION=	6.1.${REVISION}
+DISTNAME=	vim-6.2
+REVISION=	14
+VERSION=	6.2.${REVISION}
 PKGNAME=	vim-${VERSION}
+P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
-		ftp://ftp.home.vim.org/pub/vim/unix/ \
-		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
-		ftp://ftp.is.co.za/applications/editors/vim/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
+MASTER_SITES=   ftp://ftp.vim.org/pub/vim/unix/ \
+	        ftp://ftp.home.vim.org/pub/vim/unix/ \
+	        ftp://ftp.berlin.de.vim.org/unix/
 MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
@@ -24,11 +23,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-PATCHFILES=	6.1.1-100.gz:0 6.1.101-200.gz:0 6.1.201-300.gz:0 \
-		6.1.301-400.gz:0
-_patches!=	jot -w%03d - 401 ${REVISION} 1
+#PATCHFILES=
+_patches!=	jot -w%03d - 1 ${REVISION} 1
 .for p in ${_patches}
-PATCHFILES+=	6.1.${p}:0
+PATCHFILES+=	6.2.${p}:0
 .endfor
 
 # allow vim to build on m68k and vax
@@ -59,7 +57,7 @@ RUN_DEPENDS=::editors/vim/stable${_flavor}
 PKGNAME$i=      vim$i-${VERSION}
 .endfor
 
-FLAVORS=	huge gtk athena motif no_x11 perl python ruby
+FLAVORS=	huge gtk gtk2 athena motif no_x11 perl python ruby
 FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
@@ -88,28 +86,32 @@ LIB_DEPENDS+=	ruby::lang/ruby
 .endif
 
 .if ${FLAVOR:L:Mno_x11} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena}
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--disable-gui --without-x
 .elif ${FLAVOR:L:Mmotif} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=any
 .elif ${FLAVOR:L:Mathena} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif}
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 .elif ${FLAVOR:L:Mgtk} && \
-	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
-CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
+CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim --disable-gtk2-check
+.elif ${FLAVOR:L:Mgtk2} && \
+	        !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk}
+LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 .else
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
 .endif
 
-WRKDIST=		${WRKDIR}/vim61
+WRKDIST=		${WRKDIR}/${P}
 WRKSRC=			${WRKDIST}/src
 
-SUBST_VARS=     	VERSION
+SUBST_VARS=     	P
 
 .include <bsd.own.mk>
 
@@ -119,5 +121,5 @@ post-patch:
 	touch ${WRKBUILD}/auto/configure
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/pf.vim ${PREFIX}/share/vim/vim61/syntax
+	${INSTALL_DATA} ${FILESDIR}/pf.vim ${PREFIX}/share/vim/${P}/syntax
 .include <bsd.port.mk>
