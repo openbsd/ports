@@ -1,5 +1,5 @@
---- display.c.orig	Thu Jan 27 14:51:39 2000
-+++ display.c	Thu Jan 27 15:14:55 2000
+--- display.c.orig	Wed Nov  6 17:59:38 1996
++++ display.c	Sun Feb 24 22:01:59 2002
 @@ -27,7 +27,10 @@
   */
  
@@ -56,7 +56,7 @@
  
    /* tjk timing */
    static struct timeval session_start, cur_delta;
-@@ -218,7 +221,6 @@
+@@ -218,14 +221,14 @@
      }
      
      for (;;) {
@@ -64,7 +64,16 @@
        struct timeval t1,t2,t3;
  
        bcopy(subtract_timeval(&pkth->ts, &session_start),
-@@ -477,12 +479,10 @@
+ 			&t1, sizeof(struct timeval));
+       bcopy(subtract_timeval(&pkth->ts, &last_time),
+ 			&t2, sizeof(struct timeval));
+-      last_time = pkth->ts;
++      last_time.tv_sec = pkth->ts.tv_sec;
++      last_time.tv_usec = pkth->ts.tv_usec;
+ 
+ 	  timeout = t2;
+ 
+@@ -477,12 +480,10 @@
  
  	if (length > 46) {
  	  len = 46;
@@ -79,7 +88,7 @@
  	}
  
  	mode=0;
-@@ -561,8 +561,7 @@
+@@ -561,8 +562,7 @@
  	if (len == 46) {
  	  printf("\033[26;34H\033[7m%s\033[0m", new_buffer);
  	  former_buflen = 46;
@@ -89,7 +98,7 @@
  	} else {
  	  if ((former_buflen + len) > 46) {
  		diff = (former_buflen + len - 46);
-@@ -572,17 +571,14 @@
+@@ -572,17 +572,14 @@
  		printf("\033[26;%dH", 34+former_buflen-(diff));
  		printf("\033[7m%s\033[0m", new_buffer);
  		former_buflen = 46;
@@ -110,7 +119,7 @@
  	  }
  	}
    }
-@@ -600,7 +596,7 @@
+@@ -600,7 +597,7 @@
  char *p;
  int length;
  {
@@ -119,7 +128,7 @@
    int i;
    int redraw_status=0;
    enum { STATE_NOTHING, STATE_ESCAPE, STATE_BRACKET, STATE_ARGUMENTS } state;
-@@ -741,6 +737,7 @@
+@@ -741,6 +738,7 @@
  static FILE *sfp=NULL, *cfp=NULL;
  static char dumpbase[1024];
  
@@ -127,7 +136,7 @@
  dump_connection(input_filename, con_id)
  char *input_filename;
  int con_id;
-@@ -754,7 +751,8 @@
+@@ -754,7 +752,8 @@
    printf("Enter basename for output files (server side will append '.srv', client '.cli'\n");
    printf(":");
    fflush(stdout);
@@ -137,7 +146,7 @@
  
    if ((pcp = pcap_open_offline(input_filename, ebuf)) == NULL) {
      fprintf(stderr, "Can't open input file: %s\n", ebuf);
-@@ -798,8 +796,6 @@
+@@ -798,8 +797,6 @@
    printf("NOTE: You may want to run:\n");
    printf("tr -d '\\015' <basename.srv     - and/or -\n");
    printf("tr '\\015' '\\012' <basename.cli\n");
@@ -146,7 +155,7 @@
  }
  
  static void
-@@ -812,9 +808,7 @@
+@@ -812,9 +809,7 @@
    struct ip *ip;
    struct tcphdr *tcph;
    u_char *abuf, *abuf2;
