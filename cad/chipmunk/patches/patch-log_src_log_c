@@ -1,0 +1,33 @@
+$OpenBSD: patch-log_src_log_c,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
+--- log/src/log.c.orig	2003-03-12 15:49:30.000000000 -0700
++++ log/src/log.c	2003-10-25 10:51:32.000000000 -0600
+@@ -21278,6 +21278,9 @@ Static Void initialize()
+   short FORLIM;
+   nk_keytransinfo *WITH;
+   log_sigrec *WITH1;
++  int fd = -1;
++  char tmpf[25] = "/tmp/chipmunk.XXXXXXXXXX";
++  FILE *tmpp;
+ 
+ #ifdef OS2
+   _control87(EM_UNDERFLOW, EM_UNDERFLOW);  /* Turn off underflow exception. */
+@@ -21576,8 +21579,17 @@ Static Void initialize()
+ 	if (flag) {
+ 	  if (libf1[k]->f != NULL)
+ 	    rewind(libf1[k]->f);
+-	  else
+-	    libf1[k]->f = tmpfile();
++	  else {
++	    if ((fd = mkstemp(tmpf)) == -1 ||
++	        (tmpp = fdopen(fd, "w+")) == NULL) {
++		    if (fd != -1) {
++		      unlink(tmpf);
++		      close(fd);
++		    }
++		    libf1[k]->f = NULL;
++	    } else
++		    libf1[k]->f = tmpp;
++	  }
+ 	  if (libf1[k]->f == NULL) {
+ 	    P_escapecode = -10;
+ 	    P_ioresult = FileNotFound;

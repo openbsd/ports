@@ -1,0 +1,11 @@
+$OpenBSD: patch-psys_include_p2c_p2c_h,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
+--- psys/include/p2c/p2c.h.orig	2003-03-12 15:47:35.000000000 -0700
++++ psys/include/p2c/p2c.h	2003-10-25 11:12:13.000000000 -0600
+@@ -336,6 +336,7 @@ extern Void	P_sun_argv  PP( (char *, int
+ #define EndOfFile        30
+ 
+ /* Creating temporary files */
++#define HAVE_TMPFILE
+ #if (defined(BSD) || defined(NO_TMPFILE)) && !defined(HAVE_TMPFILE)
+ # define tmpfile()  (fopen(tmpnam(NULL), "w+"))
+ #endif

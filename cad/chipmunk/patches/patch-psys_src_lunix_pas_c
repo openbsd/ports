@@ -1,0 +1,12 @@
+$OpenBSD: patch-psys_src_lunix_pas_c,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
+--- psys/src/lunix_pas.c.orig	2003-03-12 15:47:35.000000000 -0700
++++ psys/src/lunix_pas.c	2003-10-25 00:25:12.000000000 -0600
+@@ -17,7 +17,7 @@ Void lunix_intToDate (long idate, datere
+ {
+   struct tm *temp_tm;
+ 
+-  temp_tm = localtime(&idate);
++  temp_tm = localtime((time_t *)&idate);
+   date->year = temp_tm->tm_year;
+   date->day = temp_tm->tm_mday;
+   date->month = temp_tm->tm_mon + 1;
