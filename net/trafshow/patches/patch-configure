@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2001/04/03 02:43:45 brad Exp $
+--- configure.orig	Fri Aug 28 03:31:56 1998
++++ configure	Mon Apr  2 22:24:06 2001
+@@ -2554,6 +2554,18 @@ echo "$ac_t""$V_PCAPVER" 1>&6
+ V_GROUP=0
+ case "$target_os" in
+ 
++openbsd*)
++	cat >> confdefs.h <<\EOF
++#define HAVE_RTF_LLINFO 1
++EOF
++
++	;;
++netbsd*)
++	cat >> confdefs.h <<\EOF
++#define HAVE_RTF_LLINFO 1
++EOF
++
++	;;
+ freebsd*)
+ 	cat >> confdefs.h <<\EOF
+ #define HAVE_RTF_LLINFO 1

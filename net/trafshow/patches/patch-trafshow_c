@@ -1,0 +1,20 @@
+$OpenBSD: patch-trafshow_c,v 1.1 2001/04/03 02:43:46 brad Exp $
+--- trafshow.c.orig	Mon Apr  2 22:24:05 2001
++++ trafshow.c	Mon Apr  2 22:24:06 2001
+@@ -62,7 +62,7 @@ int use_colors = FALSE;
+ int resize_flag = 0;
+ int addr_size, proto_size, bytes_size, cps_size, count_size;
+ 
+-void
++int
+ main(argc, argv)
+ 	int argc;
+ 	char **argv;
+@@ -202,6 +202,7 @@ main(argc, argv)
+ 		error(0, pcap_geterr(pd));
+ 	pcap_close(pd);
+ 	cleanup(0);
++	return 0;
+ }
+ 
+ /*

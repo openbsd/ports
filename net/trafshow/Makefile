@@ -1,31 +1,34 @@
-# New ports collection makefile for:	trafshow
-# Version required:     3.0
-# Date created:         28 Jan 1998
-# Whom:                 mickey
-#
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:11 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2001/04/03 02:43:44 brad Exp $
+
+COMMENT=	"full screen visualization of network traffic"
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
+MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
+
+PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=     Michael Shalayeff <mickey@openbsd.org>
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-DINET6"
+
+ALL_TARGET=	trafshow
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/trafshow
-	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trafshow
+	${INSTALL_PROGRAM} ${WRKBUILD}/trafshow ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/lib/trafshow/trafshow.sample
+	${INSTALL_DATA} ${WRKSRC}/.trafshow \
+		${PREFIX}/share/examples/trafshow/trafshow.conf.sample
 
 .include <bsd.port.mk>
