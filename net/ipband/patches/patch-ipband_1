@@ -1,0 +1,29 @@
+$OpenBSD: patch-ipband_1,v 1.1.1.1 2001/10/30 20:45:29 lebel Exp $
+--- ipband.1.orig	Wed Oct  3 14:33:59 2001
++++ ipband.1	Tue Oct 30 15:31:39 2001
+@@ -68,13 +68,13 @@ a partial ip address such as 192.168.1.0
+ 
+ Here is a list of arguments to \-L along with the corresponding range.
+ 
+-   COMMAND: \fBipband eth0 \-l 137.99.11\fR
++   COMMAND: \fBipband ne0 \-l 137.99.11\fR
+    RANGE:   137.99.11.0\-137.99.11.255
+ 
+-   COMMAND: \fBipband eth0 \-L 137.99.11:127.0.5/23\fR
++   COMMAND: \fBipband ne0 \-L 137.99.11:127.0.5/23\fR
+    RANGE:   137.99.11.0\-137.99.11.255,127.0.4.0\-127.0.5.255
+ 
+-   COMMAND: \fBipband eth0 \-L 127.1.5.17\-127.1.7.131\fR
++   COMMAND: \fBipband ne0 \-L 127.1.5.17\-127.1.7.131\fR
+    RANGE:   127.1.5.17\-127.1.7.131
+ 
+ 
+@@ -178,7 +178,7 @@ Like \-L option, determines which range(
+ Specifies which subnets \fBipband\fR should work with and sets individual bandwidth thresholds for them \- one subnet option per line (subnet mask is set by \fImaskbits\fR option). This option is only available through a configuration file. Setting it limits data collection and reporting to the specified subnets.
+ .SH "EXAMPLES"
+ .TP 
+-.B  ipband eth0 \-f "net 10.10.0.0/16" \-m 24 \-a 300 \-r 900   
++.B  ipband ne0 \-f "net 10.10.0.0/16" \-m 24 \-a 300 \-r 900   
+ 
+ Will capture packets from/to ip addresses matching 10.10.0.0/255.255.0.0, tally traffic by the third octet,calculate bandwidth utilization every 5 minutes and report per host traffic every 15 minutes.
+ 
