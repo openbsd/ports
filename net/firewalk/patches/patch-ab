@@ -1,0 +1,10 @@
+--- ifaddrlist.c.orig	Fri Oct 16 19:50:49 1998
++++ ifaddrlist.c	Sat Mar 27 13:00:14 1999
+@@ -46,7 +46,6 @@
+ struct rtentry;
+ #endif
+ 
+-#include <net/if.h>
+ #include <netinet/in.h>
+ 
+ #include <ctype.h>

@@ -3,19 +3,23 @@
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.3 1999/03/10 04:51:32 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/27 12:24:00 niklas Exp $
 #
 
-PKGNAME=		firewalk-0.7
-DISTNAME=		firewalk-final-0.7
+PKGNAME=		firewalk-0.7c
+DISTNAME=		firewalk-final-0.7c
 CATEGORIES=     	net
 
-BROKEN=			"es2.net nameserver(s) not working"
 MIRROR_DISTFILE=	no
 
-MASTER_SITES=		http://www.es2.net/research/firewalk/
+# www.es2.net does not resolve
+#MASTER_SITES=		http://www.es2.net/research/firewalk/
+MASTER_SITES=		ftp://ftp.technotronic.com/unix/security-tools/
 
 MAINTAINER=		dugsong@monkey.org
+
+# Due to 0.7c is named as .gz, but really was uncompressed!
+EXTRACT_ARGS=		-xf
 
 GNU_CONFIGURE=		yes
 
