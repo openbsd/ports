@@ -1,0 +1,11 @@
+$OpenBSD: patch-elvi_netbsd,v 1.1 2001/11/09 02:16:22 naddy Exp $
+--- elvi/netbsd.orig	Mon Jan 15 08:57:21 2001
++++ elvi/netbsd	Fri Nov  9 03:02:48 2001
+@@ -68,6 +68,6 @@ fi
+ if test -z "$escaped_args"; then
+     w3_browse_url "http://www.netbsd.org/"
+ else
+-    w3_browse_url "http://www.netbsd.org/cgi-bin/htsearch?method=and&format=builtin-long&sort=score&config=htdig&words=${escaped_args}"
++    w3_browse_url "http://www.google.com/custom?q=${escaped_args}&cof=LW%3A247%3BL%3Ahttp%3A%2F%2Fwww.netbsd.org%2Fimages%2FNetBSD-smaller.jpg%3BLH%3A241%3BAH%3Acenter%3BAWFID%3A4f6b0499f0f58d2c%3B&domains=netbsd.org&sitesearch=netbsd.org"
+ fi
+ exit $?

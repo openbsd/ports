@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/07 00:40:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/09 02:16:22 naddy Exp $
 
 COMMENT=	"command line interface to popular WWW search engines"
 
+PKGNAME=	${DISTNAME}p1
 DISTNAME=	surfraw-1.0.5
 CATEGORIES=	www
 NEED_VERSION=	1.363
