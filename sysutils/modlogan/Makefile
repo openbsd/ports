@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/24 21:39:44 mjc Exp $
+# $OpenBSD: Makefile,v 1.7 2004/07/04 23:40:05 mjc Exp $
 
 COMMENT=	"modular log analyzer"
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

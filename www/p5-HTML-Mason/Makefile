@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/04/18 19:53:41 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2004/07/04 23:42:59 mjc Exp $
 
 COMMENT=	"high-performance dynamic web authoring system"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.masonhq.com/
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

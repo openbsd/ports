@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/16 21:16:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/04 23:40:05 mjc Exp $
 
 COMMENT=	"gtk soulseek client written in Python"
 
@@ -7,7 +7,7 @@ CATEGORIES=	net x11
 
 HOMEPAGE=	http://nicotine.thegraveyard.org/
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/22 23:09:14 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/04 23:42:59 mjc Exp $
 
 COMMENT=	"Test wrapper with helpers for testing Apache"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes

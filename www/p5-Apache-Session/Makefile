@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/02 23:09:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/04 23:42:59 mjc Exp $
 
 COMMENT=	"persistence framework for Apache session data"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

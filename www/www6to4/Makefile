@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/20 19:59:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/04 23:42:59 mjc Exp $
 
 COMMENT=		"IPv6 to IPv4 web proxy"
 
@@ -6,7 +6,7 @@ DISTNAME=		www6to4-1.5
 CATEGORIES=		www
 HOMEPAGE=		http://www.vermicelli.pasta.cs.uit.no/ipv6/software.html
 
-MAINTAINER=		Michael Coulter <mjc@bitz.ca>
+MAINTAINER=		Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

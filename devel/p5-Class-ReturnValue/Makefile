@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/10 17:46:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/04 23:40:05 mjc Exp $
 
 COMMENT=	"smart return-value object"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 HOMEPAGE=	http://search.cpan.org/dist/Class-ReturnValue/
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 BUILD_DEPENDS=	:p5-Devel-StackTrace-*:devel/p5-Devel-StackTrace
 

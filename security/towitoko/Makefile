@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/14 15:12:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/04 23:40:05 mjc Exp $
 
 COMMENT=		"library and utilities for towitoko card readers"
 
@@ -7,7 +7,7 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://www.geocities.com/cprados/
 
-MAINTAINER=		Michael Coulter <mjc@bitz.ca>
+MAINTAINER=		Michael Coulter <mjc@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

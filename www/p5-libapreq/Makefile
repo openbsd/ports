@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/16 22:32:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/04 23:42:59 mjc Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -9,7 +9,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

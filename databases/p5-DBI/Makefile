@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.34 2004/07/04 23:40:05 mjc Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBI/}
 
 HOMEPAGE=	http://dbi.perl.org/index.html
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/18 18:31:55 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2004/07/04 23:40:05 mjc Exp $
 
 COMMENT=	"stack trace and stack trace frame objects"
 
@@ -6,7 +6,7 @@ DISTNAME=	Devel-StackTrace-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/04/18 19:08:55 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2004/07/04 23:40:05 mjc Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=	Params-Validate-0.74
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=   Yes
