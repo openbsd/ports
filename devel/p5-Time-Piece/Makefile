@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/17 09:57:59 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"object oriented time interface"
 
-DISTNAME=	Time-Piece-1.07
+DISTNAME=	Time-Piece-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
