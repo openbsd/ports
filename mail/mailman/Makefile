@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/01/18 18:25:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2003/01/27 10:47:04 sturm Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -17,6 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
+
+# workaround XSS bug, will be part of 2.1.1
+PATCH_DIST_ARGS=	-b ${DISTORIG} -d ${WRKSRC}/Mailman/Cgi --forward \
+				--quiet -E ${PATCH_DIST_STRIP}
+PATCHFILES=		xss-2.1.0-patch.txt
 
 PYTHON_VER=		2.2
 BUILD_DEPENDS=		${RUN_DEPENDS}
