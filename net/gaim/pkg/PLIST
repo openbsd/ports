@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2004/09/17 02:07:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.36 2004/09/17 06:00:25 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/
@@ -129,6 +129,7 @@ lib/gaim/ticker.so
 lib/gaim/timestamp.so
 lib/libgaim-remote.la
 @lib lib/libgaim-remote.so.0.0
+lib/pkgconfig/
 lib/pkgconfig/gaim.pc
 @man man/man1/gaim-remote.1
 @man man/man1/gaim.1
