@@ -1,9 +1,9 @@
-# New ports collection makefile for:	ssh
+# OpenBSD makefile for:	ssh
 # Version required:     1.2.21
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:40 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/17 23:31:19 todd Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
