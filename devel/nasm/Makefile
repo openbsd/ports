@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:39:46 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/22 16:58:06 rohee Exp $
 #
 
 DISTNAME=	nasm-0.97
 CATEGORIES=	devel lang
 
-RESTRICTED=	"license required if incorporated into commerical product"
+RESTRICTED=	"license required if incorporated into commercial product"
 
 MAINTAINER=	angelos@openbsd.org
 
