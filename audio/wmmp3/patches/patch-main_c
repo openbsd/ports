@@ -1,6 +1,15 @@
-$OpenBSD: patch-main_c,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
---- main.c.orig	Mon Apr  3 02:11:46 2000
-+++ main.c	Mon Feb  5 20:17:37 2001
+$OpenBSD: patch-main_c,v 1.2 2003/08/04 13:31:28 wilfried Exp $
+--- main.c.orig	2000-04-03 02:11:46.000000000 +0200
++++ main.c	2003-08-04 15:05:48.000000000 +0200
+@@ -125,7 +125,7 @@ void loadconfig()
+     errno = 0;
+ 
+     /* set defualts in case anything fails */
+-    set_mpg123("/usr/local/bin/mpg123");
++    set_mpg123("/usr/local/bin/madplay");
+     set_mp3ext(".mp3");
+     set_playlistext(".m3u");
+ 
 @@ -230,7 +230,7 @@ int check_options(int argc, char *argv[]
      return option_entered;
  }
