@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/02/08 10:36:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/16 01:25:23 jcs Exp $
 
-DISTNAME=	freetds-0.62
+DISTNAME=	freetds-0.62.1
 CATEGORIES=	databases
 
 # GPL
