@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.he,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.he,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -354,4 +354,3 @@ share/locale/he/flag.png
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/he
-@dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.sv,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/ktuberling/sounds/sv/brosch.wav
 share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
@@ -355,9 +355,6 @@ ${DOC}kfind/${I}
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
 ${DOC}kfloppy/${I}
-${DOC}kformula/common
-${DOC}kformula/${C}
-${DOC}kformula/${I}
 ${DOC}kfouleggs/common
 ${DOC}kfouleggs/${C}
 ${DOC}kfouleggs/${I}
@@ -585,9 +582,6 @@ ${DOC}knotes/${I}
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
-${DOC}koffice/common
-${DOC}koffice/${C}
-${DOC}koffice/${I}
 ${DOC}koncd/audiocd.jpg
 ${DOC}koncd/common
 ${DOC}koncd/copycd.jpg
@@ -630,14 +624,6 @@ ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
-${DOC}kontour/colour.png
-${DOC}kontour/common
-${DOC}kontour/export.png
-${DOC}kontour/${C}
-${DOC}kontour/${I}
-${DOC}kontour/open_dialog.png
-${DOC}kontour/polygon-setup.png
-${DOC}kontour/save_dialog.png
 ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
@@ -647,9 +633,6 @@ ${DOC}korganizer/${I}
 ${DOC}korn/common
 ${DOC}korn/${C}
 ${DOC}korn/${I}
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
@@ -729,76 +712,6 @@ ${DOC}kppp/kppp-wizard.png
 ${DOC}kppp/security.docbook
 ${DOC}kppp/tricks.docbook
 ${DOC}kppp/wizard.docbook
-${DOC}kpresenter/barmenus.png
-${DOC}kpresenter/barstyle1.png
-${DOC}kpresenter/barstyle2.png
-${DOC}kpresenter/barstyle3.png
-${DOC}kpresenter/barstyle4.png
-${DOC}kpresenter/barstyle5.png
-${DOC}kpresenter/barstyle6.png
-${DOC}kpresenter/barstyle7.png
-${DOC}kpresenter/common
-${DOC}kpresenter/faq.docbook
-${DOC}kpresenter/great-presentations.docbook
-${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/htmlshow01.png
-${DOC}kpresenter/htmlshow02.png
-${DOC}kpresenter/htmlshow03.png
-${DOC}kpresenter/htmlshow04.png
-${DOC}kpresenter/htmlshow05.png
-${DOC}kpresenter/htmlshow07.png
-${DOC}kpresenter/${C}
-${DOC}kpresenter/${I}
-${DOC}kpresenter/menuedit.png
-${DOC}kpresenter/menuextra.png
-${DOC}kpresenter/menufile.png
-${DOC}kpresenter/menuinsert.png
-${DOC}kpresenter/menus.docbook
-${DOC}kpresenter/menuscreen.png
-${DOC}kpresenter/menutext.png
-${DOC}kpresenter/menutools.png
-${DOC}kpresenter/menuview.png
-${DOC}kpresenter/options.docbook
-${DOC}kpresenter/screen.docbook
-${DOC}kpresenter/settings01.png
-${DOC}kpresenter/settings03.png
-${DOC}kpresenter/settings04.png
-${DOC}kpresenter/settings05.png
-${DOC}kpresenter/settings06.png
-${DOC}kpresenter/template02.png
-${DOC}kpresenter/template03.png
-${DOC}kpresenter/template04.png
-${DOC}kpresenter/template06.png
-${DOC}kpresenter/template07.png
-${DOC}kpresenter/textmenu01.png
-${DOC}kpresenter/textmenu02.png
-${DOC}kpresenter/textmenu03.png
-${DOC}kpresenter/textmenu03a.png
-${DOC}kpresenter/toolsmenu01.png
-${DOC}kpresenter/tut01.png
-${DOC}kpresenter/tut02.png
-${DOC}kpresenter/tut03.png
-${DOC}kpresenter/tut04.png
-${DOC}kpresenter/tut05.png
-${DOC}kpresenter/tut06.png
-${DOC}kpresenter/tut07.png
-${DOC}kpresenter/tut08.png
-${DOC}kpresenter/tut09.png
-${DOC}kpresenter/tut10.png
-${DOC}kpresenter/tut11.png
-${DOC}kpresenter/tut12.png
-${DOC}kpresenter/tut13.png
-${DOC}kpresenter/tut14.png
-${DOC}kpresenter/tut15.png
-${DOC}kpresenter/tut16.png
-${DOC}kpresenter/tut17.png
-${DOC}kpresenter/tut18.png
-${DOC}kpresenter/tut19.png
-${DOC}kpresenter/tut20.png
-${DOC}kpresenter/tut21.png
-${DOC}kpresenter/tut22.png
-${DOC}kpresenter/tut23.png
-${DOC}kpresenter/tutorial.docbook
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
@@ -852,9 +765,6 @@ ${DOC}kspaceduel/kspaceduel3.png
 ${DOC}kspell/common
 ${DOC}kspell/${C}
 ${DOC}kspell/${I}
-${DOC}kspread/common
-${DOC}kspread/${C}
-${DOC}kspread/${I}
 ${DOC}kstars/ai-contents.docbook
 ${DOC}kstars/astroinfo.docbook
 ${DOC}kstars/commands.docbook
@@ -919,15 +829,6 @@ ${DOC}ktuberling/menu.help.png
 ${DOC}ktuberling/menu.option.png
 ${DOC}ktuberling/menu.raw.png
 ${DOC}ktuberling/technical-reference.docbook
-${DOC}kugar/common
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/dataref.docbook
-${DOC}kugar/${C}
-${DOC}kugar/${I}
-${DOC}kugar/kugar.png
-${DOC}kugar/template-elements.docbook
-${DOC}kugar/template.docbook
-${DOC}kugar/templatedtd.docbook
 ${DOC}kuickshow/common
 ${DOC}kuickshow/${C}
 ${DOC}kuickshow/${I}
@@ -984,121 +885,6 @@ ${DOC}kweather/${I}
 ${DOC}kwin4/common
 ${DOC}kwin4/${C}
 ${DOC}kwin4/${I}
-${DOC}kword/ChooseTempDia.png
-${DOC}kword/Tut1.png
-${DOC}kword/Tut11a.png
-${DOC}kword/Tut11b.png
-${DOC}kword/Tut13.png
-${DOC}kword/Tut14.png
-${DOC}kword/Tut14a.png
-${DOC}kword/Tut14b.png
-${DOC}kword/Tut15.png
-${DOC}kword/Tut15b.png
-${DOC}kword/Tut16.png
-${DOC}kword/Tut18.png
-${DOC}kword/Tut19.png
-${DOC}kword/Tut2.png
-${DOC}kword/Tut21.png
-${DOC}kword/Tut22.png
-${DOC}kword/Tut3.png
-${DOC}kword/Tut4.png
-${DOC}kword/Tut7.png
-${DOC}kword/Tut8.png
-${DOC}kword/auto1.png
-${DOC}kword/auto2.png
-${DOC}kword/auto3.png
-${DOC}kword/basic.png
-${DOC}kword/basics.docbook
-${DOC}kword/columns.docbook
-${DOC}kword/common
-${DOC}kword/ctab2.png
-${DOC}kword/delcoldlg.png
-${DOC}kword/delrowdlg.png
-${DOC}kword/do_not_translate.docbook
-${DOC}kword/dtab2.png
-${DOC}kword/dtpfmtpg1.png
-${DOC}kword/dtpfmtpg2.png
-${DOC}kword/editing.docbook
-${DOC}kword/fchardlg.png
-${DOC}kword/finddlg.png
-${DOC}kword/formatchar.docbook
-${DOC}kword/formatframes.docbook
-${DOC}kword/formatpara.docbook
-${DOC}kword/formframe1.png
-${DOC}kword/formframe2.png
-${DOC}kword/formframe4.png
-${DOC}kword/formulas.docbook
-${DOC}kword/fpara1.png
-${DOC}kword/fpara2.png
-${DOC}kword/fpara3.png
-${DOC}kword/fpara4.png
-${DOC}kword/fpara5.png
-${DOC}kword/framers.png
-${DOC}kword/frames.docbook
-${DOC}kword/fundimentals.docbook
-${DOC}kword/graphics.docbook
-${DOC}kword/headerfooter.docbook
-${DOC}kword/${C}
-${DOC}kword/${I}
-${DOC}kword/inscoldlg.png
-${DOC}kword/insertmisc.docbook
-${DOC}kword/insrowdlg.png
-${DOC}kword/instab1.png
-${DOC}kword/instab2.png
-${DOC}kword/intro1.png
-${DOC}kword/intro2.png
-${DOC}kword/intro3.png
-${DOC}kword/kparts.docbook
-${DOC}kword/kwordtechinfo.docbook
-${DOC}kword/ltab2.png
-${DOC}kword/mbtb.docbook
-${DOC}kword/obtkb.png
-${DOC}kword/obttb.png
-${DOC}kword/opendlg.png
-${DOC}kword/opt.docbook
-${DOC}kword/opt1.png
-${DOC}kword/opt2.png
-${DOC}kword/optkb.png
-${DOC}kword/opttb.png
-${DOC}kword/pageformat.docbook
-${DOC}kword/pntdlg.png
-${DOC}kword/pntdlg1.png
-${DOC}kword/repldlg.png
-${DOC}kword/rtab2.png
-${DOC}kword/ruler.png
-${DOC}kword/saved1.png
-${DOC}kword/saved2.png
-${DOC}kword/savedlg.png
-${DOC}kword/savetmpl1.png
-${DOC}kword/savetmpl2.png
-${DOC}kword/savetmpl3.png
-${DOC}kword/savetmpl4.png
-${DOC}kword/screen.png
-${DOC}kword/select1.png
-${DOC}kword/spelldlg.png
-${DOC}kword/storeprint.docbook
-${DOC}kword/styldlg1.png
-${DOC}kword/styldlg2.png
-${DOC}kword/styldlg3.png
-${DOC}kword/styldlg4.png
-${DOC}kword/styldlg5.png
-${DOC}kword/styldlg6.png
-${DOC}kword/styldlg7.png
-${DOC}kword/styldlg8.png
-${DOC}kword/styles.docbook
-${DOC}kword/table.docbook
-${DOC}kword/tabstops.docbook
-${DOC}kword/tb2.png
-${DOC}kword/tb3.png
-${DOC}kword/tb4.png
-${DOC}kword/tbmax.png
-${DOC}kword/techinfo.docbook
-${DOC}kword/templatecreation.docbook
-${DOC}kword/toc.docbook
-${DOC}kword/tutorial.docbook
-${DOC}kword/wpfmtpg1.png
-${DOC}kword/wpfmtpg2.png
-${DOC}kword/wpfmtpg3.png
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
@@ -1125,9 +911,6 @@ ${DOC}lskat/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
-${DOC}thesaurus/common
-${DOC}thesaurus/${C}
-${DOC}thesaurus/${I}
 ${LOC}Kiten.mo
 ${LOC}aktion.mo
 ${LOC}amor.mo
@@ -1204,6 +987,7 @@ ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
 ${LOC}kcli.mo
+${LOC}kcm_sambaconf.mo
 ${LOC}kcm_scsimanager.mo
 ${LOC}kcm_splash.mo
 ${LOC}kcmaccess.mo
@@ -1467,6 +1251,7 @@ ${LOC}ktux.mo
 ${LOC}kue.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
+${LOC}kurves.mo
 ${LOC}kuser.mo
 ${LOC}kvalgrind.mo
 ${LOC}kvidmode.mo
@@ -1530,21 +1315,18 @@ share/locale/sv/entry.desktop
 share/locale/sv/flag.png
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
-@dirrm ${DOC}thesaurus
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
-@dirrm ${DOC}kword
 @dirrm ${DOC}kwin4
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kview
 @dirrm ${DOC}kuser
 @dirrm ${DOC}kuickshow
-@dirrm ${DOC}kugar
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
 @dirrm ${DOC}ktouch
@@ -1553,7 +1335,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kstars
-@dirrm ${DOC}kspread
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kspaceduel
 @dirrm ${DOC}ksokoban
@@ -1567,7 +1348,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}ksame
 @dirrm ${DOC}kruler
 @dirrm ${DOC}kreversi
-@dirrm ${DOC}kpresenter
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpoker
 @dirrm ${DOC}kpm
@@ -1577,17 +1357,14 @@ share/locale/sv/flag.png
 @dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kpackage
-@dirrm ${DOC}koshell
 @dirrm ${DOC}korn
 @dirrm ${DOC}korganizer
 @dirrm ${DOC}kooka
-@dirrm ${DOC}kontour
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konqueror
 @dirrm ${DOC}konq-plugins
 @dirrm ${DOC}koncd
-@dirrm ${DOC}koffice
 @dirrm ${DOC}kodo
 @dirrm ${DOC}knotes
 @dirrm ${DOC}knode
@@ -1625,7 +1402,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}kgeo
 @dirrm ${DOC}kfract
 @dirrm ${DOC}kfouleggs
-@dirrm ${DOC}kformula
 @dirrm ${DOC}kfloppy
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
@@ -1666,8 +1442,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}aktion
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/sv
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/sv
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

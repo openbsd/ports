@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.lt,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -203,6 +203,7 @@ ${LOC}kstart.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
+${LOC}ksysv.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}ktimemon.mo

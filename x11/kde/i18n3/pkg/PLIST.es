@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.es,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.es,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}aktion/common
 ${DOC}aktion/${C}
 ${DOC}aktion/${I}
@@ -577,12 +577,6 @@ ${DOC}kvoctrain/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
-${DOC}kword/formulas.docbook
-${DOC}kword/graphics.docbook
-${DOC}kword/headerfooter.docbook
-${DOC}kword/insertmisc.docbook
-${DOC}kword/kparts.docbook
-${DOC}kword/toc.docbook
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
@@ -994,7 +988,6 @@ share/locale/es/flag.png
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
-@dirrm ${DOC}kword
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kview
@@ -1079,4 +1072,3 @@ share/locale/es/flag.png
 @dirrm ${DOC}amor
 @dirrm ${DOC}aktion
 @dirrm share/doc/HTML/es
-@dirrm share/doc/HTML

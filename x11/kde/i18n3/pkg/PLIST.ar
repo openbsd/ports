@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ar,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.ar,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -63,6 +63,7 @@ ${LOC}kcmicons.mo
 ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
+${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkdb.mo
 ${LOC}kcmkeys.mo
@@ -125,6 +126,7 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
+${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
@@ -138,6 +140,7 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
+${LOC}kfract.mo
 ${LOC}kgantt.mo
 ${LOC}kghostview.mo
 ${LOC}khelpcenter.mo
@@ -160,6 +163,7 @@ ${LOC}kio_print.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
+${LOC}kio_smtp.mo
 ${LOC}kit.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -209,6 +213,7 @@ ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
 ${LOC}kregexpeditor.mo
+${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}kscd.mo
 ${LOC}ksirc.mo
@@ -252,6 +257,7 @@ ${LOC}libkdenetwork.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
+${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo

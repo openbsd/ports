@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sl,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.sl,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/ktuberling/sounds/sl/cigara.wav
 share/apps/ktuberling/sounds/sl/klobuk.wav
 share/apps/ktuberling/sounds/sl/kravata.wav
@@ -298,9 +298,6 @@ ${DOC}klipper/${I}
 ${DOC}kmenuedit/common
 ${DOC}kmenuedit/${C}
 ${DOC}kmenuedit/${I}
-${DOC}koffice/common
-${DOC}koffice/${C}
-${DOC}koffice/${I}
 ${DOC}konqueror/cmndline.png
 ${DOC}konqueror/common
 ${DOC}konqueror/dirtree.png
@@ -319,9 +316,6 @@ ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
@@ -342,15 +336,6 @@ ${DOC}kppp/kppp-faq.docbook
 ${DOC}kppp/security.docbook
 ${DOC}kppp/tricks.docbook
 ${DOC}kppp/wizard.docbook
-${DOC}kpresenter/faq.docbook
-${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/menus.docbook
-${DOC}kpresenter/options.docbook
-${DOC}kpresenter/screen.docbook
-${DOC}kpresenter/tutorial.docbook
-${DOC}krita/commands.docbook
-${DOC}krita/faq.docbook
-${DOC}krita/using.docbook
 ${DOC}kruler/common
 ${DOC}kruler/${C}
 ${DOC}kruler/${I}
@@ -360,8 +345,6 @@ ${DOC}ksnapshot/${I}
 ${DOC}ksysguard/common
 ${DOC}ksysguard/${C}
 ${DOC}ksysguard/${I}
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/dataref.docbook
 ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
@@ -711,19 +694,14 @@ share/locale/sl/flag.png
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kuser
-@dirrm ${DOC}kugar
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}ksnapshot
 @dirrm ${DOC}kruler
-@dirrm ${DOC}krita
-@dirrm ${DOC}kpresenter
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kpackage
-@dirrm ${DOC}koshell
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konqueror
-@dirrm ${DOC}koffice
 @dirrm ${DOC}kmenuedit
 @dirrm ${DOC}klipper
 @dirrm ${DOC}kit
@@ -748,8 +726,6 @@ share/locale/sl/flag.png
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/sl
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/sl
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

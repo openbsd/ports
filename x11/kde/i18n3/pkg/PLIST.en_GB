@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.en_GB,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.en_GB,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}kcontrol/kalarmd.docbook
 ${DOC}kcontrol/kcmaccess.docbook
 ${DOC}kcontrol/kcmbell.docbook
@@ -210,6 +210,7 @@ ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
 ${LOC}kcli.mo
+${LOC}kcm_sambaconf.mo
 ${LOC}kcm_scsimanager.mo
 ${LOC}kcm_splash.mo
 ${LOC}kcmaccess.mo
@@ -471,6 +472,7 @@ ${LOC}ktux.mo
 ${LOC}kue.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
+${LOC}kurves.mo
 ${LOC}kuser.mo
 ${LOC}kvalgrind.mo
 ${LOC}kvidmode.mo
@@ -542,4 +544,3 @@ share/locale/en_GB/flag.png
 @dirrm ${DOC}kdebugdialog
 @dirrm ${DOC}kcontrol
 @dirrm share/doc/HTML/en_GB
-@dirrm share/doc/HTML

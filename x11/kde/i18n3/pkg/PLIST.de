@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -277,9 +277,6 @@ ${DOC}kfind/${I}
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
 ${DOC}kfloppy/${I}
-${DOC}kformula/common
-${DOC}kformula/${C}
-${DOC}kformula/${I}
 ${DOC}kfouleggs/common
 ${DOC}kfouleggs/${C}
 ${DOC}kfouleggs/${I}
@@ -322,6 +319,10 @@ ${DOC}kgeo/vector.png
 ${DOC}kghostview/common
 ${DOC}kghostview/${C}
 ${DOC}kghostview/${I}
+${DOC}khangman/common
+${DOC}khangman/${C}
+${DOC}khangman/${I}
+${DOC}khangman/khangman1.png
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/about.docbook
@@ -416,29 +417,6 @@ ${DOC}kicker/qb_root.png
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
-${DOC}killustrator/Poly_set.png
-${DOC}killustrator/ausrichten.png
-${DOC}killustrator/bezier.png
-${DOC}killustrator/blend_dialog.png
-${DOC}killustrator/color.png
-${DOC}killustrator/ellipse.png
-${DOC}killustrator/export.png
-${DOC}killustrator/freehand.png
-${DOC}killustrator/line.png
-${DOC}killustrator/logo.png
-${DOC}killustrator/movepoint.png
-${DOC}killustrator/newpoint.png
-${DOC}killustrator/open_dialog.png
-${DOC}killustrator/pfeil.png
-${DOC}killustrator/point.png
-${DOC}killustrator/polygon.png
-${DOC}killustrator/rect.png
-${DOC}killustrator/rmpoint.png
-${DOC}killustrator/save_dialog.png
-${DOC}killustrator/schichten.png
-${DOC}killustrator/text.png
-${DOC}killustrator/verteilen.png
-${DOC}killustrator/zoom.png
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
@@ -598,9 +576,6 @@ ${DOC}korganizer/kagenda-appointment.png
 ${DOC}korn/common
 ${DOC}korn/${C}
 ${DOC}korn/${I}
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
@@ -617,13 +592,6 @@ ${DOC}kpat/man.docbook
 ${DOC}kpf/common
 ${DOC}kpf/${C}
 ${DOC}kpf/${I}
-${DOC}kpm/common
-${DOC}kpm/${C}
-${DOC}kpm/${I}
-${DOC}kpm/kpmjobs.png
-${DOC}kpm/kpmmemory.png
-${DOC}kpm/kpmstart.png
-${DOC}kpm/kpmtext.png
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
@@ -637,14 +605,24 @@ ${DOC}kppp/global-settings.docbook
 ${DOC}kppp/hayes.docbook
 ${DOC}kppp/${C}
 ${DOC}kppp/${I}
+${DOC}kppp/kppp-account-accounting-tab.png
+${DOC}kppp/kppp-account-dial-tab.png
+${DOC}kppp/kppp-account-dns-tab.png
+${DOC}kppp/kppp-account-execute-tab.png
+${DOC}kppp/kppp-account-gateway-tab.png
+${DOC}kppp/kppp-account-ip-tab.png
+${DOC}kppp/kppp-account-login-script-tab.png
+${DOC}kppp/kppp-config.png
+${DOC}kppp/kppp${FLAVOR_EXT}vice-tab.png
+${DOC}kppp/kppp-dialler-tab.png
 ${DOC}kppp/kppp-faq.docbook
+${DOC}kppp/kppp-graph-tab.png
+${DOC}kppp/kppp-misc-tab.png
+${DOC}kppp/kppp-modem-tab.png
+${DOC}kppp/kppp-wizard.png
 ${DOC}kppp/security.docbook
 ${DOC}kppp/tricks.docbook
 ${DOC}kppp/wizard.docbook
-${DOC}kpresenter/faq.docbook
-${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/menus.docbook
-${DOC}kpresenter/options.docbook
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
@@ -741,6 +719,12 @@ ${DOC}ksysv/${I}
 ${DOC}ktalkd/common
 ${DOC}ktalkd/${C}
 ${DOC}ktalkd/${I}
+${DOC}ktouch/common
+${DOC}ktouch/${C}
+${DOC}ktouch/${I}
+${DOC}ktouch/screenshot1.png
+${DOC}ktouch/screenshot2.png
+${DOC}ktouch/screenshot3.png
 ${DOC}ktron/common
 ${DOC}ktron/${C}
 ${DOC}ktron/${I}
@@ -1164,6 +1148,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}kuser
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
+@dirrm ${DOC}ktouch
 @dirrm ${DOC}ktalkd
 @dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
@@ -1180,16 +1165,13 @@ share/locale/de/flag.png
 @dirrm ${DOC}ksame
 @dirrm ${DOC}kruler
 @dirrm ${DOC}kreversi
-@dirrm ${DOC}kpresenter
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpoker
-@dirrm ${DOC}kpm
 @dirrm ${DOC}kpf
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kpackage
-@dirrm ${DOC}koshell
 @dirrm ${DOC}korn
 @dirrm ${DOC}korganizer
 @dirrm ${DOC}konsole
@@ -1215,7 +1197,6 @@ share/locale/de/flag.png
 @dirrm ${DOC}kjots
 @dirrm ${DOC}kit
 @dirrm ${DOC}kioslave
-@dirrm ${DOC}killustrator
 @dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker
@@ -1225,11 +1206,11 @@ share/locale/de/flag.png
 @dirrm ${DOC}khelpcenter/quickstart
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}khangman
 @dirrm ${DOC}kghostview
 @dirrm ${DOC}kgeo
 @dirrm ${DOC}kfract
 @dirrm ${DOC}kfouleggs
-@dirrm ${DOC}kformula
 @dirrm ${DOC}kfloppy
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
@@ -1263,8 +1244,6 @@ share/locale/de/flag.png
 @dirrm ${DOC}amor
 @dirrm ${DOC}aktion
 @dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/de
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

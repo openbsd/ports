@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ja,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.ja,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -38,13 +38,113 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kbabel/common
+${DOC}kbabel/${C}
+${DOC}kbabel/${I}
+${DOC}kcontrol/common
+${DOC}kcontrol/${C}
+${DOC}kcontrol/${I}
+${DOC}kcontrol/kalarmd.docbook
+${DOC}kcontrol/kcmaccess.docbook
+${DOC}kcontrol/kcmaction.docbook
+${DOC}kcontrol/kcmbackgnd.docbook
+${DOC}kcontrol/kcmbatmon.docbook
+${DOC}kcontrol/kcmbell.docbook
+${DOC}kcontrol/kcmblockdev.docbook
+${DOC}kcontrol/kcmcache.docbook
+${DOC}kcontrol/kcmcolor.docbook
+${DOC}kcontrol/kcmcookie.docbook
+${DOC}kcontrol/kcmcrypto.docbook
+${DOC}kcontrol/kcmcss.docbook
+${DOC}kcontrol/kcmdatetime.docbook
+${DOC}kcontrol/kcmdesktop.docbook
+${DOC}kcontrol/kcmdeviceinfo.docbook
+${DOC}kcontrol/kcmdmainfo.docbook
+${DOC}kcontrol/kcmebrowse.docbook
+${DOC}kcontrol/kcmemail.docbook
+${DOC}kcontrol/kcmenergy.docbook
+${DOC}kcontrol/kcmfile.docbook
+${DOC}kcontrol/kcmfileman.docbook
+${DOC}kcontrol/kcmfontinst.docbook
+${DOC}kcontrol/kcmfonts.docbook
+${DOC}kcontrol/kcmicon.docbook
+${DOC}kcontrol/kcmintinfo.docbook
+${DOC}kcontrol/kcmioportinfo.docbook
+${DOC}kcontrol/kcmkbd.docbook
+${DOC}kcontrol/kcmkbrowse.docbook
+${DOC}kcontrol/kcmkeybind.docbook
+${DOC}kcontrol/kcmkonsole.docbook
+${DOC}kcontrol/kcmkwintheme.docbook
+${DOC}kcontrol/kcmlaunch.docbook
+${DOC}kcontrol/kcmlisa.docbook
+${DOC}kcontrol/kcmlocate.docbook
+${DOC}kcontrol/kcmloginmanage.docbook
+${DOC}kcontrol/kcmlowbatcrit.docbook
+${DOC}kcontrol/kcmlowbatwarn.docbook
+${DOC}kcontrol/kcmmemoryinfo.docbook
+${DOC}kcontrol/kcmmidi.docbook
+${DOC}kcontrol/kcmmixer.docbook
+${DOC}kcontrol/kcmmouse.docbook
+${DOC}kcontrol/kcmnetscapeplugins.docbook
+${DOC}kcontrol/kcmnics.docbook
+${DOC}kcontrol/kcmpanel.docbook
+${DOC}kcontrol/kcmpartitioninfo.docbook
+${DOC}kcontrol/kcmpasswd.docbook
+${DOC}kcontrol/kcmpciinfo.docbook
+${DOC}kcontrol/kcmpcmcia.docbook
+${DOC}kcontrol/kcmpowerctrl.docbook
+${DOC}kcontrol/kcmprocinfo.docbook
+${DOC}kcontrol/kcmproxie.docbook
+${DOC}kcontrol/kcmscnsave.docbook
+${DOC}kcontrol/kcmscsiinfo.docbook
+${DOC}kcontrol/kcmsessionman.docbook
+${DOC}kcontrol/kcmsmbstat.docbook
+${DOC}kcontrol/kcmsndinfo.docbook
+${DOC}kcontrol/kcmsndsrv.docbook
+${DOC}kcontrol/kcmsocks.docbook
+${DOC}kcontrol/kcmspellchecking.docbook
+${DOC}kcontrol/kcmstyle.docbook
+${DOC}kcontrol/kcmsysnotify.docbook
+${DOC}kcontrol/kcmtalk.docbook
+${DOC}kcontrol/kcmtaskbar.docbook
+${DOC}kcontrol/kcmusb.docbook
+${DOC}kcontrol/kcmuseragent.docbook
+${DOC}kcontrol/kcmwinshare.docbook
+${DOC}kcontrol/kcmxmlrpc.docbook
+${DOC}kcontrol/kcmxservinfo.docbook
+${DOC}kcontrol/nettimeouts.docbook
+${DOC}kcontrol/printmanager.docbook
+${DOC}kcontrol/printsystem.docbook
+${DOC}kcontrol/protocols.docbook
+${DOC}kcontrol/systemcontrol.docbook
+${DOC}kcontrol/thememgr.docbook
 ${DOC}kdesu/common
 ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
+${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/about.docbook
+${DOC}khelpcenter/faq/common
 ${DOC}khelpcenter/faq/configkde.docbook
+${DOC}khelpcenter/faq/contrib.docbook
+${DOC}khelpcenter/faq/desktop.docbook
+${DOC}khelpcenter/faq/filemng.docbook
+${DOC}khelpcenter/faq/getkde.docbook
+${DOC}khelpcenter/faq/${C}
+${DOC}khelpcenter/faq/${I}
+${DOC}khelpcenter/faq/install.docbook
+${DOC}khelpcenter/faq/intro.docbook
+${DOC}khelpcenter/faq/kdeapps.docbook
+${DOC}khelpcenter/faq/misc.docbook
+${DOC}khelpcenter/faq/moreinfo.docbook
+${DOC}khelpcenter/faq/nonkdeapps.docbook
+${DOC}khelpcenter/faq/notrelated.docbook
+${DOC}khelpcenter/faq/panel.docbook
+${DOC}khelpcenter/faq/tips.docbook
+${DOC}khelpcenter/faq/winmng.docbook
 ${DOC}khelpcenter/help.docbook
+${DOC}khelpcenter/${C}
+${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
@@ -87,6 +187,7 @@ ${LOC}kalarm.mo
 ${LOC}kalarmd.mo
 ${LOC}kalarmdgui.mo
 ${LOC}kandy.mo
+${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
@@ -197,6 +298,7 @@ ${LOC}kenolaba.mo
 ${LOC}keystone.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
+${LOC}kfile_diff.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
@@ -209,6 +311,7 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
+${LOC}kfortune.mo
 ${LOC}kfract.mo
 ${LOC}kgantt.mo
 ${LOC}kgeo.mo
@@ -336,6 +439,7 @@ ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
 ${LOC}kvoctrain.mo
+${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
@@ -352,6 +456,7 @@ ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkcal.mo
 ${LOC}libkdegames.mo
+${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -386,5 +491,7 @@ share/locale/ja/flag.png
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}kdesu
+@dirrm ${DOC}kcontrol
+@dirrm ${DOC}kbabel
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/ja

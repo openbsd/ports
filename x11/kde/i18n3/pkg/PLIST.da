@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST.da,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.da,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/ktuberling/sounds/da/briller.wav
 share/apps/ktuberling/sounds/da/cigar.wav
+share/apps/ktuberling/sounds/da/haar.wav
+share/apps/ktuberling/sounds/da/halsbaand.wav
+share/apps/ktuberling/sounds/da/halstoerklaede.wav
 share/apps/ktuberling/sounds/da/hat.wav
+share/apps/ktuberling/sounds/da/horn.wav
 share/apps/ktuberling/sounds/da/kartoffelfyr.wav
 share/apps/ktuberling/sounds/da/mund.wav
 share/apps/ktuberling/sounds/da/naese.wav
@@ -10,6 +14,7 @@ share/apps/ktuberling/sounds/da/oejenbryn.wav
 share/apps/ktuberling/sounds/da/oere.wav
 share/apps/ktuberling/sounds/da/oerering.wav
 share/apps/ktuberling/sounds/da/overskaeg.wav
+share/apps/ktuberling/sounds/da/pingvin.wav
 share/apps/ktuberling/sounds/da/politiskilt.wav
 share/apps/ktuberling/sounds/da/slips.wav
 share/apps/ktuberling/sounds/da/sloejfe.wav
@@ -33,6 +38,9 @@ ${DOC}amor/${I}
 ${DOC}ark/common
 ${DOC}ark/${C}
 ${DOC}ark/${I}
+${DOC}atlantik/common
+${DOC}atlantik/${C}
+${DOC}atlantik/${I}
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -80,9 +88,25 @@ ${DOC}kab/kab-using.png
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kamera/common
+${DOC}kamera/${C}
+${DOC}kamera/${I}
+${DOC}kaphorism/common
+${DOC}kaphorism/${C}
+${DOC}kaphorism/${I}
 ${DOC}kasteroids/common
 ${DOC}kasteroids/${C}
 ${DOC}kasteroids/${I}
+${DOC}kate-plugins/common
+${DOC}kate-plugins/helloworld.docbook
+${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/${C}
+${DOC}kate-plugins/${I}
+${DOC}kate-plugins/insertcommand.docbook
+${DOC}kate-plugins/openheader.docbook
+${DOC}kate-plugins/projectmanager.docbook
+${DOC}kate-plugins/textfilter.docbook
+${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
 ${DOC}kate/common
 ${DOC}kate/configdialog01.png
@@ -107,6 +131,7 @@ ${DOC}katomic/${I}
 ${DOC}kbabel/common
 ${DOC}kbabel/${C}
 ${DOC}kbabel/${I}
+${DOC}kbabel/roughtranslation.png
 ${DOC}kbabel/snap1.png
 ${DOC}kbabel/snap_catalogmanager.png
 ${DOC}kbackgammon/common
@@ -124,6 +149,9 @@ ${DOC}kbounce/${I}
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
+${DOC}kcharselect/common
+${DOC}kcharselect/${C}
+${DOC}kcharselect/${I}
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
 ${DOC}kcoloredit/${I}
@@ -208,6 +236,16 @@ ${DOC}kcontrol/protocols.docbook
 ${DOC}kcontrol/screenshot.png
 ${DOC}kcontrol/systemcontrol.docbook
 ${DOC}kcontrol/thememgr.docbook
+${DOC}kcron/common
+${DOC}kcron/${C}
+${DOC}kcron/${I}
+${DOC}kcron/kcron.png
+${DOC}kcron/kcronstart.png
+${DOC}kcron/newtask.png
+${DOC}kcron/newvariable.png
+${DOC}kdat/common
+${DOC}kdat/${C}
+${DOC}kdat/${I}
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
@@ -245,6 +283,10 @@ ${DOC}kdvi/optionrequester2.png
 ${DOC}kedit/common
 ${DOC}kedit/${C}
 ${DOC}kedit/${I}
+${DOC}keduca/common
+${DOC}keduca/${C}
+${DOC}keduca/${I}
+${DOC}keduca/screenshot.png
 ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
@@ -353,6 +395,11 @@ ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}khexedit/common
 ${DOC}khexedit/${C}
 ${DOC}khexedit/${I}
+${DOC}kicker-applets/common
+${DOC}kicker-applets/${C}
+${DOC}kicker-applets/${I}
+${DOC}kicker-applets/kolourpicker.docbook
+${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}
@@ -400,12 +447,18 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}kiten/common
+${DOC}kiten/${C}
+${DOC}kiten/${I}
 ${DOC}kjots/common
 ${DOC}kjots/${C}
 ${DOC}kjots/${I}
 ${DOC}kjumpingcube/common
 ${DOC}kjumpingcube/${C}
 ${DOC}kjumpingcube/${I}
+${DOC}klatin/common
+${DOC}klatin/${C}
+${DOC}klatin/${I}
 ${DOC}klettres/common
 ${DOC}klettres/${C}
 ${DOC}klettres/${I}
@@ -444,6 +497,28 @@ ${DOC}kmines/${C}
 ${DOC}kmines/${I}
 ${DOC}kmines/kmines1.png
 ${DOC}kmines/kmines2.png
+${DOC}kmoon/common
+${DOC}kmoon/${C}
+${DOC}kmoon/${I}
+${DOC}kodo/common
+${DOC}kodo/${C}
+${DOC}kodo/${I}
+${DOC}kolf/common
+${DOC}kolf/${C}
+${DOC}kolf/${I}
+${DOC}konq-plugins/archiver.docbook
+${DOC}konq-plugins/babel.docbook
+${DOC}konq-plugins/common
+${DOC}konq-plugins/dirfilter.docbook
+${DOC}konq-plugins/domtree.docbook
+${DOC}konq-plugins/imgallery.docbook
+${DOC}konq-plugins/${C}
+${DOC}konq-plugins/${I}
+${DOC}konq-plugins/kuick.docbook
+${DOC}konq-plugins/mediaplayer.docbook
+${DOC}konq-plugins/settings.docbook
+${DOC}konq-plugins/uachanger.docbook
+${DOC}konq-plugins/validators.docbook
 ${DOC}konqueror/cmndline.png
 ${DOC}konqueror/common
 ${DOC}konqueror/dirtree.png
@@ -471,6 +546,9 @@ ${DOC}korganizer/${I}
 ${DOC}korn/common
 ${DOC}korn/${C}
 ${DOC}korn/${I}
+${DOC}kpackage/common
+${DOC}kpackage/${C}
+${DOC}kpackage/${I}
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
@@ -494,6 +572,9 @@ ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
 ${DOC}kpoker/kpoker1.png
 ${DOC}kpoker/kpoker2.png
+${DOC}kpovmodeler/common
+${DOC}kpovmodeler/${C}
+${DOC}kpovmodeler/${I}
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
@@ -504,9 +585,15 @@ ${DOC}kruler/${I}
 ${DOC}ksame/common
 ${DOC}ksame/${C}
 ${DOC}ksame/${I}
+${DOC}kscore/common
+${DOC}kscore/${C}
+${DOC}kscore/${I}
 ${DOC}kshisen/common
 ${DOC}kshisen/${C}
 ${DOC}kshisen/${I}
+${DOC}ksim/common
+${DOC}ksim/${C}
+${DOC}ksim/${I}
 ${DOC}ksirtet/common
 ${DOC}ksirtet/${C}
 ${DOC}ksirtet/${I}
@@ -565,6 +652,15 @@ ${DOC}kstars/zenith.docbook
 ${DOC}ksysguard/common
 ${DOC}ksysguard/${C}
 ${DOC}ksysguard/${I}
+${DOC}ksysv/common
+${DOC}ksysv/${C}
+${DOC}ksysv/${I}
+${DOC}kteatime/common
+${DOC}kteatime/${C}
+${DOC}kteatime/${I}
+${DOC}ktimer/common
+${DOC}ktimer/${C}
+${DOC}ktimer/${I}
 ${DOC}ktouch/common
 ${DOC}ktouch/${C}
 ${DOC}ktouch/${I}
@@ -583,6 +679,9 @@ ${DOC}ktuberling/technical-reference.docbook
 ${DOC}kuickshow/common
 ${DOC}kuickshow/${C}
 ${DOC}kuickshow/${I}
+${DOC}kuser/common
+${DOC}kuser/${C}
+${DOC}kuser/${I}
 ${DOC}kview/common
 ${DOC}kview/${C}
 ${DOC}kview/${I}
@@ -595,31 +694,41 @@ ${DOC}kview/snapshot6.png
 ${DOC}kview/snapshot7.png
 ${DOC}kview/snapshot8.png
 ${DOC}kview/snapshot9.png
+${DOC}kvoctrain/common
+${DOC}kvoctrain/${C}
+${DOC}kvoctrain/${I}
+${DOC}kweather/common
+${DOC}kweather/${C}
+${DOC}kweather/${I}
 ${DOC}kwin4/common
 ${DOC}kwin4/${C}
 ${DOC}kwin4/${I}
+${DOC}kworldclock/common
+${DOC}kworldclock/${C}
+${DOC}kworldclock/${I}
 ${DOC}kwrite/common
 ${DOC}kwrite/${C}
 ${DOC}kwrite/${I}
+${DOC}kwuftpd/common
+${DOC}kwuftpd/directories.png
+${DOC}kwuftpd/${C}
+${DOC}kwuftpd/${I}
+${DOC}kwuftpd/logging.png
+${DOC}kwuftpd/messages.png
+${DOC}kwuftpd/ratios.png
+${DOC}kwuftpd/security.png
+${DOC}kwuftpd/uploads.png
+${DOC}kwuftpd/user_classes.png
+${DOC}kwuftpd/virtual.png
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
+${DOC}megami/common
+${DOC}megami/${C}
+${DOC}megami/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
-${DOC}pixie/common
-${DOC}pixie/hotlist.png
-${DOC}pixie/image-edit.png
-${DOC}pixie/image-size.png
-${DOC}pixie/ind-color-edit.png
-${DOC}pixie/${C}
-${DOC}pixie/${I}
-${DOC}pixie/open.png
-${DOC}pixie/options.png
-${DOC}pixie/pixie.png
-${DOC}pixie/screenshot.png
-${DOC}pixie/startup.png
-${DOC}pixie/thumbnails.png
 ${LOC}Kiten.mo
 ${LOC}aktion.mo
 ${LOC}amor.mo
@@ -1015,16 +1124,24 @@ share/locale/da/entry.desktop
 share/locale/da/flag.png
 @dirrm share/locale/da/LC_MESSAGES
 @dirrm share/locale/da
-@dirrm ${DOC}pixie
 @dirrm ${DOC}noatun
+@dirrm ${DOC}megami
 @dirrm ${DOC}lskat
+@dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kwrite
+@dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
+@dirrm ${DOC}kweather
+@dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kview
+@dirrm ${DOC}kuser
 @dirrm ${DOC}kuickshow
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
 @dirrm ${DOC}ktouch
+@dirrm ${DOC}ktimer
+@dirrm ${DOC}kteatime
+@dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kstars
 @dirrm ${DOC}kspell
@@ -1033,21 +1150,29 @@ share/locale/da/flag.png
 @dirrm ${DOC}ksnapshot
 @dirrm ${DOC}ksnake
 @dirrm ${DOC}ksirtet
+@dirrm ${DOC}ksim
 @dirrm ${DOC}kshisen
+@dirrm ${DOC}kscore
 @dirrm ${DOC}ksame
 @dirrm ${DOC}kruler
 @dirrm ${DOC}kreversi
+@dirrm ${DOC}kpovmodeler
 @dirrm ${DOC}kpoker
 @dirrm ${DOC}kpm
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
+@dirrm ${DOC}kpackage
 @dirrm ${DOC}korn
 @dirrm ${DOC}korganizer
 @dirrm ${DOC}kooka
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konqueror
+@dirrm ${DOC}konq-plugins
+@dirrm ${DOC}kolf
+@dirrm ${DOC}kodo
+@dirrm ${DOC}kmoon
 @dirrm ${DOC}kmines
 @dirrm ${DOC}kmessedwords
 @dirrm ${DOC}kmenuedit
@@ -1058,10 +1183,13 @@ share/locale/da/flag.png
 @dirrm ${DOC}klipper
 @dirrm ${DOC}klines
 @dirrm ${DOC}klettres
+@dirrm ${DOC}klatin
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kjots
+@dirrm ${DOC}kiten
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kiconedit
+@dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker
 @dirrm ${DOC}khexedit
 @dirrm ${DOC}khelpcenter/visualdict
@@ -1078,6 +1206,7 @@ share/locale/da/flag.png
 @dirrm ${DOC}kfloppy
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
+@dirrm ${DOC}keduca
 @dirrm ${DOC}kedit
 @dirrm ${DOC}kdvi
 @dirrm ${DOC}kdm
@@ -1085,8 +1214,11 @@ share/locale/da/flag.png
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
+@dirrm ${DOC}kdat
+@dirrm ${DOC}kcron
 @dirrm ${DOC}kcontrol
 @dirrm ${DOC}kcoloredit
+@dirrm ${DOC}kcharselect
 @dirrm ${DOC}kcalc
 @dirrm ${DOC}kbounce
 @dirrm ${DOC}kblackbox
@@ -1094,17 +1226,19 @@ share/locale/da/flag.png
 @dirrm ${DOC}kbackgammon
 @dirrm ${DOC}kbabel
 @dirrm ${DOC}katomic
+@dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate
 @dirrm ${DOC}kasteroids
+@dirrm ${DOC}kaphorism
+@dirrm ${DOC}kamera
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kab
 @dirrm ${DOC}common
+@dirrm ${DOC}atlantik
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/da
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/da
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

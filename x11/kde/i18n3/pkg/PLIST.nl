@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -159,9 +159,13 @@ ${DOC}kdesu/${I}
 ${DOC}kdm/common
 ${DOC}kdm/${C}
 ${DOC}kdm/${I}
+${DOC}kfind/common
+${DOC}kfind/${C}
+${DOC}kfind/${I}
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/about.docbook
 ${DOC}khelpcenter/faq/configkde.docbook
+${DOC}khelpcenter/faq/desktop.docbook
 ${DOC}khelpcenter/faq/getkde.docbook
 ${DOC}khelpcenter/faq/install.docbook
 ${DOC}khelpcenter/faq/intro.docbook
@@ -664,6 +668,7 @@ share/locale/nl/flag.png
 @dirrm ${DOC}khelpcenter/quickstart
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}kfind
 @dirrm ${DOC}kdm
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
@@ -674,8 +679,6 @@ share/locale/nl/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}artsbuilder
 @dirrm share/doc/HTML/nl
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/nl
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

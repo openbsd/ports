@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.pt,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -258,8 +258,6 @@ ${DOC}ksysv/${I}
 ${DOC}kteatime/common
 ${DOC}kteatime/${C}
 ${DOC}kteatime/${I}
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/templatedtd.docbook
 ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
@@ -348,6 +346,7 @@ ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
 ${LOC}kcli.mo
+${LOC}kcm_sambaconf.mo
 ${LOC}kcm_scsimanager.mo
 ${LOC}kcm_splash.mo
 ${LOC}kcmaccess.mo
@@ -607,6 +606,7 @@ ${LOC}ktux.mo
 ${LOC}kue.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
+${LOC}kurves.mo
 ${LOC}kuser.mo
 ${LOC}kvalgrind.mo
 ${LOC}kvidmode.mo
@@ -669,7 +669,6 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kuser
-@dirrm ${DOC}kugar
 @dirrm ${DOC}kteatime
 @dirrm ${DOC}ksysv
 @dirrm ${DOC}kspell
@@ -697,4 +696,3 @@ share/locale/pt/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/pt
-@dirrm share/doc/HTML

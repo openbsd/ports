@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ro,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.ro,v 1.3 2002/05/23 15:30:14 espie Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
@@ -374,9 +374,7 @@ share/locale/ro/flag.png
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/ro
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/ro
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
 @dirrm share/apps/amor
-@dirrm share/apps

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -131,9 +131,6 @@ ${DOC}knu/knu-traceroute.png
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
@@ -151,12 +148,6 @@ ${DOC}kppp/kppp-faq.docbook
 ${DOC}kppp/security.docbook
 ${DOC}kppp/tricks.docbook
 ${DOC}kppp/wizard.docbook
-${DOC}kpresenter/faq.docbook
-${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/options.docbook
-${DOC}kpresenter/screen.docbook
-${DOC}kpresenter/tutorial.docbook
-${DOC}krita/faq.docbook
 ${DOC}kscd/common
 ${DOC}kscd/${C}
 ${DOC}kscd/${I}
@@ -172,16 +163,6 @@ ${DOC}kstars/quicktour.docbook
 ${DOC}ktalkd/common
 ${DOC}ktalkd/${C}
 ${DOC}ktalkd/${I}
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/templatedtd.docbook
-${DOC}kword/formulas.docbook
-${DOC}kword/graphics.docbook
-${DOC}kword/insertmisc.docbook
-${DOC}kword/kparts.docbook
-${DOC}kword/kwordbasics.docbook
-${DOC}kword/kwordguides3.docbook
-${DOC}kword/kwordguides4.docbook
-${DOC}kword/toc.docbook
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
@@ -231,6 +212,7 @@ ${LOC}kateprojectmanager.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
+${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kbiff.mo
@@ -316,6 +298,7 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
+${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
@@ -332,7 +315,9 @@ ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
 ${LOC}kfortune.mo
 ${LOC}kfract.mo
+${LOC}kgeo.mo
 ${LOC}kghostview.mo
+${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khotkeys.mo
@@ -356,6 +341,7 @@ ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
+${LOC}klatin.mo
 ${LOC}klegacyimport.mo
 ${LOC}kless.mo
 ${LOC}klettres.mo
@@ -370,6 +356,7 @@ ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
+${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
 ${LOC}kmines.mo
@@ -439,6 +426,7 @@ ${LOC}kteatime.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
@@ -447,6 +435,7 @@ ${LOC}kuickshow.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
+${LOC}kvoctrain.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
@@ -492,18 +481,13 @@ share/locale/ru/flag.png
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
-@dirrm ${DOC}kword
-@dirrm ${DOC}kugar
 @dirrm ${DOC}ktalkd
 @dirrm ${DOC}kstars
 @dirrm ${DOC}ksnapshot
 @dirrm ${DOC}ksirtet
 @dirrm ${DOC}kscd
-@dirrm ${DOC}krita
-@dirrm ${DOC}kpresenter
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpager
-@dirrm ${DOC}koshell
 @dirrm ${DOC}kodo
 @dirrm ${DOC}knu
 @dirrm ${DOC}kmix
@@ -521,4 +505,3 @@ share/locale/ru/flag.png
 @dirrm ${DOC}kandy
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML

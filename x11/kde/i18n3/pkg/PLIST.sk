@@ -1,4 +1,19 @@
-@comment $OpenBSD: PLIST.sk,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.3 2002/05/23 15:30:14 espie Exp $
+share/apps/ktuberling/sounds/sk/cigara.wav
+share/apps/ktuberling/sounds/sk/fuzy.wav
+share/apps/ktuberling/sounds/sk/hodinky.wav
+share/apps/ktuberling/sounds/sk/klobuk.wav
+share/apps/ktuberling/sounds/sk/kravata.wav
+share/apps/ktuberling/sounds/sk/nausnica.wav
+share/apps/ktuberling/sounds/sk/nos.wav
+share/apps/ktuberling/sounds/sk/obocie.wav
+share/apps/ktuberling/sounds/sk/odznak.wav
+share/apps/ktuberling/sounds/sk/oko.wav
+share/apps/ktuberling/sounds/sk/okuliare.wav
+share/apps/ktuberling/sounds/sk/slnecneokuliare.wav
+share/apps/ktuberling/sounds/sk/ucho.wav
+share/apps/ktuberling/sounds/sk/usta.wav
+share/apps/ktuberling/sounds/sk/zemiacik.wav
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -53,11 +68,18 @@ ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
 ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmltools.docbook
+${DOC}kate/advanced.docbook
 ${DOC}kate/common
+${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
+${DOC}kate/highlighting.docbook
 ${DOC}kate/${C}
 ${DOC}kate/${I}
+${DOC}kate/mdi.docbook
+${DOC}kate/menus.docbook
+${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
+${DOC}kate/regular-expressions.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -76,6 +98,9 @@ ${DOC}kbounce/${I}
 ${DOC}kbounce/jezball_corridor1.png
 ${DOC}kbounce/jezball_corridor2.png
 ${DOC}kbounce/jezball_newWall.png
+${DOC}kcoloredit/common
+${DOC}kcoloredit/${C}
+${DOC}kcoloredit/${I}
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
@@ -163,7 +188,12 @@ ${DOC}kdebugdialog/${I}
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
 ${DOC}kdeprint/cups-config.docbook
+${DOC}kdeprint/cupsaddprinterwizard1.png
+${DOC}kdeprint/cupsaddprinterwizard2_backendselection.png
+${DOC}kdeprint/cupsaddprinterwizard3_networkscan.png
+${DOC}kdeprint/cupsaddprinterwizard4_networkscan_config.png
 ${DOC}kdeprint/cupsoptions.docbook
+${DOC}kdeprint/cupsserverconfiguration1_welcome.png
 ${DOC}kdeprint/extensions.docbook
 ${DOC}kdeprint/external-command.docbook
 ${DOC}kdeprint/final-word.docbook
@@ -171,10 +201,13 @@ ${DOC}kdeprint/getting-started.docbook
 ${DOC}kdeprint/highlights.docbook
 ${DOC}kdeprint/${C}
 ${DOC}kdeprint/${I}
+${DOC}kdeprint/kprinter.png
+${DOC}kdeprint/kprinter_called_from_run_command.png
 ${DOC}kdeprint/lpd.docbook
 ${DOC}kdeprint/lpr-bsd.docbook
 ${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
+${DOC}kdeprint/steinbruch_scaled.png
 ${DOC}kdeprint/tech-overview.docbook
 ${DOC}kdeprint/theory.docbook
 ${DOC}kdesu/common
@@ -183,18 +216,25 @@ ${DOC}kdesu/${I}
 ${DOC}kdf/common
 ${DOC}kdf/${C}
 ${DOC}kdf/${I}
+${DOC}kdf/kdf.png
+${DOC}kdf/kdf_config.png
 ${DOC}kdm/common
 ${DOC}kdm/${C}
 ${DOC}kdm/${I}
 ${DOC}kdvi/common
 ${DOC}kdvi/${C}
 ${DOC}kdvi/${I}
+${DOC}kdvi/optionrequester1.png
+${DOC}kdvi/optionrequester2.png
 ${DOC}kfind/common
 ${DOC}kfind/${C}
 ${DOC}kfind/${I}
 ${DOC}kfract/common
 ${DOC}kfract/${C}
 ${DOC}kfract/${I}
+${DOC}kghostview/common
+${DOC}kghostview/${C}
+${DOC}kghostview/${I}
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/about.docbook
@@ -285,6 +325,9 @@ ${DOC}kicker/${C}
 ${DOC}kicker/${I}
 ${DOC}kicker/screenshot_left.png
 ${DOC}kicker/screenshot_right.png
+${DOC}kiconedit/common
+${DOC}kiconedit/${C}
+${DOC}kiconedit/${I}
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
@@ -367,7 +410,7 @@ ${DOC}konq-plugins/mediaplayer.docbook
 ${DOC}konq-plugins/settings.docbook
 ${DOC}konq-plugins/uachanger.docbook
 ${DOC}konq-plugins/validators.docbook
-${DOC}konqueror/cmndline.png
+${DOC}konqueror/cmdline.png
 ${DOC}konqueror/common
 ${DOC}konqueror/dirtree.png
 ${DOC}konqueror/dragdrop.png
@@ -385,47 +428,14 @@ ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
+${DOC}kooka/common
+${DOC}kooka/${C}
+${DOC}kooka/${I}
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
 ${DOC}kpager/screenshot.png
 ${DOC}kpager/settings.png
-${DOC}kpresenter/barmenus.png
-${DOC}kpresenter/barstyle1.png
-${DOC}kpresenter/common
-${DOC}kpresenter/faq.docbook
-${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/${C}
-${DOC}kpresenter/${I}
-${DOC}kpresenter/menus.docbook
-${DOC}kpresenter/options.docbook
-${DOC}kpresenter/screen.docbook
-${DOC}kpresenter/tut01.png
-${DOC}kpresenter/tut02.png
-${DOC}kpresenter/tut03.png
-${DOC}kpresenter/tut04.png
-${DOC}kpresenter/tut05.png
-${DOC}kpresenter/tut06.png
-${DOC}kpresenter/tut07.png
-${DOC}kpresenter/tut08.png
-${DOC}kpresenter/tut09.png
-${DOC}kpresenter/tut10.png
-${DOC}kpresenter/tut11.png
-${DOC}kpresenter/tut12.png
-${DOC}kpresenter/tut13.png
-${DOC}kpresenter/tut14.png
-${DOC}kpresenter/tut16.png
-${DOC}kpresenter/tut17.png
-${DOC}kpresenter/tut18.png
-${DOC}kpresenter/tut19.png
-${DOC}kpresenter/tut20.png
-${DOC}kpresenter/tut21.png
-${DOC}kpresenter/tut22.png
-${DOC}kpresenter/tut23.png
-${DOC}kpresenter/tutorial.docbook
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
@@ -445,6 +455,9 @@ ${DOC}ksirtet/${I}
 ${DOC}ksnake/common
 ${DOC}ksnake/${C}
 ${DOC}ksnake/${I}
+${DOC}ksnapshot/common
+${DOC}ksnapshot/${C}
+${DOC}ksnapshot/${I}
 ${DOC}ksokoban/common
 ${DOC}ksokoban/${C}
 ${DOC}ksokoban/${I}
@@ -458,6 +471,15 @@ ${DOC}kteatime/common
 ${DOC}kteatime/config.png
 ${DOC}kteatime/${C}
 ${DOC}kteatime/${I}
+${DOC}ktron/common
+${DOC}ktron/${C}
+${DOC}ktron/${I}
+${DOC}kuickshow/common
+${DOC}kuickshow/${C}
+${DOC}kuickshow/${I}
+${DOC}kview/common
+${DOC}kview/${C}
+${DOC}kview/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
@@ -470,6 +492,9 @@ ${DOC}kworldclock/${I}
 ${DOC}kwrite/common
 ${DOC}kwrite/${C}
 ${DOC}kwrite/${I}
+${DOC}lskat/common
+${DOC}lskat/${C}
+${DOC}lskat/${I}
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -585,7 +610,6 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
-${LOC}kcmwidgetsettings.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
@@ -596,7 +620,6 @@ ${LOC}kdelibs.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
-${LOC}kdesktop_lock.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
@@ -708,7 +731,6 @@ ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
-${LOC}kpm.mo
 ${LOC}kpoker.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
@@ -735,7 +757,6 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}ksync.mo
-${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -781,8 +802,6 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
-${LOC}libkwincde_config.mo
-${LOC}libkwinglow_config.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
@@ -806,23 +825,27 @@ share/locale/sk/entry.desktop
 share/locale/sk/flag.png
 @dirrm share/locale/sk/LC_MESSAGES
 @dirrm share/locale/sk
+@dirrm ${DOC}lskat
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
 @dirrm ${DOC}kweather
+@dirrm ${DOC}kview
+@dirrm ${DOC}kuickshow
+@dirrm ${DOC}ktron
 @dirrm ${DOC}kteatime
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kspell
 @dirrm ${DOC}ksokoban
+@dirrm ${DOC}ksnapshot
 @dirrm ${DOC}ksnake
 @dirrm ${DOC}ksirtet
 @dirrm ${DOC}kshisen
 @dirrm ${DOC}kscore
 @dirrm ${DOC}ksame
 @dirrm ${DOC}kreversi
-@dirrm ${DOC}kpresenter
 @dirrm ${DOC}kpager
-@dirrm ${DOC}koshell
+@dirrm ${DOC}kooka
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konqueror
@@ -837,6 +860,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kjezz
 @dirrm ${DOC}kit
 @dirrm ${DOC}kioslave
+@dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker
 @dirrm ${DOC}khelpcenter/visualdict
@@ -845,6 +869,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}khelpcenter/glossary
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}kghostview
 @dirrm ${DOC}kfract
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kdvi
@@ -854,6 +879,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
 @dirrm ${DOC}kcontrol
+@dirrm ${DOC}kcoloredit
 @dirrm ${DOC}kbounce
 @dirrm ${DOC}kblackbox
 @dirrm ${DOC}kbattleship
@@ -866,4 +892,6 @@ share/locale/sk/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/sk
-@dirrm share/doc/HTML
+@dirrm share/apps/ktuberling/sounds/sk
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.is,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.is,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -13,12 +13,16 @@ ${LOC}drkonqi.mo
 ${LOC}empath.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
+${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}kab.mo
+${LOC}kab3.mo
 ${LOC}kaccess.mo
+${LOC}kaddressbook.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
+${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
 ${LOC}katepart.mo
@@ -30,10 +34,12 @@ ${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
+${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmarts.mo
+${LOC}kcmaudiocd.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
 ${LOC}kcmcolors.mo
@@ -62,6 +68,7 @@ ${LOC}kcmkurifilt.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
+${LOC}kcmkxmlrpcd.mo
 ${LOC}kcmlanbrowser.mo
 ${LOC}kcmlaptop.mo
 ${LOC}kcmlaunch.mo
@@ -72,10 +79,12 @@ ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
 ${LOC}kcmnapster.mo
 ${LOC}kcmnewsticker.mo
+${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmodbc.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
+${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
 ${LOC}kcmsocks.mo
 ${LOC}kcmspellchecking.mo
@@ -83,6 +92,7 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
+${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
 ${LOC}kdat.mo
@@ -97,6 +107,8 @@ ${LOC}kdesu.mo
 ${LOC}kdesud.mo
 ${LOC}kdevelop.mo
 ${LOC}kdf.mo
+${LOC}kdict.mo
+${LOC}kdictapplet.mo
 ${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
@@ -111,6 +123,7 @@ ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_pdf.mo
 ${LOC}kfile_png.mo
+${LOC}kfile_ps.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
@@ -136,9 +149,11 @@ ${LOC}kio_man.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
+${LOC}kio_print.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
+${LOC}kio_smtp.mo
 ${LOC}kit.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -151,6 +166,7 @@ ${LOC}klipper.mo
 ${LOC}kljettool.mo
 ${LOC}klock.mo
 ${LOC}klpq.mo
+${LOC}klprfax.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
@@ -170,6 +186,7 @@ ${LOC}kodo.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
@@ -179,6 +196,7 @@ ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
+${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kpm.mo
@@ -187,6 +205,7 @@ ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
+${LOC}kregexpeditor.mo
 ${LOC}kreversi.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
@@ -208,20 +227,25 @@ ${LOC}kstartperf.mo
 ${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
+${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
 ${LOC}ktimemon.mo
+${LOC}ktimer.mo
 ${LOC}ktip.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
+${LOC}kuickshow.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
+${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
+${LOC}kwin_b2_config.mo
 ${LOC}kwin_default_config.mo
 ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_modernsys_config.mo
@@ -232,11 +256,16 @@ ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkdegames.mo
+${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
+${LOC}libkicker.mo
+${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
+${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
+${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}multiplayers.mo
 ${LOC}naughtyapplet.mo

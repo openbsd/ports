@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.it,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -53,6 +53,9 @@ ${DOC}kbattleship/${I}
 ${DOC}kblackbox/common
 ${DOC}kblackbox/${C}
 ${DOC}kblackbox/${I}
+${DOC}kbounce/common
+${DOC}kbounce/${C}
+${DOC}kbounce/${I}
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
@@ -100,6 +103,9 @@ ${DOC}kicker-applets/${C}
 ${DOC}kicker-applets/${I}
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
+${DOC}kicker/common
+${DOC}kicker/${C}
+${DOC}kicker/${I}
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
@@ -133,6 +139,9 @@ ${DOC}kmines/${I}
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
+${DOC}kodo/common
+${DOC}kodo/${C}
+${DOC}kodo/${I}
 ${DOC}konq-plugins/archiver.docbook
 ${DOC}konq-plugins/babel.docbook
 ${DOC}konq-plugins/common
@@ -612,6 +621,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}kpat
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konq-plugins
+@dirrm ${DOC}kodo
 @dirrm ${DOC}kmoon
 @dirrm ${DOC}kmines
 @dirrm ${DOC}kmessedwords
@@ -622,6 +632,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}klettres
 @dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
+@dirrm ${DOC}kicker
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}khangman
 @dirrm ${DOC}kghostview
@@ -634,6 +645,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}kdf
 @dirrm ${DOC}kcoloredit
 @dirrm ${DOC}kcalc
+@dirrm ${DOC}kbounce
 @dirrm ${DOC}kblackbox
 @dirrm ${DOC}kbattleship
 @dirrm ${DOC}katomic
@@ -641,4 +653,3 @@ share/locale/it/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/it
-@dirrm share/doc/HTML

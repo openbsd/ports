@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cs,v 1.2 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.3 2002/05/23 15:30:14 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -140,6 +140,7 @@ ${LOC}kbattleship.mo
 ${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
@@ -186,6 +187,7 @@ ${LOC}kcmlaptop.mo
 ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
+${LOC}kcmlinuz.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
 ${LOC}kcmnapster.mo
@@ -321,12 +323,12 @@ ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kphone.mo
 ${LOC}kpixmap2bitmap.mo
-${LOC}kpm.mo
 ${LOC}kpoker.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
+${LOC}kregexpeditor.mo
 ${LOC}kreversi.mo
 ${LOC}krn.mo
 ${LOC}kruler.mo
@@ -367,6 +369,7 @@ ${LOC}kuickshow.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
+${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
