@@ -1,6 +1,6 @@
---- conf/master.cf.orig	Wed Oct  4 02:13:32 2000
-+++ conf/master.cf	Thu Oct  5 21:39:05 2000
-@@ -67,20 +67,20 @@
+--- conf/master.cf.orig	Sun Jan 28 21:54:01 2001
++++ conf/master.cf	Thu Feb  1 08:22:24 2001
+@@ -67,21 +67,21 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
@@ -29,6 +29,7 @@
 +showq     unix	n	-	-	-	-	showq
 +error     unix	-	-	-	-	-	error
  local	  unix	-	n	n	-	-	local
+ virtual	  unix	-	n	n	-	-	virtual
 -lmtp	  unix	-	-	n	-	-	lmtp
 +lmtp	  unix	-	-	-	-	-	lmtp
  cyrus	  unix	-	n	n	-	-	pipe
