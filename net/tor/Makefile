@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/03 22:03:00 sturm Exp $
 
 COMMENT=	"Anonymity service using onion routing"
 
-DISTNAME=	tor-0.0.8.1
+DISTNAME=	tor-0.0.9.1
 CATEGORIES=	net
 HOMEPAGE=	http://www.freehaven.net/tor/
 
@@ -17,7 +17,9 @@ MASTER_SITES=	http://www.freehaven.net/tor/dist/
 
 AUTOCONF_VERSION= 2.59
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=--with-ssl-dir=/usr
+
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${PREFIX}/share/examples
 
 .include <bsd.port.mk>

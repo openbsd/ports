@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_common_crypto_c,v 1.1 2005/01/03 22:03:01 sturm Exp $
+--- src/common/crypto.c.orig	Mon Jan  3 22:42:39 2005
++++ src/common/crypto.c	Mon Jan  3 22:41:51 2005
+@@ -470,7 +470,8 @@ crypto_pk_write_private_key_to_filename(
+   len = BIO_get_mem_data(bio, &cp);
+   tor_assert(len >= 0);
+   s = tor_malloc(len+1);
+-  strlcpy(s, cp, len+1);
++  memcpy(s, cp, len);
++  s[len]='\0';
+   r = write_str_to_file(fname, s, 0);
+   BIO_free(bio);
+   free(s);

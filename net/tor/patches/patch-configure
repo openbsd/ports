@@ -1,0 +1,28 @@
+--- configure.orig	Wed Dec 15 20:45:59 2004
++++ configure	Mon Jan  3 20:57:38 2005
+@@ -2270,13 +2270,13 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS=""
+   else
+-    CFLAGS="-g"
++    CFLAGS=""
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -10713,7 +10713,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
+ 
+ # Set CFLAGS _after_ all the above checks, since our warnings are stricter
+ # than autoconf's macros like.
+-CFLAGS="$CFLAGS -Wall -g -O2"
++CFLAGS="$CFLAGS -Wall"
+ # Add some more warnings which we use in the cvs version but not in the
+ # released versions.  (Some relevant gcc versions can't handle these.)
+ #CFLAGS="$CFLAGS -W -Wno-unused-parameter -Wfloat-equal -Wundef -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wredundant-decls"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/26 10:06:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/03 22:03:02 sturm Exp $
 bin/tor
 bin/tor-resolve
 bin/torify
@@ -7,8 +7,6 @@ bin/torify
 @man man/man1/torify.1
 share/examples/tor/
 @sample ${SYSCONFDIR}/tor/
-share/examples/tor/dirservers
-@sample ${SYSCONFDIR}/tor/dirservers
 share/examples/tor/tor-tsocks.conf
 @sample ${SYSCONFDIR}/tor/tor-tsocks.conf
 share/examples/tor/torrc.sample
