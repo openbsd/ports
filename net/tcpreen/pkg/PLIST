@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/03 18:46:02 lebel Exp $
+bin/tcpreen
+man/man1/tcpreen.1
+share/locale/fr/LC_MESSAGES/tcpreen.mo

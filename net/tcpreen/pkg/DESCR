@@ -1,0 +1,8 @@
+TCPreen is a simple tool to monitor and analyze data transmitted
+between a client and a server via a TCP connection, it supports
+both IPV4 and IPV6.
+
+This tool focuses on the data stream (software/socket layer), not
+on the lower level transmission protocol as packet sniffers do.
+
+WWW: ${HOMEPAGE}

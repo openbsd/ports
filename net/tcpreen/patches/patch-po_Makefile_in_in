@@ -1,0 +1,22 @@
+--- po/Makefile.in.in~	Sat Aug 31 23:30:23 2002
++++ po/Makefile.in.in	Sat Aug 31 23:32:19 2002
+@@ -8,6 +8,8 @@
+ # Please note that the actual code of GNU gettext is covered by the GNU
+ # General Public License and is *not* in the public domain.
+ 
++DESTDIR =
++
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
+@@ -21,8 +23,8 @@ VPATH = @srcdir@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+-localedir = $(datadir)/locale
+-gettextsrcdir = $(datadir)/gettext/po
++localedir = $(prefix)/share/locale
++gettextsrcdir = $(prefix)/share/gettext/po
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
