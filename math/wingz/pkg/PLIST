@@ -3,7 +3,6 @@ lib/X11/Wingz/bin/brander
 lib/X11/Wingz/bin/Wingz
 lib/X11/Wingz/bin/Wingz.dynamic
 lib/X11/Wingz/bin/Wingz.sh
-lib/X11/Wingz/bin/Wingz.sh.orig
 lib/X11/Wingz/lib/libwztools.a
 lib/X11/Wingz/Utilities/DateConv/DATE.README
 lib/X11/Wingz/Utilities/DateConv/DateConv.scz
