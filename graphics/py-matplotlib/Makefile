@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/11 04:05:25 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/11 12:41:33 alek Exp $
 
 COMMENT=	"Python charting and plotting API"
 
 DISTNAME=	matplotlib-0.64
-PKGNAME=	${DISTNAME:S/^/py-/}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -36,12 +36,12 @@ post-extract:
 	@rm -f ${WRKSRC}/lib/matplotlib/legend.py.orig
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-mathplotlib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-mathplotlib/data
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib/data
 	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${WRKSRC}/examples/README \
-	    ${PREFIX}/share/examples/py-mathplotlib
+	    ${PREFIX}/share/examples/py-matplotlib
 	${INSTALL_DATA} ${WRKSRC}/examples/data/* \
-	    ${PREFIX}/share/examples/py-mathplotlib/data
+	    ${PREFIX}/share/examples/py-matplotlib/data
 
 NO_REGRESS=	Yes
 
