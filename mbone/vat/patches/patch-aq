@@ -1,0 +1,151 @@
+*** audio-sun.cc.orig	Thu Jul 15 17:25:06 1999
+--- audio-sun.cc	Thu Jul 15 17:29:48 1999
+***************
+*** 35,48 ****
+  
+  #undef resource_h
+  
+  #ifdef __svr4__
+  #include <sys/audioio.h>
+  #include <sys/filio.h>
+  #else
+! #include <sun/audioio.h>
+  #endif
+  #include <unistd.h>
+- #include <stropts.h>
+  #include <errno.h>
+  #include <fcntl.h>
+  #include "audio-sun.h"
+--- 35,49 ----
+  
+  #undef resource_h
+  
++ #include <sys/types.h>
++ 
+  #ifdef __svr4__
+  #include <sys/audioio.h>
+  #include <sys/filio.h>
+  #else
+! #include <sys/audioio.h>
+  #endif
+  #include <unistd.h>
+  #include <errno.h>
+  #include <fcntl.h>
+  #include "audio-sun.h"
+***************
+*** 103,109 ****
+  			 * braindead driver will supply a weird, huge
+  			 * blocksize).
+  			 */
+! #ifndef __svr4__
+  			int bs = info.record._xxx[2];
+  #else
+  			int bs = info.record.buffer_size;
+--- 104,110 ----
+  			 * braindead driver will supply a weird, huge
+  			 * blocksize).
+  			 */
+! #if !defined(__svr4_) && !defined(__OpenBSD__)
+  			int bs = info.record._xxx[2];
+  #else
+  			int bs = info.record.buffer_size;
+***************
+*** 273,279 ****
+  				Obtain();
+  				goto out;
+  
+! #ifndef __svr4__
+  			case EWOULDBLOCK:
+  #endif
+  			case EAGAIN:
+--- 274,280 ----
+  				Obtain();
+  				goto out;
+  
+! #if !defined(__svr4__) && !defined(__OpenBSD__)
+  			case EWOULDBLOCK:
+  #endif
+  			case EAGAIN:
+***************
+*** 307,313 ****
+  		perror("audio O_NONBLOCK");
+  	int on = 1;
+  	ioctl(fd, FIONBIO, &on);
+! #ifndef __svr4__
+  	int bsddrvr = 0;
+  	AUDIO_INITINFO(&info);
+  	getinfo(&info);
+--- 308,314 ----
+  		perror("audio O_NONBLOCK");
+  	int on = 1;
+  	ioctl(fd, FIONBIO, &on);
+! #if !defined(__svr4__) && !defined(__OpenBSD__)
+  	int bsddrvr = 0;
+  	AUDIO_INITINFO(&info);
+  	getinfo(&info);
+***************
+*** 330,336 ****
+  	info.record.gain = rgain;
+  	info.record.port = IPort(iport);
+  	info.record.balance = rbalance;
+! #ifndef __svr4__
+  	/* solaris 2.2 hack: set buffer size.
+  	 * NB- this changes to _xxx[3] for os<4.1.3 */
+  	info.record._xxx[2] = blksize;
+--- 331,337 ----
+  	info.record.gain = rgain;
+  	info.record.port = IPort(iport);
+  	info.record.balance = rbalance;
+! #if !defined(__svr4__) && !defined(__OpenBSD__)
+  	/* solaris 2.2 hack: set buffer size.
+  	 * NB- this changes to _xxx[3] for os<4.1.3 */
+  	info.record._xxx[2] = blksize;
+***************
+*** 349,355 ****
+  	info.monitor_gain = mgain;
+  	setinfo(&info);
+  	/* flush input to get rid of any data fragments */
+! 	ioctl(fd, I_FLUSH, FLUSHR);
+  	bufcur = buf;
+  }
+  
+--- 350,356 ----
+  	info.monitor_gain = mgain;
+  	setinfo(&info);
+  	/* flush input to get rid of any data fragments */
+! 	ioctl(fd, AUDIO_FLUSH, 0);
+  	bufcur = buf;
+  }
+  
+***************
+*** 646,652 ****
+  	AUDIO_INITINFO(&info);
+  	info.record.precision = 16;
+  	info.record.encoding  = AUDIO_ENCODING_LINEAR;
+! #ifndef __svr4__
+  	info.record._xxx[2]   = blksize << 1;
+  #else
+  	info.record.buffer_size = blksize << 1;
+--- 647,653 ----
+  	AUDIO_INITINFO(&info);
+  	info.record.precision = 16;
+  	info.record.encoding  = AUDIO_ENCODING_LINEAR;
+! #if !defined(__svr4__) && !defined(__OpenBSD__)
+  	info.record._xxx[2]   = blksize << 1;
+  #else
+  	info.record.buffer_size = blksize << 1;
+***************
+*** 655,660 ****
+  	info.play.encoding    = AUDIO_ENCODING_LINEAR;
+  	setinfo(&info);
+  	/* flush input again to get rid of any data with wrong encoding */
+! 	ioctl(fd, I_FLUSH, FLUSHR);
+  	bufcur = buf;
+  }
+--- 656,661 ----
+  	info.play.encoding    = AUDIO_ENCODING_LINEAR;
+  	setinfo(&info);
+  	/* flush input again to get rid of any data with wrong encoding */
+! 	ioctl(fd, AUDIO_FLUSH, 0);
+  	bufcur = buf;
+  }

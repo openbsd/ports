@@ -1,0 +1,34 @@
+*** sitebox.cc.orig	Thu Jul 15 16:39:24 1999
+--- sitebox.cc	Thu Jul 15 16:46:44 1999
+***************
+*** 230,235 ****
+--- 230,239 ----
+  
+  Site::~Site()
+  {
++ 	if (text_)
++ 		delete text_;
++ 	if (tag_)
++ 		delete tag_;
+  }
+  
+  int Site::command(int argc, const char*const* argv)
+***************
+*** 638,645 ****
+  	need_sort_ = 0;
+  
+  	Tcl& tcl = Tcl::instance();
+! 	Tk_Uid fg = mono()? "black" : (char*)tcl.attr("foreground");
+! 	Tk_Uid bg = mono()? "white" : (char*)tcl.attr("background");
+  	fg_ = lookup_gc(0, fg, bg);
+  	bg_ = lookup_gc(0, bg, bg);
+  }
+--- 642,649 ----
+  	need_sort_ = 0;
+  
+  	Tcl& tcl = Tcl::instance();
+! 	Tk_Uid fg = mono()? (char *)"black" : (char*)tcl.attr("foreground");
+! 	Tk_Uid bg = mono()? (char *) "white" : (char*)tcl.attr("background");
+  	fg_ = lookup_gc(0, fg, bg);
+  	bg_ = lookup_gc(0, bg, bg);
+  }

@@ -1,0 +1,14 @@
+--- configure.in.orig	Thu May 16 14:21:17 1996
++++ configure.in	Thu Aug  5 02:36:37 1999
+@@ -151,6 +151,11 @@
+ 	V_TARCMD="tar cfL"
+ 	V_CCOPT="-O2 -m486"
+ 	;;
++*-*-openbsd*)
++	V_OBJ_AUDIO="audio-voxware.o"
++	V_TARCMD="tar -h -c -f"
++	V_LIB="$V_LIB -lossaudio -L/usr/local/lib"
++	;;
+ *-*-freebsd*)
+ 	V_OBJ_AUDIO="$V_OBJ_AUDIO audio-voxware.o"
+ 	;;

@@ -1,0 +1,14 @@
+*** config.guess.orig	Thu Jul 15 16:29:33 1999
+--- config.guess	Thu Jul 15 16:29:59 1999
+***************
+*** 284,289 ****
+--- 284,292 ----
+      i[34]86:BSD/386:*:* | *:BSD/OS:*:*)
+  	echo ${UNAME_MACHINE}-unknown-bsdi${UNAME_RELEASE}
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++ 	exit 0 ;;
+      *:FreeBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+  	exit 0 ;;

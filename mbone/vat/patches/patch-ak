@@ -1,0 +1,36 @@
+*** iohandler.cc.orig	Thu Jul 15 16:41:13 1999
+--- iohandler.cc	Thu Jul 15 16:41:33 1999
+***************
+*** 132,138 ****
+  	    
+          }
+  #else
+! 	Tk_CreateFileHandler((ClientData)fd, mask, callback, (ClientData)this);
+  #endif
+  }
+  
+--- 132,138 ----
+  	    
+          }
+  #else
+! 	Tk_CreateFileHandler(fd, mask, callback, (ClientData)this);
+  #endif
+  }
+  
+***************
+*** 151,157 ****
+  	}
+  #else
+  	if (fd_ >= 0) {
+! 		Tk_DeleteFileHandler((ClientData)fd_);
+  		fd_ = -1;
+  	}
+  #endif
+--- 151,157 ----
+  	}
+  #else
+  	if (fd_ >= 0) {
+! 		Tk_DeleteFileHandler(fd_);
+  		fd_ = -1;
+  	}
+  #endif

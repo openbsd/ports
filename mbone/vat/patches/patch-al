@@ -1,0 +1,19 @@
+*** net-ip.cc.orig	Thu Jul 15 16:44:50 1999
+--- net-ip.cc	Thu Jul 15 16:45:07 1999
+***************
+*** 204,210 ****
+  	memset((char *)p, 0, sizeof(*p));
+  	p->sin_family = AF_INET;
+  	int len = sizeof(*p);
+! 	if (getsockname(ssock_, (struct sockaddr *)p, &len) < 0) {
+  		perror("getsockname");
+  		p->sin_addr.s_addr = 0;
+  		p->sin_port = 0;
+--- 204,210 ----
+  	memset((char *)p, 0, sizeof(*p));
+  	p->sin_family = AF_INET;
+  	int len = sizeof(*p);
+! 	if (getsockname(ssock_, (struct sockaddr *)p, (socklen_t *) &len) < 0) {
+  		perror("getsockname");
+  		p->sin_addr.s_addr = 0;
+  		p->sin_port = 0;

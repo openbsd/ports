@@ -1,0 +1,19 @@
+*** audio-bsd.cc.orig	Thu Jul 15 17:08:02 1999
+--- audio-bsd.cc	Thu Jul 15 17:08:32 1999
+***************
+*** 40,46 ****
+  #ifdef sun
+  #include <sbusdev/bsd_audioio.h>
+  #else
+! #include <machine/audioio.h>
+  #endif
+  
+  class BSDAudio : public SUNAudio {
+--- 40,46 ----
+  #ifdef sun
+  #include <sbusdev/bsd_audioio.h>
+  #else
+! #include <sys/audioio.h>
+  #endif
+  
+  class BSDAudio : public SUNAudio {
