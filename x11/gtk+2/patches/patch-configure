@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2004/06/22 03:15:03 marcm Exp $
---- configure.orig	2004-06-11 06:51:36.000000000 -0600
-+++ configure	2004-06-19 19:38:50.000000000 -0600
-@@ -8065,7 +8065,7 @@ nto-qnx*)
+$OpenBSD: patch-configure,v 1.6 2004/08/08 17:14:23 marcm Exp $
+--- configure.orig	Fri Jul  9 21:04:43 2004
++++ configure	Sat Aug  7 15:42:38 2004
+@@ -8062,7 +8062,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure,v 1.5 2004/06/22 03:15:03 marcm Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -26550,12 +26550,6 @@ echo "$as_me: error: Pango 1.2.0 and Xft
-    { (exit 1); exit 1; }; }
-   fi
- 
--  if $PKG_CONFIG --exists xft ; then : ; else
--    { { echo "$as_me:$LINENO: error: Xft version 2 is required for x11 target" >&5
--echo "$as_me: error: Xft version 2 is required for x11 target" >&2;}
+@@ -26535,12 +26535,6 @@ echo "$as_me: error: Xft Pango backend f
+   else
+     { { echo "$as_me:$LINENO: error: Pango 1.2.0 and Xft backend is required for x11 target" >&5
+ echo "$as_me: error: Pango 1.2.0 and Xft backend is required for x11 target" >&2;}
 -   { (exit 1); exit 1; }; }
 -  fi
 -
-   #
-   # If Pango included the shared library dependencies from X11 in
-   # the pkg-config output, then we use that (to avoid duplicates).
+-  if $PKG_CONFIG --exists xft ; then : ; else
+-    { { echo "$as_me:$LINENO: error: Xft version 2 is required for x11 target" >&5
+-echo "$as_me: error: Xft version 2 is required for x11 target" >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+ 

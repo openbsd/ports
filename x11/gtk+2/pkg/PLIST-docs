@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-docs,v 1.7 2004/06/22 18:02:04 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.8 2004/08/08 17:14:24 marcm Exp $
+share/gtk-doc/html/gdk/
+share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
 share/gtk-doc/html/gdk-pixbuf/apas02.html
@@ -32,7 +34,6 @@ share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
 share/gtk-doc/html/gdk-pixbuf/rn01.html
 share/gtk-doc/html/gdk-pixbuf/rn02.html
-share/gtk-doc/html/gdk-pixbuf/style.css
 share/gtk-doc/html/gdk-pixbuf/up.png
 share/gtk-doc/html/gdk/GdkDisplay.html
 share/gtk-doc/html/gdk/GdkDisplayManager.html
@@ -134,7 +135,6 @@ share/gtk-doc/html/gdk/sizing.png
 share/gtk-doc/html/gdk/spider.png
 share/gtk-doc/html/gdk/spraycan.png
 share/gtk-doc/html/gdk/star.png
-share/gtk-doc/html/gdk/style.css
 share/gtk-doc/html/gdk/target.png
 share/gtk-doc/html/gdk/tcross.png
 share/gtk-doc/html/gdk/top_left_arrow.png
@@ -149,6 +149,7 @@ share/gtk-doc/html/gdk/up.png
 share/gtk-doc/html/gdk/ur_angle.png
 share/gtk-doc/html/gdk/watch.png
 share/gtk-doc/html/gdk/xterm.png
+share/gtk-doc/html/gtk/
 share/gtk-doc/html/gtk/AbstractObjects.html
 share/gtk-doc/html/gtk/Actions.html
 share/gtk-doc/html/gtk/ButtonWidgets.html
@@ -442,9 +443,5 @@ share/gtk-doc/html/gtk/stock_zoom_1_24.png
 share/gtk-doc/html/gtk/stock_zoom_fit_24.png
 share/gtk-doc/html/gtk/stock_zoom_in_24.png
 share/gtk-doc/html/gtk/stock_zoom_out_24.png
-share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png
-@dirrm share/gtk-doc/html/gtk
-@dirrm share/gtk-doc/html/gdk-pixbuf
-@dirrm share/gtk-doc/html/gdk
