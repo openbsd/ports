@@ -1,0 +1,38 @@
+--- include/sound.h.orig	Sun Apr  2 13:03:19 2000
++++ include/sound.h	Sun Apr  2 13:17:32 2000
+@@ -207,17 +207,23 @@ struct SoundCacheBufferTag {
+ 
+ 
+ /*
+- *  FreeBSD
++ *  *BSD
+  */
+ 
+-#if defined(__FreeBSD__) && defined(USE_SOUND)
++#if (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(USE_SOUND)
+ 
+-/* FreeBSD with SoundBlaster Pro */
++/* *BSD with SoundBlaster Pro */
+ 
+ #include <sys/types.h>
+ #include <sys/file.h>
+ #include <sys/stat.h>
++#if defined(__FreeBSD__)
+ #include <machine/soundcard.h>
++#endif
++#if defined(__OpenBSD__)
++#include <sys/ioctl.h>
++#include <sys/audioio.h>
++#endif
+ 
+ #undef	O_RDWR
+ #define	O_RDWR	O_WRONLY	/* audio デバイスは同時オープンできない？ */
+@@ -230,7 +236,7 @@ struct SoundCacheBufferTag {
+ #define	SoundCacheBuffer	struct SoundCacheBufferTag
+ #define	AUDIO_DEVICE		"/dev/audio"
+ 
+-#endif	/* FreeBSD */
++#endif	/* *BSD */
+ 
+ 
+ #else	/* USE_NETAUDIO */

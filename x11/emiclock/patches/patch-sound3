@@ -1,0 +1,42 @@
+--- sys/FreeBSD/audio.c.orig	Sun Apr  2 13:02:20 2000
++++ sys/FreeBSD/audio.c	Sun Apr  2 13:07:43 2000
+@@ -90,7 +90,9 @@ S_PlaySound(char *soundfile)
+ 	return (SOUND_DEVICE_ERROR);
+     }
+     
++#ifdef __FreeBSD__
+     ioctl(sdev, SNDCTL_DSP_RESET, 0);
++#endif
+     
+     fstat(sfile, &sstat);
+     len = sstat.st_size;
+@@ -100,7 +102,11 @@ S_PlaySound(char *soundfile)
+     if ( (l = read(sfile, buffer, len)) > 0)
+ 	write(sdev, buffer, l);
+     
++#ifdef __FreeBSD__
+     ioctl(sdev, SNDCTL_DSP_SYNC, 0);
++#elif defined(__OpenBSD__)
++    ioctl(sdev, AUDIO_DRAIN, 0);
++#endif
+     XtFree(buffer);
+     
+     close(sdev); 
+@@ -159,11 +165,17 @@ S_PlayCacheSound(SoundCacheBuffer *cache
+ 	return(SOUND_DEVICE_ERROR);
+     }
+     
++#ifdef __FreeBSD__
+     ioctl(sdev, SNDCTL_DSP_RESET, 0);
++#endif
+     
+     write(sdev,cacheBufferPtr->soundCacheBuffer,cacheBufferPtr->soundLength);
+     
++#ifdef __FreeBSD__
+     ioctl(sdev, SNDCTL_DSP_SYNC, 0);
++#elif defined(__OpenBSD__)
++    ioctl(sdev, AUDIO_DRAIN, 0);
++#endif
+     close(sdev);
+     
+     return(SOUND_NO_ERROR);

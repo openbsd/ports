@@ -1,0 +1,16 @@
+--- sound.c.orig	Sun Apr  2 13:00:11 2000
++++ sound.c	Sun Apr  2 13:00:53 2000
+@@ -103,10 +103,10 @@ static Boolean		isHalfHourChimeCached = 
+ #include "sys/Linux/audio.c"
+ #endif	/* linux */
+ 
+-/* FreeBSD */
+-#ifdef	__FreeBSD__
++/* *BSD */
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include "sys/FreeBSD/audio.c"
+-#endif	/* FreeBSD */
++#endif	/* *BSD */
+ 
+ #else	/* USE_NETAUDIO */
+ 
