@@ -1,13 +1,38 @@
-$OpenBSD: patch-lib_glsmap_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
---- lib/glsmap/Imakefile.orig	Fri Aug  7 20:20:29 1998
-+++ lib/glsmap/Imakefile	Wed Jun 20 12:11:38 2001
-@@ -28,5 +28,9 @@ NormalLibraryObjectRule()
- #endif
+$OpenBSD: patch-lib_glsmap_Imakefile,v 1.2 2002/12/30 10:02:55 espie Exp $
+--- lib/glsmap/Imakefile.orig	Sat Aug  8 02:20:50 1998
++++ lib/glsmap/Imakefile	Mon Dec 30 10:45:27 2002
+@@ -2,10 +2,12 @@
+ /* Copyright (c) Mark J. Kilgard, 1998. */
  
- NormalLibraryTarget(glsmap,$(OBJS))
-+InstallLibrary(glsmap,$(USRLIBDIR))
+ #define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib  YES
++#define LibName glsmap
++#define SoRev SOGLSMAPREV
+ 
+-#include <Library.tmpl>
+-
+-#include "../../Glut.cf"
++SOGLSMAPREV = 3.7
+ 
+ SRCS = smap_buildsmap.c smap_context.c smap_create.c smap_destroy.c \
+   smap_drawmesh.c smap_flag.c smap_get.c smap_getfunc.c smap_gettexdim.c \
+@@ -19,6 +21,10 @@ OBJS = smap_buildsmap.o smap_context.o s
+   smap_origin.o smap_render.o smap_rvec2st.o smap_set.o smap_setfunc.o \
+   smap_setvec.o smap_texdim.o smap_texobj.o
+ 
++#include <Library.tmpl>
 +
-+SharedDepLibraryTarget(glsmap,3.7,.,$(OBJS),.,.)
-+InstallSharedLibrary(glsmap,3.7,$(USRLIBDIR))
++#include "../../Glut.cf"
++
+ #ifdef LibraryObjectRule
+ LibraryObjectRule()
+ #else
+@@ -26,7 +32,5 @@ LibraryObjectRule()
+    will probably do essentially what LibraryObjectRule does. */
+ NormalLibraryObjectRule()
+ #endif
+-
+-NormalLibraryTarget(glsmap,$(OBJS))
  
  DependTarget()

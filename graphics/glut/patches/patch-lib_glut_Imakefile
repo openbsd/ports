@@ -1,15 +1,39 @@
-$OpenBSD: patch-lib_glut_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
---- lib/glut/Imakefile.orig	Fri Aug  7 20:20:30 1998
-+++ lib/glut/Imakefile	Wed Jun 20 12:11:38 2001
-@@ -117,6 +117,11 @@ NormalLibraryObjectRule()
- #endif
+$OpenBSD: patch-lib_glut_Imakefile,v 1.2 2002/12/30 10:02:55 espie Exp $
+--- lib/glut/Imakefile.orig	Sat Aug  8 02:20:51 1998
++++ lib/glut/Imakefile	Mon Dec 30 10:41:50 2002
+@@ -2,10 +2,12 @@
+ /* Copyright (c) Mark J. Kilgard, 1994. */
  
- NormalLibraryTarget(glut,$(OBJS))
-+InstallLibrary(glut,$(USRLIBDIR))
+ #define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib  YES
++#define LibName glut
++#define SoRev SOGLUTREV
+ 
+-#include <Library.tmpl>
+-
+-#include "../../Glut.cf"
++SOGLUTREV = 3.7
+ 
+ HDRS = \
+ 	glutint.h \
+@@ -108,6 +110,10 @@ OBJS = \
+ 	glut_winmisc.o \
+ 	layerutil.o
+ 
++#include <Library.tmpl>
 +
-+SharedDepLibraryTarget(glut,3.7,.,$(OBJS),.,.)
-+InstallSharedLibrary(glut,3.7,$(USRLIBDIR))
++#include "../../Glut.cf"
 +
+ #ifdef LibraryObjectRule
+ LibraryObjectRule()
+ #else
+@@ -115,8 +121,6 @@ LibraryObjectRule()
+    will probably do essentially what LibraryObjectRule does. */
+ NormalLibraryObjectRule()
+ #endif
+-
+-NormalLibraryTarget(glut,$(OBJS))
  
  /* I've gotten too many complaints from people (mostly Linux users)
     trying to build GLUT that have problems using lex and yacc to

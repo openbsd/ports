@@ -1,13 +1,38 @@
-$OpenBSD: patch-lib_mui_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
---- lib/mui/Imakefile.orig	Fri Aug  7 20:20:30 1998
-+++ lib/mui/Imakefile	Wed Jun 20 12:11:38 2001
-@@ -22,5 +22,9 @@ NormalLibraryObjectRule()
- #endif
+$OpenBSD: patch-lib_mui_Imakefile,v 1.2 2002/12/30 10:02:55 espie Exp $
+--- lib/mui/Imakefile.orig	Sat Aug  8 02:20:51 1998
++++ lib/mui/Imakefile	Mon Dec 30 10:44:34 2002
+@@ -2,10 +2,12 @@
+ /* Copyright (c) Mark J. Kilgard, 1994. */
  
- NormalLibraryTarget(mui,$(OBJS))
-+InstallLibrary(mui,$(USRLIBDIR))
+ #define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib  YES
++#define LibName     mui
++#define SoRev SOMUIREV
+ 
+-#include <Library.tmpl>
+-
+-#include "../../Glut.cf"
++SOMUIREV = 3.7
+ 
+ SRCS = button.c displaylist.c gizmo.c glutmui.c \
+    hslider.c miscui.c mui.c pulldown.c textlist.c uicolor.c vslider.c
+@@ -13,6 +15,10 @@ SRCS = button.c displaylist.c gizmo.c gl
+ OBJS = button.o displaylist.o gizmo.o glutmui.o \
+    hslider.o miscui.o mui.o pulldown.o textlist.o uicolor.o vslider.o
+ 
++#include <Library.tmpl>
 +
-+SharedDepLibraryTarget(mui,3.7,.,$(OBJS),.,.)
-+InstallSharedLibrary(mui,3.7,$(USRLIBDIR))
++#include "../../Glut.cf"
++
+ #ifdef LibraryObjectRule
+ LibraryObjectRule()
+ #else
+@@ -20,7 +26,5 @@ LibraryObjectRule()
+    will probably do essentially what LibraryObjectRule does. */
+ NormalLibraryObjectRule()
+ #endif
+-
+-NormalLibraryTarget(mui,$(OBJS))
  
  DependTarget()
