@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/04 20:52:20 naddy Exp $
+bin/pornview
+share/applications/pornview.desktop
+share/locale/fr/LC_MESSAGES/pornview.mo
+share/locale/pl/LC_MESSAGES/pornview.mo
+share/pixmaps/pornview.png
+share/pornview/scripts/helloworld
+@dirrm share/pornview/scripts
+@dirrm share/pornview
