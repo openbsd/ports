@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Tue Aug 29 04:05:18 2000
++++ docs/Makefile.in	Tue Aug 29 04:06:10 2000
+@@ -22,7 +22,7 @@
+ bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+-datadir = @datadir@
++datadir = @prefix@/share/doc/gAcc
+ sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@

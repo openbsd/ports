@@ -1,0 +1,14 @@
+--- configure.orig	Tue Aug 29 03:34:49 2000
++++ configure	Tue Aug 29 04:00:46 2000
+@@ -1524,9 +1524,9 @@
+ fi
+ 
+ if test "x$prefix" != xNONE; then
+-	DATADIR="$prefix/share"
++	DATADIR="$prefix/share/doc/gAcc"
+ else
+-	DATADIR="$ac_default_prefix/share"
++	DATADIR="$ac_default_prefix/share/doc/gAcc"
+ fi
+ cat >> confdefs.h <<EOF
+ #define DATADIR "$DATADIR"
