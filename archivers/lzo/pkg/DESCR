@@ -15,7 +15,3 @@
           compression.
         + Algorithm is thread safe.
         + Algorithm is lossless.
-
- Author: Markus Franz Xaver Johannes Oberhumer
-         markus.oberhumer@jk.uni-linz.ac.at
-         http://www.infosys.tuwien.ac.at/Staff/lux/marco

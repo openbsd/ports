@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/01 23:38:22 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/06 17:23:19 brad Exp $
 
 DISTNAME=	lzo-1.04
 CATEGORIES=	archivers devel
@@ -7,9 +7,9 @@ MASTER_SITES= 	ftp://ftp.uni-koeln.de/util/arc/ \
 		ftp://ftp.all.de/pub/unix/tools/archivers/lzo/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=libs/compression
+MASTER_SITE_SUBDIR= libs/compression
 
-NEED_VERSION=	1.73
+NEED_VERSION=	1.111
 
 MAINTAINER=	brad@openbsd.org
 
@@ -19,10 +19,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-extract:
-	@chmod +x ${WRKSRC}/acconfig/*
+	@${CHMOD} +x ${WRKSRC}/acconfig/*
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/lzo
+	@${MKDIR} ${PREFIX}/share/doc/lzo
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo
 
 .include <bsd.port.mk>
