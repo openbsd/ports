@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/04 01:49:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/12/04 15:03:25 espie Exp $
 
+BROKEN=		"Bad library version number"
 DISTNAME=	popt-1.5.1
 CATEGORIES=	devel
 NEED_VERSION=	1.320
