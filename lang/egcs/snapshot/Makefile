@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.26 1999/02/06 16:31:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 1999/02/08 20:34:26 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -57,7 +57,7 @@ LATEST_DATE=1999-01-31
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-01-17
+NEXT_DATE=1999-02-08
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -314,7 +314,7 @@ do-build:
 	@(cd ${WRKBUILD}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
 	(echo "Make bootstrap failed."; \
-	echo "Don't forget to look at ${WRKSRC}/warnings"; ${FALSE})
+	echo "Don't forget to look at ${WRKBUILD}/warnings"; ${FALSE})
 
 
 ####
