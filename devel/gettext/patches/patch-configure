@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
---- configure.orig	Tue Jul 24 10:27:27 2001
-+++ configure	Mon Aug 27 11:23:33 2001
-@@ -1214,52 +1214,32 @@ echo "configure:1214: checking for worki
+$OpenBSD: patch-configure,v 1.6 2001/09/19 03:37:20 brad Exp $
+--- configure.orig	Fri Sep 14 20:47:29 2001
++++ configure	Tue Sep 18 23:02:54 2001
+@@ -1220,52 +1220,32 @@ echo "configure:1220: checking for worki
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 +echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
- echo "configure:1227: checking for working autoconf" >&5
+ echo "configure:1233: checking for working autoconf" >&5
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 +echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working automake""... $ac_c" 1>&6
- echo "configure:1240: checking for working automake" >&5
+ echo "configure:1246: checking for working automake" >&5
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 +echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
- echo "configure:1253: checking for working autoheader" >&5
+ echo "configure:1259: checking for working autoheader" >&5
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -61,8 +61,25 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 +echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working makeinfo""... $ac_c" 1>&6
- echo "configure:1266: checking for working makeinfo" >&5
-@@ -2962,7 +2942,14 @@ old_postuninstall_cmds=
+ echo "configure:1272: checking for working makeinfo" >&5
+@@ -2260,6 +2240,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
++  ;;
++
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -2968,7 +2958,14 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -78,7 +95,7 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -3459,7 +3446,9 @@ cygwin* | mingw* | pw32* )
+@@ -3465,7 +3462,9 @@ cygwin* | mingw* | pw32* )
      with_gnu_ld=no
    fi
    ;;
@@ -89,7 +106,7 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
  esac
  
  ld_shlibs=yes
-@@ -3863,10 +3852,21 @@ else
+@@ -3869,10 +3868,24 @@ else
      ;;
  
    openbsd*)
@@ -97,23 +114,26 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 -    hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-+    case "$host_os" in
-+      openbsd[[01]].* | openbsd2.[[0-7]] | openbsd2.[[0-7]].*)
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
++      export_dynamic_flag_spec='${wl}-E'
++    else
++      case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
 +	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
 +	hardcode_libdir_flag_spec='-R$libdir'
-+      ;;
-+      *)   
-+	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+	  export_dynamic_flag_spec='${wl}-E'
-+	fi
-+      ;;
-+    esac
++	;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++	hardcode_libdir_flag_spec='${wl}-R$libdir'
++	;;
++      esac
++    fi
      ;;
  
    os2*)
-@@ -4343,9 +4343,23 @@ newsos6)
+@@ -4349,9 +4362,21 @@ newsos6)
  
  openbsd*)
    version_type=sunos
@@ -122,25 +142,23 @@ $OpenBSD: patch-configure,v 1.5 2001/08/27 19:16:00 brad Exp $
 -    need_version=no
 +  need_lib_prefix=no
 +  need_version=no
-+  file_magic_cmd=/usr/bin/file
-+  file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib /usr/X11R6/lib"
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +    case "$host_os" in
 +    openbsd2.[89] | openbsd2.[89].*)
 +      shlibpath_overrides_runpath=no
-+    ;;
++      ;;
 +    *)
 +      shlibpath_overrides_runpath=yes
-+    ;;
++      ;;
 +    esac
 +  else
-+    deplibs_check_method='file_magic OpenBSD.* shared library'
 +    shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-@@ -8369,7 +8383,7 @@ else
+@@ -8375,7 +8400,7 @@ else
    ;;
  esac
  fi
