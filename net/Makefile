@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2004/01/25 18:19:30 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.304 2004/01/27 12:32:50 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -48,7 +48,7 @@
      SUBDIR += epic4
      SUBDIR += etherape
      SUBDIR += ethereal
-     SUBDIR += ethereal,no_x11
+     SUBDIR += ethereal,snmp
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += firewalk
