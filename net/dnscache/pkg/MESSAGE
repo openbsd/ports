@@ -1,0 +1,21 @@
++--------------------------------
+| DNScache is installed
++--------------------------------
+
+Help on configuration:	http://cr.yp.to/dnscache/faq.html
+Or start here:		http://cr.yp.to/dnscache.html
+(beware that you need to setup daemontools first)
+
+The accounts and groups that you need to create could look like this:
+-> /etc/group
+dnscache:*:2000:
+tinydns:*:2100:
+dnslog:*:2200:
+-> /etc/master.passwd
+dnscache:*:2000:2000:DNSCACHE:/nonexistent:/sbin/nologin
+tinydns:*:2100:2100:DNSCACHE:/nonexistent:/sbin/nologin
+dnslog:*:2200:2000:DNSCACHE:/nonexistent:/sbin/nologin
+
+After running dnscache-conf, do the following in your new dnscache
+directory to get a strong(er) random seed:
+  dd if=/dev/srandom of=seed bs=128 count=1

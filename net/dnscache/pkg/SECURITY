@@ -1,0 +1,39 @@
+(from http://cr.yp.to/dnscache/ad/security.html)
+
+Security features: 
+
+- dnscache runs as a dedicated non-root uid inside a chroot jail,
+  so it can't touch the rest of the machine.
+- tinydns runs as another dedicated non-root uid inside its own
+  chroot jail.
+- pickdns runs as another dedicated non-root uid inside its own
+  chroot jail.
+- walldns runs as another dedicated non-root uid inside its own
+  chroot jail.
+- dnscache discards DNS queries from outside a specified list of
+  IP addresses.
+- dnscache and the dns library use a new query ID and a new UDP
+  port for each query packet. They discard DNS responses from any IP
+  address other than the one that the corresponding query was just
+  sent to.
+- dnscache uses a cryptographic generator to select unpredictable
+  port numbers and IDs.
+- dnscache is immune to cache poisoning.
+- tinydns, pickdns, and walldns never cache information. They do
+  not support recursion.
+
+Security metafeatures: 
+
+- Security was, and is, one of the primary motivations for the
+development of DNScache. Every step of the design and implementation
+has been carefully evaluated from a security perspective.
+
+- The DNScache package has been structured to minimize the complexity
+of security-critical code. The package is modularized for easy
+review.
+
+- Bug-prone coding practices and libraries have been systematically
+identified and rejected.
+
+Beware, however, that the DNS infrastructure is inherently vulnerable
+to forgery.
