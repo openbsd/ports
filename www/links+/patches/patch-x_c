@@ -1,0 +1,11 @@
+$OpenBSD: patch-x_c,v 1.8 2004/12/04 01:09:56 fgsch Exp $
+--- x.c.orig	Fri Dec  3 22:04:59 2004
++++ x.c	Fri Dec  3 22:05:21 2004
+@@ -314,6 +314,7 @@ static int x_translate_key(XKeyEvent *e,
+ 	/* alt, control, shift ... */
+ 	if (e->state&ControlMask)*flag|=KBD_CTRL;
+ 	if (e->state&Mod1Mask)*flag|=KBD_ALT;
++	if (e->state&ShiftMask)*flag|=KBD_SHIFT;
+ 
+ 	/* alt-f4 */
+ 	if (((*flag)&KBD_ALT)&&(ks==XK_F4)){*key=KBD_CTRL_C;*flag=0;return 1;}
