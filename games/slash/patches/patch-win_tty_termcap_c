@@ -1,0 +1,14 @@
+$OpenBSD: patch-win_tty_termcap_c,v 1.1 2000/04/16 21:19:08 espie Exp $
+--- win/tty/termcap.c.orig	Fri Apr 14 15:15:20 2000
++++ win/tty/termcap.c	Fri Apr 14 15:19:54 2000
+@@ -827,7 +827,9 @@ init_hilite()
+ 		hilites[c] = HI;
+ 	hilites[CLR_GRAY] = hilites[NO_COLOR] = (char *)0;
+ 
+-	if (tgetnum("Co") < 8 || (setf = tgetstr("Sf", (char **)0)) == (char *)0)
++	if (tgetnum("Co") < 8
++	    || ((setf = tgetstr("Sf", (char **)0)) == (char *)0
++		&& (setf = tgetstr("AF", (char **)0)) == (char *)0))
+ 		return;
+ 
+ 	for (c = 0; c < CLR_MAX / 2; c++) {

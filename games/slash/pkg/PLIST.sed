@@ -1,10 +1,8 @@
+@comment $OpenBSD: PLIST.sed,v 1.1 2000/04/16 21:19:09 espie Exp $
 @group games
 bin/slash
-man/man6/dgn_comp.6
-man/man6/dlb.6
-man/man6/lev_comp.6
-man/man6/slash.6
-man/man6/recover.6
+bin/srecover
+%%x11%%
 lib/slashdir/A-filla.lev
 lib/slashdir/A-fillb.lev
 lib/slashdir/A-goal.lev
@@ -161,10 +159,8 @@ lib/slashdir/options
 lib/slashdir/oracle.lev
 lib/slashdir/oracles
 lib/slashdir/orcus.lev
-lib/slashdir/pet_mark.xbm
 lib/slashdir/quest.dat
 lib/slashdir/rats.lev
-lib/slashdir/rip.xpm
 lib/slashdir/rumors
 lib/slashdir/sanctum.lev
 lib/slashdir/sea.lev
@@ -182,24 +178,16 @@ lib/slashdir/wizard1.lev
 lib/slashdir/wizard2.lev
 lib/slashdir/wizard3.lev
 lib/slashdir/wizhelp
-lib/slashdir/x11tiles
 lib/slashdir/yeenoghu.lev
-lib/X11/app-defaults/Slash
-lib/X11/fonts/hack/ibm.pcf.gz
-lib/X11/fonts/hack/nh10.pcf.gz
-@exec /usr/X11R6/bin/mkfontdir %D/lib/X11/fonts/hack
-@unexec /usr/X11R6/bin/mkfontdir %D/lib/X11/fonts/hack
-@mode 664
-lib/slashdir/logfile
-lib/slashdir/record
-lib/slashdir/perm
-@exec chmod 775 %D/lib/slashdir
+man/man6/srecover.6
+man/man6/slash.6
 @mode 2555
 lib/slashdir/slash
-@exec mkdir %D/lib/slashdir/save
-@exec chown games:games %D/lib/slashdir/save
-@exec chmod -R 575 %D/lib/slashdir/save
-@unexec rm %D/lib/slashdir/record
-@unexec rm %D/lib/slashdir/logfile
-@unexec rm -rf %D/lib/slashdir/save
+@exec chmod 775 %B
+@exec install -g games -m 0664 /dev/null %B/logfile
+@exec install -g games -m 0664 /dev/null %B/perm
+@exec install -g games -m 0664 /dev/null %B/record
+@unexec rm %B/logfile %B/perm %B/record
+@exec install -d -g games -m 0575 %B/save
+@unexec rm -rf %B/save
 @dirrm lib/slashdir

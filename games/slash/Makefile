@@ -1,55 +1,75 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/09 17:36:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/16 21:18:59 espie Exp $
 
 DISTNAME=	slash-e8
 CATEGORIES=	games
 NEED_VERSION=	1.121
-FAKE=No
-MASTER_SITES0=	${MASTER_SITE_GNU}
+MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
+                ftp://ftp.uu.net/pub/games/nethack/sources/ \
+                ${MASTER_SITE_GNU}
+
+MASTER_SITES0=  ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
 MASTER_SITES1=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
+
 MASTER_SITE_SUBDIR= nethack
-DISTFILES=	nethack-3.2.2.tar.gz:0 Slash-Unix.tar.gz:1
+DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:1
+PATCHFILES=nh-3.2.2-3.2.3.diff:0
 
 
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	yes
-USE_X11=	yes
+FAKE=		Yes
+FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=		${PREFIX}/lib/slashdir
-MAKE_ENV+= 	NHDIR=${NHDIR}
+NHDIR=	${DESTDIR}${PREFIX}/lib/slashdir
+MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+
+FLAVORS=X11
+# Old text interface
+FLAVOR?=
+
+.if ${FLAVOR:U} == "X11"
+NETHACKCONFIG=${FILESDIR}/x-config
+USE_X11=	Yes
+.else
+NETHACKCONFIG=${FILESDIR}/simple-config
+.endif
+
+RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata
 
 post-extract:
-	@cd ${WRKDIR}; mv nethack-3.2.2 ${DISTNAME}
-	@cd ${WRKDIR}; mv dat/* ${DISTNAME}/dat
+	@cd ${WRKDIR} && mv nethack-3.2.2 ${DISTNAME}
+	@cd ${WRKDIR} && mv dat/* ${DISTNAME}/dat
 	@cp ${FILESDIR}/blkmar.des ${WRKSRC}/dat
 
-pre-patch:
-	@cd ${WRKSRC}; ${PATCH} -p1 -s < ${WRKDIR}/slashe8.dif
-	@cd ${WRKSRC}; ${PATCH} -p1 -s < ${WRKDIR}/e8p1.dif
+post-distpatch:
+	# Two patches failure, not to worry
+	@-cd ${WRKSRC} && ${PATCH} -p1 -b .bak.orig -s < ${WRKDIR}/slashe8.dif
+	@cd ${WRKSRC} && ${PATCH} -p1 -b .bak.orig -s < ${WRKDIR}/e8p1.dif
 
-pre-configure:
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
+do-configure:
+	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks
+
+post-build:
+	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover
+	@cd ${WRKSRC}/util && ln -f recover srecover
+	@cd ${WRKSRC}/doc && perl -p ${FILESDIR}/substitute <nethack.6 >slash.6
+	@cd ${WRKSRC}/doc && perl -p ${FILESDIR}/substitute <recover.6 >srecover.6
 
 post-install:
-	@mkdir -p ${PREFIX}/lib/X11/fonts/hack
-	@mkdir -p ${PREFIX}/share/doc/nethack
-	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
-	@cd ${WRKSRC}/doc; PREFIX='${PREFIX}' INSTALL_MAN='${INSTALL_MAN}' ${MAKE} manpages
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+	${INSTALL_PROGRAM} ${WRKBUILD}/util/srecover ${PREFIX}/bin
+	@cd ${WRKSRC}/doc && \
+	    ${INSTALL_MAN} slash.6 srecover.6 ${PREFIX}/man/man6
+.if ${FLAVOR:U} == "X11"
+	@mkdir -p ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	sed -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \
-	${INSTALL_DATA} Slash ${PREFIX}/lib/X11/app-defaults && \
-	${X11BASE}/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
-	${X11BASE}/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz && \
-	${INSTALL_DATA} ibm.pcf.gz ${PREFIX}/lib/X11/fonts/hack && \
-	${INSTALL_DATA} nh10.pcf.gz ${PREFIX}/lib/X11/fonts/hack
-	${X11BASE}/bin/mkfontdir ${X11BASE}/lib/X11/fonts/hack
-	@cat ${PKGDIR}/DESCR
+	${INSTALL_DATA} Slash ${PREFIX}/lib/X11/app-defaults
+.endif
 
 .include <bsd.port.mk>

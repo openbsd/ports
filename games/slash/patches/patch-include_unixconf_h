@@ -1,6 +1,7 @@
---- include/unixconf.h.org	Fri Jul 24 22:46:52 1998
-+++ include/unixconf.h	Fri Jul 24 22:48:14 1998
-@@ -19,7 +19,11 @@
+$OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 21:19:07 espie Exp $
+--- include/unixconf.h.orig	Tue Dec 10 21:20:08 1996
++++ include/unixconf.h	Fri Apr 14 15:15:02 2000
+@@ -19,12 +19,16 @@
   */
  
  /* define exactly one of the following four choices */
@@ -13,6 +14,12 @@
  			/* also for relatives like SunOS, Linux and DG/UX */
  /* #define ULTRIX	/* define for Ultrix v3.0 or higher (but not lower) */
  			/* Use BSD for < v3.0 */
+ 			/* "ULTRIX" not to be confused with "ultrix" */
+-/* #define SYSV		/* define for System V */
++#define SYSV		/* define for System V */
+ /* #define HPUX		/* Hewlett-Packard's Unix, version 6.5 or higher */
+ 			/* use SYSV for < v6.5 */
+ 
 @@ -33,7 +37,7 @@
  /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
  #define NETWORK		/* if running on a networked system */
@@ -22,11 +29,13 @@
  /* #define LINUX	/* Another Unix clone */
  /* #define GENIX	/* Yet Another Unix Clone */
  /* #define HISX		/* Bull Unix for XPS Machines */
-@@ -42,12 +46,12 @@
+@@ -42,12 +46,14 @@
  /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
  			 * job control (note that AIX is SYSV otherwise)
  			 * Also define this for AIX 3.2 */
 -/* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
++#define TERMLIB
++#define TERMINFO
 +#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
  			/* and/or ANSI color support on termcap systems */
  			/* and/or X11 color */
@@ -38,7 +47,7 @@
  			/* define for many recent OS releases, including
  			 * those with specific defines (since types are
  			 * changing toward the standard from earlier chaos).
-@@ -114,7 +118,7 @@
+@@ -114,7 +120,7 @@
   * "extra output" method is used, but not all systems provide access to
   * a fine-grained timer.
   */
@@ -47,7 +56,7 @@
  #endif
  
  /*
-@@ -125,7 +129,7 @@
+@@ -125,7 +131,7 @@
   * A stat system call is done on the mailbox every MAILCKFREQ moves.
   */
  
@@ -56,7 +65,7 @@
  
  /* The Andrew Message System does mail a little differently from normal
   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
-@@ -286,7 +290,7 @@
+@@ -286,7 +292,7 @@
  #endif
  
  #ifdef TIMED_DELAY

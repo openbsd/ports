@@ -1,6 +1,7 @@
---- sys/unix/Makefile.dat.orig	Sat Jul 25 00:31:54 1998
-+++ sys/unix/Makefile.dat	Sat Jul 25 00:30:12 1998
-@@ -52,7 +52,7 @@
+$OpenBSD: patch-sys_unix_Makefile_dat,v 1.1 2000/04/16 21:19:07 espie Exp $
+--- sys/unix/Makefile.dat.orig	Fri Apr 14 15:10:48 2000
++++ sys/unix/Makefile.dat	Fri Apr 14 15:10:49 2000
+@@ -52,7 +52,7 @@ spec_levs: ../util/lev_comp \
  	beholder.des caves.des darkelf.des dragons.des giants.des guild.des \
  	kobold-1.des kobold-2.des lich.des mall-1.des mall-2.des mineend.des \
  	minefill.des mtemple.des newmall.des nymph.des rats.des sea.des \
@@ -9,7 +10,7 @@
  	../util/lev_comp bigroom.des
  	../util/lev_comp castle.des
  	../util/lev_comp endgame.des
-@@ -86,6 +86,7 @@
+@@ -86,6 +86,7 @@ spec_levs: ../util/lev_comp \
  	../util/lev_comp stor-2.des
  	../util/lev_comp stor-3.des
  	../util/lev_comp tomb.des

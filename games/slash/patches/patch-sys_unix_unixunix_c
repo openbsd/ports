@@ -1,6 +1,7 @@
---- sys/unix/unixunix.c.orig	Fri Jul 24 19:06:13 1998
-+++ sys/unix/unixunix.c	Fri Jul 24 19:06:05 1998
-@@ -38,7 +38,9 @@
+$OpenBSD: patch-sys_unix_unixunix_c,v 1.1 2000/04/16 21:19:08 espie Exp $
+--- sys/unix/unixunix.c.orig	Tue Jun 18 00:34:55 1996
++++ sys/unix/unixunix.c	Fri Apr 14 15:10:49 2000
+@@ -38,7 +38,9 @@ gethdate(name)
   * does not exist on all systems, and moreover, that it sometimes includes
   * <sys/types.h> again, so that the compiler sees these typedefs twice.
   */

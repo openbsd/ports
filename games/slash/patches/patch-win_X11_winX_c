@@ -1,6 +1,7 @@
---- win/X11/winX.c.orig	Sat Jul 25 00:36:46 1998
-+++ win/X11/winX.c	Sat Jul 25 00:37:01 1998
-@@ -921,7 +921,7 @@
+$OpenBSD: patch-win_X11_winX_c,v 1.1 2000/04/16 21:19:08 espie Exp $
+--- win/X11/winX.c.orig	Tue Jun 18 00:35:23 1996
++++ win/X11/winX.c	Fri Apr 14 15:10:49 2000
+@@ -921,7 +921,7 @@ char** argv;
      XtSetArg(args[num_args], XtNallowShellResize, True);	num_args++;
      toplevel = XtAppInitialize(
  		    &app_context,

@@ -1,0 +1,22 @@
+$OpenBSD: patch-sys_unix_Makefile_utl,v 1.1 2000/04/16 21:19:08 espie Exp $
+--- sys/unix/Makefile.utl.orig	Tue Dec 10 21:20:11 1996
++++ sys/unix/Makefile.utl	Fri Apr 14 15:10:49 2000
+@@ -1,6 +1,7 @@
+ #	Makefile for NetHack's utility programs.
+ #	SCCS Id: @(#)Makefile.utl	3.2	96/05/09
+ 
++include ${NETHACKCONFIG}
+ # newer makes predefine $(MAKE) to 'make' and do smarter processing of
+ # recursive make calls if $(MAKE) is used
+ # these makes allow $(MAKE) to be overridden by the environment if someone
+@@ -78,9 +79,7 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
+-LFLAGS =
+- 
++CFLAGS += -I../include
+ 
+ # yacc/lex programs to use to generate *_comp.h, *_lex.c, and *_yacc.c.
+ # if, instead of yacc/lex you have bison/flex, comment/uncomment the following.

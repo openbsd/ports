@@ -1,15 +1,19 @@
---- sys/unix/Makefile.top.org	Fri Jul 24 22:49:09 1998
-+++ sys/unix/Makefile.top	Fri Jul 24 22:51:20 1998
-@@ -13,17 +13,17 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.1 2000/04/16 21:19:07 espie Exp $
+--- sys/unix/Makefile.top.orig	Fri Apr 14 15:10:48 2000
++++ sys/unix/Makefile.top	Fri Apr 14 15:10:49 2000
+@@ -13,17 +13,19 @@
  # execute things like 'data' and 'rumors')
  # MAKE = make
  
 -# make NetHack
 -GAME     = nethack
+-GAMEUID  = games
+-GAMEGRP  = bin
++include ${NETHACKCONFIG}
++
 +# this is slash
 +GAME     = slash
- GAMEUID  = games
--GAMEGRP  = bin
++GAMEUID  = bin
 +GAMEGRP  = games
  
  # Permissions - some places use setgid instead of setuid, for instance
@@ -24,31 +28,37 @@
  
  # GAMEDIR also appears in config.h as "HACKDIR".
  #
-@@ -32,13 +32,13 @@
+@@ -32,11 +34,12 @@ DIRPERM  = 0755
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = /usr/games/lib/$(GAME)dir
 -SHELLDIR = /usr/games
-+GAMEDIR  = ${PREFIX}/lib/$(GAME)dir
-+SHELLDIR = ${PREFIX}/bin
++REALGAMEDIR = ${PREFIX}/lib/$(GAME)dir
++GAMEDIR = ${DESTDIR}${REALGAMEDIR}
++SHELLDIR = ${DESTDIR}${PREFIX}/bin
  
  # per discussion in Install.X11
 -VARDATND = 
-+#VARDATND = 
++# VARDATND = 
  # VARDATND = x11tiles pet_mark.xbm
--# VARDATND = x11tiles pet_mark.xbm rip.xpm
-+VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # VARDATND = x11tiles pet_mark.xbm rip.xpm
  
- VARDATD = data oracles options quest.dat rumors
- VARDAT = $(VARDATD) $(VARDATND)
-@@ -63,7 +63,8 @@
+@@ -63,7 +66,7 @@ DATHELP = help hh cmdhelp history opthel
  
  SPEC_LEVS = *.lev
  									
 -SPEC_LEVS = asmodeus.lev baalz.lev beholder.lev bigrm-?.lev castle.lev \
-+SPEC_LEVS = asmodeus.lev baalz.lev blkmar.lev \
-+   beholder.lev bigrm-?.lev castle.lev \
++SPEC_LEVS = asmodeus.lev baalz.lev beholder.lev bigrm-?.lev blkmar.lev castle.lev \
  	cav2fill.lev cavefill.lev demogorg.lev dispater.lev dragons.lev \
  	fakewiz?.lev geryon.lev guild.lev juiblex.lev knox.lev kobold-?.lev \
  	lich.lev mall-?.lev mall.lev medusa-?.lev mine_end.lev minefill.lev \
+@@ -143,7 +146,7 @@ dofiles:
+ 	$(MAKE) dofiles-$${target-nodlb}
+ 	cp src/$(GAME) $(GAMEDIR)
+ 	-rm -f $(SHELLDIR)/$(GAME)
+-	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
++	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)

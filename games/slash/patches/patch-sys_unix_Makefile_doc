@@ -1,6 +1,7 @@
---- sys/unix/Makefile.doc.org	Fri Jul 24 22:52:05 1998
-+++ sys/unix/Makefile.doc	Fri Jul 24 22:52:27 1998
-@@ -30,16 +30,16 @@
+$OpenBSD: patch-sys_unix_Makefile_doc,v 1.1 2000/04/16 21:19:07 espie Exp $
+--- sys/unix/Makefile.doc.orig	Tue Dec 10 21:20:08 1996
++++ sys/unix/Makefile.doc	Fri Apr 14 15:10:49 2000
+@@ -30,16 +30,16 @@ Guidebook.dvi:	Guidebook.tex
  	latex Guidebook.tex
  
  
