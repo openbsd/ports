@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/23 11:25:02 espie Exp $
 %%SHARED%%
 bin/ec++
 bin/ecpp
@@ -179,7 +179,6 @@ include/c++/${V}/ext/
 include/c++/${V}/ext/algorithm
 include/c++/${V}/ext/bitmap_allocator.h
 include/c++/${V}/ext/debug_allocator.h
-include/c++/${V}/ext/demangle.h
 include/c++/${V}/ext/enc_filebuf.h
 include/c++/${V}/ext/functional
 include/c++/${V}/ext/hash_fun.h
