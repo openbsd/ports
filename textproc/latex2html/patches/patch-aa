@@ -1,11 +1,137 @@
---- latex2html.orig	Sun May 21 15:54:51 2000
-+++ latex2html	Sun May 21 15:55:00 2000
-@@ -3803,7 +3803,7 @@
+--- latex2html.save	Fri May  5 12:51:48 2000
++++ latex2html	Fri May  5 12:39:51 2000
+@@ -3618,14 +3618,14 @@
+     ($next, $br_id, $pat);
+ }
+ 
++#sub get_next_optional_argument {
++#    local($next, $pat);
++#    s/$optional_arg_rx/$next=$1;$pat=$&;''/eo
++#	if (/\s*[[]/ && (! $`)); # if the first character is a [
++#        # (/^[]/ does not work because it may match the beginning of ANY line
++#    s/^\s*\[\]/$pat=$&;''/eg unless $pat; # This is not picked by $optional_arg_rx
++#    ($next, $pat);
++#}
+-sub get_next_optional_argument {
+-    local($next, $pat);
+-    s/$optional_arg_rx/$next=$1;$pat=$&;''/eo
+-	if (/\s*[[]/ && (! $`)); # if the first character is a [
+-        # (/^[]/ does not work because it may match the beginning of ANY line
+-    s/^\s*\[\]/$pat=$&;''/eg unless $pat; # This is not picked by $optional_arg_rx
+-    ($next, $pat);
+-}
+ sub get_next_optional_argument {
+     local($next, $pat);
+     s/$optional_arg_rx/$next=$1;$pat=$&;''/eo
+@@ -3683,7 +3683,8 @@
+ 
+     # no arguments
+ 
++#    if (/^$O/ && (! $`)) { $next=0; $pat=''; $is_simple_def=1; $O }
++    if (/^$O/ && (! $`)) { $next=0; $pat=''; $is_simple_def=1;}
+-    if (/^$O/ && (! $`)) { $next=0; $pat=''; $is_simple_def=1; $O }
+ 
+     # 'simple' arguments
+ 
+@@ -3804,7 +3803,8 @@
  	local($name)= $tag."_attribs";
  	$taglist = $$name;
  	$values = $saved;
--        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1};''/eg;
++#        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1};''/eg;
 +        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1;''/eg;
+-        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1};''/eg;
          local($j) = 0;
  	while ($j < $i) {
  	    $j++;
+@@ -4945,8 +4943,10 @@
+     $y = &clean_key($y);
+ #    "\L$x" cmp "\L$y";  # changed sort-rules, by M Ernst.
+     # Put alphabetic characters after symbols; already downcased
++#    $x =~ s/^([a-z])/~~~\1/;
++#    $y =~ s/^([a-z])/~~~\1/;
++    $x =~ s/^([a-z])/~~~$1/;
++    $y =~ s/^([a-z])/~~~$1/;
+-    $x =~ s/^([a-z])/~~~\1/;
+-    $y =~ s/^([a-z])/~~~\1/;
+     $x cmp $y;
+ }
+ 
+@@ -6679,12 +6675,17 @@
+ 	# Search for [aAiI1] which is not between a pair of { }
+ 	# Other cases like "\theenumi" are not handled
+ 	@label_fields = $standard_label =~ /$enum_label_rx/;
++#	$label_func = $enum_label_funcs{@label_fields[$#label_fields-1]} . 
++#		"(\'enum" . $rlevel . "\')";
+ 	$label_func = $enum_label_funcs{@label_fields[$#label_fields-1]} . 
+ 		"(\'enum" . $rlevel . "\')";
+ 	$enum{'theenum' . $rlevel} = "\&$label_func";
++#	$standard_label = 
++#		"\"@label_fields[0]\" . eval(\$enum{\"theenum$rlevel\"}) .
++#		\"@label_fields[$#label_fields]\"";
+ 	$standard_label = 
++		"\"$label_fields[0]\" . eval(\$enum{\"theenum$rlevel\"}) .
++		\"$label_fields[$#label_fields]\"";
+-		"\"@label_fields[0]\" . eval(\$enum{\"theenum$rlevel\"}) .
+-		\"@label_fields[$#label_fields]\"";
+ 	$enum{'labelenum' . $rlevel} = "$standard_label";
+ 
+     }
+@@ -7153,7 +7144,8 @@
+ }
+ 
+ sub do_cmd_theequation {
++#    join('',$EQNO_START, &get_counter_value('eqn_number'), $EQNO_END, @_[1]);
++    join('',$EQNO_START, &get_counter_value('eqn_number'), $EQNO_END, $_[1]);
+-    join('',$EQNO_START, &get_counter_value('eqn_number'), $EQNO_END, @_[1]);
+ }
+ 
+ sub post_latex_do_env_eqnarray {
+@@ -7387,9 +7377,9 @@
+     join('',($math_mode ? "\&ldots;" : "..."),$_[0]);
+ }
+ 
++#sub do_cmd_dots {
++#    join('',($math_mode ? "\&ldots;" : "..."),$_[0]);
++#}
+-sub do_cmd_dots {
+-    join('',($math_mode ? "\&ldots;" : "..."),$_[0]);
+-}
+ 
+ sub do_cmd_hrule {
+     local($_) = @_;
+@@ -8273,7 +8263,8 @@
+ }
+ 
+ sub do_cmd_newblock {
++#    "<BR>".@_[0]
++    "<BR>".$_[0]
+-    "<BR>".@_[0]
+ }
+ 
+ # This just reads in the $FILE.bbl file if it is available and appends
+@@ -8767,10 +8756,10 @@
+ 
+ ################# Special Naming Macros ##################################
+ 
++#sub do_cmd_LaTeX {
++#    local($_) = @_;
++#    join('',$Laname, $TeXname, $_);
++#}
+-sub do_cmd_LaTeX {
+-    local($_) = @_;
+-    join('',$Laname, $TeXname, $_);
+-}
+ 
+ sub do_cmd_LaTeX {
+     local($_) = @_;
+@@ -10323,7 +10312,8 @@
+     local($language_alts) = join("|", keys %language_translations);
+     $setlanguage_rx = "\\\\setlanguage{\\\\($language_alts)}";
+     $language_rx = "\\\\($language_alts)TeX";
++#    $case_change_rx = "\\\\((Make)?([Uu]pp|[Ll]ow)ercase)\s*";
++    $case_change_rx = "\\\\((Make)?([Uu]pp|[Ll]ow)ercase)\\s*";
+-    $case_change_rx = "\\\\((Make)?([Uu]pp|[Ll]ow)ercase)\s*";
+ }
+ 
+ # JCL(jcl-del) - new rexexp type
+
