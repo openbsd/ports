@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/26 08:43:49 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/08/15 19:30:31 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
 DISTNAME=	ntop-1.1-src
 PKGNAME=	ntop-1.1
 CATEGORIES=	net
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
@@ -27,6 +27,7 @@ INSTALL_TARGET=	install install-man
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-install:
+	@chmod 700 ${PREFIX}/sbin/ntop
 	@strip ${PREFIX}/sbin/ntop
 
 .include <bsd.port.mk>
