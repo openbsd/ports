@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/25 23:31:51 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/06 21:09:35 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
-DISTNAME=	ntop-1.1cr2
+DISTNAME=	ntop-1.1cr4
 PKGNAME=	ntop-1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/snapshots/ \
