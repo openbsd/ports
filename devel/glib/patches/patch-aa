@@ -1,7 +1,23 @@
---- Makefile.in.orig	Thu Mar 25 21:49:17 1999
-+++ Makefile.in	Thu Mar 25 21:49:48 1999
-@@ -117,7 +117,7 @@
- configinclude_DATA =  	glibconfig.h
+--- Makefile.in.orig	Wed Mar 24 23:22:24 1999
++++ Makefile.in	Sun Apr  4 16:57:10 1999
+@@ -95,8 +95,6 @@
+ 
+ SUBDIRS = . gmodule gthread docs tests
+ 
+-configincludedir = $(pkglibdir)/include
+-
+ bin_SCRIPTS = glib-config
+ 
+ BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
+@@ -111,13 +109,10 @@
+ libglib_la_SOURCES =  	garray.c		gcache.c		gcompletion.c		gdataset.c		gdate.c         	gerror.c		ghash.c			ghook.c			giochannel.c    	giounix.c       	glist.c			gmain.c         	gmem.c			gmessages.c		gmutex.c		gnode.c			gprimes.c		grel.c			gscanner.c		gslist.c		gstrfuncs.c		gstring.c		gtimer.c		gtree.c			gutils.c
+ 
+ 
+-include_HEADERS =  	glib.h
+-
+-
+-configinclude_DATA =  	glibconfig.h
++include_HEADERS =  	glib.h glibconfig.h
  
  
 -libglib_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
@@ -9,3 +25,56 @@
  
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
+@@ -165,7 +160,7 @@
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+-DATA =  $(configinclude_DATA) $(m4data_DATA)
++DATA =  $(m4data_DATA)
+ 
+ HEADERS =  $(include_HEADERS)
+ 
+@@ -341,25 +336,6 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+-install-configincludeDATA: $(configinclude_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(configincludedir)
+-	@list='$(configinclude_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configincludedir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configincludedir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(configincludedir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(configincludedir)/$$p; \
+-	  fi; fi; \
+-	done
+-
+-uninstall-configincludeDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(configinclude_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(configincludedir)/$$p; \
+-	done
+-
+ install-m4dataDATA: $(m4data_DATA)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
+@@ -557,8 +533,7 @@
+ install-exec-am: install-libLTLIBRARIES install-binSCRIPTS
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-configincludeDATA install-m4dataDATA \
+-		install-includeHEADERS
++install-data-am: install-m4dataDATA install-includeHEADERS
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+@@ -631,7 +606,6 @@
+ maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
+ distclean-noinstPROGRAMS clean-noinstPROGRAMS \
+ maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
+-uninstall-configincludeDATA install-configincludeDATA \
+ uninstall-m4dataDATA install-m4dataDATA uninstall-includeHEADERS \
+ install-includeHEADERS install-data-recursive uninstall-data-recursive \
+ install-exec-recursive uninstall-exec-recursive installdirs-recursive \

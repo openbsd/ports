@@ -1,19 +1,17 @@
 bin/glib-config
-info/dir
 @unexec install-info --delete %D/info/glib.info %D/info/dir
 info/glib.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/glib.info %D/info/dir
 lib/libglib.la
 lib/libglib.a
-lib/glib/include/glibconfig.h
 lib/libgmodule.la
 lib/libgmodule.a
 lib/libgthread.la
 lib/libgthread.a
 man/man1/glib-config.1
 share/aclocal/glib.m4
-include/glib.h
-include/gmodule.h
-@dirrm lib/glib/include
-@dirrm lib/glib
+include/glib/glib.h
+include/glib/gmodule.h
+include/glib/glibconfig.h
+@dirrm include/glib
