@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/15 02:08:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/11 16:47:19 pvalchev Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
@@ -30,7 +30,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gtkballs
 	${INSTALL_DATA} ${WRKSRC}/README.russian ${PREFIX}/share/doc/gtkballs
 	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/gtkballs
-	@chmod 660 ${PREFIX}/share/gtkballs/score
-	@chown root:games ${PREFIX}/share/gtkballs/score
 
 .include <bsd.port.mk>

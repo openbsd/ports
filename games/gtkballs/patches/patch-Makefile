@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/08 11:46:11 reinhard Exp $ 
---- Makefile.orig	Tue Mar 30 12:30:09 1999
-+++ Makefile	Thu Feb 15 12:42:03 2001
+$OpenBSD: patch-Makefile,v 1.2 2001/08/11 16:47:19 pvalchev Exp $ 
+--- Makefile.orig	Tue Mar 30 05:30:09 1999
++++ Makefile	Sat Aug 11 10:33:44 2001
 @@ -1,20 +1,15 @@
  #
  # C compiler
@@ -25,3 +25,11 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/08 11:46:11 reinhard Exp $
  
  RM=rm -f
  PROGS=gtkballs
+@@ -46,7 +41,6 @@ install:
+ 	install -d $(PREFIX)/bin
+ 	install -s gtkballs $(PREFIX)/bin
+ 	install -d -m 777 $(PREFIX)/share/gtkballs
+-	install -m 666 score $(PREFIX)/share/gtkballs
+ 	install -m 444 COPYING $(PREFIX)/share/gtkballs
+ 	install -m 444 gtkballs-data/blue_ball.xpm $(PREFIX)/share/gtkballs
+ 	install -m 444 gtkballs-data/brown_ball.xpm $(PREFIX)/share/gtkballs

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/08 11:46:11 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/11 16:47:19 pvalchev Exp $
 bin/gtkballs
 man/man6/gtkballs.6
 share/doc/gtkballs/README
@@ -22,7 +22,6 @@ share/gtkballs/paw_up_1.xpm
 share/gtkballs/paw_up_2.xpm
 share/gtkballs/pink_ball.xpm
 share/gtkballs/red_ball.xpm
-share/gtkballs/score
 share/gtkballs/small_blue_ball.xpm
 share/gtkballs/small_brown_ball.xpm
 share/gtkballs/small_cyan_ball.xpm
