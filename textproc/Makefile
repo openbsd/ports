@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 1998/05/17 04:53:27 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 1998/05/17 04:55:00 angelos Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
      SUBDIR += agrep
      SUBDIR += c2html
-#    SUBDIR += docbook
+     SUBDIR += docbook
      SUBDIR += glimpse
      SUBDIR += html
 #    SUBDIR += info2html
