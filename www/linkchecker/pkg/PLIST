@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/02/04 17:33:50 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/02/21 23:22:22 xsa Exp $
 bin/linkchecker
 lib/python${MODPY_VERSION}/site-packages/_linkchecker_configdata.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/AnsiColor.py
@@ -53,6 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/htmlsax.so
 lib/python${MODPY_VERSION}/site-packages/linkcheck/robotparser2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/sz_fcgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/test_support.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/util1.py
 man/man1/linkchecker.1
 share/examples/linkchecker/check.js
