@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2001/12/07 06:34:17 shell Exp $
+# $OpenBSD: Makefile,v 1.95 2001/12/13 10:29:29 reinhard Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -25,6 +25,7 @@
      SUBDIR += despoof
      SUBDIR += dsniff
      SUBDIR += fragrouter
+     SUBDIR += gnupg
      SUBDIR += gnupg,idea
      SUBDIR += gpgme
      SUBDIR += gpa
@@ -46,7 +47,10 @@
      SUBDIR += mcrypt
      SUBDIR += mhash
      SUBDIR += nbaudit
-     SUBDIR += nessus,no_x11,experimental
+     SUBDIR += nessus
+     SUBDIR += nessus,experimental
+     SUBDIR += nessus,no_x11
+     SUBDIR += nessus,experimental,no_x11
      SUBDIR += nfsshell
      SUBDIR += outguess
      SUBDIR += parse
