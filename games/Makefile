@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2003/07/22 20:52:48 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2003/07/25 11:10:22 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -106,7 +106,7 @@
      SUBDIR += tutris
 #    SUBDIR += tvp
      SUBDIR += uqm
-     SUBDIR += uqmcontent
+#    SUBDIR += uqmcontent
      SUBDIR += vectoroids
      SUBDIR += wanderer
      SUBDIR += wmeyes
