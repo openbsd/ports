@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.465 2001/09/30 12:26:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.466 2001/10/03 08:36:25 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1813,7 +1813,7 @@ ${_F}:
 
 bulk-packages:
 	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
-	@exec ${MAKE} ftp-packages cdrom-packages
+	@exec ${MAKE} ftp-packages cdrom-packages BATCH=Yes
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
