@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/04 09:06:28 couderc Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/19 10:28:16 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.7.5
+DISTNAME=	sylpheed-0.7.6
 CATEGORIES=    	mail news x11
 NEED_VERSION=	1.508
 HOMEPAGE=	http://sylpheed.good-day.net
