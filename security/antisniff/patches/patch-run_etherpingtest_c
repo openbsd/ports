@@ -1,0 +1,11 @@
+$OpenBSD: patch-run_etherpingtest_c,v 1.1 2005/04/03 19:32:29 naddy Exp $
+--- run_etherpingtest.c.orig	Sun Apr  3 21:21:36 2005
++++ run_etherpingtest.c	Sun Apr  3 21:21:43 2005
+@@ -5,7 +5,6 @@
+ void initResult(struct result *);
+ HDEV open_net_intf(int value);
+ int etherping(HDEV fd, char *ether_addr, char *target_ip, struct result *);
+-struct ether_addr *ether_aton (char *s);
+ 
+ int run_etherpingtest(char *targetIP, char *etherADDR, 
+                       struct result *resultStruct){

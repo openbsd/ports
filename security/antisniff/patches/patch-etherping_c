@@ -1,7 +1,15 @@
-$OpenBSD: patch-etherping_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
---- etherping.c.orig	Sat Dec 12 15:40:06 1998
-+++ etherping.c	Thu Oct 28 19:15:03 1999
-@@ -48,6 +48,7 @@
+$OpenBSD: patch-etherping_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
+--- etherping.c.orig	Tue Apr 18 03:52:53 2000
++++ etherping.c	Sun Apr  3 21:24:04 2005
+@@ -13,7 +13,6 @@ int getIPfromPkt(char *pkt, int len, cha
+ int isUniqueMachineResult(struct result *, char *);
+ int insertMachine(struct result *, char *);
+ char *ether_ntoa (struct ether_addr *e);
+-struct ether_addr *ether_aton (char *s);
+ 
+ 
+ int etherping_done=0;
+@@ -48,6 +47,7 @@ int etherping(HDEV fd, char *ether_addr,
    struct ether_addr e_src;
    struct in_addr iaddr;
    char promiscGuy[MAX_LEN];
@@ -9,7 +17,7 @@ $OpenBSD: patch-etherping_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
  
    fromlen = sizeof(from);
  
-@@ -92,7 +93,8 @@
+@@ -92,7 +92,8 @@ int etherping(HDEV fd, char *ether_addr,
  #else
    snprintf(ether_src, sizeof(ether_src), "%s", ether_ntoa(&e_src));
  #endif

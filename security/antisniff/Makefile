@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2005/04/03 19:32:29 naddy Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
@@ -19,7 +19,7 @@ WRKDIST=	${WRKDIR}/anti_sniff
 
 ALL_TARGET=	OpenBSD-all
 
-MAKE_FLAGS=	CC="${CC}"
+MAKE_FLAGS=	CC="${CC} ${CFLAGS}" DFLAGS=""
 
 NO_REGRESS=	Yes
 

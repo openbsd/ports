@@ -1,7 +1,15 @@
-$OpenBSD: patch-ip_util_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
---- ip_util.c.orig	Thu Oct 28 19:15:38 1999
-+++ ip_util.c	Thu Oct 28 19:16:21 1999
-@@ -35,8 +35,9 @@
+$OpenBSD: patch-ip_util_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
+--- ip_util.c.orig	Wed Oct  1 21:51:42 1997
++++ ip_util.c	Sun Apr  3 21:23:31 2005
+@@ -3,7 +3,6 @@
+ 
+ int getnetmask(char *dev, struct in_addr *iaddr);
+ int getipaddr(char *dev, struct in_addr *iaddr);
+-struct ether_addr *ether_aton (char *s);
+ 
+ int getIPfromPkt(char *pkt, int len, char *holder){
+ 
+@@ -35,8 +34,9 @@ int validTarget(char *target_address){
  
    devname = getenv(ANTI_INTERFACE);
    if (!devname){

@@ -1,7 +1,7 @@
-$OpenBSD: patch-arpreqtest_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
---- arpreqtest.c.orig	Wed Oct  1 15:51:34 1997
-+++ arpreqtest.c	Thu Oct 28 19:06:15 1999
-@@ -20,7 +20,7 @@
+$OpenBSD: patch-arpreqtest_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
+--- arpreqtest.c.orig	Tue Apr 18 04:04:24 2000
++++ arpreqtest.c	Sun Apr  3 21:21:24 2005
+@@ -20,7 +20,7 @@ int arp_request(HDEV fd, char *ether_add
    unsigned long sourceIP, destIP;
    struct result *resPtr;
  #if defined(_OpenBSD_)
@@ -10,7 +10,7 @@ $OpenBSD: patch-arpreqtest_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
  #else if defined(SOLARIS)
    char *defaultdevice = "le0";
  #endif
-@@ -33,7 +33,9 @@
+@@ -33,7 +33,9 @@ int arp_request(HDEV fd, char *ether_add
    pid_t our_id;
    caddr_t area;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bpf_readwrite_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
---- bpf_readwrite.c.orig	Wed Oct  1 15:51:36 1997
-+++ bpf_readwrite.c	Thu Oct 28 19:21:27 1999
-@@ -48,8 +48,10 @@
+$OpenBSD: patch-bpf_readwrite_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
+--- bpf_readwrite.c.orig	Wed Oct  1 21:51:36 1997
++++ bpf_readwrite.c	Sun Apr  3 21:21:24 2005
+@@ -48,8 +48,10 @@ HDEV open_net_intf(int value){
  
  /*	(void) strncpy(ifr.ifr_name, device, sizeof(ifr.ifr_name)); */
    intName = getenv(ANTI_INTERFACE);
