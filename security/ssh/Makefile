@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.3 1997/11/17 23:31:19 todd Exp $
+# $OpenBSD: Makefile,v 1.4 1997/11/23 03:48:50 todd Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -14,6 +14,8 @@ CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
 MAINTAINER=	todd@OpenBSD.ORG
+
+ETCDIR=		/etc
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
@@ -31,10 +33,11 @@ MASTER_SITES=	\
 
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
+USE_PERL=	YES
 
 GNU_CONFIGURE=	YES
 
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc/ssh
+CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR}
 
 #Uncomment if all your users are in their own group and their homedir
 #is writeable by that group.  Beware the security implications!
@@ -90,30 +93,23 @@ post-extract:
 .endif
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
+	@if [ ! -f ${ETCDIR}/ssh_host_key ]; then \
 		echo "Generating a secret host key..."; \
-		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
+		${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
 	fi
 .if !defined(NOMANCOMPRESS)
 	rm -f ${PREFIX}/man/man1/slogin.1
 	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
 .endif
-	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
-		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
-		echo "[ -x /usr/local/sbin/sshd ] && /usr/local/sbin/sshd && echo -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
-	fi
 
 .include <bsd.port.mk>
 
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
 .if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(${PREFIX}/bin/perl5.00401) && \
+    exists(/usr/bin/perl) && \
     (!defined(USE_PERL) || ${USE_PERL} != NO)
-BUILD_DEPENDS+= perl5.00401:${PORTSDIR}/lang/perl5
-CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.00401
+CONFIGURE_ENV+= PERL=/usr/bin/perl
 .else
 CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif
