@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/03/09 20:27:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 1999/03/21 07:51:08 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -35,26 +35,18 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 
 # if you want/need to use the mammoth archive. 
 # XXX: I'm not sure partial archives work
-ONE_ARCHIVE=yes
+#ONE_ARCHIVE=yes
 
 #### fetch section
-VERSION= 1.1.2-pre2
-PREPATCH= 1.1.2-pre3
+VERSION= 1.1.2
 
-DIRECTORY=egcs/%SUBDIR%/
+DIRECTORY=egcs/releases/%SUBDIR%/
 
 # getting the right archives where they should be
-MASTER_SITE_SUBDIR=snapshots/egcs-1.1.2-prerelease
-PATCH_SITE_SUBDIR=snapshots/egcs-1.1.2-prerelease
-.if defined(PREPATCH)
-DISTNAME= egcs-${PREPATCH}
-.else
+MASTER_SITE_SUBDIR=egcs-1.1.2
 DISTNAME= egcs-${VERSION}
-.endif
 
 DIST_SUBDIR=egcs
-
-PATCH_DIST_STRIP=-p1
 
 .if defined(ONE_ARCHIVE)
 DISTFILES= egcs-${VERSION}${EXTRACT_SUFX}
@@ -120,35 +112,6 @@ MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 
 PATCH_SITES= ${MASTER_SITES}
 
-# prepare for new release
-.if defined(PREPATCH)
-.if defined(ONE_ARCHIVE)
-PATCHFILES+= egcs-${VERSION}-${PREPATCH}.diff.gz
-.else
-
-PATCHFILES+= egcs-core-${VERSION}-${PREPATCH}.diff.gz
-.if defined(MAKE_GXX)
-PATCHFILES+= egcs-g++-${VERSION}-${PREPATCH}.diff.gz
-.endif
-.if defined(MAKE_TESTS)
-PATCHFILES+= egcs-tests-${VERSION}-${PREPATCH}.diff.gz
-.endif
-.if defined(MAKE_FORTRAN)
-PATCHFILES+= egcs-g77-${VERSION}-${PREPATCH}.diff.gz
-.endif
-.if defined(MAKE_OBJC)
-PATCHFILES+= egcs-objc-${VERSION}-${PREPATCH}.diff.gz
-.endif
-.endif
-
-.endif
-
-# synch the date
-.if defined(PREPATCH)
-post-extract:
-	${MV} ${WRKDIR}/egcs-${VERSION} ${WRKSRC}
-.endif
-
 #### 
 # Patch section
 
@@ -196,7 +159,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=yes
+SEPARATE_BUILD=simple
 
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
