@@ -1,31 +1,19 @@
---- Makefile.orig	Fri Jan  8 22:27:53 1999
-+++ Makefile	Wed Jan 13 20:14:31 1999
-@@ -6,7 +6,7 @@
- CFLAGS = $(DEBUG)
- LIBS =
- # LIBS = -lnsl -lsocket		# for Solaris 2.6
--PREFIX_USR = /usr/local
-+PREFIX_USR = $(PREFIX)
- PREFIX_VAR = /var
- USRDIR = $(PREFIX_USR)/bin
+--- Makefile.in.orig	Mon Feb 15 18:23:31 1999
++++ Makefile.in	Mon Feb 15 18:26:59 1999
+@@ -24,8 +24,10 @@
  BINDIR = $(PREFIX_USR)/sbin
-@@ -18,11 +18,13 @@
- #
- # this is the directory where the configuration and group information is
- # kept.  It should preferably not be on the same partition as spooldir
--LIBDIR = /usr/lib/leafnode
-+LIBDIR = $(PREFIX_USR)/lib/leafnode
-+ETCDIR = /etc/leafnode
- #
- # This is the lock file for fetch.  The normal locations for such lock
- # files are /var/run or /var/lock.
+ MANDIR = $(PREFIX_USR)/man
+ SPOOLDIR = $(PREFIX_VAR)/spool/news
+-LIBDIR   = /usr/lib/leafnode
 -LOCKFILE = "/var/lock/news/fetch.lck"
-+LOCKDIR = $(PREFIX_VAR)/run/news
-+LOCKFILE = $(LOCKDIR)/fetch.lck
++LIBDIR = $(PREFIX_USR)/share/doc/leafnode
++ETCDIR = @sysconfdir@
++LOCKDIR = "$(PREFIX_VAR)/run/news"
++LOCKFILE = "$(LOCKDIR)/fetch.lck"
  
- LIBFILES = nntputil.o configutil.o xoverutil.o activutil.o miscutil.o \
- 	   artutil.o filterutil.o
-@@ -66,28 +68,24 @@
+ # RPM crap
+ RPM = @RPM@
+@@ -96,50 +98,56 @@
  
  config.o: config.c Makefile
  	$(CC) -c -DSPOOLDIR=\"$(SPOOLDIR)\" \
@@ -35,54 +23,73 @@
  		-DLOCKFILE=\"$(LOCKFILE)\" \
  		-DVERSION=\"$(VERSION)\" $<
  
- install: nntpd fetch texpire checkgroups
--	install -d -o root -g root -m 755 $(MANDIR)/man1
--	install -d -o root -g root -m 755 $(MANDIR)/man8
--	install -d -o root -g bin -m 755 $(BINDIR)
- 	install -g news -m 750 -o news -s nntpd $(BINDIR)/leafnode
- 	install -g news -m 750 -o news -s fetch $(BINDIR)/fetch
- 	install -g news -m 750 -o news -s texpire $(BINDIR)/texpire
- 	install -g news -m 750 -o news -s checkgroups $(BINDIR)/checkgroups
--	install -g news -m 750 -o news -s newsq $(USRDIR)/newsq
+ install: liblnutil.a nntpd fetch texpire checkgroups applyfilter newsq
+-	$(INSTALL) -d -o root -g root -m 755 $(MANDIR)/man1
+-	$(INSTALL) -d -o root -g root -m 755 $(MANDIR)/man8
+-	$(INSTALL) -d -o root -g bin -m 755 $(BINDIR)
+ 	$(INSTALL) -c -g news -m 750 -o news $(STRIP) nntpd $(BINDIR)/leafnode
+ 	$(INSTALL) -c -g news -m 750 -o news $(STRIP) fetch $(BINDIR)/fetch
+ 	$(INSTALL) -c -g news -m 750 -o news $(STRIP) texpire $(BINDIR)/texpire
+ 	$(INSTALL) -c -g news -m 750 -o news $(STRIP) checkgroups $(BINDIR)/checkgroups
+ 	$(INSTALL) -c -g news -m 750 -o news $(STRIP) applyfilter $(BINDIR)/applyfilter
+ 	$(INSTALL) -c -g news -m 755 -o news $(STRIP) newsq $(USRDIR)/newsq
 -	cp *.8 $(MANDIR)/man8
 -	cp *.1 $(MANDIR)/man1
 -	-mkdir -p `dirname $(LOCKFILE)`
--	chown news.news `dirname $(LOCKFILE)`
 -	-mkdir -p $(SPOOLDIR) $(LIBDIR)
-+	install -g news -m 750 -o news newsq $(USRDIR)/newsq
 +	$(BSD_INSTALL_MAN) *.8 $(MANDIR)/man8
 +	$(BSD_INSTALL_MAN) *.1 $(MANDIR)/man1
-+	install -d -g news -o news $(LOCKDIR)
++	$(INSTALL) -d -g news -o news $(LOCKDIR)
 +	-mkdir -p $(SPOOLDIR) $(LIBDIR) $(ETCDIR)
  	-mkdir -p $(SPOOLDIR)/leaf.node
- 	-mkdir -p $(SPOOLDIR)/{message.id,interesting.groups,out.going}
+ 	-mkdir -p $(SPOOLDIR)/message.id
+ 	-mkdir -p $(SPOOLDIR)/interesting.groups
+ 	-mkdir -p $(SPOOLDIR)/out.going
+-	-chown news.news `dirname $(LOCKFILE)`
 -	-chown news.news $(SPOOLDIR) $(LIBDIR)
 +	-chown news.news $(SPOOLDIR)
  	-chown news.news $(SPOOLDIR)/leaf.node
- 	-chown news.news $(SPOOLDIR)/{message.id,interesting.groups,out.going}
+ 	-chown news.news $(SPOOLDIR)/message.id
+ 	-chown news.news $(SPOOLDIR)/interesting.groups
+ 	-chown news.news $(SPOOLDIR)/out.going
  	cd $(SPOOLDIR)/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \
-@@ -101,10 +99,21 @@
- 				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
- 				$${a}$${b}9 ; \
- 			done ; done
+-		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
+-			mkdir -p $${a}$${b}0 $${a}$${b}1 $${a}$${b}2 \
+-				$${a}$${b}3 $${a}$${b}4 $${a}$${b}5 \
+-				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
+-				$${a}$${b}9 ; \
+-			chown news.news $${a}$${b}0 $${a}$${b}1 $${a}$${b}2 \
+-				$${a}$${b}3 $${a}$${b}4 $${a}$${b}5 \
+-				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
+-				$${a}$${b}9 ; \
+-			done ; done
 -	cp config.example $(LIBDIR)
++                for b in 0 1 2 3 4 5 6 7 8 9 ; do \
++                        for c in 0 1 2 3 4 5 6 7 8 9 ; do \
++                        test -d "$$a$$b$$c" || \
++				 $(INSTALL) -d -o news -g news "$$a$$b$$c"; \
++                        done ; done ; done
 +	${BSD_INSTALL_DATA} README INSTALL config.example $(LIBDIR)
 +	test -f $(ETCDIR)/config || \
 +		${BSD_INSTALL_DATA} config.example $(ETCDIR)/config
  	chmod 2755 $(SPOOLDIR)
 -	@echo Edit /etc/inetd.conf to start $(BINDIR)/leafnode and restart inetd
 -	@echo If you update from a leafnode version \< 1.6, do a "make update"
-+	@echo "*** edit /etc/inetd.conf to start $(BINDIR)/leafnode"
 +
-+	@echo "*** Verify $(ETCDIR)/config -- a copy of which is saved"
-+	@echo "*** as $(LIBDIR)/config.example."
-+	@echo "*** See $(LIBDIR)/README" and
-+	@echo "*** $(LIBDIR)/INSTALL for more information"
-+	@echo "### You may need to add"
-+	@echo "### \"install -d -g news -o news /var/run/news\""
-+	@echo "### to /etc/rc.local"
-+	@echo "*** if you update from a leafnode version < 1.6, do a \"make update\""
-+	@echo ""
++	@echo
++	@echo "** edit /etc/inetd.conf to start $(BINDIR)/leafnode"
++	@echo "**"
++	@echo "** Verify $(ETCDIR)/config, a copy of which is saved as"
++	@echo "** $(LIBDIR)/config.example."
++	@echo "**"
++	@echo "** See $(LIBDIR)/README and"
++	@echo "** $(LIBDIR)/INSTALL for more information"
++	@echo "**"
++	@echo "** You may need to add"
++	@echo "** \"install -d -g news -o news /var/run/news\""
++	@echo "** to /etc/rc.local"
++	@echo "**"
++	@echo "** if you update from a leafnode version < 1.6, do a \"make update\""
  
  uninstall:
- 	-rm $(BINDIR)/{fetch,checkgroups,texpire,leafnode}
+ 	-rm $(BINDIR)/fetch

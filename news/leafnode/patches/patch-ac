@@ -1,13 +1,13 @@
---- fetch.c.orig	Fri Jan  8 22:34:46 1999
-+++ fetch.c	Fri Jan  8 22:08:02 1999
-@@ -1226,8 +1226,8 @@
- 	exit( 1 );
-     }
+--- miscutil.c.orig	Mon Feb 15 17:34:08 1999
++++ miscutil.c	Mon Feb 15 17:34:33 1999
+@@ -79,8 +79,8 @@
+ 	    return FALSE;
+ 	}
  
--    setregid( pw->pw_gid, pw->pw_gid );
--    setreuid( pw->pw_uid, pw->pw_uid );
-+    setgid( pw->pw_gid );
-+    setuid( pw->pw_uid );
- 
-     if ( getuid() != pw->pw_uid || getgid() != pw->pw_gid ) {
- 	fprintf( stderr, "%s: must be run as news or root\n", argv[0] );
+-	setregid( pw->pw_gid, pw->pw_gid );
+-	setreuid( pw->pw_uid, pw->pw_uid );
++	setgid( pw->pw_gid );
++	setuid( pw->pw_uid );
+ 	if ( getuid() != pw->pw_uid || getgid() != pw->pw_gid ) {
+ 	    fprintf( stderr, "%s: must be run as news or root\n", progname );
+ 	    return FALSE;

@@ -1,10 +1,8 @@
 @cwd /usr/local
-@name leafnode-1.8.1
+@name leafnode-1.9
 bin/newsq
-lib/leafnode/README
-lib/leafnode/INSTALL
-lib/leafnode/config.example
 man/man1/newsq.1
+man/man8/applyfilter.8
 man/man8/checkgroups.8
 man/man8/fetch.8
 man/man8/leafnode.8
@@ -13,4 +11,8 @@ sbin/leafnode
 sbin/fetch
 sbin/texpire
 sbin/checkgroups
-@dirrm lib/leafnode
+sbin/applyfilter
+share/doc/leafnode/README
+share/doc/leafnode/INSTALL
+share/doc/leafnode/config.example
+@dirrm share/doc/leafnode
