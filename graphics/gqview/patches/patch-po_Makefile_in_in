@@ -5,7 +5,7 @@
  exec_prefix = @exec_prefix@
  datadir = $(prefix)/@DATADIRNAME@
 -localedir = $(datadir)/locale
-+localedir = $(DESTDIR)$(prefix)/locale
++localedir = $(DESTDIR)$(prefix)/share/locale
  gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
