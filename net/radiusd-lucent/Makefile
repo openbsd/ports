@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/06/29 04:48:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/10/11 15:53:59 danh Exp $
 
 COMMENT=	"Lucent remote access RADIUS server"
 
@@ -34,8 +34,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radiusd-lucent
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radiusd-lucent/menus
 	${INSTALL_DATA} ${WRKDIST}/radius/raddb/clients \
-		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/radius/raddb/config.aeg.example \
 		${PREFIX}/share/examples/radiusd-lucent/
 	${INSTALL_DATA} ${WRKDIST}/radius/raddb/dictionary \
 		${PREFIX}/share/examples/radiusd-lucent/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:01:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/11 15:53:59 danh Exp $
 @conflict radiusd-cistron-*
 bin/builddbm
 bin/dbmkeys
@@ -12,11 +12,25 @@ share/doc/radiusd-lucent/LICENSE
 share/doc/radiusd-lucent/README
 share/doc/radiusd-lucent/README.patched
 share/examples/radiusd-lucent/
+@sample ${SYSCONFDIR}/raddb/
 share/examples/radiusd-lucent/clients
-share/examples/radiusd-lucent/config.aeg.example
+@mode 0640
+@sample ${SYSCONFDIR}/raddb/clients
+@mode
 share/examples/radiusd-lucent/dictionary
+@sample ${SYSCONFDIR}/raddb/dictionary
 share/examples/radiusd-lucent/menus/
+@sample ${SYSCONFDIR}/raddb/menus/
 share/examples/radiusd-lucent/menus/menu1
+@sample ${SYSCONFDIR}/raddb/menus/menu1
 share/examples/radiusd-lucent/menus/menu2
+@sample ${SYSCONFDIR}/raddb/menus/menu2
 share/examples/radiusd-lucent/proxy
+@mode 0640
+@sample ${SYSCONFDIR}/raddb/proxy
+@mode
 share/examples/radiusd-lucent/users
+@sample ${SYSCONFDIR}/raddb/users
+@sample /var/log/radacct/
+@extraunexec rm -rf ${SYSCONFDIR}/raddb/
+@extraunexec rm -rf /var/log/radacct/
