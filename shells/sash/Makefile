@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/06 13:33:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/20 15:10:51 lebel Exp $
 
 COMMENT=		"stand-alone shell with built-in commands"
 
@@ -7,8 +7,6 @@ DISTNAME=		sash-${VER}
 CATEGORIES=		shells
 NEED_VERSION=		1.402
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
-
-MAINTAINER=		Albert Chang <vedge@vedge.com.ar>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
