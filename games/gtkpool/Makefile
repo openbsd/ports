@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/15 15:37:23 reinhard Exp $
 
 DISTNAME=	gtkpool-0.3.4
 CATEGORIES=	games x11
-NEED_VERSION=	1.352
+NEED_VERSION=	1.359
+MASTER_SITES=	${HOMEPAGE}	
 
 HOMEPAGE=	http://gtkpool.seul.org/
 
-MASTER_SITES=	${HOMEPAGE}	
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
+BUILD_DEPENDS=	gtk-config::x11/gtk+
 
 MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
-
-FAKE_FLAGS=     PREFIX="${WRKINST}${PREFIX}"
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
-
 USE_X11=	Yes
+MAKE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtkpool ${PREFIX}/bin/gtkpool
