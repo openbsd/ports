@@ -1,6 +1,7 @@
---- src/wmtaskbar.cc.orig	Fri Jun 30 21:37:49 2000
-+++ src/wmtaskbar.cc	Fri Jun 30 21:38:23 2000
-@@ -72,9 +72,9 @@
+$OpenBSD: patch-src_wmtaskbar_cc,v 1.1 2001/03/26 13:08:27 wilfried Exp $
+--- src/wmtaskbar.cc.orig	Fri Mar 16 22:17:40 2001
++++ src/wmtaskbar.cc	Mon Mar 26 13:09:00 2001
+@@ -74,9 +74,9 @@ static void initPixmaps() {
  
  /** Use Linux 2.0 Penguin as start button */
  #ifndef START_PIXMAP

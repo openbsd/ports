@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysdep_in,v 1.1 2001/03/26 13:08:27 wilfried Exp $
+--- sysdep.in.orig	Fri Mar 16 22:17:36 2001
++++ sysdep.in	Mon Mar 26 14:57:19 2001
+@@ -5,7 +5,7 @@ SYS_CFLAGS = \
+ 	@DEBUG@ @CXXFLAGS@ @DEFS@ \
+ 	@CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ @GNOME_CFLAGS@
+ SYS_INCDIRS =
+-SYS_LIBDIRS =
++SYS_LIBDIRS = @LDFLAGS@
+ SYS_LIBS = @LIBS@
+ 
+ CORE_LIBS = @CORE_LIBS@

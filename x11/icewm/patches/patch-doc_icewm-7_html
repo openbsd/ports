@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_icewm-7_html,v 1.1 2001/03/26 13:08:27 wilfried Exp $
+--- doc/icewm-7.html.orig	Fri Mar 16 22:17:48 2001
++++ doc/icewm-7.html	Mon Mar 26 13:52:01 2001
+@@ -20,7 +20,7 @@ directories:
+ <P>
+ <DL>
+ <DT><B>$HOME/.icewm</B><DD><P>user's personal customization
+-<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults
++<DT><B>/etc/icewm</B><DD><P>system-wide customized defaults
+ <DT><B>/usr/local/lib/X11/icewm</B><DD><P>compiled-in default directory with default files
+ (for .rpm packages the default is /usr/X11R6/lib/X11/icewm)
+ </DL>

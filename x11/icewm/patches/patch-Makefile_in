@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/03/26 13:08:26 wilfried Exp $
+--- Makefile.in.orig	Fri Mar 16 22:17:36 2001
++++ Makefile.in	Mon Mar 26 14:44:28 2001
+@@ -5,7 +5,7 @@ include ./VERSION
+ 
+ BINFILES    = src/icewm src/icewmhint src/icewmbg
+ LIBFILES    = lib/preferences lib/menu lib/toolbar lib/winoptions lib/keys
+-DOCFILES    = README TODO CHANGES COPYING FAQ INSTALL VERSION icewm.lsm
++DOCFILES    = README COPYING FAQ
+ XPMDIRS     = icons ledclock taskbar mailbox
+ THEMES      = nice motif win95 warp3 warp4 metal2 gtk2 Infadel2
+ SPEC        = icewm.spec
+@@ -101,9 +101,9 @@ install-base: base
+ 
+ install-docs: docs $(LSM)
+ 	@echo ------------------------------------------
+-	@$(INSTALLDIR) $(DOCDIR)/icewm-$(VERSION)
+-	cp $(DOCFILES) $(DOCDIR)/icewm-$(VERSION)
+-	cp -r doc $(DOCDIR)/icewm-$(VERSION)
++	@$(INSTALLDIR) $(DESTDIR)$(DOCDIR)/icewm/doc
++	${BSD_INSTALL_DATA} $(DOCFILES) $(DESTDIR)$(DOCDIR)/icewm
++	${BSD_INSTALL_DATA} doc/*.html $(DESTDIR)$(DOCDIR)/icewm/doc
+ 
+ install-nls: nls
+ 	@echo ------------------------------------------

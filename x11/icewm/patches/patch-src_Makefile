@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2001/03/26 13:08:27 wilfried Exp $
+--- src/Makefile.orig	Fri Mar 16 22:17:37 2001
++++ src/Makefile	Mon Mar 26 15:18:45 2001
+@@ -16,7 +16,7 @@ CXXFLAGS = \
+ 	-DEXEEXT='"$(EXEEXT)"' \
+ 	-DICEWMEXE='"icewm"EXEEXT' \
+ 	-DICEHELPEXE='"icehelp"EXEEXT' \
+-	-DICEHELPIDX='"$(DOCDIR)/icewm-$(VERSION)/doc/icewm.html"' \
++	-DICEHELPIDX='"${DOCDIR}/icewm/doc/icewm.html"' \
+         $(SYS_CFLAGS) $(SYS_INCDIRS)
+ LFLAGS = $(SYS_LIBDIRS) 
+ LIBS = $(SYS_LIBS)
+@@ -107,12 +107,10 @@ depend.inc: Makefile
+ 	@{ for p in $(PROGRAMS); do echo $$p: "\$$($${p}_OBJS)"; done; } > $@
+ 
+ %.o: %.cc
+-	@echo Compiling $@...
+-	@$(CXX) $(CXXFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ $(PROGRAMS):
+-	@echo Linking $@...
+-	@$(LD) -o $@ $($@_OBJS) $(LFLAGS) $($@_LFLAGS) $(LIBS) $($@_LIBS)
++	$(LD) -o $@ $($@_OBJS) $(LFLAGS) $($@_LFLAGS) $(LIBS) $($@_LIBS)
+ 
+ libice.so: $(COREOBJS)
+ 	-@rm -f $@
