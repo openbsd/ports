@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Thu Jun  1 00:26:45 2000
-+++ doc/Makefile.in	Thu Jun  1 00:27:10 2000
-@@ -1,8 +1,8 @@
+--- doc/Makefile.in.orig	Wed Feb 24 16:30:33 1999
++++ doc/Makefile.in 		Fri Jun  9 23:38:40 2000
+@@ -1,25 +1,25 @@
  include ../config.status
  
  MANS  = @INSTALLALL@
@@ -11,10 +11,11 @@
  
  install:
  	if [ ! -d $(PATH_XCIN_MAN) ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN); fi
-@@ -11,15 +11,15 @@
- 	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
- 	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
- 	done
+ 	if [ ! -d $(PATH_XCIN_MAN)/man1 ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN)/man1; fi
+-	for f in $(MANS); do \
+-	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
+-	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
+-	done
 -	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
 -	for f in $(HOWTO); do \
 -	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
@@ -24,6 +25,10 @@
 -	    $(INSTALL_DATA) misc/$$f $(PATH_XCIN_DIR)/docs; \
 -	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
 -	done
++#	for f in $(MANS); do \
++#	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
++#	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
++#	done
 +#	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
 +#	for f in $(HOWTO); do \
 +#	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
