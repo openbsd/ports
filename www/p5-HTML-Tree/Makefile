@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2002/11/30 20:00:35 margarida Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/27 19:40:30 margarida Exp $
 
 COMMENT=	"perl parser that builds an HTML tree"
 
-VERSION=	3.16
+VERSION=	3.17
 DISTNAME=	HTML-Tree-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
+
+HOMEPAGE=	http://www.speech.cs.cmu.edu/~sburke/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 

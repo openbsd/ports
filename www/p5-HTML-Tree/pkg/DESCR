@@ -19,3 +19,4 @@ HTML::Parse - deprecated.  Now just a wrapper around HTML::TreeBuilder
 HTML::AsSubs - Easy way to build an HTML syntax tree by nesting
 functions.
 
+WWW: ${HOMEPAGE}
