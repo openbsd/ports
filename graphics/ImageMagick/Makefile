@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/03/05 18:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/03/14 01:40:04 espie Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
@@ -28,14 +28,16 @@ LIB_DEPENDS=	bz2.9.5:archivers/bzip2 \
 		tiff.35:graphics/tiff \
 		ttf.1.3:print/freetype
 BUILD_DEPENDS=	fig2dev:print/transfig \
-		gs:print/ghostscript5 \
+		gs:print/ghostscript/gnu \
 		picttoppm:graphics/netpbm
 RUN_DEPENDS=	fig2dev:print/transfig \
-		gs:print/ghostscript5 \
+		gs:print/ghostscript/gnu \
 		picttoppm:graphics/netpbm
 
-USE_X11=	Yes
+#USE_X11=	Yes
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
+
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--enable-lzw \
