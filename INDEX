@@ -103,8 +103,8 @@ gettext-0.10.35|/usr/ports/devel/gettext|/usr/local|GNU gettext|/usr/ports/devel
 glib-1.2.4|/usr/ports/devel/glib|/usr/local|useful routines for C programming|/usr/ports/devel/glib/pkg/DESCR|brad@openbsd.org|devel|||any
 gmake-3.77|/usr/ports/devel/gmake|/usr/local|GNU version of 'make'|/usr/ports/devel/gmake/pkg/DESCR|todd@openbsd.org|devel|||any
 gperf-2.7-19981006|/usr/ports/devel/gperf|/usr/local|perfect hash functions, to help write parsers|/usr/ports/devel/gperf/pkg/DESCR|espie@cvs.openbsd.org|devel|||any
-gsl-0.3b|/usr/ports/devel/gsl|/usr/local|GNU Scientific Library|/usr/ports/devel/gsl/pkg/DESCR|rohee@OpenBSD.ORG|devel|||any
-id-utils-3.2d|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|gmake-3.77 emacs-20.3||any
+gsl-0.3b|/usr/ports/devel/gsl|/usr/local|GNU Scientific Library|/usr/ports/devel/gsl/pkg/DESCR|rohee@openbsd.org|devel|||any
+id-utils-3.2d|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|compface-1.0 jpeg-6b png-1.0.3 gmake-3.77 emacs-20.3 xemacs-20.4||any
 lclint-2.4b|/usr/ports/devel/lclint|/usr/local|advanced lint: statically check C programs|/usr/ports/devel/lclint/pkg/DESCR|espie@cvs.openbsd.org|devel|bison-1.27 gmake-3.77||any
 libaudiofile-0.1.9|/usr/ports/devel/libaudiofile|/usr/local|SGI audiofile library GPLed clone|/usr/ports/devel/libaudiofile/pkg/DESCR|rohee@openbsd.org|devel|||any
 libicq-0.33|/usr/ports/devel/libicq|/usr/local|library to add ICQ support to your software|/usr/ports/devel/libicq/pkg/DESCR|brad@openbsd.org|devel|glib-1.2.4|glib-1.2.4|any
@@ -468,7 +468,7 @@ iso8879-1986|/usr/ports/textproc/iso8879|/usr/local|character entity sets from I
 ispell-3.1.20|/usr/ports/textproc/ispell|/usr/local|interactive spelling checker|/usr/ports/textproc/ispell/pkg/DESCR|ports@openbsd.org|textproc|||any
 jade-1.2.1|/usr/ports/textproc/jade|/usr/local|object-oriented SGML/XML parser toolkit and DSSSL engine|/usr/ports/textproc/jade/pkg/DESCR|matthieu@laas.fr|textproc|||any
 latex2html-97.1|/usr/ports/textproc/latex2html|/usr/local|LaTeX to HTML converter|/usr/ports/textproc/latex2html/pkg/DESCR|angelos@openbsd.org|textproc www||jpeg-6b png-1.0.3 tiff-3.4b37 netpbm-19940301 ghostscript-5.10|any
-libxml-1.0.0|/usr/ports/textproc/libxml|/usr/local|XML parsing library for Gnome|/usr/ports/textproc/libxml/pkg/DESCR|rohee@OpenBSD.ORG|textproc|||any
+libxml-1.0.0|/usr/ports/textproc/libxml|/usr/local|XML parsing library for Gnome|/usr/ports/textproc/libxml/pkg/DESCR|rohee@openbsd.org|textproc|||any
 linuxdoc-1.1|/usr/ports/textproc/linuxdoc|/usr/local|Linuxdoc SGML DTD|/usr/ports/textproc/linuxdoc/pkg/DESCR|matthieu@laas.fr|textproc||iso8879-1986|any
 mgdiff-1.0|/usr/ports/textproc/mgdiff|/usr/X11R6|graphical front end to Unix diff|/usr/ports/textproc/mgdiff/pkg/DESCR|angelos@openbsd.org|textproc|lesstif-0.89.0|lesstif-0.89.0|any
 par-1.50|/usr/ports/textproc/par|/usr/local|paragraph reflow for email|/usr/ports/textproc/par/pkg/DESCR|angelos@openbsd.org|textproc|||any
