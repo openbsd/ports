@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/24 11:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/13 17:49:46 alek Exp $
 
 COMMENT=	"interactive geometry program"
 
@@ -19,7 +19,7 @@ WANTLIB=		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
 			gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
 			xml2.0.0 X11 Xext Xft Xinerama Xrender c fontconfig \
-			freetype m stdc++ z
+			freetype m stdc++ z Xcursor
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 
