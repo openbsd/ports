@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.527 2002/05/08 18:31:49 millert Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.528 2002/05/13 00:43:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -806,6 +806,9 @@ MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+.if defined(HOMEPAGE)
+	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
+.endif
 
 ${WRKPKG}/mtree.spec: ${MTREE_FILE}
 	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
@@ -888,6 +891,9 @@ MASTER_SITE_LOCAL?= \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/LOCAL_PORTS/ \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/LOCAL_PORTS/
 
+.if defined(MASTER_SITE_SUBDIR) && !empty(MASTER_SITE_SUBDIR)
+ERRORS+=	"MASTER_SITE_SUBDIR is obsolete, replace with {SITE:=subdir/}"
+.endif
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES?=
 # Substitute subdirectory names in intermediate form
