@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/23 02:45:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/01 06:21:41 kevlo Exp $
 
 COMMENT=	"module to determine the size of images in several formats"
 
-DISTNAME=	Image-Size-2.96
+DISTNAME=	Image-Size-2.97
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5 
-NEED_VERSION=	1.500
+NEED_VERSION=	1.505
 
 HOMEPAGE=       http://www.blackperl.com/Image::Size/
 
@@ -21,7 +21,6 @@ MASTER_SITE_SUBDIR= Image
 
 CONFIGURE_STYLE= perl
 
-REGRESS_TARGET= test
-REGRESS_DEPENDS= ::devel/p5-Test-Harness        
+REGRESS_DEPENDS=	::devel/p5-Test-Harness        
 
 .include <bsd.port.mk>
