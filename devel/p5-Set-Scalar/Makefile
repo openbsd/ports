@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 16:13:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/26 13:01:24 kevlo Exp $
 
 COMMENT=	"module for containing a set of scalars"
 
-DISTNAME=	Set-Scalar-1.10
+DISTNAME=	Set-Scalar-1.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.406
