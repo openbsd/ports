@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/04/19 14:28:39 wilfried Exp $
 
 COMMENT=		'wm-dockapp; simple four-function calculator'
 
@@ -8,13 +8,11 @@ NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		ftp://ftp.sunet.se/pub/OpenBSD/distfiles/ \
-			ftp://ftp.dti.ad.jp/pub/OpenBSD/distfiles/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
