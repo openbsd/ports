@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2000/07/02 23:44:53 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2000/07/03 12:32:26 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -46,7 +46,7 @@
      SUBDIR += flwm
 #    SUBDIR += fvwm
 #    SUBDIR += fvwm2-english
-#    SUBDIR += fvwm95
+     SUBDIR += fvwm95
      SUBDIR += gtk+
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
