@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/23 03:37:30 kevlo Exp $
 
-DISTNAME=	vtun-2.0
+DISTNAME=	vtun-2.1
 CATEGORIES=	net
 NEED_VERSION=	 1.230
 MASTER_SITES=	http://vtun.netpedia.net/ \
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
+FAKE=		Yes
 
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
