@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/15 19:28:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/10 22:15:37 naddy Exp $
 
 COMMENT=	"Apache MySQL authentication module"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    :mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=    mysqlclient.10::databases/mysql
 BUILD_DEPENDS=  ${LIB_DEPENDS}
 
 NO_CONFIGURE=	true
