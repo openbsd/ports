@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.6 1998/01/07 17:22:39 weingart Exp $
+# $OpenBSD: Makefile,v 1.7 1998/01/17 12:03:33 niklas Exp $
 #
 
 DISTNAME=       tcsh-6.07
@@ -20,8 +20,8 @@ INSTALL_TARGET= install install.man
 MAN1=		tcsh.1
 
 post-install:
-	chown $(BINOWN):$(BINGRP) ${PREFIX}/bin/tcsh
-	chown $(BINOWN):$(BINGRP) ${PREFIX}/man/man1/$(MAN1)
+	/usr/sbin/chown $(BINOWN):$(BINGRP) ${PREFIX}/bin/tcsh
+	/usr/sbin/chown $(BINOWN):$(BINGRP) ${PREFIX}/man/man1/$(MAN1)
 	cd ${WRKSRC}; ${INSTALL_DATA} tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
 	cd ${WRKSRC}; ${INSTALL_DATA} tcsh.french.cat ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat
 	$(LN) -sf ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/fr_BE.ISO_8859-1/tcsh.cat
