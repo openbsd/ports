@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/15 09:30:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/17 14:46:06 wilfried Exp $
 
 COMMENT=		'wm-dockapp; chess game'
 
 DISTNAME=		miniCHESS-0.8
 PKGNAME=		wm${DISTNAME:L}
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.electricrain.com/edavis/miniCHESS/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/17 14:46:07 wilfried Exp $
 
 COMMENT=		'wm-dockapp; displays the time in different time zones'
 
 DISTNAME=		wmtz-0.7
 CATEGORIES=     	x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.geocities.com/jl1n/wmtz/
 

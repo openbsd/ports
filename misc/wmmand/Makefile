@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/17 14:46:07 wilfried Exp $
 
 COMMENT=		'wm-dockapp; mandelbrot explorer'
 
 DISTNAME=		wmMand-1.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=     	misc x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/17 14:46:07 wilfried Exp $
 
 COMMENT=		'wm-dockapp; POP3 mail check'
 
 DISTNAME=		WMPop3-0.5.6a
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		mail x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.cs.mun.ca/~scotth/
 

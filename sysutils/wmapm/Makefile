@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/17 14:46:07 wilfried Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,6 @@ COMMENT=		'wm-dockapp; APM/battery monitor'
 
 DISTNAME=		wmapm-3.1
 CATEGORIES=		sysutils x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/17 14:46:06 wilfried Exp $
 
 COMMENT=		'icons mainly for use in Window Maker'
 
 DISTNAME=		wmicons-1.0
 CATEGORIES=		graphics x11 x11/windowmaker
-NEED_VERSION=		1.528
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

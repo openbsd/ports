@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 09:30:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/17 14:46:06 wilfried Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 COMMENT= 		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://worldserver.oleane.com/rsn/ascd-en.html
 
