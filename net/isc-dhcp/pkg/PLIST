@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/24 20:50:03 jakob Exp $
+bin/omshell
+include/dhcpctl.h
+include/isc-dhcp/boolean.h
+include/isc-dhcp/dst.h
+include/isc-dhcp/int.h
+include/isc-dhcp/lang.h
+include/isc-dhcp/list.h
+include/isc-dhcp/result.h
+include/isc-dhcp/types.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+lib/libdhcpctl.a
+lib/libomapi.a
+man/cat1/omshell.0
+man/cat3/dhcpctl.0
+man/cat3/omapi.0
+man/cat3/omshell.0
+man/cat5/dhclient.conf.0
+man/cat5/dhclient.leases.0
+man/cat5/dhcp-eval.0
+man/cat5/dhcp-options.0
+man/cat5/dhcpd.conf.0
+man/cat5/dhcpd.leases.0
+man/cat8/dhclient-script.0
+man/cat8/dhclient.0
+man/cat8/dhcpd.0
+man/cat8/dhcrelay.0
+sbin/dhclient
+sbin/dhclient-script
+sbin/dhcpd
+sbin/dhcrelay
+share/examples/isc-dhcp/dhclient.conf
+share/examples/isc-dhcp/dhcpd.conf
+@dirrm share/examples/isc-dhcp
+@dirrm include/omapip
+@dirrm include/isc-dhcp
