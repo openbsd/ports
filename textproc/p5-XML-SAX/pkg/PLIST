@@ -1,30 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/XML/SAX.pm
-libdata/perl5/site_perl/XML/SAX/Base.pm
-libdata/perl5/site_perl/XML/SAX/DocumentLocator.pm
-libdata/perl5/site_perl/XML/SAX/Exception.pm
-libdata/perl5/site_perl/XML/SAX/ParserDetails.ini
-libdata/perl5/site_perl/XML/SAX/ParserFactory.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/DTDDecls.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/DebugHandler.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/DocType.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/EncodingDetect.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Exception.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Productions.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Reader.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/Stream.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/String.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/URI.pm
-libdata/perl5/site_perl/XML/SAX/PurePerl/XMLDecl.pm
-libdata/perl5/site_perl/XML/SAX/placeholder.pl
+@comment $OpenBSD: PLIST,v 1.5 2002/09/16 07:13:07 shell Exp $
+${P5SITE}/XML/SAX.pm
+${P5SITE}/XML/SAX/Base.pm
+${P5SITE}/XML/SAX/DocumentLocator.pm
+${P5SITE}/XML/SAX/Exception.pm
+${P5SITE}/XML/SAX/Intro.pod
+${P5SITE}/XML/SAX/ParserDetails.ini
+${P5SITE}/XML/SAX/ParserFactory.pm
+${P5SITE}/XML/SAX/PurePerl.pm
+${P5SITE}/XML/SAX/PurePerl/DTDDecls.pm
+${P5SITE}/XML/SAX/PurePerl/DebugHandler.pm
+${P5SITE}/XML/SAX/PurePerl/DocType.pm
+${P5SITE}/XML/SAX/PurePerl/EncodingDetect.pm
+${P5SITE}/XML/SAX/PurePerl/Exception.pm
+${P5SITE}/XML/SAX/PurePerl/NoUnicodeExt.pm
+${P5SITE}/XML/SAX/PurePerl/Productions.pm
+${P5SITE}/XML/SAX/PurePerl/Reader.pm
+${P5SITE}/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
+${P5SITE}/XML/SAX/PurePerl/Reader/Stream.pm
+${P5SITE}/XML/SAX/PurePerl/Reader/String.pm
+${P5SITE}/XML/SAX/PurePerl/Reader/URI.pm
+${P5SITE}/XML/SAX/PurePerl/Reader/UnicodeExt.pm
+${P5SITE}/XML/SAX/PurePerl/UnicodeExt.pm
+${P5SITE}/XML/SAX/PurePerl/XMLDecl.pm
+${P5SITE}/XML/SAX/placeholder.pl
 man/man3p/XML::SAX.3p
 man/man3p/XML::SAX::Base.3p
 man/man3p/XML::SAX::DocumentLocator.3p
 man/man3p/XML::SAX::Exception.3p
+man/man3p/XML::SAX::Intro.3p
 man/man3p/XML::SAX::ParserFactory.3p
 man/man3p/XML::SAX::PurePerl.3p
 man/man3p/XML::SAX::PurePerl::Reader.3p
-@dirrm libdata/perl5/site_perl/XML/SAX/PurePerl/Reader
-@dirrm libdata/perl5/site_perl/XML/SAX/PurePerl
-@dirrm libdata/perl5/site_perl/XML/SAX
+@dirrm ${P5SITE}/XML/SAX/PurePerl/Reader
+@dirrm ${P5SITE}/XML/SAX/PurePerl
+@dirrm ${P5SITE}/XML/SAX
