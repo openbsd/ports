@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 01:01:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/24 00:06:43 naddy Exp $
 
 COMMENT=		"GNU PIC assembler and utilities"
 
@@ -21,11 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gputils/}
 MASTER_SITES0=		http://www.ajd.net.au/ports/
-
-# From Jolan:
-.if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=	-O0
-.endif
 
 CONFIGURE_STYLE=	gnu autoconf
 AUTOCONF_VERSION=	2.57
