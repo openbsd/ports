@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/05/27 14:54:43 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2003/06/03 10:21:33 markus Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
 		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
 		ftp://pgp.iijlab.net/pub/pgp/gnupg/ \
 		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
+
+MASTER_SITES0=	ftp://ftp.gnupg.dk/pub/contrib-dk/
 
 HOMEPAGE=	http://www.gnupg.org/
 
@@ -38,6 +40,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_TARGET=	check
+
+FLAVORS=	idea
+FLAVOR?=
+
+.if ${FLAVOR:L} == "idea"
+PERMIT_PACKAGE_CDROM=	"a patented algorithm"
+PERMIT_DISTFILES_CDROM=	"a patented algorithm"
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} idea.c.gz:0
+
+post-extract:
+	ln -s ${WRKDIR}/idea.c ${WRKSRC}/cipher/idea.c
+.endif
 
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
