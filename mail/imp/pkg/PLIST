@@ -1,0 +1,278 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/26 18:58:54 avsm Exp $
+horde/imp/COPYING
+horde/imp/README
+horde/imp/compose.php
+horde/imp/config/.htaccess
+horde/imp/config/conf.php.dist
+horde/imp/config/filter.txt.dist
+horde/imp/config/header.txt.dist
+horde/imp/config/html.php.dist
+horde/imp/config/menu.php.dist
+horde/imp/config/mime_drivers.php.dist
+horde/imp/config/motd.php.dist
+horde/imp/config/prefs.php.dist
+horde/imp/config/servers.php.dist
+horde/imp/config/trailer.txt.dist
+horde/imp/docs/CHANGES
+horde/imp/docs/CREDITS
+horde/imp/docs/INSTALL
+horde/imp/filters.php
+horde/imp/folders.php
+horde/imp/graphics/addressbook-blue.gif
+horde/imp/graphics/addressbook-red.gif
+horde/imp/graphics/addressbook-yellow.gif
+horde/imp/graphics/alternative.gif
+horde/imp/graphics/answered.gif
+horde/imp/graphics/attachment.gif
+horde/imp/graphics/checkbox.gif
+horde/imp/graphics/compose.gif
+horde/imp/graphics/deleted.gif
+horde/imp/graphics/down.gif
+horde/imp/graphics/download.gif
+horde/imp/graphics/draft.gif
+horde/imp/graphics/expand.gif
+horde/imp/graphics/fetchmail.gif
+horde/imp/graphics/filters.gif
+horde/imp/graphics/first-grey.gif
+horde/imp/graphics/first.gif
+horde/imp/graphics/folders.gif
+horde/imp/graphics/folders/collapsed.gif
+horde/imp/graphics/folders/empty.gif
+horde/imp/graphics/folders/expanded.gif
+horde/imp/graphics/folders/folder.gif
+horde/imp/graphics/folders/folder_open.gif
+horde/imp/graphics/folders/inbox.gif
+horde/imp/graphics/folders/mbox.gif
+horde/imp/graphics/folders/mbox_marked.gif
+horde/imp/graphics/folders/mbox_noselect.gif
+horde/imp/graphics/folders/mbox_unmarked.gif
+horde/imp/graphics/folders/spacer.gif
+horde/imp/graphics/imp.gif
+horde/imp/graphics/important.gif
+horde/imp/graphics/last-grey.gif
+horde/imp/graphics/last.gif
+horde/imp/graphics/lhand.gif
+horde/imp/graphics/lock.gif
+horde/imp/graphics/manage_attachments.gif
+horde/imp/graphics/mime/html.gif
+horde/imp/graphics/mime/text.gif
+horde/imp/graphics/next-grey.gif
+horde/imp/graphics/next.gif
+horde/imp/graphics/personal.gif
+horde/imp/graphics/prev-grey.gif
+horde/imp/graphics/prev.gif
+horde/imp/graphics/print.gif
+horde/imp/graphics/reload.gif
+horde/imp/graphics/rhand.gif
+horde/imp/graphics/search.gif
+horde/imp/graphics/signed.gif
+horde/imp/graphics/spellcheck.gif
+horde/imp/graphics/unseen.gif
+horde/imp/graphics/up.gif
+horde/imp/identities.php
+horde/imp/index.php
+horde/imp/intro.php
+horde/imp/lib/.htaccess
+horde/imp/lib/Folder.php
+horde/imp/lib/IMP.php
+horde/imp/lib/Identity/IMP.php
+horde/imp/lib/MIME/Viewer/html.php
+horde/imp/lib/MIME/Viewer/text.php
+horde/imp/lib/Maintenance/Task/delete_sentmail_monthly.php
+horde/imp/lib/Maintenance/Task/purge_trash.php
+horde/imp/lib/Maintenance/Task/rename_sentmail_monthly.php
+horde/imp/lib/Maintenance/imp.php
+horde/imp/lib/Message.php
+horde/imp/lib/Tree.php
+horde/imp/lib/api.php
+horde/imp/lib/base.php
+horde/imp/lib/version.php
+horde/imp/locale/.htaccess
+horde/imp/locale/cs_CZ/LC_MESSAGES/imp.mo
+horde/imp/locale/cs_CZ/help.xml
+horde/imp/locale/de_DE/LC_MESSAGES/imp.mo
+horde/imp/locale/de_DE/help.xml
+horde/imp/locale/el_GR/LC_MESSAGES/imp.mo
+horde/imp/locale/el_GR/help.xml
+horde/imp/locale/en_US/help.xml
+horde/imp/locale/es_ES/LC_MESSAGES/imp.mo
+horde/imp/locale/es_ES/help.xml
+horde/imp/locale/fi_FI/LC_MESSAGES/imp.mo
+horde/imp/locale/fi_FI/help.xml
+horde/imp/locale/fr_FR/LC_MESSAGES/imp.mo
+horde/imp/locale/fr_FR/help.xml
+horde/imp/locale/it_IT/LC_MESSAGES/imp.mo
+horde/imp/locale/it_IT/help.xml
+horde/imp/locale/ko_KR/LC_MESSAGES/imp.mo
+horde/imp/locale/ko_KR/help.xml
+horde/imp/locale/nl_NL/LC_MESSAGES/imp.mo
+horde/imp/locale/nl_NL/help.xml
+horde/imp/locale/no_BOK/LC_MESSAGES/imp.mo
+horde/imp/locale/no_BOK/help.xml
+horde/imp/locale/pl_PL/LC_MESSAGES/imp.mo
+horde/imp/locale/pl_PL/help.xml
+horde/imp/locale/pt_BR/LC_MESSAGES/imp.mo
+horde/imp/locale/pt_BR/help.xml
+horde/imp/locale/ru_win/LC_MESSAGES/imp.mo
+horde/imp/locale/ru_win/help.xml
+horde/imp/locale/sv_SE/LC_MESSAGES/imp.mo
+horde/imp/locale/sv_SE/help.xml
+horde/imp/locale/uk/LC_MESSAGES/imp.mo
+horde/imp/locale/uk/help.xml
+horde/imp/locale/zh_CN/LC_MESSAGES/imp.mo
+horde/imp/locale/zh_CN/help.xml
+horde/imp/locale/zh_TW/LC_MESSAGES/imp.mo
+horde/imp/locale/zh_TW/help.xml
+horde/imp/login.php
+horde/imp/mailbox.php
+horde/imp/menu.php
+horde/imp/message.php
+horde/imp/po/.htaccess
+horde/imp/po/Makefile
+horde/imp/po/README
+horde/imp/po/cs_CZ.po
+horde/imp/po/de_DE.po
+horde/imp/po/el_GR.po
+horde/imp/po/es_ES.po
+horde/imp/po/extract.pl
+horde/imp/po/fi_FI.po
+horde/imp/po/fr_FR.po
+horde/imp/po/it_IT.po
+horde/imp/po/ko_KR.po
+horde/imp/po/nl_NL.po
+horde/imp/po/no_BOK.po
+horde/imp/po/pl_PL.po
+horde/imp/po/pt_BR.po
+horde/imp/po/ru_win.po
+horde/imp/po/shtool
+horde/imp/po/sv_SE.po
+horde/imp/po/uk.po
+horde/imp/po/xgettext.sh
+horde/imp/po/zh_CN.po
+horde/imp/po/zh_TW.po
+horde/imp/prefs.php
+horde/imp/redirect.php
+horde/imp/scripts/.htaccess
+horde/imp/scripts/Imp.reg
+horde/imp/scripts/custom_login.php
+horde/imp/scripts/imp-cleanup.cron
+horde/imp/scripts/imp2horde.pl
+horde/imp/scripts/imp2turba.pl
+horde/imp/search.php
+horde/imp/spelling.php
+horde/imp/status.php
+horde/imp/templates/.htaccess
+horde/imp/templates/common-footer.inc
+horde/imp/templates/common-header.inc
+horde/imp/templates/compose/bounce.inc
+horde/imp/templates/compose/compose.inc
+horde/imp/templates/compose/javascript.inc
+horde/imp/templates/compose/spelling.inc
+horde/imp/templates/filters/javascript.inc
+horde/imp/templates/filters/list.inc
+horde/imp/templates/filters/manage.inc
+horde/imp/templates/folders/actions.inc
+horde/imp/templates/folders/alert.inc
+horde/imp/templates/folders/confirm.inc
+horde/imp/templates/folders/foot.inc
+horde/imp/templates/folders/head.inc
+horde/imp/templates/folders/javascript.inc
+horde/imp/templates/folders/row.inc
+horde/imp/templates/identities/javascript.inc
+horde/imp/templates/identities/manage.inc
+horde/imp/templates/index/css.inc
+horde/imp/templates/index/notconfigured.inc
+horde/imp/templates/intro/main.inc
+horde/imp/templates/javascript/open_compose_win.js
+horde/imp/templates/javascript/open_print_win.js
+horde/imp/templates/login/login.inc
+horde/imp/templates/mailbox/actions.inc
+horde/imp/templates/mailbox/alert.inc
+horde/imp/templates/mailbox/empty_mailbox.inc
+horde/imp/templates/mailbox/footer.inc
+horde/imp/templates/mailbox/header.inc
+horde/imp/templates/mailbox/javascript.inc
+horde/imp/templates/mailbox/legend.inc
+horde/imp/templates/mailbox/message_footers.inc
+horde/imp/templates/mailbox/message_headers.inc
+horde/imp/templates/mailbox/message_summaries.inc
+horde/imp/templates/mailbox/navbar.inc
+horde/imp/templates/mailbox/searchfolder.inc
+horde/imp/templates/menu/menu.inc
+horde/imp/templates/message/headers.inc
+horde/imp/templates/message/javascript.inc
+horde/imp/templates/message/message.inc
+horde/imp/templates/message/navbar.inc
+horde/imp/templates/message/navbar_aux_bottom.inc
+horde/imp/templates/message/navbar_aux_top.inc
+horde/imp/templates/prefs/folderselect.inc
+horde/imp/templates/prefs/identityselect.inc
+horde/imp/templates/prefs/sourceselect.inc
+horde/imp/templates/prefs/trashselect.inc
+horde/imp/templates/search/javascript.inc
+horde/imp/templates/search/main.inc
+horde/imp/view.php
+@dirrm horde/imp/templates/search
+@dirrm horde/imp/templates/prefs
+@dirrm horde/imp/templates/message
+@dirrm horde/imp/templates/menu
+@dirrm horde/imp/templates/mailbox
+@dirrm horde/imp/templates/login
+@dirrm horde/imp/templates/javascript
+@dirrm horde/imp/templates/intro
+@dirrm horde/imp/templates/index
+@dirrm horde/imp/templates/identities
+@dirrm horde/imp/templates/folders
+@dirrm horde/imp/templates/filters
+@dirrm horde/imp/templates/compose
+@dirrm horde/imp/templates
+@dirrm horde/imp/scripts
+@dirrm horde/imp/po
+@dirrm horde/imp/locale/zh_TW/LC_MESSAGES
+@dirrm horde/imp/locale/zh_TW
+@dirrm horde/imp/locale/zh_CN/LC_MESSAGES
+@dirrm horde/imp/locale/zh_CN
+@dirrm horde/imp/locale/uk/LC_MESSAGES
+@dirrm horde/imp/locale/uk
+@dirrm horde/imp/locale/sv_SE/LC_MESSAGES
+@dirrm horde/imp/locale/sv_SE
+@dirrm horde/imp/locale/ru_win/LC_MESSAGES
+@dirrm horde/imp/locale/ru_win
+@dirrm horde/imp/locale/pt_BR/LC_MESSAGES
+@dirrm horde/imp/locale/pt_BR
+@dirrm horde/imp/locale/pl_PL/LC_MESSAGES
+@dirrm horde/imp/locale/pl_PL
+@dirrm horde/imp/locale/no_BOK/LC_MESSAGES
+@dirrm horde/imp/locale/no_BOK
+@dirrm horde/imp/locale/nl_NL/LC_MESSAGES
+@dirrm horde/imp/locale/nl_NL
+@dirrm horde/imp/locale/ko_KR/LC_MESSAGES
+@dirrm horde/imp/locale/ko_KR
+@dirrm horde/imp/locale/it_IT/LC_MESSAGES
+@dirrm horde/imp/locale/it_IT
+@dirrm horde/imp/locale/fr_FR/LC_MESSAGES
+@dirrm horde/imp/locale/fr_FR
+@dirrm horde/imp/locale/fi_FI/LC_MESSAGES
+@dirrm horde/imp/locale/fi_FI
+@dirrm horde/imp/locale/es_ES/LC_MESSAGES
+@dirrm horde/imp/locale/es_ES
+@dirrm horde/imp/locale/en_US
+@dirrm horde/imp/locale/el_GR/LC_MESSAGES
+@dirrm horde/imp/locale/el_GR
+@dirrm horde/imp/locale/de_DE/LC_MESSAGES
+@dirrm horde/imp/locale/de_DE
+@dirrm horde/imp/locale/cs_CZ/LC_MESSAGES
+@dirrm horde/imp/locale/cs_CZ
+@dirrm horde/imp/locale
+@dirrm horde/imp/lib/Maintenance/Task
+@dirrm horde/imp/lib/Maintenance
+@dirrm horde/imp/lib/MIME/Viewer
+@dirrm horde/imp/lib/MIME
+@dirrm horde/imp/lib/Identity
+@dirrm horde/imp/lib
+@dirrm horde/imp/graphics/mime
+@dirrm horde/imp/graphics/folders
+@dirrm horde/imp/graphics
+@dirrm horde/imp/docs
+@dirrm horde/imp/config
+@dirrm horde/imp
