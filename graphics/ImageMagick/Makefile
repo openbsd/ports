@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2003/09/09 00:47:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.62 2004/02/06 22:44:06 sturm Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -31,6 +31,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES+=               gcc3
 MODGCC3_ARCHES=         sparc64
 MODGCC3_LANGS+=         c++
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
