@@ -1,20 +1,14 @@
-# OpenBSD makefile for:	Par
-# Version required:     1.50
-# Date created:         May 17 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:11:51 lebel Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2001/08/19 05:51:04 angelos Exp $
 
 COMMENT=	"paragraph reflow for email"
 
-DISTNAME=       Par151
-PKGNAME=        par-1.51
+DISTNAME=       Par152
+PKGNAME=        par-1.52
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.440
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
 
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
