@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/08 04:17:05 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/06/03 14:11:10 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.2
@@ -15,7 +15,7 @@ NEED_VERSION=	1.73
 MAINTAINER=	jasoni@openbsd.org
 
 USE_GMAKE=	yes
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
