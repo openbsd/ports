@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 26 15:35:18 1999
-+++ Makefile	Tue Mar 23 03:48:46 1999
+--- Makefile.orig	Tue Jan 26 09:35:18 1999
++++ Makefile	Tue Aug 17 09:19:25 1999
 @@ -34,6 +34,7 @@
  	@echo "make aix            IBM AIX (tested: 4.2)"
  	@echo "make os2            IBM OS/2"
@@ -16,18 +16,18 @@
 +
 +openbsd:
 +	$(MAKE) CC=cc LDFLAGS= \
-+		OBJECTS='decode.o dct64.o audio_openbsd.o' \
++		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O3 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math \
-+			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
++			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD -DTERM_CONTROL' \
 +		mpg123-make
 +
 +openbsd-i386:
 +	$(MAKE) CC=cc LDFLAGS= \
-+		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_openbsd.o' \
++		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 \
-+			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
++			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD -DTERM_CONTROL' \
  		mpg123-make
  
  bsdos:
