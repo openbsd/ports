@@ -1,0 +1,40 @@
+--- joerc.orig	Sun Jan  8 11:04:50 1995
++++ joerc	Wed Jan 17 11:45:33 2001
+@@ -154,7 +154,11 @@
+ 	binding section below- but without the key name strings.
+ 
+ *
+--wordwrap
++-asis
++ -wordwrap
++
++*.mk
++-tab 4
+ 
+ *.c
+ -autoindent
+@@ -277,7 +281,7 @@
+ 	.kl		Left
+ 	.kr		Right
+ 	.kh		Home
+-	.kH		End
++	.kH or .@7	End
+ 	.kI		Insert
+ 	.kD		Delete
+ 	.kP		PgUp
+@@ -477,6 +481,7 @@
+ eof		^K ^V
+ eof		^K v
+ eol		.kH		Go to end of line
++eol		.@7
+ eol		^E
+ exsave		^K X		Save and exit
+ exsave		^K ^X
+@@ -570,6 +575,7 @@
+ eofmenu		^K ^V
+ eofmenu		^K v
+ eolmenu		.kH
++eolmenu		.@7
+ eolmenu		^E
+ ltarwmenu	.kl
+ ltarwmenu	^B

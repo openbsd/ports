@@ -1,5 +1,5 @@
---- main.c.orig	Sun Jan 22 06:21:08 1995
-+++ main.c	Sun Dec 20 12:14:12 1998
+--- main.c.orig	Sat Jan 21 19:21:08 1995
++++ main.c	Wed Jan 17 13:06:13 2001
 @@ -119,6 +119,7 @@
   if(flg)
    if(maint->curwin->watom->what==TYPETW) return 0;
@@ -49,27 +49,3 @@
   if(s)
    {
    s=vsncpy(NULL,0,sz(s));
-@@ -267,6 +254,23 @@
-    if(buf[0]=='y' || buf[0]=='Y') goto donerc;
-    }
-   }
-+
-+#ifdef SYS_JOERC
-+ vsrm(s);
-+ s=vsncpy(NULL,0,sc(SYS_JOERC));
-+ s=vsncpy(sv(s),sv(run));
-+ s=vsncpy(sv(s),sc("rc"));
-+ c=procrc(cap,s);
-+ if(c==0) goto donerc;
-+ if(c==1)
-+  {
-+  char buf[8];
-+  fprintf(stderr,"There were errors in '%s'.  Use it anyway?",s);
-+  fflush(stderr);
-+  fgets(buf,8,stdin);
-+  if(buf[0]=='y' || buf[0]=='Y') goto donerc;
-+  }
-+#endif
- 
-  vsrm(s);
-  s=vsncpy(NULL,0,sc(JOERC));

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/01/17 16:38:59 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/01/17 18:34:01 brad Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8p1
@@ -14,14 +14,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_ENV=	SYS_JOERC="${SYSCONFDIR}/joe" TERMINFO="1"
+MAKE_FLAGS=	CFLAGS="${CFLAGS}" EXTRALIBS="-lcurses" TERMINFO="1" \
+		WHERERC="${SYSCONFDIR}/joe"
 
 ALL_TARGET=	joe
 
 WRKDIST=	${WRKDIR}/joe
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/joe
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/joe
 	${INSTALL_PROGRAM} ${WRKSRC}/joe ${PREFIX}/bin
 	@cd ${PREFIX}/bin; \
 		ln -sf joe jmacs; \
@@ -29,10 +30,8 @@ do-install:
 		ln -sf joe jstar; \
 		ln -sf joe rjoe
 	${INSTALL_MAN} ${WRKSRC}/joe.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/jmacsrc ${PREFIX}/lib/joe
-	${INSTALL_DATA} ${WRKSRC}/joerc ${PREFIX}/lib/joe
-	${INSTALL_DATA} ${WRKSRC}/jpicorc ${PREFIX}/lib/joe
-	${INSTALL_DATA} ${WRKSRC}/jstarrc ${PREFIX}/lib/joe
-	${INSTALL_DATA} ${WRKSRC}/rjoerc ${PREFIX}/lib/joe
+	cd ${WRKSRC}; ${INSTALL_DATA} \
+		jmacsrc joerc jpicorc jstarrc rjoerc \
+			${PREFIX}/share/examples/joe
 
 .include <bsd.port.mk>
