@@ -1,32 +1,34 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/17 04:02:26 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2004/05/07 02:07:31 dons Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
-DISTNAME=	hugs98-Dec2001
-HOMEPAGE=	http://www.haskell.org/hugs/
-
+V=		Nov2003
+DISTNAME=	hugs98-${V}
 CATEGORIES=	lang
+MAINTAINER=	Don Stewart <dons@openbsd.org>
+HOMEPAGE=	http://www.haskell.org/hugs/
+MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${V}/
+MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/hugs98/
 
-MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/
+DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME}-regress.tar.bz2:0
 
-# BSD
+CONFIGURE_STYLE=dest
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS+=--with-pthreads --enable-ffi --libdir=${PREFIX}/share
+
+WRKBUILD=	${WRKDIST}/src
+ALL_TARGET=
+
+do-configure:
+	@(cd ${WRKBUILD}/unix && ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
+
+do-regress:
+	@(cd ${WRKDIST}/tests && sh testScript static tcheck rts libs ffi demos)
+
+# BSDish
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE=	autoconf dest
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
-
-WRKBUILD=		${WRKDIST}/src
-AUTOCONF_DIR=		${WRKDIST}/src/unix
-
-do-configure:
-	cd ${WRKBUILD}/unix && \
-	   ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
-
-ALL_TARGET=
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
