@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.316 2000/07/14 23:07:25 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.317 2000/07/17 07:11:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -707,7 +707,7 @@ WRKPKG?=		${WRKBUILD}/pkg
 .if !defined(PKGPATH)
 _PORTSDIR!=	cd ${PORTSDIR} && pwd -P
 _CURDIR!=	cd ${.CURDIR} && pwd -P
-PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}/
+PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
 .endif
 
 # A few aliases for *-install targets
