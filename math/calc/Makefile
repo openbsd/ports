@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/22 00:36:35 wcobb Exp $
+# $OpenBSD: Makefile,v 1.14 2004/02/25 01:35:49 naddy Exp $
 #
 
 COMMENT=	"C-style arbitrary precision calculator"
@@ -30,11 +30,6 @@ MAKE_FLAGS=\
 	CFLAGS='${CFLAGS} -DCALC_SRC $${CCWARN}'
 
 FAKE_FLAGS=${MAKE_FLAGS}
-
-# XXX workaround sparc64 gcc optimization bug
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=	gcc-* patch-*
-.endif
 
 REGRESS_TARGET=	check
 

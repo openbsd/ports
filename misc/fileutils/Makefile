@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/02/25 14:35:43 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2004/02/25 01:35:50 naddy Exp $
 
 COMMENT= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
@@ -20,11 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU:=fileutils/}
 
 MODULES=		gettext
-
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=		gcc-* patch-*
-.endif
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

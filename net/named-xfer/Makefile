@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/25 22:04:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/25 01:35:50 naddy Exp $
 
 COMMENT=	"zone transfer program from BIND v8"
 
@@ -36,10 +36,6 @@ PATCH_LIST=		patch-bin_named-xfer_Makefile
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} DST=${WRKBUILD}/obj SRC=${WRKSRC} links
 	cd ${WRKBUILD}/obj; ${PATCH} < ${PATCHDIR}/patch-Makefile
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-	cd ${WRKBUILD}/obj; ${PATCH} < ${PATCHDIR}/gcc-lib_cylink_Makefile
-.endif
 
 do-build:
 	cd ${WRKBUILD}/obj; ${MAKE_PROGRAM}
@@ -50,5 +46,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/obj/bin/named-xfer/named-xfer ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKDIR}/doc/man/named-xfer.lst8 ${PREFIX}/man/cat8/named-xfer.0
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

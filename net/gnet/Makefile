@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/01 03:03:16 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/25 01:35:50 naddy Exp $
 
 COMMENT=	"simple network library"
 DISTNAME=	gnet-2.0.4
@@ -18,11 +18,6 @@ MODULES=	gettext
 BUILD_DEPENDS=	:pkgconfig->=0.9.0:devel/pkgconfig
 
 LIB_DEPENDS=	glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
-
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=     gcc-* patch-*
-.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
