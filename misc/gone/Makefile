@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/20 08:05:14 kevlo Exp $
 
 COMMENT=	"terminal locking utility"
 
-DISTNAME=	gone-1.3.2a
+DISTNAME=	gone-1.3.4
 CATEGORIES=	misc 
 
-HOMEPAGE=	http://jaguar.ir.miami.edu/~marcus/
+HOMEPAGE=	http://www.marcuscom.com/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}/downloads/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"
