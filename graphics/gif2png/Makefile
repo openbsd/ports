@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/01/31 00:27:30 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/01 20:21:15 brad Exp $
 
 DISTNAME=	gif2png-2.3.0
 CATEGORIES=	graphics
@@ -13,7 +13,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
 
-pre-patch: extract
+pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" ${FILESDIR}/web2png > ${WRKDIR}/web2png
 
 post-install:
