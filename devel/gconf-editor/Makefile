@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/07 17:24:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/23 03:23:48 marcm Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
-DISTNAME=		gconf-editor-2.4.0
+DISTNAME=		gconf-editor-2.6.2
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig 

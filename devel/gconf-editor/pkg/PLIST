@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/06/23 03:23:48 marcm Exp $
 bin/gconf-editor
+man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
 share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
@@ -13,15 +14,19 @@ share/locale/cy/LC_MESSAGES/gconf-editor.mo
 share/locale/da/LC_MESSAGES/gconf-editor.mo
 share/locale/de/LC_MESSAGES/gconf-editor.mo
 share/locale/el/LC_MESSAGES/gconf-editor.mo
+share/locale/en_GB/LC_MESSAGES/gconf-editor.mo
 share/locale/es/LC_MESSAGES/gconf-editor.mo
 share/locale/et/LC_MESSAGES/gconf-editor.mo
+share/locale/eu/LC_MESSAGES/gconf-editor.mo
 share/locale/fa/LC_MESSAGES/gconf-editor.mo
 share/locale/fi/LC_MESSAGES/gconf-editor.mo
 share/locale/fr/LC_MESSAGES/gconf-editor.mo
 share/locale/ga/LC_MESSAGES/gconf-editor.mo
 share/locale/gl/LC_MESSAGES/gconf-editor.mo
+share/locale/gu/LC_MESSAGES/gconf-editor.mo
 share/locale/he/LC_MESSAGES/gconf-editor.mo
 share/locale/hi/LC_MESSAGES/gconf-editor.mo
+share/locale/hr/LC_MESSAGES/gconf-editor.mo
 share/locale/hu/LC_MESSAGES/gconf-editor.mo
 share/locale/id/LC_MESSAGES/gconf-editor.mo
 share/locale/it/LC_MESSAGES/gconf-editor.mo
@@ -34,9 +39,11 @@ share/locale/lv/LC_MESSAGES/gconf-editor.mo
 share/locale/mk/LC_MESSAGES/gconf-editor.mo
 share/locale/ml/LC_MESSAGES/gconf-editor.mo
 share/locale/mn/LC_MESSAGES/gconf-editor.mo
+share/locale/mr/LC_MESSAGES/gconf-editor.mo
 share/locale/ms/LC_MESSAGES/gconf-editor.mo
 share/locale/nl/LC_MESSAGES/gconf-editor.mo
 share/locale/no/LC_MESSAGES/gconf-editor.mo
+share/locale/pa/LC_MESSAGES/gconf-editor.mo
 share/locale/pl/LC_MESSAGES/gconf-editor.mo
 share/locale/pt/LC_MESSAGES/gconf-editor.mo
 share/locale/pt_BR/LC_MESSAGES/gconf-editor.mo
@@ -49,6 +56,7 @@ share/locale/sr/LC_MESSAGES/gconf-editor.mo
 share/locale/sr@Latn/LC_MESSAGES/gconf-editor.mo
 share/locale/sv/LC_MESSAGES/gconf-editor.mo
 share/locale/ta/LC_MESSAGES/gconf-editor.mo
+share/locale/th/LC_MESSAGES/gconf-editor.mo
 share/locale/tr/LC_MESSAGES/gconf-editor.mo
 share/locale/uk/LC_MESSAGES/gconf-editor.mo
 share/locale/vi/LC_MESSAGES/gconf-editor.mo
@@ -66,111 +74,6 @@ share/pixmaps/gconf-editor/folder-open.png
 share/pixmaps/gconf-editor/stock-about-16.png
 @dirrm share/pixmaps/gconf-editor
 @dirrm share/pixmaps
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sq/LC_MESSAGES
-@dirrm share/locale/sq
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/mn/LC_MESSAGES
-@dirrm share/locale/mn
-@dirrm share/locale/ml/LC_MESSAGES
-@dirrm share/locale/ml
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/li/LC_MESSAGES
-@dirrm share/locale/li
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
 @dirrm share/locale/kn/LC_MESSAGES
 @dirrm share/locale/kn
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/fa/LC_MESSAGES
-@dirrm share/locale/fa
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cy/LC_MESSAGES
-@dirrm share/locale/cy
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bn/LC_MESSAGES
-@dirrm share/locale/bn
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/be/LC_MESSAGES
-@dirrm share/locale/be
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale/ar/LC_MESSAGES
-@dirrm share/locale/ar
-@dirrm share/locale/am/LC_MESSAGES
-@dirrm share/locale/am
-@dirrm share/locale
 @dirrm share/applications

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/16 19:41:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/06/23 03:23:48 marcm Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
-V=			2.0.1
+V=			2.4.0
 DISTNAME=		libglade-${V}
 PKGNAME=		libglade2-${V}
 CATEGORIES=		devel
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libglade/2.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libglade/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
