@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/18 19:23:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/23 15:27:54 xsa Exp $
 
 COMMENT=		"curses front-end for various audio players"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		:python-2.3.*:lang/python/2.3/
+MODULES=		python
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
