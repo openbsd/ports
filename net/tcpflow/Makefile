@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/17 15:37:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/08/12 00:59:46 jolan Exp $
 
 COMMENT=	"tool for capturing data from TCP connections"
 
-DISTNAME=	tcpflow-0.20
+DISTNAME=	tcpflow-0.21
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 

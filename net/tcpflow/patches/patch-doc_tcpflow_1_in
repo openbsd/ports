@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcpflow_1_in,v 1.2 2002/10/17 15:37:41 naddy Exp $
---- tcpflow.1.in.orig	Wed Oct 16 20:37:43 2002
-+++ tcpflow.1.in	Wed Oct 16 20:41:41 2002
+$OpenBSD: patch-doc_tcpflow_1_in,v 1.1 2003/08/12 00:59:47 jolan Exp $
+--- doc/tcpflow.1.in.orig	Mon Feb 26 15:01:30 2001
++++ doc/tcpflow.1.in	Mon Aug 11 11:07:02 2003
 @@ -32,7 +32,7 @@ tcpflow \- TCP flow recorder 
  is a program that captures data transmitted as part of TCP connections
  (flows), and stores the data in a way that is convenient for protocol

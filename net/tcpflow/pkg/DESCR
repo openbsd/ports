@@ -10,5 +10,3 @@ tcpflow understands sequence numbers and will correctly reconstruct
 data streams regardless of retransmissions or out-of-order delivery.
 However, it currently does not understand IP fragments; flows
 containing IP fragments will not be recorded properly.
-
-WWW: ${HOMEPAGE}
