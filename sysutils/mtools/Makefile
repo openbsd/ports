@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/24 10:43:18 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/24 10:44:32 espie Exp $
 
+BROKEN=		"Default floppy names are wrong"
 DATE=		19991121
 DISTNAME=	mtools-3.9.6
 PKGNAME=	mtools-3.9.6-${DATE}
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 NEED_VERSION=	1.175
+MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCHFILES=	mtools-3.9.6-${DATE}.diff.gz
 
