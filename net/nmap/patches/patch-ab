@@ -1,6 +1,6 @@
---- tcpip.c.orig	Thu Jan 27 04:52:19 2000
-+++ tcpip.c	Sun Jan 30 01:06:43 2000
-@@ -963,6 +963,7 @@
+--- tcpip.c.orig	Sun Mar 26 04:59:38 2000
++++ tcpip.c	Sat Apr  1 21:03:24 2000
+@@ -977,6 +977,7 @@
   switch(datalink) {
   case DLT_EN10MB: offset = 14; break;
   case DLT_IEEE802: offset = 22; break;
@@ -8,7 +8,7 @@
   case DLT_NULL: offset = 4; break;
   case DLT_SLIP:
  #ifdef DLT_SLIP_BSDOS
-@@ -990,6 +991,7 @@
+@@ -1004,6 +1005,7 @@
     break;
   case DLT_RAW: offset = 0; break;
   case DLT_FDDI: offset = 21; break;
