@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:52 espie Exp $
-lib/
-lib/php/
-pear/lib/.registry/html_common.reg
-pear/lib/HTML/
-pear/lib/HTML/Common.php
