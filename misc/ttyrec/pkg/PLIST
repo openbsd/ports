@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/27 15:17:30 reinhard Exp $
+bin/ttyplay
+bin/ttyrec
+share/doc/ttyrec/README
+@dirrm share/doc/ttyrec
