@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-mon,v 1.7 2004/09/15 18:39:34 espie Exp $
-@pkgcfl symon-[0-9]*
+@comment $OpenBSD: PLIST-mon,v 1.8 2004/09/18 09:15:22 espie Exp $
+@conflict symon-*
 libexec/symon
 @man man/cat8/symon.0
 share/examples/symon/
