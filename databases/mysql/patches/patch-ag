@@ -1,8 +1,8 @@
---- configure.orig	Sun Dec 19 01:20:50 1999
-+++ configure	Sun Dec 19 01:23:37 1999
-@@ -2865,30 +2865,7 @@
+--- configure.orig	Sat Jan  1 11:33:47 2000
++++ configure	Sun Jan  2 22:23:42 2000
+@@ -2868,30 +2868,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:2867: checking "how to check if pid exists"" >&5
+ echo "configure:2870: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -32,7 +32,7 @@
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
  # Check if a pid is valid
-@@ -4569,8 +4546,6 @@
+@@ -4605,8 +4582,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -41,7 +41,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4804,28 +4779,6 @@
+@@ -4840,28 +4815,6 @@
  fi
  
  

@@ -20,18 +20,21 @@ bin/resolveip
 bin/safe_mysqld
 include/mysql/dbug.h
 include/mysql/errmsg.h
-include/mysql/m_ctype.h.in
+include/mysql/m_ctype.h
 include/mysql/m_string.h
+include/mysql/my_config.h
+include/mysql/my_global.h
 include/mysql/my_list.h
+include/mysql/my_pthread.h
 include/mysql/my_sys.h
 include/mysql/mysql.h
 include/mysql/mysql_com.h
 include/mysql/mysql_version.h
 include/mysql/mysqld_error.h
+include/mysql/raid.h
 @unexec install-info --delete %D/info/mysql.info %D/info/dir
 info/mysql.info
 @exec install-info %D/info/mysql.info %D/info/dir
-lib/mysql/startup.sh
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
@@ -42,6 +45,7 @@ lib/mysql/libmysqlclient.so.6.0
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
+lib/mysql/startup.sh
 libexec/mysqld
 share/doc/mysql/Img/australia.gif
 share/doc/mysql/Img/austria.gif
@@ -61,12 +65,15 @@ share/doc/mysql/Img/great-britain.gif
 share/doc/mysql/Img/greece.gif
 share/doc/mysql/Img/html-fs.gif
 share/doc/mysql/Img/hungary.gif
+share/doc/mysql/Img/iceland.gif
+share/doc/mysql/Img/ireland.gif
+share/doc/mysql/Img/island.gif
 share/doc/mysql/Img/israel.gif
 share/doc/mysql/Img/italy.gif
 share/doc/mysql/Img/japan.gif
 share/doc/mysql/Img/kroatia.gif
-share/doc/mysql/Img/mysql5.gif
 share/doc/mysql/Img/mysql-logo.gif
+share/doc/mysql/Img/mysql5.gif
 share/doc/mysql/Img/netherlands.gif
 share/doc/mysql/Img/poland.gif
 share/doc/mysql/Img/portugal.gif
@@ -114,7 +121,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.27.spec
+share/mysql/mysql-3.22.29.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys

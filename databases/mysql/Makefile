@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2000/01/01 05:54:12 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/01/03 08:36:19 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.22.27
+DISTNAME=	mysql-3.22.29
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
 		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
@@ -29,8 +29,6 @@ CONFIGURE_ARGS=	--localstatedir="${DB_DIR}" \
 		--without-bench \
 		--without-mit-threads \
 		--with-unix-socket-path="${DB_DIR}/mysql.sock"
-
-DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
 pre-build:      
 	@echo ""
@@ -64,13 +62,12 @@ pre-install:
 .endif
 
 post-install:
-	@mkdir -p ${PREFIX}/share/doc/mysql
-	@mkdir -p ${PREFIX}/share/doc/mysql/Img
-	@mkdir -p ${PREFIX}/share/mysql/mysql
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Img
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mysql/mysql
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${PREFIX}/lib/mysql
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
-.endfor
+	cd ${WRKSRC}/Docs; ${INSTALL_DATA} manual.html manual.ps \
+	manual_toc.html manual.txt ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA} ${WRKSRC}/Docs/Img/*.gif ${PREFIX}/share/doc/mysql/Img
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib/mysql
