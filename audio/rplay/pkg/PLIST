@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/22 10:02:18 espie Exp $
 bin/rplay
 bin/rptp
 include/rplay.h
@@ -18,9 +18,17 @@ lib/librplay.a
 @man man/man8/rplayd.8
 sbin/rplayd
 %%SHARED%%
-@cwd ${SYSCONFDIR}
-@extra rplay/rplay.conf
-@extra rplay/rplay.helpers
-@extra rplay/rplay.hosts
-@extra rplay/rplay.servers
-@extra rplay/
+@owner root
+@group wheel
+@mode 755
+share/examples/rplay/
+@sample ${SYSCONFDIR}/rplay/
+@mode 644
+share/examples/rplay/rplay.conf
+@sample ${SYSCONFDIR}/rplay/rplay.conf
+share/examples/rplay/rplay.helpers
+@sample ${SYSCONFDIR}/rplay/rplay.helpers
+share/examples/rplay/rplay.hosts
+@sample ${SYSCONFDIR}/rplay/rplay.hosts
+share/examples/rplay/rplay.servers
+@sample ${SYSCONFDIR}/rplay/rplay.servers
