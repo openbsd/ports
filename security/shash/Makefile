@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/24 19:55:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/25 22:34:44 jakob Exp $
 
 COMMENT=	generates or checks digests or mac
 
-DISTNAME=	shash-0.2.3
+DISTNAME=	shash-0.2.4
 CATEGORIES=     security
 NEED_VERSION=	1.363
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://mcrypt.hellug.gr/shash/
+MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CFLAGS='-I${PREFIX}/include -L${PREFIX}/lib'
