@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.7 2004/05/16 09:01:16 brad Exp $
---- configure.in.orig	2003-12-14 16:23:49.000000000 -0500
-+++ configure.in	2003-12-21 02:01:02.000000000 -0500
-@@ -432,41 +432,7 @@ AC_SUBST(PERL5)
+$OpenBSD: patch-configure_in,v 1.8 2004/05/21 12:16:21 brad Exp $
+--- configure.in.orig	2004-05-13 20:53:30.000000000 -0400
++++ configure.in	2004-05-18 16:28:25.000000000 -0400
+@@ -437,41 +437,7 @@ AC_SUBST(PERL5)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
  PS=$ac_cv_path_PS
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure_in,v 1.7 2004/05/16 09:01:16 brad Exp $
  AC_SUBST(FIND_PROC)
  AC_MSG_RESULT("$FIND_PROC")
  
-@@ -783,7 +749,8 @@ AC_ARG_WITH(libwrap,
+@@ -788,7 +754,8 @@ AC_ARG_WITH(libwrap,
      AC_CHECK_HEADER(tcpd.h,
        LIBS="-lwrap $LIBS"
        AC_MSG_CHECKING(for TCP wrappers library -lwrap)
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure_in,v 1.7 2004/05/16 09:01:16 brad Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1042,6 +1009,11 @@ case $SYSTEM_TYPE in
+@@ -1056,6 +1023,11 @@ case $SYSTEM_TYPE in
      CXXFLAGS="$CXXFLAGS -Dunix"
      OVERRIDE_MT_LD_ADD="\$(top_srcdir)/mit-pthreads/obj/libpthread.a"
      ;;
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure_in,v 1.7 2004/05/16 09:01:16 brad Exp $
    *bsdi*)
      echo "Adding fix for BSDI"
      CFLAGS="$CFLAGS -D__BSD__ -DHAVE_BROKEN_REALPATH"
-@@ -1531,7 +1503,7 @@ then
+@@ -1545,7 +1517,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -75,7 +75,7 @@ $OpenBSD: patch-configure_in,v 1.7 2004/05/16 09:01:16 brad Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1559,29 +1531,6 @@ AC_SYS_RESTARTABLE_SYSCALLS
+@@ -1573,29 +1545,6 @@ AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac
  
