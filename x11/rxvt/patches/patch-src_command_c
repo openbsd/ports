@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_command_c,v 1.1 2001/06/22 20:51:19 jasoni Exp $
---- src/command.c.orig	Thu Apr  5 03:52:39 2001
-+++ src/command.c	Fri Jun 22 13:36:57 2001
-@@ -2796,7 +2796,7 @@ rxvt_tt_printf(rxvt_t *r, const char *fm
+$OpenBSD: patch-src_command_c,v 1.2 2004/06/17 06:39:05 kevlo Exp $
+--- src/command.c.orig	2003-03-26 06:01:23.000000000 +0000
++++ src/command.c	2004-06-16 15:13:20.000000000 +0000
+@@ -3098,7 +3098,7 @@ rxvt_tt_printf(rxvt_t *r, const char *fm
      unsigned char   buf[256];
  
      va_start(arg_ptr, fmt);
--    vsprintf(buf, fmt, arg_ptr);
-+    vsnprintf(buf, sizeof(buf), fmt, arg_ptr);
+-    vsprintf((char *)buf, fmt, arg_ptr);
++    vsnprintf((char *)buf, sizeof(buf), fmt, arg_ptr);
      va_end(arg_ptr);
-     rxvt_tt_write(r, buf, STRLEN(buf));
+     rxvt_tt_write(r, buf, (unsigned int)STRLEN(buf));
  }

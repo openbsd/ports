@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/06/17 06:39:05 kevlo Exp $
+--- src/Makefile.in.orig	2001-11-30 03:22:56.000000000 +0000
++++ src/Makefile.in	2004-06-16 15:13:20.000000000 +0000
+@@ -138,14 +138,10 @@ install: allbin alldoc
+ 	    $(ECHO) "$(MV) $(RXVT_BINNAME) $(RXVT_OLDNAME)"; \
+ 	    $(MV) $(RXVT_BINNAME) $(RXVT_OLDNAME); \
+ 	fi
+-	@$(ECHO) "$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(RXVT_VERNAME)"
+-	@$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(RXVT_VERNAME)
+-	@$(ECHO) "$(LN) $(RXVT_VERNAME) $(RXVT_BINNAME)"
+-	@$(LN) $(RXVT_VERNAME) $(RXVT_BINNAME)
++	@$(ECHO) "$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(RXVT_BINNAME)"
++	@$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(RXVT_BINNAME)
+ 
+ uninstall:
+-	@$(ECHO) $(RMF) $(RXVT_VERNAME)
+-	@$(RMF) $(RXVT_VERNAME)
+ 	@$(ECHO) "$(LIBTOOL) --mode=uninstall $(RMF) $(RXVT_BINNAME)"
+ 	@$(LIBTOOL) --mode=uninstall $(RMF) $(RXVT_BINNAME)
+ 	@if test x$(INSTALL_LIBRXVT) = xyes; then \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-rclock_feature_h,v 1.1 2003/05/30 11:18:02 naddy Exp $
---- rclock/feature.h.orig	Mon Apr 20 00:30:42 1998
-+++ rclock/feature.h	Fri Jun 22 13:43:33 2001
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-rclock_feature_h,v 1.2 2004/06/17 06:39:05 kevlo Exp $
+--- rclock/feature.h.orig	2002-04-09 01:22:58.000000000 +0000
++++ rclock/feature.h	2004-06-16 15:13:19.000000000 +0000
+@@ -58,7 +58,7 @@
  #define MAIL
  /* #define MAIL_BELL */
  /* #define MAIL_SPAWN	"xmh\ -font\ 7x14\&" */
