@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 03:59:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/26 07:46:46 kevlo Exp $
 
 COMMENT=	"Web-based interface for system administration for Unix"
 
@@ -7,8 +7,6 @@ CATEGORIES=     sysutils
 NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=   http://www.webmin.com/webmin/download/
-
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 HOMEPAGE=	http://www.webmin.com/webmin/
 

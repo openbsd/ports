@@ -3,7 +3,7 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.14 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/11/26 07:46:43 kevlo Exp $
 #
 
 COMMENT=	"CDE like desktop with GTK"
@@ -14,8 +14,6 @@ NEED_VERSION=	1.474
 MASTER_SITES=	http://www.xfce.org/archive/
 
 HOMEPAGE=	http://www.xfce.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
