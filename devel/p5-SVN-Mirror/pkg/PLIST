@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 03:21:07 kevlo Exp $
+bin/svm
+${P5SITE}/SVN/Mirror/
+${P5SITE}/SVN/Mirror.pm
+${P5SITE}/SVN/Mirror/Ra.pm
+${P5SITE}/SVN/Mirror/VCP.pm
+@man man/man1/svm.1
+@man man/man3p/SVN::Mirror.3p
