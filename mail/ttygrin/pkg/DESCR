@@ -1,0 +1,5 @@
+Screen-orientated interactive news and email client with MIME support,
+the ability to browse multiple news servers, and LISP scripting
+capabilities.
+
+WWW: ${HOMEPAGE}
