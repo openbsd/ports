@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/07 05:59:35 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 08:57:23 espie Exp $
 bin/scsh
 include/scheme48.h
 include/write-barrier.h
+lib/scsh/
+lib/scsh/cig/
 lib/scsh/libscsh.a
 lib/scsh/libscshvm.a
 lib/scsh/scsh.image
 lib/scsh/scshvm
-man/man1/scsh.1
+@man man/man1/scsh.1
+share/doc/scsh/
 share/doc/scsh/COPYING
 share/doc/scsh/README
 share/doc/scsh/RELEASE
@@ -18,12 +21,14 @@ share/doc/scsh/meeting.ps
 share/doc/scsh/news.txt
 share/doc/scsh/no-leaf-env.txt
 share/doc/scsh/porting.txt
+share/doc/scsh/s48-manual/
 share/doc/scsh/s48-manual/ascii.tex
 share/doc/scsh/s48-manual/bibliography.tex
 share/doc/scsh/s48-manual/code.tex
 share/doc/scsh/s48-manual/command.tex
 share/doc/scsh/s48-manual/external.tex
 share/doc/scsh/s48-manual/hacks.tex
+share/doc/scsh/s48-manual/html/
 share/doc/scsh/s48-manual/html/s48manual.html
 share/doc/scsh/s48-manual/html/s48manual_1.html
 share/doc/scsh/s48-manual/html/s48manual_10.html
@@ -106,6 +111,7 @@ share/doc/scsh/s48-manual/thread.tex
 share/doc/scsh/s48-manual/user-guide.tex
 share/doc/scsh/s48-manual/utilities.tex
 share/doc/scsh/s48-manual/version-number.tex
+share/doc/scsh/scsh-manual/
 share/doc/scsh/scsh-manual/array.sty
 share/doc/scsh/scsh-manual/awk.tex
 share/doc/scsh/scsh-manual/boxedminipage.sty
@@ -115,6 +121,7 @@ share/doc/scsh/scsh-manual/decls.tex
 share/doc/scsh/scsh-manual/draftfooters.sty
 share/doc/scsh/scsh-manual/front.tex
 share/doc/scsh/scsh-manual/headings.sty
+share/doc/scsh/scsh-manual/html/
 share/doc/scsh/scsh-manual/html/man-Z-C.css
 share/doc/scsh/scsh-manual/html/man-Z-G-D-1.gif
 share/doc/scsh/scsh-manual/html/man-Z-H-1.html
@@ -152,6 +159,7 @@ share/doc/scsh/scsh-manual/test.tex
 share/doc/scsh/scsh-manual/threads.tex
 share/doc/scsh/scsh-manual/tty.tex
 share/doc/scsh/scsh-manual/xman.tex
+share/doc/scsh/scsh-paper/
 share/doc/scsh/scsh-paper/boxedminipage.sty
 share/doc/scsh/scsh-paper/code.sty
 share/doc/scsh/scsh-paper/ct.sty
@@ -165,6 +173,8 @@ share/doc/scsh/scsh-paper/scsh-paper.tex
 share/doc/scsh/threads.txt
 share/doc/scsh/todo.txt
 share/doc/scsh/type.txt
+share/scsh/
+share/scsh/big/
 share/scsh/big/array.scm
 share/scsh/big/big-util.scm
 share/scsh/big/bigbit.scm
@@ -195,6 +205,7 @@ share/scsh/big/socket.scm
 share/scsh/big/sort.scm
 share/scsh/big/strong.scm
 share/scsh/big/thread-fluid.scm
+share/scsh/emacs/
 share/scsh/emacs/README
 share/scsh/emacs/cmulisp.el
 share/scsh/emacs/cmuscheme.el
@@ -202,6 +213,7 @@ share/scsh/emacs/cmuscheme48.el
 share/scsh/emacs/cmushell.el
 share/scsh/emacs/comint.el
 share/scsh/emacs/jar-hacks.el
+share/scsh/env/
 share/scsh/env/assem.scm
 share/scsh/env/basic-command.scm
 share/scsh/env/build.scm
@@ -227,6 +239,7 @@ share/scsh/env/space.scm
 share/scsh/env/start.scm
 share/scsh/env/traverse.scm
 share/scsh/env/version-info.scm
+share/scsh/link/
 share/scsh/link/data.scm
 share/scsh/link/generate-c-header.scm
 share/scsh/link/generate-old-c-header.scm
@@ -235,6 +248,7 @@ share/scsh/link/loadc.scm
 share/scsh/link/reify.scm
 share/scsh/link/transport.scm
 share/scsh/link/write-image.scm
+share/scsh/misc/
 share/scsh/misc/annotate.scm
 share/scsh/misc/doodl.scm
 share/scsh/misc/either.scm
@@ -256,12 +270,14 @@ share/scsh/misc/sicp.scm
 share/scsh/misc/static.scm
 share/scsh/misc/syscall.scm
 share/scsh/misc/test-doodl.scm
+share/scsh/opt/
 share/scsh/opt/analyze.scm
 share/scsh/opt/flatten.scm
 share/scsh/opt/inline.scm
 share/scsh/opt/sort.scm
 share/scsh/opt/tst.scm
 share/scsh/opt/usage.scm
+share/scsh/rts/
 share/scsh/rts/bignum.scm
 share/scsh/rts/defenum.scm
 share/scsh/rts/floatnum.scm
@@ -270,6 +286,7 @@ share/scsh/rts/jar-defrecord.scm
 share/scsh/rts/ratnum.scm
 share/scsh/rts/recnum.scm
 share/scsh/rts/xnum.scm
+share/scsh/scsh/
 share/scsh/scsh/awk.scm
 share/scsh/scsh/bufpol.scm
 share/scsh/scsh/ccp-pack.scm
@@ -370,21 +387,3 @@ share/scsh/scsh/utilities.scm
 share/scsh/scsh/waitcodes.scm
 share/scsh/scsh/weaktables.scm
 share/scsh/srfi
-@dirrm share/scsh/scsh
-@dirrm share/scsh/rts
-@dirrm share/scsh/opt
-@dirrm share/scsh/misc
-@dirrm share/scsh/link
-@dirrm share/scsh/env
-@dirrm share/scsh/emacs
-@dirrm share/scsh/big
-@dirrm share/scsh
-@dirrm share/doc/scsh/scsh-paper
-@dirrm share/doc/scsh/scsh-manual/html
-@dirrm share/doc/scsh/scsh-manual
-@dirrm share/doc/scsh/s48-manual/html
-@dirrm share/doc/scsh/s48-manual
-@dirrm share/doc/scsh
-@exec mkdir -p %D/lib/scsh/cig
-@dirrm lib/scsh/cig
-@dirrm lib/scsh

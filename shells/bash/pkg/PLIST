@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/07/30 17:02:49 naddy Exp $
-bin/bash
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 08:57:23 espie Exp $
+@shell bin/bash
 bin/bashbug
 @info info/bash.info
-man/man1/bash.1
-man/man1/bashbug.1
+@man man/man1/bash.1
+@man man/man1/bashbug.1
 share/locale/en@boldquot/LC_MESSAGES/bash.mo
 share/locale/en@quot/LC_MESSAGES/bash.mo

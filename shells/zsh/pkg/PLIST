@@ -1,24 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/07/30 23:54:10 jolan Exp $
-bin/zsh
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 08:57:24 espie Exp $
+@shell bin/zsh
 bin/zsh-${VERSION}
-@unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
-info/zsh.info
-@exec install-info --info-dir=%D/info %D/info/zsh.info
-man/man1/zsh.1
-man/man1/zshall.1
-man/man1/zshbuiltins.1
-man/man1/zshcompctl.1
-man/man1/zshcompsys.1
-man/man1/zshcompwid.1
-man/man1/zshcontrib.1
-man/man1/zshexpn.1
-man/man1/zshmisc.1
-man/man1/zshmodules.1
-man/man1/zshoptions.1
-man/man1/zshparam.1
-man/man1/zshtcpsys.1
-man/man1/zshzle.1
-!%%static%%
+@info info/zsh.info
+lib/zsh/
+lib/zsh/${VERSION}/
+lib/zsh/${VERSION}/zsh/
+lib/zsh/${VERSION}/zsh/net/
+@man man/man1/zsh.1
+@man man/man1/zshall.1
+@man man/man1/zshbuiltins.1
+@man man/man1/zshcompctl.1
+@man man/man1/zshcompsys.1
+@man man/man1/zshcompwid.1
+@man man/man1/zshcontrib.1
+@man man/man1/zshexpn.1
+@man man/man1/zshmisc.1
+@man man/man1/zshmodules.1
+@man man/man1/zshoptions.1
+@man man/man1/zshparam.1
+@man man/man1/zshtcpsys.1
+@man man/man1/zshzle.1
+share/zsh/
+share/zsh/${VERSION}/
+share/zsh/${VERSION}/functions/
 share/zsh/${VERSION}/functions/_a2ps
 share/zsh/${VERSION}/functions/_aap
 share/zsh/${VERSION}/functions/_acroread
@@ -50,6 +54,7 @@ share/zsh/${VERSION}/functions/_bindkey
 share/zsh/${VERSION}/functions/_bison
 share/zsh/${VERSION}/functions/_brace_parameter
 share/zsh/${VERSION}/functions/_bsd_pkg
+@comment share/zsh/${VERSION}/functions/_bsd_pkg.orig
 share/zsh/${VERSION}/functions/_bts
 share/zsh/${VERSION}/functions/_bug
 share/zsh/${VERSION}/functions/_builtin
@@ -134,6 +139,7 @@ share/zsh/${VERSION}/functions/_file_descriptors
 share/zsh/${VERSION}/functions/_file_systems
 share/zsh/${VERSION}/functions/_files
 share/zsh/${VERSION}/functions/_find
+@comment share/zsh/${VERSION}/functions/_find.orig
 share/zsh/${VERSION}/functions/_finger
 share/zsh/${VERSION}/functions/_first
 share/zsh/${VERSION}/functions/_flex
@@ -493,12 +499,5 @@ share/zsh/${VERSION}/functions/zrecompile
 share/zsh/${VERSION}/functions/zsh-mime-handler
 share/zsh/${VERSION}/functions/zsh-mime-setup
 share/zsh/${VERSION}/functions/zstyle+
-@exec mkdir -p %D/share/zsh/site-functions
-@dirrm share/zsh/site-functions
-@dirrm share/zsh/${VERSION}/functions
-@dirrm share/zsh/${VERSION}
-@dirrm share/zsh
-@dirrm lib/zsh/${VERSION}/zsh/net
-@dirrm lib/zsh/${VERSION}/zsh
-@dirrm lib/zsh/${VERSION}
-@dirrm lib/zsh
+share/zsh/site-functions/
+!%%static%%
