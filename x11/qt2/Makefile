@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/08 06:02:00 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/27 16:52:02 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 VERSION=	2.1
@@ -43,6 +43,8 @@ LIB_DEPENDS=	png.1.::graphics/png \
 LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
 MODULES+= opengl
 EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
+.else
+CONFIGURE_ARGS+=-no-opengl
 .  endif
 .endif
 
