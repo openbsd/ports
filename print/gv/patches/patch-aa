@@ -9,7 +9,7 @@
 -      GV_LIBDIR    = /usr/local/lib/gv/
 -      GV_MANDIR    = /usr/local/man/man1/
 +      GV_BINDIR    = $(BINDIR)
-+      GV_DOCDIR    = /usr/X11R6/share/doc/gv/
++      GV_DOCDIR    = $(DOCDIR)/gv/
 +      GV_LIBDIR    = $(LIBDIR)/gv/
 +      GV_MANDIR    = $(MANDIR)
  
