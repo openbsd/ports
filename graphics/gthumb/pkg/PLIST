@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/23 01:01:11 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/31 20:48:24 pvalchev Exp $
 bin/gthumb
+bin/gthumb-image-viewer
 man/man1/gthumb.1
 share/application-registry/gthumb.applications
 share/gnome/apps/Graphics/gthumb.desktop
@@ -31,12 +32,16 @@ share/gnome/help/gthumb/ru/license.html
 share/gnome/help/gthumb/ru/ln10.html
 share/gnome/help/gthumb/ru/shortcuts.html
 share/gnome/help/gthumb/ru/topic.dat
+share/gnome/ui/GNOME_GThumb_Viewer.xml
 share/gthumb/glade/gthumb.glade
 share/gthumb/glade/gthumb_comments.glade
 share/gthumb/glade/gthumb_png_exporter.glade
 share/gthumb/glade/gthumb_print.glade
 share/gthumb/glade/gthumb_search.glade
 share/gthumb/glade/gthumb_search_edit.glade
+share/gthumb/icons/flip.xpm
+share/gthumb/icons/mirror.xpm
+share/gthumb/icons/rotate.xpm
 share/locale/de/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
@@ -47,7 +52,9 @@ share/locale/nl/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+share/oaf/GNOME_GThumb_Viewer.oaf
 share/pixmaps/gthumb.png
+@dirrm share/gthumb/icons
 @dirrm share/gthumb/glade
 @dirrm share/gthumb
 @dirrm share/gnome/help/gthumb/ru

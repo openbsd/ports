@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/25 21:50:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/31 20:48:24 pvalchev Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
 VERSION=		0.13
 DISTNAME=		gthumb-${VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		graphics x11
 NEED_VERSION=		1.531
 
@@ -18,12 +19,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		png.2::graphics/png \
-			gif.5::graphics/libungif \
+LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 			gnomevfs.::x11/gnome/vfs \
 			glade-gnome.4,glade.4::devel/libglade \
-			gnomeprint.::x11/gnome/print \
-			oaf.::x11/gnome/oaf
+			gnomeprint.::x11/gnome/print 
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
