@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/31 01:32:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/12 15:44:53 jcs Exp $
 
-DISTNAME=	sybperl-2.15
+DISTNAME=	sybperl-2.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
@@ -11,12 +11,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"Sybase database access in Perl"
 HOMEPAGE=	http://www.mbay.net/~mpeppler/
-MASTER_SITES=	${HOMEPAGE}Sybperl/
+MASTER_SITES=	http://www.peppler.org/downloads/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MODULES=	gettext
-LIB_DEPENDS=	tds.0,sybdb.0,ct.0::databases/freetds
+LIB_DEPENDS=	tds.3,sybdb.4,ct.2::databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"

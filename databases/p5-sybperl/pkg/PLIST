@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/10/31 01:32:08 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/01/12 15:44:53 jcs Exp $
 ${P5ARCH}/Sybase/BCP.pm
 ${P5ARCH}/Sybase/BLK.pm
 ${P5ARCH}/Sybase/CTlib.pm
-${P5ARCH}/Sybase/CTlib.pod
 ${P5ARCH}/Sybase/DBlib.pm
-${P5ARCH}/Sybase/DBlib.pod
 ${P5ARCH}/Sybase/Sybperl.pm
+${P5ARCH}/auto/Sybase/.packlist
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.bs
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.so
 ${P5ARCH}/auto/Sybase/CTlib/autosplit.ix
@@ -15,6 +14,7 @@ ${P5ARCH}/auto/Sybase/DBlib/autosplit.ix
 ${P5ARCH}/auto/Sybase/Sybperl/DBCMDROW.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBCOUNT.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBCURCMD.al
+${P5ARCH}/auto/Sybase/Sybperl/DBDEAD.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBMORECMDS.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBROWS.al
 ${P5ARCH}/auto/Sybase/Sybperl/autosplit.ix
@@ -77,11 +77,15 @@ ${P5ARCH}/auto/Sybase/Sybperl/dbsafestr.al
 ${P5ARCH}/auto/Sybase/Sybperl/dbsetopt.al
 ${P5ARCH}/auto/Sybase/Sybperl/dbwritetext.al
 ${P5ARCH}/auto/Sybase/Sybperl/sql.al
-${P5ARCH}/config.pl
 ${P5ARCH}/ctutil.pl
 ${P5ARCH}/sql.pl
 ${P5ARCH}/sybperl.pl
 ${P5ARCH}/sybutil.pl
+man/man3p/Sybase::BCP.3p
+man/man3p/Sybase::BLK.3p
+man/man3p/Sybase::CTlib.3p
+man/man3p/Sybase::DBlib.3p
+man/man3p/Sybase::Sybperl.3p
 man/man3p/sybperl.3
 @dirrm ${P5ARCH}/auto/Sybase/Sybperl
 @dirrm ${P5ARCH}/auto/Sybase/DBlib
