@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/11/03 16:40:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/12/12 09:11:58 sturm Exp $
 bin/gtk-gnutella
 man/man1/gtk-gnutella.1
 share/gtk-gnutella/pixmaps/arrow_down.xpm
 share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
+share/gtk-gnutella/pixmaps/bookshav.xpm
+share/gtk-gnutella/pixmaps/exit.xpm
+share/gtk-gnutella/pixmaps/filter.xpm
 share/gtk-gnutella/pixmaps/firewall.xpm
+share/gtk-gnutella/pixmaps/freeze.xpm
 share/gtk-gnutella/pixmaps/no_firewall.xpm
 share/gtk-gnutella/pixmaps/offline.xpm
 share/gtk-gnutella/pixmaps/online.xpm
 share/gtk-gnutella/pixmaps/save.xpm
+share/gtk-gnutella/pixmaps/thaw.xpm
 @dirrm share/gtk-gnutella/pixmaps
 @dirrm share/gtk-gnutella

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/11/22 16:43:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/12 09:11:58 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-DISTNAME=		gtk-gnutella-0.91
+DISTNAME=		gtk-gnutella-0.91.1
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -22,8 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
-
-DOCDIR=			${PREFIX}/share/doc/gtk-gnutella
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/debian/gtk-gnutella.1 ${PREFIX}/man/man1
