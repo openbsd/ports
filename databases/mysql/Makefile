@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.52 2001/08/12 22:48:37 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2001/08/14 02:06:29 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (test suite)"
 
-VERSION=	3.23.40
+VERSION=	3.23.41
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.435
-MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
+MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
+		http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
