@@ -1,0 +1,5 @@
+GNU autotools tend to be incompatible from release to release.
+
+meta-auto is a try at alleviating the problem: it provides actual scripts,
+such as autoconf that will try to call the right tool based on a few
+environment variables, such as AUTOCONF_VERSION.

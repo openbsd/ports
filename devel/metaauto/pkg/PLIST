@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/15 14:01:18 espie Exp $
+bin/autoconf
+bin/autoheader
+bin/autoupdate
