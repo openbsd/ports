@@ -1,0 +1,46 @@
+*** c/hsc.c.orig	Tue Nov 25 16:41:59 1997
+--- c/hsc.c	Tue Nov 25 16:43:57 1997
+***************
+*** 19,25 ****
+  	HA HSC method
+  ***********************************************************************/
+  
+- #include <malloc.h>
+  #include <stdlib.h>
+  #include <stdio.h>
+  #include "ha.h"
+--- 19,24 ----
+***************
+*** 486,492 ****
+      register U16B c;
+      register U16B tv;
+      register U16B i;
+!     register S16B sum,tot,esc,cf;
+      register unsigned char sv;
+  
+      esc=adj_escape_prob(fe[cp],cp);
+--- 485,491 ----
+      register U16B c;
+      register U16B tv;
+      register U16B i;
+!     register S16B sum,tot,esc,cf = 0;
+      register unsigned char sv;
+  
+      esc=adj_escape_prob(fe[cp],cp);
+***************
+*** 546,552 ****
+      register U16B c;
+      register U16B tv;
+      register U16B i;
+!     register S16B sum,tot,esc,cf;
+      
+      esc=tot=0;
+      for (i=cp;i!=NIL;i=nb[i]) {
+--- 545,551 ----
+      register U16B c;
+      register U16B tv;
+      register U16B i;
+!     register S16B sum,tot,esc,cf = 0;
+      
+      esc=tot=0;
+      for (i=cp;i!=NIL;i=nb[i]) {
