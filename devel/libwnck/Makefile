@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/10 20:34:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/03/13 22:46:50 alek Exp $
 
 COMMENT=		"window navigator construction kit"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 XRes Xext Xft Xinerama Xrender \
-			atk-1.0.0.0 fontconfig freetype \
+			atk-1.0.0.0 fontconfig freetype Xcursor \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
 			m pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
