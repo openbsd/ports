@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:48:50 todd Exp $
+--- configure.orig	Mon Nov 18 14:47:37 2002
++++ configure	Wed Nov 27 23:22:13 2002
+@@ -5866,8 +5866,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5876,8 +5876,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -6393,6 +6393,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+@@ -8619,11 +8621,11 @@ echo "${ECHO_T}yes" >&6
+             echo "$as_me:$LINENO: checking EEL_CFLAGS" >&5
+ echo $ECHO_N "checking EEL_CFLAGS... $ECHO_C" >&6
+             EEL_CFLAGS=`$PKG_CONFIG --cflags "\
++	glib-2.0 >= $GLIB_REQUIRED \
++	gtk+-2.0 >= $GTK_REQUIRED \
+ 	gconf-2.0 >= $GCONF_REQUIRED \
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+-	glib-2.0 >= $GLIB_REQUIRED \
+ 	gnome-vfs-2.0 >= $GNOME_VFS_REQUIRED \
+-	gtk+-2.0 >= $GTK_REQUIRED \
+ 	gail >= $GAIL_REQUIRED \
+ 	libart-2.0 >= $ART_REQUIRED \
+ 	libgnome-2.0 >= $GNOME_REQUIRED \
