@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/05/17 15:38:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.37 2003/05/17 16:04:17 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
+MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
 MODULES=	iconv
 MODULES+=	gcc3
