@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/16 15:28:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/16 15:39:19 jakob Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
@@ -36,7 +36,6 @@ CONFIGURE_ENV+=		CFLAGS=-g
 .endif
 
 post-install:
-	${INSTALL_PROGRAM} ${FILESDIR}/bind9-enable ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/doc/man/bin/*.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/bin/*.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/man/bin/*.8 ${PREFIX}/man/man8
