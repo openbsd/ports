@@ -1,14 +1,9 @@
-# OpenBSD makefile for:	gtk+
-# Version required:	1.0.4
-# Date created:		1998-June-02
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.4 1998/12/16 07:37:33 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/07 04:32:50 marc Exp $
 #
 
 # What port/package will be created
 #
-DISTNAME=		gtk+-1.0.5
+DISTNAME=		gtk+-1.0.6
 CATEGORIES=     	x11
 
 # where to send bitches about this port
