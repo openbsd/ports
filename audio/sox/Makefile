@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:51 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/03 20:42:39 brad Exp $
 
 DISTNAME=	sox-12.15
 CATEGORIES=	audio
-
-MAINTAINER=	angelos@openbsd.org
-
 MASTER_SITES=	http://metalab.unc.edu/pub/Linux/apps/sound/convert/ \
 		http://home.sprynet.com/~cbagwell/
+
+MAINTAINER=	angelos@openbsd.org
 
 MAKEFILE=	Makefile.unx
 

@@ -1,11 +1,11 @@
 --- Makefile.unx.orig	Wed Sep 30 23:06:13 1998
-+++ Makefile.unx	Sun Mar 21 20:17:35 1999
++++ Makefile.unx	Thu Jun  3 16:28:24 1999
 @@ -95,7 +95,7 @@
  # Chose the best compiler you got from the following:
  #
  # GCC with all warnings and debug info
 -CC		= gcc -g -Wall
-+CC		= cc
++# CC		= gcc -g -Wall
  #
  # GCC with no special options
  # CC		= gcc
@@ -18,7 +18,7 @@
  
  # Uncomment the following if your system does not have a built in
  # strerror().  This includes SunOS.
-@@ -217,7 +217,7 @@
+@@ -217,13 +217,13 @@
  ##############################################################################
  
  SOX_PRE_LIBS	= $(GSM_PRE_LIBS)
@@ -27,3 +27,10 @@
  SOX_INCLUDES	= $(GSM_INCLUDES)
  SOX_DEFINES	= $(GSM_DEFINES) $(OSS_DEFINES) $(SUNAUDIO_DEFINES) \
    $(BLASTER) $(GETOPT_DEFINES) $(STRERR_DEFINES) $(MEMMOVE_DEFINES) \
+   $(NEXT_DEFINES) $(MAC_DEFINES) $(MISC_DEFINES)
+ 
+-CFLAGS  = $O $(SOX_DEFINES) $(SOX_INCLUDES)
++CFLAGS += $(SOX_DEFINES) $(SOX_INCLUDES)
+ 
+ all: sox
+ 
