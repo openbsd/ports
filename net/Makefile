@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 1999/12/16 06:05:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.57 2000/01/03 02:23:50 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -79,6 +79,7 @@
      SUBDIR += pchar
 #    SUBDIR += pcnfsd
 #    SUBDIR += pmf
+     SUBDIR += pop3gwd
      SUBDIR += popa3d
 #    SUBDIR += proftpd
      SUBDIR += queso
