@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/02/20 22:52:58 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/05/10 19:46:46 sturm Exp $
 bin/erb
 bin/irb
 bin/rdoc
@@ -74,7 +74,7 @@ lib/ruby/${REV}/${SUB}/dlconfig.h
 lib/ruby/${REV}/${SUB}/dln.h
 lib/ruby/${REV}/${SUB}/enumerator.so
 lib/ruby/${REV}/${SUB}/env.h
-lib/ruby/${REV}/${SUB}${SYSCONFDIR}.so
+lib/ruby/${REV}/${SUB}/etc.so
 lib/ruby/${REV}/${SUB}/fcntl.so
 lib/ruby/${REV}/${SUB}/intern.h
 lib/ruby/${REV}/${SUB}/io/wait.so
