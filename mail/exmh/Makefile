@@ -3,7 +3,7 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 03:13:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/17 03:22:47 angelos Exp $
 #
 
 DISTNAME=	exmh-1.6.9
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
+
+BROKEN=		exmh2
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 WISH=		wish8.0
