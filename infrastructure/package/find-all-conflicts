@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.2 2001/03/24 15:16:53 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.3 2001/04/15 17:44:29 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -39,7 +39,7 @@ sub analyze {
 	local $_;
 	while (<$fh>) {
 		chomp;
-		if (m/^\@(?:comment|exec|unexec|dirrm|mtree|src|pkgdep|mode|group|owner|display)/) {
+		if (m/^\@(?:newdepend|comment|exec|unexec|dirrm|mtree|src|pkgdep|mode|group|owner|display)/) {
 			next; 
 		} elsif (m/^\@ignore/) {
 			$_ = <$fh>;
@@ -54,8 +54,10 @@ sub analyze {
 				$cwd = File::Spec->catfile($cwd, $newpath);
 			}
 		} elsif (m/^\@pkgcfl\s+(.*?)\s*$/) {
-			my $conflict="\Q$1\E";
-			$conflict =~ s/\\\*/\.\*/g;
+			my $conflict=$1;
+			$conflict =~ s/\*/\.\*/g;
+			$conflict =~ s/\?/\./g;
+			$conflict =~ s/\+/\\\+/g;
 			push @$conflict_list, "$conflict";
 		} elsif (m/^\@option\s+no-default-conflict/) {
 			$default_conflict=0;
@@ -71,10 +73,10 @@ sub analyze {
 		}
 	}
 	if ($default_conflict) {
-		if ($name =~ m/^(.*)-\d/) {
-			push @$conflict_list, "\Q$1\E-\d.*";
+		if ($name =~ m/^(.*)\-\d/) {
+			push @$conflict_list, "\Q$1\E\\-\\d.*";
 		} elsif ($name =~ m/^(.*)-/) {
-			push @$conflict_list, "\Q$1\E\-.*";
+			push @$conflict_list, "\Q$1\E\\-.*";
 		}
 	}
 	$conflicts{$name}=$conflict_list;
