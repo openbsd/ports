@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.498 2001/11/15 02:07:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.499 2001/11/17 10:39:19 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -771,7 +771,7 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-	@self=${FULLPKGNAME${SUBPACKAGE}} exec ${MAKE} new-depends|sort -u >>$@.tmp
+	@self=${FULLPKGNAME${SUBPACKAGE}} exec ${MAKE} _solve-package-depends|sort -u >>$@.tmp
 .if defined(NO_SHARED_LIBS)
 	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
@@ -1237,14 +1237,10 @@ _build_depends_fragment=${_fetch_depends_fragment}
 _run_depends_fragment=${_fetch_depends_fragment}
 _regress_depends_fragment=${_fetch_depends_fragment}
 
-.if !defined(NO_SHARED_LIBS)
-_sharedlib_resolve_fragment = \
-		lib=`echo $$d | sed -e 's|\.$$||' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-		check=`eval $$listlibs |grep '^lib.*\.so\.*'| \
-			sed -e 's,^lib,,' -e 's,$$,.,' -e 's,\.so\.,.,' | \
-			grep "^$$lib\."|sed -e 's,\.$$,,'` || true 
+.if defined(NO_SHARED_LIBS)
+_no_shared=-noshared
 .else
-_sharedlib_resolve_fragment = :
+_noshared=
 .endif
 
 _libresolve_fragment = \
@@ -1253,11 +1249,9 @@ _libresolve_fragment = \
 			d=$${d\#\#*/};; \
 		*) shprefix="" shdir="${LOCALBASE}/lib";; \
 		esac; \
-		${_sharedlib_resolve_fragment}; \
-		case "X$$check" in "X") \
-			lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-			check=`eval $$listlibs | grep "^lib$$lib\.a$$"` || true;; \
-		esac
+		check=`eval $$listlibs| perl \
+			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
+			|| true
 
 
 _lib_depends_fragment = \
@@ -1265,7 +1259,10 @@ _lib_depends_fragment = \
 	IFS=,; bad=false; for d in $$dep; do \
 		listlibs='ls $$shdir 2>/dev/null'; \
 		${_libresolve_fragment}; \
-		case "X$$check" in "X") bad=true; msg="$$msg $$d missing...";; esac; \
+		case "$$check" in \
+		Missing\ library) bad=true; msg="$$msg $$d missing...";; \
+		Error:*) bad=true; msg="$$msg $$d unsolvable...";; \
+		esac; \
 	done; $$bad || found=true
 
 
@@ -2283,6 +2280,7 @@ _RUN_DEP2=
 _RUN_DEP=
 .endif
 
+
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
 _BUILD_DEP2 = ${FETCH_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
 	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
@@ -2291,6 +2289,10 @@ _BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
 _BUILD_DEP2=
 _BUILD_DEP=
 .endif
+
+_LIB_DEP2= ${LIB_DEPENDS}
+_RUN_DEP2+= ${_ALWAYS_DEP3}
+_BUILD_DEP2+=${_ALWAYS_DEP3}
 
 .if !target(clean-depends)
 clean-depends:
@@ -2329,14 +2331,12 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.    if !empty(_ALWAYS_DEP3) || !empty(_BUILD_DEP2)
-	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
-.    endif
+.    for _d in LIB BUILD RUN
+.      if !empty(_${_d}_DEP2)
+	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} ${_d:L}-depends-list
+.      endif
 	@echo -n "|"
-.    if !empty(_ALWAYS_DEP3) || !empty(_RUN_DEP2)
-	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
-.    endif
-	@echo -n "|"
+.    endfor
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
 		 "") echo -n "any|";; \
@@ -2556,21 +2556,18 @@ dir-depends:
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
 
-.for _i in RUN BUILD
+.for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
-.  if !empty(_ALWAYS_DEP2) || !empty(_${_i}_DEP2)
+.  if !empty(_${_i}_DEP2)
 	@unset FLAVOR SUBPACKAGE || true; \
 	: $${_INITIAL_ECHO:='echo -n "This port requires \""'}; \
 	: $${_ECHO='echo -n'}; \
-	: $${_FINAL_ECHO:='echo "\" to ${_i:L}."'}; space=''; \
+	: $${_FINAL_ECHO:='echo "\" for ${_i:L}."'}; space=''; \
 	eval $${_INITIAL_ECHO}; \
-	for spec in `echo '${_ALWAYS_DEP2} ${_${_i}_DEP2}' \
+	for spec in `echo '${_${_i}_DEP2}' \
 		| tr '\040' '\012' | sort -u`; do \
-		dir=$${spec#*:}; pkg=$${spec%:*}; \
-		case X"$$pkg" in \
-			X) $${_ECHO} "$$space$${dir}";; \
-			*) $${_ECHO} "$$space$${pkg}:$${dir}";; \
-		esac; space=' '; \
+		$${_ECHO} "$$space$${spec}"; \
+		space=' '; \
 	done; eval $${_FINAL_ECHO}
 .  endif
 .endfor
@@ -2611,11 +2608,11 @@ package-dir-depends:
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
 
-new-depends:
-.if !empty(_ALWAYS_DEP3) || !empty(_RUN_DEP2)
+_solve-package-depends:
+.if !empty(_RUN_DEP2)
 	@unset FLAVOR SUBPACKAGE || true; \
 	: $${self:=self}; \
-	for spec in `echo '${_ALWAYS_DEP3} ${_RUN_DEP2}' \
+	for spec in `echo '${_RUN_DEP2}' \
 		| tr '\040' '\012' | sort -u`; do \
 		dir=$${spec#*:}; pkg=$${spec%:*}; \
 		${_flavor_fragment}; \
@@ -2623,7 +2620,7 @@ new-depends:
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$self:$$pkg:$$default"; \
 		toset="$$toset self=\"$$default\""; \
-		if ! eval $$toset ${MAKE} new-depends; then  \
+		if ! eval $$toset ${MAKE} _solve-package-depends; then  \
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 			exit 1; \
 		fi; \
@@ -2647,12 +2644,12 @@ new-depends:
 			fi; \
 			IFS=,; for d in $$dep; do \
 				${_libresolve_fragment}; \
-				case "X$$check" in \
-				Xlib*.a) continue;; \
-				X) \
+				case "$$check" in \
+				*.a) continue;; \
+				Missing\ library|Error:*) \
 					echo 1>&2 "Can't resolve libspec $$d"; \
 					exit 1;; \
-				X*) \
+				*) \
 					libspecs="$$libspecs$$comma$$shprefix$$check"; \
 					comma=',';; \
 				esac; \
@@ -2662,7 +2659,7 @@ new-depends:
 			*) \
 				echo "@libdepend $$self:$$libspecs:$$pkg:$$default"; \
 				toset="$$toset self=\"$$default\""; \
-				if ! eval $$toset ${MAKE} new-depends; then  \
+				if ! eval $$toset ${MAKE} _solve-package-depends; then  \
 					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 					exit 1; \
 				fi;; \
@@ -2763,7 +2760,7 @@ unlink-categories:
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
    distpatch real-distpatch do-distpatch post-distpatch show \
-   link-categories unlink-categories _package new-depends \
+   link-categories unlink-categories _package _solve-package-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
    bulk-packages bulk-do _recurse-lib-depends lib-depends-check

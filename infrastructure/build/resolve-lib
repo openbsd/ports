@@ -1,0 +1,128 @@
+#!/usr/bin/perl
+# $OpenBSD: resolve-lib,v 1.1 2001/11/17 10:39:19 espie Exp $
+#
+# Copyright (c) 2001
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+use strict;
+
+my $noshared; 
+my $sharedonly;
+my $strict;
+my $reqmajor;
+my $reqminor;
+
+# Grab arguments
+$_=shift;
+if ($_ eq '-noshared') {
+	$noshared = 1;
+	$_ = shift;
+}
+
+s/\.$//;
+# Parse spec
+if (m/\.a$/) {
+	$_ = $`;
+	$noshared = 1;
+} else {
+	if (m/\.(\d+)\.(\d+)$/) {
+		$reqmajor = $1;
+		$reqminor = $2;
+		$_ = $`;
+	} elsif (m/\.\=(\d+)\.(\d+)$/) {
+		$reqmajor = $1;
+		$reqminor = $2;
+		$_ = $`;
+		$strict = 1;
+	} elsif (m/\.(\d+)$/) {
+		$reqmajor = $1;
+		$reqminor = 0;
+		$_ = $`;
+	} elsif (m/\.\=(\d+)$/) {
+		$reqmajor = $1;
+		$reqminor = 0;
+		$strict = 1;
+		$_ = $`;
+	}
+	if (m/\.so$/) {
+		$_ = $`;
+		$sharedonly = 1;
+	}
+}
+
+{
+my $libname=$_;
+
+my $bestmajor=-1;
+my $bestminor=-1;
+
+my $found_shared;
+my $found_unshared;
+
+while(<>) {
+	chomp;
+	if (!$noshared && m/^lib$libname\.so\.(\d+)\.(\d+)$/) {
+		my $major = $1;
+		my $minor = $2;
+		if ($strict) {
+			if ($major > $reqmajor) {
+				print "Error: strict library too high\n";
+				exit(0);
+			}
+			if ($major < $reqmajor) {
+				next;
+			}
+			if ($minor < $reqminor) {
+				next;
+			}
+			$found_shared = 1;
+			$bestmajor = $major;
+			if ($minor >= $bestminor) {
+				$bestminor = $minor;
+			}
+		} else {
+			if ($major < $reqmajor || ($major == $reqmajor &&
+			    $minor < $reqminor)) {
+				next;
+		    	}
+			$found_shared = 1;
+			if ($major > $bestmajor || ($major == $bestmajor &&
+			    $minor > $bestminor)) {
+			    	$bestmajor = $major;
+				$bestminor = $minor;
+			}
+		}
+	} elsif (!$sharedonly && m/^lib$libname.a$/) {
+		$found_unshared = 1;
+	}
+}
+
+if ($found_shared) {
+	print "$libname.$bestmajor.$bestminor\n";
+} elsif ($found_unshared) {
+	print "$libname.a\n";
+} else {
+	print "Missing library\n";
+}
+
+}
