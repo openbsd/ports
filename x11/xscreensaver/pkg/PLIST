@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/01/26 23:59:49 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/03/23 01:38:29 lebel Exp $
+!%%no_gle%%
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -6,14 +7,15 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
-!%%no_gle%%
 lib/xscreensaver/config/README
 lib/xscreensaver/config/ant.xml
+lib/xscreensaver/config/apollonian.xml
 lib/xscreensaver/config/atlantis.xml
 lib/xscreensaver/config/attraction.xml
 lib/xscreensaver/config/blaster.xml
 lib/xscreensaver/config/blitspin.xml
 lib/xscreensaver/config/bouboule.xml
+lib/xscreensaver/config/boxed.xml
 lib/xscreensaver/config/braid.xml
 lib/xscreensaver/config/bsod.xml
 lib/xscreensaver/config/bubble3d.xml
@@ -27,6 +29,7 @@ lib/xscreensaver/config/coral.xml
 lib/xscreensaver/config/cosmos.xml
 lib/xscreensaver/config/critical.xml
 lib/xscreensaver/config/crystal.xml
+lib/xscreensaver/config/cubenetic.xml
 lib/xscreensaver/config/cynosure.xml
 lib/xscreensaver/config/dangerball.xml
 lib/xscreensaver/config/decayscreen.xml
@@ -39,6 +42,7 @@ lib/xscreensaver/config/drift.xml
 lib/xscreensaver/config/electricsheep.xml
 lib/xscreensaver/config/engine.xml
 lib/xscreensaver/config/epicycle.xml
+lib/xscreensaver/config/euler2d.xml
 lib/xscreensaver/config/fadeplot.xml
 lib/xscreensaver/config/flag.xml
 lib/xscreensaver/config/flame.xml
@@ -48,7 +52,9 @@ lib/xscreensaver/config/forest.xml
 lib/xscreensaver/config/galaxy.xml
 lib/xscreensaver/config/gears.xml
 lib/xscreensaver/config/gflux.xml
+lib/xscreensaver/config/glforestfire.xml
 lib/xscreensaver/config/glplanet.xml
+lib/xscreensaver/config/glsnake.xml
 lib/xscreensaver/config/gltext.xml
 lib/xscreensaver/config/goban.xml
 lib/xscreensaver/config/goop.xml
@@ -63,6 +69,7 @@ lib/xscreensaver/config/ifs.xml
 lib/xscreensaver/config/imsmap.xml
 lib/xscreensaver/config/interference.xml
 lib/xscreensaver/config/jigsaw.xml
+lib/xscreensaver/config/juggle.xml
 lib/xscreensaver/config/julia.xml
 lib/xscreensaver/config/kaleidescope.xml
 lib/xscreensaver/config/kumppa.xml
@@ -90,6 +97,7 @@ lib/xscreensaver/config/penrose.xml
 lib/xscreensaver/config/petri.xml
 lib/xscreensaver/config/phosphor.xml
 lib/xscreensaver/config/pipes.xml
+lib/xscreensaver/config/polyominoes.xml
 lib/xscreensaver/config/pulsar.xml
 lib/xscreensaver/config/pyro.xml
 lib/xscreensaver/config/qix.xml
@@ -100,6 +108,7 @@ lib/xscreensaver/config/rorschach.xml
 lib/xscreensaver/config/rotor.xml
 lib/xscreensaver/config/rotzoomer.xml
 lib/xscreensaver/config/rubik.xml
+lib/xscreensaver/config/sballs.xml
 lib/xscreensaver/config/shadebobs.xml
 lib/xscreensaver/config/sierpinski.xml
 lib/xscreensaver/config/sierpinski3d.xml
@@ -122,8 +131,10 @@ lib/xscreensaver/config/strange.xml
 lib/xscreensaver/config/superquadrics.xml
 lib/xscreensaver/config/swirl.xml
 lib/xscreensaver/config/t3d.xml
+lib/xscreensaver/config/thornbird.xml
 lib/xscreensaver/config/triangle.xml
 lib/xscreensaver/config/truchet.xml
+lib/xscreensaver/config/twang.xml
 lib/xscreensaver/config/vermiculate.xml
 lib/xscreensaver/config/vidwhacker.xml
 lib/xscreensaver/config/vines.xml
@@ -147,11 +158,13 @@ lib/xscreensaver/config/xspirograph.xml
 lib/xscreensaver/config/xteevee.xml
 lib/xscreensaver/config/zoom.xml
 libexec/xscreensaver/ant
+libexec/xscreensaver/apollonian
 libexec/xscreensaver/atlantis
 libexec/xscreensaver/attraction
 libexec/xscreensaver/blaster
 libexec/xscreensaver/blitspin
 libexec/xscreensaver/bouboule
+libexec/xscreensaver/boxed
 libexec/xscreensaver/braid
 libexec/xscreensaver/bsod
 libexec/xscreensaver/bubble3d
@@ -164,6 +177,7 @@ libexec/xscreensaver/compass
 libexec/xscreensaver/coral
 libexec/xscreensaver/critical
 libexec/xscreensaver/crystal
+libexec/xscreensaver/cubenetic
 libexec/xscreensaver/cynosure
 libexec/xscreensaver/dangerball
 libexec/xscreensaver/decayscreen
@@ -175,16 +189,20 @@ libexec/xscreensaver/distort
 libexec/xscreensaver/drift
 libexec/xscreensaver/engine
 libexec/xscreensaver/epicycle
+libexec/xscreensaver/euler2d
 libexec/xscreensaver/fadeplot
 libexec/xscreensaver/flag
 libexec/xscreensaver/flame
 libexec/xscreensaver/flipscreen3d
 libexec/xscreensaver/flow
+libexec/xscreensaver/fluidballs
 libexec/xscreensaver/forest
 libexec/xscreensaver/galaxy
 libexec/xscreensaver/gears
 libexec/xscreensaver/gflux
+libexec/xscreensaver/glforestfire
 libexec/xscreensaver/glplanet
+libexec/xscreensaver/glsnake
 libexec/xscreensaver/gltext
 libexec/xscreensaver/goop
 libexec/xscreensaver/grav
@@ -198,6 +216,7 @@ libexec/xscreensaver/ifs
 libexec/xscreensaver/imsmap
 libexec/xscreensaver/interference
 libexec/xscreensaver/jigsaw
+libexec/xscreensaver/juggle
 libexec/xscreensaver/julia
 libexec/xscreensaver/kaleidescope
 libexec/xscreensaver/kumppa
@@ -225,6 +244,7 @@ libexec/xscreensaver/penrose
 libexec/xscreensaver/petri
 libexec/xscreensaver/phosphor
 libexec/xscreensaver/pipes
+libexec/xscreensaver/polyominoes
 libexec/xscreensaver/pulsar
 libexec/xscreensaver/pyro
 libexec/xscreensaver/qix
@@ -235,6 +255,7 @@ libexec/xscreensaver/rorschach
 libexec/xscreensaver/rotor
 libexec/xscreensaver/rotzoomer
 libexec/xscreensaver/rubik
+libexec/xscreensaver/sballs
 libexec/xscreensaver/shadebobs
 libexec/xscreensaver/sierpinski
 libexec/xscreensaver/sierpinski3d
@@ -255,13 +276,16 @@ libexec/xscreensaver/strange
 libexec/xscreensaver/superquadrics
 libexec/xscreensaver/swirl
 libexec/xscreensaver/t3d
+libexec/xscreensaver/thornbird
 libexec/xscreensaver/triangle
 libexec/xscreensaver/truchet
+libexec/xscreensaver/twang
 libexec/xscreensaver/vermiculate
 libexec/xscreensaver/vidwhacker
 libexec/xscreensaver/vines
 libexec/xscreensaver/wander
 libexec/xscreensaver/webcollage
+libexec/xscreensaver/webcollage-helper
 libexec/xscreensaver/whirlwindwarp
 libexec/xscreensaver/whirlygig
 libexec/xscreensaver/worm
@@ -292,6 +316,8 @@ man/man1/flame.1
 man/man1/forest.1
 man/man1/galaxy.1
 man/man1/gflux.1
+man/man1/glforestfire.1
+man/man1/glsnake.1
 man/man1/gltext.1
 man/man1/goop.1
 man/man1/grav.1
@@ -328,6 +354,7 @@ man/man1/rd-bomb.1
 man/man1/rocks.1
 man/man1/rorschach.1
 man/man1/rotzoomer.1
+man/man1/sballs.1
 man/man1/sierpinski.1
 man/man1/slidescreen.1
 man/man1/slip.1
@@ -342,6 +369,7 @@ man/man1/starwars.1
 man/man1/strange.1
 man/man1/swirl.1
 man/man1/t3d.1
+man/man1/twang.1
 man/man1/vidwhacker.1
 man/man1/vines.1
 man/man1/webcollage.1
@@ -358,6 +386,7 @@ man/man1/xscreensaver-getimage-video.1
 man/man1/xscreensaver-getimage.1
 man/man1/xscreensaver-gl-helper.1
 man/man1/xscreensaver.1
+man/man1/xspirograph.1
 man/man1/xsublim.1
 man/man1/xteevee.1
 man/man1/zoom.1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/01/26 23:59:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/23 01:38:29 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		4.00
+VERSION=		4.02
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
 NEED_VERSION=		1.487
