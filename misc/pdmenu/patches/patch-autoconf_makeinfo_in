@@ -1,5 +1,6 @@
---- autoconf/makeinfo.in.orig	Fri Aug 27 23:27:37 1999
-+++ autoconf/makeinfo.in	Tue May 30 22:55:17 2000
+$OpenBSD: patch-autoconf_makeinfo_in,v 1.1 2003/12/31 21:36:51 pvalchev Exp $
+--- autoconf/makeinfo.in.orig	2001-07-14 21:26:21.000000000 -0600
++++ autoconf/makeinfo.in	2003-12-31 14:48:02.000000000 -0700
 @@ -9,6 +9,7 @@ exec_prefix	= @exec_prefix@
  BINDIR		= @bindir@
  MANDIR		= @mandir@
