@@ -1,6 +1,19 @@
---- ./conserver/consent.c.orig	Sun Jan  3 18:32:32 1999
-+++ ./conserver/consent.c	Mon Jan  4 08:13:38 1999
-@@ -197,7 +197,7 @@
+--- conserver/consent.c.orig	Fri May 11 16:39:58 2001
++++ conserver/consent.c	Fri May 11 16:42:45 2001
+@@ -78,6 +78,12 @@
+ 
+ 
+ BAUD baud [] = {
++#if defined(B115200)
++	{ "115200", B115200 },
++#endif
++#if defined(B57600)
++	{ "57600", B57600 },
++#endif
+ #if defined(B38400)
+ 	{ "38400", B38400 },
+ #endif
+@@ -197,7 +203,7 @@
  	 */
  	termp.c_iflag = IXON|IXOFF|BRKINT;
  	termp.c_oflag = 0;
@@ -9,7 +22,7 @@
  	termp.c_cflag |= pCE->pparity->iset;
  	termp.c_lflag = 0;
  	/*
-@@ -205,7 +205,7 @@
+@@ -205,7 +211,7 @@
  	 * Set the VTIME == 1 (0.1 sec)
  	 * Don't bother with the control characters as they are not used
  	 */
@@ -18,7 +31,7 @@
  	termp.c_cc[VTIME] = 1;
  
  	if (-1 == cfsetospeed(&termp,pCE->pbaud->irate)) {
-@@ -424,15 +424,15 @@
+@@ -424,15 +430,15 @@
  #endif
  
  #if USE_TERMIOS
@@ -38,7 +51,7 @@
  	n_tio.c_lflag |= ISIG|ICANON|ECHO;
  	n_tio.c_cc[VEOF] = '\004';
  	n_tio.c_cc[VEOL] = '\000';
-@@ -444,7 +444,7 @@
+@@ -444,7 +450,7 @@
  	n_tio.c_cc[VSTART] = '\021';
  	n_tio.c_cc[VSTOP] = '\023';
  	n_tio.c_cc[VSUSP] = '\032';
