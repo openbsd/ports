@@ -1,0 +1,4 @@
+Curses is the interface between Perl and the curses(3) library.
+
+For descriptions on the usage of a given function, variable, or
+constant, refer to the curses(3) library manual pages.
