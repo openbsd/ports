@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2005/01/07 19:49:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.346 2005/01/14 17:17:31 todd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -167,6 +167,7 @@
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
      SUBDIR += p5-Net-SNMP
+     SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-Snort-Parser
      SUBDIR += p5-Net-TFTP
      SUBDIR += p5-Net-Telnet
