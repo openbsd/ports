@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/29 18:22:00 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/08/15 20:43:39 rohee Exp $
 
 DISTNAME=		English
 DIST_SUBDIR=		amaya
@@ -17,7 +17,6 @@ NO_CONFIGURE=		yes
 NO_BUILD=		yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/Thot/dicopar
-	${INSTALL_DATA} ${WRKDIR}/Thot/dicopar/Eprinc.dic ${PREFIX}/Thot/dicopar
+	${INSTALL_DATA} ${WRKDIR}/Thot/dicopar/Eprinc.dic ${PREFIX}/Amaya/dicopar
 
 .include <bsd.port.mk>
