@@ -21,7 +21,7 @@ diff -cdNr ../xroach.BSD/Makefile ./Makefile
 ! DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
 ! CFLAGS+=	-I${X11BASE}/include -I${.CURDIR}/bitmaps
 ! LDDESTDIR+=	-L${X11BASE}/lib
-! LDADD+=		-lX11 -lm
+! LDADD+=	${LDDESTDIR}	-lX11 -lm
 ! 
 ! MANDIR=        ${X11BASE}/man/man
 ! 
