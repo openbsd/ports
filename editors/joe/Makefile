@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 1999/04/01 06:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/08/30 15:07:17 brad Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
 CATEGORIES=	editors
-
-MAINTAINER=	ports@openbsd.org
-
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	ports@openbsd.org
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
 
-MAKE_ENV+=	SYS_JOERC=/etc/joe TERMINFO=1
+MAKE_ENV+=	SYS_JOERC="/etc/joe" TERMINFO="1"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/joe ${PREFIX}/bin
-	cd ${PREFIX}/bin; \
+	@cd ${PREFIX}/bin; \
 		${LN} -sf joe jmacs; \
 		${LN} -sf joe jpico; \
 		${LN} -sf joe jstar; \
