@@ -1,0 +1,4 @@
+x11vnc allows one to remotely view and interact with real X displays (i.e. a
+display corresponding to a physical monitor, keyboard, and mouse) with any
+VNC viewer. In this way it plays the role for Unix/X11 that WinVNC plays for
+Windows.

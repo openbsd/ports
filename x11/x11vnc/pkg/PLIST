@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
+bin/x11vnc
+share/doc/x11vnc/
+share/doc/x11vnc/README
