@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/06 23:58:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 04:51:08 avsm Exp $
 
 DISTNAME=	bbkeys-0.3.5
 CATEGORIES=	x11
@@ -18,7 +18,7 @@ FLAVORS= qt
 FLAVOR?=
 
 .if ${FLAVOR:L:Mqt}
-LIB_DEPENDS=	qt.2:x11/qt2
+LIB_DEPENDS=	qt.2::x11/qt2
 PATCH_LIST=	qt-*
 .else
 PATCH_LIST=

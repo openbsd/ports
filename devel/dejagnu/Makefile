@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/26 04:51:08 avsm Exp $
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	devel
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= dejagnu
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
-LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
+LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
 BUILD_DEPENDS=	expect::lang/expect
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/01 17:34:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/26 04:51:09 avsm Exp $
 
 DISTNAME=	wmdate-0.7
 CATEGORIES=	x11 x11/windowmaker
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	dockapp:devel/libdockapp
+LIB_DEPENDS=	dockapp::devel/libdockapp
 
 USE_X11=	Yes
 CONFIGURE_STYLE= imake noman
