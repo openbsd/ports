@@ -1,0 +1,14 @@
+bin/glib-config
+info/dir
+info/glib.info
+lib/libglib.a
+lib/glib/include/glibconfig.h
+lib/libgmodule.a
+lib/libgthread.a
+man/man1/glib-config.1
+share/aclocal/glib.m4
+include/glib.h
+include/gmodule.h
+@dirrm lib/glib/include
+@dirrm lib/glib
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
