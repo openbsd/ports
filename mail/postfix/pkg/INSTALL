@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 1999/06/13 16:15:57 dugsong Exp $
+# $OpenBSD: INSTALL,v 1.5 1999/09/26 20:35:14 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -79,19 +79,20 @@ do_sendmail()
     case $ans in n*|N*) return ;; esac
     echo
     echo "-> Disabling sendmail"
-    set -x
-    mv /usr/sbin/sendmail /usr/sbin/sendmail-orig
-    mv /usr/bin/mailq /usr/bin/mailq-orig
-    mv /usr/bin/newaliases /usr/bin/newaliases-orig
-    chmod 555 /usr/sbin/sendmail-orig /usr/bin/mailq-orig /usr/bin/newaliases-orig
-    set +x
+    mv /etc/mailer.conf /etc/mailer.conf.pre-postfix
     echo
     echo "-> Enabling postfix replacements"
-    set -x
-    ln -s ${PREFIX}/sbin/sendmail /usr/sbin/sendmail
-    ln -s /usr/sbin/sendmail /usr/bin/mailq
-    ln -s /usr/sbin/sendmail /usr/bin/newaliases
-    set +x
+    cat <<MAILER >/tmp/mailer.conf.$$
+sendmail	y0y0y0/sbin/sendmail
+send-mail	y0y0y0/sbin/sendmail
+mailq		y0y0y0/sbin/sendmail
+newaliases	y0y0y0/sbin/sendmail
+MAILER
+    sed "s@y0y0y0@${PREFIX}@g" /tmp/mailer.conf.$$ >/etc/mailer.conf
+    rm -f /tmp/mailer.conf.$$
+    chown root:wheel /etc/mailer.conf
+    chmod 644 /etc/mailer.conf
+    echo
 }
 
 # Function: install the postfix configuration files from the samples
@@ -112,6 +113,7 @@ do_configs()
 	install -m 644 -c ${PREFIX}/lib/postfix/* $CONFIG_DIR
 	sed "s@y0y0y0@${PREFIX}@g" ${CONFIG_DIR}/main.cf > ${CONFIG_DIR}/main.cf.$$
 	install -m 644 ${CONFIG_DIR}/main.cf.$$ ${CONFIG_DIR}/main.cf
+	rm -f ${CONFIG_DIR}/main.cf.$$
 
 	# Configure setgid maildrop.
 	chgrp maildrop ${PREFIX}/sbin/postdrop

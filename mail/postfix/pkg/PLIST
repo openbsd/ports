@@ -14,7 +14,6 @@ sbin/smtp-source
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
-libexec/postfix/fsstone
 libexec/postfix/local
 libexec/postfix/master
 libexec/postfix/pickup

@@ -1,5 +1,5 @@
---- conf/main.cf-orig	Fri Jun 11 11:32:35 1999
-+++ conf/main.cf	Fri Jun 11 11:34:41 1999
+--- conf/main.cf.orig	Mon Sep  6 22:20:55 1999
++++ conf/main.cf	Sat Sep 11 16:36:04 1999
 @@ -18,19 +18,19 @@
  # Postfix support programs and daemons. This setting can be overruled
  # with the command_directory and daemon_directory parameters.
@@ -10,7 +10,7 @@
  # The command_directory parameter specifies the location of all
  # postXXX commands.  The default value is $program_directory.
  #
--#command_directory = /usr/sbin
+-command_directory = /usr/sbin
 +command_directory = y0y0y0/sbin
  
  # The daemon_directory parameter specifies the location of all Postfix
@@ -18,20 +18,20 @@
  # default value is $program_directory. This directory must be owned
  # by root.
  #
--#daemon_directory = /usr/libexec/postfix
+-daemon_directory = /usr/libexec/postfix
 +daemon_directory = y0y0y0/libexec/postfix
  
  # QUEUE AND PROCESS OWNERSHIP
  #
-@@ -40,7 +40,7 @@
- # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
- # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
+@@ -47,7 +47,7 @@
+ # These rights are used in the absence of a recipient user context.
+ # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
  #
--#mail_owner = postfix
-+mail_owner = postfix
+-#default_privs = nobody
++default_privs = nobody
  
- # The default_privs parameter specifies the default rights used by
- # the local delivery agent for delivery to external file or command.
+ # INTERNET HOST AND DOMAIN NAMES
+ # 
 @@ -179,7 +179,7 @@
  # "postfix reload" to eliminate the delay.
  #
@@ -39,9 +39,9 @@
 -#alias_maps = hash:/etc/aliases
 +alias_maps = hash:/etc/aliases
  #alias_maps = hash:/etc/aliases, nis:mail.aliases
+ #alias_maps = netinfo:/aliases
  
- # The alias_database parameter specifies the alias database(s) that
-@@ -189,7 +189,7 @@
+@@ -190,7 +190,7 @@
  #
  #alias_database = dbm:/etc/aliases
  #alias_database = dbm:/etc/mail/aliases
@@ -49,4 +49,4 @@
 +alias_database = hash:/etc/aliases
  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
  
- # ADDRESS EXTENSIONS (e.g., user+foo)
+ # DELIVERED-TO
