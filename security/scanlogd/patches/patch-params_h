@@ -1,0 +1,12 @@
+$OpenBSD: patch-params_h,v 1.1 2003/06/22 10:15:13 sturm Exp $
+--- params.h.orig	Sat Jun 21 20:59:16 2003
++++ params.h	Sat Jun 21 20:59:45 2003
+@@ -14,7 +14,7 @@
+  * #undef this to let scanlogd run as root, but I recommend against doing
+  * so.
+  */
+-#define SCANLOGD_USER			"scanlogd"
++#define SCANLOGD_USER			"_scanlogd"
+ 
+ /*
+  * Device to monitor, if you're using libnids or libpcap directly. #undef
