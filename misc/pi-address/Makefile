@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/30 21:23:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/09/10 12:42:47 jakob Exp $
 
-DISTNAME=	pi-address-0.3.4
+DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.322
 
 MAINTAINER=	jakob@openbsd.org
 
@@ -11,14 +11,22 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	ftp://linux.in-berlin.de/pub/pilot/ \
-		ftp://pv915.pv.reshsg.uci.edu/pub/pilot/
+MASTER_SITES=	http://me.in-berlin.de/~miwie/pia/ \
+		ftp://ftp.belug.org/pub/user/mw/pilot/
 
-LIB_DEPENDS=	pisock::comms/pilot-link \
-		kde::x11/kde/libs
+HOMEPAGE=	http://me.in-berlin.de/~miwie/pia/
 
-MAKE_ENV+=	QTDIR=${X11BASE} PILOT_LINK=${LOCALBASE}
+LIB_DEPENDS=	qt.1.45::x11/qt \
+		pisock::comms/pilot-link
 
-FAKE=		yes
+USE_X11=		yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-pisock-dir=${LOCALBASE}
+CONFIGURE_ENV+=		QTINC=${LOCALBASE}/include/X11/qt \
+			QTLIB=${LOCALBASE}/lib
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pi-address
+	mv ${WRKINST}/etc/pi-addressrc ${PREFIX}/share/examples/pi-address
 
 .include <bsd.port.mk>

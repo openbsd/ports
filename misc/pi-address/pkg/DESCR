@@ -9,3 +9,5 @@ Pilot.
 The programm can also be used as a general address manager without a
 3Com PalmPilot. Some of the record fields may be not very meaningful
 in this case.
+
+WWW: ${HOMEPAGE}
