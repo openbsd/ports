@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/08 06:41:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/21 20:02:21 sturm Exp $
 
 COMMENT=		"crypto library based on code used in GnuPG"
 
@@ -29,6 +29,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
+			--disable-dev-random \
 			--disable-asm
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 
