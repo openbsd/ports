@@ -1,42 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/06/27 03:34:57 kevlo Exp $
-libdata/perl5/site_perl/Bundle/Net/LDAP.pm
-libdata/perl5/site_perl/LWP/Protocol/ldap.pm
-libdata/perl5/site_perl/Net/LDAP.pm
-libdata/perl5/site_perl/Net/LDAP.pod
-libdata/perl5/site_perl/Net/LDAP/ASN.pm
-libdata/perl5/site_perl/Net/LDAP/Bind.pm
-libdata/perl5/site_perl/Net/LDAP/Constant.pm
-libdata/perl5/site_perl/Net/LDAP/Constant.pod
-libdata/perl5/site_perl/Net/LDAP/Control.pm
-libdata/perl5/site_perl/Net/LDAP/Control/Paged.pm
-libdata/perl5/site_perl/Net/LDAP/Control/ProxyAuth.pm
-libdata/perl5/site_perl/Net/LDAP/Control/Sort.pm
-libdata/perl5/site_perl/Net/LDAP/Control/SortResult.pm
-libdata/perl5/site_perl/Net/LDAP/Control/VLV.pm
-libdata/perl5/site_perl/Net/LDAP/Control/VLVResponse.pm
-libdata/perl5/site_perl/Net/LDAP/DSML.pm
-libdata/perl5/site_perl/Net/LDAP/DSML/Parser.pm
-libdata/perl5/site_perl/Net/LDAP/Entry.pm
-libdata/perl5/site_perl/Net/LDAP/Entry.pod
-libdata/perl5/site_perl/Net/LDAP/Examples.pod
-libdata/perl5/site_perl/Net/LDAP/Extension.pm
-libdata/perl5/site_perl/Net/LDAP/Extra.pm
-libdata/perl5/site_perl/Net/LDAP/FAQ.pod
-libdata/perl5/site_perl/Net/LDAP/Filter.pm
-libdata/perl5/site_perl/Net/LDAP/Filter.pod
-libdata/perl5/site_perl/Net/LDAP/LDIF.pm
-libdata/perl5/site_perl/Net/LDAP/LDIF.pod
-libdata/perl5/site_perl/Net/LDAP/Message.pm
-libdata/perl5/site_perl/Net/LDAP/Message.pod
-libdata/perl5/site_perl/Net/LDAP/RFC.pod
-libdata/perl5/site_perl/Net/LDAP/Reference.pod
-libdata/perl5/site_perl/Net/LDAP/Schema.pm
-libdata/perl5/site_perl/Net/LDAP/Schema.pod
-libdata/perl5/site_perl/Net/LDAP/Search.pm
-libdata/perl5/site_perl/Net/LDAP/Search.pod
-libdata/perl5/site_perl/Net/LDAP/Security.pod
-libdata/perl5/site_perl/Net/LDAP/Util.pm
-libdata/perl5/site_perl/Net/LDAPS.pm
+@comment $OpenBSD: PLIST,v 1.6 2002/07/30 10:27:46 shell Exp $
+${P5SITE}/Bundle/Net/LDAP.pm
+${P5SITE}/LWP/Protocol/ldap.pm
+${P5SITE}/Net/LDAP.pm
+${P5SITE}/Net/LDAP.pod
+${P5SITE}/Net/LDAP/ASN.pm
+${P5SITE}/Net/LDAP/Bind.pm
+${P5SITE}/Net/LDAP/Constant.pm
+${P5SITE}/Net/LDAP/Constant.pod
+${P5SITE}/Net/LDAP/Control.pm
+${P5SITE}/Net/LDAP/Control/Paged.pm
+${P5SITE}/Net/LDAP/Control/ProxyAuth.pm
+${P5SITE}/Net/LDAP/Control/Sort.pm
+${P5SITE}/Net/LDAP/Control/SortResult.pm
+${P5SITE}/Net/LDAP/Control/VLV.pm
+${P5SITE}/Net/LDAP/Control/VLVResponse.pm
+${P5SITE}/Net/LDAP/DSML.pm
+${P5SITE}/Net/LDAP/Entry.pm
+${P5SITE}/Net/LDAP/Entry.pod
+${P5SITE}/Net/LDAP/Examples.pod
+${P5SITE}/Net/LDAP/Extension.pm
+${P5SITE}/Net/LDAP/Extension/SetPassword.pm
+${P5SITE}/Net/LDAP/Extra.pm
+${P5SITE}/Net/LDAP/FAQ.pod
+${P5SITE}/Net/LDAP/Filter.pm
+${P5SITE}/Net/LDAP/Filter.pod
+${P5SITE}/Net/LDAP/LDIF.pm
+${P5SITE}/Net/LDAP/LDIF.pod
+${P5SITE}/Net/LDAP/Message.pm
+${P5SITE}/Net/LDAP/Message.pod
+${P5SITE}/Net/LDAP/RFC.pod
+${P5SITE}/Net/LDAP/Reference.pod
+${P5SITE}/Net/LDAP/Schema.pm
+${P5SITE}/Net/LDAP/Schema.pod
+${P5SITE}/Net/LDAP/Search.pm
+${P5SITE}/Net/LDAP/Search.pod
+${P5SITE}/Net/LDAP/Security.pod
+${P5SITE}/Net/LDAP/Util.pm
+${P5SITE}/Net/LDAPS.pm
 man/man3p/Bundle::Net::LDAP.3p
 man/man3p/Net::LDAP.3p
 man/man3p/Net::LDAP::Constant.3p
@@ -62,7 +62,6 @@ man/man3p/Net::LDAP::Search.3p
 man/man3p/Net::LDAP::Security.3p
 man/man3p/Net::LDAP::Util.3p
 man/man3p/Net::LDAPS.3p
-@dirrm libdata/perl5/site_perl/Net/LDAP/DSML
-@dirrm libdata/perl5/site_perl/Net/LDAP/Control
-@dirrm libdata/perl5/site_perl/Net/LDAP
-@dirrm libdata/perl5/site_perl/Bundle/Net
+@dirrm ${P5SITE}/Net/LDAP/Extension
+@dirrm ${P5SITE}/Net/LDAP/Control
+@dirrm ${P5SITE}/Net/LDAP
