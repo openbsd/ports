@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
---- interface/cooked_interface.c.orig	Tue Sep 19 16:19:14 2000
-+++ interface/cooked_interface.c	Tue Sep 19 16:16:33 2000
+$OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp $
+--- interface/cooked_interface.c.orig	Thu Apr 20 00:41:04 2000
++++ interface/cooked_interface.c	Mon Sep 16 12:47:11 2002
 @@ -13,6 +13,7 @@
  static int cooked_readtoc (cdrom_drive *d){
    int i;
@@ -15,7 +15,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
    tracks=hdr.cdth_trk1+1;
 +#endif
 +
-+#ifdef __NetBSD__
++#if defined (__NetBSD__) || defined (__OpenBSD__)
 +  struct ioc_read_toc_entry hdr;
 +  struct cd_toc_entry entries[MAXTRK + 1];	/* + 1 for leadout */
 +
@@ -55,7 +55,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
    d->cd_extra=FixupTOC(d,tracks);
    return(--tracks);  /* without lead-out */
  }
-@@ -60,10 +100,15 @@ static int cooked_readtoc (cdrom_drive *
+@@ -60,10 +100,14 @@ static int cooked_readtoc (cdrom_drive *
  /* Set operating speed */
  static int cooked_setspeed(cdrom_drive *d, int speed)
  {
@@ -64,14 +64,13 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
      return ioctl(d->ioctl_fd, CDROM_SELECT_SPEED, speed);
    else
      return 0;
-+#endif
-+#ifdef __NetBSD__
++#else
 +  errx(1, "cooked_setspeed: not implemented");
 +#endif
  }
  
  
-@@ -72,6 +117,7 @@ static int cooked_setspeed(cdrom_drive *
+@@ -72,6 +116,7 @@ static int cooked_setspeed(cdrom_drive *
   */
  
  static long cooked_read (cdrom_drive *d, void *p, long begin, long sectors){
@@ -79,18 +78,17 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
    int retry_count,err;
    struct cdrom_read_audio arg;
    char *buffer=(char *)p;
-@@ -127,6 +173,10 @@ static long cooked_read (cdrom_drive *d,
+@@ -127,6 +172,9 @@ static long cooked_read (cdrom_drive *d,
    } while (err);
    
    return(sectors);
-+#endif
-+#ifdef __NetBSD__
++#else
 +  errx(1, "cooked_read: not implemented");
 +#endif
  }
  
  /* hook */
-@@ -191,6 +241,7 @@ static void check_exceptions(cdrom_drive
+@@ -191,6 +239,7 @@ static void check_exceptions(cdrom_drive
  
  /* set function pointers to use the ioctl routines */
  int cooked_init_drive (cdrom_drive *d){
@@ -98,12 +96,11 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
    int ret;
  
    switch(d->drive_type){
-@@ -255,5 +306,9 @@ int cooked_init_drive (cdrom_drive *d){
+@@ -255,5 +304,8 @@ int cooked_init_drive (cdrom_drive *d){
    if((ret=verify_read_command(d)))return(ret);
    d->error_retry=1;
    return(0);
-+#endif
-+#ifdef __NetBSD__
++#else
 +  errx(1, "cooked_init_drive: not implemented");
 +#endif
  }

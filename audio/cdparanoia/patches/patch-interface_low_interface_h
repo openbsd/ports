@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_low_interface_h,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
---- interface/low_interface.h.orig	Tue Sep 19 16:19:33 2000
-+++ interface/low_interface.h	Tue Sep 19 16:16:35 2000
+$OpenBSD: patch-interface_low_interface_h,v 1.2 2002/09/16 13:35:52 lebel Exp $
+--- interface/low_interface.h.orig	Mon Mar 26 08:12:11 2001
++++ interface/low_interface.h	Sat Sep  7 20:49:33 2002
 @@ -25,6 +25,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-interface_low_interface_h,v 1.1.1.1 2000/09/21 16:07:21 espie Ex
  #include <linux/major.h>
  #include <linux/version.h>
  
-@@ -48,13 +49,24 @@
+@@ -47,13 +48,24 @@
  
  #include <linux/cdrom.h>
  #include <linux/major.h>

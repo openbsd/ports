@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.5 2002/06/14 12:11:18 naddy Exp $
---- configure.in.orig	Mon Aug 16 00:29:43 1999
-+++ configure.in	Fri Jun 14 13:41:57 2002
-@@ -1,28 +1,23 @@
+$OpenBSD: patch-configure_in,v 1.6 2002/09/16 13:35:52 lebel Exp $
+--- configure.in.orig	Sun Mar 26 09:33:22 2000
++++ configure.in	Mon Sep 16 14:44:52 2002
+@@ -1,34 +1,32 @@
  AC_INIT(interface/interface.c)
  
 -cp $srcdir/configure.guess $srcdir/config.guess
@@ -35,7 +35,32 @@ $OpenBSD: patch-configure_in,v 1.5 2002/06/14 12:11:18 naddy Exp $
          esac
  fi
  
-@@ -63,11 +58,14 @@ fi
+ AC_HEADER_STDC
+ 
+-CFLAGS=""
++dnl Uncomment the following if you don't want to honor CFLAGS passed in from
++dnl the environment.
++dnl
++dnl CFLAGS=""
+ 
+ TYPESIZES="" 
+ 
+@@ -48,10 +46,10 @@ case 4 in
+ 	$ac_cv_sizeof_long) SIZE32="long";;
+ esac
+ 
+-AC_CHECK_TYPE(int16_t,$SIZE16)
+-AC_CHECK_TYPE(int32_t,$SIZE32)
+-AC_CHECK_TYPE(u_int16_t,$SIZE16)
+-AC_CHECK_TYPE(u_int32_t,$SIZE32)
++#AC_CHECK_TYPE(int16_t,$SIZE16)
++#AC_CHECK_TYPE(int32_t,$SIZE32)
++#AC_CHECK_TYPE(u_int16_t,$SIZE16)
++#AC_CHECK_TYPE(u_int32_t,$SIZE32)
+ 
+ if test -z "$SIZE16"; then
+ 	AC_MSG_ERROR(No 16 bit tupe found on this platform!)
+@@ -63,11 +61,14 @@ fi
  AC_CHECK_HEADERS(linux/sbpcd.h, SBPCD_H="-DSBPCD_H='1' ")
  AC_CHECK_HEADERS(linux/ucdrom.h, UCDROM_H="-DUCDROM_H='1' ")
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_h,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
---- utils.h.orig	Tue Sep 19 16:21:26 2000
-+++ utils.h	Tue Sep 19 16:16:36 2000
+$OpenBSD: patch-utils_h,v 1.2 2002/09/16 13:35:52 lebel Exp $
+--- utils.h.orig	Thu Apr 20 00:41:04 2000
++++ utils.h	Mon Sep 16 12:33:02 2002
 @@ -1,5 +1,16 @@
  #include <stdlib.h>
 +#ifdef __linux__
@@ -23,23 +23,23 @@ $OpenBSD: patch-utils_h,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
  }
  
 +#if !defined(__OpenBSD__)
- static inline size32 swap32(size32 x){
+ static inline int32_t swap32(int32_t x){
 +#ifdef __NetBSD__
 +  return bswap32(x);
 +#else
-   return((((unsigned size32)x & 0x000000ffU) << 24) | 
- 	 (((unsigned size32)x & 0x0000ff00U) <<  8) | 
- 	 (((unsigned size32)x & 0x00ff0000U) >>  8) | 
- 	 (((unsigned size32)x & 0xff000000U) >> 24));
+   return((((u_int32_t)x & 0x000000ffU) << 24) | 
+ 	 (((u_int32_t)x & 0x0000ff00U) <<  8) | 
+ 	 (((u_int32_t)x & 0x00ff0000U) >>  8) | 
+ 	 (((u_int32_t)x & 0xff000000U) >> 24));
 +#endif
  }
  
- static inline size16 swap16(size16 x){
+ static inline int16_t swap16(int16_t x){
 +#ifdef __NetBSD__
 +  return bswap16(x);
 +#else
-   return((((unsigned size16)x & 0x00ffU) <<  8) | 
- 	 (((unsigned size16)x & 0xff00U) >>  8));
+   return((((u_int16_t)x & 0x00ffU) <<  8) | 
+ 	 (((u_int16_t)x & 0xff00U) >>  8));
 +#endif
  }
 +#endif /* !defined(__OpenBSD__) */
