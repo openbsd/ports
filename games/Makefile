@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/09/08 02:12:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.34 2000/12/26 23:32:25 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -37,11 +37,10 @@
 #    SUBDIR += lincity
      SUBDIR += hackdata
      SUBDIR += nethack
-     SUBDIR += nethack:x11
+     SUBDIR += nethack:no_x11
      SUBDIR += nethack:qt
      SUBDIR += slash
-     SUBDIR += slash:x11
-#    SUBDIR += nethack-qt
+     SUBDIR += slash:no_x11
      SUBDIR += netris
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
