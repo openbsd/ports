@@ -1,0 +1,11 @@
+--- gcc/java/Make-lang.in.orig	Thu Jul 20 01:06:38 2000
++++ gcc/java/Make-lang.in	Thu Jul 20 01:06:50 2000
+@@ -121,7 +121,7 @@ PARSE_RELDIR = .
+ PARSE_C = $(PARSE_DIR)/parse.c
+ PARSE_SCAN_C = $(PARSE_DIR)/parse-scan.c
+ 
+-SET_BISON = here=`pwd`; sdir=`cd $(srcdir) && pwd`; if test -f ../bison; then bison="$$here/../bison/bison -L $$sdir"; else bison=bison; fi
++#SET_BISON = here=`pwd`; sdir=`cd $(srcdir) && pwd`; if test -f ../bison; then bison="$$here/../bison/bison -L $$sdir"; else bison=bison; fi
+ BISONFLAGS =
+ JAVABISONFLAGS = --name-prefix=java_
+ 
