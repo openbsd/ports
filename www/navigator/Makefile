@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/05/06 16:57:57 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/05/15 23:07:11 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -81,10 +81,18 @@ do-install:
 	@cd ${WRKDIR}/${NAVIGATORNAME} && ${MAKE_ENV} ./ns-install
 
 post-install:
+.if ${MACHINE_ARCH} == "sparc"
+	@${MV} ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
+	@${MV} ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
+.endif
 	@cd ${WRKDIR}/${FORTIFYNAME} && \
 	src/cmdline/fortify ${PREFIX}/netscape/netscape
-	@sed 's#@netscape_home@#${PREFIX}/netscape#' \
-	 ${FILESDIR}/netscape.$MACHINE_ARCH > ${WRKDIR}/netscape
+.if ${MACHINE_ARCH} == "sparc"
+	@cd ${WRKDIR}/${FORTIFYNAME} && \
+	src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
+.endif
+	@${SED} 's#@netscape_home@#${PREFIX}/netscape#' \
+	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
 	@if test -f ${PREFIX}/bin/netscape ; then \
 		${MV} ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old ; fi
 	@${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
