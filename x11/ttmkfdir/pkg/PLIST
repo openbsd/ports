@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/10 20:15:20 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/07 13:06:41 lebel Exp $
 bin/ttmkfdir
+share/doc/ttmkfdir/README
+@dirrm share/doc/ttmkfdir

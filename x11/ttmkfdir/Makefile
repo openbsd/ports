@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/14 16:26:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/07 13:06:41 lebel Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
@@ -28,5 +28,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin/ttmkfdir
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttmkfdir
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ttmkfdir
 	
 .include <bsd.port.mk>
