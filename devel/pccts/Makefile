@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/17 18:47:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/12 15:37:34 brad Exp $
 
+DISTNAME=	pccts133mr22
 PKGNAME=	pccts-1.33r22
 CATEGORIES=	devel lang
-NEED_VERSION=	1.302
+NEED_VERSION=	1.328
 MASTER_SITES=	http://www.polhode.com/
-DISTNAME=	pccts133mr22
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	fgsch@openbsd.org
 
@@ -13,16 +14,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_ZIP=	Yes
-WRKDIST=	${WRKDIR}/pccts
-
 MAKE_FILE=	makefile
+
 ALL_TARGET=
 
+WRKDIST=	${WRKDIR}/pccts
+
 do-install:
-	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} antlr dlg genmk sor \
-	  ${PREFIX}/bin 
 	${INSTALL_DATA_DIR} ${PREFIX}/include/pccts
+	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} antlr dlg genmk sor \
+	  ${PREFIX}/bin 
 	${INSTALL_DATA} ${WRKSRC}/h/* ${PREFIX}/include/pccts
 
 .include <bsd.port.mk>
