@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/09/23 17:45:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/04/24 18:37:53 sturm Exp $
 @pkgcfl dvipdfm-*
 share/texmf/ChangeLog
 share/texmf/LICENSE.texmf
@@ -11441,7 +11441,6 @@ share/texmf/web2c/updmap.cfg
 @comment no checksum
 share/texmf/xdvi/XDvi
 @dirrm share/texmf/xdvi
-@dirrm share/texmf/web2c
 @dirrm share/texmf/texdoctk
 @dirrm share/texmf/tex/texinfo
 @dirrm share/texmf/tex/platex/config
@@ -12191,4 +12190,5 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/bibtex/bib/ams
 @dirrm share/texmf/bibtex/bib
 @dirrm share/texmf/bibtex
-@dirrm share/texmf
+@extra share/texmf/web2c/
+@extra share/texmf/
