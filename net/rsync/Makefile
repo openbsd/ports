@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/23 10:42:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/02 16:59:47 espie Exp $
 #
 
 DISTNAME= rsync-2.2.1
 CATEGORIES=net
 
+NEED_VERSION=1.60
+
 
 
 MAINTAINER=		espie@openbsd.org
 
-# to set
 MASTER_SITES=		ftp://rsync.samba.org/pub/rsync/
+
+SEPARATE_BUILD=concurrent
 
 GNU_CONFIGURE=		yes
 
@@ -20,7 +23,7 @@ post-build:
 DOCDIR=${PREFIX}/share/doc/rsync
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rsync ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/rsync ${PREFIX}/bin
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/rsync.1 ${PREFIX}/man/man1
