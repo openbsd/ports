@@ -1,0 +1,11 @@
+$OpenBSD: patch-libs_utils_h,v 1.1 2003/04/11 16:20:21 pvalchev Exp $
+--- libs/utils.h.orig	Thu Apr 10 13:29:21 2003
++++ libs/utils.h	Thu Apr 10 13:28:59 2003
+@@ -10,6 +10,7 @@
+ #include <ctype.h>
+ 
+ #ifdef HAVE_X11_XFT_XFT_H
++#  include <freetype2/freetype/freetype.h>
+ #  include <X11/Xft/Xft.h>
+ #endif
+ 
