@@ -1,0 +1,5 @@
+Visual Tcl is a freely-available, high-quality application development
+environment for UNIX, Windows, Macintosh and AS400 platforms. Visual
+Tcl is written entirely in Tcl/Tk and generates pure Tcl/Tk code.
+This makes porting your Visual Tcl applications either unnecessary
+or trivial.
