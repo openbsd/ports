@@ -1,6 +1,4 @@
-FastJar is a version of JDK's `jar' utility written entirely
-in C, and therefore quite a bit faster.  Currently some fea-
-tures such as updating archive are unimplemented, but enough
-seems implemented.
+FastJar is a version of JDK's `jar' utility written entirely in C, and
+therefore quite a bit faster.
 
 WWW: ${HOMEPAGE}
