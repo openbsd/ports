@@ -15,5 +15,6 @@ The other compiler generates high-performance native code for a number
 of processors. Compilation takes longer and generates bigger code, but
 the generated programs deliver excellent performance (better than
 Standard ML of New Jersey 1.08 on our tests), while retaining the
-moderate memory requirements of the bytecode compiler. The native-code
-compiler currently runs on the following platforms:
+moderate memory requirements of the bytecode compiler.
+
+WWW: ${HOMEPAGE}

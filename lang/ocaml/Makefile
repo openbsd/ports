@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/27 05:06:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/22 00:32:00 angelos Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
-DISTNAME=	ocaml-3.00
+DISTNAME=	ocaml-3.02
 CATEGORIES=	lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.440
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
+
+HOMEPAGE=	http://www.ocaml.org/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
