@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2002/02/19 06:44:32 pvalchev Exp $
+--- configure.orig	Mon Feb 18 23:34:03 2002
++++ configure	Mon Feb 18 23:35:37 2002
+@@ -1963,7 +1963,8 @@ fi
+   KDE_CXXFLAGS=
+   
+ 
+-CXXFLAGS="-DHAVE_CONFIG_H -I. -I.. -O2 -O0 -g3 -Wall `gtk-config --cflags` -lgtk -lgdk -lglib $USE_EXCEPTIONS"
++CXXFLAGS="-DHAVE_CONFIG_H -I. -I.. `gtk-config --cflags` $CXXFLAGS $USE_EXCEPTIONS"
++LDFLAGS="`gtk-config --libs` $LDFLAGS"
+ 
+ # Check whether --enable-shared or --disable-shared was given.
+ if test "${enable_shared+set}" = set; then
