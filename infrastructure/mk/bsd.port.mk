@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.333 2000/09/19 14:14:52 mickey Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.334 2000/09/22 02:20:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1480,7 +1480,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
 	  for i in ${_PATCHFILES}; do \
-	  	case "${PATCH_DEBUG}" in \
+	  	case "${PATCH_DEBUG:L}" in \
 			no) ;; \
 			*) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
 		esac; \
