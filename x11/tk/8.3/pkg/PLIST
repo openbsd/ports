@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/10/26 06:53:02 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/11/29 09:48:57 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tk-8.3.*
 bin/wish8.3
@@ -27,8 +27,8 @@ include/tk8.3/generic/tkSelect.h
 include/tk8.3/generic/tkText.h
 include/tk8.3/tk.h
 include/tk8.3/tkDecls.h
-include/tk8.3/tkPlatDecls.h
 include/tk8.3/tkIntXlibDecls.h
+include/tk8.3/tkPlatDecls.h
 include/tk8.3/unix/tkUnixDefault.h
 include/tk8.3/unix/tkUnixInt.h
 include/tk8.3/unix/tkUnixPort.h

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/11/29 09:45:48 kevlo Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
 
-DISTNAME=	tcl8.3.4
-PKGNAME=	tcl-8.3.4
+VERSION=	8.3.5
+
+DISTNAME=	tcl${VERSION}-src
+PKGNAME=	tcl-${VERSION}
 CATEGORIES=	lang lang/tcl
-NEED_VERSION=	1.482
 MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_3/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+WRKDIST=	${WRKDIR}/tcl${VERSION}/unix
 
 INSTALL_TARGET=	install-strip
 REGRESS_TARGET=	test

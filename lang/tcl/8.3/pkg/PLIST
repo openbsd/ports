@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/10/26 06:48:30 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/11/29 09:45:55 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tcl-8.3.*
 bin/tclsh8.3
@@ -269,6 +269,7 @@ lib/tcl8.3/man/man3/Tcl_DStringLength.3
 lib/tcl8.3/man/man3/Tcl_DStringResult.3
 lib/tcl8.3/man/man3/Tcl_DStringSetLength.3
 lib/tcl8.3/man/man3/Tcl_DStringStartSublist.3
+lib/tcl8.3/man/man3/Tcl_DStringTrunc.3
 lib/tcl8.3/man/man3/Tcl_DStringValue.3
 lib/tcl8.3/man/man3/Tcl_DecrRefCount.3
 lib/tcl8.3/man/man3/Tcl_DeleteAssocData.3
@@ -496,6 +497,7 @@ lib/tcl8.3/man/man3/Tcl_SetHashValue.3
 lib/tcl8.3/man/man3/Tcl_SetIntObj.3
 lib/tcl8.3/man/man3/Tcl_SetListObj.3
 lib/tcl8.3/man/man3/Tcl_SetLongObj.3
+lib/tcl8.3/man/man3/Tcl_SetMainLoop.3
 lib/tcl8.3/man/man3/Tcl_SetMaxBlockTime.3
 lib/tcl8.3/man/man3/Tcl_SetObjErrorCode.3
 lib/tcl8.3/man/man3/Tcl_SetObjLength.3
@@ -695,7 +697,7 @@ lib/tcl8.3/man/mann/variable.n
 lib/tcl8.3/man/mann/vwait.n
 lib/tcl8.3/man/mann/while.n
 lib/tcl8.3/msgcat1.1/msgcat.tcl
-lib/tcl8.3/msgcat1.1/pkgIndex.tcl  
+lib/tcl8.3/msgcat1.1/pkgIndex.tcl
 lib/tcl8.3/opt0.4/optparse.tcl
 lib/tcl8.3/opt0.4/pkgIndex.tcl
 lib/tcl8.3/package.tcl

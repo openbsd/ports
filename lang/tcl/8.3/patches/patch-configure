@@ -1,24 +1,25 @@
---- configure.orig	Fri Oct 19 18:24:15 2001
-+++ configure	Mon Nov 19 23:25:15 2001
-@@ -5328,9 +5328,14 @@ fi
+$OpenBSD: patch-configure,v 1.9 2002/11/29 09:45:51 kevlo Exp $
+--- configure.orig	Fri Oct 18 20:44:46 2002
++++ configure	Fri Nov 29 16:28:19 2002
+@@ -5441,9 +5441,14 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
 -		# NetBSD/SPARC needs -fPIC, -fpic will not do.
 -		SHLIB_CFLAGS="-fPIC"
 -		SHLIB_LD="ld -Bshareable -x"
-+		# OpenBSD/SPARC needs -fPIC, -fpic will not do.
++		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
 +		case `machine` in
-+		sparc*)
++		sparc|sparc64)
 +			SHLIB_CFLAGS="-fPIC";;
 +		*)
-+ 			SHLIB_CFLAGS="-fpic";;
++			SHLIB_CFLAGS="-fpic";;
 +		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
-@@ -5352,11 +5357,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+@@ -5465,11 +5470,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -32,16 +33,16 @@
  		
  fi
  rm -f conftest*
-@@ -6101,7 +6106,7 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
-     TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
-     eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
-     if test "x$DL_OBJS" = "xtclLoadAout.o"; then
--	MAKE_LIB="\${STLIB_LD} \$@ \${OBJS}"
-+	MAKE_LIB="\${STLIB_LD} \${TCL_LIB_FILE} \${OBJS}; \${RANLIB} \${TCL_LIB_FILE}"
-     else
- 	MAKE_LIB="\${SHLIB_LD} ${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} ${SHLIB_LD_LIBS}"
-     fi
-@@ -6186,7 +6191,7 @@ eval "TCL_STUB_LIB_FILE=libtclstub${TCL_
+@@ -6292,7 +6297,7 @@ else
+     esac
+     TCL_SHLIB_CFLAGS=""
+     eval "TCL_LIB_FILE=libtcl${TCL_UNSHARED_LIB_SUFFIX}"
+-    MAKE_LIB="\${STLIB_LD} \$@ \${OBJS}"
++    MAKE_LIB="\${STLIB_LD} \${TCL_LIB_FILE} \${OBJS}; \${RANLIB} \${TCL_LIB_FILE}"
+ fi
+ 
+ # tclConfig.sh needs a version of the _LIB_SUFFIX that has been eval'ed
+@@ -6359,7 +6364,7 @@ eval "TCL_STUB_LIB_FILE=libtclstub${TCL_
  # Replace DBGX with TCL_DBGX
  eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
  

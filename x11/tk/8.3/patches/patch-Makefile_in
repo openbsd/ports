@@ -1,15 +1,7 @@
---- Makefile.in.orig	Fri Oct 26 14:14:42 2001
-+++ Makefile.in	Fri Oct 26 14:21:47 2001
-@@ -202,7 +202,7 @@
- # Libraries to use when linking.  This definition is determined by the
- # configure script.
- LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
--WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+WISH_LIBS = -L${PREFIX}/lib -ltcl83 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
- 
- # The symbol below provides support for dynamic loading and shared
- # libraries.  See configure.in for a description of what it means.
-@@ -357,7 +357,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/11/29 09:48:55 kevlo Exp $
+--- Makefile.in.orig	Wed Oct 23 17:45:50 2002
++++ Makefile.in	Fri Nov 29 17:38:11 2002
+@@ -356,7 +356,7 @@ DEMOPROGS = browse hello ixset rmt rolod
  
  all: binaries libraries doc
  
@@ -18,7 +10,7 @@
  
  libraries:
  
-@@ -372,12 +372,15 @@
+@@ -371,12 +371,15 @@ doc: $(SRC_DIR)/doc/man.macros
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -36,7 +28,7 @@
  
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -463,12 +466,15 @@
+@@ -478,12 +481,15 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -54,7 +46,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -482,6 +488,7 @@
+@@ -497,6 +503,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -62,17 +54,17 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -495,11 +502,19 @@
+@@ -510,11 +517,19 @@ install-libraries:
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkPlatDecls.h \
--		$(GENERIC_DIR)/tkDecls.h $(GENERIC_DIR)/tkIntXlibDecls.h ; \
+-		$(GENERIC_DIR)/tkDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
 +	    echo "Installing $$i"; \
 +	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
-+	    done;
++	    done
 +	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \

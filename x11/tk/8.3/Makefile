@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/11/29 09:48:52 kevlo Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
-DISTNAME=	tk8.3.4
-PKGNAME=	tk-8.3.4
+VERSION=	8.3.5
+
+DISTNAME=	tk${VERSION}-src
+PKGNAME=	tk-${VERSION}
 CATEGORIES=	x11 x11/tk
-NEED_VERSION=	1.482
 MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_3/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
@@ -34,7 +35,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-tcl="${LOCALBASE}/lib/tcl8.3"
 CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+WRKDIST=	${WRKDIR}/tk${VERSION}/unix
 
 REGRESS_TARGET=test
 REGRESS_DEPENDS=::lang/tcl/8.3:regress
