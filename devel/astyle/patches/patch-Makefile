@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/24 02:25:06 avsm Exp $
+--- Makefile.orig	Fri Feb 11 12:02:10 2000
++++ Makefile	Sat Mar 24 02:08:48 2001
+@@ -1,13 +1,12 @@
+ # "Artistic Style" Makefile
+ 
+-CPPFLAGS = -Wall -Wno-sign-compare -O2
+ OBJS = ASResource.o ASBeautifier.o ASFormatter.o astyle_main.o
+ 
+ astyle: $(OBJS)
+-	g++ $(CPPFLAGS) -o astyle  $(OBJS)
++	${CXX} $(CFLAGS) -o astyle  $(OBJS)
+ 
+ .cpp.o:
+-	g++ $(CPPFLAGS) -c $<
++	${CXX} $(CFLAGS) -c $<
+ .SUFFIXES: .cpp .c .o
+ 
+ clean:

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/24 02:25:05 avsm Exp $
+bin/astyle
+share/doc/astyle/astyle.html
+share/doc/astyle/astyle_release_notes.html
+share/doc/astyle/license.html
+@dirrm share/doc/astyle
