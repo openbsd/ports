@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/19 17:03:45 mickey Exp $
+libdata/perl5/site_perl/GD/Text.pm
+libdata/perl5/site_perl/GD/Text/Align.pm
+libdata/perl5/site_perl/GD/Text/Wrap.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/Text/.packlist
+man/man3/GD::Text.3p
+man/man3/GD::Text::Align.3p
+man/man3/GD::Text::Wrap.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/Text
+@dirrm libdata/perl5/site_perl/GD/Text
