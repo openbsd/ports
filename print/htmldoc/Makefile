@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/15 17:24:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/05 22:26:40 angelos Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -20,7 +20,7 @@ USE_X11=		Yes
 
 DISTFILES=		${DISTNAME}-source${EXTRACT_SUFX}
 EXTRACT_SUFX=		.zip
-MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/1.8.11/ \ 
+MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/1.8.11/ \
       			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/htmldoc/1.8.11/ 
 
 LIB_DEPENDS=		png.2::graphics/png \
