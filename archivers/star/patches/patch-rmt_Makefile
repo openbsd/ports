@@ -1,12 +1,11 @@
-$OpenBSD: patch-rmt_Makefile,v 1.1 2001/05/06 21:52:46 naddy Exp $
---- rmt/Makefile.orig	Sun May  6 21:45:01 2001
-+++ rmt/Makefile	Sun May  6 21:45:24 2001
-@@ -7,7 +7,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
- 
- INSDIR=		sbin
+$OpenBSD: patch-rmt_Makefile,v 1.2 2002/05/30 23:27:48 naddy Exp $
+--- rmt/Makefile.orig	Fri Jul 20 23:47:08 2001
++++ rmt/Makefile	Fri May 24 17:22:20 2002
+@@ -9,6 +9,7 @@ INSDIR=		sbin
  TARGET=		rmt
--CPPOPTS +=	-DUSE_REMOTE
-+CPPOPTS +=	-DUSE_REMOTE -DSYSCONFDIR=\"$(SYSCONFDIR)\"
+ CPPOPTS +=	-DUSE_REMOTE
+ CPPOPTS +=	-DUSE_LARGEFILES
++CPPOPTS +=	-DSYSCONFDIR=\"$(SYSCONFDIR)\"
  CFILES=		rmt.c
  #HFILES=
  LIBS=		-ldeflt -lschily $(LIB_SOCKET)

@@ -13,7 +13,11 @@ Main advantages over other tar implementations:
 				  clobbered from tape.
     automatic byte swap		- star automatically detects swapped archives.
     automatic format detect	- Automatically detects archive formats:
-				  old tar, GNU tar, ANSI tar, star.
+				  old tar, GNU tar, ANSI tar, star,
+				  POSIX.1-2001 pax, Sun's Solaris tar.
+    automatic compression detect- star automatically detects whether the
+				  archive is compressed.
+    support for file flags	- star supports extended file flags.
     fully ansi compatible	- star is fully ANSI/POSIX 1003.1 compatible.
 
 Available flavors:

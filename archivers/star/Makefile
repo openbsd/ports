@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/30 23:27:48 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
 
-DISTNAME=	star-1.3
+DISTNAME=	star-1.4
 CATEGORIES=	archivers sysutils
 NEED_VERSION=	1.515
 
@@ -15,18 +15,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/ \
-		ftp://ftp.ntua.gr/pub/utils/focus/star/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/utils/backup/star/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
+EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	static
 FLAVOR?=
 
+RUN_DEPENDS=	:bzip2-*:archivers/bzip2
+
 USE_GMAKE=	Yes
-MAKE_ENV=	MAKEPROG="${MAKEPROG}" CCOM="${CC}" SYSCONFDIR="${SYSCONFDIR}"
+MAKE_ENV=	MAKEPROG="${MAKEPROG}" \
+		CCOM="${CC}" COPTX="${CFLAGS}" \
+		SYSCONFDIR="${SYSCONFDIR}"
 
 .if ${FLAVOR:L:Mstatic}
-MAKE_ENV+=	LDFLAGS=-static
+MAKE_ENV+=	LDOPTX=-static
 .endif
 
 .if ${MACHINE} != "i386" || ${CC} != "cc"

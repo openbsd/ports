@@ -1,6 +1,6 @@
-$OpenBSD: patch-rmt_rmt_1,v 1.1 2001/05/06 21:52:46 naddy Exp $
---- rmt/rmt.1.orig	Tue Nov 14 22:53:56 2000
-+++ rmt/rmt.1	Sun May  6 22:56:14 2001
+$OpenBSD: patch-rmt_rmt_1,v 1.2 2002/05/30 23:27:48 naddy Exp $
+--- rmt/rmt.1.orig	Thu Jul  5 21:47:45 2001
++++ rmt/rmt.1	Fri May 24 17:21:31 2002
 @@ -13,13 +13,11 @@
  .if n .ds o oe
  .if n .ds u ue
@@ -43,7 +43,7 @@ $OpenBSD: patch-rmt_rmt_1,v 1.1 2001/05/06 21:52:46 naddy Exp $
  For example:
  .SM USER=tape
  .RS
-@@ -490,12 +488,12 @@ This implementation of
+@@ -491,12 +489,12 @@ This implementation of
  adds some security features to the server that make it behave
  slightly different from older implementations.
  Read the documentation about the file 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-rmt_rmt_c,v 1.1 2001/05/06 21:52:46 naddy Exp $
---- rmt/rmt.c.orig	Sun May  6 21:44:04 2001
-+++ rmt/rmt.c	Sun May  6 21:47:40 2001
-@@ -133,9 +133,9 @@ main(argc, argv)
- 	 * is required. If we are not root and there is no /etc/default/rmt
- 	 * we will only allow to access files in /dev (see below).
+$OpenBSD: patch-rmt_rmt_c,v 1.2 2002/05/30 23:27:48 naddy Exp $
+--- rmt/rmt.c.orig	Tue May 21 12:29:57 2002
++++ rmt/rmt.c	Fri May 24 17:20:58 2002
+@@ -145,9 +145,9 @@ main(argc, argv)
+ 	 * don't contribute work and don't give support, they are causing extra
+ 	 * work for me and this way slow down the development.
  	 */
 -	if (defltopen("/etc/default/rmt") < 0) {
 +	if (defltopen(SYSCONFDIR "/srmt.conf") < 0) {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mt_Makefile,v 1.1 2001/05/06 21:52:46 naddy Exp $
---- mt/Makefile.orig	Wed Nov 15 21:29:12 2000
-+++ mt/Makefile	Wed Nov 15 21:29:31 2000
+$OpenBSD: patch-mt_Makefile,v 1.2 2002/05/30 23:27:48 naddy Exp $
+--- mt/Makefile.orig	Fri May 24 17:18:49 2002
++++ mt/Makefile	Fri May 24 17:18:58 2002
 @@ -8,7 +8,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
  INSDIR=		bin
  TARGET=		mt
