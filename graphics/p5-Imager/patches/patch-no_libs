@@ -1,16 +1,28 @@
-$OpenBSD: patch-no_libs,v 1.2 2001/05/22 00:31:55 pvalchev Exp $
---- Makefile.PL.orig	Mon May 21 17:15:55 2001
-+++ Makefile.PL	Mon May 21 17:16:48 2001
-@@ -261,107 +261,13 @@ sub pathcheck {
+--- Makefile.PL.orig	Tue Oct 30 01:32:44 2001
++++ Makefile.PL	Thu Nov 15 23:32:02 2001
+@@ -151,9 +151,9 @@ bugs.  Imager can crash or display other
+ reading or writing gif images.  Some of the gif tests can even fail
+ since they stress some parts of the buggy code.
+ 
+-Do you want to remove gif support? [Y/n]
++I am deleting gif/ungif support.
+ EOFF
+-    my $resp = <STDIN>;
++    my $resp = "y";
+     chomp($resp);
+     if ($resp ne "n") {
+       delete $formats{'gif'};
+@@ -263,7 +263,7 @@ sub pathcheck {
  sub init {
  
    @definc{'/usr/include'}=();
--  @incs=(qw(/usr/include /usr/local/include /usr/include/freetype /usr/local/include/freetype), split /:/, $INCPATH );
-+  @incs=(qw(/usr/include /usr/local/include/freetype), split /:/, $INCPATH );
+-  @incs=(qw(/usr/include/freetype2 /usr/local/include/freetype2 /usr/include /usr/local/include /usr/include/freetype /usr/local/include/freetype), split /:/, $INCPATH );
++  @incs=(qw(/usr/include), split /:/, $INCPATH );
    @libs=(split(/ /, $Config{'libpth'}), split(/:/, $LIBPATH) );
    if ($^O =~ /win32/i && $Config{cc} =~ /\bcl\b/i) {
      push(@incs, split /;/, $ENV{INCLUDE}) if exists $ENV{INCLUDE};
-     push(@libs, split /;/, $ENV{LIB}) if exists $ENV{LIB};
+@@ -274,126 +274,6 @@ sub init {
+     push(@incs, '/usr/include/w32api') if -d '/usr/lib/w32api';
    }
  
 -  $formats{'jpeg'}={
@@ -83,7 +95,7 @@ $OpenBSD: patch-no_libs,v 1.2 2001/05/22 00:31:55 pvalchev Exp $
 -			order=>'30',
 -			def=>'HAVE_LIBT1',
 -			inccheck=>sub { $_[0] eq 't1lib.h' },
--			libcheck=>sub { $_[0] eq 'libt1.a' or $_[0] eq "libt1.$lext" },
+-			libcheck=>sub { $_[0] eq "libt1$aext" or $_[0] eq "libt1.$lext" },
 -			libfiles=>'-lt1',
 -			objfiles=>'',
 -			docs=>q{
@@ -97,7 +109,7 @@ $OpenBSD: patch-no_libs,v 1.2 2001/05/22 00:31:55 pvalchev Exp $
 -			order=>'31',
 -			def=>'HAVE_LIBTT',
 -			inccheck=>sub { $_[0] eq 'freetype.h' },
--			libcheck=>sub { $_[0] eq 'libttf.a' or $_[0] eq "libttf.$lext" },
+-			libcheck=>sub { $_[0] eq "libttf$aext" or $_[0] eq "libttf.$lext" },
 -			libfiles=>'-lttf',
 -			objfiles=>'',
 -			docs=>q{
@@ -107,6 +119,32 @@ $OpenBSD: patch-no_libs,v 1.2 2001/05/22 00:31:55 pvalchev Exp $
 -				used to rasterize for us. The only drawback is that there
 -				are alot of badly designed fonts out there.}
 -		       };
+-  $formats{'w32'} = {
+-		     order=>40,
+-		     def=>'HAVE_WIN32',
+-		     inccheck=>sub { lc $_[0] eq 'windows.h' },
+-		     libcheck=>sub { lc $_[0] eq 'gdi32.lib' 
+-				       || lc $_[0] eq 'libgdi32.a' },
+-		     libfiles=>$^O eq 'cygwin' ? '-lgdi32' : '',
+-		     objfiles=>'win32.o',
+-		     docs => <<DOCS
+-Uses the Win32 GDI for rendering text.
+-
+-This currently only works on under normal Win32 and cygwin.
+-DOCS
+-		    };
+-  $formats{'freetype2'} = {
+-                           order=>'29',
+-                           def=>'HAVE_FT2',
+-                           inccheck=>sub { lc $_[0] eq 'ft2build.h' },
+-                           libcheck=>sub { $_[0] eq "libfreetype$aext" or $_[0] eq "libfreetype.$lext" },
+-                           libfiles=>'-lfreetype',
+-                           objfiles=>'freetyp2.o',
+-                           docs=><<DOCS
+-Freetype 2 supports both Truetype and Type 1 fonts, both of which are
+-scalable.
+-DOCS
+-                          };
    # Make fix indent
    for (keys %formats) { $formats{$_}->{docs} =~ s/^\s+/  /mg; }
  }
