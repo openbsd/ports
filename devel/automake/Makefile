@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1998/11/19 07:33:12 jasoni Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/02 23:34:15 jasoni Exp $
 #
 
-DISTNAME=	automake-1.3
+DISTNAME=	automake-1.4
 CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -10,7 +10,8 @@ MAINTAINER=	jasoni@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=/usr/bin/perl
-STRIP=		
+USE_PERL5=	YES
+STRIP=		# none
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
