@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/10 19:12:34 danh Exp $
-
-BROKEN=		"possible security holes"
+# $OpenBSD: Makefile,v 1.7 2001/08/14 18:05:19 danh Exp $
 
 COMMENT=	"Lucent remote access RADIUS server"
 
 DISTNAME=	radius21
 PKGNAME=	radiusd-lucent-2.1
 CATEGORIES=	net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.434
 MASTER_SITES=	ftp://ftp.livingston.com/pub/le/radius/
+MASTER_SITES0=	ftp://ftp.vergenet.net/pub/lucent_radius/
+PATCHFILES=	radius-2.1.va.1.patch.gz:0
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/radius
-WRKSRC=		${WRKDIST}/src
+WRKDIST=	${WRKDIR}
+WRKSRC=		${WRKDIST}/radius/src
 MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS} -DNOSHADOW -DNDBM" LIBS=""
 
 do-install:
@@ -32,24 +32,26 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/radiusd ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radiusd-lucent
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radiusd-lucent/menus
-	${INSTALL_DATA} ${WRKDIST}/raddb/clients \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/clients \
 		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/raddb/config.aeg.example \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/config.aeg.example \
 		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/raddb/dictionary \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/dictionary \
 		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/raddb/proxy \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/proxy \
 		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/raddb/users \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/users \
 		${PREFIX}/share/examples/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/raddb/menus/menu1 \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/menus/menu1 \
 		${PREFIX}/share/examples/radiusd-lucent/menus/
-	${INSTALL_DATA} ${WRKDIST}/raddb/menus/menu2 \
+	${INSTALL_DATA} ${WRKDIST}/radius/raddb/menus/menu2 \
 		${PREFIX}/share/examples/radiusd-lucent/menus/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/radiusd-lucent
-	${INSTALL_DATA} ${WRKDIST}/LICENSE \
+	${INSTALL_DATA} ${WRKDIST}/radius/LICENSE \
 		${PREFIX}/share/doc/radiusd-lucent/
-	${INSTALL_DATA} ${WRKDIST}/README \
+	${INSTALL_DATA} ${WRKDIST}/radius/README \
+		${PREFIX}/share/doc/radiusd-lucent/
+	${INSTALL_DATA} ${WRKDIST}/radius/README.2.1.va.1 \
 		${PREFIX}/share/doc/radiusd-lucent/
 
 .include <bsd.port.mk>

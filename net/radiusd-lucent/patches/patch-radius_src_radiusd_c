@@ -1,0 +1,11 @@
+$OpenBSD: patch-radius_src_radiusd_c,v 1.1 2001/08/14 18:05:19 danh Exp $
+--- radius/src/radiusd.c.orig	Tue Aug 14 13:20:45 2001
++++ radius/src/radiusd.c	Tue Aug 14 13:20:46 2001
+@@ -72,7 +72,6 @@ static char sccsid[] =
+ #include	<errno.h>
+ #include	<sys/wait.h>
+ #include	<syslog.h>
+-#include        <crypt.h>
+ 
+ #include	"radius.h"
+ #include	"users.h"
