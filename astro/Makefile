@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/01/18 13:47:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2001/08/12 11:41:41 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 #
 
@@ -16,5 +16,6 @@
      SUBDIR += xearth
      SUBDIR += xephem
      SUBDIR += xphoon
+     SUBDIR += xworld
 
 .include <bsd.port.subdir.mk>
