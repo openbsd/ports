@@ -1,0 +1,16 @@
+$OpenBSD: patch-Jamfile,v 1.1.1.1 2003/02/13 14:51:43 naddy Exp $
+--- Jamfile.orig	Wed Apr 17 21:27:35 2002
++++ Jamfile	Thu Feb 13 15:18:22 2003
+@@ -4,10 +4,10 @@
+ # There are no user-serviceable parts in this file.
+ #
+ # Put executables in platform-specific  subdirectory.
+-
++#CC = 
+ if $(VMS) 	{ LOCATE_TARGET ?= [.binvms] ; }
+ else if $(MAC) 	{ LOCATE_TARGET ?= :bin.mac ; }
+-else 		{ LOCATE_TARGET ?= bin.$(OSFULL[1]:L) ; }
++else 		{ LOCATE_TARGET ?= bin ; }
+ 
+ # Leave generated source in current directory; it would be nice to use
+ # these lines below to build the source into the platform-specific

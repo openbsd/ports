@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/13 14:51:43 naddy Exp $
+bin/jam
+share/doc/jam/Jam.html
+share/doc/jam/Jambase.html
+share/doc/jam/Jamfile.html
+share/doc/jam/README
+share/doc/jam/RELNOTES
+@dirrm share/doc/jam
