@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2004/07/11 06:27:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.112 2004/07/11 08:13:12 sturm Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -96,6 +96,7 @@
      SUBDIR += teknap
      SUBDIR += tempest
      SUBDIR += timidity
+     SUBDIR += toolame
      SUBDIR += tosha
      SUBDIR += tracker
      SUBDIR += vlorb
