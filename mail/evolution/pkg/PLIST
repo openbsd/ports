@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/01/03 21:53:07 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/04/10 15:59:49 marcm Exp $
 bin/csv2vcard
 bin/evolution
 bin/evolution-addressbook
@@ -195,6 +195,7 @@ include/evolution/e-util/e-request.h
 include/evolution/e-util/e-sexp.h
 include/evolution/e-util/e-time-utils.h
 include/evolution/e-util/e-url.h
+include/evolution/e-util/e-xml-hash-utils.h
 include/evolution/e-util/md5-utils.h
 include/evolution/ebook/addressbook.h
 include/evolution/ebook/e-book-listener.h
@@ -329,6 +330,7 @@ lib/libwombat.la
 man/man1/evolution.1
 sbin/camel-index-control
 sbin/camel-lock-helper
+@comment share/applnk/Applications/evolution.desktop
 share/evolution/Locations
 share/evolution/addresstypes.xml
 share/evolution/arrow.png
@@ -431,6 +433,7 @@ share/evolution/views/tasks/Tasks.galview
 share/evolution/views/tasks/With_Category.galview
 share/evolution/views/tasks/galview.xml
 share/gnome/apps/Applications/evolution.desktop
+share/gnome/help/evolution/C/LEGALNOTICE.html
 share/gnome/help/evolution/C/access.html
 share/gnome/help/evolution/C/apx-fdl.html
 share/gnome/help/evolution/C/apx-gloss.html
@@ -495,7 +498,6 @@ share/gnome/help/evolution/C/importing-mail-from-clients.html
 share/gnome/help/evolution/C/index.html
 share/gnome/help/evolution/C/install.html
 share/gnome/help/evolution/C/introduction.html
-share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
 share/gnome/help/evolution/C/organization.html
 share/gnome/help/evolution/C/other-help.html
@@ -1371,6 +1373,15 @@ share/pixmaps/evolution.png
 @dirrm share/evolution/glade
 @dirrm share/evolution/etspec
 @dirrm share/evolution/ecps
+@exec mkdir -p %D/share/evolution/default_user/views/tasks
+@dirrm share/evolution/default_user/views/tasks
+@exec mkdir -p %D/share/evolution/default_user/views/mail
+@dirrm share/evolution/default_user/views/mail
+@exec mkdir -p %D/share/evolution/default_user/views/calendar
+@dirrm share/evolution/default_user/views/calendar
+@exec mkdir -p %D/share/evolution/default_user/views/addressbook
+@dirrm share/evolution/default_user/views/addressbook
+@dirrm share/evolution/default_user/views
 @exec mkdir -p %D/share/evolution/default_user/private
 @dirrm share/evolution/default_user/private
 @dirrm share/evolution/default_user/local/Trash
@@ -1384,6 +1395,8 @@ share/pixmaps/evolution.png
 @dirrm share/evolution/default_user/local
 @dirrm share/evolution/default_user
 @dirrm share/evolution
+@comment @dirrm share/applnk/Applications
+@comment @dirrm share/applnk
 @dirrm lib/evolution/1.2/evolution-mail-importers
 @dirrm lib/evolution/1.2/camel-providers
 @dirrm lib/evolution/1.2

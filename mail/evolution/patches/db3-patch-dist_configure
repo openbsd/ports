@@ -1,0 +1,11 @@
+--- dist/configure.orig	Thu Jan 16 07:38:03 2003
++++ dist/configure	Thu Jan 16 07:47:03 2003
+@@ -3911,7 +3911,7 @@
+ #line 3912 "configure"
+ #include "confdefs.h"
+ main(){
+-#if defined(i386)
++#if defined(__i386__)
+ #if defined(__GNUC__)
+ 	exit(0);
+ #endif

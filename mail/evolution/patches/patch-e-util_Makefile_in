@@ -1,6 +1,6 @@
-$OpenBSD: patch-e-util_Makefile_in,v 1.3 2003/01/03 21:53:07 marcm Exp $
---- e-util/Makefile.in.orig	Wed Oct  9 12:29:04 2002
-+++ e-util/Makefile.in	Wed Oct 16 09:07:16 2002
+$OpenBSD: patch-e-util_Makefile_in,v 1.4 2003/04/10 15:59:49 marcm Exp $
+--- e-util/Makefile.in.orig	Mon Mar 17 09:25:09 2003
++++ e-util/Makefile.in	Fri Mar 21 10:28:43 2003
 @@ -231,8 +231,9 @@ edb3includedir = $(includedir)/evolution
  INCLUDES =  	-I$(top_srcdir)								-DEVOLUTION_IMAGES=\""$(imagesdir)"\"					-DEVOLUTION_CATEGORY_ICONS=\""$(imagesdir)/categories"\"		-DG_LOG_DOMAIN=\"e-utils\"						$(DB3_CFLAGS)								$(PISOCK_CFLAGS)							$(E_UTIL_CFLAGS)
  
@@ -11,5 +11,5 @@ $OpenBSD: patch-e-util_Makefile_in,v 1.3 2003/01/03 21:53:07 marcm Exp $
 +@ENABLE_PILOT_CONDUITS_TRUE@noinst_LTLIBRARIES = libeutil-static.la libeconduit-static.la libeconduit.la
 +@ENABLE_PILOT_CONDUITS_FALSE@nostd_LTLIBRARIES = libeutil-static.la
  
- eutilinclude_HEADERS =  	e-bonobo-factory-util.h				e-categories-master-list-wombat.h		e-categories-config.h				e-component-listener.h				e-config-listener.h				e-corba-utils.h					e-dialog-utils.h				e-dialog-widgets.h				e-gtk-utils.h					e-gui-utils.h					e-host-utils.h					e-html-utils.h					e-iterator.h					e-lang-utils.h					e-list-iterator.h				e-list.h					e-memory.h					e-mktemp.h					e-msgport.h					e-passwords.h					e-path.h					e-proxy.h					e-request.h					e-sexp.h					e-time-utils.h					e-url.h						md5-utils.h
+ eutilinclude_HEADERS =  	e-bonobo-factory-util.h				e-categories-master-list-wombat.h		e-categories-config.h				e-component-listener.h				e-config-listener.h				e-corba-utils.h					e-dialog-utils.h				e-dialog-widgets.h				e-gtk-utils.h					e-gui-utils.h					e-host-utils.h					e-html-utils.h					e-iterator.h					e-lang-utils.h					e-list-iterator.h				e-list.h					e-memory.h					e-mktemp.h					e-msgport.h					e-passwords.h					e-path.h					e-proxy.h					e-request.h					e-sexp.h					e-time-utils.h					e-url.h						e-xml-hash-utils.h				md5-utils.h
  
