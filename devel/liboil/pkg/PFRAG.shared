@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/12 23:27:50 jolan Exp $
+@lib lib/liboil-0.2.so.0.0
+@lib lib/liboiltmp1.so.0.0

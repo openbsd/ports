@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/12 23:27:50 jolan Exp $
+%%SHARED%%
+include/liboil-0.2/
+include/liboil-0.2/liboil/
+include/liboil-0.2/liboil/liboil.h
+include/liboil-0.2/liboil/liboilcpu.h
+include/liboil-0.2/liboil/liboildebug.h
+include/liboil-0.2/liboil/liboilfuncs.h
+include/liboil-0.2/liboil/liboilfunction.h
+include/liboil-0.2/liboil/liboilprototype.h
+include/liboil-0.2/liboil/liboiltypes.h
+lib/liboil-0.2.a
+lib/liboil-0.2.la
+lib/liboiltmp1.a
+lib/liboiltmp1.la
+lib/pkgconfig/
+lib/pkgconfig/liboil-0.2.pc
