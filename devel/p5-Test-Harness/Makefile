@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 20:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/27 05:49:10 shell Exp $
 
 COMMENT=	"perl module for running perl test scripts with statistics"
 
-VERSION=	2.02
+VERSION=	2.03
 DISTNAME=	Test-Harness-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.515
+NEED_VERSION=	1.525
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Test
