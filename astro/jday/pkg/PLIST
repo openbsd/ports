@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/04 02:29:48 naddy Exp $
+bin/jday
+bin/j2d
+share/doc/jday/README
+@dirrm share/doc/jday
