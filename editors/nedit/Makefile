@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/19 17:27:35 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/19 17:45:18 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
@@ -13,10 +13,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 
-BROKEN="Unacceptable policy for the distribution site. Need another site"
+HOMEPAGE=	http://www.nedit.org/
 
-MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
-		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
+MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_0_2/
+MASTER_SITES0=	ftp://ftp.nedit.org/pub/contrib/
+
 DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 EXTRACT_ONLY=	nedit_source.tar.gz
 WRKDIST=	${WRKDIR}
@@ -36,6 +37,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/source/nc ${PREFIX}/bin/ncl
 	@${INSTALL_MAN} ${WRKSRC}/nedit.man ${PREFIX}/man/man1/nedit.1
 	@${INSTALL_MAN} ${WRKSRC}/nc.man ${PREFIX}/man/man1/ncl.1
+	@${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	@${INSTALL_DATA} ${WRKSRC}/nedit.doc ${PREFIX}/share/doc/nedit
