@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/12/18 00:46:04 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/03/30 12:35:15 espie Exp $
 lib/libkeyesapplet.so.1.0
+lib/libkscoreapplet.so.1.0
 DYNLIBDIR(%D/lib)

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/11 16:13:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/30 12:35:14 espie Exp $
 
 CATEGORIES=		x11 x11/kde games
 NEED_VERSION=		1.305
-VERSION=		2.0.1
+VERSION=		2.1.1
 DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -37,8 +37,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-pre-fake:
-	${SUDO} /usr/sbin/mtree -U -e -d -n -p ${PREFIX} \
-	    -f ${PORTSDIR}/x11/kde/libs2/files/mtree >/dev/null
+MTREE_FILE=${PORTSDIR}/x11/kde/libs2/files/mtree
 
 .include <bsd.port.mk>
