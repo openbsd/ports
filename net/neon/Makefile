@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/08 17:32:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/11/27 02:23:28 lebel Exp $
 
 COMMENT=		"HTTP and WebDAV client library, with C interface"
 
-VERSION=		0.23.3
+VERSION=		0.23.5
 DISTNAME=		neon-${VERSION}
 CATEGORIES=     	net www devel
 
