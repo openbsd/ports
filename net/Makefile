@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2001/05/06 14:14:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.140 2001/05/08 04:29:02 mickey Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -128,6 +128,7 @@
      SUBDIR += totd
      SUBDIR += trafd
      SUBDIR += trafshow
+     SUBDIR += ttcp
      SUBDIR += ucd-snmp
      SUBDIR += ucspi-tcp
      SUBDIR += ucspi-unix
