@@ -3,11 +3,11 @@
 # Date created:         May 17 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 06:51:16 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/29 08:55:48 kevlo Exp $
 #
 
-DISTNAME=       Par150
-PKGNAME=        par-1.50
+DISTNAME=       Par151
+PKGNAME=        par-1.51
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
 
@@ -18,8 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FAKE=			Yes
 ALL_TARGET=
-MAN1=		par.1
+MAN1=			par.1
 
 do-configure:
 	(cd ${WRKSRC}; cp protoMakefile Makefile)
