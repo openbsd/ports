@@ -1,11 +1,14 @@
-This package contains the following:
+This package contains the session manager for the GNOME desktop.
 
- * the GNOME session manager
- * the GNOME session manager configuration program and several other 
-   session management related utilities.
- * the GNOME session manager proxy, which handles basic session
-   management for applications that do not support XSM.
+This is the foundation of the GNOME desktop environment and this package
+is also responsible for installing a basic set of GNOME utilities
+(window manager, file manager, applets, etc) to make up a minimal GNOME
+environment.
 
-For more information about the gnome project, visit:
+Other recommended packages for GNOME include:
 
-WWW: ${HOMEPAGE}
+	x11/bitstream-vera-fonts - a set of True Type fonts
+	x11/gnome/yelp - the GNOME help manager
+
+To run the GNOME environment, simply start "gnome-session" from
+either your ~/.xinitrc or ~/.xsession file.
