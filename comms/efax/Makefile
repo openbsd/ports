@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/28 00:29:26 espie Exp $
 
 DISTNAME=       efax-0.9
 PKGNAME=        efax-0.9
 CATEGORIES=	comms
-FAKE=No
+FAKE=		Yes
 
 MAINTAINER=	ian@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/serialcomm/fax/
 
 FAX_UID = uucp
 FAX_GID = dialer
 
+FAKE_FLAGS=BINDIR=${WRKINST}${PREFIX}/bin MANDIR=${WRKINST}${PREFIX}/man
 # The inner program, efax, must be setuid uucp, same as tip, cu, uucp,
 # so it can open the /dev/cua?? files.
 post-install:
