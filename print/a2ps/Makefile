@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:15 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/02 04:41:08 marc Exp $
 #
 
 DISTNAME=	a2ps-4.10.4
 PKGNAME=	a2ps
 CATEGORIES=	print
 
-NEED_VERSION=		1.64
+NEED_VERSION=	1.73
 
 MAINTAINER=	weingart@OpenBSD.org
 
@@ -33,12 +33,8 @@ PAPERSIZE?=
 STRIP=
 CONFIGURE_ARGS=		--with-medium=$(PAPERSIZE) \
 			--enable-static \
-			--sysconfdir=/etc
-.if defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=	--disable-shared
-.else
-CONFIGURE_ARGS+=	--enable-shared
-.endif
+			--sysconfdir=/etc \
+			${CONFIGURE_SHARED}
 
 Letter::
 	$(MAKE) PAPERSIZE=Letter

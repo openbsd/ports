@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/02/21 04:26:16 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/03/02 04:41:10 marc Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
@@ -27,12 +27,6 @@ BROKEN=		"Currently doesn't build on sparc due to g++ bug"
 USE_GMAKE=	yes
 USE_X11=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC}
-
-.if defined(NO_SHARED_LIBS)
-USE_TARGET=	openbsd-g++-static
-.else
-USE_TARGET=	openbsd-g++-shared
-.endif
 
 MAN1=	moc.1
 MAN3=	QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
@@ -137,9 +131,10 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(X11BASE)/bin
-.if defined(NO_SHARED_LIBS)
+.if exists($(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.a)
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.a $(X11BASE)/lib
-.else
+.endif
+.if exists($(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${MAJ}.${MIN})
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${MAJ}.${MIN} \
 		$(X11BASE)/lib
 	${LN} -sf $(X11BASE)/lib/libqt.so.${MAJ}.${MIN} $(X11BASE)/lib/libqt.so
@@ -174,3 +169,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/lib/qt/examples
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS)
+USE_TARGET=	openbsd-g++-static
+.else
+USE_TARGET=	openbsd-g++-shared
+.endif

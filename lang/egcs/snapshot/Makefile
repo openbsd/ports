@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 1999/02/28 18:17:06 espie Exp $
+# $OpenBSD: Makefile,v 1.37 1999/03/02 04:41:04 marc Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.64
+NEED_VERSION=1.73
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -283,9 +283,7 @@ CONFIGURE_ARGS += --with-ld=${LD_PATH}
 CONFIGURE_ARGS += --with-gnu-ld 
 .endif
 
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=--enable-shared
-.endif
+CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD=yes
 WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
@@ -337,9 +335,6 @@ M4FLAGS+= -DOBJC
 .if defined(MAKE_JAVA)
 M4FLAGS+= -DJAVA
 .endif
-.if !defined(NO_SHARED_LIBS)
-M4FLAGS+= -DDYNAMIC
-.endif
 
 pre-install:
 	${M4} ${M4FLAGS} -DARCH=`${WRKSRC}/config.guess` \
@@ -347,3 +342,7 @@ pre-install:
 	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
+
+.if !defined(NO_SHARED_LIBS)
+M4FLAGS+= -DDYNAMIC
+.endif

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:13 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/02 04:41:05 marc Exp $
 #
 
 DISTNAME=	expect
 PKGNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.73
 
 MAINTAINER=	niklas@openbsd.org
 
@@ -21,9 +21,7 @@ CONFIGURE_ARGS= --with-tclconfig=${PREFIX}/lib/tcl8.0 \
 		--with-tclinclude=${PREFIX}/include/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=--enable-shared
-.endif
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 # needed for japanese/expect
 .if !defined(NO_MAN_INSTALL)

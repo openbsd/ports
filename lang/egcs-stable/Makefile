@@ -3,13 +3,13 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.13 1999/02/26 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 1999/03/02 04:41:04 marc Exp $
 #
 
 # This is a configuration file for egcs, stable release.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.64
+NEED_VERSION=1.73
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -200,9 +200,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e,
 
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=--enable-shared
-.endif
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
@@ -254,9 +252,6 @@ M4FLAGS+= -DOBJC
 .if defined(MAKE_JAVA)
 M4FLAGS+= -DJAVA
 .endif
-.if !defined(NO_SHARED_LIBS)
-M4FLAGS+= -DDYNAMIC
-.endif
 
 pre-install:
 	${M4} ${M4FLAGS} -DARCH=`${WRKSRC}/config.guess` \
@@ -264,3 +259,7 @@ pre-install:
 	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
+
+.if !defined(NO_SHARED_LIBS)
+M4FLAGS+= -DDYNAMIC
+.endif

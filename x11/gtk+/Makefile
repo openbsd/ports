@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:16 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/02 04:41:09 marc Exp $
 #
 
 DISTNAME=		gtk+-1.0.6
 CATEGORIES=     	x11
 
-NEED_VERSION=		1.64
+NEED_VERSION=		1.73
 
 MAINTAINER=		marc@openbsd.org
 
@@ -13,9 +13,7 @@ MASTER_SITES=		ftp://ftp.gimp.org/pub/gtk/v1.0/ \
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=	--enable-shared
-.endif
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		${SETENV} INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			INSTALL_SCRIPT="${INSTALL_SCRIPT}" \

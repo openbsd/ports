@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 1999/02/21 04:26:16 marc Exp $
+# $OpenBSD: Makefile,v 1.19 1999/03/02 04:41:09 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
 DISTNAME=	lesstif-0.87.0
 CATEGORIES=	x11
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.73
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -20,9 +20,7 @@ USE_X11=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-debug
 CONFIGURE_ARGS+=	--enable-build-12
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=	--enable-shared
-.endif
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		${SETENV}
 

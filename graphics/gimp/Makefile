@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/02/21 04:26:11 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/02 04:41:03 marc Exp $
 #
 
 # What port/package will be created
@@ -7,7 +7,7 @@ DISTNAME=		gimp-1.0.2
 EXTRANAME=		gimp-data-extras-1.0.0
 CATEGORIES=     	graphics x11
 
-NEED_VERSION=		1.64
+NEED_VERSION=		1.73
 
 MAINTAINER=		dugsong@openbsd.org
 
@@ -23,9 +23,7 @@ LIB_DEPENDS=		gtk\\.1\\.:${PORTSDIR}/x11/gtk+ \
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=	--enable-shared
-.endif
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		${SETENV} CPPFLAGS=-I/usr/local/include \
 			LDFLAGS=-L/usr/local/lib

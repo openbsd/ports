@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:12 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/02 04:41:04 marc Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
@@ -16,6 +16,14 @@ CONFIGURE_ENV=	${SETENV}
 WRKSRC=		${WRKDIR}/mpeg_lib
 
 
+pre-install:
+	@${MKDIR} -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>
+
 # The patches assumed shared libs would be build.  If building
 # on a host that does not support shared libs, e.g. the alpha,
 # apply one more patch.
@@ -24,11 +32,3 @@ WRKSRC=		${WRKDIR}/mpeg_lib
 post-patch:
 	@(cd ${DISTDIR}; ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/patch)
 .endif
-
-pre-install:
-	@${MKDIR} -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
-
-.include <bsd.port.mk>

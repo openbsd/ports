@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/21 04:26:15 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/02 04:41:09 marc Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
@@ -29,13 +29,15 @@ do-install:
 		${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h rsaref.h global.h \
 			${PREFIX}/include
 	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.a ${PREFIX}/lib
-.if !defined(NO_SHARED_LIBS)
-	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.so.2.0 ${PREFIX}/lib
-.endif
-	${LDCONFIG} -m ${PREFIX}/lib
 	install -d -m 555 ${PREFIX}/share/doc/rsaref
 	cd ${WRKDIR}/doc && \
 		${INSTALL_DATA} info.txt rsaref.txt \
 			${PREFIX}/share/doc/rsaref
 
 .include <bsd.port.mk>
+
+.if !defined(NO_SHARED_LIBS)
+post-install:
+	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.so.2.0 ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
+.endif

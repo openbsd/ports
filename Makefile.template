@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.1 1999/03/01 00:14:07 marc Exp $
+# $OpenBSD: Makefile.template,v 1.2 1999/03/02 04:41:00 marc Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit.
@@ -61,10 +61,7 @@ MASTER_SITES=		???
 #GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
 #HAS_CONFIGURE=		yes (assumed if GNU_CONFIGURE is yes)
 #CONFIGURE_SCRIPT=	??? (if other than configure)
-#.if !defined(NO_SHARED_LIBS)
-#CONFIGURE_ARGS+=	--enable-shared
-#.endif
-#CONFIGURE_ARGS+=	--enable-static
+#CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???
 
 # Things that we don't want to do for this port/package
