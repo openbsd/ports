@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/08/10 09:33:59 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2004/08/10 09:43:40 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -61,9 +61,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack && \
 	    ${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults
-	install -g games -m 0664 /dev/null ${NHDIR}/logfile
-	install -g games -m 0664 /dev/null ${NHDIR}/perm
-	install -g games -m 0664 /dev/null ${NHDIR}/record
 .endif
+#	@install -g games -m 0664 /dev/null ${NHDIR}/logfile
+#	@install -g games -m 0664 /dev/null ${NHDIR}/perm
+#	@install -g games -m 0664 /dev/null ${NHDIR}/record
 
 .include <bsd.port.mk>
