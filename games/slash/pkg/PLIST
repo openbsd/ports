@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1 2000/04/16 21:19:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/06/28 13:28:47 espie Exp $
 @group games
 bin/slash
 bin/srecover

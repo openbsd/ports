@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/22 11:45:32 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/28 13:28:47 espie Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
 CATEGORIES=	games
-NEED_VERSION=	1.121
+NEED_VERSION=	1.307
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
                 ftp://ftp.uu.net/pub/games/nethack/sources/ \
                 ${MASTER_SITE_GNU}
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
 NHDIR=	${DESTDIR}${PREFIX}/lib/slashdir
