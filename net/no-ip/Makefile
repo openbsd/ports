@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/13 14:46:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/14 14:11:51 xsa Exp $
 
 COMMENT=		"No-IP.com Dynamic DNS client"
 
@@ -30,5 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/noip2 ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/no-ip/
 	${INSTALL_DATA} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/no-ip/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/no-ip
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/no-ip/no-ip2.conf
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/14 14:11:51 xsa Exp $
 sbin/noip2
 share/doc/no-ip/
 share/doc/no-ip/README.FIRST
-@cwd ${SYSCONFDIR}
-@extra no-ip2.conf
+share/examples/no-ip/
+share/examples/no-ip/no-ip2.conf
+@sample ${SYSCONFDIR}/no-ip2.conf
