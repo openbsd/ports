@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/04 13:01:17 xsa Exp $
+# $OpenBSD: Makefile,v 1.27 2004/11/12 08:07:52 grange Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -15,6 +15,8 @@
      SUBDIR += malsync
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
+     SUBDIR += obexftp
+     SUBDIR += openobex
      SUBDIR += pilot-link
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
