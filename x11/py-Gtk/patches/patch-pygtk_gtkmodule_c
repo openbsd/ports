@@ -1,0 +1,17 @@
+$OpenBSD: patch-pygtk_gtkmodule_c,v 1.1.1.1 2001/09/18 06:01:58 shell Exp $
+--- pygtk/gtkmodule.c.orig	Thu Aug 16 11:31:22 2001
++++ pygtk/gtkmodule.c	Thu Aug 16 11:31:35 2001
+@@ -7159,13 +7159,6 @@
+ 	 Py_DECREF(d);
+      }
+ 
+-#ifdef WITH_THREAD
+-     /* it is required that this function be called to enable the thread
+-      * safety functions */
+-     if (!g_threads_got_initialized)
+-         g_thread_init(NULL);
+-#endif
+-
+      if (PyErr_Occurred())
+          Py_FatalError("can't initialise module _gtk");
+ }

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/09/18 06:01:58 shell Exp $
+lib/python${PYTHON_VER}/site-packages/_gdkimlibmodule.so
+lib/python${PYTHON_VER}/site-packages/_gtkglmodule.so
+lib/python${PYTHON_VER}/site-packages/_gtkmodule.so
+lib/python${PYTHON_VER}/site-packages/_libglademodule.so
+lib/python${PYTHON_VER}/site-packages/gdkpixbufmodule.so
