@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/10 23:06:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/12 14:15:30 brad Exp $
 
 DISTNAME=	perl-lzo-1.00
 PKGNAME=	p5-Compress-LZO-1.00
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#SEPARATE_BUILD= 	concurrent
-CONFIGURE_STYLE=	perl
+CONFIGURE_STYLE= perl
 
 WRKDIST=	${WRKDIR}/Compress-LZO-1.00
 
