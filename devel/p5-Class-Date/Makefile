@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/26 12:58:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/08 03:27:01 kevlo Exp $
 
 COMMENT=	"module for easy date and time manipulation"
 
-DISTNAME=	Class-Date-1.0.7
+DISTNAME=	Class-Date-1.0.8
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.419
