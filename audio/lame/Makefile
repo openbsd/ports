@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/26 03:20:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2004/04/15 12:40:45 jakob Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
-VERSION=	3.93.1
+VERSION=	3.96
 
 DISTNAME=	lame-${VERSION}
 CATEGORIES=	audio
@@ -17,9 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/lame-${VERSION}
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=	gnu
 
