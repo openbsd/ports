@@ -1,0 +1,21 @@
+--- hc.1~	Sun Dec 16 22:39:09 2001
++++ hc.1	Sun Dec 16 22:39:35 2001
+@@ -5,7 +5,7 @@
+ .Os
+ .Sh NAME
+ .Nm hc
+-.Nd multiradix integer desk calculator
++.Nd multi-radix integer desk calculator
+ .Sh SYNOPSIS
+ .Nm hc
+ .Oo
+@@ -69,9 +69,5 @@ not yet incorporated) for their contribu
+ 
+ None at this time. Binary input has been implemented but not added.
+ 
+-.Sh FILES 
+-.Bl -tag -width Pa -compact
+-.It Pa /usr/bin/hc
+-.El
+ .Sh SEE ALSO
+ bc(1); Kernighan & Pike

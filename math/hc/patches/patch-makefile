@@ -1,0 +1,8 @@
+--- makefile~	Sun Dec 16 22:23:47 2001
++++ makefile	Sun Dec 16 22:23:56 2001
+@@ -1,3 +1,5 @@
++all:	hc
++
+ hc:	hc.o
+ 	cc hc.o -o hc
+ 	rm hc.o

@@ -1,0 +1,9 @@
+hc (the Hacker's calculator) is a simple yacc-based integer arithmetic
+calculator designed for doing quick-and-dirty bitwise calculations. It
+supports most common integer arithmetic operations, and operates in hex,
+octal, or decimal modes.
+
+This program most resembles a multi-radix version of hoc(1)
+(ports/math/hoc).
+
+WWW: ${HOMEPAGE}
