@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/30 04:38:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/05/23 08:58:40 kevlo Exp $
 
 COMMENT=	"module to map charset names registered with IANA"
 
-DISTNAME=	I18N-Charset-1.21
+DISTNAME=	I18N-Charset-1.24
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=I18N/}
 
-BUILD_DEPENDS=	:p5-IO-String-*:devel/p5-IO-String
+BUILD_DEPENDS=	:p5-IO-String-*:devel/p5-IO-String \
+		:p5-App-Info->=0.23:devel/p5-App-Info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
