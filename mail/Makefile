@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2002/04/30 07:33:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.87 2002/05/22 06:04:38 form Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -79,6 +79,9 @@
      SUBDIR += wmpop3
      SUBDIR += xfaces
      SUBDIR += xfmail
+     SUBDIR += xfmail,esd
+     SUBDIR += xfmail,threads
+     SUBDIR += xfmail,threads,esd
      SUBDIR += xlbiff
 
 .include <bsd.port.subdir.mk>
