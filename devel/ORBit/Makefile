@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2002/09/11 16:50:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2002/11/21 02:33:59 margarida Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.13
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/ORBit/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/ORBit/0.5/}
 
 HOMEPAGE=	http://www.labs.redhat.com/orbit/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib \
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/11/21 02:34:00 margarida Exp $
 
 COMMENT=	"Gtk bindings for Python"
 COMMENT-gnome=	"Gtk and Gnome bindings for Python"
@@ -11,14 +11,14 @@ V=		1.4.2		## For py-gtk, this really is 0.6.9
 PKGNAME=	py-Gtk-${V}
 DISTNAME=	gnome-python-${V}
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.504
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/gnome-python/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-python/1.4/}
 
 HOMEPAGE=	http://www.daa.com.au/~james/gnome/
 
 MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
+# GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

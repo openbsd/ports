@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/07/28 04:48:16 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/11/21 02:33:59 margarida Exp $
 
 COMMENT=	visio-like technical drawing
 
 DISTNAME=	dia-0.88.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/dia/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.88/}
 
 HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/12 09:33:01 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/21 02:34:00 margarida Exp $
 
 COMMENT=		"collection of theme engines for GTK+2"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=2.0.2/sources/gtk-engines/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/1.9/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
