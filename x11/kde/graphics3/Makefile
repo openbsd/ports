@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/03/23 22:14:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.34 2004/04/10 13:00:16 sturm Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -40,7 +40,7 @@ post-patch:
 	@cp ${FILESDIR}/part_init.cpp ${WRKSRC}/kghostview
 
 .if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
+SUP_PATCH_LIST=	gcc-*
 .endif
 
 .include <bsd.port.mk>
