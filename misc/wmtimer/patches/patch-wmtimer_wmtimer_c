@@ -1,7 +1,7 @@
-$OpenBSD: patch-wmtimer_wmtimer_c,v 1.2 2001/10/26 22:54:36 wilfried Exp $
---- wmtimer/wmtimer.c.orig	Fri Oct 12 02:29:21 2001
-+++ wmtimer/wmtimer.c	Sat Oct 27 00:38:53 2001
-@@ -83,7 +83,7 @@ configState configSt;
+$OpenBSD: patch-wmtimer_wmtimer_c,v 1.3 2003/12/19 12:22:41 wilfried Exp $
+--- wmtimer/wmtimer.c.orig	2003-09-27 03:35:28.000000000 +0200
++++ wmtimer/wmtimer.c	2003-12-19 13:09:39.000000000 +0100
+@@ -84,7 +84,7 @@ configState configSt;
  int main(int argc, char *argv[])
  {
    int prevSec = 0;
@@ -10,19 +10,19 @@ $OpenBSD: patch-wmtimer_wmtimer_c,v 1.2 2001/10/26 22:54:36 wilfried Exp $
    struct tm *thisTime;
    int wminet_mask_width = 64;
    int wminet_mask_height = 64;
-@@ -221,7 +221,7 @@ void parseArgs(int argc, char *argv[])
- 	  mode = CHRONO_ACTIVE;
- 	  break;
+@@ -234,7 +234,7 @@ void parseArgs(int argc, char *argv[])
+     action.bell = 1;
+     break;
  	case 'e':
 -	  strcpy(command, argv[argIndex+1]);
 +	  strlcpy(command, argv[argIndex+1], sizeof(command));
- 	  action = COMMAND;
+ 	  action.command = 1;
  	  break;
  	case 't':
-@@ -552,7 +552,7 @@ void callback(GtkWidget * widget, gpoint
+@@ -594,7 +594,7 @@ void callback(GtkWidget * widget, gpoint
    else if ((char *) data == "ok")
    {
-     if (tmpAction == COMMAND)
+     if (tmpAction.command)
 -      strcpy(command, gtk_entry_get_text(GTK_ENTRY (entry)));
 +      strlcpy(command, gtk_entry_get_text(GTK_ENTRY (entry)), sizeof(command));
  
