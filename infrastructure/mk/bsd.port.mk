@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.383 2001/04/02 11:50:25 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.384 2001/04/02 21:08:49 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2021,25 +2021,31 @@ package-noinstall:
 .endif
 
 # Internal variables, used by dependencies targets 
-
+# Only keep pkg:dir spec
 .if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
-_ALWAYS_DEP = ${LIB_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//} \
-	${MISC_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
+_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
+	${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
 .else
-_ALWAYS_DEP =
-.endif
-
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
-_BUILD_DEP = ${FETCH_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//} \
-	${BUILD_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
-.else
-_BUILD_DEP =
+_ALWAYS_DEP2=
+_ALWAYS_DEP=
 .endif
 
 .if defined(RUN_DEPENDS)
-_RUN_DEP = ${RUN_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
+_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
 .else
-_RUN_DEP =
+_RUN_DEP2=
+_RUN_DEP=
+.endif
+
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
+_BUILD_DEP2 = ${FETCH_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
+	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
+.else
+_BUILD_DEP2=
+_BUILD_DEP=
 .endif
 
 .if !target(clean-depends)
@@ -2292,20 +2298,6 @@ package-depends:
 		fi; \
 	done
 .  endif
-.endif
-
-# Only keep pkg:dir spec
-.if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
-_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
-	${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-.else
-_ALWAYS_DEP2=
-.endif
-
-.if defined(RUN_DEPENDS)
-_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-.else
-_RUN_DEP2=
 .endif
 
 new-depends:
