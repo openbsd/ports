@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
+lib/libsqlplus.so.1.7
+DYNLIBDIR(%D/lib)

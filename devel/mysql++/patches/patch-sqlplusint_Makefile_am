@@ -1,0 +1,12 @@
+$OpenBSD: patch-sqlplusint_Makefile_am,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
+--- sqlplusint/Makefile.am.orig	Tue Nov 14 13:17:19 2000
++++ sqlplusint/Makefile.am	Fri Feb  9 15:41:42 2001
+@@ -8,7 +8,7 @@ libsqlplus_la_SOURCES = coldata.cc conne
+ 	field_types.cc manip.cc query.cc result.cc  set.cc sql_query.cc \
+ 	type_info.cc vallist.cc string_util.cc
+ 
+-libsqlplus_la_LDFLAGS = -version-info $(SQLPLUS_MAJOR_VERSION):$(SQLPLUS_MINOR_VERSION):$(SQLPLUS_MICRO_VERSION)
++libsqlplus_la_LDFLAGS = -version-info $(SQLPLUS_MAJOR_VERSION):$(SQLPLUS_MINOR_VERSION)
+ 
+ include_HEADERS = sqlplus.hh coldata1.hh coldata2.hh coldata3.hh coldata4.hh \
+ 	compare1.hh compare2.hh compare3.hh connection0.hh connection1.hh \
