@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 19:16:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/08/14 16:07:31 brad Exp $
 
 COMMENT=	"network head-to-head version of T*tris"
 
-DISTNAME=	netris-0.5
+DISTNAME=	netris-0.52
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.netris.org/
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
