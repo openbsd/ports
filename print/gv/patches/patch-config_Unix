@@ -1,6 +1,7 @@
---- config.Unix.orig	Fri Jun  6 15:00:00 1997
-+++ config.Unix	Mon Jun  9 14:45:19 1997
-@@ -32,10 +32,10 @@
+$OpenBSD: patch-config_Unix,v 1.1 2001/04/14 14:43:05 espie Exp $
+--- config.Unix.orig	Sat Jun  7 00:00:00 1997
++++ config.Unix	Sat Apr 14 04:57:36 2001
+@@ -32,10 +32,10 @@ XCOMM ##################################
  XCOMM --------------------------------------------------------------------
  XCOMM  Destination directories.
  XCOMM --------------------------------------------------------------------

@@ -2,8 +2,14 @@
 if [ "$2" != "POST-INSTALL" ]; then
   exit 0
 fi
-if ! which gs >/dev/null; then
-  echo "I can't find ghostscript (gs) in your search path."
-  echo "Please install your favorite version of ghostscript,"
-  echo "otherwise this program is useless."
+
+if [ `gs -v|sed -e 's/.*Ghostscript *\([0-9]\).*/\1/' -e q` -ge 7 ]; then
+	cd ${PREFIX}/lib/X11/app-defaults
+	mv GV GV.bak
+	sed -e 's,\(GV.gsX11AlphaDevice:\).*,\1 -dNOPLATFONTS -sDEVICE=x11 -dTextAlphaBits=4 -dGraphicsAlphaBits=4,' GV.bak >GV
+	rm GV.bak
+	cd ${PREFIX}/lib/X11/gv
+	mv gv_system.ad gv_system.ad.bak
+	sed -e 's,\(GV.gsX11AlphaDevice:\).*,\1 -dNOPLATFONTS -sDEVICE=x11 -dTextAlphaBits=4 -dGraphicsAlphaBits=4,' gv_system.ad.bak >gv_system.ad
+	rm gv_system.ad.bak
 fi
