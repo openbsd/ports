@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/08 14:22:12 matt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/07/08 18:14:02 espie Exp $
 @pkgcfl lesstif-*
-bin/imake
-bin/lndir
-bin/makedepend
-bin/makeg
+@comment bin/imake
+@comment bin/lndir
+@comment bin/makedepend
+@comment bin/makeg
+@comment bin/mkdirhier
+@comment bin/xmkmf
 bin/mergelib
-bin/mkdirhier
 bin/mwm
 bin/uil
 bin/xmbind
-bin/xmkmf
 include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
 include/Mrm/MrmPublic.h
