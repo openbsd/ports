@@ -1,0 +1,12 @@
+*** app/boundary.c.orig	Fri Dec 12 00:10:12 1997
+--- app/boundary.c	Fri Dec 12 00:10:16 1997
+***************
+*** 16,22 ****
+   * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   */
+  #include <stdlib.h>
+- #include <values.h>
+  #include "appenv.h"
+  #include "errors.h"
+  #include "gdisplay.h"
+--- 16,21 ----

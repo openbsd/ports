@@ -1,0 +1,29 @@
+*** app/iscissors.c.orig	Fri Dec 12 00:18:21 1997
+--- app/iscissors.c	Fri Dec 12 00:18:40 1997
+***************
+*** 22,28 ****
+  
+  #include <stdlib.h>
+  #include <math.h>
+! #include <values.h>
+  #include "appenv.h"
+  #include "draw_core.h"
+  #include "errors.h"
+--- 22,28 ----
+  
+  #include <stdlib.h>
+  #include <math.h>
+! #include <limits.h>
+  #include "appenv.h"
+  #include "draw_core.h"
+  #include "errors.h"
+***************
+*** 34,39 ****
+--- 34,40 ----
+  
+  #include "gdisplay_ops.h"
+  
++ #define MAXINT INT_MAX
+  
+  /*  local structures  */
+  
