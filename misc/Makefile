@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2003/11/22 00:58:56 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2004/04/10 21:23:05 jolan Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += astrolog
      SUBDIR += brltty
      SUBDIR += brs
+     SUBDIR += bsdiff
      SUBDIR += buffer
 #    SUBDIR += cal
      SUBDIR += calentool
