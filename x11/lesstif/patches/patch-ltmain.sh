@@ -1,6 +1,16 @@
---- ltmain.sh.orig	Wed Jul  7 16:30:58 1999
-+++ ltmain.sh	Thu Jun 29 22:40:19 2000
-@@ -3522,40 +3522,6 @@
+--- ltmain.sh.orig	Thu Dec 14 15:56:29 2000
++++ ltmain.sh	Tue Dec 19 10:48:11 2000
+@@ -1795,6 +1795,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r.
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3555,40 +3558,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

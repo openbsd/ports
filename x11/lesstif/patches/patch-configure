@@ -1,7 +1,7 @@
---- configure.orig	Sun Jun 25 12:38:21 2000
-+++ configure	Thu Jun 29 22:39:03 2000
-@@ -783,7 +783,7 @@
- 
+--- configure.orig	Thu Dec 14 15:56:17 2000
++++ configure	Tue Dec 19 10:50:03 2000
+@@ -807,7 +807,7 @@
+ fi
  
  
 -PACKAGE=lesstif

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2000/09/24 07:04:16 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/01/22 02:43:34 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
-DISTNAME=	lesstif-0.91.8
+DISTNAME=	lesstif-0.92.6
 CATEGORIES=	x11
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
@@ -17,14 +17,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
+USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --enable-production --enable-build-12 \
-		--disable-build-20 --disable-build-Xbae --disable-build-Xlt \
-		--disable-debug --with-editres
+		--disable-build-20 --disable-build-21 --enable-default-12 \
+		--disable-build-Xbae --disable-build-Xlt --disable-debug \
+		--with-editres
 
-.if defined(HAVE_MOTIF)
+.if defined(HAVE_MOTIF) && ${HAVE_MOTIF:L} == "yes"
 IS_INTERACTIVE=	Yes
 
 pre-install:

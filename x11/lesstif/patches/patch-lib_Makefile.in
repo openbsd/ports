@@ -1,12 +1,11 @@
---- lib/Makefile.in.orig	Sun Jun 25 12:37:47 2000
-+++ lib/Makefile.in	Thu Jun 29 22:43:12 2000
-@@ -117,9 +117,6 @@
+--- lib/Makefile.in.orig	Thu Dec 21 07:42:38 2000
++++ lib/Makefile.in	Sun Jan 21 14:51:08 2001
+@@ -116,7 +116,7 @@
+ xmVer = @xmVer@
+ 
  MAINTAINERCLEANFILES = Makefile.in
- SUBDIRS = config \
- 		Xm Mrm Uil \
--		Xm-2.0 Mrm-2.0 Uil-2.0 \
--		Xm-2.1 Mrm-2.1 \
--		Xm-CDE Mrm-CDE \
- 		@BuildXltDir@ @BuildXbaeDir@
+-SUBDIRS = config 		Xm Mrm Uil 		Xm-2.0 Mrm-2.0 Uil-2.0 		Xm-2.1 Mrm-2.1 Uil-2.1 		@BuildXltDir@ @BuildXbaeDir@ 		Dt
++SUBDIRS = config 		Xm Mrm Uil 		@BuildXltDir@ @BuildXbaeDir@ 		Dt
  
  
+ DIST_SUBDIRS = config 		Xm Mrm Uil 		Xm-2.0 Mrm-2.0 Uil-2.0 		Xm-2.1 Mrm-2.1 Uil-2.1 		Xlt Xbae 		Dt
