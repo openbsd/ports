@@ -1,12 +1,23 @@
-$OpenBSD: patch-binutils_configure_in,v 1.1 2002/05/06 22:37:05 drahn Exp $
---- binutils/configure.in.orig	Mon May  6 17:23:36 2002
-+++ binutils/configure.in	Mon May  6 17:18:21 2002
-@@ -238,6 +238,8 @@ changequote([,])dnl
+$OpenBSD: patch-binutils_configure_in,v 1.2 2002/05/07 03:26:26 drahn Exp $
+--- binutils/configure.in.orig	Mon Jun 11 05:04:27 2001
++++ binutils/configure.in	Mon May  6 22:13:40 2002
+@@ -227,6 +227,10 @@ changequote([,])dnl
+ 	  OBJDUMP_DEFS="-DDISASSEMBLER_NEEDS_RELOCS"
+ 	  ;;
+ changequote(,)dnl
++	i[3-6]86-*-openbsd*)
++changequote([,])dnl
++	  ;;
++changequote(,)dnl
+ 	i[3-6]86-*pe* | i[3-6]86-*-cygwin* | i[3-6]86-*-mingw32*)
+ changequote([,])dnl
+   	  BUILD_DLLTOOL='$(DLLTOOL_PROG)$(EXEEXT)'
+@@ -237,6 +241,8 @@ changequote([,])dnl
+ 	i[3-6]86-*-interix)
  	  BUILD_DLLTOOL='$(DLLTOOL_PROG)'
  	  DLLTOOL_DEFS="$DLLTOOL_DEFS -DDLLTOOL_I386"
- 	  ;;
-+	powerpc*-*-openbsd*)
 +	  ;;
++	powerpc*-*-openbsd*)
+ 	  ;;
  	powerpc*-*-*pe* | powerpc*-*-cygwin*)
    	  BUILD_DLLTOOL='$(DLLTOOL_PROG)$(EXEEXT)'
- 	  DLLTOOL_DEFS="$DLLTOOL_DEFS -DDLLTOOL_PPC"
