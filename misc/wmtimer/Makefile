@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2002/09/17 15:22:26 wilfried Exp $
 
 COMMENT=		'wm-dockapp; alarm clock'
 
 DISTNAME=		wmtimer-2.4
 CATEGORIES=		misc x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.dwave.net/~jking/wmtimer/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/23 08:13:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/17 15:22:26 wilfried Exp $
 
 BROKEN=			"waiting for a version that supports QT >= 3.0.5"
 
@@ -8,7 +8,6 @@ VERSION=		0.8.2
 DISTNAME=		mycc-${VERSION}-alpha-src
 PKGNAME=		MyCC-${VERSION}
 CATEGORIES=		databases
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://mysql.com/products/mycc/index.html
 

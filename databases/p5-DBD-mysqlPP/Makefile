@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 08:18:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/17 15:22:26 wilfried Exp $
 
 COMMENT=		"Pure Perl MySQL driver for the Perl DBI"
 
@@ -6,7 +6,6 @@ VERSION=		0.03
 DISTNAME=		DBD-mysqlPP-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
-NEED_VERSION=		1.528
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

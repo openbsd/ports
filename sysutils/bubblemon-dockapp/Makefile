@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/17 15:22:26 wilfried Exp $
 
 COMMENT=		'wm-dockapp; display CPU and memory load'
 
 DISTNAME=		bubblemon-dockapp-1.4
 CATEGORIES=     	sysutils x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 
