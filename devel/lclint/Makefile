@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/10/05 00:20:00 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2001/10/05 14:22:50 naddy Exp $
 
 COMMENT=	"advanced lint: statically check C programs"
 
@@ -6,7 +6,7 @@ DISTNAME=	lclint-2.5r
 CATEGORIES=	devel
 NEED_VERSION=	1.470
 #MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/
-MASTER_SITES=	http://lclint.cs.virginia.edu/
+MASTER_SITES=	http://lclint.cs.virginia.edu/downloads/
 MASTER_SITES0=	http://lclint.cs.virginia.edu/guide/
 
 DIST_SUBDIR=	lclint
