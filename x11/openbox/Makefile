@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/17 04:24:23 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2003/12/25 23:08:11 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
-DISTNAME=	openbox-3.0
+DISTNAME=	openbox-3.1
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2003/11/12 03:45:05 brad Exp $
---- ltmain.sh.orig	2003-11-09 01:25:48.000000000 -0500
-+++ ltmain.sh	2003-11-09 01:26:31.000000000 -0500
-@@ -2215,7 +2215,6 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.2 2003/12/25 23:08:12 brad Exp $
+--- ltmain.sh.orig	2003-12-22 14:54:29.000000000 -0500
++++ ltmain.sh	2003-12-25 16:43:35.000000000 -0500
+@@ -2211,7 +2211,6 @@ EOF
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
  	  if test "$installed" = no; then
  	    notinst_deplibs="$notinst_deplibs $lib"
@@ -9,7 +9,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2003/11/12 03:45:05 brad Exp $
  	  fi
  	  # This is a shared library
  	
-@@ -5728,40 +5727,6 @@ relink_command=\"$relink_command\""
+@@ -5705,40 +5704,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
