@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2001/04/22 00:33:40 obecian Exp $
+# $OpenBSD: Makefile,v 1.72 2001/05/07 04:19:04 obecian Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += gperf
      SUBDIR += gsl
      SUBDIR += gtl
+     SUBDIR += guilib
      SUBDIR += id-utils
 #    SUBDIR += ilu
      SUBDIR += jad
@@ -140,6 +141,10 @@
 #    SUBDIR += sawt
 #    SUBDIR += scogdb
      SUBDIR += sdl
+     SUBDIR += sdl-image
+     SUBDIR += sdl-mixer
+     SUBDIR += sdl-net
+     SUBDIR += sdl-ttf
 #    SUBDIR += sfio
      SUBDIR += shtool
      SUBDIR += slib
