@@ -1,8 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
-Patch for version 1.4 of libtool
---- ltmain.sh.orig	Thu Apr 11 08:10:55 2002
-+++ ltmain.sh	Fri Apr 26 17:13:56 2002
-@@ -1048,6 +1048,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/11/14 20:52:57 marcm Exp $
+--- ltmain.sh.orig	Sun Oct  6 12:24:35 2002
++++ ltmain.sh	Tue Oct  8 13:39:20 2002
+@@ -1249,6 +1249,17 @@ EOF
  	continue
  	;;
  
@@ -20,32 +19,30 @@ Patch for version 1.4 of libtool
        -module)
  	module=yes
  	continue
-@@ -1484,6 +1495,10 @@ compiler."
+@@ -1836,6 +1847,9 @@ EOF
  	  fi
  	  continue
  	  ;;
 +	-pthread)
 +	  continue
 +	  ;;
-+
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -1725,11 +1740,6 @@ compiler."
- 	    continue
- 	  fi
- 
+@@ -2079,10 +2093,6 @@ EOF
+ 	link_static=no # Whether the deplib will be linked statically
+ 	if test -n "$library_names" &&
+ 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
 -	  if test "$installed" = no; then
 -	    notinst_deplibs="$notinst_deplibs $lib"
 -	    need_relink=yes
 -	  fi
--
- 	  if test -n "$old_archive_from_expsyms_cmds"; then
- 	    # figure out the soname
- 	    set dummy $library_names
-@@ -4464,40 +4474,6 @@ relink_command=\"$relink_command\""
+ 	  # This is a shared library
+ 	  if test "$linkmode" = lib &&
+ 	     test "$hardcode_into_libs" = yes; then
+@@ -4951,40 +4961,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"

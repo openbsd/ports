@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/22 15:37:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/11/14 20:52:57 marcm Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
 
-VERSION=		1.0.20
+VERSION=		1.0.21
 DISTNAME=		bonobo-${VERSION}
 PKGNAME-docs=		bonobo-docs-${VERSION}
 CATEGORIES=    		x11/gnome
