@@ -1,6 +1,6 @@
---- gcc/configure.in.orig	Thu Oct  1 00:56:26 1998
-+++ gcc/configure.in	Thu Oct  1 00:57:40 1998
-@@ -1003,15 +1003,21 @@
+--- gcc/configure.in.orig	Mon Sep 21 17:49:58 1998
++++ gcc/configure.in	Thu Nov 12 21:16:09 1998
+@@ -1003,10 +1003,8 @@
  		fixincludes=fixinc.wrap
  		tmake_file=i386/t-freebsd
  		;;
@@ -12,16 +12,31 @@
  changequote([,])dnl
  		tm_file=i386/netbsd.h
  		# On NetBSD, the headers are already okay, except for math.h.
- 		fixincludes=fixinc.wrap
+@@ -1014,6 +1012,14 @@
  		tmake_file=t-netbsd
-+		;;
-+changequote(,)dnl
+ 		;;
+ changequote(,)dnl
 +	i[34567]86-*-openbsd*)
 +changequote([,])dnl
 +		tm_file=i386/openbsd.h
 +		# On OpenBSD, the headers are already okay, except for math.h.
 +		fixincludes=fixinc.wrap
 +		tmake_file=t-openbsd
- 		;;
- changequote(,)dnl
++		;;
++changequote(,)dnl
  	i[34567]86-*-coff*)
+ changequote([,])dnl
+ 		tm_file=i386/i386-coff.h
+@@ -2820,6 +2826,12 @@
+ 		# On NetBSD, the headers are already okay, except for math.h.
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
++		;;
++	sparc-*-openbsd*)
++		tm_file=sparc/netbsd.h
++		# On OpenBSD, the headers are already okay, except for math.h.
++		fixincludes=fixinc.wrap
++		tmake_file=t-openbsd
+ 		;;
+ 	sparc-*-bsd*)
+ 		tm_file=sparc/bsd.h
