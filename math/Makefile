@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/06/25 21:59:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2003/07/08 10:56:23 sturm Exp $
 #
 
      SUBDIR += R
@@ -33,6 +33,7 @@
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += maxima
+     SUBDIR += mcl
      SUBDIR += mcsim
 #    SUBDIR += metis
      SUBDIR += netcdf
