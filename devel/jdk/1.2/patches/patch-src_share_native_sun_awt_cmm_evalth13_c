@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_share_native_sun_awt_cmm_evalth13_c,v 1.1 2003/12/31 17:18:16 espie Exp $
+--- src/share/native/sun/awt/cmm/evalth13.c.orig	2003-12-31 15:36:26.000000000 +0100
++++ src/share/native/sun/awt/cmm/evalth13.c	2003-12-31 15:39:39.000000000 +0100
+@@ -38,12 +38,12 @@
+ /* Macros used by 3-input functions */
+ 
+ #define TH1_STORE_DATA8(chan) \
+-	*outp##chan## = prevRes##chan##;	/* write to buffer */ \
+-	outp##chan## = (KpUInt8_p)outp##chan## + outStride##chan##;	/* next location */
++	*outp##chan = prevRes##chan;	/* write to buffer */ \
++	outp##chan = (KpUInt8_p)outp##chan + outStride##chan;	/* next location */
+ 
+ #define TH1_STORE_DATA16(chan) \
+-	*outp##chan## = prevRes##chan##;	/* write to buffer */ \
+-	outp##chan## = (KpUInt16_p)((KpUInt8_p)outp##chan## + outStride##chan##);	/* next location */
++	*outp##chan = prevRes##chan;	/* write to buffer */ \
++	outp##chan = (KpUInt16_p)((KpUInt8_p)outp##chan + outStride##chan);	/* next location */
+ 
+ #define TH1_EVAL_INIT \
+ esItbl_p	inLut0 = PTTableP->esILuts.P; \
+@@ -256,7 +256,7 @@ KpUInt32_t	ColorPart1, prevPart1 = 0, pr
+ #define TH1_3D_TETRAINTERP_AND_OLUT(chan) \
+ 	baseP += sizeof (esGridData_t); \
+ 	TH1_3D_TETRAINTERP		/* tetrahedral interpolation for this channel */ \
+-	prevRes##chan## = outLut0[(##chan##*4096)+tResult];
++	prevRes##chan = outLut0[(chan*4096)+tResult];
+ 
+ 
+ 
