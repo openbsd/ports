@@ -1,0 +1,48 @@
+$OpenBSD: patch-tools_ltmain_sh,v 1.3 2002/05/16 21:50:31 avsm Exp $
+--- tools/ltmain.sh.orig	Thu Jul  5 15:41:01 2001
++++ tools/ltmain.sh	Thu May 16 03:15:00 2002
+@@ -1031,12 +1031,34 @@ compiler."
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
+ 	  esac
+ 	fi
+ 	deplibs="$deplibs $arg"
+ 	continue
+ 	;;
+ 
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -3353,6 +3375,9 @@ static const void *lt_preloaded_setup() 
+ 	  # Transform the symbol file into the correct name.
+ 	  compile_command=`$echo "X$compile_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
+ 	  finalize_command=`$echo "X$finalize_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
++	  ;;
++	*-*-openbsd*)
++	  # Do not include libc due to us having libc/libc_r.
+ 	  ;;
+ 	*)
+ 	  $echo "$modename: unknown suffix for \`$dlsyms'" 1>&2
