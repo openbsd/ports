@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/01/16 03:10:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/21 13:59:38 naddy Exp $
 
 COMMENT=	"Ogg bitstream library"
 DISTNAME=	libogg-1.0rc3
@@ -19,5 +19,6 @@ MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
 		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
