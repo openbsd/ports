@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2001/02/02 00:22:48 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.10 2001/02/09 12:06:40 avsm Exp $ 
 
-DISTNAME=	courier-imap-1.3.2
+DISTNAME=	courier-imap-1.3.3
 CATEGORIES=	mail
 NEED_VERSION=	1.351
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,8 @@ FLAVOR?=
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	concurrent
 CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
-		--with-userdb=/etc/userdb --with-authuserdb
+		--with-userdb=/etc/userdb --with-authuserdb \
+		--without-authmysql --without-authldap
 SYSCONFDIR= 	/etc/courier-imap
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 
