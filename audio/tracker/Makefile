@@ -1,21 +1,16 @@
-# OpenBSD makefile for: tracker
-# Version required:     5.3
-# Date created:         May 21 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/10/02 17:19:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/07 00:22:52 marc Exp $
 #
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio
-MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/beta/
-EXTRACT_SUFX=   .tgz
-
-MAINTAINER=     espie@openbsd.org
-
 
 # No restriction, but ONLY for OpenBSD, not Free, nor NetBSD.
 #RESTRICTED=     "Non-redistributable beta"
+
+MAINTAINER=     espie@openbsd.org
+
+MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/beta/
+EXTRACT_SUFX=   .tgz
 
 WRKSRC=         ${WRKDIR}/tracker
 USE_GMAKE=      yes
