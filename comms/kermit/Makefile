@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/03 13:39:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/06/29 20:33:11 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
@@ -21,13 +21,12 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 WRKDIST=	${WRKDIR}
 
 MAKE_FILE=	makefile
-ALL_TARGET=	krbmit
+ALL_TARGET=	xermit
 MAKE_FLAGS=	KTARGET=openbsd CC="${CC}" CC2="${CC}" \
 		CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
-		-DCKHTTP \
-		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES" \
-		LIBS="-lssl -lcrypto -ldes -lcurses -lutil -lm"
+		-DCKHTTP" \
+		LIBS="-lcurses -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
 DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
@@ -35,7 +34,7 @@ DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
 EXAMPLEDIR=	${PREFIX}/share/examples/kermit
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/krbmit ${PREFIX}/bin/kermit
+	${INSTALL_PROGRAM} ${WRKBUILD}/wermit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	for file in ${DOCS}; do \
