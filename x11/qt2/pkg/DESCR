@@ -17,7 +17,7 @@ Accordingly:
 
 Generally, it's just a question of invoking 
 
-env MOC=moc2 configure --with-qt-includes=${PREFIX}/include/x11/qt2 
+env MOC=moc2 configure --with-qt-includes=${PREFIX}/include/X11/qt2 
 	--with-qt-libraries=${PREFIX}/lib/qt2
 
 Or to force MOC in your make/gmake invocation:

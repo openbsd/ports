@@ -20,7 +20,7 @@ Accordingly:
 
 Generally, it's just a question of invoking 
 
-env MOC=moc3 UIC=uic3 configure --with-qt-includes=${PREFIX}/include/x11/qt3 
+env MOC=moc3 UIC=uic3 configure --with-qt-includes=${PREFIX}/include/X11/qt3 
 	--with-qt-libraries=${PREFIX}/lib/qt3
 
 Or to force MOC/UIC in your make/gmake invocation:
