@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2002/04/30 13:05:04 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2002/05/13 08:18:20 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
 DISTNAME=		WindowMaker-0.80.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.481
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
-MASTER_SITE_SUBDIR=	source/release
+MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \

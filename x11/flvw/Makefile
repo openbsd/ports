@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 08:18:20 wilfried Exp $
 
 COMMENT=		'FLTK Virtual Styles, List, Table, and Complex Table Widgets'
 
 DISTNAME=		flvw-20000224
 PKGNAME=		flvw-1.0
 CATEGORIES=		devel
-NEED_VERSION=		1.482
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://flvw.sourceforge.net/
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	flvw
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 

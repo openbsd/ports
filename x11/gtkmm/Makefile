@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/04/19 16:34:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/13 08:18:20 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -7,7 +7,7 @@ VERSION=		1.2.9
 DISTNAME=		gtkmm-${VERSION}
 PKGNAME-docs=		gtkmm-docs-${VERSION}
 CATEGORIES=		devel x11
-NEED_VERSION=		1.488
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
 
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkmm
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtkmm/}
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=

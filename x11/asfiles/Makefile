@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 08:18:20 wilfried Exp $
 
 COMMENT=		'X11 file manager. Dockable in Window Maker'
 
 DISTNAME=		ASFiles-1.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.528
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_AFTERSTEP}
-MASTER_SITE_SUBDIR=	apps/ASFiles
+MASTER_SITES=		${MASTER_SITE_AFTERSTEP:=apps/ASFiles/}
 
 LIB_DEPENDS=		Dnd::x11/libdnd
 

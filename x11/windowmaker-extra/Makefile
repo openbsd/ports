@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/13 08:18:20 wilfried Exp $
 
 COMMENT=		'themes and icons for Window Maker'
 
 DISTNAME=		WindowMaker-extra-0.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
-MASTER_SITE_SUBDIR=	source/release
+MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 
 RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 
