@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2001/09/03 14:00:12 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.22 2001/09/13 21:14:52 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -18,6 +18,7 @@ man/man1/vimtutor.1
 man/man1/xxd.1
 share/vim/vim60${V}/bugreport.vim
 share/vim/vim60${V}/colors/README.txt
+share/vim/vim60${V}/colors/blue.vim
 share/vim/vim60${V}/colors/default.vim
 share/vim/vim60${V}/colors/elflord.vim
 share/vim/vim60${V}/colors/evening.vim
@@ -54,10 +55,10 @@ share/vim/vim60${V}/doc/gui_x11.txt
 share/vim/vim60${V}/doc/hangulin.txt
 share/vim/vim60${V}/doc/help.txt
 share/vim/vim60${V}/doc/howto.txt
-share/vim/vim60${V}/doc/if_cscope.txt
+share/vim/vim60${V}/doc/if_cscop.txt
 share/vim/vim60${V}/doc/if_ole.txt
 share/vim/vim60${V}/doc/if_perl.txt
-share/vim/vim60${V}/doc/if_python.txt
+share/vim/vim60${V}/doc/if_pyth.txt
 share/vim/vim60${V}/doc/if_ruby.txt
 share/vim/vim60${V}/doc/if_sniff.txt
 share/vim/vim60${V}/doc/if_tcl.txt
@@ -66,10 +67,10 @@ share/vim/vim60${V}/doc/index.txt
 share/vim/vim60${V}/doc/insert.txt
 share/vim/vim60${V}/doc/intro.txt
 share/vim/vim60${V}/doc/map.txt
+share/vim/vim60${V}/doc/mbyte.txt
 share/vim/vim60${V}/doc/message.txt
+share/vim/vim60${V}/doc/mlang.txt
 share/vim/vim60${V}/doc/motion.txt
-share/vim/vim60${V}/doc/multibyte.txt
-share/vim/vim60${V}/doc/multilang.txt
 share/vim/vim60${V}/doc/options.txt
 share/vim/vim60${V}/doc/os_390.txt
 share/vim/vim60${V}/doc/os_amiga.txt
@@ -80,7 +81,7 @@ share/vim/vim60${V}/doc/os_mint.txt
 share/vim/vim60${V}/doc/os_msdos.txt
 share/vim/vim60${V}/doc/os_os2.txt
 share/vim/vim60${V}/doc/os_qnx.txt
-share/vim/vim60${V}/doc/os_riscos.txt
+share/vim/vim60${V}/doc/os_risc.txt
 share/vim/vim60${V}/doc/os_unix.txt
 share/vim/vim60${V}/doc/os_vms.txt
 share/vim/vim60${V}/doc/os_win32.txt
@@ -95,13 +96,13 @@ share/vim/vim60${V}/doc/quotes.txt
 share/vim/vim60${V}/doc/recover.txt
 share/vim/vim60${V}/doc/remote.txt
 share/vim/vim60${V}/doc/repeat.txt
-share/vim/vim60${V}/doc/rightleft.txt
+share/vim/vim60${V}/doc/rileft.txt
 share/vim/vim60${V}/doc/scroll.txt
 share/vim/vim60${V}/doc/sign.txt
 share/vim/vim60${V}/doc/starting.txt
 share/vim/vim60${V}/doc/syntax.txt
 share/vim/vim60${V}/doc/tags
-share/vim/vim60${V}/doc/tagsearch.txt
+share/vim/vim60${V}/doc/tags.txt
 share/vim/vim60${V}/doc/term.txt
 share/vim/vim60${V}/doc/tips.txt
 share/vim/vim60${V}/doc/todo.txt
@@ -148,7 +149,9 @@ share/vim/vim60${V}/doc/vim2html.pl
 share/vim/vim60${V}/doc/visual.txt
 share/vim/vim60${V}/doc/windows.txt
 share/vim/vim60${V}/doc/workshop.txt
+share/vim/vim60${V}/evebcdic.ps
 share/vim/vim60${V}/evim.vim
+share/vim/vim60${V}/eviso.ps
 share/vim/vim60${V}/filetype.vim
 share/vim/vim60${V}/ftoff.vim
 share/vim/vim60${V}/ftplugin.vim
@@ -163,10 +166,12 @@ share/vim/vim60${V}/ftplugin/fortran.vim
 share/vim/vim60${V}/ftplugin/ishd.vim
 share/vim/vim60${V}/ftplugin/java.vim
 share/vim/vim60${V}/ftplugin/kwt.vim
+share/vim/vim60${V}/ftplugin/lprolog.vim
 share/vim/vim60${V}/ftplugin/lua.vim
 share/vim/vim60${V}/ftplugin/mail.vim
 share/vim/vim60${V}/ftplugin/make.vim
 share/vim/vim60${V}/ftplugin/man.vim
+share/vim/vim60${V}/ftplugin/ocaml.vim
 share/vim/vim60${V}/ftplugin/perl.vim
 share/vim/vim60${V}/ftplugin/postscr.vim
 share/vim/vim60${V}/ftplugin/python.vim
