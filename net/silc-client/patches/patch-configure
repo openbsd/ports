@@ -1,34 +1,37 @@
-$OpenBSD: patch-configure,v 1.7 2002/07/04 10:56:08 fgsch Exp $
---- configure.orig	Sun Jun 23 16:25:05 2002
-+++ configure	Fri Jun 28 03:17:54 2002
-@@ -2660,12 +2660,6 @@ else
+$OpenBSD: patch-configure,v 1.8 2002/09/24 17:20:10 fgsch Exp $
+--- configure.orig	Thu Sep 19 06:09:58 2002
++++ configure	Thu Sep 19 06:11:14 2002
+@@ -2663,13 +2663,6 @@ else
    SILC_DIST_WIN32DLL_FALSE=
  fi
  
 -# XXX
 -# Compiler flags
+-#
 -if test "$GCC"; then
 -  CFLAGS="-Wall -finline-functions $CFLAGS"
 -fi
 -
  # Program checking
+ #
  # Find a good install program.  We prefer a C program (faster),
- # so one script is as good as another.  But avoid the broken or
-@@ -11049,16 +11043,14 @@ echo "${ECHO_T}yes" >&6
+@@ -10434,18 +10427,16 @@ echo "${ECHO_T}yes" >&6
  #define SILC_DEBUG 1
  EOF
  
--    CFLAGS="-O -g $CFLAGS"
-+    CFLAGS="-g $CFLAGS"
-     ;;
-   *)
-     echo "$as_me:11055: result: no" >&5
+-        CFLAGS="-O -g $CFLAGS"
++        CFLAGS="-g $CFLAGS"
+         ;;
+       *)
+         echo "$as_me:10440: result: no" >&5
  echo "${ECHO_T}no" >&6
--    CFLAGS="-O2 -g $CFLAGS"
-     ;;
- esac
+-        CFLAGS="-O2 -g $CFLAGS"
+         ;;
+     esac
+ 
  else
--  CFLAGS="-O2 -g $CFLAGS"
-         echo "$as_me:11062: result: no" >&5
+ 
+-    CFLAGS="-O2 -g $CFLAGS"
+     echo "$as_me:10449: result: no" >&5
  echo "${ECHO_T}no" >&6
- fi;
+ 

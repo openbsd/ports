@@ -1,0 +1,11 @@
+$OpenBSD: patch-irssi_src_perl_common_typemap,v 1.1 2002/09/24 17:20:10 fgsch Exp $
+--- irssi/src/perl/common/typemap.orig	Sat Jul  6 05:09:39 2002
++++ irssi/src/perl/common/typemap	Tue Sep 24 02:28:01 2002
+@@ -13,7 +13,6 @@ Irssi::Logitem       	T_PlainObj
+ Irssi::Rawlog		T_PlainObj
+ Irssi::Module		T_PlainObj
+ Irssi::Windowitem	T_IrssiObj
+-Irssi::Blob		T_PlainObj
+ 
+ INPUT
+ 

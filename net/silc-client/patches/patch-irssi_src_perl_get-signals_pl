@@ -1,0 +1,13 @@
+$OpenBSD: patch-irssi_src_perl_get-signals_pl,v 1.1 2002/09/24 17:20:10 fgsch Exp $
+--- irssi/src/perl/get-signals.pl.orig	Sat Jul  6 05:09:39 2002
++++ irssi/src/perl/get-signals.pl	Tue Sep 24 02:28:01 2002
+@@ -51,9 +51,6 @@ while (<STDIN>) {
+ 	s/WINDOW_REC[^,]*/Irssi::UI::Window/g;
+ 	s/WI_ITEM_REC[^,]*/iobject/g;
+ 
+-	# silc
+-	s/BLOB_REC[^,]*/siobject/g;
+-
+ 	s/([\w\*:]+)(,|$)/"\1"\2/g;
+ 	print "    { \"$signal\", { $_, NULL } },\n";
+ }

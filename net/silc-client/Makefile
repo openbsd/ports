@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/17 19:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/24 17:20:10 fgsch Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
-DISTNAME=	silc-client-0.9.4
+DISTNAME=	silc-client-0.9.5.1
 CATEGORIES=	net
-NEED_VERSION=	1.507
 HOMEPAGE=	http://www.silcnet.org/
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
@@ -26,6 +25,8 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
 
 USE_LIBTOOL=	yes
+
+MODULES=	iconv
 
 # XXX workaround gcc bugs on sparc64
 .if ${MACHINE_ARCH:Msparc64}

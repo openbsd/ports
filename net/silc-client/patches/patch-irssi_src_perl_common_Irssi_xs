@@ -1,0 +1,8 @@
+$OpenBSD: patch-irssi_src_perl_common_Irssi_xs,v 1.1 2002/09/24 17:20:10 fgsch Exp $
+--- irssi/src/perl/common/Irssi.xs.orig	Sat Jul  6 05:09:39 2002
++++ irssi/src/perl/common/Irssi.xs	Tue Sep 24 02:28:01 2002
+@@ -31,4 +31,3 @@ BOOT:
+ 	irssi_boot(Rawlog);
+ 	irssi_boot(Server);
+ 	irssi_boot(Settings);
+-	irssi_boot(Blob);
