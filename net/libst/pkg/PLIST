@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/15 16:47:07 lebel Exp $
+lib/libst.a
+%%SHARED%%
+include/st.h
+share/doc/libst/fig.gif
+share/doc/libst/notes.html
+share/doc/libst/reference.html
+share/doc/libst/st.html
+@dirrm share/doc/libst

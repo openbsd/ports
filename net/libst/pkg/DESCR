@@ -1,0 +1,8 @@
+State Threads is an application library which provides a foundation
+for writing fast and highly scalable Internet Applications on
+UNIX-like platforms. It combines the simplicity of the multithreaded
+programming paradigm, in which one thread supports each simultaneous
+connection, with the performance and scalability of an event-driven
+state machine architecture.
+
+WWW: ${HOMEPAGE}
