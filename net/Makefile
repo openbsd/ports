@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2001/07/13 02:42:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.150 2001/07/15 09:29:10 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += jftpgw
      SUBDIR += kmago
      SUBDIR += kmago,wget
+     SUBDIR += kxicq2
      SUBDIR += lftp
      SUBDIR += libnet
      SUBDIR += libnids
