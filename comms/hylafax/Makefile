@@ -1,31 +1,16 @@
-# $OpenBSD: Makefile,v 1.31 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2001/11/18 17:06:51 d Exp $
 
-COMMENT=	"send/receive faxes and share modems"
+COMMENT=		"send/receive faxes and share modems"
+DISTNAME=		hylafax-4.1
+CATEGORIES=		comms
+MAINTAINER=		ports@openbsd.org
+FLAVORS=		A4
+FLAVOR?=
+HOMEPAGE=		http://www.HylaFAX.org/
 
-BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
-
-DISTNAME=	hylafax-v4.0pl2
-.if defined(A4)
-PKGNAME=	hylafax-4.0.2-A4
-.else
-PKGNAME=	hylafax-4.0.2-letter
-.endif
-
-CATEGORIES=	comms
-NEED_VERSION=	1.489
-
-FAKE=No
-MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
-		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
-		ftp://ftp.sisis.de/pub/hylafax/source/ \
-      		ftp://ftp.funet.fi/pub/mirrors/sgi.com/fax/source/
-MASTER_SITES0=	http://www.hylafax.org/patches/
-EXTRACT_SUFX=	-tar.gz
-
-PATCHFILES=	gcc-2.8.x.patch:0
-PATCH_DIST_STRIP= -p1
-
-MAINTAINER=	David Leonard <d@openbsd.org>
+MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	\
+			ftp://ftp.hylafax.org/%SUBDIR%/
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,51 +18,53 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::print/afm
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
-LIB_DEPENDS=	tiff.35::graphics/tiff
+RUN_DEPENDS=		gs:ghostscript-*:print/ghostscript/gnu
+LIB_DEPENDS=		tiff::graphics/tiff
 
-USE_GMAKE=	Yes
+CONFIGURE_STYLE=	simple
+USE_GMAKE=		Yes
+#SEPARATE_BUILD=	No
 
-.if !defined(A4)
-PAGESIZE=	North American Letter
-.else
-PAGESIZE=	ISO A4
+CONFIGURE_ARGS =	--nointeractive
+CONFIGURE_ARGS+=	--with-CC="${CC}"
+CONFIGURE_ARGS+=	--with-CXX="${CXX}"
+CONFIGURE_ARGS+=	--with-DIR_BIN="${PREFIX}/bin"
+CONFIGURE_ARGS+=	--with-DIR_HTML="${PREFIX}/share/doc/hylafax"
+CONFIGURE_ARGS+=	--with-DIR_LIBDATA="${PREFIX}/lib/fax"
+CONFIGURE_ARGS+=	--with-DIR_LIBEXEC="${PREFIX}/libexec"
+CONFIGURE_ARGS+=	--with-DIR_LIBTIFF="-L${PREFIX}/lib -ltiff"
+CONFIGURE_ARGS+=	--with-DIR_MAN="${PREFIX}/man"
+CONFIGURE_ARGS+=	--with-DIR_SBIN="${PREFIX}/sbin"
+CONFIGURE_ARGS+=	--with-LIBREGEX=
+CONFIGURE_ARGS+=	--with-INSTALL=
+CONFIGURE_ARGS+=	--with-MAKE="${GMAKE}"
+CONFIGURE_ARGS+=	--with-PATH_AFM="${PREFIX}/share/ghostscript/fonts"
+CONFIGURE_ARGS+=	--with-PATH_GSRIP="${PREFIX}/bin/gs"
+CONFIGURE_ARGS+=	--with-PATH_PSRIP="${PREFIX}/bin/gs"
+CONFIGURE_ARGS+=	--with-PATH_VGETTY="${PREFIX}/bin/vgetty"
+CONFIGURE_ARGS+=	--with-REGEX=no
+CONFIGURE_ARGS+=	--with-REGEXINC="/usr/include"
+CONFIGURE_ARGS+=	--with-SYSUID=root
+CONFIGURE_ARGS+=	--with-SYSVINIT=no
+CONFIGURE_ARGS+=	--with-TIFFINC="${PREFIX}/include"
+
+.if ${FLAVOR:U} == "A4"
+CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 .endif
-
-FAXUID=	uucp
-FAXGID=	dialer
-
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--with-INSTALL="" \
-		--with-MAKE="${GMAKE}" \
-		--with-CC="${CC}" \
-		--with-CXX="${CXX}" \
-		--with-DIR_HTML="/usr/share/doc/html/hylafax" \
-		--with-PAGESIZE="${PAGESIZE}" \
-		--with-LIBTIFF="-L${PREFIX}/lib -ltiff"  \
-		--with-TIFFINC="${PREFIX}/include" \
-		--with-ZLIB="no" --with-LIBZ="-lz" --with-ZLIBINC="/usr/include" \
-		--with-REGEX="no" --with-LIBREGEX="" --with-REGEXINC="/usr/include" \
-		--with-FAXUID="${FAXUID}" --with-FAXGID="${FAXGID}" \
-
-CONFIGURE_ENV=	CONFIG_SOCKARGLENTYPE=::socklen_t
 
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
-
-pre-fetch:
-.if !defined(NO_WARNINGS)
-.if !defined(A4)
-	@${ECHO_MSG} "Type \"make A4=yes\" if you want A4 as default page size."
-.else
-	@${ECHO_MSG} "Using \"ISO A4\" for default page size."
-.endif
-.endif
-
 post-install:
-	@chown ${FAXUID}.${FAXGID} ${SUID_EXES}
-	@chmod a=rx,u+s ${SUID_EXES}
+	@: chown uucp.dialer ${SUID_EXES}
+	@: chmod a=rx,u+s ${SUID_EXES}
 	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
 
+pre-package:
+	rm -f ${WRKINST}/${PREFIX}/hylafax
+	ln -s ${WRKINST}/var/spool/hylafax ${WRKINST}/${PREFIX}/hylafax
+post-package:
+	rm -f ${WRKINST}/${PREFIX}/hylafax
+
 .include <bsd.port.mk>
+
+_FAKE_SETUP +=	ROOT=${WRKINST}

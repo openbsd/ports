@@ -1,0 +1,11 @@
+--- port/install.sh.in.orig	Sun Jul 15 16:52:44 2001
++++ port/install.sh.in	Sun Jul 15 16:53:01 2001
+@@ -129,7 +129,7 @@
+ 		    test -p $1 >/dev/null 2>&1
+ 		}
+ 		;;
+-    -ln)	shift; CMD=@LN@; SRC="$1"
++    -ln)	shift; CMD=@LN@; SRC="$ROOT/$1"
+ 		STRIP=":"
+ 		;;
+     -lns)	shift; CMD=@LN@; preopts="@LN_S@"; SRC="$1"

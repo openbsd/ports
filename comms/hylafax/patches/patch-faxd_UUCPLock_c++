@@ -1,0 +1,25 @@
+--- faxd/UUCPLock.c++.orig	Mon Nov 19 02:49:11 2001
++++ faxd/UUCPLock.c++	Mon Nov 19 02:54:48 2001
+@@ -37,6 +37,7 @@
+ }
+ #endif
+ #include <pwd.h>
++#include <grp.h>
+ 
+ /*
+  * UUCP Device Locking Support.
+@@ -143,10 +144,13 @@
+ {
+     if (UUCPuid == (uid_t) -1) {
+ 	const passwd *pwd = getpwnam("uucp");
++	const group *grp = getgrnam("dialer");
+ 	if (!pwd)
+ 	    faxApp::fatal("Can not deduce identity of UUCP");
++	if (!grp)
++	    faxApp::fatal("Can not deduce identity of DIALER");
+ 	UUCPuid = pwd->pw_uid;
+-	UUCPgid = pwd->pw_gid;
++	UUCPgid = grp->gr_gid;
+ 	endpwent();			// paranoia
+     }
+ }

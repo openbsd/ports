@@ -6,7 +6,10 @@
 #   server: /usr/local/sbin/faxsetup 
 #   modems: /usr/local/sbin/faxaddmodem 
 #   incoming calls: /etc/ttys 
+#
+# Add these to /etc/rc.local:
 
 if [ -x /usr/local/sbin/faxq ]; then 
 	/usr/local/sbin/faxq && echo -n ' hylafax' 
 fi
+
