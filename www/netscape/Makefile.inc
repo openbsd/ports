@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2000/07/06 22:40:18 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2000/07/06 23:22:21 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -7,12 +7,14 @@ CATEGORIES=     www
 NEED_VERSION=	1.310
 DIST_SUBDIR=	netscape
 
+HOMEPAGE=	http://www.netscape.com/
+
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
-# Subdirectory MUST define PROGRAM_V, EMUL_OS and DISTRIBUTION
+# Subdirectory MUST define PROGRAM_V and LOCATION
 
 MASTER_SITES= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/%SUBDIR%/ \
