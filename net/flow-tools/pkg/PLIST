@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/09/04 15:22:14 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/11/04 15:13:49 jakob Exp $
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -10,11 +10,14 @@ bin/flow-gen
 bin/flow-header
 bin/flow-import
 bin/flow-merge
+bin/flow-nfilter
 bin/flow-print
 bin/flow-receive
+bin/flow-report
 bin/flow-send
 bin/flow-split
 bin/flow-stat
+bin/flow-tag
 bin/flow-xlate
 man/man1/flow-capture.1
 man/man1/flow-cat.1
@@ -24,12 +27,20 @@ man/man1/flow-export.1
 man/man1/flow-fanout.1
 man/man1/flow-filter.1
 man/man1/flow-gen.1
-man/man1/flow-mirror.1
+man/man1/flow-header.1
+man/man1/flow-import.1
+man/man1/flow-merge.1
+man/man1/flow-nfilter.1
 man/man1/flow-print.1
-man/man1/flow-profile.1
-man/man1/flow-search.1
+man/man1/flow-receive.1
+man/man1/flow-report.1
+man/man1/flow-send.1
+man/man1/flow-split.1
 man/man1/flow-stat.1
+man/man1/flow-tag.1
+man/man1/flow-tools-examples.1
 man/man1/flow-tools.1
+man/man1/flow-xlate.1
 share/examples/flow-tools/cfg/filter-acl
 share/examples/flow-tools/cfg/map
 share/examples/flow-tools/sym/asn

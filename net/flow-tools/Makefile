@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/04 15:22:14 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2002/11/04 15:13:49 jakob Exp $
 
 COMMENT=	cisco NetFlow utilities
 
-DISTNAME=	flow-tools-0.55
+DISTNAME=	flow-tools-0.62
 CATEGORIES=	net
-NEED_VERSION=	1.363
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -24,7 +23,7 @@ CONFIGS_SYM=	asn ip-prot tcp-port
 
 do-install:
 	(cd ${WRKSRC}/src; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
-	(cd ${WRKSRC}/docs; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
+	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/flow-tools/cfg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/flow-tools/sym
 .for file in ${CONFIGS_CFG}
