@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/15 10:03:05 fgsch Exp $
+bin/sigc-config
+include/sigc++/adaptor.h
+include/sigc++/basic_signal.h
+include/sigc++/bind.h
+include/sigc++/class_slot.h
+include/sigc++/convert.h
+include/sigc++/func_slot.h
+include/sigc++/generator.h
+include/sigc++/handle.h
+include/sigc++/handle_system.h
+include/sigc++/macros/basic_signal.h.m4
+include/sigc++/macros/bind.h.m4
+include/sigc++/macros/class_slot.h.m4
+include/sigc++/macros/convert.h.m4
+include/sigc++/macros/func_slot.h.m4
+include/sigc++/macros/object_slot.h.m4
+include/sigc++/macros/retbind.h.m4
+include/sigc++/macros/rettype.h.m4
+include/sigc++/macros/slot.h.m4
+include/sigc++/macros/template.macros.m4
+include/sigc++/marshal.h
+include/sigc++/object.h
+include/sigc++/object_slot.h
+include/sigc++/retbind.h
+include/sigc++/rettype.h
+include/sigc++/scope.h
+include/sigc++/signal_system.h
+include/sigc++/slot.h
+include/sigc++/thread.h
+include/sigc++/type.h
+lib/libsigc.a
+lib/libsigc.la
+%%SHARED%%
+lib/sigc++/include/sigc++config.h
+share/aclocal/sigc++.m4
+@dirrm lib/sigc++/include
+@dirrm lib/sigc++
+@dirrm include/sigc++/macros
+@dirrm include/sigc++

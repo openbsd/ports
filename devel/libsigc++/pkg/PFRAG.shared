@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/06/15 10:03:05 fgsch Exp $
+lib/libsigc-1.0.so.0.0
+lib/libsigc.so.0.0
+@exec /sbin/ldconfig -m %B
