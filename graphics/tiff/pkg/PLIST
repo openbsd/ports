@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/01/19 09:34:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/12/23 23:45:41 brad Exp $
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
 bin/pal2rgb
 bin/ppm2tiff
 bin/ras2tiff
+bin/raw2tiff
 bin/rgb2ycbcr
 bin/thumbnail
 bin/tiff2bw
@@ -30,6 +31,7 @@ man/man1/gif2tiff.1
 man/man1/pal2rgb.1
 man/man1/ppm2tiff.1
 man/man1/ras2tiff.1
+man/man1/raw2tiff.1
 man/man1/rgb2ycbcr.1
 man/man1/sgi2tiff.1
 man/man1/thumbnail.1
@@ -54,6 +56,7 @@ man/man3/TIFFCurrentDirectory.3t
 man/man3/TIFFCurrentRow.3t
 man/man3/TIFFCurrentStrip.3t
 man/man3/TIFFCurrentTile.3t
+man/man3/TIFFDataWidth.3t
 man/man3/TIFFDefaultStripSize.3t
 man/man3/TIFFDefaultTileSize.3t
 man/man3/TIFFError.3t
@@ -64,6 +67,7 @@ man/man3/TIFFFindCODEC.3t
 man/man3/TIFFFlush.3t
 man/man3/TIFFFlushData.3t
 man/man3/TIFFGetField.3t
+man/man3/TIFFGetFieldDefaulted.3t
 man/man3/TIFFGetMode.3t
 man/man3/TIFFIsByteSwapped.3t
 man/man3/TIFFIsMSB2LSB.3t
@@ -84,6 +88,7 @@ man/man3/TIFFReadDirectory.3t
 man/man3/TIFFReadEncodedStrip.3t
 man/man3/TIFFReadEncodedTile.3t
 man/man3/TIFFReadRGBAImage.3t
+man/man3/TIFFReadRGBAImageOriented.3t
 man/man3/TIFFReadRGBAStrip.3t
 man/man3/TIFFReadRGBATile.3t
 man/man3/TIFFReadRawStrip.3t
@@ -108,6 +113,7 @@ man/man3/TIFFTileRowSize.3t
 man/man3/TIFFTileSize.3t
 man/man3/TIFFUnRegisterCODEC.3t
 man/man3/TIFFVGetField.3t
+man/man3/TIFFVGetFieldDefaulted.3t
 man/man3/TIFFVSetField.3t
 man/man3/TIFFVStripSize.3t
 man/man3/TIFFVTileSize.3t
@@ -178,6 +184,10 @@ share/doc/tiff/v3.4beta036.html
 share/doc/tiff/v3.5.1.html
 share/doc/tiff/v3.5.2.html
 share/doc/tiff/v3.5.3.html
+share/doc/tiff/v3.5.4.html
+share/doc/tiff/v3.5.5.html
+share/doc/tiff/v3.5.6-beta.html
 share/doc/tiff/v3.5.7.html
+share/doc/tiff/v3.6.0.html
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff

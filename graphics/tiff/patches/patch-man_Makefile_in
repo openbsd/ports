@@ -1,5 +1,6 @@
---- man/Makefile.in.orig	Wed Sep 26 13:32:24 2001
-+++ man/Makefile.in	Tue Dec  4 09:54:49 2001
+$OpenBSD: patch-man_Makefile_in,v 1.3 2003/12/23 23:45:41 brad Exp $
+--- man/Makefile.in.orig	2003-10-04 07:43:16.000000000 -0400
++++ man/Makefile.in	2003-12-13 02:34:58.000000000 -0500
 @@ -42,6 +42,7 @@ ECHO	= echo
  SED	= sed
  MV	= mv
@@ -17,7 +18,7 @@
  
  MANTOOLS=\
  	apps/fax2tiff.1 \
-@@ -279,61 +280,61 @@ lib/TIFFstrip.3t::	${SRCDIR}/TIFFstrip.3
+@@ -286,65 +287,65 @@ lib/TIFFstrip.3t::	${SRCDIR}/TIFFstrip.3
  lib/TIFFswab.3t::	${SRCDIR}/TIFFswab.3t;			${MANCVT}
  lib/TIFFtile.3t::	${SRCDIR}/TIFFtile.3t;			${MANCVT}
  
@@ -43,10 +44,12 @@
 -lib/TIFFLastDirectory.3t:;	${ECHO} ".so ${MANDIR}TIFFquery.3t" > $@
 -lib/TIFFReverseBits.3t:;	${ECHO} ".so ${MANDIR}TIFFswab.3t" > $@
 -lib/TIFFRewriteDirectory.3t:;	${ECHO} ".so ${MANDIR}TIFFWriteDirectory.3t" > $@
+-lib/TIFFCheckpointDirectory.3t:; ${ECHO} ".so ${MANDIR}TIFFWriteDirectory.3t" > $@
 -lib/TIFFRGBAImageOK.3t:;	${ECHO} ".so ${MANDIR}TIFFRGBAImage.3t" > $@
 -lib/TIFFRGBAImageBegin.3t:;	${ECHO} ".so ${MANDIR}TIFFRGBAImage.3t" > $@
 -lib/TIFFRGBAImageGet.3t:;	${ECHO} ".so ${MANDIR}TIFFRGBAImage.3t" > $@
 -lib/TIFFRGBAImageEnd.3t:;	${ECHO} ".so ${MANDIR}TIFFRGBAImage.3t" > $@
+-lib/TIFFReadRGBAImageOriented.3t:;	${ECHO} ".so ${MANDIR}TIFFReadRGBAImage.3t" > $@
 -lib/TIFFSetErrorHandler.3t:;	${ECHO} ".so ${MANDIR}TIFFError.3t" > $@
 -lib/TIFFSetSubDirectory.3t:;	${ECHO} ".so ${MANDIR}TIFFSetDirectory.3t" > $@
 -lib/TIFFSetWarningHandler.3t:;	${ECHO} ".so ${MANDIR}TIFFWarning.3t" > $@
@@ -64,6 +67,8 @@
 -lib/TIFFDefaultTileSize.3t:;	${ECHO} ".so ${MANDIR}TIFFtile.3t" > $@
 -lib/TIFFTileRowSize.3t:;	${ECHO} ".so ${MANDIR}TIFFtile.3t" > $@
 -lib/TIFFVGetField.3t:;		${ECHO} ".so ${MANDIR}TIFFGetField.3t" > $@
+-lib/TIFFGetFieldDefaulted.3t:;	${ECHO} ".so ${MANDIR}TIFFGetField.3t" > $@
+-lib/TIFFVGetFieldDefaulted.3t:;	${ECHO} ".so ${MANDIR}TIFFGetField.3t" > $@
 -lib/TIFFVSetField.3t:;		${ECHO} ".so ${MANDIR}TIFFSetField.3t" > $@
 -lib/TIFFFindCODEC.3t:;		${ECHO} ".so ${MANDIR}TIFFcodec.3t" > $@
 -lib/TIFFRegisterCODEC.3t:;	${ECHO} ".so ${MANDIR}TIFFcodec.3t" > $@
@@ -98,10 +103,12 @@
 +lib/TIFFLastDirectory.3t:;	${LN} ${MANDIR}TIFFquery.3t $@
 +lib/TIFFReverseBits.3t:;	${LN} ${MANDIR}TIFFswab.3t $@
 +lib/TIFFRewriteDirectory.3t:;	${LN} ${MANDIR}TIFFWriteDirectory.3t $@
++lib/TIFFCheckpointDirectory.3t:; ${LN} ${MANDIR}TIFFWriteDirectory.3t $@
 +lib/TIFFRGBAImageOK.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
 +lib/TIFFRGBAImageBegin.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
 +lib/TIFFRGBAImageGet.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
 +lib/TIFFRGBAImageEnd.3t:;	${LN} ${MANDIR}TIFFRGBAImage.3t $@
++lib/TIFFReadRGBAImageOriented.3t:;	${LN} ${MANDIR}TIFFReadRGBAImage.3t $@
 +lib/TIFFSetErrorHandler.3t:;	${LN} ${MANDIR}TIFFError.3t $@
 +lib/TIFFSetSubDirectory.3t:;	${LN} ${MANDIR}TIFFSetDirectory.3t $@
 +lib/TIFFSetWarningHandler.3t:;	${LN} ${MANDIR}TIFFWarning.3t $@
@@ -119,6 +126,8 @@
 +lib/TIFFDefaultTileSize.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
 +lib/TIFFTileRowSize.3t:;	${LN} ${MANDIR}TIFFtile.3t $@
 +lib/TIFFVGetField.3t:;		${LN} ${MANDIR}TIFFGetField.3t $@
++lib/TIFFGetFieldDefaulted.3t:;	${LN} ${MANDIR}TIFFGetField.3t $@
++lib/TIFFVGetFieldDefaulted.3t:;	${LN} ${MANDIR}TIFFGetField.3t $@
 +lib/TIFFVSetField.3t:;		${LN} ${MANDIR}TIFFSetField.3t $@
 +lib/TIFFFindCODEC.3t:;		${LN} ${MANDIR}TIFFcodec.3t $@
 +lib/TIFFRegisterCODEC.3t:;	${LN} ${MANDIR}TIFFcodec.3t $@
@@ -134,21 +143,3 @@
  
  apps/Makefile:
  	test -d apps || mkdir apps
-@@ -344,7 +345,7 @@ apps/Makefile:
- 	 for i in *.1; do						\
- 	    f=${MANAPPNAME};						\
- 	    ${ECHO} '	cd ..; ${INSTALL} -m 444 			\
--		-F ${DESTDIR}${MAN}/${MANAPPS}				\
-+		-F $${DESTDIR}${MAN}/${MANAPPS}				\
- 		-idb tiff.man.tools -src' apps/"$$i" '-O' "$$f";	\
- 	 done								\
- 	)>apps/Makefile
-@@ -357,7 +358,7 @@ lib/Makefile:
- 	 for i in *.3t; do						\
- 	    f=${MANLIBNAME};						\
- 	    ${ECHO} '	cd ..; ${INSTALL} -m 444 			\
--		-F ${DESTDIR}${MAN}/${MANLIB}				\
-+		-F $${DESTDIR}${MAN}/${MANLIB}				\
- 		-idb tiff.man.dev -src' lib/"$$i" '-O' "$$f";		\
- 	 done								\
- 	)>lib/Makefile
