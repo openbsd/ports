@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.9 2004/08/13 23:48:48 pvalchev Exp $
+# $OpenBSD: i386,v 1.10 2004/08/17 21:03:44 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -49,7 +49,7 @@ www/mozilla-firefox
 x11/qt3,-base
 x11/kde/base3
 x11/kde/office3
-x11/kde/pim3
+#x11/kde/pim3
 #x11/kde/edu3
 x11/windowmaker
 x11/windowmaker-extra
@@ -67,7 +67,6 @@ textproc/xpdf
 editors/ted
 lang/python/2.3
 lang/python/2.3,-tools
-mail/exim,no_x11
 www/mod_perl
 games/xkobo,harder
 games/xlife
