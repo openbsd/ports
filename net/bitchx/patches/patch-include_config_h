@@ -1,12 +1,12 @@
-$OpenBSD: patch-include_config_h,v 1.2 2002/06/30 18:23:31 brad Exp $
---- include/config.h.orig	Mon Jan  8 01:24:22 2001
-+++ include/config.h	Sun Jun 30 14:19:43 2002
+$OpenBSD: patch-include_config_h,v 1.3 2004/01/04 23:46:49 espie Exp $
+--- include/config.h.orig	2001-01-08 07:24:22.000000000 +0100
++++ include/config.h	2004-01-05 00:38:14.000000000 +0100
 @@ -35,7 +35,7 @@
   * too peruse this function all you like. It's not a BACKDOOR in any way, 
   * shape or form.
   */
 -#define WANT_NOTIFY_BITCHX_COM ON
-+#undef WANT_NOTIFY_BITCHX_COM ON
++#undef WANT_NOTIFY_BITCHX_COM /* ON */
  
  
  /*

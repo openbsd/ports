@@ -1,6 +1,17 @@
-$OpenBSD: patch-source_commands_c,v 1.2 2002/06/30 18:23:31 brad Exp $
---- source/commands.c.orig	Mon Jan  8 01:24:22 2001
-+++ source/commands.c	Thu Feb 28 17:29:03 2002
+$OpenBSD: patch-source_commands_c,v 1.3 2004/01/04 23:46:49 espie Exp $
+--- source/commands.c.orig	2001-01-08 07:24:22.000000000 +0100
++++ source/commands.c	2004-01-05 00:38:36.000000000 +0100
+@@ -203,8 +203,8 @@ IrcCommand irc_command[] =
+ 	{ "ADDLAMENICK","AddLameNick",	add_bad_nick,		0,	"%Y<%Cnick%G|%Cnick%C nick nick%Y>%n\n - Adds %Y<%Cnick%Y>%n to your lame nicklist, bans nick!*@*"},
+ 	{ "ADDNOFLOOD",	"AddNoFlood",	add_no_flood,		0,	"%Y<%Cnick%Y>%n\n - Adds %Cnick%n to your no flood list" },
+ #ifdef WANT_USERLIST
+-	{ "ADDSHIT",	"AddShit",	add_shit,		0,	"%Y<%Cnick%G|%Cnick%G!%nuser%Y@%n
+-	hostname%Y>%n %Y<%Bchannel%G|%Y*>%n %R[%nshitlevel%R]%n %R[%nreason%R]%n\n- Add %Y<%Cnick%G|%Cnick%G!%nuser%Y@%nhostname%Y>%n to your shitlist on %Y<%Bchannel%G|%Y*>%n with %R[%nshitlevel%R]%n and for %R[%nreason%R]%n" },
++	{ "ADDSHIT",	"AddShit",	add_shit,		0,	"%Y<%Cnick%G|%Cnick%G!%nuser%Y@%n\n"
++"	hostname%Y>%n %Y<%Bchannel%G|%Y*>%n %R[%nshitlevel%R]%n %R[%nreason%R]%n\n- Add %Y<%Cnick%G|%Cnick%G!%nuser%Y@%nhostname%Y>%n to your shitlist on %Y<%Bchannel%G|%Y*>%n with %R[%nshitlevel%R]%n and for %R[%nreason%R]%n" },
+ 	{ "ADDUSER",	"AddUser",	add_user,		0,	"%Y<%Cnick%G|%Cnick%G!%nuser%Y@%nhostname%Y>%n %Y<%Bchannel%G|%Y*>%n %R[%nuserlevel%R]%n %R[%nauto-op%R]%n %R[%nprotection%R]%n %R[%npassword%R]%n\n - Adds %Y<%Cnick%G|%Cnick%G!%nuser%Y@%nhostname%Y>%n on %Y<%Bchannel%G|%Y*>%n with %R[%nuserlevel%R]%n %R[%nauto-op%R]%n and %R[%nprotection%R]%n levels to your userlist" },
+ #endif
+ 	{ "ADDWORD",	NULL,		add_ban_word,		0,	"%Y<%Bchannel%G|%Y*>%n %Y<%nword%y(%ns%y)%Y>%n\n- Adds %Y<%nword%y(%ns%y)%Y>%n to wordlist, anyone saying it in %Y<%Bchannel%G|%Y*>%n will be kicked" },
 @@ -2604,13 +2604,13 @@ BUILT_IN_COMMAND(e_hostname)
  		int i;
  		char *newhost = NULL;
