@@ -1,20 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.5 2002/11/04 16:59:05 wilfried Exp $
---- configure.in.orig	Wed Oct 23 17:18:57 2002
-+++ configure.in	Mon Nov  4 17:26:16 2002
+$OpenBSD: patch-configure_in,v 1.6 2002/12/16 16:58:12 wilfried Exp $
+--- configure.in.orig	Thu Nov 14 14:57:39 2002
++++ configure.in	Mon Dec 16 16:51:49 2002
 @@ -32,9 +32,9 @@ dnl Required file in package...
  AC_INIT(src/Fl.cxx)
  
  dnl FLTK library versions...
 -FL_MAJOR_VERSION=1
--FL_MINOR_VERSION=1
--FL_PATCH_VERSION=1
 +FL_MAJOR_VERSION=2
-+FL_MINOR_VERSION=0
+ FL_MINOR_VERSION=1
+-FL_PATCH_VERSION=2
 +FL_PATCH_VERSION=0
  FL_RELEASE_VERSION=
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
  
-@@ -632,7 +632,7 @@ if test -n "$GCC"; then
+@@ -664,7 +664,7 @@ if test -n "$GCC"; then
  	    ;;
      esac
  
@@ -23,7 +22,7 @@ $OpenBSD: patch-configure_in,v 1.5 2002/11/04 16:59:05 wilfried Exp $
  
      # Show all standard warnings + unused variables when compiling...
      OPTIM="-Wall -Wunused $OPTIM"
-@@ -659,7 +659,7 @@ if test -n "$GCC"; then
+@@ -691,7 +691,7 @@ if test -n "$GCC"; then
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else

@@ -1,7 +1,7 @@
-$OpenBSD: patch-makeinclude_in,v 1.1 2002/08/10 19:57:20 wilfried Exp $
---- makeinclude.in.orig	Tue Jul 16 01:38:11 2002
-+++ makeinclude.in	Sat Aug 10 18:09:06 2002
-@@ -97,32 +97,24 @@ POSTBUILD	= @POSTBUILD@
+$OpenBSD: patch-makeinclude_in,v 1.2 2002/12/16 16:58:12 wilfried Exp $
+--- makeinclude.in.orig	Mon Aug  5 19:58:16 2002
++++ makeinclude.in	Mon Dec 16 17:27:38 2002
+@@ -98,32 +98,24 @@ POSTBUILD	= @POSTBUILD@
  CAT1EXT		= @CAT1EXT@
  CAT3EXT		= @CAT3EXT@
  
