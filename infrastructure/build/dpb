@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.7 2004/10/24 14:16:38 sturm Exp $
+# $OpenBSD: dpb,v 1.8 2004/11/14 11:25:53 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,37 +29,11 @@ use strict;
 use File::Temp;
 use Getopt::Std;
 
-our @FREE_HOSTS = ();
-our @DOWN_HOSTS = ();
-our $CHECK_HOSTS;
-our $check_host_ctr = 0;
-
-# indexed by child pid
-our $CHILD;
-use constant {
-	HOST => 0,
-	PORT => 1,
-	RETVAL => 2
-};
-
-# indexed by port
-our %childpid = ();
-
-# dependency lists
-our %depend_on = ();
-our %prereqs_of = ();
-
-chomp(my $ARCH = `/usr/bin/arch -s`);
 our $MAKE = "/usr/bin/make";
 our $MAKEFLAGS = "BATCH=Yes BIN_PACKAGES=Yes BULK=Yes TRUST_PACKAGES=Yes";
 our $PORTSDIR = $ENV{'PORTSDIR'} || "/usr/ports";
 our $TMPDIR = $ENV{'PKG_TMPDIR'} || '/var/tmp';
-our $TIMEOUT = 60;
-our @SSH = ("/usr/bin/ssh", "-n", "-o ConnectTimeout=$TIMEOUT");
-
-our %FIFO = ();
-our %SHELL = ();
-our %SSH_MASTER = ();
+our @SSH = ("/usr/bin/ssh", "-n");
 
 # -A <Arch>: specify architecture of build hosts
 # -b: force creation of dependency file
@@ -73,19 +47,47 @@ our %SSH_MASTER = ();
 # -s: build all packages in cwd
 # -T <Dependency File>: use <Dependency File> instead of a temporary one
 # -t <Timeout>: use this timeout instead of the default
-our ($opt_A, $opt_b, $opt_c, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_s, $opt_T, $opt_t);
+our ($opt_A, $opt_b, $opt_c, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_s,
+    $opt_T, $opt_t);
 getopts('A:bcdeF:L:S:sT:t:');
 
-$ARCH = $opt_A if defined $opt_A;
+our $ARCH;
+if (defined $opt_A) {
+	$ARCH = $opt_A;
+} else {
+	chomp($ARCH = `/usr/bin/arch -s`);
+}
 
-$opt_F = "$PORTSDIR/infrastructure/db/hosts-$ARCH" unless defined $opt_F;
+our $HOSTS_FILE = $opt_F || "$PORTSDIR/infrastructure/db/hosts-$ARCH";
 
-$opt_L = "$PORTSDIR/logs/$ARCH" unless defined $opt_L;
-our $LOGGER = "$PORTSDIR/infrastructure/build/portslogger $opt_L";
+our $LOGGER = "$PORTSDIR/infrastructure/build/portslogger ";
+$LOGGER .= $opt_L || "$PORTSDIR/logs/$ARCH";
 
-$TIMEOUT = $opt_t if defined $opt_t;
+our $TIMEOUT = $opt_t || 60;
+push @SSH, "-o ConnectTimeout=$TIMEOUT";
 
-our @dead_children = ();
+
+# per slave pid: host, port and retval
+our $SLAVES = {};
+
+# indexed by port
+our %childpid = ();
+
+# dependency lists
+our %depend_on = ();
+our %prereqs_of = ();
+
+our @FREE_HOSTS = ();
+our @DOWN_HOSTS = ();
+
+our %FIFO = ();
+our %SHELL = ();
+our %SSH_MASTER = ();
+
+our $CHECK_HOSTS;
+our $check_host_ctr = 0;
+
+our @dead_slaves = ();
 
 sub child_handler()
 {
@@ -96,9 +98,9 @@ sub child_handler()
 		# host/session died, retry build
 		$retval = 255 if $sig > 0 and $retval == 0;
 		
-		if (defined $CHILD->{$child}) {
-			$CHILD->{$child}[RETVAL] = $retval;
-			push(@dead_children, $child);
+		if (defined $SLAVES->{$child}) {
+			$SLAVES->{$child}{retval} = $retval;
+			push(@dead_slaves, $child);
 		} elsif (exists $CHECK_HOSTS->{$child}) {
 			$CHECK_HOSTS->{$child} = $retval;
 		}
@@ -112,8 +114,8 @@ sub term_handler()
 	local $SIG{INT}  = "IGNORE";
 	local $SIG{TERM} = "IGNORE";
 
-	foreach my $h (keys %{$CHECK_HOSTS}, keys %{$CHILD}) {
-		kill INT => $h;
+	foreach my $pid (keys %{$CHECK_HOSTS}, keys %{$SLAVES}) {
+		kill INT => $pid;
 	}
 	
 	clean_up(1);
@@ -136,17 +138,19 @@ sub my_exec($$)
 	die "Cannot @{$args}: $!";
 }
 
-sub reap_children()
+sub reap_slaves()
 {
-	while (my $c = pop @dead_children) {
-		update_after_child($c);
+	while (my $c = pop @dead_slaves) {
+		update_after_slave($c);
 	}
 }
 
-sub mark_as_down($)
+sub mark_host_down($)
 {
 	my $host = shift;
-	print "*** lost $host\n";
+
+	warn "*** lost $host\n";
+
 	kill_ssh_master($host);
 	push(@DOWN_HOSTS, $host);
 }
@@ -253,7 +257,7 @@ sub check_hosts()
 		my $retval = check_host($host);
 
 		if ($retval == 0) {
-			print "*** $host is back\n";
+			warn "*** $host is back\n";
 			mark_as_free($host);
 			start_ssh_master($host);
 			splice(@DOWN_HOSTS, $i, 1);
@@ -268,7 +272,7 @@ sub check_hosts()
 		my $retval = check_host($host);
 
 		if ($retval != 0) {
-			mark_as_down($host);
+			mark_host_down($host);
 			splice(@FREE_HOSTS, $i, 1);
 			$i--;
 			next;
@@ -278,30 +282,30 @@ sub check_hosts()
 	}
 
 	# building hosts all still alive?
-	foreach my $pid (keys %{$CHILD}) {
-		my $host = $CHILD->{$pid}[HOST];
+	foreach my $pid (keys %{$SLAVES}) {
+		my $host = $SLAVES->{$pid}{host};
 		next if ($host =~ /^localhost/);
 		my $retval = check_host($host);
 
 		if ($retval != 0) {
-			my $port = $CHILD->{$pid}[PORT];
-			mark_as_down($host);
+			my $port = $SLAVES->{$pid}{port};
+			mark_host_down($host);
 			delete $childpid{$port};
-			delete $CHILD->{$pid};
+			delete $SLAVES->{$pid};
 		}
 	}
 }
 
-sub update_after_child($)
+sub update_after_slave($)
 {
 	my $pid = shift;
-	return unless defined $CHILD->{$pid};
+	return unless defined $SLAVES->{$pid};
 	
-	my $host = $CHILD->{$pid}[HOST];
-	my $port = $CHILD->{$pid}[PORT];
-	my $retval = $CHILD->{$pid}[RETVAL];
+	my $host = $SLAVES->{$pid}{host};
+	my $port = $SLAVES->{$pid}{port};
+	my $retval = $SLAVES->{$pid}{retval};
 
-	delete $CHILD->{$pid};
+	delete $SLAVES->{$pid};
 
 	if ($retval == 0) {
 		print "<== built $port\n";
@@ -314,11 +318,11 @@ sub update_after_child($)
 		remove_port($port);
 	} elsif ($retval == 255) {
 		delete $childpid{$port};
-		mark_as_down($host);
+		mark_host_down($host);
 
 		return;
 	} else {
-		print "*** Unexpected return code $retval from $host "
+		warn "*** Unexpected return code $retval from $host "
 		    . "for $port.\n";
 
 		remove_port($port);
@@ -330,14 +334,14 @@ sub update_after_child($)
 sub find_free_host()
 {
 	child_handler();
-	reap_children();
+	reap_slaves();
 	check_hosts();
 
 	while (@FREE_HOSTS == 0) {
 		sleep(1);
 
 		child_handler();
-		reap_children();
+		reap_slaves();
 		check_hosts();
 	}
 	return pop @FREE_HOSTS;
@@ -360,7 +364,7 @@ sub remove_port($)
 		}
 		remove_port($dep) unless $dep eq $port;
 	}
-	print "*** will not build $port\n";
+	warn "*** will not build $port\n";
 	delete $prereqs_of{$port};
 	delete $depend_on{$port};
 }
@@ -423,7 +427,7 @@ sub parse_dependency_file()
 
 sub parse_hosts_file()
 {
-	open(my $fh, "<", $opt_F) or die "Could not open $opt_F: $!";
+	open(my $fh, "<", $HOSTS_FILE) or die "Could not open $HOSTS_FILE: $!\n";
 
 	while (<$fh>) {
 		chomp;
@@ -451,10 +455,10 @@ sub build_package($$$$)
 	
 	if ($pid > 0) {
 		# parent
-		$CHILD->{$pid} = [];
-		$CHILD->{$pid}[HOST] = $host;
-		$CHILD->{$pid}[PORT] = $fullport;
-		$CHILD->{$pid}[RETVAL] = undef;
+		$SLAVES->{$pid} = {};
+		$SLAVES->{$pid}{host} = $host;
+		$SLAVES->{$pid}{port} = $fullport;
+		$SLAVES->{$pid}{retval} = undef;
 		$childpid{$fullport} = $pid;
 
 		return;
@@ -635,7 +639,7 @@ do {
 	check_hosts();
 
 	child_handler();
-	reap_children();
+	reap_slaves();
 
 	# create new key set, taking currently building ports into account
 	@keys_childpid = (keys %childpid);
