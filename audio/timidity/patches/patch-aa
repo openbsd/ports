@@ -16,17 +16,17 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  
  # Where to install the executable
 -BIN_DIR = /usr/local/bin
-+BIN_DIR = ${PREFIX}/bin
++BIN_DIR = ${DESTDIR}${PREFIX}/bin
  
  # Where to install the manual pages
 -MAN_DIR = /usr/local/man/man1
-+MAN_DIR = ${PREFIX}/man/man1
++MAN_DIR = ${DESTDIR}${PREFIX}/man/man1
  
  # Where to install the patches, config files, and MIDI files.
  # If you change this, it's a good idea to recompile the binary,
  # or you'll need to invoke timidity with the -L option.
 -TIMID_DIR = /usr/local/lib/timidity
-+TIMID_DIR = ${PREFIX}/lib/timidity
++TIMID_DIR = ${DESTDIR}${PREFIX}/lib/timidity
  
  # Where to install the Tcl code, if you use the Tcl code that is.
  TCL_DIR = $(TIMID_DIR)
@@ -70,8 +70,8 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
 +# Select the MOTIF interface
 +SYSTEM += -DMOTIF
 +SYSEXTRAS += motif_c.c motif_i.c motif_p.c
++EXTRAINCS += -I/usr/local/include -L/usr/local/lib
 +EXTRAINCS += -I/usr/X11R6/include -L/usr/X11R6/lib
-+EXTRAINCS += -I/usr/include/X11
 +EXTRALIBS += -lXm -lXt -lX11
 +# Solaris needs libgen?
  #EXTRALIBS += -lgen
