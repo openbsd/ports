@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/02/20 01:17:03 brad Exp $
---- configure.in.orig	Wed Feb  6 19:20:15 2002
-+++ configure.in	Wed Feb  6 19:31:03 2002
+$OpenBSD: patch-configure_in,v 1.2 2002/03/19 15:20:07 brad Exp $
+--- configure.in.orig	Thu Feb 14 14:10:34 2002
++++ configure.in	Sat Mar 16 12:34:28 2002
 @@ -704,6 +704,18 @@ AC_ARG_ENABLE(ipf-transparent,
    fi
  ])
@@ -28,7 +28,26 @@ $OpenBSD: patch-configure_in,v 1.1 2002/02/20 01:17:03 brad Exp $
  	netdb.h \
  	netinet/if_ether.h \
  	netinet/in.h \
-@@ -1620,6 +1633,25 @@ if test "$IPF_TRANSPARENT" ; then
+@@ -1454,18 +1467,6 @@ dnl during compile.
+ 		;;
+ esac
+ 
+-# Remove optimization for GCC 2.95.[123]
+-# gcc -O[2] on *BSD and Linux (x86) causes pointers to magically become NULL
+-if test "$GCC" = "yes"; then
+-	GCCVER=`$CC -v 2>&1 | awk '$2 ==  "version" {print $3}'`
+-	case "$GCCVER" in
+-	[2.95.[123]])
+-		echo "Removing -O for gcc on $host with GCC $GCCVER"
+-		CFLAGS="`echo $CFLAGS | sed -e 's/-O[[0-9]]*//'`"
+-		;;
+-	esac
+-fi
+-
+ # Recommended by Balint Nagy Endre <bne@CareNet.hu>
+ case "$host" in
+ 	*-univel-sysv4.2MP)
+@@ -1620,6 +1621,25 @@ if test "$IPF_TRANSPARENT" ; then
  fi 
  if test "$IPF_TRANSPARENT" = "no" ; then
      echo "WARNING: Cannot find necessary IP-Filter header files"
