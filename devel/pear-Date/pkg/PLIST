@@ -1,7 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/28 22:31:56 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/02/29 00:09:28 avsm Exp $
+pear/doc/Date/TODO
 pear/lib/.registry/date.reg
 pear/lib/Date.php
 pear/lib/Date/Calc.php
 pear/lib/Date/Human.php
+pear/lib/Date/Span.php
 pear/lib/Date/TimeZone.php
+pear/tests/Date/tests/bug674.php
+pear/tests/Date/tests/bug727_1.php
+pear/tests/Date/tests/bug727_2.php
+pear/tests/Date/tests/bug727_3.php
+pear/tests/Date/tests/bug727_4.php
+pear/tests/Date/tests/test_calc.php
+pear/tests/Date/tests/test_date_methods_span.php
+pear/tests/Date/tests/testunit.php
+pear/tests/Date/tests/testunit_date.php
+pear/tests/Date/tests/testunit_date_span.php
+pear/tests/Date/tests/weeksinmonth_4_monday.txt
+pear/tests/Date/tests/weeksinmonth_4_sunday.txt
+pear/tests/Date/tests/weeksinmonth_rdm_monday.txt
+pear/tests/Date/tests/weeksinmonth_rdm_sunday.txt
+pear/tests/Date/tests/wknotest.txt
+@dirrm pear/tests/Date/tests
+@dirrm pear/tests/Date
 @dirrm pear/lib/Date
+@dirrm pear/doc/Date
+@dirrm lib/php
+@dirrm lib

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/03 10:56:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/29 00:09:28 avsm Exp $
 
 COMMENT=	"date and timezone classes for PHP"
 
-V=		1.3
+V=		1.4.1
 DISTNAME=	Date-${V}
 PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
