@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.1 2001/05/26 05:13:48 form Exp $
---- src/util.c.orig	Sat May 26 11:56:46 2001
-+++ src/util.c	Sat May 26 11:56:54 2001
-@@ -211,7 +211,7 @@ char *MsgEllipsis (char *msg)
+--- src/util.c.orig	Thu Jul 19 13:06:55 2001
++++ src/util.c	Thu Jul 19 13:07:10 2001
+@@ -215,7 +215,7 @@
          {
              if (*p == '\r' || *p == '\n')
              {

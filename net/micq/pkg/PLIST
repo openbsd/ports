@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/05/26 05:13:48 form Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/07/25 16:13:09 kevlo Exp $
 bin/micq
 man/man1/micq.1
-share/doc/micq/CHANGELOG
+man/man5/micqrc.5
+man/man7/micq.7
 share/doc/micq/README
+share/doc/micq/README.SOCKS5
+share/doc/micq/commands.txt
+share/doc/micq/icq091.txt
 share/micq/bg.i18n
 share/micq/br.i18n
 share/micq/cn.i18n
 share/micq/de.i18n
 share/micq/en.i18n
+share/micq/en_fun.i18n
 share/micq/es.i18n
 share/micq/fi.i18n
 share/micq/fr.i18n
