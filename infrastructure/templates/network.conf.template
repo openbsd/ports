@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.36 2002/05/08 02:32:57 brad Exp $
+# $OpenBSD: network.conf.template,v 1.37 2002/05/12 21:19:31 brad Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -218,7 +218,6 @@ MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+=	\
-	http://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
