@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-recommended,v 1.1 2001/12/18 01:40:48 avsm Exp $
---- php.ini-recommended.orig	Sat Nov 24 19:38:07 2001
-+++ php.ini-recommended	Sat Nov 24 19:38:13 2001
-@@ -396,7 +396,7 @@ upload_max_filesize = 2M
+$OpenBSD: patch-php_ini-recommended,v 1.2 2002/06/16 15:47:29 avsm Exp $
+--- php.ini-recommended.orig	Wed Apr 24 02:51:50 2002
++++ php.ini-recommended	Sun Jun 16 16:09:27 2002
+@@ -417,7 +417,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2002/04/06 23:12:17 brad Exp $
+# $OpenBSD: Makefile,v 1.67 2002/06/16 15:47:29 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -10,7 +10,7 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
 
-V=		4.1.2
+V=		4.2.1
 DISTNAME=	php-${V}
 PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
@@ -221,5 +221,6 @@ do-install:
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
 	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
 	cd ${WRKSRC}/pear && env INSTALL_ROOT=${DESTDIR} make install
+	cd ${PREFIX}/lib && tar -zxvf ${FILESDIR}/pear-412-421.tgz
 
 .include <bsd.port.mk>

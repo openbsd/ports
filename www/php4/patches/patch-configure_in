@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2001/12/18 01:40:48 avsm Exp $
---- configure.in.orig	Mon Dec 17 21:26:33 2001
-+++ configure.in	Mon Dec 17 21:34:50 2001
-@@ -669,7 +669,7 @@ unset with_pic
+$OpenBSD: patch-configure_in,v 1.5 2002/06/16 15:47:29 avsm Exp $
+--- configure.in.orig	Sun May 12 22:23:57 2002
++++ configure.in	Sun Jun 16 16:09:26 2002
+@@ -792,7 +792,7 @@ unset with_pic
  
  case $php_build_target in
  program|static)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.4 2001/12/18 01:40:48 avsm Exp $
      if test "$lib_build_shared" != "yes"; then
          enable_shared=no
      fi
-@@ -678,7 +678,7 @@ program|static)
+@@ -801,7 +801,7 @@ program|static)
  ;;
  shared)
      enable_static=no
