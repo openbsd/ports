@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2001/12/31 19:22:59 shell Exp $
+# $OpenBSD: Makefile,v 1.186 2001/12/31 21:01:23 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -119,8 +119,8 @@
      SUBDIR += pure-ftpd,ldap
      SUBDIR += pure-ftpd,mysql
      SUBDIR += pure-ftpd,postgresql
+     SUBDIR += py-curl
      SUBDIR += py-libpcap
-     SUBDIR += pu-curl
      SUBDIR += queso
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
