@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_apps_demo_run_demo,v 1.1.1.1 2005/01/18 17:34:15 mbalmer Exp $
+--- src/apps/demo/run_demo.orig	Tue Jan 18 17:36:37 2005
++++ src/apps/demo/run_demo	Tue Jan 18 17:36:42 2005
+@@ -5,7 +5,7 @@
+ 
+ 	BASE='interL'
+ 	PROGRAM="$BASE.c"
+-	COMPILE="cc -I../.. -o $BASE $PROGRAM `find ../../ -name libJudy.a`"
++	COMPILE="cc -Iy0y0/include -o $BASE $PROGRAM y0y0/lib/libJudy.a"
+ 
+ 	set -e			# exit if anything goes wrong.
+ 
