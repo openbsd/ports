@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:47:15 jose Exp $
---- Makefile.in.orig	Mon Jul 21 18:29:22 2003
-+++ Makefile.in	Wed Aug 20 22:28:18 2003
+$OpenBSD: patch-Makefile_in,v 1.2 2004/05/20 21:25:46 miod Exp $
+--- Makefile.in.orig	2004-03-01 23:58:59.000000000 +0000
++++ Makefile.in	2004-05-17 09:30:31.000000000 +0000
 @@ -40,6 +40,9 @@ mandir			= @mandir@
  # when installing files.
  INSTALL_ROOT		=
@@ -120,7 +120,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:47:15 jose Exp $
  
  Makefile: $(UNIX_DIR)/Makefile.in $(DLTEST_DIR)/Makefile.in
  	$(SHELL) config.status
-@@ -1396,7 +1426,7 @@ package-quick: package-config package-bi
+@@ -1401,7 +1431,7 @@ package-quick: package-config package-bi
  package-config:
  	mkdir -p $(DISTDIR)/unix/`arch`
  	cd $(DISTDIR)/unix/`arch`; \

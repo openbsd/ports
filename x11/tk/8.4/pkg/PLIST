@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/19 15:45:59 jose Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/05/20 21:25:47 miod Exp $
 @option no-default-conflict
 @pkgcfl tk-8.4.*
 bin/wish8.4
@@ -556,7 +556,6 @@ lib/tk8.4/obsolete.tcl
 lib/tk8.4/optMenu.tcl
 lib/tk8.4/palette.tcl
 lib/tk8.4/panedwindow.tcl
-lib/tk8.4/pkgIndex.tcl
 lib/tk8.4/prolog.ps
 lib/tk8.4/safetk.tcl
 lib/tk8.4/scale.tcl

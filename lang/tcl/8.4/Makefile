@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/20 21:25:44 miod Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -30,6 +30,9 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+CONFIGURE_ARGS+= --disable-shared
+.endif
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/tcl${VERSION}/unix

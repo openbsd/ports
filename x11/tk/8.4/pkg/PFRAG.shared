@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/11/19 15:45:59 jose Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/05/20 21:25:46 miod Exp $
 lib/libtk84.so.1.0
+lib/tk8.4/pkgIndex.tcl
 DYNLIBDIR(%D/lib)

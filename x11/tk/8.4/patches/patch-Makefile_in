@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
---- Makefile.in.orig	Mon Jul 21 18:29:44 2003
-+++ Makefile.in	Tue Aug 19 22:45:54 2003
+$OpenBSD: patch-Makefile_in,v 1.2 2004/05/20 21:25:46 miod Exp $
+--- Makefile.in.orig	2004-03-02 00:04:48.000000000 +0000
++++ Makefile.in	2004-05-17 10:34:16.000000000 +0000
 @@ -227,7 +227,7 @@ TCL_STUB_FLAGS		= @TCL_STUB_FLAGS@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -389,7 +389,7 @@ DEMOPROGS = browse hello ixset rmt rolod
+@@ -390,7 +390,7 @@ DEMOPROGS = browse hello ixset rmt rolod
  
  all: binaries libraries doc
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
  
  libraries:
  
-@@ -409,6 +409,11 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -410,6 +410,11 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -532,10 +537,14 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
+@@ -533,10 +538,14 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -548,6 +557,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
+@@ -549,6 +558,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_ST
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -55,20 +55,20 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images \
  		$(SCRIPT_INSTALL_DIR)/msgs; \
  	    do \
-@@ -562,11 +572,19 @@ install-libraries:
+@@ -563,11 +573,19 @@ install-libraries:
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
 -		$(GENERIC_DIR)/tkPlatDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
- 	    do \
--	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    do \
 +	    echo "Installing $$i"; \
 +	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done
 +	@for i in $(UNIX_DIR)/*.h ; \
-+	    do \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR); \
  	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h

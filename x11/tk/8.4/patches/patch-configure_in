@@ -1,6 +1,7 @@
---- configure.in~	Tue Jul 22 00:29:44 2003
-+++ configure.in	Wed Aug 20 23:08:24 2003
-@@ -102,6 +102,8 @@
+$OpenBSD: patch-configure_in,v 1.2 2004/05/20 21:25:46 miod Exp $
+--- configure.in.orig	2004-03-02 00:04:48.000000000 +0000
++++ configure.in	2004-05-17 10:34:16.000000000 +0000
+@@ -108,6 +108,8 @@ SC_CONFIG_CFLAGS
  
  SC_ENABLE_SYMBOLS
  
@@ -9,7 +10,7 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  TK_DBGX=${DBGX}
-@@ -349,7 +351,7 @@
+@@ -361,7 +363,7 @@ eval eval "TK_UNSHARED_LIB_SUFFIX=${UNSH
  
  if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
      SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \${TCL_STUB_LIB_SPEC}"
