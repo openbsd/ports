@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/17 07:29:33 margarida Exp $
+--- configure.orig	Sun Oct 20 08:26:56 2002
++++ configure	Fri May 16 19:11:02 2003
+@@ -1122,7 +1122,7 @@ fi;
+ if test "x$enable_release" = "xyes"; then
+     FLAGS_ALL="-O2 -fomit-frame-pointer -Wall -fsigned-char"
+ else
+-    FLAGS_ALL="-g -O0 -Wall -fsigned-char"
++    FLAGS_ALL="${CFLAGS} -fsigned-char"
+ fi
+ 
+ if test "x$enable_profiling" = "xyes"; then

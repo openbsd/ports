@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/17 07:29:33 margarida Exp $
+bin/ht
+share/doc/ht/README
+share/doc/ht/ht.html
+@dirrm share/doc/ht
