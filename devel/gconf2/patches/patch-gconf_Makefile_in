@@ -1,6 +1,6 @@
---- gconf/Makefile.in.orig	Wed Dec  1 15:09:31 2004
-+++ gconf/Makefile.in	Wed Dec  1 15:16:57 2004
-@@ -208,6 +208,7 @@
+--- gconf/Makefile.in.orig	Tue Oct 12 09:49:08 2004
++++ gconf/Makefile.in	Wed Dec 22 18:48:43 2004
+@@ -208,6 +208,7 @@ INCLUDES = \
  	-DVERSION=\""$(VERSION)"\"					\
  	-DGCONF_ENABLE_INTERNALS=1					\
  	-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"				\

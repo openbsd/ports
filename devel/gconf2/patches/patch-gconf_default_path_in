@@ -1,5 +1,5 @@
---- gconf/default.path.in.orig	Wed Dec  1 15:18:26 2004
-+++ gconf/default.path.in	Wed Dec  1 15:19:44 2004
+--- gconf/default.path.in.orig	Thu Jul  8 22:44:44 2004
++++ gconf/default.path.in	Wed Dec 22 18:48:43 2004
 @@ -6,7 +6,7 @@
  # See the GConf manual for details
  
@@ -9,7 +9,7 @@
  
  # To read in any mandatory settings that the Sys Admin may have created
  # prior to a desktop system upgrade. The SysAdmin can stick read-only system
-@@ -26,7 +26,7 @@
+@@ -26,7 +26,7 @@ xml:readwrite:$(HOME)/.gconf
  include @EXPANDED_SYSGCONFDIR@/2/local-defaults.path
  
  # Finally, look at the systemwide defaults
