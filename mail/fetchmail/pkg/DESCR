@@ -1,6 +1,13 @@
-Fetchmail is a full-featured IMAP/POP2/POP3/APOP/KPOP client with easy
-configuration, daemon mode, forwarding via SMTP or local MDA, superior
-reply handling. Not a mail user agent, rather a pipe-fitting that
-seamlessly forwards fetched mail to your local delivery system. Your
-one-stop solution for intermittent email connections. This is the
-lineal descendant of and replacement for the old popclient program.
+fetchmail is a free, full-featured, robust, well-documented remote
+mail retrieval and forwarding utility intended to be used over
+on-demand TCP/IP links (such as SLIP or PPP connections).  It
+retrieves mail from remote mail servers and forwards it to your local
+(client) machine's delivery system, so it can then be be read by
+normal mail user agents such as elm(1) or Mail(1).
+
+fetchmail supports standard all mail-retrieval protocols in use on the
+Internet: POP2, POP3 (including POP3 with RFC1938 one-time passwords),
+RPOP, APOP, KPOP, Compuserve's POP3 with RPA, Demon Internet's SDPS, 
+all flavors of IMAP (including IMAP4rev1 with RFC1731 Kerberos v4  or
+GSSAPI authentication), and ESMTP ETRN.
+
