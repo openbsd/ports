@@ -1,0 +1,9 @@
+==============================================================
+Documentation in text and HTML format has been installed to
+${PREFIX}/share/doc/vmailmgr - read this now!
+
+You can also find a set of PHP classes for interfacing to 
+VMailMgr, and example run scripts for use with daemontools
+in ${PREFIX}/share/examples/vmailmgr
+==============================================================
+

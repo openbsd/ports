@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/14 15:47:11 avsm Exp $
+bin/allvpasswd2cdb
+bin/checkvpw
+bin/listvdomain
+bin/showvconfig
+bin/vaddalias
+bin/vadduser
+bin/vaddusers
+bin/vauthenticate
+bin/vchattr
+bin/vcheckquota
+bin/vchforwards
+bin/vconf2dir
+bin/vdeliver
+bin/vdeluser
+bin/vpasswd
+bin/vpasswd2cdb
+bin/vpasswd2db
+bin/vpasswds
+bin/vpopbull
+bin/vrehash
+bin/vsetup
+libexec/authlib/authvmailmgr
+libexec/vmailmgr/cgi-bin/listvdomain
+libexec/vmailmgr/cgi-bin/vaddalias
+libexec/vmailmgr/cgi-bin/vadduser
+libexec/vmailmgr/cgi-bin/vchattr
+libexec/vmailmgr/cgi-bin/vchforwards
+libexec/vmailmgr/cgi-bin/vdeluser
+libexec/vmailmgr/cgi-bin/vpasswd
+man/man1/checkvpw.1
+man/man1/listvdomain.1
+man/man1/vadduser.1
+man/man1/vauthenticate.1
+man/man1/vchattr.1
+man/man1/vcheckquota.1
+man/man1/vchforwards.1
+man/man1/vdeliver.1
+man/man1/vdeluser.1
+man/man1/vpasswd.1
+man/man1/vpasswd2cdb.1
+man/man1/vpasswd2db.1
+man/man1/vpasswds.1
+man/man1/vpopbull.1
+man/man1/vrehash.1
+man/man1/vsetup.1
+man/man7/vmailmgr.7
+man/man8/vmailmgrd.8
+sbin/vmailmgrd
+share/doc/vmailmgr/TODO
+share/doc/vmailmgr/html/ChangeLog.html
+share/doc/vmailmgr/html/FAQ.html
+share/doc/vmailmgr/html/HOWTO.html
+share/doc/vmailmgr/html/NEWS.html
+share/doc/vmailmgr/html/configuration.html
+share/doc/vmailmgr/html/vmailmgr-cgi.html
+share/doc/vmailmgr/html/vmailmgr.html
+share/doc/vmailmgr/misc/translation.fig
+share/doc/vmailmgr/misc/translation.ps
+share/doc/vmailmgr/misc/vmailmgr.pod
+share/doc/vmailmgr/txt/FAQ.txt
+share/doc/vmailmgr/txt/HOWTO.txt
+share/doc/vmailmgr/txt/configuration.txt
+share/doc/vmailmgr/txt/protocol.txt
+share/doc/vmailmgr/txt/record-format.txt
+share/doc/vmailmgr/txt/vmailmgr-cgi.txt
+share/examples/vmailmgr/autoresponder.sh
+share/examples/vmailmgr/vmail.inc
+share/examples/vmailmgr/vmailmgrd-log.run
+share/examples/vmailmgr/vmailmgrd.init
+share/examples/vmailmgr/vmailmgrd.run
+@dirrm share/examples/vmailmgr
+@dirrm share/doc/vmailmgr/txt
+@dirrm share/doc/vmailmgr/misc
+@dirrm share/doc/vmailmgr/html
+@dirrm share/doc/vmailmgr
+@dirrm libexec/vmailmgr/cgi-bin
+@dirrm libexec/vmailmgr

@@ -1,0 +1,11 @@
+--- authenticate/Makefile.in.orig	Sun Oct  1 04:33:29 2000
++++ authenticate/Makefile.in	Mon Dec  4 23:30:31 2000
+@@ -83,7 +83,7 @@ pythonlibdir = @pythonlibdir@
+ 
+ bin_PROGRAMS = checkvpw vauthenticate
+ authlib_PROGRAMS = authvmailmgr
+-authlibdir = ${prefix}/lib/courier-imap/libexec/authlib/
++authlibdir = ${libexecdir}/authlib
+ 
+ noinst_PODS = checkvpw.pod vauthenticate.pod
+ noinst_HTMLS = $(noinst_PODS:.pod=.html)

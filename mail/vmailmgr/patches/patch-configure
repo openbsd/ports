@@ -1,0 +1,20 @@
+--- configure.orig	Sun Oct  1 04:24:23 2000
++++ configure	Mon Dec  4 23:14:10 2000
+@@ -1604,7 +1604,7 @@ else
+   WANTPYTHON_FALSE=
+ fi
+ 
+-phpdir="/home/httpd/php"
++phpdir="${datadir}/examples/vmailmgr"
+ 
+ 
+ # Extract the first word of "w3m", so it can be a program name with args.
+@@ -2682,7 +2682,7 @@ fi
+ done
+ 
+ 
+-cgidir='${prefix}/cgi-bin'
++cgidir='${libexecdir}/vmailmgr/cgi-bin'
+ 
+ 
+ trap '' 1 2 15
