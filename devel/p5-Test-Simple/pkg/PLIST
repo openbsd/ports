@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/12 08:48:17 shell Exp $
+libdata/perl5/site_perl/Test/More.pm
+libdata/perl5/site_perl/Test/Simple.pm
+libdata/perl5/site_perl/Test/Utils.pm
+man/man3/Test::More.3p
+man/man3/Test::Simple.3p
