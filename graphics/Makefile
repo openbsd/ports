@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2004/10/27 10:12:19 xsa Exp $
+# $OpenBSD: Makefile,v 1.128 2004/10/27 17:47:42 xsa Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -104,6 +104,7 @@
      SUBDIR += povray
      SUBDIR += povray,no_x11
      SUBDIR += py-Imaging
+     SUBDIR += py-dot
      SUBDIR += py-gd
      SUBDIR += qiv
 #    SUBDIR += qvplay
