@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/13 04:19:08 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/04/10 20:01:29 espie Exp $
 
 VERSION=	2.1.30
 DISTNAME=	motif
@@ -12,8 +12,10 @@ MASTER_SITES=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
 MASTER_SITES0=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/fixes/ \
 		ftp://openmotif.opengroup.org/pub/openmotif/R${VERSION}/fixes/ \
 		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${VERSION}/fixes/
-DISTFILES=	openmotif${VERSION}.tar.gz
+MASTER_SITES1=	http://www.opengroup.org/openmotif/license/
+DISTFILES=	openmotif${VERSION}.tar.gz index.html:1
 DIST_SUBDIR=	openmotif
+EXTRACT_ONLY=	openmotif${VERSION}.tar.gz
 
 PATCHFILES=	patch1:0 patch2:0 patch3:0 patch4:0 patch5:0
 PATCH_DIST_STRIP=	-p1
@@ -22,8 +24,8 @@ HOMEPAGE=	http://www.opengroup.org/openmotif/
 
 MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
 
-PERMIT_PACKAGE_CDROM=	Unclear
-PERMIT_DISTFILES_CDROM=	Unclear
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
@@ -74,6 +76,15 @@ post-patch:
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
 	done
+
+DOCS=BUGREPORT CLOSEDBUGS COPYRIGHT.MOTIF OPENBUGS README RELEASE RELNOTES
+DOCDIR=${PREFIX}/share/doc/openmotif
+
+post-install:
+	@${INSTALL_DATA_DIR} ${DOCDIR}
+	@${INSTALL_DATA} ${FULLDISTDIR}/index.html ${DOCDIR}/LICENSE.html
+	@for i in ${DOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; done
+	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
 .include <bsd.port.mk>
 

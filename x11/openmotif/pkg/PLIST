@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/01/03 00:02:58 matt Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/04/10 20:01:30 espie Exp $
 @pkgcfl lesstif-*
 bin/mwm
 bin/uil
@@ -792,7 +792,17 @@ man/man5/Traits.5
 man/man5/UIL.5
 man/man5/WML.5
 man/man5/mwmrc.5
+share/doc/openmotif/BUGREPORT
+share/doc/openmotif/CLOSEDBUGS
+share/doc/openmotif/COPYRIGHT.MOTIF
+share/doc/openmotif/LICENSE.html
+share/doc/openmotif/OPENBUGS
+share/doc/openmotif/README
+share/doc/openmotif/README.OpenBSD
+share/doc/openmotif/RELEASE
+share/doc/openmotif/RELNOTES
 %%SHARED%%
+@dirrm share/doc/openmotif
 @dirrm lib/X11/bindings
 @dirrm lib/X11/config
 @dirrm include/uil
