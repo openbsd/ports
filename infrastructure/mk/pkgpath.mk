@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.3 2003/08/15 00:05:41 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.4 2003/08/28 21:50:12 naddy Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -56,7 +56,7 @@ _flavor_fragment= \
 	    	found_dir=true; \
 		break; \
 	    fi; \
-	done; \
+	done; unset IFS; \
 	if ! $$found_dir; then \
 	    echo 1>&2 ">> Broken dependency: $$dir non existent"; \
 	    exit 1; \
