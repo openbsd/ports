@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.56 2002/05/28 01:13:46 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2002/05/29 01:02:39 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc
+#MAKE_ADA=Yes
 
 # This is a configuration file for egcs
 
@@ -11,6 +12,7 @@ COMMENT-chill=	${COM}: Chill compiler
 COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
+COMMENT-ada=	${COM}: Ada compiler
 
 PKGNAME=	gcc-$V
 PKGNAME-c++ =	g++-$V
@@ -18,6 +20,7 @@ PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
 PKGNAME-java=	gcj-$V
 PKGNAME-objc=	gobjc-$V
+PKGNAME-ada=	gnat-$V
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -47,8 +50,6 @@ PERMIT_DISTFILES_CDROM=Yes
 #MAKE_TESTS=yes
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
-# we don't care about chill
-#MAKE_CHILL=yes
 MAKE_OBJC=Yes
 MAKE_JAVA=Yes
 
@@ -171,24 +172,28 @@ CONFIGURE_STYLE=	gnu dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS=c
-.if defined(MAKE_GXX)
+.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
 LANGS:=${LANGS},c++
 MULTI_PACKAGES+=-c++
 .endif
-.if defined(MAKE_FORTRAN)
+.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
 LANGS:=${LANGS},f77
 MULTI_PACKAGES+=-g77
 .endif
-.if defined(MAKE_CHILL)
-LANGS.=${LANGS},CHILL
-.endif
-.if defined(MAKE_OBJC)
+.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
 LANGS:=${LANGS},objc
 MULTI_PACKAGES+=-objc
 .endif
-.if defined(MAKE_JAVA)
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 LANGS:=${LANGS},java
 MULTI_PACKAGES+=-java
+.endif
+.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+LANGS:=${LANGS},ada
+MULTI_PACKAGES+=-ada
+
+CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
+MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
@@ -196,8 +201,6 @@ MULTI_PACKAGES+=-java
 CFLAGS=-O2 -g
 
 
-#CONFIGURE_ENV=ADAC=${WRKDIR}/bin/adac GNATBIND=${WRKDIR}/bin/gnatbind
-#MAKE_ENV=ADAC=${WRKDIR}/bin/adac GNATBIND=${WRKDIR}/bin/gnatbind
 CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 --disable-nls  --with-system-zlib
 
@@ -206,7 +209,7 @@ CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 CONFIGURE_ARGS+=--enable-cpp
 CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
-.if defined(MAKE_JAVA)
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
 .endif
 
@@ -263,6 +266,10 @@ post-build:
 	find ${WRKBUILD} -name \*.orig|xargs rm
 	mkdir -p ${WRKBUILD}/gcc/include/machine
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
+.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+	cd ${WRKBUILD}/gcc && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} gnatlib_and_tools
+.endif
+
 
 post-install:
 	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/fpic
@@ -270,20 +277,20 @@ post-install:
 # Tests still need to be performed at the end of install, I don't know why.
 
 REGRESS_DEPENDS+=::lang/egcs/stable
-.if defined(MAKE_GXX)
+.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
 REGRESS_DEPENDS+=::lang/egcs/stable,-c++
 .endif
-.if defined(MAKE_FORTRAN)
+.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
 REGRESS_DEPENDS+=::lang/egcs/stable,-g77
 .endif
-.if defined(MAKE_OBJC)
+.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
 REGRESS_DEPENDS+=::lang/egcs/stable,-objc
 .endif
-.if defined(MAKE_JAVA)
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 REGRESS_DEPENDS+=::lang/egcs/stable,-java
 .endif
-.if defined(MAKE_CHILL)
-REGRESS_DEPENDS+=::lang/egcs/stable,-chill
+.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+REGRESS_DEPENDS+=::lang/egcs/stable,-ada
 .endif
 
 TEST_RESULT=${WRKBUILD}/test.result
