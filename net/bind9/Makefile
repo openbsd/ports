@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/05/02 06:41:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2002/06/13 15:27:29 jakob Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
-REGRESS_TARGE=	test
+REGRESS_TARGET=		test
 
 FLAVORS=		debug static threads
 FLAVOR?=
