@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/24 17:27:22 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/24 17:37:49 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -60,13 +60,13 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp5.so ${PREFIX}/${APACHE_MODULE_SUBDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php5
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php5
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
 	     -e 's,OPENBSD_INCLUDE_PATH,/pear/lib:${CHROOT_DIR}/pear/lib,' \
 		<${WRKSRC}/php.ini-${i} \
-		>${PREFIX}/share/doc/php5/php.ini-${i}
+		>${PREFIX}/share/examples/php5/php.ini-${i}
 .endfor
 	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs

@@ -7,7 +7,7 @@ To enable parsing of PHP scripts, add the following to
     AddType application/x-httpd-php .php
 
 Copy the config file below into ${PHP_CONFIG_FILE}
-${PREFIX}/share/doc/php5/php.ini-recommended
+${PREFIX}/share/examples/php5/php.ini-recommended
 
 Don't forget that the default OpenBSD httpd is chrooted
 into /var/www by default, so you may need to create support

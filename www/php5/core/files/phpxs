@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: phpxs,v 1.1.1.1 2004/10/02 12:36:49 robert Exp $
+# $OpenBSD: phpxs,v 1.2 2004/11/24 17:37:49 robert Exp $
 #
 # Copyright (c) 2002-2004 Anil Madhavapeddy <anil@recoil.org>
 # 
@@ -25,7 +25,7 @@ php_version=PHP_VERSION
 php_module_path=MODULES_DIR
 apache_module_path=APACHE_MODULE_DIR
 php_cfg=PHP_CONFIG_FILE
-php_example=TRUEPREFIX/share/doc/php5
+php_example=TRUEPREFIX/share/examples/php5
 php_module=${apache_module_path}/libphp5.so
 
 showusage() {
