@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/01/26 00:42:03 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.9 2001/02/02 00:22:48 avsm Exp $ 
 
 DISTNAME=	courier-imap-1.3.2
 CATEGORIES=	mail
@@ -18,11 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	pop3
 FLAVOR?=
 
-SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin --with-userdb=/etc/userdb --with-authuserdb
-SYSCONFDIR= /etc/courier-imap
-EXAMPLE_DIR= ${PREFIX}/share/examples/courier-imap
+SEPARATE_BUILD=	concurrent
+CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
+		--with-userdb=/etc/userdb --with-authuserdb
+SYSCONFDIR= 	/etc/courier-imap
+EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
