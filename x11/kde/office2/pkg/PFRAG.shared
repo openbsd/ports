@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/04 22:49:51 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/04/09 01:39:51 espie Exp $
 lib/kde2/libabiwordexport.so.0.0
 lib/kde2/libabiwordimport.so.0.0
 lib/kde2/libapplixgraphicimport.so.0.0
@@ -57,4 +57,3 @@ lib/libkugarpart.so.0.0
 lib/libkwmf.so.1.0
 lib/libkword.so.0.0
 DYNLIBDIR(%D/lib)
-DYNLIBDIR(%D/lib/kde2)
