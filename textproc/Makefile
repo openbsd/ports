@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2002/01/05 14:54:15 shell Exp $
+# $OpenBSD: Makefile,v 1.74 2002/01/05 23:14:17 shell Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += p5-Text-Template
      SUBDIR += p5-Text-Unidecode
      SUBDIR += p5-WML-Card
+     SUBDIR += p5-XML-Checker
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-LibXML
      SUBDIR += p5-XML-LibXSLT
