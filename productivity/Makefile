@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/28 01:41:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/03 03:44:56 margarida Exp $
 
      SUBDIR += devtodo
      SUBDIR += gtimer
      SUBDIR += qhacc
+     SUBDIR += siag
      SUBDIR += xinvest
 
 .include <bsd.port.subdir.mk>
