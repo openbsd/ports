@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_nl_po,v 1.1 2001/05/14 20:16:08 naddy Exp $
+--- po/nl.po.orig	Mon May 14 22:15:16 2001
++++ po/nl.po	Mon May 14 22:15:26 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: Vincent van Adrighem <V.vanAdrighem@ITS.TUDelft.nl>\n"
+ "Language-Team: Dutch <nl@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso8859-15\n"
++"Content-Type: text/plain; charset=iso-8859-15\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: src/about.c:90
