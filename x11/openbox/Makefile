@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/14 20:48:15 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/27 18:15:02 brad Exp $
 
 COMMENT=	"small, fast & useable window manager"
 
-DISTNAME=	openbox-0.99.4
+DISTNAME=	openbox-1.2.4
 CATEGORIES=	x11
 MASTER_SITES=	ftp://sunsite.dk/projects/openbox/
 

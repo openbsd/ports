@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/28 17:33:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/07/27 18:15:02 brad Exp $
 @pkgcfl fluxbox-*
 @pkgcfl blackbox-*
 bin/bsetbg
 bin/bsetroot
 bin/openbox
+man/man1/bsetbg.1
 man/man1/bsetroot.1
 man/man1/openbox.1
 share/openbox/menu
@@ -34,6 +35,7 @@ share/openbox/nls/zh_CN/openbox.cat
 share/openbox/styles/artwiz
 share/openbox/styles/bluebox
 share/openbox/styles/cthulhain
+share/openbox/styles/deep
 share/openbox/styles/flux
 share/openbox/styles/frobozz
 share/openbox/styles/frobust
