@@ -22,4 +22,6 @@ network.
 Fine-grained control over trace packet headers, assisting in
 bypassing burdensome packet filters.
 
+Web-based traceroute gateway bounce support.
+
 WWW: ${HOMEPAGE}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/03/31 01:39:24 margarida Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
-DISTNAME=	ctrace-0.8
+DISTNAME=	ctrace-0.9
 CATEGORIES=	net
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-BUILD_DEPENDS=	::net/p5-Net-RawIP
+BUILD_DEPENDS=	::net/p5-Net-RawIP \
+		::www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
