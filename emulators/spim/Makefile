@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/23 14:54:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/12 08:52:18 kevlo Exp $
 
-COMMENT=	"MIPS R2000 simulator"
+COMMENT=	"MIPS R2000/R3000 simulator"
 
-DISTNAME=	spim6.3
-PKGNAME=	spim-6.3
+DISTNAME=	spim
+PKGNAME=	spim-6.4
 CATEGORIES=	emulators
-NEED_VERSION=	1.427
+NEED_VERSION=	1.509
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/
+MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
 CONFIGURE_STYLE= gnu imake
 CONFIGURE_SCRIPT= Configure
