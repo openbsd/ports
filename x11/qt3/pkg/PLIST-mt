@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mt,v 1.1 2002/10/26 11:45:52 espie Exp $
-lib/libqt-mt.so.3.6
-lib/qt3/libqt-mt.so.3.6
+@comment $OpenBSD: PLIST-mt,v 1.2 2002/12/02 15:49:42 espie Exp $
+lib/libqt-mt.so.3.10
+lib/qt3/libqt-mt.so.3.10
 DYNLIBDIR(%D/lib)
