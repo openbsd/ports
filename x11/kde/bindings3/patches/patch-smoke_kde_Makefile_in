@@ -1,0 +1,13 @@
+$OpenBSD: patch-smoke_kde_Makefile_in,v 1.1 2004/12/24 13:10:01 espie Exp $
+--- smoke/kde/Makefile.in.orig	Wed Oct 27 19:26:12 2004
++++ smoke/kde/Makefile.in	Wed Oct 27 19:26:59 2004
+@@ -78,8 +78,7 @@ libsmokekde_la_nofinal_OBJECTS = smokeda
+ 	x_5.lo x_6.lo x_7.lo x_8.lo x_9.lo x_10.lo x_11.lo x_12.lo \
+ 	x_13.lo x_14.lo x_15.lo x_16.lo x_17.lo x_18.lo x_19.lo \
+ 	x_20.lo
+-@KDE_USE_FINAL_FALSE@libsmokekde_la_OBJECTS = $(libsmokekde_la_nofinal_OBJECTS)
+-@KDE_USE_FINAL_TRUE@libsmokekde_la_OBJECTS = $(libsmokekde_la_final_OBJECTS)
++libsmokekde_la_OBJECTS = $(libsmokekde_la_nofinal_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+ am__depfiles_maybe = depfiles
