@@ -1,6 +1,4 @@
-from john's README:
-
- John the Ripper -- Password Cracker
+John the Ripper -- Password Cracker
 =====================================
 
 John the Ripper is designed to be both powerful and fast. It combines
@@ -22,6 +20,3 @@ a crypt(3)-style routine: they require a more powerful interface (bitslice
 DES is an example). Additionally, there're assembly routines for several
 processors and architectures (special Intel Pentium version, x86 with MMX,
 generic x86, Alpha EV4, SPARC V8).
-
--d.
-
