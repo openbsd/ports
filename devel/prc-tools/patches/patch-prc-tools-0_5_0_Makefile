@@ -33,7 +33,7 @@
  # export doesn't work on make in gnuwin32 b18...
  MAKEEXPORTS = PREFIX=$(PREFIX) TOOLDIR=$(TOOLDIR) \
  	LIBCDIR=$(LIBCDIR) LIBMDIR=$(LIBMDIR) LIBGLIBDIR=$(LIBGLIBDIR)
-+IEXPORTS = PREFIX=$(DPREFIX) TOOLDIR=$(TOOLDIR) \
++IEXPORTS = PREFIX=$(PREFIX) TOOLDIR=$(TOOLDIR) \
 +	LIBCDIR=$(LIBCDIR) LIBMDIR=$(LIBMDIR) LIBGLIBDIR=$(LIBGLIBDIR)
  
  all: gdbpanel/gdbpanel.prc example/pilrctst.prc
@@ -63,25 +63,25 @@
 +	cd $(LIBCDIR) ; make $(IEXPORTS) install
 +	cd $(LIBMDIR) ; make $(IEXPORTS) install
 +	cd $(LIBGLIBDIR) ; make $(IEXPORTS) install
-+	cp -f pilrc$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
-+	cp -f txt2bitm$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
-+	cp -f obj-res$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
-+	cp -f build-prc$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
-+	cp -f stubgen $(DPREFIX)/$(TARGET-NAME)/bin
-+	cp -f exportlist $(DPREFIX)/$(TARGET-NAME)/bin
-+	-cp -rf PalmOS1 $(DPREFIX)/$(TARGET-NAME)/include
-+	-cp -rf PalmOS2 $(DPREFIX)/$(TARGET-NAME)/include
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/include/PalmOS2 $(PREFIX)/$(TARGET-NAME)/include/PalmOS
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/pilrc$(EXEEXT) $(PREFIX)/bin/pilrc$(EXEEXT)
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/txt2bitm$(EXEEXT) $(PREFIX)/bin/txt2bitm$(EXEEXT)
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/obj-res$(EXEEXT) $(PREFIX)/bin/$(TARGET-NAME)-obj-res$(EXEEXT)
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/exportlist $(PREFIX)/bin/$(TARGET-NAME)-exportlist
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/build-prc$(EXEEXT) $(PREFIX)/bin/build-prc$(EXEEXT)
-+	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/stubgen $(PREFIX)/bin/$(TARGET-NAME)-stubgen
++	cp -f pilrc$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
++	cp -f txt2bitm$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
++	cp -f obj-res$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
++	cp -f build-prc$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
++	cp -f stubgen $(PREFIX)/$(TARGET-NAME)/bin
++	cp -f exportlist $(PREFIX)/$(TARGET-NAME)/bin
++	-cp -rf PalmOS1 $(PREFIX)/$(TARGET-NAME)/include
++	-cp -rf PalmOS2 $(PREFIX)/$(TARGET-NAME)/include
++	ln -sf $(PREFIX)/$(TARGET-NAME)/include/PalmOS2 $(PREFIX)/$(TARGET-NAME)/include/PalmOS
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/pilrc$(EXEEXT) $(PREFIX)/bin/pilrc$(EXEEXT)
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/txt2bitm$(EXEEXT) $(PREFIX)/bin/txt2bitm$(EXEEXT)
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/obj-res$(EXEEXT) $(PREFIX)/bin/$(TARGET-NAME)-obj-res$(EXEEXT)
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/exportlist $(PREFIX)/bin/$(TARGET-NAME)-exportlist
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/build-prc$(EXEEXT) $(PREFIX)/bin/build-prc$(EXEEXT)
++	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/stubgen $(PREFIX)/bin/$(TARGET-NAME)-stubgen
  
  install-man: dummy
 -	cp man/* $(PREFIX)/man/man1
-+	cp man/* $(DPREFIX)/man/man1
++	cp man/* $(PREFIX)/man/man1
  
  send: all
  	echo Hit the HotSync button on the Pilot connected to $(TTY)
@@ -93,7 +93,7 @@
 +	cd $(BINUTILSDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) -host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(BINUTILSDIR) ; make
 -	cd $(BINUTILSDIR) ; make install
-+	cd $(BINUTILSDIR) ; PREFIX=$(DPREFIX) make install
++	cd $(BINUTILSDIR) ; PREFIX=$(PREFIX) make install
  	touch $@
  
  stamp.gcc:
@@ -101,7 +101,7 @@
 +	cd $(GCCDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) --host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(GCCDIR) ; make LANGUAGES=c
 -	cd $(GCCDIR) ; make LANGUAGES=c install
-+	cd $(GCCDIR) ; PREFIX=$(DPREFIX) make LANGUAGES=c install
++	cd $(GCCDIR) ; PREFIX=$(PREFIX) make LANGUAGES=c install
  	touch $@
  
  stamp.gdb:
@@ -109,7 +109,7 @@
 +	cd $(GDBDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) --host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(GDBDIR) ; make
 -	cd $(GDBDIR) ; make install
-+	cd $(GDBDIR) ; PREFIX=$(DPREFIX) make install
++	cd $(GDBDIR) ; PREFIX=$(PREFIX) make install
  	touch $@
  
  dummy:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/09/04 01:21:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/16 03:00:01 pvalchev Exp $
 
 ONLY_FOR_ARCHS=	i386
 FAKE=No
@@ -30,7 +30,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 PREFIX=		${LOCALBASE}/palm
-MAKE_FLAGS=	DPREFIX=${PREFIX}
 
 STRIP=		build-prc \
 		m68k-palmos-coff-ar \
