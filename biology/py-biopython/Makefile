@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/07 08:57:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 11:18:02 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
-
+SHARED_ONLY=	Yes
 COMMENT=	"Python tools for computational molecular biology"
 
 DISTNAME=	biopython-1.24
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/py-mxDateTime \

@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/07 08:57:20 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 11:18:02 espie Exp $
+lib/python${MODPY_VERSION}/site-packages/Bio/
+lib/python${MODPY_VERSION}/site-packages/Bio/Ais/
 lib/python${MODPY_VERSION}/site-packages/Bio/Ais/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Ais/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Ais/example_ais2.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Ais/example_ais2.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/AlignInfo.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/AlignInfo.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/FormatConvert.py
@@ -11,6 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Align/Generic.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/Generic.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/AlignAceStandalone.py
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/AlignAceStandalone.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/Applications.py
@@ -23,12 +27,15 @@ lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/Scanner.py
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/Scanner.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet/
 lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet/IUPAC.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet/IUPAC.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Application/
 lib/python${MODPY_VERSION}/site-packages/Bio/Application/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Application/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Blast/
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Applications.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Applications.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/NCBIStandalone.py
@@ -41,25 +48,30 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/CDD/
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/cdd_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/CDD/cdd_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw/
 lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw/clustal_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw/clustal_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/cluster.so
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/data.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Cluster/data.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/
 lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/DBXRef.py
 lib/python${MODPY_VERSION}/site-packages/Bio/DBXRef.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Data/
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/CodonTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/CodonTable.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/IUPACData.py
@@ -70,16 +82,19 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Decode.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Decode.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/DocSQL.py
 lib/python${MODPY_VERSION}/site-packages/Bio/DocSQL.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/ECell/
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/ecell_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/ECell/ecell_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/Config.py
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/Config.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DBIdsClient.py
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DBIdsClient.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DTDs/
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DTDs/LinkOut.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DTDs/LinkOut.py
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DTDs/LinkOut.pyc
@@ -126,6 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/sourcegen.py
 lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/sourcegen.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/EZRetrieve.py
 lib/python${MODPY_VERSION}/site-packages/Bio/EZRetrieve.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/Applications.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/Applications.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/Primer.py
@@ -136,18 +152,22 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/primer3_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/primer3_format.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/primersearch_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/primersearch_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Encodings/
 lib/python${MODPY_VERSION}/site-packages/Bio/Encodings/IUPACEncoding.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Encodings/IUPACEncoding.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Encodings/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Encodings/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Enzyme/
 lib/python${MODPY_VERSION}/site-packages/Bio/Enzyme/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Enzyme/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/FSSPTools.py
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/FSSPTools.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/fssp_rec.py
 lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/fssp_rec.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Fasta/
 lib/python${MODPY_VERSION}/site-packages/Bio/Fasta/FastaAlign.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Fasta/FastaAlign.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Fasta/__init__.py
@@ -158,6 +178,8 @@ lib/python${MODPY_VERSION}/site-packages/Bio/FilteredReader.py
 lib/python${MODPY_VERSION}/site-packages/Bio/FilteredReader.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/FormatIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/FormatIO.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GA/
+lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/General.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/General.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/GeneralPoint.py
@@ -172,6 +194,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Evolver.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Evolver.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/General.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/General.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/Simple.py
@@ -180,10 +203,12 @@ lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Organism.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Organism.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair/
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair/Stabilizing.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair/Stabilizing.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/Abstract.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/Abstract.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/Diversity.py
@@ -196,6 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GA/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GFF/
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/GenericTools.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/GenericTools.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/__init__.py
@@ -204,6 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/GFF/binning.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/binning.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/easy.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GFF/easy.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/LocationParser.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/LocationParser.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/Record.py
@@ -214,14 +241,17 @@ lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/genbank_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/genbank_format.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/utils.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Geo/
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/geo_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Geo/geo_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Gobase/
 lib/python${MODPY_VERSION}/site-packages/Bio/Gobase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Gobase/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/BasicChromosome.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/BasicChromosome.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/Comparative.py
@@ -232,6 +262,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/Distribution.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/Distribution.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Graphics/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/HMM/
 lib/python${MODPY_VERSION}/site-packages/Bio/HMM/DynamicProgramming.py
 lib/python${MODPY_VERSION}/site-packages/Bio/HMM/DynamicProgramming.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/HMM/MarkovModel.py
@@ -246,38 +277,47 @@ lib/python${MODPY_VERSION}/site-packages/Bio/HotRand.py
 lib/python${MODPY_VERSION}/site-packages/Bio/HotRand.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Index.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Index.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/intelligenetics_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics/intelligenetics_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/InterPro/
 lib/python${MODPY_VERSION}/site-packages/Bio/InterPro/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/InterPro/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/
 lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/_KDTree.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/_KDTree.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/
+lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound/
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound/compound_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound/compound_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme/
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme/enzyme_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme/enzyme_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map/
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map/map_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map/map_format.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/kabat_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Kabat/kabat_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/LocusLink/
 lib/python${MODPY_VERSION}/site-packages/Bio/LocusLink/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/LocusLink/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/LocusLink/locus_format.py
@@ -292,6 +332,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/MarkupEditor.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MarkupEditor.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/MaxEntropy.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MaxEntropy.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Medline/
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/NLMMedlineXML.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/NLMMedlineXML.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/__init__.py
@@ -302,6 +343,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Medline/nlmmedline_010319_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/nlmmedline_010319_format.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/nlmmedline_011101_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Medline/nlmmedline_011101_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/Input.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/Input.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/Record.py
@@ -310,6 +352,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/metatool_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool/metatool_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/BaseDB.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/BaseDB.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/BerkeleyDB.py
@@ -326,6 +369,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/compression.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Mindy/compression.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/Scheduler.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/Scheduler.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/Task.py
@@ -334,6 +378,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/copen.py
 lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc/copen.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/ValSeq.py
@@ -342,6 +387,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/nbrf_format.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NBRF/nbrf_format.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/NMR/
 lib/python${MODPY_VERSION}/site-packages/Bio/NMR/NOEtools.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NMR/NOEtools.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NMR/__init__.py
@@ -350,16 +396,20 @@ lib/python${MODPY_VERSION}/site-packages/Bio/NMR/xpktools.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NMR/xpktools.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NaiveBayes.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NaiveBayes.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Ndb/
 lib/python${MODPY_VERSION}/site-packages/Bio/Ndb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Ndb/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NetCatch.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NetCatch.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/
+lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/Network.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/Network.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Gene/
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Gene/Motif.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Gene/Motif.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Gene/Pattern.py
@@ -376,6 +426,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Training.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Training.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Atom.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Atom.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Chain.py
@@ -410,15 +461,19 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/StructureBuilder.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/StructureBuilder.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmCIF/
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmCIF/MMCIFlex.so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmCIF/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmCIF/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ParserSupport.py
 lib/python${MODPY_VERSION}/site-packages/Bio/ParserSupport.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Parsers/
 lib/python${MODPY_VERSION}/site-packages/Bio/Parsers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Parsers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Parsers/spark.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Parsers/spark.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/
+lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/Rep/
 lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/Rep/Graph.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/Rep/Graph.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/Rep/HashSet.py
@@ -431,6 +486,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PropertyManager.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PropertyManager.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/
 lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/Pattern.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/Pattern.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/Prodoc.py
@@ -439,6 +495,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Prosite/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PubMed.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PubMed.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Rebase/
 lib/python${MODPY_VERSION}/site-packages/Bio/Rebase/Rebase.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Rebase/Rebase.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Rebase/__init__.py
@@ -447,6 +504,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/RecordFile.py
 lib/python${MODPY_VERSION}/site-packages/Bio/RecordFile.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ReseekFile.py
 lib/python${MODPY_VERSION}/site-packages/Bio/ReseekFile.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Cla.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Cla.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Des.py
@@ -463,6 +521,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Residues.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Residues.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/testCla.py
@@ -481,12 +540,14 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/testScop.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests/testScop.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SGMLExtractor.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SGMLExtractor.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/SVDSuperimposer.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/SVDSuperimposer.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SVM.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SVM.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Saf/
 lib/python${MODPY_VERSION}/site-packages/Bio/Saf/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Saf/Record.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Saf/__init__.py
@@ -499,6 +560,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Seq.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Seq.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqFeature.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqFeature.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/FASTA.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/FASTA.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/__init__.py
@@ -507,6 +569,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/generic.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/generic.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqRecord.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqRecord.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CodonUsage.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CodonUsage.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CodonUsageIndices.py
@@ -519,6 +582,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/ProtParamData.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/ProtParamData.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/Ace.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/Ace.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/Phd.py
@@ -529,12 +593,14 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Std.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Std.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/StdHandler.py
 lib/python${MODPY_VERSION}/site-packages/Bio/StdHandler.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/FreqTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/FreqTable.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/MatrixInfo.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/MatrixInfo.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SwissProt/
 lib/python${MODPY_VERSION}/site-packages/Bio/SwissProt/KeyWList.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SwissProt/KeyWList.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SwissProt/SProt.py
@@ -545,8 +611,10 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Transcribe.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Transcribe.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Translate.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Translate.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/UniGene/
 lib/python${MODPY_VERSION}/site-packages/Bio/UniGene/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/UniGene/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/WWW/
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/ExPASy.py
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/ExPASy.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/InterPro.py
@@ -557,6 +625,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/WWW/SCOP.py
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/SCOP.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/WWW/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Wise/
 lib/python${MODPY_VERSION}/site-packages/Bio/Wise/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Wise/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Wise/dnal.py
@@ -569,10 +638,13 @@ lib/python${MODPY_VERSION}/site-packages/Bio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/biblio.py
 lib/python${MODPY_VERSION}/site-packages/Bio/biblio.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/builders/
+lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search/
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search/search.py
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search/search.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/builders/SeqRecord/
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/SeqRecord/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/SeqRecord/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/builders/SeqRecord/sequence.py
@@ -585,6 +657,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/cdistance.so
 lib/python${MODPY_VERSION}/site-packages/Bio/ckMeans.so
 lib/python${MODPY_VERSION}/site-packages/Bio/clistfns.so
 lib/python${MODPY_VERSION}/site-packages/Bio/cmathfns.so
+lib/python${MODPY_VERSION}/site-packages/Bio/config/
 lib/python${MODPY_VERSION}/site-packages/Bio/config/DBRegistry.py
 lib/python${MODPY_VERSION}/site-packages/Bio/config/DBRegistry.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/config/FormatRegistry.py
@@ -603,6 +676,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/cpairwise2.so
 lib/python${MODPY_VERSION}/site-packages/Bio/crc.py
 lib/python${MODPY_VERSION}/site-packages/Bio/crc.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/cstringfns.so
+lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/
 lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/_support.py
@@ -623,8 +697,10 @@ lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/swissprot.py
 lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs/swissprot.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/distance.py
 lib/python${MODPY_VERSION}/site-packages/Bio/distance.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/expressions/
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/ncbiblast.py
@@ -633,6 +709,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/wublast.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast/wublast.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blocks.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blocks.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/expressions/embl/
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/embl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/embl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/embl/embl65.py
@@ -643,6 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/expressions/genbank.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/genbank.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/hmmpfam.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/hmmpfam.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/speclist.py
@@ -651,6 +729,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/sprot38.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/sprot38.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/sprot40.py
 lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot/sprot40.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/formatdefs/
 lib/python${MODPY_VERSION}/site-packages/Bio/formatdefs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/formatdefs/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/formatdefs/embl.py
@@ -684,6 +763,8 @@ lib/python${MODPY_VERSION}/site-packages/Bio/triefind.py
 lib/python${MODPY_VERSION}/site-packages/Bio/triefind.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/utils.py
 lib/python${MODPY_VERSION}/site-packages/Bio/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/writers/
+lib/python${MODPY_VERSION}/site-packages/Bio/writers/SeqRecord/
 lib/python${MODPY_VERSION}/site-packages/Bio/writers/SeqRecord/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/writers/SeqRecord/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/writers/SeqRecord/empty.py
@@ -694,6 +775,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/writers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/writers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/xkMeans.py
 lib/python${MODPY_VERSION}/site-packages/Bio/xkMeans.pyc
+lib/python${MODPY_VERSION}/site-packages/BioSQL/
 lib/python${MODPY_VERSION}/site-packages/BioSQL/BioSeq.py
 lib/python${MODPY_VERSION}/site-packages/BioSQL/BioSeq.pyc
 lib/python${MODPY_VERSION}/site-packages/BioSQL/BioSeqDatabase.py
@@ -704,6 +786,7 @@ lib/python${MODPY_VERSION}/site-packages/BioSQL/Loader.py
 lib/python${MODPY_VERSION}/site-packages/BioSQL/Loader.pyc
 lib/python${MODPY_VERSION}/site-packages/BioSQL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/BioSQL/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Martel/
 lib/python${MODPY_VERSION}/site-packages/Martel/Dispatch.py
 lib/python${MODPY_VERSION}/site-packages/Martel/Dispatch.pyc
 lib/python${MODPY_VERSION}/site-packages/Martel/Expression.py
@@ -734,12 +817,16 @@ lib/python${MODPY_VERSION}/site-packages/Martel/optimize.py
 lib/python${MODPY_VERSION}/site-packages/Martel/optimize.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/Martel/setup.py
 @comment lib/python${MODPY_VERSION}/site-packages/Martel/setup.pyc
+share/examples/py-biopython/
+share/examples/py-biopython/Amino/
 share/examples/py-biopython/Amino/aster.pro
 share/examples/py-biopython/Amino/loveliesbleeding.pro
 share/examples/py-biopython/Amino/rose.pro
 share/examples/py-biopython/Amino/rosemary.pro
+share/examples/py-biopython/BioSQL/
 share/examples/py-biopython/BioSQL/biosqldb-mysql.sql
 share/examples/py-biopython/BioSQL/biosqldb-pg.sql
+share/examples/py-biopython/Blast/
 share/examples/py-biopython/Blast/README
 share/examples/py-biopython/Blast/bt001
 share/examples/py-biopython/Blast/bt002
@@ -810,35 +897,45 @@ share/examples/py-biopython/Blast/bt067
 share/examples/py-biopython/Blast/bt068
 share/examples/py-biopython/Blast/bt069
 share/examples/py-biopython/Blast/bt070
+share/examples/py-biopython/CDD/
 share/examples/py-biopython/CDD/pfam00035.htm
 share/examples/py-biopython/CDD/pfam01356.htm
 share/examples/py-biopython/CDD/pfam02903.htm
 share/examples/py-biopython/CDD/smart00499.htm
 share/examples/py-biopython/CDD/smart00505.htm
+share/examples/py-biopython/Clustalw/
 share/examples/py-biopython/Clustalw/cw02.aln
 share/examples/py-biopython/Clustalw/opuntia.aln
+share/examples/py-biopython/CodonUsage/
 share/examples/py-biopython/CodonUsage/.DS_Store
 share/examples/py-biopython/CodonUsage/HighlyExpressedGenes.txt
+share/examples/py-biopython/ECell/
 share/examples/py-biopython/ECell/sample.txt
+share/examples/py-biopython/Emboss/
 share/examples/py-biopython/Emboss/bac_find.primer3
 share/examples/py-biopython/Emboss/bac_find.psearch
 share/examples/py-biopython/Emboss/cds_forward.primer3
 share/examples/py-biopython/Emboss/cds_reverse.primer3
 share/examples/py-biopython/Emboss/short.primer3
+share/examples/py-biopython/Enzymes/
 share/examples/py-biopython/Enzymes/lactate.txt
 share/examples/py-biopython/Enzymes/lipoprotein.txt
 share/examples/py-biopython/Enzymes/proline.txt
 share/examples/py-biopython/Enzymes/valine.txt
+share/examples/py-biopython/FSSP/
 share/examples/py-biopython/FSSP/1cnv.fssp
+share/examples/py-biopython/Fasta/
 share/examples/py-biopython/Fasta/README
 share/examples/py-biopython/Fasta/f001
 share/examples/py-biopython/Fasta/f002
 share/examples/py-biopython/Fasta/fa01
+share/examples/py-biopython/GFF/
 share/examples/py-biopython/GFF/NC_001422.gbk
 share/examples/py-biopython/GFF/NC_001802.fna
 share/examples/py-biopython/GFF/NC_001802lc.fna
 share/examples/py-biopython/GFF/NC_001802x.fna
 share/examples/py-biopython/GFF/multi.fna
+share/examples/py-biopython/GenBank/
 share/examples/py-biopython/GenBank/NT_019265.gb
 share/examples/py-biopython/GenBank/arab1.gb
 share/examples/py-biopython/GenBank/blank_seq.gb
@@ -852,11 +949,13 @@ share/examples/py-biopython/GenBank/one_of.gb
 share/examples/py-biopython/GenBank/origin_line.gb
 share/examples/py-biopython/GenBank/pri1.gb
 share/examples/py-biopython/GenBank/protein_refseq.gb
+share/examples/py-biopython/Geo/
 share/examples/py-biopython/Geo/GSE16.txt
 share/examples/py-biopython/Geo/GSM645.txt
 share/examples/py-biopython/Geo/GSM691.txt
 share/examples/py-biopython/Geo/GSM700.txt
 share/examples/py-biopython/Geo/GSM804.txt
+share/examples/py-biopython/Gobase/
 share/examples/py-biopython/Gobase/E15449.htm
 share/examples/py-biopython/Gobase/E15449.txt
 share/examples/py-biopython/Gobase/G405967.htm
@@ -869,32 +968,39 @@ share/examples/py-biopython/Gobase/P6513764.htm
 share/examples/py-biopython/Gobase/Pt6513764.txt
 share/examples/py-biopython/Gobase/S4323016.htm
 share/examples/py-biopython/Gobase/S4323016.txt
+share/examples/py-biopython/Graphics/
 share/examples/py-biopython/Graphics/README
+share/examples/py-biopython/IntelliGenetics/
 share/examples/py-biopython/IntelliGenetics/TAT_mase-nuc.txt
 share/examples/py-biopython/IntelliGenetics/TAT_mase_nuc.txt
 share/examples/py-biopython/IntelliGenetics/VIF_mase-pro.txt
 share/examples/py-biopython/IntelliGenetics/vpu_nucaligned.txt
+share/examples/py-biopython/InterPro/
 share/examples/py-biopython/InterPro/IPR001064.htm
 share/examples/py-biopython/InterPro/IPR001171.htm
 share/examples/py-biopython/InterPro/IPR001391.htm
 share/examples/py-biopython/InterPro/IPR001442.htm
 share/examples/py-biopython/InterPro/IPR001571.htm
+share/examples/py-biopython/KEGG/
 share/examples/py-biopython/KEGG/compound.irregular
 share/examples/py-biopython/KEGG/compound.sample
 share/examples/py-biopython/KEGG/enzyme.irregular
 share/examples/py-biopython/KEGG/enzyme.sample
 share/examples/py-biopython/KEGG/map00950.rea
+share/examples/py-biopython/Kabat/
 share/examples/py-biopython/Kabat/k000245.txt
 share/examples/py-biopython/Kabat/k000255.txt
 share/examples/py-biopython/Kabat/k000347.txt
 share/examples/py-biopython/Kabat/k000397.txt
 share/examples/py-biopython/Kabat/k000456.txt
+share/examples/py-biopython/LocusLink/
 share/examples/py-biopython/LocusLink/LL_block
 share/examples/py-biopython/LocusLink/Locus14789.htm
 share/examples/py-biopython/LocusLink/Locus16590.htm
 share/examples/py-biopython/LocusLink/Locus2523.htm
 share/examples/py-biopython/LocusLink/Locus5797.htm
 share/examples/py-biopython/LocusLink/Locus6373.htm
+share/examples/py-biopython/MetaTool/
 share/examples/py-biopython/MetaTool/Example3.txt
 share/examples/py-biopython/MetaTool/Example4.txt
 share/examples/py-biopython/MetaTool/Example6.txt
@@ -920,10 +1026,12 @@ share/examples/py-biopython/MetaTool/example2.txt
 share/examples/py-biopython/MetaTool/meta.out
 share/examples/py-biopython/MetaTool/meta2.out
 share/examples/py-biopython/MetaTool/meta9.out
+share/examples/py-biopython/NBRF/
 share/examples/py-biopython/NBRF/B_nuc.pir
 share/examples/py-biopython/NBRF/Cw_prot.pir
 share/examples/py-biopython/NBRF/DMA_nuc.pir
 share/examples/py-biopython/NBRF/DMB_prot.pir
+share/examples/py-biopython/Ndb/
 share/examples/py-biopython/Ndb/AH0014.htm
 share/examples/py-biopython/Ndb/PD0072.htm
 share/examples/py-biopython/Ndb/PD0080.htm
@@ -934,9 +1042,11 @@ share/examples/py-biopython/Ndb/PR0007.htm
 share/examples/py-biopython/Ndb/TRNA05.htm
 share/examples/py-biopython/Ndb/URX035.htm
 share/examples/py-biopython/Ndb/ZHF026.htm
+share/examples/py-biopython/NeuralNetwork/
 share/examples/py-biopython/NeuralNetwork/enolase.fasta
 share/examples/py-biopython/NeuralNetwork/patternio.txt
 share/examples/py-biopython/NeuralNetwork/repeat.fasta
+share/examples/py-biopython/Nucleic/
 share/examples/py-biopython/Nucleic/centaurea.nu
 share/examples/py-biopython/Nucleic/elderberry.nu
 share/examples/py-biopython/Nucleic/lavender.nu
@@ -944,7 +1054,10 @@ share/examples/py-biopython/Nucleic/lupine.nu
 share/examples/py-biopython/Nucleic/phlox.nu
 share/examples/py-biopython/Nucleic/sweetpea.nu
 share/examples/py-biopython/Nucleic/wisteria.nu
+share/examples/py-biopython/PDB/
 share/examples/py-biopython/PDB/a_structure.pdb
+share/examples/py-biopython/Prosite/
+share/examples/py-biopython/Prosite/Doc/
 share/examples/py-biopython/Prosite/Doc/pdoc00100.htm
 share/examples/py-biopython/Prosite/Doc/pdoc00100.txt
 share/examples/py-biopython/Prosite/Doc/pdoc00113.htm
@@ -985,6 +1098,7 @@ share/examples/py-biopython/Prosite/ps00488.txt
 share/examples/py-biopython/Prosite/ps00546.txt
 share/examples/py-biopython/Prosite/ps00812.txt
 share/examples/py-biopython/Prosite/ps01213.txt
+share/examples/py-biopython/Rebase/
 share/examples/py-biopython/Rebase/bamii.htm
 share/examples/py-biopython/Rebase/bamii.txt
 share/examples/py-biopython/Rebase/cac81.htm
@@ -997,16 +1111,20 @@ share/examples/py-biopython/Rebase/pvuii.htm
 share/examples/py-biopython/Rebase/pvuii.txt
 share/examples/py-biopython/Rebase/taqi.htm
 share/examples/py-biopython/Rebase/taqi.txt
+share/examples/py-biopython/Registry/
 share/examples/py-biopython/Registry/EDD_RAT.dat
 share/examples/py-biopython/Registry/bt001
 share/examples/py-biopython/Registry/seqs.fasta
+share/examples/py-biopython/Saf/
 share/examples/py-biopython/Saf/saf1.txt
+share/examples/py-biopython/SubsMat/
 share/examples/py-biopython/SubsMat/aaDistrib.txt
 share/examples/py-biopython/SubsMat/acc_rep_mat.pik
 share/examples/py-biopython/SubsMat/protein_count.txt
 share/examples/py-biopython/SubsMat/protein_freq.txt
 share/examples/py-biopython/SubsMat/redAADistrib.txt
 share/examples/py-biopython/SubsMat/redAltAADistrib.txt
+share/examples/py-biopython/SwissProt/
 share/examples/py-biopython/SwissProt/README
 share/examples/py-biopython/SwissProt/kw001
 share/examples/py-biopython/SwissProt/kw002
@@ -1024,6 +1142,7 @@ share/examples/py-biopython/SwissProt/sp011
 share/examples/py-biopython/SwissProt/sp012
 share/examples/py-biopython/SwissProt/sp013
 share/examples/py-biopython/SwissProt/sp014
+share/examples/py-biopython/UniGene/
 share/examples/py-biopython/UniGene/Bt145.htm
 share/examples/py-biopython/UniGene/Bt59.htm
 share/examples/py-biopython/UniGene/Dr00010.htm
@@ -1036,6 +1155,7 @@ share/examples/py-biopython/UniGene/Mm28919.htm
 share/examples/py-biopython/UniGene/Mm421.htm
 share/examples/py-biopython/UniGene/Rn20.htm
 share/examples/py-biopython/UniGene/Rn35.htm
+share/examples/py-biopython/WIT/
 share/examples/py-biopython/WIT/ec2137.htm
 share/examples/py-biopython/WIT/ec2137.txt
 share/examples/py-biopython/WIT/ec2214.htm
@@ -1056,11 +1176,13 @@ share/examples/py-biopython/WIT/ec4416.htm
 share/examples/py-biopython/WIT/ec4416.txt
 share/examples/py-biopython/WIT/ec6344.htm
 share/examples/py-biopython/WIT/ec6344.txt
+share/examples/py-biopython/Wise/
 share/examples/py-biopython/Wise/human_114_g01_exons.fna_01
 share/examples/py-biopython/Wise/human_114_g02_exons.fna_01
 share/examples/py-biopython/dump
 share/examples/py-biopython/martel_support.py
 share/examples/py-biopython/martel_support.pyc
+share/examples/py-biopython/output/
 share/examples/py-biopython/output/test_BioSQL
 share/examples/py-biopython/output/test_Cluster
 share/examples/py-biopython/output/test_CodonUsage
@@ -1295,125 +1417,3 @@ share/examples/py-biopython/unittest.py
 share/examples/py-biopython/unittest.pyc
 share/examples/py-biopython/unittestgui.py
 share/examples/py-biopython/unittestgui.pyc
-@dirrm share/examples/py-biopython/output
-@dirrm share/examples/py-biopython/Wise
-@dirrm share/examples/py-biopython/WIT
-@dirrm share/examples/py-biopython/UniGene
-@dirrm share/examples/py-biopython/SwissProt
-@dirrm share/examples/py-biopython/SubsMat
-@dirrm share/examples/py-biopython/Saf
-@dirrm share/examples/py-biopython/Registry
-@dirrm share/examples/py-biopython/Rebase
-@dirrm share/examples/py-biopython/Prosite/Doc
-@dirrm share/examples/py-biopython/Prosite
-@dirrm share/examples/py-biopython/PDB
-@dirrm share/examples/py-biopython/Nucleic
-@dirrm share/examples/py-biopython/NeuralNetwork
-@dirrm share/examples/py-biopython/Ndb
-@dirrm share/examples/py-biopython/NBRF
-@dirrm share/examples/py-biopython/MetaTool
-@dirrm share/examples/py-biopython/LocusLink
-@dirrm share/examples/py-biopython/Kabat
-@dirrm share/examples/py-biopython/KEGG
-@dirrm share/examples/py-biopython/InterPro
-@dirrm share/examples/py-biopython/IntelliGenetics
-@dirrm share/examples/py-biopython/Graphics
-@dirrm share/examples/py-biopython/Gobase
-@dirrm share/examples/py-biopython/Geo
-@dirrm share/examples/py-biopython/GenBank
-@dirrm share/examples/py-biopython/GFF
-@dirrm share/examples/py-biopython/Fasta
-@dirrm share/examples/py-biopython/FSSP
-@dirrm share/examples/py-biopython/Enzymes
-@dirrm share/examples/py-biopython/Emboss
-@dirrm share/examples/py-biopython/ECell
-@dirrm share/examples/py-biopython/CodonUsage
-@dirrm share/examples/py-biopython/Clustalw
-@dirrm share/examples/py-biopython/CDD
-@dirrm share/examples/py-biopython/Blast
-@dirrm share/examples/py-biopython/BioSQL
-@dirrm share/examples/py-biopython/Amino
-@dirrm share/examples/py-biopython
-@dirrm lib/python${MODPY_VERSION}/site-packages/Martel
-@dirrm lib/python${MODPY_VERSION}/site-packages/BioSQL
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/writers/SeqRecord
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/writers
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/formatdefs
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/expressions/swissprot
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/expressions/embl
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/expressions/blast
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/expressions
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/dbdefs
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/config
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/builders/SeqRecord
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/builders/Search
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/builders
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Wise
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/WWW
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/UniGene
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SwissProt
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Saf
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/tests
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/SCOP
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Rebase
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Prosite
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Pathway/Rep
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Pathway
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Parsers
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/PDB/mmCIF
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/PDB
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/Gene
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork/BackPropagation
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/NeuralNetwork
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Ndb
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/NMR
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/NBRF
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/MultiProc
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Mindy
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/MetaTool
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Medline
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/LocusLink
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Kabat
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Map
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Enzyme
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/KEGG/Compound
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/KEGG
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/KDTree
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/InterPro
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/IntelliGenetics
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/HMM
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Graphics
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Gobase
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Geo
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GenBank
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GFF
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GA/Selection
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GA/Repair
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GA/Mutation
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GA/Crossover
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/GA
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Fasta
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/FSSP
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Enzyme
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Encodings
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Emboss
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/EUtils/DTDs
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/EUtils
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/ECell
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Data
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Crystal
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Cluster
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Clustalw
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/CDD
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Blast
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Application
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Alphabet
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/AlignAce
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Align
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio/Ais
-@dirrm lib/python${MODPY_VERSION}/site-packages/Bio
