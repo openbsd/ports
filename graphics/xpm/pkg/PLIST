@@ -1,0 +1,7 @@
+bin/sxpm
+lib/libXpm.a
+lib/libXpm.so.4.10
+@exec /sbin/ldconfig -m %B
+@exec ranlib %D/lib/libXpm.a
+include/X11/xpm.h
+man/man1/sxpm.1.gz
