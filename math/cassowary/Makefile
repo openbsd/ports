@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"solving toolkit for linear equalities and inequalities"
 
@@ -39,14 +39,7 @@ FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 CXXFLAGS+=	-O0
 .endif
 
-pre-configure:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cassowary-config ${PREFIX}/bin/cassowary-config

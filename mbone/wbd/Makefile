@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/10/15 11:36:01 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
@@ -24,14 +24,7 @@ LIB_DEPENDS=	tcl80::lang/tcl/8.0 \
 MAKE_FILE=	makefile
 WRKDIST=	${WRKDIR}/wbd
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."  
-	@echo ""
+VMEM_WARNING=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wbd ${PREFIX}/bin

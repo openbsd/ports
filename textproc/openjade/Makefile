@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/09 16:35:23 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
@@ -28,14 +28,7 @@ SGMLDIR=	${PREFIX}/share/sgml/openjade
 SGMLFILES= 	fot.dtd catalog dsssl.dtd style-sheet.dtd builtins.dsl \
 		demo.sgm demo.dsl
 	
-pre-build:      
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/sp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/01 08:27:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -35,13 +35,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-configure:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 .include <bsd.port.mk>

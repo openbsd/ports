@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.490 2001/11/11 12:59:50 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.491 2001/11/11 13:57:32 heko Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1708,12 +1708,26 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
+VMEM_WARNING?=	No
 
 # The real build
 
 ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if ${NO_BUILD:L} == "no"
 	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}"
+.if ${VMEM_WARNING:L} == "yes"
+	@echo ""; \
+	echo "*** WARNING: you may see an error such as"; \
+	echo "***       virtual memory exhausted"; \
+	echo "*** when building this package.  If you do you must increase"; \
+	echo "*** your limits.  See the man page for your shell and look"; \
+	echo "*** for the 'limit' or 'ulimit' command. You may also want to"; \
+	echo "*** see the login.conf(5) manual page."; \
+	echo "*** Some examples are: "; \
+	echo "*** 	csh(1): limit datasize <kbytes of memory>"; \
+	echo "***	ksh(1), zsh(1) and bash(1): ulimit -d <kbytes of memory>"; \
+	echo ""; 
+.endif
 .  if target(pre-build)
 	@cd ${.CURDIR} && exec ${MAKE} pre-build
 .  endif

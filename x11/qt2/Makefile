@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2001/11/11 13:57:32 heko Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -72,6 +72,8 @@ SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
 DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
 	changes-2*
 
+VMEM_WARNING=	Yes
+
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
 	    mv -f $$i $$i.bak && \
@@ -85,14 +87,6 @@ post-configure:
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}

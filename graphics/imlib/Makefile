@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/11/10 20:45:48 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2001/11/11 13:57:32 heko Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -36,14 +36,7 @@ CONFIGURE_ENV=	ac_cv_path_CONVERT_PROG="${LOCALBASE}/bin/convert" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal

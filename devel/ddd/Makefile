@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/11/10 13:24:36 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -24,14 +24,7 @@ CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 
 MAKE_FLAGS=	MAINTAINER='${MAINTAINER:Q}'
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 DOCS=	README ddd-paper.ps ddd.ps sample.c sample.dddinit
 

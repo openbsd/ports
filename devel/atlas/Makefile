@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/01 08:27:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
@@ -31,13 +31,6 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-pre-configure:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/10/28 19:05:23 brad Exp $
+# $OpenBSD: Makefile,v 1.60 2001/11/11 13:57:32 heko Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -73,14 +73,7 @@ post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 post-build:
 	@cd ${IMAGEIODIR} && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/10/28 13:09:45 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2001/11/11 13:57:32 heko Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -75,14 +75,7 @@ RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
-pre-build:      
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Flags

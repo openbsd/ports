@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/11 13:57:32 heko Exp $
 
 COMMENT=		"Napster client for KDE 2"
 VERSION=		0.3
@@ -34,13 +34,6 @@ CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=		Yes
 
 .include <bsd.port.mk>

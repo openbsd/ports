@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 04:11:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/11 13:57:32 heko Exp $
 #
 
 COMMENT=	"text search engine"
@@ -22,14 +22,7 @@ CONFIGURE_STYLE=	gnu dest old
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "*** ./main.c:3041: virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/glimpse
