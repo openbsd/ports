@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/12/04 22:48:41 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2001/01/03 03:33:20 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -39,6 +39,7 @@
 #    SUBDIR += unroff
      SUBDIR += urlview
      SUBDIR += wdiff
+     SUBDIR += xerces
      SUBDIR += xml2rfc
      SUBDIR += xpdf
      SUBDIR += xpdf:freetype
