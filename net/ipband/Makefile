@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/17 21:42:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/04 20:21:23 miod Exp $
+BROKEN=		"bogus code"
 
 COMMENT=	"pcap based IP traffic monitor"
 
