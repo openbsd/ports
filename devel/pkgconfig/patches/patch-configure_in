@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/12/11 17:17:08 marcm Exp $
+$OpenBSD: patch-configure_in,v 1.2 2003/01/03 05:28:59 marcm Exp $
 --- configure.in.orig	Thu Oct 10 14:17:08 2002
-+++ configure.in	Fri Dec  6 10:27:37 2002
++++ configure.in	Thu Jan  2 21:17:33 2003
 @@ -6,6 +6,9 @@ AM_MAINTAINER_MODE
  
  AM_CONFIG_HEADER(config.h)
@@ -34,7 +34,7 @@ $OpenBSD: patch-configure_in,v 1.1 2002/12/11 17:17:08 marcm Exp $
 -  AC_CONFIG_SUBDIRS(glib-1.2.8)
 +  if test x$with_installed_glib = xyes; then
 +    GLIB_CFLAGS="-I$includedir/glib-1.2"
-+    GLIB_LIBS="-L$libdir -lglib -liconv -lintl -static"
++    GLIB_LIBS="-L$libdir -lglib -static"
 +
 +    AC_SUBST(GLIB_LIBS)
 +    AC_SUBST(GLIB_CFLAGS)
