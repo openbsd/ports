@@ -1,6 +1,6 @@
 --- Makefile.orig	Mon Mar  8 08:20:38 1999
-+++ Makefile	Wed Sep 27 10:23:50 2000
-@@ -10,21 +10,26 @@
++++ Makefile	Wed Oct 18 09:47:00 2000
+@@ -10,21 +10,28 @@
  #FILEMAP_OBJ=xmlwf/readfilemap.o
  OBJS=xmltok/xmltok.o \
    xmltok/xmlrole.o \
@@ -17,7 +17,8 @@
  EXE=
  
 -all: xmlwf/xmlwf$(EXE)
--
++PICFLAG= -fpic
+ 
 -xmlwf/xmlwf$(EXE): $(OBJS)
 -	$(CC) $(CFLAGS) -o $@ $(OBJS)
 +.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
@@ -35,7 +36,7 @@
  
  xmltok/nametab.h: gennmtab/gennmtab$(EXE)
  	rm -f $@
-@@ -35,5 +40,18 @@
+@@ -35,5 +42,17 @@
  
  xmltok/xmltok.o: xmltok/nametab.h
  
@@ -44,7 +45,7 @@
 +	ranlib $@
 +
 +$(SHLIB): $(SHOBJS)
-+	$(CC) -shared -o $(SHLIB) $(SHOBJS)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHOBJS)
 +
 +.SUFFIXES: .o .so
 +
@@ -52,5 +53,4 @@
  	$(CC) $(CFLAGS) -c -o $@ $<
 +
 +.c.so:
-+	$(CC) $(CFLAGS) -fpic -DPIC -c -o $@ $<
-+
++	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c -o $@ $<

@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jun  3 15:26:12 2000
-+++ Makefile	Sat Sep 16 06:47:35 2000
++++ Makefile	Wed Oct 18 09:30:03 2000
 @@ -51,13 +51,13 @@
  LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
  
@@ -17,11 +17,12 @@
  
  #
  #
-@@ -75,26 +75,35 @@
+@@ -75,26 +75,36 @@
  BIN_PROGRAMS=pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
  TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
  
 -all: libgd.a $(PROGRAMS)
++PICFLAG= -fpic
 +SHLIB=	libgd.so.18.3
  
 +.if defined(NO_SHARED_LIB) && ${NO_SHARED_LIB:L} == "yes"
@@ -71,7 +72,7 @@
  
  gddemo: gddemo.o libgd.a
  	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -129,17 +138,21 @@
+@@ -129,17 +139,21 @@
  gdtestttf: gdtestttf.o libgd.a
  	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
  
@@ -95,11 +96,11 @@
 +	$(AR) rc libgd.a $(OBJS)
  
 +$(SHLIB): $(SHOBJS)
-+	$(CC) -shared -o $(SHLIB) $(SHOBJS)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHOBJS)
 +	
  clean:
 -	rm -f *.o *.a ${PROGRAMS} test/gdtest.jpg test/gdtest.wbmp
 +	rm -f *.o *.so ${PROGRAMS} libgd.a $(SHLIB) test/gdtest.jpg test/gdtest.wbmp
  
 +.c.so:
-+	$(CC) $(CFLAGS) -fpic -DPIC -c $? -o $@
++	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c $? -o $@
