@@ -1,22 +1,11 @@
---- po/Makefile.in.in.orig	Sun Jul 18 11:32:17 1999
-+++ po/Makefile.in.in	Sun Jul 18 11:32:59 1999
-@@ -120,7 +120,7 @@
- 	  cat=`basename $$cat`; \
- 	  case "$$cat" in \
- 	    *.gmo) destdir=$(gnulocaledir);; \
--	    *)     destdir=$(localedir);; \
-+	    *)     destdir=$(gnulocaledir);; \
- 	  esac; \
- 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
- 	  dir=$$destdir/$$lang/LC_MESSAGES; \
-@@ -171,8 +171,8 @@
- 	for cat in $$catalogs; do \
- 	  cat=`basename $$cat`; \
- 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
--	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
--	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
-+	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
-+	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
- 	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
- 	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
- 	done
+--- po/Makefile.in.in.orig	Sat Jul 24 17:48:01 1999
++++ po/Makefile.in.in	Sat Jul 24 17:48:19 1999
+@@ -18,7 +18,7 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
