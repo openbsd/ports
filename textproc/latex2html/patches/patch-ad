@@ -1,0 +1,13 @@
+*** pstoimg.orig	Mon Sep 21 19:30:07 1998
+--- pstoimg	Mon Sep 21 19:30:34 1998
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl
+  
+  # This variable can be set manually or by the installation script
+  # to point to the DIRECTORY where the latex2html files can be found.
+--- 1,4 ----
+! #!/usr/bin/perl
+  
+  # This variable can be set manually or by the installation script
+  # to point to the DIRECTORY where the latex2html files can be found.

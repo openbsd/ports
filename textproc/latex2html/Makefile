@@ -1,0 +1,59 @@
+# $OpenBSD: Makefile,v 1.1.1.1 1998/09/23 18:18:03 marc Exp $
+#
+
+DISTNAME=	latex2html-97.1
+CATEGORIES=	textproc www
+
+MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
+
+
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
+		pnmtopng:${PORTSDIR}/graphics/netpbm \
+		gs:${PORTSDIR}/print/ghostscript5
+
+NO_CONFIGURE=	YES
+NO_BUILD=	YES
+IS_INTERACTIVE=	YES
+
+DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
+		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \
+		figure.ps credits.tex l2hfiles.dat Makefile justify.sty \
+		hypextra.tex overview.tex htmllist.sty support.tex \
+		licence.tex url.sty l2hidx.ist features.tex html.sty \
+		l2hglo.ist problems.tex l2hman.sty appendix.tex manual.index
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/styles
+	${INSTALL_DATA} ${WRKSRC}/styles/* ${PREFIX}/lib/latex2html/styles
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/docs/changebar
+	${INSTALL_DATA} ${WRKSRC}/docs/changebar/* ${PREFIX}/lib/latex2html/docs/changebar
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/docs/psfiles
+	${INSTALL_DATA} ${WRKSRC}/docs/psfiles/* ${PREFIX}/lib/latex2html/docs/psfiles
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/docs/hthtml
+	${INSTALL_DATA} ${WRKSRC}/docs/hthtml/* ${PREFIX}/lib/latex2html/docs/hthtml
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/lib/latex2html/docs
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/tests
+	${INSTALL_DATA} ${WRKSRC}/tests/* ${PREFIX}/lib/latex2html/tests
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/icons.png
+	${INSTALL_DATA} ${WRKSRC}/icons.png/* ${PREFIX}/lib/latex2html/icons.png
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/icons.gif
+	${INSTALL_DATA} ${WRKSRC}/icons.gif/* ${PREFIX}/lib/latex2html/icons.gif
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/texinputs
+	${INSTALL_DATA} ${WRKSRC}/texinputs/* ${PREFIX}/lib/latex2html/texinputs
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/makeseg
+	${INSTALL_DATA} ${WRKSRC}/makeseg/* ${PREFIX}/lib/latex2html/makeseg
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/versions
+	${INSTALL_DATA} ${WRKSRC}/versions/* ${PREFIX}/lib/latex2html/versions
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/example
+	${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/lib/latex2html/example
+	${INSTALL_SCRIPT} ${WRKSRC}/install-test ${WRKSRC}/pstoimg ${WRKSRC}/makemap ${WRKSRC}/texexpand ${WRKSRC}/configure-pstoimg ${WRKSRC}/latex2html.config ${WRKSRC}/pstoimg_nopipes ${WRKSRC}/latex2html ${PREFIX}/lib/latex2html
+	(cd ${PREFIX}/lib/latex2html; PREFIX=${PREFIX} ./install-test)
+	${INSTALL_SCRIPT} ${PREFIX}/lib/latex2html/latex2html ${PREFIX}/bin
+	${RM} ${PREFIX}/lib/latex2html/*.bak
+
+.include <bsd.port.mk>
+
