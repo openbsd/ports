@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/24 01:58:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/08 05:16:50 kevlo Exp $
 
 COMMENT=	"module to implement efficient mapping tables"
 
-DISTNAME=	Unicode-Map8-0.11
+DISTNAME=	Unicode-Map8-0.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
