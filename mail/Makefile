@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/04/16 16:47:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.58 2001/04/20 15:01:04 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -52,7 +52,7 @@
      SUBDIR += p5-Mail-IMAPClient
      SUBDIR += p5-Mail-POP3Client
      SUBDIR += p5-Mail-Tools
-     SUBDIR += p5-MIME-Tools
+     SUBDIR += p5-MIME-tools
      SUBDIR += pgpsendmail
      SUBDIR += pine
      SUBDIR += popclient
