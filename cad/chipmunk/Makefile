@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/21 21:41:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/30 00:17:52 espie Exp $
 
 COMMENT=	"electronic CAD system"
 
-PKGNAME=	chipmunk-1.57
+PKGNAME=	chipmunk-1.57p0
 DISTNAME=	psys-1.57
 DISTFILES=	psys-1.57.tar.gz webdoc1.46.tar.gz log-5.61.tar.gz \
 		view-1.13.tar.gz until-1.13.tar.gz wol-1.13.tar.gz \

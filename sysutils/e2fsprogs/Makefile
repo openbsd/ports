@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/30 00:16:05 espie Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		"utilities to manipulate ext2 filesystems"
 
 DISTNAME=		e2fsprogs-1.27
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://e2fsprogs.sourceforge.net/

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/03 13:50:23 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/12/30 00:16:06 espie Exp $
+@conflict e2fsprogs-*
 bin/uuid
 bin/uuid-config
 include/uuid.h
