@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/28 19:35:32 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/10 19:12:34 danh Exp $
+
+BROKEN=		"possible security holes"
 
 COMMENT=	"Lucent remote access RADIUS server"
 
