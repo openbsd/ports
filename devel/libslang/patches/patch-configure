@@ -1,180 +1,188 @@
---- configure.orig	Sat Aug 19 22:20:18 2000
-+++ configure	Sat Oct 21 15:23:53 2000
-@@ -1887,6 +1887,20 @@
-        ELF_DEP_LIBS=
+--- configure.orig	Sun Feb  4 01:32:53 2001
++++ configure	Wed Feb  7 15:50:48 2001
+@@ -2017,6 +2017,18 @@
+        CC_SHARED="cc \$(CFLAGS) -shared -K pic"
       fi
       ;;
 +  *openbsd* )
-+    ELF_CC="\$(CC)"
-+    ELF_CFLAGS="\$(CFLAGS) -fpic"
++    DYNAMIC_LINK_FLAGS=""
++    ELF_CC="$CC"
++    ELF_CFLAGS="$CFLAGS -fpic"
++    ELF_LINK="$CC -shared -fpic"
 +    ELF_LINK_CMD="\$(ELF_LINK)"
 +    ELF_DEP_LIBS=
-+    case "`uname -r`" in
-+      2.01234567)
-+	ELF_LINK="ld -Bshareable -Bforcearchive"
-+      ;;
-+      *)
-+	ELF_LINK="\$(CC) -shared -fpic"
-+      ;;
-+    esac
-+    ;;
++    CC_SHARED="$CC $CFLAGS -shared -fpic"
++    if test "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != ""; then
++      DYNAMIC_LINK_FLAGS="-Wl,-E"
++    fi
++  ;;
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"
-     ELF_CC="\$(CC)"
-@@ -1923,7 +1937,7 @@
+     ELF_CC="$CC"
+@@ -2087,6 +2099,9 @@
+       RPATH="-rpath "
+     fi
+   ;;
++  *openbsd*)
++    RPATH="-Wl,-rpath,"
++  ;;
+ esac
+ 
+     if test "X$RPATH" != "X"
+@@ -2100,7 +2115,7 @@
  
  
  echo $ac_n "checking size of short""... $ac_c" 1>&6
--echo "configure:1927: checking size of short" >&5
-+echo "configure:1941: checking size of short" >&5
+-echo "configure:2104: checking size of short" >&5
++echo "configure:2119: checking size of short" >&5
  if eval "test \"`echo '$''{'ac_cv_sizeof_short'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -1931,7 +1945,7 @@
+@@ -2108,7 +2123,7 @@
    ac_cv_sizeof_short=2
  else
    cat > conftest.$ac_ext <<EOF
--#line 1935 "configure"
-+#line 1949 "configure"
+-#line 2112 "configure"
++#line 2127 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -1942,7 +1956,7 @@
+@@ -2119,7 +2134,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:1946: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:1960: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:2123: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:2138: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    ac_cv_sizeof_short=`cat conftestval`
  else
-@@ -1962,7 +1976,7 @@
+@@ -2139,7 +2154,7 @@
  
  
  echo $ac_n "checking size of int""... $ac_c" 1>&6
--echo "configure:1966: checking size of int" >&5
-+echo "configure:1980: checking size of int" >&5
+-echo "configure:2143: checking size of int" >&5
++echo "configure:2158: checking size of int" >&5
  if eval "test \"`echo '$''{'ac_cv_sizeof_int'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -1970,7 +1984,7 @@
+@@ -2147,7 +2162,7 @@
    ac_cv_sizeof_int=4
  else
    cat > conftest.$ac_ext <<EOF
--#line 1974 "configure"
-+#line 1988 "configure"
+-#line 2151 "configure"
++#line 2166 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -1981,7 +1995,7 @@
+@@ -2158,7 +2173,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:1985: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:1999: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:2162: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:2177: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    ac_cv_sizeof_int=`cat conftestval`
  else
-@@ -2001,7 +2015,7 @@
+@@ -2178,7 +2193,7 @@
  
  
  echo $ac_n "checking size of long""... $ac_c" 1>&6
--echo "configure:2005: checking size of long" >&5
-+echo "configure:2019: checking size of long" >&5
+-echo "configure:2182: checking size of long" >&5
++echo "configure:2197: checking size of long" >&5
  if eval "test \"`echo '$''{'ac_cv_sizeof_long'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2009,7 +2023,7 @@
+@@ -2186,7 +2201,7 @@
    ac_cv_sizeof_long=4
  else
    cat > conftest.$ac_ext <<EOF
--#line 2013 "configure"
-+#line 2027 "configure"
+-#line 2190 "configure"
++#line 2205 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2020,7 +2034,7 @@
+@@ -2197,7 +2212,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:2024: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:2038: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:2201: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:2216: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    ac_cv_sizeof_long=`cat conftestval`
  else
-@@ -2040,7 +2054,7 @@
+@@ -2217,7 +2232,7 @@
  
  
  echo $ac_n "checking size of float""... $ac_c" 1>&6
--echo "configure:2044: checking size of float" >&5
-+echo "configure:2058: checking size of float" >&5
+-echo "configure:2221: checking size of float" >&5
++echo "configure:2236: checking size of float" >&5
  if eval "test \"`echo '$''{'ac_cv_sizeof_float'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2048,7 +2062,7 @@
+@@ -2225,7 +2240,7 @@
    ac_cv_sizeof_float=4
  else
    cat > conftest.$ac_ext <<EOF
--#line 2052 "configure"
-+#line 2066 "configure"
+-#line 2229 "configure"
++#line 2244 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2059,7 +2073,7 @@
+@@ -2236,7 +2251,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:2063: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:2077: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:2240: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:2255: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    ac_cv_sizeof_float=`cat conftestval`
  else
-@@ -2079,7 +2093,7 @@
+@@ -2256,7 +2271,7 @@
  
  
  echo $ac_n "checking size of double""... $ac_c" 1>&6
--echo "configure:2083: checking size of double" >&5
-+echo "configure:2097: checking size of double" >&5
+-echo "configure:2260: checking size of double" >&5
++echo "configure:2275: checking size of double" >&5
  if eval "test \"`echo '$''{'ac_cv_sizeof_double'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2087,7 +2101,7 @@
+@@ -2264,7 +2279,7 @@
    ac_cv_sizeof_double=8
  else
    cat > conftest.$ac_ext <<EOF
--#line 2091 "configure"
-+#line 2105 "configure"
+-#line 2268 "configure"
++#line 2283 "configure"
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2098,7 +2112,7 @@
+@@ -2275,7 +2290,7 @@
    exit(0);
  }
  EOF
--if { (eval echo configure:2102: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:2116: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+-if { (eval echo configure:2279: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:2294: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
    ac_cv_sizeof_double=`cat conftestval`
  else
-@@ -2127,7 +2141,7 @@
+@@ -2304,7 +2319,7 @@
  TERMCAP=-ltermcap
  
  echo $ac_n "checking for Terminfo""... $ac_c" 1>&6
--echo "configure:2131: checking for Terminfo" >&5
-+echo "configure:2145: checking for Terminfo" >&5
+-echo "configure:2308: checking for Terminfo" >&5
++echo "configure:2323: checking for Terminfo" >&5
  for terminfo_dir in $JD_Terminfo_Dirs
  do
     if test -d $terminfo_dir 
-@@ -2230,7 +2244,7 @@
+@@ -2407,7 +2422,7 @@
  
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
--echo "configure:2234: checking SLANG_VERSION" >&5
-+echo "configure:2248: checking SLANG_VERSION" >&5
+-echo "configure:2411: checking SLANG_VERSION" >&5
++echo "configure:2426: checking SLANG_VERSION" >&5
  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
                 awk '{ print $3 }'`
  slang_major_version=`echo $slang_version |
-@@ -2240,7 +2254,8 @@
+@@ -2417,7 +2432,8 @@
  slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
   awk '{ print ($1 - $2*10000 - $3*100) }'`
  

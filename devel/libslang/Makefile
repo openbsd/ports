@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2000/11/11 22:40:55 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/02/08 02:05:35 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
+#BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
 .endif
 
-DISTNAME=	slang-1.4.2
-PKGNAME=	libslang-1.4.2
+DISTNAME=	slang-1.4.3
+PKGNAME=	libslang-1.4.3
 CATEGORIES=	devel
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
 
 HOMEPAGE=	http://www.s-lang.org/
 
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

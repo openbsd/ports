@@ -1,23 +1,12 @@
---- autoconf/configure.in.orig	Sat Aug 19 22:20:19 2000
-+++ autoconf/configure.in	Sat Oct 21 15:22:44 2000
-@@ -130,6 +130,20 @@
-        ELF_DEP_LIBS=
-      fi
-      ;;
-+  *openbsd* )
-+    ELF_CC="\$(CC)"
-+    ELF_CFLAGS="\$(CFLAGS) -fpic"
-+    ELF_LINK_CMD="\$(ELF_LINK)"
-+    ELF_DEP_LIBS=
-+    case "`uname -r`" in
-+      2.[01234567])
-+	ELF_LINK="ld -Bshareable -Bforcearchive"
-+      ;;
-+      *)
-+	ELF_LINK="\$(CC) -shared -fpic"
-+      ;;
-+    esac
-+    ;;
-   * )
-     echo "Note: ELF compiler for host_os=$host_os may be wrong"
-     ELF_CC="\$(CC)"
+--- autoconf/configure.in.orig	Tue Feb  6 16:54:34 2001
++++ autoconf/configure.in	Tue Feb  6 16:54:48 2001
+@@ -106,7 +106,8 @@
+ slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+  awk '{ print ([$]1 - [$]2*10000 - [$]3*100) }'`
+ 
+-slang_minor_version="$slang_minor_version.$slang_mminor_version"
++slang_major_version=$slang_major_version$slang_minor_version
++slang_minor_version=$slang_mminor_version
+ slang_version="$slang_major_version.$slang_minor_version"
+ AC_MSG_RESULT($slang_version)
+ AC_SUBST(slang_major_version)
