@@ -11,5 +11,4 @@ pgsql/lib/libpq.so
 pgsql/lib/libpq.so.2
 pgsql/lib/libpq.so.2.1
 pgsql/lib/plpgsql.so
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
+NEWDYNLIBDIR(%B)

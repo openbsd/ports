@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2000/06/28 13:18:45 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2000/07/01 18:10:37 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-${VERS}
 DIST_SUBDIR=	postgresql
 CATEGORIES=	databases
-NEED_VERSION=	1.302
+NEED_VERSION=	1.310
 
 HOMEPAGE=	http://www.postgresql.org
 
