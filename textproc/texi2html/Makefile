@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 18:56:33 sturm Exp $
 
 COMMENT=	"texinfo to HTML converter"
 
@@ -7,7 +7,9 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/
 
-# License: GPL
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
