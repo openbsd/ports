@@ -1,11 +1,8 @@
-BIND version 9 is a major rewrite of nearly all aspects of the underlying
-BIND architecture. This re-architecting of BIND was necessitated by the
-expected demands of domain name system growth, the need for secure queries   
-and zone transfers as well as IP version 6.   
+BIND version 9 libraries, include files and API manual pages
 
 Flavours:
 
- static     Do not use shared libraries
+ static     Do not include shared libraries
  threads    Build a multi-threaded named
 
 WWW: ${HOMEPAGE}

@@ -1,0 +1,32 @@
+$OpenBSD: patch-bin_named_unix_include_named_os_h,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- bin/named/unix/include/named/os.h.orig	Mon Aug  5 08:57:03 2002
++++ bin/named/unix/include/named/os.h	Tue Jan 21 08:55:13 2003
+@@ -29,6 +29,12 @@ void
+ ns_os_daemonize(void);
+ 
+ void
++ns_os_opendevnull(void);
++
++void
++ns_os_closedevnull(void);
++
++void
+ ns_os_chroot(const char *root);
+ 
+ void
+@@ -41,9 +47,15 @@ void
+ ns_os_minprivs(void);
+ 
+ void
++ns_os_preopenpidfile(const char *filename);
++
++void
+ ns_os_writepidfile(const char *filename, isc_boolean_t first_time);
+ 
+ void
+ ns_os_shutdown(void);
++
++void
++ns_os_tzset(void);
+ 
+ #endif /* NS_OS_H */

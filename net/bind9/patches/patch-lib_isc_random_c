@@ -1,0 +1,47 @@
+$OpenBSD: patch-lib_isc_random_c,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- lib/isc/random.c.orig	Tue Jan  9 22:56:22 2001
++++ lib/isc/random.c	Tue Jan 21 08:55:13 2003
+@@ -33,7 +33,9 @@ static isc_once_t once = ISC_ONCE_INIT;
+ static void
+ initialize_rand(void)
+ {
++#ifndef HAVE_ARC4RANDOM
+ 	srand(time(NULL));
++#endif
+ }
+ 
+ static void
+@@ -47,7 +49,11 @@ isc_random_seed(isc_uint32_t seed)
+ {
+ 	initialize();
+ 
++#ifndef HAVE_ARC4RANDOM
+ 	srand(seed);
++#else
++	arc4random_addrandom((u_char *) &seed, sizeof(isc_uint32_t));
++#endif
+ }
+ 
+ void
+@@ -57,7 +63,11 @@ isc_random_get(isc_uint32_t *val)
+ 
+ 	initialize();
+ 
++#ifndef HAVE_ARC4RANDOM
+ 	*val = rand();
++#else
++	*val = arc4random();
++#endif
+ }
+ 
+ isc_uint32_t
+@@ -66,5 +76,9 @@ isc_random_jitter(isc_uint32_t max, isc_
+ 	if (jitter == 0)
+ 		return (max);
+ 	else
++#ifndef HAVE_ARC4RANDOM
+ 		return (max - rand() % jitter);
++#else
++		return (max - arc4random() % jitter);
++#endif
+ }

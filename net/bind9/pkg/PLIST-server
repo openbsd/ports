@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST-server,v 1.1 2003/01/25 14:14:37 jakob Exp $
+bin/dig
+bin/host
+bin/nslookup
+bin/nsupdate
+man/man1/dig.1
+man/man1/host.1
+man/man5/rndc.conf.5
+man/man8/dnssec-keygen.8
+man/man8/dnssec-makekeyset.8
+man/man8/dnssec-signkey.8
+man/man8/dnssec-signzone.8
+man/man8/lwresd.8
+man/man8/named-checkconf.8
+man/man8/named-checkzone.8
+man/man8/named.8
+man/man8/nsupdate.8
+man/man8/rndc-confgen.8
+man/man8/rndc.8
+sbin/dnssec-keygen
+sbin/dnssec-makekeyset
+sbin/dnssec-signkey
+sbin/dnssec-signzone
+sbin/lwresd
+sbin/named
+sbin/named-checkconf
+sbin/named-checkzone
+sbin/rndc
+sbin/rndc-confgen
+share/doc/bind9/arm/Bv9ARM.ch01.html
+share/doc/bind9/arm/Bv9ARM.ch02.html
+share/doc/bind9/arm/Bv9ARM.ch03.html
+share/doc/bind9/arm/Bv9ARM.ch04.html
+share/doc/bind9/arm/Bv9ARM.ch05.html
+share/doc/bind9/arm/Bv9ARM.ch06.html
+share/doc/bind9/arm/Bv9ARM.ch07.html
+share/doc/bind9/arm/Bv9ARM.ch08.html
+share/doc/bind9/arm/Bv9ARM.ch09.html
+share/doc/bind9/arm/Bv9ARM.html
+share/doc/bind9/misc/dnssec
+share/doc/bind9/misc/ipv6
+share/doc/bind9/misc/migration
+share/doc/bind9/misc/migration-4to9
+share/doc/bind9/misc/options
+share/doc/bind9/misc/rfc-compliance
+share/doc/bind9/misc/roadmap
+share/doc/bind9/misc/sdb
+@dirrm share/doc/bind9/misc
+@dirrm share/doc/bind9/arm
+@dirrm share/doc/bind9

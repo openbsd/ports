@@ -1,0 +1,30 @@
+$OpenBSD: patch-bin_tests_Makefile_in,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- bin/tests/Makefile.in.orig	Tue Feb 12 13:02:05 2002
++++ bin/tests/Makefile.in	Tue Jan 21 08:55:13 2003
+@@ -66,6 +66,7 @@ XTARGETS =	adb_test \
+ 		inter_test \
+ 		journalprint \
+ 		keyboard_test \
++		lcg_test \
+ 		lex_test \
+ 		lfsr_test \
+ 		log_test \
+@@ -104,6 +105,7 @@ SRCS =		adb_test.c \
+ 		inter_test.c \
+ 		journalprint.c \
+ 		keyboard_test.c \
++		lcg_test.c \
+ 		lex_test.c \
+ 		lfsr_test.c \
+ 		log_test.c \
+@@ -150,6 +152,10 @@ byaddr_test: byaddr_test.@O@ ${ISCDEPLIB
+ byname_test: byname_test.@O@ ${ISCDEPLIBS} ${DNSDEPLIBS}
+ 	${LIBTOOL} ${PURIFY} ${CC} ${CFLAGS} -o $@ byname_test.@O@ \
+ 		${DNSLIBS} ${ISCLIBS} ${LIBS}
++
++lcg_test: lcg_test.@O@ ${ISCDEPLIBS}
++	${LIBTOOL} ${PURIFY} ${CC} ${CFLAGS} -o $@ lcg_test.@O@ \
++		${ISCLIBS} ${LIBS}
+ 
+ lex_test: lex_test.@O@ ${ISCDEPLIBS}
+ 	${LIBTOOL} ${PURIFY} ${CC} ${CFLAGS} -o $@ lex_test.@O@ \

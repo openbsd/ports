@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- configure.in.orig	Thu Aug  8 11:09:22 2002
++++ configure.in	Tue Jan 21 08:55:11 2003
+@@ -479,6 +479,11 @@ case "$use_randomdev" in
+ esac
+ 
+ #
++# Do we have arc4random() ?
++#
++AC_CHECK_FUNC(arc4random, AC_DEFINE(HAVE_ARC4RANDOM))
++
++#
+ # Begin pthreads checking.
+ #
+ # First, decide whether to use multithreading or not.
+@@ -1470,6 +1475,11 @@ case "$enable_linux_caps" in
+ 		;;
+ esac
+ AC_CHECK_HEADERS(sys/prctl.h)
++
++#
++# Time Zone Stuff
++#
++AC_CHECK_FUNC(tzset, AC_DEFINE(HAVE_TZSET))
+ 
+ #
+ # BSD/OS, and perhaps some others, don't define rlim_t.

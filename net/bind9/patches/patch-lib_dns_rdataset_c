@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_dns_rdataset_c,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- lib/dns/rdataset.c.orig	Tue Jun  5 11:23:14 2001
++++ lib/dns/rdataset.c	Tue Jan 21 08:55:13 2003
+@@ -363,7 +363,11 @@ towiresorted(dns_rdataset_t *rdataset, d
+ 			/*
+ 			 * "Cyclic" order.
+ 			 */
+-			unsigned int j = (((unsigned int)rand()) >> 3) % count;
++			isc_uint32_t val;
++			unsigned int j;
++
++			isc_random_get(&val);
++			j = val % count;
+ 			for (i = 0; i < count; i++) {
+ 				sorted[j].key = 0; /* Unused */
+ 				sorted[j].rdata = &shuffled[i];

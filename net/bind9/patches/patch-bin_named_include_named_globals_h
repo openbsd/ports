@@ -1,0 +1,31 @@
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- bin/named/include/named/globals.h.orig	Wed Aug  8 22:37:31 2001
++++ bin/named/include/named/globals.h	Tue Jan 21 08:55:12 2003
+@@ -45,6 +45,7 @@ EXTERN unsigned int		ns_g_cpus		INIT(0);
+ EXTERN isc_taskmgr_t *		ns_g_taskmgr		INIT(NULL);
+ EXTERN dns_dispatchmgr_t *	ns_g_dispatchmgr	INIT(NULL);
+ EXTERN isc_entropy_t *		ns_g_entropy		INIT(NULL);
++EXTERN isc_entropy_t *		ns_g_fallbackentropy	INIT(NULL);
+ /*
+  * XXXRTH  We're going to want multiple timer managers eventually.  One
+  *         for really short timers, another for client timers, and one
+@@ -97,7 +98,7 @@ EXTERN isc_resourcevalue_t	ns_g_initopen
+  * Misc.
+  */
+ EXTERN isc_boolean_t		ns_g_coreok		INIT(ISC_TRUE);
+-EXTERN const char *		ns_g_chrootdir		INIT(NULL);
++EXTERN const char *		ns_g_chrootdir		INIT("/var/named");
+ EXTERN isc_boolean_t		ns_g_foreground		INIT(ISC_FALSE);
+ EXTERN isc_boolean_t		ns_g_logstderr		INIT(ISC_FALSE);
+ 
+@@ -105,7 +106,9 @@ EXTERN const char *		ns_g_defaultpidfile
+ 							     "/run/named.pid");
+ EXTERN const char *		lwresd_g_defaultpidfile INIT(NS_LOCALSTATEDIR
+ 							    "/run/lwresd.pid");
+-EXTERN const char *		ns_g_username		INIT(NULL);
++EXTERN const char *		ns_g_pidfile		INIT(NS_LOCALSTATEDIR
++							     "/run/named.pid");
++EXTERN const char *		ns_g_username		INIT("named");
+ 
+ #undef EXTERN
+ #undef INIT

@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2003/01/21 17:29:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.39 2003/01/25 14:14:37 jakob Exp $
 
-COMMENT=	Berkeley Internet Name Daemon
+COMMENT=	ISC BIND 9 libraries
+COMMENT-server=	ISC BIND 9 server
 
-VERSION=	9.2.1
+VERSION=	9.2.2rc1
 DISTNAME=	bind-${VERSION}
-PKGNAME=	bind-${VERSION}p1
+
+FULLPKGNAME=	bind-lib-${VERSION}
+PKGNAME-server=	bind-server-${VERSION}
+
 CATEGORIES=	net
 
 MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
@@ -23,25 +27,28 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=	gcc-* patch-*
-.endif
-
 SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
 			--localstatedir=/var \
 			--disable-libbind \
-			--with-openssl="/usr" \
+			--with-openssl=/usr \
 			--with-randomdev=/dev/arandom
+AUTOCONF_NEW=		Yes
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 REGRESS_TARGET=		test
 
+MULTI_PACKAGES=		-server
+SUBPACKAGE?=
+
 FLAVORS=		static threads
 FLAVOR?=
+
+.if ${SUBPACKAGE} == "-server" && ${FLAVOR} != "static"
+RUN_DEPENDS=		:bind-libs-*:net/bind9
+.endif
 
 .if ${FLAVOR:L:Mstatic}
 CFLAGS+=		"-static"
@@ -54,28 +61,18 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-EXAMPLEFILES=	named.conf named.root \
-		named.localhost named.loopback
-
 MISCDOCFILES=	dnssec ipv6 migration migration-4to9 \
 		options rfc-compliance roadmap sdb
+
+post-extract:
+	rm -fr ${WRKSRC}/lib/bind
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/arm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/misc
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bind9
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${PREFIX}/share/doc/bind9/arm
-.for file in ${EXAMPLEFILES}
-	${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/share/examples/bind9
-.endfor
 .for file in ${MISCDOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/${file} ${PREFIX}/share/doc/bind9/misc
-.endfor
-.for file in bind9-enable bind9-disable
-	@sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/${file} > \
-		${PREFIX}/sbin/${file}
-	@chmod 555 ${PREFIX}/sbin/${file}
-	@chown root:wheel ${PREFIX}/sbin/${file}
 .endfor
 
 .include <bsd.port.mk>

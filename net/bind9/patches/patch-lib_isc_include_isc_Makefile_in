@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_isc_include_isc_Makefile_in,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- lib/isc/include/isc/Makefile.in.orig	Sat Jul  7 00:11:40 2001
++++ lib/isc/include/isc/Makefile.in	Tue Jan 21 08:55:13 2003
+@@ -30,7 +30,7 @@ HEADERS =	app.h assertions.h base64.h bi
+ 		bufferlist.h commandline.h entropy.h error.h event.h \
+ 		eventclass.h \
+ 		file.h formatcheck.h fsaccess.h heap.h hex.h hmacmd5.h \
+-		interfaceiter.h @ISC_IPV6_H@ lang.h lex.h \
++		interfaceiter.h @ISC_IPV6_H@ lang.h lcg.h lex.h \
+ 		lfsr.h lib.h list.h log.h magic.h md5.h mem.h msgcat.h msgs.h \
+ 		mutexblock.h netaddr.h ondestroy.h os.h \
+ 		print.h quota.h random.h ratelimiter.h \

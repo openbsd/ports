@@ -1,0 +1,23 @@
+$OpenBSD: patch-acconfig_h,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- acconfig.h.orig	Tue Oct 23 01:28:07 2001
++++ acconfig.h	Tue Jan 21 08:55:10 2003
+@@ -67,6 +67,9 @@
+ /* define if chroot() is available */
+ #undef HAVE_CHROOT
+ 
++/* define if tzset() is available */
++#undef HAVE_TZSET
++
+ /* define if struct addrinfo exists */
+ #undef HAVE_ADDRINFO
+ 
+@@ -75,6 +78,9 @@
+ 
+ /* define if gai_strerror() exists */
+ #undef HAVE_GAISTRERROR
++
++/* define if arc4random() exists */
++#undef HAVE_ARC4RANDOM
+ 
+ /* define if pthread_setconcurrency() should be called to tell the
+  * OS how many threads we might want to run.

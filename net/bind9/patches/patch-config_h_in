@@ -1,0 +1,23 @@
+$OpenBSD: patch-config_h_in,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- config.h.in.orig	Tue Oct 23 01:28:08 2001
++++ config.h.in	Tue Jan 21 08:55:10 2003
+@@ -78,6 +78,9 @@
+ /* define if chroot() is available */
+ #undef HAVE_CHROOT
+ 
++/* define if tzset() is available */
++#undef HAVE_TZSET
++
+ /* define if struct addrinfo exists */
+ #undef HAVE_ADDRINFO
+ 
+@@ -86,6 +89,9 @@
+ 
+ /* define if gai_strerror() exists */
+ #undef HAVE_GAISTRERROR
++
++/* define if arc4random() exists */
++#undef HAVE_ARC4RANDOM
+ 
+ /* define if pthread_setconcurrency() should be called to tell the
+  * OS how many threads we might want to run.

@@ -1,0 +1,30 @@
+$OpenBSD: patch-bin_rndc_rndc_c,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- bin/rndc/rndc.c.orig	Thu Nov 29 00:37:50 2001
++++ bin/rndc/rndc.c	Tue Jan 21 08:55:13 2003
+@@ -32,6 +32,7 @@
+ #include <isc/log.h>
+ #include <isc/mem.h>
+ #include <isc/netdb.h>
++#include <isc/random.h>
+ #include <isc/socket.h>
+ #include <isc/stdtime.h>
+ #include <isc/string.h>
+@@ -251,6 +252,7 @@ rndc_connected(isc_task_t *task, isc_eve
+ 	isccc_region_t message;
+ 	isc_region_t r;
+ 	isc_uint32_t len;
++	isc_uint32_t serial;
+ 	isc_buffer_t b;
+ 	isc_result_t result;
+ 
+@@ -260,8 +262,8 @@ rndc_connected(isc_task_t *task, isc_eve
+ 		fatal("connect failed: %s", isc_result_totext(sevent->result));
+ 
+ 	isc_stdtime_get(&now);
+-	srandom(now + isc_thread_self());
+-	DO("create message", isccc_cc_createmessage(1, NULL, NULL, random(),
++	isc_random_get(&serial);
++	DO("create message", isccc_cc_createmessage(1, NULL, NULL, serial,
+ 						    now, now + 60, &request));
+ 	data = isccc_alist_lookup(request, "_data");
+ 	if (data == NULL)

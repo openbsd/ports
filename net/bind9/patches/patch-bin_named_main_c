@@ -1,0 +1,88 @@
+$OpenBSD: patch-bin_named_main_c,v 1.1 2003/01/25 14:14:37 jakob Exp $
+--- bin/named/main.c.orig	Mon Aug  5 08:57:01 2002
++++ bin/named/main.c	Tue Jan 21 08:55:12 2003
+@@ -228,7 +228,7 @@ usage(void) {
+ 	fprintf(stderr,
+ 		"usage: named [-c conffile] [-d debuglevel] "
+ 		"[-f|-g] [-n number_of_cpus]\n"
+-		"             [-p port] [-s] [-t chrootdir] [-u username]\n");
++		"             [-p port] [-s] [-t chrootdir] [-u username] [-i pidfile]\n");
+ }
+ 
+ static void
+@@ -325,9 +325,8 @@ parse_command_line(int argc, char *argv[
+ 			ns_g_foreground = ISC_TRUE;
+ 			ns_g_logstderr = ISC_TRUE;
+ 			break;
+-		/* XXXBEW -i should be removed */
+ 		case 'i':
+-			lwresd_g_defaultpidfile = isc_commandline_argument;
++			ns_g_pidfile = isc_commandline_argument;
+ 			break;
+ 		case 'l':
+ 			ns_g_lwresdonly = ISC_TRUE;
+@@ -441,6 +440,9 @@ destroy_managers(void) {
+ 	ns_lwresd_shutdown();
+ 
+ 	isc_entropy_detach(&ns_g_entropy);
++	if (ns_g_fallbackentropy != NULL) {
++		isc_entropy_detach(&ns_g_fallbackentropy);
++	}
+ 	/*
+ 	 * isc_taskmgr_destroy() will block until all tasks have exited,
+ 	 */
+@@ -453,6 +455,12 @@ static void
+ setup(void) {
+ 	isc_result_t result;
+ 
++        /*
++	 * Write pidfile before chroot if specified on the command line
++	 */
++	if (ns_g_pidfile != NULL)
++		ns_os_preopenpidfile(ns_g_pidfile);
++
+ 	/*
+ 	 * Get the user and group information before changing the root
+ 	 * directory, so the administrator does not need to keep a copy
+@@ -460,6 +468,32 @@ setup(void) {
+ 	 */
+ 	ns_os_inituserinfo(ns_g_username);
+ 
++	/*
++	 * Initialize time conversion information and /dev/null
++	 */
++	ns_os_tzset();
++	ns_os_opendevnull();
++
++	/*
++	 * Initialize system's random device as fallback entropy source
++	 * if running chroot'ed.
++	 */
++	result = isc_entropy_create(ns_g_mctx, &ns_g_fallbackentropy);
++	if (result != ISC_R_SUCCESS)
++		ns_main_earlyfatal("isc_entropy_create() failed: %s",
++				   isc_result_totext(result));
++#ifdef PATH_RANDOMDEV
++	if (ns_g_chrootdir != NULL) {
++		result = isc_entropy_createfilesource(ns_g_fallbackentropy,
++						      PATH_RANDOMDEV);
++		if (result != ISC_R_SUCCESS)
++			ns_main_earlywarning("could not open pre-chroot "
++					     "entropy source %s: %s",
++					     PATH_RANDOMDEV,
++					     isc_result_totext(result));
++	}
++#endif
++
+ 	ns_os_chroot(ns_g_chrootdir);
+ 
+ 	/*
+@@ -611,6 +645,8 @@ main(int argc, char *argv[]) {
+ 	isc_mem_destroy(&ns_g_mctx);
+ 
+ 	isc_app_finish();
++
++	ns_os_closedevnull();
+ 
+ 	ns_os_shutdown();
+ 

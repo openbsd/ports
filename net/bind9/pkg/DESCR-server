@@ -1,0 +1,11 @@
+ISC BIND version 9 is a major rewrite of nearly all aspects of the
+underlying BIND architecture. This re-architecting of BIND was
+necessitated by the expected demands of domain name system growth, the
+need for secure queries and zone transfers as well as IP version 6.
+
+Flavours:
+
+ static     Do not use shared libraries
+ threads    Build a multi-threaded named
+
+WWW: ${HOMEPAGE}
