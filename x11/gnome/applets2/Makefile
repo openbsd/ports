@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/07 05:48:53 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/19 06:43:06 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -64,10 +64,8 @@ LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
-.if !${FLAVOR:L:Mno_battstat}
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets2; \
 	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-applets2/
-.endif
 
 .include <bsd.port.mk>

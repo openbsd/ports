@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/07 05:48:53 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/10/19 06:43:06 marcm Exp $
 bin/gkb_xmmap
 bin/gnome-keyboard-layout
 lib/bonobo/servers/GNOME_AccessxStatusApplet.server
-lib/bonobo/servers/GNOME_BattstatApplet.server
 lib/bonobo/servers/GNOME_CharpickerApplet.server
 lib/bonobo/servers/GNOME_DriveMountApplet.server
 lib/bonobo/servers/GNOME_GWeatherApplet_Factory.server
@@ -49,7 +48,6 @@ share/geyes/Horrid/config
 share/geyes/Horrid/horrid_eye.png
 share/geyes/Horrid/horrid_pupil.png
 share/gnome-2.0/ui/GNOME_AccessxApplet.xml
-share/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
