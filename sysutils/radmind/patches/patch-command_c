@@ -1,70 +1,7 @@
-$OpenBSD: patch-command_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- command.c.orig	2004-03-15 11:11:55.000000000 -0500
-+++ command.c	2004-06-08 23:09:17.000000000 -0400
-@@ -302,7 +302,7 @@ f_retr( sn, ac, av )
- 
-     switch ( keyword( ac, av )) {
-     case K_COMMAND:
--        sprintf( path, "%s", command_file );
-+        (void)snprintf( path, sizeof( path ), "%s", command_file );
- 	break;
- 
-     case K_TRANSCRIPT:
-@@ -324,7 +324,7 @@ f_retr( sn, ac, av )
- 	    return( 1 );
- 	}
- 
--	sprintf( path, "transcript/%s", d_tran );
-+	(void)snprintf( path, sizeof( path ), "transcript/%s", d_tran );
- 	break;
- 
-     case K_SPECIAL:
-@@ -334,7 +334,7 @@ f_retr( sn, ac, av )
- 	    return( 1 );
- 	} 
- 
--	sprintf( path, "%s/%s", special_dir, d_path );
-+	(void)snprintf( path, sizeof( path ), "%s/%s", special_dir, d_path );
- 	break;
- 
-     case K_FILE:
-@@ -366,7 +366,7 @@ f_retr( sn, ac, av )
- 	    return( 1 );
- 	}
- 
--	sprintf( path, "file/%s/%s", d_tran, d_path );
-+	(void)snprintf( path, sizeof( path ), "file/%s/%s", d_tran, d_path );
- 	free( d_path );
- 	break;
- 
-@@ -478,7 +478,7 @@ f_stat( SNET *sn, int ac, char *av[] )
- 
-     switch ( key = keyword( ac, av )) {
-     case K_COMMAND:
--        sprintf( path, "%s", command_file );
-+        (void)snprintf( path, sizeof( path ), "%s", command_file );
- 	break;
- 
-     case K_TRANSCRIPT:
-@@ -500,7 +500,7 @@ f_stat( SNET *sn, int ac, char *av[] )
- 	    return( 1 );
- 	}
- 
--	sprintf( path, "transcript/%s", d_tran );
-+	(void)snprintf( path, sizeof( path ), "transcript/%s", d_tran );
- 	break;
- 
-     case K_SPECIAL:
-@@ -510,7 +510,7 @@ f_stat( SNET *sn, int ac, char *av[] )
- 	    return( 1 );
- 	} 
- 
--	sprintf( path, "%s/%s", special_dir, d_path);
-+	(void)snprintf( path, sizeof( path ), "%s/%s", special_dir, d_path);
- 	break;
- 
-     default:
-@@ -578,7 +578,7 @@ f_stat( SNET *sn, int ac, char *av[] )
+$OpenBSD: patch-command_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
+--- command.c.orig	Tue Dec 14 10:59:27 2004
++++ command.c	Thu Jan 20 12:59:08 2005
+@@ -635,7 +635,7 @@ f_stat( SNET *sn, int ac, char *av[] )
  
  	/* if allowable, check for transcript in the special file directory */
  
@@ -73,36 +10,16 @@ $OpenBSD: patch-command_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  
  	/* store value of av[ 2 ], because argcargv will be called
  	 * from special_t(), and that will blow away the current values
-@@ -647,13 +647,13 @@ f_stor( SNET *sn, int ac, char *av[] )
-     switch ( keyword( ac, av )) {
- 
-     case K_TRANSCRIPT:
--        sprintf( xscriptdir, "tmp/file/%s", d_tran );
--        sprintf( upload, "tmp/transcript/%s", d_tran );
-+        (void)snprintf( xscriptdir, sizeof( xscriptdir ), "tmp/file/%s", d_tran );
-+        (void)snprintf( upload, sizeof( upload ), "tmp/transcript/%s", d_tran );
- 
- 	/* keep encoded transcript name, since it will just be
- 	 * used later to compare in a stor file.
- 	 */
+@@ -727,7 +727,7 @@ f_stor( SNET *sn, int ac, char *av[] )
+ 	    snet_writef( sn, "%d Path too long\r\n", 540 );
+ 	    return( 1 );
+ 	}
 -	strcpy( upload_xscript, av[ 2 ] );
 +	(void)strlcpy( upload_xscript, av[ 2 ], sizeof( upload_xscript ) );
  
  	/* make the directory for the files of this xscript to live in. */
  	if ( mkdir( xscriptdir, 0777 ) < 0 ) {
-@@ -688,9 +688,9 @@ f_stor( SNET *sn, int ac, char *av[] )
- 	}
- 
- 	if ( d_path[ 0 ] == '/' ) {
--	    sprintf( upload, "tmp/file/%s%s", d_tran, d_path );
-+	    (void)snprintf( upload, sizeof( upload ), "tmp/file/%s%s", d_tran, d_path );
- 	} else {
--	    sprintf( upload, "tmp/file/%s/%s", d_tran, d_path );
-+	    (void)snprintf( upload, sizeof( upload ), "tmp/file/%s/%s", d_tran, d_path );
- 	}
- 	free( d_path );
- 	free( d_tran );
-@@ -1044,7 +1044,7 @@ command_k( char *path_config )
+@@ -1123,7 +1123,7 @@ command_k( char *path_config )
  	}
  
  	if (( p = strrchr( av[ 1 ], '/' )) == NULL ) {
@@ -111,30 +28,54 @@ $OpenBSD: patch-command_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  	} else {
  	    *p = '\0';
  	    if ( snprintf( special_dir, MAXPATHLEN, "special/%s", av[ 1 ] )
-@@ -1057,7 +1057,7 @@ command_k( char *path_config )
- 	}
- 
- 	if (( remote_cn != NULL ) && wildcard( av[ 0 ], remote_cn )) {
--	    sprintf( command_file, "command/%s", av[ 1 ] );
-+	    (void)snprintf( command_file, sizeof( command_file ), "command/%s", av[ 1 ] );
- 	    if ( snprintf( special_dir, MAXPATHLEN, "%s/%s", special_dir,
- 		    remote_cn ) > MAXPATHLEN - 1 ) {
+@@ -1141,14 +1141,14 @@ command_k( char *path_config )
+ 		    "config file: line %d: command file too long\n", linenum );
+ 		continue;
+ 	    }
+-	    strcpy( command_file, av[ 1 ] );
++	    (void)strlcpy( command_file, av[ 1 ], sizeof( command_file ) );
+ 	    if ( snprintf( temp, MAXPATHLEN, "%s/%s", special_dir,
+ 		    remote_cn ) >= MAXPATHLEN ) {
  		syslog( LOG_ERR, "config file: line %d: special dir too long\n",
-@@ -1067,7 +1067,7 @@ command_k( char *path_config )
+ 		    linenum );
+ 		continue;
+ 	    }
+-	    strcpy( special_dir, temp );
++	    (void)strlcpy( special_dir, temp, sizeof( special_dir ) );
  	    return( 0 );
  	}
- 	if ( wildcard( av[ 0 ], remote_host )) {
--	    sprintf( command_file, "command/%s", av[ 1 ] );
-+	    (void)snprintf( command_file, sizeof( command_file ), "command/%s", av[ 1 ] );
- 	    if ( snprintf( special_dir, MAXPATHLEN, "%s/%s", special_dir,
- 		    remote_host ) > MAXPATHLEN - 1 ) {
+ 	if ( wildcard( av[ 0 ], remote_host, 0 )) {
+@@ -1157,14 +1157,14 @@ command_k( char *path_config )
+ 		    "config file: line %d: command file too long\n", linenum );
+ 		continue;
+ 	    }
+-	    strcpy( command_file, av[ 1 ] );
++	    (void)strlcpy( command_file, av[ 1 ], sizeof( command_file ) );
+ 	    if ( snprintf( temp, MAXPATHLEN, "%s/%s", special_dir,
+ 		    remote_host ) >= MAXPATHLEN ) {
  		syslog( LOG_ERR, "config file: line %d: special dir too long\n",
-@@ -1077,7 +1077,7 @@ command_k( char *path_config )
+ 		    linenum );
+ 		continue;
+ 	    }
+-	    strcpy( special_dir, temp );
++	    (void)strlcpy( special_dir, temp, sizeof( special_dir ) );
  	    return( 0 );
  	} 
- 	if ( wildcard( av[ 0 ], remote_addr )) {
--	    sprintf( command_file, "command/%s", av[ 1 ] );
-+	    (void)snprintf( command_file, sizeof( command_file ), "command/%s", av[ 1 ] );
- 	    if ( snprintf( special_dir, MAXPATHLEN, "%s/%s", special_dir,
- 		    remote_addr ) > MAXPATHLEN - 1 ) {
+ 	if ( wildcard( av[ 0 ], remote_addr, 1 )) {
+@@ -1173,14 +1173,14 @@ command_k( char *path_config )
+ 		    "config file: line %d: command file too long\n", linenum );
+ 		continue;
+ 	    }
+-	    strcpy( command_file, av[ 1 ] );
++	    (void)strlcpy( command_file, av[ 1 ], sizeof( command_file ) );
+ 	    if ( snprintf( temp, MAXPATHLEN, "%s/%s", special_dir,
+ 		    remote_addr ) >= MAXPATHLEN ) {
  		syslog( LOG_ERR, "config file: line %d: special dir too long\n",
+ 		    linenum );
+ 		continue;
+ 	    }
+-	    strcpy( special_dir, temp );
++	    (void)strlcpy( special_dir, temp, sizeof( special_dir ) );
+ 	    return( 0 );
+ 	} 
+     }

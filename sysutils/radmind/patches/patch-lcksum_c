@@ -1,7 +1,41 @@
-$OpenBSD: patch-lcksum_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- lcksum.c.orig	Sat Jun 26 12:17:00 2004
-+++ lcksum.c	Sat Jun 26 12:17:47 2004
-@@ -345,7 +345,7 @@ main( int argc, char **argv )
+$OpenBSD: patch-lcksum_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
+--- lcksum.c.orig	Thu Jan  6 16:44:25 2005
++++ lcksum.c	Thu Jan 20 12:59:55 2005
+@@ -228,13 +228,13 @@ main( int argc, char **argv )
+ 	    fprintf( stderr, "%s: path too long\n", tpath );
+ 	    exit( 2 );
+ 	}
+-	strcpy( cwd, tpath );
++	(void)strlcpy( cwd, tpath, sizeof( cwd ) );
+     } else {
+ 	if ( snprintf( temp, MAXPATHLEN, "%s/%s", cwd, tpath ) >= MAXPATHLEN ) {
+ 	    fprintf( stderr, "%s/%s: path too long\n", cwd, tpath );
+ 	    exit( 2 );
+ 	}
+-	strcpy( cwd, temp );
++	(void)strlcpy( cwd, temp, sizeof( cwd ) );
+     }
+     if ( get_root( radmind_path, cwd, file_root, tran_root, tran_name ) != 0 ) {
+ 	exit( 2 );
+@@ -337,7 +337,7 @@ main( int argc, char **argv )
+ 	    exitval = 1;
+ 	    goto done;
+ 	}
+-	strcpy( path, d_path );
++	(void)strlcpy( path, d_path, sizeof( path ) );
+ 	    
+ 	/* check to see if file against prefix */
+ 	if ( prefix != NULL ) {
+@@ -395,7 +395,7 @@ main( int argc, char **argv )
+ 	    exitval = 1;
+ 	    goto done;
+ 	}
+-	strcpy( prepath, path );
++	(void)strlcpy( prepath, path, sizeof( prepath ) );
+ 
+ 	/*
+ 	 * Since this tool is run on the server, all files can be treated
+@@ -479,7 +479,7 @@ main( int argc, char **argv )
  		    fprintf( ufs, "%s %-37s %4s %5s %5s %9ld "
  			    "%7" PRIofft "d %s\n",
  			targv[ 0 ], targv[ 1 ], targv[ 2 ], targv[ 3 ],

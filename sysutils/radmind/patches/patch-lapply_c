@@ -1,7 +1,7 @@
-$OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- lapply.c.orig	2004-02-12 14:35:52.000000000 -0500
-+++ lapply.c	2004-06-08 16:21:37.000000000 -0400
-@@ -72,7 +72,7 @@ create_node( char *path, char *tline )
+$OpenBSD: patch-lapply_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
+--- lapply.c.orig	Thu Dec 16 16:50:35 2004
++++ lapply.c	Thu Jan 20 12:57:27 2005
+@@ -75,7 +75,7 @@ create_node( char *path, char *tline )
      new_node = (struct node *) malloc( sizeof( struct node ));
      new_node->path = strdup( path );
      if ( tline != NULL ) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  	new_node->doline = 1;
      } else {
  	new_node->doline = 0;
-@@ -123,7 +123,7 @@ do_line( char *tline, int present, struc
+@@ -126,7 +126,7 @@ do_line( char *tline, int present, struc
  	fprintf( stderr, "line %d: too long\n", linenum );
  	return( 1 );
      } 
@@ -19,7 +19,7 @@ $OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  
      /* DOWNLOAD */
      if ( *command == '+' ) {
-@@ -132,7 +132,7 @@ do_line( char *tline, int present, struc
+@@ -135,7 +135,7 @@ do_line( char *tline, int present, struc
  		    linenum, *targv[ 0 ] );
  	    return( 1 );
  	}
@@ -28,7 +28,16 @@ $OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  
  	if ( special ) {
  	    if ( snprintf( pathdesc, MAXPATHLEN * 2, "SPECIAL %s",
-@@ -409,7 +409,7 @@ main( int argc, char **argv )
+@@ -415,7 +415,7 @@ main( int argc, char **argv )
+ 	    fprintf( stderr, "line %d: too long\n", linenum );
+ 	    goto error2;
+ 	}
+-	strcpy( targvline, tline );
++	(void)strlcpy( targvline, tline, sizeof( targvline ) );
+ 
+ 	tac = acav_parse( acav, targvline, &targv );
+ 
+@@ -425,7 +425,7 @@ main( int argc, char **argv )
          }
  
  	if ( tac == 1 ) {
@@ -37,7 +46,7 @@ $OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  	    len = strlen( transcript );
  	    if ( transcript[ len - 1 ] != ':' ) { 
  		fprintf( stderr, "%s: line %d: invalid transcript name\n",
-@@ -451,7 +451,7 @@ main( int argc, char **argv )
+@@ -467,7 +467,7 @@ main( int argc, char **argv )
  	    fprintf( stderr, "line %d: too long\n", linenum );
  	    return( 1 );
  	} 
@@ -46,3 +55,12 @@ $OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  
  	/* Check transcript order */
  	if ( prepath != 0 ) {
+@@ -482,7 +482,7 @@ main( int argc, char **argv )
+ 		    transcript, linenum );
+ 	    goto error2;
+ 	}
+-	strcpy( prepath, path );
++	(void)strlcpy( prepath, path, sizeof( prepath ) );
+ 
+ 	/* Do type check on local file */
+ 	switch ( radstat( path, &st, &fstype, &afinfo )) {

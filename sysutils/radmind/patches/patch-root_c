@@ -1,7 +1,16 @@
-$OpenBSD: patch-root_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- root.c.orig	2004-03-08 12:52:35.000000000 -0500
-+++ root.c	2004-06-12 23:05:03.000000000 -0400
-@@ -80,8 +80,8 @@ get_root( char *path, char *file_root, c
+$OpenBSD: patch-root_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
+--- root.c.orig	Thu Jan  6 16:31:49 2005
++++ root.c	Thu Jan 20 12:57:28 2005
+@@ -33,7 +33,7 @@ get_root( char *radmind_path, char *path
+         fprintf( stderr, "%s: path too long\n", p );
+         return( -1 );
+     }
+-    strcpy( tran_name, p );
++    (void)strlcpy( tran_name, p, MAXPATHLEN );
+ 
+     if ( snprintf( test_path, MAXPATHLEN, "%s/tmp/transcript",
+             radmind_real_path ) > MAXPATHLEN - 1 ) {
+@@ -81,8 +81,8 @@ get_root( char *radmind_path, char *path
  		return( -1 );
  	    }
          } else {

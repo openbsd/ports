@@ -1,7 +1,7 @@
-$OpenBSD: patch-fsdiff_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- fsdiff.c.orig	2004-03-11 14:43:58.000000000 -0500
-+++ fsdiff.c	2004-06-08 15:52:01.000000000 -0400
-@@ -60,13 +60,7 @@ fs_walk( char *path, int start, int fini
+$OpenBSD: patch-fsdiff_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
+--- fsdiff.c.orig	Tue Sep 28 10:39:14 2004
++++ fsdiff.c	Thu Jan 13 08:42:34 2005
+@@ -59,13 +59,7 @@ fs_walk( char *path, int start, int fini
  	    }
  
  	    if ( ischild( tran->t_pinfo.pi_name, path )) {
