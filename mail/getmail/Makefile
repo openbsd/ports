@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/02/02 17:45:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/07 09:59:52 xsa Exp $
 
 COMMENT=	"POP3 mail retriever"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE} ${HOMEPAGE}old-versions/
 
-PYTHON_VER=	2.2
-RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+MODULES=	python
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -28,7 +27,7 @@ DOCDIR=		${PREFIX}/share/doc/getmail
 EXDIR=		${PREFIX}/share/examples/getmail
 GMDIR=		${PREFIX}/share/getmail
 
-HELPERS=	${WRKDIST}/getmail_maildir ${WRKDIST}/getmail_mbox \
+HELPERS=	${WRKDIST}/getmail_maildir ${WRKDIST}/getmail_mbox
 
 do-configure:
 	@perl -i -p -e "s#/usr/lib/getmail#${GMDIR}#;" \
