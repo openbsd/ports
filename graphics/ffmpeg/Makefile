@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/09 23:41:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2005/03/10 03:35:15 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	FFMpeg-20050130
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.jakemsr.com/
@@ -57,11 +57,6 @@ MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 # shared libpostproc
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CONFIGURE_ARGS+=--enable-shared-pp
-.endif
-
-# bktr(4) support
-.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "powerpc"
-CONFIGURE_ARGS+=--disable-v4l
 .endif
 
 # version numbers for the shared libraries
