@@ -1,0 +1,10 @@
+--- gs_init.ps.orig	Tue Feb  1 20:39:09 2000
++++ gs_init.ps	Tue Feb  1 20:40:23 2000
+@@ -1618,3 +1618,7 @@
+ (END GC) VMDEBUG
+ 
+ % The interpreter will run the initial procedure (start).
++
++% unofficial patch:
++% make it possible to print from within acroread pdf viewer
++/Default currenthalftone /Halftone defineresource pop
