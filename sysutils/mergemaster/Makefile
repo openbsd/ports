@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/22 23:19:50 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
+PKGNAME=	${DISTNAME}p1
 DISTNAME=	mergemaster-1.25
 CATEGORIES=	sysutils
 NEED_VERSION=	1.402

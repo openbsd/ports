@@ -1,6 +1,6 @@
-$OpenBSD: patch-mergemaster_sh,v 1.1.1.1 2001/09/27 17:30:11 naddy Exp $
+$OpenBSD: patch-mergemaster_sh,v 1.2 2002/01/22 23:19:50 naddy Exp $
 --- mergemaster.sh.orig	Thu Sep 27 16:20:58 2001
-+++ mergemaster.sh	Thu Sep 27 19:18:53 2001
++++ mergemaster.sh	Tue Jan 22 23:59:13 2002
 @@ -351,7 +351,7 @@ SOURCEDIR=${SOURCEDIR:-/usr/src/etc}
  
  # Define what CVS $Id tag to look for to aid portability.
@@ -42,3 +42,14 @@ $OpenBSD: patch-mergemaster_sh,v 1.1.1.1 2001/09/27 17:30:11 naddy Exp $
  
  # Get ready to start comparing files
  
+@@ -730,8 +723,8 @@ for COMPFILE in `find . -type f -size +0
+     # If the files have the same $Id, delete the one in temproot so the
+     # user will have less to wade through if files are left to merge by hand.
+     #
+-    CVSID1=`grep "[$]${CVS_ID_TAG}:" ${DESTDIR}${COMPFILE#.} 2>/dev/null`
+-    CVSID2=`grep "[$]${CVS_ID_TAG}:" ${COMPFILE} 2>/dev/null`
++    CVSID1=`grep "[$]${CVS_ID_TAG}:" ${DESTDIR}${COMPFILE#.} 2>/dev/null` &&
++    CVSID2=`grep "[$]${CVS_ID_TAG}:" ${COMPFILE} 2>/dev/null` || CVSID1=no
+ 
+     case "${CVSID2}" in
+     "${CVSID1}")
