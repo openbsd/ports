@@ -1,0 +1,28 @@
+$OpenBSD: patch-Configure,v 1.1 2004/04/09 10:20:47 sturm Exp $
+--- Configure.orig	2004-01-25 21:22:03.000000000 +0100
++++ Configure	2004-04-08 19:42:26.000000000 +0200
+@@ -278,7 +278,7 @@ d_isascii=''
+ d_memcpy=''
+ d_nls=''
+ d_open3=''
+-d_portable=''
++d_portable='define'
+ d_random=''
+ d_sendfile=''
+ d_srandom=''
+@@ -5384,15 +5384,6 @@ If you'd like to make any changes to the
+ to configure things, do it as a shell escape now (e.g. !vi config.sh).
+ 
+ EOM
+-	rp="Press return or use a shell escape to edit config.sh:"
+-	. UU/myread
+-	nostick=''
+-	case "$ans" in
+-	'') ;;
+-	*) : in case they cannot read
+-		sh 1>&4 -c "$ans";;
+-	esac
+-	;;
+ esac
+ 
+ : if this fails, just run all the .SH files by hand

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_getdate_y,v 1.1 2004/01/05 15:39:58 espie Exp $
---- src/getdate.y.orig	2004-01-05 16:30:48.000000000 +0100
-+++ src/getdate.y	2004-01-05 16:31:06.000000000 +0100
-@@ -91,6 +91,14 @@
+$OpenBSD: patch-src_getdate_y,v 1.2 2004/04/09 10:20:47 sturm Exp $
+--- src/getdate.y.orig	2004-01-25 21:22:06.000000000 +0100
++++ src/getdate.y	2004-04-08 19:39:09.000000000 +0200
+@@ -81,6 +81,14 @@
     host does not conform to Posix.  */
  #define ISDIGIT(c) ((unsigned) (c) - '0' <= 9)
  
@@ -15,8 +15,8 @@ $OpenBSD: patch-src_getdate_y,v 1.1 2004/01/05 15:39:58 espie Exp $
 +
  #include "getdate.h"
  
- #if defined (STDC_HEADERS) || defined (USG)
-@@ -173,14 +181,6 @@ typedef struct _TABLE {
+ /* Some old versions of bison generate parsers that use bcopy.
+@@ -159,14 +167,6 @@ typedef struct _TABLE {
  
  
  /*

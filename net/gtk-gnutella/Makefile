@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/06/19 13:49:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/04/09 10:20:47 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-DISTNAME=		gtk-gnutella-0.92
+DISTNAME=		gtk-gnutella-0.93.3
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -18,15 +18,22 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=		.tar.bz2
 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			xml2::textproc/libxml
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-libiconv-prefix="${LOCALBASE}"
+CONFIGURE_STYLE=	simple
+CONFIGURE_SCRIPT=	Configure
+# don't run interactively
+CONFIGURE_ARGS=		-d \
+			-D prefix="${PREFIX}" \
+			-D privlib="${PREFIX}/share/gtk-gnutella" \
+			-D cc="${CC}" \
+			-D ccflags="${CFLAGS} -I${LOCALBASE}/include" \
+			-D official="true" \
+			-U optimize
 
-SEPARATE_BUILD=		concurrent
+FAKE_FLAGS=		INSTALL_PREFIX=${DESTDIR}
+INSTALL_TARGET=		install install.man
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/debian/gtk-gnutella.1 ${PREFIX}/man/man1
-	
 .include <bsd.port.mk>
