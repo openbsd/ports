@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2003/01/27 20:05:50 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2003/04/05 14:53:40 espie Exp $
 ${KDE}/libeyes_panelapplet.so.0.0
 ${KDE}/libfifteen_panelapplet.so.0.0
 ${KDE}/libweather_panelapplet.so.0.0

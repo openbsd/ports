@@ -1,11 +1,8 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.2 2003/01/27 19:22:50 espie Exp $
---- ksysguard/ksysguardd/FreeBSD/CPU.c.orig	Thu Dec  5 21:41:06 2002
-+++ ksysguard/ksysguardd/FreeBSD/CPU.c	Tue Jan 14 15:50:07 2003
-@@ -22,9 +22,12 @@
- 
- #include <sys/types.h>
- #include <sys/dkstat.h>
-+#include <sys/param.h>
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.3 2003/04/05 14:53:38 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/CPU.c.orig	Sun Mar  9 02:17:32 2003
++++ ksysguard/ksysguardd/FreeBSD/CPU.c	Sun Mar 30 17:02:39 2003
+@@ -29,7 +29,9 @@
+ #endif
  #include <sys/sysctl.h>
  
 +#ifndef __OpenBSD__
@@ -14,7 +11,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.2 2003/01/27 19:22:50 esp
  #include <fcntl.h>
  #include <nlist.h>
  #include <stdio.h>
-@@ -68,7 +71,15 @@ exitCpuInfo(void)
+@@ -73,7 +75,15 @@ exitCpuInfo(void)
  int
  updateCpuInfo(void)
  {

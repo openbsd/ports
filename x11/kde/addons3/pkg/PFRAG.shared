@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2003/01/27 19:29:16 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:53:38 espie Exp $
 ${KDE}/libbabelfishplugin.so.0.0
 ${KDE}/libdirfilterplugin.so.0.0
 ${KDE}/libdomtreeviewerplugin.so.0.0

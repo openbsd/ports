@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2003/01/27 19:42:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:53:39 espie Exp $
 ${KDE}/libkcm_kmrml.so.0.0
 ${KDE}/libkded_daemonwatcher.so.0.0
 ${KDE}/libkdvipart.so.0.0

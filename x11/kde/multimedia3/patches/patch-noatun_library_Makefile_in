@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
---- noatun/library/Makefile.in.orig	Mon Nov 25 04:56:43 2002
-+++ noatun/library/Makefile.in	Fri Jan  3 15:06:33 2003
-@@ -336,9 +336,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
+$OpenBSD: patch-noatun_library_Makefile_in,v 1.5 2003/04/05 14:53:39 espie Exp $
+--- noatun/library/Makefile.in.orig	Tue Mar 11 06:53:44 2003
++++ noatun/library/Makefile.in	Mon Mar 31 16:42:57 2003
+@@ -335,9 +335,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
  
  SUBDIRS = noatunarts noatun . noatuntags
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  	playlist.cpp pref.cpp \
  	player.cpp playlistsaver.cpp app.cpp \
  	pluginloader.cpp plugin.cpp \
-@@ -351,12 +351,12 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
+@@ -350,12 +350,12 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
  
  include_HEADERS = cmodule.h plugin_deps.h equalizerview.h effectview.h mimetypetree.h ksaver.h
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  	$(top_builddir)/arts/gui/kde/libartsgui_kde.la			\
  	$(top_builddir)/arts/modules/libartsmodules.la			\
  	-lkio -lqtmcop -lkmedia2_idl -lnoatunarts			\
-@@ -381,27 +381,27 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -380,27 +380,27 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -63,7 +63,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  libnoatuncontrols_la_DEPENDENCIES =
  am_libnoatuncontrols_la_OBJECTS = controls.lo scrollinglabel.lo
  #>- libnoatuncontrols_la_OBJECTS = $(am_libnoatuncontrols_la_OBJECTS)
-@@ -444,7 +444,7 @@ am__depfiles_maybe = depfiles
+@@ -443,7 +443,7 @@ am__depfiles_maybe = depfiles
  #>- @AMDEP_TRUE@	./$(DEPDIR)/stereobuttonaction.Plo \
  #>- @AMDEP_TRUE@	./$(DEPDIR)/video.Plo
  #>+ 35
@@ -72,7 +72,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/controls.Plo ./$(DEPDIR)/conversion.Plo \
  @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/downloader.Plo ./$(DEPDIR)/effects.Plo \
  @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/effectview.Plo ./$(DEPDIR)/engine.Plo \
-@@ -498,7 +498,7 @@ CXXLD = $(CXX)
+@@ -497,7 +497,7 @@ CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  CXXFLAGS = @CXXFLAGS@
@@ -81,7 +81,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  	$(gentable_SOURCES)
  DATA = $(magictable_DATA)
  
-@@ -511,7 +511,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+@@ -510,7 +510,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
  	uninstall-recursive check-recursive installcheck-recursive
  DIST_COMMON = $(include_HEADERS) Makefile.am Makefile.in
  DIST_SUBDIRS = $(SUBDIRS)
@@ -90,7 +90,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  
  #>- all: all-recursive
  #>+ 1
-@@ -556,8 +556,8 @@ clean-libLTLIBRARIES:
+@@ -555,8 +555,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -101,7 +101,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  libnoatuncontrols.la: $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_DEPENDENCIES) 
  	$(CXXLINK) -rpath $(libdir) $(libnoatuncontrols_la_LDFLAGS) $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_LIBADD) $(LIBS)
  
-@@ -958,16 +958,16 @@ force-reedit:
+@@ -957,16 +957,16 @@ force-reedit:
  
  
  #>+ 11
@@ -126,7 +126,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.4 2003/01/27 19:53:58 espie Exp $
  
  #>+ 11
  libnoatuncontrols_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/controls.cpp $(srcdir)/scrollinglabel.cpp 
-@@ -983,20 +983,20 @@ libnoatuncontrols_la.all_cpp.cpp: $(srcd
+@@ -982,20 +982,20 @@ libnoatuncontrols_la.all_cpp.cpp: $(srcd
  
  #>+ 3
  clean-final:

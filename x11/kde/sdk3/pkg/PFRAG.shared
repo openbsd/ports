@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/27 20:14:49 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/04/05 14:53:40 espie Exp $
 ${KDE}/libkabcformat_kdeaccounts.so.0.0
 ${KDE}/libkfile_cpp.so.0.0
 ${KDE}/libkfile_diff.so.0.0

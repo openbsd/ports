@@ -1,8 +1,8 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.2 2003/01/27 19:22:50 espie Exp $
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.3 2003/04/05 14:53:38 espie Exp $
 --- ksysguard/ksysguardd/FreeBSD/netdev.c.orig	Thu Dec  5 21:41:07 2002
-+++ ksysguard/ksysguardd/FreeBSD/netdev.c	Thu Jan  9 23:22:01 2003
++++ ksysguard/ksysguardd/FreeBSD/netdev.c	Tue Mar 11 14:14:29 2003
 @@ -19,6 +19,7 @@
- 	$Id: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.2 2003/01/27 19:22:50 espie Exp $
+ 	$Id: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.3 2003/04/05 14:53:38 espie Exp $
  */
  
 +#ifdef __FreeBSD__

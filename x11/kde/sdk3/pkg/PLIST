@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 20:14:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/05 14:53:40 espie Exp $
 bin/adddebug
 bin/catalogmanager
 bin/cervisia
@@ -334,6 +334,7 @@ share/apps/kbabel/kbabelui.rc
 share/apps/kbabel/pics/broken.png
 share/apps/kbabel/pics/missing.png
 share/apps/kbabel/pics/needwork.png
+share/apps/kbabel/pics/noflag.png
 share/apps/kbabel/pics/ok.png
 share/apps/kbabel/pics/pref_identity.png
 share/apps/kbabel/pics/splash.png

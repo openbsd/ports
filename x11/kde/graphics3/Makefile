@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/01/27 19:42:21 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/05 14:53:39 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1
+VERSION=		3.1.1
 DISTNAME=		kdegraphics-${VERSION}
 
 LIB_DEPENDS=Imlib::graphics/imlib \
@@ -13,5 +13,7 @@ LIB_DEPENDS=Imlib::graphics/imlib \
 RUN_DEPENDS= :ghostscript-*:print/ghostscript/gnu
 
 SEPARATE_BUILD=flavored
+
+CONFIGURE_ARGS+=--without-kamera
 
 .include <bsd.port.mk>

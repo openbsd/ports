@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/27 19:42:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/04/05 14:53:39 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/01/27 19:42:20 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2003/04/05 14:53:38 espie Exp $
 ${KDE}/libkwin_cde.so.0.0
 ${KDE}/libkwin_cde_config.so.0.0
 ${KDE}/libkwin_glow.so.0.0

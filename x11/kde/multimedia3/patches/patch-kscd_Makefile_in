@@ -1,7 +1,7 @@
-$OpenBSD: patch-kscd_Makefile_in,v 1.4 2003/03/02 22:07:48 pvalchev Exp $
---- kscd/Makefile.in.orig	Thu Jan 16 12:49:40 2003
-+++ kscd/Makefile.in	Sat Mar  1 09:16:19 2003
-@@ -333,7 +333,7 @@ appsdir = $(kde_appsdir)/Multimedia
+$OpenBSD: patch-kscd_Makefile_in,v 1.5 2003/04/05 14:53:39 espie Exp $
+--- kscd/Makefile.in.orig	Tue Mar 11 06:53:43 2003
++++ kscd/Makefile.in	Mon Mar 31 16:42:56 2003
+@@ -332,7 +332,7 @@ appsdir = $(kde_appsdir)/Multimedia
  CDDBDIR = $(kde_datadir)/kscd/cddb/
  
  LDFLAGS = $(LIB_KIO) $(all_libraries) $(KDE_RPATH)
@@ -10,7 +10,7 @@ $OpenBSD: patch-kscd_Makefile_in,v 1.4 2003/03/02 22:07:48 pvalchev Exp $
  INCLUDES = $(all_includes)
  
  
-@@ -363,7 +363,7 @@ kscd_SOURCES=kscd.cpp  configdlg.cpp cdd
+@@ -362,7 +362,7 @@ kscd_SOURCES=kscd.cpp  configdlg.cpp cdd
  #	plat_svr4.c plat_freebsd.c plat_osf1.c plat_irix.c
  
  #cddaslave_SOURCES = cddaslave.c
@@ -19,7 +19,7 @@ $OpenBSD: patch-kscd_Makefile_in,v 1.4 2003/03/02 22:07:48 pvalchev Exp $
  
  #SOURCES3=kscdmagic/bitmap.cpp  kscdmagic/core.cpp kscdmagic/main.cpp 
  #	kscdmagic/sound.cpp kscdmagic/xlibwrap.cpp kscdmagic/xlib.c
-@@ -421,7 +421,7 @@ kscd_nofinal_OBJECTS = kscd.$(OBJEXT) co
+@@ -420,7 +420,7 @@ kscd_nofinal_OBJECTS = kscd.$(OBJEXT) co
  	mgconfdlg.$(OBJEXT) bwlednum.$(OBJEXT) configWidget.$(OBJEXT) kscd_skel.$(OBJEXT)
  @KDE_USE_FINAL_FALSE@kscd_OBJECTS = $(kscd_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@kscd_OBJECTS = $(kscd_final_OBJECTS)

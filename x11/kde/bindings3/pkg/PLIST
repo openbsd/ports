@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 20:24:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/05 14:53:39 espie Exp $
 bin/clib
 bin/shell_xparthost
 bin/xp_notepad
@@ -27,7 +27,6 @@ lib/libsmokeqt.la
 lib/libxp_notepadpart.la
 share/services/xp_notepad.desktop
 %%SHARED%%
-@dirrm share/services
 @dirrm include/xkparts
 @dirrm include/kjsembed
 @dirrm include/dcopc

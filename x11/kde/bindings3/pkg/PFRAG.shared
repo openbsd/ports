@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/27 20:24:28 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/04/05 14:53:39 espie Exp $
 lib/libdcopc.so.1.0
 lib/libgtkxparts.so.0.0
 lib/libkdec.so.1.0

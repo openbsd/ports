@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_library_noatuntags_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
---- noatun/library/noatuntags/Makefile.in.orig	Mon Nov 25 04:56:44 2002
-+++ noatun/library/noatuntags/Makefile.in	Wed Jan  1 16:18:40 2003
-@@ -330,7 +330,7 @@ lib_LTLIBRARIES = libnoatuntags.la
+$OpenBSD: patch-noatun_library_noatuntags_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
+--- noatun/library/noatuntags/Makefile.in.orig	Tue Mar 11 06:53:44 2003
++++ noatun/library/noatuntags/Makefile.in	Mon Mar 31 16:42:57 2003
+@@ -329,7 +329,7 @@ lib_LTLIBRARIES = libnoatuntags.la
  
  libnoatuntags_la_SOURCES = tags.cpp
  libnoatuntags_la_LDFLAGS = -L$(top_builddir)/noatun/library
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_library_noatuntags_Makefile_in,v 1.3 2003/01/27 19:53:58 
  
  #>- libnoatuntags_la_METASOURCES = AUTO
  
-@@ -343,7 +343,7 @@ CONFIG_CLEAN_FILES =
+@@ -342,7 +342,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
  libnoatuntags_la_DEPENDENCIES = \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_kaiman_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
---- noatun/modules/kaiman/Makefile.in.orig	Mon Nov 25 04:56:44 2002
-+++ noatun/modules/kaiman/Makefile.in	Wed Jan  1 16:18:45 2003
-@@ -336,7 +336,7 @@ noatun_kaiman_la_SOURCES = \
+$OpenBSD: patch-noatun_modules_kaiman_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
+--- noatun/modules/kaiman/Makefile.in.orig	Tue Mar 11 06:53:44 2003
++++ noatun/modules/kaiman/Makefile.in	Mon Mar 31 16:42:57 2003
+@@ -335,7 +335,7 @@ noatun_kaiman_la_SOURCES = \
  
  
  noatun_kaiman_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_kaiman_Makefile_in,v 1.3 2003/01/27 19:53:58 espi
                          -lqtmcop -lkmedia2_idl -lsoundserver_idl
  
  
-@@ -356,7 +356,7 @@ CONFIG_CLEAN_FILES =
+@@ -355,7 +355,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_kaiman_la_DEPENDENCIES = \

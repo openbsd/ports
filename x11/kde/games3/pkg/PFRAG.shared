@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2003/01/27 19:42:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2003/04/05 14:53:39 espie Exp $
 ${KDE}/libkio_atlantik.so.0.0
 ${KDE}/libkolf.so.0.0
 lib/libatlantic.so.2.0

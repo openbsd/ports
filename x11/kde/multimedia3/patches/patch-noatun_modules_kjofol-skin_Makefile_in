@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_kjofol-skin_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
---- noatun/modules/kjofol-skin/Makefile.in.orig	Mon Nov 25 04:56:44 2002
-+++ noatun/modules/kjofol-skin/Makefile.in	Wed Jan  1 16:18:47 2003
-@@ -348,7 +348,7 @@ noatun_kjofol_la_SOURCES=kjloader.cpp kj
+$OpenBSD: patch-noatun_modules_kjofol-skin_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
+--- noatun/modules/kjofol-skin/Makefile.in.orig	Tue Mar 11 06:53:44 2003
++++ noatun/modules/kjofol-skin/Makefile.in	Mon Mar 31 16:42:57 2003
+@@ -347,7 +347,7 @@ noatun_kjofol_la_SOURCES=kjloader.cpp kj
  
  
  noatun_kjofol_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_kjofol-skin_Makefile_in,v 1.3 2003/01/27 19:53:58
                          $(LIB_KIO) -lm \
                          $(top_builddir)/arts/modules/libartsmodules.la
  
-@@ -369,7 +369,7 @@ CONFIG_CLEAN_FILES =
+@@ -368,7 +368,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_kjofol_la_DEPENDENCIES = \

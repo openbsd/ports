@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2003/01/27 19:16:47 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:53:39 espie Exp $
 ${KDE}/libkabc_dir.so.0.0
 ${KDE}/libkabc_ldap.so.0.0
 ${KDE}/libkabcformat_binary.so.0.0
@@ -26,6 +26,7 @@ ${KDE}/libkio_ftp.so.0.0
 ${KDE}/libkio_help.so.0.0
 ${KDE}/libkio_http.so.0.0
 ${KDE}/libkio_metainfo.so.0.0
+${KDE}/libkjavaappletviewer.so.0.0
 ${KDE}/libkjs_html.so.0.0
 ${KDE}/libkmultipart.so.0.0
 ${KDE}/libkpac.so.0.0

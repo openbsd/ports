@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/01/27 19:22:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/04/05 14:53:39 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/drkonqi
@@ -70,6 +70,8 @@ bin/kwmtheme
 bin/kwrite
 bin/kwrited
 bin/kxkb
+bin/nspluginscan
+bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -288,27 +290,34 @@ lib/libkonq.la
 lib/libkonq_sidebar_tree.la
 lib/libkonqsidebarplugin.la
 lib/libksgrd.la
+lib/libnsplugin.la
 lib/libsensordisplays.la
 lib/libtaskbar.la
 lib/libtaskmanager.la
 libexec/genkdmconf
-@exec mkdir -p %D/share/config/kdm
-@exec %D/libexec/genkdmconf --in %D/share/config/kdm || true
-@unexec echo "Remove %D/share/config/kdm by hand"
 share/applnk/.directory
+share/applnk/.hidden/battery.desktop
+share/applnk/.hidden/bwarning.desktop
+share/applnk/.hidden/cwarning.desktop
 share/applnk/.hidden/fileappearance.desktop
 share/applnk/.hidden/filebehavior.desktop
 share/applnk/.hidden/filepreviews.desktop
+share/applnk/.hidden/kcmkonq.desktop
 share/applnk/.hidden/kcmkonsole.desktop
+share/applnk/.hidden/kcmkxmlrpcd.desktop
 share/applnk/.hidden/kicker_config.desktop
 share/applnk/.hidden/kicker_config_appearance.desktop
 share/applnk/.hidden/konqfilemgr.desktop
+share/applnk/.hidden/konqhtml.desktop
 share/applnk/.hidden/kwinactions.desktop
 share/applnk/.hidden/kwinadvanced.desktop
 share/applnk/.hidden/kwinfocus.desktop
 share/applnk/.hidden/kwinmoving.desktop
 share/applnk/.hidden/midi.desktop
+share/applnk/.hidden/power.desktop
 share/applnk/.hidden/smb.desktop
+share/applnk/.hidden/socks.desktop
+share/applnk/.hidden/virtualdesktops.desktop
 share/applnk/Applications/.directory
 share/applnk/Development/.directory
 share/applnk/Editors/.directory
@@ -1961,6 +1970,7 @@ share/icons/crystalsvg/16x16/apps/xpaint.png
 share/icons/crystalsvg/16x16/apps/xv.png
 share/icons/crystalsvg/16x16/devices/print_printer.png
 share/icons/crystalsvg/16x16/filesystems/folder_print2.png
+share/icons/crystalsvg/22x22/apps/klipper.png
 share/icons/crystalsvg/22x22/apps/kvirc.png
 share/icons/crystalsvg/22x22/apps/nedit.png
 share/icons/crystalsvg/32x32/apps/access.png
