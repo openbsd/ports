@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/09/17 14:35:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2004/04/19 13:36:50 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -38,6 +38,7 @@ FLAVOR?=
 LIB_DEPENDS+=		esd::audio/esound
 CONFIGURE_ARGS+=	--enable-esd
 .else
+BUILD_DEPENDS+=		esd::audio/esound
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
