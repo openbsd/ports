@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/20 05:17:27 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:48:02 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	slrn0.9.5.4
 PKGNAME=	slrn-0.9.5.4
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/ \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/news/reader/slrn/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LIB_DEPENDS=	slang.1.22:${PORTSDIR}/devel/libslang
 

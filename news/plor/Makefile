@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/21 01:01:51 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:48:00 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/utils/
 

@@ -1,10 +1,5 @@
-# OpenBSD makefile for:		swatch
-# Version required:    				2.2
-# Date created:					19 Nov 97
-# Whom:						ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/12 21:41:05 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:44:59 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=      	swatch-2.2
 CATEGORIES=	security sysutils 
@@ -13,7 +8,7 @@ NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 NO_BUILD=	YES
 

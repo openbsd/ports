@@ -1,14 +1,5 @@
-# OpenBSD makefile for:    astrolog
-#
-# http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
-# http://www.magitech.com/~cruiser1/astrolog.htm
-#
-# Version required:     5.30
-# Date created:         17 Dec 1997
-# Whom:                 joey@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/12 03:17:09 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:56:14 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
@@ -22,7 +13,7 @@ EXTRACT_ONLY=   ${DISTNAME}.shr
 EPHEM=          LRZ5_24 CHI_24 CPJV_24
 DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@OpenBSD.ORG
 
 EXTRACT_CMD=    ${SH}
 EXTRACT_ARGS=

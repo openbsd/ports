@@ -1,10 +1,5 @@
-# OpenBSD makefile for:	cops
-# Version required:			1.04
-# Date created:				19 Nov 1997
-# Whom:					ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/12 21:40:58 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:44:57 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	cops_104
 PKGNAME=	cops-1.04
@@ -14,7 +9,7 @@ NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/1.04/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 EXECUTABLE = home.chk user.chk is_writable crc crc_check \
              addto clearfiles filewriters members tilde is_able

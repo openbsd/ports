@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/12 22:04:18 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/06 19:44:58 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
@@ -8,7 +9,7 @@ NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@OpenBSD.ORG
 
 RESTRICTED=	"contains crypto (libdes)"
 WRKSRC=		${WRKDIR}/c50a
