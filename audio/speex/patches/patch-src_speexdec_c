@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_speexdec_c,v 1.1.1.1 2003/06/12 00:52:02 naddy Exp $
+--- src/speexdec.c.orig	Thu Jun 12 01:11:28 2003
++++ src/speexdec.c	Thu Jun 12 01:14:31 2003
+@@ -56,6 +56,14 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
++#elif defined HAVE_SYS_AUDIOIO_H
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <sys/audioio.h>
++#include <fcntl.h>
++#ifndef AUDIO_ENCODING_SLINEAR
++#define AUDIO_ENCODING_SLINEAR AUDIO_ENCODING_LINEAR	/* Solaris */
++#endif
+ #endif
+ 
+ #include <string.h>
+@@ -166,6 +174,32 @@ FILE *out_file_open(char *outFile, int r
+          close(audio_fd);
+          exit(1);
+       }
++      fout = fdopen(audio_fd, "w");
++#elif defined HAVE_SYS_AUDIOIO_H
++      audio_info_t info;
++      int audio_fd;
++ 
++      audio_fd = open("/dev/audio", O_WRONLY);
++      if (audio_fd<0)
++      {
++         perror("Cannot open /dev/audio");
++         exit(1);
++      }
++
++      AUDIO_INITINFO(&info);
++#ifdef AUMODE_PLAY	/* NetBSD/OpenBSD */
++      info.mode = AUMODE_PLAY;
++#endif
++      info.play.encoding = AUDIO_ENCODING_SLINEAR;
++      info.play.precision = 16;
++      info.play.sample_rate = rate;
++      info.play.channels = *channels;
++
++      if (ioctl(audio_fd, AUDIO_SETINFO, &info) < 0)
++      {
++         perror("AUDIO_SETINFO");
++         exit(1);
++      } 
+       fout = fdopen(audio_fd, "w");
+ #elif defined WIN32 || defined _WIN32
+       {
