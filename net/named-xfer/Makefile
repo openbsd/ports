@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/25 01:35:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/09/29 15:06:38 jakob Exp $
 
 COMMENT=	"zone transfer program from BIND v8"
 
-VERSION=	8.4.4
+VERSION=	8.4.5
 PKGNAME=	named-xfer-${VERSION}
 DISTNAME=	named-xfer-${VERSION}
 CATEGORIES=	net
@@ -10,12 +10,14 @@ CATEGORIES=	net
 DIST_SUBDIR=	bind-${VERSION}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
-MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/src/${VERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind/src/${VERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind/src/${VERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind/src/${VERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/src/${VERSION}/ \
-		ftp://ftp.iij.ad.jp/pub/network/isc/bind/src/${VERSION}/ \
+MASTER_SUBDIR=	src/${VERSION}
+
+MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/${MASTER_SUBDIR}/ \
+		ftp://ftp.epix.net/pub/isc/bind/${MASTER_SUBDIR}/ \
+		ftp://ftp.nominum.com/pub/isc/bind/${MASTER_SUBDIR}/ \
+		ftp://ftp.sunet.se/pub/network/isc/bind/${MASTER_SUBDIR}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/${MASTER_SUBDIR}/ \
+		ftp://ftp.iij.ad.jp/pub/network/isc/bind/${MASTER_SUBDIR}/ \
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 
@@ -30,8 +32,6 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=		simple
 WRKDIST=		${WRKDIR}/src
 PATCH_LIST=		patch-bin_named-xfer_Makefile
-
-#MAKE_ENV+=		LDFLAGS+=-static
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} DST=${WRKBUILD}/obj SRC=${WRKSRC} links
