@@ -1,0 +1,76 @@
+$OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
+--- audsav_dlg.c.orig	Sat Sep  4 15:09:01 1999
++++ audsav_dlg.c	Thu Nov 28 01:31:27 2002
+@@ -373,8 +373,10 @@ static void RecordCmdCB( Widget w, XtPoi
+         return;
+     }
+ 
++#if 0
+     /*  Save off original mute state  */
+     TVAUDIOGetMuteState( &mute_on );
++#endif
+ 
+     /*  Grab values off dialog  */
+     if ( !PrepareForAudio( TRUE, 1, &dsp_fd, &bps ) )
+@@ -426,8 +428,10 @@ static void RecordCmdCB( Widget w, XtPoi
+ 
+     Recording = True;
+ 
++#if 0
+     /*  Make sure mute is off, & disable all but stop btn  */
+     TVAUDIOSetMuteState( False );
++#endif
+     UpdateButtons();
+ 
+     /*  Flush X events (update GUI buttons, etc.)  */
+@@ -520,7 +524,9 @@ static void RecordCmdCB( Widget w, XtPoi
+     if ( state != NULL )
+         free( state );
+ 
++#if 0
+     TVAUDIOSetMuteState( mute_on );
++#endif
+ 
+     /*  FIXME:  Check code - make sure no problem (other than CPU) starting  */
+     /*    another record/play while conversion for previous still going on.  */
+@@ -576,7 +582,9 @@ static void PlaybackCmdDoneCB( TV_BOOL a
+     if ( !aborted && ( status != 0 ) )
+         DoCmdFailDialog( state->cmd, status );
+ 
++#if 0
+     TVAUDIOSetMuteState( state->mute_on );
++#endif
+ 
+     /*  Do post-cmd cleanup  */
+     free( state->cmd );
+@@ -616,8 +624,10 @@ static void PlaybackCmdCB( Widget w, XtP
+         return;
+     }
+ 
++#if 0
+     /*  Save off original mute state  */
+     TVAUDIOGetMuteState( &mute_on );
++#endif
+ 
+     /*  Grab values off dialog  */
+     if ( !PrepareForAudio( FALSE, 1, &dsp_fd, &bps ) )
+@@ -637,7 +647,9 @@ static void PlaybackCmdCB( Widget w, XtP
+     Playing = True;
+ 
+     /*  Make sure mute is on, & disable all but stop btn  */
++#if 0
+     TVAUDIOSetMuteState( True );
++#endif
+     UpdateButtons();
+ 
+     /*  Flush X events (update GUI buttons, etc.)  */
+@@ -779,7 +791,9 @@ static void PlaybackCmdCB( Widget w, XtP
+         free( state );
+ 
+     if ( !cmd_running ) {
++#if 0
+         TVAUDIOSetMuteState( mute_on );
++#endif
+         UpdateButtons();
+     }
+ }
