@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/03/30 21:15:01 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2000/04/16 20:43:26 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -34,14 +34,15 @@
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
 #    SUBDIR += lincity
+     SUBDIR += hackdata
      SUBDIR += nethack
+     SUBDIR += slash
 #    SUBDIR += nethack-qt
      SUBDIR += netris
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
 #    SUBDIR += quakeserver
-     SUBDIR += slash
 #    SUBDIR += sokoban
      SUBDIR += spider
      SUBDIR += starlanes
