@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/28 17:17:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/05/27 13:30:44 lebel Exp $
 @pkgcfl blackbox-*
 @pkgcfl openbox-*
 bin/bsetbg
 bin/bsetroot
 bin/fluxbox
+bin/fluxbox-generate_menu
 man/man1/bsetroot.1
 man/man1/fluxbox.1
 share/fluxbox/init
 share/fluxbox/keys
-share/fluxbox/menu
 share/fluxbox/nls/C/blackbox.cat
 share/fluxbox/nls/POSIX
 share/fluxbox/nls/US_ASCII
-share/fluxbox/nls/bg_BG
+share/fluxbox/nls/bg_BG/blackbox.cat
 share/fluxbox/nls/da_DK/blackbox.cat
 share/fluxbox/nls/en
 share/fluxbox/nls/en_US
@@ -49,7 +49,6 @@ share/fluxbox/styles/Spiff
 share/fluxbox/styles/TDF
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-share/fluxbox/titlebar
 @dirrm share/fluxbox/styles
 @dirrm share/fluxbox/nls/tr_TR
 @dirrm share/fluxbox/nls/sv_SE
@@ -62,6 +61,7 @@ share/fluxbox/titlebar
 @dirrm share/fluxbox/nls/et_EE
 @dirrm share/fluxbox/nls/es_ES
 @dirrm share/fluxbox/nls/da_DK
+@dirrm share/fluxbox/nls/bg_BG
 @dirrm share/fluxbox/nls/C
 @dirrm share/fluxbox/nls
 @dirrm share/fluxbox

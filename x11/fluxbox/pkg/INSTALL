@@ -1,0 +1,39 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2002/05/27 13:30:44 lebel Exp $
+#
+# Pre/post-installation setup of fluxbox
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	${PREFIX}/bin/fluxbox-generate_menu \
+		-p ${PREFIX}/share \
+		-o ${PREFIX}/share/fluxbox/menu \
+		-m Fluxbox-${VERSION}
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
