@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/24 12:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/24 07:51:06 mark Exp $
 
 COMMENT=	"graphical reverse polish notation calculator"
 
@@ -6,7 +6,7 @@ DISTNAME=	grpn-1.1.1
 CATEGORIES=	math x11
 NEED_VERSION=	1.474
 
-MAINTAINER=	Mark Grimes <obecian@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
 MASTER_SITES=	ftp://wilkins.ne.mediaone.net/pub/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/12/08 19:53:31 obecian Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/24 07:51:06 mark Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 HOMEPAGE=	http://www.winfield.demon.nl/
 
-MAINTAINER=	Mark Grimes <obecian@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

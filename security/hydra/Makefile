@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/03 03:47:14 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/24 07:51:06 mark Exp $
 
 COMMENT=		"parallized login hacker"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.427
 
 HOMEPAGE=		http://www.thehackerschoice.com/
 
-MAINTAINER=		Mark Grimes <obecian@openbsd.org>
+MAINTAINER=		Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 14:39:08 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/24 07:51:06 mark Exp $
 
 COMMENT=		"ICMP active OS fingerprint scanner"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.427
 
 HOMEPAGE=		http://www.sys-security.com/html/projects/X.html
 
-MAINTAINER=		Mark Grimes <obecian@openbsd.org>
+MAINTAINER=		Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 

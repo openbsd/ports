@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/05 17:44:07 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/24 07:51:05 mark Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/src/
 
 HOMEPAGE=	http://www.libsdl.org/
 
-MAINTAINER=	Mark Grimes <obecian@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

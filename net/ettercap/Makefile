@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/12/14 20:33:07 obecian Exp $
+# $OpenBSD: Makefile,v 1.12 2001/12/24 07:51:06 mark Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	ettercap
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
 
-MAINTAINER=	Mark Grimes <obecian@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

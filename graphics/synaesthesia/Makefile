@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/26 01:46:02 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/24 07:51:05 mark Exp $
 
 COMMENT=		"visual sound representation"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.409
 
 HOMEPAGE=		http://yoyo.cc.monash.edu.au/~pfh/synaesthesia.html
 
-MAINTAINER=		Mark Grimes <obecian@openbsd.org>
+MAINTAINER=		Mark Grimes <mark@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
