@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2002/11/23 14:27:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2003/04/27 07:03:30 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows rotating 3d-object and CPU load'
 
 DISTNAME=		wmcube-0.98
 CATEGORIES=		sysutils x11 x11/windowmaker
 
-HOMEPAGE=		http://kling.mine.nu/kling/wmcube.htm
+HOMEPAGE=		http://kling.mine.nu/wmcube.htm
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://kling.mine.nu/kling/files/
+MASTER_SITES=		http://kling.mine.nu/files/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
