@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2003/05/26 14:25:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.113 2003/05/26 15:20:41 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -54,6 +54,7 @@
      SUBDIR += mod_frontpage
      SUBDIR += mod_gzip
      SUBDIR += mod_layout
+     SUBDIR += mod_log_sql
      SUBDIR += mod_mp3
      SUBDIR += mod_mp3,mysql
      SUBDIR += mod_perl
