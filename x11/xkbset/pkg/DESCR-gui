@@ -1,0 +1,8 @@
+Help manage many of the XKB features of X11.
+
+This includes such features as MouseKeys, AccessX, StickyKeys,
+BounceKeys, and SlowKeys.
+
+This package provides a Perl/Tk-based GUI for xkbset.
+
+WWW: ${HOMEPAGE}
