@@ -1,0 +1,4 @@
+As shipped, the ghostscript port does not support encryption in pdf files.
+We don't ship the crypto-enabled part on the CD for various reasons.
+To enable that, you just need a command like:
+pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/2.7/packages/i386/ghostscript_encrypt-aladdin.tgz
