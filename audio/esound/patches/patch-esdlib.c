@@ -1,5 +1,5 @@
---- esdlib.c.orig	Sun Aug  6 04:49:10 2000
-+++ esdlib.c	Sun Aug  6 04:51:37 2000
+--- esdlib.c.orig	Mon Oct  2 12:44:18 2000
++++ esdlib.c	Thu Oct  5 19:39:59 2000
 @@ -19,6 +19,8 @@
  #include <arpa/inet.h>
  #include <errno.h>
@@ -9,7 +9,7 @@
  
  #include <sys/un.h>
  
-@@ -1421,4 +1423,34 @@
+@@ -1422,4 +1424,34 @@
      */
  
      return close( esd );

@@ -1,29 +1,11 @@
---- Makefile.in.orig	Tue Jul 18 12:35:17 2000
-+++ Makefile.in	Sun Aug  6 04:24:05 2000
-@@ -135,7 +135,7 @@
- 	genrand.h
- 
- 
--libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
-+libesd_la_LDFLAGS = -version-info 2:19:0
- 
- libesd_la_LIBADD = @AUDIOFILE_LIBS@ -lm
- 
-@@ -143,7 +143,7 @@
- 	libesddsp.la
- 
- 
--libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
-+libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 2:19:0
- 
- libesddsp_la_LIBADD = @DL_LIB@ -lm
- 
-@@ -236,7 +236,7 @@
+--- Makefile.in.orig	Tue Oct  3 14:32:18 2000
++++ Makefile.in	Thu Oct  5 19:52:36 2000
+@@ -178,7 +178,7 @@
  m4datadir = $(datadir)/aclocal
  m4data_DATA = esd.m4
  
 -esdconfdir = $(sysconfdir)
-+esdconfdir = $(prefix)/share/examples/esound
++esdconfdir = $(datadir)/examples/esound
  esdconf_DATA = esd.conf
  
  CLEANFILES = esound.spec
