@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_imap_cmd-status_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
---- src/imap/cmd-status.c.orig	Tue Jun 24 18:12:56 2003
-+++ src/imap/cmd-status.c	Tue Jul 15 15:17:12 2003
-@@ -65,7 +65,10 @@ static int get_mailbox_status(struct cli
+$OpenBSD: patch-src_imap_cmd-status_c,v 1.2 2005/02/12 12:17:07 brad Exp $
+--- src/imap/cmd-status.c.orig	Thu Sep  2 11:00:10 2004
++++ src/imap/cmd-status.c	Fri Oct  1 02:39:59 2004
+@@ -57,7 +57,10 @@ static int get_mailbox_status(struct cli
  	} else {
  		/* open the mailbox */
  		box = client->storage->open_mailbox(client->storage,
