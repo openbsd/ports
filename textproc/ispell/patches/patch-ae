@@ -1,0 +1,17 @@
+--- ispell.texinfo.~1~	Wed Nov  2 10:44:23 1994
++++ ispell.texinfo	Sun Jul 12 18:54:33 1998
+@@ -9,6 +9,14 @@
+ @end iftex
+ 
+ @ifinfo
++@format
++START-INFO-DIR-ENTRY
++* ispell: (ispell).		interactive spelling corrector.
++END-INFO-DIR-ENTRY
++@end format
++@end ifinfo
++
++@ifinfo
+ This file documents ISPELL, an interactive spelling corrector.
+ 
+ Copyright 1988, 1990, 1991, 1992, 1993  Free Software Foundation, Inc.

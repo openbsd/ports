@@ -3,7 +3,7 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:57 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/13 02:24:49 marc Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -60,5 +60,11 @@ french:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
+
+post-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
+	@install-info ${PREFIX}/info/ispell ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
