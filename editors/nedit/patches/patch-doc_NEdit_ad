@@ -1,35 +1,57 @@
-$OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
---- doc/NEdit.ad.orig	Fri Sep  7 21:16:30 2001
-+++ doc/NEdit.ad	Fri Nov 16 14:32:37 2001
-@@ -22,150 +22,150 @@
- !       very specific defaults for file selection box fonts */
- !nedit*FileSelect*XmList.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
- !*XmTextField.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
+$OpenBSD: patch-doc_NEdit_ad,v 1.2 2004/01/14 23:42:53 djm Exp $
+--- doc/NEdit.ad.orig	2003-09-29 01:03:50.000000000 +1000
++++ doc/NEdit.ad	2003-12-04 22:25:59.000000000 +1100
+@@ -8,188 +8,188 @@
+ ! Application defaults for NEdit 5.4
+ !
+ !
+-!*FontList: -*-helvetica-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*XmText.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*XmTextField.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*XmList.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*XmFileSelectionBox*XmList.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
 -!*background: #b3b3b3
 -!*foreground: black
--!*text.lineNumForeground: #777777
--!*text.background: #e5e5e5
+-!*XmText.foreground: black
+-!*XmText.background: rgb:e5/e5/e5
+-!*XmList.foreground: black
+-!*XmList.background: rgb:e5/e5/e5
+-!*XmTextField.foreground: black
+-!*XmTextField.background: rgb:e5/e5/e5
+-!*XmText.translations: #override\n
+-!    Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>u: delete-to-start-of-line()\n
+-!*XmTextField.translations: #override\n
+-!    Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
+-!    Ctrl~Alt~Meta<KeyPress>u: delete-to-start-of-line()\n
+-!*XmFileSelectionBox.resizePolicy: XmRESIZE_NONE
+-!*XmFileSelectionBox.textAccelerators:
+-!*text.lineNumForeground: black
+-!*text.background: rgb:e5/e5/e5
 -!*text.foreground: black
+-!*text.highlightForeground: white
 -!*text.highlightBackground: red
--!*text.highlightForeground: black
--!*XmText*foreground: black
--!*XmText*background: #cccccc
--!*helpText.background: #cccccc
+-!*textFrame.shadowThickness: 1
+-!*menuBar.marginHeight: 0
+-!*menuBar.shadowThickness: 1
+-!*pane.sashHeight: 11
+-!*pane.sashWidth: 11
+-!*pane.marginWidth: 0
+-!*pane.marginHeight: 0
+-!*scrolledW*spacing: 0
+-!*text.selectionArrayCount: 3
+-!*helpText.background: rgb:cc/cc/cc
 -!*helpText.foreground: black
 -!*helpText.selectBackground: #b3b3b3
--!*helpText.font: -adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
--!*XmText.translations: #override \
--!Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
--!Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
--!Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
--!*XmTextField.translations: #override \
--!Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
--!Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
--!Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
--!*XmList*foreground: black
--!*XmList*background: #cccccc
--!*XmTextField*background: #cccccc
--!*XmTextField*foreground: black
+-!*statsLine.background: #b3b3b3
+-!*statsLine.FontList: -*-helvetica-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*helpText.font: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
+-!*calltip.background: LemonChiffon1
+-!*calltip.foreground: black
 -!*iSearchForm*highlightThickness: 1
 -!*fileMenu.tearOffModel: XmTEAR_OFF_ENABLED
 -!*editMenu.tearOffModel: XmTEAR_OFF_ENABLED
@@ -86,8 +108,8 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 -!*editMenu.fillParagraph.acceleratorText: Ctrl+J
 -!*editMenu.insertFormFeed.accelerator: Alt Ctrl<Key>l
 -!*editMenu.insertFormFeed.acceleratorText: Alt+Ctrl+L
--!*editMenu.insControlCode.accelerator: Alt<Key>i
--!*editMenu.insControlCode.acceleratorText: Alt+I
+-!*editMenu.insertCtrlCode.accelerator: Alt Ctrl<Key>i
+-!*editMenu.insertCtrlCode.acceleratorText: Alt+Ctrl+I
 -!*searchMenu.mnemonic: S
 -!*searchMenu.find.accelerator: Ctrl<Key>f
 -!*searchMenu.find.acceleratorText: [Shift]Ctrl+F
@@ -104,9 +126,15 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 -!*searchMenu.replace.accelerator: Ctrl<Key>r
 -!*searchMenu.replace.acceleratorText: [Shift]Ctrl+R
 -!*searchMenu.replaceShift.accelerator: Shift Ctrl<Key>r
--!*searchMenu.replaceAgain.accelerator: Ctrl<Key>t
--!*searchMenu.replaceAgain.acceleratorText: [Shift]Ctrl+T
--!*searchMenu.replaceAgainShift.accelerator: Shift Ctrl<Key>t
+-!*searchMenu.findReplace.accelerator: Ctrl<Key>r
+-!*searchMenu.findReplace.acceleratorText: [Shift]Ctrl+R
+-!*searchMenu.findReplaceShift.accelerator: Shift Ctrl<Key>r
+-!*searchMenu.replaceFindAgain.accelerator: Ctrl<Key>t
+-!*searchMenu.replaceFindAgain.acceleratorText: [Shift]Ctrl+T
+-!*searchMenu.replaceFindAgainShift.accelerator: Shift Ctrl<Key>t
+-!*searchMenu.replaceAgain.accelerator: Alt<Key>t
+-!*searchMenu.replaceAgain.acceleratorText: [Shift]Alt+T
+-!*searchMenu.replaceAgainShift.accelerator: Shift Alt<Key>t
 -!*searchMenu.gotoLineNumber.accelerator: Ctrl<Key>l
 -!*searchMenu.gotoLineNumber.acceleratorText: Ctrl+L
 -!*searchMenu.gotoSelected.accelerator: Ctrl<Key>e
@@ -121,18 +149,19 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 -!*searchMenu.gotoMatchingShift.accelerator: Shift Ctrl<Key>m
 -!*searchMenu.findDefinition.accelerator: Ctrl<Key>d
 -!*searchMenu.findDefinition.acceleratorText: Ctrl+D
+-!*searchMenu.showCalltip.accelerator: Ctrl<Key>apostrophe
+-!*searchMenu.showCalltip.acceleratorText: Ctrl+'
 -!*preferencesMenu.mnemonic: P
 -!*preferencesMenu.statisticsLine.accelerator: Alt<Key>a
 -!*preferencesMenu.statisticsLine.acceleratorText: Alt+A
--!*preferencesMenu.overtype.accelerator: Ctrl<Key>b
--!*preferencesMenu.overtype.acceleratorText: Ctrl+B
+-!*preferencesMenu.overtype.acceleratorText: Insert
 -!*shellMenu.mnemonic: l
 -!*shellMenu.filterSelection.accelerator: Alt<Key>r
 -!*shellMenu.filterSelection.acceleratorText: Alt+R
 -!*shellMenu.executeCommand.accelerator: Alt<Key>x
 -!*shellMenu.executeCommand.acceleratorText: Alt+X
--!*shellMenu.executeCommandLine.accelerator: <Key>KP_Enter
--!*shellMenu.executeCommandLine.acceleratorText: KP Enter
+-!*shellMenu.executeCommandLine.accelerator: Ctrl<Key>KP_Enter
+-!*shellMenu.executeCommandLine.acceleratorText: Ctrl+KP Enter
 -!*shellMenu.cancelShellCommand.accelerator: Ctrl<Key>period
 -!*shellMenu.cancelShellCommand.acceleratorText: Ctrl+.
 -!*macroMenu.mnemonic: c
@@ -152,31 +181,61 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 -!*windowsMenu.closePane.accelerator: Ctrl<Key>1
 -!*windowsMenu.closePane.acceleratorText: Ctrl+1
 -!*helpMenu.mnemonic: H
+-!*helpForm.sw.helpText*translations: #override\
+-!    <Key>Tab: help-focus-buttons()\n\
+-!    <Key>Return: help-button-action("dismiss")\n\
+-!    <KeyPress>osfCancel: help-button-action("dismiss")\n\
+-!    ~Meta~Ctrl~Shift<Btn1Down>: grab-focus() help-hyperlink()\n\
+-!    ~Meta~Ctrl~Shift<Btn1Up>: help-hyperlink("current", "process-cancel", "extend-end")\n\
+-!    ~Meta~Ctrl~Shift<Btn2Down>: process-bdrag() help-hyperlink()\n\
+-!    ~Meta~Ctrl~Shift<Btn2Up>: help-hyperlink(\"new", "process-cancel", "copy-to")
++*FontList: -*-helvetica-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*XmText.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*XmTextField.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*XmList.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*XmFileSelectionBox*XmList.FontList: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
 +*background: #b3b3b3
 +*foreground: black
-+*text.lineNumForeground: #777777
-+*text.background: #e5e5e5
++*XmText.foreground: black
++*XmText.background: rgb:e5/e5/e5
++*XmList.foreground: black
++*XmList.background: rgb:e5/e5/e5
++*XmTextField.foreground: black
++*XmTextField.background: rgb:e5/e5/e5
++*XmText.translations: #override\n
++    Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>u: delete-to-start-of-line()\n
++*XmTextField.translations: #override\n
++    Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
++    Ctrl~Alt~Meta<KeyPress>u: delete-to-start-of-line()\n
++*XmFileSelectionBox.resizePolicy: XmRESIZE_NONE
++*XmFileSelectionBox.textAccelerators:
++*text.lineNumForeground: black
++*text.background: rgb:e5/e5/e5
 +*text.foreground: black
++*text.highlightForeground: white
 +*text.highlightBackground: red
-+*text.highlightForeground: black
-+*XmText*foreground: black
-+*XmText*background: #cccccc
-+*helpText.background: #cccccc
++*textFrame.shadowThickness: 1
++*menuBar.marginHeight: 0
++*menuBar.shadowThickness: 1
++*pane.sashHeight: 11
++*pane.sashWidth: 11
++*pane.marginWidth: 0
++*pane.marginHeight: 0
++*scrolledW*spacing: 0
++*text.selectionArrayCount: 3
++*helpText.background: rgb:cc/cc/cc
 +*helpText.foreground: black
 +*helpText.selectBackground: #b3b3b3
-+*helpText.font: -adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
-+*XmText.translations: #override \
-+Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
-+Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
-+Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
-+*XmTextField.translations: #override \
-+Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
-+Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
-+Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
-+*XmList*foreground: black
-+*XmList*background: #cccccc
-+*XmTextField*background: #cccccc
-+*XmTextField*foreground: black
++*statsLine.background: #b3b3b3
++*statsLine.FontList: -*-helvetica-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*helpText.font: -*-courier-medium-r-normal-*-*-120-*-*-*-iso8859-1
++*calltip.background: LemonChiffon1
++*calltip.foreground: black
 +*iSearchForm*highlightThickness: 1
 +*fileMenu.tearOffModel: XmTEAR_OFF_ENABLED
 +*editMenu.tearOffModel: XmTEAR_OFF_ENABLED
@@ -233,8 +292,8 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 +*editMenu.fillParagraph.acceleratorText: Ctrl+J
 +*editMenu.insertFormFeed.accelerator: Alt Ctrl<Key>l
 +*editMenu.insertFormFeed.acceleratorText: Alt+Ctrl+L
-+*editMenu.insControlCode.accelerator: Alt<Key>i
-+*editMenu.insControlCode.acceleratorText: Alt+I
++*editMenu.insertCtrlCode.accelerator: Alt Ctrl<Key>i
++*editMenu.insertCtrlCode.acceleratorText: Alt+Ctrl+I
 +*searchMenu.mnemonic: S
 +*searchMenu.find.accelerator: Ctrl<Key>f
 +*searchMenu.find.acceleratorText: [Shift]Ctrl+F
@@ -251,9 +310,15 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 +*searchMenu.replace.accelerator: Ctrl<Key>r
 +*searchMenu.replace.acceleratorText: [Shift]Ctrl+R
 +*searchMenu.replaceShift.accelerator: Shift Ctrl<Key>r
-+*searchMenu.replaceAgain.accelerator: Ctrl<Key>t
-+*searchMenu.replaceAgain.acceleratorText: [Shift]Ctrl+T
-+*searchMenu.replaceAgainShift.accelerator: Shift Ctrl<Key>t
++*searchMenu.findReplace.accelerator: Ctrl<Key>r
++*searchMenu.findReplace.acceleratorText: [Shift]Ctrl+R
++*searchMenu.findReplaceShift.accelerator: Shift Ctrl<Key>r
++*searchMenu.replaceFindAgain.accelerator: Ctrl<Key>t
++*searchMenu.replaceFindAgain.acceleratorText: [Shift]Ctrl+T
++*searchMenu.replaceFindAgainShift.accelerator: Shift Ctrl<Key>t
++*searchMenu.replaceAgain.accelerator: Alt<Key>t
++*searchMenu.replaceAgain.acceleratorText: [Shift]Alt+T
++*searchMenu.replaceAgainShift.accelerator: Shift Alt<Key>t
 +*searchMenu.gotoLineNumber.accelerator: Ctrl<Key>l
 +*searchMenu.gotoLineNumber.acceleratorText: Ctrl+L
 +*searchMenu.gotoSelected.accelerator: Ctrl<Key>e
@@ -268,18 +333,19 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 +*searchMenu.gotoMatchingShift.accelerator: Shift Ctrl<Key>m
 +*searchMenu.findDefinition.accelerator: Ctrl<Key>d
 +*searchMenu.findDefinition.acceleratorText: Ctrl+D
++*searchMenu.showCalltip.accelerator: Ctrl<Key>apostrophe
++*searchMenu.showCalltip.acceleratorText: Ctrl+'
 +*preferencesMenu.mnemonic: P
 +*preferencesMenu.statisticsLine.accelerator: Alt<Key>a
 +*preferencesMenu.statisticsLine.acceleratorText: Alt+A
-+*preferencesMenu.overtype.accelerator: Ctrl<Key>b
-+*preferencesMenu.overtype.acceleratorText: Ctrl+B
++*preferencesMenu.overtype.acceleratorText: Insert
 +*shellMenu.mnemonic: l
 +*shellMenu.filterSelection.accelerator: Alt<Key>r
 +*shellMenu.filterSelection.acceleratorText: Alt+R
 +*shellMenu.executeCommand.accelerator: Alt<Key>x
 +*shellMenu.executeCommand.acceleratorText: Alt+X
-+*shellMenu.executeCommandLine.accelerator: <Key>KP_Enter
-+*shellMenu.executeCommandLine.acceleratorText: KP Enter
++*shellMenu.executeCommandLine.accelerator: Ctrl<Key>KP_Enter
++*shellMenu.executeCommandLine.acceleratorText: Ctrl+KP Enter
 +*shellMenu.cancelShellCommand.accelerator: Ctrl<Key>period
 +*shellMenu.cancelShellCommand.acceleratorText: Ctrl+.
 +*macroMenu.mnemonic: c
@@ -299,3 +365,12 @@ $OpenBSD: patch-doc_NEdit_ad,v 1.1 2001/11/16 08:44:53 form Exp $
 +*windowsMenu.closePane.accelerator: Ctrl<Key>1
 +*windowsMenu.closePane.acceleratorText: Ctrl+1
 +*helpMenu.mnemonic: H
++*helpForm.sw.helpText*translations: #override\
++    <Key>Tab: help-focus-buttons()\n\
++    <Key>Return: help-button-action("dismiss")\n\
++    <KeyPress>osfCancel: help-button-action("dismiss")\n\
++    ~Meta~Ctrl~Shift<Btn1Down>: grab-focus() help-hyperlink()\n\
++    ~Meta~Ctrl~Shift<Btn1Up>: help-hyperlink("current", "process-cancel", "extend-end")\n\
++    ~Meta~Ctrl~Shift<Btn2Down>: process-bdrag() help-hyperlink()\n\
++    ~Meta~Ctrl~Shift<Btn2Up>: help-hyperlink(\"new", "process-cancel", "copy-to")
+ 

@@ -1,39 +1,39 @@
-$OpenBSD: patch-doc_nedit_man,v 1.1 2001/10/31 08:03:19 form Exp $
---- doc/nedit.man.orig	Wed Oct 31 13:31:16 2001
-+++ doc/nedit.man	Wed Oct 31 13:32:03 2001
-@@ -172,14 +172,14 @@ Go to line number \fIn\fR.
+$OpenBSD: patch-doc_nedit_man,v 1.2 2004/01/14 23:42:53 djm Exp $
+--- doc/nedit.man.orig	2003-11-21 05:40:12.000000000 +1100
++++ doc/nedit.man	2003-12-04 22:36:29.000000000 +1100
+@@ -177,14 +177,14 @@ Go to line number \fIn\fR.
  .Ip "\fB\-server\fR" 4
  .IX Item "-server"
  Designate this session as an NEdit server, for processing commands from the
 -\&\fInc\fR\|(1) program. \fInc\fR\|(1) can be used to interface NEdit to code development
-+\&\fIncl\fR\|(1) program. \fIncl\fR\|(1) can be used to interface NEdit to code development
++\&\fInc1\fR\|(1) program. \fInc1\fR\|(1) can be used to interface NEdit to code development
  environments, mailers, etc., or just as a quick way to open files from the
  shell command line without starting a new NEdit session.
  .Ip "\fB\-do\fR \fIcommand\fR" 4
  .IX Item "-do command"
  Execute an NEdit macro or action. On each file following the \fB\-do\fR argument on
 -the command line. \fB\-do\fR is particularly useful from the \fInc\fR\|(1) program, where
--\&\f(CW\*(C`nc \-do\*(C'\fR can remotely execute commands in an nedit \fB\-server\fR session.
-+the command line. \fB\-do\fR is particularly useful from the \fIncl\fR\|(1) program, where
-+\&\f(CW\*(C`ncl \-do\*(C'\fR can remotely execute commands in an nedit \fB\-server\fR session.
+-`nc \-do' can remotely execute commands in an nedit \fB\-server\fR session.
++the command line. \fB\-do\fR is particularly useful from the \fInc1\fR\|(1) program, where
++`nc1 \-do' can remotely execute commands in an nedit \fB\-server\fR session.
  .Ip "\fB\-tags\fR \fIfile\fR" 4
  .IX Item "-tags file"
  Load a file of directions for finding definitions of program subroutines and
-@@ -252,7 +252,7 @@ Set the value of an X resource to overri
+@@ -257,7 +257,7 @@ Set the value of an X resource to overri
  .Ip "\fB\-svrname\fR \fIname\fR" 4
  .IX Item "-svrname name"
  When starting nedit in server mode, name the server, such that it responds to
 -requests only when \fInc\fR\|(1) is given a corresponding \fB\-svrname\fR argument.  By
-+requests only when \fIncl\fR\|(1) is given a corresponding \fB\-svrname\fR argument.  By
++requests only when \fInc1\fR\|(1) is given a corresponding \fB\-svrname\fR argument.  By
  naming servers, you can run several simultaneously, and direct files and
  commands specifically to any one.
  .Ip "\fB\-import\fR \fIfile\fR" 4
-@@ -300,7 +300,7 @@ NEdit sources, executables, additional d
+@@ -341,7 +341,7 @@ NEdit sources, executables, additional d
  are available from the NEdit web site at http://nedit.org.
  .SH "SEE ALSO"
  .IX Header "SEE ALSO"
--\&\fInc\fR\|(1), X(1), \fImwm\fR\|(1), \fIvi\fR\|(1), \fIemacs\fR\|(1), \fIctags\fR\|(1)
-+\&\fIncl\fR\|(1), X(1), \fImwm\fR\|(1), \fIvi\fR\|(1), \fIemacs\fR\|(1), \fIctags\fR\|(1)
+-\&\fInc\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)
++\&\fInc1\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)
  .SH "AUTHORS"
  .IX Header "AUTHORS"
  NEdit was written by Mark Edel, Joy Kyriakopulos, Christopher Conrad, Jim
