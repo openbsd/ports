@@ -1,0 +1,21 @@
+$OpenBSD: patch-kate_app_kategrepdialog_cpp,v 1.1 2004/10/26 10:03:53 espie Exp $
+--- kate/app/kategrepdialog.cpp.orig	Tue Oct 26 11:44:17 2004
++++ kate/app/kategrepdialog.cpp	Tue Oct 26 11:57:22 2004
+@@ -351,9 +351,15 @@ void GrepTool::slotSearch()
+   if (!cmbFiles->currentText().isEmpty() )
+   {
+     QStringList files = QStringList::split ( ",", cmbFiles->currentText(), FALSE );
+-    *childproc << "(" << "-false";
++    *childproc << "(";
++    bool first = true;
+     for ( QStringList::Iterator it = files.begin(); it != files.end(); ++it )
+-      *childproc << "-o" << "-name" << (*it);
++    {
++      if (!first)
++        *childproc << "-o";
++      *childproc << "-name" << (*it);
++      first = false;
++    }
+     *childproc << ")";
+   }
+   *childproc << "-exec" << "grep";
