@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/10/24 12:38:46 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2001/10/25 02:34:11 brad Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--without-gdbm
 
 .if ${FLAVOR:L:Mgettext}
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE}
-LIB_DEPENDS+=		intl.1::devel/gettext
+MODULES=		gettext
 .else
 CONFIGURE_ARGS+=	--without-gettext
 .endif
