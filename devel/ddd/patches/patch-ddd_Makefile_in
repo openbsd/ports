@@ -1,0 +1,24 @@
+$OpenBSD: patch-ddd_Makefile_in,v 1.1 2000/10/30 13:55:45 espie Exp $
+--- ddd/Makefile.in.orig	Mon Oct 30 14:17:59 2000
++++ ddd/Makefile.in	Mon Oct 30 14:19:20 2000
+@@ -2505,18 +2505,8 @@ configinfo.C: USERINFO $(srcdir)/config-
+ configinfo.$(OBJEXT):	configinfo.C configinfo.h
+ 
+ # If `~/.ddd_userinfo' exists, use this file as personal identification.
+-USERINFO: userinfo$(EXEEXT)
+-	-(cat $$HOME/.ddd_userinfo 2> /dev/null || \
+-	./userinfo || echo '(unknown)') > $@~ && $(MV) $@~ $@
+-	@$(ECHO) ""
+-	@$(ECHO) "Please check your name and e-mail address:"
+-	@$(ECHO) ""
+-	@$(CAT) $@
+-	@$(ECHO) ""
+-	@$(ECHO) "This information will be compiled into $(DDD)."
+-	@$(ECHO) "If it is not correct, please edit $@ and re-compile."
+-	@$(ECHO) ""
+-
++USERINFO: 
++	echo ${MAINTAINER} >$@
+ 
+ ## Update the shared source tree.  For development only.
+ 
