@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/03/19 07:22:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/18 20:21:03 xsa Exp $
 
 COMMENT=	"Exif Jpeg camera setting parser and thumbnail remover"
 
-DISTNAME=	jhead-2.1
+DISTNAME=	jhead-2.2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
@@ -25,7 +25,8 @@ CFLAGS+=	-O0
 
 do-build:
 	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -o jhead exif.c jhead.c jpgfile.c -lm
+		${CC} ${CFLAGS} -o jhead exif.c jhead.c \
+		jpgfile.c makernote.c -lm
 
 post-build:
 	@gzip -d ${WRKSRC}/jhead.1.gz 
