@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/07 22:37:59 peter Exp $
+# $OpenBSD: Makefile,v 1.9 2002/01/16 03:30:55 brad Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,7 +8,7 @@ COMMENT=	"module that embeds a Perl interpreter into Apache"
 
 DISTNAME=	mod_perl-1.26
 CATEGORIES=	www perl5
-NEED_VERSION=	1.435
+NEED_VERSION=	1.500
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
