@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.520 2002/04/09 22:52:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.521 2002/04/09 23:55:11 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1784,6 +1784,8 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
+PROTECT_MOUNT_POINTS?=
+
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}"
@@ -1794,6 +1796,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
 		-f ${WRKPKG}/mtree.spec  >/dev/null
+.  for _p in ${PROTECT_MOUNT_POINTS}
+	@${SUDO} mount -u -r ${_p}
+.  endfor
 .  for _m in ${MODULES}
 .    if defined(MOD${_m:U}_pre-fake)
 	@${MOD${_m:U}_pre-fake}
@@ -1837,6 +1842,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .      endfor
 .    endif
 .  endif
+.  for _p in ${PROTECT_MOUNT_POINTS}
+	@${SUDO} mount -u -w ${_p}
+.  endfor
 	@if find ${WRKINST} -type l -ls|fgrep -- '-> ${WRKINST}'; then \
 		echo >&2 "*** bad links in ${WRKINST}"; \
 		exit 1; \
