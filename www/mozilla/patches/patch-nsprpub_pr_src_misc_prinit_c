@@ -1,12 +1,11 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.1 2003/05/14 21:50:59 wilfried Exp $
---- nsprpub/pr/src/misc/prinit.c.orig	Wed May 14 10:04:47 2003
-+++ nsprpub/pr/src/misc/prinit.c	Wed May 14 12:52:59 2003
-@@ -227,7 +227,7 @@
-  * XXX: call _PR_InitMem only on those platforms for which nspr implements
-  *	malloc, for now.
-  */
--#ifdef _PR_OVERRIDE_MALLOC
-+#if 0 && defined(_PR_OVERRIDE_MALLOC)
-     _PR_InitMem();
- #endif
+$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.2 2003/05/16 16:09:08 wilfried Exp $
+--- nsprpub/pr/src/misc/prinit.c.orig	Fri May 16 10:04:18 2003
++++ nsprpub/pr/src/misc/prinit.c	Fri May 16 10:03:16 2003
+@@ -441,6 +441,7 @@
+             PR_DELETE(me->stack);
+             PR_DELETE(me);
+         }
++        _PR_MD_SET_CURRENT_THREAD(NULL);
  
+         /*
+          * XXX: We are freeing the heap memory here so that Purify won't
