@@ -1,0 +1,34 @@
+$OpenBSD: patch-script_tprofprel,v 1.1 2004/07/13 12:05:27 espie Exp $
+--- script/tprofprel.orig	Tue Jul 13 13:50:24 2004
++++ script/tprofprel	Tue Jul 13 13:54:21 2004
+@@ -7,20 +7,8 @@ case $# in
+   1) exit 1;;
+ esac
+ 
+-case $BASH in
+-  "") if ( bash --version -e >/dev/null 2>&1 )
+-      then exec bash $0 "$@"
+-      fi ;;
+-  *) ;;
+-esac
++increment() { echo $1 + 1 | bc; }
+ 
+-
+-# Nasty compatibility stuff between /bin/sh/ and bash for arithmetic.
+-if sh --version -e | grep -y gnu >/dev/null
+-then increment() { ( let x=$1+1; echo $x; ); }
+-else increment() { echo $1 + 1 | bc; }
+-fi
+-
+ BUILTIN='Builtin' #Runtime Module added to beginning
+ MODNAMES=''
+ nummods=0
+@@ -100,7 +88,7 @@ then
+     echo '  char *strc;'
+     echo '  int i = strlen(str)+1;'
+     echo '  if(0==(strc = (char *)malloc(i))) {'
+-    echo '    fprintf(stderr,"No space to duplicate \"%s\"\n",str);'
++    echo '    fprintf(stderr,"No space to duplicate \"%s\"\\n",str);'
+     echo '    exit(-1);'
+     echo '  }'
+     echo '  strcpy(strc,str);'
