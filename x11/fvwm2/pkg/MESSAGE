@@ -6,7 +6,7 @@
 | 	exec ${PREFIX}/bin/fvwm2
 |
 | Icons have been installed into ${PREFIX}/fvicons, and a system wide 
-| configuration has been put in ${PREFIX}/share/fvwm2/system.fvwm2rc. To 
-| use your own configuration, copy ${PREFIX}/share/fvwm2/system.fvwm2rc to
+| configuration has been put in ${PREFIX}/share/fvwm/system.fvwm2rc. To 
+| use your own configuration, copy ${PREFIX}/share/fvwm/system.fvwm2rc to
 | ~/.fvwm2rc and edit it as appropriate.
 +------------
