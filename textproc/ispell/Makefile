@@ -1,10 +1,9 @@
-# New ports collection makefile for:    ispell
+# OpenBSD makefile for:    ispell
 # Version required:     3.1.20
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 02:46:09 joey Exp $
-# Id: Makefile,v 1.21 1997/08/13 23:29:52 jmz Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:57 joey Exp $
 #
 
 DISTNAME=	ispell-3.1

@@ -1,10 +1,9 @@
-# New ports collection makefile for:	screen
+# OpenBSD makefile for:	screen
 # Version required:     3.7.4
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 02:42:11 gene Exp $
-# Id: Makefile,v 1.18 1997/09/15 20:09:01 ache Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:50 joey Exp $
 #
 
 DISTNAME=       screen-3.7.4

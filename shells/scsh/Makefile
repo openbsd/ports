@@ -1,10 +1,9 @@
-# New ports collection makefile for:    scsh
+# OpenBSD makefile for:    scsh
 # Version required:     0.5.1
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:42 gene Exp $
-# Id: Makefile,v 1.4 1997/07/15 15:00:30 cracauer Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:54 joey Exp $
 #
 
 DISTNAME=	scsh-0.5.1

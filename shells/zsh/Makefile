@@ -1,10 +1,9 @@
-# New ports collection makefile for:	zsh
+# OpenBSD makefile for:	zsh
 # Version required:     	3.0.5
 # Date created:			17 November 1997
 # Whom:				gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:44 gene Exp $
-# Id: Makefile,v 1.26 1997/09/26 08:23:14 torstenb Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:55 joey Exp $
 #
 
 DISTNAME=       zsh-3.0.5

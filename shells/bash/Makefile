@@ -1,10 +1,9 @@
-# New ports collection makefile for:	bash
+# OpenBSD makefile for:	bash
 # Version required:     1.14.7
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:38 gene Exp $
-# Id: Makefile,v 1.25 1997/06/26 06:23:23 fenner Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:52 joey Exp $
 #
 
 DISTNAME=       bash-1.14.7

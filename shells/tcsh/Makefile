@@ -1,10 +1,9 @@
-# New ports collection makefile for:	tcsh
+# OpenBSD makefile for:	tcsh
 # Version required:     6.07.02
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/18 02:15:43 gene Exp $
-# Id: Makefile,v 1.17 1996/12/17 05:18:09 asami Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:54 joey Exp $
 #
 
 DISTNAME=       tcsh-6.07

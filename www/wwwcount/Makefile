@@ -1,10 +1,9 @@
-# New ports collection makefile for:    wwwcount
+# OpenBSD makefile for:    wwwcount
 # Version required:     2.3
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 03:07:09 joey Exp $
 #
-# Id: Makefile,v 1.8 1996/11/18 11:42:25 asami Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:58 joey Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html

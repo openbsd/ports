@@ -2,9 +2,8 @@
 # Version required:		1.14
 # Date created:			17 Nov 1997
 # Whom:				ejovi
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 02:55:28 joey Exp $
 #
-# Id: Makefile,v 1.4 1997/04/27 00:11:47 asami Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:56 joey Exp $
 #
 
 DISTNAME=	Isearch-1.14

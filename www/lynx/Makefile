@@ -1,11 +1,10 @@
-# New ports collection makefile for:    lynx
+# OpenBSD makefile for:    lynx
 # http://sol.slcc.edu/lynx/current/
 # Version required:     2.7.1ac
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 02:25:41 gene Exp $
-# Id: Makefile,v 1.67 1997/10/10 14:47:21 ache Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:58 joey Exp $
 #
 
 DISTNAME=       lynx2.7.1ac-0.78

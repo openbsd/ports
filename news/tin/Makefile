@@ -1,11 +1,10 @@
 # ex:ts=8
-# New ports collection makefile for:	tin
+# OpenBSD makefile for:	tin
 # Version required:	tin1.3-unoff-BETA
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 11:05:01 gene Exp $
-# Id: Makefile,v 1.45 1997/10/11 23:08:09 ache Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:51 joey Exp $
 #
 
 DISTNAME=       tin1.3-unoff-BETA-970930

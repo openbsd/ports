@@ -1,11 +1,10 @@
-# New ports collection makefile for:    elm
+# OpenBSD makefile for:    elm
 # See also: http://www.ozone.fmi.fi/KEH/
 # Version required:     2.4.25.ME+32
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 04:09:46 gene Exp $
-# Id: Makefile,v 1.41 1997/06/22 07:28:49 ache Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:49 joey Exp $
 #
 
 DISTNAME=       elm-2.4ME+32
