@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsync_h,v 1.4 2003/05/11 22:20:55 naddy Exp $
---- rsync.h.orig	Sun Jan 26 21:11:16 2003
-+++ rsync.h	Mon Mar  3 23:46:33 2003
+$OpenBSD: patch-rsync_h,v 1.5 2003/12/04 17:54:17 espie Exp $
+--- rsync.h.orig	2003-12-04 05:23:30.000000000 +0100
++++ rsync.h	2003-12-04 09:32:51.000000000 +0100
 @@ -114,10 +114,6 @@ enum logcode {FNONE=0, FERROR=1, FINFO=2
  #include <string.h>
  #endif
@@ -12,14 +12,14 @@ $OpenBSD: patch-rsync_h,v 1.4 2003/05/11 22:20:55 naddy Exp $
  #ifdef TIME_WITH_SYS_TIME
  #include <sys/time.h>
  #include <time.h>
-@@ -182,10 +178,6 @@ enum logcode {FNONE=0, FERROR=1, FINFO=2
- 
- #ifdef HAVE_GLOB_H
+@@ -184,10 +180,6 @@ enum logcode {FNONE=0, FERROR=1, FINFO=2
  #include <glob.h>
--#endif
--
--#ifdef HAVE_MALLOC_H
--#  include <malloc.h>
  #endif
  
+-#ifdef HAVE_MALLOC_H
+-#  include <malloc.h>
+-#endif
+-
  /* these are needed for the uid/gid mapping code */
+ #include <pwd.h>
+ #include <grp.h>

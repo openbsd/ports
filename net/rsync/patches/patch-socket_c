@@ -1,6 +1,6 @@
-$OpenBSD: patch-socket_c,v 1.1 2003/05/11 22:20:55 naddy Exp $
---- socket.c.orig	Mon Jan 27 04:35:09 2003
-+++ socket.c	Mon Mar  3 23:47:06 2003
+$OpenBSD: patch-socket_c,v 1.2 2003/12/04 17:54:17 espie Exp $
+--- socket.c.orig	2003-01-27 04:35:09.000000000 +0100
++++ socket.c	2003-12-04 09:44:06.000000000 +0100
 @@ -292,11 +292,11 @@ int open_socket_out_wrapped (char *host,
   * @param bind_address Local address to bind, or NULL to allow it to
   * default.
@@ -27,7 +27,7 @@ $OpenBSD: patch-socket_c,v 1.1 2003/05/11 22:20:55 naddy Exp $
 +	/* Count max number of sockets we may open */
 +	for (maxs = 0, resp = all_ai; resp; resp = resp->ai_next, maxs++)
 +		;
-+	socks = malloc((maxs + 1) * sizeof(int));
++	socks = new_array(int, maxs + 1);
 +	if (!socks) {
 +		rprintf(FERROR,
 +			RSYNC_NAME "couldn't allocate memory for sockets");
