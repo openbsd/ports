@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/11 05:17:33 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/31 05:28:20 brad Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
 DISTNAME=	libungif-4.1.0b1
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
-MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/
+MASTER_SITES=	ftp://ftp.ayamura.org/pub/graphics/
 
 HOMEPAGE=	http://prtr-13.ucsc.edu/~badger/software/libungif/index.shtml
 
