@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 03:12:08 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 17:00:34 shell Exp $
 bin/gpa
 share/gpa/gpa_logo.ppm
 share/gpa/gpa_tips.de

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/21 04:09:14 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/07 17:00:33 shell Exp $
 
 COMMENT=		"graphical interface for GnuPG"
 
-DISTNAME=		gpa-0.4.1
+DISTNAME=		gpa-0.4.2
 CATEGORIES=     	security x11
 NEED_VERSION=		1.407
 
