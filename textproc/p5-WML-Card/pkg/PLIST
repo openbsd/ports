@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/WML/Card.pm
-libdata/perl5/site_perl/WML/Card/7110.pm
-libdata/perl5/site_perl/WML/Card/Palm.pm
-libdata/perl5/site_perl/WML/Card/UP.pm
-libdata/perl5/site_perl/WML/Deck.pm
+@comment $OpenBSD: PLIST,v 1.5 2002/06/10 06:14:23 shell Exp $
+${P5SITE}/WML/Card.pm
+${P5SITE}/WML/Card/7110.pm
+${P5SITE}/WML/Card/Palm.pm
+${P5SITE}/WML/Card/UP.pm
+${P5SITE}/WML/Deck.pm
 man/man3p/WML::Card.3p
 man/man3p/WML::Deck.3p
-@dirrm libdata/perl5/site_perl/WML/Card
+@dirrm ${P5SITE}/WML/Card
