@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/17 23:01:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/09/18 21:42:04 naddy Exp $
 bin/dns-helper
 bin/gconfigger
 bin/gnome-bug
@@ -205,11 +205,11 @@ share/doc/gnome-libs/mime-type-handling.txt
 share/doc/gnome-libs/session-management.txt
 share/doc/gnome-libs/suggestions.txt
 share/doc/mkstub
-share/gnome-libs/mime-magic
-share/gnome-libs/mime-magic.dat
-share/gnome-libs/paper.config
-share/gnome-libs/sound/events/gnome.soundlist
-share/gnome-libs/sound/events/gtk-events.soundlist
+share/examples/gnome-libs/mime-magic
+share/examples/gnome-libs/mime-magic.dat
+share/examples/gnome-libs/paper.config
+share/examples/gnome-libs/sound/events/gnome.soundlist
+share/examples/gnome-libs/sound/events/gtk-events.soundlist
 share/gnome/html/gnome-decl.txt
 share/gnome/html/gnome-sections.txt
 share/gnome/html/gnome.html
@@ -404,7 +404,6 @@ share/type-convert/postscript.convert
 share/type-convert/type.convert
 %%SHARED%%
 @dirrm share/type-convert
-@dirrm share/mime-info
 @exec mkdir -p %D/share/gnome/html/zvt
 @dirrm share/gnome/html/zvt
 @exec mkdir -p %D/share/gnome/html/gnorba
@@ -414,9 +413,9 @@ share/type-convert/type.convert
 @exec mkdir -p %D/share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info
-@dirrm share/gnome-libs/sound/events
-@dirrm share/gnome-libs/sound
-@dirrm share/gnome-libs
+@dirrm share/examples/gnome-libs/sound/events
+@dirrm share/examples/gnome-libs/sound
+@dirrm share/examples/gnome-libs
 @dirrm share/doc/gnome-libs
 @dirrm lib/gnome-libs/include
 @dirrm lib/gnome-libs
