@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.57 2004/08/11 09:40:17 espie Exp $
+# $OpenBSD: make-plist,v 1.58 2004/09/14 22:24:39 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -14,12 +14,20 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+# TODO
+# - multi-package with conflicts don't work.
+# (need to multi annotate files)
+# - multi-packages with inter-dependencies incorrectly strip dirs
+# (need to strip dirs in a smarter way ???)
+# - sample dir/ gets added at the wrong location.
+
 use strict;
 use warnings;
 use OpenBSD::PackingList;
 use OpenBSD::PackingElement;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
+use OpenBSD::Mtree;
 use File::Spec;
 use File::Find;
 use File::Compare;
@@ -27,9 +35,14 @@ use File::Basename;
 use File::Temp;
 
 
+# Plists use variable substitution, we have to be able to do it
+# both ways to recognize existing entries.
+
 my $base;
 my @backsubst;
 my $destdir = $ENV{'DESTDIR'};
+
+die "No $destdir" unless -d $destdir;
 
 sub var_backsubst
 {
@@ -37,7 +50,11 @@ sub var_backsubst
 	for my $l (@backsubst) {
 		my $v = $l->[1];
 		my $r = $l->[0];
-		s/\Q$v\E/$r/g;
+		if ($r eq '${SYSCONFDIR}') {
+			s/^\Q$v\E/$r/;
+		} else {
+			s/\Q$v\E/$r/g;
+		}
 	}
 	return $_;
 }
@@ -52,6 +69,23 @@ sub var_subst
 	}
 	return $_;
 }
+
+# Fragments are new PackingElement unique to make-plist, to handle
+# %%thingy%%.
+# (and so, make-plist will use a special PLIST reader)
+
+
+# Method summary:
+# add_to_mtree: new directory in dependent package
+# register: known items and known comments
+# copy_extra: stuff that can't be easily deduced but should be copied
+# tag_along: set of items that associate themselves to this item
+#   (e.g., @exec, @unexec, @sample...)
+# clone_tags: copy tagged stuff over.
+# deduce_fragment: find fragment file name from %%stuff%%
+
+# note $plist->{nonempty}: set as soon as a plist holds anything
+# but a cvstag.
 
 package OpenBSD::PackingElement;
 sub add_to_mtree
@@ -74,6 +108,16 @@ sub copy_extra
 {
 }
 
+sub zap_comment
+{
+	my ($self, $foundcomments, $p) = @_;
+
+	my $s = $self->fullstring();
+	if (defined $foundcomments->{$s} and $foundcomments->{$s}->{plist} == $p) {
+		delete $foundcomments->{$s};
+	}
+}
+
 sub tag_along
 {
 	my ($self, $n) = @_;
@@ -92,34 +136,44 @@ sub clone_tags
 
 	if (defined $self->{tags}) {
 		for my $t (@{$self->{tags}}) {
-			$t->clone()->add_object($plist);
+			my $n = $t->clone();
+			if ($n->isa("OpenBSD::PackingElement::Sample") || 
+			    $n->isa("OpenBSD::PackingElement::SampleDir")) {
+				main::handle_modes($plist, $n, $t);
+			}
+			$n->add_object($plist);
 			$plist->{nonempty} = 1;
+			if ($n->isa("OpenBSD::PackingElement::Fragment") && 
+			    $n->{name} eq "SHARED") {
+				$plist->{hasshared} = 1;
+			}
 		}
 	}
 }
 
 package OpenBSD::PackingElement::Fragment;
 our @ISA=qw(OpenBSD::PackingElement);
-sub copy_extra
+sub register
 {
-	my ($self, $plist) = @_;
-
-	$self->clone()->add_object($plist);
-	if ($self->{name} eq "SHARED") {
-		$plist->{hasshared} = 1;
+	my ($self, $plist, $files, $comments) = @_;
+	if (defined $plist->{state}->{lastobject}) {
+	    $plist->{state}->{lastobject}->tag_along($self);
+    	} else {
+	    $plist->{tag_marker}->tag_along($self);
 	}
-	$plist->{nonempty} = 1;
 }
 
 sub deduce_fragment
 {
-	my ($self, $pfragbase) = @_;
-	return if $self->{name} eq "SHARED";
-	my $n = $pfragbase.".".$self->{name};
-	if (-f $n) {
-		return $n;
-	}
-	return;
+	my ($self, $o) = @_;
+
+	my $frag = $self->{name};
+	return if $frag eq "SHARED";
+
+	$o =~ s/PFRAG\./PFRAG.$frag-/ or
+	    $o =~ s/PLIST/PFRAG.$frag/;
+
+	return $o if -e $o;
 }
 
 sub needs_keyword() { 0 }
@@ -134,12 +188,13 @@ our @ISA=qw(OpenBSD::PackingElement::Fragment);
 
 sub deduce_fragment
 {
-	my ($self, $pfragbase) = @_;
-	my $n = $pfragbase.".no-".$self->{name};
-	if (-f $n) {
-		return $n;
-	}
-	return;
+	my ($self, $noto) = @_;
+	my $frag = $self->{name};
+	return if $frag eq "SHARED";
+
+	$noto =~ s/PFRAG\./PFRAG.no-$frag-/ or
+	    $noto =~ s/PLIST/PFRAG.no-$frag/;
+	return $noto if -e $noto;
 }
 
 sub stringize
@@ -151,7 +206,15 @@ package OpenBSD::PackingElement::FileBase;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$plist->{state}->{lastfile} = $self;
+	$plist->{state}->{lastobject} = $self;
+	$self->SUPER::register($plist, $files, $comments);
+}
+
+package OpenBSD::PackingElement::Dir;
+sub register
+{
+	my ($self, $plist, $files, $comments) = @_;
+	$plist->{state}->{lastobject} = $self;
 	$self->SUPER::register($plist, $files, $comments);
 }
 
@@ -169,9 +232,21 @@ sub register
 package OpenBSD::PackingElement::Exec;
 sub register
 {
-	my ($self, $plist, $files, $comments) = @_;
-	if (defined $plist->{state}->{lastfile}) {
-	    $plist->{state}->{lastfile}->tag_along($self);
+	my ($self, $plist, $files, $comments, $existing) = @_;
+	if ($self->{expanded} =~ m/^install\-info\s+(?:\-\-delete\s+)?\-\-info\-dir=.*?\/info\s+(.*)$/) {
+		my $iname = $1;
+		if (defined $existing->{$iname} and $existing->{$iname} eq 'info') {
+			return;
+	    	}
+	}
+	if ($self->{expanded} =~ m/^mkdir\s+\-p\s+(.*)$/) {
+		my $iname = $1;
+		if (defined $existing->{$iname} and $existing->{$iname} eq 'directory') {
+			return;
+		}
+	}
+	if (defined $plist->{state}->{lastobject}) {
+	    $plist->{state}->{lastobject}->tag_along($self);
     	} else {
 	    $plist->{tag_marker}->tag_along($self);
 	}
@@ -186,7 +261,12 @@ sub register
 package OpenBSD::PackingElement::Sampledir;
 sub register
 {
-	&OpenBSD::PackingElement::Exec::register;
+	my ($self, $plist, $files, $comments) = @_;
+	if (defined $plist->{state}->{lastobject}) {
+	    $plist->{state}->{lastobject}->tag_along($self);
+    	} else {
+	    $plist->{tag_marker}->tag_along($self);
+	}
 }
 
 package OpenBSD::PackingElement::DirBase;
@@ -210,10 +290,11 @@ sub register
 	$self->{plist} = $plist;
 	my $name = $self->{name};
 	$comments->{$name} = $self;
-	if ($name =~ m/^\@dirrm\s+/) {
+	if ($name =~ m/^\@dir(?:rm)?\s+/) {
 		$name = $'.'/';
-		my $o = OpenBSD::PackingElement::Comment->new($'.'/');
-		$o->register($plist, $files, $comments);
+		my $o = OpenBSD::PackingElement::Comment->new($name);
+		# register @dirrm dir comment as dir/
+		$comments->{$o->{name}} = $self;
 	}
 }
 
@@ -229,6 +310,10 @@ sub copy_extra
 	$plist->{nonempty} = 1;
 }
 
+sub register
+{
+}
+
 package OpenBSD::PackingElement::ExtraUnexec;
 sub copy_extra
 {
@@ -240,13 +325,18 @@ sub copy_extra
 }
 
 package main;
+
+# existing files are classified according to the following routine
+
 sub get_type
 {
 	my $filename = shift;
-	if (is_info($filename)) {
-		return "info";
+	if (-d $filename && !-l $filename) {
+		return "directory";
 	} elsif (is_subinfo($filename)) {
 		return "subinfo";
+	} elsif (is_info($filename)) {
+		return "info";
 	} elsif (is_dir($filename)) {
 		return "dir";
 	} elsif (is_manpage($filename)) {
@@ -259,6 +349,9 @@ sub get_type
 		return "file";
 	}
 }
+
+# symlinks are usually given in a DESTDIR setting, any operation
+# beyond filename checking gets through resolve_link
 
 sub resolve_link
 {
@@ -308,13 +401,14 @@ sub is_plugin
 sub is_info
 {
 	my $filename = shift;
-	return 0 unless $filename =~ m/\.info$/;
+	return 0 unless $filename =~ m/\.info$/ or $filename =~ m/info\/[^\/]+$/;
 	$filename = resolve_link($filename);
 	open my $fh, '<', $filename or return 0;
 	my $tag = <$fh>;
 	chomp $tag;
+	$tag.=<$fh>;
 	close $fh;
-	if ($tag =~ /^This is .*, produced by [Mm]akeinfo version .* from/) {
+	if ($tag =~ /^This is .*, produced by [Mm]akeinfo(?: version |-)?.* from/) {
 		return 1;
 	} else {
 		return 0;
@@ -324,7 +418,7 @@ sub is_info
 sub is_manpage
 {
 	local $_ = shift;
-	if (m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1(?:\.gz|\.Z)?$,) {
+	if (m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1[[:alpha:]]?(?:\.gz|\.Z)?$,) {
 		return 1;
 	}
 	if (m,/man/(?:[^/]*/)?cat.*?/[^/]+\.0(?:\.gz|\.Z)?$,) {
@@ -340,43 +434,37 @@ sub is_dir
 {
 	my $filename = shift;
 	return 0 unless $filename =~ m/\/dir$/;
-	return 1;
+	$filename = resolve_link($filename);
+	open my $fh, '<', $filename or return 0;
+	my $tag = <$fh>;
+	chomp $tag;
+	$tag.=" ".<$fh>;
+	chomp $tag;
+	$tag.=" ".<$fh>;
+	close $fh;
+	if ($tag =~ /^(?:\-\*\- Text \-\*\-\s+)?This is the file .*, which contains the topmost node of the Info hierarchy/) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 sub is_subinfo
 {
 	my $filename = shift;
-	return 0 unless $filename =~ m/^(.*\.info)\-\d+$/;
-	return is_info($1);
-}
-
-
-# read an mtree file, and produce the corresponding directory hierarchy
-sub parse_mtree 
-{
-		# start under current DESTDIR, usually
-	my $current = "/";
-	my %mtree;
-	open my $file, '<', shift;
-	while(<$file>) {
-		chomp;
-		s/^\s*//;
-		next if /^\#/ || /^\//;
-		s/\s.*$//;
-		next if /^$/;
-		if ($_ eq '..') {
-			$current =~ s|/[^/]*$||;
-			next;
-		} else {
-			$current.="/$_";
-		}
-		$_ = $current;
-		while (s|/\./|/|)	{}
-		$mtree{File::Spec->canonpath($_)} = 1;
+	if ($filename =~ m/^(.*\.info)\-\d+$/ or
+	    $filename =~ m/^(.*info\/[^\/]+)\-\d+$/) {
+		return is_info($1);
 	}
-	close $file;
-	return \%mtree;
+	if ($filename =~ m/^(.*)\.\d+in$/) {
+		return is_info("$1.info");
+	}
+	return 0;
 }
+
+
+# add dependent package directories to the set of directories that don't
+# need registration.
 
 sub augment_mtree
 {
@@ -401,59 +489,93 @@ sub undest
 	return $filename;
 }
 
+# check that $fullname is not the only entry in its directory
+sub has_other_entry
+{
+	my $fullname = shift;
+	use Symbol;
+
+	my $dir = gensym;
+	opendir($dir, dirname($fullname));
+	while (my $e = readdir($dir)) {
+		next if $e eq '.' or $e eq '..';
+	    	next if $e eq basename($fullname);
+		return 1;
+	}
+	return 0;
+}
+
+# zap directories going up if there is nothing but that filename.
+# used to zap .perllocal, dir, and other stuff.
+sub zap_dirs
+{
+	my ($dirs, $fullname) = @_;
+	return if has_other_entry($fullname);
+	my $d = dirname($fullname);
+	return if $d eq $destdir;
+	delete $dirs->{undest($d)};
+	zap_dirs($dirs, $d);
+}
+
+# find all objects that need registration, mark them according to type.
 sub scan_destdir
 {
-	# compare all files against those dates
-	my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
-	my (%files, %dirs);
-	my %occupied;
+	my %files;
 	my %okay_files=map { $_=>1 } split(/\s+/, $ENV{'OKAY_FILES'});
+	use Config;
+
+	my $installsitearch = $Config{'installsitearch'};
+	my $archname = $Config{'archname'};
+	my $installprivlib = $Config{'installprivlib'};
+	my $installarchlib = $Config{'installarchlib'};
 
 	find(
 		sub {
 			return if defined $okay_files{$File::Find::name};
-			my @cdate = (lstat $_)[9, 10];
-			if ($cdate[0] >= $date[0] || $cdate[1] >= $date[1]) {
-				if (-d _) {
-					$dirs{undest($File::Find::name)} = 1;
-				} else {
-					$files{undest($File::Find::name)} = get_type($File::Find::name);
-				}
-			} else {
-				$occupied{undest($File::Find::dir)} = 1;
+			my $type = get_type($File::Find::name);
+			if ($type eq "dir" or
+			    $type eq 'subinfo' or
+			    $File::Find::name =~ m,\Q$installsitearch\E/auto/.*/\.packlist$, or
+			    $File::Find::name =~ m,\Q$installarchlib/perllocal.pod\E$, or
+			    $File::Find::name =~ m,\Q$installsitearch/perllocal.pod\E$, or
+			    $File::Find::name =~ m,\Q$installprivlib/$archname/perllocal.pod\E$,) {
+			    	zap_dirs(\%files, $File::Find::name);
+				return;
 			}
+			return if $File::Find::name =~ m/pear\/lib\/\.(?:filemap|lock)$/;
+			my $path = undest($File::Find::name);
+			$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
+			$files{$path} = get_type($File::Find::name);
 		}, $destdir);
-# occupied marks a dir that was already there... 
-# so all parents had to be around too
-	for my $d (keys %occupied) {
-		while ($d ne '') {
-			delete $dirs{$d} if defined $dirs{$d};
-			$d =~ s|/.*?/?$||;
-		}
-	}
-	return (\%dirs, \%files);
+	zap_dirs(\%files, $destdir.'/etc/X11/app-defaults');
+	return \%files;
 }
 
+# build a hash of files needing registration
 sub get_files
 {
-	my ($dirs, $files) = scan_destdir();
+	my $files = scan_destdir();
 
-	my $mtree = parse_mtree($ENV{'MTREE_FILE'});
-	# and directories for dependencies as well
+	my $mtree = {};
+	OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
+	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
+	OpenBSD::Mtree::parse($mtree, '/usr/X11R6', '/etc/mtree/BSD.x11.dist');
+	$mtree->{'/usr/local/lib/X11'} = 1;
+	$mtree->{'/usr/local/include/X11'} = 1;
+	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
+	# add directories from dependencies, insist on having the real package.
 	for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
 		print STDERR "Stripping dirs from $pkg\n";
 		augment_mtree($mtree, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
 	}
 	# make sure mtree is removed 
 	for my $d (keys %$mtree) {
-		delete $dirs->{$d}
-	}
-	for my $d (keys %$dirs) {
-		$files->{$d} = "directory";
+		delete $files->{$d}
 	}
 	return $files;
 }
 
+# full file name to file name in plist context
 sub strip_base
 {
 	local($_)=shift;
@@ -467,6 +589,7 @@ sub strip_base
 
 my ($foundfiles, $foundcomments) = ({}, {});
 
+# Basic packing-list with a known prefix
 sub create_packinglist
 {
 	my ($filename, $prefix) = @_;
@@ -479,11 +602,14 @@ sub create_packinglist
 	return $plist;
 }
 
+# grab original packing list, killing some stuff that is no longer needed.
 sub parse_original_plist
 {
-    my ($name, $prefix) = @_;
+    my ($name, $prefix, $files, $all_plists) = @_;
     my $plist = create_packinglist($name, $prefix);
+    # place holder for extra stuff that comes before any file
     $plist->{tag_marker} = new OpenBSD::PackingElement('');
+    # special reader for fragments
     $plist->fromfile($name, 
 	sub {
 	    my ($fh, $cont) = @_;
@@ -501,13 +627,24 @@ sub parse_original_plist
 	}
     ) or return;
 
-    delete $plist->{state}->{lastfile};
+    delete $plist->{state}->{lastobject};
     for my $item (@{$plist->{items}}) {
-    	$item->register($plist, $foundfiles, $foundcomments);
+    	$item->register($plist, $foundfiles, $foundcomments, $files);
+    }
+    # Try to handle fragments
+    for my $item (@{$plist->{items}}) {
+	    my $fragname = $item->deduce_fragment($name);
+	    next unless defined $fragname;
+	    my $pfrag = create_packinglist($fragname, $prefix);
+	    $pfrag->{isfrag} = 1;
+	    push(@$all_plists, $pfrag);
+	    my $origpfrag = parse_original_plist($fragname, $prefix, $files, $all_plists);
+	    replaces($origpfrag, $pfrag);
     }
     return $plist;
 }
 	
+# link original and new plist
 sub replaces
 {
 	my ($orig, $n) = @_;
@@ -519,12 +656,23 @@ sub replaces
 	}
 }
 
+# old packing-lists used to hold comments to avoid fragments...
+sub no_comments
+{
+	my ($f, $orig) = @_;
+	return unless defined $f and defined $orig;
+	for my $item (@{$f->{items}}) {
+		$item->zap_comment($foundcomments, $orig);
+	}
+}
+
+
 sub grab_all_lists
 {
-	my $prefixes = shift;
+	my ($prefixes, $files) = @_;
 	my $prefix = $prefixes->{''};
 
-	my @l = ();
+	my $l = [];
 	my $plistname=$ENV{'PLIST'};
 	my $pfragname=$ENV{'PFRAG'};
 	my $psharedname=$pfragname.".shared";
@@ -533,24 +681,15 @@ sub grab_all_lists
 	$altplistname =~ s/PLIST.*$/PLIST/;
 
 	my $plist = create_packinglist($plistname, $prefix);
-	my $origplist = parse_original_plist($plistname, $prefix);
+	push(@$l, $plist);
+	my $origplist = parse_original_plist($plistname, $prefix, $files, $l);
 	replaces($origplist, $plist);
-	push(@l, $plist);
-	# Try to handle fragments
-	for my $item (@{$origplist->{items}}) {
-		my $fragname = $item->deduce_fragment($pfragname);
-		next unless defined $fragname;
-		my $pfrag = create_packinglist($fragname, $prefix);
-		my $origpfrag = parse_original_plist($fragname, $prefix);
-		replaces($origpfrag, $pfrag);
-		push(@l, $pfrag);
-	}
 
 	my $pshared = create_packinglist($psharedname, $prefix);
+	push(@$l, $pshared);
 	$plist->{shared} = $pshared;
-	my $origshared = parse_original_plist($psharedname, $prefix);
+	my $origshared = parse_original_plist($psharedname, $prefix, $files);
 	replaces($origshared, $pshared);
-	push(@l, $pshared);
 
 	my $multi = $ENV{'MULTI_PACKAGES'};
 	# Normalize
@@ -560,20 +699,22 @@ sub grab_all_lists
 		for my $sub (split(/\s+/, $multi)) {
 			my $o;
 			my $n = create_packinglist("$plistname$sub", $prefixes->{$sub});
-			$o = parse_original_plist("$plistname$sub", $prefixes->{$sub}) or
-			    $o = parse_original_plist("$altplistname$sub", $prefixes->{$sub});
+			push(@$l, $n);
+			$o = parse_original_plist("$plistname$sub", $prefixes->{$sub}, $l) or
+			    $o = parse_original_plist("$altplistname$sub", $prefixes->{$sub}, $files, $l);
 			replaces($o, $n);
-			push(@l, $n);
+			no_comments($o, $origplist);
 			my $ns = create_packinglist("$psharedname$sub", $prefixes->{$sub});
 			$n->{shared} = $ns;
-			$o = parse_original_plist("$psharedname$sub", $prefixes->{$sub});
+			$o = parse_original_plist("$psharedname$sub", $prefixes->{$sub}, $files, $l);
 			replaces($o, $ns);
-			push(@l, $ns);
+			push(@$l, $ns);
 		}
 	}
-	return @l;
+	return @$l;
 }
 
+# new object according to type, just copy over some stuff for now
 sub create_object
 {
 	my ($type, $short, $item) = @_;
@@ -600,6 +741,47 @@ sub create_object
 	}
 }
 
+# `restate' packing-list according to current mode settings.
+# for now, we copy over stuff from old items.
+sub handle_modes
+{
+	my ($plist, $item, $o) = @_;
+	my ($mode, $owner, $group) = ('', '', '');
+	my ($oldmode, $oldowner, $oldgroup) = ($plist->{state}->{mode}, $plist->{state}->{owner}, $plist->{state}->{group});
+	$oldmode = '' unless defined $oldmode;
+	$oldowner = '' unless defined $oldowner;
+	$oldgroup = '' unless defined $oldgroup;
+
+	if (defined $item) {
+		if (defined $item->{nochecksum}) {
+			$o->{nochecksum} = 1;
+		}
+		if (defined $item->{ignore}) {
+			$o->{ignore} = 1;
+		}
+		if (defined $item->{mode}) {
+			$mode = $item->{mode};
+		}
+		if (defined $item->{owner}) {
+			$owner = $item->{owner};
+		}
+		if (defined $item->{group}) {
+			$group = $item->{group};
+		}
+	}
+	if ($mode ne $oldmode) {
+		OpenBSD::PackingElement::Mode->add($plist, $mode);
+	}
+	if ($owner ne $oldowner) {
+		OpenBSD::PackingElement::Owner->add($plist, $owner);
+	}
+	if ($group ne $oldgroup) {
+		OpenBSD::PackingElement::Group->add($plist, $group);
+	}
+}
+
+# find out where a file belongs, and insert all corresponding things
+# into the right packing-list.
 sub handle_file
 {
 	my ($i, $type, $foundfiles, $foundcomments, $allplists, $shared_only) = @_;
@@ -618,6 +800,7 @@ sub handle_file
 		$short = strip_base($i, $p);
 	} else {
 	# otherwise, look for the first matching prefix in plist to produce
+	# an entry
 		for my $try (@$allplists) {
 			my $s2 = strip_base($i, $try);
 			unless ($s2 =~ m|^/|) {
@@ -646,6 +829,7 @@ sub handle_file
 	my $o = create_object($type, $short, $item);
 	return unless defined $o;
 	my $s = $o->fullstring();
+	# 
 	if ($foundcomments->{$s}) {
 		$foundcomments->{$s}->{accounted_for} = 1;
 		$o = OpenBSD::PackingElement::Comment->new($s);
@@ -653,40 +837,17 @@ sub handle_file
 		$o->add_object($p);
 		$p->{nonempty} = 1;
 	} else {
+		if ($short =~ /\.orig$/) {
+			print STDERR "make-plist: generated plist may contain patched file\n";
+			print STDERR "\t$short\n";
+		}
 		if (($type eq 'library' || $type eq 'plugin') && (!defined $item) && !$shared_only) {
 			$p->{wantshared} = 1;
 			$p = $p->{shared};
 		}
-		if (defined $item) {
-			if (defined $item->{mode}) {
-				OpenBSD::PackingElement::Mode->add($p, $item->{mode});
-			}
-			if (defined $item->{owner}) {
-				OpenBSD::PackingElement::Owner->add($p, $item->{owner});
-			}
-			if (defined $item->{group}) {
-				OpenBSD::PackingElement::Group->add($p, $item->{group});
-			}
-			if (defined $item->{nochecksum}) {
-				$o->{nochecksum} = 1;
-			}
-			if (defined $item->{ignore}) {
-				$o->{ignore} = 1;
-			}
-		}
+		handle_modes($p, $item, $o);
 		$o->add_object($p);
 		$p->{nonempty} = 1;
-		if (defined $item) {
-			if (defined $item->{mode}) {
-				OpenBSD::PackingElement::Mode->add($p, '');
-			}
-			if (defined $item->{owner}) {
-				OpenBSD::PackingElement::Owner->add($p, '');
-			}
-			if (defined $item->{group}) {
-				OpenBSD::PackingElement::Group->add($p, '');
-			}
-		}
 
 		# Copy properties from source item
 		if (defined $item) {
@@ -715,7 +876,7 @@ for (@ARGV) {
 
 my $files = get_files();
 
-my @l = grab_all_lists(\%prefix);
+my @l = grab_all_lists(\%prefix, $files);
 
 for my $plist (@l) {
 	my $orig = $plist->{original};
@@ -765,14 +926,19 @@ for my $plist (@l) {
 
 my $default = $l[0];
 if ($default->{wantshared} && !$default->{hasshared}) {
-	OpenBSD::PackingElement::Fragment->add($default, "SHARED");
+	unshift(@{$default->{items}}, OpenBSD::PackingElement::Fragment->new("SHARED"));
 }
 
-while (my ($k, $v) = each %$foundcomments) {
-	next if defined $v->{accounted_for};
+for my $k (sort keys %$foundcomments) {
+	next if defined $foundcomments->{$k}->{accounted_for};
 	print "Not accounted for: \@comment $k\n";
 }
 
+
+# write new info over, as joe user.
+# first we write out everything in /tmp
+# then we signal if something changed
+# if that's the case, we die if orig files exist, or we copy stuff over.
 
 {
 	local ($), $>);
@@ -812,9 +978,13 @@ while (my ($k, $v) = each %$foundcomments) {
 			}
 		} else {
 			if (defined $orig) {
-				print $plist->{filename}, " empty\n";
-				$something_changed = 1;
-				$plist->{changed} = 1;
+				if ($plist->{isfrag}) {
+					print $plist->{filename}, " empty fragment: NOT writing it\n";
+				} else {
+					print $plist->{filename}, " empty\n";
+					$something_changed = 1;
+					$plist->{changed} = 1;
+				}
 			}
 		}
 	}
