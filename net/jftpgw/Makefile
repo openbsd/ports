@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/07/29 22:14:47 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/10 13:18:52 brad Exp $
 
-DISTNAME=	jftpgw-0.0.10c
+DISTNAME=	jftpgw-0.0.10d
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--enable-crypt \
 		--with-logpath="/var/log" --with-confpath="${SYSCONFDIR}"
 

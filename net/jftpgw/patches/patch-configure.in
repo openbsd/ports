@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Sep  3 07:58:40 2000
++++ configure.in	Thu Sep  7 17:32:36 2000
+@@ -220,7 +220,7 @@
+ dnl Make CONFPATH, LOGPATH absolute
+ 
+ AC_MSG_CHECKING(if we can compile the rel2abs program)
+-COMPILE="`$CC -o rel2abs rel2abs.c`"
++COMPILE="`$CC -o rel2abs $srcdir/rel2abs.c`"
+ if test "x$COMPILE" = "x"; then
+ 	AC_MSG_RESULT(successful)
+ 	CONFPATH="`./rel2abs $CONFPATH $PWDDIR`"
