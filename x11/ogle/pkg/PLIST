@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/04 23:41:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/08/05 16:23:35 espie Exp $
 bin/ifo_dump
 bin/ogle
 include/ogle/
@@ -29,7 +29,7 @@ lib/ogle/ogle_nav_debug
 lib/ogle/ogle_vout
 lib/ogle/ogle_vout_debug
 @man man/man1/ogle.1
-man/man5/oglerc.tbl
+@man man/man5/oglerc.tbl
 share/ogle/
 share/ogle/ogle_conf.dtd
 share/ogle/oglerc
