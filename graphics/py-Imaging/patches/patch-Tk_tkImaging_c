@@ -1,0 +1,29 @@
+$OpenBSD: patch-Tk_tkImaging_c,v 1.1 2003/12/27 23:40:18 jose Exp $
+--- Tk/tkImaging.c.orig	2003-12-21 23:13:39.000000000 -0500
++++ Tk/tkImaging.c	2003-12-21 23:18:58.000000000 -0500
+@@ -162,7 +162,7 @@ PyImagingPhoto(ClientData clientdata, Tc
+                     if (w > 0) {
+                         run.width = w;
+                         run.pixelPtr = s;
+-                        Tk_PhotoPutBlock(photo, &run, x-w, y, run.width, 1);
++                        Tk_PhotoPutBlock(photo, &run, x-w, y, run.width, 1, TK_PHOTO_COMPOSITE_SET);
+                     }
+                     w = 0;
+                 }
+@@ -172,14 +172,14 @@ PyImagingPhoto(ClientData clientdata, Tc
+                 /* copy final run, if any */
+                 run.width = w;
+                 run.pixelPtr = s;
+-                Tk_PhotoPutBlock(photo, &run, x-w, y, run.width, 1);
++                Tk_PhotoPutBlock(photo, &run, x-w, y, run.width, 1, TK_PHOTO_COMPOSITE_SET);
+           }
+         }
+ 
+     } else
+ 
+         /* Copy opaque block to photo image, and leave the rest to TK */
+-        Tk_PhotoPutBlock(photo, &block, 0, 0, block.width, block.height);
++        Tk_PhotoPutBlock(photo, &block, 0, 0, block.width, block.height, TK_PHOTO_COMPOSITE_SET);
+ 
+     return TCL_OK;
+ }
