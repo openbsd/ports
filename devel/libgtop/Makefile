@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/27 23:07:01 todd Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/28 12:38:58 naddy Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.13
@@ -51,6 +51,6 @@ SED_PLIST+=-e '/%%SHARED-guile%%/d'
 
 .if !${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-no-gnome%%/r${PKGDIR}/PFRAG.shared.no-gnome' -e '//d'
-.elif ${FLAVOR:L:Mgnome}
+.elif !${FLAVOR:L:Mgnome}
 SED_PLIST+=-e '/%%SHARED-no-gnome%%/d'
 .endif
