@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/23 05:40:41 turan Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
@@ -15,6 +15,11 @@ MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	kevlo@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"missing license"
+PERMIT_PACKAGE_FTP=	"missing license"
+PERMIT_DISTFILES_CDROM=	"missing license"
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/upsd-2.0
 

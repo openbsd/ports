@@ -3,7 +3,7 @@
 # Date created:		22 July 1998
 # Whom:			Niklas Hallqvist <niklas@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/21 14:36:02 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/23 05:40:41 turan Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 #
 
@@ -12,6 +12,11 @@ CATEGORIES=	sysutils x11
 MASTER_SITES=	http://www.coara.or.jp/~eto/xbatt/
 
 MAINTAINER=	niklas@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
