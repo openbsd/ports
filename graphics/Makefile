@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2003/05/12 07:39:09 wcobb Exp $
+# $OpenBSD: Makefile,v 1.108 2003/05/19 00:59:18 wcobb Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -109,6 +109,7 @@
      SUBDIR += vcdimager
 #    SUBDIR += vcg
      SUBDIR += vid
+     SUBDIR += videod
 #    SUBDIR += whirlgif
      SUBDIR += win32-codecs
      SUBDIR += wmgrabimage
