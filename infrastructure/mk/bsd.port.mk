@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.455 2001/09/13 09:12:45 ho Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.456 2001/09/14 15:04:23 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1190,7 +1190,6 @@ _flavor_fragment= \
 
 # Various dependency styles
 
-.if ${TRUST_PACKAGES:L} == "yes"
 _fetch_depends_fragment= \
 	if pkg dependencies check $$pkg; then \
 		found=true; \
@@ -1198,27 +1197,10 @@ _fetch_depends_fragment= \
 
 _build_depends_fragment=${_fetch_depends_fragment}
 _run_depends_fragment=${_fetch_depends_fragment}
+
+.if ${TRUST_PACKAGES:L} == "yes"
 _lib_depends_fragment=${_fetch_depends_fragment}
-
 .else
-_fetch_depends_fragment= \
-	case $$dep in \
-	/*) \
-		if [ -e "$$dep" ]; then \
-			found=true; \
-		fi;; \
-	*) \
-		p=${PORTPATH}; IFS=:; for d in $$p; do \
-			if [ -x $$d/$$dep ]; then \
-				found=true; \
-				break; \
-			fi \
-		done; unset IFS;; \
-	esac
-
-_build_depends_fragment = ${_fetch_depends_fragment}
-_run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
-
 .  if defined(NO_SHARED_LIBS)
 _lib_depends_fragment = \
 	IFS=,; bad=false; for d in $$dep; do \
