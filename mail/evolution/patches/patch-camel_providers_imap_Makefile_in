@@ -1,7 +1,7 @@
-$OpenBSD: patch-camel_providers_imap_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- camel/providers/imap/Makefile.in.orig	Mon May  6 13:29:50 2002
-+++ camel/providers/imap/Makefile.in	Thu May 16 15:50:22 2002
-@@ -209,7 +209,7 @@ libcamelimap_la_SOURCES =  	camel-imap-c
+$OpenBSD: patch-camel_providers_imap_Makefile_in,v 1.2 2002/09/14 04:18:35 marcm Exp $
+--- camel/providers/imap/Makefile.in.orig	Sun Jun 23 05:40:45 2002
++++ camel/providers/imap/Makefile.in	Sat Jul 20 16:33:11 2002
+@@ -210,7 +210,7 @@ libcamelimap_la_SOURCES =  	camel-imap-c
  libcamelimapinclude_HEADERS =  	camel-imap-command.h				camel-imap-folder.h				camel-imap-message-cache.h			camel-imap-search.h				camel-imap-store.h				camel-imap-summary.h				camel-imap-types.h				camel-imap-utils.h				camel-imap-wrapper.h
  
  

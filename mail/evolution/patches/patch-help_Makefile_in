@@ -1,0 +1,12 @@
+$OpenBSD: patch-help_Makefile_in,v 1.1 2002/09/14 04:18:35 marcm Exp $
+--- help/Makefile.in.orig	Thu Sep 12 18:25:11 2002
++++ help/Makefile.in	Thu Sep 12 18:26:52 2002
+@@ -196,7 +196,7 @@ cxxflags_set = @cxxflags_set@
+ l = @l@
+ localedir = @localedir@
+ 
+-SUBDIRS = C no
++SUBDIRS = C
+ 
+ EXTRA_DIST = sgmldocs.make
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

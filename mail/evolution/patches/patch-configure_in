@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- configure.in.orig	Mon May  6 10:16:08 2002
-+++ configure.in	Sun May 26 21:49:57 2002
-@@ -306,7 +306,7 @@ AC_SUBST(DB3_CFLAGS)
+$OpenBSD: patch-configure_in,v 1.2 2002/09/14 04:18:35 marcm Exp $
+--- configure.in.orig	Wed Jun 19 13:49:02 2002
++++ configure.in	Sat Jul 20 16:33:11 2002
+@@ -313,7 +313,7 @@ AC_SUBST(DB3_CFLAGS)
  
  CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
  
  AC_CACHE_CHECK([db3 header version], ac_cv_db3_header_version,
  [
-@@ -314,8 +314,12 @@ AC_CACHE_CHECK([db3 header version], ac_
+@@ -321,8 +321,12 @@ AC_CACHE_CHECK([db3 header version], ac_
  		#ifdef HAVE_DB3_DB_H
  		#include <db3/db.h>
  		#else
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
  	],[
  		#if DB_VERSION_MAJOR != $evolution_db_version_major || \
  		    DB_VERSION_MINOR != $evolution_db_version_minor || \
-@@ -338,8 +342,12 @@ AC_CACHE_CHECK([for db3 library name], a
+@@ -345,8 +349,12 @@ AC_CACHE_CHECK([for db3 library name], a
  			#ifdef HAVE_DB3_DB_H
  			#include <db3/db.h>
  			#else
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
  		],[
  			DB *db;
  			db_create (&db, 0, 0);
-@@ -364,8 +372,12 @@ AC_CACHE_CHECK([that db3 library version
+@@ -371,8 +379,12 @@ AC_CACHE_CHECK([that db3 library version
  		#ifdef HAVE_DB3_DB_H
  		#include <db3/db.h>
  		#else
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
  
  		int
  		main (void)
-@@ -723,20 +735,29 @@ if test ${with_krb5:=no} != no; then
+@@ -730,20 +742,29 @@ if test ${with_krb5:=no} != no; then
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err"
  	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken"

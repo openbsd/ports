@@ -1,11 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/06/21 10:18:08 nino Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2002/09/14 04:18:35 marcm Exp $
 lib/evolution/camel-providers/1.0/libcamelimap.so
 lib/evolution/camel-providers/1.0/libcamellocal.so
 lib/evolution/camel-providers/1.0/libcamelpop3.so
 lib/evolution/camel-providers/1.0/libcamelsendmail.so
 lib/evolution/camel-providers/1.0/libcamelsmtp.so
-lib/evolution/evolution-mail-importers/1.0.7/libmbox.so
-lib/evolution/evolution-mail-importers/1.0.7/liboutlook.so
+lib/evolution/evolution-mail-importers/1.0.8/libmbox.so
+lib/evolution/evolution-mail-importers/1.0.8/liboutlook.so
 lib/libcal-client.so.0.0
 lib/libcal-util.so.0.0
 lib/libcamel.so.0.0

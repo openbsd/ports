@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-devguide,v 1.1 2002/09/14 04:18:35 marcm Exp $
+share/gnome/html/evolution-devel-guide/alarm-trigger-generation-code.html
+share/gnome/html/evolution-devel-guide/calclient.html
+share/gnome/html/evolution-devel-guide/calcomponent.html
+share/gnome/html/evolution-devel-guide/calendar-alarm-generation.html
+share/gnome/html/evolution-devel-guide/calendar-architecture.html
+share/gnome/html/evolution-devel-guide/calendar-public-reference.html
+share/gnome/html/evolution-devel-guide/evolution-api-reference.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-recur.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-util.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-timeutil.html
+share/gnome/html/evolution-devel-guide/evolution-calendar.html
+share/gnome/html/evolution-devel-guide/fdl-section1.html
+share/gnome/html/evolution-devel-guide/fdl-section10.html
+share/gnome/html/evolution-devel-guide/fdl-section2.html
+share/gnome/html/evolution-devel-guide/fdl-section3.html
+share/gnome/html/evolution-devel-guide/fdl-section4.html
+share/gnome/html/evolution-devel-guide/fdl-section5.html
+share/gnome/html/evolution-devel-guide/fdl-section6.html
+share/gnome/html/evolution-devel-guide/fdl-section7.html
+share/gnome/html/evolution-devel-guide/fdl-section8.html
+share/gnome/html/evolution-devel-guide/fdl-section9.html
+share/gnome/html/evolution-devel-guide/fdl-using.html
+share/gnome/html/evolution-devel-guide/fdl.html
+share/gnome/html/evolution-devel-guide/generating-trigger-instances.html
+share/gnome/html/evolution-devel-guide/index.html
+share/gnome/html/evolution-devel-guide/introduction.html
+share/gnome/html/evolution-devel-guide/x102.html
+share/gnome/html/evolution-devel-guide/x125.html
+share/gnome/html/evolution-devel-guide/x134.html
+@dirrm share/gnome/html/evolution-devel-guide

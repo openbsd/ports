@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/21 10:18:07 nino Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/14 04:18:35 marcm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
+COMMENT-devguide=	"Evolution Developer's Guide"
 
-DISTNAME=		evolution-1.0.7
+VERSION=		1.0.8
+DISTNAME=		evolution-${VERSION}
+FULLPKGNAME-devguide=	evolution-devguide-${VERSION}
 CATEGORIES=    		mail x11
-NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.ximian.com/products/ximian_evolution/
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,14 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.ximian.com/pub/source/evolution/ \
-			ftp://ftp.song.fi/mirrors/ftp.ximian.com/pub/source/evolution/ \
-			ftp://rpmfind.net/linux/ximian/source/evolution/ \
-			ftp://planetmirror.com/pub/ximian/pub/ximian/source/evolution/ \
-			ftp://ftp.chg.ru/pub/X11/ximian/source/evolution/ \
-			ftp://tux.cprm.net/pub/ximian/source/evolution/ \
-			ftp://www.linux.org.ar/pub/ximian/source/evolution/ \
-			ftp://mirror.pa.msu.edu/ximian/source/evolution/
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/evolution/}
 
 MODULES=		gettext
 
@@ -48,9 +43,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-db3=${LOCALBASE} \
 			--with-krb5=/usr \
 			--with-krb4=/usr \
-			--enable-pilot-conduits=no \
+			--disable-pilot-conduits \
 			--disable-gtk-doc \
-			--enable-nntp=no
+			--disable-nntp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -67,6 +62,32 @@ CONFIGURE_ARGS+=	--with-static-ldap=yes
 CONFIGURE_ARGS+=	--with-static-ldap=no
 .endif
 .endif
+
+MULTI_PACKAGES=		-devguide
+SUBPACKAGE?=
+
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-devguide"
+RUN_DEPENDS=
+LIB_DEPENDS=
+.  endif
+.endif
+
+pre-configure:
+	@if pkg dependencies check evolution-\*; then \
+		echo 1>&2 "+-------------------"; \
+		echo 1>&2 "| Error: you must remove the existing evolution installation"; \
+		echo 1>&2 "| before compiling this version. To fully remove run"; \
+		echo 1>&2 "| these commands as user root"; \
+		echo 1>&2 "|"; \
+		echo 1>&2 "|	  pkg_delete -f `pkg_info -e 'evolution-*'`"; \
+		echo 1>&2 "|"; \
+		echo 1>&2 "+-------------------"; \
+		exit 1; \
+	fi
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	find ${PREFIX}/share/evolution/default_user -perm 444 -exec chmod 644 {} \;

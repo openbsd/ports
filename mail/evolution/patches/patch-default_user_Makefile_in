@@ -1,7 +1,7 @@
-$OpenBSD: patch-default_user_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- default_user/Makefile.in.orig	Sun May 26 19:32:37 2002
-+++ default_user/Makefile.in	Sun May 26 19:33:28 2002
-@@ -430,9 +430,9 @@ maintainer-clean-generic clean mostlycle
+$OpenBSD: patch-default_user_Makefile_in,v 1.2 2002/09/14 04:18:35 marcm Exp $
+--- default_user/Makefile.in.orig	Sun Jun 23 05:46:43 2002
++++ default_user/Makefile.in	Sat Jul 20 16:33:11 2002
+@@ -431,9 +431,9 @@ maintainer-clean-generic clean mostlycle
  
  
  install-data-hook:
