@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/08/02 19:55:23 fgsch Exp $
 
 COMMENT=	"X11-based audio mixer"
 DISTNAME=	xmix-2.1
@@ -18,8 +18,10 @@ WRKDIST=	$(WRKDIR)/xmix
 
 NO_REGRESS=	Yes
 
-pre-install:
+pre-build:
 	@cp ${WRKSRC}/xmix.1 ${WRKSRC}/xmix.man
+
+pre-install:
 	${INSTALL_DATA} $(WRKSRC)/XMix ${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
