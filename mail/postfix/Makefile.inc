@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2003/01/06 11:30:16 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2003/01/13 15:44:36 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -36,8 +36,10 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
 LIB_DEPENDS+=	pcre::devel/pcre
-MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_PCRE
+MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+.else
+MAKE_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${FLAVOR:L:Msasl}
