@@ -1,4 +1,3 @@
-This is the binary distribution of XForms, a graphical user interface
-toolkit for X Window Systems. It should work under X11 R4, R5 & R6.
+XForms is a graphical user interface toolkit for the X Window System.
 
 WWW: ${HOMEPAGE}
