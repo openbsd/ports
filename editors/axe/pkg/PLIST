@@ -4,6 +4,8 @@ bin/axinfo
 bin/coaxe
 bin/faxe
 bin/poleaxe
+lib/X11/app-defaults/Axe
+lib/X11/app-defaults/Axinfo
 lib/X11/axe.info
 lib/X11/axe.info-1
 lib/X11/axe.info-2
