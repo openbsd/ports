@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/06/16 20:37:14 jsyn Exp $
+--- configure.in.orig	Mon Apr 15 17:42:34 2002
++++ configure.in	Sun Jun 16 17:00:00 2002
+@@ -62,8 +62,7 @@ AC_ARG_WITH(libevent,
+      ;;
+   *)
+      AC_MSG_RESULT($withval)
+-     if test -f $withval/include/event.h -a -f
+-     $withval/lib/libevent.a; then
++     if test -f $withval/include/event.h -a -f $withval/lib/libevent.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+         EVENTINC="-I$withval/include"
+@@ -82,6 +81,8 @@ AC_ARG_WITH(libevent,
+ then
+      EVENTINC="-I${prefix}/include"
+      EVENTLIB="-L${prefix}/lib -levent"
++  elif test -f /usr/include/event.h; then
++     EVENTLIB="-levent"
+   else
+      AC_MSG_RESULT(no)
+      AC_ERROR(libevent not found)

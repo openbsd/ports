@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/20 22:23:25 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/16 20:37:13 jsyn Exp $
 			
 COMMENT=		"ARP reply daemon"
 
@@ -16,11 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/arpd
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libevent.a::devel/libevent \
-			${LOCALBASE}/lib/libdnet.a::net/libdnet
+BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.a::net/libdnet
 
 .include <bsd.port.mk>
