@@ -1,47 +1,49 @@
---- ltmain.sh.orig	Sun Dec 26 13:54:01 1999
-+++ ltmain.sh	Sun Feb 18 11:19:01 2001
-@@ -1073,6 +1073,17 @@
- 	    # These systems don't actually have c library (as such)
+--- ltmain.sh.orig	Tue Oct 30 15:25:31 2001
++++ ltmain.sh	Tue Oct 30 15:40:27 2001
+@@ -1027,15 +1027,30 @@
+ 	    # These systems don't actually have a C or math library (as such)
  	    continue
+ 	    ;;
++
+ 	  *-*-mingw* | *-*-os2*)
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
  	    ;;
 +	  *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
 +	    continue
 +	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
++          esac
++        elif test "$arg" = "-lc_r"; then
 +	  case "$host" in
 +	  *-*-openbsd*)
-+	    # Do not include libc_r directly, use -pthread flag.
-+	    continue
-+	    ;;
++        # Do not include libc_r directly, use -pthread flag.
++	     continue
++	     ;;
  	  esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
-@@ -1085,6 +1096,10 @@
+ 	fi
  	deplibs="$deplibs $arg"
+ 	continue
  	;;
++	-?thread)
++	  deplibs="$deplibs $arg"
++	  ;;
  
-+      -?thread)
-+	deplibs="$deplibs $arg"
-+	;;
-+
        -module)
  	module=yes
- 	continue
-@@ -1789,6 +1804,9 @@
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+	*-*-openbsd*)
-+	  # Do not include libc due to us having libc/libc_r.
-+	  ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3522,40 +3540,6 @@
+@@ -2408,6 +2423,9 @@
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r
++	    ;;
+ 	  *)
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test $build_libtool_need_lc = "yes"; then
+@@ -4412,40 +4430,6 @@
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -51,7 +53,7 @@
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"

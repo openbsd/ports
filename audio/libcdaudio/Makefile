@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/15 02:08:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/30 07:58:24 kevlo Exp $
 
 COMMENT=	"multi-platform cd player development library"
-DISTNAME=	libcdaudio-0.99.4
+DISTNAME=	libcdaudio-0.99.6
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.488
 
-HOMEPAGE=	http://cdcd.undergrid.net/libcdaudio/
+HOMEPAGE=	http://libcdaudio.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -14,12 +14,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= distributions/gentoo/gentoo-sources/
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITE_SUBDIR=	libcdaudio
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig
 
 .include <bsd.port.mk>
