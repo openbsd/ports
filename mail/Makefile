@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2003/10/21 18:19:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.116 2003/11/19 16:59:22 sturm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += mutt
      SUBDIR += nail
      SUBDIR += nmh
+     SUBDIR += offlineimap
      SUBDIR += openwebmail
      SUBDIR += p5-MIME-Lite
      SUBDIR += p5-MIME-Types
