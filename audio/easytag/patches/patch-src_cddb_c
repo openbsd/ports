@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_cddb_c,v 1.1 2002/11/26 15:52:42 naddy Exp $
---- src/cddb.c.orig	Wed Nov 13 19:11:27 2002
-+++ src/cddb.c	Wed Nov 13 19:11:45 2002
-@@ -27,6 +27,8 @@
- #include <stdlib.h>
- #include <sys/types.h>
+$OpenBSD: patch-src_cddb_c,v 1.2 2003/01/02 09:25:54 todd Exp $
+--- src/cddb.c.orig	Sun Nov 10 21:42:26 2002
++++ src/cddb.c	Thu Jan  2 16:02:53 2003
+@@ -29,6 +29,7 @@
  #include <sys/socket.h>
-+#include <netinet/in.h>
-+#include <arpa/inet.h>
  #include <netdb.h>
  #include <errno.h>
++#include <netinet/in.h>
  
+ #include "cddb.h"
+ #include "easytag.h"
