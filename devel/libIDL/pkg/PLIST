@@ -1,0 +1,11 @@
+bin/libIDL-config
+info/libIDL.info
+lib/libIDL-0.6.so.3.0
+lib/libIDL.la
+lib/libIDL.a
+lib/libIDLConf.sh
+include/libIDL/IDL.h
+share/aclocal/libIDL.m4
+@dirrm include/libIDL
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
