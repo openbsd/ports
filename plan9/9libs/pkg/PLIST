@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/11 08:24:29 cannings Exp $
-include/frame.h
-include/libc.h
-include/libg.h
-include/regexp.h
-include/u.h
-lib/9libs/include/conf9libs.h
+@comment $OpenBSD: PLIST,v 1.2 2003/05/24 19:38:47 pvalchev Exp $
+include/9libs/conf9libs.h
+include/9libs/frame.h
+include/9libs/libc.h
+include/9libs/libg.h
+include/9libs/regexp.h
+include/9libs/u.h
 lib/libXg.a
 lib/libXg.la
 lib/libframe.a
@@ -26,5 +26,4 @@ man/man4/utf.4
 man/man6/bitmap.6
 man/man6/regexp.6
 %%SHARED%%
-@dirrm lib/9libs/include
-@dirrm lib/9libs
+@dirrm include/9libs
