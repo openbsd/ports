@@ -29,4 +29,4 @@ specification, decoy scanning, determination of TCP sequence
 predictability characteristics, and output to machine parseable or
 human readable log files.
 
-For more details, see http://www.insecure.org/nmap/
+WWW: ${HOMEPAGE}
