@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.6 1998/12/03 02:33:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/05 23:25:58 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -23,7 +23,9 @@ MAINTAINER=	Marc.Espie@openbsd.org
 
 # this will improve over time as more and more architectures are handled
 # with some help from Jason L. Wright for sparc...
-ONLY_FOR_ARCHS = i386 sparc
+
+# 981130 builds for m68k, thanks to Andreas Schwab patch !
+ONLY_FOR_ARCHS = i386 sparc m68k
 
 # user configuration section
 
@@ -47,14 +49,16 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-11-22
+LATEST_DATE=1998-11-30
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
 # define NEXT_DATE to the next snapshot... you lose the ability to check
 # md5 sums, though.
-NEXT_DATE=1998-11-30
-PATCH_DEBUG=yes
+# You also may have to remove/add some patches, as these things ARE
+# usually passed along to the egcs ml.
+#NEXT_DATE=1998-11-30
+#PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
 DIRECTORY=egcs/snapshots/%SUBDIR%/
