@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.no-gnome,v 1.5 2004/09/15 19:38:49 espie Exp $
-@pkgcfl gnome-libs-*
+@comment $OpenBSD: PFRAG.no-gnome,v 1.6 2004/09/18 10:55:04 espie Exp $
+@conflict gnome-libs-*
 include/popt-gnome.h
 lib/libgnomesupport.a
 lib/libgnomesupport.la

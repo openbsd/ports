@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/10/29 03:25:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:55:04 espie Exp $
 @option no-default-conflict
-@pkgcfl jdk-linux-1.4*
+@conflict jdk-linux->=1.4,<1.5
 jdk1.4.1-linux/COPYRIGHT
 jdk1.4.1-linux/LICENSE
 jdk1.4.1-linux/README

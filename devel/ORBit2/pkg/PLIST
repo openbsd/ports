@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/10 09:43:46 espie Exp $
-@pkgcfl linc-*
+@comment $OpenBSD: PLIST,v 1.9 2004/09/18 10:55:03 espie Exp $
+@conflict linc-*
 bin/ior-decode-2
 bin/linc-cleanup-sockets
 bin/orbit-idl-2

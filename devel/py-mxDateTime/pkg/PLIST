@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:44:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:55:04 espie Exp $
 @option no-default-conflict
-@pkgcfl py-mxDateTime-*${FLAVOR_EXT}
+@conflict py-mxDateTime-*${FLAVOR_EXT}
 lib/python${MODPY_VERSION}/site-packages/mx/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.py

@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/05 09:16:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:55:04 espie Exp $
 @option no-default-conflict
-@pkgcfl autoconf-2.0*
-@pkgcfl autoconf-2.1*
-@pkgcfl autoconf-1.*
+@conflict autoconf-<2.13
 bin/autoconf${SUFFIX}
 bin/autoheader${SUFFIX}
 bin/autoreconf${SUFFIX}
