@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.554 2003/07/14 14:08:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.555 2003/07/16 21:22:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -36,8 +36,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 #
 # NO_PKG_REGISTER - Don't register a port install as a package.
-# RESTRICTED	- Port is restricted.  Set this string to the reason why.
-#
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 # DEPENDS		- A list of other ports this package depends on being
@@ -48,22 +46,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # DEPENDS_TARGET - The target to execute when a port is calling a
 #				  dependency (default: "install").
-#
-#
-# It is assumed that the port installs manpages uncompressed. If this is
-# not the case, set MANCOMPRESSED in the port and define MAN<sect> and
-# CAT<sect> for the compressed pages.  The pages will then be automatically
-# uncompressed.
-#
-# MANCOMPRESSED - Indicates that the port installs manpages in a compressed
-#                 form (default: port installs manpages uncompressed).
-# MAN<sect>		- A list of manpages, categorized by section.  For
-#				  example, if your port has "man/man1/foo.1" and
-#				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
-#				  The available sections chars are "123456789LN".
-# CAT<sect>     - The same as MAN<sect>, only for formatted manpages.
-# MANPREFIX		 -The directory prefix for ${MAN<sect>} (default: ${PREFIX}).
-# CATPREFIX     - The directory prefix for ${CAT<sect>} (default: ${PREFIX}).
 #
 # readme		- Create a README.html file describing the category or package
 #				  (somewhat broken due to NEW_DEPENDS)
@@ -149,16 +131,8 @@ NO_SHARED_LIBS=	Yes
 .  endif
 .endfor
 
-# Compatibility kludge for old scripts
-.if defined(NOCLEANDEPENDS)
-.  if ${NOCLEANDEPENDS:L} == "no"
-CLEANDEPENDS?=Yes
-.  else
 CLEANDEPENDS?=No
-.  endif
-.else
-CLEANDEPENDS?=No
-.endif
+
 clean?=work
 .if ${CLEANDEPENDS:L} == "yes"
 clean+=depends
@@ -965,30 +939,6 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
-.if ${FAKE:L} == "yes"
-MANPREFIX?=  ${WRKINST}${TRUEPREFIX}
-CATPREFIX?=  ${WRKINST}${TRUEPREFIX}
-.endif
-
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-MAN${sect}PREFIX?=	${MANPREFIX}
-CAT${sect}PREFIX?=	${CATPREFIX}
-.endfor
-
-MANLANG?=	""	# english only by default
-
-.for lang in ${MANLANG}
-
-.  for sect in 1 2 3 4 5 6 7 8 9 L N
-.    if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/man/${lang}/man${sect:L}/%}
-.    endif
-.    if defined(CAT${sect})
-_CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
-.    endif
-.  endfor
-.endfor
-
 USE_X11?=No
 ################################################################
 # Many ways to disable a port.
@@ -1001,9 +951,6 @@ USE_X11?=No
 # interactive ones that required your intervention.
 #
 # Ignore ports that can't be resold if building for a CDROM.
-#
-# Don't build a port if it's restricted and we don't want to get
-# into that.
 #
 # Don't build a port if it's broken.
 #
@@ -1020,8 +967,6 @@ _IGNORE_REGRESS=	"does not have interactive tests"
 IGNORE=	"is an interactive port"
 .  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
 IGNORE=	"is not an interactive port"
-.  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
-IGNORE=	"is restricted: ${RESTRICTED}"
 .  elif ${USE_X11:L} == "yes" && !exists(${X11BASE})
 IGNORE=	"uses X11, but ${X11BASE} not found"
 .  elif defined(BROKEN)
@@ -1737,26 +1682,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .  endif
 .  if target(post-install)
 	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} post-install ${_FAKE_SETUP}
-.  endif
-.  if defined(_MANPAGES) || defined(_CATPAGES)
-.    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${FULLPKGNAME}${_MASTER}"
-.      for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${SUDO} ${GUNZIP_CMD} ${manpage}.gz
-.      endfor
-.    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${FULLPKGNAME}${_MASTER}"
-.      for manpage in ${_MANPAGES} ${_CATPAGES}
-	@if [ -L ${manpage} ]; then \
-		set - `file ${manpage}`; \
-		shift `expr $$# - 1`; \
-		${SUDO} ln -sf $${1}.gz ${manpage}.gz; \
-		${SUDO} rm ${manpage}; \
-	else \
-		${SUDO} ${GZIP_CMD} ${manpage}; \
-	fi
-.      endfor
-.    endif
 .  endif
 .  for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
