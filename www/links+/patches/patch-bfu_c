@@ -1,0 +1,108 @@
+$OpenBSD: patch-bfu_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
+--- bfu.c.orig	Sat Oct 12 15:46:23 2002
++++ bfu.c	Sat Nov 30 21:51:38 2002
+@@ -786,11 +786,18 @@ void display_dlg_item(struct dialog_data
+ 			}
+ 			break;
+ 		case D_FIELD:
++		case D_FIELD_PASS:
+ 			if (di->vpos + di->l <= di->cpos) di->vpos = di->cpos - di->l + 1;
+ 			if (di->vpos > di->cpos) di->vpos = di->cpos;
+ 			if (di->vpos < 0) di->vpos = 0;
+ 			fill_area(term, di->x, di->y, di->l, 1, COLOR_DIALOG_FIELD);
+-			print_text(term, di->x, di->y, strlen(di->cdata + di->vpos) <= di->l ? strlen(di->cdata + di->vpos) : di->l, di->cdata + di->vpos, COLOR_DIALOG_FIELD_TEXT);
++                        if (di->item->type == D_FIELD) {
++                            print_text(term, di->x, di->y, strlen(di->cdata + di->vpos) <= di->l ? strlen(di->cdata + di->vpos) : di->l, di->cdata + di->vpos, COLOR_DIALOG_FIELD_TEXT);
++                        } else {
++                            fill_area(term, di->x, di->y,
++                                      strlen(di->cdata + di->vpos) <= di->l ? strlen(di->cdata + di->vpos) : di->l, 1,
++                                      COLOR_DIALOG_FIELD_TEXT | '*');
++                        }
+ 			if (sel) {
+ 				set_cursor(term, di->x + di->cpos - di->vpos, di->y, di->x + di->cpos - di->vpos, di->y);
+ 				set_window_ptr(dlg->win, di->x, di->y);
+@@ -817,7 +824,7 @@ void display_dlg_item(struct dialog_data
+ 		switch (di->item->type) {
+ 			int p, pp;
+ 			struct style *st;
+-			unsigned char *text, *text2, *text3;
++			unsigned char *text, *text2, *text3, *text_pass;
+ 			struct rect r;
+ 			case D_CHECKBOX:
+ 				p = di->x;
+@@ -845,8 +852,11 @@ void display_dlg_item(struct dialog_data
+ 				if (dlg->s) exclude_from_set(&dlg->s, di->x, di->y, p, di->y + G_BFU_FONT_SIZE);
+ 				break;
+ 			case D_FIELD:
++			case D_FIELD_PASS:
+ 				if (!(text = memacpy(di->cdata, di->cpos))) break;
+-				if (*(text2 = text3 = di->cdata + di->cpos)) {
++                                text_pass=mem_alloc(di->cpos+1);
++                                for(pp=0;pp<di->cpos;pp++) text_pass[pp]='*';text_pass[pp]='\0';
++                                if (*(text2 = text3 = di->cdata + di->cpos)) {
+ 					GET_UTF_8(text3, p);
+ 					text2 = memacpy(text2, text3 - text2);
+ 				} else {
+@@ -866,9 +876,16 @@ void display_dlg_item(struct dialog_data
+ 				if (dlg->s) exclude_from_set(&dlg->s, di->x, di->y, di->x + di->l, di->y + G_BFU_FONT_SIZE);
+ 				restrict_clip_area(dev, &r, di->x, di->y, di->x + di->l, di->y + G_BFU_FONT_SIZE);
+ 				p = di->x - di->vpos;
+-				g_print_text(drv, dev, p, di->y, bfu_style_wb_mono, text, &p);
+-				g_print_text(drv, dev, p, di->y, sel ? bfu_style_wb_mono_u : bfu_style_wb_mono, text2, &p);
++                                if (di->item->type == D_FIELD) {
++                                    g_print_text(drv, dev, p, di->y, bfu_style_wb_mono, text, &p);
++                                } else {
++                                    g_print_text(drv, dev, p, di->y, bfu_style_wb_mono, text_pass, &p);
++                                }
++                                mem_free(text_pass);
++                                g_print_text(drv, dev, p, di->y, sel ? bfu_style_wb_mono_u : bfu_style_wb_mono, text2, &p);
+ 				g_print_text(drv, dev, p, di->y, bfu_style_wb_mono, text3, &p);
++
++
+ 				drv->fill_area(dev, p, di->y, di->x + di->l, di->y + G_BFU_FONT_SIZE, bfu_fg_color);
+ 				drv->set_clip_area(dev, &r);
+ 				mem_free(text);
+@@ -963,6 +980,7 @@ int dlg_mouse(struct dialog_data *dlg, s
+ 			if ((ev->b & BM_ACT) == B_UP) dlg_select_item(dlg, di);
+ 			return 1;
+ 		case D_FIELD:
++		case D_FIELD_PASS:
+ 			if (gf_val(ev->y != di->y, ev->y < di->y || ev->y >= di->y + G_BFU_FONT_SIZE) || ev->x < di->x || ev->x >= di->x + di->l) return 0;
+ 			if (!F) {
+ 				if ((di->cpos = di->vpos + ev->x - di->x) > strlen(di->cdata)) di->cpos = strlen(di->cdata);
+@@ -1103,7 +1121,7 @@ void dialog_func(struct window *win, str
+ 				} 
+ 				init_list(di->history);
+ 				di->cur_hist = (struct history_item *)&di->history;
+-				if (di->item->type == D_FIELD) {
++                               if (di->item->type == D_FIELD || di->item->type == D_FIELD_PASS) {
+ 					if (di->item->history) {
+ 						struct history_item *j;
+ 						/*int l = di->item->dlen;*/
+@@ -1130,7 +1148,7 @@ void dialog_func(struct window *win, str
+ 			break;
+ 		case EV_KBD:
+ 			di = &dlg->items[dlg->selected];
+-			if (di->item->type == D_FIELD) {
++                        if (di->item->type == D_FIELD || di->item->type == D_FIELD_PASS) {
+ 				if (ev->x == KBD_UP && (void *)di->cur_hist->prev != &di->history) {
+ 					di->cur_hist = di->cur_hist->prev;
+ 					dlg_set_history(di);
+@@ -1353,7 +1371,7 @@ int check_dialog(struct dialog_data *dlg
+ {
+ 	int i;
+ 	for (i = 0; i < dlg->n; i++)
+-		if (dlg->dlg->items[i].type == D_CHECKBOX || dlg->dlg->items[i].type == D_FIELD)
++                if (dlg->dlg->items[i].type == D_CHECKBOX || dlg->dlg->items[i].type == D_FIELD || dlg->dlg->items[i].type == D_FIELD_PASS) 
+ 			if (dlg->dlg->items[i].fn && dlg->dlg->items[i].fn(dlg, &dlg->items[i])) {
+ 				dlg->selected = i;
+ 				draw_to_window(dlg->win, (void (*)(struct terminal *, void *))redraw_dialog_items, dlg);
+@@ -1738,7 +1756,7 @@ void dlg_format_group(struct dialog_data
+ #endif
+ 			item->x = x + nx + sl * (item->item->type != D_CHECKBOX);
+ 			item->y = *y;
+-			if (item->item->type == D_FIELD) item->l = gf_val(item->item->dlen, item->item->dlen * G_DIALOG_FIELD_WIDTH);
++                        if (item->item->type == D_FIELD || item->item->type == D_FIELD_PASS) item->l = gf_val(item->item->dlen, item->item->dlen * G_DIALOG_FIELD_WIDTH);
+ 		}
+ 		if (rw && nx + wx > *rw) if ((*rw = nx + wx) > w) *rw = w;
+ 		nx += wx + gf_val(1, G_DIALOG_GROUP_SPACE);

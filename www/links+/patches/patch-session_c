@@ -1,0 +1,14 @@
+$OpenBSD: patch-session_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
+--- session.c.orig	Sat Nov  2 12:22:42 2002
++++ session.c	Sat Nov 30 21:51:38 2002
+@@ -156,6 +156,10 @@ void print_screen_status(struct session 
+ 		set_terminal_title(ses->term, m);
+ 		/*mem_free(m); -- set_terminal_title frees it */
+ 	}
++	if (need_auth==1) {
++	    need_auth=0;
++	    do_auth_dialog(ses);
++	}
+ }
+ 
+ void print_error_dialog(struct session *ses, struct status *stat, unsigned char *title)

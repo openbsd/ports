@@ -1,0 +1,50 @@
+$OpenBSD: patch-http_c,v 1.1 2002/12/11 08:07:17 fgsch Exp $
+--- http.c.orig	Wed May 22 12:37:48 2002
++++ http.c	Sat Nov 30 21:51:38 2002
+@@ -157,6 +157,7 @@ void http_send_header(struct connection 
+ 	int l = 0;
+ 	unsigned char *post;
+ 	unsigned char *host = upcase(c->url[0]) != 'P' ? c->url : get_url_data(c->url);
++	unsigned char *host_data;
+ 	set_timeout(c);
+ 	if (!(info = mem_alloc(sizeof(struct http_connection_info)))) {
+ 		setcstate(c, S_OUT_OF_MEM);
+@@ -306,6 +307,14 @@ void http_send_header(struct connection 
+ 		add_num_to_str(&hdr, &l, c->from);
+ 		add_to_str(&hdr, &l, "-\r\n");
+ 	}
++	host_data = find_auth(host);
++	if (host_data) {
++		add_to_str(&hdr, &l, "Authorization: Basic ");
++		add_to_str(&hdr, &l, host_data);
++		add_to_str(&hdr, &l, "\r\n");
++		mem_free(host_data);
++	}
++
+ 	if (post) {
+ 		unsigned char *pd = strchr(post, '\n');
+ 		if (pd) {
+@@ -564,6 +573,23 @@ void http_got_header(struct connection *
+ 			e->redirect_get = h == 303;
+ 		}
+ 	}
++ 	if (h == 401) {
++		d = parse_http_header(e->head, "WWW-Authenticate", NULL);
++		if (d) {
++			if (!strncasecmp(d, "Basic", 5)) {
++				unsigned char *realm = get_http_header_param(d, "realm");
++
++				if (realm) {
++					if (add_auth_entry(host, realm) > 0) {
++                                            need_auth=1;
++                                        }
++					mem_free(realm);
++				}
++			}
++			mem_free(d);
++		}
++  	}
++
+ 	kill_buffer_data(rb, a);
+ 	c->cache = e;
+ 	info->close = 0;
