@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2002/08/27 13:23:53 naddy Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -32,7 +32,6 @@ SUPPORTED?=	unsupported
 
 
 CATEGORIES=     www
-NEED_VERSION=	1.489
 MASTER_SITES= \
 	ftp://ftp.netscape.com/pub/$S/ \
 	ftp://uiarchive.uiuc.edu/pub/www/netscape/$S/ \
@@ -112,5 +111,6 @@ post-install:
 	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape_nis
 .endif
 	@sed -e 's#@netscape_home@#${TRUEPREFIX}/netscape#' \
+	     -e 's#@prefix@#${TRUEPREFIX}#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
 	${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/24 15:03:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/08/27 13:23:54 naddy Exp $
 @pkgcfl communicator-*
 @pkgcfl navigator-*
 bin/netscape
@@ -176,9 +176,7 @@ netscape/nethelp/picsfail.htm
 netscape/nethelp/picsfail.jar
 netscape/netscape
 netscape/netscape-dynMotif
-netscape/plugins/ShockwaveFlash.class
 netscape/plugins/cpPack1.jar
-netscape/plugins/libflashplayer.so
 netscape/plugins/libnullplugin.so
 netscape/registry
 netscape/spell/netscape.dic

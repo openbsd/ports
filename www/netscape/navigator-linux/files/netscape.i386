@@ -1,8 +1,9 @@
 #!/bin/sh
-# $OpenBSD: netscape.i386,v 1.1.1.1 2001/08/24 15:02:56 espie Exp $
+# $OpenBSD: netscape.i386,v 1.2 2002/08/27 13:23:54 naddy Exp $
 #
 # Wrapper for Netscape Communicator.
 
 MOZILLA_HOME=@netscape_home@
-export MOZILLA_HOME
+: ${NPX_PLUGIN_PATH=@prefix@/lib/ns-plugins:$MOZILLA_HOME/plugins}
+export MOZILLA_HOME NPX_PLUGIN_PATH
 exec $MOZILLA_HOME/netscape "$@"
