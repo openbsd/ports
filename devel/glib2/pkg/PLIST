@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/17 05:55:42 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/06/30 03:55:29 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -67,7 +67,7 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
-@comment lib/charset.alias
+lib/charset.alias
 lib/glib-2.0/include/glibconfig.h
 lib/libglib-2.0.a
 lib/libglib-2.0.la
@@ -93,18 +93,27 @@ share/locale/bg/LC_MESSAGES/glib20.mo
 share/locale/bn/LC_MESSAGES/glib20.mo
 share/locale/ca/LC_MESSAGES/glib20.mo
 share/locale/cs/LC_MESSAGES/glib20.mo
+share/locale/cy/LC_MESSAGES/glib20.mo
 share/locale/da/LC_MESSAGES/glib20.mo
 share/locale/de/LC_MESSAGES/glib20.mo
 share/locale/el/LC_MESSAGES/glib20.mo
 share/locale/es/LC_MESSAGES/glib20.mo
 share/locale/et/LC_MESSAGES/glib20.mo
 share/locale/eu/LC_MESSAGES/glib20.mo
+share/locale/fa/LC_MESSAGES/glib20.mo
 share/locale/fi/LC_MESSAGES/glib20.mo
 share/locale/fr/LC_MESSAGES/glib20.mo
 share/locale/gl/LC_MESSAGES/glib20.mo
+share/locale/he/LC_MESSAGES/glib20.mo
 share/locale/hi/LC_MESSAGES/glib20.mo
+share/locale/id/LC_MESSAGES/glib20.mo
+share/locale/it/LC_MESSAGES/glib20.mo
 share/locale/ja/LC_MESSAGES/glib20.mo
 share/locale/ko/LC_MESSAGES/glib20.mo
+share/locale/li/LC_MESSAGES/glib20.mo
+share/locale/lv/LC_MESSAGES/glib20.mo
+share/locale/mk/LC_MESSAGES/glib20.mo
+share/locale/ml/LC_MESSAGES/glib20.mo
 share/locale/mn/LC_MESSAGES/glib20.mo
 share/locale/ms/LC_MESSAGES/glib20.mo
 share/locale/nl/LC_MESSAGES/glib20.mo
@@ -118,11 +127,14 @@ share/locale/ru/LC_MESSAGES/glib20.mo
 share/locale/sk/LC_MESSAGES/glib20.mo
 share/locale/sl/LC_MESSAGES/glib20.mo
 share/locale/sq/LC_MESSAGES/glib20.mo
+share/locale/sr/LC_MESSAGES/glib20.mo
+share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/LC_MESSAGES/glib20.mo
+share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 %%SHARED%%
@@ -130,6 +142,8 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/yi/LC_MESSAGES
+@comment @dirrm share/locale/yi
 @comment @dirrm share/locale/vi/LC_MESSAGES
 @comment @dirrm share/locale/vi
 @comment @dirrm share/locale/uk/LC_MESSAGES
@@ -140,6 +154,10 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sq/LC_MESSAGES
 @comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
@@ -166,18 +184,34 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/li/LC_MESSAGES
+@comment @dirrm share/locale/li
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
 @comment @dirrm share/locale/ja/LC_MESSAGES
 @comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hi/LC_MESSAGES
 @comment @dirrm share/locale/hi
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
+@comment @dirrm share/locale/fa/LC_MESSAGES
+@comment @dirrm share/locale/fa
 @comment @dirrm share/locale/eu/LC_MESSAGES
 @comment @dirrm share/locale/eu
 @comment @dirrm share/locale/et/LC_MESSAGES
@@ -190,6 +224,8 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES

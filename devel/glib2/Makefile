@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2003/05/27 23:00:52 miod Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/30 03:55:29 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
 
-VERSION=		2.2.1
+VERSION=		2.2.2
 DISTNAME=		glib-${VERSION}
 PKGNAME=		glib2-${VERSION}
 PKGNAME-docs=           glib2-docs-${VERSION}
@@ -30,10 +30,7 @@ BUILD_DEPENDS=          :pkgconfig->=0.14:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-LIBGLIB_VERSION=	0:9
-LIBGOBJECT_VERSION=	0:9
-LIBGTHREAD_VERSION=	0:9
-LIBGMODULE_VERSION=	0:9
+OBSD_LIB_VERSION=	0:10
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		simple
@@ -42,11 +39,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
-MAKE_ENV=		LIBGLIB_VERSION="${LIBGLIB_VERSION}" \
-			LIBGOBJECT_VERSION="${LIBGOBJECT_VERSION}" \
-			LIBGTHREAD_VERSION="${LIBGTHREAD_VERSION}" \
-			LIBGMODULE_VERSION="${LIBGMODULE_VERSION}"
-
-NO_REGRESS=		Yes
+MAKE_ENV=		OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
 
 .include <bsd.port.mk>
