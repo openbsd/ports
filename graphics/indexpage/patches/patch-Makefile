@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/10/27 00:01:16 naddy Exp $
+--- Makefile.orig	Thu Feb 28 10:27:10 2002
++++ Makefile	Sun Oct 27 01:33:20 2002
+@@ -14,10 +14,6 @@ SOURCES = indexpage.pl \
+ BIN = $(HOME)/bin/
+ 
+ test: foo
+-	@if [ -f $(HOME)/.indexpagerc ] ; then \
+-	    mv $(HOME)/.indexpagerc $(HOME)/.indexpagerc.backup ; \
+-	fi
+-
+ 	# Test 1
+ 	@# indir = test1
+ 	@rm -rf test1
+@@ -80,7 +76,7 @@ test: foo
+ 	@cp teststuff/pic.jpg test5/pic1.jpg
+ 	@cp teststuff/pic.jpg test5/pic2.jpg
+ 	@cp teststuff/descriptions5.txt descriptions.txt
+-	@perl indexpage.pl --indir=test5 --convert=/usr/bin/X11/convert \
++	@perl indexpage.pl --indir=test5 --convert=convert \
+ 	    --footer="This goes at the bottom." --title=Test5 --noindex
+ 	@diff teststuff/index5.html 1.html
+ 
+@@ -130,8 +126,6 @@ test: foo
+ 	@diff teststuff/1-8.html test8/gurka1.html
+ 	@diff teststuff/2-8.html test8/gurka2.html
+ 	@diff teststuff/3-8.html test8/gurka3.html
+-
+-	@mv $(HOME)/.indexpagerc.backup $(HOME)/.indexpagerc
+ 
+ foo:
+ 	@touch foo

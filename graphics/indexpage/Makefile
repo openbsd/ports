@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/08 04:43:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/27 00:01:15 naddy Exp $
 
 COMMENT=	"generate index pages for displaying images"
 
@@ -20,6 +20,9 @@ RUN_DEPENDS=	::graphics/p5-Image-Size \
 		::graphics/ImageMagick
 
 NO_BUILD=	Yes
+
+REGRESS_TARGET=	test
+PORTHOME=	${WRKDIR}	# for regress
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/indexpage

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2002/10/27 00:01:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 COMMENT=	"lossless image compression library"
 
 DISTNAME=	jbigkit-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/ \
 		http://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -20,6 +20,8 @@ MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall"
 FAKE_FLAGS=	${MAKE_FLAGS}
 
 WRKDIST=	${WRKDIR}/jbigkit
+
+REGRESS_TARGET=	test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jbig
