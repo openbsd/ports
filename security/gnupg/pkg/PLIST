@@ -3,7 +3,6 @@ bin/gpgm
 lib/gnupg/rndunix
 lib/gnupg/rndegd
 lib/gnupg/tiger
-lib/gnupg/twofish
 man/man1/gpg.1
 man/man1/gpgm.1
 share/doc/gnupg/README

@@ -1,0 +1,14 @@
+--- g10/Makefile.in.orig	Mon May 24 16:19:19 1999
++++ g10/Makefile.in	Mon May 24 16:20:00 1999
+@@ -577,8 +577,9 @@
+ 	$(INSTALL_DATA) $(srcdir)/options.skel $(pkgdatadir)/options.skel
+ 	@set -e;\
+ 	 if test -f $(bindir)/gpgm ; then \
+-	   rm $(bindir)/gpgm ; ln -s gpg $(bindir)/gpgm ; \
+-	 fi
++	   rm $(bindir)/gpgm ; \
++	 fi; \
++	 ln -s gpg $(bindir)/gpgm
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
