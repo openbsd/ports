@@ -1,5 +1,5 @@
---- configure.orig	Mon Oct 29 15:24:18 2001
-+++ configure	Sat Dec 22 11:40:51 2001
+--- configure.orig	2001-10-29 15:24:18.000000000 +0100
++++ configure	2003-12-26 17:27:26.000000000 +0100
 @@ -52,7 +52,10 @@ else
  fi
  
@@ -20,6 +20,15 @@
  	echo
  	echo "This is the Qt$EMB Free Edition."
  	echo
+@@ -1347,7 +1351,7 @@ chmod -w src/tools/qmodules.h
+ [ "x$LIBPNG" = "xno" ] && QT_LIBS="${QT_LIBS} -lpng"
+ [ "x$ZLIB" = "xno" ] && QT_LIBS="${QT_LIBS} -lz"
+ [ "x$JPEG" = "xyes" ] && QT_LIBS="${QT_LIBS} -ljpeg"
+-[ "x$MNG" = "xyes" ] && QT_LIBS="${QT_LIBS} -lmng -ljpeg" # assume JNG support
++[ "x$MNG" = "xyes" ] && QT_LIBS="${QT_LIBS} -lmng -llcms -ljpeg" # assume JNG support
+ [ "x$NAS_SOUND" = "xyes" ] && QT_LIBS="${QT_LIBS} -laudio -lXt" # Xt junk in audio library
+ QT_LIBS="$L_FLAGS $R_FLAGS $QT_LIBS $l_FLAGS"
+ 
 @@ -1441,19 +1445,7 @@ echo Creating makefiles...
  
  sepath=`echo $relpath | sed -e 's/\\./\\\\./g'`

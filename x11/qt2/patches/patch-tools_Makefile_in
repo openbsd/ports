@@ -1,6 +1,6 @@
---- tools/Makefile.in.orig	Mon Mar  5 19:12:55 2001
-+++ tools/Makefile.in	Thu Mar 22 00:49:43 2001
-@@ -5,10 +5,13 @@
+--- tools/Makefile.in.orig	2001-10-29 15:24:24.000000000 +0100
++++ tools/Makefile.in	2003-12-26 11:31:36.000000000 +0100
+@@ -5,11 +5,14 @@
  #    Template: subdirs
  #############################################################################
  
@@ -10,8 +10,9 @@
  
  all:
  	$(MAKE) $(SUBDIRS)
-+
-+dummy:
  
++dummy:
++
  
  $(SUBDIRS): FORCE
+ 	if [ -d $@ ]; then cd $@ ; $(MAKE); fi
