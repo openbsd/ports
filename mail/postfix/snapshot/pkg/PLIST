@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/07/06 21:19:31 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/11/04 15:28:13 jakob Exp $
 @pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -165,11 +165,14 @@ share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
+share/doc/postfix/readme/PGSQL_README
 share/doc/postfix/readme/QMQP_README
 share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
 share/doc/postfix/readme/SASL_README
 share/doc/postfix/readme/SCHEDULER_README
+share/doc/postfix/readme/SMTPD_POLICY_README
+share/doc/postfix/readme/SMTPD_PROXY_README
 share/doc/postfix/readme/ULTRIX_README
 share/doc/postfix/readme/UUCP_README
 share/doc/postfix/readme/VERP_README
