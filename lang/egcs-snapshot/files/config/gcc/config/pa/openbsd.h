@@ -1,17 +1,17 @@
-/* We settle for little endian for now */
-
-#define TARGET_ENDIAN_DEFAULT 0
-
 #include <pa/pa.h>
+#define OBSD_HAS_DECLARE_FUNCTION_NAME
 #include <openbsd.h>
 
 /* run-time target specifications */
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) -Asystem(OpenBSD) -Amachine(hppa) -D__OpenBSD__ -D__hppa__ -D__hppa"
 
+#undef OVERRIDE_OPTIONS
 #define OVERRIDE_OPTIONS		\
 {										\
-	override_options();			\
-	if (! flag_pic) target_flags |= TARGET_NONPIC_FLAGS;	\
+	override_options();					\
+	if (! flag_pic)						\
+		/* portable-runtime + fast-indirect-calls */	\
+		target_flags |= 0x440;				\
 }
 	
 /* XXX why doesn't PA support -R  like everyone ??? */
@@ -46,11 +46,11 @@
 #undef ASM_FILE_START
 #define ASM_FILE_START(FILE) \
 do { fputs ("\t.SPACE $PRIVATE$\n\
-\t.SUBSPA $DATA$,QUAD=1,ALIGN=8,ACCESS=31\n\
-\t.SUBSPA $BSS$,QUAD=1,ALIGN=8,ACCESS=31,ZERO,SORT=82\n\
+\t.SUBSPA $DATA$,QUAD=1,ALIGN=8,ACCESS=0x1f,SORT=24\n\
+\t.SUBSPA $BSS$,QUAD=1,ALIGN=8,ACCESS=0x1f,ZERO,SORT=80\n\
 \t.SPACE $TEXT$\n\
-\t.SUBSPA $LIT$,QUAD=0,ALIGN=8,ACCESS=44\n\
-\t.SUBSPA $CODE$,QUAD=0,ALIGN=8,ACCESS=44,CODE_ONLY\n\
+\t.SUBSPA $LIT$,QUAD=0,ALIGN=8,ACCESS=0x2c\n\
+\t.SUBSPA $CODE$,QUAD=0,ALIGN=8,ACCESS=0x2c,CODE_ONLY\n\
 \t.IMPORT $global$,DATA\n", FILE);\
      if (flag_pic || !TARGET_FAST_INDIRECT_CALLS)\
        fputs ("\t.IMPORT $$dyncall, MILLICODE\n", FILE);\

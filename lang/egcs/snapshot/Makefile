@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.19 1999/01/13 13:58:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 1999/01/18 10:23:25 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -23,7 +23,7 @@ MIRROR_DISTFILE=no
 # Jason L.Wright & Marco S.Hyman for sparc,
 # Michael Shalayeff for hppa,
 # Wim Van Deputte for alpha.
-ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
+ONLY_FOR_ARCHS = i386 sparc m68k alpha pa mips
 
 # user configuration section
 
@@ -36,7 +36,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
 MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-#MAKE_CHILL=yes
+MAKE_CHILL=yes
 MAKE_OBJC=yes
 MAKE_JAVA=yes
 
@@ -57,7 +57,7 @@ LATEST_DATE=1999-01-12
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1998-12-20
+NEXT_DATE=1999-01-17
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;

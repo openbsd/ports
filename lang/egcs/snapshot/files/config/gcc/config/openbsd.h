@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.6 1999/01/13 13:58:46 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.7 1999/01/18 10:23:25 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -52,7 +52,7 @@
    still uses a special flavor of gas that needs to be told when generating 
    pic code. */
 #undef ASM_SPEC
-#define ASM_SPEC "%| %{fpic:-k} %{fPIC:-k -K}"
+#define ASM_SPEC "%{fpic:-k} %{fPIC:-k -K} %|"
 #else
 /* Since we use gas, stdin -> - is a good idea, but we don't want to
    override native specs just for that. */
@@ -106,7 +106,7 @@
 
 /* Support of shared libraries, mostly imported from svr4.h through netbsd. */
 /* Two differences from svr4.h:
-   - we use .- _func instead of a local label,
+   - we use . - _func instead of a local label,
    - we put extra spaces in expressions such as 
      .type _func , @function
      This is more readable for a human being and confuses c++filt less.
@@ -148,13 +148,14 @@
    entries under OpenBSD.  These macros also have to output the starting 
    labels for the relevant functions/objects.  */
 
+#ifndef OBSD_HAS_DECLARE_FUNCTION_NAME
 /* Extra assembler code needed to declare a function properly.
    Some assemblers may also need to also have something extra said 
    about the function's return value.  We allow for that here.  */
 #undef ASM_DECLARE_FUNCTION_NAME
 #define ASM_DECLARE_FUNCTION_NAME(FILE, NAME, DECL)			\
   do {									\
-    fprintf (FILE, "\t%s\t ", TYPE_ASM_OP);				\
+    fprintf (FILE, "\t%s\t", TYPE_ASM_OP);				\
     assemble_name (FILE, NAME);						\
     fputs (" , ", FILE);						\
     fprintf (FILE, TYPE_OPERAND_FMT, "function");			\
@@ -162,6 +163,7 @@
     ASM_DECLARE_RESULT (FILE, DECL_RESULT (DECL));			\
     ASM_OUTPUT_LABEL(FILE, NAME);					\
   } while (0)
+#endif
 
 /* Declare the size of a function.  */
 #undef ASM_DECLARE_FUNCTION_SIZE
@@ -169,14 +171,15 @@
   do {									\
     if (!flag_inhibit_size_directive)					\
       {									\
-	fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);				\
+	fprintf (FILE, "\t%s\t", SIZE_ASM_OP);				\
 	assemble_name (FILE, (FNAME));					\
-	fputs(" , .- ", FILE);						\
+	fputs(" , . - ", FILE);						\
 	assemble_name (FILE, (FNAME));					\
 	putc ('\n', FILE);						\
       }									\
   } while (0)
 
+#ifndef OBSD_HAS_DECLARE_OBJECT_NAME
 /* Extra assembler code needed to declare an object properly.  */
 #undef ASM_DECLARE_OBJECT_NAME
 #define ASM_DECLARE_OBJECT_NAME(FILE, NAME, DECL)			\
@@ -190,12 +193,13 @@
     if (!flag_inhibit_size_directive && DECL_SIZE (DECL))		\
       {									\
 	size_directive_output = 1;					\
-	fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);				\
+	fprintf (FILE, "\t%s\t", SIZE_ASM_OP);				\
 	assemble_name (FILE, NAME);					\
 	fprintf (FILE, " , %d\n", int_size_in_bytes (TREE_TYPE (DECL)));\
       }									\
     ASM_OUTPUT_LABEL(FILE, NAME);					\
   } while (0)
+#endif
 
 /* Output the size directive for a decl in rest_of_decl_compilation
    in the case where we did not do so before the initializer.
@@ -212,7 +216,7 @@ do {									 \
 	 && !size_directive_output)					 \
        {								 \
 	 size_directive_output = 1;					 \
-	 fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);			 \
+	 fprintf (FILE, "\t%s\t", SIZE_ASM_OP);			 \
 	 assemble_name (FILE, name);					 \
 	 fprintf (FILE, " , %d\n", int_size_in_bytes (TREE_TYPE (DECL)));\
        }								 \

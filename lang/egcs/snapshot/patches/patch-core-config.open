@@ -34,12 +34,13 @@
  		
  	alpha*-dec-osf*)
  		if test x$stabs = xyes
-@@ -771,6 +785,9 @@
+@@ -771,6 +785,10 @@
  	h8300-*-*)
  		float_format=i32
  		;;
 +	hppa*-*-openbsd*)
 +		target_cpu_default=1
++     tmake_file=pa/t-openbsd
 +		;;
  	hppa1.1-*-pro*)
  		tm_file="pa/pa-pro.h ${tm_file} pa/pa-pro-end.h libgloss.h"
@@ -79,14 +80,16 @@
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
  		xm_file="xm-alloca.h ${xm_file}"
  		xm_defines=USG
-@@ -2299,6 +2323,12 @@
+@@ -2299,6 +2323,14 @@
  		gas=yes
  		fixincludes=Makefile.in 
  		;;
-+	mips*el-*-openbsd*)	# mips le
-+		tm_file=mips/openbsd-le.h
++	mips*el-*-openbsd*)	# mips little endian
++		target_cpu_default="MASK_GAS|MASK_ABICALLS"
++		tm_file=mips/openbsd.h
 +		;;
 +	mips*-*-openbsd*)		# mips big endian
++		target_cpu_default="MASK_GAS|MASK_ABICALLS"
 +		tm_file=mips/openbsd-be.h
 +		;;
  	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.

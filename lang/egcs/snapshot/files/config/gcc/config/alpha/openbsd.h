@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.2 1999/01/11 21:23:25 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.3 1999/01/18 10:23:25 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -38,6 +38,15 @@
 
 /* We don't have an init section yet */
 #undef HAS_INIT_SECTION
+
+/* collect2 support (Macros for initialization) 
+ * -------------------------------------------- */
+
+/* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
+   library with the proper functions to handle this -> collect2 will
+   default to using nm. */
+#undef OBJECT_FORMAT_COFF
+#undef EXTENDED_COFF
 
 /* taken from alpha/osf.h. This used to be common to all alpha
  * configurations, but elf has departed from it.
