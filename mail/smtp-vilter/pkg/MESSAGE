@@ -1,0 +1,14 @@
+smtp-vilter has been installed as ${PREFIX}/sbin/smtp-vilter.
+See smtp-vilter(8) for instructions on how to register the milter.
+
+To start the milter automatically on startup, one can use:
+
+/etc/rc.conf.local
+  smtp-vilter=YES
+
+/etc/rc.local
+  if [ X"${smtp-vilter}" == X"YES" -a \
+      -x ${PREFIX}/sbin/smtp-vilter ]; then
+          echo -n ' smtp-vilter'
+          ${PREFIX}/sbin/smtp-vilter
+  fi
