@@ -9,7 +9,7 @@ Within each level, processes are grouped so that those with the same
 parent process id are grouped together. Within this, processes are
 arranged by userid with lower number uid's appearing towards the
 top. In general, the order of children is the order in which they were
-spawned, with the older processes appearing towards towards the top.
+spawned, with the older processes appearing towards the top.
 
 In contrast to pstree and many tree-widget based programs, the overall
 tree display uses diagonal lines; some effort is made to effectively
@@ -24,7 +24,7 @@ One can click on a process to get more information (via ps) about that
 process, send a signal to the process, or set its priority, assuming
 you have the permission to do so. Since programs of this ilk can
 consume a bit of CPU on their own, some effort has been made to turn
-off the update process when the program is iconified or or not
+off the update process when the program is iconified or not
 visible.
 
 WWW: ${HOMEPAGE}

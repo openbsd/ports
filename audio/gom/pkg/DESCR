@@ -9,5 +9,5 @@ At the moment, gom only supports the Open Sound System (OSS) sound driver.
 OSS comes with the Linux kernel as free software called OSS/Free, and is
 available for a number of other platforms.
 
-It comes with an internal terminal interface and and optional internal X
+It comes with an internal terminal interface and an optional internal X
 interface (xview).

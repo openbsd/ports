@@ -2,7 +2,7 @@ fetchmail is a free, full-featured, robust, well-documented remote
 mail retrieval and forwarding utility intended to be used over
 on-demand TCP/IP links (such as SLIP or PPP connections).  It
 retrieves mail from remote mail servers and forwards it to your local
-(client) machine's delivery system, so it can then be be read by
+(client) machine's delivery system, so it can then be read by
 normal mail user agents such as elm(1) or Mail(1).
 
 fetchmail supports standard all mail-retrieval protocols in use on the
