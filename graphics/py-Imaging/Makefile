@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/14 17:46:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/09 14:14:57 brad Exp $
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
 
-DISTNAME=		Imaging-1.1.3
+VERSION=		1.1.3
+DISTNAME=		Imaging-${VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
 
@@ -30,8 +31,8 @@ PYTHON_VER=		2.1
 PYTHON_VER=		2.2
 .endif
 
-BUILD_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter 
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter 
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tk83.1::x11/tk/8.3
 
@@ -39,7 +40,7 @@ MULTI_PACKAGES=		-examples
 SUBPACKAGE?=
 
 # The examples subpackage is not flavored.
-FULLPKGNAME-examples=	${PKGNAME}-examples
+FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 RUN_DEPENDS=		:py-Imaging-*:graphics/py-Imaging
 LIB_DEPENDS=
