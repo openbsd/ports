@@ -4,8 +4,4 @@ Gtk-Gnutella is a clone of Gnutella (see gnutella.wego.com). It's a
 clone for Unix, and needs GTK+ (1.2 or above). It is released under the
 GNU General Public License (GPL).
 
-Is it finished? 
-
-No. But it is fully functional: you may share, search, and download. 
-
 WWW: ${HOMEPAGE}
