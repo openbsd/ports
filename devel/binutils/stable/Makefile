@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/20 05:27:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/19 08:28:00 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 			--disable-nls --disable-gdbtk --disable-commonbfdlib
 
 # cross-tools
-FLAVORS=		alpha hppa i386 m68k m88k powerpc sparc sparc64
+FLAVORS=		alpha hppa i386 m68k m88k mips powerpc sparc sparc64
 #FLAVORS+=		 vax
 FLAVOR?=
 
