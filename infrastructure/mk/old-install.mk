@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.6 2001/05/05 20:20:59 espie Exp $
+# $OpenBSD: old-install.mk,v 1.7 2001/06/07 14:43:01 espie Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -108,8 +108,8 @@ plist: install
 # accordance to the @pkgdep directive in the packing lists
 
 fake-pkg: ${_PKG_PREREQ}
-	@if [ `${_COMMENT} | wc -c` -gt 60 ]; then \
-	    echo "** ${COMMENT} too large - installation not recorded."; \
+	@if [ `echo ${_COMMENT} | wc -c` -gt 60 ]; then \
+	    echo "** "${_COMMENT}" too large - installation not recorded."; \
 	    exit 1; \
 	 fi
 	@if [ ! -d ${PKG_DBDIR} ]; then rm -f ${PKG_DBDIR}; mkdir -p ${PKG_DBDIR}; fi
@@ -121,7 +121,7 @@ fake-pkg: ${_PKG_PREREQ}
 		mkdir -p ${PKG_DBDIR}/${FULLPKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${FULLPKGNAME}/+CONTENTS; \
 		cp ${WRKPKG}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+DESC; \
-		${_COMMENT} >${PKG_DBDIR}/${FULLPKGNAME}/+COMMENT; \
+		echo ${_COMMENT} >${PKG_DBDIR}/${FULLPKGNAME}/+COMMENT; \
 		if [ -f ${WRKPKG}/INSTALL${SUBPACKAGE} ]; then \
 			cp ${WRKPKG}/INSTALL${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+INSTALL; \
 		fi; \
