@@ -1,0 +1,19 @@
+*** pcmplay.c.orig	Wed May 20 21:17:48 1998
+--- pcmplay.c	Wed May 20 21:17:54 1998
+***************
+*** 41,47 ****
+  #include <sys/types.h>
+  #include <sys/uio.h>
+  #include <unistd.h>
+! #include <machine/soundcard.h>
+  
+  #include "utils.h"
+  #include "getlopt.h"
+--- 41,47 ----
+  #include <sys/types.h>
+  #include <sys/uio.h>
+  #include <unistd.h>
+! #include <soundcard.h>
+  
+  #include "utils.h"
+  #include "getlopt.h"

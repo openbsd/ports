@@ -1,0 +1,58 @@
+*** Makefile.orig	Tue May 20 19:57:17 1997
+--- Makefile	Wed Apr 29 01:51:01 1998
+***************
+*** 5,11 ****
+  #   Wed May 21 01:51:37 MET DST 1997
+  #
+  
+- PREFIX=/usr/local
+  BINDIR=$(PREFIX)/bin
+  MANDIR=$(PREFIX)/man
+  SECTION=1
+--- 5,10 ----
+***************
+*** 16,22 ****
+  ######                                       ######
+  ###################################################
+  
+! CFLAGS=-O2 -Wall -ansi
+  # CFLAGS=-g -Wall -ansi -pedantic
+  
+  all:	tosha pcmplay pcmfade
+--- 15,21 ----
+  ######                                       ######
+  ###################################################
+  
+! # CFLAGS=-O2 -Wall -ansi
+  # CFLAGS=-g -Wall -ansi -pedantic
+  
+  all:	tosha pcmplay pcmfade
+***************
+*** 28,34 ****
+  pcmfade.o:	pcmfade.c utils.h
+  
+  tosha:	tosha.o utils.o getlopt.o
+! 	$(CC) $(CFLAGS) -o tosha -lscsi tosha.o utils.o getlopt.o
+  
+  pcmplay:	pcmplay.o utils.o getlopt.o
+! 	$(CC) $(CFLAGS) -o pcmplay pcmplay.o utils.o getlopt.o
+--- 27,33 ----
+  pcmfade.o:	pcmfade.c utils.h
+  
+  tosha:	tosha.o utils.o getlopt.o
+! 	$(CC) $(CFLAGS) -o tosha tosha.o utils.o getlopt.o -lutil -lossaudio
+  
+  pcmplay:	pcmplay.o utils.o getlopt.o
+! 	$(CC) $(CFLAGS) -o pcmplay pcmplay.o utils.o getlopt.o -lossaudio
+***************
+*** 40,48 ****
+  	install -s -g bin -o bin -m 755 tosha pcmplay pcmfade $(BINDIR)
+  	install -c -g bin -o bin -m 644 tosha.1 pcmplay.1 pcmfade.1 \
+  		$(MANDIR)/man$(SECTION)
+- 	gzip -f -9 $(MANDIR)/man$(SECTION)/tosha.1 \
+- 		$(MANDIR)/man$(SECTION)/pcmplay.1 \
+- 		$(MANDIR)/man$(SECTION)/pcmfade.1
+  
+  clean:
+  	rm -f *.o *~ *core tosha pcmplay pcmfade
+--- 39,44 ----
