@@ -1,6 +1,6 @@
---- admin/ltcf-cxx.sh.orig	Sat Sep  9 18:59:52 2000
-+++ admin/ltcf-cxx.sh	Thu Oct 26 23:26:15 2000
-@@ -107,13 +107,13 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
+--- admin/ltcf-cxx.sh.orig	Sat May 19 09:19:10 2001
++++ admin/ltcf-cxx.sh	Mon Aug 20 11:32:45 2001
+@@ -105,13 +105,13 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
      # linker, instead of GNU ld.  If possible, this setting should
      # overridden to take advantage of the native linker features on
      # the platform it is being used on.
@@ -16,8 +16,8 @@
  
  else
    with_gcc=no
-@@ -339,6 +339,12 @@ case "$host_os" in
-       ld_shlibs=no
+@@ -419,6 +419,12 @@ case $host_os in
+       remove_lgcc=yes
      fi
      ;;
 +  openbsd*)
@@ -29,7 +29,7 @@
    osf3*)
      if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
        allow_undefined_flag=' ${wl}-expect_unresolved ${wl}\*'
-@@ -549,7 +555,7 @@ case "$host_os" in
+@@ -629,7 +635,7 @@ case $host_os in
              # Commands to make compiler produce verbose output that lists
              # what "hidden" libraries, object files and flags are used when
              # linking a shared library.
