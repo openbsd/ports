@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 01:58:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/07/30 13:12:10 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -47,6 +47,13 @@ install_bins/bin_ibm_intel_linux.tar
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
 
+COPY_MAPLE_DISTFILES?=No
+.if ${COPY_MAPLE_DISTFILES:L} == "no"
+COPY_CMD=ln -sf
+.else
+COPY_CMD=cp -f
+.endif
+
 post-extract:
 	ln -sf ${FILESDIR}/resolv_display.c ${WRKSRC}
 	echo "all: resolv_display" >${WRKSRC}/Makefile
@@ -61,7 +68,7 @@ do-fetch:
 		if [ -f $$file ]; \
 		then\
 			mkdir -p ${FULLDISTDIR}/`dirname $$file`;\
-			ln -sf ${MAPLE_CDROM}/$$file ${FULLDISTDIR}/$$file;\
+			${COPY_CMD} ${MAPLE_CDROM}/$$file ${FULLDISTDIR}/$$file;\
 		else\
 			echo "File $$file not found. Is your cdrom mounted as ${MAPLE_CDROM} ?";\
 		fi\
