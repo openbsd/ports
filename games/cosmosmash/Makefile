@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/22 01:04:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/01/21 09:39:42 pvalchev Exp $
 
 COMMENT=	"astrosmash clone for X"
 
-DISTNAME=	cosmosmash-1.1
+DISTNAME=	cosmosmash-1.3
 CATEGORIES=	games
 
 HOMEPAGE=	http://www3.sympatico.ca/sarrazip/dev/cosmosmash.html
@@ -16,9 +16,11 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-LIB_DEPENDS=	gengameng.4.0::devel/gengameng
+LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
+		SDL_mixer::devel/sdl-mixer
 USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/28 05:28:12 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/21 09:39:42 pvalchev Exp $
 bin/cosmosmash
 man/man6/cosmosmash.6
-share/pixmaps/cosmosmash.png
+share/sounds/cosmosmash/hyperspace.wav
+share/sounds/cosmosmash/player-hit.wav
+share/sounds/cosmosmash/pulsar-beep.wav
+share/sounds/cosmosmash/rock-hit-0.wav
+share/sounds/cosmosmash/rock-hit-1.wav
+share/sounds/cosmosmash/saucer-shooting.wav
+@dirrm share/sounds/cosmosmash
