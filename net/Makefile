@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2001/08/15 16:48:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.164 2001/08/23 07:54:54 peter Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -158,5 +158,6 @@
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
      SUBDIR += zebra
+     SUBDIR += zebra,snmp
 
 .include <bsd.port.subdir.mk>
