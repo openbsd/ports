@@ -39,16 +39,16 @@
  #ifdef AMIGA
      strcpy(name, "T:mmXXXXXX");
 -    mktemp(name);
-+    mkstemp(name);
++    close(mkstemp(name));
  #else
  #ifndef MSDOS
      sprintf(name, "%s/mm.XXXXXX", tmproot);
 -    mktemp(name);
-+    mkstemp(name);
++    close(mkstemp(name));
  #else
       strcpy(name, "TXXXXXX");
 -     if (!mktemp(name))
-+     if (!mkstemp(name))
++     if (!close(mkstemp(name)))
           name[0] = 0;
       else
           if (DoDebug) printf("temp name = \"%s\"\n", name);
