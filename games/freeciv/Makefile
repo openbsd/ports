@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/05 18:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/09 09:58:53 kevlo Exp $
 
-BROKEN=		sources missing
-
-DISTNAME=	freeciv-1.9.0
+DISTNAME=	freeciv-1.10.0
 CATEGORIES=	games
 NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/
@@ -24,7 +22,7 @@ LIB_DEPENDS=	intl:devel/gettext \
 		glib.1.2:devel/glib \
 		gtk.1.2:x11/gtk+ \
 		Imlib.19:graphics/imlib
-PKGNAME=	freeciv-1.9.0-gtk
+PKGNAME=	freeciv-1.10.0-gtk
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
 .else
 CONFIGURE_ARGS=	--disable-gtktest
