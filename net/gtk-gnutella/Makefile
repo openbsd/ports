@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/09/20 20:12:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/21 18:50:01 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=		-d  -e \
 			-D ccflags="${CFLAGS} -I${LOCALBASE}/include" \
 			-D ldflags="-L${LOCALBASE}/lib -liconv" \
 			-D official="true" \
+			-D yacc="yacc" \
 			-U optimize
 
 FAKE_FLAGS=		INSTALL_PREFIX=${DESTDIR}
