@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/29 21:51:51 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/04 19:20:43 xsa Exp $
 
 COMMENT=	"powerful IMAP/Maildir synchronization and reader support"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 WRKDIST=	${WRKDIR}/offlineimap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/05/07 13:32:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/08/04 19:20:43 xsa Exp $
 
 COMMENT=	"POP3 mail retriever"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE} ${HOMEPAGE}old-versions/
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
