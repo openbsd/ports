@@ -1,36 +1,36 @@
---- Makefile.in.orig	Wed Mar 22 21:54:25 2000
-+++ Makefile.in	Wed Mar 22 22:43:38 2000
-@@ -56,7 +56,10 @@
- BIN_DIR =		$(exec_prefix)/bin
+--- Makefile.in.orig	Wed May 24 01:32:17 2000
++++ Makefile.in	Wed May 24 02:03:12 2000
+@@ -57,7 +57,10 @@
+ SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)
  
  # Directory in which to install the include file tk.h:
--INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
+-INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +BASE_INSTALL_DIR =     $(prefix)/include/tk$(VERSION)
 +INCLUDE_INSTALL_DIR =  $(INSTALL_ROOT)$(BASE_INSTALL_DIR)
 +GENERIC_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/unix
  
  # Top-level directory for manual entries:
- MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -99,7 +102,7 @@
- #CFLAGS = 		$(CFLAGS_DEBUG)
- #CFLAGS = 		$(CFLAGS_OPTIMIZE)
- #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
--CFLAGS = 		@CFLAGS@
-+#CFLAGS = 		@CFLAGS@
+ MAN_INSTALL_DIR		= $(INSTALL_ROOT)$(mandir)
+@@ -100,7 +103,7 @@
+ #CFLAGS			= $(CFLAGS_DEBUG)
+ #CFLAGS			= $(CFLAGS_OPTIMIZE)
+ #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS			= @CFLAGS@
++#CFLAGS			= @CFLAGS@
  
  # A "-I" switch that can be used when compiling to make all of the
  # X11 include files accessible (the configure script will try to
-@@ -153,7 +156,7 @@
+@@ -154,7 +157,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
--INSTALL = @srcdir@/install-sh -c
-+INSTALL = install -c
- INSTALL_PROGRAM =	${INSTALL}
- INSTALL_DATA =		${INSTALL} -m 644
+-INSTALL			= @srcdir@/install-sh -c
++INSTALL			= install -c
+ INSTALL_PROGRAM		= ${INSTALL}
+ INSTALL_DATA		= ${INSTALL} -m 644
  
-@@ -190,7 +193,7 @@
+@@ -197,7 +200,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
  LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
@@ -39,7 +39,7 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -346,7 +349,7 @@
+@@ -350,7 +353,7 @@
  
  all: binaries libraries doc
  
@@ -48,7 +48,7 @@
  
  libraries:
  
-@@ -361,12 +364,15 @@
+@@ -365,12 +368,15 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -66,7 +66,7 @@
  
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -442,12 +448,15 @@
+@@ -452,12 +458,15 @@
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -84,15 +84,15 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -461,6 +470,7 @@
+@@ -471,6 +480,7 @@
  
  install-libraries:
- 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
+ 	@for i in $(INCLUDE_INSTALL_DIR) \
 +		$(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR) $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR) \
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -474,10 +484,17 @@
+@@ -484,10 +494,17 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -100,7 +100,7 @@
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
 +	    echo "Installing $$i"; \
-+	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR);\
 +	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
