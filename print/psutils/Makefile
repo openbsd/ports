@@ -2,17 +2,17 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.13 2001/07/18 10:59:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/21 17:37:48 heko Exp $
 #
 
 COMMENT=	"manipulating PostScript documents"
 
 DISTNAME=	psutils-p17
 CATEGORIES=	print
-NEED_VERSION=	1.422
-MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
+NEED_VERSION=	1.457
+MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 
-MAINTAINER=	ports@openbsd.org
+HOMEPAGE=	http://www.dcs.ed.ac.uk/home/ajcd/psutils/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
