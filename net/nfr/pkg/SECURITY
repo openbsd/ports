@@ -1,0 +1,20 @@
+
+Versions of NFR greater than 1.6.2 and less than 2.0.3
+had an exploitable buffer overflow in webd, the built-in
+NFR webserver. This hole was fixed in version 2.0.3.
+
+The previous version of the OpenBSD port of NFR (1.6.2) 
+was not vulnerable to this, as it used /usr/sbin/httpd by
+default.
+
+Security issues with the current version of NFR include:
+
+	- sniffable cleartext authentication, since
+	  webd does not support SSL
+
+	- other potential problems with webd. It is enabled
+	  by default, but may be replaced with another
+	  webserver (e.g. /usr/sbin/httpd) in nfr/etc/nfr.conf
+
+	- potential holes in NFR's cgi-bin programs
+
