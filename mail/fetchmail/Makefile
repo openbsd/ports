@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2000/08/30 03:40:23 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2000/09/07 06:48:01 brad Exp $
 
 DISTNAME=	fetchmail-5.5.1
 CATEGORIES=	mail
@@ -16,16 +16,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	--disable-nls --enable-inet6
+CONFIGURE_ARGS=	--disable-nls --enable-inet6 --with-ssl
 
-FLAVORS=	kerberos ssl
+FLAVORS=	kerberos
 FLAVOR?=
 
 .if ${FLAVOR:L:Mkerberos}
 CONFIGURE_ARGS+= --with-kerberos
-.endif
-.if ${FLAVOR:L:Mssl}
-CONFIGURE_ARGS+= --with-ssl
 .endif
 
 pre-patch:
