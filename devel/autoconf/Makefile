@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 1999/04/01 06:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/09/08 16:41:08 brad Exp $
 
-DISTNAME=       autoconf-2.13
+DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
-
-MAINTAINER=	marc@OpenBSD.ORG
-
-SEPARATE_BUILD=concurrent
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= autoconf
+
+MAINTAINER=	ports@openbsd.org
 
 # Both are needed for now as bsd.port.mk does not cause RUN_DEPENDS to
 # be created before running configure, which causes the build to do the
 # wrong thing.  The RUN_DEPENDS is needed for packages.
-#
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 
 post-install:
