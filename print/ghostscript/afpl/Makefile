@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/14 17:06:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/14 22:53:39 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -129,7 +129,6 @@ CFLAGS+=	-DA4
 LIB_DEPENDS+=	gtk.1.::x11/gtk+
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall
-end_install= ${INSTALL_PROGRAM} ${WRKDIST}/sobin/gsx ${PREFIX}/bin
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 .else
 end_install=
@@ -171,6 +170,5 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf12.1 && \
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-	${end_install}
 
 .include <bsd.port.mk>
