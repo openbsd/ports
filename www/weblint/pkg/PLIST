@@ -1,0 +1,6 @@
+bin/weblint
+man/man1/weblint.1
+share/doc/weblint/README
+share/doc/weblint/weblint.ps
+share/doc/weblint/weblintrc
+@dirrm share/doc/weblint
