@@ -1,70 +1,87 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.11 2002/02/20 01:17:03 brad Exp $
+# $OpenBSD: INSTALL,v 1.12 2002/02/20 20:31:27 brad Exp $
 #
-# Pre/post-installation setup of squid
+# Pre/post-installation setup of Squid
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
 SQUIDDIR=${SQUIDDIR}
-SQUIDUSER=nobody
-SQUIDGROUP=nogroup
+SQUIDUSER=squid
+SQUIDGROUP=squid
 
-if [ ! -d $SQUIDDIR ]; then
+do_squiddir_install()
+{
   install -d -o $SQUIDUSER -g $SQUIDGROUP -m 771 $SQUIDDIR
   install -d -o $SQUIDUSER -g $SQUIDGROUP -m 775 $SQUIDDIR/logs
   install -d -o $SQUIDUSER -g $SQUIDGROUP -m 771 $SQUIDDIR/cache
   ln -sf $SQUIDDIR/logs/squid.pid /var/run/squid.pid
-fi
+}
+
+do_usergroup_install()
+{
+  # Create Squid user and group
+  groupinfo -e $SQUIDGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $SQUIDGROUP group for Squid"
+  else
+    echo "===> Creating $SQUIDGROUP group for Squid"
+    groupadd $SQUIDGROUP
+  fi
+  userinfo -e $SQUIDUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $SQUIDUSER user for Squid"
+  else
+    echo "===> Creating $SQUIDUSER user for Squid"
+    useradd -g $SQUIDGROUP -d /nonexistent -L daemon -c 'Squid Account' -s /sbin/nologin $SQUIDUSER
+  fi
+}
 
 do_notice_conf()
 {
-    echo
-    echo "+---------------"
-    echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
-    echo "| been changed.  You may want to compare them to the current samples in"
-    echo "| $SAMPLE_CONFIG_DIR, and update your configuration"
-    echo "| files as needed."
+  echo
+  echo "+---------------"
+  echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
+  echo "| been changed.  You may want to compare them to the current samples in"
+  echo "| $SAMPLE_CONFIG_DIR, and update your configuration"
+  echo "| files as needed."
 }
 
 do_notice_errors_and_icons()
 {
-    echo "|"
-    echo "| The existing errors and icons in $PREFIX/share/squid have NOT"
-    echo "| been changed.  You may want to compare them to the current samples"
-    echo "| in $SAMPLE_CONFIG_DIR/errors and"
-    echo "| $SAMPLE_CONFIG_DIR/icons, and update them as needed."
-    echo "+---------------"
-    echo
+  echo "|"
+  echo "| The existing errors and icons in $PREFIX/share/squid have NOT"
+  echo "| been changed.  You may want to compare them to the current samples"
+  echo "| in $SAMPLE_CONFIG_DIR/errors and"
+  echo "| $SAMPLE_CONFIG_DIR/icons, and update them as needed."
+  echo "+---------------"
+  echo
 }
 
 do_install_conf()
 {
-    install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/squid.conf $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mime.conf $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mib.txt $CONFIG_DIR
-    echo
-    echo "+---------------"
-    echo "| The $1 configuration files have been installed in $CONFIG_DIR."
-    echo "| Please view these files and change the configuration to meet your needs."
+  install -d -o root -g wheel -m 755 $CONFIG_DIR
+  install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/squid.conf $CONFIG_DIR
+  install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mime.conf $CONFIG_DIR
+  install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mib.txt $CONFIG_DIR
+  echo
+  echo "+---------------"
+  echo "| The $1 configuration files have been installed in $CONFIG_DIR."
+  echo "| Please view these files and change the configuration to meet your needs."
 }
 
 do_install_errors_and_icons()
 {
-    install -d -o root -g wheel -m 755 $PREFIX/share/squid/icons
-    install -d -o root -g wheel -m 755 $PREFIX/share/squid/errors
-    cp -R $SAMPLE_CONFIG_DIR/errors/* $PREFIX/share/squid/errors
-    cp -R $SAMPLE_CONFIG_DIR/icons/* $PREFIX/share/squid/icons
-    echo "|"
-    echo "| The $1 errors and icons have been installed in $PREFIX/share/squid."
-    echo "| Please view these files and change them to meet your needs."
-    echo "+---------------"
-    echo
+  install -d -o root -g wheel -m 755 $PREFIX/share/squid/icons
+  install -d -o root -g wheel -m 755 $PREFIX/share/squid/errors
+  cp -R $SAMPLE_CONFIG_DIR/errors/* $PREFIX/share/squid/errors
+  cp -R $SAMPLE_CONFIG_DIR/icons/* $PREFIX/share/squid/icons
+  echo "|"
+  echo "| The $1 errors and icons have been installed in $PREFIX/share/squid."
+  echo "| Please view these files and change them to meet your needs."
+  echo "+---------------"
+  echo
 }
 
 # verify proper execution
@@ -78,9 +95,12 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	: nothing to pre-install for this port
+	do_usergroup_install
 	;;
     POST-INSTALL)
+	if [ ! -d $SQUIDDIR ]; then
+	  do_squiddir_install
+	fi
 	if [ ! -d $CONFIG_DIR ]; then
 	   do_install_conf $1
 	elif [ ! -f $CONFIG_DIR/squid.conf ]; then

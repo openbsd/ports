@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_cf_data_pre,v 1.1 2002/02/20 20:31:26 brad Exp $
+--- src/cf.data.pre.orig	Tue Jan 15 21:57:27 2002
++++ src/cf.data.pre	Wed Feb 20 09:18:58 2002
+@@ -2222,13 +2222,13 @@ DOC_END
+ 
+ NAME: cache_effective_user
+ TYPE: string
+-DEFAULT: nobody
++DEFAULT: squid
+ LOC: Config.effectiveUser
+ DOC_NONE
+ 
+ NAME: cache_effective_group
+ TYPE: string
+-DEFAULT: none
++DEFAULT: squid
+ LOC: Config.effectiveGroup
+ DOC_START
+ 
