@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.88 2002/06/03 14:52:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2002/06/14 10:07:16 jsyn Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
-#
 
      SUBDIR += abcde
      SUBDIR += ac3dec
@@ -8,9 +7,9 @@
      SUBDIR += aumix
      SUBDIR += bladeenc
      SUBDIR += bonk
-     SUBDIR += cdparanoia
 #    SUBDIR += cam
 #    SUBDIR += cddbd
+     SUBDIR += cdparanoia
 #    SUBDIR += cdplay
      SUBDIR += disc-cover
      SUBDIR += esound
@@ -28,8 +27,8 @@
      SUBDIR += id3lib
      SUBDIR += ksmp3play
      SUBDIR += lame
-     SUBDIR += libao,
      SUBDIR += liba52
+     SUBDIR += libao,
      SUBDIR += libcdaudio
      SUBDIR += libmikmod
      SUBDIR += libmikmod,esd
@@ -72,10 +71,10 @@
 #    SUBDIR += s3mod
      SUBDIR += shorten
      SUBDIR += sidplay
-     SUBDIR += sox
      SUBDIR += soundtracker
-     SUBDIR += soundtracker,gnome,esd
      SUBDIR += soundtracker,esd
+     SUBDIR += soundtracker,gnome,esd
+     SUBDIR += sox
 #    SUBDIR += splay
      SUBDIR += streamripper
      SUBDIR += teknap

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.12 2002/01/24 01:44:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2002/06/14 10:10:04 jsyn Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
-#
 
 #    SUBDIR += Wnn
      SUBDIR += arphicttf
@@ -26,8 +25,8 @@
 #    SUBDIR += nvi-euc-cn
 #    SUBDIR += nvi-euc-tw
      SUBDIR += py-zhCodecs
-     SUBDIR += taipeifonts
 #    SUBDIR += samba
+     SUBDIR += taipeifonts
 #    SUBDIR += ted
      SUBDIR += ttfm
      SUBDIR += xcin
