@@ -121,7 +121,6 @@ include/X11/qt/qpen.h
 include/X11/qt/qpicture.h
 include/X11/qt/qpixmap.h
 include/X11/qt/qpixmapcache.h
-include/X11/qt/qrect.h
 include/X11/qt/qpmcache.h
 include/X11/qt/qpngio.h
 include/X11/qt/qpntarry.h
@@ -146,6 +145,7 @@ include/X11/qt/qradiobt.h
 include/X11/qt/qradiobutton.h
 include/X11/qt/qrangecontrol.h
 include/X11/qt/qrangect.h
+include/X11/qt/qrect.h
 include/X11/qt/qregexp.h
 include/X11/qt/qregion.h
 include/X11/qt/qscrbar.h
@@ -169,8 +169,8 @@ include/X11/qt/qstrlist.h
 include/X11/qt/qstrvec.h
 include/X11/qt/qt_gif.h
 include/X11/qt/qtabbar.h
-include/X11/qt/qtabdlg.h
 include/X11/qt/qtabdialog.h
+include/X11/qt/qtabdlg.h
 include/X11/qt/qtableview.h
 include/X11/qt/qtablevw.h
 include/X11/qt/qtextstream.h
@@ -195,20 +195,7 @@ include/X11/qt/qwmatrix.h
 include/X11/qt/qxt.h
 lib/libqt.so.1.45
 @exec /sbin/ldconfig -m %B
-lib/qt/tutorial/t1
-lib/qt/tutorial/t2
-lib/qt/tutorial/t3
-lib/qt/tutorial/t4
-lib/qt/tutorial/t5
-lib/qt/tutorial/t6
-lib/qt/tutorial/t7
-lib/qt/tutorial/t8
-lib/qt/tutorial/t9
-lib/qt/tutorial/t10
-lib/qt/tutorial/t11
-lib/qt/tutorial/t12
-lib/qt/tutorial/t13
-lib/qt/tutorial/t14
+lib/qt/examples/README
 lib/qt/examples/aclock
 lib/qt/examples/application
 lib/qt/examples/biff
@@ -241,7 +228,20 @@ lib/qt/examples/tooltip
 lib/qt/examples/validator
 lib/qt/examples/widgets
 lib/qt/examples/xform
-lib/qt/examples/README
+lib/qt/tutorial/t1
+lib/qt/tutorial/t10
+lib/qt/tutorial/t11
+lib/qt/tutorial/t12
+lib/qt/tutorial/t13
+lib/qt/tutorial/t14
+lib/qt/tutorial/t2
+lib/qt/tutorial/t3
+lib/qt/tutorial/t4
+lib/qt/tutorial/t5
+lib/qt/tutorial/t6
+lib/qt/tutorial/t7
+lib/qt/tutorial/t8
+lib/qt/tutorial/t9
 man/man1/moc.1
 man/man3/QAccel.3qt
 man/man3/QApplication.3qt
@@ -549,8 +549,8 @@ man/man3/qptrdictiterator.3qt
 man/man3/qpushbutton.3qt
 man/man3/qqueue.3qt
 man/man3/qradiobutton.3qt
-man/man3/qrect.3qt
 man/man3/qrangecontrol.3qt
+man/man3/qrect.3qt
 man/man3/qregexp.3qt
 man/man3/qregion.3qt
 man/man3/qresizeevent.3qt
@@ -595,8 +595,8 @@ man/man3/qxtapplication.3qt
 man/man3/qxtwidget.3qt
 share/doc/qt/README
 share/doc/qt/README.QT
-@dirrm share/doc/qt
+@dirrm include/X11/qt
 @dirrm lib/qt/examples
 @dirrm lib/qt/tutorial
 @dirrm lib/qt
-@dirrm include/X11/qt
+@dirrm share/doc/qt
