@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/18 23:45:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/02/22 22:35:13 jasoni Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
@@ -25,7 +25,13 @@ PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP
 
 MAINTAINER=	jasoni@openbsd.org
 
-GNU_CONFIGURE=	yes
+LICENSE_TYPE=           "COPY GNU NONE"
+PERMIT_PACKAGE_CDROM=   No
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= No
+PERMIT_DISTFILES_FTP=   Yes
+
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=--with-tliba="curses"
 
 # Internal Compiler Error
