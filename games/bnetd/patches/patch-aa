@@ -1,11 +1,11 @@
---- src/configure.orig	Tue Nov  9 14:31:58 1999
-+++ src/configure	Tue Nov  9 14:32:21 1999
+--- src/configure.orig	Wed Aug 25 17:14:36 1999
++++ src/configure	Thu Apr  6 05:57:40 2000
 @@ -49,7 +49,7 @@
  sbindir='${exec_prefix}/sbin'
  libexecdir='${exec_prefix}/libexec'
  datadir='${prefix}/share'
 -sysconfdir='${prefix}/etc'
-+sysconfdir='${prefix}/bnetd/conf'
++sysconfdir='${prefix}/lib/bnetd/conf'
  sharedstatedir='${prefix}/com'
  localstatedir='${prefix}/var'
  libdir='${exec_prefix}/lib'

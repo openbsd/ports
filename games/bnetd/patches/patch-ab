@@ -1,6 +1,6 @@
---- conf/bnetd.conf.orig	Tue Nov  9 10:07:56 1999
-+++ conf/bnetd.conf	Tue Nov  9 10:09:56 1999
-@@ -15,15 +15,15 @@
+--- conf/bnetd.conf.orig	Mon Oct 18 03:29:14 1999
++++ conf/bnetd.conf	Thu Apr  6 06:10:03 2000
+@@ -15,16 +15,16 @@
  # Use absolute paths in these lines to avoid problems!                       #
  #----------------------------------------------------------------------------#
  
@@ -13,15 +13,17 @@
 -newsfile    = /home/bnetd/conf/news.txt
 -adfile      = /home/bnetd/conf/ad.list
 -logfile     = /home/bnetd/bnetd.log
-+filedir     = /usr/local/bnetd/files/
-+userdir     = /usr/local/bnetd/users/
-+reportdir   = /usr/local/bnetd/reports/
-+defacct     = /usr/local/bnetd/conf/bnetd_default_user
-+motdfile    = /usr/local/bnetd/conf/bnmotd.txt
-+channelfile = /usr/local/bnetd/conf/channel.list
-+newsfile    = /usr/local/bnetd/conf/news.txt
-+adfile      = /user/local/bnetd/conf/ad.list
-+logfile     = /usr/local/bnetd/bnetd.log
- #pidfile     = /home/bnetd/bnetd.pid
+-#pidfile     = /home/bnetd/bnetd.pid
++filedir     = /usr/local/lib/bnetd/files/
++userdir     = /usr/local/lib/bnetd/users/
++reportdir   = /usr/local/lib/bnetd/reports/
++defacct     = /usr/local/lib/bnetd/conf/bnetd_default_user
++motdfile    = /usr/local/lib/bnetd/conf/bnmotd.txt
++channelfile = /usr/local/lib/bnetd/conf/channel.list
++newsfile    = /usr/local/lib/bnetd/conf/news.txt
++adfile      = /user/local/lib/bnetd/conf/ad.list
++#logfile     = /usr/local/lib/bnetd/bnetd.log    
++#pidfile     = /usr/local/lib/bnetd.pid
  
  #                                                                            #
+ ##############################################################################

@@ -3,6 +3,15 @@ bin/bnchat
 bin/bnftp
 bin/bnpass
 bin/bnstat
+lib/bnetd/conf/ad.list
+lib/bnetd/conf/bnetd.conf
+lib/bnetd/conf/bnetd_default_user
+lib/bnetd/conf/bnmotd.txt
+lib/bnetd/conf/channel.list
+lib/bnetd/conf/news.txt
+lib/bnetd/files/ad000001.pcx
+lib/bnetd/files/icons.bni
+lib/bnetd/files/tos.txt
 sbin/bnetd
 sbin/bnproxy
 man/man1/bnchat.1
@@ -13,4 +22,6 @@ man/man4/bnetd.conf.4
 man/man4/bnmotd.txt.4
 man/man4/bnnews.txt.4
 man/man4/bntext.4
-@unexec rm -rf %D/bnetd 2>/dev/null || true
+@dirrm lib/bnetd/conf
+@dirrm lib/bnetd/files
+@dirrm lib/bnetd
