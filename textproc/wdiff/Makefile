@@ -3,12 +3,13 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:47:36 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/07 01:39:01 brad Exp $
 #
 
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= wdiff
 
 MAINTAINER=	angelos@openbsd.org
 

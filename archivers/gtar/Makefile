@@ -3,12 +3,13 @@
 # Date created:				14 Jan 1998
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/14 09:23:59 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/07 01:38:58 brad Exp $
 #
 
 DISTNAME=	tar-1.12
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= tar
 
 MAINTAINER=	niklas@openbsd.org
 

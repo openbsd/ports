@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/18 00:09:29 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/07 01:39:00 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	marc@openbsd.org
 
 MASTER_SITES=   ${MASTER_SITE_GNU}
-
+MASTER_SITE_SUBDIR= cfengine
 
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

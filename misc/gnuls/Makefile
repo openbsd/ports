@@ -4,13 +4,14 @@
 # Whom:					bmc@WillsCreek.COM
 #
 # $FreeBSD: Makefile,v 1.7 1997/09/18 17:40:24 fenner Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/25 03:32:05 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/07 01:38:59 brad Exp $
 #
 
 DISTNAME=	fileutils-3.16
 PKGNAME=	gnuls-3.16
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= fileutils
 
 MAINTAINER=	ports@openbsd.org
 

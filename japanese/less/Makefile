@@ -5,13 +5,14 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.1 1998/07/29 01:31:17 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/07 01:38:59 brad Exp $
 #
 
 DISTNAME=	less-332
 PKGNAME=	ja-less-332-245
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= less
 
 PATCH_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/less/
 PATCHFILES=	less-332-iso242.patch.gz \

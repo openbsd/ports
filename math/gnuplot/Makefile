@@ -3,7 +3,7 @@
 # Date created:         May 16 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1999/02/01 23:29:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/07 01:38:59 brad Exp $
 #
 
 DISTNAME=	gnuplot-3.7
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \
 		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= gnuplot
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/01/31 21:40:05 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/03/07 01:38:59 brad Exp $
 #
 
 VER=		20.3
@@ -8,6 +8,7 @@ CATEGORIES=	editors
 MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= emacs
 
 #USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
