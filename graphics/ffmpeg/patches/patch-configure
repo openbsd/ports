@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2003/08/15 14:25:08 jolan Exp $
---- configure.orig	2003-08-13 14:54:47.000000000 -0500
-+++ configure	2003-08-14 10:14:42.000000000 -0500
-@@ -151,6 +151,15 @@ dv1394="no"
+$OpenBSD: patch-configure,v 1.4 2003/09/26 14:40:29 jolan Exp $
+--- configure.orig	2003-08-24 17:29:49.000000000 -0500
++++ configure	2003-09-26 02:35:26.000000000 -0500
+@@ -152,6 +152,15 @@ dv1394="no"
  make="gmake"
  LDFLAGS="$LDFLAGS -export-dynamic"
  ;;
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.3 2003/08/15 14:25:08 jolan Exp $
  BSD/OS)
  v4l="no"
  audio_oss="yes"
-@@ -713,14 +722,14 @@ EOF
+@@ -707,14 +716,14 @@ EOF
  
  sdl_too_old=no
  sdl=no

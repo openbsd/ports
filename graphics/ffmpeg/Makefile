@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/15 14:25:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2003/09/26 14:40:29 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer"
-DISTNAME=	ffmpeg-20030813
-EXTRACT_SUFX=	.tar.bz2
+DISTNAME=	ffmpeg-0.4.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.6.2/contrib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
 
 HOMEPAGE=	http://ffmpeg.sourceforge.net/
 
@@ -19,21 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes	# Possible to adapt with some work
 USE_GMAKE=	Yes
 
+# It's either this or disable mmx so postprocess_template.c will build.
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS+=-fomit-frame-pointer
+.endif
+
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--cc=${CC} --make=gmake ${CONFIGURE_SHARED} \
 		--disable-ffserver
 
-SV=	0.2
+SV=	0.3
 
 pre-configure:
 	@perl -pi -e 's|_SV_|${SV}|g' ${WRKSRC}/configure
-
-post-configure:
-# -fPIC causes a compilation error on i386
-.if ${MACHINE_ARCH} != "i386"
-	@perl -pi -e 's|###CFLAGS|CFLAGS|g' ${WRKSRC}/libavcodec/Makefile \
-		${WRKSRC}/libavformat/Makefile
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffmpeg ${PREFIX}/bin/ffmpeg
