@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2005/03/15 22:08:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2005/03/31 04:08:21 pvalchev Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -54,7 +54,7 @@ pre-configure:
 			echo 1>&2 "| before compiling this version. To fully remove run"; \
 			echo 1>&2 "| these commands as user root"; \
 			echo 1>&2 "|"; \
-			echo 1>&2 "|      pkg_delete -f `pkg_info -e 'pilot-link-*'`"; \
+			echo 1>&2 "|      pkg_delete `pkg_info -e 'pilot-link-*'`"; \
 			echo 1>&2 "|"; \
 			echo 1>&2 "+-------------------"; \
 			exit 1; \
