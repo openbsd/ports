@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/31 22:19:54 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/06 00:40:22 marc Exp $
 
-DISTNAME=		sslUSA-2.6
+DISTNAME=		sslUSA-2.6a
 PKGNAME=		ssl-2.6-USA
 CATEGORIES=     	security
 
@@ -35,7 +35,8 @@ pre-build:
 # in /usr/src
 #
 pre-clean:
-	@rm -rf ${WRKSRC}/libssl/obj/*
-	@cd ${PORTSDIR}/security/rsaref && make clean
+	@rm -rf ${WRKSRC}/libssl/${OBJDIR}/*
+	@cd ${PORTSDIR}/security/rsaref && \
+	 OBJMACHINE= WRKOBJDIR= unset OBJMACHINE WRKOBJDIR && make clean
 
 .include <bsd.port.mk>

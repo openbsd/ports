@@ -1,8 +1,8 @@
-libcrypto.a
-libcrypto.so.2.3
-libcrypto_p.a
-libcrypto_pic.a
-libssl.a
-libssl.so.2.3
-libssl_p.a
-libssl_pic.a
+lib/libcrypto.a
+lib/libcrypto.so.2.3
+lib/libcrypto_p.a
+lib/libcrypto_pic.a
+lib/libssl.a
+lib/libssl.so.2.3
+lib/libssl_p.a
+lib/libssl_pic.a
