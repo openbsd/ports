@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/24 12:51:47 reinhard Exp $ 
+# $OpenBSD: Makefile,v 1.6 2001/04/08 17:41:43 naddy Exp $ 
 
 COMMENT=	'c++ graph data template library based on the stl'
 
-PKGNAME=	gtl-1.0.0
+PKGNAME=	${DISTNAME:L}
 DISTNAME=	GTL-1.0.0
 CATEGORIES=	devel
 NEED_VERSION=	1.363
@@ -19,7 +19,7 @@ HOMEPAGE=	http://infosun.fmi.uni-passau.de/GTL/
 MASTER_SITES=	#see_do-fetch_target
 
 CONFIGURE_STYLE= gnu
-MAKE_ENV+=	GTL_VERS="1.0.0"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
