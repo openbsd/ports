@@ -1,3 +1,9 @@
 lynx is a program which allows a user to access World-Wide Web servers
 and other information servers.  It uses only ascii representation so
 that it can be used from ascii-terminals and dialin-lines.
+
+lynx(1) was added to OpenBSD release 2.3.  Therefore, it can be used
+without installing this port.  However, to maintain backward compatibility
+with those who may have hard coded the path to lynx, the port can be'
+installed.  The installation will create a symbolic link to the released
+version of lynx.  A pkg_delete of this port will remove the link.
