@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/08/22 01:34:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.52 2001/08/26 22:24:52 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += findutils
      SUBDIR += gacc
 #    SUBDIR += git
+     SUBDIR += gkrellstock
      SUBDIR += gone
 #    SUBDIR += ical
      SUBDIR += impress
