@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/02 15:26:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/02 22:47:16 espie Exp $
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	"No license information"
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 LIB_DEPENDS=    xview.3::x11/xview/lib
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/Xview.cf::x11/xview/config
 
 USE_IMAKE=	Yes
 FAKE=		Yes
