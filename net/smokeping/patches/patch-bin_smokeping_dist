@@ -1,17 +1,18 @@
-$OpenBSD: patch-bin_smokeping_dist,v 1.2 2003/12/01 14:59:39 jakob Exp $
---- bin/smokeping.dist.orig	2003-10-05 16:20:06.000000000 +0200
-+++ bin/smokeping.dist	2003-12-01 15:34:19.000000000 +0100
-@@ -1,12 +1,9 @@
--#!/usr/sepp/bin/perl -w
-+#!/usr/bin/perl -w
+$OpenBSD: patch-bin_smokeping_dist,v 1.3 2004/06/19 21:18:59 jakob Exp $
+--- bin/smokeping.dist.orig	2004-06-19 23:06:47.000000000 +0200
++++ bin/smokeping.dist	2004-06-19 23:07:14.000000000 +0200
+@@ -1,14 +1,9 @@
+ #!/usr/sepp/bin/perl -w
  # -*-perl-*-
  
--use lib qw(/usr/pack/rrdtool-1.0.40-ds/lib/perl);
+-use lib qw(/home/oetiker/data/projects/AABN-rrdtool/perl-shared/blib/lib);
+-use lib qw(/home/oetiker/data/projects/AABN-rrdtool/perl-shared/blib/arch);
+-use lib qw(/usr/pack/rrdtool-1.0.40-ds/lib/perl/5.8.0);
 -use lib qw(/home/oetiker/data/projects/AADJ-smokeping/dist/lib);
 -
- use Smokeping 1.24;
+ use Smokeping 1.30;
  
--Smokeping::main("/home/oetiker/.smokeping/config");
+-Smokeping::main("etc/config.dist");
 +Smokeping::main("/var/smokeping/config");
  
  =head1 NAME

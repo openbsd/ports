@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/01 14:59:39 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/06/19 21:18:59 jakob Exp $
 bin/smokeping
 lib/smokeping/smokeping.cgi
 libdata/perl5/site_perl/ISG/ParseConfig.pm
-libdata/perl5/site_perl/ISG/VppGateway.pm
 libdata/perl5/site_perl/Smokeping.pm
 libdata/perl5/site_perl/probes/CiscoRTTMonDNS.pm
 libdata/perl5/site_perl/probes/CiscoRTTMonEchoICMP.pm
@@ -19,10 +18,13 @@ libdata/perl5/site_perl/probes/EchoPingSmtp.pm
 libdata/perl5/site_perl/probes/FPing.pm
 libdata/perl5/site_perl/probes/FPing6.pm
 libdata/perl5/site_perl/probes/IOSPing.pm
+libdata/perl5/site_perl/probes/LDAP.pm
+libdata/perl5/site_perl/probes/Radius.pm
 libdata/perl5/site_perl/probes/RemoteFPing.pm
 libdata/perl5/site_perl/probes/base.pm
 libdata/perl5/site_perl/probes/basefork.pm
 libdata/perl5/site_perl/probes/basevars.pm
+libdata/perl5/site_perl/probes/passwordchecker.pm
 libdata/perl5/site_perl/probes/telnetIOSPing.pm
 man/man1/smokeping.1
 man/man1/smokeping.cgi.1
@@ -43,12 +45,15 @@ share/doc/smokeping/EchoPingSmtp.pm.txt
 share/doc/smokeping/FPing.pm.txt
 share/doc/smokeping/FPing6.pm.txt
 share/doc/smokeping/IOSPing.pm.txt
+share/doc/smokeping/LDAP.pm.txt
 share/doc/smokeping/ParseConfig.pm.txt
+share/doc/smokeping/Radius.pm.txt
 share/doc/smokeping/RemoteFPing.pm.txt
 share/doc/smokeping/Smokeping.pm.txt
 share/doc/smokeping/base.pm.txt
 share/doc/smokeping/basefork.pm.txt
 share/doc/smokeping/basevars.pm.txt
+share/doc/smokeping/passwordchecker.pm.txt
 share/doc/smokeping/smokeping.cgi.txt
 share/doc/smokeping/smokeping.txt
 share/doc/smokeping/smokeping_config.txt
