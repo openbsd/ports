@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/06/17 09:40:10 reinhard Exp $
+# $OpenBSD: Makefile,v 1.24 2001/07/03 07:57:46 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
@@ -86,6 +86,9 @@ post-configure:
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nessus
+
+post-install:
+	@strip ${PREFIX}/bin/{nasl,nessus} ${PREFIX}/sbin/nessusd
 
 .include <bsd.port.mk>
 
