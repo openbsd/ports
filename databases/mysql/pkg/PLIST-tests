@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-tests,v 1.9 2004/05/22 11:39:10 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.10 2004/08/10 00:52:43 espie Exp $
+share/mysql-test/
 share/mysql-test/README
+share/mysql-test/include/
 share/mysql-test/include/check_var_limit.inc
 share/mysql-test/include/have_bdb.inc
 share/mysql-test/include/have_crypt.inc
@@ -13,6 +15,7 @@ share/mysql-test/include/not_embedded.inc
 share/mysql-test/include/system_db_struct.inc
 share/mysql-test/install_test_db
 share/mysql-test/mysql-test-run
+share/mysql-test/r/
 share/mysql-test/r/alias.result
 share/mysql-test/r/alter_table.result
 share/mysql-test/r/analyse.result
@@ -103,6 +106,7 @@ share/mysql-test/r/have_symlink.require
 share/mysql-test/r/having.result
 share/mysql-test/r/heap.result
 share/mysql-test/r/innodb-deadlock.result
+share/mysql-test/r/innodb-lock.result
 share/mysql-test/r/innodb.result
 share/mysql-test/r/innodb_cache.result
 share/mysql-test/r/innodb_handler.result
@@ -249,6 +253,7 @@ share/mysql-test/r/user_var.result
 share/mysql-test/r/varbinary.result
 share/mysql-test/r/variables.result
 share/mysql-test/r/warnings.result
+share/mysql-test/std_data/
 share/mysql-test/std_data/des_key_file
 share/mysql-test/std_data/init_file.dat
 share/mysql-test/std_data/loaddata1.dat
@@ -258,6 +263,7 @@ share/mysql-test/std_data/loaddata4.dat
 share/mysql-test/std_data/rpl_loaddata.dat
 share/mysql-test/std_data/rpl_loaddata2.dat
 share/mysql-test/std_data/words.dat
+share/mysql-test/t/
 share/mysql-test/t/alias.test
 share/mysql-test/t/alter_table.test
 share/mysql-test/t/analyse.test
@@ -350,6 +356,7 @@ share/mysql-test/t/heap.test
 share/mysql-test/t/init_file-master.opt
 share/mysql-test/t/init_file.test
 share/mysql-test/t/innodb-deadlock.test
+share/mysql-test/t/innodb-lock.test
 share/mysql-test/t/innodb.test
 share/mysql-test/t/innodb_cache-master.opt
 share/mysql-test/t/innodb_cache.test
@@ -530,8 +537,3 @@ share/mysql-test/t/varbinary.test
 share/mysql-test/t/variables-master.opt
 share/mysql-test/t/variables.test
 share/mysql-test/t/warnings.test
-@dirrm share/mysql-test/t
-@dirrm share/mysql-test/std_data
-@dirrm share/mysql-test/r
-@dirrm share/mysql-test/include
-@dirrm share/mysql-test

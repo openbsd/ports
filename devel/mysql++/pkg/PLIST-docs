@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2004/01/06 11:16:53 wilfried Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2004/08/10 00:52:45 espie Exp $
+share/doc/mysql++/
+share/doc/mysql++/html/
 share/doc/mysql++/html/1_Introduction.html
 share/doc/mysql++/html/2_Overview.html
 share/doc/mysql++/html/3_Important.html
@@ -31,5 +33,3 @@ share/doc/mysql++/html/prev.png
 share/doc/mysql++/html/prev_g.png
 share/doc/mysql++/html/up.png
 share/doc/mysql++/html/up_g.png
-@dirrm share/doc/mysql++/html
-@dirrm share/doc/mysql++

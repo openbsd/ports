@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.amd64,v 1.1 2004/03/01 00:10:38 brad Exp $
+@comment $OpenBSD: PFRAG.amd64,v 1.2 2004/08/10 00:52:44 espie Exp $
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.x
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xbn
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xc
@@ -17,4 +18,3 @@ ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_x86_64_obsd.xs
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_x86_64_obsd.xsc
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_x86_64_obsd.xu
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_x86_64_obsd.xz
-@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts

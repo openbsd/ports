@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/07/23 13:11:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/10 00:52:44 espie Exp $
 include/gc/
 include/gc.h
 include/gc/gc.h
@@ -35,7 +35,7 @@ include/private/gc_priv.h
 include/private/gcconfig.h
 lib/libgc.a
 lib/libgc.la
-man/man3/gc.3
+@man man/man3/gc.3
 share/gc/
 share/gc/README
 share/gc/README.DGUX386

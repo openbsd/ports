@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2004/01/11 07:05:31 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2004/08/10 00:52:44 espie Exp $
 @comment lib/libslang.so
 @comment lib/libslang.so.14
-lib/libslang.so.14.9
-DYNLIBDIR(%D/lib)
+@lib lib/libslang.so.14.9

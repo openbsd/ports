@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/02/08 02:05:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/08/10 00:52:44 espie Exp $
 include/slang.h
 include/slcurses.h
 lib/libslang.a
-%%SHARED%%
+share/doc/slang/
 share/doc/slang/COPYING
 share/doc/slang/COPYING.ART
 share/doc/slang/COPYING.GPL
@@ -13,4 +13,4 @@ share/doc/slang/cslang.txt
 share/doc/slang/slang.txt
 share/doc/slang/slangdoc.html
 share/doc/slang/slangfun.txt
-@dirrm share/doc/slang
+%%SHARED%%

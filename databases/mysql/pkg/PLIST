@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2003/12/30 20:07:27 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2004/08/10 00:52:43 espie Exp $
 bin/mysql
 bin/mysql_config
 bin/mysqladmin
@@ -11,6 +11,7 @@ bin/mysqlmanager-pwgen
 bin/mysqlmanagerc
 bin/mysqlshow
 bin/mysqltest
+include/mysql/
 include/mysql/errmsg.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
@@ -35,14 +36,13 @@ include/mysql/raid.h
 include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
+lib/mysql/
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
+@man man/man1/mysql.1
+@man man/man1/mysqladmin.1
+@man man/man1/mysqldump.1
+@man man/man1/mysqlshow.1
 %%SHARED%%
-man/man1/mysql.1
-man/man1/mysqladmin.1
-man/man1/mysqldump.1
-man/man1/mysqlshow.1
-@dirrm lib/mysql
-@dirrm include/mysql

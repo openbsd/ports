@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/12/30 05:57:30 brad Exp $
-lib/libmysqlclient.so.12.0
-lib/libmysqlclient_r.so.12.0
-lib/mysql/libmysqlclient.so.12.0
-lib/mysql/libmysqlclient_r.so.12.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/08/10 00:52:43 espie Exp $
+@lib lib/libmysqlclient.so.12.0
+@lib lib/libmysqlclient_r.so.12.0
+@lib lib/mysql/libmysqlclient.so.12.0
+@lib lib/mysql/libmysqlclient_r.so.12.0

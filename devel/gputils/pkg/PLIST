@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/30 01:01:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 00:52:44 espie Exp $
 bin/gpal
 bin/gpasm
 bin/gpdasm
@@ -6,17 +6,20 @@ bin/gplib
 bin/gplink
 bin/gpvc
 bin/gpvo
-man/man1/gpal.1
-man/man1/gpasm.1
-man/man1/gpdasm.1
-man/man1/gplib.1
-man/man1/gplink.1
-man/man1/gputils.1
-man/man1/gpvc.1
-man/man1/gpvo.1
+@man man/man1/gpal.1
+@man man/man1/gpasm.1
+@man man/man1/gpdasm.1
+@man man/man1/gplib.1
+@man man/man1/gplink.1
+@man man/man1/gputils.1
+@man man/man1/gpvc.1
+@man man/man1/gpvo.1
+share/doc/gputils/
 share/doc/gputils/gputils.lyx
 share/doc/gputils/gputils.pdf
 share/doc/gputils/gputils.ps
+share/gputils/
+share/gputils/header/
 share/gputils/header/mcp250xx.inc
 share/gputils/header/memory.inc
 share/gputils/header/migrate.inc
@@ -210,6 +213,7 @@ share/gputils/header/rf509ag.inc
 share/gputils/header/rf675f.inc
 share/gputils/header/rf675h.inc
 share/gputils/header/rf675k.inc
+share/gputils/lkr/
 share/gputils/lkr/12c508.lkr
 share/gputils/lkr/12c508a.lkr
 share/gputils/lkr/12c509.lkr
@@ -502,7 +506,3 @@ share/gputils/lkr/rf675h.lkr
 share/gputils/lkr/rf675hi.lkr
 share/gputils/lkr/rf675k.lkr
 share/gputils/lkr/rf675ki.lkr
-@dirrm share/gputils/lkr
-@dirrm share/gputils/header
-@dirrm share/gputils
-@dirrm share/doc/gputils

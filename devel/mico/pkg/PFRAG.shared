@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/11/10 16:56:33 shell Exp $
-lib/libmico2.3.6.so.1.0
-lib/libmicoaux2.3.6.so.1.0
-lib/libmicocoss2.3.6.so.1.0
-lib/libmicoir2.3.6.so.1.0
-lib/libmicox2.3.6.so.1.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/08/10 00:52:44 espie Exp $
+@lib lib/libmico2.3.6.so.1.0
+@lib lib/libmicoaux2.3.6.so.1.0
+@lib lib/libmicocoss2.3.6.so.1.0
+@lib lib/libmicoir2.3.6.so.1.0
+@lib lib/libmicox2.3.6.so.1.0

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.hppa,v 1.1 2003/10/11 00:52:22 brad Exp $
+@comment $OpenBSD: PFRAG.hppa,v 1.2 2004/08/10 00:52:44 espie Exp $
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.x
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xbn
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xc
@@ -8,4 +9,3 @@ ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xs
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xsc
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xu
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/hppaobsd.xz
-@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts

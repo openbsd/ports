@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.12 2004/05/16 04:30:39 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.13 2004/08/10 00:52:43 espie Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -42,16 +42,18 @@ lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
-man/man1/isamchk.1
-man/man1/isamlog.1
-man/man1/mysql_fix_privilege_tables.1
-man/man1/mysql_zap.1
-man/man1/mysqlaccess.1
-man/man1/mysqld.1
-man/man1/mysqld_multi.1
-man/man1/mysqld_safe.1
-man/man1/perror.1
-man/man1/replace.1
+@man man/man1/isamchk.1
+@man man/man1/isamlog.1
+@man man/man1/mysql_fix_privilege_tables.1
+@man man/man1/mysql_zap.1
+@man man/man1/mysqlaccess.1
+@man man/man1/mysqld.1
+@man man/man1/mysqld_multi.1
+@man man/man1/mysqld_safe.1
+@man man/man1/perror.1
+@man man/man1/replace.1
+share/doc/mysql/
+share/doc/mysql/Flags/
 share/doc/mysql/Flags/argentina.gif
 share/doc/mysql/Flags/armenia.gif
 share/doc/mysql/Flags/australia.gif
@@ -105,11 +107,13 @@ share/doc/mysql/manual.html
 share/doc/mysql/manual.ps
 share/doc/mysql/manual.txt
 share/doc/mysql/manual_toc.html
+share/mysql/
 @comment share/mysql/Description.plist
 @comment share/mysql/Info.plist
 @comment share/mysql/MySQL-shared-compat.spec
 @comment share/mysql/StartupParameters.plist
 share/mysql/binary-configure
+share/mysql/charsets/
 share/mysql/charsets/Index
 share/mysql/charsets/README
 share/mysql/charsets/cp1251.conf
@@ -134,28 +138,40 @@ share/mysql/charsets/usa7.conf
 share/mysql/charsets/win1250.conf
 share/mysql/charsets/win1251.conf
 share/mysql/charsets/win1251ukr.conf
+share/mysql/czech/
 share/mysql/czech/errmsg.sys
 share/mysql/czech/errmsg.txt
+share/mysql/danish/
 share/mysql/danish/errmsg.sys
 share/mysql/danish/errmsg.txt
+share/mysql/dutch/
 share/mysql/dutch/errmsg.sys
 share/mysql/dutch/errmsg.txt
+share/mysql/english/
 share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
+share/mysql/estonian/
 share/mysql/estonian/errmsg.sys
 share/mysql/estonian/errmsg.txt
+share/mysql/french/
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
+share/mysql/german/
 share/mysql/german/errmsg.sys
 share/mysql/german/errmsg.txt
+share/mysql/greek/
 share/mysql/greek/errmsg.sys
 share/mysql/greek/errmsg.txt
+share/mysql/hungarian/
 share/mysql/hungarian/errmsg.sys
 share/mysql/hungarian/errmsg.txt
+share/mysql/italian/
 share/mysql/italian/errmsg.sys
 share/mysql/italian/errmsg.txt
+share/mysql/japanese/
 share/mysql/japanese/errmsg.sys
 share/mysql/japanese/errmsg.txt
+share/mysql/korean/
 share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 @comment share/mysql/make_binary_distribution
@@ -169,54 +185,38 @@ share/mysql/my-small.cnf
 share/mysql/mysql-${VERSION}.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
+share/mysql/norwegian/
+share/mysql/norwegian-ny/
 share/mysql/norwegian-ny/errmsg.sys
 share/mysql/norwegian-ny/errmsg.txt
 share/mysql/norwegian/errmsg.sys
 share/mysql/norwegian/errmsg.txt
+share/mysql/polish/
 share/mysql/polish/errmsg.sys
 share/mysql/polish/errmsg.txt
+share/mysql/portuguese/
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
 @comment share/mysql/postinstall
 @comment share/mysql/preinstall
+share/mysql/romanian/
 share/mysql/romanian/errmsg.sys
 share/mysql/romanian/errmsg.txt
+share/mysql/russian/
 share/mysql/russian/errmsg.sys
 share/mysql/russian/errmsg.txt
+share/mysql/slovak/
 share/mysql/slovak/errmsg.sys
 share/mysql/slovak/errmsg.txt
+share/mysql/spanish/
 share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
+share/mysql/swedish/
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
+share/mysql/ukrainian/
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
-@dirrm share/mysql/ukrainian
-@dirrm share/mysql/swedish
-@dirrm share/mysql/spanish
-@dirrm share/mysql/slovak
-@dirrm share/mysql/russian
-@dirrm share/mysql/romanian
-@dirrm share/mysql/portuguese
-@dirrm share/mysql/polish
-@dirrm share/mysql/norwegian-ny
-@dirrm share/mysql/norwegian
-@dirrm share/mysql/korean
-@dirrm share/mysql/japanese
-@dirrm share/mysql/italian
-@dirrm share/mysql/hungarian
-@dirrm share/mysql/greek
-@dirrm share/mysql/german
-@dirrm share/mysql/french
-@dirrm share/mysql/estonian
-@dirrm share/mysql/english
-@dirrm share/mysql/dutch
-@dirrm share/mysql/danish
-@dirrm share/mysql/czech
-@dirrm share/mysql/charsets
-@dirrm share/mysql
-@dirrm share/doc/mysql/Flags
-@dirrm share/doc/mysql
 @extraunexec userdel _mysql
 @extraunexec groupdel _mysql
 @extraunexec rm -rf ${DB_DIR}
