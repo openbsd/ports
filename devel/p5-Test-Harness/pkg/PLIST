@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/27 05:49:10 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/05/09 05:59:37 shell Exp $
 ${P5SITE}/Test/Harness.pm
 ${P5SITE}/Test/Harness/Assert.pm
 ${P5SITE}/Test/Harness/Iterator.pm
@@ -7,3 +7,4 @@ man/man3p/Test::Harness.3p
 man/man3p/Test::Harness::Assert.3p
 man/man3p/Test::Harness::Iterator.3p
 man/man3p/Test::Harness::Straps.3p
+@dirrm ${P5SITE}/Test/Harness
