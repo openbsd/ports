@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/26 08:34:39 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/11/26 23:28:22 margarida Exp $
 bin/bbpager
 share/bbtools/README.bbpager
 share/bbtools/bbpager.bb
