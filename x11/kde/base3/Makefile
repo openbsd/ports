@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/02/01 14:59:22 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2004/02/01 22:49:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"nsplugins, essentially native jdk"
@@ -8,8 +8,9 @@ DISTNAME=		kdebase-${VERSION}
 MODKDE_VERSION?=	3.2
 
 FLAVORS=		debug
-LIB_DEPENDS= kdecore.4,DCOP,artskde,kabc,katepartinterfaces,kdefakes,kdefx,kdeprint,kdeprint_management,kdesasl,kdesu,kdeui,khtml,kio,kmid,kparts,kscreensaver,kscript,kspell,ktexteditor,kutils,vcard::x11/kde/libs3 \
-		ldap.2,lber:openldap-client-2.*:databases/openldap \
+LIB_DEPENDS= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdeprint,kdeprint_management,kdesasl,kdesu,kdeui,khtml,kio,kjs,kmdi,kmid,kparts,kresources,kscreensaver,kscript,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
+	lber,ldap.2:openldap-client-2.*:databases/openldap
+
 
 
 SEPARATE_BUILD=	flavored
