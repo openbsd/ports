@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/01/26 22:14:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/26 00:42:12 rohee Exp $
 
 DISTNAME=	leafnode-1.9.2
 CATEGORIES=	news
 
-MAINTAINER=	bob@prophecy.lu
+MAINTAINER=	ports@openbsd.org
+
+LICENCE_TYPE=	GPL
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/news/transport
