@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/10/09 14:45:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2005/01/02 12:33:37 alek Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -6,7 +6,7 @@ COMMENT-devguide=	"Evolution Developer's Guide"
 V=			1.2
 VERSION=		${V}.4
 DISTNAME=		evolution-${VERSION}
-FULLPKGNAME-devguide=	evolution-devguide-${VERSION}
+FULLPKGNAME-devguide=	evolution-devguide-${VERSION}p0
 CATEGORIES=    		mail x11
 
 HOMEPAGE=		http://www.ximian.com/products/ximian_evolution/
@@ -18,6 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext Xi \
+		art_lgpl asn1 audiofile c com_err crypto esd freetype gal \
+		gconf-1 gconf-gtk-1 gdk gdk_imlib gdk_pixbuf glib gmodule \
+		gnome gnomeprint gnomesupport gnomeui gnomevfs gssapi gthread \
+		gtk jpeg krb5 m oaf png popt pthread ssl tiff ungif wrap xml z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${V}/@}
 MASTER_SITES0=		${HOMEPAGE}/update/snapshot/
@@ -79,6 +84,8 @@ SUBPACKAGE?=
 RUN_DEPENDS=
 LIB_DEPENDS=
 PKG_ARCH=		*
+WANTLIB=
+MODULES=
 .  endif
 .endif
 
