@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/07/11 12:34:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.24 2001/07/29 18:43:27 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=		interactive spelling checker
@@ -63,6 +63,7 @@ post-extract:
 
 post-configure:
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
+	@echo "#define CC \"${CC}\"" >> ${WRKSRC}/local.h
 
 post-build:
 	@sed "s%/usr/local%${PREFIX}%g" ${SCRIPTDIR}/ispell-config > \
