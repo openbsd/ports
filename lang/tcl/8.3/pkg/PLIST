@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/08/12 06:15:57 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/05/12 08:57:33 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tcl-8.3.*
 bin/tclsh8.3
@@ -557,6 +557,7 @@ lib/tcl8.3/man/man3/Tcl_VarEvalVA.3
 lib/tcl8.3/man/man3/Tcl_VarTraceInfo.3
 lib/tcl8.3/man/man3/Tcl_VarTraceInfo2.3
 lib/tcl8.3/man/man3/Tcl_WaitForEvent.3
+lib/tcl8.3/man/man3/Tcl_WaitPid.3
 lib/tcl8.3/man/man3/Tcl_WinTCharToUtf.3
 lib/tcl8.3/man/man3/Tcl_WinUtfToTChar.3
 lib/tcl8.3/man/man3/Tcl_Write.3
@@ -684,10 +685,10 @@ lib/tcl8.3/man/mann/upvar.n
 lib/tcl8.3/man/mann/variable.n
 lib/tcl8.3/man/mann/vwait.n
 lib/tcl8.3/man/mann/while.n
-lib/tcl8.3/msgcat1.0/msgcat.tcl
-lib/tcl8.3/msgcat1.0/pkgIndex.tcl  
+lib/tcl8.3/msgcat1.1/msgcat.tcl
+lib/tcl8.3/msgcat1.1/pkgIndex.tcl  
 lib/tcl8.3/opt0.4/optparse.tcl
-lib/tcl8.3/opt0.4/pkgIndex.tcl  
+lib/tcl8.3/opt0.4/pkgIndex.tcl
 lib/tcl8.3/package.tcl
 lib/tcl8.3/parray.tcl
 lib/tcl8.3/safe.tcl
@@ -700,7 +701,7 @@ lib/tcl8.3/word.tcl
 %%SHARED%%
 @dirrm lib/tcl8.3/tcltest1.0
 @dirrm lib/tcl8.3/opt0.4
-@dirrm lib/tcl8.3/msgcat1.0
+@dirrm lib/tcl8.3/msgcat1.1
 @dirrm lib/tcl8.3/man/mann
 @dirrm lib/tcl8.3/man/man3
 @dirrm lib/tcl8.3/man/man1
