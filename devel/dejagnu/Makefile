@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/12 19:45:51 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/09/05 23:28:13 matt Exp $
 
 DISTNAME=       dejagnu-1.3
 CATEGORIES=	devel
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.320
+
+HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
 MAINTAINER=	niklas@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,8 +19,8 @@ MASTER_SITE_SUBDIR= dejagnu
 BUILD_DEPENDS=	expect::lang/expect
 LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
 
-GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--with-tclinclude=${PREFIX}/include/tcl8.3/generic \
+CONFIGURE_STYLE=gnu dest
+CONFIGURE_ARGS+=--with-tclinclude=${PREFIX}/include/tcl8.3/generic \
 		--with-tkinclude=${PREFIX}/include/tk8.3/generic
 
 post-extract:
@@ -31,6 +31,5 @@ post-build:
 
 post-install:
 	cd ${WRKSRC}; ${MAKE} install-info
-	@install-info ${PREFIX}/info/dejagnu.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
