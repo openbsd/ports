@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 20:46:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/25 20:21:54 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
-V=2.10
+V=2.11
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print
 NEED_VERSION=	1.515
@@ -33,14 +33,15 @@ post-extract:
 	cd ${WRKDIST}/tedPackage && tar xf TedBindist.tar
 
 post-patch:
-	cd ${WRKDIST}/tedPackage/info && \
+	cd ${WRKDIST}/tedPackage/Ted && \
 	    sed -e 's,/usr/local/afm,${AFMDIR},' \
 		-e 's,/usr/local/ind,${INDDIR},' \
 		-e 's,/usr/local/info,${INFODIR},' \
+		-e 's,/usr/local/Ted/TedDocument-en_US.rtf,${INFODIR}/TedDocument-en_US.rtf,' \
 		Ted.ad.sample >Ted
 	for d in ${WRKSRC}/Ted ${WRKSRC}/appFrame; do \
     	cd $$d && \
-		mv -f config.h.in config.h.in.bak && \
+		touch config.h.in && mv -f config.h.in config.h.in.bak && \
 		echo '#define PREFIX "${PREFIX}"' >config.h.in && \
 		echo '#define INFODIR "${INFODIR}"' >>config.h.in && \
 		echo '#define INDDIR "${INDDIR}"' >>config.h.in && \
@@ -56,7 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/tedPackage/afm/* ${AFMDIR}
 	${INSTALL_DATA_DIR} ${INDDIR}
 	${INSTALL_DATA_DIR} ${INFODIR}
-	${INSTALL_DATA} ${WRKDIST}/tedPackage/info/TedDocument.rtf ${INFODIR}
-	${INSTALL_DATA} ${WRKDIST}/tedPackage/info/Ted ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKDIST}/tedPackage/Ted/TedDocument-en_US.rtf ${INFODIR}
+	${INSTALL_DATA} ${WRKDIST}/tedPackage/Ted/Ted ${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
