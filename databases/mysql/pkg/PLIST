@@ -36,8 +36,7 @@ lib/mysql/libheap.a
 lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
-lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.6
+lib/mysql/libmysqlclient.so.6.0
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
@@ -69,7 +68,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.19b.spec
+share/mysql/mysql-3.22.22.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
