@@ -1,22 +1,11 @@
---- configure.in-orig	Mon Jun 28 10:14:44 1999
-+++ configure.in	Mon Jun 28 10:15:49 1999
-@@ -37,19 +37,6 @@
-    AC_CHECK_HEADER(net/bpf.h,,echo need bpf header; exit)
- fi
+--- Makefile.in.orig	Sun Jan  9 00:31:32 2000
++++ Makefile.in	Sun Jan  9 00:31:53 2000
+@@ -14,7 +14,7 @@
+ MANPAGE=ngrep.8
  
--AC_MSG_CHECKING(for old version of bpf.h)
--if test -z "$pcapdir"; then
--   dir="/usr/include";
--else 
--   dir="$pcapdir";
--fi
--
--if test -z "`grep 'DLT_RAW' $dir/net/bpf.h 2>/dev/null`"; then
--   echo yup, upgrade pcap to at least 0.3; exit
--else 
--   echo nope, good
--fi
--
- AC_CHECK_LIB(pcap, pcap_open_live,,echo need pcap lib; exit)
+ INSTALL=./install-sh
+-BINDEST=@prefix@/bin
++BINDEST=@prefix@/sbin
+ MANDEST=@prefix@/man/man8
  
- AC_CHECK_LIB(pcap, pcap_restart, AC_DEFINE(PCAP_RESTART,pcap_restart),
+ $(TARGET): $(OBJS) 

@@ -1,2 +1,2 @@
-bin/ngrep
+sbin/ngrep
 man/man8/ngrep.8
