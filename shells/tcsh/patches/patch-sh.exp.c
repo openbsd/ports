@@ -1,6 +1,6 @@
-$OpenBSD: patch-sh.exp.c,v 1.3 2003/01/15 20:46:56 mickey Exp $
---- sh.exp.c.orig	Fri Mar  8 12:36:46 2002
-+++ sh.exp.c	Tue Jul 23 20:49:50 2002
+$OpenBSD: patch-sh.exp.c,v 1.4 2004/06/01 06:08:51 brad Exp $
+--- sh.exp.c.orig	2002-03-08 12:36:46.000000000 -0500
++++ sh.exp.c	2004-06-01 01:26:56.000000000 -0400
 @@ -153,7 +153,7 @@ sh_access(fname, mode)
       * and they define _SC_NGROUPS_MAX without having sysconf
       */
@@ -10,7 +10,7 @@ $OpenBSD: patch-sh.exp.c,v 1.3 2003/01/15 20:46:56 mickey Exp $
  #    define GID_T gid_t
  #   else
  #    define GID_T int
-@@ -661,7 +661,7 @@
+@@ -661,7 +661,7 @@ filetest(cp, vp, ignore)
      bool altout = 0;
      Char *ft = cp, *dp, *ep, *strdev, *strino, *strF, *str, valtest = '\0',
      *errval = STR0;

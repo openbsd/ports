@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2002/10/28 19:00:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/06/01 06:08:51 brad Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
-DISTNAME=	tcsh-6.12.00
+DISTNAME=	tcsh-6.13.00
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
