@@ -1,0 +1,11 @@
+--- Imakefile.orig	Mon Jan 31 20:12:14 1994
++++ Imakefile	Wed Jun  3 17:14:29 1998
+@@ -1,6 +1,6 @@
+   SYS_LIBRARIES = -lX11 -lXext
+- EXTRA_INCLUDES = -I$(HOME)/include/X11
+-EXTRA_LIBRARIES = -L$(HOME)/lib -lXpm
++ EXTRA_INCLUDES = -I/usr/X11R6/include/X11
++EXTRA_LIBRARIES = -L/usr/X11R6/lib -lXpm
+            SRCS = xteddy.c
+            OBJS = xteddy.o
+ 
