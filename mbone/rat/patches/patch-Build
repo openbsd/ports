@@ -1,0 +1,56 @@
+$OpenBSD: patch-Build,v 1.1 2001/03/17 17:23:27 wilfried Exp $
+--- Build.orig	Mon Mar  1 18:23:47 1999
++++ Build	Fri Mar 16 20:49:24 2001
+@@ -54,7 +54,7 @@ OSVERS=`uname -r`
+ case $OSTYPE in
+   Linux                  ) OSMVER=`echo $OSVERS | awk -F. '{printf("%d_%d", $1, $2)}'`
+                            ;;
+-  SunOS | IRIX | FreeBSD ) OSMVER=`echo $OSVERS | awk -F. '{print $1}'`
++  SunOS | IRIX | FreeBSD | OpenBSD ) OSMVER=`echo $OSVERS | awk -F. '{print $1}'`
+                            ;;
+   HP-UX                  ) OSTYPE=HPUX
+                            OSMVER=`echo $OSVERS | awk -F. '{print $2}'`
+@@ -69,20 +69,19 @@ echo "OSVERS=$OSVERS"
+ echo "OSMVER=$OSMVER"
+ 
+ # Create a directory for the .o files, if it doesn't exist...
+-if [ ! -d objs/${USER:=`whoami`}/${OSTYPE}_${OSVERS} ]; then
+-  echo "Creating object directory objs/${USER}/${OSTYPE}_${OSVERS}..."
+-  mkdir -p bin/${USER}
+-  mkdir -p objs/${USER}
+-  mkdir -p objs/${USER}/${OSTYPE}_${OSVERS}
+-  chmod 775 bin/${USER}
+-  chmod 775 objs/${USER}
+-  chmod 775 objs/${USER}/${OSTYPE}_${OSVERS}
++if [ ! -d objs/${OSTYPE}_${OSVERS} ]; then
++  echo "Creating object directory objs/${OSTYPE}_${OSVERS}..."
++  mkdir -p objs/${OSTYPE}_${OSVERS}
++  mkdir -p bin
++  chmod 775 bin
++  chmod 775 objs
++  chmod 775 objs/${OSTYPE}_${OSVERS}
+ fi
+ 
+-cmd="${MAKE:=make} OSTYPE=$OSTYPE OSMVER=$OSMVER OSVERS=$OSVERS USER=`whoami`"
++cmd="${MAKE:=make} OSTYPE=$OSTYPE OSMVER=$OSMVER OSVERS=$OSVERS"
+ case $1 in
+-  rat   ) echo "Running: $cmd bin/${USER}/rat-${OSTYPE}-${OSVERS}"
+-          eval $cmd bin/${USER}/rat-${OSTYPE}-${OSVERS}
++  rat   ) echo "Running: $cmd bin/rat-${OSTYPE}-${OSVERS}"
++          eval $cmd bin/rat-${OSTYPE}-${OSVERS}
+           exit
+           ;;
+   depend|tags|tar|clean) echo "Running: $cmd $1"
+@@ -94,10 +93,10 @@ case $1 in
+ 	  cd dist
+ 	  cp ../man/man1/rat.1 man/man1/rat.1
+ 	  cp ../README ../MODS ../COPYRIGHT .
+-	  for i in `ls ../bin/${USER}/`
++	  for i in `ls ../bin/`
+ 	  do
+ 	    echo "Making distribution $i"
+-	    cp ../bin/${USER}/$i bin/rat
++	    cp ../bin/$i bin/rat
+ 	    tar chf $i.tar README MODS COPYRIGHT bin man
+ 	    gzip $i.tar
+ 	  done

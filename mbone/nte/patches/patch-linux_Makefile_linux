@@ -1,0 +1,11 @@
+$OpenBSD: patch-linux_Makefile_linux,v 1.1 2001/03/17 17:21:41 wilfried Exp $
+--- linux/Makefile.linux.orig	Wed May 26 00:10:05 1999
++++ linux/Makefile.linux	Fri Mar 16 20:45:42 2001
+@@ -1,4 +1,4 @@
+-INCLUDES += -I/usr/X11R6/include 
++INCLUDES += -I/usr/X11R6/include -I/usr/local/include/tk8.0 \
++	    -I/usr/local/include/tk8.0/generic -I/usr/local/include/tcl8.0
+ CFLAGS   += -DPROTOTYPES -DHAVE_UNISTD_H -DDEFINED_ERRLIST -D_intel_
+-LIBS     += -lm -L/usr/X11R6/lib -lX11 -ldl 
+-
++LIBS     += -lm -L/usr/X11R6/lib -lX11 -L/usr/local/lib -ltcl80 -ltk80 -lcommon

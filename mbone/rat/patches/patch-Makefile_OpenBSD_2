@@ -1,0 +1,9 @@
+$OpenBSD: patch-Makefile_OpenBSD_2,v 1.1 2001/03/17 17:23:27 wilfried Exp $
+--- Makefile_OpenBSD_2.orig	Fri Mar 16 20:49:24 2001
++++ Makefile_OpenBSD_2	Fri Mar 16 20:49:24 2001
+@@ -0,0 +1,5 @@
++INCS   = -I/usr/X11R6/include -I/usr/local/include/tcl8.0\
++         -I/usr/local/include/tcl8.0/generic -I/usr/local/include/tk8.0 \
++	 -I/usr/local/include/tk8.0/generic
++LDLIBS = -L/usr/local/lib -L/usr/X11R6/lib -ltk80 -ltcl80 -lXext -lX11 -lm \
++	 -lossaudio
