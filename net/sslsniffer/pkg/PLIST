@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/07 18:02:16 jakob Exp $
+sbin/sslsniffer
+share/doc/sslsniffer/README
+@dirrm share/doc/sslsniffer
