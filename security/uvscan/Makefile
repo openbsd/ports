@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/12/13 17:58:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/26 08:13:22 jakob Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	evaluation version of a DOS/Windows file virus scanner
@@ -9,7 +9,7 @@ PKGNAME=	uvscan-${VERSION}
 CATEGORIES=	security
 NEED_VERSION=	1.496
 
-HOMEPAGE=	http://www.nai.com/asp_set/buy_try/try/products_evals.asp
+HOMEPAGE=	http://www.nai.com/naicommon/buy-try/try/products-evals.asp
 
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/linux/version_4.16/
 
