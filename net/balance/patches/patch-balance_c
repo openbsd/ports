@@ -1,6 +1,6 @@
-$OpenBSD: patch-balance_c,v 1.5 2003/06/22 12:27:03 naddy Exp $
---- balance.c.orig	Sun Sep 16 00:34:56 2001
-+++ balance.c	Sun Jun 22 14:25:39 2003
+$OpenBSD: patch-balance_c,v 1.6 2003/06/30 18:46:23 pvalchev Exp $
+--- balance.c.orig	Sat Sep 15 16:34:56 2001
++++ balance.c	Tue Jun 24 11:35:55 2003
 @@ -673,11 +673,13 @@ static usage() {
    char* version;
    char* revision_copy;
@@ -57,7 +57,7 @@ $OpenBSD: patch-balance_c,v 1.5 2003/06/22 12:27:03 naddy Exp $
          if((arg=strtok(NULL," \t\n")) != NULL) {
  	  n=atoi(arg);
  	  if(n<0 || n >= grp_nchannels(common,currentgroup)) {
-@@ -1122,7 +1128,7 @@ char	*argv[];
+@@ -1122,10 +1128,10 @@ char	*argv[];
    serv_addr.sin_family      = AF_INET;
    if(bindhost != NULL) {
      setipaddress(&serv_addr.sin_addr, bindhost);
@@ -65,7 +65,11 @@ $OpenBSD: patch-balance_c,v 1.5 2003/06/22 12:27:03 naddy Exp $
 +    snprintf(bindhost_address, sizeof(bindhost_address), inet_ntoa(serv_addr.sin_addr));
    } else {
      serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
-     sprintf(bindhost_address,"0.0.0.0");
+-    sprintf(bindhost_address,"0.0.0.0");
++    snprintf(bindhost_address, sizeof(bindhost_address), "0.0.0.0");
+   }
+   serv_addr.sin_port=htons(source_port);
+ 
 @@ -1135,7 +1141,7 @@ char	*argv[];
       struct stat buffer;
       int fd;
