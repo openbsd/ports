@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/08/20 23:42:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/08/21 10:59:38 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -11,7 +11,7 @@ DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/20 23:40:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/21 10:59:38 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -9,7 +9,7 @@ DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/src
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
@@ -21,9 +21,15 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		audiofile.::devel/libaudiofile \
-		pcreposix.::devel/pcre
+		pcreposix.::devel/pcre \
+		xml2::textproc/xml \
+		bz2::archivers/bzip2
 
 BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
+
+# glib2.0 
+# qt docs
+# CUPS
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/20 23:44:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/21 10:59:38 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -35,7 +35,7 @@ DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
 
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are

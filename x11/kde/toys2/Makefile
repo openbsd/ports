@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/20 23:48:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/08/21 10:59:38 espie Exp $
 
 COMMENT=	"some useless kde applications"
 
@@ -9,7 +9,7 @@ DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde
 
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
