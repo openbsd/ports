@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Dec 25 17:11:10 2000
++++ doc/Makefile.in	Mon Dec 25 17:11:24 2000
+@@ -300,8 +300,6 @@ install-data-local:
+ 	    echo '-- Installing '$$i ; \
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+-	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
+ 	  echo '-- Fixing Crossreferences' ; \
+ 	  gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR)|| true; \
+ 	fi)
