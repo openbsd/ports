@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2003/06/28 22:14:45 jolan Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -58,7 +58,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # Warning: these aditional options have not been tested.
 #CONFIGURE_ARGS+=       --with-afs
 #CONFIGURE_ARGS+=       --with-dfs
-#CONFIGURE_ARGS+=       --with-krb4=/etc/kerberosIV
 #CONFIGURE_ARGS+=       --with-krb5=base-dir
 
 NO_REGRESS=	Yes

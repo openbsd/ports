@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/13 22:53:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/28 22:14:45 jolan Exp $
 
 COMMENT=	"new MH mail handling program"
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest old
 CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
-			--with-krb4=/usr \
 			--enable-nmh-pop \
 			--sysconfdir='$${${DESTDIRNAME}}${PREFIX}/lib/nmh'
 

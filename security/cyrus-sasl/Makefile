@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/04 08:45:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/28 22:14:45 jolan Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -25,7 +25,6 @@ CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-login \
-			--enable-krb4="/usr" \
 			--enable-gssapi="/usr" \
 			--includedir="${PREFIX}/include/sasl" \
 			--with-pwcheck="/var/pwcheck"
