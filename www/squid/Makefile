@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2002/07/24 18:14:08 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2002/08/23 14:10:20 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
-DISTNAME=	squid-2.5.PRE10
+DISTNAME=	squid-2.5.PRE11
 CATEGORIES=	www
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.5/
 DIST_SUBDIR=	squid
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SYSCONFDIR=	/etc/squid
 SQUIDDIR?=	/var/squid
 SUBST_VARS=	SQUIDDIR
 
@@ -31,16 +30,9 @@ CONFIGURE_ARGS=	--enable-removal-policies="lru heap" \
 		--datadir="${PREFIX}/share/squid" \
 		--localstatedir="${SQUIDDIR}"
 
-#		--enable-truncate \
-#		--disable-unlinkd \
-
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+= --enable-pf-transparent
 .endif
-
-# remove stale autoconf.h left in the distfile
-post-extract:
-	@rm -f ${WRKSRC}/include/autoconf.h
 
 post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/squid

@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2002/07/24 18:14:09 brad Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.5 2002/08/23 14:10:20 brad Exp $
 --- src/Makefile.in.orig	Fri Jul 12 11:10:04 2002
-+++ src/Makefile.in	Tue Jul 23 20:25:13 2002
++++ src/Makefile.in	Fri Aug 23 09:32:02 2002
+@@ -33,7 +33,7 @@ bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+ datadir = @datadir@
+-sysconfdir = @sysconfdir@
++sysconfdir = @sysconfdir@/squid
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+ libdir = @libdir@
 @@ -373,8 +373,8 @@ EXTRA_DIST = \
  
  

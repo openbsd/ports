@@ -4,7 +4,7 @@ NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.5
  ** An old squid.conf will not work with Squid 2.5! **
 
 The local (OpenBSD) differences are:
-- configuration files are in		${SYSCONFDIR}
+- configuration files are in		${SYSCONFDIR}/squid
 - sample configuration files are in	${PREFIX}/share/examples/squid
 - error message files are in		${PREFIX}/share/squid/errors
 - sample error message files are in	${PREFIX}/share/examples/squid/errors

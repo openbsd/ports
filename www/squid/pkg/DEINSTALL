@@ -1,11 +1,11 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.6 2002/02/20 20:31:27 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.7 2002/08/23 14:10:20 brad Exp $
 #
 # Squid de-installation
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${SYSCONFDIR}/squid
 SQUIDDIR=${SQUIDDIR}
 SQUIDUSER=squid
 SQUIDGROUP=squid
