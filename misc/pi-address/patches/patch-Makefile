@@ -1,14 +1,14 @@
---- Makefile.orig	Fri Sep  3 19:20:04 1999
-+++ Makefile	Thu Sep 23 23:25:31 1999
+--- Makefile.orig	Sat Jan 22 04:49:47 2000
++++ Makefile	Sat Apr 15 04:22:06 2000
 @@ -5,7 +5,7 @@
  
  # be sure to set all include directories to correct values
  #  (especially the directory for the pilot-link and Qt include files)
 -INCDIRS= -I$(XINCLUDE) -I/usr/X11R6/include/qt -I/usr/include/libpisock
-+INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include/X11/qt -I$(PILOT_LINK)/include
++INCDIRS= -I$(XINCLUDE) -I$(PREFIX)/include/X11/qt -I$(PREFIX)/include
  
- #DEBUG = -g -D_DEBUG_
- OPTIMIZE = -O2
+ # DEBUG = -g -D_DEBUG_
+ OPTIMIZE = -O2 
 @@ -20,8 +20,8 @@
  # try this one if you want to link against the shared library of pilot-link
  # (edit LFLAGS_PISOCK_DIR and/or LFLAGS_QT_DIR and uncomment if libs are not 
