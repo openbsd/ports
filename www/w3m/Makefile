@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2002/11/27 22:25:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2002/12/01 23:41:32 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
 VERSION=	0.3.2.1
 M17N_VERSION=	20021127
+REVISION=	p1
 
 DISTNAME=	w3m-${VERSION}
+PKGNAME=	${DISTNAME}${REVISION}
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -48,7 +50,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
-LIB_DEPENDS+=	Imlib.19::graphics/imlib
+LIB_DEPENDS+=	gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
 CONFIGURE_ENV+=	use_image=y
 DOCS+=		README.img
 .endif
@@ -67,7 +69,7 @@ DOCSRC=		${WRKSRC}/doc
 
 .if ${FLAVOR:L:Mm17n}
 DISTNAME=	w3m-${VERSION}-m17n-${M17N_VERSION}
-PKGNAME=	w3m-${VERSION}.${M17N_VERSION}
+PKGNAME=	w3m-${VERSION}.${M17N_VERSION}${REVISION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0
 CONFIGURE_ARGS+= --suffix="" --charset=UTF-8
 DOCS+=		README.m17n
