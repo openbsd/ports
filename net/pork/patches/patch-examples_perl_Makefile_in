@@ -1,8 +1,8 @@
-$OpenBSD: patch-examples_perl_Makefile_in,v 1.3 2003/11/16 22:54:02 jolan Exp $
---- examples/perl/Makefile.in.orig	2003-11-16 01:28:51.000000000 -0600
-+++ examples/perl/Makefile.in	2003-11-16 16:18:03.000000000 -0600
-@@ -130,7 +130,7 @@ perl_DATA = \
- 	np.pl
+$OpenBSD: patch-examples_perl_Makefile_in,v 1.4 2004/10/07 06:29:49 jolan Exp $
+--- examples/perl/Makefile.in.orig	Sat Aug 14 13:31:55 2004
++++ examples/perl/Makefile.in	Thu Oct  7 01:27:52 2004
+@@ -131,7 +131,7 @@ perl_DATA = \
+ 	signon.pl
  
  
 -perldir = $(pkgdatadir)/examples/perl

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/23 23:38:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/07 06:29:49 jolan Exp $
 
 COMMENT=	"programmable ncurses-based AIM client"
-DISTNAME=	pork-0.99.3
+DISTNAME=	pork-0.99.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
 HOMEPAGE=	http://ojnk.sourceforge.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

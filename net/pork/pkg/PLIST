@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/07 06:29:49 jolan Exp $
 bin/pork
 share/doc/pork/
 share/doc/pork/QUICK_START
@@ -10,6 +10,7 @@ share/examples/pork/event_test.pl
 share/examples/pork/np.pl
 share/examples/pork/porkrc
 @sample ${SYSCONFDIR}/porkrc
+share/examples/pork/signon.pl
 share/pork/
 @comment share/pork/QUICK_START
 share/pork/help/
@@ -61,6 +62,7 @@ share/pork/help/buddy/unblock
 share/pork/help/buddy/warn
 share/pork/help/buddy/warn_anon
 share/pork/help/chat/
+share/pork/help/chat/ban
 share/pork/help/chat/ignore
 share/pork/help/chat/invite
 share/pork/help/chat/join
@@ -185,14 +187,17 @@ share/pork/help/perl/buddy_remove
 share/pork/help/perl/buddy_remove_block
 share/pork/help/perl/buddy_remove_group
 share/pork/help/perl/buddy_remove_permit
+share/pork/help/perl/chat_ban
 share/pork/help/perl/chat_get_list
 share/pork/help/perl/chat_get_users
 share/pork/help/perl/chat_get_window
 share/pork/help/perl/chat_ignore
 share/pork/help/perl/chat_invite
 share/pork/help/perl/chat_join
+share/pork/help/perl/chat_kick
 share/pork/help/perl/chat_leave
 share/pork/help/perl/chat_send
+share/pork/help/perl/chat_topic
 share/pork/help/perl/chat_unignore
 share/pork/help/perl/connect
 share/pork/help/perl/disconnect
@@ -213,8 +218,10 @@ share/pork/help/perl/load
 share/pork/help/perl/load_perl
 share/pork/help/perl/privacy_mode
 share/pork/help/perl/quit
+share/pork/help/perl/quote
 share/pork/help/perl/refresh
 share/pork/help/perl/report_idle
+share/pork/help/perl/run_cmd
 share/pork/help/perl/save
 share/pork/help/perl/scroll_by
 share/pork/help/perl/scroll_down
