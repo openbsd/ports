@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/05 14:09:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/23 16:29:46 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
@@ -42,7 +42,7 @@ MAKE_ENV=		${CONFIGURE_ENV}
 
 
 # Ensure qt2 will always be at the front
-MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
