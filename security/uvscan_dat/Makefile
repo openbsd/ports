@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/01/08 14:02:57 tom Exp $
+# $OpenBSD: Makefile,v 1.25 2004/01/14 19:20:39 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	"AntiVirus DAT file for uvscan"
@@ -13,8 +13,6 @@ HOMEPAGE=	http://www.networkassociates.com/us/downloads/updates/
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 EXTRACT_SUFX=	.tar
 SUBST_VARS+=	VERSION
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Commercial software"
 PERMIT_PACKAGE_FTP=	"Commercial software"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/14 19:20:39 jakob Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	"evaluation version of a DOS/Windows file virus scanner"
@@ -8,13 +8,11 @@ DISTNAME=	vlnx416e
 PKGNAME=	uvscan-${VERSION}
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.nai.com/naicommon/buy-try/try/products-evals.asp
+HOMEPAGE=	http://www.networkassociates.com/us/downloads/evals/
 
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/linux/version_4.16/
 
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Commercial software"
 PERMIT_PACKAGE_FTP=	"Commercial software"
