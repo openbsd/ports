@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.21 2001/07/21 06:14:43 brad Exp $
+# $OpenBSD: network.conf.template,v 1.22 2001/07/22 20:02:07 brad Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -26,9 +26,9 @@ _MASTER_SITE_NETBSD?=	\
 
 .if defined(MASTER_SITE_OPENBSD)
 MASTER_SITE_BACKUP=	${_MASTER_SITE_OPENBSD}
-.elsif defined(MASTER_SITE_FREEBSD)
+.elif defined(MASTER_SITE_FREEBSD)
 MASTER_SITE_BACKUP=	${_MASTER_SITE_FREEBSD}
-.elsif defined(MASTER_SITE_NETBSD)
+.elif defined(MASTER_SITE_NETBSD)
 MASTER_SITE_BACKUP=	${_MASTER_SITE_NETBSD}
 .endif
 
