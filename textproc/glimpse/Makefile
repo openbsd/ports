@@ -1,24 +1,18 @@
-# New ports collection makefile for:	glimpse
-# Version required:	4.1
-# Date created:		25 Jan 1998
-# Whom:			weingart@openbsd.org
-#
-# $OpenBSD: Makefile,v 1.3 1998/04/12 23:23:02 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/26 22:05:36 marc Exp $
 #
 
-PKGNAME=	glimpse-4.1
 DISTNAME=	glimpse-4.1
-DISTFILES=	glimpse-4.1.src.tar.gz
-NO_CDROM=	"NOFEE:	Can not sell"
-
 CATEGORIES=	textproc databases
-MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
+
+NO_CDROM=	"NOFEE:	Can not sell"
 
 MAINTAINER=	weingart@openbsd.org
 
-GNU_CONFIGURE=	yes
-NO_CDROM=	"Restrictive copyright (don't sell for profit)"
-MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
+MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
+DISTFILES=	glimpse-4.1.src.tar.gz
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
