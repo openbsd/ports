@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/12/14 09:26:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2003/12/19 19:22:58 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -55,10 +55,6 @@ LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 . if ${MULTI_PACKAGES:M-gnome}
 LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 . endif
-.endif
-
-.if ${MULTI_PACKAGES:M-gnome}
-CONFIGURE_ARGS+= --with-gnome
 .endif
 
 .include <bsd.port.mk>
