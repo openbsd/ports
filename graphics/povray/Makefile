@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/08 17:06:48 espie Exp $
 
 COMMENT=			"3D image rendering package"
 
@@ -9,7 +9,7 @@ NEED_VERSION=			1.515
 
 HOMEPAGE=			http://www.povray.org
 
-MAINTAINER=			Bruno Rohee <rohee@OpenBSD.ORG>
+MAINTAINER=			Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=		Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=		Yes

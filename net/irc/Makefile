@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/05/08 17:06:05 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
@@ -11,7 +11,7 @@ MASTER_SITES=   ftp://ftp.irc.org/irc/server/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
