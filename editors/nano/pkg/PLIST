@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
+bin/nano
+man/man1/nano.1
+share/locale/de/LC_MESSAGES/nano.mo
+share/locale/es/LC_MESSAGES/nano.mo
+share/locale/fr/LC_MESSAGES/nano.mo
+share/locale/id/LC_MESSAGES/nano.mo
+share/locale/it/LC_MESSAGES/nano.mo

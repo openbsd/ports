@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
+--- configure.orig	Tue Jun 20 22:12:13 2000
++++ configure	Fri Jun 23 11:57:36 2000
+@@ -1453,7 +1453,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define USE_SLANG 1
+ EOF
+  slang_support=yes
+-		CURSES_LIB="-L${with_slang}/lib -lslang"
++		CURSES_LIB="-L${with_slang}/lib -lslang -ltermcap -lm"
+ 		CURSES_LIB_NAME=slang
+ else
+   echo "$ac_t""no" 1>&6

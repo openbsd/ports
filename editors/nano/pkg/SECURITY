@@ -1,0 +1,6 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
+
+${WRKSRC}/nano.c (lines 1045, 1095)
+
+	tempnam(3) is used safely to create a prefix for a temporary file.  The
+	file is eventually opened safely with a call to mkstemp(3).
