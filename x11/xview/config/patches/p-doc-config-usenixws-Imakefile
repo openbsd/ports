@@ -1,0 +1,11 @@
+--- doc/config/usenixws/Imakefile.orig	Tue Apr  4 22:16:18 2000
++++ doc/config/usenixws/Imakefile	Tue Apr  4 22:16:53 2000
+@@ -25,7 +25,7 @@ clean::
+ 	rm -f *~ \#* *.bak errs 
+ 
+ install::
+-	$(MKDIRHIER) $(DOC_DEST) 
++	$(MKDIRHIER) $(DESTDIR)$(DOC_DEST) 
+ 
+ InstallNonExecList($(DOCFILES),$(DOC_DEST))
+ PopulateSCCSTree(h,$(ALLFILES))

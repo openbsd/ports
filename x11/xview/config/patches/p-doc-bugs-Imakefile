@@ -1,0 +1,11 @@
+--- doc/bugs/Imakefile.orig	Tue Apr  4 22:15:57 2000
++++ doc/bugs/Imakefile	Tue Apr  4 22:16:02 2000
+@@ -11,7 +11,7 @@ ALLFILES = $(DOCFILES) 
+ all::
+ 
+ install::
+-	$(MKDIRHIER) $(DOC_DEST) 
++	$(MKDIRHIER) $(DESTDIR)$(DOC_DEST) 
+ 
+ InstallNonExecList($(DOCFILES),$(DOC_DEST))
+ DependTarget()

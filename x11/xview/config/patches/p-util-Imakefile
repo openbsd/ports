@@ -1,0 +1,11 @@
+--- util/Imakefile.orig	Tue Apr  4 22:17:16 2000
++++ util/Imakefile	Tue Apr  4 22:17:24 2000
+@@ -24,7 +24,7 @@ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+ 
+ install::
+-	$(MKDIRHIER) $(BINDIR)
++	$(MKDIRHIER) $(DESTDIR)$(BINDIR)
+ 
+ includes::
+ 	echo "no includes in $(CURRENT_DIR)"

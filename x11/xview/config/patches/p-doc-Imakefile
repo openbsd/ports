@@ -1,11 +1,11 @@
---- ./doc/Imakefile.orig	Tue Jun 29 07:13:15 1993
-+++ ./doc/Imakefile	Sat Apr  1 18:24:54 2000
+--- doc/Imakefile.orig	Tue Jun 29 07:13:15 1993
++++ doc/Imakefile	Tue Apr  4 22:15:45 2000
 @@ -17,7 +17,7 @@ DOCFILES = xview-info olgx_api.txt olgx_
  ALLFILES = $(DOCFILES)
  
  install::
 -        $(MKDIRHIER) $(DOC_DEST)
-+	$(MKDIRHIER) $(DOC_DEST)
++	$(MKDIRHIER) $(DESTDIR)$(DOC_DEST)
  
  InstallNonExecList($(DOCFILES),$(DOC_DEST))
  PopulateSCCSTree(h,$(ALLFILES) README)
