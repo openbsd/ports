@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/29 11:14:22 jakob Exp $
 
 COMMENT=	authorative only name server daemon
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS+=	PREFIX='${PREFIX}' \
 		NSDZONESDIR=/var/nsd \
 		NSDZONES=/var/nsd/nsd.zones \
-		NSDUSER=named
+		NSDUSER=named \
+		CC='${CC}' CFLAGS='${CFLAGS}'
 
 NO_REGRESS=	Yes
 
