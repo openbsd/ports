@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 02:06:57 angelos Exp $
 
 DISTNAME=	gv-3.5.8
 CATEGORIES=	print
@@ -6,7 +6,7 @@ NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/
 
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

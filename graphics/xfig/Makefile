@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/18 10:34:08 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:54 angelos Exp $
 
 DISTNAME=	xfig.3.2.3a
 PKGNAME=	xfig-3.2.3a
@@ -7,7 +7,7 @@ NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR= applications/drawing_tools/xfig
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

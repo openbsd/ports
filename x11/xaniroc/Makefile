@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/06/02 15:01:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/10 02:07:00 angelos Exp $
 #
 
 DISTNAME=	xaniroc
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freebird.org/unixware/freebird/x11/utils/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/novell/freebird/x11/utils/
 EXTRACT_SUFX=	.src.tar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

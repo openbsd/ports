@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/04 10:49:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/10 02:06:50 angelos Exp $
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
 
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

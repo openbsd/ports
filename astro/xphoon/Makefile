@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/31 21:48:47 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/10 02:06:47 angelos Exp $
 
 DISTNAME=	xphoon
 PKGNAME=	xphoon-91.9.18
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "Cannot sell."
 PERMIT_DISTFILES_FTP=   Yes
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 FAKE=	Yes
 

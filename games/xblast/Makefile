@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/05/31 17:07:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:49 angelos Exp $
 #
 
 DISTNAME=       xblast-2.6.beta
@@ -7,7 +7,7 @@ CATEGORIES=	games
 NEED_VERSION=	1.191
 FAKE=		Yes
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/02 18:47:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:51 angelos Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.z
 
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

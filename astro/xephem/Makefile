@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/05/29 10:34:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:46 angelos Exp $
 
 DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 USE_MOTIF=	Yes
 USE_IMAKE=	Yes

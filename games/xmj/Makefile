@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/04 12:38:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/10 02:06:52 angelos Exp $
 
 DISTNAME=       xmj
 PKGNAME=	xmj-1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

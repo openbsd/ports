@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/11 16:01:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/10 02:07:00 angelos Exp $
 
 DISTNAME=	xcb-2.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= utilities
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

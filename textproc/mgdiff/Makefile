@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/10 00:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/10 02:06:57 angelos Exp $
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

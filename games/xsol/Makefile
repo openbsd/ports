@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/19 17:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:53 angelos Exp $
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

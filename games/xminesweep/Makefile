@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 17:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:52 angelos Exp $
 
 DISTNAME=	xminesweep3.0
 PKGNAME=	xminesweep-3.0
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/games/ \
 		ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

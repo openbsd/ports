@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/04 14:49:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/10 02:06:54 angelos Exp $
 #
 
 DISTNAME=	xsoldier-0.96
 CATEGORIES=	games x11
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

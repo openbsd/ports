@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/04 02:17:52 krw Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 02:06:58 angelos Exp $
 
 DISTNAME=	Xaw3d-1.5
 CATEGORIES=	x11
@@ -6,7 +6,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= widgets/Xaw3d/R6.3
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

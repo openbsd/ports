@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/03 16:30:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/10 02:06:58 angelos Exp $
 #
 
 DISTNAME=	emiclock-2.0.2
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 USE_IMAKE=	Yes
 FAKE=		Yes

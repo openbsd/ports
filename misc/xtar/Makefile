@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/10 01:19:47 angelos Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/10 02:06:56 angelos Exp $
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= utilities
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

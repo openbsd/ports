@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/03 21:26:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/10 02:07:01 angelos Exp $
 
 
 DISTNAME=		xdtm-2.5.8
@@ -7,7 +7,7 @@ NEED_VERSION=		1.191
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

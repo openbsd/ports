@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/19 10:03:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:50 angelos Exp $
 #
 
 DISTNAME=	xdino-5.5.2
 CATEGORIES=	games
 NEED_VERSION=	1.307
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

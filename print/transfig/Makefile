@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:31 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/10 02:06:57 angelos Exp $
 
 DISTNAME=	transfig.3.2.3
 PKGNAME=	transfig-3.2.3
@@ -7,7 +7,7 @@ NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR= applications/drawing_tools/transfig
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

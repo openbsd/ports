@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/04 09:05:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:49 angelos Exp $
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
 NEED_VERSION=	1.191
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

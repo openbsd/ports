@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:52 angelos Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

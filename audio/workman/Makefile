@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/10 17:39:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/07/10 02:06:47 angelos Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	${DISTNAME:L}
@@ -7,7 +7,7 @@ NEED_VERSION=	1.300
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

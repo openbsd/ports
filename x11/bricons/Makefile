@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/31 22:09:59 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/10 02:06:58 angelos Exp $
 
 #BROKEN="Port obviously not finished, documentation terse, half-baked packaging"
 DISTNAME=	bricons
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/X11/R5contrib/
 EXTRACT_SUFX=	-athena-3.0.tar.gz
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     ports@openbsd.org
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

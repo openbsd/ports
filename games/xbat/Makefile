@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/02 17:05:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:49 angelos Exp $
 #
 
 DISTNAME=	xev111
@@ -6,7 +6,7 @@ PKGNAME=        xbat-1.11
 CATEGORIES=     games
 NEED_VERSION=	1.191
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"possible copyright infringement"
 PERMIT_PACKAGE_FTP=	"possible copyright infringement"

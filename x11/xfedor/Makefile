@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/15 11:12:28 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/10 02:07:02 angelos Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -7,7 +7,7 @@ PKGNAME=        xfedor-1.0
 CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

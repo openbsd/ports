@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/07 00:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/07/10 02:06:56 angelos Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
@@ -6,7 +6,7 @@ NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

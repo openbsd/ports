@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/10 17:39:28 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 02:06:48 angelos Exp $
 
 DISTNAME=		xmix-2.1
 CATEGORIES=		audio
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 
 PATCHFILES=		xmix-2.1.mixers.patch
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

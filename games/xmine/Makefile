@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/07/10 02:06:51 angelos Exp $
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
 CATEGORIES=	games
 NEED_VERSION=	 1.230
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/02 19:03:24 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:48 angelos Exp $
 
 DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0
@@ -11,7 +11,7 @@ EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | sh -s
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

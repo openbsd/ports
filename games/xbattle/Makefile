@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 18:21:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/10 02:06:49 angelos Exp $
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/05 01:09:24 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:54 angelos Exp $
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		"BSD NO"
 PERMIT_PACKAGE_CDROM=	No
