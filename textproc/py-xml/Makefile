@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/27 05:25:03 shell Exp $
 
 COMMENT=	"python module for writing basic XML applications"
 
-VERSION=	0.7
+VERSION=	0.7.1
 DISTNAME=	PyXML-${VERSION}
 PKGNAME=	py-xml-${VERSION}
 CATEGORIES=	textproc devel
-NEED_VERSION=	1.503
+NEED_VERSION=	1.531
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-PYTHON_VER=     2.1
+PYTHON_VER=     2.2
 
 LIB_DEPENDS=	expat.2::textproc/expat
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/12/31 09:41:29 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/05/27 05:25:03 shell Exp $
 bin/xmlproc_parse
 bin/xmlproc_val
 lib/python${PYTHON_VER}/site-packages/_xmlplus/FtCore.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/FtCore.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/__init__.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/__init__.pyc
-lib/python${PYTHON_VER}/site-packages/_xmlplus/_checkversion.py
-lib/python${PYTHON_VER}/site-packages/_xmlplus/_checkversion.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/Attr.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/Attr.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/CDATASection.py
@@ -59,6 +57,8 @@ lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/de/LC_MESSAGES/4Suite.mo
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/domreg.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/domreg.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/en_US/LC_MESSAGES/4Suite.mo
+lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/ext/Dom2Sax.py
+lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/ext/Dom2Sax.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/ext/Printer.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/ext/Printer.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/ext/Visitor.py
@@ -539,4 +539,3 @@ share/doc/PyXML/xmlproc/xmlproc_tut.html
 @dirrm lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/de/LC_MESSAGES
 @dirrm lib/python${PYTHON_VER}/site-packages/_xmlplus/dom/de
 @dirrm lib/python${PYTHON_VER}/site-packages/_xmlplus/dom
-@dirrm lib/python${PYTHON_VER}/site-packages/_xmlplus
