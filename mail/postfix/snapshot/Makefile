@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.66 2003/06/10 20:46:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.67 2003/06/11 18:31:00 jakob Exp $
 
-VERSION=	2.0.11-20030609
+VERSION=	2.0.12-20030611
 
 DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION}
