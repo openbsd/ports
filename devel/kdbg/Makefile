@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/21 13:04:32 reinhard Exp $
+# $OpenBSD: Makefile,v 1.8 2001/08/27 15:17:28 espie Exp $
 
 COMMENT=	"graphical debugger for kde"
-DISTNAME=	kdbg-1.2.0
+DISTNAME=	kdbg-1.2.2
 CATEGORIES=     devel
-NEED_VERSION=	1.312	
+NEED_VERSION=	1.447
 HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,15 +14,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.kde.org/pub/kde/stable/1.1.2/apps/ide/ \
 		ftp://ftp.eudaptics.com/pub/people/jsixt/
 
-LIB_DEPENDS=	qt.2.::x11/qt2 \
-		kdecore.3.::x11/kde/libs2
+MODULES=	qt2
+LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
-CONFIGURE_ENV+=		MOC=${LOCALBASE}/bin/moc2
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-qt-libraries="${LOCALBASE}/lib/qt2" \
-			--with-qt-includes="${LOCALBASE}/include/X11/qt2" \
+			${MODQT_CONFIGURE_ARGS} \
 			--with-extra-includes="${LOCALBASE}/include" \
 			--with-extra-libs="${LOCALBASE}/lib" \
 			--with-kde-version=2 

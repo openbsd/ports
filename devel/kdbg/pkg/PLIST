@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/10 16:31:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/08/27 15:17:28 espie Exp $
 bin/kdbg
-share/applnk/Development/kdbg.kdelnk
+share/applnk/Development/kdbg.desktop
 share/apps/kdbg/pics/brkcond.xpm
 share/apps/kdbg/pics/brkdis.xpm
 share/apps/kdbg/pics/brkena.xpm
