@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/09/12 16:41:26 danh Exp $
+# $OpenBSD: Makefile,v 1.23 2002/10/01 12:23:42 naddy Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -32,6 +32,9 @@ CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
 		--with-openssl-libdir=/usr/lib \
 		--with-openssl-incdir=/usr/include \
 		--with-crypto=openssl
+
+post-patch:
+	@touch ${WRKSRC}/aclocal.m4
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ntp
