@@ -13,6 +13,6 @@ include/jpeglib.h
 include/jmorecfg.h
 include/jerror.h
 lib/libjpeg.so.7.0
-@exec /sbin/ldconfig -m %B
+@exec [ -x /sbin/ldconfig ] && /sbin/ldconfig -m %B
 lib/libjpeg.a
 @exec ranlib %D/%F
