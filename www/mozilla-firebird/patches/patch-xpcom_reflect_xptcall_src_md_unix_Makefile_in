@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1 2003/07/17 08:24:25 wilfried Exp $
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.2 2003/07/18 20:48:55 wilfried Exp $
 --- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Wed Apr 16 15:30:43 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Thu Jul 17 09:13:30 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Fri Jul 18 22:20:21 2003
 @@ -243,6 +243,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
  endif
  
@@ -16,10 +16,17 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1 2003/07/17 0
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -312,6 +320,13 @@ endif
+@@ -312,6 +320,20 @@ endif
  endif
  
  endif
++endif
++#
++# OpenBSD/SPARC
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc)
++CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
 +endif
 +#   
 +# OpenBSD/SPARC64
