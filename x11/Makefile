@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2000/10/22 16:55:57 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2000/11/01 14:49:18 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -25,7 +25,6 @@
 #    SUBDIR += auis
      SUBDIR += bclock
      SUBDIR += blackbox
-     SUBDIR += blackbox:kde
      SUBDIR += blast
 #    SUBDIR += blt
      SUBDIR += bricons
@@ -125,6 +124,7 @@
      SUBDIR += xgrab
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map,gfx
+     SUBDIR += xglobe,qt2
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
      SUBDIR += xlockmore
