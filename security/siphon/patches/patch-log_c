@@ -1,0 +1,12 @@
+$OpenBSD: patch-log_c,v 1.1.1.1 2001/06/16 14:56:26 lebel Exp $
+--- log.c.orig	Fri Jun 15 18:36:47 2001
++++ log.c	Fri Jun 15 18:36:55 2001
+@@ -137,7 +137,7 @@ char *oslookup(int window, int ttl, int 
+   FILE *osprints;
+   static char line[80], *oswin, *osttl, *osdf, *os, hexed[10];
+   static int check = 0;
+-  osprints = fopen("osprints.conf","r");
++  osprints = fopen(SYSCONFDIR "/osprints.conf","r");
+ 
+   if(!osprints) {
+     perror("Unable to find osprints.conf\n");
