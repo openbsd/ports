@@ -50,7 +50,7 @@ main(int argc, char** argv)
 			char* s;
 			int error;
 			if (argc > 0 && strcmp(abspath, mntbuf[i].f_mntonname) != 0) continue;
-#if defined(__FreeBSD_version) && __FreeBSD_version > 300000
+#if (defined(__FreeBSD_version) && __FreeBSD_version > 300000) || defined(__OpenBSD__)
 			if (strcmp(mntbuf[i].f_fstypename, "nfs") != 0) continue;
 #else
 			if (mntbuf[i].f_type != MOUNT_NFS) continue;
