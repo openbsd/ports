@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_uae_cpu_fpu_fpu_x86_cpp,v 1.1.1.1 2002/05/06 13:41:32 form Exp $
+--- src/uae_cpu/fpu/fpu_x86.cpp.orig	Fri Mar 15 17:20:30 2002
++++ src/uae_cpu/fpu/fpu_x86.cpp	Fri Mar 15 17:21:28 2002
+@@ -649,7 +649,7 @@ static uae_s16 extended_to_signed_16( fl
+ 	} */
+ 	
+ 	_ASM(	"fldt	%2\n"
+-			"fistp	%0\n"
++			"fistpl	%0\n"
+ 			"fnstsw	%1\n"
+ 		:	"=m" (tmp), "=m" (sw_temp)
+ 		:	"m" (*f)
+@@ -689,7 +689,7 @@ static uae_s8 extended_to_signed_8( floa
+ 	} */
+ 	
+ 	_ASM(	"fldt	%2\n"
+-			"fistp	%0\n"
++			"fistpl	%0\n"
+ 			"fnstsw	%1\n"
+ 		:	"=m" (tmp), "=m" (sw_temp)
+ 		:	"m" (*f)
