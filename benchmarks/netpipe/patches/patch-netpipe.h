@@ -1,14 +1,14 @@
---- netpipe.h.orig	Wed Oct 28 09:42:43 1998
-+++ netpipe.h	Sat Jan 22 22:20:35 2000
-@@ -19,6 +19,7 @@
- #include <stdio.h>
+--- netpipe.h.orig	Thu Aug 24 19:59:51 2000
++++ netpipe.h	Thu Aug 24 20:00:40 2000
+@@ -20,6 +20,7 @@
+ #include <stdlib.h>         /* malloc(3) */
  #include <string.h>
  #include <sys/types.h>
 +#include <sys/param.h>
  #include <sys/time.h>       /* struct timeval */
- #include <stdlib.h>         /* malloc(3) */
- 
-@@ -37,8 +38,12 @@
+ #ifdef HAVE_GETRUSAGE
+ #include <sys/resource.h>
+@@ -38,8 +39,12 @@
  #define  MAXINT             2147483647
  
  #define     ABS(x)     (((x) < 0)?(-(x)):(x))
