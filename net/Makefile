@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2000/02/06 15:16:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.65 2000/02/28 09:35:13 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -85,6 +85,8 @@
      SUBDIR += pop3gwd
      SUBDIR += popa3d
 #    SUBDIR += proftpd
+     SUBDIR += proxy-suite
+     SUBDIR += publicfile
      SUBDIR += queso
 #    SUBDIR += radius
 #    SUBDIR += ratoolset
