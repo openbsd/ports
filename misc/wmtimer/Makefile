@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/26 22:54:36 wilfried Exp $
 
 COMMENT=		'wm-dockapp; alarm clock'
 
-DISTNAME=		wmtimer-2.2
+DISTNAME=		wmtimer-2.4
 CATEGORIES=		misc x11 x11/windowmaker
 NEED_VERSION=		1.482
 
@@ -22,19 +22,7 @@ LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
 USE_X11=		Yes
 NO_REGRESS=		Yes
 
-FLAVORS=		gold
-FLAVOR?=
-
 WRKSRC=			${WRKDIST}/wmtimer
-
-do-configure:
-.if ${FLAVOR:L:Mgold}
-	@cd ${WRKSRC} && \
-		ln -sf wmtimer-gold.xpm wmtimer.xpm
-.else
-	@cd ${WRKSRC} && \
-		ln -sf wmtimer-default.xpm wmtimer.xpm
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmtimer ${PREFIX}/bin

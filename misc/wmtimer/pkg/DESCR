@@ -4,8 +4,6 @@ mode, you can either execute a command or sound the system bell
 when the time is reached.  WMTimer is configurable through the
 command line or the GTK GUI.
 
-The "gold" flavor provides an alternative appearance.
-
 WMTimer can be configured either at run time via the command line
 or the GTK interface by clicking on the main part of the window
 (anywhere except the buttons).
