@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2000/07/10 02:06:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2000/08/19 01:34:03 brad Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
 NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
+
+EXTRACT_CMD=	gzcat
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS= | ${SH}
 
 MAINTAINER=	ports@openbsd.org
 
@@ -13,10 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFIGURE_STYLE= imake
+
 WRKDIST=	${WRKDIR}
-EXTRACT_CMD=	gzcat
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | ${SH}
-USE_IMAKE=	Yes
 
 .include <bsd.port.mk>
