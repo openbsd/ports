@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/05/12 05:17:16 david Exp $
+# $OpenBSD: Makefile,v 1.31 2004/08/17 19:21:17 naddy Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
@@ -27,6 +27,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mssl}
 LIB_DEPENDS=	gnutls.12::security/gnutls
 CONFIGURE_ARGS+= --enable-ssl
+.else
+CONFIGURE_ARGS+= --disable-ssl
 .endif
 
 USE_GMAKE=	Yes
