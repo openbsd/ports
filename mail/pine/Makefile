@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/07/20 22:48:10 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2001/08/12 19:15:39 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with editor"
 COMMENT-pico=	"small text editor"
@@ -9,7 +9,7 @@ DISTNAME=	pine${VERSION}
 PKGNAME=	pine+pico-${VERSION}
 FULLPKGNAME-pico=pico-${VERSION}
 PKGNAME-pine=	pine-${VERSION}
-NEED_VERSION=	1.413
+NEED_VERSION=	1.435
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
