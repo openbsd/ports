@@ -1,0 +1,57 @@
+$OpenBSD: patch-layer3_c,v 1.1 2003/07/21 20:24:42 pvalchev Exp $
+--- layer3.c.orig	Mon Jul 21 14:14:21 2003
++++ layer3.c	Mon Jul 21 14:20:27 2003
+@@ -608,7 +608,7 @@ static int pretab2[22] = {0,0,0,0,0,0,0,
+  * Dequantize samples (includes huffman decoding)
+  */
+ /* 24 is enough because tab13 has max. a 19 bit huffvector */
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+ #define BITSHIFT ((sizeof(int)-1)*8)
+ #define REFRESH_MASK \
+   while(num < BITSHIFT) { \
+@@ -634,7 +634,7 @@ static int III_dequantize_sample(real xr
+   int *me;
+ 
+   int num=getbitoffset();
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+   int mask = (int) getbits(num)<<(BITSHIFT+8-num);
+ #else
+   long mask = (long) getbits(num)<<(BITSHIFT+8-num);
+@@ -722,7 +722,7 @@ static int III_dequantize_sample(real xr
+         if(x == 15 && h->linbits) {
+           max[lwin] = cb;
+           REFRESH_MASK;
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+           x += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           x += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -750,7 +750,7 @@ static int III_dequantize_sample(real xr
+         if(y == 15 && h->linbits) {
+           max[lwin] = cb;
+           REFRESH_MASK;
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+           y += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           y += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -904,7 +904,7 @@ static int III_dequantize_sample(real xr
+         if (x == 15 && h->linbits) {
+           max = cb;
+ 	  REFRESH_MASK;
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+           x += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           x += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -932,7 +932,7 @@ static int III_dequantize_sample(real xr
+         if (y == 15 && h->linbits) {
+           max = cb;
+ 	  REFRESH_MASK;
+-#ifdef __alpha
++#if defined(__alpha) || (defined(__OpenBSD__) && defined(__sparc64__))
+           y += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           y += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);

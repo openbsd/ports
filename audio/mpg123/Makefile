@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/07/17 23:58:33 brad Exp $
-
-NOT_FOR_ARCHS=	sparc64
+# $OpenBSD: Makefile,v 1.29 2003/07/21 20:24:42 pvalchev Exp $
 
 COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 
