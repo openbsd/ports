@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/04 02:29:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/12 04:17:52 obecian Exp $
 
+COMMENT=	"convert calendar dates to/from astronomical julian dates"
 DISTNAME=	jday-1.2
 CATEGORIES=	astro
-NEED_VERSION=	1.340
+NEED_VERSION=	1.364
 HOMEPAGE=	http://jday.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>

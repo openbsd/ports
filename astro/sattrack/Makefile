@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 17:16:13 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/12 04:17:52 obecian Exp $
 
+COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
-NEED_VERSION=	1.320
+NEED_VERSION=	1.364
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
