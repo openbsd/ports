@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2001/07/05 13:57:57 espie Exp $
 --- sys/unix/Makefile.src.orig	Sun Jun 24 18:57:24 2001
-+++ sys/unix/Makefile.src	Wed Jul  4 23:38:00 2001
++++ sys/unix/Makefile.src	Thu Jul  5 15:51:37 2001
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
@@ -18,7 +18,16 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
  LFLAGS = -L/usr/X11/lib
  #   OR compile backwards compatible a.out format
  # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
-@@ -232,9 +233,9 @@ WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ)
+@@ -146,7 +147,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/
+ # directories. You should have sdl-config in your path; it gives the 
+ # necessary compile and link flags. 
+ #
+-JTPINC=$(shell sdl-config --cflags)
++JTPINC=`sdl-config --cflags`
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+@@ -232,19 +233,19 @@ WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ)
  #
  # libraries for tty ports
  # WINTTYLIB = -ltermcap
@@ -30,7 +39,10 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
  # WINTTYLIB = -ltermlib
  #
  
-@@ -244,7 +245,7 @@ WINJTPLIB = $(shell sdl-config --libs)
+ # SDL libraries for Falcon's Eye
+-WINJTPLIB = $(shell sdl-config --libs)
++WINJTPLIB = `sdl-config --libs`
+ 
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.

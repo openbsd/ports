@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/05 13:29:01 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/05 13:57:54 espie Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -36,7 +36,6 @@ NETHACKCONFIG=	${FILESDIR}/x-config
 USE_X11=        Yes
 MAKE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-USE_GMAKE=	Yes
 do-configure:
 	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks
 
