@@ -1,0 +1,11 @@
+$OpenBSD: patch-flipit_c,v 1.1 2003/04/23 23:34:11 jason Exp $
+--- flipit.c.orig	Wed Apr 23 18:44:16 2003
++++ flipit.c	Wed Apr 23 18:44:53 2003
+@@ -33,6 +33,7 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <assert.h>
++#include <string.h>
+ 
+ #if HAVE_SYS_TYPES_H
+ #include <sys/types.h>

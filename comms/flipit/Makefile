@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 19:32:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/04/23 23:34:11 jason Exp $
 
 COMMENT=	"x10 firecracker utility"
 
-DISTNAME=	flipit-0.3.2
+DISTNAME=	flipit-0.3.3
 CATEGORIES=	comms
 
 MASTER_SITES=	http://www.lickey.com/flipit/dist/
