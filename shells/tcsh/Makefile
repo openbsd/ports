@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.8 1998/03/31 05:26:11 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1998/04/20 04:41:29 marc Exp $
 #
 
 DISTNAME=       tcsh-6.07
@@ -45,7 +45,7 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "*** Finished installing $(DISTNAME)"
 	@${ECHO} "*** To complete the install, you should notify the system"
-	@${ECHO} "*** that $(PREFIX)/bin/bash is a valid shell by adding it to"
+	@${ECHO} "*** that $(PREFIX)/bin/tcsh is a valid shell by adding it to"
 	@${ECHO} "*** the file /etc/shells."
 	@${ECHO} "***"
 	@${ECHO} "*** If you are unfamiliar with this file, consult the"
