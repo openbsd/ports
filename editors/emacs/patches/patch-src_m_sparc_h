@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_m_sparc_h,v 1.1 2002/03/23 18:40:02 pvalchev Exp $
+--- src/m/sparc.h.orig	Sat Sep  6 12:51:04 1997
++++ src/m/sparc.h	Sun Mar 17 22:22:25 2002
+@@ -83,9 +83,11 @@ NOTE-END  */
+ /* Must use the system's termcap, if we use any termcap.
+    It does special things.  */
+ 
++#if 0 /* not with OpenBSD 2.4 current */
+ #ifndef TERMINFO
+ #define LIBS_TERMCAP -ltermcap
+ #endif
++#endif
+ 
+ /* Mask for address bits within a memory segment */
+ 
+@@ -117,3 +119,43 @@ NOTE-END  */
+ #define A_TEXT_SEEK(HDR) (N_TXTOFF (hdr) + sizeof (hdr))
+ 
+ #endif /* not __NetBSD__ and not __linux__ and not __OpenBSD__ */
++
++#ifdef __arch64__		/* GCC, 64-bit ABI.  */
++#define BITS_PER_LONG 64
++#ifdef __sparc64__
++#define UNEXEC unexelf.o
++#endif
++
++#ifdef __arch64__		/* GCC, 64-bit ABI.  */
++#define EMACS_INT long
++#define BITS_PER_LONG 64
++#define BITS_PER_EMACS_INT BITS_PER_LONG
++#define EMACS_UINT unsigned long
++#define SPECIAL_EMACS_INT
++
++/* On the 64 bit architecture, we can use 60 bits for addresses */
++
++#define VALBITS		60
++
++/* This definition of MARKBIT is necessary because of the comparison of
++   ARRAY_MARK_FLAG and MARKBIT in an #if in lisp.h, which cpp doesn't like. */
++
++#define MARKBIT		0x8000000000000000L
++
++/* Define XINT and XUINT so that they can take arguments of type int */
++
++#define XINT(a)  (((long) (a) << (BITS_PER_LONG - VALBITS)) >> (BITS_PER_LONG - VALBITS))
++#define XUINT(a) ((long) (a) & VALMASK)
++
++/* Define XPNTR to avoid or'ing with DATA_SEG_BITS */
++
++#define XPNTR(a) XUINT (a)
++
++#define PNTR_COMPARISON_TYPE unsigned long
++#ifndef _LP64
++#define _LP64			/* Done on Alpha -- not sure if it
++				   should be here.  -- fx */
++#endif
++#endif
++
++#endif

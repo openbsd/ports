@@ -1,10 +1,13 @@
---- configure.orig	Fri Oct 20 16:00:28 2000
-+++ configure	Fri Oct 20 16:01:43 2000
-@@ -733,6 +733,7 @@
+$OpenBSD: patch-configure,v 1.2 2002/03/23 18:40:02 pvalchev Exp $
+--- configure.orig	Mon Jun 12 14:05:56 2000
++++ configure	Sun Mar 17 20:33:50 2002
+@@ -733,7 +733,8 @@ case "${canonical}" in
        m68k-*-openbsd*)  machine=hp9000s300 ;;
        mipsel-*-openbsd*) machine=pmax ;;
        ns32k-*-openbsd*)	machine=ns32000 ;;
+-      sparc-*-openbsd*)	machine=sparc ;;
 +      powerpc-*-openbsd*) machine=macppc ;;
-       sparc-*-openbsd*)	machine=sparc ;;
++      sparc*-*-openbsd*) machine=sparc ;;
        vax-*-openbsd*)	machine=vax ;;
      esac
+   ;;
