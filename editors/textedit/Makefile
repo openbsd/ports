@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/16 22:32:35 turan Exp $
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
@@ -6,6 +6,11 @@ CATEGORIES=	editors
 NEED_VERSION=	1.223
 
 MAINTAINER=	ian@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	"No license information"
+PERMIT_PACKAGE_FTP=	"No license information"
+PERMIT_DISTFILES_CDROM=	"No license information"
+PERMIT_DISTFILES_FTP=	"No license information"
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 

@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/16 22:32:35 turan Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
 CATEGORIES=	editors x11
 NEED_VERSION=	1.223
 
-NO_CDROM=	"NOFEE: can not charge for distribution"
-
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
