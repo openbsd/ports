@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/22 16:59:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/12 17:54:05 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
 VERSION=	3.0.8
-PKGNAME=	sqlite3-${VERSION}
+PKGNAME=	sqlite3-${VERSION}p0
 DISTNAME=	sqlite-${VERSION}
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sqlite.org/
