@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 03:12:22 jolan Exp $
+${P5SITE}/Filesys/
+${P5SITE}/Filesys/Virtual/
+${P5SITE}/Filesys/Virtual/DAAP.pm
+@man man/man3p/Filesys::Virtual::DAAP.3p
+share/examples/p5-Filesys-Virtual-DAAP/
+share/examples/p5-Filesys-Virtual-DAAP/ftp_republish
