@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2001/01/31 22:51:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/02/03 20:42:45 espie Exp $
 # losely based on the FreeBSD port
 
 CATEGORIES=	lang
 NEED_VERSION=	1.352
 
-DISTNAME=	scm5d3
-PKGNAME=	scm-5d3_2c9
-
-DISTFILES=	scm5d3.zip slib2c9.zip
+V=5d3
+DISTNAME=	scm$V
+PKGNAME=	scm-$V
+EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://swissnet.ai.mit.edu/~jaffer/SCM.html
 
@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-WRKDIST=	${WRKDIR}
-WRKSRC=		${WRKDIR}/scm
+WRKDIST=	${WRKDIR}/scm
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -41,14 +40,17 @@ OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
 .endif
 
+BUILD_DEPENDS=${LOCALBASE}/share/slib::devel/slib
+RUN_DEPENDS=${LOCALBASE}/share/slib::devel/slib
+
 post-build:
-	cd ${WRKSRC} && PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
+	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
 	    -F '${FEATURES}' \
 	    ${OPTIONS} \
 	    -h system \
 	    -o scm \
 	    -s "${PREFIX}/share/scm/"
-	cd ${WRKSRC} && PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
+	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
 	    -F '${FEATURES} sicp' \
 	    ${OPTIONS} \
 	    -h system \
@@ -59,23 +61,22 @@ ALL_TARGET=	scmlit
 
 #CFLAGS+=	-Dunix
 MAKE_FLAGS=	CFLAGS='${CFLAGS}' LD='${CC}'
+MAKE_ENV=	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm	${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm-sicp	${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/scm.1	${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/scm
+	${INSTALL_DATA_DIR} ${PREFIX}/include/scm
+	${INSTALL_DATA} ${WRKBUILD}/scm{,flags,fig}.h ${PREFIX}/include/scm
 	sed -e 's,@PREFIX@,${TRUEPREFIX},' \
 	    <${FILESDIR}/require.scm.in \
 	    >${PREFIX}/share/scm/require.scm
 .for file in ${SCM_DATA}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/scm
 .endfor
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/{ANNOUNCE,README,FAQ} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/scm.info ${PREFIX}/info
-	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
 .if ${FLAVOR:L:Mno_x11}
 .else
 	${INSTALL_DATA} ${WRKSRC}/Xlibscm.info ${PREFIX}/info

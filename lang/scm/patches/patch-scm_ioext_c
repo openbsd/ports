@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_ioext_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
---- scm/ioext.c.orig	Tue Jan 30 12:57:54 2001
-+++ scm/ioext.c	Tue Jan 30 12:58:30 2001
+$OpenBSD: patch-scm_ioext_c,v 1.2 2001/02/03 20:42:46 espie Exp $
+--- ioext.c.orig	Tue Jan 30 12:57:54 2001
++++ ioext.c	Tue Jan 30 12:58:30 2001
 @@ -70,6 +70,9 @@ SCM	stat2scm P((struct stat *stat_temp))
  #ifdef __FreeBSD__
  # include <unistd.h>

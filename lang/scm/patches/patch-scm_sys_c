@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_sys_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
---- scm/sys.c.orig	Tue Jan 30 10:09:47 2001
-+++ scm/sys.c	Tue Jan 30 10:10:32 2001
+$OpenBSD: patch-scm_sys_c,v 1.2 2001/02/03 20:42:47 espie Exp $
+--- sys.c.orig	Tue Jan 30 10:09:47 2001
++++ sys.c	Tue Jan 30 10:10:32 2001
 @@ -72,6 +72,9 @@ SCM	*loc_open_file;		/* for open-file ca
  # ifdef linux
  #  include <unistd.h>

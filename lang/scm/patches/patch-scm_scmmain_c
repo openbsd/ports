@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_scmmain_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
---- scm/scmmain.c.orig	Tue Jan 30 14:28:32 2001
-+++ scm/scmmain.c	Tue Jan 30 14:29:35 2001
+$OpenBSD: patch-scm_scmmain_c,v 1.2 2001/02/03 20:42:47 espie Exp $
+--- scmmain.c.orig	Tue Jan 30 14:28:32 2001
++++ scmmain.c	Tue Jan 30 14:29:35 2001
 @@ -45,6 +45,9 @@
  #include "scm.h"
  #include "patchlvl.h"

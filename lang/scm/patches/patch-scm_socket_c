@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_socket_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
---- scm/socket.c.orig	Tue Jan 30 14:16:50 2001
-+++ scm/socket.c	Tue Jan 30 14:17:26 2001
+$OpenBSD: patch-scm_socket_c,v 1.2 2001/02/03 20:42:47 espie Exp $
+--- socket.c.orig	Tue Jan 30 14:16:50 2001
++++ socket.c	Tue Jan 30 14:17:26 2001
 @@ -69,6 +69,9 @@
  # ifdef SVR4
  #  include <unistd.h>
