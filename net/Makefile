@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2001/12/06 02:41:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.182 2001/12/12 20:56:12 fgsch Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -51,6 +51,7 @@
      SUBDIR += httptunnel
      SUBDIR += icb
      SUBDIR += icecast
+     SUBDIR += ickle
      SUBDIR += icmpinfo
      SUBDIR += ipband
      SUBDIR += ipcheck
