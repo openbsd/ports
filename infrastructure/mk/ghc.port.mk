@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/lang/ghc/files/ghc.port.mk"
+.include "${PORTSDIR}/lang/ghc/ghc.port.mk"

@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.3 2004/04/26 23:48:50 dons Exp $
+# $OpenBSD: ghc.port.mk,v 1.1 2004/08/10 08:14:35 xsa Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
