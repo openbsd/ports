@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/15 08:36:57 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/20 05:44:21 shell Exp $
 
 COMMENT=	"perl module to build DOM Level 1 structures"
 
-DISTNAME=	XML-DOM-1.39
+DISTNAME=	XML-DOM-1.41
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-MAINTAINER=	Shell Hung <shell@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 BUILD_DEPENDS=  :p5-XML-Parser->=2.30:textproc/p5-XML-Parser	\
 		:p5-Libxml-*:textproc/p5-Libxml		\
