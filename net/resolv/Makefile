@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/16 00:14:18 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/15 19:59:07 naddy Exp $
 
 COMMENT=        "Hostname scanner"
 
 DISTNAME=	resolv-0.9.9a
 CATEGORIES=     net
 NEED_VERSION=   1.310
-MASTER_SITES=   http://packetstormsecurity.com/UNIX/scanners/
+MASTER_SITES=   http://packetstorm.decepticons.org/UNIX/scanners/
 
 MAINTAINER=     Jose <jose@openbsd.org.mx>
 
