@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.43 2004/05/26 11:20:35 msf Exp $
+# $OpenBSD: Makefile.template,v 1.44 2004/07/15 22:08:00 sturm Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -68,7 +68,6 @@ MASTER_SITES=		???
 
 # Dependencies
 #
-#FETCH_DEPENDS=		???
 #BUILD_DEPENDS=		???
 #RUN_DEPENDS=		???
 #LIB_DEPENDS=		???
