@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/23 06:24:49 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/04 03:53:27 pvalchev Exp $
 
 COMMENT=		"core GNOME system"
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--with-kde-docdir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lm"
 
 pre-build:
 	@cd ${WRKSRC}; \

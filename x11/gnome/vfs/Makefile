@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/02/15 19:11:16 nino Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/04 03:53:27 pvalchev Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs; \
