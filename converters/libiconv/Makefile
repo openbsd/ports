@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/01/07 15:13:42 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/13 16:40:27 brad Exp $
 
 COMMENT=	"character set conversion library"
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 do-regress:
-	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check
+	@cd ${WRKBUILD}/tests && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
