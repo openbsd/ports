@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2001/01/28 07:28:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2001/01/29 05:46:32 kevlo Exp $
 
-DISTNAME=       zh-fonts-taipei
+DISTNAME=       zh-fonts-taipei-1.01
 CATEGORIES=     chinese x11
 NEED_VERSION=	1.319
 DIST_SUBDIR=    zh-fonts
