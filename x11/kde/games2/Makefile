@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/09/27 10:54:59 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -29,7 +29,7 @@ COMMENT-kwin4=		4 in a rows game for kde
 COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.458
+NEED_VERSION=		1.461
 VERSION=		2.2.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
@@ -51,6 +51,8 @@ CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-motif
+
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 .for i in kabalone kasteroids katomic kbackgammon kblackbox kfouleggs \
 kjezz kjumpingcube kmahjongg kmines konquest kpat kpoker kreversi ksame \

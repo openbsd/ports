@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/27 10:55:00 espie Exp $
 V=0.5.1
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.458
+NEED_VERSION=		1.461
 COMMENT=	"KDE style engine"
 HOMEPAGE=	http://www.mosfet.org/liquid.html
 MASTER_SITES=	http://www.mosfet.org/
@@ -33,6 +33,8 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
+
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 CONFIGURE_ENV=		UIC_NOT_NEEDED=true
 CONFIGURE_ENV+=		ac_aux_files=''

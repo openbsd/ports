@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/09/27 10:55:00 espie Exp $
 
 COMMENT=	"some useless kde applications"
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.458
+NEED_VERSION=		1.461
 VERSION=		2.2.1
 DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
