@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/30 01:40:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/10 09:42:58 kevlo Exp $
 
-DISTNAME=	august0.60b.src
-PKGNAME=	august-0.60b
+DISTNAME=	august0.61b.src
+PKGNAME=	august-0.61b
 CATEGORIES=     www
-NEED_VERSION=	1.309
+NEED_VERSION=	1.319
 
 MASTER_SITES=	http://www.lls.se/~johanb/august/
 
