@@ -1,0 +1,12 @@
+--- source/Makefile.in.orig	Sun Mar 24 18:01:45 2002
++++ source/Makefile.in	Sun Mar 24 18:03:35 2002
+@@ -149,6 +149,9 @@ distclean-libLTLIBRARIES:
+ 
+ maintainer-clean-libLTLIBRARIES:
+ 
++cddb.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
++
+ .c.o:
+ 	$(COMPILE) -c $<
+ 
