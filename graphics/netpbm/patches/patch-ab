@@ -9,7 +9,7 @@
  extern void exit();
  extern long time();
  extern int write();
-+#endif /* NetBSD */
++#endif /* OpenBSD */
  #endif
  
  /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on

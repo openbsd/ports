@@ -1,11 +1,17 @@
---- Makefile.orig	Wed Jan 26 12:47:35 1994
-+++ Makefile	Mon Jan 11 00:17:07 1999
-@@ -21,7 +21,7 @@
+--- Makefile.orig	Wed Jan 26 06:47:35 1994
++++ Makefile	Tue Jun  1 09:25:33 1999
+@@ -16,12 +16,12 @@
+ # gcc can't compile pnmconvol - dunno why.  And on some systems you can't
+ # use the -ansi flag, it gives compilation errors in <math.h>.
+ #CC =		cc
+-CC =		gcc
++#CC =		gcc
+ #CC =		gcc -fcombine-regs -fpcc-struct-return
  #CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
  
  # CONFIGURE: cc flags go here.
 -CFLAGS =	-O
-+CFLAGS =	-O2
++#CFLAGS =	-O2
  #CFLAGS =	-g
  #CFLAGS =	-g -O
  

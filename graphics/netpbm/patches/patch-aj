@@ -1,16 +1,16 @@
---- pnm/Makefile.orig	Mon Jan 31 17:47:32 1994
-+++ pnm/Makefile	Mon Jan 11 00:18:48 1999
+--- pnm/Makefile.orig	Mon Jan 31 11:47:32 1994
++++ pnm/Makefile	Tue Jun  1 09:28:32 1999
 @@ -10,27 +10,29 @@
  # implied warranty.
  
  # Default values, usually overridden by top-level Makefile.
 -#CC =		cc
 -CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
-+CC =		gcc
++#CC =		gcc
 +#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
  #CFLAGS =	-O
 -CFLAGS =	-g
-+CFLAGS =	-O2
++#CFLAGS =	-O2
  #CFLAGS =	-g -O
  TIFFDEF =	-DLIBTIFF
 -TIFFINC =       -I../libtiff

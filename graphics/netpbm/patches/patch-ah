@@ -1,6 +1,15 @@
---- pgm/Makefile.orig	Fri Jan 28 11:14:02 1994
-+++ pgm/Makefile	Mon Jan 11 00:18:46 1999
-@@ -18,14 +18,16 @@
+--- pgm/Makefile.orig	Fri Jan 28 05:14:02 1994
++++ pgm/Makefile	Tue Jun  1 09:27:43 1999
+@@ -11,21 +11,23 @@
+ 
+ # Default values, usually overridden by top-level Makefile.
+ #CC =		cc
+-CC =		gcc
++#CC =		gcc
+ #CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
+-CFLAGS =	-O
++#CFLAGS =	-O2
+ #CFLAGS =	-g
  #CFLAGS =	-g -O
  LDFLAGS =	-s
  #LDFLAGS =	

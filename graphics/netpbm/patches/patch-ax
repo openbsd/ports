@@ -1,16 +1,16 @@
---- ppm/Makefile.orig	Mon Jan 31 17:44:34 1994
-+++ ppm/Makefile	Mon Jan 11 00:18:52 1999
-@@ -10,22 +10,24 @@
+--- ppm/Makefile.orig	Mon Jan 31 11:44:34 1994
++++ ppm/Makefile	Tue Jun  1 09:29:54 1999
+@@ -10,22 +10,23 @@
  # implied warranty.
  
  # Default values, usually overridden by top-level Makefile.
 -#CC =		cc
 -CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
-+CC =		gcc
-+#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
- #CFLAGS =	-O
+-#CFLAGS =	-O
 -CFLAGS =	-g
-+CFLAGS =	-O2
++#CC =		gcc
++#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
++#CFLAGS =	-O2
  #CFLAGS =	-g -O
 -#LDFLAGS =	-s
 -LDFLAGS =	
@@ -35,7 +35,7 @@
  
  PGMDIR =	../pgm
  INCLUDEPGM =	-I$(PGMDIR)
-@@ -43,6 +45,7 @@
+@@ -43,6 +44,7 @@
  INCLUDE =	-I.. $(INCLUDEPGM) $(INCLUDEPBM)
  ALLCFLAGS =	$(CFLAGS) $(INCLUDE)
  LIBPPM =	libppm.a
@@ -43,7 +43,7 @@
  
  PORTBINARIES =	bmptoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
  		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
-@@ -85,21 +88,21 @@
+@@ -85,21 +87,21 @@
  MANUALS5 =	ppm
  
  
@@ -73,7 +73,7 @@
  
  merge:		ppmmerge
  ppmmerge:	ppmmerge.c $(OBJECTS) $(LIBPPM) $(LIBPGM) $(LIBPBM)
-@@ -132,15 +135,15 @@
+@@ -132,15 +134,15 @@
  
  
  # Rule for plain programs.
@@ -92,7 +92,7 @@
  	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
  
  # And libraries.
-@@ -155,16 +158,16 @@
+@@ -155,16 +157,16 @@
  	libppm5.o bitio.o
  	-ranlib $(LIBPPM)
  
@@ -114,7 +114,7 @@
  	$(CC) $(ALLCFLAGS) -c libppm5.c
  bitio.o:	../pbmplus.h bitio.c
  	$(CC) $(ALLCFLAGS) -c bitio.c
-@@ -235,4 +238,4 @@
+@@ -235,4 +237,4 @@
  yuvsplittoppm yuvsplittoppm.o:	yuvsplittoppm.c
  
  clean:

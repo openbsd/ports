@@ -1,15 +1,15 @@
---- pbm/Makefile.orig	Sat Nov 20 15:59:20 1993
-+++ pbm/Makefile	Mon Jan 11 00:18:43 1999
+--- pbm/Makefile.orig	Sat Nov 20 09:59:20 1993
++++ pbm/Makefile	Tue Jun  1 09:26:48 1999
 @@ -10,28 +10,31 @@
  # implied warranty.
  
  # Default values, usually overridden by top-level Makefile.
 -CC =		cc
-+CC =		gcc
++#CC =		gcc
  #CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
  #CFLAGS =	-O
 -CFLAGS =	-g
-+CFLAGS =	-O2
++#CFLAGS =	-O2
  #CFLAGS =	-g -O
  TIFFDEF =       -DLIBTIFF
  #LDFLAGS =	-s
