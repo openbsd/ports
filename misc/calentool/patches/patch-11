@@ -1,0 +1,46 @@
+--- printer.c.orig	Tue Sep 29 22:38:24 1998
++++ printer.c	Wed Sep 30 11:36:47 1998
+@@ -72,8 +72,8 @@
+ int format = ZPixmap;
+ char trailer[256];
+ 
+-char rasfile[] = "/usr/tmp/calentool.xwd";
+-char psfile[256] = "/usr/tmp/calentool.ps";
++char rasfile[] = "/var/tmp/calentool.xwd";
++char psfile[256] = "/var/tmp/calentool.ps";
+ 
+ #ifdef __STDC__
+ void print_one_day (int which, FILE *output, int gdrtn);
+@@ -319,12 +319,12 @@
+ 	int i, gd_rtn, target, ndays;
+ 	FILE *output, *popen();
+ 	int pclose();
+-	char cmd[80], *name, *cuserid(), *mail_subj();
++	char cmd[80], *name, *getlogin(), *mail_subj();
+ 	struct tm Save;
+ 
+ 	fix_current_day();
+ 	sprintf(trailer, "File: '%s' printed for %s on %s",
+-		apts_pathname, cuserid(NULL), clockstr);
++		apts_pathname, getlogin(), clockstr);
+ 	gd_rtn = get_day_appts();
+ 	if (which == PRI_DAY && !gd_rtn)
+ 		return;	/* nothing to show */
+@@ -334,7 +334,7 @@
+ 	if (dest == DST_MAIL) {
+ 		if (mailto != NULL) {
+ 			name = mailto;
+-		} else if ((name = cuserid(NULL)) == NULL) {
++		} else if ((name = getlogin()) == NULL) {
+ 			err_rpt("nobody to mail to", FATAL);
+ 		}
+ 		sprintf(cmd, "%s -s \"Appointments for %s\" %s", MAILPROG, mail_subj(which), name);
+@@ -510,7 +510,7 @@
+ 	lock_cursors();
+ 	working(TRUE);
+ 	sprintf(trailer, "File: '%s' printed for %s on %s",
+-		apts_pathname, cuserid(NULL), clockstr);
++		apts_pathname, getlogin(), clockstr);
+ #ifndef RASTER_ONLY
+ 	if (file_type == PR_POSTSCRIPT) {
+ 		if ((pfp = fopen(psfile, "w")) == NULL) {

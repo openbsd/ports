@@ -1,0 +1,7 @@
+--- dates/computing.orig	Tue Sep 29 22:38:17 1998
++++ dates/computing	Wed Sep 30 11:31:15 1998
+@@ -149,3 +149,4 @@
+ ** 12 27 99 99 00 APT report published (1956)
+ ** 12 28 99 99 00 John Von Neumann, First suggested stored program model. (1903)
+ 85 11 05 99 99 00 At 0:53:20 GMT UNIX time reached the 500000000 (half billion) second mark (1985)
++99 12 31 99 99 00 End of time for much software/firmware, and calentool.

@@ -1,0 +1,19 @@
+--- mt2ct.c.orig	Wed Sep 30 11:47:04 1998
++++ mt2ct.c	Wed Sep 30 11:47:14 1998
+@@ -45,7 +45,7 @@
+ void write_ct_file ();
+ #endif
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -74,6 +74,7 @@
+ 		exit(1);
+ 	}
+ 	write_ct_file();
++	return 0;
+ }
+ 
+ /*

@@ -1,0 +1,11 @@
+--- utils.c.orig	Tue Sep 29 22:38:24 1998
++++ utils.c	Wed Sep 30 11:36:47 1998
+@@ -170,7 +170,7 @@
+ #else
+ 	gettimeofday(&tv, 0);
+ #endif
+-	tm = localtime(&tv.tv_sec);
++	tm = localtime((time_t*)&tv.tv_sec);
+ 
+ 	today = *tm;
+ 

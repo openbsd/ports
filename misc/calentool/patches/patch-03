@@ -1,0 +1,19 @@
+--- calencheck.c.orig	Wed Sep 30 11:45:30 1998
++++ calencheck.c	Wed Sep 30 11:46:30 1998
+@@ -53,7 +53,7 @@
+ int show_future = 1;
+ int one_based = 0, version2 = 0;
+ 
+-void
++int
+ main(argc,argv)
+ int argc;
+ char *argv[];
+@@ -129,6 +129,7 @@
+ 		sleep(TIME_OUT*60);
+ 		check_calendar();
+ 	}
++	return 0;
+ }
+ 
+ /* some stubs required by routines in common.c not used by calencheck */

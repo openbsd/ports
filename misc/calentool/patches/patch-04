@@ -1,0 +1,28 @@
+--- calentool.c.orig	Tue Sep 29 22:41:22 1998
++++ calentool.c	Wed Sep 30 11:36:45 1998
+@@ -221,7 +221,7 @@
+ void set_cms();
+ #endif
+ 
+-void main(argc,argv)
++int main(argc,argv)
+ int argc;
+ char *argv[];
+ {
+@@ -898,6 +898,7 @@
+ 	xv_main_loop(frame);
+ 
+ 	(void)leave((Notify_client)0, 0, (Notify_signal_mode)0);
++	return 0;
+ }
+              
+ 
+@@ -1017,7 +1018,7 @@
+ 	fputs("\n  ", stderr);
+ 	XGetErrorDatabaseText(mydisplay, "XlibMessage", "CurrentSerial",
+ 		"Current Serial #%d", error_mesg, 1024);
+-	fprintf(stderr, error_mesg, mydisplay->request);
++	fprintf(stderr, error_mesg, LastKnownRequestProcessed(mydisplay));
+ 	fputs("\n", stderr);
+ 
+ 	/** If we were debugging, this would be useful.... 

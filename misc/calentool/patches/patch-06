@@ -1,0 +1,11 @@
+--- ctexterns.h.orig	Tue Sep 29 22:38:23 1998
++++ ctexterns.h	Wed Sep 30 11:36:46 1998
+@@ -87,7 +87,7 @@
+ extern int length_of_year (int year);
+ extern void lock_cursors (void);
+ extern int monthlength (int month);
+-extern void moon_data (long int seconds);
++extern void moon_data (time_t seconds);
+ extern void moon_data_frame (void);
+ extern void next_appt (int bi, int dpyflag);
+ extern void nextmonth (void);

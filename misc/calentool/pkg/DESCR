@@ -1,0 +1,30 @@
+$Id: DESCR,v 1.1.1.1 1998/09/30 16:27:53 ian Exp $
+
+CALENTOOL - Version 2.3X
+
+Calentool is a day/week/month/year-at-glance tool for Workstations
+and X terminals.  The windowed display interface uses XView (2.0 or 3.0)
+and X11R4 or X11R5 to present an OPEN LOOK style user interface (including
+the Help key!). 
+
+One can view a single day's appointments and notes, a weeks worth (with
+abbreviated messages), a month at a time (with appointment flags) or a year
+at a time (with appointment flags).  Alternate appointment files can be
+specified to allow checking other users' schedules.
+
+Recurring appointments (e.g every Monday or every 1st & 3rd Tuesday),
+as well as a reminder of future appointments are available.
+
+Interesting information about the sun and moon is also available for viewing.
+
+See the man page for all the gory details.
+
+Conversion programs are supplied to convert from some of the other
+common calendar program appointment files to calentool's file format.
+
+
+	Bill Randle
+	Tektronix, Inc.
+	billr@saab.CNA.TEK.COM
+	August 29, 1994
+

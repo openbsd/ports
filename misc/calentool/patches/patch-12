@@ -1,0 +1,44 @@
+--- riseset.c.orig	Tue Sep 29 22:38:24 1998
++++ riseset.c	Wed Sep 30 11:36:47 1998
+@@ -48,7 +48,7 @@
+ extern char *daynames[], *monthnames[];
+ extern int day_first;
+ 
+-long	UTC, TDT, tim, tim2;
++time_t	UTC, TDT, tim, tim2;
+ double	Julian_Day, MJD, Tu, Ru, T70, Local, GMST, LST;
+ double	Eqt, Tua, L, G, e, eps, g, alpha, delta, sd, cd, lha, lhr, sh, ch;
+ double	la, lf, S, C, sp, cp, tp, Az, alt;
+@@ -287,7 +287,7 @@
+ 
+ struct tm *
+ sunrise(t0, rs, z)
+-	long t0;
++	time_t t0;
+ 	double rs, z;
+ {
+ 	double cz, dh;
+@@ -311,12 +311,12 @@
+ 
+ char *
+ moonrise(t0, rs, z)
+-	long t0;
++	time_t t0;
+ 	double rs, z;
+ {
+ #define SRATE	1.033863192	/* ratio of Moon's motion to Sun's motion */
+ 	double	cz, dh, sd, cd;
+-	long	t1, dt;
++	time_t	t1, dt;
+ 	struct tm *ltm;
+ 
+ 	moondata(t0);	/* get starting declination of Moon */
+@@ -522,7 +522,7 @@
+ 
+ /* time functions */
+ char *gmctime(t)
+-long *t;
++time_t *t;
+ {
+ 	return(asctime(gmtime(t)));
+ }

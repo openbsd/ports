@@ -1,0 +1,19 @@
+--- month2ct.c.orig	Wed Sep 30 11:46:49 1998
++++ month2ct.c	Wed Sep 30 11:46:57 1998
+@@ -43,7 +43,7 @@
+ void write_ct_file ();
+ #endif
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -66,6 +66,7 @@
+ 		exit(1);
+ 	}
+ 	write_ct_file();
++	return 0;
+ }
+ 
+ /*

@@ -1,0 +1,19 @@
+--- cal2ct.c.orig	Wed Sep 30 11:44:27 1998
++++ cal2ct.c	Wed Sep 30 11:45:06 1998
+@@ -71,7 +71,7 @@
+ #endif
+ #endif
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -136,6 +136,7 @@
+ 		exit(1);
+ 	}
+ 	write_ct_file();
++	return 0;
+ }
+ 
+ /*

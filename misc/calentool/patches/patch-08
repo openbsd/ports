@@ -1,0 +1,11 @@
+--- moon.c.orig	Tue Sep 29 22:38:23 1998
++++ moon.c	Wed Sep 30 11:36:47 1998
+@@ -359,7 +359,7 @@
+ 
+ void
+ moon_data(seconds)
+-long seconds;
++time_t seconds;
+ {
+ 	int		lunation;
+ 	int		i;
