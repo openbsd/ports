@@ -6,12 +6,11 @@
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) -Asystem(OpenBSD) -Amachine(hppa) -D__OpenBSD__ -D__hppa__ -D__hppa"
 
 #undef OVERRIDE_OPTIONS
-#define OVERRIDE_OPTIONS		\
-{										\
-	override_options();					\
-	if (! flag_pic)						\
-		/* portable-runtime + fast-indirect-calls */	\
-		target_flags |= 0x440;				\
+#define OVERRIDE_OPTIONS						 \
+{							                 \
+    override_options();					                 \
+    if (! flag_pic)						         \
+        target_flags |= MASK_PORTABLE_RUNTIME | MASK_FAST_INDIRECT_CALLS;\
 }
 	
 /* XXX why doesn't PA support -R  like everyone ??? */
