@@ -1,5 +1,6 @@
---- src/Imakefile.orig	Sat Nov 25 12:55:35 1995
-+++ src/Imakefile	Wed Apr 12 14:57:16 2000
+$OpenBSD: patch-aa,v 1.3 2000/06/02 16:30:43 espie Exp $
+--- src/Imakefile.orig	Sat Nov 25 18:55:35 1995
++++ src/Imakefile	Fri Jun  2 18:17:59 2000
 @@ -22,8 +22,8 @@
  # 4.) specify, if you want sound (must copy the appropriate sound module)
  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
@@ -11,17 +12,15 @@
  
  # 5.) specify, if you want the antialiased card construction set (SLOW!)
  #define USE_CARD_CONSTRUCTION
-@@ -37,13 +37,15 @@
+@@ -37,13 +37,13 @@ SOUNDOBJ = X-sound_SUN.o
  # BINDIR and LIBDIR should be predefined by the templates
  # BINDIR = /usr/bin/X11
  # LIBDIR = /usr/lib/X11
 -XPATLIBDIR = /usr/games/lib/xpat
-+BINDIR = /usr/local/bin
-+LIBDIR = /usr/local/lib/X11
 +XPATLIBDIR = $(LIBDIR)/xpat
  APPDEFSDIR = $(LIBDIR)
 -XPATMANDIR = /usr/man/man6
-+XPATMANDIR = $(PREFIX)/man/man6
++XPATMANDIR = $(MANPATH)/man6
  
  # This is the name of the log-file, where solved games are stored:
  # an alternative path would be $(XPATLIBDIR)/xpat.log
@@ -30,25 +29,53 @@
  
  
  # paths for installation in user's home-directory.
-@@ -53,7 +55,9 @@
+@@ -52,9 +52,10 @@ LXPATMANDIR = $(HOME)/xpat
+ LAPPDEFSDIR = $(HOME)
  
  # xpat2 needs to know where the xpm library resides (if needed)
- XPMLIB 			= -L$(USRLIBDIR) -lXpm
+-XPMLIB 			= -L$(USRLIBDIR) -lXpm
 -XPMINCLUDE		= -I $(INCDIR)
-+XPMINCLUDE		= -I$(INCDIR)/X11
-+
-+CFLAGS += -DNO_CUSERID
++XPMLIB 			= -L$(USRLIBDIR) -L/usr/X11R6/lib -lXpm
++XPMINCLUDE		= -I/usr/X11R6/include/X11
  
++CFLAGS += -DNO_CUSERID
  # *****************************************************************************
  # I hope you don't need to change anything below this point
-@@ -181,8 +185,8 @@
- 	    chmod 755 $(XPATLIBDIR)/$$f; \
+ # *****************************************************************************
+@@ -166,23 +167,23 @@ DEFINES =  $(LOAD_OPTION) $(HELP_OPTION)
+ all::	$(MYPROG)
+ 
+ install:: $(MYPROGS)
+-	mkdirhier $(XPATLIBDIR)
+-	chmod 755 $(XPATLIBDIR)
++	mkdirhier $(DESTDIR)$(XPATLIBDIR)
++	chmod 755 $(DESTDIR)$(XPATLIBDIR)
+ 	for f in $(LANGUAGES); do \
+-	  mkdirhier $(APPDEFSDIR)/$$f/app-defaults; \
+-	  cp ../lib/$$f/XPat $(APPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 755 $(APPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 644 $(APPDEFSDIR)/$$f/app-defaults/XPat; \
++	  mkdirhier $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  cp ../lib/$$f/XPat $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  chmod 755 $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  chmod 644 $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults/XPat; \
+ 	done 
+-	(cd ../lib; tar cf - * | (cd $(XPATLIBDIR); tar xf -))
+-	chown -R root $(XPATLIBDIR)
+-	chmod -R a+r $(XPATLIBDIR)
++	(cd ../lib; tar cf - * | (cd $(DESTDIR)$(XPATLIBDIR); tar xf -))
++	chown -R root $(DESTDIR)$(XPATLIBDIR)
++	chmod -R a+r $(DESTDIR)$(XPATLIBDIR)
+ 	for f in $(LANGUAGES); do \
+-	    chmod 755 $(XPATLIBDIR)/$$f; \
++	    chmod 755 $(DESTDIR)$(XPATLIBDIR)/$$f; \
  	done
- 	mkdirhier $(XPATMANDIR)
+-	mkdirhier $(XPATMANDIR)
 -	cp xpat2.man $(XPATMANDIR)/xpat2.6x
 -	chmod 644 $(XPATMANDIR)/xpat2.6x
-+	cp xpat2.man $(XPATMANDIR)/xpat2.6
-+	chmod 644 $(XPATMANDIR)/xpat2.6
++	mkdirhier $(DESTDIR)$(XPATMANDIR)
++	cp xpat2.man $(DESTDIR)$(XPATMANDIR)/xpat2.6
++	chmod 644 $(DESTDIR)$(XPATMANDIR)/xpat2.6
  
  ComplexProgramTarget($(MYPROG))
  InstallAppDefaults(XPat)
