@@ -1,0 +1,20 @@
+$OpenBSD: patch-sqlanalyze_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+--- sqlanalyze.c~	Fri Aug 23 00:58:11 2002
++++ sqlanalyze.c	Fri Aug 23 00:58:39 2002
+@@ -23,7 +23,6 @@
+ #include "constants.h"
+ #include "sqlanlz.h"
+ #include "html.h"
+-#include <getopt.h>
+ 
+ /*
+   Set a few default values
+@@ -56,7 +55,7 @@ void doHaxxor(TDSLOGIN *pLogin) {
+   time_t t;
+ 
+   /* connect to the SQL server */
+-  if( (pTds = tds_connect(pLogin)) !=NULL ) {
++  if( (pTds = tds_connect(pLogin, NULL)) !=NULL ) {
+ 
+     time(&t);
+ 

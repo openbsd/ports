@@ -1,0 +1,20 @@
+$OpenBSD: patch-sqldirtree_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+--- sqldirtree.c~	Fri Aug 23 01:01:59 2002
++++ sqldirtree.c	Fri Aug 23 01:02:18 2002
+@@ -22,7 +22,6 @@
+ #include "util.h"
+ #include "constants.h"
+ #include "sqldumplogins.h"
+-#include <getopt.h>
+ 
+ void usage(char **argv) {
+ 
+@@ -65,7 +64,7 @@ void doDirTree(TDSLOGIN *pLogin, char *p
+   TDSSOCKET *pTds = NULL;
+ 
+   /* connect to the SQL server */
+-  if( (pTds = tds_connect(pLogin)) !=NULL ) {
++  if( (pTds = tds_connect(pLogin, NULL)) !=NULL ) {
+     fprintf(stderr, "SQLDumpLogins %s by <patrik.karlsson@ixsecurity.com>\n",
+ 	    SQLTOOLS_VERSION);
+     fprintf(stderr, "----------------------------------------------------" \

@@ -1,0 +1,18 @@
+SQLAT is a suite of tools which could be useful for pentesting
+a MS SQL Server. The tools are still in development but tend to
+be quite stable.
+
+The tools do dictionary attacks, upload files, read registry and
+dump the SAM. They do this by wrapping extended stored procedures.
+There is also a tool for doing a minimal analysis of a SQL Server
+with output as HTML. You need to be 'sa' to run some of the tools,
+but this usually isn't a problem.
+
+The tool temporarily restores the xp_cmdshell if it is removed and
+the dll is still left on the system.
+
+SQLAT works over port 1433, it doesn't do named pipes. It doesn't
+do integrated security either. This is because it is based on the
+FreeTDS driver from www.freetds.org.
+
+WWW: ${HOMEPAGE}

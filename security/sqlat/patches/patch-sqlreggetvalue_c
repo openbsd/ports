@@ -1,0 +1,20 @@
+$OpenBSD: patch-sqlreggetvalue_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+--- sqlreggetvalue.c~	Fri Aug 23 01:08:31 2002
++++ sqlreggetvalue.c	Fri Aug 23 01:08:46 2002
+@@ -22,7 +22,6 @@
+ #include "util.h"
+ #include "constants.h"
+ #include "sqldumplogins.h"
+-#include <getopt.h>
+ 
+ void usage(char **argv) {
+ 
+@@ -66,7 +65,7 @@ void doRegGetValue(TDSLOGIN *pLogin, cha
+   TDSSOCKET *pTds = NULL;
+ 
+   /* connect to the SQL server */
+-  if( (pTds = tds_connect(pLogin)) !=NULL ) {
++  if( (pTds = tds_connect(pLogin, NULL)) !=NULL ) {
+     fprintf(stderr, "SQLRegGetValue %s by <patrik.karlsson@ixsecurity.com>\n",
+ 	    SQLTOOLS_VERSION);
+     fprintf(stderr, "----------------------------------------------------" \

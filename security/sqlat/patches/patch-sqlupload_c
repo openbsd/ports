@@ -1,0 +1,20 @@
+$OpenBSD: patch-sqlupload_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+--- sqlupload.c~	Fri Aug 23 01:10:24 2002
++++ sqlupload.c	Fri Aug 23 01:10:40 2002
+@@ -22,7 +22,6 @@
+ #include "sqllib.h"
+ #include "util.h"
+ #include "constants.h"
+-#include <getopt.h>
+ 
+ /*
+   Set a few default values
+@@ -104,7 +103,7 @@ int SQLUpload(struct args_struct args) {
+     printf("-- Logging in to %s --\n", args.sIP);
+ 
+   /* try to login */
+-  if( (tds = tds_connect(login)) !=NULL ) {
++  if( (tds = tds_connect(login, NULL)) !=NULL ) {
+ 
+     /* check for xp_cmdshell */
+     if ( !ifExistsXP(tds, "xp_cmdshell") ) {

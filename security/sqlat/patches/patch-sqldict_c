@@ -1,0 +1,20 @@
+$OpenBSD: patch-sqldict_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+--- sqldict.c~	Fri Aug 23 01:00:07 2002
++++ sqldict.c	Fri Aug 23 01:01:10 2002
+@@ -21,7 +21,6 @@
+ #include "sqldict.h"
+ #include "constants.h"
+ #include "util.h"
+-#include <getopt.h>
+ 
+ /*
+   Set a few default values
+@@ -101,7 +100,7 @@ int doHack(const ARGS *pArgs) {
+ 	tds_set_passwd(login, pass);
+         tds_set_user(login, user);
+       
+-	if( (tds = tds_connect(login)) !=NULL ) {
++	if( (tds = tds_connect(login, NULL)) !=NULL ) {
+ 	  fprintf(stdout, "IP: %-15s User: %-14s Pass: %-14s\n", 
+ 		  ip, user, pass);
+ 	  
