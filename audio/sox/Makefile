@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/10/27 14:02:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2001/12/31 09:45:55 espie Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
 DISTNAME=	sox-12.17.2
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.504
 HOMEPAGE=	http://sox.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	sox
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=Yes
 CONFIGURE_ARGS=	--enable-fast-alaw --enable-fast-ulaw \
 		--without-sun_audio
 
