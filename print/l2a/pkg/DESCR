@@ -1,0 +1,5 @@
+L2A is a filter to ``detexify'' texts.  That is, it attempts to remove
+LaTeX markup commands, leaving only the body of text.  It is intended to
+be used when journal editors request plain ASCII text for typesetting, or
+when you want to post a plain version of a LaTeX document on an electronic
+conference system.
