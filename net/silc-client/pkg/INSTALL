@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/01/16 21:22:34 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/05/16 09:05:38 mark Exp $
 
 # exit on errors, use a sane path and install prefix
 #
@@ -7,7 +7,8 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/silc
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/silc-client
+SAMPLE_CONFIG_DIR=$PREFIX/share/doc/silc
+THEME_DIR=$PREFIX/share/silc/themes
 
 do_notice_conf()
 {
@@ -24,9 +25,8 @@ do_notice_conf()
 do_install_conf()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/config $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/default.theme $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/silc.conf $CONFIG_DIR
+    install -o root -g wheel -m 644 $THEME_DIR/default.theme $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/silc.conf.default $CONFIG_DIR/silc.conf
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed in $CONFIG_DIR."

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/09 02:24:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/16 09:05:38 mark Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
-DISTNAME=	silc-client-0.7.6
+DISTNAME=	silc-client-0.8.6
 CATEGORIES=	net
-NEED_VERSION=	1.504
+NEED_VERSION=	1.507
 HOMEPAGE=	http://www.silcnet.org/
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
@@ -25,14 +25,27 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 
 LIB_DEPENDS=    glib.1.2,gmodule.1.2::devel/glib
 
+USE_LIBTOOL=            yes
+
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-helpdir=${PREFIX}/share/silc/help \
 		--with-docdir=${PREFIX}/share/doc/silc \
 		--with-etcdir=${SYSCONFDIR}/silc \
+		--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl \
+		--enable-ipv6 \
 		--disable-asm
+
+# If you want to help with testing silc-client, uncomment this
+# and subscribe to silc-devel at lists.sourceforge.net
+#
+#CONFIGURE_ARGS+=       --enable-debug
+
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		silc_etcdir=${PREFIX}/share/examples/silc-client
+		silc_etcdir=${PREFIX}/share/examples/silc-client \
+		${INSTALLARCHLIB}=${WRKINST}/${INSTALLARCHLIB}
+
 
 .include <bsd.port.mk>
