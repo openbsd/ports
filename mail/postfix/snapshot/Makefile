@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/05 21:13:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/05 21:16:50 jakob Exp $
 
 DISTNAME=	snapshot-20001005
 PKGNAME=	postfix-${DISTNAME}
@@ -18,8 +18,8 @@ MAKE_AUXLIBS+=	-L${PREFIX}/lib -lpcre
 .if ${FLAVOR:L:Msasl}
 LIB_DEPENDS+=	sasl::security/cyrus-sasl
 
-MAKE_CCARGS+=	-DUSE_SASL_AUTH -I${PREFIX}/include/sasl
-MAKE_AUXLIBS+=	-lsasl -lkrb
+MAKE_CCARGS+=	-I${PREFIX}/include -I${PREFIX}/include/sasl -DUSE_SASL_AUTH 
+MAKE_AUXLIBS+=	-L${PREFIX}/lib -lsasl -lkrb
 .endif
 
 .include <bsd.port.mk>
