@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_GD_Graph3d_pm,v 1.1 2001/01/08 23:16:00 avsm Exp $
+--- lib/GD/Graph3d.pm.orig	Mon Oct  9 18:00:25 2000
++++ lib/GD/Graph3d.pm	Mon Jan  8 22:51:24 2001
+@@ -22,12 +22,12 @@ GD::Graph3D - Create 3D Graphs with GD a
+ 	   ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+ 	   [ 1203,  3500,  3973,  2859,  3012,  3423,  1230]
+ 	);
++	$graph = GD::Graph::moduleName->new( 400, 300 );
+ 	$graph->set( 
+ 		x_label           => 'Day of the week',
+ 		y_label           => 'Number of hits',
+ 		title             => 'Daily Summary of Web Site',
+ 	);
+-	$graph = GD::Graph::moduleName->new( 400, 300 );
+ 	my $gd = $graph->plot( \@data );
+ 
+ Where I<moduleName> is one of C<bars3d>, C<lines3d> or C<pie3d>. 
+@@ -78,7 +78,7 @@ each other, that is the series are stack
+ 
+ By default this is set to '1' and will shade and highlight the bars (and axes).
+ The light source is at top-left-center which scan well for most computer 
+-users. You can disable the shading of bars and axes by specifiying a false 
++users. You can disable the shading of bars and axes by specifying a false 
+ value for this option.
+ 
+ =back
+@@ -110,7 +110,7 @@ value for this option.
+ 
+ =head1 VERSION
+ 
+-0.54 (Septemnber 4, 2000)
++0.55 (October 9, 2000)
+ 
+ =head1 INSTALLATION
+ 
