@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/01/06 16:36:20 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/05 03:51:27 brad Exp $
 
 DISTNAME=	libPropList-0.9.1
 PKGNAME=	libproplist-0.9.1	
@@ -10,14 +10,14 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
 
+USE_GMAKE=	yes
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-USE_GMAKE=	yes
 
 post-install:
-	@mkdir -p ${PREFIX}/share/doc/libproplist
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libproplist
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libproplist
 
 .include <bsd.port.mk>
