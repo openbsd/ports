@@ -1,0 +1,37 @@
+bin/socks5
+bin/runsocks
+bin/stopsocks
+bin/rarchie
+bin/rfinger
+bin/rftp
+bin/rping
+bin/rtelnet
+bin/rtraceroute
+bin/rwhois
+include/socks.h
+man/man1/socks5.1
+man/man1/runsocks.1
+man/man1/stopsocks.1
+man/man1/socks5_clients.1
+man/man5/libsocks5.conf.5
+man/man5/socks5.conf.5
+man/man5/socks5.passwd.5
+lib/libsocks5.a
+@exec ranlib -m %D/lib/libsocks5.a
+lib/libsocks5_sh.so
+@exec /sbin/ldconfig -m %D/lib
+lib/socks/README
+lib/socks/multiple_server.example
+lib/socks/server_2_multiple_server.example
+lib/socks/single_homed_host.example
+lib/socks/socks5.conf.dualhomed
+lib/socks/socks5.conf.gssapi
+lib/socks/socks5.conf.multipleservers
+lib/socks/socks5.conf.server2server
+lib/socks/socks5.conf.singlehomed
+@dirrm lib/socks
+share/doc/socks/rfc1928.txt
+share/doc/socks/rfc1929.txt
+share/doc/socks/rfc1961.txt
+share/doc/socks/socks.faq
+@dirrm share/doc/socks
