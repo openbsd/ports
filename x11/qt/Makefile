@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2002/05/26 19:04:00 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -10,7 +10,7 @@ DISTNAME=	qt-${VERSION}
 PKGNAME-examples=qt-examples-${VERSION}
 PKGNAME-html=	qt-html-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+NEED_VERSION=	1.525
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
@@ -77,7 +77,7 @@ VMEM_WARNING=	Yes
 
 post-build:
 	@cd ${IMAGEIODIR} && \
-		${SETENV} ${MAKE_ENV} SYS_CXXFLAGS='-I$(LOCALBASE)/include ${CXXFLAGS}' ${MAKE} ${MAKE_FLAGS}
+		${SETENV} ${MAKE_ENV} SYS_CXXFLAGS='-I$(LOCALBASE)/include/libpng -I$(LOCALBASE)/include ${CXXFLAGS}' ${MAKE} ${MAKE_FLAGS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}

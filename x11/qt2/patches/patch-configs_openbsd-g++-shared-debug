@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared-debug.orig	Mon Oct 29 15:24:05 2001
-+++ configs/openbsd-g++-shared-debug	Sat Dec 22 11:42:24 2001
+--- configs/openbsd-g++-shared-debug.orig	Sun Apr 21 12:45:43 2002
++++ configs/openbsd-g++-shared-debug	Sun Apr 21 13:35:49 2002
 @@ -1,11 +1,11 @@
  # Compiling
  INTERFACE_DECL_PATH 	= .
@@ -11,7 +11,7 @@
  
  # Compiling with support libraries
 -SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include -I/usr/local/include
++SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include -I/usr/local/include/libpng -I/usr/local/include
  SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
  SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
  
