@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/15 05:26:58 margarida Exp $
+# $OpenBSD: Makefile,v 1.14 2004/03/03 08:55:28 pvalchev Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
@@ -24,10 +24,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	OPSYS_VER VERSION
-
-.if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=	-O0
-.endif
 
 .if ${MACHINE_ARCH:Mpowerpc}
 PATCH_LIST=	gcc-* patch-*
