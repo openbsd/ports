@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/17 00:52:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/05 22:22:49 jcs Exp $
 
 DISTNAME=	gkrellm-1.2.13
 PKGNAME=	${DISTNAME}p2
@@ -9,6 +9,7 @@ CATEGORIES=	sysutils
 
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		ftp://rt.fm/pub/gkrellm/
+EXTRACT_SUFX=	.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
