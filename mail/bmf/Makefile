@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/01 17:38:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/29 12:56:57 lebel Exp $
 
 COMMENT=		"easy to use bayesonian spam filter"
 DISTNAME=		bmf-0.9.4
@@ -17,11 +17,24 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bmf/}
 
 CONFIGURE_STYLE=	simple
 
+FLAVORS=		mysql
+FLAVOR?=
+
+.if ${FLAVOR:L:Mmysql}
+LIB_DEPENDS+=		:mysql-client-*:databases/mysql
+CONFIGURE_ARGS=		--without-libdb --with-mysql="${LOCALBASE}"
+CFLAGS+=		"-I${LOCALBASE}/include/mysql"
+.else
+CONFIGURE_ARGS=		--without-mysql --with-libdb
+.endif
+
+
+MAKE_ENV=		CC="${CC}"
 INSTALL_TARGET=		MANDIR=${PREFIX}/man \
 			BINDIR=${PREFIX}/bin \
 			install
 
-MAKE_ENV=		CC="${CC}"
+
 DOCS=			README ${FILESDIR}/OpenBSD-bmf-mini-howto.html
 
 NO_REGRESS=		Yes
@@ -32,3 +45,4 @@ post-install:
 
 
 .include <bsd.port.mk>
+
