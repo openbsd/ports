@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/03/17 17:07:11 naddy Exp $
---- configure.in.orig	Sat Mar 17 16:50:29 2001
-+++ configure.in	Sat Mar 17 16:52:47 2001
-@@ -67,7 +67,7 @@ dnl ------------------------------------
+$OpenBSD: patch-configure_in,v 1.2 2001/03/19 00:19:44 naddy Exp $
+--- configure.in.orig	Mon Feb 26 06:51:00 2001
++++ configure.in	Sun Mar 18 23:21:51 2001
+@@ -56,6 +56,7 @@ dnl ------------------------------------
+ dnl Check for libraries
+ dnl --------------------------------------------------
+ 
++AC_SEARCH_LIBS(dlopen, dl)
+ AM_PATH_OGG(,AC_MSG_ERROR(Ogg needed!))
+ AM_PATH_VORBIS(,AC_MSG_ERROR(Vorbis needed!))
+ AM_PATH_AO(,AC_MSG_ERROR(libao needed!))
+@@ -67,7 +68,7 @@ dnl ------------------------------------
  dnl Check for library functions
  dnl --------------------------------------------------
  

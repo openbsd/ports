@@ -1,0 +1,8 @@
+$OpenBSD: patch-ogg123_ogg123rc-example,v 1.1 2001/03/19 00:19:44 naddy Exp $
+--- ogg123/ogg123rc-example.orig	Mon Mar 19 01:09:42 2001
++++ ogg123/ogg123rc-example	Mon Mar 19 01:09:59 2001
+@@ -1,3 +1,3 @@
+ # Copy this to ~/.ogg123rc and edit as necessary. The current
+ # parser cannot handle comments, so remove these lines also.
+-default_device=oss
++default_device=sun
