@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2003/09/29 05:41:37 pvalchev Exp $
---- src/Makefile.in.orig	2003-08-30 21:13:19.000000000 +0200
-+++ src/Makefile.in	2003-09-21 14:43:28.000000000 +0200
-@@ -140,7 +140,7 @@ DIST_SUBDIRS = $(CORE_SUBDIRS) $(EXTRA_S
- lib_LTLIBRARIES = libSDL.la
- 
+$OpenBSD: patch-src_Makefile_in,v 1.7 2004/10/25 02:34:21 pvalchev Exp $
+--- src/Makefile.in.orig	Mon Sep 27 12:29:59 2004
++++ src/Makefile.in	Mon Sep 27 12:31:03 2004
+@@ -300,7 +300,6 @@ lib_LTLIBRARIES = libSDL.la
  libSDL_la_SOURCES = $(GENERAL_SRCS)
--libSDL_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libSDL_la_LDFLAGS = \
+ 	-no-undefined		\
+-        -release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- libSDL_la_LIBADD =  	main/libarch.la			@SDL_EXTRALIBS@			@SYSTEM_LIBS@
- 
+ libSDL_la_LIBADD = \

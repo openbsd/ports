@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2004/04/23 12:09:18 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2004/10/25 02:34:21 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.6
+VERSION=	1.2.7
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -26,6 +26,7 @@ MASTER_SITES0=	http://dev.beastie.hu/ \
 FLAVORS=	sun esd arts aa caca no_x11
 FLAVOR?=	sun
 
+AUTOCONF_VERSION=	2.59
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
@@ -41,7 +42,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 USE_GCC3?=No
 # XXX gcc 3/nasm issue.
 .if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc" && ${USE_GCC3:L} != "yes")
-BUILD_DEPENDS=	nasm::devel/nasm
+BUILD_DEPENDS+=	nasm::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
 CONFIGURE_ARGS+= --disable-nasm
@@ -90,6 +91,6 @@ USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 2:0:0"
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 3:0:0"
 
 .include <bsd.port.mk>
