@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/26 10:06:29 espie Exp $
+bin/tor
+bin/tor-resolve
+bin/torify
+@man man/man1/tor-resolve.1
+@man man/man1/tor.1
+@man man/man1/torify.1
+share/examples/tor/
+@sample ${SYSCONFDIR}/tor/
+share/examples/tor/dirservers
+@sample ${SYSCONFDIR}/tor/dirservers
+share/examples/tor/tor-tsocks.conf
+@sample ${SYSCONFDIR}/tor/tor-tsocks.conf
+share/examples/tor/torrc.sample
+@sample ${SYSCONFDIR}/tor/torrc
