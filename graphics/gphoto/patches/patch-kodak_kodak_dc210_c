@@ -1,0 +1,20 @@
+$OpenBSD: patch-kodak_kodak_dc210_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
+--- kodak/kodak_dc210.c.orig	2004-05-15 19:24:09.000000000 +0200
++++ kodak/kodak_dc210.c	2004-05-15 19:24:35.000000000 +0200
+@@ -789,11 +789,11 @@ char *kodak_dc210_summary() 
+ char *kodak_dc210_description() 
+ {
+ 
+-  return("Enhanced Kodak DC210 support
+-by TimeCop <timecop@japan.co.jp>
+-http://www.ne.jp/asahi/linux/timecop
+-based on original code
+-by Brian Hirt <bhirt@mobygames.com> 
++  return("Enhanced Kodak DC210 support\n\
++by TimeCop <timecop@japan.co.jp>\n\
++http://www.ne.jp/asahi/linux/timecop\n\
++based on original code\n\
++by Brian Hirt <bhirt@mobygames.com> \n\
+ http://www.mobygames.com");
+ 
+ }

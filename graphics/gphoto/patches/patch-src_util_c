@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
+--- src/util.c.orig	2004-05-15 19:51:40.000000000 +0200
++++ src/util.c	2004-05-15 19:51:53.000000000 +0200
+@@ -257,7 +257,7 @@ void save_image (char *filename, struct 
+ 	else
+ 	{
+ 		snprintf(errormsg,1024,
+-"The image couldn't be saved to %s because of the following error: 
++"The image couldn't be saved to %s because of the following error: \n\
+  %s",filename,sys_errlist[errno]);
+ 		error_dialog(errormsg);
+ 	}

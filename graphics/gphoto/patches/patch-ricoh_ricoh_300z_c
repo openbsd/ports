@@ -1,0 +1,22 @@
+$OpenBSD: patch-ricoh_ricoh_300z_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
+--- ricoh/ricoh_300z.c.orig	2004-05-15 19:28:40.000000000 +0200
++++ ricoh/ricoh_300z.c	2004-05-15 19:29:10.000000000 +0200
+@@ -914,12 +914,12 @@ char *ricoh_300z_summary() {
+ char *ricoh_300z_description() {
+ 
+ 	return(
+-"Ricoh 300Z
+-Clifford Wright <cliff@snipe444.org>
+-
+-*The Ricoh 300Z does not support thumbnail
+-previewing, so the thumbnails that appear
+-are place holders until the actual images
++"Ricoh 300Z\n\
++Clifford Wright <cliff@snipe444.org>\n\
++\n\
++*The Ricoh 300Z does not support thumbnail\n\
++previewing, so the thumbnails that appear\n\
++are place holders until the actual images\n\
+ are downloaded.");
+ }
+ 

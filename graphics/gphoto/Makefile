@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/05/15 18:37:53 naddy Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
@@ -18,5 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS='-DDOCDIR="${PREFIX}/share/doc/gphoto"'
+
+post-extract:
+	@perl -pi -e 's/\r$$//' ${WRKSRC}/sony/command.c
 
 .include <bsd.port.mk>

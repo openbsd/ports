@@ -1,0 +1,18 @@
+$OpenBSD: patch-sony_command_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
+--- sony/command.c.orig	2004-05-15 19:42:32.000000000 +0200
++++ sony/command.c	2004-05-15 19:42:54.000000000 +0200
+@@ -288,11 +288,11 @@ char* return_buf;
+       break;
+     }
+     sprintf(tmp_buf, "Total Pictures: %02d\n", pic_num);
+-    strcat(status_buf, tmp_buf, sizeof(tmp_buf));
++    strlcat(status_buf, tmp_buf, sizeof(tmp_buf));
+     sprintf(tmp_buf, "Date: %02d/%02d/%02d\n", month, date, year);
+-    strcat(status_buf, tmp_buf, sizeof(tmp_buf));
++    strlcat(status_buf, tmp_buf, sizeof(tmp_buf));
+     sprintf(tmp_buf, "Time: %02d:%02d\n",hour, minutes);
+-    strcat(status_buf, tmp_buf, sizeof(tmp_buf));
++    strlcat(status_buf, tmp_buf, sizeof(tmp_buf));
+   }
+   /* return (buf[2]);	ok*/
+     strcpy(return_buf, status_buf);

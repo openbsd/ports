@@ -1,6 +1,7 @@
---- sony/dscf55/Makefile.in.orig	Fri Apr  6 18:14:15 2001
-+++ sony/dscf55/Makefile.in	Fri Apr  6 18:14:47 2001
-@@ -93,7 +93,7 @@
+$OpenBSD: patch-sony_dscf55_Makefile.in,v 1.2 2004/05/15 18:37:53 naddy Exp $
+--- sony/dscf55/Makefile.in.orig	2000-03-06 23:07:07.000000000 +0100
++++ sony/dscf55/Makefile.in	2004-05-14 10:42:56.000000000 +0200
+@@ -93,7 +93,7 @@ bin_PROGRAMS = rsony
  rsony_SOURCES = 
  rsony_LDADD = srsony.o config.o serio.o
  
