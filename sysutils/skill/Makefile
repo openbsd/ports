@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/10 09:24:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/17 19:50:48 pvalchev Exp $
 
 COMMENT=	"signal or reprioritize specified processes"
 
 VERSION=		4.1
 DISTNAME=		skill-${VERSION}
-PKGNAME=		skill-${VERSION}p1
+PKGNAME=		skill-${VERSION}p2
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
@@ -23,11 +23,9 @@ do-configure:
 	@cd ${WRKDIST}; ./Config
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/skill ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/skill ${PREFIX}/bin
 	@ln -f ${PREFIX}/bin/skill ${PREFIX}/bin/snice
-	@${INSTALL_MAN} ${WRKSRC}/skill.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/skill.1 ${PREFIX}/man/man1
 	@ln -f ${PREFIX}/man/man1/skill.1 ${PREFIX}/man/man1/snice.1
-	@${CHOWN} root:kmem ${PREFIX}/bin/skill
-	@${CHMOD} 2555 ${PREFIX}/bin/skill
 
 .include <bsd.port.mk>
