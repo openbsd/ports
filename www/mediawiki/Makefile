@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 08:13:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/23 03:19:40 kevlo Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
@@ -26,8 +26,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/mediawiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php4-mysql->=4.3.1:www/php4/extensions,-mysql \
-		:php4-gd->=4.3.10:www/php4/extensions,-gd
+RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
+		:php5-gd-*:www/php5/extensions,-gd
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
