@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/01 02:28:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/07/01 02:34:36 pvalchev Exp $
+
+NOT_FOR_ARCHS=	vax m68k hppa
 
 COMMENT=	"redesign of Mozilla's browser component"
 
