@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/22 22:44:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/11/14 23:47:01 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
-VERSION=	5.0.0
-DISTNAME=	t1lib-${VERSION}
+DISTNAME=	t1lib-5.0.0
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/graphics/}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,12 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCH_LIST=	gcc-patch-* patch-*
 .endif
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/ac-tools
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
 
 NO_REGRESS=	Yes
 

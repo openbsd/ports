@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/28 01:03:00 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/11/14 23:47:02 brad Exp $
 bin/type1afm
-bin/xglyph
+@comment bin/xglyph
 include/t1lib.h
 include/t1libx.h
 lib/libt1.a
