@@ -1,0 +1,12 @@
+$OpenBSD: patch-callback_vacall_r_vacall-sparc64_S,v 1.1 2004/01/16 22:01:45 naddy Exp $
+--- callback/vacall_r/vacall-sparc64.S.orig	2004-01-16 22:47:29.000000000 +0100
++++ callback/vacall_r/vacall-sparc64.S	2004-01-16 22:47:53.000000000 +0100
+@@ -4,6 +4,8 @@
+ .section	".text"
+ 	.align 4
+ 	.global __vacall_r
++	.register %g2, #scratch
++	.register %g3, #scratch
+ 	DECLARE_FUNCTION(__vacall_r)
+ 	.type	 __vacall_r,$function
+ 	.proc	020
