@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/30 19:30:44 margarida Exp $
 
 COMMENT=	"module to calculate SHA1 digests"
 
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/15 03:13:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2002/11/30 19:30:44 margarida Exp $
 
 COMMENT=	"text utilities for use with GD drawing package"
 
@@ -19,7 +19,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

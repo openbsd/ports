@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/19 06:22:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2002/11/30 19:30:44 margarida Exp $
 
 COMMENT=	"module for easy date and time manipulation"
 
@@ -18,7 +18,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/18 06:17:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/30 19:30:44 margarida Exp $
 
 COMMENT=	"module for access to network card configuration information"
 
@@ -16,7 +16,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IO/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

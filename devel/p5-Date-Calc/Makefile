@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/29 02:16:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2002/11/30 19:30:44 margarida Exp $
 
 COMMENT=	"date calculations for the Gregorian calendar"
 
@@ -18,7 +18,5 @@ BUILD_DEPENDS=	:p5-Bit-Vector->=6.2:math/p5-Bit-Vector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
