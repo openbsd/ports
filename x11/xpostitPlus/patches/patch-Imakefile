@@ -1,0 +1,31 @@
+$OpenBSD: patch-Imakefile,v 1.1 2003/06/20 00:14:51 fgsch Exp $
+--- Imakefile.orig	Tue Sep 10 00:36:09 1996
++++ Imakefile	Thu Jun 19 21:04:32 2003
+@@ -23,8 +23,8 @@ XCOMM Ported to X11 Release 4.  Added ap
+ XCOMM 
+ XCOMM
+ 
+-BINDIR=bin-d
+-MANDIR=man-d
++XCOMM BINDIR=bin-d
++XCOMM MANDIR=man-d
+ 
+ XCOMM The following defines are used for various things.  If you find you
+ XCOMM have a need for more than one of them, just create a single DEFINES
+@@ -35,14 +35,14 @@ XCOMM or you use one which won't provide
+ XCOMM DEFINES = -DNOWM
+ 
+ XCOMM for debugging purposes
+-DEFINES = -g -Wall
++DEFINES = -Wall
+ 
+ XCOMM uncomment the following if you still use <sys/dir.h> instead of <dirent.h>
+ XCOMM DEFINES = -DUSE_DIR
+ 
+ XCOMM uncomment the following if you want to be prompted on exit for saving
+ XCOMM notes if you haven't specified to save-on-exit on the command line.
+-XCOMM DEFINES = -DPROMPT_FOR_SAVE
++DEFINES = -DPROMPT_FOR_SAVE
+ 
+ XCOMM uncomment the following if your SYSV system doesn't support bcopy(),
+ XCOMM bzero(), or rindex()

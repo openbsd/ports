@@ -1,0 +1,110 @@
+$OpenBSD: patch-insert_c,v 1.1 2003/06/20 00:14:51 fgsch Exp $
+--- insert.c.orig	Thu Jun 19 21:01:53 2003
++++ insert.c	Thu Jun 19 21:03:39 2003
+@@ -261,7 +261,6 @@ Widget w;
+ 	time_t		time_tp;
+ 	struct tm	*tm_tp;
+ 	char			dayname[12];
+-	char			year[5];
+ 	char			month[10];
+ 
+ 	/* get todays date and current time */
+@@ -297,78 +296,78 @@ Widget w;
+ 		case 10: sprintf(month, "Nov"); break;
+ 		case 11: sprintf(month, "Dec"); break;
+ 	}
+-	if ( tm_tp->tm_year > 100 )
+-		sprintf(year,"20");
+-	else
+-		sprintf(year,"19");
+ 
+ 	switch (active_item)
+ 	{
+ 		case 0:
+ 			sprintf (cmd, 
+-				"%02d/%02d/%02d", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
++				"%02d/%02d/%02d", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
+ 			break;
+ 
+ 		case 1:
+ 			sprintf (cmd, 
+-				"<%02d/%02d/%02d>", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
++				"<%02d/%02d/%02d>", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
+ 			break;
+ 
+ 		case 2:
+ 			sprintf (cmd, 
+-				"(%02d/%02d/%02d)", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
++				"(%02d/%02d/%02d)", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
+ 			break;
+ 
+ 		case 3:
+ 			sprintf (cmd, 
+ 				"%02d/%02d/%02d - %02d:%02d", 
+-				tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year, 
++				tm_tp->tm_mon, tm_tp->tm_mday,
++				tm_tp->tm_year % 100, 
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
+ 		case 4:
+ 			sprintf (cmd, 
+ 				"%02d/%02d/%02d(%02d:%02d)", 
+-				tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year, 
++				tm_tp->tm_mon, tm_tp->tm_mday,
++				tm_tp->tm_year % 100, 
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
+ 		case 5:
+ 			sprintf (cmd, 
+-				"%s %d, %s%d", month, tm_tp->tm_mday, year, tm_tp->tm_year);
++				"%s %d, %d", month, tm_tp->tm_mday, tm_tp->tm_year + 1900);
+ 			break;
+ 
+ 		case 6:
+ 			sprintf (cmd, 
+-				"%s %d, %s%d - %02d:%02d", 
+-				month, tm_tp->tm_mday, year, tm_tp->tm_year,
++				"%s %d, %d - %02d:%02d", 
++				month, tm_tp->tm_mday, tm_tp->tm_year + 1900,
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
+ 		case 7:
+ 			sprintf (cmd, 
+-				"%s %d, %s%d (%02d:%02d)", 
+-				month, tm_tp->tm_mday, year, tm_tp->tm_year,
++				"%s %d, %d (%02d:%02d)", 
++				month, tm_tp->tm_mday, tm_tp->tm_year + 1900,
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
+ 		case 8:
+ 			sprintf (cmd, 
+-				"%s %s %d, %s%d", 
+-				dayname, month, tm_tp->tm_mday, year, tm_tp->tm_year);
++				"%s %s %d, %d", 
++				dayname, month, tm_tp->tm_mday, tm_tp->tm_year + 1900);
+ 			break;
+ 
+ 		case 9:
+ 			sprintf (cmd, 
+-				"%s %s %d, %s%d - %02d:%02d", 
+-				dayname, month, tm_tp->tm_mday, year, tm_tp->tm_year,
++				"%s %s %d, %d - %02d:%02d", 
++				dayname, month, tm_tp->tm_mday,
++				tm_tp->tm_year + 1900,
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
+ 		case 10:
+ 			sprintf (cmd, 
+-				"%s %s %d, %s%d (%02d:%02d)", 
+-				dayname, month, tm_tp->tm_mday, year, tm_tp->tm_year,
++				"%s %s %d, %d (%02d:%02d)", 
++				dayname, month, tm_tp->tm_mday,
++				tm_tp->tm_year + 1900,
+ 				tm_tp->tm_hour, tm_tp->tm_min );
+ 			break;
+ 
