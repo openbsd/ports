@@ -1,0 +1,28 @@
+$OpenBSD: patch-vfs_sfs_c,v 1.1 2005/02/17 21:59:11 robert Exp $
+--- vfs/sfs.c.orig	Thu Feb 17 22:29:12 2005
++++ vfs/sfs.c	Thu Feb 17 22:31:11 2005
+@@ -343,13 +343,14 @@
+ 	    }
+ 
+ 	if (!semi){
++invalid_line:
+ 	    fprintf (stderr, _("Warning: Invalid line in %s:\n%s\n"),
+ 		     "sfs.ini", key);
+ 	    continue;
+ 	}
+ 
+ 	c = semi + 1;
+-	while ((*c != ' ') && (*c != '\t')) {
++	while (*c && (*c != ' ') && (*c != '\t')) {
+ 	    switch (*c) {
+ 	    case '1': flags |= F_1; break;
+ 	    case '2': flags |= F_2; break;
+@@ -360,6 +361,8 @@
+ 	    }	    
+ 	    c++;
+ 	}
++	if (!*c)
++	    goto invalid_line;
+ 	c++;
+ 	*(semi+1) = 0;
+ 	if ((semi = strchr (c, '\n')))

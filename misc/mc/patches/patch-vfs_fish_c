@@ -1,0 +1,12 @@
+$OpenBSD: patch-vfs_fish_c,v 1.1 2005/02/17 21:59:11 robert Exp $
+--- vfs/fish.c.orig	Thu Feb 17 22:26:51 2005
++++ vfs/fish.c	Thu Feb 17 22:27:24 2005
+@@ -232,7 +232,7 @@
+ 	print_vfs_message (_("fish: Waiting for initial line..."));
+ 	if (!vfs_s_get_line (me, SUP.sockr, answer, sizeof (answer), ':'))
+ 	    ERRNOR (E_PROTO, -1);
+-	print_vfs_message (answer);
++	print_vfs_message ("%s", answer);
+ 	if (strstr (answer, "assword")) {
+ 
+ 	    /* Currently, this does not work. ssh reads passwords from

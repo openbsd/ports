@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utilunix_c,v 1.1 2004/04/11 00:40:59 naddy Exp $
---- src/utilunix.c.orig	2003-11-28 16:23:19.000000000 +0100
-+++ src/utilunix.c	2004-04-11 02:36:03.000000000 +0200
-@@ -234,9 +234,9 @@ int my_system (int flags, const char *sh
+$OpenBSD: patch-src_utilunix_c,v 1.2 2005/02/17 21:59:11 robert Exp $
+--- src/utilunix.c.orig	Fri Nov 28 16:23:19 2003
++++ src/utilunix.c	Thu Feb 17 22:28:40 2005
+@@ -234,9 +234,9 @@
  	signal (SIGCHLD, SIG_DFL);
  
  	if (flags & EXECUTE_AS_SHELL)
@@ -13,3 +13,12 @@ $OpenBSD: patch-src_utilunix_c,v 1.1 2004/04/11 00:40:59 naddy Exp $
  
  	_exit (127);		/* Exec error */
      } else {
+@@ -429,7 +429,7 @@
+ 	close (2);
+ 	dup (old_error);
+ 	close (old_error);
+-	len = read (error_pipe[0], msg, MAX_PIPE_SIZE);
++	len = read (error_pipe[0], msg, MAX_PIPE_SIZE - 1);
+ 
+ 	if (len >= 0)
+ 	    msg[len] = 0;
