@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/10 21:05:53 msf Exp $
+# $OpenBSD: Makefile,v 1.12 2005/03/11 15:08:00 espie Exp $
 
 COMMENT=	"client interface to LDAP servers"
 
@@ -26,6 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT=Yes
 REGRESS_TARGET=	test
 
 .include <bsd.port.mk>
