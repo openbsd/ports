@@ -3,12 +3,12 @@
 # Date created:	        26 Nov 1997
 # Whom:                 Stanislav Grozev <tacho@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/26 13:11:17 tacho Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/29 22:01:01 joey Exp $
 #
 
 DISTNAME=	db-2.3.12
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/packages/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	tacho@openbsd.org
 
