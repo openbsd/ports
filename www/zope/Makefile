@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/04/25 15:38:54 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2002/04/25 18:47:57 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
@@ -45,8 +45,9 @@ PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
 
 do-build:
 	cd ${WRKSRC} && \
-		ZDIR=${ZOPEHOME} python2.1 w_pcgi.py && \
-		ZDIR=${ZOPEHOME} python2.1 -O inst/compilezpy.py
+		ZDIR=${ZOPEHOME} ${LOCALBASE}/bin/python2.1 w_pcgi.py && \
+		ZDIR=${ZOPEHOME} ${LOCALBASE}/bin/python2.1 \
+			-O inst/compilezpy.py
 	sed -e "s%@@PREFIX@@%${PREFIX}%g" \
 		-e "s%@@LOCALBASE@@%${LOCALBASE}%g" \
 		< ${FILESDIR}/zope-instance > ${WRKSRC}/zope-instance
@@ -80,6 +81,6 @@ do-install:
 		> ${PREFIX}/lib/zope/lib/python/version.txt
 
 do-regress:
-	cd ${WRKSRC} && python2.1 utilities/testrunner.py -a
+	cd ${WRKSRC} && ${LOCALBASE}/bin/python2.1 utilities/testrunner.py -a
 
 .include <bsd.port.mk>
