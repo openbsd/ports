@@ -1,6 +1,15 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- config/autoconf.mk.in.orig	Fri May  2 15:38:10 2003
-+++ config/autoconf.mk.in	Sun May 18 04:46:09 2003
+$OpenBSD: patch-config_autoconf_mk_in,v 1.2 2003/05/23 10:05:36 wilfried Exp $
+--- config/autoconf.mk.in.orig	Fri May  2 23:38:10 2003
++++ config/autoconf.mk.in	Thu May 22 13:36:32 2003
+@@ -35,7 +35,7 @@ datadir		= @datadir@
+ mandir		= @mandir@
+ idldir		= @datadir@/idl/mozilla-$(MOZILLA_VERSION)
+ 
+-mozappdir	= $(libdir)/mozilla-$(MOZILLA_VERSION)
++mozappdir	= $(prefix)/mozilla-firebird
+ mredir		= $(libdir)/mre/mre-$(MOZILLA_VERSION)
+ mrelibdir	= $(mredir)/lib
+ 
 @@ -169,7 +169,7 @@ OS_LDFLAGS	= @LDFLAGS@
  OS_COMPILE_CFLAGS = $(OS_CPPFLAGS) @COMPILE_CFLAGS@
  OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
