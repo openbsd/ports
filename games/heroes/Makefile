@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/28 22:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2005/01/17 09:01:27 espie Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -68,7 +68,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/tools
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm -lintl -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib -lm -lintl -liconv" \
+		ac_cv_header_io_h=no
 CONFIGURE_ARGS+= --disable-optimizations \
 		 --disable-debug \
 		 --without-mikmod
