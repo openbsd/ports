@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 1999/05/18 17:07:16 espie Exp $
+# $OpenBSD: Makefile,v 1.46 1999/05/25 19:55:21 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-05-17
+LATEST_DATE=1999-05-24
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -54,7 +54,7 @@ LATEST_DATE=1999-05-17
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-05-17
+#NEXT_DATE=1999-05-24
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -299,7 +299,8 @@ CONFIGURE_ENV=LANGUAGES='${LANGS}'
 
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, \
---disable-subdir-texinfo
+--disable-subdir-texinfo \
+--disable-nls
 
 
 # This is needed, as internal cpp is no longer compatible with the
@@ -367,8 +368,8 @@ post-build:
 	@${ECHO} "Please send the tests results to the egcs project"
 	@${ECHO} "By invoking make send-results"
 
-send-results: ${TEST_RESULT}
-	sh ${TEST_RESULT}
+send-results: 
+	[ -f ${TEST_RESULT}] && sh ${TEST_RESULT}
 .endif
 
 PLIST=${WRKBUILD}/PLIST
