@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/20 10:11:19 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/03/10 06:25:38 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	c glib-2.0.0.0 gmodule-2.0.0.0 iconv intl kvm pthread
 
-MASTER_SITES=	http://web.wt.net/~billw/gkrellm/
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_client
