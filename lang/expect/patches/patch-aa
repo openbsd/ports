@@ -1,9 +1,9 @@
---- configure.orig	Wed Aug 18 12:52:19 1999
-+++ configure	Mon Aug 23 19:56:20 1999
-@@ -6076,7 +6076,7 @@
+--- configure.orig	Mon Mar  6 16:25:50 2000
++++ configure	Mon Mar 20 20:34:09 2000
+@@ -6326,7 +6326,7 @@
+ echo "configure:6327: checking for type of library to build" >&5
  if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
    EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
- #  EXP_SHARED_LIB_FILE=libexpect$EXP_LIB_VERSION$TCL_DBGX$TCL_SHLIB_SUFFIX
 -  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
 +  eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.1.2"
    EXP_LIB_FILE=$EXP_SHARED_LIB_FILE

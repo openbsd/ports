@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2000/03/27 18:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/03/28 11:54:14 espie Exp $
 
-DISTNAME=	expect-5.30
+DISTNAME=	expect-5.31
 CATEGORIES=	lang
 NEED_VERSION=	1.230
 MASTER_SITES=	http://expect.nist.gov/old/
@@ -13,22 +13,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tk80.1.5::x11/tk/8.0
+LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.0 \
-		--with-tclinclude=${PREFIX}/include/tcl8.0 \
-		--with-tkconfig=${PREFIX}/lib/tk8.0 \
-		--with-tkinclude=${PREFIX}/include/tk8.0
+CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.3 \
+		--with-tclinclude=${PREFIX}/include/tcl8.3 \
+		--with-tkconfig=${PREFIX}/lib/tk8.3 \
+		--with-tkinclude=${PREFIX}/include/tk8.3
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
+FAKE=		Yes
 
 test:	build
 	@cd ${WRKBUILD}; make test
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
