@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/01 07:34:34 xsa Exp $
 @mode 2755
 @group games
 bin/xpat2
 @mode
+@group
 lib/X11/app-defaults/XPat
 lib/X11/french/
 lib/X11/french/app-defaults/
@@ -104,4 +105,8 @@ lib/X11/xpat/russian/sq01.bdf
 lib/X11/xpat/small.cards
 @man man/cat1/xpat2.0
 @man man/man6/xpat2.6
-@extra /var/games/xpat.log
+share/examples/xpat2/
+share/examples/xpat2/xpat.log
+@group games
+@mode g+w
+@sample /var/games/xpat.log

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/10/01 07:34:34 xsa Exp $
 
 COMMENT=	"X11 solitaire with 14 variations"
 
@@ -20,5 +20,9 @@ WRKSRC=${WRKDIST}/src
 CONFIGURE_STYLE=imake
 
 NO_REGRESS=	Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpat2
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xpat2/xpat.log
 
 .include <bsd.port.mk>
