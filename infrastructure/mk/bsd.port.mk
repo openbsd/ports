@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.230 2000/03/19 16:11:41 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.231 2000/03/19 16:46:18 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -233,12 +233,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the
 #				  library.  Note that lib can be any regular expression.
-#				  In older versions of this file, you need two backslashes
-#				  in front of dots (.) to supress its special meaning (e.g.,
-#				  use "foo\\.2\\.:utils/foo" to match "libfoo.2.*").
-#				  No special backslashes are needed to escape regular
-#				  expression metacharacters in OpenBSD, and the old backslash
-#				  escapes are recognised for backwards compatibility.
 # DEPENDS		- A list of other ports this package depends on being
 #				  made first.  Use this for things that don't fall into
 #				  the above two categories.
