@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/11 23:52:01 djm Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
-DISTNAME=	sqlite-2.8.12
+DISTNAME=	sqlite-2.8.14
 CATEGORIES=	databases
-HOMEPAGE=	http://www.hwaci.com/sw/sqlite/
+HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
@@ -15,13 +15,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	autoconf dest no-autoheader
-AUTOCONF_VERSION=	2.57
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
 WRKDIST=		${WRKDIR}/sqlite
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
-NO_REGRESS=		Yes
+BUILD_DEPENDS=		tcl84::lang/tcl/8.4
+
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ENV=		config_TARGET_TCL_LIBS="-L${LOCALBASE}/lib -ltcl84 -lm"
+CONFIGURE_ENV+=		config_TARGET_TCL_INC="-I${LOCALBASE}/include/tcl8.4"
+
+REGRESS_TARGET=		test
 
 .include <bsd.port.mk>
 
