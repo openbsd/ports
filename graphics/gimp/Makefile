@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.23 1999/10/09 17:17:23 brad Exp $
+# $OpenBSD: Makefile,v 1.24 1999/10/29 02:02:11 brad Exp $
 
-DISTNAME=	gimp-1.1.9
+DISTNAME=	gimp-1.1.10
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/old/v1.1.9/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/old/v1.1.9/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.10/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.10/
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	aa.1.3:${PORTSDIR}/graphics/aalib \
-		intl:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
+		aa.1.3:${PORTSDIR}/graphics/aalib \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
 		png.1.3:${PORTSDIR}/graphics/png \
-		tiff.3.4:${PORTSDIR}/graphics/tiff34
+		tiff.35:${PORTSDIR}/graphics/tiff
 
 USE_X11=	yes
 USE_GMAKE=	yes
-SYSCONFDIR=	${PREFIX}/lib
-SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
@@ -48,6 +46,6 @@ pre-extract:
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${LOCALBASE}/share/aclocal/
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

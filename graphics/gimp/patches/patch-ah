@@ -1,6 +1,6 @@
---- plug-ins/common/Makefile.in.orig	Tue Sep 21 13:31:56 1999
-+++ plug-ins/common/Makefile.in	Tue Sep 21 13:33:20 1999
-@@ -224,7 +224,7 @@
+--- plug-ins/common/Makefile.in.orig	Sat Oct 16 23:01:14 1999
++++ plug-ins/common/Makefile.in	Sat Oct 16 23:04:24 1999
+@@ -228,7 +228,7 @@
  animoptimize_SOURCES =  	animoptimize.c
  
  
@@ -9,7 +9,7 @@
  
  
  apply_lens_SOURCES =  	apply_lens.c
-@@ -236,13 +236,13 @@
+@@ -240,13 +240,13 @@
  autocrop_SOURCES =  	autocrop.c
  
  
@@ -25,7 +25,7 @@
  
  
  blinds_SOURCES =  	blinds.c
-@@ -266,13 +266,13 @@
+@@ -270,13 +270,13 @@
  bz2_SOURCES =  	bz2.c
  
  
@@ -41,7 +41,7 @@
  
  
  checkerboard_SOURCES =  	checkerboard.c
-@@ -470,7 +470,7 @@
+@@ -474,7 +474,7 @@
  gradmap_SOURCES =  	gradmap.c
  
  
@@ -50,7 +50,7 @@
  
  
  grid_SOURCES =  	grid.c
-@@ -488,19 +488,19 @@
+@@ -492,19 +492,19 @@
  guillotine_SOURCES =  	guillotine.c
  
  
@@ -73,7 +73,7 @@
  
  
  hot_SOURCES =  	hot.c
-@@ -542,7 +542,7 @@
+@@ -546,7 +546,7 @@
  laplace_SOURCES =  	laplace.c
  
  
@@ -82,7 +82,7 @@
  
  
  lic_SOURCES =  	lic.c
-@@ -602,7 +602,7 @@
+@@ -606,7 +606,7 @@
  normalize_SOURCES =  	normalize.c
  
  
@@ -91,7 +91,7 @@
  
  
  nova_SOURCES =  	nova.c
-@@ -632,13 +632,13 @@
+@@ -636,13 +636,13 @@
  pcx_SOURCES =  	pcx.c
  
  
@@ -107,7 +107,7 @@
  
  
  pixelize_SOURCES =  	pixelize.c
-@@ -686,7 +686,7 @@
+@@ -690,7 +690,7 @@
  psd_SOURCES =  	psd.c
  
  
@@ -116,7 +116,7 @@
  
  
  psp_SOURCES =  	psp.c
-@@ -716,7 +716,7 @@
+@@ -720,7 +720,7 @@
  rotators_SOURCES =  	rotators.c
  
  
@@ -125,7 +125,7 @@
  
  
  sample_colorize_SOURCES =  	sample_colorize.c
-@@ -746,7 +746,7 @@
+@@ -750,7 +750,7 @@
  semiflatten_SOURCES =  	semiflatten.c
  
  
@@ -134,7 +134,7 @@
  
  
  sharpen_SOURCES =  	sharpen.c
-@@ -836,13 +836,13 @@
+@@ -840,13 +840,13 @@
  tiler_SOURCES =  	tiler.c
  
  
@@ -150,7 +150,7 @@
  
  
  video_SOURCES =  	video.c
-@@ -854,7 +854,7 @@
+@@ -858,7 +858,7 @@
  vinvert_SOURCES =  	vinvert.c
  
  
@@ -159,7 +159,7 @@
  
  
  vpropagate_SOURCES =  	vpropagate.c
-@@ -908,13 +908,13 @@
+@@ -912,13 +912,13 @@
  xwd_SOURCES =  	xwd.c
  
  
