@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/10 12:29:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/11 05:42:02 shell Exp $
 
 COMMENT=		"python interface to MySQL"
 
-VERSION=		0.9.1c1
+VERSION=		0.9.1
 DISTNAME=		MySQL-python-${VERSION}
 PKGNAME=		py-mysql-${VERSION}
 CATEGORIES=		databases
