@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/15 18:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/31 10:15:40 nino Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -31,7 +31,6 @@ CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--enable-prefer-db1
 CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
-CONFIGURE_ARGS+= 	--localstatedir=/var/run
 CONFIGURE_ARGS+= 	--disable-test-gnome
 CONFIGURE_ARGS+=	--disable-gtk-doc
 

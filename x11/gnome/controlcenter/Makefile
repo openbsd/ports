@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/31 10:15:40 nino Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -30,7 +30,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
