@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2002/09/30 13:11:27 shell Exp $
+# $OpenBSD: Makefile,v 1.30 2002/10/29 10:59:39 shell Exp $
 
 COMMENT=	"XSLT C Library for GNOME"
 
-DISTNAME=	libxslt-1.0.20
+DISTNAME=	libxslt-1.0.22
 CATEGORIES=	textproc
 HOMEPAGE=	http://xmlsoft.org/XSLT/
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libxslt/1.0/} \
-		ftp://xmlsoft.org/
+MASTER_SITES=	ftp://xmlsoft.org/	\
+		${MASTER_SITE_GNOME:=sources/libxslt/1.0/}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
