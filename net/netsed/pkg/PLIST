@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/11 08:48:42 jsyn Exp $
+bin/netsed
+share/doc/netsed/README
+@dirrm share/doc/netsed
