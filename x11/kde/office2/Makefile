@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/11/19 12:16:22 naddy Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -15,7 +15,7 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
 LIB_DEPENDS= kdecore.3,DCOP,kdeprint,kdesu,kdeui,kfile,kio,kparts,kspell,kssl,ksycoca::x11/kde/libs2 \
-		python2.1::lang/python
+		python2.1.0.0::lang/python
 
 MODULES=	qt2
 CONFIGURE_STYLE=	autoconf
