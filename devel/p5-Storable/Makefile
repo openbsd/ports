@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/19 02:56:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/18 15:07:28 kevlo Exp $
 
-DISTNAME=	Storable-1.0.10
+DISTNAME=	Storable-1.0.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.351
