@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/25 09:42:35 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/26 05:16:12 nino Exp $
 
 COMMENT=		"multi-platform graphical toolkit"
 COMMENT-docs=           "gtk+-2 documentation"
@@ -41,7 +41,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--enable-static
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=		Yes
