@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2001/12/31 09:36:04 espie Exp $
+--- doc/autoconf.texi.orig	Sun Jul  8 13:29:19 2001
++++ doc/autoconf.texi	Sun Jul  8 13:29:39 2001
+@@ -2,6 +2,7 @@
+ @c %**start of header
+ @setfilename autoconf.info
+ @settitle Autoconf
++@dircategory Programming & development tools
+ 
+ @finalout
+ @setchapternewpage odd
