@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/30 17:04:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/01 07:09:47 pvalchev Exp $
 
 COMMENT=		"perl module for formatting plaintext"
 
@@ -6,6 +6,7 @@ DISTNAME=		Text-Autoformat-1.12
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		textproc perl5
 
+MAINTAINER=		Sam Smith <s@msmith.net>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

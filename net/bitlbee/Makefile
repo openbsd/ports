@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/30 17:04:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/01 07:12:39 pvalchev Exp $
 
 COMMENT=		"IRC proxy to connect to ICQ, AOL, MSN and Jabber"
 
@@ -8,6 +8,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org
 
+MAINTAINER=		Andrew Dalgleish <openbsd@ajd.net.au>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/01 07:12:39 pvalchev Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
@@ -8,6 +8,8 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.atstake.com/research/tools/
 
 LIB_DEPENDS=	net::net/libnet
+
+MAINTAINER=	Francois Briere <f.briere@dopha.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes
