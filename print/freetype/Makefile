@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/01/19 10:23:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/04 08:01:35 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -38,5 +38,11 @@ pre-extract:
 	   echo "+-------------------"; \
 	   exit 1; \
 	fi
+
+# Older versions of freetype installed include files in ${PREFIX}/include
+# this is a compatibility hack for now
+
+post-install:
+	@ln -fs ${PREFIX}/include/freetype/*.h ${PREFIX}/include
 
 .include <bsd.port.mk>
