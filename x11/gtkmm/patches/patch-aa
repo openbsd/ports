@@ -1,0 +1,26 @@
+--- configure.orig	Sat May 20 15:50:53 2000
++++ configure	Thu Jun 15 05:32:12 2000
+@@ -1990,16 +1990,16 @@
+ 
+ 
+ if test "$M4" = "m4"; then
+-  echo $ac_n "checking whether m4 is GNU m4""... $ac_c" 1>&6
+-echo "configure:1995: checking whether m4 is GNU m4" >&5
+-  if $M4 --version 2>/dev/null | grep '^GNU m4 ' >/dev/null ; then
+-	  echo "$ac_t""yes" 1>&6
+-  else
+-	  echo "$ac_t""no" 1>&6
++#  echo $ac_n "checking whether m4 is GNU m4""... $ac_c" 1>&6
++#echo "configure:1995: checking whether m4 is GNU m4" >&5
++#  if $M4 --version 2>/dev/null | grep '^GNU m4 ' >/dev/null ; then
++#	  echo "$ac_t""yes" 1>&6
++#  else
++#	  echo "$ac_t""no" 1>&6
+ 	  if test "$host_vendor" = "sun"; then
+ 		  { echo "configure: error: "SUN m4 does not work for building Gtk--. Please install GNU m4"" 1>&2; exit 1; }
+ 	  fi
+-  fi
++#  fi
+ fi
+ 
+ 
