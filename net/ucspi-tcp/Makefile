@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/13 08:27:20 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/13 08:28:17 camield Exp $
 
 DISTNAME=	ucspi-tcp-0.86
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
@@ -16,11 +16,11 @@ MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 		http://koobera.math.uic.edu/www/software/ \
 		http://pobox.com/~djb/software/ 
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 ALL_TARGET=	default WRKINST=${WRKINST}
 INSTALL_TARGET=	setup check
 
-FAKE=	yes
+FAKE=	Yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
