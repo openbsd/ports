@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2004/01/14 02:05:01 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2004/02/20 21:30:38 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
-DISTNAME=	nano-1.2.2
+DISTNAME=	nano-1.2.3
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -22,8 +22,8 @@ FLAVOR?=
 
 MODULES=	gettext
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.57
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.57
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
@@ -32,6 +32,10 @@ CONFIGURE_ARGS=	--enable-all
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
 .endif
+
+# prevent autotools rebuild cascade
+post-patch:
+	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
