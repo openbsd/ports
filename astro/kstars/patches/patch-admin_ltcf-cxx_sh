@@ -1,12 +1,12 @@
---- admin/ltcf-cxx.sh.orig	Wed Sep 12 16:40:15 2001
-+++ admin/ltcf-cxx.sh	Wed Sep 12 16:45:24 2001
+--- admin/ltcf-cxx.sh.orig	Sat Oct  6 11:03:50 2001
++++ admin/ltcf-cxx.sh	Sat Oct  6 11:06:11 2001
 @@ -339,6 +339,19 @@
        ld_shlibs=no
      fi
      ;;
 +  openbsd*)
 +    if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
-+      # MM: OpenBSD 2.7 uses G++, but not GNU ld 
++      # MM: OpenBSD 2.7 uses G++, but not GNU ld
 +      archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
 +      archive_expsym_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
 +      old_archive_cmds="$old_archive_cmds~"'$RANLIB $oldlib'

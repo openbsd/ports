@@ -1,5 +1,5 @@
---- admin/ltcf-c.sh.orig	Wed Sep 12 16:40:10 2001
-+++ admin/ltcf-c.sh	Wed Sep 12 16:42:17 2001
+--- admin/ltcf-c.sh.orig	Sat Oct  6 11:01:07 2001
++++ admin/ltcf-c.sh	Sat Oct  6 11:03:19 2001
 @@ -398,10 +398,14 @@
      ;;
  
