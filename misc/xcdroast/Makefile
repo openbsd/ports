@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/23 08:51:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/13 22:39:45 pvalchev Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
 
 DISTNAME=		xcdroast-0.98alpha9
-PKGNAME=		xcdroast-0.98a9
+PKGNAME=		xcdroast-0.98a9p1
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://www.xcdroast.org
@@ -23,6 +23,11 @@ LIB_DEPENDS=		gtk.1.2,glib.1.2::x11/gtk+ \
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
+
+post-patch:
+	@perl -pi -e 's,/etc,${SYSCONFDIR},g;	\
+		s,/usr/local,${LOCALBASE},g;'	\
+		${WRKSRC}/xcdroast.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xcdroast

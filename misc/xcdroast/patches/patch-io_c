@@ -1,4 +1,4 @@
-$OpenBSD: patch-io_c,v 1.1.1.1 2002/07/14 19:34:28 wilfried Exp $
+$OpenBSD: patch-io_c,v 1.2 2002/10/13 22:39:45 pvalchev Exp $
 --- io.c.orig	Tue May 14 08:37:51 2002
 +++ io.c	Tue May 14 08:38:12 2002
 @@ -20,7 +20,8 @@
@@ -38,6 +38,15 @@ $OpenBSD: patch-io_c,v 1.1.1.1 2002/07/14 19:34:28 wilfried Exp $
  
  	g_snprintf(tmp,MAXLINE,"%s%s",dsp,"ctl");
  
+@@ -1991,7 +1992,7 @@ pid_t pid;
+ 		}
+ 
+ 		/* startup child */
+-		if (execl("/bin/sh", "sh", "-c", cmd ,NULL) < 0) {
++		if (execl("/bin/sh", "sh", "-c", cmd ,(void*)NULL) < 0) {
+ 			g_error("execl error\n");
+ 		}
+  
 @@ -2365,7 +2366,7 @@ gint mix;
  #if defined(linux) || defined(__FreeBSD__)
  gint val;
