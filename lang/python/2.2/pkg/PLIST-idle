@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-idle,v 1.1 2003/12/13 15:03:08 sturm Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2004/09/18 10:07:26 espie Exp $
 @option no-default-conflict
-@pkgcfl python-idle-2.2*
+@conflict python-idle->=2.2,<2.3
 bin/idle2.2
+lib/python2.2/Tools/
+lib/python2.2/Tools/idle/
 lib/python2.2/Tools/idle/AutoExpand.py
 lib/python2.2/Tools/idle/AutoIndent.py
 lib/python2.2/Tools/idle/Bindings.py
@@ -18,6 +20,7 @@ lib/python2.2/Tools/idle/FormatParagraph.py
 lib/python2.2/Tools/idle/FrameViewer.py
 lib/python2.2/Tools/idle/GrepDialog.py
 lib/python2.2/Tools/idle/IOBinding.py
+lib/python2.2/Tools/idle/Icons/
 lib/python2.2/Tools/idle/Icons/folder.gif
 lib/python2.2/Tools/idle/Icons/minusnode.gif
 lib/python2.2/Tools/idle/Icons/openfolder.gif
@@ -71,6 +74,3 @@ lib/python2.2/Tools/idle/idlever.py
 lib/python2.2/Tools/idle/keydefs.py
 lib/python2.2/Tools/idle/setup.py
 lib/python2.2/Tools/idle/testcode.py
-@dirrm lib/python2.2/Tools/idle/Icons
-@dirrm lib/python2.2/Tools/idle
-@dirrm lib/python2.2/Tools

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2003/12/30 22:21:25 sturm Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2004/09/18 10:07:26 espie Exp $
 @option no-default-conflict
-@pkgcfl python-tests-2.2*
+@conflict python-tests->=2.2,<2.3
+lib/python2.2/test/
 lib/python2.2/test/README
 lib/python2.2/test/__init__.py
 lib/python2.2/test/__init__.pyc
@@ -15,6 +16,7 @@ lib/python2.2/test/badsyntax_future5.py
 lib/python2.2/test/badsyntax_future6.py
 lib/python2.2/test/badsyntax_future7.py
 lib/python2.2/test/badsyntax_nocaret.py
+lib/python2.2/test/data/
 lib/python2.2/test/data/PyBanner048.gif
 lib/python2.2/test/data/msg_01.txt
 lib/python2.2/test/data/msg_02.txt
@@ -43,6 +45,7 @@ lib/python2.2/test/double_const.py
 lib/python2.2/test/double_const.pyc
 lib/python2.2/test/double_const.pyo
 lib/python2.2/test/greyrgb.uue
+lib/python2.2/test/output/
 lib/python2.2/test/output/test_MimeWriter
 lib/python2.2/test/output/test_asynchat
 lib/python2.2/test/output/test_augassign
@@ -745,6 +748,3 @@ lib/python2.2/test/testrgb.uue
 lib/python2.2/test/tokenize_tests.py
 lib/python2.2/test/tokenize_tests.pyc
 lib/python2.2/test/tokenize_tests.pyo
-@dirrm lib/python2.2/test/output
-@dirrm lib/python2.2/test/data
-@dirrm lib/python2.2/test
