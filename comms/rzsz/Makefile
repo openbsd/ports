@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 19:19:35 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/18 06:16:29 jasoni Exp $
 #
 
 DISTNAME=       rzsz
-PKGNAME=        rzsz-3.47
+PKGNAME=        rzsz-3.48
 CATEGORIES=	comms
 
-BROKEN=		"source files have changed"
 NO_CDROM=	"COMM: commercial software"
 RESTRICTED=	"This port is shareware"
 

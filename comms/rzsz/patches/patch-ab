@@ -1,5 +1,18 @@
-*** rz.c.orig	Fri Nov 21 13:13:51 1997
---- rz.c	Fri Nov 21 13:13:51 1997
+*** rz.c.orig	Mon Aug 11 16:08:50 1997
+--- rz.c	Fri Oct 10 11:47:07 1997
+***************
+*** 1,5 ****
+! #define VERSION "3.48 01-27-98"
+! #define PUBDIR "/usr/spool/uucppublic"
+  
+  /*
+   *
+--- 1,5 ----
+! #define VERSION "3.48/ache 01-27-98"
+! #define PUBDIR "/var/spool/uucppublic"
+  
+  /*
+   *
 ***************
 *** 174,179 ****
 --- 174,181 ----
@@ -140,7 +153,7 @@
   "Supports the following incoming ZMODEM options given to the sending program:\n\
   	compression (-Z), binary (-b), ASCII CR/LF>NL (-a), newer(-n),\n\
 ***************
-*** 449,459 ****
+*** 449,461 ****
   
   et_tu:
   	Firstsec=TRUE;  Eofseen=FALSE;
@@ -150,21 +163,24 @@
   	case WCEOT:
   		zperr2( "Pathname fetch returned %d", c);
   		sendline(ACK);  flushmo();
-  		Lleft=0;	/* Do read next time ... */
+- 		Lleft=0;	/* Do read next time ... */
   		readline(1);
---- 457,468 ----
+  		goto et_tu;
+  	case 0:
+--- 457,469 ----
   
   et_tu:
   	Firstsec=TRUE;  Eofseen=FALSE;
-+ 	purgeline();	/* Do a reading of the line ... */
++ 	purgeline();    /* Do read next time ... */
   	sendline(Crcflg?WANTCRC:NAK);  flushmo();
   	switch (c = wcgetsec(rpn, 100)) {
   	case WCEOT:
   		zperr2( "Pathname fetch returned %d", c);
-+ 		purgeline();	/* Do read next time ... */
++ 		purgeline();    /* Do read next time ... */
   		sendline(ACK);  flushmo();
-  		Lleft=0;	/* Do read next time ... */
   		readline(1);
+  		goto et_tu;
+  	case 0:
 ***************
 *** 480,488 ****
   	sendchar=Crcflg?WANTCRC:NAK;
@@ -176,7 +192,7 @@
   		sectcurr=wcgetsec(secbuf, (sectnum&0177)?50:130);
   		if (sectcurr==(sectnum+1 &0377)) {
   			sectnum++;
---- 489,497 ----
+--- 488,496 ----
   	sendchar=Crcflg?WANTCRC:NAK;
   
   	for (;;) {
@@ -196,7 +212,7 @@
   			return OK;
   		}
   		else if (sectcurr==ERROR)
---- 509,516 ----
+--- 508,515 ----
   		else if (sectcurr==WCEOT) {
   			if (closeit())
   				return ERROR;
@@ -218,7 +234,7 @@
   		}
   	}
   	/* try to stop the bubble machine. */
---- 609,619 ----
+--- 608,618 ----
   		while(readline(1)!=TIMEOUT)
   			;
   		if (Firstsec) {
@@ -241,7 +257,7 @@
   		}
   	}
   
---- 667,675 ----
+--- 666,674 ----
   		if (Filemode & UNIXFILE)
   			++Thisbinary;
   		if (Verbose) {
@@ -260,7 +276,7 @@
   		if (Thisbinary && zconv==ZCRESUM) {
   			rxbytes = f.st_size & ~511;
   			if (Bytesleft < rxbytes) {
---- 690,696 ----
+--- 689,695 ----
   		zmanag &= ZMMASK;
   		if (zmanag==ZMPROT)
   			goto skipfile;
@@ -277,7 +293,7 @@
   			bibi(-1);
   		}
   		/* restrict pathnames to current tree or uucppublic */
---- 937,943 ----
+--- 936,942 ----
   	if (Restricted) {
   		if (fopen(name, "r") != NULL) {
   			canit();
@@ -287,7 +303,7 @@
   		/* restrict pathnames to current tree or uucppublic */
 ***************
 *** 1047,1052 ****
---- 1056,1065 ----
+--- 1055,1064 ----
   				return ERROR;
   			}
   #endif
@@ -300,7 +316,7 @@
   				void exec2();
 ***************
 *** 1066,1071 ****
---- 1079,1085 ----
+--- 1078,1084 ----
   				return ZCOMPL;
   			}
   			zshhdr(4,ZNAK, Txhdr); goto again;
@@ -317,7 +333,7 @@
   				  rxbytes, Crc32r?" CRC-32":"");
   #ifdef SEGMENTS
   			if (chinseg >= (1024 * SEGMENTS)) {
---- 1234,1240 ----
+--- 1233,1239 ----
   			}
   moredata:
   			if (Verbose>1)

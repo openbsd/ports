@@ -1,5 +1,18 @@
-*** sz.c.orig	Fri Nov 21 13:13:53 1997
---- sz.c	Fri Nov 21 13:16:37 1997
+*** sz.c.orig	Mon Aug 11 16:10:24 1997
+--- sz.c	Fri Oct 10 11:49:24 1997
+***************
+*** 1,5 ****
+! #define VERSION "3.48 01-27-98"
+! #define PUBDIR "/usr/spool/uucppublic"
+  
+  /*
+   **************************************************************************
+--- 1,5 ----
+! #define VERSION "3.48/ache 01-27-98"
+! #define PUBDIR "/var/spool/uucppublic"
+  
+  /*
+   **************************************************************************
 ***************
 *** 192,208 ****
   
@@ -126,6 +139,26 @@
   	mode(0);
   	if(errcnt || Exitcode)
   		exit(1);
+***************
+*** 465,473 ****
+  #ifndef REGISTERED
+  	/* Removing or disabling this code without registering is theft */
+  	if (!Usevhdrs)  {
+! 		printf("\n\n\n**** UNREGISTERED COPY *****\r\n");
+! 		printf("\n\n\nPlease read the License Agreement in sz.doc\n");
+! 		fflush(stdout);
+  		sleep(10);
+  	}
+  #endif
+--- 468,475 ----
+  #ifndef REGISTERED
+  	/* Removing or disabling this code without registering is theft */
+  	if (!Usevhdrs)  {
+! 		fprintf(stderr, "\n\n\n**** UNREGISTERED COPY *****\r\n");
+! 		fprintf(stderr, "\n\n\nPlease read the License Agreement in sz.doc\n");
+  		sleep(10);
+  	}
+  #endif
 ***************
 *** 501,508 ****
   	bytcnt = maxbytcnt = -1;

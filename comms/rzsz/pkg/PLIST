@@ -1,24 +1,22 @@
+@cwd /usr/local
+@name rzsz-3.48
 bin/rz
-@exec ln -fs %f %B/rx
-@exec ln -fs %f %B/rb
-@exec ln -fs %f %B/rc
-@unexec rm -f %B/rx %B/rb %B/rc
+bin/rx
+bin/rb
+bin/rc
 bin/sz
-@exec ln -fs %f %B/sx
-@exec ln -fs %f %B/sb
-@exec ln -fs %f %B/zcommand
-@exec ln -fs %f %B/zcommandi
-@unexec rm -f %B/sx %B/sb %B/zcommand %B/zcommandi
+bin/sx
+bin/sb
+bin/zcommand
+bin/zcommandi
 bin/crc
 man/cat1/crc.1
 man/cat1/rz.1
-@exec ln -fs %f %B/rx.1
-@exec ln -fs %f %B/rb.1
-@exec ln -fs %f %B/rc.1
-@unexec rm -f %B/rx.1 %B/rb.1 %B/rc.1
+man/cat1/rx.1
+man/cat1/rb.1
+man/cat1/rc.1
 man/cat1/sz.1
-@exec ln -fs %f %B/sx.1
-@exec ln -fs %f %B/sb.1
-@exec ln -fs %f %B/zcommand.1
-@exec ln -fs %f %B/zcommandi.1
-@unexec rm -f %B/sx.1 %B/sb.1 %B/zcommand.1 %B/zcommandi.1
+man/cat1/sx.1
+man/cat1/sb.1
+man/cat1/zcommand.1
+man/cat1/zcommandi.1

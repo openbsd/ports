@@ -1,5 +1,5 @@
-*** crc.c.orig	Fri Nov 21 13:13:49 1997
---- crc.c	Fri Nov 21 13:13:49 1997
+*** crc.c.orig	Sun May  2 19:14:18 1993
+--- crc.c	Sat Feb 15 15:32:30 1997
 ***************
 *** 117,122 ****
 --- 117,126 ----
@@ -13,8 +13,8 @@
   	if (! strcmp(argv[1], "-x")) {
   		Block = 128; --argc; ++argv;
   	}
-*** rbsb.c.orig	Fri Nov 21 13:13:50 1997
---- rbsb.c	Fri Nov 21 13:18:46 1997
+*** rbsb.c.orig	Sat May 21 15:10:52 1994
+--- rbsb.c	Sat Feb 15 15:32:30 1997
 ***************
 *** 17,24 ****
   #ifdef LLITOUT
@@ -243,7 +243,7 @@
 +  */
 + purgeout()
 + {
-+ #if (defined(__FreeBSD__) || defined(__OpenBSD__))
++ #ifdef __FreeBSD__
 + 	fpurge(Ttystream);
 + #else
 + 	rewind(Ttystream);
