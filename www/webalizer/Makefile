@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/28 19:35:34 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/29 17:09:28 danh Exp $
 
 COMMENT=	"web server log file analysis program"
 
-DISTNAME=	webalizer-2.01-06-src
-PKGNAME=	webalizer-2.01.06
+DISTNAME=	webalizer-2.01-09-src
+PKGNAME=	webalizer-2.01.09
 CATEGORIES=     www
-NEED_VERSION=	1.364
+NEED_VERSION=	1.475
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/
 EXTRACT_SUFX=	.tgz
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WRKDIST=	${WRKDIR}/webalizer-2.01-06
+WRKDIST=	${WRKDIR}/webalizer-2.01-09
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns --with-png=${LOCALBASE}/lib
