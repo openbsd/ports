@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.no-no_sound,v 1.1.1.1 2003/04/14 09:09:50 wilfried Exp $
+share/oilwar/bulletricochet.wav
+share/oilwar/explode.wav
+share/oilwar/gasp.wav
+share/oilwar/singlegunshot.wav

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/14 09:09:50 wilfried Exp $
+@group games
+@mode 2555
+bin/oilwar
+@group
+@mode
+share/oilwar/background.png
+share/oilwar/bitmaps.png
+!%%no_sound%%
+@exec install -m 664 -o root -g games /dev/null %B/oilwar.scores
+@unexec rm -f %B/oilwar.scores
+@dirrm share/oilwar

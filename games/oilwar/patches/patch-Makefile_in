@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/14 09:09:50 wilfried Exp $
+--- Makefile.in.orig	Mon Mar 31 07:59:46 2003
++++ Makefile.in	Mon Mar 31 16:29:16 2003
+@@ -84,7 +84,7 @@ singlegunshot.wav bulletricochet.wav exp
+ scorefiledir = /var/games
+ scorefile_DATA = oilwar.scores
+ 
+-AM_CPPFLAGS = $(sound_flag) -DDATA_DIR=\"$(datafiledir)/\" -DSCORE_DIR=\"$(scorefiledir)/\"
++AM_CPPFLAGS = $(sound_flag) -DDATA_DIR=\"$(prefix)/share/oilwar/\" -DSCORE_DIR=\"$(prefix)/share/oilwar/\"
+ 
+ bin_PROGRAMS = oilwar
+ oilwar_SOURCES = Main.hpp Main.cpp cParticleSystem.hpp cParticleSystem.cpp Config.hpp
