@@ -20,13 +20,13 @@ bin/unbuffer
 bin/weather
 bin/xkibitz
 bin/xpstat
-include/tcldbg.h
 include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tclRegexp.h
-lib/expect5.30/pkgIndex.tcl
+include/tcldbg.h
 lib/expect5.30/libexpect530.a
+lib/expect5.30/pkgIndex.tcl
 lib/libexpect530.a
 lib/libexpect530.so.1.2
 @exec /sbin/ldconfig -m %B

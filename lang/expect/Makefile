@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/10/27 20:16:52 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/01/01 07:10:58 brad Exp $
 
 DISTNAME=	expect-5.30
 CATEGORIES=	lang
@@ -8,8 +8,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	niklas@openbsd.org
 
-LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
-		tk80.1.5:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80.1.5:${PORTSDIR}/x11/tk80
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
@@ -21,8 +20,8 @@ CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.0 \
 
 WRKSRC=	${WRKDIR}/${PKGNAME}
 
-test:
-	@(cd ${WRKBUILD}; ${MAKE} test)
+test:	build
+	@(cd ${WRKBUILD}; make test)
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
