@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/07 18:38:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2002/07/01 05:06:44 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
-DISTNAME=	eboard-0.5.2
+DISTNAME=	eboard-0.6.1
 CATEGORIES=	games
 NEED_VERSION=	1.528
 
@@ -21,6 +21,8 @@ LIB_DEPENDS=		Imlib.19,gdk_imlib::graphics/imlib
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
+
+MAKE_FLAGS+=		CXXFLAGS="${CXXFLAGS}"
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt
