@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.407 2001/05/05 23:42:03 miod Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.408 2001/05/07 15:24:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1580,7 +1580,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
      	PREFIX='$${DESTDIR}${PREFIX}' \
 		INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
 		INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
-		INSTALLPRIVLIB='$${DESTDIR}/usr/libdata/perl5' \
+		INSTALLPRIVLIB='$${DESTDIR}/usr/./libdata/perl5' \
 		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
 		INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
 		INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
