@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/08/27 22:16:22 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/09/13 08:56:30 brad Exp $
 
 DISTNAME=	glib-1.2.8
 CATEGORIES=	devel
@@ -25,6 +25,9 @@ FLAVORS=	threads
 FLAVOR?=
 
 .if ${FLAVOR:L} == "threads"
+. if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"pthreads are currently not working on the SPARC architecture"
+. endif
 CONFIGURE_ARGS+= --enable-threads
 .else
 CONFIGURE_ARGS+= --disable-threads
