@@ -34,6 +34,6 @@ you probably need them.
 Once the package is installed, just edit your XF86Config file, to add
 ${PREFIX}/X11/lib/modules, e.g.,
 
-     ModulePath "${PREFIX}/X11/lib/modules"
+     ModulePath "${PREFIX}/lib/X11/modules"
      ModulePath "${X11BASE}/lib/modules"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/04/27 23:54:32 espie Exp $
 
 CATEGORIES=x11
 NEED_VERSION=1.515
@@ -20,5 +20,7 @@ NO_BUILD=
 
 do-install:
 	cd ${PREFIX} && tar -zxv -s ,X11R6/lib,lib/X11, -f ${FULLDISTDIR}/${DISTNAME}.tar.gz
+
+SUBST_VARS=X11BASE
 
 .include <bsd.port.mk>
