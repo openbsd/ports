@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/07/23 06:03:01 jolan Exp $
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 SYSCONFDIR=${SYSCONFDIR:-/etc}
@@ -15,7 +15,6 @@ ID=518
 
 do_usergroup_install()
 {
-  # Create Opennap user and group
   if groupinfo -e $DOVECOTGROUP; then
     echo "===> Using $DOVECOTGROUP group for dovecot"
   else

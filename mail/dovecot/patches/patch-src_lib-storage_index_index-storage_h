@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib-storage_index_index-storage_h,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/lib-storage/index/index-storage.h.orig	Sat Jun 14 22:43:05 2003
++++ src/lib-storage/index/index-storage.h	Tue Jul 15 15:18:03 2003
+@@ -49,7 +49,7 @@ void index_storage_destroy_unrefed(void)
+ struct index_mailbox *
+ index_storage_init(struct mail_storage *storage, struct mailbox *box,
+ 		   struct mail_index *index, const char *name,
+-		   int readonly, int fast);
++		   enum mailbox_open_flags flags);
+ int index_storage_close(struct mailbox *box);
+ 
+ int index_storage_sync_and_lock(struct index_mailbox *ibox,

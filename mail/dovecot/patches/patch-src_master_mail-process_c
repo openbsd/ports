@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_master_mail-process_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/master/mail-process.c.orig	Tue Jun 24 18:26:44 2003
++++ src/master/mail-process.c	Tue Jul 15 15:18:19 2003
+@@ -188,6 +188,8 @@ int create_mail_process(int socket, stru
+ 		env_put("MAILDIR_CHECK_CONTENT_CHANGES=1");
+ 	if (set->mail_full_filesystem_access)
+ 		env_put("FULL_FILESYSTEM_ACCESS=1");
++	if (set->index_mmap_invalidate)
++		env_put("MMAP_INVALIDATE=1");
+ 	(void)umask(set->umask);
+ 
+ 	env_put(t_strconcat("MBOX_LOCKS=", set->mbox_locks, NULL));

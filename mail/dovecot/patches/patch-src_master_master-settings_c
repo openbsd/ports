@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_master_master-settings_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/master/master-settings.c.orig	Wed May 21 06:43:04 2003
++++ src/master/master-settings.c	Tue Jul 15 15:18:22 2003
+@@ -69,6 +69,7 @@ static struct setting_def setting_defs[]
+ 	DEF(SET_INT, mbox_dotlock_change_timeout),
+ 	DEF(SET_INT, umask),
+ 	DEF(SET_BOOL, mail_drop_priv_before_exec),
++	DEF(SET_BOOL, index_mmap_invalidate),
+ 
+ 	/* imap */
+ 	DEF(SET_STR, imap_executable),
+@@ -182,6 +183,11 @@ struct settings default_settings = {
+ 	MEMBER(mbox_dotlock_change_timeout) 30,
+ 	MEMBER(umask) 0077,
+ 	MEMBER(mail_drop_priv_before_exec) FALSE,
++#ifdef NEED_MS_INVALIDATE
++	MEMBER(index_mmap_invalidate) TRUE,
++#else
++	MEMBER(index_mmap_invalidate) FALSE,
++#endif
+ 
+ 	/* imap */
+ 	MEMBER(imap_executable) PKG_LIBEXECDIR"/imap",

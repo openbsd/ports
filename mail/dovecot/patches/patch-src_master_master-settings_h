@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_master_master-settings_h,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/master/master-settings.h.orig	Sun May 18 07:26:29 2003
++++ src/master/master-settings.h	Tue Jul 15 15:18:26 2003
+@@ -53,6 +53,7 @@ struct settings {
+ 	unsigned int mbox_dotlock_change_timeout;
+ 	unsigned int umask;
+ 	int mail_drop_priv_before_exec;
++	int index_mmap_invalidate;
+ 
+ 	/* imap */
+ 	const char *imap_executable;

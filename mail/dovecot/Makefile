@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/23 06:03:00 jolan Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 DISTNAME=	dovecot-0.99.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}
 
@@ -17,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	iconv
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.13
 CONFIGURE_ARGS+=--without-pam --without-shadow --without-vpopmail \
 		--localstatedir=/var --with-ssldir=/etc/ssl --with-ssl=openssl
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_imap_cmd-status_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/imap/cmd-status.c.orig	Tue Jun 24 18:12:56 2003
++++ src/imap/cmd-status.c	Tue Jul 15 15:17:12 2003
+@@ -65,7 +65,10 @@ static int get_mailbox_status(struct cli
+ 	} else {
+ 		/* open the mailbox */
+ 		box = client->storage->open_mailbox(client->storage,
+-						    mailbox, TRUE, TRUE);
++						    mailbox,
++						    mailbox_open_flags |
++						    MAILBOX_OPEN_FAST |
++						    MAILBOX_OPEN_READONLY);
+ 		if (box == NULL)
+ 			return FALSE;
+ 	}

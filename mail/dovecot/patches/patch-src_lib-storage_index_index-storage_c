@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_lib-storage_index_index-storage_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
+--- src/lib-storage/index/index-storage.c.orig	Sat Jun 14 22:43:05 2003
++++ src/lib-storage/index/index-storage.c	Tue Jul 15 15:18:00 2003
+@@ -266,20 +266,28 @@ int index_storage_lock(struct index_mail
+ struct index_mailbox *
+ index_storage_init(struct mail_storage *storage, struct mailbox *box,
+ 		   struct mail_index *index, const char *name,
+-		   int readonly, int fast)
++		   enum mailbox_open_flags flags)
+ {
+ 	struct index_mailbox *ibox;
+-	enum mail_index_open_flags flags;
++	enum mail_index_open_flags index_flags;
+ 
+ 	i_assert(name != NULL);
+ 
++	index_flags = MAIL_INDEX_OPEN_FLAG_CREATE;
++	if ((flags & MAILBOX_OPEN_FAST) != 0)
++		index_flags |= MAIL_INDEX_OPEN_FLAG_FAST;
++	if ((flags & MAILBOX_OPEN_READONLY) != 0)
++		index_flags |= MAIL_INDEX_OPEN_FLAG_UPDATE_RECENT;
++	if ((flags & MAILBOX_OPEN_MMAP_INVALIDATE) != 0)
++		index_flags |= MAIL_INDEX_OPEN_FLAG_MMAP_INVALIDATE;
++
+ 	do {
+ 		ibox = i_new(struct index_mailbox, 1);
+ 		ibox->box = *box;
+ 
+ 		ibox->box.storage = storage;
+ 		ibox->box.name = i_strdup(name);
+-		ibox->box.readonly = readonly;
++		ibox->box.readonly = (flags & MAILBOX_OPEN_READONLY) != 0;
+ 
+ 		ibox->index = index;
+ 
+@@ -293,13 +301,7 @@ index_storage_init(struct mail_storage *
+ 			index->never_cache_fields =
+ 				get_never_cache_fields();
+ 
+-			flags = MAIL_INDEX_OPEN_FLAG_CREATE;
+-			if (fast)
+-				flags |= MAIL_INDEX_OPEN_FLAG_FAST;
+-			if (!readonly)
+-				flags |= MAIL_INDEX_OPEN_FLAG_UPDATE_RECENT;
+-
+-			if (!index->open(index, flags))
++			if (!index->open(index, index_flags))
+ 				break;
+ 
+ 			if (INDEX_IS_IN_MEMORY(index) &&
