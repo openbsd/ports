@@ -1,6 +1,6 @@
---- voice/Makefile.orig	Mon Dec 29 23:06:36 1997
-+++ voice/Makefile	Mon Dec 29 23:07:18 1997
-@@ -89,11 +89,11 @@
+--- voice/Makefile.orig	Sun Apr 19 10:18:37 1998
++++ voice/Makefile	Thu Aug 27 21:06:50 1998
+@@ -90,11 +90,11 @@
  	done
  	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
  	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)

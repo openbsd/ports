@@ -16,11 +16,11 @@ cat >> policy.h <<END
 #undef LOCK
 #define LOCK "/var/spool/lock/LCK..%s"
 
-#undef FAX_LOG
-#define FAX_LOG		"/var/spool/fax/Faxlog"
-
 #undef MAILER
 #define MAILER		"/usr/sbin/sendmail"
+
+#undef FAX_NOTIFY_PROGRAM
+#define SYSLOG
 
 END
 

@@ -1,19 +1,11 @@
-*** sendfax.c.orig	Mon Apr 27 18:32:45 1998
---- sendfax.c	Mon Apr 27 18:33:27 1998
-***************
-*** 40,46 ****
-  extern time_t	call_start;			/* for accounting */
-  
-  /* seems to missing nearly everywhere */
-! #ifndef __NetBSD__
-  time_t	time _PROTO(( long * tloc ));
-  #endif
-  
---- 40,46 ----
-  extern time_t	call_start;			/* for accounting */
-  
-  /* seems to missing nearly everywhere */
-! #if !defined(__NetBSD__) && !defined(__OpenBSD__)
-  time_t	time _PROTO(( long * tloc ));
-  #endif
-  
+--- sendfax.c.orig	Thu Jul  2 02:47:38 1998
++++ sendfax.c	Thu Aug 27 21:09:42 1998
+@@ -40,7 +40,7 @@
+ extern time_t	call_start;			/* for accounting */
+ 
+ /* seems to missing nearly everywhere */
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+ time_t	time _PROTO(( long * tloc ));
+ #endif
+ 

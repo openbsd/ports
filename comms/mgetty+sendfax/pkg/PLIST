@@ -65,7 +65,7 @@ sbin/vgetty
 @dirrm lib/mgetty+sendfax
 @unexec echo "***"
 @unexec echo "*** Mgetty binaries, libraries and documentation files"
-@unexec echo "*** have been removed. You should remove /etc/mgetty"
+@unexec echo "*** have been removed. You should remove /etc/mgetty+sendfax"
 @unexec echo "*** directory manually to complete uninstall mgetty."
 @unexec echo "*** Don't forget to update /etc/ttys."
 @unexec echo "***"

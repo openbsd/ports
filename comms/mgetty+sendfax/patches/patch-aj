@@ -1,19 +1,11 @@
-*** faxrec.c.orig	Mon Apr 27 18:52:05 1998
---- faxrec.c	Mon Apr 27 18:52:33 1998
-***************
-*** 35,41 ****
-  extern time_t call_start;		/* in faxrecp.c, set in mgetty.c */
-  static time_t call_done;
-  
-! #ifndef __NetBSD__
-  time_t	time _PROTO(( long * tloc ));
-  #endif
-  
---- 35,41 ----
-  extern time_t call_start;		/* in faxrecp.c, set in mgetty.c */
-  static time_t call_done;
-  
-! #if !defined(__NetBSD__) && !defined(__OpenBSD__)
-  time_t	time _PROTO(( long * tloc ));
-  #endif
-  
+--- faxrec.c.orig	Tue Dec 16 03:39:24 1997
++++ faxrec.c	Thu Aug 27 21:10:24 1998
+@@ -35,7 +35,7 @@
+ extern time_t call_start;		/* in faxrecp.c, set in mgetty.c */
+ static time_t call_done;
+ 
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+ time_t	time _PROTO(( long * tloc ));
+ #endif
+ 
