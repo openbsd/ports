@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/05/21 00:07:58 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/19 13:44:14 turan Exp $
+
+BROKEN=		"checksum mismatch"
 
 DISTNAME=       rzsz
 PKGNAME=        rzsz-3.50
