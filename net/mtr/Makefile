@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/25 18:17:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2001/07/18 23:09:15 jakob Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
@@ -31,6 +31,7 @@ FLAVORS=        curses
 FLAVOR?=
 .if ${FLAVOR:L} == "curses"
 CONFIGURE_ARGS+=	--disable-gtk
+CONFIGURE_ARGS+=	--with-gtk-prefix=/nonexisting
 .else
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
 .endif
