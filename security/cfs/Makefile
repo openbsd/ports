@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/31 23:31:04 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/11/24 03:41:22 brad Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-MASTER_SITES=	ftp://utopia.hacktic.nl/pub/crypto/disk/ \
+MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
+		ftp://utopia.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/
 
-MAINTAINER= 	angelos@openbsd.org
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+RESTRICTED=	"contains crypto code"
+
+MAINTAINER=	angelos@openbsd.org
 
 ALL_TARGET=	cfs
-MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1
-MAN8=		ccat.8 cfsd.8 cname.8
-RESTRICTED=	"contains crypto code"
 
 do-build:
 	(cd ${WRKSRC} ; sh make_with_bad_rpcgen cfs)
