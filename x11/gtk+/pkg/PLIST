@@ -1,40 +1,48 @@
-include/glib.h
+bin/gtk-config
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
+include/gdk/gdkrgb.h
 include/gdk/gdki18n.h
 include/gdk/gdkkeysyms.h
 include/gdk/gdkprivate.h
 include/gdk/gdktypes.h
 include/gdk/gdkx.h
 include/gtk/gtk.h
-include/gtk/gtkaccelerator.h
+include/gtk/gtkaccelgroup.h
+include/gtk/gtkaccellabel.h
 include/gtk/gtkadjustment.h
-include/gtk/gtkaspectframe.h
 include/gtk/gtkalignment.h
+include/gtk/gtkarg.h
 include/gtk/gtkarrow.h
+include/gtk/gtkaspectframe.h
 include/gtk/gtkbin.h
+include/gtk/gtkbindings.h
 include/gtk/gtkbbox.h
 include/gtk/gtkbox.h
 include/gtk/gtkbutton.h
+include/gtk/gtkcalendar.h
 include/gtk/gtkcheckbutton.h
 include/gtk/gtkcheckmenuitem.h
 include/gtk/gtkclist.h
 include/gtk/gtkcolorsel.h
 include/gtk/gtkcombo.h
+include/gtk/gtkcompat.h
 include/gtk/gtkcontainer.h
+include/gtk/gtkgc.h
+include/gtk/gtkctree.h
 include/gtk/gtkcurve.h
 include/gtk/gtkdata.h
 include/gtk/gtkdebug.h
 include/gtk/gtkdialog.h
+include/gtk/gtkdnd.h
 include/gtk/gtkdrawingarea.h
-include/gtk/gtkgc.h
 include/gtk/gtkeditable.h
 include/gtk/gtkentry.h
 include/gtk/gtkenums.h
 include/gtk/gtkeventbox.h
-include/gtk/gtkfeatures.h
 include/gtk/gtkfilesel.h
 include/gtk/gtkfixed.h
+include/gtk/gtkfontsel.h
 include/gtk/gtkframe.h
 include/gtk/gtkgamma.h
 include/gtk/gtkhandlebox.h
@@ -44,11 +52,14 @@ include/gtk/gtkhpaned.h
 include/gtk/gtkhruler.h
 include/gtk/gtkhscale.h
 include/gtk/gtkhscrollbar.h
-include/gtk/gtkhseparator.h
 include/gtk/gtkimage.h
+include/gtk/gtkhseparator.h
 include/gtk/gtkinputdialog.h
+include/gtk/gtkinvisible.h
 include/gtk/gtkitem.h
+include/gtk/gtkitemfactory.h
 include/gtk/gtklabel.h
+include/gtk/gtklayout.h
 include/gtk/gtklist.h
 include/gtk/gtklistitem.h
 include/gtk/gtkmain.h
@@ -61,15 +72,18 @@ include/gtk/gtkmisc.h
 include/gtk/gtknotebook.h
 include/gtk/gtkobject.h
 include/gtk/gtkoptionmenu.h
+include/gtk/gtkpacker.h
 include/gtk/gtkpaned.h
 include/gtk/gtkpixmap.h
+include/gtk/gtkrc.h
+include/gtk/gtkplug.h
 include/gtk/gtkpreview.h
 include/gtk/gtkprivate.h
+include/gtk/gtkprogress.h
 include/gtk/gtkprogressbar.h
 include/gtk/gtkradiobutton.h
 include/gtk/gtkradiomenuitem.h
 include/gtk/gtkrange.h
-include/gtk/gtkrc.h
 include/gtk/gtkruler.h
 include/gtk/gtkscale.h
 include/gtk/gtkscrollbar.h
@@ -77,11 +91,14 @@ include/gtk/gtkscrolledwindow.h
 include/gtk/gtkselection.h
 include/gtk/gtkseparator.h
 include/gtk/gtksignal.h
+include/gtk/gtksocket.h
 include/gtk/gtkspinbutton.h
 include/gtk/gtkstyle.h
 include/gtk/gtkstatusbar.h
 include/gtk/gtktable.h
+include/gtk/gtktearoffmenuitem.h
 include/gtk/gtktext.h
+include/gtk/gtkthemes.h
 include/gtk/gtktipsquery.h
 include/gtk/gtktogglebutton.h
 include/gtk/gtktoolbar.h
@@ -99,38 +116,68 @@ include/gtk/gtkvscrollbar.h
 include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
+include/gtk/gtkfeatures.h
+include/gtk/gtkmarshal.h
 include/gtk/gtktypebuiltins.h
-lib/libglib.a
-lib/libglib.la
-lib/libglib.so.1.6
-lib/libgdk.a
+lib/locale/cs/LC_MESSAGES/gtk+.mo
+lib/locale/de/LC_MESSAGES/gtk+.mo
+lib/locale/es/LC_MESSAGES/gtk+.mo
+lib/locale/fr/LC_MESSAGES/gtk+.mo
+lib/locale/hu/LC_MESSAGES/gtk+.mo
+lib/locale/it/LC_MESSAGES/gtk+.mo
+lib/locale/ja/LC_MESSAGES/gtk+.mo
+lib/locale/ko/LC_MESSAGES/gtk+.mo
+lib/locale/nl/LC_MESSAGES/gtk+.mo
+lib/locale/no/LC_MESSAGES/gtk+.mo
+lib/locale/pl/LC_MESSAGES/gtk+.mo
+lib/locale/pt/LC_MESSAGES/gtk+.mo
+lib/locale/ru/LC_MESSAGES/gtk+.mo
+lib/locale/sv/LC_MESSAGES/gtk+.mo
+lib/libgdk-1.2.so.0.0
 lib/libgdk.la
-lib/libgdk.so.1.6
-lib/libgtk.a
+lib/libgdk.a
+lib/libgtk-1.2.so.0.0
 lib/libgtk.la
-lib/libgtk.so.1.6
+lib/libgtk.a
+@unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %B
-lib/glib/include/glibconfig.h
-bin/gtk-config
 man/man1/gtk-config.1
-share/aclocal/gtk.m4
 @unexec install-info --delete %D/info/gdk.info %D/info/dir
 @unexec install-info --delete %D/info/gtk.info %D/info/dir
-@unexec install-info --delete %D/info/glib.info %D/info/dir
 info/gdk.info
 info/gtk.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
 info/gtk.info-1
 info/gtk.info-2
 info/gtk.info-3
 info/gtk.info-4
 info/gtk.info-5
-info/glib.info
+info/gtk.info-6
+share/themes/Default/gtk/gtkrc
+share/aclocal/gtk.m4
+etc/gtk/gtkrc.ja
+etc/gtk/gtkrc.ko
+etc/gtk/gtkrc.ru
+@dirrm etc/gtk
+@dirrm share/aclocal
+@dirrm lib/locale/sv/LC_MESSAGES
+@dirrm lib/locale/ru/LC_MESSAGES
+@dirrm lib/locale/pt/LC_MESSAGES
+@dirrm lib/locale/pl/LC_MESSAGES
+@dirrm lib/locale/no/LC_MESSAGES
+@dirrm lib/locale/nl/LC_MESSAGES
+@dirrm lib/locale/ko/LC_MESSAGES
+@dirrm lib/locale/ja/LC_MESSAGES
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/hu/LC_MESSAGES
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/cs/LC_MESSAGES
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
-@exec install-info %D/info/glib.info %D/info/dir
-@exec /sbin/ldconfig -m %D/lib
-@dirrm include/gdk
 @dirrm include/gtk
-@dirrm lib/glib/include
-@dirrm lib/glib
+@dirrm include/gdk
