@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.12 1998/05/17 05:39:01 angelos Exp $
+#	$OpenBSD: Makefile,v 1.13 1998/06/08 02:36:23 angelos Exp $
 #
 
     SUBDIR += a2ps
 #   SUBDIR += a2ps43
-#   SUBDIR += acroread
+    SUBDIR += acroread
     SUBDIR += afm
 #   SUBDIR += apsfilter
 #   SUBDIR += asprint
