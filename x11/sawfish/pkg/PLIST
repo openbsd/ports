@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/21 18:34:51 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/15 04:39:16 margarida Exp $
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
@@ -10,28 +10,28 @@ info/sawfish.info-3
 info/sawfish.info-4
 info/sawfish.info-5
 @exec install-info --info-dir=%D/info %D/info/sawfish.info
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.a
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/DOC
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gradient.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gradient.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk-style
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish-about
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish-menu
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/flippers.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/flippers.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/gradient.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/gradient.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/play-sample.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/play-sample.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/selection.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/selection.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/x.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/x.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/selection.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/selection.la
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/x.a
-libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/x.la
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.a
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/DOC
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gradient.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gradient.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gtk-style
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish-about
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish-menu
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/flippers.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/flippers.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/gradient.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/gradient.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/play-sample.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/play-sample.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/selection.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/selection.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/x.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/x.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/selection.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/selection.la
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/x.a
+libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/x.la
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/pixmaps/sawfish.png
 share/sawfish/${VERSION}/lisp/anim-outline.jl
@@ -612,10 +612,10 @@ share/sawfish/${VERSION}/themes/smaker/theme.jl
 @dirrm share/sawfish/${VERSION}/lisp
 @dirrm share/sawfish/${VERSION}
 @dirrm share/sawfish
-@dirrm libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util
-@dirrm libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm
-@dirrm libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish
-@dirrm libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}
+@dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util
+@dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm
+@dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish
+@dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 @dirrm libexec/sawfish/${VERSION}
 @dirrm libexec/sawfish
-@dirrm libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish
+@dirrm libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish

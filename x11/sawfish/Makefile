@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/01 02:53:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/15 04:39:16 margarida Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -17,8 +17,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		rep.10::lang/librep \
 		Imlib.19,gdk_imlib.19::graphics/imlib
 
-MAINTAINER=	Robbie Gates <robbie@g7.org>
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
