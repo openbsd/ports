@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 19:00:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/06 10:44:33 alek Exp $
 
 COMMENT=	"extensible shell, derived from plan9's rc"
 
@@ -21,6 +21,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
+.else
+WANTLIB=	c 
 .endif
 
 ALL_TARGET=	es

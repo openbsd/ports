@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/11/12 20:13:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/12/06 10:44:33 alek Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -33,6 +33,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 
 .if ${FLAVOR:L:Mstatic}
 CONFIGURE_ARGS=	--enable-static-link
+.else
+WANTLIB=	c termcap 
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/10/11 02:08:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.34 2004/12/06 10:44:33 alek Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
@@ -19,6 +19,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
+.else
+WANTLIB=	c termlib 
 .endif
 
 ALL_TARGET=	all catalogs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/09/30 21:46:58 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2004/12/06 10:44:33 alek Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -51,6 +51,7 @@ PKGNAME$i=	zsh$i-${VERSION:C/-//g}
 RUN_DEPENDS=	::shells/zsh
 .  endif
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
+WANTLIB=	c m termcap 
 .endif
 
 SUBST_VARS=	VERSION
