@@ -1,0 +1,11 @@
+--- app/Makefile.in.orig	Wed Apr  7 20:53:10 1999
++++ app/Makefile.in	Wed Apr  7 20:53:31 1999
+@@ -175,7 +175,7 @@
+ EXTRA_DIST =  	makefile.msc			gimp.def			gimp.rc				wilber.ico
+ 
+ 
+-CPPFLAGS =  	-DLIBDIR=\""$(gimpplugindir)"\"		-DLOCALEDIR=\""$(localedir)"\"		-DREGEX_MALLOC				@GIMP_THREAD_FLAGS@
++CPPFLAGS =  	-DLIBDIR=\""$(gimpplugindir)"\"		-DLOCALEDIR=\""$(localedir)"\"		-DREGEX_MALLOC		@GIMP_THREAD_FLAGS@	@CPPFLAGS@
+ 
+ 
+ INCLUDES =  	-I$(top_srcdir)				-I$(top_srcdir)/intl			$(GTK_CFLAGS)				-I$(includedir)

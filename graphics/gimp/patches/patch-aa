@@ -5,12 +5,12 @@
  
  
 -libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
-+libgimp_la_LDFLAGS =  	-version-info 1:4:0
++libgimp_la_LDFLAGS =  	-version-info 1:1:0
  
  libgimp_la_LIBADD = $(GLIB_LIBS) -lm
  
 -libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
-+libgimpui_la_LDFLAGS =  	-version-info 1:4:0
++libgimpui_la_LDFLAGS =  	-version-info 1:1:0
  
  libgimpui_la_LIBADD = $(GTK_LIBS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

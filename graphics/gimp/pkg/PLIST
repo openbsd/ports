@@ -174,13 +174,13 @@ lib/gimp/1.1/modules/libcolorsel_gtk.la
 lib/gimp/1.1/modules/libcolorsel_gtk.a
 lib/gimp/1.1/modules/libcolorsel_triangle.la
 lib/gimp/1.1/modules/libcolorsel_triangle.a
-lib/libgimp.so.1.4
+lib/libgimp.so.1.1
 lib/libgimp.la
 lib/libgimp.a
-lib/libgimpui.so.1.4
+lib/libgimpui.so.1.1
 lib/libgimpui.la
 lib/libgimpui.a
-lib/libgck.so.1.4
+lib/libgck.so.1.1
 lib/libgck.la
 lib/libgck.a
 lib/libmegawidget.a

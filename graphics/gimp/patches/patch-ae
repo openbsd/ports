@@ -1,0 +1,11 @@
+--- libgimp/Makefile.in.orig	Wed Apr  7 19:40:16 1999
++++ libgimp/Makefile.in	Wed Apr  7 19:41:39 1999
+@@ -163,7 +163,7 @@
+ 
+ gimpincludedir = $(includedir)/libgimp
+ 
+-CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@
++CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@	@CPPFLAGS@
+ 
+ 
+ INCLUDES =  	-I$(top_srcdir)			-I$(top_srcdir)/intl		-I../intl			$(GTK_CFLAGS)			-I$(includedir)
