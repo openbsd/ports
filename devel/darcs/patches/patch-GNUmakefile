@@ -1,57 +1,58 @@
-$OpenBSD: patch-GNUmakefile,v 1.5 2004/08/10 02:33:01 dons Exp $
+$OpenBSD: patch-GNUmakefile,v 1.6 2005/02/14 01:59:12 dons Exp $
 
 Make the install a bit more standard, get rid of sysconfdir stuff.
 Put cgi-bin stuff in darcs dir instead. 
 Don't try to build or install .ps docs, and don't regen the .html docs.
 
---- GNUmakefile.orig	2004-07-26 22:22:34.000000000 +1000
-+++ GNUmakefile	2004-08-09 16:03:55.000000000 +1000
-@@ -91,15 +91,14 @@ installbin:	all
+--- GNUmakefile.orig	Wed Feb  2 22:47:52 2005
++++ GNUmakefile	Thu Feb 10 11:32:36 2005
+@@ -78,15 +78,14 @@ installbin:	all
  	$(INSTALL) -d $(DESTDIR)/$(bindir)
  	$(INSTALL) darcs $(DESTDIR)/$(bindir)
  
 -	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/bash_completion.d/
--	$(INSTALL) -m 0644 darcs_completion $(DESTDIR)/$(sysconfdir)/bash_completion.d/darcs
+-	$(INSTALL_DATA) darcs_completion $(DESTDIR)/$(sysconfdir)/bash_completion.d/darcs
 +	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs/bash_completion.d/
-+	$(INSTALL) -m 0644 darcs_completion $(DESTDIR)/$(datadir)/darcs/bash_completion.d/darcs
++	$(INSTALL_DATA) darcs_completion $(DESTDIR)/$(datadir)/darcs/bash_completion.d/darcs
  
  	$(INSTALL) -d $(DESTDIR)/$(mandir)/man1
- 	$(INSTALL) -m 0644 darcs.1 $(DESTDIR)/$(mandir)/man1/
+ 	$(INSTALL_DATA) darcs.1 $(DESTDIR)/$(mandir)/man1/
  
 -installdocs:	darcs.ps manual/index.html
 +installdocs:
  	$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/manual
--	$(INSTALL) -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
- 	$(INSTALL) -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/darcs/manual
+-	$(INSTALL_DATA) darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
+ 	$(INSTALL_DATA) manual/* $(DESTDIR)/$(datadir)/doc/darcs/manual
  
  	$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/examples
-@@ -107,23 +106,20 @@ installdocs:	darcs.ps manual/index.html
- 	$(INSTALL) -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/doc/darcs/examples/
+@@ -94,16 +93,16 @@ installdocs:	darcs.ps manual/index.html
+ 	$(INSTALL_DATA) zsh_completion_old $(DESTDIR)/$(datadir)/doc/darcs/examples/
  
- installserver:	darcs_cgi darcs-createrepo cgi/darcs.cgi
+ installserver:	darcs-createrepo cgi/darcs.cgi
 -	$(INSTALL) -d $(DESTDIR)/$(libexecdir)/cgi-bin
--	$(INSTALL) darcs_cgi $(DESTDIR)/$(libexecdir)/cgi-bin/darcs
 +	$(INSTALL) -d $(DESTDIR)/$(libexecdir)/darcs
-+	$(INSTALL) darcs_cgi $(DESTDIR)/$(libexecdir)/darcs/darcs.cgi
  
  	$(INSTALL) -d $(DESTDIR)/$(sbindir)
  	$(INSTALL) darcs-createrepo $(DESTDIR)/$(sbindir)
  
 -	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/darcs
 -	test -e $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf || \
--	    $(INSTALL) -m 0644 cgi/cgi.conf $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf
+-	    $(INSTALL_DATA) cgi/cgi.conf $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf
 -	$(INSTALL) cgi/darcs.cgi $(DESTDIR)/$(libexecdir)/cgi-bin/darcs.cgi
-+	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs
-+	test -e $(DESTDIR)/$(datadir)/darcs/cgi.conf || \
-+	    $(INSTALL) -m 0644 cgi/cgi.conf $(DESTDIR)/$(datadir)/darcs/cgi.conf
-+	$(INSTALL) cgi/darcs.cgi $(DESTDIR)/$(libexecdir)/darcs/darcs.cgi
  	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs
++	test -e $(DESTDIR)/$(datadir)/darcs/cgi.conf || \
++	    $(INSTALL_DATA) cgi/cgi.conf $(DESTDIR)/$(datadir)/darcs/cgi.conf
++	$(INSTALL) cgi/darcs.cgi $(DESTDIR)/$(libexecdir)/darcs/darcs.cgi
++	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs
  	$(INSTALL) -d $(DESTDIR)/$(datadir)/darcs/xslt
- 	$(INSTALL) -m 644 cgi/xslt/*.xslt $(DESTDIR)/$(datadir)/darcs/xslt/
- 	$(INSTALL) -m 644 cgi/xslt/styles.css $(DESTDIR)/$(datadir)/darcs/xslt/styles.css
--	test -e $(DESTDIR)/$(sysconfdir)/darcs/styles.css || \
--	    ln -s $(datadir)/darcs/xslt/styles.css \
--		$(DESTDIR)/$(sysconfdir)/darcs/styles.css
+ 	$(INSTALL_DATA) cgi/xslt/*.xslt $(DESTDIR)/$(datadir)/darcs/xslt/
+ 	$(INSTALL_DATA) cgi/xslt/styles.css $(DESTDIR)/$(datadir)/darcs/xslt/styles.css
+@@ -112,7 +111,7 @@ installserver:	darcs-createrepo cgi/darc
+ #	test -e $(DESTDIR)/$(sysconfdir)/darcs/styles.css || \
+ #	    ln -s $(datadir)/darcs/xslt/styles.css \
+ #		$(DESTDIR)/$(sysconfdir)/darcs/styles.css
+-	$(INSTALL) -m 644 cgi/xslt/styles.css $(DESTDIR)/$(sysconfdir)/darcs/styles.css
++	$(INSTALL) -m 644 cgi/xslt/styles.css $(DESTDIR)/$(datadir)/darcs/styles.css
  
  dist:		darcs
  	./darcs dist --dist-name darcs-`./darcs --version`

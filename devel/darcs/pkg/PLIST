@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/02/14 01:59:12 dons Exp $
 bin/darcs
 libexec/darcs/
 libexec/darcs/darcs.cgi
@@ -8,6 +8,7 @@ share/darcs/
 share/darcs/bash_completion.d/
 share/darcs/bash_completion.d/darcs
 share/darcs/cgi.conf
+share/darcs/styles.css
 share/darcs/xslt/
 share/darcs/xslt/annotate.xslt
 share/darcs/xslt/browse.xslt
@@ -15,14 +16,15 @@ share/darcs/xslt/common.xslt
 share/darcs/xslt/errors.xslt
 share/darcs/xslt/patches.xslt
 share/darcs/xslt/repos.xslt
+share/darcs/xslt/rss.xslt
 share/darcs/xslt/styles.css
 share/doc/darcs/
 share/doc/darcs/examples/
 share/doc/darcs/examples/zsh_completion_new
 share/doc/darcs/examples/zsh_completion_old
 share/doc/darcs/manual/
+share/doc/darcs/manual/WARNINGS
 share/doc/darcs/manual/contents.png
-share/doc/darcs/manual/crossref.png
 share/doc/darcs/manual/darcs.css
 share/doc/darcs/manual/darcs.html
 share/doc/darcs/manual/footnode.html
