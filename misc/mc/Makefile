@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/03 02:11:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/03 05:23:30 fgsch Exp $
 
 DISTNAME=		mc-4.1.35
 CATEGORIES=     	misc
@@ -13,5 +13,7 @@ MASTER_SITES=		ftp://ftp.nodomainname.net/pub/mirrors/gnu/mc/ \
 
 DISTFILES=		${DISTNAME}.tar.gz
 GNU_CONFIGURE=		yes
+
+BROKEN=			"patches are way wrong; auditing requiered."
 
 .include <bsd.port.mk>
