@@ -1,0 +1,7 @@
+DBD::SQLite is the Perl5 Database Interface driver for the SQLite
+database.
+
+In other words: DBD::SQLite is an interface between the Perl
+programming language and the SQLite programming API that comes with
+the SQLite Embeddable database management system.  Most functions
+provided by the respective programming API's are supported.
