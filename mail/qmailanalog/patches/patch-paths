@@ -1,3 +1,7 @@
+$OpenBSD: patch-paths,v 1.1 2000/09/15 13:31:53 camield Exp $
+
+Mangle some paths to be coherent with the OpenBSD (ports) hierarchy.
+
 --- hier.c.orig	Sun Aug 30 23:39:27 1998
 +++ hier.c	Wed Dec 29 19:38:31 1999
 @@ -2,16 +2,18 @@
