@@ -1,0 +1,83 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/08/10 17:00:16 pvalchev Exp $
+
+COMMENT=	"graphically improved game of yore"
+
+VERSION=	0.11
+DATAVERSION=	1.1
+SOUNDVERSION=	1.0
+MUSICVERSION=	1.0
+DISTNAME=	heroes-${VERSION}
+CATEGORIES=	games x11
+NEED_VERSION=	1.433
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		heroes-data-${DATAVERSION}${EXTRACT_SUFX} \
+		heroes-sound-effects-${SOUNDVERSION}${EXTRACT_SUFX} \
+		heroes-sound-tracks-${MUSICVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	heroes
+
+HOMEPAGE=	http://heroes.sourceforge.net/
+
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= heroes
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
+
+LIB_DEPENDS+=	intl.1:gettext-*:devel/gettext
+
+FLAVORS=	sdl ggi
+FLAVOR?=	sdl
+
+.if empty(FLAVOR:L:Msdl) && empty(FLAVOR:L:Mggi)
+ERRORS+=	"Fatal:	Must choose one flavor: sdl or ggi"
+.endif
+
+.if ${FLAVOR:L:Msdl} && ${FLAVOR:L:Mggi}
+ERRORS+=	"Fatal: Choose only one flavor: sdl or ggi"
+.endif
+
+.if ${FLAVOR:L:Msdl}
+LIB_DEPENDS+=	SDL.0.3:sdl-*-!no_x11:devel/sdl \
+		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer
+
+CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
+.else
+CONFIGURE_ARGS+= --without-sdl --without-sdl-mixer
+.endif
+
+.if ${FLAVOR:L:Mggi}
+# Sound support is disabled with the ggi flavor since it is dependent
+# on sdl-mixer.  No alternatives for now.
+LIB_DEPENDS+=	ggi.2.0:ggi-*:graphics/ggi
+CONFIGURE_ARGS+= --with-ggi="${LOCALBASE}"
+CONFIGURE_ENV+=	LIBS="-pthread"
+.else
+CONFIGURE_ARGS+= --without-ggi
+.endif
+
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+= --disable-optimizations \
+		 --without-mikmod
+
+post-install:
+.for dir in levels pics tilesets
+	${INSTALL_DATA_DIR} ${PREFIX}/share/heroes/${dir}
+	${INSTALL_DATA} ${WRKDIR}/heroes-data-${DATAVERSION}/${dir}/* ${PREFIX}/share/heroes/${dir}
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/heroes/sfx
+	${INSTALL_DATA} ${WRKDIR}/heroes-sound-effects-${SOUNDVERSION}/{*.wav,sfx.conf} ${PREFIX}/share/heroes/sfx
+	${INSTALL_DATA_DIR} ${PREFIX}/share/heroes/mod
+	${INSTALL_DATA} ${WRKDIR}/heroes-sound-tracks-${MUSICVERSION}/{*.xm,sound.conf} ${PREFIX}/share/heroes/mod
+
+.include <bsd.port.mk>

@@ -1,0 +1,12 @@
+Heroes is similar to the "Tron" and "Nibbles" games of yore, but
+includes many graphical improvements and new game features. In
+it, you must maneuver a small vehicle around a world and collect
+powerups while avoiding obstacles.
+
+Flavors:
+	sdl	- build with the Simple DirectMedia Layer library
+		and SDL_mixer for the sound interface
+	ggi	- build with the Generic Graphics Library
+		no sound support
+
+WWW: ${HOMEPAGE}
