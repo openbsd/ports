@@ -1,5 +1,6 @@
---- Doc/zsh.texi.orig	Tue Feb 29 03:29:07 2000
-+++ Doc/zsh.texi	Tue Jul  4 21:58:54 2000
+$OpenBSD: patch-Doc_zsh_texi,v 1.1 2001/05/10 19:50:28 lebel Exp $
+--- Doc/zsh.texi.orig	Tue Feb 29 03:28:45 2000
++++ Doc/zsh.texi	Thu May 10 15:46:54 2001
 @@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename zsh.info
@@ -11,7 +12,7 @@
  @c %**end of header
  
  @ifinfo
-@@ -834,7 +838,7 @@
+@@ -834,7 +838,7 @@ to prevent an alias being defined for @s
  A character may be @dfn{quoted} (that is, made to stand for itself) by
  preceding it with a @code{\}.  @code{\} followed by a newline is
  ignored.  All characters enclosed between a pair of single quotes
@@ -20,7 +21,7 @@
  (@code{!} by default).  A single quote cannot appear within single
  quotes.  Inside double quotes (@code{""}), parameter and command
  substitution occurs, and @code{\} quotes the characters @code{\},
-@@ -1622,7 +1626,7 @@
+@@ -1622,7 +1626,7 @@ case.  A history substitution begins wit
  @code{histchars} parameter which is @code{!} by default and may occur 
  anywhere on the command line; history substitutions do not nest.  The 
  @code{!} can be escaped with @code{\} or can be enclosed between a pair of 
@@ -29,7 +30,7 @@
  to suppress its special meaning. Double quotes will not work for this.
  
  @noindent
-@@ -5183,7 +5187,7 @@
+@@ -5183,7 +5187,7 @@ Array expansions of the form @code{foo$@
  @cindex rc, quoting style
  @cindex quoting style, rc
  @pindex RC_QUOTES
@@ -38,7 +39,7 @@
  singly quoted strings.
  
  @item RCS (+f)
-@@ -7008,7 +7012,8 @@
+@@ -7008,7 +7012,8 @@ the empty string all words are taken (as
  use is
  
  @example
@@ -48,7 +49,7 @@
  @end example
  
  which forces completion to look back in the history list for a word if no
-@@ -7071,7 +7076,7 @@
+@@ -7071,7 +7076,7 @@ first word in the range is instead taken
  name completion performed on the first word in the range.  For example,
  
  @example

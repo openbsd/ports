@@ -1,5 +1,6 @@
---- Doc/zsh.texi.orig	Tue Jul  4 23:29:20 2000
-+++ Doc/zsh.texi	Tue Jul  4 23:43:48 2000
+$OpenBSD: patch-Doc_zsh_texi,v 1.1 2001/05/10 19:50:28 lebel Exp $
+--- Doc/zsh.texi.orig	Mon Jun  5 04:59:37 2000
++++ Doc/zsh.texi	Thu May 10 15:48:42 2001
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -11,7 +12,7 @@
  @c %**end of header
  
  @ifinfo
-@@ -1185,14 +1189,14 @@
+@@ -1185,14 +1189,14 @@ entirely quoted.  A literal `@t{'}' char
  string by using the `@t{\'}' escape.
  
  @noindent
@@ -28,7 +29,7 @@
  @end example
  
  @noindent
-@@ -2674,7 +2678,7 @@
+@@ -2674,7 +2678,7 @@ that is to be assigned to the @emph{next
  A history expansion begins with the first character of the @t{histchars}
  parameter, which is `@t{!}' by default, and may occur anywhere on the
  command line; history expansions do not nest.  The `@t{!}' can be escaped
@@ -37,7 +38,7 @@
  to suppress its special meaning.  Double quotes will @emph{not} work for
  this.  Following this history character is an optional event designator
  (@ref{Event Designators}) and then an optional word
-@@ -6271,7 +6275,7 @@
+@@ -6271,7 +6275,7 @@ For example,
  @example
  unsetopt localtraps
  trap - INT
@@ -46,7 +47,7 @@
  @end example
  
  @noindent
-@@ -6500,7 +6504,8 @@
+@@ -6500,7 +6504,8 @@ Array expansions of the form
  @cindex rc, quoting style
  @cindex quoting style, rc
  @item @t{RC_QUOTES}
@@ -56,7 +57,7 @@
  within singly quoted strings.  Note this does not apply in quoted strings
  using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
  be used.
-@@ -9528,7 +9533,7 @@
+@@ -9528,7 +9533,7 @@ An interrupt character will not be inser
  @item @t{quote-line} (ESC-') (unbound) (unbound)
  Quote the current line; that is, put a `@t{'}' character at the
  beginning and the end, and convert all `@t{'}' characters
@@ -65,7 +66,7 @@
  
  @tindex quote-region
  @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -12353,7 +12358,7 @@
+@@ -12353,7 +12358,7 @@ different types of matches displayed sep
  
  @noindent
  @example
@@ -74,7 +75,7 @@
  @end example
  
  @noindent
-@@ -12586,7 +12591,7 @@
+@@ -12586,7 +12591,7 @@ zstyle ':completion:*:default' list-colo
  
  @noindent
  The default colors are the same as for the GNU @t{ls} command and can be
@@ -83,7 +84,7 @@
  
  @kindex list-packed, completion style
  @item @t{list-packed}
-@@ -12666,7 +12671,7 @@
+@@ -12666,7 +12671,7 @@ completion one would do:
  
  @noindent
  @example
@@ -92,7 +93,7 @@
  @end example
  
  @noindent
-@@ -12680,7 +12685,7 @@
+@@ -12680,7 +12685,7 @@ the @t{_complete} completer, one would d
  @example
  zstyle ':completion:*' completer _complete _prefix
  zstyle ':completion:*:complete:*' matcher-list \ 
@@ -101,7 +102,7 @@
  @end example
  
  @noindent
-@@ -12698,7 +12703,7 @@
+@@ -12698,7 +12703,7 @@ match specifications for each occurrence
  @example
  zstyle ':completion:*' completer _complete _correct _complete:foo
  zstyle ':completion:*:complete:*' matcher-list \ 
@@ -110,7 +111,7 @@
  zstyle ':completion:*:foo:*' matcher-list \ 
      'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
  @end example
-@@ -15383,7 +15388,7 @@
+@@ -15383,7 +15388,7 @@ generates at least one match. E.g.:
  
  @noindent
  @example
@@ -119,7 +120,7 @@
  @end example
  
  @noindent
-@@ -15594,7 +15599,7 @@
+@@ -15594,7 +15599,7 @@ use is
  
  @noindent
  @example
@@ -128,7 +129,7 @@
  @end example
  
  @noindent
-@@ -15682,7 +15687,7 @@
+@@ -15682,7 +15687,7 @@ performed on the first word in the range
  
  @noindent
  @example
@@ -137,7 +138,7 @@
  @end example
  
  @noindent
-@@ -16743,7 +16748,7 @@
+@@ -16743,7 +16748,7 @@ The @t{-s} option is a zsh extension to 
  paranoid behaviour, intended to avoid security problems involving
  a @t{chown} being tricked into affecting files other than the ones
  intended.  It will refuse to follow symbolic links, so that (for example)
@@ -146,7 +147,7 @@
  if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
  where it is after leaving directories, so that a recursive chown of
  a deep directory tree can't end up recursively chowning @t{/usr} as
-@@ -16834,7 +16839,7 @@
+@@ -16834,7 +16839,7 @@ The @t{-s} option is a zsh extension to 
  paranoid behaviour, intended to avoid common security problems involving
  a root-run @t{rm} being tricked into removing files other than the ones
  intended.  It will refuse to follow symbolic links, so that (for example)
@@ -155,7 +156,7 @@
  if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
  where it is after leaving directories, so that a recursive removal of
  a deep directory tree can't end up recursively removing @t{/usr} as
-@@ -17234,7 +17239,7 @@
+@@ -17234,7 +17239,7 @@ The number of disk blocks used by the fi
  @item @t{link}
  If the file is a link and the @t{-L} option is in
  effect, this contains the name of the file linked to, otherwise

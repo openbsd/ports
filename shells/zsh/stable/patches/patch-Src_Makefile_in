@@ -1,6 +1,7 @@
---- Src/Makefile.in.orig	Tue Aug  3 22:54:59 1999
-+++ Src/Makefile.in	Tue Aug  3 22:55:37 1999
-@@ -148,7 +148,7 @@
+$OpenBSD: patch-Src_Makefile_in,v 1.1 2001/05/10 19:50:29 lebel Exp $
+--- Src/Makefile.in.orig	Mon Aug  2 01:54:26 1999
++++ Src/Makefile.in	Thu May 10 15:46:54 2001
+@@ -148,7 +148,7 @@ uninstall: uninstall.bin
  # install binary, creating install directory if necessary
  install.bin: zsh
  	$(top_srcdir)/mkinstalldirs $(bindir)
