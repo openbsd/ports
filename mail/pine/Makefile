@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/05 00:15:36 marc Exp $
+# $OpenBSD: Makefile,v 1.22 2000/10/05 18:01:49 marc Exp $
 
 BROKEN=		"remote access exploit"
 VERSION=	4.21
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 
 HOMEPAGE=	http://www.washington.edu/pine/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Marco S Hyman <marc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -36,11 +36,17 @@ do-configure:
 	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 do-install:
+.if ${SUBPACKAGE} == "-pico" || ${SUBPACKAGE} == ""
+	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} pico ${PREFIX}/bin
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} pico.1 ${PREFIX}/man/man1
+.endif
+.if ${SUBPACKAGE} == "-pine" || ${SUBPACKAGE} == ""
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample ${PREFIX}/share/doc/pine
-	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} pico pilot pine ${PREFIX}/bin
-	cd ${FILESDIR}; ${INSTALL_SCRIPT} pgpencrypt pgpdecode pgpsign ${PREFIX}/bin
-	cd ${WRKSRC}/doc; ${INSTALL_MAN} pico.1 pilot.1 pine.1 ${PREFIX}/man/man1
+	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} pilot pine ${PREFIX}/bin
+	cd ${FILESDIR} && ${INSTALL_SCRIPT} pgpencrypt pgpdecode pgpsign ${PREFIX}/bin
+	cd ${WRKSRC}/doc; ${INSTALL_MAN} pilot.1 pine.1 ${PREFIX}/man/man1
+.endif
 
 .include <bsd.port.mk>
