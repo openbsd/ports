@@ -1,0 +1,19 @@
+--- audio.h.orig	Fri Mar  5 09:17:25 1999
++++ audio.h	Fri Mar  5 09:18:01 1999
+@@ -24,7 +24,7 @@
+ #define AUDIO_RATE_TOLERANCE	  3
+ 
+ #if 0
+-#if defined(HPUX) || defined(SUNOS) || defined(SOLARIS) || defined(OSS) || defined(__NetBSD__) || defined(SPARCLINUX) || defined(__FreeBSD__)
++#if defined(HPUX) || defined(SUNOS) || defined(SOLARIS) || defined(OSS) || defined(__NetBSD__) || defined(SPARCLINUX) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #endif
+ #endif
+ 
+@@ -85,6 +85,6 @@
+ extern int audio_write_sample(struct audio_info_struct *,short *,int);
+ extern int audio_close(struct audio_info_struct *);
+ extern void audio_info_struct_init(struct audio_info_struct *);
+-#if defined(SOLARIS) || defined(__NetBSD__)
++#if defined(SOLARIS) || defined(__NetBSD__) || defined(__OpenBSD__)
+ extern void audio_queueflush(struct audio_info_struct *ai);
+ #endif
