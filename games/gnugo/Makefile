@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/04/15 12:08:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/13 12:31:07 fgsch Exp $
 
 COMMENT=	GNU version of Go
 
 DISTNAME=	gnugo-3.0.0
 CATEGORIES=	games
-NEED_VERSION=	1.406
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gnugo
+NEED_VERSION=	1.528
+MASTER_SITES=	${MASTER_SITE_GNU:=gnugo/}
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
