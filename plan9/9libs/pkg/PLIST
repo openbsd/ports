@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/26 17:24:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:23:11 espie Exp $
+include/9libs/
 include/9libs/conf9libs.h
 include/9libs/frame.h
 include/9libs/libc.h
@@ -11,19 +12,18 @@ lib/libframe.a
 lib/libframe.la
 lib/libplan9c.a
 lib/libplan9c.la
-man/man3/add.3
-man/man3/balloc.3
-man/man3/bitblt.3
-man/man3/cachechars.3
-man/man3/event.3
-man/man3/frame.3
-man/man3/graphics.3
-man/man3/rgbpix.3
-@comment man/man3/rune.3
-man/man4/font.4
-man/man4/keyboard.4
-man/man4/utf.4
-man/man6/bitmap.6
-man/man6/regexp.6
+@man man/man3/add.3
+@man man/man3/balloc.3
+@man man/man3/bitblt.3
+@man man/man3/cachechars.3
+@man man/man3/event.3
+@man man/man3/frame.3
+@man man/man3/graphics.3
+@man man/man3/rgbpix.3
+@comment @man man/man3/rune.3
+@man man/man4/font.4
+@man man/man4/keyboard.4
+@man man/man4/utf.4
+@man man/man6/bitmap.6
+@man man/man6/regexp.6
 %%SHARED%%
-@dirrm include/9libs

@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:13:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:21:21 espie Exp $
+${P5SITE}/News/
 ${P5SITE}/News/Article.pm
 ${P5SITE}/News/AutoReply.pm
 ${P5SITE}/News/FormArticle.pm
 ${P5SITE}/News/FormReply.pm
-@comment ${P5ARCH}/auto/News/Article/.packlist
-man/man3p/News::Article.3p
-man/man3p/News::AutoReply.3p
-man/man3p/News::FormArticle.3p
-man/man3p/News::FormReply.3p
-@comment @dirrm ${P5ARCH}/auto/News/Article
-@comment @dirrm ${P5ARCH}/auto/News
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/News
+@man man/man3p/News::Article.3p
+@man man/man3p/News::AutoReply.3p
+@man man/man3p/News::FormArticle.3p
+@man man/man3p/News::FormReply.3p

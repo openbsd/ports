@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/20 20:59:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:21:21 espie Exp $
 bin/plor
-man/man1/plor.1
+@man man/man1/plor.1
+share/doc/plor/
 share/doc/plor/plor-1.html
 share/doc/plor/plor-2.html
 share/doc/plor/plor.html
 share/doc/plor/plor.txt
-@dirrm share/doc/plor

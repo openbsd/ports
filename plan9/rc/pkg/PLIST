@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/08/19 01:47:55 brad Exp $
-bin/rc
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:23:11 espie Exp $
 bin/-
 bin/--
-bin/-p
 bin/--p
-man/man1/rc.1
-man/man1/history.1
+bin/-p
+bin/rc
+@man man/man1/history.1
+@man man/man1/rc.1

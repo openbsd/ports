@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:13:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:21:21 espie Exp $
 ${P5SITE}/News/Gateway.pm
 ${P5SITE}/News/Gateway.pod
+${P5SITE}/auto/
+${P5SITE}/auto/News/
+${P5SITE}/auto/News/Gateway/
 ${P5SITE}/auto/News/Gateway/anykeyword.al
 ${P5SITE}/auto/News/Gateway/bodyheaders.al
 ${P5SITE}/auto/News/Gateway/cleanbody.al
@@ -20,20 +23,11 @@ ${P5SITE}/auto/News/Gateway/nobinaries.al
 ${P5SITE}/auto/News/Gateway/post.al
 ${P5SITE}/auto/News/Gateway/previoushop.al
 ${P5SITE}/auto/News/Gateway/whitelist.al
-@comment ${P5ARCH}/auto/News/Gateway/.packlist
 man/man3p/News::Gateway.3
+share/examples/p5-Gateway/
 share/examples/p5-Gateway/listgate
 share/examples/p5-Gateway/listgate.m4
 share/examples/p5-Gateway/listgate.readme
 share/examples/p5-Gateway/raccmod
 share/examples/p5-Gateway/raccpost
 share/examples/p5-Gateway/racrmod
-@dirrm share/examples/p5-Gateway
-@comment @dirrm ${P5ARCH}/auto/News/Gateway
-@comment @dirrm ${P5ARCH}/auto/News
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/auto/News/Gateway
-@dirrm ${P5SITE}/auto/News
-@dirrm ${P5SITE}/auto
-@dirrm ${P5SITE}/News

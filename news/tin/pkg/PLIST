@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/16 19:36:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:21:22 espie Exp $
 bin/rtin
 bin/tin
-man/man1/rtin.1
-man/man1/tin.1
-man/man5/tin.5
+@man man/man1/rtin.1
+@man man/man1/tin.1
+@man man/man5/tin.5
 share/locale/de/LC_MESSAGES/tin.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/tin.mo
 share/locale/et/LC_MESSAGES/tin.mo
 share/locale/fr/LC_MESSAGES/tin.mo
+share/tin/
 share/tin/metamutt
 share/tin/mime.types
 share/tin/opt-case.pl
@@ -16,6 +19,3 @@ share/tin/tin.defaults
 share/tin/url_handler.sh
 share/tin/w2r.pl
 share/tin/w2r.pl.1
-@dirrm share/tin
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
