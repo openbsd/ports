@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2003/06/05 19:17:06 pvalchev Exp $
 
 BROKEN=		"attempts to install during build"
 ONLY_FOR_ARCHS=	i386
@@ -71,12 +71,5 @@ pre-patch:
 do-install:
 	@rm -rf ${PREFIX}/info
 	@(cd ${PREFIX}/bin && strip ${STRIP})
-	@echo "+--------- "
-	@echo "| To upgrade to the PalmOS3 SDK, install the"
-	@echo "| palm/palmos-sdk package and make a link from the"
-	@echo "| directory ${LOCALBASE}/palm/sdk-3.5/include/Core"
-	@echo "| to ${PREFIX}/m68k-palmos-coff/include/PalmOS"
-	@echo "| after deleting the existing link."
-	@echo "+----------"
 
 .include <bsd.port.mk>
