@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/16 08:16:43 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/16 13:30:33 fgsch Exp $
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"pthreads are currently not working on the SPARC architecture"
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

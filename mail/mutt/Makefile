@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2000/09/06 05:48:48 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2000/10/16 13:30:33 fgsch Exp $
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.mutt.org/
 
 LIB_DEPENDS=	intl.1::devel/gettext 
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

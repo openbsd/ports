@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/12 15:37:34 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/16 13:30:30 fgsch Exp $
 
 DISTNAME=	pccts133mr22
 PKGNAME=	pccts-1.33r22
@@ -7,7 +7,7 @@ NEED_VERSION=	1.328
 MASTER_SITES=	http://www.polhode.com/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

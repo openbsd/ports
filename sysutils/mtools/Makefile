@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/08/28 05:06:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2000/10/16 13:30:34 fgsch Exp $
 
 DATE=		20000821
 DISTNAME=	mtools-3.9.7
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCHFILES=	mtools-3.9.7-${DATE}.diff.gz
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/29 23:33:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/16 13:30:31 fgsch Exp $
 
 DISTNAME=	cgoban-1.9.10
 CATEGORIES=	games x11
 NEED_VERSION=	1.309
 MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

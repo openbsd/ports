@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/09/07 04:30:44 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/10/16 13:30:34 fgsch Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/28 22:31:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/16 13:30:32 fgsch Exp $
 
 DISTNAME=	gnugo-2.6
 CATEGORIES=	games
@@ -6,7 +6,7 @@ NEED_VERSION=   1.308
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnugo
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
