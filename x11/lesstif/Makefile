@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 1999/12/18 19:41:39 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2000/01/27 19:11:41 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
-DISTNAME=	lesstif-0.89.4
+DISTNAME=	lesstif-0.89.9
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \

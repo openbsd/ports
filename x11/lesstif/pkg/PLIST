@@ -150,20 +150,7 @@ lib/libMrm.so.1.2
 man/man1/lesstif.1
 man/man1/mwm.1
 man/man1/xmbind.1
-man/man3/ApplicationShell.3
-man/man3/Composite.3
-man/man3/Constraint.3
-man/man3/Core.3
 man/man3/LessTifInternals.3
-man/man3/Object.3
-man/man3/OverrideShell.3
-man/man3/Rect.3
-man/man3/Shell.3
-man/man3/TopLevelShell.3
-man/man3/TransientShell.3
-man/man3/UnNamedObj.3
-man/man3/VendorShell.3
-man/man3/WmShell.3
 man/man3/XmArrowButton.3
 man/man3/XmArrowButtonGadget.3
 man/man3/XmBulletinBoard.3
@@ -231,13 +218,13 @@ share/LessTif/NEWS
 share/LessTif/README
 share/LessTif/RELEASE-POLICY
 share/LessTif/TODO
-share/LessTif/doc/html/images/hungry.gif
-share/LessTif/doc/html/images/lesstif-realsmall.gif
-share/LessTif/doc/html/images/lesstif-small.gif
-share/LessTif/doc/html/images/lesstif.gif
-share/LessTif/doc/html/images/ltsunlogo.gif
-share/LessTif/doc/html/imgs/lesstif.jpg
-share/LessTif/doc/html/imgs/ltsunlogo.gif
+share/LessTif/doc/html/images/hungry.png
+share/LessTif/doc/html/images/lesstif-realsmall.png
+share/LessTif/doc/html/images/lesstif-small.png
+share/LessTif/doc/html/images/lesstif.jpg
+share/LessTif/doc/html/images/lesstif.png
+share/LessTif/doc/html/images/ltsunlogo.jpg
+share/LessTif/doc/html/images/ltsunlogo.png
 share/LessTif/doc/html/COPYING.LIB.html
 share/LessTif/doc/html/FAQ.html
 share/LessTif/doc/html/INSTALL.html
@@ -255,7 +242,6 @@ share/LessTif/doc/html/Xbae.html
 share/LessTif/doc/html/Xlt.html
 share/LessTif/doc/html/XmStrings.txt
 share/LessTif/doc/html/apps.html
-share/LessTif/doc/html/bug-reporting.html
 share/LessTif/doc/html/bugs.html
 share/LessTif/doc/html/cdrom.html
 share/LessTif/doc/html/core.html
@@ -286,7 +272,6 @@ share/LessTif/doc/html/release-notes.html
 @dirrm lib/X11/lesstif
 @dirrm lib/X11/mwm
 @dirrm share/LessTif/doc/html/images
-@dirrm share/LessTif/doc/html/imgs
 @dirrm share/LessTif/doc/html
 @dirrm share/LessTif/doc
 @dirrm share/LessTif
