@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix-dll_mak,v 1.3 2004/05/23 18:54:01 sturm Exp $
+--- src/unix-dll.mak.orig	2004-05-23 18:45:08.000000000 +0200
++++ src/unix-dll.mak	2004-05-23 18:56:50.000000000 +0200
+@@ -70,7 +70,7 @@ $(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
+ 	$(GLCC) -g `gtk-config --cflags` -o $(GSSOX_XE) $(GLSRC)dxmain.c -L$(BINDIR) -l$(GS) `gtk-config --libs`
+ 
+ $(GSSOC_XE): $(GS_SO) $(GLSRC)dxmainc.c
+-	$(GLCC) -g -o $(GSSOC_XE) $(GLSRC)dxmainc.c -L$(BINDIR) -l$(GS)
++	$(GLCC) -g -o $(GSSOC_XE) $(GLSRC)dxmainc.c -L$(BINDIR) -l$(GS) $(XLDFLAGS) $(XLIBDIRS) -lXt -lSM -lICE -lXext -lX11 -lpng
+ 
+ # ------------------------- Recursive make targets ------------------------- #
+ 
