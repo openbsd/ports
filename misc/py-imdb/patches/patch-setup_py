@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/11/15 21:31:58 xsa Exp $
+--- setup.py.orig	Wed Nov 10 20:14:39 2004
++++ setup.py	Mon Nov 15 20:19:40 2004
+@@ -46,9 +46,9 @@ params = {'name': 'IMDbPY',
+       'license': 'GPL',
+       'platforms': 'any',
+       'keywords': ['imdb', 'movie', 'people', 'database'],
+-      'scripts': ['./bin/get_first_movie', './bin/get_movie',
+-                './bin/search_movie', './bin/get_first_person',
+-                './bin/get_person', './bin/search_person'],
++#      'scripts': ['./bin/get_first_movie', './bin/get_movie',
++#                './bin/search_movie', './bin/get_first_person',
++#                './bin/get_person', './bin/search_person'],
+       'packages': ['imdb', 'imdb.parser', 'imdb.parser.http']}
+ 
+ 
