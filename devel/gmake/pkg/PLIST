@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/07/23 13:11:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/08/03 13:30:15 todd Exp $
 bin/gmake
 @info info/make.info
-man/man1/gmake.1
+@man man/man1/gmake.1
 share/locale/da/LC_MESSAGES/make.mo
 share/locale/de/LC_MESSAGES/make.mo
 share/locale/es/LC_MESSAGES/make.mo
