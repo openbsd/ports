@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/01/15 03:06:26 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/06/01 23:11:23 brad Exp $
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
@@ -21,7 +21,7 @@ do_notice_conf()
 do_install_conf()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/silc.conf.default $CONFIG_DIR/silc.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/silc.conf $CONFIG_DIR
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed in $CONFIG_DIR."
