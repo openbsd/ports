@@ -3,14 +3,15 @@
 # Date created:		26 Mar 1999
 # Whom:                 Jim Mock <jim@FreeBSD.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/21 14:50:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/11 02:34:47 espie Exp $
 
 DISTNAME=	gaim-0.9.10
 
 CATEGORIES=	net
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.300
 
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
+HOMEPAGE=	http://www.marko.net/gaim/
 
 MAINTAINER=	evan.cordes@UMICH.EDU
 
@@ -18,8 +19,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 USE_X11=	Yes
 
-FAKE=		Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS+= --disable-esd
 

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/11 02:34:48 espie Exp $
 bin/gaim
 share/gaim/pixmaps/admin_icon.xpm
 share/gaim/pixmaps/aimicon.xpm
