@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/23 10:44:01 camield Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/13 08:27:20 camield Exp $
 
-DISTNAME=	ucspi-tcp-0.84
+DISTNAME=	ucspi-tcp-0.86
+HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
 CATEGORIES=	net
 MAINTAINER=	cd@sentia.nl
-MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
+
+MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
+		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
@@ -14,8 +17,10 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		http://pobox.com/~djb/software/ 
 
 NO_CONFIGURE=	yes
-ALL_TARGET=	default
+ALL_TARGET=	default WRKINST=${WRKINST}
 INSTALL_TARGET=	setup check
+
+FAKE=	yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

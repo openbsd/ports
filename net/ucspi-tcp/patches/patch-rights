@@ -1,0 +1,17 @@
+$OpenBSD: patch-rights,v 1.1 2000/03/13 08:27:22 camield Exp $
+
+Don't override rights on /usr/local and /usr/local/bin.
+
+--- hier.c.orig	Mon Mar 13 05:32:06 2000
++++ hier.c	Mon Mar 13 09:10:06 2000
+@@ -2,8 +2,8 @@
+ 
+ void hier()
+ {
+-  h(auto_home,-1,-1,02755);
+-  d(auto_home,"bin",-1,-1,02755);
++  h(auto_home,-1,-1,0755);
++  d(auto_home,"bin",-1,-1,0755);
+ 
+   c(auto_home,"bin","tcpserver",-1,-1,0755);
+   c(auto_home,"bin","tcprules",-1,-1,0755);
