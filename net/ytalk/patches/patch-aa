@@ -1,0 +1,287 @@
+--- ./Imakefile.org	Sat Aug 28 19:21:40 1993
++++ ./Imakefile	Thu Mar 23 22:37:37 1995
+@@ -1,64 +1,64 @@
+-#### Imakefile for YTalk version 3.0 ####
+-#
+-#			   NOTICE
+-#
+-# Copyright (c) 1990,1992,1993 Britt Yenne.  All rights reserved.
+-# 
+-# This software is provided AS-IS.  The author gives no warranty,
+-# real or assumed, and takes no responsibility whatsoever for any 
+-# use or misuse of this software, or any damage created by its use
+-# or misuse.
+-# 
+-# This software may be freely copied and distributed provided that
+-# no part of this NOTICE is deleted or edited in any manner.
+-# 
+-
+-###################################
+-## CONFIGURATION  (The Fun Part) ##
+-###################################
+-#
+-# If your machine does not support TERMIOS (example: any NeXT running
+-# NeXTStep up to and including version 3.1), then uncomment the following
+-# line.
++XCOMM ### Imakefile for YTalk version 3.0 ####
++XCOMM 
++XCOMM 			   NOTICE
++XCOMM 
++XCOMM  Copyright (c) 1990,1992,1993 Britt Yenne.  All rights reserved.
++XCOMM  
++XCOMM  This software is provided AS-IS.  The author gives no warranty,
++XCOMM  real or assumed, and takes no responsibility whatsoever for any 
++XCOMM  use or misuse of this software, or any damage created by its use
++XCOMM  or misuse.
++XCOMM  
++XCOMM  This software may be freely copied and distributed provided that
++XCOMM  no part of this NOTICE is deleted or edited in any manner.
++XCOMM  
++
++XCOMM ##################################
++XCOMM # CONFIGURATION  (The Fun Part) ##
++XCOMM ##################################
++XCOMM 
++XCOMM  If your machine does not support TERMIOS (example: any NeXT running
++XCOMM  NeXTStep up to and including version 3.1), then uncomment the following
++XCOMM  line.
+  
+-#TDEFS = -DUSE_SGTTY
++XCOMM TDEFS = -DUSE_SGTTY
+ 
+-#
+-# If you are running an older Sun OS using YP (now known as NIS), you might
+-# need to uncomment the next line if ytalk asks you "Who are you?"
++XCOMM 
++XCOMM If you are running an older Sun OS using YP (now known as NIS), you might
++XCOMM  need to uncomment the next line if ytalk asks you "Who are you?"
+ 
+-#SLIBS = -lsun
++XCOMM SLIBS = -lsun
+ 
+-#
+-# If you are on a sun running solaris 2.* you might need to uncomment the 
+-# following line.
++XCOMM 
++XCOMM  If you are on a sun running solaris 2.* you might need to uncomment the 
++XCOMM  following line.
+ 
+-#SLIBS = -lnsl -lsocket
++XCOMM SLIBS = -lnsl -lsocket
+ 
+-#
+-# If your machine has a 64-bit architecture or uses 64-bit 'long's, then you
+-# will need to uncomment the following line.
++XCOMM 
++XCOMM  If your machine has a 64-bit architecture or uses 64-bit 'long's, then you
++XCOMM  will need to uncomment the following line.
+ 
+-#BDEFS = -DY64BIT
++XCOMM BDEFS = -DY64BIT
+ 
+-#
+-# If you have (or want) a system-wide .ytalkrc file, uncomment the next
+-# line and set it to the correct pathname.  The backslashes must remain
+-# before each double-quote.
++XCOMM 
++XCOMM  If you have (or want) a system-wide .ytalkrc file, uncomment the next
++XCOMM  line and set it to the correct pathname.  The backslashes must remain
++XCOMM  before each double-quote.
+ 
+-#RCDEF = -DSYSTEM_YTALKRC=\"/usr/local/etc/ytalkrc\"
++XCOMM RCDEF = -DSYSTEM_YTALKRC=\"/usr/local/etc/ytalkrc\"
+ 
+-#
+-# If you plan to install ytalk on your system, you may want to modify
+-# the following lines.  Y_BINDIR is where the binary will be placed.
+-# Y_MANDIR is where the manpage will be placed.
++XCOMM 
++XCOMM  If you plan to install ytalk on your system, you may want to modify
++XCOMM  the following lines.  Y_BINDIR is where the binary will be placed.
++XCOMM  Y_MANDIR is where the manpage will be placed.
+ 
+ Y_BINDIR = /usr/local/bin
+ Y_MANDIR = /usr/local/man/man1
+ 
+-############################################################
+-## Past this point, you shouldn't need to modify anything ##
+-############################################################
++XCOMM ###########################################################
++XCOMM # Past this point, you shouldn't need to modify anything ##
++XCOMM ###########################################################
+ LIB = -lcurses -ltermcap $(SLIBS) $(XLIB)
+ DEFINES = -DUSE_X11 -I/usr/local/include $(TDEFS) $(BDEFS) $(RCDEF)
+ LDFLAGS = $(LDOPTIONS)
+@@ -66,7 +66,7 @@
+       xwin.o
+ PRG = ytalk
+ 
+-all:	$(PRG) ytalk.cat
++all::	$(PRG) ytalk.cat
+ 
+ $(PRG):	$(OBJ)
+ 	$(CC) $(LDFLAGS) -o $(PRG) $(OBJ) $(LIB)
+@@ -86,7 +86,10 @@
+ 
+ install:: $(PRG)
+ 	/bin/cp ytalk $(Y_BINDIR)
++	/usr/bin/strip $(Y_BINDIR)/ytalk
+ 	/bin/cp ytalk.1 $(Y_MANDIR)
++	/bin/chmod 644 $(Y_MANDIR)/ytalk.1
++	gzip -9nf $(Y_MANDIR)/ytalk.1
+ 	@echo "Ytalk installation complete."
+ 
+ $(OBJ):		header.h
+--- ./socket.c.org	Sun Nov 21 08:32:18 1993
++++ ./socket.c	Thu Mar 23 22:35:09 1995
+@@ -54,6 +54,9 @@
+     int fd, socklen;
+ 
+     sock->sin_family = AF_INET;
++#ifdef OS386BSD
++    sock->sin_len = 0;
++#endif
+     IN_ADDR(*sock) = INADDR_ANY;
+     IN_PORT(*sock) = 0;
+     if((fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
+@@ -157,6 +160,9 @@
+     int socklen;
+ 
+     autosock.sin_family = AF_INET;
++#ifdef OS386BSD
++    autosock.sin_len = 0;
++#endif
+     IN_ADDR(autosock) = INADDR_ANY;
+     IN_PORT(autosock) = 0;
+     if((autofd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+@@ -212,7 +218,12 @@
+ 	}
+     if(r == NULL)
+ 	IN_ADDR(*sock) = me->host_addr;
++#ifndef OS386BSD
+     sock->sin_family = htons(AF_INET);
++#else 
++    sock->sin_family = AF_INET; 
++    sock->sin_len = 0; 
++#endif
+ }
+ 
+ /* sendit() sends the completed message to the talk daemon at the given
+@@ -261,6 +272,9 @@
+     /* set up a sockaddr_in for the daemon we're sending to */
+ 
+     daemon.sin_family = AF_INET;
++#ifdef OS386BSD
++    daemon.sin_len = 0;
++#endif
+     IN_ADDR(daemon) = addr;
+     IN_PORT(daemon) = talkd[d].port;
+ 
+@@ -358,6 +372,9 @@
+ 	    for(; c >= (char *)&orsp.id_num; c--)
+ 		*c = *(c-2);
+ 	}
++#ifdef OS386BSD
++	orsp.addr.sin_len = 0;
++#endif
+     }
+ 
+     /* Fill in the new talk response structure if we just read an
+@@ -398,6 +415,9 @@
+ 	    return h->dtype;
+ 
+     daemon.sin_family = AF_INET;
++#ifdef OS386BSD
++    daemon.sin_len = 0;
++#endif
+     IN_ADDR(daemon) = addr;
+ 
+     m1 = omsg;
+@@ -411,7 +431,12 @@
+     m1.r_tty[0] = m2.r_tty[0] = '\0';
+     strcpy(m1.r_name, "ytalk");
+     strcpy(m2.r_name, "ytalk");
++#ifndef OS386BSD
+     m1.addr.sin_family = m2.addr.sin_family = htons(AF_INET);
++#else 
++    m1.addr.sin_family = m2.addr.sin_family = AF_INET;
++    m1.addr.sin_len = m2.addr.sin_len = 0;
++#endif
+ 
+     out = 0;
+     for(i = 0; i < 5; i++)
+@@ -651,7 +676,12 @@
+ 	strncpy(nmsg.r_tty, user->tty_name, TTY_SIZE);
+     }
+     nmsg.addr = user->sock;
++#ifndef OS386BSD
+     nmsg.addr.sin_family = htons(AF_INET);
++#else 
++    nmsg.addr.sin_family = AF_INET;
++    nmsg.addr.sin_len = 0;
++#endif
+     if(sendit(addr, d) != 0)
+     {
+ 	if(type == AUTO_LOOK_UP || type == AUTO_DELETE)
+@@ -693,7 +723,12 @@
+     strcpy(nmsg.r_name, "+AUTO");
+     nmsg.r_tty[0] = '\0';
+     nmsg.addr = autosock;
++#ifndef OS386BSD 
+     nmsg.addr.sin_family = htons(AF_INET);
++#else 
++    nmsg.addr.sin_family = AF_INET;
++    nmsg.addr.sin_len = 0;
++#endif
+ 
+     rc = 0;
+     dtype = find_daemon(me->host_addr);
+@@ -737,6 +772,9 @@
+     int socklen, fd;
+ 
+     user->sock.sin_family = AF_INET;
++#ifdef OS386BSD
++    user->sock.sin_len = 0;
++#endif
+     IN_ADDR(user->sock) = INADDR_ANY;
+     IN_PORT(user->sock) = 0;
+     if((fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+@@ -782,7 +820,9 @@
+ 
+     orig_sock = *(struct sockaddr_in *)&nrsp.addr;
+     orig_sock.sin_family = AF_INET;
+-
++#ifdef OS386BSD
++    orig_sock.sin_len = 0;
++#endif
+     /* it could be one of mine... */
+     for(u = user_list; u; u = u->unext)
+ 	if(SOCK_EQUAL(orig_sock, u->orig_sock))
+--- ./header.h.org	Sun Nov 21 08:32:16 1993
++++ ./header.h	Thu Mar 23 22:35:09 1995
+@@ -16,6 +16,15 @@
+ 
+ /* Mail comments or questions to ytalk@austin.eds.com */
+ 
++/* ---- Sze-Yao Ni: compatibility for NetBSD and FreeBSD, 
++  from jeli@csie.nctu.edu.tw ---- */
++#ifdef __NetBSD__
++# define OS386BSD
++#endif
++#ifdef __FreeBSD__
++# define OS386BSD
++#endif
++
+ #include <sys/types.h>
+ #ifdef LINUX
+ # include <linux/param.h>
+@@ -223,7 +232,9 @@
+ 
+ /* ---- global variables ---- */
+ 
++#ifndef OS386BSD
+ extern char *sys_errlist[];	/* system errors */
++#endif
+ 
+ extern yuser *me;		/* just lil' ol' me */
+ extern yuser *user_list;	/* full list of invited/connected users */

@@ -1,0 +1,157 @@
+*** comm.c.old	Sun Nov 21 19:32:17 1993
+--- comm.c	Sun Mar 26 22:05:51 1995
+***************
+*** 20,25 ****
+--- 20,26 ----
+  #include "socket.h"
+  #include "menu.h"
+  #include <sys/uio.h>
++ #include <ctype.h>
+  
+  ychar *io_ptr;		/* user input pointer */
+  int    io_len = 0;	/* user input count */
+***************
+*** 1157,1163 ****
+      }
+      for(; len > 0; len--, buf++)
+      {
+! 	if(*buf >= ' ' && *buf <= '~')
+  	{
+  	    if(user->x + 1 >= user->cols)
+  	    {
+--- 1158,1164 ----
+      }
+      for(; len > 0; len--, buf++)
+      {
+! 	if(isprint(*buf))
+  	{
+  	    if(user->x + 1 >= user->cols)
+  	    {
+*** menu.c.old	Sun Aug 29 06:22:27 1993
+--- menu.c	Sun Mar 26 22:03:00 1995
+***************
+*** 18,23 ****
+--- 18,24 ----
+  
+  #include "header.h"
+  #include <fcntl.h>
++ #include <ctype.h>
+  #include "menu.h"
+  
+  /* This particular file was written real early one night (morning?)
+***************
+*** 321,327 ****
+  	    {
+  		ic = *(io_ptr++);
+  
+! 		if(ic > ' ' && ic <= '~')
+  		{
+  		    if(text_pos >= menu_long)
+  			putc(7, stderr);
+--- 322,328 ----
+  	    {
+  		ic = *(io_ptr++);
+  
+! 		if(isgraph(ic))
+  		{
+  		    if(text_pos >= menu_long)
+  			putc(7, stderr);
+***************
+*** 411,417 ****
+  		if(i < menu_line)
+  		    menu_line = i;
+  	    }
+! 	    else if(ic > ' ' && ic <= '~')
+  	    {
+  		for(i = 0; i < menu_len; i++)
+  		    if(menu_ptr[i].key == ic && menu_ptr[i].func != NULL)
+--- 412,418 ----
+  		if(i < menu_line)
+  		    menu_line = i;
+  	    }
+! 	    else if(isgraph(ic))
+  	    {
+  		for(i = 0; i < menu_len; i++)
+  		    if(menu_ptr[i].key == ic && menu_ptr[i].func != NULL)
+***************
+*** 575,581 ****
+      {
+  	if((j = strlen(menu[i].item)) > menu_long)
+  	    menu_long = j;
+! 	if(menu[i].key < ' ' || menu[i].key >= '~')
+  	{
+  	    show_error("show_menu: invalid key");
+  	    return -1;
+--- 576,582 ----
+      {
+  	if((j = strlen(menu[i].item)) > menu_long)
+  	    menu_long = j;
+! 	if(!isprint(menu[i].key))
+  	{
+  	    show_error("show_menu: invalid key");
+  	    return -1;
+*** term.c.old	Sun Nov 21 19:32:19 1993
+--- term.c	Sun Mar 26 22:06:38 1995
+***************
+*** 18,23 ****
+--- 18,24 ----
+  
+  #include "header.h"
+  #include <sys/ioctl.h>
++ #include <ctype.h>
+  #ifdef USE_SGTTY
+  # ifdef hpux
+  #  include <sys/bsdtty.h>
+***************
+*** 279,285 ****
+    register yuser *user;
+    register ychar c;
+  {
+!     if(c >= ' ' && c <= '~')
+      {
+  	_addch_term(user, c);
+  	user->scr[user->y][user->x] = c;
+--- 280,286 ----
+    register yuser *user;
+    register ychar c;
+  {
+!     if(isprint(c))
+      {
+  	_addch_term(user, c);
+  	user->scr[user->y][user->x] = c;
+***************
+*** 1163,1169 ****
+      {
+  	if(*c == '\0')
+  	    c = str;
+! 	if(*c < ' ' || *c > '~')
+  	    return;
+  	_addch_term(user, *c);
+      }
+--- 1164,1170 ----
+      {
+  	if(*c == '\0')
+  	    c = str;
+! 	if(!isprint(*c))
+  	    return;
+  	_addch_term(user, *c);
+      }
+*** header.h.bak	Sun Mar 26 22:11:27 1995
+--- header.h	Sun Mar 26 22:25:35 1995
+***************
+*** 158,164 ****
+  #define KILL	edit[1]
+  #define WORD	edit[2]
+  #define CLR	edit[3]
+! #define RUBDEF	0xfe
+  
+  /* ---- Ytalk version 3.* out-of-band data ---- */
+  
+--- 158,164 ----
+  #define KILL	edit[1]
+  #define WORD	edit[2]
+  #define CLR	edit[3]
+! #define RUBDEF  0x7f
+  
+  /* ---- Ytalk version 3.* out-of-band data ---- */
+  
