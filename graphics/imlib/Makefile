@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/09 01:26:29 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/07 22:56:44 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR= gnome-1.0/sources
 
 MAINTAINER=	brad@openbsd.org
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 USE_GMAKE=	yes
 USE_X11=	yes
 SYSCONFDIR=	${PREFIX}/lib/imlib
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -39,7 +39,7 @@ pre-build:
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
-	@${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal/
+	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal/
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
