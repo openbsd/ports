@@ -1,6 +1,7 @@
---- Imakefile.orig	Tue Oct 15 16:41:19 1996
-+++ Imakefile	Sat Apr  8 16:37:33 2000
-@@ -6,7 +6,11 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/12/05 06:08:54 pvalchev Exp $
+--- Imakefile.orig	Tue Oct 15 08:41:19 1996
++++ Imakefile	Wed Dec  4 18:16:34 2002
+@@ -6,7 +6,11 @@ XCOMM $XConsortium: Imakefile,v 1.78 91/
  #define DoProfileLib ProfileLibXaw 
  #define HasSharedData YES
  #define LibName Xaw3d
@@ -12,7 +13,7 @@
  #define IncSubdir X11
  #define IncSubSubdir Xaw3d
  
-@@ -39,9 +43,9 @@
+@@ -39,9 +43,9 @@ DEFINES = XawI18nDefines
  
         LINTLIBS = $(LINTXLIB) $(LINTXTOOL)
  
@@ -24,17 +25,3 @@
  
  HEADERS = \
  	AllWidgets.h \
-@@ -222,6 +226,12 @@
- #endif
- #ifdef YaccCmd
- YACC=YaccCmd
-+#endif
-+
-+/* gcc 2.8.1 bug workaround */
-+#ifdef AlphaArchitecture
-+    CXXDEBUGFLAGS = -O0
-+      CDEBUGFLAGS = -O0
- #endif
- 
- all::
-
