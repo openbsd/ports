@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/04/20 22:50:49 espie Exp $
+lib/wnn/install-script
+lib/wnn/cvt_key_empty
+lib/wnn/cvt_key_tbl
+lib/wnn/cvt_key_tbl.ST
+lib/wnn/cvt_key_tbl.gm
+lib/wnn/cvt_key_tbl.kt
+lib/wnn/cvt_key_tbl.mv
+lib/wnn/cvt_key_tbl.vt
