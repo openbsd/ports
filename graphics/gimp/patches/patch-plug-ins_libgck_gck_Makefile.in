@@ -1,11 +1,11 @@
---- plug-ins/libgck/gck/Makefile.in.orig	Thu Jun 22 18:47:46 2000
-+++ plug-ins/libgck/gck/Makefile.in	Tue Jun 27 14:45:48 2000
-@@ -189,7 +189,7 @@
+--- plug-ins/libgck/gck/Makefile.in.orig	Tue Aug 22 13:10:27 2000
++++ plug-ins/libgck/gck/Makefile.in	Tue Aug 22 13:10:42 2000
+@@ -191,7 +191,7 @@
  gckinclude_HEADERS =  	gck.h
  
  
 -libgck_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
-+libgck_la_LDFLAGS =  	-version-info 1:1:0
++libgck_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
  
  INCLUDES =  	-I..				-I$(srcdir)/..			-I$(top_srcdir)			$(GTK_CFLAGS)			-I$(includedir)

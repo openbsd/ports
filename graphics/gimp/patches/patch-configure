@@ -1,0 +1,14 @@
+--- configure.orig	Mon Aug 21 12:53:06 2000
++++ configure	Tue Aug 22 15:48:52 2000
+@@ -3478,7 +3478,10 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
++		   INTLDEPS='-lintl'
++		   INTLLIBS=$INTLDEPS INSTOBJEXT=.mo
++		   LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.23 2000/07/23 02:37:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.24 2000/08/23 02:36:23 brad Exp $
 bin/gimp
 bin/gimp-config
+bin/gimp-remote
 bin/gimptool
 include/gck/gck.h
 include/libgimp/gimp.h
@@ -255,6 +256,7 @@ lib/libgimp.la
 lib/libgimpui.a
 lib/libgimpui.la
 %%SHARED%%
+man/man1/gimp-remote.1
 man/man1/gimp.1
 man/man1/gimptool.1
 man/man5/gimprc.5
@@ -354,6 +356,7 @@ share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmodule.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimppalette.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasite.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimppatterns.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimppixelrgn.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpplugin.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpproceduraldb.html
@@ -716,6 +719,7 @@ share/gimp/1.1/help/C/filters/animoptimize.html
 share/gimp/1.1/help/C/filters/apply_lens.html
 share/gimp/1.1/help/C/filters/autocrop.html
 share/gimp/1.1/help/C/filters/autostretch_hsv.html
+share/gimp/1.1/help/C/filters/avi.html
 share/gimp/1.1/help/C/filters/blinds.html
 share/gimp/1.1/help/C/filters/blur.html
 share/gimp/1.1/help/C/filters/bmp.html
@@ -733,6 +737,7 @@ share/gimp/1.1/help/C/filters/convmatrix.html
 share/gimp/1.1/help/C/filters/csource.html
 share/gimp/1.1/help/C/filters/cubism.html
 share/gimp/1.1/help/C/filters/curve_bend.html
+share/gimp/1.1/help/C/filters/dataurl.html
 share/gimp/1.1/help/C/filters/dbbrowser.html
 share/gimp/1.1/help/C/filters/decompose.html
 share/gimp/1.1/help/C/filters/deinterlace.html
@@ -796,7 +801,9 @@ share/gimp/1.1/help/C/filters/mapobject.html
 share/gimp/1.1/help/C/filters/max_rgb.html
 share/gimp/1.1/help/C/filters/maze.html
 share/gimp/1.1/help/C/filters/mblur.html
+share/gimp/1.1/help/C/filters/miff.html
 share/gimp/1.1/help/C/filters/mosaic.html
+share/gimp/1.1/help/C/filters/mpeg.html
 share/gimp/1.1/help/C/filters/newsprint.html
 share/gimp/1.1/help/C/filters/nlfilt.html
 share/gimp/1.1/help/C/filters/noisify.html
@@ -1204,6 +1211,7 @@ share/gimp/1.1/scripts/xach-effect.scm
 share/gimp/1.1/tips/gimp_conseils.fr.txt
 share/gimp/1.1/tips/gimp_tips.cs.txt
 share/gimp/1.1/tips/gimp_tips.de.txt
+share/gimp/1.1/tips/gimp_tips.es.txt
 share/gimp/1.1/tips/gimp_tips.it.txt
 share/gimp/1.1/tips/gimp_tips.ja.txt
 share/gimp/1.1/tips/gimp_tips.ko.txt
@@ -1245,6 +1253,10 @@ share/locale/fr/LC_MESSAGES/gimp-libgimp.mo
 share/locale/fr/LC_MESSAGES/gimp-script-fu.mo
 share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/fr/LC_MESSAGES/gimp.mo
+share/locale/gl/LC_MESSAGES/gimp-libgimp.mo
+share/locale/gl/LC_MESSAGES/gimp-script-fu.mo
+share/locale/gl/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/gl/LC_MESSAGES/gimp.mo
 share/locale/hu/LC_MESSAGES/gimp-libgimp.mo
 share/locale/hu/LC_MESSAGES/gimp-script-fu.mo
 share/locale/hu/LC_MESSAGES/gimp-std-plugins.mo
@@ -1273,6 +1285,10 @@ share/locale/pl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/pl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/pl/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/pl/LC_MESSAGES/gimp.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-libgimp.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-script-fu.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/pt_BR/LC_MESSAGES/gimp.mo
 share/locale/ru/LC_MESSAGES/gimp-libgimp.mo
 share/locale/ru/LC_MESSAGES/gimp-script-fu.mo
 share/locale/ru/LC_MESSAGES/gimp-std-plugins.mo
@@ -1289,59 +1305,59 @@ share/locale/uk/LC_MESSAGES/gimp-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp-script-fu.mo
 share/locale/uk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/uk/LC_MESSAGES/gimp.mo
-@dirrm share/gimp/1.1/tips
-@dirrm share/gimp/1.1/scripts
-@dirrm share/gimp/1.1/patterns
-@dirrm share/gimp/1.1/palettes
-@dirrm share/gimp/1.1/help/images
-@dirrm share/gimp/1.1/help/C/tools
-@dirrm share/gimp/1.1/help/C/toolbox/help
-@dirrm share/gimp/1.1/help/C/toolbox
-@dirrm share/gimp/1.1/help/C/save
-@dirrm share/gimp/1.1/help/C/paths
-@dirrm share/gimp/1.1/help/C/open
-@dirrm share/gimp/1.1/help/C/layers/stack
-@dirrm share/gimp/1.1/help/C/layers
-@dirrm share/gimp/1.1/help/C/image/view
-@dirrm share/gimp/1.1/help/C/image/select
-@dirrm share/gimp/1.1/help/C/image/image/transforms
-@dirrm share/gimp/1.1/help/C/image/image/mode
-@dirrm share/gimp/1.1/help/C/image/image/colors/auto
-@dirrm share/gimp/1.1/help/C/image/image/colors
-@dirrm share/gimp/1.1/help/C/image/image
-@dirrm share/gimp/1.1/help/C/image/edit
-@dirrm share/gimp/1.1/help/C/image
-@dirrm share/gimp/1.1/help/C/filters
-@dirrm share/gimp/1.1/help/C/file
-@dirrm share/gimp/1.1/help/C/dialogs/preferences
-@dirrm share/gimp/1.1/help/C/dialogs/paths
-@dirrm share/gimp/1.1/help/C/dialogs/palette_editor
-@dirrm share/gimp/1.1/help/C/dialogs/layers
-@dirrm share/gimp/1.1/help/C/dialogs/gradient_editor
-@dirrm share/gimp/1.1/help/C/dialogs/display_filters
-@dirrm share/gimp/1.1/help/C/dialogs/color_selectors
-@dirrm share/gimp/1.1/help/C/dialogs/channels
-@dirrm share/gimp/1.1/help/C/dialogs
-@dirrm share/gimp/1.1/help/C/channels
-@dirrm share/gimp/1.1/help/C
-@dirrm share/gimp/1.1/help
-@dirrm share/gimp/1.1/gradients
-@dirrm share/gimp/1.1/gimpressionist/Presets
-@dirrm share/gimp/1.1/gimpressionist/Paper
-@dirrm share/gimp/1.1/gimpressionist/Brushes
-@dirrm share/gimp/1.1/gimpressionist
-@dirrm share/gimp/1.1/gflare
-@dirrm share/gimp/1.1/gfig
-@dirrm share/gimp/1.1/fractalexplorer
+@dirrm include/gck
+@dirrm include/libgimp
+@dirrm lib/gimp
+@dirrm lib/gimp/1.1
+@dirrm lib/gimp/1.1/modules
+@dirrm lib/gimp/1.1/plug-ins
+@dirrm share/gimp/1.1/brushes
 @dirrm share/gimp/1.1/devel-docs/html/libgimp
 @dirrm share/gimp/1.1/devel-docs/html
 @dirrm share/gimp/1.1/devel-docs
-@dirrm share/gimp/1.1/brushes
+@dirrm share/gimp/1.1/fractalexplorer
+@dirrm share/gimp/1.1/gfig
+@dirrm share/gimp/1.1/gflare
+@dirrm share/gimp/1.1/gimpressionist/Brushes
+@dirrm share/gimp/1.1/gimpressionist/Paper
+@dirrm share/gimp/1.1/gimpressionist/Presets
+@dirrm share/gimp/1.1/gimpressionist
+@dirrm share/gimp/1.1/gradients
+@dirrm share/gimp/1.1/help/C/channels
+@dirrm share/gimp/1.1/help/C/dialogs/channels
+@dirrm share/gimp/1.1/help/C/dialogs/color_selectors
+@dirrm share/gimp/1.1/help/C/dialogs/display_filters
+@dirrm share/gimp/1.1/help/C/dialogs/gradient_editor
+@dirrm share/gimp/1.1/help/C/dialogs/layers
+@dirrm share/gimp/1.1/help/C/dialogs/palette_editor
+@dirrm share/gimp/1.1/help/C/dialogs/paths
+@dirrm share/gimp/1.1/help/C/dialogs/preferences
+@dirrm share/gimp/1.1/help/C/dialogs
+@dirrm share/gimp/1.1/help/C/file
+@dirrm share/gimp/1.1/help/C/filters
+@dirrm share/gimp/1.1/help/C/image/edit
+@dirrm share/gimp/1.1/help/C/image/image/colors
+@dirrm share/gimp/1.1/help/C/image/image/colors/auto
+@dirrm share/gimp/1.1/help/C/image/image/mode
+@dirrm share/gimp/1.1/help/C/image/image/transforms
+@dirrm share/gimp/1.1/help/C/image/image
+@dirrm share/gimp/1.1/help/C/image/select
+@dirrm share/gimp/1.1/help/C/image/view
+@dirrm share/gimp/1.1/help/C/image
+@dirrm share/gimp/1.1/help/C/layers/stack
+@dirrm share/gimp/1.1/help/C/layers
+@dirrm share/gimp/1.1/help/C/open
+@dirrm share/gimp/1.1/help/C/paths
+@dirrm share/gimp/1.1/help/C/save
+@dirrm share/gimp/1.1/help/C/toolbox/help
+@dirrm share/gimp/1.1/help/C/toolbox
+@dirrm share/gimp/1.1/help/C/tools
+@dirrm share/gimp/1.1/help/C
+@dirrm share/gimp/1.1/help/images
+@dirrm share/gimp/1.1/help
+@dirrm share/gimp/1.1/palettes
+@dirrm share/gimp/1.1/patterns
+@dirrm share/gimp/1.1/scripts
+@dirrm share/gimp/1.1/tips
 @dirrm share/gimp/1.1
 @dirrm share/gimp
-@dirrm lib/gimp/1.1/plug-ins
-@dirrm lib/gimp/1.1/modules
-@dirrm lib/gimp/1.1
-@dirrm lib/gimp
-@dirrm include/libgimp
-@dirrm include/gck

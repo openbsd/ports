@@ -1,26 +1,16 @@
---- libgimp/Makefile.in.orig	Thu Jun 22 18:47:39 2000
-+++ libgimp/Makefile.in	Tue Jun 27 14:45:21 2000
-@@ -184,7 +184,7 @@
- AM_CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@
- 
- 
--INCLUDES =  	-I$(top_srcdir)			-I$(top_srcdir)/intl		-I../intl			$(GTK_CFLAGS)			-I$(includedir)
-+INCLUDES =  	-I$(top_srcdir)			-I$(top_srcdir)/intl		-I../intl			$(GTK_CFLAGS)			-I$(includedir)		-I/usr/local/include
- 
- 
- EXTRA_DIST =  	gimpfeatures.h.in		makefile.msc			makefile.cygwin			gimp.def			gimpui.def
-@@ -213,11 +213,11 @@
+--- libgimp/Makefile.in.orig	Tue Aug 22 13:08:23 2000
++++ libgimp/Makefile.in	Tue Aug 22 13:09:10 2000
+@@ -215,11 +215,11 @@
  gimpinclude_HEADERS =  	gimp.h				${PDB_WRAPPERS_H}		gimpchainbutton.h		gimpchannel.h			gimpcolorbutton.h		gimpcolordisplay.h		gimpcolorselector.h		gimpcolorspace.h	        gimpcompat.h			gimpdrawable.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimpgradientselect.h		gimphelpui.h			gimpimage.h			gimplayer.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimpparasite.h			gimpparasiteio.h		gimppatheditor.h		gimppixelrgn.h			gimppixmap.h			gimpproceduraldb.h		gimpquerybox.h			gimpselection.h			gimpsignal.h			gimpsizeentry.h			gimptile.h			gimptypes.h			gimpui.h			gimpunit.h			gimpunitmenu.h			gimputils.h			gimpvector.h			gimpwidgets.h			gimpintl.h
  
  
 -libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
-+libgimp_la_LDFLAGS =  	-version-info 1:1:0
++libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
--libgimp_la_LIBADD = $(GLIB_LIBS) -lm
-+libgimp_la_LIBADD = $(GTK_LIBS) -lm
+ libgimp_la_LIBADD = $(GLIB_LIBS) -lm
  
 -libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
-+libgimpui_la_LDFLAGS =  	-version-info 1:1:0
++libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
  libgimpui_la_LIBADD = $(GTK_LIBS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
