@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 2000/12/29 18:51:57 avsm Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/02/21 19:04:57 avsm Exp $
 #
 # courier-imap installation to detect old-format config files
 
@@ -10,12 +10,14 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 
+COURIERCONF=${SYSCONFDIR}/courier-imap
+
 do_notice()
 {
     echo
     echo "+---------------"
     echo "| As of Courier-IMAP 1.3.0, configuration files have"
-    echo "| been moved into /etc/courier-imap, and have a new"
+    echo "| been moved into ${COURIERCONF}, and have a new"
     echo "| format."
     echo "| "
     echo "| The older format files have been detected on your"

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/09 12:06:40 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.11 2001/02/21 19:04:56 avsm Exp $ 
 
-DISTNAME=	courier-imap-1.3.3
+DISTNAME=	courier-imap-1.3.4
 CATEGORIES=	mail
 NEED_VERSION=	1.351
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
@@ -18,21 +18,24 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	pop3
 FLAVOR?=
 
-CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	concurrent
+COURIERCONF=	${SYSCONFDIR}/courier-imap
+SUBST_VARS=	COURIERCONF
+EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
+
+CONFIGURE_STYLE= gnu old
 CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=/etc/userdb --with-authuserdb \
-		--without-authmysql --without-authldap
-SYSCONFDIR= 	/etc/courier-imap
-EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
+		--without-authmysql --without-authldap \
+		--sysconfdir=${COURIERCONF}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
 .for i in pop3d-ssl imapd-ssl pop3d imapd
-	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/${i}.dist ${EXAMPLE_DIR}/${i}
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/${i}.dist ${EXAMPLE_DIR}/${i}
 .endfor
 .for i in imapd pop3d
-	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/${i}.cnf ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/${i}.cnf ${EXAMPLE_DIR}
 .endfor
 
 .include <bsd.port.mk>
