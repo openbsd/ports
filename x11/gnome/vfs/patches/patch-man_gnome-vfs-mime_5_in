@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_gnome-vfs-mime_5_in,v 1.1 2002/04/02 03:35:52 espie Exp $
+--- man/gnome-vfs-mime.5.in.orig	Tue Apr  2 05:28:39 2002
++++ man/gnome-vfs-mime.5.in	Tue Apr  2 05:29:06 2002
+@@ -7,7 +7,8 @@
+ .\"
+ .TH GNOME 1 "GNOME 1.0" 
+ .SH NAME
+-GNOME MIME configuration files
++gnome-vfs-mime - GNOME MIME configuration files
++.SH DESCRIPTION
+ .PP
+ The GNOME system uses MIME types to classify content.  Each MIME type
+ on the GNOME system has a number of attributes attached to it.  Some
