@@ -1,7 +1,5 @@
-# $OpenBSD: patch-aa,v 1.1.1.1 2000/01/31 06:44:11 form Exp $
-
---- Makefile.orig	Fri Oct 23 08:35:51 1998
-+++ Makefile	Mon Jan 31 12:15:58 2000
+--- Makefile.orig	Thu Oct 22 19:35:51 1998
++++ Makefile	Sun Apr  9 02:55:37 2000
 @@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
@@ -11,11 +9,11 @@
  
  # pixmap location
 -XMYSQL_XPMPATH = /usr/local/xmysql-1.9
-+XMYSQL_XPMPATH = ${X11BASE}/include/X11/pixmaps
++XMYSQL_XPMPATH = ${PREFIX}/include/X11/pixmaps
  
  # help path
 -XMYSQL_HELPPATH = /usr/local/xmysql-1.9
-+XMYSQL_HELPPATH = ${X11BASE}/lib/X11/xmysql
++XMYSQL_HELPPATH = ${PREFIX}/lib/X11/xmysql
  
  # Compilation Details
 -CC = gcc
@@ -30,8 +28,8 @@
 -XLOAD = -L/usr/X11R6/lib  -lX11
 +MYSQLINC = -I${LOCALBASE}/include/mysql
 +MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient
-+XFORMLIBDIR = -L${X11BASE}/lib
-+XFORMINCDIR = -I${X11BASE}/include/X11
++XFORMLIBDIR = -L${LOCALBASE}/lib
++XFORMINCDIR = -I${LOCALBASE}/include/X11
 +XINC = -I${X11BASE}/include
 +XLOAD = -L${X11BASE}/lib  -lX11
  

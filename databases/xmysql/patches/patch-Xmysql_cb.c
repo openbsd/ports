@@ -1,4 +1,4 @@
-# $OpenBSD: patch-ab,v 1.1.1.1 2000/01/31 06:44:11 form Exp $
+# $OpenBSD: patch-Xmysql_cb.c,v 1.1 2000/04/09 09:13:22 turan Exp $
 
 --- Xmysql_cb.c.orig	Tue Sep  2 16:08:23 1997
 +++ Xmysql_cb.c	Tue Sep  2 16:09:08 1997
