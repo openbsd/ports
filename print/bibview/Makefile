@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2005/02/08 22:46:30 alek Exp $
 
 COMMENT=	"GUI for manipulating BibTeX bibliography databases"
 
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	Xmu Xaw X11 c Xt SM Xext ICE
 
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=biblio/bibtex/utils/bibview-2.0/}
 
