@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/22 10:49:26 camield Exp $
+clockspeed/README
+clockspeed/bin/clockadd
+clockspeed/bin/clockspeed
+clockspeed/bin/clockview
+clockspeed/bin/sntpclock
+clockspeed/bin/taiclock
+clockspeed/bin/taiclockd
+clockspeed/etc/leapsecs.dat
+@exec if [ -f /etc/%f ]; then echo "\n!! WARNING !!\t/etc/%f exists\n\t\tPlease verify with %D/%F" ; else /bin/cp %D/%F /etc; fi
+@unexec echo "Please remove /etc/leapsecs.dat manually"
+clockspeed/man/cat1/clockadd.0
+clockspeed/man/cat1/clockspeed.0
+clockspeed/man/cat1/clockview.0
+clockspeed/man/cat1/sntpclock.0
+clockspeed/man/cat1/taiclock.0
+clockspeed/man/cat1/taiclockd.0
+clockspeed/man/man1/clockadd.1
+clockspeed/man/man1/clockspeed.1
+clockspeed/man/man1/clockview.1
+clockspeed/man/man1/sntpclock.1
+clockspeed/man/man1/taiclock.1
+clockspeed/man/man1/taiclockd.1
+@dirrm clockspeed/man/man1
+@dirrm clockspeed/man/cat1
+@dirrm clockspeed/man
+@dirrm clockspeed/etc
+@dirrm clockspeed/bin
+@dirrm clockspeed

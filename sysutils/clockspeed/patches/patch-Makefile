@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/02/22 10:49:26 camield Exp $
+
+Needed for fake installation.  This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
+
+--- Makefile.orig	Sat Jan  13 01:27:17 2001
++++ Makefile	Sat Jan  13 01:28:03 2001
+@@ -48,7 +48,7 @@ compile byte_zero.c byte.h
+ 	./compile byte_zero.c
+ 
+ check: \
+-it man instcheck
++man instcheck
+ 	./instcheck
+ 
+ clockadd: \
+@@ -267,7 +267,7 @@ compile trysysel.c select.h1 select.h2
+ 	rm -f trysysel.o trysysel
+ 
+ setup: \
+-it man install leapsecs.dat
++man install leapsecs.dat
+ 	./install
+ 
+ shar: \
