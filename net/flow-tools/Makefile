@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/01 10:10:55 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/11/20 16:56:53 espie Exp $
 
 DISTNAME=	flow-tools-0.34
 CATEGORIES=	net
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/users/maf/cisco/
 
