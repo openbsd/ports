@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/02/12 16:30:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/02/12 16:31:54 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
@@ -48,7 +48,6 @@ bin/kman2html
 bin/kmatrix.kss
 bin/kmenuedit
 bin/konqueror
-bin/konsole
 bin/kpager
 bin/kpolygon.kss
 bin/kpyro.kss
