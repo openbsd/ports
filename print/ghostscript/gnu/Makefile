@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/06 19:46:51 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
@@ -40,9 +40,8 @@ LIB_DEPENDS=	png.1.3:${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs5.50
-MAKE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
+BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
-		prefix=${PREFIX} \
 		SHARE_LIBPNG=1 \
 		SHARE_ZLIB=1 \
 		XLDFLAGS=-L${PREFIX}/lib \
@@ -56,6 +55,9 @@ MAKE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSGENDIR=./objects \
 		DEVICE_DEVS="`cat ${FILESDIR}/devices`"
 
+MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
+FAKE_FLAGS=	${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
+FAKE=		Yes
 
 MAKE_FILE=	unixansi.mak
 MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2ps.1
