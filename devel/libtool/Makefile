@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/05/28 13:21:26 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/01 22:05:11 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=	libtool-1.3.2
@@ -10,10 +10,13 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	jbi130@mail.usask.ca
 
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+pre-configure:
+	${RM} ${WRKSRC}/doc/libtool.info*
 
 post-install:
 	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
