@@ -1,0 +1,12 @@
+$OpenBSD: patch-bonobo-activation_bonobo-activation-fork-server_c,v 1.1.1.1 2003/01/31 18:43:33 todd Exp $
+--- bonobo-activation/bonobo-activation-fork-server.c.orig	Tue Oct 29 02:51:18 2002
++++ bonobo-activation/bonobo-activation-fork-server.c	Wed Nov 27 20:51:55 2002
+@@ -396,6 +396,8 @@ bonobo_activation_server_by_forking (
+ 	} else if ((childpid = fork ())) {
+ 		_exit (0);	/* de-zombifier process, just exit */
+ 	} else {
++		sigprocmask (SIG_SETMASK, &omask, NULL);
++
+ 		if (display)
+ 			bonobo_activation_setenv ("DISPLAY", display);
+ 		if (session_manager)

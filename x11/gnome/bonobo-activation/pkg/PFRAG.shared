@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 18:43:33 todd Exp $
+lib/libbonobo-activation.so.4.0
+DYNLIBDIR(%D/lib)

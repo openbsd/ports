@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/01/31 18:43:33 todd Exp $
+#
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+FILES='
+bonobo-activation/bonobo-activation-config.xml
+'
+
+echo
+echo "+--------------- $1"
+echo "| To really remove $1 from your system you should also"
+echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+echo "| Remove the directories in which the files reside as well if empty."
+echo "|"
+echo "| If you are planning on installing $1 again in the future"
+echo "| you can leave it as it is."
+echo "|"
+echo "| FYI, the following configuration files belong to this package:"
+echo "|"
+for f in ${FILES}; do
+	echo "| ${SYSCONFDIR}/$f"
+done
+echo "+--------------- $1"
+echo
+
+exit 0
