@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2002/07/15 20:57:38 naddy Exp $
---- Makefile.orig	Thu Feb 28 10:46:09 2002
-+++ Makefile	Mon Jul 15 22:46:03 2002
-@@ -33,7 +33,7 @@ LIBS	+= -lXext
- #DEFINES  += -DDEBUG	# miscellaneous debugging
- #DEFINES  += -DXDEBUG	# show some X calls
+$OpenBSD: patch-Makefile,v 1.2 2002/09/10 01:15:33 naddy Exp $
+--- Makefile.orig	Thu Aug 15 09:39:29 2002
++++ Makefile	Fri Aug 30 16:09:32 2002
+@@ -34,7 +34,7 @@ LIBS	+= -lXext
+ #DEFINES += -DXDEBUG	# show some X calls
  
--CFLAGS   = $(INCLUDES) -DVERSION=\"$(version).$(revision).$(subrev)\" -Os -Wall $(DEBIAN)
-+CFLAGS   += $(INCLUDES) -DVERSION=\"$(version).$(revision).$(subrev)\" $(DEBIAN)
+ DEFINES += -DVERSION=\"$(version).$(revision).$(subrev)\" $(DEBIAN)
+-CFLAGS   = $(INCLUDES) $(DEFINES) -Os -Wall
++CFLAGS  += $(INCLUDES) $(DEFINES)
+ #CFLAGS   = $(INCLUDES) $(DEFINES) -g -Wall
  LDFLAGS  = $(LDPATH) $(LIBS)
  
- HEADERS  = evilwm.h
