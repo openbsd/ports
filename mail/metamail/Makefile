@@ -3,24 +3,25 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:30 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/26 06:28:59 marc Exp $
 #
 
 DISTNAME=	mm2.7
 PKGNAME=	mm-2.7
 CATEGORIES=	mail
+
+MAINTAINER=	marc@OpenBSD.ORG
+
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	joey@OpenBSD.ORG
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAN1= 		audiocompose.1 audiosend.1 extcompose.1 \
-		getfilename.1 mailto-hebrew.1 mailto.1 metamail.1 \
-		metasend.1 mime.1 mimencode.1 mmencode.1 \
-		patch-metamail.1 richtext.1 showaudio.1 \
-		showexternal.1 shownonascii.1 showpartial.1 \
-		showpicture.1 splitmail.1
-MAN4=		mailcap.4
+
+pre-install:
+	@(cd ${WRKSRC}/bin && rm -f *.orig)
+
+post-install:
+	@test -f /etc/mailcap || \
+		${INSTALL_DATA} ${PREFIX}/lib/metamail/mailcap /etc
 
 .include <bsd.port.mk>
