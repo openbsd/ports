@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2004/05/29 13:59:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.321 2004/05/31 06:56:55 djm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -144,6 +144,7 @@
      SUBDIR += openvpn
      SUBDIR += oproute
      SUBDIR += p5-Chatbot-Eliza
+     SUBDIR += p5-IO-INET6
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-Net-Amazon
@@ -172,6 +173,7 @@
      SUBDIR += p5-Net-Whois-Raw
      SUBDIR += p5-PlRPC
      SUBDIR += p5-SNMP_Session
+     SUBDIR += p5-Socket6
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
      SUBDIR += pcapmerge
