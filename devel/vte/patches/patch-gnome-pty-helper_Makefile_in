@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnome-pty-helper_Makefile_in,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $
+--- gnome-pty-helper/Makefile.in.orig	Mon May 12 12:33:52 2003
++++ gnome-pty-helper/Makefile.in	Thu May 29 21:24:56 2003
+@@ -427,7 +427,7 @@ uninstall-am: uninstall-info-am uninstal
+ 
+ 
+ install-exec-hook:
+-	chown root.utmp $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
++	chown root:wheel $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
+ 	chmod g+s       $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

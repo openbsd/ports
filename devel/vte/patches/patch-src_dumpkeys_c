@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_dumpkeys_c,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $
+--- src/dumpkeys.c.orig	Tue May 27 19:02:24 2003
++++ src/dumpkeys.c	Tue May 27 19:02:53 2003
+@@ -18,11 +18,11 @@
+ 
+ #ident "$Id: patch-src_dumpkeys_c,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $"
+ #include "../config.h"
++#include <sys/types.h>
+ #ifdef HAVE_SYS_SELECT_H
+ #include <sys/select.h>
+ #endif
+ #include <sys/time.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <signal.h>

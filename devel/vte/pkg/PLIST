@@ -1,0 +1,160 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $
+bin/vte
+include/vte/pty.h
+include/vte/reaper.h
+include/vte/vte.h
+include/vte/vteaccess.h
+lib/libvte.a
+lib/libvte.la
+lib/pkgconfig/vte.pc
+lib/vte/decset
+lib/vte/interpret
+lib/vte/iso8859mode
+lib/vte/nativeecho
+lib/vte/osc
+lib/vte/slowcat
+lib/vte/utf8echo
+lib/vte/utf8mode
+lib/vte/window
+libexec/gnome-pty-helper
+share/locale/am/LC_MESSAGES/vte.mo
+share/locale/az/LC_MESSAGES/vte.mo
+share/locale/be/LC_MESSAGES/vte.mo
+share/locale/bg/LC_MESSAGES/vte.mo
+share/locale/bn/LC_MESSAGES/vte.mo
+share/locale/ca/LC_MESSAGES/vte.mo
+share/locale/cs/LC_MESSAGES/vte.mo
+share/locale/da/LC_MESSAGES/vte.mo
+share/locale/de/LC_MESSAGES/vte.mo
+share/locale/el/LC_MESSAGES/vte.mo
+share/locale/es/LC_MESSAGES/vte.mo
+share/locale/fa/LC_MESSAGES/vte.mo
+share/locale/fi/LC_MESSAGES/vte.mo
+share/locale/fr/LC_MESSAGES/vte.mo
+share/locale/he/LC_MESSAGES/vte.mo
+share/locale/hu/LC_MESSAGES/vte.mo
+share/locale/id/LC_MESSAGES/vte.mo
+share/locale/is/LC_MESSAGES/vte.mo
+share/locale/it/LC_MESSAGES/vte.mo
+share/locale/ja/LC_MESSAGES/vte.mo
+share/locale/ko/LC_MESSAGES/vte.mo
+share/locale/lv/LC_MESSAGES/vte.mo
+share/locale/ml/LC_MESSAGES/vte.mo
+share/locale/mn/LC_MESSAGES/vte.mo
+share/locale/ms/LC_MESSAGES/vte.mo
+share/locale/nl/LC_MESSAGES/vte.mo
+share/locale/no/LC_MESSAGES/vte.mo
+share/locale/pl/LC_MESSAGES/vte.mo
+share/locale/pt/LC_MESSAGES/vte.mo
+share/locale/pt_BR/LC_MESSAGES/vte.mo
+share/locale/ro/LC_MESSAGES/vte.mo
+share/locale/ru/LC_MESSAGES/vte.mo
+share/locale/sk/LC_MESSAGES/vte.mo
+share/locale/sl/LC_MESSAGES/vte.mo
+share/locale/sq/LC_MESSAGES/vte.mo
+share/locale/sr/LC_MESSAGES/vte.mo
+share/locale/sr@Latn/LC_MESSAGES/vte.mo
+share/locale/sv/LC_MESSAGES/vte.mo
+share/locale/tr/LC_MESSAGES/vte.mo
+share/locale/uk/LC_MESSAGES/vte.mo
+share/locale/vi/LC_MESSAGES/vte.mo
+share/locale/zh_CN/LC_MESSAGES/vte.mo
+share/locale/zh_TW/LC_MESSAGES/vte.mo
+share/vte/termcap/xterm
+%%SHARED%%
+@dirrm share/vte/termcap
+@dirrm share/vte
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mn/LC_MESSAGES
+@comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/fa/LC_MESSAGES
+@comment @dirrm share/locale/fa
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@comment @exec mkdir -p %D/share/gtk-doc/html/vte
+@comment @dirrm share/gtk-doc/html/vte
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
+@dirrm lib/vte
+@comment @dirrm lib/pkgconfig
+@dirrm include/vte
