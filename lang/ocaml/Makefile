@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2002/08/25 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/09/10 18:09:25 lebel Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
+
+# for the time being
+NOT_FOR_ARCHS=	sparc64
 
 DISTNAME=	ocaml-3.06
 CATEGORIES=	lang
