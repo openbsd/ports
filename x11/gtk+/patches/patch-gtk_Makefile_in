@@ -1,6 +1,7 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.1 2001/02/20 17:26:51 danh Exp $
 --- gtk/Makefile.in.orig	Wed May 24 21:11:04 2000
-+++ gtk/Makefile.in	Wed Jun 21 06:03:05 2000
-@@ -125,7 +125,7 @@
++++ gtk/Makefile.in	Tue Feb 20 12:21:32 2001
+@@ -125,7 +125,7 @@ x_ldflags = @x_ldflags@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
  
@@ -9,7 +10,7 @@
  
  
  #
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ lib_LTLIBRARIES = libgtk.la
  
  # libtool stuff: set version and export symbols for resolving
  libgtkincludedir = $(includedir)/gtk
@@ -18,7 +19,7 @@
  
  #	$(top_builddir)/gdk/libgdk.la
  
-@@ -190,7 +190,7 @@
+@@ -190,7 +190,7 @@ EXTRA_DIST =  $(gtk_private_h_sources) $
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
@@ -27,7 +28,7 @@
  gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1255
  
  
-@@ -503,7 +503,7 @@
+@@ -503,7 +503,7 @@ install: install-am
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am

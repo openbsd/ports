@@ -1,6 +1,7 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1 2001/02/20 17:26:50 danh Exp $
 --- docs/Makefile.in.orig	Wed May 24 21:12:15 2000
-+++ docs/Makefile.in	Wed Jun 21 06:04:39 2000
-@@ -98,7 +98,7 @@
++++ docs/Makefile.in	Tue Feb 20 12:21:33 2001
+@@ -98,7 +98,7 @@ LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
@@ -9,7 +10,7 @@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  OBJDUMP = @OBJDUMP@
  PACKAGE = @PACKAGE@
-@@ -185,46 +185,40 @@
+@@ -185,46 +185,40 @@ gtk.dvi: gtk.texi
  DVIPS = dvips
  
  .texi.info:
@@ -68,7 +69,7 @@
  .dvi.ps:
  	$(DVIPS) $< -o $@
  
-@@ -233,11 +227,10 @@
+@@ -233,11 +227,10 @@ install-info-am: $(INFO_DEPS)
  	$(mkinstalldirs) $(DESTDIR)$(infodir)
  	@list='$(INFO_DEPS)'; \
  	for file in $$list; do \

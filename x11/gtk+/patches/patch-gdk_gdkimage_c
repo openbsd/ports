@@ -1,5 +1,6 @@
---- gdk/gdkimage.c.orig	Thu Apr 22 17:58:13 1999
-+++ gdk/gdkimage.c	Thu Apr 22 17:58:52 1999
+$OpenBSD: patch-gdk_gdkimage_c,v 1.1 2001/02/20 17:26:51 danh Exp $
+--- gdk/gdkimage.c.orig	Thu Sep 23 15:43:39 1999
++++ gdk/gdkimage.c	Tue Feb 20 12:21:36 2001
 @@ -26,12 +26,14 @@
  
  #include <config.h>
