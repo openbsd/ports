@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.18 1998/04/12 21:41:03 marc Exp $
+# $OpenBSD: Makefile,v 1.19 1998/04/16 16:19:52 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -20,8 +20,6 @@ MASTER_SITES= 	\
 MAINTAINER=	todd@OpenBSD.ORG
 
 ETCDIR=		/etc
-
-# You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
