@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 13:09:30 wilfried Exp $
+${P5ARCH}/Apache/Cookie.pm
+${P5ARCH}/Apache/Request.pm
+${P5ARCH}/Apache/libapreq.pm
+${P5ARCH}/auto/Apache/Cookie/Cookie.bs
+${P5ARCH}/auto/Apache/Cookie/Cookie.so
+${P5ARCH}/auto/Apache/Request/Request.bs
+${P5ARCH}/auto/Apache/Request/Request.so
+${P5ARCH}/auto/libapreq/extralibs.ld
+${P5ARCH}/auto/libapreq/include/apache_cookie.h
+${P5ARCH}/auto/libapreq/include/apache_multipart_buffer.h
+${P5ARCH}/auto/libapreq/include/apache_request.h
+${P5ARCH}/auto/libapreq/libapreq.a
+${P5ARCH}/libapreq.pod
+man/man3p/Apache::Cookie.3p
+man/man3p/Apache::Request.3p
+man/man3p/Apache::libapreq.3p
+man/man3p/libapreq.3p
+share/doc/libapreq/LICENSE
+share/examples/p5-libapreq/c/testapreq/Makefile.apxs
+share/examples/p5-libapreq/c/testapreq/Makefile.tmpl
+share/examples/p5-libapreq/c/testapreq/mod_testapreq.c
+share/examples/p5-libapreq/c/testapreq/mod_testapreq.module
+share/examples/p5-libapreq/perl/cookie.pl
+share/examples/p5-libapreq/perl/file_upload.pl
+@dirrm share/examples/p5-libapreq/perl
+@dirrm share/examples/p5-libapreq/c/testapreq
+@dirrm share/examples/p5-libapreq/c
+@dirrm share/examples/p5-libapreq
+@dirrm share/doc/libapreq
+@dirrm ${P5ARCH}/auto/libapreq/include
+@dirrm ${P5ARCH}/auto/libapreq
