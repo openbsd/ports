@@ -1,6 +1,6 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.5 2000/04/23 22:09:45 espie Exp $
+$OpenBSD: patch-jenscript_jenscript_SH,v 1.6 2000/04/24 14:49:13 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
-+++ jenscript/jenscript.SH	Sun Apr 23 23:53:21 2000
++++ jenscript/jenscript.SH	Mon Apr 24 16:48:43 2000
 @@ -20,14 +20,12 @@ echo "Extracting jenscript (with variabl
  : Protect any dollar signs and backticks that you do not want interpreted
  : by putting a backslash in front.  You may delete these comments.
@@ -88,6 +88,15 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.5 2000/04/23 22:09:45 espie Exp $
  		shift(@_);
  		next if $language !~ /^($pat)$/;
  		$pb = $bb = $be = $cb = $ce = $sb =
+@@ -295,7 +303,7 @@ while(<>){
+ nextline:
+ 	do flush();
+ 	$posx = 0;
+-	if(($posy -= $linepitch) <= 0){
++	if(m/^\s*\cl\s*$/ || (($posy -= $linepitch) <= 0)){
+ 		if(++$curcolumn >= $columns){
+ 			do endpage(1);
+ 			$curcolumn = 0;
 @@ -417,13 +425,17 @@ sub prologue {
  	print "%%Creator: jenscript\n" if ! $nflag;
  	print "%%Title: Jenscript\n" if ! $nflag;
