@@ -1,11 +1,11 @@
---- tests/docs/Makefile.in.orig	2003-09-12 12:23:12.000000000 +0000
-+++ tests/docs/Makefile.in	2003-12-15 14:13:02.000000000 +0000
-@@ -323,7 +323,7 @@ distdir: $(DISTFILES)
+--- tests/docs/Makefile.in.orig	2004-03-23 04:41:42.000000000 -0800
++++ tests/docs/Makefile.in	2004-04-06 22:59:10.000000000 -0700
+@@ -416,7 +416,7 @@ distdir: $(DISTFILES)
  	  fi; \
  	done
  check-am: all-am
 -check: check-am
 +tests check: check-am
  all-am: Makefile
- 
  installdirs:
+ install: install-am

@@ -1,11 +1,11 @@
---- python/tests/Makefile.in.orig	2003-09-12 12:23:11.000000000 +0000
-+++ python/tests/Makefile.in	2003-12-15 14:13:02.000000000 +0000
-@@ -133,7 +133,7 @@ am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
- pythondir = @pythondir@
+--- python/tests/Makefile.in.orig	2004-03-23 04:41:40.000000000 -0800
++++ python/tests/Makefile.in	2004-04-06 23:00:21.000000000 -0700
+@@ -190,7 +190,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -EXAMPLE_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/doc/libxslt-python/examples
- 
  TESTSPY = \
      basic.py	\
+     exslt.py	\
