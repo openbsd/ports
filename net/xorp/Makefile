@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/25 21:19:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/30 19:48:02 naddy Exp $
 
 COMMENT=	"eXtensible Open Router Platform"
 
@@ -27,7 +27,7 @@ USE_GMAKE=	Yes
 
 PREFIX=		${LOCALBASE}/xorp
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--without-snmp	# --enable-optimize
+CONFIGURE_ARGS=	--without-snmp --enable-optimize
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
 .include <bsd.port.mk>

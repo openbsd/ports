@@ -1,0 +1,29 @@
+$OpenBSD: patch-bgp_route_table_nhlookup_cc,v 1.1 2005/01/30 19:48:02 naddy Exp $
+--- bgp/route_table_nhlookup.cc.orig	Thu Jun 10 16:40:35 2004
++++ bgp/route_table_nhlookup.cc	Sun Jan 30 09:20:00 2005
+@@ -261,8 +261,9 @@ NhLookupTable<A>::delete_route(const Int
+ 	// there was an entry for this net in our queue awaiting
+ 	// resolution of it's nexthop
+ 
+-	bool dont_send_delete;
+-	if (mqe->type() == MessageQueueEntry<A>::REPLACE) {
++	bool dont_send_delete = true;
++	switch (mqe->type()) {
++	case MessageQueueEntry<A>::REPLACE: {
+ 	    // preserve the old delete message
+ 	    InternalMessage<A>* preserve_msg
+ 		= new InternalMessage<A>(mqe->delete_msg()->route(),
+@@ -272,8 +273,12 @@ NhLookupTable<A>::delete_route(const Int
+ 		preserve_msg->set_changed();
+ 	    real_msg = preserve_msg;
+ 	    dont_send_delete = false;
+-	} else if (mqe->type() == MessageQueueEntry<A>::ADD) {
++	    break;
++	    }
++
++	case MessageQueueEntry<A>::ADD:
+ 	    dont_send_delete = true;
++	    break;
+ 	}
+ 
+ 	// we can now remove the old queue entry, because it's no longer
