@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2004/08/03 12:54:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/11/18 16:36:18 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php4-core-${V}
+PKGNAME=	php4-core-${V}p1
 FULLPKGNAME-pear= php4-pear-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
@@ -62,13 +62,13 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${APACHE_MODULE_SUBDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php4
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
 	     -e 's,OPENBSD_INCLUDE_PATH,/pear/lib:${CHROOT_DIR}/pear/lib,' \
 		<${WRKSRC}/php.ini-${i} \
-		>${PREFIX}/share/doc/php4/php.ini-${i}
+		>${PREFIX}/share/examples/php4/php.ini-${i}
 .endfor
 	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: phpxs,v 1.4 2004/01/05 17:47:55 avsm Exp $
+# $OpenBSD: phpxs,v 1.5 2004/11/18 16:36:18 robert Exp $
 #
 # Copyright (c) 2002-2004 Anil Madhavapeddy <anil@recoil.org>
 # 
@@ -25,7 +25,7 @@ php_version=PHP_VERSION
 php_module_path=MODULES_DIR
 apache_module_path=APACHE_MODULE_DIR
 php_cfg=PHP_CONFIG_FILE
-php_example=TRUEPREFIX/share/doc/php4
+php_example=TRUEPREFIX/share/examples/php4
 php_module=${apache_module_path}/libphp4.so
 
 showusage() {
