@@ -1,7 +1,16 @@
-$OpenBSD: patch-bfd_configure_in,v 1.4 2003/06/08 03:04:50 brad Exp $
---- bfd/configure.in.orig	Sun Mar 16 14:57:15 2003
-+++ bfd/configure.in	Sun Mar 16 15:00:08 2003
-@@ -365,7 +365,7 @@ changequote([,])dnl
+$OpenBSD: patch-bfd_configure_in,v 1.5 2003/06/27 02:47:16 kevlo Exp $
+--- bfd/configure.in.orig	Thu Jan  2 01:23:03 2003
++++ bfd/configure.in	Mon Jun 23 15:56:09 2003
+@@ -168,7 +168,7 @@
+ 	;;
+   alpha*-*-*)		COREFILE=osf-core.lo ;;
+   arm-*-freebsd*)	COREFILE='' ;;
+-  arm-*-netbsd*)	COREFILE=netbsd-core.lo ;;
++  arm-*-netbsd* | arm-*-openbsd*)	COREFILE=netbsd-core.lo ;;
+   arm-*-riscix)		COREFILE=trad-core.lo ;;
+   hppa*-*-hpux*)	COREFILE=hpux-core.lo ;;
+   hppa*-*-hiux*)	COREFILE=hpux-core.lo ;;
+@@ -365,7 +365,7 @@
  	COREFILE=trad-core.lo
  	TRAD_HEADER='"hosts/tahoe.h"'
  	;;

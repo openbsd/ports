@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_config_tc-arm_h,v 1.1 2003/06/27 02:47:16 kevlo Exp $
+--- gas/config/tc-arm.h.orig	Mon Jan 14 15:01:04 2002
++++ gas/config/tc-arm.h	Tue Jun 24 09:24:43 2003
+@@ -53,7 +53,7 @@
+ #elif defined TE_LINUX
+ # define ARM_BI_ENDIAN
+ # define TARGET_FORMAT "a.out-arm-linux"
+-#elif defined TE_NetBSD
++#elif defined(TE_NetBSD) || defined(TE_OpenBSD)
+ # define TARGET_FORMAT "a.out-arm-netbsd"
+ #else
+ # define ARM_BI_ENDIAN

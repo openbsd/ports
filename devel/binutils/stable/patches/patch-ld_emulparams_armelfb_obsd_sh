@@ -1,0 +1,6 @@
+$OpenBSD: patch-ld_emulparams_armelfb_obsd_sh,v 1.1 2003/06/27 02:47:16 kevlo Exp $
+--- /dev/null	Mon Jun 23 15:41:00 2003
++++ ld/emulparams/armelfb_obsd.sh	Mon Jun 23 17:51:51 2003
+@@ -0,0 +1,2 @@
++. ${srcdir}/emulparams/armelf_obsd.sh
++OUTPUT_FORMAT="elf32-bigarm"

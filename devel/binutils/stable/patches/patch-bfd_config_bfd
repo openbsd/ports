@@ -1,7 +1,21 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
---- bfd/config.bfd.orig	Thu Nov  7 17:57:50 2002
-+++ bfd/config.bfd	Sat Jun 14 22:59:56 2003
-@@ -413,11 +413,15 @@ case "${targ}" in
+$OpenBSD: patch-bfd_config_bfd,v 1.11 2003/06/27 02:47:16 kevlo Exp $
+--- bfd/config.bfd.orig	Thu Nov  7 16:57:50 2002
++++ bfd/config.bfd	Mon Jun 23 15:50:04 2003
+@@ -124,11 +124,11 @@
+     targ_selvecs=bfd_elf32_bigarc_vec
+     ;;
+ 
+-  armeb-*-netbsdelf*)
++  armeb-*-netbsdelf* | armeb-*-openbsdelf*)
+     targ_defvec=bfd_elf32_bigarm_vec
+     targ_selvecs="bfd_elf32_littlearm_vec armnetbsd_vec"
+     ;;
+-  arm-*-netbsdelf*)
++  arm-*-netbsdelf* | arm-*-openbsdelf*)
+     targ_defvec=bfd_elf32_littlearm_vec
+     targ_selvecs="bfd_elf32_bigarm_vec armnetbsd_vec"
+     ;;
+@@ -413,11 +413,15 @@
      targ_defvec=i386pe_vec
      targ_selvecs="i386pe_vec i386pei_vec bfd_elf32_i386_vec"
      ;;
@@ -18,7 +32,7 @@ $OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
    i[3456]86-*-netware*)
      targ_defvec=bfd_elf32_i386_vec
      targ_selvecs="nlm32_i386_vec i386coff_vec i386aout_vec"
-@@ -440,6 +444,10 @@ case "${targ}" in
+@@ -440,6 +444,10 @@
      targ_defvec=bfd_elf64_x86_64_vec
      targ_selvecs="bfd_elf32_i386_vec i386netbsd_vec i386coff_vec bfd_efi_app_ia32_vec"
      ;;
@@ -29,7 +43,7 @@ $OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
    x86_64-*-linux-gnu*)
      targ_defvec=bfd_elf64_x86_64_vec
      targ_selvecs="bfd_elf32_i386_vec i386linux_vec bfd_efi_app_ia32_vec"
-@@ -673,11 +681,11 @@ case "${targ}" in
+@@ -673,11 +681,11 @@
      targ_defvec=ecoff_big_vec
      targ_selvecs=ecoff_little_vec
      ;;
@@ -43,7 +57,7 @@ $OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
      targ_defvec=bfd_elf32_bigmips_vec
      targ_selvecs="bfd_elf32_littlemips_vec ecoff_big_vec ecoff_little_vec"
      ;;
-@@ -788,7 +796,7 @@ case "${targ}" in
+@@ -788,7 +796,7 @@
      targ_defvec=pc532machaout_vec
      targ_underscore=yes
      ;;
@@ -52,7 +66,7 @@ $OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
      targ_defvec=pc532netbsd_vec
      targ_underscore=yes
      ;;
-@@ -1041,10 +1049,14 @@ case "${targ}" in
+@@ -1041,10 +1049,14 @@
      targ_selvecs=bfd_elf32_sparc_vec
      targ_underscore=yes
      ;;
@@ -68,7 +82,7 @@ $OpenBSD: patch-bfd_config_bfd,v 1.10 2003/06/15 04:43:31 brad Exp $
    sparc-*-elf* | sparc-*-solaris2.[0-6] | sparc-*-solaris2.[0-6].*)
      targ_defvec=bfd_elf32_sparc_vec
      targ_selvecs=sunos_big_vec
-@@ -1129,6 +1141,11 @@ case "${targ}" in
+@@ -1129,6 +1141,11 @@
  
    vax-*-bsd* | vax-*-ultrix*)
      targ_defvec=vaxbsd_vec

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/06/15 04:43:31 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2003/06/27 02:47:08 kevlo Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -28,8 +28,8 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 			--disable-nls --disable-commonbfdlib
 
 # cross-tools
-FLAVORS=		alpha hppa i386 m68k m88k mips powerpc sparc \
-			sparc64 vax x86_64
+FLAVORS=		alpha arm hppa i386 m68k m88k mips powerpc \
+			sparc sparc64 vax x86_64
 FLAVOR?=
 
 # XXX: special handling needed for powerpc arch's and bootstraping

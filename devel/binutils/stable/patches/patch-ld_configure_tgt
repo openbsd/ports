@@ -1,7 +1,7 @@
-$OpenBSD: patch-ld_configure_tgt,v 1.7 2003/06/15 04:43:31 brad Exp $
---- ld/configure.tgt.orig	Mon Oct 28 16:58:12 2002
-+++ ld/configure.tgt	Tue Jun 10 04:30:01 2003
-@@ -70,12 +70,15 @@ sparc*-*-linux-gnu*)	targ_emul=elf32_spa
+$OpenBSD: patch-ld_configure_tgt,v 1.8 2003/06/27 02:47:16 kevlo Exp $
+--- ld/configure.tgt.orig	Mon Oct 28 15:58:12 2002
++++ ld/configure.tgt	Tue Jun 24 10:32:30 2003
+@@ -70,12 +70,15 @@
  			tdir_sun4=sparc-sun-sunos4
  			;;
  sparc*-*-lynxos*)	targ_emul=sparclynx ;;
@@ -19,7 +19,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.7 2003/06/15 04:43:31 brad Exp $
  sparc-*-solaris2.[0-6] | sparc-*-solaris2.[0-6].*)
  			targ_emul=elf32_sparc ;;
  sparc-*-solaris2*)	targ_emul=elf32_sparc
-@@ -169,6 +172,14 @@ i[3456]86-*-netbsdpe*)	targ_emul=i386pe
+@@ -169,6 +172,14 @@
  i[3456]86-*-netbsd*)	targ_emul=i386nbsd
  			targ_extra_emuls=elf_i386
  			;;
@@ -34,7 +34,18 @@ $OpenBSD: patch-ld_configure_tgt,v 1.7 2003/06/15 04:43:31 brad Exp $
  x86_64-*-netbsd*)	targ_emul=elf_x86_64
  			targ_extra_emuls="elf_i386 i386nbsd"
  			tdir_elf_i386=`echo ${targ_alias} | \
-@@ -340,6 +351,7 @@ m68*-*-netbsdelf*)	targ_emul=m68kelfnbsd
+@@ -229,6 +240,10 @@
+ 			targ_extra_emuls="armelfb_nbsd armelf armnbsd" ;;
+ arm-*-netbsd*)		targ_emul=armnbsd;
+ 			targ_extra_emuls="armelf armelf_nbsd armelfb_nbsd"  ;;
++armeb-*-openbsdelf*)	targ_emul=armelfb_obsd;
++			targ_extra_emuls="armelf_obsd" ;;
++arm-*-openbsdelf*)	targ_emul=armelf_obsd;
++			targ_extra_emuls="armelfb_obsd" ;;
+ arm-*-openbsd*)		targ_emul=armnbsd ;;
+ arm-*-rtems*)		targ_emul=armelf ;;
+ arm-*-elf)		targ_emul=armelf ;;
+@@ -340,6 +355,7 @@
  m68*-*-netbsdaout* | m68*-*-netbsd*)
  			targ_emul=m68knbsd
  			targ_extra_emuls="m68kelfnbsd m68k4knbsd" ;;
@@ -42,7 +53,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.7 2003/06/15 04:43:31 brad Exp $
  m68*-*-psos*)		targ_emul=m68kpsos ;;
  m68*-*-rtemscoff*)	targ_emul=m68kcoff ;;
  m68*-*-rtems*)		targ_emul=m68kelf ;;
-@@ -375,6 +387,8 @@ mips*el-*-netbsd*)	targ_emul=elf32lmip
+@@ -375,6 +391,8 @@
  mips*-*-netbsd*)	targ_emul=elf32bmip
  			targ_extra_emuls="elf32lmip"
  			;;
