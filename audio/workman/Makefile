@@ -1,30 +1,27 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:02 espie Exp $
-
-BROKEN=	bad packing lists and depend xview is broken
-#tar: Unable to access bin/workman <No such file or directory>
-#tar: Unable to access lib/help/workman.info <No such file or directory>
-#tar: Unable to access man/cat1/workman.0 <No such file or directory>
-#tar: Unable to access man/cat5/workmandb.5 <No such file or directory>
+# $OpenBSD: Makefile,v 1.12 2000/04/02 23:00:20 espie Exp $
 
 DISTNAME=	WorkMan-1.3a
-PKGNAME=	workman-1.3a
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	audio
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	xview.3.2::x11/xview-lib
+PREFIX=		${X11BASE}
+LIB_DEPENDS=	xview.3.2::x11/xview/lib
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config
+FAKE=		Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
-WRKDIST=		${WRKDIR}/workman
+WRKDIST=	${WRKDIR}/workman
 
 .include <bsd.port.mk>
