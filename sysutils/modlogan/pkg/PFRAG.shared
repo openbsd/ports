@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 18:39:33 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/02/24 23:20:09 mjc Exp $
 lib/modlogan/libmla_input_bsdftpd.so
 lib/modlogan/libmla_input_clf.so
 lib/modlogan/libmla_input_cp_ims_login.so
@@ -25,23 +25,6 @@ lib/modlogan/libmla_input_shoutcast.so
 lib/modlogan/libmla_input_squid.so
 lib/modlogan/libmla_input_viruswall.so
 lib/modlogan/libmla_input_wuftpd.so
-lib/modlogan/libmla_mdata_brokenlink.so
-lib/modlogan/libmla_mdata_count.so
-lib/modlogan/libmla_mdata_ipplwatch.so
-lib/modlogan/libmla_mdata_location.so
-lib/modlogan/libmla_mdata_mailhist.so
-lib/modlogan/libmla_mdata_match.so
-lib/modlogan/libmla_mdata_netmask.so
-lib/modlogan/libmla_mdata_query.so
-lib/modlogan/libmla_mdata_record.so
-lib/modlogan/libmla_mdata_split.so
-lib/modlogan/libmla_mdata_state.so
-lib/modlogan/libmla_mdata_string.so
-lib/modlogan/libmla_mdata_sublist.so
-lib/modlogan/libmla_mdata_traffic.so
-lib/modlogan/libmla_mdata_visit.so
-lib/modlogan/libmla_mdata_visited.so
-lib/modlogan/libmla_mdata_webhist.so
 lib/modlogan/libmla_output_csv.so
 lib/modlogan/libmla_output_modlogan.so
 lib/modlogan/libmla_output_null.so
