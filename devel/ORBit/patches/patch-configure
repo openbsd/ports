@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2001/03/15 01:15:23 brad Exp $
+--- configure.orig	Wed Mar 14 17:34:52 2001
++++ configure	Wed Mar 14 17:35:47 2001
+@@ -3450,7 +3450,7 @@
+ 	-L*)
+ 	THEFILE="`echo $I | sed -e 's,^-L,,'`"
+ 	echo "From $I, checking in dir $THEFILE for libwrap.so" 1>&5
+-	if test -f $THEFILE/libwrap.so; then
++	if test -f $THEFILE/libwrap.so*; then
+ 		LIB_WRAP=-lwrap
+ 		echo "Found $THEFILE/libwrap.so" 1>&5
+ 		break
+@@ -3485,7 +3485,7 @@
+ fi
+ 
+ LIB_NSL=
+-if test -n "$LIBWRAP_PATH"; then
++if test -n "$LIBWRAP_PATH" || test -n "$LIB_WRAP"; then
+ 	echo $ac_n "checking whether -lwrap requires -lnsl""... $ac_c" 1>&6
+ echo "configure:3491: checking whether -lwrap requires -lnsl" >&5
+ 	ORIG_LIBS="$LIBS"
+@@ -3555,7 +3555,7 @@
+   HAVE_HOSTS_ACCESS_TRUE='#'
+   HAVE_HOSTS_ACCESS_FALSE=
+ fi
+-if test -n "$LIBWRAP_PATH"; then
++if test -n "$LIBWRAP_PATH" || test -n "$LIB_WRAP"; then
+ 	cat >> confdefs.h <<\EOF
+ #define HAVE_HOSTS_ACCESS 1
+ EOF
