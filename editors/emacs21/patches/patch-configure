@@ -1,10 +1,12 @@
---- configure.orig	Fri Oct 19 14:04:37 2001
-+++ configure	Wed Jan 30 18:48:36 2002
-@@ -834,6 +834,7 @@
+--- configure.orig	Sun Feb 10 21:13:42 2002
++++ configure	Sun Feb 10 21:15:01 2002
+@@ -834,7 +834,9 @@ case "${canonical}" in
        m68k-*-openbsd*)  machine=hp9000s300 ;;
        mipsel-*-openbsd*) machine=pmax ;;
        ns32k-*-openbsd*)	machine=ns32000 ;;
 +      powerpc-*-openbsd*) machine=macppc ;;
        sparc-*-openbsd*)	machine=sparc ;;
++      sparc64-*-openbsd*) machine=sparc ;;
        vax-*-openbsd*)	machine=vax ;;
      esac
+   ;;
