@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2002/03/22 05:31:37 form Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/04/24 19:03:22 sturm Exp $
 #
 # Pre/post-installation setup of minicom
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc/minicom
+CONFIG_DIR=${SYSCONFDIR}/minicom
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/minicom
 
 do_notice()
