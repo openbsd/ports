@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 07:09:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/03 17:52:12 jasoni Exp $
 
 COMMENT= 	"vi clone, many additional features"
 
-PKGNAME=	vim-5.7.30
-DISTNAME=	vim-5.7
+PKGNAME=	vim-5.8
+DISTNAME=	vim-5.8
 CATEGORIES=	editors
 NEED_VERSION=	1.400
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
@@ -20,10 +20,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
-.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23 24 25 \
-	  27 28 29 30
-PATCHFILES+=	5.7.0${p}:0
-.endfor
+#.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23 24 25 \
+#	  27 28 29 30
+#PATCHFILES+=	5.7.0${p}:0
+#.endfor
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
