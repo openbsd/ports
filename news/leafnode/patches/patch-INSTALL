@@ -1,8 +1,8 @@
-$OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
+$OpenBSD: patch-INSTALL,v 1.9 2005/03/22 21:43:12 sturm Exp $
 
---- INSTALL.orig	2004-06-02 12:07:40.000000000 +0200
-+++ INSTALL	2004-06-13 18:40:54.000000000 +0200
-@@ -80,7 +80,7 @@ as sudo.
+--- INSTALL.orig	Mon Feb 28 02:59:55 2005
++++ INSTALL	Tue Mar 22 22:22:40 2005
+@@ -74,7 +74,7 @@ as sudo.
   ## user is in.)
  
      NOTE: DO MAKE SURE that the lock file is in a directory that is writable by
@@ -11,7 +11,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
      to obtain the lock file, and it needs write access. The new default (as of
      1.9.37) should be fine in most cases.
  
-@@ -101,16 +101,16 @@ as sudo.
+@@ -95,16 +95,16 @@ as sudo.
  
      All tests must pass, otherwise, ask on the leafnode mailing list for help.
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
  
  	newaliases.
  
-@@ -162,12 +162,12 @@ as sudo.
+@@ -156,12 +156,12 @@ as sudo.
      discarded at the upstream server, posts being discarded when Message-IDs of
      different postings clash and other troubles.
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
      line.  Substituting "1" for the third "*", thus:
  
      0 4 * * 1 /usr/local/sbin/texpire
-@@ -176,9 +176,9 @@ as sudo.
+@@ -170,9 +170,9 @@ as sudo.
      details.
  
  9.  Make sure fetchnews is run at the appropriate time.  If you have a
@@ -58,7 +58,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
      probably run fetchnews from /etc/ppp/ip-up.local or /etc/ppp/ip-up.
  
  10. (as root) Edit /etc/hosts.deny to add a line:
-@@ -226,11 +226,10 @@ as sudo.
+@@ -220,11 +220,10 @@ as sudo.
      incoming NNTP connections.  Here is my inetd.conf line (insert it at the
      leftmost column, without leading spaces!):
  
@@ -72,7 +72,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
  
      Using leafnode without tcpd is not supported and opens your computer to
      abuse (even happens on modem lines that are only connected during the
-@@ -268,7 +267,7 @@ as sudo.
+@@ -262,7 +261,7 @@ as sudo.
  	    socket_type     = stream
  	    protocol        = tcp
  	    wait            = no
@@ -81,7 +81,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
  	    server          = /usr/sbin/tcpd
  	    server_args     = /usr/local/sbin/leafnode
  	    instances       = 7
-@@ -334,7 +333,7 @@ as sudo.
+@@ -328,7 +327,7 @@ as sudo.
         #! /bin/sh
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v 127.0.0.1 119 \
@@ -90,7 +90,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
         /usr/local/sbin/leafnode
  
         You may need to adjust the paths if your software is in a non-standard
-@@ -350,7 +349,7 @@ as sudo.
+@@ -344,7 +343,7 @@ as sudo.
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v -x nntp.cdb \
         127.0.0.1 119 \
@@ -99,7 +99,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
  
         As above, adjust the paths and the IP.
  
-@@ -385,7 +384,7 @@ as sudo.
+@@ -379,7 +378,7 @@ as sudo.
      svscan should notice the new leafnode service within 5 seconds and
      start it.
  
@@ -108,7 +108,7 @@ $OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
      fetchnews reads a list of all newsgroups from your upstream server.  With
      an 28.8 modem, it can take as long as 60 minutes (depending on how many
      newsgroups your provider offers). To see fetchnews working, run it with
-@@ -412,7 +411,7 @@ as sudo.
+@@ -406,7 +405,7 @@ as sudo.
      After this, you should have empty files in
      /var/spool/news/interesting.groups/ for every group you want to read.
  
