@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/28 10:06:07 turan Exp $
+
+BROKEN=		c++ syntax errors
 
 DISTNAME=	swig1.1
 PKGNAME=	swig-1.1
