@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.344 2000/12/16 15:44:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.345 2000/12/16 15:47:35 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2044,6 +2044,10 @@ ${_DEP}-depends:
 		if [ ! -d $$dir ]; then \
 			echo ">> No directory for $$prog ($$dir)"; \
 		fi; \
+		if [ -L $$dir ]; then \
+			echo ">> Broken dependency: $$dir is a symbolic link"; \
+			exit 1; \
+		fi; \
 		found=false; \
 		if expr "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
@@ -2089,6 +2093,10 @@ lib-depends:
 		if [ ! -d "$$dir" ]; then \
 			echo ">> No directory for $$lib ($$dir)"; \
 		fi; \
+		if [ -L $$dir ]; then \
+			echo ">> Broken dependency: $$dir is a symbolic link"; \
+			exit 1; \
+		fi; \
 		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
 		if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - found"; \
@@ -2118,6 +2126,10 @@ lib-depends:
 		fi; \
 		if [ ! -d "$$dir" ]; then \
 			echo ">> No directory for $$libname ($$dir)"; \
+		fi; \
+		if [ -L $$dir ]; then \
+			echo ">> Broken dependency: $$dir is a symbolic link"; \
+			exit 1; \
 		fi; \
 		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
 		reallib=`${LDCONFIG} -r | grep -e "-l$$lib" | awk '{ print $$3 }'`; \
@@ -2149,6 +2161,10 @@ misc-depends:
 		fi; \
 		if [ ! -d $$dir ]; then \
 			echo ">> No directory for $$dir."; \
+		fi; \
+		if [ -L $$dir ]; then \
+			echo ">> Broken dependency: $$dir is a symbolic link"; \
+			exit 1; \
 		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
