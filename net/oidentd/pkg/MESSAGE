@@ -1,7 +1,3 @@
-
-Installing Ojnk's Identd on OpenBSD
------------------------------------
-
 See oidentd(8), oidentd.conf(5), and oidentd_masq.conf(5) for
 information on configuring oidentd.
 
@@ -16,4 +12,3 @@ fi
 For inetd, modify /etc/inetd.conf to use oidentd for ident:
 
 ident	stream	tcp	nowait	root	${PREFIX}/sbin/oidentd oidentd -Im
-
