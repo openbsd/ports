@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/05 20:45:48 matt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/26 00:55:26 matt Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/ZServer/DebugLogger.py
@@ -43,7 +43,6 @@ lib/zope/ZServer/medusa/__init__.py
 lib/zope/ZServer/medusa/__init__.pyc
 lib/zope/ZServer/medusa/asynchat.py
 lib/zope/ZServer/medusa/asynchat.pyc
-lib/zope/ZServer/medusa/asyncore.py.old
 lib/zope/ZServer/medusa/auth_handler.py
 lib/zope/ZServer/medusa/auth_handler.pyc
 lib/zope/ZServer/medusa/chat_server.py
@@ -239,6 +238,8 @@ lib/zope/lib/python/AccessControl/dtml/methodAccess.dtml
 lib/zope/lib/python/AccessControl/dtml/owner.dtml
 lib/zope/lib/python/AccessControl/dtml/permissionEdit.dtml
 lib/zope/lib/python/AccessControl/dtml/roleEdit.dtml
+lib/zope/lib/python/AccessControl/tests/framework.py
+lib/zope/lib/python/AccessControl/tests/framework.pyc
 lib/zope/lib/python/AccessControl/tests/testSecurity.py
 lib/zope/lib/python/AccessControl/tests/testSecurity.pyc
 lib/zope/lib/python/AccessControl/www/AccessControl_icon.gif
@@ -448,6 +449,8 @@ lib/zope/lib/python/DocumentTemplate/sequence/SortEx.py
 lib/zope/lib/python/DocumentTemplate/sequence/SortEx.pyc
 lib/zope/lib/python/DocumentTemplate/sequence/__init__.py
 lib/zope/lib/python/DocumentTemplate/sequence/__init__.pyc
+lib/zope/lib/python/DocumentTemplate/sequence/tests/framework.py
+lib/zope/lib/python/DocumentTemplate/sequence/tests/framework.pyc
 lib/zope/lib/python/DocumentTemplate/sequence/tests/results.py
 lib/zope/lib/python/DocumentTemplate/sequence/tests/results.pyc
 lib/zope/lib/python/DocumentTemplate/sequence/tests/testSequence.py
@@ -460,8 +463,6 @@ lib/zope/lib/python/DocumentTemplate/tests/dealers.dtml
 lib/zope/lib/python/DocumentTemplate/tests/dealers.out
 lib/zope/lib/python/DocumentTemplate/tests/testDTML.py
 lib/zope/lib/python/DocumentTemplate/tests/testDTML.pyc
-lib/zope/lib/python/DocumentTemplate/ts_regex.py
-lib/zope/lib/python/DocumentTemplate/ts_regex.pyc
 lib/zope/lib/python/ExtensionClass.so
 lib/zope/lib/python/Globals.py
 lib/zope/lib/python/Globals.pyc
@@ -634,6 +635,8 @@ lib/zope/lib/python/OFS/rPickle.py
 lib/zope/lib/python/OFS/rPickle.pyc
 lib/zope/lib/python/OFS/tests/__init__.py
 lib/zope/lib/python/OFS/tests/__init__.pyc
+lib/zope/lib/python/OFS/tests/framework.py
+lib/zope/lib/python/OFS/tests/framework.pyc
 lib/zope/lib/python/OFS/tests/testRanges.py
 lib/zope/lib/python/OFS/tests/testRanges.pyc
 lib/zope/lib/python/OFS/www/ControlPanel_icon.gif
@@ -668,11 +671,6 @@ lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
 lib/zope/lib/python/Products/ExternalMethod/version.txt
 lib/zope/lib/python/Products/ExternalMethod/www/function.gif
-lib/zope/lib/python/Products/Hotfix_2001_07_25/README.txt
-lib/zope/lib/python/Products/Hotfix_2001_07_25/__init__.py
-lib/zope/lib/python/Products/Hotfix_2001_07_25/cgi_hotfix.py
-lib/zope/lib/python/Products/Hotfix_2001_08_04/README.txt
-lib/zope/lib/python/Products/Hotfix_2001_08_04/__init__.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyc
 lib/zope/lib/python/Products/MIMETools/README.txt
@@ -880,16 +878,16 @@ lib/zope/lib/python/Products/PluginIndexes/TextIndex/GlobbingLexicon.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/GlobbingLexicon.pyc
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Lexicon.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Lexicon.pyc
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/ISO_8859_1_Splitter.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Setup
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/Splitter.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/__init__.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/__init__.pyc
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/src/Splitter.c
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/src/ISO_8859_1_Splitter.c
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Setup
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/Splitter.so
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/ZopeSplitter.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/__init__.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/__init__.pyc
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/src/Splitter.c
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/src/ZopeSplitter.c
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/__init__.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/__init__.pyc
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/setup.py
@@ -909,8 +907,6 @@ lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml/vocab_query.dtml
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/help/TextIndex_searchResults.stx
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/randid.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/randid.pyc
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests/testSplitter.py
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests/testSplitter.pyc
 lib/zope/lib/python/Products/PluginIndexes/__init__.py
 lib/zope/lib/python/Products/PluginIndexes/__init__.pyc
 lib/zope/lib/python/Products/PluginIndexes/common/PluggableIndex.py
@@ -926,6 +922,8 @@ lib/zope/lib/python/Products/PluginIndexes/common/randid.pyc
 lib/zope/lib/python/Products/PluginIndexes/common/util.py
 lib/zope/lib/python/Products/PluginIndexes/common/util.pyc
 lib/zope/lib/python/Products/PluginIndexes/help/placeholder.txt
+lib/zope/lib/python/Products/PluginIndexes/tests/framework.py
+lib/zope/lib/python/Products/PluginIndexes/tests/framework.pyc
 lib/zope/lib/python/Products/PluginIndexes/tests/testFieldIndex.py
 lib/zope/lib/python/Products/PluginIndexes/tests/testFieldIndex.pyc
 lib/zope/lib/python/Products/PluginIndexes/tests/testKeywordIndex.py
@@ -959,6 +957,8 @@ lib/zope/lib/python/Products/PythonScripts/module_access_examples.py
 lib/zope/lib/python/Products/PythonScripts/module_access_examples.pyc
 lib/zope/lib/python/Products/PythonScripts/standard.py
 lib/zope/lib/python/Products/PythonScripts/standard.pyc
+lib/zope/lib/python/Products/PythonScripts/tests/framework.py
+lib/zope/lib/python/Products/PythonScripts/tests/framework.pyc
 lib/zope/lib/python/Products/PythonScripts/tests/testPythonScript.py
 lib/zope/lib/python/Products/PythonScripts/tests/testPythonScript.pyc
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/big_boolean.ps
@@ -1082,16 +1082,20 @@ lib/zope/lib/python/Products/ZCatalog/help/ZCatalog_Indexes.stx
 lib/zope/lib/python/Products/ZCatalog/help/ZCatalog_MetaData-Table.stx
 lib/zope/lib/python/Products/ZCatalog/help/ZCatalog_Parameters.stx
 lib/zope/lib/python/Products/ZCatalog/help/ZCatalog_Status.stx
+lib/zope/lib/python/Products/ZCatalog/regressiontests/keywords.py
+lib/zope/lib/python/Products/ZCatalog/regressiontests/keywords.pyc
+lib/zope/lib/python/Products/ZCatalog/regressiontests/loadmail.py
+lib/zope/lib/python/Products/ZCatalog/regressiontests/loadmail.pyc
+lib/zope/lib/python/Products/ZCatalog/regressiontests/regressionCatalog.py
+lib/zope/lib/python/Products/ZCatalog/regressiontests/regressionCatalog.pyc
+lib/zope/lib/python/Products/ZCatalog/regressiontests/regressionCatalogTiming.py
+lib/zope/lib/python/Products/ZCatalog/regressiontests/regressionCatalogTiming.pyc
+lib/zope/lib/python/Products/ZCatalog/regressiontests/unittest_patched.py
+lib/zope/lib/python/Products/ZCatalog/regressiontests/unittest_patched.pyc
 lib/zope/lib/python/Products/ZCatalog/tests/__init__.py
 lib/zope/lib/python/Products/ZCatalog/tests/__init__.pyc
-lib/zope/lib/python/Products/ZCatalog/tests/keywords.py
-lib/zope/lib/python/Products/ZCatalog/tests/keywords.pyc
-lib/zope/lib/python/Products/ZCatalog/tests/loadmail.py
-lib/zope/lib/python/Products/ZCatalog/tests/loadmail.pyc
 lib/zope/lib/python/Products/ZCatalog/tests/testCatalog.py
 lib/zope/lib/python/Products/ZCatalog/tests/testCatalog.pyc
-lib/zope/lib/python/Products/ZCatalog/tests/testCatalogTiming.py
-lib/zope/lib/python/Products/ZCatalog/tests/testCatalogTiming.pyc
 lib/zope/lib/python/Products/ZCatalog/version.txt
 lib/zope/lib/python/Products/ZCatalog/www/Vocabulary.gif
 lib/zope/lib/python/Products/ZCatalog/www/ZCatalog.gif
@@ -1299,6 +1303,8 @@ lib/zope/lib/python/SearchIndex/randid.py
 lib/zope/lib/python/SearchIndex/randid.pyc
 lib/zope/lib/python/SearchIndex/tests/__init__.py
 lib/zope/lib/python/SearchIndex/tests/__init__.pyc
+lib/zope/lib/python/SearchIndex/tests/framework.py
+lib/zope/lib/python/SearchIndex/tests/framework.pyc
 lib/zope/lib/python/SearchIndex/tests/testSplitter.py
 lib/zope/lib/python/SearchIndex/tests/testSplitter.pyc
 lib/zope/lib/python/SearchIndex/tests/testUnKeywordIndex.py
@@ -1441,14 +1447,19 @@ lib/zope/lib/python/StructuredText/regressions/index.stx
 lib/zope/lib/python/StructuredText/tests/testStructuredText.py
 lib/zope/lib/python/StructuredText/tests/testStructuredText.pyc
 lib/zope/lib/python/Sync.so
+lib/zope/lib/python/Testing/README.txt
+lib/zope/lib/python/Testing/ZODButil.py
+lib/zope/lib/python/Testing/ZODButil.pyc
 lib/zope/lib/python/Testing/__init__.py
 lib/zope/lib/python/Testing/__init__.pyc
+lib/zope/lib/python/Testing/common.py
+lib/zope/lib/python/Testing/common.pyc
+lib/zope/lib/python/Testing/custom_zodb.py
+lib/zope/lib/python/Testing/custom_zodb.pyc
 lib/zope/lib/python/Testing/dispatcher.py
 lib/zope/lib/python/Testing/dispatcher.pyc
 lib/zope/lib/python/Testing/makerequest.py
 lib/zope/lib/python/Testing/makerequest.pyc
-lib/zope/lib/python/Testing/unittest.py
-lib/zope/lib/python/Testing/unittest.pyc
 lib/zope/lib/python/ThreadLock.so
 lib/zope/lib/python/ThreadedAsync.py
 lib/zope/lib/python/ThreadedAsync.pyc
@@ -1617,6 +1628,8 @@ lib/zope/lib/python/ZPublisher/Test.py
 lib/zope/lib/python/ZPublisher/Test.pyc
 lib/zope/lib/python/ZPublisher/__init__.py
 lib/zope/lib/python/ZPublisher/__init__.pyc
+lib/zope/lib/python/ZPublisher/cgi_hotfix.py
+lib/zope/lib/python/ZPublisher/cgi_hotfix.pyc
 lib/zope/lib/python/ZPublisher/mapply.py
 lib/zope/lib/python/ZPublisher/mapply.pyc
 lib/zope/lib/python/ZPublisher/maybe_lock.py
@@ -1638,8 +1651,6 @@ lib/zope/lib/python/tempfile.py
 lib/zope/lib/python/tempfile.pyc
 lib/zope/lib/python/ts_regex.py
 lib/zope/lib/python/ts_regex.pyc
-lib/zope/lib/python/unittest.py
-lib/zope/lib/python/unittest.pyc
 lib/zope/lib/python/version.txt
 lib/zope/lib/python/webdav/Collection.py
 lib/zope/lib/python/webdav/Collection.pyc
@@ -1798,6 +1809,7 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/ZGadflyDA
 @dirrm lib/zope/lib/python/Products/ZCatalog/www
 @dirrm lib/zope/lib/python/Products/ZCatalog/tests
+@dirrm lib/zope/lib/python/Products/ZCatalog/regressiontests
 @dirrm lib/zope/lib/python/Products/ZCatalog/help
 @dirrm lib/zope/lib/python/Products/ZCatalog/dtml
 @dirrm lib/zope/lib/python/Products/ZCatalog
@@ -1819,7 +1831,6 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/PluginIndexes/tests
 @dirrm lib/zope/lib/python/Products/PluginIndexes/help
 @dirrm lib/zope/lib/python/Products/PluginIndexes/common
-@dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/help
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/src
@@ -1849,8 +1860,6 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/MailHost/dtml
 @dirrm lib/zope/lib/python/Products/MailHost
 @dirrm lib/zope/lib/python/Products/MIMETools
-@dirrm lib/zope/lib/python/Products/Hotfix_2001_08_04
-@dirrm lib/zope/lib/python/Products/Hotfix_2001_07_25
 @dirrm lib/zope/lib/python/Products/ExternalMethod/www
 @dirrm lib/zope/lib/python/Products/ExternalMethod/help
 @dirrm lib/zope/lib/python/Products/ExternalMethod/dtml

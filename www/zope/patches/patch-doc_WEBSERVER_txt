@@ -1,4 +1,7 @@
-$OpenBSD: patch-doc_WEBSERVER_txt,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+$OpenBSD: patch-doc_WEBSERVER_txt,v 1.2 2001/09/26 00:55:26 matt Exp $
+
+        Explain that we set better permissions on the PCGI socket.
+
 --- doc/WEBSERVER.txt.orig	Wed Jan 10 14:10:33 2001
 +++ doc/WEBSERVER.txt	Sun Jul 15 19:43:10 2001
 @@ -68,6 +68,11 @@ Using Zope in multi-threaded mode with Z
