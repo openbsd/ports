@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/18 16:27:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/14 00:51:24 naddy Exp $
 
-DISTNAME=	xdmchoose-1.1.1
+COMMENT=	"alternative xdm-invoked chooser"
+
+DISTNAME=	xdmchoose-1.1.2
 CATEGORIES=	x11
-NEED_VERSION=	1.352
+NEED_VERSION=	1.363
 HOMEPAGE=	http://frmb.home.cern.ch/frmb/xdmchoose.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -13,8 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://frmb.home.cern.ch/frmb/download/
-
-BUILD_DEPENDS=	automake::devel/automake
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
