@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/04 19:46:15 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
 HOMEPAGE=	http://www.pfdubois.com/numpy/
 
-MODULES=	python
+MODULES=	lang/python
 
 do-regress:
 	cd ${WRKSRC}/Test && ${MODPY_BIN} -i test.py

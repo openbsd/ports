@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/04 19:46:14 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,6 +22,6 @@ MASTER_SITES=	http://download.berlios.de/cjkpython/
 
 NO_REGRESS=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 .include <bsd.port.mk>

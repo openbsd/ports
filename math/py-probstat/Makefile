@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/08 16:39:39 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 19:46:15 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=probstat/}
 EXTRACT_SUFX=	.tgz
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

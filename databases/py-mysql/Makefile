@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/04 19:46:14 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/12 00:00:34 djm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/04 19:46:14 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 LIB_DEPENDS+=	sqlite::databases/sqlite
 
-MODULES=	python
+MODULES=	lang/python
 
 do-regress: fake
 	@cd ${WRKSRC}/test && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

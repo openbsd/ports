@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/04 19:46:15 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -24,6 +24,6 @@ MODPY_DISTUTILS_BUILDARGS=	--with-libiconv=${LOCALBASE}
 
 NO_REGRESS=	Yes
 
-MODULES=	python iconv
+MODULES=	lang/python converters/libiconv
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/08 07:58:38 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/04 19:46:15 xsa Exp $
 
 COMMENT=	"Python package to retrieve data of the IMDb movie database"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imdbpy/}
 
-MODULES=	python
+MODULES=	lang/python
 
 WRKDIST=	${WRKDIR}/IMDbPY-${V}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/05 23:37:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 19:46:15 xsa Exp $
 
 COMMENT=	"Python interface to the gnuplot plotting program"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot-py/}
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
 RUN_DEPENDS+=	:py-Numeric-*:math/py-Numeric \

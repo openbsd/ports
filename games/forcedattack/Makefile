@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/04 19:46:14 xsa Exp $
 
 COMMENT=	"connect four of stones in a straight line"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=forcedattack/}
 
-MODULES=	python
+MODULES=	lang/python
 
 RUN_DEPENDS+=	:pygame-*:devel/pygame
 

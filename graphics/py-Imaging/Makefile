@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.22 2004/08/04 19:46:14 xsa Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pythonware.net/storage/
 
-MODULES=		python
+MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter

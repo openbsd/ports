@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/17 20:47:45 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/04 19:46:14 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-ldap/}
 FLAVORS=	2.1 2.2 2.3
 FLAVOR?=	2.1
 
-MODULES=	python
+MODULES=	lang/python
 
 .if ${FLAVOR} == "2.1" || ${FLAVOR} == "2.2" || ${FLAVOR} == "2.3"
 MODPY_VERSION=	${FLAVOR}
