@@ -1,5 +1,5 @@
 --- configure.orig	Thu Jul  6 19:07:35 2000
-+++ configure	Tue Jul 11 00:54:30 2000
++++ configure	Sat Jul 22 13:22:30 2000
 @@ -3819,7 +3819,7 @@
  
  
@@ -9,12 +9,3 @@
  	DOTLOCK_PERMISSION=2755
  else
  	DOTLOCK_GROUP=''
-@@ -6600,8 +6600,6 @@
-    sed -e "/^#/d" -e "/^\$/d" -e "s,.*,	$posrcprefix& \\\\," -e "\$s/\(.*\) \\\\/\1/" \
- 	< $srcdir/po/POTFILES.in > po/POTFILES
-   
--CPPFLAGS="$CPPFLAGS -I\$(top_srcdir)/intl"
--
- MUTTLOCALEDIR=$mutt_cv_prefix/$DATADIRNAME/locale
- 
- cat >> confdefs.h <<EOF
