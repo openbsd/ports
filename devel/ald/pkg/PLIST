@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/15 16:48:37 sturm Exp $
+bin/ald
+man/man8/ald.8

@@ -1,0 +1,5 @@
+This is a port of ALD - the Assembly Language Debugger.
+It provides breakpoint debugging capabilities, a
+disassembler, and easy memory and register manipulation
+to those wishing to debug their assembly language programs.
+Currently, x86 platforms are supported.
