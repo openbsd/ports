@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/12 00:40:43 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:29 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	slrn-0.9.6.2
 CATEGORIES=	news
 
 MAINTAINER=	turan@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:21 turan Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 PKGNAME=	Mesa-3.0
@@ -14,6 +14,12 @@ NEED_VERSION=	1.191
 HOMEPAGE=	http://www.mesa3d.org/
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 

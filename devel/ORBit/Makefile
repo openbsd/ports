@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/10 19:06:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:12 turan Exp $
 
 DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel
@@ -11,6 +11,12 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib
 
 MAINTAINER=	rohee@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

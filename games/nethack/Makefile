@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:19 turan Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.2.3
@@ -18,6 +18,12 @@ PATCHFILES=nh-3.2.2-3.2.3.diff:0
 MASTER_SITE_SUBDIR= nethack
 
 MAINTAINER=	espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

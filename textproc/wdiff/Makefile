@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/11/03 01:24:54 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:32 turan Exp $
 #
 
 DISTNAME=	wdiff-0.5
@@ -12,6 +12,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= wdiff
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes

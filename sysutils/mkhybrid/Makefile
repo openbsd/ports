@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/12 02:26:54 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:31 turan Exp $
 #
 # Based on FreeBSD port by Murray Stokely <murray@cdrom.com>
 
@@ -9,6 +9,12 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.ge.ucl.ac.uk/pub/mkhfs/
 
 MAINTAINER=	retrev@csh.rit.edu
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	World

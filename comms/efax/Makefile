@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/01 04:10:18 ian Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:11 turan Exp $
 
 DISTNAME=       efax-0.9
 PKGNAME=        efax-0.9
 CATEGORIES=	comms
 
 MAINTAINER=	ian@OpenBSD.ORG
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/serialcomm/fax/
 

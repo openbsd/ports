@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:23 turan Exp $
 
 DISTNAME=       adcomplain-3.49
 CATEGORIES=     mail news
 
 MAINTAINER=     ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 DISTFILES=      adcomplain.pl.uu

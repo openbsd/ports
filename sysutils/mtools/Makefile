@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/02 22:03:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2000/02/12 08:02:31 turan Exp $
 
 DATE=		19991121
 DISTNAME=	mtools-3.9.6
@@ -10,6 +10,12 @@ NEED_VERSION=	1.175
 PATCHFILES=	mtools-3.9.6-${DATE}.diff.gz
 
 MAINTAINER=	fgsch@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

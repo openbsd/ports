@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/12/23 02:54:24 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/12 08:02:30 turan Exp $
 
 DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
@@ -16,6 +16,12 @@ DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	markus@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

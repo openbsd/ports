@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/31 23:15:03 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:33 turan Exp $
 
 DISTNAME=	gtkglarea-1.2.1
 CATEGORIES=	x11 graphics
@@ -9,6 +9,12 @@ NEED_VERSION=	1.73
 HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	MesaGL.3:${PORTSDIR}/graphics/Mesa \
 		MesaGLU.3:${PORTSDIR}/graphics/Mesa \

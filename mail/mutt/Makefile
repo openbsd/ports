@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/02/09 01:11:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/02/12 08:02:23 turan Exp $
 
 DISTNAME=	mutt-1.0.1i
 CATEGORIES=     mail
@@ -9,6 +9,12 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
                 ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
 MAINTAINER=	turan@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 TTY_LIB?=slang
 

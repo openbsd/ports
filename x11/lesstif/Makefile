@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/01/27 19:11:41 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2000/02/12 08:02:34 turan Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.89.9
@@ -10,6 +10,12 @@ MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 SEPARATE_BUILD=	concurrent

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/10/27 01:12:03 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:31 turan Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 DISTNAME=	star-1.2
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 MASTER_SITE_SUBDIR= utils/compress
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}"

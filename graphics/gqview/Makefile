@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:21 turan Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -9,6 +9,12 @@ MASTER_SITES=	http://gqview.netpedia.net/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \

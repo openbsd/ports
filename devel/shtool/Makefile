@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/24 20:02:46 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/12 08:02:15 turan Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
 DISTNAME=	shtool-1.4.7
@@ -7,6 +7,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= shtool
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

@@ -3,7 +3,7 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:32 turan Exp $
 #
 
 DISTNAME=		c2html-0.6.1
@@ -12,6 +12,12 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
 
 MAINTAINER=		angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=		yes
 

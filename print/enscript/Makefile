@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/03 09:12:57 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:29 turan Exp $
 #
 
 DISTNAME=		enscript-1.6.1
 CATEGORIES=     	print
 
 MAINTAINER=		marc@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	enscript

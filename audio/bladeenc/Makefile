@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/11 00:37:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:09 turan Exp $
 
 DISTNAME=	bladeenc-0.91-src-stable
 PKGNAME=	bladeenc-0.91
@@ -8,6 +8,12 @@ MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

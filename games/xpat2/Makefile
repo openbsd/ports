@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/27 15:03:08 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:20 turan Exp $
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
@@ -6,6 +6,12 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 

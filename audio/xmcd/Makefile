@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/10/29 09:40:15 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:10 turan Exp $
 
 BROKEN=		spinlocks in a loop if stdin is null
 
@@ -8,6 +8,12 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/xmcd
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/01 13:58:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:20 turan Exp $
 
 DISTNAME=	xkobo-1.11
 CATEGORIES=	games
@@ -12,6 +12,12 @@ PKGNAME=${DISTNAME}-harder
 .endif
 
 MAINTAINER=	espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=	yes
 ALL_TARGET=	xkobo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/14 03:59:09 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:28 turan Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -6,6 +6,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= wget
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 

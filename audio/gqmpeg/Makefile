@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:09 turan Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
@@ -10,6 +10,12 @@ NEED_VERSION=	1.191
 HOMEPAGE=	http://gqview.netpedia.net/mpeg-over.html
 
 MAINTAINER=	rohee@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \

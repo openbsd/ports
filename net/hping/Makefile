@@ -3,7 +3,7 @@
 # Date created:		Oct 28 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:25 turan Exp $
 
 PKGNAME=	hping-2.0b49
 
@@ -15,6 +15,12 @@ MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
 NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=		${WRKDIR}/hping2/beta49
 

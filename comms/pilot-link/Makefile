@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 1999/11/08 02:30:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:11 turan Exp $
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
 CATEGORIES=	comms
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 

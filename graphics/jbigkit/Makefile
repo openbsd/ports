@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:22 turan Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.1
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/jbigkit
 

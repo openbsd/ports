@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/06 00:56:36 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:21 turan Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 DISTNAME=	aalib-1.2
@@ -6,6 +6,12 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

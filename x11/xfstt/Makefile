@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 15:44:19 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:35 turan Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
@@ -8,6 +8,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= X11/fonts
 
 MAINTAINER=	jasoni@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 

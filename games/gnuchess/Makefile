@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/11 00:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:18 turan Exp $
 
 DISTNAME=	gnuchess-4.0.pl80
 PKGNAME=	gnuchess-4.0.80
@@ -10,6 +10,12 @@ NEED_VERSION=	1.191
 BROKEN=		"not available anymore"
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=	yes
 

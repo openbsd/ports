@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/14 10:01:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:30 turan Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX/base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX/base \

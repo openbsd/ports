@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:34 turan Exp $
 #
 
 DISTNAME=	mouseclock-1.0
@@ -12,6 +12,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes

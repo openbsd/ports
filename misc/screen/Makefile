@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/31 23:28:24 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/12 08:02:25 turan Exp $
 
 DISTNAME=	screen-3.9.5
 CATEGORIES=	misc
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 MASTER_SITE_SUBDIR= screen
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

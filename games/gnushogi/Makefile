@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:18 turan Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
@@ -6,6 +6,12 @@ PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnushogi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/02/06 00:28:56 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/02/12 08:02:13 turan Exp $
 
 DISTNAME=	glib-1.2.6
 CATEGORIES=	devel
@@ -9,6 +9,12 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

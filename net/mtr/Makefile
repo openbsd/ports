@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/02 17:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:26 turan Exp $
 
 DISTNAME=	mtr-0.41
 CATEGORIES=	net
 
 MAINTAINER=     jakob@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 NEED_VERSION=	1.175
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \

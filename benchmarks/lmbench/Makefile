@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:11 turan Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
@@ -6,6 +6,12 @@ CATEGORIES=	benchmarks
 
 BROKEN=	"version changed; different distributions/directories"
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # this is the new home site
 #

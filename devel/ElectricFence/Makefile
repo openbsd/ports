@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 06:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:12 turan Exp $
 
 PKGNAME=	electricfence-2.0.5
 DISTNAME=	ElectricFence-2.0.5
@@ -7,6 +7,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 
 MAINTAINER=	niklas@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libefence.a ${PREFIX}/lib

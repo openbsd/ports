@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/06 07:08:16 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:13 turan Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 DISTNAME=	gettext-0.10.35
@@ -9,6 +9,12 @@ MASTER_SITE_SUBDIR= gettext
 NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

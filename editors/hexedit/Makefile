@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:16 turan Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
 
 DISTNAME=	hexedit-1.1.0
@@ -8,6 +8,12 @@ EXTRACT_SUFX=	.src.tgz
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 WRKDIST=	${WRKDIR}/hexedit

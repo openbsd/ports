@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/12 00:43:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:18 turan Exp $
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
@@ -6,6 +6,12 @@ MASTER_SITES=	http://www.bnetd.org/files/
 NEED_VERSION=	1.195
 
 MAINTAINER=	kevlo@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=Yes
 WRKSRC=	${WRKDIST}/src

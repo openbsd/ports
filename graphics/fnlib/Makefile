@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/01/12 01:38:10 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:21 turan Exp $
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=    	graphics
@@ -10,6 +10,12 @@ MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 NEED_VERSION=	1.73
 
 MAINTAINER=	op21@squish.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	Imlib.19:${PORTSDIR}/graphics/imlib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/02/11 01:10:01 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/02/12 08:02:11 turan Exp $
 #
 
 PKGNAME=	minicom-1.82.1
@@ -6,6 +6,12 @@ DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
 
 MAINTAINER=     form@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		http://www.clinet.fi/~walker/

@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/16 04:10:35 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 08:02:31 turan Exp $
 
 DISTNAME=	sdd-1.22
 CATEGORIES=    	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/11 01:10:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/12 08:02:17 turan Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -10,6 +10,12 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"GPL: must distribute with source"
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 PREFIX=		/emul/linux
 NO_MTREE=	yes

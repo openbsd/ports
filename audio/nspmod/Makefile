@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/06 18:21:42 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:09 turan Exp $
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio
@@ -7,6 +7,12 @@ MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/ \
 MASTER_SITE_SUBDIR= apps/sound/players
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nspmod ${PREFIX}/bin

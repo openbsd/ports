@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/05 03:51:27 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:14 turan Exp $
 
 DISTNAME=	libPropList-0.9.1
 PKGNAME=	libproplist-0.9.1	
@@ -9,6 +9,12 @@ MASTER_SITE_SUBDIR= libs
 NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 SEPARATE_BUILD=	concurrent

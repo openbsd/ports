@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:15 turan Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
@@ -10,6 +10,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 NEED_VERSION=	1.191
 
 MAINTAINER=     angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # install things in ${LOCALBASE}/pilot to avoid conflicts
 PREFIX=		${LOCALBASE}/pilot

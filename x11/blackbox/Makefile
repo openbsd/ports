@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/12/18 11:25:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/12 08:02:33 turan Exp $
 
 DISTNAME=	blackbox-0.51.3.1
 CATEGORIES=	x11
@@ -6,6 +6,12 @@ MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
 		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes

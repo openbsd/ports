@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/10 09:13:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/12 08:02:27 turan Exp $
 
 DISTNAME=	rsync-2.4.1
 CATEGORIES=	net
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://rsync.samba.org/pub/rsync/
 NEED_VERSION=	1.60
 
 MAINTAINER=	espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

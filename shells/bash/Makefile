@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/10 15:16:59 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:30 turan Exp $
 
 DISTNAME=	bash-1.14.7
 CATEGORIES=	shells
@@ -6,6 +6,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bash
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # invoke make with STATIC=yes to build a static binary
 .if defined(STATIC) && ${STATIC:U} == YES

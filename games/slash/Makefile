@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/11 01:10:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:19 turan Exp $
 
 DISTNAME=	slash-e8
 CATEGORIES=	games
@@ -10,6 +10,12 @@ DISTFILES=	nethack-3.2.2.tar.gz:0 Slash-Unix.tar.gz:1
 NEED_VERSION=	1.121
 
 MAINTAINER=	espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 USE_X11=	yes

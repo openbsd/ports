@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/12/17 23:11:34 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/12 08:02:34 turan Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.1
@@ -15,6 +15,12 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		kdecore.1:${PORTSDIR}/x11/kdelibs
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

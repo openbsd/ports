@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/02/11 06:30:49 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/02/12 08:02:21 turan Exp $
 
 DISTNAME=	gimp-1.1.16
 CATEGORIES=	graphics
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.16/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/unstable/v1.1.16/
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		aa.1.3:${PORTSDIR}/graphics/aalib \

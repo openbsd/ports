@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/01 00:55:28 jasoni Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:14 turan Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=		libtool-1.3.3
@@ -9,6 +9,12 @@ MASTER_SITE_SUBDIR= 	libtool
 NEED_VERSION=		1.73
 
 MAINTAINER=		ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=		simple
 GNU_CONFIGURE=		yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:10 turan Exp $
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
@@ -8,6 +8,12 @@ NEED_VERSION=	1.191
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.0:${PORTSDIR}/x11/tk80

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/08 17:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:14 turan Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	lclint-2.4b
@@ -11,6 +11,12 @@ GUIDE=		guide.tar.gz
 DISTFILES=	${EXTRACT_ONLY} ${GUIDE}
 
 MAINTAINER=	espie@cvs.openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 AUTHOR=		evs@sds.lcs.mit.edu # David Evans
 BUGS=		lclint-bug@sds.lcs.mit.edu
 

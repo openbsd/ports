@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/11/27 13:33:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/12 08:02:29 turan Exp $
 #
 
 DISTNAME=	a2ps-4.12g
@@ -8,6 +8,12 @@ CATEGORIES=	print
 NEED_VERSION=	1.73
 
 MAINTAINER=	weingart@OpenBSD.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 

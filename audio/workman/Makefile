@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:10 turan Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	workman-1.3a
@@ -8,6 +8,12 @@ MASTER_SITE_SUBDIR= applications/WorkMan
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	xview.3.2:${PORTSDIR}/x11/xview-lib
 

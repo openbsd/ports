@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/01/20 23:07:39 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/12 08:02:26 turan Exp $
 
 DISTNAME=	mrtg-2.8.11
 CATEGORIES=	net
@@ -9,6 +9,12 @@ HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	gd.17:${PORTSDIR}/graphics/gd
 

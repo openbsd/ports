@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/10/28 22:45:38 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 08:02:30 turan Exp $
 
 PKGNAME=	cgichk-3.0
 
@@ -16,6 +16,12 @@ MASTER_SITES=	http://web.singnet.com.sg/~cksss/ \
 		http://www.securityfocus.com/data/tools/auditing/network/
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 NO_CONFIGURE=	yes
 

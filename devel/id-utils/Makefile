@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 1999/11/03 16:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/12 08:02:14 turan Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/

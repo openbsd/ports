@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2000/02/12 00:43:59 espie Exp $
+#	$OpenBSD: Makefile,v 1.4 2000/02/12 08:02:22 turan Exp $
 
 BROKEN=		"sources no longer exist"
 
@@ -13,6 +13,12 @@ NEED_VERSION=1.195
 
 CATEGORIES=	lang
 MAINTAINER=	niklas@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # These are for snapshot trackers
 #LATEST_DATE=	1999-07-08

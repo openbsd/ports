@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/02 17:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:33 turan Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
@@ -20,6 +20,12 @@ PATCH_DIST_ARGS=-d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SYSCONFDIR=	/etc/squid
 GNU_CONFIGURE=	yes

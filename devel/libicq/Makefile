@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/08/18 02:48:07 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:14 turan Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/15 19:59:22 nectar Exp $
 
 DISTNAME=	libicq-0.33
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib
 

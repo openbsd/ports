@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:20 turan Exp $
 #
 
 DISTNAME=	xevil1.5
@@ -11,6 +11,12 @@ EXTRACT_SUFX=	.tar.Z
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}
 

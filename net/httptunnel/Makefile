@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/23 21:08:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:25 turan Exp $
 
 DISTNAME=		httptunnel-2.0
 CATEGORIES=     	net
@@ -7,6 +7,12 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	httptunnel
 
 MAINTAINER=		jakob@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=		concurrent
 GNU_CONFIGURE=		yes

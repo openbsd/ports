@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2000/01/26 12:38:52 form Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 08:02:30 turan Exp $
 
 DISTNAME=	xruskb-1.11.0
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	form@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes

@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/02 17:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:13 turan Exp $
 
 DISTNAME=	gperf-2.7
 PKGNAME=	gperf-2.7-19981006
 CATEGORIES=   	devel
 
 MAINTAINER=	espie@cvs.openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # where the source files and patches can be fetched
 #

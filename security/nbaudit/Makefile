@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:30 turan Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
 DISTNAME=	nat10
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/na
 NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/${DISTNAME}
 

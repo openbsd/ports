@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:29 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/utils/
 

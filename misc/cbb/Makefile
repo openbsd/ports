@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/11 23:03:58 marc Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:24 turan Exp $
 #
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 		ftp://ftp.fifi.org/pub/cbb/

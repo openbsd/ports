@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/01/30 06:23:42 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/02/12 08:02:26 turan Exp $
 
 DISTNAME=	nmap-2.3BETA14
 PKGNAME=	nmap-2.3b14
@@ -7,6 +7,12 @@ MASTER_SITES=	http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

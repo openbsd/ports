@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/11 00:37:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:10 turan Exp $
 
 DISTNAME=		xmix-2.1
 CATEGORIES=		audio
@@ -9,6 +9,12 @@ NEED_VERSION=	1.191
 PATCHFILES=		xmix-2.1.mixers.patch
 
 MAINTAINER=		angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=		Yes
 

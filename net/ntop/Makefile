@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/11 00:37:33 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/12 08:02:27 turan Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
 DISTNAME=	ntop-1.1-src
@@ -11,6 +11,12 @@ MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 

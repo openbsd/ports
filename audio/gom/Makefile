@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/11/05 11:27:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:02:09 turan Exp $
 
 DISTNAME=	gom-0.29.103
 CATEGORIES=     audio
@@ -8,6 +8,12 @@ MASTER_SITE_SUBDIR= apps/sound/mixers
 NEED_VERSION=	1.73
 
 MAINTAINER=	scott@tranzoa.com
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	xview:${PORTSDIR}/x11/xview-lib \
 		olgx:${PORTSDIR}/x11/xview-lib

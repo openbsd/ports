@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/12 00:44:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:27 turan Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 DISTNAME=	Sharity-Light.1.2
@@ -9,6 +9,12 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 NEED_VERSION=	1.195
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAKE_FLAGS=	ARCH="" THE_CC="${CC}" CFLAGS="${CFLAGS} -Wall"
 

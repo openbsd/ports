@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:19 turan Exp $
 
 DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
@@ -6,6 +6,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= games/strategy
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 ALL_TARGET=
 

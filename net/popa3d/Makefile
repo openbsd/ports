@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/12 00:44:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:29 turan Exp $
 
 DISTNAME=	popa3d-0.4
 CATEGORIES=	net mail
@@ -9,6 +9,12 @@ MASTER_SITES=   http://www.openwall.com/popa3d/ \
 NEED_VERSION=	1.195
 
 MAINTAINER=	cd@sentia.nl
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 NO_CONFIGURE=	yes
 ALL_TARGET=	popa3d

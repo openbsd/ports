@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2000/02/02 18:35:23 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2000/02/12 08:02:22 turan Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -13,6 +13,13 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
+
 MIRROR_DISTFILE=no
 
 # Testers for the new configurations:

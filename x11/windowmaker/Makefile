@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 1999/12/10 20:52:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.21 2000/02/12 08:02:34 turan Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
@@ -11,6 +11,12 @@ DISTFILES=	${DISTNAME}.tar.gz ${DATAFILES}
 NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libproplist \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \

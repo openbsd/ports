@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/22 20:21:55 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:02:11 turan Exp $
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
@@ -10,6 +10,12 @@ MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 		ftp://ftp.kddlabs.co.jp/pub/Linux/packages/stampedelinux/stampedelinux/unstable/pre-0.90/source/comm/lrzsz/source/
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

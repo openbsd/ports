@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/01/12 05:45:20 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/12 08:02:21 turan Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8
@@ -10,6 +10,12 @@ MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \

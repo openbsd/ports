@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 1999/11/12 14:34:37 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:18 turan Exp $
 
 DISTNAME=	freeciv-1.8.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/
 
 MAINTAINER=	israfil@gmx.net
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # If USE_GTK is defined, freeciv will be built with a prettier look and
 # feel:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/02/11 00:37:34 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/02/12 08:02:27 turan Exp $
 
 DISTNAME=	samba-2.0.6
 CATEGORIES=	net
@@ -10,6 +10,12 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

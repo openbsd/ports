@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:35 turan Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -15,6 +15,12 @@ MASTER_SITE_SUBDIR=	X11/toys
 NEED_VERSION=	1.191
 
 MAINTAINER=	don@OpenBSD.ORG
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAN1=	xtacy.1
 

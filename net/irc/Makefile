@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/12 00:44:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:25 turan Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
@@ -6,6 +6,12 @@ PKGNAME=        irc-2.10.1
 CATEGORIES=	net
 
 MAINTAINER=	marc@OpenBSD.ORG
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=   http://www.leo.org/pub/comp/general/networking/irc/daemon/ \
                 ftp://ftp.irc.org/irc/server/ \

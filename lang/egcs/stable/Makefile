@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/02/12 00:43:59 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2000/02/12 08:02:22 turan Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -11,6 +11,12 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 COMES_WITH= 2.6
 
 # Testers for the new configurations:

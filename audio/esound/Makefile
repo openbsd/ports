@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/10 19:04:02 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:09 turan Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 DISTNAME=	esound-0.2.16
@@ -9,6 +9,12 @@ MASTER_SITE_SUBDIR= stable/sources/esound
 NEED_VERSION=	1.78
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	audiofile:${PORTSDIR}/devel/libaudiofile
 

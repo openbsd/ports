@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/10 19:14:18 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:02:32 turan Exp $
 
 DISTNAME=	libghttp-1.0.4
 CATEGORIES=	www
@@ -8,6 +8,12 @@ MASTER_SITE_SUBDIR= stable/sources/libghttp
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

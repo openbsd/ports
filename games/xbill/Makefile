@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/01 01:21:58 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:19 turan Exp $
 
 DISTNAME=	xbill-2.0
 CATEGORIES=	games
@@ -7,6 +7,12 @@ MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=	yes
 

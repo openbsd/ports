@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/12 20:51:15 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:15 turan Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 DISTNAME=	m4-1.4
@@ -7,6 +7,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= m4
 
 MAINTAINER=	niklas@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # This port does use gnu configure, but uses old autoconf files.
 # We can't say USE_AUTOCONF because then we'd get a circular dependency:

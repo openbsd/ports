@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/23 21:13:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:02:32 turan Exp $
 
 DISTNAME=	rxp-1.0.9
 CATEGORIES=	textproc
 
 MAINTAINER=     jakob@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 

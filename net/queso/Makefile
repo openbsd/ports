@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/06 21:55:03 rohee Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:27 turan Exp $
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/FreeBSD/distfiles/
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

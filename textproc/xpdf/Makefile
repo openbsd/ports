@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/02 17:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:32 turan Exp $
 
 DISTNAME=	xpdf-0.90
 CATEGORIES=	textproc
@@ -14,6 +14,12 @@ PATCH_DIST_STRIP=	-p1
 PATCHFILES=	xpdf-0.90-fefe-diff2.gz:0
 
 MAINTAINER=	eep@inconnect.com
+
+LICENSE_TYPE=		GPL
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes
