@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/06/23 19:08:52 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/06/24 03:16:55 brad Exp $
 #
 # Pre/post-installation setup of vsftpd
 
@@ -60,17 +60,6 @@ do_install()
   echo
 }
 
-do_warning()
-{
-  echo "+---------------"
-  echo "| WARNING!"
-  echo "|"
-  echo "| This port has changed its user/group from 'vsftpd' to '_vsftpd'."
-  echo "| If you installed this port before, ensure all permissions are set"
-  echo "| correctly and then \"rmuser vsftpd\"."
-  echo "+---------------"
-  echo
-}
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -90,7 +79,6 @@ case $2 in
 	else
 	   do_notice $1
 	fi
-	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.8 2003/11/08 21:55:50 sturm Exp $
+# $OpenBSD: INSTALL,v 1.9 2004/06/24 03:16:55 brad Exp $
 
 P_NAME=leafnode
 
@@ -125,20 +125,6 @@ do_post()
 	echo 
 }
 
-do_warning()
-{
-	echo "+---------------"
-	echo "| WARNING!"
-	echo "|"
-	echo "| This port has changed its user from 'news' to '_news'. If you"
-	echo "| installed this port before, ensure all permissions are set"
-	echo "| correctly by running as root"
-	echo "|     find / -user news -exec chown _news {} \;"
-	echo "| and then"
-	echo "|     rmuser news"
-	echo "+---------------"
-}
-
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -155,7 +141,6 @@ case $2 in
 	POST-INSTALL)
 		do_create_spool_dirs
 		do_post
-		do_warning
 		;;
 	*)
 		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
