@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2000/05/21 12:25:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2000/06/11 01:31:24 fgsch Exp $
 
 DATE=		20000520
 DISTNAME=	mtools-3.9.6
 PKGNAME=	mtools-3.9.6.${DATE}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.175
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCHFILES=	mtools-3.9.6-${DATE}.diff.gz
@@ -17,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
+USE_GMAKE=		Yes
+
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
-FAKE=		Yes
 SEPARATE_BUILD=	Simple
 
 pre-patch:
