@@ -3,7 +3,7 @@
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/06/21 19:41:32 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/26 20:19:23 dugsong Exp $
 
 DISTNAME=	xip-1.3.1
 
@@ -26,7 +26,7 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xip/xip ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/xip.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/xip/Xip.ad ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/xip/Xip.ad ${PREFIX}/lib/X11/app-defaults/Xip
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xip
 	for dir in pkb pkc pkt ; do \
 	   ${INSTALL_DATA_DIR} ${PREFIX}/lib/xip/$$dir ; \
