@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/23 23:43:36 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 18:46:03 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= Apache
 
 HOMEPAGE=	http://perl.apache.org/
 
-MAINTAINER=	pvk@openbsd.ru
+MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/06 08:02:49 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 18:46:03 espie Exp $
 
 DISTNAME=	ApacheDBI-0.87
 PKGNAME=	p5-Apache-DBI-0.87
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= Apache
 RUN_DEPENDS=	${LOCALBASE}/lib/mod_perl.so::www/mod_perl \
 		${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
-MAINTAINER=	pvk@openbsd.ru
+MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
 		
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

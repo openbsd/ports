@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2000/09/11 06:38:45 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2000/10/22 18:46:02 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.2
@@ -57,7 +57,7 @@ DIST_SUBDIR=	postgresql
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	pvk@openbsd.ru
+MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
