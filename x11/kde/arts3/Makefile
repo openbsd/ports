@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/02 17:06:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/04/03 16:54:43 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
-VERSION=		3.0rc3
-DISTNAME=		arts-0.9.9
+VERSION=		3.0
+DISTNAME=		arts-1.0.0
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
-#MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITES= http://gd.tuwien.ac.at/pub/kde/%SUBDIR%/
-MASTER_SITE_SUBDIR=	unstable/kde-${VERSION}/src
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/kde-${VERSION}/src
 EXTRACT_SUFX=	.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
