@@ -1,24 +1,24 @@
-*** conf/main.cf.orig	Tue Dec  8 20:55:27 1998
---- conf/main.cf	Fri Dec 11 14:09:27 1998
+*** conf/main.cf.orig	Fri Jan 22 16:39:35 1999
+--- conf/main.cf	Sun Jan 31 14:47:01 1999
 ***************
-*** 17,23 ****
-  # The program_directory parameter specifies the location of Postfix
-  # support programs and daemons. This directory must be owned by root.
+*** 18,24 ****
+  # Postfix support programs and daemons. This setting can be overruled
+  # with the command_directory and daemon_directory parameters.
   #
 ! program_directory = /some/where/postfix/bin
   
-  # QUEUE AND PROCESS OWNERSHIP
-  #
---- 17,23 ----
-  # The program_directory parameter specifies the location of Postfix
-  # support programs and daemons. This directory must be owned by root.
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
+--- 18,24 ----
+  # Postfix support programs and daemons. This setting can be overruled
+  # with the command_directory and daemon_directory parameters.
   #
 ! program_directory = y0y0y0/sbin
   
-  # QUEUE AND PROCESS OWNERSHIP
-  #
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
 ***************
-*** 27,40 ****
+*** 40,53 ****
   # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
   # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
   #
@@ -33,7 +33,7 @@
   
   # INTERNET HOST AND DOMAIN NAMES
   # 
---- 27,40 ----
+--- 40,53 ----
   # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
   # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
   #
@@ -49,36 +49,36 @@
   # INTERNET HOST AND DOMAIN NAMES
   # 
 ***************
-*** 166,172 ****
+*** 179,185 ****
   # "postfix reload" to eliminate the delay.
   #
   #alias_maps = dbm:/etc/aliases
 ! #alias_maps = hash:/etc/aliases
   #alias_maps = hash:/etc/aliases, nis:mail.aliases
   
-  # ADDRESS EXTENSIONS (e.g., user+foo)
---- 166,172 ----
+  # The alias_database parameter specifies the alias database(s) that
+--- 179,185 ----
   # "postfix reload" to eliminate the delay.
   #
   #alias_maps = dbm:/etc/aliases
 ! alias_maps = hash:/etc/aliases
   #alias_maps = hash:/etc/aliases, nis:mail.aliases
   
-  # ADDRESS EXTENSIONS (e.g., user+foo)
+  # The alias_database parameter specifies the alias database(s) that
 ***************
-*** 205,211 ****
+*** 189,195 ****
   #
   #alias_database = dbm:/etc/aliases
   #alias_database = dbm:/etc/mail/aliases
 ! #alias_database = hash:/etc/aliases
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
   
-  # JUNK MAIL CONTROLS
-  # 
---- 205,211 ----
+  # ADDRESS EXTENSIONS (e.g., user+foo)
+--- 189,195 ----
   #
   #alias_database = dbm:/etc/aliases
   #alias_database = dbm:/etc/mail/aliases
 ! alias_database = hash:/etc/aliases
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
   
-  # JUNK MAIL CONTROLS
-  # 
+  # ADDRESS EXTENSIONS (e.g., user+foo)

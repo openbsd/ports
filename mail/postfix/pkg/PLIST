@@ -141,4 +141,4 @@ share/doc/postfix/virtual.5.html
 @dirrm share/doc/postfix
 @dirrm lib/postfix
 @comment these pkg utilities suk. eesh.
-@unexec /var/db/pkg/postfix-beta-19981230/+DEINSTALL with POST-DEINSTALL
+@unexec /var/db/pkg/postfix-beta-19990122/+DEINSTALL with POST-DEINSTALL

@@ -1,14 +1,14 @@
 # OpenBSD makefile for:	postfix
-# Version required:	beta-19981230
+# Version required:	beta-19990122
 # Date created:		1998-Dec-10
 # Whom:			dugsong@OpenBSD.ORG
 #
 # Relevant URLs:	http://www.postfix.org/
 #			http://www.alphaworks.ibm.com/formula/securemailer/
 #
-# $OpenBSD: Makefile,v 1.3 1999/01/12 02:39:30 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/02 19:39:16 marc Exp $
 
-DISTNAME=	postfix-beta-19981230
+DISTNAME=	postfix-beta-19990122
 
 CATEGORIES=     mail
 

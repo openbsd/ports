@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Wed Dec 30 08:04:36 1998
---- Makefile.in	Mon Jan 11 21:12:36 1999
+*** Makefile.in.orig	Thu Jan 21 16:31:18 1999
+--- Makefile.in	Sun Jan 31 14:53:04 1999
 ***************
 *** 6,11 ****
 --- 6,19 ----
@@ -18,8 +18,8 @@
   
   makefiles Makefiles:
 ***************
-*** 39,41 ****
---- 47,81 ----
+*** 40,42 ****
+--- 48,83 ----
   	find . -type s -print | xargs rm -f
   	find . -type d -print | xargs chmod 755
   	find . -type f -print | xargs chmod a+r
@@ -32,7 +32,8 @@
 + 	      install -m 644 -c $$file $(ETCDIR)/postfix ; \
 + 	   fi ; \
 + 	done)
-+ 	@chmod 755 $(ETCDIR)/postfix/postfix-script
++ 	@rm $(ETCDIR)/postfix/postfix-script*
++ 	@install -c -m 755 conf/postfix-script-sgid $(ETCDIR)/postfix/postfix-script
 + 	@echo
 + 	@echo "-> Installing postfix sample configs in $(LIBDIR)/postfix"
 + 	@[ -d $(LIBDIR)/postfix ] || mkdir -p -m 755 $(LIBDIR)/postfix
