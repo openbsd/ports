@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/30 22:59:28 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/31 02:42:39 brad Exp $
 bin/ADMfzap
-%%SHARED%%
+lib/libfzap.so

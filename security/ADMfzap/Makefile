@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2003/12/30 23:05:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2003/12/31 02:42:39 brad Exp $
 
 COMMENT=		"connect() and bind() wrapper to evade packet filtering"
+
+# uses LD_PRELOAD
+NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 DISTNAME=		ADMfzap
 PKGNAME=        	ADMfzap-0.1
@@ -16,14 +19,9 @@ PERMIT_DISTFILES_FTP=	"no license"
 MASTER_SITES=   	ftp://adm.freelsd.net/pub/ADM/ \
                 	http://adm.freelsd.net/ADM/
 
-.include <bsd.port.mk>
-
-.if !defined(NO_SHARED_LIBS)
 MAKE_ENV+=      	LIB_PATH=`/bin/ls -1 /usr/lib/libc.so.* | tail -1`
+MAKE_FLAGS=		CC="${CC}"
 ALL_TARGET=     	openbsd
-.else
-ALL_TARGET=		static
-.endif
 
 NO_REGRESS=		Yes
 
@@ -34,3 +32,5 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fzap.so ${PREFIX}/lib/libfzap.so
 	${INSTALL_SCRIPT} ${WRKSRC}/ADMfzap ${PREFIX}/bin
+
+.include <bsd.port.mk>
