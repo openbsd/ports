@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/14 02:38:31 naddy Exp $
+
+COMMENT=	WindowMaker dock app similar to xload
 
 DISTNAME=	wmmon-1.0b2
 CATEGORIES=	sysutils x11 x11/windowmaker
-NEED_VERSION=	1.338
+NEED_VERSION=	1.364
 MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
 
 MAINTAINER=	Vladimir Popov <pva48@mail.ru>

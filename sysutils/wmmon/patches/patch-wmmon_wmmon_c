@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
---- wmmon/wmmon.c.orig	Tue May 19 23:13:16 1998
-+++ wmmon/wmmon.c	Tue Oct 10 21:59:35 2000
+$OpenBSD: patch-wmmon_wmmon_c,v 1.2 2001/04/14 02:38:31 naddy Exp $
+--- wmmon/wmmon.c.orig	Wed May 20 03:13:16 1998
++++ wmmon/wmmon.c	Thu Apr  5 23:52:44 2001
 @@ -28,6 +28,10 @@
  	Changes:
  	----
@@ -12,11 +12,12 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  	18/05/1998 (Antoine Nulle, warp@xs4all.nl)
  		* MEM/SWAP/UPTIME only updated when visible
  		* Using global file descriptors to reduce file
-@@ -72,10 +76,21 @@
+@@ -72,10 +76,22 @@
  #include <fcntl.h>
  #include <unistd.h>
  
 +#include <errno.h>
++#include <signal.h>
 +
  #include <sys/wait.h>
  #include <sys/param.h>
@@ -34,7 +35,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
  #include <X11/extensions/shape.h>
-@@ -102,9 +117,28 @@
+@@ -102,9 +118,28 @@
  
  char	*ProgName;
  int	stat_current = 0; /* now global */
@@ -66,7 +67,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  
  /* functions */
  void usage(void);
-@@ -114,7 +148,12 @@ void DrawStats_io(int *, int, int, int, 
+@@ -114,7 +149,11 @@ void DrawStats_io(int *, int, int, int, 
  
  void wmmon_routine(int, char **);
  
@@ -74,22 +75,24 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +/* OpenBSD specific functions */
 +#define	pagetok(size)	((size) << pageshift)
 +int swapmode(long *, long *);
-+int check_nlist(struct nlist *nlst);
 +
 +int main(int argc, char *argv[]) {
  
  	int		i;
  	
-@@ -155,6 +194,8 @@ void main(int argc, char *argv[]) {
+@@ -154,7 +193,11 @@ void main(int argc, char *argv[]) {
+ 		}
  	}
  
++	signal(SIGPIPE, exit);
++
  	wmmon_routine(argc, argv);
 +
 +	return 0;
  }
  
  /*******************************************************************************\
-@@ -213,8 +254,9 @@ void wmmon_routine(int argc, char **argv
+@@ -213,8 +256,9 @@ void wmmon_routine(int argc, char **argv
  	long		istat;
  	long		idle;
  
@@ -101,7 +104,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  	char		*p;
  
  	int			xpm_X = 0, xpm_Y = 0;
-@@ -223,16 +265,57 @@ void wmmon_routine(int argc, char **argv
+@@ -223,22 +267,58 @@ void wmmon_routine(int argc, char **argv
  	long		ref_time = 0;
  	long		cnt_time;
  
@@ -116,8 +119,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +	/* get the page size and calculate pageshift from it */
 +	pagesize = sysconf(_SC_PAGESIZE);
 +	pageshift = 0;
-+	while (pagesize > 1)
-+	{
++	while (pagesize > 1) {
 +		pageshift++;
 +		pagesize >>= 1;
 +	}
@@ -136,11 +138,14 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +	
 +	if (kd) {
 +		if (kvm_nlist(kd, nlst) >= 0) {
-+
-+			if ( check_nlist(nlst) > 0 ) {
-+				kvm_close(kd);
-+				exit(-1);
-+			}
++			int i;
++			for ( i = 0; nlst[i].n_name == NULL; i++)
++				if (nlst[i].n_type == 0) {
++					/* this one wasn't found */
++					(void) fprintf(stderr, "kernel: no symbol named `%s'\n", nlst[i].n_name);
++					kvm_close(kd);
++					exit(-1);
++				}
  
 -	fp = fopen("/proc/uptime", "r");
 -	fp_meminfo = fopen("/proc/meminfo", "r");
@@ -158,17 +163,18 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +					dk_drivehead = disk_head.tqh_first;
 +				}
 +			}
-+
-+			//fprintf (stderr, "Monitoring %d devices for activity.\n", ndrives);
-+
-+		}
-+		else {
-+			fprintf(stderr, "kvm_nlist: %s\n", kvm_geterr(kd));
-+		}
++		} else fprintf(stderr, "kvm_nlist: %s\n", kvm_geterr(kd));
  	}
  
  	for (i=0; i<MAX_STAT_DEVICES; i++) {
-@@ -246,16 +329,20 @@ void wmmon_routine(int argc, char **argv
+-		for (j=0; j<55; j++) {
++		for (j=0; j<55; j++)
+ 			stat_device[i].his[j] = 0;
+-		}
+ 		stat_device[i].hisaddcnt = 0;
+ 	}
+ 
+@@ -246,19 +326,22 @@ void wmmon_routine(int argc, char **argv
  	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
  	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
  
@@ -193,12 +199,15 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +			free(tmp);
 +		}
 +	}
-+
+ 
+-	stat_online = checksysdevs();
 +	parse_rcfile("/etc/wmmonrc.fixed", wmmon_keys);
  
- 	stat_online = checksysdevs();
++	stat_online = checksysdevs();
  
-@@ -266,7 +353,7 @@ void wmmon_routine(int argc, char **argv
+ 	openXwindow(argc, argv, wmmon_master_xpm, wmmon_mask_bits, wmmon_mask_width, wmmon_mask_height);
+ 
+@@ -266,7 +349,7 @@ void wmmon_routine(int argc, char **argv
  	AddMouseRegion(0, 12, 13, 58, 57);
  	AddMouseRegion(1, 5, 5, 24, 14);
  
@@ -207,7 +216,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  	nexttime = starttime + 10;
  
  	for (i=0; i<stat_online; i++) {
-@@ -288,7 +375,7 @@ void wmmon_routine(int argc, char **argv
+@@ -288,7 +371,7 @@ void wmmon_routine(int argc, char **argv
  	DrawActive(stat_device[stat_current].name);
  
  	while (1) {
@@ -216,7 +225,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  
  		waitpid(0, NULL, WNOHANG);
  
-@@ -338,7 +425,7 @@ void wmmon_routine(int argc, char **argv
+@@ -338,7 +421,7 @@ void wmmon_routine(int argc, char **argv
  
  			/*----------- online tijd neerzetten! ----------*/
  			
@@ -225,17 +234,26 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  
  			/* cnt_time = uptime in seconden */
  			/*
-@@ -404,7 +491,8 @@ void wmmon_routine(int argc, char **argv
+@@ -403,9 +486,9 @@ void wmmon_routine(int argc, char **argv
+ 				RedrawWindowXY(xpm_X, xpm_Y);
  				break;
  			case DestroyNotify:
- 				XCloseDisplay(display);
--				exit(0);
 +				if (kd) kvm_close(kd);
-+				return;
- 				break;
+ 				XCloseDisplay(display);
+ 				exit(0);
+-				break;
  			case ButtonPress:
  				but_stat = CheckMouseRegion(Event.xbutton.x, Event.xbutton.y);
-@@ -499,43 +587,24 @@ void update_stat_io(stat_dev *st) {
+ 				break;
+@@ -430,7 +513,6 @@ void wmmon_routine(int argc, char **argv
+ 						}
+ 					case 1:
+ 						stat_current++;
+-						printf("current stat is :%d\n", stat_current);
+ 						if (stat_current == stat_online)
+ 							stat_current = 0;
+ 
+@@ -499,43 +581,22 @@ void update_stat_io(stat_dev *st) {
  
  void update_stat_mem(stat_dev *st, stat_dev *st2) {
  
@@ -279,10 +297,8 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +	static int mib[] = { CTL_VM, VM_METER };
 +
 +	/* get total -- systemwide main memory usage structure */
-+	if ( sysctl(mib, 2, &total, &size, NULL, 0) < 0 ) {
-+		fprintf(stderr, "sysctl failed");
++	if ( sysctl(mib, 2, &total, &size, NULL, 0) < 0 )
 +		bzero(&total, sizeof(total));
-+	}
 +
 +	/* FIXME: is it right to count memory like this */
 +	st->rt_idle = pagetok(total.t_rm);
@@ -296,7 +312,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  }
  
  /*******************************************************************************\
-@@ -545,10 +614,8 @@ void update_stat_swp(stat_dev *st) {
+@@ -545,48 +606,41 @@ void update_stat_swp(stat_dev *st) {
  void get_statistics(char *devname, long *is, long *ds, long *idle) {
  
  	int	i;
@@ -309,10 +325,10 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  	long	maxdiskio=0;
  
  	*is = 0;
-@@ -556,34 +623,37 @@ void get_statistics(char *devname, long 
+ 	*ds = 0;
  	*idle = 0;
  
- 	if (!strncmp(devname, "cpu", 3)) {
+-	if (!strncmp(devname, "cpu", 3)) {
 -		fseek(fp_stat, 0, SEEK_SET);
 -		while (fgets(temp, 128, fp_stat)) {
 -			if (strstr(temp, "cpu")) {
@@ -321,32 +337,41 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 -				for (i=0; i<3; i++) {
 -					p = strtok(NULL, tokens);
 -					*ds += atol(p);
-+		if (kd) {
-+			if (kvm_nlist(kd, nlst) >= 0) {
-+				if (nlst[0].n_type != 0) {
+-				}
+-				p = strtok(NULL, tokens);
+-				*idle = atol(p);
+-			}
+-		}
+-		fp_loadavg = freopen("/proc/loadavg", "r", fp_loadavg);
+-		fscanf(fp_loadavg, "%f", &f);
+-		*is = (long) (100 * f);
+-	}
++	if (!strncmp(devname, "cpu", 3))
++		if (kd)
++			if (kvm_nlist(kd, nlst) >= 0)
++				if (nlst[0].n_type != 0)
 +					if ((kvm_read(kd, nlst[X_CP_TIME].n_value, (char *)&cp_time, sizeof(cp_time))==sizeof(cp_time)) &&
 +							(kvm_read(kd, nlst[X_AVERUN].n_value, (char *)&averun, sizeof(averun))==sizeof(averun))) {
 +						*is = (long) (100 * ((double)averun[0] / FSCALE));
 +
-+						for (i = 0; i < CPUSTATES; i++) {
++						for (i = 0; i < CPUSTATES; i++)
 +							if (i != CP_IDLE) *ds += cp_time[i];
-+						}
 +						*idle = cp_time[CP_IDLE];
 +					}
- 				}
--				p = strtok(NULL, tokens);
--				*idle = atol(p);
- 			}
- 		}
--		fp_loadavg = freopen("/proc/loadavg", "r", fp_loadavg);
--		fscanf(fp_loadavg, "%f", &f);
--		*is = (long) (100 * f);
- 	}
  
  	if (!strncmp(devname, "i/o", 3)) {
 +		struct disk     cur_disk, *p;
 +
 +		p = dk_drivehead;
++
++		if (kd)
++			if (kvm_nlist(kd, nlst) >= 0)
++				if (nlst[0].n_type != 0)
++					for (i = 0; i < ndrives; i++)
++						if ( kvm_read(kd, (u_long)p, &cur_disk, sizeof(cur_disk)) == sizeof(cur_disk) ) {
++							*ds += cur_disk.dk_seek;
++							p = cur_disk.dk_link.tqe_next;
++						}
  
 -		fseek(fp_stat, 0, SEEK_SET);
 -		while (fgets(temp, 128, fp_stat)) {
@@ -356,19 +381,13 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 -				for (i=0; i<4; i++) {
 -					p = strtok(NULL, tokens);
 -					*ds += atol(p);
-+		if (kd) {
-+			if (kvm_nlist(kd, nlst) >= 0) {
-+				if (nlst[0].n_type != 0) {
-+					for (i = 0; i < ndrives; i++) {
-+						if ( kvm_read(kd, (u_long)p, &cur_disk, sizeof(cur_disk)) == sizeof(cur_disk) ) {
-+							*ds += cur_disk.dk_seek;
-+							p = cur_disk.dk_link.tqe_next;
-+						}
-+					}
- 				}
- 			}
- 		}
-@@ -597,9 +667,9 @@ void get_statistics(char *devname, long 
+-				}
+-			}
+-		}
+ 		if (*ds > maxdiskio) maxdiskio = *ds;
+ 	}
+ }
+@@ -597,9 +651,9 @@ void get_statistics(char *devname, long 
  
  int checksysdevs(void) {
  
@@ -381,10 +400,11 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
  
  	return 3;
  }
-@@ -737,3 +807,59 @@ void printversion(void) {
+@@ -736,4 +790,34 @@ void printversion(void) {
+ 	if (!strcmp(ProgName, "wmmon")) {
  		fprintf(stderr, "%s\n", WMMON_VERSION);
  	}
- }
++}
 +
 +int swapmode(long *used, long *total) {
 +	int nswap, rnswap, i;
@@ -406,38 +426,12 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.1.1.1 2000/11/18 13:53:33 naddy Exp $
 +
 +	/* Total things up */
 +	*total = *used = 0;
-+	for (i = 0; i < nswap; i++) {
++	for (i = 0; i < nswap; i++)
 +		if (swdev[i].se_flags & SWF_ENABLE) {
 +			*used += (swdev[i].se_inuse / (1024/DEV_BSIZE));
 +			*total += (swdev[i].se_nblks / (1024/DEV_BSIZE));
 +		}
-+	}
 +
 +	free (swdev);
 +	return 1;
-+}
-+
-+int check_nlist(struct nlist *nlst)
-+{
-+	register int i;
-+
-+	/* check to see if we got ALL the symbols we requested */
-+	/* this will write one line to stderr for every symbol not found */
-+
-+	i = 0;
-+	while (nlst->n_name != NULL)
-+	{
-+		if (nlst->n_type == 0)
-+		{
-+			/* this one wasn't found */
-+			(void) fprintf(stderr, "kernel: no symbol named `%s'\n", nlst->n_name);
-+
-+			i = 1;
-+		}
-+		nlst++;
-+	}
-+
-+	return(i);
-+}
-+
-+/* vim:ts=4:sw=4: */
+ }

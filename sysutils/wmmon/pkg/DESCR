@@ -14,7 +14,7 @@ WMMon currently provides:
 * Commandline options for help (-h), version (-v),
   start mode (-i & -s) and display (-d);
 
-WMMon can lauch 3 user definable commands for left, middle and
+WMMon can launch 3 user definable commands for left, middle and
 right mouse button clicks, which you can define in ~/.wmmonrc:
 
 left: mycommand-1 &
