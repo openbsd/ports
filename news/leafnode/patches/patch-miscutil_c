@@ -1,7 +1,7 @@
-$OpenBSD: patch-miscutil_c,v 1.1 2003/07/26 13:24:08 sturm Exp $
---- miscutil.c.orig	Wed Jul 23 09:05:30 2003
-+++ miscutil.c	Wed Jul 23 09:06:01 2003
-@@ -106,9 +106,9 @@ initvars(char *progname)
+$OpenBSD: patch-miscutil_c,v 1.2 2003/11/08 21:55:50 sturm Exp $
+--- miscutil.c.orig	2003-10-14 20:46:47.000000000 +0200
++++ miscutil.c	2003-10-30 21:07:40.000000000 +0100
+@@ -107,9 +107,9 @@ initvars(char *progname)
      }
  
  #ifndef TESTMODE
@@ -13,7 +13,7 @@ $OpenBSD: patch-miscutil_c,v 1.1 2003/07/26 13:24:08 sturm Exp $
  	return FALSE;
      }
  #endif
-@@ -129,7 +129,7 @@ initvars(char *progname)
+@@ -130,7 +130,7 @@ initvars(char *progname)
  		    || st.st_uid != pw->pw_uid
  #endif
  	       ) {
@@ -22,7 +22,7 @@ $OpenBSD: patch-miscutil_c,v 1.1 2003/07/26 13:24:08 sturm Exp $
  		syslog(LOG_WARNING, "Warning: cannot create %s with proper ownership: %s", s, strerror(e));
  		suicide();
  	    }
-@@ -152,8 +152,8 @@ initvars(char *progname)
+@@ -153,8 +153,8 @@ initvars(char *progname)
  	setreuid(pw->pw_uid, pw->pw_uid);
  #endif
  	if (getuid() != pw->pw_uid || getgid() != pw->pw_gid) {

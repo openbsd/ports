@@ -1,6 +1,5 @@
-$OpenBSD: patch-INSTALL,v 1.5 2003/06/23 19:11:10 sturm Exp $
---- INSTALL.orig	Thu Mar 13 13:31:10 2003
-+++ INSTALL	Sat Jun 21 21:18:40 2003
+--- INSTALL.orig	Tue Oct  7 12:48:18 2003
++++ INSTALL	Thu Oct 30 21:13:11 2003
 @@ -26,7 +26,7 @@
      the lock file (defaults to leaf.node/lock.file below the spooldir).
  
@@ -73,13 +72,13 @@ $OpenBSD: patch-INSTALL,v 1.5 2003/06/23 19:11:10 sturm Exp $
      abuse (even happens on modem lines that are only connected during the
 @@ -214,7 +213,7 @@
  	    socket_type     = stream
-             protocol        = tcp
+ 	    protocol        = tcp
  	    wait            = no
 -	    user            = news
 +	    user            = _news
-             server          = /usr/sbin/tcpd
+ 	    server          = /usr/sbin/tcpd
  	    server_args     = /usr/local/sbin/leafnode
-             instances       = 7
+ 	    instances       = 7
 @@ -280,7 +279,7 @@
         #! /bin/sh
         exec 2>&1
@@ -107,7 +106,7 @@ $OpenBSD: patch-INSTALL,v 1.5 2003/06/23 19:11:10 sturm Exp $
      fetchnews reads a list of all newsgroups from your upstream server.  With
      an 28.8 modem, it can take as long as 60 minutes (depending on how many
      newsgroups your provider offers). To see fetchnews working, run it with
-@@ -348,7 +347,7 @@
+@@ -358,7 +357,7 @@
      After this, you should have empty files in
      /var/spool/news/interesting.groups/ for every group you want to read.
  

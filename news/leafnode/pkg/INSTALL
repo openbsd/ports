@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.7 2003/06/23 19:11:10 sturm Exp $
+# $OpenBSD: INSTALL,v 1.8 2003/11/08 21:55:50 sturm Exp $
 
 P_NAME=leafnode
 
@@ -33,7 +33,16 @@ do_create_user()
 		echo "User _news already exists... ok"
 	else
 		echo -n "Adding user _news..."
-		user add -m -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin -u 519 _news
+		if [ -d /var/spool/news ]
+		then
+			echo " Giving /var/spool/news to _news"
+		else
+			echo " Creating /var/spool/news"
+			mkdir -p /var/spool/news
+		fi
+		chown 519:news /var/spool/news
+
+		user add -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin -u 519 _news
 		echo "ok"
 	fi
 }
