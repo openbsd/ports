@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/09 09:24:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/04 05:38:59 kevlo Exp $
 
 COMMENT=	"tool for copying resources between repositories"
 
-DISTNAME=	VCP-autrijus-snapshot-0.9-20041020
+DISTNAME=	VCP-autrijus-snapshot-0.9-20050110
 PKGNAME=	p5-VCP-autrijus-0.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/A/AU/AUTRIJUS/}
