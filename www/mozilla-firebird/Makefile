@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/07/01 02:34:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/07/16 16:52:24 pvalchev Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -30,6 +30,8 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		mng.1::graphics/libmng
+
+VMEM_WARNING=	Yes
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
