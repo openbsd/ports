@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/04/07 07:01:57 dugsong Exp $
 
 COMMENT=	"extremely fast password cracker"
 
@@ -42,7 +42,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 do-configure:
 	@cd ${WRKDIST} && \
-	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' < params.h > \
+	sed -e 's,@JOHN_HOME@,${LOCALBASE}/share/john,' < params.h > \
 		params.h.new && mv -f params.h.new params.h
 
 do-install:
@@ -54,7 +54,7 @@ do-install:
 		ln -sf john unafs && \
 		ln -sf john unique
 	${INSTALL_DATA} ${WRKSRC}/../run/* ${PREFIX}/share/john
-	@sed -e s#~/#${PREFIX}/share/john/#g ${WRKSRC}/../run/john.ini > \
+	@sed -e s#~/#${LOCALBASE}/share/john/#g ${WRKSRC}/../run/john.ini > \
 		${PREFIX}/share/john/john.ini
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/john
 
