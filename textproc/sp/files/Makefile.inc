@@ -39,7 +39,7 @@ DEBUG=
 #   called "catalog" in the same directory as the document entity.
 DEFINES=-DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/catalog\"
 INCLUDES+=-I. -I${.CURDIR}/../include -I${.CURDIR}/../generic
-CXXFLAGS=-ansi $(DEBUG) $(WARN) $(DEFINES) $(INCLUDES)
+CXXFLAGS+=-ansi $(DEBUG) $(WARN) $(DEFINES) $(INCLUDES)
 
 .SUFFIXES: .m4 .msg .h .cc .C .cxx .o .po .so
 
