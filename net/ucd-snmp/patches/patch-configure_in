@@ -1,0 +1,134 @@
+$OpenBSD: patch-configure_in,v 1.1 2000/08/05 09:39:21 danh Exp $
+--- configure.in.orig	Fri May  5 12:46:26 2000
++++ configure.in	Sat Aug  5 03:54:07 2000
+@@ -400,22 +400,10 @@ if test "x$prefix" = "xNONE"; then
+   prefix=/usr/local
+ fi
+ 
+-fch=`echo $prefix | cut -b1`
+-if test $fch != "/" ; then
+-   prefix=`pwd`/$prefix
+-   echo "adjusting prefix to $prefix"
+-fi
+-
+ if test "x$exec_prefix" = "xNONE"; then
+   exec_prefix=$prefix
+ fi
+ 
+-fch=`echo $exec_prefix | cut -b1`
+-if test $fch != "/" ; then
+-   exec_prefix=`pwd`/$exec_prefix
+-   echo "adjusting exec_prefix to $exec_prefix"
+-fi
+-
+ dnl Set SNMPLIBPATH & SNMPSHAREPATH
+ 
+ SNMPLIBPATH=""
+@@ -1256,29 +1244,17 @@ AC_CHECK_STRUCT_FOR([
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ ], sockaddr, sa_len, no)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ ], sockaddr, sa_union.sa_generic.sa_family2, no)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ], rtentry, rt_dst, no)
+ 
+@@ -1289,11 +1265,7 @@ AC_CACHE_CHECK(type of rtentry structure
+ dnl 4.4 compat
+ AC_TRY_COMPILE([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ],[
+ 
+@@ -1310,11 +1282,7 @@ dnl 4.3 compat
+ if test "x$ac_cv_RTENTRY_TYPE" = "x"; then
+ AC_TRY_COMPILE([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ],[
+ struct rtentry rt; 
+@@ -1364,11 +1332,7 @@ AC_CACHE_CHECK(for struct rtentry has a 
+ [
+ AC_TRY_COMPILE([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ],[
+ struct rtentry rt; 
+@@ -1385,41 +1349,25 @@ fi
+ dnl Check struct rtentry for various things.
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ], rtentry, rt_unit)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ], rtentry, rt_refcnt)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ], rtentry, rt_hash)
+ 
+ AC_CHECK_STRUCT_FOR([
+ #include <sys/types.h>
+-#define KERNEL
+-#define _KERNEL
+ #include <sys/socket.h>
+-#undef KERNEL
+-#undef _KERNEL
+ #include <net/route.h>
+ ], rtentry, rt_use)
+ 

@@ -1,14 +1,14 @@
 +------------
 | By default, the configuration files and mib modules for snmpd are in stored 
-| in /usr/local/share/snmp.  An example configuration has been installed in
-| /usr/local/share/examples/ucd-snmp/EXAMPLE.conf.  Extra documentation has
-| also been installed in /usr/local/share/doc/ucd-snmp.
+| in ${PREFIX}/share/snmp.  An example configuration has been installed in
+| ${PREFIX}/share/examples/ucd-snmp/EXAMPLE.conf.  Extra documentation has
+| also been installed in ${PREFIX}/share/doc/ucd-snmp.
 |
 | To have snmpd start at boot time, you must have an entry similiar to the 
 | following in /etc/rc.local.
 |
-| 	if [ -x /usr/local/sbin/snmpd ]; then
-|		/usr/local/sbin/snmpd -c /etc/snmpd.conf && echo -n ' snmpd'
+| 	if [ -x ${PREFIX}/sbin/snmpd ]; then
+|		${PREFIX}/sbin/snmpd -c /etc/snmpd.conf && echo -n ' snmpd'
 |	fi
 |
 | This will start snmpd and use /etc/snmpd.conf for the configuration. 
