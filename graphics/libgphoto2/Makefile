@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/19 16:08:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/16 01:10:47 brad Exp $
 
 COMMENT=	'digital camera library'
 CATEGORIES=	graphics devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Arnaud Launay <asl@launay.org>
 
-DISTNAME=	libgphoto2-2.1.1
-PKGNAME=	libgphoto-2.1.1
+VERSION=	2.1.3
+DISTNAME=	libgphoto2-${VERSION}
+PKGNAME=	libgphoto-${VERSION}
 
 HOMEPAGE=http://gphoto.sourceforge.net/
 
@@ -19,12 +20,15 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.52
+AUTOCONF_VERSION=	2.57
 SEPARATE_BUILD=		simple
 CONFIGURE_ARGS=		--disable-nls
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
+SUBST_VARS=		VERSION
+
 LIB_DEPENDS=		exif::graphics/libexif \
+			jpeg::graphics/jpeg \
 			usb::devel/libusb
 BUILD_DEPENDS=		::devel/pkgconfig
 

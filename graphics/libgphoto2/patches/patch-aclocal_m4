@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2003/05/27 22:54:26 pvalchev Exp $
---- aclocal.m4.orig	Sun Dec  1 14:46:04 2002
-+++ aclocal.m4	Tue May 27 15:40:56 2003
-@@ -6579,6 +6579,8 @@ dnl Look for standard byte swapping macr
+$OpenBSD: patch-aclocal_m4,v 1.2 2004/01/16 01:10:47 brad Exp $
+--- aclocal.m4.orig	2003-10-19 12:53:43.000000000 -0400
++++ aclocal.m4	2003-12-28 21:51:32.000000000 -0500
+@@ -6784,6 +6784,8 @@ dnl Look for standard byte swapping macr
  AC_HAVE_SYMBOL(ntohl,arpa/inet.h,
   [cat >> "$1" << EOF
  /* ntohl and relatives live here */
