@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/02 07:32:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/06 15:17:39 naddy Exp $
 bin/kxmleditor
 lib/libkxmleditorpart.la
 share/applnk/
@@ -123,6 +123,7 @@ share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kxmleditor.png
 share/locale/de/LC_MESSAGES/kxmleditor.mo
+share/locale/fr/LC_MESSAGES/kxmleditor.mo
 share/locale/pl/LC_MESSAGES/kxmleditor.mo
 share/services/kxmleditorpart.desktop
 %%SHARED%%
