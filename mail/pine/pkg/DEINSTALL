@@ -1,0 +1,23 @@
+# $OpenBSD: DEINSTALL,v 1.1 1999/04/08 17:36:49 marc Exp $
+#
+# pine de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+if [ -f /etc/pine.conf -o -f /etc/pine.conf.fixed ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -rf /etc/pine.*"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0

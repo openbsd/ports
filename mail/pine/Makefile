@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/03/30 18:26:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 1999/04/08 17:36:48 marc Exp $
 #
 
 DISTNAME=       	pine4.10
@@ -31,5 +31,8 @@ do-install:
 		${WRKSRC}/doc/tech-notes.txt \
 		${FILESDIR}/dot.pinerc.pgp.sample \
 			${PREFIX}/share/doc/pine
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
