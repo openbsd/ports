@@ -1,5 +1,5 @@
---- man/Makefile.in.orig	Thu Aug 19 06:03:25 1999
-+++ man/Makefile.in	Fri Oct 22 17:44:40 1999
+--- man/Makefile.in.orig	Mon Nov 29 11:42:44 1999
++++ man/Makefile.in	Tue Dec 21 18:20:00 1999
 @@ -41,6 +41,7 @@
  SED	= sed
  MV	= mv
@@ -17,7 +17,7 @@
  
  MANTOOLS=\
  	apps/fax2tiff.1 \
-@@ -272,59 +273,59 @@
+@@ -274,59 +275,59 @@
  lib/TIFFswab.3t::	${SRCDIR}/TIFFswab.3t;			${MANCVT}
  lib/TIFFtile.3t::	${SRCDIR}/TIFFtile.3t;			${MANCVT}
  
