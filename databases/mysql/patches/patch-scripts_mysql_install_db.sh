@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.9 2002/12/14 23:56:43 brad Exp $
---- scripts/mysql_install_db.sh.orig	Thu Oct 10 06:17:34 2002
-+++ scripts/mysql_install_db.sh	Tue Nov 26 21:07:21 2002
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.10 2003/08/27 00:14:49 brad Exp $
+--- scripts/mysql_install_db.sh.orig	2003-06-06 10:39:19.000000000 -0400
++++ scripts/mysql_install_db.sh	2003-08-26 19:17:20.000000000 -0400
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -11,8 +11,8 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.9 2002/12/14 23:56:43 brad Exp $
 -      IN_RPM="1"; shift
 -      ;;
 -esac
-+user=mysql
-+group=mysql
++user=_mysql
++group=_mysql
 +
  defaults=
  case "$1" in

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL-server,v 1.5 2003/01/20 19:15:31 brad Exp $
+# $OpenBSD: DEINSTALL-server,v 1.6 2003/08/27 00:14:49 brad Exp $
 #
 # MySQL de-installation
 
@@ -7,8 +7,8 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
 SOCKET_DIR=${SOCKET_DIR}
-MYSQLUSER=mysql
-MYSQLGROUP=mysql
+MYSQLUSER=_mysql
+MYSQLGROUP=_mysql
 
 echo
 echo "+---------------"

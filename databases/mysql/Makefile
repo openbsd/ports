@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2003/08/26 15:37:18 brad Exp $
+# $OpenBSD: Makefile,v 1.86 2003/08/27 00:14:49 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -9,7 +9,7 @@ COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 VERSION=	3.23.57
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}p1
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-3.23
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+= --enable-static \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-innodb \
 		 --with-libwrap="/usr" \
-		 --with-mysqld-user="mysql" \
+		 --with-mysqld-user="_mysql" \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
 		 --without-bench \
 		 --without-debug \

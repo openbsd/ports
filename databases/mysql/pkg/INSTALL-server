@@ -1,13 +1,14 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.7 2002/03/19 19:11:39 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.8 2003/08/27 00:14:49 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-MYSQLUSER=mysql
-MYSQLGROUP=mysql
+MYSQLUSER=_mysql
+MYSQLGROUP=_mysql
+ID=502
 
 do_notice_existingdir()
 {
@@ -34,14 +35,14 @@ do_usergroup_install()
     echo "===> Using $MYSQLGROUP group for MySQL"
   else
     echo "===> Creating $MYSQLGROUP group for MySQL"
-    groupadd $MYSQLGROUP
+    groupadd -g $ID $MYSQLGROUP
   fi
   userinfo -e $MYSQLUSER
   if [ $? -eq 0 ]; then
     echo "===> Using $MYSQLUSER user for MySQL"
   else
     echo "===> Creating $MYSQLUSER user for MySQL"
-    useradd -g $MYSQLGROUP -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin $MYSQLUSER
+    useradd -g $MYSQLGROUP -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin -u $ID $MYSQLUSER
   fi
 }
 
