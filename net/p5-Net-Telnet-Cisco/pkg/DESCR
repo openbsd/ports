@@ -1,0 +1,5 @@
+This perl module adds functionality to Net::Telnet 
+which helps automation of Cisco routers management
+and statistic gathering.
+
+WWW: ${HOMEPAGE}
