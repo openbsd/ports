@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/04/21 11:36:06 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2004/11/11 21:31:22 alek Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 
 BROKEN=	"security (DoS) issue"
@@ -6,6 +6,7 @@ BROKEN=	"security (DoS) issue"
 COMMENT=	"TrueType font server for X11"
 
 DISTNAME=	xfstt-1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/fonts/}
 
