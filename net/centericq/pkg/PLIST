@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/15 18:17:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/02/16 21:55:55 alek Exp $
 bin/centericq
 bin/cicqconv
 bin/cicqsync
@@ -17,7 +17,6 @@ bin/cicqsync
 @comment include/libicq2000/libicq2000/time_extra.h
 @comment include/libicq2000/libicq2000/userinfoconstants.h
 @comment include/libicq2000/libicq2000/version.h
-@comment lib/charset.alias
 @man man/man1/centericq.1
 @man man/man1/cicqconv.1
 @man man/man1/cicqsync.1
@@ -37,7 +36,6 @@ share/locale/es/LC_MESSAGES/centericq.mo
 share/locale/fr/LC_MESSAGES/centericq.mo
 share/locale/hu/LC_MESSAGES/centericq.mo
 share/locale/it/LC_MESSAGES/centericq.mo
-@comment share/locale/locale.alias
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/centericq.mo
