@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/07/14 19:34:07 angelos Exp $
+# $OpenBSD: Makefile,v 1.20 1999/11/10 02:02:37 kevlo Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -51,7 +51,7 @@
      SUBDIR += tkinfo
      SUBDIR += tkman
 #    SUBDIR += unclutter
-#    SUBDIR += viz
+     SUBDIR += viz
 #    SUBDIR += xcalendar
      SUBDIR += xdelta
      SUBDIR += xgas
