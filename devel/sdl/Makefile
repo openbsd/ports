@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/12/28 23:42:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2002/02/19 06:42:03 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -61,6 +61,8 @@ CONFIGURE_ARGS+= --without-x \
 .else
 USE_X11=	Yes
 .endif
+
+NO_REGRESS=	Yes
 
 MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 0:4:0"
 
