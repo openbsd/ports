@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/29 14:09:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/30 02:03:02 kevlo Exp $
 
 COMMENT=	"text-based MSN messenger client"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://pebrot.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/29 07:34:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/30 02:01:12 kevlo Exp $
 
 COMMENT=	"Python unicode codecs for Chinese, Japanese and Korean"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://cjkpython.berlios.de/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
