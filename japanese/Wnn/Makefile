@@ -1,12 +1,27 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.30 2000/10/10 00:40:35 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2001/03/16 15:42:49 espie Exp $
 
+COMMENT= 	Japanese input method
+COMMENT-dict=	dictionaries for Japanese Wnn
+COMMENT-ko= 	Korean input method
+COMMENT-kodict=	dictionaries for Korean Wnn
+COMMENT-xwnmo=	X11 input method for Wnn
+COMMENT-zh=	Chinese input method
+COMMENT-zhdict=	dictionaries for Chinese Wnn
 DISTNAME=	Wnn4.2
 
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo
-NEED_VERSION=	1.270
+NEED_VERSION=	1.361
+PKGNAME=	ja-Wnn-4.2
+PKGNAME-dict=	ja-Wnndict-4.2
+PKGNAME-zh=	zh-Wnn-4.2
+PKGNAME-zhdict=	zh-Wnndict-4.2
+PKGNAME-ko=	ko-Wnn-4.2
+PKGNAME-kodict=	ko-Wnndict-4.2
+PKGNAME-xwnmo=	Wnn-xwnmo-4.2
+
 SUBPACKAGE?=
 
 WNNDICDIR=/var/dict/Wnn
@@ -15,27 +30,20 @@ WNNBASE=${PREFIX}
 .if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
 PREFIX=${WNNDICDIR}
-PKGNAME=	ja-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
-PKGNAME=	zh-Wnn-4.2
 .elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
 PREFIX=${WNNDICDIR}
-PKGNAME=	zh-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
-PKGNAME=	ko-Wnn-4.2
 .elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
 PREFIX=${WNNDICDIR}
-PKGNAME=	ko-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-xwnmo"
 CATEGORIES=	japanese chinese korean
-PKGNAME=	Wnn-xwnmo-4.2
 .else
 CATEGORIES=	japanese
-PKGNAME=	ja-Wnn-4.2
 .endif
 
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
