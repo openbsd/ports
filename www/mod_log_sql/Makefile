@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/05 10:49:49 alek Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS} 
+SHARED_ONLY=	Yes
 
 DISTNAME=	mod_log_sql-1.18
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.outoforder.cc/projects/apache/mod_log_sql/
