@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.4 2003/08/16 16:52:09 jolan Exp $
+#$OpenBSD: Makefile,v 1.5 2003/11/18 21:22:09 sturm Exp $
 
 CATEGORIES=	audio
 
@@ -18,5 +18,9 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 .include <bsd.port.mk>
