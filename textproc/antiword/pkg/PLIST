@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/08/15 18:51:28 mark Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/21 01:48:34 margarida Exp $
 bin/antiword
 bin/antiword-kde-dnd.sh
 man/man1/antiword.1
@@ -38,9 +38,7 @@ share/antiword/koi8-u.txt
 share/antiword/lo16-app-antiword.png
 share/antiword/lo32-app-antiword.png
 share/antiword/roman.txt
-share/doc/antiword/ChangeLog
 share/doc/antiword/FAQ
-share/doc/antiword/History
 share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/09 15:37:24 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2003/01/21 01:48:34 margarida Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
 DISTNAME=	antiword-0.33
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 HOMEPAGE=	http://www.winfield.demon.nl/
 
-MAINTAINER=	Mark Grimes <mark@stateful.net>
+MASTER_SITES=	${HOMEPAGE}/linux/
+
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -21,7 +22,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -pedantic -DNDEBUG" \
 
 NO_REGRESS=	Yes
 
-DOCS=	ChangeLog FAQ History Netscape QandA ReadMe
+DOCS=		FAQ Netscape QandA ReadMe
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antiword ${PREFIX}/bin
