@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 03:02:16 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/02/18 02:20:55 kevlo Exp $
 bin/algotutor
 bin/gen_at_graph
 ${P5SITE}/algotutor/
@@ -22,7 +22,9 @@ share/algotutor/
 share/algotutor/data/
 share/algotutor/data/countries.gr
 share/algotutor/data/lv.gr
+share/algotutor/data/pts1.gr
 share/algotutor/data/randgrid.gr
+share/algotutor/data/simple.gr
 share/algotutor/data/trc.gr
 share/algotutor/data/tt.gr
 share/algotutor/graph/

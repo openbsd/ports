@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/14 03:02:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/18 02:20:55 kevlo Exp $
 
 COMMENT=	"interactive tutorial for algorithms and data structures"
 
-DISTNAME=	algotutor-0.6.2
-CATEGORIES=	education
+DISTNAME=	algotutor-0.7
+CATEGORIES=	education math
 
-HOMEPAGE=	http://www.cyut.edu.tw/~ckhung/p/algotutor/index.en.shtml
+HOMEPAGE=	http://www.ofset.org/~ckhung/p/algotutor/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
