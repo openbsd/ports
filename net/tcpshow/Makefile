@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/14 13:23:01 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.330
 MASTER_SITES=	http://people.freebsd.org/~obrien/Distfiles/
 DISTFILES=	tcpshow.c tcpshow.1
 
-EXTRACT_CMD=	cp      
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= .
+EXTRACT_CASES=*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
 MAINTAINER=	ports@openbsd.org
 

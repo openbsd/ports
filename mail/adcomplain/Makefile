@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/29 02:53:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/14 13:22:59 espie Exp $
 
 DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news
-NEED_VERSION=	1.301
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.rdrop.com/users/billmc/
 DISTFILES=	adcomplain.pl.uu
 
-HOMEPAGE=	http://www.rdrop.com/users/billmc/adcomplain.html
+EXTRACT_CASES=	*.uu) uudecode ${FULLDISTDIR}/$$archive;;
 
-EXTRACT_CMD=	uudecode
-EXTRACT_BEFORE_ARGS=	#
-EXTRACT_AFTER_ARGS=	#
+HOMEPAGE=	http://www.rdrop.com/users/billmc/adcomplain.html
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/12/14 13:23:01 espie Exp $
 
 DISTNAME=	9menu-1.5
 CATEGORIES=	plan9
-NEED_VERSION=	1.310
+NEED_VERSION=	1.342
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
-EXTRACT_SUFX=	.shar.gz
 
-EXTRACT_CMD=	gzcat
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | ${SH}
+EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

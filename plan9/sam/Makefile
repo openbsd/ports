@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 17:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/14 13:23:01 espie Exp $
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3-19980506
 CATEGORIES=	plan9
-NEED_VERSION=	1.310
+NEED_VERSION=	1.342
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
 		http://netlib.bell-labs.com/netlib/research/
 EXTRACT_SUFX=	.shar.gz
-
-EXTRACT_CMD=	gzcat
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | sh
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 

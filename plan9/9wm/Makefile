@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/12 23:46:14 markus Exp $
+# $OpenBSD: Makefile,v 1.15 2000/12/14 13:23:01 espie Exp $
 
 PKGNAME=	9wm-1.2pre
 DISTNAME=	pre-9wm-1.2
 CATEGORIES=	plan9
-NEED_VERSION=	1.310
+NEED_VERSION=	1.342
 MASTER_SITES=	ftp://ftp.cs.su.oz.au/dhog/9wm/
 EXTRACT_SUFX=	.shar.gz
-
-EXTRACT_CMD=	gzcat
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | ${SH}
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 

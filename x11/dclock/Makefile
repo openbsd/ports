@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/14 13:23:02 espie Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 PKGNAME=	dclock-pl4
 
 CATEGORIES=	x11
-NEED_VERSION=	1.191
+NEED_VERSION=	1.342
 
 DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z
@@ -19,10 +19,6 @@ PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-
-EXTRACT_CMD=		${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-cd
-EXTRACT_AFTER_ARGS=	|sh -
 
 WRKDIST=	${WRKDIR}
 

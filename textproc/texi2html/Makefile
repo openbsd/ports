@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/14 13:23:02 espie Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.342
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
 EXTRACT_SUFX=	.shar.Z
@@ -17,9 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
-EXTRACT_CMD=	gzcat
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | ${SH}
 
 NO_BUILD=	yes
 

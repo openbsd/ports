@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/15 14:54:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/12/14 13:22:59 espie Exp $
 
 DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0
 CATEGORIES=	games
-NEED_VERSION=	1.330
+NEED_VERSION=	1.342
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.sh.Z
-
-EXTRACT_CASES=	*.sh.Z) gzcat ${FULLDISTDIR}/$$archive | /bin/sh -s ;;
 
 MAINTAINER=	ports@openbsd.org
 

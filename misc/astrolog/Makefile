@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/12/14 13:23:00 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.330
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
@@ -21,9 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_CMD=    ${SH}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=
+EXTRACT_CASES=*.shr) /bin/sh ${FULLDISTDIR}/$$archive;;
+
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog
 WRKDIST=	${WRKDIR}
