@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/25 16:56:44 naddy Exp $
+include/xvid.h
+lib/libxvidcore.a
+%%SHARED%%

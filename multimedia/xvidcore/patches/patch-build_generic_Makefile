@@ -1,0 +1,48 @@
+$OpenBSD: patch-build_generic_Makefile,v 1.1.1.1 2004/10/25 16:56:44 naddy Exp $
+--- build/generic/Makefile.orig	Sun Jun  6 01:12:43 2004
++++ build/generic/Makefile	Sun Jul 18 02:54:38 2004
+@@ -44,6 +44,7 @@ include sources.inc
+ include platform.inc
+ 
+ RM = rm -rf
++INSTALL = install -c
+ 
+ ##############################################################################
+ #
+@@ -91,7 +92,7 @@ $(BUILD_DIR):
+ .$(ASSEMBLY_EXTENSION).$(OBJECT_EXTENSION):
+ 	@echo "  A: $(@D)/$(<F)"
+ 	@$(INSTALL) -d $(BUILD_DIR)/$(@D)
+-	@$(AS) $(AFLAGS) $< -o $(BUILD_DIR)/$@
++	$(AS) $(AFLAGS) $< -o $(BUILD_DIR)/$@
+ 
+ #-----------------------------------------------------------------------------
+ # Generic C rule
+@@ -100,7 +101,7 @@ $(BUILD_DIR):
+ .c.$(OBJECT_EXTENSION):
+ 	@echo "  C: $(@D)/$(<F)"
+ 	@$(INSTALL) -d $(BUILD_DIR)/$(@D)
+-	@$(CC) -c $(ARCHITECTURE) $(BUS) $(ENDIANNESS) $(FEATURES) $(SPECIFIC_CFLAGS) $(CFLAGS) $< -o $(BUILD_DIR)/$@
++	$(CC) -c $(ARCHITECTURE) $(BUS) $(ENDIANNESS) $(FEATURES) $(SPECIFIC_CFLAGS) $(CFLAGS) $< -o $(BUILD_DIR)/$@
+ 
+ #-----------------------------------------------------------------------------
+ # Static Library
+@@ -108,7 +109,7 @@ $(BUILD_DIR):
+ 
+ $(STATIC_LIB): $(BUILD_DIR) $(OBJECTS)
+ 	@echo "  L: $(@F)"
+-	@cd $(BUILD_DIR) && ar rc $(@F) $(OBJECTS) && $(RANLIB) $(@F)
++	cd $(BUILD_DIR) && ar rc $(@F) $(OBJECTS) && $(RANLIB) $(@F)
+ 
+ #-----------------------------------------------------------------------------
+ # Shared Library
+@@ -127,8 +128,7 @@ $(STATIC_LIB): $(BUILD_DIR) $(OBJECTS)
+ 
+ $(SHARED_LIB): $(BUILD_DIR) $(OBJECTS)
+ 	@echo "  L: $(@F)"
+-	@$(INSTALL) -m 644 libxvidcore.def $(BUILD_DIR)/libxvidcore.def
+-	@cd $(BUILD_DIR) && $(CC) $(LDFLAGS) $(OBJECTS) -o $(PRE_SHARED_LIB) $(SPECIFIC_LDFLAGS)
++	cd $(BUILD_DIR) && $(CC) -fPIC $(LDFLAGS) $(OBJECTS) -o $(PRE_SHARED_LIB) $(SPECIFIC_LDFLAGS)
+ 
+ #-----------------------------------------------------------------------------
+ # Installation
