@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/12 14:48:32 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/17 02:23:01 brad Exp $
 
-DISTNAME=	mrtg-2.7.0
+DISTNAME=	mrtg-2.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
@@ -11,8 +11,9 @@ BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 USE_PERL5=	YES
 
+SYSCONFDIR=	/etc/mrtg
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--sysconfdir=/etc/mrtg --with-gd-lib=${PREFIX}/lib \
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --with-gd-lib=${PREFIX}/lib \
 		--with-gd-inc=${PREFIX}/include/gd
 
 do-install:
