@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/05/18 03:37:49 form Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/15 05:35:42 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 DISTNAME=	xosview-1.7.3
 CATEGORIES=	sysutils
-NEED_VERSION=	1.195
-FAKE=		Yes
+NEED_VERSION=	1.301
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/
 
 MAINTAINER=	form@openbsd.org
@@ -15,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
 
 MAKE_ENV+=	UVM=${UVM}
