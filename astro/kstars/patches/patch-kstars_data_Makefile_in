@@ -1,0 +1,34 @@
+--- kstars/data/Makefile.in.orig	Thu Dec 13 18:50:09 2001
++++ kstars/data/Makefile.in	Tue Dec 18 12:47:54 2001
+@@ -350,7 +350,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/hicolor/32x32/apps/
+ #>- 	$(INSTALL_DATA) $(srcdir)/hi32-app-kstars.png $(kde_icondir)/hicolor/32x32/apps/kstars.png  
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/hi32-app-kstars.png $(kde_icondir)/hicolor/32x32/apps/kstars.png  $(DESTDIR)
++	$(INSTALL_DATA) $(srcdir)/hi32-app-kstars.png $(DESTDIR)$(kde_icondir)/hicolor/32x32/apps/kstars.png 
+ #>- 	$(mkinstalldirs) $(kde_icondir)/hicolor/48x48/apps/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/hicolor/48x48/apps/
+@@ -362,19 +362,19 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/locolor/16x16/apps/
+ #>- 	$(INSTALL_DATA) $(srcdir)/lo16-app-kstars.png $(kde_icondir)/locolor/16x16/apps/kstars.png 
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/lo16-app-kstars.png $(kde_icondir)/locolor/16x16/apps/kstars.png $(DESTDIR)
++	$(INSTALL_DATA) $(srcdir)/lo16-app-kstars.png $(DESTDIR)$(kde_icondir)/locolor/16x16/apps/kstars.png 
+ #>- 	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/locolor/32x32/apps/
+ #>- 	$(INSTALL_DATA) $(srcdir)/lo32-app-kstars.png $(kde_icondir)/locolor/32x32/apps/kstars.png 
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/lo32-app-kstars.png $(kde_icondir)/locolor/32x32/apps/kstars.png $(DESTDIR)
++	$(INSTALL_DATA) $(srcdir)/lo32-app-kstars.png $(DESTDIR)$(kde_icondir)/locolor/32x32/apps/kstars.png 
+ #>- 	$(mkinstalldirs) $(kde_icondir)/locolor/48x48/apps/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/locolor/48x48/apps/
+ #>- 	$(INSTALL_DATA) $(srcdir)/lo48-app-kstars.png $(kde_icondir)/locolor/48x48/apps/kstars.png 
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/lo48-app-kstars.png $(kde_icondir)/locolor/48x48/apps/kstars.png $(DESTDIR)
++	$(INSTALL_DATA) $(srcdir)/lo48-app-kstars.png $(DESTDIR)$(kde_icondir)/locolor/48x48/apps/kstars.png 
+ #>- 	$(mkinstalldirs) $(kde_datadir)/kstars/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_datadir)/kstars/

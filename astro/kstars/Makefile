@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/31 08:11:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/18 06:18:33 kevlo Exp $
 
 COMMENT=	"desktop planetarium"
 
-DISTNAME=	kstars-0.7
+DISTNAME=	kstars-0.8.2
 CATEGORIES=	astro
-NEED_VERSION=	1.483
+NEED_VERSION=	1.502
 
 HOMEPAGE=	http://kstars.sourceforge.net/
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kstars
 
-BUILD_DEPENDS=	::devel/automake \
-		::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer
 
 LIB_DEPENDS=	kdecore.3,DCOP,kio,kfile,kdeui,kdesu,kssl,ksycoca::x11/kde/libs2
 
@@ -30,11 +29,14 @@ MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
-CONFIGURE_STYLE= autoconf
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
+
+WRKDIST=	${WRKDIR}/kstars-0.8
 
 .include <bsd.port.mk>
