@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2001/09/02 07:47:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/04 01:21:39 pvalchev Exp $
 
+ONLY_FOR_ARCHS=	i386
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
 
