@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.18 1999/09/20 04:33:14 turan Exp $
+$OpenBSD: LICENSE,v 1.19 1999/09/21 16:24:40 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -77,18 +77,24 @@ N	astro/xearth			xearth-1.0.tar.gz		NOFEE
 N	astro/xephem			xephem-3.2.2.tar.gz		NOFEE
 N	astro/xphoon			xphoon.tar.Z			NOFEE
 Y	audio/amp			amp-0.7.6.tar.gz		COPY
--	audio/esound			esound-0.2.8.tar.gz
+Y	audio/bladeenc		bladeenc-085-src-unstable.tar.gz	GPL
+Y	audio/esound			esound-0.2.8.tar.gz		GPL
+-	audio/gom			
+Y	audio/gqmpeg			gqmpeg-0.6.3.src.tar.gz		GPL
 Y	audio/gsm			gsm-1.0.10.tar.gz		BSD
+Y	audio/mp3encode			dist10.tar.gz			BSD
+Y	audio/mp3info			mp3info-0.2.16.tar.gz		GPL
 Y	audio/mpegaudio			mpegaudio.tar.Z			COPY
 Y	audio/mpg123			mpg123-0.59q.tar.gz		COPY
 Y	audio/nspmod			nspmod-0.1.tar.gz		GPL
 Y	audio/rplay			rplay-3.3.0.tar.gz		GPL
 Y	audio/rsynth			rsynth-2.0.tar.gz		NONE
 Y	audio/sox			sox-12.15.tar.gz		COPY
--	audio/timidity			goemon.tgz
--	audio/timidity			timidity-0.2i.tar.gz
+Y	audio/timidity			goemon.tgz			NONE
+Y	audio/timidity			timidity-0.2i.tar.gz		GPL
 Y	audio/tosha			tosha-0.6.tar.gz		BSD
 Y	audio/tracker			tracker-5.3.tgz			COPY
+N	audio/waveplay			waveplay-19990123.tar.gz	NONE
 Y	audio/workman			WorkMan-1.3a.tar.gz		GPL
 Y	audio/xcd			xcd-1.6.tar.gz			COPY
 Y	audio/xcdplayer			xcdplayer-2.2.tar.Z		BSD
@@ -97,6 +103,7 @@ Y	audio/xmix			xmix-2.1.tar.gz			GPL
 Y	audio/xmix			xmix-2.1.mixers.patch		GPL
 Y	audio/xmmix			xmmix-1.2.tar.gz		GPL
 Y	audio/xmp			xmp-1.1.5.tar.gz		GPL
+Y	audio/xmpeg3			xmp3_1.0.0.tgz			GPL
 Y	benchmarks/bonnie		Bonnie.tar.Z			BSD
 Y	benchmarks/bytebench		bytebench-3.1.tar.Z		NONE
 Y	benchmarks/iozone		iozone-2.01.shar.gz		COPY
@@ -564,62 +571,68 @@ Y	www/navigator	navigator-4.06-fortified/Fortify-1.3.0-unix-x86.tar.gz	COPY
 Y	www/squid			squid-1.1.22-src.tar.gz		GPL
 Y	www/transproxy			transproxy-0.4.tgz		GPL
 Y	www/wwwcount			wwwcount2.4.tar.gz		BSD
-Y	x11/Xaw3d			Xaw3d-1.3.tar.gz		X
+Y	x11/Xaw3d			Xaw3d-1.5.tar.gz		X
 Y	x11/afterstep			AfterStep-1.0.tar.gz		X
 Y	x11/asclock			asclock.tgz			COPY
--	x11/aterm			aterm-0.3.4.tar.gz
+Y	x11/aterm			aterm-0.3.4.tar.gz		GPL
 Y	x11/bclock			bclock-1.0.tar.gz		X
--	x11/blackbox			blackbox-0.50.4.tar.gz
+-	x11/blackbox			
 Y	x11/blast			blast-1.0-ss-9.03.tar.gz	GPL
 Y	x11/bricons			bricons-athena-3.0.tar.gz	NONE
 Y	x11/ctwm			ctwm-3.5.tar.gz			X
 N	x11/emiclock			EmiClock-1.0.2.tar.gz		COPY
+Y	x11/enlightenment		enlightenment-0.15.5.tar.gz	BSD
 Y	x11/explorer			explorer-0.72.tar.gz		GPL
 Y	x11/freefonts			freefonts-0.10.tar.gz		COPY
 N	x11/fvwm2			-none-				INC
 Y	x11/getbdf			getbdf.tar.Z			NONE
-Y	x11/gtk+			gtk+-1.2.1.tar.gz		GPL
--	x11/gtkglarea			gtkglarea-1.2.1.tar.gz
--	x11/kdebase			kdebase-1.0.tar.gz
--	x11/kdelibs			kdelibs-1.0.tar.gz
-Y	x11/lesstif			lesstif-0.88.0.tar.gz		GPL
+Y	x11/gtk+			gtk+-1.2.4.tar.gz		GPL
+Y	x11/gtkglarea			gtkglarea-1.2.1.tar.gz		GPL
+Y	x11/kdebase			kdebase-1.1.1.tar.bz2		GPL
+Y	x11/kdelibs			kdelibs-1.1.1.tar.bz2		GPL
+Y	x11/lesstif			lesstif-0.89.0.tar.gz		GPL
 Y	x11/lupe			lupe007.tar.gz			PD
 Y	x11/mouseclock			mouseclock-1.0.tar.gz		GPL
+N	x11/olvwm			olvwm4.Patch01.Z		PAT
 N	x11/olvwm			olvwm4.tar.Z			PAT
-Y	x11/piewm			piewm.tar.Z			X
-Y	x11/qt				qt-1.42.tar.gz			REST
-Y	x11/rclock			rxvt-2.20.tar.gz		COPY
-Y	x11/rxvt			rxvt-2.4.5.tar.gz		COPY
+Y	x11/piewm			piewm.tar.Z			COPY
+Y	x11/qt				qt-1.44.tar.gz			COPY
+Y	x11/rclock			
+Y	x11/rxvt			rxvt-2.6.1.tar.gz		COPY
 Y	x11/sliderule			sliderule.tar.gz		X
 Y	x11/swisswatch			swisswatch-0.06.tar.Z		X
 Y	x11/tk80			tk8.0.5.tar.gz			BSD
 Y	x11/viewfax			viewfax-2.3.tar.gz		GPL
--	x11/windowmaker			WindowMaker-0.51.2.tar.gz
--	x11/windowmaker			WindowMaker-data.tar.gz
-N	x11/wm2				-none-				INC
--	x11/wterm			wterm-6.2.6.tar.gz
--	x11/x2x				x2x-1.27.tar.gz
+Y	x11/windowmaker			WindowMaker-0.60.0.tar.gz	GPL
+Y	x11/windowmaker			WindowMaker-extra-0.1.tar.gz	GPL
+N	x11/wm2				wm2-4.tar.gz
+Y	x11/wmx				wmx-5.tar.gz			BSD
+Y	x11/wterm			wterm-6.2.6.tar.gz		GPL
+Y	x11/x2x				x2x-1.27.tar.gz			BSD
 Y	x11/xaniroc			xaniroc.src.tar.Z		NONE
 Y	x11/xantfarm			xantfarm23oct91.tar.gz		BSD
 N	x11/xautolock			-none-				INC
-Y	x11/xcb				xcb-2.3.tar.gz			X
-Y	x11/xco				xco.tar.gz			BSD
-Y	x11/xcoloredit			xcoloredit.tar.Z		BSD
-Y	x11/xcolors			xcolors.tar.gz			BSD
-Y	x11/xdaliclock			xdaliclock-2.11.tar.gz		X
+Y	x11/xcb				xcb-2.3.tar.gz			BSD
+Y	x11/xco				xco.tar.gz
+Y	x11/xcoloredit			xcoloredit.tar.Z
+Y	x11/xcolors			xcolors.tar.gz
+Y	x11/xdaliclock			xdaliclock-2.11.tar.gz
 Y	x11/xdtm			xdtm-2.5.5.tar.gz		COPY
-Y	x11/xfed			xfed.tar.gz			COPY
+-	x11/xfed			-				BSD
 Y	x11/xfedor			xfedor.tar.gz			BSD
 Y	x11/xfishtank			xfishtank-2.2.tar.gz		COPY
 Y	x11/xfm				xfm-1.3.2.tar.gz		COPY
-N	x11/xforms			xforms				LIC
-Y	x11/xgrab			xgrabsc.2_41.tar.Z		X
-Y	x11/xloadimage			xloadimage.3.03.tar.Z		X
-N	x11/xlockmore			-none-				INC
+-	x11/xforms		xforms/openBSD-i386/bxform-088.tgz
+-	x11/xforms		xforms/openBSD-m68k/bxform-088.tgz	
+-	x11/xforms		xforms/openBSD-sparc/bxform-088.tgz
+-	x11/xfstt			Xfstt-0.9.10.tgz
+Y	x11/xgrab			xgrabsc.2_41.tar.Z
+Y	x11/xloadimage			xloadimage.3.03.tar.Z
+-	x11/xlockmore			xlockmore-4.08.2.tar.gz
 -	x11/xlogout			xlogout-1.1.tar.Z
 Y	x11/xmascot			xmascot2.5p2.tar.gz		COPY
 Y	x11/xmbdfed			xmbdfed-2.7.tar.gz		COPY
-Y	x11/xmold			xmold.tar.gz			NONE
+Y	x11/xmold			xmold.tar.gz
 Y	x11/xpostit			xpostit3.3.1.tar.Z		BSD
 Y	x11/xpostitPlus			XPostitPlus-2.3.tar.gz		BSD
 Y	x11/xprompt			xprompt-1.4.tar.gz		BSD
@@ -631,6 +644,6 @@ Y	x11/xtoolwait			xtoolwait-1.1.tar.gz		GPL
 -	x11/xtraceroute			xtraceroute-0.8.14.tar.gz
 -	x11/xtraceroute			ndg_files.tar.gz
 N	x11/xview-clients		xview-clients.tar.gz
-N	x11/xview-config		xview3.2p1-X11R6.tar.gz		PAT
+N	x11/xview-config		xview3.2p1-X11R6.tar.gz
 N	x11/xview-lib			xview-lib.tar.gz
 Y	x11/xzoom			xzoom-0.3.tgz			COPY
