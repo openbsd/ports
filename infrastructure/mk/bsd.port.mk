@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.108 1999/08/10 19:55:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.109 1999/08/10 19:56:11 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2395,7 +2395,7 @@ print-depends:
 .if !target(fake-pkg)
 fake-pkg:
 	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO} "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
-	@if [ `/bin/ls -l ${COMMENT} | ${AWK} '{print $$5}'` -gt 60 ]; then \
+	@if [ `wc -c ${COMMENT}` -gt 60 ]; then \
 	    ${ECHO} "** ${COMMENT} too large - installation not recorded."; \
 	    exit 1; \
 	 fi
