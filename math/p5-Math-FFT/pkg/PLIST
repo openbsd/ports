@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/21 13:44:19 avsm Exp $
+${P5ARCH}/Math/FFT.pm
+${P5ARCH}/auto/Math/FFT/FFT.bs
+${P5ARCH}/auto/Math/FFT/FFT.so
+man/man3p/Math::FFT.3p
+@dirrm ${P5ARCH}/auto/Math/FFT

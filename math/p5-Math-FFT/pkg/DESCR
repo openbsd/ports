@@ -1,0 +1,8 @@
+This module implements some algorithms for calculating Fast Fourier
+Transforms for one-dimensional data sets of size 2^n. The data,
+assumed to arise from a constant sampling rate, is represented by
+an array reference, which is then used to create a Math::FFT object.
+
+Available methods include complex and real discrete fourier transforms,
+convolution, power spectra and windowing functions, as well as some
+statistical utilities.
