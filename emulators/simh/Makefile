@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2003/12/04 05:46:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.45 2004/04/08 06:25:17 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -33,7 +33,7 @@ NO_REGRESS=		Yes
 VMEM_WARNING=		Yes
 
 pre-build:
-	@mkdir ${WRKBUILD}/BIN
+	@mkdir -p ${WRKBUILD}/BIN
 
 do-install:
 	@cd ${WRKBUILD}/BIN && for f in `echo *`; do \
