@@ -1,0 +1,13 @@
+$OpenBSD: patch-xv_h,v 1.1 2004/09/21 18:46:04 sturm Exp $
+--- xv.h.orig	Tue Sep 21 06:49:20 2004
++++ xv.h	Tue Sep 21 06:50:28 2004
+@@ -159,7 +159,8 @@
+      !defined(bsd43)                     && \
+      !defined(aux)                       && \
+      !defined(__bsdi__)                  && \
+-     !defined(sequent)
++     !defined(sequent)                   && \
++     !defined(__OpenBSD__)
+ 
+ #  if defined(hp300) || defined(hp800) || defined(NeXT)
+ #   include <sys/malloc.h>                /* it's in 'sys' on HPs and NeXT */

@@ -1,6 +1,9 @@
-$OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
---- xvbmp.c.orig	Tue Mar 13 18:30:52 2001
-+++ xvbmp.c	Tue Mar 13 19:10:46 2001
+$OpenBSD: patch-xvbmp_c,v 1.2 2004/09/21 18:46:04 sturm Exp $
+
+Handle 16 bit depth BMP files and add some sanity checking.
+
+--- xvbmp.c.orig	Thu Sep 16 00:06:37 2004
++++ xvbmp.c	Thu Sep 16 00:10:44 2004
 @@ -18,7 +18,6 @@
  
     not being able to malloc is a Fatal Error.  The program is aborted. */
@@ -9,7 +12,7 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
  #define BI_RGB  0
  #define BI_RLE8 1
  #define BI_RLE4 2
-@@ -32,6 +31,7 @@ static long filesize;
+@@ -32,6 +31,7 @@
  static int   loadBMP1   PARM((FILE *, byte *, u_int, u_int));
  static int   loadBMP4   PARM((FILE *, byte *, u_int, u_int, u_int));
  static int   loadBMP8   PARM((FILE *, byte *, u_int, u_int, u_int));
@@ -17,16 +20,20 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
  static int   loadBMP24  PARM((FILE *, byte *, u_int, u_int, u_int));
  static u_int getshort   PARM((FILE *));
  static u_int getint     PARM((FILE *));
-@@ -128,7 +128,7 @@ int LoadBMP(fname, pinfo)
+@@ -128,8 +128,10 @@
  
    /* error checking */
    if ((biBitCount!=1 && biBitCount!=4 && biBitCount!=8 && 
 -       biBitCount!=24 && biBitCount!=32) || 
+-      biPlanes!=1 || biCompression>BI_RLE4) {
 +       biBitCount!= 16 && biBitCount!=24 && biBitCount!=32) || 
-       biPlanes!=1 || biCompression>BI_RLE4) {
++      biPlanes!=1 || biCompression>BI_RLE4 ||
++      biWidth<=0 || biHeight<=0 ||
++      (biClrUsed && biClrUsed > (1 << biBitCount))) {
  
      sprintf(buf,"Bogus BMP File!  (bitCount=%d, Planes=%d, Compression=%d)",
-@@ -138,7 +138,7 @@ int LoadBMP(fname, pinfo)
+ 	    biBitCount, biPlanes, biCompression);
+@@ -138,7 +140,7 @@
      goto ERROR;
    }
  
@@ -35,16 +42,20 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
         && biCompression != BI_RGB) ||
        (biBitCount==4 && biCompression==BI_RLE8) ||
        (biBitCount==8 && biCompression==BI_RLE4)) {
-@@ -161,7 +161,7 @@ int LoadBMP(fname, pinfo)
+@@ -160,8 +162,11 @@
+     bPad = bfOffBits - (biSize + 14);
    }
  
++  if (biClrUsed > (1 << biBitCount))
++    biClrUsed = (1 << biBitCount);
++
    /* load up colormap, if any */
 -  if (biBitCount!=24 && biBitCount!=32) {
 +  if (biBitCount!=16 && biBitCount!=24 && biBitCount!=32) {
      int i, cmaplen;
  
      cmaplen = (biClrUsed) ? biClrUsed : 1 << biBitCount;
-@@ -199,7 +199,7 @@ int LoadBMP(fname, pinfo)
+@@ -199,7 +204,7 @@
  
    /* create pic8 or pic24 */
  
@@ -53,7 +64,7 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
      pic24 = (byte *) calloc((size_t) biWidth * biHeight * 3, (size_t) 1);
      if (!pic24) return (bmpError(bname, "couldn't malloc 'pic24'"));
    }
-@@ -216,6 +216,7 @@ int LoadBMP(fname, pinfo)
+@@ -216,6 +221,7 @@
  					  biCompression);
    else if (biBitCount == 8) rv = loadBMP8(fp,pic8,biWidth,biHeight, 
  					  biCompression);
@@ -61,7 +72,7 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
    else                      rv = loadBMP24(fp,pic24,biWidth,biHeight,
  					   biBitCount);
  
-@@ -225,7 +226,7 @@ int LoadBMP(fname, pinfo)
+@@ -225,7 +231,7 @@
    fclose(fp);
  
  
@@ -70,7 +81,7 @@ $OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
      pinfo->pic  = pic24;
      pinfo->type = PIC24;
    }
-@@ -458,6 +459,43 @@ static int loadBMP8(fp, pic8, w, h, comp
+@@ -458,6 +464,43 @@
  }  
  
  

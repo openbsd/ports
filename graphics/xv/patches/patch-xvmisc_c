@@ -1,6 +1,6 @@
---- xvmisc.c.orig	Fri Jan 13 23:41:34 1995
-+++ xvmisc.c	Sat Mar  8 16:05:19 1997
-@@ -97,10 +97,18 @@
+--- xvmisc.c.orig	Tue Sep 21 06:49:20 2004
++++ xvmisc.c	Tue Sep 21 06:50:27 2004
+@@ -99,10 +99,18 @@ unsigned long fg, bg;
    if (!usesize || !(i&WidthValue))  w = defw;
    if (!usesize || !(i&HeightValue)) h = defh;
  
@@ -22,7 +22,7 @@
  
  
  #define VROOT_TRANS
-@@ -136,19 +144,18 @@
+@@ -138,19 +146,18 @@ unsigned long fg, bg;
    if (!win) return(win);   /* leave immediately if couldn't create */
  
  

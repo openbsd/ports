@@ -1,0 +1,12 @@
+$OpenBSD: patch-xvfits_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+--- xvfits.c.orig	Wed Dec 28 08:43:29 1994
++++ xvfits.c	Tue Sep 21 06:50:29 2004
+@@ -235,7 +235,7 @@ static int splitfits(image, comment, nx,
+   sprintf(basename, "Sys$Disk:[]xvpgXXXXXX");
+ #endif
+   
+-  mktemp(basename);
++  close(mkstemp(basename));
+   if (basename[0] == '\0') {
+     SetISTR(ISTR_WARNING, "%s", "Unable to build temporary filename");
+     return 1;

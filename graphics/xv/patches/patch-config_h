@@ -1,4 +1,4 @@
-$OpenBSD: patch-ac,v 1.2 1999/03/24 18:53:39 rohee Exp $
+$OpenBSD: patch-config_h,v 1.1 2004/09/21 18:46:04 sturm Exp $
 
 We have gunzip, it's in /usr/bin, and if ghostscript is installed it will be
 found.

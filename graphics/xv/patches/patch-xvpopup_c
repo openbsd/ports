@@ -1,0 +1,11 @@
+$OpenBSD: patch-xvpopup_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+--- xvpopup.c.orig	Tue Sep 21 06:49:18 2004
++++ xvpopup.c	Tue Sep 21 06:50:28 2004
+@@ -560,6 +560,7 @@ static void build1PadList(typstr, vals, 
+ 	nams[*lenp] = (char *) malloc((size_t) 32);
+ 	if (!nams[*lenp]) { free(vals[*lenp]); continue; }
+ 	strncpy(nams[*lenp], vals[*lenp], (size_t) 31);
++	nams[*lenp][31] = '\0';
+       }
+       
+       if (strlen(nams[*lenp]) > (size_t) 20) {   /* fix long names */

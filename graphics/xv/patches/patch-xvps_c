@@ -1,0 +1,12 @@
+$OpenBSD: patch-xvps_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+--- xvps.c.orig	Tue Sep 21 06:49:19 2004
++++ xvps.c	Tue Sep 21 06:50:28 2004
+@@ -1552,7 +1552,7 @@ int LoadPS(fname, pinfo, quick)
+   sprintf(tmpname, "Sys$Scratch:xvpgXXXXXX");
+ #endif
+ 
+-  mktemp(tmpname);
++  close(mkstemp(tmpname));
+   if (tmpname[0] == '\0') {   /* mktemp() blew up */
+     sprintf(str,"LoadPS: Unable to create temporary filename???");
+     ErrPopUp(str, "\nHow unlikely!");

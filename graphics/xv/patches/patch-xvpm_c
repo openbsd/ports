@@ -1,0 +1,45 @@
+$OpenBSD: patch-xvpm_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+
+Add some sanity checking.
+
+--- xvpm.c.orig	Thu Sep 16 00:32:09 2004
++++ xvpm.c	Thu Sep 16 00:35:29 2004
+@@ -119,6 +119,9 @@ int LoadPM(fname, pinfo)
+ 
+   isize = pm_isize(&thePic);
+ 
++  if (isize <= 0)
++    return pmError(bname, "Bogus PM file!!");
++
+   if (DEBUG) 
+     fprintf(stderr,"%s: LoadPM() - loading a %dx%d %s pic, %d planes\n",
+ 	    cmd, w, h, (thePic.pm_form==PM_I) ? "PM_I" : "PM_C", 
+@@ -135,6 +138,8 @@ int LoadPM(fname, pinfo)
+     return( pmError(bname, "file read error") );
+   }
+ 
++  if (thePic.pm_cmtsize+1 <= 0)
++    return pmError(bname, "Bogus PM file!!");
+ 
+   /* alloc and read in comment, if any */
+   if (thePic.pm_cmtsize>0) {
+@@ -155,6 +160,9 @@ int LoadPM(fname, pinfo)
+     int  *intptr;
+     byte *pic24, *picptr;
+ 
++    if (w*h*3 <= 0)
++      return pmError(bname, "Bogus PM file!!");
++
+     if ((pic24 = (byte *) malloc((size_t) w*h*3))==NULL) {
+       if (thePic.pm_cmt) free(thePic.pm_cmt);
+       return( pmError(bname, "unable to malloc 24-bit picture") );
+@@ -189,6 +197,9 @@ int LoadPM(fname, pinfo)
+ 
+   else if (thePic.pm_form == PM_C && thePic.pm_np>1) {
+     byte *pic24, *picptr, *rptr, *gptr, *bptr;
++
++    if (w*h*3 <= 0)
++      return pmError(bname, "Bogus PM file!!");
+ 
+     if ((pic24 = (byte *) malloc((size_t) w*h*3))==NULL) {
+       if (thePic.pm_cmt) free(thePic.pm_cmt);

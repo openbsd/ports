@@ -1,0 +1,38 @@
+$OpenBSD: patch-xvdir_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+--- xvdir.c.orig	Tue Sep 21 06:49:17 2004
++++ xvdir.c	Tue Sep 21 06:50:28 2004
+@@ -1213,6 +1213,7 @@ void SetDirFName(st)
+      char *st;
+ {
+   strncpy(deffname, st, (size_t) MAXFNLEN-1);
++  deffname[MAXFNLEN-1] = '\0';
+   setFName(st);
+ }
+ 
+@@ -1620,13 +1621,14 @@ FILE *OpenOutFile(filename)
+ #else
+     strcpy(outFName, "[]xvXXXXXX.lis");
+ #endif
+-    mktemp(outFName);
++    fp = fdopen(mkstemp(outFName), "w");
+     dopipe = 1;
+   }
+ 
+ 
+   /* see if file exists (ie, we're overwriting) */
+-  if (stat(outFName, &st)==0) {   /* stat succeeded, file must exist */
++  if (dopipe == 0 &&
++      stat(outFName, &st)==0) {   /* stat succeeded, file must exist */
+     static char *foo[] = { "\nOk", "\033Cancel" };
+     char str[512];
+ 
+@@ -1636,7 +1638,8 @@ FILE *OpenOutFile(filename)
+     
+ 
+   /* Open file */
+-  fp = fopen(outFName, "w");
++  if (dopipe == 0)
++    fp = fopen(outFName, "w");
+   if (!fp) {
+     char  str[512];
+     sprintf(str,"Can't write file '%s'\n\n  %s.",outFName, ERRSTR(errno));

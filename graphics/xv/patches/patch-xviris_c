@@ -1,0 +1,19 @@
+$OpenBSD: patch-xviris_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
+
+Add some sanity checking in RLE decoding.
+
+--- xviris.c.orig	Thu Sep 16 00:21:14 2004
++++ xviris.c	Thu Sep 16 00:22:43 2004
+@@ -267,6 +267,12 @@ static byte *getimagedata(fp, img)
+ 
+     rlebuflen = 2 * xsize + 10;
+     tablen    = ysize * zsize;
++
++    if (rlebuflen < 0 || tablen < 0 || (tablen * sizeof(long)) < 0) {
++      loaderr = "Bogus IRIS File!";
++      return (byte *)NULL;
++    }
++
+     starttab  = (u_long *) malloc((size_t) tablen * sizeof(long));
+     lengthtab = (u_long *) malloc((size_t) tablen * sizeof(long));
+     rledat    = (byte *)   malloc((size_t) rlebuflen);
