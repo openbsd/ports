@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2004/04/14 08:27:56 kevlo Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/04/15 03:45:03 kevlo Exp $
 #
 # De-installation setup of openwebmail
 
@@ -39,7 +39,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -e ${CONFIG_DIR} ]; then
+	if [ ${PKG_DELETE_EXTRA} != Yes -a -e ${WWWDOC_DIR} ]; then
 	    do_notice "$1"
 	fi
 	;;

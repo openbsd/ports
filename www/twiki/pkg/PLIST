@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/14 08:27:56 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/15 03:45:03 kevlo Exp $
 cgi-bin/twiki/attach
 cgi-bin/twiki/changes
 cgi-bin/twiki/edit
@@ -681,3 +681,5 @@ htdocs/twiki/templates/view.tmpl
 @dirrm htdocs/twiki/data/Main
 @dirrm htdocs/twiki/data/Know
 @dirrm cgi-bin/twiki
+@extraunexec rm -rf ${WWWDOCDIR}/twiki
+@extraunexec rm -rf cgi-bin/twiki
