@@ -1,4 +1,4 @@
-$OpenBSD: patch-exmh-strip_MASTER,v 1.1 2001/07/12 21:51:19 lebel Exp $
+$OpenBSD: patch-exmh-strip_MASTER,v 1.2 2001/08/22 13:26:40 naddy Exp $
 --- exmh-strip.MASTER.orig	Thu Jun 28 13:23:19 2001
 +++ exmh-strip.MASTER	Thu Jun 28 13:23:49 2001
 @@ -1,4 +1,4 @@

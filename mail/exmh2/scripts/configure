@@ -1,61 +1,116 @@
 #!/bin/sh
 #
-# Configuration script for exmh-2.4.
-# $OpenBSD: configure,v 1.1 2001/07/12 21:51:19 lebel Exp $
+# Configuration script for exmh-2.5.
+# $OpenBSD: configure,v 1.2 2001/08/22 13:26:40 naddy Exp $
 #
 
-set -e
+perl << 'EOPERL'
 
-export CONFIG='
+use DirHandle;
+use FileHandle;
+
+# work out domain name
+sub getdomain {
+	# DOMAIN set in environment?
+	exists $ENV{"DOMAIN"} and return ($ENV{"DOMAIN"});
+
+	# domain in hostname?
+	my $host = `hostname`;
+	chomp $host;
+	$host =~ m/\.(.*)/s and return ($1);
+
+	# domain in canonical hostname or aliases?
+	my @hinfo = gethostbyname ($host);
+	if (scalar (@hinfo) > 0){
+		for $host ($hinfo[0], @{$hinfo[1]}){
+			$host =~ m/\.(.*)/s and return ($1);
+		}
+	}
+
+	return ("");
+}
+
+my $prefix = exists $ENV{"PREFIX"} ? $ENV{"PREFIX"} : "/usr/local";
+my $localbase = exists $ENV{"LOCALBASE"} ? $ENV{"LOCALBASE"} : "/usr/local";
+my $domain = getdomain ();
+my $config = "
 # Saved state from exmh.install
-# Wed Jun 20 14:29:09 EST 2001
-set wish /usr/local/bin/wish8.3
-set exmh(version) {version 2.4 05/15/2001}
+# Sun Jul 22 23:34:59 EST 2001
+set wish $localbase/bin/wish8.3
+set exmh(version) {version 2.5 07/13/2001}
 set exmh(name) exmh
-set exmh(maintainer) welch@acm.org
-set mh_path /usr/local/bin
-set exmh(slocal) /usr/local/libexec/slocal
-set mime(dir) /usr/local/bin
+set exmh(maintainer) welch\@acm.org
+set mh_path $localbase/bin
+set exmh(slocal) $localbase/libexec/slocal
+set mime(dir) $localbase/bin
 set mailcap_default /etc/mailcap
-set mimetypes_default /usr/local/lib/exmh-2.4/mime.types
-set exmh(expect) /usr/local/bin/expect
-set exmh(expectk) /usr/local/bin/expectk
-set faces(dir) /usr/local/faces/faces
+set mimetypes_default $prefix/share/exmh/mime.types
+set exmh(expect) $localbase/bin/expect
+set exmh(expectk) $localbase/bin/expectk
+set faces(dir) $localbase/faces/faces
 set faces(set,user) {local users usenix misc}
 set faces(set,unknown) {domains unknown}
 set faces(set,news) news
-set faces(defaultDomain) eng.sun.com
+set faces(defaultDomain) {$domain}
 set faces(suffix) {xpm gif xbm}
-set pgp(pgp,path) /usr/local/bin
-set pgp(pgp5,path) /usr/local/bin
-set pgp(gpg,path) /usr/local/bin
-set pgp(pgp6,path) /usr/local/bin
-set glimpse(path) /usr/local/bin
+set pgp(pgp,path) $localbase/bin
+set pgp(pgp5,path) $localbase/bin
+set pgp(gpg,path) $localbase/bin
+set pgp(pgp6,path) $localbase/bin
+set glimpse(path) $localbase/bin
 set sound(cmd) /usr/bin/aucat
-set exmh(library) /usr/local/lib/exmh-2.4
-set install(dir,bin) /usr/local/bin
-set install(dir,man) /usr/local/man/manl
-set install(dir,lib) /usr/local/lib/exmh-2.4
-'
+set exmh(library) $prefix/share/exmh
+set install(dir,bin) $prefix/bin
+set install(dir,man) $prefix/man/man1
+set install(dir,lib) $prefix/share/exmh
+";
 
-for master in "$WRKSRC"/*.MASTER
-do
-	awk '
-		NR == 1 {
-			sub ("^#!expect","#!/usr/local/bin/expect");
-			sub ("^#!tclsh","#!/usr/local/bin/tclsh8.3");
-			sub ("^#!wish","#!/usr/local/bin/wish8.3");
+exists $ENV{"WRKSRC"} or die ("WRKSRC: missing from environment\n");
+exists $ENV{"WRKBUILD"} or die ("WRKBUILD: missing from environment\n");
+
+my $srcdir = $ENV{"WRKSRC"};
+my $dstdir = $ENV{"WRKBUILD"};
+my $dir = new DirHandle ($srcdir) or die ("$srcdir: $!\n");
+while (my $name = $dir->read ()){
+	$name =~ m/^([^.].*)\.MASTER$/ or next;
+	$src = "$srcdir/$name";
+	$dst = "$dstdir/$1";
+
+	my $in = new FileHandle ($src, "r") or die ("$src: $!\n");
+	my $out = new FileHandle ($dst, "w") or die ("$dst: $!\n");
+
+	if (my $line = $in->getline ()){
+		$line =~ s|^#!expect|#!$localbase/bin/expect|;
+		$line =~ s|^#!tclsh|#!$localbase/bin/tclsh8.3|;
+		$line =~ s|^#!wish|#!$localbase/bin/wish8.3|;
+		$out->print ($line) or die ("$dst: $!\n");
+
+		while ($line = $in->getline ()){
+			if ($line =~ m/^#CONFIGURATION$/){
+				$out->print ($line) or die ("$dst: $!\n");
+				$out->print ($config) or die ("$dst: $!\n");
+				while ($line = $in->getline ()){
+					if ($line =~ m/^#END CONFIGURATION$/){
+						$out->print ($config) or die (
+							"$dst: $!\n");
+						last;
+					}
+				}
+				$in->eof () and die ("$src: "
+					. "missing 'END CONFIGURATION'\n");
+			}
+			else {
+				$out->print ($line) or die ("$dst: $!\n");
+			}
 		}
-		/^#CONFIGURATION$/ {
-			print;
-			print ENVIRON["CONFIG"];
-			quiet = 1;
-		}
-		/^#END CONFIGURATION$/ {
-			quiet = 0;
-		}
-		!quiet {
-			print;
-		}
-	' "$master" > "$WRKBUILD"/`basename "$master" .MASTER`
-done
+	}
+	$in->eof () or die ("$src: $!\n");
+
+	$in->close () or die ("$src: $!\n");
+	$out->close () or die ("$dst: $!\n");
+}
+$dir->close () or die ("$srcdir: $!\n");
+
+exit (0);
+
+EOPERL

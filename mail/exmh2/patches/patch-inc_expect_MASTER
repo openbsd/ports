@@ -1,9 +1,0 @@
-$OpenBSD: patch-inc_expect_MASTER,v 1.1 2001/07/12 21:51:19 lebel Exp $
---- inc.expect.MASTER.orig	Thu Jun 28 13:23:28 2001
-+++ inc.expect.MASTER	Thu Jun 28 13:24:03 2001
-@@ -1,4 +1,4 @@
--#!/usr/bin/expect --
-+#!expect --
- #
- # Script to run inc and provide a password.
- #
