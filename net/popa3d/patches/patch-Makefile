@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile,v 1.1 2000/08/04 09:51:00 camield Exp $
+
+This patch is generated with diff -U2 and some careful hand-editing,
+making it apply cleanly on both flavors.
+
+--- params.h.realorig	Tue Feb  1 07:16:24 2000
++++ params.h	Wed Aug  2 20:50:55 2000
+@@ -34,5 +34,5 @@
+  * and its UID must not be used for any other purpose.
+  */
+-#define POP_USER			"popa3d"
++#define POP_USER			"nobody"
+ 
+ /*
+@@ -63,5 +63,5 @@
+  * Note: password aging is not supported.
+  */
+-#define AUTH_SHADOW			1
++#define AUTH_SHADOW			0
+ 
+ /*
+@@ -70,5 +76,6 @@
+  * for valid usernames. Adjust it for your crypt(3).
+  */
+-#define AUTH_DUMMY_SALT			"xx"
++/*  echo -n "dummyblowfishsalt" | encrypt -b 7  */
++#define AUTH_DUMMY_SALT	"$2a$07$.SZB2Z1e3w0fyDRiRd8k/eHANXfEMcuNLZNva1iUFCzjVF0CzHbkq"
+ 
+ /*
+@@ -82,5 +89,5 @@
+  * spools are currently supported.
+  */
+-#define MAIL_SPOOL_PATH			"/var/spool/mail"
++#define MAIL_SPOOL_PATH			"/var/mail"
+ 
+ /*
