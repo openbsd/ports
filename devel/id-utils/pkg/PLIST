@@ -8,8 +8,15 @@ bin/gid
 bin/lid
 bin/mkid
 bin/xtokid
+lib/id-utils/id-utils.el
+lib/id-utils/elisp-comp
+lib/id-utils/recompile
+@exec PREFIX=%D %D/%F
+@unexec rm %D/share/emacs/site-lisp/id-utils.{el,elc} 2>/dev/null || true
+@unexec rm %D/lib/xemacs/site-lisp/id-utils.{el,elc} 2>/dev/null || true
 info/id-utils.info
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
 share/locale/fr/LC_MESSAGES/id-utils.mo
 @exec install-info --info-dir=%D/info %D/info/id-utils.info
+
