@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/02/28 01:42:55 obecian Exp $
 
-DISTNAME=	vtun-2.3
+DISTNAME=	vtun-2.4
 CATEGORIES=	net
 NEED_VERSION=	1.320
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+	http://vtun.sourceforce.net/
 MASTER_SITE_SUBDIR= vtun
 
 HOMEPAGE=	http://vtun.sourceforge.net/
