@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/07/06 12:46:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/06 15:35:40 naddy Exp $
 
 COMMENT=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
@@ -25,6 +25,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 DISTFILES=		emacs-${VERSION}.tar.gz leim-${VERSION}.tar.gz
 
 MULTI_PACKAGES=		-el -leim
+SUBPACKAGE?=
 
 FLAVORS=		no_x11
 FLAVOR?=
