@@ -1,6 +1,15 @@
-$OpenBSD: patch-libtiff_tif_getimage_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+$OpenBSD: patch-libtiff_tif_getimage_c,v 1.2 2005/03/27 03:40:00 brad Exp $
 --- libtiff/tif_getimage.c.orig	Mon Dec 22 03:22:15 2003
-+++ libtiff/tif_getimage.c	Wed Oct 20 14:38:11 2004
++++ libtiff/tif_getimage.c	Sat Mar 26 22:35:37 2005
+@@ -248,7 +248,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, T
+     TIFFGetFieldDefaulted(tif, TIFFTAG_SAMPLESPERPIXEL, &img->samplesperpixel);
+     TIFFGetFieldDefaulted(tif, TIFFTAG_EXTRASAMPLES,
+ 	&extrasamples, &sampleinfo);
+-    if (extrasamples == 1)
++    if (extrasamples >= 1)
+     {
+ 	switch (sampleinfo[0]) {
+ 	case EXTRASAMPLE_UNSPECIFIED:	/* Workaround for some images without */
 @@ -565,6 +565,7 @@ gtTileContig(TIFFRGBAImage* img, uint32*
  	TIFFError(TIFFFileName(tif), "No space for tile buffer");
  	return (0);
