@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.1 2002/05/28 01:13:46 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2002/05/30 08:57:32 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/gcj.info
 bin/eaddr2name.awk
@@ -1175,9 +1175,9 @@ include/org/xml/sax/helpers/XMLReaderFactory.h
 info/gcj.info
 info/gcj.info-1
 info/gcj.info-2
-lib/fpic/libgcj.a
-lib/fpic/libgcj.la
-lib/fpic/libgcj.spec
+IFPIC:lib/fpic/libgcj.a
+IFPIC:lib/fpic/libgcj.la
+IFPIC:lib/fpic/libgcj.spec
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/gcj/libgcj-config.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/jc1
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/jvgenmain

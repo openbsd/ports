@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/05/29 00:41:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2002/05/30 08:57:32 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -66,7 +66,7 @@ info/gccint.info-9
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/collect2
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cpp0
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic/libgcc.a
+IFPIC:lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic/libgcc.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/README
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/float.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/limits.h
@@ -88,12 +88,12 @@ man/man1/gcov.1
 %%SHARED%%
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/machine
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic
+IFPIC:@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}
 @dirrm lib/gcc-lib
-@exec mkdir -p %D/lib/fpic
-@dirrm lib/fpic
+IFPIC:@exec mkdir -p %D/lib/fpic
+IFPIC:@dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info
 @exec install-info --info-dir=%D/info %D/info/gcc.info

@@ -1,9 +1,17 @@
-# $OpenBSD: Makefile,v 1.57 2002/05/29 01:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2002/05/30 08:57:32 espie Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 m68k sparc
+ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
+
 #MAKE_ADA=Yes
+MAKE_GXX=Yes
+MAKE_FORTRAN=Yes
+MAKE_OBJC=Yes
 
-# This is a configuration file for egcs
+# Java is still mostly broken (boehm-gc)
+MAKE_JAVA=Yes
+
+
+# This is a configuration file for gcc
 
 COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
@@ -22,11 +30,9 @@ PKGNAME-java=	gcj-$V
 PKGNAME-objc=	gobjc-$V
 PKGNAME-ada=	gnat-$V
 
-# we could remove this dependency by patching configure, but this is not
-# reasonable...
 BUILD_DEPENDS=	::devel/autoconf
 
-# This should be patched out later.
+# This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
 
 CATEGORIES=	lang 
@@ -44,14 +50,9 @@ PERMIT_DISTFILES_CDROM=Yes
 # see files/tests for precise testing procedure
 
 
-# cygnus packaging scheme is now working, though it is weird.
-# namely, testsuite holds all the tests. g++-tests no longer exists,
-# and g77-tests only holds duplicates from the main testsuite archive.
-#MAKE_TESTS=yes
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 MAKE_GXX=Yes
-MAKE_FORTRAN=Yes
-MAKE_OBJC=Yes
-MAKE_JAVA=Yes
+.endif
 
 MULTI_PACKAGES=
 # No sub packages description
@@ -305,11 +306,12 @@ do-regress:
 send-results: 
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
 
-#USE_GMAKE=Yes
-#SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
-#	-e s/@VERSION@/`${GCC_NAME} -dumpversion`/ \
-#	-e 's/@COREPKG@/${DISTNAME}-core/'
 
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
+SED_PLIST=|sed -e '/^IFPIC:/s///'
+.else
+SED_PLIST=|sed -e '/^IFPIC:/d'
+.endif
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
