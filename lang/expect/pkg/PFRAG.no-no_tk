@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.no-no_tk,v 1.1 2002/06/30 17:50:28 brad Exp $
+bin/expectk
+bin/tknewsbiff
+bin/tkpasswd
+bin/xkibitz
+man/man1/expect.1
+man/man1/expectk.1
+man/man1/tknewsbiff.1
+man/man1/xkibitz.1
+
