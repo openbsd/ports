@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2003/07/23 23:30:14 naddy Exp $
+--- configure.orig	Thu Jul 24 00:12:59 2003
++++ configure	Thu Jul 24 00:13:07 2003
+@@ -3722,7 +3722,7 @@
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define DEFAULT_DIFF_PROGRAM "diff"
++#define DEFAULT_DIFF_PROGRAM "gdiff"
+ _ACEOF
+ 
+ 
