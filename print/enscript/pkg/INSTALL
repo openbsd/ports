@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/03 09:12:58 marc Exp $
+# $OpenBSD: INSTALL,v 1.2 1999/04/10 07:14:56 marc Exp $
 #
 # Pre/post-installation setup of enscript
 
@@ -26,12 +26,14 @@ do_configuration()
     fi
 
     if [ -r ${CONFIG_FILE} ]; then
-        echo ""
-	echo "** The file ${CONFIG_FILE} exists.  Your existing configuration"
-	echo "** has not been changed.  You MAY need to update your"
-	echo "** configuration.  See the current configuration sample file"
-	echo "** ${CONFIG_SAMPLE}."
-        echo ""
+        echo
+        echo "+---------------"
+	echo "| The file ${CONFIG_FILE} exists.  Your existing configuration"
+	echo "| has not been changed.  You MAY need to update your"
+	echo "| configuration.  See the current configuration sample file"
+	echo "| ${CONFIG_SAMPLE}."
+        echo "+---------------"
+        echo
     else
 	cp ${CONFIG_SAMPLE} ${CONFIG_FILE}
     fi
