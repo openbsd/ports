@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/01/03 15:10:31 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/02/21 00:42:22 brad Exp $
 @conflict postfix-*
+@newgroup _postfix:507
+@newgroup _postdrop:508
+@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
+@unexec ${PREFIX}/sbin/postfix stop
+@unexec ${PREFIX}/sbin/postfix-disable
+@unexec rm -f /etc/mailer.conf.postfix
+@extra ${SYSCONFDIR}/postfix/
+@extra /var/spool/postfix/
 libexec/postfix/
 libexec/postfix/bounce
 libexec/postfix/cleanup

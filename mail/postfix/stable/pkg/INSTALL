@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.13 2004/07/18 00:30:26 brad Exp $
+# $OpenBSD: INSTALL,v 1.14 2005/02/21 00:42:22 brad Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -8,32 +8,6 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/postfix
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
 SPOOL_DIR=/var/spool/postfix
-
-# Function: set up postfix user/group accounts.
-#
-do_accts()
-{
-    groupinfo -e _postdrop
-    if [ $? -eq 0 ]; then
-	echo "-> Using group '_postdrop' for postdrop"
-    else
-	echo "-> Creating '_postdrop' group"
-	groupadd -g 508 _postdrop
-    fi
-
-    userinfo -e _postfix
-    if [ $? -eq 0 ]; then
-	echo "-> Using account/group '_postfix' for postfix"
-    else
-	echo "-> Creating '_postfix' user & group"
-	useradd \
-	    -g =uid \
-	    -c "Postfix Daemon" \
-	    -d /nonexistent \
-	    -s /sbin/nologin \
-	    -u 507 _postfix
-    fi
-}
 
 # Function: set up the postfix spool dir / chroot area
 #
@@ -156,7 +130,6 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	do_accts
 	;;
     POST-INSTALL)
 	do_mailwrapper
