@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Math/GMP.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Math/GMP/GMP.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Math/GMP/GMP.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Math/GMP/autosplit.ix
+@comment $OpenBSD: PLIST,v 1.4 2002/09/21 11:59:39 avsm Exp $
+${P5ARCH}/Math/GMP.pm
+${P5ARCH}/auto/Math/GMP/GMP.bs
+${P5ARCH}/auto/Math/GMP/GMP.so
+${P5ARCH}/auto/Math/GMP/autosplit.ix
 man/man3p/Math::GMP.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Math/GMP
+@dirrm ${P5ARCH}/auto/Math/GMP

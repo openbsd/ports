@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/21 11:59:39 avsm Exp $
 
 COMMENT=	"high speed arbitrary-size integer math"
 
-DISTNAME=	Math-GMP-1.06
+DISTNAME=	Math-GMP-2.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Math/}
+MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
