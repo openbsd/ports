@@ -1,4 +1,4 @@
-# $OpenBSD: iconv.port.mk,v 1.4 2001/11/27 17:44:04 brad Exp $
+# $OpenBSD: libiconv.port.mk,v 1.1 2004/08/03 09:13:29 espie Exp $
 
 # The RUN_DEPENDS entry is to ensure libiconv is installed. This is
 # necessary so that we have charset.alias installed on static archs.

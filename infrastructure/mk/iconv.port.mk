@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/converters/libiconv/files/iconv.port.mk"
+.include "${PORTSDIR}/converters/libiconv/libiconv.port.mk"
