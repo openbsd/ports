@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/11/21 19:35:45 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/09 21:14:44 lebel Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -6,6 +6,7 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
+!%%no_gle%%
 libexec/xscreensaver/ant
 libexec/xscreensaver/atlantis
 libexec/xscreensaver/attraction
@@ -34,7 +35,6 @@ libexec/xscreensaver/discrete
 libexec/xscreensaver/distort
 libexec/xscreensaver/drift
 libexec/xscreensaver/epicycle
-libexec/xscreensaver/extrusion
 libexec/xscreensaver/fadeplot
 libexec/xscreensaver/flag
 libexec/xscreensaver/flame

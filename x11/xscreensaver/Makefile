@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/21 19:35:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/09 21:14:44 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -11,8 +11,6 @@ HOMEPAGE=		http://www.jwz.org/xscreensaver/
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
-LIB_DEPENDS=		gle.3::graphics/gle
-
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -24,7 +22,6 @@ NO_REGRESS=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-subdir="${PREFIX}/libexec/xscreensaver"
-CONFIGURE_ARGS+=	--with-gle
 CONFIGURE_ARGS+=	--with-gl
 CONFIGURE_ARGS+=	--with-xpm
 CONFIGURE_ARGS+=	--without-gnome
@@ -33,13 +30,20 @@ CONFIGURE_ARGS+=	--without-kerberos
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-FLAVORS=		gtk motif
+FLAVORS=		gtk motif no_gle
 FLAVOR?=		gtk
 
-.if ${FLAVOR:L} == "gtk"
+.if !${FLAVOR:L:Mno_gle}
+LIB_DEPENDS=		gle.3::graphics/gle
+CONFIGURE_ARGS+=	--with-gle
+.else
+CONFIGURE_ARGS+=	--without-gle
+.endif
+
+.if ${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif}
 CONFIGURE_ARGS+=	--with-gtk --without-motif
 LIB_DEPENDS+=		gtk.1.2,gdk::x11/gtk+
-.elif ${FLAVOR:L} == "motif"
+.elif ${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk}
 CONFIGURE_ENV+= 	MOTIFHOME=${X11BASE}
 CONFIGURE_ARGS+=	--with-motif --without-gtk
 USE_MOTIF=		any
