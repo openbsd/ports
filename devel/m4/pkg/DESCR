@@ -6,7 +6,7 @@ shell commands, doing arithmetic, etc.  Autoconf needs GNU `m4' for
 generating `configure' scripts, but not for running them.
 
    GNU `m4' was originally written by Rene Seindal, with subsequent
-changes by Franc,ois Pinard and other volunteers on the Internet.  All
+changes by Francois Pinard and other volunteers on the Internet.  All
 names and email addresses can be found in the file `THANKS' from the
 GNU `m4' distribution.
 
@@ -22,3 +22,4 @@ if you want this feature compiled in.  The current implementation slows
 down `m4' considerably and is hardly acceptable.  So, it might go away,
 do not count on it yet.
 
+WWW: ${HOMEPAGE}
