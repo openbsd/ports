@@ -1,6 +1,6 @@
-.\" $OpenBSD: mirror.man,v 1.1 2000/03/28 10:00:18 espie Exp $
+.\" $OpenBSD: mirror.man,v 1.2 2000/05/18 02:26:49 form Exp $
 .Dd July 29, 1994
-.Dt LS 1
+.Dt MIRROR 1
 .Os
 .Sh NAME
 .Nm mirror
