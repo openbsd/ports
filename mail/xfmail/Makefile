@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.28 2002/09/12 22:26:00 naddy Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -14,10 +14,11 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.xfmail.org/
 
 BUILD_DEPENDS=		autoconf::devel/autoconf \
-					automake::devel/automake
+			automake::devel/automake
 
 LIB_DEPENDS=		forms::x11/xforms \
-					glib.1.2::devel/glib
+			jpeg.62::graphics/jpeg \
+			glib.1.2::devel/glib
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +31,8 @@ USE_LIBTOOL=	Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-nas-sound
-CONFIGURE_ENV=		CPPFLAGS="-DX11FORMS_H"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=		esd
 FLAVOR?=
