@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/03 20:53:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/05 22:16:14 naddy Exp $
 
 COMMENT=	"Oxyd/Rock'n'Roll clone"
 
@@ -24,6 +24,6 @@ LIB_DEPENDS=	SDL_image.1::devel/sdl-image	\
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-png
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 .include <bsd.port.mk>
