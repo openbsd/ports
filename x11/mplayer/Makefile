@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2003/01/04 00:58:43 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2003/01/06 17:33:01 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -58,7 +58,8 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-menu \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
-		--confdir=${LOCALBASE}/share/mplayer
+		--confdir=${LOCALBASE}/share/mplayer \
+		--with-reallibdir=/usr/local/lib/win32
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--target=ppc-openbsd
@@ -100,7 +101,7 @@ LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS+=	SDL:sdl-1.2.4p1,>=1.2.5-*:devel/sdl
+LIB_DEPENDS+=	SDL:sdl-1.2.4p1,>=1.2.5:devel/sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
