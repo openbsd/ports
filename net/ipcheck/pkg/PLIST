@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/06 14:12:56 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/04 18:02:38 lebel Exp $
 bin/ipcheck.py
