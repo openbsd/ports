@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/22 00:13:52 naddy Exp $
-
-# gross LP64 violations in tar file reader
-NOT_FOR_ARCHS=	${LP64_ARCHS}
+# $OpenBSD: Makefile,v 1.11 2005/03/02 23:51:13 naddy Exp $
 
 COMMENT=	"mh-e like mail user agent"
 
-DISTNAME=	cue-snap-20041220
-PKGNAME=	cue-20041220
+DISTNAME=	cue-snap-20050228
+PKGNAME=	cue-20050228
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/cue/snap/
