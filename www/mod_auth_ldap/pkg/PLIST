@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/04 23:09:01 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/26 02:40:55 alek Exp $
 lib/auth_ldap.so
 sbin/mod_auth_ldap-enable
+@unexec rm -f /usr/lib/apache/modules/auth_ldap.so
