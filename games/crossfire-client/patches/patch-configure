@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/12 19:24:22 alek Exp $
+--- configure.orig	Sat Feb 12 19:09:25 2005
++++ configure	Sat Feb 12 19:09:27 2005
+@@ -7275,7 +7275,7 @@ if test "${ac_cv_lib_SDL_image_IMG_LoadP
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lSDL_image $SDL_CFLAGS $LIBS"
++LIBS="-lSDL_image $SDL_CFLAGS $SDL_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"

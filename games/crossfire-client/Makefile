@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/28 22:41:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/12 19:24:22 alek Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
 VERSION=	1.4.0
 DISTNAME=	crossfire-client-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 IMGDIST=	crossfire-client-images-${VERSION}
