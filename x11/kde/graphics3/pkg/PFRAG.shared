@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 17:00:12 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 12:13:02 espie Exp $
 lib/kde3/libkfile_pdf.so.0.0
 lib/kde3/libkfile_png.so.0.0
 lib/kde3/libkfile_ps.so.0.0
@@ -13,4 +13,4 @@ lib/libkview.so.0.0
 lib/libkviewerpart.so.0.0
 lib/libkviewpart.so.0.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/kde3)
+DYNLIBDIR(%D/lib/kde3)

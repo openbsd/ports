@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 15:04:48 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 12:13:02 espie Exp $
 lib/libkbackgammon.so.0.0
 lib/libkdegames.so.1.1
 lib/libkdehighscores.so.0.1

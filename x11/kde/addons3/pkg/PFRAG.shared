@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 16:26:56 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 12:13:01 espie Exp $
 lib/kde3/libbabelfishplugin.so.0.0
 lib/kde3/libdirfilterplugin.so.0.0
 lib/kde3/libdomtreeviewerplugin.so.0.0
@@ -19,4 +19,4 @@ lib/kde3/libuachangerplugin.so.0.0
 lib/kde3/libvalidatorsplugin.so.0.0
 lib/kde3/libwebarchiverplugin.so.0.0
 lib/kde3/libwebarchivethumbnail.so.0.0
-NEWDYNLIBDIR(%D/lib/kde3)
+DYNLIBDIR(%D/lib/kde3)
