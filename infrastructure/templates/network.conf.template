@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.24 2001/08/26 21:23:42 heko Exp $
+# $OpenBSD: network.conf.template,v 1.25 2001/09/28 14:30:32 wilfried Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -220,14 +220,14 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+=	\
-	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.grolier.fr/pub/mirrors/ftp.windowmaker.org/pub/%SUBDIR%/ \
+	ftp://ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
-	ftp://shadowmere.student.utwente.nl/Mirrors/ftp.windowmaker.org/%SUBDIR%/ \
-	ftp://ftp.tuts.net/mirror/windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/window-managers/windowmaker/%SUBDIR%/
+	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/%SUBDIR%/ \
+	ftp://ftp.nectec.or.th/pub/mirrors/windowmaker/%SUBDIR%/ \
+	ftp://sunsite.ulatina.ac.cr/Mirrors/XWindows/Windomanagers/WindowMaker/%SUBDIR%/ \
+	ftp://ftp.grolier.fr/pub/mirrors/ftp.windowmaker.org/pub/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+=	\
 	ftp://sourceware.cygnus.com/pub/%SUBDIR%/ \
