@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/06/02 14:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2000/07/03 08:12:23 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += asmail
      SUBDIR += bulk_mailer
      SUBDIR += checkpassword
+     SUBDIR += courier-imap
      SUBDIR += cucipop
 #    SUBDIR += cyrus
      SUBDIR += dot-forward
