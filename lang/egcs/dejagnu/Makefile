@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 15:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/27 07:56:11 avsm Exp $
 
 DISTNAME=       dejagnu-19990614
 CATEGORIES=	devel lang/egcs
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/infrastructure/
 
 BUILD_DEPENDS=	expect::lang/expect
-LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
+LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
 
 WRKSRC=${WRKDIST}/dejagnu
 CONFIGURE_STYLE=gnu
