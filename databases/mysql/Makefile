@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/03/28 22:12:18 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2001/04/07 03:26:49 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
@@ -6,7 +6,7 @@ COMMENT=	"multithreaded SQL database"
 VERSION=	3.23.36
 DISTNAME=	mysql-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.363
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
@@ -39,7 +39,8 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-debug \
 		 --without-readline \
 		 --without-bench \
-		 --without-mit-threads
+		 --without-mit-threads \
+		 --without-berkeley-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
