@@ -1,6 +1,6 @@
---- configure.orig	Fri Oct 26 14:22:17 2001
-+++ configure	Fri Oct 26 14:27:20 2001
-@@ -2298,13 +2298,23 @@
+--- configure.orig	Fri Oct 19 18:24:40 2001
++++ configure	Mon Nov 19 23:30:03 2001
+@@ -2298,9 +2298,14 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -18,17 +18,7 @@
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
--		DL_LIBS=""
-+		case `echo __ELF__ | gcc -E - | grep __ELF__` in
-+		__ELF__)
-+			DL_LIBS="";;
-+		*)
-+			DL_LIBS="-ldl";;
-+		esac
- 		LDFLAGS=""
- 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -2322,11 +2332,11 @@
+@@ -2322,11 +2327,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -42,7 +32,7 @@
  		
  fi
  rm -f conftest*
-@@ -2882,6 +2892,7 @@
+@@ -2882,6 +2887,7 @@ fi
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -50,7 +40,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4589,14 +4600,13 @@
+@@ -4589,14 +4595,13 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
@@ -66,7 +56,7 @@
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4640,7 +4650,7 @@
+@@ -4640,7 +4645,7 @@ TK_SHARED_BUILD=${SHARED_BUILD}
  eval "TK_STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  
  # FIXME: Should we add MAKE_STUB_LIB to tclConfig.sh ?

@@ -1,6 +1,6 @@
---- configure.orig	Fri Oct 26 13:02:59 2001
-+++ configure	Fri Oct 26 13:34:07 2001
-@@ -5328,13 +5328,23 @@
+--- configure.orig	Fri Oct 19 18:24:15 2001
++++ configure	Mon Nov 19 23:25:15 2001
+@@ -5328,9 +5328,14 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -18,17 +18,7 @@
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
--		DL_LIBS=""
-+		case `echo __ELF__ | gcc -E - | grep __ELF__` in
-+		__ELF__)
-+			DL_LIBS="";;
-+		*)
-+			DL_LIBS="-ldl";;
-+		esac
- 		LDFLAGS=""
- 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -5352,11 +5362,11 @@
+@@ -5352,11 +5357,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -42,7 +32,7 @@
  		
  fi
  rm -f conftest*
-@@ -6101,7 +6111,7 @@
+@@ -6101,7 +6106,7 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
@@ -51,7 +41,7 @@
      else
  	MAKE_LIB="\${SHLIB_LD} ${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} ${SHLIB_LD_LIBS}"
      fi
-@@ -6186,7 +6196,7 @@
+@@ -6186,7 +6191,7 @@ eval "TCL_STUB_LIB_FILE=libtclstub${TCL_
  # Replace DBGX with TCL_DBGX
  eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
  
