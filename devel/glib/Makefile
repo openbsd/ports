@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 1999/09/04 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/10/27 01:14:24 brad Exp $
 
-DISTNAME=	glib-1.2.4
+DISTNAME=	glib-1.2.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
@@ -10,7 +10,6 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
-SEPARATE_BUILD= simple
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
@@ -38,14 +37,15 @@ pre-extract:
 	fi
 
 post-extract:
-	@${RM} ${WRKSRC}/docs/*.info
+	@${RM} -f ${WRKSRC}/docs/glib.info*
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/glib.m4 ${LOCALBASE}/share/aclocal/
-	@test -f ${PREFIX}/info/dir || \
-		sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 	@install-info ${PREFIX}/info/glib.info ${PREFIX}/info/dir
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
