@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.41 2002/01/27 20:00:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.42 2002/02/03 06:16:09 brad Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
-DISTNAME=	bzip2-1.0.1
+DISTNAME=	bzip2-1.0.2
 CATEGORIES=	archivers
-NEED_VERSION=	1.475
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR= bzip2/v100
+MASTER_SITE_SUBDIR= bzip2/v102
 
-HOMEPAGE=	http://sourceware.cygnus.com/bzip2/
+HOMEPAGE=	http://sources.redhat.com/bzip2/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -22,7 +22,7 @@ BZ2_CFLAGS=	-Wall -Winline
 BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
 .endif
 
-# XXX gcc optimization bug temporary workaround
+# XXX GCC optimization bug temporary workaround
 .if ${MACHINE_ARCH:Msparc64}
 BZ2_CFLAGS+=	-O0
 .endif
