@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 1999/11/21 23:36:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 1999/11/21 23:53:15 espie Exp $
 
 DISTNAME=	autoconf-2.13
-PKGNAME=gnuauto-2.13
-PREFIX=/usr/local/auto
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= autoconf
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	espie@openbsd.org
 
 # Both are needed for now as bsd.port.mk does not cause RUN_DEPENDS to
 # be created before running configure, which causes the build to do the
