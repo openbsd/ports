@@ -1,0 +1,23 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/03/05 17:20:08 brad Exp $
+lib/libsasl.so.8.8
+DYNLIBDIR(%B)
+lib/sasl/libanonymous.so.1.15
+lib/sasl/libcrammd5.so.1.15
+lib/sasl/libdigestmd5.so.0.17
+lib/sasl/libkerberos4.so.1.15
+lib/sasl/liblogin.so.0.5
+lib/sasl/libplain.so.1.14
+@unexec rm -f %D/lib/sasl/libanonymous.so
+@unexec rm -f %D/lib/sasl/libcrammd5.so
+@unexec rm -f %D/lib/sasl/libdigestmd5.so
+@unexec rm -f %D/lib/sasl/libkerberos4.so
+@unexec rm -f %D/lib/sasl/liblogin.so
+@unexec rm -f %D/lib/sasl/libplain.so
+@unexec rm /usr/lib/sasl
+@exec ln -sf %D/lib/sasl /usr/lib/sasl
+@exec cd %D/lib/sasl && ln -sf libanonymous.so.1.14 libanonymous.so
+@exec cd %D/lib/sasl && ln -sf libcrammd5.so.1.14 libcrammd5.so
+@exec cd %D/lib/sasl && ln -sf libdigestmd5.so.0.15 libdigestmd5.so
+@exec cd %D/lib/sasl && ln -sf libkerberos4.so.1.14 libkerberos4.so
+@exec cd %D/lib/sasl && ln -sf liblogin.so.0.5 liblogin.so
+@exec cd %D/lib/sasl && ln -sf libplain.so.1.13 libplain.so
