@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/20 18:54:51 jakob Exp $
+bin/pcre-config
+bin/pgrep
+include/pcre.h
+include/pcreposix.h
+lib/libpcre.a
+lib/libpcreposix.a
+%%SHARED%%
+man/man1/pgrep.1
+man/man3/pcre.3
+man/man3/pcreposix.3

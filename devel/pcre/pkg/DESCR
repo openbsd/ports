@@ -1,0 +1,4 @@
+The PCRE library is a set of functions that implement regular expression
+pattern matching using the same syntax and semantics as Perl 5, with just
+a few differences. The current implementation corresponds to Perl 5.005,
+with some additional features from the Perl development release.

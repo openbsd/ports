@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Sat May 13 12:25:02 2000
++++ Makefile.in	Tue Jun 20 11:21:28 2000
+@@ -157,24 +157,24 @@
+ 		$(CC) -o dftables $(CFLAGS) dftables.c
+ 
+ install:        all
+-		$(LIBTOOL) $(INSTALL_DATA) libpcre.$(LIBSUFFIX) $(LIBDIR)/libpcre.$(LIBSUFFIX)
+-		$(LIBTOOL) $(INSTALL_DATA) libpcreposix.$(LIBSUFFIX) $(LIBDIR)/libpcreposix.$(LIBSUFFIX)
+-		$(INSTALL_DATA) pcre.h $(INCDIR)/pcre.h
+-		$(INSTALL_DATA) pcreposix.h $(INCDIR)/pcreposix.h
+-		$(INSTALL_DATA) doc/pcre.3 $(MANDIR)/man3/pcre.3
+-		$(INSTALL_DATA) doc/pcreposix.3 $(MANDIR)/man3/pcreposix.3
+-		$(INSTALL_DATA) doc/pgrep.1 $(MANDIR)/man1/pgrep.1
++		$(LIBTOOL) $(INSTALL_DATA) libpcre.$(LIBSUFFIX) $(DESTDIR)/$(LIBDIR)/libpcre.$(LIBSUFFIX)
++		$(LIBTOOL) $(INSTALL_DATA) libpcreposix.$(LIBSUFFIX) $(DESTDIR)/$(LIBDIR)/libpcreposix.$(LIBSUFFIX)
++		$(INSTALL_DATA) pcre.h $(DESTDIR)/$(INCDIR)/pcre.h
++		$(INSTALL_DATA) pcreposix.h $(DESTDIR)/$(INCDIR)/pcreposix.h
++		$(INSTALL_DATA) doc/pcre.3 $(DESTDIR)/$(MANDIR)/man3/pcre.3
++		$(INSTALL_DATA) doc/pcreposix.3 $(DESTDIR)/$(MANDIR)/man3/pcreposix.3
++		$(INSTALL_DATA) doc/pgrep.1 $(DESTDIR)/$(MANDIR)/man1/pgrep.1
+ 		@if test "$(LIBTOOL)" = "./libtool"; then \
+ 		  echo ' '; \
+ 		  echo '--- Rebuilding pgrep to use installed shared library ---'; \
+-		  echo $(CC) $(CFLAGS) -o pgrep pgrep.o -L$(LIBDIR) -lpcre; \
+-		  $(CC) $(CFLAGS) -o pgrep pgrep.o -L$(LIBDIR) -lpcre; \
++		  echo $(CC) $(CFLAGS) -o pgrep pgrep.o -L$(DESTDIR)/$(LIBDIR) -lpcre; \
++		  $(CC) $(CFLAGS) -o pgrep pgrep.o -L$(DESTDIR)/$(LIBDIR) -lpcre; \
+ 		  echo '--- Rebuilding pcretest to use installed shared library ---'; \
+-		  echo $(CC) $(CFLAGS) -o pcretest pcretest.o -L$(LIBDIR) -lpcre -lpcreposix; \
+-		  $(CC) $(CFLAGS) -o pcretest pcretest.o -L$(LIBDIR) -lpcre -lpcreposix; \
++		  echo $(CC) $(CFLAGS) -o pcretest pcretest.o -L$(DESTDIR)/$(LIBDIR) -lpcre -lpcreposix; \
++		  $(CC) $(CFLAGS) -o pcretest pcretest.o -L$(DESTDIR)/$(LIBDIR) -lpcre -lpcreposix; \
+ 		fi
+-		$(INSTALL)	pgrep $(BINDIR)/pgrep
+-		$(INSTALL)	pcre-config $(BINDIR)/pcre-config
++		$(INSTALL)	pgrep $(DESTDIR)/$(BINDIR)/pgrep
++		$(INSTALL)	pcre-config $(DESTDIR)/$(BINDIR)/pcre-config
+ 
+ # We deliberately omit dftables and chartables.c from 'make clean'; once made
+ # chartables.c shouldn't change, and if people have edited the tables by hand,
