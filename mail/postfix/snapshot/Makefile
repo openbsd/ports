@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2000/09/25 21:02:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/05 19:42:23 jakob Exp $
 
-DISTNAME=	snapshot-20000924
+DISTNAME=	snapshot-20001005
 PKGNAME=	postfix-${DISTNAME}
 
 MASTER_SITE_SUBDIR=	experimental

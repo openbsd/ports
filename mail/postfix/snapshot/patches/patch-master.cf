@@ -1,6 +1,6 @@
---- conf/master.cf.orig	Fri May 26 17:34:51 2000
-+++ conf/master.cf	Thu Jun  1 10:57:23 2000
-@@ -59,19 +59,19 @@
+--- conf/master.cf.orig	Wed Oct  4 02:13:32 2000
++++ conf/master.cf	Thu Oct  5 21:39:05 2000
+@@ -67,20 +67,20 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
@@ -12,6 +12,7 @@
 -rewrite	  unix	-	-	n	-	-	trivial-rewrite
 -bounce	  unix	-	-	n	-	0	bounce
 -defer	  unix	-	-	n	-	0	bounce
+-flush	  unix	-	-	n	1000?	0	flush
 -smtp	  unix	-	-	n	-	-	smtp
 -showq     unix	n	-	n	-	-	showq
 -error     unix	-	-	n	-	-	error
@@ -23,6 +24,7 @@
 +rewrite	  unix	-	-	-	-	-	trivial-rewrite
 +bounce	  unix	-	-	-	-	0	bounce
 +defer	  unix	-	-	-	-	0	bounce
++flush	  unix	-	-	-	1000?	0	flush
 +smtp	  unix	-	-	-	-	-	smtp
 +showq     unix	n	-	-	-	-	showq
 +error     unix	-	-	-	-	-	error
