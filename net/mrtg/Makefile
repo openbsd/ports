@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 1999/07/26 01:25:21 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/08/02 06:47:22 brad Exp $
 
-DISTNAME=	mrtg-2.8.5
+DISTNAME=	mrtg-2.8.6
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
