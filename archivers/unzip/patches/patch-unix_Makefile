@@ -1,5 +1,5 @@
---- unix/Makefile.orig	Thu Nov 19 16:59:08 1998
-+++ unix/Makefile	Thu Jul 20 19:09:37 2000
+--- unix/Makefile.orig	Sat Apr 15 23:27:18 2000
++++ unix/Makefile	Sun Jul 23 22:35:38 2000
 @@ -61,8 +61,8 @@
  
  # general-purpose stuff
@@ -11,7 +11,7 @@
  RM = rm -f
  CHMOD = chmod
  BINPERMS = 755
-@@ -412,18 +412,16 @@
+@@ -411,18 +411,16 @@
  
  install:	$(MANS)
  	-$(INSTALL_D) $(BINDIR)
@@ -20,24 +20,25 @@
 +	$(BSD_INSTALL_PROGRAM) $(UNZIPS) $(BINDIR)
 +	$(BSD_INSTALL_SCRIPT) unix/zipgrep $(BINDIR)
  	$(RM) $(BINDIR)/zipinfo$E
- 	$(LN) $(BINDIR)/unzip$E $(BINDIR)/zipinfo$E
+-	$(LN) $(BINDIR)/unzip$E $(BINDIR)/zipinfo$E
++	cd $(BINDIR); $(LN) unzip$E zipinfo$E
  	-$(INSTALL_D) $(MANDIR)
--	$(INSTALL) unix/funzip.1 $(MANDIR)/funzip.$(manext)
--	$(INSTALL) unix/unzip.1 $(MANDIR)/unzip.$(manext)
--	$(INSTALL) unix/unzipsfx.1 $(MANDIR)/unzipsfx.$(manext)
--	$(INSTALL) unix/zipgrep.1 $(MANDIR)/zipgrep.$(manext)
--	$(INSTALL) unix/zipinfo.1 $(MANDIR)/zipinfo.$(manext)
+-	$(INSTALL) man/funzip.1 $(MANDIR)/funzip.$(manext)
+-	$(INSTALL) man/unzip.1 $(MANDIR)/unzip.$(manext)
+-	$(INSTALL) man/unzipsfx.1 $(MANDIR)/unzipsfx.$(manext)
+-	$(INSTALL) man/zipgrep.1 $(MANDIR)/zipgrep.$(manext)
+-	$(INSTALL) man/zipinfo.1 $(MANDIR)/zipinfo.$(manext)
 -	$(CHMOD) $(BINPERMS) $(INSTALLEDBIN)
 -	$(CHMOD) $(MANPERMS) $(INSTALLEDMAN)
-+	$(BSD_INSTALL_MAN) unix/funzip.1 $(MANDIR)/funzip.$(manext)
-+	$(BSD_INSTALL_MAN) unix/unzip.1 $(MANDIR)/unzip.$(manext)
-+	$(BSD_INSTALL_MAN) unix/unzipsfx.1 $(MANDIR)/unzipsfx.$(manext)
-+	$(BSD_INSTALL_MAN) unix/zipgrep.1 $(MANDIR)/zipgrep.$(manext)
-+	$(BSD_INSTALL_MAN) unix/zipinfo.1 $(MANDIR)/zipinfo.$(manext)
++	$(BSD_INSTALL_MAN) man/funzip.1 $(MANDIR)/funzip.$(manext)
++	$(BSD_INSTALL_MAN) man/unzip.1 $(MANDIR)/unzip.$(manext)
++	$(BSD_INSTALL_MAN) man/unzipsfx.1 $(MANDIR)/unzipsfx.$(manext)
++	$(BSD_INSTALL_MAN) man/zipgrep.1 $(MANDIR)/zipgrep.$(manext)
++	$(BSD_INSTALL_MAN) man/zipinfo.1 $(MANDIR)/zipinfo.$(manext)
  
  uninstall:
  	$(RM) $(INSTALLEDBIN) $(INSTALLEDMAN)
-@@ -531,8 +529,8 @@
+@@ -530,8 +528,8 @@
  	$(MAKE) objsdll CC=gcc CF="-O3 -Wall -I. -fPIC -DDLL $(LOC)"
  	gcc -shared -Wl,-soname,libunzip.so.0 -o libunzip.so.0.4 $(OBJSDLL)
  	$(RM) libunzip.so.0 libunzip.so

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/10 20:22:18 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/24 02:42:59 brad Exp $
 
-DISTNAME=	unzip540
-PKGNAME=	unzip-5.40
+DISTNAME=	unzip541
+PKGNAME=	unzip-5.41
 CATEGORIES=	archivers
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
+
+HOMEPAGE=	http://ftp.freesoftware.com/pub/infozip/
 
 MAINTAINER=	ports@openbsd.org
 
