@@ -4,3 +4,5 @@ RMD160 (sirc-2.211.tar.gz) = 3d6ef05fe9471158e5329ad1e1cd08304e00211d
 RMD160 (ssfe.diff) = 26637051721168b18056afa59ffb6d84cf6d99e9
 SHA1 (sirc-2.211.tar.gz) = 1daa365c44b1358964e7d7ba92d3ae3132ea0979
 SHA1 (ssfe.diff) = 8aee63866a2497fa2ce469c7e5d7eeee2c92c02b
+SIZE (sirc-2.211.tar.gz) = 83875
+SIZE (ssfe.diff) = 1337

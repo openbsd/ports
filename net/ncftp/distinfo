@@ -4,3 +4,5 @@ RMD160 (ncftp-3.1.8-src.tar.gz) = 5abc7f64a72ed1f074eb2d65c071158c0c542a1c
 RMD160 (ncftp-3181-v6-20040728.diff.gz) = 364cc956c237e8b11908f77ad5a9f90ec77629f7
 SHA1 (ncftp-3.1.8-src.tar.gz) = 0fca0dd12ceafd9d491f32afca404c6b5da3ef31
 SHA1 (ncftp-3181-v6-20040728.diff.gz) = 1da59136d7382b0ca89c353a95c04cbede7bbf71
+SIZE (ncftp-3.1.8-src.tar.gz) = 509185
+SIZE (ncftp-3181-v6-20040728.diff.gz) = 35409

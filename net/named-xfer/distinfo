@@ -4,3 +4,5 @@ RMD160 (bind-8.4.5/bind-doc.tar.gz) = 64e8a366349d47166520c90e94f674670768fc04
 RMD160 (bind-8.4.5/bind-src.tar.gz) = 510819724160952243848c42c8f93963d99ba4a7
 SHA1 (bind-8.4.5/bind-doc.tar.gz) = 1a649c4da03a2e4140dd0cd11800862e0b49a5d1
 SHA1 (bind-8.4.5/bind-src.tar.gz) = 8878db7dd068047daa6a6020d0353008bc5c091c
+SIZE (bind-8.4.5/bind-doc.tar.gz) = 1492024
+SIZE (bind-8.4.5/bind-src.tar.gz) = 1454671

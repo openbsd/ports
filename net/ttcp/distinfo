@@ -7,3 +7,6 @@ RMD160 (ttcp/ttcp.c) = 99e8f596134eec2077989fd7205648187716e016
 SHA1 (ttcp/README) = 0de9d88ae141eb1ff7720c2962d3d99e1c39673d
 SHA1 (ttcp/ttcp.1) = f5ae207c779bf3af1ac43fcd5614b734d139e1a3
 SHA1 (ttcp/ttcp.c) = 1ff5b8fd64ff3dbe1b5a66bfc9813b1a5e3063fd
+SIZE (ttcp/README) = 781
+SIZE (ttcp/ttcp.1) = 3885
+SIZE (ttcp/ttcp.c) = 19170

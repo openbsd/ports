@@ -4,3 +4,5 @@ RMD160 (wget-1.8.2.tar.gz) = 4fc6a381f3022b0fd45b8cc95f372d71e6986904
 RMD160 (wget_1.8.2-10.diff.gz) = 61e60070296352f2b95db9917ac29f849fd7f7a8
 SHA1 (wget-1.8.2.tar.gz) = cb14189c47f281b33fd1ef37c4c8df39250fa7d5
 SHA1 (wget_1.8.2-10.diff.gz) = 6ff5fa41ce1040eab00b647816b481236a00cd28
+SIZE (wget-1.8.2.tar.gz) = 1154648
+SIZE (wget_1.8.2-10.diff.gz) = 34303
