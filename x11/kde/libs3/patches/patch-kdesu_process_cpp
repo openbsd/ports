@@ -1,7 +1,17 @@
-$OpenBSD: patch-kdesu_process_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
---- kdesu/process.cpp.orig	Wed May 15 11:41:43 2002
-+++ kdesu/process.cpp	Wed May 15 11:41:31 2002
-@@ -360,8 +360,13 @@ int PtyProcess::waitForChild()
+$OpenBSD: patch-kdesu_process_cpp,v 1.2 2003/01/06 22:46:02 espie Exp $
+--- kdesu/process.cpp.orig	Mon Mar  4 01:59:15 2002
++++ kdesu/process.cpp	Mon Jan  6 23:41:20 2003
+@@ -38,6 +38,9 @@
+ #include <stropts.h>
+ #include <sys/stream.h>
+ #endif
++#ifdef __OpenBSD__
++#include <sys/ioctl.h>
++#endif
+ 
+ #ifdef HAVE_SYS_SELECT_H
+ #include <sys/select.h>                // Needed on some systems.
+@@ -360,8 +363,13 @@ int PtyProcess::waitForChild()
      while (1) 
      {
          tv.tv_sec = 1; tv.tv_usec = 0;
@@ -17,3 +27,13 @@ $OpenBSD: patch-kdesu_process_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
          if (ret == -1) 
          {
              if (errno == EINTR) continue;
+@@ -448,6 +456,9 @@ int PtyProcess::SetupTTY(int fd)
+     ioctl(slave, I_PUSH, "ptem");
+     ioctl(slave, I_PUSH, "ldterm");
+ 
++#endif
++#ifdef __OpenBSD__
++    ioctl(slave, TIOCSCTTY, (char *)NULL);
+ #endif
+ 
+     // Connect stdin, stdout and stderr

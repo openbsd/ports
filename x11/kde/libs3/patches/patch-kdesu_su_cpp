@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdesu_su_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
---- kdesu/su.cpp.orig	Sat May 11 11:13:25 2002
-+++ kdesu/su.cpp	Wed May 15 12:02:01 2002
+$OpenBSD: patch-kdesu_su_cpp,v 1.2 2003/01/06 22:46:02 espie Exp $
+--- kdesu/su.cpp.orig	Mon Mar  4 01:59:16 2002
++++ kdesu/su.cpp	Mon Jan  6 23:40:41 2003
 @@ -41,17 +41,33 @@
  #ifndef __PATH_SU
  #define __PATH_SU "false"
@@ -44,13 +44,15 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
   */
  
  int SuProcess::exec(const char *password, int check)
-@@ -74,14 +90,20 @@ int SuProcess::exec(const char *password
+@@ -74,14 +90,22 @@ int SuProcess::exec(const char *password
  	setTerminal(true);
  
      QCStringList args;
 +    if (d->m_useSudo)
 +    {
 +	args += "-S";
++	args += "-p";
++	args += "Password:";
 +	args += "-u";
 +    }
      if ((m_Scheduler != SchedNormal) || (m_Priority > 50))
@@ -67,7 +69,7 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
      {
  	return check ? SuNotFound : -1;
      }
-@@ -90,7 +112,8 @@ int SuProcess::exec(const char *password
+@@ -90,7 +114,8 @@ int SuProcess::exec(const char *password
      if (ret < 0) 
      {
  	if (!check)
@@ -77,7 +79,7 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
  	return ret;
      } 
      if (check == 2)
-@@ -98,6 +121,8 @@ int SuProcess::exec(const char *password
+@@ -98,6 +123,8 @@ int SuProcess::exec(const char *password
  	if (ret == 1)
  	{
  	    kill(m_Pid, SIGTERM);
@@ -86,3 +88,23 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
  	    waitForChild();
  	}
  	return ret;
+@@ -170,6 +197,9 @@ int SuProcess::ConverseSU(const char *pa
+ 		return 0;
+ 	    }
+ 
++	    if (d->m_useSudo && line != "Password:")
++		break;
++
+ 	    // Match "Password: " with the regex ^[^:]+:[\w]*$.
+ 	    for (i=0,j=0,colon=0; i<line.length(); i++) 
+ 	    {
+@@ -210,6 +240,9 @@ int SuProcess::ConverseSU(const char *pa
+ 	}
+ 
+ 	case 2:
++	    if (d->m_useSudo && line == "Password:")
++		return -1;
++
+ 	    // Read till we get "kdesu_stub"
+ 	    if (line == "kdesu_stub")
+ 	    {
