@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs-elf,v 1.2 2004/02/01 23:43:26 espie Exp $
+# $OpenBSD: check-libs-elf,v 1.3 2004/02/12 14:04:43 espie Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -70,12 +70,16 @@ while (<$builds>) {
 close($builds);
 
 while (<$libs>) {
-	my ($name, $major, $minor);
+	my ($path, $name, $major, $minor);
 	chomp;
 	if (m/^lib(\S+)\s+(\d+)\s+(\d+)$/) {
 		($name, $major, $minor) = ($1, $2, $3);
+	} elsif (m/^(.*)\/lib(\S+)\s+(\d+)\s+(\d+)$/) {
+		($path, $name, $major, $minor) = ($1, $2, $3, $4);
 	} elsif (m/^lib(\S+)$/) {
 		$name = $1;
+	} elsif (m/^(.*)\/lib(\S+)$/) {
+		($path, $name) = ($1, $2);
 	} else {
 		next;
 	}
