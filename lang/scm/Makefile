@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/31 14:03:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/31 14:16:47 espie Exp $
 # losely based on the FreeBSD port
 
 CATEGORIES=	lang
@@ -27,7 +27,7 @@ SCM_DATA=	COPYING Iedline.scm Init5d3.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm
 
 FEATURES=arrays bignums cautious edit-line curses posix socket unix \
-dynamic-linking i/o-extensions inexact
+dynamic-linking i/o-extensions inexact regex
 
 post-build:
 	cd ${WRKSRC} && PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_build_scm,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+$OpenBSD: patch-scm_build_scm,v 1.2 2001/01/31 14:16:48 espie Exp $
 --- scm/build.scm.orig	Sat Feb  5 03:37:17 2000
-+++ scm/build.scm	Tue Jan 30 14:14:59 2001
++++ scm/build.scm	Wed Jan 31 15:13:27 2001
 @@ -451,6 +451,7 @@
       (microsoft-c-nt	 i386	   ms-dos    cl	       ) ;link
       (microsoft-quick-c	 8086	   ms-dos    qcl       ) ;qlink
@@ -9,16 +9,17 @@ $OpenBSD: patch-scm_build_scm,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
       (os/2-cset		 i386	   os/2	     icc       ) ;link386
       (os/2-emx		 i386	   os/2	     gcc       ) ;gcc
       (svr4-gcc-sun-ld	 sparc	   sunos     gcc       ) ;ld
-@@ -582,6 +583,8 @@
+@@ -582,6 +583,9 @@
       (dlll freebsd "-DSUN_DL" "" "" () ())
       (nostart freebsd "" "-e start -dc -dp -Bstatic -lgnumalloc" #f ("pre-crt0.c") ())
       (dump freebsd "" "/usr/lib/crt0.o" "" ("unexsunos4.c") ())
 +     (m openbsd "" "-lm" #f () ())
 +     (curses openbsd "" "-lcurses" "/usr/lib/libcurses.a" () ())
++     (regex openbsd "" "" #f () ())
       ))
  
    '(compile-commands
-@@ -1389,6 +1392,61 @@
+@@ -1389,6 +1393,61 @@
      (and (batch:try-command
  	  parms
  	  "ld" "-Bshareable" "-o"
