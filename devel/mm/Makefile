@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/01 22:30:10 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/01 22:54:48 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 DISTNAME=	mm-1.1.3
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 

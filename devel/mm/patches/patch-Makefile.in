@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Sat Jul  1 18:45:36 2000
++++ Makefile.in	Sat Jul  1 18:46:43 2000
+@@ -51,6 +51,8 @@
+ includedir  = @includedir@
+ mandir      = @mandir@
+ 
++DESTDIR     = 
++
+ SHELL       = /bin/sh
+ CC          = @CC@
+ CFLAGS      = @CFLAGS@
+@@ -157,16 +159,16 @@
+ 	shtoolize -o shtool version echo mkdir install fixperm tarball
+ 
+ install: all
+-	$(SHTOOL) mkdir -f -p -m 755 $(bindir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(includedir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(libdir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man1
+-	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man3
+-	$(SHTOOL) install -c -m 755 mm-config $(bindir)/mm-config
+-	$(SHTOOL) install -c -m 644 mm-config.1 $(mandir)/man1/mm-config.1
+-	$(SHTOOL) install -c -m 644 mm.3 $(mandir)/man3/mm.3
+-	$(SHTOOL) install -c -m 644 mm.h $(includedir)/mm.h
+-	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 libmm.la $(libdir)/libmm.la
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(bindir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(includedir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(libdir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man1
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man3
++	$(SHTOOL) install -c -m 755 mm-config $(DESTDIR)$(bindir)/mm-config
++	$(SHTOOL) install -c -m 644 mm-config.1 $(DESTDIR)$(mandir)/man1/mm-config.1
++	$(SHTOOL) install -c -m 644 mm.3 $(DESTDIR)$(mandir)/man3/mm.3
++	$(SHTOOL) install -c -m 644 mm.h $(DESTDIR)$(includedir)/mm.h
++	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 libmm.la $(DESTDIR)$(libdir)/libmm.la
+ 
+ clean:
+ 	$(RM) mm_test mm_test.o mm_test.lo
