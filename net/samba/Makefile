@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/07/24 20:50:00 niklas Exp $
+# $OpenBSD: Makefile,v 1.22 1999/11/12 19:12:15 turan Exp $
 
 DISTNAME=	samba-2.0.5a
 CATEGORIES=	net
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Peter Galbavy <Peter.Galbavy@knowledge.com>
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
