@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/06/22 03:15:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/08 17:13:58 marcm Exp $
 bin/pango-querymodules
+include/pango-1.0/
+include/pango-1.0/pango/
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-break.h
 include/pango-1.0/pango/pango-context.h
@@ -33,6 +35,9 @@ lib/libpangox-1.0.a
 lib/libpangox-1.0.la
 lib/libpangoxft-1.0.a
 lib/libpangoxft-1.0.la
+lib/pango/
+lib/pango/1.4.0/
+lib/pango/1.4.0/modules/
 lib/pango/1.4.0/modules/pango-arabic-fc.a
 lib/pango/1.4.0/modules/pango-arabic-fc.la
 lib/pango/1.4.0/modules/pango-basic-fc.a
@@ -47,13 +52,21 @@ lib/pango/1.4.0/modules/pango-indic-fc.a
 lib/pango/1.4.0/modules/pango-indic-fc.la
 lib/pango/1.4.0/modules/pango-thai-fc.a
 lib/pango/1.4.0/modules/pango-thai-fc.la
+lib/pkgconfig/
 lib/pkgconfig/pango.pc
 lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangox.pc
 lib/pkgconfig/pangoxft.pc
-man/man1/pango-querymodules.1
-share/examples/pango/pango/pango.modules
-share/examples/pango/pango/pangox.aliases
+@man man/man1/pango-querymodules.1
+share/examples/pango/
+@sample ${SYSCONFDIR}/pango/
+share/examples/pango/pango.modules
+@sample ${SYSCONFDIR}/pango/pango.modules
+share/examples/pango/pangox.aliases
+@sample ${SYSCONFDIR}/pango/pangox.aliases
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/pango/
 share/gtk-doc/html/pango/PangoEngineLang.html
 share/gtk-doc/html/pango/PangoEngineShape.html
 share/gtk-doc/html/pango/PangoFcFont.html
@@ -89,17 +102,3 @@ share/gtk-doc/html/pango/right.png
 share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up.png
 %%SHARED%%
-@dirrm share/gtk-doc/html/pango
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
-@dirrm share/examples/pango/pango
-@dirrm share/examples/pango
-@dirrm lib/pango/1.4.0/modules
-@dirrm lib/pango/1.4.0
-@dirrm lib/pango
-@dirrm include/pango-1.0/pango
-@dirrm include/pango-1.0
-@cwd ${SYSCONFDIR}
-@extra pango/pango.modules
-@extra pango/pangox.aliases
-@extra pango/

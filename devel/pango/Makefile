@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/22 03:15:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/08 17:13:58 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.4.0
+DISTNAME=		pango-1.4.1
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -32,7 +32,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pango; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/pango/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/pango/* ${PREFIX}/share/examples/pango/
 
 .include <bsd.port.mk>
 
