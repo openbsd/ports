@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/02/05 04:07:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2002/02/19 00:17:23 brad Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
@@ -63,7 +63,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		XML_CONFIG="${LOCALBASE}/bin/xml-config"
 
 DISTFILES=		${DISTNAME}.tar.gz \
