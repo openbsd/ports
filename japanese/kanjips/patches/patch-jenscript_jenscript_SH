@@ -1,6 +1,6 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.4 2000/04/23 16:49:30 espie Exp $
+$OpenBSD: patch-jenscript_jenscript_SH,v 1.5 2000/04/23 22:09:45 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
-+++ jenscript/jenscript.SH	Sun Apr 23 18:47:38 2000
++++ jenscript/jenscript.SH	Sun Apr 23 23:53:21 2000
 @@ -20,14 +20,12 @@ echo "Extracting jenscript (with variabl
  : Protect any dollar signs and backticks that you do not want interpreted
  : by putting a backslash in front.  You may delete these comments.
@@ -88,15 +88,26 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.4 2000/04/23 16:49:30 espie Exp $
  		shift(@_);
  		next if $language !~ /^($pat)$/;
  		$pb = $bb = $be = $cb = $ce = $sb =
-@@ -417,6 +425,7 @@ sub prologue {
+@@ -417,13 +425,17 @@ sub prologue {
  	print "%%Creator: jenscript\n" if ! $nflag;
  	print "%%Title: Jenscript\n" if ! $nflag;
  	print "%%CreationDate: $date\n" if ! $nflag;
 +	print "%%BoundingBox: 0 0 $PageWidth $PageHeight\n";
++	print "%%Orientation: Landscape\n" if $tflag;
  	print "%%EndComments\n" if ! $nflag;
  	print "%%DocumentFonts: $kfont",$afont ne "" ? " $afont" : "", "\n";
  	print "save/EnscriptJob exch def\n";
-@@ -445,7 +454,7 @@ sub prologue {
+ 	print "/StartEnscriptDoc{\$enscript begin}def\n";
+ 	print "/\$enscript 60 dict def \$enscript begin\n";
+ 	print "/EndEnscriptDoc{end}def\n";
+-	print "/StartPage{/svpg save def }def\n";
++	print "/StartPage{/svpg save def\n";
++	print "[ 0 1 -1 0 $PageWidth 0 ] concat\n" if $tflag;
++	print "}def\n";
+ 	print "/EndPage{svpg restore showpage}def\n";
+ 	print "/SetStTime{statusdict /manualfeedtimeout 120 put} def\n";
+ 	print "/SetStatus{statusdict /manualfeed true put\n";
+@@ -445,7 +457,7 @@ sub prologue {
  		print "/FK { /$keywordfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
  		print "/FC { /$commentfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
  		print "/FS { /$stringfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
@@ -105,11 +116,3 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.4 2000/04/23 16:49:30 espie Exp $
  	}
  	print "/FJ { /$kfont findfont $jfontsize scalefont setfont } bind def\n";
  	print "/N { FN show } bind def\n";
-@@ -463,6 +472,7 @@ sub prologue {
- 	print "/D { 0 -",$texfont ? 0 : $fontsize/10," rmoveto } bind def\n";
- 	print "/M { moveto } bind def\n";
- 	print "end\n";
-+	print "[ 0 -1 1 0 0 $PageHeight ] concat\n" if $tflag;
- 	print "StartEnscriptDoc % end fixed prolog\n";
- 	print "SetStatus  SetStTime\n" if $mflag;
- 	print "%%EndProlog\n" if !$nflag;
