@@ -1,5 +1,5 @@
---- dopewars.c.orig	Wed Apr 28 15:48:55 1999
-+++ dopewars.c	Fri Apr 30 17:31:39 1999
+--- dopewars.c.orig	Sat May 15 21:33:20 1999
++++ dopewars.c	Sun May 16 13:31:48 1999
 @@ -19,7 +19,7 @@
  /*                   MA  02111-1307, USA.                               */
  
@@ -9,7 +9,7 @@
  #include <stdlib.h>
  #include <ctype.h>
  #include <unistd.h>
-@@ -1182,7 +1182,7 @@
+@@ -1208,7 +1208,7 @@
  /* or by specifying command line options.                             */
     FILE *fp;
     char name[80],value[80],ConfigFile[400],*pt;
@@ -18,7 +18,7 @@
     strcpy(ServerName,"localhost");
     *Port=7902;
     pt=getenv("HOME");
-@@ -1263,7 +1263,7 @@
+@@ -1290,7 +1290,7 @@
  original version as");
        puts("              possible (this also disables any networking)");
        puts("  -f file  specify a file to use as the high score table");
