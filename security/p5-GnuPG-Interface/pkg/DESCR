@@ -1,0 +1,4 @@
+GPG::Interface and it's associated modules are designed to provide
+an object-oriented method for interacting with GnuPG, being able
+to perform functions such as but not limited to encrypting, signing,
+decryption, verification, and key-listing parsing.
