@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/05/23 03:31:45 dugsong Exp $
+# $OpenBSD: Makefile,v 1.30 2001/07/17 22:46:28 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -44,6 +44,7 @@ SUBDIR += mbone
 SUBDIR += misc
 SUBDIR += net
 SUBDIR += news
+SUBDIR += palm
 SUBDIR += plan9
 SUBDIR += print
 SUBDIR += productivity
