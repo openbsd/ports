@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.10 2000/04/19 01:21:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/07/11 01:09:35 matt Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -20,12 +20,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
-FLAVORS=us-letter legal a4
+FLAVORS=us_letter legal a4
 FLAVOR?=a4
 
 
 fetch-depends:
-.if ${FLAVOR:L} == "us-letter"
+.if ${FLAVOR:L} == "us_letter"
 MAKE_ENV+=	PAGESIZE=PAGE_LETTER
 .elif ${FLAVOR:L} == "legal"
 MAKE_ENV+=	PAGESIZE=PAGE_LEGAL
