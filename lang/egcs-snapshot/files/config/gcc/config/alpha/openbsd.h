@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.3 1999/01/18 10:23:25 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.4 1999/01/21 16:39:26 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -19,7 +19,7 @@
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
-#define SIZE_TYPE "unsigned long"
+#define SIZE_TYPE "long unsigned int"
 
 #undef PTRDIFF_TYPE
 #define PTRDIFF_TYPE "long"
