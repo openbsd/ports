@@ -1,7 +1,7 @@
-$OpenBSD: patch-lt1.3.3-ltconfig,v 1.2 2001/10/31 01:33:33 brad Exp $
---- ltconfig.orig	Thu Jul 15 15:31:35 1999
-+++ ltconfig	Tue Oct 30 19:31:12 2001
-@@ -501,7 +501,14 @@ fi
+$OpenBSD: patch-lt1.3.3-ltconfig,v 1.3 2002/04/03 14:44:14 miod Exp $
+--- ltconfig.orig	Wed Apr  3 07:47:42 2002
++++ ltconfig	Wed Apr  3 07:55:04 2002
+@@ -501,7 +501,14 @@
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -17,7 +17,7 @@ $OpenBSD: patch-lt1.3.3-ltconfig,v 1.2 2001/10/31 01:33:33 brad Exp $
  fi
  
  # Set sane defaults for `DLLTOOL', `OBJDUMP', and `AS', used on cygwin.
-@@ -1105,7 +1112,9 @@ cygwin* | mingw*)
+@@ -1105,7 +1112,9 @@
      with_gnu_ld=no
    fi
    ;;
@@ -28,34 +28,43 @@ $OpenBSD: patch-lt1.3.3-ltconfig,v 1.2 2001/10/31 01:33:33 brad Exp $
  esac
  
  ld_shlibs=yes
-@@ -1391,10 +1400,24 @@ else
+@@ -1391,10 +1400,31 @@
      ;;
  
    openbsd*)
 -    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
 -    hardcode_libdir_flag_spec='-R$libdir'
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-+    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
-+      hardcode_libdir_flag_spec='${wl}-R$libdir'
-+      export_dynamic_flag_spec='${wl}-E'
-+    else
-+      case "$host_os" in
-+      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
-+	hardcode_libdir_flag_spec='-R$libdir'
-+	;;
-+      *)
+-    hardcode_direct=yes
+-    hardcode_shlibpath_var=no
++    case "$host_cpu" in
++    m88k|hppa|vax)
++      ld_shlibs=no
++      ;;
++    *)
++      hardcode_direct=yes
++      hardcode_shlibpath_var=no
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +	hardcode_libdir_flag_spec='${wl}-R$libdir'
-+	;;
-+      esac
-+    fi
++	export_dynamic_flag_spec='${wl}-E'
++      else
++	case "$host_os" in
++	openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	  archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	  hardcode_libdir_flag_spec='-R$libdir'
++	  ;;
++	*)
++	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	  hardcode_libdir_flag_spec='${wl}-R$libdir'
++	  ;;
++	esac
++      fi
++      ;;
++    esac
      ;;
  
    os2*)
-@@ -1955,9 +1978,25 @@ netbsd*)
+@@ -1955,9 +1985,25 @@
  
  openbsd*)
    version_type=sunos
