@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/01 18:23:46 espie Exp $
 #
 
 DISTNAME=       xinvaders
@@ -24,6 +24,7 @@ EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 
 USE_IMAKE=	Yes
+FAKE=		Yes
 
 WRKDIST=	${WRKDIR}
 
