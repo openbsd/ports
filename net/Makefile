@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2001/05/05 22:20:37 espie Exp $
+# $OpenBSD: Makefile,v 1.139 2001/05/06 14:14:26 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += icb
      SUBDIR += icecast
      SUBDIR += icmpinfo
+     SUBDIR += ipcheck
      SUBDIR += ipfm
      SUBDIR += iperf
      SUBDIR += iplog
