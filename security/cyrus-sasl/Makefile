@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/26 19:36:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/21 16:33:33 jakob Exp $
 
-DISTNAME=	cyrus-sasl-1.5.21
+DISTNAME=	cyrus-sasl-1.5.24
 CATEGORIES=     security
 NEED_VERSION=	1.302
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \

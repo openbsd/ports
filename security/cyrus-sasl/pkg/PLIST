@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/28 19:22:17 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/08/21 16:33:34 jakob Exp $
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -7,22 +7,22 @@ include/sasl/saslplug.h
 include/sasl/saslutil.h
 lib/libsasl.a
 lib/libsasl.la
-lib/libsasl.so.8.5
+lib/libsasl.so.8.8
 lib/sasl/libanonymous.a
 lib/sasl/libanonymous.la
-lib/sasl/libanonymous.so.1.14
+lib/sasl/libanonymous.so.1.15
 lib/sasl/libcrammd5.a
 lib/sasl/libcrammd5.la
-lib/sasl/libcrammd5.so.1.14
+lib/sasl/libcrammd5.so.1.15
 lib/sasl/libdigestmd5.a
 lib/sasl/libdigestmd5.la
-lib/sasl/libdigestmd5.so.0.15
+lib/sasl/libdigestmd5.so.0.17
 lib/sasl/libkerberos4.a
 lib/sasl/libkerberos4.la
-lib/sasl/libkerberos4.so.1.14
+lib/sasl/libkerberos4.so.1.15
 lib/sasl/libplain.a
 lib/sasl/libplain.la
-lib/sasl/libplain.so.1.13
+lib/sasl/libplain.so.1.14
 man/man3/sasl.3
 man/man3/sasl_authorize_t.3
 man/man3/sasl_callbacks.3
