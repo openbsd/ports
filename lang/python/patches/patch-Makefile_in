@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Sep  7 23:56:35 2000
-+++ Makefile.in	Thu Sep  7 23:57:30 2000
-@@ -101,8 +101,8 @@ FILEMODE=	644
+--- Makefile.in.orig	Mon Oct 16 15:50:06 2000
++++ Makefile.in	Mon Nov 20 16:26:08 2000
+@@ -100,8 +100,8 @@ FILEMODE=	644
  
  # Portable install script (configure doesn't always guess right)
  INSTALL=	@srcdir@/install-sh -c
@@ -11,3 +11,12 @@
  
  # Use this to make a link between python$(VERSION) and python in $(BINDIR)
  LN=@LN@
+@@ -260,7 +260,7 @@ maninstall:
+ 			fi; \
+ 		done
+ 		$(INSTALL_DATA) $(srcdir)/Misc/python.man \
+-			$(MANDIR)/man1/python.1
++			$(MANDIR)/man1/python2.1
+ 
+ # Install the library
+ PLATDIR=	plat-$(MACHDEP)

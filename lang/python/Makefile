@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2000/11/21 16:57:16 jasoni Exp $
+# $OpenBSD: Makefile,v 1.26 2000/12/13 05:26:48 jasoni Exp $
 
-DISTNAME=	Python-1.6
-PKGNAME=	python-1.6
+VERSION=	2.0
+DISTNAME=	python-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
+MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
 
 HOMEPAGE=	http://www.python.org/
 
@@ -34,7 +33,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
 
-WRKDIST=	${WRKDIR}/Python-1.6
+WRKDIST=	${WRKDIR}/Python-${VERSION}
 
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
@@ -44,8 +43,10 @@ BROKEN="Support for ${MACHINE_ARCH} threads is currently broken"
 .elif !exists(/usr/lib/libc_r.a) 
 BROKEN="No thread support on this machine"
 .else
-CONFIGURE_ARGS+= --with-thread
+CONFIGURE_ARGS+= --with-threads
 .endif
+.else
+CONFIGURE_ARGS+= --without-threads
 .endif
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -67,13 +68,13 @@ post-configure:
 
 post-install:
 	@strip ${PREFIX}/bin/python
-	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.6; tar -xf -)
+	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; tar -xf -)
 	
 .include <bsd.port.mk>
 
 # The tools package is not flavor dependent.
 .if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
-PKGNAME=python-tools-1.6
+PKGNAME=python-tools-${VERSION}
 .endif
 .if ${FLAVOR:L:Mno_tools}
 PKGNAME:=${PKGNAME:S/-no_tools//}

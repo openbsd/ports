@@ -100,8 +100,6 @@ _sre _sre.c			# Fredrik Lundh's new regular expressions
 GLHACK=-Dclear=__GLclear
 #gl glmodule.c cgensupport.c -I$(srcdir) $(GLHACK) -lgl -lX11
 
-# The thread module is now automatically enabled, see Setup.thread.
-
 # Pure module.  Cannot be linked dynamically.
 # -DWITH_QUANTIFY, -DWITH_PURIFY, or -DWITH_ALL_PURE
 #WHICH_PURE_PRODUCTS=-DWITH_ALL_PURE
@@ -139,6 +137,7 @@ _codecs _codecsmodule.c	# access to the builtin codecs and codec registry
 
 unicodedata unicodedata.c unicodedatabase.c
                         # static Unicode character database
+ucnhash ucnhash.c # Unicode Character Name expansion hash table
 
 _locale _localemodule.c  # access to ISO C locale support
 
@@ -151,20 +150,23 @@ fcntl fcntlmodule.c	# fcntl(2) and ioctl(2)
 pwd pwdmodule.c		# pwd(3) 
 grp grpmodule.c		# grp(3)
 errno errnomodule.c	# posix (UNIX) errno values
-mmap mmapmodule.c       # Memory-mapped files (also works on Win32)
 select selectmodule.c	# select(2); not on ancient System V
-socket socketmodule.c	# socket(2); not on ancient System V
-#_socket socketmodule.c	# socket(2); use this one for BeOS sockets
+#_socket socketmodule.c	# socket(2)
+
+# Memory-mapped files (also works on Win32).
+mmap mmapmodule.c
 
 # Socket module compiled with SSL support; you must edit the SSL variable:
 #SSL=/usr/local/ssl
-#socket socketmodule.c \
+#_socket socketmodule.c \
 #	-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
 #	-L$(SSL)/lib -lssl -lcrypto
+_socket socketmodule.c \
+	-DUSE_SSL -I/usr/include/ssl -lssl -lcrypto
 
 # The crypt module is now disabled by default because it breaks builds
 # on many systems (where -lcrypt is needed), e.g. Linux (I believe).
-#crypt cryptmodule.c # -lcrypt	# crypt(3); needs -lcrypt on some systems
+crypt cryptmodule.c # -lcrypt	# crypt(3); needs -lcrypt on some systems
 
 
 # Some more UNIX dependent modules -- off by default, since these
@@ -181,7 +183,7 @@ resource resource.c	# Jeremy Hylton's rlimit interface
 
 @NO64BIT@audioop audioop.c	# Operations on audio samples
 @NO64BIT@imageop imageop.c	# Operations on images
-@NO64BIT@rgbimg rgbimgmodule.c   # Read SGI RGB image files (but coded portably)
+@NO64BIT@rgbimg rgbimgmodule.c	# Read SGI RGB image files (but coded portably)
 
 
 # The md5 module implements the RSA Data Security, Inc. MD5
@@ -314,9 +316,9 @@ rotor rotormodule.c		# enigma-inspired encryption
 syslog syslogmodule.c		# syslog daemon interface
 
 
-# Lance's curses module.  This requires the System V version of
-# curses, sometimes known as ncurses (e.g. on Linux, link with
-# -lncurses instead of -lcurses; on SunOS 4.1.3, insert -I/usr/5include
+# Curses support, requring the System V version of curses, often
+# provided by the ncurses library.  e.g. on Linux, link with -lncurses
+# instead of -lcurses; on SunOS 4.1.3, insert -I/usr/5include
 # -L/usr/5lib before -lcurses).
 
 _curses _cursesmodule.c -lcurses -ltermcap
@@ -360,8 +362,13 @@ dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 # Edit the variables DB and DBPORT to point to the db top directory
 # and the subdirectory of PORT where you built it.
 #
-# (See http://www.jenkon-dev.com/~rd/python/ for an interface to
-# BSD DB 2.1.0.)
+# (See http://electricrain.com/greg/python/bsddb3/ for an interface to
+# BSD DB 3.x.)
+
+# Note: If a db.h file is found by configure, bsddb will be enabled
+# automatically via Setup.config.in.  It only needs to be enabled here
+# if it is not automatically enabled there; check the generated
+# Setup.config before enabling it here.
 
 #DB=/depot/sundry/src/berkeley-db/db.1.85
 #DBPORT=$(DB)/PORT/irix.5.3
@@ -415,10 +422,16 @@ zlib zlibmodule.c -I$(prefix)/include -L$(exec_prefix)/lib -lz
 # http://www.jclark.com/xml/expat.html, the current production release is
 # always ftp://ftp.jclark.com/pub/xml/expat.zip.
 #
-# (Note: the expat build process doesn't yet build a libexpat.a; you can
-# do this manually while we try convince the author to add it.)
+# EXPAT_DIR, below, should point to the expat/ directory created by
+# unpacking the Expat source distribution.
 #
-#EXPAT_DIR=/usr/local/src/expat/
+# Note: the expat build process doesn't yet build a libexpat.a; you can
+# do this manually while we try convince the author to add it.  To do so,
+# cd to EXPAT_DIR, run "make" if you have not done so, then run:
+#
+#    ar cr libexpat.a xmltok/*.o xmlparse/*.o
+#
+#EXPAT_DIR=/usr/local/src/expat
 #pyexpat pyexpat.c -I$(EXPAT_DIR)/xmlparse -L$(EXPAT_DIR) -lexpat
 
 

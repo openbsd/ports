@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/12/04 03:36:49 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.1 2000/12/13 05:26:48 jasoni Exp $
 #
 # python2 installation
 
