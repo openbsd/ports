@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
+
+fixes for CXXFLAGS and GNU configure SEPARATE_BUILD support
+
+--- xxdiff/src/Makefile.in.orig	Sat Mar 10 20:07:27 2001
++++ xxdiff/src/Makefile.in	Thu Mar 15 16:29:27 2001
+@@ -245,7 +245,7 @@ man_MANS = xxdiff.1
+ xxdiff_METASOURCES =  app.moc.cpp diffs.moc.cpp markersFileDialog.moc.cpp markersWidgetBase.moc.cpp merged.moc.cpp optionsDialogBase.moc.cpp optionsDialog.moc.cpp searchDialogBase.moc.cpp searchDialog.moc.cpp 
+ 
+ @DEBUG_TRUE@DEBUGFLAGS = -g
+-@DEBUG_FALSE@DEBUGFLAGS = -O3 $(MIPSSTRIPFLAGS)
++@DEBUG_FALSE@DEBUGFLAGS = $(MIPSSTRIPFLAGS)
+ 
+ #LINKSTATIC_LIBS = -Wl,-Bstatic -lqt -Wl,-Bdynamic
+ #
+@@ -283,7 +283,7 @@ LDADD =  $(COMPILER_MIPSPRO_LDADDA) $(CO
+ 
+ # To allow for proper definition of XX_THROW_NOTHING
+ @IS_COMPILER_COMPAQCXX_TRUE@COMPILER_COMPAQCXX_CXXFLAGS =  -using_std -D__USE_STD_IOSTREAM -DCOMPILER_COMPAQCXX
+-@IS_COMPILER_GNU_TRUE@COMPILER_GNU_CXXFLAGS =  -Wall -DCOMPILER_GNU
++@IS_COMPILER_GNU_TRUE@COMPILER_GNU_CXXFLAGS = @CXXFLAGS@ -DCOMPILER_GNU
+ @USE_STLPORT_TRUE@COMPILER_GNU_CXXFLAGS = -nostdinc++ -I/usr/include/stlport -D__SGI_STL_OWN_IOSTREAMS
+ #COMPILER_GNU_CXXFLAGS += -D__STL_USE_OWN_NAMESPACE
+ 
+@@ -303,7 +303,7 @@ DISTCLEANFILES = rcfileParser.y.c rcfile
+ MAINTAINERCLEANFILES = xxdiff.catman man.h 	$(UIDESIGNER_HEADERS) $(UIDESIGNER_SOURCES)
+ 
+ 
+-MOC = $(QTDIR)/bin/moc
++MOC = @MOC@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)
+@@ -666,10 +666,10 @@ $(UIDESIGNER_GENSOURCES) : $(UIDESIGNER_
+ ui_dialogs: $(UIDESIGNER_FILES)
+ 
+ rcfileParser.lex.c rcfileParser.lex.h: rcfileParser.lex
+-	flex -orcfileParser.lex.c rcfileParser.lex
++	flex -orcfileParser.lex.c $(srcdir)/rcfileParser.lex
+ 
+ rcfileParser.y.c rcfileParser.y.h: rcfileParser.y
+-	bison -d -orcfileParser.y.c rcfileParser.y
++	bison -d -orcfileParser.y.c $(srcdir)/rcfileParser.y
+ 
+ rcfileParser.o: rcfileParser.y.c rcfileParser.lex.c
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lineNumbers_cpp,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
+
+changes sprintf -> snprintf to close potential buffer overrun
+
+--- xxdiff/src/lineNumbers.cpp.orig	Thu Mar 15 13:55:15 2001
++++ xxdiff/src/lineNumbers.cpp	Thu Mar 15 13:55:18 2001
+@@ -119,7 +119,7 @@ void XxLineNumbers::drawContents( QPaint
+       std::min( displayLines, diffs->getNbLines() - (topLine - 1) );
+ 
+    char lnFormat[16];
+-   sprintf( lnFormat, "%%%dd", _app->getMaxDigits() );
++   snprintf( lnFormat, sizeof(lnFormat), "%%%dd", _app->getMaxDigits() );
+ 
+    const int x = 0;
+    int y = 0;

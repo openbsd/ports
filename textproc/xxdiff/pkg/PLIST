@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
+bin/xxdiff
+man/man1/xxdiff.1

@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_diffs_cpp,v 1.1.1.1 2001/03/20 14:29:32 wilfried Exp $
+
+fixes multiple strcpy and sprintf instances to potentially
+prevent buffer overruns
+
+
+--- xxdiff/src/diffs.cpp.orig	Thu Mar 15 11:57:11 2001
++++ xxdiff/src/diffs.cpp	Thu Mar 15 13:20:06 2001
+@@ -77,26 +77,26 @@ std::string buildTag( 
+ {
+    char buf[ 1024 ];
+    char buf2[ 1024 ];
+-   ::strcpy( buf, tag );
++   ::strlcpy( buf, tag, sizeof(buf) );
+    
+    // FIXME this could lead to a bug.
+ 
+    if ( useNumber ) {
+-      ::strcpy( buf2, buf );
+-      ::sprintf( buf, buf2, number );
++      ::strlcpy( buf2, buf, sizeof(buf2));
++      ::snprintf( buf, sizeof(buf), buf2, number );
+    }
+    if ( useString ) {
+-      ::strcpy( buf2, buf );
++      ::strlcpy( buf2, buf, sizeof(buf2) );
+       if ( useConditionals ) {
+          if ( nbFiles == 3 && ( number == 1 || number == 2 ) ) {
+-            ::sprintf( buf, buf2, conditional2.c_str() );
++            ::snprintf( buf, sizeof(buf), buf2, conditional2.c_str() );
+          }
+          else {
+-            ::sprintf( buf, buf2, conditional1.c_str() );
++            ::snprintf( buf, sizeof(buf), buf2, conditional1.c_str() );
+          }
+       }
+       else {
+-         ::sprintf( buf, buf2, file->getDisplayName() );
++         ::snprintf( buf, sizeof(buf), buf2, file->getDisplayName() );
+       }
+    }
+ 
+@@ -727,7 +727,7 @@ bool XxDiffs::save( 
+       std::string::size_type pos = tags[ii].find( "%d" );
+       if ( pos != std::string::npos ) {
+          char buf[12];
+-         ::sprintf( buf, "%d", ii+1 );
++         ::snprintf( buf, sizeof(buf), "%d", ii+1 );
+          tags[ii].replace( pos, 2, buf );
+       }
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_app_cpp,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
+
+Fixes a bug in file name/title display in the windowmanager titlebar.
+
+--- xxdiff/src/app.cpp.orig	Thu Mar 15 11:56:51 2001
++++ xxdiff/src/app.cpp	Thu Mar 15 13:20:00 2001
+@@ -494,8 +494,8 @@ XxApp::XxApp( int argc, char** argv, boo
+    // Sets the title bar.
+    if ( _nbFiles == 2 ) {
+       QString str = 
+-         QString(_files[0]->getName()) + " <-> " + 
+-         QString(_files[1]->getName());
++         QString(_files[0]->getDisplayName()) + " <-> " + 
++         QString(_files[1]->getDisplayName());
+       _mainWindow->setCaption( str );
+    }
+    else {

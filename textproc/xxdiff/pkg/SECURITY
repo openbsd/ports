@@ -1,0 +1,11 @@
+$OpenBSD $
+
+Xxdiff uses strcpy, strncpy, and sprintf in 
+quite a few functions.  The included patches
+correct the usage to strlcpy and snprintf 
+where needed.
+
+Files affected are:
+  ${WRKSRC}/src/buffer.cpp
+  ${WRKSRC}/src/diffs.cpp
+  ${WRKSRC}/src/lineNumbers.cpp

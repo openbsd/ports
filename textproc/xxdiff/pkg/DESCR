@@ -1,0 +1,15 @@
+xxdiff, a graphical file comparator and merge tool
+--------------------------------------------------
+
+xxdiff is a file comparator and merge tool. It is an open-source
+replacement for Rudy Wortel's xdiff which comes with SGI machines 
+(which was itself inspired by SGI's gdiff).  xxdiff can be used to 
+graphically display differences between two (eventually three) files.
+It can also be used to merge two files together, by allowing the user
+to select regions and save the results of the selection.  It is also
+an aid in code reviewing, as it allows a reviewer to look at the pieces 
+of changed code and save selected portions of the code to an editor to
+make comments (horizontal diffs make reviewing much easier, especially
+for a long list of files).
+
+WWW: ${HOMEPAGE}

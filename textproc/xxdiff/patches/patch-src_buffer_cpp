@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_buffer_cpp,v 1.1.1.1 2001/03/20 14:29:32 wilfried Exp $
+
+fixes multiple strcpy/strncpy/sprintf uses that could lead
+to buffer overruns.
+
+--- xxdiff/src/buffer.cpp.orig	Thu Mar 15 11:57:03 2001
++++ xxdiff/src/buffer.cpp	Thu Mar 15 13:47:30 2001
+@@ -399,13 +398,13 @@ uint XxBuffer::computeLineNumbersWidth( 
+ {
+    QFontMetrics fm( font );
+    char lnFormat[32];
+-   sprintf( lnFormat, "%%%dd", getNbDigits() );
++   snprintf( lnFormat, sizeof(lnFormat), "%%%dd", getNbDigits() );
+ 
+    uint longest = 0;
+    int nbLines = getNbLines();
+    char buffer[12];
+    for ( int ii = 1; ii <= nbLines; ++ii ) {
+-      sprintf( buffer, lnFormat, ii );
++      snprintf( buffer, sizeof(buffer), lnFormat, ii );
+       QString str( buffer );
+ 
+       QRect rect = fm.boundingRect( str, str.length() );
+@@ -505,7 +504,7 @@ const char* XxBuffer::renderLineNumber( 
+    const char* format
+ )
+ {
+-   sprintf( _lnBuffer, format, lineNumber );
++   snprintf( _lnBuffer, sizeof(_lnBuffer), format, lineNumber );
+    return _lnBuffer;
+ }
+ 
