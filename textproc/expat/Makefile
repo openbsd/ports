@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2000/12/14 16:02:58 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/01/21 19:17:40 avsm Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
-DISTNAME=	expat1_2
-PKGNAME=	expat-1.2
+DISTNAME=	expat-1.95.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
-EXTRACT_SUFX=	.zip
+NEED_VERSION=	1.351
 
-HOMEPAGE=	http://www.jclark.com/xml/expat.html
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= expat
 
+HOMEPAGE=	http://expat.sourceforge.net/
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
@@ -18,26 +16,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-SHLIB=	libexpat.so.1.0
-SUBST_VARS=	SHLIB
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static
 
-WRKDIST=	${WRKDIR}/expat
-
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Ixmltok -Ixmlparse -DXML_NS" \
-		SHLIB="$(SHLIB)"
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/xml
+post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xmlwf/xmlwf ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/xmlparse/xmlparse.h ${PREFIX}/include/xml
-	${INSTALL_DATA} ${WRKSRC}/xmltok/xmltok.h ${PREFIX}/include/xml
-	${INSTALL_DATA} ${WRKBUILD}/libexpat.a ${PREFIX}/lib
-	@if [ ${WRKBUILD}/${SHLIB} ]; then \
-	   ${INSTALL_DATA} ${WRKBUILD}/${SHLIB} ${PREFIX}/lib; \
-	fi
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=	Yes
-.endif

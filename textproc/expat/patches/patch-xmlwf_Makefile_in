@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmlwf_Makefile_in,v 1.1 2001/01/21 19:17:40 avsm Exp $
+--- xmlwf/Makefile.in.orig	Sun Oct 22 19:47:35 2000
++++ xmlwf/Makefile.in	Sun Jan 21 19:14:08 2001
+@@ -12,4 +12,7 @@ xmlwf: $(OBJS)
+ 	$(CC) -o xmlwf $(LDFLAGS) $(OBJS) $(LIBS)
+ 
+ clean:
+-	rm -f xmlwf core *.o
++	rm -f xmlwf core *.o
++
++install:
++

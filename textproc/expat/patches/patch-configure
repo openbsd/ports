@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2001/01/21 19:17:40 avsm Exp $
+--- configure.orig	Sun Oct 22 19:47:33 2000
++++ configure	Sun Jan 21 19:14:19 2001
+@@ -561,8 +561,8 @@ VERSION=$EXPAT_VERSION
+ PACKAGE=expat
+ 
+ 
+-LIBCURRENT=0
+-LIBREVISION=1
++LIBCURRENT=2
++LIBREVISION=0
+ LIBAGE=0
+ 
+ 
