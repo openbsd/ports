@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/05/23 18:51:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/05/31 16:14:00 sturm Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
@@ -97,7 +97,7 @@ $$(DD)sgirgb.dev'
 # $$(DD)la50.dev $$(DD)la70.dev $$(DD)la75.dev $$(DD)la75plus.dev 
 # $$(DD)ln03.dev $$(DD)xes.dev 
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
-CFLAGS=		-DSYS_TYPES_HAS_STDINT_TYPES
+CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES
 
 GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
