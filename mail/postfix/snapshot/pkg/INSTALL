@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2002/01/08 20:12:02 jakob Exp $
+# $OpenBSD: INSTALL,v 1.4 2002/01/08 20:22:12 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -17,8 +17,14 @@ do_accts()
     if [ $? -eq 0 ]; then
 	echo "-> Using group 'postdrop' for postdrop"
     else
-	echo "-> Creating postdrop group"
-	groupadd postdrop
+        groupinfo -e maildrop
+        if [ $? -eq 0 ]; then
+	    echo "-> Renaming group 'maildrop' to 'postdrop'"
+	    groupmod -n postdrop maildrop
+        else
+	    echo "-> Creating postdrop group"
+	    groupadd postdrop
+        fi
     fi
 
     userinfo -e postfix
