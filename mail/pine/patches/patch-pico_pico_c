@@ -1,7 +1,7 @@
-$OpenBSD: patch-pico_pico_c,v 1.1 2003/08/21 00:49:34 tedu Exp $
---- pico/pico.c.orig	Sun Aug 10 17:17:01 2003
-+++ pico/pico.c	Sun Aug 10 17:16:51 2003
-@@ -219,7 +219,9 @@
+$OpenBSD: patch-pico_pico_c,v 1.2 2003/10/05 21:42:29 jakob Exp $
+--- pico/pico.c.orig	Tue Feb 11 21:58:26 2003
++++ pico/pico.c	Sat Sep 20 00:08:13 2003
+@@ -219,7 +219,9 @@ PICO *pm;
  	    switch(pico_all_done){	/* prepare for/handle final events */
  	      case COMP_EXIT :		/* already confirmed */
  		packheader();

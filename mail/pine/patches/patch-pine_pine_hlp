@@ -1,7 +1,7 @@
-$OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
---- pine/pine.hlp.orig	Thu May 29 14:10:13 2003
-+++ pine/pine.hlp	Fri May 30 16:41:24 2003
-@@ -969,9 +969,9 @@ Unix Pine:
+$OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
+--- pine/pine.hlp.orig	Tue Sep  9 23:19:06 2003
++++ pine/pine.hlp	Sat Sep 20 00:08:13 2003
+@@ -1012,9 +1012,9 @@ Unix Pine:
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
   except cfg     ~/.pinercex
@@ -14,7 +14,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -983,8 +983,7 @@ Unix Pine:
+@@ -1026,8 +1026,7 @@ Unix Pine:
   postponed#     ~/mail/postponed-msgs
   sentmail#      ~/mail/sent-mail
   mailcap#       ~/.mailcap + /etc/mailcap
@@ -24,7 +24,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  
   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
-@@ -1409,9 +1408,9 @@ contact email address may have been set 
+@@ -1452,9 +1451,9 @@ contact email address may have been set 
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
@@ -36,7 +36,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1499,7 +1498,7 @@ To Exit this screen and continue your Pi
+@@ -1542,7 +1541,7 @@ To Exit this screen and continue your Pi
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
@@ -45,7 +45,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1611,9 +1610,9 @@ copy of Pine you are using has been prop
+@@ -1654,9 +1653,9 @@ copy of Pine you are using has been prop
  at your site.)
  
  
@@ -57,7 +57,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  <!--chtml endif-->
  
  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
-@@ -2299,7 +2298,7 @@ screen or standard output. To generate a
+@@ -2342,7 +2341,7 @@ screen or standard output. To generate a
  file, execute
  
  <PRE><CODE>
@@ -66,7 +66,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  </CODE></PRE>
  <P>
  
-@@ -2307,7 +2306,7 @@ To generate a system configuration file 
+@@ -2350,7 +2349,7 @@ To generate a system configuration file 
  system configuration file, execute
  
  <PRE><CODE>
@@ -75,7 +75,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  </CODE></PRE>
  <P>
  A system configuration file is not required.
-@@ -2472,7 +2471,7 @@ Pinerc may be either a local file or a r
+@@ -2519,7 +2518,7 @@ Pinerc may be either a local file or a r
  <DT> -P <EM>pinerc</EM>
  
  <DD> Uses the named file as the system wide configuration file instead of
@@ -84,7 +84,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  Pinerc may be either a local file or a remote configuration folder.
  <P>
  
-@@ -3200,10 +3199,10 @@ In increasing order of precedence they a
+@@ -3247,10 +3246,10 @@ In increasing order of precedence they a
  </OL>
  <P>
  The fixed configuration file is normally
@@ -97,7 +97,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  set for PC-Pine.
  For PC-Pine, if the environment variable <EM>$PINECONF</EM> is set, that
  is used for the system-wide configuration.
-@@ -16222,7 +16221,7 @@ a semi-colon (;) under Windows; for exam
+@@ -16269,7 +16268,7 @@ a semi-colon (;) under Windows; for exam
  </PRE>
  <!--chtml else-->
  a colon (:) under UNIX; for example:<PRE>
@@ -106,7 +106,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  </PRE>
  <!--chtml endif-->
  <P><UL>
-@@ -19021,7 +19020,7 @@ the fourth is for the connection method 
+@@ -19068,7 +19067,7 @@ the fourth is for the connection method 
  <H1>OPTION: ssh-path</H1>
  
  Sets the name of the command used to open a UNIX secure shell
@@ -115,7 +115,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  <P>
  <UL>   
  <LI><A HREF="h_finding_help">Finding more information and requesting help</A>
-@@ -20404,7 +20403,7 @@ argument (see the &quot;lynx&quot; examp
+@@ -20451,7 +20450,7 @@ argument (see the &quot;lynx&quot; examp
  So, here are some example entries:
  <PRE>
  url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
@@ -124,7 +124,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
                C:&#92;BIN&#92;NETSCAPE.BAT
  </PRE>
  <P>
-@@ -20412,7 +20411,7 @@ This example shows that for the first vi
+@@ -20459,7 +20458,7 @@ This example shows that for the first vi
  the environment variable &quot;DISPLAY&quot; must be defined.  If it
  is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
  If neither condition is met,
@@ -133,7 +133,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.3 2003/05/30 20:44:34 brad Exp $
  If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
  If the path to &quot;lynx&quot; is invalid,
  then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
-@@ -20508,7 +20507,7 @@ because of its length, but should all ap
+@@ -20555,7 +20554,7 @@ because of its length, but should all ap
  url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
  
  _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
