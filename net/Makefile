@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2005/02/25 12:17:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.358 2005/03/03 07:16:11 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -56,6 +56,7 @@
      SUBDIR += ettercap,no_x11
      SUBDIR += firewalk
      SUBDIR += flow-tools
+     SUBDIR += flowd
      SUBDIR += fping
      SUBDIR += ftpcopy
      SUBDIR += gabber
