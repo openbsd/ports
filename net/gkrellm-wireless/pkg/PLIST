@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/17 15:44:38 jcs Exp $
+lib/gkrellm/plugins/wireless.so

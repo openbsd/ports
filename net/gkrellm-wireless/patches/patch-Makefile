@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/04/17 15:44:38 jcs Exp $
+--- Makefile.orig	Sun Sep  9 09:12:41 2001
++++ Makefile	Sun Mar 31 14:19:28 2002
+@@ -1,18 +1,8 @@
+ # Depends on gmake..
+ #
+-OS = $(shell uname)
+-
+-ifeq ($(OS),FreeBSD)
+-	GTK_CONFIG = gtk12-config
+-	INCLUDE = -I/usr/src/sys
+-elseif eq ($(OS),NetBSD)
+-	GTK_CONFIG = gtk-config
+-else
+-# default to the linux 
+-	GTK_CONFIG = gtk-config
+-endif
+-
++#OS = $(shell uname)
+ 
++GTK_CONFIG = gtk-config
+ GTK_INCLUDE = `$(GTK_CONFIG) --cflags gthread`
+ GTK_LIB = `$(GTK_CONFIG) --libs gthread`
+ 
+@@ -20,11 +10,9 @@
+ IMLIB_LIB = `imlib-config --libs-gdk`
+ 
+ 
+-FLAGS = -g -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(INCLUDE)
++CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+ LFLAGS = -shared
+-
+-CC = gcc $(CFLAGS) $(FLAGS)
+ 
+ OBJS = wireless.o
+ 

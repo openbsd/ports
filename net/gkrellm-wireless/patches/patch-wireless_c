@@ -1,0 +1,14 @@
+$OpenBSD: patch-wireless_c,v 1.1.1.1 2002/04/17 15:44:38 jcs Exp $
+--- wireless.c.orig	Sun Sep  9 09:25:40 2001
++++ wireless.c	Sun Mar 31 14:26:57 2002
+@@ -89,8 +89,8 @@
+ }
+ 
+ /* system specific stuff */
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
+-/* FreeBSD & NetBSD specific */
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++/* FreeBSD, NetBSD, and OpenBSD specific */
+ 
+ static int
+ find_wi_card(void) {

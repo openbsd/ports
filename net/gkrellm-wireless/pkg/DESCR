@@ -1,0 +1,4 @@
+A gkrellm plugin which allows you to monitor the signal quality of a
+wireless networking card.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,21 @@
+$OpenBSD: patch-wireless_h,v 1.1.1.1 2002/04/17 15:44:38 jcs Exp $
+--- wireless.h.orig	Sun Sep  9 09:25:55 2001
++++ wireless.h	Wed Apr 17 10:36:29 2002
+@@ -35,6 +35,17 @@
+   #include <dev/pcmcia/if_wi_ieee.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++  #include <net/if.h>
++  #include <net/if_dl.h>
++  #include <netinet/in.h>
++  #include <netinet/if_ether.h>
++  #include <net/if_media.h>
++  #include <net/if_ieee80211.h>
++  #include <dev/ic/if_wi_ieee.h>
++  #include <dev/ic/anvar.h>
++#endif
++
+ #define PLUGIN_CONFIG_KEYWORD "gkrellmwireless"
+ 
+ #define WIRELESS_MAJOR_VERSION 0
