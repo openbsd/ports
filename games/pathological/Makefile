@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/05 08:20:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/10 23:10:14 xsa Exp $
 
 COMMENT=	"enriched clone of the game Logical by Rainbow Arts"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}
 
-PYTHON_VER=	2.2
+PYTHON_VER=	2.3
 
 RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		:pygame-*:devel/pygame
@@ -27,8 +27,7 @@ GAMEDIR=	${PREFIX}/share/pathological
 
 pre-build:
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/pathological \
-		${WRKSRC}/pathological.py
+		${WRKSRC}/pathological{,.py} 
 	@perl -pi -e 's,/usr/bin/python,${LOCALBASE}/bin/python${PYTHON_VER},g' \
 		${WRKSRC}/pathological.py
 
