@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/23 21:19:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/10 19:44:54 lebel Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -44,7 +44,7 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 BUILD_DEPENDS=	uic::x11/qt2-designer
-BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh
+BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

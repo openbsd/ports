@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/24 11:44:03 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/10 19:44:54 lebel Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -29,7 +29,7 @@ LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		ldap.2::databases/openldap
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
-BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh
+BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

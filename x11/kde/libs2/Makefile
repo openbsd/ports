@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/22 13:20:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/10 19:44:55 lebel Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -23,7 +23,7 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		audiofile.::devel/libaudiofile \
 		pcreposix.::devel/pcre
 
-BUILD_DEPENDS=	zsh:zsh-*:shells/zsh
+BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
