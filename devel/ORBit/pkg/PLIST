@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2000/08/30 19:20:51 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2000/09/16 20:01:31 brad Exp $
 bin/libIDL-config
 bin/name-client
 bin/old-name-server
@@ -89,8 +89,10 @@ lib/liborbit-c-backend.a
 %%SHARED%%
 share/aclocal/ORBit.m4
 share/aclocal/libIDL.m4
+share/examples/orbit/orbitrc-sample
 @dirrm include/IIOP
 @dirrm include/ORBitservices
 @dirrm include/ORBitutil
 @dirrm include/libIDL
 @dirrm include/orb
+@dirrm share/examples/orbit
