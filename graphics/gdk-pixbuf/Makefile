@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/01/18 23:15:43 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2003/01/19 23:22:26 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -6,13 +6,14 @@ COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 VERSION=	0.21.0
 DISTNAME=	gdk-pixbuf-${VERSION}
 PKGNAME=	${DISTNAME}p1
-PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
+PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
