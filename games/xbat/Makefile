@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/08 15:13:23 kevlo Exp $
 #
 
 DISTNAME=	xev111
 PKGNAME=        xbat-1.11
 CATEGORIES=     games
 NEED_VERSION=	1.305
+
+HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
 
 MAINTAINER=	ports@openbsd.org
 

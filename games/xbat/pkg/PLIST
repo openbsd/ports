@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/12/08 15:13:26 kevlo Exp $
 bin/xbat
 lib/X11/Xbat/Domo/domoX0201.dat
 lib/X11/Xbat/Domo/domoX0202.dat
