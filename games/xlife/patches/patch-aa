@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Mar 28 10:58:48 1991
-+++ Imakefile	Tue Sep 28 13:08:54 1999
+--- Imakefile.orig	Thu Mar 28 16:58:48 1991
++++ Imakefile	Sun Mar 19 04:18:45 2000
 @@ -2,9 +2,10 @@
  
  /* #define ManSuffix n /* For sites where administrators have messed with this */
@@ -13,7 +13,7 @@
  
  SRCS1 =  \
  	button.c\
-@@ -42,26 +43,21 @@
+@@ -42,27 +43,22 @@
  	resize.o\
  	utils.o
  
@@ -44,8 +44,10 @@
  install.patterns:
 +	if [ -d $(XLIFEPATSDIR) ]; then \
 +	  set +x; \
-+	else (set -x; mkdirhier $(XLIFEPATSDIR)); \
++	else (set -x; mkdirhier $(DESTDIR)$(XLIFEPATSDIR)); \
 +	fi
  	@case '${MFLAGS}' in *[i]*) set +e;; esac; \
  	for i in patterns//**/* ; do \
- 		(set -x; $(INSTALL) -c $(INSTDATFLAGS) $$i $(XLIFEPATSDIR)); \
+-		(set -x; $(INSTALL) -c $(INSTDATFLAGS) $$i $(XLIFEPATSDIR)); \
++		(set -x; $(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)$(XLIFEPATSDIR)); \
+ 	done

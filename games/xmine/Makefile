@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/19 03:50:19 espie Exp $
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
@@ -18,5 +18,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 LIB_DEPENDS=    Xaw3d\\.:x11/Xaw3d
 
 USE_IMAKE=      Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
