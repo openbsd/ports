@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2001/04/16 20:15:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.70 2001/04/18 22:57:32 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-MLDBM
 #    SUBDIR += p5-PV
+     SUBDIR += p5-Params-Validate
 #    SUBDIR += p5-Penguin
 #    SUBDIR += p5-Penguin-Easy
 #    SUBDIR += p5-Proc-Simple
