@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2000/03/27 18:04:34 beck Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/27 18:10:00 beck Exp $
 
-DISTNAME=	libssl26	
+DISTNAME=	ssl26	
 CATEGORIES=	security
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Local/People/beck/
 
