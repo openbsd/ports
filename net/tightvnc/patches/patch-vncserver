@@ -1,9 +1,9 @@
-$OpenBSD: patch-vncserver,v 1.2 2002/03/25 11:57:45 wilfried Exp $
---- vncserver.orig	Wed Mar 20 00:40:46 2002
-+++ vncserver	Sun Mar 24 19:42:20 2002
-@@ -56,13 +56,23 @@
-        "xterm -geometry 80x24+10+10 -ls -title \"\$VNCDESKTOP Desktop\" &\n".
-        "twm &\n");
+$OpenBSD: patch-vncserver,v 1.3 2003/11/18 22:02:09 sturm Exp $
+--- vncserver.orig	2002-11-14 17:56:48.000000000 +0100
++++ vncserver	2003-11-18 22:38:51.000000000 +0100
+@@ -75,13 +75,23 @@ unless ($xauthorityFile) {
+     }
+ }
  
 +$defaultFontPath
 +    = (
@@ -26,7 +26,7 @@ $OpenBSD: patch-vncserver,v 1.2 2002/03/25 11:57:45 wilfried Exp $
  
  &Usage() if ($opt{'-help'} || $opt{'-h'} || $opt{'--help'});
  
-@@ -85,6 +95,25 @@
+@@ -104,6 +114,25 @@ if ($opt{'-pixelformat'}) {
  
  &CheckGeometryAndDepth();
  
@@ -52,15 +52,15 @@ $OpenBSD: patch-vncserver,v 1.2 2002/03/25 11:57:45 wilfried Exp $
  if ($opt{'-name'}) {
      $desktopName = $opt{'-name'};
  }
-@@ -210,6 +239,7 @@
+@@ -235,6 +264,7 @@ if (-e "/tmp/.X11-unix/X$displayNumber")
      $ENV{DISPLAY}= "$host:$displayNumber";
  }
  $ENV{VNCDESKTOP}= $desktopName;
 +$ENV{XAUTHORITY}= $xauthorityFile;
  
- system("$vncUserDir/xstartup >> " . &quotedString($desktopLog) . " 2>&1 &");
+ system("$xstartup >> " . &quotedString($desktopLog) . " 2>&1 &");
  
-@@ -221,6 +251,8 @@
+@@ -246,6 +276,8 @@ exit;
  # CheckGeometryAndDepth simply makes sure that the geometry and depth values
  # are sensible.
  #

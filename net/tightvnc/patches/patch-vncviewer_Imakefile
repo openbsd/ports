@@ -1,6 +1,6 @@
---- vncviewer/Imakefile.orig	Thu Jun 27 23:53:19 2002
-+++ vncviewer/Imakefile	Sat Jan  4 12:53:10 2003
-@@ -10,17 +10,10 @@
+--- vncviewer/Imakefile.orig	2002-06-28 07:52:57.000000000 +0200
++++ vncviewer/Imakefile	2003-11-18 22:38:51.000000000 +0100
+@@ -10,17 +10,10 @@ XCOMM seems to cause problems on Digital
  DEFINES = -DMITSHM
  #endif
  

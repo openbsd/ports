@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xvnc_programs_Xserver_cfb_stipsprc32_s,v 1.1 2003/11/18 22:02:09 sturm Exp $
+--- Xvnc/programs/Xserver/cfb/stipsprc32.s.orig	2003-11-18 22:41:28.000000000 +0100
++++ Xvnc/programs/Xserver/cfb/stipsprc32.s	2003-11-18 22:41:38.000000000 +0100
+@@ -81,7 +81,7 @@ in this Software without prior written a
+ #define ForEachBits	LY4
+ #define NextBits	LY5
+ 
+-#if defined(SVR4) || ( defined(linux) && defined(__ELF__) )
++#if defined(SVR4) || defined(__ELF__)
+ #ifdef TETEXT
+ #define	_cfb32StippleStack	cfb32StippleStackTE
+ #else
