@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/30 16:17:34 espie Exp $
 
 COMMENT=	"irc client that uses Tcl/Tk"
 
 DISTNAME=	quirc-0.9.84
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.org/
@@ -17,7 +18,7 @@ WANTLIB=		ICE SM X11 c m stdc++ tcl84
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	tk84::x11/tk/8.4
+LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
