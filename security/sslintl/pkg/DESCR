@@ -1,0 +1,19 @@
+ssl-2.7-intl libcrypto and libssl libraries that includes the RSA algorithm.
+*This version is for use OUTSIDE THE USA ONLY.* 
+
+These two OpenBSD libraries (libssl and libcrypto, based on OpenSSL)
+implement many cryptographic functions which are used by OpenBSD
+programs like ssh, httpd, and isakmpd.  Due to patent licensing
+reasons, those libraries may not be included on the CD -- instead the
+base distribution contains libraries which have had the troublesome
+code removed -- the programs listed above will not be fully functional
+as a result.  Libraries which _include_ the troublesome routines are
+in this package, and may be used as long as you meet the follow
+(legal) criteria:
+	  (1) Outside the USA, no restrictions apply. Use ssl-2.7-intl
+	      (This package)
+	  (2) Inside the USA, non-commercial entities may the install
+	      the ssl-2.7-USA package which includes RSAREF (NOT this package).
+	  (3) Commercial entities in the USA are left in the cold, due to how 
+	      the licences work.  (This is how the USA crypto export policy
+	      feels to the rest of the world.)
