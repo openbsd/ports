@@ -1,31 +1,35 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Mar 25 21:34:10 2003
-+++ cgi-bin/openwebmail/openwebmail.pl	Mon Apr 14 13:00:01 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.3 2003/07/16 10:32:14 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Mon Jun 16 18:15:48 2003
++++ cgi-bin/openwebmail/openwebmail.pl	Wed Jul 16 18:00:18 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
-+#!/usr/bin/perl 
++#!/usr/bin/perl
  #################################################################
  #                                                               #
  # Open WebMail - Provides a web interface to user mailboxes     #
-@@ -18,7 +18,7 @@
+@@ -18,10 +18,10 @@
  #
  use vars qw($SCRIPT_DIR);
  if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
 -if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
-+if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
++if (!$SCRIPT_DIR && open(F, '/var/www/conf/openwebmail/openwebmail_path.conf')) {
     $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
  }
- if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
-@@ -51,10 +51,10 @@
+-if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
++if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /var/www/conf/openwebmail/openwebmail_path.conf !\n"; exit 0; }
+ push (@INC, $SCRIPT_DIR);
  
- clearvars();
+ $ENV{PATH} = ""; # no PATH should be needed
+@@ -57,10 +57,10 @@ $SIG{PIPE}=\&openwebmail_exit;	# for use
+ $SIG{TERM}=\&openwebmail_exit;	# for user stop
+ 
  if (!defined(%default_config_raw)) {	# read default only once if persistent mode
 -   readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
-+   readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
++   readconf(\%default_config, \%default_config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
  }
  %config=%default_config; %config_raw =%default_config_raw;
 -readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
++readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf") if (-f "/var/www/conf/openwebmail/openwebmail.conf");
+ readlang($config{'default_language'});	# so %lang... can be used in error msg
  
- # setuid is required if mailspool is located in system directory
- if ( $>!=0 &&
+ # check & create mapping table for solar/lunar, b2g, g2b convertion

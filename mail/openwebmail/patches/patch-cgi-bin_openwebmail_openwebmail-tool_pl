@@ -1,57 +1,116 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Mon Apr 14 14:50:36 2003
-+++ cgi-bin/openwebmail/openwebmail-tool.pl	Mon Apr 14 14:55:04 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.3 2003/07/16 10:32:14 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Mon Jun 16 18:15:48 2003
++++ cgi-bin/openwebmail/openwebmail-tool.pl	Wed Jul 16 18:00:18 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
  #
  # openwebmail-tool.pl - command tool for mail/event/notify/index...
  #
-@@ -7,7 +7,7 @@
- #
+@@ -7,17 +7,17 @@
+ #            
  use vars qw($SCRIPT_DIR);
  if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
 -if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
-+if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
++if (!$SCRIPT_DIR && open(F, '/var/www/conf/openwebmail/openwebmail_path.conf')) {
     $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
  }
  if (!$SCRIPT_DIR) { 
-@@ -210,10 +210,10 @@
-    }
+    print qq|\nOpen WebMail is unable to locate itself on this system,\n|.
+          qq|please put 'the path of openwebmail CGI directory' to\n|.
+-         qq|the first line of file /etc/openwebmail_path.conf\n\n|.
++         qq|the first line of file /var/www/conf/openwebmail/openwebmail_path.conf\n\n|.
+          qq|For example, if the script is\n\n|.
+-         qq|/usr/local/www/cgi-bin/openwebmail/openwebmail-tool.pl,\n\n|.
+-         qq|then the content of /etc/openwebmail_path.conf should be:\n\n|.
+-         qq|/usr/local/www/cgi-bin/openwebmail/\n\n|;
++         qq|/var/www/cgi-bin/openwebmail/openwebmail-tool.pl,\n\n|.
++         qq|then the content of /var/www/conf/openwebmail/openwebmail_path.conf should be:\n\n|.
++         qq|/var/www/cgi-bin/openwebmail/\n\n|;
+    exit 0;
+ }
+ push (@INC, $SCRIPT_DIR);
+@@ -211,13 +211,13 @@ sub init {
+    print "\n";
  
     if (!defined(%default_config_raw)) {	# read default only once if persistent mode
 -      readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
-+      readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf.default\n" if ($opt{'debug'});
++      readconf(\%default_config, \%default_config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf.default\n" if ($opt{'debug'});
     }
     %config=%default_config; %config_raw =%default_config_raw;
--   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+   readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-    if ($defaultdomain ne "") {
-       my $siteconf="$config{'ow_sitesconfdir'}/$defaultdomain";
-       readconf(\%config, \%config_raw, "$siteconf") if ( -f "$siteconf");
-@@ -494,10 +494,10 @@
- sub allusers {
-    my ($defaultdomain, $r_list)=@_;
+-   if (-f "$SCRIPT_DIR/etc/openwebmail.conf") {
+-      readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
++   if (-f "/var/www/conf/openwebmail/openwebmail.conf") {
++      readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
+    }
+ 
+    $logindomain=$default_logindomain||hostname();
+@@ -314,13 +314,13 @@ sub do_test {
+    print "\n";
+ 
     if (!defined(%default_config_raw)) {	# read default only once if persistent mode
 -      readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
-+      readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf.default\n" if ($opt{'debug'});
++      readconf(\%default_config, \%default_config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf.default\n" if ($opt{'debug'});
     }
     %config=%default_config; %config_raw =%default_config_raw;
--   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+   readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-    if ($defaultdomain ne "") {
-       my $siteconf="$config{'ow_sitesconfdir'}/$defaultdomain";
-       readconf(\%config, \%config_raw, "$siteconf") if ( -f "$siteconf");
-@@ -535,10 +535,10 @@
+-   if (-f "$SCRIPT_DIR/etc/openwebmail.conf") {
+-      readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
++   if (-f "/var/www/conf/openwebmail/openwebmail.conf") {
++      readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
+    }
+ 
+    $logindomain=$default_logindomain||hostname();
+@@ -572,13 +572,13 @@ sub allusers {
+    my $r_list=$_[0];
+ 
+    if (!defined(%default_config_raw)) {	# read default only once if persistent mode
+-      readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf.default\n" if ($opt{'debug'});
++      readconf(\%default_config, \%default_config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf.default\n" if ($opt{'debug'});
+    }
+    %config=%default_config; %config_raw =%default_config_raw;
+-   if (-f "$SCRIPT_DIR/etc/openwebmail.conf") {
+-      readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
+-      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
++   if (-f "/var/www/conf/openwebmail/openwebmail.conf") {
++      readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf");
++      print "D readconf /var/www/conf/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
+    }
+ 
+    $logindomain=$default_logindomain||hostname();
+@@ -628,19 +628,19 @@ sub usertool {
  
        %config=(); %config_raw=();
        if (!defined(%default_config_raw)) {	# read default only once if persistent mode
 -         readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
-+         readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
+-         print "D readconf $SCRIPT_DIR/etc/openwebmail.conf.default\n" if ($opt{'debug'});
++         readconf(\%default_config, \%default_config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
++         print "D readconf /var/www/conf/openwebmail/openwebmail.conf.default\n" if ($opt{'debug'});
        }
        %config=%default_config; %config_raw =%default_config_raw;
--      readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+      readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
+-      if (-f "$SCRIPT_DIR/etc/openwebmail.conf") {
+-         readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
+-         print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
++      if (-f "/var/www/conf/openwebmail/openwebmail.conf") {
++         readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf");
++         print "D readconf /var/www/conf/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
+       }
  
-       if ($loginname=~/^(.+)\@(.+)$/) {
-          ($loginuser, $logindomain)=($1, $2);
+       if ($config{'smtpauth'}) {	# load smtp auth user/pass
+-         readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/smtpauth.conf");
++         readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/smtpauth.conf");
+          if ($config{'smtpauth_username'} eq "" || $config{'smtpauth_password'} eq "") {
+-            die "Invalid username/password in $SCRIPT_DIR/etc/smtpauth.conf!";
++            die "Invalid username/password in /var/www/conf/openwebmail/smtpauth.conf!";
+          }
+       }
+ 

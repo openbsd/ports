@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/13 22:53:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/16 10:32:07 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-2.00
+DISTNAME=	openwebmail-2.10
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -18,11 +18,12 @@ MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
 		ftp://openwebmail.org/pub/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/old/
 EXTRACT_SUFX=	.tgz
-EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 
 RUN_DEPENDS=	::textproc/ispell \
 		:p5-Text-Iconv->=1.2:converters/p5-Text-Iconv \
-		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI
+		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI \
+		:p5-Compress-Zlib->=1.22:archivers/p5-Compress-Zlib \
+		:p5-Quota->=1.4.6:sysutils/p5-Quota
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2003/05/13 22:53:58 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/07/16 10:32:18 kevlo Exp $
 #
 # De-installation setup of openwebmail
 
@@ -18,7 +18,6 @@ do_notice()
     echo "| To completely deinstall the $1 package"
     echo "| you need to perform these steps as root:"
     echo "|"
-    echo "|       groupdel mail"	
     echo "|       rm -rf ${CONFIG_DIR}"
     echo "|"
     echo "| Do not do this if you plan on re-installing"
