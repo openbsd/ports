@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2003/05/26 14:26:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.50 2003/05/26 19:31:26 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -12,9 +12,7 @@ P=		vim62${REVISION}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unstable/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unstable/unix/ \
-		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unstable/unix/ \
-		ftp://ftp.is.co.za/applications/editors/vim/unstable/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unstable/unix/
+		ftp://ftp.berlin.de.vim.org/unstable/unix/
 MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
