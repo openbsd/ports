@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/01/13 04:56:18 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/10/18 00:37:18 naddy Exp $
 include/Fnlib.h
 include/Fnlib_types.h
 lib/libFnlib.a
@@ -254,3 +254,5 @@ share/fnlib_fonts/shinymetal/fontinfo
 @dirrm share/fnlib_fonts/shinymetal/45
 @dirrm share/fnlib_fonts/shinymetal
 @dirrm share/fnlib_fonts
+@cwd ${SYSCONFDIR}
+@extra fnrc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/05/14 15:03:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/10/18 00:37:19 naddy Exp $
 bin/wget
 @unexec install-info --delete --info-dir=%D/info %D/info/wget.info
 info/wget.info
@@ -85,3 +85,5 @@ share/locale/zh_TW/LC_MESSAGES/wget.mo
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale
 @dirrm share/examples/wget
+@cwd ${SYSCONFDIR}
+@extra wgetrc
