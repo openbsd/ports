@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/24 02:35:12 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/07 04:54:44 jcs Exp $
 
-DISTNAME=	dnstracer-1.2
+DISTNAME=	dnstracer-1.3
 CATEGORIES=	net
 NEED_VERSION=	1.504
 
