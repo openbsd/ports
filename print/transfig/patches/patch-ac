@@ -1,5 +1,5 @@
---- fig2dev/Imakefile.orig	Fri Jan 14 12:59:04 2000
-+++ fig2dev/Imakefile	Sat Jan 22 09:16:13 2000
+--- fig2dev/Imakefile.orig	Fri Jan 14 04:59:04 2000
++++ fig2dev/Imakefile	Sun Mar 12 03:39:47 2000
 @@ -27,7 +27,7 @@
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.  This will be made automatic in the future.
@@ -28,22 +28,20 @@
  #ifdef USEXPM
  XPMLIBDIR = $(USRLIBDIR)
 -XPMINC = -I/usr/include/X11
-+XPMINC = -I$(INCDIR)/X11
++XPMINC = -I/usr/X11R6/include/X11 -I$(INCDIR)/X11
  #endif
  
  XCOMM For Linux machines or any machines that have a separate library for
-@@ -87,8 +87,8 @@
- 
+@@ -88,7 +88,7 @@
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
--JPEGLIBDIR = /usr/local/lib
+ JPEGLIBDIR = /usr/local/lib
 -JPEGINCDIR = /usr/include/X11
-+JPEGLIBDIR = %%LOCALBASE%%/lib
-+JPEGINCDIR = %%LOCALBASE%%/include
++JPEGINCDIR = /usr/local/include
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINCDIR = $(JPEGLIBDIR)
-@@ -127,12 +127,12 @@
+@@ -127,23 +127,23 @@
  
  XCOMM Uncomment the next line if you want use Japanese (i18n) on xfig.
  
@@ -58,13 +56,36 @@
 +I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR='\"$(FIG2DEV_LIBDIR)\"'
  
  install::
- 	[ -d $(FIG2DEV_LIBDIR) ] || mkdir $(FIG2DEV_LIBDIR)
-@@ -177,7 +177,7 @@
- DUSEJPEG = -DUSE_JPEG
+-	[ -d $(FIG2DEV_LIBDIR) ] || mkdir $(FIG2DEV_LIBDIR)
+-	$(INSTALL) -c dev/japanese.ps $(FIG2DEV_LIBDIR)
+-	( cd $(FIG2DEV_LIBDIR); \
++	[ -d $(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
++	$(INSTALL) -c dev/japanese.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
++	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
+ 	  rm -f ja.ps ja_JP.ps ja_JP.ujis.ps ja_JP.eucJP.ps ja_JP.EUC.ps; \
+ 	  ln -s japanese.ps ja.ps; ln -s japanese.ps ja_JP.ps; \
+ 	  ln -s japanese.ps ja_JP.ujis.ps; ln -s japanese.ps ja_JP.eucJP.ps; \
+ 	  ln -s japanese.ps ja_JP.EUC.ps )
+-	$(INSTALL) -c  dev/korean.ps $(FIG2DEV_LIBDIR)
+-	( cd $(FIG2DEV_LIBDIR); \
++	$(INSTALL) -c  dev/korean.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
++	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
+ 	  rm -f ko.ps ko_KR.ps ko_KR.ujis.ps ko_KR.eucKR.ps ko_KR.EUC.ps; \
+ 	  ln -s korean.ps ko.ps; ln -s korean.ps ko_KR.ps; \
+ 	  ln -s korean.ps ko_KR.ujis.ps; ln -s korean.ps ko_KR.eucKR.ps; \
+@@ -258,11 +258,11 @@
+ XCOMM Install the tk bitmaps here
+ install::
+ 	@(cd bitmaps ; \
+-	if [ -d $(XFIGLIBDIR)/bitmaps ]; then set +x; \
+-	else (set -x; $(MKDIRHIER) $(XFIGLIBDIR)/bitmaps ); fi ; \
+-	echo Copying bitmap files for tk to $(XFIGLIBDIR)/bitmaps ; \
++	if [ -d $(DESTDIR)$(XFIGLIBDIR)/bitmaps ]; then set +x; \
++	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR)/bitmaps ); fi ; \
++	echo Copying bitmap files for tk to $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	for f in * ; do \
+-	      $(INSTALL) -c $$f $(XFIGLIBDIR)/bitmaps ; \
++	      $(INSTALL) -c $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	done) ; 
  
- #ifdef USEINSTALLEDJPEG
--JPEGLIBDIR = /usr/local/lib
-+JPEGLIBDIR = %%LOCALBASE%%/lib
- JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
- #else
- XCOMM this is relative to this directory (transfig/fig2dev)
+ InstallScript(fig2ps2tex,$(BINDIR))
