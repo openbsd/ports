@@ -1,8 +1,7 @@
-# $OpenBSD: patch-XmysqlDB.c,v 1.1 2000/04/09 09:13:22 turan Exp $
-
+$OpenBSD: patch-XmysqlDB.c,v 1.2 2002/05/26 15:09:07 naddy Exp $
 --- XmysqlDB.c.orig	Wed Oct 21 05:05:07 1998
-+++ XmysqlDB.c	Fri Dec 25 16:27:36 1998
-@@ -26,7 +26,7 @@
++++ XmysqlDB.c	Sun May 26 16:59:24 2002
+@@ -26,7 +26,7 @@ int XmysqlDB(int dbaction, int results_t
    unsigned long rows_affected = 0;
    char *semicolon = 0;
    char *pos = 0, *r, *r_end;
