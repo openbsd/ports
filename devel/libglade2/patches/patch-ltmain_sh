@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 18:27:45 todd Exp $
---- ltmain.sh.orig	Mon May 27 06:33:15 2002
-+++ ltmain.sh	Fri Jul 19 22:35:03 2002
+$OpenBSD: patch-ltmain_sh,v 1.2 2003/06/17 16:13:32 marcm Exp $
+--- ltmain.sh.orig	Sun May 26 21:33:15 2002
++++ ltmain.sh	Fri Jun 13 14:40:01 2003
 @@ -1073,6 +1073,17 @@ compiler."
  	continue
  	;;
@@ -19,7 +19,17 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 18:27:45 todd Exp $
        -module)
  	module=yes
  	continue
-@@ -4526,40 +4537,6 @@ relink_command=\"$relink_command\""
+@@ -1530,6 +1541,9 @@ compiler."
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  continue
++	  ;;
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
+@@ -4526,40 +4540,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
