@@ -1,0 +1,25 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/07/17 03:14:13 kevlo Exp $
+#
+# mycalendar de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/var/www}
+CGI_DIR=${PREFIX}/cgi-bin/calendar
+
+if [ -d $CGI_DIR ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package"
+    echo "| you need to perform this step as root:"
+    echo "|"
+    echo "|       rm -rf ${CGI_DIR}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing"
+    echo "| $1 at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
