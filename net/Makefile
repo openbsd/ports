@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2002/01/24 20:32:01 jsyn Exp $
+# $OpenBSD: Makefile,v 1.191 2002/01/27 05:04:04 dugsong Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += kxicq2
      SUBDIR += ldistfp
      SUBDIR += lftp
+     SUBDIR += libdnet
      SUBDIR += libnet
      SUBDIR += libnids
      SUBDIR += libst
