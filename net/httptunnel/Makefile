@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 23:00:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/20 22:31:01 jakob Exp $
 
 DISTNAME=		httptunnel-2.0
 CATEGORIES=     	net
@@ -15,5 +15,6 @@ PERMIT_DISTFILES_FTP=	yes
 
 SEPARATE_BUILD=		concurrent
 GNU_CONFIGURE=		yes
+FAKE=			yes
 
 .include <bsd.port.mk>

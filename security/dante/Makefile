@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 23:00:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/20 22:35:14 jakob Exp $
 
 DISTNAME=	dante-1.1.1
 CATEGORIES=	security
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	YES
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 
 GNU_CONFIGURE=	yes
+FAKE=		yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/socks
