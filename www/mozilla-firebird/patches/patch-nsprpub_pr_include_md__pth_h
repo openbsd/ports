@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_include_md__pth_h,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- nsprpub/pr/include/md/_pth.h.orig	Tue Jan  7 08:29:57 2003
-+++ nsprpub/pr/include/md/_pth.h	Sun May 18 04:47:20 2003
+$OpenBSD: patch-nsprpub_pr_include_md__pth_h,v 1.2 2004/01/18 11:51:10 wilfried Exp $
+--- nsprpub/pr/include/md/_pth.h.orig	2003-01-07 16:29:57.000000000 +0100
++++ nsprpub/pr/include/md/_pth.h	2003-12-12 12:41:30.000000000 +0100
 @@ -248,7 +248,10 @@
   */
  #define PT_PRIO_MIN            1

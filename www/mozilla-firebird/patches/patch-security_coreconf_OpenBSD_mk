@@ -1,6 +1,6 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- security/coreconf/OpenBSD.mk.orig	Fri May 17 21:24:14 2002
-+++ security/coreconf/OpenBSD.mk	Sun May 18 04:48:24 2003
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.2 2004/01/18 11:51:10 wilfried Exp $
+--- security/coreconf/OpenBSD.mk.orig	2002-05-18 05:24:14.000000000 +0200
++++ security/coreconf/OpenBSD.mk	2003-12-12 12:41:30.000000000 +0100
 @@ -46,6 +46,13 @@ OS_REL_CFLAGS		= -Di386
  CPU_ARCH		= x86
  endif

@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_linking_prlink_c,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- nsprpub/pr/src/linking/prlink.c.orig	Tue Mar 25 18:36:09 2003
-+++ nsprpub/pr/src/linking/prlink.c	Sun May 18 04:47:34 2003
+$OpenBSD: patch-nsprpub_pr_src_linking_prlink_c,v 1.2 2004/01/18 11:51:10 wilfried Exp $
+--- nsprpub/pr/src/linking/prlink.c.orig	2003-03-26 02:36:09.000000000 +0100
++++ nsprpub/pr/src/linking/prlink.c	2003-12-12 12:41:30.000000000 +0100
 @@ -162,8 +162,8 @@ struct _imcb *IAC$GL_IMAGE_LIST = NULL;
   * On these platforms, symbols have a leading '_'.
   */

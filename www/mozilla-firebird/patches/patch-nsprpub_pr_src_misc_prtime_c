@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prtime_c,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- nsprpub/pr/src/misc/prtime.c.orig	Wed Feb 26 17:01:02 2003
-+++ nsprpub/pr/src/misc/prtime.c	Sun May 18 04:48:05 2003
+$OpenBSD: patch-nsprpub_pr_src_misc_prtime_c,v 1.2 2004/01/18 11:51:10 wilfried Exp $
+--- nsprpub/pr/src/misc/prtime.c.orig	2003-02-27 01:01:02.000000000 +0100
++++ nsprpub/pr/src/misc/prtime.c	2003-12-12 12:41:30.000000000 +0100
 @@ -1666,7 +1666,7 @@ PR_FormatTime(char *buf, int buflen, con
   */
  

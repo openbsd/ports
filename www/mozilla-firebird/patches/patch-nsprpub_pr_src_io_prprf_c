@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_io_prprf_c,v 1.1 2003/08/18 14:22:13 wilfried Exp $
---- nsprpub/pr/src/io/prprf.c.orig	2003-08-18 08:19:34.000000000 -0500
-+++ nsprpub/pr/src/io/prprf.c	2003-08-18 08:20:10.000000000 -0500
+$OpenBSD: patch-nsprpub_pr_src_io_prprf_c,v 1.2 2004/01/18 11:51:10 wilfried Exp $
+--- nsprpub/pr/src/io/prprf.c.orig	2003-02-27 00:53:42.000000000 +0100
++++ nsprpub/pr/src/io/prprf.c	2003-12-12 12:41:30.000000000 +0100
 @@ -51,7 +51,9 @@
  ** Note: on some platforms va_list is defined as an array,
  ** and requires array notation.
