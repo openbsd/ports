@@ -1,0 +1,12 @@
+$OpenBSD: patch-Input_mikmod_drv_xmms_c,v 1.1 2002/04/09 23:13:30 naddy Exp $
+--- Input/mikmod/drv_xmms.c.orig	Wed Apr 10 00:39:37 2002
++++ Input/mikmod/drv_xmms.c	Wed Apr 10 00:39:51 2002
+@@ -65,7 +65,7 @@ static BOOL xmms_Init(void)
+ 	if (!(audiobuffer = (SBYTE *) g_malloc0(buffer_size)))
+ 		return 1;
+ 	
+-	fmt = (md_mode & DMODE_16BITS) ? FMT_S16_LE : FMT_U8;
++	fmt = (md_mode & DMODE_16BITS) ? FMT_S16_NE : FMT_U8;
+ 	nch = (md_mode & DMODE_STEREO) ? 2 : 1;
+ 
+ 	if (audio_open)
