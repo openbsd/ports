@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Mar 24 20:32:01 2000
++++ Makefile.in	Fri Mar 24 20:36:01 2000
+@@ -14,7 +14,7 @@
+ LANGUAGE=-DENGLISH
+ # LANGUAGE=-DSPANISH
+ CFGFILE=-DDFLT_CONFIG_FILE=\"@sysconfdir@/queso.conf\" 
+-CFLAGS=-O2 -pipe $(WARNINGS) $(LANGUAGE) $(CFGFILE) @CFLAGS@  
++CFLAGS+=-pipe $(WARNINGS) $(LANGUAGE) $(CFGFILE) @CFLAGS@  
+ LDFLAGS+=-s
+ ######################################################
+ DAEMONMODE=4755

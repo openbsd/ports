@@ -1,4 +1,6 @@
+lib/queso/queso.conf.sample
 man/man1/queso.1
 sbin/queso
 share/doc/queso/Documentation.txt
+@dirrm lib/queso
 @dirrm share/doc/queso
