@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/06/09 19:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/07/08 10:53:21 espie Exp $
 
 COMMENT=	"ICQ clone for UNIX"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt::x11/qt
+LIB_DEPENDS=	qt.1.::x11/qt
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
