@@ -1,0 +1,13 @@
+Dvipdfm is a command-line DVI to PDF translator.
+
+Its features include TeX \special's that approximate the functionality
+of the PostScript pdfmarks used by Adobe Acrobat Distiller, the
+ability to include PDF files and JPEG files as embedded images,
+support for both Type1 and PK fonts, support for arbitrary linear
+graphics transformations, a color stack accessible via \special's,
+partial font embedding and stream compression for reduced output
+file size, native, portable graphics via TPIC \specials, balanced
+page and destination trees for improved reader access on very large
+document files.
+
+WWW: ${HOMEPAGE}

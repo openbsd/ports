@@ -1,0 +1,14 @@
+$OpenBSD: patch-config,v 1.1.1.1 2001/01/12 23:21:07 avsm Exp $
+--- config.orig	Thu Jan 11 23:16:28 2001
++++ config	Thu Jan 11 23:17:18 2001
+@@ -15,9 +15,7 @@
+ % D "/usr/local/bin/pstill -c -o %o %i"
+ 
+ % The following line works with GhostScript
+-% D "gs -q -sPAPERSIZE=ledger -sDEVICE=pdfwrite -dCompatibilityLevel=1.2 -dUseFlateCompression=true -sOutputFile=%o %i -c quit"
+-% The following line works on compressed or uncompressed postscript with GhostScript
+-D "zcat -f %i | gs -q -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=1.2 -dUseFlateCompression=true -sOutputFile=%o - -c quit"
++D "gs -q -sPAPERSIZE=ledger -sDEVICE=pdfwrite -dCompatibilityLevel=1.2 -dUseFlateCompression=true -sOutputFile=%o %i -c quit"
+ 
+ % The following line works with Adobe Acrobat Distiller
+ % D "/usr/local/bin/distill -quiet -pairs %i %o"

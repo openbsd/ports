@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 23:21:07 avsm Exp $
+bin/dvipdfm
+bin/dvipdft
+bin/ebb
+share/texmf/dvipdfm/base
+share/texmf/dvipdfm/config/cmr.map
+share/texmf/dvipdfm/config/config
+share/texmf/dvipdfm/config/lw35urw.map
+share/texmf/dvipdfm/config/lw35urwa.map
+share/texmf/dvipdfm/config/psbase14.map
+share/texmf/dvipdfm/config/t1fonts.map
+@exec mv %D/share/texmf/tex/latex/graphics/dvipdfm.def %D/share/texmf/tex/latex/graphics/dvipdfm.def.old
+share/texmf/tex/latex/graphics/dvipdfm.def
+@unexec mv %D/share/texmf/tex/latex/graphics/dvipdfm.def.old %D/share/texmf/tex/latex/graphics/dvipdfm.def
+@dirrm share/texmf/dvipdfm/config
+@dirrm share/texmf/dvipdfm
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
