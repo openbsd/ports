@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/01 08:40:37 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/01 09:05:57 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 DISTNAME=	epic4pre2.507
@@ -29,6 +29,7 @@ FAKE_FLAGS=	IP="${WRKINST}" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/share/epic && tar -zxf ${FULLDISTDIR}/epic4pre2-help.tar.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 bin/epic
 bin/epic-EPIC4pre2.507
 libexec/wserv-epic
+man/man1/epic.1
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
 share/epic/help/1_General/bye
