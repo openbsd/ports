@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2000/06/01 22:34:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.44 2000/06/11 08:44:18 fgsch Exp $
 
 DISTNAME=	gimp-1.1.23
 CATEGORIES=	graphics
-NEED_VERSION=	1.230
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.23/
@@ -22,8 +22,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		tiff.35::graphics/tiff
 
 USE_GMAKE=	Yes
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

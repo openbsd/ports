@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/04/05 11:54:45 espie Exp $
-# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
-#
+# $OpenBSD: Makefile,v 1.21 2000/06/11 08:42:37 fgsch Exp $
+
 DISTNAME=		blackbox-0.51.3.1
 CATEGORIES=		x11
-NEED_VERSION=		1.251
+NEED_VERSION=		1.301
 MASTER_SITES=		ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
 			ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
@@ -17,9 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-GNU_CONFIGURE=		Yes
-
-FAKE=			Yes
+CONFIGURE_STYLE=	gnu
 
 FLAVORS=kde
 .if defined(WITH_KDE) && ${WITH_KDE:U} == Yes

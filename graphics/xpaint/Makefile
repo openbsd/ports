@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/05/30 09:28:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/11 08:47:54 fgsch Exp $
 
 DISTNAME=	xpaint-2.5.7
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.230
+NEED_VERSION=	1.301
 MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/
 
 MAINTAINER=	angelos@openbsd.org
@@ -17,9 +17,7 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		png.1.6::graphics/png
 
-FAKE=		Yes
-
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 
 WRKDIST=	${WRKDIR}/xpaint
 
