@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/29 03:25:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2003/01/22 16:37:45 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
+BROKEN=		"unusable, only eats cpu; probably thread emulation problem"
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.4"
 VERSION=	1.4.1_01
