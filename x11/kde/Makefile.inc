@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1 2002/04/10 01:24:38 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2002/04/10 08:45:45 espie Exp $
 NEED_VERSION+=	1.504
-DIST_SUBDIR=	kde
+DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR?=	stable/${VERSION}/src

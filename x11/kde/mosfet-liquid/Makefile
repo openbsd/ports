@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2002/04/10 01:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/04/10 08:45:45 espie Exp $
 V=0.7
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.483
+NEED_VERSION=		1.522
 COMMENT=	"KDE style engine"
 
 HOMEPAGE=	http://www.mosfet.org/liquid.html
