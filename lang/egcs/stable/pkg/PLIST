@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2002/05/27 16:58:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/05/29 00:30:54 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -63,7 +63,6 @@ info/gccint.info-6
 info/gccint.info-7
 info/gccint.info-8
 info/gccint.info-9
-lib/fpic/libfrtbegin.a
 lib/fpic/libiberty.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/collect2
@@ -80,10 +79,7 @@ lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/varargs.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/libgcc.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/specs
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/tradcpp0
-lib/libfrtbegin.a
-lib/libg2c.la
 lib/libiberty.a
-lib/libobjc.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
@@ -97,6 +93,7 @@ man/man1/gcov.1
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}
 @dirrm lib/gcc-lib
+@exec mkdir -p %D/lib/fpic
 @dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info

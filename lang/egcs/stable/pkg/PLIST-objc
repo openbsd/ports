@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-objc,v 1.5 2002/05/27 16:58:29 espie Exp $
+@comment $OpenBSD: PLIST-objc,v 1.6 2002/05/29 00:30:54 espie Exp $
 @pkgcfl egcs-*-core
 lib/fpic/libobjc.a
 lib/fpic/libobjc.la
@@ -15,4 +15,5 @@ lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/sarray.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/thr.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/typedstream.h
 lib/libobjc.la
+lib/libobjc.a
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc
