@@ -1,0 +1,34 @@
+$OpenBSD: patch-unixserial_c,v 1.1 2002/07/10 14:24:47 ian Exp $
+
+--- libsock/unixserial.c.orig	Mon Aug  6 11:39:00 2001
++++ libsock/unixserial.c	Mon Aug  6 11:42:01 2001
+@@ -156,6 +156,13 @@
+ 
+ 	int i;
+ 
++	/* Here we need a workaround for BSD USB device used with newer
++	   Handspring devices (namely Platinum, Prism, Edge and Treo) */
++
++#define maxretries 100
++	int retries;
++	int rc;
++
+ #ifndef SGTTY
+ 	struct termios tcn;
+ #else
+@@ -166,6 +173,15 @@
+ 		tty = getenv("PILOTPORT");
+ 	if (!tty)
+ 		tty = "<Null>";
++
++	for (retries = 0 ; retries <= maxretries ; retries++ ) {
++	  if ((rc = open(tty, O_RDWR | O_NONBLOCK)) == -1) {
++	    usleep(50000);
++	  } else {
++	    ps->mac->fd = rc;
++	    break;
++	  }
++	}
+ 
+ 	if ((ps->mac->fd = open(tty, O_RDWR | O_NONBLOCK)) == -1) {
+ 		return -1;	/* errno already set */
