@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2003/04/10 18:43:53 jsyn Exp $
 
-COMMENT=	socks client and server
+COMMENT=	"SOCKS client and server"
 
 DISTNAME=	dante-1.1.13
 CATEGORIES=	security
