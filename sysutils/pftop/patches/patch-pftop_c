@@ -1,6 +1,6 @@
---- pftop.c.orig	Tue Sep 10 20:58:15 2002
-+++ pftop.c	Mon Nov 25 16:03:29 2002
-@@ -1439,8 +1439,8 @@
+--- pftop.c.orig	Tue Sep 10 12:58:15 2002
++++ pftop.c	Wed Jan  1 23:21:59 2003
+@@ -1439,8 +1439,8 @@ tb_print_fromto(struct pf_rule_addr *src
  	    PF_AZERO(&src->addr, AF_INET6) &&
  	    PF_AZERO(&dst->addr, AF_INET6) &&
  #endif
@@ -11,7 +11,7 @@
  	    !src->port_op && !dst->port_op)
  		tbprintf("all ");
  	else {
-@@ -1456,15 +1456,15 @@
+@@ -1456,15 +1456,15 @@ tb_print_fromto(struct pf_rule_addr *src
  #else
  		if (PF_AZERO(&src->addr, AF_INET6) &&
  #endif
@@ -30,7 +30,7 @@
  #endif
  			tbprintf(" ");
  		}
-@@ -1485,15 +1485,15 @@
+@@ -1485,15 +1485,15 @@ tb_print_fromto(struct pf_rule_addr *src
  #else
  		if (PF_AZERO(&dst->addr, AF_INET6) &&
  #endif
