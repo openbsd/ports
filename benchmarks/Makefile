@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/22 02:17:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/04 15:33:29 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += netperf
      SUBDIR += netpipe
      SUBDIR += pear-Benchmark
+     SUBDIR += randread
      SUBDIR += tcpblast
      SUBDIR += ubench
      SUBDIR += xengine
