@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Thu Mar  7 14:00:11 2002
-+++ ltmain.sh	Thu Mar  7 14:10:14 2002
-@@ -1021,15 +1021,18 @@
+--- ltmain.sh.orig	Wed Jan  2 10:57:58 2002
++++ ltmain.sh	Mon Mar 11 11:09:26 2002
+@@ -1021,15 +1021,18 @@ compiler."
  	;;
  
        -l*)
@@ -26,7 +26,7 @@
  	    ;;
  	  esac
  	fi
-@@ -1037,6 +1040,17 @@
+@@ -1037,6 +1040,17 @@ compiler."
  	continue
  	;;
  
@@ -44,7 +44,7 @@
        -module)
  	module=yes
  	continue
-@@ -2405,6 +2419,9 @@
+@@ -2405,6 +2419,9 @@ compiler."
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
  	    ;;
@@ -54,7 +54,7 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-@@ -4412,40 +4429,6 @@
+@@ -4412,40 +4429,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
