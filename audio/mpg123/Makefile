@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/10 17:39:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/11 17:26:25 espie Exp $
 
 DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
@@ -8,9 +8,11 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+MASTER_SITES1=	http://www.unix-ag.org/Linux-Alpha/Packages/
 
 
-PATCHFILES=	mpg123-059r-v6-20000217.diff.gz:0
+PATCHFILES=	mpg123-059r-v6-20000217.diff.gz:0 \
+		l3.diff.gz:1
 PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.mpg123.de/
