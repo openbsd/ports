@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2002/12/10 00:13:09 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.17 2003/03/11 21:10:44 jakob Exp $
 lib/ethereal/plugins/${VERSION}/coseventcomm.a
 lib/ethereal/plugins/${VERSION}/coseventcomm.la
 lib/ethereal/plugins/${VERSION}/coseventcomm.so
@@ -11,6 +11,9 @@ lib/ethereal/plugins/${VERSION}/docsis.so
 lib/ethereal/plugins/${VERSION}/gryphon.a
 lib/ethereal/plugins/${VERSION}/gryphon.la
 lib/ethereal/plugins/${VERSION}/gryphon.so
+lib/ethereal/plugins/${VERSION}/megaco.a
+lib/ethereal/plugins/${VERSION}/megaco.la
+lib/ethereal/plugins/${VERSION}/megaco.so
 lib/ethereal/plugins/${VERSION}/mgcp.a
 lib/ethereal/plugins/${VERSION}/mgcp.la
 lib/ethereal/plugins/${VERSION}/mgcp.so
