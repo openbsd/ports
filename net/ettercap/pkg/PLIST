@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/12 07:58:35 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/19 04:46:57 obecian Exp $
 bin/ettercap
+man/man8/ettercap.8
 share/doc/ettercap/AUTHORS
 share/doc/ettercap/CHANGELOG
 share/doc/ettercap/COPYING
@@ -8,9 +9,25 @@ share/doc/ettercap/KNOWN-BUGS
 share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/README.PLUGINS.fr
+share/doc/ettercap/README.PLUGINS.it
+share/doc/ettercap/README.fr
+share/doc/ettercap/README.it
 share/doc/ettercap/THANKS
 share/doc/ettercap/TODO
-man/man8/ettercap.8
+share/doc/ettercap/ettercap.fr.8.in
+share/ettercap/ec_banshee.so
+share/ettercap/ec_dummy.so
+share/ettercap/ec_golem.so
+share/ettercap/ec_leech.so
+share/ettercap/ec_lurker.so
+share/ettercap/ec_ooze.so
+share/ettercap/ec_shadow.so
+share/ettercap/ec_spectre.so
+share/ettercap/ec_triton.so
+share/ettercap/etter.conf
+share/ettercap/etter.filter
+share/ettercap/etter.ssl.crt
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
 @dirrm share/ettercap

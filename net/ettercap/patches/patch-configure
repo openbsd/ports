@@ -1,14 +1,20 @@
---- configure.orig	Thu Apr 12 00:42:59 2001
-+++ configure	Thu Apr 12 00:43:38 2001
-@@ -9,9 +9,9 @@
- 
- # Defaults:
- ac_help=
+--- configure.orig	Wed Jul 18 16:28:03 2001
++++ configure	Wed Jul 18 16:28:35 2001
+@@ -80,7 +80,7 @@ exec 6>&1
+ #
+ # Initializations.
+ #
 -ac_default_prefix=/usr/local
 +ac_default_prefix=${LOCALBASE}
- # Any additions from configure.in:
+ cross_compiling=no
+ subdirs=
+ MFLAGS= MAKEFLAGS=
+@@ -102,7 +102,7 @@ ac_tr_sh="sed y%*+%pp%;s%[^_$ac_cr_alnum
+ ac_tr_cpp="sed y%*$ac_cr_az%P$ac_cr_AZ%;s%[^_$ac_cr_alnum]%_%g"
+ 
+ ac_unique_file="src/ec_main.c"
 -ac_default_prefix=/usr/local
-+#ac_default_prefix=/usr/local
- ac_help="$ac_help
-   --enable-ncurses        enable the ncurses interface."
- ac_help="$ac_help
++ac_default_prefix=${LOCALBASE}
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Apr 12 00:42:55 2001
-+++ Makefile.in	Thu Apr 12 00:43:56 2001
+--- Makefile.in.orig	Wed Jul 18 21:34:43 2001
++++ Makefile.in	Wed Jul 18 21:36:27 2001
 @@ -17,7 +17,7 @@ exec_prefix = @exec_prefix@
  BINDIR   = @bindir@
  MANDIR   = @mandir@
@@ -9,3 +9,12 @@
  DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
  
  DEBUG    = @DEBUG@
+@@ -45,7 +45,7 @@ all: @PROG@
+ missing: $(MISSDESTS)
+ 
+ 
+-install: @PROG@ strip
++install: @PROG@ plug-ins_install strip
+ 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 700 $(PROG) $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(SHAREDIR)
