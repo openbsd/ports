@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/09 23:26:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/12 04:27:05 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -27,6 +27,7 @@ USE_GMAKE=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+=	X11BASE="${X11BASE}"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-joystick \
 		 --disable-pthread-sem \
