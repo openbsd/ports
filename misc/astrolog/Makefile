@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/02/04 23:12:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/03/31 14:27:18 sturm Exp $
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
+USE_X11=	Yes
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 WRKDIST=	${WRKDIR}
