@@ -1,0 +1,24 @@
+$OpenBSD: patch-ra_sh,v 1.1 2005/03/26 16:36:26 alek Exp $
+--- ra.sh.orig	Thu Feb 10 13:17:57 2005
++++ ra.sh	Wed Mar  9 11:44:29 2005
+@@ -23,7 +23,7 @@
+ SERVER="_RADMIND_HOST"
+ TLSLEVEL="_RADMIND_AUTHLEVEL"
+ EDITOR=${EDITOR:-vi}
+-DEFAULTS="/etc/defaults/radmind"
++DEFAULTS="SYSCONFDIR/defaults/radmind"
+ FSDIFFROOT="."
+ FLAG="_RADMIND_DIR/client/.RadmindRunning"
+ CHECKEDOUT="_RADMIND_DIR/client/.CheckedOut"
+@@ -51,9 +51,9 @@ FTMP="${TMPDIR}/fsdiff.out"
+ 
+ # different systems use different default dirs
+ if [ ! -f "${DEFAULTS}" ]; then
+-    DEFAULTS="/etc/default/radmind"
++    DEFAULTS="SYSCONFDIR/default/radmind"
+     if [ ! -f "${DEFAULTS}" ]; then
+-	DEFAULTS="/etc/radmind.defaults"
++	DEFAULTS="SYSCONFDIR/radmind.defaults"
+     fi
+ fi
+ 

@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2005/03/26 16:36:26 alek Exp $
+--- Makefile.in.orig	Mon Jan 24 20:24:11 2005
++++ Makefile.in	Sat Mar 26 16:59:09 2005
+@@ -11,6 +11,7 @@ exec_prefix=@exec_prefix@
+ MANDIR=@mandir@
+ BINDIR=@bindir@
+ SBINDIR=@sbindir@
++SYSCONFDIR=@sysconfdir@
+ 
+ # For server
+ RADMINDDIR=@radminddir@
+@@ -82,7 +83,7 @@ TWHICH_OBJ=     version.o twhich.o argca
+                 hardlink.o cksum.o base64.o pathcmp.o radstat.o applefile.o \
+ 		list.o
+ 
+-all : ${TARGETS}
++all : ${TARGETS} rash
+ 
+ version.o : version.c
+ 	${CC} ${CFLAGS} \
+@@ -223,6 +224,7 @@ rash : FRC
+ 	    -e 's@_RADMIND_DIR@${RADMINDDIR}@g' \
+ 	    -e 's@_RADMIND_MAIL_DOMAIN@${RADMIND_MAIL_DOMAIN}@g' \
+ 	    -e 's@_RADMIND_VERSION@${VERSION}@g' \
++	    -e 's@SYSCONFDIR@${SYSCONFDIR}@g' \
+ 	    ${srcdir}/ra.sh > tmp/ra.sh; 
+ 
+ man : FRC
+@@ -240,7 +242,7 @@ man : FRC
+ 		${srcdir}/man/$$i > tmp/man/$$i; \
+ 	done
+ 
+-install	: all man rash
++install	: ${TARGETS} man
+ 	-mkdir -p ${exec_prefix}
+ 	-mkdir -p ${SBINDIR}
+ 	${INSTALL} -m 0755 -c radmind ${SBINDIR}/
+@@ -267,6 +269,7 @@ install	: all man rash
+ 	-mkdir -p ${PREAPPLYDIR}
+ 	-mkdir -p ${POSTAPPLYDIR}
+ 	-mkdir -p ${CERTDIR}
++	rm -rf tmp/
+ 
+ PKGNAME=RadmindTools-${VERSION}
+ PKGDIR=tmp/RadmindToolsInstaller

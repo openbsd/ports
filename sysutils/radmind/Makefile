@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/01/28 20:28:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/26 16:36:26 alek Exp $
 
 COMMENT=	"remote administration software"
 
-DISTNAME=      	radmind-1.4.1
+DISTNAME=      	radmind-1.5.0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rsug.itd.umich.edu/software/radmind/
@@ -22,7 +22,5 @@ EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS+=--with-radminddir='$${${DESTDIRNAME}}/var/radmind'
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/libsnet
-
-ALL_TARGET=	all man
 
 .include <bsd.port.mk>
