@@ -1,48 +1,64 @@
-$OpenBSD: patch-configure,v 1.3 2001/06/03 22:03:56 brad Exp $
---- configure.orig	Thu Jul 20 19:26:32 2000
-+++ configure	Sun Jun  3 23:25:42 2001
-@@ -2882,7 +2882,7 @@ else
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -5878,7 +5878,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+$OpenBSD: patch-configure,v 1.4 2001/08/24 01:59:19 naddy Exp $
+--- configure.orig	Fri Aug 10 13:45:12 2001
++++ configure	Wed Aug 22 21:16:03 2001
+@@ -5789,9 +5789,9 @@ You may need to install a readline \"dev
+ Configuring server without readline support." 1>&2
+ 	    fi
+ 	else
+-	    	    echo $ac_n "checking for rl_completion_matches in -lreadline""... $ac_c" 1>&6
+-echo "configure:5794: checking for rl_completion_matches in -lreadline" >&5
+-ac_lib_var=`echo readline'_'rl_completion_matches | sed 'y%./+-%__p_%'`
++	    	    echo $ac_n "checking for completion_matches in -lreadline""... $ac_c" 1>&6
++echo "configure:5794: checking for completion_matches in -lreadline" >&5
++ac_lib_var=`echo readline'_'completion_matches | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-   ac_save_LIBS="$LIBS"
--LIBS="-lreadline $SERVER_LIBS $LIBS"
-+LIBS="-lreadline -lcurses $SERVER_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 5884 "configure"
- #include "confdefs.h"
-@@ -5906,7 +5906,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  SERVER_LIBS="-lreadline $SERVER_LIBS"
-+  SERVER_LIBS="-lreadline -lcurses $SERVER_LIBS"
- 	     cat >> confdefs.h <<EOF
- #define HAVE_LIBREADLINE 1
+@@ -5803,10 +5803,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char rl_completion_matches();
++char completion_matches();
+ 
+ int main() {
+-rl_completion_matches()
++completion_matches()
+ ; return 0; }
  EOF
-@@ -5994,7 +5994,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+ if { (eval echo configure:5813: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -5830,7 +5830,7 @@ else
+ have_readline_lib=0
+ fi
+ 
+-	    if test "$have_readline_lib" = "0"; then
++	    if test "$have_readline_lib" = "1"; then
+ 	        										
+ 		echo $ac_n "checking for initscr in -ltermlib""... $ac_c" 1>&6
+ echo "configure:5837: checking for initscr in -ltermlib" >&5
+@@ -5994,9 +5994,9 @@ fi
+ 
+ 
+ 		if test x"$HAVE_TERMCAP" != "x"; then
+-		    		    		    		    echo $ac_n "checking for rl_filename_completion_function in -lreadline""... $ac_c" 1>&6
+-echo "configure:5999: checking for rl_filename_completion_function in -lreadline" >&5
+-ac_lib_var=`echo readline'_'rl_filename_completion_function | sed 'y%./+-%__p_%'`
++		    		    		    		    echo $ac_n "checking for filename_completion_function in -lreadline""... $ac_c" 1>&6
++echo "configure:5999: checking for filename_completion_function in -lreadline" >&5
++ac_lib_var=`echo readline'_'filename_completion_function | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-   ac_save_LIBS="$LIBS"
--LIBS="-lreadline $SERVER_LIBS $LIBS"
-+LIBS="-lreadline -lcurses $SERVER_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 6000 "configure"
- #include "confdefs.h"
-@@ -6022,7 +6022,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  SERVER_LIBS="-lreadline $SERVER_LIBS"
-+  SERVER_LIBS="-lreadline -lcurses $SERVER_LIBS"
- 		 cat >> confdefs.h <<EOF
- #define HAVE_LIBREADLINE 1
+@@ -6008,10 +6008,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char rl_filename_completion_function();
++char filename_completion_function();
+ 
+ int main() {
+-rl_filename_completion_function()
++filename_completion_function()
+ ; return 0; }
  EOF
+ if { (eval echo configure:6018: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then

@@ -1,35 +1,33 @@
-# $OpenBSD: Makefile,v 1.28 2001/06/05 21:45:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2001/08/24 01:59:19 naddy Exp $
 
-COMMENT=	"Civilization clone for X; multiplayer"
+COMMENT=	"Civilization clone for X11; multiplayer"
 
-DISTNAME=	freeciv-1.11.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	freeciv-1.12.0
 CATEGORIES=	games
-NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
-
+NEED_VERSION=	1.441
 HOMEPAGE=	http://www.freeciv.org/
 
-LIB_DEPENDS=	intl.1::devel/gettext
-
-MAINTAINER=	ports@openbsd.org
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
 
 FLAVORS=	gtk
 FLAVOR?=
 
-.if ${FLAVOR:L} == "gtk"
+LIB_DEPENDS=	intl.1::devel/gettext
+
+.if ${FLAVOR:L:Mgtk}
 LIB_DEPENDS+=	Imlib.19::graphics/imlib
 .else
 CONFIGURE_ARGS=	--with-xaw
 .endif
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

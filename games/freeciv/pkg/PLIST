@@ -1,15 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/06/03 21:30:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/08/24 01:59:19 naddy Exp $
 bin/civclient
 bin/civserver
 share/freeciv/Freeciv
-share/freeciv/freeciv.rc
-share/freeciv/engels.tilespec
-share/freeciv/engels_shields.tilespec
-share/freeciv/trident.tilespec
-share/freeciv/trident_shields.tilespec
-share/freeciv/helpdata.txt
 share/freeciv/civ1.serv
-share/freeciv/civ2.serv
 share/freeciv/civ1/buildings.ruleset
 share/freeciv/civ1/game.ruleset
 share/freeciv/civ1/governments.ruleset
@@ -17,12 +10,14 @@ share/freeciv/civ1/nations.ruleset
 share/freeciv/civ1/techs.ruleset
 share/freeciv/civ1/terrain.ruleset
 share/freeciv/civ1/units.ruleset
+share/freeciv/civ2.serv
 share/freeciv/civ2/buildings.ruleset
 share/freeciv/civ2/game.ruleset
 share/freeciv/civ2/governments.ruleset
 share/freeciv/civ2/techs.ruleset
 share/freeciv/civ2/terrain.ruleset
 share/freeciv/civ2/units.ruleset
+share/freeciv/classic/terrain.ruleset
 share/freeciv/default/buildings.ruleset
 share/freeciv/default/cities.ruleset
 share/freeciv/default/game.ruleset
@@ -31,6 +26,7 @@ share/freeciv/default/nations.ruleset
 share/freeciv/default/techs.ruleset
 share/freeciv/default/terrain.ruleset
 share/freeciv/default/units.ruleset
+share/freeciv/engels.tilespec
 share/freeciv/engels/cities.spec
 share/freeciv/engels/cities.xpm
 share/freeciv/engels/explosions.spec
@@ -43,6 +39,23 @@ share/freeciv/engels/tiles.spec
 share/freeciv/engels/tiles.xpm
 share/freeciv/engels/units.spec
 share/freeciv/engels/units.xpm
+share/freeciv/engels_shields.tilespec
+share/freeciv/freeciv.rc
+share/freeciv/helpdata.txt
+share/freeciv/hires.tilespec
+share/freeciv/hires/cities.spec
+share/freeciv/hires/cities.xpm
+share/freeciv/hires/icons.spec
+share/freeciv/hires/icons.xpm
+share/freeciv/hires/nuke.spec
+share/freeciv/hires/nuke.xpm
+share/freeciv/hires/terrain1.spec
+share/freeciv/hires/terrain1.xpm
+share/freeciv/hires/terrain2.spec
+share/freeciv/hires/terrain2.xpm
+share/freeciv/hires/tiles.spec
+share/freeciv/hires/units.spec
+share/freeciv/hires/units.xpm
 share/freeciv/misc/chiefs.spec
 share/freeciv/misc/chiefs.xpm
 share/freeciv/misc/intro.xpm
@@ -67,15 +80,18 @@ share/freeciv/nation/boer.ruleset
 share/freeciv/nation/brazilian.ruleset
 share/freeciv/nation/canadian.ruleset
 share/freeciv/nation/carthaginian.ruleset
+share/freeciv/nation/catalan.ruleset
+share/freeciv/nation/chilean.ruleset
 share/freeciv/nation/chinese.ruleset
 share/freeciv/nation/cornish.ruleset
+share/freeciv/nation/croatian.ruleset
 share/freeciv/nation/czech.ruleset
 share/freeciv/nation/danish.ruleset
 share/freeciv/nation/dunedain.ruleset
 share/freeciv/nation/dutch.ruleset
 share/freeciv/nation/egyptian.ruleset
-share/freeciv/nation/estonian.ruleset
 share/freeciv/nation/english.ruleset
+share/freeciv/nation/estonian.ruleset
 share/freeciv/nation/filipino.ruleset
 share/freeciv/nation/finnish.ruleset
 share/freeciv/nation/french.ruleset
@@ -103,7 +119,11 @@ share/freeciv/nation/portuguese.ruleset
 share/freeciv/nation/roman.ruleset
 share/freeciv/nation/russian.ruleset
 share/freeciv/nation/scottish.ruleset
+share/freeciv/nation/serbian.ruleset
+share/freeciv/nation/silesian.ruleset
+share/freeciv/nation/singaporean.ruleset
 share/freeciv/nation/sioux.ruleset
+share/freeciv/nation/slovenian.ruleset
 share/freeciv/nation/spanish.ruleset
 share/freeciv/nation/swedish.ruleset
 share/freeciv/nation/thai.ruleset
@@ -113,12 +133,14 @@ share/freeciv/nation/vietnamese.ruleset
 share/freeciv/nation/viking.ruleset
 share/freeciv/nation/welsh.ruleset
 share/freeciv/nation/zulu.ruleset
+share/freeciv/scenario/british-isles-80x76-v2.51.sav
 share/freeciv/scenario/earth-160x90-v1.sav
 share/freeciv/scenario/earth-160x90-v2.sav
 share/freeciv/scenario/earth-80x50-v1.sav
 share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v1.sav
 share/freeciv/scenario/europe-200x100-v2.sav
+share/freeciv/trident.tilespec
 share/freeciv/trident/auto_ll.spec
 share/freeciv/trident/cities.spec
 share/freeciv/trident/cities.xpm
@@ -132,24 +154,30 @@ share/freeciv/trident/tiles.spec
 share/freeciv/trident/tiles.xpm
 share/freeciv/trident/units.spec
 share/freeciv/trident/units.xpm
+share/freeciv/trident_shields.tilespec
 share/locale/de/LC_MESSAGES/freeciv.mo
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
+share/locale/it/LC_MESSAGES/freeciv.mo
 share/locale/ja/LC_MESSAGES/freeciv.mo
 share/locale/nl/LC_MESSAGES/freeciv.mo
 share/locale/no/LC_MESSAGES/freeciv.mo
 share/locale/pl/LC_MESSAGES/freeciv.mo
 share/locale/pt/LC_MESSAGES/freeciv.mo
 share/locale/pt_BR/LC_MESSAGES/freeciv.mo
+share/locale/ro/LC_MESSAGES/freeciv.mo
 share/locale/ru/LC_MESSAGES/freeciv.mo
+share/locale/sv/LC_MESSAGES/freeciv.mo
 @dirrm share/freeciv/trident
 @dirrm share/freeciv/scenario
 @dirrm share/freeciv/nation
 @dirrm share/freeciv/misc
+@dirrm share/freeciv/hires
 @dirrm share/freeciv/engels
 @dirrm share/freeciv/default
+@dirrm share/freeciv/classic
 @dirrm share/freeciv/civ2
 @dirrm share/freeciv/civ1
 @dirrm share/freeciv
