@@ -1,0 +1,13 @@
+--- Makefile.in	Wed May  6 14:03:13 1998
++++ mk	Mon Aug 31 15:06:53 1998
+@@ -77,8 +77,8 @@
+ 		model.h progr.h unixkeys.h unixmakr.h \
+ 		Xwpe.h WeString.h WeXterm.h WeProg.h WeExpArr.h
+ 
+-xwpe:		$(OFILES)
+-		$(CC) $(CFLAGS) $(DEFS) $(OFILES) $(LIBS) -o xwpe
++all:		$(OFILES)
++		$(CC) $(CFLAGS) $(DEFS) $(OFILES) $(LIBS) -ltermlib -o xwpe
+ 
+ .c.o:		$(HFILES)
+ 		$(CC) $(CFLAGS) $(DEFS) -c $<
