@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/09 15:32:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/17 07:19:23 wilfried Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
 DISTNAME=	tmake-1.8
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.trolltech.com/developer/download/tmake.html
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
+# Permission to use, copy, modify, and distribute
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,8 +21,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-MODULES=	qt2
-RUN_DEPENDS=	::x11/qt2-designer
+MODULES=	qt3
 
 do-install:
 	@perl -pi \
