@@ -1,0 +1,5 @@
+This module, ReadKey, provides ioctl control for terminals and Win32
+consoles so the input modes can be changed (thus allowing reads of a single
+character at a time), and also provides non-blocking reads of stdin, as well
+as several other terminal related features, including retrieval/modification
+of the screen size, and retrieval/modification of the control characters.

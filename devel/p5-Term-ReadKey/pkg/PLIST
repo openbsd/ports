@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/27 08:45:34 wilfried Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Term/ReadKey.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadKey/ReadKey.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadKey/ReadKey.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadKey/autosplit.ix
+man/man3/Term::ReadKey.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadKey
