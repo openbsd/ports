@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_string_cxx,v 1.1 2002/10/06 22:31:10 naddy Exp $
+--- src/string.cxx.orig	Sat Oct  5 22:16:17 2002
++++ src/string.cxx	Sat Oct  5 22:16:33 2002
+@@ -453,7 +453,7 @@ INT STRING::CaseEquals(const CHR* CStrin
+ }
+ 
+ void STRING::Print() const {
+-  cout.write(Buffer, Length);
++  cout.write((char *)Buffer, Length);
+ }
+ 
+ void STRING::Print(PFILE FilePointer) const {
+@@ -464,7 +464,7 @@ void STRING::Print(PFILE FilePointer) co
+ 
+ // can this be const STRING& ?
+ ostream& operator<<(ostream& os, const STRING& str) {
+-	os.write(str.Buffer, str.Length);
++	os.write((char *)str.Buffer, str.Length);
+ 	return os;
+ }
+ 
