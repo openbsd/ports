@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/02/22 21:52:56 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2001/03/13 23:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -70,7 +70,7 @@
      SUBDIR += scm:no_x11
      SUBDIR += scheme-report
 #    SUBDIR += smalltalk
-#    SUBDIR += squeak
+     SUBDIR += squeak
 #    SUBDIR += sr
 #    SUBDIR += swi-pl
      SUBDIR += tcl
