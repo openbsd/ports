@@ -128,9 +128,11 @@ Amaya/doc/amaya/Put.html
 Amaya/doc/amaya/Creating.html
 Amaya/applis/bin/amaya
 Amaya/applis/bin/print
+@dirrm Amaya/applis/bin
 @dirrm Amaya/applis
 @dirrm Amaya/doc/amaya
 @dirrm Amaya/doc/Icons
+@dirrm Amaya/doc
 @dirrm Amaya/dicopar
 @dirrm Amaya/fonts
 @dirrm Amaya/config
