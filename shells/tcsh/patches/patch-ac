@@ -1,5 +1,5 @@
---- sh.h.orig	Sat Aug 21 12:49:57 1999
-+++ sh.h	Sat Aug 21 12:51:38 1999
+--- sh.h.orig	Wed Aug  2 02:42:54 2000
++++ sh.h	Wed Aug  2 02:43:22 2000
 @@ -279,7 +279,7 @@
   * redefines malloc(), so we define the following
   * to avoid it.

@@ -1,36 +1,37 @@
---- host.defs.orig	Sat Aug 21 12:59:46 1999
-+++ host.defs	Sat Aug 21 13:08:16 1999
-@@ -491,6 +491,33 @@
+--- host.defs.orig	Wed Aug  2 02:55:19 2000
++++ host.defs	Wed Aug  2 02:56:24 2000
+@@ -496,6 +496,34 @@
  machtype: defined(alpha)				: "alpha"
  enddef	:
  
-+newdef	: defined(__OpenBSD__)
-+comment	: OpenBSD
-+vendor	: defined(alpha)				: "digital"
-+vendor	: defined(amiga)				: "commodore"
-+vendor	: defined(atari)				: "atari"
-+vendor	: defined(hp300)				: "hp"
-+vendor	: defined(M_intel)				: "intel"
-+vendor	: defined(m68k)					: "motorola"
-+vendor	: defined(mac68k)				: "apple"
-+vendor	: defined(pc532)				: "national-semi"
-+vendor	: defined(pmax) || defined(mips)		: "dec"
-+vendor	: defined(M_mipsel)				: "dec"
-+vendor	: defined(sparc)				: "sun"
-+vendor	: defined(sun3)					: "sun"
-+vendor	: defined(vax)					: "digital"
-+hosttype:						: "OpenBSD"
-+ostype	:						: "OpenBSD"
-+machtype: defined(sparc)				: "sparc"
-+machtype: defined(mc68020)				: "m68k"
-+machtype: defined(M_i386)				: "i386"
-+machtype: defined(M_mipsel)				: "mipsel"
-+machtype: defined(M_mipseb)				: "mipseb"
-+machtype: defined(mips)					: "mips"
-+machtype: defined(pc532)				: "pc532"
-+machtype: defined(vax)					: "vax"
-+machtype: defined(alpha)				: "alpha"
-+enddef	:
++newdef : defined(__OpenBSD__)
++comment        : OpenBSD
++vendor : defined(alpha)                                : "digital"
++vendor : defined(amiga)                                : "commodore"
++vendor : defined(atari)                                : "atari"
++vendor : defined(hp300)                                : "hp"
++vendor : defined(M_intel)                              : "intel"
++vendor : defined(m68k)                                 : "motorola"
++vendor : defined(mac68k)                               : "apple"
++vendor : defined(pc532)                                : "national-semi"
++vendor : defined(pmax) || defined(mips)                : "dec"
++vendor : defined(M_mipsel)                             : "dec"
++vendor : defined(sparc)                                : "sun"
++vendor : defined(sun3)                                 : "sun"
++vendor : defined(vax)                                  : "digital"
++hosttype:                                              : "OpenBSD"
++ostype :                                               : "OpenBSD"
++machtype: defined(sparc)                               : "sparc"
++machtype: defined(mc68020)                             : "m68k"
++machtype: defined(M_i386)                              : "i386"
++machtype: defined(M_mipsel)                            : "mipsel"
++machtype: defined(M_mipseb)                            : "mipseb"
++machtype: defined(mips)                                        : "mips"
++machtype: defined(pc532)                               : "pc532"
++machtype: defined(vax)                                 : "vax"
++machtype: defined(alpha)                               : "alpha"
++enddef :
++
  
  newdef	: defined(__FreeBSD__) 
  comment	: FreeBSD

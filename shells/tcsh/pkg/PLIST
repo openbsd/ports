@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/07/04 22:36:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/02 03:25:39 kevlo Exp $
 bin/tcsh
 man/man1/tcsh.1
 share/nls/C/tcsh.cat
+share/nls/fi_FI.ISO_8859-1/tcsh.cat
 share/nls/fr_FR.ISO_8859-1/tcsh.cat
 share/nls/fr_BE.ISO_8859-1/tcsh.cat
 share/nls/fr_CA.ISO_8859-1/tcsh.cat

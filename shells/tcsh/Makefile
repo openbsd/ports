@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/07/31 03:37:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2000/08/02 03:25:22 kevlo Exp $
 
-DISTNAME=	tcsh-6.09
-PKGNAME=	tcsh-6.09.00
+DISTNAME=	tcsh-6.09.03
 CATEGORIES=	shells
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://ftp.gw.com/pub/unix/tcsh/
+MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
 
 MAINTAINER=	brad@openbsd.org
 
@@ -27,8 +26,6 @@ CONFIGURE_ENV+=	LDFLAGS=-static
 
 ALL_TARGET=	all catalogs
 
-WRKDIST=	${WRKDIR}/tcsh-6.09.00
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/el_GR.ISO_8859-7
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
@@ -39,6 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tcsh.german.cat ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.greek.cat ${PREFIX}/share/nls/el_GR.ISO_8859-7/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.spanish.cat ${PREFIX}/share/nls/es_ES.ISO_8859-1/tcsh.cat
+	${INSTALL_DATA} ${WRKSRC}/tcsh.finnish.cat ${PREFIX}/share/nls/fi_FI.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.french.cat ${PREFIX}/share/nls/fr_BE.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.french.cat ${PREFIX}/share/nls/fr_CA.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.french.cat ${PREFIX}/share/nls/fr_CH.ISO_8859-1/tcsh.cat

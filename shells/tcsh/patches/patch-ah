@@ -1,5 +1,5 @@
---- sh.exp.c.orig	Sat Aug 21 12:57:18 1999
-+++ sh.exp.c	Sat Aug 21 12:57:50 1999
+--- sh.exp.c.orig	Wed Aug  2 02:46:32 2000
++++ sh.exp.c	Wed Aug  2 02:47:12 2000
 @@ -155,7 +155,7 @@
       * and they define _SC_NGROUPS_MAX without having sysconf
       */
