@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 12:47:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/13 18:39:40 naddy Exp $
 
 COMMENT=	"validate method/function parameters"
 
-DISTNAME=	Class-Container-0.07
+DISTNAME=	Class-Container-0.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
