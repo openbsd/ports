@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2003/06/15 07:21:49 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2003/06/16 17:29:44 sturm Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -29,7 +29,5 @@ PERMIT_DISTFILES_CDROM?=	Yes
 PERMIT_DISTFILES_FTP?=		Yes
 PERMIT_PACKAGE_CDROM?=		Yes
 PERMIT_PACKAGE_FTP?=		Yes
-.if ${MACHINE_ARCH} != "sparc64" # XXX -fno-stack-protector in gcc3 instead
 CFLAGS+=-fno-stack-protector
 CXXFLAGS+=-fno-stack-protector
-.endif
