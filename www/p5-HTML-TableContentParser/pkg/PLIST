@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/30 08:29:04 kevlo Exp $
+${P5SITE}/HTML/TableContentParser.pm
+${P5ARCH}/auto/HTML/TableContentParser/.packlist
+man/man3p/HTML::TableContentParser.3p
+@dirrm ${P5ARCH}/auto/HTML/TableContentParser
