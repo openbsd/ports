@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/02/24 22:44:00 brad Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/03/08 14:34:02 naddy Exp $
 bin/libIDL-config
 bin/name-client
 bin/old-name-server
@@ -93,7 +93,6 @@ share/idl/orbit-1.0/LName.pidl
 @dirrm share/idl/orbit-1.0
 @dirrm share/idl
 @dirrm share/examples/orbit
-@dirrm share/aclocal
 @dirrm include/orbit-1.0/orb
 @dirrm include/orbit-1.0/ORBitutil
 @dirrm include/orbit-1.0/ORBitservices
