@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2004/09/15 19:26:30 espie Exp $
-
-NOT_FOR_ARCHS=	vax
+# $OpenBSD: Makefile,v 1.4 2004/12/06 22:14:42 naddy Exp $
 
 COMMENT=	"color terminal emulator with transparency and unicode support"
-DISTNAME=	mlterm-2.8.0
+DISTNAME=	mlterm-2.9.0
 CATEGORIES=	x11
 
 MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
@@ -16,27 +14,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
-PATCHFILES=	${DISTNAME}pl1.tar.gz
 
 USE_X11=	Yes
+SHARED_ONLY=Yes
 
-LIB_DEPENDS=	gtk.1.2,gdk::x11/gtk+
+BUILD_DEPENDS=	:pkgconfig->=0.14.0p1:devel/pkgconfig
+LIB_DEPENDS=	gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-anti-alias --enable-utmp
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
-
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/script \
-				${WRKSRC}/mkf/script \
-				${WRKSRC}/kiklib/script
-
-.if ${MACHINE_ARCH} == "vax" || ${MACHINE_ARCH} == "m88k"
-CONFIGURE_ENV+=	"X_EXTRA_LIBS=\"/usr/X11R6/lib/libXft.a \
-		/usr/X11R6/lib/libXfont.a \
-                /usr/X11R6/lib/libfontconfig.a /usr/X11R6/lib/libX11.a \
-                /usr/X11R6/lib/libfreetype.a /usr/X11R6/lib/libexpat.a \
-                /usr/X11R6/lib/libXrender.a /usr/X11R6/lib/libXext.a\""
-.endif
+CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
+		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2" \
+		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 NO_REGRESS=	Yes
 
