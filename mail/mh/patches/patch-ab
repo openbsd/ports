@@ -1,0 +1,74 @@
+*** uip/rcvtty.c.orig	Wed Feb 11 21:23:50 1998
+--- uip/rcvtty.c	Wed Feb 11 22:18:18 1998
+***************
+*** 158,164 ****
+  
+      user = getusr ();
+  #ifndef	TTYD
+!     if ((uf = fopen ("/etc/utmp", "r")) == NULL)
+  	exit (RCV_MBX);
+      while (fread ((char *) &ut, sizeof ut, 1, uf) == 1)
+  	if (ut.ut_name[0] != 0
+--- 158,164 ----
+  
+      user = getusr ();
+  #ifndef	TTYD
+!     if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
+  	exit (RCV_MBX);
+      while (fread ((char *) &ut, sizeof ut, 1, uf) == 1)
+  	if (ut.ut_name[0] != 0
+***************
+*** 194,206 ****
+      char    tmpfil[BUFSIZ];
+      struct stat st;
+  
+!     (void) unlink (mktemp (strcpy (tmpfil, "/tmp/rcvttyXXXXX")));
+      if ((fd = creat (tmpfil, 0600)) == NOTOK)
+  	return header_fd ();
+      (void) close (fd);
+  
+      if ((fd = open (tmpfil, 2)) == NOTOK)
+  	return header_fd ();
+      (void) unlink (tmpfil);
+  
+  /*  */
+--- 194,208 ----
+      char    tmpfil[BUFSIZ];
+      struct stat st;
+  
+!     fd = mkstemp (strcpy (tmpfil, "/tmp/rcvttyXXXXX"));
+! #if 0
+      if ((fd = creat (tmpfil, 0600)) == NOTOK)
+  	return header_fd ();
+      (void) close (fd);
+  
+      if ((fd = open (tmpfil, 2)) == NOTOK)
+  	return header_fd ();
++ #endif
+      (void) unlink (tmpfil);
+  
+  /*  */
+***************
+*** 258,267 ****
+      char    tmpfil[BUFSIZ];
+  
+      (void) strcpy (tmpfil, m_tmpfil (invo_name));
+      if ((fd = creat (tmpfil, 0600)) == NOTOK)
+  	return NOTOK;
+      (void) close (fd);
+! 
+      if ((fd = open (tmpfil, 2)) == NOTOK)
+  	return NOTOK;
+      (void) unlink (tmpfil);
+--- 260,270 ----
+      char    tmpfil[BUFSIZ];
+  
+      (void) strcpy (tmpfil, m_tmpfil (invo_name));
++ #if 0
+      if ((fd = creat (tmpfil, 0600)) == NOTOK)
+  	return NOTOK;
+      (void) close (fd);
+! #endif
+      if ((fd = open (tmpfil, 2)) == NOTOK)
+  	return NOTOK;
+      (void) unlink (tmpfil);

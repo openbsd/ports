@@ -1,0 +1,12 @@
+*** uip/sendsbr.c.orig	Wed Feb 11 21:49:25 1998
+--- uip/sendsbr.c	Wed Feb 11 21:49:37 1998
+***************
+*** 39,45 ****
+  
+  char   *getusr ();
+  off_t	lseek ();
+- long	time ();
+  
+  /*  */
+  
+--- 39,44 ----

@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Configure MH
+#
+cd $WRKSRC/conf
+make
+./mhconfig OpenBSD
+cd ..
+make clean

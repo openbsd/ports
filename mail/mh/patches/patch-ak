@@ -1,0 +1,12 @@
+*** uip/forw.c.orig	Thu Feb 12 22:30:59 1998
+--- uip/forw.c	Thu Feb 12 22:31:23 1998
+***************
+*** 133,139 ****
+  static struct msgs *mp = NULL;		/* used a lot */
+  
+  
+- long	time ();
+  off_t	lseek();
+  
+  /*  */
+--- 133,138 ----

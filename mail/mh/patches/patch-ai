@@ -1,0 +1,12 @@
+*** zotnet/tws/dtime.c.orig	Wed Feb 11 21:48:11 1998
+--- zotnet/tws/dtime.c	Wed Feb 11 21:48:24 1998
+***************
+*** 107,113 ****
+  
+  #define CENTURY 1900
+  
+- long    time ();
+  struct tm *localtime ();
+  
+  /*  */
+--- 107,112 ----

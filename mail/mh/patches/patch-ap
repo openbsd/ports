@@ -1,0 +1,23 @@
+*** uip/spost.c.orig	Wed Feb 11 22:14:51 1998
+--- uip/spost.c	Wed Feb 11 22:19:11 1998
+***************
+*** 357,364 ****
+  	out = stdout;
+      }
+      else {
+! 	    (void)mktemp (tmpfil);
+! 	    if ((out = fopen (tmpfil, "w")) == NULL)
+  		adios (tmpfil, "unable to create");
+  	    (void)chmod (tmpfil, 0600);
+  	}
+--- 357,366 ----
+  	out = stdout;
+      }
+      else {
+! 	    int i;
+! 
+! 	    i = mkstemp (tmpfil);
+! 	    if ((i == -1) || ( (out = fdopen (i, "w")) == NULL))
+  		adios (tmpfil, "unable to create");
+  	    (void)chmod (tmpfil, 0600);
+  	}

@@ -1,0 +1,13 @@
+*** sbr/fmtcompile.c.orig	Wed Feb 11 21:17:25 1998
+--- sbr/fmtcompile.c	Wed Feb 11 21:17:47 1998
+***************
+*** 130,137 ****
+  };
+  
+  
+- long time ();
+- 
+  static struct ftable *lookup(name)
+      register char *name;
+  {
+--- 130,135 ----

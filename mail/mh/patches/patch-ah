@@ -1,0 +1,37 @@
+*** zotnet/mts/client.c.orig	Wed Apr  8 01:37:33 1998
+--- zotnet/mts/client.c	Wed Apr  8 01:45:11 1998
+***************
+*** 361,369 ****
+  
+  #ifndef OSF1
+  #ifndef	DG
+  u_long	inet_addr ();
+! #else
+! struct in_addr inet_addr ();
+  #endif
+  #endif
+  
+--- 361,369 ----
+  
+  #ifndef OSF1
+  #ifndef	DG
++ #ifndef __OpenBSD__
+  u_long	inet_addr ();
+! #endif
+  #endif
+  #endif
+  
+***************
+*** 377,383 ****
+--- 377,387 ----
+  {
+      register struct hostent *h;
+  #ifndef	DG
++ #ifndef __OpenBSD__
+      static u_long iaddr;
++ #else
++     in_addr_t iaddr;
++ #endif
+  #else
+      static struct in_addr iaddr;
+  #endif

@@ -1,0 +1,30 @@
+*** zotnet/mts/lock.c.orig	Wed Feb 11 21:41:44 1998
+--- zotnet/mts/lock.c	Wed Feb 11 22:10:35 1998
+***************
+*** 72,79 ****
+  static int	b_lkopen(), lockit(), f_lkopen();
+  static		lockname(), timerON(), timerOFF();
+  
+- long	time ();
+- 
+  /*  */
+  
+  int	lkopen (file, access)
+--- 72,77 ----
+***************
+*** 201,207 ****
+  	else
+  	    (void) sprintf (tmplock, "%.*s,LCK.XXXXXX",
+  		cp - curlock, curlock);
+! 	(void) unlink (mktemp (tmplock));
+      }
+  }
+  
+--- 199,205 ----
+  	else
+  	    (void) sprintf (tmplock, "%.*s,LCK.XXXXXX",
+  		cp - curlock, curlock);
+! 	close (mkstemp (tmplock));
+      }
+  }
+  

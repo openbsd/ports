@@ -1,0 +1,20 @@
+*** uip/mshcmds.c.orig	Thu Feb 12 22:35:49 1998
+--- uip/mshcmds.c	Thu Feb 12 22:37:42 1998
+***************
+*** 999,1005 ****
+  
+  					/* foil search of .mh_profile */
+      (void) sprintf (buf, "%sXXXXXX", invo_name);
+!     vec[0] = (char *)mktemp (buf);
+      vec[vecp++] = "-file";
+      vec[vecp] = NULL;
+      if (!msgp)
+--- 999,1006 ----
+  
+  					/* foil search of .mh_profile */
+      (void) sprintf (buf, "%sXXXXXX", invo_name);
+!     close(mkstemp(buf));
+!     vec[0] = buf;
+      vec[vecp++] = "-file";
+      vec[vecp] = NULL;
+      if (!msgp)

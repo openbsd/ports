@@ -1,0 +1,33 @@
+*** /dev/null	Sat Apr 27 10:54:01 1996
+--- conf/OpenBSD	Sat Apr 27 11:12:47 1996
+***************
+*** 0 ****
+--- 1,28 ----
++
++ # OpenBSD running sendmail
++ 
++ bin	/usr/local/bin
++ etc	/usr/local/lib/mh
++ mandir	/usr/local/man
++ mail	/var/mail
++ chown	/usr/sbin/chown
++ mts	sendmail/smtp
++ cc	gcc
++ signal	void
++ remove	rm -f
++ 
++ # Good options for all MH installations (personal preferences)
++ options	ATHENA DUMB FOLDPROT='"0700"' MHE MHRC RPATHS
++ 
++ # OpenBSD specific options
++ options	BSD42 BSD43 BSD44 WAITINT UNISTD VSPRINTF MORE='"/usr/bin/more"'
++ options	NORUSERPASS DBMPWD POSIX OVERHEAD FCNTL NTOHLSWAP
++ options	BIND MIME SENDMTS SMTP WHATNOW ZONEINFO TERMINFO
++ options GCOS_HACK RENAME LOCALE MSGPROT='"600"'
++ 
++ # If you want POP support, this will help you get started,  but feel
++ # free to customize it.
++ # pop		on
++ # popdir		/usr/local/libexec
++ # options		RPOP APOP='"/usr/local/etc/pop.auth"' POPSERVICE='"pop3"'
++

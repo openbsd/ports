@@ -1,0 +1,19 @@
+--- sbr/m_tmpfil.c.orig	Tue Nov 30 20:01:25 1993
++++ sbr/m_tmpfil.c	Wed Apr 29 22:12:24 1998
+@@ -8,9 +8,14 @@
+ register char  *template;
+ {
+     static char tmpfil[BUFSIZ];
+-
++    int i;
+     (void) sprintf (tmpfil, "/tmp/%sXXXXXX", template);
+-    (void) unlink (mktemp (tmpfil));
++    i = mkstemp(tmpfil);
++    if (i == -1)
++   	return NULL;
++    unlink( tmpfile );
++    close(i);
++    /*(void) unlink (mktemp (tmpfil));*/
+ 
+     return tmpfil;
+ }

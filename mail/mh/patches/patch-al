@@ -1,0 +1,12 @@
+*** uip/post.c.orig	Thu Feb 12 22:34:52 1998
+--- uip/post.c	Thu Feb 12 22:35:03 1998
+***************
+*** 342,348 ****
+  static	char   *record = NULLCP;
+  
+  off_t	lseek ();
+- long	time ();
+  
+  static	putfmt(), start_headers(), finish_headers(), putgrp(), pl();
+  static	anno(), make_bcc_file(), verify_all_addresses();
+--- 342,347 ----

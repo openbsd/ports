@@ -1,0 +1,70 @@
+*** conf/makefiles/uip.orig	Wed Apr  8 02:26:42 1998
+--- conf/makefiles/uip	Wed Apr  8 02:27:04 1998
+***************
+*** 155,161 ****
+  		mhn \
+  @END: MIME
+  		mhpath msgchk msh next packf pick prev prompter refile repl \
+! 		rmf rmm scan send show sortm vmh whatnow whom $(BBCMDS) \
+  		$(TMACMDS) $(POPCMDS)
+  MISC	=	ap conflict dp install-mh mhl post rcvdist rcvpack rcvstore \
+  		rcvtty fmtdump mhparam \
+--- 155,161 ----
+  		mhn \
+  @END: MIME
+  		mhpath msgchk msh next packf pick prev prompter refile repl \
+! 		rmf rmm scan send show sortm whatnow whom $(BBCMDS) \
+  		$(TMACMDS) $(POPCMDS)
+  MISC	=	ap conflict dp install-mh mhl post rcvdist rcvpack rcvstore \
+  		rcvtty fmtdump mhparam \
+***************
+*** 175,181 ****
+  		inst-mhpath inst-msgchk inst-msh inst-next inst-packf \
+  		inst-pick inst-prev inst-prompter inst-refile inst-repl \
+  		inst-rmf inst-rmm inst-scan inst-send inst-show inst-sortm \
+! 		inst-vmh inst-whatnow inst-whom $(IBBCMDS) $(ITMACMDS) \
+  		$(IPOPCMDS)
+  IMISC	=	inst-ap inst-conflict inst-dp inst-install-mh inst-mhl \
+  		inst-post inst-rcvdist inst-rcvpack inst-rcvstore inst-rcvtty \
+--- 175,181 ----
+  		inst-mhpath inst-msgchk inst-msh inst-next inst-packf \
+  		inst-pick inst-prev inst-prompter inst-refile inst-repl \
+  		inst-rmf inst-rmm inst-scan inst-send inst-show inst-sortm \
+! 		inst-whatnow inst-whom $(IBBCMDS) $(ITMACMDS) \
+  		$(IPOPCMDS)
+  IMISC	=	inst-ap inst-conflict inst-dp inst-install-mh inst-mhl \
+  		inst-post inst-rcvdist inst-rcvpack inst-rcvstore inst-rcvtty \
+***************
+*** 196,202 ****
+  @END: MIME
+  		l-mhpath l-msgchk l-msh l-packf l-pick \
+  		l-prompter l-refile l-repl l-rmf l-rmm l-scan l-send \
+! 		l-show l-sortm l-vmh l-whatnow l-whom $(LBBCMDS) $(LTMACMDS) \
+  		$(LPOPCMDS)
+  LMISC	=	l-ap l-conflict l-dp l-install-mh l-mhl l-post l-rcvdist \
+  		l-rcvpack l-rcvstore l-rcvtty l-fmtdump l-mhparam \
+--- 196,202 ----
+  @END: MIME
+  		l-mhpath l-msgchk l-msh l-packf l-pick \
+  		l-prompter l-refile l-repl l-rmf l-rmm l-scan l-send \
+! 		l-show l-sortm l-whatnow l-whom $(LBBCMDS) $(LTMACMDS) \
+  		$(LPOPCMDS)
+  LMISC	=	l-ap l-conflict l-dp l-install-mh l-mhl l-post l-rcvdist \
+  		l-rcvpack l-rcvstore l-rcvtty l-fmtdump l-mhparam \
+***************
+*** 215,221 ****
+  		xmhn \
+  @END: MIME
+  		xmhpath xmsgchk xmsh xpackf xpick xprompter xrefile \
+! 		xrepl xrmf xrmm xscan xsend xshow xsortm xvmh xwhatnow xwhom \
+  		$(TBBCMDS) $(TTMACMDS) $(TPOPCMDS)
+  TMISC	=	xap xconflict xdp xinstall-mh xmhl xpost xrcvdist xrcvpack \
+  		xrcvstore xrcvtty xfmtdump xmhparam \
+--- 215,221 ----
+  		xmhn \
+  @END: MIME
+  		xmhpath xmsgchk xmsh xpackf xpick xprompter xrefile \
+! 		xrepl xrmf xrmm xscan xsend xshow xsortm xwhatnow xwhom \
+  		$(TBBCMDS) $(TTMACMDS) $(TPOPCMDS)
+  TMISC	=	xap xconflict xdp xinstall-mh xmhl xpost xrcvdist xrcvpack \
+  		xrcvstore xrcvtty xfmtdump xmhparam \

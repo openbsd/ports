@@ -1,0 +1,13 @@
+*** sbr/formatsbr.c.orig	Thu Feb 12 22:19:58 1998
+--- sbr/formatsbr.c	Thu Feb 12 22:20:09 1998
+***************
+*** 32,39 ****
+  struct mailname fmt_mnull;
+  
+  
+- long	time ();
+- 
+  /*  */
+  
+  /* MAJOR HACK:	See MHCHANGES for discussion */
+--- 32,37 ----
