@@ -1,0 +1,24 @@
+$OpenBSD: patch-server_convert_c,v 1.1 2003/03/12 21:21:55 brad Exp $
+--- server/convert.c.orig	Mon Dec  2 06:01:34 1996
++++ server/convert.c	Wed Mar 12 14:59:07 2003
+@@ -54,4 +54,6 @@ static char rcs_id[] = "@(#) 102.1 $Id: 
+ #define ACK3 3
+ #define CHECK_ACK_BUF_SIZE	(ACK_BUFSIZE + (SIZEOFLONG * 2) )
++#define IR_INT_MAX 32767
++#define IR_INT_INVAL(x) ((unsigned int)x > IR_INT_MAX)
+ 
+ extern int  errno;
+@@ -1779,4 +1781,6 @@ int size ;
+ 
+     req->namelen = (int)L4TOL(buf + SIZE4);
++    if( IR_INT_INVAL(req->namelen) )
++	return( -1 );
+    ir_debug( Dmsg(10,"req->namelen =%d\n", req->namelen ); )
+ 
+@@ -1786,4 +1790,6 @@ int size ;
+     if( req->namelen > 0 ){
+ 	req->name = buf + SIZE8 ;
++	if( req->name[req->namelen - 1] != 0 )
++	    return( -1 );
+     }
+    ir_debug( Dmsg(10,"req->namelen =%d\n", req->namelen ); )
