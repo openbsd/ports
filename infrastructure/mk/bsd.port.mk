@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.523 2002/04/17 15:58:48 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.524 2002/04/17 16:53:13 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1547,11 +1547,10 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 .endif # IGNORECMD
 
-BULK_TARGETS? = ftp-packages cdrom-packages
+BULK_TARGETS?= ftp-packages cdrom-packages
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
-	@exec ${MAKE} ftp-packages cdrom-packages
 .for _i in ${BULK_TARGETS}
 	@${ECHO_MSG} "===> Running ${_i}"
 	@exec ${MAKE} ${_i} ${BULK_FLAGS}
