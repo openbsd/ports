@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.2 2004/12/11 14:35:05 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.3 2005/01/31 09:51:32 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -93,6 +93,8 @@ sub check_wantlibs
 			return;
 		}
 		for my $lib (@l) {
+			# don't look for modules
+			next if $lib =~ m/\.so$/;
 			$lib =~ s/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/$2/;
 			$t->{needlib}->{$lib} = $fullname;
 		}
@@ -124,12 +126,6 @@ sub analyze
 		print "Extra: $k\n";
 	}
 	rmtree($where);
-}
-
-print "Scanning packages\n";
-print "-----------------\n";
-if (@ARGV==0) {
-	@ARGV=(<*.tgz>);
 }
 
 my $db = {};
