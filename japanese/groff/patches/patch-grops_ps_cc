@@ -1,6 +1,15 @@
-$OpenBSD: patch-grops_ps_cc,v 1.1 2000/04/20 22:40:40 espie Exp $
---- grops/ps.cc.orig	Fri Apr 21 00:25:37 2000
-+++ grops/ps.cc	Fri Apr 21 00:25:53 2000
+$OpenBSD: patch-grops_ps_cc,v 1.2 2003/06/18 03:00:30 avsm Exp $
+--- grops/ps.cc.orig	Tue Jun 17 00:24:09 2003
++++ grops/ps.cc	Wed Jun 18 03:55:45 2003
+@@ -684,7 +684,7 @@ void ps_printer::define_encoding(const c
+     fatal("can't open encoding file `%1'", encoding);
+   int lineno = 1;
+   char buf[256];
+-  while (fgets(buf, 512, fp) != 0) {
++  while (fgets(buf, 256, fp) != 0) {
+     char *p = buf;
+     while (csspace(*p))
+       p++;
 @@ -1506,7 +1506,7 @@ int main(int argc, char **argv)
        }
      case 'c':
