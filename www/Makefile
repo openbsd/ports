@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/01/13 01:49:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2000/01/14 09:07:59 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -46,6 +46,7 @@
 #    SUBDIR += p5-HTTPD-Tools
 #    SUBDIR += p5-WWW-Search
 #    SUBDIR += p5-libwww
+     SUBDIR += php3
      SUBDIR += squid
 #    SUBDIR += squid11
 #    SUBDIR += squid11-novm
