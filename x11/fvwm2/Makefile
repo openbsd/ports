@@ -3,10 +3,11 @@
 # Date created:		12 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/23 19:48:56 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/27 05:06:36 marc Exp $
 #
 
 DISTNAME=	fvwm-2.0.46
+COMES_WITH=	2.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/2.0.x/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/kits/ \
