@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/31 18:18:03 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/08 08:55:08 kevlo Exp $
 
 COMMENT=	"module to calculate SHA1 digests"
 
-VERSION=	2.00
+VERSION=	2.01
 DISTNAME=	Digest-SHA1-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	perl
 
-REGRESS_TARGET=		test
 REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
