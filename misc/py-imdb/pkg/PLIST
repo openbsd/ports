@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/07 14:14:06 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/imdb/Movie.py
+lib/python${MODPY_VERSION}/site-packages/imdb/Movie.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/Person.py
+lib/python${MODPY_VERSION}/site-packages/imdb/Person.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/imdb/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/_exceptions.py
+lib/python${MODPY_VERSION}/site-packages/imdb/_exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/__init__.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/__init__.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/movieParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/movieParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/personParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/personParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchMovieParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchMovieParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchPersonParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchPersonParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/utils.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/utils.py
+lib/python${MODPY_VERSION}/site-packages/imdb/utils.pyc
+share/doc/py-imdb/README.devel
+share/doc/py-imdb/README.package
+share/doc/py-imdb/README.txt
+share/doc/py-imdb/README.users
+share/examples/py-imdb/get_first_movie
+share/examples/py-imdb/get_first_person
+share/examples/py-imdb/get_movie
+share/examples/py-imdb/get_person
+share/examples/py-imdb/search_movie
+share/examples/py-imdb/search_person
+@dirrm share/examples/py-imdb
+@dirrm share/doc/py-imdb
+@dirrm lib/python${MODPY_VERSION}/site-packages/imdb/parser/http
+@dirrm lib/python${MODPY_VERSION}/site-packages/imdb/parser
+@dirrm lib/python${MODPY_VERSION}/site-packages/imdb
