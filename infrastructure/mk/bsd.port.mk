@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.485 2001/10/28 04:59:26 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.486 2001/10/28 12:31:35 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -19,23 +19,6 @@ FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.485 2001/10/28 04:59:26 brad Exp $$
 # Enquiries as to the bsd.port.mk framework should usually be directed 
 # to ports@openbsd.org.
 
-
-# NEED_VERSION: we need at least this version of bsd.port.mk for this 
-# port  to build
-
-.if defined(NEED_VERSION)
-_VERSION_REVISION=${FULL_REVISION:M[0-9]*.*}
-
-_VERSION=${_VERSION_REVISION:C/\..*//}
-_REVISION=${_VERSION_REVISION:C/.*\.//}
-
-_VERSION_NEEDED=${NEED_VERSION:C/\..*//}
-_REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
-.  if ${_VERSION_NEEDED} > ${_VERSION} || \
-   (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
-ERRORS+=	"Fatal: Need version ${NEED_VERSION} of bsd.port.mk."
-.  endif
-.endif
 
 .if ${.MAKEFLAGS:MFLAVOR=*}
 ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
@@ -627,6 +610,23 @@ MODULES+=${_i}
 .    include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
 .  else
 ERRORS+="Missing support for modules ${_m}."
+.  endif
+.endfor
+
+# NEED_VERSION: we need at least this version of bsd.port.mk for this 
+# port  to build
+
+_VERSION_REVISION=${FULL_REVISION:M[0-9]*.*}
+
+_VERSION=${_VERSION_REVISION:C/\..*//}
+_REVISION=${_VERSION_REVISION:C/.*\.//}
+
+.for _v in ${NEED_VERSION}
+_VERSION_NEEDED=${_v:C/\..*//}
+_REVISION_NEEDED=${_v:C/.*\.//}
+.  if ${_VERSION_NEEDED} > ${_VERSION} || \
+   (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
+ERRORS+=	"Fatal: Need version ${NEED_VERSION} of bsd.port.mk."
 .  endif
 .endfor
 
