@@ -1,7 +1,7 @@
+sbin/ntpd
 sbin/ntpdate
+sbin/ntpdc
 sbin/ntpq
-sbin/ntptrace
-sbin/xntpd
-sbin/xntpdc
-sbin/tickadj
 sbin/ntptime
+sbin/ntptrace
+sbin/tickadj
