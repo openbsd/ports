@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.12 2004/02/29 00:08:08 avsm Exp $
---- php.ini-dist.orig	2004-02-10 00:03:43.000000000 +0000
-+++ php.ini-dist	2004-02-28 17:54:25.000000000 +0000
+$OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
+--- php.ini-dist.orig	2004-05-17 17:31:13.000000000 +0100
++++ php.ini-dist	2004-06-06 19:18:37.000000000 +0100
 @@ -408,10 +408,7 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -109,19 +109,21 @@ $OpenBSD: patch-php_ini-dist,v 1.12 2004/02/29 00:08:08 avsm Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -592,11 +518,6 @@ default_socket_timeout = 60
+@@ -592,13 +518,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
 -; For Win32 only.
 -SMTP = localhost
+-smtp_port = 25
 -
 -; For Win32 only.
 -;sendmail_from = me@example.com
- 
+-
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -1115,3 +1036,57 @@ sockets.use_system_read = On
+ 
+@@ -1116,3 +1035,57 @@ sockets.use_system_read = On
  ; Local Variables:
  ; tab-width: 4
  ; End:

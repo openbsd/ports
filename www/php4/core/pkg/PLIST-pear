@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.6 2004/04/08 12:38:59 avsm Exp $
+@comment $OpenBSD: PLIST-pear,v 1.7 2004/06/06 18:09:22 avsm Exp $
 pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg
 pear/lib/.registry/pear.reg
@@ -28,6 +28,7 @@ pear/lib/PEAR/Config.php
 pear/lib/PEAR/Dependency.php
 pear/lib/PEAR/Downloader.php
 pear/lib/PEAR/Builder.php
+pear/lib/PEAR/ErrorStack.php
 pear/lib/PEAR/Frontend/CLI.php
 pear/lib/PEAR/Installer.php
 pear/lib/PEAR/Packager.php
@@ -58,6 +59,7 @@ pear/lib/DB/sqlite.php
 pear/lib/DB/common.php
 pear/lib/DB.php
 pear/lib/HTTP.php
+pear/lib/Mail/null.php
 pear/lib/Mail/sendmail.php
 pear/lib/Mail/smtp.php
 pear/lib/Mail/RFC822.php

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_standard_exec_c,v 1.1 2004/04/17 10:33:50 avsm Exp $
---- ext/standard/exec.c.orig	2003-11-19 09:34:36.000000000 -0600
-+++ ext/standard/exec.c	2004-04-14 19:40:37.000000000 -0500
-@@ -942,7 +942,7 @@ PHP_FUNCTION(proc_open)
+$OpenBSD: patch-ext_standard_exec_c,v 1.2 2004/06/06 18:09:22 avsm Exp $
+--- ext/standard/exec.c.orig	2004-05-18 14:43:33.000000000 +0100
++++ ext/standard/exec.c	2004-06-06 19:11:28.000000000 +0100
+@@ -952,7 +952,7 @@ PHP_FUNCTION(proc_open)
  				close(descriptors[i].childend);
  		}
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.10 2004/02/29 00:08:08 avsm Exp $
---- configure.in.orig	2004-02-16 15:34:16.000000000 +0000
-+++ configure.in	2004-02-28 17:54:33.000000000 +0000
+$OpenBSD: patch-configure_in,v 1.11 2004/06/06 18:09:22 avsm Exp $
+--- configure.in.orig	2004-06-02 14:25:44.000000000 +0100
++++ configure.in	2004-06-06 19:11:28.000000000 +0100
 @@ -31,9 +31,7 @@ AC_PREREQ(2.13)
  AC_INIT(README.CVS-RULES)
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.10 2004/02/29 00:08:08 avsm Exp $
  
  AC_CANONICAL_HOST
  AC_CONFIG_HEADER(main/php_config.h)
-@@ -778,14 +776,14 @@ unset with_pic
+@@ -813,14 +811,14 @@ unset with_pic
  
  case $php_build_target in
  program|static)
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.10 2004/02/29 00:08:08 avsm Exp $
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
  ;;
  esac
-@@ -967,7 +965,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
+@@ -1002,7 +1000,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
