@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2002/03/03 12:13:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.65 2002/03/17 04:55:03 brad Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -8,7 +8,7 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	i386 m68k sparc
+ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
 
 V=		4.1.2
 DISTNAME=	php-${V}
