@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/24 16:46:02 danh Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/01 06:03:25 jakob Exp $
 
 COMMENT=	"provides rudimentary access to remote SNMP agents"
 
-VERSION=	0.94
+VERSION=	0.99
 DISTNAME=	SNMP_Session-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
