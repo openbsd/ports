@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/10 18:33:37 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/10 11:49:13 naddy Exp $
 bin/treewm
-share/doc/treewm/AUTHORS
-share/doc/treewm/COPYING
 share/doc/treewm/ChangeLog
-share/doc/treewm/INSTALL
+share/doc/treewm/PROBLEMS
 share/doc/treewm/README
-share/doc/treewm/TODO
+share/doc/treewm/README.tiling
 share/examples/treewm/default.cfg
 share/examples/treewm/sample.cfg
 share/examples/treewm/treewm.kdevprj
