@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/13 01:28:01 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/17 13:21:37 todd Exp $
 
 COMMENT=	a Kerberos 5 implementation
 
@@ -34,8 +34,8 @@ CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x \
-			--x-includes=/usr/X11R6/include \
-			--x-libraries=/usr/X11R6/lib
+			--x-includes=${X11BASE}/include \
+			--x-libraries=${X11BASE}/lib
 .endif
 
 .include <bsd.port.mk>
