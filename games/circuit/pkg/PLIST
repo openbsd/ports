@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/14 17:02:37 espie Exp $
+bin/circuit
