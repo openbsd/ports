@@ -1,16 +1,41 @@
-$OpenBSD: patch-configure,v 1.1 2002/01/08 10:51:23 espie Exp $
---- configure.orig	Thu Oct 25 20:00:18 2001
-+++ configure	Mon Jan  7 22:41:43 2002
-@@ -7645,8 +7645,11 @@ EOF
+$OpenBSD: patch-configure,v 1.2 2002/01/08 11:05:53 espie Exp $
+--- configure.orig	Fri Dec  7 18:45:21 2001
++++ configure	Tue Jan  8 11:53:37 2002
+@@ -2419,7 +2419,7 @@ CCDEPMODE="depmode=$am_cv_CC_dependencie
+ 
+ # By default we simply use the C compiler to build assembly code.
+ 
+-: ${AS='$(CC)'}
++: ${AS='$CC'}
+ # Set ASFLAGS if not already set.
+ : ${ASFLAGS='$(CFLAGS)'}
+ 
+@@ -15547,6 +15547,7 @@ cat >conftest.$ac_ext <<_ACEOF
+ #line 15547 "configure"
+ #include "confdefs.h"
+ $ac_includes_default
++#include <X11/Xlib.h>
+ #include <X11/extensions/XShm.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -17622,6 +17623,7 @@ cat >conftest.$ac_ext <<_ACEOF
+ #line 17622 "configure"
+ #include "confdefs.h"
+ $ac_includes_default
++#include <X11/Xlib.h>
+ #include <X11/extensions/xf86vmode.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -17873,8 +17875,11 @@ _ACEOF
  powerpc|ppc)
  	if test x"$GCC" = x"yes"; then
  	  CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-loops"
--	  CFLAGS="$CFLAGS -Wa,-m7400"
+-	  XCFLAGS="-Wa,-m7400"
 -	  USE_ALTIVEC=yes
 +	  echo | as -m7400 >/dev/null
 +	  if test $? -eq 0; then
-+	    CFLAGS="$CFLAGS -Wa,-m7400"
-+	    USE_ALTIVEC=yes
++	  	XCFLAGS="-Wa,-m7400"
++		USE_ALTIVEC=yes
 +	  fi
  	fi
  esac

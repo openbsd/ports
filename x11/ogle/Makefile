@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/02 17:38:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/08 11:05:53 espie Exp $
 CATEGORIES=	x11
 NEED_VERSION=	1.474
 
 COMMENT=	"DVD player"
-DISTNAME=	ogle-0.8.1
+DISTNAME=	ogle-0.8.2
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
+# Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -44,6 +45,7 @@ post-extract:
 		echo >&2 "Please make sure the ${BINUTILS} dir is populated and retry"; \
 		exit 1; }
 	@mkdir -p ${BINOBJ}
+
 
 post-configure:
 	@cd ${BINOBJ} && PATH="/bin:/usr/bin:/sbin:/usr/sbin" \
