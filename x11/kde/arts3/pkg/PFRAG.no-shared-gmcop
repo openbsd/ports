@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no-shared-gmcop,v 1.1 2002/12/03 13:58:19 espie Exp $
+lib/libgmcop.a
