@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/03/05 17:20:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/11/13 08:34:30 jakob Exp $
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -59,7 +59,7 @@ share/doc/sasl/rfc2095.txt
 share/doc/sasl/rfc2104.txt
 share/doc/sasl/rfc2222.txt
 share/doc/sasl/rfc2245.txt
-share/doc/sasl/draft-leach-digest-sasl-05.txt
+share/doc/sasl/rfc2831.txt
 share/doc/sasl/draft-newman-auth-scram-03.txt
 @dirrm include/sasl
 @dirrm lib/sasl
