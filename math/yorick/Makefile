@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/02/19 06:58:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/19 07:25:59 pvalchev Exp $
 
 COMMENT=	"interpreted language for scientific computing"
 
@@ -25,7 +25,9 @@ Y_DIR=		${PREFIX}/share/yorick
 
 WRKDIST=	${WRKDIR}/yorick-${VERSION}
 
+# Some tests require X started (or DISPLAY, etc set).
 REGRESS_IS_INTERACTIVE=	Yes
+SETENV=env
 REGRESS_TARGET=		check
 
 do-install:
