@@ -1,0 +1,45 @@
+$OpenBSD: patch-dbdimp_c,v 1.1 2003/12/30 10:33:26 espie Exp $
+--- dbdimp.c.orig	2003-04-03 21:15:13.000000000 +0200
++++ dbdimp.c	2003-12-30 11:28:08.000000000 +0100
+@@ -2113,24 +2113,24 @@ static int syb_st_describe_proc(imp_sth,
+     PerlIO_printf(DBILOGFP, " describe_proc: %s %s %s\n", db, owner, proc);
+ 
+     if(db && *db) {
+-	sprintf(sql, "
+-select c.colid, c.name, c.usertype, c.prec, c.scale 
+- from %s..sysobjects o, %s..syscolumns c, %s..sysusers u
+- where c.id = o.id 
+-   and o.name = '%s'
+-   and o.type = 'P'
+-   and o.uid = u.uid
+-   and u.name = '%s'
+-", db, db, db, proc, owner);
++	sprintf(sql, "\n"
++"select c.colid, c.name, c.usertype, c.prec, c.scale \n"
++" from %s..sysobjects o, %s..syscolumns c, %s..sysusers u\n"
++" where c.id = o.id \n"
++"   and o.name = '%s'\n"
++"   and o.type = 'P'\n"
++"   and o.uid = u.uid\n"
++"   and u.name = '%s'\n"
++"", db, db, db, proc, owner);
+     } else {
+-	sprintf(sql, "
+-select c.colid, c.name, c.usertype, c.prec, c.scale 
+- from sysobjects o, syscolumns c
+- where c.id = o.id 
+-   and o.name = '%s'
+-   and o.type = 'P'
+-   and o.uid = user_id(u.uid
+-   and u.name = '%s'", proc, owner);
++	sprintf(sql, "\n"
++"select c.colid, c.name, c.usertype, c.prec, c.scale \n"
++" from sysobjects o, syscolumns c\n"
++" where c.id = o.id \n"
++"   and o.name = '%s'\n"
++"   and o.type = 'P'\n"
++"   and o.uid = user_id(u.uid\n"
++"   and u.name = '%s'", proc, owner);
+     }
+ #endif    
+ }
