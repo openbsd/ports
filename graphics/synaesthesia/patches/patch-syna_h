@@ -1,5 +1,6 @@
+$OpenBSD: patch-syna_h,v 1.2 2002/09/08 07:43:52 mark Exp $
 --- syna.h.orig	Wed Jun  7 22:41:06 2000
-+++ syna.h	Wed May 23 17:38:05 2001
++++ syna.h	Sun Sep  8 00:38:45 2002
 @@ -48,22 +48,13 @@
  #define NumSamples (1<<LogSize)
  #define RecSize (1<<LogSize-Overlap)

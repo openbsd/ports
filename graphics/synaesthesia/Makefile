@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/28 22:21:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/08 07:43:52 mark Exp $
 
 COMMENT=		"visual sound representation"
 
 DISTNAME=		synaesthesia-2.1
 CATEGORIES=     	graphics x11
-NEED_VERSION=		1.409
 
 HOMEPAGE=		http://yoyo.cc.monash.edu.au/~pfh/synaesthesia.html
 

@@ -1,5 +1,6 @@
+$OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
 --- sound.cc.orig	Wed Jun  7 22:41:06 2000
-+++ sound.cc	Wed May 23 17:32:09 2001
++++ sound.cc	Sun Sep  8 00:38:45 2002
 @@ -34,16 +34,22 @@
  #include <fcntl.h>
  #include <unistd.h>
