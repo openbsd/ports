@@ -1,15 +1,24 @@
-Vim is an almost compatible version of the UNIX text editor vi.  Only the 'Q'
-command is missing (you don't need it).
+Vim is an almost compatible version of the UNIX editor Vi.  Many new features
+have been added: multi level undo, syntax highlighting, command line history,
+on-line help, filename completion, block operations, etc.  There is also a
+Graphical User Interface (GUI) available.  See doc/vi_diff.txt.
+ 
+This editor is very useful for editing programs and other plain ASCII files.
+All commands are given with normal keyboard characters, so those who can type
+with ten fingers can work very fast.  Additionally, function keys can be
+defined by the user, and the mouse can be used.
+ 
+Vim currently runs under Amiga DOS, MS-DOS, MS-Windows 95/98/NT, Atari MiNT,
+Macintosh, BeOS, VMS, RISC OS, OS/2 and almost all flavours of UNIX.
+Porting to other systems should not be very difficult.
 
-Many new features have been added:
-    multiple windows and buffers, multi level undo, command line history,
-    filename completion, selection highlighting, block operations (including
-    column/rectangular blocks), etc.
-
-	an X-windows aware or a full X-windows GUI version can also be built
-	that allows full use of the mouse and pull-down menus
-
-Portability to all UNIX platforms, Amiga DOS, MS-DOS, MS-Windows NT, and
-    Archimedes.
-
+Flavors:
+        gtk        - build using the Gtk+ toolkit (default);
+	motif	   - build using the Motif toolkit;
+	athena	   - build using the Athena toolkit;
+	no_x11	   - build without X11 support;
+	perl	   - build with Perl support;
+	python	   - build with Python support;
+	huge	   - build with --with-features=huge.
+ 
 WWW: ${HOMEPAGE}

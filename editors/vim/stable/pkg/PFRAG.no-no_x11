@@ -1,9 +1,16 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2001/04/02 15:47:08 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2001/09/27 19:39:14 lebel Exp $
+bin/eview
+bin/evim
 bin/gview
 bin/gvim
+bin/gvimdiff
 bin/rgview
 bin/rgvim
+man/man1/eview.1
+man/man1/evim.1
 man/man1/gview.1
+man/man1/gvimdiff.1
 man/man1/gvim.1
 man/man1/rgview.1
 man/man1/rgvim.1
+share/vim/vim60/gvimrc_example.vim
