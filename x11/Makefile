@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2000/12/27 02:19:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.75 2001/01/02 19:48:53 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -53,6 +53,7 @@
      SUBDIR += gtkmm
 #    SUBDIR += gwm
      SUBDIR += icewm
+     SUBDIR += ion
 #    SUBDIR += iv
      SUBDIR += kde
      SUBDIR += lesstif
