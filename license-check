@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: license-check,v 1.2 1998/04/13 05:16:02 marc Exp $
+# $OpenBSD: license-check,v 1.3 1998/09/24 04:27:04 marc Exp $
 #
 # This script verifies that all files in a given directory are
 # mentioned in the ports LICENSE file as Distribution allowed.
@@ -12,15 +12,20 @@
 #
 #  Bad files:		files that must NOT be in a distribution
 #			directory.  These are listed in the form
-#			of a shell `rm -f xxx' command so they can
-#			be fed to the shell after manual verification.
+#			of a shell `mv -f xxx ../licensed' command so
+#			they can be fed to the shell (after manual
+#			verification) to move them into a directory
+#			that will not be copied to any CD-ROM.
+#
+#  Unknown files:	files that are noted in the LICENSE file but
+#			do not have a distribution flag of either Y or N.
 #
 #  Extra files:		Files that are in the given directory that are
 #			not mentioned in the ports LICENSE file.
 #
 
 # The ports base directory.  Note: this may be supplied from the environment
-# using the standard bsd.port.mkl name of PORTSDIR
+# using the standard bsd.port.mk name of PORTSDIR
 #
 LICENCE=${PORTSDIR:-/usr/ports}/LICENSE
 
@@ -48,7 +53,7 @@ else
     usage
 fi
 
-# This awk script matches the licence file agains an `ls' of of the given
+# This awk script matches the license file agains an `ls' of of the given
 # distribution directory and spits instructions out to stdout.
 #
 /bin/ls $DIST |
@@ -62,10 +67,12 @@ BEGIN {
 		good_files[ $3 ] = 0
 	    } else if ( $1 == "N" ) {
 		bad_files[ $3 ] = 0
+	    } else {
+	        unk_files[ $3 ] = 0
 	    }
 	}
     }
-    unk_count = 0
+    extra_count = 0
 }
 
 $1 in good_files {
@@ -76,8 +83,12 @@ $1 in bad_files {
     bad_files[ $1 ] = 1
     next
 }
+$1 in unk_files {
+    unk_files[ $1 ] = 1
+    next
+}
 {
-    unk_files[ unk_count++ ] = $1
+    extra_files[ extra_count++ ] = $1
 }
 
 END {
@@ -99,23 +110,38 @@ END {
     for ( f in bad_files ) {
 	if ( bad_files[ f ] == 1 ) {
 	    if ( ! header ) {
-		print "You MUST remove the following files/directories:"
+		print "You MUST move the following files/directories:"
 		print
 		header = 1
 	    }
-	    print "/bin/rm -rf", f
+	    print "/bin/mv -f", f, "../licensed"
 	}
     }
     if ( header ) {
 	print
 	header = 0
     }
-    if ( unk_count > 0 ) {
+    for ( f in unk_files ) {
+	if ( unk_files[ f ] == 1 ) {
+	    if ( ! header ) {
+		print "The status of the following files is unknown:"
+		print
+		header = 1
+	    }
+	    print f
+	}
+    }
+    if ( header ) {
+	print
+	header = 0
+    }
+
+    if ( extra_count > 0 ) {
 	print "The following files/dirs are extra and " \
 	      "should probably be removed:"
 	print
-	for ( i = 0; i < unk_count; i += 1 ) {
-	    print "/bin/rm -rf", unk_files[ i ]
+	for ( i = 0; i < extra_count; i += 1 ) {
+	    print "/bin/rm -rf", extra_files[ i ]
 	}
 	print
     }
