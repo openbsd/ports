@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2000/03/28 11:54:05 camield Exp $
+
+Needed for fake installation.
+
+--- Makefile.orig	Tue Mar 28 13:44:35 2000
++++ Makefile	Tue Mar 28 13:44:50 2000
+@@ -30,7 +30,7 @@
+ 
+ auto_home.c: \
+ auto-str conf-home
+-	./auto-str auto_home `head -1 conf-home` > auto_home.c
++	./auto-str auto_home ${WRKINST}`head -1 conf-home` > auto_home.c
+ 
+ auto_home.o: \
+ compile auto_home.c
