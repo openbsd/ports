@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:26:03 jolan Exp $
+lib/aspell/zu.multi
+lib/aspell/zu.rws
+lib/aspell/zulu.alias
+share/aspell/zu.dat
