@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 1998/05/20 01:07:29 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 1998/05/20 01:09:37 angelos Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
      SUBDIR += abuse
 #    SUBDIR += acm
-#    SUBDIR += agm
+     SUBDIR += agm
 #    SUBDIR += an
 #    SUBDIR += angband
 #    SUBDIR += block
