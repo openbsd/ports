@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/21 23:28:17 avsm Exp $
+%%gui%%
+bin/asp2php
+bin/unipiss

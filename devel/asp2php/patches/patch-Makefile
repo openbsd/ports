@@ -1,0 +1,26 @@
+--- Makefile.orig	Tue Feb 27 08:50:21 2001
++++ Makefile	Wed Mar 21 22:48:19 2001
+@@ -1,5 +1,7 @@
+ 
+-CC=gcc
++BINDIR=${PREFIX}/bin
++
++CC+= ${CFLAGS}
+ 
+ default:
+ 	$(CC) -c conditionals.c -Wall
+@@ -40,10 +42,10 @@ unipiss:
+ 	$(CC) -o unipiss unipiss.c html.o general.o -Wall
+ 
+ install:
+-	@if [ -e asp2php ]; then cp asp2php /usr/local/bin; fi;
+-	@if [ -e unipiss ]; then cp unipiss /usr/local/bin; fi;
+-	@if [ -e gtkasp2php ]; then cp gtkasp2php /usr/local/bin; fi;
+-	@echo "Compiled programs have been installed in /usr/local/bin"
++	@if [ -e asp2php ]; then cp asp2php ${BINDIR}; fi;
++	@if [ -e unipiss ]; then cp unipiss ${BINDIR}; fi;
++	@if [ -e gtkasp2php ]; then cp gtkasp2php ${BINDIR}; fi;
++	@echo "Compiled programs have been installed in ${BINDIR}"
+ 	@echo ""
+ 
+ all: default
