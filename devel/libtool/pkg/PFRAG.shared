@@ -1,0 +1,2 @@
+lib/libltdl.so.1.2
+@exec /sbin/ldconfig -m %B
