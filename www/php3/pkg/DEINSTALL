@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2000/04/17 19:29:48 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2000/12/15 13:29:33 naddy Exp $
 #
 # php3 de-installation
 
-CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
-
 set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+CONF=`apxs -q SYSCONFDIR`/httpd.conf
 
 rm -f /usr/lib/apache/modules/libphp3.so
 
