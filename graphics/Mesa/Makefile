@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/06/20 23:33:11 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/24 12:25:47 form Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 PKGNAME=	Mesa-3.0
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.enst.fr/distfiles/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/ \
 		ftp://ftp.mesa3d.org/mesa/
-DISTFILES=     ${DISTNAME}.tar.gz MesaDemos-3.0.tar.gz
+DISTFILES=	MesaLib-3.0.tar.gz MesaDemos-3.0.tar.gz
 
 NEEDED_VERSION=	1.64
 
