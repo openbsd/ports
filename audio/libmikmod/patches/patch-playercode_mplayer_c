@@ -1,15 +1,6 @@
-$OpenBSD: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
+$OpenBSD: patch-playercode_mplayer_c,v 1.2 2002/03/07 00:50:22 pvalchev Exp $
 --- playercode/mplayer.c.orig	Mon Jan 21 14:23:56 2002
 +++ playercode/mplayer.c	Sun Mar  3 16:47:54 2002
-@@ -20,7 +20,7 @@
- 
- /*==============================================================================
- 
--  $Id: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
-+  $Id: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
- 
-   The Protracker Player Driver
- 
 @@ -254,7 +254,7 @@ static int MP_FindEmptyChannel(MODULE *m
  		   Voice_Stopped_internal(t))
  			return t;
