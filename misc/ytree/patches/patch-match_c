@@ -1,0 +1,14 @@
+$OpenBSD: patch-match_c,v 1.1.1.1 2001/01/03 18:54:09 naddy Exp $
+--- match.c.orig	Sat Jul 15 18:01:56 2000
++++ match.c	Sat Dec 23 22:28:59 2000
+@@ -17,6 +17,10 @@
+ #define HAS_REGCOMP
+ #endif
+ 
++#if defined( __OpenBSD__ )
++#define HAS_REGCOMP
++#include <sys/types.h>
++#endif
+ 
+ #ifdef HAS_REGEX
+ #ifdef sun
