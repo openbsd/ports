@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_URLStorage_cxx,v 1.1 2002/10/16 00:01:11 naddy Exp $
+--- lib/URLStorage.cxx.orig	Tue Oct 15 02:17:58 2002
++++ lib/URLStorage.cxx	Tue Oct 15 02:18:24 2002
+@@ -7,6 +7,7 @@
+ 
+ // FIXME This implementation won't work on an EBCDIC machine.
+ 
++#include <iostream.h>	// ends
+ #include <strstream.h>
+ #include "splib.h"
+ #ifdef WINSOCK
