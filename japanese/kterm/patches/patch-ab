@@ -1,0 +1,11 @@
+--- KTerm.ad.orig	Tue Apr 18 20:54:12 2000
++++ KTerm.ad	Tue Apr 18 20:54:29 2000
+@@ -94,7 +94,7 @@ KTerm.JoinSession:False
+ !*VT100*romanKanaBoldFont3:	-*-*-bold-r-normal--16-*-jisx0201.1976-0
+ !*VT100*kanjiBoldFont3:		-*-*-bold-r-normal--16-*-jisx0208.1983-0
+ 
+-!*VT100*kanjiMode:		jis
++*VT100*kanjiMode:		euc
+ !*VT100*lineSpace:		0
+ 
+ !*VT100*textColor0:		Black
