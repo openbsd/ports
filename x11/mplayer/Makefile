@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2003/11/02 23:30:27 brad Exp $
+# $OpenBSD: Makefile,v 1.62 2003/11/12 07:02:07 david Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -59,6 +59,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--confdir=${CONFDIR}
+CONFIGURE_ENV+="TMPDIR=${WRKBUILD}"
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--target=ppc-openbsd
