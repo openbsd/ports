@@ -1,0 +1,101 @@
+$OpenBSD: patch-canon_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+--- canon.c.orig	2004-05-03 11:31:28.000000000 -0700
++++ canon.c	2004-05-03 11:56:30.000000000 -0700
+@@ -775,14 +775,14 @@ canon_prop01(struct exifprop *aprop, str
+ 	switch (aprop->tag) {
+ 	case 2:
+ 		aprop->lvl = v ? ED_IMG : ED_VRB;
+-		exifstralloc(&aprop->str, 32);
+-		snprintf(aprop->str, 31, "%d sec", v / 10);
++		exifstralloc(&aprop->str, PROPSTR_SIZE);
++		snprintf(aprop->str, PROPSTR_SIZE, "%d sec", v / 10);
+ 		break;
+ 	case 5:
+ 		/* Change "Single" to "Timed" if #2 > 0. */
+ 
+ 		if (!v && exif2byte(off + 2 * 2, o))
+-			strcpy(aprop->str, "Timed");
++			strlcpy(aprop->str, "Timed", PROPSTR_SIZE);
+ 		break;
+ 	case 12:
+ 		aprop->lvl = v ? ED_IMG : ED_VRB;
+@@ -793,8 +793,8 @@ canon_prop01(struct exifprop *aprop, str
+ 		 */
+ 
+ 		if (v == 3 && prop->count >= 37) {
+-			exifstralloc(&aprop->str, 32);
+-			snprintf(aprop->str, 31, "x%.1f", 2 *
++			exifstralloc(&aprop->str, PROPSTR_SIZE);
++			snprintf(aprop->str, PROPSTR_SIZE, "x%.1f", 2 *
+ 			    (float)exif2byte(off + 37 * 2, o) /
+ 			    (float)exif2byte(off + 36 * 2, o));
+ 		} else
+@@ -802,7 +802,7 @@ canon_prop01(struct exifprop *aprop, str
+ 		break;
+ 	case 16:
+ 		/* ISO overrides standard one if known. */
+-		if (!strcmp(aprop->str, "Unknown")) {
++		if (!strncmp(aprop->str, "Unknown", 7)) {
+ 			aprop->lvl = ED_VRB;
+ 			break;
+ 		}
+@@ -810,7 +810,7 @@ canon_prop01(struct exifprop *aprop, str
+ 		break;
+ 	case 17:
+ 		/* Maker meter mode overrides standard one if known. */
+-		if (!strcmp(aprop->str, "Unknown")) {
++		if (!strncmp(aprop->str, "Unknown", 7)) {
+ 			aprop->lvl = ED_VRB;
+ 			break;
+ 		}
+@@ -857,8 +857,8 @@ canon_propA0(struct exifprop *aprop, str
+ 
+ 	switch (aprop->tag) {
+ 	case 9:
+-		exifstralloc(&aprop->str, 32);
+-		snprintf(aprop->str, 31, "%d K", aprop->value);
++		exifstralloc(&aprop->str, PROPSTR_SIZE);
++		snprintf(aprop->str, PROPSTR_SIZE, "%d K", aprop->value);
+ 		break;
+ 	default:
+ 		return (FALSE);
+@@ -917,8 +917,8 @@ canon_subval(struct exifprop *prop, stru
+ 		if (valfun && !valfun(aprop, prop, off, t)) {
+ 			if (aprop->lvl != ED_UNK)
+ 				continue;
+-			exifstralloc(&aprop->str, 32);
+-			snprintf(aprop->str, 31, "num %02d, val 0x%04X", i, v);
++			exifstralloc(&aprop->str, PROPSTR_SIZE);
++			snprintf(aprop->str, PROPSTR_SIZE, "num %02d, val 0x%04X", i, v);
+ 		}
+ 	}
+ 
+@@ -1040,14 +1040,14 @@ canon_prop(struct exifprop *prop, struct
+ 			tmpprop = childprop(prop);
+ 			tmpprop->name = "CanonLensSz";
+ 			tmpprop->descr = "Lens Size";
+-			exifstralloc(&tmpprop->str, 32);
++			exifstralloc(&tmpprop->str, PROPSTR_SIZE);
+ 
+ 			if (flmin == flmax) {
+-				snprintf(tmpprop->str, 31, "%.2f mm",
++				snprintf(tmpprop->str, PROPSTR_SIZE, "%.2f mm",
+ 			    	(float)flmax / (float)flunit);
+ 				tmpprop->lvl = ED_VRB;
+ 			} else {
+-				snprintf(tmpprop->str, 31, "%.2f - %.2f mm",
++				snprintf(tmpprop->str, PROPSTR_SIZE, "%.2f - %.2f mm",
+ 				    (float)flmin / (float)flunit,
+ 				    (float)flmax / (float)flunit);
+ 				tmpprop->lvl = ED_PAS;
+@@ -1075,8 +1075,8 @@ canon_prop(struct exifprop *prop, struct
+ 	/* Image number. */
+ 
+ 	case 0x0008:
+-		exifstralloc(&prop->str, 32);
+-		snprintf(prop->str, 31, "%03d-%04d", prop->value / 10000,
++		exifstralloc(&prop->str, PROPSTR_SIZE);
++		snprintf(prop->str, PROPSTR_SIZE, "%03d-%04d", prop->value / 10000,
+ 		    prop->value % 10000);
+ 		break;
+ 

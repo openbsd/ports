@@ -1,0 +1,16 @@
+$OpenBSD: patch-EXIF_xs,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+--- EXIF.xs.orig	2004-05-03 11:29:10.000000000 -0700
++++ EXIF.xs	2004-05-03 11:56:53.000000000 -0700
+@@ -29,10 +29,10 @@ read_data(char *fname)
+         mode = "r";
+ #endif
+ 
+-	if(strcmp(fname, _file_name)){
++	if(strncmp(fname, _file_name, sizeof(_file_name) > 0)){
+ 		fpn = fopen(fname, mode);
+ 		if (fpn) 
+-			strcpy(_file_name, fname);
++			strlcpy(_file_name, fname, sizeof(_file_name));
+ 		else
+ 			_file_name[0] = '\0';
+ 	} else {

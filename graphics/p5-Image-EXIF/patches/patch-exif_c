@@ -1,0 +1,148 @@
+$OpenBSD: patch-exif_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+--- exif.c.orig	2004-01-14 14:12:54.000000000 -0800
++++ exif.c	2004-05-03 11:44:51.000000000 -0700
+@@ -257,8 +257,7 @@ postprop(struct exifprop *prop, struct e
+ 		}
+ 		val = exif4byte(t->md.btiff + prop->value, o) /
+ 		    exif4byte(t->md.btiff + prop->value + 4, o);
+-		snprintf(prop->str, 31, "%d dp%s", val, tmpprop->str);
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "%d dp%s", val, tmpprop->str);
+ 		break;
+ 
+ 	/*
+@@ -272,14 +271,13 @@ postprop(struct exifprop *prop, struct e
+ 		    (float)exif4sbyte(t->md.btiff + prop->value + 4, o);
+ 		if (isnan(fval)) fval = 0;
+ 		/* 1 / (2^speed) */
+-		snprintf(prop->str, 31, "1/%d",
++		snprintf(prop->str, PROPSTR_SIZE, "1/%d",
+ 		    (int)floor(pow(2, (double)fval) + 0.5));
+-		prop->str[31] = '\0';
+ 		/* FALLTHROUGH */
+ 
+ 	case EXIF_T_EXPOSURE:
+ 		if (strlen(prop->str) > 27) break;
+-		strcat(prop->str, " sec");
++		strlcat(prop->str, " sec", PROPSTR_SIZE);
+ 		if (prop->tag == EXIF_T_EXPOSURE)
+ 			prop->override = EXIF_T_SHUTTER;
+ 		break;
+@@ -288,8 +286,7 @@ postprop(struct exifprop *prop, struct e
+ 		fval = (float)exif4byte(t->md.btiff + prop->value, o) /
+ 		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
+ 		if (isnan(fval)) fval = 0;
+-		snprintf(prop->str, 31, "f/%.1f", fval);
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "f/%.1f", fval);
+ 		break;
+ 
+ 	case EXIF_T_LAPERTURE:
+@@ -298,36 +295,34 @@ postprop(struct exifprop *prop, struct e
+ 		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
+ 		if (isnan(fval)) fval = 0;
+ 		/* sqrt(2)^aperture */
+-		snprintf(prop->str, 31, "f/%.1f", pow(1.4142, (double)fval));
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "f/%.1f", pow(1.4142, (double)fval));
+ 		break;
+ 
+ 	case EXIF_T_BRIGHTVAL:
+ 		if (exif4byte(t->md.btiff + prop->value, o) == 0xffffffff) {
+-			strcpy(prop->str, "Unknown");
++			strlcpy(prop->str, "Unknown", PROPSTR_SIZE);
+ 			break;
+ 		}
+ 		/* FALLTHROUGH */
+ 
+ 	case EXIF_T_EXPBIASVAL:
+ 		if (strlen(prop->str) > 28) break;
+-		strcat(prop->str, " EV");
++		strlcat(prop->str, " EV", PROPSTR_SIZE);
+ 		break;
+ 
+ 	case EXIF_T_DISTANCE:
+ 		if (exif4byte(t->md.btiff + prop->value, o) == 0xffffffff) {
+-			strcpy(prop->str, "Infinity");
++			strlcpy(prop->str, "Infinity", PROPSTR_SIZE);
+ 			break;
+ 		}
+ 		if (exif4byte(t->md.btiff + prop->value + 4, o) == 0) {
+-			strcpy(prop->str, "Unknown");
++			strlcpy(prop->str, "Unknown", PROPSTR_SIZE);
+ 			break;
+ 		}
+ 		fval = (float)exif4byte(t->md.btiff + prop->value, o) /
+ 		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
+ 		if (isnan(fval)) fval = 0;
+-		snprintf(prop->str, 31, "%.2f m", fval);
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "%.2f m", fval);
+ 		break;
+ 
+ 	/* Flash consists of a number of bits, which expanded with v2.2. */
+@@ -344,15 +339,14 @@ postprop(struct exifprop *prop, struct e
+ 		fval = (float)exif4byte(t->md.btiff + prop->value, o) /
+ 		    (float)exif4byte(t->md.btiff + prop->value + 4, o);
+ 		if (isnan(fval)) fval = 0;
+-		snprintf(prop->str, 31, "%.2f mm", fval);
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "%.2f mm", fval);
+ 		break;
+ 
+ 	/* Digital zoom: set to verbose if numerator is 0 or fraction = 1. */
+ 
+ 	case EXIF_T_DIGIZOOM:
+ 		if (!exif4byte(t->md.btiff + prop->value, o))
+-			strcpy(prop->str, "Unused");
++			strlcpy(prop->str, "Unused", PROPSTR_SIZE);
+ 		else if (exif4byte(t->md.btiff + prop->value, o) !=
+ 		    exif4byte(t->md.btiff + prop->value + 4, o))
+ 			break;
+@@ -361,7 +355,7 @@ postprop(struct exifprop *prop, struct e
+ 
+ 	case EXIF_T_FOCALLEN35:
+ 		exifstralloc(&prop->str, 16);
+-		snprintf(prop->str, 15, "%d mm", prop->value);
++		snprintf(prop->str, 16, "%d mm", prop->value);
+ 		break;
+ 
+ 	/*
+@@ -502,7 +496,7 @@ parsetag(struct exifprop *prop, struct i
+ 		t->exifmin = (short)atoi(buf + 2);
+ 		buf[2] = '\0';
+ 		t->exifmaj = (short)atoi(buf);
+-		snprintf(prop->str, 7, "%d.%d", t->exifmaj, t->exifmin);
++		snprintf(prop->str, 8, "%d.%d", t->exifmaj, t->exifmin);
+ 		break;
+ 
+ 	/* Process a maker note. */
+@@ -599,7 +593,7 @@ parsetag(struct exifprop *prop, struct i
+ 			while (d > c && isspace((int)*(d - 1))) --d;
+ 
+ 			exifstralloc(&prop->str, d - c + 1);
+-			strncpy(prop->str, c, d - c);
++			strlcpy(prop->str, c, d - c + 1);
+ 			prop->lvl = prop->str[0] ? ED_IMG : ED_VRB;
+ 			return;
+ 		}
+@@ -627,8 +621,8 @@ parsetag(struct exifprop *prop, struct i
+ 	    (prop->value + prop->count <=
+ 	    (u_int32_t)(dir->md.etiff - btiff))) {
+ 		exifstralloc(&prop->str, prop->count + 1);
+-		strncpy(prop->str, (const char *)(btiff + prop->value),
+-		    prop->count);
++		strlcpy(prop->str, (const char *)(btiff + prop->value),
++		    (prop->count + 1));
+ 		return;
+ 	}
+ 
+@@ -641,7 +635,7 @@ parsetag(struct exifprop *prop, struct i
+ 	    (prop->value + prop->count * 8 <=
+ 	    (u_int32_t)(dir->md.etiff - btiff))) {
+ 
+-		exifstralloc(&prop->str, 32);
++		exifstralloc(&prop->str, PROPSTR_SIZE);
+ 
+ 		if (prop->type == TIFF_RTNL) {
+ 			un = exif4byte(btiff + prop->value, o);

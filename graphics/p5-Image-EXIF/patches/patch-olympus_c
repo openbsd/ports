@@ -1,0 +1,33 @@
+$OpenBSD: patch-olympus_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
+--- olympus.c.orig	2004-05-03 11:49:52.000000000 -0700
++++ olympus.c	2004-05-03 11:58:11.000000000 -0700
+@@ -144,16 +144,16 @@ olympus_prop(struct exifprop *prop, stru
+ 		b = exif4byte(t->md.btiff + prop->value + 4, t->md.order);
+ 
+ 		if (a == b)
+-			snprintf(prop->str, 31, "None");
++			snprintf(prop->str, PROPSTR_SIZE, "None");
+ 		else
+-			snprintf(prop->str, 31, "x%.1f", (float)a / (float)b);
++			snprintf(prop->str, PROPSTR_SIZE, "x%.1f", (float)a / (float)b);
+ 		break;
+ 
+ 	/* Image number. */
+ 
+ 	case 0x0008:
+-		exifstralloc(&prop->str, 32);
+-		snprintf(prop->str, 31, "%03d-%04d", prop->value / 10000,
++		exifstralloc(&prop->str, PROPSTR_SIZE);
++		snprintf(prop->str, PROPSTR_SIZE, "%03d-%04d", prop->value / 10000,
+ 		    prop->value % 10000);
+ 		break;
+ 	}
+@@ -173,7 +173,7 @@ olympus_ifd(u_int32_t offset, struct tif
+ 	 * try reading the IFD starting at offset + 8 ("OLYMP" + 3).
+ 	 */
+ 
+-	if (!strcmp((const char *)(md->btiff + offset), "OLYMP"))
++	if (!strncmp((const char *)(md->btiff + offset), "OLYMP", 5))
+ 		readifd(offset + strlen("OLYMP") + 3, &myifd, olympus_tags, md);
+ 	else
+ 		readifd(offset, &myifd, olympus_tags, md);

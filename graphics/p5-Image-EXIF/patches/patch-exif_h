@@ -1,0 +1,12 @@
+$OpenBSD: patch-exif_h,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+--- exif.h.orig	2004-05-03 11:06:45.000000000 -0700
++++ exif.h	2004-05-03 11:07:29.000000000 -0700
+@@ -46,6 +46,8 @@
+ 
+ #include <sys/types.h>
+ 
++/* common size for property strings */
++#define PROPSTR_SIZE 32
+ 
+ /*
+  * XXX Only checking for Solaris & Windows now.  Other platforms will

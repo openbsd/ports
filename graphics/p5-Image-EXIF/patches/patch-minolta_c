@@ -1,0 +1,133 @@
+$OpenBSD: patch-minolta_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
+--- minolta.c.orig	2004-05-03 11:35:20.000000000 -0700
++++ minolta.c	2004-05-03 11:56:00.000000000 -0700
+@@ -484,10 +484,10 @@ minolta_cprop(struct exifprop *prop, uns
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+ 			if (aprop->value != 6)
+-				snprintf(aprop->str, 15, "%+0.1f EV",
++				snprintf(aprop->str, 16, "%+0.1f EV",
+ 				    ((double)aprop->value - 6) / 3);
+ 			else
+-				snprintf(aprop->str, 15, "Normal");
++				snprintf(aprop->str, 16, "Normal");
+ 			break;
+ 
+ 		/* Camera model (saved for 7Hi stupidity). */
+@@ -501,7 +501,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 		case 18:
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+-			snprintf(aprop->str, 15, "%02f",
++			snprintf(aprop->str, 16, "%02f",
+ 			    (double)aprop->value / 256);
+ 			break;
+ 
+@@ -512,7 +512,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 		case 30:
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+-			snprintf(aprop->str, 15, "%0.6f",
++			snprintf(aprop->str, 16, "%0.6f",
+ 			    (double)aprop->value / 256);
+ 			break;
+ 
+@@ -523,7 +523,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 			valbuf = NULL;
+ 			v = (u_int16_t)(pow(2, ((double)aprop->value / 8) -
+ 			    1) * (double)3.125);
+-			snprintf(aprop->str, 15, "%d", v);
++			snprintf(aprop->str, 16, "%d", v);
+ 			break;
+ 
+ 		/* Aperture and max aperture. */
+@@ -533,7 +533,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+ 			d = pow(2, ((double)aprop->value / 16) - 0.5);
+-			snprintf(aprop->str, 15, "%0.1f", d);
++			snprintf(aprop->str, 16, "%0.1f", d);
+ 			break;
+ 
+ 		/* Exposure time. */
+@@ -546,9 +546,9 @@ minolta_cprop(struct exifprop *prop, uns
+ 
+ 			/* 1 sec limit. */
+ 			if (aprop->value < 56)
+-				snprintf(aprop->str, 15, "%0.1f", d);
++				snprintf(aprop->str, 16, "%0.1f", d);
+ 			else
+-				snprintf(aprop->str, 15, "1/%d",
++				snprintf(aprop->str, 16, "1/%d",
+ 				    (unsigned int)d);
+ #if 0
+ 			/*
+@@ -568,9 +568,9 @@ minolta_cprop(struct exifprop *prop, uns
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+ 			if (!aprop->value)
+-				strcpy(aprop->str, "Infinite");
++				strlcpy(aprop->str, "Infinite", 16);
+ 			else
+-				snprintf(aprop->str, 15, "%.1f",
++				snprintf(aprop->str, 16, "%.1f",
+ 				    (float)(aprop->value / (float)1000));
+ 			aprop->value /= 100;
+ 			break;
+@@ -587,7 +587,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+ 			byte4exif(aprop->value, buf, LITTLE);
+-			snprintf(aprop->str, 15, "%02d/%02d/%04d",
++			snprintf(aprop->str, 16, "%02d/%02d/%04d",
+ 			    buf[0], buf[1], buf[3] << 8 | buf[2]);
+ 			break;
+ 
+@@ -597,7 +597,7 @@ minolta_cprop(struct exifprop *prop, uns
+ 			aprop->str = valbuf;
+ 			valbuf = NULL;
+ 			byte4exif(aprop->value, buf, LITTLE);
+-			snprintf(aprop->str, 9, "%02d:%02d:%02d",
++			snprintf(aprop->str, 16, "%02d:%02d:%02d",
+ 			    buf[2], buf[1], buf[0]);
+ 			break;
+ 
+@@ -631,9 +631,9 @@ minolta_cprop(struct exifprop *prop, uns
+ 			valbuf = NULL;
+ 			aprop->value -= 3;
+ 			if (aprop->value)
+-				snprintf(aprop->str, 15, "%+d", aprop->value);
++				snprintf(aprop->str, 16, "%+d", aprop->value);
+ 			else
+-				strcpy(aprop->str, "Normal");
++				strlcpy(aprop->str, "Normal", 16);
+ 			break;
+ 
+ 		/* Scene. */
+@@ -663,7 +663,7 @@ minolta_naval(struct exifprop *props, st
+ 	free(prop->str);
+ 	prop->str = NULL;
+ 	exifstralloc(&prop->str, strlen(na) + 1);
+-	strcpy(prop->str, na);
++	strlcpy(prop->str, na, (strlen(na) + 1));
+ 	prop->lvl = ED_BAD;
+ }
+ 
+@@ -699,7 +699,7 @@ minolta_prop(struct exifprop *prop, stru
+ 
+ 		/* We recognize two types: MLT0 and mlt0. */
+ 
+-		if (strcmp(prop->str, "MLT0") && strcmp(prop->str, "mlt0"))
++		if (strncmp(prop->str, "MLT0", 4) && strncmp(prop->str, "mlt0", 4))
+ 			exifwarn2("Minolta maker note version not supported",
+ 			    prop->str);
+ 		break;
+@@ -793,7 +793,7 @@ minolta_ifd(u_int32_t offset, struct tif
+ 
+ 	/* DiMAGE E201. */
+ 
+-	if (!strcmp((const char *)(md->btiff + offset), "+M")) {
++	if (!strncmp((const char *)(md->btiff + offset), "+M", 2)) {
+ 		exifwarn("Minolta maker note version not supported");
+ 		return (NULL);
+ 	}

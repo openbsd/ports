@@ -1,0 +1,98 @@
+$OpenBSD: patch-exifgps_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+--- exifgps.c.orig	2004-05-03 11:15:53.000000000 -0700
++++ exifgps.c	2004-05-03 11:46:31.000000000 -0700
+@@ -252,7 +252,7 @@ gpsprop(struct exifprop *prop, struct ex
+ 
+ 		free(prop->str);
+ 		prop->str = NULL;
+-		exifstralloc(&prop->str, 32);
++		exifstralloc(&prop->str, PROPSTR_SIZE);
+ 
+ 		/* Figure out the reference prefix. */
+ 
+@@ -279,13 +279,13 @@ gpsprop(struct exifprop *prop, struct ex
+ 		n = exif4byte(t->md.btiff + prop->value + i * 8, o);
+ 		d = exif4byte(t->md.btiff + prop->value + 4 + i * 8, o);
+ 
+-		strcpy(fmt, "%s %.f%s ");
++		strlcpy(fmt, "%s %.f%s ", sizeof(fmt));
+ 		if (!n || !d)			/* Punt. */
+ 			deg = 0.0;
+ 		else {
+ 			deg = (double)n / (double)d;
+ 			if (d != 1)
+-				sprintf(fmt, "%%s %%.%df%%s ",
++				snprintf(fmt, sizeof(fmt), "%%s %%.%df%%s ",
+ 				    (int)log10((double)d));
+ 		}
+ 
+@@ -297,14 +297,14 @@ gpsprop(struct exifprop *prop, struct ex
+ 
+ 		if (!n || !d) {			/* Punt. */
+ 			min = 0.0;
+-			strcat(fmt, "%.f'");
++			strlcat(fmt, "%.f'", sizeof(fmt));
+ 		} else {
+ 			min = (double)n / (double)d;
+ 			if (d != 1) {
+-				sprintf(buf, "%%.%df'", (int)log10((double)d));
+-				strcat(fmt, buf);
++				snprintf(buf, sizeof(buf), "%%.%df'", (int)log10((double)d));
++				strlcat(fmt, buf, sizeof(fmt));
+ 			} else
+-				strcat(fmt, "%.f'");
++				strlcat(fmt, "%.f'", sizeof(fmt));
+ 		}
+ 
+ 		/*
+@@ -317,18 +317,18 @@ gpsprop(struct exifprop *prop, struct ex
+ 		d = exif4byte(t->md.btiff + prop->value + 4 + i * 8, o);
+ 
+ 		if (!n || !d) {			/* Assume no seconds. */
+-			snprintf(prop->str, 31, fmt, tmpprop && tmpprop->str ?
++			snprintf(prop->str, PROPSTR_SIZE, fmt, tmpprop && tmpprop->str ?
+ 			    tmpprop->str : "", deg, DEGREE, min);
+ 			break;
+ 		} else {
+ 			sec = (double)n / (double)d;
+ 			if (d != 1) {
+-				sprintf(buf, " %%.%df", (int)log10((double)d));
+-				strcat(fmt, buf);
++				snprintf(buf, sizeof(buf), " %%.%df", (int)log10((double)d));
++				strlcat(fmt, buf, sizeof(fmt));
+ 			} else
+-				strcat(fmt, " %.f");
++				strlcat(fmt, " %.f", sizeof(fmt));
+ 		}
+-		snprintf(prop->str, 31, fmt, tmpprop && tmpprop->str ?
++		snprintf(prop->str, PROPSTR_SIZE, fmt, tmpprop && tmpprop->str ?
+ 		    tmpprop->str : "", deg, DEGREE, min, sec);
+ 		break;
+ 
+@@ -351,8 +351,7 @@ gpsprop(struct exifprop *prop, struct ex
+ 
+ 		/* Should already have a 32-byte buffer from parsetag(). */
+ 
+-		snprintf(prop->str, 31, "%.2f m", alt);
+-		prop->str[31] = '\0';
++		snprintf(prop->str, PROPSTR_SIZE, "%.2f m", alt);
+ 		break;
+ 
+ 	/* Time. */
+@@ -368,13 +367,13 @@ gpsprop(struct exifprop *prop, struct ex
+ 			if (!d) break;
+ 
+ 			if (!i)
+-				sprintf(fmt, "%%02.%df", (int)log10((double)d));
++				snprintf(fmt, sizeof(fmt), "%%02.%df", (int)log10((double)d));
+ 			else
+-				sprintf(fmt, ":%%02.%df",
++				snprintf(fmt, sizeof(fmt), ":%%02.%df",
+ 				    (int)log10((double)d));
+ 
+ 			snprintf(buf, 8, fmt, (double)n / (double)d);
+-			strcat(prop->str, buf);
++			strlcat(prop->str, buf, PROPSTR_SIZE);
+ 		}
+ 		break;
+ 	}
