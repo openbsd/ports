@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/20 01:49:12 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/08 15:37:27 marc Exp $
 #
 
 DISTNAME=		bash-2.03
@@ -31,15 +31,7 @@ post-install:
 		${WRKDIR}/doc/builtins.ps  \
 		${WRKDIR}/doc/readline.ps  \
 			${PREFIX}/share/doc/bash
-	@${ECHO} ""
-	@${ECHO} "*** Finished installing $(DISTNAME)"
-	@${ECHO} "*** To complete the install, you should notify the system"
-	@${ECHO} "*** that $(PREFIX)/bin/bash is a valid shell by adding it to"
-	@${ECHO} "*** the file /etc/shells."
-	@${ECHO} "***"
-	@${ECHO} "*** If you are unfamiliar with this file, consult the"
-	@${ECHO} "*** shells(5) manual page."
-	@${ECHO} ""
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
 

@@ -15,15 +15,3 @@ share/doc/bash/bashref.ps
 share/doc/bash/builtins.ps
 share/doc/bash/readline.ps
 @dirrm share/doc/bash
-@exec echo ""
-@exec echo "*** Finished bash installation."
-@exec echo "*** To complete the install, you should notify the system"
-@exec echo "*** that %D/bin/bash is a valid shell by adding it to"
-@exec echo "*** the file /etc/shells."
-@exec echo "***"
-@exec echo "*** If you are unfamiliar with this file, consult the"
-@exec echo "*** shells(5) manual page."
-@exec echo ""
-@unexec echo ""
-@unexec echo "*** Don't forget to remove bash from /etc/shells"
-@unexec echo ""
