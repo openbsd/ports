@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_gnatchop_adb,v 1.1 2002/11/24 15:43:30 espie Exp $
+--- gcc/ada/gnatchop.adb.orig	Sun Dec 16 02:13:40 2001
++++ gcc/ada/gnatchop.adb	Sun Nov 24 16:36:34 2002
+@@ -1640,7 +1640,7 @@ procedure Gnatchop is
+ begin
+    --  Check presence of required executables
+ 
+-   Gnat_Cmd := Locate_Executable ("gcc");
++   Gnat_Cmd := Locate_Executable ("egcc");
+ 
+    if Gnat_Cmd = null then
+       goto No_Files_Written;

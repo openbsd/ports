@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_mdlltool_adb,v 1.1 2002/11/24 15:43:30 espie Exp $
+--- gcc/ada/mdlltool.adb.orig	Sat May  4 05:28:20 2002
++++ gcc/ada/mdlltool.adb	Sun Nov 24 16:36:34 2002
+@@ -42,7 +42,7 @@ package body MDLL.Tools is
+    Dlltool_Name  : constant String := "dlltool";
+    Dlltool_Exec  : OS_Lib.String_Access;
+ 
+-   Gcc_Name      : constant String := "gcc";
++   Gcc_Name      : constant String := "egcc";
+    Gcc_Exec      : OS_Lib.String_Access;
+ 
+    Gnatbind_Name : constant String := "gnatbind";
