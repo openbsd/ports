@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.6 2004/07/23 23:07:33 pvalchev Exp $
+# $OpenBSD: i386,v 1.7 2004/07/24 21:19:31 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -21,7 +21,7 @@ net/samba
 databases/mysql
 databases/mysql,-server
 graphics/gif2png
-shells/zsh/stable,static
+shells/zsh,static
 shells/bash2,static
 shells/tcsh,static
 devel/autoconf/2.59
