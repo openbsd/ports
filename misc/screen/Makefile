@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/08/23 17:55:20 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/08/24 22:46:43 brad Exp $
 
 VERSION=	3.9.5
 DISTNAME=	screen-${VERSION}
@@ -18,10 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 
 post-install:
-	@cd ${PREFIX}/bin && ln -sf screen-${VERSION} screen
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/screen
 	${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc \
 	 ${PREFIX}/share/examples/screen/screenrc-sample

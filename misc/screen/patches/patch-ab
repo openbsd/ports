@@ -1,6 +1,14 @@
 --- doc/Makefile.in.orig	Wed Sep  1 18:50:32 1999
-+++ doc/Makefile.in	Thu Dec  9 16:05:41 1999
-@@ -9,7 +9,7 @@
++++ doc/Makefile.in	Thu Aug 24 18:08:30 2000
+@@ -3,13 +3,15 @@
+ srcdir = @srcdir@
+ VPATH = @srcdir@
+ 
++DESTDIR = 
++
+ prefix = @prefix@
+ mandir = @mandir@
+ infodir = @infodir@
  
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
@@ -9,7 +17,7 @@
  TEXI2DVI = texi2dvi
  
  SHELL = /bin/sh
-@@ -20,6 +20,7 @@
+@@ -20,25 +22,23 @@
  	$(TEXI2DVI) $(srcdir)/screen.texinfo
  
  info screen.info: screen.texinfo
@@ -17,13 +25,27 @@
  	$(MAKEINFO) $(srcdir)/screen.texinfo -o screen.info
  
  install: installdirs
-@@ -28,9 +29,6 @@
+-	$(INSTALL_DATA) $(srcdir)/screen.1 $(mandir)/man1/screen.1
++	$(INSTALL_DATA) $(srcdir)/screen.1 $(DESTDIR)$(mandir)/man1/screen.1
+ 	-$(MAKE) screen.info
  	-if test -f screen.info; then d=.; else d=$(srcdir); fi; \
  	if test -f $$d/screen.info; then \
- 	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
+-	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
 -	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
 -	  install-info --info-dir=$(infodir) $$d/screen.info; \
 -	else true; fi; \
++	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(DESTDIR)$(infodir);done; \
  	fi
  
  uninstall:
+-	rm -f $(mandir)/man1/screen.1
+-	rm -f $(infodir)/screen.info*
++	rm -f $(DESTDIR)$(mandir)/man1/screen.1
++	rm -f $(DESTDIR)$(infodir)/screen.info*
+ 
+ installdirs:
+-	$(srcdir)/../etc/mkinstalldirs $(mandir)/man1 $(infodir)
++	$(srcdir)/../etc/mkinstalldirs $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(infodir)
+ 
+ mostlyclean:
+ 	-rm -f *.cp *.cps *.fn *.fns *.ky *.kys *.pg *.tp *.vr

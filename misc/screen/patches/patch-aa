@@ -1,6 +1,15 @@
 --- Makefile.in.orig	Wed Sep  1 18:50:31 1999
-+++ Makefile.in	Mon Dec 27 23:34:35 1999
-@@ -21,8 +21,8 @@
++++ Makefile.in	Thu Aug 24 18:37:40 2000
+@@ -7,6 +7,8 @@
+ srcdir = @srcdir@
+ VPATH = @srcdir@
+ 
++DESTDIR = 
++
+ # Where to install screen.
+ 
+ prefix = @prefix@
+@@ -21,8 +23,8 @@
  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
  
  CC = @CC@
@@ -11,7 +20,7 @@
  LIBS = @LIBS@
  
  CPP_DEPEND=$(CC) -MM
-@@ -62,7 +62,7 @@
+@@ -62,7 +64,7 @@
  	kmapdef.o acls.o braille.o braille_tsi.o logfile.o layer.o \
  	sched.o teln.o nethack.o
  
@@ -20,3 +29,66 @@
  
  screen: $(OFILES)
  	$(CC) $(LDFLAGS) -o $@ $(OFILES) $(LIBS)
+@@ -71,18 +73,18 @@
+ 	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
+ 
+ install_bin: .version screen
+-	-if [ -f $(bindir)/$(SCREEN) ] && [ ! -f $(bindir)/$(SCREEN).old ]; \
+-		then mv $(bindir)/$(SCREEN) $(bindir)/$(SCREEN).old; fi
+-	$(INSTALL_PROGRAM) screen $(bindir)/$(SCREEN)
+-	-chown root $(bindir)/$(SCREEN) && chmod 4755 $(bindir)/$(SCREEN)
++	-if [ -f $(DESTDIR)$(bindir)/$(SCREEN) ] && [ ! -f $(DESTDIR)$(bindir)/$(SCREEN).old ]; \
++		then mv $(DESTDIR)$(bindir)/$(SCREEN) $(DESTDIR)$(bindir)/$(SCREEN).old; fi
++	$(INSTALL_PROGRAM) screen $(DESTDIR)$(bindir)/$(SCREEN)
++	-chown root $(DESTDIR)$(bindir)/$(SCREEN) && chmod 4755 $(DESTDIR)$(bindir)/$(SCREEN)
+ # This doesn't work if $(bindir)/screen is a symlink
+-	-if [ -f $(bindir)/screen ] && [ ! -f $(bindir)/screen.old ]; then mv $(bindir)/screen $(bindir)/screen.old; fi
+-	rm -f $(bindir)/screen
+-	ln -s $(SCREEN) $(bindir)/screen
++	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTIDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
++	rm -f $(DESTIDIR)$(bindir)/screen
++	cd $(DESTDIR)$(bindir) && ln -fs $(SCREEN) screen
+ 
+ ###############################################################################
+ install: installdirs install_bin
+-	cd doc ; $(MAKE) install
++	cd doc ; $(MAKE) $(AM_MAKEFLAGS) install
+ 	-if [ -d /usr/lib/terminfo ]; then \
+ 		PATH="$PATH:/usr/5bin" tic ${srcdir}/terminfo/screeninfo.src; \
+ 		chmod 644 /usr/lib/terminfo/s/screen*; \
+@@ -94,15 +96,15 @@
+ 
+ installdirs:
+ # Path leading to ETCSCREENRC and Socketdirectory not checked.
+-	$(srcdir)/etc/mkinstalldirs $(bindir)
+-	cd doc ; $(MAKE) installdirs
++	$(srcdir)/etc/mkinstalldirs $(DESTDIR)$(bindir)
++	cd doc ; $(MAKE) $(AM_MAKEFLAGS) installdirs
+ 
+ uninstall: .version
+-	rm -f $(bindir)/$(SCREEN)
+-	rm -f $(bindir)/screen
+-	-mv $(bindir)/screen.old $(bindir)/screen
+-	rm -f $(ETCSCREENRC)
+-	cd doc; $(MAKE) uninstall
++	rm -f $(DESTDIR)$(bindir)/$(SCREEN)
++	rm -f $(DESTDIR)$(bindir)/screen
++	-mv $(DESTDIR)$(bindir)/screen.old $(DESTDIR)$(bindir)/screen
++	rm -f $(DESTDIR)$(ETCSCREENRC)
++	cd doc; $(MAKE) $(AM_MAKEFLAGS) uninstall
+ 
+ shadow:
+ 	mkdir shadow;
+@@ -127,10 +129,10 @@
+ 	CC="$(CC) $(CFLAGS)" srcdir=${srcdir} sh $(srcdir)/osdef.sh
+ 
+ docs:
+-	cd doc; $(MAKE) dvi screen.info
++	cd doc; $(MAKE) $(AM_MAKEFLAGS) dvi screen.info
+ 
+ dvi info screen.info:
+-	-cd doc; $(MAKE) $@
++	-cd doc; $(MAKE) $(AM_MAKEFLAGS) $@
+ 
+ mostlyclean:
+ 	rm -f $(OFILES) screen config.cache osdef0.c osdef1.sed osdef2.sed
