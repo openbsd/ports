@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/03 19:51:25 markus Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/15 03:25:56 markus Exp $
 
 COMMENT=	"shell (clone of plan9 shell)"
 
-DISTNAME=	rc-1.7
+DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+= --with-readline
 DISTFILES=	${DISTNAME}.tar.gz editline-1.5.tar.gz:0
 EDITLINE=	${WRKSRC}/../editline
 CONFIGURE_ARGS+= --with-editline
-CONFIGURE_ENV=	LDFLAGS="-L${EDITLINE}"
+CONFIGURE_ENV=	LIBS="-L${EDITLINE}"
 .endif
 
 .if ${FLAVOR:L} == "editline"
