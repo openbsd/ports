@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/02/20 01:51:43 alek Exp $
+--- lib/Makefile.in.orig	Sat Feb 19 22:58:54 2005
++++ lib/Makefile.in	Sat Feb 19 22:58:59 2005
+@@ -123,7 +123,7 @@ AUTOMAKE_OPTIONS = ../src/ansi2knr
+ 
+ noinst_LIBRARIES = libfetish.a
+ 
+-INCLUDES = -I.. -I$(srcdir) -I../intl
++INCLUDES = -I.. -I$(srcdir)
+ DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
+ 
+ libfetish_a_SOURCES = \

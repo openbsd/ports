@@ -1,5 +1,14 @@
 --- src/Makefile.in.orig	Sun Apr 29 07:40:37 2001
 +++ src/Makefile.in	Mon Feb 24 23:18:38 2003
+@@ -135,7 +135,7 @@ noinst_HEADERS = \
+
+ EXTRA_DIST = dcgen dircolors.hin
+
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I../intl
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DSHAREDIR=\"$(datadir)\" @DEFS@
+ LDADD = @INTLLIBS@ ../lib/libfetish.a
+
 @@ -338,7 +338,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \

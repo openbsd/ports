@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/20 01:51:43 alek Exp $
+--- configure.orig	Sat Feb 19 22:38:14 2005
++++ configure	Sat Feb 19 22:38:43 2005
+@@ -22370,7 +22370,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 22375 "configure"
+ #include "confdefs.h"
+@@ -22421,7 +22421,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 22426 "configure"
+ #include "confdefs.h"
+@@ -22469,7 +22469,7 @@ if test $ac_cv_lib_intl_gettext = yes; t
+ #define HAVE_LIBINTL 1
+ EOF
+ 
+-  LIBS="-lintl $LIBS"
++  LIBS="-lintl -liconv $LIBS"
+ 
+ fi
+ 

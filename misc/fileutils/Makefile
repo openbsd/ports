@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/20 01:51:43 alek Exp $
 
 COMMENT= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
@@ -7,8 +7,8 @@ V=			4.1
 DISTNAME=		fileutils-$V
 CATEGORIES=		misc
 
-PKGNAME=		${DISTNAME}p1
-PKGNAME-ls=		gnuls-$V
+PKGNAME=		${DISTNAME}p2
+PKGNAME-ls=		gnuls-$Vp0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
