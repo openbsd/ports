@@ -1,36 +1,65 @@
-$OpenBSD: patch-uta_blitters_cc,v 1.2 2001/09/06 23:23:56 pvalchev Exp $
---- uta/blitters.cc.orig	Mon Apr  9 17:25:05 2001
-+++ uta/blitters.cc	Wed Sep  5 16:45:59 2001
-@@ -1,9 +1,12 @@
+$OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
+--- uta/blitters.cc.orig	2004-01-04 15:27:06.000000000 +0100
++++ uta/blitters.cc	2004-01-04 15:28:30.000000000 +0100
+@@ -20,6 +20,7 @@
+ 
  #include "blitters.h"
--#include <uta/painter.h>
-+#include <painter.h>
+ #include <painter.h>
++#include <iosfwd>
  
  namespace uta {
  
--#ifndef X86_ASSEMBLER
-+#ifdef __OpenBSD__
-+#undef X86_ASSEMBLER
-+#endif
-+#if !defined(X86_ASSEMBLER)
+@@ -35,7 +36,7 @@ void gammablit_RGBA8888_RGBA8888(Surface
+ 				 char g, 
+ 				 const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
+ }
+ 
+ /** Convert RGBA8888 to RGB565 and apply const gamma value.
+@@ -45,7 +46,7 @@ void gammablit_RGBA8888_RGB565(Surface* 
+ 			       char g, 
+ 			       const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
+ }
  
  /** Apply const gamma value.
-     Blit just copies alpha value of the source to the destination surface.
-@@ -1599,7 +1602,7 @@ void gammablit(Surface* dst, const Surfa
-       gammablit_C(dst,src,g,srcRect,dstPoint);
-     }
- #else
--  gammablit_C(dst,src,g,srcRect,dstPoint)
-+  gammablit_C(dst,src,g,srcRect,dstPoint);
- #endif
+@@ -54,7 +55,7 @@ void gammablit_RGB565_RGB565(Surface* ds
+ 			     char g, 
+ 			     const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
  }
  
-@@ -1626,7 +1629,7 @@ void gammablit(Surface* dst, const Surfa
-       gammablit_C(dst,src,func,srcRect,dstPoint);
-     }
- #else
--  gammablit_C(dst,src,func,srcRect,dstPoint)
-+  gammablit_C(dst,src,func,srcRect,dstPoint);
- #endif
+ /** Apply per pixel gamma value.
+@@ -64,7 +65,7 @@ void gammablit_RGBA8888_RGBA8888(Surface
+ 				 GammaFunction* func, 
+ 				 const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
  }
  
+ /** Convert RGBA8888 to RGB565 and apply per pixel gamma value.
+@@ -74,7 +75,7 @@ void gammablit_RGBA8888_RGB565(Surface* 
+ 			       GammaFunction* func, 
+ 			       const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
+ }
+ 
+ /** Apply per pixel gamma value.
+@@ -83,7 +84,7 @@ void gammablit_RGB565_RGB565(Surface* ds
+ 			     GammaFunction* func, 
+ 			     const Rect& srcRect, const Point& dstPoint)
+ {
+-  cerr << "processor seems not to be MMX capable, sorry. " << endl;
++  std::cerr << "processor seems not to be MMX capable, sorry. " << std::endl;
+ }
+ 
+ #else  // ! X86_ASSEMBLER

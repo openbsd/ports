@@ -1,7 +1,7 @@
-$OpenBSD: patch-uta_Makefile_in,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
---- uta/Makefile.in.orig	Mon Jul 23 13:25:33 2001
-+++ uta/Makefile.in	Mon Jul 23 13:25:46 2001
-@@ -106,7 +106,7 @@ libutainclude_HEADERS =  	debug.h color.
+$OpenBSD: patch-uta_Makefile_in,v 1.2 2004/01/04 20:32:29 pvalchev Exp $
+--- uta/Makefile.in.orig	2004-01-03 10:21:29.000000000 -0700
++++ uta/Makefile.in	2004-01-03 10:21:38.000000000 -0700
+@@ -113,7 +113,7 @@ LTNONOPTCXXCOMPILE = $(LIBTOOL) --mode=c
  
  noinst_HEADERS = blitter_macros.h
  

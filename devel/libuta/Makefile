@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/19 13:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2004/01/04 20:32:29 pvalchev Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
-VERSION=	0.3.40
+VERSION=	0.4.4
 DISTNAME=	libuta-${VERSION}
 CATEGORIES=	devel
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libuta/}
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
 LIB_DEPENDS=	smpeg.1.3::devel/smpeg \
@@ -33,6 +33,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS=	libuta_la_LDFLAGS="-version-info 41:0:0"
 
 VMEM_WARNING=	Yes
 
