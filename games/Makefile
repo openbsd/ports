@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/07/29 00:11:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2001/08/03 13:04:44 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -57,6 +57,9 @@
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
+     SUBDIR += quake
+     SUBDIR += quake,ggi
+     SUBDIR += quake,
 #    SUBDIR += quakeserver
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
