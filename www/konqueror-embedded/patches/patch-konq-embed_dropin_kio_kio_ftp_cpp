@@ -1,7 +1,7 @@
-$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espie Exp $
---- konq-embed/dropin/kio/kio_ftp.cpp.orig	Sat Mar 30 21:19:45 2002
-+++ konq-embed/dropin/kio/kio_ftp.cpp	Sun Mar 31 17:43:09 2002
-@@ -0,0 +1,2253 @@
+$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.4 2002/04/01 00:55:23 espie Exp $
+--- konq-embed/dropin/kio/kio_ftp.cpp.orig	Sun Mar 31 21:00:30 2002
++++ konq-embed/dropin/kio/kio_ftp.cpp	Mon Apr  1 02:29:07 2002
+@@ -0,0 +1,2252 @@
 +/*  This file is part of the KDE libraries
 +    Copyright (C) 2000 David Faure <faure@kde.org>
 +
@@ -21,7 +21,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espi
 +    Boston, MA 02111-1307, USA.
 +*/
 +
-+// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espie Exp $
++// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.4 2002/04/01 00:55:23 espie Exp $
 +
 +#include "kio_ftp.h"
 +
@@ -1813,6 +1813,10 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espi
 +        return;
 +      }
 +  }
++  if (url.path().isEmpty()) {
++  	getDir(url);
++	return;
++  }
 +
 +  // try to find the size of the file (and check that it exists at the same time)
 +  // 550 is "File does not exist"/"not a plain file"
@@ -2217,30 +2221,25 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espi
 +	header_stream << QString::fromLatin1( "<html><body><pre>" );
 +	data( header_buffer );
 +
-+	if( !ftpOpenCommand( "list", listarg, 'A', ERR_DOES_NOT_EXIST ) ) {
-+		kdError(7102) << "COULD NOT LIST" << endl;
++	if (!ftpOpenDir(url.path())) {
++		kdError(7102) << "COULD NOT LIST " << url.path() << endl;
 +		return;
 +	}
-+
-+	dirfile = fdopen( sData, "r" );
-+	if( !dirfile ) {
-+		error( ERR_DOES_NOT_EXIST, url.path() );
-+		return;
-+	}
-+
-+	kdDebug(7102) << "Starting of list was ok" << endl;
 +
 +	FtpEntry *e;
 +	while ((e = ftpReadDir())) {
 +		KURL f(url);
 +		QByteArray buffer;
 +
-+		f.addPath(e->name);
++		if (f.path().isEmpty())
++			f.addPath("/");
++
++		f.addPath(e->type == S_IFDIR ? e->name+"/" : e->name);
 +		QTextStream stream( buffer, IO_WriteOnly );
 +
 +		stream << QString::fromLatin1( "<a href=\"%1\">%2</a>\n" )
 +		    .arg( f.url() )
-+		    .arg( e->name );
++		    .arg( e->type == S_IFDIR ? e->name+"/" : e->name );
 +
 +		data( buffer );
 +	}
