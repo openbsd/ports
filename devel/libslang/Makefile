@@ -1,10 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2001/05/06 00:13:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.29 2001/05/11 23:19:53 drahn Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
-
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
-.endif
 
 DISTNAME=	slang-1.4.4
 PKGNAME=	libslang-1.4.4
