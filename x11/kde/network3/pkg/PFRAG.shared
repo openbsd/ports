@@ -1,15 +1,18 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2002/05/23 14:37:22 espie Exp $
-${KDE}/libkcm_kcmkxmlrpcd.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2003/01/27 20:01:45 espie Exp $
+${KDE}/libkcm_knewsticker.so.0.0
+${KDE}/libkcm_krfb.so.0.0
 ${KDE}/libkcm_ktalkd.so.0.0
 ${KDE}/libkcm_lanbrowser.so.0.0
-${KDE}/libkcm_newsticker.so.0.0
 ${KDE}/libkcm_xmlrpcd.so.0.0
-${KDE}/libkdictapplet.so.1.0
-${KDE}/libknewsticker_applet.so.0.0
-${KDE}/libkpfapplet.so.0.0
-${KDE}/libkpfpropertiesdialogplugin.so.0.0
+${KDE}/libkded_kinetd.so.0.0
+${KDE}/libkdict_panelapplet.so.0.0
+${KDE}/libkfile_rfc822.so.0.0
+${KDE}/libkhtml_kget.so.0.0
+${KDE}/libkio_lan.so.0.0
+${KDE}/libknewsticker_panelapplet.so.0.0
+${KDE}/libkpf_panelapplet.so.0.0
+${KDE}/libkpfpropertiesdialog.so.0.0
 lib/libkdenetwork.so.2.0
-lib/libkio_lan.so.0.0
 lib/libkntsrcfilepropsdlg.so.0.0
 lib/libksirc.so.0.0
 lib/libkxmlrpcd.so.0.0
