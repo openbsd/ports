@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/10/29 02:30:48 kevlo Exp $
 libdata/perl5/site_perl/Class/MethodMaker.pm
 libdata/perl5/site_perl/auto/Class/MethodMaker/_add_hash_methods.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/_add_list_methods.al
@@ -32,6 +32,7 @@ libdata/perl5/site_perl/auto/Class/MethodMaker/object_tie_hash.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/object_tie_list.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/static_get_set.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/static_hash.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/static_list.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/struct.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/tie_hash.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/tie_list.al
