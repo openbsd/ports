@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.172 2000/01/27 20:16:14 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.173 2000/01/27 20:45:44 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2311,7 +2311,7 @@ tags:
    post-patch pre-build pre-clean pre-configure pre-distclean \
    pre-extract pre-fetch pre-install pre-package pre-patch \
    pre-repackage print-depends-list print-package-depends readme \
-   readmes real-extract real-fetch real-install real-patch real-package
+   readmes real-extract real-fetch real-install real-patch real-package \
    real-configure reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends
