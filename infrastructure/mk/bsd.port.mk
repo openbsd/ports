@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.294 2000/06/09 16:26:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.295 2000/06/09 16:31:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -796,7 +796,7 @@ MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
-${WRKBUILD}/PLIST${SUBPACKAGE}: ${PLIST}
+${WRKBUILD}/PLIST${SUBPACKAGE}.gen: ${PLIST}
 .  if defined(NO_SHARED_LIBS)
 	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
@@ -820,11 +820,11 @@ PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 # Fill out package command, and package dependencies
-_PKG_PREREQ= ${WRKBUILD}/PLIST${SUBPACKAGE} ${WRKBUILD}/DESCR${SUBPACKAGE} ${COMMENT}
+_PKG_PREREQ= ${WRKBUILD}/PLIST${SUBPACKAGE}.gen ${WRKBUILD}/DESCR${SUBPACKAGE} ${COMMENT}
 # Note that if you override PKG_ARGS, you will not get correct dependencies
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${COMMENT}' -d ${WRKBUILD}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${WRKBUILD}/PLIST${SUBPACKAGE} -p ${PREFIX} 
+PKG_ARGS+=-f ${WRKBUILD}/PLIST${SUBPACKAGE}.gen -p ${PREFIX} 
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
@@ -1758,7 +1758,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 # PLIST should normally hold no duplicates.
 # This is left as a warning, because stuff such as @exec %F/%D
 # completion may cause legitimate dups.
-	@duplicates=`sort <${PLIST}|uniq -d`; \
+	@duplicates=`sort <${WRKBUILD}/PLIST${SUBPACKAGE}.gen|uniq -d`; \
 	case "$${duplicates}" in "");; \
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
