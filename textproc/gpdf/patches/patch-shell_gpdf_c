@@ -1,0 +1,20 @@
+--- shell/gpdf.c.orig	Sun Apr  4 10:27:08 2004
++++ shell/gpdf.c	Sun Apr  4 10:33:25 2004
+@@ -121,16 +121,7 @@
+ static void
+ set_window_icon_default (void)
+ {
+-	GdkPixbuf *pixbuf;
+-
+-	pixbuf = gdk_pixbuf_new_from_file (GNOMEICONDIR "/gnome-pdf.png", NULL);
+-
+-	if (pixbuf == NULL)
+-		return;
+-
+-	gtk_window_set_default_icon (pixbuf);
+-
+-	g_object_unref (pixbuf);
++	gtk_window_set_default_icon_from_file (GNOMEICONDIR "/gnome-pdf.png", NULL);
+ }
+ 
+ int
