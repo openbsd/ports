@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/14 22:08:38 angelos Exp $
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
-FAKE=No
 MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/ \
 		http://www.nrw.net/uwe/archive/ \
