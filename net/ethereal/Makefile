@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2002/03/31 13:44:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.63 2002/05/28 07:28:19 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
-VERSION=	0.9.3
+VERSION=	0.9.4
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.507
@@ -43,11 +43,11 @@ CONFIGURE_ARGS+=	--enable-ethereal
 .endif
 
 .if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS+=	--enable-snmp
+CONFIGURE_ARGS+=	--with-ucdsnmp
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto"
 LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
-CONFIGURE_ARGS+=	--disable-snmp
+CONFIGURE_ARGS+=	--without-ucdsnmp
 .endif
 
 pre-configure:
