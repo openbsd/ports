@@ -6,7 +6,7 @@
 
 PREFIX=@PREFIX@
 
-if [ -e $PREFIX/bin/python ]; then
+if [ -x $PREFIX/bin/python ]; then
 	exec $PREFIX/libexec/web2png.bin
 else
 	cat <<EOF
