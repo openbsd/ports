@@ -1,13 +1,13 @@
---- Makefile.orig	Sat Sep  4 18:09:06 1999
-+++ Makefile	Sun Mar  5 17:35:00 2000
-@@ -11,7 +11,15 @@
+--- Makefile.orig	Fri May 26 17:36:26 2000
++++ Makefile	Fri May 26 17:53:11 2000
+@@ -12,7 +12,15 @@
        decompress.o \
        bzlib.o
  
 -all: libbz2.a bzip2 bzip2recover test
 +.SUFFIXES: .c .o .so
 +
-+VERSION=9.5
++VERSION=10.0
 +
 +.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 +all: libbz2.a bzip2 bzip2recover
@@ -17,7 +17,7 @@
  
  bzip2: libbz2.a bzip2.o
  	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
-@@ -28,47 +36,48 @@
+@@ -29,47 +37,48 @@
  		ranlib libbz2.a ; \
  	fi
  
@@ -100,16 +100,14 @@
  	sample1.rb2 sample2.rb2 sample3.rb2 \
  	sample1.tst sample2.tst sample3.tst
  
-@@ -90,6 +99,12 @@
+@@ -92,6 +101,10 @@
  	$(CC) $(CFLAGS) -c bzip2.c
  bzip2recover.o: bzip2recover.c
  	$(CC) $(CFLAGS) -c bzip2recover.c
-+
 +.c.o:
 +	$(CC) $(CFLAGS) -c $*.c -o $*.o
-+
 +.c.so:
 +	$(CC) $(CFLAGS) -fpic -DPIC -c $*.c -o $*.so
  
+ DISTNAME=bzip2-1.0.0
  tarfile:
- 	tar cvf interim.tar blocksort.c huffman.c crctable.c \
