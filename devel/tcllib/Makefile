@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2003/01/18 19:12:09 pvalchev Exp $
+
 COMMENT=		"useful routines for Tcl 8.3"
 
 DISTNAME=		tcllib-1.3
