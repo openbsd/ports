@@ -1,0 +1,19 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/01/21 15:07:55 kevlo Exp $
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local} 
+TTFM=${PREFIX}/bin/ttfm.sh
+FONTPATH=${WKRSRC}/font
+FONTDIR=${PREFIX}/lib/X11/fonts/TrueType
+FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+
+for f in ${FONTPATH}/$FONTS; do
+        $TTFM --add xttfm $FONTDIR/$f
+done
+
+exit 0
