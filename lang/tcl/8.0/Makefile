@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:28:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/05 23:07:48 jsyn Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 COMMENT=	"Tool Command Language"
@@ -41,5 +41,8 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 test:	build
 	@cd ${WRKSRC}; make test
+
+post-install:
+	@strip ${PREFIX}/bin/tclsh8.0
 
 .include <bsd.port.mk>
