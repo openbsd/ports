@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/02/09 21:59:27 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2001/03/04 14:51:40 kevlo Exp $
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
@@ -19,7 +19,7 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
-		xml.4::textproc/libxml
+		xml2.5::textproc/libxml
 BUILD_DEPENDS=	fig2dev::print/transfig \
 		picttoppm::graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
