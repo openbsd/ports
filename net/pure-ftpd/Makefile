@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/18 10:33:46 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/12 23:18:35 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.15
+DISTNAME=	pure-ftpd-1.0.16a
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -28,7 +28,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-everything \
 		 --with-paranoidmsg \
-		 --with-privsep
+		 --with-privsep \
+		 --with-tls 
 
 FLAVORS=	ldap mysql postgresql no_banner virtual_chroot
 FLAVOR?=
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+= --without-banner
 CONFIGURE_ARGS+= --with-virtualchroot
 .endif
 
-DOCS+=	README README.Configuration-File README.Contrib \
+DOCS+=	README README.Configuration-File README.Contrib README.TLS \
 	README.Virtual-Users README.Authentication-Modules pure-ftpd.png
 
 CONTRIB= xml_python_processors.txt pure-vpopauth.pl
