@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/26 01:44:10 espie Exp $
+bin/radlast
+bin/radtest
+bin/raduse
+bin/radwho
+bin/radzap
+man/man5/clients.5
+man/man5/naslist.5
+man/man8/builddbm.8
+man/man8/radiusd.8
+sbin/checkrad
+sbin/radiusd
+share/doc/radiusd-cistron/README
+share/doc/radiusd-cistron/README.Y2K
+share/doc/radiusd-cistron/README.cisco
+share/doc/radiusd-cistron/README.pam
+share/doc/radiusd-cistron/README.proxy
+share/doc/radiusd-cistron/README.simul
+share/doc/radiusd-cistron/README.usersfile
+share/examples/radiusd-cistron/clients
+share/examples/radiusd-cistron/dictionary
+share/examples/radiusd-cistron/dictionary.ascend
+share/examples/radiusd-cistron/dictionary.cisco
+share/examples/radiusd-cistron/dictionary.compat
+share/examples/radiusd-cistron/dictionary.livingston
+share/examples/radiusd-cistron/dictionary.shiva
+share/examples/radiusd-cistron/dictionary.tunnel
+share/examples/radiusd-cistron/dictionary.usr
+share/examples/radiusd-cistron/dictionary.versanet
+share/examples/radiusd-cistron/hints
+share/examples/radiusd-cistron/huntgroups
+share/examples/radiusd-cistron/naslist
+share/examples/radiusd-cistron/naspasswd
+share/examples/radiusd-cistron/realms
+share/examples/radiusd-cistron/users
+@dirrm share/examples/radiusd-cistron
+@dirrm share/doc/radiusd-cistron

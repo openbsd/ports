@@ -1,0 +1,14 @@
+#!/bin/sh
+
+do-deinstall () 
+{
+	if [ -d /etc/raddb ]; then
+		echo "+------------"
+		echo "| If you are removing this package and not planning"
+		echo "| to re-install it at a future time, it is safe to"
+		echo "| remove /etc/raddb."
+		echo "+------------"
+	fi
+}
+
+do-deinstall

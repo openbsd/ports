@@ -1,0 +1,16 @@
++---------------
+| The RADIUS configuration files belong in /etc/raddb.  Examples
+| and extra documentation can be found in the following locations:
+|
+|     /usr/local/share/examples/radiusd-cistron
+|     /usr/local/share/doc/radiusd-cistron.
+|
+| You will need to edit /etc/rc.local as appropriate and add a
+| section similiar to the following:
+|
+|     if [ -x /usr/local/sbin/radiusd ]; then
+|             /usr/local/sbin/radiusd -y && echo -n ' radiusd'
+|     fi
+|
+|     (see radiusd(8) for available options)
++---------------
