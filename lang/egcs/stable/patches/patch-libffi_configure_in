@@ -1,5 +1,5 @@
 --- libffi/configure.in.orig	Wed May  8 06:25:49 2002
-+++ libffi/configure.in	Fri May 17 02:06:50 2002
++++ libffi/configure.in	Thu May 30 14:25:05 2002
 @@ -46,10 +46,12 @@ AC_PROG_LIBTOOL
  TARGETDIR="unknown"
  case "$host" in
@@ -13,11 +13,12 @@
  i*86-*-netbsdelf*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-win32*) TARGET=X86_WIN32; TARGETDIR=x86;;
  i*86-*-cygwin*) TARGET=X86_WIN32; TARGETDIR=x86;;
-@@ -58,13 +60,17 @@ sparc-sun-4*) TARGET=SPARC; TARGETDIR=sp
+@@ -58,13 +60,18 @@ sparc-sun-4*) TARGET=SPARC; TARGETDIR=sp
  sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc64-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
 +sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
++sparc64-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
  alpha*-*-linux* | alpha*-*-osf* | alpha*-*-freebsd*) TARGET=ALPHA; TARGETDIR=alpha;;
 +alpha*-*-openbsd*) TARGET=ALPHA; TARGETDIR=alpha;;
  ia64*-*-*) TARGET=IA64; TARGETDIR=ia64;;
