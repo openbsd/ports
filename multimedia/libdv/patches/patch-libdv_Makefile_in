@@ -1,0 +1,12 @@
+$OpenBSD: patch-libdv_Makefile_in,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
+--- libdv/Makefile.in.orig	2004-03-27 11:43:19.000000000 -0800
++++ libdv/Makefile.in	2004-05-01 18:41:58.000000000 -0700
+@@ -78,7 +78,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(PTHREAD_LIBS)
+ 
+ LIBTOOL = $(SHELL) $(top_builddir)/libtool --silent
+ LN_S = @LN_S@

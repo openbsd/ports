@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdv_dv_c,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
+--- libdv/dv.c.orig	2004-03-15 12:22:20.000000000 -0800
++++ libdv/dv.c	2004-05-02 17:04:41.000000000 -0700
+@@ -67,8 +67,12 @@
+ #define DV_MB420_YUV_MMX(a,b,c,d,e) dv_mb420_YUY2_mmx(a,b,c,d,e)
+ #endif 
+ 
++#ifndef MIN
+ #define MIN(a,b) ((a)<(b)?(a):(b))
++#endif
++#ifndef MAX
+ #define MAX(a,b) ((a)<(b)?(b):(a))
++#endif
+ 
+ int dv_use_mmx;
+ pthread_mutex_t dv_mutex = PTHREAD_MUTEX_INITIALIZER;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-playdv_Makefile_in,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
+--- playdv/Makefile.in.orig	2004-03-27 11:43:20.000000000 -0800
++++ playdv/Makefile.in	2004-05-01 16:59:58.000000000 -0700
+@@ -171,7 +171,7 @@ bin_PROGRAMS = playdv
+ noinst_HEADERS = display.h oss.h
+ 
+ playdv_SOURCES = playdv.c display.c display.h oss.c
+-playdv_LDADD = $(SDL_LIBS) $(GTK_LIBS) $(XV_LIB) ../libdv/libdv.la $(POPT_LIB)
++playdv_LDADD = $(SDL_LIBS) $(GTK_LIBS) -lossaudio $(XV_LIB) ../libdv/libdv.la $(POPT_LIB)
+ subdir = playdv
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
