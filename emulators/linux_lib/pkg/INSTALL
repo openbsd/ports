@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2000/04/10 17:03:12 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2000/10/01 03:18:00 brad Exp $
 #
 # Pre/post-installation setup of linux_lib
 
@@ -32,9 +32,9 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-    	mkdir -p /emul
-	mkdir -p ${PREFIX}
-	ln -sf ${PREFIX} /emul/linux
+	install -d -o root -g wheel -m 755 /emul
+	install -d -o root -g wheel -m 755 $PREFIX
+	ln -sf $PREFIX /emul/linux
 	;;
     POST-INSTALL)
 	do_notice $1
