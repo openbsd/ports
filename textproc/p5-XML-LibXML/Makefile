@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/14 10:02:26 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/18 17:06:18 shell Exp $
 
 COMMENT=	"perl interface to the libxml2 library"
 
@@ -12,7 +12,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 LIB_DEPENDS=	xml2.6::textproc/libxml
-RUN_DEPENDS=	:p5-XML-SAX-*:textproc/p5-XML-SAX
+RUN_DEPENDS=	::textproc/p5-LibXML-Common \
+		:p5-XML-SAX-*:textproc/p5-XML-SAX
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
