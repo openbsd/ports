@@ -1,0 +1,91 @@
+$OpenBSD: patch-usbgen_c,v 1.1 2002/06/16 19:36:33 pvalchev Exp $
+--- usbgen.c.orig	Sun Jun 16 13:31:54 2002
++++ usbgen.c	Sun Jun 16 13:31:58 2002
+@@ -123,9 +123,9 @@ dump_idesc(int f, int all, int cindex, i
+ 	struct usb_endpoint_desc edesc;
+ 	int e;
+ 
+-	idesc.config_index = cindex;
+-	idesc.interface_index = iindex;
+-	idesc.alt_index = aindex;
++	idesc.uid_config_index = cindex;
++	idesc.uid_interface_index = iindex;
++	idesc.uid_alt_index = aindex;
+ 	/*printf("*** idesc %d %d %d\n", cindex, iindex, aindex);*/
+ 	if (ioctl(f, USB_GET_INTERFACE_DESC, &idesc) != 0)
+ 		err(1, "ioctl USB_GET_INTERFACE_DESC");
+@@ -135,18 +135,18 @@ dump_idesc(int f, int all, int cindex, i
+ 	} else {
+ 		printf("  INTERFACE descriptor index %d:\n", iindex);
+ 	}
+-	show_interface_desc(2, &idesc.desc);
++	show_interface_desc(2, &idesc.uid_desc);
+ 	printf("\n");
+ 	
+-	edesc.config_index = cindex;
+-	edesc.interface_index = iindex;
+-	edesc.alt_index = aindex;
+-	for (e = 0; e < idesc.desc.bNumEndpoints; e++) {
+-		edesc.endpoint_index = e;
++	edesc.ued_config_index = cindex;
++	edesc.ued_interface_index = iindex;
++	edesc.ued_alt_index = aindex;
++	for (e = 0; e < idesc.uid_desc.bNumEndpoints; e++) {
++		edesc.ued_endpoint_index = e;
+ 		if (ioctl(f, USB_GET_ENDPOINT_DESC, &edesc) != 0)
+ 			err(1, "ioctl USB_GET_ENDPOINT_DESC");
+ 		printf("    ENDPOINT descriptor index %d:\n", e);
+-		show_endpoint_desc(4, &edesc.desc);
++		show_endpoint_desc(4, &edesc.ued_desc);
+ 		printf("\n");
+ 	}
+ }
+@@ -158,29 +158,29 @@ dump_cdesc(int f, int all, int cindex)
+ 	struct usb_alt_interface ai;
+ 	int i, a;
+ 
+-	cdesc.config_index = cindex;
++	cdesc.ucd_config_index = cindex;
+ 	if (ioctl(f, USB_GET_CONFIG_DESC, &cdesc) != 0)
+ 		err(1, "ioctl USB_GET_CONFIG_DESC");
+ 	if (all)
+ 		printf("CONFIGURATION descriptor index %d:\n", cindex);
+ 	else
+ 		printf("CONFIGURATION descriptor:\n");
+-	show_config_desc(0, &cdesc.desc);
++	show_config_desc(0, &cdesc.ucd_desc);
+ 	printf("\n");
+ 	
+-	for (i = 0; i < cdesc.desc.bNumInterface; i++) {
++	for (i = 0; i < cdesc.ucd_desc.bNumInterface; i++) {
+ 		if (all) {
+ #if 0
+ 			if (ioctl(f, USB_GET_ALTINTERFACE, &ai) != 0)
+ 				err(1, "USB_GET_ALTINTERFACE");
+ 			printf("Current alternative %d\n", ai->alt_no);
+ #endif
+-			ai.config_index = cindex;
+-			ai.interface_index = i;
++			ai.uai_config_index = cindex;
++			ai.uai_interface_index = i;
+ 			if (ioctl(f, USB_GET_NO_ALT, &ai) != 0)
+ 				err(1, "USB_GET_NO_ALT");
+ 			/*printf("*** %d alts\n", ai.alt_no);*/
+-			for (a = 0; a < ai.alt_no; a++)
++			for (a = 0; a < ai.uai_alt_no; a++)
+ 				dump_idesc(f, all, cindex, i, a);
+ 		} else {
+ 			dump_idesc(f, all, cindex, i, USB_CURRENT_ALT_INDEX);
+@@ -219,9 +219,9 @@ dump_deviceinfo(int f)
+ 
+ 	if (ioctl(f, USB_GET_DEVICEINFO, &di) != 0)
+ 		err(1, "USB_GET_DEVICEINFO");
+-	printf("Product: %s\n", di.product);
+-	printf("Vendor:  %s\n", di.vendor);
+-	printf("address %d\n", di.addr);
++	printf("Product: %s\n", di.udi_product);
++	printf("Vendor:  %s\n", di.udi_vendor);
++	printf("address %d\n", di.udi_addr);
+ }
+ 
+ void

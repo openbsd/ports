@@ -1,0 +1,333 @@
+$OpenBSD: patch-usbctl_c,v 1.1 2002/06/16 19:36:33 pvalchev Exp $
+--- usbctl.c.orig	Sun Jun 16 13:32:56 2002
++++ usbctl.c	Sun Jun 16 13:35:00 2002
+@@ -76,18 +76,18 @@ getstring(int si, char *s)
+ 		*s = 0;
+ 		return;
+ 	}
+-	req.addr = usbaddr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	req.data = &us;
+-	USETW2(req.request.wValue, UDESC_STRING, si);
+-	USETW(req.request.wIndex, 0);
++	req.ucr_addr = usbaddr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	req.ucr_data = &us;
++	USETW2(req.ucr_request.wValue, UDESC_STRING, si);
++	USETW(req.ucr_request.wIndex, 0);
+ #ifdef NSTRINGS
+-	USETW(req.request.wLength, sizeof(usb_string_descriptor_t));
+-	req.flags = USBD_SHORT_XFER_OK;
++	USETW(req.ucr_request.wLength, sizeof(usb_string_descriptor_t));
++	req.ucr_flags = USBD_SHORT_XFER_OK;
+ #else
+-	USETW(req.request.wLength, 1);
+-	req.flags = 0;
++	USETW(req.ucr_request.wLength, 1);
++	req.ucr_flags = 0;
+ #endif
+ 	r = ioctl(usbf, USB_REQUEST, &req);
+ 	if (r < 0) {
+@@ -96,7 +96,7 @@ getstring(int si, char *s)
+ 		return;
+ 	}
+ #ifndef NSTRINGS
+-	USETW(req.request.wLength, us.bLength);
++	USETW(req.ucr_request.wLength, us.bLength);
+ 	r = ioctl(usbf, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -123,10 +123,10 @@ prunits(int f)
+ 	int r, n, i;
+ 
+ 	for(n = i = 0; i < USB_MAX_DEVICES; i++) {
+-		di.addr = i;
++		di.udi_addr = i;
+ 		r = ioctl(f, USB_DEVICEINFO, &di);
+ 		if (r == 0) {
+-			printf("USB device %d: %d\n", i, di.class);
++			printf("USB device %d: %d\n", i, di.udi_class);
+ 			n++;
+ 		}
+ 	}
+@@ -618,14 +618,14 @@ gethubdesc(int f, usb_hub_descriptor_t *
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_CLASS_DEVICE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, USB_HUB_DESCRIPTOR_SIZE);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_CLASS_DEVICE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, USB_HUB_DESCRIPTOR_SIZE);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -637,14 +637,14 @@ getdevicedesc(int f, usb_device_descript
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW2(req.request.wValue, UDESC_DEVICE, 0);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, USB_DEVICE_DESCRIPTOR_SIZE);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW2(req.ucr_request.wValue, UDESC_DEVICE, 0);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, USB_DEVICE_DESCRIPTOR_SIZE);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -656,24 +656,24 @@ getconfigdesc(int f, int i, usb_config_d
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW2(req.request.wValue, UDESC_CONFIG, i);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, USB_CONFIG_DESCRIPTOR_SIZE);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW2(req.ucr_request.wValue, UDESC_CONFIG, i);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, USB_CONFIG_DESCRIPTOR_SIZE);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW2(req.request.wValue, UDESC_CONFIG, i);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, UGETW(d->wTotalLength));
+-	req.data = d;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW2(req.ucr_request.wValue, UDESC_CONFIG, i);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, UGETW(d->wTotalLength));
++	req.ucr_data = d;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -685,14 +685,14 @@ gethiddesc(int f, int i, usb_hid_descrip
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_INTERFACE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW2(req.request.wValue, UDESC_HID, 0);
+-	USETW(req.request.wIndex, i);
+-	USETW(req.request.wLength, size);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_INTERFACE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW2(req.ucr_request.wValue, UDESC_HID, 0);
++	USETW(req.ucr_request.wIndex, i);
++	USETW(req.ucr_request.wLength, size);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -704,14 +704,14 @@ getreportdesc(int f, int ifc, int no, ch
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_INTERFACE;
+-	req.request.bRequest = UR_GET_DESCRIPTOR;
+-	USETW2(req.request.wValue, UDESC_REPORT, no);
+-	USETW(req.request.wIndex, ifc);
+-	USETW(req.request.wLength, size);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_INTERFACE;
++	req.ucr_request.bRequest = UR_GET_DESCRIPTOR;
++	USETW2(req.ucr_request.wValue, UDESC_REPORT, no);
++	USETW(req.ucr_request.wIndex, ifc);
++	USETW(req.ucr_request.wLength, size);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -723,14 +723,14 @@ getportstatus(int f, int i, usb_port_sta
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_CLASS_OTHER;
+-	req.request.bRequest = UR_GET_STATUS;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, i);
+-	USETW(req.request.wLength, 4);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_CLASS_OTHER;
++	req.ucr_request.bRequest = UR_GET_STATUS;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, i);
++	USETW(req.ucr_request.wLength, 4);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -742,14 +742,14 @@ gethubstatus(int f, usb_hub_status_t *d,
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_CLASS_DEVICE;
+-	req.request.bRequest = UR_GET_STATUS;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, 4);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_CLASS_DEVICE;
++	req.ucr_request.bRequest = UR_GET_STATUS;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, 4);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -761,14 +761,14 @@ getconfiguration(int f, u_int8_t *d, int
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_CONFIG;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, 1);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_CONFIG;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, 1);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -780,14 +780,14 @@ getdevicestatus(int f, usb_status_t *d, 
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_DEVICE;
+-	req.request.bRequest = UR_GET_STATUS;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, 0);
+-	USETW(req.request.wLength, 2);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_DEVICE;
++	req.ucr_request.bRequest = UR_GET_STATUS;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, 0);
++	USETW(req.ucr_request.wLength, 2);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -799,14 +799,14 @@ getinterfacestatus(int f, usb_status_t *
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_INTERFACE;
+-	req.request.bRequest = UR_GET_STATUS;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, ifc);
+-	USETW(req.request.wLength, 2);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_INTERFACE;
++	req.ucr_request.bRequest = UR_GET_STATUS;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, ifc);
++	USETW(req.ucr_request.wLength, 2);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -818,14 +818,14 @@ getendpointstatus(int f, usb_status_t *d
+ 	struct usb_ctl_request req;
+ 	int r;
+ 
+-	req.addr = addr;
+-	req.request.bmRequestType = UT_READ_ENDPOINT;
+-	req.request.bRequest = UR_GET_STATUS;
+-	USETW(req.request.wValue, 0);
+-	USETW(req.request.wIndex, endp);
+-	USETW(req.request.wLength, 2);
+-	req.data = d;
+-	req.flags = 0;
++	req.ucr_addr = addr;
++	req.ucr_request.bmRequestType = UT_READ_ENDPOINT;
++	req.ucr_request.bRequest = UR_GET_STATUS;
++	USETW(req.ucr_request.wValue, 0);
++	USETW(req.ucr_request.wIndex, endp);
++	USETW(req.ucr_request.wLength, 2);
++	req.ucr_data = d;
++	req.ucr_flags = 0;
+ 	r = ioctl(f, USB_REQUEST, &req);
+ 	if (r < 0)
+ 		err(1, "USB_REQUEST");
+@@ -1324,7 +1324,7 @@ main(int argc, char **argv)
+ 	for(addr = 0; addr < USB_MAX_DEVICES; addr++) {
+ 		if (doaddr != -1 && addr != doaddr)
+ 			continue;
+-		di.addr = addr;
++		di.udi_addr = addr;
+ 		r = ioctl(f, USB_DEVICEINFO, &di);
+ 		if (r)
+ 			continue;
