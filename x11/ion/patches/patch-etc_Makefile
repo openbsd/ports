@@ -1,0 +1,20 @@
+$OpenBSD: patch-etc_Makefile,v 1.1 2005/04/02 18:17:22 db Exp $
+--- etc/Makefile.orig	Thu Jul 29 05:10:32 2004
++++ etc/Makefile	Sat Apr  2 18:21:00 2005
+@@ -14,6 +14,8 @@ ETC =	ion.lua ion-bindings.lua ion-menus
+ 	look-greyviolet.lua look-ios.lua look-cleanviolet.lua \
+ 	look-simpleblue.lua look-wheat2.lua look-cleanios.lua
+ 
++DRAW =	draw.lua
++
+ ######################################
+ 
+ include $(TOPDIR)/rules.mk
+@@ -25,5 +27,5 @@ _install:
+ 	for i in $(ETC); do \
+ 		$(INSTALL) -m $(DATA_MODE) $$i $(ETCDIR); \
+ 	done
+-	rm -f $(ETCDIR)/draw.lua
+-	ln -s look-cleanviolet.lua $(ETCDIR)/draw.lua
++	rm -f $(ETCDIR)/$(DRAW)
++	$(INSTALL) -m $(DATA_MODE) look-cleanviolet.lua $(ETCDIR)/$(DRAW)
