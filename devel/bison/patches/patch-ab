@@ -1,11 +1,13 @@
---- doc/bison.info.orig	Mon Nov 22 17:01:02 1999
-+++ doc/bison.info	Mon Nov 22 17:01:50 1999
-@@ -2,7 +2,7 @@
- bison.texinfo.
+--- bison.info.~1~	Sat Feb 17 08:46:08 1996
++++ bison.info	Wed Jun 24 14:11:38 1998
+@@ -1,6 +1,10 @@
+ This is Info file bison.info, produced by Makeinfo-1.64 from the input
+ file ./bison.texinfo.
  
- START-INFO-DIR-ENTRY
--* bison: (bison).	GNU Project parser generator (yacc replacement).
-+* Bison: (bison).	LALR(1) parser generator
- END-INFO-DIR-ENTRY
- 
++START-INFO-DIR-ENTRY
++* Bison: (bison).             LALR(1) parser generator
++END-INFO-DIR-ENTRY
++
     This file documents the Bison parser generator.
+ 
+    Copyright (C) 1988, 89, 90, 91, 92, 93, 1995 Free Software

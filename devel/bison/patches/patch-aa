@@ -1,72 +1,99 @@
---- src/files.c.orig	Mon Nov 22 16:50:21 1999
-+++ src/files.c	Mon Nov 22 16:59:09 1999
-@@ -76,7 +76,7 @@
- 
- extern int noparserflag;
- 
--extern char	*mktemp();	/* So the compiler won't complain */
-+extern int	mkstemp();	/* So the compiler won't complain */
- extern char	*getenv();
- extern void	perror();
- 
-@@ -276,21 +276,55 @@
-   tmpdefsfile = mktemp(stringappend(tmp_base, tmp_len, "deXXXXXX"));
- #else
-   if (! noparserflag)
--    actfile = mktemp(stringappend(tmp_base, tmp_len, "act.XXXXXX"));
--  tmpattrsfile = mktemp(stringappend(tmp_base, tmp_len, "attrs.XXXXXX"));
--  tmptabfile = mktemp(stringappend(tmp_base, tmp_len, "tab.XXXXXX"));
--  tmpdefsfile = mktemp(stringappend(tmp_base, tmp_len, "defs.XXXXXX"));
-+   {
-+     actfile = stringappend(tmp_base, tmp_len, "act.XXXXXX");
-+     faction = fdopen(mkstemp(actfile), "w+");
-+     if (faction == NULL)
-+     {
-+       fprintf(stderr, "%s: ", program_name);
-+       perror(actfile);
-+       done(2);
-+ 
-+     }
-+   }  
-+   tmpattrsfile = stringappend(tmp_base, tmp_len, "attrs.XXXXXX");
-+   fattrs = fdopen(mkstemp(tmpattrsfile), "w+");
-+   if (fattrs == NULL)
-+   {
-+       fprintf(stderr, "%s: ", program_name);
-+       perror(tmpattrsfile);
-+       done(2);
-+   }
-+   tmptabfile = stringappend(tmp_base, tmp_len, "tab.XXXXXX");
-+   ftable = fdopen(mkstemp(tmptabfile), "w+");
-+   if (ftable == NULL)
-+   {
-+       fprintf(stderr, "%s: ", program_name);
-+       perror(tmptabfile);
-+       done(2);
-+   }
-+   tmpdefsfile = stringappend(tmp_base, tmp_len, "defs.XXXXXX");
- #endif /* not MSDOS */
- 
-+/*
-   if (! noparserflag)
-     faction = tryopen(actfile, "w+");
-   fattrs = tryopen(tmpattrsfile,"w+");
-   ftable = tryopen(tmptabfile, "w+");
--
-+*/
-   if (definesflag)
-     {
-       defsfile = stringappend(name_base, base_length, ".h");
-+/*
-       fdefines = tryopen(tmpdefsfile, "w+");
-+*/
-+      fdefines = fdopen(mkstemp(tmpdefsfile), "w+");
-+      if (fdefines == NULL)
-+      {
+*** files.c.orig	Sun Oct 15 16:01:30 1995
+--- files.c	Sat Apr 25 19:36:49 1998
+***************
+*** 60,66 ****
+  
+  extern int noparserflag;
+  
+! extern char	*mktemp();	/* So the compiler won't complain */
+  extern char	*getenv();
+  extern void	perror();
+  FILE	*tryopen();	/* This might be a good idea */
+--- 60,66 ----
+  
+  extern int noparserflag;
+  
+! extern int	mkstemp();	/* So the compiler won't complain */
+  extern char	*getenv();
+  extern void	perror();
+  FILE	*tryopen();	/* This might be a good idea */
+***************
+*** 237,257 ****
+    tmpdefsfile = mktemp(stringappend(tmp_base, tmp_len, "deXXXXXX"));
+  #else
+    if (! noparserflag)
+!     actfile = mktemp(stringappend(tmp_base, tmp_len, "act.XXXXXX"));
+!   tmpattrsfile = mktemp(stringappend(tmp_base, tmp_len, "attrs.XXXXXX"));
+!   tmptabfile = mktemp(stringappend(tmp_base, tmp_len, "tab.XXXXXX"));
+!   tmpdefsfile = mktemp(stringappend(tmp_base, tmp_len, "defs.XXXXXX"));
+  #endif /* not MSDOS */
+  
+    if (! noparserflag)
+      faction = tryopen(actfile, "w+");
+    fattrs = tryopen(tmpattrsfile,"w+");
+    ftable = tryopen(tmptabfile, "w+");
+  
+    if (definesflag)
+      {
+        defsfile = stringappend(name_base, base_length, ".h");
+        fdefines = tryopen(tmpdefsfile, "w+");
+      }
+  
+  #ifndef MSDOS
+--- 237,292 ----
+    tmpdefsfile = mktemp(stringappend(tmp_base, tmp_len, "deXXXXXX"));
+  #else
+    if (! noparserflag)
+!   {
+!     actfile = stringappend(tmp_base, tmp_len, "act.XXXXXX");
+!     faction = fdopen(mkstemp(actfile), "w+");
+!     if (faction == NULL)
+!     {
+!       fprintf(stderr, "%s: ", program_name);
+!       perror(actfile);
+!       done(2);
+! 
+!     }
+!   }  
+!   tmpattrsfile = stringappend(tmp_base, tmp_len, "attrs.XXXXXX");
+!   fattrs = fdopen(mkstemp(tmpattrsfile), "w+");
+!   if (fattrs == NULL)
+!   {
+!       fprintf(stderr, "%s: ", program_name);
+!       perror(tmpattrsfile);
+!       done(2);
+!   }
+!   tmptabfile = stringappend(tmp_base, tmp_len, "tab.XXXXXX");
+!   ftable = fdopen(mkstemp(tmptabfile), "w+");
+!   if (ftable == NULL)
+!   {
+!       fprintf(stderr, "%s: ", program_name);
+!       perror(tmptabfile);
+!       done(2);
+!   }
+!   tmpdefsfile = stringappend(tmp_base, tmp_len, "defs.XXXXXX");
+  #endif /* not MSDOS */
+  
++ /*
+    if (! noparserflag)
+      faction = tryopen(actfile, "w+");
+    fattrs = tryopen(tmpattrsfile,"w+");
+    ftable = tryopen(tmptabfile, "w+");
++ */
+  
+    if (definesflag)
+      {
+        defsfile = stringappend(name_base, base_length, ".h");
++ /*
+        fdefines = tryopen(tmpdefsfile, "w+");
++ */
++       fdefines = fdopen(mkstemp(tmpdefsfile), "w+");
++       if (fdefines == NULL)
++       {
 +         fprintf(stderr, "%s: ", program_name);
 +         perror(tmpdefsfile);
 +         done(2);
 +       }
-     }
- 
- #if !(defined (MSDOS) || (defined(_WIN32) && !defined(__CYGWIN32__)))
+      }
+  
+  #ifndef MSDOS
