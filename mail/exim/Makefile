@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/07/15 19:32:45 peter Exp $
+# $OpenBSD: Makefile,v 1.41 2004/07/17 11:19:50 peter Exp $
 
 COMMENT=	"flexible mail transfer agent"
 
@@ -57,7 +57,7 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pq.2::databases/postgresql,-clients
+LIB_DEPENDS+=	pq.2::databases/postgresql
 EXIM_MAKECAT+=	"LOOKUP_PGSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lpq
