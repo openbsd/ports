@@ -3,7 +3,7 @@
 # Date created:		14 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/03/29 07:35:28 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/04/06 05:17:48 marc Exp $
 #
 
 DISTNAME=	emacs-20.2
@@ -27,8 +27,17 @@ SYS_REL!=	uname -r
 
 GCCARCH=	${M_ARCH}-unknown-openbsd${SYS_REL}
 CONFIGURE_ARGS=	${GCCARCH} --with-x-toolkit
-STRIP=
-MAN1=		emacs.1 etags.1 ctags.1
+
+# Do NOT strip on install.  We will strip those things that can be
+# stripped after install. (emacs crashes if stripped on an alpha)
+#
+INSTALL_STRIP=
+STRIP_PROGS=	emacsclient etags ctags b2m
+.if (${MACHINE_ARCH} != "alpha")
+STRIP_PROGS+=	emacs-20.2
+.endif
+STRIP_EXECS=	cvtmail digest-doc emacsserver fakemail hexl movemail \
+		profile sorted-doc yow
 
 pre-install pre-package:
 	@${RM} -f ${PKGDIR}/PLIST
@@ -36,8 +45,11 @@ pre-install pre-package:
 		${FILESDIR}/PLIST.template >${PKGDIR}/PLIST
 
 post-install:
-.for file in emacs-20.2 emacsclient etags ctags b2m
+.for file in ${STRIP_PROGS}
 	strip ${PREFIX}/bin/${file}
+.endfor
+.for file in ${STRIP_EXECS}
+	strip ${PREFIX}/libexec/emacs/20.2/${GCCARCH}/${file}
 .endfor
 
 .include <bsd.port.mk>
