@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:02:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/23 16:17:13 ho Exp $
 
-DISTNAME=	jpilot-0.98.1
+DISTNAME=	jpilot-0.99
 CATEGORIES=	comms
 NEED_VERSION=	1.322
 
-MASTER_SITES=	http://jpilot.linuxave.net/
+MASTER_SITES=	http://www.jpilot.org/
 
-HOMEPAGE=	http://jpilot.linuxave.net/
+HOMEPAGE=	http://www.jpilot.org/
 
 MAINTAINER=	Hakan Olsson <ho@openbsd.org>
 
