@@ -1,7 +1,7 @@
-$OpenBSD: patch-play_in,v 1.1 2001/10/27 14:02:22 naddy Exp $
---- play.in.orig	Tue Sep  4 03:58:12 2001
-+++ play.in	Sun Oct 21 00:53:37 2001
-@@ -186,6 +186,12 @@ case $arch in
+$OpenBSD: patch-play_in,v 1.2 2003/07/17 20:29:14 naddy Exp $
+--- play.in.orig	Tue Jan 28 02:59:06 2003
++++ play.in	Thu Jul 17 19:08:37 2003
+@@ -193,6 +193,12 @@ case $arch in
          device="/dev/audio"
      fi
      ;;
@@ -13,4 +13,4 @@ $OpenBSD: patch-play_in,v 1.1 2001/10/27 14:02:22 naddy Exp $
 +    ;;
  esac
  
- # If name is "rec" then record else assume user is wanting to play
+ # If user sets AUDIODEV environment variable then force output device

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/29 19:29:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2003/07/17 20:29:13 naddy Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
-DISTNAME=	sox-12.17.3
+DISTNAME=	sox-12.17.4
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 
@@ -13,22 +13,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sox/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=	Yes
-CONFIGURE_ARGS=	--without-sun_audio
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.54
+CONFIGURE_ARGS=	--disable-sun-audio
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	vorbis
+FLAVORS=	mp3 vorbis
 FLAVOR?=
 
 .if ${FLAVOR:L:Mvorbis}
 LIB_DEPENDS+=	vorbis.1,vorbisenc.1,vorbisfile.2::audio/libvorbis
-CONFIGURE_ARGS+= --with-ogg-vorbisinc="${LOCALBASE}/include" \
-		 --with-ogg-vorbislib="${LOCALBASE}/lib"
 .else
-CONFIGURE_ARGS+= --with-ogg-vorbisinc=no
+CONFIGURE_ARGS+= --disable-ogg-vorbis
+.endif
+
+.if ${FLAVOR:L:Mmp3}
+LIB_DEPENDS+=	mad.1::audio/mad mp3lame.0::audio/lame
+.else
+CONFIGURE_ARGS+= --disable-mad --disable-lame
 .endif
 
 NO_REGRESS=	Yes

@@ -1,17 +1,16 @@
-$OpenBSD: patch-configure.in,v 1.3 2002/01/17 00:25:52 naddy Exp $
---- configure.in.orig	Mon Dec 10 02:49:23 2001
-+++ configure.in	Wed Jan 16 23:25:12 2002
-@@ -162,11 +162,12 @@ fi
+$OpenBSD: patch-configure.in,v 1.4 2003/07/17 20:29:14 naddy Exp $
+--- configure.in.orig	Thu Jul 17 19:00:08 2003
++++ configure.in	Thu Jul 17 19:00:48 2003
+@@ -229,10 +229,11 @@ fi
  
- if test "$oss_dsp" = auto
+ if test "$enable_oss_dsp" = yes
  then
--	AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h, oss_dsp=yes)
-+	AC_CHECK_HEADERS(soundcard.h sys/soundcard.h machine/soundcard.h, oss_dsp=yes)
- fi
+-    AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h, found_oss_dsp=yes)
++    AC_CHECK_HEADERS(soundcard.h sys/soundcard.h machine/soundcard.h, found_oss_dsp=yes)
  
- if test "$oss_dsp" = yes
- then
+     if test "$found_oss_dsp" = yes
+     then
 +	AC_CHECK_LIB(ossaudio, _oss_ioctl, LIBS="$LIBS -lossaudio")
- 	CFLAGS="$CFLAGS -DOSS_PLAYER"
+         AC_DEFINE([HAVE_OSS], 1, 
+                   [Define if you have OSS installed])
  	NEED_OSS=1
- 	PLAY_SUPPORT=1
