@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/lang/ruby/files/ruby.port/mk"
+.include "${PORTSDIR}/lang/ruby/files/ruby.port.mk"
