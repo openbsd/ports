@@ -1,19 +1,15 @@
-# OpenBSD makefile for:	ImageMagick
-# Version required:	4.0.6
-# Date created:		1998-Apr-21
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:28 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/19 05:01:47 marc Exp $
 #
 
-DISTNAME=		ImageMagick-4.1.4
+DISTNAME=		ImageMagick-4.2.0
 CATEGORIES=     	graphics x11
 
 MAINTAINER=		marc@openbsd.org
 
 MASTER_SITES=		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
-			ftp://ftp.fifi.org/pub/ImageMagick \
-			ftp://gd.tuwien.ac.at/graphics/ImageMagick
+			ftp://renegade.lerc.nasa.gov/ImageMagick/ \
+			ftp://ftp.fifi.org/pub/ImageMagick/ \
+			ftp://gd.tuwien.ac.at/graphics/ImageMagick/
 
 # Future: add FreeType, FlashPix, NCSA HDF, JBIG, scanimage, etc.
 #

@@ -24,8 +24,10 @@ man/man4/miff.4
 man/man5/quantize.5
 include/magick/PreRvIcccm.h
 include/magick/X.h
+include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
+include/magick/defines.h
 include/magick/delegates.h
 include/magick/error.h
 include/magick/gems.h
@@ -33,6 +35,7 @@ include/magick/image.h
 include/magick/magick.h
 include/magick/memory.h
 include/magick/monitor.h
+include/magick/quantize.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
