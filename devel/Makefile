@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2001/08/20 06:24:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.100 2001/08/21 13:17:57 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -95,10 +95,8 @@
      SUBDIR += prc-tools
      SUBDIR += pth
      SUBDIR += py-Checker
-     SUBDIR += py-Checker,python1
      SUBDIR += py-Distutils
      SUBDIR += py-mxDateTime
-     SUBDIR += py-mxDateTime,python1
      SUBDIR += py-unit
      SUBDIR += rats
      SUBDIR += sdl
