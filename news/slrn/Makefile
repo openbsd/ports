@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2004/01/22 19:28:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.34 2004/03/05 16:44:20 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
 VERSION=		0.9.8.0
 DISTNAME=		slrn-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PFILES=			ranges post mime
+PFILES=			ranges post mime ranges2
 MASTER_SITES0=  	http://slrn.sourceforge.net/patches/
 .for i in ${PFILES}
 PATCHFILES+=    	slrn-${VERSION}-$i.diff:0
