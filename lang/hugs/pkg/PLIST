@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/05/07 02:07:31 dons Exp $
-bin/ffihugs
+@comment $OpenBSD: PLIST,v 1.3 2004/05/17 02:24:33 dons Exp $
+@comment bin/ffihugs
 bin/hugs
 bin/hugs-package
 bin/runhugs
@@ -142,18 +142,15 @@ share/hugs/libraries/Directory.hs
 share/hugs/libraries/Foreign.hs
 share/hugs/libraries/Foreign/C.hs
 share/hugs/libraries/Foreign/C/Error.hs
-share/hugs/libraries/Foreign/C/Error.so
 share/hugs/libraries/Foreign/C/String.hs
 share/hugs/libraries/Foreign/C/Types.hs
 share/hugs/libraries/Foreign/ForeignPtr.hs
 share/hugs/libraries/Foreign/Marshal.hs
 share/hugs/libraries/Foreign/Marshal/Alloc.hs
-share/hugs/libraries/Foreign/Marshal/Alloc.so
 share/hugs/libraries/Foreign/Marshal/Array.hs
 share/hugs/libraries/Foreign/Marshal/Error.hs
 share/hugs/libraries/Foreign/Marshal/Pool.hs
 share/hugs/libraries/Foreign/Marshal/Utils.hs
-share/hugs/libraries/Foreign/Marshal/Utils.so
 share/hugs/libraries/Foreign/Ptr.hs
 share/hugs/libraries/Foreign/StablePtr.hs
 share/hugs/libraries/Foreign/Storable.hs
@@ -186,7 +183,6 @@ share/hugs/libraries/Hugs/ST.hs
 share/hugs/libraries/Hugs/Stable.hs
 share/hugs/libraries/Hugs/StablePtr.hs
 share/hugs/libraries/Hugs/Storable.hs
-share/hugs/libraries/Hugs/Storable.so
 share/hugs/libraries/Hugs/System.hs
 share/hugs/libraries/Hugs/Time.hs
 share/hugs/libraries/Hugs/Trex.hs
@@ -211,10 +207,8 @@ share/hugs/libraries/Maybe.hs
 share/hugs/libraries/Monad.hs
 share/hugs/libraries/Network.hs
 share/hugs/libraries/Network/BSD.hs
-share/hugs/libraries/Network/BSD.so
 share/hugs/libraries/Network/CGI.hs
 share/hugs/libraries/Network/Socket.hs
-share/hugs/libraries/Network/Socket.so
 share/hugs/libraries/Network/URI.hs
 share/hugs/libraries/Numeric.hs
 share/hugs/libraries/Prelude.hs
@@ -240,35 +234,22 @@ share/hugs/libraries/System/Mem/StableName.hs
 share/hugs/libraries/System/Mem/Weak.hs
 share/hugs/libraries/System/Posix.hs
 share/hugs/libraries/System/Posix/Directory.hs
-share/hugs/libraries/System/Posix/Directory.so
 share/hugs/libraries/System/Posix/DynamicLinker.hs
 share/hugs/libraries/System/Posix/DynamicLinker/Module.hs
 share/hugs/libraries/System/Posix/DynamicLinker/Prim.hs
-share/hugs/libraries/System/Posix/DynamicLinker/Prim.so
 share/hugs/libraries/System/Posix/Env.hs
-share/hugs/libraries/System/Posix/Env.so
 share/hugs/libraries/System/Posix/Files.hs
-share/hugs/libraries/System/Posix/Files.so
 share/hugs/libraries/System/Posix/IO.hs
 share/hugs/libraries/System/Posix/Internals.hs
-share/hugs/libraries/System/Posix/Internals.so
 share/hugs/libraries/System/Posix/Process.hs
-share/hugs/libraries/System/Posix/Process.so
 share/hugs/libraries/System/Posix/Resource.hs
-share/hugs/libraries/System/Posix/Resource.so
 share/hugs/libraries/System/Posix/Signals.hs
-share/hugs/libraries/System/Posix/Signals.so
 share/hugs/libraries/System/Posix/Temp.hs
-share/hugs/libraries/System/Posix/Temp.so
 share/hugs/libraries/System/Posix/Terminal.hs
-share/hugs/libraries/System/Posix/Terminal.so
 share/hugs/libraries/System/Posix/Time.hs
-share/hugs/libraries/System/Posix/Time.so
 share/hugs/libraries/System/Posix/Types.hs
 share/hugs/libraries/System/Posix/Unistd.hs
-share/hugs/libraries/System/Posix/Unistd.so
 share/hugs/libraries/System/Posix/User.hs
-share/hugs/libraries/System/Posix/User.so
 share/hugs/libraries/System/Random.hs
 share/hugs/libraries/System/Time.hs
 share/hugs/libraries/Text/Html.hs
@@ -291,7 +272,6 @@ share/hugs/libraries/Text/Read.hs
 share/hugs/libraries/Text/Read/Lex.hs
 share/hugs/libraries/Text/Regex.hs
 share/hugs/libraries/Text/Regex/Posix.hs
-share/hugs/libraries/Text/Regex/Posix.so
 share/hugs/libraries/Text/Show.hs
 share/hugs/libraries/Text/Show/Functions.hs
 share/hugs/libraries/Time.hs
