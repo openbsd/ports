@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:37:35 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 19:38:55 marcm Exp $
 
 COMMENT=		"window navigator construction kit"
 
-DISTNAME=		libwnck-0.18
+DISTNAME=		libwnck-2.2.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libwnck/0.18/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libwnck/2.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		gettext
 
 BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0.0.10,gdk_pixbuf-2.0.0.10,gtk-x11-2.0.0.10::x11/gtk+2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
