@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/23 04:59:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/18 17:36:04 marcm Exp $
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
@@ -30,7 +30,7 @@ LIB_DEPENDS=			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 				atk-1.0.0.0::devel/atk \
 				tiff.35::graphics/tiff \
 				png.3::graphics/png \
-				jpeg.62::graphics/tiff
+				jpeg.62::graphics/jpeg
 BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
