@@ -1,24 +1,15 @@
-$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.1 2001/07/19 22:12:07 naddy Exp $
+$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.2 2002/07/21 01:00:19 naddy Exp $
 --- RULES/i386-openbsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
-+++ RULES/i386-openbsd-cc.rul	Thu Jul 19 23:37:54 2001
-@@ -24,7 +24,7 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg
- ###########################################################################
- 
- CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
--CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
-+CFLAGS+=	$(COPTS) $(CWARNOPTS) $(COPTX)
- 
- CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
++++ RULES/i386-openbsd-cc.rul	Sun Jul 21 02:55:50 2002
+@@ -30,7 +30,7 @@ CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) 
  COPTS=
-@@ -47,7 +47,7 @@ LIB_KVM=	
- 
- LIBS_PATH=	-L$(OLIBSDIR)
- 
--LDFLAGS=	$(LDOPTS) $(LDOPTX)
-+LDFLAGS+=	$(LDOPTS) $(LDOPTX)
- LDLIBS=		$(LIBS) $(LIBX)
- 
- #LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH)
+ CWOPTS=		-Wall -Wtraditional \
+ 		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+-COPTOPT=	-O
++COPTOPT=
+ KDEFINES=	-DKERNEL -D_KERNEL
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
 @@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
  
  FLOAT_OPTIONS=	
