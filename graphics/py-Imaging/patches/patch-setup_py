@@ -1,0 +1,46 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/05/23 16:00:18 xsa Exp $
+--- setup.py.orig	2003-05-09 14:00:56.000000000 +0200
++++ setup.py	2004-03-31 16:39:04.000000000 +0200
+@@ -41,8 +41,8 @@ PY_VERSION = sys.version[0] + sys.versio
+ 
+ MODULES = []
+ 
+-INCLUDE_DIRS = ["libImaging"]
+-LIBRARY_DIRS = ["libImaging"]
++INCLUDE_DIRS = ["libImaging", "!LOCALBASE!/include"]
++LIBRARY_DIRS = ["libImaging", "!LOCALBASE!/lib"]
+ LIBRARIES = ["Imaging"]
+ 
+ # Add some standard search spots for MacOSX/darwin
+@@ -121,12 +121,12 @@ if HAVE_LIBZ:
+ 
+ try:
+     import _tkinter
+-    TCL_VERSION = _tkinter.TCL_VERSION[:3]
++    TCL_VERSION = _tkinter.TCL_VERSION[:3].replace('.', '')
+ except (ImportError, AttributeError):
+     pass
+ else:
+-    INCLUDE_DIRS = ["libImaging"]
+-    LIBRARY_DIRS = ["libImaging"]
++    INCLUDE_DIRS = ["libImaging", "!LOCALBASE!/include/tk8.4/", "!LOCALBASE!/include/tcl8.4/", "!X11BASE!/include/"] 
++    LIBRARY_DIRS = ["libImaging", "!LOCALBASE!/lib/", "!X11BASE!/lib/"]
+     LIBRARIES = ["Imaging"]
+     EXTRA_COMPILE_ARGS = None
+     EXTRA_LINK_ARGS = None
+@@ -260,12 +260,13 @@ if os.path.isdir(FREETYPEDIR) or os.name
+     if FILES:
+         INCLUDE_DIRS.append(os.path.join(FREETYPEDIR, "include"))
+         INCLUDE_DIRS.append(os.path.join(FREETYPEDIR, "src"))
+-    elif os.path.isdir("/usr/include/freetype2"):
++    elif os.path.isdir("!X11BASE!/include/freetype2"):
+         # assume that the freetype library is installed in a
+         # standard location
+         # FIXME: search for libraries
+         LIBRARIES.append("freetype")
+-        INCLUDE_DIRS.append("/usr/include/freetype2")
++        INCLUDE_DIRS += ["!X11BASE!/include/freetype2", "!X11BASE!/include"]
++        LIBRARY_DIRS.append("!X11BASE!/lib")
+     elif os.path.isdir("/sw/include/freetype2"):
+         # assume that the freetype library is installed in a
+         # standard location
