@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_misc_thread_test_cc,v 1.1 2002/06/17 13:42:19 naddy Exp $
+--- tests/misc/thread_test.cc.orig	Mon Jun 17 15:42:33 2002
++++ tests/misc/thread_test.cc	Mon Jun 17 15:42:59 2002
+@@ -1,6 +1,10 @@
+ #include <iostream>
+ #include <sigc++/thread.h>
+ 
++#ifdef SIGC_CXX_NAMESPACES
++using namespace std;
++#endif
++
+ #ifndef SIGC_PTHREADS
+ int main()
+   {
+@@ -9,7 +13,6 @@ int main()
+ #else
+ 
+ #ifdef SIGC_CXX_NAMESPACES
+-using namespace std;
+ using namespace SigC::Threads;
+ #endif
+ 
