@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/17 15:17:54 brad Exp $
-include/event.h
-lib/libevent.a
-man/man3/event.3
