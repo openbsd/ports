@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/11/19 03:22:35 turan Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/01 09:09:36 turan Exp $
 #
 
 # What port/package will be created
@@ -8,7 +8,7 @@ CATEGORIES=     	security
 
 # where to send bitches about this port
 #
-MAINTAINER=		turans@umich.edu
+MAINTAINER=		turan@cvs.openbsd.org
 
 # where the source files and patches can be fetched
 #
