@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/08/07 05:45:46 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/12/09 05:06:01 jcs Exp $
+!%%gtkglarea%%
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Atoms.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/CListModel.pm
@@ -54,17 +55,21 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/autosplit.ix
-!%%gtkglarea%%
-man/man3/Gtk.3pm
-man/man3/Gtk::CListModel.3pm
-man/man3/Gtk::Gdk::ImlibImage::reference.3pm
-man/man3/Gtk::Gdk::Pixbuf::reference.3pm
-man/man3/Gtk::cookbook.3pm
-man/man3/Gtk::objects.3pm
-man/man3/Gtk::reference.3pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base/.packlist
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
+man/man3/Gtk.3p
+man/man3/Gtk::CListModel.3p
+man/man3/Gtk::Gdk::ImlibImage::reference.3p
+man/man3/Gtk::Gdk::Pixbuf::reference.3p
+man/man3/Gtk::cookbook.3p
+man/man3/Gtk::objects.3p
+man/man3/Gtk::reference.3p
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/Pixbuf
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/ImlibImage
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install
@@ -72,3 +77,4 @@ man/man3/Gtk::reference.3pm
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage/Install
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk

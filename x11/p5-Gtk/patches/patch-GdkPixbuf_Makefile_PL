@@ -1,0 +1,12 @@
+$OpenBSD: patch-GdkPixbuf_Makefile_PL,v 1.1 2001/12/09 05:06:01 jcs Exp $
+--- GdkPixbuf/Makefile.PL.orig	Sat Dec  8 22:35:57 2001
++++ GdkPixbuf/Makefile.PL	Sat Dec  8 22:36:04 2001
+@@ -63,7 +63,7 @@
+ 	'XSOPT' => '-noversioncheck',
+ 	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
+ 	'MAN3PODS' => {
+-		'build/perl-gdkpixbuf-ref.pod' => '$(INST_MAN3DIR)/Gtk::Gdk::Pixbuf::reference.3pm',
++		'build/perl-gdkpixbuf-ref.pod' => '$(INST_MAN3DIR)/Gtk::Gdk::Pixbuf::reference.3p',
+ 		},
+ 	$gpb->get_makefile_vars,
+ );

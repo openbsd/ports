@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/09 05:06:01 jcs Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -7,7 +7,7 @@ DISTNAME=	Gtk-Perl-${VERSION}
 PKGNAME=	p5-Gtk-${VERSION}
 
 CATEGORIES=	x11 devel perl5
-NEED_VERSION=	1.487
+NEED_VERSION=	1.500
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

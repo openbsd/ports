@@ -1,0 +1,12 @@
+$OpenBSD: patch-Gtk_Gtk_pm,v 1.1 2001/12/09 05:06:01 jcs Exp $
+--- Gtk/Gtk.pm.orig	Sat Dec  8 22:33:33 2001
++++ Gtk/Gtk.pm	Sat Dec  8 22:33:39 2001
+@@ -39,7 +39,7 @@
+ 
+ =head1 SEE ALSO
+ 
+-perl(1), Gtk::reference(3pm)
++perl(1), Gtk::reference(3p)
+ 
+ =cut
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-GdkImlib_Makefile_PL,v 1.1 2001/12/09 05:06:01 jcs Exp $
+--- GdkImlib/Makefile.PL.orig	Sat Dec  8 22:45:26 2001
++++ GdkImlib/Makefile.PL	Sat Dec  8 22:45:32 2001
+@@ -35,7 +35,7 @@
+ 	'XSOPT' => '-noversioncheck',
+ 	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
+ 	'MAN3PODS' => {
+-		'build/perl-gdkimlib-ref.pod' => '$(INST_MAN3DIR)/Gtk::Gdk::ImlibImage::reference.3pm',
++		'build/perl-gdkimlib-ref.pod' => '$(INST_MAN3DIR)/Gtk::Gdk::ImlibImage::reference.3p',
+ 		},
+ 	$imlib->get_makefile_vars,
+ );

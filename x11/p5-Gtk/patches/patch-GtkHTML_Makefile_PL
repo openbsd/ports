@@ -1,0 +1,12 @@
+$OpenBSD: patch-GtkHTML_Makefile_PL,v 1.1 2001/12/09 05:06:01 jcs Exp $
+--- GtkHTML/Makefile.PL.orig	Sat Dec  8 22:37:13 2001
++++ GtkHTML/Makefile.PL	Sat Dec  8 22:37:19 2001
+@@ -81,7 +81,7 @@
+ 	'XSOPT' => '-noversioncheck',
+ 	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
+ 	'MAN3PODS' => {
+-		'build/perl-gtkhtml-ref.pod' => '$(INST_MAN3DIR)/Gtk::HTML::reference.3pm',
++		'build/perl-gtkhtml-ref.pod' => '$(INST_MAN3DIR)/Gtk::HTML::reference.3p',
+ 		},
+ 	$html->get_makefile_vars,
+ 	#'depend' => $depend,

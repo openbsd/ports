@@ -1,0 +1,20 @@
+$OpenBSD: patch-Gtk_Makefile_PL,v 1.1 2001/12/09 05:06:01 jcs Exp $
+--- Gtk/Makefile.PL.orig	Sat Dec  8 22:31:00 2001
++++ Gtk/Makefile.PL	Sat Dec  8 22:31:15 2001
+@@ -160,11 +160,11 @@
+ 	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
+ 	'OPTIMIZE' => '-O2 -g',
+ 	'MAN3PODS' => {
+-		'cookbook.pod' => '$(INST_MAN3DIR)/Gtk::cookbook.3pm',
+-		'Gtk.pm' => '$(INST_MAN3DIR)/Gtk.3pm',
+-		'objects.pod' => '$(INST_MAN3DIR)/Gtk::objects.3pm',
+-		'GtkCListModel.pm' => '$(INST_MAN3DIR)/Gtk::CListModel.3pm',
+-		'build/perl-gtk-ref.pod' => '$(INST_MAN3DIR)/Gtk::reference.3pm',
++		'cookbook.pod' => '$(INST_MAN3DIR)/Gtk::cookbook.3p',
++		'Gtk.pm' => '$(INST_MAN3DIR)/Gtk.3p',
++		'objects.pod' => '$(INST_MAN3DIR)/Gtk::objects.3p',
++		'GtkCListModel.pm' => '$(INST_MAN3DIR)/Gtk::CListModel.3p',
++		'build/perl-gtk-ref.pod' => '$(INST_MAN3DIR)/Gtk::reference.3p',
+ 		},
+ 	$gtk->get_makefile_vars,
+ );
