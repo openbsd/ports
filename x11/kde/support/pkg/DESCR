@@ -1,0 +1,10 @@
+the kdesupport-1.1.2 package contains several libraries needed by KDE
+
+Packages built by kdesupport are:
+
+gdbm, giflib, jpeglib6a, uulib, js, mimelib, rdb, and QwSpriteField.
+
+Packages that are included in the OpenBSD ports tree are not installed
+by this port.
+
+
