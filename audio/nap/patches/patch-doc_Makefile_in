@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2003/02/02 04:02:09 pvalchev Exp $
+--- doc/Makefile.in.orig	Sat Feb  1 20:49:36 2003
++++ doc/Makefile.in	Sat Feb  1 20:49:46 2003
+@@ -65,7 +65,7 @@ VERSION = @VERSION@
+ 
+ EXTRA_DIST = nap.1.in userguide.html napster.txt
+ 
+-htmldir = $(prefix)/doc/nap
++htmldir = $(prefix)/share/doc/nap
+ 
+ man_MANS = nap.1
+ html_DATA = userguide.html
