@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/14 02:56:16 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/04/14 03:57:00 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with editor"
 COMMENT-pico=	"small text editor"
@@ -31,7 +31,7 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} == "-pico"
 CATEGORIES=	editors
 .elif ${SUBPACKAGE} == "-pine"
-CATEGORIES= mail news
+CATEGORIES=	mail news
 LIB_DEPENDS=	c-client.2.1::mail/c-client
 .else
 CATEGORIES=	mail news editors
