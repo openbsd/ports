@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 1999/09/17 11:42:05 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/02/02 17:02:39 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.73
+NEED_VERSION=1.175
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -122,8 +122,6 @@ MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
 MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
 MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
-
-PATCH_SITES= ${MASTER_SITES}
 
 # Misc bug sections
 pre-fetch:

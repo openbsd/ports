@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/09 20:20:15 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/02 17:02:39 espie Exp $
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
+MASTER_SITES0= 	http://www.arrakeen.demon.co.uk/giflib/
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.arrakeen.demon.co.uk/giflib/
+		${MASTER_SITES0}
+
 MASTER_SITE_SUBDIR= libs/giflib
 
-PATCH_SITES=	http://www.arrakeen.demon.co.uk/giflib/
-PATCHFILES=	giflib-4.1.0-19990224.patch.gz \
-		giflib-4.1.0-19990305.patch.gz \
-		giflib-4.1.0-19990322.patch.gz \
-		giflib-4.1.0-19990415.patch.gz \
-		giflib-4.1.0-19990523.patch.gz
+PATCHFILES=	giflib-4.1.0-19990224.patch.gz:0 \
+		giflib-4.1.0-19990305.patch.gz:0 \
+		giflib-4.1.0-19990322.patch.gz:0 \
+		giflib-4.1.0-19990415.patch.gz:0 \
+		giflib-4.1.0-19990523.patch.gz:0
+
 PATCH_DIST_STRIP= -p1
 
-NEED_VERSION=	1.73
+NEED_VERSION=	1.175
 
 MAINTAINER=	yanick@fries.net	
 
-USE_GMAKE=	yes
+USE_GMAKE=	Yes
 SYSCONFDIR=	${PREFIX}/lib
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --sysconfdir=${SYSCONFDIR}
 

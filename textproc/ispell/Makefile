@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/01/04 19:12:46 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/02 17:02:38 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 NEED_VERSION=	1.163
@@ -8,13 +8,14 @@ GERMAN_DICT=	hk2-deutsch
 
 DISTNAME=	ispell-3.1.20
 CATEGORIES=	textproc
+NEED_VERSION=	1.175
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
+MASTER_SITES2=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 SUPDISTFILES=	${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1
 
-PATCH_SITES=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-PATCHFILES=	ispell-html-mode.patch
+PATCHFILES=	ispell-html-mode.patch:2
 
 MAINTAINER=	ports@openbsd.org
 

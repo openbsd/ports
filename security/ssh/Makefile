@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.47 1999/12/13 03:04:54 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2000/02/02 17:02:38 espie Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
+NEED_VERSION=	1.175
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/
 
-PATCH_SITES=	http://www.ssh.org/patches/ \
+MASTER_SITES0=	http://www.ssh.org/patches/ \
 		ftp://ftp2.inch.com/pub/FreeBSD/
-PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
+PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown:0
 PATCH_DIST_STRIP= -p1
-
-NEED_VERSION=	1.121
 
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
@@ -25,12 +24,12 @@ CONFIGURE_ARGS+= --with-rsaref="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=--with-etcdir="${ETCDIR}" \
 		--with-rsh="${RSHPROG}" \
 		--with-libwrap
 
-IS_INTERACTIVE=	yes
+IS_INTERACTIVE=	Yes
 
 .if defined(X11) && ${X11:U} == NO
 CONFIGURE_ARGS= --without-x

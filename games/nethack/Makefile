@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/20 00:37:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/02 17:02:40 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.2.3
@@ -10,18 +10,18 @@ MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
 DISTFILES=	nethack-3.2.2.tar.gz
 WRKSRC=${WRKDIR}/nethack-3.2.2
 
-PATCH_SITES=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
-PATCHFILES=nh-3.2.2-3.2.3.diff
+MASTER_SITES0=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
+PATCHFILES=nh-3.2.2-3.2.3.diff:0
 
 
 MASTER_SITE_SUBDIR= nethack
 
-NEED_VERSION=	1.114
+NEED_VERSION=	1.175
 
 MAINTAINER=	espie@openbsd.org
 
-USE_GMAKE=	yes
-USE_X11=	yes
+USE_GMAKE=	Yes
+USE_X11=	Yes
 
 NHDIR=	${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR}

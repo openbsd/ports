@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2000/01/17 15:38:38 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/02 17:02:38 espie Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 MASTER_SITES=	http://squid.nlanr.net/Versions/v2/2.2/
+MASTER_SITES0=	http://squid.nlanr.net/Versions/v2/2.2/bugs/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES=	http://squid.nlanr.net/Versions/v2/2.2/bugs/
-PATCHFILES=	squid-2.2.stable5-no_cache.patch \
-		squid-2.2.stable5-ipcache_negative.patch \
-		squid-2.2.stable5-newlines_in_auth.patch \
-		squid-2.2.stable5-domain-match.patch
+NEED_VERSION=	1.175
+PATCHFILES=	squid-2.2.stable5-no_cache.patch:0 \
+		squid-2.2.stable5-ipcache_negative.patch:0 \
+		squid-2.2.stable5-newlines_in_auth.patch:0 \
+		squid-2.2.stable5-domain-match.patch:0
+
 .if defined(PATCH_DEBUG) && ${PATCH_DEBUG:U} == YES
 PATCH_DIST_ARGS=-d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else

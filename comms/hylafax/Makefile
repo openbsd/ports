@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/11 02:36:40 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/02 17:02:38 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -8,14 +8,16 @@ PKGNAME=	hylafax-4.0.2-A4
 .else
 PKGNAME=	hylafax-4.0.2-letter
 .endif
+
+NEED_VERSION=	1.175
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
 		ftp://ftp.sisis.de/pub/hylafax/source/
+MASTER_SITES0=	http://www.hylafax.org/patches/
 EXTRACT_SUFX=	-tar.gz
 
-PATCH_SITES=	http://www.hylafax.org/patches/
-PATCHFILES=	gcc-2.8.x.patch
+PATCHFILES=	gcc-2.8.x.patch:0
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	d@openbsd.org
@@ -24,7 +26,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 LIB_DEPENDS=	tiff.35:${PORTSDIR}/graphics/tiff
 
-USE_GMAKE=	yes
+USE_GMAKE=	Yes
 
 .if !defined(A4)
 PAGESIZE=	North American Letter
@@ -35,7 +37,7 @@ PAGESIZE=	ISO A4
 FAXUID=	uucp
 FAXGID=	dialer
 
-HAS_CONFIGURE=	yes
+HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-MAKE="${GMAKE}" \
 		--with-CC="${CC}" \
@@ -63,8 +65,8 @@ pre-fetch:
 .endif
 
 post-install:
-	@${CHOWN} ${FAXUID}.${FAXGID} ${SUID_EXES}
-	@${CHMOD} a=rx,u+s ${SUID_EXES}
+	@chown ${FAXUID}.${FAXGID} ${SUID_EXES}
+	@chmod a=rx,u+s ${SUID_EXES}
 	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
 
 .include <bsd.port.mk>

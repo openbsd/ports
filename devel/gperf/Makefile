@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/30 18:35:17 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/02 17:02:39 espie Exp $
 
 DISTNAME=	gperf-2.7
 PKGNAME=	gperf-2.7-19981006
@@ -11,21 +11,18 @@ MAINTAINER=	espie@cvs.openbsd.org
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gperf
 DIRECTORY=	egcs/infrastructure/
-PATCH_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY}
-PATCH_SITES+= 	ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
-PATCH_SITES+= 	ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
+MASTER_SITES0=	ftp://egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES0+=	ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
+MASTER_SITES0+=	ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 PATCH_DIST_STRIP=-p1
 
-PATCHFILES=	gperf-2.7-19981006.pat
+PATCHFILES=	gperf-2.7-19981006.pat:0
 
-NEED_VERSION=1.71
+NEED_VERSION=1.175
 SEPARATE_BUILD=	concurrent  
-GNU_CONFIGURE=	yes 
+GNU_CONFIGURE=	Yes 
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/make.info ${PREFIX}/info/dir
 
 
