@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/02/01 08:28:48 todd Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/06 21:44:37 todd Exp $
 #
 
 DISTNAME=       libgii-0.1
@@ -8,11 +8,9 @@ MASTER_SITES=   ftp://sunsite.unc.edu:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://www.us.ggi-project.org:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://gd.tuwien.ac.at:/graphics/libs/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.gts.cz:/pub/linux/ggi/ggi/2_0_beta_1/ \
-		ftp://ftp.bero-online.ml.org:/pub/linux/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.via.ecp.fr:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.unina.it:/pub/linux/ggi/ggi/2_0_beta_1/ \
-		ftp://sunsite.icm.edu.pl:/pub/unix/gui/ggi/ggi/2_0_beta_1/ \
-		ftp://ftp.mratnet.com:/pub/ggi/ggi/2_0_beta_1/
+		ftp://sunsite.icm.edu.pl:/pub/unix/gui/ggi/ggi/2_0_beta_1/
 
 MAINTAINER=     todd@openbsd.org
 
