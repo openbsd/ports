@@ -1,17 +1,11 @@
-# OpenBSD makefile for:	tcpblast
-# Version required:	<self contained>
-# Date created:		Nov 26 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1998/02/13 07:43:49 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/07 04:45:55 marc Exp $
 #
 
 DISTNAME=		tcpblast
 PKGNAME=		tcpblast-1.0
 CATEGORIES=		net benchmarks
 
-NO_CHECKSUM=		yes
-NO_WRKSUBDIR=		yes
+MAINTAINER=		ports@openbsd.org
 
 # Link the contained source files into the build environment
 _DISTDIR=		${.CURDIR}/src
@@ -19,6 +13,9 @@ DISTFILES=		Makefile tcpblast.c
 EXTRACT_CMD=		${LN}
 EXTRACT_BEFORE_ARGS=	-sf
 EXTRACT_AFTER_ARGS=	${WRKSRC}
+
+NO_CHECKSUM=		yes
+NO_WRKSUBDIR=		yes
 
 fetch:
 	@${DO_NADA}
