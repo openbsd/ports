@@ -1,0 +1,28 @@
+$OpenBSD: patch-modules_Makefile_am,v 1.1 2001/09/18 17:47:33 naddy Exp $
+--- modules/Makefile.am.orig	Mon May  7 23:55:46 2001
++++ modules/Makefile.am	Tue Sep 18 19:33:47 2001
+@@ -29,7 +29,7 @@ else
+ CDDA_LTLIBS =
+ endif
+ 
+-module_flags = -export_dynamic -avoid-version
++module_flags = -module -export_dynamic -avoid-version
+ modulesdir = $(libdir)/vfs/modules
+ 
+ modules_LTLIBRARIES =				\
+@@ -83,6 +83,7 @@ libfile_la_LDFLAGS = $(module_flags)
+ 
+ libvfs_test_la_SOURCES =			\
+ 	test-method.c				
++libvfs_test_la_LDFLAGS = $(module_flags)
+ libvfs_test_la_LIBADD = $(XML_LIBS)
+ 
+ ### `gzip' method
+@@ -106,6 +107,7 @@ libbzip2_la_LIBADD = -lbz2
+ libftp_la_SOURCES = 				\
+ 	ftp-method.c				\
+ 	ftp-method.h
++libftp_la_LDFLAGS = $(module_flags)
+ 
+ ### `gconf' method
+ 
