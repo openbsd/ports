@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/09/21 07:29:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/09/27 00:32:36 pvalchev Exp $
 
 MULTI_PACKAGES=	-client
 PKGNAME-client=	openldap-client-${VERSION}
@@ -43,6 +43,8 @@ CONFIGURE_ARGS+=	--without-kerberos \
 			--enable-ldap \
 			--enable-shell \
 			--enable-slurpd
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
 FLAVORS=	sasl
 FLAVOR?=

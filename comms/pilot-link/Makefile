@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/06/03 23:58:35 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/27 00:32:36 pvalchev Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -27,5 +27,7 @@ CONFIGURE_ARGS= --enable-static \
 		--without-itcl \
 		--without-python \
 		--without-java
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
 
 .include <bsd.port.mk>
