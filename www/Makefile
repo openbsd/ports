@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2002/08/02 20:47:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.88 2002/08/07 22:17:25 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -80,15 +80,6 @@
      SUBDIR += p5-URI
 #    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libwww
-     SUBDIR += php3
-     SUBDIR += php3,gd
-     SUBDIR += php3,gd,mysql,imap
-     SUBDIR += php3,gd,postgresql,imap
-     SUBDIR += php3,imap
-     SUBDIR += php3,mysql
-     SUBDIR += php3,mysql,imap
-     SUBDIR += php3,postgresql
-     SUBDIR += php3,postgresql,imap
      SUBDIR += php4
      SUBDIR += reportmagic
      SUBDIR += squid
