@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:34:25 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Unicode/CharName.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Unicode/String.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Unicode/String/String.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Unicode/String/String.so
+man/man3/Unicode::CharName.3p
+man/man3/Unicode::String.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Unicode/String
