@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/03/07 16:27:17 todd Exp $
+@lib lib/libdsocks.so.1.0

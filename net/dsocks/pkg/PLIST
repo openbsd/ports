@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/07 16:27:17 todd Exp $
+%%SHARED%%
+bin/dsocks-torify.sh
+bin/dsocks.sh
+lib/libdsocks.a
+lib/libdsocks_pic.a
