@@ -1,6 +1,19 @@
---- mpi/config.links	Mon Oct  7 01:15:42 2002
-+++ mpi/config.links~	Mon Oct  7 01:13:21 2002
-@@ -132,10 +132,10 @@ case "${target}" in
+$OpenBSD: patch-mpi_config_links,v 1.4 2003/04/17 08:24:03 pvalchev Exp $
+--- mpi/config.links.orig	Thu Oct 17 08:08:49 2002
++++ mpi/config.links	Thu Apr 17 02:05:56 2003
+@@ -59,10 +59,8 @@ case "${target}" in
+        cat  $srcdir/mpi/i386/syntax.h	 >>./mpi/asm-syntax.h
+        path="i386"
+        ;;
+-# Use old assembler syntax for OpenBSD as their assembler is really old.
+     i[34567]86*-*-openbsd*)
+-	echo '#define BSD_SYNTAX' >>./mpi/asm-syntax.h
+-	echo '#define X86_BROKEN_ALIGN' >>./mpi/asm-syntax.h
++	echo '#define ELF_SYNTAX' >>./mpi/asm-syntax.h
+ 	cat  $srcdir/mpi/i386-openbsd/syntax.h	    >>./mpi/asm-syntax.h
+ 	path="i386-openbsd"
+ 	;;
+@@ -137,10 +135,10 @@ case "${target}" in
  	path="sparc32v8 sparc32"
  	mpi_extra_modules="udiv"
          ;;
