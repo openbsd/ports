@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.65 2003/12/16 17:17:14 biorn Exp $
+# $OpenBSD: Makefile,v 1.66 2004/03/04 12:57:45 avsm Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		i386 macppc
+ONLY_FOR_ARCHS=		i386 macppc amd64
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
