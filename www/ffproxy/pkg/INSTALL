@@ -1,7 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/08/08 04:27:09 jolan Exp $
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+SYSCONFDIR=${SYSCONFDIR:-/etc}
+CONFIG_FILE=${SYSCONFDIR}/ffproxy.conf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/ffproxy
+SAMPLE_CONFIG_FILE=$SAMPLE_CONFIG_DIR/ffproxy.conf
+FFPROXYDIR=/var/ffproxy
 FFPROXYUSER=_ffproxy
 FFPROXYGROUP=_ffproxy
 ID=523
@@ -22,6 +27,58 @@ do_usergroup_install()
   fi
 }
 
+do_config_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file $CONFIG_FILE"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample file $SAMPLE_CONFIG_FILE,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+}
+
+do_config_install()
+{
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| A $1 configuration file has been installed to:"
+    echo "| $CONFIG_FILE.  Please view this file and"
+    echo "| adjust it to suit your needs."
+    echo "+---------------"
+}
+
+do_configdir_notice()
+{ 
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration data in $FFPROXYDIR"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample configuration data in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration data as needed."
+    echo "+---------------"
+}
+
+do_configdir_install()
+{ 
+    install -d -o root -g wheel -m 755 $FFPROXYDIR
+    install -d -o root -g wheel -m 755 $FFPROXYDIR/db
+    install -d -o root -g wheel -m 755 $FFPROXYDIR/html
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/db/* $FFPROXYDIR/db
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/html/* $FFPROXYDIR/html
+    echo 
+    echo "+---------------"
+    echo "| Configuration data for $1 has been installed to:"
+    echo "|"
+    echo "| $FFPROXYDIR/db"
+    echo "| $FFPROXYDIR/html"
+    echo "|"
+    echo "| Please view the content of these directories and"
+    echo "| adjust it to suit your needs."
+    echo "+---------------"
+} 
+
 # verify proper execution
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
@@ -34,6 +91,16 @@ case $2 in
 	do_usergroup_install
 	;;
     POST-INSTALL)
+	if [ ! -f $CONFIG_FILE ]; then
+	    do_config_install $1
+	else
+	    do_config_notice $1
+	fi
+	if [ ! -d $FFPROXYDIR ]; then
+	    do_configdir_install $1
+	else
+	    do_configdir_notice $1
+	fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

@@ -1,7 +1,10 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/08/08 04:27:09 jolan Exp $
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+SYSCONFDIR=${SYSCONFDIR:-/etc}
+CONFIG_FILE=${SYSCONFDIR}/ffproxy.conf
+FFPROXYDIR=/var/ffproxy
 FFPROXYUSER=_ffproxy
 FFPROXYGROUP=_ffproxy
 
@@ -10,8 +13,18 @@ echo "+---------------"
 echo "| To completely deinstall the $1 package you need to perform"
 echo "| these steps as root:"
 echo "|"
-echo "|	      userdel $FFPROXYUSER"
-echo "|	      groupdel $FFPROXYGROUP"
+if userinfo -e $FFPROXYUSER; then
+echo "| userdel $FFPROXYUSER"
+fi
+if groupinfo -e $FFPROXYGROUP; then
+echo "| groupdel $FFPROXYGROUP"
+fi
+if [ -f $CONFIG_FILE ]; then
+echo "| rm $CONFIG_FILE"
+fi
+if [ -d $FFPROXYDIR ]; then
+echo "| rm -rf $FFPROXYDIR"
+fi
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
 echo "| at some future time."
