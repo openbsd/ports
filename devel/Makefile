@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2000/09/10 08:37:13 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2000/09/16 15:18:45 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -71,6 +71,7 @@
 #    SUBDIR += p5-Data-Dumper
 #    SUBDIR += p5-Data-Flow
 #    SUBDIR += p5-Data-ShowTable
+     SUBDIR += p5-Date-Calc
 #    SUBDIR += p5-Date-Manip
 #    SUBDIR += p5-Devel-DProf
 #    SUBDIR += p5-Devel-Peek
@@ -79,6 +80,7 @@
 #    SUBDIR += p5-File-BasicFlock
 #    SUBDIR += p5-File-Lock
 #    SUBDIR += p5-File-Slurp
+     SUBDIR += p5-File-Tail
 #    SUBDIR += p5-File-Tools
 #    SUBDIR += p5-Filter
 #    SUBDIR += p5-FreezeThaw
@@ -95,7 +97,8 @@
 #    SUBDIR += p5-Storable
 #    SUBDIR += p5-Term-ReadKey
 #    SUBDIR += p5-Time
-#    SUBDIR += p5-TimeDate
+     SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-Time-HiRes
 #    SUBDIR += p5-TraceFuncs
      SUBDIR += pccts
      SUBDIR += pcre
