@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnome-panel_Makefile_in,v 1.1.1.1 2003/01/31 19:05:23 todd Exp $
+--- gnome-panel/Makefile.in.orig	Tue Oct  8 17:49:03 2002
++++ gnome-panel/Makefile.in	Tue Oct  8 17:49:54 2002
+@@ -243,7 +243,7 @@ server_DATA = $(server_in_files:.server.
+ rcdir = $(datadir)
+ rc_DATA = gnome-panelrc
+ 
+-schemasdir = $(sysconfdir)/gconf/schemas
++schemasdir = $(GCONF_SCHEMA_FILE_DIR)
+ schemas_in_files = panel-global-config.schemas.in panel-per-panel-config.schemas.in
+ schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+ 

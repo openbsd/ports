@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_fish_Makefile_in,v 1.1.1.1 2003/01/31 19:05:23 todd Exp $
+--- applets/fish/Makefile.in.orig	Tue Oct  8 17:52:14 2002
++++ applets/fish/Makefile.in	Tue Oct  8 17:52:52 2002
+@@ -179,7 +179,7 @@ serverdir = $(libdir)/bonobo/servers
+ server_in_files = GNOME_FishApplet_Factory.server.in
+ server_DATA = $(server_in_files:.server.in=.server)
+ 
+-schemasdir = $(sysconfdir)/gconf/schemas
++schemasdir = $(GCONF_SCHEMA_FILE_DIR)
+ schemas_in_files = fish.schemas.in
+ schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

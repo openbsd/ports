@@ -1,0 +1,273 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:05:24 todd Exp $
+@pkgcfl gnome-core-*
+bin/gnome-desktop-item-edit
+bin/gnome-panel
+bin/gnome-panel-preferences
+bin/gnome-panel-screenshot
+bin/panel-test-applets
+include/panel-2.0/GNOME_Panel.h
+include/panel-2.0/panel-applet-gconf.h
+include/panel-2.0/panel-applet.h
+lib/bonobo/servers/GNOME_FishApplet_Factory.server
+lib/bonobo/servers/GNOME_GenUtilApplet_Factory.server
+lib/bonobo/servers/GNOME_Panel.server
+lib/libgen_util_applet-2.a
+lib/libgen_util_applet-2.la
+lib/libgen_util_applet-2.so
+lib/libpanel-applet-2.a
+lib/libpanel-applet-2.la
+lib/pkgconfig/libpanelapplet-2.0.pc
+libexec/fish-applet-2
+man/man1/gnome-panel-preferences.1
+man/man1/gnome-panel.1
+share/control-center-2.0/capplets/gnome-panel-preferences.desktop
+share/examples/gnome-panel/sound/events/mailcheck.soundlist
+share/gen_util/pager.glade
+share/gen_util/tasklist.glade
+share/gnome-2.0/ui/GNOME_ClockApplet.xml
+share/gnome-2.0/ui/GNOME_FishApplet.xml
+share/gnome-2.0/ui/GNOME_MailCheckApplet.xml
+share/gnome-2.0/ui/GNOME_PagerApplet.xml
+share/gnome-2.0/ui/GNOME_Panel_Popup.xml
+share/gnome-2.0/ui/GNOME_TasklistApplet.xml
+share/gnome-panel/glade/panel-test-applets.glade
+share/gnome-panelrc
+share/gnome/help/clock/C/clock.xml
+share/gnome/help/clock/C/figures/clock_applet.png
+share/gnome/help/clock/C/legal.xml
+share/gnome/help/fish-applet-2/C/figures/fish_applet.png
+share/gnome/help/fish-applet-2/C/figures/fish_settings.png
+share/gnome/help/fish-applet-2/C/fish-applet-2.xml
+share/gnome/help/fish-applet-2/C/legal.xml
+share/gnome/help/mailcheck/C/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/C/legal.xml
+share/gnome/help/mailcheck/C/mailcheck.xml
+share/gnome/help/window-list/C/figures/window_list_applet.png
+share/gnome/help/window-list/C/figures/window_list_group.png
+share/gnome/help/window-list/C/figures/window_list_group_applet.png
+share/gnome/help/window-list/C/legal.xml
+share/gnome/help/window-list/C/window-list.xml
+share/gnome/help/workspace-switcher/C/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/C/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/C/legal.xml
+share/gnome/help/workspace-switcher/C/workspace-switcher.xml
+share/gnome/panel/gnome-panel-preferences.glade
+share/gnome/panel/gnome-panel-screenshot.glade
+share/gtk-doc/html/panel-applet/applet-popups.html
+share/gtk-doc/html/panel-applet/applet-porting.html
+share/gtk-doc/html/panel-applet/applet-writing.html
+share/gtk-doc/html/panel-applet/index.sgml
+share/gtk-doc/html/panel-applet/libpanel-applet.html
+share/gtk-doc/html/panel-applet/multi-applets.html
+share/gtk-doc/html/panel-applet/panel-applet.html
+share/gtk-doc/html/panel-applet/panel-signals.html
+share/gtk-doc/html/panel-applet/panelapplet.html
+share/gtk-doc/html/panel-applet/server-files.html
+share/gtk-doc/html/panel-applet/session-saving.html
+share/idl/gnome-panel-2.0/GNOME_Panel.idl
+share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/et/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sp/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
+share/omf/gnome-panel/clock-C.omf
+share/omf/gnome-panel/fish-applet-2-C.omf
+share/omf/gnome-panel/mailcheck-C.omf
+share/omf/gnome-panel/window-list-C.omf
+share/omf/gnome-panel/workspace-switcher-C.omf
+share/pixmaps/fish/fishanim.png
+share/pixmaps/fish/footguy.png
+share/pixmaps/fish/monkey.png
+share/pixmaps/fish/oldwanda.png
+share/pixmaps/gnome-fish.png
+share/pixmaps/mailcheck/eclouds.png
+share/pixmaps/mailcheck/email-e.png
+share/pixmaps/mailcheck/email-eclouds.png
+share/pixmaps/mailcheck/email-tiny.png
+share/pixmaps/mailcheck/email.png
+share/pixmaps/mailcheck/tux-anim.png
+share/schemas/gnome-panel/clock.schemas
+share/schemas/gnome-panel/fish.schemas
+share/schemas/gnome-panel/mailcheck.schemas
+share/schemas/gnome-panel/pager.schemas
+share/schemas/gnome-panel/panel-global-config.schemas
+share/schemas/gnome-panel/panel-per-panel-config.schemas
+share/schemas/gnome-panel/tasklist.schemas
+%%SHARED%%
+@dirrm share/schemas/gnome-panel
+@dirrm share/pixmaps/mailcheck
+@dirrm share/pixmaps/fish
+@comment @dirrm share/pixmaps
+@dirrm share/omf/gnome-panel
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sp/LC_MESSAGES
+@comment @dirrm share/locale/sp
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/ar/LC_MESSAGES
+@comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/idl/gnome-panel-2.0
+@comment @dirrm share/idl
+@dirrm share/gtk-doc/html/panel-applet
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
+@dirrm share/gnome/panel
+@dirrm share/gnome/help/workspace-switcher/C/figures
+@dirrm share/gnome/help/workspace-switcher/C
+@dirrm share/gnome/help/workspace-switcher
+@dirrm share/gnome/help/window-list/C/figures
+@dirrm share/gnome/help/window-list/C
+@dirrm share/gnome/help/window-list
+@dirrm share/gnome/help/mailcheck/C/figures
+@dirrm share/gnome/help/mailcheck/C
+@dirrm share/gnome/help/mailcheck
+@dirrm share/gnome/help/fish-applet-2/C/figures
+@dirrm share/gnome/help/fish-applet-2/C
+@dirrm share/gnome/help/fish-applet-2
+@dirrm share/gnome/help/clock/C/figures
+@dirrm share/gnome/help/clock/C
+@dirrm share/gnome/help/clock
+@comment @dirrm share/gnome/help
+@dirrm share/gnome-panel/glade
+@dirrm share/gnome-panel
+@comment @dirrm share/gnome
+@comment @dirrm share/gen_util
+@dirrm share/examples/gnome-panel/sound/events
+@dirrm share/examples/gnome-panel/sound
+@dirrm share/examples/gnome-panel
+@comment @dirrm lib/pkgconfig
+@comment @dirrm lib/bonobo
+@dirrm include/panel-2.0
+@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-panel/*.schemas > /dev/null
