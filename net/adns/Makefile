@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/05 03:20:40 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/14 17:51:52 margarida Exp $
 
 COMMENT=		"asynchronous dns resolver client library and utilities"
-DISTNAME=		adns-1.0
+DISTNAME=		adns-1.1
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://www.chiark.greenend.org.uk/~ian/adns/
