@@ -1,0 +1,12 @@
+$OpenBSD: patch-portscanner_c,v 1.1 2002/01/15 00:34:19 brad Exp $
+--- portscanner.c.orig	Mon Jan 14 19:12:56 2002
++++ portscanner.c	Mon Jan 14 19:13:12 2002
+@@ -63,7 +63,7 @@ void print_info(int finish);
+ 	    
+ void print_usage(int finish) {
+     fprintf(stderr,
+-"Usage: portscan [-b start] [-e end] [-bm start] [-em end] [-v[v]] [-a] [-s] [-i] [-? | h] <address>\n");
++"Usage: portscanner [-b start] [-e end] [-bm start] [-em end] [-v[v]] [-a] [-s] [-i] [-? | h] <address>\n");
+     if (finish) 
+      exit(1);
+ }
