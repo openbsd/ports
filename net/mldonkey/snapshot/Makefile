@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 18:09:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/26 09:41:15 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -17,8 +17,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
-DISTNAME=mldonkey-2.5.21
-WRKDIST=${WRKDIR}/mldonkey-2.5.21
+DISTNAME=mldonkey-2.5.22
+WRKDIST=${WRKDIR}/mldonkey-2.5.22
 
 USE_GMAKE=Yes
 MODULES=lang/ocaml
