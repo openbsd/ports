@@ -7,14 +7,9 @@ bin/db_load
 bin/db_printlog
 bin/db_recover
 bin/db_stat
-lib/libdb_cxx-3.soname_spec=
-lib/libdb_cxx.soname_spec=
-lib/libdb_cxx-3.0.la
-lib/libdb_cxx-3.0.so.0.0
-lib/libdb-3.soname_spec=
-lib/libdb.soname_spec=
-lib/libdb-3.0.la
-lib/libdb-3.0.so.0.0
+lib/libdb_cxx.a
+lib/libdb.a
+lib/libdb3.so
 include/db_185.h
 include/db3.h
 include/db_cxx.h

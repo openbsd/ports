@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/12/02 07:17:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2000/01/31 15:07:03 kevlo Exp $
 
 DISTNAME=	db-3.0.55
 CATEGORIES=	databases
@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.sleepycat.com/update/3.0.55/
 GNU_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--host=${ARCH}-unknown-openbsd --prefix=${PREFIX} \
-			--enable-compat185 --enable-dump185 --enable-cxx \
-			--enable-shared --enable-dynamic
+			--enable-compat185 --enable-dump185 --enable-cxx 
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
