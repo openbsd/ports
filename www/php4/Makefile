@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/12/28 23:37:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2001/01/03 00:33:38 avsm Exp $
 
 DISTNAME=	php-4.0.4
 PKGNAME=	php4-4.0.4
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 # This port current only works with archs supporting dynamic loading
-ONLY_FOR_ARCHS=		i386 m68k sparc mips
+ONLY_FOR_ARCHS=		i386 m68k sparc mips powerpc
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
