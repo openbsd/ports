@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.9 2000/04/18 19:47:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/19 01:21:45 espie Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 FLAVORS=us-letter legal a4
-FLAVOR?=
+FLAVOR?=a4
 
 
 fetch-depends:
