@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/23 03:00:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/25 03:15:00 kevlo Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
-DISTNAME=	kountdown-0.3
+DISTNAME=	kountdown-0.3.2
 CATEGORIES=	x11
 NEED_VERSION=	1.524
 
-HOMEPAGE=	http://w1.911.telia.com/~u91117365/kountdown.html
+HOMEPAGE=	http://w1.911.telia.com/~u91117365/kountdown/kountdown.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= -disable-mt --disable-threading --enable-final
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
