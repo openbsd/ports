@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.458 2001/09/19 15:16:39 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.459 2001/09/19 16:03:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -346,14 +346,14 @@ CONFIGURE_STYLE?=
 # where configuration files should go
 SYSCONFDIR?=	/etc
 .if defined(USE_GMAKE)
-BUILD_DEPENDS+=		${GMAKE}::devel/gmake
+BUILD_DEPENDS+=		::devel/gmake
 MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
 .endif
 .if ${CONFIGURE_STYLE:L:Mautoconf}
 CONFIGURE_STYLE+=gnu
-BUILD_DEPENDS+=		${AUTOCONF}::devel/autoconf
+BUILD_DEPENDS+=		::devel/autoconf
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH}
@@ -361,7 +361,7 @@ AUTOCONF_ENV=PATH=${PORTPATH}
 
 .if defined(USE_LIBTOOL)
 LIBTOOL?=			${LOCALBASE}/bin/libtool
-BUILD_DEPENDS+=		${LIBTOOL}::devel/libtool
+BUILD_DEPENDS+=		::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
@@ -379,15 +379,15 @@ HAVE_MOTIF?=No
 
 .if ${USE_MOTIF:L} != "no"
 .  if ${USE_MOTIF:L} == "lesstif"
-LIB_DEPENDS+=		Xm.1.::x11/lesstif
+LIB_DEPENDS+=		Xm.1::x11/lesstif
 .  elif ${USE_MOTIF:L} == "openmotif"
-LIB_DEPENDS+=		Xm.2.::x11/openmotif
+LIB_DEPENDS+=		Xm.2::x11/openmotif
 .  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
 FLAVORS+=lesstif
 .    if ${FLAVOR:L:Mlesstif}
-LIB_DEPENDS+=		Xm.1.::x11/lesstif
+LIB_DEPENDS+=		Xm.1::x11/lesstif
 .    else
-LIB_DEPENDS+=		Xm.2.::x11/openmotif
+LIB_DEPENDS+=		Xm.2::x11/openmotif
 .    endif
 .  else
 ERRORS+= "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
@@ -966,11 +966,11 @@ _SED_FIX_SHAR?=	sed -n -e '/^\#\![[:blank:]]*\/bin\/sh[[:space:]]*$$/,$$p'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
-BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
+BUILD_DEPENDS+=		::archivers/unzip
 EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
 .if ${_USE_BZIP2:L} != "no"
-BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
+BUILD_DEPENDS+=		::archivers/bzip2
 EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;

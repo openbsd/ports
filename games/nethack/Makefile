@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/27 09:54:48 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2001/09/19 16:03:10 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
 DISTNAME=	nethack-3.3.1
 CATEGORIES=	games
-NEED_VERSION=	1.447
+NEED_VERSION=	1.458
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
@@ -41,7 +41,7 @@ NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
 .endif
 
-RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt:hackdata-*:games/hackdata
+RUN_DEPENDS=:hackdata-*:games/hackdata
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/23 23:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/19 16:03:10 espie Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -11,7 +11,7 @@ PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2
 
 CATEGORIES=	japanese
-NEED_VERSION=	1.404
+NEED_VERSION=	1.458
 
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna35/
 
@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
-BUILD_DEPENDS=	jgroff::japanese/groff
+BUILD_DEPENDS=	::japanese/groff
 HOMEPAGE=	http://www.nec.co.jp/japanese/product/computer/soft/canna/
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes

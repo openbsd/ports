@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/19 16:03:10 espie Exp $
 
 COMMENT=	"OpenLook applications and man pages"
 
@@ -6,7 +6,7 @@ PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	xview3.2p1-X11R6.tar.gz
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.458
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -14,9 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=
-BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config \
-		/nonexistent::x11/xview/lib:configure
-LIB_DEPENDS=	xview.3.::x11/xview/lib
+BUILD_DEPENDS=	::x11/xview/config ::x11/xview/lib:configure
+LIB_DEPENDS=	xview.3::x11/xview/lib
 
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes
@@ -24,7 +23,7 @@ MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 post-extract:
 	mkdir -p ${WRKDIST}
-	lndir `cd ${PORTSDIR}/x11/xview/lib && make show VARNAME=WRKDIST` ${WRKDIST}
+	lndir `cd ${PORTSDIR}/x11/xview/lib && make show=WRKDIST` ${WRKDIST}
 
 do-configure:
 	cd ${WRKDIST} && $(MAKE_ENV) SUBDIRS=clients make Makefiles

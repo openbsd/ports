@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.38 2001/08/18 13:25:42 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2001/09/19 16:03:10 espie Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -18,7 +18,7 @@ DISTNAME=	Wnn4.2
 # on the command line, and thus avoid building all three languages
 
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
-NEED_VERSION=	1.404
+NEED_VERSION=	1.458
 PKGNAME=	ja-Wnn-4.2
 PKGNAME-dict=	ja-Wnndict-4.2
 PKGNAME-zh=	zh-Wnn-4.2
@@ -55,7 +55,7 @@ CATEGORIES=	japanese chinese korean
 CATEGORIES=	japanese
 .  endif
 .  if ${SUBPACKAGE} != "-data"
-RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn,-data
+RUN_DEPENDS=	::japanese/Wnn,-data
 .  endif
 .else
 CATEGORIES=	japanese
@@ -85,7 +85,7 @@ PORT_CDOCDIR=	${PREFIX}/share/doc/zh-cWnn
 CDOC_FROM=	${WRKSRC}/cWnn
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
-BUILD_DEPENDS=	jgroff::japanese/groff
+BUILD_DEPENDS=	::japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
 

@@ -8,7 +8,7 @@ COMMENT-wnn=		X input method for Japanese, wnn support
 DISTNAME=	kinput2-v3
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
-NEED_VERSION=   1.402
+NEED_VERSION=   1.458
 
 # License: NOFEE
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,7 @@ FLAVOR?=	wnn
 PKGNAME=	ja-kinput2-3.0
 
 .if ${FLAVOR:L:Mwnn}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libwnn.a::japanese/Wnn
+BUILD_DEPENDS+=	::japanese/Wnn
 .endif
 .if ${FLAVOR:L:Mcanna}
 LIB_DEPENDS=	canna16::japanese/canna

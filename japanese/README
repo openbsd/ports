@@ -13,15 +13,6 @@ so that the _default setup reads:
 _default /usr/{share,X11R6,X386,X11,X11R4,contrib,gnu,local}/{man,man/old,man/ja_JP_EUC}/
 
 * is kterm working ?
-Not under vanilla 2.4, due to some tinkering with ncurses/termcap.
-With the default OpenBSD.cf, kterm links against -ltermcap, where it should
-link against -lcurses.
-This is fixed in current X11 sources. The fix is to add 
-#if defined(TermcapLibrary)
-#undef TermcapLibrary
-#endif
-#define TermcapLibrary   -lcurses
-to /usr/X11R6/lib/X11/config/OpenBSD.cf
 Once kterm is built, the distribution holds an uuencoded file (DEMO.kt.uu)
 that you should be able to cat after uudecoding.
 Note that the choice of fonts is reduced when you need to display japanese
