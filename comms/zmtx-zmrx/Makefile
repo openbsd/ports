@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:35 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.5 1999/11/04 08:59:22 kevlo Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
