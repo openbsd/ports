@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/06 00:02:00 alek Exp $
+bin/aamath
+@man man/man1/aamath.1
