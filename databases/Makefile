@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2004/09/14 23:29:07 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2004/10/11 19:04:08 xsa Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -44,6 +44,7 @@
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
      SUBDIR += postgresql
+     SUBDIR += py-cdb
      SUBDIR += py-ldap
      SUBDIR += py-ldap,py2.2
      SUBDIR += py-ldap,py2.3
