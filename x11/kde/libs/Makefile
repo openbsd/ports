@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/01 01:52:19 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/12 16:15:45 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.328
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	kde
 
 HOMEPAGE=	http://www.kde.org/
@@ -24,7 +25,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_BZIP2=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

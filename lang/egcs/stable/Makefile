@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/04/09 17:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2000/09/12 16:15:44 brad Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -7,8 +7,9 @@
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	 1.230
+NEED_VERSION=	 1.328
 FAKE=No
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	espie@openbsd.org
 
@@ -57,7 +58,6 @@ DIRECTORY=egcs/releases/%SUBDIR%/
 # getting the right archives where they should be
 MASTER_SITE_SUBDIR=gcc-2.95.1
 DISTNAME= gcc-${VERSION}
-USE_BZIP2=yes
 
 DIST_SUBDIR=egcs
 
