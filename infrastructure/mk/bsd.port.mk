@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.168 2000/01/26 21:15:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.169 2000/01/26 23:11:08 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -378,7 +378,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # Please read the comments in the targets section below, you
 # should be able to use the pre-* or post-* targets/scripts
 # (which are available for every stage except checksum) or
-# override the do-* targets to do pretty much anything you want.
+# provide an overriding do-* target to do pretty much anything 
+# you want.
 #
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
@@ -1123,7 +1124,8 @@ DEPENDS_TARGET=	install
 
 ################################################################
 # The following hooks are used to create easy dummy targets for
-# disabling some bit of default target behavior you don't want.
+# disabling some bit of default target behavior you don't want,
+# and to perform ports build in the correct order.
 ################################################################
 
 # Disable checksum
@@ -1206,19 +1208,18 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 
 
 ################################################################
-# More standard targets start here.
-#
-# These are the body of the build/install framework.  If you are
-# not happy with the default actions, and you can't solve it by
-# adding pre-* or post-* targets/scripts, override these.
+# Support for standard targets start here.
 ################################################################
 
-# Fetch
 
-.if !target(do-fetch)
-do-fetch: ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.if !target(fetch-all)
+fetch-all:
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
+.endif
 
-.  for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
+# Separate target for each file fetch will retrieve
+
+.for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 # Bug-fix for make/ftp interaction in 2.6
 	@if [ -e ${_F} ]; then touch ${_F}; exit 0; fi; \
@@ -1247,10 +1248,10 @@ ${_F}:
 				exit 0; \
 		fi; \
 	done; exit 1
-.  endfor
+.endfor
 
-.  if defined(PATCHFILES)
-.    for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
+.if defined(PATCHFILES)
+.  for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 # Bug-fix for make/ftp interaction in 2.6
 	@if [ -e ${_F} ]; then touch ${_F}; exit 0; fi; \
@@ -1279,11 +1280,9 @@ ${_F}:
 				exit 0; \
 		fi; \
 	done; exit 1
-.    endfor
+.  endfor
 
-.  endif	# defined(PATCHFILES)
-
-.endif	# !target(do-fetch)
+.endif	# defined(PATCHFILES)
 
 # This is for the use of sites which store distfiles which others may
 # fetch - only fetch the distfile if it is allowed to be
@@ -1332,10 +1331,72 @@ obj:
 .  endif
 .endif
 
-# Extract
 
-.if !target(do-extract)
-do-extract:
+${WRKBUILD}:
+	mkdir -p ${WRKBUILD}
+
+# Some support rules for do-package
+
+.if !target(package-links)
+package-links:
+	@make delete-package-links
+	@for cat in ${CATEGORIES}; do \
+		if [ ! -d ${PACKAGES}/$$cat ]; then \
+			if ! mkdir -p ${PACKAGES}/$$cat; then \
+				echo ">> Can't create directory ${PACKAGES}/$$cat."; \
+				exit 1; \
+			fi; \
+		fi; \
+		ln -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
+	done;
+.endif
+
+.if !target(delete-package-links)
+delete-package-links:
+	@cd ${PACKAGES} && find . -type l -name ${PKGNAME}${PKG_SUFX}|xargs rm -f
+.endif
+
+.if !target(delete-package)
+delete-package:
+	@make delete-package-links
+	@rm -f ${PKGFILE}
+.endif
+
+################################################################
+# The real targets start here.
+# 
+# You shouldn't EVER change these. If possible, add a pre-* or
+# post-* hook.  
+# In the worst case, define a do-* target that will override
+# the main body of the target.
+################################################################
+
+
+real-fetch: fetch-depends
+.if target(pre-fetch)
+	@cd ${.CURDIR} && make pre-fetch
+.endif
+.if target(do-fetch)
+	@cd ${.CURDIR} && make do-fetch
+.else
+# What FETCH normally does:
+	@cd ${.CURDIR} && make ${ALLFILES:S@^@${FULLDISTDIR}/@}
+# End of FETCH
+.endif
+.if target(post-fetch)
+	@cd ${.CURDIR} && make post-fetch
+.endif
+
+
+real-extract: build-depends lib-depends misc-depends
+	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
+.if target(pre-extract)
+	@cd ${.CURDIR} && make pre-extract
+.endif
+.if target(do-extract)
+	@cd ${.CURDIR} && make do-extract
+.else
+# What EXTRACT normally does:
 .  if !defined(NO_WRKDIR)
 .    if defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
@@ -1358,12 +1419,23 @@ do-extract:
 			exit 1; \
 		fi \
 	done
+# End of EXTRACT
+.endif
+.if target(post-extract)
+	@cd ${.CURDIR} && make post-extract
 .endif
 
-# Patch
 
-.if !target(do-patch)
-do-patch:
+
+real-patch: 
+	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+.if target(pre-patch)
+	@cd ${.CURDIR} && make pre-patch
+.endif
+.if target(do-patch)
+	@cd ${.CURDIR} && make do-patch
+.else
+# What PATCH normally does:
 .  if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
@@ -1409,12 +1481,22 @@ do-patch:
 		done;\
 		case $$error in 1) exit 1;; esac; \
 	fi
+# End of PATCH.
+.endif
+.if target(post-patch)
+	@cd ${.CURDIR} && make post-patch
 .endif
 
-# Configure
 
-.if !target(do-configure)
-do-configure: ${WRKBUILD}
+real-configure: ${WRKBUILD}
+	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
+.if target(pre-configure)
+	@cd ${.CURDIR} && make pre-configure
+.endif
+.if target(do-configure)
+	@cd ${.CURDIR} && make do-configure
+.else
+# What CONFIGURE normally does
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
@@ -1431,149 +1513,32 @@ do-configure: ${WRKBUILD}
 .  if defined(USE_IMAKE)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 .  endif
+# End of CONFIGURE.
+.endif
+.if target(post-configure)
+	@cd ${.CURDIR} && make post-configure
 .endif
 
-${WRKBUILD}:
-	mkdir -p ${WRKBUILD}
 
-# Build
 
-.if !target(do-build)
-do-build:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
-.endif
-
-# Install
-
-.if !target(do-install)
-do-install:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
-.endif
-
-# Package
-
-.if !target(do-package)
-do-package:
-	@if [ -e ${PLIST} ]; then \
-		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
-		if [ -d ${PACKAGES} ]; then \
-			if [ ! -d ${PKGREPOSITORY} ]; then \
-				if ! mkdir -p ${PKGREPOSITORY}; then \
-					echo ">> Can't create directory ${PKGREPOSITORY}."; \
-					exit 1; \
-				fi; \
-			fi; \
-		fi; \
-		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
-			if [ -d ${PACKAGES} ]; then \
-				make package-links; \
-			fi; \
-		else \
-			make delete-package; \
-			exit 1; \
-		fi; \
-	fi
-.endif
-
-# Some support rules for do-package
-
-.if !target(package-links)
-package-links:
-	@make delete-package-links
-	@for cat in ${CATEGORIES}; do \
-		if [ ! -d ${PACKAGES}/$$cat ]; then \
-			if ! mkdir -p ${PACKAGES}/$$cat; then \
-				echo ">> Can't create directory ${PACKAGES}/$$cat."; \
-				exit 1; \
-			fi; \
-		fi; \
-		ln -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
-	done;
-.endif
-
-.if !target(delete-package-links)
-delete-package-links:
-	@cd ${PACKAGES} && find . -type l -name ${PKGNAME}${PKG_SUFX}|xargs rm -f
-.endif
-
-.if !target(delete-package)
-delete-package:
-	@make delete-package-links
-	@rm -f ${PKGFILE}
-.endif
-
-################################################################
-# This is the "generic" port target, actually a macro used from the
-# six main targets.  See below for more.
-################################################################
-
-_PORT_USE: .USE
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/pre-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
-	fi
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/do-/}
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/post-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
-	fi
-
-_POST_INSTALL: .USE
-.if defined(_MANPAGES) || defined(_CATPAGES)
-.  if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-.    for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${GUNZIP_CMD} ${manpage}.gz
-.    endfor
-.  elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-.    for manpage in ${_MANPAGES} ${_CATPAGES}
-	@if [ -L ${manpage} ]; then \
-		set - `file ${manpage}`; \
-		shift `expr $$# - 1`; \
-		ln -sf $${1}.gz ${manpage}.gz; \
-		rm ${manpage}; \
-	else \
-		${GZIP_CMD} ${manpage}; \
-	fi
-.    endfor
-.  endif
-.endif
-.if exists(${PKGDIR}/MESSAGE)
-	@cat	${PKGDIR}/MESSAGE
-.endif
-.if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && make fake-pkg
-.endif
-
-################################################################
-# Skeleton targets start here
-# 
-# You shouldn't have to change these.  Either add the pre-* or
-# post-* targets/scripts or redefine the do-* targets.  These
-# targets don't do anything other than checking for cookies and
-# call the necessary targets/scripts.
-################################################################
-
-.if !target(fetch-all)
-fetch-all:
-	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
-.endif
-
-# And call the macros
-
-real-fetch: fetch-depends _PORT_USE
-real-extract: build-depends lib-depends misc-depends _PORT_USE
-	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
-real-patch: _PORT_USE
-	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
-real-configure: _PORT_USE
-	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
-real-build: _PORT_USE
+real-build: 
 	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-real-install: run-depends lib-depends _PORT_USE _POST_INSTALL
+.if target(pre-build)
+	@cd ${.CURDIR} && make pre-build
+.endif
+.if target(do-build)
+	@cd ${.CURDIR} && make do-build
+.else
+# What BUILD normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
+# End of BUILD
+.endif
+.if target(post-build)
+	@cd ${.CURDIR} && make post-build
+.endif
+
+
+real-install: run-depends lib-depends 
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
@@ -1609,23 +1574,81 @@ real-install: run-depends lib-depends _PORT_USE _POST_INSTALL
 	fi
 .endif
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
-
-real-package: _PORT_USE
-
-# Empty pre-* and post-* targets, note we can't use .if !target()
-# in the _PORT_USE macro
-
-.for name in fetch extract patch configure build install package
-
-.  if !target(pre-${name})
-pre-${name}:
+.if target(pre-install)
+	@cd ${.CURDIR} && make pre-install
+.endif
+.if target(do-install)
+	@cd ${.CURDIR} && make do-install
+.else
+# What INSTALL normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
+# End of INSTALL.
+.endif
+.if target(post-install)
+	@cd ${.CURDIR} && make post-install
+.endif
+.if defined(_MANPAGES) || defined(_CATPAGES)
+.  if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
+.    for manpage in ${_MANPAGES} ${_CATPAGES}
+	@${GUNZIP_CMD} ${manpage}.gz
+.    endfor
+.  elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
+.    for manpage in ${_MANPAGES} ${_CATPAGES}
+	@if [ -L ${manpage} ]; then \
+		set - `file ${manpage}`; \
+		shift `expr $$# - 1`; \
+		ln -sf $${1}.gz ${manpage}.gz; \
+		rm ${manpage}; \
+	else \
+		${GZIP_CMD} ${manpage}; \
+	fi
+.    endfor
 .  endif
+.endif
+.if exists(${PKGDIR}/MESSAGE)
+	@cat	${PKGDIR}/MESSAGE
+.endif
+.if !defined(NO_PKG_REGISTER)
+	@cd ${.CURDIR} && make fake-pkg
+.endif
 
-.  if !target(post-${name})
-post-${name}:
-.  endif
 
-.endfor
+
+real-package:
+.if target(pre-package)
+	@cd ${.CURDIR} && make pre-package
+.endif
+.if target(do-package)
+	@cd ${.CURDIR} && make do-package
+.else
+# What PACKAGE normally does:
+	@if [ -e ${PLIST} ]; then \
+		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
+		if [ -d ${PACKAGES} ]; then \
+			if [ ! -d ${PKGREPOSITORY} ]; then \
+				if ! mkdir -p ${PKGREPOSITORY}; then \
+					echo ">> Can't create directory ${PKGREPOSITORY}."; \
+					exit 1; \
+				fi; \
+			fi; \
+		fi; \
+		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+			if [ -d ${PACKAGES} ]; then \
+				make package-links; \
+			fi; \
+		else \
+			make delete-package; \
+			exit 1; \
+		fi; \
+	fi
+# End of PACKAGE.
+.endif
+.if target(post-package)
+	@cd ${.CURDIR} && make post-package
+.endif
+
 
 # Checkpatch
 #
