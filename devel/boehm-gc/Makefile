@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/10/16 14:09:51 todd Exp $
+# $OpenBSD: Makefile,v 1.29 2004/03/04 17:49:26 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
@@ -25,7 +25,7 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.54
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-full-debug
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2004/02/27 21:04:50 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2004/03/04 17:49:26 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -152,7 +152,7 @@ FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-CONFIGURE_STYLE?=	autoconf dest
+CONFIGURE_STYLE?=	autoconf dest no-autoheader
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-fpectl --with-threads
 

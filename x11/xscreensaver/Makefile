@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/03/02 07:57:21 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2004/03/04 17:49:26 espie Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -28,7 +28,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.54
 CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
 CONFIGURE_ARGS+=	--with-gl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/12/26 14:18:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.28 2004/03/04 17:49:26 espie Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -27,7 +27,8 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
-CONFIGURE_STYLE=autoconf dest
+CONFIGURE_STYLE=autoconf dest no-autoheader
+AUTOCONF_VERSION=2.54
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

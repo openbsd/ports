@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/02/18 20:59:24 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/03/04 17:49:26 espie Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_STYLE=	autoconf dest no-autoheader
 AUTOCONF_VERSION=	2.57
 USE_GMAKE=		Yes
 WRKDIST=		${WRKDIR}/sqlite
