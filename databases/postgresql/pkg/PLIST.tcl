@@ -16,6 +16,8 @@ pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_upgrade
 pgsql/bin/pg_version
+pgsql/bin/pgtclsh
+pgsql/bin/pgtksh
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
@@ -30,6 +32,7 @@ pgsql/include/ecpgtype.h
 pgsql/include/executor/spi.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
+pgsql/include/libpgtcl.h
 pgsql/include/libpq++.H
 pgsql/include/libpq++/pgconnection.h
 pgsql/include/libpq++/pgcursordb.h
@@ -54,6 +57,10 @@ pgsql/lib/libecpg.a
 pgsql/lib/libecpg.so
 pgsql/lib/libecpg.so.3
 pgsql/lib/libecpg.so.3.0.0
+pgsql/lib/libpgtcl.a
+pgsql/lib/libpgtcl.so
+pgsql/lib/libpgtcl.so.2
+pgsql/lib/libpgtcl.so.2.0
 pgsql/lib/libpq++.a
 pgsql/lib/libpq++.so
 pgsql/lib/libpq++.so.3
@@ -67,6 +74,7 @@ pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
 pgsql/lib/plpgsql.so
+pgsql/lib/pltcl.so
 pgsql/man/man1/cleardbdir.1
 pgsql/man/man1/createdb.1
 pgsql/man/man1/createuser.1
@@ -173,6 +181,7 @@ share/doc/pgsql/user.ps.gz
 @dirrm pgsql/man/man3
 @dirrm pgsql/man/man1
 @dirrm pgsql/man
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
 @dirrm pgsql/lib
 @dirrm pgsql/include/utils
 @dirrm pgsql/include/libpq++

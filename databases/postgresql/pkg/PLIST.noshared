@@ -1,8 +1,10 @@
-pgsql/.profile
+bin/pgwrap
 pgsql/bin/cleardbdir
 pgsql/bin/createdb
+pgsql/bin/createlang
 pgsql/bin/createuser
 pgsql/bin/destroydb
+pgsql/bin/destroylang
 pgsql/bin/destroyuser
 pgsql/bin/ecpg
 pgsql/bin/initdb
@@ -12,24 +14,30 @@ pgsql/bin/pg_dump
 pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
+pgsql/bin/pg_upgrade
 pgsql/bin/pg_version
-pgsql/bin/pgsql.sh
-@unexec rm -f %D/pgsql/bin/pgtclsh
-@unexec rm -f %D/pgsql/bin/pgtksh
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
+pgsql/bin/vacuumdb
 pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
 pgsql/include/config.h
+pgsql/include/ecpgerrno.h
 pgsql/include/ecpglib.h
 pgsql/include/ecpgtype.h
 pgsql/include/executor/spi.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
-@unexec rm -f %D/pgsql/include/libpgtcl.h
+pgsql/include/libpq++.H
+pgsql/include/libpq++/pgconnection.h
+pgsql/include/libpq++/pgcursordb.h
+pgsql/include/libpq++/pgdatabase.h
+pgsql/include/libpq++/pglobject.h
+pgsql/include/libpq++/pgtransdb.h
 pgsql/include/libpq-fe.h
+pgsql/include/libpq-int.h
 pgsql/include/libpq/libpq-fs.h
 pgsql/include/libpq/pqcomm.h
 pgsql/include/os.h
@@ -38,13 +46,12 @@ pgsql/include/postgres_ext.h
 pgsql/include/sqlca.h
 pgsql/include/utils/elog.h
 pgsql/include/utils/geo_decls.h
+pgsql/include/utils/mcxt.h
 pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
-@comment this is bogus: if a package is created it will not contain
-@comment the libpgtcl libraries
-@unexec rm -f %D/pgsql/lib/libpgtcl.a
+pgsql/lib/libpq++.a
 pgsql/lib/libpq.a
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
@@ -62,17 +69,12 @@ pgsql/man/man1/ipcclean.1
 pgsql/man/man1/pg_dump.1
 pgsql/man/man1/pg_dumpall.1
 pgsql/man/man1/pg_passwd.1
-pgsql/man/man1/pgintro.1
+pgsql/man/man1/pg_upgrade.1
 pgsql/man/man1/postgres.1
 pgsql/man/man1/postmaster.1
 pgsql/man/man1/psql.1
 pgsql/man/man3/catalogs.3
-pgsql/man/man3/large_objects.3
 pgsql/man/man3/libpq.3
-pgsql/man/man3/oracle_compat.3
-pgsql/man/man3/pgbuiltin.3
-pgsql/man/man5/bki.5
-pgsql/man/man5/page.5
 pgsql/man/man5/pg_hba.conf.5
 pgsql/man/manl/abort.l
 pgsql/man/manl/alter_table.l
@@ -131,115 +133,44 @@ pgsql/man/manl/show.l
 pgsql/man/manl/sql.l
 pgsql/man/manl/update.l
 pgsql/man/manl/vacuum.l
-pgsql/post-install-notes
 share/doc/pgsql/FAQ
+share/doc/pgsql/FAQ_AIX
+share/doc/pgsql/FAQ_DEV
+share/doc/pgsql/FAQ_DigitalUnix
 share/doc/pgsql/FAQ_FreeBSD
+share/doc/pgsql/FAQ_HPUX
 share/doc/pgsql/FAQ_Irix
 share/doc/pgsql/FAQ_Linux
-share/doc/pgsql/Makefile
-share/doc/pgsql/README.GEQO
+share/doc/pgsql/FAQ_SCO
+share/doc/pgsql/FAQ_Solaris
+share/doc/pgsql/INSTALL
+share/doc/pgsql/README.Charsets
+share/doc/pgsql/README.NT
+share/doc/pgsql/README.OpenBSD
 share/doc/pgsql/README.fsync
+share/doc/pgsql/README.inet
+share/doc/pgsql/README.locale
 share/doc/pgsql/README.mb
 share/doc/pgsql/README.mb.jp
-share/doc/pgsql/README.support
 share/doc/pgsql/TODO
-share/doc/pgsql/TODO.GEQO
 share/doc/pgsql/admin.ps.gz
-share/doc/pgsql/admin.tar.gz
-share/doc/pgsql/bug.template
-share/doc/pgsql/postgres.tar.gz
 share/doc/pgsql/programmer.ps.gz
-share/doc/pgsql/programmer.tar.gz
-share/doc/pgsql/src/Makefile
-share/doc/pgsql/src/graphics/catalogs.gif
-share/doc/pgsql/src/graphics/clientserver.ag
-share/doc/pgsql/src/graphics/clientserver.gif
-share/doc/pgsql/src/graphics/connections.ag
-share/doc/pgsql/src/graphics/connections.gif
-share/doc/pgsql/src/graphics/layout.ag
-share/doc/pgsql/src/graphics/layout.gif
-share/doc/pgsql/src/sgml/Makefile
-share/doc/pgsql/src/sgml/admin.sgml
-share/doc/pgsql/src/sgml/advanced.sgml
-share/doc/pgsql/src/sgml/arch-dev.sgml
-share/doc/pgsql/src/sgml/arch-pg.sgml
-share/doc/pgsql/src/sgml/arch.sgml
-share/doc/pgsql/src/sgml/array.sgml
-share/doc/pgsql/src/sgml/biblio.sgml
-share/doc/pgsql/src/sgml/compiler.sgml
-share/doc/pgsql/src/sgml/contacts.sgml
-share/doc/pgsql/src/sgml/datatype.sgml
-share/doc/pgsql/src/sgml/dfunc.sgml
-share/doc/pgsql/src/sgml/docguide.sgml
-share/doc/pgsql/src/sgml/ecpg.sgml
-share/doc/pgsql/src/sgml/environ.sgml
-share/doc/pgsql/src/sgml/extend.sgml
-share/doc/pgsql/src/sgml/func-ref.sgml
-share/doc/pgsql/src/sgml/geqo.sgml
-share/doc/pgsql/src/sgml/gist.sgml
-share/doc/pgsql/src/sgml/inherit.sgml
-share/doc/pgsql/src/sgml/install.sgml
-share/doc/pgsql/src/sgml/intro-pg.sgml
-share/doc/pgsql/src/sgml/intro.sgml
-share/doc/pgsql/src/sgml/jdbc.sgml
-share/doc/pgsql/src/sgml/libpgtcl.sgml
-share/doc/pgsql/src/sgml/libpq.sgml
-share/doc/pgsql/src/sgml/lobj.sgml
-share/doc/pgsql/src/sgml/manage.sgml
-share/doc/pgsql/src/sgml/odbc.sgml
-share/doc/pgsql/src/sgml/pgaccess.sgml
-share/doc/pgsql/src/sgml/ports.sgml
-share/doc/pgsql/src/sgml/postgres.sgml
-share/doc/pgsql/src/sgml/programmer.sgml
-share/doc/pgsql/src/sgml/protocol.sgml
-share/doc/pgsql/src/sgml/psql.sgml
-share/doc/pgsql/src/sgml/query-ug.sgml
-share/doc/pgsql/src/sgml/query.sgml
-share/doc/pgsql/src/sgml/recovery.sgml
-share/doc/pgsql/src/sgml/regress.sgml
-share/doc/pgsql/src/sgml/release.sgml
-share/doc/pgsql/src/sgml/rules.sgml
-share/doc/pgsql/src/sgml/spi.sgml
-share/doc/pgsql/src/sgml/start-ag.sgml
-share/doc/pgsql/src/sgml/start.sgml
-share/doc/pgsql/src/sgml/storage.sgml
-share/doc/pgsql/src/sgml/trigger.sgml
-share/doc/pgsql/src/sgml/tutorial.sgml
-share/doc/pgsql/src/sgml/user.sgml
-share/doc/pgsql/src/sgml/xaggr.sgml
-share/doc/pgsql/src/sgml/xfunc.sgml
-share/doc/pgsql/src/sgml/xindex.sgml
-share/doc/pgsql/src/sgml/xoper.sgml
-share/doc/pgsql/src/sgml/xtypes.sgml
 share/doc/pgsql/tutorial.ps.gz
-share/doc/pgsql/tutorial.tar.gz
 share/doc/pgsql/user.ps.gz
-share/doc/pgsql/user.tar.gz
-share/doc/pgsql/userguide.ps
-@dirrm share/doc/pgsql/src/graphics
-@dirrm share/doc/pgsql/src/sgml
-@dirrm share/doc/pgsql/src
 @dirrm share/doc/pgsql
-@dirrm pgsql/bin
-@dirrm pgsql/include/access
-@dirrm pgsql/include/commands
-@dirrm pgsql/include/executor
-@dirrm pgsql/include/include
-@dirrm pgsql/include/lib
-@dirrm pgsql/include/libpq
-@dirrm pgsql/include/port/bsd
-@dirrm pgsql/include/port
-@dirrm pgsql/include/utils
-@dirrm pgsql/include
-@dirrm pgsql/lib
-@dirrm pgsql/man/man1
-@dirrm pgsql/man/man3
-@dirrm pgsql/man/man5
 @dirrm pgsql/man/manl
+@dirrm pgsql/man/man5
+@dirrm pgsql/man/man3
+@dirrm pgsql/man/man1
 @dirrm pgsql/man
-@unexec echo "***"
-@unexec echo "*** Please remove /var/db/pgsql manually, if you don't"
-@unexec echo "*** want to keep existing databases. Also you should remove"
-@unexec echo "*** pgsql entries from /etc/master.passwd and /etc/group"
-@unexec echo "*** if won't install pgsql again."
-@unexec echo "***"
+@dirrm pgsql/lib
+@dirrm pgsql/include/utils
+@dirrm pgsql/include/libpq++
+@dirrm pgsql/include/libpq
+@dirrm pgsql/include/lib
+@dirrm pgsql/include/executor
+@dirrm pgsql/include/commands
+@dirrm pgsql/include/access
+@dirrm pgsql/include
+@dirrm pgsql/bin
+@dirrm pgsql
