@@ -1,0 +1,12 @@
+$OpenBSD: patch-texk_gsftopk_gsftopk_c,v 1.1 2003/10/28 20:01:12 sturm Exp $
+--- texk/gsftopk/gsftopk.c.orig	2003-10-28 20:40:57.000000000 +0100
++++ texk/gsftopk/gsftopk.c	2003-10-28 20:41:32.000000000 +0100
+@@ -2585,7 +2585,7 @@ Author of gsftopk: Paul Vojta.");
+ 	    execlp(gspath, "gs", "-dNODISPLAY", "-dNOGC", substarg, "-q", "--",
+ 		/* render.ps */ searchpath,
+ 		PSname,
+-		dlstring != NULL ? dlstring : "", specinfo, dpistr, NULL);
++		dlstring != NULL ? dlstring : "", specinfo, dpistr, (void *)NULL);
+ 	    if (col != 0) {
+ 		putc('\n', stderr);
+ 		col = 0;
