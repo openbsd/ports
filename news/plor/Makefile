@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.14 2002/02/20 20:59:13 naddy Exp $
 
-COMMENT=	'alpha-release readers for reading SOUP and QWK packets'
+COMMENT=	"alpha-release readers for reading SOUP and QWK packets"
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
-NEED_VERSION=	1.405
+NEED_VERSION=	1.504
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,8 +16,7 @@ MASTER_SITES=	ftp://linux.psy.unipd.it/pub/pluto/developers/utils/
 
 CONFIGURE_STYLE=	gnu
 
-DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
-		plor.html plor.txt
+DOCFILES=	plor.html plor-1.html plor-2.html plor.txt
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/plor ${PREFIX}/bin  
