@@ -1,0 +1,15 @@
+$OpenBSD: patch-pixmap_Makefile_in,v 1.1.1.1 2001/01/08 22:39:54 espie Exp $
+--- pixmap/Makefile.in.orig	Sun Dec 24 16:27:58 2000
++++ pixmap/Makefile.in	Sun Dec 24 16:29:10 2000
+@@ -252,8 +252,9 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	chmod 0755 $(libdir)/coolicon/modify-xinitrc
+-	$(libdir)/coolicon/modify-xinitrc
++	chmod 0755 $(DESTDIR)$(libdir)/coolicon/modify-xinitrc
++#	ouch, I think not
++#	$(DESTDIR)$(libdir)/coolicon/modify-xinitrc
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
