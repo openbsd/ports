@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure,v 1.4 2002/06/30 18:23:31 brad Exp $
 --- configure.orig	Mon Jan  8 01:24:22 2001
 +++ configure	Thu Feb 28 18:06:38 2002
 @@ -12004,11 +12004,11 @@ if test -n "$CYGWIN" -o -n "$EMXOS2" -o 

@@ -1,5 +1,6 @@
---- include/config.h.orig	Mon Jan  8 06:24:22 2001
-+++ include/config.h	Wed Feb 27 19:57:16 2002
+$OpenBSD: patch-include_config_h,v 1.2 2002/06/30 18:23:31 brad Exp $
+--- include/config.h.orig	Mon Jan  8 01:24:22 2001
++++ include/config.h	Sun Jun 30 14:19:43 2002
 @@ -35,7 +35,7 @@
   * too peruse this function all you like. It's not a BACKDOOR in any way, 
   * shape or form.
@@ -9,3 +10,12 @@
  
  
  /*
+@@ -500,7 +500,7 @@
+ #define DEFAULT_AOP_VAR OFF
+ #define DEFAULT_AUTO_AWAY ON
+ #define DEFAULT_KICK_OPS ON
+-#define DEFAULT_AUTO_REJOIN ON
++#define DEFAULT_AUTO_REJOIN OFF
+ #define DEFAULT_DEOPFLOOD ON
+ #if defined(__EMXPM__) || defined(WIN32)
+ #define DEFAULT_CODEPAGE 437

@@ -1,3 +1,4 @@
+$OpenBSD: patch-source_commands_c,v 1.2 2002/06/30 18:23:31 brad Exp $
 --- source/commands.c.orig	Mon Jan  8 01:24:22 2001
 +++ source/commands.c	Thu Feb 28 17:29:03 2002
 @@ -2604,13 +2604,13 @@ BUILT_IN_COMMAND(e_hostname)
