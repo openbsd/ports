@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2004/01/15 14:21:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.303 2004/01/25 18:19:30 dhartmei Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -89,6 +89,7 @@
      SUBDIR += irssi-icb
      SUBDIR += isc-dhcp
      SUBDIR += jftpgw
+     SUBDIR += kissd
      SUBDIR += ldistfp
      SUBDIR += lftp
      SUBDIR += libbind
