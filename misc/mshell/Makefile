@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 07:42:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/10/26 23:49:37 naddy Exp $
 
 COMMENT=	"Unix menuing shell"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	"no explict license"
 PERMIT_DISTFILES_FTP=	"no explict license"
 
 post-extract:
-	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
+	zcat ${FULLDISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)
 
 NO_REGRESS=	Yes

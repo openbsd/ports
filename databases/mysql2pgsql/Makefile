@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/25 16:23:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/26 23:49:33 naddy Exp $
 
 COMMENT=	"convert a MySQL dump to a PostgreSQL dump"
 
@@ -26,6 +26,6 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/mysql2pgsql ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FULLDISTDIR}/mysql2pgsql ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/29 22:25:33 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2003/10/26 23:49:37 naddy Exp $
 
 BROKEN=			"security issues"
 
@@ -49,7 +49,7 @@ FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
 		"manually." \
 		"" \
 		"Once ${DISTFILES} has been downloaded, move it to" \
-		"${DISTDIR} and then restart this build." \
+		"${FULLDISTDIR} and then restart this build." \
 		""
 
 post-patch:

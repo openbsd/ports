@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/10/26 23:49:41 naddy Exp $
 
 COMMENT=	"convert text into the Doc format used by PalmPilots"
 
@@ -20,7 +20,7 @@ ALL_TARGET=	pilot_makedoc
 NO_REGRESS=	Yes
 
 post-extract:
-		@cp ${DISTDIR}/${DISTFILES} ${WRKDIR}
+		@cp ${FULLDISTDIR}/${DISTFILES} ${WRKDIR}
 		@cp ${FILESDIR}/Makefile ${WRKDIR}
 
 do-install:

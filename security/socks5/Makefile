@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/07/25 23:22:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2003/10/26 23:49:40 naddy Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -37,7 +37,7 @@ NO_REGRESS=	Yes
 FETCH_MANUALLY=	"NEC requires that you grab the dist files from their" \
 		"web site at ${HOMEPAGE}." \
 		"Please make sure you have ${DISTNAME}${EXTRACT_SUFX}" \
-		"in ${DISTDIR} and run make again." \
+		"in ${FULLDISTDIR} and run make again." \
 		""
 
 post-build:

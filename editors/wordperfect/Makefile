@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/07/25 13:07:17 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2003/10/26 23:49:36 naddy Exp $
 
 COMMENT=	"graphical word processor ported from Windows"
 
@@ -39,7 +39,7 @@ FETCH_MANUALLY+= "  manually after reading and agreeing to the license at:"
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= "    http://linux.corel.com/products/wp8/download_eula.htm"
 FETCH_MANUALLY+= ""
-FETCH_MANUALLY+= "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}"
+FETCH_MANUALLY+= "  Once ${DISTFILES} has been downloaded, move it to ${FULLDISTDIR}"
 FETCH_MANUALLY+= "  and then restart this build."
 FETCH_MANUALLY+= ""
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/01/12 21:37:49 millert Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/26 23:49:39 naddy Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -52,7 +52,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vnc
-	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/${DOCDIST}
+	tar -C ${PREFIX}/share/doc/vnc -xzf ${FULLDISTDIR}/${DOCDIST}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vnc

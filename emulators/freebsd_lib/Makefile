@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2003/10/26 23:49:36 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -27,7 +27,7 @@ pre-install:
 	@ln -sf ${TRUEPREFIX} ${WRKINST}/emul/freebsd
 
 do-install:
-	@zcat ${DISTDIR}/${DISTNAME}.tar.gz | (cd ${PREFIX}; pax -r)
+	@zcat ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | (cd ${PREFIX}; pax -r)
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/var/run

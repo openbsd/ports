@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/25 13:07:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2003/10/26 23:49:35 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 BROKEN=		"unusable, only eats cpu; probably thread emulation problem"
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 
 DISTFILES=	j2sdk-${VERSION:S/./_/g}-linux-i586.bin
 EXTRACT_CASES+=	*.bin) \
-		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${DISTDIR}/$$archive|awk '{print $$2}'` ${DISTDIR}/$$archive > ${WRKDIR}/$$archive && \
+		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${FULLDISTDIR}/$$archive|awk '{print $$2}'` ${FULLDISTDIR}/$$archive > ${WRKDIR}/$$archive && \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
@@ -39,7 +39,7 @@ FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.4.1/download.html"
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= " Choose the 'Linux self-extracting file' option and place"
-FETCH_MANUALLY+= " ${DISTFILES} into ${DISTDIR}."
+FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
 FETCH_MANUALLY+= ""
 
 JDK_HOME=	${PREFIX}/jdk1.4.1-linux

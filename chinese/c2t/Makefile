@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/24 23:52:29 naddy Exp $	
+# $OpenBSD: Makefile,v 1.19 2003/10/26 23:49:31 naddy Exp $	
 
 COMMENT=	"translate GB/Big5 encoding to tone pinyin"
 
@@ -24,7 +24,7 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${PREFIX}/share/chinese/gb
+	${INSTALL_DATA} ${FULLDISTDIR}/TONEPY.tit ${PREFIX}/share/chinese/gb
 	${INSTALL_MAN} ${WRKSRC}/c2t.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

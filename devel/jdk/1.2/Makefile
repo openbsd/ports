@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/20 00:08:31 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2003/10/26 23:49:33 naddy Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
@@ -79,7 +79,7 @@ FETCH_MANUALLY+="    ${file}"
 .endfor
 FETCH_MANUALLY+="from http://www.sun.com/software/java2/download.html"
 FETCH_MANUALLY+="and http://www.eyesbeyond.com/freebsddom/java/jdk.html,"
-FETCH_MANUALLY+="place it in ${DISTDIR} and then run make again."
+FETCH_MANUALLY+="place it in ${FULLDISTDIR} and then run make again."
 
 
 #post-extract:

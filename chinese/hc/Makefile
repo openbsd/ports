@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/24 23:52:29 naddy Exp $	
+# $OpenBSD: Makefile,v 1.4 2003/10/26 23:49:32 naddy Exp $	
 
 COMMENT=	"convert between GB and BIG-5 codes"
 
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/b2g ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/g2b ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/hc.tab ${PREFIX}/share/hc
-	${INSTALL_DATA} ${DISTDIR}/hc-supp.tab ${PREFIX}/share/hc
+	${INSTALL_DATA} ${FULLDISTDIR}/hc-supp.tab ${PREFIX}/share/hc
 	${INSTALL_MAN} ${WRKSRC}/hc.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

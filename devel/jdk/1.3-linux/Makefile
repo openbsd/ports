@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/08/24 20:57:26 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2003/10/26 23:49:34 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 DISTFILES=	j2sdk-${VERSION:S/./_/g}-linux-i586.bin
 EXTRACT_CASES+=	*.bin) \
-		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${DISTDIR}/$$archive|awk '{print $$2}'` ${DISTDIR}/$$archive > ${WRKDIR}/$$archive && \
+		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${FULLDISTDIR}/$$archive|awk '{print $$2}'` ${FULLDISTDIR}/$$archive > ${WRKDIR}/$$archive && \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
@@ -34,7 +34,7 @@ FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.3/download-linux.html"
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= " Choose the '* Linux self-extracting file' option and place"
-FETCH_MANUALLY+= " ${DISTFILES} into ${DISTDIR}."
+FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
 
 JDK_HOME=	${PREFIX}/jdk1.3.1-linux
 

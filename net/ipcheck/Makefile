@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/26 23:49:38 naddy Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -32,7 +32,7 @@ WRKDIST=		${WRKDIR}
 do-patch:
 	@sed -e "s!/usr/bin/python!${LOCALBASE}/bin/python${PYTHON_VER}!" \
 	     -e "s!ppp0!tun0!" \
-	      ${DISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
+	      ${FULLDISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/ipcheck.py

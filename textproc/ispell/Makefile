@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2003/04/30 10:51:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.35 2003/10/26 23:49:40 naddy Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -83,15 +83,15 @@ NO_REGRESS=	Yes
 post-extract:
 	@mkdir -p ${WRKDIR}/french
 	@(cd ${WRKDIR}/french; \
-	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${FRENCH_DICT}.tar.gz)
+	tar xzf ${FULLDISTDIR}/${FRENCH_DICT}${EXTRACT_SUFX})
 
 	@mkdir -p ${WRKDIR}/german
 	@(cd ${WRKDIR}/german; \
-	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${GERMAN_DICT}.tar.gz)
+	tar xzf ${FULLDISTDIR}/${GERMAN_DICT}${EXTRACT_SUFX})
 
 	@mkdir -p ${WRKDIR}/russian
 	@(cd ${WRKDIR}/russian; \
-	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${RUSSIAN_DICT}.tar.gz)
+	tar xzf ${FULLDISTDIR}/${RUSSIAN_DICT}${EXTRACT_SUFX})
 	
 	@(cd ${WRKDIR}/${SPANISH_DICT}/; \
 	mv espa~nol.aff spanish.aff; \

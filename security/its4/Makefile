@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/07/25 23:22:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/10/26 23:49:39 naddy Exp $
 
 COMMENT=	"scan C/C++ source code for security problems"
 
@@ -29,7 +29,7 @@ FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
 		"" \
 		"    http://www.cigital.com/its4/" \
 		"" \
-		"Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" \
+		"Once ${DISTFILES} has been downloaded, move it to ${FULLDISTDIR}" \
 		"and then restart this build." \
 		""
 
