@@ -1,6 +1,4 @@
 
-Description:
-
   ngrep strives to provide most of GNU grep's common features,
   applying them to the network layer. ngrep is a pcap-aware tool that
   will allow you to specify extended regular expressions to match
@@ -8,67 +6,4 @@ Description:
   UDP across ethernet, ppp and slip interfaces, and understands bpf
   filter logic in the same fashion as more common packet sniffing
   tools, like tcpdump and snoop.  
-
-  
-Usage:
-
-  ngrep <-hviwqe> <-n num> <-d dev> <-A num> <regex> <pcap filter logic>
-
-  -h  is help/usage
-  -v  is version information
-  -i  is ignore case
-  -w  is word-regex (expression must match as a word)
-  -q  is be quiet
-  -e  is show empty packets
-  -n  is look at only num packets
-  -d  is use a device different from the default (pcap)
-  -A  is dump num packets after a match
-
-  <regex>   is any extended regular expression (metachars are
-            significant and don't have to be escaped)
-  <filter>  is any pcap filter statement 
-
-
-  As of v1.28, ngrep doesn't require a regex.  There are cases where
-  it will be confused and think part of your bpf filter is the regex,
-  as in:
-
-  % ngrep not port 80
-  interface: eth0 (192.233.133.0/255.255.255.0)
-  filter: ip and ( port 80 )
-  match: not
-
-  In cases like this, you will need to specify a blank regex:
-
-  % ngrep '' not port 80
-  interface: eth0 (192.233.133.0/255.255.255.0)
-  filter: ip and ( not port 80 )
-
-
-Examples:
-
-  o ngrep  -qd eth1  'HTTP'  tcp port 80
-
-    Be quiet, look only at tcp packets with either source or dest port
-    80 on interface eth1, look for anything matching 'HTTP'. 
-
-  o ngrep  '(USER|PASS)'  tcp port 21
-
-    Look only at tcp packets with either source or dest port 21, look
-    for anything resembling an FTP login.
-
-  o ngrep  -wi  '(user|pass)'  tcp port 21
-  
-    Look at tcp packets with either source or dest port 21, that match
-    either 'user' or 'pass' (case insensitively) as a word. 
-
-  o ngrep -wiA 2   '(user|pass)'  tcp port 21
-  
-    Alternatively, match either 'user' or 'pass' case insensitively,
-    and dump the next 2 packets following (that match the bpf filter).
-
-  o ngrep  -qd le0 port 53
-
-    Watch all tcp and udp port 53 (nameserver) traffic on interface
-    le0.  Be quiet.
 
