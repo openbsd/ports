@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/08/24 20:48:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2003/12/26 13:43:47 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
-VERSION=		0.9.2
+VERSION=		0.9.4
 DISTNAME=		mysqlcc-${VERSION}-src
 PKGNAME=		mysqlcc-${VERSION}
 CATEGORIES=		databases

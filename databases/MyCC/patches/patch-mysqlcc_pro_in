@@ -1,6 +1,6 @@
-$OpenBSD: patch-mysqlcc_pro_in,v 1.4 2003/01/28 22:15:38 wilfried Exp $
---- mysqlcc.pro.in.orig	Tue Jan 21 12:58:57 2003
-+++ mysqlcc.pro.in	Tue Jan 28 19:55:25 2003
+$OpenBSD: patch-mysqlcc_pro_in,v 1.5 2003/12/26 13:43:47 wilfried Exp $
+--- mysqlcc.pro.in.orig	2003-12-14 00:10:43.000000000 +0100
++++ mysqlcc.pro.in	2003-12-26 14:10:30.000000000 +0100
 @@ -1,5 +1,5 @@
  TEMPLATE     = app
 -CONFIG       += qt thread
@@ -8,7 +8,7 @@ $OpenBSD: patch-mysqlcc_pro_in,v 1.4 2003/01/28 22:15:38 wilfried Exp $
  DEFINES      += QT_DLL
  DEFINES      += HAVE_MYSQLCC_CONFIG
  TARGET       = mysqlcc
-@@ -25,7 +25,7 @@ win32 {
+@@ -27,7 +27,7 @@ win32 {
  }
  
  unix {
