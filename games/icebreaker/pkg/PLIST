@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/20 02:09:42 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/25 08:52:06 pvalchev Exp $
 bin/icebreaker
+man/man1/icebreaker.1
 share/icebreaker/crash.wav
 share/icebreaker/icebreaker_48.bmp
 share/icebreaker/ouch.wav

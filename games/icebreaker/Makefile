@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/20 02:09:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 08:52:06 pvalchev Exp $
 
 COMMENT=	"jezzball-style, penguin puzzle game"
 
-DISTNAME=	icebreaker-1.09
+DISTNAME=	icebreaker-1.1
 CATEGORIES=	games
-NEED_VERSION=	1.425
+NEED_VERSION=	1.427
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mattdm.org/icebreaker/
@@ -30,5 +30,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icebreaker
 	${INSTALL_DATA} ${WRKSRC}/*.{wav,bmp} ${PREFIX}/share/icebreaker
 	${INSTALL_PROGRAM} ${WRKSRC}/icebreaker ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/icebreaker.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
