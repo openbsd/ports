@@ -1,4 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/16 10:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/23 21:59:58 turan Exp $
+
+BROKEN= compile errers
+#motif_i.c:53: Xm/Xm.h: No such file or directory
+#motif_i.c:54: Xm/Form.h: No such file or directory
+#motif_i.c:55: Xm/Text.h: No such file or directory
+#motif_i.c:56: Xm/PushB.h: No such file or directory
+#motif_i.c:57: Xm/Label.h: No such file or directory
+#motif_i.c:58: Xm/Scale.h: No such file or directory
+#motif_i.c:59: Xm/List.h: No such file or directory
+#motif_i.c:60: Xm/Frame.h: No such file or directory
+#motif_i.c:61: Xm/RowColumn.h: No such file or directory
+#motif_i.c:62: Xm/CascadeB.h: No such file or directory
+#motif_i.c:63: Xm/FileSB.h: No such file or directory
+#motif_i.c:64: Xm/FileSB.h: No such file or directory
+#motif_i.c:65: Xm/ToggleB.h: No such file or directory
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
