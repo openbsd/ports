@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/20 06:05:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/18 04:54:23 kevlo Exp $
 
 COMMENT=	"commandline interface to online dictionaries"
 
-DISTNAME=	edict-1.0
+DISTNAME=	edict-1.1
 CATEGORIES=	education
 
 HOMEPAGE=	http://edictionary.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,10 +22,13 @@ NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/edict
 
+DOCDIR=		${PREFIX}/share/doc/edict
+
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/edict
 	${INSTALL_SCRIPT} ${WRKSRC}/edict ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ethes ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/edict
+	cd ${PREFIX}/bin; ln -sf edict ethes 
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCDIR}
 
 .include <bsd.port.mk>
