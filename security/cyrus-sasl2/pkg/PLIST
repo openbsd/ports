@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:06:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/03 10:33:32 jakob Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -96,6 +96,7 @@ share/doc/sasl2/install.html
 share/doc/sasl2/macosx.html
 share/doc/sasl2/mechanisms.html
 share/doc/sasl2/options.html
+share/doc/sasl2/os390.html
 share/doc/sasl2/plugprog.html
 share/doc/sasl2/programming.html
 share/doc/sasl2/readme.html

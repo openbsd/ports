@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/10/18 06:45:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/03 10:33:31 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
-DISTNAME=	cyrus-sasl-2.1.19
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	cyrus-sasl-2.1.20
+PKGNAME=	${DISTNAME}
 CATEGORIES=     security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -58,7 +58,6 @@ CONFIGURE_ARGS+=        --with-ldap=${LOCALBASE}
 .endif
 
 post-build:
-	rm ${WRKBUILD}/saslauthd/saslauthd.8
 	(cd ${WRKBUILD}/saslauthd; \
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} testsaslauthd \
 	saslauthd.8)

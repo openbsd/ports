@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.7 2004/07/09 15:07:07 kevlo Exp $
---- saslauthd/configure.orig	Wed Mar 10 15:56:16 2004
-+++ saslauthd/configure	Fri Jul  9 16:30:17 2004
+$OpenBSD: patch-saslauthd_configure,v 1.8 2004/11/03 10:33:32 jakob Exp $
+--- saslauthd/configure.orig	Mon Oct 25 06:21:13 2004
++++ saslauthd/configure	Sun Oct 31 23:09:13 2004
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -26,7 +26,7 @@ $OpenBSD: patch-saslauthd_configure,v 1.7 2004/07/09 15:07:07 kevlo Exp $
        *)
          { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
-@@ -6004,7 +6007,7 @@ echo "$as_me: WARNING: The system type i
+@@ -6009,7 +6012,7 @@ echo "$as_me: error: CyberSafe was force
      cmu_saved_CPPFLAGS=$CPPFLAGS
  
      if test -d ${gssapi}; then
@@ -35,7 +35,7 @@ $OpenBSD: patch-saslauthd_configure,v 1.7 2004/07/09 15:07:07 kevlo Exp $
  # We want to keep -I in our CPPFLAGS, but only if we succeed
         cmu_saved_CPPFLAGS=$CPPFLAGS
         LDFLAGS="$LDFLAGS -L$gssapi/lib"
-@@ -6385,7 +6388,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
+@@ -6392,7 +6395,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -44,10 +44,16 @@ $OpenBSD: patch-saslauthd_configure,v 1.7 2004/07/09 15:07:07 kevlo Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -6734,8 +6737,8 @@ fi
-     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+@@ -6738,12 +6741,12 @@ fi
+   fi
+ 
+   if test "$gss_impl" = "mit"; then
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+-    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcrypto.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "heimdal"; then
+     CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
 -    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
 -    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
 +    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"

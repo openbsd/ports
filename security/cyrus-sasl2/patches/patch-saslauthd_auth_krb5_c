@@ -1,6 +1,6 @@
---- saslauthd/auth_krb5.c.orig	Wed May 14 18:32:23 2003
-+++ saslauthd/auth_krb5.c	Fri Jul  9 16:30:17 2004
-@@ -311,7 +311,7 @@ auth_krb5 (
+--- saslauthd/auth_krb5.c.orig	Sat May 22 06:38:57 2004
++++ saslauthd/auth_krb5.c	Sun Oct 31 22:44:54 2004
+@@ -329,7 +329,7 @@ auth_krb5 (
      }
      
      /* create a new CCACHE so we don't stomp on anything */
