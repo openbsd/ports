@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/28 00:10:56 avsm Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
-DISTNAME=	docbook-4.1.2
+DISTNAME=	docbook-4.2
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
@@ -17,9 +17,10 @@ MASTER_SITES3=	${ROOT_SITE}/sgml/4.0/ ${MIRROR_SITE}/sgml/4.0/
 MASTER_SITES4=	${ROOT_SITE}/sgml/4.1/ ${MIRROR_SITE}/sgml/4.1/
 MASTER_SITES5=	${ROOT_SITE}/xml/4.1/ ${MIRROR_SITE}/xml/4.1/
 MASTER_SITES6=	${ROOT_SITE}/xml/4.1.2/ ${MIRROR_SITE}/xml/4.1.2/
-MASTER_SITES7=	http://www.docbook.org/tdg/
+MASTER_SITES7=	${ROOT_SITE}/xml/4.2/ ${MIRROR_SITE}/xml/4.2/
+MASTER_SITES8=	http://www.docbook.org/tdg/
 
-DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4 docbkx41.zip:5 docbkx412.zip:6 examples.zip:7
+DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4 docbkx41.zip:5 docbkx412.zip:6 docbook-xml-4.2.zip:7 examples.zip:8
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -34,7 +35,7 @@ NO_REGRESS=	Yes
 SEPARATE_BUILD=	concurrent
 
 SGML_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1
-XML_VERSIONS=	4.1 4.1.2
+XML_VERSIONS=	4.1 4.1.2 4.2
 
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
@@ -45,6 +46,9 @@ RUN_DEPENDS=	::textproc/iso8879 \
 .for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;
 .endfor
+
+# new naming system for recent docbook versions
+EXTRACT_CASES+=	*docbook-xml-4.2.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/x4.2;;
 
 do-install:
 	${INSTALL_DATA_DIR} ${SGML_INSTDIR} ${XML_INSTDIR}
