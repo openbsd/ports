@@ -6,5 +6,6 @@ libraries, and can be used anywhere.
 
 Flavors:
 	big5 - Build with support for Chinese text input.
+	lite - Build without any image library dependencies.
 
 WWW: ${HOMEPAGE}
