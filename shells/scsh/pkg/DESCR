@@ -24,7 +24,7 @@ in scsh. It requires no additional setup (paths or such).
 The emacs interface is in the original distribution in emacs/. For
 documentation see doc/user-guide.txt.
 
-Differences between FreeBSD port and generic scsh release:
+Differences between OpenBSD port and generic scsh release:
 ----------------------------------------------------------
 
 1) When hitting C-d (end-of-file), scsh asks 100 times for
@@ -32,7 +32,7 @@ confirmation. I changed the default to do this just once. See constant
 *y-or-n-eof-count* in scsh/rw.scm to change it.
 
 2) The original scsh sends a mail to the scsh authors every time you
-make the package. The FreeBSD port doesn't. The authors of scsh would
+make the package. The OpenBSD port doesn't. The authors of scsh would
 appreciate it if you do a `(cd work/scsh-0.4.4 && make .notify)` after
 you build this package.
 
