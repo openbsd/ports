@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2001/07/03 02:24:13 form Exp $
+# $OpenBSD: Makefile,v 1.28 2001/08/13 03:44:39 form Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
-DISTNAME=	analog-5.02
+DISTNAME=	analog-5.03
 CATEGORIES=	www
-MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
+MASTER_SITES=	http://www.analog.cx/ \
+		http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
 		http://brendanr.simplenet.com/analog/ \
 		http://analog.gsp.com/ \
@@ -13,11 +14,9 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://blip.cetlink.net/analog/ \
 		http://analog.technomancer.com/ \
 		http://analog.wizard.net/ \
-		ftp://ftp.netcasting.net/pub/packages/analog/ \
-		http://www.analog.cx/
+		ftp://ftp.netcasting.net/pub/packages/analog/
 
-#HOMEPAGE=	http://www.analog.cx/
-HOMEPAGE=	http://www.statslab.cam.ac.uk/~sret1/analog/
+HOMEPAGE=	http://www.analog.cx/
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
