@@ -1,0 +1,32 @@
+$OpenBSD: patch-tools_jabberd_in,v 1.1.1.1 2004/05/29 13:12:30 jakob Exp $
+--- tools/jabberd.in.orig	Fri Sep  5 17:17:36 2003
++++ tools/jabberd.in	Fri Sep  5 17:19:16 2003
+@@ -64,23 +64,23 @@ $SIG{CHLD} = "IGNORE";
+ #-----------------------------------------------------------------------------
+ $jobs{jabberd}->{prefix}  = "JBRD";
+ 
+-$jobs{router}->{cmd} = "$Bin/router";
++$jobs{router}->{cmd} = "$Bin/../libexec/jabberd/router";
+ $jobs{router}->{config} = "$config_dir/router.xml";
+ $jobs{router}->{prefix} = "ROUT";
+ 
+-$jobs{resolver}->{cmd} = "$Bin/resolver";
++$jobs{resolver}->{cmd} = "$Bin/../libexec/jabberd/resolver";
+ $jobs{resolver}->{config} = "$config_dir/resolver.xml";
+ $jobs{resolver}->{prefix} = "RSLV";
+ 
+-$jobs{sm}->{cmd} = "$Bin/sm";
++$jobs{sm}->{cmd} = "$Bin/../libexec/jabberd/sm";
+ $jobs{sm}->{config} = "$config_dir/sm.xml";
+ $jobs{sm}->{prefix} = "SM";
+ 
+-$jobs{c2s}->{cmd} = "$Bin/c2s";
++$jobs{c2s}->{cmd} = "$Bin/../libexec/jabberd/c2s";
+ $jobs{c2s}->{config} = "$config_dir/c2s.xml";
+ $jobs{c2s}->{prefix} = "C2S";
+ 
+-$jobs{s2s}->{cmd} = "$Bin/s2s";
++$jobs{s2s}->{cmd} = "$Bin/../libexec/jabberd/s2s";
+ $jobs{s2s}->{config} = "$config_dir/s2s.xml";
+ $jobs{s2s}->{prefix} = "S2S";
+ 
