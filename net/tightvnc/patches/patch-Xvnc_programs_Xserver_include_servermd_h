@@ -1,12 +1,83 @@
-$OpenBSD: patch-Xvnc_programs_Xserver_include_servermd_h,v 1.1 2001/11/11 01:25:13 lebel Exp $
---- Xvnc/programs/Xserver/include/servermd.h.orig	Sun Jun 11 08:00:52 2000
-+++ Xvnc/programs/Xserver/include/servermd.h	Sat Nov 10 18:29:19 2001
-@@ -132,7 +132,7 @@ SOFTWARE.
+$OpenBSD: patch-Xvnc_programs_Xserver_include_servermd_h,v 1.2 2004/06/13 07:01:29 pvalchev Exp $
+--- Xvnc/programs/Xserver/include/servermd.h.orig	2004-06-07 08:46:28.000000000 -0600
++++ Xvnc/programs/Xserver/include/servermd.h	2004-06-13 00:55:18.000000000 -0600
+@@ -149,8 +149,29 @@ SOFTWARE.
  
- #endif /* vax */
+ #endif /* LynxOS PowerPC */
  
--#if (defined(Lynx) && defined(__powerpc__))
-+#if ((defined(__OpenBSD__) || defined(Lynx)) && defined(__powerpc__))
++#if defined(__sh__)
++
++#if defined(__BIG_ENDIAN__)
++# define IMAGE_BYTE_ORDER	MSBFirst
++# define BITMAP_BIT_ORDER	MSBFirst
++# define GLYPHPADBYTES		4
++# define GETLEFTBITS_ALIGNMENT	1
++#else
++# define IMAGE_BYTE_ORDER	LSBFirst
++# define BITMAP_BIT_ORDER	LSBFirst
++# define GLYPHPADBYTES		4
++# define GETLEFTBITS_ALIGNMENT	1
++#endif
++
++#define AVOID_MEMORY_READ
++#define FAST_CONSTANT_OFFSET_MODE
++#define LARGE_INSTRUCTION_CACHE
++#define PLENTIFUL_REGISTERS
++
++#endif /* SuperH */
++
++
+ #if (defined(sun) && !(defined(i386) && defined(SVR4))) || \
+-    (defined(AMOEBA) && (defined(sparc) || defined(mc68000))) || \
+     (defined(__uxp__) && (defined(sparc) || defined(mc68000))) || \
+     (defined(Lynx) && defined(__sparc__)) || \
+     ((defined(__NetBSD__) || defined(__OpenBSD__)) && \
+@@ -214,20 +235,6 @@ SOFTWARE.
  
- /* For now this is for Xvfb only */
- #define IMAGE_BYTE_ORDER        MSBFirst
+ #endif /* ibm */
+ 
+-#ifdef hpux
+-
+-#define IMAGE_BYTE_ORDER	MSBFirst        /* Values for the HP only */
+-#define BITMAP_BIT_ORDER	MSBFirst
+-#define	GLYPHPADBYTES		2		/* to match product server */
+-#define	GETLEFTBITS_ALIGNMENT	4		/* PA forces longs to 4 */
+-						/* byte boundries */
+-#define AVOID_MEMORY_READ
+-#define FAST_CONSTANT_OFFSET_MODE
+-#define LARGE_INSTRUCTION_CACHE
+-#define PLENTIFUL_REGISTERS
+-
+-#endif /* hpux */
+-
+ #if defined (M4310) || defined(M4315) || defined(M4317) || defined(M4319) || defined(M4330)
+ 
+ #define IMAGE_BYTE_ORDER	MSBFirst        /* Values for Pegasus only */
+@@ -306,6 +313,27 @@ SOFTWARE.
+ 
+ #endif /* alpha */
+ 
++#if defined(__AMD64__) || defined(AMD64) || defined(__amd64__)
++# define IMAGE_BYTE_ORDER	LSBFirst
++
++# if defined(XF86MONOVGA) || defined(XF86VGA16) || defined(XF86MONO)
++#  define BITMAP_BIT_ORDER      MSBFirst
++# else
++#  define BITMAP_BIT_ORDER      LSBFirst
++# endif
++
++# if defined(XF86MONOVGA) || defined(XF86VGA16)
++#  define BITMAP_SCANLINE_UNIT  8
++# endif
++
++# define GLYPHPADBYTES		4
++# define GETLEFTBITS_ALIGNMENT	1
++# define LARGE_INSTRUCTION_CACHE
++# define FAST_CONSTANT_OFFSET_MODE
++/* ???? */
++# define FAST_UNALIGNED_READS
++#endif /* AMD64 */
++
+ #ifdef stellar
+ 
+ #define IMAGE_BYTE_ORDER	MSBFirst       /* Values for the stellar only*/
