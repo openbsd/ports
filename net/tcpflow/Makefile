@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/09 17:37:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/23 03:34:56 kevlo Exp $
 
 DISTNAME=	tcpflow-0.12
 CATEGORIES=	net
-FAKE=No
 MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 
 MAINTAINER=	jethro@dqc.org
@@ -12,6 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
