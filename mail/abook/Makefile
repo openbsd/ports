@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/23 16:30:16 reinhard Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 17:54:47 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
-COMMENT=	'addressbook program with mutt support'
+COMMENT=	"addressbook program with mutt support"
 
-DISTNAME=	abook-0.4.12
+DISTNAME=	abook-0.4.13
 CATEGORIES=	mail
-NEED_VERSION=	1.363
+NEED_VERSION=	1.414
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=abook
 
@@ -20,10 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 
+WHITELIST=README abook2whitelist.sh mutt.whitelist whitelist.rc
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abook
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abook/whitelist
 	${INSTALL_DATA} ${WRKSRC}/contrib/mail2abook.py ${PREFIX}/share/examples/abook
 	${INSTALL_DATA} ${WRKSRC}/contrib/vcard2abook.pl ${PREFIX}/share/examples/abook
-	@strip ${PREFIX}/bin/abook
+	cd ${WRKSRC}/contrib/whitelist && ${INSTALL_DATA} ${WHITELIST} ${PREFIX}/share/examples/abook/whitelist
 
 .include <bsd.port.mk>
