@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/02/07 08:32:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.38 2001/02/09 13:08:14 wilfried Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -54,6 +54,9 @@
 #    SUBDIR += tksol
 #    SUBDIR += tvp
      SUBDIR += wmeyes
+     SUBDIR += wmminichess
+     SUBDIR += wmtictactoe
+     SUBDIR += wmtimebomb
      SUBDIR += xasteroids
      SUBDIR += xbat
      SUBDIR += xbattle
