@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Sep  9 22:25:28 1999
++++ configure.in	Tue Sep 21 13:19:54 1999
+@@ -432,7 +432,7 @@
+ 
+ gimpdatadir=$datadir/gimp
+ gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+-localedir='${prefix}/${DATADIRNAME}/locale'
++localedir='${prefix}/share/locale'
+ 
+ brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
+ gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
