@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/06/09 05:37:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2002/07/19 23:43:11 pvalchev Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -37,7 +37,7 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/texk ${WRKSRC}/config ${WRKSRC}/libs/ncurses ${WRKSRC}/texinfo ${WRKSRC}
 CONFIGURE_ARGS= --disable-multiplatform --without-texinfo \
 	--with-system-ncurses --with-system-zlib --with-system-pnglib \
-	--with-pnglib-libdir=${PNGDIR}/lib --with-pnglib-include=${PNGDIR}/include
+	--with-pnglib-libdir=${PNGDIR}/lib --with-pnglib-include=${PNGDIR}/include/libpng
 CONFIGURE_ENV=YACC=yacc
 
 .if ${FLAVOR:L:Mno_x11}

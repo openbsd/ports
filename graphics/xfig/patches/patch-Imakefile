@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue May 29 20:32:11 2001
-+++ Imakefile	Mon Oct  1 17:07:28 2001
+--- Imakefile.orig	Tue May 29 12:32:11 2001
++++ Imakefile	Fri Jul 19 16:46:08 2002
 @@ -47,8 +47,8 @@ XCOMM You must have version 5b or newer 
  
  #ifdef USEJPEG
@@ -60,3 +60,20 @@
  I18N_SRC = w_i18n.c
  I18N_OBJ = w_i18n.o
  #endif
+@@ -256,6 +258,7 @@ READJPEGO = f_readjpg.o
+ #ifdef USEPNG
+ DUSEPNG = -DUSE_PNG
+ PNGLIBS = -lpng -lz
++PNGINC = -I${LOCALBASE}/include/libpng
+ READPNGS = f_readpng.c
+ READPNGO = f_readpng.o
+ #endif /* USEPNG */
+@@ -325,7 +328,7 @@ MAINDEPFILES =  patchlevel.h version.h
+ SRCS = $(XFIGSRC)
+ OBJS = $(XFIGOBJ)
+ 
+-EXTRA_INCLUDES = $(JPEGINC) $(XPMINC) $(XAW3DINC)
++EXTRA_INCLUDES = $(JPEGINC) $(XPMINC) $(XAW3DINC) $(PNGINC)
+ DEPLIBS = XawClientDepLibs
+ 
+ LOCAL_LIBRARIES = 	$(JPEGLIB)
