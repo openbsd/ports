@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/04 15:30:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"help benchmark random read performance"
 
@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 HOMEPAGE=	http://randread.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=randread/}
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

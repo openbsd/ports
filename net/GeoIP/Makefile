@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/07 06:46:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"find the country where IP address/hostname originates from"
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.maxmind.com/geoip/
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

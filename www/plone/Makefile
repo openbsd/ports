@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/23 00:21:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 
 HOMEPAGE=	http://www.plone.org/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/02 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.grubbybaby.com/mod_log_sql/
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:48 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=	DBD-Sybase-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/25 16:46:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"pure Python Expect-like module"
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://pexpect.sourceforge.net/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Python 
 PERMIT_PACKAGE_CDROM=	Yes

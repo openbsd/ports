@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/16 23:26:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"Exif Jpeg camera setting parser and thumbnail remover"
 
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes

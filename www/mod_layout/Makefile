@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/25 19:57:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"Apache module for implementing a framework for doing design"
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://software.tangent.org/projects.pl?view=mod_layout
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

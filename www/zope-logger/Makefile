@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/07/17 15:11:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"logging product for Zope"
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.zope.org/Members/Zen/Logger/
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

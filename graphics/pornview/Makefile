@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/04 20:52:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"image viewer/manager"
 DISTNAME=	pornview-0.2.0pre1
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://pornview.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pornview/}
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

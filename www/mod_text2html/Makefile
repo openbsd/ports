@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/29 22:45:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
 
 COMMENT=	"Apache module designed to replace text/plain handler"
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://software.tangent.org/projects.pl?view=mod_text2html
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:48 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/
 MASTER_SITES=	${HOMEPAGE}download/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/22 02:16:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"Unix benchmark utility"
 
@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 HOMEPAGE=	http://www.phystech.com/download/ubench.html
 MASTER_SITES=	http://www.phystech.com/ftp/ 
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/16 18:54:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=        "Zope documentation"
 
@@ -8,7 +8,7 @@ CATEGORIES=	books
 
 HOMEPAGE=	http://zope.org/Documentation/Books/ZopeBook/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Open Publication License 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/10 16:10:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"connect four of stones in a straight line"
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://forcedattack.sourceforge.net/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -9,7 +9,7 @@ PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	audio
 HOMEPAGE=	http://www.andrewchatham.com/pyogg/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # LGPL 
 PERMIT_PACKAGE_CDROM=	Yes

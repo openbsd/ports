@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/16 13:11:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:48 xsa Exp $
 
 COMMENT=	"parser generator in Python"
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://christophe.delord.free.fr/en/tpg/
 
-MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # LGPL 
 PERMIT_PACKAGE_CDROM=	Yes
