@@ -1,35 +1,14 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.1 2001/10/10 15:15:00 wilfried Exp $
---- tools/Makefile.in.orig	Tue Dec 21 00:46:11 1999
-+++ tools/Makefile.in	Wed Oct 10 17:07:22 2001
-@@ -43,17 +43,16 @@ CC	= @CCOMPILER@
- INSTALL	= @INSTALL@
- #
- COPTS	= @GCOPTS@
--OPTIMIZER=-O
- IPATH	= -I. -I${SRCDIR} -I${LIBDIR}
--CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH}
-+CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} -L../libtiff
- #
--TIFFLIB	= ${DEPTH}/libtiff/libtiff.@DSOSUF@
-+TIFFLIB	= ${DEPTH}/libtiff/libtiff.@DSOSUF_VERSION@
- LIBJPEG	= @LIBJPEG@
- LIBGZ	= @LIBGZ@
- LIBTIFF	= @TIFFLIBREF@
- LIBPORT	= @LIBPORT@
- MACHLIBS= @MACHDEPLIBS@
--LIBS	= ${LIBTIFF} ${LIBJPEG} ${LIBGZ} ${LIBPORT} ${MACHLIBS}
-+LIBS	= @LIBPORT@ -ltiff ${LIBJPEG} ${LIBGZ} ${LIBPORT} @MACHDEPLIBS@
- #
- OBJS=	\
- 	fax2tiff.o \
-@@ -108,8 +107,8 @@ all:	${TARGETS}
+--- tools/Makefile.in.orig	Mon Dec  3 21:14:22 2001
++++ tools/Makefile.in	Mon Dec  3 21:20:08 2001
+@@ -111,9 +111,9 @@ all:	${TARGETS}
  	    true; \
  	fi
  install: all
--	${INSTALL} -idb nostrip tiff.sw.tools -m 755 -dir @DIR_BIN@
--	${INSTALL} -idb nostrip tiff.sw.tools -m 755 -F @DIR_BIN@ -O ${TARGETS}
-+	${INSTALL} -idb tiff.sw.tools -m 755 -dir @DIR_BIN@
-+	${INSTALL} -idb tiff.sw.tools -m 755 -F @DIR_BIN@ -O ${TARGETS}
- 	@if [ "@LIBIMAGE@" = yes ]; then \
- 	    ${INSTALL} -idb tiff.sw.tools -m 755 -F @DIR_BIN@ -O sgi2tiff; \
- 	else \
+-	${INSTALL} -idb nostrip -idb tiff.sw.tools -m 755 		\
++	${INSTALL} -idb tiff.sw.tools -m 755 				\
+ 		-dir ${DESTDIR}@DIR_BIN@
+-	${INSTALL} -idb nostrip -idb tiff.sw.tools -m 755 		\
++	${INSTALL} -idb tiff.sw.tools -m 755 				\
+ 		-F ${DESTDIR}@DIR_BIN@ -O ${TARGETS}
+ 	@if [ "@LIBIMAGE@" = yes ]; then 				\
+ 	    ${INSTALL} -idb tiff.sw.tools -m 755 			\

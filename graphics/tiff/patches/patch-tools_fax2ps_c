@@ -1,13 +1,38 @@
-$OpenBSD: patch-tools_fax2ps_c,v 1.1 2001/10/10 15:15:00 wilfried Exp $
---- tools/fax2ps.c.orig	Wed Mar 29 06:22:33 2000
-+++ tools/fax2ps.c	Wed Oct 10 17:07:22 2001
-@@ -382,8 +382,7 @@ main(int argc, char** argv)
- 	char temp[1024], buf[16*1024];
+$OpenBSD: patch-tools_fax2ps_c,v 1.2 2002/01/19 09:34:42 brad Exp $
+--- tools/fax2ps.c.orig	Wed Mar 28 20:45:43 2001
++++ tools/fax2ps.c	Fri Jan 18 23:48:37 2002
+@@ -23,6 +23,7 @@
+  * LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
+  * OF THIS SOFTWARE.
+  */
++#include <errno.h>
+ #include <math.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -370,15 +371,19 @@ main(int argc, char** argv)
+ 	} while (++optind < argc);
+     } else {
+ 	int n;
++	int sfd = -1;
+ 	FILE* fd;
+-	char temp[1024], buf[16*1024];
++	char temp[15] = "", buf[16*1024];
  
- 	strcpy(temp, "/tmp/fax2psXXXXXX");
+-	strcpy(temp, "/tmp/fax2psXXXXXX");
 -	(void) mktemp(temp);
 -	fd = fopen(temp, "w");
-+	fd = fdopen(mkstemp(temp), "w+");
- 	if (fd == NULL) {
- 	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
- 	    exit(-2);
+-	if (fd == NULL) {
+-	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
+-	    exit(-2);
++	strlcpy(temp, "/tmp/fax2ps.XXXXXX", sizeof temp);
++	if ((sfd = mkstemp(temp)) == -1 ||
++	    (fd = fdopen(sfd, "w+")) == NULL) {
++		if (sfd != -1) {
++			unlink(temp);
++			close(sfd);
++		}
++		fprintf(stderr, "%s: %s\n", temp, strerror(errno));
++		exit(-2);
+ 	}
+ 	while ((n = read(fileno(stdin), buf, sizeof (buf))) > 0)
+ 	    write(fileno(fd), buf, n);

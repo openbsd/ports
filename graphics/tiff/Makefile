@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2001/10/10 19:28:50 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/01/19 09:34:42 brad Exp $
 
-COMMENT=	"Tools and library routines for working with TIFF images"
+COMMENT=	"tools and library routines for working with TIFF images"
 
-DISTNAME=	tiff-v3.5.5
-PKGNAME=	tiff-3.5.5
+DISTNAME=	tiff-v3.5.7
+PKGNAME=	tiff-3.5.7
 CATEGORIES=	graphics
-NEED_VERSION=	1.460
-MASTER_SITES=	http://www.libtiff.org/
+NEED_VERSION=	1.500
+MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/
 
 HOMEPAGE=	http://www.libtiff.org/
 
@@ -20,15 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
-		--with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
-		--with-DIR_LIB='$${DESTDIR}${PREFIX}/lib' \
-		--with-DIR_INC='$${DESTDIR}${PREFIX}/include' \
-		--with-DIR_MAN='$${DESTDIR}${PREFIX}/man' \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --with-ZIP --with-JPEG \
 		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
-		--with-DIRS_LIBINC="${PREFIX}/include" \
-		--with-DIR_GZLIB="/usr/lib" \
-		--with-DIR_JPEGLIB="${PREFIX}/lib" \
+		--with-DIRS_LIBINC="${LOCALBASE}/include" \
+		--with-OPTIMIZER="" --with-DIR_GZLIB="/usr/lib" \
+		--with-DIR_JPEGLIB="${LOCALBASE}/lib" \
 		--with-LIBGL="no" --with-LIBIMAGE="no" \
 		--with-INSTALL="sh ${WRKSRC}/port/install.sh" \
 		--noninteractive

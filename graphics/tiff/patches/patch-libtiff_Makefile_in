@@ -1,39 +1,22 @@
-$OpenBSD: patch-libtiff_Makefile_in,v 1.1 2001/10/10 15:15:00 wilfried Exp $
---- libtiff/Makefile.in.orig	Sun Nov 28 21:15:36 1999
-+++ libtiff/Makefile.in	Wed Oct 10 17:07:22 2001
-@@ -62,7 +62,6 @@ IPATH	= -I. -I${SRCDIR} @COPT_LIBINC@
- #
- CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
- COPTS	= @GCOPTS@
--OPTIMIZER=-O
- CFLAGS	= @ENVOPTS@ @LIBCOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} ${CONF_LIBRARY}
- #
- SRCS	= \
-@@ -216,6 +215,9 @@ LINUXdso:  ${OBJS}
- OSFdso: ${OBJS}
- 	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
+--- libtiff/Makefile.in.orig	Sun Sep  9 11:56:04 2001
++++ libtiff/Makefile.in	Tue Dec  4 00:01:22 2001
+@@ -364,15 +364,15 @@ installPrivateHdrs: ${INCS_PRIVATE}
  
-+OPENBSDdso: ${OBJS}
-+	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS} @LIBJPEG@ @LIBGZ@
-+	touch $@
- 
- ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
- ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
-@@ -323,15 +325,9 @@ installHdrs: ${INCS}
- 		-src $$i -O $$f;					\
- 	done
  installDSO: @DSO@dso
--	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
--	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
-+	${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F @DIR_LIB@	\
- 		-O libtiff.@DSOSUF_VERSION@;				\
--	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
--		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
--	else								\
--	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+ 	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+-	    ${INSTALL} -idb tiff.sw.tools -m 555 -F ${DESTDIR}@DIR_LIB@	\
+-		-O libtiff.@DSOSUF_VERSION@;				\
++	    ${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F		\
++		${DESTDIR}@DIR_LIB@ -O libtiff.@DSOSUF_VERSION@;	\
+ 	    ${INSTALL} -idb tiff.sw.tools -F ${DESTDIR}@DIR_LIB@	\
+ 		-lns libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
+ 	    ${INSTALL} -idb tiff.sw.tools -F ${DESTDIR}@DIR_LIB@	\
+ 		-lns libtiff.@DSOSUF@ -O libtiff.so;			\
+ 	else								\
+-	    ${INSTALL} -idb tiff.sw.tools -m 555 -F ${DESTDIR}@DIR_LIB@	\
 -		-O libtiff.@DSOSUF@;					\
--	fi
-+
++	    ${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F		\
++		${DESTDIR}@DIR_LIB@ -O libtiff.@DSOSUF@;		\
+ 	fi
+ 
  install: all installHdrs
- 	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_LIB@
- 	${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_LIB@ -O libtiff.a

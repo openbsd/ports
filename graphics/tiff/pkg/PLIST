@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/14 18:24:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/01/19 09:34:42 brad Exp $
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
@@ -16,10 +16,12 @@ bin/tiffdither
 bin/tiffdump
 bin/tiffinfo
 bin/tiffmedian
+bin/tiffset
 bin/tiffsplit
 include/tiff.h
 include/tiffconf.h
 include/tiffio.h
+include/tiffvers.h
 lib/libtiff.a
 %%SHARED%%
 man/man1/fax2ps.1
@@ -33,6 +35,7 @@ man/man1/sgi2tiff.1
 man/man1/thumbnail.1
 man/man1/tiff2bw.1
 man/man1/tiff2ps.1
+man/man1/tiff2rgba.1
 man/man1/tiffcmp.1
 man/man1/tiffcp.1
 man/man1/tiffdither.1
@@ -43,6 +46,7 @@ man/man1/tiffmedian.1
 man/man1/tiffsplit.1
 man/man1/tiffsv.1
 man/man3/TIFFCheckTile.3t
+man/man3/TIFFClientOpen.3t
 man/man3/TIFFClose.3t
 man/man3/TIFFComputeStrip.3t
 man/man3/TIFFComputeTile.3t
@@ -88,6 +92,7 @@ man/man3/TIFFReadScanline.3t
 man/man3/TIFFReadTile.3t
 man/man3/TIFFRegisterCODEC.3t
 man/man3/TIFFReverseBits.3t
+man/man3/TIFFRewriteDirectory.3t
 man/man3/TIFFScanlineSize.3t
 man/man3/TIFFSetDirectory.3t
 man/man3/TIFFSetErrorHandler.3t
@@ -114,6 +119,7 @@ man/man3/TIFFWriteEncodedTile.3t
 man/man3/TIFFWriteRawStrip.3t
 man/man3/TIFFWriteRawTile.3t
 man/man3/TIFFWriteScanline.3t
+man/man3/TIFFWriteTile.3t
 man/man3/TIFFbuffer.3t
 man/man3/TIFFcodec.3t
 man/man3/TIFFfree.3t
@@ -172,5 +178,6 @@ share/doc/tiff/v3.4beta036.html
 share/doc/tiff/v3.5.1.html
 share/doc/tiff/v3.5.2.html
 share/doc/tiff/v3.5.3.html
+share/doc/tiff/v3.5.7.html
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff
