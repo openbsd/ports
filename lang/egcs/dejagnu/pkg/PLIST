@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/10/10 15:09:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/01 00:51:50 pvalchev Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/dejagnu.info
 bin/runtest
 include/dejagnu.h
@@ -99,7 +99,7 @@ share/dejagnu/config/dve.exp
 share/dejagnu/config/gdb-comm.exp
 share/dejagnu/config/gdb_stub.exp
 share/dejagnu/config/h8300.exp
-share/dejagnu/config/${MACHINE_ARCH}-bozo.exp
+share/dejagnu/config/i386-bozo.exp
 share/dejagnu/config/i960.exp
 share/dejagnu/config/m32r-stub.exp
 share/dejagnu/config/m32r.exp
