@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/19 21:51:48 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/04/03 09:14:59 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -12,7 +12,7 @@ MAINTAINER=	niklas@openbsd.org
 
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
-LIB_DEPENDS=	tcl80\\.1\\.5:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
 
 WRKSRC=		${WRKDIR}/tk8.0.5/unix
 GNU_CONFIGURE=	yes
