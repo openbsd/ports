@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2004/08/07 21:55:26 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2004/09/23 08:06:22 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
 COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
 
-VERSION=	1.5.8
+VERSION=	1.5.10
 DISTNAME=	libtool-${VERSION}
 PKGNAME-ltdl=	libltdl-${VERSION}
 CATEGORIES=	devel
@@ -37,15 +37,11 @@ RUN_DEPENDS+=	::devel/libtool,-ltdl
 . endif
 .endif
 
-post-patch:
-.for f in cdemo demo depdemo f77demo mdemo mdemo2 pdemo tagdemo
-	@cp -f ${WRKSRC}/acinclude.m4 ${WRKSRC}/${f} && \
-		cd ${WRKSRC}/${f} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-.endfor
-	@cd ${WRKSRC}/libltdl && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-
 pre-configure:
 	@rm -f ${WRKSRC}/doc/libtool.info*
+
+do-regress:
+	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/autoconf-2.59 autoconf
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
