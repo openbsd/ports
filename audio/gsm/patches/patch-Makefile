@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Jul  2 10:36:06 1996
-+++ Makefile	Sat Jun 19 01:01:18 1999
++++ Makefile	Sat Sep 16 12:05:33 2000
 @@ -7,11 +7,13 @@
  SASR	= -DSASR
  ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
@@ -16,39 +16,15 @@
  ######### Define together with USE_FLOAT_MUL to enable the GSM library's
  ######### approximation option for incorrect, but good-enough results.
  
-@@ -43,8 +45,8 @@
- # CC		= /usr/lang/acc
+@@ -44,7 +46,7 @@
  # CCFLAGS 	= -c -O
  
--CC		= gcc -ansi -pedantic
+ CC		= gcc -ansi -pedantic
 -CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1
-+#CC              = gcc -ansi -pedantic
-+CCFLAGS         = -c -DNeedFunctionPrototypes=1
++CCFLAGS		= -c -DNeedFunctionPrototypes=1
  
  LD 		= $(CC)
  
-@@ -59,19 +61,19 @@
- ######### Includes needed by $(CC)
- 
- # LDINC	= -L/usr/gnu/lib/gcc-2.1/gcc-lib/sparc-sun-sunos4.1.2/2.1
-+LDINC = -L$(LIB)
- ######### Library paths needed by $(LD)
- 
- # LDLIB	= -lgcc
- ######### Additional libraries needed by $(LD)
- 
--
- # Where do you want to install libraries, binaries, a header file
- # and the manual pages?
- #
- # Leave INSTALL_ROOT empty (or just don't execute "make install") to
- # not install gsm and toast outside of this directory.
- 
--INSTALL_ROOT	=
-+INSTALL_ROOT    =       $(PREFIX)
- 
- # Where do you want to install the gsm library, header file, and manpages?
- #
 @@ -80,7 +82,7 @@
  
  GSM_INSTALL_ROOT = $(INSTALL_ROOT)
@@ -66,35 +42,28 @@
  
  #
  #    You shouldn't have to configure below this line if you're porting.
-@@ -129,18 +132,25 @@
- # DEBUG	= -DNDEBUG
- ######### Remove -DNDEBUG to enable assertions.
- 
--CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST) $(LTP_CUT) \
-+CFLAGS += $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST) $(LTP_CUT) \
- 	$(WAV49) $(CCINC) -I$(INC)
- ######### It's $(CC) $(CFLAGS)
- 
+@@ -136,11 +139,20 @@
  LFLAGS	= $(LDFLAGS) $(LDINC)
  ######### It's $(LD) $(LFLAGS)
  
-+.SUFFIXES: .c .so .o
++.SUFFIXES: .o .so
  
  # Targets
  
  LIBGSM	= $(LIB)/libgsm.a
--
-+.if defined(NO_SHARED_LIBS)
+ 
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 +LIBGSMSO =
 +INSTALLED_LIBGSMSO =
 +.else
 +LIBGSMSO = $(LIB)/libgsm.so.1.0
 +INSTALLED_LIBGSMSO = $(GSM_INSTALL_LIB)/libgsm.so.1.0
 +.endif
++
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -258,6 +268,7 @@
+@@ -258,6 +270,7 @@
  
  GSM_INSTALL_TARGETS =	\
  		$(GSM_INSTALL_LIB)/libgsm.a		\
@@ -102,12 +71,12 @@
  		$(GSM_INSTALL_INC)/gsm.h		\
  		$(GSM_INSTALL_MAN)/gsm.3		\
  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
-@@ -277,9 +288,12 @@
+@@ -277,9 +290,12 @@
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
 +.c.so:
-+		${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++		$(CC) $(CFLAGS) -fpic -DPIC -c $? -o $@
 +
  # Target rules
  
@@ -116,12 +85,12 @@
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,8 +313,11 @@
+@@ -299,8 +315,11 @@
  
  # The basic API: libgsm
  
-+$(LIBGSMSO):	$(LIB) $(GSM_OBJECTS:S/o$/so/g)
-+		ld -Bshareable -Bforcearchive -o $@ $(GSM_OBJECTS:S/o$/so/g)
++$(LIBGSMSO):	$(LIB) $(GSM_OBJECTS:.o=.so)
++		$(CC) -shared -o $@ $(GSM_OBJECTS:.o=.so)
 +
  $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
 -		-rm $(RMFLAGS) $(LIBGSM)
@@ -129,12 +98,12 @@
  		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
  		$(RANLIB) $(LIBGSM)
  
-@@ -308,14 +325,14 @@
+@@ -308,14 +327,14 @@
  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
  
  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
 -		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) $(LIBGSM) $(LDLIB)
-+		$(LD) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) -lgsm $(LDLIB)
++		$(CC) $(LFLAGS) -o $(TOAST) $(TOAST_OBJECTS) -lgsm $(LDLIB)
  
  $(UNTOAST):	$(BIN) $(TOAST)
 -		-rm $(RMFLAGS) $(UNTOAST)
@@ -147,7 +116,7 @@
  		$(LN) $(TOAST) $(TCAT)
  
  
-@@ -342,59 +359,65 @@
+@@ -342,61 +361,49 @@
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -163,69 +132,71 @@
  
  $(TOAST_INSTALL_BIN)/toast:	$(TOAST)
 -		-rm $@
-+		$(RM) $@
- 		cp $(TOAST) $@
- 		chmod 755 $@
+-		cp $(TOAST) $@
+-		chmod 755 $@
++		${BSD_INSTALL_PROGRAM} $(TOAST) $@
  
  $(TOAST_INSTALL_BIN)/untoast:	$(TOAST_INSTALL_BIN)/toast
 -		-rm $@
-+		$(RM) $@
- 		ln $? $@
+-		ln $? $@
++		cd $(TOAST_INSTALL_BIN) && ln -sf toast untoast
  
  $(TOAST_INSTALL_BIN)/tcat:	$(TOAST_INSTALL_BIN)/toast
 -		-rm $@
-+		$(RM) $@
- 		ln $? $@
+-		ln $? $@
++		cd $(TOAST_INSTALL_BIN) && ln -sf toast tcat
  
  $(TOAST_INSTALL_MAN)/toast.1:	$(MAN)/toast.1
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
++		cd $(TOAST_INSTALL_MAN) && ln -sf toast.1 untoast.1 && \
++			ln -sf toast.1 tcat.1
  
  $(GSM_INSTALL_MAN)/gsm.3:	$(MAN)/gsm.3
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
  
  $(GSM_INSTALL_MAN)/gsm_option.3:	$(MAN)/gsm_option.3
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
  
  $(GSM_INSTALL_MAN)/gsm_explode.3:	$(MAN)/gsm_explode.3
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
  
  $(GSM_INSTALL_MAN)/gsm_print.3:	$(MAN)/gsm_print.3
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
  
  $(GSM_INSTALL_INC)/gsm.h:	$(INC)/gsm.h
 -		-rm $@
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_DATA} $? $@
  
  $(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
 -		-rm $@
-+		$(RM) $@
-+		cp $? $@
-+		chmod 444 $@
+-		cp $? $@
+-		chmod 444 $@
++		${BSD_INSTALL_DATA} $? $@
 +		$(RANLIB) $@
 +
 +$(INSTALLED_LIBGSMSO):		$(LIBGSMSO)
-+		$(RM) $@
- 		cp $? $@
- 		chmod 444 $@
++		${BSD_INSTALL_MAN} $? $@
  
-@@ -416,16 +439,16 @@
+ 
+ # Distribution
+@@ -416,16 +423,16 @@
  		@-echo uninstall: Done.
  
  semi-clean:
@@ -245,3 +216,65 @@
  			$(TOAST) $(TCAT) $(UNTOAST)	\
  			$(ROOT)/gsm-1.0.tar.Z
  
+@@ -434,29 +441,29 @@
+ # but aren't generally needed to port this.
+ 
+ $(TLS)/sweet:	$(TLS)/sweet.o $(TLS)/taste.o
+-		$(LD) $(LFLAGS) -o $(TLS)/sweet \
++		$(CC) $(LFLAGS) -o $(TLS)/sweet \
+ 			$(TLS)/sweet.o $(TLS)/taste.o $(LDLIB)
+ 
+ $(TLS)/bitter:	$(TLS)/bitter.o $(TLS)/taste.o
+-		$(LD) $(LFLAGS) -o $(TLS)/bitter \
++		$(CC) $(LFLAGS) -o $(TLS)/bitter \
+ 			$(TLS)/bitter.o $(TLS)/taste.o $(LDLIB)
+ 
+ # A version of the same family that Jeff Chilton used to implement
+ # the WAV #49 GSM format.
+ 
+ $(TLS)/ginger:	$(TLS)/ginger.o $(TLS)/taste.o
+-		$(LD) $(LFLAGS) -o $(TLS)/ginger \
++		$(CC) $(LFLAGS) -o $(TLS)/ginger \
+ 			$(TLS)/ginger.o $(TLS)/taste.o $(LDLIB)
+ 
+ $(TLS)/sour:	$(TLS)/sour.o $(TLS)/taste.o
+-		$(LD) $(LFLAGS) -o $(TLS)/sour \
++		$(CC) $(LFLAGS) -o $(TLS)/sour \
+ 			$(TLS)/sour.o $(TLS)/taste.o $(LDLIB)
+ 
+ # Run $(ADDTST)/add < $(ADDTST)/add_test.dta to make sure the
+ # basic arithmetic functions work as intended.
+ 
+ $(ADDTST)/add:	$(ADDTST)/add_test.o
+-		$(LD) $(LFLAGS) -o $(ADDTST)/add $(ADDTST)/add_test.o $(LDLIB)
++		$(CC) $(LFLAGS) -o $(ADDTST)/add $(ADDTST)/add_test.o $(LDLIB)
+ 
+ 
+ # Various conversion programs between linear, text, .gsm and the code
+@@ -474,21 +481,21 @@
+ 			( cd $(TST); ./run ) 
+ 
+ $(TST)/lin2txt:		$(TST)/lin2txt.o $(LIBGSM)
+-			$(LD) $(LFLAGS) -o $(TST)/lin2txt \
++			$(CC) $(LFLAGS) -o $(TST)/lin2txt \
+ 				$(TST)/lin2txt.o $(LIBGSM) $(LDLIB)
+ 
+ $(TST)/lin2cod:		$(TST)/lin2cod.o $(LIBGSM)
+-			$(LD) $(LFLAGS) -o $(TST)/lin2cod \
++			$(CC) $(LFLAGS) -o $(TST)/lin2cod \
+ 				$(TST)/lin2cod.o $(LIBGSM) $(LDLIB)
+ 
+ $(TST)/gsm2cod:		$(TST)/gsm2cod.o $(LIBGSM)
+-			$(LD) $(LFLAGS) -o $(TST)/gsm2cod \
++			$(CC) $(LFLAGS) -o $(TST)/gsm2cod \
+ 				$(TST)/gsm2cod.o $(LIBGSM) $(LDLIB)
+ 
+ $(TST)/cod2txt:		$(TST)/cod2txt.o $(LIBGSM)
+-			$(LD) $(LFLAGS) -o $(TST)/cod2txt \
++			$(CC) $(LFLAGS) -o $(TST)/cod2txt \
+ 				$(TST)/cod2txt.o $(LIBGSM) $(LDLIB)
+ 
+ $(TST)/cod2lin:		$(TST)/cod2lin.o $(LIBGSM)
+-			$(LD) $(LFLAGS) -o $(TST)/cod2lin \
++			$(CC) $(LFLAGS) -o $(TST)/cod2lin \
+ 				$(TST)/cod2lin.o $(LIBGSM) $(LDLIB)
