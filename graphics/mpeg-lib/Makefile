@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 1999/05/08 17:53:13 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/10/27 03:23:52 brad Exp $
 
 DISTNAME=	mpeg_lib-1.2.1
 CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
 
 NEED_VERSION=	1.64
 
-MAINTAINER=	marc@OpenBSD.ORG
-
-MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
+MAINTAINER=	brad@openbsd.org
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --prefix=${PREFIX}
 
-WRKSRC=		${WRKDIR}/mpeg_lib
+WRKSRC=	${WRKDIR}/mpeg_lib
 
 # post-patch must be defined before bsd.port.mk is included so it will
 # be called.  However, we need to have the body of the target after
@@ -24,7 +24,7 @@ pre-install:
 	@${MKDIR} -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
