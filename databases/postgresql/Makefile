@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/09/07 22:48:47 peter Exp $
+# $OpenBSD: Makefile,v 1.54 2001/09/27 05:45:34 pvalchev Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -57,6 +57,8 @@ CONFIGURE_ARGS=	--enable-syslog \
 		--with-CXX \
 		--datadir="${PREFIX}/share/postgresql" \
 		--docdir="${PREFIX}/share/doc/postgresql"
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS+=	tk83::x11/tk/8.3
