@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/01 13:19:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/02 03:21:33 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"multi-script text-based web browser/pager"
+COMMENT-image=		"multi-script web browser with inline image support"
 COMMENT-japanese=	"Japanese multi-script text-based web browser/pager"
+COMMENT-japanese-image=	"Japanese multi-script web browser with image support"
 
-PKGNAME=	w3m-m17n-20020131
-DISTNAME=	w3m-0.2.4-m17n-20020131
+VERSION=	0.2.5-20020202
+
+PKGNAME=	w3m-m17n-${VERSION:C/.*-//}
+DISTNAME=	w3m-${VERSION:C/-.*//}-m17n-${VERSION:C/.*-//}
 CATEGORIES=	www
 NEED_VERSION=	1.498
 HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/index.html#m17n
@@ -20,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
-FLAVORS=	japanese
+FLAVORS=	image japanese
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
@@ -39,20 +43,29 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func README.m17n STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
+.if ${FLAVOR:L:Mimage}
+LIB_DEPENDS=	Imlib.19::graphics/imlib
+CONFIGURE_ENV+=	use_image=y
+DOCS+=		README.img
+.endif
+
 .if ${FLAVOR:L:Mjapanese}
 
-FULLPKGNAME=		ja-${PKGNAME}
-CATEGORIES+=		japanese
-CONFIGURE_ARGS+=	--lang=ja
-CONFIGURE_ARGS+=	--code=n
-DOCS+=			README.SSL README.cookie README.keymap \
-			README.mailcap README.menu
-DOCSRC=			${WRKSRC}/doc-jp
+.  if ${FLAVOR:L:Mimage}
+FULLPKGNAME=	ja-${PKGNAME}-image
+.  else
+FULLPKGNAME=	ja-${PKGNAME}
+.  endif
+CATEGORIES+=	japanese
+CONFIGURE_ARGS+= --lang=ja --code=n
+DOCS+=		README.SSL README.cookie README.keymap \
+		README.mailcap README.menu
+DOCSRC=		${WRKSRC}/doc-jp
 
 .else
 
-CONFIGURE_ARGS+=	--lang=en
-DOCSRC=			${WRKSRC}/doc
+CONFIGURE_ARGS+= --lang=en
+DOCSRC=		${WRKSRC}/doc
 
 .endif
 

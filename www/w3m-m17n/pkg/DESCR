@@ -10,6 +10,8 @@ The multilingualization (m17n) extension allows to display pages
 in all kinds of scripts and encodings in a UTF-8 xterm.
 
 Available flavors:
+  image         - Supports displaying inline images when run from an X11
+                  terminal emulator.
   japanese      - Provide Japanese menus and documentation.
 
 WWW: ${HOMEPAGE}
