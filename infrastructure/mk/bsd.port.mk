@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.277 2000/05/16 17:06:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.278 2000/05/16 18:14:29 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -832,7 +832,7 @@ STRIP?=		/usr/bin/strip
 YACC?=yacc
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
-SETENV?=	/usr/bin/env
+SETENV?=	/usr/bin/env -i
 SH?=		/bin/sh
 
 # Used to print all the '===>' style prompts - override this to turn them off.
