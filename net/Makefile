@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2003/06/30 17:20:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.286 2003/07/16 16:56:47 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -50,7 +50,6 @@
      SUBDIR += ethereal,no_x11
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
-     SUBDIR += everybuddy
      SUBDIR += firewalk
      SUBDIR += flow-tools
      SUBDIR += fping
