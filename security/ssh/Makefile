@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 1999/12/09 17:55:55 brad Exp $
+# $OpenBSD: Makefile,v 1.45 1999/12/12 22:09:25 dugsong Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -6,9 +6,6 @@ MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/
-MASTER_SITES0=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
-		ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
-		ftp://ftp.it.net.au/mirrors/crypto/misc/
 
 PATCH_SITES=	http://www.ssh.org/patches/ \
 		ftp://ftp2.inch.com/pub/FreeBSD/
@@ -23,8 +20,9 @@ RESTRICTED=	"Crypto; export-controlled"
 MAINTAINER=	todd@openbsd.org
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz:0
-CONFIGURE_ARGS+= --with-rsaref
+BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
+CONFIGURE_ARGS+= --with-rsaref=${PREFIX}/lib
+CFLAGS+=	 -I${PREFIX}/include
 .endif
 
 GNU_CONFIGURE=	yes
@@ -71,18 +69,8 @@ ETCDIR?=	/etc
 RSHPROG?=	/usr/bin/rsh
 
 pre-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@cp ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
-	@cp ${FILESDIR}/patch-rsaref2-2 ${PATCHDIR}
-.endif
 	@mv -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
-
-post-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@rm -f ${PATCHDIR}/patch-rsaref2
-	@rm -f ${PATCHDIR}/patch-rsaref2-2
-.endif
 
 fetch-depends:
 .if !defined(NO_WARNINGS)
@@ -99,11 +87,6 @@ fetch-depends:
 	@echo ""
 	@false
 .endif
-.endif
-
-post-extract:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@mv ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
 .endif
 
 # Put the config files someplace where they can be found to
