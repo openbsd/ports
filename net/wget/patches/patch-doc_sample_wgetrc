@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_sample_wgetrc,v 1.1 2003/02/06 22:03:21 brad Exp $
+--- doc/sample.wgetrc.orig	Thu Feb  6 16:57:29 2003
++++ doc/sample.wgetrc	Thu Feb  6 16:58:20 2003
+@@ -39,7 +39,7 @@
+ # connections from the outside.  On these sites you have to use the
+ # `passive' feature of FTP.  If you are behind such a firewall, you
+ # can turn this on to make Wget use passive FTP by default.
+-#passive_ftp = off
++passive_ftp = on
+ 
+ # The "wait" command below makes Wget wait between every connection.
+ # If, instead, you want Wget to wait only between retries of failed
