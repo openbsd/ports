@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/21 05:41:14 pvalchev Exp $
-lib/X11/app-defaults/KTerm
-man/cat1/kterm.0
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:56:29 espie Exp $
 @mode ug+s
 @owner root
 @group utmp
 bin/kterm
 @exec echo "You may wish to install some extra japanese font packages as well"
+@mode
+@owner
+@group
+lib/X11/app-defaults/KTerm
+@man man/cat1/kterm.0

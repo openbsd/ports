@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-wnn,v 1.1.1.1 2000/04/26 00:43:12 espie Exp $
+@comment $OpenBSD: PLIST-wnn,v 1.2 2004/09/15 00:56:29 espie Exp $
 bin/kinput2
 lib/X11/app-defaults/Kinput2
+lib/X11/ccdef/
 lib/X11/ccdef/ccdef.kinput2
 lib/X11/ccdef/ccdef.kinput2.egg
 lib/X11/ccdef/rule.eggfunc
@@ -14,7 +15,8 @@ lib/X11/ccdef/rule.kigou.egg
 lib/X11/ccdef/rule.roma
 lib/X11/ccdef/rule.wnnroma
 lib/X11/ccdef/rule.zascii
-man/cat1/kinput2.0
+@man man/cat1/kinput2.0
+share/doc/kinput2/
 share/doc/kinput2/NEWS
 share/doc/kinput2/README
 share/doc/kinput2/ccdef
@@ -27,5 +29,3 @@ share/doc/kinput2/resources
 share/doc/kinput2/sj3def
 share/doc/kinput2/sj3guide.ps
 share/doc/kinput2/sj3guide.tex
-@dirrm share/doc/kinput2
-@dirrm lib/X11/ccdef

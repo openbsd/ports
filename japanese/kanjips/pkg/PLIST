@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/04/23 15:43:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:56:28 espie Exp $
 bin/jenscript
 bin/kanjips
 bin/mp-j
-man/man1/jenscript.1
-man/man1/kanjips.1
+@man man/man1/jenscript.1
+@man man/man1/kanjips.1
+share/doc/kanjips/
 share/doc/kanjips/jenscript.readme
 share/doc/kanjips/kanjips.readme
 share/doc/kanjips/mp-j.readme
+share/kanjips_font/
 share/kanjips_font/jis24
 share/kanjips_font/jis32
 share/kanjips_font/jis48
-@dirrm share/kanjips_font
-@dirrm share/doc/kanjips

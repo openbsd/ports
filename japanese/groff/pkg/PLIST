@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/04/12 20:34:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:56:28 espie Exp $
 bin/jaddftinfo
 bin/jafmtodit
 bin/jeqn
@@ -22,37 +22,41 @@ bin/jsoelim
 bin/jtbl
 bin/jtfmtodit
 bin/jtroff
-man/man1/jaddftinfo.1
-man/man1/jafmtodit.1
-man/man1/jeqn.1
-man/man1/jgrodvi.1
-man/man1/jgroff.1
-man/man1/jgrog.1
-man/man1/jgrolj4.1
-man/man1/jgrops.1
-man/man1/jgrotty.1
-man/man1/jhpftodit.1
-man/man1/jindxbib.1
-man/man1/jlkbib.1
-man/man1/jlookbib.1
-man/man1/jnroff.1
-man/man1/jpfbtops.1
-man/man1/jpic.1
-man/man1/jpsbb.1
-man/man1/jrefer.1
-man/man1/jsoelim.1
-man/man1/jtbl.1
-man/man1/jtfmtodit.1
-man/man1/jtroff.1
-man/man5/jgroff_font.5
-man/man5/jgroff_out.5
-man/man7/jgroff_char.7
-man/man7/jgroff_mm.7
-man/man7/jgroff_mmse.7
-man/man7/jgroff_ms.7
-man/man7/jme.7
-man/man7/jmsafer.7
+@man man/man1/jaddftinfo.1
+@man man/man1/jafmtodit.1
+@man man/man1/jeqn.1
+@man man/man1/jgrodvi.1
+@man man/man1/jgroff.1
+@man man/man1/jgrog.1
+@man man/man1/jgrolj4.1
+@man man/man1/jgrops.1
+@man man/man1/jgrotty.1
+@man man/man1/jhpftodit.1
+@man man/man1/jindxbib.1
+@man man/man1/jlkbib.1
+@man man/man1/jlookbib.1
+@man man/man1/jnroff.1
+@man man/man1/jpfbtops.1
+@man man/man1/jpic.1
+@man man/man1/jpsbb.1
+@man man/man1/jrefer.1
+@man man/man1/jsoelim.1
+@man man/man1/jtbl.1
+@man man/man1/jtfmtodit.1
+@man man/man1/jtroff.1
+@man man/man5/jgroff_font.5
+@man man/man5/jgroff_out.5
+@man man/man7/jgroff_char.7
+@man man/man7/jgroff_mm.7
+@man man/man7/jgroff_mmse.7
+@man man/man7/jgroff_ms.7
+@man man/man7/jme.7
+@man man/man7/jmsafer.7
+share/jgroff/
 share/jgroff/eign
+share/jgroff/font/
+share/jgroff/font/devX100/
+share/jgroff/font/devX100-12/
 share/jgroff/font/devX100-12/CB
 share/jgroff/font/devX100-12/CBI
 share/jgroff/font/devX100-12/CI
@@ -93,6 +97,8 @@ share/jgroff/font/devX100/TB
 share/jgroff/font/devX100/TBI
 share/jgroff/font/devX100/TI
 share/jgroff/font/devX100/TR
+share/jgroff/font/devX75/
+share/jgroff/font/devX75-12/
 share/jgroff/font/devX75-12/CB
 share/jgroff/font/devX75-12/CBI
 share/jgroff/font/devX75-12/CI
@@ -133,11 +139,13 @@ share/jgroff/font/devX75/TB
 share/jgroff/font/devX75/TBI
 share/jgroff/font/devX75/TI
 share/jgroff/font/devX75/TR
+share/jgroff/font/devascii/
 share/jgroff/font/devascii/B
 share/jgroff/font/devascii/BI
 share/jgroff/font/devascii/DESC
 share/jgroff/font/devascii/I
 share/jgroff/font/devascii/R
+share/jgroff/font/devdvi/
 share/jgroff/font/devdvi/B
 share/jgroff/font/devdvi/BI
 share/jgroff/font/devdvi/CW
@@ -154,6 +162,7 @@ share/jgroff/font/devdvi/R
 share/jgroff/font/devdvi/S
 share/jgroff/font/devdvi/SA
 share/jgroff/font/devdvi/SB
+share/jgroff/font/devdvi/generate/
 share/jgroff/font/devdvi/generate/CompileFonts
 share/jgroff/font/devdvi/generate/Makefile
 share/jgroff/font/devdvi/generate/msam.map
@@ -165,11 +174,13 @@ share/jgroff/font/devdvi/generate/texmi.map
 share/jgroff/font/devdvi/generate/texr.map
 share/jgroff/font/devdvi/generate/texsy.map
 share/jgroff/font/devdvi/generate/textt.map
+share/jgroff/font/devlatin1/
 share/jgroff/font/devlatin1/B
 share/jgroff/font/devlatin1/BI
 share/jgroff/font/devlatin1/DESC
 share/jgroff/font/devlatin1/I
 share/jgroff/font/devlatin1/R
+share/jgroff/font/devlj4/
 share/jgroff/font/devlj4/ALBB
 share/jgroff/font/devlj4/ALBR
 share/jgroff/font/devlj4/AOB
@@ -207,9 +218,11 @@ share/jgroff/font/devlj4/UCI
 share/jgroff/font/devlj4/UCR
 share/jgroff/font/devlj4/UI
 share/jgroff/font/devlj4/UR
+share/jgroff/font/devlj4/generate/
 share/jgroff/font/devlj4/generate/Makefile
 share/jgroff/font/devlj4/generate/special.map
 share/jgroff/font/devlj4/generate/text.map
+share/jgroff/font/devnippon/
 share/jgroff/font/devnippon/B
 share/jgroff/font/devnippon/BI
 share/jgroff/font/devnippon/DESC
@@ -217,6 +230,7 @@ share/jgroff/font/devnippon/G
 share/jgroff/font/devnippon/I
 share/jgroff/font/devnippon/M
 share/jgroff/font/devnippon/R
+share/jgroff/font/devps/
 share/jgroff/font/devps/AB
 share/jgroff/font/devps/ABI
 share/jgroff/font/devps/AI
@@ -258,6 +272,7 @@ share/jgroff/font/devps/ZCMI
 share/jgroff/font/devps/ZD
 share/jgroff/font/devps/ZDR
 share/jgroff/font/devps/download
+share/jgroff/font/devps/generate/
 share/jgroff/font/devps/generate/Makefile
 share/jgroff/font/devps/generate/afmname
 share/jgroff/font/devps/generate/dingbatsmap
@@ -271,13 +286,16 @@ share/jgroff/font/devps/prologue
 share/jgroff/font/devps/symbolsl.pfa
 share/jgroff/font/devps/text.enc
 share/jgroff/font/devps/zapfdr.pfa
+share/jgroff/tmac/
 share/jgroff/tmac/eqnrc
 share/jgroff/tmac/hyphen.us
 share/jgroff/tmac/man.local
+share/jgroff/tmac/mdoc/
 share/jgroff/tmac/mdoc/doc-common
 share/jgroff/tmac/mdoc/doc-ditroff
 share/jgroff/tmac/mdoc/doc-nroff
 share/jgroff/tmac/mdoc/doc-syms
+share/jgroff/tmac/mm/
 share/jgroff/tmac/mm/0.MT
 share/jgroff/tmac/mm/4.MT
 share/jgroff/tmac/mm/5.MT
@@ -308,21 +326,3 @@ share/jgroff/tmac/tmac.safer
 share/jgroff/tmac/tmac.tty
 share/jgroff/tmac/tmac.tty-char
 share/jgroff/tmac/troffrc
-@dirrm share/jgroff/tmac/mm
-@dirrm share/jgroff/tmac/mdoc
-@dirrm share/jgroff/tmac
-@dirrm share/jgroff/font/devps/generate
-@dirrm share/jgroff/font/devps
-@dirrm share/jgroff/font/devnippon
-@dirrm share/jgroff/font/devlj4/generate
-@dirrm share/jgroff/font/devlj4
-@dirrm share/jgroff/font/devlatin1
-@dirrm share/jgroff/font/devdvi/generate
-@dirrm share/jgroff/font/devdvi
-@dirrm share/jgroff/font/devascii
-@dirrm share/jgroff/font/devX75-12
-@dirrm share/jgroff/font/devX75
-@dirrm share/jgroff/font/devX100-12
-@dirrm share/jgroff/font/devX100
-@dirrm share/jgroff/font
-@dirrm share/jgroff

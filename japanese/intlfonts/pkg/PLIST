@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/11 09:42:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:56:28 espie Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/ja/
 lib/X11/fonts/ja/a18rk.pcf.gz
 lib/X11/fonts/ja/a18rkb.pcf.gz
 lib/X11/fonts/ja/a18rki.pcf.gz
 lib/X11/fonts/ja/fonts.alias-gnu
+@comment lib/X11/fonts/ja/fonts.dir
 lib/X11/fonts/ja/j78-16.pcf.gz
 lib/X11/fonts/ja/j83-18.pcf.gz
 lib/X11/fonts/ja/j83-18b.pcf.gz

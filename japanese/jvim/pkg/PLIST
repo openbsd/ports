@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:56:28 espie Exp $
 bin/jcat
-bin/jgrep
 bin/jfold
-bin/jvim
+bin/jgrep
 bin/jview
+bin/jvim
 lib/jvim.hlp
-man/ja_JP.EUC/man1/jcat.1
-man/ja_JP.EUC/man1/jgrep.1
-man/ja_JP.EUC/man1/jfold.1
-man/ja_JP.EUC/man1/jvim.1
+@man man/ja_JP.EUC/man1/jcat.1
+@man man/ja_JP.EUC/man1/jfold.1
+@man man/ja_JP.EUC/man1/jgrep.1
+@man man/ja_JP.EUC/man1/jvim.1

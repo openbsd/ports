@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/03 12:10:11 espie Exp $
-lib/libkakasi.so.2.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 00:56:28 espie Exp $
+@lib lib/libkakasi.so.2.0
