@@ -1,24 +1,25 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.5 2000/02/22 17:08:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/11 03:28:13 espie Exp $
 
 
 DISTNAME=	nkf-1.62
 PKGNAME=	ja-nkf-1.62
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 NEED_VERSION=	1.210
+MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 MAKE_FILE=${FILESDIR}/Makefile
 
 ALL_TARGET=nkf
 
+FAKE=Yes
 # original english man page was rather difficult to follow
 do-install:	
 	${INSTALL_PROGRAM} ${WRKSRC}/nkf ${PREFIX}/bin
