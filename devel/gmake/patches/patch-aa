@@ -1,39 +1,63 @@
---- Makefile.in.orig	Sat Sep 20 03:58:51 1997
-+++ Makefile.in	Thu Oct 16 00:50:40 1997
-@@ -54,7 +54,7 @@
- CC = @CC@
- CPP = @CPP@
- LIBOBJS = @LIBOBJS@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- PACKAGE = @PACKAGE@
- REMOTE = @REMOTE@
- VERSION = @VERSION@
-@@ -259,12 +259,12 @@
- 	  done; \
- 	done
- 	@$(POST_INSTALL)
--	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
--	  for file in $(INFO_DEPS); do \
--	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
--	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
--	  done; \
--	else : ; fi
-+#	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
-+#	  for file in $(INFO_DEPS); do \
-+#	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
-+#	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
-+#	  done; \
-+#	else : ; fi
- 
- uninstall-info:
- 	$(PRE_UNINSTALL)
-@@ -476,7 +476,7 @@
- 
- uninstall: uninstall-recursive uninstall-am
- 
--all: all-recursive-am all-am
-+all: all-recursive-am all-am info
- 
- install-strip:
- 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+*** Makefile.in.orig	Thu Jul 30 09:38:45 1998
+--- Makefile.in	Thu Nov 19 10:26:16 1998
+***************
+*** 62,68 ****
+  CC = @CC@
+  CPP = @CPP@
+  LIBOBJS = @LIBOBJS@
+! MAKEINFO = @MAKEINFO@
+  PACKAGE = @PACKAGE@
+  REMOTE = @REMOTE@
+  VERSION = @VERSION@
+--- 62,68 ----
+  CC = @CC@
+  CPP = @CPP@
+  LIBOBJS = @LIBOBJS@
+! MAKEINFO = @MAKEINFO@ --no-split
+  PACKAGE = @PACKAGE@
+  REMOTE = @REMOTE@
+  VERSION = @VERSION@
+***************
+*** 164,170 ****
+  SOURCES = $(make_SOURCES)
+  OBJECTS = $(make_OBJECTS)
+  
+! all: all-recursive-am all-am
+  
+  .SUFFIXES:
+  .SUFFIXES: .S .c .dvi .info .o .ps .s .texi .texinfo .txi
+--- 164,170 ----
+  SOURCES = $(make_SOURCES)
+  OBJECTS = $(make_OBJECTS)
+  
+! all: all-recursive-am all-am info
+  
+  .SUFFIXES:
+  .SUFFIXES: .S .c .dvi .info .o .ps .s .texi .texinfo .txi
+***************
+*** 317,328 ****
+  	  done; \
+  	done
+  	@$(POST_INSTALL)
+! 	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+! 	  for file in $(INFO_DEPS); do \
+! 	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+! 	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+! 	  done; \
+! 	else : ; fi
+  
+  uninstall-info:
+  	$(PRE_UNINSTALL)
+--- 317,328 ----
+  	  done; \
+  	done
+  	@$(POST_INSTALL)
+! #	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+! #	  for file in $(INFO_DEPS); do \
+! #	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+! #	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+! #	  done; \
+! #	else : ; fi
+  
+  uninstall-info:
+  	$(PRE_UNINSTALL)

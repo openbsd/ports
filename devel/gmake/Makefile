@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/18 05:02:05 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/11/19 04:54:02 form Exp $
 #
 
-DISTNAME=       make-3.76.1
-PKGNAME=        gmake-3.76.1
+DISTNAME=       make-3.77
+PKGNAME=        gmake-3.77
 CATEGORIES=	devel
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=	todd@OpenBSD.org
 
@@ -17,7 +15,7 @@ CONFIGURE_ARGS=	--program-transform-name='s/^/g/'
 post-install:
 	/bin/chmod g-s ${PREFIX}/bin/gmake
 	/usr/sbin/chgrp ${BINGRP} ${PREFIX}/bin/gmake
-	${INSTALL_MAN} ${WRKSRC}/make.man ${PREFIX}/man/man1/gmake.1
+#	${INSTALL_MAN} ${WRKSRC}/make.man ${PREFIX}/man/man1/gmake.1
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi

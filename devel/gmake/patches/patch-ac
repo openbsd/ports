@@ -1,37 +1,34 @@
-*** main.c.orig	Sat Jun  6 17:23:46 1998
---- main.c	Sat Jun  6 17:25:15 1998
+*** main.c.orig	Thu Nov 19 10:35:08 1998
+--- main.c	Thu Nov 19 10:44:03 1998
 ***************
-*** 1021,1026 ****
---- 1021,1027 ----
-  	    FILE *outfile;
-  
-  	    /* Make a unique filename.  */
-+ #if 0
-  #ifdef HAVE_MKTEMP
-  
-  #ifdef VMS
-***************
-*** 1033,1042 ****
-  	    static char name[L_tmpnam];
-  	    (void) tmpnam (name);
+*** 1082,1089 ****
+--- 1082,1096 ----
+  #else
+  	    static char name[] = "/tmp/GmXXXXXX";
   #endif
-  
-! 	    outfile = fopen (name, "w");
-  	    if (outfile == 0)
-! 	      pfatal_with_name ("fopen (temporary file)");
-  	    while (!feof (stdin))
-  	      {
-  		char buf[2048];
---- 1034,1045 ----
-  	    static char name[L_tmpnam];
-  	    (void) tmpnam (name);
-  #endif
++ #ifndef __OpenBSD__
+  	    (void) mktemp (name);
+  #else
++ 	    int ftmp;
++ 
++ 	    if ((ftmp = mkstemp (name)) < 0)
++ 	      pfatal_with_name ("mkstemp (temporary file)");
 + #endif
-+ 	    static char name[] = "/tmp/GmXXXXXX";
++ #else
+  	    static char name[L_tmpnam];
+  	    (void) tmpnam (name);
+  #endif
+***************
+*** 1091,1097 ****
+--- 1098,1108 ----
+              if (stdin_nm)
+                fatal("Makefile from standard input specified twice.");
   
-! 	    outfile = fdopen (mkstemp(name), "w");
++ #ifndef __OpenBSD__
+  	    outfile = fopen (name, "w");
++ #else
++ 	    outfile = fdopen (ftmp, "w");
++ #endif
   	    if (outfile == 0)
-! 	      pfatal_with_name ("fdopen (temporary file)");
+  	      pfatal_with_name ("fopen (temporary file)");
   	    while (!feof (stdin))
-  	      {
-  		char buf[2048];
