@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/06/12 21:38:15 fgsch Exp $
+# $OpenBSD: Makefile,v 1.29 2000/08/29 03:22:08 kevlo Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -24,6 +24,7 @@
 #    SUBDIR += fd
 #    SUBDIR += fep
      SUBDIR += figlet
+     SUBDIR += gacc
 #    SUBDIR += git
      SUBDIR += gnuls
 #    SUBDIR += ical
