@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/22 15:26:59 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/03/25 06:51:47 brad Exp $
 #
 # Pre/post-installation setup of ytalk
 
@@ -28,7 +28,7 @@ do_notice()
 #
 do_install()
 {
-    cp ${PREFIX}/lib/ytalk/ytalkrc.sample ${CONFIG_FILE}
+    install -o root -g wheel -m 644 ${PREFIX}/lib/ytalk/ytalkrc.sample ${CONFIG_FILE}
     echo
     echo "+---------------"
     echo "| The $1 configuration file, ${CONFIG_FILE},"
