@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/07 20:55:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/15 18:05:19 espie Exp $
 
 V=			1.2
 DISTNAME=		users-guide-${V}
@@ -10,8 +10,7 @@ NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/users-guide
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/users-guide/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

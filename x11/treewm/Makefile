@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/10 11:49:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=		"tree window manager"
 DISTNAME=		treewm-0.4.2
@@ -6,9 +6,8 @@ DISTFILES=		treewm_0.4.2.tar.gz
 CATEGORIES=		x11
 NEED_VERSION=		1.525
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/} \
 			http://openbsd.rutgers.edu/
-MASTER_SITE_SUBDIR=	treewm
 
 HOMEPAGE=		http://treewm.sourceforge.net/
 

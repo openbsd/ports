@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/03 16:20:19 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"GUI toolkit for X11"
 
@@ -10,10 +10,10 @@ DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
 CATEGORIES=	x11
 NEED_VERSION=	1.522
-MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/X11/gui/xforms/%SUBDIR%/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/%SUBDIR%/
-MASTER_SITE_SUBDIR= openBSD-${XFORMS_ARCH}
+MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/$S/ \
+		ftp://ftp.fu-berlin.de/unix/X11/gui/xforms/$S/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/$S/
+S=		openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	xforms/${MASTER_SITE_SUBDIR}
 

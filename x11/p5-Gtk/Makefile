@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/19 14:57:03 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://www.gtkperl.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Gtk
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Gtk/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/26 06:52:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -6,8 +6,7 @@ DISTNAME=	tk8.3.4
 PKGNAME=	tk-8.3.4
 CATEGORIES=	x11 x11/tk
 NEED_VERSION=	1.482
-MASTER_SITES=	${MASTER_SITE_TCLTK}
-MASTER_SITE_SUBDIR= tcl8_3
+MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_3/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/02/15 19:20:07 nino Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/15 18:05:18 espie Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 
@@ -9,8 +9,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/oaf
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/oaf/}
 EXTRACT_SUFX=           .tar.bz2
 
 LIB_DEPENDS=		ORBit.5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \

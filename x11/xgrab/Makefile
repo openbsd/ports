@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.16 2002/03/21 21:25:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/15 18:05:20 espie Exp $
 #
 
 COMMENT=	"X11 image grabber"
@@ -12,8 +12,7 @@ DISTNAME=	xgrabsc.2_41
 PKGNAME=	xgrab-2.41
 CATEGORIES=	x11
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 EXTRACT_SUFX=	.tar.Z
 
 # License: BSD

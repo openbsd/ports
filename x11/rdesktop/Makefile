@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 02:07:30 jcs Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"open source client for Windows Terminal Server"
 
@@ -14,8 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://www.rdesktop.org/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= rdesktop
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rdesktop/}
 
 MASTER_SITES0=	http://bibl4.oru.se/projects/rdesktop/
 PATCHFILES=	rdesktop-unified-patch${PATCHLEVEL:S/./-/g}.bz2:0

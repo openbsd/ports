@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -6,8 +6,7 @@ VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 NEED_VERSION=	1.489
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= sawmill
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
 
 HOMEPAGE=       http://sawmill.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/23 06:24:49 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -9,8 +9,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/control-center
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/control-center/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gdk_pixbuf::graphics/gdk-pixbuf \

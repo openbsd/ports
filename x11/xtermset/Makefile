@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/15 18:05:20 espie Exp $
 
 COMMENT=	"dynamically change some settings of an xterm"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= clts
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clts/}
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

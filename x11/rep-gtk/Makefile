@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/09 15:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 18:05:19 espie Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
@@ -7,8 +7,7 @@ VERSION=	0.15
 DISTNAME=	rep-gtk-${VERSION}
 CATEGORIES=     x11
 NEED_VERSION=	1.402
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= rep-gtk
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=rep-gtk/}
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/02 15:45:50 nino Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 
@@ -9,8 +9,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/gnome-applets
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-applets/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/24 01:20:39 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"CDE like desktop with Gtk"
 
 DISTNAME=	xfce-3.8.14
 CATEGORIES=	x11
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= xfce
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xfce/}
 
 HOMEPAGE=	http://www.xfce.org/
 

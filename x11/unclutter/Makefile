@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 18:05:19 espie Exp $
 
 COMMENT=	"hides idle X11 cursor"
 
@@ -7,8 +7,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.515
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=		${MASTER_SITE_XCONTRIB:=utilities/}
 EXTRACT_SUFX=		.tar.Z
 
 PERMIT_PACKAGE_CDROM=	Yes
