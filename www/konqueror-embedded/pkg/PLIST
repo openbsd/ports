@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/15 22:22:38 espie Exp $
+@pkgcfl kdebase-*
+apps/Applications/konqueror.desktop
+bin/konqueror
+pics/konqueror.png
+share/apps/khtml/css/html4.css
+share/apps/kssl/caroot/ca-bundle.crt
+share/config/charsets
+share/config/khtmlrc
+@dirrm share/config
+@dirrm share/apps/kssl/caroot
+@dirrm share/apps/kssl
+@dirrm share/apps/khtml/css
+@dirrm share/apps/khtml
+@dirrm share/apps
+@dirrm pics
+@dirrm apps/Applications
+@dirrm apps

@@ -1,0 +1,6 @@
+Stand-alone konqueror web-browser.
+Does not require kde2.
+
+Experimental. A few things don't work yet, including SSL.
+
+WWW: ${HOMEPAGE}
