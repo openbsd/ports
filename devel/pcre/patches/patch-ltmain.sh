@@ -1,5 +1,5 @@
---- ltmain.sh.orig	2003-12-10 17:45:44.000000000 +0100
-+++ ltmain.sh	2004-01-14 18:20:00.000000000 +0100
+--- ltmain.sh.orig	2003-12-10 11:45:44.000000000 -0500
++++ ltmain.sh	2004-01-14 23:27:25.000000000 -0500
 @@ -1051,15 +1051,18 @@ compiler."
  	;;
  
@@ -44,7 +44,15 @@
        -module)
  	module=yes
  	continue
-@@ -2472,6 +2486,9 @@ compiler."
+@@ -1765,7 +1779,6 @@ compiler."
+ 
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+ 	  fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
+@@ -2472,6 +2485,9 @@ compiler."
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
  	    ;;
@@ -54,7 +62,7 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-@@ -4531,40 +4548,6 @@ relink_command=\"$relink_command\""
+@@ -4531,40 +4547,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
