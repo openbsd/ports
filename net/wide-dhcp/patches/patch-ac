@@ -1,0 +1,19 @@
+*** client/config.h.orig	Wed Apr 29 15:32:36 1998
+--- client/config.h	Wed Apr 29 15:32:58 1998
+***************
+*** 38,44 ****
+   */
+  
+  #ifndef DHCP_CACHE
+! #define DHCP_CACHE  "/etc/dhcp_cache"
+  #endif
+  
+  #define FIRSTTIMER          4
+--- 38,44 ----
+   */
+  
+  #ifndef DHCP_CACHE
+! #define DHCP_CACHE  "/var/db/dhcp_cache"
+  #endif
+  
+  #define FIRSTTIMER          4

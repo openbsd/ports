@@ -1,0 +1,223 @@
+*** client/dhcpc_subr.c.orig	Thu Jul  3 03:19:01 1997
+--- client/dhcpc_subr.c	Wed Apr 29 15:54:09 1998
+***************
+*** 1109,1115 ****
+  #ifndef LOG_PERROR
+  #define LOG_PERROR   0
+  #endif
+!   openlog("dhcpc", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL0);
+  
+    sprintf(pid_filename, "%s.%s.pid", PATH_PID_PREFIX, ifp->name);
+    for (n = 0; n < 5; n++) {
+--- 1109,1115 ----
+  #ifndef LOG_PERROR
+  #define LOG_PERROR   0
+  #endif
+!   openlog("dhcpc", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL1);
+  
+    sprintf(pid_filename, "%s.%s.pid", PATH_PID_PREFIX, ifp->name);
+    for (n = 0; n < 5; n++) {
+***************
+*** 1312,1318 ****
+  #ifndef LOG_PERROR
+  #define LOG_PERROR   0
+  #endif
+!   openlog("dhcpc", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL0);
+  
+    sprintf(pid_filename, "%s.%s.pid", PATH_PID_PREFIX, ifp->name);
+    for (n = 0; n < 5; n++) {
+--- 1312,1318 ----
+  #ifndef LOG_PERROR
+  #define LOG_PERROR   0
+  #endif
+!   openlog("dhcpc", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL1);
+  
+    sprintf(pid_filename, "%s.%s.pid", PATH_PID_PREFIX, ifp->name);
+    for (n = 0; n < 5; n++) {
+***************
+*** 1497,1503 ****
+  /*
+   * halt network, and reset the interface
+   */
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+  
+  void
+  reset_if(ifp, updown)
+--- 1497,1503 ----
+  /*
+   * halt network, and reset the interface
+   */
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  
+  void
+  reset_if(ifp, updown)
+***************
+*** 1548,1554 ****
+  #endif
+  
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+  /*
+   * ifconfig up/down
+   */
+--- 1548,1554 ----
+  #endif
+  
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  /*
+   * ifconfig up/down
+   */
+***************
+*** 1620,1626 ****
+   * configure network interface
+   *    address, netmask, and broadcast address
+   */
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+  
+  int
+  config_if(ifp, addr, mask, brdcst)
+--- 1620,1626 ----
+   * configure network interface
+   *    address, netmask, and broadcast address
+   */
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  
+  int
+  config_if(ifp, addr, mask, brdcst)
+***************
+*** 1701,1707 ****
+    return(0);
+  }
+  
+! #else /* not __bsdi__ nor __FreeBSD__ */
+  
+  int
+  config_if(ifp, addr, mask, brdcst)
+--- 1701,1707 ----
+    return(0);
+  }
+  
+! #else /* not __bsdi__ not __FreeBSD__ nor __OpenBSD__ */
+  
+  int
+  config_if(ifp, addr, mask, brdcst)
+***************
+*** 1777,1795 ****
+    return(0);
+  }
+  
+! #endif /* defined(__bsdi__) || defined(__FreeBSD__) */
+  
+  
+  /*
+   * set routing table
+   */
+! #if !defined(__bsdi__) && !defined(__FreeBSD__)
+  void
+  set_route(param)
+    struct dhcp_param *param;
+  {
+    int sockfd = 0;
+! #if !defined(__bsdi__) && !defined(__FreeBSD__) && !defined(__osf__)
+  #define  ortentry  rtentry
+  #endif
+    struct ortentry rt;
+--- 1777,1795 ----
+    return(0);
+  }
+  
+! #endif /* defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)*/
+  
+  
+  /*
+   * set routing table
+   */
+! #if !defined(__bsdi__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+  void
+  set_route(param)
+    struct dhcp_param *param;
+  {
+    int sockfd = 0;
+! #if !defined(__bsdi__) && !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__osf__)
+  #define  ortentry  rtentry
+  #endif
+    struct ortentry rt;
+***************
+*** 1813,1824 ****
+      bzero(&dst, sizeof(struct sockaddr));
+      bzero(&gateway, sizeof(struct sockaddr));
+      rt.rt_flags = RTF_UP | RTF_GATEWAY;
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+      ((struct sockaddr_in *) &dst)->sin_len = sizeof(struct sockaddr_in);
+  #endif
+      ((struct sockaddr_in *) &dst)->sin_family = AF_INET;
+      ((struct sockaddr_in *) &dst)->sin_addr.s_addr = INADDR_ANY;
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+      ((struct sockaddr_in *) &gateway)->sin_len = sizeof(struct sockaddr_in);
+  #endif
+      ((struct sockaddr_in *) &gateway)->sin_family = AF_INET;
+--- 1813,1824 ----
+      bzero(&dst, sizeof(struct sockaddr));
+      bzero(&gateway, sizeof(struct sockaddr));
+      rt.rt_flags = RTF_UP | RTF_GATEWAY;
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+      ((struct sockaddr_in *) &dst)->sin_len = sizeof(struct sockaddr_in);
+  #endif
+      ((struct sockaddr_in *) &dst)->sin_family = AF_INET;
+      ((struct sockaddr_in *) &dst)->sin_addr.s_addr = INADDR_ANY;
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+      ((struct sockaddr_in *) &gateway)->sin_len = sizeof(struct sockaddr_in);
+  #endif
+      ((struct sockaddr_in *) &gateway)->sin_family = AF_INET;
+***************
+*** 1836,1842 ****
+    return;
+  }
+  
+! #else  /* It's BSD/OS 2.* or FreeBSD */
+  
+  void
+  set_route(param)
+--- 1836,1842 ----
+    return;
+  }
+  
+! #else  /* It's BSD/OS 2.* or *BSD */
+  
+  void
+  set_route(param)
+***************
+*** 2529,2535 ****
+    struct iovec bufvec[1];
+    int bufsize = DFLTDHCPLEN;
+  #if 0
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+    int on;
+  #endif
+  #endif
+--- 2529,2535 ----
+    struct iovec bufvec[1];
+    int bufsize = DFLTDHCPLEN;
+  #if 0
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+    int on;
+  #endif
+  #endif
+***************
+*** 3175,3181 ****
+        return(-1);
+      }
+      for (i = 0; i < max; i++) {
+!       param->mtu_plateau_table->shortnum[i] = GETHS(buf[i * 2 + 2]);
+      }
+    }
+  
+--- 3175,3181 ----
+        return(-1);
+      }
+      for (i = 0; i < max; i++) {
+!       param->mtu_plateau_table->shortnum[i] = GETHS(&buf[i * 2 + 2]);
+      }
+    }
+  

@@ -1,0 +1,12 @@
+*** README.orig	Thu Apr 24 05:38:41 1997
+--- README	Wed Apr 29 15:32:20 1998
+***************
+*** 53,58 ****
+--- 53,59 ----
+  	BSD/OS 2.0.1;		make OSTYPE=bsdos
+  	SunOS 4.1.4;		make OSTYPE=sunos4
+  	FreeBSD;		make OSTYPE=FreeBSD
++ 	OpenBSD;		make OSTYPE=OpenBSD
+  
+  <Inquiry>
+  
