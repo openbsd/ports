@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2000/04/01 23:33:03 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/06/28 22:28:20 fgsch Exp $
 
 DISTNAME=	mutt-1.0.1i
 CATEGORIES=     mail
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.308
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 
 MAINTAINER=	turan@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,10 +30,9 @@ FLAVOR+=imap
 FLAVOR+=pop
 .endif
 
-FAKE=		Yes
 LIB_DEPENDS=	intl.1::devel/gettext 
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 SYSCONFDIR=	${PREFIX}/share/mutt
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sharedir=${PREFIX}/share/mutt \
@@ -47,7 +45,7 @@ CONFIGURE_ARGS+=--with-slang=${PREFIX}
 .elif ${FLAVOR:L:Mcurses}
 CONFIGURE_ARGS+=--with-curses
 .else
-.BEGIN::
+.BEGIN:
 	@echo "Bad choice FLAVOR=${FLAVOR}"; exit 1
 .endif
 
