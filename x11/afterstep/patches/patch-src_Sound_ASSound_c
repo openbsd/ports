@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Sound_ASSound_c,v 1.1 2002/12/28 22:51:42 pvalchev Exp $
+--- src/Sound/ASSound.c.orig	Sat Dec 28 13:47:43 2002
++++ src/Sound/ASSound.c	Sat Dec 28 13:47:52 2002
+@@ -156,7 +156,7 @@ PlaySound (int sid)
+ 	return;
+       else if (child == 0)
+ 	{
+-	  execlp (SoundPlayer, SoundPlayer, SoundTable[sid]->data, NULL);
++	  execlp (SoundPlayer, SoundPlayer, SoundTable[sid]->data, (void *)NULL);
+ 	}
+       else
+ 	{

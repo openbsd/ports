@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_blackbox_cc,v 1.1 2002/12/28 22:51:42 pvalchev Exp $
+--- src/blackbox.cc.orig	Sat Dec 28 14:00:06 2002
++++ src/blackbox.cc	Sat Dec 28 14:00:32 2002
+@@ -915,7 +915,7 @@ void Blackbox::restart(const char *prog)
+ 
+   if (prog) {
+     putenv(const_cast<char *>(screenList.front()->displayString().c_str()));
+-    execlp(prog, prog, NULL);
++    execlp(prog, prog, (void *)NULL);
+     perror(prog);
+   }
+ 

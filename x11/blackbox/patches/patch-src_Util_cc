@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Util_cc,v 1.1 2002/12/28 22:51:42 pvalchev Exp $
+--- src/Util.cc.orig	Sat Dec 28 13:59:59 2002
++++ src/Util.cc	Sat Dec 28 14:00:18 2002
+@@ -159,7 +159,7 @@ void bexec(const string& command, const 
+     assert(ret != -1);
+     string cmd = "exec ";
+     cmd += command;
+-    ret = execl("/bin/sh", "/bin/sh", "-c", cmd.c_str(), NULL);
++    ret = execl("/bin/sh", "/bin/sh", "-c", cmd.c_str(), (void *)NULL);
+     exit(ret);
+   }
+ #else //   __EMX__
