@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/04/13 21:07:48 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/14 23:14:32 espie Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -38,6 +38,7 @@ RUN_DEPENDS+=	:lame-*:audio/lame
 .else
 RUN_DEPENDS+=	:vorbis-tools-*:audio/vorbis-tools
 .endif
+SUPDISTFILES=	id3_0.12.orig.tar.gz:1
 
 post-patch:
 .if ${FLAVOR:L:Mlame}
