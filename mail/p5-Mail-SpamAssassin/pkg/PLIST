@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/10/07 14:32:33 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/12/03 07:10:06 wcobb Exp $
 bin/spamassassin
 bin/spamc
 bin/spamd
@@ -25,6 +25,8 @@ ${P5SITE}/Mail/SpamAssassin/Replier.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SHA1.pm
 ${P5SITE}/Mail/SpamAssassin/TextCat.pm
+man/man1/spamc.1
+man/man8/spamd.8
 man/man3p/Mail::SpamAssassin.3p
 man/man3p/Mail::SpamAssassin::Conf.3p
 man/man3p/Mail::SpamAssassin::PerMsgStatus.3p

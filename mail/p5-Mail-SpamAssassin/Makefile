@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/30 04:38:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/03 07:10:06 wcobb Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -43,6 +43,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA} ${FAQS} ${PREFIX}/share/doc/SpamAssassin
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/SpamAssassin
+	cd ${WRKSRC} && pod2man --section=1 spamd/spamc.pod > \
+	    ${PREFIX}/man/man1/spamc.1
+	cd ${WRKSRC} && pod2man --section=8 spamd/spamd > \
+	    ${PREFIX}/man/man8/spamd.8
 
 pre-regress:
 	mkdir -p ${PORTHOME}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-spamd_spamc_pod,v 1.1 2002/12/03 07:10:06 wcobb Exp $
+--- spamd/spamc.pod.orig	Tue Dec  3 00:21:25 2002
++++ spamd/spamc.pod	Tue Dec  3 00:21:32 2002
+@@ -94,7 +94,7 @@ distribution for more details.
+ 
+ =head1 SEE ALSO
+ 
+-spamd(1)
++spamd(8)
+ spamassassin(1)
+ Mail::SpamAssassin(3)
+ 
