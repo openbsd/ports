@@ -1,10 +1,10 @@
---- Makefile.am.orig	Sat May  5 15:22:41 2001
-+++ Makefile.am	Sat May  5 15:22:59 2001
-@@ -39,7 +39,6 @@ EXTRA_DIST =			\
+--- Makefile.am~	Sat Dec 22 20:09:40 2001
++++ Makefile.am	Sat Dec 22 20:11:15 2001
+@@ -54,7 +54,6 @@ EXTRA_DIST =			\
  	autogen.sh
  
  libSDL_mixer_la_LDFLAGS = 		\
--        -release $(LT_RELEASE)	\
+-	-release $(LT_RELEASE)	\
  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
- libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB)
+ libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB) $(NATIVE_MIDI_LIB)
  

@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat May  5 15:24:12 2001
-+++ Makefile.in	Sat May  5 15:26:22 2001
-@@ -108,7 +108,7 @@ libSDL_mixer_la_SOURCES =  	mixer.c				m
- EXTRA_DIST =  	CHANGES				VisualC.zip			MPWmake.sea.bin			CWprojects.sea.hqx		autogen.sh
+--- Makefile.in~	Sat Dec 22 20:12:01 2001
++++ Makefile.in	Sat Dec 22 20:13:24 2001
+@@ -109,7 +109,7 @@ libSDL_mixer_la_SOURCES =  	load_aiff.c	
+ EXTRA_DIST =  	CHANGES				VisualC.zip			PBProjects.tar.gz		MPWmake.sea.bin			CWprojects.sea.hqx		SDL_mixer.spec			SDL_mixer.spec.in		autogen.sh
  
  
--libSDL_mixer_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_mixer_la_LDFLAGS =          -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+-libSDL_mixer_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_mixer_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB)
+ libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB) $(NATIVE_MIDI_LIB)
  
