@@ -1,13 +1,16 @@
-$OpenBSD: patch-oinkmaster_conf,v 1.1 2004/02/29 13:58:11 lebel Exp $
---- oinkmaster.conf.orig	2003-11-30 15:01:57.000000000 -0500
-+++ oinkmaster.conf	2004-02-29 08:46:38.000000000 -0500
-@@ -15,7 +15,8 @@
+$OpenBSD: patch-oinkmaster_conf,v 1.2 2004/12/05 18:22:57 robert Exp $
+--- oinkmaster.conf.orig	Sat Oct  9 15:28:24 2004
++++ oinkmaster.conf	Sun Dec  5 19:11:01 2004
+@@ -36,10 +36,10 @@
+ # is the most recent version of Snort at the time of this writing.
+ # This may have changed by the time you read this, so make
+ # sure to follow the instructions above.
+-url = http://www.snort.org/dl/rules/snortrules-snapshot-2_2.tar.gz
++# url = http://www.snort.org/dl/rules/snortrules-snapshot-2_2.tar.gz
  
- # Use this one if you're running the latest release version of Snort
- # (or following snort-STABLE):
--url = http://www.snort.org/dl/rules/snortrules-stable.tar.gz
-+#url = http://www.snort.org/dl/rules/snortrules-stable.tar.gz
-+url = http://www.snort.org/dl/rules/snortrules-snapshot-2_0.tar.gz
+ # This is for Snort 2.1.x.
+-# url = http://www.snort.org/dl/rules/snortrules-snapshot-2_1.tar.gz
++url = http://www.snort.org/dl/rules/snortrules-snapshot-2_1.tar.gz
  
- # Use this one *only* if you're following snort-CURRENT.
- # This ruleset may only work with recent develop snapshots of Snort!
+ # If you use Snort 2.0.x (which is deprecated):
+ # url = http://www.snort.org/dl/rules/snortrules-snapshot-2_0.tar.gz
