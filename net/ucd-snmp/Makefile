@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/01/28 02:08:53 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/02/01 21:50:30 danh Exp $
 
 DISTNAME=	ucd-snmp-4.2
 CATEGORIES=     net
@@ -22,8 +22,15 @@ CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-libwrap='/usr' --with-openssl --with-zlib
 CONFIGURE_ENV=	VERSION_INFO='42:0:0'
 
+SNMP_BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
+		snmpdf snmpget snmpgetnext snmpnetstat snmpset snmpstatus \
+		snmptable snmptest snmptranslate snmptrap snmpusm snmpvacm \
+		snmpwalk 
+SNMP_SBIN=	snmpd snmptrapd
+
 post-install:
-	@strip ${PREFIX}/bin/* ${PREFIX}/sbin/*
+	@cd ${PREFIX}/bin && strip ${SNMP_BIN}
+	@cd ${PREFIX}/sbin && strip ${SNMP_SBIN}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README.snmpv3 ${PREFIX}/share/doc/ucd-snmp
