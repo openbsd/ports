@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/06/28 20:05:41 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/07/25 23:33:41 brad Exp $
 
-DISTNAME=	gnupg-0.9.8
+DISTNAME=	gnupg-0.9.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/ \
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/ \
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
+USE_GMAKE=	yes
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
@@ -26,7 +27,7 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
 
 post-install:
-	${MKDIR} ${GNUPGDOCDIR}
+	@${MKDIR} ${GNUPGDOCDIR}
 	@set -e; for f in ${GNUPGDOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}/; \
 	done
