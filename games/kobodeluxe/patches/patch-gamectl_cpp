@@ -1,0 +1,38 @@
+$OpenBSD: patch-gamectl_cpp,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
+--- gamectl.cpp.orig	Sun May  5 04:50:02 2002
++++ gamectl.cpp	Sat Apr 12 17:02:10 2003
+@@ -39,7 +39,7 @@ int gamecontrol_t::dl;
+ int gamecontrol_t::dr;
+ int gamecontrol_t::ul;
+ int gamecontrol_t::ur;
+-int gamecontrol_t::shot;
++int gamecontrol_t::shot = 1;
+ int gamecontrol_t::direction = 1;
+ int gamecontrol_t::new_direction = 0;
+ int gamecontrol_t::latch_timer = 0;
+@@ -52,7 +52,7 @@ void gamecontrol_t::init()
+ 	right = 0;
+ 	up = 0;
+ 	down = 0;
+-	shot = 0;
++	shot = 1;
+ 	movekey_pressed = 0;
+ 	SDL_EnableKeyRepeat(r_delay, r_interval);
+ }
+@@ -207,7 +207,7 @@ void gamecontrol_t::press(int k)
+ 		dr = 1;
+ 		break;
+ 	  case BTN_FIRE:
+-		shot = 1;
++		shot = !shot;
+ 		break;
+ 	}
+ 	gamecontrol_t::change();
+@@ -242,7 +242,6 @@ void gamecontrol_t::release(int k)
+ 		dr = 0;
+ 		break;
+ 	  case BTN_FIRE:
+-		shot = 0;
+ 		break;
+ 	}
+ 	gamecontrol_t::change();

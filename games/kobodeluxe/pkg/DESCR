@@ -1,0 +1,25 @@
+Kobo Deluxe (formerly SKobo) is an SDL port of Akira Higuchi's game
+XKobo.  It adds such features such as sound, smoother animation, and
+filtered, high resolution support.
+
+KEY CONFIGURATION
+-----------------
+
+Introduction screen:
+
+Enter		- Displays the main menu
+Escape		- Exit Kobo Deluxe
+
+During the game:
+
+Arrow/numpad	- Turn the ship into the corresponding direction
+Ctrl		- Fires the weapon
+Spacebar	- Pauses/unpauses the game
+Escape		- Quit current game
+
+Available flavor:
+harder
+        makes the game slightly harder by not giving you bonus lives
+
+WWW: ${HOMEPAGE}
+

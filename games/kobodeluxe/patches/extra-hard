@@ -1,0 +1,10 @@
+--- manage.cpp.orig	Sat Apr 12 16:33:29 2003
++++ manage.cpp	Sat Apr 12 16:33:35 2003
+@@ -455,7 +455,6 @@ void _manage::add_score(int sc)
+ 		if(score >= bonus_next)
+ 		{
+ 			bonus_next += BONUS_EVERY;
+-			ships++;
+ 			ships_changed = 1;
+ 			flush_ships_count = 50;
+ 
