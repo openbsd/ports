@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/11/30 04:51:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/02 08:12:19 marcm Exp $
 bin/deskguide_applet
 bin/gmenu
 bin/gnome-about
@@ -848,48 +848,48 @@ share/mc/templates/rxvt.desktop
 share/mc/templates/xcolsel.desktop
 share/mc/templates/xmix.desktop
 share/mc/templates/xv.desktop
-share/omf/gnome-core/clock_applet-C.omf
-share/omf/gnome-core/clock_applet-da.omf
-share/omf/gnome-core/clock_applet-it.omf
-share/omf/gnome-core/clock_applet-no.omf
-share/omf/gnome-core/desk-guide_applet-C.omf
-share/omf/gnome-core/desk-guide_applet-de.omf
-share/omf/gnome-core/desk-guide_applet-es.omf
-share/omf/gnome-core/desk-guide_applet-it.omf
-share/omf/gnome-core/fdl-C.omf
-share/omf/gnome-core/fish_applet-C.omf
-share/omf/gnome-core/fish_applet-da.omf
-share/omf/gnome-core/fish_applet-it.omf
-share/omf/gnome-core/fish_applet-no.omf
-share/omf/gnome-core/gen_util_applet-de.omf
-share/omf/gnome-core/gnome-feedback-C.omf
-share/omf/gnome-core/gnome-feedback-no.omf
-share/omf/gnome-core/gnome-terminal-C.omf
-share/omf/gnome-core/gnome-terminal-de.omf
-share/omf/gnome-core/gnome-terminal-es.omf
-share/omf/gnome-core/gnome-terminal-no.omf
-share/omf/gnome-core/gpl-C.omf
-share/omf/gnome-core/lgpl-C.omf
-share/omf/gnome-core/mailcheck_applet-C.omf
-share/omf/gnome-core/mailcheck_applet-da.omf
-share/omf/gnome-core/mailcheck_applet-es.omf
-share/omf/gnome-core/mailcheck_applet-it.omf
-share/omf/gnome-core/mailcheck_applet-no.omf
-share/omf/gnome-core/panel-C.omf
-share/omf/gnome-core/panel-de.omf
-share/omf/gnome-core/panel-es.omf
-share/omf/gnome-core/panel-it.omf
-share/omf/gnome-core/panel-ja.omf
-share/omf/gnome-core/panel-no.omf
-share/omf/gnome-core/printer_applet-C.omf
-share/omf/gnome-core/printer_applet-da.omf
-share/omf/gnome-core/printer_applet-es.omf
-share/omf/gnome-core/printer_applet-it.omf
-share/omf/gnome-core/printer_applet-no.omf
-share/omf/gnome-core/session-C.omf
-share/omf/gnome-core/session-ja.omf
-share/omf/gnome-core/tasklist_applet-C.omf
-share/omf/gnome-core/tasklist_applet-es.omf
+@comment share/omf/gnome-core/clock_applet-C.omf
+@comment share/omf/gnome-core/clock_applet-da.omf
+@comment share/omf/gnome-core/clock_applet-it.omf
+@comment share/omf/gnome-core/clock_applet-no.omf
+@comment share/omf/gnome-core/desk-guide_applet-C.omf
+@comment share/omf/gnome-core/desk-guide_applet-de.omf
+@comment share/omf/gnome-core/desk-guide_applet-es.omf
+@comment share/omf/gnome-core/desk-guide_applet-it.omf
+@comment share/omf/gnome-core/fdl-C.omf
+@comment share/omf/gnome-core/fish_applet-C.omf
+@comment share/omf/gnome-core/fish_applet-da.omf
+@comment share/omf/gnome-core/fish_applet-it.omf
+@comment share/omf/gnome-core/fish_applet-no.omf
+@comment share/omf/gnome-core/gen_util_applet-de.omf
+@comment share/omf/gnome-core/gnome-feedback-C.omf
+@comment share/omf/gnome-core/gnome-feedback-no.omf
+@comment share/omf/gnome-core/gnome-terminal-C.omf
+@comment share/omf/gnome-core/gnome-terminal-de.omf
+@comment share/omf/gnome-core/gnome-terminal-es.omf
+@comment share/omf/gnome-core/gnome-terminal-no.omf
+@comment share/omf/gnome-core/gpl-C.omf
+@comment share/omf/gnome-core/lgpl-C.omf
+@comment share/omf/gnome-core/mailcheck_applet-C.omf
+@comment share/omf/gnome-core/mailcheck_applet-da.omf
+@comment share/omf/gnome-core/mailcheck_applet-es.omf
+@comment share/omf/gnome-core/mailcheck_applet-it.omf
+@comment share/omf/gnome-core/mailcheck_applet-no.omf
+@comment share/omf/gnome-core/panel-C.omf
+@comment share/omf/gnome-core/panel-de.omf
+@comment share/omf/gnome-core/panel-es.omf
+@comment share/omf/gnome-core/panel-it.omf
+@comment share/omf/gnome-core/panel-ja.omf
+@comment share/omf/gnome-core/panel-no.omf
+@comment share/omf/gnome-core/printer_applet-C.omf
+@comment share/omf/gnome-core/printer_applet-da.omf
+@comment share/omf/gnome-core/printer_applet-es.omf
+@comment share/omf/gnome-core/printer_applet-it.omf
+@comment share/omf/gnome-core/printer_applet-no.omf
+@comment share/omf/gnome-core/session-C.omf
+@comment share/omf/gnome-core/session-ja.omf
+@comment share/omf/gnome-core/tasklist_applet-C.omf
+@comment share/omf/gnome-core/tasklist_applet-es.omf
 share/pixmaps/apple-green.png
 share/pixmaps/apple-red.png
 share/pixmaps/fish/fishanim.png
@@ -1043,7 +1043,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/pixmaps/splash
 @dirrm share/pixmaps/mailcheck
 @dirrm share/pixmaps/fish
-@dirrm share/omf/gnome-core
+@comment @dirrm share/omf/gnome-core
 @dirrm share/gnome/panel
 @dirrm share/gnome/html/panel
 @dirrm share/gnome/help/tasklist_applet/es/figures
@@ -1173,5 +1173,3 @@ share/pixmaps/vnterm.xpm
 @dirrm share/applets/Clocks
 @dirrm share/applets/Amusements
 @dirrm share/applets
-@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
-@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
