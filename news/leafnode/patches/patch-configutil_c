@@ -1,0 +1,12 @@
+$OpenBSD: patch-configutil_c,v 1.1 2004/01/12 21:33:12 sturm Exp $
+--- configutil.c.orig	2004-01-12 18:38:47.000000000 +0100
++++ configutil.c	2004-01-12 18:39:03.000000000 +0100
+@@ -484,7 +484,7 @@ readconfig(int logtostderr)
+     debug = debugmode;
+ 
+     if (!newsadmin) {
+-	const char t[] = "news@";
++	const char t[] = "_news@";
+ 	newsadmin = critmalloc(strlen(fqdn) + strlen(t) + 1, "readconfig");
+ 	strcpy(newsadmin, t); /* RATS: ignore */
+ 	strcat(newsadmin, fqdn); /* RATS: ignore */
