@@ -1,21 +1,30 @@
-$OpenBSD: patch-src_bubblemon_c,v 1.2 2003/04/30 14:59:34 avsm Exp $
---- src/bubblemon.c.orig	Wed Apr 30 14:53:05 2003
-+++ src/bubblemon.c	Wed Apr 30 14:54:01 2003
-@@ -412,7 +412,7 @@ void update_tooltip(BubbleMonData *bm)
+$OpenBSD: patch-src_bubblemon_c,v 1.3 2003/06/18 14:14:52 avsm Exp $
+--- src/bubblemon.c.orig	Sun Oct 27 07:45:31 2002
++++ src/bubblemon.c	Wed Jun 18 03:35:13 2003
+@@ -169,7 +169,7 @@ const char *bubblemon_getTooltip(void)
+   if (sysload.swapSize > 0)
+   {
+     usage2string(swapstring, sysload.swapUsed, sysload.swapSize);
+-    snprintf(loadstring, 90,
++    snprintf(loadstring, sizeof loadstring,
+ 	     _("\nSwap used: %s"),
+ 	     swapstring);
+     strcat(tooltipstring, loadstring);
+@@ -177,7 +177,7 @@ const char *bubblemon_getTooltip(void)
  
-   if (bm->number_of_cpus == 1)
+   if (sysload.nCpus == 1)
      {
 -      snprintf(loadstring, 45,
 +      snprintf(loadstring, sizeof loadstring,
                 _("\nCPU load: %d%%"),
-                get_cpu_load(bm, 0));
+                bubblemon_getCpuLoadPercentage(0));
        strcat(tooltipstring, loadstring);
-@@ -423,7 +423,7 @@ void update_tooltip(BubbleMonData *bm)
-            cpu_number < bm->number_of_cpus;
+@@ -188,7 +188,7 @@ const char *bubblemon_getTooltip(void)
+            cpu_number < sysload.nCpus;
             cpu_number++)
          {
 -          snprintf(loadstring, 45,
 +          snprintf(loadstring, sizeof loadstring,
                     _("\nCPU #%d load: %d%%"),
                     cpu_number,
-                    get_cpu_load(bm, cpu_number));
+                    bubblemon_getCpuLoadPercentage(cpu_number));
