@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2004/12/09 06:30:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.271 2004/12/09 06:41:43 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -129,6 +129,7 @@
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Keywords
+     SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
