@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/14 15:27:13 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/05/17 04:34:26 form Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
@@ -7,18 +7,24 @@
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
-FAKE=No
-MASTER_SITES=	http://muquit.com/muquit/software/Count/src/wwwcount2.5/
+FAKE=		Yes
+MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/%SUBDIR%/ \
+		http://mirror.njit.edu/counter/%SUBDIR%/ \
+		http://www.neonramp.com/Count/%SUBDIR%/ \
+		http://wwwcount.iinetwork.net/%SUBDIR%/ \
+		http://www.jesterscastle.com/mirror/Count/%SUBDIR%/ \
+		http://www.quiltersdream.com/Count/%SUBDIR%/ \
+		http://muquit.com/muquit/software/Count/%SUBDIR%/
+MASTER_SITE_SUBDIR=	src/wwwcount2.5
 
 MAINTAINER=	form@openbsd.org
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 
 WWWDIR=		/var/www
 
@@ -46,6 +52,5 @@ do-install:
 		xargs chmod ${SHAREMODE}
 	@find ${PREFIX}/share/doc/wwwcount -type d -print | \
 		xargs chmod ${BINMODE}
-	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

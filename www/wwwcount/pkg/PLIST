@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/05/17 04:34:27 form Exp $
 bin/extdgts
 bin/mkstrip
 lib/wwwcount/Count.cgi
