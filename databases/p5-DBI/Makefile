@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.31 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/20 17:38:42 robert Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"unified perl interface for database access"
 
-DISTNAME=	DBI-1.38
+DISTNAME=	DBI-1.42
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBI/}
 
 HOMEPAGE=	http://dbi.perl.org/index.html
-MAINTAINER=	Shell Hung <shell@openbsd.org>
+MAINTAINER=	Michael Coulter <mjc@bitz.ca>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
