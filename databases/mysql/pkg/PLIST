@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2001/03/12 22:31:00 brad Exp $
+@comment $OpenBSD: PLIST,v 1.16 2001/03/16 21:14:44 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -181,7 +181,7 @@ share/mysql/my-huge.cnf
 share/mysql/my-large.cnf
 share/mysql/my-medium.cnf
 share/mysql/my-small.cnf
-share/mysql/mysql-3.23.34.spec
+share/mysql/mysql-${VERSION}.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys

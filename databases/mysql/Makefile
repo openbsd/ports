@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2001/03/12 22:30:59 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2001/03/16 21:14:42 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.23.34
+VERSION=	3.23.35
+DISTNAME=	mysql-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 DB_DIR?=	/var/mysql
-SUBST_VARS=	DB_DIR
+SUBST_VARS=	DB_DIR VERSION
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
