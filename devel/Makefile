@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2002/12/03 19:48:22 marcm Exp $
+# $OpenBSD: Makefile,v 1.148 2002/12/04 14:32:04 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -34,6 +34,7 @@
      SUBDIR += gconf
      SUBDIR += gengameng
      SUBDIR += gettext
+     SUBDIR += getxml
      SUBDIR += gindent
      SUBDIR += glade
      SUBDIR += glade,gnome
