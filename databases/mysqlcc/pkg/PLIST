@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
-@pkgcfl MyCC-*
+@comment $OpenBSD: PLIST,v 1.2 2004/09/18 10:39:08 espie Exp $
+@conflict MyCC-*
 bin/mysqlcc
+share/mysqlcc/
 share/mysqlcc/error.wav
 share/mysqlcc/syntax.txt
+share/mysqlcc/translations/
 share/mysqlcc/translations/Deutsch.qm
 share/mysqlcc/translations/Deutsch.ts
 share/mysqlcc/translations/French.qm
@@ -20,5 +22,3 @@ share/mysqlcc/translations/Spanish.ts
 share/mysqlcc/translations/Traditional_Chinese.qm
 share/mysqlcc/translations/Traditional_Chinese.ts
 share/mysqlcc/warning.wav
-@dirrm share/mysqlcc/translations
-@dirrm share/mysqlcc
