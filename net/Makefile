@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1998/07/01 03:38:18 form Exp $
+# $OpenBSD: Makefile,v 1.17 1998/07/02 04:19:13 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -41,7 +41,7 @@
 #    SUBDIR += libsocket++
 #    SUBDIR += llnlxdir
 #    SUBDIR += llnlxftp
-     SUBDIR += micq
+#    SUBDIR += micq
      SUBDIR += mirror
 #    SUBDIR += moxftp
 #    SUBDIR += mpd
@@ -93,7 +93,7 @@
      SUBDIR += wide-dhcp
 #    SUBDIR += wu-ftpd
      SUBDIR += xarchie
-     SUBDIR += xicq
+#    SUBDIR += xicq
 #    SUBDIR += xipmsg
 #    SUBDIR += yale-tftpd
      SUBDIR += ytalk
