@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/05 22:44:10 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -21,7 +21,6 @@ MAKE_FORTRAN?=No
 MAKE_OBJC?=No
 MAKE_JAVA?=No
 MAKE_ADA?=No
-
 
 BUILD_DEPENDS=	::devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
@@ -87,15 +86,13 @@ MULTI_PACKAGES+=-ada
 
 CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-CC=${LOCALBASE}/bin/egcc
-BUILD_DEPENDS+=:gnat-*:lang/egcs/stable,-ada
+BUILD_DEPENDS+=:gnat-*:lang/gcc/3.3,-ada
+#CONFIGURE_ENV=ADAC=${HOME}/bin/adac GNATBIND=${HOME}/x/usr/bin/gnatbind
+post-build:
+	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
+
 .endif
 CONFIGURE_ENV+=am_cv_func_iconv=no
-
-# Note: the configure target passes CFLAGS to the configure script anyways.
-
-CFLAGS=-O2 -g
-
 
 CONFIGURE_ARGS= \
 	--verbose \
