@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2003/12/02 23:51:03 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2004/05/18 14:49:56 naddy Exp $
 
 MAINTAINER?=		Peter Hessler <spambox@theapt.org>
 
@@ -8,8 +8,8 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-BUILD_DEPENDS+=	:gkrellm->=2.1.0:sysutils/gkrellm/gkrellm,-client
-RUN_DEPENDS+=	:gkrellm->=2.1.0:sysutils/gkrellm/gkrellm,-client
+BUILD_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
+RUN_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 NO_REGRESS=	Yes

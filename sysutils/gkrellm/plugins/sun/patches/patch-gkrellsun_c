@@ -1,12 +1,35 @@
-$OpenBSD: patch-gkrellsun_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
---- gkrellsun.c.orig	2003-11-02 13:07:49.000000000 +0100
-+++ gkrellsun.c	2003-11-02 13:10:23.000000000 +0100
-@@ -185,7 +185,7 @@ struct _Sun {
-     SunData data;
+$OpenBSD: patch-gkrellsun_c,v 1.2 2004/05/18 14:49:56 naddy Exp $
+--- gkrellsun.c.orig	2004-05-15 17:20:37.000000000 -0500
++++ gkrellsun.c	2004-05-15 17:21:50.000000000 -0500
+@@ -194,8 +194,8 @@ struct _Sun
+    SunData data;
  };
  
 -extern long CurrentGMTTime;
+-/*long CurrentGMTTime = 0;*/
 +extern time_t CurrentGMTTime;
++/*time_t CurrentGMTTime = 0;*/
  static Sun sununit;
  
- static void update_tooltip(Sun *sun);
+ static gchar *sun_data_dir;
+@@ -211,9 +211,9 @@ static void update_sun_data(Sun * sun)
+    glong date;
+    gint day_of_month, month, year;
+ 
+-   CurrentGMTTime = (long) time(NULL);
++   CurrentGMTTime = time(NULL);
+ 
+-   time_struc = gmtime(&(time_t)CurrentGMTTime);
++   time_struc = gmtime(&CurrentGMTTime);
+    /* It may return NULL when the year does not fit into an integer.*/
+    if (time_struc == NULL) {
+       g_message("Error:  gmtime returned NULL\n"); exit(EXIT_FAILURE);
+@@ -238,7 +238,7 @@ static void update_sun_data(Sun * sun)
+          year, month, day_of_month, date);
+    }
+ 
+-   time_struc = localtime(&(time_t)CurrentGMTTime);
++   time_struc = localtime(&CurrentGMTTime);
+    if (time_struc == NULL) {
+       g_message("Error: localtime returned NULL\n"); exit(EXIT_FAILURE);
+    }

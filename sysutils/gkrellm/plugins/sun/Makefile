@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/18 14:49:56 naddy Exp $
 
 COMMENT=	"GkrellM2 plugin to display sun rise/set times"
 
-DISTNAME=	gkrellsun-0.9.1
+DISTNAME=	gkrellsun-0.11.0
 CATEGORIES=	astro sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellsun.sourceforge.net/

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
---- src/Makefile.orig	2002-10-26 20:48:59.000000000 -0700
-+++ src/Makefile	2003-11-01 13:50:46.000000000 -0800
-@@ -1,8 +1,8 @@
- INSTALLDIR ?= /usr/local/lib/gkrellm2/plugins
+$OpenBSD: patch-src_Makefile,v 1.2 2004/05/18 14:49:56 naddy Exp $
+--- src/Makefile.orig	2004-05-17 23:23:43.000000000 -0500
++++ src/Makefile	2004-05-17 23:25:13.000000000 -0500
+@@ -8,8 +8,8 @@ INSTALLDIR ?= $(INSTALLROOT)/lib/gkrellm
  INSTALL ?= install
+ 
  
 -GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
 -GTK_LIB = `pkg-config gtk+-2.0 --libs`
@@ -12,9 +12,9 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
  
  OS_NAME=$(shell uname -s)
  
-@@ -18,15 +18,15 @@ FFTW_LIB_DIR ?=
+@@ -66,15 +66,15 @@ ifeq ($(HAVE_ESOUND),1)
+ endif
  
- FFTW_LIB = $(FFTW_LIB_DIR) -lrfftw -lfftw
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(SD_INCLUDE)
 -LIBS = $(GTK_LIB) $(SD_LIB) $(FFTW_LIB) -lm
@@ -27,17 +27,17 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
  FLAGS += -DDARWIN
  else
 -LFLAGS = -shared
-+LFLAGS += -shared
++LFLAGS += -shared -pthread
  STRIP ?= -s
  endif
  
-@@ -42,8 +42,7 @@ ifeq ($(alsa5),1)
- 	FLAGS += -DGKRELLM_ALSA5
+@@ -90,8 +90,7 @@ ifeq ($(alsa),1)
+ 	FLAGS += -DGKRELLM_ALSA
  endif
  
 -CC = gcc $(FLAGS) $(CFLAGS)
 -
-+CFLAGS += ${FLAGS}
- OBJS = gkrellmss.o oscope.o spectrum.o sdlib.o
++CFLAGS += $(FLAGS)
+ OBJS = gkrellmss.o oscope.o spectrum.o sdlib.o option.o
  
  all:	gkrellmss.so
