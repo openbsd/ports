@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/22 20:16:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/22 23:26:38 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	"programmable MUD client, with macro support and more"
 
-PKGNAME=	tinyfugue-4.0s1p3
+PKGNAME=	tinyfugue-4.0s1p2
 DISTNAME=	tf-40s1
 CATEGORIES=	net games
 
@@ -37,12 +37,12 @@ SYMLINKS=	kb-bash.tf,bind-bash.tf kb-emacs.tf,bind-emacs.tf \
 		world-q.tf,worldqueue.tf
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tinyfugue
+	${INSTALL_DATA_DIR} ${PREFIX}/share/tinyfugue
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/tf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${PREFIX}/man/man1/tf.1
-	${INSTALL_DATA} ${WRKSRC}/tf-lib/* ${PREFIX}/share/examples/tinyfugue
+	${INSTALL_DATA} ${WRKSRC}/tf-lib/* ${PREFIX}/share/tinyfugue
 .for i in ${SYMLINKS}
-	ln -s ${i:C/,.*//} ${PREFIX}/share/examples/tinyfugue/${i:C/.*,//}
+	ln -s ${i:C/,.*//} ${PREFIX}/share/tinyfugue/${i:C/.*,//}
 .endfor
 
 .include <bsd.port.mk>
