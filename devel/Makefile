@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2001/08/24 19:27:13 shell Exp $
+# $OpenBSD: Makefile,v 1.102 2001/08/26 22:24:53 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += gsl
      SUBDIR += gtl
      SUBDIR += guilib
+     SUBDIR += help2man
      SUBDIR += id-utils
      SUBDIR += jad
      SUBDIR += jakarta-ant
