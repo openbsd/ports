@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/06/25 00:16:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/06/29 05:13:06 brad Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
@@ -26,7 +26,11 @@ PERMIT_DISTFILES_FTP=	Yes
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
 SUBST_VARS=	GNU_ARCH VERSION
 
-.if ${MACHINE_ARCH:Mpowerpc}
+.include <bsd.own.mk>
+
+USE_GCC3?= No
+
+.if ${MACHINE_ARCH:Mpowerpc} && ${USE_GCC3:L} == "no"
 PATCH_LIST=	gcc-* patch-*
 .endif
 
