@@ -1,33 +1,43 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/20 08:15:15 nino Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/30 04:41:29 marcm Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
-DISTNAME=		scrollkeeper-0.2
+DISTNAME=		scrollkeeper-0.3.11
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/scrollkeeper/0.2/}
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MODULES=		gettext
-LIB_DEPENDS=		xml.9::textproc/libxml1
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/scrollkeeper/0.3/}
+EXTRACT_SUFX=		.tar.bz2
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=		gettext
+
+BUILD_DEPENDS=		:docbook->=4.1.2:textproc/docbook \
+			:intltool->=0.8.4:textproc/intltool
+RUN_DEPENDS=		:docbook->=4.1.2:textproc/docbook
+LIB_DEPENDS=		xml2.6::textproc/libxml \
+			xslt.1::textproc/libxslt
+
+USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var
+CONFIGURE_ARGS+=	--with-omfdirs=${LOCALBASE}/share/omf
 CONFIGURE_ENV=   	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-extract:
-	@find ${WRKSRC}/cl/templates -name Makefile.in | xargs \
-	perl -pi -e 's|data_link_dir = \$$\(datadir\)/scrollkeeper/Templates/|data_link_dir = |g; \
-		     s|\$$\(LN_S\) -f -n \$$\(DESTDIR\)|\$$\(LN_S\) -f |g'
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/xml; \
+	sh ${FILESDIR}/buildDocBookCatalog.openbsd
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scrollkeeper; \
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/scrollkeeper/
 
 .include <bsd.port.mk>

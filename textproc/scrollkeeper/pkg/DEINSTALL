@@ -1,15 +1,32 @@
-#! /bin/sh
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.2 2002/11/30 04:41:29 marcm Exp $
+#
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
+FILES='
+scrollkeeper.conf
+'
+
 echo
-echo "+---------------"
-echo "| If you don't have any local applications that uses scrollkeeper"
-echo "| you should now perform the following step as root:"
+echo "+--------------- $1"
+echo "| To really remove $1 from your system you should also"
+echo "| remove the configuration files from the ${SYSCONFDIR} directory"
+echo "| and perform the following step as root:"
 echo "|"
-echo "| rm -rf /var/lib/scrollkeeper"
-echo "+---------------"
+echo "| rm -rf /var/db/scrollkeeper"
+echo "|"
+echo "| If you are planning on installing $1 again in the future"
+echo "| you can leave it as it is."
+echo "|"
+echo "| FYI, the following configuration files belong to this package:"
+echo "|"
+for f in ${FILES}; do
+	echo "| ${SYSCONFDIR}/$f"
+done
+echo "+--------------- $1"
 echo
 
 exit 0

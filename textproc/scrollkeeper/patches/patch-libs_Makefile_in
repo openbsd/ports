@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- libs/Makefile.in.orig	Sat Jun  1 08:17:00 2002
++++ libs/Makefile.in	Wed Jul 24 12:30:40 2002
+@@ -259,7 +259,7 @@ distclean-libtool:
+ maintainer-clean-libtool:
+ 
+ libscrollkeeper.la: $(libscrollkeeper_la_OBJECTS) $(libscrollkeeper_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libscrollkeeper_la_LDFLAGS) $(libscrollkeeper_la_OBJECTS) $(libscrollkeeper_la_LIBADD) $(LIBS)
++	$(LINK) -version-info 1:0 -rpath $(libdir) $(libscrollkeeper_la_LDFLAGS) $(libscrollkeeper_la_OBJECTS) $(libscrollkeeper_la_LIBADD) $(LIBS)
+ 
+ tags: TAGS
+ 

@@ -1,0 +1,142 @@
+#!/bin/sh
+#
+# $OpenBSD: buildDocBookCatalog.openbsd,v 1.1 2002/11/30 04:41:29 marcm Exp $
+#
+# Based (very) loosly on: http://xmlsoft.org/buildDocBookCatalog
+
+# Setup...
+_rootcatalog="share/xml/catalog.scrollkeeper"
+_catalog="share/xml/docbook.scrollkeeper"
+ROOTCATALOG="$PREFIX/$_rootcatalog"
+CATALOG="$PREFIX/$_catalog"
+TRUEROOTCATALOG="$TRUEPREFIX/$_rootcatalog"
+TRUECATALOG="$TRUEPREFIX/$_catalog"
+docbookdir="$TRUEPREFIX/share/xml/docbook/4.1.2"
+isodir="$docbookdir/ent"
+
+echo "Installing root catalog into $ROOTCATALOG"
+echo "Installing docbook catalog into $CATALOG"
+
+# Create the catalogs if necessary...
+if [ ! -r $ROOTCATALOG ] ; then
+	$TRUEPREFIX/bin/xmlcatalog --noout --create $ROOTCATALOG
+fi
+if [ ! -r $CATALOG ] ; then
+	$TRUEPREFIX/bin/xmlcatalog --noout --create $CATALOG
+fi
+
+# docbook catalog...
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" \
+    "file://$docbookdir/dbpoolx.mod" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//DTD DocBook XML V4.1.2//EN" \
+    "file://$docbookdir/docbookx.dtd" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" \
+    "file://$docbookdir/dbcentx.mod" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" \
+    "file://$docbookdir/dbnotnx.mod" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" \
+    "file://$docbookdir/dbgenent.mod" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" \
+    "file://$docbookdir/dbhierx.mod" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
+    "file://$docbookdir/soextblx.dtd" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" \
+    "file://$docbookdir/calstblx.dtd" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "rewriteSystem" \
+    "http://www.oasis-open.org/docbook/xml/4.1.2" \
+    "file://$docbookdir" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "rewriteURI" \
+    "http://www.oasis-open.org/docbook/xml/4.1.2" \
+    "file://$docbookdir" $CATALOG
+
+# root catalog...
+$TRUEPREFIX/bin/xmlcatalog --noout --add "delegatePublic" \
+    "-//OASIS//ENTITIES DocBook XML" \
+    "file://$TRUECATALOG" $ROOTCATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "delegatePublic" \
+    "-//OASIS//DTD DocBook XML" \
+    "file://$TRUECATALOG" $ROOTCATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "delegateSystem" \
+    "http://www.oasis-open.org/docbook/" \
+    "file://$TRUECATALOG" $ROOTCATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "delegateURI" \
+    "http://www.oasis-open.org/docbook/" \
+    "file://$TRUECATALOG" $ROOTCATALOG
+
+# iso entities...
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Publishing//EN" \
+    "file://$isodir/iso-pub.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Greek Letters//EN" \
+    "file://$isodir/iso-grk1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Box and Line Drawing//EN" \
+    "file://$isodir/iso-box.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Greek Symbols//EN" \
+    "file://$isodir/iso-grk3.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN" \
+    "file://$isodir/iso-amsn.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN" \
+    "file://$isodir/iso-num.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN" \
+    "file://$isodir/iso-grk4.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Diacritical Marks//EN" \
+    "file://$isodir/iso-dia.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Monotoniko Greek//EN" \
+    "file://$isodir/iso-grk2.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN" \
+    "file://$isodir/iso-amsa.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN" \
+    "file://$isodir/iso-amso.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Russian Cyrillic//EN" \
+    "file://$isodir/iso-cyr1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES General Technical//EN" \
+    "file://$isodir/iso-tech.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN" \
+    "file://$isodir/iso-amsc.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Latin 1//EN" \
+    "file://$isodir/iso-lat1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN" \
+    "file://$isodir/iso-amsb.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Latin 2//EN" \
+    "file://$isodir/iso-lat2.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN" \
+    "file://$isodir/iso-amsr.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN" \
+    "file://$isodir/iso-cyr2.ent" $CATALOG
+
+$TRUEPREFIX/bin/xmlcatalog --noout --add "delegatePublic" \
+    "ISO 8879:1986" \
+    "file://$TRUECATALOG" $ROOTCATALOG
+
+# Scrollkeeper...
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
+    "file://$TRUEPREFIX/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" $ROOTCATALOG
+
+echo "Done."

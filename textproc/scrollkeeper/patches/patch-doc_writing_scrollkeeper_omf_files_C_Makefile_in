@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_writing_scrollkeeper_omf_files_C_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- doc/writing_scrollkeeper_omf_files/C/Makefile.in.orig	Sat Jun  1 08:17:42 2002
++++ doc/writing_scrollkeeper_omf_files/C/Makefile.in	Wed Jul 24 12:31:57 2002
+@@ -299,7 +299,7 @@ omf: omf_timestamp
+ 
+ omf_timestamp: $(omffile)
+ 	-for file in $(omffile); do \
+-	  $(top_builddir)/cl/src/scrollkeeper-preinstall $(docdir)/$(docname).xml $(srcdir)/$$file $(srcdir)/$$file.out; \
++	  LD_PRELOAD=$(top_builddir)/libs/.libs/libscrollkeeper.so.1.0 $(top_builddir)/cl/src/scrollkeeper-preinstall $(docdir)/$(docname).xml $(srcdir)/$$file $(srcdir)/$$file.out; \
+ 	done
+ 	touch omf_timestamp
+ 

@@ -1,14 +1,137 @@
-$OpenBSD: patch-configure,v 1.1 2001/09/20 01:32:03 naddy Exp $
---- configure.orig	Wed Mar 28 14:00:09 2001
-+++ configure	Thu Sep 20 03:08:20 2001
-@@ -3152,6 +3152,10 @@ fi
+$OpenBSD: patch-configure,v 1.2 2002/11/30 04:41:29 marcm Exp $
+--- configure.orig	Wed Jul 24 19:26:07 2002
++++ configure	Mon Sep  9 12:46:15 2002
+@@ -28,6 +28,7 @@ if test "X${PATH_SEPARATOR+set}" != Xset
+     *-DOS) lt_cv_sys_path_separator=';' ;;
+     *)     lt_cv_sys_path_separator=':' ;;
+   esac
++  PATH_SEPARATOR=$lt_cv_sys_path_separator
+ fi
  
- 	   fi
  
-+	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+	     LIBS="$LIBS -lintl";
-+	   fi
+@@ -1959,6 +1960,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
++  ;;
 +
- 	   if test "$gt_cv_func_gettext_libc" = "yes" \
- 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
- 	      cat >> confdefs.h <<\EOF
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -2724,7 +2735,14 @@ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case "$host_os" in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++  ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  ;;
++  esac
+ fi
+ 
+ # Allow CC to be a program name with arguments.
+@@ -3221,7 +3239,9 @@ cygwin* | mingw* | pw32* )
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -3625,10 +3645,24 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
++      export_dynamic_flag_spec='${wl}-E'
++    else
++      case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	hardcode_libdir_flag_spec='-R$libdir'
++	;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++	hardcode_libdir_flag_spec='${wl}-R$libdir'
++	;;
++      esac
++    fi
+     ;;
+ 
+   os2*)
+@@ -4105,9 +4139,22 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
++  need_lib_prefix=no
++  need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    case "$host_os" in
++    openbsd2.[89] | openbsd2.[89].*)
++      shlibpath_overrides_runpath=no
++    ;;
++    *)
++      shlibpath_overrides_runpath=yes
++    ;;
++    esac
++  else
++    shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+@@ -6279,7 +6326,7 @@ case "$host_os" in
+    *)
+ 	echo $ac_n "checking for docbook-dtd412-xml""... $ac_c" 1>&6
+ echo "configure:6282: checking for docbook-dtd412-xml" >&5
+-	if xmlcatalog /etc/xml/catalog "-//OASIS//DTD DocBook XML V4.1.2//EN" | grep "No entry" >/dev/null ; then
++	if xmlcatalog $(eval echo ${datadir})/xml/docbook/catalog "-//OASIS//DTD DocBook XML V4.1.2//EN" | grep "No entry" >/dev/null ; then
+ 		echo "* ERROR * "
+ 		echo " "
+ 		echo "Couldn't find the DocBook XML V4.1.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed. If it is installed, the package probably did not register the DTD in the catalog properly. Consult http://scrollkeeper.sourceforge.net/docbook.shtml for more information."
+@@ -6826,6 +6873,10 @@ echo "$ac_t""$gt_cv_func_gnugettext1_lib
+ #define HAVE_GETTEXT 1
+ EOF
+ 
++             if test "$gt_cv_func_gettext_libintl" = "yes"; then
++                  LIBS="$LIBS -lintl";
++             fi
++
+ 
+ 	     if test "$gt_cv_func_gnugettext1_libintl" = "yes"; then
+ 	       	       	       	       INTLLIBS="-lintl $LIBICONV"
+@@ -7325,7 +7376,7 @@ fi
+ 
+ echo "$ac_t""setting up partial database directory ..." 1>&6
+ case "$host_os" in
+-   freebsd*)
++   freebsd*|openbsd*)
+ 	SCROLLKEEPER_PARTIAL_DB_DIR=db/scrollkeeper
+ 	;;
+    *)

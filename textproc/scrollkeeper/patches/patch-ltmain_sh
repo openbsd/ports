@@ -1,48 +1,27 @@
-$OpenBSD: patch-ltmain.sh,v 1.3 2001/09/18 17:27:44 naddy Exp $
---- ltmain.sh.orig	Wed Mar 28 14:00:03 2001
-+++ ltmain.sh	Tue Sep 18 19:17:25 2001
-@@ -1079,6 +1079,17 @@ compiler."
- 	    # These systems don't actually have c library (as such)
- 	    continue
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    continue
-+	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+	    # Do not include libc_r directly, use -pthread flag.
-+	    continue
-+	    ;;
- 	  esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
-@@ -1091,6 +1102,10 @@ compiler."
- 	deplibs="$deplibs $arg"
+$OpenBSD: patch-ltmain_sh,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- ltmain.sh.orig	Sat Jun  1 08:15:26 2002
++++ ltmain.sh	Wed Jul 24 11:41:49 2002
+@@ -1037,6 +1037,17 @@ compiler."
+ 	continue
  	;;
  
-+      -?thread)
-+	deplibs="$deplibs $arg"
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
 +	;;
 +
        -module)
  	module=yes
  	continue
-@@ -1795,6 +1810,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+	*-*-openbsd*)
-+	  # Do not include libc due to us having libc/libc_r.
-+	  ;;
-         *-*-rhapsody*)
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
-@@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
+@@ -4412,40 +4423,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -52,7 +31,7 @@ $OpenBSD: patch-ltmain.sh,v 1.3 2001/09/18 17:27:44 naddy Exp $
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"

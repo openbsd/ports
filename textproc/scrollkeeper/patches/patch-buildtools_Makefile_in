@@ -1,0 +1,19 @@
+$OpenBSD: patch-buildtools_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- buildtools/Makefile.in.orig	Wed Jul 24 19:27:31 2002
++++ buildtools/Makefile.in	Sat Sep  7 18:32:30 2002
+@@ -154,13 +154,13 @@ PROGRAMS =  $(noinst_PROGRAMS)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -L$(top_builddir)/libs/.libs @LDFLAGS@
+ LIBS = @LIBS@
+ scrollkeeper_tree_separate_OBJECTS =  separate.$(OBJEXT)
+ scrollkeeper_tree_separate_LDADD = $(LDADD)
+ scrollkeeper_tree_separate_DEPENDENCIES =  \
+ $(top_builddir)/libs/libscrollkeeper.la
+-scrollkeeper_tree_separate_LDFLAGS = 
++scrollkeeper_tree_separate_LDFLAGS =  $(INTLLIBS)
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

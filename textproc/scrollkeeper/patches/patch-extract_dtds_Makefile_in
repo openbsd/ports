@@ -1,0 +1,13 @@
+$OpenBSD: patch-extract_dtds_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- extract/dtds/Makefile.in.orig	Sun Sep  8 16:53:19 2002
++++ extract/dtds/Makefile.in	Sun Sep  8 17:00:14 2002
+@@ -282,9 +282,6 @@ install-data-hook:
+ 	#
+ 
+ 	# ScrollKeeper OMF Variation DTD V1.0
+-	-/usr/bin/xmlcatalog --noout --add "public" \
+-		"-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
+-		"$(dtdsdir)/scrollkeeper-omf.dtd" $(CATALOG)
+ 
+ uninstall-local:
+ 	#

@@ -1,0 +1,20 @@
+$OpenBSD: patch-extract_src_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
+--- extract/src/Makefile.in.orig	Wed Jul 24 19:27:41 2002
++++ extract/src/Makefile.in	Sat Sep  7 18:26:19 2002
+@@ -136,6 +136,7 @@ INCLUDES = \
+ LDADD = \
+         $(XML_LIBS) \
+         $(XSLT_LIBS) \
++        $(INTLLIBS) \
+         $(top_builddir)/libs/libscrollkeeper.la
+ 
+ 
+@@ -153,7 +154,7 @@ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -L$(top_builddir)/libs/.libs @LDFLAGS@
+ LIBS = @LIBS@
+ scrollkeeper_extract_OBJECTS =  scrollkeeper-extract.$(OBJEXT)
+ scrollkeeper_extract_LDADD = $(LDADD)
