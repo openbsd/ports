@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:35:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/24 20:47:22 sturm Exp $
 @option no-default-conflict
 @conflict db->=3,<4
 bin/db_archive
@@ -18,7 +18,13 @@ include/db/db_185.h
 include/db/db_cxx.h
 lib/db/
 lib/db/libdb.a
+lib/db/libdb.la
+@comment lib/db/libdb.so
+@comment lib/db/libdb.so.3
 lib/db/libdb_cxx.a
+lib/db/libdb_cxx.la
+@comment lib/db/libdb_cxx.so
+@comment lib/db/libdb_cxx.so.3
 share/doc/db/
 share/doc/db/api_c/
 share/doc/db/api_c/c_index.html
@@ -699,5 +705,4 @@ share/examples/db/ex_lock.c
 share/examples/db/ex_mpool.c
 share/examples/db/ex_thread.c
 share/examples/db/ex_tpcb.c
-%%tcl%%
 %%SHARED%%

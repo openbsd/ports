@@ -1,7 +1,7 @@
-$OpenBSD: patch-dist_ltmain_sh,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
---- dist/ltmain.sh.orig	Sun Jul 30 20:45:53 2000
-+++ dist/ltmain.sh	Thu Aug 30 21:12:05 2001
-@@ -1079,6 +1079,17 @@ compiler."
+$OpenBSD: patch-dist_ltmain_sh,v 1.2 2004/09/24 20:47:22 sturm Exp $
+--- dist/ltmain.sh.orig	Sun Jul 30 19:45:53 2000
++++ dist/ltmain.sh	Thu Sep 16 21:06:13 2004
+@@ -1079,7 +1079,18 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
@@ -9,16 +9,17 @@ $OpenBSD: patch-dist_ltmain_sh,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
 +            # Do not include libc due to us having libc/libc_r.
 +            continue
 +            ;;
-+	  esac
+ 	  esac
 +        elif test "$arg" = "-lc_r"; then
 +          case "$host" in
 +          *-*-openbsd*)
 +            # Do not include libc_r directly, use -pthread flag.
 +            continue
 +            ;;
- 	  esac
++	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
+ 	  *-*-cygwin* | *-*-beos*)
 @@ -1091,6 +1102,10 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;

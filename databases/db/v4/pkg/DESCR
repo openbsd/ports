@@ -16,4 +16,4 @@ routers and wired and wireless network gateways choose Berkeley DB to
 manage critical information in their products.
 
 Flavors:
-	* tcl     -- adds TCL module
+	* no_tcl -- don't build package containing the TCL module

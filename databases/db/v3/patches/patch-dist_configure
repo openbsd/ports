@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
---- dist/configure.orig	2000-07-31 18:57:56.000000000 +0200
-+++ dist/configure	2003-12-07 12:08:58.000000000 +0100
+$OpenBSD: patch-dist_configure,v 1.2 2004/09/24 20:47:22 sturm Exp $
+--- dist/configure.orig	Mon Jul 31 18:58:18 2000
++++ dist/configure	Thu Sep 16 21:07:31 2004
 @@ -1602,7 +1602,6 @@ echo "configure:1601: checking libtool c
  	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
  		--no-verify $srcdir/ltmain.sh \
@@ -18,6 +18,15 @@ $OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
  	SOFLAGS="-rpath \$(libdir)"
  	o=".lo"
  fi
+@@ -1936,7 +1935,7 @@ echo "configure:1911: checking for exist
+ 		TCFLAGS="-I$TCL_PREFIX/include"
+ 	fi
+ 
+-	LIBS="$LIBS $TCL_LIB_SPEC $TCL_LIBS"
++	LIBTSO_LIBS="$TCL_LIB_SPEC $TCL_LIBS"
+ 
+ 	ADDITIONAL_LIBS="$ADDITIONAL_LIBS \$(libtso_target)"
+ 	DEFAULT_INSTALL="${DEFAULT_INSTALL} install_tcl"
 @@ -3911,7 +3910,7 @@ else
  #line 3912 "configure"
  #include "confdefs.h"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:35:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/24 20:47:22 sturm Exp $
 @option no-default-conflict
 @conflict db->=4,<5
 bin/db4_archive
@@ -1168,5 +1168,4 @@ share/examples/db4/ex_lock.c
 share/examples/db4/ex_mpool.c
 share/examples/db4/ex_thread.c
 share/examples/db4/ex_tpcb.c
-%%tcl%%
 %%SHARED%%

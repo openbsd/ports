@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.6 2004/07/31 21:17:21 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2004/09/24 20:47:21 sturm Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
+COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
 
 DISTNAME=	db-${VERSION}
+PKGNAME-tcl=	db-tcl-${VERSION}
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sleepycat.com/
 MASTER_SITES=	${HOMEPAGE}/update/snapshot/ \
@@ -16,8 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_SCRIPT=	../dist/configure
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-compat185 \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-compat185 \
 			--enable-dump185 \
 			--enable-cxx \
 			--includedir=$$\{prefix}/include/db${DEST_SUBDIR} \
@@ -27,17 +29,28 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/dist
 
 WRKBUILD=	${WRKDIST}/build_unix
 
-FLAVORS=	tcl
+PSEUDO_FLAVORS=	no_tcl
 FLAVOR?=
 
-.if ${FLAVOR:L:Mtcl}
+.if !${FLAVOR:L:Mno_tcl}
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
+MULTI_PACKAGES=	-tcl
+SUBPACKAGE?=
+
 TCL_VERSION=	8.4
-LIB_DEPENDS+=	tcl${TCL_VERSION:S/.//}::lang/tcl/${TCL_VERSION}
+LIB_DEPENDS=	tcl${TCL_VERSION:S/.//}:tcl-8.4:lang/tcl/${TCL_VERSION}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VERSION}
 CONFIGURE_ARGS+=--enable-tcl \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}
+
+.  if defined(PACKAGING)
+.    if ${SUBPACKAGE} == "-tcl"
+LIB_DEPENDS+=	db.${REVISION}:db->=${REVISION}:databases/db/v${REVISION}
+.    else
+LIB_DEPENDS=
+.    endif
+.  endif
 
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
