@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2004/12/08 04:29:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.54 2005/02/12 23:00:50 naddy Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.3
-REVISION=	31
+REVISION=	61
 VERSION=	6.3.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
@@ -112,6 +112,7 @@ WANTLIB+=	ICE SM X11 Xext Xi Xt glib gmodule m
 .elif ${FLAVOR:L:Mgtk2} && \
 	        !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk}
 LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 WANTLIB+=	ICE SM X11 Xext Xft Xinerama Xrender Xt atk-1.0.0.0 \
 		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
