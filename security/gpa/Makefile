@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/01 02:39:05 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/01 10:43:55 shell Exp $
 
-COMMENT=		"graphical interface for GnuPG"
+COMMENT=	"graphical interface for GnuPG"
 
-DISTNAME=		gpa-0.4.2
-CATEGORIES=     	security x11
-NEED_VERSION=		1.487
+VERSION=	0.4.2
+DISTNAME=	gpa-${VERSION}
+CATEGORIES=    	security x11
+NEED_VERSION=	1.487
 
-HOMEPAGE=		http://www.gnupg.org/gpa.html
+HOMEPAGE=	http://www.gnupg.org/gpa.html
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
-BUILD_DEPENDS=		gpg::security/gnupg
-RUN_DEPENDS=		${BUILD_DEPENDS}
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+BUILD_DEPENDS=	gpg::security/gnupg
+RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
