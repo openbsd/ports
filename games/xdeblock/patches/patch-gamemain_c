@@ -1,0 +1,12 @@
+$OpenBSD: patch-gamemain_c,v 1.1 2003/12/31 04:15:52 espie Exp $
+--- gamemain.c.orig	2003-12-31 05:10:44.000000000 +0100
++++ gamemain.c	2003-12-31 05:11:14.000000000 +0100
+@@ -793,7 +793,7 @@ void stageScoreCheck(void)
+ void openingString(void)
+ {
+   XRectangle   	tempRect;
+-  register	tempNum,maps,i,x;
++  register	int tempNum,maps,i,x;
+   struct timeval    time;
+   char          text[32];
+     
