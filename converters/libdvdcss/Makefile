@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2002/08/22 12:18:52 espie Exp $
-CATEGORIES=converters
+# $OpenBSD: Makefile,v 1.6 2002/10/22 21:06:27 espie Exp $
 
-COMMENT="Descramble DVDs"
-VERSION=1.2.2
-DISTNAME=libdvdcss-${VERSION}
+COMMENT=	"descramble scrambled DVDs"
 
-MASTER_SITES=http://www.videolan.org/pub/videolan/libdvdcss/${VERSION}/
+VER=		1.2.3
+DISTNAME=	libdvdcss-${VER}
+CATEGORIES=	converters
+MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvdcss/${VER}/
 
+HOMEPAGE=	http://www.videolan.org/libdvdcss/
+
+# GPL
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"Free speech issue"
+PERMIT_PACKAGE_FTP=	"Free speech issue"
+
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-
-# Free speech issue
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
-
-PERMIT_PACKAGE_CDROM=No
-PERMIT_PACKAGE_FTP=No
-
-USE_GMAKE=Yes
 
 .include <bsd.port.mk>
