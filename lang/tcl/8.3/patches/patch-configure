@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2001/10/10 01:01:44 pvalchev Exp $
---- configure.orig	Fri Apr  6 12:51:46 2001
-+++ configure	Tue Oct  9 00:02:00 2001
+$OpenBSD: patch-configure,v 1.6 2001/10/24 14:37:53 brad Exp $
+--- configure.orig	Fri Apr  6 14:51:46 2001
++++ configure	Wed Oct 24 10:25:17 2001
 @@ -5112,13 +5112,23 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -43,19 +43,7 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 01:01:44 pvalchev Exp $
  		
  fi
  rm -f conftest*
-@@ -5161,7 +5171,10 @@ else
- 	    
- fi
- 
--
-+	    if test "$do64bit" = "yes" ; then
-+		 do64bit_ok=yes
-+	    fi
-+	    
- 	    # FreeBSD doesn't handle version numbers with dots.
- 
- 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
-@@ -5848,10 +5861,9 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
+@@ -5848,10 +5858,9 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
@@ -67,7 +55,7 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 01:01:44 pvalchev Exp $
      fi
  else
      case $system in
-@@ -5935,7 +5947,7 @@ eval "STUB_LIB_FILE=libtclstub${TCL_UNSH
+@@ -5935,7 +5944,7 @@ eval "STUB_LIB_FILE=libtclstub${TCL_UNSH
  # Replace DBGX with TCL_DBGX
  eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
  

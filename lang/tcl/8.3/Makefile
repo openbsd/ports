@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/08 09:21:38 matthieu Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/24 14:37:53 brad Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -6,7 +6,7 @@ COMMENT=	"Tool Command Language"
 DISTNAME=	tcl8.3.3
 PKGNAME=	tcl-8.3.3
 CATEGORIES=	lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_3
 
@@ -31,13 +31,6 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-.if (${MACHINE_ARCH} == "mips")
-CONFIGURE_ARGS+= --disable-load
-.endif
-.if (${MACHINE_ARCH} == "sparc64")
-CONFIGURE_ARGS+= --enable-64bit
-.endif
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
@@ -49,7 +42,6 @@ REGRESS_IS_INTERACTIVE=Yes
 TESTHOME=${WRKDIR}/testhome
 REGRESS_FLAGS=	HOME=${TESTHOME}
 pre-regress:
-	mkdir -p ${TESTHOME}
-
+	@mkdir -p ${TESTHOME}
 
 .include <bsd.port.mk>
