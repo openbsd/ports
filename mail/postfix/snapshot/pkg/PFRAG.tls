@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.tls,v 1.1 2001/10/25 21:35:38 jakob Exp $
+@comment $OpenBSD: PFRAG.tls,v 1.2 2001/10/26 18:25:55 jakob Exp $
+libexec/postfix/tlsmgr
 share/doc/postfix/tls/conf.html
 share/doc/postfix/tls/index.html
 share/doc/postfix/tls/install.html
