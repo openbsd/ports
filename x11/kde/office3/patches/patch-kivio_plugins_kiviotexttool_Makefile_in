@@ -1,7 +1,7 @@
-$OpenBSD: patch-kivio_plugins_kiviotexttool_Makefile_in,v 1.1 2002/09/12 02:19:57 brad Exp $
---- kivio/plugins/kiviotexttool/Makefile.in.orig	Wed Sep 11 20:27:53 2002
-+++ kivio/plugins/kiviotexttool/Makefile.in	Wed Sep 11 20:28:04 2002
-@@ -299,7 +299,7 @@ EXTRA_DIST = \
+$OpenBSD: patch-kivio_plugins_kiviotexttool_Makefile_in,v 1.2 2003/01/28 12:36:45 espie Exp $
+--- kivio/plugins/kiviotexttool/Makefile.in.orig	Tue Dec  3 20:00:51 2002
++++ kivio/plugins/kiviotexttool/Makefile.in	Tue Jan 28 13:29:52 2003
+@@ -306,7 +306,7 @@ EXTRA_DIST = \
  ####                  END KDEStudio part                  ####
  #2########################################################!@#$
  libkiviotexttool_la_LDFLAGS = -module $(KDE_PLUGIN)

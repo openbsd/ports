@@ -1,7 +1,7 @@
-$OpenBSD: patch-kivio_plugins_kivioselecttool_Makefile_in,v 1.1 2002/09/12 02:19:57 brad Exp $
---- kivio/plugins/kivioselecttool/Makefile.in.orig	Wed Sep 11 20:32:26 2002
-+++ kivio/plugins/kivioselecttool/Makefile.in	Wed Sep 11 20:32:51 2002
-@@ -296,7 +296,7 @@ EXTRA_DIST = \
+$OpenBSD: patch-kivio_plugins_kivioselecttool_Makefile_in,v 1.2 2003/01/28 12:36:45 espie Exp $
+--- kivio/plugins/kivioselecttool/Makefile.in.orig	Tue Dec  3 20:00:51 2002
++++ kivio/plugins/kivioselecttool/Makefile.in	Tue Jan 28 13:29:52 2003
+@@ -302,7 +302,7 @@ EXTRA_DIST = \
  ####                  END KDEStudio part                  ####
  #2########################################################!@#$
  libkivioselecttool_la_LDFLAGS = -module $(KDE_PLUGIN)

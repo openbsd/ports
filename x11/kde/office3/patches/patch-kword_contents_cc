@@ -1,0 +1,62 @@
+$OpenBSD: patch-kword_contents_cc,v 1.1 2003/01/28 12:36:45 espie Exp $
+--- kword/contents.cc.orig	Mon Dec  2 22:06:01 2002
++++ kword/contents.cc	Tue Jan 28 13:31:12 2003
+@@ -134,7 +134,7 @@ KoTextCursor * KWInsertTOCCommand::remov
+     // We start from the end, to avoid the parag shifting problem
+     KoTextParag *p = textdoc->lastParag();
+     KoTextCursor *posOfTable=0L;
+-    KWTextParag *posOfToc=0L;
++    KoTextParag *posOfToc=0L;
+ 
+     while ( p )
+     {
+@@ -142,8 +142,6 @@ KoTextCursor * KWInsertTOCCommand::remov
+         if ( parag->style() && ( parag->style()->name().startsWith( "Contents Head" ) ||
+             parag->style()->name() == "Contents Title" ) )
+         {
+-            posOfToc=parag;
+-
+             kdDebug() << "KWContents::createContents Deleting paragraph " << p << " " << p->paragId() << endl;
+             // This paragraph is part of the TOC -> remove
+ 
+@@ -172,6 +170,7 @@ KoTextCursor * KWInsertTOCCommand::remov
+             delete p;
+             kdDebug() << "KWInsertTOCCommand::removeTOC " << p << " deleted" << endl;
+             p = next;
++            posOfToc = p;
+             kdDebug() << "KWInsertTOCCommand::removeTOC prev=" << prev << " p=" << p << endl;
+             // Fix parag chain
+             if ( prev )
+@@ -179,6 +178,8 @@ KoTextCursor * KWInsertTOCCommand::remov
+                 prev->setNext( p );
+                 if ( p )
+                     p->setParagId( prev->paragId() + 1 );
++                else
++                    posOfToc = prev;
+             }
+             else
+             {
+@@ -190,6 +191,7 @@ KoTextCursor * KWInsertTOCCommand::remov
+                 {
+                     textdoc->clear( true ); // recreate empty parag.
+                     cursor->setParag( textdoc->firstParag() );
++                    posOfToc = textdoc->firstParag();
+                     break;
+                 }
+             }
+@@ -198,12 +200,12 @@ KoTextCursor * KWInsertTOCCommand::remov
+         p = p->prev();
+     }
+     textdoc->invalidate();
+-     if(posOfToc)
+-     {
++    if(posOfToc)
++    {
+          posOfTable=new KoTextCursor( textdoc );
+          posOfTable->setParag(posOfToc  );
+          posOfTable->setIndex( 0 );//start of parag
+-     }
++    }
+     // ### TODO propagate parag ID changes.
+     return posOfTable;
+ }

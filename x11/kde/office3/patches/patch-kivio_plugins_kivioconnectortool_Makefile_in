@@ -1,7 +1,7 @@
-$OpenBSD: patch-kivio_plugins_kivioconnectortool_Makefile_in,v 1.1 2002/09/12 02:19:57 brad Exp $
---- kivio/plugins/kivioconnectortool/Makefile.in.orig	Wed Sep 11 20:26:22 2002
-+++ kivio/plugins/kivioconnectortool/Makefile.in	Wed Sep 11 20:26:36 2002
-@@ -300,7 +300,7 @@ EXTRA_DIST = \
+$OpenBSD: patch-kivio_plugins_kivioconnectortool_Makefile_in,v 1.2 2003/01/28 12:36:45 espie Exp $
+--- kivio/plugins/kivioconnectortool/Makefile.in.orig	Tue Dec  3 20:00:51 2002
++++ kivio/plugins/kivioconnectortool/Makefile.in	Tue Jan 28 13:29:52 2003
+@@ -306,7 +306,7 @@ EXTRA_DIST = \
  ####                  END KDEStudio part                  ####
  #2########################################################!@#$
  libkivioconnectortool_la_LDFLAGS = -module $(KDE_PLUGIN)
