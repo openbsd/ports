@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2001/07/05 03:29:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.80 2001/07/05 20:12:09 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += gpa
      SUBDIR += heimdal
      SUBDIR += heimdal,no_x11
+     SUBDIR += hlfl
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
