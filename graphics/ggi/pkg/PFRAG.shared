@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/09/15 00:50:08 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/01/14 19:57:05 todd Exp $
 lib/ggi/default/color.so
 lib/ggi/default/ilbm.so
 lib/ggi/default/iplanar_2p.so
@@ -12,10 +12,12 @@ lib/ggi/default/linear_4.so
 lib/ggi/default/linear_4_r.so
 lib/ggi/default/linear_8.so
 lib/ggi/default/planar.so
+lib/ggi/default/pseudo_stubs.so
 lib/ggi/default/stubs.so
 lib/ggi/default/text_16.so
 lib/ggi/default/text_32.so
 lib/ggi/display/X.so
+lib/ggi/display/auto.so
 lib/ggi/display/file.so
 lib/ggi/display/ipc.so
 lib/ggi/display/mansync.so
@@ -34,4 +36,4 @@ lib/ggi/helper/helper_x_dga.so
 lib/ggi/helper/helper_x_evi.so
 lib/ggi/helper/helper_x_shm.so
 lib/ggi/helper/helper_x_vidmode.so
-@lib lib/libggi.so.2.4
+@lib lib/libggi.so.2.1

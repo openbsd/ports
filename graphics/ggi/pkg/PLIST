@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/08/03 13:22:01 todd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/01/14 19:57:05 todd Exp $
 bin/cube3d
 bin/ggiteleserver
 bin/monitest
 include/ggi/
 include/ggi/display/
 include/ggi/display/aa.h
+include/ggi/display/auto.h
 include/ggi/display/directx.h
 include/ggi/display/fbdev.h
 include/ggi/display/file.h
@@ -20,6 +21,7 @@ include/ggi/display/modelist.h
 include/ggi/display/monotext.h
 include/ggi/display/multi.h
 include/ggi/display/palemu.h
+include/ggi/display/quartz.h
 include/ggi/display/sub.h
 include/ggi/display/svgalib.h
 include/ggi/display/tele.h
@@ -32,6 +34,7 @@ include/ggi/display/xcommon.h
 include/ggi/display/xevi.h
 include/ggi/display/xf86dga.h
 include/ggi/display/xlib.h
+include/ggi/ggi-defs.h
 include/ggi/ggi-unix.h
 include/ggi/ggi.h
 include/ggi/ggi_ext.h
@@ -44,6 +47,8 @@ include/ggi/internal/ggilibinit.h
 include/ggi/internal/internal.h
 include/ggi/internal/plat.h
 include/ggi/internal/structs.h
+include/ggi/internal/triple-int.h
+include/ggi/internal/unit.h
 include/ggi/ll.h
 include/ggi/types.h
 lib/ggi/
@@ -74,6 +79,8 @@ lib/ggi/default/linear_8.a
 lib/ggi/default/linear_8.la
 lib/ggi/default/planar.a
 lib/ggi/default/planar.la
+lib/ggi/default/pseudo_stubs.a
+lib/ggi/default/pseudo_stubs.la
 lib/ggi/default/stubs.a
 lib/ggi/default/stubs.la
 lib/ggi/default/text_16.a
@@ -83,6 +90,8 @@ lib/ggi/default/text_32.la
 lib/ggi/display/
 lib/ggi/display/X.a
 lib/ggi/display/X.la
+lib/ggi/display/auto.a
+lib/ggi/display/auto.la
 lib/ggi/display/file.a
 lib/ggi/display/file.la
 lib/ggi/display/ipc.a
@@ -123,6 +132,8 @@ lib/ggi/helper/helper_x_vidmode.la
 lib/libggi.a
 lib/libggi.la
 @man man/man1/cube3d.1
+@man man/man1/demo.1
+@man man/man1/ggi-demo.1
 @man man/man1/ggiteleserver.1
 @man man/man1/monitest.1
 @man man/man3/ggiAddEventMask.3
@@ -215,6 +226,8 @@ lib/libggi.la
 @man man/man3/ggiUnmapPixel.3
 @man man/man3/ggiUnpackPixels.3
 @man man/man3/ggi_color.3
+@man man/man3/ggi_colormap.3
+@man man/man3/ggi_colormap_region.3
 @man man/man3/ggi_coord.3
 @man man/man3/ggi_directbuffer.3
 @man man/man3/ggi_graphtype.3
@@ -226,12 +239,13 @@ lib/libggi.la
 @man man/man3/ggi_samplelinearbuffer.3
 @man man/man3/ggi_sampleplanarbuffer.3
 @man man/man7/display-aa.7
+@man man/man7/display-auto.7
 @man man/man7/display-dga.7
 @man man/man7/display-directx.7
-@man man/man7/display-directxnt.7
 @man man/man7/display-fbdev.7
 @man man/man7/display-file.7
 @man man/man7/display-glide.7
+@man man/man7/display-mansync.7
 @man man/man7/display-memory.7
 @man man/man7/display-monotext.7
 @man man/man7/display-multi.7
@@ -239,6 +253,7 @@ lib/libggi.la
 @man man/man7/display-sub.7
 @man man/man7/display-svgalib.7
 @man man/man7/display-tele.7
+@man man/man7/display-terminfo.7
 @man man/man7/display-tile.7
 @man man/man7/display-trueemu.7
 @man man/man7/display-vcsa.7
@@ -248,6 +263,7 @@ lib/libggi.la
 share/doc/ggi/
 share/doc/ggi/README
 share/examples/ggi/
+@sample ${SYSCONFDIR}/ggi/
 share/examples/ggi/libggi.conf.example
 @sample ${SYSCONFDIR}/ggi/libggi.conf
 %%SHARED%%
