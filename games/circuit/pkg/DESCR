@@ -1,5 +1,5 @@
 circuit is a small game that shows circles with half-connecting lines.
-By clicking on a circle, you can rotate all the lines protuding from
+By clicking on a circle, you can rotate all the lines protruding from
 the circle.
 
 The goal is to make all half-lines connect at the same time.
