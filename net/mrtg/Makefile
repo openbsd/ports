@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/15 05:04:56 turan Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/03 12:08:53 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=	mrtg-2.8.11
 CATEGORIES=	net

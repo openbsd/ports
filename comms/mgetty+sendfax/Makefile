@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/11 00:37:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/03 12:07:03 turan Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
+
+BROKEN=		installs files in /etc automatically
 
 DISTNAME=	mgetty1.1.21-Jul24
 PKGNAME=	mgetty-1.1.21

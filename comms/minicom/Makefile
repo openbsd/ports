@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2000/02/15 05:04:05 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.20 2000/03/03 12:08:04 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
