@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 1999/03/28 21:51:48 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/04/22 01:07:46 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.51.2
+DISTNAME=	WindowMaker-0.53.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
-DATAFILES=	WindowMaker-data.tar.gz
+DATAFILES=	WindowMaker-extra-0.1.tar.gz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 NEED_VERSION=	1.73
@@ -17,21 +17,29 @@ LIB_DEPENDS=	PropList:${PORTSDIR}/devel/libproplist \
 		png:${PORTSDIR}/graphics/png \
 		gif:${PORTSDIR}/graphics/giflib
 
+# The files placed in $SYSCONFDIR are better placed in $PREFIX/share/WindowMaker
+SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
 		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
-		--with-libs-from="-L${PREFIX}/lib" --disable-debug
+		--with-libs-from="-L${PREFIX}/lib" --disable-debug 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib"
 
-post-install:	
-		@${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
-		${PREFIX}/share/WindowMaker/Pixmaps
-		@${LDCONFIG} -m ${PREFIX}/lib
-		@echo
-		@echo "Note: Every user must run /usr/local/bin/wmaker.inst"
-		@echo "      before running Window Maker"
-		@echo
+post-configure:
+	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
+		./configure --prefix=${PREFIX}
+
+post-install:
+	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
+		${MAKE} install
+	@if [ -d /etc/WindowMaker ] ; then \
+	  ${ECHO} " "; \
+	  ${ECHO} "***"; \
+	  ${ECHO} "The directory /etc/WindowMaker may be removed."; \
+	  ${ECHO} "***"; \
+	  ${ECHO} " "; \
+	fi
 
 .include <bsd.port.mk>
