@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/08/21 04:55:14 kevlo Exp $
 bin/edsio-comp
 bin/xdelta
 bin/xdelta-config
@@ -10,10 +11,8 @@ info/xdelta.info
 @exec install-info %D/info/xdelta.info %D/info/dir
 lib/libedsio.a
 lib/libedsio.la
-lib/libedsio.so.0.0
 lib/libxdelta.a
 lib/libxdelta.la
-lib/libxdelta.so.11.1
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/xdelta.1
 share/aclocal/xdelta.m4

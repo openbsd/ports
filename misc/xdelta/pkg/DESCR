@@ -4,3 +4,5 @@ I have placed version 0.20 of Xdelta, a binary delta generator and
 prototype RCS-replacement program at:
 
   ftp://ftp.xcf.berkeley.edu/pub/xdelta/xdelta-0.20.tar.gz
+
+WWW: ${HOMEPAGE}
