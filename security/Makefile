@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/02/25 16:55:57 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 1999/03/12 17:56:48 brad Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -22,10 +22,12 @@
      SUBDIR += pgp5
      SUBDIR += pgplib
 #    SUBDIR += pidentd
+     SUBDIR += portscanner
      SUBDIR += rsaref
      SUBDIR += socks5
      SUBDIR += ssh
      SUBDIR += stel
+     SUBDIR += strobe
 #    SUBDIR += sudo
 #    SUBDIR += super
      SUBDIR += swatch
