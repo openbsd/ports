@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2002/05/15 22:27:01 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.7 2002/05/16 11:58:48 espie Exp $
 --- configure.orig	Mon May 13 22:52:10 2002
-+++ configure	Wed May 15 00:26:49 2002
++++ configure	Thu May 16 00:42:02 2002
 @@ -1538,7 +1538,7 @@ else
  fi
  echores "$_sys_soundcard"
@@ -18,6 +18,15 @@ $OpenBSD: patch-configure,v 1.6 2002/05/15 22:27:01 pvalchev Exp $
       else
         _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/dsp"'
       fi
+@@ -2720,7 +2721,7 @@ echores "$_sgiaudio"
+ 
+ 
+ echocheck "VCD support"
+-if linux || bsdos || freebsd || netbsd || sunos ; then
++if linux || bsdos || freebsd || netbsd || openbsd || sunos ; then
+   _inputmodules="vcd $_inputmodules"
+   _def_vcd='#define HAVE_VCD 1'
+   echores "ok"
 @@ -3614,7 +3615,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
  _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
  bsdos && _ld_arch="$_ld_arch -ldvd"
