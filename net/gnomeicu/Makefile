@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/03 19:26:34 nino Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/03 22:45:33 pvalchev Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
@@ -6,7 +6,7 @@ DISTNAME=		gnomeicu-${V}
 CATEGORIES=		net x11/gnome
 
 HOMEPAGE=		http://gnomeicu.sourceforge.net
-MAINTAINER=		Jim Geovedi <negative@magnesium.net>
+MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnomeicu/}
 
