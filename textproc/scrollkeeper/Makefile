@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/18 15:53:13 naddy Exp $
 
-COMMENT=		"the Scrollkeeper Open Documentation Cataloging System"
+COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 V=			0.2
 DISTNAME=		scrollkeeper-${V}
 CATEGORIES=		textproc
@@ -19,11 +19,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	 	Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var
 CONFIGURE_ENV=   	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
 	@find ${WRKSRC}/cl/templates -name Makefile.in | xargs \
