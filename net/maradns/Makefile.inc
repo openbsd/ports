@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.2 2002/11/22 02:44:05 margarida Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2004/10/31 19:04:56 sturm Exp $
 
 COMMENT=		"simple and performant DNS server"
 
 DISTNAME=		maradns-${VERSION}
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.maradns.org
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
+HOMEPAGE=		http://www.maradns.org/
 
 # stable: Public Domain
 # devel: BSD license

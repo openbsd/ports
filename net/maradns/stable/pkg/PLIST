@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/18 13:01:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/10/31 19:04:57 sturm Exp $
+@newgroup _maradns:537
+@newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
 @conflict maradns->=1.1
 bin/askmara
 bin/getzone
@@ -18,14 +20,6 @@ share/doc/maradns/changelog.html
 share/doc/maradns/changelog.txt
 share/doc/maradns/credits.txt
 share/doc/maradns/download.html
-share/doc/maradns/examples/
-share/doc/maradns/examples/Makefile
-share/doc/maradns/examples/example_authoritative_mararc.txt
-share/doc/maradns/examples/example_csv1
-share/doc/maradns/examples/example_csv1.txt
-share/doc/maradns/examples/example_full_mararc
-share/doc/maradns/examples/example_mararc
-share/doc/maradns/examples/example_recursive_mararc.txt
 share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
 share/doc/maradns/files.txt
@@ -44,6 +38,10 @@ share/doc/maradns/maradns.pgp.key
 share/doc/maradns/misc/
 share/doc/maradns/misc/0README
 share/doc/maradns/misc/RFC1035.compliance
+share/doc/maradns/misc/TODO.done
+share/doc/maradns/misc/TODO.first
+share/doc/maradns/misc/TODO.second
+share/doc/maradns/misc/TODO.third
 share/doc/maradns/misc/cache.poison.protection
 share/doc/maradns/misc/decompress_api.abw
 share/doc/maradns/misc/decompress_api.html
@@ -175,3 +173,11 @@ share/doc/maradns/tutorial/man.mararc.html
 share/doc/maradns/tutorial/recordtypes.html
 share/doc/maradns/tutorial/recursive.html
 share/doc/maradns/tutorial/tutorial.html
+share/examples/maradns/
+share/examples/maradns/Makefile
+share/examples/maradns/example_authoritative_mararc.txt
+share/examples/maradns/example_csv1
+share/examples/maradns/example_csv1.txt
+share/examples/maradns/example_full_mararc
+share/examples/maradns/example_mararc
+share/examples/maradns/example_recursive_mararc.txt
