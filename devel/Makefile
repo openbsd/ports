@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1998/11/10 06:22:23 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1998/11/24 07:36:35 jasoni Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -29,6 +29,7 @@
 #    SUBDIR += gdb
 #    SUBDIR += gdbtk
      SUBDIR += gindent
+     SUBDIR += gettext
      SUBDIR += gmake
      SUBDIR += id-utils
 #    SUBDIR += ilu
