@@ -1,0 +1,5 @@
+libIDL is a front-end for CORBA 2.2 IDL and Netscape's XPIDL,
+currently used in the GNOME project (bundled with ORBit), and
+the Mozilla project.
+
+WWW: ${HOMEPAGE}

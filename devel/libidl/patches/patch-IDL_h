@@ -1,0 +1,12 @@
+$OpenBSD: patch-IDL_h,v 1.1.1.1 2002/03/24 20:32:30 pvalchev Exp $
+--- IDL.h.orig	Sun Oct 17 12:04:11 1999
++++ IDL.h	Sun Mar 24 13:04:21 2002
+@@ -28,7 +28,7 @@
+ 
+ /* Try to find wchar_t support */
+ #include <stdlib.h>
+-#if 1 /* HAVE_WCHAR_H */
++#if 0 /* HAVE_WCHAR_H */
+ #  include <wchar.h>
+ #endif
+ #if 0 /* HAVE_WCSTR_H */
