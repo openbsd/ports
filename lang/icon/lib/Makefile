@@ -1,11 +1,13 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:27:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/07/03 13:17:23 espie Exp $
 
 COMMENT=	"useful and interesting programs for Icon"
 
-VERSION=9.3.3
-DISTNAME=icon-lib-${VERSION}
-DIST_SUBDIR=icon/${VERSION}
+VERSION=9.4
+DISTNAME=	icon.v940src
+PKGNAME=	icon-lib-${VERSION}
+#DIST_SUBDIR=icon/${VERSION}
+DISTFILES=	icon.v940src.tgz
 
 CATEGORIES=lang
 NEED_VERSION=	1.402
@@ -17,23 +19,24 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
+WRKDIST=${WRKDIR}/${DISTNAME}/ipl
 # if you really want, the ipl.tgz file holds precompiled u1/u2 files
 # however, you will still have to grab the source for the necessary
 # includes, especially for the graphics API.
 # Anyway, since source is available, using pre-compiled binaries is not
 # OpenBSD policy...
 
-MASTER_SITES=ftp://ftp.cs.arizona.edu/icon/library/
-DISTFILES=bipl.tgz info.tgz
-SUPDISTFILES=gipl.tgz
-WRKDIST=	${WRKDIR}
+#MASTER_SITES=ftp://ftp.cs.arizona.edu/icon/library/
+#DISTFILES=bipl.tgz info.tgz
+#SUPDISTFILES=gipl.tgz
+#WRKDIST=	${WRKDIR}
 
 BUILD_DEPENDS=${PREFIX}/bin/icont::lang/icon/interp
 RUN_DEPENDS=${PREFIX}/bin/iconx::lang/icon/interp
 
 # temporary values for building programs
-IPATH=${WRKSRC}/gprocs ${WRKSRC}/procs
-LPATH=${WRKSRC}/gincl ${WRKSRC}/incl
+IPATH=${WRKSRC}/gprocs:${WRKSRC}/procs:${LOCALBASE}/share/ipl/ucode
+LPATH=${WRKSRC}/gincl:${WRKSRC}/incl
 BUILDENV=IPATH="${IPATH}"  LPATH="${LPATH}"; export IPATH LPATH;
 
 IPL=${PREFIX}/share/ipl
@@ -42,25 +45,27 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
 PATCH_LIST=patch-progs*
-.else
-DISTFILES+=gipl.tgz
 .endif
+
+post-extract:
+	mv ${WRKSRC}/procs/wifisd.icn ${WRKSRC}/gprocs
+	mv ${WRKSRC}/progs/wif2isd.icn ${WRKSRC}/gprogs
 
 do-build:
 # first build library
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Ucode 
+	${BUILDENV} cd ${WRKSRC}/procs && icont -usc *.icn
 .if empty(FLAVOR:L:Mno_x11)
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Ugcode
+	${BUILDENV} cd ${WRKSRC}/gprocs && icont -usc *.icn
 .endif
 # then build programs using library
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Icode
+	${BUILDENV} cd ${WRKSRC}/progs && for i in *.icn; do echo $$i; icont -us $$i; done
 .if empty(FLAVOR:L:Mno_x11)
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Igcode
+	${BUILDENV} cd ${WRKSRC}/gprogs && for i in *.icn; do icont -us $$i; done
 .endif
 # finally build some supplementary packages
 .if empty(FLAVOR:L:Mno_x11)
-	${BUILDENV} cd ${WRKSRC}/gpacks/vib && make
-	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont xtiles.icn
+	${BUILDENV} cd ${WRKSRC}/gpacks/vib && ${MAKE}
+	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -us xtiles.icn
 .endif
 
 do-install:
