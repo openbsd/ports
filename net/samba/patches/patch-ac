@@ -1,19 +1,19 @@
-*** nmbd_packets.c.orig	Tue Apr 21 17:54:56 1998
---- nmbd_packets.c	Tue Apr 21 17:55:40 1998
+*** nmbd_packets.c.orig	Wed May 13 11:11:50 1998
+--- nmbd_packets.c	Wed May 13 11:14:50 1998
 ***************
-*** 315,321 ****
+*** 337,343 ****
     struct nmb_packet *nmb = &packet->packet.nmb;
-    char second_ip_buf[25];
+    fstring second_ip_buf;
   
-!   strcpy(second_ip_buf, inet_ntoa(packet->ip));
+!   fstrcpy(second_ip_buf, inet_ntoa(packet->ip));
   
     nmb->header.opcode = NMB_NAME_MULTIHOMED_REG_OPCODE;
     nmb->header.arcount = 1;
---- 315,321 ----
+--- 337,343 ----
     struct nmb_packet *nmb = &packet->packet.nmb;
-    char second_ip_buf[25];
+    fstring second_ip_buf;
   
-!   strcpy(second_ip_buf, (char *)inet_ntoa(packet->ip));
+!   fstrcpy(second_ip_buf, (char *)inet_ntoa(packet->ip));
   
     nmb->header.opcode = NMB_NAME_MULTIHOMED_REG_OPCODE;
     nmb->header.arcount = 1;
