@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Sat Jan  8 20:18:53 2000
++++ Makefile.in	Thu Jan 13 19:55:37 2000
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -29,7 +29,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -331,7 +333,7 @@
+@@ -331,14 +333,18 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -38,19 +38,19 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -340,6 +342,11 @@
+ ${TCL_LIB_FILE}: ${OBJS}
+ 	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
- 	$(RANLIB) ${TCL_LIB_FILE}
- 
+-	$(RANLIB) ${TCL_LIB_FILE}
++
 +libtcl80.a: ${OBJS}
 +	rm -f libtcl80.a
 +	ar cr libtcl80.a ${OBJS}
 +	$(RANLIB) libtcl80.a
-+
+ 
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
- # extensions.  used for the Tcl Plugin.  -- dl
-@@ -433,7 +440,7 @@
+@@ -433,7 +439,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -59,13 +59,14 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -447,14 +454,19 @@
+@@ -445,16 +451,19 @@
+ 	    done;
+ 	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
- 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
+-	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing libtcl80.a"
 +	@$(INSTALL_DATA) libtcl80.a $(LIB_INSTALL_DIR)/libtcl80.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl80.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl80.a
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
@@ -82,7 +83,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -472,8 +484,15 @@
+@@ -472,8 +481,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -100,7 +101,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -525,6 +544,13 @@
+@@ -525,6 +541,13 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
