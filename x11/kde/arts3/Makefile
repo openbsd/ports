@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/06/12 19:16:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2003/06/16 17:46:06 sturm Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 COMMENT-gmcop=		"glib support for mcop"
@@ -18,7 +18,8 @@ CONFIGURE_ENV+=ac_cv_path_PKG_CONFIG=no
 .else
 MULTI_PACKAGES=-gmcop
 PKGNAME-gmcop=	arts-gmcop-1.1.2
-BUILD_DEPENDS=::devel/glib2
+BUILD_DEPENDS=	::devel/glib2 \
+		::devel/pkgconfig
 .endif
 
 SUBPACKAGE?=
