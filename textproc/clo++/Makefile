@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/27 01:21:02 brad Exp $
 
 COMMENT=	"command line parser generator"
 
@@ -6,8 +6,6 @@ DISTNAME=	clo++-0.3.0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
