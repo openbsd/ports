@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.20 2003/01/28 17:31:55 margarida Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
-VERSION=		2.1.5
+VERSION=		2.1.6
 DISTNAME=		hypermail-${VERSION}
 CATEGORIES=		mail www
 
@@ -22,9 +22,10 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/src/pcre
 CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail
 
+ALL_TARGET=		hypermail
 COPTS=			-DHAVE_VFSCANF
-
 MAKE_FLAGS=		WARNINGS=''
+LDFLAGS=		-Lpcre
 
 FLAVORS=		gdbm
 FLAVOR?=
