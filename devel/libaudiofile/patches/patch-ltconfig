@@ -1,6 +1,6 @@
---- ltconfig.orig	Fri Dec  8 16:05:55 2000
-+++ ltconfig	Sun Feb 18 10:09:38 2001
-@@ -1105,6 +1105,9 @@
+--- ltconfig.orig	Thu Jul 19 22:06:24 2001
++++ ltconfig	Fri Jul 20 09:57:42 2001
+@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1396,10 +1399,21 @@
+@@ -1402,10 +1405,21 @@ else
      ;;
  
    openbsd*)
@@ -34,7 +34,7 @@
      ;;
  
    os2*)
-@@ -1997,13 +2011,10 @@
+@@ -2021,13 +2035,10 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
