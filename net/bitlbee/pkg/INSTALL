@@ -1,13 +1,14 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/06/22 10:09:57 sturm Exp $
 #
 # Pre/post-installation setup of Bitlbee
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-BITLBEEUSER=bitlbee
-BITLBEEGROUP=bitlbee
+BITLBEEUSER=_bitlbee
+BITLBEEGROUP=_bitlbee
+ID=509
 
 do_notice_existingdir() {
 echo <<EOF
@@ -32,14 +33,14 @@ do_usergroup_install() {
     echo "===> Using $BITLBEEGROUP group for Bitlbee"
   else
     echo "===> Creating $BITLBEEGROUP group for Bitlbee"
-    groupadd $BITLBEEGROUP
+    groupadd -g $ID $BITLBEEGROUP
   fi
   userinfo -e $BITLBEEUSER
   if [ $? -eq 0 ]; then
     echo "===> Using $BITLBEEUSER user for Bitlbee"
   else
     echo "===> Creating $BITLBEEUSER user for Bitlbee"
-    useradd -g $BITLBEEGROUP -d /nonexistent -L daemon -c 'Bitlbee Account' -s /sbin/nologin $BITLBEEUSER
+    useradd -g $BITLBEEGROUP -d /nonexistent -L daemon -c 'Bitlbee Account' -s /sbin/nologin -u $ID $BITLBEEUSER
   fi
 }
 
@@ -52,7 +53,7 @@ cat <<EOF
 
 To enable bitlbee you have to add a line like:
 
-    127.0.0.1:6667    stream  tcp     nowait bitlbee /usr/local/libexec/bitlbee bitlbee
+    127.0.0.1:6667    stream  tcp     nowait _bitlbee /usr/local/libexec/bitlbee bitlbee
 
 to your /etc/inetd.conf and restart inetd with
 
@@ -62,6 +63,22 @@ to your /etc/inetd.conf and restart inetd with
 EOF
 }
 
+do_warning() {
+cat <<EOF
++---------------
+| WARNING!
+|
+| This port has changed the user/group it uses from bitlbee to ${BITLBEEUSER}.
+| If you installed this port before, ensure all permissions are set correctly
+| with:
+|
+|   # ls -ld ${DB_DIR}
+|   # chown -R ${BITLBEEUSER}:${BITLBEEGROUP} ${DB_DIR}
+|
+| And don't forget to remove the old user/group.
++---------------
+EOF
+}
 # Verify/process the command
 #
 case $2 in
@@ -76,6 +93,7 @@ case $2 in
 	  do_database_install
 	fi
 	  do_manual_notice
+	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

@@ -1,13 +1,13 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/22 10:09:57 sturm Exp $
 #
 # Bitlbee de-installation
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-BITLBEEUSER=bitlbee
-BITLBEEGROUP=bitlbee
+BITLBEEUSER=_bitlbee
+BITLBEEGROUP=_bitlbee
 
 cat <<EOF
 +---------------

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/22 10:09:57 sturm Exp $
 COMMENT=		"IRC-proxy to connect to icq, aol, msn and jabber"
 
 DISTNAME=		bitlbee-0.73
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lintux.cx/bitlbee.html

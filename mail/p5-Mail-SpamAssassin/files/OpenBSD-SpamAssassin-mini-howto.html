@@ -7,10 +7,10 @@ making use of the spamc/spamd combination.
 
 <p>First let's add a user for the spamd.
 
-<pre><b># useradd -s /usr/bin/false -b /nonexistent spamdaemon</b></pre>
+<pre><b># useradd -s /usr/bin/false -b /nonexistent -u 506 _spamdaemon</b></pre>
 
 <p>Add this line to <b><code>/etc/rc.local</b></code>:
-<pre><b># /usr/local/bin/spamd -u spamdaemon -d -L -p 4321 -x</b></pre>
+<pre><b># /usr/local/bin/spamd -u _spamdaemon -d -L -p 4321 -x</b></pre>
 <br> Use that same line to start spamd now.
 
 <p>The final step: put this at the top of your <b><code>.procmailrc</b></code>.
