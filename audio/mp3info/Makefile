@@ -1,30 +1,22 @@
-# OpenBSD Makefile for:			mp3info
-# Version required:			0.2.15
-# Date created:				May 22, 1999
-# Whom:					Angelos D. Keromytis
-#
-# $Id: Makefile,v 1.3 1999/08/18 01:54:08 angelos Exp $
-# $OpenBSD: Makefile,v 1.3 1999/08/18 01:54:08 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:17:27 brad Exp $
 
-DISTNAME=		mp3info-0.2.16
-CATEGORIES=		audio
+DISTNAME=	mp3info-0.2.16
+CATEGORIES=	audio
+MASTER_SITES=	ftp://bimbo.hive.no/pub/mp3info/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= apps/sound/editors
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=	angelos@openbsd.org
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="${CFLAGS}"
-
-MAN1=			mp3info.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}"
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/mp3info
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/doc/mp3info
 .for file in ChangeLog README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mp3info
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mp3info
 .endfor
-.endif
 
 .include <bsd.port.mk>
