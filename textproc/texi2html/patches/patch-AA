@@ -1,0 +1,19 @@
+--- texi2html.aa.orig	Wed Nov  5 15:07:06 1997
++++ texi2html.aa	Wed Nov  5 15:08:37 1997
+@@ -1,6 +1,4 @@
+-#!/usr/local/bin/perl
+-'di ';
+-'ig 00 ';
++#!/usr/bin/perl
+ #+##############################################################################
+ #                                                                              #
+ # File: texi2html                                                              #
+@@ -11,8 +9,6 @@
+ 
+ # @(#)texi2html	1.51 09/10/96	Written (mainly) by Lionel Cons, Lionel.Cons@cern.ch
+ 
+-# The man page for this program is included at the end of this file and can be
+-# viewed using the command 'nroff -man texi2html'.
+ # Please read the copyright at the end of the man page.
+ 
+ #+++############################################################################
