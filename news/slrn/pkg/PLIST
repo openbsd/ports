@@ -1,35 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/04/10 14:59:17 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/06/09 17:17:04 lebel Exp $
 bin/slrn
 man/man1/slrn.1
 share/doc/slrn/COPYING
 share/doc/slrn/COPYRIGHT
 share/doc/slrn/FAQ
-share/doc/slrn/INSTALL
+share/doc/slrn/FIRST_STEPS
 share/doc/slrn/README
 share/doc/slrn/README.GroupLens
+share/doc/slrn/README.SSL
 share/doc/slrn/README.macros
-share/doc/slrn/README.os2
-share/doc/slrn/README.vms
+share/doc/slrn/README.multiuser
 share/doc/slrn/SCORE_FAQ
+share/doc/slrn/THANKS
 share/doc/slrn/changes.txt
 share/doc/slrn/help.txt
-share/doc/slrn/pc-keys.txt
+share/doc/slrn/manual.txt
 share/doc/slrn/score.sl
 share/doc/slrn/score.txt
 share/doc/slrn/slrn-doc.html
 share/doc/slrn/slrn.rc
 share/doc/slrn/slrnfuns.txt
-share/doc/slrn/slrnpull/FAQ
-share/doc/slrn/slrnpull/QUICK_INSTALL
-share/doc/slrn/slrnpull/README
-share/doc/slrn/slrnpull/score
-share/doc/slrn/slrnpull/setgid.txt
-share/doc/slrn/slrnpull/slrn.rc
-share/doc/slrn/slrnpull/slrnpull.conf
-share/doc/slrn/slrnpull/slrnpull.sh
 share/slrn/color.sl
+share/slrn/gsort.sl
 share/slrn/ispell.sl
 share/slrn/latin2.sl
+share/slrn/multipart.sl
 share/slrn/nn.sl
 share/slrn/posthook.sl
 share/slrn/search.sl
@@ -39,5 +34,4 @@ share/slrn/ttyprint.sl
 share/slrn/util.sl
 share/slrn/xcomment.sl
 @dirrm share/slrn
-@dirrm share/doc/slrn/slrnpull
 @dirrm share/doc/slrn

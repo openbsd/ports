@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2001/04/10 14:59:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2001/06/09 17:17:03 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
-DISTNAME=		slrn-0.9.7.0a
+DISTNAME=		slrn-0.9.7.1
 CATEGORIES=		news
 NEED_VERSION=		1.364
 
@@ -20,12 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=		slang.::devel/libslang
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-inews --with-ssl
 
 do-install:
 	@cd ${WRKBUILD}/src && make ${FAKE_FLAGS} install
 
-post-install:
-	@mv -f ${PREFIX}/doc/slrn ${PREFIX}/share/doc/slrn
-	@rmdir ${PREFIX}/doc
+#post-install:
+#	@mv -f ${PREFIX}/doc/slrn ${PREFIX}/share/doc/slrn
+#	@rmdir ${PREFIX}/doc
 
 .include <bsd.port.mk>
