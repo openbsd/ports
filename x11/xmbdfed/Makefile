@@ -3,15 +3,13 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/12/26 15:59:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/12/26 19:03:30 espie Exp $
 #
 
 DISTNAME=	xmbdfed-4.4
 CATEGORIES=	x11
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
