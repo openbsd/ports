@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/08 17:25:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/08/02 16:22:39 naddy Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
 
 DISTNAME=		ipcad-2.6.2
 CATEGORIES=		net
+HOMEPAGE=		http://www.spelio.net.ru/soft/
+
+MAINTAINER=		Oleg Safiullin <form@openbsd.org>, \
+			Alexander Yurchenko <grange@rt.mipt.ru>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.spelio.net.ru/soft/
-
-HOMEPAGE=		http://www.spelio.net.ru/soft/
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>, \
-			Alexander Yurchenko <grange@rt.mipt.ru>
+MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 
@@ -24,6 +23,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ipcad ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKBUILD}/ipcad.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKBUILD}/ipcad.conf.5 ${PREFIX}/man/man5
+	perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:' \
+		${PREFIX}/man/man5/ipcad.conf.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ipcad
 	${INSTALL_DATA} ${WRKDIST}/ipcad.conf \
 		${PREFIX}/share/examples/ipcad/ipcad.conf.sample

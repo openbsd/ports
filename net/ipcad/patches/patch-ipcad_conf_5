@@ -1,4 +1,4 @@
-$OpenBSD: patch-ipcad_conf_5,v 1.1.1.1 2002/04/29 02:45:16 form Exp $
+$OpenBSD: patch-ipcad_conf_5,v 1.2 2002/08/02 16:22:39 naddy Exp $
 --- ipcad.conf.5.orig	Thu Apr 25 16:10:21 2002
 +++ ipcad.conf.5	Thu Apr 25 16:10:33 2002
 @@ -4,11 +4,11 @@
@@ -6,12 +6,12 @@ $OpenBSD: patch-ipcad_conf_5,v 1.1.1.1 2002/04/29 02:45:16 form Exp $
  .Nd ipcad configuration file
  .Sh SYNOPSIS
 -.Pa /usr/local/etc/ipcad.conf
-+.Pa /etc/ipcad.conf
++.Pa %%SYSCONFDIR%%/ipcad.conf
  .Sh DESCRIPTION
  .Pp
  The file
 -.Nm /usr/local/etc/ipcad.conf
-+.Nm /etc/ipcad.conf
++.Nm %%SYSCONFDIR%%/ipcad.conf
  contains configuration information for the
  .Xr ipcad 8
  daemon.
