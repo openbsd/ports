@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 23:22:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/27 05:31:46 jcs Exp $
 bin/cadubi
-libexec/CADUBI.pl
-share/doc/cadubi/CADUBI.help
+share/doc/cadubi/help.txt
 @dirrm share/doc/cadubi
