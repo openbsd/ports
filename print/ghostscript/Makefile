@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/19 17:40:42 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/07 01:38:44 espie Exp $
 
+SUBDIR += aladdin
 SUBDIR += gnu
 SUBDIR += encrypt
 
