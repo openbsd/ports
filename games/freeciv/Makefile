@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/14 00:34:36 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/14 13:43:12 brad Exp $
 
 DISTNAME=	freeciv-1.8.1
 CATEGORIES=	games
@@ -13,8 +13,7 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		Imlib.1.9:${PORTSDIR}/graphics/imlib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config" \
-		CFLAGS="-O -g"
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 NO_INSTALL_MANPAGES= yes
 
