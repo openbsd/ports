@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sun Apr 29 14:40:37 2001
++++ src/Makefile.in	Sat Jul 21 17:04:36 2001
+@@ -338,7 +338,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform)s/$$/$(EXEEXT)/'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \
+@@ -347,7 +347,7 @@
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+-	  f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
++	  f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform)s/$$/$(EXEEXT)/'`; \
+ 	  echo " rm -f $(DESTDIR)$(bindir)/$$f"; \
+ 	  rm -f $(DESTDIR)$(bindir)/$$f; \
+ 	done

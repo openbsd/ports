@@ -1,6 +1,5 @@
-$OpenBSD: patch-src_ls_h,v 1.1 2001/03/15 18:17:55 wilfried Exp $
---- src/ls.h.orig	Sun Jan  4 23:35:28 1998
-+++ src/ls.h	Thu Mar 15 08:11:07 2001
+--- src/ls.h.orig	Mon Feb 15 17:27:12 1999
++++ src/ls.h	Fri Jul 20 21:03:51 2001
 @@ -7,4 +7,7 @@
  /* This is for the `vdir' program.  */
  #define LS_LONG_FORMAT 3

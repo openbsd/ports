@@ -1,28 +1,27 @@
-$OpenBSD: patch-src_ls_c,v 1.1 2001/03/15 18:17:54 wilfried Exp $
---- src/ls.c.orig	Sat Sep 19 13:09:23 1998
-+++ src/ls.c	Thu Mar 15 08:11:07 2001
-@@ -368,13 +368,13 @@ enum color_type
+--- src/ls.c.orig	Sun Apr 29 12:42:47 2001
++++ src/ls.c	Fri Jul 20 21:01:39 2001
+@@ -510,13 +510,13 @@
  enum indicator_no
    {
      C_LEFT, C_RIGHT, C_END, C_NORM, C_FILE, C_DIR, C_LINK, C_FIFO, C_SOCK,
--    C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC
-+    C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC, C_UID, C_GID, C_WRO, C_WT
+-    C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC, C_DOOR
++    C_BLK, C_CHR, C_MISSING, C_ORPHAN, C_EXEC, C_DOOR, C_UID, C_GID, C_WRO, C_WT
    };
  
  static const char *const indicator_name[]=
    {
      "lc", "rc", "ec", "no", "fi", "di", "ln", "pi", "so",
--    "bd", "cd", "mi", "or", "ex", NULL
-+    "bd", "cd", "mi", "or", "ex", "su", "sg", "wo", "wt", NULL
+-    "bd", "cd", "mi", "or", "ex", "do", NULL
++    "bd", "cd", "mi", "or", "ex", "do", "su", "sg", "wo", "wt", NULL
    };
  
- struct col_ext_type
-@@ -399,7 +399,11 @@ static struct bin_str color_indicator[] 
-     { LEN_STR_PAIR ("01;33") },		/* cd: Char device: bright yellow */
+ struct color_ext_type
+@@ -542,7 +542,11 @@
      { 0, NULL },			/* mi: Missing file: undefined */
      { 0, NULL },			/* or: Orphanned symlink: undefined */
--    { LEN_STR_PAIR ("01;32") }		/* ex: Executable: bright green */
-+    { LEN_STR_PAIR ("01;32") },		/* ex: Executable: bright green */
+     { LEN_STR_PAIR ("01;32") },		/* ex: Executable: bright green */
+-    { LEN_STR_PAIR ("01;35") }		/* do: Door: bright magenta */
++    { LEN_STR_PAIR ("01;35") },		/* do: Door: bright magenta */
 +    { LEN_STR_PAIR ("37;41") },         /* su: setuid: white on red */
 +    { LEN_STR_PAIR ("30;43") },         /* sg: setgid: black on yellow */
 +    { LEN_STR_PAIR ("37;44") },         /* wo: writeable-other:white on blue */
@@ -30,7 +29,7 @@ $OpenBSD: patch-src_ls_c,v 1.1 2001/03/15 18:17:54 wilfried Exp $
    };
  
  /* FIXME: comment  */
-@@ -2477,7 +2481,14 @@ print_color_indicator (const char *name,
+@@ -2883,7 +2887,14 @@
    else
      {
        if (S_ISDIR (mode))
@@ -43,12 +42,12 @@ $OpenBSD: patch-src_ls_c,v 1.1 2001/03/15 18:17:54 wilfried Exp $
 +          else
 +            type = C_DIR;
 +        }
- 
- #ifdef S_ISLNK
        else if (S_ISLNK (mode))
-@@ -2505,7 +2516,13 @@ print_color_indicator (const char *name,
- 	type = C_CHR;
- #endif
+ 	type = ((!linkok && color_indicator[C_ORPHAN].string)
+ 		? C_ORPHAN : C_LINK);
+@@ -2898,7 +2909,13 @@
+       else if (S_ISDOOR (mode))
+ 	type = C_DOOR;
  
 -      if (type == C_FILE && (mode & S_IXUGO) != 0)
 +      if ((type == C_FILE) && ((mode & S_ISUID) != 0))
