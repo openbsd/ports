@@ -3,7 +3,7 @@
 # Date created:         22 Jun 1998
 # Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.3 1998/06/22 10:05:57 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/24 16:39:19 marc Exp $
 # FreeBSD: Makefile,v 1.18 1998/01/24 07:11:16 jkh Exp
 #
 
@@ -16,7 +16,7 @@ MAINTAINER=     form@vs.itam.nsc.ru
 
 WRKSRC=		${WRKDIR}/unzip-5.32
 MAKEFILE=       unix/Makefile
-ALL_TARGET=     freebsd
+ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
