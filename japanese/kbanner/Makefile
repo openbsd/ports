@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/22 22:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 01:11:39 lebel Exp $
+
+COMMENT=	"display kanji files in large letters"
 
 DISTNAME=	kbanner2
 PKGNAME=	kbanner-2
 CATEGORIES=	japanese
-NEED_VERSION=	1.355
+NEED_VERSION=	1.402
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 EXTRACT_SUFX=	.tar.Z
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/19 10:41:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 01:11:39 lebel Exp $
+
+COMMENT=	"converts Japanese fonts in PostScript documents"
 
 CATEGORIES=japanese print
 
@@ -11,6 +13,7 @@ MASTER_SITES0=ftp://ftp.funet.fi/pub/culture/japan/fonts/
 DISTFILES=kanjips.tar.Z jis32.Z:0 jis48.Z:0
 # Freeware
 EXTRACT_ONLY=kanjips.tar.Z
+NEED_VERSION=	1.402
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

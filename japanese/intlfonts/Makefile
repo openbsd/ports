@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/12/14 13:22:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 01:11:38 lebel Exp $
+
+COMMENT=	"extra japanese fonts"
 
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 DISTNAME=	intlfonts-1.2
 PKGNAME=	ja-fonts-gnu-1.2
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:11:40 lebel Exp $
 #
+
+COMMENT=	"Japanese-capable xterm"
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
