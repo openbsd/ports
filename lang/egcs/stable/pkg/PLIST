@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/22 09:03:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/01 11:43:06 fgsch Exp $
 @option no-default-conflict
 @pkgcfl egcs-*-core
 @pkgcfl gcc-*-core
@@ -80,6 +80,8 @@ man/man1/gcov.1
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}
+@dirrm lib/gcc-lib
 @dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info
