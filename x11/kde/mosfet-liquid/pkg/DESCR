@@ -5,8 +5,7 @@ Features:
 * Translucent Menus. 
 
 * Colors are fully configurable. This is really cool with this style. It
-* also handles custom colors like KCalc's correctly. Check out the
-screenshots below. 
+* also handles custom colors like KCalc's correctly.
 
 * High performance. No scaling is required, and caching (thus memory usage)
 * is kept to a minimum. I wanted to create a style engine that
@@ -19,3 +18,5 @@ like compiling all day.
 appear to light up. 
 
 * Automagically themes the KDE panel, according to the color scheme. 
+
+WWW: ${HOMEPAGE}
