@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2003/01/07 15:36:35 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2003/01/27 19:08:34 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--enable-mitshm
+CONFIGURE_ARGS+=	--with-xinerama
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug=yes
 .else
