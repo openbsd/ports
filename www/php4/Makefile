@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/06/23 23:36:35 avsm Exp $
+# $OpenBSD: Makefile,v 1.44 2001/07/05 22:55:38 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -206,6 +206,6 @@ do-install:
 		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
 	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
-	cd ${WRKSRC}/pear && make install
+	cd ${WRKSRC}/pear && env INSTALL_ROOT=${DESTDIR} make install
 
 .include <bsd.port.mk>
