@@ -1,5 +1,9 @@
+@pkgdep icon-9.3.1
 @cwd /usr/X11R6
 @name icon_lib-9.3.1
+bin/vib
+bin/xtiles
+man/man6/xtiles.6
 share/ipl/ucode/abkform.u1
 share/ipl/ucode/abkform.u2
 share/ipl/ucode/adjuncts.u1

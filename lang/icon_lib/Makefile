@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.1.1.1 1998/10/02 17:11:44 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/13 15:01:45 espie Exp $
 
 DISTNAME=icon_lib-9.3.1
 DIST_SUBDIR=icon
@@ -35,6 +35,9 @@ do-build:
 	${BUILDENV} cd ${WRKSRC} && /bin/sh Ucode && /bin/sh Ugcode
 # then build programs using library
 	${BUILDENV} cd ${WRKSRC} && /bin/sh Icode && /bin/sh Igcode
+# finally build some supplementary packages
+	${BUILDENV} cd ${WRKSRC}/gpacks/vib && make
+	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont xtiles.icn
 
 do-install:
 	${INSTALL_DATA_DIR} ${IPL}/ucode
@@ -45,6 +48,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${IPL}/gincl
 	${INSTALL_DATA} ${WRKSRC}/gincl/* ${IPL}/gincl
 	${INSTALL_PROGRAM_DIR} ${IPL}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gpacks/vib/vib ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gpacks/xtiles/xtiles ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gpacks/xtiles/xtiles.6 ${PREFIX}/man/man6
+
 # we separate icon sample program from the rest of the world, especially
 # as we can share them between architectures
 	find ${WRKSRC}/progs -type f -perm -a+x -exec ${INSTALL_SCRIPT} {} ${IPL}/bin \;
