@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 1999/04/28 15:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.42 1999/04/29 16:54:19 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-04-18
+LATEST_DATE=1999-04-28
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -54,7 +54,7 @@ LATEST_DATE=1999-04-18
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-04-18
+#NEXT_DATE=1999-04-28
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -105,17 +105,19 @@ DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 
 .endif
 
+.if ! (defined(JUST_BUMP) && defined(NEXT_DATE))
 SUPDISTFILES=egcs-${LATEST}${EXTRACT_SUFX}
 .for sub in core tests g++ g77 java objc chill
 SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
 .endfor
+.endif
 
 
 MASTER_SITES=	
-#MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
+MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
-MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
+MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 #MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
