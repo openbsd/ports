@@ -8,7 +8,7 @@
 | The second line is only necessary if you want to use IPv6
 | support.
 |
-| An optional global configuration file may be used in /etc
+| An optional global configuration file may be used in ${SYSCONFDIR}
 | called spop3d.conf.
 |
 | See spop3d(8) and spop3d.conf(5) for available options.

@@ -1,17 +1,20 @@
 #!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2001/02/13 01:31:23 danh Exp $
+#
+# solid-pop3d de-installation
 
-do-deinstall () 
-{
-	if [ -d /var/spool/spop3d ]; then
-		rm -rf /var/spool/spop3d
-	fi
-	if [ -f /etc/spop3d.conf ]; then
-		echo "+------------"
-		echo "| If you are removing this package and not planning"
-		echo "| to re-install it at a future time, it is safe to"
-		echo "| remove /etc/spop3d.conf."
-		echo "+------------"
-	fi
-}
+set -e
+PATH="/bin:/usr/bin:/sbin:/usr/sbin"
+PREFIX="${PKG_PREFIX:-/usr/local}"
+CONFIG_FILE="${SYSCONFDIR}/spop3d.conf"
+SPOOL_DIR="/var/spool/spop3d"
 
-do-deinstall
+if [ -f ${CONFIG_FILE} -o -d ${SPOOL_DIR} ]; then
+	echo "+------------"
+	echo "| If you are deinstalling $1 and not planning to"
+	echo "| re-install it at a future time, it is safe to remove"
+	echo "| remove ${CONFIG_FILE} and ${SPOOL_DIR}."
+	echo "+------------"
+fi
+
+exit 0
