@@ -1,18 +1,10 @@
-	    Pretty Good Privacy version 2.6.3ia (international)
-	    Pretty Good Privacy version 2.6.3a  (united states)
+	    Pretty Good Privacy version 2.6.3ia (world wide use)
 
-PGP 2.6.3[i]a is not an official PGP version. It is based on the source
-code for MIT PGP 2.6.2 and has been modified for international use. PGP
-2.6.3i (international) is probably illegal to use within the USA, but is
-fine in almost every other country in the world.  PGP 2.6.3a can be
-compiled from the same source and is legal even inside the USA.
-
-All changes in the source that are not applicable within the USA are
-enclosed in #ifdef's, thus enabling you to compile a PGP version that is
-legal to use within the USA. This is accomplished by adding the -DUSA
-option when building the program, and by linking it with the RSAREF
-library (rsaglue2) rather than MPILIB (rsaglue1).   When compiled this
-way PGP will identify itself as 2.6.3a.
+PGP 2.6.3ia is not an official PGP version. It is based on the source
+code for MIT PGP 2.6.2 and has been modified for world wide use. PGP
+2.6.3i (international) is legal in the United States after September
+6, 2000 (when RSA Security, Inc. placed its public key encryption
+algorithm in the public domain).
 
 For a more thorough installation and usage guide, refer to the file
 setup.doc and the documentation for PGP 2.6.2, which is included

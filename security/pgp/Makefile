@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/05/31 12:09:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/09/06 17:26:28 marc Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -22,47 +22,11 @@ FAKE=		Yes
 
 FLAVORS=	usa intl
 
-.if defined(USA_RESIDENT)
-.if ${USA_RESIDENT:L} == "yes"
-FLAVOR=usa
-.elif ${USA_RESIDENT:L} == "no"
-FLAVOR=intl
-.endif
-.endif
-
-# No default flavor, error.
-FLAVOR?=
-.if empty(FLAVOR)
-pre-fetch pre-extract:
-	@echo ""
-	@echo "The variable USA_RESIDENT must be set to either Yes or No"
-	@echo "in order to build this package.  USA residents that are"
-	@echo "not licensees of the RSA algorithm MUST set this variable"
-	@echo "to Yes.  Users outside the USA MUST set this variable to"
-	@echo "No.  Licensees may choose -- No is faster."
-	@echo ""
-	@echo "RSAREF2 will be automatically obtained and used to generate"
-	@echo "this program when given the command \"make USA_RESIDENT=Yes\""
-	@echo ""
-	@echo "The new port flavor system also allows you to use "
-	@echo "FLAVOR=usa or FLAVOR=intl"
-	@false
-.endif
-
-
 # common C flags
 CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
 	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
-.if ${FLAVOR:L} == "usa"
-LIB_DEPENDS=	rsaref.2::security/rsaref
-RSAOBJS= rsaglue2.o
-RSAINCDIR= -I${LOCALBASE}/include
-RSALIBS= -L${LOCALBASE}/lib -lrsaref
-CFLAGS+= -DUSA ${RSAINCDIR}
-.else
 RSAOBJS= rsaglue1.o
-.endif
 
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
 
