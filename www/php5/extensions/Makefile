@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/13 01:47:32 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/18 15:58:53 robert Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -232,6 +232,17 @@ MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php5"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 SNMP_DEPENDS=		netsnmp.6.2::net/net-snmp
+.endif
+
+# sqlite
+PSEUDO_FLAVORS+=       no_sqlite
+.if ${FLAVOR:L:Mno_sqlite}
+CONFIGURE_ARGS+=	--without-sqlite
+.else
+MULTI_PACKAGES+=	-sqlite
+COMMENT-sqlite=		"sqlite database access extensions for php5"
+CONFIGURE_ARGS+=	--with-sqlite=shared,${LOCALBASE} --enable-sqlite-utf8
+SQLITE_DEPENDS=		sqlite.8::databases/sqlite
 .endif
 
 # sybase-ct
