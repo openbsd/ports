@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.193 2000/02/11 00:40:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.194 2000/02/11 01:11:00 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -743,34 +743,6 @@ YACC?=yacc
 # command is expanded from a variable, as this could be a shell construct
 SETENV?=	/usr/bin/env
 SH?=		/bin/sh
-
-# Deprecated:
-MD5?=			md5
-SHA1?=			sha1
-RMD160?=		rmd160
-TOUCH?=			/usr/bin/touch
-TOUCH_FLAGS?=	-f
-RM?=		/bin/rm
-RMDIR?=		/bin/rmdir
-SED?=		/usr/bin/sed
-FIND?=		/usr/bin/find
-MKDIR?=		/bin/mkdir -p
-MV?=		/bin/mv
-READLINK?=	/usr/bin/readlink
-LN?=		/bin/ln
-TR?=		/usr/bin/tr
-TRUE?=		true
-AWK?=		/usr/bin/awk
-BASENAME?=	/usr/bin/basename
-CAT?=		/bin/cat
-CP?=		/bin/cp
-ECHO?=		echo
-EXPR?=		/bin/expr
-FALSE?=		false
-FILE?=		/usr/bin/file
-DIRNAME?=	/usr/bin/dirname
-GREP?=		/usr/bin/grep
-DO_NADA?=		true
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		echo
