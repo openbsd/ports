@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.14 2001/10/02 03:15:03 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/05/14 15:03:52 brad Exp $
 bin/wget
 @unexec install-info --delete --info-dir=%D/info %D/info/wget.info
 info/wget.info
 @exec install-info --info-dir=%D/info %D/info/wget.info
 man/man1/wget.1
 share/examples/wget/sample.wgetrc
+share/locale/bg/LC_MESSAGES/wget.mo
+share/locale/ca/LC_MESSAGES/wget.mo
 share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
@@ -13,7 +15,9 @@ share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
 share/locale/fr/LC_MESSAGES/wget.mo
 share/locale/gl/LC_MESSAGES/wget.mo
+share/locale/he/LC_MESSAGES/wget.mo
 share/locale/hr/LC_MESSAGES/wget.mo
+share/locale/hu/LC_MESSAGES/wget.mo
 share/locale/it/LC_MESSAGES/wget.mo
 share/locale/ja/LC_MESSAGES/wget.mo
 share/locale/nl/LC_MESSAGES/wget.mo
@@ -25,5 +29,59 @@ share/locale/sk/LC_MESSAGES/wget.mo
 share/locale/sl/LC_MESSAGES/wget.mo
 share/locale/sv/LC_MESSAGES/wget.mo
 share/locale/tr/LC_MESSAGES/wget.mo
+share/locale/uk/LC_MESSAGES/wget.mo
 share/locale/zh_TW/LC_MESSAGES/wget.mo
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hr/LC_MESSAGES
+@comment @dirrm share/locale/hr
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale
 @dirrm share/examples/wget
