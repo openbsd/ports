@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2002/12/10 18:37:24 brad Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
 DISTNAME=	wget-1.7
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
-NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -34,6 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@cd ${WRKSRC}; touch configure
+
+pre-build:
 	@mv -f ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/wget.texi.bak
 	@sed -e s#/usr/local/etc#${SYSCONFDIR}#g \
 	     -e s#/usr/local#${PREFIX}#g \
