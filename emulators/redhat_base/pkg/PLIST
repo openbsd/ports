@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/13 06:06:36 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/14 20:18:33 brad Exp $
+@pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
 @exec ln -sf /dev/ttyC0 %D/dev/tty1

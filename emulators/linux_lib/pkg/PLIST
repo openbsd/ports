@@ -1,6 +1,5 @@
-.linux_lib-version
-bin/bash
-bin/sh
+@comment $OpenBSD: PLIST,v 1.9 2001/02/14 20:18:33 brad Exp $
+@pkgcfl redhat_base-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
 @exec ln -sf /dev/ttyC0 %D/dev/tty1
@@ -9,6 +8,9 @@ bin/sh
 @exec ln -sf /dev/ttyC3 %D/dev/tty4
 @exec ln -sf /dev/sound %D/dev/dsp
 @unexec rm -rf %D/dev
+.linux_lib-version
+bin/bash
+bin/sh
 etc/host.conf
 etc/ld.so.cache
 etc/ld.so.conf
