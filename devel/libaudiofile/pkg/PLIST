@@ -1,10 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/07/19 05:56:28 brad Exp $
 bin/audiofile-config
 bin/sfconvert
 bin/sfinfo
 lib/libaudiofile.a
 lib/libaudiofile.la
-lib/libaudiofile.so.0.0
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 include/af_vfs.h
 include/audiofile.h
 include/aupvlist.h

@@ -1,9 +1,0 @@
-bin/audiofile-config
-bin/sfconvert
-bin/sfinfo
-lib/libaudiofile.a
-lib/libaudiofile.la
-include/af_vfs.h
-include/audiofile.h
-include/aupvlist.h
-share/aclocal/audiofile.m4

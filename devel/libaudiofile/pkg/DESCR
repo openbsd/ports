@@ -10,4 +10,4 @@ This library allows the processing of audio data to and from audio
 files of many common formats (currently AIFF, AIFC, WAVE, and
 NeXT/Sun).
 
-http://www.68k.org./~michael/audiofile/
+WWW: ${HOMEPAGE}
