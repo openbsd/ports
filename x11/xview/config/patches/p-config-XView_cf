@@ -1,11 +1,11 @@
---- ./config/XView.cf.orig	Mon Jun 27 04:09:19 1994
-+++ ./config/XView.cf	Sat Apr  1 18:23:44 2000
+--- config/XView.cf.orig	Mon Jun 27 04:09:19 1994
++++ config/XView.cf	Tue Apr  4 18:15:05 2000
 @@ -101,7 +101,7 @@
   *	the appropriate value.
   */
  #ifndef XVDestDir
 -#define XVDestDir /usr/X11/xview
-+#define XVDestDir /usr/X11R6
++#define XVDestDir /usr/local
  #endif
  /*
   *	Command to add object modules to the library.
@@ -18,6 +18,15 @@
  #endif 
  /*
   *	If you would like the XView man pages to be installed in 
+@@ -267,7 +267,7 @@
+  *	to YES.
+  */
+ #ifndef RedefineTextExtrasMenu
+-#define RedefineTextExtrasMenu YES
++#define RedefineTextExtrasMenu NO
+ #endif
+ /*
+  *	DEC 3100 Config options
 @@ -305,7 +305,7 @@
   *	malloc() and read() will be used instead.
   */

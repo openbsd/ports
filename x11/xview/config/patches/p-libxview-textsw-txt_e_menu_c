@@ -1,5 +1,5 @@
---- ./lib/libxview/textsw/txt_e_menu.c.orig	Tue Jun 29 07:17:42 1993
-+++ ./lib/libxview/textsw/txt_e_menu.c	Sat Apr  1 18:25:29 2000
+--- lib/libxview/textsw/txt_e_menu.c.orig	Tue Jun 29 07:17:42 1993
++++ lib/libxview/textsw/txt_e_menu.c	Tue Apr  4 21:50:55 2000
 @@ -50,8 +50,12 @@ extern int errno;
  #define	ERROR	-1
  
@@ -31,3 +31,12 @@
  	/* Gee, still?... We will try the old fashioned way */
          (void) sprintf(tmp, "%s/lib/.%s",
  		       filename, EXTRASMENU);
+@@ -146,7 +152,7 @@ textsw_get_extras_filename(mi)
+     }
+ 
+     /* Giving up, try with ancient way (SunView1) */
+-    (void) sprintf(tmp, "/usr/lib/.%s", EXTRASMENU);
++    (void) sprintf(tmp, "/usr/local/lib/.%s", EXTRASMENU);
+     result = xv_strsave(tmp);
+ 
+ found:

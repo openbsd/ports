@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/04 15:10:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/04 21:17:22 espie Exp $
 
 PKGNAME=	xview-lib-${XVIEW_VERSION}
 EXTRACT_ONLY=	
@@ -12,7 +12,6 @@ post-extract:
 	mkdir -p ${WRKDIST}
 	lndir `cd ${PORTSDIR}/x11/xview/config && make show VARNAME=WRKDIST` ${WRKDIST}
 	
-PREFIX=	${X11BASE}
 USE_IMAKE=	Yes
 FAKE=		Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
