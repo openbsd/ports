@@ -1,4 +1,4 @@
-@comment $RuOBSD: PLIST,v 1.2 2002/04/10 05:14:52 form Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/04/25 02:59:09 form Exp $
 bin/jmacs
 bin/joe
 bin/jpico
