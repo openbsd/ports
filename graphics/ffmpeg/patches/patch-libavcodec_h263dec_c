@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavcodec_h263dec_c,v 1.1 2003/08/15 14:25:08 jolan Exp $
+--- libavcodec/h263dec.c.orig	2003-08-11 16:36:16.000000000 -0500
++++ libavcodec/h263dec.c	2003-08-14 11:29:13.000000000 -0500
+@@ -40,6 +40,8 @@ static inline long long rdtsc()
+ }
+ #endif
+ 
++int ff_wmv2_decode_secondary_picture_header(MpegEncContext * s);
++
+ int ff_h263_decode_init(AVCodecContext *avctx)
+ {
+     MpegEncContext *s = avctx->priv_data;

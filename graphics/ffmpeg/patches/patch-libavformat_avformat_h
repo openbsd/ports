@@ -1,0 +1,15 @@
+$OpenBSD: patch-libavformat_avformat_h,v 1.1 2003/08/15 14:25:08 jolan Exp $
+--- libavformat/avformat.h.orig	2003-08-11 16:37:04.000000000 -0500
++++ libavformat/avformat.h	2003-08-14 12:05:32.000000000 -0500
+@@ -15,6 +15,11 @@ extern "C" {
+ 
+ /* packet functions */
+ 
++#ifndef int64_t_C
++#define int64_t_C(c)     (c ## LL)
++#define uint64_t_C(c)    (c ## ULL)
++#endif
++
+ #ifndef MAXINT64
+ #define MAXINT64 int64_t_C(0x7fffffffffffffff)
+ #endif
