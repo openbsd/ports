@@ -1,6 +1,7 @@
---- lisp/elisp-comp.orig	Thu Oct  7 16:57:37 1999
-+++ lisp/elisp-comp	Thu Oct  7 16:58:03 1999
-@@ -34,7 +34,7 @@
+$OpenBSD: patch-lisp_elisp-comp,v 1.1 2004/07/19 16:12:36 espie Exp $
+--- lisp/elisp-comp.orig	Fri Apr 18 08:43:32 1997
++++ lisp/elisp-comp	Mon Jul 19 18:02:48 2004
+@@ -34,7 +34,7 @@ else
    cd $tempdir
  
    echo "(setq load-path (cons nil load-path))" > script

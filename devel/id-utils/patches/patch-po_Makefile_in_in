@@ -1,5 +1,6 @@
---- po/Makefile.in.in.orig	Sun Apr  9 16:13:52 2000
-+++ po/Makefile.in.in	Sun Apr  9 16:14:28 2000
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2004/07/19 16:12:36 espie Exp $
+--- po/Makefile.in.in.orig	Fri Apr 18 08:43:34 1997
++++ po/Makefile.in.in	Mon Jul 19 18:02:48 2004
 @@ -124,9 +124,9 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all

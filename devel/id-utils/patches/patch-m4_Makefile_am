@@ -1,0 +1,20 @@
+$OpenBSD: patch-m4_Makefile_am,v 1.1 2004/07/19 16:12:36 espie Exp $
+--- m4/Makefile.am.orig	Mon Jul 19 18:01:09 2004
++++ m4/Makefile.am	Mon Jul 19 18:01:37 2004
+@@ -7,13 +7,13 @@ lcmessage.m4 \
+ progtest.m4
+ ##m4-files-end
+ 
+-Makefile.am: Makefile.am.in
++$(srcdir)/Makefile.am: Makefile.am.in
+ 	rm -f $@ $@t
+-	sed -n '1,/^##m4-files-begin/p' $< > $@t
++	sed -n '1,/^##m4-files-begin/p' Makefile.am.in > $@t
+ 	( (echo EXTRA_DIST = README Makefile.am.in | tr '\012' @); \
+ 	  (echo *.m4|tr ' ' @) ) \
+ 	  |sed 's/@$$/%/;s/@/ \\@/g' |tr @% '\012\012' \
+ 	  >> $@t
+-	sed -n '/^##m4-files-end/,$$p' $< >> $@t
++	sed -n '/^##m4-files-end/,$$p' Makefile.am.in >> $@t
+ 	chmod a-w $@t
+ 	mv $@t $@

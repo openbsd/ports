@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2004/07/19 16:12:36 espie Exp $
 
 COMMENT=	"gid/lid tools for looking up variables in code"
 
@@ -28,6 +28,5 @@ post-install:
 #
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
-USE_GMAKE=	Yes
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Oct  7 16:58:15 1999
-+++ Makefile.in	Thu Oct  7 16:58:22 1999
-@@ -95,7 +95,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2004/07/19 16:12:36 espie Exp $
+--- Makefile.in.orig	Tue Apr  6 10:28:35 1999
++++ Makefile.in	Mon Jul 19 18:02:48 2004
+@@ -95,7 +95,7 @@ lispdir = @lispdir@
  
  AUTOMAKE_OPTIONS = gnits 1.2h
  

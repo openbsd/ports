@@ -1,0 +1,21 @@
+$OpenBSD: patch-m4_Makefile_in,v 1.1 2004/07/19 16:12:36 espie Exp $
+--- m4/Makefile.in.orig	Mon Jul 19 18:02:05 2004
++++ m4/Makefile.in	Mon Jul 19 18:02:28 2004
+@@ -194,14 +194,14 @@ distclean-generic clean-generic maintain
+ mostlyclean distclean maintainer-clean
+ 
+ 
+-Makefile.am: Makefile.am.in
++$(srcdir)/Makefile.am: Makefile.am.in
+ 	rm -f $@ $@t
+-	sed -n '1,/^##m4-files-begin/p' $< > $@t
++	sed -n '1,/^##m4-files-begin/p' Makefile.am.in > $@t
+ 	( (echo EXTRA_DIST = README Makefile.am.in | tr '\012' @); \
+ 	  (echo *.m4|tr ' ' @) ) \
+ 	  |sed 's/@$$/%/;s/@/ \\@/g' |tr @% '\012\012' \
+ 	  >> $@t
+-	sed -n '/^##m4-files-end/,$$p' $< >> $@t
++	sed -n '/^##m4-files-end/,$$p' Makefile.am.in >> $@t
+ 	chmod a-w $@t
+ 	mv $@t $@
+ 
