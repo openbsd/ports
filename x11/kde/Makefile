@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/05/22 15:19:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/05/29 19:20:27 reinhard Exp $
 
 SUBDIR+= libs
 SUBDIR+= base
-SUBDIR+= develop
+SUBDIR+= support
 SUBDIR+= games
 
 .include <bsd.port.subdir.mk>
