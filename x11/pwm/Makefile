@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/19 17:36:32 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/29 15:20:52 espie Exp $
 
 COMMENT=		"lightweight window manager with emphasis on usability"
 
 DISTNAME=		pwm-20030528
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://modeemi.cs.tut.fi/~tuomov/pwm/
