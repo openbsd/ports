@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 1999/08/21 17:20:46 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/08 05:20:30 brad Exp $
 
 DISTNAME=	bash-2.03
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bash
-
-MAINTAINER=	marc@openbsd.org
-
 DOCNAME=	${DISTNAME:S/-/-doc-/}
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} ${DOCNAME}${EXTRACT_SUFX}
+DISTFILES=      ${DISTNAME}.tar.gz ${DOCNAME}.tar.gz
+
+MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 
-pre-install:
-	@if [ ! -s ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
+# invoke with -DSTATIC to build a static binary
+.if defined(STATIC)
+CONFIGURE_ENV+= LDFLAGS=-static
+PKGNAME=	${DISTNAME}-static
+.endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/bash
+	@mkdir -p ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.ps  \
 		${WRKDIR}/doc/article.txt  \
@@ -30,7 +30,6 @@ post-install:
 		${WRKDIR}/doc/builtins.ps  \
 		${WRKDIR}/doc/readline.ps  \
 			${PREFIX}/share/doc/bash
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
-
