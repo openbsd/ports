@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gd,v 1.1 2002/07/24 15:41:42 avsm Exp $
+lib/php/modules/gd.so

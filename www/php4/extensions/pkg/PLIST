@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/24 19:27:46 avsm Exp $
-lib/php/modules/gd.so
+@comment $OpenBSD: PLIST,v 1.2 2002/07/24 15:41:42 avsm Exp $
+@comment This space deliberately left blank

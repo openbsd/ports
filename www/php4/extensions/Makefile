@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/10 09:00:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/24 15:41:42 avsm Exp $
 
-PKGNAME=	php4-gd-${V}
+PKGNAME=	php4-extensions-${V}
+COMMENT=	"informational package about PHP4 extensions"
 
 MULTI_PACKAGES=
 SUBPACKAGE?=
@@ -18,10 +19,6 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 JPEG_DEPENDS=		jpeg.62::graphics/jpeg
 PNG_DEPENDS=		png.3::graphics/png 
 TIFF_DEPENDS=		tiff.35::graphics/tiff
-GD_DEPENDS=		gd.18::graphics/gd
-
-LIB_DEPENDS+=		${GD_DEPENDS} ${JPEG_DEPENDS} ${PNG_DEPENDS} \
-			${TIFF_DEPENDS}
 
 # bz2
 MULTI_PACKAGES+=	-bz2
@@ -52,7 +49,10 @@ COMMENT-filepro=	"filepro database access extensions for php4"
 CONFIGURE_ARGS+=	--enable-filepro=shared
 
 # gd
-COMMENT=		"image manipulation extensions for php4"
+MULTI_PACKAGES+=	-gd
+COMMENT-gd=		"image manipulation extensions for php4"
+GD_DEPENDS=		gd.18::graphics/gd ${JPEG_DEPENDS} \
+			${PNG_DEPENDS} ${TIFF_DEPENDS}
 CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE}
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
@@ -157,15 +157,15 @@ XSLT_DEPENDS=		sablot.90::textproc/sablotron expat.2::textproc/expat
 FULLPKGNAME${i}=	php4${i}-${V}
 .endfor
 
-.if defined(PACKAGING)
-.if (empty(SUBPACKAGE))
-MODULE_NAME=		gd
-.else
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
 MODULE_NAME=		${SUBPACKAGE:S/-//g}
-.endif
 LIB_DEPENDS=		${${MODULE_NAME:U}_DEPENDS}
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE
+.elif defined(PACKAGING) && empty(SUBPACKAGE)
+LIB_DEPENDS=
+MESSAGE=		${PKGDIR}/DESCR
+SUBST_VARS=		V
 .else
 .for i in ${MULTI_PACKAGES}
 LIB_DEPENDS+=		${${i:U:S/-//g}_DEPENDS}
