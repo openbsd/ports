@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/24 18:47:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/29 00:08:31 avsm Exp $
 
 COMMENT=	"configuration file library for PHP"
 
-V=		1.6
+V=		1.10
 DISTNAME=	Config-${V}
 PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
