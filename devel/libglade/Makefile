@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/03 22:45:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/02 12:22:36 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
@@ -40,8 +40,10 @@ CONFIGURE_ARGS+=	--without-gnome
 
 .include <bsd.port.mk>
 
-.if ${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
-SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
-.elif ${FLAVOR:L:Mgnome}
+.if ${FLAVOR:L:Mgnome}
+.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-gnome%%/d'
+.  else
+SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
+.  endif
 .endif
