@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/12/11 15:08:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/01/24 00:14:51 naddy Exp $
 lib/mod_perl.so
 ${P5ARCH}/Apache.pm
 ${P5ARCH}/Apache/Connection.pm
@@ -12,6 +12,7 @@ ${P5ARCH}/Apache/Include.pm
 ${P5ARCH}/Apache/Leak.pm
 ${P5ARCH}/Apache/Log.pm
 ${P5ARCH}/Apache/ModuleConfig.pm
+${P5ARCH}/Apache/MyConfig.pm
 ${P5ARCH}/Apache/Opcode.pm
 ${P5ARCH}/Apache/Options.pm
 ${P5ARCH}/Apache/PerlRun.pm
@@ -99,7 +100,6 @@ man/man3p/mod_perl_tuning.3p
 sbin/mod_perl-enable
 share/doc/mod_perl/mod_perl.html
 @dirrm share/doc/mod_perl
-@dirrm ${P5ARCH}/auto/mod_perl
 @dirrm ${P5ARCH}/auto/Apache/include/modules/perl
 @dirrm ${P5ARCH}/auto/Apache/include/modules
 @dirrm ${P5ARCH}/auto/Apache/include
