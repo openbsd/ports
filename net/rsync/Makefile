@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/09 02:20:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/18 20:59:00 espie Exp $
 #
 
-DISTNAME= rsync-2.3.0
+DISTNAME= rsync-2.3.1
 CATEGORIES=net
 
 NEED_VERSION=1.60
-
-PATCH_STRIP=-p1
 
 
 MAINTAINER=		espie@openbsd.org
