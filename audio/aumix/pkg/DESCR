@@ -1,0 +1,9 @@
+A program for adjusting audio mixers from the command line or
+scripts, or interactively at the console or a terminal with a
+full-screen, curses-based interface or a GTK-based X11 interface.
+
+Flavors are available to disable the X11 and curses interfaces,
+respectively.  The xaumix script is provided with the curses interface
+to pop up an instance of aumix running in a new terminal window.
+
+WWW: ${HOMEPAGE}

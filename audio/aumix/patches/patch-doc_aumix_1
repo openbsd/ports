@@ -1,0 +1,64 @@
+$OpenBSD: patch-doc_aumix_1,v 1.1.1.1 2000/07/11 00:56:36 naddy Exp $
+--- doc/aumix.1.orig	Tue Jul 11 01:42:56 2000
++++ doc/aumix.1	Tue Jul 11 01:47:09 2000
+@@ -210,43 +210,6 @@ refresh screen
+ ^Z, ^D and ^C also have their normal function (the screen is refreshed when
+ .Nm
+ is brought to the foreground).
+-.Ss MOUSE
+-In interactive mode,
+-.Nm
+-can accept input from the mouse if
+-.Xr gpm 8
+-is running and
+-.Nm
+-is compiled with
+-.Xr gpm 8
+-support.
+-If gpm is not running but gpm support is included, the message
+-.Ql mouse off
+-will appear at the top of the screen, and only keyboard input will be
+-accepted.
+-With
+-.Xr gpm 8
+-running, most functions can be performed through the mouse.
+-The mouse is active whenever one of its buttons is held down.
+-While active, it works in the following ways:
+-.Bl -bullet -compact
+-.It
+-over a control track, it sets the control to match the position of
+-the mouse cursor.
+-.It
+-over a record/play indicator, it toggles the record/play state.
+-.It
+-over the 
+-.Ql Quit ,
+-.Ql Load ,
+-.Ql Save ,
+-.Ql Keys ,
+-.Ql Mute ,
+-.Ql Only ,
+-or
+-.Ql Undo
+-labels at the top of the screen, it causes those actions to take place.
+-.El
+ .Sh ENVIRONMENT
+ The
+ .Ev HOME
+@@ -316,7 +279,7 @@ If either foreground or background is gi
+ then the default color for that is used.
+ The defaults are a white foreground and black background.
+ .Pp
+-Two xpm icons are provided.
++An xpm icon is provided.
+ .Sh VERSION
+ This page corresponds to version 2.6.1.
+ .Sh BUGS
+@@ -344,7 +307,5 @@ operating system, and the model of sound
+ to diagnose problems, so it is best if you include such details in
+ any bug reports.
+ .Sh SEE ALSO
+-.Xr gpm 1 ,
+-.Xr moused 8 ,
+ .Xr sb 4 ,
+ .Xr xaumix 1
