@@ -1,13 +1,13 @@
-$OpenBSD: patch-config_h_in,v 1.5 2003/01/27 19:16:47 espie Exp $
---- config.h.in.orig	Tue Jan 14 14:01:45 2003
-+++ config.h.in	Tue Jan 14 16:31:26 2003
-@@ -928,6 +928,9 @@ int snprintf(char *str, size_t n, char c
- #endif
- 
+$OpenBSD: patch-config_h_in,v 1.6 2003/07/30 12:59:23 espie Exp $
+--- config.h.in.orig	Wed May  7 19:23:13 2003
++++ config.h.in	Tue Jul  1 16:39:30 2003
+@@ -907,6 +907,9 @@ int snprintf(char *str, size_t n, char c
+ /* path to su */
+ #undef __PATH_SU
  
 +/* path to sudo */
 +#undef __PATH_SUDO
 +
- /* Compatibility define */
- #undef ksize_t
  
+ #if defined(__SVR4) && !defined(__svr4__)
+ #define __svr4__ 1

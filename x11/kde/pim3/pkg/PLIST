@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/01/27 20:05:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/07/30 12:59:23 espie Exp $
 bin/ical2vcal
 bin/kabc2mutt
 bin/kaddressbook
@@ -68,6 +68,7 @@ share/applnk/Utilities/karm.desktop
 share/applnk/Utilities/knotes.desktop
 share/apps/kaddressbook/csv-templates/kaddressbook.desktop
 share/apps/kaddressbook/csv-templates/outlook2000.desktop
+share/apps/kaddressbook/csv-templates/outlookxp.desktop
 share/apps/kaddressbook/icons/crystalsvg/16x16/actions/ldap_lookup.png
 share/apps/kaddressbook/icons/crystalsvg/16x16/actions/smallcal.png
 share/apps/kaddressbook/icons/crystalsvg/32x32/actions/gohome.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ro,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.ro,v 1.9 2003/07/30 12:59:23 espie Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
@@ -93,6 +93,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
@@ -228,6 +229,7 @@ ${LOC}kiconedit.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -248,6 +250,7 @@ ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klegacyimport.mo
 ${LOC}klipper.mo
+${LOC}klock.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
@@ -275,6 +278,7 @@ ${LOC}kpackage.mo
 ${LOC}kpager.mo
 ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
+${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpilot.mo
@@ -335,6 +339,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwuftpd.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
+${LOC}kxsconfig.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdenetwork.mo
 ${LOC}libkicker.mo

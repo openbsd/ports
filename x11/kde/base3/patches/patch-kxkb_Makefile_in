@@ -1,7 +1,7 @@
-$OpenBSD: patch-kxkb_Makefile_in,v 1.1 2003/01/27 19:22:50 espie Exp $
---- kxkb/Makefile.in.orig	Wed Jan 22 18:43:05 2003
-+++ kxkb/Makefile.in	Wed Jan 22 18:43:18 2003
-@@ -295,7 +295,7 @@ bin_PROGRAMS = kxkb
+$OpenBSD: patch-kxkb_Makefile_in,v 1.2 2003/07/30 12:59:22 espie Exp $
+--- kxkb/Makefile.in.orig	Tue Jul 15 12:03:50 2003
++++ kxkb/Makefile.in	Wed Jul 16 01:18:27 2003
+@@ -432,7 +432,7 @@ bin_PROGRAMS = kxkb
  
  kxkb_SOURCES = dummy.cpp
  kxkb_LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -10,7 +10,7 @@ $OpenBSD: patch-kxkb_Makefile_in,v 1.1 2003/01/27 19:22:50 espie Exp $
  
  lib_LTLIBRARIES = kxkb.la
  kde_module_LTLIBRARIES = kcm_keyboard.la
-@@ -304,11 +304,11 @@ kde_module_LTLIBRARIES = kcm_keyboard.la
+@@ -441,11 +441,11 @@ kde_module_LTLIBRARIES = kcm_keyboard.la
  #>+ 1
  kcm_keyboard_la_SOURCES=rules.cpp kcmlayout.cpp pixmap.cpp kcmmisc.cpp  kcmmiscwidget.cpp
  kcm_keyboard_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined

@@ -1,7 +1,7 @@
-$OpenBSD: patch-admin_libtool_m4_in,v 1.1 2003/06/12 19:16:17 espie Exp $
---- admin/libtool.m4.in.orig	Wed May  7 13:44:24 2003
-+++ admin/libtool.m4.in	Thu Jun 12 01:51:27 2003
-@@ -4881,7 +4881,7 @@ EOF
+$OpenBSD: patch-admin_libtool_m4_in,v 1.2 2003/07/30 12:59:23 espie Exp $
+--- admin/libtool.m4.in.orig	2002-10-24 03:23:14.000000000 +0200
++++ admin/libtool.m4.in	2003-07-27 12:49:01.000000000 +0200
+@@ -4856,7 +4856,7 @@ EOF
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
  
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-admin_libtool_m4_in,v 1.1 2003/06/12 19:16:17 espie Exp $
  	_LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
  	_LT_AC_TAGVAR(export_dynamic_flag_spec, $1)='${wl}-E'
        else
-@@ -4891,7 +4891,7 @@ EOF
+@@ -4866,7 +4866,7 @@ EOF
  	   _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='-R$libdir'
  	   ;;
  	 *)

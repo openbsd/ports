@@ -1,4 +1,58 @@
-@comment $OpenBSD: PLIST.eu,v 1.3 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.eu,v 1.4 2003/07/30 12:59:22 espie Exp $
+${DOC}common/1.png
+${DOC}common/10.png
+${DOC}common/2.png
+${DOC}common/3.png
+${DOC}common/4.png
+${DOC}common/5.png
+${DOC}common/6.png
+${DOC}common/7.png
+${DOC}common/8.png
+${DOC}common/9.png
+${DOC}common/artistic-license.html
+${DOC}common/bottom1.png
+${DOC}common/bottom2.png
+${DOC}common/bsd-license.html
+${DOC}common/docheadergears.png
+${DOC}common/doctop1.png
+${DOC}common/doctop1a.png
+${DOC}common/doctop1b.png
+${DOC}common/doctop2.png
+${DOC}common/doxygen.css
+${DOC}common/fdl-license
+${DOC}common/fdl-license.html
+${DOC}common/fdl-translated.html
+${DOC}common/footer.html
+${DOC}common/gpl-license
+${DOC}common/gpl-license.html
+${DOC}common/gpl-translated.html
+${DOC}common/grad.png
+${DOC}common/header.html
+${DOC}common/headerbg.png
+${DOC}common/kde-common.css
+${DOC}common/kde-default.css
+${DOC}common/kde-localised.css.template
+${DOC}common/kde-web.css
+${DOC}common/kmenu.png
+${DOC}common/lgpl-license
+${DOC}common/lgpl-license.html
+${DOC}common/mainfooter.html
+${DOC}common/mainheader.html
+${DOC}common/qpl-license.html
+${DOC}common/shadow.png
+${DOC}common/web-docbottom.png
+${DOC}common/web-doctop.png
+${DOC}common/x11-license.html
+${DOC}common/xml.dcl
+${DOC}kdesdk/catman.docbook
+${DOC}kdesdk/dictionaries.docbook
+${DOC}kdesdk/faq.docbook
+${DOC}kdesdk/glossary.docbook
+${DOC}kdesdk/kbabel_glossary.po
+${DOC}kdesdk/kbabeldict.docbook
+${DOC}kdesdk/menu.docbook
+${DOC}kdesdk/preferences.docbook
+${DOC}kdesdk/using.docbook
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}childpanelextension.mo
@@ -14,13 +68,13 @@ ${LOC}desktop_kdepim.mo
 ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
+${LOC}dockbarextension.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}kabc_dir.mo
-${LOC}kabc_file.mo
 ${LOC}kabc_ldap.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -30,13 +84,11 @@ ${LOC}kappfinder.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
-${LOC}katedefaultproject.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
 ${LOC}kbabel.mo
 ${LOC}kblackbox.mo
 ${LOC}kcmaccess.mo
-${LOC}kcmaccessibility.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
@@ -103,12 +155,15 @@ ${LOC}khotkeys.mo
 ${LOC}kicker.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_smb.mo
+${LOC}kio_smtp.mo
+${LOC}kjobviewer.mo
 ${LOC}klegacyimport.mo
 ${LOC}klipper.mo
 ${LOC}kmahjongg.mo
@@ -158,6 +213,7 @@ ${LOC}kuser.mo
 ${LOC}kwin.mo
 ${LOC}kwin_b2_config.mo
 ${LOC}kwin_default_config.mo
+${LOC}kwin_icewm_config.mo
 ${LOC}kwin_keramik_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
@@ -186,3 +242,7 @@ share/locale/eu/flag.png
 @comment @dirrm share/locale/eu/LC_MESSAGES
 @comment @dirrm share/locale/eu
 @comment @dirrm share/locale
+@dirrm ${DOC}kdesdk
+@dirrm ${DOC}common
+@dirrm share/doc/HTML/eu
+@dirrm share/doc/HTML

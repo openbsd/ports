@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/06/12 19:16:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/07/30 12:59:23 espie Exp $
 bin/aktion
 bin/artsbuilder
 bin/artscontrol
@@ -914,6 +914,7 @@ share/mimelnk/interface/x-winamp-skin.desktop
 share/mimelnk/text/xmcd.desktop
 share/services/audiocd.protocol
 share/services/kaboodle_component.desktop
+share/services/kaboodleengine.desktop
 share/services/kfile_au.desktop
 share/services/kfile_avi.desktop
 share/services/kfile_m3u.desktop

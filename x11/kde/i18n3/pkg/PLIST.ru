@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.9 2003/07/30 12:59:23 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -255,6 +255,12 @@ ${DOC}kodo/${I}
 ${DOC}kolf/common
 ${DOC}kolf/${C}
 ${DOC}kolf/${I}
+${DOC}konq-plugins/babel/common
+${DOC}konq-plugins/babel/${C}
+${DOC}konq-plugins/babel/${I}
+${DOC}konq-plugins/crashes/common
+${DOC}konq-plugins/crashes/${C}
+${DOC}konq-plugins/crashes/${I}
 ${DOC}konqueror/basics.docbook
 ${DOC}konqueror/bookmarks.docbook
 ${DOC}konqueror/browser.docbook
@@ -791,6 +797,9 @@ share/locale/ru/flag.png
 @dirrm ${DOC}kpovmodeler
 @dirrm ${DOC}kpager
 @dirrm ${DOC}konqueror
+@dirrm ${DOC}konq-plugins/crashes
+@dirrm ${DOC}konq-plugins/babel
+@dirrm ${DOC}konq-plugins
 @dirrm ${DOC}kolf
 @dirrm ${DOC}kodo
 @dirrm ${DOC}kmix

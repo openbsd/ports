@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.9 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.10 2003/07/30 12:59:23 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -144,6 +144,7 @@ ${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
+${LOC}flashkard.mo
 ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
@@ -158,6 +159,7 @@ ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarmdgui.mo
 ${LOC}kandy.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
@@ -273,6 +275,7 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
+${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
@@ -323,6 +326,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -378,7 +382,6 @@ ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
-${LOC}kpilot.mo
 ${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
@@ -453,9 +456,9 @@ ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkcalsystem.mo
-${LOC}libkdegames.mo
 ${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
+${LOC}libkdepim.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/07/30 12:59:23 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -557,7 +557,6 @@ include/libkmid/track.h
 include/libkmid/voiceman.h
 include/netwm.h
 include/netwm_def.h
-include/netwm_p.h
 include/qxembed.h
 include/renamedlgplugin.h
 include/scriptclientinterface.h
@@ -595,7 +594,6 @@ ${KDE}/kio_help.la
 ${KDE}/kio_http.la
 ${KDE}/kio_metainfo.la
 ${KDE}/kjavaappletviewer.la
-${KDE}/kjs_html.la
 ${KDE}/ktexteditor_insertfile.la
 ${KDE}/ktexteditor_isearch.la
 ${KDE}/ktexteditor_kdatatool.la
@@ -2135,6 +2133,7 @@ share/icons/crystalsvg/16x16/actions/flag.png
 share/icons/crystalsvg/16x16/actions/folder_new.png
 share/icons/crystalsvg/16x16/actions/fontsizedown.png
 share/icons/crystalsvg/16x16/actions/fontsizeup.png
+share/icons/crystalsvg/16x16/actions/fork.png
 share/icons/crystalsvg/16x16/actions/forward.png
 share/icons/crystalsvg/16x16/actions/frame_edit.png
 share/icons/crystalsvg/16x16/actions/frame_formula.png
@@ -2531,6 +2530,7 @@ share/icons/crystalsvg/22x22/actions/folder.png
 share/icons/crystalsvg/22x22/actions/folder_new.png
 share/icons/crystalsvg/22x22/actions/fontsizedown.png
 share/icons/crystalsvg/22x22/actions/fontsizeup.png
+share/icons/crystalsvg/22x22/actions/fork.png
 share/icons/crystalsvg/22x22/actions/forward.png
 share/icons/crystalsvg/22x22/actions/frame_chart.png
 share/icons/crystalsvg/22x22/actions/frame_edit.png

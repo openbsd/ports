@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.9 2003/07/30 12:59:22 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -769,7 +769,6 @@ ${DOC}konq-plugins/${I}
 ${DOC}konqueror/basics.docbook
 ${DOC}konqueror/bookmarks.docbook
 ${DOC}konqueror/browser.docbook
-${DOC}konqueror/cmdline.png
 ${DOC}konqueror/cmndline.png
 ${DOC}konqueror/commands.docbook
 ${DOC}konqueror/common
@@ -779,9 +778,6 @@ ${DOC}konqueror/dirtree.png
 ${DOC}konqueror/dragdrop.png
 ${DOC}konqueror/faq.docbook
 ${DOC}konqueror/filemanager.docbook
-${DOC}konqueror/filetype1.png
-${DOC}konqueror/filetype3.png
-${DOC}konqueror/filetype4.png
 ${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
 ${DOC}konqueror/introduction.docbook
@@ -1067,6 +1063,17 @@ ${DOC}kworldclock/${I}
 ${DOC}kwrite/common
 ${DOC}kwrite/${C}
 ${DOC}kwrite/${I}
+${DOC}kwuftpd/common
+${DOC}kwuftpd/directories.png
+${DOC}kwuftpd/${C}
+${DOC}kwuftpd/${I}
+${DOC}kwuftpd/logging.png
+${DOC}kwuftpd/messages.png
+${DOC}kwuftpd/ratios.png
+${DOC}kwuftpd/security.png
+${DOC}kwuftpd/uploads.png
+${DOC}kwuftpd/user_classes.png
+${DOC}kwuftpd/virtual.png
 ${DOC}kxconfig/common
 ${DOC}kxconfig/${C}
 ${DOC}kxconfig/${I}
@@ -1343,6 +1350,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -1548,6 +1556,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
 @dirrm ${DOC}kxconfig
+@dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.pt,v 1.9 2003/07/30 12:59:23 espie Exp $
 share/apps/ktuberling/sounds/pt/bigode.wav
 share/apps/ktuberling/sounds/pt/boca.wav
 share/apps/ktuberling/sounds/pt/brincos.wav
@@ -502,6 +502,14 @@ ${DOC}kwuftpd/${I}
 ${DOC}kxconfig/common
 ${DOC}kxconfig/${C}
 ${DOC}kxconfig/${I}
+${DOC}quanta/adv-quanta.docbook
+${DOC}quanta/debugging-quanta.docbook
+${DOC}quanta/extending-quanta.docbook
+${DOC}quanta/fundamentals.docbook
+${DOC}quanta/installation.docbook
+${DOC}quanta/introduction.docbook
+${DOC}quanta/quanta-menus.docbook
+${DOC}quanta/quanta-projects.docbook
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -732,6 +740,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -930,6 +939,7 @@ share/locale/pt/flag.png
 @comment @dirrm share/locale/pt/LC_MESSAGES
 @comment @dirrm share/locale/pt
 @comment @dirrm share/locale
+@dirrm ${DOC}quanta
 @dirrm ${DOC}kxconfig
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kwrite

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.lt,v 1.9 2003/07/30 12:59:23 espie Exp $
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -153,6 +153,7 @@ ${LOC}kdmgreet.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kfax.mo
+${LOC}kfifteenapplet.mo
 ${LOC}kfile_avi.mo
 ${LOC}kfile_deb.mo
 ${LOC}kfile_font.mo
@@ -213,6 +214,7 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
+${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
 ${LOC}konqsidebar_mediaplayer.mo
@@ -255,11 +257,13 @@ ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
 ${LOC}ktouch.mo
+${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
+${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin_b2_config.mo
 ${LOC}kwin_default_config.mo

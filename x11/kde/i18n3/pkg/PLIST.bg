@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.bg,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.bg,v 1.8 2003/07/30 12:59:22 espie Exp $
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
@@ -8,6 +8,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}atlantik.mo
 ${LOC}babelfish.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -15,6 +16,7 @@ ${LOC}cupsdconf.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaddons.mo
 ${LOC}desktop_kdeadmin.mo
+${LOC}desktop_kdeartwork.mo
 ${LOC}desktop_kdebase.mo
 ${LOC}desktop_kdeedu.mo
 ${LOC}desktop_kdegames.mo
@@ -41,7 +43,9 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalarmd.mo
+${LOC}kalzium.mo
 ${LOC}kandy.mo
+${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
@@ -57,6 +61,7 @@ ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kbabel.mo
+${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
@@ -148,7 +153,9 @@ ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
+${LOC}kfile_avi.mo
 ${LOC}kfile_cpp.mo
+${LOC}kfile_diff.mo
 ${LOC}kfile_font.mo
 ${LOC}kfile_pdf.mo
 ${LOC}kfile_png.mo
@@ -205,6 +212,7 @@ ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
+${LOC}kmix.mo
 ${LOC}kmoon.mo
 ${LOC}kmplot.mo
 ${LOC}knewsticker.mo
@@ -234,6 +242,7 @@ ${LOC}kpoker.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
+${LOC}krdb.mo
 ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}kreversi.mo
@@ -241,6 +250,8 @@ ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
+${LOC}kscd.mo
+${LOC}kscoreapplet.mo
 ${LOC}kshisen.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
@@ -302,6 +313,7 @@ ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}naughtyapplet.mo
+${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}passwords.mo
 ${LOC}ppdtranslations.mo
@@ -311,6 +323,7 @@ ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
 ${LOC}taskbarextension.mo
+${LOC}timezones.mo
 ${LOC}twister.mo
 ${LOC}uachangerplugin.mo
 ${LOC}validatorsplugin.mo

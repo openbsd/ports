@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/07/30 12:59:23 espie Exp $
 share/doc/html/kdelibs/dcop/DCOPArg.html
 share/doc/html/kdelibs/dcop/DCOPClient.html
 share/doc/html/kdelibs/dcop/DCOPConnection.html
@@ -287,8 +287,11 @@ share/doc/html/kdelibs/kdecore/KAccelAction.html
 share/doc/html/kdelibs/kdecore/KAccelActions.html
 share/doc/html/kdelibs/kdecore/KAccelBase.html
 share/doc/html/kdelibs/kdecore/KAccelBase__ActionInfo.html
+share/doc/html/kdelibs/kdecore/KAccelManagerAlgorithm.html
 share/doc/html/kdelibs/kdecore/KAccelPrivate.html
 share/doc/html/kdelibs/kdecore/KAccelShortcutList.html
+share/doc/html/kdelibs/kdecore/KAccelString.html
+share/doc/html/kdelibs/kdecore/KAcceleratorManager.html
 share/doc/html/kdelibs/kdecore/KAddressInfo.html
 share/doc/html/kdelibs/kdecore/KAppDCOPInterface.html
 share/doc/html/kdelibs/kdecore/KApplication.html
@@ -349,12 +352,15 @@ share/doc/html/kdelibs/kdecore/KLibLoader.html
 share/doc/html/kdelibs/kdecore/KLibrary.html
 share/doc/html/kdelibs/kdecore/KLocale.html
 share/doc/html/kdelibs/kdecore/KMD5.html
+share/doc/html/kdelibs/kdecore/KMacroExpander.html
+share/doc/html/kdelibs/kdecore/KMacroExpanderBase.html
 share/doc/html/kdelibs/kdecore/KMimeSourceFactory.html
 share/doc/html/kdelibs/kdecore/KMultipleDrag.html
 share/doc/html/kdelibs/kdecore/KNotifyClient.html
 share/doc/html/kdelibs/kdecore/KNotifyClient__Instance.html
 share/doc/html/kdelibs/kdecore/KPalette.html
 share/doc/html/kdelibs/kdecore/KPixmapProvider.html
+share/doc/html/kdelibs/kdecore/KPopupAccelManager.html
 share/doc/html/kdelibs/kdecore/KProcIO.html
 share/doc/html/kdelibs/kdecore/KProcess.html
 share/doc/html/kdelibs/kdecore/KProcessController.html
@@ -427,8 +433,11 @@ share/doc/html/kdelibs/kdecore/full-list-KAccelAction.html
 share/doc/html/kdelibs/kdecore/full-list-KAccelActions.html
 share/doc/html/kdelibs/kdecore/full-list-KAccelBase.html
 share/doc/html/kdelibs/kdecore/full-list-KAccelBase__ActionInfo.html
+share/doc/html/kdelibs/kdecore/full-list-KAccelManagerAlgorithm.html
 share/doc/html/kdelibs/kdecore/full-list-KAccelPrivate.html
 share/doc/html/kdelibs/kdecore/full-list-KAccelShortcutList.html
+share/doc/html/kdelibs/kdecore/full-list-KAccelString.html
+share/doc/html/kdelibs/kdecore/full-list-KAcceleratorManager.html
 share/doc/html/kdelibs/kdecore/full-list-KAddressInfo.html
 share/doc/html/kdelibs/kdecore/full-list-KAppDCOPInterface.html
 share/doc/html/kdelibs/kdecore/full-list-KApplication.html
@@ -489,12 +498,15 @@ share/doc/html/kdelibs/kdecore/full-list-KLibLoader.html
 share/doc/html/kdelibs/kdecore/full-list-KLibrary.html
 share/doc/html/kdelibs/kdecore/full-list-KLocale.html
 share/doc/html/kdelibs/kdecore/full-list-KMD5.html
+share/doc/html/kdelibs/kdecore/full-list-KMacroExpander.html
+share/doc/html/kdelibs/kdecore/full-list-KMacroExpanderBase.html
 share/doc/html/kdelibs/kdecore/full-list-KMimeSourceFactory.html
 share/doc/html/kdelibs/kdecore/full-list-KMultipleDrag.html
 share/doc/html/kdelibs/kdecore/full-list-KNotifyClient.html
 share/doc/html/kdelibs/kdecore/full-list-KNotifyClient__Instance.html
 share/doc/html/kdelibs/kdecore/full-list-KPalette.html
 share/doc/html/kdelibs/kdecore/full-list-KPixmapProvider.html
+share/doc/html/kdelibs/kdecore/full-list-KPopupAccelManager.html
 share/doc/html/kdelibs/kdecore/full-list-KProcIO.html
 share/doc/html/kdelibs/kdecore/full-list-KProcess.html
 share/doc/html/kdelibs/kdecore/full-list-KProcessController.html
@@ -570,6 +582,8 @@ share/doc/html/kdelibs/kdecore/kaboutdata_h.html
 share/doc/html/kdelibs/kdecore/kaccel_h.html
 share/doc/html/kdelibs/kdecore/kaccelaction_h.html
 share/doc/html/kdelibs/kdecore/kaccelbase_h.html
+share/doc/html/kdelibs/kdecore/kaccelmanager__private_h.html
+share/doc/html/kdelibs/kdecore/kaccelmanager_h.html
 share/doc/html/kdelibs/kdecore/kaccelprivate_h.html
 share/doc/html/kdelibs/kdecore/kallocator_h.html
 share/doc/html/kdelibs/kdecore/kapp_h.html
@@ -620,6 +634,7 @@ share/doc/html/kdelibs/kdecore/kkeyserver__x11_h.html
 share/doc/html/kdelibs/kdecore/klargefile_h.html
 share/doc/html/kdelibs/kdecore/klibloader_h.html
 share/doc/html/kdelibs/kdecore/klocale_h.html
+share/doc/html/kdelibs/kdecore/kmacroexpander_h.html
 share/doc/html/kdelibs/kdecore/kmdcodec__compat_h.html
 share/doc/html/kdelibs/kdecore/kmdcodec_h.html
 share/doc/html/kdelibs/kdecore/kmimesourcefactory_h.html
@@ -770,9 +785,6 @@ share/doc/html/kdelibs/kdeui/KAboutWidget.html
 share/doc/html/kdelibs/kdeui/KAccelGen.html
 share/doc/html/kdelibs/kdeui/KAccelGen__Deref.html
 share/doc/html/kdelibs/kdeui/KAccelGen__Deref_Key.html
-share/doc/html/kdelibs/kdeui/KAccelManagerAlgorithm.html
-share/doc/html/kdelibs/kdeui/KAccelString.html
-share/doc/html/kdelibs/kdeui/KAcceleratorManager.html
 share/doc/html/kdelibs/kdeui/KAction.html
 share/doc/html/kdelibs/kdeui/KActionCollection.html
 share/doc/html/kdelibs/kdeui/KActionMenu.html
@@ -802,6 +814,7 @@ share/doc/html/kdelibs/kdeui/KCompletionBox.html
 share/doc/html/kdelibs/kdeui/KContextMenuManager.html
 share/doc/html/kdelibs/kdeui/KCursor.html
 share/doc/html/kdelibs/kdeui/KCursorPrivate.html
+share/doc/html/kdelibs/kdeui/KCursorPrivateAutoHideEventFilter.html
 share/doc/html/kdelibs/kdeui/KDCOPActionProxy.html
 share/doc/html/kdelibs/kdeui/KDEPrivate.html
 share/doc/html/kdelibs/kdeui/KDEPrivate__ToolBarHandler.html
@@ -893,7 +906,6 @@ share/doc/html/kdelibs/kdeui/KPassivePopup.html
 share/doc/html/kdelibs/kdeui/KPasswordDialog.html
 share/doc/html/kdelibs/kdeui/KPasswordEdit.html
 share/doc/html/kdelibs/kdeui/KPixmapIO.html
-share/doc/html/kdelibs/kdeui/KPopupAccelManager.html
 share/doc/html/kdelibs/kdeui/KPopupFrame.html
 share/doc/html/kdelibs/kdeui/KPopupMenu.html
 share/doc/html/kdelibs/kdeui/KPopupTitle.html
@@ -912,9 +924,6 @@ share/doc/html/kdelibs/kdeui/KSeparator.html
 share/doc/html/kdelibs/kdeui/KSharedPixmap.html
 share/doc/html/kdelibs/kdeui/KShortcutBox.html
 share/doc/html/kdelibs/kdeui/KShortcutDialog.html
-share/doc/html/kdelibs/kdeui/KSpell.html
-share/doc/html/kdelibs/kdeui/KSpellConfig.html
-share/doc/html/kdelibs/kdeui/KSpellDlg.html
 share/doc/html/kdelibs/kdeui/KSqueezedTextLabel.html
 share/doc/html/kdelibs/kdeui/KStatusBar.html
 share/doc/html/kdelibs/kdeui/KStatusBarLabel.html
@@ -968,9 +977,6 @@ share/doc/html/kdelibs/kdeui/full-list-KAboutWidget.html
 share/doc/html/kdelibs/kdeui/full-list-KAccelGen.html
 share/doc/html/kdelibs/kdeui/full-list-KAccelGen__Deref.html
 share/doc/html/kdelibs/kdeui/full-list-KAccelGen__Deref_Key.html
-share/doc/html/kdelibs/kdeui/full-list-KAccelManagerAlgorithm.html
-share/doc/html/kdelibs/kdeui/full-list-KAccelString.html
-share/doc/html/kdelibs/kdeui/full-list-KAcceleratorManager.html
 share/doc/html/kdelibs/kdeui/full-list-KAction.html
 share/doc/html/kdelibs/kdeui/full-list-KActionCollection.html
 share/doc/html/kdelibs/kdeui/full-list-KActionMenu.html
@@ -1000,6 +1006,7 @@ share/doc/html/kdelibs/kdeui/full-list-KCompletionBox.html
 share/doc/html/kdelibs/kdeui/full-list-KContextMenuManager.html
 share/doc/html/kdelibs/kdeui/full-list-KCursor.html
 share/doc/html/kdelibs/kdeui/full-list-KCursorPrivate.html
+share/doc/html/kdelibs/kdeui/full-list-KCursorPrivateAutoHideEventFilter.html
 share/doc/html/kdelibs/kdeui/full-list-KDCOPActionProxy.html
 share/doc/html/kdelibs/kdeui/full-list-KDEPrivate.html
 share/doc/html/kdelibs/kdeui/full-list-KDEPrivate__ToolBarHandler.html
@@ -1091,7 +1098,6 @@ share/doc/html/kdelibs/kdeui/full-list-KPassivePopup.html
 share/doc/html/kdelibs/kdeui/full-list-KPasswordDialog.html
 share/doc/html/kdelibs/kdeui/full-list-KPasswordEdit.html
 share/doc/html/kdelibs/kdeui/full-list-KPixmapIO.html
-share/doc/html/kdelibs/kdeui/full-list-KPopupAccelManager.html
 share/doc/html/kdelibs/kdeui/full-list-KPopupFrame.html
 share/doc/html/kdelibs/kdeui/full-list-KPopupMenu.html
 share/doc/html/kdelibs/kdeui/full-list-KPopupTitle.html
@@ -1110,9 +1116,6 @@ share/doc/html/kdelibs/kdeui/full-list-KSeparator.html
 share/doc/html/kdelibs/kdeui/full-list-KSharedPixmap.html
 share/doc/html/kdelibs/kdeui/full-list-KShortcutBox.html
 share/doc/html/kdelibs/kdeui/full-list-KShortcutDialog.html
-share/doc/html/kdelibs/kdeui/full-list-KSpell.html
-share/doc/html/kdelibs/kdeui/full-list-KSpellConfig.html
-share/doc/html/kdelibs/kdeui/full-list-KSpellDlg.html
 share/doc/html/kdelibs/kdeui/full-list-KSqueezedTextLabel.html
 share/doc/html/kdelibs/kdeui/full-list-KStatusBar.html
 share/doc/html/kdelibs/kdeui/full-list-KStatusBarLabel.html
@@ -1240,13 +1243,10 @@ share/doc/html/kdelibs/kdeui/kpushbutton_h.html
 share/doc/html/kdelibs/kdeui/krestrictedline_h.html
 share/doc/html/kdelibs/kdeui/krootpixmap_h.html
 share/doc/html/kdelibs/kdeui/kruler_h.html
-share/doc/html/kdelibs/kdeui/ksconfig_h.html
 share/doc/html/kdelibs/kdeui/kselect_h.html
 share/doc/html/kdelibs/kdeui/kseparator_h.html
 share/doc/html/kdelibs/kdeui/ksharedpixmap_h.html
 share/doc/html/kdelibs/kdeui/kshortcutdialog_h.html
-share/doc/html/kdelibs/kdeui/kspell_h.html
-share/doc/html/kdelibs/kdeui/kspelldlg_h.html
 share/doc/html/kdelibs/kdeui/ksqueezedtextlabel_h.html
 share/doc/html/kdelibs/kdeui/kstatusbar_h.html
 share/doc/html/kdelibs/kdeui/kstdaction_h.html
@@ -2325,7 +2325,13 @@ share/doc/html/kdelibs/kparts/mainwindow_h.html
 share/doc/html/kdelibs/kparts/part_h.html
 share/doc/html/kdelibs/kparts/partmanager_h.html
 share/doc/html/kdelibs/kparts/plugin_h.html
+share/doc/html/kdelibs/kspell/KSpell.html
+share/doc/html/kdelibs/kspell/KSpellConfig.html
+share/doc/html/kdelibs/kspell/KSpellDlg.html
 share/doc/html/kdelibs/kspell/all-globals.html
+share/doc/html/kdelibs/kspell/full-list-KSpell.html
+share/doc/html/kdelibs/kspell/full-list-KSpellConfig.html
+share/doc/html/kdelibs/kspell/full-list-KSpellDlg.html
 share/doc/html/kdelibs/kspell/header-list.html
 share/doc/html/kdelibs/kspell/hier.html
 share/doc/html/kdelibs/kspell/index-long.html

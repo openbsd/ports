@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-kpilot,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+@comment $OpenBSD: PFRAG.shared-kpilot,v 1.2 2003/07/30 12:59:23 espie Exp $
 lib/libkpilot.so.0.0
-DYNLIBDIR(%D/lib)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.2 2003/01/27 19:22:50 espie Exp $
---- kcontrol/nics/nic.cpp.orig	Thu Dec  5 21:40:07 2002
-+++ kcontrol/nics/nic.cpp	Sat Jan 11 05:48:40 2003
+$OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.3 2003/07/30 12:59:22 espie Exp $
+--- kcontrol/nics/nic.cpp.orig	Sun Jul 13 21:23:37 2003
++++ kcontrol/nics/nic.cpp	Wed Jul 16 01:20:06 2003
 @@ -37,6 +37,7 @@
  #endif
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.2 2003/01/27 19:22:50 espie Exp $
  typedef KGenericFactory<KCMNic, QWidget > KCMNicFactory;
  K_EXPORT_COMPONENT_FACTORY (kcm_nic, KCMNicFactory("kcmnic") );
  
-@@ -127,76 +133,81 @@ NICList* findNICs()
+@@ -127,76 +133,80 @@ NICList* findNICs()
     NICList* nl=new NICList;
     nl->setAutoDelete(true);
  
@@ -135,10 +135,9 @@ $OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.2 2003/01/27 19:22:50 espie Exp $
 -   }
 +  freeifaddrs(ifap);
     return nl;
- };
+ }
  
 -#include "nic.moc"
- 
 +QString flags_tos (unsigned int flags)
 +{
 +  QString tmp;
@@ -168,5 +167,5 @@ $OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.2 2003/01/27 19:22:50 espie Exp $
 +  }
 +  return tmp;
 +}
-+
+ 
 +#include "nic.moc"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.sv,v 1.9 2003/07/30 12:59:23 espie Exp $
 share/apps/ktuberling/sounds/sv/brosch.wav
 share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
@@ -1505,6 +1505,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sk,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.9 2003/07/30 12:59:23 espie Exp $
 share/apps/ktuberling/sounds/sk/cigara.wav
 share/apps/ktuberling/sounds/sk/fuzy.wav
 share/apps/ktuberling/sounds/sk/hodinky.wav
@@ -304,6 +304,12 @@ ${DOC}kcontrol/useragent/${I}
 ${DOC}kcontrol/windowmanagement/common
 ${DOC}kcontrol/windowmanagement/${C}
 ${DOC}kcontrol/windowmanagement/${I}
+${DOC}kcron/common
+${DOC}kcron/${C}
+${DOC}kcron/${I}
+${DOC}kdat/common
+${DOC}kdat/${C}
+${DOC}kdat/${I}
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
@@ -648,6 +654,9 @@ ${DOC}konsole/konsole.png
 ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
+${DOC}kpackage/common
+${DOC}kpackage/${C}
+${DOC}kpackage/${I}
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
@@ -730,6 +739,9 @@ ${DOC}kspell/${I}
 ${DOC}ksysguard/common
 ${DOC}ksysguard/${C}
 ${DOC}ksysguard/${I}
+${DOC}ksysv/common
+${DOC}ksysv/${C}
+${DOC}ksysv/${I}
 ${DOC}kteatime/common
 ${DOC}kteatime/config.png
 ${DOC}kteatime/${C}
@@ -747,6 +759,9 @@ ${DOC}ktuberling/technical-reference.docbook
 ${DOC}kuickshow/common
 ${DOC}kuickshow/${C}
 ${DOC}kuickshow/${I}
+${DOC}kuser/common
+${DOC}kuser/${C}
+${DOC}kuser/${I}
 ${DOC}kview/common
 ${DOC}kview/${C}
 ${DOC}kview/${I}
@@ -759,6 +774,12 @@ ${DOC}kwin4/${I}
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
+${DOC}kwuftpd/common
+${DOC}kwuftpd/${C}
+${DOC}kwuftpd/${I}
+${DOC}kxconfig/common
+${DOC}kxconfig/${C}
+${DOC}kxconfig/${I}
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
@@ -802,6 +823,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -997,6 +1019,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -1198,15 +1221,19 @@ share/locale/sk/flag.png
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
+@dirrm ${DOC}kxconfig
+@dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kview
+@dirrm ${DOC}kuser
 @dirrm ${DOC}kuickshow
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
 @dirrm ${DOC}ktimer
 @dirrm ${DOC}kteatime
+@dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kspaceduel
@@ -1227,6 +1254,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
+@dirrm ${DOC}kpackage
 @dirrm ${DOC}kooka
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
@@ -1292,6 +1320,8 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
+@dirrm ${DOC}kdat
+@dirrm ${DOC}kcron
 @dirrm ${DOC}kcontrol/windowmanagement
 @dirrm ${DOC}kcontrol/useragent
 @dirrm ${DOC}kcontrol/spellchecking

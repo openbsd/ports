@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.et,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.et,v 1.9 2003/07/30 12:59:22 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -11,6 +11,9 @@ ${DOC}ark/${I}
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
+${DOC}cervisia/common
+${DOC}cervisia/${C}
+${DOC}cervisia/${I}
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -62,15 +65,27 @@ ${DOC}common/xml.dcl
 ${DOC}flashkard/common
 ${DOC}flashkard/${C}
 ${DOC}flashkard/${I}
+${DOC}kaddressbook/common
+${DOC}kaddressbook/${C}
+${DOC}kaddressbook/${I}
+${DOC}kalarm/common
+${DOC}kalarm/${C}
+${DOC}kalarm/${I}
 ${DOC}kalzium/common
 ${DOC}kalzium/${C}
 ${DOC}kalzium/${I}
 ${DOC}kamera/common
 ${DOC}kamera/${C}
 ${DOC}kamera/${I}
+${DOC}kandy/common
+${DOC}kandy/${C}
+${DOC}kandy/${I}
 ${DOC}kaphorism/common
 ${DOC}kaphorism/${C}
 ${DOC}kaphorism/${I}
+${DOC}karm/common
+${DOC}karm/${C}
+${DOC}karm/${I}
 ${DOC}kasteroids/common
 ${DOC}kasteroids/${C}
 ${DOC}kasteroids/${I}
@@ -99,6 +114,17 @@ ${DOC}kate/regular-expressions.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
+${DOC}kbabel/catman.docbook
+${DOC}kbabel/common
+${DOC}kbabel/dictionaries.docbook
+${DOC}kbabel/faq.docbook
+${DOC}kbabel/glossary.docbook
+${DOC}kbabel/${C}
+${DOC}kbabel/${I}
+${DOC}kbabel/kbabeldict.docbook
+${DOC}kbabel/menu.docbook
+${DOC}kbabel/preferences.docbook
+${DOC}kbabel/using.docbook
 ${DOC}kbackgammon/common
 ${DOC}kbackgammon/${C}
 ${DOC}kbackgammon/${I}
@@ -317,6 +343,9 @@ ${DOC}kdesu/${I}
 ${DOC}kdf/common
 ${DOC}kdf/${C}
 ${DOC}kdf/${I}
+${DOC}kdict/common
+${DOC}kdict/${C}
+${DOC}kdict/${I}
 ${DOC}kdm/common
 ${DOC}kdm/${C}
 ${DOC}kdm/${I}
@@ -417,6 +446,9 @@ ${DOC}kicker-applets/${C}
 ${DOC}kicker-applets/${I}
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
+${DOC}kicker/common
+${DOC}kicker/${C}
+${DOC}kicker/${I}
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
@@ -516,6 +548,9 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}kit/common
+${DOC}kit/${C}
+${DOC}kit/${I}
 ${DOC}kjots/common
 ${DOC}kjots/${C}
 ${DOC}kjots/${I}
@@ -570,6 +605,26 @@ ${DOC}kmplot/install.docbook
 ${DOC}kmplot/introduction.docbook
 ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/using.docbook
+${DOC}knewsticker/common
+${DOC}knewsticker/${C}
+${DOC}knewsticker/${I}
+${DOC}knode/commands.docbook
+${DOC}knode/common
+${DOC}knode/credits.docbook
+${DOC}knode/faq.docbook
+${DOC}knode/gloss.docbook
+${DOC}knode/${C}
+${DOC}knode/${I}
+${DOC}knode/install.docbook
+${DOC}knode/introduction.docbook
+${DOC}knode/journey.docbook
+${DOC}knode/more.docbook
+${DOC}knode/using-firststart.docbook
+${DOC}knode/using-morefeatures.docbook
+${DOC}knode/using-subscribing.docbook
+${DOC}knotes/common
+${DOC}knotes/${C}
+${DOC}knotes/${I}
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
@@ -637,12 +692,24 @@ ${DOC}konqueror/sidebar.docbook
 ${DOC}konquest/common
 ${DOC}konquest/${C}
 ${DOC}konquest/${I}
+${DOC}konsole/common
+${DOC}konsole/${C}
+${DOC}konsole/${I}
 ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
+${DOC}korganizer/common
+${DOC}korganizer/${C}
+${DOC}korganizer/${I}
+${DOC}korn/common
+${DOC}korn/${C}
+${DOC}korn/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
+${DOC}kpager/common
+${DOC}kpager/${C}
+${DOC}kpager/${I}
 ${DOC}kpaint/common
 ${DOC}kpaint/${C}
 ${DOC}kpaint/${I}
@@ -660,9 +727,29 @@ ${DOC}kpercentage/${I}
 ${DOC}kpercentage/install.docbook
 ${DOC}kpercentage/introduction.docbook
 ${DOC}kpercentage/using.docbook
+${DOC}kpf/common
+${DOC}kpf/${C}
+${DOC}kpf/${I}
+${DOC}kpilot/common
+${DOC}kpilot/${C}
+${DOC}kpilot/${I}
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
+${DOC}kppp/accounting.docbook
+${DOC}kppp/callback.docbook
+${DOC}kppp/chap.docbook
+${DOC}kppp/common
+${DOC}kppp/dialog-setup.docbook
+${DOC}kppp/getting-online.docbook
+${DOC}kppp/global-settings.docbook
+${DOC}kppp/hayes.docbook
+${DOC}kppp/${C}
+${DOC}kppp/${I}
+${DOC}kppp/kppp-faq.docbook
+${DOC}kppp/security.docbook
+${DOC}kppp/tricks.docbook
+${DOC}kppp/wizard.docbook
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
@@ -681,6 +768,9 @@ ${DOC}kshisen/${I}
 ${DOC}ksim/common
 ${DOC}ksim/${C}
 ${DOC}ksim/${I}
+${DOC}ksirc/common
+${DOC}ksirc/${C}
+${DOC}ksirc/${I}
 ${DOC}ksirtet/common
 ${DOC}ksirtet/${C}
 ${DOC}ksirtet/${I}
@@ -741,6 +831,9 @@ ${DOC}ksysguard/${I}
 ${DOC}ksysv/common
 ${DOC}ksysv/${C}
 ${DOC}ksysv/${I}
+${DOC}ktalkd/common
+${DOC}ktalkd/${C}
+${DOC}ktalkd/${I}
 ${DOC}kteatime/common
 ${DOC}kteatime/${C}
 ${DOC}kteatime/${I}
@@ -775,12 +868,18 @@ ${DOC}kwin4/${I}
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
+${DOC}kwrite/common
+${DOC}kwrite/${C}
+${DOC}kwrite/${I}
 ${DOC}kwuftpd/common
 ${DOC}kwuftpd/${C}
 ${DOC}kwuftpd/${I}
 ${DOC}kxconfig/common
 ${DOC}kxconfig/${C}
 ${DOC}kxconfig/${I}
+${DOC}lisa/common
+${DOC}lisa/${C}
+${DOC}lisa/${I}
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
@@ -1029,6 +1128,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -1230,8 +1330,10 @@ share/locale/et/flag.png
 @dirrm ${DOC}quanta
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
+@dirrm ${DOC}lisa
 @dirrm ${DOC}kxconfig
 @dirrm ${DOC}kwuftpd
+@dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
 @dirrm ${DOC}kweather
@@ -1243,6 +1345,7 @@ share/locale/et/flag.png
 @dirrm ${DOC}ktouch
 @dirrm ${DOC}ktimer
 @dirrm ${DOC}kteatime
+@dirrm ${DOC}ktalkd
 @dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kstars
@@ -1252,18 +1355,26 @@ share/locale/et/flag.png
 @dirrm ${DOC}ksnapshot
 @dirrm ${DOC}ksnake
 @dirrm ${DOC}ksirtet
+@dirrm ${DOC}ksirc
 @dirrm ${DOC}ksim
 @dirrm ${DOC}kshisen
 @dirrm ${DOC}ksame
 @dirrm ${DOC}kruler
 @dirrm ${DOC}krfb
 @dirrm ${DOC}kreversi
+@dirrm ${DOC}kppp
 @dirrm ${DOC}kpoker
+@dirrm ${DOC}kpilot
+@dirrm ${DOC}kpf
 @dirrm ${DOC}kpercentage
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpaint
+@dirrm ${DOC}kpager
 @dirrm ${DOC}kpackage
+@dirrm ${DOC}korn
+@dirrm ${DOC}korganizer
 @dirrm ${DOC}kooka
+@dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konqueror
 @dirrm ${DOC}konq-plugins/webarchiver
@@ -1282,6 +1393,9 @@ share/locale/et/flag.png
 @dirrm ${DOC}kompare
 @dirrm ${DOC}kolf
 @dirrm ${DOC}kodo
+@dirrm ${DOC}knotes
+@dirrm ${DOC}knode
+@dirrm ${DOC}knewsticker
 @dirrm ${DOC}kmplot
 @dirrm ${DOC}kmoon
 @dirrm ${DOC}kmines
@@ -1295,6 +1409,7 @@ share/locale/et/flag.png
 @dirrm ${DOC}klettres
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kjots
+@dirrm ${DOC}kit
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kinfocenter/xserver
 @dirrm ${DOC}kinfocenter/usb
@@ -1316,6 +1431,7 @@ share/locale/et/flag.png
 @dirrm ${DOC}kinfocenter
 @dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
+@dirrm ${DOC}kicker
 @dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter/userguide
 @dirrm ${DOC}khelpcenter/quickstart
@@ -1333,6 +1449,7 @@ share/locale/et/flag.png
 @dirrm ${DOC}kedit
 @dirrm ${DOC}kdvi
 @dirrm ${DOC}kdm
+@dirrm ${DOC}kdict
 @dirrm ${DOC}kdf
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
@@ -1400,15 +1517,21 @@ share/locale/et/flag.png
 @dirrm ${DOC}kblackbox
 @dirrm ${DOC}kbattleship
 @dirrm ${DOC}kbackgammon
+@dirrm ${DOC}kbabel
 @dirrm ${DOC}katomic
 @dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate
 @dirrm ${DOC}kasteroids
+@dirrm ${DOC}karm
 @dirrm ${DOC}kaphorism
+@dirrm ${DOC}kandy
 @dirrm ${DOC}kamera
 @dirrm ${DOC}kalzium
+@dirrm ${DOC}kalarm
+@dirrm ${DOC}kaddressbook
 @dirrm ${DOC}flashkard
 @dirrm ${DOC}common
+@dirrm ${DOC}cervisia
 @dirrm ${DOC}atlantik
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor

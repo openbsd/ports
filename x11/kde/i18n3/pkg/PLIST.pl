@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.9 2003/07/30 12:59:23 espie Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -33,6 +33,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -228,6 +229,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -420,6 +422,10 @@ ${LOC}webarchiver.mo
 share/locale/pl/charset
 share/locale/pl/entry.desktop
 share/locale/pl/flag.png
+share/services/searchproviders/onet.desktop
+share/services/searchproviders/wirtualna_polska.desktop
+@dirrm share/services/searchproviders
+@dirrm share/services
 @comment @dirrm share/locale/pl/LC_MESSAGES
 @comment @dirrm share/locale/pl
 @comment @dirrm share/locale

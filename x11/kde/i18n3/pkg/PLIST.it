@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.it,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.9 2003/07/30 12:59:22 espie Exp $
 share/apps/ktuberling/sounds/it/baffi.wav
 share/apps/ktuberling/sounds/it/bocca.wav
 share/apps/ktuberling/sounds/it/capelli.wav
@@ -122,6 +122,9 @@ ${DOC}kcoloredit/${I}
 ${DOC}kcontrol/cache/common
 ${DOC}kcontrol/cache/${C}
 ${DOC}kcontrol/cache/${I}
+${DOC}kcontrol/clock/common
+${DOC}kcontrol/clock/${C}
+${DOC}kcontrol/clock/${I}
 ${DOC}kcontrol/colors/common
 ${DOC}kcontrol/colors/${C}
 ${DOC}kcontrol/colors/${I}
@@ -143,12 +146,16 @@ ${DOC}kcontrol/email/${C}
 ${DOC}kcontrol/email/${I}
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
+${DOC}kcontrol/kalarmd/common
+${DOC}kcontrol/kalarmd/${C}
+${DOC}kcontrol/kalarmd/${I}
 ${DOC}kcontrol/kcmktalkd/common
 ${DOC}kcontrol/kcmktalkd/${C}
 ${DOC}kcontrol/kcmktalkd/${I}
 ${DOC}kcontrol/kcmlowbatcrit/common
 ${DOC}kcontrol/kcmlowbatcrit/${C}
 ${DOC}kcontrol/kcmlowbatcrit/${I}
+${DOC}kcontrol/khtml/nsplugin.docbook
 ${DOC}kcontrol/lanbrowser/common
 ${DOC}kcontrol/lanbrowser/${C}
 ${DOC}kcontrol/lanbrowser/${I}
@@ -531,6 +538,9 @@ ${DOC}kstars/stars.docbook
 ${DOC}kstars/timezones.docbook
 ${DOC}kstars/utime.docbook
 ${DOC}kstars/zenith.docbook
+${DOC}ksysv/common
+${DOC}ksysv/${C}
+${DOC}ksysv/${I}
 ${DOC}kteatime/common
 ${DOC}kteatime/${C}
 ${DOC}kteatime/${I}
@@ -553,6 +563,9 @@ ${DOC}ktuberling/technical-reference.docbook
 ${DOC}kuickshow/common
 ${DOC}kuickshow/${C}
 ${DOC}kuickshow/${I}
+${DOC}kuser/common
+${DOC}kuser/${C}
+${DOC}kuser/${I}
 ${DOC}kverbos/anterior.png
 ${DOC}kverbos/borrar.png
 ${DOC}kverbos/cancelar.png
@@ -668,16 +681,15 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
-${LOC}empath.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}flashkard.mo
 ${LOC}fontinst.mo
-${LOC}gideon.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
@@ -692,7 +704,6 @@ ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
-${LOC}kalarmd.mo
 ${LOC}kalarmdgui.mo
 ${LOC}kalzium.mo
 ${LOC}kandy.mo
@@ -750,7 +761,6 @@ ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
-${LOC}kcmkdb.mo
 ${LOC}kcmkded.mo
 ${LOC}kcmkeys.mo
 ${LOC}kcmkicker.mo
@@ -789,7 +799,6 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
-${LOC}kcmwidgetsettings.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
@@ -801,7 +810,6 @@ ${LOC}kdepasswd.mo
 ${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
-${LOC}kdesktop_lock.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
@@ -847,7 +855,6 @@ ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
-${LOC}kfind.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
@@ -870,8 +877,8 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
-${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_mac.mo
@@ -890,9 +897,7 @@ ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
-${LOC}klatin.mo
 ${LOC}klegacyimport.mo
-${LOC}kless.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
@@ -922,7 +927,6 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
-${LOC}koncd.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -941,7 +945,6 @@ ${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
-${LOC}kpixmap2bitmap.mo
 ${LOC}kpoker.mo
 ${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
@@ -975,7 +978,6 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}ksync.mo
-${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -1046,7 +1048,6 @@ ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
 ${LOC}megami.mo
-${LOC}multiplayers.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -1063,7 +1064,6 @@ ${LOC}synaescope.mo
 ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
-${LOC}twister.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}validatorsplugin.mo
@@ -1086,12 +1086,14 @@ share/locale/it/flag.png
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kverbos
+@dirrm ${DOC}kuser
 @dirrm ${DOC}kuickshow
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
 @dirrm ${DOC}ktouch
 @dirrm ${DOC}ktimer
 @dirrm ${DOC}kteatime
+@dirrm ${DOC}ksysv
 @dirrm ${DOC}kstars
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kspaceduel
@@ -1171,14 +1173,17 @@ share/locale/it/flag.png
 @dirrm ${DOC}kcontrol/passwords
 @dirrm ${DOC}kcontrol/netpref
 @dirrm ${DOC}kcontrol/lanbrowser
+@dirrm ${DOC}kcontrol/khtml
 @dirrm ${DOC}kcontrol/kcmlowbatcrit
 @dirrm ${DOC}kcontrol/kcmktalkd
+@dirrm ${DOC}kcontrol/kalarmd
 @dirrm ${DOC}kcontrol/email
 @dirrm ${DOC}kcontrol/ebrowsing
 @dirrm ${DOC}kcontrol/desktop
 @dirrm ${DOC}kcontrol/crypto
 @dirrm ${DOC}kcontrol/cookies
 @dirrm ${DOC}kcontrol/colors
+@dirrm ${DOC}kcontrol/clock
 @dirrm ${DOC}kcontrol/cache
 @dirrm ${DOC}kcontrol
 @dirrm ${DOC}kcoloredit

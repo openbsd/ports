@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nb,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.nb,v 1.8 2003/07/30 12:59:23 espie Exp $
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
@@ -37,6 +37,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo

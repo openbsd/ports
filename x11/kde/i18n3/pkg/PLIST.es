@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.es,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.es,v 1.9 2003/07/30 12:59:22 espie Exp $
 share/apps/ktuberling/sounds/es/anteojos.wav
 share/apps/ktuberling/sounds/es/bigote.wav
 share/apps/ktuberling/sounds/es/boca.wav
@@ -955,6 +955,18 @@ ${DOC}megami/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
+${DOC}quanta/adv-quanta.docbook
+${DOC}quanta/common
+${DOC}quanta/debugging-quanta.docbook
+${DOC}quanta/extending-quanta.docbook
+${DOC}quanta/fundamentals.docbook
+${DOC}quanta/${C}
+${DOC}quanta/${I}
+${DOC}quanta/installation.docbook
+${DOC}quanta/introduction.docbook
+${DOC}quanta/quanta-menus.docbook
+${DOC}quanta/quanta-projects.docbook
+${DOC}quanta/using-quanta.docbook
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -1185,6 +1197,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -1383,6 +1396,7 @@ share/locale/es/flag.png
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale
+@dirrm ${DOC}quanta
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat

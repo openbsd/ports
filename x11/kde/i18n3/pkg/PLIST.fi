@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fi,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.fi,v 1.9 2003/07/30 12:59:22 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -47,6 +47,26 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kfind/common
+${DOC}kfind/${C}
+${DOC}kfind/${I}
+${DOC}khangman/common
+${DOC}khangman/${C}
+${DOC}khangman/${I}
+${DOC}khangman/khangman1.png
+${DOC}khelpcenter/common
+${DOC}khelpcenter/contact.docbook
+${DOC}khelpcenter/glossary/common
+${DOC}khelpcenter/glossary/${C}
+${DOC}khelpcenter/glossary/${I}
+${DOC}khelpcenter/glossary/kdeprintingglossary.docbook
+${DOC}khelpcenter/help.docbook
+${DOC}khelpcenter/${C}
+${DOC}khelpcenter/${I}
+${DOC}khelpcenter/links.docbook
+${DOC}khelpcenter/support.docbook
+${DOC}khelpcenter/welcome.docbook
+${DOC}khelpcenter/whatiskde.docbook
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -81,6 +101,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -117,6 +138,7 @@ ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
+${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
 ${LOC}kateprojectmanager.mo
@@ -253,7 +275,6 @@ ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
-${LOC}kfind.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
@@ -261,6 +282,7 @@ ${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgantt.mo
+${LOC}kgeo.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}khangman.mo
@@ -273,8 +295,8 @@ ${LOC}kiconedit.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
-${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_mac.mo
@@ -366,6 +388,7 @@ ${LOC}ksnapshot.mo
 ${LOC}ksokoban.mo
 ${LOC}kspaceduel.mo
 ${LOC}ksplash.mo
+${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}ksync.mo
@@ -464,6 +487,10 @@ share/locale/fi/flag.png
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
 @comment @dirrm share/locale
+@dirrm ${DOC}khelpcenter/glossary
+@dirrm ${DOC}khelpcenter
+@dirrm ${DOC}khangman
+@dirrm ${DOC}kfind
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/fi
 @comment @dirrm share/doc/HTML

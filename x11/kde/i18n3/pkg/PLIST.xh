@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST.xh,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.xh,v 1.9 2003/07/30 12:59:23 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
+${DOC}artsbuilder/gui.docbook
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
@@ -513,6 +514,7 @@ share/locale/xh/entry.desktop
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kaddressbook
+@dirrm ${DOC}artsbuilder
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/xh
 @comment @dirrm share/doc/HTML

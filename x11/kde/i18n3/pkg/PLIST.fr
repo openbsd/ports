@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.9 2003/07/30 12:59:22 espie Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
@@ -1483,6 +1483,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo

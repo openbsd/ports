@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cs,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.9 2003/07/30 12:59:22 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -382,6 +382,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo

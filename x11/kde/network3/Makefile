@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/12 19:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2003/07/30 12:59:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.2
+VERSION=		3.1.3
 DISTNAME=		kdenetwork-${VERSION}
 
 LIB_DEPENDS= kdecore.4,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell,vcard::x11/kde/libs3

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2003/01/27 21:55:29 espie Exp $
-V=0.9.5
+# $OpenBSD: Makefile,v 1.16 2003/07/30 12:59:23 espie Exp $
+V=0.9.6pre4
 CATEGORIES=		x11 x11/kde
 COMMENT=	"KDE style engine"
 
 BROKEN=	"Awaiting kde 3.1 update"
 HOMEPAGE=	http://www.mosfet.org/liquid.html
 MASTER_SITES=	http://www.mosfet.org/
-DISTNAME=	mosfet-liquid$V
+DISTNAME=	mosfet-liquid0.9.6-pre4
 PKGNAME=	mosfet-liquid-$V
 DIST_SUBDIR=	
 EXTRACT_SUFX=	.tar.gz

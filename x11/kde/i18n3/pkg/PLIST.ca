@@ -1,7 +1,44 @@
-@comment $OpenBSD: PLIST.ca,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.ca,v 1.9 2003/07/30 12:59:22 espie Exp $
+${DOC}kbugbuster/common
+${DOC}kbugbuster/${C}
+${DOC}kbugbuster/${I}
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
+${DOC}kcontrol/kalarmd/common
+${DOC}kcontrol/kalarmd/${C}
+${DOC}kcontrol/kalarmd/${I}
+${DOC}kcontrol/kcmktalkd/common
+${DOC}kcontrol/kcmktalkd/${C}
+${DOC}kcontrol/kcmktalkd/${I}
+${DOC}kcontrol/kcmlowbatcrit/common
+${DOC}kcontrol/kcmlowbatcrit/${C}
+${DOC}kcontrol/kcmlowbatcrit/${I}
+${DOC}kcontrol/kcmlowbatwarn/common
+${DOC}kcontrol/kcmlowbatwarn/${C}
+${DOC}kcontrol/kcmlowbatwarn/${I}
+${DOC}kcontrol/kmixcfg/common
+${DOC}kcontrol/kmixcfg/${C}
+${DOC}kcontrol/kmixcfg/${I}
+${DOC}kcontrol/kxmlrpcd/common
+${DOC}kcontrol/kxmlrpcd/${C}
+${DOC}kcontrol/kxmlrpcd/${I}
+${DOC}kcontrol/lanbrowser/common
+${DOC}kcontrol/lanbrowser/${C}
+${DOC}kcontrol/lanbrowser/${I}
+${DOC}kcontrol/laptop/common
+${DOC}kcontrol/laptop/${C}
+${DOC}kcontrol/laptop/${I}
+${DOC}kcontrol/powerctrl/common
+${DOC}kcontrol/powerctrl/${C}
+${DOC}kcontrol/powerctrl/${I}
+${DOC}keduca/common
+${DOC}keduca/${C}
+${DOC}keduca/${I}
+${DOC}keduca/screenshot.png
+${DOC}kgpgcertmanager/common
+${DOC}kgpgcertmanager/${C}
+${DOC}kgpgcertmanager/${I}
 ${DOC}khelpcenter/background.png
 ${DOC}khelpcenter/bgtable.png
 ${DOC}khelpcenter/common
@@ -115,6 +152,50 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}kmail/common
+${DOC}kmail/configure.docbook
+${DOC}kmail/credits-and-licenses.docbook
+${DOC}kmail/faq.docbook
+${DOC}kmail/getting-started.docbook
+${DOC}kmail/importing.docbook
+${DOC}kmail/${C}
+${DOC}kmail/${I}
+${DOC}kmail/intro.docbook
+${DOC}kmail/menus.docbook
+${DOC}kmail/using-kmail.docbook
+${DOC}kmoon/common
+${DOC}kmoon/${C}
+${DOC}kmoon/${I}
+${DOC}kompare/common
+${DOC}kompare/${C}
+${DOC}kompare/${I}
+${DOC}kpercentage/answer.png
+${DOC}kpercentage/commands.docbook
+${DOC}kpercentage/common
+${DOC}kpercentage/credits.docbook
+${DOC}kpercentage/devel.docbook
+${DOC}kpercentage/edu-logo.png
+${DOC}kpercentage/faq.docbook
+${DOC}kpercentage/help.png
+${DOC}kpercentage/${C}
+${DOC}kpercentage/${I}
+${DOC}kpercentage/install.docbook
+${DOC}kpercentage/introduction.docbook
+${DOC}kpercentage/main.png
+${DOC}kpercentage/using.docbook
+${DOC}kpercentage/welcome.png
+${DOC}krfb/common
+${DOC}krfb/${C}
+${DOC}krfb/${I}
+${DOC}kspell/common
+${DOC}kspell/${C}
+${DOC}kspell/${I}
+${DOC}kweather/common
+${DOC}kweather/${C}
+${DOC}kweather/${I}
+${DOC}kworldclock/common
+${DOC}kworldclock/${C}
+${DOC}kworldclock/${I}
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -136,6 +217,7 @@ ${LOC}cupsdconf.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaddons.mo
 ${LOC}desktop_kdeadmin.mo
+${LOC}desktop_kdeartwork.mo
 ${LOC}desktop_kdebase.mo
 ${LOC}desktop_kdeedu.mo
 ${LOC}desktop_kdegames.mo
@@ -344,6 +426,7 @@ ${LOC}kinetd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
+${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
@@ -359,6 +442,7 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
 ${LOC}kit.mo
+${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
@@ -401,6 +485,7 @@ ${LOC}kpackage.mo
 ${LOC}kpager.mo
 ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
+${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
@@ -439,6 +524,7 @@ ${LOC}ksplash.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}ksync.mo
 ${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
@@ -471,7 +557,9 @@ ${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
+${LOC}kwin_cde_config.mo
 ${LOC}kwin_default_config.mo
+${LOC}kwin_glow_config.mo
 ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_keramik_config.mo
 ${LOC}kwin_modernsys_config.mo
@@ -482,18 +570,23 @@ ${LOC}kxconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
+${LOC}libkcal.mo
+${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
+${LOC}libkdepim.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkonq.mo
+${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksirtet.mo
+${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
@@ -529,6 +622,14 @@ share/locale/ca/flag.png
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
 @comment @dirrm share/locale
+@dirrm ${DOC}kworldclock
+@dirrm ${DOC}kweather
+@dirrm ${DOC}kspell
+@dirrm ${DOC}krfb
+@dirrm ${DOC}kpercentage
+@dirrm ${DOC}kompare
+@dirrm ${DOC}kmoon
+@dirrm ${DOC}kmail
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter/userguide
@@ -536,6 +637,18 @@ share/locale/ca/flag.png
 @dirrm ${DOC}khelpcenter/glossary
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}kgpgcertmanager
+@dirrm ${DOC}keduca
+@dirrm ${DOC}kcontrol/powerctrl
+@dirrm ${DOC}kcontrol/laptop
+@dirrm ${DOC}kcontrol/lanbrowser
+@dirrm ${DOC}kcontrol/kxmlrpcd
+@dirrm ${DOC}kcontrol/kmixcfg
+@dirrm ${DOC}kcontrol/kcmlowbatwarn
+@dirrm ${DOC}kcontrol/kcmlowbatcrit
+@dirrm ${DOC}kcontrol/kcmktalkd
+@dirrm ${DOC}kcontrol/kalarmd
 @dirrm ${DOC}kcontrol
+@dirrm ${DOC}kbugbuster
 @dirrm share/doc/HTML/ca
 @dirrm share/doc/HTML
