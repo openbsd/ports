@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/25 21:05:23 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/11/22 21:55:21 danh Exp $
 
 VERSION=	4.1.2
 DISTNAME=	ucd-snmp-${VERSION}
 CATEGORIES=     net
-NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ucd-snmp.ucdavis.edu/	\
-		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/
+NEED_VERSION=	1.340
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITE_SUBDIR= net-snmp
 
-HOMEPAGE=	http://ucd-snmp.ucdavis.edu/
+HOMEPAGE=	http://net-snmp.sourceforge.net/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
