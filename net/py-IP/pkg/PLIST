@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/04 17:33:36 shell Exp $
+lib/python${PYTHON_VER}/site-packages/IPy.py
+lib/python${PYTHON_VER}/site-packages/IPy.pyc
