@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 1999/11/01 07:12:00 turan Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/26 11:10:31 fgsch Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=       procmail-3.13.1
+DISTNAME=       procmail-3.14
 CATEGORIES=	mail
 #NO_CDROM=	"NOFEE:	Can not sell" # is GPLed as of version 3.12
 
