@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/08 14:17:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/12 18:37:31 turan Exp $
+
+BROKEN=		does not build
 
 DISTNAME=	Compress-Zlib-1.01
 PKGNAME=	p5-Cmprs-Zlib-1.01
