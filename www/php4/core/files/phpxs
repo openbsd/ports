@@ -1,0 +1,97 @@
+#!/bin/sh
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+# variables substituted during package build time
+php_version=PHP_VERSION
+php_module_path=MODULES_DIR
+php_cfg=PHP_CONFIG_FILE
+php_example=TRUEPREFIX/share/doc/php4
+php_module=${php_module_path}/libphp4.so
+
+showusage() {
+    echo
+    echo "Usage: $0 -a [ -c <location of php.ini> ] <module>"
+    echo "       $0 -r [ -c <location of php.ini> ] <module>" 
+    echo "       $0 -s"
+    exit 2
+}
+
+set -- `getopt sarc: $*`
+if test $? != 0 ; then
+    showusage;
+fi
+
+add=0; remove=0;
+for i; do
+    case "$i"
+    in
+        -s)
+            setup=1; shift;;
+        -a)
+            add=1; shift;;
+        -r)
+            remove=1; shift;;
+        -c)
+            php_cfg=$2; shift; shift;;
+        --)
+            shift; break;;
+    esac
+done
+
+module=$1
+
+if [ $setup ]; then
+    if [ ! -f ${php_module} ]; then
+        echo "Unable to locate PHP4 module at ${php_module}"
+        exit;
+    fi
+
+    /usr/sbin/apxs -i -a -n php4 ${php_module}
+    echo 
+    echo "You should copy the sample configuration files from"
+    echo "${php_example} to ${php_cfg}"
+    exit;
+fi
+
+if [ ! -r $php_cfg ]; then
+    echo "PHP config file $php_cfg could not be found."
+    showusage;
+fi
+
+if [ ! $module ]; then
+   echo 'Specify a PHP extension module to activate or deactivate.'
+   showusage;
+fi
+
+if [ `expr $add + $remove` -gt 1 ]; then
+    echo 'Cannot specify -a and -r at the same time.'
+    showusage
+fi
+
+if [ `expr $add + $remove` -eq 0 ]; then
+    echo 'Must specify either -a or -r action.'
+    showusage
+fi
+
+# regexp to match an extension entry in the config file
+extmatch='^\;?[[:space:]]{0,2}extension[[:space:]]*=[[:space:]]*'${module}.so
+
+if [ $add -gt 0 ]; then
+    if [ ! -r ${php_module_path}/${module}.so ]; then
+        echo "Module ${module}.so was not found on your system in ${php_module_path}"
+        echo "Try installing package php4-${module}-${php_version} from your package collection"
+        exit;
+    fi
+    if [ `grep -E "${extmatch}" $php_cfg | wc -l` -gt 0 ]; then
+        echo "Activating extension : $module";
+        /usr/bin/perl -pi -e "s/${extmatch}/extension=${module}.so/" $php_cfg
+    else
+        echo "Adding extension : $module";
+        echo "extension=${module}.so" >> $php_cfg;
+    fi
+elif [ $remove -gt 0 ]; then 
+    echo "Disabling extension: $module"
+    /usr/bin/perl -pi -e "s/${extmatch}/\;extension=${module}.so/" $php_cfg;
+fi

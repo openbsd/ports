@@ -1,52 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
---- ltmain.sh.orig	Sat Dec  8 19:40:14 2001
-+++ ltmain.sh	Mon Dec 17 18:47:05 2001
-@@ -1031,12 +1031,34 @@ compiler."
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    continue
-+	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+	    # Do not include libc_r directly, use -pthread flag.
-+	    continue
-+	    ;;
- 	  esac
- 	fi
- 	deplibs="$deplibs $arg"
- 	continue
- 	;;
- 
-+      -pthread)
-+	case $host in
-+	*-*-openbsd*)
-+	  deplibs="$deplibs $arg"
-+	  ;;
-+	*)
-+	  continue
-+	  ;;
-+	esac
-+	;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -2401,6 +2423,9 @@ compiler."
- 	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
- 	    # these systems don't actually have a c library (as such)!
- 	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            ;;
- 	  *-*-rhapsody* | *-*-darwin1.[012])
- 	    # Rhapsody C library is in the System framework
- 	    deplibs="$deplibs -framework System"
-@@ -4412,40 +4437,6 @@ relink_command=\"$relink_command\""
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/08/12 04:27:41 avsm Exp $
+--- ltmain.sh.orig	Thu Aug  8 03:07:04 2002
++++ ltmain.sh	Thu Aug  8 03:07:34 2002
+@@ -4412,40 +4412,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

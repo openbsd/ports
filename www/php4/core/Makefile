@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/12 10:13:56 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/08/12 04:27:41 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 PKGNAME=	php4-core-${V}
@@ -26,20 +26,29 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 
 MODULES=	gettext iconv
 
+# some variables to substitute 
+SUBST_VARS=	PHP_CONFIG_FILE
+PHP_VERSION=	${V}
+
+.for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION
+PHPXS_SUBST+= -e 's,${i},${${i}},'
+.endfor
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}
+
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/lib/libphp4.so
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${MODULES_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
+.for i in dist recommended
 	@sed 's,MODULES_DIR,${MODULES_DIR},' \
-		<${WRKSRC}/php.ini-dist \
-		>${PREFIX}/share/doc/php4/php.ini-dist
-	@sed 's,MODULES_DIR,${MODULES_DIR},' \
-		<${WRKSRC}/php.ini-recommended \
-		>${PREFIX}/share/doc/php4/php.ini-recommended
-	@sed 's,y0y0y0,${TRUEPREFIX},' \
-		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
-	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
+		<${WRKSRC}/php.ini-${i} \
+		>${PREFIX}/share/doc/php4/php.ini-${i}
+.endfor
+	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs
+	@chmod ${BINMODE} ${PREFIX}/sbin/phpxs
 
 .if ${MACHINE_ARCH} == "i386"
 LIB_DEPENDS+=	recode.0::converters/recode
