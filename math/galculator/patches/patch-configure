@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/06/25 21:58:05 naddy Exp $
+--- configure.orig	Wed Jun 25 16:24:13 2003
++++ configure	Wed Jun 25 17:13:12 2003
+@@ -4003,6 +4003,8 @@ done
+       fi
+ 
+       if test "$gt_cv_have_gettext" = "yes"; then
++save_LIBS=$LIBS
++LIBS="$INTLLIBS $LIBS"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_GETTEXT 1
+@@ -4334,6 +4336,7 @@ rm -f conftest.$ac_objext conftest$ac_ex
+ 	  gt_cv_have_gettext=no
+ 	fi
+       fi
++LIBS=$save_LIBS
+ 
+ fi
+ 

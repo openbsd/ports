@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/25 21:58:05 naddy Exp $
+bin/galculator
+man/man1/galculator.1
+share/applications/galculator.desktop
+share/galculator/glade/about.glade
+share/galculator/glade/color.glade
+share/galculator/glade/font.glade
+share/galculator/glade/main.glade
+share/galculator/glade/prefs.glade
+share/locale/de/LC_MESSAGES/galculator.mo
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale
+@dirrm share/galculator/glade
+@dirrm share/galculator
+@comment @dirrm share/applications
