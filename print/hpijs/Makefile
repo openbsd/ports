@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/29 11:12:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/18 12:48:03 naddy Exp $
 
 COMMENT=		"HP Inkjet driver for ghostscript"
 
@@ -20,5 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hpinkjet/}
 RUN_DEPENDS=		::print/ghostscript/gnu
 
 CONFIGURE_STYLE=	gnu
+FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
+			docdir="${PREFIX}/share/doc/hpijs"
 
 .include <bsd.port.mk>
