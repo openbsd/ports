@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/08/23 07:07:43 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2000/08/28 18:17:10 jasoni Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -6,7 +6,6 @@
      SUBDIR += amp
      SUBDIR += aumix
      SUBDIR += bladeenc
-     SUBDIR += bwap
 #    SUBDIR += cam
 #    SUBDIR += cddbd
 #    SUBDIR += cdplay
@@ -40,6 +39,7 @@
 #    SUBDIR += s3mod
      SUBDIR += sox
 #    SUBDIR += splay
+     SUBDIR += teknap
      SUBDIR += timidity
      SUBDIR += tosha
      SUBDIR += tracker
