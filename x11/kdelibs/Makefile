@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/06/14 23:44:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/15 13:10:28 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.1
@@ -15,15 +15,8 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.3.4:${PORTSDIR}/graphics/tiff34
 
-.if ${MACHINE_ARCH} == "i386"
-BROKEN=		"gas bug, to be fixed soon"
-.endif
-
-# Internal Compiler errors
-.if ${MACHINE_ARCH} == "sparc"
-PATCH_LIST=	patch-* sup-sparc
-.endif
-
+USE_EGCC=	yes
+USE_EGXX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
