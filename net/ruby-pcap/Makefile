@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/29 13:59:24 couderc Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/09 21:13:05 couderc Exp $
 
 COMMENT=		"Ruby interface to LBL Packet Capture library"
 
 VERSION=		0.6
 DISTNAME=		ruby-pcap-${VERSION}
 CATEGORIES=		net
-NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/pcap-e.html
 
@@ -29,11 +28,13 @@ CONFIGURE_STYLE=	simple
 
 WRKDIST=		${WRKDIR}/pcap
 
-INST_DIR=		${PREFIX}/share/ruby-pcap
+DOC_DIR=		${MODRUBY_DOCDIR}/ruby-pcap/
+EXAMPLE_DIR=		${MODRUBY_EXAMPLEDIR}/ruby-pcap/
 
 post-install:
-	${INSTALL_DATA_DIR} ${INST_DIR}
-	cp -R ${WRKSRC}/doc ${INST_DIR}
-	cp -R ${WRKSRC}/examples ${INST_DIR}
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOC_DIR}
+	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLE_DIR}
 
 .include <bsd.port.mk>
