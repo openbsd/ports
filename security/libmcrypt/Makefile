@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/06 09:27:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/13 22:56:24 avsm Exp $
 
 COMMENT=	"interface to access block/stream encryption algorithms"
 
@@ -11,8 +11,8 @@ MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 HOMEPAGE=	http://mcrypt.hellug.gr/lib/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-LIB_DEPENDS=	mhash.2::security/mhash
-USE_LIBTOOL=	Yes
+LIB_DEPENDS=	mhash.2::security/mhash \
+		ltdl.1::devel/libtool
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
