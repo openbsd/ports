@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 1999/09/26 21:15:32 espie Exp $
+# $OpenBSD: Makefile,v 1.36 1999/10/04 22:58:31 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -9,24 +9,25 @@ PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	todd@openbsd.org
+NEED_VERSION=	1.121
 
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
+MAINTAINER=	todd@openbsd.org
+
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES)
-DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
-MASTER_SITES+=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
+MASTER_SITES0=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 		ftp://idea.dsi.unimi.it/pub/security/crypt/math/
+DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz:0
 .endif
 
-ETCDIR?=	/etc
+ETCDIR?=	${PREFIX}/etc
 RSHPROG?=	/usr/bin/rsh
 
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} \
-		--with-etcdir=${ETCDIR} \
+CONFIGURE_ARGS=	--with-etcdir=${ETCDIR} \
 		--with-rsh=${RSHPROG} \
 		--with-libwrap
 CONFIGURE_ENV= PERL=/usr/bin/perl
@@ -106,11 +107,11 @@ post-extract:
 # create a package.
 #
 post-install:
+	@${MKDIR} ${PREFIX}/etc
 	@${MKDIR} ${PREFIX}/lib/ssh
 	@cat ${WRKSRC}/server_config.sample | \
-	  sed "s#_ETCDIR_#${ETCDIR}#g" >/tmp/ssh_inst.$$$$; \
-	  ${INSTALL_DATA} /tmp/ssh_inst.$$$$ \
-	  ${PREFIX}/lib/ssh/server_config.sample
+	  ${SED} "s#_ETCDIR_#${ETCDIR}#g" > /tmp/ssh_inst.$$$$; \
+	  ${INSTALL_DATA} /tmp/ssh_inst.$$$$ ${PREFIX}/lib/ssh/server_config.sample
 	@${INSTALL_DATA} ${WRKSRC}/host_config.sample ${PREFIX}/lib/ssh
 	@if [ ! -f ${ETCDIR}/ssh_host_key ]; then \
 		${ECHO} "Generating a secret host key..."; \
