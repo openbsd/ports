@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.628 2004/08/02 13:01:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.629 2004/08/03 08:04:02 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -90,6 +90,8 @@ NO_SHARED_LIBS?=	Yes
 .  endif
 .endfor
 NO_SHARED_LIBS?=	No
+
+SHARED_ONLY?=	No
 
 # Global path locations.
 PORTSDIR?=		/usr/ports
@@ -955,6 +957,8 @@ IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
 IGNORE= "is not for ${NOT_FOR_ARCHS}"
 .      endif
 .    endfor
+.  elif ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
+IGNORE="requires shared libraries"
 .  endif
 .  if !defined(IGNORE) && defined(COMES_WITH)
 .    if ( ${OPSYS_VER} >= ${COMES_WITH} )
@@ -1984,12 +1988,17 @@ _internal-clean:
 # when port is installed or package created.
 #
 .if ${FAKE:L} == "yes"
+.  if ${SHARED_ONLY:L} == "yes"
+_do_libs_too=
+.  else
+_do_libs_too=NO_SHARED_LIBS=Yes
+.  endif
 _internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	DEPS="`${MAKE} full-run-depends`" \
+	DEPS="`${MAKE} full-run-depends ${_do_libs_too}`" \
 	PKGREPOSITORY=${PKGREPOSITORY} \
 	PLIST=${PLIST} \
 	PFRAG=${PKGDIR}/PFRAG \
