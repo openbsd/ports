@@ -3,14 +3,14 @@
 # Date created:			Tue Sep 15 17:48:34 EDT 1998
 # Whom:				Ian Darwin
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/16 19:35:08 ian Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/16 19:43:02 ian Exp $
 #
 
 PKGNAME=	hoc-1.1
 DISTNAME=	hoc
 NO_SUBDIR = YES
 CATEGORIES=	math
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/misc/
+MASTER_SITES= http://cm.bell-labs.com/cm/cs/who/bwk/
 
 EXTRACT_SUFX=	.sh
 EXTRACT_CMD=	/bin/sh
