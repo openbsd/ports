@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/11 07:14:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/15 15:40:21 espie Exp $
 
 COMMENT=	"wrapper for gnu auto*"
 
-VERSION=	0.3
+VERSION=	0.4
 DISTNAME=	metaauto-${VERSION}
 CATEGORIES=	devel
 DISTFILES=

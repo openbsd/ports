@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/01/11 07:14:05 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/01/15 15:40:21 espie Exp $
+@conflict automake-<=1.4-p6p1
 bin/autoconf
 bin/autoheader
 bin/autoreconf
