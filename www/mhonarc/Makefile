@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/15 01:09:47 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/15 07:33:05 couderc Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
@@ -7,6 +7,8 @@ PKGNAME=		mhonarc-2.5.12
 CATEGORIES=     	www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
+
+MAINTAINER=		Margarida Sequeira <niness@devilness.org>
 
 MASTER_SITES=		http://www.mhonarc.org/MHonArc/release/tar/ \
 			http://www.nacs.uci.edu/indiv/ehood/tar/ \
