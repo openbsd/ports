@@ -1,6 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/10/29 19:12:34 jasoni Exp $
 bin/catdoc
-bin/wordview
-man/man1/catdoc.1
+bin/xls2csv
+%%tk%%
 lib/catdoc/8859-1.txt
 lib/catdoc/8859-2.txt
 lib/catdoc/8859-3.txt
@@ -36,8 +37,11 @@ lib/catdoc/cp866.txt
 lib/catdoc/cp869.txt
 lib/catdoc/cp874.txt
 lib/catdoc/koi8-r.txt
+lib/catdoc/koi8-u.txt
 lib/catdoc/tex.replchars
 lib/catdoc/tex.specchars
 lib/catdoc/us-ascii.txt
 lib/catdoc/x-mac-cyrillic.txt
+man/man1/catdoc.1
+man/man1/xls2csv.1
 @dirrm lib/catdoc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2001/09/20 13:33:21 shell Exp $
+# $OpenBSD: Makefile,v 1.69 2001/10/29 19:12:34 jasoni Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += aspell
      SUBDIR += c2html
      SUBDIR += catdoc
+     SUBDIR += catdoc,tk
      SUBDIR += clo++
      SUBDIR += docbook
      SUBDIR += docbook-dsssl
