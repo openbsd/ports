@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/25 02:19:12 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2002/07/17 21:08:09 naddy Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer"
 
-DISTNAME=	freeciv-1.12.0
+DISTNAME=	freeciv-1.13.0
 CATEGORIES=	games
-NEED_VERSION=	1.474
 HOMEPAGE=	http://www.freeciv.org/
+
+MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@piestrak.waw.pl>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,8 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
+EXTRACT_SUFX=	.tar.bz2
 
-FLAVORS=	gtk
+FLAVORS=	gtk esd sdl
 FLAVOR?=
 
 MODULES=	gettext
@@ -26,8 +28,22 @@ LIB_DEPENDS+=	Imlib.19,gdk_imlib::graphics/imlib
 CONFIGURE_ARGS=	--with-xaw
 .endif
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+.if ${FLAVOR:L:Msdl}
+LIB_DEPENDS+=	SDL_mixer::devel/sdl-mixer
+CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-sdl-mixer
+.endif
+
+.if ${FLAVOR:L:Mesd}
+LIB_DEPENDS+=	esd.2::audio/esound
+CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-esd
+.endif
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

@@ -4,4 +4,9 @@ the extinction of all other civilizations.  Freeciv aims to be
 mostly rule-compatible with Civilization II, published by Sid Meier
 and Microprose.
 
+Flavors:
+ * gtk - build UI using GTK widgets
+ * sdl - sound support using SDL library
+ * esd - sound support using ESD library
+
 WWW: ${HOMEPAGE}
