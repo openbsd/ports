@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/08/18 12:02:31 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2002/08/18 13:17:50 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -51,7 +51,6 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-ossaudio \
 		--disable-arts \
 		--disable-dvdnav \
-		--disable-cdparanoia \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
@@ -62,7 +61,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -118,20 +117,28 @@ CONFIGURE_ARGS+=--disable-iconv
 .if ${FLAVOR:L:Mwin32}
 ONLY_FOR_ARCHS=i386
 
-.if !defined(NO_WARNINGS)
+.  if !defined(NO_WARNINGS)
 pre-fetch:
 	@echo
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option USER_LDT' for proper operation. The GENERIC"
 	@echo "           kernel does not have this option enabled by default."
 	@echo
-.endif
+.  endif
 
 RUN_DEPENDS+=	win32/divx.dll:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
 .else
 CONFIGURE_ARGS+=--disable-win32
+.endif
+
+.if ${FLAVOR:L:Mcdda}
+CFLAGS+=-Dsize32=int -Dsize16=short
+CONFIGURE_ARGS+=--enable-cdparanoia
+LIB_DEPENDS+= cdda_paranoia,cdda_interface::audio/cdparanoia
+.else
+CONFIGURE_ARGS+=--disable-cdparanoia
 .endif
 
 .if ${ELF_TOOLCHAIN} == "no"
