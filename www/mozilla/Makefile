@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/05/14 21:50:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.27 2003/05/15 00:53:45 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -55,14 +55,19 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		CFLAGS="" CXXFLAGS="" \
 		MALLOC_OPTIONS=j
 
+MOB=		${WRKSRC}/dist/bin
+MOZ=		${PREFIX}/mozilla
+
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/mozilla
-	@chmod 755 ${PREFIX}/lib/mozilla
-	@cd ${WRKSRC}/dist/bin && ${TAR} -chf - . | \
-		${TAR} -xf - -C ${PREFIX}/lib/mozilla
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/mozilla ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/mozilla-bin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/mozilla-config ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/run-mozilla.sh ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${MOZ}
+.for dir in chrome components defaults icons res plugins searchplugins
+	@cd ${MOB} && ${TAR} -chf - ${dir} | \
+		${TAR} -xf - -C ${MOZ}
+.endfor
+	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
+		${TAR} -xf - -C ${MOZ}
+	${INSTALL_SCRIPT} ${MOB}/mozilla ${MOB}/mozilla-config ${MOB}/run-mozilla.sh ${PREFIX}/bin
+	${INSTALL_DATA} ${MOB}/LICENSE ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/mozilla-bin ${MOZ}
 
 .include <bsd.port.mk>

@@ -1,603 +1,1033 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/15 00:53:45 wilfried Exp $
 bin/mozilla
-bin/mozilla-bin
 bin/mozilla-config
 bin/run-mozilla.sh
-lib/mozilla/CvtURL
-lib/mozilla/DumpColors
-lib/mozilla/FilesTest
-lib/mozilla/OutTestData/doctype.xif
-lib/mozilla/OutTestData/entityxif.out
-lib/mozilla/OutTestData/entityxif.xif
-lib/mozilla/OutTestData/htmltable.html
-lib/mozilla/OutTestData/htmltable.out
-lib/mozilla/OutTestData/mailquote.html
-lib/mozilla/OutTestData/mailquote.out
-lib/mozilla/OutTestData/plain.html
-lib/mozilla/OutTestData/plainnowrap.out
-lib/mozilla/OutTestData/plainwrap.out
-lib/mozilla/OutTestData/simple.html
-lib/mozilla/OutTestData/simplecopy.out
-lib/mozilla/OutTestData/simplefmt.out
-lib/mozilla/OutTestData/simplemail.html
-lib/mozilla/OutTestData/simplemail.out
-lib/mozilla/OutTestData/xifdthtml.out
-lib/mozilla/OutTestData/xifdtplain.out
-lib/mozilla/OutTestData/xifstuff.out
-lib/mozilla/OutTestData/xifstuff.xif
-lib/mozilla/PrimitiveTest
-lib/mozilla/PropertiesTest
-lib/mozilla/SimpleTypeLib
-lib/mozilla/StringBundleTest
-lib/mozilla/TestAtoms
-lib/mozilla/TestAutoLock
-lib/mozilla/TestCOMPtr
-lib/mozilla/TestCOMPtrEq
-lib/mozilla/TestCRT
-lib/mozilla/TestCSSPropertyLookup
-lib/mozilla/TestCallTemplates
-lib/mozilla/TestCallbacks
-lib/mozilla/TestColorNames
-lib/mozilla/TestCookie
-lib/mozilla/TestDBMAccess
-lib/mozilla/TestFactory
-lib/mozilla/TestFileInput
-lib/mozilla/TestFileInput2
-lib/mozilla/TestFileTransport
-lib/mozilla/TestGtkEmbed
-lib/mozilla/TestGtkEmbedChild
-lib/mozilla/TestGtkEmbedNotebook
-lib/mozilla/TestGtkEmbedSocket
-lib/mozilla/TestHttp
-lib/mozilla/TestID
-lib/mozilla/TestInterfaceInfo
-lib/mozilla/TestLineBreak
-lib/mozilla/TestMCTransport
-lib/mozilla/TestObserverService
-lib/mozilla/TestOutSinks.pl
-lib/mozilla/TestOutput
-lib/mozilla/TestOverlappedIO
-lib/mozilla/TestPageLoad
-lib/mozilla/TestPipes
-lib/mozilla/TestProtocols
-lib/mozilla/TestRect
-lib/mozilla/TestRes
-lib/mozilla/TestServMgr
-lib/mozilla/TestSocketIO
-lib/mozilla/TestSocketInput
-lib/mozilla/TestSocketTransport
-lib/mozilla/TestStreamConv
-lib/mozilla/TestTXMgr
-lib/mozilla/TestThreads
-lib/mozilla/TestVoidBTree
-lib/mozilla/TestXMLExtras
-lib/mozilla/TestXPC
-lib/mozilla/TestXPIDLString
-lib/mozilla/TestXPTCInvoke
-lib/mozilla/UnicharSelfTest
-lib/mozilla/bloaturls.txt
-lib/mozilla/chrome/US.jar
-lib/mozilla/chrome/classic.jar
-lib/mozilla/chrome/comm.jar
-lib/mozilla/chrome/content-packs.jar
-lib/mozilla/chrome/embed.jar
-lib/mozilla/chrome/en-US.jar
-lib/mozilla/chrome/en-mac.jar
-lib/mozilla/chrome/en-unix.jar
-lib/mozilla/chrome/en-win.jar
-lib/mozilla/chrome/help.jar
-lib/mozilla/chrome/installed-chrome.txt
-lib/mozilla/chrome/messenger.jar
-lib/mozilla/chrome/modern.jar
-lib/mozilla/chrome/pipnss.jar
-lib/mozilla/chrome/pippki.jar
-lib/mozilla/chrome/toolkit.jar
-lib/mozilla/components/absync.xpt
-lib/mozilla/components/accessibility.xpt
-lib/mozilla/components/addrbook.xpt
-lib/mozilla/components/appshell.xpt
-lib/mozilla/components/autocomplete.xpt
-lib/mozilla/components/bookmarks.xpt
-lib/mozilla/components/caps.xpt
-lib/mozilla/components/chardet.xpt
-lib/mozilla/components/chrome.xpt
-lib/mozilla/components/content_base.xpt
-lib/mozilla/components/cookie.xpt
-lib/mozilla/components/directory.xpt
-lib/mozilla/components/docshell.xpt
-lib/mozilla/components/dom.xpt
-lib/mozilla/components/dom_base.xpt
-lib/mozilla/components/dom_core.xpt
-lib/mozilla/components/dom_css.xpt
-lib/mozilla/components/dom_events.xpt
-lib/mozilla/components/dom_html.xpt
-lib/mozilla/components/dom_range.xpt
-lib/mozilla/components/dom_stylesheets.xpt
-lib/mozilla/components/dom_traversal.xpt
-lib/mozilla/components/dom_views.xpt
-lib/mozilla/components/dom_xbl.xpt
-lib/mozilla/components/dom_xul.xpt
-lib/mozilla/components/editor.xpt
-lib/mozilla/components/embed_base.xpt
-lib/mozilla/components/exthandler.xpt
-lib/mozilla/components/find.xpt
-lib/mozilla/components/gfx.xpt
-lib/mozilla/components/gfx2.xpt
-lib/mozilla/components/helperAppDlg.xpt
-lib/mozilla/components/history.xpt
-lib/mozilla/components/imglib2.xpt
-lib/mozilla/components/import.xpt
-lib/mozilla/components/intl.xpt
-lib/mozilla/components/jar.xpt
-lib/mozilla/components/jsconsole-clhandler.js
-lib/mozilla/components/jsconsole.xpt
-lib/mozilla/components/jsurl.xpt
-lib/mozilla/components/layout_base.xpt
-lib/mozilla/components/layout_xul.xpt
-lib/mozilla/components/layout_xul_outliner.xpt
-lib/mozilla/components/libMyService.so.1.0
-lib/mozilla/components/libabsyncsvc.so.1.0
-lib/mozilla/components/libaccessibility.so.1.0
-lib/mozilla/components/libaddrbook.so.1.0
-lib/mozilla/components/libappcomps.so.1.0
-lib/mozilla/components/libcaps.so.1.0
-lib/mozilla/components/libchardet.so.1.0
-lib/mozilla/components/libchrome.so.1.0
-lib/mozilla/components/libcookie.so.1.0
-lib/mozilla/components/libdocshell.so.1.0
-lib/mozilla/components/libeditor.so.1.0
-lib/mozilla/components/libembedcomponents.so.1.0
-lib/mozilla/components/libgfx2.so.1.0
-lib/mozilla/components/libgfx_gtk.so.1.0
-lib/mozilla/components/libgfxps.so.1.0
-lib/mozilla/components/libgfxxprint.so.1.0
-lib/mozilla/components/libgkcontent.so.1.0
-lib/mozilla/components/libgklayout.so.1.0
-lib/mozilla/components/libgkplugin.so.1.0
-lib/mozilla/components/libgkview.so.1.0
-lib/mozilla/components/libhtmlpars.so.1.0
-lib/mozilla/components/libimggif.so.1.0
-lib/mozilla/components/libimgjpeg.so.1.0
-lib/mozilla/components/libimglib2.so.1.0
-lib/mozilla/components/libimgpng.so.1.0
-lib/mozilla/components/libimgppm.so.1.0
-lib/mozilla/components/libimpText.so.1.0
-lib/mozilla/components/libimport.so.1.0
-lib/mozilla/components/libjar50.so.1.0
-lib/mozilla/components/libjsdom.so.1.0
-lib/mozilla/components/libjsloader.so.1.0
-lib/mozilla/components/libjsurl.so.1.0
-lib/mozilla/components/liblocalmail.so.1.0
-lib/mozilla/components/liblwbrk.so.1.0
-lib/mozilla/components/libmailnews.so.1.0
-lib/mozilla/components/libmime.so.1.0
-lib/mozilla/components/libmimeemitter.so.1.0
-lib/mozilla/components/libmork.so.1.0
-lib/mozilla/components/libmozbrwsr.so.1.0
-lib/mozilla/components/libmozfind.so.1.0
-lib/mozilla/components/libmozldap.so.1.0
-lib/mozilla/components/libmozxfer.so.1.0
-lib/mozilla/components/libmsgcompose.so.1.0
-lib/mozilla/components/libmsgdb.so.1.0
-lib/mozilla/components/libmsgimap.so.1.0
-lib/mozilla/components/libmsgnews.so.1.0
-lib/mozilla/components/libnecko.so.1.0
-lib/mozilla/components/libnecko2.so.1.0
-lib/mozilla/components/libnkcache.so.1.0
-lib/mozilla/components/libnpsimple.so.1.0
-lib/mozilla/components/libnsappshell.so.1.0
-lib/mozilla/components/libnsgif.so.1.0
-lib/mozilla/components/libnsjpg.so.1.0
-lib/mozilla/components/libnslocale.so.1.0
-lib/mozilla/components/libnsmng.so.1.0
-lib/mozilla/components/libnspng.so.1.0
-lib/mozilla/components/libnsprefm.so.1.0
-lib/mozilla/components/liboji.so.1.0
-lib/mozilla/components/libpipnss.so.1.0
-lib/mozilla/components/libpippki.so.1.0
-lib/mozilla/components/libpref.so.1.0
-lib/mozilla/components/libprofile.so.1.0
-lib/mozilla/components/librdf.so.1.0
-lib/mozilla/components/libregviewer.so.1.0
-lib/mozilla/components/libsample.so.1.0
-lib/mozilla/components/libshistory.so.1.0
-lib/mozilla/components/libsmimestb.so.1.0
-lib/mozilla/components/libstrres.so.1.0
-lib/mozilla/components/libtestdynamic.so.1.0
-lib/mozilla/components/libtimer_gtk.so.1.0
-lib/mozilla/components/libtransformiix.so.1.0
-lib/mozilla/components/libtxmgr.so.1.0
-lib/mozilla/components/libtxtsvc.so.1.0
-lib/mozilla/components/libuconv.so.1.0
-lib/mozilla/components/libucvcn.so.1.0
-lib/mozilla/components/libucvibm.so.1.0
-lib/mozilla/components/libucvja.so.1.0
-lib/mozilla/components/libucvko.so.1.0
-lib/mozilla/components/libucvlatin.so.1.0
-lib/mozilla/components/libucvmath.so.1.0
-lib/mozilla/components/libucvtw.so.1.0
-lib/mozilla/components/libucvtw2.so.1.0
-lib/mozilla/components/libunicharutil.so.1.0
-lib/mozilla/components/liburiloader.so.1.0
-lib/mozilla/components/libvcard.so.1.0
-lib/mozilla/components/libwallet.so.1.0
-lib/mozilla/components/libwalletviewers.so.1.0
-lib/mozilla/components/libwebbrwsr.so.1.0
-lib/mozilla/components/libwidget_gtk.so.1.0
-lib/mozilla/components/libxmlextras.so.1.0
-lib/mozilla/components/libxpconnect.so.1.0
-lib/mozilla/components/libxpctest.so.1.0
-lib/mozilla/components/libxpinstall.so.1.0
-lib/mozilla/components/libxremote_client.so.1.0
-lib/mozilla/components/locale.xpt
-lib/mozilla/components/mailnews.xpt
-lib/mozilla/components/mime.xpt
-lib/mozilla/components/mimetype.xpt
-lib/mozilla/components/mozbrwsr.xpt
-lib/mozilla/components/mozcomps.xpt
-lib/mozilla/components/mozfind.xpt
-lib/mozilla/components/mozldap.xpt
-lib/mozilla/components/mozxfer.xpt
-lib/mozilla/components/msgbase.xpt
-lib/mozilla/components/msgcompose.xpt
-lib/mozilla/components/msgdb.xpt
-lib/mozilla/components/msgimap.xpt
-lib/mozilla/components/msglocal.xpt
-lib/mozilla/components/msgnews.xpt
-lib/mozilla/components/msgsearch.xpt
-lib/mozilla/components/necko.xpt
-lib/mozilla/components/necko_about.xpt
-lib/mozilla/components/necko_cache.xpt
-lib/mozilla/components/necko_data.xpt
-lib/mozilla/components/necko_dns.xpt
-lib/mozilla/components/necko_ftp.xpt
-lib/mozilla/components/necko_http.xpt
-lib/mozilla/components/necko_jar.xpt
-lib/mozilla/components/necko_res.xpt
-lib/mozilla/components/necko_socket.xpt
-lib/mozilla/components/necko_strconv.xpt
-lib/mozilla/components/necko_viewsource.xpt
-lib/mozilla/components/npsimple.xpt
-lib/mozilla/components/nsDictionary.js
-lib/mozilla/components/nsFilePicker.js
-lib/mozilla/components/nsHelperAppDlg.js
-lib/mozilla/components/nsLDAPPrefsService.js
-lib/mozilla/components/nsProxyAutoConfig.js
-lib/mozilla/components/nsSample.js
-lib/mozilla/components/nsSidebar.js
-lib/mozilla/components/nsXmlRpcClient.js
-lib/mozilla/components/oji.xpt
-lib/mozilla/components/pipnss.xpt
-lib/mozilla/components/pippki.xpt
-lib/mozilla/components/plugin.xpt
-lib/mozilla/components/pref.xpt
-lib/mozilla/components/prefmigr.xpt
-lib/mozilla/components/profile.xpt
-lib/mozilla/components/proxyObjInst.xpt
-lib/mozilla/components/proxytest.xpt
-lib/mozilla/components/rdf.xpt
-lib/mozilla/components/regviewer.xpt
-lib/mozilla/components/related.xpt
-lib/mozilla/components/remote.xpt
-lib/mozilla/components/remoteControl.js
-lib/mozilla/components/sample.xpt
-lib/mozilla/components/search.xpt
-lib/mozilla/components/shistory.xpt
-lib/mozilla/components/sidebar.xpt
-lib/mozilla/components/signonviewer.xpt
-lib/mozilla/components/timebomb.xpt
-lib/mozilla/components/transformiix.xpt
-lib/mozilla/components/txmgr.xpt
-lib/mozilla/components/txtsvc.xpt
-lib/mozilla/components/uconv.xpt
-lib/mozilla/components/unicharutil.xpt
-lib/mozilla/components/uriloader.xpt
-lib/mozilla/components/urlbarhistory.xpt
-lib/mozilla/components/util.xpt
-lib/mozilla/components/wallet.xpt
-lib/mozilla/components/walleteditor.xpt
-lib/mozilla/components/walletpreview.xpt
-lib/mozilla/components/webBrowser_core.xpt
-lib/mozilla/components/webshell_idls.xpt
-lib/mozilla/components/widget.xpt
-lib/mozilla/components/windowwatcher.xpt
-lib/mozilla/components/xml-rpc.xpt
-lib/mozilla/components/xmlextras.xpt
-lib/mozilla/components/xpcom_base.xpt
-lib/mozilla/components/xpcom_components.xpt
-lib/mozilla/components/xpcom_ds.xpt
-lib/mozilla/components/xpcom_io.xpt
-lib/mozilla/components/xpcom_threads.xpt
-lib/mozilla/components/xpcom_xpti.xpt
-lib/mozilla/components/xpconnect.xpt
-lib/mozilla/components/xpconnect_tests.xpt
-lib/mozilla/components/xpinstall.xpt
-lib/mozilla/components/xsl_doc.xpt
-lib/mozilla/components/xuldoc.xpt
-lib/mozilla/components/xultmpl.xpt
-lib/mozilla/defaults/pref/all.js
-lib/mozilla/defaults/pref/config.js
-lib/mozilla/defaults/pref/editor.js
-lib/mozilla/defaults/pref/initpref.js
-lib/mozilla/defaults/pref/mailnews.js
-lib/mozilla/defaults/pref/security-prefs.js
-lib/mozilla/defaults/pref/unix.js
-lib/mozilla/defaults/pref/xpinstall.js
-lib/mozilla/defaults/profile/US/bookmarks.html
-lib/mozilla/defaults/profile/US/chrome/userChrome.css
-lib/mozilla/defaults/profile/US/chrome/userContent.css
-lib/mozilla/defaults/profile/US/localstore.rdf
-lib/mozilla/defaults/profile/US/mimeTypes.rdf
-lib/mozilla/defaults/profile/US/panels.rdf
-lib/mozilla/defaults/profile/US/search.rdf
-lib/mozilla/defaults/profile/bookmarks.html
-lib/mozilla/defaults/profile/chrome/userChrome.css
-lib/mozilla/defaults/profile/chrome/userContent.css
-lib/mozilla/defaults/profile/localstore.rdf
-lib/mozilla/defaults/profile/mimeTypes.rdf
-lib/mozilla/defaults/profile/panels.rdf
-lib/mozilla/defaults/profile/search.rdf
-lib/mozilla/defaults/wallet/DistinguishedSchema.tbl
-lib/mozilla/defaults/wallet/FieldSchema.tbl
-lib/mozilla/defaults/wallet/PositionalSchema.tbl
-lib/mozilla/defaults/wallet/SchemaConcat.tbl
-lib/mozilla/defaults/wallet/SchemaStrings.tbl
-lib/mozilla/defaults/wallet/StateSchema.tbl
-lib/mozilla/defaults/wallet/VcardSchema.tbl
-lib/mozilla/dirver
-lib/mozilla/dtd/mathml.dtd
-lib/mozilla/gtkEmbed
-lib/mozilla/htmlrobot
-lib/mozilla/icons/mozicon16.xpm
-lib/mozilla/icons/mozicon50.xpm
-lib/mozilla/libDebugRobot.so.1.0
-lib/mozilla/libgkgfx.so.1.0
-lib/mozilla/libgtkembedmoz.so.1.0
-lib/mozilla/libgtksuperwin.so.1.0
-lib/mozilla/libgtkxtbin.so.1.0
-lib/mozilla/libjsj.so.1.0
-lib/mozilla/liblber40.so.1.0
-lib/mozilla/libldap40.so.1.0
-lib/mozilla/libmozjs.so.1.0
-lib/mozilla/libmsgbaseutil.so.1.0
-lib/mozilla/libnspr4.so.1.0
-lib/mozilla/libnssckbi.so.1.0
-lib/mozilla/libnullplugin.so.1.0
-lib/mozilla/libplc4.so.1.0
-lib/mozilla/libplds4.so.1.0
-lib/mozilla/libxpcom.so.1.0
-lib/mozilla/libxpistub.so.1.0
-lib/mozilla/lots
-lib/mozilla/mozilla
-lib/mozilla/mozilla-bin
-lib/mozilla/mozilla-config
-lib/mozilla/mozilla-viewer.sh
-lib/mozilla/nsIFileEnumerator
-lib/mozilla/nsIFileTest
-lib/mozilla/nsTestSample
-lib/mozilla/nsinstall
-lib/mozilla/plugins/libnullplugin.so.1.0
-lib/mozilla/proxytests
-lib/mozilla/rdfcat
-lib/mozilla/rdfpoll
-lib/mozilla/regExport
-lib/mozilla/regchrome
-lib/mozilla/regxpcom
-lib/mozilla/res/acceptlanguage.properties
-lib/mozilla/res/arrow.gif
-lib/mozilla/res/builtin/htmlBindings.xml
-lib/mozilla/res/builtin/platformHTMLBindings.xml
-lib/mozilla/res/builtin/xbl-forms.css
-lib/mozilla/res/charsetData.properties
-lib/mozilla/res/charsetalias.properties
-lib/mozilla/res/cmessage.txt
-lib/mozilla/res/entityTables/html40Latin1.properties
-lib/mozilla/res/entityTables/html40Special.properties
-lib/mozilla/res/entityTables/html40Symbols.properties
-lib/mozilla/res/entityTables/htmlEntityVersions.properties
-lib/mozilla/res/entityTables/transliterate.properties
-lib/mozilla/res/fonts/mathfont.properties
-lib/mozilla/res/fonts/mathfontCMEX10.properties
-lib/mozilla/res/fonts/mathfontCMSY10.properties
-lib/mozilla/res/fonts/mathfontMTExtra.properties
-lib/mozilla/res/fonts/mathfontMath1.properties
-lib/mozilla/res/fonts/mathfontMath2.properties
-lib/mozilla/res/fonts/mathfontMath4.properties
-lib/mozilla/res/fonts/mathfontPUA.properties
-lib/mozilla/res/fonts/mathfontSymbol.properties
-lib/mozilla/res/forms.css
-lib/mozilla/res/gfx/icon_0.gif
-lib/mozilla/res/gfx/icon_1.gif
-lib/mozilla/res/html.css
-lib/mozilla/res/html/broken-image.gif
-lib/mozilla/res/html/gopher-audio.gif
-lib/mozilla/res/html/gopher-binary.gif
-lib/mozilla/res/html/gopher-find.gif
-lib/mozilla/res/html/gopher-image.gif
-lib/mozilla/res/html/gopher-menu.gif
-lib/mozilla/res/html/gopher-movie.gif
-lib/mozilla/res/html/gopher-telnet.gif
-lib/mozilla/res/html/gopher-text.gif
-lib/mozilla/res/html/gopher-unknown.gif
-lib/mozilla/res/langGroups.properties
-lib/mozilla/res/language.properties
-lib/mozilla/res/mathml.css
-lib/mozilla/res/quirk.css
-lib/mozilla/res/rdf/article.gif
-lib/mozilla/res/rdf/document.gif
-lib/mozilla/res/rdf/dom-test-1.xul
-lib/mozilla/res/rdf/dom-test-2.xul
-lib/mozilla/res/rdf/dom-test-3.xul
-lib/mozilla/res/rdf/dom-test-4.css
-lib/mozilla/res/rdf/dom-test-4.xul
-lib/mozilla/res/rdf/dom-test-5.xul
-lib/mozilla/res/rdf/dom-test-6.xul
-lib/mozilla/res/rdf/dom-test-7.xul
-lib/mozilla/res/rdf/dom-test-8.xul
-lib/mozilla/res/rdf/folder-closed.gif
-lib/mozilla/res/rdf/folder-open.gif
-lib/mozilla/res/rdf/ignore-test.xul
-lib/mozilla/res/rdf/loading.gif
-lib/mozilla/res/rdf/xpidl-test-1.xul
-lib/mozilla/res/sample.unixpsfonts.properties
-lib/mozilla/res/samples/Anieyes.gif
-lib/mozilla/res/samples/aform.css
-lib/mozilla/res/samples/beeptest.html
-lib/mozilla/res/samples/bform.css
-lib/mozilla/res/samples/bg.jpg
-lib/mozilla/res/samples/cform.css
-lib/mozilla/res/samples/checkboxTest.xul
-lib/mozilla/res/samples/colorpicker.xul
-lib/mozilla/res/samples/demoform.css
-lib/mozilla/res/samples/dexopenchrome.xul
-lib/mozilla/res/samples/dexparamdialog.html
-lib/mozilla/res/samples/dexparamdialog.xul
-lib/mozilla/res/samples/embed-test.html
-lib/mozilla/res/samples/find.html
-lib/mozilla/res/samples/gear1.gif
-lib/mozilla/res/samples/hidetoolicon.css
-lib/mozilla/res/samples/hidetoolicon.xul
-lib/mozilla/res/samples/image_props.html
-lib/mozilla/res/samples/mozform.css
-lib/mozilla/res/samples/printsetup.html
-lib/mozilla/res/samples/raptor.jpg
-lib/mozilla/res/samples/rock_gra.gif
-lib/mozilla/res/samples/sampleimages/bongo.gif
-lib/mozilla/res/samples/sampleimages/down.gif
-lib/mozilla/res/samples/sampleimages/left.gif
-lib/mozilla/res/samples/sampleimages/right.gif
-lib/mozilla/res/samples/sampleimages/up.gif
-lib/mozilla/res/samples/scrollbarTest1.xul
-lib/mozilla/res/samples/scrollbarTest2.xul
-lib/mozilla/res/samples/sliderTest1.xul
-lib/mozilla/res/samples/soundtest.html
-lib/mozilla/res/samples/tab.xul
-lib/mozilla/res/samples/test.wav
-lib/mozilla/res/samples/test0.html
-lib/mozilla/res/samples/test1.html
-lib/mozilla/res/samples/test10.html
-lib/mozilla/res/samples/test11.html
-lib/mozilla/res/samples/test12.html
-lib/mozilla/res/samples/test13.html
-lib/mozilla/res/samples/test14.html
-lib/mozilla/res/samples/test15.html
-lib/mozilla/res/samples/test16.html
-lib/mozilla/res/samples/test2.html
-lib/mozilla/res/samples/test3.html
-lib/mozilla/res/samples/test4.html
-lib/mozilla/res/samples/test5.html
-lib/mozilla/res/samples/test6.html
-lib/mozilla/res/samples/test7.html
-lib/mozilla/res/samples/test8-1.html
-lib/mozilla/res/samples/test8.html
-lib/mozilla/res/samples/test8dom.html
-lib/mozilla/res/samples/test8sca.html
-lib/mozilla/res/samples/test8siz.html
-lib/mozilla/res/samples/test8tab.html
-lib/mozilla/res/samples/test9.html
-lib/mozilla/res/samples/test9a.html
-lib/mozilla/res/samples/test9b.html
-lib/mozilla/res/samples/test_ed.html
-lib/mozilla/res/samples/test_form.html
-lib/mozilla/res/samples/test_gfx.html
-lib/mozilla/res/samples/test_lbox.html
-lib/mozilla/res/samples/test_pr.html
-lib/mozilla/res/samples/test_weight.html
-lib/mozilla/res/samples/toolbarTest1.xul
-lib/mozilla/res/samples/treeTest1.css
-lib/mozilla/res/samples/treeTest1.xul
-lib/mozilla/res/samples/widgets.xul
-lib/mozilla/res/samples/xpconnect-sample.html
-lib/mozilla/res/samples/xpmenu.xul
-lib/mozilla/res/samples/xulTest.css
-lib/mozilla/res/strres-test.dtd
-lib/mozilla/res/strres-test.html
-lib/mozilla/res/strres-test.js
-lib/mozilla/res/strres-test.xul
-lib/mozilla/res/strres.properties
-lib/mozilla/res/test.properties
-lib/mozilla/res/throbber/anim.gif
-lib/mozilla/res/throbber/anims00.gif
-lib/mozilla/res/throbber/anims01.gif
-lib/mozilla/res/throbber/anims02.gif
-lib/mozilla/res/throbber/anims03.gif
-lib/mozilla/res/throbber/anims04.gif
-lib/mozilla/res/throbber/anims05.gif
-lib/mozilla/res/throbber/anims06.gif
-lib/mozilla/res/throbber/anims07.gif
-lib/mozilla/res/throbber/anims08.gif
-lib/mozilla/res/throbber/anims09.gif
-lib/mozilla/res/throbber/anims10.gif
-lib/mozilla/res/throbber/anims11.gif
-lib/mozilla/res/throbber/anims12.gif
-lib/mozilla/res/throbber/anims13.gif
-lib/mozilla/res/throbber/anims14.gif
-lib/mozilla/res/throbber/anims15.gif
-lib/mozilla/res/throbber/anims16.gif
-lib/mozilla/res/throbber/anims17.gif
-lib/mozilla/res/throbber/anims18.gif
-lib/mozilla/res/throbber/anims19.gif
-lib/mozilla/res/throbber/anims20.gif
-lib/mozilla/res/throbber/anims21.gif
-lib/mozilla/res/throbber/anims22.gif
-lib/mozilla/res/throbber/anims23.gif
-lib/mozilla/res/throbber/anims24.gif
-lib/mozilla/res/throbber/anims25.gif
-lib/mozilla/res/throbber/anims26.gif
-lib/mozilla/res/throbber/anims27.gif
-lib/mozilla/res/throbber/anims28.gif
-lib/mozilla/res/throbber/anims29.gif
-lib/mozilla/res/ua.css
-lib/mozilla/res/unixcharset.properties
-lib/mozilla/res/viewer.properties
-lib/mozilla/res/viewsource.css
-lib/mozilla/run-mozilla.sh
-lib/mozilla/searchplugins/NetscapeSearch.gif
-lib/mozilla/searchplugins/NetscapeSearch.src
-lib/mozilla/searchplugins/bugzilla.gif
-lib/mozilla/searchplugins/bugzilla.src
-lib/mozilla/searchplugins/dmoz.gif
-lib/mozilla/searchplugins/dmoz.src
-lib/mozilla/searchplugins/google.gif
-lib/mozilla/searchplugins/google.src
-lib/mozilla/searchplugins/lxrmozilla.gif
-lib/mozilla/searchplugins/lxrmozilla.src
-lib/mozilla/searchplugins/mozilla.gif
-lib/mozilla/searchplugins/mozilla.src
-lib/mozilla/splash.xpm
-lib/mozilla/startup-test.html
-lib/mozilla/timebombgen
-lib/mozilla/urltest
-lib/mozilla/viewer
-lib/mozilla/viewer_gtk
-lib/mozilla/xpcshell
-lib/mozilla/xpicleanup
-lib/mozilla/xpidl
-lib/mozilla/xpt_dump
-lib/mozilla/xpt_link
-@unexec rm -f %D/lib/mozilla/chrome/user-locales.rdf
-@dirrm lib/mozilla/searchplugins
-@dirrm lib/mozilla/res/throbber
-@dirrm lib/mozilla/res/samples/sampleimages
-@dirrm lib/mozilla/res/samples
-@dirrm lib/mozilla/res/rdf
-@dirrm lib/mozilla/res/html
-@dirrm lib/mozilla/res/gfx
-@dirrm lib/mozilla/res/fonts
-@dirrm lib/mozilla/res/entityTables
-@dirrm lib/mozilla/res/builtin
-@dirrm lib/mozilla/res
-@dirrm lib/mozilla/plugins
-@dirrm lib/mozilla/icons
-@dirrm lib/mozilla/dtd
-@dirrm lib/mozilla/defaults/wallet
-@dirrm lib/mozilla/defaults/profile/chrome
-@dirrm lib/mozilla/defaults/profile/US/chrome
-@dirrm lib/mozilla/defaults/profile/US
-@dirrm lib/mozilla/defaults/profile
-@dirrm lib/mozilla/defaults/pref
-@dirrm lib/mozilla/defaults
-@dirrm lib/mozilla/components
-@dirrm lib/mozilla/chrome
-@dirrm lib/mozilla/OutTestData
-@dirrm lib/mozilla
+mozilla/LICENSE
+mozilla/chrome/US.jar
+mozilla/chrome/chatzilla.jar
+mozilla/chrome/chromelist.txt
+mozilla/chrome/classic.jar
+mozilla/chrome/comm.jar
+mozilla/chrome/content-packs.jar
+mozilla/chrome/embed-sample.jar
+mozilla/chrome/en-US.jar
+mozilla/chrome/en-mac.jar
+mozilla/chrome/en-unix.jar
+mozilla/chrome/en-win.jar
+mozilla/chrome/help.jar
+mozilla/chrome/icons/default/abcardWindow.xpm
+mozilla/chrome/icons/default/abcardWindow16.xpm
+mozilla/chrome/icons/default/addressbookWindow.xpm
+mozilla/chrome/icons/default/addressbookWindow16.xpm
+mozilla/chrome/icons/default/bmPropsWindow.xpm
+mozilla/chrome/icons/default/bmPropsWindow16.xpm
+mozilla/chrome/icons/default/bookmark-window.xpm
+mozilla/chrome/icons/default/bookmark-window16.xpm
+mozilla/chrome/icons/default/calendar-window.xpm
+mozilla/chrome/icons/default/calendar-window16.xpm
+mozilla/chrome/icons/default/chatzilla-window.xpm
+mozilla/chrome/icons/default/chatzilla-window16.xpm
+mozilla/chrome/icons/default/downloadManager.xpm
+mozilla/chrome/icons/default/downloadManager16.xpm
+mozilla/chrome/icons/default/editorWindow.xpm
+mozilla/chrome/icons/default/editorWindow16.xpm
+mozilla/chrome/icons/default/findBookmarkWindow.xpm
+mozilla/chrome/icons/default/findBookmarkWindow16.xpm
+mozilla/chrome/icons/default/findHistoryWindow.xpm
+mozilla/chrome/icons/default/findHistoryWindow16.xpm
+mozilla/chrome/icons/default/history-window.xpm
+mozilla/chrome/icons/default/history-window16.xpm
+mozilla/chrome/icons/default/jsconsoleWindow.xpm
+mozilla/chrome/icons/default/jsconsoleWindow16.xpm
+mozilla/chrome/icons/default/main-window.xpm
+mozilla/chrome/icons/default/main-window16.xpm
+mozilla/chrome/icons/default/messengerWindow.xpm
+mozilla/chrome/icons/default/messengerWindow16.xpm
+mozilla/chrome/icons/default/msgcomposeWindow.xpm
+mozilla/chrome/icons/default/msgcomposeWindow16.xpm
+mozilla/chrome/icons/default/venkman-window.xpm
+mozilla/chrome/icons/default/venkman-window16.xpm
+mozilla/chrome/icons/default/winInspectorMain.xpm
+mozilla/chrome/icons/default/winInspectorMain16.xpm
+mozilla/chrome/inspector.jar
+mozilla/chrome/installed-chrome.txt
+mozilla/chrome/messenger.jar
+mozilla/chrome/modern.jar
+mozilla/chrome/toolkit.jar
+mozilla/chrome/venkman.jar
+mozilla/components/accessibility.xpt
+mozilla/components/addrbook.xpt
+mozilla/components/appshell.xpt
+mozilla/components/autocomplete.xpt
+mozilla/components/autoconfig.xpt
+mozilla/components/bookmarks.xpt
+mozilla/components/caps.xpt
+mozilla/components/chardet.xpt
+mozilla/components/chatzilla-service.js
+mozilla/components/chrome.xpt
+mozilla/components/commandhandler.xpt
+mozilla/components/composer.xpt
+mozilla/components/content.xpt
+mozilla/components/content_base.xpt
+mozilla/components/content_html.xpt
+mozilla/components/content_xslt.xpt
+mozilla/components/cookie.xpt
+mozilla/components/directory.xpt
+mozilla/components/docshell.xpt
+mozilla/components/dom.xpt
+mozilla/components/dom_base.xpt
+mozilla/components/dom_core.xpt
+mozilla/components/dom_css.xpt
+mozilla/components/dom_events.xpt
+mozilla/components/dom_html.xpt
+mozilla/components/dom_range.xpt
+mozilla/components/dom_stylesheets.xpt
+mozilla/components/dom_traversal.xpt
+mozilla/components/dom_views.xpt
+mozilla/components/dom_xbl.xpt
+mozilla/components/dom_xpath.xpt
+mozilla/components/dom_xul.xpt
+mozilla/components/downloadmanager.xpt
+mozilla/components/editor.xpt
+mozilla/components/embed_base.xpt
+mozilla/components/exthandler.xpt
+mozilla/components/filepicker.xpt
+mozilla/components/find.xpt
+mozilla/components/gfx.xpt
+mozilla/components/helperAppDlg.xpt
+mozilla/components/history.xpt
+mozilla/components/htmlparser.xpt
+mozilla/components/imglib2.xpt
+mozilla/components/impComm4xMail.xpt
+mozilla/components/import.xpt
+mozilla/components/inspector.xpt
+mozilla/components/intl.xpt
+mozilla/components/jar.xpt
+mozilla/components/jsconsole-clhandler.js
+mozilla/components/jsconsole.xpt
+mozilla/components/jsdservice.xpt
+mozilla/components/jsurl.xpt
+mozilla/components/layout_base.xpt
+mozilla/components/layout_xul.xpt
+mozilla/components/layout_xul_tree.xpt
+mozilla/components/locale.xpt
+mozilla/components/lwbrk.xpt
+mozilla/components/mailnews.xpt
+mozilla/components/mailview.xpt
+mozilla/components/mdn-service.js
+mozilla/components/mime.xpt
+mozilla/components/mimetype.xpt
+mozilla/components/mozbrwsr.xpt
+mozilla/components/mozfind.xpt
+mozilla/components/msgbase.xpt
+mozilla/components/msgcompose.xpt
+mozilla/components/msgdb.xpt
+mozilla/components/msgimap.xpt
+mozilla/components/msglocal.xpt
+mozilla/components/msgnews.xpt
+mozilla/components/msgsearch.xpt
+mozilla/components/necko.xpt
+mozilla/components/necko_about.xpt
+mozilla/components/necko_cache.xpt
+mozilla/components/necko_cookie.xpt
+mozilla/components/necko_data.xpt
+mozilla/components/necko_dns.xpt
+mozilla/components/necko_file.xpt
+mozilla/components/necko_ftp.xpt
+mozilla/components/necko_http.xpt
+mozilla/components/necko_jar.xpt
+mozilla/components/necko_res.xpt
+mozilla/components/necko_socket.xpt
+mozilla/components/necko_strconv.xpt
+mozilla/components/necko_viewsource.xpt
+mozilla/components/nsCloseAllWindows.js
+mozilla/components/nsDictionary.js
+mozilla/components/nsDownloadProgressListener.js
+mozilla/components/nsFilePicker.js
+mozilla/components/nsHelperAppDlg.js
+mozilla/components/nsInterfaceInfoToIDL.js
+mozilla/components/nsKillAll.js
+mozilla/components/nsProgressDialog.js
+mozilla/components/nsProxyAutoConfig.js
+mozilla/components/nsResetPref.js
+mozilla/components/nsSample.js
+mozilla/components/nsSidebar.js
+mozilla/components/nsUpdateNotifier.js
+mozilla/components/nsXmlRpcClient.js
+mozilla/components/oji.xpt
+mozilla/components/p3p.xpt
+mozilla/components/plugin.xpt
+mozilla/components/pref.xpt
+mozilla/components/prefetch.xpt
+mozilla/components/prefmigr.xpt
+mozilla/components/profile.xpt
+mozilla/components/progressDlg.xpt
+mozilla/components/proxyObjInst.xpt
+mozilla/components/proxytest.xpt
+mozilla/components/rdf.xpt
+mozilla/components/related.xpt
+mozilla/components/search.xpt
+mozilla/components/shistory.xpt
+mozilla/components/sidebar.xpt
+mozilla/components/signonviewer.xpt
+mozilla/components/timebomb.xpt
+mozilla/components/txmgr.xpt
+mozilla/components/txtsvc.xpt
+mozilla/components/typeaheadfind.xpt
+mozilla/components/uconv.xpt
+mozilla/components/unicharutil.xpt
+mozilla/components/uriloader.xpt
+mozilla/components/urlbarhistory.xpt
+mozilla/components/util.xpt
+mozilla/components/venkman-service.js
+mozilla/components/wallet.xpt
+mozilla/components/walleteditor.xpt
+mozilla/components/walletpreview.xpt
+mozilla/components/webBrowser_core.xpt
+mozilla/components/webbrowserpersist.xpt
+mozilla/components/webshell_idls.xpt
+mozilla/components/widget.xpt
+mozilla/components/windowds.xpt
+mozilla/components/windowwatcher.xpt
+mozilla/components/wsdl.xpt
+mozilla/components/wsproxy.xpt
+mozilla/components/wsproxytest.xpt
+mozilla/components/xml-rpc.xpt
+mozilla/components/xmlextras.xpt
+mozilla/components/xmlextras_interfaceinfo.xpt
+mozilla/components/xmlschema.xpt
+mozilla/components/xmlsecurity.xpt
+mozilla/components/xmlsoap.xpt
+mozilla/components/xpcom_base.xpt
+mozilla/components/xpcom_components.xpt
+mozilla/components/xpcom_ds.xpt
+mozilla/components/xpcom_io.xpt
+mozilla/components/xpcom_obsolete.xpt
+mozilla/components/xpcom_threads.xpt
+mozilla/components/xpcom_xpti.xpt
+mozilla/components/xpcomsample.xpt
+mozilla/components/xpconnect.xpt
+mozilla/components/xpconnect_tests.xpt
+mozilla/components/xpinstall.xpt
+mozilla/components/xpti.dat
+mozilla/components/xremoteservice.xpt
+mozilla/components/xuldoc.xpt
+mozilla/components/xultmpl.xpt
+mozilla/defaults/autoconfig/platform.js
+mozilla/defaults/autoconfig/prefcalls.js
+mozilla/defaults/messenger/US/mailViews.dat
+mozilla/defaults/messenger/mailViews.dat
+mozilla/defaults/pref/all.js
+mozilla/defaults/pref/editor.js
+mozilla/defaults/pref/inspector.js
+mozilla/defaults/pref/mailnews.js
+mozilla/defaults/pref/mdn.js
+mozilla/defaults/pref/security-prefs.js
+mozilla/defaults/pref/unix.js
+mozilla/defaults/pref/xpinstall.js
+mozilla/defaults/profile/US/bookmarks.html
+mozilla/defaults/profile/US/chrome/userChrome-example.css
+mozilla/defaults/profile/US/chrome/userContent-example.css
+mozilla/defaults/profile/US/localstore.rdf
+mozilla/defaults/profile/US/mimeTypes.rdf
+mozilla/defaults/profile/US/panels.rdf
+mozilla/defaults/profile/US/search.rdf
+mozilla/defaults/profile/bookmarks.html
+mozilla/defaults/profile/chrome/userChrome-example.css
+mozilla/defaults/profile/chrome/userContent-example.css
+mozilla/defaults/profile/localstore.rdf
+mozilla/defaults/profile/mimeTypes.rdf
+mozilla/defaults/profile/panels.rdf
+mozilla/defaults/profile/search.rdf
+mozilla/defaults/wallet/DistinguishedSchema.tbl
+mozilla/defaults/wallet/FieldSchema.tbl
+mozilla/defaults/wallet/PositionalSchema.tbl
+mozilla/defaults/wallet/SchemaConcat.tbl
+mozilla/defaults/wallet/SchemaStrings.tbl
+mozilla/defaults/wallet/StateSchema.tbl
+mozilla/defaults/wallet/VcardSchema.tbl
+mozilla/icons/mozicon16.xpm
+mozilla/icons/mozicon50.xpm
+mozilla/mozilla-bin
+mozilla/res/arrow.gif
+mozilla/res/arrowd.gif
+mozilla/res/bloatcycle.html
+mozilla/res/broken-image.gif
+mozilla/res/builtin/htmlBindings.xml
+mozilla/res/builtin/platformHTMLBindings.xml
+mozilla/res/charsetData.properties
+mozilla/res/charsetalias.properties
+mozilla/res/cmessage.txt
+mozilla/res/dtd/mathml.dtd
+mozilla/res/dtd/xhtml11.dtd
+mozilla/res/entityTables/html40Latin1.properties
+mozilla/res/entityTables/html40Special.properties
+mozilla/res/entityTables/html40Symbols.properties
+mozilla/res/entityTables/htmlEntityVersions.properties
+mozilla/res/entityTables/mathml20.properties
+mozilla/res/entityTables/transliterate.properties
+mozilla/res/fonts/mathfont.properties
+mozilla/res/fonts/mathfontCMEX10.properties
+mozilla/res/fonts/mathfontCMSY10.properties
+mozilla/res/fonts/mathfontMTExtra.properties
+mozilla/res/fonts/mathfontMath1.properties
+mozilla/res/fonts/mathfontMath2.properties
+mozilla/res/fonts/mathfontMath4.properties
+mozilla/res/fonts/mathfontPUA.properties
+mozilla/res/fonts/mathfontSymbol.properties
+mozilla/res/forms.css
+mozilla/res/html.css
+mozilla/res/html/gopher-audio.gif
+mozilla/res/html/gopher-binary.gif
+mozilla/res/html/gopher-find.gif
+mozilla/res/html/gopher-image.gif
+mozilla/res/html/gopher-menu.gif
+mozilla/res/html/gopher-movie.gif
+mozilla/res/html/gopher-sound.gif
+mozilla/res/html/gopher-telnet.gif
+mozilla/res/html/gopher-text.gif
+mozilla/res/html/gopher-unknown.gif
+mozilla/res/inspector/search-registry.rdf
+mozilla/res/inspector/viewer-registry.rdf
+mozilla/res/jarlist.dat
+mozilla/res/langGroups.properties
+mozilla/res/language.properties
+mozilla/res/loading-image.gif
+mozilla/res/mathml.css
+mozilla/res/platform-forms.css
+mozilla/res/quirk.css
+mozilla/res/rdf/article.gif
+mozilla/res/rdf/document.gif
+mozilla/res/rdf/dom-test-1.xul
+mozilla/res/rdf/dom-test-2.xul
+mozilla/res/rdf/dom-test-3.xul
+mozilla/res/rdf/dom-test-4.css
+mozilla/res/rdf/dom-test-4.xul
+mozilla/res/rdf/dom-test-5.xul
+mozilla/res/rdf/dom-test-6.xul
+mozilla/res/rdf/dom-test-7.xul
+mozilla/res/rdf/dom-test-8.xul
+mozilla/res/rdf/folder-closed.gif
+mozilla/res/rdf/folder-open.gif
+mozilla/res/rdf/ignore-test.xul
+mozilla/res/rdf/loading.gif
+mozilla/res/rdf/xpidl-test-1.xul
+mozilla/res/sample.unixpsfonts.properties
+mozilla/res/samples/Anieyes.gif
+mozilla/res/samples/aform.css
+mozilla/res/samples/beeptest.html
+mozilla/res/samples/bform.css
+mozilla/res/samples/bg.jpg
+mozilla/res/samples/cform.css
+mozilla/res/samples/checkboxTest.xul
+mozilla/res/samples/colorpicker.xul
+mozilla/res/samples/demoform.css
+mozilla/res/samples/dexopenchrome.xul
+mozilla/res/samples/dexparamdialog.html
+mozilla/res/samples/dexparamdialog.xul
+mozilla/res/samples/embed-test.html
+mozilla/res/samples/find.html
+mozilla/res/samples/gear1.gif
+mozilla/res/samples/hidetoolicon.css
+mozilla/res/samples/hidetoolicon.xul
+mozilla/res/samples/image_props.html
+mozilla/res/samples/mozform.css
+mozilla/res/samples/printsetup.html
+mozilla/res/samples/raptor.jpg
+mozilla/res/samples/rock_gra.gif
+mozilla/res/samples/sampleimages/bongo.gif
+mozilla/res/samples/sampleimages/down.gif
+mozilla/res/samples/sampleimages/left.gif
+mozilla/res/samples/sampleimages/right.gif
+mozilla/res/samples/sampleimages/up.gif
+mozilla/res/samples/scrollbarTest1.xul
+mozilla/res/samples/scrollbarTest2.xul
+mozilla/res/samples/sliderTest1.xul
+mozilla/res/samples/soundtest.html
+mozilla/res/samples/tab.xul
+mozilla/res/samples/test.wav
+mozilla/res/samples/test0.html
+mozilla/res/samples/test1.html
+mozilla/res/samples/test10.html
+mozilla/res/samples/test11.html
+mozilla/res/samples/test12.html
+mozilla/res/samples/test13.html
+mozilla/res/samples/test14.html
+mozilla/res/samples/test15.html
+mozilla/res/samples/test16.html
+mozilla/res/samples/test2.html
+mozilla/res/samples/test3.html
+mozilla/res/samples/test4.html
+mozilla/res/samples/test5.html
+mozilla/res/samples/test6.html
+mozilla/res/samples/test7.html
+mozilla/res/samples/test8-1.html
+mozilla/res/samples/test8.html
+mozilla/res/samples/test8dom.html
+mozilla/res/samples/test8sca.html
+mozilla/res/samples/test8siz.html
+mozilla/res/samples/test8tab.html
+mozilla/res/samples/test9.html
+mozilla/res/samples/test9a.html
+mozilla/res/samples/test9b.html
+mozilla/res/samples/test_ed.html
+mozilla/res/samples/test_form.html
+mozilla/res/samples/test_gfx.html
+mozilla/res/samples/test_lbox.html
+mozilla/res/samples/test_pr.html
+mozilla/res/samples/test_weight.html
+mozilla/res/samples/toolbarTest1.xul
+mozilla/res/samples/treeTest1.css
+mozilla/res/samples/treeTest1.xul
+mozilla/res/samples/widgets.xul
+mozilla/res/samples/xpconnect-sample.html
+mozilla/res/samples/xpmenu.xul
+mozilla/res/samples/xulTest.css
+mozilla/res/strres-test.dtd
+mozilla/res/strres-test.html
+mozilla/res/strres-test.js
+mozilla/res/strres-test.xul
+mozilla/res/strres.properties
+mozilla/res/test.properties
+mozilla/res/throbber/anim.gif
+mozilla/res/throbber/anims00.gif
+mozilla/res/throbber/anims01.gif
+mozilla/res/throbber/anims02.gif
+mozilla/res/throbber/anims03.gif
+mozilla/res/throbber/anims04.gif
+mozilla/res/throbber/anims05.gif
+mozilla/res/throbber/anims06.gif
+mozilla/res/throbber/anims07.gif
+mozilla/res/throbber/anims08.gif
+mozilla/res/throbber/anims09.gif
+mozilla/res/throbber/anims10.gif
+mozilla/res/throbber/anims11.gif
+mozilla/res/throbber/anims12.gif
+mozilla/res/throbber/anims13.gif
+mozilla/res/throbber/anims14.gif
+mozilla/res/throbber/anims15.gif
+mozilla/res/throbber/anims16.gif
+mozilla/res/throbber/anims17.gif
+mozilla/res/throbber/anims18.gif
+mozilla/res/throbber/anims19.gif
+mozilla/res/throbber/anims20.gif
+mozilla/res/throbber/anims21.gif
+mozilla/res/throbber/anims22.gif
+mozilla/res/throbber/anims23.gif
+mozilla/res/throbber/anims24.gif
+mozilla/res/throbber/anims25.gif
+mozilla/res/throbber/anims26.gif
+mozilla/res/throbber/anims27.gif
+mozilla/res/throbber/anims28.gif
+mozilla/res/throbber/anims29.gif
+mozilla/res/ua.css
+mozilla/res/unixcharset.properties
+mozilla/res/urlparse.dat
+mozilla/res/urlparse_unx.dat
+mozilla/res/viewer.properties
+mozilla/res/viewsource.css
+mozilla/searchplugins/NetscapeSearch.gif
+mozilla/searchplugins/NetscapeSearch.src
+mozilla/searchplugins/bugzilla.gif
+mozilla/searchplugins/bugzilla.src
+mozilla/searchplugins/dmoz.gif
+mozilla/searchplugins/dmoz.src
+mozilla/searchplugins/google.gif
+mozilla/searchplugins/google.src
+mozilla/searchplugins/lxrmozilla.gif
+mozilla/searchplugins/lxrmozilla.src
+mozilla/searchplugins/mozilla.gif
+mozilla/searchplugins/mozilla.src
+mozilla/components/libMyService.so.1.0
+mozilla/components/libaccessibility.so.1.0
+mozilla/components/libaddrbook.so.1.0
+mozilla/components/libappcomps.so.1.0
+mozilla/components/libautoconfig.so.1.0
+mozilla/components/libbayesflt.so.1.0
+mozilla/components/libcaps.so.1.0
+mozilla/components/libchrome.so.1.0
+mozilla/components/libcomposer.so.1.0
+mozilla/components/libcookie.so.1.0
+mozilla/components/libdocshell.so.1.0
+mozilla/components/libeditor.so.1.0
+mozilla/components/libembedcomponents.so.1.0
+mozilla/components/libfileview.so.1.0
+mozilla/components/libgfx_gtk.so.1.0
+mozilla/components/libgfxps.so.1.0
+mozilla/components/libgfxxprint.so.1.0
+mozilla/components/libgklayout.so.1.0
+mozilla/components/libgkplugin.so.1.0
+mozilla/components/libhtmlpars.so.1.0
+mozilla/components/libi18n.so.1.0
+mozilla/components/libimglib2.so.1.0
+mozilla/components/libimgmng.so.1.0
+mozilla/components/libimpComm4xMail.so.1.0
+mozilla/components/libimpText.so.1.0
+mozilla/components/libimport.so.1.0
+mozilla/components/libinspector.so.1.0
+mozilla/components/libjar50.so.1.0
+mozilla/components/libjsd.so.1.0
+mozilla/components/libjsdom.so.1.0
+mozilla/components/liblocalmail.so.1.0
+mozilla/components/libmailnews.so.1.0
+mozilla/components/libmailview.so.1.0
+mozilla/components/libmime.so.1.0
+mozilla/components/libmimeemitter.so.1.0
+mozilla/components/libmork.so.1.0
+mozilla/components/libmozfind.so.1.0
+mozilla/components/libmsgcompose.so.1.0
+mozilla/components/libmsgdb.so.1.0
+mozilla/components/libmsgimap.so.1.0
+mozilla/components/libmsgmdn.so.1.0
+mozilla/components/libmsgnews.so.1.0
+mozilla/components/libnecko.so.1.0
+mozilla/components/libnecko2.so.1.0
+mozilla/components/libnsappshell.so.1.0
+mozilla/components/libnsprefm.so.1.0
+mozilla/components/liboji.so.1.0
+mozilla/components/libp3p.so.1.0
+mozilla/components/libpref.so.1.0
+mozilla/components/libprofile.so.1.0
+mozilla/components/librdf.so.1.0
+mozilla/components/libsmimestb.so.1.0
+mozilla/components/libtestdynamic.so.1.0
+mozilla/components/libtransformiix.so.1.0
+mozilla/components/libtxmgr.so.1.0
+mozilla/components/libtypeaheadfind.so.1.0
+mozilla/components/libuconv.so.1.0
+mozilla/components/libucvmath.so.1.0
+mozilla/components/libuniversalchardet.so.1.0
+mozilla/components/libvcard.so.1.0
+mozilla/components/libwallet.so.1.0
+mozilla/components/libwalletviewers.so.1.0
+mozilla/components/libwebbrwsr.so.1.0
+mozilla/components/libwidget_gtk.so.1.0
+mozilla/components/libwsproxytest.so.1.0
+mozilla/components/libxmlextras.so.1.0
+mozilla/components/libxpcom_compat_c.so.1.0
+mozilla/components/libxpcomsample.so.1.0
+mozilla/components/libxpconnect.so.1.0
+mozilla/components/libxpctest.so.1.0
+mozilla/components/libxpinstall.so.1.0
+mozilla/components/libxremote_client.so.1.0
+mozilla/components/libxremoteservice.so.1.0
+mozilla/libDebugRobot.so.1.0
+mozilla/libgkgfx.so.1.0
+mozilla/libgtkembedmoz.so.1.0
+mozilla/libgtksuperwin.so.1.0
+mozilla/libgtkxtbin.so.1.0
+mozilla/libjsj.so.1.0
+mozilla/libmozjs.so.1.0
+mozilla/libmsgbaseutil.so.1.0
+mozilla/libnspr4.so.1.0
+mozilla/libplc4.so.1.0
+mozilla/libplds4.so.1.0
+mozilla/libxlibrgb.so.1.0
+mozilla/libxpcom.so.1.0
+mozilla/libxpcom_compat.so.1.0
+mozilla/libxpistub.so.1.0
+mozilla/plugins/libnullplugin.so.1.0
+@dirrm mozilla/searchplugins
+@dirrm mozilla/res/throbber
+@dirrm mozilla/res/samples/sampleimages
+@dirrm mozilla/res/samples
+@dirrm mozilla/res/rdf
+@dirrm mozilla/res/inspector
+@dirrm mozilla/res/html
+@dirrm mozilla/res/fonts
+@dirrm mozilla/res/entityTables
+@dirrm mozilla/res/dtd
+@dirrm mozilla/res/builtin
+@dirrm mozilla/res
+@dirrm mozilla/plugins
+@dirrm mozilla/icons
+@dirrm mozilla/defaults/wallet
+@dirrm mozilla/defaults/profile/chrome
+@dirrm mozilla/defaults/profile/US/chrome
+@dirrm mozilla/defaults/profile/US
+@dirrm mozilla/defaults/profile
+@dirrm mozilla/defaults/pref
+@dirrm mozilla/defaults/messenger/US
+@dirrm mozilla/defaults/messenger
+@dirrm mozilla/defaults/autoconfig
+@dirrm mozilla/defaults
+@dirrm mozilla/components
+@exec mkdir -p %D/mozilla/chrome/venkman/skin/modern/venkman/images
+@dirrm mozilla/chrome/venkman/skin/modern/venkman/images
+@dirrm mozilla/chrome/venkman/skin/modern/venkman
+@dirrm mozilla/chrome/venkman/skin/modern
+@dirrm mozilla/chrome/venkman/skin
+@exec mkdir -p %D/mozilla/chrome/venkman/locale/en-US/venkman
+@dirrm mozilla/chrome/venkman/locale/en-US/venkman
+@dirrm mozilla/chrome/venkman/locale/en-US
+@dirrm mozilla/chrome/venkman/locale
+@exec mkdir -p %D/mozilla/chrome/venkman/content/venkman/tests
+@dirrm mozilla/chrome/venkman/content/venkman/tests
+@dirrm mozilla/chrome/venkman/content/venkman
+@dirrm mozilla/chrome/venkman/content
+@dirrm mozilla/chrome/venkman
+@exec mkdir -p %D/mozilla/chrome/toolkit/content/global/bindings
+@dirrm mozilla/chrome/toolkit/content/global/bindings
+@exec mkdir -p %D/mozilla/chrome/toolkit/content/global-region
+@dirrm mozilla/chrome/toolkit/content/global-region
+@exec mkdir -p %D/mozilla/chrome/toolkit/content/global-platform
+@dirrm mozilla/chrome/toolkit/content/global-platform
+@dirrm mozilla/chrome/toolkit/content/global
+@dirrm mozilla/chrome/toolkit/content
+@dirrm mozilla/chrome/toolkit
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/toolbar
+@dirrm mozilla/chrome/modern/skin/modern/navigator/toolbar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/icons
+@dirrm mozilla/chrome/modern/skin/modern/navigator/icons
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/btn1
+@dirrm mozilla/chrome/modern/skin/modern/navigator/btn1
+@dirrm mozilla/chrome/modern/skin/modern/navigator
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/smime/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/smime/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/smime
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/messengercompose/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/messengercompose/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/messengercompose
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/icons
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/addressbook/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/addressbook/icons
+@dirrm mozilla/chrome/modern/skin/modern/messenger/addressbook
+@dirrm mozilla/chrome/modern/skin/modern/messenger
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/tree
+@dirrm mozilla/chrome/modern/skin/modern/global/tree
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/toolbar
+@dirrm mozilla/chrome/modern/skin/modern/global/toolbar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/splitter
+@dirrm mozilla/chrome/modern/skin/modern/global/splitter
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/scrollbar
+@dirrm mozilla/chrome/modern/skin/modern/global/scrollbar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/radio
+@dirrm mozilla/chrome/modern/skin/modern/global/radio
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/progressmeter
+@dirrm mozilla/chrome/modern/skin/modern/global/progressmeter
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/menulist
+@dirrm mozilla/chrome/modern/skin/modern/global/menulist
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/menu
+@dirrm mozilla/chrome/modern/skin/modern/global/menu
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/icons
+@dirrm mozilla/chrome/modern/skin/modern/global/icons
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/filepicker
+@dirrm mozilla/chrome/modern/skin/modern/global/filepicker
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/console
+@dirrm mozilla/chrome/modern/skin/modern/global/console
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/checkbox
+@dirrm mozilla/chrome/modern/skin/modern/global/checkbox
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/button
+@dirrm mozilla/chrome/modern/skin/modern/global/button
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/arrow
+@dirrm mozilla/chrome/modern/skin/modern/global/arrow
+@dirrm mozilla/chrome/modern/skin/modern/global
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/editor/icons
+@dirrm mozilla/chrome/modern/skin/modern/editor/icons
+@dirrm mozilla/chrome/modern/skin/modern/editor
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/xpinstall
+@dirrm mozilla/chrome/modern/skin/modern/communicator/xpinstall
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/toolbar
+@dirrm mozilla/chrome/modern/skin/modern/communicator/toolbar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/taskbar
+@dirrm mozilla/chrome/modern/skin/modern/communicator/taskbar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/sidebar
+@dirrm mozilla/chrome/modern/skin/modern/communicator/sidebar
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/search
+@dirrm mozilla/chrome/modern/skin/modern/communicator/search
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/related
+@dirrm mozilla/chrome/modern/skin/modern/communicator/related
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/profile
+@dirrm mozilla/chrome/modern/skin/modern/communicator/profile
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/icons
+@dirrm mozilla/chrome/modern/skin/modern/communicator/icons
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/help
+@dirrm mozilla/chrome/modern/skin/modern/communicator/help
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/directory
+@dirrm mozilla/chrome/modern/skin/modern/communicator/directory
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/cookie
+@dirrm mozilla/chrome/modern/skin/modern/communicator/cookie
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/brand
+@dirrm mozilla/chrome/modern/skin/modern/communicator/brand
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/bookmarks
+@dirrm mozilla/chrome/modern/skin/modern/communicator/bookmarks
+@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/alerts
+@dirrm mozilla/chrome/modern/skin/modern/communicator/alerts
+@dirrm mozilla/chrome/modern/skin/modern/communicator
+@dirrm mozilla/chrome/modern/skin/modern
+@dirrm mozilla/chrome/modern/skin
+@dirrm mozilla/chrome/modern
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger/messengercompose
+@dirrm mozilla/chrome/messenger/content/messenger/messengercompose
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger/addressbook
+@dirrm mozilla/chrome/messenger/content/messenger/addressbook
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-views
+@dirrm mozilla/chrome/messenger/content/messenger-views
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-region
+@dirrm mozilla/chrome/messenger/content/messenger-region
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-mdn
+@dirrm mozilla/chrome/messenger/content/messenger-mdn
+@dirrm mozilla/chrome/messenger/content/messenger
+@dirrm mozilla/chrome/messenger/content
+@dirrm mozilla/chrome/messenger
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/xblBindings
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/xblBindings
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/styleRules
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/styleRules
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/domNode
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/domNode
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/dom
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/dom
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers
+@dirrm mozilla/chrome/inspector/skin/modern/inspector
+@dirrm mozilla/chrome/inspector/skin/modern
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/xblBindings
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/xblBindings
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/styleRules
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/styleRules
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/domNode
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/domNode
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/dom
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/dom
+@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers
+@dirrm mozilla/chrome/inspector/skin/classic/inspector
+@dirrm mozilla/chrome/inspector/skin/classic
+@dirrm mozilla/chrome/inspector/skin
+@exec mkdir -p %D/mozilla/chrome/inspector/locale/en-US/inspector/viewers
+@dirrm mozilla/chrome/inspector/locale/en-US/inspector/viewers
+@exec mkdir -p %D/mozilla/chrome/inspector/locale/en-US/inspector/search
+@dirrm mozilla/chrome/inspector/locale/en-US/inspector/search
+@dirrm mozilla/chrome/inspector/locale/en-US/inspector
+@dirrm mozilla/chrome/inspector/locale/en-US
+@dirrm mozilla/chrome/inspector/locale
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/xblBindings
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/xblBindings
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/stylesheets
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/stylesheets
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/styleRules
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/styleRules
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/jsObject
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/jsObject
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/domNode
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/domNode
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/dom
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/dom
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/computedStyle
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/computedStyle
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/content/inspector/viewers/boxModel
+@dirrm mozilla/chrome/inspector/content/inspector/viewers
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/tests
+@dirrm mozilla/chrome/inspector/content/inspector/tests
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/search/modules/junkImgs
+@dirrm mozilla/chrome/inspector/content/inspector/search/modules/junkImgs
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/search/modules/findFiles
+@dirrm mozilla/chrome/inspector/content/inspector/search/modules/findFiles
+@dirrm mozilla/chrome/inspector/content/inspector/search/modules
+@dirrm mozilla/chrome/inspector/content/inspector/search
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/prefs
+@dirrm mozilla/chrome/inspector/content/inspector/prefs
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/xul
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil/xul
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/xpcom
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil/xpcom
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/system
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil/system
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/rdf
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil/rdf
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/events
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil/events
+@dirrm mozilla/chrome/inspector/content/inspector/jsutil
+@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/extensions
+@dirrm mozilla/chrome/inspector/content/inspector/extensions
+@dirrm mozilla/chrome/inspector/content/inspector
+@dirrm mozilla/chrome/inspector/content
+@dirrm mozilla/chrome/inspector
+@dirrm mozilla/chrome/icons/default
+@dirrm mozilla/chrome/icons
+@exec mkdir -p %D/mozilla/chrome/help/content/help
+@dirrm mozilla/chrome/help/content/help
+@dirrm mozilla/chrome/help/content
+@dirrm mozilla/chrome/help
+@exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/navigator-platform
+@dirrm mozilla/chrome/en-win/locale/en-US/navigator-platform
+@exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/messenger-mapi
+@dirrm mozilla/chrome/en-win/locale/en-US/messenger-mapi
+@exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/global-platform
+@dirrm mozilla/chrome/en-win/locale/en-US/global-platform
+@exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-win/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-win/locale/en-US/communicator-platform
+@dirrm mozilla/chrome/en-win/locale/en-US
+@dirrm mozilla/chrome/en-win/locale
+@dirrm mozilla/chrome/en-win
+@exec mkdir -p %D/mozilla/chrome/en-unix/locale/en-US/navigator-platform
+@dirrm mozilla/chrome/en-unix/locale/en-US/navigator-platform
+@exec mkdir -p %D/mozilla/chrome/en-unix/locale/en-US/global-platform
+@dirrm mozilla/chrome/en-unix/locale/en-US/global-platform
+@exec mkdir -p %D/mozilla/chrome/en-unix/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-unix/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-unix/locale/en-US/communicator-platform
+@dirrm mozilla/chrome/en-unix/locale/en-US
+@dirrm mozilla/chrome/en-unix/locale
+@dirrm mozilla/chrome/en-unix
+@exec mkdir -p %D/mozilla/chrome/en-mac/locale/en-US/navigator-platform
+@dirrm mozilla/chrome/en-mac/locale/en-US/navigator-platform
+@exec mkdir -p %D/mozilla/chrome/en-mac/locale/en-US/global-platform
+@dirrm mozilla/chrome/en-mac/locale/en-US/global-platform
+@exec mkdir -p %D/mozilla/chrome/en-mac/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-mac/locale/en-US/communicator-platform/pref
+@dirrm mozilla/chrome/en-mac/locale/en-US/communicator-platform
+@dirrm mozilla/chrome/en-mac/locale/en-US
+@dirrm mozilla/chrome/en-mac/locale
+@dirrm mozilla/chrome/en-mac
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/wallet
+@dirrm mozilla/chrome/en-US/locale/en-US/wallet
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/p3p
+@dirrm mozilla/chrome/en-US/locale/en-US/p3p
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/necko
+@dirrm mozilla/chrome/en-US/locale/en-US/necko
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/navigator
+@dirrm mozilla/chrome/en-US/locale/en-US/navigator
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger/messengercompose
+@dirrm mozilla/chrome/en-US/locale/en-US/messenger/messengercompose
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger/addressbook
+@dirrm mozilla/chrome/en-US/locale/en-US/messenger/addressbook
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger-mdn
+@dirrm mozilla/chrome/en-US/locale/en-US/messenger-mdn
+@dirrm mozilla/chrome/en-US/locale/en-US/messenger
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/help/images
+@dirrm mozilla/chrome/en-US/locale/en-US/help/images
+@dirrm mozilla/chrome/en-US/locale/en-US/help
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/global
+@dirrm mozilla/chrome/en-US/locale/en-US/global
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/editor
+@dirrm mozilla/chrome/en-US/locale/en-US/editor
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/cookie
+@dirrm mozilla/chrome/en-US/locale/en-US/cookie
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/content-packs
+@dirrm mozilla/chrome/en-US/locale/en-US/content-packs
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xmlextras
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/xmlextras
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/wallet
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/wallet
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/timebomb
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/timebomb
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/sidebar
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/sidebar
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/security
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/security
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/search
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/search
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/profile
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/profile
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/pref
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/pref
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/layout
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/layout
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/history
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/history
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/downloadmanager
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/downloadmanager
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/dom
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/dom
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/directory
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/directory
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/bookmarks
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/bookmarks
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/autoconfig
+@dirrm mozilla/chrome/en-US/locale/en-US/autoconfig
+@dirrm mozilla/chrome/en-US/locale/en-US
+@dirrm mozilla/chrome/en-US/locale
+@dirrm mozilla/chrome/en-US
+@exec mkdir -p %D/mozilla/chrome/embed-sample/skin/classic/embed
+@dirrm mozilla/chrome/embed-sample/skin/classic/embed
+@dirrm mozilla/chrome/embed-sample/skin/classic
+@dirrm mozilla/chrome/embed-sample/skin
+@exec mkdir -p %D/mozilla/chrome/embed-sample/locale/en-US/embed
+@dirrm mozilla/chrome/embed-sample/locale/en-US/embed
+@dirrm mozilla/chrome/embed-sample/locale/en-US
+@dirrm mozilla/chrome/embed-sample/locale
+@exec mkdir -p %D/mozilla/chrome/embed-sample/content/embed
+@dirrm mozilla/chrome/embed-sample/content/embed
+@dirrm mozilla/chrome/embed-sample/content
+@dirrm mozilla/chrome/embed-sample
+@exec mkdir -p %D/mozilla/chrome/content-packs/content/content-packs
+@dirrm mozilla/chrome/content-packs/content/content-packs
+@dirrm mozilla/chrome/content-packs/content
+@dirrm mozilla/chrome/content-packs
+@exec mkdir -p %D/mozilla/chrome/comm/content/xbl-marquee
+@dirrm mozilla/chrome/comm/content/xbl-marquee
+@exec mkdir -p %D/mozilla/chrome/comm/content/wallet
+@dirrm mozilla/chrome/comm/content/wallet
+@exec mkdir -p %D/mozilla/chrome/comm/content/p3p
+@dirrm mozilla/chrome/comm/content/p3p
+@exec mkdir -p %D/mozilla/chrome/comm/content/necko
+@dirrm mozilla/chrome/comm/content/necko
+@exec mkdir -p %D/mozilla/chrome/comm/content/navigator-region
+@dirrm mozilla/chrome/comm/content/navigator-region
+@exec mkdir -p %D/mozilla/chrome/comm/content/navigator-platform
+@dirrm mozilla/chrome/comm/content/navigator-platform
+@exec mkdir -p %D/mozilla/chrome/comm/content/navigator
+@dirrm mozilla/chrome/comm/content/navigator
+@exec mkdir -p %D/mozilla/chrome/comm/content/editor/images
+@dirrm mozilla/chrome/comm/content/editor/images
+@exec mkdir -p %D/mozilla/chrome/comm/content/editor-region
+@dirrm mozilla/chrome/comm/content/editor-region
+@dirrm mozilla/chrome/comm/content/editor
+@exec mkdir -p %D/mozilla/chrome/comm/content/cookie
+@dirrm mozilla/chrome/comm/content/cookie
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/xpinstall
+@dirrm mozilla/chrome/comm/content/communicator/xpinstall
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/xml
+@dirrm mozilla/chrome/comm/content/communicator/xml
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/wallet
+@dirrm mozilla/chrome/comm/content/communicator/wallet
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/timebomb
+@dirrm mozilla/chrome/comm/content/communicator/timebomb
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/sidebar
+@dirrm mozilla/chrome/comm/content/communicator/sidebar
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/search
+@dirrm mozilla/chrome/comm/content/communicator/search
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/related
+@dirrm mozilla/chrome/comm/content/communicator/related
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/profile
+@dirrm mozilla/chrome/comm/content/communicator/profile
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/pref
+@dirrm mozilla/chrome/comm/content/communicator/pref
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/p3p
+@dirrm mozilla/chrome/comm/content/communicator/p3p
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/history
+@dirrm mozilla/chrome/comm/content/communicator/history
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/downloadmanager
+@dirrm mozilla/chrome/comm/content/communicator/downloadmanager
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/directory
+@dirrm mozilla/chrome/comm/content/communicator/directory
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/bookmarks
+@dirrm mozilla/chrome/comm/content/communicator/bookmarks
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/alerts
+@dirrm mozilla/chrome/comm/content/communicator/alerts
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator-region
+@dirrm mozilla/chrome/comm/content/communicator-region
+@exec mkdir -p %D/mozilla/chrome/comm/content/communicator-platform
+@dirrm mozilla/chrome/comm/content/communicator-platform
+@dirrm mozilla/chrome/comm/content/communicator
+@exec mkdir -p %D/mozilla/chrome/comm/content/autoconfig
+@dirrm mozilla/chrome/comm/content/autoconfig
+@dirrm mozilla/chrome/comm/content
+@dirrm mozilla/chrome/comm
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/navigator/icons
+@dirrm mozilla/chrome/classic/skin/classic/navigator/icons
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/navigator/btn1
+@dirrm mozilla/chrome/classic/skin/classic/navigator/btn1
+@dirrm mozilla/chrome/classic/skin/classic/navigator
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/messenger/smime/icons
+@dirrm mozilla/chrome/classic/skin/classic/messenger/smime/icons
+@dirrm mozilla/chrome/classic/skin/classic/messenger/smime
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/messenger/messengercompose
+@dirrm mozilla/chrome/classic/skin/classic/messenger/messengercompose
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/messenger/icons
+@dirrm mozilla/chrome/classic/skin/classic/messenger/icons
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/messenger/addressbook/icons
+@dirrm mozilla/chrome/classic/skin/classic/messenger/addressbook/icons
+@dirrm mozilla/chrome/classic/skin/classic/messenger/addressbook
+@dirrm mozilla/chrome/classic/skin/classic/messenger
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/tree
+@dirrm mozilla/chrome/classic/skin/classic/global/tree
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/toolbar
+@dirrm mozilla/chrome/classic/skin/classic/global/toolbar
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/splitter
+@dirrm mozilla/chrome/classic/skin/classic/global/splitter
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/scrollbar
+@dirrm mozilla/chrome/classic/skin/classic/global/scrollbar
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/radio
+@dirrm mozilla/chrome/classic/skin/classic/global/radio
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/progressmeter
+@dirrm mozilla/chrome/classic/skin/classic/global/progressmeter
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/menu
+@dirrm mozilla/chrome/classic/skin/classic/global/menu
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/icons
+@dirrm mozilla/chrome/classic/skin/classic/global/icons
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/filepicker
+@dirrm mozilla/chrome/classic/skin/classic/global/filepicker
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/console
+@dirrm mozilla/chrome/classic/skin/classic/global/console
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/checkbox
+@dirrm mozilla/chrome/classic/skin/classic/global/checkbox
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/arrow
+@dirrm mozilla/chrome/classic/skin/classic/global/arrow
+@dirrm mozilla/chrome/classic/skin/classic/global
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/editor/icons
+@dirrm mozilla/chrome/classic/skin/classic/editor/icons
+@dirrm mozilla/chrome/classic/skin/classic/editor
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/xpinstall
+@dirrm mozilla/chrome/classic/skin/classic/communicator/xpinstall
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/taskbar
+@dirrm mozilla/chrome/classic/skin/classic/communicator/taskbar
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/sidebar
+@dirrm mozilla/chrome/classic/skin/classic/communicator/sidebar
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/search
+@dirrm mozilla/chrome/classic/skin/classic/communicator/search
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/related
+@dirrm mozilla/chrome/classic/skin/classic/communicator/related
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/profile
+@dirrm mozilla/chrome/classic/skin/classic/communicator/profile
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/icons
+@dirrm mozilla/chrome/classic/skin/classic/communicator/icons
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/directory
+@dirrm mozilla/chrome/classic/skin/classic/communicator/directory
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/cookie
+@dirrm mozilla/chrome/classic/skin/classic/communicator/cookie
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/brand
+@dirrm mozilla/chrome/classic/skin/classic/communicator/brand
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/bookmarks
+@dirrm mozilla/chrome/classic/skin/classic/communicator/bookmarks
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/alerts
+@dirrm mozilla/chrome/classic/skin/classic/communicator/alerts
+@dirrm mozilla/chrome/classic/skin/classic/communicator
+@dirrm mozilla/chrome/classic/skin/classic
+@dirrm mozilla/chrome/classic/skin
+@dirrm mozilla/chrome/classic
+@exec mkdir -p %D/mozilla/chrome/chatzilla/skin/modern/chatzilla/images
+@dirrm mozilla/chrome/chatzilla/skin/modern/chatzilla/images
+@dirrm mozilla/chrome/chatzilla/skin/modern/chatzilla
+@dirrm mozilla/chrome/chatzilla/skin/modern
+@dirrm mozilla/chrome/chatzilla/skin
+@exec mkdir -p %D/mozilla/chrome/chatzilla/locale/en-US/chatzilla
+@dirrm mozilla/chrome/chatzilla/locale/en-US/chatzilla
+@dirrm mozilla/chrome/chatzilla/locale/en-US
+@dirrm mozilla/chrome/chatzilla/locale
+@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/prefpanel
+@dirrm mozilla/chrome/chatzilla/content/chatzilla/prefpanel
+@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/lib/xul
+@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib/xul
+@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/lib/js
+@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib/js
+@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib
+@dirrm mozilla/chrome/chatzilla/content/chatzilla
+@dirrm mozilla/chrome/chatzilla/content
+@dirrm mozilla/chrome/chatzilla
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/navigator-region
+@dirrm mozilla/chrome/US/locale/US/navigator-region
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/messenger-region
+@dirrm mozilla/chrome/US/locale/US/messenger-region
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/global-region
+@dirrm mozilla/chrome/US/locale/US/global-region
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/editor-region
+@dirrm mozilla/chrome/US/locale/US/editor-region
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/communicator-region/wallet
+@dirrm mozilla/chrome/US/locale/US/communicator-region/wallet
+@dirrm mozilla/chrome/US/locale/US/communicator-region
+@dirrm mozilla/chrome/US/locale/US
+@dirrm mozilla/chrome/US/locale
+@dirrm mozilla/chrome/US
+@dirrm mozilla/chrome
+@dirrm mozilla

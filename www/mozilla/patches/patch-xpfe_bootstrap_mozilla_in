@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.1 2003/05/15 00:53:45 wilfried Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Wed Aug  7 05:46:15 2002
++++ xpfe/bootstrap/mozilla.in	Wed May 14 18:28:53 2003
+@@ -115,6 +115,6 @@
+ eval "set -- $moreargs"
+ if [ $debugging = 1 ]
+ then
+-  echo $dist_bin/run-mozilla.sh $script_args $dist_bin/$MOZILLA_BIN "$@"
++  echo $dist_bin/run-mozilla.sh $script_args /usr/local/mozilla/$MOZILLA_BIN "$@"
+ fi
+-exec "$dist_bin/run-mozilla.sh" $script_args "$dist_bin/$MOZILLA_BIN" "$@"
++exec "$dist_bin/run-mozilla.sh" $script_args "/usr/local/mozilla/$MOZILLA_BIN" "$@"
