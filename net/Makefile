@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 1999/06/14 03:11:35 brad Exp $
+# $OpenBSD: Makefile,v 1.43 1999/06/14 21:01:14 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += gicq
 #    SUBDIR += gnu-finger
 #    SUBDIR += gopher
+     SUBDIR += httptunnel
      SUBDIR += icb
      SUBDIR += icmpinfo
      SUBDIR += irc
