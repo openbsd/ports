@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/10/24 15:33:57 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.46 2001/12/04 00:41:46 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
 		--with-configdir="${SYSCONFDIR}/samba" \
-		--with-lockdir="/var/spool/lock" \
+		--with-lockdir="/var/spool/samba" \
 		--with-privatedir="${SYSCONFDIR}/samba" \
 		--with-swatdir="${PREFIX}/share/swat" \
 		--with-ssl \

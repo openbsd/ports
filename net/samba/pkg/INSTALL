@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2001/10/24 15:33:57 dhartmei Exp $
+# $OpenBSD: INSTALL,v 1.5 2001/12/04 00:41:46 dhartmei Exp $
 #
 # Pre/post-installation setup of samba
 
@@ -13,7 +13,7 @@ CONFIG_FILE=$CONFIG_DIR/smb.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/samba
 SAMBA_SPOOL=/var/spool/samba
 
-install -d -o root -g wheel -m 1777 $SAMBA_SPOOL
+install -d -o root -g wheel -m 1755 $SAMBA_SPOOL
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
