@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 19:49:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/20 08:14:52 kevlo Exp $
 
 COMMENT=	"personal accounts manager"
 
@@ -7,7 +7,7 @@ DISTNAME=	gacc_${VERSION}.orig
 PKGNAME=	gacc-${VERSION}
 CATEGORIES=	misc productivity
 
-HOMEPAGE=	http://gacc.sourceforge.net/
+HOMEPAGE=	http://tnemeth.free.fr/projets/gAcc-en.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${HOMEPAGE}/programmes/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gacc/}
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
