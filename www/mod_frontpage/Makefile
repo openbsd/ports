@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/28 19:35:33 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/09 18:00:25 pvalchev Exp $
 
-COMMENT=	"allows use of Microsoft FrontPage extentions with Apache"
+COMMENT=	"allows use of Microsoft FrontPage extensions with Apache"
 
 VERSION=	1.5.1
 APVERSION=	1.3.17
