@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/04/03 11:28:00 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/03 11:31:15 avsm Exp $
 horde/nag/COPYING
 horde/nag/README
 horde/nag/config/conf.php.dist
@@ -24,7 +24,7 @@ horde/nag/graphics/up.gif
 horde/nag/index.php
 horde/nag/lib/Driver.php
 horde/nag/lib/Driver/sql.php
-horde/nag/lib/${HORDE_NAME}.php
+horde/nag/lib/Nag.php
 horde/nag/lib/api.php
 horde/nag/lib/base.php
 horde/nag/lib/constants.php

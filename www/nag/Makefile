@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/04/03 11:28:00 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.4 2003/04/03 11:31:14 avsm Exp $ 
 
 COMMENT=	"task list manager for Horde"
 
@@ -29,7 +29,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-RUN_DEPENDS=	:horde->=2.1:devel/horde
+RUN_DEPENDS=	:horde->=2.2.1:devel/horde
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
