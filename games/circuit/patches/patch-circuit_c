@@ -1,0 +1,13 @@
+$OpenBSD: patch-circuit_c,v 1.1 2002/12/15 23:54:39 espie Exp $
+--- circuit.c.orig	Mon Dec 16 00:34:59 2002
++++ circuit.c	Mon Dec 16 00:42:54 2002
+@@ -326,7 +326,8 @@ only_good_according_to_locked_nbours(int
+ 	ng = nb = 0;
+ 	for(j = 0; j < nbours; j++) {
+ 	    n = board[c].nbour[j];
+-	    if(n != -1 && !board[n].locked)
++	    if(n != -1 && !board[n].locked && board[n].links != 0 &&
++	    	board[n].links != (1 << nbours)-1)
+ 		continue;
+ 	    if(good_link_value(c, j, r))
+ 		ng++;
