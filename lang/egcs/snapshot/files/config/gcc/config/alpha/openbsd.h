@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.5 1999/01/21 16:58:08 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.6 1999/01/22 22:40:17 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -8,7 +8,11 @@
 #include <alpha/alpha.h>
 
 #define OBSD_NO_DYNAMIC_LIBRARIES
+#define OBSD_HAS_DECLARE_FUNCTION_NAME
+#define OBSD_HAS_DECLARE_FUNCTION_SIZE
+#define OBSD_HAS_DECLARE_OBJECT_NAME
 #include <openbsd.h>
+#undef ASM_WEAKEN_LABEL
 
 /* run-time target specifications */
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) \

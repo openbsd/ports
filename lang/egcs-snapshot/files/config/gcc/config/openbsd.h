@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.7 1999/01/18 10:23:25 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.8 1999/01/22 22:40:17 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -165,6 +165,7 @@
   } while (0)
 #endif
 
+#ifndef OBSD_HAS_DECLARE_FUNCTION_SIZE
 /* Declare the size of a function.  */
 #undef ASM_DECLARE_FUNCTION_SIZE
 #define ASM_DECLARE_FUNCTION_SIZE(FILE, FNAME, DECL)			\
@@ -178,6 +179,7 @@
 	putc ('\n', FILE);						\
       }									\
   } while (0)
+#endif
 
 #ifndef OBSD_HAS_DECLARE_OBJECT_NAME
 /* Extra assembler code needed to declare an object properly.  */
@@ -199,7 +201,6 @@
       }									\
     ASM_OUTPUT_LABEL(FILE, NAME);					\
   } while (0)
-#endif
 
 /* Output the size directive for a decl in rest_of_decl_compilation
    in the case where we did not do so before the initializer.
@@ -221,6 +222,7 @@ do {									 \
 	 fprintf (FILE, " , %d\n", int_size_in_bytes (TREE_TYPE (DECL)));\
        }								 \
    } while (0)
+#endif
 
 
 /* Those are `generic' ways to weaken/globalize a label. We shouldn't need
