@@ -1,9 +1,17 @@
-$OpenBSD: patch-Imakefile,v 1.1 2001/04/17 14:57:11 naddy Exp $
---- Imakefile.orig	Thu Jan 21 21:27:31 1993
-+++ Imakefile	Tue Apr 17 16:39:02 2001
-@@ -4,40 +4,16 @@
- /**/# MTI: Build srcs
- /**/#
+$OpenBSD: patch-Imakefile,v 1.2 2004/01/01 15:20:21 espie Exp $
+--- Imakefile.orig	1993-01-21 21:27:31.000000000 +0100
++++ Imakefile	2004-01-01 16:15:19.000000000 +0100
+@@ -1,43 +1,19 @@
+-/**/# static char* sccs_imake = "%W%%G%";
+-/**/# Imakefile,v 1 25 June 1991
+-/**/#
+-/**/# MTI: Build srcs
+-/**/#
++XCOMM static char* sccs_imake = "%W%%G%";
++XCOMM Imakefile,v 1 25 June 1991
++XCOMM
++XCOMM MTI: Build srcs
++XCOMM
  
 -/**/# Here's what to change to customize the installation...
 -/**/# Where do you want this stuff (if the defaults aren't okay)?
@@ -25,7 +33,8 @@ $OpenBSD: patch-Imakefile,v 1.1 2001/04/17 14:57:11 naddy Exp $
 -
 -CDEBUGFLAGS = -g
 -
- /**/# Nothing to change below here
+-/**/# Nothing to change below here
++XCOMM Nothing to change below here
  
  DEPLIBS = XawClientDepLibs
 -EXTRA_INCLUDES  = -I$(XPM_INCLUDE_DIR)
