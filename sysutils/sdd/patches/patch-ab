@@ -1,0 +1,14 @@
+--- include/mconfig.h.orig	Fri May  2 15:42:31 1997
++++ include/mconfig.h	Fri Apr 30 14:41:13 1999
+@@ -674,9 +674,9 @@
+ #endif
+ 
+ /*
+- * Prototype for FreeBSD
++ * Prototype for FreeBSD / NetBSD / OpenBSD
+  */
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined (__OpenBSD__)
+ #	define	NO_FLOATINGPOINT/* No support for nonstd floatingpoint */
+ #	define	PROTOTYPES
+ #	define	HAVE_AOUT
