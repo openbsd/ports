@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/09 01:52:16 kevlo Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/GD.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GD/GD.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GD/GD.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GD/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/patch_gd.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/qd.pl
 man/man3p/GD.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GD

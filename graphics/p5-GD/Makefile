@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.10 2002/05/13 23:31:24 espie Exp $
+#	$OpenBSD: Makefile,v 1.11 2002/07/09 01:52:09 kevlo Exp $
 
 COMMENT=	"module to interface with the GD graphics library"
 
-DISTNAME=	GD-1.33
+DISTNAME=	GD-1.40
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
 LIB_DEPENDS=	gd.18::graphics/gd
@@ -27,5 +26,7 @@ PATCH_LIST=	patch-MakeMaker.PL-no_x11
 .else
 PATCH_LIST=	patch-MakeMaker.PL
 .endif
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
