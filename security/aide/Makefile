@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/09/15 00:22:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/19 06:10:33 pvalchev Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
@@ -10,6 +10,8 @@ BUILD_DEPENDS=		::devel/bison \
 			::security/mhash
 
 HOMEPAGE=		http://www.cs.tut.fi/~rammer/aide.html
+
+MAINTAINER=		Benoit LECOCQ <blq@arcane-labs.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
