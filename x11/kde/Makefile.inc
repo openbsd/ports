@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.4 2002/04/19 00:13:56 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2002/05/15 18:17:59 espie Exp $
 NEED_VERSION+=	1.504
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
-MASTER_SITES?=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR?=	stable/${VERSION}/src
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 EXTRACT_SUFX?=	.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
@@ -30,6 +29,7 @@ CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--enable-mitshm
+#CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-final
 .if !${CONFIGURE_ARGS:M--with-motif}

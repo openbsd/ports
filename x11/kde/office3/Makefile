@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/19 00:14:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/15 18:17:59 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -8,7 +8,7 @@ DISTNAME=		koffice-${VERSION}
 VMEM_WARNING=		Yes
 
 FULLPKGNAME=	koffice-${VERSION}-kde3
-MASTER_SITE_SUBDIR=	stable/3.0/src/
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.0/src/}
 DISTFILES=	koffice-${VERSION}-kde3.tar.bz2
 
 #BUILD_DEPENDS=	::x11/qt2-designer
