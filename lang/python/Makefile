@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/02 17:14:45 jasoni Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/10 18:11:57 espie Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
@@ -7,8 +7,6 @@ NEED_VERSION=	1.270
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
-
-MULTI_PACKAGES=	-tools
 
 HOMEPAGE=	http://www.python.org/
 
@@ -20,8 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=tk mpz threads
+FLAVORS=tk mpz threads no-tools
 FLAVOR?=threads mpz
+
+# don't package tools if not needed
+.if empty(FLAVOR:L:Mno-tools)
+MULTI_PACKAGES=	-tools
+.endif
 
 LIB_DEPENDS=
 
@@ -81,6 +84,9 @@ post-install:
 # The tools package is not flavor dependent.
 .if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
 PKGNAME=python-tools-1.5.2
+.endif
+.if ${FLAVOR:L:Mno-tools}
+PKGNAME:=${PKGNAME:S/-no-tools//}
 .endif
 
 .if defined(NO64BIT)
