@@ -3,14 +3,13 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:21 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/09 20:58:00 espie Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
 PKGNAME=	upsd-2.0
 CATEGORIES=	sysutils
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
 		http://www.cre8tivegroup.com/ \
 		ftp://ftp.sw.ru/pub/unix/upsd/
@@ -28,10 +27,9 @@ pre-build:
 	@mv ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
 	@sed -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
 
-post-install:
-	if [ ! -f /etc/upsd.conf ] ; then \
-		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 644 \
-			${FILESDIR}/upsd.conf /etc/upsd.conf; \
-	fi
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/upsd ${PREFIX}/sbin
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/upsd
+	${INSTALL_DATA} ${FILESDIR}/upsd.conf ${PREFIX}/lib/upsd/upsd.conf.sample
 
 .include <bsd.port.mk>
