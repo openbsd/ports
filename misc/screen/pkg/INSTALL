@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/09 03:15:19 marc Exp $
+# $OpenBSD: INSTALL,v 1.2 1999/09/26 20:51:21 espie Exp $
 #
 # Pre/post-installation setup of screen
 
@@ -61,7 +61,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -f ${SCREENRC} ]; then
+	if [ -e ${SCREENRC} ]; then
 	    do_notice $1
 	else
 	    do_install $1
