@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1 2004/08/11 18:01:32 naddy Exp $
+--- configure.orig	Wed Aug 11 11:50:32 2004
++++ configure	Wed Aug 11 11:51:26 2004
+@@ -9524,13 +9524,13 @@ echo "${ECHO_T}$ac_cv_func_gettext" >&6
+ if test $ac_cv_func_gettext = yes; then
+   HAVEGETTEXT="yes"
+ else
+-  echo "$as_me:$LINENO: checking for gettext in -lintl" >&5
+-echo $ECHO_N "checking for gettext in -lintl... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for gettext in -lintl -liconv" >&5
++echo $ECHO_N "checking for gettext in -lintl -liconv... $ECHO_C" >&6
+ if test "${ac_cv_lib_intl_gettext+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -9580,7 +9580,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
+ echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6
+ if test $ac_cv_lib_intl_gettext = yes; then
+-  INTLIBS="-lintl" HAVEGETTEXT="yes"
++  INTLIBS="-lintl -liconv" HAVEGETTEXT="yes"
+ else
+   INTLIBS=""
+ fi
