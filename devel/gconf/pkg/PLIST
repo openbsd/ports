@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/18 14:22:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/09/20 19:23:32 naddy Exp $
 bin/gconf-config
 bin/gconf-config-1
 bin/gconfd-1
@@ -22,8 +22,8 @@ lib/libgconf-gtk-1.la
 lib/pkgconfig/gconf.pc
 lib/pkgconfig/gconfgtk.pc
 share/aclocal/gconf-1.m4
-share/gconf/gconf/1/path
-share/gconf/gconf/schemas/desktop.schemas
+share/examples/gconf/gconf/1/path
+share/examples/gconf/gconf/schemas/desktop.schemas
 share/locale/az/LC_MESSAGES/GConf.mo
 share/locale/ca/LC_MESSAGES/GConf.mo
 share/locale/cs/LC_MESSAGES/GConf.mo
@@ -50,10 +50,10 @@ share/locale/uk/LC_MESSAGES/GConf.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
 share/oaf/gconfd-1.oafinfo
 %%SHARED%%
-@dirrm share/gconf/gconf/1
-@dirrm share/gconf/gconf/schemas
-@dirrm share/gconf/gconf
-@dirrm share/gconf
+@dirrm share/examples/gconf/gconf/1
+@dirrm share/examples/gconf/gconf/schemas
+@dirrm share/examples/gconf/gconf
+@dirrm share/examples/gconf
 @dirrm lib/GConf/1
 @dirrm lib/GConf
 @dirrm include/gconf/1/gconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/20 19:23:32 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+=	--enable-db3
 .endif
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/gconf; \
-	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gconf; \
-	mv ${PREFIX}/share/gconf/gconf/1/path.example ${PREFIX}/share/gconf/gconf/1/path
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gconf; \
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gconf; \
+	mv ${PREFIX}/share/examples/gconf/gconf/1/path.example ${PREFIX}/share/examples/gconf/gconf/1/path
 
 .include <bsd.port.mk>
