@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/08/05 16:14:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/01/01 23:47:44 naddy Exp $
 bin/gtar
 @info info/tar.info
 libexec/grmt
 share/locale/cs/LC_MESSAGES/tar.mo
 share/locale/da/LC_MESSAGES/tar.mo
 share/locale/de/LC_MESSAGES/tar.mo
+share/locale/el/LC_MESSAGES/tar.mo
 share/locale/es/LC_MESSAGES/tar.mo
 share/locale/et/LC_MESSAGES/tar.mo
 share/locale/fi/LC_MESSAGES/tar.mo
 share/locale/fr/LC_MESSAGES/tar.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
+share/locale/ga/LC_MESSAGES/tar.mo
 share/locale/gl/LC_MESSAGES/tar.mo
 share/locale/hr/LC_MESSAGES/tar.mo
 share/locale/hu/LC_MESSAGES/tar.mo
@@ -21,6 +25,7 @@ share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/tar.mo
 share/locale/nb/LC_MESSAGES/tar.mo
 share/locale/nl/LC_MESSAGES/tar.mo
+share/locale/no/LC_MESSAGES/tar.mo
 share/locale/pl/LC_MESSAGES/tar.mo
 share/locale/pt/LC_MESSAGES/tar.mo
 share/locale/pt_BR/LC_MESSAGES/tar.mo
