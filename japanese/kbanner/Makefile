@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/13 06:52:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/15 05:01:39 fgsch Exp $
 
 DISTNAME=	kbanner2
 CATEGORIES=	japanese
 NEED_VERSION=	1.355
-MASTER_SITES=	ftp://ginkaku.kudpc.kyoto-u.ac.jp/program/
+MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 EXTRACT_SUFX=	.tar.Z
 
-HOMEPAGE=	http://www.kudpc.kyoto-u.ac.jp/~yasuoka/program.html
+HOMEPAGE=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/program.html
 
 MAINTAINER=	ports@openbsd.org
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/kbanner2.1
 ALL_TARGET=	kbanner
 
 .include <bsd.port.mk>

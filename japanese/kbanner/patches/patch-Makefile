@@ -1,14 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/02/13 06:52:32 fgsch Exp $
-
---- Makefile.orig	Sat Jun 15 06:02:42 1991
-+++ Makefile	Tue Feb 13 03:13:23 2001
+--- Makefile.orig	Fri Oct 15 02:19:54 1993
++++ Makefile	Thu Feb 15 01:46:41 2001
 @@ -1,21 +1,21 @@
  SHELL = /bin/sh
 -DESTDIR = /usr/local/bin
 -MANUAL = /usr/local/man/man1/kbanner.1
+-CFLAGS = -O -KEOPT -KBREG -KINF
 +BINDIR = $(PREFIX)/bin
 +MANUAL = $(PREFIX)/man/man1/kbanner.1
- CFLAGS = -O
++CFLAGS = -O # -KEOPT -KBREG -KINF
  OBJ = kbanner.o font1.o font2.o font3.o
  
  .SUFFIXES: .c .o
