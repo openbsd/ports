@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2001/06/12 16:58:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.82 2001/06/15 15:30:26 lebel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += ddd
      SUBDIR += dejagnu
      SUBDIR += doc++
+     SUBDIR += ectags
      SUBDIR += flawfinder
      SUBDIR += gettext
      SUBDIR += gindent
