@@ -1,6 +1,6 @@
---- makefile.orig	Mon Apr 10 02:37:28 2000
-+++ makefile	Mon Apr 10 02:39:09 2000
-@@ -1,11 +1,11 @@
+--- makefile.orig	Thu Feb 22 23:04:59 2001
++++ makefile	Thu Feb 22 23:06:41 2001
+@@ -1,26 +1,30 @@
  YFLAGS = -d
 -CFLAGS = -g
 +#CFLAGS = -g
@@ -14,7 +14,13 @@
  
  hoc.o code.o init.o symbol.o:	hoc.h
  
-@@ -14,13 +14,12 @@ code.o init.o symbol.o:	x.tab.h
+ code.o init.o symbol.o:	x.tab.h
+ 
++.if ${MACHINE_ARCH} == "i386"
++code.o: code.c
++	$(CC) $(CFLAGS) -O0 -c code.c 
++.endif
++
  x.tab.h:	y.tab.h
  	-cmp -s x.tab.h y.tab.h || cp y.tab.h x.tab.h
  
