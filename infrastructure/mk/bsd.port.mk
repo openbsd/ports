@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.330 2000/09/13 14:06:55 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.331 2000/09/16 13:54:56 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -308,8 +308,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  to turn them off (default: /bin/echo).
 # DEPENDS_TARGET - The target to execute when a port is calling a
 #				  dependency (default: "install").
-# PATCH_DEBUG	- If set, print out more information about the patches as
-#				  it attempts to apply them.
+# PATCH_DEBUG	- If set to Yes, print out more information about the 
+#				  patches as it attempts to apply them.
 #
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKBUILD}/prog ${PREFIX}/bin".
@@ -623,12 +623,12 @@ DISTORIG?=	.bak.orig
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
-.if defined(PATCH_DEBUG)
-PATCH_DEBUG_TMP=	Yes
+
+PATCH_DEBUG?=No
+.if ${PATCH_DEBUG:L} != "no"
 PATCH_ARGS?=	-d ${WRKDIST} -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 .else
-PATCH_DEBUG_TMP=	No
 PATCH_ARGS?=	-d ${WRKDIST} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
@@ -1480,8 +1480,9 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
 	  for i in ${_PATCHFILES}; do \
-	  	case ${PATCH_DEBUG_TMP:L} in \
-			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
+	  	case "${PATCH_DEBUG}" in \
+			no) ;; \
+			*) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
 		esac; \
 		case $$i in \
 			*.Z|*.gz) \
@@ -1525,8 +1526,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 					;; \
 				*) \
 				    if [ -e $$i ]; then \
-						case ${PATCH_DEBUG_TMP:L} in \
-							yes) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
+						case "${PATCH_DEBUG:L}" in \
+							no) ;; \
+							*) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
 						esac; \
 						${PATCH} ${PATCH_ARGS} < $$i || \
 							{ echo "***>   $$i did not apply cleanly"; \
