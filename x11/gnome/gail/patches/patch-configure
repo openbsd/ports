@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:50:02 todd Exp $
---- configure.orig	Mon Jul 22 10:04:30 2002
-+++ configure	Tue Aug 13 18:50:08 2002
-@@ -2496,6 +2496,16 @@ newos6*)
+$OpenBSD: patch-configure,v 1.2 2003/06/12 20:04:22 marcm Exp $
+--- configure.orig	Mon Jan 20 01:21:45 2003
++++ configure	Mon May 19 15:21:16 2003
+@@ -2835,6 +2835,16 @@ newos6*)
    lt_cv_file_magic_test_file=/usr/lib/libnls.so
    ;;
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:50:02 todd Exp $
  osf3* | osf4* | osf5*)
    # this will be overridden with pass_all, but let us keep it just in case
    lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
-@@ -4725,8 +4735,8 @@ else
+@@ -5070,8 +5080,8 @@ else
      ;;
  
    openbsd*)
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:50:02 todd Exp $
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      ;;
-@@ -5209,10 +5219,11 @@ newsos6)
+@@ -5554,10 +5564,11 @@ newsos6)
  
  openbsd*)
    version_type=sunos
