@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/19 07:25:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2004/12/27 16:12:33 alek Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-2.1.20
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=     security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		asn1 c com_err crypto gssapi krb5
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
@@ -49,6 +50,7 @@ CONFIGURE_ARGS+=	--with-dblib=ndbm \
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+=        --with-mysql \
 			--without-pgsql \
+			--without-sqlite \
 			--enable-sql
 .endif
  
