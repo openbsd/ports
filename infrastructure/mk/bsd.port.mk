@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.547 2003/07/08 22:01:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.548 2003/07/09 11:16:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1460,7 +1460,7 @@ checksum: fetch
 		done; \
 		if ! $$OK; then \
 		  if ${REFETCH}; then \
-		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
+		  	cd ${.CURDIR} && ${MAKE} refetch _PROBLEMS="$$list"; \
 		  else \
 			echo "Make sure the Makefile and checksum file ($$checksum_file)"; \
 			echo "are up to date.  If you want to fetch a good copy of this"; \
@@ -1473,7 +1473,7 @@ checksum: fetch
 .  endif
 
 refetch:
-.  for file cipher value in ${PROBLEMS}
+.  for file cipher value in ${_PROBLEMS}
 		@rm ${DISTDIR}/${file}
 		@cd ${.CURDIR} && ${MAKE} ${DISTDIR}/${file} \
 			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
