@@ -1,8 +1,10 @@
+bin/cm2rem.tcl
 bin/kall
 bin/rem
 bin/rem2ps
 bin/remind
 bin/tkremind
+man/man1/cm2rem.1
 man/man1/kall.1
 man/man1/rem.1
 man/man1/rem2ps.1

@@ -1,11 +1,11 @@
---- scripts/tkremind.orig	Wed Feb  2 15:20:35 2000
-+++ scripts/tkremind	Wed Feb  2 15:20:42 2000
+--- scripts/tkremind.orig	Tue Mar 28 22:43:44 2000
++++ scripts/tkremind	Tue Mar 28 22:43:59 2000
 @@ -15,7 +15,7 @@
- # $Id: patch-aa,v 1.1.1.1 2000/02/03 02:39:57 kevlo Exp $
+ # $Id: patch-aa,v 1.2 2000/03/28 06:55:38 kevlo Exp $
  
  # the next line restarts using wish \
 -exec wish "$0" "$@"
-+exec wish8.0 "$0" "$@"
++exec wish8.3 "$0" "$@"
  
  wm withdraw .
  
