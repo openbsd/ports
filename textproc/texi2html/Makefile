@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/05 20:50:55 jsyn Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/08 06:29:53 kevlo Exp $
 
 COMMENT=	"texinfo to HTML converter"
 
-DISTNAME=	texi2html
-PKGNAME=	texi2html-1.52
+DISTNAME=	texi2html-1.64
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
-MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
-		ftp://ftp.scc.ru/pub/unix/
-EXTRACT_SUFX=	.shar.Z
-EXTRACT_CASES= *.shar.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
+NEED_VERSION=	1.454
+
+HOMEPAGE=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -19,16 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}
+MASTER_SITES=	${HOMEPAGE}/Distrib/
 
-NO_BUILD=	yes
-
-post-extract:
-	@cd ${WRKSRC} && sed -e '1,/__END__/d' <texi2html >texi2html.1
-	@cd ${WRKSRC} && sed -e '/both Perl and nroff/,$$d' <texi2html >texi2html.pl
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/texi2html.pl ${PREFIX}/bin/texi2html
-	${INSTALL_MAN} ${WRKDIR}/texi2html.1 ${PREFIX}/man/man1
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

@@ -1,4 +1,9 @@
 @comment teTeX includes a more recent version
 @pkgcfl teTeX_base-*
 bin/texi2html
+@unexec install-info --delete --info-dir=%D/info %D/info/texi2html.info
+info/texi2html.info
+@exec install-info --info-dir=%D/info %D/info/texi2html.info
 man/man1/texi2html.1
+share/doc/texi2html/texi2html.html
+@dirrm share/doc/texi2html

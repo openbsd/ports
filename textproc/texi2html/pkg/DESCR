@@ -4,4 +4,4 @@ better than an info->HTML gateway. It understands most Texinfo version 2
 commands and runs without problem on big Texinfo files like the GNU Emacs 19 
 manual.
 
-This program is distributed under the GNU General Public License.
+WWW: ${HOMEPAGE}
