@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/14 18:58:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/11/27 20:11:06 sturm Exp $
 
 COMMENT=	"Java servlet 2.2 and Java server pages 1.1 server"
 
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	i386
 V=		3.2.4
 DISTNAME=	jakarta-tomcat-${V}
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${V}/bin/
+MASTER_SITES=	http://archive.apache.org/dist/jakarta/tomcat-3/archive/v${V}/bin/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://jakarta.apache.org/
