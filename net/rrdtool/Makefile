@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/29 21:12:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/07/04 00:37:14 krw Exp $
 
 DISTNAME=		rrdtool-1.0.24
 CATEGORIES=     	net
-NEED_VERSION=		1.309
+NEED_VERSION=		1.310
 HOMEPAGE=		http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/
 
 MAINTAINER=		danh@nfol.com
