@@ -1,8 +1,6 @@
-kde personal information management programs.
+KDE personal information management programs:
 
-korganizer
-kalarm
-kalarmd
-knotes
-
-WWW: ${HOMEPAGE}
+* korganizer
+* kalarm
+* kalarmd
+* knotes

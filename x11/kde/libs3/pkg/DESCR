@@ -5,5 +5,3 @@ the need for an easy to use desktop for Unix workstations, similar to
 the desktop environments found under the MacOS or Window95/NT. 
 
 This package holds the base libraries necessary for kde3 to work.
-
-WWW: ${HOMEPAGE}

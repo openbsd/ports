@@ -1,6 +1,6 @@
-UML (unified modelling language) diagram program for kde.
+UML (unified modelling language) diagram program for KDE.
 
-Umbrello will be part of kde 3.2
+Umbrello will be part of KDE 3.2
 
 It can currently  produce:
     Class/Concept diagrams,
@@ -14,5 +14,3 @@ and it can generate code for:
     C++,
     Java,
     Php.
-
-WWW: ${HOMEPAGE}

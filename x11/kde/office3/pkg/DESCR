@@ -4,7 +4,7 @@ can work together. You can, for instance, insert a spreadsheet in
 your thesis without leaving your document. Editing the spreadsheet
 happens _inside_ your thesis.
  
-The applications included in KOffice as of the release of KDE2 are:
+The applications included in KOffice are:
 - KWord
   Professional text editing
 - KSpread
@@ -17,5 +17,3 @@ The applications included in KOffice as of the release of KDE2 are:
   Vector graphics tool
 - KOffice Workspace
   A combination of all of the above                                                
-
-WWW ${HOMEPAGE}

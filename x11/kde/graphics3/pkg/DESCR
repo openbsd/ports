@@ -1,4 +1,4 @@
-Various kde graphics utilities.
+Various KDE graphics utilities.
 
 Document handling:
 * kdvi
@@ -18,5 +18,3 @@ Colors:
 Misc:
 * kfract
 * kruler
-
-WWW: ${HOMEPAGE}

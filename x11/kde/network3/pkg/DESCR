@@ -10,5 +10,3 @@ This package holds some network applications:
 - ktalkd	talk daemon
 - ksirc		irc client
 - korn		mail notifier
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,5 @@
-Applications and tools used by kde developers:
+Applications and tools used by KDE developers:
+
 * cervisia: CVS client part
 * kapptemplate: shell script to easy the beginning of new apps
 * kexample: a sample KDE application, heavily documented
@@ -10,5 +11,3 @@ Applications and tools used by kde developers:
 * kstartperf: startup time measurement
 * poxml: 
 * scripts: various helper scripts (see scripts/README)
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-Future Technologies High Performance Liquid KDE style engine
+Future Technologies High Performance Liquid KDE style engine.
 
 Features:
 
@@ -18,5 +18,3 @@ like compiling all day.
 appear to light up. 
 
 * Automagically themes the KDE panel, according to the color scheme. 
-
-WWW: ${HOMEPAGE}

@@ -4,7 +4,7 @@ engineers committed to free software development. KDE seeks to fill
 the need for an easy to use desktop for Unix workstations, similar to
 the desktop environments found under the MacOS or Window95/NT. 
 
-This package holds the basic kde applications. It contains:
+This package holds the basic KDE applications. It contains:
 
 * applnk: files to create the icons for the K menu button
 * doc: XML formatted documentation files for the apps
@@ -57,9 +57,8 @@ This package holds the basic kde applications. It contains:
 nsplugins are not compiled on OpenBSD, since we don't have any native
 netscape plugins.
 
-
 Setup tips:
-- if you don't run kdm, you can start kde from your .xinitrc with this 
+- if you don't run kdm, you can start KDE from your .xinitrc with this 
 kind of sequence:
 
 kdmdesktop	# to get a nice display
@@ -76,5 +75,3 @@ over on your .kde files.  Managing legacy config files is quite buggy yet.
 - konqueror does not execute javascript nor java by default. You will need
 a recent jvm installed, and referenced from konqueror's menu, for java to
 work.
-
-WWW: ${HOMEPAGE}
