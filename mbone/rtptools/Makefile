@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/14 01:51:05 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/09/02 21:52:50 brad Exp $
 
 DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
@@ -13,8 +12,8 @@ BINFILES=	rtpdump rtpplay rtpsend rtptrans
 DOCFILES=	README CHANGES.html rtptools.html
 
 post-extract:
-	${LN} -s ${WRKSRC}/freebsd ${WRKSRC}/openbsd
-	${LN} -s ${WRKSRC}/Makefile.freebsd ${WRKSRC}/Makefile.openbsd
+	@${LN} -s ${WRKSRC}/freebsd ${WRKSRC}/openbsd
+	@${LN} -s ${WRKSRC}/Makefile.freebsd ${WRKSRC}/Makefile.openbsd
 
 do-install:
 .for i in ${BINFILES}
