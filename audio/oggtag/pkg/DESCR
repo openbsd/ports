@@ -1,0 +1,5 @@
+oggtag is a tiny command-line editor for description tags in Ogg Vorbis
+files. It can set all the tags suggested by the Ogg Vorbis specification[1]
+on one or several files at a time.
+
+[1] http://www.xiph.org/ogg/vorbis/doc/v-comment.html
