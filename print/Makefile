@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.38 2003/08/04 06:38:06 kevlo Exp $
+#	$OpenBSD: Makefile,v 1.39 2004/02/21 01:42:13 pvalchev Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -8,6 +8,7 @@
     SUBDIR += afm
     SUBDIR += apsfilter
 #   SUBDIR += asprint
+    SUBDIR += auctex
 #   SUBDIR += bibcard
     SUBDIR += bibview
 #   SUBDIR += c2ps
