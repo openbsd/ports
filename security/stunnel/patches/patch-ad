@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Jul 12 19:36:10 1999
++++ Makefile.in	Sat Oct 16 00:00:05 1999
+@@ -8,7 +8,7 @@
+ libdir=@libdir@
+ mandir=@mandir@/man8
+ ssldir=@ssldir@
+-certdir=$(ssldir)/certs
++certdir=/etc/ssl
+ @SET_MAKE@
+ VERSION=stunnel-@VERSION@
+ CC=@CC@
+@@ -21,7 +21,7 @@
+ 
+ # standard external rules
+ 
+-all: stunnel stunnel.so
++all: stunnel
+ 
+ install: installdirs $(DESTFILES)
+ 

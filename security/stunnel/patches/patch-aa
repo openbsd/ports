@@ -1,0 +1,12 @@
+--- env.c.orig	Mon Sep  6 16:28:15 1999
++++ env.c	Mon Sep  6 16:29:01 1999
+@@ -20,7 +20,8 @@
+ 
+ /* getpeername can't be declarated in a normal way */
+ #define getpeername no_getpeername
+-#include <arpa/inet.h>
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <stdlib.h>
+ #undef getpeername

@@ -1,0 +1,28 @@
+--- ssl.c.orig	Tue Jul 13 15:23:44 1999
++++ ssl.c	Fri Oct 15 23:57:41 1999
+@@ -52,13 +52,13 @@
+ #else /* USE_WIN32 */
+ 
+ /* directory for certificate */
+-#define CERT_DIR ssldir "/certs"
++#define CERT_DIR "/etc/ssl"
+ 
+ /* default certificate */
+-#define DEFAULT_CERT CERT_DIR "/stunnel.pem"
++#define DEFAULT_CERT CERT_DIR "/private/stunnel.pem"
+ 
+ /* additional directory (hashed!) with trusted CA client certs */
+-#define CA_DIR CERT_DIR "/mytrusted"
++#define CA_DIR CERT_DIR "/trusted"
+ 
+ /* certificate used for sign our client certs */
+ #define CLIENT_CA ssldir "/bin/demoCA/cacert.pem"
+@@ -202,7 +202,7 @@
+                 strerror(errno));
+             goto dh_failed;
+         }
+-        if(!(dh=PEM_read_bio_DHparams(bio, NULL, NULL))) {
++        if(!(dh=PEM_read_bio_DHparams(bio, NULL, NULL, NULL))) {
+             log(LOG_ERR, "Could not load DH parameters from %s",
+                 options.certfile);
+             goto dh_failed;
