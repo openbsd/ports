@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/09 00:21:28 espie Exp $
-@lib lib/libct.so.2.0
-@lib lib/libsybdb.so.4.0
-@lib lib/libtds.so.3.0
-@lib lib/libtdssrv.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/03/30 03:39:01 jcs Exp $
+@lib lib/libct.so.3.0
+@lib lib/libsybdb.so.5.0
+@lib lib/libtds.so.4.0
+@lib lib/libtdssrv.so.2.0
