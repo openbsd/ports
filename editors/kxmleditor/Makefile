@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/27 15:23:39 kevlo Exp $
 
 COMMENT=	"xml editor for KDE"
 
-DISTNAME=	kxmleditor-0.6
+DISTNAME=	kxmleditor-0.7.1
 CATEGORIES=	editors
-NEED_VERSION=	1.454
+NEED_VERSION=	1.484
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
@@ -18,8 +18,10 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kxmleditor
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+BUILD_DEPENDS=	::x11/qt2-designer
+LIB_DEPENDS=	kdecore.3,DCOP,kfile,kdeui,kparts,ksycoca,kio,kdesu,kssl::x11/kde/libs2
+
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-*
 
 MODULES=	qt2
 
@@ -28,11 +30,12 @@ MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/10/27 15:23:44 kevlo Exp $
+lib/libkxmleditor.so.1.0
+DYNLIBDIR(%B)
