@@ -2,10 +2,8 @@ GnuPG is a complete and free replacement for PGP. Because it does
 not use IDEA or RSA it can be used without any restrictions. GnuPG
 is nearly in compliance with RFC2440 (OpenPGP).
 
-IDEA and RSA plugins are available from ftp://ftp.gnupg.org/
-
-Flavor:
-idea
-	enables pgp compatiblity
+Flavors:
+	idea - build IDEA encryption module
+		(for backwards compatibiltiy with older PGP versions)
 
 WWW: ${HOMEPAGE}
