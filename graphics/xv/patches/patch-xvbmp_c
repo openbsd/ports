@@ -1,0 +1,116 @@
+$OpenBSD: patch-xvbmp_c,v 1.1 2001/03/13 20:27:56 espie Exp $
+--- xvbmp.c.orig	Tue Mar 13 18:30:52 2001
++++ xvbmp.c	Tue Mar 13 19:10:46 2001
+@@ -18,7 +18,6 @@
+ 
+    not being able to malloc is a Fatal Error.  The program is aborted. */
+ 
+-
+ #define BI_RGB  0
+ #define BI_RLE8 1
+ #define BI_RLE4 2
+@@ -32,6 +31,7 @@ static long filesize;
+ static int   loadBMP1   PARM((FILE *, byte *, u_int, u_int));
+ static int   loadBMP4   PARM((FILE *, byte *, u_int, u_int, u_int));
+ static int   loadBMP8   PARM((FILE *, byte *, u_int, u_int, u_int));
++static int   loadBMP16  PARM((FILE *, byte *, u_int, u_int));
+ static int   loadBMP24  PARM((FILE *, byte *, u_int, u_int, u_int));
+ static u_int getshort   PARM((FILE *));
+ static u_int getint     PARM((FILE *));
+@@ -128,7 +128,7 @@ int LoadBMP(fname, pinfo)
+ 
+   /* error checking */
+   if ((biBitCount!=1 && biBitCount!=4 && biBitCount!=8 && 
+-       biBitCount!=24 && biBitCount!=32) || 
++       biBitCount!= 16 && biBitCount!=24 && biBitCount!=32) || 
+       biPlanes!=1 || biCompression>BI_RLE4) {
+ 
+     sprintf(buf,"Bogus BMP File!  (bitCount=%d, Planes=%d, Compression=%d)",
+@@ -138,7 +138,7 @@ int LoadBMP(fname, pinfo)
+     goto ERROR;
+   }
+ 
+-  if (((biBitCount==1 || biBitCount==24 || biBitCount==32)
++  if (((biBitCount==1 || biBitCount== 16 || biBitCount==24 || biBitCount==32)
+        && biCompression != BI_RGB) ||
+       (biBitCount==4 && biCompression==BI_RLE8) ||
+       (biBitCount==8 && biCompression==BI_RLE4)) {
+@@ -161,7 +161,7 @@ int LoadBMP(fname, pinfo)
+   }
+ 
+   /* load up colormap, if any */
+-  if (biBitCount!=24 && biBitCount!=32) {
++  if (biBitCount!=16 && biBitCount!=24 && biBitCount!=32) {
+     int i, cmaplen;
+ 
+     cmaplen = (biClrUsed) ? biClrUsed : 1 << biBitCount;
+@@ -199,7 +199,7 @@ int LoadBMP(fname, pinfo)
+ 
+   /* create pic8 or pic24 */
+ 
+-  if (biBitCount==24 || biBitCount==32) {
++  if (biBitCount== 16 || biBitCount==24 || biBitCount==32) {
+     pic24 = (byte *) calloc((size_t) biWidth * biHeight * 3, (size_t) 1);
+     if (!pic24) return (bmpError(bname, "couldn't malloc 'pic24'"));
+   }
+@@ -216,6 +216,7 @@ int LoadBMP(fname, pinfo)
+ 					  biCompression);
+   else if (biBitCount == 8) rv = loadBMP8(fp,pic8,biWidth,biHeight, 
+ 					  biCompression);
++  else if (biBitCount == 16) rv = loadBMP16(fp,pic24,biWidth,biHeight);
+   else                      rv = loadBMP24(fp,pic24,biWidth,biHeight,
+ 					   biBitCount);
+ 
+@@ -225,7 +226,7 @@ int LoadBMP(fname, pinfo)
+   fclose(fp);
+ 
+ 
+-  if (biBitCount == 24 || biBitCount == 32) {
++  if (biBitCount == 16 || biBitCount == 24 || biBitCount == 32) {
+     pinfo->pic  = pic24;
+     pinfo->type = PIC24;
+   }
+@@ -458,6 +459,43 @@ static int loadBMP8(fp, pic8, w, h, comp
+ }  
+ 
+ 
++/*******************************************/
++static int loadBMP16(fp, pic24, w, h)
++     FILE *fp;
++     byte *pic24;
++     u_int  w,h;
++{
++  int   i,j,padb,rv;
++  byte *pp;
++
++  rv = 0;
++
++  padb = (4 - ((w*2) % 4)) & 0x03;  /* # of pad bytes to read at EOscanline */
++
++  for (i=h-1; i>=0; i--) {
++    pp = pic24 + (i * w * 3);
++    if ((i&0x3f)==0) WaitCursor();
++    
++    for (j=0; j<w; j++) {
++      byte byte1 = getc(fp);
++      byte byte2 = getc(fp);
++
++      /* 1 bit pad, 5 bits red, 5 bits green, 5 bits blue */
++
++      pp[0] = (byte2 & 0x7c) << 1; 
++      pp[1] = ((byte2 & 0x03) << 6) | ((byte1 & 0xe0) >> 2);	/* green */
++      pp[2] = (byte1 & 0x1f) << 3;   /* blue */
++      pp += 3;
++    }
++
++    for (j=0; j<padb; j++) getc(fp);
++
++    rv = (FERROR(fp));
++    if (rv) break;
++  }
++
++  return rv;
++}  
+ 
+ /*******************************************/
+ static int loadBMP24(fp, pic24, w, h, bits)
