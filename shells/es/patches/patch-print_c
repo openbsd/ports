@@ -1,6 +1,6 @@
-$OpenBSD: patch-print_c,v 1.1 2002/11/28 20:34:58 pvalchev Exp $
---- print.c.orig	Thu Nov 28 13:30:26 2002
-+++ print.c	Thu Nov 28 13:30:42 2002
+$OpenBSD: patch-print_c,v 1.2 2004/03/14 21:37:39 pvalchev Exp $
+--- print.c.orig	1997-04-11 14:54:36.000000000 -0600
++++ print.c	2004-03-14 14:36:09.000000000 -0700
 @@ -89,8 +89,6 @@ static void intconv(Format *format, unsi
  	flags = format->flags;
  	if (flags & FMT_long)
@@ -10,3 +10,12 @@ $OpenBSD: patch-print_c,v 1.1 2002/11/28 20:34:58 pvalchev Exp $
  	else
  		n = va_arg(format->args, int);
  
+@@ -279,7 +277,7 @@ extern int fmtprint VARARGS2(Format *, f
+ 	VA_START(format->args, fmt);
+ 	n += printfmt(format, fmt);
+ 	va_end(format->args);
+-	format->args = saveargs;
++	va_copy(format->args, saveargs);
+ 
+ 	return n + format->flushed;
+ }
