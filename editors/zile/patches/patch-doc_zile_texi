@@ -1,13 +1,13 @@
-$OpenBSD: patch-doc_zile_texi,v 1.1 2005/03/12 21:23:25 espie Exp $
---- doc/zile.texi.orig	Sat Mar 12 22:05:40 2005
-+++ doc/zile.texi	Sat Mar 12 22:10:13 2005
+$OpenBSD: patch-doc_zile_texi,v 1.2 2005/03/12 21:38:19 espie Exp $
+--- doc/zile.texi.orig	Sun Apr 14 17:35:14 2002
++++ doc/zile.texi	Sat Mar 12 22:36:44 2005
 @@ -1,6 +1,10 @@
  \input texinfo   @c -*-texinfo-*-
  @setfilename zile.info
  @settitle The Zile Manual
 +@dircategory Editors
 +@direntry
-+* zile:	(zile).	Documentation for the Zile text editor
++* zile: (zile).		Documentation for the Zile text editor
 +@end direntry
  
  @c If "finalout" is commented out, the printed output will show
