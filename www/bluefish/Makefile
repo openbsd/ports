@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2003/11/21 04:54:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.29 2004/01/10 23:55:50 couderc Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
-VERSION=	0.11
+VERSION=	0.12
 DISTNAME=	bluefish-${VERSION}
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/

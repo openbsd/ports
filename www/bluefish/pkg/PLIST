@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/12/15 19:46:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/01/10 23:55:50 couderc Exp $
 bin/bluefish
 share/bluefish/bluefish_splash.png
 share/bluefish/custom_menu.default
@@ -19,40 +19,22 @@ share/bluefish/icon_python.png
 share/bluefish/icon_r.png
 share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
+share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
+share/locale/el/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
 share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
 share/locale/ja/LC_MESSAGES/bluefish.mo
+share/locale/nl/LC_MESSAGES/bluefish.mo
 share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish.mo
+share/locale/ro/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
 share/pixmaps/bluefish-icon.png
 @dirrm share/pixmaps
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale
 @dirrm share/bluefish
