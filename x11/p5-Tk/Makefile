@@ -1,33 +1,35 @@
-# $OpenBSD: Makefile,v 1.11 2002/04/20 04:59:01 shell Exp $
+# $OpenBSD: Makefile,v 1.12 2002/04/21 11:05:46 shell Exp $
 
-COMMENT=		"Tk 8.0 bindings for Perl"
-COMMENT-demo=		"demonstrate the features of ptk"
+COMMENT=	"Tk 8.0 bindings for Perl"
+COMMENT-demo=	"demonstrate the features of ptk"
 
-VERSION=		800.024
-DISTNAME=		Tk-${VERSION}
-PKGNAME=		p5-Tk-${VERSION}
-PKGNAME-demo=		p5-Tk-demo-${VERSION}
-CATEGORIES=		x11 devel perl5
-NEED_VERSION=		1.524
+VERSION=	800.024
+DISTNAME=	Tk-${VERSION}
+PKGNAME=	p5-Tk-${VERSION}
+PKGNAME-demo=	p5-Tk-demo-${VERSION}
+CATEGORIES=	x11 devel perl5
+NEED_VERSION=	1.524
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
 
-BUILD_DEPENDS=		::www/p5-HTML-Parser
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=	::www/p5-HTML-Parser
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=		Yes
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	perl
 
 MULTI_PACKAGES=		-demo
 SUBPACKAGE?=
+
+WRKDIST=	${WRKDIR}/Tk${VERSION}
 
 .include <bsd.port.mk>
