@@ -1,11 +1,11 @@
-$OpenBSD: patch-Python_getargs_c,v 1.2 2002/05/11 21:35:13 matt Exp $
+$OpenBSD: patch-Python_getargs_c,v 1.3 2003/12/30 17:05:30 sturm Exp $
 
         This has been submitted to the Python team as part of patch
         554716.
 
---- Python/getargs.c.orig	Sun Dec  2 18:43:33 2001
-+++ Python/getargs.c	Thu Mar 14 22:17:09 2002
-@@ -61,7 +61,11 @@ PyArg_VaParse(PyObject *args, char *form
+--- Python/getargs.c.orig	2001-12-03 01:43:33.000000000 +0100
++++ Python/getargs.c	2003-12-29 21:50:32.000000000 +0100
+@@ -61,8 +61,12 @@ PyArg_VaParse(PyObject *args, char *form
  #ifdef VA_LIST_IS_ARRAY
  	memcpy(lva, va, sizeof(va_list));
  #else
@@ -13,7 +13,8 @@ $OpenBSD: patch-Python_getargs_c,v 1.2 2002/05/11 21:35:13 matt Exp $
 +	__va_copy(lva, va);
 +#else
  	lva = va;
-+#endif
  #endif
++#endif
  
  	return vgetargs1(args, format, &lva, 0);
+ }

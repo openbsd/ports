@@ -16,7 +16,9 @@ of changes made to this version of Python for the OpenBSD package.
     is installed.
     Same process applies to IDLE binary (idle) and pydoc.
 
+5.  Regression tests have been taught about OpenBSD.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
 
-$Id: CHANGES.OpenBSD,v 1.2 2003/12/13 16:03:49 sturm Exp $
+$Id: CHANGES.OpenBSD,v 1.3 2003/12/30 17:05:30 sturm Exp $

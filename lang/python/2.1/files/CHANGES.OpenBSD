@@ -19,10 +19,9 @@ of changes made to this version of Python for the OpenBSD package.
 5.  os.py: security fixes for _execvpe(). Function taken from Python
     2.2.3
 
-6.  __va_copy was used where appropriate so python would work on
-    non-i386 architectures such as powerpc.
+6.  Regression tests have been taught about OpenBSD.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
 
-$Id: CHANGES.OpenBSD,v 1.2 2003/12/13 16:03:48 sturm Exp $
+$Id: CHANGES.OpenBSD,v 1.3 2003/12/30 17:05:30 sturm Exp $

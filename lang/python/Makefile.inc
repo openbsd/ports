@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2003/12/27 23:36:09 jose Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2003/12/30 17:05:30 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -18,9 +18,9 @@ PKGNAME=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.python.org/pub/${PSUBDIR}/ \
-		ftp://python.mirrors.netnumina.com/python/pub/${PSUBDIR}/ \
-		http://www.linux.org.hk/mirror/python/ftp/${PSUBDIR}/
-PSUBDIR= python/${VERSION}${PATCHLEVEL}
+		http://python.mirrors.pair.com/ftp/${PSUBDIR}/ \
+		http://python.mirrors.ilisys.com.au/ftp/${PSUBDIR}/
+PSUBDIR=	python/${VERSION}${PATCHLEVEL}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
@@ -114,12 +114,12 @@ SETUP_LOCAL+=		Setup.expat
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+= 	-expat
 .  else
-LIB_DEPENDS+=		expat::textproc/expat
+LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
 .  endif
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS+=		expat::textproc/expat
+LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
 .endif
 
 # Strip off no_xxx flavors from the package name if we are not
@@ -137,9 +137,9 @@ FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-CONFIGURE_STYLE= autoconf dest
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --with-fpectl --with-threads --without-pymalloc
+CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--with-fpectl --with-threads
 
 REGRESS_TARGET=	test
 
@@ -165,9 +165,11 @@ FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
 
-ALL_TARGET=	all ./Lib/plat-openbsd3
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
-patch:
+ALL_TARGET=	all ./Lib/plat-openbsd3
 
 post-configure:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \
@@ -180,11 +182,11 @@ post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pydoc ${PREFIX}/bin/pydoc${VERSION}
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
+		${PREFIX}/bin/pydoc${VERSION}
 	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
 		${FILESDIR}/idle > ${WRKSRC}/idle
 	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
-	@strip ${PREFIX}/bin/python
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
 	${INSTALL_DATA} ${WRKSRC}/libpython${VERSION}.a \

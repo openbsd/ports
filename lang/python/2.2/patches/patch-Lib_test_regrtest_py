@@ -1,0 +1,30 @@
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2003/12/30 17:05:30 sturm Exp $
+--- Lib/test/regrtest.py.orig	2003-12-29 21:50:47.000000000 +0100
++++ Lib/test/regrtest.py	2003-12-29 21:51:36.000000000 +0100
+@@ -642,6 +642,26 @@ _expectations = {
+         test_winreg
+         test_winsound
+         """,
++    'openbsd3':
++        """
++        test_al
++        test_cd
++        test_cl
++        test_curses
++        test_descr
++        test_email_codecs
++        test_gl
++        test_imgfile
++        test_linuxaudiodev
++        test_locale
++        test_nis
++        test_socket_ssl
++        test_socketserver
++        test_sunaudiodev
++        test_unicode_file
++        test_winreg
++        test_winsound
++        """,
+ }
+ 
+ class _ExpectedSkips:

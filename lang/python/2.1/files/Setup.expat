@@ -19,4 +19,4 @@
 #
 #    ar cr libexpat.a xmltok/*.o xmlparse/*.o
 #
-pyexpat pyexpat.c -DHAVE_EXPAT_H -I$(PREFIX)/include -L$(PREFIX)/lib -lexpat
+pyexpat pyexpat.c -DHAVE_EXPAT_H -I$(LOCALBASE)/include -L$(LOCALBASE)/lib -lexpat
