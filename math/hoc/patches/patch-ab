@@ -1,0 +1,18 @@
+--- hoc.y.orig	Wed Sep 16 15:27:03 1998
++++ hoc.y	Wed Sep 16 15:27:54 1998
+@@ -284,13 +284,13 @@
+ }
+ 
+ void
+-fpecatch(void)	/* catch floating point exceptions */
++fpecatch(int signum)	/* catch floating point exceptions */
+ {
+ 	execerror("floating point exception", (char *) 0);
+ }
+ 
+ void
+-intcatch(void)	/* catch interrupts */
++intcatch(int signum)	/* catch interrupts */
+ {
+ 	execerror("interrupt", (char *) 0);
+ }
