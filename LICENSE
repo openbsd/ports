@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.30 1999/09/29 16:00:54 jakob Exp $
+$OpenBSD: LICENSE,v 1.31 1999/10/02 18:08:03 brad Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -147,13 +147,13 @@ Y	converters/recode		recode-3.4.tar.gz		GPL
 N	converters/trans		trans120.tar.gz			LIC
 Y	databases/db			db-2.3.16.tar.gz		BSD
 Y	databases/gdbm			gdbm-1.7.3.tar.gz		GPL
--	databases/mysql			mysql-3.22.19b.tar.gz
+-	databases/mysql			mysql-3.22.22.tar.gz
 Y	databases/p5-DBD-Pg		DBD-Pg-0.69.tar.gz		GPL/PERL
 Y	databases/p5-DBI		DBI-0.93.tar.gz			GPL/PERL
 Y	databases/pgaccess		pgaccess-0.88.tar.gz		BSD
 Y	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
 Y	devel/ElectricFence		ElectricFence-2.0.5.tar.gz	GPL
-Y	devel/ORBit			ORBit-0.4.94.tar.gz		GPL
+Y	devel/ORBit			ORBit-0.4.96.tar.gz		GPL
 Y	devel/autoconf			autoconf-2.13.tar.gz		GPL
 Y	devel/automake			automake-1.4.tar.gz		GPL
 Y	devel/bison			bison-1.27.tar.gz		GPL
@@ -170,11 +170,10 @@ Y	devel/gsl			gsl-0.3b.tar.gz			GPL
 Y	devel/id-utils			id-utils-3.2d.tar.gz		GPL
 Y	devel/lclint			lclint/guide.tar.gz		NONE
 Y	devel/lclint			lclint/lclint-2.4b.src.tar.gz	GPL
-Y	devel/libIDL			libIDL-0.6.3.tar.gz		GPL
 Y	devel/libaudiofile		audiofile-0.1.7.tar.gz		GPL
 Y	devel/libicq			libicq-0.33.tar.gz		GPL
 Y	devel/libproplist		libPropList-0.8.3.tar.gz	GPL
-Y	devel/libslang			slang-1.3.8.tar.gz		GPL/PERL
+Y	devel/libslang			slang-1.3.9.tar.gz		GPL/PERL
 Y	devel/libtool			libtool-1.3.3.tar.gz		GPL
 Y	devel/m4			m4-1.4.tar.gz			GPL
 Y	devel/mm			mm-1.0.11.tar.gz		COPY
@@ -272,7 +271,7 @@ Y	graphics/compface		compface.tar.gz			COPY
 -	graphics/giflib			giflib-4.1.0.tar.gz
 Y	graphics/giftrans		giftrans.tar.gz			COPY
 -	graphics/gii			libgii-0.1.tar.gz
-Y	graphics/gimp			gimp-1.1.4.tar.gz		GPL
+Y	graphics/gimp			gimp-1.1.9.tar.gz		GPL
 -	graphics/imlib			imlib-1.9.4.tar.gz
 Y	graphics/jpeg			jpegsrc.v6b.tar.gz		BSD
 Y	graphics/mpeg-lib		mpeg_lib-1.2.1.tar.gz		BSD
@@ -344,7 +343,7 @@ Y	mail/exim			exim-texinfo-2.10.tar.gz	COPY
 N	mail/exmh			-none-				NONE
 Y	mail/exmh2			exmh-2.0.2.tar.Z		COPY
 N	mail/faces			faces-1.6.1.tar.Z		NOFEE
-Y	mail/fetchmail			fetchmail-4.7.9.tar.gz		GPL
+Y	mail/fetchmail			fetchmail-5.1.1.tar.gz		GPL
 Y	mail/metamail			mm2.7.tar.Z			BSD
 Y	mail/mh				mh-6.8.3.tar.Z			PD
 Y	mail/mh				MH.6.8.4.Z			PD
