@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2004/12/22 22:22:13 biorn Exp $
+# $OpenBSD: Makefile,v 1.78 2005/01/06 21:33:28 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
@@ -41,8 +41,8 @@ MODULES= converters/libiconv
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
-		ungif,gif::graphics/libungif \
-		vorbis.0,vorbisfile.1::audio/libvorbis \
+		ungif::graphics/libungif \
+		vorbis.0::audio/libvorbis \
 		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
 
 CONFDIR=	${SYSCONFDIR}/mplayer
