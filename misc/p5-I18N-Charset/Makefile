@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/21 16:32:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/27 09:34:53 kevlo Exp $
 
-DISTNAME=	I18N-Charset-1.05
+DISTNAME=	I18N-Charset-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.351
