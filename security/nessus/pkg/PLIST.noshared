@@ -1,6 +1,5 @@
 bin/nessusd
 bin/nessus
-lib/libnessus.so.0.0
 share/nessus/plugins/WebSite.nes
 share/nessus/plugins/annex_dos.nes
 share/nessus/plugins/ascend_kill.nes
