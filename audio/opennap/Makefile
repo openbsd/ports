@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/08/10 01:14:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/08/23 08:46:19 pvalchev Exp $
 
 COMMENT=	"opensource Napster(tm) server"
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	\
 	--enable-email \
 	--enable-resume \
 	--datadir=${SYSCONFDIR}
-#	--enable-chroot \  (breaks uid, gid, and ip lookup
+#	--enable-chroot \  (breaks uid, gid, and ip lookup)
 
 DOCS=	FAQ README manual.html napster.txt
 
