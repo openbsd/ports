@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/04/09 20:29:02 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/05/22 01:41:41 angelos Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -43,7 +43,7 @@
 #    SUBDIR += mkmf
 #    SUBDIR += mprof
 #    SUBDIR += nana
-#    SUBDIR += nasm
+     SUBDIR += nasm
 #    SUBDIR += noweb
 #    SUBDIR += omniBroker
 #    SUBDIR += omniORB
