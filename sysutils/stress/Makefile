@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/09 03:17:55 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"tool to impose configurable amount of load"
 DISTNAME=	stress-0.18.1
@@ -6,8 +6,6 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://weather.ou.edu/~apw/projects/stress/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

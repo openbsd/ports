@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"SDL clone of the popular Game of Life"
 
@@ -8,8 +8,6 @@ CATEGORIES=	games
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://w1.879.telia.com/~u87907755/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

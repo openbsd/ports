@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/31 04:23:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"sdl port of xkobo"
 DISTNAME=	KoboDeluxe-0.4pre8
@@ -13,8 +13,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mharder}
 PATCH_LIST=patch-* extra-hard
 .endif
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

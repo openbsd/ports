@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/27 06:07:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"Ouranos (Weather War) clone; multiplayer"
 DISTNAME=	tornado-1.3
@@ -6,8 +6,6 @@ CATEGORIES=	games
 MASTER_SITES=	${HOMEPAGE}download/
 
 HOMEPAGE=	http://home.kcore.de/~kiza/linux/tornado/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

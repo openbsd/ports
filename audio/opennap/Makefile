@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/06/25 00:20:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"opensource Napster(tm) server"
 
@@ -8,8 +8,6 @@ CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 
 HOMEPAGE=	http://opennap.sourceforge.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/22 19:54:10 jolan Exp $
 
 COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 
 HOMEPAGE=	http://www.2ndpoint.fi/projektit/oilwar.html
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MAINTAINER=	George W. Bush <president@whitehouse.gov>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
