@@ -1,20 +1,24 @@
---- nuetc.c.orig	Mon Dec 29 08:52:42 1997
-+++ nuetc.c	Mon Dec 29 08:53:00 1997
-@@ -525,7 +525,7 @@
+--- nuetc.c.~1~	Wed Nov 27 23:48:29 1996
++++ nuetc.c	Fri Feb 20 19:46:12 1998
+@@ -525,7 +525,20 @@
  
  #ifdef UNIX
      strcpy(buffer, "nulb.tmpXXXXXX");
 -    return mktemp(buffer);
-+    return mkstemp(buffer);
++
++    {
++	/* Note: to really add some security this function should be changed
++	   to return the FD of the created temporary file.  It's more than
++	   I want to do at this time: <marc@snafu.org> */
++
++	int fd = mkstemp(buffer);
++	if ( fd == -1 ) {
++	    perror( "can't create temp file" );
++	    exit( 1 );
++	}
++	close( fd );
++	return buffer;
++    }
  
  #elif defined(__ORCAC__)
      return tmpnam(NULL);
-@@ -542,7 +542,7 @@
-     extern char *mktemp();
- 
-     strcpy(buffer, "nulbXXXX.tmp");
--    return (mktemp(buffer));
-+    return (mkstemp(buffer));
- 
- #else
-     strcpy(buffer, "nulb.tmp");  /* +PORT+ */
