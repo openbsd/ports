@@ -1,22 +1,22 @@
-# OpenBSD makefile for:	screen
-# Version required:     3.7.6
-# Date created:         17 November 1997
-# Whom:                 gene
-#
-# $OpenBSD: Makefile,v 1.7 1999/03/07 01:39:00 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/03/25 02:09:36 marc Exp $
 #
 
 DISTNAME=       screen-3.7.6
 CATEGORIES=	misc
+
+MAINTAINER=	marc@OpenBSD.ORG
+
 MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= screen
 
-MAINTAINER=	gene@OpenBSD.ORG
-
-SEPARATE_BUILD=yes
-GNU_CONFIGURE=	yes
-MAN1=		screen.1
+# The autoconf.in files are too old to use the latest autoconf and
+# without the latest autoconf we cant say "GNU_CONFIGURE" because
+# configure doesn't know about sysconfdir.  So we do it this way
+# instead
+#
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
