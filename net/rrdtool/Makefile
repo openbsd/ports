@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2004/12/30 12:12:19 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -37,12 +37,13 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/contrib/php4
 
 .if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS+=	tcl84::lang/tcl/8.4
+LIB_DEPENDS+=	tcl84:tcl-8.4.*:lang/tcl/8.4
 USE_GMAKE=	Yes
 CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.4"
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 INSTALL_TARGET=	install site-tcl-install
 FAKE_FLAGS+=	MACHINE_ARCH="${MACHINE_ARCH}"
+PKGNAME=	${DISTNAME}p0
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
