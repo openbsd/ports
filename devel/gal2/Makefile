@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/09/15 04:19:24 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/10 16:46:53 sturm Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -22,6 +22,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 

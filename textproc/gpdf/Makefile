@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/10 08:46:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/10 16:46:53 sturm Exp $
 
 COMMENT=		"PDF viewer for GNOME"
 
@@ -21,7 +21,9 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			${RUN_DEPENDS}
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 

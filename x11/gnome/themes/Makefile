@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/10 16:44:13 sturm Exp $
 
 COMMENT=		"themes collection for GNOME"
 
@@ -19,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:gtk-engines2->=2.2.0:x11/gtk-engines2
 LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"GNOME session"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
 

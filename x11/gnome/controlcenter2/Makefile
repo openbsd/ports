@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -18,7 +18,8 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
 			nautilus::x11/gnome/nautilus
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		eel-2.6.1::x11/gnome/eel \
 			gnome-desktop-2.0::x11/gnome/desktop \
 			rsvg-2.2::x11/gnome/librsvg

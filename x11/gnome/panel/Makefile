@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"GNOME panel"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
 			:control-center2-*:x11/gnome/controlcenter2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/10 20:00:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/10 16:46:53 sturm Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 
@@ -11,6 +11,7 @@ MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 MASTER_SITES=		http://savannah.nongnu.org/download/bubblemon/
 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
 			gtop-2.0.3.0::devel/libgtop2
 

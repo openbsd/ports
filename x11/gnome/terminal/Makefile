@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"GNOME terminal"
 
@@ -21,6 +21,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \

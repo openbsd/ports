@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/10 16:44:12 sturm Exp $
 
 COMMENT=		"user interface components for bonobo"
 
@@ -20,7 +20,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			popt.0.3::devel/popt
