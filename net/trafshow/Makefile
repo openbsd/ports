@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/03 02:43:44 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/26 06:31:05 kevlo Exp $
 
 COMMENT=	"full screen visualization of network traffic"
 
@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 
 PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
 PATCH_DIST_STRIP= -p1
+
+HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml
 
 MAINTAINER=     Michael Shalayeff <mickey@openbsd.org>
 
