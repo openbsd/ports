@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/25 17:34:06 couderc Exp $
 
 COMMENT=	"image manipulation library"
 DISTNAME=	imlib2-1.1.0
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.enlightenment.org/pages/imlib2.html
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
-MAINTAINER=	Francois Briere <f.briere@dopha.org>
+MAINTAINER=	Francois Briere <fbriere@imaginatif.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
