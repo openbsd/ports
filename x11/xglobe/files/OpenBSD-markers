@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.29 2002/11/18 21:47:44 couderc Exp $
+# $OpenBSD: OpenBSD-markers,v 1.30 2002/11/22 23:03:25 margarida Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -8,6 +8,7 @@
 33.700077	-117.887943	"Peel"		# Jason
 35.67  		139.75 		"Itojun"	# Jun-ichiro
 37.515049	-122.339528	"Hyman"		# Marco S.
+38.7341		-9.1446		"Sequeira"	# Margarida
 38.9693		-77.3863	"Wright"	# Jason L.
 39.96		-83		"Jackson"	# Eric
 40		-75.10		"Keromytis"	# Angelos D.
@@ -22,6 +23,7 @@
 42.280556	-83.754722 	"Rees"		# Jim
 42.281336	-83.738587	"Turan"		# Chris
 42.3813		-71.1283	"Janzen"	# Paul
+42.49538	-82.89954	"Holland"	# Nick
 43.1342		-78.966048	"Harnett"	# Daniel L.
 43.5826		1.4376		"Herrb"		# Matthieu
 43.633          -79.500         "Smith"         # Brad
@@ -39,11 +41,13 @@
 48.35		7.46		"Couderc"	# Damien
 49.22		-123.10		"Hugh"		# Hugh
 49.48		8.42		"Weisgerber"	# Christian
+50.56		6.57		"Buehler"	# Philipp
 51.0333		-114.0500	"Valchev"	# Peter
 51.05		3.60		"Vandeputte"	# Wim
 51.6		-114.1		"de Raadt"	# Theo
 52.26		4.63		"Dobbelaar"	# Camiel
 53.13		9		"Finck"		# Jan-Uwe
+53.22		10.00		"Brauer"	# Henning	
 53.56		-113.51		"Beck"		# Bob
 53.56		-113.51		"Weingartner"	# Tobias
 55.02		82.54		"Safiullin"	# Oleg
