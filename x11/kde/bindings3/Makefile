@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/18 00:17:09 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "powerpc"
+BROKEN=			"gcc spins on x_20.cpp"
+.endif
 
 COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
