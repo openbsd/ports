@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/23 00:11:23 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/23 04:46:19 matt Exp $
 
 COMMENT=		"python imaging library"
+COMMENT-examples=	"examples for python imaging library"
 
 DISTNAME=		Imaging-1.1.2
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-NEED_VERSION=		1.489
+NEED_VERSION=		1.505
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
@@ -21,34 +22,51 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.pythonware.com/downloads/
 
 NO_REGRESS=		Yes
+FLAVORS=		python2.1
+FLAVOR?=
 
+.if ${FLAVOR:L} == "python2.1"
 PYTHON_VER=		2.1
-PY_MODULE=		${LOCALBASE}/lib/python${PYTHON_VER}/lib-dynload/_tkinter.so
+.else
+PYTHON_VER=		2.2
+.endif
 
-BUILD_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-			:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+BUILD_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter 
 RUN_DEPENDS=		${BUILD_DEPENDS}
 LIB_DEPENDS=		jpeg.62::graphics/jpeg
+
+MULTI_PACKAGES=		-examples
+SUBPACKAGE?=
+
+# The examples subpackage is not flavored.
+FULLPKGNAME-examples=	${PKGNAME}-examples
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
+RUN_DEPENDS=		::graphics/py-Imaging
+LIB_DEPENDS=
+.endif
 
 SUBST_VARS=		PYTHON_VER
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-jpeg=${LOCALBASE}/lib
 ALL_TARGET=
 
 LIB_IMAGING=		${WRKSRC}/libImaging
 SITE_PACKAGES=		${PREFIX}/lib/python${PYTHON_VER}/site-packages
-PYTHON_INCLUDE_DIR=	${PREFIX}/include/python${PYTHON_VER}
 PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
+PYTHON_INCLUDE_DIR=	${PREFIX}/include/python${PYTHON_VER}
 
 do-configure:
 	@sed -e "s|@LOCALBASE@|${LOCALBASE}|g" -e "s|@X11BASE@|${X11BASE}|g" \
 		${FILESDIR}/Setup >${WRKSRC}/Setup
 	@cd ${LIB_IMAGING}; \
 		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
-	@cd ${WRKSRC}; ${MAKE_PROGRAM} -f Makefile.pre.in boot
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} -f Makefile.pre.in \
+		PYTHON=python${PYTHON_VER} boot
 
 pre-build:
-	@cd ${LIB_IMAGING}; ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
+	@cd ${LIB_IMAGING} && \
+		${MAKE_ENV} ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
 
 do-install:
 # put all files in a subdir and just put a .pth file in ${SITE_PACKAGES}
@@ -65,3 +83,4 @@ do-install:
 		${INSTALL_SCRIPT} $$a ${PREFIX}/share/examples/py-Imaging; done
 
 .include <bsd.port.mk>
+

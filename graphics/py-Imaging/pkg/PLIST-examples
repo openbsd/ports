@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST-examples,v 1.1 2002/03/23 04:46:19 matt Exp $
+@option no-default-conflict
+share/examples/py-Imaging/README
+share/examples/py-Imaging/bdf2pil.py
+share/examples/py-Imaging/enhancer.py
+share/examples/py-Imaging/explode.py
+share/examples/py-Imaging/gifmaker.py
+share/examples/py-Imaging/image2py.py
+share/examples/py-Imaging/painter.py
+share/examples/py-Imaging/pilconvert.py
+share/examples/py-Imaging/pildriver.py
+share/examples/py-Imaging/pilfile.py
+share/examples/py-Imaging/pilfont.py
+share/examples/py-Imaging/pilprint.py
+share/examples/py-Imaging/player.py
+share/examples/py-Imaging/thresholder.py
+share/examples/py-Imaging/viewer.py
+@dirrm share/examples/py-Imaging
