@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/05 17:28:18 avsm Exp $
 
 COMMENT=	"expand template text with embedded perl"
 
-DISTNAME=	Text-Template-1.42
+DISTNAME=	Text-Template-1.43
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.503

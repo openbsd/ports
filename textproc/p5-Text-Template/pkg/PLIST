@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/Text/Template.pm
-libdata/perl5/site_perl/Text/Template/Preprocess.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/07/05 17:28:18 avsm Exp $
+${P5SITE}/Text/Template.pm
+${P5SITE}/Text/Template/Preprocess.pm
 man/man3p/Text::Template.3p
 man/man3p/Text::Template::Preprocess.3p
-@dirrm libdata/perl5/site_perl/Text/Template
