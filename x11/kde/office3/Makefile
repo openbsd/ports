@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/26 15:49:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/20 11:45:12 naddy Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -18,7 +18,6 @@ LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,k
 		art_lgpl_2.5::graphics/libart
 
 #PATCHORIG=	.bsdorig
-MODULES=	qt3
 #PATCH_LIST=	p-* patch-*
 
 #KDE=lib/kde3

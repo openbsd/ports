@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2002/10/29 01:50:02 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2002/11/20 11:45:12 naddy Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -7,7 +7,9 @@ EXTRACT_SUFX?=	.tar.bz2
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
 NOT_FOR_ARCHS?=	${NO_SHARED_ARCHS}
-MODULES?=	qt3
+MODULES?=	gcc3 qt3
+MODGCC3_ARCHES?=sparc64
+MODGCC3_LANGS?=	c++
 PATCH_LIST?=	${PORTSDIR}/x11/kde/arts3/patches/p-* patch-*
 KDE=lib/kde3
 
