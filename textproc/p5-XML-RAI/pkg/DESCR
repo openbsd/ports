@@ -1,0 +1,3 @@
+XML::RAI is an object-oriented layer that maps
+overlapping and alternate tags in RSS to one common
+simplified interface.

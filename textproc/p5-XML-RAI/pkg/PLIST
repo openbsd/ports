@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/21 21:53:02 sturm Exp $
+${P5SITE}/XML/RAI/
+${P5SITE}/XML/RAI.pm
+${P5SITE}/XML/RAI/Channel.pm
+${P5SITE}/XML/RAI/Image.pm
+${P5SITE}/XML/RAI/Item.pm
+${P5SITE}/XML/RAI/Object.pm
+@man man/man3p/XML::RAI.3p
+@man man/man3p/XML::RAI::Channel.3p
+@man man/man3p/XML::RAI::Image.3p
+@man man/man3p/XML::RAI::Item.3p
+@man man/man3p/XML::RAI::Object.3p
