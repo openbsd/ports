@@ -5,7 +5,7 @@ diff -ur pine/osdep/makefile.bas
  RM=  rm -f
  
  ALL=	os-a32.c os-a41.c os-aix.c os-asv.c \
--	os-aux.c os-bs2.c os-bsd.c os-bsi.c \
+-	os-aux.c os-bs2.c os-bsd.c os-bsf.c os-bsi.c \
 +	os-aux.c os-bs2.c os-bsd.c os-bsf.c os-bsi.c os-bso.c \
  	os-cvx.c os-dos.c os-dpx.c os-dyn.c \
  	os-gen.c os-hpp.c os-isc.c os-lnx.c \

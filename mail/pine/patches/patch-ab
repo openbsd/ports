@@ -1,6 +1,6 @@
---- imap/Makefile.orig	Wed Jul 15 23:54:19 1998
-+++ imap/Makefile	Sun Aug  2 17:12:02 1998
-@@ -100,7 +100,7 @@
+--- imap/Makefile.orig	Sat Aug  8 04:32:23 1998
++++ imap/Makefile	Sun Sep 13 16:56:27 1998
+@@ -102,7 +102,7 @@
  
  # Make the IMAP Toolkit
  
@@ -9,7 +9,7 @@
  
  
  #  The following ports are defined.  These refer to the *standard* compiler
-@@ -125,6 +125,7 @@
+@@ -127,6 +127,7 @@
  # bsd	generic BSD
  # bsf	FreeBSD
  # bsi	BSD/i386
@@ -17,16 +17,16 @@
  # cvx	Convex
  # d-g	Data General DG/UX prior to 5.4 (d41 port no longer exists)
  # d54	Data General DG/UX 5.4
-@@ -180,7 +181,7 @@
+@@ -183,7 +184,7 @@
  
  # Note on SCO you may have to set LN to "ln".
  
--a32 a41 aix bs3 bsf bsi d-g d54 drs epx gas gh9 ghp gso gsu gul hpp hpx lnx lyn mct mnt neb nxt osf os4 ptx qnx sc5 sco sgi shp sl5 slx snx sol sos uw2: an
-+a32 a41 aix bs3 bsf bsi bso d-g d54 drs epx gas gh9 ghp gso gsu gul hpp hpx lnx lyn mct mnt neb nxt osf os4 ptx qnx sc5 sco sgi shp sl5 slx snx sol sos uw2: an
+-a32 a41 aix bs3 bsf bsi d-g d54 drs epx gas gh9 ghp gso gsu gul hpp hpx lnx lyn mct mnt neb nxt osf os4 ptx qnx sc5 sco sgi shp sl4 sl5 slx snx sol sos uw2: an
++a32 a41 aix bs3 bsf bsi bso d-g d54 drs epx gas gh9 ghp gso gsu gul hpp hpx lnx lyn mct mnt neb nxt osf os4 ptx qnx sc5 sco sgi shp sl4 sl5 slx snx sol sos uw2: an
  	$(BUILD) OS=$@
  
  # If you use sv4, you may find that it works to move it to use the an process.
-@@ -255,7 +256,7 @@
+@@ -258,7 +259,7 @@
  	$(TOOLS)/$@ "$(LN)" src/imapd imapd
  	$(LN) $(TOOLS)/$@ .
  
