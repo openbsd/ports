@@ -1,23 +1,173 @@
+bin/extdgts
 bin/mkstrip
-lib/Counter/digits/A/strip.gif
-lib/Counter/digits/B/strip.gif
-lib/Counter/digits/C/strip.gif
-lib/Counter/digits/D/strip.gif
-lib/Counter/digits/D/lenna.gif
-lib/Counter/digits/E/strip.gif
-lib/Counter/digits/mkstrip.sh
-lib/Counter/count.cfg.sample
-lib/Counter/rgb.txt
+lib/wwwcount/Count.cgi
+lib/wwwcount/count.cfg.sample
+lib/wwwcount/digits/A/peng.gif
+lib/wwwcount/digits/A/strip.gif
+lib/wwwcount/digits/A/yeehaw.gif
+lib/wwwcount/digits/B/strip.gif
+lib/wwwcount/digits/C/strip.gif
+lib/wwwcount/digits/D/lenna.gif
+lib/wwwcount/digits/D/strip.gif
+lib/wwwcount/digits/E/foo.gif
+lib/wwwcount/digits/E/strip.gif
+lib/wwwcount/digits/bang/strip.gif
+lib/wwwcount/digits/cd/strip.gif
+lib/wwwcount/digits/cdd/strip.gif
+lib/wwwcount/digits/cdr/strip.gif
+lib/wwwcount/rgb.txt
 man/man1/mkstrip.1
-@dirrm lib/Counter/digits/A
-@dirrm lib/Counter/digits/B
-@dirrm lib/Counter/digits/C
-@dirrm lib/Counter/digits/D
-@dirrm lib/Counter/digits/E
-@dirrm lib/Counter/digits
-@dirrm lib/Counter
-@unexec rm -f /var/www/cgi-bin/Count.cgi /var/www/logs/Counter.log
-@unexec echo "***"
-@unexec echo "*** Please remove /var/www/Counter directory and its"
-@unexec echo "*** contents manually to complete uninstall process."
-@unexec echo "***"
+share/doc/wwwcount/Count.html
+share/doc/wwwcount/Count2.5/Count2.4-ex.html
+share/doc/wwwcount/Count2.5/Count2ex.html
+share/doc/wwwcount/Count2.5/CountNT.html
+share/doc/wwwcount/Count2.5/c-c.txt
+share/doc/wwwcount/Count2.5/c.html
+share/doc/wwwcount/Count2.5/confi.html
+share/doc/wwwcount/Count2.5/eximages/ex2_5102576.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5106850.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5111124.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5115398.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5119672.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5123946.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_512822.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5128220.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5132494.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5136768.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5141042.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5145316.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5149590.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5153864.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5158138.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5162412.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5166686.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_517096.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5170960.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5175234.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5179508.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5183782.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5188056.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5192330.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_5196604.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_521370.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_525644.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_529918.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_534192.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_538466.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_54274.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_542740.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_547014.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_551288.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_555562.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_559836.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_564110.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_568384.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_572658.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_576932.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_581206.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_58548.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_585480.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_589754.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_594028.gif
+share/doc/wwwcount/Count2.5/eximages/ex2_598302.gif
+share/doc/wwwcount/Count2.5/gen-c.txt
+share/doc/wwwcount/Count2.5/images/Image1.gif
+share/doc/wwwcount/Count2.5/images/c24latr.gif
+share/doc/wwwcount/Count2.5/images/c24rel.gif
+share/doc/wwwcount/Count2.5/images/c24upd.gif
+share/doc/wwwcount/Count2.5/images/cal.gif
+share/doc/wwwcount/Count2.5/images/count24dst.gif
+share/doc/wwwcount/Count2.5/images/countdst.fig
+share/doc/wwwcount/Count2.5/images/initr.gif
+share/doc/wwwcount/Count2.5/images/latest.gif
+share/doc/wwwcount/Count2.5/images/latr.gif
+share/doc/wwwcount/Count2.5/images/new.gif
+share/doc/wwwcount/Count2.5/images/styleA.gif
+share/doc/wwwcount/Count2.5/images/styleB.gif
+share/doc/wwwcount/Count2.5/images/styleC.gif
+share/doc/wwwcount/Count2.5/images/styleD.gif
+share/doc/wwwcount/Count2.5/images/styleE.gif
+share/doc/wwwcount/Count2.5/images/styleET.gif
+share/doc/wwwcount/Count2.5/images/stylebang.gif
+share/doc/wwwcount/Count2.5/images/stylecd.gif
+share/doc/wwwcount/Count2.5/images/stylecdd.gif
+share/doc/wwwcount/Count2.5/images/stylecdr.gif
+share/doc/wwwcount/Count2.5/images/transfer.gif
+share/doc/wwwcount/Count2.5/images/yeehaw.gif
+share/doc/wwwcount/Count2.5/rgb.txt.html
+share/doc/wwwcount/Count2_5-ex.html
+share/doc/wwwcount/CountNT.html
+share/doc/wwwcount/Count_Changelog.html
+share/doc/wwwcount/Count_FAQ.html
+share/doc/wwwcount/Count_download.html
+share/doc/wwwcount/Count_mirror.html
+share/doc/wwwcount/Count_mirrors.html
+share/doc/wwwcount/README
+share/doc/wwwcount/blues.gif
+share/doc/wwwcount/crdates.sh
+share/doc/wwwcount/green.gif
+share/doc/wwwcount/prehtml/.bash_mp3
+share/doc/wwwcount/prehtml/CountNT.prehtml
+share/doc/wwwcount/prehtml/Count_main.prehtml
+share/doc/wwwcount/prehtml/Count_mirrors.prehtml
+share/doc/wwwcount/prehtml/Makefile
+share/doc/wwwcount/prehtml/ack.prehtml
+share/doc/wwwcount/prehtml/asia_mirrors.prehtml
+share/doc/wwwcount/prehtml/australia_mirrors.prehtml
+share/doc/wwwcount/prehtml/blues.gif
+share/doc/wwwcount/prehtml/changelog.prehtml
+share/doc/wwwcount/prehtml/changelog_link.prehtml
+share/doc/wwwcount/prehtml/compile_NT.prehtml
+share/doc/wwwcount/prehtml/compile_unix.prehtml
+share/doc/wwwcount/prehtml/composite.prehtml
+share/doc/wwwcount/prehtml/composite.prehtml.bak
+share/doc/wwwcount/prehtml/config.prehtml
+share/doc/wwwcount/prehtml/copyright.prehtml
+share/doc/wwwcount/prehtml/count_faq.prehtml
+share/doc/wwwcount/prehtml/counterfaq_link.prehtml
+share/doc/wwwcount/prehtml/digitstyles.prehtml
+share/doc/wwwcount/prehtml/dirstruct.prehtml
+share/doc/wwwcount/prehtml/download.prehtml
+share/doc/wwwcount/prehtml/download_link.prehtml
+share/doc/wwwcount/prehtml/errorm.prehtml
+share/doc/wwwcount/prehtml/europe_mirrors.prehtml
+share/doc/wwwcount/prehtml/examples.prehtml
+share/doc/wwwcount/prehtml/exec.prehtml
+share/doc/wwwcount/prehtml/features.prehtml
+share/doc/wwwcount/prehtml/foo.gif
+share/doc/wwwcount/prehtml/footer.prehtml
+share/doc/wwwcount/prehtml/green.gif
+share/doc/wwwcount/prehtml/hear.prehtml
+share/doc/wwwcount/prehtml/help.prehtml
+share/doc/wwwcount/prehtml/howtocall.prehtml
+share/doc/wwwcount/prehtml/imagestrip.prehtml
+share/doc/wwwcount/prehtml/intro.prehtml
+share/doc/wwwcount/prehtml/macros.prehtml
+share/doc/wwwcount/prehtml/mirror.prehtml
+share/doc/wwwcount/prehtml/oldcfg.txt
+share/doc/wwwcount/prehtml/options.prehtml
+share/doc/wwwcount/prehtml/otherstyles.prehtml
+share/doc/wwwcount/prehtml/platforms.prehtml
+share/doc/wwwcount/prehtml/release.prehtml
+share/doc/wwwcount/prehtml/requirements.prehtml
+share/doc/wwwcount/prehtml/south_am.prehtml
+share/doc/wwwcount/prehtml/test.prehtml
+share/doc/wwwcount/prehtml/toc.prehtml
+share/doc/wwwcount/prehtml/us_mirrors.prehtml
+share/doc/wwwcount/prehtml/whatsnew.prehtml
+@dirrm share/doc/wwwcount/prehtml
+@dirrm share/doc/wwwcount/Count2.5/images
+@dirrm share/doc/wwwcount/Count2.5/eximages
+@dirrm share/doc/wwwcount/Count2.5
+@dirrm share/doc/wwwcount
+@dirrm lib/wwwcount/digits/cdr
+@dirrm lib/wwwcount/digits/cdd
+@dirrm lib/wwwcount/digits/cd
+@dirrm lib/wwwcount/digits/bang
+@dirrm lib/wwwcount/digits/E
+@dirrm lib/wwwcount/digits/D
+@dirrm lib/wwwcount/digits/C
+@dirrm lib/wwwcount/digits/B
+@dirrm lib/wwwcount/digits/A
+@dirrm lib/wwwcount/digits
+@dirrm lib/wwwcount

@@ -1,44 +1,44 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/29 09:40:17 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/01/27 21:14:02 form Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
 # http://www.digitmania.holowww.com/
 
-DISTNAME=	wwwcount2.4
-PKGNAME=	wwwcount-2.4
+DISTNAME=	wwwcount2.5
+PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.4/
+MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.5/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	form@openbsd.org
 
 GNU_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
-NO_PACKAGE=	interactive port
 
-.if defined(USE_RELOAD)
-MAKE_FLAGS+=	COUNT_RELOAD=-DCOUNT_RELOAD=1
-.endif
+WWWDIR=		/var/www
 
 pre-configure:
-	cd ${WRKSRC}; yes "" | PREFIX=${PREFIX} ./Count-config
-
-pre-build:
-.if !defined(USE_RELOAD)
-	@echo "***"
-	@echo "*** Do \"make USE_RELOAD=yes\" if you want to disable"
-	@echo "*** \"reload ignore\" feature."
-	@echo "***"
-.endif
-
-post-build:
-	cd ${WRKSRC}; ./Gen-conf
+	@sed -e "s,@PREFIX@,${PREFIX},g" -e "s,@WWWDIR@,${WWWDIR},g" \
+		${FILESDIR}/config.h.in > ${WRKSRC}/src/config.h
 
 do-install:
-	cd ${WRKSRC}; yes "" | ./Count-install
-	cd ${WRKSRC}/utils/mkstrip; \
-		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
-		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
-		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
-	${INSTALL_DATA} ${WRKSRC}/count.cfg ${PREFIX}/lib/Counter/count.cfg.sample
+.for d in A B C D E bang cd cdd cdr
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/wwwcount/digits/${d}
+	${INSTALL_DATA} ${WRKSRC}/data/digits/${d}/*.gif \
+		${PREFIX}/lib/wwwcount/digits/${d}
+.endfor
+	${INSTALL_DATA} -s ${WRKSRC}/src/Count.cgi ${PREFIX}/lib/wwwcount
+	${INSTALL_DATA} ${FILESDIR}/count.cfg.sample ${PREFIX}/lib/wwwcount
+	${INSTALL_DATA} ${WRKSRC}/data/rgb.txt ${PREFIX}/lib/wwwcount
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/mkstrip/mkstrip ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/mkstrip/mkstrip.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/extdgts/extdgts ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wwwcount
+	@cd ${WRKSRC}/docs; cp -RP * ${PREFIX}/share/doc/wwwcount
+	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/doc/wwwcount
+	@find ${PREFIX}/share/doc/wwwcount -type f -print | \
+		xargs chmod ${SHAREMODE}
+	@find ${PREFIX}/share/doc/wwwcount -type d -print | \
+		xargs chmod ${BINMODE}
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

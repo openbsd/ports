@@ -1,0 +1,26 @@
+# $OpenBSD: DEINSTALL,v 1.1 2000/01/27 21:14:05 form Exp $
+#
+# wwwcount de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+COUNT_DIR=/var/www/wwwcount
+COUNT_SCRIPT=/var/www/cgi-bin/Count.cgi
+
+rm -f ${COUNT_SCRIPT}
+if [ -d ${COUNT_DIR} ]; then
+	echo
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| these steps as root:"
+	echo "|"
+	echo "|           rm -rf ${COUNT_DIR}"
+	echo "|           rm -f /var/www/logs/Count.log"
+	echo "|"
+	echo "| Do not do this if you plan on re-installing $1"
+	echo "| at some future time."
+	echo "+---------------"
+	echo
+fi
+
+exit 0

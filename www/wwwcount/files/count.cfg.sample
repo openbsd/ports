@@ -1,0 +1,53 @@
+[version]
+   2.5 
+
+##-- options section
+; If auto_file_creation=Yes, then the users can create data files. It IS
+;  dangerous to set this option to Yes.
+#
+; strict_mode=Yes or No. Run the program in strict mode or not. It's a good
+;  idea to set this option to Yes.
+#
+; allow_rgb_database=Yes or No. Convenient to use because colorname e.g., red,
+;  gold etc can be used instead of rgb components of the color, however it is
+;  very inefficient to lookup. If your site is busy, set this option to No.
+#
+; count_reload=Yes or No. It is a good idea to set this option to No. But
+;  you've to set this option to Yes if you are running a proxy server.
+;  Normally set this option to Yes.
+#
+; log_error_messages=Yes or No. If your site is extremely busy and if the
+;  counter generates lots of logs, set this option to No. Normally set this
+;  option to Yes.
+#
+; show_error_messages_to_browsers=Yes or No. Set this option to No if you're
+;  concerned with privacy and you're sure that the counter works perfectly.
+;  If you set this option to No, you will not see error messages.
+
+[options]
+  auto_file_creation=No
+  strict_mode=No
+  allow_rgb_database=Yes
+  count_reload=No
+  log_error_messages=No
+  show_error_messages_to_browsers=Yes
+
+
+; You can specify IP address of the hosts you want to ignore from counting.
+; netmasks can be used to ignore a entire network or a specificrange of
+; hosts in the network. Read the counter documentation to know about
+; netmasks. Wild card can be used as well. one item per line.
+;
+[ignore IPs]
+  192.168.1.1
+
+;
+; All possible names and IP addresses by which your host can be referred.
+; These hosts can access the counter remotely or locally. Host running
+; the http server must exist here. Wild card can be used. one item per line.
+;
+[authorized]
+  host.some.domain
+  host
+  192.168.1.1
+  test.counter.com

@@ -1,0 +1,43 @@
+#ifndef COUNT_CONFIG_H
+#define COUNT_CONFIG_H			1
+
+#define CONFIG_DIR			"@WWWDIR@/wwwcount/conf"
+#define CONFIG_FILE			"count.cfg"
+#define DATA_DIR			"@WWWDIR@/wwwcount/data"
+#define DIGIT_DIR			"@PREFIX@/lib/wwwcount/digits"
+#define LOG_DIR				"@WWWDIR@/logs"
+#define LOG_FILE			"Count.log"
+
+#define DEFAULT_MAXDIGITS		6
+#define DEFAULT_LEFTPAD			True
+
+#define DEFAULT_FRAME_THICKNESS		5
+#define DEFAULT_FRAME_RED		100
+#define DEFAULT_FRAME_GREEN		139
+#define DEFAULT_FRAME_BLUE		216
+
+#define DEFAULT_OPAQUE_RED		0
+#define DEFAULT_OPAQUE_GREEN		255
+#define DEFAULT_OPAQUE_BLUE		0
+
+#define DEFAULT_PEN_RED			255
+#define DEFAULT_PEN_GREEN		119
+#define DEFAULT_PEN_BLUE		0
+
+#define FRGB_IMPLIED_FT			4
+#define DEFAULT_TRANSPARENCY		False
+
+#define DEFAULT_TRANSPARENT_RED		0
+#define DEFAULT_TRANSPARENT_GREEN	0
+#define DEFAULT_TRANSPARENT_BLUE	0
+#define TRGB_IMPLIED_TR			1
+
+#define DEFAULT_STARTCOUNT		1
+#define DEFAULT_SHOWCOUNT		1
+#define DF_FOR_RANDOM			"RANDOM"
+#define DEFAULT_DATAFILE		"RANDOM"
+#define DEFAULT_DIGITS_STYLE		"A"
+#define PARAM_DELIMITERS		"|&"
+#define RGB_MAPPING_DICT		"@PREFIX@/lib/wwwcount/rgb.txt"
+
+#endif /* COUNT_CONFIG_H*/
