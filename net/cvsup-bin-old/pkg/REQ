@@ -1,4 +1,12 @@
 #!/bin/sh
+# $OpenBSD: REQ,v 1.2 2001/08/10 17:49:54 brad Exp $
+#
+# install/deinstall requirements check for cvsup-bin
+
+# exit on errors, use a sane path
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 # Function: tell the user the requirements for this port
 #
