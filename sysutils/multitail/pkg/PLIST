@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/04 17:47:42 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/11/02 16:55:02 margarida Exp $
 bin/multitail
 man/man1/multitail.1
+share/doc/multitail/manual.html
+share/doc/multitail/readme.txt
+share/examples/multitail/multitail.conf
+@dirrm share/examples/multitail
+@dirrm share/doc/multitail
+@cwd ${SYSCONFDIR}
+@extra multitail.conf
