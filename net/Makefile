@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2000/09/16 03:59:22 brad Exp $
+# $OpenBSD: Makefile,v 1.92 2000/09/16 15:32:58 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += arpwatch
      SUBDIR += axyftp
      SUBDIR += bind8
+     SUBDIR += bind9
      SUBDIR += bing
      SUBDIR += bitchx
      SUBDIR += cidr
