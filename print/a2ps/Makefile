@@ -1,0 +1,75 @@
+# New ports collection makefile for:    a2ps
+# Version required:     4.9.9
+# Date created:         31 January 1998
+# Whom:                 Tobias Weingartner (weingart@openbsd.org)
+#
+# $OpenBSD: Makefile,v 1.1.1.1 1998/01/31 21:54:44 weingart Exp $
+#
+
+PKGNAME=	a2ps-4.9.9
+DISTNAME=	a2ps-4.9.9
+CATEGORIES=	print
+MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
+DISTFILES=	a2ps-4.9.9.tar.gz
+
+MAINTAINER=	weingart@OpenBSD.org
+
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter or A4
+GNU_CONFIGURE=	yes
+MAN1=		a2ps.1 ogonkify.1
+
+PAPERSIZE?=
+STRIP=
+CONFIGURE_ARGS=	--with-medium=$(PAPERSIZE) --disable-shared
+
+
+Letter::
+	$(MAKE) PAPERSIZE=Letter
+
+letter::
+	$(MAKE) PAPERSIZE=Letter
+
+Letterdj::
+	$(MAKE) PAPERSIZE=Letterdj
+
+letterdj::
+	$(MAKE) PAPERSIZE=Letterdj
+
+A4::
+	$(MAKE) PAPERSIZE=A4
+
+a4::
+	$(MAKE) PAPERSIZE=A4
+
+pre-build:
+	/usr/bin/touch $(WRKSRC)/doc/*.info
+	/usr/bin/touch $(WRKSRC)/doc/*.dvi
+
+pre-configure:
+.if empty(PAPERSIZE)
+	@echo
+	@echo "PAPERSIZE not specified."
+	@echo
+	@echo "Must specify PAPERSIZE as one of A4, Letter, or Letterdj, either"
+	@echo "using setenv, or via Makefile targets of the same name.  Note"
+	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
+	@echo "allows a slightly larger margins for DeskJets."
+	@false
+.elif $(PAPERSIZE)!=A4 && $(PAPERSIZE)!=Letter && $(PAPERSIZE)!=Letterdj
+	@echo
+	@echo "PAPERSIZE incorrect value: $(PAPERSIZE)."
+	@echo
+	@echo "Must specify PAPERSIZE as one of A4, Letter, or Letterdj, either"
+	@echo "using setenv, or via Makefile targets of the same name.  Note"
+	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
+	@echo "allows a slightly larger margins for DeskJets."
+	@false
+.endif
+	echo $(PAPERSIZE) > $(WRKDIR)/.media
+
+.include <bsd.port.mk>
+
+.if exists($(WRKDIR)/.media)
+PAPERSIZE=
+PAPERSIZE!=	cat $(WRKDIR)/.media
+.endif
