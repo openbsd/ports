@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/14 01:14:44 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/20 07:28:00 alek Exp $
 
 COMMENT=		"MIME and Application database for GNOME"
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
