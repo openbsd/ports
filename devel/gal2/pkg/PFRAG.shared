@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/10/14 20:26:08 marcm Exp $
+lib/libgal-2.0.so.5.1
+lib/libgal-a11y-2.0.so.5.1
+DYNLIBDIR(%D/lib)
