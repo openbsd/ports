@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.227 2000/03/18 17:01:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.228 2000/03/19 01:52:46 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1470,7 +1470,9 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 # Kludge
 .if defined(USE_IMAKE)
 	@mkdir -p /usr/local/lib/X11
-	@-ln -s /var/X11/app-defaults /usr/local/lib/X11/app-defaults
+	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
+		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+	fi
 .endif
 	pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
@@ -1488,7 +1490,9 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 # Kludge
 .    if defined(USE_IMAKE)
 	@mkdir -p /usr/local/lib/X11
-	@-ln -s /var/X11/app-defaults /usr/local/lib/X11/app-defaults
+	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
+		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+	fi
 .    endif
 .    if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
