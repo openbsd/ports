@@ -11,4 +11,4 @@ o on-line help system
 o recursive downloads and uploads ith resume option 
 o multiple delete with option to recurse 
 
-WWW:	http://www.wxftp.seul.org/
+WWW: ${HOMEPAGE}
