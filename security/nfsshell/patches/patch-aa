@@ -1,0 +1,23 @@
+--- Makefile.orig	Tue May 19 16:37:23 1998
++++ Makefile	Thu Jun 10 11:57:48 1999
+@@ -21,11 +21,16 @@
+ #	LIBS=-L/usr/local/lib -lreadline -lhistory -ltermlib
+ #
+ 
+-# uncomment the following 4 lines for Solaris 2.x
++# OpenBSD
+ CC		= gcc
+-CFLAGS		= -DSYSV -DREADLINE -I/usr/local/include
+-LIBS		= -lsocket -L/usr/ucblib -R/usr/ucblib -lrpcsoc -lnsl \
+-		  -L/usr/local/lib -lreadline -lhistory -ltermlib
++CFLAGS		+= -DREADLINE
++LIBS		= -lreadline -ltermcap
++
++# uncomment the following 4 lines for Solaris 2.x
++#CC		= gcc
++#CFLAGS		= -DSYSV -DREADLINE -I/usr/local/include
++#LIBS		= -lsocket -L/usr/ucblib -R/usr/ucblib -lrpcsoc -lnsl \
++#		  -L/usr/local/lib -lreadline -lhistory -ltermlib
+ 
+ # uncomment the following 3 lines for AIX
+ #CC		= gcc

@@ -1,0 +1,70 @@
+--- nfs.c-orig	Thu Jun 10 03:42:59 1999
++++ nfs.c	Thu Jun 10 10:42:56 1999
+@@ -40,7 +40,6 @@
+ #include <stdlib.h>
+ #include <time.h>
+ #include <rpc/rpc.h>
+-#include <rpc/key_prot.h>
+ #include <rpc/pmap_clnt.h>
+ #ifdef SYSV
+ #include <rpc/clnt_soc.h>
+@@ -50,7 +49,6 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/time.h>
+-#include <sys/sysmacros.h>
+ #include "mount.h"
+ #include "nfs_prot.h"
+ #include <netinet/in_systm.h>
+@@ -58,7 +56,6 @@
+ 
+ #ifdef READLINE
+ #include <readline/readline.h>
+-#include <readline/history.h>
+ #endif
+ 
+ /*
+@@ -169,7 +166,6 @@
+ int authtype = AUTH_UNIX;	/* type of authentication */
+ int uid = -2;			/* remote user id (initialy nobody) */
+ int gid = -2;			/* remote group id (initialy nobody) */
+-keybuf secretkey;		/* remote user's secret key */
+ 
+ /* server information (also used as state information) */
+ char *mountpath;		/* remote mount path */
+@@ -384,7 +380,7 @@
+ #ifdef READLINE
+     if (interact) {
+ 	char *line;
+-	if ((line = readline("nfs> ")) == NULL)
++	if ((line = readline("nfsshell> ")) == NULL)
+ 	    return 0;
+ 	strncpy(buf, line, bufsize);
+ 	add_history(line);
+@@ -394,7 +390,7 @@
+ 	    return 0;
+     }
+ #else
+-    if (interact) printf("nfs> ");
++    if (interact) printf("nfsshell> ");
+     if (fgets(buf, bufsize, stdin) == NULL)
+ 	return 0;
+ #endif
+@@ -447,16 +443,13 @@
+ do_setuid(int argc, char **argv)
+ {
+     if (argc > 3) {
+-	fprintf(stderr, "Usage: uid [<uid> [<secret-key>]]\n");
++	fprintf(stderr, "Usage: uid [<uid>]\n");
+ 	return;
+     }
+ 
+     if (argc <= 2) {
+ 	authtype = AUTH_UNIX;
+ 	uid = argc == 1 ? -2 : atoi(argv[1]);
+-    } else if (argc == 3) {
+-	authtype = AUTH_DES;
+-	memcpy(secretkey, argv[2], HEXKEYBYTES);
+     }
+ 
+     if (nfsclient) {
