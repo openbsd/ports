@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.358 2001/03/01 00:01:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.359 2001/03/06 18:59:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -576,8 +576,14 @@ ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 .  endif
 	@echo "@comment name="`cd ${.CURDIR} && exec make package-name FULL_PACKAGE_NAME=Yes` >>$@
 
+MTREE_FILE?=
+MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
+
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+
+${WRKPKG}/mtree.spec: ${MTREE_FILE}
+	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
@@ -1378,7 +1384,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
 
 .if ${FAKE:L} == "yes"
-${_FAKE_COOKIE}: ${_BUILD_COOKIE} 
+${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${PKGNAME}"
 	@if [ `${SUDO} ${SH} -c umask` != ${DEF_UMASK} ]; then \
 		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
@@ -1386,7 +1392,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
-		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
+		-f ${WRKPKG}/mtree.spec  >/dev/null
 .  if ${CONFIGURE_STYLE:L} == "perl"
 	@${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
 .  endif
@@ -1731,7 +1737,7 @@ RECURSIVE_FETCH_LIST?=	Yes
 .if ${FAKE:L} == "yes"
 plist: fake
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
-	MTREE_FILE=${PORTSDIR}/infrastructure/db/fake.mtree \
+	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist ${PLIST}
 .endif
