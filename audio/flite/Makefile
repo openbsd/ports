@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/23 22:46:13 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/23 17:33:30 pvalchev Exp $
 
 COMMENT=	"text to speech utility"
+
+.if ${MACHINE_ARCH} == "hppa"
+BROKEN=		"gcc hang compiling cmu_us_kal_diphone.c"
+.endif
 
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
