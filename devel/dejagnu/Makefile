@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/12 19:45:51 turan Exp $
 
 DISTNAME=       dejagnu-1.3
 CATEGORIES=	devel
@@ -17,10 +17,11 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= dejagnu
 
 BUILD_DEPENDS=	expect::lang/expect
+LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
 
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--with-tclinclude=${PREFIX}/include/tcl8.0/generic \
-		--with-tkinclude=${PREFIX}/include/tk8.0/generic
+CONFIGURE_ARGS=	--with-tclinclude=${PREFIX}/include/tcl8.3/generic \
+		--with-tkinclude=${PREFIX}/include/tk8.3/generic
 
 post-extract:
 	@rm -rf ${WRKSRC}/{expect,tcl}
