@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/05/29 07:31:49 kevlo Exp $
 bin/snort
 man/man8/snort.8
 share/snort/backdoor-lib
