@@ -1,9 +1,11 @@
-# $OpenBSD: kde.port.mk,v 1.2 2003/02/25 00:19:43 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.3 2003/02/28 15:08:21 brad Exp $
 MODULES+=	qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
 
-.if !defined(MODKDENO_DEBUG)
+MODKDE_NODEBUG?=No
+
+.if !${MODKDE_NODEBUG:L} == "yes"
 FLAVORS+=	debug
 .endif
 FLAVOR?=
