@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/31 16:35:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:22 wilfried Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
@@ -11,6 +11,7 @@ HOMEPAGE=		http://www.robertk.com/source/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# LPGL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

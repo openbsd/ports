@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 08:18:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:21 wilfried Exp $
 
 COMMENT=		'icons mainly for use in Window Maker'
 
@@ -8,6 +8,7 @@ NEED_VERSION=		1.528
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

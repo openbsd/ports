@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/15 09:30:21 wilfried Exp $
 
 COMMENT=		'wm-dockapp; space weather monitor'
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/ \
-			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 RUN_DEPENDS=		:wget-*:net/wget
 

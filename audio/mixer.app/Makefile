@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:21 wilfried Exp $
 
 COMMENT=		'wm-dockapp; sound mixer'
 
@@ -11,14 +11,13 @@ HOMEPAGE=		http://www.fukt.hk-r.se/~per/mixer/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE} \
-			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
-			ftp://ftp.netis.com/pub/mirrors2/linuxberg/files/x11/dock/
+MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

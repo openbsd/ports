@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 09:30:22 wilfried Exp $
 
 COMMENT=		'wm-dockapp; mail notifier'
 
@@ -11,6 +11,7 @@ HOMEPAGE=		http://www.eecg.utoronto.ca/cgi-bin/cgiwrap/chanb/www/wmmail
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

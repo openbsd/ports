@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 09:30:21 wilfried Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 COMMENT= 		cd player for Afterstep or Window Maker
@@ -10,13 +10,13 @@ HOMEPAGE=		http://worldserver.oleane.com/rsn/ascd-en.html
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://worldserver.oleane.com/rsn/Archives/ \
-			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+MASTER_SITES=		http://worldserver.oleane.com/rsn/Archives/
 DISTFILES=		${DISTNAME}-src.tgz ${DATAFILES}
 DATAFILES=		ascd-0.13pr6-themes.tgz
 

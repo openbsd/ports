@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 09:30:22 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows the date, time, and Internet time'
 
@@ -10,13 +10,13 @@ HOMEPAGE=		http://www.neotokyo.org/illusion/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}downloads/ \
-			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+MASTER_SITES=		${HOMEPAGE}downloads/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

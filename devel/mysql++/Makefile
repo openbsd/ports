@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 12:29:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:21 wilfried Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -13,6 +13,7 @@ HOMEPAGE=		http://www.mysql.com/downloads/api-mysql++.html
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# LPGL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/15 09:30:21 wilfried Exp $
 
 COMMENT=		'wm-dockapp; displays the earth on an icon'
 
@@ -10,6 +10,7 @@ HOMEPAGE=		http://perso.linuxfr.org/jdumont/wmg/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/26 22:21:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/15 09:30:22 wilfried Exp $
 
 COMMENT=		'wm-dockapp; Time/Date applet'
 
@@ -10,14 +10,13 @@ HOMEPAGE=		http://www.tigr.net/afterstep/detail.pl?applet=astime
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/ \
-			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
-			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
+MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
