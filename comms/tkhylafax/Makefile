@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/29 19:32:37 fgsch Exp $
 
 COMMENT=	"Tcl/Tk interface to Sam Leffler's fax package"
 
 DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
 CATEGORIES=	comms
-NEED_VERSION=	1.496
 
 FAKE=No
 

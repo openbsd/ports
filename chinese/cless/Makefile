@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.11 2001/08/11 15:51:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 19:32:37 fgsch Exp $
 #
 
 COMMENT=	"pager utility that speaks Chinese"
@@ -11,7 +11,6 @@ COMMENT=	"pager utility that speaks Chinese"
 DISTNAME=       cless-290
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese misc
-NEED_VERSION=	1.414
 MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ 
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>

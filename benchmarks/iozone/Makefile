@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/02/26 01:52:02 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2002/12/29 19:32:37 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
@@ -6,7 +6,6 @@ COMMENT=	"performance test of sequential file I/O"
 DISTNAME=	iozone3_83
 PKGNAME=	iozone-3.83
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.500
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 

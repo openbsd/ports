@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/06/15 19:07:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2002/12/29 19:32:37 fgsch Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -6,7 +6,6 @@ VERSION=	0.9.5
 DISTNAME=	pilot-link.${VERSION}
 PKGNAME=	pilot-link-${VERSION}p1
 CATEGORIES=	comms palm
-NEED_VERSION=	1.504
 EXTRACT_SUFX=	.tar.bz2
 
 PERMIT_PACKAGE_CDROM=	Yes
