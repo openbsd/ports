@@ -1,6 +1,6 @@
-$OpenBSD: patch-automake_texi,v 1.1 2001/06/07 18:23:22 brad Exp $
---- automake.texi.orig	Wed Jan  6 08:01:26 1999
-+++ automake.texi	Thu May 10 12:33:10 2001
+$OpenBSD: patch-automake_texi,v 1.2 2001/08/23 19:33:20 brad Exp $
+--- automake.texi.orig	Thu Aug 23 13:55:57 2001
++++ automake.texi	Thu Aug 23 13:57:10 2001
 @@ -1,6 +1,7 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header
@@ -11,7 +11,7 @@ $OpenBSD: patch-automake_texi,v 1.1 2001/06/07 18:23:22 brad Exp $
  @c %**end of header
 @@ -9,12 +10,12 @@
  
- @dircategory GNU admin
+ @dircategory GNU programming tools
  @direntry
 -* automake: (automake).		Making Makefile.in's
 +* Automake: (automake).		Making Makefile.in's
