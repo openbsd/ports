@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/06/25 19:47:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/06/25 20:27:22 naddy Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
 
-PATCHFILES=		ncftp-313-v6-20020531.diff.gz:0
+PATCHFILES=		ncftp-313-v6-20020617.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	gnu dest
