@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
+--- src/Makefile.in.orig	Fri Jan 31 13:17:31 2003
++++ src/Makefile.in	Tue Feb  4 16:07:52 2003
+@@ -124,7 +124,7 @@ target_alias = @target_alias@
+ SUBDIRS = missing libfaim
+ bin_PROGRAMS = pork
+ 
+-AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(pkgdatadir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
++AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(sysconfdir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
+ 
+ pork_LDFLAGS = -Lmissing -Llibfaim
+ pork_LDADD = -lmissing -lfaim -lncurses $(PERL_LIBS) $(DEBUG_LIBS)

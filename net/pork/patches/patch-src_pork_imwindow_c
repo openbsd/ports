@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_pork_imwindow_c,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
+--- src/pork_imwindow.c.orig	Fri Jan 17 14:46:34 2003
++++ src/pork_imwindow.c	Thu Feb 13 19:24:17 2003
+@@ -377,8 +377,11 @@ int imwindow_bind_acct(struct imwindow *
+ 	char nname[NUSER_LEN];
+ 	struct aim_priv *old_priv = imwindow->priv;
+ 
+-	if (imwindow->type == TYPE_CHAT)
++	if (imwindow->type == TYPE_CHAT &&
++		imwindow->priv != screen.null_priv)
++	{
+ 		return (-1);
++	}
+ 
+ 	normalize(user, nname, sizeof(nname));
+ 

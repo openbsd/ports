@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
+--- doc/Makefile.in.orig	Fri Jan 31 13:17:28 2003
++++ doc/Makefile.in	Thu Feb 20 07:33:50 2003
+@@ -124,7 +124,7 @@ target_alias = @target_alias@
+ SUBDIRS = help
+ 
+ pork_DATA = porkrc
+-porkdir = $(pkgdatadir)
++porkdir = $(prefix)/share/examples/pork
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

@@ -1,0 +1,7 @@
+pork is a programmable, ncurses-based AIM client that mostly looks and
+feels like ircII.  To begin using pork quickly, consult the installed
+quick start guide which may be found at:
+
+${PREFIX}/share/doc/pork/QUICK_START
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_perl_Makefile_in,v 1.1.1.1 2003/02/21 13:03:55 sturm Exp $
+--- examples/perl/Makefile.in.orig	Fri Jan 31 13:17:31 2003
++++ examples/perl/Makefile.in	Tue Feb  4 18:35:50 2003
+@@ -127,7 +127,7 @@ perl_DATA = \
+ 	np.pl
+ 
+ 
+-perldir = $(pkgdatadir)/examples/perl
++perldir = $(prefix)/share/examples/pork
+ subdir = examples/perl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
