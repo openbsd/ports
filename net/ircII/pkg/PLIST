@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/04/21 22:52:22 espie Exp $
 bin/ircII
-bin/ircII-4.4S
+bin/ircII-4.4U
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -108,6 +107,7 @@ share/irc/help/deop
 share/irc/help/describe
 share/irc/help/die
 share/irc/help/digraph
+share/irc/help/disconnect
 share/irc/help/dmsg
 share/irc/help/dquery
 share/irc/help/echo
@@ -598,8 +598,6 @@ share/irc/translation/SWEDISH_NAMES_COM
 share/irc/translation/SWISS
 share/irc/translation/UNITED_KINGDOM
 share/irc/translation/UNITED_KINGDOM_COM
-@exec echo "The ircII executable has been installed as %D/bin/ircII"
-@exec echo "to avoid conflict with another irc package"
 @dirrm share/irc/help/alias
 @dirrm share/irc/help/bind
 @dirrm share/irc/help/ctcp
@@ -614,3 +612,5 @@ share/irc/translation/UNITED_KINGDOM_COM
 @dirrm share/irc/script
 @dirrm share/irc/translation
 @dirrm share/irc
+@exec echo "The ircII executable has been installed as %D/bin/ircII"
+@exec echo "to avoid conflict with another irc package"
