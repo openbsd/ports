@@ -58,6 +58,7 @@ lib/X11/fonts/xcyrillic/100dpi/crox6t.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6tb.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6tbo.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6to.pcf.gz
+lib/X11/fonts/xcyrillic/100dpi/fonts.dir
 lib/X11/fonts/xcyrillic/75dpi/crox1c.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox1cb.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox1cbo.pcf.gz
@@ -118,7 +119,9 @@ lib/X11/fonts/xcyrillic/75dpi/crox6t.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6tb.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6tbo.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6to.pcf.gz
+lib/X11/fonts/xcyrillic/75dpi/fonts.dir
 lib/X11/fonts/xcyrillic/misc/fonts.alias
+lib/X11/fonts/xcyrillic/misc/fonts.dir
 lib/X11/fonts/xcyrillic/misc/koi10x16b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi10x20.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi12x24.pcf.gz
