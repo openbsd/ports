@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/05 02:25:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/06 07:59:36 sturm Exp $
 
 COMMENT=	"xosd based clock"
 DISTNAME=	osd_clock-0.5
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
-MASTER_SITES=	http://leftorium.net/software/
+MASTER_SITES=	http://leftorium.net/software/osd_clock/ \
+		http://leftorium.net/software/osd_clock/old/
 
 HOMEPAGE=	http://leftorium.net/software.phtml
 
