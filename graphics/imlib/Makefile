@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/27 01:27:21 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/28 03:09:35 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.7
@@ -10,8 +10,6 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		giftopnm:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
@@ -19,6 +17,10 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.35:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+		giftopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+		giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_GMAKE=	yes
 USE_X11=	yes
