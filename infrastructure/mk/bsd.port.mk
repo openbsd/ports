@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.165 2000/01/01 15:43:34 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.166 2000/01/06 21:53:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -941,14 +941,10 @@ SCRIPTS_ENV+=	BATCH=yes
 MANPREFIX?=	${PREFIX}
 CATPREFIX?=	${PREFIX}
 
-.for sect in 1 2 3 4 5 6 7 8 9
+.for sect in 1 2 3 4 5 6 7 8 9 L N
 MAN${sect}PREFIX?=	${MANPREFIX}
 CAT${sect}PREFIX?=	${CATPREFIX}
 .endfor
-MANLPREFIX?=	${MANPREFIX}
-MANNPREFIX?=	${MANPREFIX}
-CATLPREFIX?=	${CATPREFIX}
-CATNPREFIX?=	${CATPREFIX}
 
 MANLANG?=	""	# english only by default
 
