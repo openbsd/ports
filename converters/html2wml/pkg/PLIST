@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 22:36:12 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/13 20:47:26 naddy Exp $
 bin/html2wml
 man/man1/html2wml.1
 share/doc/html2wml/NEWS
@@ -13,6 +13,7 @@ share/doc/html2wml/t/samples/links.html
 share/doc/html2wml/t/samples/mix1.html
 share/doc/html2wml/t/samples/mix2.html
 share/doc/html2wml/t/samples/struct.html
+share/doc/html2wml/t/samples/xtreme.html
 @dirrm share/doc/html2wml/t/samples
 @dirrm share/doc/html2wml/t
 @dirrm share/doc/html2wml
