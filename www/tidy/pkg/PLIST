@@ -3,6 +3,7 @@ bin/tidy
 man/man1/tidy.1
 share/doc/tidy/Overview.html
 share/doc/tidy/grid.gif
+share/doc/tidy/pending.html
 share/doc/tidy/release-notes.html
 share/doc/tidy/tidy.gif
 @dirrm share/doc/tidy

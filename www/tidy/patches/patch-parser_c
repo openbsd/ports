@@ -1,11 +1,11 @@
-$OpenBSD: patch-parser_c,v 1.1.1.1 2000/02/09 23:55:44 rohee Exp $
+$OpenBSD: patch-parser_c,v 1.2 2000/05/20 00:31:53 rohee Exp $
 
-Was a core fixer in the previous version, should still be useful with
+Was a core fixer in a previous version, should still be useful with
 this one.
 
---- parser.c.orig	Thu Jan 13 12:53:06 2000
-+++ parser.c	Mon Feb  7 21:34:16 2000
-@@ -417,6 +417,9 @@ Bool InsertMisc(Node *element, Node *nod
+--- parser.c.orig	Sun Apr 30 11:23:55 2000
++++ parser.c	Sat May 20 02:11:48 2000
+@@ -415,6 +415,9 @@
  
  void ParseTag(Lexer *lexer, Node *node, uint mode)
  {
@@ -15,7 +15,7 @@ this one.
      if (node->tag->model & CM_EMPTY)
      {
          lexer->waswhite = no;
-@@ -1542,7 +1545,7 @@ void ParseList(Lexer *lexer, Node *list,
+@@ -1583,7 +1586,7 @@
              continue;
          }
  

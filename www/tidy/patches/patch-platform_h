@@ -1,19 +1,28 @@
-$OpenBSD: patch-platform_h,v 1.1.1.1 2000/02/09 23:55:44 rohee Exp $
+$OpenBSD: patch-platform_h,v 1.2 2000/05/20 00:31:53 rohee Exp $
 
-Patch around ugly glibc workaround.
-
---- platform.h.orig	Mon Feb  7 22:01:16 2000
-+++ platform.h	Mon Feb  7 22:02:56 2000
-@@ -69,8 +69,12 @@
+--- platform.h.orig	Sun Apr 30 11:25:15 2000
++++ platform.h	Sat May 20 02:04:51 2000
+@@ -17,9 +17,9 @@
+   It enables tidy to find config files named ~/.tidyrc
+   and ~your/.tidyrc etc if the HTML_TIDY environment
+   variable is not set. Contributed by Todd Lewis.
++*/
+ 
+ #define SUPPORT_GETPWNAM
+-*/
+ 
+ #include <ctype.h>
+ #include <stdio.h>
+@@ -68,12 +68,6 @@
+ /* hack for gnu sys/types.h file  which defines uint and ulong */
  /* you may need to delete the #ifndef and #endif on your system */
  
- #ifndef __USE_MISC
-+/* This is already defined under OpenBSD, in <sys/types.h> */
-+
-+/*
- typedef unsigned int uint;
- typedef unsigned long ulong;
-+*/
- #endif /* __USE_MISC */
- 
+-#ifndef __USE_MISC
+-#ifndef _INCLUDE_HPUX_SOURCE
+-typedef unsigned int uint;
+-#endif /* _INCLUDE_HPUX_SOURCE */
+-typedef unsigned long ulong;
+-#endif  /* __USE_MISC */
  typedef unsigned char byte;
+ 
+ typedef char *UTF8;
