@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.410 2001/05/22 11:46:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.411 2001/05/23 13:28:14 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -204,7 +204,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .endif
 
 FAKE?=Yes
-NEW_DEPENDS?=Yes
 TRUST_PACKAGES?=No
 WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
 
@@ -642,19 +641,17 @@ PLIST?=		${PKGDIR}/PLIST${SUBPACKAGE}
 
 # Likewise for DESCR/MESSAGE/COMMENT
 .if defined(COMMENT${SUBPACKAGE}${FLAVOR_EXT})
-_COMMENT=echo ${COMMENT${SUBPACKAGE}${FLAVOR_EXT}:S/^-//}
+_COMMENT=${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
 .elif defined(COMMENT${SUBPACKAGE})
-_COMMENT=echo ${COMMENT${SUBPACKAGE}:S/^-//}
-.else
-.  if exists(${PKGDIR}/COMMENT${SUBPACKAGE}${FLAVOR_EXT})
-_COMMENT=cat ${PKGDIR}/COMMENT${SUBPACKAGE}${FLAVOR_EXT}
-.  else
-_COMMENT=cat ${PKGDIR}/COMMENT${SUBPACKAGE}
-.  endif
+_COMMENT=${COMMENT${SUBPACKAGE}}
 .endif
 
 ${WRKPKG}/COMMENT${SUBPACKAGE}:
-	@${_COMMENT} >$@
+.if defined(_COMMENT)
+	@echo ${_COMMENT} >$@
+.else
+	@echo 2>&1 "Error: missing comment"
+.endif
 
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
 MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
@@ -665,9 +662,7 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-.if ${NEW_DEPENDS:L} == "yes"
 	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >>$@.tmp
-.endif
 .if defined(NO_SHARED_LIBS)
 	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
@@ -705,9 +700,6 @@ _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
-.if ${NEW_DEPENDS:L} != "yes"
-PKG_ARGS+=-P "`cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' ${MAKE} package-depends|${_SORT_DEPENDS}`"
-.endif
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
@@ -1411,10 +1403,6 @@ package: ${_PACKAGE_COOKIES}
 
 ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
-.if ${OPSYS_VER} < 2.8
-	@${ECHO_MSG} "*** Warning: using a new ports tree on a ${OPSYS_VER} system"
-	@${ECHO_MSG} "*** Things may not work, as make was updated"
-.endif
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${MAKE} pre-extract
@@ -2164,31 +2152,19 @@ describe:
 .    else
 	@echo -n "${PREFIX}|"
 .    endif
-	@echo -n "`${_COMMENT}`|"; \
+	@echo -n "${_COMMENT}|"; \
 	if [ -f ${DESCR} ]; then \
 		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
 	else \
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.    if ${NEW_DEPENDS:L} == "yes"
-.      if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
+.    if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
-.      endif
-.    else
-.      if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
-	@cd ${.CURDIR} && echo -n `${MAKE} depends-list|${_SORT_DEPENDS}`
-.      endif
 .    endif
 	@echo -n "|"
-.    if ${NEW_DEPENDS:L} == "yes"
-.      if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+.    if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
-.      endif
-.    else
-.      if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
-	@cd ${.CURDIR} && echo -n `${MAKE} package-depends|${_SORT_DEPENDS}`
-.      endif
 .    endif
 	@echo -n "|"
 	@case "${ONLY_FOR_ARCHS}" in \
