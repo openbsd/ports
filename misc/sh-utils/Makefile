@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/15 21:10:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/24 18:05:46 lebel Exp $
 
 COMMENT=		"GNU command line utilities"
 
 DISTNAME=		sh-utils-2.0
 CATEGORIES=		misc
-NEED_VERSION=		1.364
+NEED_VERSION=		1.460
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	sh-utils
 
-LIB_DEPENDS=		intl.1::devel/gettext
+MODULES=		gettext
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/19 18:54:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/24 18:05:46 lebel Exp $
 
 COMMENT=		"finds and then operates on files"
 
 DISTNAME=		findutils-4.1
 CATEGORIES=		misc
-NEED_VERSION=		1.410
+NEED_VERSION=		1.460
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	findutils
 
-LIB_DEPENDS=		intl.1::devel/gettext
+MODULES=		gettext
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu old
