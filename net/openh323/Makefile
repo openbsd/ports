@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/02 21:28:34 naddy Exp $
-
-BROKEN=	"incomplete port"
+# $OpenBSD: Makefile,v 1.3 2002/09/05 17:57:30 couderc Exp $
 
 COMMENT=		"H.323 Video Conferencing library"
 
@@ -30,9 +28,23 @@ USE_GMAKE=		Yes
 VMEM_WARNING=		Yes
 
 ALL_TARGET=		opt
-MAKE_FLAGS=		CC="${CC}"
+MAKE_FLAGS=		CC="${CC}" CXX="${CXX}" \
+			CFLAGS="${CFLAGS} ${CXXFLAGS} -pthread"
 MAKE_ENV=		PWLIBDIR=${WRKDIR}/pwlib \
 			OPENH323DIR=${WRKDIR}/openh323
+
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
+ ${MACHINE_ARCH} == "i386")
+MAKE_ENV+=      ENDIAN="PLITTLE_ENDIAN"
+.else
+.       if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
+        ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "powerpc" || \
+        ${MACHINE_ARCH} == "hppa")
+MAKE_ENV+=      ENDIAN="PBIG_ENDIAN"
+.       else
+ERRORS+= "Fatal: Unknown endianness for ${MACHINE_ARCH}"
+.       endif
+.endif
 
 WRKDIST=		${WRKDIR}
 WRKSRC=			${WRKDIST}/openh323

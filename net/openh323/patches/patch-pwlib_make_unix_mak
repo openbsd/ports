@@ -1,6 +1,36 @@
-$OpenBSD: patch-pwlib_make_unix_mak,v 1.1 2002/08/02 21:28:34 naddy Exp $
+$OpenBSD: patch-pwlib_make_unix_mak,v 1.2 2002/09/05 17:57:30 couderc Exp $
 --- pwlib/make/unix.mak.orig	Thu Apr 18 07:12:20 2002
-+++ pwlib/make/unix.mak	Fri Aug  2 21:40:17 2002
++++ pwlib/make/unix.mak	Thu Aug 29 15:44:59 2002
+@@ -668,21 +668,21 @@ ifeq ($(OSTYPE),OpenBSD)
+ 
+ P_PTHREADS	:= 1
+ 
+-ifeq ($(MACHTYPE),x86)
+-STDCCFLAGS	+= -m486
+-endif
+-
+ LDLIBS		+= -lossaudio
+ 
+-ifndef OSRELASE
++ifndef OSRELEASE
+ OSRELEASE	:= $(shell sysctl -n kern.osrevision)
+ endif
+- 
++
++CC		:= ${CC} 
++CPLUS		:= ${CXX}
++CFLAGS		+= ${CFLAGS}
++ENDIAN		:= ${ENDIAN}
+ STDCCFLAGS	+= -DP_OPENBSD=$(OSRELEASE)
+ 
+-ifdef P_PTHREADS
++#ifdef P_PTHREADS
+ CFLAGS	+= -pthread
+-endif
++#endif
+ 
+ P_USE_RANLIB		:= 1
+ 
 @@ -1106,7 +1106,7 @@ endif
  PW_LIBDIR	= $(PWLIBDIR)/lib
  
@@ -10,3 +40,13 @@ $OpenBSD: patch-pwlib_make_unix_mak,v 1.1 2002/08/02 21:28:34 naddy Exp $
  PTLIB_FILE	= lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX)
  PT_OBJBASE	= obj_$(PLATFORM_TYPE)_$(OBJDIR_SUFFIX)
  PT_OBJDIR	= $(PW_LIBDIR)/$(PT_OBJBASE)
+@@ -1133,7 +1133,8 @@ LDFLAGS		+= $(DEBLDFLAGS)
+ 
+ else
+ 
+-OPTCCFLAGS	+= -O3 -DNDEBUG
++OPTCCFLAGS	+= -DNDEBUG
++#OPTCCFLAGS	+= -O3 -DNDEBUG
+ #OPTCCFLAGS	+= -DP_USE_INLINES=1
+ #OPTCCFLAGS	+= -fconserve-space
+ ifneq ($(OSTYPE),Carbon)
