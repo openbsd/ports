@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.15 1999/09/24 13:36:18 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/10/30 20:51:34 brad Exp $
 
-DISTNAME=       rarbsd
-PKGNAME=        rar-2.02
+DISTNAME=	rarbsd
+PKGNAME=	rar-2.02
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.rarsoft.com/pub/rar/ \
+MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
-EXTRACT_SUFX=
+EXTRACT_SUFX=	.sfx
+
+EXTRACT_CMD=		# empty
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 
 NEED_VERSION=	1.114
 
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"NOFEE: Can not charge for distribution"
-NO_PACKAGE=     Only unmodified original package can be distributed
+NO_PACKAGE=	"Only unmodified original package can be distributed"
 
-MAINTAINER=     ports@openbsd.org
-
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+MAINTAINER=	ports@openbsd.org
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
 pre-extract:
 	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
