@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/25 13:08:33 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/02 00:03:20 shell Exp $
 
 
 COMMENT=		"python module for GnuPG interface"
 
-VERSION=		0.2.1
+VERSION=		0.3.0
 DISTNAME=		GnuPGInterface-${VERSION}
 PKGNAME=		py-gnupg-${VERSION}
 CATEGORIES=     	security devel
-NEED_VERSION=		1.441
+NEED_VERSION=		1.448
 
 HOMEPAGE=		http://py-gnupg.sourceforge.net/
 
@@ -27,14 +27,14 @@ RUN_DEPENDS+=	python${PYTHON_VER}::lang/python \
 		gpg::security/gnupg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+
 SUBST_VARS=	PYTHON_VER
 
 do-build:
-	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py build \
-		--build-base=${WRKSRC}
+	${PY_CMD} build --build-base=${WRKSRC}
 
 do-install:
-	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py install \
-		--prefix=${PREFIX}
+	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>
