@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_vtexi_test,v 1.1.1.1 2005/01/11 07:11:00 sturm Exp $
+--- tests/vtexi.test.orig	Sun Oct  7 14:02:36 2001
++++ tests/vtexi.test	Sun Oct  7 14:02:52 2001
+@@ -24,4 +24,4 @@ END
+ 
+ $AUTOMAKE || exit 1
+ 
+-grep '^textutils\.info: textutils\.texi version\.texi$' Makefile.in
++grep '^textutils\.info: textutils\.texi \$(srcdir)/version\.texi$' Makefile.in
