@@ -1,0 +1,139 @@
+--- Dclock.c.orig	Fri Dec 31 18:28:18 1999
++++ Dclock.c	Fri Dec 31 18:39:27 1999
+@@ -367,8 +367,8 @@
+ 
+     if (w->dclock.interval_id != (XtIntervalId)NULL)
+ 	XtRemoveTimeOut(w->dclock.interval_id);
+-    XtReleaseGC (w, w->dclock.foreGC);
+-    XtReleaseGC (w, w->dclock.backGC);
++    XtReleaseGC ((Widget)w, w->dclock.foreGC);
++    XtReleaseGC ((Widget)w, w->dclock.backGC);
+     for (n = 0; n < 10; n++) {
+ 	XFreePixmap(XtDisplay(w), w->dclock.digits[n]);
+ 	XFreePixmap(XtDisplay(w), w->dclock.tiny_digits[n]);
+@@ -388,7 +388,7 @@
+     Pixmap pix;
+     GC gc = w->dclock.foreGC;
+ 
+-    if (!XtIsRealized(w))
++    if (!XtIsRealized((Widget)w))
+ 	return;
+ 
+     winwidth = w->core.width;
+@@ -629,7 +629,7 @@
+     Boolean save_fade = w->dclock.fade;
+     long t;
+ 
+-    if (!XtIsRealized(w))
++    if (!XtIsRealized((Widget)w))
+ 	return;
+ 
+     if (w->dclock.interval_id != (XtIntervalId)NULL) {
+@@ -663,7 +663,7 @@
+ {
+     char buf[11];
+     Boolean alarm_went_off = False;
+-    long t = time(0);
++    time_t t = time(0);
+     register struct tm *l_time = localtime(&t);
+     int digit_w = w->dclock.digit_w;
+     int digit_h = w->dclock.digit_h;
+@@ -875,7 +875,7 @@
+ 	if (*p != '%')
+ 	    *datep++ = *p;
+ 	else switch (*++p) {
+-	    when 'M':
++	    case 'M':
+ 		datep += strlen(strcpy(datep, Months[now->tm_mon]));
+ 	    when 'm':
+ 		datep += strlen(strcpy(datep, months[now->tm_mon]));
+@@ -888,11 +888,12 @@
+ 		    *datep++ = (now->tm_mday / 10 + '0');
+ 		*datep++ = now->tm_mday % 10 + '0';
+ 	    when 'Y':
+-		*datep++ = '1', *datep++ = '9';
++		snprintf(datep, 3, "%02.2d", now->tm_year + 1900);
++		datep += 2;
+ 		/* fall thru */
+ 	    case 'y':
+-		*datep++ = now->tm_year / 10 + '0';
+-		*datep++ = now->tm_year % 10 + '0';
++		snprintf(datep, 3, "%02.2d", now->tm_year % 100);
++		datep += 2;
+ 	    when '%':
+ 		*datep++ = *p;
+ 	    otherwise: ; /* nothing */
+@@ -960,8 +961,8 @@
+     ||  new->dclock.tails != current->dclock.tails
+     ||  new->dclock.fade != current->dclock.fade
+     ||  new->dclock.miltime != current->dclock.miltime) {
+-	XtReleaseGC (current, current->dclock.foreGC);
+-	XtReleaseGC (current, current->dclock.backGC);
++	XtReleaseGC ((Widget)current, current->dclock.foreGC);
++	XtReleaseGC ((Widget)current, current->dclock.backGC);
+ 	GetGC(new);
+ 	Resize(new); /* pixmaps need to be redrawn */
+ 	do_redraw = True;
+@@ -1024,7 +1025,7 @@
+     Arg arg;
+ 
+     XtSetArg(arg, XtNreverseVideo, !w->dclock.reverse);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+ }
+ 
+ static void
+@@ -1038,7 +1039,7 @@
+ 	return;
+     }
+     XtSetArg(arg, XtNmilitaryTime, !w->dclock.miltime);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+ }
+ 
+ static void
+@@ -1052,7 +1053,7 @@
+ 	return;
+     }
+     XtSetArg(arg, XtNseconds, !w->dclock.seconds);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+ }
+ 
+ static void
+@@ -1062,7 +1063,7 @@
+     Arg arg;
+ 
+     XtSetArg(arg, XtNfade, !w->dclock.fade);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+     if (w->dclock.fade && w->dclock.scroll)
+ 	toggle_scroll(w);
+ }
+@@ -1074,7 +1075,7 @@
+     Arg arg;
+ 
+     XtSetArg(arg, XtNtails, !w->dclock.tails);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+ }
+ 
+ static void
+@@ -1084,7 +1085,7 @@
+     Arg arg;
+ 
+     XtSetArg(arg, XtNalarm, !w->dclock.alarm);
+-    XtSetValues(w, &arg, 1);
++    XtSetValues((Widget)w, &arg, 1);
+ }
+ 
+ static void
+@@ -1124,7 +1125,7 @@
+ 		    int digit = w->dclock.alarm_time[i>1?i+1:i] - '0';
+ 		    int mod;
+ 		    switch (i) {
+-			when 0:
++			case 0:
+ 			    if (Alarm.hrs > 13 && digit == 1)
+ 				digit++;
+ 			    mod = 3;
