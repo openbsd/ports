@@ -36,3 +36,5 @@ FTP features:
 - publicfile supports pipelining.
 
 The 'compat' flavor replaces EPLF with old-style /bin/ls output.
+
+WWW: ${HOMEPAGE}

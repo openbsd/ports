@@ -23,3 +23,5 @@ serialmail supports SMTP, including ESMTP PIPELINING, and QMTP.
 
 serialmail uses ucspi-tcp/tcpclient for networking. It can also be used
 with future UCSPI clients for transparent compression, IPv6, etc.
+
+WWW: ${HOMEPAGE}

@@ -2,6 +2,6 @@ NS is a discrete event simulator targeted at networking research.
 Ns provides substantial support for simulation of TCP, routing, and multicast
 protocols. 
 
--Oscar <obonilla@fisicc-ufm.edu>
-
 A graphical front-end for ns can be found in the nam package.
+
+WWW: ${HOMEPAGE}

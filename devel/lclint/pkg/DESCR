@@ -6,3 +6,5 @@ checks than can be done by any standard lint.
 LCLint can detect lots of obscure errors that other lints can't find.
 It takes some getting used to, and tends to output quite a large number
 of warnings unless tuned for the current project.
+
+WWW: ${HOMEPAGE}

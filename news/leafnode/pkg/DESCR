@@ -11,3 +11,5 @@ It consists of several programs, three essential ones and several add-ons.
 
  - Texpire is responsible for deleting old and uninteresting news.  It
    deletes all discussion threads that are old and not recently read.
+
+WWW: ${HOMEPAGE}

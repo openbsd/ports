@@ -9,3 +9,5 @@ In order, its design goals are:
 This port is installed to be run from inetd, which is sufficient for normal
 usage. However, it is possible to build a stand-alone version, should you need
 better performance. 
+
+WWW: ${HOMEPAGE}

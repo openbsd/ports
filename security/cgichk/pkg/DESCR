@@ -1,8 +1,6 @@
-from www.securityfocus.com:
-
 Cgi Scanner 3 is a simple program which facilitates the scanning of
 hosts on a network for known cgi vulnerabilities. Upon finding a given
 cgi program, the script will optionally download information from the
 author's web page, detailing the exploit.
 
--d.
+WWW: ${HOMEPAGE}

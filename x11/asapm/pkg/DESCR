@@ -3,3 +3,5 @@ monitor for laptops and notebook PCs running Linux or
 FreeBSD/NetBSD/OpenBSD and X Windows.
 
 It works under AfterStep and WindowMaker.
+
+WWW: ${HOMEPAGE}

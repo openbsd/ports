@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 16:21:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/21 21:20:48 naddy Exp $
 
 DISTNAME=		enscript-1.6.1
 NEED_VERSION=		1.319
@@ -8,7 +8,7 @@ MAINTAINER=		Matt Behrens <matt@openbsd.org>
 
 HOMEPAGE=		http://people.ssh.fi/mtr/genscript/
 
-LICENSE_TYPE=		GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

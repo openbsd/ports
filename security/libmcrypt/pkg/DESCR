@@ -19,3 +19,4 @@ CAST-128 (known as CAST5), CAST-256, ARCFOUR and WAKE.  Block
 algorithms can be used in: CBC, ECB, CFB and OFB (8 bit and n bit,
 where n is the size of the algorithm's block length).
 
+WWW: ${HOMEPAGE}

@@ -21,3 +21,5 @@ For a brief description of the algorithms and the modes look at the
 mcrypt manpage (this may be out of date).  In mcrypt it is on the
 user to decide which algorithm he considers best for encrypting his
 data.
+
+WWW: ${HOMEPAGE}

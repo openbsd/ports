@@ -4,4 +4,4 @@ allow all other machines, without direct access to that network, to be
 relayed through the machine the Dante server is running on.  The external
 network will never see any other machines than the one Dante is running on.
 
-More information availible at http://www.inet.no/dante/
+WWW: ${HOMEPAGE}

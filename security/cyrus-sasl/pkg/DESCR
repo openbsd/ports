@@ -19,3 +19,5 @@ The following mechanisms are included in this distribution:
 The library can use a Berkeley DB, gdbm or ndbm file on the server side to
 store per-user authentication secrets.  The utility saslpasswd has been
 included for adding authentication secrets to the file.
+
+WWW: ${HOMEPAGE}

@@ -20,3 +20,5 @@ FTP-Proxy
 - Based on GNU AutoConf, supposed to run on many UNIX systems
 
 (*) Not in this OpenBSD port.
+
+WWW: ${HOMEPAGE}

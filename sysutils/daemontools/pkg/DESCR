@@ -11,4 +11,4 @@ matching specified patterns. It automatically rotates logs to limit
 the amount of disk space used. If the disk fills up, it pauses and
 tries again, without losing any data.
 
-Documentation can be found online at http://cr.yp.to/daemontools.html
+WWW: ${HOMEPAGE}

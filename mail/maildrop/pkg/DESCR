@@ -13,3 +13,5 @@ in compiled form.  However, it uses resources much more efficiently.
 Unlike procmail, maildrop will not read a 10 megabyte mail message
 into memory. Large messages are saved in a temporary file, and are
 filtered from the temporary file.
+
+WWW: ${HOMEPAGE}

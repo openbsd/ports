@@ -7,3 +7,5 @@ uvscan is an evaluation VirusScan running on OpenBSD under Linux emulation.
         stop using it and remove it from your computer. 
 
 Please see ${PREFIX}/share/doc/uvscan/license.txt for more information!
+
+WWW: ${HOMEPAGE}

@@ -9,4 +9,4 @@ don't have kaffe installed (which shares names with many JDK binaries.)
 You may want to build a kernel with
 options         SYSVSEM
 
-The URL for the this Java JDK is http://www.freebsd.org/java/
+WWW: ${HOMEPAGE}

@@ -8,3 +8,5 @@ one-time passwords, detailed accounting, and many other features.
 Applications that use the checkpassword interface will work with
 all of these tools.  Several tools have been specifically designed
 to support POP toasters.
+
+WWW: ${HOMEPAGE}

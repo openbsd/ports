@@ -28,3 +28,5 @@ tcpclient: who@, date@, finger@, http@, tcpcat, and mconnect.
 tcpserver and tcpclient conform to UCSPI, the UNIX Client-Server
 Program Interface, using the TCP protocol. UCSPI tools are available
 for several different networks.
+
+WWW: ${HOMEPAGE}

@@ -6,3 +6,5 @@ home page is http://bourbon.cs.umd.edu:8001/tgif/index.obj.
 
 Tgif drawings can be converted to a variety of formats, including GIF,
 encapsulated PostScript and XBM.
+
+WWW: ${HOMEPAGE}

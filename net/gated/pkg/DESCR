@@ -2,3 +2,5 @@ GateD routing protocol daemon
 
 This program implements various routing protocols such as OSPF, RIP,
 BGP, ISIS, et al.
+
+WWW: ${HOMEPAGE}

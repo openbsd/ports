@@ -20,3 +20,5 @@ fastforward does not support insecure sendmail-style program
 deliveries from include files; you can use qmail's secure built-in
 mechanisms instead. fastforward does support program deliveries
 from /etc/aliases.
+
+WWW: ${HOMEPAGE}

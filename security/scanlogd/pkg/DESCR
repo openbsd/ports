@@ -5,3 +5,5 @@ From the webpage:
     illustrate various attacks an IDS developer has to deal with.  Thus, 
     unlike some of the other port scan detection tools out there, scanlogd
     is designed to be totally safe to use."
+
+WWW: ${HOMEPAGE}

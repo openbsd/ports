@@ -1,4 +1,3 @@
-
 w3m is a lightweight text-mode pager that doubles as a WWW browser.
 
 It's main features (over lynx) are:
@@ -29,7 +28,7 @@ used as a text-mode WWW browser.
 
 Current problems are: 
 
-* Resize behaviour is imcomplete.
+* Resize behaviour is incomplete.
 * It can't show images inline. (It seems to be impossible as far as using
   xterm)
 * It doesn't decode MIME-body of the document.
@@ -40,4 +39,5 @@ Feel free to send your opinion to the author.
         Akinori Ito
         Faculty of Engineering, Yamagata University
         aito@ei5sun.yz.yamagata-u.ac.jp
-        http://ei5nazha.yz.yamagata-u.ac.jp/
+
+WWW: ${HOMEPAGE}

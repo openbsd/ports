@@ -6,5 +6,7 @@ over the :8 display, and caches states information that does not
 need to be send. It sends the remaining information to the server-side dxpc,
 which reconstitutes the full X-protocol for the X server.
 
-ssh can achieve some similar results, with less performance, but also less
+ssh can achieve some similar results, with less performance, but also fewer
 concerns about security.
+
+WWW: ${HOMEPAGE}

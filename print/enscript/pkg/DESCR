@@ -32,4 +32,4 @@ Enscript supports following character sets:
   - ps			PostScript font's default encoding
   - pslatin1		PostScript interpreter's `ISOLatin1Encoding'
 
-WWW: http://people.ssh.fi/mtr/genscript/
+WWW: ${HOMEPAGE}

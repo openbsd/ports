@@ -28,3 +28,5 @@ zones, and many nonstandard time zones.
 
 mess822 is fast. For example, extracting 10000 addresses from a
 160KB To field takes less than a second on a Pentium-100.
+
+WWW: ${HOMEPAGE}

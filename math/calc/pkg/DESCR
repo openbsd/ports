@@ -1,5 +1,3 @@
-From the webpage:
-
 Calc is arbitrary precision arithmetic system that uses a C-like
 language. Calc is useful as a calculator, an algorithm prototyped and
 as a mathematical research tool. More importantly, calc provides one
@@ -11,3 +9,5 @@ The calc language is a C-like language. The language includes
 commands such as variable declarations, expressions, tests, labels,
 loops, file operations, function calls. These commands are very
 similar to their counterparts in C.
+
+WWW: ${HOMEPAGE}

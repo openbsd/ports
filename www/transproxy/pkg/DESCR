@@ -9,3 +9,5 @@ server and transports data between the two sockets.
 
 Unlike some other transparent proxy solutions, this does not require the
 proxy run on the machine itself.
+
+WWW: ${HOMEPAGE}

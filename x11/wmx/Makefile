@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/21 21:20:57 naddy Exp $
 
 DISTNAME=	wmx-6pre6
-PKGNAME=        wmx-6pre6
 CATEGORIES=	x11
 NEED_VERSION=	1.305
 
-MASTER_SITES=	http://www.all-day-breakfast.com/wmx/
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
+MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 

@@ -8,4 +8,5 @@ for NetBSD, using sources by Poul-Henning Kamp <phk@FreeBSD.org>.
 
 OpenBSD source and cvs directories are available through CTM for those
 of us who are firewalled off from protocols such as cvsup or anoncvs.
-(See http://www.openbsd.org/ctm.html)
+
+WWW: ${HOMEPAGE}

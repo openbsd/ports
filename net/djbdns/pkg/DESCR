@@ -19,3 +19,5 @@ several components:
 - The dnsip, dnsipq, dnsname, dnstxt, and dnsmx programs are simple
   command-line interfaces to DNS. 
 - The dnsquery and dnstrace programs are DNS debugging tools.
+
+WWW: ${HOMEPAGE}

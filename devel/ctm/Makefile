@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/12/21 21:20:36 naddy Exp $
 # Poul-Henning Kamp <phk@FreeBSD.org>
 
 DISTNAME=		ctmkit
 PKGNAME=		ctm
 CATEGORIES=     	net devel
 
-HOMEPAGE=		"http://www.openbsd.org/ctm.html"
-#HOMEPAGE=		"http://www.FreeBSD.org/handbook/synching.html#CTM"
+HOMEPAGE=		http://www.openbsd.org/ctm.html
 
 MAINTAINER=		ports@openbsd.org
 
