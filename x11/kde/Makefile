@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/04/02 17:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/04/04 17:42:06 espie Exp $
 
      SUBDIR+= libs2
      SUBDIR+= base2
@@ -22,5 +22,55 @@
      SUBDIR+= games3
      SUBDIR+= graphics3
      SUBDIR+= network3
+     SUBDIR+= toys3
+     SUBDIR+= utils3
+     SUBDIR+= i18n3,af
+     SUBDIR+= i18n3,ar
+     SUBDIR+= i18n3,az
+     SUBDIR+= i18n3,bg
+     SUBDIR+= i18n3,bs
+     SUBDIR+= i18n3,ca
+     SUBDIR+= i18n3,cs
+     SUBDIR+= i18n3,da
+     SUBDIR+= i18n3,de
+     SUBDIR+= i18n3,el
+     SUBDIR+= i18n3,en_GB
+     SUBDIR+= i18n3,eo
+     SUBDIR+= i18n3,es
+     SUBDIR+= i18n3,et
+     SUBDIR+= i18n3,fi
+     SUBDIR+= i18n3,fr
+     SUBDIR+= i18n3,he
+     SUBDIR+= i18n3,hr
+     SUBDIR+= i18n3,hu
+     SUBDIR+= i18n3,id
+     SUBDIR+= i18n3,is
+     SUBDIR+= i18n3,it
+     SUBDIR+= i18n3,ja
+     SUBDIR+= i18n3,ko
+     SUBDIR+= i18n3,lt
+     SUBDIR+= i18n3,lv
+     SUBDIR+= i18n3,mt
+     SUBDIR+= i18n3,nb
+     SUBDIR+= i18n3,nl
+     SUBDIR+= i18n3,nn
+     SUBDIR+= i18n3,pl
+     SUBDIR+= i18n3,pt
+     SUBDIR+= i18n3,pt_BR
+     SUBDIR+= i18n3,ro
+     SUBDIR+= i18n3,ru
+     SUBDIR+= i18n3,sk
+     SUBDIR+= i18n3,sl
+     SUBDIR+= i18n3,sv
+     SUBDIR+= i18n3,ta
+     SUBDIR+= i18n3,th
+     SUBDIR+= i18n3,tr
+     SUBDIR+= i18n3,uk
+     SUBDIR+= i18n3,ven
+     SUBDIR+= i18n3,vi
+     SUBDIR+= i18n3,xh
+     SUBDIR+= i18n3,zh_CN
+     SUBDIR+= i18n3,zh_TW
+     SUBDIR+= i18n3,zu
 
 .include <bsd.port.subdir.mk>
