@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.35 2004/02/16 07:37:46 djm Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2004/04/01 08:11:17 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -36,7 +36,7 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS+=	pcre sasl sasl2 ldap mysql tls ipv6
+FLAVORS+=	pcre sasl2 ldap mysql tls ipv6
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -45,12 +45,6 @@ MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
 MAKE_CCARGS+=	-DNO_PCRE
-.endif
-
-.if ${FLAVOR:L:Msasl}
-LIB_DEPENDS+=	sasl::security/cyrus-sasl
-MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_SASL_AUTH 
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lkrb
 .endif
 
 .if ${FLAVOR:L:Msasl2}
