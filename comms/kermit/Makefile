@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/17 17:01:12 espie Exp $
 #
 
 DISTNAME=	cku192src
 PKGNAME=        kermit-6.0.192
 CATEGORIES=	comms
 NEED_VERSION=	1.191
-FAKE=No
+FAKE=		Yes
 
 RESTRICTED=	"'No redistribution' copyright"
 
@@ -21,6 +21,12 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.std.com/customers2/src/telcom/
 
 WRKDIST=	${WRKDIR}
+FAKE_FLAGS=	PREFIX='${PREFIX}' DESTDIR='${WRKINST}'
+
+post-patch:
+	mv ${WRKDIR}/makefile ${WRKDIR}/makefile.dist
+	cp ${FILESDIR}/Makefile ${WRKDIR}
+	cp ${FILESDIR}/dot.kermrc ${WRKDIR}
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/kermit

@@ -6,14 +6,12 @@ SRCS=   ckcmai.c ckucmd.c ckuusr.c ckuus2.c ckuus3.c ckuus4.c ckuus5.c \
         ckcfn3.c ckuxla.c ckucon.c ckutio.c ckufio.c ckudia.c ckuscr.c \
         ckcnet.c ckusig.c
 
-BINDIR=%%PREFIX%%/bin
-MANDIR=%%PREFIX%%/man/cat
+BINDIR=${PREFIX}/bin
+MANDIR=${PREFIX}/man/cat
 
-# Install the binary mode 1510, owned by uucp.dialer
-#
 BINOWN=		uucp
 BINGRP=		dialer
-BINMODE=	4510
+BINMODE=	4554
 
 CLEANFILES+= ckcpro.c ckcwart.o wart kermit.1
 
