@@ -1,0 +1,87 @@
+#!/usr/bin/perl -w
+
+# $OpenBSD: check-libs-elf,v 1.1 2004/02/01 23:07:30 espie Exp $
+
+#  Copyright (c) 2001 Marc Espie
+# 
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+#  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
+#  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+#  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+#  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+#  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#  SUCH DAMAGE.
+# 
+
+# Check that all libraries are mentioned in lib depends.
+
+use strict;
+
+sub find_library
+{
+	my $libname = shift;
+	my $LIBDIR=$ENV{'PKG_DBDIR'};
+	my @list = `fgrep -l lib$libname.so $LIBDIR/*/+CONTENTS`;
+	local $_;
+	if (@list != 1) {
+		return '???';
+	}
+	my $pkgname = $list[0];
+	chomp $pkgname;
+	open(FILE, $pkgname);
+	while (<FILE>) {
+		chomp;
+		if (m/^\@comment subdir\=(\S+)/) {
+			close FILE;
+			return $1;
+		}
+	}
+	$pkgname =~ s|$LIBDIR/(.*?)/\+CONTENTS|$1|;
+	return $pkgname;
+}
+
+my $error = 0;
+
+my %registered = map { s/.*\///; s/\.$//; s/(?:\.\d+){1,2}$//; ($_, 1); }
+	split(/[ ,\n]+/, $ENV{'LIB_DEPENDS'});
+
+open(my $libs, '<', shift) or die;
+open(my $builds, '<', shift) or die;
+while (<$builds>) {
+	chomp;
+	if (m/^.*\/lib(.*?)\.so((?:\.\d+)*)$/) {
+		$registered{$1} = $2;
+    	}
+}
+
+close($builds);
+
+while (<$libs>) {
+	my ($name, $major, $minor);
+	chomp;
+	if (m/^lib(\S+)\s+(\d+)\s+(\d+)$/) {
+		($name, $major, $minor) = ($1, $2, $3);
+	} elsif (m/^lib(\S+)$/) {
+		$name = $1;
+	}
+	unless (defined $registered{$name}) {
+		print "lib-depends-check: no mention of $name (".find_library($name).")\n";
+		$error = 1;
+	}
+}
+close($libs);
+
+exit($error);

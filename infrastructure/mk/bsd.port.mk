@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.605 2004/01/28 22:15:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.606 2004/02/01 23:07:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1305,6 +1305,7 @@ ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 
 # Do a brute-force ldd/objdump on all files under WRKINST.
 .if ${ELF_TOOLCHAIN:L} == "no"
+_CHECK_LIBS_SCRIPT=${PORTSDIR}/infrastructure/install/check-libs
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
 	@-${SUDO} cp -f /usr/libexec/ld.so ${WRKINST}/usr/libexec
@@ -1316,14 +1317,13 @@ ${_LIBLIST}: ${_FAKE_COOKIE}
 		grep '^	'|\
 		sort -u >$@
 .else
+_CHECK_LIBS_SCRIPT=${PORTSDIR}/infrastructure/install/check-libs-elf
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@cd ${WRKINST} && ${SUDO} find . -type f|\
 		xargs objdump -p 2>/dev/null |\
-		grep NEEDED |\
-		sed 's/\ lib//g' |\
-		sed 's/  NEEDED     /	library: /g' |\
-		sed 's/\.so\./ /g' |\
-		sed 's/^\(.*\)\ \([^\.]*\)\.\([^\.]*\)/\1\ \2\ \3/g' |\
+		sed -n \
+			-e '/^ *NEEDED *\(.*\)\.so\.\([0-9][0-9]*\)\.\([0-9][0-9]*\)$$/s//\1 \2 \3/p' \
+			-e '/^ *NEEDED *\(.*\)\.so$$/s//\1/p'| \
 		sort -u >$@
 .endif
 
@@ -1334,7 +1334,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 		find /usr/lib -path /usr/lib -o -type d -prune -o -type f -print; \
 		find ${X11BASE}/lib -path ${X11BASE}/lib -o -type d -prune -o -type f -print; \
 	}|\
-		fgrep .so.|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
+		egrep '(\.so\.|\.so$$)'|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
 
 
 
@@ -1358,7 +1358,7 @@ lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
 	@${_depfile_fragment}; \
 	LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" \
 	PKG_DBDIR='${PKG_DBDIR}' \
-		perl ${PORTSDIR}/infrastructure/install/check-libs \
+		perl ${_CHECK_LIBS_SCRIPT} \
 		${_LIBLIST} ${_BUILDLIBLIST}
 
 manpages-check: ${_FAKE_COOKIE}
