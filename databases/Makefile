@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2001/08/11 16:25:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2001/08/14 20:35:56 lebel Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
-     SUBDIR += cdb
      SUBDIR += db
      SUBDIR += db,java
      SUBDIR += freetds
