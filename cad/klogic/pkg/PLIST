@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/08 12:48:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/20 13:42:45 espie Exp $
 bin/klogic
 share/apps/klogic/klogicui.rc
 share/apps/klogic/pics/AND.xpm
@@ -103,6 +103,10 @@ share/doc/HTML/en/klogic/index.cache.bz2
 share/doc/HTML/en/klogic/index.docbook
 share/icons/klogic/klogic.xpm
 share/icons/klogic/klogicf.xpm
+share/locale/de/LC_MESSAGES/klogic.mo
+share/locale/fr/LC_MESSAGES/klogic.mo
+share/locale/it/LC_MESSAGES/klogic.mo
+share/locale/sv/LC_MESSAGES/klogic.mo
 @dirrm share/icons/klogic
 @dirrm share/doc/HTML/en/klogic
 @dirrm share/doc/HTML
