@@ -1,23 +1,12 @@
---- setup.cfg.orig	Thu Aug 14 12:31:34 2003
-+++ setup.cfg	Thu Oct  9 21:31:54 2003
-@@ -7,8 +7,8 @@
+--- setup.cfg.orig	Mon Nov  1 15:37:24 2004
++++ setup.cfg	Mon Nov  1 15:37:47 2004
+@@ -6,9 +6,6 @@
+ # Section for compiling the C extension module
  # for wrapping OpenLDAP 2 libs
- [_ldap]
  
--library_dirs = /usr/local/openldap-REL_ENG_2_1/lib
--include_dirs = /usr/local/openldap-REL_ENG_2_1/include /usr/include/sasl
-+#library_dirs = /usr/local/openldap-REL_ENG_2_1/lib
-+#include_dirs = /usr/local/openldap-REL_ENG_2_1/include /usr/include/sasl
- 
+-library_dirs = /usr/local/openldap-OPENLDAP_REL_ENG_2_2/lib /usr/local/sasl/lib
+-include_dirs = /usr/local/openldap-OPENLDAP_REL_ENG_2_2/include /usr/local/sasl/include/sasl /usr/include/sasl
+-
  extra_compile_args = 
- extra_objects = 
-@@ -25,7 +25,8 @@
- # Support for StartTLS/LDAPS, SASL bind and reentrant libldap_r.
- # This needs recent OpenLDAP 2.0.26+ or 2.1.3+ built with
- # ./configure --with-cyrus-sasl --with-tls
--libs = ldap_r lber sasl2 ssl crypto
-+#libs = ldap_r lber sasl2 ssl crypto
-+libs = ldap_r lber
+ extra_objects =
  
- # Installation options
- [install]

@@ -1,18 +1,19 @@
---- setup.py.orig	Wed Aug 20 22:27:10 2003
-+++ setup.py	Thu Oct  9 21:34:56 2003
-@@ -27,8 +27,13 @@
+--- setup.py.orig	Wed Oct 27 00:29:10 2004
++++ setup.py	Mon Nov 22 22:04:13 2004
+@@ -27,8 +27,14 @@ f.close()
  
  #-- A class describing the features and requirements of OpenLDAP 2.0
  class OpenLDAP2:
 -	library_dirs = []
 -	include_dirs = []
-+        localbase = os.getenv('LOCALBASE')
-+        if localbase == None:
-+                localbase = '/usr/local'
++	localbase = os.getenv('LOCALBASE')
++	if localbase == None:
++		print "LOCALBASE not set"
++		sys.exit(1)
 +
-+        library_dirs =  ['%s/lib' % localbase]
-+        include_dirs =  ['%s/include' % localbase]
-+ 
++	library_dirs = ['%s/lib' % localbase]
++	include_dirs = ['%s/include' % localbase, '%s/include/sasl' % localbase]
++
  	extra_compile_args = []
  	extra_link_args = []
  	extra_objects = []
