@@ -1,6 +1,18 @@
-$OpenBSD: patch-src_IO_dpi_c,v 1.1 2003/02/22 17:11:05 couderc Exp $
---- src/IO/dpi.c.orig	Thu Feb 13 22:56:14 2003
-+++ src/IO/dpi.c	Thu Feb 20 21:24:50 2003
+$OpenBSD: patch-src_IO_dpi_c,v 1.2 2003/03/02 19:15:42 pvalchev Exp $
+--- src/IO/dpi.c.orig	Thu Feb 13 14:56:14 2003
++++ src/IO/dpi.c	Sun Mar  2 12:08:18 2003
+@@ -305,9 +305,9 @@ static gint Dpi_launch_server()
+    if (pid == 0) {
+       /* This is the child process.  Execute the command. */
+       gchar *path1 = a_Misc_prepend_user_home(".dillo/bm_srv12");
+-      if (execl(path1, "bm_srv12", NULL) == -1) {
++      if (execl(path1, "bm_srv12", (void *)NULL) == -1) {
+          g_free(path1);
+-         if (execlp("bm_srv12", "bm_srv12", NULL) == -1)
++         if (execlp("bm_srv12", "bm_srv12", (void *)NULL) == -1)
+             exit (EXIT_FAILURE);
+       }
+    } else if (pid < 0) {
 @@ -362,7 +362,7 @@ static gint Dpi_connect_socket()
        return -1;
     }
