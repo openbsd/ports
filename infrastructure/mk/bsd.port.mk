@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.619 2004/06/22 20:05:46 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.620 2004/07/11 20:44:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -796,18 +796,14 @@ __CKSUMFILES+=${_file}
 ALLFILES:=${__CKSUMFILES}
 
 .if defined(IGNOREFILES)
-.  for _file in ${IGNOREFILES}
-__CKSUMFILES:=${__CKSUMFILES:N${_file}}
-.  endfor
+ERRORS+= "Fatal: don't use IGNOREFILES"
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
 _CKSUMFILES=	${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
-_IGNOREFILES=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
 .else
 _CKSUMFILES=	${__CKSUMFILES}
-_IGNOREFILES=	${IGNOREFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -1213,9 +1209,6 @@ makesum: fetch-all
 		for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 .endif
 
@@ -1227,9 +1220,6 @@ addsum: fetch-all
 	 	for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
 		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
@@ -1423,8 +1413,7 @@ checksum: fetch
 			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
 			  OK=false;; \
 			"IGNORE") \
-			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
-			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+			  echo ">> Error: checksum for $$file is set to IGNORE in distinfo"; \
 			  OK=false;; \
 			*) \
 			  CKSUM=`$$cipher < $$file`; \
@@ -1439,18 +1428,6 @@ checksum: fetch
 		  esac; \
 		done; \
 		set --; \
-		for file in ${_IGNOREFILES}; do \
-		  set -- `grep "($$file)" $$checksum_file` || \
-			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
-			  OK=false; } ; \
-		  case "$$4" in \
-		  	"IGNORE") : ;; \
-			*) \
-			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
-			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
-			  OK=false;; \
-		  esac; \
-		done; \
 		if ! $$OK; then \
 		  if ${REFETCH}; then \
 		  	cd ${.CURDIR} && ${MAKE} _refetch _PROBLEMS="$$list"; \
