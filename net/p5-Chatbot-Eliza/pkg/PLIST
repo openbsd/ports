@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/17 23:02:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:43 espie Exp $
+${P5SITE}/Chatbot/
 ${P5SITE}/Chatbot/Eliza.pm
-@comment ${P5ARCH}/auto/Chatbot/.packlist
-man/man3p/Chatbot::Eliza.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Chatbot
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Chatbot
+@man man/man3p/Chatbot::Eliza.3p

@@ -1,16 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/05/13 08:57:47 margarida Exp $
-man/man8/ettercap.8
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:40 espie Exp $
+lib/ettercap/
+@man man/man8/ettercap.8
 sbin/ettercap
+share/doc/ettercap/
+share/doc/ettercap/AUTHORS
+share/doc/ettercap/CHANGELOG
+share/doc/ettercap/COPYING
+share/doc/ettercap/HISTORY
 share/doc/ettercap/HYDRA.HOWTO
+share/doc/ettercap/INSTALL
 share/doc/ettercap/KNOWN-BUGS
+share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/README.WIN32
 share/doc/ettercap/ROPER.HOWTO
+share/doc/ettercap/THANKS
+share/doc/ettercap/TODO
+share/doc/ettercap/TODO.WIN32
 share/doc/ettercap/ZARATAN.HOWTO
 share/doc/ettercap/debug.txt
 share/doc/ettercap/errors.txt
 share/doc/ettercap/ettercap.fr.8.in
 share/doc/ettercap/threads.txt
+share/ettercap/
+share/ettercap/AUTHORS
+share/ettercap/THANKS
 share/ettercap/etter.conf
 share/ettercap/etter.dns
 share/ettercap/etter.filter
@@ -23,6 +38,3 @@ share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
 share/ettercap/services
 %%SHARED%%
-@dirrm share/ettercap
-@dirrm share/doc/ettercap
-@dirrm lib/ettercap

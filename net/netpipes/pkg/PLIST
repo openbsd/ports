@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/22 23:03:23 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:42 espie Exp $
 bin/encapsulate
 bin/faucet
 bin/getpeername
@@ -6,10 +6,11 @@ bin/getsockname
 bin/hose
 bin/sockdown
 bin/timelimit
-man/man1/encapsulate.1
-man/man1/faucet.1
-man/man1/getpeername.1
-man/man1/hose.1
-man/man1/netpipes.1
-man/man1/sockdown.1
-man/man1/timelimit.1
+@man man/man1/encapsulate.1
+@man man/man1/faucet.1
+@man man/man1/getpeername.1
+@man man/man1/hose.1
+@man man/man1/netpipes.1
+@man man/man1/sockdown.1
+@man man/man1/ssl-auth.1
+@man man/man1/timelimit.1

@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/04/18 20:09:57 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:43 espie Exp $
+${P5ARCH}/Net/
+${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS.pm
 @comment ${P5ARCH}/Net/DNS/FAQ.pod
 ${P5ARCH}/Net/DNS/Header.pm
 ${P5ARCH}/Net/DNS/Nameserver.pm
 ${P5ARCH}/Net/DNS/Packet.pm
 ${P5ARCH}/Net/DNS/Question.pm
+${P5ARCH}/Net/DNS/RR/
 ${P5ARCH}/Net/DNS/RR.pm
 ${P5ARCH}/Net/DNS/RR/A.pm
 ${P5ARCH}/Net/DNS/RR/AAAA.pm
@@ -38,6 +41,7 @@ ${P5ARCH}/Net/DNS/RR/TSIG.pm
 ${P5ARCH}/Net/DNS/RR/TXT.pm
 ${P5ARCH}/Net/DNS/RR/Unknown.pm
 ${P5ARCH}/Net/DNS/RR/X25.pm
+${P5ARCH}/Net/DNS/Resolver/
 ${P5ARCH}/Net/DNS/Resolver.pm
 ${P5ARCH}/Net/DNS/Resolver/Base.pm
 ${P5ARCH}/Net/DNS/Resolver/Cygwin.pm
@@ -45,58 +49,53 @@ ${P5ARCH}/Net/DNS/Resolver/Recurse.pm
 ${P5ARCH}/Net/DNS/Resolver/UNIX.pm
 ${P5ARCH}/Net/DNS/Resolver/Win32.pm
 ${P5ARCH}/Net/DNS/Update.pm
-@comment ${P5ARCH}/auto/Net/DNS/.packlist
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/DNS/
 ${P5ARCH}/auto/Net/DNS/DNS.bs
 ${P5ARCH}/auto/Net/DNS/DNS.so
-man/man3p/Net::DNS.3p
-man/man3p/Net::DNS::FAQ.3p
-man/man3p/Net::DNS::Header.3p
-man/man3p/Net::DNS::Nameserver.3p
-man/man3p/Net::DNS::Packet.3p
-man/man3p/Net::DNS::Question.3p
-man/man3p/Net::DNS::RR.3p
-man/man3p/Net::DNS::RR::A.3p
-man/man3p/Net::DNS::RR::AAAA.3p
-man/man3p/Net::DNS::RR::AFSDB.3p
-man/man3p/Net::DNS::RR::CERT.3p
-man/man3p/Net::DNS::RR::CNAME.3p
-man/man3p/Net::DNS::RR::DNAME.3p
-man/man3p/Net::DNS::RR::EID.3p
-man/man3p/Net::DNS::RR::HINFO.3p
-man/man3p/Net::DNS::RR::ISDN.3p
-man/man3p/Net::DNS::RR::LOC.3p
-man/man3p/Net::DNS::RR::MB.3p
-man/man3p/Net::DNS::RR::MG.3p
-man/man3p/Net::DNS::RR::MINFO.3p
-man/man3p/Net::DNS::RR::MR.3p
-man/man3p/Net::DNS::RR::MX.3p
-man/man3p/Net::DNS::RR::NAPTR.3p
-man/man3p/Net::DNS::RR::NIMLOC.3p
-man/man3p/Net::DNS::RR::NS.3p
-man/man3p/Net::DNS::RR::NSAP.3p
-man/man3p/Net::DNS::RR::NULL.3p
-man/man3p/Net::DNS::RR::OPT.3p
-man/man3p/Net::DNS::RR::PTR.3p
-man/man3p/Net::DNS::RR::PX.3p
-man/man3p/Net::DNS::RR::RP.3p
-man/man3p/Net::DNS::RR::RT.3p
-man/man3p/Net::DNS::RR::SOA.3p
-man/man3p/Net::DNS::RR::SRV.3p
-man/man3p/Net::DNS::RR::TKEY.3p
-man/man3p/Net::DNS::RR::TSIG.3p
-man/man3p/Net::DNS::RR::TXT.3p
-man/man3p/Net::DNS::RR::Unknown.3p
-man/man3p/Net::DNS::RR::X25.3p
-man/man3p/Net::DNS::Resolver.3p
-man/man3p/Net::DNS::Resolver::Base.3p
-man/man3p/Net::DNS::Resolver::Cygwin.3p
-man/man3p/Net::DNS::Resolver::Recurse.3p
-man/man3p/Net::DNS::Resolver::UNIX.3p
-man/man3p/Net::DNS::Resolver::Win32.3p
-man/man3p/Net::DNS::Update.3p
-@dirrm ${P5ARCH}/auto/Net/DNS
-@dirrm ${P5ARCH}/auto/Net
-@dirrm ${P5ARCH}/Net/DNS/Resolver
-@dirrm ${P5ARCH}/Net/DNS/RR
-@dirrm ${P5ARCH}/Net/DNS
-@dirrm ${P5ARCH}/Net
+@man man/man3p/Net::DNS.3p
+@man man/man3p/Net::DNS::FAQ.3p
+@man man/man3p/Net::DNS::Header.3p
+@man man/man3p/Net::DNS::Nameserver.3p
+@man man/man3p/Net::DNS::Packet.3p
+@man man/man3p/Net::DNS::Question.3p
+@man man/man3p/Net::DNS::RR.3p
+@man man/man3p/Net::DNS::RR::A.3p
+@man man/man3p/Net::DNS::RR::AAAA.3p
+@man man/man3p/Net::DNS::RR::AFSDB.3p
+@man man/man3p/Net::DNS::RR::CERT.3p
+@man man/man3p/Net::DNS::RR::CNAME.3p
+@man man/man3p/Net::DNS::RR::DNAME.3p
+@man man/man3p/Net::DNS::RR::EID.3p
+@man man/man3p/Net::DNS::RR::HINFO.3p
+@man man/man3p/Net::DNS::RR::ISDN.3p
+@man man/man3p/Net::DNS::RR::LOC.3p
+@man man/man3p/Net::DNS::RR::MB.3p
+@man man/man3p/Net::DNS::RR::MG.3p
+@man man/man3p/Net::DNS::RR::MINFO.3p
+@man man/man3p/Net::DNS::RR::MR.3p
+@man man/man3p/Net::DNS::RR::MX.3p
+@man man/man3p/Net::DNS::RR::NAPTR.3p
+@man man/man3p/Net::DNS::RR::NIMLOC.3p
+@man man/man3p/Net::DNS::RR::NS.3p
+@man man/man3p/Net::DNS::RR::NSAP.3p
+@man man/man3p/Net::DNS::RR::NULL.3p
+@man man/man3p/Net::DNS::RR::OPT.3p
+@man man/man3p/Net::DNS::RR::PTR.3p
+@man man/man3p/Net::DNS::RR::PX.3p
+@man man/man3p/Net::DNS::RR::RP.3p
+@man man/man3p/Net::DNS::RR::RT.3p
+@man man/man3p/Net::DNS::RR::SOA.3p
+@man man/man3p/Net::DNS::RR::SRV.3p
+@man man/man3p/Net::DNS::RR::TKEY.3p
+@man man/man3p/Net::DNS::RR::TSIG.3p
+@man man/man3p/Net::DNS::RR::TXT.3p
+@man man/man3p/Net::DNS::RR::Unknown.3p
+@man man/man3p/Net::DNS::RR::X25.3p
+@man man/man3p/Net::DNS::Resolver.3p
+@man man/man3p/Net::DNS::Resolver::Base.3p
+@man man/man3p/Net::DNS::Resolver::Cygwin.3p
+@man man/man3p/Net::DNS::Resolver::Recurse.3p
+@man man/man3p/Net::DNS::Resolver::UNIX.3p
+@man man/man3p/Net::DNS::Resolver::Win32.3p
+@man man/man3p/Net::DNS::Update.3p

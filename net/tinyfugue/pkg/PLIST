@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/12/22 23:26:38 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:46 espie Exp $
 bin/tf
-man/man1/tf.1
+@man man/man1/tf.1
+share/tinyfugue/
 share/tinyfugue/README
 share/tinyfugue/alias.tf
 share/tinyfugue/at.tf
@@ -55,4 +56,3 @@ share/tinyfugue/tr.tf
 share/tinyfugue/watch.tf
 share/tinyfugue/world-q.tf
 share/tinyfugue/worldqueue.tf
-@dirrm share/tinyfugue

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/19 21:34:58 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:40 espie Exp $
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -20,39 +20,39 @@ bin/flow-split
 bin/flow-stat
 bin/flow-tag
 bin/flow-xlate
-man/man1/flow-capture.1
-man/man1/flow-cat.1
-man/man1/flow-dscan.1
-man/man1/flow-expire.1
-man/man1/flow-export.1
-man/man1/flow-fanout.1
-man/man1/flow-filter.1
-man/man1/flow-gen.1
-man/man1/flow-header.1
-man/man1/flow-import.1
-man/man1/flow-mask.1
-man/man1/flow-merge.1
-man/man1/flow-nfilter.1
-man/man1/flow-print.1
-man/man1/flow-receive.1
-man/man1/flow-report.1
-man/man1/flow-send.1
-man/man1/flow-split.1
-man/man1/flow-stat.1
-man/man1/flow-tag.1
-man/man1/flow-tools-examples.1
-man/man1/flow-tools.1
-man/man1/flow-xlate.1
+@man man/man1/flow-capture.1
+@man man/man1/flow-cat.1
+@man man/man1/flow-dscan.1
+@man man/man1/flow-expire.1
+@man man/man1/flow-export.1
+@man man/man1/flow-fanout.1
+@man man/man1/flow-filter.1
+@man man/man1/flow-gen.1
+@man man/man1/flow-header.1
+@man man/man1/flow-import.1
+@man man/man1/flow-mask.1
+@man man/man1/flow-merge.1
+@man man/man1/flow-nfilter.1
+@man man/man1/flow-print.1
+@man man/man1/flow-receive.1
+@man man/man1/flow-report.1
+@man man/man1/flow-send.1
+@man man/man1/flow-split.1
+@man man/man1/flow-stat.1
+@man man/man1/flow-tag.1
+@man man/man1/flow-tools-examples.1
+@man man/man1/flow-tools.1
+@man man/man1/flow-xlate.1
+share/examples/flow-tools/
+share/examples/flow-tools/cfg/
 share/examples/flow-tools/cfg/filter.cfg
 share/examples/flow-tools/cfg/map.cfg
 share/examples/flow-tools/cfg/mask.cfg
 share/examples/flow-tools/cfg/stat.cfg
 share/examples/flow-tools/cfg/tag.cfg
+share/examples/flow-tools/sym/
 share/examples/flow-tools/sym/asn.sym
 share/examples/flow-tools/sym/ip-prot.sym
 share/examples/flow-tools/sym/ip-type.sym
 share/examples/flow-tools/sym/tag.sym
 share/examples/flow-tools/sym/tcp-port.sym
-@dirrm share/examples/flow-tools/sym
-@dirrm share/examples/flow-tools/cfg
-@dirrm share/examples/flow-tools

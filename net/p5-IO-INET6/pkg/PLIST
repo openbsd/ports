@@ -1,11 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/31 02:08:29 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
+${P5SITE}/IO/
+${P5SITE}/IO/Socket/
 ${P5SITE}/IO/Socket/INET6.pm
-@comment ${P5ARCH}/auto/IO/Socket/INET6/.packlist
-man/man3p/IO::Socket::INET6.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/IO/Socket/INET6
-@comment @dirrm ${P5ARCH}/auto/IO/Socket
-@comment @dirrm ${P5ARCH}/auto/IO
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/IO/Socket
-@dirrm ${P5SITE}/IO
+@man man/man3p/IO::Socket::INET6.3p

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/06/01 23:36:32 jakob Exp $
-sbin/arpwatch
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:17:38 espie Exp $
+@man man/man8/arpsnmp.8
+@man man/man8/arpwatch.8
 sbin/arpsnmp
-man/man8/arpwatch.8
-man/man8/arpsnmp.8
+sbin/arpwatch
+share/examples/arpwatch/
 share/examples/arpwatch/arp2ethers
-share/examples/arpwatch/ethercodes.dat
 share/examples/arpwatch/d.awk
 share/examples/arpwatch/e.awk
+share/examples/arpwatch/ethercodes.dat
 share/examples/arpwatch/p.awk
-@dirrm share/examples/arpwatch

@@ -1,21 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/15 20:19:32 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
 @pkgcfl maradns-1.1.*
 bin/askmara
 bin/getzone
-man/man1/askmara.1
-man/man1/getzone.1
-man/man5/csv1.5
-man/man5/mararc.5
-man/man8/maradns.8
-man/man8/zoneserver.8
+@man man/man1/askmara.1
+@man man/man1/getzone.1
+@man man/man5/csv1.5
+@man man/man5/mararc.5
+@man man/man8/maradns.8
+@man man/man8/zoneserver.8
 sbin/maradns
 sbin/zoneserver
+share/doc/maradns/
+share/doc/maradns/Makefile
 share/doc/maradns/QuickStart
 share/doc/maradns/README
 share/doc/maradns/changelog.html
 share/doc/maradns/changelog.txt
 share/doc/maradns/credits.txt
 share/doc/maradns/download.html
+share/doc/maradns/examples/
+share/doc/maradns/examples/Makefile
 share/doc/maradns/examples/example_authoritative_mararc.txt
 share/doc/maradns/examples/example_csv1
 share/doc/maradns/examples/example_csv1.txt
@@ -26,6 +30,8 @@ share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
 share/doc/maradns/files.txt
 share/doc/maradns/logfile
+share/doc/maradns/man/
+share/doc/maradns/man/Makefile
 share/doc/maradns/man/askmara.1
 share/doc/maradns/man/csv1.5
 share/doc/maradns/man/getzone.1
@@ -35,6 +41,7 @@ share/doc/maradns/man/mararc.5
 share/doc/maradns/man/read.manpage
 share/doc/maradns/man/zoneserver.8
 share/doc/maradns/maradns.pgp.key
+share/doc/maradns/misc/
 share/doc/maradns/misc/0README
 share/doc/maradns/misc/RFC1035.compliance
 share/doc/maradns/misc/cache.poison.protection
@@ -45,6 +52,7 @@ share/doc/maradns/misc/describing_dns_rrs.html
 share/doc/maradns/misc/handling.compression
 share/doc/maradns/misc/how.maradns.stores.rrs
 share/doc/maradns/misc/how.to.support.sql
+share/doc/maradns/misc/js-manpages/
 share/doc/maradns/misc/js-manpages/README
 share/doc/maradns/misc/js-manpages/js_alloc.3
 share/doc/maradns/misc/js-manpages/js_append.3
@@ -90,6 +98,7 @@ share/doc/maradns/misc/js-manpages/js_tolower.3
 share/doc/maradns/misc/js-manpages/js_unlock.3
 share/doc/maradns/misc/js-manpages/js_val.3
 share/doc/maradns/misc/js-manpages/js_write.3
+share/doc/maradns/misc/man_macros/
 share/doc/maradns/misc/man_macros/README
 share/doc/maradns/misc/man_macros/example_manpage.1
 share/doc/maradns/misc/man_macros/man.macros
@@ -102,9 +111,12 @@ share/doc/maradns/misc/propagation.txt
 share/doc/maradns/misc/recursive-case-insensitive
 share/doc/maradns/misc/recursive.algorithm
 share/doc/maradns/misc/resolution.algorithm
+share/doc/maradns/misc/rfc/
 share/doc/maradns/misc/rfc/rfc1035.txt
 share/doc/maradns/misc/rtest.output
+share/doc/maradns/misc/spammers/
 share/doc/maradns/misc/spammers/azmalink.net
+share/doc/maradns/misc/spammers/hiddenonline/
 share/doc/maradns/misc/spammers/hiddenonline/google.search
 share/doc/maradns/misc/spammers/hiddenonline/hiddenonline.spam
 share/doc/maradns/misc/spammers/hiddenonline/whois.dimeit.com
@@ -113,7 +125,10 @@ share/doc/maradns/misc/www.monty.de
 share/doc/maradns/misc/year_2038_statement.abw
 share/doc/maradns/misc/year_2038_statement.html
 share/doc/maradns/misc/year_2038_statement.txt
+share/doc/maradns/ps/
+share/doc/maradns/ps/Makefile
 share/doc/maradns/ps/README
+share/doc/maradns/source/
 share/doc/maradns/source/SOURCE.FILES
 share/doc/maradns/source/askmara.ej
 share/doc/maradns/source/authoritative.ej
@@ -148,6 +163,8 @@ share/doc/maradns/source/recursive.ej
 share/doc/maradns/source/security_design.embed
 share/doc/maradns/source/tutorial.ej
 share/doc/maradns/source/zoneserver.ej
+share/doc/maradns/tutorial/
+share/doc/maradns/tutorial/Makefile
 share/doc/maradns/tutorial/authoritative.html
 share/doc/maradns/tutorial/compile.html
 share/doc/maradns/tutorial/convert.html
@@ -158,15 +175,3 @@ share/doc/maradns/tutorial/man.mararc.html
 share/doc/maradns/tutorial/recordtypes.html
 share/doc/maradns/tutorial/recursive.html
 share/doc/maradns/tutorial/tutorial.html
-@dirrm share/doc/maradns/tutorial
-@dirrm share/doc/maradns/source
-@dirrm share/doc/maradns/ps
-@dirrm share/doc/maradns/misc/spammers/hiddenonline
-@dirrm share/doc/maradns/misc/spammers
-@dirrm share/doc/maradns/misc/rfc
-@dirrm share/doc/maradns/misc/man_macros
-@dirrm share/doc/maradns/misc/js-manpages
-@dirrm share/doc/maradns/misc
-@dirrm share/doc/maradns/man
-@dirrm share/doc/maradns/examples
-@dirrm share/doc/maradns

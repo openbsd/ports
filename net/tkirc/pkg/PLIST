@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/16 08:36:23 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
 bin/tkirc
+share/doc/tkirc/
 share/doc/tkirc/COPYING
 share/doc/tkirc/README
+share/examples/tkirc/
 share/examples/tkirc/netscape.sh
-share/examples/tkirc/tkircrc-example
+share/examples/tkirc/scripts/
 share/examples/tkirc/scripts/crazy1.tcl
 share/examples/tkirc/scripts/crazy2.tcl
 share/examples/tkirc/scripts/crazy3.tcl
 share/examples/tkirc/scripts/examples.tcl
 share/examples/tkirc/scripts/hilo.tcl
 share/examples/tkirc/scripts/sound.tcl
-@dirrm share/examples/tkirc/scripts
-@dirrm share/examples/tkirc
-@dirrm share/doc/tkirc
+share/examples/tkirc/tkircrc-example

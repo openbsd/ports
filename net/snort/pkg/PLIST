@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/04/12 14:56:31 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:17:46 espie Exp $
 bin/snort
-man/man8/snort.8
+@man man/man8/snort.8
+share/examples/snort/
 share/examples/snort/attack-responses.rules
 share/examples/snort/backdoor.rules
 share/examples/snort/bad-traffic.rules
@@ -55,4 +56,3 @@ share/examples/snort/web-iis.rules
 share/examples/snort/web-misc.rules
 share/examples/snort/web-php.rules
 share/examples/snort/x11.rules
-@dirrm share/examples/snort

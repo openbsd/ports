@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/06/19 21:18:59 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:46 espie Exp $
 bin/smokeping
+lib/smokeping/
 lib/smokeping/smokeping.cgi
+libdata/perl5/site_perl/ISG/
 libdata/perl5/site_perl/ISG/ParseConfig.pm
 libdata/perl5/site_perl/Smokeping.pm
+libdata/perl5/site_perl/probes/
 libdata/perl5/site_perl/probes/CiscoRTTMonDNS.pm
 libdata/perl5/site_perl/probes/CiscoRTTMonEchoICMP.pm
 libdata/perl5/site_perl/probes/CiscoRTTMonTcpConnect.pm
@@ -26,10 +29,11 @@ libdata/perl5/site_perl/probes/basefork.pm
 libdata/perl5/site_perl/probes/basevars.pm
 libdata/perl5/site_perl/probes/passwordchecker.pm
 libdata/perl5/site_perl/probes/telnetIOSPing.pm
-man/man1/smokeping.1
-man/man1/smokeping.cgi.1
-man/man1/smokeping_config.1
-man/man1/smokeping_install.1
+@man man/man1/smokeping.1
+@man man/man1/smokeping.cgi.1
+@man man/man1/smokeping_config.1
+@man man/man1/smokeping_install.1
+share/doc/smokeping/
 share/doc/smokeping/CiscoRTTMonDNS.pm.txt
 share/doc/smokeping/CiscoRTTMonEchoICMP.pm.txt
 share/doc/smokeping/CiscoRTTMonTcpConnect.pm.txt
@@ -59,12 +63,8 @@ share/doc/smokeping/smokeping.txt
 share/doc/smokeping/smokeping_config.txt
 share/doc/smokeping/smokeping_install.txt
 share/doc/smokeping/telnetIOSPing.pm.txt
+share/examples/smokeping/
 share/examples/smokeping/basepage.html
 share/examples/smokeping/config
 share/examples/smokeping/config-echoping
 share/examples/smokeping/smokemail
-@dirrm share/examples/smokeping
-@dirrm share/doc/smokeping
-@dirrm libdata/perl5/site_perl/probes
-@dirrm libdata/perl5/site_perl/ISG
-@dirrm lib/smokeping

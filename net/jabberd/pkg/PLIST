@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/29 13:12:30 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
+libexec/jabberd/
 libexec/jabberd/c2s
 libexec/jabberd/resolver
 libexec/jabberd/router
 libexec/jabberd/s2s
 libexec/jabberd/sm
+@man man/man8/c2s.8
+@man man/man8/jabberd.8
+@man man/man8/resolver.8
+@man man/man8/router.8
+@man man/man8/s2s.8
+@man man/man8/sm.8
 sbin/jabberd
-man/man8/c2s.8
-man/man8/jabberd.8
-man/man8/resolver.8
-man/man8/router.8
-man/man8/s2s.8
-man/man8/sm.8
+share/examples/jabberd/
 share/examples/jabberd/c2s.xml
 share/examples/jabberd/db-setup.mysql
 share/examples/jabberd/jabberd.cfg
@@ -19,9 +21,8 @@ share/examples/jabberd/router-users.xml
 share/examples/jabberd/router.xml
 share/examples/jabberd/s2s.xml
 share/examples/jabberd/sm.xml
+share/examples/jabberd/templates/
 share/examples/jabberd/templates/roster.xml
-@dirrm share/examples/jabberd/templates
-@dirrm share/examples/jabberd
 @cwd ${SYSCONFDIR}
 @extra jabberd/templates/roster.xml
 @extra jabberd/templates

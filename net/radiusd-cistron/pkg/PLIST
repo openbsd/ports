@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/24 20:43:19 danh Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:45 espie Exp $
 @pkgcfl radiusd-lucent-*
 bin/builddbm
 bin/radclient
@@ -6,20 +6,24 @@ bin/radlast
 bin/radtest
 bin/radwho
 bin/radzap
-man/man1/radclient.1
-man/man1/radlast.1
-man/man1/radtest.1
-man/man1/radwho.1
-man/man1/radzap.1
-man/man5/clients.5
-man/man5/naslist.5
-man/man8/builddbm.8
-man/man8/radiusd.8
-man/man8/radrelay.8
-man/man8/radwatch.8
+@man man/man1/radclient.1
+@man man/man1/radlast.1
+@man man/man1/radtest.1
+@man man/man1/radwho.1
+@man man/man1/radzap.1
+@man man/man5/clients.5
+man/man5/clients.5rad
+@man man/man5/naslist.5
+man/man5/naslist.5rad
+@man man/man8/builddbm.8
+man/man8/builddbm.8rad
+@man man/man8/radiusd.8
+@man man/man8/radrelay.8
+@man man/man8/radwatch.8
 sbin/checkrad
 sbin/radiusd
 sbin/radrelay
+share/doc/radiusd-cistron/
 share/doc/radiusd-cistron/README
 share/doc/radiusd-cistron/README.CVX
 share/doc/radiusd-cistron/README.Y2K
@@ -31,6 +35,7 @@ share/doc/radiusd-cistron/README.radrelay
 share/doc/radiusd-cistron/README.simul
 share/doc/radiusd-cistron/README.tunnel
 share/doc/radiusd-cistron/README.usersfile
+share/examples/radiusd-cistron/
 share/examples/radiusd-cistron/clients
 share/examples/radiusd-cistron/dictionary
 share/examples/radiusd-cistron/dictionary.ascend
@@ -52,7 +57,5 @@ share/examples/radiusd-cistron/naslist
 share/examples/radiusd-cistron/naspasswd
 share/examples/radiusd-cistron/realms
 share/examples/radiusd-cistron/users
-@dirrm share/examples/radiusd-cistron
-@dirrm share/doc/radiusd-cistron
 @extraunexec rm -rf ${SYSCONFDIR}/raddb
 @extraunexec rm -rf /var/log/radacct

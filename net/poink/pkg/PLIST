@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/16 20:30:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:44 espie Exp $
 bin/poink
-man/man1/poink.1
+@man man/man1/poink.1
+share/doc/poink/
 share/doc/poink/README
-@dirrm share/doc/poink

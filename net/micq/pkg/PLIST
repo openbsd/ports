@@ -1,28 +1,57 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/01/21 18:16:23 david Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/15 18:17:41 espie Exp $
 bin/micq
-man/de/man1/micq.1
-man/de/man5/micqrc.5
-man/de/man7/micq.7
-man/es/man1/micq.1
-man/es/man7/micq.7
-man/fr/man1/micq.1
-man/fr/man5/micqrc.5
-man/fr/man7/micq.7
-man/it/man1/micq.1
-man/man1/micq.1
-man/man5/micqrc.5
-man/man7/micq.7
-man/pt_BR/man1/micq.1
-man/pt_BR/man5/micqrc.5
-man/pt_BR/man7/micq.7
-man/ru_RU.KOI8-R/man1/micq.1
-man/ru_RU.KOI8-R/man5/micqrc.5
-man/ru_RU.KOI8-R/man7/micq.7
-man/sr_YU@cyrillic/man1/micq.1
-man/sr_YU@cyrillic/man5/micqrc.5
-man/sr_YU@cyrillic/man7/micq.7
-man/uk_UA/man1/micq.1
-man/uk_UA/man7/micq.7
+man/de/
+man/de/man1/
+@man man/de/man1/micq.1
+man/de/man5/
+@man man/de/man5/micqrc.5
+man/de/man7/
+@man man/de/man7/micq.7
+man/es/
+man/es/man1/
+@man man/es/man1/micq.1
+man/es/man7/
+@man man/es/man7/micq.7
+man/fr/
+man/fr/man1/
+@man man/fr/man1/micq.1
+man/fr/man5/
+@man man/fr/man5/micqrc.5
+man/fr/man7/
+@man man/fr/man7/micq.7
+man/it/
+man/it/man1/
+@man man/it/man1/micq.1
+@man man/man1/micq.1
+@man man/man5/micqrc.5
+@man man/man7/micq.7
+man/pt_BR/
+man/pt_BR/man1/
+@man man/pt_BR/man1/micq.1
+man/pt_BR/man5/
+@man man/pt_BR/man5/micqrc.5
+man/pt_BR/man7/
+@man man/pt_BR/man7/micq.7
+man/ru_RU.KOI8-R/
+man/ru_RU.KOI8-R/man1/
+@man man/ru_RU.KOI8-R/man1/micq.1
+man/ru_RU.KOI8-R/man5/
+@man man/ru_RU.KOI8-R/man5/micqrc.5
+man/ru_RU.KOI8-R/man7/
+@man man/ru_RU.KOI8-R/man7/micq.7
+man/sr_YU@cyrillic/
+man/sr_YU@cyrillic/man1/
+@man man/sr_YU@cyrillic/man1/micq.1
+man/sr_YU@cyrillic/man5/
+@man man/sr_YU@cyrillic/man5/micqrc.5
+man/sr_YU@cyrillic/man7/
+@man man/sr_YU@cyrillic/man7/micq.7
+man/uk_UA/
+man/uk_UA/man1/
+@man man/uk_UA/man1/micq.1
+man/uk_UA/man7/
+@man man/uk_UA/man7/micq.7
+share/micq/
 share/micq/C.i18n
 share/micq/bg.i18n
 share/micq/de.i18n
@@ -50,32 +79,3 @@ share/micq/sr.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
 share/micq/zh_CN.i18n
-@dirrm share/micq
-@dirrm man/uk_UA/man7
-@dirrm man/uk_UA/man1
-@dirrm man/uk_UA
-@dirrm man/sr_YU@cyrillic/man7
-@dirrm man/sr_YU@cyrillic/man5
-@dirrm man/sr_YU@cyrillic/man1
-@dirrm man/sr_YU@cyrillic
-@dirrm man/ru_RU.KOI8-R/man7
-@dirrm man/ru_RU.KOI8-R/man5
-@dirrm man/ru_RU.KOI8-R/man1
-@dirrm man/ru_RU.KOI8-R
-@dirrm man/pt_BR/man7
-@dirrm man/pt_BR/man5
-@dirrm man/pt_BR/man1
-@dirrm man/pt_BR
-@dirrm man/it/man1
-@dirrm man/it
-@dirrm man/fr/man7
-@dirrm man/fr/man5
-@dirrm man/fr/man1
-@dirrm man/fr
-@dirrm man/es/man7
-@dirrm man/es/man1
-@dirrm man/es
-@dirrm man/de/man7
-@dirrm man/de/man5
-@dirrm man/de/man1
-@dirrm man/de

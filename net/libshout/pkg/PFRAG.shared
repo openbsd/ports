@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/07/26 11:38:50 sturm Exp $
-lib/libshout.so.3.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:17:41 espie Exp $
+@lib lib/libshout.so.3.0

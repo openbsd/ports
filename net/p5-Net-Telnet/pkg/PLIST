@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/17 01:55:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:44 espie Exp $
+${P5SITE}/Net/
 ${P5SITE}/Net/Telnet.pm
-@comment ${P5ARCH}/auto/Net/Telnet/.packlist
-man/man3p/Net::Telnet.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Telnet
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::Telnet.3p

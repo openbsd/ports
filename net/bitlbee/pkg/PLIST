@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/06/20 16:27:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:17:39 espie Exp $
 libexec/bitlbee
-man/man5/bitlbee.conf.5
-man/man8/bitlbee.8
+@man man/man5/bitlbee.conf.5
+@man man/man8/bitlbee.8
+share/bitlbee/
 share/bitlbee/help.txt
+share/doc/bitlbee/
 share/doc/bitlbee/user-guide.html
+share/examples/bitlbee/
 share/examples/bitlbee/bitlbee.conf
 share/examples/bitlbee/motd.txt
-@dirrm share/examples/bitlbee
-@dirrm share/doc/bitlbee
-@dirrm share/bitlbee
 @extraunexec rm -rf ${DB_DIR}
 @extraunexec rm -rf ${ETCDIR}
 @extraunexec userdel ${BITLBEEUSER}

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/21 16:55:56 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
+bind/
+bind/include/
+bind/include/arpa/
 bind/include/arpa/inet.h
 bind/include/arpa/nameser.h
 bind/include/arpa/nameser_compat.h
@@ -6,6 +9,7 @@ bind/include/fd_setsize.h
 bind/include/hesiod.h
 bind/include/irp.h
 bind/include/irs.h
+bind/include/isc/
 bind/include/isc/assertions.h
 bind/include/isc/ctl.h
 bind/include/isc/dst.h
@@ -21,12 +25,8 @@ bind/include/netdb.h
 bind/include/netgroup.h
 bind/include/res_update.h
 bind/include/resolv.h
+bind/include/sys/
 bind/include/sys/bitypes.h
 lib/libbind.a
 lib/libbind.la
 %%SHARED%%
-@dirrm bind/include/sys
-@dirrm bind/include/isc
-@dirrm bind/include/arpa
-@dirrm bind/include
-@dirrm bind

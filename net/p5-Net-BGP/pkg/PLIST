@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/28 00:47:31 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/BGP/
 ${P5SITE}/Net/BGP.pm
 ${P5SITE}/Net/BGP/ASPath.pm
 ${P5SITE}/Net/BGP/NLRI.pm
@@ -8,20 +10,12 @@ ${P5SITE}/Net/BGP/Process.pm
 ${P5SITE}/Net/BGP/Refresh.pm
 ${P5SITE}/Net/BGP/Transport.pm
 ${P5SITE}/Net/BGP/Update.pm
-@comment ${P5ARCH}/auto/Net/BGP/.packlist
-man/man3p/Net::BGP.3p
-man/man3p/Net::BGP::ASPath.3p
-man/man3p/Net::BGP::NLRI.3p
-man/man3p/Net::BGP::Notification.3p
-man/man3p/Net::BGP::Peer.3p
-man/man3p/Net::BGP::Process.3p
-man/man3p/Net::BGP::Refresh.3p
-man/man3p/Net::BGP::Transport.3p
-man/man3p/Net::BGP::Update.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/BGP
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/BGP
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::BGP.3p
+@man man/man3p/Net::BGP::ASPath.3p
+@man man/man3p/Net::BGP::NLRI.3p
+@man man/man3p/Net::BGP::Notification.3p
+@man man/man3p/Net::BGP::Peer.3p
+@man man/man3p/Net::BGP::Process.3p
+@man man/man3p/Net::BGP::Refresh.3p
+@man man/man3p/Net::BGP::Transport.3p
+@man man/man3p/Net::BGP::Update.3p

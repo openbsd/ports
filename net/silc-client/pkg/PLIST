@@ -1,19 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/02/19 23:07:27 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/15 18:17:45 espie Exp $
 bin/silc
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/Silc.pm
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/.packlist
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
-man/man1/silc.1
+@man man/man1/silc.1
+@comment modules/
+share/doc/silc/
 @comment share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
@@ -33,8 +41,11 @@ share/doc/silc/manual.txt
 share/doc/silc/signals.txt
 share/doc/silc/special_vars.txt
 share/doc/silc/startup-HOWTO.html
+share/examples/silc/
 share/examples/silc/silc.conf
 share/examples/silc/silcalgs.conf
+share/silc/
+share/silc/help/
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -123,6 +134,7 @@ share/silc/help/watch
 share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
+share/silc/scripts/
 share/silc/scripts/autoop.pl
 share/silc/scripts/beep.pl
 share/silc/scripts/clones.pl
@@ -131,19 +143,7 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
+share/silc/themes/
 share/silc/themes/default.theme
-@dirrm share/silc/themes
-@dirrm share/silc/scripts
-@dirrm share/silc/help
-@dirrm share/silc
-@dirrm share/examples/silc
-@dirrm share/doc/silc
-@comment @exec mkdir -p %D/modules
-@comment @dirrm modules
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
-@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 @extraunexec rm -rf ${CONFDIR}
+%%SHARED%%

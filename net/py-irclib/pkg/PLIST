@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/12 08:41:22 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:45 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/ircbot.py
 lib/python${MODPY_VERSION}/site-packages/ircbot.pyc
 lib/python${MODPY_VERSION}/site-packages/irclib.py
 lib/python${MODPY_VERSION}/site-packages/irclib.pyc
+share/examples/py-irclib/
 share/examples/py-irclib/dccreceive
 share/examples/py-irclib/dccsend
 share/examples/py-irclib/irccat
 share/examples/py-irclib/irccat2
 share/examples/py-irclib/servermap
 share/examples/py-irclib/testbot.py
-@dirrm share/examples/py-irclib

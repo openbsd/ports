@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 18:59:08 xsa Exp $
-share/proxy-suite/ftp-proxy.conf.sample
-man/man5/ftp-proxy.conf.5
-man/man8/ftp-proxy.8
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:44 espie Exp $
+@man man/man5/ftp-proxy.conf.5
+@man man/man8/ftp-proxy.8
 sbin/ftp-proxy
-@dirrm share/proxy-suite
+share/proxy-suite/
+share/proxy-suite/ftp-proxy.conf.sample
 @extraunexec rm -rf ${SYSCONFDIR}/proxy-suite

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/08 03:58:14 mickey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:47 espie Exp $
 bin/ttcp
-man/man1/ttcp.1
+@man man/man1/ttcp.1
+share/doc/ttcp/
 share/doc/ttcp/README
-@dirrm share/doc/ttcp

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/02 15:40:25 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
 bin/digparse
 bin/dlint
-man/man1/dlint.1
+@man man/man1/dlint.1

@@ -1,56 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/15 14:21:00 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
 bin/dbeg1-ftpd.pl
 bin/ftpd.pl
 bin/inmem-ftpd.pl
 bin/proxy-ftpd.pl
 bin/ro-ftpd.pl
+${P5SITE}/Net/FTPServer/
 ${P5SITE}/Net/FTPServer.pm
+${P5SITE}/Net/FTPServer/DBeg1/
 ${P5SITE}/Net/FTPServer/DBeg1/DirHandle.pm
 ${P5SITE}/Net/FTPServer/DBeg1/FileHandle.pm
 ${P5SITE}/Net/FTPServer/DBeg1/IOBlob.pm
 ${P5SITE}/Net/FTPServer/DBeg1/Server.pm
 ${P5SITE}/Net/FTPServer/DirHandle.pm
 ${P5SITE}/Net/FTPServer/FileHandle.pm
+${P5SITE}/Net/FTPServer/Full/
 ${P5SITE}/Net/FTPServer/Full/DirHandle.pm
 ${P5SITE}/Net/FTPServer/Full/FileHandle.pm
 ${P5SITE}/Net/FTPServer/Full/Server.pm
 ${P5SITE}/Net/FTPServer/Handle.pm
+${P5SITE}/Net/FTPServer/InMem/
 ${P5SITE}/Net/FTPServer/InMem/DirHandle.pm
 ${P5SITE}/Net/FTPServer/InMem/FileHandle.pm
 ${P5SITE}/Net/FTPServer/InMem/Server.pm
+${P5SITE}/Net/FTPServer/Proxy/
 ${P5SITE}/Net/FTPServer/Proxy/DirHandle.pm
 ${P5SITE}/Net/FTPServer/Proxy/FileHandle.pm
 ${P5SITE}/Net/FTPServer/Proxy/Server.pm
+${P5SITE}/Net/FTPServer/RO/
 ${P5SITE}/Net/FTPServer/RO/DirHandle.pm
 ${P5SITE}/Net/FTPServer/RO/FileHandle.pm
 ${P5SITE}/Net/FTPServer/RO/Server.pm
-man/man3p/Net::FTPServer.3p
-man/man3p/Net::FTPServer::DBeg1::DirHandle.3p
-man/man3p/Net::FTPServer::DBeg1::FileHandle.3p
-man/man3p/Net::FTPServer::DBeg1::IOBlob.3p
-man/man3p/Net::FTPServer::DBeg1::Server.3p
-man/man3p/Net::FTPServer::DirHandle.3p
-man/man3p/Net::FTPServer::FileHandle.3p
-man/man3p/Net::FTPServer::Full::DirHandle.3p
-man/man3p/Net::FTPServer::Full::FileHandle.3p
-man/man3p/Net::FTPServer::Full::Server.3p
-man/man3p/Net::FTPServer::Handle.3p
-man/man3p/Net::FTPServer::InMem::DirHandle.3p
-man/man3p/Net::FTPServer::InMem::FileHandle.3p
-man/man3p/Net::FTPServer::InMem::Server.3p
-man/man3p/Net::FTPServer::Proxy::DirHandle.3p
-man/man3p/Net::FTPServer::Proxy::FileHandle.3p
-man/man3p/Net::FTPServer::Proxy::Server.3p
-man/man3p/Net::FTPServer::RO::DirHandle.3p
-man/man3p/Net::FTPServer::RO::FileHandle.3p
-man/man3p/Net::FTPServer::RO::Server.3p
+@man man/man3p/Net::FTPServer.3p
+@man man/man3p/Net::FTPServer::DBeg1::DirHandle.3p
+@man man/man3p/Net::FTPServer::DBeg1::FileHandle.3p
+@man man/man3p/Net::FTPServer::DBeg1::IOBlob.3p
+@man man/man3p/Net::FTPServer::DBeg1::Server.3p
+@man man/man3p/Net::FTPServer::DirHandle.3p
+@man man/man3p/Net::FTPServer::FileHandle.3p
+@man man/man3p/Net::FTPServer::Full::DirHandle.3p
+@man man/man3p/Net::FTPServer::Full::FileHandle.3p
+@man man/man3p/Net::FTPServer::Full::Server.3p
+@man man/man3p/Net::FTPServer::Handle.3p
+@man man/man3p/Net::FTPServer::InMem::DirHandle.3p
+@man man/man3p/Net::FTPServer::InMem::FileHandle.3p
+@man man/man3p/Net::FTPServer::InMem::Server.3p
+@man man/man3p/Net::FTPServer::Proxy::DirHandle.3p
+@man man/man3p/Net::FTPServer::Proxy::FileHandle.3p
+@man man/man3p/Net::FTPServer::Proxy::Server.3p
+@man man/man3p/Net::FTPServer::RO::DirHandle.3p
+@man man/man3p/Net::FTPServer::RO::FileHandle.3p
+@man man/man3p/Net::FTPServer::RO::Server.3p
+share/examples/p5-Net-FTPServer/
 share/examples/p5-Net-FTPServer/ftpd.conf
-@dirrm share/examples/p5-Net-FTPServer
-@dirrm ${P5SITE}/Net/FTPServer/RO
-@dirrm ${P5SITE}/Net/FTPServer/Proxy
-@dirrm ${P5SITE}/Net/FTPServer/InMem
-@dirrm ${P5SITE}/Net/FTPServer/Full
-@dirrm ${P5SITE}/Net/FTPServer/DBeg1
-@dirrm ${P5SITE}/Net/FTPServer
 @cwd ${SYSCONFDIR}
 @extra ftpd.conf

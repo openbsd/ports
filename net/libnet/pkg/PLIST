@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/02/26 02:55:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:41 espie Exp $
 bin/libnet-config
-lib/libnet.a
-%%SHARED%%
+include/libnet/
 include/libnet.h
 include/libnet/libnet-asn1.h
 include/libnet/libnet-functions.h
@@ -9,5 +8,7 @@ include/libnet/libnet-headers.h
 include/libnet/libnet-macros.h
 include/libnet/libnet-ospf.h
 include/libnet/libnet-structures.h
-man/man3/libnet.3
-@dirrm include/libnet
+lib/libnet.a
+lib/libpwrite.a
+@man man/man3/libnet.3
+%%SHARED%%

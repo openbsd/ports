@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:39 espie Exp $
+@man man/man8/clog.8
 sbin/clog
-man/man8/clog.8

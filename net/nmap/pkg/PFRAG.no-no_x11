@@ -1,5 +1,9 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2001/01/09 18:52:34 naddy Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2004/09/15 18:17:42 espie Exp $
 bin/nmapfe
 bin/xnmap
-man/man1/nmapfe.1
-man/man1/xnmap.1
+@man man/man1/nmapfe.1
+@man man/man1/xnmap.1
+@comment share/gnome/
+@comment share/gnome/apps/
+@comment share/gnome/apps/Utilities/
+@comment share/gnome/apps/Utilities/nmapfe.desktop

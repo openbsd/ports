@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/05/18 23:30:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:39 espie Exp $
 bin/curl
 bin/curl-config
+include/curl/
 include/curl/curl.h
 include/curl/curlver.h
 include/curl/easy.h
@@ -10,52 +11,51 @@ include/curl/stdcheaders.h
 include/curl/types.h
 lib/libcurl.a
 lib/libcurl.la
-%%SHARED%%
-man/man1/curl-config.1
-man/man1/curl.1
-man/man3/curl_easy_cleanup.3
-man/man3/curl_easy_duphandle.3
-man/man3/curl_easy_getinfo.3
-man/man3/curl_easy_init.3
-man/man3/curl_easy_perform.3
-man/man3/curl_easy_setopt.3
-man/man3/curl_escape.3
-man/man3/curl_formadd.3
-man/man3/curl_formfree.3
-man/man3/curl_formparse.3
-man/man3/curl_free.3
-man/man3/curl_getdate.3
-man/man3/curl_getenv.3
-man/man3/curl_global_cleanup.3
-man/man3/curl_global_init.3
-man/man3/curl_mprintf.3
-man/man3/curl_multi_add_handle.3
-man/man3/curl_multi_cleanup.3
-man/man3/curl_multi_fdset.3
-man/man3/curl_multi_info_read.3
-man/man3/curl_multi_init.3
-man/man3/curl_multi_perform.3
-man/man3/curl_multi_remove_handle.3
-man/man3/curl_share_cleanup.3
-man/man3/curl_share_init.3
-man/man3/curl_share_setopt.3
-man/man3/curl_slist_append.3
-man/man3/curl_slist_free_all.3
-man/man3/curl_strequal.3
-man/man3/curl_strnequal.3
-man/man3/curl_unescape.3
-man/man3/curl_version.3
-man/man3/curl_version_info.3
-man/man3/libcurl-easy.3
-man/man3/libcurl-errors.3
-man/man3/libcurl-multi.3
-man/man3/libcurl-share.3
-man/man3/libcurl.3
+@man man/man1/curl-config.1
+@man man/man1/curl.1
+@man man/man3/curl_easy_cleanup.3
+@man man/man3/curl_easy_duphandle.3
+@man man/man3/curl_easy_getinfo.3
+@man man/man3/curl_easy_init.3
+@man man/man3/curl_easy_perform.3
+@man man/man3/curl_easy_setopt.3
+@man man/man3/curl_escape.3
+@man man/man3/curl_formadd.3
+@man man/man3/curl_formfree.3
+@man man/man3/curl_formparse.3
+@man man/man3/curl_free.3
+@man man/man3/curl_getdate.3
+@man man/man3/curl_getenv.3
+@man man/man3/curl_global_cleanup.3
+@man man/man3/curl_global_init.3
+@man man/man3/curl_mprintf.3
+@man man/man3/curl_multi_add_handle.3
+@man man/man3/curl_multi_cleanup.3
+@man man/man3/curl_multi_fdset.3
+@man man/man3/curl_multi_info_read.3
+@man man/man3/curl_multi_init.3
+@man man/man3/curl_multi_perform.3
+@man man/man3/curl_multi_remove_handle.3
+@man man/man3/curl_share_cleanup.3
+@man man/man3/curl_share_init.3
+@man man/man3/curl_share_setopt.3
+@man man/man3/curl_slist_append.3
+@man man/man3/curl_slist_free_all.3
+@man man/man3/curl_strequal.3
+@man man/man3/curl_strnequal.3
+@man man/man3/curl_unescape.3
+@man man/man3/curl_version.3
+@man man/man3/curl_version_info.3
+@man man/man3/libcurl-easy.3
+@man man/man3/libcurl-errors.3
+@man man/man3/libcurl-multi.3
+@man man/man3/libcurl-share.3
+@man man/man3/libcurl.3
+share/curl/
 share/curl/curl-ca-bundle.crt
+share/doc/curl/
 share/doc/curl/README
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/curl-style.el
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs
-@dirrm share/doc/curl
-@dirrm share/curl
-@dirrm include/curl
+%%SHARED%%

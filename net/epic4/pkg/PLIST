@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.31 2004/06/05 11:15:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.32 2004/09/15 18:17:39 espie Exp $
 bin/epic4
 libexec/epic4-wserv4
-man/man1/epic4.1
+@man man/man1/epic4.1
+share/doc/epic4/
 share/doc/epic4/README
+share/epic4/
+share/epic4/help/
+share/epic4/help/1_General/
 share/epic4/help/1_General/1_General
 share/epic4/help/1_General/away
 share/epic4/help/1_General/bye
 share/epic4/help/1_General/channel
+share/epic4/help/1_General/ctcp/
 share/epic4/help/1_General/ctcp/action
 share/epic4/help/1_General/ctcp/clientinfo
 share/epic4/help/1_General/ctcp/ctcp
@@ -17,6 +22,7 @@ share/epic4/help/1_General/ctcp/time
 share/epic4/help/1_General/ctcp/userinfo
 share/epic4/help/1_General/ctcp/utc
 share/epic4/help/1_General/ctcp/version
+share/epic4/help/1_General/dcc/
 share/epic4/help/1_General/dcc/chat
 share/epic4/help/1_General/dcc/close
 share/epic4/help/1_General/dcc/closeall
@@ -50,6 +56,7 @@ share/epic4/help/1_General/say
 share/epic4/help/1_General/server
 share/epic4/help/1_General/silence
 share/epic4/help/1_General/topic
+share/epic4/help/2_Queries/
 share/epic4/help/2_Queries/2_Queries
 share/epic4/help/2_Queries/admin
 share/epic4/help/2_Queries/flush
@@ -71,6 +78,7 @@ share/epic4/help/2_Queries/version
 share/epic4/help/2_Queries/who
 share/epic4/help/2_Queries/whois
 share/epic4/help/2_Queries/whowas
+share/epic4/help/3_Operators/
 share/epic4/help/3_Operators/3_Operators
 share/epic4/help/3_Operators/connect
 share/epic4/help/3_Operators/deop
@@ -84,9 +92,11 @@ share/epic4/help/3_Operators/rping
 share/epic4/help/3_Operators/squit
 share/epic4/help/3_Operators/uping
 share/epic4/help/3_Operators/wallops
+share/epic4/help/4_Misc/
 share/epic4/help/4_Misc/4_Misc
 share/epic4/help/4_Misc/abort
 share/epic4/help/4_Misc/beep
+share/epic4/help/4_Misc/bind/
 share/epic4/help/4_Misc/bind/altcharset
 share/epic4/help/4_Misc/bind/backspace
 share/epic4/help/4_Misc/bind/backward_character
@@ -151,6 +161,7 @@ share/epic4/help/4_Misc/mesg
 share/epic4/help/4_Misc/note
 share/epic4/help/4_Misc/rbind
 share/epic4/help/4_Misc/realname
+share/epic4/help/4_Misc/set/
 share/epic4/help/4_Misc/set/alt_charset
 share/epic4/help/4_Misc/set/always_split_biggest
 share/epic4/help/4_Misc/set/auto_new_nick
@@ -308,6 +319,7 @@ share/epic4/help/4_Misc/set/xterm
 share/epic4/help/4_Misc/set/xterm_options
 share/epic4/help/4_Misc/unclear
 share/epic4/help/4_Misc/which
+share/epic4/help/4_Misc/window/
 share/epic4/help/4_Misc/window/add
 share/epic4/help/4_Misc/window/back
 share/epic4/help/4_Misc/window/balance
@@ -376,6 +388,7 @@ share/epic4/help/4_Misc/window/swap
 share/epic4/help/4_Misc/window/unbind
 share/epic4/help/4_Misc/window/window
 share/epic4/help/4_Misc/xdebug
+share/epic4/help/5_Programming/
 share/epic4/help/5_Programming/5_Programming
 share/epic4/help/5_Programming/alias
 share/epic4/help/5_Programming/assign
@@ -398,6 +411,7 @@ share/epic4/help/5_Programming/if
 share/epic4/help/5_Programming/input
 share/epic4/help/5_Programming/load
 share/epic4/help/5_Programming/local
+share/epic4/help/5_Programming/on/
 share/epic4/help/5_Programming/on/action
 share/epic4/help/5_Programming/on/channel_nick
 share/epic4/help/5_Programming/on/channel_signoff
@@ -513,6 +527,7 @@ share/epic4/help/5_Programming/xecho
 share/epic4/help/5_Programming/xeval
 share/epic4/help/5_Programming/xquote
 share/epic4/help/5_Programming/xtype
+share/epic4/help/6_Functions/
 share/epic4/help/6_Functions/6_Functions
 share/epic4/help/6_Functions/abs
 share/epic4/help/6_Functions/acos
@@ -781,6 +796,7 @@ share/epic4/help/6_Functions/wordtoindex
 share/epic4/help/6_Functions/write
 share/epic4/help/6_Functions/writeb
 share/epic4/help/6_Functions/yn
+share/epic4/help/7_Docs/
 share/epic4/help/7_Docs/7_Docs
 share/epic4/help/7_Docs/About_EPIC
 share/epic4/help/7_Docs/Arrays
@@ -807,6 +823,7 @@ share/epic4/help/7_Docs/Special_Vars
 share/epic4/help/7_Docs/Status_Line
 share/epic4/help/7_Docs/Text_Highlight
 share/epic4/help/7_Docs/Updates
+share/epic4/help/8_Scripts/
 share/epic4/help/8_Scripts/2.8script
 share/epic4/help/8_Scripts/8_Scripts
 share/epic4/help/8_Scripts/alias
@@ -867,6 +884,7 @@ share/epic4/help/8_Scripts/webster
 share/epic4/help/8_Scripts/window
 share/epic4/help/Makefile
 share/epic4/help/README_FIRST
+share/epic4/script/
 share/epic4/script/2.8script
 share/epic4/script/alias
 share/epic4/script/altchan
@@ -966,21 +984,3 @@ share/epic4/script/utime
 share/epic4/script/vi-binds
 share/epic4/script/webster
 share/epic4/script/window
-@dirrm share/epic4/script
-@dirrm share/epic4/help/8_Scripts
-@dirrm share/epic4/help/7_Docs
-@dirrm share/epic4/help/6_Functions
-@dirrm share/epic4/help/5_Programming/on
-@dirrm share/epic4/help/5_Programming
-@dirrm share/epic4/help/4_Misc/window
-@dirrm share/epic4/help/4_Misc/set
-@dirrm share/epic4/help/4_Misc/bind
-@dirrm share/epic4/help/4_Misc
-@dirrm share/epic4/help/3_Operators
-@dirrm share/epic4/help/2_Queries
-@dirrm share/epic4/help/1_General/dcc
-@dirrm share/epic4/help/1_General/ctcp
-@dirrm share/epic4/help/1_General
-@dirrm share/epic4/help
-@dirrm share/epic4
-@dirrm share/doc/epic4

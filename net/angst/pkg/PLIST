@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/19 21:55:46 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:38 espie Exp $
+@man man/man8/angst.8
 sbin/angst
-man/man8/angst.8
-share/doc/angst/README
+share/doc/angst/
 share/doc/angst/ChangeLog
-@dirrm share/doc/angst
+share/doc/angst/README

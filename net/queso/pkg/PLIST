@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/14 18:59:08 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:17:45 espie Exp $
+lib/queso/
 lib/queso/queso.conf.sample
-man/man1/queso.1
+@sample ${SYSCONFDIR}/queso.conf
+@man man/man1/queso.1
 sbin/queso
+share/doc/queso/
 share/doc/queso/Documentation.txt
-@dirrm lib/queso
-@dirrm share/doc/queso
-@cwd ${SYSCONFDIR}
-@extra queso.conf

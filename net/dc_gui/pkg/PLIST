@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/08 20:03:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:39 espie Exp $
 bin/dc_gui
+share/gnome/
+share/gnome/help/
+share/gnome/help/dc_gui/
+share/gnome/help/dc_gui/C/
+share/gnome/help/dc_gui/C/images/
 share/gnome/help/dc_gui/C/index.html
 share/gnome/help/dc_gui/C/topic.dat
+share/locale/
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/dc_gui.mo
-@dirrm share/gnome/help/dc_gui/C
-@dirrm share/gnome/help/dc_gui

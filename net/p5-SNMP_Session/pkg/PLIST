@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/18 04:09:25 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:44 espie Exp $
 ${P5SITE}/BER.pm
 ${P5SITE}/SNMP_Session.pm
 ${P5SITE}/SNMP_util.pm
-@comment ${P5ARCH}/auto/SNMP_Session/.packlist
-@comment @dirrm ${P5ARCH}/auto/SNMP_Session
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}

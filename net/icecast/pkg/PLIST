@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/02/02 19:32:37 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:40 espie Exp $
 bin/icecast
+share/doc/icecast/
 share/doc/icecast/AUTHORS
 share/doc/icecast/NEWS
 share/doc/icecast/README.OpenBSD
@@ -14,15 +15,14 @@ share/doc/icecast/icecast2_stats.html
 share/doc/icecast/icecast2_win32.html
 share/doc/icecast/icecast2_yp.html
 share/doc/icecast/index.html
+share/examples/icecast/
+share/examples/icecast/admin/
 share/examples/icecast/admin/listclients.xsl
 share/examples/icecast/admin/listmounts.xsl
 share/examples/icecast/admin/moveclients.xsl
 share/examples/icecast/admin/response.xsl
 share/examples/icecast/admin/stats.xsl
 share/examples/icecast/icecast.xml.dist
+share/examples/icecast/web/
 share/examples/icecast/web/status.xsl
 share/examples/icecast/web/status2.xsl
-@dirrm share/examples/icecast/web
-@dirrm share/examples/icecast/admin
-@dirrm share/examples/icecast
-@dirrm share/doc/icecast

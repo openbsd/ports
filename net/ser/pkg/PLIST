@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:45 espie Exp $
+lib/ser/
+lib/ser/modules/
 lib/ser/modules/acc.so
 lib/ser/modules/auth.so
 lib/ser/modules/exec.so
@@ -16,12 +18,13 @@ lib/ser/modules/sms.so
 lib/ser/modules/textops.so
 lib/ser/modules/tm.so
 lib/ser/modules/usrloc.so
-man/man5/ser.cfg.5
-man/man8/ser.8
+@man man/man5/ser.cfg.5
+@man man/man8/ser.8
 sbin/gen_ha1
 sbin/ser
 sbin/ser_mysql.sh
 sbin/serctl
+share/doc/ser/
 share/doc/ser/AUTHORS
 share/doc/ser/INSTALL
 share/doc/ser/README
@@ -42,8 +45,5 @@ share/doc/ser/README.sms
 share/doc/ser/README.textops
 share/doc/ser/README.tm
 share/doc/ser/README.usrloc
+share/examples/ser/
 share/examples/ser/ser.cfg
-@dirrm share/examples/ser
-@dirrm share/doc/ser
-@dirrm lib/ser/modules
-@dirrm lib/ser

@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/23 23:38:10 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:44 espie Exp $
 bin/pork
+share/doc/pork/
 share/doc/pork/QUICK_START
 share/doc/pork/README
+share/examples/pork/
 share/examples/pork/acro.pl
 share/examples/pork/blist.txt
 share/examples/pork/event_test.pl
 share/examples/pork/np.pl
 share/examples/pork/porkrc
+@sample ${SYSCONFDIR}/porkrc
+share/pork/
 @comment share/pork/QUICK_START
+share/pork/help/
+share/pork/help/blist/
 share/pork/help/blist/add_block
 share/pork/help/blist/add_permit
 share/pork/help/blist/away
@@ -31,6 +37,7 @@ share/pork/help/blist/up
 share/pork/help/blist/warn
 share/pork/help/blist/warn_anon
 share/pork/help/blist/width
+share/pork/help/buddy/
 share/pork/help/buddy/add
 share/pork/help/buddy/add_group
 share/pork/help/buddy/alias
@@ -53,6 +60,7 @@ share/pork/help/buddy/seen
 share/pork/help/buddy/unblock
 share/pork/help/buddy/warn
 share/pork/help/buddy/warn_anon
+share/pork/help/chat/
 share/pork/help/chat/ignore
 share/pork/help/chat/invite
 share/pork/help/chat/join
@@ -63,18 +71,22 @@ share/pork/help/chat/send
 share/pork/help/chat/topic
 share/pork/help/chat/unignore
 share/pork/help/chat/who
+share/pork/help/event/
 share/pork/help/event/add
 share/pork/help/event/del
 share/pork/help/event/del_refnum
 share/pork/help/event/list
 share/pork/help/event/purge
+share/pork/help/file/
 share/pork/help/file/cancel
 share/pork/help/file/get
 share/pork/help/file/list
 share/pork/help/file/send
+share/pork/help/history/
 share/pork/help/history/clear
 share/pork/help/history/next
 share/pork/help/history/prev
+share/pork/help/input/
 share/pork/help/input/backspace
 share/pork/help/input/clear
 share/pork/help/input/clear_next_word
@@ -93,6 +105,7 @@ share/pork/help/input/prompt
 share/pork/help/input/right
 share/pork/help/input/send
 share/pork/help/input/start
+share/pork/help/main/
 share/pork/help/main/acct
 share/pork/help/main/alias
 share/pork/help/main/auto
@@ -135,6 +148,7 @@ share/pork/help/main/unbind
 share/pork/help/main/who
 share/pork/help/main/whowas
 share/pork/help/main/win
+share/pork/help/perl/
 share/pork/help/perl/alias
 share/pork/help/perl/alias_get
 share/pork/help/perl/bind
@@ -238,6 +252,7 @@ share/pork/help/perl/win_rename
 share/pork/help/perl/win_renumber
 share/pork/help/perl/win_set_opt
 share/pork/help/perl/win_swap
+share/pork/help/scroll/
 share/pork/help/scroll/by
 share/pork/help/scroll/down
 share/pork/help/scroll/end
@@ -245,11 +260,13 @@ share/pork/help/scroll/page_down
 share/pork/help/scroll/page_up
 share/pork/help/scroll/start
 share/pork/help/scroll/up
+share/pork/help/timer/
 share/pork/help/timer/add
 share/pork/help/timer/del
 share/pork/help/timer/del_refnum
 share/pork/help/timer/list
 share/pork/help/timer/purge
+share/pork/help/win/
 share/pork/help/win/bind
 share/pork/help/win/bind_next
 share/pork/help/win/clear
@@ -262,21 +279,3 @@ share/pork/help/win/rename
 share/pork/help/win/renumber
 share/pork/help/win/set
 share/pork/help/win/swap
-@dirrm share/pork/help/win
-@dirrm share/pork/help/timer
-@dirrm share/pork/help/scroll
-@dirrm share/pork/help/perl
-@dirrm share/pork/help/main
-@dirrm share/pork/help/input
-@dirrm share/pork/help/history
-@dirrm share/pork/help/file
-@dirrm share/pork/help/event
-@dirrm share/pork/help/chat
-@dirrm share/pork/help/buddy
-@dirrm share/pork/help/blist
-@dirrm share/pork/help
-@dirrm share/pork
-@dirrm share/examples/pork
-@dirrm share/doc/pork
-@cwd ${SYSCONFDIR}
-@extra porkrc

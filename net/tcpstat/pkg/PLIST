@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/30 15:22:54 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
 bin/tcpstat
-man/man1/tcpstat.1
+@man man/man1/tcpstat.1
+share/examples/tcpstat/
 share/examples/tcpstat/Tips_and_Tricks.txt
-@dirrm share/examples/tcpstat

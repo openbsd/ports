@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
 bin/tcpdpriv
-man/cat1/tcpdpriv.0
+@man man/cat1/tcpdpriv.0
+share/doc/tcpdpriv/
 share/doc/tcpdpriv/attack50.ps
-@dirrm share/doc/tcpdpriv

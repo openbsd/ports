@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/29 12:22:26 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:42 espie Exp $
 @pkgcfl bind-8.*
 libexec/named-xfer
-man/cat8/named-xfer.0
+@man man/cat8/named-xfer.0

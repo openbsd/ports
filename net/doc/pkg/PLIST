@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/25 08:40:57 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
 bin/doc
+libexec/doc/
 libexec/doc/doc-1.awk
 libexec/doc/doc-3.awk
 libexec/doc/doc-4.awk
-man/man8/doc.8
-@dirrm libexec/doc
+@man man/man8/doc.8

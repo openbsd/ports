@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/11 16:50:40 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:43 espie Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
+${P5SITE}/Net/Amazon/Attribute/
 ${P5SITE}/Net/Amazon/Attribute/Review.pm
 ${P5SITE}/Net/Amazon/Attribute/ReviewSet.pm
+${P5SITE}/Net/Amazon/Property/
 ${P5SITE}/Net/Amazon/Property.pm
 ${P5SITE}/Net/Amazon/Property/Book.pm
 ${P5SITE}/Net/Amazon/Property/DVD.pm
 ${P5SITE}/Net/Amazon/Property/Music.pm
+${P5SITE}/Net/Amazon/Request/
 ${P5SITE}/Net/Amazon/Request.pm
 ${P5SITE}/Net/Amazon/Request/ASIN.pm
 ${P5SITE}/Net/Amazon/Request/Artist.pm
@@ -16,9 +21,11 @@ ${P5SITE}/Net/Amazon/Request/Manufacturer.pm
 ${P5SITE}/Net/Amazon/Request/Power.pm
 ${P5SITE}/Net/Amazon/Request/Similar.pm
 ${P5SITE}/Net/Amazon/Request/Sort.pm
+${P5SITE}/Net/Amazon/Request/Sort.pm.orig
 ${P5SITE}/Net/Amazon/Request/TextStream.pm
 ${P5SITE}/Net/Amazon/Request/UPC.pm
 ${P5SITE}/Net/Amazon/Request/Wishlist.pm
+${P5SITE}/Net/Amazon/Response/
 ${P5SITE}/Net/Amazon/Response.pm
 ${P5SITE}/Net/Amazon/Response/ASIN.pm
 ${P5SITE}/Net/Amazon/Response/Artist.pm
@@ -31,28 +38,28 @@ ${P5SITE}/Net/Amazon/Response/Similar.pm
 ${P5SITE}/Net/Amazon/Response/TextStream.pm
 ${P5SITE}/Net/Amazon/Response/UPC.pm
 ${P5SITE}/Net/Amazon/Response/Wishlist.pm
-@comment ${P5ARCH}/auto/Net/Amazon/.packlist
-man/man3p/Net::Amazon.3p
-man/man3p/Net::Amazon::Attribute::Review.3p
-man/man3p/Net::Amazon::Attribute::ReviewSet.3p
-man/man3p/Net::Amazon::Property.3p
-man/man3p/Net::Amazon::Property::Book.3p
-man/man3p/Net::Amazon::Property::DVD.3p
-man/man3p/Net::Amazon::Property::Music.3p
-man/man3p/Net::Amazon::Request.3p
-man/man3p/Net::Amazon::Request::ASIN.3p
-man/man3p/Net::Amazon::Request::Artist.3p
-man/man3p/Net::Amazon::Request::Blended.3p
-man/man3p/Net::Amazon::Request::BrowseNode.3p
-man/man3p/Net::Amazon::Request::Keyword.3p
-man/man3p/Net::Amazon::Request::Manufacturer.3p
-man/man3p/Net::Amazon::Request::Power.3p
-man/man3p/Net::Amazon::Request::Similar.3p
-man/man3p/Net::Amazon::Request::Sort.3p
-man/man3p/Net::Amazon::Request::TextStream.3p
-man/man3p/Net::Amazon::Request::UPC.3p
-man/man3p/Net::Amazon::Request::Wishlist.3p
-man/man3p/Net::Amazon::Response.3p
+@man man/man3p/Net::Amazon.3p
+@man man/man3p/Net::Amazon::Attribute::Review.3p
+@man man/man3p/Net::Amazon::Attribute::ReviewSet.3p
+@man man/man3p/Net::Amazon::Property.3p
+@man man/man3p/Net::Amazon::Property::Book.3p
+@man man/man3p/Net::Amazon::Property::DVD.3p
+@man man/man3p/Net::Amazon::Property::Music.3p
+@man man/man3p/Net::Amazon::Request.3p
+@man man/man3p/Net::Amazon::Request::ASIN.3p
+@man man/man3p/Net::Amazon::Request::Artist.3p
+@man man/man3p/Net::Amazon::Request::Blended.3p
+@man man/man3p/Net::Amazon::Request::BrowseNode.3p
+@man man/man3p/Net::Amazon::Request::Keyword.3p
+@man man/man3p/Net::Amazon::Request::Manufacturer.3p
+@man man/man3p/Net::Amazon::Request::Power.3p
+@man man/man3p/Net::Amazon::Request::Similar.3p
+@man man/man3p/Net::Amazon::Request::Sort.3p
+@man man/man3p/Net::Amazon::Request::TextStream.3p
+@man man/man3p/Net::Amazon::Request::UPC.3p
+@man man/man3p/Net::Amazon::Request::Wishlist.3p
+@man man/man3p/Net::Amazon::Response.3p
+share/examples/p5-Net-Amazon/
 share/examples/p5-Net-Amazon/artist
 share/examples/p5-Net-Amazon/asin
 share/examples/p5-Net-Amazon/asin-de
@@ -74,15 +81,3 @@ share/examples/p5-Net-Amazon/sim
 share/examples/p5-Net-Amazon/textstream
 share/examples/p5-Net-Amazon/upc
 share/examples/p5-Net-Amazon/wishlist
-@dirrm share/examples/p5-Net-Amazon
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Amazon
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/Amazon/Response
-@dirrm ${P5SITE}/Net/Amazon/Request
-@dirrm ${P5SITE}/Net/Amazon/Property
-@dirrm ${P5SITE}/Net/Amazon/Attribute
-@dirrm ${P5SITE}/Net/Amazon
-@dirrm ${P5SITE}/Net

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/29 22:14:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
 bin/nam
-man/man1/nam.1
+@man man/man1/nam.1
+share/examples/nam/
 share/examples/nam/9nodetree.nam
 share/examples/nam/DSR.nam
 share/examples/nam/README
@@ -38,4 +39,3 @@ share/examples/nam/ts100.layout.nam.gz
 share/examples/nam/ts100.nam.gz
 share/examples/nam/ts20.nam.gz
 share/examples/nam/webcache.nam
-@dirrm share/examples/nam

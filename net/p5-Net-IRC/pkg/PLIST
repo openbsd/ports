@@ -1,20 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/15 06:27:05 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:43 espie Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/IRC/
 ${P5SITE}/Net/IRC.pm
 ${P5SITE}/Net/IRC/Connection.pm
 ${P5SITE}/Net/IRC/DCC.pm
 ${P5SITE}/Net/IRC/Event.pm
+${P5SITE}/Net/IRC/EventQueue/
 ${P5SITE}/Net/IRC/EventQueue.pm
 ${P5SITE}/Net/IRC/EventQueue/Entry.pm
-@comment ${P5ARCH}/auto/Net/IRC/.packlist
-man/man3p/Net::Connection.3p
-man/man3p/Net::DCC.3p
-man/man3p/Net::Event.3p
-man/man3p/Net::IRC.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/IRC
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/IRC/EventQueue
-@dirrm ${P5SITE}/Net/IRC
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::Connection.3p
+@man man/man3p/Net::DCC.3p
+@man man/man3p/Net::Event.3p
+@man man/man3p/Net::IRC.3p

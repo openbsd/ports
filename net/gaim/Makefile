@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2004/08/10 09:38:34 xsa Exp $
+# $OpenBSD: Makefile,v 1.64 2004/09/15 18:17:40 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -23,7 +23,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		startup-notification-1.0.0::devel/startup-notification \
-		silc::devel/silc-toolkit
+		silc,silcclient::devel/silc-toolkit
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes

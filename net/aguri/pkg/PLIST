@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/04 18:57:29 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:38 espie Exp $
 bin/aguri
-man/man1/aguri.1
+@comment lib/aguri/
+@comment lib/aguri/agurify.pl
+@comment lib/aguri/density.pl
+@comment lib/aguri/makeimages.pl
+@comment lib/aguri/makeplot.pl
+@man man/man1/aguri.1
+share/aguri/
 share/aguri/README
 share/aguri/agurify.pl
 share/aguri/density.pl
 share/aguri/makeplot.pl
-@dirrm share/aguri

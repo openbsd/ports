@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2004/06/24 03:09:31 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2004/09/15 18:17:44 espie Exp $
 #
 # Pre/post-installation setup of pdnsd
 
@@ -42,15 +42,8 @@ do_add_user()
 #
 do_install_conf()
 {
-install -d -o root -g wheel ${CONFIG_DIR}
-install -o root -g wheel ${SAMPLE_CONFIG_DIR}/pdnsd.conf \
-${CONFIG_DIR}/pdnsd.conf
 echo
 echo "+---------------"
-echo "| The $1 configuration files have been installed in ${CONFIG_DIR}."
-echo "| Please view these files and change the configuration to meet"
-echo "| your needs."
-echo "|"
 echo "| You may want to put the following in /etc/rc.local:"
 echo "|"
 echo "| if [ -x /usr/local/sbin/pdnsd ]; then"
@@ -76,13 +69,6 @@ echo "+---------------"
 #
 do_notice_conf()
 {
-    echo
-    echo "+---------------"
-    echo "| The existing $1 configuration files in ${CONFIG_DIR} have NOT"
-    echo "| been changed.  You may want to compare them to the current samples"
-    echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
-    echo "| as needed."
-    echo "+---------------"
 }
 
 # Function: tell the user what they need to do to use the port just installed

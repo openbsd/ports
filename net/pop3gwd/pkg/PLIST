@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/18 12:18:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:44 espie Exp $
 libexec/pop3gwd
+share/doc/pop3gwd/
+share/doc/pop3gwd/COPYING
 share/doc/pop3gwd/HISTORY
 share/doc/pop3gwd/README
-@dirrm share/doc/pop3gwd

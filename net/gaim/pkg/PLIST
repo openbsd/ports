@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.33 2004/07/08 18:27:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.34 2004/09/15 18:17:40 espie Exp $
 bin/gaim
 bin/gaim-remote
+include/gaim/
 include/gaim/account.h
 include/gaim/accountopt.h
 include/gaim/away.h
@@ -99,27 +100,41 @@ include/gaim/xmlnode.h
 @comment lib/gaim/ticker.la
 @comment lib/gaim/timestamp.la
 @comment lib/libgaim-remote.la
+lib/pkgconfig/
 lib/pkgconfig/gaim.pc
-man/man1/gaim-remote.1
-man/man1/gaim.1
+@man man/man1/gaim-remote.1
+@man man/man1/gaim.1
+share/applications/
 share/applications/gaim.desktop
+share/locale/am/
+share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gaim.mo
 share/locale/bg/LC_MESSAGES/gaim.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gaim.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/he/LC_MESSAGES/gaim.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
@@ -130,13 +145,22 @@ share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sl/LC_MESSAGES/gaim.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gaim.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
+share/pixmaps/
+share/pixmaps/gaim/
 share/pixmaps/gaim.png
+share/pixmaps/gaim/buttons/
 share/pixmaps/gaim/buttons/about_menu.png
 share/pixmaps/gaim/buttons/accounts.png
 share/pixmaps/gaim/buttons/change-bgcolor-small.png
@@ -150,12 +174,14 @@ share/pixmaps/gaim/buttons/send-im.png
 share/pixmaps/gaim/buttons/text_bigger.png
 share/pixmaps/gaim/buttons/text_normal.png
 share/pixmaps/gaim/buttons/text_smaller.png
+share/pixmaps/gaim/dialogs/
 share/pixmaps/gaim/dialogs/gaim_auth.png
 share/pixmaps/gaim/dialogs/gaim_cool.png
 share/pixmaps/gaim/dialogs/gaim_error.png
 share/pixmaps/gaim/dialogs/gaim_info.png
 share/pixmaps/gaim/dialogs/gaim_question.png
 share/pixmaps/gaim/dialogs/gaim_warning.png
+share/pixmaps/gaim/icons/
 share/pixmaps/gaim/icons/away.png
 share/pixmaps/gaim/icons/connect.png
 share/pixmaps/gaim/icons/info.png
@@ -164,6 +190,8 @@ share/pixmaps/gaim/icons/msgunread.png
 share/pixmaps/gaim/icons/offline.png
 share/pixmaps/gaim/icons/online.png
 share/pixmaps/gaim/logo.png
+share/pixmaps/gaim/smileys/
+share/pixmaps/gaim/smileys/default/
 share/pixmaps/gaim/smileys/default/angel.png
 share/pixmaps/gaim/smileys/default/bigsmile.png
 share/pixmaps/gaim/smileys/default/burp.png
@@ -349,7 +377,10 @@ share/pixmaps/gaim/smileys/default/yahoo_worship.gif
 share/pixmaps/gaim/smileys/default/yahoo_yingyang.gif
 share/pixmaps/gaim/smileys/default/yahoo_youkiddingme.gif
 share/pixmaps/gaim/smileys/default/yell.png
+share/pixmaps/gaim/smileys/none/
 share/pixmaps/gaim/smileys/none/theme
+share/pixmaps/gaim/status/
+share/pixmaps/gaim/status/default/
 share/pixmaps/gaim/status/default/activebuddy.png
 share/pixmaps/gaim/status/default/admin.png
 share/pixmaps/gaim/status/default/aim.png
@@ -389,23 +420,11 @@ share/pixmaps/gaim/tb_drag_arrow_right.xpm
 share/pixmaps/gaim/tb_drag_arrow_up.xpm
 share/pixmaps/gaim/typed.png
 share/pixmaps/gaim/typing.png
+share/sounds/
+share/sounds/gaim/
 share/sounds/gaim/arrive.wav
 share/sounds/gaim/leave.wav
 share/sounds/gaim/receive.wav
 share/sounds/gaim/redalert.wav
 share/sounds/gaim/send.wav
 %%SHARED%%
-@dirrm share/sounds/gaim
-@dirrm share/sounds
-@dirrm share/pixmaps/gaim/status/default
-@dirrm share/pixmaps/gaim/status
-@dirrm share/pixmaps/gaim/smileys/none
-@dirrm share/pixmaps/gaim/smileys/default
-@dirrm share/pixmaps/gaim/smileys
-@dirrm share/pixmaps/gaim/icons
-@dirrm share/pixmaps/gaim/dialogs
-@dirrm share/pixmaps/gaim/buttons
-@dirrm share/pixmaps/gaim
-@dirrm share/pixmaps
-@dirrm share/applications
-@dirrm include/gaim

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/17 01:55:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:43 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Net/
 ${P5ARCH}/Net/Pcap.pm
-@comment ${P5ARCH}/auto/Net/Pcap/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/Pcap/
 ${P5ARCH}/auto/Net/Pcap/Pcap.bs
 ${P5ARCH}/auto/Net/Pcap/Pcap.so
-man/man3p/Net::Pcap.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Net/Pcap
-@dirrm ${P5ARCH}/auto/Net
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Net
-@dirrm ${P5ARCH}
+@man man/man3p/Net::Pcap.3p

@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/20 13:06:27 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:45 espie Exp $
+lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pycurl.so
+share/doc/py-curl/
 share/doc/py-curl/callbacks.html
 share/doc/py-curl/curlmultiobject.html
 share/doc/py-curl/curlobject.html
 share/doc/py-curl/pycurl.html
+share/examples/py-curl/
 share/examples/py-curl/basicfirst.py
 share/examples/py-curl/gtkhtml_demo.py
 share/examples/py-curl/linksys.py
 share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
 share/examples/py-curl/sfquery.py
+share/examples/py-curl/tests/
 share/examples/py-curl/tests/test.py
 share/examples/py-curl/tests/test_cb.py
 share/examples/py-curl/tests/test_debug.py
@@ -32,7 +36,3 @@ share/examples/py-curl/tests/test_stringio.py
 share/examples/py-curl/tests/test_xmlrpc.py
 share/examples/py-curl/tests/util.py
 share/examples/py-curl/xmlrpc_curl.py
-@dirrm share/examples/py-curl/tests
-@dirrm share/examples/py-curl
-@dirrm share/doc/py-curl
-@dirrm lib/python${MODPY_VERSION}/site-packages/curl

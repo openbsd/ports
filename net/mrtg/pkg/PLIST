@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/01/25 19:27:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/15 18:17:41 espie Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
@@ -10,22 +10,23 @@ libdata/perl5/site_perl/Pod/PlainText.pm
 libdata/perl5/site_perl/Pod/Select.pm
 libdata/perl5/site_perl/Pod/Usage.pm
 libdata/perl5/site_perl/locales_mrtg.pm
-man/man1/cfgmaker.1
-man/man1/indexmaker.1
-man/man1/mrtg-contrib.1
-man/man1/mrtg-faq.1
-man/man1/mrtg-forum.1
-man/man1/mrtg-ipv6.1
-man/man1/mrtg-logfile.1
-man/man1/mrtg-mibhelp.1
-man/man1/mrtg-nt-guide.1
-man/man1/mrtg-reference.1
-man/man1/mrtg-rrd.1
-man/man1/mrtg-squid.1
-man/man1/mrtg-unix-guide.1
-man/man1/mrtg-webserver.1
-man/man1/mrtg.1
-man/man1/mrtglib.1
+@man man/man1/cfgmaker.1
+@man man/man1/indexmaker.1
+@man man/man1/mrtg-contrib.1
+@man man/man1/mrtg-faq.1
+@man man/man1/mrtg-forum.1
+@man man/man1/mrtg-ipv6.1
+@man man/man1/mrtg-logfile.1
+@man man/man1/mrtg-mibhelp.1
+@man man/man1/mrtg-nt-guide.1
+@man man/man1/mrtg-reference.1
+@man man/man1/mrtg-rrd.1
+@man man/man1/mrtg-squid.1
+@man man/man1/mrtg-unix-guide.1
+@man man/man1/mrtg-webserver.1
+@man man/man1/mrtg.1
+@man man/man1/mrtglib.1
+share/doc/mrtg/
 share/doc/mrtg/cfgmaker.html
 share/doc/mrtg/cfgmaker.pod
 share/doc/mrtg/cfgmaker.txt
@@ -81,7 +82,10 @@ share/doc/mrtg/mrtg.txt
 share/doc/mrtg/mrtglib.html
 share/doc/mrtg/mrtglib.pod
 share/doc/mrtg/mrtglib.txt
+share/examples/mrtg/
 share/examples/mrtg/mrtg.cfg
+@sample ${SYSCONFDIR}/mrtg.cfg
+share/mrtg/
 share/mrtg/favicon.ico
 share/mrtg/mrtg-l.gif
 share/mrtg/mrtg-l.png
@@ -91,8 +95,3 @@ share/mrtg/mrtg-r.gif
 share/mrtg/mrtg-r.png
 share/mrtg/mrtg-ti.gif
 share/mrtg/mrtg-ti.png
-@dirrm share/mrtg
-@dirrm share/examples/mrtg
-@dirrm share/doc/mrtg
-@cwd ${SYSCONFDIR}
-@extra mrtg.cfg

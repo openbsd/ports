@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/09/19 16:38:43 couderc Exp $
-bin/mirror
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:41 espie Exp $
 bin/do_unlinks
-bin/pkgs_to_mmin
+bin/mirror
 bin/mirrormaster
-lib/mirror/lchat.pl
+bin/pkgs_to_mmin
+lib/mirror/
 lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
+lib/mirror/lchat.pl
 lib/mirror/lsparse.pl
 lib/mirror/mirror.defaults.sample
-man/man1/mirror.1
-man/man1/mirrormaster.1
+@man man/man1/mirror.1
+@man man/man1/mirrormaster.1
+share/doc/mirror/
+share/doc/mirror/Lake.class
 share/doc/mirror/copyright.html
 share/doc/mirror/index.html
 share/doc/mirror/mirror-faq.html
+share/doc/mirror/mirror-on-dusk.gif
 share/doc/mirror/mirror.html
 share/doc/mirror/mm.html
 share/doc/mirror/quickstart.html
-share/doc/mirror/mirror-on-dusk.gif
-share/doc/mirror/Lake.class
-@dirrm share/doc/mirror
-@dirrm lib/mirror

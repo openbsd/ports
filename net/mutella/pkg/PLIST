@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/11 05:21:07 cannings Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:42 espie Exp $
 bin/mutella
-man/man1/mutella.1
+@man man/man1/mutella.1
+share/mutella/
+share/mutella/remote/
+share/mutella/remote/template/
 share/mutella/remote/template/connections.html
 share/mutella/remote/template/edit.html
+share/mutella/remote/template/images/
 share/mutella/remote/template/images/addtransfer-16x16.gif
 share/mutella/remote/template/images/addtransfer-32x32.gif
 share/mutella/remote/template/images/bar-aqua-16x16.gif
@@ -39,6 +43,7 @@ share/mutella/remote/template/images/transfers-64x64.gif
 share/mutella/remote/template/index.html
 share/mutella/remote/template/log.html
 share/mutella/remote/template/message.html
+share/mutella/remote/template/modules/
 share/mutella/remote/template/modules/addsearch.html
 share/mutella/remote/template/modules/connectioninfo.html
 share/mutella/remote/template/modules/connections.html
@@ -63,8 +68,3 @@ share/mutella/remote/template/mutella-remote.css
 share/mutella/remote/template/results.html
 share/mutella/remote/template/searches.html
 share/mutella/remote/template/transfers.html
-@dirrm share/mutella/remote/template/modules
-@dirrm share/mutella/remote/template/images
-@dirrm share/mutella/remote/template
-@dirrm share/mutella/remote
-@dirrm share/mutella

@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/03/01 00:18:11 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 18:17:38 espie Exp $
 bin/BitchX
 bin/BitchX-${VERSION}
 bin/scr-bx
 libexec/wserv-bitchx
-man/man1/BitchX.1
+@man man/man1/BitchX.1
+share/bitchx/
 share/bitchx/BitchX.help
 share/bitchx/BitchX.ircnames
 share/bitchx/BitchX.kick
 share/bitchx/BitchX.quit
+share/bitchx/help/
+share/bitchx/help/1_General/
 share/bitchx/help/1_General/1_General
 share/bitchx/help/1_General/4op
 share/bitchx/help/1_General/about
@@ -34,6 +37,7 @@ share/bitchx/help/1_General/bki
 share/bitchx/help/1_General/bye
 share/bitchx/help/1_General/channel
 share/bitchx/help/1_General/chat
+share/bitchx/help/1_General/ctcp/
 share/bitchx/help/1_General/ctcp/action
 share/bitchx/help/1_General/ctcp/bdcc
 share/bitchx/help/1_General/ctcp/cdcc
@@ -54,6 +58,7 @@ share/bitchx/help/1_General/ctcp/utc
 share/bitchx/help/1_General/ctcp/version
 share/bitchx/help/1_General/ctcp/whoami
 share/bitchx/help/1_General/ctcp/xdcc
+share/bitchx/help/1_General/dcc/
 share/bitchx/help/1_General/dcc/activecount
 share/bitchx/help/1_General/dcc/autoget
 share/bitchx/help/1_General/dcc/autooverwrite
@@ -135,6 +140,7 @@ share/bitchx/help/1_General/uping
 share/bitchx/help/1_General/url
 share/bitchx/help/1_General/ver
 share/bitchx/help/1_General/wordlist
+share/bitchx/help/2_Queries/
 share/bitchx/help/2_Queries/2_Queries
 share/bitchx/help/2_Queries/admin
 share/bitchx/help/2_Queries/flush
@@ -172,6 +178,7 @@ share/bitchx/help/2_Queries/wilcr
 share/bitchx/help/2_Queries/wilm
 share/bitchx/help/2_Queries/wiln
 share/bitchx/help/2_Queries/ww
+share/bitchx/help/3_Operators/
 share/bitchx/help/3_Operators/3_Operators
 share/bitchx/help/3_Operators/connect
 share/bitchx/help/3_Operators/deoper
@@ -194,9 +201,11 @@ share/bitchx/help/3_Operators/tkline
 share/bitchx/help/3_Operators/unkline
 share/bitchx/help/3_Operators/uping
 share/bitchx/help/3_Operators/wallops
+share/bitchx/help/4_Misc/
 share/bitchx/help/4_Misc/4_Misc
 share/bitchx/help/4_Misc/abort
 share/bitchx/help/4_Misc/beep
+share/bitchx/help/4_Misc/bind/
 share/bitchx/help/4_Misc/bind/backspace
 share/bitchx/help/4_Misc/bind/backward_character
 share/bitchx/help/4_Misc/bind/backward_history
@@ -257,6 +266,7 @@ share/bitchx/help/4_Misc/cd
 share/bitchx/help/4_Misc/clear
 share/bitchx/help/4_Misc/digraph
 share/bitchx/help/4_Misc/encrypt
+share/bitchx/help/4_Misc/fset/
 share/bitchx/help/4_Misc/history
 share/bitchx/help/4_Misc/hostname
 share/bitchx/help/4_Misc/ircuser
@@ -266,6 +276,7 @@ share/bitchx/help/4_Misc/mload
 share/bitchx/help/4_Misc/note
 share/bitchx/help/4_Misc/rbind
 share/bitchx/help/4_Misc/realname
+share/bitchx/help/4_Misc/set/
 share/bitchx/help/4_Misc/set/always_split_biggest
 share/bitchx/help/4_Misc/set/auto_new_nick
 share/bitchx/help/4_Misc/set/auto_reconnect_delay
@@ -408,6 +419,7 @@ share/bitchx/help/4_Misc/set/xterm_options
 share/bitchx/help/4_Misc/summon
 share/bitchx/help/4_Misc/unclear
 share/bitchx/help/4_Misc/which
+share/bitchx/help/4_Misc/window/
 share/bitchx/help/4_Misc/window/add
 share/bitchx/help/4_Misc/window/back
 share/bitchx/help/4_Misc/window/balance
@@ -465,6 +477,8 @@ share/bitchx/help/4_Misc/window/status_special
 share/bitchx/help/4_Misc/window/swap
 share/bitchx/help/4_Misc/window/unbind
 share/bitchx/help/4_Misc/window/window
+share/bitchx/help/4_Misc/wset/
+share/bitchx/help/5_Programming/
 share/bitchx/help/5_Programming/5_Programming
 share/bitchx/help/5_Programming/alias
 share/bitchx/help/5_Programming/assign
@@ -493,6 +507,7 @@ share/bitchx/help/5_Programming/loadtcl
 share/bitchx/help/5_Programming/local
 share/bitchx/help/5_Programming/menu
 share/bitchx/help/5_Programming/menuitem
+share/bitchx/help/5_Programming/on/
 share/bitchx/help/5_Programming/on/action
 share/bitchx/help/5_Programming/on/channel_nick
 share/bitchx/help/5_Programming/on/channel_signoff
@@ -605,6 +620,7 @@ share/bitchx/help/5_Programming/while
 share/bitchx/help/5_Programming/xecho
 share/bitchx/help/5_Programming/xeval
 share/bitchx/help/5_Programming/xtype
+share/bitchx/help/6_Functions/
 share/bitchx/help/6_Functions/6_Functions
 share/bitchx/help/6_Functions/absstrlen
 share/bitchx/help/6_Functions/addtabkey
@@ -797,6 +813,7 @@ share/bitchx/help/6_Functions/winvisible
 share/bitchx/help/6_Functions/word
 share/bitchx/help/6_Functions/write
 share/bitchx/help/6_Functions/writeb
+share/bitchx/help/7_Docs/
 share/bitchx/help/7_Docs/7_Docs
 share/bitchx/help/7_Docs/About_BitchX
 share/bitchx/help/7_Docs/Arrays
@@ -820,6 +837,7 @@ share/bitchx/help/7_Docs/Special_Vars
 share/bitchx/help/7_Docs/Status_Line
 share/bitchx/help/7_Docs/Text_Highlight
 share/bitchx/help/7_Docs/Updates
+share/bitchx/help/8_Scripts/
 share/bitchx/help/8_Scripts/2.8script
 share/bitchx/help/8_Scripts/8_Scripts
 share/bitchx/help/8_Scripts/action
@@ -917,6 +935,8 @@ share/bitchx/help/commands
 share/bitchx/help/findcomm
 share/bitchx/help/functions
 share/bitchx/help/out
+share/bitchx/plugins/
+share/bitchx/script/
 share/bitchx/script/actplug.gmz
 share/bitchx/script/auto_resume
 share/bitchx/script/bxglobal
@@ -928,6 +948,7 @@ share/bitchx/script/fserve.irc
 share/bitchx/script/menu.bx
 share/bitchx/script/query
 share/bitchx/script/query.bx
+share/bitchx/translation/
 share/bitchx/translation/ASCII
 share/bitchx/translation/CP437
 share/bitchx/translation/CP850
@@ -961,21 +982,3 @@ share/bitchx/translation/SWEDISH_NAMES_COM
 share/bitchx/translation/SWISS
 share/bitchx/translation/UNITED_KINGDOM
 share/bitchx/translation/UNITED_KINGDOM_COM
-@dirrm share/bitchx/translation
-@dirrm share/bitchx/script
-@dirrm share/bitchx/help/8_Scripts
-@dirrm share/bitchx/help/7_Docs
-@dirrm share/bitchx/help/6_Functions
-@dirrm share/bitchx/help/5_Programming/on
-@dirrm share/bitchx/help/5_Programming
-@dirrm share/bitchx/help/4_Misc/window
-@dirrm share/bitchx/help/4_Misc/set
-@dirrm share/bitchx/help/4_Misc/bind
-@dirrm share/bitchx/help/4_Misc
-@dirrm share/bitchx/help/3_Operators
-@dirrm share/bitchx/help/2_Queries
-@dirrm share/bitchx/help/1_General/dcc
-@dirrm share/bitchx/help/1_General/ctcp
-@dirrm share/bitchx/help/1_General
-@dirrm share/bitchx/help
-@dirrm share/bitchx

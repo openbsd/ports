@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/08 15:03:35 danh Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:45 espie Exp $
 @pkgcfl radiusd-cistron-*
 bin/builddbm
 bin/dbmkeys
@@ -7,16 +7,16 @@ bin/md5test
 bin/radtest
 bin/testuser
 sbin/radiusd
+share/doc/radiusd-lucent/
 share/doc/radiusd-lucent/LICENSE
 share/doc/radiusd-lucent/README
 share/doc/radiusd-lucent/README.patched
+share/examples/radiusd-lucent/
 share/examples/radiusd-lucent/clients
 share/examples/radiusd-lucent/config.aeg.example
 share/examples/radiusd-lucent/dictionary
+share/examples/radiusd-lucent/menus/
 share/examples/radiusd-lucent/menus/menu1
 share/examples/radiusd-lucent/menus/menu2
 share/examples/radiusd-lucent/proxy
 share/examples/radiusd-lucent/users
-@dirrm share/examples/radiusd-lucent/menus
-@dirrm share/examples/radiusd-lucent
-@dirrm share/doc/radiusd-lucent

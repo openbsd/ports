@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/04/14 18:59:08 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:48 espie Exp $
 @pkgcfl quagga-*
-@unexec install-info --delete --info-dir=%D/info %D/info/zebra.info
 bin/vtysh
-info/zebra.info
-man/man1/vtysh.1
-man/man8/bgpd.8
-man/man8/ospf6d.8
-man/man8/ospfd.8
-man/man8/ripd.8
-man/man8/ripngd.8
-man/man8/zebra.8
+@info info/zebra.info
+@man man/man1/vtysh.1
+@man man/man8/bgpd.8
+@man man/man8/ospf6d.8
+@man man/man8/ospfd.8
+@man man/man8/ripd.8
+@man man/man8/ripngd.8
+@man man/man8/zebra.8
 sbin/bgpd
 sbin/ospf6d
 sbin/ospfd
 sbin/ripd
 sbin/ripngd
 sbin/zebra
+share/doc/zebra/
 share/doc/zebra/README
+share/examples/zebra/
 share/examples/zebra/bgpd.conf.sample
 share/examples/zebra/bgpd.conf.sample2
 share/examples/zebra/ospf6d.conf.sample
@@ -25,7 +26,4 @@ share/examples/zebra/ripd.conf.sample
 share/examples/zebra/ripngd.conf.sample
 share/examples/zebra/vtysh.conf.sample
 share/examples/zebra/zebra.conf.sample
-@dirrm share/examples/zebra
-@dirrm share/doc/zebra
-@exec install-info --info-dir=%D/info %D/info/zebra.info
 @extraunexec rm -rf ${CONFDIR}

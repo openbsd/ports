@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/31 23:58:57 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
 bin/tcpcat
+share/doc/tcpcat/
 share/doc/tcpcat/README
-@dirrm share/doc/tcpcat

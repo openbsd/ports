@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
 bin/dctc
 bin/hublist
+share/doc/dctc/
+share/doc/dctc/DCextensions/
 share/doc/dctc/DCextensions/p2p_capabilities
 share/doc/dctc/DCextensions/search_by_content
 share/doc/dctc/GDL
@@ -8,5 +10,3 @@ share/doc/dctc/VAR
 share/doc/dctc/commands
 share/doc/dctc/output
 share/doc/dctc/programs
-@dirrm share/doc/dctc/DCextensions
-@dirrm share/doc/dctc

@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/28 16:42:47 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/wol.info
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:47 espie Exp $
 bin/wol
 bin/wol-bootptab
 bin/wol-dhcpdconf
-info/wol.info
-man/man1/wol.1
+@info info/wol.info
+@man man/man1/wol.1
 share/locale/de/LC_MESSAGES/wol.mo
 share/locale/es/LC_MESSAGES/wol.mo
 share/locale/fr/LC_MESSAGES/wol.mo
 share/locale/it/LC_MESSAGES/wol.mo
-@exec install-info --info-dir=%D/info %D/info/wol.info
+share/locale/sv/LC_MESSAGES/wol.mo

@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/17 01:49:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:44 espie Exp $
+${P5SITE}/Net/
 ${P5SITE}/Net/Traceroute.pm
-@comment ${P5ARCH}/auto/Net/Traceroute/.packlist
-man/man3p/Net::Traceroute.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Traceroute
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::Traceroute.3p

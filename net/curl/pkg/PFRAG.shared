@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/04/08 06:18:37 brad Exp $
-lib/libcurl.so.2.2
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/15 18:17:39 espie Exp $
+@lib lib/libcurl.so.2.2

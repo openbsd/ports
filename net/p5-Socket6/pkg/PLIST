@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/31 02:12:49 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:44 espie Exp $
+${P5ARCH}/
 ${P5ARCH}/Socket6.pm
-@comment ${P5ARCH}/auto/Socket6/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Socket6/
 ${P5ARCH}/auto/Socket6/Socket6.bs
 ${P5ARCH}/auto/Socket6/Socket6.so
-@dirrm ${P5ARCH}/auto/Socket6
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}

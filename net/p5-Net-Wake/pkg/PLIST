@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/17 10:39:10 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:44 espie Exp $
+${P5SITE}/Net/
 ${P5SITE}/Net/Wake.pm
-@comment ${P5ARCH}/auto/Net/Wake/.packlist
-man/man3p/Net::Wake.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Wake
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::Wake.3p

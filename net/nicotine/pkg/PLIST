@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/16 21:16:06 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:42 espie Exp $
 bin/nicotine
 bin/nicotine-import-winconfig
+lib/python${MODPY_VERSION}/site-packages/pynicotine/
 lib/python${MODPY_VERSION}/site-packages/pynicotine/ConfigParser.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/ConfigParser.pyc
 lib/python${MODPY_VERSION}/site-packages/pynicotine/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pynicotine/config.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/config.pyc
+lib/python${MODPY_VERSION}/site-packages/pynicotine/gtkgui/
 lib/python${MODPY_VERSION}/site-packages/pynicotine/gtkgui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/gtkgui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pynicotine/gtkgui/about.py
@@ -65,24 +67,22 @@ lib/python${MODPY_VERSION}/site-packages/pynicotine/transfers.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/transfers.pyc
 lib/python${MODPY_VERSION}/site-packages/pynicotine/utils.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/utils.pyc
+share/locale/
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/nicotine.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/nicotine.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/nicotine.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/nicotine.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/nicotine.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/nicotine.mo
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale
-@dirrm lib/python${MODPY_VERSION}/site-packages/pynicotine/gtkgui
-@dirrm lib/python${MODPY_VERSION}/site-packages/pynicotine

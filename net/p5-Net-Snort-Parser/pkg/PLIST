@@ -1,17 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 23:26:49 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
 bin/snortconfig
+${P5SITE}/Net/
+${P5SITE}/Net/Snort/
+${P5SITE}/Net/Snort/Parser/
 ${P5SITE}/Net/Snort/Parser/File.pm
 ${P5SITE}/Net/Snort/Parser/Rule.pm
-@comment ${P5ARCH}/auto/Net/Snort/Parser/.packlist
-man/man1/snortconfig.1
+@man man/man1/snortconfig.1
 man/man3p/Net::Snort::Parser::File.3
 man/man3p/Net::Snort::Parser::Rule.3
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Snort/Parser
-@comment @dirrm ${P5ARCH}/auto/Net/Snort
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/Snort/Parser
-@dirrm ${P5SITE}/Net/Snort
-@dirrm ${P5SITE}/Net

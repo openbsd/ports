@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/04/14 18:59:08 xsa Exp $
-man/man5/iauth.conf.5
-man/man8/iauth.8
-man/man8/ircd.8
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:41 espie Exp $
+@man man/man5/iauth.conf.5
+@man man/man8/iauth.8
+@man man/man8/ircd.8
 sbin/chkconf
 sbin/iauth
 sbin/ircd
 sbin/ircd-mkpasswd
 sbin/ircdwatch
+share/examples/ircd/
+@sample ${CONFDIR}/
 share/examples/ircd/iauth.conf-sample
+@sample ${CONFDIR}/iauth.conf
 share/examples/ircd/ircd.conf-sample
+@sample ${CONFDIR}/ircd.conf
 share/examples/ircd/ircd.m4
-@dirrm share/examples/ircd
-@extraunexec rm -rf ${CONFDIR}
 @extraunexec rm -rf /var/log/ircd

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/16 21:33:10 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
 bin/iperf
+share/doc/iperf/
 share/doc/iperf/index.html
 share/doc/iperf/jperf.gif
 share/doc/iperf/lib.html
 share/doc/iperf/release.html
 share/doc/iperf/ui_license.html
-@dirrm share/doc/iperf

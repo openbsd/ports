@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/05 08:37:03 jakob Exp $
-man/man8/nsd-notify.8
-man/man8/nsd.8
-man/man8/nsdc.8
-man/man8/zonec.8
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:42 espie Exp $
+@man man/man8/nsd-notify.8
+@man man/man8/nsd.8
+@man man/man8/nsdc.8
+@man man/man8/zonec.8
 sbin/nsd
 sbin/nsd-notify
 sbin/nsdc
 sbin/zonec
+share/doc/nsd/
 share/doc/nsd/CREDITS
 share/doc/nsd/DIFFERENCES
 share/doc/nsd/README
 share/doc/nsd/RELNOTES
 share/doc/nsd/REQUIREMENTS
+share/examples/nsd/
 share/examples/nsd/nsd.zones.sample
 share/examples/nsd/nsdc.conf.sample
-@dirrm share/examples/nsd
-@dirrm share/doc/nsd

@@ -1,15 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/05 17:45:36 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
 bin/dict
 @comment bin/tkdict
+${P5SITE}/Net/
 ${P5SITE}/Net/Dict.pm
 ${P5SITE}/Net/Dict.pod
-@comment ${P5ARCH}/auto/Net/Dict/.packlist
-man/man1/dict.1
-@comment man/man1/tkdict.1
-man/man3p/Net::Dict.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/Dict
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net
+@man man/man1/dict.1
+@man man/man1/tkdict.1
+@man man/man3p/Net::Dict.3p

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/12/16 19:24:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:47 espie Exp $
 bin/xchat
 bin/xchat-text
+share/doc/xchat/
 share/doc/xchat/README
 share/doc/xchat/xchat-1.html
 share/doc/xchat/xchat-10.html
@@ -14,6 +15,8 @@ share/doc/xchat/xchat-8.html
 share/doc/xchat/xchat-9.html
 share/doc/xchat/xchat.html
 share/doc/xchat/xchat.sgml
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xchat.mo
 share/locale/cs/LC_MESSAGES/xchat.mo
 share/locale/da/LC_MESSAGES/xchat.mo
@@ -27,6 +30,8 @@ share/locale/hu/LC_MESSAGES/xchat.mo
 share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xchat.mo
 share/locale/lv/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
@@ -38,39 +43,18 @@ share/locale/ro/LC_MESSAGES/xchat.mo
 share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sk/LC_MESSAGES/xchat.mo
 share/locale/sl/LC_MESSAGES/xchat.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/tr/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
+share/pixmaps/
 share/pixmaps/xchat.png
-@dirrm share/pixmaps
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/doc/xchat

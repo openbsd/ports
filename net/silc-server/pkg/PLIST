@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/15 06:23:14 brad Exp $
-man/man5/silcd.conf.5
-man/man8/silcd.8
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:17:45 espie Exp $
+@man man/man5/silcd.conf.5
+@man man/man8/silcd.8
 sbin/silcd
+share/doc/silcd/
 share/doc/silcd/FAQ
 share/doc/silcd/README
+share/doc/silcd/examples/
 share/doc/silcd/examples/README
 share/doc/silcd/examples/silcd.prv
 share/doc/silcd/examples/silcd.pub
+share/examples/silcd/
 share/examples/silcd/cell_backup.conf
 share/examples/silcd/cell_router.conf
 share/examples/silcd/cell_server1.conf
 share/examples/silcd/cell_server2.conf
 share/examples/silcd/silcalgs.conf
 share/examples/silcd/silcd.conf
-@dirrm share/examples/silcd
-@dirrm share/doc/silcd/examples
-@dirrm share/doc/silcd
 @extraunexec userdel _silcd
 @extraunexec groupdel _silcd
 @extraunexec rm -rf ${CONFDIR}

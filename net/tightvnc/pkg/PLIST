@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/04/21 12:56:30 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:17:46 espie Exp $
 @pkgcfl vnc-*
 @pkgcfl tightvnc-viewer-*
 bin/Xvnc
 bin/vncconnect
 bin/vncpasswd
 bin/vncserver
-bin/vncviewer
-@comment man/cat1/vncviewer.0
-man/man1/Xvnc.1
-man/man1/vncconnect.1
-man/man1/vncpasswd.1
-man/man1/vncserver.1
-man/man1/vncviewer.1
+@man man/cat1/vncviewer.0
+@man man/man1/Xvnc.1
+@man man/man1/vncconnect.1
+@man man/man1/vncpasswd.1
+@man man/man1/vncserver.1
+share/vnc/
+share/vnc/classes/
 share/vnc/classes/AuthPanel.class
 share/vnc/classes/ButtonPanel.class
 share/vnc/classes/ClipboardFrame.class
@@ -26,5 +26,3 @@ share/vnc/classes/VncCanvas.class
 share/vnc/classes/VncViewer.class
 share/vnc/classes/VncViewer.jar
 share/vnc/classes/index.vnc
-@dirrm share/vnc/classes
-@dirrm share/vnc

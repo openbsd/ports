@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/03/04 07:28:06 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:45 espie Exp $
 bin/quirc
+share/doc/quirc/
 share/doc/quirc/AUTHORS
 share/doc/quirc/COPYING
 share/doc/quirc/ChangeLog
@@ -12,7 +13,9 @@ share/doc/quirc/color.txt
 share/doc/quirc/nickcomp.txt
 share/doc/quirc/quedit.txt
 share/doc/quirc/rfc1459.txt
+share/quirc/
 share/quirc/VERSION
+share/quirc/common/
 share/quirc/common/install.tcl
 share/quirc/dal.tcl
 share/quirc/default.tcl
@@ -31,10 +34,7 @@ share/quirc/quedit
 share/quirc/qwidgets.tcl
 share/quirc/server.tcl
 share/quirc/servers
+share/quirc/themes/
 share/quirc/themes/default.tcl
 share/quirc/variables.tcl
 share/quirc/winpopup.tcl
-@dirrm share/quirc/themes
-@dirrm share/quirc/common
-@dirrm share/quirc
-@dirrm share/doc/quirc

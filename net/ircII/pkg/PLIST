@@ -1,18 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/06/06 02:27:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/15 18:17:41 espie Exp $
 bin/ircII
 bin/ircbug
 bin/ircflush
 bin/ircio
 bin/wserv
-@comment man/man1/irc.1
-man/man1/ircII.1
-man/man1/ircbug.1
+@comment @man man/man1/irc.1
+@man man/man1/ircII.1
+@man man/man1/ircbug.1
+share/ircII/
+share/ircII/help/
 share/ircII/help/!
 share/ircII/help/.date
 share/ircII/help/:
 share/ircII/help/@
 share/ircII/help/abort
 share/ircII/help/admin
+share/ircII/help/alias/
 share/ircII/help/alias/alias
 share/ircII/help/alias/functions
 share/ircII/help/alias/quote
@@ -22,6 +25,7 @@ share/ircII/help/assign
 share/ircII/help/away
 share/ircII/help/basics
 share/ircII/help/beep
+share/ircII/help/bind/
 share/ircII/help/bind/backspace
 share/ircII/help/bind/backward_character
 share/ircII/help/bind/backward_history
@@ -84,6 +88,7 @@ share/ircII/help/clear
 share/ircII/help/commands
 share/ircII/help/comment
 share/ircII/help/connect
+share/ircII/help/ctcp/
 share/ircII/help/ctcp/action
 share/ircII/help/ctcp/clientinfo
 share/ircII/help/ctcp/ctcp
@@ -95,6 +100,7 @@ share/ircII/help/ctcp/userinfo
 share/ircII/help/ctcp/utc
 share/ircII/help/ctcp/version
 share/ircII/help/date
+share/ircII/help/dcc/
 share/ircII/help/dcc/chat
 share/ircII/help/dcc/close
 share/ircII/help/dcc/dcc
@@ -129,6 +135,7 @@ share/ircII/help/info
 share/ircII/help/input
 share/ircII/help/intro
 share/ircII/help/invite
+share/ircII/help/ircii/
 share/ircII/help/ircii/copyright
 share/ircII/help/ison
 share/ircII/help/join
@@ -138,6 +145,7 @@ share/ircII/help/lastlog
 share/ircII/help/leave
 share/ircII/help/links
 share/ircII/help/list
+share/ircII/help/load/
 share/ircII/help/load/2.9script
 share/ircII/help/load/action
 share/ircII/help/load/alias
@@ -214,6 +222,7 @@ share/ircII/help/names
 share/ircII/help/news
 share/ircII/help/newuser
 share/ircII/help/nick
+share/ircII/help/note/
 share/ircII/help/note/antiwall
 share/ircII/help/note/count
 share/ircII/help/note/deny
@@ -237,6 +246,7 @@ share/ircII/help/note/wall
 share/ircII/help/note/wallops
 share/ircII/help/notice
 share/ircII/help/notify
+share/ircII/help/on/
 share/ircII/help/on/action
 share/ircII/help/on/channel_nick
 share/ircII/help/on/channel_signoff
@@ -320,6 +330,7 @@ share/ircII/help/send
 share/ircII/help/sendline
 share/ircII/help/server
 share/ircII/help/servlist
+share/ircII/help/set/
 share/ircII/help/set/always_split_biggest
 share/ircII/help/set/auto_unmark_away
 share/ircII/help/set/auto_whowas
@@ -464,6 +475,7 @@ share/ircII/help/while
 share/ircII/help/who
 share/ircII/help/whois
 share/ircII/help/whowas
+share/ircII/help/window/
 share/ircII/help/window/add
 share/ircII/help/window/addgroup
 share/ircII/help/window/back
@@ -513,6 +525,7 @@ share/ircII/help/window/where
 share/ircII/help/window/window
 share/ircII/help/xecho
 share/ircII/help/xtype
+share/ircII/script/
 share/ircII/script/2.8script
 share/ircII/script/2.9script
 share/ircII/script/action
@@ -594,6 +607,7 @@ share/ircII/script/voice
 share/ircII/script/wallopstat
 share/ircII/script/whowas
 share/ircII/script/window
+share/ircII/translation/
 share/ircII/translation/ASCII
 share/ircII/translation/CP437
 share/ircII/translation/CP850
@@ -627,17 +641,3 @@ share/ircII/translation/SWEDISH_NAMES_COM
 share/ircII/translation/SWISS
 share/ircII/translation/UNITED_KINGDOM
 share/ircII/translation/UNITED_KINGDOM_COM
-@dirrm share/ircII/translation
-@dirrm share/ircII/script
-@dirrm share/ircII/help/window
-@dirrm share/ircII/help/set
-@dirrm share/ircII/help/on
-@dirrm share/ircII/help/note
-@dirrm share/ircII/help/load
-@dirrm share/ircII/help/ircii
-@dirrm share/ircII/help/dcc
-@dirrm share/ircII/help/ctcp
-@dirrm share/ircII/help/bind
-@dirrm share/ircII/help/alias
-@dirrm share/ircII/help
-@dirrm share/ircII

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/06 20:55:19 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:47 espie Exp $
 bin/udptunnel
+share/doc/udptunnel/
 share/doc/udptunnel/udptunnel.html
-@dirrm share/doc/udptunnel

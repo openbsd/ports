@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/10 21:44:49 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
 bin/clive
-man/man1/clive.1
+@man man/man1/clive.1
+share/clive/
 share/clive/cliverc-example.conf
-@dirrm share/clive

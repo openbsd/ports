@@ -1,22 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/05/04 17:29:57 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:41 espie Exp $
 bin/askmara
 bin/duende
 bin/getzone
-man/man1/askmara.1
-man/man1/getzone.1
-man/man5/csv1.5
-man/man5/mararc.5
-man/man8/duende.8
-man/man8/maradns.8
-man/man8/zoneserver.8
+@man man/man1/askmara.1
+@man man/man1/getzone.1
+@man man/man5/csv1.5
+@man man/man5/mararc.5
+@man man/man8/duende.8
+@man man/man8/maradns.8
+@man man/man8/zoneserver.8
 sbin/maradns
 sbin/zoneserver
+share/doc/maradns-devel/
+share/doc/maradns-devel/Makefile
 share/doc/maradns-devel/QuickStart
 share/doc/maradns-devel/README
 share/doc/maradns-devel/changelog.html
 share/doc/maradns-devel/changelog.txt
 share/doc/maradns-devel/credits.txt
 share/doc/maradns-devel/download.html
+share/doc/maradns-devel/examples/
+share/doc/maradns-devel/examples/Makefile
 share/doc/maradns-devel/examples/example_authoritative_mararc.txt
 share/doc/maradns-devel/examples/example_csv1
 share/doc/maradns-devel/examples/example_csv1.txt
@@ -27,6 +31,8 @@ share/doc/maradns-devel/faq.html
 share/doc/maradns-devel/faq.txt
 share/doc/maradns-devel/files.txt
 share/doc/maradns-devel/logfile
+share/doc/maradns-devel/man/
+share/doc/maradns-devel/man/Makefile
 share/doc/maradns-devel/man/askmara.1
 share/doc/maradns-devel/man/csv1.5
 share/doc/maradns-devel/man/duende.8
@@ -37,6 +43,7 @@ share/doc/maradns-devel/man/mararc.5
 share/doc/maradns-devel/man/read.manpage
 share/doc/maradns-devel/man/zoneserver.8
 share/doc/maradns-devel/maradns.gpg.key
+share/doc/maradns-devel/misc/
 share/doc/maradns-devel/misc/0README
 share/doc/maradns-devel/misc/RFC1035.compliance
 share/doc/maradns-devel/misc/cache.poison.protection
@@ -47,6 +54,7 @@ share/doc/maradns-devel/misc/describing_dns_rrs.html
 share/doc/maradns-devel/misc/handling.compression
 share/doc/maradns-devel/misc/how.maradns.stores.rrs
 share/doc/maradns-devel/misc/how.to.support.sql
+share/doc/maradns-devel/misc/js-manpages/
 share/doc/maradns-devel/misc/js-manpages/README
 share/doc/maradns-devel/misc/js-manpages/js_alloc.3
 share/doc/maradns-devel/misc/js-manpages/js_append.3
@@ -92,21 +100,26 @@ share/doc/maradns-devel/misc/js-manpages/js_tolower.3
 share/doc/maradns-devel/misc/js-manpages/js_unlock.3
 share/doc/maradns-devel/misc/js-manpages/js_val.3
 share/doc/maradns-devel/misc/js-manpages/js_write.3
+share/doc/maradns-devel/misc/man_macros/
 share/doc/maradns-devel/misc/man_macros/README
 share/doc/maradns-devel/misc/man_macros/example_manpage.1
 share/doc/maradns-devel/misc/man_macros/man.macros
 share/doc/maradns-devel/misc/man_macros/man.macros.7
 share/doc/maradns-devel/misc/multiple.qdcount
+share/doc/maradns-devel/misc/old.changelog
 share/doc/maradns-devel/misc/private_rrs.abw
 share/doc/maradns-devel/misc/private_rrs.html
 share/doc/maradns-devel/misc/propagation.txt
 share/doc/maradns-devel/misc/recursive-case-insensitive
 share/doc/maradns-devel/misc/recursive.algorithm
 share/doc/maradns-devel/misc/resolution.algorithm
+share/doc/maradns-devel/misc/rfc/
 share/doc/maradns-devel/misc/rfc/rfc1035.txt
 share/doc/maradns-devel/misc/rfc1034.notes.abw
 share/doc/maradns-devel/misc/rtest.output
+share/doc/maradns-devel/misc/spammers/
 share/doc/maradns-devel/misc/spammers/azmalink.net
+share/doc/maradns-devel/misc/spammers/hiddenonline/
 share/doc/maradns-devel/misc/spammers/hiddenonline/google.search
 share/doc/maradns-devel/misc/spammers/hiddenonline/hiddenonline.spam
 share/doc/maradns-devel/misc/spammers/hiddenonline/whois.dimeit.com
@@ -115,7 +128,10 @@ share/doc/maradns-devel/misc/www.monty.de
 share/doc/maradns-devel/misc/year_2038_statement.abw
 share/doc/maradns-devel/misc/year_2038_statement.html
 share/doc/maradns-devel/misc/year_2038_statement.txt
+share/doc/maradns-devel/ps/
+share/doc/maradns-devel/ps/Makefile
 share/doc/maradns-devel/ps/README
+share/doc/maradns-devel/source/
 share/doc/maradns-devel/source/SOURCE.FILES
 share/doc/maradns-devel/source/askmara.ej
 share/doc/maradns-devel/source/authoritative.ej
@@ -151,6 +167,8 @@ share/doc/maradns-devel/source/recursive.ej
 share/doc/maradns-devel/source/security_design.embed
 share/doc/maradns-devel/source/tutorial.ej
 share/doc/maradns-devel/source/zoneserver.ej
+share/doc/maradns-devel/tutorial/
+share/doc/maradns-devel/tutorial/Makefile
 share/doc/maradns-devel/tutorial/authoritative.html
 share/doc/maradns-devel/tutorial/compile.html
 share/doc/maradns-devel/tutorial/convert.html
@@ -161,15 +179,3 @@ share/doc/maradns-devel/tutorial/man.mararc.html
 share/doc/maradns-devel/tutorial/recordtypes.html
 share/doc/maradns-devel/tutorial/recursive.html
 share/doc/maradns-devel/tutorial/tutorial.html
-@dirrm share/doc/maradns-devel/tutorial
-@dirrm share/doc/maradns-devel/source
-@dirrm share/doc/maradns-devel/ps
-@dirrm share/doc/maradns-devel/misc/spammers/hiddenonline
-@dirrm share/doc/maradns-devel/misc/spammers
-@dirrm share/doc/maradns-devel/misc/rfc
-@dirrm share/doc/maradns-devel/misc/man_macros
-@dirrm share/doc/maradns-devel/misc/js-manpages
-@dirrm share/doc/maradns-devel/misc
-@dirrm share/doc/maradns-devel/man
-@dirrm share/doc/maradns-devel/examples
-@dirrm share/doc/maradns-devel

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/14 18:59:08 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
 bin/achfile
 bin/acleandir.rc
 bin/add_netatalk_printer
@@ -35,15 +35,18 @@ bin/timeout
 bin/unbin
 bin/unhex
 bin/unsingle
+include/atalk/
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
 include/atalk/asp.h
 include/atalk/atp.h
+include/atalk/boolean.h
 include/atalk/cnid.h
 include/atalk/compat.h
 include/atalk/ddp.h
 include/atalk/dsi.h
+include/atalk/logger.h
 include/atalk/nbp.h
 include/atalk/netddp.h
 include/atalk/pap.h
@@ -53,8 +56,24 @@ include/atalk/server_child.h
 include/atalk/uam.h
 include/atalk/util.h
 include/atalk/zip.h
+include/netatalk/
+include/netatalk/aarp.c
+include/netatalk/aarp.h
+include/netatalk/at.h
+include/netatalk/at_control.c
+include/netatalk/at_proto.c
+include/netatalk/at_var.h
+include/netatalk/ddp.h
+include/netatalk/ddp_input.c
+include/netatalk/ddp_output.c
+include/netatalk/ddp_usrreq.c
+include/netatalk/ddp_var.h
+include/netatalk/endian.h
+include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk.la
+lib/netatalk/
+lib/netatalk/uams/
 lib/netatalk/uams/uams_clrtxt.so
 lib/netatalk/uams/uams_dhx.so
 lib/netatalk/uams/uams_dhx_passwd.a
@@ -69,47 +88,48 @@ lib/netatalk/uams/uams_passwd.so
 lib/netatalk/uams/uams_randnum.a
 lib/netatalk/uams/uams_randnum.la
 lib/netatalk/uams/uams_randnum.so
-man/man1/achfile.1
-man/man1/acleandir.1
-man/man1/aecho.1
-man/man1/afile.1
-man/man1/afppasswd.1
-man/man1/apple_cp.1
-man/man1/apple_mv.1
-man/man1/apple_rm.1
-man/man1/getzones.1
-man/man1/hqx2bin.1
-man/man1/macbinary.1
-man/man1/megatron.1
-man/man1/nbp.1
-man/man1/nbplkup.1
-man/man1/nbprgstr.1
-man/man1/nbpunrgstr.1
-man/man1/netatalk-config.1
-man/man1/pap.1
-man/man1/papstatus.1
-man/man1/psorder.1
-man/man1/single2bin.1
-man/man1/timeout.1
-man/man1/unbin.1
-man/man1/unhex.1
-man/man1/unsingle.1
-man/man3/atalk_aton.3
-man/man3/nbp_name.3
-man/man4/atalk.4
-man/man5/AppleVolumes.default.5
-man/man5/afpd.conf.5
-man/man5/atalkd.conf.5
-man/man5/netatalk.conf.5
-man/man5/papd.conf.5
-man/man8/afpd.8
-man/man8/atalkd.8
-man/man8/papd.8
-man/man8/papstatus.8
-man/man8/psf.8
-man/man8/timelord.8
+@man man/man1/achfile.1
+@man man/man1/acleandir.1
+@man man/man1/aecho.1
+@man man/man1/afile.1
+@man man/man1/afppasswd.1
+@man man/man1/apple_cp.1
+@man man/man1/apple_mv.1
+@man man/man1/apple_rm.1
+@man man/man1/getzones.1
+@man man/man1/hqx2bin.1
+@man man/man1/macbinary.1
+@man man/man1/megatron.1
+@man man/man1/nbp.1
+@man man/man1/nbplkup.1
+@man man/man1/nbprgstr.1
+@man man/man1/nbpunrgstr.1
+@man man/man1/netatalk-config.1
+@man man/man1/pap.1
+@man man/man1/papstatus.1
+@man man/man1/psorder.1
+@man man/man1/single2bin.1
+@man man/man1/timeout.1
+@man man/man1/unbin.1
+@man man/man1/unhex.1
+@man man/man1/unsingle.1
+@man man/man3/atalk_aton.3
+@man man/man3/nbp_name.3
+@man man/man4/atalk.4
+@man man/man5/AppleVolumes.default.5
+@man man/man5/afpd.conf.5
+@man man/man5/atalkd.conf.5
+@man man/man5/netatalk.conf.5
+@man man/man5/papd.conf.5
+@man man/man8/afpd.8
+@man man/man8/atalkd.8
+@man man/man8/papd.8
+@man man/man8/papstatus.8
+@man man/man8/psf.8
+@man man/man8/timelord.8
 sbin/afpd
 sbin/atalkd
+sbin/etc2ps.sh
 sbin/ifmpap
 sbin/ifmpaprev
 sbin/ifpap
@@ -133,12 +153,15 @@ sbin/tfwmpap
 sbin/tfwmpaprev
 sbin/tfwpap
 sbin/tfwpaprev
+share/aclocal/
 share/aclocal/netatalk.m4
+share/doc/netatalk/
 share/doc/netatalk/COPYRIGHT
 share/doc/netatalk/FAQ
 share/doc/netatalk/README.hidden-items
 share/doc/netatalk/README.platforms
 share/doc/netatalk/README.veto
+share/examples/netatalk/
 share/examples/netatalk/AppleVolumes.default
 share/examples/netatalk/AppleVolumes.system
 share/examples/netatalk/afpd.conf
@@ -146,16 +169,12 @@ share/examples/netatalk/atalkd.conf
 share/examples/netatalk/netatalk.conf
 share/examples/netatalk/papd.conf
 share/examples/netatalk/rc.atalk
+share/netatalk/
+share/netatalk/pagecount.ps
+share/nls/netatalk/
 share/nls/netatalk/maccode.437
 share/nls/netatalk/maccode.850
 share/nls/netatalk/maccode.iso8859-1
 share/nls/netatalk/maccode.iso8859-1.adapted
-share/netatalk/pagecount.ps
-@dirrm share/netatalk
-@dirrm share/examples/netatalk
-@dirrm share/nls/netatalk
-@dirrm share/doc/netatalk
-@dirrm lib/netatalk/uams
-@dirrm lib/netatalk
-@dirrm include/atalk
+share/nls/netatalk/maccode.koi8-r
 @extraunexec rm -rf ${SYSCONFDIR}/netatalk

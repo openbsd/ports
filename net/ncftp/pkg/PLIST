@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/30 16:57:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:42 espie Exp $
 bin/ncftp
 bin/ncftpbatch
 bin/ncftpbookmarks
@@ -6,9 +6,9 @@ bin/ncftpget
 bin/ncftpls
 bin/ncftpput
 bin/ncftpspooler
-man/man1/ncftp.1
-man/man1/ncftpbatch.1
-man/man1/ncftpget.1
-man/man1/ncftpls.1
-man/man1/ncftpput.1
-man/man1/ncftpspooler.1
+@man man/man1/ncftp.1
+@man man/man1/ncftpbatch.1
+@man man/man1/ncftpget.1
+@man man/man1/ncftpls.1
+@man man/man1/ncftpput.1
+@man man/man1/ncftpspooler.1

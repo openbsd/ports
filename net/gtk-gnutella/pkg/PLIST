@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/04/09 10:20:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:40 espie Exp $
 bin/gtk-gnutella
-man/man1/gtk-gnutella.1
+@man man/man1/gtk-gnutella.1
+share/gtk-gnutella/
 share/gtk-gnutella/gwcache.boot
 share/gtk-gnutella/hostiles.txt
+share/gtk-gnutella/pixmaps/
 share/gtk-gnutella/pixmaps/arrow_down.xpm
 share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
@@ -25,9 +27,16 @@ share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
+share/locale/
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
-@dirrm share/gtk-gnutella/pixmaps
-@dirrm share/gtk-gnutella

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/01/17 02:08:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:42 espie Exp $
+@man man/man8/mtr.8
 @mode 4555
 sbin/mtr
-@mode
-man/man8/mtr.8

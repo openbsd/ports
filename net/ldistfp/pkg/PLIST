@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/12 20:01:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
 bin/ldistfp
+share/doc/ldistfp/
+share/doc/ldistfp/README
+share/ldistfp/
 @comment no checksum
 share/ldistfp/ldistfp-auth-fingerprints
 share/ldistfp/stat.awk
-share/doc/ldistfp/README
-@dirrm share/ldistfp
-@dirrm share/doc/ldistfp

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/05 01:23:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:44 espie Exp $
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/PlRPC.pm
 ${P5SITE}/RPC/
@@ -9,11 +9,6 @@ ${P5SITE}/RPC/PlServer/
 ${P5SITE}/RPC/PlServer.pm
 ${P5SITE}/RPC/PlServer/Comm.pm
 ${P5SITE}/RPC/PlServer/Test.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/RPC/
-@comment ${P5ARCH}/auto/RPC/PlServer/
-@comment ${P5ARCH}/auto/RPC/PlServer/.packlist
-man/man3p/Bundle::PlRPC.3p
-man/man3p/RPC::PlClient.3p
-man/man3p/RPC::PlServer.3p
+@man man/man3p/Bundle::PlRPC.3p
+@man man/man3p/RPC::PlClient.3p
+@man man/man3p/RPC::PlServer.3p

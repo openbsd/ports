@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/26 05:56:20 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:38 espie Exp $
 bin/amap
 bin/amapcrap
-man/man1/amap.1
+@man man/man1/amap.1
+share/amap/
 share/amap/appdefs.resp
 share/amap/appdefs.rpc
 share/amap/appdefs.trig
-@dirrm share/amap
