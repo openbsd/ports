@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/10 20:36:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/12/27 18:57:58 sturm Exp $
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
 include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-bpath.h
@@ -25,7 +25,7 @@ lib/pkgconfig/
 lib/pkgconfig/libgnomecanvas-2.0.pc
 share/gtk-doc/
 share/gtk-doc/html/
-@comment share/gtk-doc/html/libgnomecanvas/
+share/gtk-doc/html/libgnomecanvas/
 share/gtk-doc/html/libgnomecanvas/GnomeCanvas.html
 share/gtk-doc/html/libgnomecanvas/GnomeCanvasBpath.html
 share/gtk-doc/html/libgnomecanvas/GnomeCanvasClipgroup.html
