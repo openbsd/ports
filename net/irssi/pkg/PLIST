@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/03/11 21:52:12 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/03/20 22:19:49 lebel Exp $
 bin/botti
 bin/irssi
 lib/irssi/modules/libirc_bot.a
@@ -19,6 +19,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
+share/doc/irssi/faq.html
 share/doc/irssi/faq.txt
 share/doc/irssi/formats.txt
 share/doc/irssi/help/action
@@ -84,7 +85,6 @@ share/doc/irssi/help/notify
 share/doc/irssi/help/op
 share/doc/irssi/help/oper
 share/doc/irssi/help/part
-share/doc/irssi/help/perlflush
 share/doc/irssi/help/ping
 share/doc/irssi/help/query
 share/doc/irssi/help/quit
@@ -97,7 +97,6 @@ share/doc/irssi/help/restart
 share/doc/irssi/help/rmreconns
 share/doc/irssi/help/rmrejoins
 share/doc/irssi/help/rping
-share/doc/irssi/help/run
 share/doc/irssi/help/save
 share/doc/irssi/help/say
 share/doc/irssi/help/sconnect
@@ -143,11 +142,17 @@ share/doc/irssi/manual.txt
 share/doc/irssi/perl.txt
 share/doc/irssi/scripts/autoop.pl
 share/doc/irssi/scripts/autorejoin.pl
-share/doc/irssi/scripts/clones.pl
-share/doc/irssi/scripts/hello.pl
-share/doc/irssi/scripts/privmsg.pl
+share/doc/irssi/scripts/buf.pl
+share/doc/irssi/scripts/command.pl
+share/doc/irssi/scripts/dns.pl
+share/doc/irssi/scripts/kills.pl
+share/doc/irssi/scripts/mail.pl
+share/doc/irssi/scripts/mlock.pl
+share/doc/irssi/scripts/msg-event.pl
 share/doc/irssi/scripts/quitmsg.pl
-share/doc/irssi/scripts/realname.pl
+share/doc/irssi/scripts/redirect.pl
+share/doc/irssi/scripts/splitlong.pl
+share/doc/irssi/scripts/usercount.pl
 share/doc/irssi/signals.txt
 share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.html
