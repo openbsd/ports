@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.60 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.61 2001/12/22 03:54:44 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
+
+# More architectures need testing of MySQL+native threads
+.if ${MACHINE_ARCH} != "i386"
+BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken"
+.endif
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (test suite)"
 
-VERSION=	3.23.42
+VERSION=	3.23.46
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.486
-MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
-		http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
-		http://www.mysql.net/Downloads/%SUBDIR%/ \
-		http://mysql.he.net/Downloads/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
+NEED_VERSION=	1.500
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
 		ftp://ftp.shellhung.org/pub/Mirror/mysql/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR= MySQL-3.23
 
@@ -33,8 +34,12 @@ PERMIT_DISTFILES_FTP=	Yes
 DB_DIR?=	/var/mysql
 SUBST_VARS=	DB_DIR VERSION
 
+# Suggested flags to the C++ compiler, needed for
+# high load servers otherwise MySQL will crash.
+CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
+
 CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/mit-pthreads/config
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/mit-pthreads/config
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --localstatedir="${DB_DIR}" \
@@ -47,8 +52,6 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-bench \
 		 --without-mit-threads \
 		 --without-gemini
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
-		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
@@ -66,24 +69,25 @@ CONFIGURE_ARGS+= --with-berkeley-db --with-innodb
 CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
 .endif
 
-.if !defined(PACKAGING)
-LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
-.elif ${SUBPACKAGE} == "-server"
-LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
+.if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql
 .endif
 
-DOCS=	manual.html manual.ps manual_toc.html manual.txt
-
 VMEM_WARNING=	Yes
+
+DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Flags
-	@sed -e s#@PREFIX@#${TRUEPREFIX}#g -e s#@LOCALBASE@#${LOCALBASE}#g \
-		${FILESDIR}/startup.sh > ${WRKBUILD}/startup.sh
-	${INSTALL_SCRIPT} ${WRKBUILD}/startup.sh ${PREFIX}/lib/mysql
 	cd ${WRKSRC}/Docs; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif \
 		${PREFIX}/share/doc/mysql/Flags
+	@if [ -f ${PREFIX}/lib/mysql/libmysqlclient.so.10.0 ]; then \
+	  cd ${PREFIX}/lib && ln -sf mysql/libmysqlclient.so.10.0 \
+		libmysqlclient.so.10.0 ;\
+	fi
+
+do-regress:
+	@cd ${WRKSRC}/mysql-test && ./mysql-test-run
 
 .include <bsd.port.mk>

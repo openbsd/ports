@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2001/09/10 02:59:35 brad Exp $
---- configure.orig	Sat Sep  8 15:08:27 2001
-+++ configure	Sun Sep  9 20:12:00 2001
-@@ -3000,7 +3000,7 @@ else
+$OpenBSD: patch-configure,v 1.12 2001/12/22 03:54:44 brad Exp $
+--- configure.orig	Thu Nov 29 08:52:35 2001
++++ configure	Mon Dec 10 12:39:20 2001
+@@ -3002,7 +3002,7 @@ else
    ;;
  esac
  fi
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure,v 1.11 2001/09/10 02:59:35 brad Exp $
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -3134,38 +3134,7 @@ fi
+@@ -3136,38 +3136,7 @@ fi
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:3136: checking "how to check if pid exists"" >&5
+ echo "configure:3138: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -50,23 +50,23 @@ $OpenBSD: patch-configure,v 1.11 2001/09/10 02:59:35 brad Exp $
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -5023,6 +4992,7 @@ else
+@@ -5025,6 +4994,7 @@ else
    cat > conftest.$ac_ext <<EOF
- #line 5025 "configure"
+ #line 5027 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-@@ -5048,6 +5018,7 @@ echo "configure:5048: checking for TCP w
+@@ -5050,6 +5020,7 @@ echo "configure:5050: checking for TCP w
        cat > conftest.$ac_ext <<EOF
- #line 5050 "configure"
+ #line 5052 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  int allow_severity = 0;
  int deny_severity  = 0;
-@@ -5989,8 +5960,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -5991,8 +5962,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
@@ -75,7 +75,7 @@ $OpenBSD: patch-configure,v 1.11 2001/09/10 02:59:35 brad Exp $
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -6220,29 +6189,6 @@ EOF
+@@ -6222,29 +6191,6 @@ EOF
  
  fi
  

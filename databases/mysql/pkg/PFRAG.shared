@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/01/21 17:09:14 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2001/12/22 03:54:44 brad Exp $
+lib/libmysqlclient.so.10.0
+DYNLIBDIR(%B)
 lib/mysql/libmysqlclient.so.10.0
-NEWDYNLIBDIR(%B)
