@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/18 15:24:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/13 23:22:49 brad Exp $
+
+COMMENT=	"University of Washington's c-client mail access routines"
 
 DISTNAME=	imap-2000c
 PKGNAME=	c-client-2000c
 CATEGORIES=	mail devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/
 EXTRACT_SUFX=	.tar.Z
