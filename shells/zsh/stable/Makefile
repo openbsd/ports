@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/01/27 18:58:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/04/15 13:47:06 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -44,9 +44,12 @@ CONFIGURE_ARGS+=--disable-dynamic
 # we only enable sub-packages if the FLAVOR is not static
 MULTI_PACKAGES=	-zftp
 SUBPACKAGE?=
-.for i in ${MULTI_PACKAGES}
+.  for i in ${MULTI_PACKAGES}
 PKGNAME$i=	zsh$i-${VERSION}
-.endfor
+.  endfor
+.  if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=	::shells/zsh/stable
+.  endif
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
 .endif
 
