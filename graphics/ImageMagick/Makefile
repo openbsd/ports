@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2000/08/08 19:01:37 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2000/08/21 16:42:26 brad Exp $
 
-DISTNAME=	ImageMagick-5.2.1
+DISTNAME=	ImageMagick-5.2.2
 CATEGORIES=     graphics
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
