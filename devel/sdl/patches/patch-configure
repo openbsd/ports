@@ -1,6 +1,19 @@
-$OpenBSD: patch-configure,v 1.8 2001/07/03 01:00:14 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.9 2001/07/11 16:45:45 pvalchev Exp $
 --- configure.orig	Mon Jun 18 09:21:53 2001
-+++ configure	Mon Jul  2 18:47:29 2001
++++ configure	Wed Jul 11 10:08:03 2001
+@@ -638,9 +638,9 @@ fi
+ #
+ SDL_MAJOR_VERSION=1
+ SDL_MINOR_VERSION=2
+-SDL_MICRO_VERSION=1
+-SDL_INTERFACE_AGE=1
+-SDL_BINARY_AGE=1
++SDL_MICRO_VERSION=2
++SDL_INTERFACE_AGE=2
++SDL_BINARY_AGE=2
+ SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
+ 
+ 
 @@ -3318,7 +3318,11 @@ echo "configure:3316: checking for OSS a
  #line 3319 "configure"
  #include "confdefs.h"

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/06/29 01:13:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/11 16:45:45 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.1
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	devel
 NEED_VERSION=	1.417
 
@@ -37,7 +37,6 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	X11BASE="${X11BASE}"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-joystick \
 		 --disable-pthread-sem \
 		 --disable-nasm
 

@@ -1,6 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.8 2001/07/03 01:00:14 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.9 2001/07/11 16:45:45 pvalchev Exp $
 --- configure.in.orig	Mon Jun 18 09:21:38 2001
-+++ configure.in	Mon Jul  2 18:47:27 2001
++++ configure.in	Wed Jul 11 10:08:01 2001
+@@ -14,9 +14,9 @@ dnl Set various version strings - taken 
+ #
+ SDL_MAJOR_VERSION=1
+ SDL_MINOR_VERSION=2
+-SDL_MICRO_VERSION=1
+-SDL_INTERFACE_AGE=1
+-SDL_BINARY_AGE=1
++SDL_MICRO_VERSION=2
++SDL_INTERFACE_AGE=2
++SDL_BINARY_AGE=2
+ SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
+ 
+ AC_SUBST(SDL_MAJOR_VERSION)
 @@ -246,7 +246,11 @@ CheckOSS()
          AC_MSG_CHECKING(for OSS audio support)
          have_oss=no
