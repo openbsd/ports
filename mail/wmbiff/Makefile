@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2003/11/06 02:07:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/05/08 06:50:10 sturm Exp $
 
 COMMENT=	"wm-dockapp; multiple mailbox checker"
-DISTNAME=	wmbiff-0.4.17
+DISTNAME=	wmbiff-0.4.22
 CATEGORIES=	mail x11 x11/windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmbiff/}
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 USE_X11=	Yes
 
-LIB_DEPENDS=	gnutls.8.6::security/gnutls
+LIB_DEPENDS=	gnutls.12::security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	ac_cv_path_CVS2CL=""
