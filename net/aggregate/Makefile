@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/18 15:26:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/17 21:34:50 jakob Exp $
 
 COMMENT=	optimise a list of route prefixes
 
@@ -6,7 +6,8 @@ DISTNAME=	aggregate-1.3
 CATEGORIES=	net
 NEED_VERSION=	1.363
 
-MASTER_SITES=	http://www.mfnx.net/public/
+MASTER_SITES=	http://buffoon.automagic.org/dist/ \
+		http://maggie.automagic.org/dist/
 
 MAINTAINER=	Joe Abley <jabley@automagic.org>
 
