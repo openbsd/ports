@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/11/12 03:50:22 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2003/11/13 19:26:00 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -12,7 +12,8 @@ MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	gettext
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		xml2.6::textproc/libxml
+		xml2.6::textproc/libxml \
+		startup-notification-1.0.0::x11/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 # GPL

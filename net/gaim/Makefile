@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2003/11/02 07:06:43 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2003/11/13 19:26:00 brad Exp $
 
 DISTNAME=	gaim-0.72
 PATCHFILES=	${DISTNAME}-openssl.patch.gz:0
@@ -21,7 +21,8 @@ MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	gettext
 
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+		startup-notification-1.0.0::x11/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
