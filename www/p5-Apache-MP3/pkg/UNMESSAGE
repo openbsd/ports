@@ -1,0 +1,5 @@
+To completely deinstall the p5-Apache-MP3 package you have
+to revert the changes to your httpd.conf.
+
+Do not do this if you plan on re-installing the p5-Apache-MP3
+package at some future time.
