@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/12/05 12:53:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/01/02 16:30:02 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 DISTNAME=	cvs2cl-2.30
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/get-rev.cgi?revision=
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# no extract
 NO_BUILD=	Yes
 SEPARATE_BUILD=	concurrent
 
-DIST_LOC=	${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+DIST_LOC=	${FULLDISTDIR}/${DISTFILES}
 FETCH_BEFORE_ARGS= -o ${DIST_LOC}
 
 do-extract:
