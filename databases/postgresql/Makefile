@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2003/01/02 07:15:34 todd Exp $
+# $OpenBSD: Makefile,v 1.61 2003/01/02 14:48:23 todd Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
@@ -74,6 +74,7 @@ CONFIGURE_ENV+= WISH="${LOCALBASE}/bin/wish8.3"
 CONFIGURE_ARGS+= --with-tcl \
         --with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
         --with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
+BUILD_DEPENDS+=   tk83::x11/tk/8.3
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-tcl"
