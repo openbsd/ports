@@ -1,0 +1,27 @@
+--- Makefile.org	Fri Mar 21 12:12:30 1997
++++ Makefile	Mon Mar 16 12:53:07 1998
+@@ -1,9 +1,9 @@
+ 
+-LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
++LIBS	=  -L/usr/X11R6/lib -lXext -lX11 -lXmu -lm
+ 
+ CC	= gcc
+ CCC	= gcc
+-CFLAGS	= -O2
++CFLAGS	= -O2 -I/usr/X11R6/include
+ OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o
+ 
+ .c.o:
+@@ -13,8 +13,11 @@
+ 	$(CCC) -c $(CFLAGS) $<
+ 
+ wm2:	$(OBJECTS)
+-	mv -f wm2 wm2.old >& /dev/null || true
++	mv -f wm2 wm2.old > /dev/null 2>&1 || true
+ 	$(CCC) -o wm2 $(OBJECTS) $(LIBS)
++
++install:
++	install -c -o root -g wheel -m 755 wm2 /usr/X11R6/bin
+ 
+ depend:
+ 	makedepend -- $(CFLAGS) -- *.C
