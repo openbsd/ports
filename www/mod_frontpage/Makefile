@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/16 15:41:27 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/15 17:43:14 danh Exp $
+
+BROKEN=		"security hole, contains buffer overflow"
 
 COMMENT=	"Microsoft FrontPage 2000 Server extensions for Apache"
 
