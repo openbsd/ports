@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 01:50:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/23 08:51:51 kevlo Exp $
 #
 
 DISTNAME=       cless-290
@@ -13,6 +13,12 @@ MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ \
                 ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=     kevlo@openbsd.org
+
+LICENSE_TYPE=           BSD
+PERMIT_PACKAGE_CDROM=   YES
+PERMIT_PACKAGE_FTP=     YES
+PERMIT_DISTFILES_CDROM= YES
+PERMIT_DISTFILES_FTP=   YES
 
 GNU_CONFIGURE=  yes
 CFLAGS+=        -DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
