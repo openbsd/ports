@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.4 2003/04/17 08:06:30 jakob Exp $
+$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.5 2003/06/25 21:28:08 jakob Exp $
 
 --- src/osdep/unix/Makefile.gss.orig	Wed Mar  5 06:26:40 2003
 +++ src/osdep/unix/Makefile.gss	Thu Apr 17 09:14:06 2003
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.4 2003/04/17 08:06:30 jakob Exp 
 -GSSOLDLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err
 -GSSNEWLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
 +GSSCFLAGS= -I/usr/include/kerberosV -DHEIMDAL
-+GSSLDFLAGS= -lkafs -lkrb -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
++GSSLDFLAGS= -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
  
  gss:	# GSSAPI Kerberos V flags
  	echo $(GSSCFLAGS) >> OSCFLAGS
