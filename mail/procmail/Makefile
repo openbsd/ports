@@ -1,10 +1,5 @@
-# OpenBSD makefile for: procmail
-# Version required:     3.11pre7
-# Date created:         10 Nov 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.5 1999/03/25 19:34:39 rohee Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/07 18:53:21 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       procmail-3.12
 CATEGORIES=	mail
@@ -21,5 +16,18 @@ MAINTAINER=     rohee@OpenBSD.ORG
 .if !defined(PACKAGE_BUILDING) # handled in patch-aa
 IS_INTERACTIVE=	yes
 .endif
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "Some security vulnerabilities has been discovered in this"
+	@${ECHO} "package during the making of the OpenBSD 2.5 CDROMs."
+	@${ECHO} ""
+	@${ECHO} "You can update this port using CVS to a version with the"
+	@${ECHO} "vulnerabilities fixed."
+	@${ECHO} "To learn how to use CVS to update your port tree check"
+	@${ECHO} "    http://www.OpenBSD.ORG/anoncvs.html"
+	@${ECHO} "and then do : cd /usr ; cvs get ports/mail/procmail"
+	@${ECHO} ""
+	@${FALSE} 
 
 .include <bsd.port.mk>
