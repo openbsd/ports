@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_fluxbox_hh,v 1.1 2002/05/03 13:30:23 brad Exp $
+--- src/fluxbox.hh.orig	Fri Apr 12 15:02:12 2002
++++ src/fluxbox.hh	Fri May  3 12:27:19 2002
+@@ -135,6 +135,7 @@ public:
+ 	void saveToolbarSearch(Window, Toolbar *);
+ 	void saveTabSearch(Window, Tab *);
+ 	void saveGroupSearch(Window, FluxboxWindow *);	
++	void save_rc(void);
+ 	void removeMenuSearch(Window);
+ 	void removeWindowSearch(Window);
+ 	void removeToolbarSearch(Window);
+@@ -240,7 +241,6 @@ protected:
+ 	Fluxbox(int, char **, char * = 0, char * = 0);
+ 	char *getRcFilename();
+ 	void load_rc(void);
+-	void save_rc(void);
+ 	void reload_rc(void);
+ 	void real_rereadMenu(void);
+ 	void real_reconfigure(void);
