@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 1998/11/12 12:07:32 downsj Exp $
+# $OpenBSD: Makefile,v 1.10 1998/12/16 20:13:24 marc Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -54,11 +54,13 @@ JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work/jpeg-6b
 CFLAGS+=	-DA4
 .endif
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 .if !defined(A4)
 	@${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
 .else
 	@${ECHO_MSG} "Using -DA4 for compilation."
+.endif
 .endif
 
 post-extract:

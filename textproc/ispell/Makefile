@@ -3,7 +3,7 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/13 02:24:49 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 20:16:44 marc Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -19,6 +19,7 @@ MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
 		sq.1 tryaffix.1 unsq.1
 MAN4=		ispell.4 english.4
 
+.if !defined(NO_WARNINGS)
 pre-fetch pre-build pre-install:
 .if !defined(ISPELL_FR)
 	@echo '******************************************************' 
@@ -30,6 +31,7 @@ EXTRA_DICT=	francais-IREQ-1.4.tar.gz
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
 DISTFILES+=	${EXTRA_DICT}
 .endif	
+.endif
 
 pre-extract:
 .if !defined(LANG) 

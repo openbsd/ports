@@ -3,7 +3,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.3 1998/08/10 22:03:17 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 20:15:33 marc Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -44,6 +44,7 @@ PAPERSIZE_INVALID= yes
 .endif
 .endif
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 .if defined(PAPERSIZE_UNSPECIFIED)
 	@echo "Defaulting to ${PAPERSIZE} sized paper."
@@ -56,6 +57,7 @@ pre-fetch:
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
 	@${FALSE}
+.endif
 .endif
 
 .include <bsd.port.mk>

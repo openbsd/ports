@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/14 02:38:43 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/12/16 20:09:35 marc Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -16,6 +16,7 @@ USE_X11=	yes
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "  WARNING: This application requires a kernel compiled with"
@@ -23,6 +24,7 @@ pre-fetch:
 	@${ECHO} "           for proper operation.  The GENERIC kernel contains"
 	@${ECHO} "           these options."
 	@${ECHO} ""
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin

@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 05:38:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/12/16 20:14:41 marc Exp $
 #
 
 DISTNAME=	pkfonts
@@ -31,6 +31,7 @@ RESOLUTION_INVALID=	yes
 .endif
 .endif
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 .if defined(RESOLUTION_UNSPECIFIED)
 	@echo "Using ${RESOLUTION}dpi English PK fonts."
@@ -41,6 +42,7 @@ pre-fetch:
 	@echo "Error: invalid value for RESOLUTION: \"${RESOLUTION}\"" 
 	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
 	@/usr/bin/false
+.endif
 .endif
 
 do-install:

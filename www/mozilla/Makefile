@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/08/22 18:38:50 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/12/16 20:17:34 marc Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -28,10 +28,12 @@ MAKE_ENV+=	LIBRUNPATH=${MOZ_LIBDIR}
 #comment out for debugging
 MAKE_ENV+=	BUILD_OPT=1
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "*** Please see ${FILESDIR}/README for general caveats"
 	@${ECHO} ""
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dist/${MOZ_OBJDIR}/bin/moz-export ${PREFIX}/bin

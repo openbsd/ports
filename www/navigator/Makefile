@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/11/03 21:56:27 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/16 20:18:24 marc Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -33,6 +33,7 @@ IS_INTERACTIVE= "Netscape installer"
 
 MAINTAINER=	ports@OpenBSD.ORG
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "  WARNING: This application requires a kernel compiled with"
@@ -40,6 +41,7 @@ pre-fetch:
 	@${ECHO} "           for proper operation.  The GENERIC kernel contains"
 	@${ECHO} "           these options."
 	@${ECHO} ""
+.endif
 
 do-build:
 	@cd ${WRKDIR}/${FORTIFYNAME}/src && \

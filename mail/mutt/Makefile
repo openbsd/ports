@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/20 05:19:43 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/16 20:08:42 marc Exp $
 #
 
 # What port/package will be created
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=		--prefix=/usr/local --with-sharedir=/usr/local/share/mutt --wit
 #LIB_DEPENDS=    slang\\.0\\.99[0-9][0-9]:${PORTSDIR}/devel/libslang
 LIB_DEPENDS=    slang\\.1\\.22:${PORTSDIR}/devel/libslang
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@${ECHO} 
 	@${ECHO} This software contains cryptography enabling code.  It is 
@@ -29,6 +30,6 @@ pre-fetch:
 	@${ECHO} download site is set to Germany.  Once you bring it into 
 	@${ECHO} the US, it may not leave again.
 	@${ECHO}
-
+.endif
 
 .include <bsd.port.mk>
