@@ -1,0 +1,12 @@
+--- konsole/src/main.C.orig	Fri Nov 24 17:06:12 2000
++++ konsole/src/main.C	Fri Nov 24 17:05:40 2000
+@@ -46,7 +46,9 @@ static KCmdLineOptions options[] =
+ /* --| main |------------------------------------------------------ */
+ int main(int argc, char* argv[])
+ {
++#ifndef __OpenBSD__
+   setuid(getuid()); setgid(getgid()); // drop privileges
++#endif
+ 
+   // deal with shell/command ////////////////////////////
+   bool login_shell = false;
