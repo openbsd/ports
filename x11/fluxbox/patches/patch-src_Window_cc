@@ -1,0 +1,11 @@
+--- src/Window.cc.orig	Wed Apr 17 09:24:59 2002
++++ src/Window.cc	Sat Apr 27 06:06:23 2002
+@@ -3348,7 +3348,7 @@ void FluxboxWindow::motionNotifyEvent(XM
+ 					int cur_id = screen->getCurrentWorkspaceID();
+ 					int new_id = cur_id;
+ 					const int warpPad = screen->getEdgeSnapThreshold();
+-					if (me->x_root >= int(screen->getWidth()) - warpPad &&
++					if (me->x_root >= int(screen->getWidth()) - warpPad - 1 &&
+ 							frame.x < int(me->x_root - frame.grab_x - screen->getBorderWidth())) {
+ 						new_id = (cur_id + 1) % screen->getCount();
+ 						dx = -me->x_root;

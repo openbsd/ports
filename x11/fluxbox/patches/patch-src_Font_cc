@@ -1,0 +1,19 @@
+--- src/Font.cc.orig	Wed Mar 27 19:47:44 2002
++++ src/Font.cc	Sat Apr 27 06:06:23 2002
+@@ -25,6 +25,8 @@
+ #include "Font.hh"
+ 
+ #include "StringUtil.hh"
++#include "i18n.hh"
++
+ //use gnu extensions
+ #ifndef _GNU_SOURCE
+ #define _GNU_SOURCE
+@@ -53,6 +55,7 @@ m_display(display) {
+ 	m_font.fontstruct = 0;
+ 	m_font.set_extents = 0;
+ 	m_font.set = 0;
++	m_multibyte = I18n::instance()->multibyte();
+ 	if (name!=0) {
+ 		load(name);
+ 	}

@@ -1,0 +1,11 @@
+--- src/Theme.cc.orig	Thu Apr  4 13:28:19 2002
++++ src/Theme.cc	Sat Apr 27 06:06:23 2002
+@@ -382,7 +382,7 @@ void Theme::loadMenuStyle() {
+ 
+ 	//---------- font
+ 	m_menustyle.framefont->loadFromDatabase(m_database, "menu.frame.font", "Menu.Frame.Font");
+-	m_menustyle.titlefont->loadFromDatabase(m_database, "menu.Title.font", "Menu.Title.Font");
++	m_menustyle.titlefont->loadFromDatabase(m_database, "menu.title.font", "Menu.Title.Font");
+ 	/*
+ 	if (I18n::instance()->multibyte()) {
+ 		
