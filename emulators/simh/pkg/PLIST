@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/11/28 17:02:12 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/02/02 20:19:56 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -8,6 +8,8 @@ bin/simh-hp2100
 bin/simh-i1401
 bin/simh-i1620
 bin/simh-ibm1130
+bin/simh-id16
+bin/simh-id32
 bin/simh-nova
 bin/simh-pdp1
 bin/simh-pdp10
@@ -18,6 +20,7 @@ bin/simh-pdp7
 bin/simh-pdp8
 bin/simh-pdp9
 bin/simh-s3
+bin/simh-sds
 bin/simh-vax
 lib/simh/vax/ka655.bin
 share/doc/simh/0readme_210.txt
@@ -32,6 +35,8 @@ share/doc/simh/hp2100_diag.txt
 share/doc/simh/hp2100_doc.txt
 share/doc/simh/i1401_doc.txt
 share/doc/simh/i1620_doc.txt
+share/doc/simh/id_diag.txt
+share/doc/simh/id_doc.txt
 share/doc/simh/nova_doc.txt
 share/doc/simh/pdp10_doc.txt
 share/doc/simh/pdp11_doc.txt
@@ -41,6 +46,8 @@ share/doc/simh/pdp8_doc.txt
 share/doc/simh/readme1130.txt
 share/doc/simh/readme_s3.txt
 share/doc/simh/readme_update.txt
+share/doc/simh/sds_diag.txt
+share/doc/simh/sds_doc.txt
 share/doc/simh/simh_doc.txt
 share/doc/simh/simh_swre.txt
 share/doc/simh/system3.txt

@@ -1,43 +1,43 @@
-$OpenBSD: patch-NOVA_nova_cpu_c,v 1.3 2002/10/29 23:55:01 fgsch Exp $
---- NOVA/nova_cpu.c.orig	Sun Oct  6 14:37:14 2002
-+++ NOVA/nova_cpu.c	Thu Oct 24 20:37:41 2002
+$OpenBSD: patch-NOVA_nova_cpu_c,v 1.4 2003/02/02 20:19:56 fgsch Exp $
+--- NOVA/nova_cpu.c.orig	Mon Nov 25 14:11:50 2002
++++ NOVA/nova_cpu.c	Sun Feb  2 16:41:07 2003
 @@ -391,21 +391,21 @@ if (IR & I_OPR) {					/* operate? */
- 		src = src ^ DMASK;
- 		break;
+ 	    src = src ^ DMASK;
+ 	    break;
  	case 1:						/* NEG */
--		src = ((src ^ DMASK) + 1) & CMASK;
-+		src = ((src ^ DMASK) + 1) & NOVA_CMASK;
- 		break;
+-	    src = ((src ^ DMASK) + 1) & CMASK;
++	    src = ((src ^ DMASK) + 1) & NOVA_CMASK;
+ 	    break;
  	case 2:						/* MOV */
- 		break;
+ 	    break;
  	case 3:						/* INC */
--		src = (src + 1) & CMASK;
-+		src = (src + 1) & NOVA_CMASK;
- 		break;
+-	    src = (src + 1) & CMASK;
++	    src = (src + 1) & NOVA_CMASK;
+ 	    break;
  	case 4:						/* ADC */
--		src = ((src ^ DMASK) + AC[dstAC]) & CMASK;
-+		src = ((src ^ DMASK) + AC[dstAC]) & NOVA_CMASK;
- 		break;
+-	    src = ((src ^ DMASK) + AC[dstAC]) & CMASK;
++	    src = ((src ^ DMASK) + AC[dstAC]) & NOVA_CMASK;
+ 	    break;
  	case 5:						/* SUB */
--		src = ((src ^ DMASK) + AC[dstAC] + 1) & CMASK;
-+		src = ((src ^ DMASK) + AC[dstAC] + 1) & NOVA_CMASK;
- 		break;
+-	    src = ((src ^ DMASK) + AC[dstAC] + 1) & CMASK;
++	    src = ((src ^ DMASK) + AC[dstAC] + 1) & NOVA_CMASK;
+ 	    break;
  	case 6:						/* ADD */
--		src = (src + AC[dstAC]) & CMASK;
-+		src = (src + AC[dstAC]) & NOVA_CMASK;
- 		break;
+-	    src = (src + AC[dstAC]) & CMASK;
++	    src = (src + AC[dstAC]) & NOVA_CMASK;
+ 	    break;
  	case 7:						/* AND */
- 		src = src & (AC[dstAC] | CBIT);
+ 	    src = src & (AC[dstAC] | CBIT);
 @@ -417,10 +417,10 @@ if (IR & I_OPR) {					/* operate? */
  	case 0:						/* nop */
- 		break;
+ 	    break;
  	case 1:						/* L */
--		src = ((src << 1) | (src >> 16)) & CMASK;
-+		src = ((src << 1) | (src >> 16)) & NOVA_CMASK;
- 		break;
+-	    src = ((src << 1) | (src >> 16)) & CMASK;
++	    src = ((src << 1) | (src >> 16)) & NOVA_CMASK;
+ 	    break;
  	case 2:						/* R */
--		src = ((src >> 1) | (src << 16)) & CMASK;
-+		src = ((src >> 1) | (src << 16)) & NOVA_CMASK;
- 		break;
+-	    src = ((src >> 1) | (src << 16)) & CMASK;
++	    src = ((src >> 1) | (src << 16)) & NOVA_CMASK;
+ 	    break;
  	case 3:						/* S */
- 		src = ((src & 0377) << 8) | ((src >> 8) & 0377) |
+ 	    src = ((src & 0377) << 8) | ((src >> 8) & 0377) |

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2002/11/28 17:02:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2003/02/02 20:19:56 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 
-DISTNAME=		simh-2.10-1
+VER=			2.10-2
+DISTNAME=		simh-${VER}
 CATEGORIES=		emulators
 MASTER_SITES=		http://simh.trailing-edge.com/sources/
-DISTFILES=		simhv210-1.zip
+DISTFILES=		simhv${VER:S/.//}.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
 
@@ -20,7 +21,7 @@ WRKDIST=		${WRKDIR}
 UNZIP=			unzip -a -o
 
 COPTS=			-DUSE_SOCKLEN_T
-MAKE_FILE=		makefile_ether
+MAKE_FILE=		makefile
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 COPTS+=			-O0
@@ -29,8 +30,8 @@ COPTS+=			-O0
 NO_REGRESS=		Yes
 
 SIMS=			altair altairz80 eclipse gri h316 hp2100 i1401 i1620 \
-			ibm1130 nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 \
-			pdp9 s3 vax
+			ibm1130 id16 id32 nova pdp1 pdp10 pdp11 pdp15 pdp4 \
+			pdp7 pdp8 pdp9 s3 sds vax
 
 VMEM_WARNING=		Yes
 
