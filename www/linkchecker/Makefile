@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/10/04 15:01:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/10/22 12:33:07 xsa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,9 +26,5 @@ MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 BUILD_DEPENDS+=	:py-dns-*:net/py-dns
 
 NO_REGRESS=	Yes
-
-post-install:
-#	@chmod ${MANMODE} ${PREFIX}/man/man1/linkchecker.1
-#	@chmod ${SHAREMODE} ${PREFIX}/share/examples/linkchecker/*
 
 .include <bsd.port.mk>
