@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 20:41:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/16 21:12:37 naddy Exp $
 
 COMMENT=	"Objective Caml package manager"
 CATEGORIES=	sysutils
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
-NO_REGRESS=Yes
+LIB_DEPENDS=	tk84.1::x11/tk/8.4
+NO_REGRESS=	Yes
 
 SAMPLE_LOC=	${PREFIX}/share/examples/findlib
 SAMPLE_FILE=	${SAMPLE_LOC}/ocamlfind.conf
