@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/11/18 23:26:37 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	'ATI drivers with full xvideo support'
 
-DISTNAME=	ATI-4.2.0-6.i386
-PKGNAME=	ATI-4.2.0.6
+DISTNAME=	ATI-4.2.0-15.i386
+PKGNAME=	ATI-4.2.0.15
 CATEGORIES=	x11
 
 PERMIT_DISTFILES_CDROM=	Yes

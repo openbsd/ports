@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/26 12:39:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/11/18 23:26:38 naddy Exp $
 lib/X11/modules/drivers/ati_drv.o
 lib/X11/modules/drivers/atimisc_drv.o
 lib/X11/modules/drivers/r128_drv.o
@@ -6,6 +6,7 @@ lib/X11/modules/drivers/radeon_drv.o
 lib/X11/modules/multimedia/bt829_drv.o
 lib/X11/modules/multimedia/fi1236_drv.o
 lib/X11/modules/multimedia/msp3430_drv.o
+lib/X11/modules/multimedia/saa7114_drv.o
 lib/X11/modules/multimedia/tda8425_drv.o
 lib/X11/modules/multimedia/tda9850_drv.o
 lib/X11/modules/multimedia/tda9885_drv.o
