@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/29 01:13:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/29 01:36:48 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -30,7 +30,7 @@ JPLIB+=		-ljd
 
 .if ${FLAVOR:L:Mcanna}
 .  if ${FLAVOR:L:Mwnn}
-INPUT_METHOD=	wnn-canna
+INPUT_METHOD=	wnn4-canna
 .  else
 INPUT_METHOD=	canna
 .endif

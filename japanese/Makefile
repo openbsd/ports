@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/29 01:21:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/29 01:36:47 espie Exp $
 
      SUBDIR += Wnn
      SUBDIR += Wnn-data
@@ -8,6 +8,7 @@
      SUBDIR += kinput2,canna,wnn
      SUBDIR += onew-wnn4
      SUBDIR += onew-canna
+     SUBDIR += onew-wnn4-canna
      SUBDIR += kakasi
      SUBDIR += intlfonts
      SUBDIR += funetfonts
@@ -15,6 +16,7 @@
      SUBDIR += jvim
      SUBDIR += jvim,wnn
      SUBDIR += jvim,canna
+     SUBDIR += jvim,wnn,canna
      SUBDIR += kanjips
      SUBDIR += kterm
      SUBDIR += kterm:xaw3d
