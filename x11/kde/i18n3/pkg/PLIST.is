@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.is,v 1.8 2003/12/08 01:59:28 brad Exp $
+@comment $OpenBSD: PLIST.is,v 1.9 2003/12/14 10:50:26 sturm Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -170,7 +170,6 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
-${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
