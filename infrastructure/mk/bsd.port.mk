@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.521 2002/04/09 23:55:11 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.522 2002/04/10 08:44:57 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -278,7 +278,7 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 X11BASE?=		/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
-.if defined(DIST_SUBDIR)
+.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 .else
 FULLDISTDIR?=	${DISTDIR}
@@ -971,7 +971,7 @@ CKSUMFILES:=${CKSUMFILES:N${_file}}
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
-.if defined(DIST_SUBDIR)
+.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 _CKSUMFILES=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 _IGNOREFILES=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
 .else
@@ -2122,7 +2122,7 @@ clean: pre-clean
 			rm -f ${_DISTFILES} ${_PATCHFILES}; \
 		fi \
 	fi
-.    if defined(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}  
 .    endif
 .  endif
@@ -2190,7 +2190,7 @@ update-patches:
 ################################################################
 
 # mirroring utilities
-.if defined(DIST_SUBDIR)
+.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 _ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
 .else
 _ALLFILES=${ALLFILES}
@@ -2221,7 +2221,7 @@ _fetch-makefile-helper:
 .  for _F in ${_ALLFILES}
 	@echo '${_F}: $$F'
 	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
-.    if defined(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
 .    endif
 	@echo '\\'
