@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/15 10:35:48 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/11/01 12:53:44 wilfried Exp $
 bin/gtkmm-config
 bin/gtkmmconvert
 include/gdk--.h
@@ -188,7 +188,9 @@ lib/gtkmm/proc/gtkmmproc
 lib/gtkmm/proc/list.m4
 lib/gtkmm/proc/stage1.m4
 %%SHARED%%
+lib/libgdkmm.a
 lib/libgdkmm.la
+lib/libgtkmm.a
 lib/libgtkmm.la
 share/aclocal/gtk--.m4
 @dirrm lib/gtkmm/proc
@@ -196,3 +198,4 @@ share/aclocal/gtk--.m4
 @dirrm lib/gtkmm
 @dirrm include/gtk--/private
 @dirrm include/gtk--
+@dirrm include/gdk--

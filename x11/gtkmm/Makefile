@@ -1,26 +1,58 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/28 13:05:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/01 12:53:44 wilfried Exp $
 
-COMMENT=	"C++ interface for gtk+"
+COMMENT=		"C++ interface for gtk+"
+COMMENT-docs=		"C++ interface for gtk+ documentation"
 
-DISTNAME=	gtkmm-1.2.1
-CATEGORIES=	devel x11
-NEED_VERSION=	1.402
-MASTER_SITES=	http://download.sourceforge.net/gtkmm/
+VERSION=		1.2.7
+DISTNAME=		gtkmm-${VERSION}
+PKGNAME-docs=		gtkmm-docs-${VERSION}
+CATEGORIES=		devel x11
+NEED_VERSION=		1.488
 
-BUILD_DEPENDS=	gm4::devel/m4
+HOMEPAGE=		http://gtkmm.sourceforge.net/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		sigc.0.0::devel/libsigc++
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtkmm
 
+MULTI_PACKAGES=		-docs
+SUBPACKAGE?=
+
+.if ${SUBPACKAGE} != "-docs"
+BUILD_DEPENDS=		::devel/m4
+LIB_DEPENDS=		sigc.0::devel/libsigc++ \
+			gdk.1,gtk.1::x11/gtk+
+.endif
+
+SEPARATE_BUILD=		concurrent
+USE_X11=		Yes
+NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-static \
+			--enable-docs
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
+
+post-patch:
+	@cd ${WRKSRC}/scripts; \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkmm/gdk
+	${INSTALL_DATA} ${WRKBUILD}/docs/gdk/*.html ${PREFIX}/share/doc/gtkmm/gdk
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkmm/gtk
+	${INSTALL_DATA} ${WRKBUILD}/docs/gtk/*.html ${PREFIX}/share/doc/gtkmm/gtk
 
 .include <bsd.port.mk>
