@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/28 00:02:09 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/31 05:15:00 margarida Exp $
 
 COMMENT=		"personal file manager"
 
@@ -24,6 +24,8 @@ BUILD_DEPENDS=		:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \
 			:p5-Term-Screen-*:devel/p5-Term-Screen
 
 RUN_DEPENDS=		${BUILD_DEPENDS}
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pfm ${PREFIX}/bin
