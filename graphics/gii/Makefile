@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/01 18:38:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.21 2001/12/23 18:18:11 naddy Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.7
 CATEGORIES=	graphics
 NEED_VERSION=	1.475
-MASTER_SITES=	ftp://metalab.unc.edu/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
@@ -14,15 +13,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+MASTER_SITES=	ftp://metalab.unc.edu/pub/ggi/ggi/2_0_beta_3/
+EXTRACT_SUFX=	.tar.bz2
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
-EXTRACT_SUFX=		.tar.bz2
+
+CFLAGS+=	-pthread
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=	CFLAGS=-pthread
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"
 
