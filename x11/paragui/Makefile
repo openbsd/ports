@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/06 07:27:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/17 15:46:39 espie Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	zip:zip-*:archivers/zip
 
 LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl \
 		SDL_ttf.0.3:sdl-ttf-*:devel/sdl-ttf \
-		SDL_image.0.0:sdl-image-*:devel/sdl-image
+		SDL_image.0.0:sdl-image-*:devel/sdl-image \
+		ttf::print/freetype
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
