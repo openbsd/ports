@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/27 16:53:18 danh Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/28 19:35:31 danh Exp $
+
+COMMENT=	"command-driven interactive function plotting program"
 
 DISTNAME=	gnuplot-3.7.1
 CATEGORIES=	math graphics
-NEED_VERSION=	1.337
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \

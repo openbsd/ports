@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/28 19:35:33 danh Exp $
+
+COMMENT=	"allows use of Microsoft FrontPage extentions with Apache"
 
 VERSION=	1.5.1
 APVERSION=	1.3.17
 DISTNAME=	mod_frontpage-${VERSION}-${APVERSION}
 PKGNAME=	mod_frontpage-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.358
+NEED_VERSION=	1.364
 MASTER_SITES=	http://home.edo.uni-dortmund.de/~chripo/download/ \
 		ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage/
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/23 20:03:20 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/28 19:35:34 danh Exp $
+
+COMMENT=	"Windows 95/98/NT like window manager"
 
 DISTNAME=	qvwm-1.1.8
 CATEGORIES=     x11
-NEED_VERSION=	1.334
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.qvwm.org/pub/qvwm/
 
 HOMEPAGE=	http://www.qvwm.org/
