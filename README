@@ -28,7 +28,7 @@ If nothing happens after a reasonable delay, start plaguing him,
 or go to the next step.
 
 Developers with a major investment in the ports tree include
-Brad Smith <brad@openbsd.org>, Christian Weisberger <naddy@openbsd.org>, 
+Brad Smith <brad@openbsd.org>, Christian Weisgerber <naddy@openbsd.org>, 
 Marc Espie <espie@openbsd.org>.
 
 Those people can be contacted to put some pressure on a lazy maintainer.
@@ -290,4 +290,4 @@ ports@openbsd.org.  Why create a brand new shiny port to discover that
 someone was already working on it, and they committed their new version
 ten minutes before you announced yours ?
 
-$OpenBSD: README,v 1.13 2002/08/18 17:44:01 fgsch Exp $
+$OpenBSD: README,v 1.14 2003/03/01 09:09:16 david Exp $
