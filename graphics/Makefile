@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/02/21 23:44:12 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/02/27 15:49:11 rohee Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -49,13 +49,13 @@
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
 #    SUBDIR += tgif
-#    SUBDIR += tiff
+     SUBDIR += tiff
      SUBDIR += tiff34
 #    SUBDIR += txtmerge
 #    SUBDIR += urt
 #    SUBDIR += vcg
 #    SUBDIR += whirlgif
-#    SUBDIR += xanim
+     SUBDIR += xanim
 #    SUBDIR += xaos
      SUBDIR += xbmbrowser
 #    SUBDIR += xdl
