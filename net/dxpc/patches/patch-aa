@@ -1,0 +1,26 @@
+--- configure.in.orig	Tue Jun  1 19:29:14 1999
++++ configure.in	Tue Jun  1 19:29:18 1999
+@@ -12,14 +12,13 @@
+ AC_PATH_XTRA
+ #AC_CHECK_HEADERS(sys/select.h)
+ 
+-# UnixWare-2.x and AIX reportedly declare accept(2) with size_t, rather
+-# than int, as the type of the third argument...
+-if uname -a | egrep -i "UNIX_SV.*4\.2MP.*86" >/dev/null
+-then
+-  AC_DEFINE(DXPC_ACCEPT_IS_SIZE_T)
+-elif uname -a | egrep -i "AIX" >/dev/null
+-then
+-  AC_DEFINE(DXPC_ACCEPT_IS_SIZE_T)
+-fi
+-
++dnl recent systems want socklen_t for accept third argument
++AC_TRY_COMPILE([
++#include <sys/types.h>
++#include <sys/socket.h>],
++[int f()
++	{
++	socklen_t *third;
++	return accept(0, 0, third);
++	}], AC_DEFINE(DXPC_ACCEPT_IS_SIZE_T))
+ AC_OUTPUT(Makefile)
