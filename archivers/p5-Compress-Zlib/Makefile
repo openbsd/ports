@@ -3,9 +3,10 @@
 # Date created:				24 November 1887
 # Whom:	      				angelos
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/24 21:09:15 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/06 20:48:02 marc Exp $
 #
 
+BROKEN=		"current version is 1.01"
 DISTNAME=	Compress-Zlib-0.50
 PKGNAME=	p5-Compress-Zlib-0.50
 CATEGORIES=	archivers perl5
