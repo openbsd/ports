@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2005/02/06 13:10:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.40 2005/02/10 12:38:28 naddy Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -230,7 +230,7 @@ CONFIGURE_ARGS+=	--without-pdflib
 MULTI_PACKAGES+=	-pdf
 COMMENT-pdf=		"pdf viewing and creation extensions for php4"
 CONFIGURE_ARGS+=	--with-pdflib=shared,${LOCALBASE} ${GRAPHIC_CONFIG} \
-			--with-tiff-dir=${LOCALBASE} \
+			--with-tiff-dir=${LOCALBASE}
 PDF_DEPENDS=		pdf.2::print/pdflib ${GRAPHIC_DEPENDS} \
 			tiff.35::graphics/tiff
 PDF_WANTLIB=		z
