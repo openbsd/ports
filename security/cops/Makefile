@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/30 09:06:40 kevlo Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=	cops_104
+DISTNAME=	cops.1.04
 PKGNAME=	cops-1.04
 CATEGORIES=	security
-FAKE=No
 NO_CDROM=	"NOFEE:	Can not sell"
 
-MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/1.04/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/cops/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
@@ -17,11 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FAKE=			Yes
+
 EXECUTABLE = home.chk user.chk is_writable crc crc_check \
              addto clearfiles filewriters members tilde is_able
 C_SRC      = home.chk.c user.chk.c is_able.c is_something.c \
              addto.c clearfiles.c filewriters.c members.c tilde.c \
              crc.c crc_check.c
+
+WRKDIST=        ${WRKDIR}/cops_104
 
 pre-build:
 	(cd ${WRKSRC} ; ./reconfig)
@@ -34,7 +36,7 @@ do-build:
 
 do-install:
 	(cd ${WRKDIR} ; rm -rf ${PREFIX}/cops ; mkdir -p ${PREFIX}/cops ; \
-	cp -R ${DISTNAME}/* ${PREFIX}/cops ; \
+	cp -R ${WRKSRC}/* ${PREFIX}/cops ; \
 	chmod -R go-rwx ${PREFIX}/cops ; \
 	rm -rf ${PREFIX}/cops/*.old ${PREFIX}/cops/src)
 
