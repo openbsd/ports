@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 19:06:39 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/18 07:14:46 marcm Exp $
 
 COMMENT=		"GNOME session"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
+			:scrollkeeper->=0.3.11:textproc/scrollkeeper
 RUN_DEPENDS=		:esound-*:audio/esound \
 			:gnome-applets2-*:x11/gnome/applets2 \
 			:gnome-terminal-*:x11/gnome/terminal \
@@ -38,5 +39,8 @@ CONFIGURE_ARGS+= 	--disable-rebuilds
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-session
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>
