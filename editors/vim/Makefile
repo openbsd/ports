@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/07/07 04:28:32 jasoni Exp $
+# $OpenBSD: Makefile,v 1.30 2000/08/15 07:57:46 jasoni Exp $
 
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
@@ -15,7 +15,7 @@ DIST_SUBDIR=	vim
 
 HOMEPAGE=	http://www.vim.org
 
-.for p in 01 02
+.for p in 01 02 03 04 05 06 07 08
 PATCHFILES+=	5.7.0${p}:0
 .endfor
 .if defined(PATCH_DEBUG)
@@ -35,7 +35,7 @@ PERMIT_DISTFILES_FTP=   Yes
 FLAVORS=	gtk athena motif no_x11
 FLAVOR?=	gtk
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--with-tliba="curses"
 
 # Internal Compiler Error
