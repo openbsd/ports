@@ -1,0 +1,20 @@
+--- Input/vorbis/http.c.orig	Thu Nov 15 13:11:02 2001
++++ Input/vorbis/http.c	Thu Nov 15 12:55:47 2001
+@@ -278,7 +278,7 @@
+ 	return i;
+ }
+ 
+-void *http_buffer_loop(void *arg)
++void *vorbis_http_buffer_loop(void *arg)
+ {
+ 	gchar line[1024], *user, *pass, *host, *filename,
+ 	     *status, *url, *temp, *file;
+@@ -596,7 +596,7 @@
+ 	eof = FALSE;
+ 	buffer = g_malloc(buffer_length);
+ 
+-	pthread_create(&thread, NULL, http_buffer_loop, url);
++	pthread_create(&thread, NULL, vorbis_http_buffer_loop, url);
+ 
+ 	return 0;
+ }
