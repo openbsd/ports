@@ -1,6 +1,3 @@
-Configuring Opennap on OpenBSD
-------------------------------
-
 - configuration files are in 		${SYSCONFDIR}/opennap
 - documentation is installed in		${PREFIX}/doc/opennap
 - sample configuration files are in	${PREFIX}/share/examples/opennap
