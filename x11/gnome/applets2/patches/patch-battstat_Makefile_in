@@ -1,7 +1,7 @@
-$OpenBSD: patch-battstat_Makefile_in,v 1.3 2003/07/06 18:19:20 marcm Exp $
---- battstat/Makefile.in.orig	Mon Mar 10 09:49:09 2003
-+++ battstat/Makefile.in	Sun Jul  6 10:54:52 2003
-@@ -148,11 +148,11 @@ glade_DATA = battstat_applet.glade
+$OpenBSD: patch-battstat_Makefile_in,v 1.4 2003/10/07 05:48:53 marcm Exp $
+--- battstat/Makefile.in.orig	2003-09-22 17:51:43.000000000 -0700
++++ battstat/Makefile.in	2003-09-23 10:24:57.000000000 -0700
+@@ -154,11 +154,11 @@ glade_DATA = battstat_applet.glade
  pixmapsdir = $(datadir)/pixmaps
  pixmaps_DATA = battstat.png
  @HAVE_LIBAPM_TRUE@APMLIB = @HAVE_LIBAPM_TRUE@-lapm
@@ -9,14 +9,14 @@ $OpenBSD: patch-battstat_Makefile_in,v 1.3 2003/07/06 18:19:20 marcm Exp $
 +@HAVE_LIBAPM_FALSE@APMLIB = 
  @HAVE_LIBAPM_TRUE@APMDIR = 
 -@HAVE_LIBAPM_FALSE@APMDIR = @HAVE_LIBAPM_FALSE@apmlib
-+@HAVE_LIBAPM_FALSE@APMDIR = 
++@HAVE_LIBAPM_FALSE@APMDIR =
  @HAVE_LIBAPM_TRUE@APMINC = 
 -@HAVE_LIBAPM_FALSE@APMINC = @HAVE_LIBAPM_FALSE@-Iapmlib/
 +@HAVE_LIBAPM_FALSE@APMINC = 
  
  SUBDIRS = docs sounds $(APMDIR)
  
-@@ -223,8 +223,7 @@ battstat_applet.$(OBJEXT) acpi-linux.$(O
+@@ -230,8 +230,7 @@ battstat_applet.$(OBJEXT) acpi-linux.$(O
  @HAVE_LIBAPM_TRUE@battstat_applet_2_DEPENDENCIES =  \
  @HAVE_LIBAPM_TRUE@$(top_builddir)/screen-exec/libscreen-exec.la
  @HAVE_LIBAPM_FALSE@battstat_applet_2_DEPENDENCIES =  \
@@ -26,11 +26,11 @@ $OpenBSD: patch-battstat_Makefile_in,v 1.3 2003/07/06 18:19:20 marcm Exp $
  battstat_applet_2_LDFLAGS = 
  CFLAGS = @CFLAGS@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-@@ -637,7 +636,6 @@ maintainer-clean-generic clean mostlycle
- 
+@@ -640,7 +639,6 @@ maintainer-clean-generic clean mostlycle
+ @INTLTOOL_SCHEMAS_RULE@
  
  install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schemas_DATA) ;
  
  $(server_in_files): $(server_in_files:.server.in=.server.in.in)
  	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@

@@ -1,11 +1,11 @@
-$OpenBSD: patch-charpick_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
---- charpick/Makefile.in.orig	Sun Jul  6 10:49:47 2003
-+++ charpick/Makefile.in	Sun Jul  6 10:49:55 2003
-@@ -591,7 +591,6 @@ $(server_in_files): $(server_in_files:.s
- @INTLTOOL_SERVER_RULE@
+$OpenBSD: patch-charpick_Makefile_in,v 1.2 2003/10/07 05:48:53 marcm Exp $
+--- charpick/Makefile.in.orig	2003-09-22 16:25:28.000000000 -0700
++++ charpick/Makefile.in	2003-09-23 10:18:46.000000000 -0700
+@@ -596,7 +596,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SCHEMAS_RULE@
  
  install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schemas_DATA) ;
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

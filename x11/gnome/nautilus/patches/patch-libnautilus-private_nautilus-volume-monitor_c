@@ -1,9 +1,9 @@
-$OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
---- libnautilus-private/nautilus-volume-monitor.c.orig	Thu Aug 29 03:56:02 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 24 15:35:52 2002
-@@ -73,6 +73,9 @@
- #include <sys/mnttab.h>
- #define MOUNT_TABLE_PATH "/etc/mnttab"
+$OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.2 2003/10/07 05:48:55 marcm Exp $
+--- libnautilus-private/nautilus-volume-monitor.c.orig	2003-07-07 03:59:37.000000000 -0700
++++ libnautilus-private/nautilus-volume-monitor.c	2003-09-08 10:56:44.000000000 -0700
+@@ -91,6 +91,9 @@
+ #elif defined (AIX_MNT)
+ #define MOUNT_TABLE_PATH "/etc/filesystems"
  #else
 +#if defined (HAVE_GETMNTINFO)
 +#define BSD_MNT 1
@@ -11,7 +11,7 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  /* FIXME: How does this help anything? */
  #define MOUNT_TABLE_PATH ""
  #endif
-@@ -507,7 +510,17 @@ has_removable_mntent_options (MountTable
+@@ -600,7 +603,17 @@ has_removable_mntent_options (MountTable
  		return TRUE;
  	}
  #endif
@@ -30,7 +30,7 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  	return FALSE;
  }
  
-@@ -519,6 +532,7 @@ has_removable_mntent_options (MountTable
+@@ -730,6 +743,7 @@ aix_fs_get (FILE *fd, MountTableEntry *p
   * Caller needs to free these as well as the list.
   */
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  static GList *
  get_removable_volumes (NautilusVolumeMonitor *monitor)
  {
-@@ -602,6 +616,40 @@ get_removable_volumes (NautilusVolumeMon
+@@ -823,6 +837,40 @@ get_removable_volumes (NautilusVolumeMon
  	return g_list_sort (g_list_reverse (volumes), (GCompareFunc) floppy_sort);
  }
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  static gboolean
  entry_is_supermounted_volume (const MountTableEntry *ent, const NautilusVolume *volume)
  {
-@@ -619,7 +667,7 @@ entry_is_supermounted_volume (const Moun
+@@ -840,7 +888,7 @@ entry_is_supermounted_volume (const Moun
        return result;
  }
  
@@ -88,13 +88,13 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
-@@ -992,7 +1040,35 @@ get_mount_list (NautilusVolumeMonitor *m
+@@ -1338,7 +1386,35 @@ get_mount_list (NautilusVolumeMonitor *m
          return volumes;
  }
  
--#else /* !SOLARIS_MNT */
-+#elif defined (BSD_MNT) /* !SOLARIS_MNT */
-+
+-#else /* !AIX_MNT && !SOLARIS_MNT */
++#elif defined (BSD_MNT) /* !AIX_MNT && !SOLARIS_MNT */
++ 
 +static GList *
 +get_mount_list (NautilusVolumeMonitor *monitor) 
 +{
@@ -125,16 +125,16 @@ $OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/
  
  static gboolean
  option_list_has_option (const char *optlist,
-@@ -1768,7 +1844,7 @@ load_additional_mount_list_info (GList *
+@@ -2116,7 +2192,7 @@ load_additional_mount_list_info (GList *
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
--#ifndef SOLARIS_MNT
-+#if !defined(SOLARIS_MNT) && !defined(BSD_MNT)
- 		/* These are set up by get_current_mount_list for Solaris. */
+-#if !defined(SOLARIS_MNT) && !defined(AIX_MNT)
++#if !defined(SOLARIS_MNT) && !defined(AIX_MNT) && !defined(BSD_MNT)
+ 		/* These are set up by get_current_mount_list for Solaris&AIX.*/
  		volume->is_removable = volume_is_removable (volume);
  #endif
-@@ -1797,8 +1873,13 @@ finish_creating_volume (NautilusVolumeMo
+@@ -2145,8 +2221,13 @@ finish_creating_volume (NautilusVolumeMo
  		ok = mount_volume_auto_add (volume);
  	} else if (strcmp (file_system_type_name, "cdda") == 0) {
  		ok = mount_volume_cdda_add (volume);

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/26 05:04:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/10/07 05:48:56 marcm Exp $
 bin/gnome-terminal
 lib/bonobo/servers/gnome-terminal.server
+share/application-registry/gnome-terminal.applications
 share/applications/gnome-terminal.desktop
 share/gnome-terminal/glade/gnome-terminal.glade2
 share/gnome/help/gnome-terminal/C/figures/gnome-terminal-default.png
@@ -63,8 +64,10 @@ share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/bg/LC_MESSAGES/gnome-terminal.mo
+share/locale/bn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ca/LC_MESSAGES/gnome-terminal.mo
 share/locale/cs/LC_MESSAGES/gnome-terminal.mo
+share/locale/cy/LC_MESSAGES/gnome-terminal.mo
 share/locale/da/LC_MESSAGES/gnome-terminal.mo
 share/locale/de/LC_MESSAGES/gnome-terminal.mo
 share/locale/el/LC_MESSAGES/gnome-terminal.mo
@@ -74,9 +77,12 @@ share/locale/et/LC_MESSAGES/gnome-terminal.mo
 share/locale/fa/LC_MESSAGES/gnome-terminal.mo
 share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
+share/locale/ga/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
 share/locale/he/LC_MESSAGES/gnome-terminal.mo
+share/locale/hi/LC_MESSAGES/gnome-terminal.mo
 share/locale/hu/LC_MESSAGES/gnome-terminal.mo
+share/locale/id/LC_MESSAGES/gnome-terminal.mo
 share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
@@ -99,7 +105,6 @@ share/locale/sq/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
-share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
@@ -134,8 +139,6 @@ share/schemas/gnome-terminal/gnome-terminal.schemas
 @comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
 @comment @dirrm share/locale/tr
-@comment @dirrm share/locale/ta/LC_MESSAGES
-@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES
@@ -180,12 +183,18 @@ share/schemas/gnome-terminal/gnome-terminal.schemas
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
@@ -204,10 +213,14 @@ share/schemas/gnome-terminal/gnome-terminal.schemas
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES
@@ -247,6 +260,7 @@ share/schemas/gnome-terminal/gnome-terminal.schemas
 @dirrm share/gnome-terminal
 @comment @dirrm share/gnome
 @comment @dirrm share/applications
+@comment @dirrm share/application-registry
 @comment @dirrm lib/bonobo
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q

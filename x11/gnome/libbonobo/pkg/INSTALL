@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2003/06/12 19:50:10 marcm Exp $
+# $OpenBSD: INSTALL,v 1.1 2003/10/07 05:48:54 marcm Exp $
 
-P_NAME=bonobo-activation
+P_NAME=libbonobo
 
 DIRS='
 bonobo-activation

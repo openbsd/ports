@@ -1,11 +1,11 @@
-$OpenBSD: patch-modemlights_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
---- modemlights/Makefile.in.orig	Sun Jul  6 10:55:14 2003
-+++ modemlights/Makefile.in	Sun Jul  6 10:55:51 2003
-@@ -493,9 +493,6 @@ $(server_in_files): $(server_in_files:.s
- @INTLTOOL_SERVER_RULE@
+$OpenBSD: patch-modemlights_Makefile_in,v 1.2 2003/10/07 05:48:53 marcm Exp $
+--- modemlights/Makefile.in.orig	2003-09-22 16:24:42.000000000 -0700
++++ modemlights/Makefile.in	2003-09-23 10:18:48.000000000 -0700
+@@ -574,9 +574,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SCHEMAS_RULE@
  
  install-data-local:
--	for p in $(schema_DATA); do \
+-	for p in $(schemas_DATA); do \
 -		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
 -	done
  

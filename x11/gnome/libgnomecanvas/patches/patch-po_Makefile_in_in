@@ -1,6 +1,6 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1 2003/08/06 20:45:04 marcm Exp $
---- po/Makefile.in.in.orig	2003-07-30 20:04:00.000000000 -0700
-+++ po/Makefile.in.in	2003-07-30 20:04:14.000000000 -0700
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2003/10/07 05:48:55 marcm Exp $
+--- po/Makefile.in.in.orig	Mon Jul  7 16:21:11 2003
++++ po/Makefile.in.in	Mon Jul  7 16:21:24 2003
 @@ -27,7 +27,7 @@ prefix = @prefix@
  exec_prefix = @exec_prefix@
  datadir = @datadir@

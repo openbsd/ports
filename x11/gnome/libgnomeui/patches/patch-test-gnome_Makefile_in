@@ -1,7 +1,7 @@
-$OpenBSD: patch-test-gnome_Makefile_in,v 1.2 2003/06/12 19:59:35 marcm Exp $
---- test-gnome/Makefile.in.orig	Thu Jan 23 06:33:40 2003
-+++ test-gnome/Makefile.in	Sun May 11 20:39:44 2003
-@@ -286,19 +286,19 @@ maintainer-clean-libtool:
+$OpenBSD: patch-test-gnome_Makefile_in,v 1.3 2003/10/07 05:48:55 marcm Exp $
+--- test-gnome/Makefile.in.orig	Fri Jul  4 02:05:22 2003
++++ test-gnome/Makefile.in	Mon Jul  7 21:17:53 2003
+@@ -279,19 +279,19 @@ maintainer-clean-libtool:
  
  test-gnome$(EXEEXT): $(test_gnome_OBJECTS) $(test_gnome_DEPENDENCIES)
  	@rm -f test-gnome$(EXEEXT)
@@ -23,5 +23,5 @@ $OpenBSD: patch-test-gnome_Makefile_in,v 1.2 2003/06/12 19:59:35 marcm Exp $
 -	$(LINK) $(test_iconlist_LDFLAGS) $(test_iconlist_OBJECTS) $(test_iconlist_LDADD) $(LIBS)
 +	$(LINK) $(test_iconlist_LDFLAGS) $(test_iconlist_OBJECTS) $(test_iconlist_LDADD) $(LIBGNOMEUI_LIBS) $(LIBS)
  
- tags: TAGS
- 
+ test-password-dialog$(EXEEXT): $(test_password_dialog_OBJECTS) $(test_password_dialog_DEPENDENCIES)
+ 	@rm -f test-password-dialog$(EXEEXT)

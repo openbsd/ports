@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2003/08/07 14:20:34 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/07 05:48:53 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
-VERSION=		2.2.2
+VERSION=		2.4.1
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
@@ -12,7 +12,7 @@ CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		gettext
 
 BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
+			:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
 			gailutil.17::x11/gnome/gail \
 			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:45:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:48:55 marcm Exp $
 include/libgnomeui-2.0/gnome.h
 include/libgnomeui-2.0/libgnomeui/gnome-about.h
 include/libgnomeui-2.0/libgnomeui/gnome-app-helper.h
 include/libgnomeui-2.0/libgnomeui/gnome-app-util.h
 include/libgnomeui-2.0/libgnomeui/gnome-app.h
 include/libgnomeui-2.0/libgnomeui/gnome-appbar.h
+include/libgnomeui-2.0/libgnomeui/gnome-authentication-manager.h
 include/libgnomeui-2.0/libgnomeui/gnome-client.h
 include/libgnomeui-2.0/libgnomeui/gnome-color-picker.h
 include/libgnomeui-2.0/libgnomeui/gnome-dateedit.h
@@ -30,6 +31,7 @@ include/libgnomeui-2.0/libgnomeui/gnome-mdi-generic-child.h
 include/libgnomeui-2.0/libgnomeui/gnome-mdi-session.h
 include/libgnomeui-2.0/libgnomeui/gnome-mdi.h
 include/libgnomeui-2.0/libgnomeui/gnome-messagebox.h
+include/libgnomeui-2.0/libgnomeui/gnome-password-dialog.h
 include/libgnomeui-2.0/libgnomeui/gnome-pixmap-entry.h
 include/libgnomeui-2.0/libgnomeui/gnome-pixmap.h
 include/libgnomeui-2.0/libgnomeui/gnome-popup-menu.h
@@ -52,40 +54,43 @@ lib/libgnomeui-2.a
 lib/libgnomeui-2.la
 lib/pkgconfig/libgnomeui-2.0.pc
 libexec/gnome_segv2
+share/gtk-doc/html/libgnomeui/GnomeAbout.html
+share/gtk-doc/html/libgnomeui/GnomeApp.html
+share/gtk-doc/html/libgnomeui/GnomeAppBar.html
+share/gtk-doc/html/libgnomeui/GnomeClient.html
+share/gtk-doc/html/libgnomeui/GnomeColorPicker.html
+share/gtk-doc/html/libgnomeui/GnomeDateEdit.html
+share/gtk-doc/html/libgnomeui/GnomeDialog.html
+share/gtk-doc/html/libgnomeui/GnomeDruid.html
+share/gtk-doc/html/libgnomeui/GnomeDruidPage.html
+share/gtk-doc/html/libgnomeui/GnomeDruidPageEdge.html
+share/gtk-doc/html/libgnomeui/GnomeDruidPageStandard.html
+share/gtk-doc/html/libgnomeui/GnomeEntry.html
+share/gtk-doc/html/libgnomeui/GnomeFileEntry.html
+share/gtk-doc/html/libgnomeui/GnomeFontPicker.html
+share/gtk-doc/html/libgnomeui/GnomeHRef.html
+share/gtk-doc/html/libgnomeui/GnomeIconEntry.html
+share/gtk-doc/html/libgnomeui/GnomeIconList.html
+share/gtk-doc/html/libgnomeui/GnomeIconSelection.html
+share/gtk-doc/html/libgnomeui/GnomeMDI.html
+share/gtk-doc/html/libgnomeui/GnomeMDIChild.html
+share/gtk-doc/html/libgnomeui/GnomeMDIGenericChild.html
+share/gtk-doc/html/libgnomeui/GnomeMessageBox.html
+share/gtk-doc/html/libgnomeui/GnomePixmap.html
+share/gtk-doc/html/libgnomeui/GnomePixmapEntry.html
+share/gtk-doc/html/libgnomeui/GnomePropertyBox.html
+share/gtk-doc/html/libgnomeui/GnomeScores.html
 share/gtk-doc/html/libgnomeui/application-mgmt.html
-share/gtk-doc/html/libgnomeui/c4.html
+share/gtk-doc/html/libgnomeui/ch01.html
 share/gtk-doc/html/libgnomeui/deprecated.html
 share/gtk-doc/html/libgnomeui/druids.html
 share/gtk-doc/html/libgnomeui/fixme.html
-share/gtk-doc/html/libgnomeui/gnomeabout.html
-share/gtk-doc/html/libgnomeui/gnomeapp.html
-share/gtk-doc/html/libgnomeui/gnomeappbar.html
-share/gtk-doc/html/libgnomeui/gnomeclient.html
-share/gtk-doc/html/libgnomeui/gnomecolorpicker.html
-share/gtk-doc/html/libgnomeui/gnomedateedit.html
-share/gtk-doc/html/libgnomeui/gnomedialog.html
-share/gtk-doc/html/libgnomeui/gnomedruid.html
-share/gtk-doc/html/libgnomeui/gnomedruidpage.html
-share/gtk-doc/html/libgnomeui/gnomedruidpageedge.html
-share/gtk-doc/html/libgnomeui/gnomedruidpagestandard.html
-share/gtk-doc/html/libgnomeui/gnomeentry.html
-share/gtk-doc/html/libgnomeui/gnomefileentry.html
-share/gtk-doc/html/libgnomeui/gnomefontpicker.html
-share/gtk-doc/html/libgnomeui/gnomehref.html
-share/gtk-doc/html/libgnomeui/gnomeiconentry.html
-share/gtk-doc/html/libgnomeui/gnomeiconlist.html
-share/gtk-doc/html/libgnomeui/gnomeiconselection.html
-share/gtk-doc/html/libgnomeui/gnomeicontextitem.html
-share/gtk-doc/html/libgnomeui/gnomemdi.html
-share/gtk-doc/html/libgnomeui/gnomemdichild.html
-share/gtk-doc/html/libgnomeui/gnomemdigenericchild.html
-share/gtk-doc/html/libgnomeui/gnomemessagebox.html
-share/gtk-doc/html/libgnomeui/gnomepixmap.html
-share/gtk-doc/html/libgnomeui/gnomepixmapentry.html
-share/gtk-doc/html/libgnomeui/gnomepropertybox.html
-share/gtk-doc/html/libgnomeui/gnomescores.html
 share/gtk-doc/html/libgnomeui/index.html
 share/gtk-doc/html/libgnomeui/index.sgml
+share/gtk-doc/html/libgnomeui/libgnomeui-GnomeIconLookup.html
+share/gtk-doc/html/libgnomeui/libgnomeui-GnomeIconTheme.html
+share/gtk-doc/html/libgnomeui/libgnomeui-GnomeThemeFile.html
+share/gtk-doc/html/libgnomeui/libgnomeui-GnomeThumbnail.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-helper.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-util.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-dialog-util.html
@@ -97,10 +102,6 @@ share/gtk-doc/html/libgnomeui/libgnomeui-gnome-ui-init.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-uidefs.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-vfs-util.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnome-window.html
-share/gtk-doc/html/libgnomeui/libgnomeui-gnomeiconlookup.html
-share/gtk-doc/html/libgnomeui/libgnomeui-gnomeicontheme.html
-share/gtk-doc/html/libgnomeui/libgnomeui-gnomethemefile.html
-share/gtk-doc/html/libgnomeui/libgnomeui-gnomethumbnail.html
 share/gtk-doc/html/libgnomeui/libgnomeui-gnometypebuiltins.html
 share/gtk-doc/html/libgnomeui/libgnomeui-objects.html
 share/gtk-doc/html/libgnomeui/miscellaneous.html
@@ -109,6 +110,7 @@ share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/bn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnomeui-2.0.mo
@@ -132,6 +134,7 @@ share/locale/it/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/kn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/li/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/mk/LC_MESSAGES/libgnomeui-2.0.mo
@@ -148,6 +151,7 @@ share/locale/ro/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ru/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sq/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnomeui-2.0.mo
@@ -189,6 +193,8 @@ share/pixmaps/gnome-warning.png
 @comment @dirrm share/locale/sr@Latn
 @comment @dirrm share/locale/sr/LC_MESSAGES
 @comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
 @comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -221,6 +227,8 @@ share/pixmaps/gnome-warning.png
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
 @comment @dirrm share/locale/lt
+@comment @dirrm share/locale/li/LC_MESSAGES
+@comment @dirrm share/locale/li
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
 @comment @dirrm share/locale/kn/LC_MESSAGES
@@ -267,6 +275,8 @@ share/pixmaps/gnome-warning.png
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES

@@ -1,16 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2003/06/12 19:55:17 marcm Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/10/07 05:48:55 marcm Exp $
 
 P_NAME=libgnome
 
 DIRS='
-gnome-vfs-2.0/modules
 sound/events
 '
 
 FILES='
-gnome-vfs-2.0/modules/help-methods.conf
 sound/events/gnome-2.soundlist
 sound/events/gtk-events-2.soundlist
 '

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.4 2003/08/23 19:51:44 marcm Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.5 2003/10/07 05:48:53 marcm Exp $
 libexec/battstat-applet-2
 share/battstat_applet/battstat_applet.glade
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
@@ -7,7 +7,6 @@ share/gnome/help/battstat/C/figures/battstat-apperance.png
 share/gnome/help/battstat/C/figures/battstat-applet.png
 share/gnome/help/battstat/C/figures/battstat-general.png
 share/gnome/help/battstat/C/legal.xml
-share/gnome/help/battstat/C/topic.dat
 share/gnome/help/battstat/ja/battstat.xml
 share/gnome/help/battstat/ja/figures/battstat-apperance.png
 share/gnome/help/battstat/ja/figures/battstat-applet.png
@@ -26,8 +25,8 @@ share/schemas/gnome-applets2/battstat.schemas
 @dirrm share/examples/gnome-applets2/sound
 @dirrm share/examples/gnome-applets2
 @dirrm share/battstat_applet
-@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
-@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/*.schemas > /dev/null
 @cwd ${SYSCONFDIR}
 @extra gnome/sound/events/battstat_applet.soundlist

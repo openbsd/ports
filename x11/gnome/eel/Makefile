@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/06 20:45:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/10/07 05:48:54 marcm Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
-DISTNAME=		eel-2.2.4
+DISTNAME=		eel-2.4.0
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eel/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eel/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2.0::x11/gnome/libgnomeui \
 			gailutil.17::x11/gnome/gail
 

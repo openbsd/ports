@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:51:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/10/07 05:48:56 marcm Exp $
+bin/gnomevfs-cat
+bin/gnomevfs-copy
+bin/gnomevfs-info
+bin/gnomevfs-ls
+bin/gnomevfs-mkdir
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-async-ops.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-cancellation.h
@@ -100,10 +105,59 @@ share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/start-here.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
 share/gtk-doc/html/gnome-vfs-2.0/about.html
 share/gtk-doc/html/gnome-vfs-2.0/advanced-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/c9456.html
+share/gtk-doc/html/gnome-vfs-2.0/c9466.html
 share/gtk-doc/html/gnome-vfs-2.0/ch08.html
 share/gtk-doc/html/gnome-vfs-2.0/data-types.html
+share/gtk-doc/html/gnome-vfs-2.0/directory-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/everything-else.html
+share/gtk-doc/html/gnome-vfs-2.0/file-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-application-registry.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-async-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-cancellation.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-context.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-basic-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-find-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-list-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-advanced-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-basic-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-info-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-info.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-rw-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-size.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-trunc-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-inet-connection.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-init.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-method.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-database.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-monitor.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-callback-module-api.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-callback.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-shared.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-monitor.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-parse-ls.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-result.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-socket-buffer.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-socket.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-ssl.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-standard-callbacks.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-transform.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-uri.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-utils.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-xfer.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-application-registry.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-asynchronous-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-cancellation.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-configuration.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-context.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-directory-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-directory.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-file-info.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-file-operations.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-file-size.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-finding-special-directories.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-first-steps.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-application-registry.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-async-ops.html
@@ -112,6 +166,7 @@ share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-context.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-basic-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-find-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-list-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-advanced-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-basic-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-info-ops.html
@@ -119,6 +174,7 @@ share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-info.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-rw-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-size.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-trunc-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-find-directory.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-inet-connection.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-init.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-method.html
@@ -130,6 +186,7 @@ share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module-callback.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module-shared.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-monitor.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-parse-ls.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-result.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-socket-buffer.html
@@ -140,11 +197,39 @@ share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-transform.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-uri.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-utils.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnome-vfs-xfer.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnomevfsmetadata.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-gnomevfsmimemonitor.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-inet-connection.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-initialization.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-iobuf.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-method.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime-handlers.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime-info.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime-magic.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime-monitor.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime-sniff-buffer.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-mime.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-module-callback-module-api.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-module-callbacks.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-module-shared.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-module.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-ops.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-parse-ls.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-process.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-result.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-ssl.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-standard-callbacks.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-types.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-uri.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-utils.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-writing-modules.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-xfer.html
 share/gtk-doc/html/gnome-vfs-2.0/index.html
 share/gtk-doc/html/gnome-vfs-2.0/index.sgml
 share/gtk-doc/html/gnome-vfs-2.0/mime-registry.html
 share/gtk-doc/html/gnome-vfs-2.0/modules.html
+share/gtk-doc/html/gnome-vfs-2.0/writing-modules.html
+share/gtk-doc/html/gnome-vfs-2.0/x27.html
 share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -154,6 +239,7 @@ share/locale/bn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/cy/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -174,12 +260,14 @@ share/locale/is/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/li/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ne/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -201,6 +289,7 @@ share/locale/wa/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
+share/schemas/gnome-vfs2/desktop_default_applications.schemas
 share/schemas/gnome-vfs2/system_http_proxy.schemas
 %%SHARED%%
 @dirrm share/schemas/gnome-vfs2
@@ -246,6 +335,8 @@ share/schemas/gnome-vfs2/system_http_proxy.schemas
 @comment @dirrm share/locale/nn
 @comment @dirrm share/locale/nl/LC_MESSAGES
 @comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ne/LC_MESSAGES
+@comment @dirrm share/locale/ne
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
@@ -258,6 +349,8 @@ share/schemas/gnome-vfs2/system_http_proxy.schemas
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
 @comment @dirrm share/locale/lt
+@comment @dirrm share/locale/li/LC_MESSAGES
+@comment @dirrm share/locale/li
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
 @comment @dirrm share/locale/ja/LC_MESSAGES
@@ -298,6 +391,8 @@ share/schemas/gnome-vfs2/system_http_proxy.schemas
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES

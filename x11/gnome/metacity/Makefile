@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/07 05:48:55 marcm Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
-DISTNAME=		metacity-2.4.55
+DISTNAME=		metacity-2.6.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			glade-2.0.0.0::devel/libglade2 \
 			startup-notification-1::devel/startup-notification
@@ -30,9 +30,10 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--disable-schemas-install
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity && \

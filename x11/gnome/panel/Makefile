@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/07 05:48:55 marcm Exp $
 
 COMMENT=		"GNOME panel"
 
-DISTNAME=		gnome-panel-2.2.2.2
+DISTNAME=		gnome-panel-2.4.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-panel/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-panel/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -26,24 +26,16 @@ RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
 LIB_DEPENDS= 		gnome-desktop-2.0::x11/gnome/desktop \
 			wnck-1.4::devel/libwnck
 
-CONFDIR=		${SYSCONFDIR}/gnome
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu old
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
 CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-panel
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-SUBST_VARS=		CONFDIR
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-panel; \
-	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-panel/
 
 .include <bsd.port.mk>

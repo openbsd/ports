@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:04:22 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/10/07 05:48:54 marcm Exp $
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
-lib/gtk-2.0/modules/libferret.a
 lib/gtk-2.0/modules/libferret.la
-lib/gtk-2.0/modules/libgail.a
 lib/gtk-2.0/modules/libgail.la
-lib/libgailutil.a
 lib/libgailutil.la
 lib/pkgconfig/gail.pc
 share/gtk-doc/html/gail-libgail-util/book1.html
+share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailMisc.html
+share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailTextUtil.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-gailmisc.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-gailtextutil.html
+share/gtk-doc/html/gail-libgail-util/index.html
 share/gtk-doc/html/gail-libgail-util/index.sgml
 share/gtk-doc/html/gail-libgail-util/libgail-util-main.html
 %%SHARED%%

@@ -1,20 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
-bin/gdialog
-bin/gnome-calculator
-bin/gnome-character-map
+@comment $OpenBSD: PLIST,v 1.2 2003/10/07 05:48:56 marcm Exp $
 bin/gnome-dictionary
 bin/gnome-search-tool
 bin/gnome-system-log
 lib/bonobo/servers/GNOME_GDictApplet.server
 libexec/gdict-applet
-man/man1/gdialog.1
-man/man1/gnome-calculator.1
-man/man1/gnome-character-map.1
 man/man1/gnome-dictionary.1
 man/man1/gnome-search-tool.1
 man/man1/gnome-system-log.1
-share/applications/gnome-calculator.desktop
-share/applications/gnome-character-map.desktop
 share/applications/gnome-dictionary.desktop
 share/applications/gnome-search-tool.desktop
 share/applications/gnome-system-log.desktop
@@ -22,76 +14,6 @@ share/gnome-2.0/ui/GNOME_GDictApplet.xml
 share/gnome-system-log/gnome-system-log-actions.db
 share/gnome-system-log/gnome-system-log-descript.db
 share/gnome-system-log/gnome-system-log-regexp.db
-share/gnome/help/gdialog/C/figures/example-dialog.png
-share/gnome/help/gdialog/C/figures/gdialog-msgbox.png
-share/gnome/help/gdialog/C/figures/gdialog-yesno.png
-share/gnome/help/gdialog/C/gdialog.xml
-share/gnome/help/gdialog/C/legal.xml
-share/gnome/help/gdialog/ja/figures/example-dialog.png
-share/gnome/help/gdialog/ja/figures/gdialog-msgbox.png
-share/gnome/help/gdialog/ja/figures/gdialog-yesno.png
-share/gnome/help/gdialog/ja/gdialog.xml
-share/gnome/help/gdialog/ja/legal.xml
-share/gnome/help/gnome-calculator/C/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/C/gnome-calculator.xml
-share/gnome/help/gnome-calculator/C/legal.xml
-share/gnome/help/gnome-calculator/de/figures/gcalc-main.png
-share/gnome/help/gnome-calculator/de/gnome-calculator.xml
-share/gnome/help/gnome-calculator/de/legal.xml
-share/gnome/help/gnome-calculator/es/figures/gcalc-main.png
-share/gnome/help/gnome-calculator/es/gnome-calculator.xml
-share/gnome/help/gnome-calculator/es/legal.xml
-share/gnome/help/gnome-calculator/fr/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/fr/gnome-calculator.xml
-share/gnome/help/gnome-calculator/fr/legal.xml
-share/gnome/help/gnome-calculator/it/figures/gcalc-main.png
-share/gnome/help/gnome-calculator/it/gnome-calculator.xml
-share/gnome/help/gnome-calculator/it/legal.xml
-share/gnome/help/gnome-calculator/ja/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/ja/gnome-calculator.xml
-share/gnome/help/gnome-calculator/ja/legal.xml
-share/gnome/help/gnome-calculator/ko/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/ko/gnome-calculator.xml
-share/gnome/help/gnome-calculator/ko/legal.xml
-share/gnome/help/gnome-calculator/sv/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/sv/gnome-calculator.xml
-share/gnome/help/gnome-calculator/sv/legal.xml
-share/gnome/help/gnome-calculator/zh_CN/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/zh_CN/gnome-calculator.xml
-share/gnome/help/gnome-calculator/zh_CN/legal.xml
-share/gnome/help/gnome-calculator/zh_TW/figures/gcalc_window.png
-share/gnome/help/gnome-calculator/zh_TW/gnome-calculator.xml
-share/gnome/help/gnome-calculator/zh_TW/legal.xml
-share/gnome/help/gnome-character-map/C/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/C/gnome-character-map.xml
-share/gnome/help/gnome-character-map/C/legal.xml
-share/gnome/help/gnome-character-map/de/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/de/gnome-character-map.xml
-share/gnome/help/gnome-character-map/de/legal.xml
-share/gnome/help/gnome-character-map/es/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/es/gnome-character-map.xml
-share/gnome/help/gnome-character-map/es/legal.xml
-share/gnome/help/gnome-character-map/fr/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/fr/gnome-character-map.xml
-share/gnome/help/gnome-character-map/fr/legal.xml
-share/gnome/help/gnome-character-map/it/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/it/gnome-character-map.xml
-share/gnome/help/gnome-character-map/it/legal.xml
-share/gnome/help/gnome-character-map/ja/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/ja/gnome-character-map.xml
-share/gnome/help/gnome-character-map/ja/legal.xml
-share/gnome/help/gnome-character-map/ko/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/ko/gnome-character-map.xml
-share/gnome/help/gnome-character-map/ko/legal.xml
-share/gnome/help/gnome-character-map/sv/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/sv/gnome-character-map.xml
-share/gnome/help/gnome-character-map/sv/legal.xml
-share/gnome/help/gnome-character-map/zh_CN/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/zh_CN/gnome-character-map.xml
-share/gnome/help/gnome-character-map/zh_CN/legal.xml
-share/gnome/help/gnome-character-map/zh_TW/figures/gnome-character-map.png
-share/gnome/help/gnome-character-map/zh_TW/gnome-character-map.xml
-share/gnome/help/gnome-character-map/zh_TW/legal.xml
 share/gnome/help/gnome-dictionary/C/figures/gdict_applet.png
 share/gnome/help/gnome-dictionary/C/figures/gdict_window.png
 share/gnome/help/gnome-dictionary/C/gnome-dictionary.xml
@@ -103,9 +25,6 @@ share/gnome/help/gnome-dictionary/ja/legal.xml
 share/gnome/help/gnome-search-tool/C/figures/gnome-search-tool_window.png
 share/gnome/help/gnome-search-tool/C/gnome-search-tool.xml
 share/gnome/help/gnome-search-tool/C/legal.xml
-share/gnome/help/gnome-search-tool/de/figures/gnome-search-tool_window.png
-share/gnome/help/gnome-search-tool/de/gnome-search-tool.xml
-share/gnome/help/gnome-search-tool/de/legal.xml
 share/gnome/help/gnome-search-tool/es/figures/gnome-search-tool_window.png
 share/gnome/help/gnome-search-tool/es/gnome-search-tool.xml
 share/gnome/help/gnome-search-tool/es/legal.xml
@@ -165,8 +84,10 @@ share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/bn/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/cy/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-utils-2.0.mo
@@ -182,6 +103,7 @@ share/locale/gl/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/id/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-utils-2.0.mo
@@ -201,6 +123,7 @@ share/locale/ro/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/sq/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-utils-2.0.mo
@@ -211,32 +134,9 @@ share/locale/vi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
-share/omf/gnome-utils/gdialog-C.omf
-share/omf/gnome-utils/gdialog-ja.omf
-share/omf/gnome-utils/gnome-calculator-C.omf
-share/omf/gnome-utils/gnome-calculator-de.omf
-share/omf/gnome-utils/gnome-calculator-es.omf
-share/omf/gnome-utils/gnome-calculator-fr.omf
-share/omf/gnome-utils/gnome-calculator-it.omf
-share/omf/gnome-utils/gnome-calculator-ja.omf
-share/omf/gnome-utils/gnome-calculator-ko.omf
-share/omf/gnome-utils/gnome-calculator-sv.omf
-share/omf/gnome-utils/gnome-calculator-zh_CN.omf
-share/omf/gnome-utils/gnome-calculator-zh_TW.omf
-share/omf/gnome-utils/gnome-character-map-C.omf
-share/omf/gnome-utils/gnome-character-map-de.omf
-share/omf/gnome-utils/gnome-character-map-es.omf
-share/omf/gnome-utils/gnome-character-map-fr.omf
-share/omf/gnome-utils/gnome-character-map-it.omf
-share/omf/gnome-utils/gnome-character-map-ja.omf
-share/omf/gnome-utils/gnome-character-map-ko.omf
-share/omf/gnome-utils/gnome-character-map-sv.omf
-share/omf/gnome-utils/gnome-character-map-zh_CN.omf
-share/omf/gnome-utils/gnome-character-map-zh_TW.omf
 share/omf/gnome-utils/gnome-dictionary-C.omf
 share/omf/gnome-utils/gnome-dictionary-ja.omf
 share/omf/gnome-utils/gnome-search-tool-C.omf
-share/omf/gnome-utils/gnome-search-tool-de.omf
 share/omf/gnome-utils/gnome-search-tool-es.omf
 share/omf/gnome-utils/gnome-search-tool-fr.omf
 share/omf/gnome-utils/gnome-search-tool-it.omf
@@ -256,13 +156,12 @@ share/omf/gnome-utils/gnome-system-log-sv.omf
 share/omf/gnome-utils/gnome-system-log-zh_CN.omf
 share/omf/gnome-utils/gnome-system-log-zh_TW.omf
 share/pixmaps/gdict.png
-share/pixmaps/gnome-character-map.png
+share/pixmaps/gnome-search-tool/gnome-search-tool-animation.png
 share/pixmaps/gnome-searchtool.png
 share/schemas/gnome-utils/gdict.schemas
 share/schemas/gnome-utils/logview.schemas
 @dirrm share/schemas/gnome-utils
-@comment @exec mkdir -p %D/share/pixmaps/gnome-system-log
-@comment @dirrm share/pixmaps/gnome-system-log
+@dirrm share/pixmaps/gnome-search-tool
 @comment @dirrm share/pixmaps
 @dirrm share/omf/gnome-utils
 @comment @dirrm share/locale/zh_TW/LC_MESSAGES
@@ -285,6 +184,8 @@ share/schemas/gnome-utils/logview.schemas
 @comment @dirrm share/locale/sr@Latn
 @comment @dirrm share/locale/sr/LC_MESSAGES
 @comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
 @comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -323,6 +224,8 @@ share/schemas/gnome-utils/logview.schemas
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
 @comment @dirrm share/locale/hi/LC_MESSAGES
@@ -353,10 +256,14 @@ share/schemas/gnome-utils/logview.schemas
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES
@@ -405,8 +312,6 @@ share/schemas/gnome-utils/logview.schemas
 @dirrm share/gnome/help/gnome-search-tool/fr
 @dirrm share/gnome/help/gnome-search-tool/es/figures
 @dirrm share/gnome/help/gnome-search-tool/es
-@dirrm share/gnome/help/gnome-search-tool/de/figures
-@dirrm share/gnome/help/gnome-search-tool/de
 @dirrm share/gnome/help/gnome-search-tool/C/figures
 @dirrm share/gnome/help/gnome-search-tool/C
 @dirrm share/gnome/help/gnome-search-tool
@@ -415,53 +320,6 @@ share/schemas/gnome-utils/logview.schemas
 @dirrm share/gnome/help/gnome-dictionary/C/figures
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
-@dirrm share/gnome/help/gnome-character-map/zh_TW/figures
-@dirrm share/gnome/help/gnome-character-map/zh_TW
-@dirrm share/gnome/help/gnome-character-map/zh_CN/figures
-@dirrm share/gnome/help/gnome-character-map/zh_CN
-@dirrm share/gnome/help/gnome-character-map/sv/figures
-@dirrm share/gnome/help/gnome-character-map/sv
-@dirrm share/gnome/help/gnome-character-map/ko/figures
-@dirrm share/gnome/help/gnome-character-map/ko
-@dirrm share/gnome/help/gnome-character-map/ja/figures
-@dirrm share/gnome/help/gnome-character-map/ja
-@dirrm share/gnome/help/gnome-character-map/it/figures
-@dirrm share/gnome/help/gnome-character-map/it
-@dirrm share/gnome/help/gnome-character-map/fr/figures
-@dirrm share/gnome/help/gnome-character-map/fr
-@dirrm share/gnome/help/gnome-character-map/es/figures
-@dirrm share/gnome/help/gnome-character-map/es
-@dirrm share/gnome/help/gnome-character-map/de/figures
-@dirrm share/gnome/help/gnome-character-map/de
-@dirrm share/gnome/help/gnome-character-map/C/figures
-@dirrm share/gnome/help/gnome-character-map/C
-@dirrm share/gnome/help/gnome-character-map
-@dirrm share/gnome/help/gnome-calculator/zh_TW/figures
-@dirrm share/gnome/help/gnome-calculator/zh_TW
-@dirrm share/gnome/help/gnome-calculator/zh_CN/figures
-@dirrm share/gnome/help/gnome-calculator/zh_CN
-@dirrm share/gnome/help/gnome-calculator/sv/figures
-@dirrm share/gnome/help/gnome-calculator/sv
-@dirrm share/gnome/help/gnome-calculator/ko/figures
-@dirrm share/gnome/help/gnome-calculator/ko
-@dirrm share/gnome/help/gnome-calculator/ja/figures
-@dirrm share/gnome/help/gnome-calculator/ja
-@dirrm share/gnome/help/gnome-calculator/it/figures
-@dirrm share/gnome/help/gnome-calculator/it
-@dirrm share/gnome/help/gnome-calculator/fr/figures
-@dirrm share/gnome/help/gnome-calculator/fr
-@dirrm share/gnome/help/gnome-calculator/es/figures
-@dirrm share/gnome/help/gnome-calculator/es
-@dirrm share/gnome/help/gnome-calculator/de/figures
-@dirrm share/gnome/help/gnome-calculator/de
-@dirrm share/gnome/help/gnome-calculator/C/figures
-@dirrm share/gnome/help/gnome-calculator/C
-@dirrm share/gnome/help/gnome-calculator
-@dirrm share/gnome/help/gdialog/ja/figures
-@dirrm share/gnome/help/gdialog/ja
-@dirrm share/gnome/help/gdialog/C/figures
-@dirrm share/gnome/help/gdialog/C
-@dirrm share/gnome/help/gdialog
 @comment @dirrm share/gnome/help
 @dirrm share/gnome-system-log
 @comment @dirrm share/gnome

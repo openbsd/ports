@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/23 19:51:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:55 marcm Exp $
 bin/nautilus
 bin/nautilus-file-management-properties
 bin/nautilus-server-connect
@@ -59,8 +59,10 @@ share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
+share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
+share/locale/cy/LC_MESSAGES/nautilus.mo
 share/locale/da/LC_MESSAGES/nautilus.mo
 share/locale/de/LC_MESSAGES/nautilus.mo
 share/locale/el/LC_MESSAGES/nautilus.mo
@@ -76,15 +78,19 @@ share/locale/gl/LC_MESSAGES/nautilus.mo
 share/locale/he/LC_MESSAGES/nautilus.mo
 share/locale/hi/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
+share/locale/id/LC_MESSAGES/nautilus.mo
+share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
+share/locale/li/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/mk/LC_MESSAGES/nautilus.mo
 share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
+share/locale/ne/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
 share/locale/no/LC_MESSAGES/nautilus.mo
@@ -99,7 +105,6 @@ share/locale/sq/LC_MESSAGES/nautilus.mo
 share/locale/sr/LC_MESSAGES/nautilus.mo
 share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
-share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
@@ -162,169 +167,38 @@ share/pixmaps/nautilus/colors.png
 share/pixmaps/nautilus/cpu.png
 share/pixmaps/nautilus/crux_eggplant/Search.png
 share/pixmaps/nautilus/crux_eggplant/crux_eggplant.xml
-share/pixmaps/nautilus/crux_eggplant/decrement-i.png
-share/pixmaps/nautilus/crux_eggplant/decrement.png
-share/pixmaps/nautilus/crux_eggplant/increment-i.png
-share/pixmaps/nautilus/crux_eggplant/increment.png
-share/pixmaps/nautilus/crux_eggplant/number_strip.png
-share/pixmaps/nautilus/crux_eggplant/theme_preview.png
-share/pixmaps/nautilus/crux_eggplant/throbber/001.png
-share/pixmaps/nautilus/crux_eggplant/throbber/002.png
-share/pixmaps/nautilus/crux_eggplant/throbber/003.png
-share/pixmaps/nautilus/crux_eggplant/throbber/004.png
-share/pixmaps/nautilus/crux_eggplant/throbber/005.png
-share/pixmaps/nautilus/crux_eggplant/throbber/006.png
-share/pixmaps/nautilus/crux_eggplant/throbber/007.png
-share/pixmaps/nautilus/crux_eggplant/throbber/008.png
-share/pixmaps/nautilus/crux_eggplant/throbber/009.png
-share/pixmaps/nautilus/crux_eggplant/throbber/010.png
-share/pixmaps/nautilus/crux_eggplant/throbber/011.png
-share/pixmaps/nautilus/crux_eggplant/throbber/012.png
-share/pixmaps/nautilus/crux_eggplant/throbber/013.png
-share/pixmaps/nautilus/crux_eggplant/throbber/014.png
-share/pixmaps/nautilus/crux_eggplant/throbber/015.png
-share/pixmaps/nautilus/crux_eggplant/throbber/016.png
-share/pixmaps/nautilus/crux_eggplant/throbber/017.png
-share/pixmaps/nautilus/crux_eggplant/throbber/018.png
-share/pixmaps/nautilus/crux_eggplant/throbber/019.png
-share/pixmaps/nautilus/crux_eggplant/throbber/020.png
-share/pixmaps/nautilus/crux_eggplant/throbber/021.png
-share/pixmaps/nautilus/crux_eggplant/throbber/022.png
-share/pixmaps/nautilus/crux_eggplant/throbber/023.png
-share/pixmaps/nautilus/crux_eggplant/throbber/024.png
-share/pixmaps/nautilus/crux_eggplant/throbber/025.png
-share/pixmaps/nautilus/crux_eggplant/throbber/026.png
-share/pixmaps/nautilus/crux_eggplant/throbber/027.png
-share/pixmaps/nautilus/crux_eggplant/throbber/028.png
-share/pixmaps/nautilus/crux_eggplant/throbber/029.png
-share/pixmaps/nautilus/crux_eggplant/throbber/030.png
-share/pixmaps/nautilus/crux_eggplant/throbber/rest.png
-share/pixmaps/nautilus/crux_eggplant/zoom_body.png
 share/pixmaps/nautilus/crux_teal/Search.png
 share/pixmaps/nautilus/crux_teal/crux_teal.xml
-share/pixmaps/nautilus/crux_teal/decrement-i.png
-share/pixmaps/nautilus/crux_teal/decrement.png
-share/pixmaps/nautilus/crux_teal/increment-i.png
-share/pixmaps/nautilus/crux_teal/increment.png
-share/pixmaps/nautilus/crux_teal/number_strip.png
-share/pixmaps/nautilus/crux_teal/theme_preview.png
-share/pixmaps/nautilus/crux_teal/throbber/001.png
-share/pixmaps/nautilus/crux_teal/throbber/002.png
-share/pixmaps/nautilus/crux_teal/throbber/003.png
-share/pixmaps/nautilus/crux_teal/throbber/004.png
-share/pixmaps/nautilus/crux_teal/throbber/005.png
-share/pixmaps/nautilus/crux_teal/throbber/006.png
-share/pixmaps/nautilus/crux_teal/throbber/007.png
-share/pixmaps/nautilus/crux_teal/throbber/008.png
-share/pixmaps/nautilus/crux_teal/throbber/009.png
-share/pixmaps/nautilus/crux_teal/throbber/010.png
-share/pixmaps/nautilus/crux_teal/throbber/011.png
-share/pixmaps/nautilus/crux_teal/throbber/012.png
-share/pixmaps/nautilus/crux_teal/throbber/013.png
-share/pixmaps/nautilus/crux_teal/throbber/014.png
-share/pixmaps/nautilus/crux_teal/throbber/015.png
-share/pixmaps/nautilus/crux_teal/throbber/016.png
-share/pixmaps/nautilus/crux_teal/throbber/017.png
-share/pixmaps/nautilus/crux_teal/throbber/018.png
-share/pixmaps/nautilus/crux_teal/throbber/019.png
-share/pixmaps/nautilus/crux_teal/throbber/020.png
-share/pixmaps/nautilus/crux_teal/throbber/021.png
-share/pixmaps/nautilus/crux_teal/throbber/022.png
-share/pixmaps/nautilus/crux_teal/throbber/023.png
-share/pixmaps/nautilus/crux_teal/throbber/024.png
-share/pixmaps/nautilus/crux_teal/throbber/025.png
-share/pixmaps/nautilus/crux_teal/throbber/026.png
-share/pixmaps/nautilus/crux_teal/throbber/027.png
-share/pixmaps/nautilus/crux_teal/throbber/028.png
-share/pixmaps/nautilus/crux_teal/throbber/029.png
-share/pixmaps/nautilus/crux_teal/throbber/030.png
-share/pixmaps/nautilus/crux_teal/throbber/rest.png
-share/pixmaps/nautilus/crux_teal/zoom_body.png
-share/pixmaps/nautilus/decrement.png
 share/pixmaps/nautilus/default/Search.png
-share/pixmaps/nautilus/default/decrement.png
 share/pixmaps/nautilus/default/default.xml
-share/pixmaps/nautilus/default/increment.png
-share/pixmaps/nautilus/default/number_strip.png
 share/pixmaps/nautilus/default/side_bar_image.png
-share/pixmaps/nautilus/default/theme_preview.png
-share/pixmaps/nautilus/default/zoom_body.png
 share/pixmaps/nautilus/emblems.png
 share/pixmaps/nautilus/erase.png
 share/pixmaps/nautilus/gnome/Services.png
 share/pixmaps/nautilus/gnome/gnome.xml
-share/pixmaps/nautilus/gnome/theme_preview.png
-share/pixmaps/nautilus/gnome/throbber/001.png
-share/pixmaps/nautilus/gnome/throbber/002.png
-share/pixmaps/nautilus/gnome/throbber/003.png
-share/pixmaps/nautilus/gnome/throbber/004.png
-share/pixmaps/nautilus/gnome/throbber/005.png
-share/pixmaps/nautilus/gnome/throbber/006.png
-share/pixmaps/nautilus/gnome/throbber/rest.png
-share/pixmaps/nautilus/increment.png
 share/pixmaps/nautilus/knob.png
 share/pixmaps/nautilus/memory_chip.gif
 share/pixmaps/nautilus/nautilus-desktop.png
+share/pixmaps/nautilus/nautilus-file-management-properties.png
 share/pixmaps/nautilus/nautilus-launch-icon.png
 share/pixmaps/nautilus/nautilus-mini-logo.png
 share/pixmaps/nautilus/nautilus-server-connect.png
 share/pixmaps/nautilus/note-indicator.png
-share/pixmaps/nautilus/number_strip.png
 share/pixmaps/nautilus/side_bar_image.png
 share/pixmaps/nautilus/sierra/green_weave.png
-share/pixmaps/nautilus/sierra/number_strip.png
 share/pixmaps/nautilus/sierra/sierra.xml
-share/pixmaps/nautilus/sierra/theme_preview.png
 share/pixmaps/nautilus/tahoe/bluewall.png
-share/pixmaps/nautilus/tahoe/number_strip.png
 share/pixmaps/nautilus/tahoe/tahoe.xml
-share/pixmaps/nautilus/tahoe/theme_preview.png
 share/pixmaps/nautilus/text-selection-frame.png
-share/pixmaps/nautilus/throbber/001.png
-share/pixmaps/nautilus/throbber/002.png
-share/pixmaps/nautilus/throbber/003.png
-share/pixmaps/nautilus/throbber/004.png
-share/pixmaps/nautilus/throbber/005.png
-share/pixmaps/nautilus/throbber/006.png
-share/pixmaps/nautilus/throbber/007.png
-share/pixmaps/nautilus/throbber/008.png
-share/pixmaps/nautilus/throbber/009.png
-share/pixmaps/nautilus/throbber/010.png
-share/pixmaps/nautilus/throbber/011.png
-share/pixmaps/nautilus/throbber/012.png
-share/pixmaps/nautilus/throbber/013.png
-share/pixmaps/nautilus/throbber/014.png
-share/pixmaps/nautilus/throbber/015.png
-share/pixmaps/nautilus/throbber/016.png
-share/pixmaps/nautilus/throbber/017.png
-share/pixmaps/nautilus/throbber/018.png
-share/pixmaps/nautilus/throbber/019.png
-share/pixmaps/nautilus/throbber/020.png
-share/pixmaps/nautilus/throbber/021.png
-share/pixmaps/nautilus/throbber/022.png
-share/pixmaps/nautilus/throbber/023.png
-share/pixmaps/nautilus/throbber/024.png
-share/pixmaps/nautilus/throbber/025.png
-share/pixmaps/nautilus/throbber/026.png
-share/pixmaps/nautilus/throbber/027.png
-share/pixmaps/nautilus/throbber/028.png
-share/pixmaps/nautilus/throbber/029.png
-share/pixmaps/nautilus/throbber/030.png
-share/pixmaps/nautilus/throbber/rest.png
 share/pixmaps/nautilus/thumbnail_frame.png
-share/pixmaps/nautilus/zoom_body.png
 share/schemas/nautilus/apps_nautilus_preferences.schemas
 %%SHARED%%
 @dirrm share/schemas/nautilus
-@dirrm share/pixmaps/nautilus/throbber
 @dirrm share/pixmaps/nautilus/tahoe
 @dirrm share/pixmaps/nautilus/sierra
-@dirrm share/pixmaps/nautilus/gnome/throbber
 @dirrm share/pixmaps/nautilus/gnome
 @dirrm share/pixmaps/nautilus/default
-@dirrm share/pixmaps/nautilus/crux_teal/throbber
 @dirrm share/pixmaps/nautilus/crux_teal
-@dirrm share/pixmaps/nautilus/crux_eggplant/throbber
 @dirrm share/pixmaps/nautilus/crux_eggplant
 @dirrm share/pixmaps/nautilus
 @comment @dirrm share/pixmaps
@@ -349,8 +223,6 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/th/LC_MESSAGES
 @comment @dirrm share/locale/th
-@comment @dirrm share/locale/ta/LC_MESSAGES
-@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES
@@ -379,6 +251,8 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @comment @dirrm share/locale/nn
 @comment @dirrm share/locale/nl/LC_MESSAGES
 @comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ne/LC_MESSAGES
+@comment @dirrm share/locale/ne
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
@@ -391,12 +265,18 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
 @comment @dirrm share/locale/lt
+@comment @dirrm share/locale/li/LC_MESSAGES
+@comment @dirrm share/locale/li
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
 @comment @dirrm share/locale/ja/LC_MESSAGES
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
 @comment @dirrm share/locale/hi/LC_MESSAGES
@@ -427,10 +307,14 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES
@@ -450,6 +334,8 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @dirrm share/examples/nautilus/X11/serverconfig
 @dirrm share/examples/nautilus/X11
 @dirrm share/examples/nautilus
+@dirrm share/control-center-2.0/capplets
+@dirrm share/control-center-2.0
 @comment @dirrm share/applications
 @comment @dirrm lib/pkgconfig
 @comment @dirrm lib/bonobo

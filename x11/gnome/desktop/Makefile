@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/07 14:20:34 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/07 05:48:54 marcm Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
-DISTNAME=		gnome-desktop-2.2.2
+DISTNAME=		gnome-desktop-2.4.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

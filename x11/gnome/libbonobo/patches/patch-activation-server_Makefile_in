@@ -1,0 +1,12 @@
+$OpenBSD: patch-activation-server_Makefile_in,v 1.1 2003/10/07 05:48:54 marcm Exp $
+--- activation-server/Makefile.in.orig	2003-09-09 13:15:51.000000000 -0700
++++ activation-server/Makefile.in	2003-09-09 13:16:10.000000000 -0700
+@@ -246,7 +246,7 @@ bonobo_activation_server_SOURCES = \
+ 
+ LDADD = \
+ 	$(top_builddir)/bonobo/libbonobo-2.la \
+-	 -lname-server-2 $(SERVER_LIBS) $(POPT_LIBS) @INTLLIBS@
++	 -lname-server-2 $(SERVER_LIBS) $(POPT_LIBS) @INTLLIBS@ -lORBitCosNaming-2
+ 
+ 
+ activation_client_SOURCES = client.c

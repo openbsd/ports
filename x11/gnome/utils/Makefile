@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/07 05:48:56 marcm Exp $
 
 COMMENT=		"GNOME utility programs"
 
-DISTNAME=		gnome-utils-2.2.3
+DISTNAME=		gnome-utils-2.4.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,11 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-utils/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-utils/2.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-RUN_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2.200::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel
 

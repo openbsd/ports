@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/07 05:48:55 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
-DISTNAME=		librsvg-2.2.5
+DISTNAME=		librsvg-2.4.0
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -19,19 +19,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
+			bz2::archivers/bzip2 \
 			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 			pangoft2-1.0.0.0::devel/pango \
 			popt::devel/popt \
 			xml2.6::textproc/libxml
-
+						
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= 	--without-svgz
+CONFIGURE_ARGS+= 	--disable-gtk-doc
+# Requires libgsf which isn't in-tree yet
+#CONFIGURE_ARGS+= 	--with-svgz
+CONFIGURE_ARGS+= 	--without-croco
 CONFIGURE_ARGS+= 	--without-gimp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

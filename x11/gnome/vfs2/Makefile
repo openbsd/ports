@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/06 20:45:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/10/07 05:48:56 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.2.5
+VERSION=		2.4.0
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
@@ -10,14 +10,16 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.4/}
 
-LIB_DEPENDS=		bonobo-2::x11/gnome/libbonobo \
+MODULES=		gettext
+
+LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 			bz2::archivers/bzip2 \
 			cdda_paranoia,cdda_interface::audio/cdparanoia \
 			gconf-2::devel/gconf2
 
-BUILD_DEPENDS=		:pkgconfig->=0.8.0:devel/pkgconfig \
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
@@ -35,6 +37,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2
+CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 SUBST_VARS=		CONFDIR

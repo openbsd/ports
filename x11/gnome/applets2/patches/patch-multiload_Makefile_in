@@ -1,7 +1,7 @@
-$OpenBSD: patch-multiload_Makefile_in,v 1.2 2003/07/06 18:19:20 marcm Exp $
---- multiload/Makefile.in.orig	Mon Mar 10 09:49:37 2003
-+++ multiload/Makefile.in	Sun Jul  6 10:56:05 2003
-@@ -88,7 +88,7 @@ GNOME_LIBS2_LIBS = @GNOME_LIBS2_LIBS@
+$OpenBSD: patch-multiload_Makefile_in,v 1.3 2003/10/07 05:48:53 marcm Exp $
+--- multiload/Makefile.in.orig	2003-09-22 17:52:01.000000000 -0700
++++ multiload/Makefile.in	2003-09-23 10:18:48.000000000 -0700
+@@ -95,7 +95,7 @@ GNOME_LIBS2_LIBS = @GNOME_LIBS2_LIBS@
  GNOME_VFS_APPLETS_CFLAGS = @GNOME_VFS_APPLETS_CFLAGS@
  GNOME_VFS_APPLETS_LIBS = @GNOME_VFS_APPLETS_LIBS@
  GTOP_APPLETS_CFLAGS = @GTOP_APPLETS_CFLAGS@
@@ -10,11 +10,11 @@ $OpenBSD: patch-multiload_Makefile_in,v 1.2 2003/07/06 18:19:20 marcm Exp $
  HAVE_JW = @HAVE_JW@
  HAVE_LIBAPM = @HAVE_LIBAPM@
  INSTOBJEXT = @INSTOBJEXT@
-@@ -538,7 +538,6 @@ mostlyclean distclean maintainer-clean
- 
+@@ -548,7 +548,6 @@ mostlyclean distclean maintainer-clean
+ @INTLTOOL_SCHEMAS_RULE@
  
  install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schemas_DATA) ;
  
  $(server_in_files): $(server_in_files:.server.in=.server.in.in)
  	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@

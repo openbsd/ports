@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/07 05:48:56 marcm Exp $
 
 COMMENT=		"GNOME session"
 
-DISTNAME=		gnome-session-2.2.2
+DISTNAME=		gnome-session-2.4.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.4/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -27,8 +27,6 @@ LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
 # Gnome2 user experience :)
 RUN_DEPENDS+=		:gnome-applets2-*:x11/gnome/applets2
 RUN_DEPENDS+=		:gnome-terminal-*:x11/gnome/terminal
-RUN_DEPENDS+=		:nautilus-*:x11/gnome/nautilus
-RUN_DEPENDS+=		:metacity-*:x11/gnome/metacity
 RUN_DEPENDS+=		:gnome-themes-*:x11/gnome/themes
 #RUN_DEPENDS+=		:yelp-*:x11/gnome/yelp
 RUN_DEPENDS+=		:xscreensaver-*:x11/xscreensaver,gtk2

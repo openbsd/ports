@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.3 2003/08/23 19:51:44 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2003/10/07 05:48:56 marcm Exp $
 #
 
 set -e
@@ -25,7 +25,6 @@ do_notice()
 	echo "| To really remove $1 from your system you should also"
 	echo "| remove the configuration files from the ${CONFDIR} directory."
 	echo "| Remove the directories in which the files reside as well if empty."
-	echo "|"
 	echo "| If you are planning on installing $1 again in the future"
 	echo "| you can leave it as it is."
 	echo "|"

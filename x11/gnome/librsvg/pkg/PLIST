@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:45:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:48:55 marcm Exp $
 bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg.h
@@ -11,13 +11,13 @@ lib/librsvg-2.la
 lib/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg.1
 share/doc/librsvg/html/home.png
-share/doc/librsvg/html/i909.html
+share/doc/librsvg/html/i1013.html
 share/doc/librsvg/html/index.html
 share/doc/librsvg/html/index.sgml
 share/doc/librsvg/html/left.png
 share/doc/librsvg/html/r22.html
-share/doc/librsvg/html/r320.html
-share/doc/librsvg/html/r354.html
+share/doc/librsvg/html/r376.html
+share/doc/librsvg/html/r413.html
 share/doc/librsvg/html/right.png
 share/doc/librsvg/html/rsvg-convenience-functions.html
 share/doc/librsvg/html/rsvg-core-api.html
