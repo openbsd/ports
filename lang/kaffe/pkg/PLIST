@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/07/27 23:34:57 matt Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/02/12 18:21:25 ian Exp $
 bin/appletviewer
 bin/install-jar
 bin/jar
@@ -11,6 +11,7 @@ bin/jdb
 bin/kaffe
 bin/kaffeh
 bin/kjc
+bin/kopi
 bin/native2ascii
 bin/rmic
 bin/rmiregistry
@@ -43,6 +44,7 @@ lib/kaffe/libzip.a
 lib/kaffe/libzip.la
 lib/kaffe/security/java.security
 lib/libkaffevm.la
+lib/libkaffexprof.la
 libexec/Kaffe
 man/man1/kaffe.1
 share/kaffe/FAQ.BeOS
@@ -53,15 +55,19 @@ share/kaffe/FAQ.awt
 share/kaffe/FAQ.class-states
 share/kaffe/FAQ.classlibrary-compile
 share/kaffe/FAQ.depend
+share/kaffe/FAQ.feedback
 share/kaffe/FAQ.gcblock
+share/kaffe/FAQ.gcj
 share/kaffe/FAQ.gcstrategy
 share/kaffe/FAQ.hotjava
 share/kaffe/FAQ.install-root
 share/kaffe/FAQ.jsignal
+share/kaffe/FAQ.libffi
 share/kaffe/FAQ.libtool
 share/kaffe/FAQ.linux
 share/kaffe/FAQ.locks
 share/kaffe/FAQ.nativemethods
+share/kaffe/FAQ.ncr
 share/kaffe/FAQ.profiler
 share/kaffe/FAQ.pthreads
 share/kaffe/FAQ.requiredlibraries
@@ -69,6 +75,8 @@ share/kaffe/FAQ.staticnative
 share/kaffe/FAQ.timing
 share/kaffe/FAQ.unicode
 share/kaffe/FAQ.win32
+share/kaffe/FAQ.xdebugging
+share/kaffe/FAQ.xprofiler
 share/kaffe/Klasses.jar
 share/kaffe/comm.jar
 share/kaffe/kjc.jar
