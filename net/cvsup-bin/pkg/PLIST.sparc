@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST.sparc,v 1.1.1.1 2000/06/11 18:21:34 espie Exp $
-bin/cvpasswd
-bin/cvsup
-man/cat1/cvpasswd.0
-man/cat1/cvsup.0
