@@ -1,6 +1,6 @@
-$OpenBSD: patch-balance_c,v 1.4 2003/06/17 18:38:19 avsm Exp $
---- balance.c.orig	Sat Sep 15 23:34:56 2001
-+++ balance.c	Tue Jun 17 17:35:00 2003
+$OpenBSD: patch-balance_c,v 1.5 2003/06/22 12:27:03 naddy Exp $
+--- balance.c.orig	Sun Sep 16 00:34:56 2001
++++ balance.c	Sun Jun 22 14:25:39 2003
 @@ -673,11 +673,13 @@ static usage() {
    char* version;
    char* revision_copy;
@@ -9,7 +9,7 @@ $OpenBSD: patch-balance_c,v 1.4 2003/06/17 18:38:19 avsm Exp $
  
 -  if((revision_copy=(char*) malloc(strlen(revision)+1))==NULL) {
 +  rev_len = strlen(revision)+1;
-+  if((revision_copy=(char*) malloc(rev_len)==NULL) {
++  if((revision_copy=(char*) malloc(rev_len))==NULL) {
      fprintf(stderr,"malloc problem in usage()\n");
    } else {
 -    strcpy(revision_copy, revision);
