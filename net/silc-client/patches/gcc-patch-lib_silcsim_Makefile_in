@@ -1,13 +1,13 @@
-$OpenBSD: gcc-patch-lib_silcsim_Makefile_in,v 1.1 2002/10/05 19:41:17 fgsch Exp $
---- lib/silcsim/Makefile.in.orig	Sat Sep  7 14:04:47 2002
-+++ lib/silcsim/Makefile.in	Sat Oct  5 07:59:27 2002
-@@ -440,6 +440,9 @@ uninstall-am: uninstall-includeHEADERS u
+$OpenBSD: gcc-patch-lib_silcsim_Makefile_in,v 1.2 2002/12/09 15:17:43 brad Exp $
+--- lib/silcsim/Makefile.in.orig	Thu Dec  5 16:39:00 2002
++++ lib/silcsim/Makefile.in	Sun Dec  8 00:58:18 2002
+@@ -342,6 +342,9 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
  
- @SILC_SIM_TRUE@all: $(SIM_CIPHER_OBJS) $(SIM_HASH_OBJS)
- 
-+sha1.o:
++sha1.lo:
 +	$(LTCOMPILE) -O0 -c $(srcdir)/../silccrypt/$*.c
 +
- $(SIM_CIPHER_OBJS): ../silccrypt/libsilccrypt.a
- 	$(LTCOMPILE) -c $(srcdir)/../silccrypt/$*.c
- 	$(LIBTOOL) --mode=link $(LINK) -rpath $(silc_modulesdir) -o lib$*.la $*.lo
+ .c.o:
+ 	$(COMPILE) -c `test -f '$<' || echo '$(srcdir)/'`$<
+ 

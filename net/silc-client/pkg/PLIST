@@ -1,15 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/10/22 22:05:08 mark Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/12/09 15:17:43 brad Exp $
+@pkgcfl irssi-*
 bin/silc
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
 share/doc/silc/CHANGES
+@comment share/doc/silc/COPYING
 share/doc/silc/CREDITS
+@comment share/doc/silc/CodingStyle
 share/doc/silc/FAQ
+@comment share/doc/silc/INSTALL
 share/doc/silc/README
+@comment share/doc/silc/TODO
+share/doc/silc/draft-riikonen-presence-attrs-01.txt
+share/doc/silc/draft-riikonen-silc-commands-04.txt
+share/doc/silc/draft-riikonen-silc-flags-payloads-02.txt
+share/doc/silc/draft-riikonen-silc-ke-auth-06.txt
+share/doc/silc/draft-riikonen-silc-pp-06.txt
+share/doc/silc/draft-riikonen-silc-spec-06.txt
 share/doc/silc/formats.txt
 share/doc/silc/manual.txt
 share/doc/silc/signals.txt
-share/doc/silc/silc.conf.default
+share/doc/silc/special_vars.txt
 share/doc/silc/startup-HOWTO.html
-share/examples/silc-client/silc.conf
+share/examples/silc/silc.conf.default
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -60,7 +81,6 @@ share/silc/help/motd
 share/silc/help/msg
 share/silc/help/names
 share/silc/help/nick
-share/silc/help/note
 share/silc/help/notice
 share/silc/help/oper
 share/silc/help/part
@@ -80,6 +100,7 @@ share/silc/help/server
 share/silc/help/set
 share/silc/help/shutdown
 share/silc/help/silcoper
+share/silc/help/smsg
 share/silc/help/stats
 share/silc/help/statusbar
 share/silc/help/toggle
@@ -89,7 +110,6 @@ share/silc/help/unalias
 share/silc/help/unignore
 share/silc/help/unload
 share/silc/help/unquery
-share/silc/help/upgrade
 share/silc/help/users
 share/silc/help/version
 share/silc/help/watch
@@ -108,5 +128,9 @@ share/silc/themes/default.theme
 @dirrm share/silc/scripts
 @dirrm share/silc/help
 @dirrm share/silc
-@dirrm share/examples/silc-client
+@dirrm share/examples/silc
 @dirrm share/doc/silc
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
