@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/04/21 11:36:06 brad Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
+
+BROKEN=	"security (DoS) issue"
 
 COMMENT=	"TrueType font server for X11"
 
