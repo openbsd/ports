@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2003/06/25 12:01:16 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.21 2003/07/01 11:10:36 wilfried Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -101,6 +101,7 @@ mozilla/components/htmlparser.xpt
 mozilla/components/imglib2.xpt
 mozilla/components/impComm4xMail.xpt
 mozilla/components/import.xpt
+mozilla/components/inspector-cmdline.js
 mozilla/components/inspector.xpt
 mozilla/components/intl.xpt
 mozilla/components/ipcd.xpt
@@ -177,7 +178,6 @@ mozilla/components/sidebar.xpt
 mozilla/components/signonviewer.xpt
 mozilla/components/smime-service.js
 mozilla/components/timebomb.xpt
-mozilla/components/transmngr.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2003/07/01 02:34:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.53 2003/07/01 11:10:36 wilfried Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.4b
+VER=		1.4
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2

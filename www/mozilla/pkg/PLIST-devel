@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.1 2003/05/23 10:09:17 wilfried Exp $
+@comment $OpenBSD: PLIST-devel,v 1.2 2003/07/01 11:10:36 wilfried Exp $
 mozilla/include/accessibility/nsAccessNode.h
 mozilla/include/accessibility/nsAccessNodeWrap.h
 mozilla/include/accessibility/nsAccessibleEventData.h
@@ -14,6 +14,7 @@ mozilla/include/accessibility/nsIAccessibleProvider.h
 mozilla/include/accessibility/nsIAccessibleSelectable.h
 mozilla/include/accessibility/nsRootAccessible.h
 mozilla/include/accessibility/nsRootAccessibleWrap.h
+mozilla/include/accessibility/nsTextAccessibleWrap.h
 mozilla/include/addrbook/nsAbAddressCollecter.h
 mozilla/include/addrbook/nsAbAutoCompleteSession.h
 mozilla/include/addrbook/nsAbBSDirectory.h
@@ -616,7 +617,6 @@ mozilla/include/gfx/nsRegion.h
 mozilla/include/gfx/nsSize.h
 mozilla/include/gfx/nsThemeConstants.h
 mozilla/include/gfx/nsTransform2D.h
-mozilla/include/gfx/xprintutil.h
 mozilla/include/gtkembedmoz/gtkmozembed.h
 mozilla/include/gtkembedmoz/gtkmozembed_internal.h
 mozilla/include/gtkxtbin/gtk2xtbin.h
@@ -675,10 +675,14 @@ mozilla/include/inspector/inISearchObserver.h
 mozilla/include/inspector/inISearchProcess.h
 mozilla/include/intl/nsIStringBundle.h
 mozilla/include/intl/nsIStringBundleOverride.h
-mozilla/include/ipcd/ipcCID.h
+mozilla/include/ipcd/ipcIClientObserver.h
+mozilla/include/ipcd/ipcIClientQueryHandler.h
+mozilla/include/ipcd/ipcILockNotify.h
 mozilla/include/ipcd/ipcILockService.h
+mozilla/include/ipcd/ipcIMessageObserver.h
 mozilla/include/ipcd/ipcIService.h
-mozilla/include/ipcd/ipcLockCID.h
+mozilla/include/ipcd/ipcITransactionObserver.h
+mozilla/include/ipcd/ipcITransactionService.h
 mozilla/include/ipcd/ipcMessageReader.h
 mozilla/include/ipcd/ipcMessageWriter.h
 mozilla/include/ipcd/ipcModule.h
@@ -1472,7 +1476,6 @@ mozilla/include/oji/nsIThreadManager.h
 mozilla/include/oji/nsJVMManager.h
 mozilla/include/oji/nsJVMPluginTagInfo.h
 mozilla/include/oji/nsjvm.h
-mozilla/include/p3p/nsIP3PService.h
 mozilla/include/p3p/nsIPolicyListener.h
 mozilla/include/p3p/nsIPolicyReference.h
 mozilla/include/p3p/nsIPolicyTarget.h
@@ -1588,6 +1591,7 @@ mozilla/include/rdf/nsIRDFInMemoryDataSource.h
 mozilla/include/rdf/nsIRDFLiteral.h
 mozilla/include/rdf/nsIRDFNode.h
 mozilla/include/rdf/nsIRDFObserver.h
+mozilla/include/rdf/nsIRDFPropagatableDataSource.h
 mozilla/include/rdf/nsIRDFPurgeableDataSource.h
 mozilla/include/rdf/nsIRDFRemoteDataSource.h
 mozilla/include/rdf/nsIRDFResource.h
@@ -1636,12 +1640,8 @@ mozilla/include/string/nsStringFwd.h
 mozilla/include/string/nsStringIterator.h
 mozilla/include/string/nsStringIteratorUtils.h
 mozilla/include/string/nsStringTraits.h
+mozilla/include/string/nsUTF8Utils.h
 mozilla/include/string/nsXPIDLString.h
-mozilla/include/transmngr/tmCID.h
-mozilla/include/transmngr/tmITransactionService.h
-mozilla/include/transmngr/tmTransaction.h
-mozilla/include/transmngr/tmUtils.h
-mozilla/include/transmngr/tmVector.h
 mozilla/include/txmgr/nsITransaction.h
 mozilla/include/txmgr/nsITransactionList.h
 mozilla/include/txmgr/nsITransactionListener.h
@@ -2058,6 +2058,7 @@ mozilla/include/xpinstall/nsPIXPIProxy.h
 mozilla/include/xpinstall/nsPIXPIStubHook.h
 mozilla/include/xpinstall/nsSoftwareUpdateIIDs.h
 mozilla/include/xpinstall/nsXPITriggerInfo.h
+mozilla/include/xprintutil/xprintutil.h
 mozilla/include/xremoteservice/nsIXRemoteService.h
 mozilla/include/xul/nsIXULContent.h
 mozilla/include/xul/nsIXULPopupListener.h
@@ -2067,8 +2068,10 @@ mozilla/include/xuldoc/nsIXULContentSink.h
 mozilla/include/xuldoc/nsIXULDocument.h
 mozilla/include/xuldoc/nsIXULPrototypeCache.h
 mozilla/include/xuldoc/nsIXULPrototypeDocument.h
+mozilla/include/xultmpl/nsIXULBuilderListener.h
 mozilla/include/xultmpl/nsIXULSortService.h
 mozilla/include/xultmpl/nsIXULTemplateBuilder.h
+mozilla/lib/components/libtexteditor_s.a
 mozilla/lib/libaccessibility_base_s.a
 mozilla/lib/libaccessibility_html_s.a
 mozilla/lib/libaccessibility_toolkit_s.a
@@ -2259,17 +2262,20 @@ mozilla/lib/libxpcomglue_s.a
 mozilla/lib/libxpcomio_s.a
 mozilla/lib/libxpcomproxy_s.a
 mozilla/lib/libxpcomthreads_s.a
+mozilla/lib/libxprintutil.a
 mozilla/lib/libxpt.a
 mozilla/lib/libxptcall.a
 mozilla/lib/libxptcmd.a
 mozilla/lib/libxptinfo.a
 mozilla/lib/libxpwidgets_s.a
 %%SHARED%%
+@dirrm mozilla/lib/components
 @dirrm mozilla/lib
 @dirrm mozilla/include/xultmpl
 @dirrm mozilla/include/xuldoc
 @dirrm mozilla/include/xul
 @dirrm mozilla/include/xremoteservice
+@dirrm mozilla/include/xprintutil
 @dirrm mozilla/include/xpinstall
 @dirrm mozilla/include/xpconnect
 @dirrm mozilla/include/xpcom_obsolete
@@ -2302,7 +2308,6 @@ mozilla/lib/libxpwidgets_s.a
 @dirrm mozilla/include/typeaheadfind
 @dirrm mozilla/include/txtsvc
 @dirrm mozilla/include/txmgr
-@dirrm mozilla/include/transmngr
 @dirrm mozilla/include/string
 @dirrm mozilla/include/sidebar
 @dirrm mozilla/include/shistory

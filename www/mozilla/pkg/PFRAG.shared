@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2003/05/23 10:09:17 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/07/01 11:10:36 wilfried Exp $
 mozilla/components/libaccessibility.so.1.0
 mozilla/components/libaddrbook.so.1.0
 mozilla/components/libappcomps.so.1.0
@@ -55,7 +55,6 @@ mozilla/components/libpref.so.1.0
 mozilla/components/libprofile.so.1.0
 mozilla/components/librdf.so.1.0
 mozilla/components/libtransformiix.so.1.0
-mozilla/components/libtransmngr_client.so.1.0
 mozilla/components/libtxmgr.so.1.0
 mozilla/components/libtypeaheadfind.so.1.0
 mozilla/components/libuconv.so.1.0
@@ -93,3 +92,6 @@ mozilla/libxpcom.so.1.0
 mozilla/libxpcom_compat.so.1.0
 mozilla/libxpistub.so.1.0
 mozilla/plugins/libnullplugin.so.1.0
+@comment NEWDYNLIBDIR(%D/mozilla/components)
+@comment NEWDYNLIBDIR(%D/mozilla)
+@comment NEWDYNLIBDIR(%D/mozilla/plugins)

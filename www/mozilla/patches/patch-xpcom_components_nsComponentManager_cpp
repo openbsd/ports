@@ -1,11 +1,11 @@
-$OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.2 2003/05/22 12:04:49 wilfried Exp $
---- xpcom/components/nsComponentManager.cpp.orig	Wed May  7 20:39:47 2003
-+++ xpcom/components/nsComponentManager.cpp	Thu May 22 13:17:40 2003
-@@ -2403,9 +2403,12 @@ nsComponentManagerImpl::GetServiceByCont
+$OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.3 2003/07/01 11:10:36 wilfried Exp $
+--- xpcom/components/nsComponentManager.cpp.orig	Wed May 14 00:50:02 2003
++++ xpcom/components/nsComponentManager.cpp	Tue Jul  1 10:59:32 2003
+@@ -2411,9 +2411,12 @@ nsComponentManagerImpl::GetServiceByCont
      }
  
  #ifdef XPCOM_CHECK_PENDING_CIDS  
--    rv = AddPendingCID(entry->cid);
+-    rv = AddPendingCID(entry->mCid);
 -    if (NS_FAILED(rv))
 -        return rv;
 +    if (entry && entry != kNonExistentContractID)
@@ -17,13 +17,13 @@ $OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.2 2003/05/22 12:04:4
  #endif
      nsCOMPtr<nsISupports> service;
      // We need to not be holding the service manager's monitor while calling 
-@@ -2418,7 +2421,8 @@ nsComponentManagerImpl::GetServiceByCont
+@@ -2426,7 +2429,8 @@ nsComponentManagerImpl::GetServiceByCont
      mon.Enter();
  
  #ifdef XPCOM_CHECK_PENDING_CIDS 
--    RemovePendingCID(entry->cid);
+-    RemovePendingCID(entry->mCid);
 +    if (entry && entry != kNonExistentContractID)
-+	RemovePendingCID(entry->cid);
++	RemovePendingCID(entry->mCid);
  #endif
  
      if (NS_FAILED(rv))
