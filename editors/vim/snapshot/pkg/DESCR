@@ -16,6 +16,8 @@ Flavors:
         gtk        - build using the Gtk+ toolkit (default);
 	motif	   - build using the Motif toolkit;
 	athena	   - build using the Athena toolkit;
-	no_x11	   - build without X11 support.
+	no_x11	   - build without X11 support;
+	perl	   - build with Perl support;
+	python	   - build with Python support.
  
 WWW: ${HOMEPAGE}

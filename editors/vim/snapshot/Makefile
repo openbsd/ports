@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/09/03 14:00:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.29 2001/09/08 22:40:20 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -27,27 +27,45 @@ PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	iconv.2::converters/libiconv
 
-FLAVORS=	gtk athena motif no_x11
+FLAVORS=	gtk athena motif no_x11 perl python
 FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
 
 SUBST_VARS=	V
+
 .if ${FLAVOR:L} == "light"
 FLAVOR=no_x11
 .endif
-.if ${FLAVOR:L} == "no_x11"
+
+.if ${FLAVOR:L:Mperl}
+CONFIGURE_ARGS+=--enable-perlinterp
+.endif
+
+.if ${FLAVOR:L:Mpython}
+PYTHON_VER=     2.1
+CONFIGURE_ARGS+=--enable-pythoninterp \
+	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
+RUN_DEPENDS+=   python${PYTHON_VER}::lang/python
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+.endif
+
+.if ${FLAVOR:L:Mno_x11} && \
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena}
 CONFIGURE_ARGS+=--disable-gui --without-x
-.elif ${FLAVOR:L} == "motif" || ${FLAVOR:L} == "lesstif"
-CONFIGURE_ARGS+=--enable-gui="motif"
+.elif ${FLAVOR:L:Mmotif} && \
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=any
-.elif ${FLAVOR:L} == "athena"
-CONFIGURE_ARGS+=--enable-gui="athena"
-.elif ${FLAVOR:L} == "gtk"
+.elif ${FLAVOR:L:Mathena} && \
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && ${FLAVOR:L:Mmotif}
+CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
+.elif ${FLAVOR:L:Mgtk} && \
+	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
-CONFIGURE_ARGS+=--enable-gui="gtk" 
+CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
 .else
 ERRORS+="Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
