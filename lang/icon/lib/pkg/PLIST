@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/08/01 12:38:44 espie Exp $
 bin/vib
 bin/xtiles
 man/man6/xtiles.6
@@ -30,8 +31,11 @@ share/ipl/bin/chars
 share/ipl/bin/chernoff
 share/ipl/bin/chkhtml
 share/ipl/bin/chop
+share/ipl/bin/clrs2pdb
 share/ipl/bin/colm
 share/ipl/bin/coloralc
+share/ipl/bin/colorup
+share/ipl/bin/colorwif
 share/ipl/bin/colrbook
 share/ipl/bin/colrname
 share/ipl/bin/colrpick
@@ -49,6 +53,10 @@ share/ipl/bin/csgen
 share/ipl/bin/cstrings
 share/ipl/bin/cwd
 share/ipl/bin/daystil
+share/ipl/bin/dd2draft
+share/ipl/bin/dd2res
+share/ipl/bin/dd2wif
+share/ipl/bin/ddfdump
 share/ipl/bin/deal
 share/ipl/bin/declchck
 share/ipl/bin/delam
@@ -66,7 +74,9 @@ share/ipl/bin/diffu
 share/ipl/bin/diffword
 share/ipl/bin/digcol
 share/ipl/bin/diskpack
+share/ipl/bin/dlgvu
 share/ipl/bin/drawcolr
+share/ipl/bin/drawup
 share/ipl/bin/drip
 share/ipl/bin/duplfile
 share/ipl/bin/duplproc
@@ -97,6 +107,9 @@ share/ipl/bin/findtile
 share/ipl/bin/fixhqx
 share/ipl/bin/fixpath
 share/ipl/bin/flake
+share/ipl/bin/floats
+share/ipl/bin/flohisto
+share/ipl/bin/fmap2pdb
 share/ipl/bin/fnctab
 share/ipl/bin/fnctmpl
 share/ipl/bin/fontpick
@@ -118,10 +131,14 @@ share/ipl/bin/genqueen
 share/ipl/bin/getcol
 share/ipl/bin/getlines
 share/ipl/bin/gftrace
+share/ipl/bin/gif2isd
+share/ipl/bin/gif2wif
+share/ipl/bin/gifs2pdb
 share/ipl/bin/giftoims
 share/ipl/bin/giftopat
 share/ipl/bin/gpxtest
 share/ipl/bin/graphdem
+share/ipl/bin/gridedit
 share/ipl/bin/grpsort
 share/ipl/bin/gxplor
 share/ipl/bin/hb
@@ -164,6 +181,7 @@ share/ipl/bin/imgpaper
 share/ipl/bin/imgtolst
 share/ipl/bin/imlreduc
 share/ipl/bin/imltogif
+share/ipl/bin/ims2pat
 share/ipl/bin/imstogif
 share/ipl/bin/indxcomp
 share/ipl/bin/ineeds
@@ -185,6 +203,10 @@ share/ipl/bin/ipsplit
 share/ipl/bin/ipxref
 share/ipl/bin/irsort
 share/ipl/bin/irunerr
+share/ipl/bin/isd2disd
+share/ipl/bin/isd2gif
+share/ipl/bin/isd2ill
+share/ipl/bin/isd2wif
 share/ipl/bin/iseq
 share/ipl/bin/isize
 share/ipl/bin/isrcline
@@ -275,7 +297,6 @@ share/ipl/bin/parse
 share/ipl/bin/parsex
 share/ipl/bin/patchu
 share/ipl/bin/patfetch
-share/ipl/bin/pattscan
 share/ipl/bin/pbkdump
 share/ipl/bin/pdecomp
 share/ipl/bin/penelope
@@ -315,6 +336,7 @@ share/ipl/bin/repeater
 share/ipl/bin/repeats
 share/ipl/bin/reply
 share/ipl/bin/repro
+share/ipl/bin/revfile
 share/ipl/bin/revsort
 share/ipl/bin/rings
 share/ipl/bin/roffcmds
@@ -394,6 +416,8 @@ share/ipl/bin/wevents
 share/ipl/bin/what
 share/ipl/bin/wheel
 share/ipl/bin/when
+share/ipl/bin/wif2isd
+share/ipl/bin/wifs2pdb
 share/ipl/bin/wshfdemo
 share/ipl/bin/xbm2pat
 share/ipl/bin/xformpat
@@ -438,6 +462,8 @@ share/ipl/ucode/autopost.u1
 share/ipl/ucode/autopost.u2
 share/ipl/ucode/barchart.u1
 share/ipl/ucode/barchart.u2
+share/ipl/ucode/base64.u1
+share/ipl/ucode/base64.u2
 share/ipl/ucode/basename.u1
 share/ipl/ucode/basename.u2
 share/ipl/ucode/bevel.u1
@@ -464,6 +490,8 @@ share/ipl/ucode/bufread.u1
 share/ipl/ucode/bufread.u2
 share/ipl/ucode/button.u1
 share/ipl/ucode/button.u2
+share/ipl/ucode/calendar.u1
+share/ipl/ucode/calendar.u2
 share/ipl/ucode/calendat.u1
 share/ipl/ucode/calendat.u2
 share/ipl/ucode/calls.u1
@@ -472,12 +500,16 @@ share/ipl/ucode/capture.u1
 share/ipl/ucode/capture.u2
 share/ipl/ucode/cardbits.u1
 share/ipl/ucode/cardbits.u2
+share/ipl/ucode/cartog.u1
+share/ipl/ucode/cartog.u2
 share/ipl/ucode/caseless.u1
 share/ipl/ucode/caseless.u2
 share/ipl/ucode/cells.u1
 share/ipl/ucode/cells.u2
 share/ipl/ucode/clip.u1
 share/ipl/ucode/clip.u2
+share/ipl/ucode/clipping.u1
+share/ipl/ucode/clipping.u2
 share/ipl/ucode/clrnames.u1
 share/ipl/ucode/clrnames.u2
 share/ipl/ucode/clrutils.u1
@@ -502,6 +534,8 @@ share/ipl/ucode/complex.u1
 share/ipl/ucode/complex.u2
 share/ipl/ucode/conffile.u1
 share/ipl/ucode/conffile.u2
+share/ipl/ucode/converge.u1
+share/ipl/ucode/converge.u2
 share/ipl/ucode/convert.u1
 share/ipl/ucode/convert.u2
 share/ipl/ucode/created.u1
@@ -510,16 +544,14 @@ share/ipl/ucode/currency.u1
 share/ipl/ucode/currency.u2
 share/ipl/ucode/curves.u1
 share/ipl/ucode/curves.u2
-share/ipl/ucode/curves1.u1
-share/ipl/ucode/curves1.u2
-share/ipl/ucode/curves2.u1
-share/ipl/ucode/curves2.u2
 share/ipl/ucode/cwutils.u1
 share/ipl/ucode/cwutils.u2
 share/ipl/ucode/datefns.u1
 share/ipl/ucode/datefns.u2
 share/ipl/ucode/datetime.u1
 share/ipl/ucode/datetime.u2
+share/ipl/ucode/ddfread.u1
+share/ipl/ucode/ddfread.u2
 share/ipl/ucode/decay.u1
 share/ipl/ucode/decay.u2
 share/ipl/ucode/dialog.u1
@@ -532,6 +564,8 @@ share/ipl/ucode/digitcnt.u1
 share/ipl/ucode/digitcnt.u2
 share/ipl/ucode/distance.u1
 share/ipl/ucode/distance.u2
+share/ipl/ucode/divide.u1
+share/ipl/ucode/divide.u2
 share/ipl/ucode/drag.u1
 share/ipl/ucode/drag.u2
 share/ipl/ucode/drawcard.u1
@@ -614,6 +648,8 @@ share/ipl/ucode/gener.u1
 share/ipl/ucode/gener.u2
 share/ipl/ucode/genrfncs.u1
 share/ipl/ucode/genrfncs.u2
+share/ipl/ucode/geodat.u1
+share/ipl/ucode/geodat.u2
 share/ipl/ucode/getchlib.u1
 share/ipl/ucode/getchlib.u2
 share/ipl/ucode/getcolrs.u1
@@ -704,8 +740,8 @@ share/ipl/ucode/iolib.u1
 share/ipl/ucode/iolib.u2
 share/ipl/ucode/iscreen.u1
 share/ipl/ucode/iscreen.u2
-share/ipl/ucode/isort.u1
-share/ipl/ucode/isort.u2
+share/ipl/ucode/isdplot.u1
+share/ipl/ucode/isdplot.u2
 share/ipl/ucode/ispf.u1
 share/ipl/ucode/ispf.u2
 share/ipl/ucode/iterfncs.u1
@@ -818,6 +854,8 @@ share/ipl/ucode/overlay.u1
 share/ipl/ucode/overlay.u2
 share/ipl/ucode/packunpk.u1
 share/ipl/ucode/packunpk.u2
+share/ipl/ucode/palettes.u1
+share/ipl/ucode/palettes.u2
 share/ipl/ucode/parscond.u1
 share/ipl/ucode/parscond.u2
 share/ipl/ucode/partit.u1
@@ -942,6 +980,8 @@ share/ipl/ucode/seqfncs.u1
 share/ipl/ucode/seqfncs.u2
 share/ipl/ucode/seqimage.u1
 share/ipl/ucode/seqimage.u2
+share/ipl/ucode/seqops.u1
+share/ipl/ucode/seqops.u2
 share/ipl/ucode/serial.u1
 share/ipl/ucode/serial.u2
 share/ipl/ucode/sername.u1
@@ -1002,6 +1042,10 @@ share/ipl/ucode/tables.u1
 share/ipl/ucode/tables.u2
 share/ipl/ucode/tclass.u1
 share/ipl/ucode/tclass.u2
+share/ipl/ucode/tieedit.u1
+share/ipl/ucode/tieedit.u2
+share/ipl/ucode/tieutils.u1
+share/ipl/ucode/tieutils.u2
 share/ipl/ucode/tile.u1
 share/ipl/ucode/tile.u2
 share/ipl/ucode/tiler.u1
@@ -1086,10 +1130,18 @@ share/ipl/ucode/wattrib.u1
 share/ipl/ucode/wattrib.u2
 share/ipl/ucode/wdiag.u1
 share/ipl/ucode/wdiag.u2
+share/ipl/ucode/weavegif.u1
+share/ipl/ucode/weavegif.u2
+share/ipl/ucode/weavgenr.u1
+share/ipl/ucode/weavgenr.u2
 share/ipl/ucode/weaving.u1
 share/ipl/ucode/weaving.u2
+share/ipl/ucode/weavutil.u1
+share/ipl/ucode/weavutil.u2
 share/ipl/ucode/weighted.u1
 share/ipl/ucode/weighted.u2
+share/ipl/ucode/wifisd.u1
+share/ipl/ucode/wifisd.u2
 share/ipl/ucode/wildcard.u1
 share/ipl/ucode/wildcard.u2
 share/ipl/ucode/win.u1
@@ -1140,6 +1192,8 @@ share/ipl/ucode/xrotate.u1
 share/ipl/ucode/xrotate.u2
 share/ipl/ucode/xutils.u1
 share/ipl/ucode/xutils.u2
+share/ipl/ucode/zipread.u1
+share/ipl/ucode/zipread.u2
 @dirrm share/ipl/ucode
 @dirrm share/ipl/incl
 @dirrm share/ipl/gincl
