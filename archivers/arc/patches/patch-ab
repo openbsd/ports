@@ -1,0 +1,20 @@
+--- arc.c.orig	Mon Dec 29 07:10:22 1997
++++ arc.c	Mon Dec 29 07:11:13 1997
+@@ -110,7 +110,7 @@
+ 	VOID		upper();/* case conversion routine */
+ 	char	       *envfind();	/* environment searcher */
+ 	int		n;	/* index */
+-	char	       *arctemp2, *mktemp();
++	char	       *arctemp2, *mkstemp();
+ #if	GEMDOS
+ 	VOID		exitpause();
+ 	int		append;
+@@ -220,7 +220,7 @@
+ #if	!MSDOS
+ 	{
+ 		static char tempname[] = "AXXXXXX";
+-		strcat(arctemp, mktemp(tempname));
++		strcat(arctemp, mkstemp(tempname));
+ 	}
+ #else
+ 	strcat(arctemp, "$ARCTEMP");
