@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/28 21:56:10 yanick Exp $
+# $OpenBSD: Makefile,v 1.2 2000/01/29 00:48:30 yanick Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.3.1
-CATEGORIES=     	devel
+CATEGORIES=     	devel math net
 
 MAINTAINER=		yanick@openbsd.org
 
 MASTER_SITES=		http://www.mpi.nd.edu/downloads/lam/
 
-USE_EGCC=		yes
-USE_EGXX=		yes
 GNU_CONFIGURE=		yes 
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS+="--prefix=/usr/local"
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--with-rsh="ssh -x"
 
 .include <bsd.port.mk>
