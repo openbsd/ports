@@ -1,0 +1,13 @@
+Mason is a powerful Perl-based web site development and delivery
+engine. With Mason you can embed Perl code in your HTML and construct
+pages from shared, reusable components.
+
+Mason solves the common problems of site development: caching,
+debugging, templating, simulating browser conditions, maintaining
+development and production sites, and more.
+
+Although it can be used from CGI or even stand-alone, it is optimally
+designed for use with two other open source technologies: mod_perl
+and Apache.
+
+WWW: ${HOMEPAGE}

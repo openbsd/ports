@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/01 17:53:51 avsm Exp $
+libdata/perl5/site_perl/Apache/Mason.pm
+libdata/perl5/site_perl/Bundle/HTML/Mason.pm
+libdata/perl5/site_perl/HTML/Mason.pm
+libdata/perl5/site_perl/HTML/Mason.pod
+libdata/perl5/site_perl/HTML/Mason/Admin.pod
+libdata/perl5/site_perl/HTML/Mason/ApacheHandler.pm
+libdata/perl5/site_perl/HTML/Mason/ApacheHandler.pod
+libdata/perl5/site_perl/HTML/Mason/Commands.pm
+libdata/perl5/site_perl/HTML/Mason/Commands.pod
+libdata/perl5/site_perl/HTML/Mason/Component.pm
+libdata/perl5/site_perl/HTML/Mason/Component.pod
+libdata/perl5/site_perl/HTML/Mason/Component/FileBased.pm
+libdata/perl5/site_perl/HTML/Mason/Component/Subcomponent.pm
+libdata/perl5/site_perl/HTML/Mason/Components.pod
+libdata/perl5/site_perl/HTML/Mason/Config.pm
+libdata/perl5/site_perl/HTML/Mason/Devel.pod
+libdata/perl5/site_perl/HTML/Mason/FakeApache.pm
+libdata/perl5/site_perl/HTML/Mason/Interp.pm
+libdata/perl5/site_perl/HTML/Mason/Interp.pod
+libdata/perl5/site_perl/HTML/Mason/MethodMaker.pm
+libdata/perl5/site_perl/HTML/Mason/Parser.pm
+libdata/perl5/site_perl/HTML/Mason/Parser.pod
+libdata/perl5/site_perl/HTML/Mason/Preview.pm
+libdata/perl5/site_perl/HTML/Mason/Request.pm
+libdata/perl5/site_perl/HTML/Mason/Request.pod
+libdata/perl5/site_perl/HTML/Mason/Resolver.pm
+libdata/perl5/site_perl/HTML/Mason/Resolver/File.pm
+libdata/perl5/site_perl/HTML/Mason/Tests.pm
+libdata/perl5/site_perl/HTML/Mason/Tools.pm
+libdata/perl5/site_perl/HTML/Mason/Utils.pm
+man/man3/Bundle::HTML::Mason.3p
+man/man3/HTML::Mason.3p
+man/man3/HTML::Mason::Admin.3p
+man/man3/HTML::Mason::ApacheHandler.3p
+man/man3/HTML::Mason::Commands.3p
+man/man3/HTML::Mason::Component.3p
+man/man3/HTML::Mason::Components.3p
+man/man3/HTML::Mason::Devel.3p
+man/man3/HTML::Mason::Interp.3p
+man/man3/HTML::Mason::MethodMaker.3p
+man/man3/HTML::Mason::Parser.3p
+man/man3/HTML::Mason::Request.3p
+man/man3/HTML::Mason::Tests.3p
+@dirrm libdata/perl5/site_perl/HTML/Mason/Resolver
+@dirrm libdata/perl5/site_perl/HTML/Mason/Component
+@dirrm libdata/perl5/site_perl/HTML/Mason
