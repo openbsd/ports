@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/15 17:43:14 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 15:03:57 fgsch Exp $
 
 BROKEN=		"security hole, contains buffer overflow"
 
@@ -11,7 +11,6 @@ APVERSION=	1.3.17
 DISTNAME=	mod_frontpage-${VERSION}-${APVERSION}
 PKGNAME=	mod_frontpage-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.500
 MASTER_SITES=	http://home.edo.uni-dortmund.de/~chripo/download/ \
 		ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage/
 MASTER_SITES0=	ftp://ftp.microsoft.com/products/frontpage/

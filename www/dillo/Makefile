@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/31 10:18:59 couderc Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/29 15:03:57 fgsch Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
 DISTNAME=		dillo-0.6.6
 CATEGORIES=     	www
-NEED_VERSION=		1.525
 
 HOMEPAGE=		http://dillo.cipsga.org.br/
 

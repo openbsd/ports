@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.6 2002/05/21 15:22:45 jasoni Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2002/12/29 15:06:49 fgsch Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 CATEGORIES=	emulators
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/17 05:04:36 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 15:03:57 fgsch Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,7 +8,6 @@ VERSION=	1.5.2
 DISTNAME=	mod_auth_radius
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.500
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

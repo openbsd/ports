@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/10 20:48:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 15:03:57 fgsch Exp $
 
 COMMENT=	"perl interface to the Gnome GHTTP library"
 
 DISTNAME=	HTTP-GHTTP-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.526
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTTP/}
 
 PERMIT_PACKAGE_CDROM=	Yes

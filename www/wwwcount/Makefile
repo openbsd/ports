@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/29 01:30:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/29 15:03:57 fgsch Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
-NEED_VERSION=	1.305
 MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/$S/ \
 		http://mirror.njit.edu/counter/$S/ \
 		http://www.neonramp.com/Count/$S/ \

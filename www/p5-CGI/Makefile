@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/11/29 05:40:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 15:03:57 fgsch Exp $
 
 IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
@@ -8,7 +8,6 @@ VERSION=	2.76
 DISTNAME=	CGI-modules-${VERSION}
 PKGNAME=	p5-CGI-${VERSION}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://stein.cshl.org/WWW/software/CGI::modules/
 

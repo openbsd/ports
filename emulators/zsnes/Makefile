@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/08/31 03:54:58 wcobb Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 15:06:49 fgsch Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -7,7 +7,6 @@ VERSION=		1.36
 DISTNAME=		zsnes-${VERSION}
 CATEGORIES=		emulators games
 HOMEPAGE=		http://www.zsnes.com/
-NEED_VERSION=		1.507
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 

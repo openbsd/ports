@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/08 18:56:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 15:03:57 fgsch Exp $
 
 COMMENT=	"base HTML library"
 
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-Base-0.6
 CATEGORIES=	www perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 PERMIT_PACKAGE_CDROM=	Yes
