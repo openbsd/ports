@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/07/01 17:49:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/08/25 15:48:40 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/nano.info
 bin/nano
 info/nano.info
@@ -13,6 +13,8 @@ share/locale/gl/LC_MESSAGES/nano.mo
 share/locale/hu/LC_MESSAGES/nano.mo
 share/locale/id/LC_MESSAGES/nano.mo
 share/locale/it/LC_MESSAGES/nano.mo
+share/locale/no/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
+share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/uk/LC_MESSAGES/nano.mo
 @exec install-info --info-dir=%D/info %D/info/nano.info
