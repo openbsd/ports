@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/09 02:15:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/29 13:10:19 reinhard Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=	sparc
 
 DISTNAME=	lincvs-0.4.90
 CATEGORIES=	devel
-NEED_VERSION=	1.500
+NEED_VERSION=	1.516
 
 HOMEPAGE=	http://www.lincvs.org
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	::x11/qt2-designer
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--datadir=${LOCALBASE}/share/doc
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/auxdir
 
 .include <bsd.port.mk>
