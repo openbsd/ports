@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2003/02/03 03:39:36 margarida Exp $
+# $OpenBSD: Makefile,v 1.160 2003/02/18 15:21:38 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -77,6 +77,7 @@
      SUBDIR += kde
      SUBDIR += kdirstat
      SUBDIR += kountdown
+     SUBDIR += kmplayer
      SUBDIR += lablgtk
      SUBDIR += lesstif
      SUBDIR += libdnd
@@ -118,6 +119,7 @@
      SUBDIR += qt2
      SUBDIR += qt2-designer
      SUBDIR += qt3
+     SUBDIR += qt3,mt
      SUBDIR += qvwm
      SUBDIR += qvwm,esound
      SUBDIR += qvwm,esound,imlib

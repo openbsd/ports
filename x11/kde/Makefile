@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/02/08 12:49:54 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2003/02/18 15:21:39 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -105,6 +105,5 @@
      SUBDIR+= libs3-doc
      SUBDIR+= mosfet-liquid
      SUBDIR+= okle
-     SUBDIR+= kmplayer
 
 .include <bsd.port.subdir.mk>

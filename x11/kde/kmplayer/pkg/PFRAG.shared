@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/29 10:13:07 espie Exp $
-${KDE}/libkparts_kmplayer.so.0.0
-lib/libkdeinit_kmplayer.so.0.0
-DYNLIBDIR(%D/lib)
