@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2004/12/28 08:25:34 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2004/12/28 09:00:46 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -30,7 +30,8 @@ PERMIT_DISTFILES_FTP=	yes
 MAKE_DEBUG?=
 MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
-MAKE_CCARGS+=	-DHAS_SSL
+MAKE_CCARGS+=	-DHAS_SSL	# -stable
+MAKE_CCARGS+=	-DUSE_TLS	# -snapshot
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
 TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
