@@ -1,6 +1,9 @@
+@cwd /usr/local
+@name gnuplot-3.5
+@pkgdep png-1.0.1
+bin/lasergnu
 bin/gnuplot
 bin/gnuplot_x11
-bin/lasergnu
 lib/gnuplot.gih
-man/man1/gnuplot.1
 man/man1/lasergnu.1
+man/man1/gnuplot.1

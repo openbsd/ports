@@ -3,13 +3,13 @@
 # Date created:         May 16 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/03 23:50:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/08/04 22:31:30 marc Exp $
 #
 
 DISTNAME=	gnuplot-3.5
 PKGNAME=	gnuplot-3.5
 CATEGORIES=	math graphics
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	angelos@openbsd.org
 
