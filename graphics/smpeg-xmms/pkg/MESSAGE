@@ -1,6 +1,0 @@
-
-To use the smpeg-xmms plugin, add mpeg files to the xmms playlist. To
-play VCD movies, open a location of vcd:device[:track], where device is
-something resembling /dev/cd0c, and track is an optional track number
-specification. Refer to the smpeg-xmms README file.
-
