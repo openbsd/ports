@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/28 10:27:20 jakob Exp $
 
 COMMENT=	"Postfix log entry summarizer"
 
-VERSION=	1.0.7
+VERSION=	1.1.0
 DISTNAME=	pflogsumm-${VERSION}
 CATEGORIES=	mail
 
