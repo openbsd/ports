@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.config.OpenBSD,v 1.4 2002/05/27 02:59:00 brad Exp $
+# $OpenBSD: Makefile.config.OpenBSD,v 1.5 2004/06/22 21:43:18 brad Exp $
 # NetPBM Makefile for use with OpenBSD
 
 DEFAULT_TARGET = merge
@@ -10,7 +10,7 @@ MANCP = ${BSD_INSTALL_MAN}
 PICFLAG = -fpic
 LDFLAGS =
 LDSHLIB = -shared $(PICFLAG)
-CFLAGS_SHLIB = $(PICFLAG) -DPIC
+CFLAGS_SHLIB = $(PICFLAG)
 TIFFLIB_DIR = ${LOCALBASE}/lib
 TIFFHDR_DIR = ${LOCALBASE}/include
 JPEGLIB_DIR = ${LOCALBASE}/lib
