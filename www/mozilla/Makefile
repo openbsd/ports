@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2003/05/27 12:26:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.47 2003/06/02 07:05:56 pvalchev Exp $
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -30,8 +30,7 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} == "-devel"
 RUN_DEPENDS=	::www/mozilla
 .else
-MODULES=	iconv
-MODULES+=	gcc3
+MODULES=	gcc3
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
@@ -61,7 +60,6 @@ CONFIGURE_ARGS=					\
 		--disable-ldap
 
 CFLAGS+=	-fno-stack-protector
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 
 MOB=		${WRKSRC}/dist
