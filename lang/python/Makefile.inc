@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2003/12/30 17:05:30 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2003/12/31 12:05:22 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -143,7 +143,11 @@ CONFIGURE_ARGS+=	--with-fpectl --with-threads
 
 REGRESS_TARGET=	test
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "alpha"
+PATCH_LIST=	patch-* sup64-*
+NO64BIT=	\#
+.elif ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* sup64-* gcc-*
 NO64BIT=	\#
 .endif
 
@@ -163,10 +167,6 @@ MAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC}
 FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
-.endif
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
 .endif
 
 ALL_TARGET=	all ./Lib/plat-openbsd3

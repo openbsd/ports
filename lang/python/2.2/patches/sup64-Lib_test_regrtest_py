@@ -1,4 +1,4 @@
-$OpenBSD: gcc-Lib_test_regrtest_py,v 1.1 2003/12/30 22:21:25 sturm Exp $
+$OpenBSD: sup64-Lib_test_regrtest_py,v 1.1 2003/12/31 12:05:22 sturm Exp $
 --- Lib/test/regrtest.py.orig	2003-04-01 00:11:45.000000000 +0200
 +++ Lib/test/regrtest.py	2003-12-30 19:48:30.000000000 +0100
 @@ -718,6 +718,7 @@
