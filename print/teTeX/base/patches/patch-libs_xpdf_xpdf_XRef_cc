@@ -1,6 +1,6 @@
-$OpenBSD: patch-libs_xpdf_xpdf_XRef_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
---- libs/xpdf/xpdf/XRef.cc.orig	Sun Nov  3 23:15:37 2002
-+++ libs/xpdf/xpdf/XRef.cc	Sat Nov 27 14:51:17 2004
+$OpenBSD: patch-libs_xpdf_xpdf_XRef_cc,v 1.2 2005/01/27 05:03:28 brad Exp $
+--- libs/xpdf/xpdf/XRef.cc.orig	Sun Nov  3 17:15:37 2002
++++ libs/xpdf/xpdf/XRef.cc	Wed Jan 26 21:47:22 2005
 @@ -28,6 +28,7 @@
  #include "Error.h"
  #include "ErrorCodes.h"
@@ -54,3 +54,13 @@ $OpenBSD: patch-libs_xpdf_xpdf_XRef_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
  	streamEnds = (Guint *)grealloc(streamEnds,
  				       streamEndsSize * sizeof(int));
        }
+@@ -480,6 +498,9 @@ GBool XRef::checkEncrypted(GString *owne
+ 	  keyLength = lengthObj.getInt() / 8;
+ 	} else {
+ 	  keyLength = 5;
++	}
++	if (keyLength > 16) {
++	  keyLength = 16;
+ 	}
+ 	permFlags = permissions.getInt();
+ 	if (encVersion >= 1 && encVersion <= 2 &&
