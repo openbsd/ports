@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/02 23:53:15 naddy Exp $
+@man man/man5/ipsvd-instruct.5
+@man man/man7/ipsvd.7
+@man man/man8/ipsvd-cdb.8
+@man man/man8/tcpsvd.8
+@man man/man8/udpsvd.8
+sbin/ipsvd-cdb
+sbin/tcpsvd
+sbin/udpsvd
+share/doc/ipsvd/
+share/doc/ipsvd/CHANGES
+share/doc/ipsvd/COPYING
+share/doc/ipsvd/README
+share/doc/ipsvd/benefits.html
+share/doc/ipsvd/examples.html
+share/doc/ipsvd/index.html
+share/doc/ipsvd/install.html
+share/doc/ipsvd/ipsvd-cdb.8.html
+share/doc/ipsvd/ipsvd-instruct.5.html
+share/doc/ipsvd/ipsvd.7.html
+share/doc/ipsvd/tcpsvd.8.html
+share/doc/ipsvd/udpsvd.8.html
+share/doc/ipsvd/upgrade.html
