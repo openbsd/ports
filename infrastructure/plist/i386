@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.14 2005/03/12 04:19:32 pvalchev Exp $
+# $OpenBSD: i386,v 1.15 2005/03/18 07:28:30 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -12,14 +12,11 @@ archivers/unzip
 archivers/bzip2
 print/teTeX/base
 net/nmap,no_x11
-net/pptp
 sysutils/cdrtools
 mail/procmail
 mail/fetchmail
 misc/screen
 net/samba
-databases/mysql
-databases/mysql,-server
 graphics/gif2png
 shells/zsh
 shells/bash,static
@@ -36,20 +33,15 @@ audio/vorbis-tools
 audio/mpg321
 net/curl
 net/wget
-graphics/gimp
 print/ghostscript/gnu
 print/gv
 audio/cdparanoia
 net/ircII
 devel/id-utils
-emulators/redhat/base
-emulators/redhat/motif
 x11/openmotif
 www/mozilla-firefox
 x11/kde/base3
 x11/kde/office3
-#x11/kde/pim3
-#x11/kde/edu3
 x11/windowmaker
 x11/windowmaker-extra
 www/tidy
@@ -95,8 +87,8 @@ net/gaim
 devel/gmake
 misc/tpwireless
 sysutils/tphdisk
-www/squid
-www/transproxy
+#www/squid
+#www/transproxy
 security/aide
 security/dsniff
 net/ntop
@@ -107,10 +99,5 @@ net/libdnet
 net/nsd
 graphics/ImageMagick
 audio/abcde
-www/php4/core
-www/php4/core,-pear
-www/php4/extensions,-mysql
-www/php4/extensions,-ldap
-www/php4/extensions,-gd
 devel/smpeg
 mail/mozilla-thunderbird

@@ -1,4 +1,4 @@
-# $OpenBSD: sparc64,v 1.12 2004/11/24 00:05:08 pvalchev Exp $
+# $OpenBSD: sparc64,v 1.13 2005/03/18 07:28:30 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -40,8 +40,6 @@ textproc/xpdf
 graphics/gqview
 sysutils/pftop
 security/stunnel
-databases/mysql
-databases/mysql,-server
 lang/python/2.3
 lang/python/2.3,-tools
 www/links
