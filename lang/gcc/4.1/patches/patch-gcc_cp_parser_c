@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_cp_parser_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+--- gcc/cp/parser.c.orig	Thu Feb 24 22:55:15 2005
++++ gcc/cp/parser.c	Sun Feb 27 19:09:06 2005
+@@ -15589,7 +15589,7 @@ cp_parser_require (cp_parser* parser,
+       /* Output the MESSAGE -- unless we're parsing tentatively.  */
+       if (!cp_parser_simulate_error (parser))
+ 	{
+-	  char *message = concat ("expected ", token_desc, NULL);
++	  char *message = concat ("expected ", token_desc, (void *)0);
+ 	  cp_parser_error (parser, message);
+ 	  free (message);
+ 	}

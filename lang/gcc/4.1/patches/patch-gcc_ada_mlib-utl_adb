@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_mlib-utl_adb,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+--- gcc/ada/mlib-utl.adb.orig	Fri Jan  7 04:28:41 2005
++++ gcc/ada/mlib-utl.adb	Fri Jan  7 04:28:50 2005
+@@ -38,7 +38,7 @@ package body MLib.Utl is
+ 
+    Initialized : Boolean := False;
+ 
+-   Gcc_Name : constant String := "gcc";
++   Gcc_Name : constant String := "egcc";
+    Gcc_Exec : OS_Lib.String_Access;
+ 
+    Ar_Name    : OS_Lib.String_Access;

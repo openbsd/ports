@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_objc_objc-act_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+--- gcc/objc/objc-act.c.orig	Sat Jan 29 13:16:34 2005
++++ gcc/objc/objc-act.c	Tue Feb 22 19:38:42 2005
+@@ -546,7 +546,7 @@ objc_init (void)
+   /* If gen_declaration desired, open the output file.  */
+   if (flag_gen_declaration)
+     {
+-      register char * const dumpname = concat (dump_base_name, ".decl", NULL);
++      register char * const dumpname = concat (dump_base_name, ".decl", (void *)0);
+       gen_declaration_file = fopen (dumpname, "w");
+       if (gen_declaration_file == 0)
+ 	fatal_error ("can't open %s: %m", dumpname);

@@ -1,0 +1,27 @@
+$OpenBSD: patch-gcc_tree-optimize_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+--- gcc/tree-optimize.c.orig	Thu Feb 17 17:19:41 2005
++++ gcc/tree-optimize.c	Tue Feb 22 19:44:27 2005
+@@ -221,18 +221,18 @@ register_one_dump_file (struct tree_opt_
+     sprintf (num, "%d", ((int) pass->static_pass_number < 0
+ 			 ? 1 : pass->static_pass_number));
+ 
+-  dot_name = concat (".", pass->name, num, NULL);
++  dot_name = concat (".", pass->name, num, (void *)0);
+   if (pass->properties_provided & PROP_trees)
+     {
+-      flag_name = concat ("tree-", pass->name, num, NULL);
+-      glob_name = concat ("tree-", pass->name, NULL);
++      flag_name = concat ("tree-", pass->name, num, (void *)0);
++      glob_name = concat ("tree-", pass->name, (void *)0);
+       pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
+                                                 TDF_TREE, n + TDI_tree_all, 0);
+     }
+   else
+     {
+-      flag_name = concat ("rtl-", pass->name, num, NULL);
+-      glob_name = concat ("rtl-", pass->name, NULL);
++      flag_name = concat ("rtl-", pass->name, num, (void *)0);
++      glob_name = concat ("rtl-", pass->name, (void *)0);
+       pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
+                                                 TDF_RTL, n, pass->letter);
+     }

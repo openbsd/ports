@@ -1,0 +1,63 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/28 15:12:46 espie Exp $
+%%SHARED%%
+bin/ecpp
+bin/egcc
+bin/egccbug
+bin/egcov
+bin/${CONFIG}-egcc
+bin/${CONFIG}-gcc-${V}
+include/mf-runtime.h
+@info info/cpp.info
+@info info/cppinternals.info
+@info info/gcc.info
+@info info/gccinstall.info
+@info info/gccint.info
+lib/gcc/
+lib/gcc/${CONFIG}/
+lib/gcc/${CONFIG}/${V}/
+lib/gcc/${CONFIG}/${V}/include/
+lib/gcc/${CONFIG}/${V}/include/README
+lib/gcc/${CONFIG}/${V}/include/arpa/
+lib/gcc/${CONFIG}/${V}/include/arpa/nameser.h
+lib/gcc/${CONFIG}/${V}/include/com_err.h
+lib/gcc/${CONFIG}/${V}/include/limits.h
+lib/gcc/${CONFIG}/${V}/include/math.h
+lib/gcc/${CONFIG}/${V}/include/rpc/
+lib/gcc/${CONFIG}/${V}/include/rpc/rpc_des.h
+lib/gcc/${CONFIG}/${V}/include/rpc/svc.h
+lib/gcc/${CONFIG}/${V}/include/stddef.h
+lib/gcc/${CONFIG}/${V}/include/stdio.h
+lib/gcc/${CONFIG}/${V}/include/stdlib.h
+lib/gcc/${CONFIG}/${V}/include/sys/
+lib/gcc/${CONFIG}/${V}/include/sys/types.h
+lib/gcc/${CONFIG}/${V}/include/syslimits.h
+lib/gcc/${CONFIG}/${V}/include/unistd.h
+lib/gcc/${CONFIG}/${V}/install-tools/
+lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/
+lib/gcc/${CONFIG}/${V}/install-tools/include/README
+lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc/${CONFIG}/${V}/install-tools/macro_list
+lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
+lib/gcc/${CONFIG}/${V}/libgcc.a
+lib/gcc/${CONFIG}/${V}/libgcov.a
+lib/libiberty.a
+lib/libmudflap.a
+lib/libmudflap.la
+lib/libmudflapth.a
+lib/libmudflapth.la
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/${V}/
+libexec/gcc/${CONFIG}/${V}/cc1
+libexec/gcc/${CONFIG}/${V}/collect2
+libexec/gcc/${CONFIG}/${V}/install-tools/
+libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
+libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
+libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
+@man man/man1/ecpp.1
+@man man/man1/egcc.1
+@man man/man1/egcov.1
+@man man/man7/fsf-funding.7
+@man man/man7/gfdl.7
+@man man/man7/gpl.7

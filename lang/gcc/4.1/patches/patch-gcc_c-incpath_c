@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_c-incpath_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+--- gcc/c-incpath.c.orig	Tue Sep 14 08:48:54 2004
++++ gcc/c-incpath.c	Tue Sep 14 08:49:15 2004
+@@ -141,7 +141,7 @@ add_standard_paths (const char *sysroot,
+ 		continue;
+ 	      if (!strncmp (p->fname, cpp_GCC_INCLUDE_DIR, len))
+ 		{
+-		  char *str = concat (iprefix, p->fname + len, NULL);
++		  char *str = concat (iprefix, p->fname + len, (void *)0);
+ 		  add_path (str, SYSTEM, p->cxx_aware, false);
+ 		}
+ 	    }
+@@ -156,7 +156,7 @@ add_standard_paths (const char *sysroot,
+ 
+ 	  /* Should this directory start with the sysroot?  */
+ 	  if (sysroot && p->add_sysroot)
+-	    str = concat (sysroot, p->fname, NULL);
++	    str = concat (sysroot, p->fname, (void *)0);
+ 	  else
+ 	    str = update_path (p->fname, p->component);
+ 
