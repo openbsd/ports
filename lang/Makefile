@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2004/09/26 14:49:41 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2005/02/07 21:00:53 todd Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -26,7 +26,6 @@
      SUBDIR += ghc
 #    SUBDIR += gnat
      SUBDIR += gprolog
-     SUBDIR += guavac
      SUBDIR += guile
      SUBDIR += hugs
      SUBDIR += icon
