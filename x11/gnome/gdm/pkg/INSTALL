@@ -1,11 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/06/24 23:58:34 marcm Exp $
 
 P_NAME=gdm
 
 DIRS='
-dm/Sessions
 gdm/Init
 gdm/PostLogin
 gdm/PostSession
@@ -14,7 +13,6 @@ gdm/modules
 '
 
 FILES='
-dm/Sessions/default.desktop
 gdm/gdm.conf
 gdm/locale.alias
 gdm/modules/AccessDwellMouseEvents

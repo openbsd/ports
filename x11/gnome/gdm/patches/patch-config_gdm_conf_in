@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_gdm_conf_in,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
---- config/gdm.conf.in.orig	2003-08-20 10:40:45.000000000 -0700
-+++ config/gdm.conf.in	2003-08-20 21:04:36.000000000 -0700
-@@ -68,8 +68,8 @@ TimedLoginDelay=30
+$OpenBSD: patch-config_gdm_conf_in,v 1.2 2004/06/24 23:58:34 marcm Exp $
+--- config/gdm.conf.in.orig	Wed May 26 18:59:56 2004
++++ config/gdm.conf.in	Thu Jun 24 17:07:36 2004
+@@ -72,8 +72,8 @@ TimedLoginDelay=30
  # you should create these user and group.  Anyone found running this as
  # someone too privilaged will get a kick in the ass.  This should have
  # access to only the gdm directories and files.
@@ -12,3 +12,32 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
  #KillInitClients=true
+@@ -96,8 +96,8 @@ DisplayInitDir=@EXPANDED_SYSCONFDIR@/gdm
+ XKeepsCrashing=@EXPANDED_SYSCONFDIR@/gdm/XKeepsCrashing
+ # Reboot, Halt and suspend commands, you can add different commands
+ # separated by a semicolon and gdm will use the first one it can find
+-#RebootCommand=/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now
+-#HaltCommand=/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now
++RebootCommand=/sbin/reboot
++HaltCommand=/sbin/halt -p
+ #SuspendCommand=
+ # Probably should not touch the below this is the standard setup
+ ServAuthDir=@EXPANDED_AUTHDIR@
+@@ -136,7 +136,7 @@ Xnest=@X_SERVER_PATH@/Xnest -audit 0 -na
+ # we force X to use specific vts.  turn VTAllocation to false if this
+ # is causing problems.
+ #FirstVT=7
+-#VTAllocation=true
++VTAllocation=false
+ # Should double login be treated with a warning (and possibility to change
+ # vts on linux systems for console logins)
+ #DoubleLoginWarning=true
+@@ -421,7 +421,7 @@ Enable=false
+ # Definition of the standard X server.
+ [server-Standard]
+ name=Standard server
+-command=@X_SERVER@ -audit 0
++command=@X_SERVER@ -audit 0 vt5
+ flexible=true
+ 
+ # To use this server type you should add -query host or -indirect host

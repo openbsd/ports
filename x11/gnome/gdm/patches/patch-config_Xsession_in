@@ -1,16 +1,7 @@
-$OpenBSD: patch-config_Xsession_in,v 1.2 2003/12/01 04:13:06 marcm Exp $
---- config/Xsession.in.orig	2003-09-29 14:26:37.000000000 -0700
-+++ config/Xsession.in	2003-10-16 22:07:22.000000000 -0700
-@@ -72,7 +72,7 @@ fi
- # works for ALL sessions (except ones named 'Failsafe')
- 
- # clean up after xbanner
--freetemp=`which freetemp 2>/dev/null`
-+freetemp=`which freetemp >/dev/null`
- if [ -n "$freetemp" ] ; then
- 	"$freetemp"
- fi
-@@ -200,15 +200,16 @@ if [ "x$command" = "xdefault" ] ; then
+$OpenBSD: patch-config_Xsession_in,v 1.3 2004/06/24 23:58:34 marcm Exp $
+--- config/Xsession.in.orig	Fri May 28 13:50:17 2004
++++ config/Xsession.in	Thu Jun 24 10:33:42 2004
+@@ -216,15 +216,16 @@ if [ "x$command" = "xdefault" ] ; then
    elif [ -x /etc/X11/Xclients ]; then
      command="/etc/X11/Xclients"
    else
@@ -25,7 +16,7 @@ $OpenBSD: patch-config_Xsession_in,v 1.2 2003/12/01 04:13:06 marcm Exp $
  fi
  
  # add ssh-agent if found
- sshagent="`which ssh-agent 2>/dev/null`"
+ sshagent="`gdmwhich ssh-agent`"
 -if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
 +if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ] && [ -z "$NO_SSH" ]; then
      command="$sshagent -- $command"
