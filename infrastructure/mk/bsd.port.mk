@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.164 1999/12/24 00:27:58 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.165 2000/01/01 15:43:34 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -315,7 +315,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #
 # It is assumed that the port installs manpages uncompressed. If this is
 # not the case, set MANCOMPRESSED in the port and define MAN<sect> and
-# CAT<sect> for the compressed pages.  The pages will then be automagically
+# CAT<sect> for the compressed pages.  The pages will then be automatically
 # uncompressed.
 #
 # MANCOMPRESSED - Indicates that the port installs manpages in a compressed
