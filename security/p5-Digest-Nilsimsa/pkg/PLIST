@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/29 23:53:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 16:45:38 naddy Exp $
 ${P5ARCH}/Digest/Nilsimsa.pm
+@comment ${P5ARCH}/auto/Digest/Nilsimsa/.packlist
 ${P5ARCH}/auto/Digest/Nilsimsa/Nilsimsa.bs
 ${P5ARCH}/auto/Digest/Nilsimsa/Nilsimsa.so
 man/man3p/Digest::Nilsimsa.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Digest/Nilsimsa
+@dirrm ${P5ARCH}/auto/Digest
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Digest
+@dirrm ${P5ARCH}

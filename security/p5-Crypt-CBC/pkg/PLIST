@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/05/17 16:20:28 danh Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/31 16:45:38 naddy Exp $
 ${P5SITE}/Crypt/CBC.pm
+@comment ${P5ARCH}/auto/Crypt/CBC/.packlist
 man/man3p/Crypt::CBC.3p
+@comment @dirrm ${P5ARCH}/auto/Crypt/CBC
+@dirrm ${P5SITE}/Crypt

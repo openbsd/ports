@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/Digest/HMAC.pm
-libdata/perl5/site_perl/Digest/HMAC_MD5.pm
-libdata/perl5/site_perl/Digest/HMAC_SHA1.pm
+@comment $OpenBSD: PLIST,v 1.3 2003/12/31 16:45:38 naddy Exp $
+${P5SITE}/Digest/HMAC.pm
+${P5SITE}/Digest/HMAC_MD5.pm
+${P5SITE}/Digest/HMAC_SHA1.pm
+@comment ${P5ARCH}/auto/Digest/HMAC/.packlist
 man/man3p/Digest::HMAC.3p
 man/man3p/Digest::HMAC_MD5.3p
 man/man3p/Digest::HMAC_SHA1.3p
+@dirrm ${P5ARCH}/auto/Digest/HMAC
+@dirrm ${P5SITE}/Digest

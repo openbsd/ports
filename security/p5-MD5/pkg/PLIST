@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/16 16:51:07 pvalchev Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MD5.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MD5/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MD5/MD5.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MD5/MD5.so
+@comment $OpenBSD: PLIST,v 1.7 2003/12/31 16:45:38 naddy Exp $
+${P5ARCH}/MD5.pm
+@comment ${P5ARCH}/auto/MD5/.packlist
+${P5ARCH}/auto/MD5/MD5.bs
+${P5ARCH}/auto/MD5/MD5.so
+${P5ARCH}/auto/MD5/autosplit.ix
+man/man3p/MD5.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/MD5
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}

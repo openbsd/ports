@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/Blowfish.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Blowfish/Blowfish.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Blowfish/Blowfish.so
+@comment $OpenBSD: PLIST,v 1.5 2003/12/31 16:45:38 naddy Exp $
+${P5ARCH}/Crypt/Blowfish.pm
+@comment ${P5ARCH}/auto/Crypt/Blowfish/.packlist
+${P5ARCH}/auto/Crypt/Blowfish/Blowfish.bs
+${P5ARCH}/auto/Crypt/Blowfish/Blowfish.so
 man/man3p/Crypt::Blowfish.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Blowfish
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Crypt/Blowfish
+@dirrm ${P5ARCH}/auto/Crypt
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Crypt
+@dirrm ${P5ARCH}
