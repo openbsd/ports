@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/01 13:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/04 15:06:00 naddy Exp $
 
-DISTNAME=	nano-0.9.14
+DISTNAME=	nano-0.9.15
 CATEGORIES=	editors
 NEED_VERSION=	1.319
 HOMEPAGE=	http://www.asty.org/nano/
@@ -29,8 +29,6 @@ CONFIGURE_ARGS=		--without-included-gettext \
 			--includedir='${LOCALBASE}/include'
 .if ${FLAVOR:L:Mslang}
 CONFIGURE_ARGS+=	--with-slang='${LOCALBASE}'
-.else
-CFLAGS+= 		-DHAVE_TABSIZE
 .endif
 
 .include <bsd.port.mk>
