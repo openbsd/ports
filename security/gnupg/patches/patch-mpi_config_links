@@ -1,16 +1,15 @@
-$OpenBSD: patch-mpi_config_links,v 1.2 2002/07/05 07:13:01 reinhard Exp $
---- mpi/config.links.orig	Thu Apr 18 03:10:40 2002
-+++ mpi/config.links	Fri Jun  7 09:58:54 2002
-@@ -125,6 +125,12 @@ case "${target}" in
+--- mpi/config.links	Mon Oct  7 01:15:42 2002
++++ mpi/config.links~	Mon Oct  7 01:13:21 2002
+@@ -132,10 +132,10 @@ case "${target}" in
  	path="sparc32v8 sparc32"
  	mpi_extra_modules="udiv"
          ;;
+-    sparc64-*-netbsd)
 +    sparc64*-*-netbsd* | sparc64*-*-openbsd*)
+        # There are no sparc64 assembler modules that work, so
+        # just use generic C functions
+-       echo '/* configured for sparc64-*netbsd */' >>./mpi/asm-syntax.h
 +       echo '/* configured {Open,Net}BSD on sparc64 */' >>./mpi/asm-syntax.h
-+	# There are no sparc64 assembler modules that work, so
-+	# just use generic C functions
-+	path=""
-+        ;;
+        path=""
+        ;;
      sparc9*-*-*     | \
-     sparc64*-*-*    | \
-     ultrasparc*-*-* )

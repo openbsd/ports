@@ -1,17 +1,31 @@
-$OpenBSD: patch-configure,v 1.3 2002/09/30 00:31:30 drahn Exp $
---- configure.orig	Mon Apr 29 09:59:16 2002
-+++ configure	Sun Sep 29 09:58:53 2002
-@@ -3729,13 +3729,6 @@ echo "${ECHO_T}assume none" >&6
-             esac
-         fi
+--- configure~	Wed Oct 30 09:20:14 2002
++++ configure	Wed Oct 30 09:22:59 2002
+@@ -4184,8 +4184,8 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+     fi
  
--        case "$host_cpu" in
--        rs6000 | powerpc | powerpcle)
--          # Yippee! All RS/6000 and PowerPC code is position-independent.
--          CFLAGS_PIC=""
--          ;;
--        esac
--
-         if test "$NO_PIC" = yes; then
-             echo "$as_me:3740: result: not possible" >&5
- echo "${ECHO_T}not possible" >&6
+     # Make sure that we snagged all the symbols we need.
+-    if egrep ' _?nm_test_var$' "$ac_nlist" >/dev/null; then
+-      if egrep ' _?nm_test_func$' "$ac_nlist" >/dev/null; then
++    if egrep ' nm_test_var$' "$ac_nlist" >/dev/null; then
++      if egrep ' nm_test_func$' "$ac_nlist" >/dev/null; then
+         cat <<EOF > conftest.c
+ #ifdef __cplusplus
+ extern "C" {
+@@ -4193,7 +4193,7 @@ extern "C" {
+ 
+ EOF
+         # Now generate the symbol file.
+-        sed 's/^.* _\?\(.*\)$/extern char \1;/' < "$ac_nlist" >> conftest.c
++        sed 's/^.* \(.*\)$/extern char \1;/' < "$ac_nlist" >> conftest.c
+ 
+         cat <<EOF >> conftest.c
+ #if defined (__STDC__) && __STDC__
+@@ -4213,7 +4213,7 @@ struct {
+ dld_preloaded_symbols[] =
+ {
+ EOF
+-        sed 's/^_\?\(.*\) _\?\(.*\)$/  {"\1", (__ptr_t) \&\2},/' < "$ac_nlist" >> conftest.c
++        sed 's/^\(.*\) \(.*\)$/  {"\1", (__ptr_t) \&\2},/' < "$ac_nlist" >> conftest.c
+         cat <<\EOF >> conftest.c
+   {0, (__ptr_t) 0}
+ };

@@ -1,7 +1,6 @@
-$OpenBSD: patch-doc_Makefile.in,v 1.3 2002/07/05 07:13:01 reinhard Exp $
---- doc/Makefile.in.orig	Mon Apr 29 17:06:11 2002
-+++ doc/Makefile.in	Fri May 31 16:50:22 2002
-@@ -143,7 +143,7 @@ info_TEXINFOS = gpg.texi gpgv.texi
+--- doc/Makefile.in~	Mon Oct  7 01:17:26 2002
++++ doc/Makefile.in	Mon Oct  7 01:18:54 2002
+@@ -150,7 +150,7 @@ info_TEXINFOS = gpg.texi gpgv.texi
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 
  
@@ -10,21 +9,3 @@ $OpenBSD: patch-doc_Makefile.in,v 1.3 2002/07/05 07:13:01 reinhard Exp $
  
  BUILT_SOURCES = FAQ faq.html 
  
-@@ -156,7 +156,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
- DIST_SOURCES =
- TEXINFO_TEX = $(top_srcdir)/scripts/texinfo.tex
--INFO_DEPS = gpgv.info
-+INFO_DEPS = gpg.info gpgv.info
- TEXINFOS = gpg.texi gpgv.texi
- 
- NROFF = nroff
-@@ -177,7 +177,7 @@ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdi
- 	  CONFIG_HEADERS= CONFIG_LINKS= \
- 	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
- 
--: gpg.texi
-+gpg.info: gpg.texi
- gpg.dvi: gpg.texi
- 
- gpgv.info: gpgv.texi

@@ -12,5 +12,5 @@ You can
 
 In the latter case you may want to get rid of the misleading 'using
 insecure memory' warning. Just put 'no-secmem-warning' to your
-~/.gnupg/options file or use gpg with the --no-secmem-warning switch.
+~/.gnupg/gpg.conf file or use gpg with the --no-secmem-warning switch.
 
