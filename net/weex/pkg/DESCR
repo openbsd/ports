@@ -1,0 +1,13 @@
+Weex is a utility designed to automate the task of remotely maintaining
+a web page or other FTP archive.  With weex, the maintainer of a
+web site or archive that must be administered through FTP interaction
+can largely ignore that process.  The archive administrator simply
+creates a local directory that serves as an exact model for the
+offsite data.  All modifications and direct interaction is done
+locally to this directory structure.  When the administrator wishes
+to coordinate the data on the remote site with that of the local
+model directory, simply executing weex accomplishes this in the
+most bandwidth-efficient fashion by only transferring files that
+need updating.  The program will create or remove (!) files or
+directories as necessary to accurately establish the local model
+on the remote server.

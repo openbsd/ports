@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/09 18:55:20 naddy Exp $
+bin/weex
+@man man/man1/weex.1
+share/doc/weex/
+share/examples/weex/
+share/examples/weex/sample.weexrc
+share/locale/de/LC_MESSAGES/weex.mo
+share/locale/es/LC_MESSAGES/weex.mo
+share/locale/fr/LC_MESSAGES/weex.mo
+share/locale/ja/LC_MESSAGES/weex.mo
+share/locale/nl/LC_MESSAGES/weex.mo

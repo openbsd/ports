@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/10/09 18:55:20 naddy Exp $
+--- src/Makefile.in.orig	Sat Oct  9 16:55:12 2004
++++ src/Makefile.in	Sat Oct  9 16:55:25 2004
+@@ -89,7 +89,7 @@ weex_SOURCES = config.c ftplib.c ftplib.
+ 
+ 
+ LDADD = $(INTLLIBS)
+-CPPFLAGS = -DLOCALEDIR=\""$(localedir)"\"
++CPPFLAGS = @CPPFLAGS@ -DLOCALEDIR=\""$(localedir)"\"
+ INCLUDES = -I$(top_srcdir)/intl -I$(top_builddir)/intl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
