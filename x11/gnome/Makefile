@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/30 09:49:40 nino Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/30 13:00:48 nino Exp $
 
      SUBDIR += applets
      SUBDIR += bonobo
+     SUBDIR += bonobo-conf
      SUBDIR += controlcenter
      SUBDIR += core
      SUBDIR += libs
