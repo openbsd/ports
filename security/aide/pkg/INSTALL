@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/12/08 22:47:53 lebel Exp $
 #
 # Pre/post-installation setup of aide
 
@@ -52,7 +52,7 @@ case $2 in
     POST-INSTALL)
 	if [ ! -d $CONFIG_DIR ]; then
 	    do_install $1
-	elif [ ! -f $CONFIG_DIR/Muttrc ]; then
+	elif [ ! -f $CONFIG_FILE ]; then
 	    do_install $1
 	else
 	    do_notice $1
