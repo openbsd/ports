@@ -164,6 +164,7 @@ pth-1.3.7|devel/pth||GNU portable threads|devel/pth/pkg/DESCR|Brad Smith <brad@o
 shtool-1.5.1|devel/shtool||GNU Portable Shell Tool|devel/shtool/pkg/DESCR|Brad Smith <brad@openbsd.org>|devel|||any|y|y|y|y
 swig-1.3a5|devel/swig||Simplified Wrapper and Interface Generator|devel/swig/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|devel|tcl-8.3.2 tk-8.3.2 autoconf-2.13 libtool-1.3.5 guile-1.4 python-1.6 ruby-1.4.6||any|y|y|y|y
 t1lib-1.0.1|devel/t1lib||Type 1 rasterizer library for UNIX/X11|devel/t1lib/pkg/DESCR|Brad Smith <brad@openbsd.org>|devel textproc|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
+tclcl-1.0b9|devel/tclcl||Tcl/C++ interface used by ns and nam|devel/tclcl/pkg/DESCR|angelos@openbsd.org|devel|tcl-8.3.2 tk-8.3.2 otcl-1.0a5|tcl-8.3.2 tk-8.3.2 otcl-1.0a5|any|y|y|y|y
 tkcvs-6.0|devel/tkcvs||graphical frontend to CVS|devel/tkcvs/pkg/DESCR|Todd T. Fries <todd@openbsd.org>|devel||tcl-8.3.2 tk-8.3.2|any|y|y|y|y
 xmake-1.01|devel/xmake||powerful make utility|devel/xmake/pkg/DESCR|ports@openbsd.org|devel|||any|y|y|y|y
 abiword-0.7.10|editors/abiword||open-source, cross-platform WYSIWYG word processor|editors/abiword/pkg/DESCR|Dug Song <dugsong@monkey.org>|editors|gettext-0.10.35 unzip-5.41 glib-1.2.8 gmake-3.79.1 png-1.0.8 expat-1.1 gtk+-1.2.8|gettext-0.10.35 glib-1.2.8 png-1.0.8 expat-1.1 ispell-3.1.20 gtk+-1.2.8|any|y|y|y|y
@@ -268,7 +269,7 @@ ImageMagick-5.2.2|graphics/ImageMagick||display and manipulate images under X11|
 Mesa-3.2.1|graphics/Mesa||graphics library similar to SGI's OpenGL|graphics/Mesa/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|||any|y|y|y|y
 aalib-1.2|graphics/aalib||ascii art library|graphics/aalib/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|||any|y|y|y|y
 aalib-1.2-no_x11|graphics/aalib,no_x11||ascii art library|graphics/aalib/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|||any|y|y|y|y
-compface-1.0|graphics/compface||programs and library for the 'X-face' mail and news header|graphics/compface/pkg/DESCR|Hang-Guenter Weigand <hgw@d1906.inka.de>|graphics|||any|n|y|n|y
+compface-1.0|graphics/compface||programs and library for the 'X-face' mail and news header|graphics/compface/pkg/DESCR|Hans-Guenter Weigand <hgw@d1906.inka.de>|graphics|||any|n|y|n|y
 dia-0.86|graphics/dia||visio-like technical drawing|graphics/dia/pkg/DESCR|Mark Grimes <obecian@openbsd.org>|graphics|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 popt-1.5 imlib-1.9.8.1 libart-2.3.3|jpeg-6b glib-1.2.8 gettext-0.10.35 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 popt-1.5 imlib-1.9.8.1 libart-2.3.3|any|y|y|y|y
 fnlib-0.5|graphics/fnlib||color font rendering library for X|graphics/fnlib/pkg/DESCR|op21@squish.org|graphics|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|any|y|y|y|y
 fxtv-1.02|graphics/fxtv||X-based TV Display and Capture (use with the bt848 driver)|graphics/fxtv/pkg/DESCR|ports@openbsd.org|graphics|gettext-0.10.35 gmake-3.79.1 jpeg-6b tiff-3.5.5 Xaw3d-1.5|jpeg-6b tiff-3.5.5 Xaw3d-1.5|any|y|y|y|y
@@ -283,7 +284,7 @@ libgii-0.6|graphics/gii||General Input Library (used by libggi)|graphics/gii/pkg
 gimp-1.1.27|graphics/gimp||the GIMP: the GNU Image Manipulation Program|graphics/gimp/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|jpeg-6b gettext-0.10.35 glib-1.2.8 aalib-1.2 mpeg_lib-1.3.1 png-1.0.8 tiff-3.5.5 wget-1.5.3 gtk+-1.2.8|jpeg-6b gettext-0.10.35 glib-1.2.8 aalib-1.2 mpeg_lib-1.3.1 png-1.0.8 tiff-3.5.5 wget-1.5.3 gtk+-1.2.8|any|y|y|y|y
 gphoto-0.4.1|graphics/gphoto||universal digital camera picture control tool|graphics/gphoto/pkg/DESCR|Dug Song <dugsong@monkey.org>|graphics|gettext-0.10.35 unzip-5.41 jpeg-6b png-1.0.8 tiff-3.5.5 gmake-3.79.1 ghostscript-5.50 glib-1.2.8 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.4 giflib-4.1.0 gtk+-1.2.8 autoconf-2.13 ImageMagick-5.2.2 imlib-1.9.8.1|jpeg-6b png-1.0.8 tiff-3.5.5 ghostscript-5.50 gettext-0.10.35 glib-1.2.8 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.4 giflib-4.1.0 gtk+-1.2.8 ImageMagick-5.2.2 imlib-1.9.8.1|any|y|y|y|y
 gqview-0.8.2|graphics/gqview||gtk-based graphic file viewer|graphics/gqview/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|any|y|y|y|y
-gracula-3.0|graphics/gracula||A Graphic Counter Language compiler/interpreter|graphics/gracula/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|graphics|||any|y|y|y|y
+gracula-3.0|graphics/gracula||a graphic counter language compiler/interpreter|graphics/gracula/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|graphics|||any|y|y|y|y
 imlib-1.9.8.1|graphics/imlib||image manipulation library for X11|graphics/imlib/pkg/DESCR|Brad Smith <brad@openbsd.org>|devel graphics|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8|any|y|y|y|y
 jbigkit-1.2|graphics/jbigkit||lossless image compression library|graphics/jbigkit/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|||any|y|y|y|y
 jpeg-6b|graphics/jpeg||IJG's JPEG compression utilities|graphics/jpeg/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|graphics|||any|y|y|y|y
@@ -382,7 +383,7 @@ courier-imap-1.1|mail/courier-imap||imap server for maildir format mailboxes|mai
 cucipop-1.31|mail/cucipop||Cubic Circle's POP3 daemon (fully RFC1939 compliant)|mail/cucipop/pkg/DESCR|ports@openbsd.org|mail|||any|n|y|n|y
 dot-forward-0.71|mail/dot-forward|/var/qmail|sendmail-style .forward support for qmail|mail/dot-forward/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||ucspi-tcp-0.88 qmail-1.03|any|y|y|y|y
 elm-2.4ME+66|mail/elm||a once-popular mail user agent|mail/elm/pkg/DESCR|Paul Janzen <pjanzen@openbsd.org>|mail|||any|y|y|y|y
-exim-3.16|mail/exim||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|seb@gosh.todesplanet.de|mail|||any|y|y|y|y
+exim-3.16|mail/exim||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|Sebastian Stark <seb@todesplanet.de>|mail|||any|y|y|y|y
 exmh-1.6.9|mail/exmh||superseded by exmh2|/dev/null|ports@openbsd.org|mail tk80|||any|y|y|y|y
 exmh-2.0.2|mail/exmh2||X11/Tk-based mail reader front end to MH|mail/exmh2/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mail tk80|tcl-8.0.5|tcl-8.0.5 metamail-2.7 nmh-1.0.4 tk-8.0.5|any|y|y|y|y
 ezmlm-0.53|mail/ezmlm||easy-to-use, high-speed mailing list manager for qmail|mail/ezmlm/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail|||any|y|y|y|y
@@ -429,7 +430,7 @@ calc-2.11.1t3.0|math/calc||C-style arbitrary precision calculator|math/calc/pkg/
 gnuplot-3.7.1|math/gnuplot||command-driven interactive function plotting program|math/gnuplot/pkg/DESCR|Dan Harnett <danh@openbsd.org>|math graphics|png-1.0.8|png-1.0.8|any|n|n|n|y
 gnuplot-3.7.1-no_x11|math/gnuplot,no_x11||command-driven interactive function plotting program|math/gnuplot/pkg/DESCR|Dan Harnett <danh@openbsd.org>|math graphics|png-1.0.8|png-1.0.8|any|n|n|n|y
 hoc-1.1|math/hoc||from Kernighan & Pike: High Order Calculator|math/hoc/pkg/DESCR|Ian Darwin <ian@openbsd.org>|math|||any|y|y|y|y
-maple-5.5|math/maple||algebraic and symbolic computations; commercial|math/maple/pkg/DESCR|Marc Espie <espie@openbsd.org>|math|||i386|n|n|n|n
+maple-5.5|math/maple||algebraic and symbolic computations; commercial|math/maple/pkg/DESCR|Marc Espie <espie@openbsd.org>|math||linux_lib-2.6.1|i386|n|n|n|n
 Wingz-142|math/wingz||commercial spreadsheet|math/wingz/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|math||linux_lib-2.6.1|i386|n|n|n|y
 xspread-3.1.1c|math/xspread||spreadsheet program under X11|math/xspread/pkg/DESCR|ports@openbsd.org|math|||any|y|y|y|y
 common-1.0.6|mbone/common||common library functions used by the UCL multicast utils|mbone/common/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mbone|gettext-0.10.35 gmake-3.79.1 tcl-8.0.5 tk-8.0.5|tcl-8.0.5 tk-8.0.5|any|y|y|y|y
@@ -552,7 +553,7 @@ samba-2.0.7|net/samba||free SMB and CIFS client and server for UNIX|net/samba/pk
 sharity-light-1.2|net/sharity-light||userland smbfs --- SMB to NFS protocols converter|net/sharity-light/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 slirp-1.0c|net/slirp||SLIP/CSLIP emulator for users with shell accounts|net/slirp/pkg/DESCR|A.C.P.M.Kalker@student.utwente.nl|net|||any|y|y|y|y
 sniffit-0.3.7b|net/sniffit||packet sniffer program; for educational use|net/sniffit/pkg/DESCR|ports@openbsd.org|net security|||any|n|y|n|y
-snort-1.6.3|net/snort||Highly flexible sniffer/basic NIDS|net/snort/pkg/DESCR|Kyle Hargraves <halogen@nol.net>|net security|||any|y|y|y|y
+snort-1.6.3|net/snort||highly flexible sniffer/basic NIDS|net/snort/pkg/DESCR|Kyle Hargraves <halogen@nol.net>|net security|||any|y|y|y|y
 tcpflow-0.12|net/tcpflow||tool for capturing data from TCP connections|net/tcpflow/pkg/DESCR|Jeremy Jethro <jethro@dqc.org>|net|||any|y|y|y|y
 tcpreplay-1.0.1|net/tcpreplay||resend network traffic saved by tcpdump|net/tcpreplay/pkg/DESCR|Dug Song <dugsong@monkey.org>|net|libnet-1.0.1b||any|y|y|y|y
 tcpshow-1.74|net/tcpshow||decode tcpdump(1) output|net/tcpshow/pkg/DESCR|ports@openbsd.org|net security|||any|n|y|n|y
@@ -642,10 +643,11 @@ cyrus-sasl-1.5.24|security/cyrus-sasl||RFC 2222 SASL (Simple Authentication and 
 dante-1.1.2|security/dante||a socks client and server|security/dante/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security|||any|y|y|y|y
 dsniff-2.2|security/dsniff||password sniffer|security/dsniff/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|libnet-1.0.1b libnids-1.14||any|y|y|y|y
 fragrouter-1.6|security/fragrouter||tool for testing network IDS implementations|security/fragrouter/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|||any|y|y|y|y
-gnupg-1.0.3|security/gnupg||GNU privacy guard - a free PGP replacement|security/gnupg/pkg/DESCR|Markus Friedl <markus@openbsd.org>|security|||any|y|y|y|y
+gnupg-1.0.4|security/gnupg||GNU privacy guard - a free PGP replacement|security/gnupg/pkg/DESCR|Markus Friedl <markus@openbsd.org>|security|||any|y|y|y|y
 isic-0.05|security/isic||IP stack integrity checker|security/isic/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|libnet-1.0.1b||any|y|y|y|y
 its4-1.0.1|security/its4||scan C/C++ source code for security problems|security/its4/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|||any|n|n|n|n
 john-1.6|security/john||extremely fast password cracker|security/john/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|||any|y|y|y|y
+john-1.6-k6|security/john,k6||extremely fast password cracker|security/john/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|||i386|y|y|y|y
 l0phtcrack-2.52|security/l0phtcrack||Microsoft LANMAN & NT password sniffer/cracker|security/l0phtcrack/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|unzip-5.41||any|y|y|y|y
 libident-0.22|security/libident||library to interface the ident protocol server (rfc1413)|security/libident/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|devel net security|||any|y|y|y|y
 logsurfer-1.5|security/logsurfer||processes logfiles and perform certain actions|security/logsurfer/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security|||any|y|y|y|y
@@ -716,7 +718,7 @@ whowatch-1.4|sysutils/whowatch||interactive utility that displays info about onl
 xntp3-5.93e|sysutils/xntpd||Network Time Protocol implementation|sysutils/xntpd/pkg/DESCR|Jason Wright <jason@openbsd.org>|sysutils|||any|y|y|y|y
 xosview-1.7.4|sysutils/xosview||a graphical performance meter|sysutils/xosview/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|sysutils|||any|y|y|y|y
 zap-1.1|sysutils/zap||interactive process killer|sysutils/zap/pkg/DESCR|Ian Darwin <ian@openbsd.org>|sysutils|||any|y|y|y|y
-TclXML-1.2.1|textproc/TclXML||a pure-Tcl implementation of a XML parser|textproc/TclXML/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|textproc||tcl-8.3.2|any|n|y|n|y
+TclXML-1.2.1|textproc/TclXML||pure-Tcl implementation of XML parser|textproc/TclXML/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|textproc||tcl-8.3.2|any|n|y|n|y
 agrep-2.04|textproc/agrep||approximate grep (fast approximate pattern-matching tool)|textproc/agrep/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc|||any|n|y|n|y
 antiword-0.30|textproc/antiword||converts MSWord Documents to ASCII Text and PostScript|textproc/antiword/pkg/DESCR|Mark Grimes <obecian@openbsd.org>|textproc|||any|y|y|y|y
 c2html-0.9.2|textproc/c2html||C-language sources to HTML converter|textproc/c2html/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc www|||any|y|y|y|y
@@ -749,7 +751,7 @@ sablotron-0.44|textproc/sablotron||fast, compact and portable XSL/XSLT processor
 sp-1.2.1|textproc/sp||OO toolkit for SGML parsing and entity management|textproc/sp/pkg/DESCR|ports@openbsd.org|textproc|||any|y|y|y|y
 spiff-1.0|textproc/spiff||very flexible diff-like program|textproc/spiff/pkg/DESCR|Ian Darwin <ian@openbsd.org>|textproc|||any|n|y|n|y
 texi2html-1.52|textproc/texi2html||texinfo to HTML converter|textproc/texi2html/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc|||any|y|y|y|y
-urlview-0.9|textproc/urlview||curses-based URL ripper|textproc/urlview/pkg/DESCR|seb@gosh.todesplanet.de|textproc|||any|y|y|y|y
+urlview-0.9|textproc/urlview||curses-based URL ripper|textproc/urlview/pkg/DESCR|Sebastian Stark <seb@todesplanet.de>|textproc|||any|y|y|y|y
 wdiff-0.5|textproc/wdiff||word differences between text files|textproc/wdiff/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc|||any|y|y|y|y
 xml2rfc|textproc/xml2rfc||convert memos written in XML to the RFC format|textproc/xml2rfc/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|textproc||tcl-8.3.2 TclXML-1.2.1 tk-8.3.2|any|y|y|y|y
 xpdf-0.91|textproc/xpdf||PDF viewer for X|textproc/xpdf/pkg/DESCR|eep@inconnect.com|textproc x11|gettext-0.10.35 gmake-3.79.1 autoconf-2.13 t1lib-1.0.1|t1lib-1.0.1|any|y|y|y|y
@@ -762,7 +764,7 @@ august-0.61b|www/august||html editor designed for the experienced web designer|w
 bk2site-1.1.5|www/bk2site||convert Netscape bookmarks into a Yahoo-like website|www/bk2site/pkg/DESCR|Dug Song <dugsong@monkey.org>|www|||any|y|y|y|y
 bluefish-0.4|www/bluefish||HTML editor for experienced web designers|www/bluefish/pkg/DESCR|Sean Cavanaugh <seanc@cginfo.sk.ca>|www|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1 weblint-1.020|any|y|y|y|y
 cgiparse-0.8e|www/cgiparse||C library to parse CGI Forms|www/cgiparse/pkg/DESCR|ports@openbsd.org|www|||any|y|y|y|y
-decss-0.0.6|www/decss||Strip cascading style sheets from webpages|www/decss/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|www|||any|y|y|y|y
+decss-0.0.6|www/decss||strip cascading style sheets from webpages|www/decss/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|www|||any|y|y|y|y
 http_load-17sep00|www/http_load||lightweight, single-threaded HTTP/HTTPS load tester|www/http_load/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www benchmarks|||any|y|y|y|y
 hotjava-3.0|www/hotjava||Sun's Hotjava web browser|www/hotjava/pkg/DESCR|Chris Cappuccio <chris@openbsd.org>|www|freebsd_lib-2.2.8 jdk-1.1.8|freebsd_lib-2.2.8 jdk-1.1.8|any|n|n|n|n
 libghttp-1.0.7|www/libghttp||GNOME http client library|www/libghttp/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||any|y|y|y|y
@@ -781,9 +783,9 @@ p5-HTML-Parser-3.13|www/p5-HTML-Parser||modules to parse and extract information
 p5-HTML-Tagset-3.02|www/p5-HTML-Tagset||data tables useful for parsing HTML|www/p5-HTML-Tagset/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www perl5|||any|y|y|y|y
 p5-URI-1.09|www/p5-URI||library to parse Uniform Resource Identifiers|www/p5-URI/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www perl5|p5-MIME-Base64-2.11|p5-MIME-Base64-2.11|any|y|y|y|y
 p5-libwww-5.48|www/p5-libwww||library for WWW access in Perl|www/p5-libwww/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www perl5|p5-HTML-Tagset-3.02 p5-MIME-Base64-2.11 p5-libnet-1.0703 p5-Crypt-SSLeay-0.17 p5-Digest-MD5-2.12 p5-HTML-Parser-3.13 p5-URI-1.09|p5-HTML-Tagset-3.02 p5-MIME-Base64-2.11 p5-libnet-1.0703 p5-Crypt-SSLeay-0.17 p5-Digest-MD5-2.12 p5-HTML-Parser-3.13 p5-URI-1.09|any|y|y|y|y
-php3-3.0.16|www/php3||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|unzip-5.41 c-client-4.7c2 expat-1.1||i386 m68k sparc mips|y|y|y|y
-php3-3.0.16-mysql|www/php3,mysql||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|unzip-5.41 mysql-3.22.32 c-client-4.7c2 expat-1.1||i386 m68k sparc mips|y|y|y|y
-php3-3.0.16-postgresql|www/php3,postgresql||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|gettext-0.10.35 gmake-3.79.1 unzip-5.41 postgresql-7.0.2 c-client-4.7c2 expat-1.1||i386 m68k sparc mips|y|y|y|y
+php3-3.0.16|www/php3||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|unzip-5.41 expat-1.1||i386 m68k sparc mips|y|y|y|y
+php3-3.0.16-mysql|www/php3,mysql||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|unzip-5.41 mysql-3.22.32 expat-1.1||i386 m68k sparc mips|y|y|y|y
+php3-3.0.16-postgresql|www/php3,postgresql||server-side HTML-embedded scripting language|www/php3/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|gettext-0.10.35 gmake-3.79.1 unzip-5.41 postgresql-7.0.2 expat-1.1||i386 m68k sparc mips|y|y|y|y
 php4-4.0.3pl1|www/php4||server-side HTML-embedded scripting language|www/php4/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|||i386 m68k sparc mips|y|y|y|y
 php4-4.0.3pl1-mysql|www/php4,mysql||server-side HTML-embedded scripting language|www/php4/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|mysql-3.22.32||i386 m68k sparc mips|y|y|y|y
 php4-4.0.3pl1-postgresql|www/php4,postgresql||server-side HTML-embedded scripting language|www/php4/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www lang|gettext-0.10.35 gmake-3.79.1 postgresql-7.0.2||i386 m68k sparc mips|y|y|y|y
@@ -814,7 +816,6 @@ asclock-1.0-french|x11/asclock,french||Afterstep clock with some language extens
 asclock-1.0-czech|x11/asclock,czech||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
 aterm-0.4.0|x11/aterm||color vt102 terminal emulator with transparency support|x11/aterm/pkg/DESCR|Brad Smith <brad@openbsd.org>|x11|jpeg-6b png-1.0.8|jpeg-6b png-1.0.8|any|y|y|y|y
 bclock-1.0|x11/bclock||round, analog X11 clock with bezier curve hands|x11/bclock/pkg/DESCR|ports@OpenBSD.ORG|x11|||any|y|y|y|y
-blackbox-0.61.0|x11/blackbox||small & pretty window manager for 8 and more bits displays|x11/blackbox/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|x11|||any|y|y|y|y
 blackbox-0.61.0|x11/blackbox||small & pretty window manager for 8 and more bits displays|x11/blackbox/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|x11|||any|y|y|y|y
 blast-1.0|x11/blast||blow holes through windows|x11/blast/pkg/DESCR|ports@OpenBSD.ORG|x11|||any|y|y|y|y
 bricons-3.0|x11/bricons||quick start-up utility for applications on an X11 display|x11/bricons/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
@@ -853,8 +854,8 @@ ksirtet-1.1.2|x11/kde/games||tetris clone for kde|x11/kde/games/pkg/DESCR-ksirte
 ksmiletris-1.1.2|x11/kde/games||tetris-like game for kde|x11/kde/games/pkg/DESCR-ksmiletris|Sean Cavanaugh <seanc@cginfo.sk.ca>|x11 games|gettext-0.10.35 gmake-3.79.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 bzip2-1.0.1 kdelibs-1.1.2|giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 kdelibs-1.1.2|any|y|y|y|y
 ksnake-1.1.2|x11/kde/games||snake racing game for kde|x11/kde/games/pkg/DESCR-ksnake|Sean Cavanaugh <seanc@cginfo.sk.ca>|x11 games|gettext-0.10.35 gmake-3.79.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 bzip2-1.0.1 kdelibs-1.1.2|giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 kdelibs-1.1.2|any|y|y|y|y
 ksokoban-1.1.2|x11/kde/games||japanese strategy game for kde |x11/kde/games/pkg/DESCR-ksokoban|Sean Cavanaugh <seanc@cginfo.sk.ca>|x11 games|gettext-0.10.35 gmake-3.79.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 bzip2-1.0.1 kdelibs-1.1.2|giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 kdelibs-1.1.2|any|y|y|y|y
-kdelibs-2.0rc2|x11/kde/libs2||X11 toolkit, libraries|x11/kde/libs2/pkg/DESCR|ports@openbsd.org|x11 x11/kde|gettext-0.10.35 bzip2-1.0.1 gmake-3.79.1||any|y|y|y|y
-kdebase-2.0rc2|x11/kde/base2||X11 toolkit, basic applications|x11/kde/base2/pkg/DESCR|ports@openbsd.org|x11 x11/kde|gettext-0.10.35 jpeg-6b png-1.0.8 bzip2-1.0.1 gmake-3.79.1 kdelibs-2.0rc2 qt2-2.1|jpeg-6b png-1.0.8 kdelibs-2.0rc2 qt2-2.1|any|y|y|y|y
+kdelibs-2.0|x11/kde/libs2||X11 toolkit, libraries|x11/kde/libs2/pkg/DESCR|ports@openbsd.org|x11 x11/kde|gettext-0.10.35 bzip2-1.0.1 gmake-3.79.1||any|y|y|y|y
+kdebase-2.0|x11/kde/base2||X11 toolkit, basic applications|x11/kde/base2/pkg/DESCR|ports@openbsd.org|x11 x11/kde|gettext-0.10.35 jpeg-6b png-1.0.8 bzip2-1.0.1 gmake-3.79.1 kdelibs-2.0 qt2-2.1|jpeg-6b png-1.0.8 kdelibs-2.0 qt2-2.1|any|y|y|y|y
 lesstif-0.91.8|x11/lesstif||API compatible clone of the Motif toolkit|x11/lesstif/pkg/DESCR|Brad Smith <brad@openbsd.org>|x11|||any|y|y|y|y
 lupe-0.07|x11/lupe||real-time magnifying glass for X11|x11/lupe/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
 mouseclock-1.0|x11/mouseclock||display the current time using the X11 root cursor|x11/mouseclock/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
@@ -911,6 +912,7 @@ xfstt-1.1|x11/xfstt||A TrueType font server for X11|x11/xfstt/pkg/DESCR|Jason Is
 xgrab-2.41|x11/xgrab||X11 image grabber|x11/xgrab/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
 xglobe-0.5p1|x11/xglobe||display the Earth on X11|x11/xglobe/pkg/DESCR|Marc Espie <espie@openbsd.org>|x11|gettext-0.10.35 gmake-3.79.1 jpeg-6b png-1.0.8 qt-1.45|qt-1.45|any|y|y|y|y
 xglobe-0.5p1-no_map-gfx|x11/xglobe,no_map,gfx||display the Earth on X11|x11/xglobe/pkg/DESCR|Marc Espie <espie@openbsd.org>|x11|gettext-0.10.35 gmake-3.79.1 jpeg-6b png-1.0.8 qt-1.45|jpeg-6b png-1.0.8 qt-1.45|any|y|y|y|y
+xglobe-0.5p1-qt2|x11/xglobe,qt2||display the Earth on X11|x11/xglobe/pkg/DESCR|Marc Espie <espie@openbsd.org>|x11|gettext-0.10.35 gmake-3.79.1 jpeg-6b png-1.0.8 qt2-2.1|jpeg-6b png-1.0.8 qt2-2.1|any|y|y|y|y
 xkeycaps-2.46|x11/xkeycaps||keymap editor for the X window system|x11/xkeycaps/pkg/DESCR|Hans Insulander <hin@stacken.kth.se>|x11 sysutils|||any|y|y|y|y
 xloadimage-4.1|x11/xloadimage||graphics file viewer for X11|x11/xloadimage/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|x11 graphics|jpeg-6b tiff-3.5.5|jpeg-6b tiff-3.5.5|any|y|y|y|y
 xlockmore-4.08.2|x11/xlockmore||XLock session locker/screen saver with lots of savers|/dev/null|Todd T. Fries <todd@openbsd.org>|x11|||any|y|y|y|y
