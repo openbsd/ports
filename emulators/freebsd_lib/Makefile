@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/16 00:29:06 turan Exp $
-
-BROKEN=		horrible bug.  clobbers ld.so.hints.
+# $OpenBSD: Makefile,v 1.10 2000/04/27 11:35:13 jakob Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
 NEED_VERSION=	1.191
-FAKE=No
+FAKE=		No
 MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/
 EXTRACT_ONLY=
-
 
 ONLY_FOR_ARCHS=	i386
 
@@ -38,6 +35,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/var/run
-	@${PREFIX}/sbin/ldconfig /usr/lib/compat /usr/X11R6/lib
+	@${PREFIX}/sbin/ldconfig -f ${PREFIX}/var/run/ld.so.hints \
+	 /usr/lib/compat /usr/X11R6/lib
 
 .include <bsd.port.mk>
