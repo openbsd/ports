@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2001/07/11 06:08:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.74 2001/07/13 15:30:39 avsm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += kuickshow
      SUBDIR += libart
      SUBDIR += libmng
+     SUBDIR += libwmf
      SUBDIR += mpeg-lib
 #    SUBDIR += mpeg2codec
 #    SUBDIR += mpeg2play
