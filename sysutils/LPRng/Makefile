@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2001/06/19 17:26:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.20 2002/09/28 01:20:43 pvalchev Exp $
+
+BROKEN=		"outdated and with possible security holes"
 
 COMMENT=	"enhanced printer spooler"
 
