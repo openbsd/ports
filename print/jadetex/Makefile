@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/28 11:11:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/17 20:51:46 avsm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
@@ -19,9 +19,9 @@ EXTRACT_SUFX=		.zip
 WRKDIST=		${WRKDIR}/jadetex
 
 LIB_DEPENDS=		png.1::graphics/png
-RUN_DEPENDS=		${PREFIX}/bin/tex::print/teTeX/texmf
-BUILD_DEPENDS=		${PREFIX}/bin/tex::print/teTeX/texmf \
-			${PREFIX}/bin/openjade::textproc/openjade
+BUILD_DEPENDS=		tex::print/teTeX/base \
+			${LOCALBASE}/share/texmf/web2c/texmf.cnf::print/teTeX/texmf
+RUN_DEPENDS=		${RUN_DEPENDS}
 
 ALL_TARGET=		default
 TEXMFLOC=		${PREFIX}/share/texmf
