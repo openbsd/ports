@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.6 2003/06/22 10:05:28 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.7 2003/07/29 21:06:18 sturm Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -55,11 +55,12 @@ OpenBSD specific comments added. It's a good time to become root, now.
 
   Now restart your web server.
 
-- Create a "site-wide" mailing list.  This is the one that
-  password reminders will appear to come from.  Usually this
-  should be the "mailman" mailing list, but if you need to change
-  this, be sure to change the MAILMAN_SITE_LIST variable in
-  mm_cfg.py (see below).
+- Create a "site-wide" mailing list.  This is the one that password
+  reminders, error reports and warnings will appear to come from.
+  Usually this should be the "mailman" mailing list, but if you need
+  to change this, be sure to change the MAILMAN_SITE_LIST variable
+  in mm_cfg.py (see below), too. As of mailman 2.1.x this list is
+  mandatory. You won't be able to run 'mailmanctl' without it.
 
      % bin/newlist mailman
 
