@@ -1,0 +1,55 @@
+$OpenBSD: patch-pflogsumm_pl,v 1.1.1.1 2002/12/30 19:36:39 jakob Exp $
+--- pflogsumm.pl.orig	Mon Dec 30 20:20:40 2002
++++ pflogsumm.pl	Mon Dec 30 20:21:25 2002
+@@ -4,20 +4,20 @@ eval 'exec perl -S $0 "$@"'
+ 
+ =head1 NAME
+ 
+-pflogsumm.pl - Produce Postfix MTA logfile summary
++pflogsumm - Produce Postfix MTA logfile summary
+ 
+ Copyright (C) 1998-2002 by James S. Seymour, Release 1.0.6.
+ 
+ =head1 SYNOPSIS
+ 
+-    pflogsumm.pl -[eq] [-d <today|yesterday>] [-h <cnt>] [-u <cnt>]
++    pflogsumm -[eq] [-d <today|yesterday>] [-h <cnt>] [-u <cnt>]
+ 	[--verp_mung[=<n>]] [--verbose_msg_detail] [--iso_date_time]
+ 	[-m|--uucp_mung] [-i|--ignore_case] [--smtpd_stats] [--mailq]
+ 	[--problems_first] [--rej_add_from] [--no_bounce_detail]
+ 	[--no_deferral_detail] [--no_reject_detail] [--zero_fill]
+ 	[file1 [filen]]
+ 
+-    pflogsumm.pl -[help|version]
++    pflogsumm -[help|version]
+ 
+     If no file(s) specified, reads from stdin.  Output is to stdout.
+ 
+@@ -183,15 +183,15 @@ Copyright (C) 1998-2002 by James S. Seym
+ 
+     Produce a report of previous day's activities:
+ 
+-        pflogsumm.pl -d yesterday /var/log/maillog
++        pflogsumm -d yesterday /var/log/maillog
+ 
+     A report of prior week's activities (after logs rotated):
+ 
+-        pflogsumm.pl /var/log/maillog.0
++        pflogsumm /var/log/maillog.0
+ 
+     What's happened so far today:
+ 
+-        pflogsumm.pl -d today /var/log/maillog
++        pflogsumm -d today /var/log/maillog
+ 
+     Crontab entry to generate a report of the previous day's activity
+     at 10 minutes after midnight.
+@@ -384,7 +384,7 @@ $smtpdPerHr[15] = [0,0,0]; $smtpdPerHr[1
+ $smtpdPerHr[18] = [0,0,0]; $smtpdPerHr[19] = [0,0,0]; $smtpdPerHr[20] = [0,0,0];
+ $smtpdPerHr[21] = [0,0,0]; $smtpdPerHr[22] = [0,0,0]; $smtpdPerHr[23] = [0,0,0];
+ 
+-$progName = "pflogsumm.pl";
++$progName = "pflogsumm";
+ $usageMsg =
+     "usage: $progName -[eq] [-d <today|yesterday>] [-h <cnt>] [-u <cnt>]
+        [--verp_mung[=<n>]] [--verbose_msg_detail] [--iso_date_time]
