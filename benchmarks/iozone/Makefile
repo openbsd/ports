@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/11/11 21:37:20 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/11/18 19:38:35 brad Exp $
 
 DISTNAME=	iozone3_48
 PKGNAME=	iozone-3.48
@@ -29,6 +29,6 @@ WRKDIST=	${WRKDIR}/src/current
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/iozone.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/docs/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
