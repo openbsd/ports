@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@comment $OpenBSD: PLIST-ada,v 1.2 2005/01/05 22:39:21 espie Exp $
 bin/gnat
 bin/gnatbind
 bin/gnatbl
@@ -8,10 +8,16 @@ bin/gnatkr
 bin/gnatlink
 bin/gnatls
 bin/gnatmake
+bin/gnatname
 bin/gnatprep
 bin/gnatpsta
-bin/gnatpsys
 bin/gnatxref
+@info info/gnat-style.info
+@info info/gnat_rm.info
+@info info/gnat_ug_unx.info
+@info info/gnat_ug_vms.info
+@info info/gnat_ug_vxw.info
+@info info/gnat_ug_wnt.info
 lib/gcc-lib/${CONFIG}/${V}/adainclude/
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-astaco.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-astaco.ads
@@ -23,6 +29,7 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/a-chahan.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-chahan.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-charac.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-chlat1.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/a-chlat9.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-colien.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-colien.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-colire.adb
@@ -30,6 +37,7 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/a-colire.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-comlin.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-comlin.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-cwila1.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/a-cwila9.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-decima.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-decima.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-diocst.adb
@@ -259,6 +267,7 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/g-dirope.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-dirope.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-dyntab.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-dyntab.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/g-enblsp.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-except.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-exctra.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-exctra.ads
@@ -277,6 +286,8 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/g-io_aux.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-io_aux.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-locfil.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-locfil.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/g-md5.adb
+lib/gcc-lib/${CONFIG}/${V}/adainclude/g-md5.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-moreex.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-moreex.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/g-os_lib.adb
@@ -657,6 +668,10 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/s-tposen.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-tposen.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-traceb.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-traceb.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/s-traces.adb
+lib/gcc-lib/${CONFIG}/${V}/adainclude/s-traces.ads
+lib/gcc-lib/${CONFIG}/${V}/adainclude/s-tratas.adb
+lib/gcc-lib/${CONFIG}/${V}/adainclude/s-tratas.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-unstyp.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-vaflop.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/s-vaflop.ads
@@ -727,10 +742,12 @@ lib/gcc-lib/${CONFIG}/${V}/adalib/a-calend.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-chahan.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-charac.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-chlat1.ali
+lib/gcc-lib/${CONFIG}/${V}/adalib/a-chlat9.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-colien.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-colire.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-comlin.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-cwila1.ali
+lib/gcc-lib/${CONFIG}/${V}/adalib/a-cwila9.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-decima.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-dynpri.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-einuoc.ali
@@ -847,6 +864,7 @@ lib/gcc-lib/${CONFIG}/${V}/adalib/g-htable.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-io.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-io_aux.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-locfil.ali
+lib/gcc-lib/${CONFIG}/${V}/adalib/g-md5.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-moreex.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-os_lib.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/g-regexp.ali
@@ -878,7 +896,9 @@ lib/gcc-lib/${CONFIG}/${V}/adalib/i-pacdec.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/interfac.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/ioexcept.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/libgnarl.a
+lib/gcc-lib/${CONFIG}/${V}/adalib/libgnarl.so
 lib/gcc-lib/${CONFIG}/${V}/adalib/libgnat.a
+lib/gcc-lib/${CONFIG}/${V}/adalib/libgnat.so
 lib/gcc-lib/${CONFIG}/${V}/adalib/machcode.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/memtrack.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-addima.ali
@@ -1053,6 +1073,8 @@ lib/gcc-lib/${CONFIG}/${V}/adalib/s-tpoben.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-tpobop.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-tposen.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-traceb.ali
+lib/gcc-lib/${CONFIG}/${V}/adalib/s-traces.ali
+lib/gcc-lib/${CONFIG}/${V}/adalib/s-tratas.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-unstyp.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-vaflop.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/s-valboo.ali
