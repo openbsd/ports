@@ -3,7 +3,7 @@
 # Date created:				21 Apr 1998
 # Whom:					form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/29 02:57:18 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/08/05 21:59:31 marc Exp $
 #
 
 DISTNAME=	socks5-v1.0r6
@@ -15,6 +15,7 @@ MAINTAINER=	form@vs.itam.nsc.ru
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
+IS_INTERACTIVE=	yes
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
