@@ -1,21 +1,21 @@
-$OpenBSD: patch-clients_upsstats_c,v 1.1 2003/01/16 23:42:18 marcm Exp $
---- clients/upsstats.c.orig	Tue Oct 29 07:12:42 2002
-+++ clients/upsstats.c	Sun Dec 29 18:10:20 2002
-@@ -594,7 +594,7 @@ static void display_template(const char 
+$OpenBSD: patch-clients_upsstats_c,v 1.2 2004/02/09 06:48:48 marcm Exp $
+--- clients/upsstats.c.orig	2004-01-03 14:54:09.000000000 -0800
++++ clients/upsstats.c	2004-01-03 14:54:42.000000000 -0800
+@@ -621,7 +621,7 @@ static void display_template(const char 
  {
  	char	fn[SMALLBUF], buf[LARGEBUF];	
  
--	snprintf(fn, sizeof(fn), "%s/%s", CONFPATH, tfn);
-+	snprintf(fn, sizeof(fn), "%s/%s", CGICONFPATH, tfn);
+-	snprintf(fn, sizeof(fn), "%s/%s", confpath(), tfn);
++	snprintf(fn, sizeof(fn), "%s/%s", cgiconfpath(), tfn);
  
  	tf = fopen(fn, "r");
  
-@@ -670,7 +670,7 @@ static void load_hosts_conf(void)
- {
+@@ -678,7 +678,7 @@ static void load_hosts_conf(void)
  	char	fn[SMALLBUF];
+ 	PCONF_CTX	ctx;
  
 -	snprintf(fn, sizeof(fn), "%s/hosts.conf", CONFPATH);
-+	snprintf(fn, sizeof(fn), "%s/hosts.conf", CGICONFPATH);
- 	parseconf(fn, hosts_conf_args, hosts_conf_error);
- }
++	snprintf(fn, sizeof(fn), "%s/hosts.conf", cgiconfpath());
+ 
+ 	pconf_init(&ctx, upsstats_hosts_err);
  

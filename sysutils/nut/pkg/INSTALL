@@ -1,32 +1,45 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.5 2003/03/30 16:19:25 marcm Exp $
+# $OpenBSD: INSTALL,v 1.6 2004/02/09 06:48:48 marcm Exp $
 
 P_NAME=nut
 
 DIRS='
-nut
+.
 '
 
 FILES='
-nut/ups.conf
-nut/upssched.conf
+ups.conf
+upssched.conf
 '
 
 PRIVATE_FILES='
-nut/upsmon.conf
-nut/upsd.conf
-nut/upsd.users
+upsmon.conf
+upsd.conf
+upsd.users
 '
 
 set -e
 PREFIX=${PKG_PREFIX:-/usr/local}
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
-do_post() {
+do_create_user() {
+	if id -u ${NUT_USER} >/dev/null 2>/dev/null
+	then
+		echo "===>  Using existing account '${NUT_USER}'"
+	else
+		echo "===>  Creating user '${NUT_USER}'"
+		useradd -g dialer \
+			-c "UPS User" \
+			-d /var/empty \
+			-s /sbin/nologin \
+			-u ${NUT_ID} ${NUT_USER}
+	fi
+}
 
-	DEST_PFX=${SYSCONFDIR}
-	SOURCE_PFX=${PREFIX}/share/examples
+do_post() {
+	DEST_PFX=${CONFDIR}
+	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
 	echo 
 	echo "+--------------- ${P_NAME}"
@@ -37,6 +50,10 @@ do_post() {
 			install -d ${DEST_PFX}/$d
 		fi
 	done
+	if [ ! -d "${NUT_STATEDIR}" ]; then
+		install -d -m 0700 -o ${NUT_USER} ${NUT_STATEDIR}
+	fi
+
 
 	# install or take note of existing config files
 	for f in ${FILES}; do
@@ -106,6 +123,7 @@ fi
 #
 case $2 in
 	PRE-INSTALL)
+		do_create_user
 		;;
 	POST-INSTALL)
 		do_post

@@ -1,12 +1,12 @@
-$OpenBSD: patch-clients_cgilib_c,v 1.2 2003/01/16 23:42:18 marcm Exp $
---- clients/cgilib.c.orig	Tue Aug 20 07:39:06 2002
-+++ clients/cgilib.c	Sun Dec 29 11:31:52 2002
-@@ -155,7 +155,7 @@ int checkhost(char *check, char **desc)
- 	if (!check)
+$OpenBSD: patch-clients_cgilib_c,v 1.3 2004/02/09 06:48:48 marcm Exp $
+--- clients/cgilib.c.orig	2004-01-03 14:55:07.000000000 -0800
++++ clients/cgilib.c	2004-01-03 14:55:22.000000000 -0800
+@@ -162,7 +162,7 @@ int checkhost(const char *host, char **d
+ 	if (!host)
  		return 0;		/* deny null hostnames */
  
--	snprintf(fn, sizeof(fn), "%s/hosts.conf", CONFPATH);
-+	snprintf(fn, sizeof(fn), "%s/hosts.conf", CGICONFPATH);
- 	hostlist = fopen(fn, "r");
+-	snprintf(fn, sizeof(fn), "%s/hosts.conf", confpath());
++	snprintf(fn, sizeof(fn), "%s/hosts.conf", cgiconfpath());
  
- 	if (hostlist == NULL)
+ 	pconf_init(&ctx, cgilib_err);
+ 

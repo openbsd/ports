@@ -1,30 +1,12 @@
-$OpenBSD: patch-configure,v 1.4 2003/03/30 16:19:25 marcm Exp $
---- configure.orig	Mon Dec  2 04:08:51 2002
-+++ configure	Thu Mar 27 23:56:17 2003
-@@ -556,7 +556,7 @@ do
-     ac_prev=sysconfdir ;;
-   -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
-   | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
--    sysconfdir=$ac_optarg ;;
-+    sysconfdir="$ac_optarg/nut" ;;
- 
-   -target | --target | --targe | --targ | --tar | --ta | --t)
-     ac_prev=target_alias ;;
-@@ -1338,7 +1338,7 @@ BUILDOBJ=common.o
- 
- 
- GD_INCLUDES=""
--GD_LIBS="-L/usr/X11R6/lib -lgd -lpng -lz -ljpeg -lfreetype -lm -lXpm -lX11"
-+GD_LIBS="-lgd -lpng -lz -ljpeg -lttf -lm"
- 
- 
- ac_ext=c
-@@ -4007,7 +4007,7 @@ rm -f conftest.$ac_objext conftest$ac_ex
-    int F77_DUMMY_MAIN() { return 1; }
- #endif
+$OpenBSD: patch-configure,v 1.5 2004/02/09 06:48:48 marcm Exp $
+--- configure.orig	2004-01-04 23:26:22.000000000 -0800
++++ configure	2004-01-04 23:27:00.000000000 -0800
+@@ -4856,7 +4856,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <openssl/ssl.h>
  int
 -main ()
 +test_main ()
  {
- SSL_library_init
+ SSL_library_init()
    ;

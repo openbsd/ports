@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_common_c,v 1.1 2004/02/09 06:48:48 marcm Exp $
+--- common/common.c.orig	2004-01-03 14:48:45.000000000 -0800
++++ common/common.c	2004-01-03 14:53:25.000000000 -0800
+@@ -268,6 +268,17 @@ const char * confpath(void) 
+ 	return path;
+ }
+ 
++/* return a config path for the CGIs so they can be kept seperate */
++const char * cgiconfpath(void) 
++{
++	const char * path;
++
++	if ((path = getenv("NUT_CGICONFPATH")) == NULL)
++		path = CGICONFPATH;
++
++	return path;
++}
++
+ /* Return the default path for the directory containing state files */
+ const char * dflt_statepath(void) 
+ {

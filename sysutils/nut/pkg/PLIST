@@ -1,30 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/01/17 06:23:43 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/02/09 06:48:48 marcm Exp $
 @pkgcfl upsd-*
 bin/apcsmart
 bin/bcmxcp
 bin/belkin
-bin/bestferrups801-807
 bin/bestfortress
 bin/bestuferrups
 bin/bestups
+bin/blazer
 bin/cyberpower
+bin/esupssmart
 bin/etapro
 bin/everups
 bin/fentonups
+bin/ferrups
 bin/genericups
 bin/hp
 bin/isbmex
 bin/liebert
 bin/masterguard
-bin/mge-ellipse
+bin/mge-shut
 bin/mge-utalk
 bin/microdowell
 bin/newapc
 bin/oneac
 bin/powercom
+bin/safenet
 bin/sec
 bin/sms
 bin/tripplite
+bin/tripplitesu
 bin/upsc
 bin/upscmd
 bin/upsdrvctl
@@ -42,31 +46,32 @@ man/man5/upsstats.html.5
 man/man8/apcsmart.8
 man/man8/bcmxcp.8
 man/man8/belkin.8
-man/man8/bestferrups801-807.8
 man/man8/bestfortress.8
 man/man8/bestuferrups.8
 man/man8/bestups.8
 man/man8/cyberpower.8
+man/man8/dummycons.8
+man/man8/energizerups.8
 man/man8/etapro.8
 man/man8/everups.8
 man/man8/fentonups.8
+man/man8/ferrups.8
 man/man8/genericups.8
-man/man8/hp.8
 man/man8/isbmex.8
 man/man8/liebert.8
 man/man8/masterguard.8
-man/man8/mge-ellipse.8
+man/man8/mge-shut.8
 man/man8/mge-utalk.8
 man/man8/microdowell.8
 man/man8/newapc.8
 man/man8/nutupsdrv.8
 man/man8/oneac.8
 man/man8/powercom.8
-man/man8/powernet.8
+man/man8/safenet.8
 man/man8/sec.8
 man/man8/sms.8
-man/man8/snmp-ups.8
 man/man8/tripplite.8
+man/man8/tripplitesu.8
 man/man8/upsc.8
 man/man8/upscmd.8
 man/man8/upsd.8
@@ -82,6 +87,7 @@ man/man8/victronups.8
 sbin/upsd
 sbin/upsmon
 sbin/upssched
+share/cmdvartab
 share/doc/nut/FAQ
 share/doc/nut/README
 share/doc/nut/big-servers.txt
@@ -96,19 +102,20 @@ share/doc/nut/chroot.txt
 share/doc/nut/commands.txt
 share/doc/nut/config-files.txt
 share/doc/nut/configure.txt
+share/doc/nut/contact-closure.txt
 share/doc/nut/data-room.txt
 share/doc/nut/design.txt
 share/doc/nut/developers.txt
 share/doc/nut/driver.list
-share/doc/nut/drivers/README
-share/doc/nut/drivers/generic-ups.txt
-share/doc/nut/drivers/mge-ellipse.txt
-share/doc/nut/drivers/mge-utalk.txt
-share/doc/nut/drivers/snmp-ups.txt
 share/doc/nut/new-drivers.txt
+share/doc/nut/new-names.txt
+share/doc/nut/osd-notify.txt
 share/doc/nut/pager.txt
+share/doc/nut/powersaving.txt
 share/doc/nut/protocol.txt
 share/doc/nut/shutdown.txt
+share/doc/nut/snmp.txt
+share/doc/nut/sock-protocol.txt
 share/doc/nut/ssl.txt
 share/doc/nut/todo.txt
 share/doc/nut/upssched.txt
@@ -118,6 +125,14 @@ share/examples/nut/upsd.users.sample
 share/examples/nut/upsmon.conf.sample
 share/examples/nut/upssched.conf.sample
 @dirrm share/examples/nut
-@dirrm share/doc/nut/drivers
 @dirrm share/doc/nut/cables
 @dirrm share/doc/nut
+@cwd ${SYSCONFDIR}
+@extra nut/ups.conf
+@extra nut/upsd.conf
+@extra nut/upsd.users
+@extra nut/upsmon.conf
+@extra nut/upssched.conf
+@extra nut/
+@cwd /var/db
+@extraunexec rm -rf %D/nut

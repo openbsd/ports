@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_common_h,v 1.1 2004/02/09 06:48:48 marcm Exp $
+--- include/common.h.orig	2004-01-03 14:59:38.000000000 -0800
++++ include/common.h	2004-01-03 14:59:40.000000000 -0800
+@@ -80,6 +80,9 @@ void syslogbit_set(void);
+ /* Return the default path for the directory containing configuration files */
+ const char * confpath(void);
+ 
++/* return a config path for the CGIs so they can be kept seperate */
++const char * cgiconfpath(void);
++
+ /* Return the default path for the directory containing state files */
+ const char * dflt_statepath(void);
+ 
