@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/14 23:48:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:44:58 wilfried Exp $
 
 COMMENT=	"sends AM radio signals using a monitor"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+NO_REGRESS=	Yes
 
 LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
 

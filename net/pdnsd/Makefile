@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/30 02:10:40 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:44:58 wilfried Exp $
 # Uses pthreads
 
 COMMENT=		"threaded DNS daemon, optimized for caching"
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
+
+NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		concurrent
 

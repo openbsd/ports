@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/30 14:07:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:44:58 wilfried Exp $
 
 COMMENT=		"list processes as a tree"
 DISTNAME=		pstree-2.16
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.go.dlr.de/fresh/unix/src/misc/
+
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 

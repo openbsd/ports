@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 04:11:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:44:58 wilfried Exp $
 
 COMMENT=	"curses-based URL ripper"
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+
+NO_REGRESS=	Yes
 
 FLAVORS=	slang
 FLAVOR?=

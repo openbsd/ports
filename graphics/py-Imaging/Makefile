@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 15:44:57 wilfried Exp $
 
 COMMENT=		"python imaging library"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pythonware.com/downloads/
+
+NO_REGRESS=		Yes
 
 PYTHON_VER=		python2.1
 PY_MODULE=		${LOCALBASE}/lib/${PYTHON_VER}/lib-dynload/_tkinter.so
