@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/18 19:05:26 brad Exp $
+bin/w9wm
+man/cat1/w9wm.0
