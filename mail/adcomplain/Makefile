@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/26 20:05:18 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/29 02:53:55 kevlo Exp $
 
-DISTNAME=	adcomplain-3.49
+DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news
 NEED_VERSION=	1.301
 MASTER_SITES=	http://www.rdrop.com/users/billmc/
