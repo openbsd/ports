@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2005/04/03 02:35:01 msf Exp $
+# $OpenBSD: Makefile,v 1.363 2005/04/03 11:28:47 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -237,6 +237,8 @@
      SUBDIR += rsync
      SUBDIR += ruby-pcap
      SUBDIR += samba
+     SUBDIR += samba,cups
+     SUBDIR += samba,ldap
      SUBDIR += scli
      SUBDIR += ser
      SUBDIR += sharity-light
