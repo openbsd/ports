@@ -1,0 +1,12 @@
+$OpenBSD: patch-symon_sm_if_c,v 1.1 2004/08/30 16:57:02 brad Exp $
+--- symon/sm_if.c.orig	Sun Aug 29 18:00:15 2004
++++ symon/sm_if.c	Sun Aug 29 18:00:20 2004
+@@ -52,8 +52,6 @@
+ #include <netns/ns_if.h>
+ #include <netipx/ipx.h>
+ #include <netipx/ipx_if.h>
+-#include <netiso/iso.h>
+-#include <netiso/iso_var.h>
+ 
+ #include <errno.h>
+ #include <limits.h>
