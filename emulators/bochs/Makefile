@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/01/22 14:43:01 todd Exp $
+# $OpenBSD: Makefile,v 1.35 2004/01/22 14:55:15 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -26,8 +26,8 @@ CONFIGURE_ARGS=	--enable-cdrom \
 		--with-term \
 		--enable-all-optimizations
 
-FLAVORS=	debug i386 i486 i686 x86_64 pci smp smp_4 smp_8 \
-		no_x11 no_mmx no_comp
+FLAVORS=	debug i386 i486 i686 x86_64 smp smp_4 smp_8 \
+		no_x11 no_mmx no_comp no_pci
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+= --enable-x86-64 --enable-cpu-level="6"
 CONFIGURE_ARGS+= --disable-x86-64
 .endif
 
-.if ${FLAVOR:L:Mpci}
+.if !${FLAVOR:L:Mno_pci}
 CONFIGURE_ARGS+= --enable-pci
 .endif
 
