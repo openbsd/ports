@@ -1,0 +1,102 @@
+$OpenBSD: patch-wmcube_c,v 1.1.1.1 2001/08/28 14:32:49 wilfried Exp $
+--- wmcube.c.orig	Sat Feb 24 18:47:21 2001
++++ wmcube.c	Tue Aug 28 10:55:34 2001
+@@ -37,9 +37,11 @@
+ #include <ctype.h>
+ #include <math.h>
+ 
++#ifdef LINUX
+ /* forgotten includes */
+ #include <getopt.h>
+ #include <dirent.h>
++#endif
+ 
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+@@ -1182,6 +1184,10 @@ void print_help(void)
+     printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
+ #endif
+ 
++#ifdef OPENBSD
++    printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
++#endif
++
+     printf("  -b  : draw the cube in a brighter color. (default OFF)\n");
+     printf("  -s x: parse color 'x' and use to draw 3D shaded objects\n");
+     printf("  -i  : invert cube speed. (default OFF)\n");
+@@ -1244,7 +1250,7 @@ int loadobj(char *filename)
+ 	exit(0);
+     }
+ 
+-    fscanf(fp, "%s", tmp);
++    fscanf(fp, "%63s", tmp);
+ 
+     if (strcmp(tmp, "WMCUBE_COORDINATES") != 0) {
+ 	printf
+@@ -1253,7 +1259,7 @@ int loadobj(char *filename)
+ 	exit(0);
+     }
+ 
+-    fscanf(fp, "%s", tmp);
++    fscanf(fp, "%63s", tmp);
+     counter = atoi(tmp);
+ 
+     while ((strcmp(tmp, "WMCUBE_LINES") != 0)
+@@ -1274,7 +1280,7 @@ int loadobj(char *filename)
+ 	    fclose(fp);
+ 	    exit(0);
+ 	}
+-	fscanf(fp, "%s", tmp);
++	fscanf(fp, "%63s", tmp);
+ 
+ 	if (feof(fp)) {
+ 	    printf
+@@ -1623,6 +1629,9 @@ int calc_cpu_total()
+ }
+ 
+ #elif defined OPENBSD
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/dkstat.h>
+ 
+ int init_calc_cpu()
+ {
+@@ -1631,11 +1640,34 @@ int init_calc_cpu()
+ 
+ int calc_cpu_total()
+ {
+-    double avenrun[3];
++    int total, used, t=0;
++    static int previous_total = 0, previous_used = 0;
++    int cpu,nice,system,idle;
++    unsigned long int cpu_time[CPUSTATES];
+ 
+-    (void) getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
+-    return (((5.0 * avenrun[0] + 0.5) > 50) ? 50
+-	    : (5.0 * avenrun[0] + 0.5)) * 2;
++    int mib[2];
++    size_t size;
++
++    mib[0] = CTL_KERN;
++    mib[1] = KERN_CPTIME;
++    size = sizeof (cpu_time);
++
++    if (sysctl(mib, 2, &cpu_time, &size, NULL, 0) < 0)
++	return 0;
++
++    cpu = cpu_time[CP_USER];
++    nice = cpu_time[CP_NICE];
++    system = cpu_time[CP_SYS];
++    idle = cpu_time[CP_IDLE];
++
++    used = cpu + system + use_nice*nice;
++    total = used + idle + (1-use_nice)*nice;
++
++    t = 100 * (double)(used - previous_used) / (double)(total - previous_total);
++    previous_total = total;
++    previous_used = used;
++
++    return t;
+ }
+ 
+ 

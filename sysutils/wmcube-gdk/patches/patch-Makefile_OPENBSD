@@ -1,0 +1,67 @@
+$OpenBSD: patch-Makefile_OPENBSD,v 1.1.1.1 2001/08/28 14:32:49 wilfried Exp $
+--- Makefile.OPENBSD.orig	Sun Oct  8 22:38:46 2000
++++ Makefile.OPENBSD	Tue Aug 28 10:42:27 2001
+@@ -1,37 +1,26 @@
+-CC = gcc
+-OS = -DOPENBSD
+-
+-LIBDIR = -L/usr/X11R6/lib -L./libdocapp/
+-
+-# Edit OSLIBS as appropriate to include OS specific libraries.
+-
+-OSLIBS = 
+-LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
+-INCLUDES = -I/usr/X11R6/include
+-CFLAGS = -Wall -O2 $(OS) $(INCLUDES)
+-
+-OBJS =	wmcube.o \
+-		../wmgeneral/wmgeneral.o \
+-		../wmgeneral/misc.o \
+-		../wmgeneral/list.o
+-
+-.c.o:
+-	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
+-
+-wmcube: $(OBJS)
+-	$(CC) -o wmcube $^ -lXext $(LIBDIR) $(LIBS) $>
+-
+-all:: wmcube
+-
+-clean::
+-	for i in $(OBJS) ; do \
+-		rm -f $$i ; \
+-	done
+-	rm -f wmcube
+-	rm -f *~
+-
+-install:: wmcube
+-	cp -f wmcube /usr/local/bin/
+-	chmod 755 /usr/local/bin/wmcube
+-	chown root:root /usr/local/bin/wmcube
+-	@echo "wmCube installation finished..."
++LDFLAGS += `gtk-config --libs`
++CFLAGS += -DOPENBSD `gtk-config --cflags`
++
++OBJS =	wmcube.o
++
++.c.o:
++	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
++
++wmcube: $(OBJS)
++	$(CC) -o wmcube $(OBJS) $(LDFLAGS)
++
++
++all:: wmcube
++
++clean::
++	for i in $(OBJS) ; do \
++		rm -f $$i ; \
++	done
++	rm -f wmcube
++	rm -f *~
++
++install:: wmcube
++	cp -f wmcube /usr/local/bin/
++	chmod 755 /usr/local/bin/wmcube
++	chown root:root /usr/local/bin/wmcube
++	@echo "wmCube installation finished..."
