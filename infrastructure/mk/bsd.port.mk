@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.387 2001/04/04 09:55:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.388 2001/04/08 16:49:26 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -590,9 +590,9 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
-	@echo "@comment name="`cd ${.CURDIR} && exec make package-name FULL_PACKAGE_NAME=Yes` >$@.tmp
++	@echo "@comment name=${PKGPATH}/${FULLPKGNAME} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
 .if defined(NEW_DEPENDS)
-	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >$@.tmp
+	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >>$@.tmp
 .endif
 .if defined(NO_SHARED_LIBS)
 	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
