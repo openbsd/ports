@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: uvscan_update,v 1.3 2002/07/09 20:32:02 jakob Exp $
+# $OpenBSD: uvscan_update,v 1.4 2003/08/26 17:19:43 jakob Exp $
 
 PATH=/bin:/usr/bin; export PATH
 URLBASE=http://download.nai.com/products/datfiles/4.x/nai
@@ -8,7 +8,8 @@ FILES="clean.dat internet.dat names.dat scan.dat"
 
 cd @PREFIX@/libexec/uvscan
 
-AVVER=`ftp -o - $URLBASE/readme.txt | head -1 | cut -d' ' -f7`
+AVVER=`ftp -o - $URLBASE/readme.txt 2>/dev/null | grep "DAT Version:" | sed -e 's/^.*[^0-9]\(4[0-9]*\)[^0-9].*$/\1/'`
+
 DISTFILE=dat-$AVVER.tar
 
 if [ ! -f $DISTFILE ]; then
