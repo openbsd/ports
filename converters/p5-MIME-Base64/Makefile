@@ -1,9 +1,11 @@
-#   $OpenBSD: Makefile,v 1.4 1999/01/14 01:39:01 angelos Exp $
+#   $OpenBSD: Makefile,v 1.5 1999/03/09 05:55:44 marc Exp $
 #
 
 DISTNAME=       MIME-Base64-2.10
 PKGNAME=        p5-MIME-Base64-2.10
 CATEGORIES=	converters perl5
+
+#BROKEN=	versiopn 2.11 is the only version on the CPAN sites
 
 MAINTAINER=	angelos@openbsd.org
 
