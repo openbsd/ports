@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 02:20:12 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/23 21:58:00 brad Exp $
 
 DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro
-NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/
+
+NO_CDROM=	"NOFEE:	Can not sell"
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -32,28 +33,28 @@ do-install:
 	 ${INSTALL_DATA} XEphem ${PREFIX}/lib/X11/app-defaults)
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
 	@${MKDIR} ${PREFIX}/lib/X11/xephem/auxil
-	@( cd ${WRKSRC}/GUI/xephem/auxil; \
+	@(cd ${WRKSRC}/GUI/xephem/auxil; \
 	   for f in *; do \
 	     ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/auxil; \
-	   done )
+	   done)
 	@${MKDIR} ${PREFIX}/lib/X11/xephem/catalogs
-	@( cd ${WRKSRC}/GUI/xephem/catalogs; \
+	@(cd ${WRKSRC}/GUI/xephem/catalogs; \
 	   for f in *; do \
 	     ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/catalogs; \
-	   done )
+	   done)
 	@${MKDIR} ${PREFIX}/lib/X11/xephem/tools
-	@( cd ${WRKSRC}/GUI/xephem/tools; \
+	@(cd ${WRKSRC}/GUI/xephem/tools; \
 	   for f in *; do \
 	     if [ -d $$f ]; then \
 	       ${MKDIR} ${PREFIX}/lib/X11/xephem/tools/$$f; \
-	       ( cd $$f; \
+	       (cd $$f; \
 	         for i in *; do \
 	           ${INSTALL_DATA} $$i ${PREFIX}/lib/X11/xephem/tools/$$f; \
-	         done ) \
+	         done) \
 	     else \
 	       ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/tools; \
 	     fi; \
-	   done )
+	   done)
 	@${ECHO} ""
 	@${ECHO} "*** The initial auxil, catalogs, and tools files have"
 	@${ECHO} "*** been placed in ${PREFIX}/lib/X11/xephem.  Move them"
