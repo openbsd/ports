@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/19 07:27:42 kevlo Exp $
+${P5ARCH}/Bit/Vector.pm
+${P5ARCH}/Bit/Vector.pod
+${P5ARCH}/Bit/Vector/Overload.pm
+${P5ARCH}/Bit/Vector/Overload.pod
+${P5ARCH}/Carp/Clan.pm
+${P5ARCH}/Carp/Clan.pod
+${P5ARCH}/auto/Bit/Vector/Vector.bs
+${P5ARCH}/auto/Bit/Vector/Vector.so
+man/man3p/Bit::Vector.3p
+man/man3p/Bit::Vector::Overload.3p
+man/man3p/Carp::Clan.3p
+@dirrm ${P5ARCH}/auto/Bit/Vector
+@dirrm ${P5ARCH}/Bit/Vector
