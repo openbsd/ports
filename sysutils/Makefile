@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2001/09/13 21:38:39 todd Exp $
+# $OpenBSD: Makefile,v 1.39 2001/09/27 17:31:44 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += idled
      SUBDIR += libretto-config
      SUBDIR += lsof
+     SUBDIR += mergemaster
      SUBDIR += mkhybrid
      SUBDIR += mtools
      SUBDIR += nut
