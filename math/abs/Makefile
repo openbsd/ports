@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/20 01:01:34 kevlo Exp $
 
 COMMENT=	"free spreadsheet with graphical user interface"
 
@@ -17,6 +17,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www.ping.be/bertin/
+
+USE_X11=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abs
