@@ -1,0 +1,4 @@
+SHELL=/bin/sh
+CFLAGS+=-I/usr/X11R6/include -I/usr/local/include -I../libtp
+LIBS=-lm -lXpm -L/usr/local/lib -lgdbm -L../libtp -ltp
+LIBTP=libtp

@@ -1,0 +1,11 @@
+--- src/runtime/fxposix.ri.orig	Tue Sep 26 09:37:21 2000
++++ src/runtime/fxposix.ri	Thu Oct  5 11:31:12 2000
+@@ -1599,7 +1599,7 @@ function{0,1} wait(pid, options)
+ #ifdef Linux
+       if (WIFSIGNALED(status) && status & 0200 )	/* core dump */
+ #else
+-#if !defined(FreeBSD) && defined(BSD_4_4_LITE) || (defined(BSD) && defined(SUN))
++#if !defined(FreeBSD) && !defined(HAS_WCOREDUMP) && defined(BSD_4_4_LITE) || (defined(BSD) && defined(SUN))
+       if (WIFSIGNALED(status) && ((union __wait*)&status)->w_T.w_Coredump)
+ #else
+       if (WCOREDUMP(status))

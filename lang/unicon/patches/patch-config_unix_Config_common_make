@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_unix_Config_common_make,v 1.1.1.1 2000/10/08 18:25:03 espie Exp $
+--- config/unix/Config/common.make.orig	Sat Sep  9 02:52:49 2000
++++ config/unix/Config/common.make	Thu Oct  5 00:13:39 2000
+@@ -21,9 +21,7 @@ libtp:
+ 	-(test -f ../../NoRanlib) || (ranlib ../../bin/libtp.a)
+ 
+ xpm:
+-	cd ../xpm/lib; $(MAKE) libXpm.a
+-	cp ../xpm/lib/libXpm.a ../../bin
+-	-(test -f ../../NoRanlib) || (ranlib ../../bin/libXpm.a)
++	touch xpm
+ 
+ $(OBJS): ../h/define.h ../h/config.h ../h/cstructs.h ../h/mproto.h  ../h/path.h\
+ 	  ../h/typedefs.h ../h/proto.h ../h/cpuconf.h
