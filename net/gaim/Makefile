@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2004/01/27 01:03:54 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2004/02/02 02:10:19 brad Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	gaim-0.75
 PKGNAME=	${DISTNAME}p1
@@ -25,8 +27,12 @@ BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-nas --disable-perl --disable-tcl --disable-tk \
-		 --disable-gnutls --disable-nss --enable-openssl
+CONFIGURE_ARGS+= --disable-gnutls \
+		 --disable-nas \
+		 --disable-nss \
+		 --disable-tcl \
+		 --disable-tk \
+		 --enable-openssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -40,17 +46,17 @@ LIB_DEPENDS+=	audiofile::devel/libaudiofile \
 CONFIGURE_ARGS+= --disable-audio
 .endif
 
+.if ${FLAVOR:L:Mdebug}
+CFLAGS= -O0
+CONFIGURE_ARGS+=--enable-debug
+
+INSTALL_STRIP=
+.endif
+
 .if ${FLAVOR:L:Mgtkspell}
 LIB_DEPENDS+=	gtkspell::textproc/gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
-.endif
-
-.if ${FLAVOR:L:Mdebug}
-CFLAGS=	-O0
-CONFIGURE_ARGS+=--enable-debug
-
-INSTALL_STRIP=
 .endif
 
 post-extract:
