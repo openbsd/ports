@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_t1fonts_c,v 1.1 2003/07/23 23:15:16 brad Exp $
+--- src/t1fonts.c.orig	Sun Jul 20 19:37:58 2003
++++ src/t1fonts.c	Sun Jul 20 19:38:35 2003
+@@ -89,7 +89,7 @@ int init_t1(void)
+         return (RETURN_FAILURE);
+     }
+     
+-    nfonts = T1_Get_no_fonts();
++    nfonts = T1_GetNoFonts();
+     if (nfonts < 1) {
+         return (RETURN_FAILURE);
+     }

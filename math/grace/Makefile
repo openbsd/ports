@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2003/03/31 16:58:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2003/07/23 23:15:16 brad Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
 
 DISTNAME=	grace-5.1.12
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png \
-		t1.3::devel/t1lib \
+		t1.5::devel/t1lib \
 		tiff.35::graphics/tiff \
 		pdf.2::print/pdflib
 
