@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 16:33:39 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/11 16:30:13 lebel Exp $
 bin/zangband
 share/zangband/apex/readme.txt
 share/zangband/apex/z_scores.raw
@@ -116,29 +116,14 @@ share/zangband/pref/xtra-gcu.prf
 share/zangband/pref/xtra-new.prf
 share/zangband/pref/xtra-xxx.prf
 @exec mkdir -p %D/share/zangband/xtra
-@dirrm share/zangband/xtra
-@exec mkdir -p %D/share/zangband/user
-@dirrm share/zangband/user
 @exec mkdir -p %D/share/zangband/script
-@dirrm share/zangband/script
-@exec mkdir -p %D/share/zangband/save
-@dirrm share/zangband/pref
 @exec mkdir -p %D/share/zangband/info
+@dirrm share/zangband/xtra
+@dirrm share/zangband/script
+@dirrm share/zangband/pref
 @dirrm share/zangband/info
+@dirrm share/zangband/apex
 @dirrm share/zangband/help
 @dirrm share/zangband/file
 @dirrm share/zangband/edit
-@exec mkdir -p %D/share/zangband/data
-@exec mkdir -p %D/share/zangband/bone
-@exec chmod 0775 %D/share/zangband/apex
-@exec chmod 0775 %D/share/zangband/data
-@exec chmod 0775 %D/share/zangband/save
-@exec chmod 0775 %D/share/zangband/user
-@unexec rm -f %D/share/zangband/apex/*
-@unexec rm -f %D/share/zangband/data/*
-@unexec rm -f %D/share/zangband/save/*
-@dirrm share/zangband/save
-@dirrm share/zangband/data
-@dirrm share/zangband/bone
-@dirrm share/zangband/apex
 @dirrm share/zangband
