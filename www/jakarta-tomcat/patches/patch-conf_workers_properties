@@ -1,0 +1,28 @@
+$OpenBSD: patch-conf_workers_properties,v 1.1.1.1 2001/06/17 12:18:17 reinhard Exp $
+--- conf/workers.properties.orig	Tue Dec 12 22:36:26 2000
++++ conf/workers.properties	Fri May 18 15:24:26 2001
+@@ -40,20 +40,20 @@
+ # installed tomcat. This is where you have your conf, webapps and lib
+ # directories.
+ #
+-workers.tomcat_home=c:\jakarta-tomcat
++workers.tomcat_home=PREFIX/tomcat
+ 
+ #
+ # workers.java_home should point to your Java installation. Normally
+ # you should have a bin and lib directories beneath it.
+ #
+-workers.java_home=c:\jdk1.2.2
++workers.java_home=JAVA_HOME
+ 
+ #
+ # You should configure your environment slash... ps=\ on NT and / on UNIX
+ # and maybe something different elsewhere.
+ #
+-ps=\
+-# ps=/
++#ps=\
++ps=/
+ 
+ #
+ #------ ADVANCED MODE ------------------------------------------------
