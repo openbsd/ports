@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_kernel_qt_x11_h,v 1.1 2003/04/10 16:58:20 pvalchev Exp $
---- src/kernel/qt_x11.h.orig	Mon Apr  7 02:14:10 2003
-+++ src/kernel/qt_x11.h	Mon Apr  7 02:14:51 2003
-@@ -73,6 +73,7 @@
+$OpenBSD: patch-src_kernel_qt_x11_h,v 1.2 2004/11/06 20:32:09 naddy Exp $
+--- src/kernel/qt_x11.h.orig	Mon Oct 29 15:21:14 2001
++++ src/kernel/qt_x11.h	Sat Nov  6 21:04:50 2004
+@@ -73,6 +73,8 @@
  #include <X11/Xatom.h>
  
  #ifdef QT_XFT
-+#include <freetype2/freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
  #include <X11/Xft/Xft.h>
  #endif
  
