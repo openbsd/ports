@@ -1,31 +1,32 @@
---- vncserver.orig	Wed Jul 15 08:40:23 1998
-+++ vncserver	Wed Oct  7 20:05:26 1998
-@@ -46,13 +46,23 @@
+$OpenBSD: patch-vncserver,v 1.1 2001/05/22 19:30:17 matt Exp $
+--- vncserver.orig	Thu Oct 26 11:16:37 2000
++++ vncserver	Tue May 22 14:19:07 2001
+@@ -46,13 +46,23 @@ $defaultXStartup
         "xterm -geometry 80x24+10+10 -ls -title \"\$VNCDESKTOP Desktop\" &\n".
         "twm &\n");
  
 +$defaultFontPath
 +    = (
-+	"/usr/X11R6/lib/X11/fonts/Type1/,".
-+	"/usr/X11R6/lib/X11/fonts/Speedo/,".
-+	"/usr/X11R6/lib/X11/fonts/cyrillic/,".
-+	"/usr/X11R6/lib/X11/fonts/misc/,".
-+	"/usr/X11R6/lib/X11/fonts/75dpi/,".
-+	"/usr/X11R6/lib/X11/fonts/100dpi/"
-+	);
++       "/usr/X11R6/lib/X11/fonts/Type1/,".
++       "/usr/X11R6/lib/X11/fonts/Speedo/,".
++       "/usr/X11R6/lib/X11/fonts/cyrillic/,".
++       "/usr/X11R6/lib/X11/fonts/misc/,".
++       "/usr/X11R6/lib/X11/fonts/75dpi/,".
++       "/usr/X11R6/lib/X11/fonts/100dpi/"
++       );
 +
  chop($host = `uname -n`);
  
  
  # Check command line options
  
- &ParseOptions("-geometry",1,"-depth",1,"-pixelformat",1,"-name",1,"-help",0,
--	      "-kill",1);
-+	      "-kill",1,"-fp",1);
+ &ParseOptions("-geometry",1,"-depth",1,"-pixelformat",1,"-name",1,"-kill",1,
+-	      "-help",0,"-h",0,"--help",0);
++	      "-help",0,"-h",0,"--help",0,"-fp",1);
  
- &Usage() if ($opt{'-help'});
+ &Usage() if ($opt{'-help'} || $opt{'-h'} || $opt{'--help'});
  
-@@ -74,6 +84,26 @@
+@@ -74,6 +84,26 @@ if ($opt{'-pixelformat'}) {
  }
  
  &CheckGeometryAndDepth();
@@ -52,7 +53,7 @@
  
  if ($opt{'-name'}) {
      $desktopName = $opt{'-name'};
-@@ -143,8 +173,8 @@
+@@ -145,8 +175,8 @@ $cmd .= " -rfbauth $vncUserDir/passwd";
  $cmd .= " -rfbport $vncPort";
  
  # Add font path and color database stuff here, e.g.:
@@ -63,12 +64,11 @@
  # $cmd .= " -co /usr/lib/X11/rgb";
  #
  
-@@ -237,7 +267,7 @@
- {
-     foreach $n (1..99) {
- 	if (&CheckDisplayNumber($n)) {
--	    return $n;
-+	    return $n+0;
- 	}
-     }
-     
+@@ -190,6 +220,7 @@ if (-e "/tmp/.X11-unix/X$displayNumber")
+     $ENV{DISPLAY}= "$host:$displayNumber";
+ }
+ $ENV{VNCDESKTOP}= $desktopName;
++$ENV{XAUTHORITY}= $xauthorityFile;
+ 
+ system("$vncUserDir/xstartup >> " . &quotedString($desktopLog) . " 2>&1 &");
+ 
