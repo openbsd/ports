@@ -1,6 +1,6 @@
---- port/install.sh.in.orig	Sun Jul 15 16:52:44 2001
-+++ port/install.sh.in	Sun Jul 15 16:53:01 2001
-@@ -129,7 +129,7 @@
+--- port/install.sh.in.orig	Mon Oct 12 16:47:50 1998
++++ port/install.sh.in	Wed Jul 31 12:31:40 2002
+@@ -129,7 +129,7 @@ do
  		    test -p $1 >/dev/null 2>&1
  		}
  		;;

@@ -1,6 +1,6 @@
---- faxd/Getty.c++.orig	Mon Nov 19 02:51:56 2001
-+++ faxd/Getty.c++	Mon Nov 19 02:52:10 2001
-@@ -219,7 +219,7 @@
+--- faxd/Getty.c++.orig	Sat Sep 16 07:13:48 2000
++++ faxd/Getty.c++	Wed Jul 31 12:40:10 2002
+@@ -219,7 +219,7 @@ Getty::hangup()
      // NB: this is executed in the parent
      fxStr device = fxStr::format("%s/" | line, _PATH_DEV);
      Sys::chown(device, UUCPLock::getUUCPUid(), UUCPLock::getUUCPGid());

@@ -1,6 +1,6 @@
---- faxd/UUCPLock.c++.orig	Mon Nov 19 02:49:11 2001
-+++ faxd/UUCPLock.c++	Mon Nov 19 02:54:48 2001
-@@ -37,6 +37,7 @@
+--- faxd/UUCPLock.c++.orig	Thu Sep 21 05:24:54 2000
++++ faxd/UUCPLock.c++	Wed Jul 31 12:40:10 2002
+@@ -37,6 +37,7 @@ extern "C" {
  }
  #endif
  #include <pwd.h>
@@ -8,7 +8,7 @@
  
  /*
   * UUCP Device Locking Support.
-@@ -143,10 +144,13 @@
+@@ -143,10 +144,13 @@ UUCPLock::setupIDs()
  {
      if (UUCPuid == (uid_t) -1) {
  	const passwd *pwd = getpwnam("uucp");

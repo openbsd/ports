@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/11/18 17:06:51 d Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/01/27 13:42:48 todd Exp $
 bin/faxalter
 bin/faxcover
 bin/faxmail
@@ -7,18 +7,12 @@ bin/faxstat
 bin/sendfax
 bin/sendpage
 lib/fax/faxcover.ps
+lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
 lib/fax/hfaxd.conf
 lib/fax/hylafax.sh.sample
 lib/fax/pagesizes
 lib/fax/typerules
-libexec/faxgetty
-libexec/faxsend
-libexec/hfaxd
-libexec/lockname
-libexec/ondelay
-libexec/pagesend
-libexec/textfmt
 man/man1/faxalter.1
 man/man1/faxcover.1
 man/man1/faxmail.1
@@ -92,22 +86,29 @@ sbin/faxanswer
 sbin/faxconfig
 sbin/faxcron
 sbin/faxdeluser
+sbin/faxgetty
 sbin/faxinfo
 sbin/faxmodem
 sbin/faxmsg
 sbin/faxq
 sbin/faxqclean
 sbin/faxquit
+sbin/faxsend
 sbin/faxsetup
 sbin/faxsetup.bsdi
 sbin/faxsetup.irix
 sbin/faxsetup.linux
 sbin/faxstate
 sbin/faxwatch
+sbin/hfaxd
 sbin/hylafax
+sbin/lockname
+sbin/ondelay
+sbin/pagesend
 sbin/probemodem
 sbin/recvstats
 sbin/tagtest
+sbin/textfmt
 sbin/tiffcheck
 sbin/tsitest
 sbin/typetest
@@ -215,5 +216,4 @@ hylafax/etc/xferfaxlog
 @dirrm hylafax/bin
 @dirrm hylafax/archive
 @unexec rm -f %D/hylafax/FIFO
-@dirrm /var/spool/hylafax
 @unexec rm %D/hylafax
