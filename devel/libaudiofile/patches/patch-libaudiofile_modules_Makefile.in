@@ -1,0 +1,11 @@
+--- libaudiofile/modules/Makefile.in.orig	Sat Mar  3 11:03:03 2001
++++ libaudiofile/modules/Makefile.in	Sat Mar  3 11:07:04 2001
+@@ -78,7 +78,7 @@
+ 
+ noinst_LTLIBRARIES = libmodules.la
+ 
+-INCLUDES = -I.. -I../../libaudioutil
++INCLUDES = -I$(top_srcdir)/libaudiofile
+ 
+ libmodules_la_SOURCES =  	g711.c g711.h 	pcm.c pcm.h 	rebuffer.c rebuffer.h 	rebuffer.template
+ 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/12/31 19:45:32 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/03 16:34:36 brad Exp $
 
-DISTNAME=	audiofile-0.2.0
+DISTNAME=	audiofile-0.2.1
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
 NEED_VERSION=	1.336
@@ -17,12 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/audiofile.m4 ${PREFIX}/share/aclocal
 
 .include <bsd.port.mk>
