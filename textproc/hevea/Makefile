@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/30 15:48:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/22 18:12:24 espie Exp $
 
 COMMENT=	"LaTeX to html translator"
 
 CATEGORIES=	textproc print
 
-V=1.05
+V=1.06
 # Q Licence 1.0 + LGPL for parts of the runtime
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 BUILD_DEPENDS=	:ocaml-*:lang/ocaml
 
 DISTNAME=	hevea-$V
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/para/hevea/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/moscova/hevea/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
 
