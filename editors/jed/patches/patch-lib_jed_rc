@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_jed_rc,v 1.1 2003/05/14 01:08:05 naddy Exp $
+--- lib/jed.rc.orig	Sun Oct 20 00:55:30 2002
++++ lib/jed.rc	Tue May 13 18:58:53 2003
+@@ -152,7 +152,7 @@ CASE_SEARCH	= 0;    % zero turns off cas
+ %---------------------------------------------------------------------------
+ % C-mode indentation style
+ %---------------------------------------------------------------------------
+-c_set_style ("jed"); % or "linux", "gnu", "bsd", "k&r"
++c_set_style ("knf"); % or "jed" or "linux", "gnu", "bsd", "k&r"
+ 
+ #ifdef IBMPC_SYSTEM
+ % If non-zero, treat file names as case sensitive
+@@ -240,4 +240,21 @@ define dired_hook ()
+ {
+    %local_unsetkey ("^K");
+    %local_setkey ("dired_kill_line", "^K");
++}
++
++define c_set_style_hook (style)
++{  
++   if (strlow(style) == "knf")
++     {
++	TAB_DEFAULT = 8;
++	USE_TABS = 1;
++	ADD_NEWLINE = 1;
++	C_INDENT = 8;
++	C_BRACE = 0;
++	C_BRA_NEWLINE = 0;
++	C_CONTINUED_OFFSET = 0;
++	C_Colon_Offset = 0;
++	C_Class_Offset = 0;
++	C_Comment_Column = 0;
++     }
+ }

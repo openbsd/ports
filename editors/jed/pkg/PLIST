@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/06/07 15:49:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/05/14 01:08:05 naddy Exp $
 bin/jed
+bin/jed-script
 bin/rgrep
 !%%no_x11%%
 @unexec install-info --delete --info-dir=%D/info %D/info/jed.info
@@ -106,8 +107,6 @@ lib/jed/lib/mime.sl
 lib/jed/lib/mini.sl
 lib/jed/lib/minued.sl
 lib/jed/lib/misc.sl
-lib/jed/lib/mkdoc.sl
-lib/jed/lib/mktex.sl
 lib/jed/lib/modehook.sl
 lib/jed/lib/modeinfo.sl
 lib/jed/lib/most.sl
@@ -133,6 +132,8 @@ lib/jed/lib/register.sl
 lib/jed/lib/replace.sl
 lib/jed/lib/rmail.sl
 lib/jed/lib/rot13.sl
+lib/jed/lib/runpgm.sl
+lib/jed/lib/sccs.sl
 lib/jed/lib/search.sl
 lib/jed/lib/seldisp.sl
 lib/jed/lib/sendmail.sl
@@ -150,12 +151,10 @@ lib/jed/lib/tabs.sl
 lib/jed/lib/tclmode.sl
 lib/jed/lib/tex.sl
 lib/jed/lib/texcom.sl
-lib/jed/lib/textmac.sl
 lib/jed/lib/textmode.sl
 lib/jed/lib/tiasm.sl
-lib/jed/lib/tm/linuxdoc.tm
-lib/jed/lib/tm2sgml.sl
 lib/jed/lib/tmisc.sl
+lib/jed/lib/tmmode.sl
 lib/jed/lib/tpascal.sl
 lib/jed/lib/untab.sl
 lib/jed/lib/util.sl
@@ -198,11 +197,11 @@ share/doc/jed/txt/undo.txt
 share/doc/jed/txt/wjed.txt
 share/doc/jed/txt/wordstar.txt
 share/doc/jed/txt/xjed.txt
+share/doc/jed/txt/xrenderfont.txt
 share/doc/jed/txt/yankpop.txt
 @dirrm share/doc/jed/txt
 @dirrm share/doc/jed/manual
 @dirrm share/doc/jed
-@dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib

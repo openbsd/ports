@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2003/01/04 00:05:46 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2003/05/14 01:08:05 naddy Exp $
 
 COMMENT=	"text editor"
 
-DISTNAME=	jed-B0.99-14
-PKGNAME=	jed-0.99.14
+DISTNAME=	jed-0.99-16
+PKGNAME=	jed-0.99.16
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_BACKUP}
-#MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
-#		ftp://ftp.ntua.gr/pub/pub/lang/slang/jed/v0.99 \
-#		ftp://ftp.gigabell.net/pub/Jed/v0.99/ \
-#		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v0.99/
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
+		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
+		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v0.99/
 
 HOMEPAGE=	http://space.mit.edu/~davis/jed/
 

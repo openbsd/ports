@@ -1,6 +1,7 @@
---- src/Makefile.in.orig	Thu Jun  7 11:03:12 2001
-+++ src/Makefile.in	Thu Jun  7 11:08:45 2001
-@@ -168,14 +168,14 @@ distclean: clean
+$OpenBSD: patch-src_Makefile.in,v 1.4 2003/05/14 01:08:05 naddy Exp $
+--- src/Makefile.in.orig	Sun Oct 20 00:55:30 2002
++++ src/Makefile.in	Tue May 13 18:58:53 2003
+@@ -175,14 +175,14 @@ distclean: clean
  	/bin/rm -rf $(OBJDIR) Makefile sysconf.h
  
  install_directories:
@@ -19,7 +20,7 @@
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors
  	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors/Xjed
-@@ -222,23 +222,23 @@ install: all install_directories
+@@ -225,23 +225,23 @@ install: all install_directories
  	done
  	@for i in $(JED_DOC_FILES); \
  	do \
