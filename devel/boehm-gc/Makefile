@@ -13,7 +13,7 @@ MASTER_SITES=	http://reality.sgi.com/employees/boehm_mti/gc_source/
 
 MAINTAINER=	niklas@openbsd.org
 
-EXTRACT_AFTER_ARGS=	|| true
+EXTRACT_AFTER_ARGS=	| /bin/tar -xf - || true
 
 WRKSRC=		${WRKDIR}/gc
 MAN3=		gc.3
