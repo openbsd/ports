@@ -1,20 +1,12 @@
-*** Makefile.in.orig	Sun Aug 10 17:06:15 1997
---- Makefile.in	Sun Aug 10 17:07:03 1997
-***************
-*** 49,55 ****
-  
-  AUTOMAKE_OPTIONS = gnits 1.1k
-  
-! SUBDIRS = lib intl src doc man m4 po
-  
-  acdir = m4
-  ACLOCAL = $(top_srcdir)/aclocal.m4
---- 49,56 ----
-  
-  AUTOMAKE_OPTIONS = gnits 1.1k
-  
-! #SUBDIRS = lib intl src doc man m4 po
-! SUBDIRS = lib intl src man 
-  
-  acdir = m4
-  ACLOCAL = $(top_srcdir)/aclocal.m4
+--- Makefile.in.orig	Thu Apr 22 14:06:03 1999
++++ Makefile.in	Thu Apr 22 14:06:26 1999
+@@ -92,7 +92,8 @@
+ 
+ AUTOMAKE_OPTIONS = gnits 1.2h
+ 
+-SUBDIRS = lib intl src doc man m4 po tests
++#SUBDIRS = lib intl src doc man m4 po tests
++SUBDIRS = lib intl src man po 
+ 
+ # Remove this file here (it is created via configure), not from within intl.
+ DISTCLEANFILES = intl/libintl.h

@@ -19,7 +19,7 @@ NOTES:
    (the latter available from the ports collection).
 
 3. This colorized `ls' program is not the same as the `colorls' program 
-   available from the ports collection.
+   available from the FreeBSD ports collection.
 
 Brian Clapper <bmc@WillsCreek.COM>
 10 August 1997
