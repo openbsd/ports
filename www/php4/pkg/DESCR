@@ -1,10 +1,10 @@
-At the most basic level, PHP can do anything any other CGI program can
-do, such as collect form data, generate dynamic page content, or send
-and receive cookies.
+At the most basic level, PHP can do anything any other CGI program 
+can do, such as collect form data, generate dynamic page content, 
+or send and receive cookies.
 
 PHP also has support for talking to other services using protocols
-such as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open raw
-network sockets and interact using other protocols.
+such as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open 
+raw network sockets and interact using other protocols.
 
 PHP has a number of extra flavors available:
 
@@ -13,6 +13,7 @@ PHP has a number of extra flavors available:
  - imap     Mail and message access functions (IMAP, POP3, NTTP)
  - ldap     Access to LDAP-compliant Directory Services
  - mhash    Hashing functions such as MD5, SHA1, etc
+ - mcrypt   Interface to block and stream encryption algorithms
  - mm       Shared memory support for session storage
  - recode   GNU Recode support for character set conversion
  - snmp     Simple Network Management Protocol access functions

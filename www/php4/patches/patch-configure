@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.3 2000/12/28 17:53:17 avsm Exp $
+--- configure.orig	Thu Dec 28 16:53:29 2000
++++ configure	Thu Dec 28 16:54:06 2000
+@@ -23084,12 +23084,7 @@ fi
+ 
+   LIBS=$old_LIBS
+   LDFLAGS="$old_LDFLAGS"
+-  if test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
+-	cat >> confdefs.h <<\EOF
+-#define HAVE_LIBMCRYPT22 1
+-EOF
+-
+-  elif test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
++  if test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
+     
+  case "ltdl" in
+  c|c_r|pthread*) ;;
+@@ -23102,8 +23097,13 @@ EOF
+   ;;
+   esac
+ 
+-	cat >> confdefs.h <<\EOF
++    cat >> confdefs.h <<\EOF
+ #define HAVE_LIBMCRYPT24 1
++EOF
++
++  elif test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
++    cat >> confdefs.h <<\EOF
++#define HAVE_LIBMCRYPT22 1
+ EOF
+ 
+   else

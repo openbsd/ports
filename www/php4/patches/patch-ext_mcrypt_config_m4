@@ -1,0 +1,25 @@
+$OpenBSD: patch-ext_mcrypt_config_m4,v 1.1 2000/12/28 17:53:17 avsm Exp $
+--- ext/mcrypt/config.m4.orig	Sat Sep  9 12:24:20 2000
++++ ext/mcrypt/config.m4	Thu Dec 28 16:53:51 2000
+@@ -1,4 +1,4 @@
+-dnl $Id: patch-ext_mcrypt_config_m4,v 1.1 2000/12/28 17:53:17 avsm Exp $
++dnl $Id: patch-ext_mcrypt_config_m4,v 1.1 2000/12/28 17:53:17 avsm Exp $
+ dnl config.m4 for extension mcrypt
+ dnl don't forget to call PHP_EXTENSION(mcrypt)
+ 
+@@ -27,11 +27,11 @@ if test "$PHP_MCRYPT" != "no"; then
+   AC_CHECK_LIB(mcrypt, mcrypt_module_open, [LIBS="$LIBS -lltdl"],[ ],)
+   LIBS=$old_LIBS
+   LDFLAGS="$old_LDFLAGS"
+-  if test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
+-	AC_DEFINE(HAVE_LIBMCRYPT22,1,[ ])
+-  elif test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
++  if test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
+     AC_ADD_LIBRARY(ltdl)
+-	AC_DEFINE(HAVE_LIBMCRYPT24,1,[ ])
++    AC_DEFINE(HAVE_LIBMCRYPT24,1,[ ])
++  elif test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
++    AC_DEFINE(HAVE_LIBMCRYPT22,1,[ ])
+   else
+     AC_MSG_ERROR(Sorry, I was not able to diagnose which libmcrypt version you have installed.)
+   fi

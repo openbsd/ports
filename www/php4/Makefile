@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/12/26 23:35:43 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2000/12/28 17:53:16 avsm Exp $
 
 DISTNAME=	php-4.0.4
 PKGNAME=	php4-4.0.4
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-zlib
 
 FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
-FLAVORS+=	gd no_x11 pdflib
+FLAVORS+=	gd no_x11 pdflib mcrypt
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
 FLAVOR?= 
 
@@ -75,6 +75,13 @@ CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
 LIB_DEPENDS+=		ldap.2::databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+.if ${FLAVOR:L:Mmcrypt}
+CONFIGURE_ARGS+=	--with-mcrypt
+LIB_DEPENDS+=		mcrypt.4::security/libmcrypt
+.else
+CONFIGURE_ARGS+=	--without-mcrypt
 .endif
 
 .if ${FLAVOR:L:Mmhash}
