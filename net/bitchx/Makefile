@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/14 05:57:38 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/22 14:52:15 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	ircii-pana-75p3
@@ -15,6 +15,10 @@ BROKEN=                "Currently does not build on Alpha"
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/BitchX
+
+post-extract:
+	@chmod u+x ${WRKSRC}/WinNT/include
+	@chmod u+x ${WRKSRC}/WinNT/source
 
 post-patch:
 	${SED} -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/include/config.h > $(WRKSRC)/include/config.h.new
