@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/23 03:23:48 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/25 04:30:50 djm Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2
 
 USE_GMAKE=		Yes
