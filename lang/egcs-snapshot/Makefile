@@ -3,14 +3,14 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.32 1999/02/20 04:26:13 espie Exp $
+# $OpenBSD: Makefile,v 1.33 1999/02/21 01:04:59 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.60
+NEED_VERSION=1.64
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
