@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/11/30 02:54:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/11/30 23:13:52 brad Exp $
 
 DISTNAME=	gnupg-1.0.0
 CATEGORIES=	security
@@ -18,8 +18,6 @@ MAINTAINER=	markus@openbsd.org
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
