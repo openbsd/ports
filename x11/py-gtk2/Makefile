@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/03 21:44:38 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/10 10:24:16 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -41,7 +41,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk2
 
 pre-build:
 	@perl -pi -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKSRC}/codegen/pygtk-codegen-2.0.in
+		${WRKSRC}/codegen/pygtk-codegen-2.0.in \
+		${WRKSRC}/pygtk-2.0.pc.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
