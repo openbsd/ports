@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/18 13:44:33 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/02/21 20:57:16 alek Exp $
 
 COMMENT=	"Internet Image (or other data) Multicaster (and receiver)"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m X11
 
 LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \
 		tk80.1.5:tk-8.0.*:x11/tk/8.0
