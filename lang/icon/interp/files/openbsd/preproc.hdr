@@ -6,5 +6,5 @@
 #
 D=NOTHING
 CC=cc
-CFLAGS+= -O -D$D 
+CFLAGS+= -D$D 
 SHELL=/bin/sh

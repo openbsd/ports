@@ -1,0 +1,21 @@
+Icon is a program language that looks superficially like Pascal,
+but which supports generators. It also include some very reasonable
+X11 support.
+
+The compiler for icon is highly experimental, and not very wieldy.
+- it does not support separate compilation.
+- it creates somewhat largish C files for all but the smallest projects.
+For instance, an icon project of 3000 lines translates to a C file of
+90000 lines.
+
+It does feature some static type analysis, which occasionally causes bugs,
+as not all rules in the languages have been checked. Unfortunately, it
+does not feature specialized code for arithmetic, where it would really go
+fast if it were using C arithmetic.
+
+Nonetheless, the resulting code is about twice as fast as the interpreted
+code.
+
+There is a no_x11 flavor, that does not require X11 to run.
+
+WWW: ${HOMEPAGE}

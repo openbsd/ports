@@ -1,0 +1,5 @@
+#ifdef Graphics
+#define COpts "-O2 -I/usr/X11R6/include -L/usr/X11R6/lib"
+#else
+#define COpts "-O2"
+#endif

@@ -20,4 +20,3 @@
 #define AllowConst
 #define SysOpt
 #define CComp "gcc"
-#define COpts "-O2 -I/usr/X11R6/include"

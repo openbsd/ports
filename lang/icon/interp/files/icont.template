@@ -1,0 +1,6 @@
+#!/bin/sh
+: ${PREFIX:=@PREFIX@}
+IPATH="${IPATH-} $PREFIX/share/ipl/ucode"
+LPATH="${LPATH-} $PREFIX/share/ipl/ginclude $PREFIX/share/ipl/include"
+export IPATH LPATH
+exec $PREFIX/lib/icon/icont "$@"
