@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/09/19 07:28:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.35 2002/11/12 09:08:53 pvalchev Exp $
 #
 
      SUBDIR += R
@@ -9,7 +9,6 @@
      SUBDIR += calc
      SUBDIR += calcoo
 #    SUBDIR += calctool
-     SUBDIR += cassowary
      SUBDIR += coq
 #    SUBDIR += eispack
 #    SUBDIR += eval
