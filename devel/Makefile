@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.116 2002/01/26 18:43:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.117 2002/02/03 03:05:59 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
-#
 
      SUBDIR += ElectricFence
      SUBDIR += ORBit
@@ -80,6 +79,7 @@
      SUBDIR += p5-Class-Date
      SUBDIR += p5-Class-Loader  
      SUBDIR += p5-Class-MethodMaker
+     SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Flow
