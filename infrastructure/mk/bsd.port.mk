@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.212 2000/03/03 14:23:10 turan Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.213 2000/03/03 17:51:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1729,6 +1729,62 @@ plist: install
 # You probably won't need to touch these
 ################################################################
 
+# mirroring utilities
+.if defined(DIST_SUBDIR)
+_ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
+.else
+_ALLFILES=${ALLFILES}
+.endif
+
+fetch-makefile:
+.if ${MIRROR_DISTFILE:L} == "yes"
+	@echo "all:: "`make package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
+.endif
+
+_fetch-makefile-helper:
+# write generic package dependencies
+	@name=`make package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`; \
+	echo ".PHONY: $${name}"; \
+	case '${RECURSIVE_FETCH_LIST:L}' in yes) \
+	  echo "$${name}:: "`make depends-list package-depends FULL_PACKAGE_NAME=Yes |${_SORT_DEPENDS}`;; \
+	esac; \
+	echo "$${name}:: ${_ALLFILES}"
+.for _F in ${_ALLFILES}
+	@echo '${_F}: $$F'
+	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
+.  if defined(DIST_SUBDIR)
+	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
+.  endif
+	@echo '\\'
+	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
+	${_SITE_SELECTOR}; \
+	echo "\t SITES=\"$$sites\" \\"
+.  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
+	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	  echo >&2 'Missing checksum file: ${CHECKSUM_FILE}'; \
+	  echo '\t ERROR="no checksum file" \\'; \
+	else \
+	  for c in ${PREFERRED_CIPHERS}; do \
+		if set -- `grep -i "^$$c (${_F})" ${CHECKSUM_FILE}`; then break; fi; \
+	  done; \
+	  case "$$4" in \
+		"") \
+		  echo >&2 "No checksum recorded for ${_F}."; \
+		  echo '\t ERROR="no checksum" \\';; \
+		"IGNORE") \
+		  echo >&2 "Checksum for ${_F} is IGNORE in ${CHECKSUM_FILE}"; \
+		  echo >&2 'but file is not in $${IGNORE_FILES}'; \
+		  echo '\t ERROR="IGNORE inconsistent" \\';; \
+		*) \
+		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" \\";; \
+	  esac; \
+	fi
+.  endif
+	@echo '\t $${FETCH} "$$@"'
+.endfor
+	@echo
+	
 
 # The README.html target needs full information (this is passed via 
 # depends-list and package-depends)
