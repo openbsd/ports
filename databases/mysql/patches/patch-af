@@ -1,5 +1,5 @@
 --- scripts/safe_mysqld.sh.orig	Mon Jan 10 16:49:29 2000
-+++ scripts/safe_mysqld.sh	Thu Jan 13 13:17:12 2000
++++ scripts/safe_mysqld.sh	Wed Aug  2 00:06:21 2000
 @@ -12,33 +12,9 @@
  
  trap '' 1 2 3 15			# we shouldn't let anyone kill us
@@ -37,6 +37,21 @@
  
  pid_file=$DATADIR/`@HOSTNAME@`.pid
  log=$DATADIR/`@HOSTNAME@`.log
+@@ -104,10 +80,10 @@
+ #export MYSQL_TCP_PORT
+ 
+ # Does this work on all systems?
+-#if type ulimit | grep "shell builtin" > /dev/null
+-#then
+-#  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
+-#fi
++if type ulimit | grep "shell builtin" > /dev/null
++then
++  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
++fi
+ 
+ echo "mysqld started on " `date` >> $err_log
+ while true
 @@ -124,33 +100,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
