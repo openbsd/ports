@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/15 03:59:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:19 marcm Exp $
 
 COMMENT=		"themes collection for GNOME"
 
-DISTNAME=		gnome-themes-2.4.1
+DISTNAME=		gnome-themes-2.6.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-themes/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-themes/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/15 20:35:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/06/23 03:26:12 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -11,12 +11,10 @@ bin/gnome-keybinding-properties
 bin/gnome-keyboard-properties
 bin/gnome-mouse-properties
 bin/gnome-network-preferences
-bin/gnome-settings-daemon
 bin/gnome-sound-properties
 bin/gnome-theme-manager
 bin/gnome-theme-thumbnailer
 bin/gnome-thumbnail-font
-bin/gnome-typing-monitor
 bin/gnome-ui-properties
 bin/gnome-window-properties
 bin/themus-theme-applier
@@ -41,39 +39,31 @@ lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
 libexec/fontilus-context-menu
+libexec/gnome-settings-daemon
 share/application-registry/fontilus.applications
 share/application-registry/themus.applications
 share/applications/gnomecc.desktop
 share/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/control-center-2.0/capplets/at-properties.desktop
 share/control-center-2.0/capplets/background.desktop
-share/control-center-2.0/capplets/behavior.desktop
 share/control-center-2.0/capplets/default-applications.desktop
 share/control-center-2.0/capplets/file-types.desktop
 share/control-center-2.0/capplets/font-properties.desktop
 share/control-center-2.0/capplets/gnome-network-preferences.desktop
+share/control-center-2.0/capplets/gnome-settings-mouse.desktop
+share/control-center-2.0/capplets/gnome-settings-sound.desktop
+share/control-center-2.0/capplets/gnome-ui-properties.desktop
 share/control-center-2.0/capplets/gtk-theme-selector.desktop
 share/control-center-2.0/capplets/keybinding.desktop
 share/control-center-2.0/capplets/keyboard.desktop
-share/control-center-2.0/capplets/mouse.desktop
-share/control-center-2.0/capplets/sound.desktop
 share/control-center-2.0/capplets/window-properties.desktop
-share/control-center-2.0/icons/accessibility-directory.png
-share/control-center-2.0/icons/accessibility-keyboard-capplet.png
-share/control-center-2.0/icons/at-enable-capplet.png
-share/control-center-2.0/icons/background-capplet.png
-share/control-center-2.0/icons/behavior-capplet.png
-share/control-center-2.0/icons/default-applications-capplet.png
-share/control-center-2.0/icons/font-capplet.png
-share/control-center-2.0/icons/gnome-network-capplet.png
-share/control-center-2.0/icons/mouse-capplet.png
-share/control-center-2.0/icons/sound-capplet.png
-share/control-center-2.0/icons/window-capplet.png
+share/control-center-2.0/interfaces/acme.glade
+share/control-center-2.0/interfaces/apply-font.glade
 share/control-center-2.0/interfaces/at-enable-dialog.glade
-share/control-center-2.0/interfaces/background-properties.glade
 share/control-center-2.0/interfaces/file-types-properties.glade
 share/control-center-2.0/interfaces/font-properties.glade
 share/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade
+share/control-center-2.0/interfaces/gnome-background-properties.glade
 share/control-center-2.0/interfaces/gnome-default-applications-properties.glade
 share/control-center-2.0/interfaces/gnome-keybinding-properties.glade
 share/control-center-2.0/interfaces/gnome-keyboard-properties.glade
@@ -89,18 +79,16 @@ share/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
 share/control-center-2.0/pixmaps/accessibility-keyboard-slowkey.png
 share/control-center-2.0/pixmaps/accessibility-keyboard-stickykey.png
 share/control-center-2.0/pixmaps/accessibility-keyboard-togglekey.png
-share/control-center-2.0/pixmaps/at-enable-capplet.png
+share/control-center-2.0/pixmaps/acme-brightness.png
+share/control-center-2.0/pixmaps/acme-eject.png
 share/control-center-2.0/pixmaps/at-startup.png
 share/control-center-2.0/pixmaps/at-support.png
-share/control-center-2.0/pixmaps/bar-disabled.png
-share/control-center-2.0/pixmaps/bar-green.png
-share/control-center-2.0/pixmaps/bar-red.png
-share/control-center-2.0/pixmaps/bar.png
 share/control-center-2.0/pixmaps/double-click-maybe.png
 share/control-center-2.0/pixmaps/double-click-off.png
 share/control-center-2.0/pixmaps/double-click-on.png
+share/control-center-2.0/pixmaps/gnome-speakernotes-muted.png
+share/control-center-2.0/pixmaps/gnome-speakernotes.png
 share/control-center-2.0/pixmaps/keyboard-bell.png
-share/control-center-2.0/pixmaps/keyboard-capplet.png
 share/control-center-2.0/pixmaps/keyboard-cursor.png
 share/control-center-2.0/pixmaps/keyboard-repeat.png
 share/control-center-2.0/pixmaps/keyboard-volume.png
@@ -110,9 +98,6 @@ share/control-center-2.0/pixmaps/mouse-cursor-white-large.png
 share/control-center-2.0/pixmaps/mouse-cursor-white.png
 share/control-center-2.0/pixmaps/mouse-left.png
 share/control-center-2.0/pixmaps/mouse-right.png
-share/control-center-2.0/pixmaps/ocean-stripes.png
-share/control-center-2.0/pixmaps/sound-capplet.png
-share/control-center-2.0/pixmaps/stop.png
 share/control-center-2.0/pixmaps/subpixel-bgr.png
 share/control-center-2.0/pixmaps/subpixel-rgb.png
 share/control-center-2.0/pixmaps/subpixel-vbgr.png
@@ -125,7 +110,6 @@ share/control-center-2.0/xrdb/General.ad
 share/control-center-2.0/xrdb/Motif.ad
 share/control-center-2.0/xrdb/Tk.ad
 share/control-center-2.0/xrdb/Xaw.ad
-share/control-center/apply-font.glade
 share/gnome-2.0/ui/gnomecc-ui.xml
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
@@ -134,8 +118,10 @@ share/gnome/vfolders/Accessibility.directory
 share/gnome/vfolders/Advanced.directory
 share/gnome/vfolders/font-method.directory
 share/gnome/vfolders/theme-method.directory
+share/icons/gnome/48x48/apps/accessibility-directory.png
 share/idl/ConfigArchiver.idl
 share/idl/GNOME_SettingsDaemon.idl
+share/locale/af/LC_MESSAGES/control-center-2.0.mo
 share/locale/am/LC_MESSAGES/control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/control-center-2.0.mo
 share/locale/az/LC_MESSAGES/control-center-2.0.mo
@@ -148,14 +134,17 @@ share/locale/cy/LC_MESSAGES/control-center-2.0.mo
 share/locale/da/LC_MESSAGES/control-center-2.0.mo
 share/locale/de/LC_MESSAGES/control-center-2.0.mo
 share/locale/el/LC_MESSAGES/control-center-2.0.mo
+share/locale/en_CA/LC_MESSAGES/control-center-2.0.mo
 share/locale/en_GB/LC_MESSAGES/control-center-2.0.mo
 share/locale/es/LC_MESSAGES/control-center-2.0.mo
 share/locale/et/LC_MESSAGES/control-center-2.0.mo
+share/locale/eu/LC_MESSAGES/control-center-2.0.mo
 share/locale/fa/LC_MESSAGES/control-center-2.0.mo
 share/locale/fi/LC_MESSAGES/control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/control-center-2.0.mo
 share/locale/ga/LC_MESSAGES/control-center-2.0.mo
 share/locale/gl/LC_MESSAGES/control-center-2.0.mo
+share/locale/gu/LC_MESSAGES/control-center-2.0.mo
 share/locale/he/LC_MESSAGES/control-center-2.0.mo
 share/locale/hi/LC_MESSAGES/control-center-2.0.mo
 share/locale/hr/LC_MESSAGES/control-center-2.0.mo
@@ -174,6 +163,7 @@ share/locale/ms/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo
+share/locale/pa/LC_MESSAGES/control-center-2.0.mo
 share/locale/pl/LC_MESSAGES/control-center-2.0.mo
 share/locale/pt/LC_MESSAGES/control-center-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/control-center-2.0.mo
@@ -196,159 +186,28 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 share/mime-info/fontilus.keys
 share/mime-info/fontilus.mime
 share/mime-info/themus.keys
-share/pixmaps/accessibility-keyboard-capplet.png
-share/pixmaps/at-enable-capplet.png
-share/pixmaps/background-capplet.png
-share/pixmaps/behavior-capplet.png
 share/pixmaps/control-center2.png
-share/pixmaps/default-applications-capplet.png
-share/pixmaps/font-capplet.png
-share/pixmaps/gnome-ccthemes.png
 share/pixmaps/gnomecc-2/active.png
 share/pixmaps/gnomecc-2/bcg_top.png
 share/pixmaps/gnomecc-2/blank.png
 share/pixmaps/gnomecc-2/title.png
-share/pixmaps/keyboard-capplet.png
-share/pixmaps/keyboard-shortcut.png
-share/pixmaps/mouse-capplet.png
-share/pixmaps/window-capplet.png
 share/schemas/control-center2/apps_gnome_settings_daemon_default_editor.schemas
+share/schemas/control-center2/apps_gnome_settings_daemon_keybindings.schemas
 share/schemas/control-center2/apps_gnome_settings_daemon_screensaver.schemas
 share/schemas/control-center2/desktop_gnome_font_rendering.schemas
+share/schemas/control-center2/desktop_gnome_peripherals_keyboard_xkb.schemas
+share/schemas/control-center2/fontilus.schemas
+share/schemas/control-center2/themus.schemas
 %%SHARED%%
 @dirrm share/schemas/control-center2
 @dirrm share/pixmaps/gnomecc-2
-@dirrm share/pixmaps
-@dirrm share/mime-info
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/wa/LC_MESSAGES
-@dirrm share/locale/wa
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/th/LC_MESSAGES
-@dirrm share/locale/th
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sq/LC_MESSAGES
-@dirrm share/locale/sq
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/mn/LC_MESSAGES
-@dirrm share/locale/mn
-@dirrm share/locale/ml/LC_MESSAGES
-@dirrm share/locale/ml
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/is/LC_MESSAGES
-@dirrm share/locale/is
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/fa/LC_MESSAGES
-@dirrm share/locale/fa
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cy/LC_MESSAGES
-@dirrm share/locale/cy
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bn/LC_MESSAGES
-@dirrm share/locale/bn
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/be/LC_MESSAGES
-@dirrm share/locale/be
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale/ar/LC_MESSAGES
-@dirrm share/locale/ar
-@dirrm share/locale/am/LC_MESSAGES
-@dirrm share/locale/am
-@dirrm share/locale
-@dirrm share/idl
+@dirrm share/icons/gnome/48x48/apps
 @dirrm share/gnome/cursor-fonts
-@dirrm share/gnome
+@exec mkdir -p %D/share/gnome-background-properties
+@dirrm share/gnome-background-properties
 @dirrm share/control-center-2.0/xrdb
 @dirrm share/control-center-2.0/pixmaps
 @dirrm share/control-center-2.0/interfaces
-@dirrm share/control-center-2.0/icons
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
-@dirrm share/control-center
-@dirrm share/applications
-@dirrm share/application-registry
 @dirrm lib/window-manager-settings
-@dirrm lib/pkgconfig
-@dirrm lib/bonobo
 @dirrm include/gnome-window-settings-2.0
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:13 marcm Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
-DISTNAME=		gail-1.4.1
+DISTNAME=		gail-1.6.6
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gail/1.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gail/1.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/23 03:26:17 marcm Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
-DISTNAME=		metacity-2.6.3
+DISTNAME=		metacity-2.8.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

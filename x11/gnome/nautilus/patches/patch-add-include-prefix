@@ -1,6 +1,6 @@
-$OpenBSD: patch-add-include-prefix,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
---- add-include-prefix.orig	Thu Aug 15 17:49:04 2002
-+++ add-include-prefix	Thu Aug 15 17:51:13 2002
+$OpenBSD: patch-add-include-prefix,v 1.2 2004/06/23 03:26:18 marcm Exp $
+--- add-include-prefix.orig	2003-09-19 03:04:08.000000000 -0600
++++ add-include-prefix	2004-06-21 00:10:02.000000000 -0600
 @@ -1 +1 @@
--sed -e 's/^/ /' -e 's/ \+$//' -e 's/ \+/ -I /g' -e 's/^ \+//'
+-sed -e 's/^/ /' -e 's/  */ /g' -e 's/ / -I /g' -e 's/ -I $//'
 +sed -e 's/^/ /' -e 's/ / -I /g'

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/22 05:33:53 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/06/23 03:26:14 marcm Exp $
 
 COMMENT=		"user interface components for bonobo"
 
-DISTNAME=		libbonoboui-2.4.3
+DISTNAME=		libbonoboui-2.6.1
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libbonoboui/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libbonoboui/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

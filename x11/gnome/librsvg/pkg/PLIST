@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/03 05:53:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/06/23 03:26:17 marcm Exp $
 bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
-lib/gtk-2.0/2.2.0/engines/libsvg.a
-lib/gtk-2.0/2.2.0/engines/libsvg.la
-lib/gtk-2.0/2.2.0/loaders/svg_loader.a
-lib/gtk-2.0/2.2.0/loaders/svg_loader.la
+lib/gtk-2.0/2.4.0/engines/libsvg.a
+lib/gtk-2.0/2.4.0/engines/libsvg.la
+lib/gtk-2.0/2.4.0/loaders/svg_loader.a
+lib/gtk-2.0/2.4.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
 lib/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg.1
 share/doc/librsvg/html/home.png
-share/doc/librsvg/html/i967.html
+share/doc/librsvg/html/i1073.html
 share/doc/librsvg/html/index.html
 share/doc/librsvg/html/index.sgml
 share/doc/librsvg/html/left.png
 share/doc/librsvg/html/r22.html
-share/doc/librsvg/html/r373.html
-share/doc/librsvg/html/r407.html
+share/doc/librsvg/html/r436.html
+share/doc/librsvg/html/r473.html
 share/doc/librsvg/html/right.png
 share/doc/librsvg/html/rsvg-convenience-functions.html
 share/doc/librsvg/html/rsvg-core-api.html

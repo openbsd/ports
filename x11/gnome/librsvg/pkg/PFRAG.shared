@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/01/03 05:53:38 marcm Exp $
-lib/gtk-2.0/2.2.0/engines/libsvg.so
-lib/gtk-2.0/2.2.0/loaders/svg_loader.so
-lib/librsvg-2.so.7.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/06/23 03:26:17 marcm Exp $
+lib/gtk-2.0/2.4.0/engines/libsvg.so
+lib/gtk-2.0/2.4.0/loaders/svg_loader.so
+lib/librsvg-2.so.8.5
 DYNLIBDIR(%D/lib)

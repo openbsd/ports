@@ -1,22 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2003/10/07 05:48:56 marcm Exp $
---- configure.orig	2003-09-08 07:22:48.000000000 -0700
-+++ configure	2003-09-10 08:17:20.000000000 -0700
-@@ -7131,7 +7131,7 @@ if test -f "$ltmain"; then
-   # careful not to overquote the AC_SUBSTed values.  We take copies of the
-   # variables and quote the copies for generation of the libtool script.
-   for var in echo old_CC old_CFLAGS SED \
--    AR AR_FLAGS CC LD LN_S NM SHELL \
-+    AR AR_FLAGS EGREP CC LD LN_S NM SHELL \
-     reload_flag reload_cmds wl \
-     pic_flag link_static_flag no_builtin_flag export_dynamic_flag_spec \
-     thread_safe_flag_spec whole_archive_flag_spec libname_spec \
-@@ -7238,6 +7238,9 @@ CC=$lt_CC
- # Is the compiler the GNU C compiler?
- with_gcc=$GCC
- 
-+# An ERE matcher.
-+EGREP=$lt_EGREP
-+
- # The linker used to build libraries.
- LD=$lt_LD
- 
+$OpenBSD: patch-configure,v 1.2 2004/06/23 03:26:20 marcm Exp $
+--- configure.orig	2004-06-20 14:33:33.000000000 -0600
++++ configure	2004-06-20 14:33:52.000000000 -0600
+@@ -7706,7 +7706,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH

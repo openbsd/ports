@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2003/10/07 05:48:55 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/06/23 03:26:15 marcm Exp $
 lib/libglade/2.0/libcanvas.so
-lib/libgnomecanvas-2.so.400.0
+lib/libgnomecanvas-2.so.600.1
 DYNLIBDIR(%D/lib)

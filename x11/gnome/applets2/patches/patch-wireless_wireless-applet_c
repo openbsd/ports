@@ -1,7 +1,6 @@
-$OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
---- wireless/wireless-applet.c.orig	2003-10-27 12:52:14.000000000 -0800
-+++ wireless/wireless-applet.c	2004-02-20 22:26:32.000000000 -0800
-@@ -30,6 +30,21 @@
+--- wireless/wireless-applet.c.orig	Tue Apr 13 04:39:46 2004
++++ wireless/wireless-applet.c	Tue Jun 22 13:48:18 2004
+@@ -30,6 +30,20 @@
  #include <math.h>
  #include <dirent.h>
  
@@ -10,7 +9,6 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +#include <sys/ioctl.h>
 +#include <net/if.h>
 +#endif
-+
 +#if defined(__FreeBSD__)
 +#include <net/if_var.h>
 +#include <dev/an/if_aironet_ieee.h>
@@ -23,7 +21,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  #include <gnome.h>
  #include <panel-applet.h>
  #include <panel-applet-gconf.h>
-@@ -37,7 +52,11 @@
+@@ -37,7 +51,11 @@
  
  #include <egg-screen-help.h>
  
@@ -35,7 +33,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  #define CFG_UPDATE_INTERVAL 2
  
  typedef enum {
-@@ -93,6 +112,12 @@ static void wireless_applet_help_cb (Bon
+@@ -94,6 +112,12 @@ static void wireless_applet_help_cb (Bon
  		WirelessApplet *applet);
  static void wireless_applet_about_cb (BonoboUIComponent *uic,
  		WirelessApplet *applet);
@@ -48,20 +46,16 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  static void prefs_response_cb (GtkDialog *dialog, gint response, gpointer data);
  
  static const BonoboUIVerb wireless_menu_verbs [] = {
-@@ -150,9 +175,11 @@ wireless_applet_draw (WirelessApplet *ap
- 	g_free (tmp);
- 
+@@ -159,7 +183,7 @@ wireless_applet_draw (WirelessApplet *ap
  	/* Update the image */
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
  	percent = CLAMP (percent, -1, 100);
-+#endif
  
 -	if (percent < 0)
 +	if (percent < 0 || percent > 100)
  		state = PIX_BROKEN;
  	else if (percent == 0)
  		state = PIX_NO_LINK;
-@@ -183,6 +210,7 @@ wireless_applet_update_state (WirelessAp
+@@ -190,6 +214,7 @@ wireless_applet_update_state (WirelessAp
  	int percent;
  
  	/* Calculate the percentage based on the link quality */
@@ -69,7 +63,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  	if (level < 0) {
  		percent = -1;
  	} else {
-@@ -193,6 +221,9 @@ wireless_applet_update_state (WirelessAp
+@@ -200,6 +225,9 @@ wireless_applet_update_state (WirelessAp
  			percent = CLAMP (percent, 0, 100);
  		}
  	}
@@ -79,7 +73,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  
  	wireless_applet_draw (applet, percent);
  }
-@@ -235,22 +266,184 @@ wireless_applet_set_show_percent (Wirele
+@@ -242,14 +270,152 @@ wireless_applet_set_show_percent (Wirele
  	}
  }
  
@@ -112,6 +106,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +				GTK_WIDGET (applet),
 +				"ioctl Error",
 +				NULL);
++		close (s);
 +		return 0;
 +	}
 + 
@@ -134,8 +129,8 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +	(void)wi_getval(applet, device, &wreq);
 +
 +#ifdef __OpenBSD__
-+	/* This seems to be scaled from 0 to 160 */
-+	signal_strength = htole16(wreq.wi_val[1]) * 10 / 16;
++	/* This seems to be scaled from 0 to 180 */
++	signal_strength = htole16(wreq.wi_val[1]) * 10 / 18;
 +#else
 +	signal_strength = (long int) (wreq.wi_val[1]);
 +#endif
@@ -171,6 +166,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +				GTK_WIDGET (applet),
 +				"ioctl Error",
 +				NULL);
++		close (s);
 +		return 0;
 +	}
 +
@@ -210,7 +206,6 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +#else
 +	signal_strength = (long int)(sts->an_normalized_rssi);
 +#endif
-+	
 +	memcpy(level, &signal_strength, sizeof(level));
 +}
 +#endif
@@ -230,51 +225,54 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
 +	double link;
  	char line[256];
 +#endif
+ 	gboolean found = FALSE;
  
  	/* resest list of available wireless devices */
- 	g_list_foreach (applet->devices, (GFunc)g_free, NULL);
+@@ -257,8 +423,35 @@ wireless_applet_read_device_state (Wirel
  	g_list_free (applet->devices);
  	applet->devices = NULL;
  
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+	ifs = ifstart = if_nameindex();
++	ifs = ifstart = if_nameindex ();
 +#endif
++
  	/* Here we begin to suck... */
  	do {
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+	    	if (ifs == NULL || ifs->if_name == NULL) {
-+		    break;
++		if (ifs == NULL || ifs->if_name == NULL) {
++				break;
 +		}
-+	    	strlcpy(device, ifs->if_name, 6);
-+		if (g_strncasecmp(device, "an", 2)==0) {
-+			applet->devices = g_list_prepend (applet->devices, g_strdup (device));
-+			if (g_strcasecmp(applet->device, device)==0) {
-+		    		get_an_data(applet, device, &level);
-+				wireless_applet_update_state (applet, device, 0, level, 0);
-+			}
++		strlcpy (device, ifs->if_name, 6);
++		if (g_strncasecmp (device, "an", 2)==0) {
++				applet->devices = g_list_prepend (applet->devices, g_strdup (device));
++				if (g_strcasecmp (applet->device, device)==0) {
++						get_an_data (applet, device, &level);
++						wireless_applet_update_state (applet, device, 0, level, 0);
++						found = TRUE;
++				}
 +		}
-+		else
-+		if (g_strncasecmp(device, "wi", 2)==0) {
-+			applet->devices = g_list_prepend (applet->devices, g_strdup (device));
-+			if (g_strcasecmp(applet->device, device)==0) {
-+		    		get_wi_data(applet, device, &level);
-+				wireless_applet_update_state (applet, device, 0, level, 0);
-+			}
++		else if (g_strncasecmp (device, "wi", 2)==0 || g_strncasecmp (device, "ath", 3)==0) {
++				applet->devices = g_list_prepend (applet->devices, g_strdup (device));
++				if (g_strcasecmp (applet->device, device)==0) {
++						get_wi_data (applet, device, &level);
++						wireless_applet_update_state (applet, device, 0, level, 0);
++						found = TRUE;
++				}
 +		}
 +		ifs++;
 +#else
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -283,6 +476,7 @@ wireless_applet_read_device_state (Wirel
- 				wireless_applet_update_state (applet, device, link, level, noise);
+@@ -292,6 +485,7 @@ wireless_applet_read_device_state (Wirel
+ 				found = TRUE;
  			}
  		}
 +#endif
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -294,17 +488,23 @@ wireless_applet_read_device_state (Wirel
+@@ -303,17 +497,23 @@ wireless_applet_read_device_state (Wirel
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -298,7 +296,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  
  	wireless_applet_read_device_state (applet);
  
-@@ -351,6 +551,7 @@ show_warning_dialog (gchar *mesg,...) 
+@@ -360,6 +560,7 @@ show_warning_dialog (gchar *mesg,...) 
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -306,7 +304,7 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -359,6 +560,7 @@ start_file_read (WirelessApplet *applet)
+@@ -368,6 +569,7 @@ start_file_read (WirelessApplet *applet)
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -314,3 +312,14 @@ $OpenBSD: patch-wireless_wireless-applet_c,v 1.2 2004/02/22 05:33:53 marcm Exp $
  }
  
  static void
+@@ -670,8 +872,10 @@ wireless_applet_destroy (WirelessApplet 
+ 		applet->prefs = NULL;
+ 	}
+ 
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ 	if (applet->file)
+ 		fclose (applet->file);
++#endif
+ 	if (applet->tips)
+ 		g_object_unref (applet->tips);
+ }

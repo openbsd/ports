@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/28 16:09:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/23 03:26:15 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
-VERSION=		2.4.2
+VERSION=		2.6.1
 DISTNAME=		libgnomeprint-${VERSION}
 CATEGORIES=		devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/23 03:26:12 marcm Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
-DISTNAME=		gnome-desktop-2.4.1.1
+DISTNAME=		gnome-desktop-2.6.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,15 +15,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
@@ -31,6 +34,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-preinstall
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

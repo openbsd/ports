@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/22 05:34:26 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/06/23 03:26:21 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.4.2
+VERSION=		2.6.1.1
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.6/}
 
 MODULES=		gettext
 
@@ -22,7 +22,8 @@ LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
-RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
+RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data \
+			:shared-mime-info-*:misc/shared-mime-info
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

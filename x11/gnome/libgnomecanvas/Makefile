@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/04 23:08:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:14 marcm Exp $
 
 COMMENT=		"graphics library for GNOME"
 
-DISTNAME=		libgnomecanvas-2.4.0
+DISTNAME=		libgnomecanvas-2.6.1.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomecanvas/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomecanvas/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

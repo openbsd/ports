@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/22 05:33:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/23 03:26:18 marcm Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
-DISTNAME=		nautilus-2.4.2
+DISTNAME=		nautilus-2.6.3
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/nautilus/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/nautilus/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

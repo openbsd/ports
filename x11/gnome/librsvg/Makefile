@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/03 05:53:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/06/23 03:26:17 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
-DISTNAME=		librsvg-2.5.0
+DISTNAME=		librsvg-2.6.5
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.5/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

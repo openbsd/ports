@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/15 20:35:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/06/23 03:26:13 marcm Exp $
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
@@ -8,13 +8,64 @@ lib/libgailutil.la
 lib/pkgconfig/gail.pc
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailMisc.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailTextUtil.html
+share/gtk-doc/html/gail-libgail-util/gail-libgail-util.devhelp
+share/gtk-doc/html/gail-libgail-util/home.png
 share/gtk-doc/html/gail-libgail-util/index.html
 share/gtk-doc/html/gail-libgail-util/index.sgml
+share/gtk-doc/html/gail-libgail-util/left.png
 share/gtk-doc/html/gail-libgail-util/libgail-util-main.html
+share/gtk-doc/html/gail-libgail-util/right.png
+share/gtk-doc/html/gail-libgail-util/style.css
+share/gtk-doc/html/gail-libgail-util/up.png
+share/locale/ar/LC_MESSAGES/gail.mo
+share/locale/az/LC_MESSAGES/gail.mo
+share/locale/be/LC_MESSAGES/gail.mo
+share/locale/bg/LC_MESSAGES/gail.mo
+share/locale/bn/LC_MESSAGES/gail.mo
+share/locale/ca/LC_MESSAGES/gail.mo
+share/locale/cs/LC_MESSAGES/gail.mo
+share/locale/cy/LC_MESSAGES/gail.mo
+share/locale/da/LC_MESSAGES/gail.mo
+share/locale/de/LC_MESSAGES/gail.mo
+share/locale/el/LC_MESSAGES/gail.mo
+share/locale/en_CA/LC_MESSAGES/gail.mo
+share/locale/en_GB/LC_MESSAGES/gail.mo
+share/locale/es/LC_MESSAGES/gail.mo
+share/locale/et/LC_MESSAGES/gail.mo
+share/locale/fa/LC_MESSAGES/gail.mo
+share/locale/fi/LC_MESSAGES/gail.mo
+share/locale/fr/LC_MESSAGES/gail.mo
+share/locale/ga/LC_MESSAGES/gail.mo
+share/locale/hi/LC_MESSAGES/gail.mo
+share/locale/hr/LC_MESSAGES/gail.mo
+share/locale/id/LC_MESSAGES/gail.mo
+share/locale/is/LC_MESSAGES/gail.mo
+share/locale/it/LC_MESSAGES/gail.mo
+share/locale/ja/LC_MESSAGES/gail.mo
+share/locale/ko/LC_MESSAGES/gail.mo
+share/locale/lt/LC_MESSAGES/gail.mo
+share/locale/mi/LC_MESSAGES/gail.mo
+share/locale/mn/LC_MESSAGES/gail.mo
+share/locale/ms/LC_MESSAGES/gail.mo
+share/locale/nl/LC_MESSAGES/gail.mo
+share/locale/nn/LC_MESSAGES/gail.mo
+share/locale/no/LC_MESSAGES/gail.mo
+share/locale/pa/LC_MESSAGES/gail.mo
+share/locale/pl/LC_MESSAGES/gail.mo
+share/locale/pt/LC_MESSAGES/gail.mo
+share/locale/pt_BR/LC_MESSAGES/gail.mo
+share/locale/ro/LC_MESSAGES/gail.mo
+share/locale/ru/LC_MESSAGES/gail.mo
+share/locale/sq/LC_MESSAGES/gail.mo
+share/locale/sr/LC_MESSAGES/gail.mo
+share/locale/sr@Latn/LC_MESSAGES/gail.mo
+share/locale/sv/LC_MESSAGES/gail.mo
+share/locale/ta/LC_MESSAGES/gail.mo
+share/locale/tr/LC_MESSAGES/gail.mo
+share/locale/uk/LC_MESSAGES/gail.mo
+share/locale/zh_CN/LC_MESSAGES/gail.mo
+share/locale/zh_TW/LC_MESSAGES/gail.mo
 %%SHARED%%
 @dirrm share/gtk-doc/html/gail-libgail-util
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
-@dirrm lib/pkgconfig
 @dirrm include/gail-1.0/libgail-util
 @dirrm include/gail-1.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 20:35:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/06/23 03:26:20 marcm Exp $
 share/gnome/help/gnome-access-guide/C/accessintro.xml
 share/gnome/help/gnome-access-guide/C/dtconfig.xml
 share/gnome/help/gnome-access-guide/C/figures/button.png
@@ -23,20 +23,14 @@ share/gnome/help/gnome-access-guide/C/keynav.xml
 share/gnome/help/gnome-access-guide/C/legal.xml
 share/gnome/help/gnome-access-guide/C/preface.xml
 share/gnome/help/gnome-access-guide/C/themes.xml
-share/gnome/help/introduction-to-gnome/C/figures/desktop.png
-share/gnome/help/introduction-to-gnome/C/figures/microguiborder.png
-share/gnome/help/introduction-to-gnome/C/figures/naut_iconview_window.png
-share/gnome/help/introduction-to-gnome/C/figures/titlebar_anno_window.png
-share/gnome/help/introduction-to-gnome/C/figures/typical_anno_desktop.png
-share/gnome/help/introduction-to-gnome/C/introduction-to-gnome.xml
-share/gnome/help/introduction-to-gnome/C/legal.xml
 share/gnome/help/system-admin-guide/C/appendixa.xml
-share/gnome/help/system-admin-guide/C/figures/gconf_editor_anno_window.png
+share/gnome/help/system-admin-guide/C/appendixb.xml
+share/gnome/help/system-admin-guide/C/fontconfig.xml
 share/gnome/help/system-admin-guide/C/gconf.xml
-share/gnome/help/system-admin-guide/C/gdm.xml
 share/gnome/help/system-admin-guide/C/glossary.xml
 share/gnome/help/system-admin-guide/C/help.xml
 share/gnome/help/system-admin-guide/C/legal.xml
+share/gnome/help/system-admin-guide/C/lockdown.xml
 share/gnome/help/system-admin-guide/C/menustructure.xml
 share/gnome/help/system-admin-guide/C/mimetypes.xml
 share/gnome/help/system-admin-guide/C/performance.xml
@@ -48,6 +42,7 @@ share/gnome/help/user-guide/C/figures/applet_popup.png
 share/gnome/help/user-guide/C/figures/ask_pointer.png
 share/gnome/help/user-guide/C/figures/caution.png
 share/gnome/help/user-guide/C/figures/column_resize_pointer.png
+share/gnome/help/user-guide/C/figures/com_file_manager_menu.png
 share/gnome/help/user-guide/C/figures/copy_pointer.png
 share/gnome/help/user-guide/C/figures/corner_resize_pointer.png
 share/gnome/help/user-guide/C/figures/file_manager_menu.png
@@ -68,6 +63,10 @@ share/gnome/help/user-guide/C/figures/menu_panel.png
 share/gnome/help/user-guide/C/figures/move_panel_object_pointer.png
 share/gnome/help/user-guide/C/figures/move_pointer.png
 share/gnome/help/user-guide/C/figures/naut_audioview_window.png
+share/gnome/help/user-guide/C/figures/naut_browser_filesystem.png
+share/gnome/help/user-guide/C/figures/naut_browser_window.png
+share/gnome/help/user-guide/C/figures/naut_computer_contents.png
+share/gnome/help/user-guide/C/figures/naut_computer_launcher.png
 share/gnome/help/user-guide/C/figures/naut_home_launcher.png
 share/gnome/help/user-guide/C/figures/naut_iconview_anno_window.png
 share/gnome/help/user-guide/C/figures/naut_iconview_window.png
@@ -112,7 +111,6 @@ share/gnome/help/user-guide/C/figures/window_list_applet.png
 share/gnome/help/user-guide/C/figures/window_list_group_applet.png
 share/gnome/help/user-guide/C/figures/window_menu.png
 share/gnome/help/user-guide/C/figures/workspace_switcher_applet.png
-share/gnome/help/user-guide/C/front.xml
 share/gnome/help/user-guide/C/glossary.xml
 share/gnome/help/user-guide/C/gosbasic.xml
 share/gnome/help/user-guide/C/goscustaccess.xml
@@ -128,6 +126,7 @@ share/gnome/help/user-guide/C/gosstartsession.xml
 share/gnome/help/user-guide/C/legal.xml
 share/gnome/help/user-guide/C/part1.xml
 share/gnome/help/user-guide/C/part2.xml
+share/gnome/help/user-guide/C/plaingnomestartpreftools.xml
 share/gnome/help/user-guide/C/user-guide.xml
 share/gnome/help/user-guide/C/wgosbasic.xml
 share/gnome/help/user-guide/C/wgoscustaccess.xml
@@ -141,7 +140,6 @@ share/gnome/help/user-guide/C/wgosoverview.xml
 share/gnome/help/user-guide/C/wgospanel.xml
 share/gnome/help/user-guide/C/wgosstartsession.xml
 share/omf/gnome2-user-docs/gnome-access-guide-C.omf
-share/omf/gnome2-user-docs/introduction-to-gnome-C.omf
 share/omf/gnome2-user-docs/system-admin-guide-C.omf
 share/omf/user-guide/user-guide-C.omf
 @dirrm share/omf/user-guide
@@ -149,12 +147,8 @@ share/omf/user-guide/user-guide-C.omf
 @dirrm share/gnome/help/user-guide/C/figures
 @dirrm share/gnome/help/user-guide/C
 @dirrm share/gnome/help/user-guide
-@dirrm share/gnome/help/system-admin-guide/C/figures
 @dirrm share/gnome/help/system-admin-guide/C
 @dirrm share/gnome/help/system-admin-guide
-@dirrm share/gnome/help/introduction-to-gnome/C/figures
-@dirrm share/gnome/help/introduction-to-gnome/C
-@dirrm share/gnome/help/introduction-to-gnome
 @dirrm share/gnome/help/gnome-access-guide/C/figures
 @dirrm share/gnome/help/gnome-access-guide/C
 @dirrm share/gnome/help/gnome-access-guide

@@ -1,45 +1,22 @@
-$OpenBSD: patch-ltmain_sh,v 1.3 2003/10/07 05:48:54 marcm Exp $
---- ltmain.sh.orig	Fri Jun 13 04:57:16 2003
-+++ ltmain.sh	Mon Jul  7 08:29:27 2003
-@@ -1290,6 +1290,17 @@ EOF
- 	continue
- 	;;
- 
-+      -pthread)
-+        case $host in
-+        *-*-openbsd*)
-+          deplibs="$deplibs $arg"
-+          ;;
-+        *)
-+          continue
-+          ;;
-+        esac
-+        ;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -1961,6 +1972,19 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.4 2004/06/23 03:26:13 marcm Exp $
+--- ltmain.sh.orig	2004-02-12 03:45:26.000000000 -0800
++++ ltmain.sh	2004-05-02 10:11:56.000000000 -0700
+@@ -1847,9 +1847,12 @@ EOF
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"
+ 	    finalize_deplibs="$deplib $finalize_deplibs"
+-	  else
+-	    deplibs="$deplib $deplibs"
++	    continue
  	  fi
++	  if test "$linkmode" = "lib"; then
++	    newdependency_libs="$deplib $newdependency_libs"
++	  fi
++	  deplibs="$deplib $deplibs"
  	  continue
  	  ;;
-+	-pthread)
-+	  case $linkmode in
-+	  lib)
-+	    deplibs="$deplib $deplibs"
-+	    newdependency_libs="$deplib $newdependency_libs"
-+	    ;;
-+	  prog)
-+	    compile_deplibs="$deplib $compile_deplibs"
-+	    finalize_deplibs="$deplib $finalize_deplibs"
-+	    ;;
-+	  esac
-+	  continue
-+	  ;;
- 	%DEPLIBS%)
- 	  alldeplibs=yes
- 	  continue
-@@ -2209,10 +2233,6 @@ EOF
+ 	-l*)
+@@ -2262,10 +2265,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -50,7 +27,7 @@ $OpenBSD: patch-ltmain_sh,v 1.3 2003/10/07 05:48:54 marcm Exp $
  	  # This is a shared library
  	
        # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5699,40 +5719,6 @@ relink_command=\"$relink_command\""
+@@ -5804,40 +5803,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

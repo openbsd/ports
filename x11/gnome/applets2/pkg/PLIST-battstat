@@ -1,25 +1,184 @@
-@comment $OpenBSD: PLIST-battstat,v 1.7 2003/12/01 04:13:06 marcm Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.8 2004/06/23 03:26:12 marcm Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 libexec/battstat-applet-2
 share/battstat_applet/battstat_applet.glade
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
 share/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome/help/battstat/C/battstat.xml
-share/gnome/help/battstat/C/figures/battstat-apperance.png
+share/gnome/help/battstat/C/figures/ac_small.png
+share/gnome/help/battstat/C/figures/batt_green.png
+share/gnome/help/battstat/C/figures/batt_orange.png
+share/gnome/help/battstat/C/figures/batt_red.png
+share/gnome/help/battstat/C/figures/batt_yellow.png
+share/gnome/help/battstat/C/figures/battery_small.png
 share/gnome/help/battstat/C/figures/battstat-applet.png
-share/gnome/help/battstat/C/figures/battstat-general.png
+share/gnome/help/battstat/C/figures/battstat-applet_window.png
+share/gnome/help/battstat/C/figures/flash_small.png
+share/gnome/help/battstat/C/figures/warning_small.png
 share/gnome/help/battstat/C/legal.xml
+share/gnome/help/battstat/de/battstat.xml
+share/gnome/help/battstat/de/figures/ac_small.png
+share/gnome/help/battstat/de/figures/batt_green.png
+share/gnome/help/battstat/de/figures/batt_orange.png
+share/gnome/help/battstat/de/figures/batt_red.png
+share/gnome/help/battstat/de/figures/batt_yellow.png
+share/gnome/help/battstat/de/figures/battery_small.png
+share/gnome/help/battstat/de/figures/battstat-applet.png
+share/gnome/help/battstat/de/figures/battstat-applet_window.png
+share/gnome/help/battstat/de/figures/flash_small.png
+share/gnome/help/battstat/de/figures/warning_small.png
+share/gnome/help/battstat/de/legal.xml
+share/gnome/help/battstat/es/battstat.xml
+share/gnome/help/battstat/es/figures/ac_small.png
+share/gnome/help/battstat/es/figures/batt_green.png
+share/gnome/help/battstat/es/figures/batt_orange.png
+share/gnome/help/battstat/es/figures/batt_red.png
+share/gnome/help/battstat/es/figures/batt_yellow.png
+share/gnome/help/battstat/es/figures/battery_small.png
+share/gnome/help/battstat/es/figures/battstat-applet.png
+share/gnome/help/battstat/es/figures/battstat-applet_window.png
+share/gnome/help/battstat/es/figures/flash_small.png
+share/gnome/help/battstat/es/figures/warning_small.png
+share/gnome/help/battstat/es/legal.xml
+share/gnome/help/battstat/eu/battstat.xml
+share/gnome/help/battstat/eu/figures/battstat-apperance.png
+share/gnome/help/battstat/eu/figures/battstat-applet.png
+share/gnome/help/battstat/eu/figures/battstat-general.png
+share/gnome/help/battstat/eu/legal.xml
+share/gnome/help/battstat/fr/battstat.xml
+share/gnome/help/battstat/fr/figures/ac_small.png
+share/gnome/help/battstat/fr/figures/batt_green.png
+share/gnome/help/battstat/fr/figures/batt_orange.png
+share/gnome/help/battstat/fr/figures/batt_red.png
+share/gnome/help/battstat/fr/figures/batt_yellow.png
+share/gnome/help/battstat/fr/figures/battery_small.png
+share/gnome/help/battstat/fr/figures/battstat-applet.png
+share/gnome/help/battstat/fr/figures/battstat-applet_window.png
+share/gnome/help/battstat/fr/figures/flash_small.png
+share/gnome/help/battstat/fr/figures/warning_small.png
+share/gnome/help/battstat/fr/legal.xml
+share/gnome/help/battstat/it/battstat.xml
+share/gnome/help/battstat/it/figures/ac_small.png
+share/gnome/help/battstat/it/figures/batt_green.png
+share/gnome/help/battstat/it/figures/batt_orange.png
+share/gnome/help/battstat/it/figures/batt_red.png
+share/gnome/help/battstat/it/figures/batt_yellow.png
+share/gnome/help/battstat/it/figures/battery_small.png
+share/gnome/help/battstat/it/figures/battstat-applet.png
+share/gnome/help/battstat/it/figures/battstat-applet_window.png
+share/gnome/help/battstat/it/figures/flash_small.png
+share/gnome/help/battstat/it/figures/warning_small.png
+share/gnome/help/battstat/it/legal.xml
 share/gnome/help/battstat/ja/battstat.xml
-share/gnome/help/battstat/ja/figures/battstat-apperance.png
+share/gnome/help/battstat/ja/figures/ac_small.png
+share/gnome/help/battstat/ja/figures/batt_green.png
+share/gnome/help/battstat/ja/figures/batt_orange.png
+share/gnome/help/battstat/ja/figures/batt_red.png
+share/gnome/help/battstat/ja/figures/batt_yellow.png
+share/gnome/help/battstat/ja/figures/battery_small.png
 share/gnome/help/battstat/ja/figures/battstat-applet.png
-share/gnome/help/battstat/ja/figures/battstat-general.png
+share/gnome/help/battstat/ja/figures/battstat-applet_window.png
+share/gnome/help/battstat/ja/figures/flash_small.png
+share/gnome/help/battstat/ja/figures/warning_small.png
 share/gnome/help/battstat/ja/legal.xml
+share/gnome/help/battstat/ko/battstat.xml
+share/gnome/help/battstat/ko/figures/ac_small.png
+share/gnome/help/battstat/ko/figures/batt_green.png
+share/gnome/help/battstat/ko/figures/batt_orange.png
+share/gnome/help/battstat/ko/figures/batt_red.png
+share/gnome/help/battstat/ko/figures/batt_yellow.png
+share/gnome/help/battstat/ko/figures/battery_small.png
+share/gnome/help/battstat/ko/figures/battstat-applet.png
+share/gnome/help/battstat/ko/figures/battstat-applet_window.png
+share/gnome/help/battstat/ko/figures/flash_small.png
+share/gnome/help/battstat/ko/figures/warning_small.png
+share/gnome/help/battstat/ko/legal.xml
+share/gnome/help/battstat/sv/battstat.xml
+share/gnome/help/battstat/sv/figures/ac_small.png
+share/gnome/help/battstat/sv/figures/batt_green.png
+share/gnome/help/battstat/sv/figures/batt_orange.png
+share/gnome/help/battstat/sv/figures/batt_red.png
+share/gnome/help/battstat/sv/figures/batt_yellow.png
+share/gnome/help/battstat/sv/figures/battery_small.png
+share/gnome/help/battstat/sv/figures/battstat-applet.png
+share/gnome/help/battstat/sv/figures/battstat-applet_window.png
+share/gnome/help/battstat/sv/figures/flash_small.png
+share/gnome/help/battstat/sv/figures/warning_small.png
+share/gnome/help/battstat/sv/legal.xml
+share/gnome/help/battstat/zh_CN/battstat.xml
+share/gnome/help/battstat/zh_CN/figures/ac_small.png
+share/gnome/help/battstat/zh_CN/figures/batt_green.png
+share/gnome/help/battstat/zh_CN/figures/batt_orange.png
+share/gnome/help/battstat/zh_CN/figures/batt_red.png
+share/gnome/help/battstat/zh_CN/figures/batt_yellow.png
+share/gnome/help/battstat/zh_CN/figures/battery_small.png
+share/gnome/help/battstat/zh_CN/figures/battstat-applet.png
+share/gnome/help/battstat/zh_CN/figures/battstat-applet_window.png
+share/gnome/help/battstat/zh_CN/figures/flash_small.png
+share/gnome/help/battstat/zh_CN/figures/warning_small.png
+share/gnome/help/battstat/zh_CN/legal.xml
+share/gnome/help/battstat/zh_HK/battstat.xml
+share/gnome/help/battstat/zh_HK/figures/ac_small.png
+share/gnome/help/battstat/zh_HK/figures/batt_green.png
+share/gnome/help/battstat/zh_HK/figures/batt_orange.png
+share/gnome/help/battstat/zh_HK/figures/batt_red.png
+share/gnome/help/battstat/zh_HK/figures/batt_yellow.png
+share/gnome/help/battstat/zh_HK/figures/battery_small.png
+share/gnome/help/battstat/zh_HK/figures/battstat-applet.png
+share/gnome/help/battstat/zh_HK/figures/battstat-applet_window.png
+share/gnome/help/battstat/zh_HK/figures/flash_small.png
+share/gnome/help/battstat/zh_HK/figures/warning_small.png
+share/gnome/help/battstat/zh_HK/legal.xml
+share/gnome/help/battstat/zh_TW/battstat.xml
+share/gnome/help/battstat/zh_TW/figures/ac_small.png
+share/gnome/help/battstat/zh_TW/figures/batt_green.png
+share/gnome/help/battstat/zh_TW/figures/batt_orange.png
+share/gnome/help/battstat/zh_TW/figures/batt_red.png
+share/gnome/help/battstat/zh_TW/figures/batt_yellow.png
+share/gnome/help/battstat/zh_TW/figures/battery_small.png
+share/gnome/help/battstat/zh_TW/figures/battstat-applet.png
+share/gnome/help/battstat/zh_TW/figures/battstat-applet_window.png
+share/gnome/help/battstat/zh_TW/figures/flash_small.png
+share/gnome/help/battstat/zh_TW/figures/warning_small.png
+share/gnome/help/battstat/zh_TW/legal.xml
 share/omf/gnome-applets/battstat-C.omf
+share/omf/gnome-applets/battstat-de.omf
+share/omf/gnome-applets/battstat-es.omf
+share/omf/gnome-applets/battstat-eu.omf
+share/omf/gnome-applets/battstat-fr.omf
+share/omf/gnome-applets/battstat-it.omf
 share/omf/gnome-applets/battstat-ja.omf
+share/omf/gnome-applets/battstat-ko.omf
+share/omf/gnome-applets/battstat-sv.omf
+share/omf/gnome-applets/battstat-zh_CN.omf
+share/omf/gnome-applets/battstat-zh_HK.omf
+share/omf/gnome-applets/battstat-zh_TW.omf
 share/pixmaps/battstat.png
 share/schemas/gnome-applets2/battstat.schemas
+@dirrm share/schemas/gnome-applets2
+@dirrm share/omf/gnome-applets
+@dirrm share/gnome/help/battstat/zh_TW/figures
+@dirrm share/gnome/help/battstat/zh_TW
+@dirrm share/gnome/help/battstat/zh_HK/figures
+@dirrm share/gnome/help/battstat/zh_HK
+@dirrm share/gnome/help/battstat/zh_CN/figures
+@dirrm share/gnome/help/battstat/zh_CN
+@dirrm share/gnome/help/battstat/sv/figures
+@dirrm share/gnome/help/battstat/sv
+@dirrm share/gnome/help/battstat/ko/figures
+@dirrm share/gnome/help/battstat/ko
 @dirrm share/gnome/help/battstat/ja/figures
 @dirrm share/gnome/help/battstat/ja
+@dirrm share/gnome/help/battstat/it/figures
+@dirrm share/gnome/help/battstat/it
+@dirrm share/gnome/help/battstat/fr/figures
+@dirrm share/gnome/help/battstat/fr
+@dirrm share/gnome/help/battstat/eu/figures
+@dirrm share/gnome/help/battstat/eu
+@dirrm share/gnome/help/battstat/es/figures
+@dirrm share/gnome/help/battstat/es
+@dirrm share/gnome/help/battstat/de/figures
+@dirrm share/gnome/help/battstat/de
 @dirrm share/gnome/help/battstat/C/figures
 @dirrm share/gnome/help/battstat/C
 @dirrm share/gnome/help/battstat

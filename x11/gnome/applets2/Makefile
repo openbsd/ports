@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/22 05:33:52 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/23 03:26:11 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
-VERSION=		2.4.2
+VERSION=		2.6.1
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
@@ -12,7 +12,7 @@ CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -27,8 +27,9 @@ BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
 			:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
-			gailutil.17::x11/gnome/gail \
-			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2
+			gailutil.17::x11/gnome/gail 
+
+#			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2
 
 PSEUDO_FLAVORS=		no_battstat
 # Only i386 and macppc have the headers for the battstat applet
@@ -49,6 +50,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-applets2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
