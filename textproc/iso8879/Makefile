@@ -4,13 +4,13 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/05 08:52:11 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/08 08:04:44 matthieu Exp $
 #
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.sil.org/sgml/
+MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	matthieu@laas.fr
