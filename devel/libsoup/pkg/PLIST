@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/09 06:15:27 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/26 03:50:52 marcm Exp $
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
 include/libsoup-${API_VERSION}/libsoup/soup-address.h
@@ -29,23 +29,23 @@ lib/pkgconfig/libsoup-${API_VERSION}.pc
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libsoup/
-share/gtk-doc/html/libsoup/SoupAddress.html
 share/gtk-doc/html/libsoup/SoupAuth.html
 share/gtk-doc/html/libsoup/SoupAuthBasic.html
 share/gtk-doc/html/libsoup/SoupAuthDigest.html
 share/gtk-doc/html/libsoup/SoupConnection.html
 share/gtk-doc/html/libsoup/SoupConnectionNTLM.html
 share/gtk-doc/html/libsoup/SoupMessage.html
-share/gtk-doc/html/libsoup/SoupServer.html
-share/gtk-doc/html/libsoup/SoupServerMessage.html
-share/gtk-doc/html/libsoup/SoupSession.html
 share/gtk-doc/html/libsoup/SoupSoapMessage.html
-share/gtk-doc/html/libsoup/SoupSocket.html
 share/gtk-doc/html/libsoup/ch01.html
 share/gtk-doc/html/libsoup/home.png
 share/gtk-doc/html/libsoup/index.html
 share/gtk-doc/html/libsoup/index.sgml
 share/gtk-doc/html/libsoup/left.png
+share/gtk-doc/html/libsoup/libsoup-SoupAddress.html
+share/gtk-doc/html/libsoup/libsoup-SoupServer.html
+share/gtk-doc/html/libsoup/libsoup-SoupServerMessage.html
+share/gtk-doc/html/libsoup/libsoup-SoupSession.html
+share/gtk-doc/html/libsoup/libsoup-SoupSocket.html
 share/gtk-doc/html/libsoup/libsoup-soup-dns.html
 share/gtk-doc/html/libsoup/libsoup-soup-headers.html
 share/gtk-doc/html/libsoup/libsoup-soup-md5-utils.html
@@ -59,5 +59,6 @@ share/gtk-doc/html/libsoup/libsoup-soup-status.html
 share/gtk-doc/html/libsoup/libsoup-soup-uri.html
 share/gtk-doc/html/libsoup/libsoup.devhelp
 share/gtk-doc/html/libsoup/right.png
+share/gtk-doc/html/libsoup/style.css
 share/gtk-doc/html/libsoup/up.png
 %%SHARED%%
