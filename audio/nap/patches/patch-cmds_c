@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmds_c,v 1.1 2001/05/09 22:38:00 pvalchev Exp $
+--- cmds.c.orig	Mon Apr 23 13:23:34 2001
++++ cmds.c	Sat May  5 23:32:26 2001
+@@ -4463,7 +4463,7 @@ O_NAP_FUNC(dnews)
+     r = checknv(ipcs[1], 0);
+     
+     if (r==-1) {
+-      ssock(ipcs[1], ""RED"* Could not access news: %s"WHITE"\n", sys_errlist[errno]);
++      ssock(ipcs[1], ""RED"* Could not access news: %s"WHITE"\n", errno!=255 ? sys_errlist[errno] : "unknown error");
+     } else if (r==-2) {
+       ssock(ipcs[1], ""RED"* Could not access news: %s"WHITE"\n", hstrerror(h_errno));
+     } else if (r==0) {
