@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/04/08 01:44:41 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/05/25 12:14:30 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
@@ -24,10 +24,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
+.if !defined(NO_SHARED_LIBS)
+CFLAGS+=	-fPIC
+ALL_TARGET+=	all so sobin
+.endif
+
 post-build:
 	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
-#	and recompile with shared libs
-	${BUILD_SHARED}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include
@@ -40,14 +43,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/doc/*.html ${WRKDIST}/doc/*.gif ${PREFIX}/share/doc/lua
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIST}/doc/*.1 ${PREFIX}/man/man1
-
-.if defined(NO_SHARED_LIBS)
-BUILD_SHARED=:
-.else
-BUILD_SHARED=cd ${WRKDIST} && \
-	${CC} ${LDFLAGS} -shared -fPIC -o lib/liblua.so.5.0 src/*.o && \
-	${CC} ${LDFLAGS} -shared -fPIC -o lib/liblualib.so.5.0 src/lib/*.o && \
-	rm bin/lua && ${MAKE}
-.endif
 
 .include <bsd.port.mk>
