@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 1999/05/06 14:21:03 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/05/12 19:02:47 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
-DISTNAME=	shtool-1.2.3
+DISTNAME=	shtool-1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/shtool/ \
 		ftp://ftp.engelschall.com/sw/shtool/
