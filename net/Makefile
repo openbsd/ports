@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2002/01/24 02:38:19 jcs Exp $
+# $OpenBSD: Makefile,v 1.190 2002/01/24 20:32:01 jsyn Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -30,8 +30,8 @@
      SUBDIR += cvsup,static,no_x11
 #    SUBDIR += cvsup-mirror
      SUBDIR += dlint
-     SUBDIR += doc
      SUBDIR += dnstracer
+     SUBDIR += doc
      SUBDIR += dxpc
      SUBDIR += epic4
      SUBDIR += ethereal
@@ -56,8 +56,8 @@
      SUBDIR += icmpinfo
      SUBDIR += ipband
      SUBDIR += ipcheck
-     SUBDIR += ipfm
      SUBDIR += iperf
+     SUBDIR += ipfm
      SUBDIR += iplog
      SUBDIR += irc
      SUBDIR += ircII
@@ -89,9 +89,9 @@
      SUBDIR += nmap
      SUBDIR += nmap,no_x11
      SUBDIR += ns
-     SUBDIR += nsping
      SUBDIR += nslint
      SUBDIR += nslint,static
+     SUBDIR += nsping
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += oproute
@@ -99,11 +99,11 @@
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-Daemon
      SUBDIR += p5-Net-ICQ2000
-     SUBDIR += p5-Net-IRC
      SUBDIR += p5-Net-IPv4Addr
+     SUBDIR += p5-Net-IRC
      SUBDIR += p5-Net-ParseWhois
-     SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-Pcap
+     SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-RawIP
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Traceroute
@@ -114,8 +114,8 @@
      SUBDIR += pchar
      SUBDIR += pdnsd
      SUBDIR += pop3gwd
-     SUBDIR += proxy-suite
      SUBDIR += pptp
+     SUBDIR += proxy-suite
      SUBDIR += pure-ftpd
      SUBDIR += pure-ftpd,ldap
      SUBDIR += pure-ftpd,mysql
