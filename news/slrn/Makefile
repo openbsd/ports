@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/22 00:59:23 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	slrn-0.9.6.2
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/
 
-BUILD_DEPENDS=	${PREFIX}/lib/libslang.a:devel/libslang
+LIB_DEPENDS=	${PREFIX}/lib/libslang.a:devel/libslang
 
 GNU_CONFIGURE=	Yes
 
