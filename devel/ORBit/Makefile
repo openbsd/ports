@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 1999/10/29 21:35:00 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/10 19:06:31 brad Exp $
 
 DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= ORBit
+MASTER_SITE_SUBDIR= stable/sources/ORBit
 
 NEED_VERSION=	1.73
 
@@ -37,9 +37,6 @@ pre-extract:
 	fi
 
 post-install:
-	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	@install-info ${PREFIX}/info/libIDL.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
