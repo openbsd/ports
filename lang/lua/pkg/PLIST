@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/16 03:15:41 kevlo Exp $
+bin/lua
+bin/luac
+include/lauxlib.h
+include/lua.h
+include/luadebug.h
+include/lualib.h
+lib/liblua.a
+lib/liblualib.a
+%%SHARED%%
+share/lua/docs/idx.html
+share/lua/docs/index.html
+share/lua/docs/luac.html
+share/lua/docs/luac.man
+share/lua/docs/manual.html
+share/lua/docs/readme.html
+@dirrm share/lua/docs
+@dirrm share/lua

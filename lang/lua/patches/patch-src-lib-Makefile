@@ -1,0 +1,11 @@
+--- src/lib/Makefile.old	Tue Aug  8 19:36:25 2000
++++ src/lib/Makefile	Tue Aug  8 19:35:40 2000
+@@ -5,7 +5,7 @@
+ include $(LUA)/config
+ 
+ # actually only used in liolib.c
+-EXTRA_DEFS= $(POPEN)
++EXTRA_DEFS+= $(POPEN)
+ 
+ OBJS= linit.o ldblib.o liolib.o lmathlib.o lstrlib.o
+ SRCS= linit.c ldblib.c liolib.c lmathlib.c lstrlib.c

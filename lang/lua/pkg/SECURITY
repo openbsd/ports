@@ -1,0 +1,11 @@
+The lua language function io_tmpname() uses the ANSI C function
+tmpnam().  It can be difficult to use this function securely, but
+since Lua is only implemented using strict ANSI C, an alternative
+is not possible.
+
+Because the fileopen() primitive is a wrapper to fopen(), you simply
+should not use the tmpnam function.  It is impossible to use properly
+with only fopen() functionality.  This applies to all platforms,
+not just OpenBSD.  An attacker could possibly use a race attack to
+replace your /tmp file with a symlink or a file they own.
+
