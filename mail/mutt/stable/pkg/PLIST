@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/14 17:43:51 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/06 04:29:55 kevlo Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -91,6 +91,5 @@ share/locale/zh_CN/LC_MESSAGES/mutt.mo
 share/locale/zh_TW/LC_MESSAGES/mutt.mo
 @dirrm share/examples/mutt/iconv
 @dirrm share/examples/mutt
-@dirrm share/doc/mutt/samples
 @dirrm share/doc/mutt/html
 @dirrm share/doc/mutt
