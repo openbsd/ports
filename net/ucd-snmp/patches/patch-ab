@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue May 30 12:19:19 2000
++++ Makefile.in	Tue May 30 12:19:31 2000
+@@ -60,7 +60,7 @@ install:    all installdirs
+ 
+ installdirs:
+ 	@$(SHELL) $(srcdir)/mkinstalldirs $(snmplibdir) $(mibdir) $(includedir)
+-	@-$(SHELL) $(srcdir)/mkinstalldirs $(persistentdir)
++#	@-$(SHELL) $(srcdir)/mkinstalldirs $(persistentdir)
+ 
+ apps/snmpget apps/snmpgetnext apps/snmpset apps/snmptranslate apps/snmpwalk apps/snmpbulkwalk apps/snmptest apps/snmptrapd apps/snmpnetstat/snmpnetstat agent/snmpd: makeall
+ 

@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1 2000/06/02 15:45:06 hugh Exp $
+#
+# post-installation setup of ucd-snmp
+
+PERSISTENT_DIR=/var/ucd-snmp
+
+create_persistent()
+{
+	install -d -m 755 -o root -g wheel ${1}
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	create_persistent ${PERSISTENT_DIR}
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac

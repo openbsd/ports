@@ -1,0 +1,11 @@
+--- agent/Makefile.in.orig	Tue May 30 12:20:36 2000
++++ agent/Makefile.in	Tue May 30 12:20:43 2000
+@@ -72,7 +72,7 @@ install:  installdirs
+ 
+ installdirs:
+ 	@$(SHELL) $(srcdir)/../mkinstalldirs $(sbindir) $(snmplibdir) $(includedir) $(libdir)
+-	@-$(SHELL) $(srcdir)/../mkinstalldirs $(persistentdir)
++#	@-$(SHELL) $(srcdir)/../mkinstalldirs $(persistentdir)
+ 
+ 
+ dependlocal: 
