@@ -1,6 +1,6 @@
---- src/config/platforms/openbsd.mk.orig	Mon Nov  8 08:48:01 1999
-+++ src/config/platforms/openbsd.mk	Mon Nov  8 08:48:56 1999
-@@ -94,4 +94,6 @@
+--- src/config/platforms/openbsd.mk.orig	Tue Feb 15 01:00:22 2000
++++ src/config/platforms/openbsd.mk	Mon Jun 12 05:36:43 2000
+@@ -93,4 +93,6 @@
  ABI_NATIVE	= unix
  ABI_FE		= Unix
  

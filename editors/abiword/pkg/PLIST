@@ -1,18 +1,21 @@
-bin/AbiWord
-bin/abiword
-AbiSuite/AbiWord/help/EnUS/help.html
+@comment $OpenBSD: PLIST,v 1.3 2000/06/12 10:05:21 fgsch Exp $
+AbiSuite/AbiWord/help/en-US/help.html
 AbiSuite/AbiWord/readme.txt
-AbiSuite/AbiWord/sample/EnUS/Latin1.abw
-AbiSuite/AbiWord/strings/CaES.strings
-AbiSuite/AbiWord/strings/DaDK.strings
-AbiSuite/AbiWord/strings/DeDE.strings
-AbiSuite/AbiWord/strings/DuNL.strings
-AbiSuite/AbiWord/strings/EsES.strings
-AbiSuite/AbiWord/strings/FiFI.strings
-AbiSuite/AbiWord/strings/FrFR.strings
-AbiSuite/AbiWord/strings/ItIT.strings
-AbiSuite/AbiWord/strings/NoNO.strings
-AbiSuite/AbiWord/strings/PtPT.strings
+AbiSuite/AbiWord/sample/en-US/Latin1.abw
+AbiSuite/AbiWord/strings/ca-ES.strings
+AbiSuite/AbiWord/strings/da-DK.strings
+AbiSuite/AbiWord/strings/de-DE.strings
+AbiSuite/AbiWord/strings/du-NL.strings
+AbiSuite/AbiWord/strings/es-ES.strings
+AbiSuite/AbiWord/strings/fi-FI.strings
+AbiSuite/AbiWord/strings/fr-FR.strings
+AbiSuite/AbiWord/strings/hu-HU.strings
+AbiSuite/AbiWord/strings/id-ID.strings
+AbiSuite/AbiWord/strings/it-IT.strings
+AbiSuite/AbiWord/strings/no-BOK.strings
+AbiSuite/AbiWord/strings/pt-BR.strings
+AbiSuite/AbiWord/strings/pt-PT.strings
+AbiSuite/AbiWord/strings/sv-SE.strings
 AbiSuite/AbiWord/system.profile
 AbiSuite/COPYING
 AbiSuite/bin/AbiWord
@@ -101,14 +104,16 @@ AbiSuite/icons/abiword_48.png
 AbiSuite/icons/abiword_48.tif
 AbiSuite/icons/abiword_48.xpm
 AbiSuite/readme.txt
+bin/AbiWord
+bin/abiword
 @dirrm AbiSuite/icons
 @dirrm AbiSuite/fonts
 @dirrm AbiSuite/dictionary
 @dirrm AbiSuite/bin
 @dirrm AbiSuite/AbiWord/strings
-@dirrm AbiSuite/AbiWord/sample/EnUS
+@dirrm AbiSuite/AbiWord/sample/en-US
 @dirrm AbiSuite/AbiWord/sample
-@dirrm AbiSuite/AbiWord/help/EnUS
+@dirrm AbiSuite/AbiWord/help/en-US
 @dirrm AbiSuite/AbiWord/help
 @dirrm AbiSuite/AbiWord
 @dirrm AbiSuite

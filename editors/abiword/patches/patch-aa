@@ -1,6 +1,6 @@
---- ./Makefile.orig	Sun Nov  7 10:26:16 1999
-+++ ./Makefile	Thu Jun  3 16:20:55 1999
-@@ -19,7 +19,7 @@
+--- Makefile.orig	Sat Dec 11 03:23:53 1999
++++ Makefile	Mon Jun 12 05:53:16 2000
+@@ -20,7 +20,7 @@
  ## 02111-1307, USA.
  
  ABI_ROOT	:=$(shell pwd)

@@ -1,5 +1,5 @@
---- ./src/wp/main/unix/Makefile.orig	Sun Nov  7 09:36:37 1999
-+++ ./src/wp/main/unix/Makefile	Sun Nov  7 09:37:58 1999
+--- src/wp/main/unix/Makefile.orig	Tue Feb 29 18:37:58 2000
++++ src/wp/main/unix/Makefile	Mon Jun 12 04:31:09 2000
 @@ -34,13 +34,13 @@
  # TODO several times.  see if there is a better way of doing this.
  
@@ -11,8 +11,8 @@
  ABI_APPLIBDEP=		$(LoadOrder)
  
  # libdl flags go into the process later
--ABI_LIBS=		png z stdc++ 
-+ABI_LIBS=		expat png z stdc++ 
+-ABI_LIBS=		png z
++ABI_LIBS=		expat png z
  
  # include both dynamic and static binaries
  TARGETS=		$(PROGRAM) $(PROGRAM_S)
