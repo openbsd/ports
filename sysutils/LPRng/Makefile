@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/09 22:50:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/05/12 21:16:42 sturm Exp $
 
 COMMENT=	"enhanced printer spooler"
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=	gdbm.2::databases/gdbm
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \
-		--with-lpd_conf_path=${SYSCONFDIR}/LPRng/lpd.conf \
-		--with-lpd_perms_path=${SYSCONFDIR}/LPRng/lpd.perms \
+		--with-lpd_conf_path=${CONFDIR}/lpd.conf \
+		--with-lpd_perms_path=${CONFDIR}/lpd.perms \
 		--with-printcap_path=${SYSCONFDIR}/printcap \
 		--with-cppopts=-I${LOCALBASE}/include \
 		--with-ldopts=-L${LOCALBASE}/lib \
@@ -32,21 +32,24 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 
 FAKE_FLAGS=	DESTDIR=${WRKINST} POSTINSTALL=NO prefix=${TRUEPREFIX} \
 		FILTER_DIR=${TRUEPREFIX}/libexec/filters \
-		LPD_PERMS_PATH=${TRUEPREFIX}/etc/LPRng/lpd.perms \
-		LPD_CONF_PATH=${TRUEPREFIX}/etc/LPRng/lpd.conf \
-		PRINTCAP_PATH=${TRUEPREFIX}/etc/LPRng/printcap
+		LPD_PERMS_PATH=${TRUEPREFIX}${CONFDIR}/lpd.perms \
+		LPD_CONF_PATH=${TRUEPREFIX}${CONFDIR}/lpd.conf \
+		PRINTCAP_PATH=${TRUEPREFIX}${CONFDIR}/printcap
 
 PATCH_LIST=     ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
                 patch-*
 
+CONFDIR=	${SYSCONFDIR}/LPRng
 HTMLFILES=	LPRng-HOWTO.html 
+
+SUBST_VARS=	CONFDIR
 
 # we don't trust LPRng's (pre|post)install scripts
 pre-fake:
-	mkdir -p ${WRKINST}/etc && mkdir -p ${WRKINST}/etc/LPRng; \
-	cp ${WRKSRC}/lpd.conf ${WRKSRC}/lpd.perms ${WRKINST}/etc/LPRng; \
-	cp ${WRKSRC}/printcap ${WRKINST}/etc/LPRng/printcap
+	mkdir -p ${WRKINST}${CONFDIR}
+	cp ${WRKSRC}/lpd.conf ${WRKSRC}/lpd.perms ${WRKSRC}/printcap \
+		${WRKINST}${CONFDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/LPRng
@@ -54,7 +57,7 @@ post-install:
 	cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
 		${PREFIX}/share/doc/LPRng
 .for i in lpd.conf lpd.perms printcap
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/LPRng/$i ${PREFIX}/share/examples/LPRng
+	${INSTALL_DATA} ${WRKINST}${CONFDIR}/$i ${PREFIX}/share/examples/LPRng
 .endfor
 
 .include <bsd.port.mk>

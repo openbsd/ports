@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/03/20 19:11:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2003/05/12 21:16:42 sturm Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -30,12 +30,13 @@ FLAVOR?=
 PATCH_LIST=     gcc-* patch-*
 .endif
 
-SYSCONFDIR=	/etc/mutt
+CONFDIR=	${SYSCONFDIR}/mutt
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock --disable-fcntl \
 		--enable-external_dotlock \
-		--enable-imap --enable-pop --with-ssl
+		--enable-imap --enable-pop --with-ssl \
+		--sysconfdir=${CONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
@@ -53,10 +54,10 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
-CONFIGURE_STYLE= automake
+CONFIGURE_STYLE= automake old
 .else
 SUPDISTFILES+=  patch-${VERSION}.rr.compressed.1.gz:0
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu old
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
@@ -73,6 +74,7 @@ CONFIGURE_ARGS+= --with-domain="${DOMAIN}"
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
+SUBST_VARS=	CONFDIR
 
 post-install:
 	@strip ${PREFIX}/bin/mutt

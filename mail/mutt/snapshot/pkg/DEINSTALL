@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/05/12 21:16:42 sturm Exp $
 #
 # mutt de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${CONFDIR}
 
 if [ -d $CONFIG_DIR ]; then
     echo

@@ -2,7 +2,7 @@
 To activate the new printing system do the following:
 
 - Copy these config files from ${PREFIX}/share/examples/LPRng
-  to your /etc/LPRng/ directory: lpd.conf, lpd.perms and printcap
+  to your ${CONFDIR} directory: lpd.conf, lpd.perms and printcap
 
 - set `lpd_enable=NO' in /etc/rc.conf
 
