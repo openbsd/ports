@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/24 03:24:21 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/13 15:54:21 jose Exp $
 
 # dumps core
 NOT_FOR_ARCHS=		sparc64
@@ -7,7 +7,7 @@ COMMENT=		"Z-code interpreter for X11"
 
 DISTNAME=		zoom-0.9.99beta3
 CATEGORIES=     	games
-HOMEPAGE=		http://www.dcs.warwick.ac.uk/~esvce/zoom/
+HOMEPAGE=		http://www.logicalshift.demon.co.uk/unix/zoom/
 
 MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
