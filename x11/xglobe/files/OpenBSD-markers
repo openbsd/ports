@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.19 2002/01/10 22:49:55 mark Exp $
+# $OpenBSD: OpenBSD-markers,v 1.20 2002/01/16 13:04:29 mpech Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -48,3 +48,4 @@
 59.43		17.81		"Jansson"	# Mats O
 60.10		24.57		"Korpela"	# Heikki
 60.12399	24.52438	"Virtanen"	# Jukka
+57.0		24.0		"Pechkin"	# Mike
