@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2004/02/04 07:39:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.66 2004/12/19 20:18:55 alek Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	"Restrictive license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"Restrictive license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m stdc++
 
 VER_MAJ=	1
 VER_MIN=	45
@@ -43,6 +44,7 @@ SUBPACKAGE?=
 LIB_DEPENDS+=	lib/qt/qt.1::x11/qt
 .  elif ${SUBPACKAGE} == "-html"
 PKG_ARCH=	*
+WANTLIB=
 .  endif
 .endif
 

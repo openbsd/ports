@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/10 11:16:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/19 20:18:55 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		ICE SM X11 Xext Xrender jpeg m png pthread util z
 
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		kdecore.6,DCOP,kdefx,kdeui::x11/kde/libs3 \

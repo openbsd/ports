@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/08/10 11:16:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/19 20:18:55 alek Exp $
 
 COMMENT=	"qt-based window manager"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m stdc++
 
 LIBDIR=${PREFIX}/lib/qlwm
 DOCDIR=${PREFIX}/share/doc/qlwm
