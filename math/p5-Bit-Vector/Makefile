@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/19 07:27:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/29 02:15:21 kevlo Exp $
 
 COMMENT=	"library of advanced math functions"
 
-DISTNAME=	Bit-Vector-6.2
+DISTNAME=	Bit-Vector-6.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
 
