@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2003/01/10 15:31:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.67 2003/02/06 17:55:07 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.1
-REVISION=	287
+REVISION=	320
 VERSION=	6.1.${REVISION}
 PKGNAME=	vim-${VERSION}
 CATEGORIES=	editors
@@ -24,8 +24,8 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-PATCHFILES=	6.1.1-100.gz:0 6.1.101-200.gz:0
-_patches!=	jot -w%03d - 201 ${REVISION} 1
+PATCHFILES=	6.1.1-100.gz:0 6.1.101-200.gz:0 6.1.201-300.gz:0
+_patches!=	jot -w%03d - 301 ${REVISION} 1
 .for p in ${_patches}
 PATCHFILES+=	6.1.${p}:0
 .endfor
