@@ -1,5 +1,5 @@
 @cwd /usr/X11R6
-@name blackbox-0.50.0
+@name blackbox-0.50.2
 bin/bsetroot
 bin/blackbox
 share/Blackbox/styles/blackmagic
