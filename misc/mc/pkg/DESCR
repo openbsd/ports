@@ -1,18 +1,14 @@
-The Midnight Commander is a directory browsing tool which bears a
-certain remote resemblance to John Socha's Norton Commander for DOS.
-It is feature packed:
+Midnight Commander is a file manager for UNIX-like operating systems.
+It bears a certain resemblance to John Socha's Norton Commander for DOS.
 
-        o Built in Virtual File System: manipulate remote files
-        systems through the ftp protocol or Midnight Commander's own
-        mcfs protocol.  Browse tar, compressed tar files, rpm, zip,
-        cpio, lha and rar files with a single click.  
+Some of the features are:
 
-        o All of the Midnight Commander operations work with the virtual
-        file system, enabling you to do complex tasks.
+* Built-in Virtual File System: manipulate remote file systems through
+  the ftp or ssh protocol or Midnight Commander's own mcfs protocol.
+  Browse the content of the tar, compressed tar, rpm, zip, cpio, lha and
+  rar archives.
 
-        o Mouse support on the Linux console and under X11's xterms. 
+* All of the Midnight Commander operations work with the virtual file
+  system, enabling you to do complex tasks.
 
-        o Note that the key binding to use the menu and to exit from
-	Midnight Commander are F9 and F10 respectively.  Since OpenBSD
-	uses these keys to swap VT's, you must hit 'Esc' + 9 and 
-	'Esc' + 0 to use the menu's and to exit
+* Mouse support under X11's xterms. 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_utilunix_c,v 1.1 2004/04/11 00:40:59 naddy Exp $
+--- src/utilunix.c.orig	2003-11-28 16:23:19.000000000 +0100
++++ src/utilunix.c	2004-04-11 02:36:03.000000000 +0200
+@@ -234,9 +234,9 @@ int my_system (int flags, const char *sh
+ 	signal (SIGCHLD, SIG_DFL);
+ 
+ 	if (flags & EXECUTE_AS_SHELL)
+-	    execl (shell, shell, "-c", command, NULL);
++	    execl (shell, shell, "-c", command, (char *)NULL);
+ 	else
+-	    execlp (shell, shell, command, NULL);
++	    execlp (shell, shell, command, (char *)NULL);
+ 
+ 	_exit (127);		/* Exec error */
+     } else {

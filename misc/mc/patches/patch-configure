@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2004/04/11 00:40:59 naddy Exp $
+--- configure.orig	2003-12-24 18:14:58.000000000 +0100
++++ configure	2004-04-11 02:36:03.000000000 +0200
+@@ -16495,7 +16495,7 @@ do
+ done
+ done
+ 
+-  test -z "$ac_cv_path_ZIP" && ac_cv_path_ZIP="/usr/bin/zip"
++  ac_cv_path_ZIP="${LOCALBASE}/bin/zip"
+   ;;
+ esac
+ fi
+@@ -16535,7 +16535,7 @@ do
+ done
+ done
+ 
+-  test -z "$ac_cv_path_UNZIP" && ac_cv_path_UNZIP="/usr/bin/unzip"
++  ac_cv_path_UNZIP="${LOCALBASE}/bin/unzip"
+   ;;
+ esac
+ fi
