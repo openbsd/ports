@@ -1,6 +1,6 @@
-$OpenBSD: patch-manual_ja_Makefile_in,v 1.1.1.1 2001/01/18 21:15:35 naddy Exp $
---- manual/ja/Makefile.in.orig	Tue Jan 16 18:56:20 2001
-+++ manual/ja/Makefile.in	Tue Jan 16 19:06:44 2001
+$OpenBSD: patch-manual_ja_Makefile_in,v 1.2 2001/02/03 15:41:25 naddy Exp $
+--- manual/ja/Makefile.in.orig	Wed Jan 31 09:59:08 2001
++++ manual/ja/Makefile.in	Wed Jan 31 09:59:35 2001
 @@ -64,7 +64,7 @@ CATALOGS = @CATALOGS@
  CATOBJEXT = @CATOBJEXT@
  CC = @CC@
@@ -10,31 +10,3 @@ $OpenBSD: patch-manual_ja_Makefile_in,v 1.1.1.1 2001/01/18 21:15:35 naddy Exp $
  DLLTOOL = @DLLTOOL@
  GDK_IMLIB_CFLAGS = @GDK_IMLIB_CFLAGS@
  GDK_IMLIB_LIBS = @GDK_IMLIB_LIBS@
-@@ -144,21 +144,21 @@ Makefile: $(srcdir)/Makefile.in  $(top_b
- 
- install-manualdataDATA: $(manualdata_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(manualdatadir)
-+	$(mkinstalldirs) $(manualdatadir)
- 	@list='$(manualdata_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(manualdatadir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(manualdatadir)/$$p; \
-+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(manualdatadir)/$$p"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(manualdatadir)/$$p; \
- 	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(manualdatadir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(manualdatadir)/$$p; \
-+	    echo " $(INSTALL_DATA) $$p $(manualdatadir)/$$p"; \
-+	    $(INSTALL_DATA) $$p $(manualdatadir)/$$p; \
- 	  fi; fi; \
- 	done
- 
- uninstall-manualdataDATA:
- 	@$(NORMAL_UNINSTALL)
- 	list='$(manualdata_DATA)'; for p in $$list; do \
--	  rm -f $(DESTDIR)$(manualdatadir)/$$p; \
-+	  rm -f $(manualdatadir)/$$p; \
- 	done
- tags: TAGS
- TAGS:

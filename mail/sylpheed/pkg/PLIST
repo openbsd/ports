@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/18 21:15:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/03 15:41:25 naddy Exp $
 bin/sylpheed
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
+share/locale/el/LC_MESSAGES/sylpheed.mo
 share/locale/es/LC_MESSAGES/sylpheed.mo
 share/locale/fr/LC_MESSAGES/sylpheed.mo
 share/locale/ja/LC_MESSAGES/sylpheed.mo
