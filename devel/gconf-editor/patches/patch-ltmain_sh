@@ -1,0 +1,31 @@
+$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/10/07 17:24:13 marcm Exp $
+--- ltmain.sh.orig	Tue Jun  3 14:03:04 2003
++++ ltmain.sh	Thu Jun  5 09:02:42 2003
+@@ -1290,6 +1290,17 @@ EOF
+ 	continue
+ 	;;
+ 
++      -pthread)
++        case $host in
++        *-*-openbsd*)
++          deplibs="$deplibs $arg"
++          ;;
++        *)
++          continue
++          ;;
++        esac
++        ;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1961,6 +1972,9 @@ EOF
+ 	  fi
+ 	  continue
+ 	  ;;
++        -pthread)
++          continue
++          ;;
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue

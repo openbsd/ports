@@ -1,0 +1,4 @@
+An editor for the GConf configuration system, similar to the registry
+editor for that other graphical operating system.
+
+WWW: ${HOMEPAGE}
