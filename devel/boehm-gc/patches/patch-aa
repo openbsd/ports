@@ -1,6 +1,14 @@
---- Makefile.orig	Wed Aug 20 17:17:10 1997
-+++ Makefile	Mon Apr  6 03:21:15 1998
-@@ -15,7 +15,33 @@
+--- Makefile.orig	Thu Aug 21 02:17:10 1997
++++ Makefile	Mon Apr 19 23:34:04 1999
+@@ -8,14 +8,40 @@
+ #	 c++ interface to gc.a
+ # cord/de - builds dumb editor based on cords.
+ CC=cc
+-CXX=CC
++CXX=c++
+ AS=as
+ #  The above doesn't work with gas, which doesn't run cpp.
+ #  Define AS as `gcc -c -x assembler-with-cpp' instead.
  #  Under Irix 6, you will have to specify the ABI for as if you specify
  #  it for the C compiler.
  
