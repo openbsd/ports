@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/28 20:15:45 naddy Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-11.10
+DISTNAME=		nail-11.21
 CATEGORIES=		mail
 HOMEPAGE=		http://nail.sourceforge.net/
 
@@ -29,6 +29,8 @@ MAKE_FLAGS+=		SENDMAIL="/usr/sbin/sendmail" \
 FAKE_FLAGS+=		DESTDIR="${DESTDIR}" \
 			MANDIR="${PREFIX}/man" \
 			UCBINSTALL="${INSTALL_PROGRAM}"
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nail
