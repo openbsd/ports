@@ -6,3 +6,5 @@ for standalone scripts.
 Originally inspired by Emacs Lisp, the language dialect combines many
 of the elisp features while trying to remove some of the main
 deficiencies, with features from Common Lisp and Scheme.
+
+WWW: ${HOMEPAGE}
