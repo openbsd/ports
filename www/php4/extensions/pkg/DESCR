@@ -1,11 +1,12 @@
 
 This is a place-holder package to inform you that the PHP port is
 now split into small sub-packages, designed to allow you to install
-modules independently of the main PHP package.
+modules independently of the main PHP engine.
 
 For example, to install the IMAP module, just pkg_add the
-php-imap-${V}.tgz package and activate the relevant extension in
-your php.ini file.
+php-imap-${V}.tgz package and activate it using the
+'phpxs' command.
 
-This package contains no files and can be safely deleted.
+This package contains no files or dependencies and may be
+safely uninstalled.
 
