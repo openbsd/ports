@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/02/01 14:59:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/02/02 23:07:36 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -6,9 +6,11 @@ bin/kmid
 bin/kmix
 bin/kmixctrl
 bin/krec
+bin/kscd
 bin/midisend
 bin/mpeglibartsplay
 bin/noatun
+bin/workman2cddb.pl
 bin/yaf-cdda
 bin/yaf-mpgplay
 bin/yaf-splay
@@ -45,6 +47,8 @@ include/libkcddb/cddb.h
 include/libkcddb/cdinfo.h
 include/libkcddb/client.h
 include/libkcddb/config.h
+include/libwm/wm_cdrom.h
+include/libwm/wm_cdtext.h
 include/mimetypetree.h
 include/mpeglib/decoder/cddaPlugin.h
 include/mpeglib/decoder/command.h
@@ -206,12 +210,14 @@ lib/libkdeinit_kmix.la
 lib/libkdeinit_kmixctrl.la
 lib/libkdeinit_krec.la
 lib/libkdeinit_noatun.la
+lib/libkworkman.la
 lib/libmpeg.la
 lib/libnoatun.la
 lib/libnoatunarts.la
 lib/libnoatuncontrols.la
 lib/libnoatuntags.la
 lib/libwinskinvis.la
+lib/libworkmanaudio.a
 lib/libyafcore.la
 lib/libyafxplayer.la
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
@@ -353,6 +359,7 @@ share/applications/kde/kmid.desktop
 share/applications/kde/kmix.desktop
 share/applications/kde/kmixcfg.desktop
 share/applications/kde/krec.desktop
+share/applications/kde/kscd.desktop
 share/applications/kde/libkcddb.desktop
 share/applications/kde/noatun.desktop
 share/apps/artsbuilder/artsbuilderui.rc
@@ -504,6 +511,7 @@ share/apps/krec/icons/crystalsvg/32x32/mimetypes/krec_fileplay.png
 share/apps/krec/icons/crystalsvg/32x32/mimetypes/krec_filerec.png
 share/apps/krec/krecui.rc
 share/apps/krec/tips
+share/apps/kscd/icons/crystalsvg/22x22/actions/cdsmall.png
 share/apps/noatun/dcopiface.plugin
 share/apps/noatun/eq.preset/preset.dance
 share/apps/noatun/eq.preset/preset.jazz
@@ -731,6 +739,7 @@ share/apps/noatun/systray.plugin
 share/apps/noatun/systrayui.rc
 share/apps/noatun/voiceprint.plugin
 share/apps/noatun/winskin.plugin
+share/apps/profiles/kscd.profile.xml
 share/config.kcfg/libkcddb.kcfg
 share/doc/HTML/en/artsbuilder/apis.docbook
 share/doc/HTML/en/artsbuilder/arts-structure.png
@@ -851,6 +860,7 @@ share/icons/crystalsvg/128x128/apps/artscontrol.png
 share/icons/crystalsvg/128x128/apps/kaboodle.png
 share/icons/crystalsvg/128x128/apps/kmix.png
 share/icons/crystalsvg/128x128/apps/krec.png
+share/icons/crystalsvg/128x128/apps/kscd.png
 share/icons/crystalsvg/128x128/apps/noatun.png
 share/icons/crystalsvg/16x16/actions/artsaudiomanager.png
 share/icons/crystalsvg/16x16/actions/artsbuilderexecute.png
@@ -864,6 +874,7 @@ share/icons/crystalsvg/16x16/apps/kaboodle.png
 share/icons/crystalsvg/16x16/apps/kmid.png
 share/icons/crystalsvg/16x16/apps/kmix.png
 share/icons/crystalsvg/16x16/apps/krec.png
+share/icons/crystalsvg/16x16/apps/kscd.png
 share/icons/crystalsvg/16x16/apps/noatun.png
 share/icons/crystalsvg/22x22/actions/artsaudiomanager.png
 share/icons/crystalsvg/22x22/actions/artsbuilderexecute.png
@@ -885,6 +896,7 @@ share/icons/crystalsvg/32x32/apps/kaboodle.png
 share/icons/crystalsvg/32x32/apps/kmid.png
 share/icons/crystalsvg/32x32/apps/kmix.png
 share/icons/crystalsvg/32x32/apps/krec.png
+share/icons/crystalsvg/32x32/apps/kscd.png
 share/icons/crystalsvg/32x32/apps/noatun.png
 share/icons/crystalsvg/48x48/actions/artsaudiomanager.png
 share/icons/crystalsvg/48x48/actions/artsenvironment.png
@@ -896,6 +908,7 @@ share/icons/crystalsvg/48x48/apps/kaboodle.png
 share/icons/crystalsvg/48x48/apps/kmid.png
 share/icons/crystalsvg/48x48/apps/kmix.png
 share/icons/crystalsvg/48x48/apps/krec.png
+share/icons/crystalsvg/48x48/apps/kscd.png
 share/icons/crystalsvg/48x48/apps/noatun.png
 share/icons/crystalsvg/64x64/actions/artsaudiomanager.png
 share/icons/crystalsvg/64x64/actions/artsenvironment.png
@@ -906,6 +919,7 @@ share/icons/crystalsvg/64x64/apps/artscontrol.png
 share/icons/crystalsvg/64x64/apps/kaboodle.png
 share/icons/crystalsvg/64x64/apps/kmix.png
 share/icons/crystalsvg/64x64/apps/krec.png
+share/icons/crystalsvg/64x64/apps/kscd.png
 share/icons/crystalsvg/64x64/apps/noatun.png
 share/icons/crystalsvg/scalable/actions/artsaudiomanager.svg
 share/icons/crystalsvg/scalable/actions/artsenvironment.svg
@@ -916,6 +930,7 @@ share/icons/crystalsvg/scalable/apps/artscontrol.svg
 share/mimelnk/application/x-artsbuilder.desktop
 share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/interface/x-winamp-skin.desktop
+share/mimelnk/text/xmcd.desktop
 share/services/audiocd.protocol
 share/services/kaboodle_component.desktop
 share/services/kaboodleengine.desktop
@@ -932,12 +947,113 @@ share/services/krec_exportwave.desktop
 share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
 %%SHARED%%
+@dirrm share/mimelnk/interface
+@dirrm share/icons/crystalsvg/scalable/actions
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/icons/crystalsvg/128x128/actions
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/krec
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kmid
 @dirrm share/doc/HTML/en/kcontrol/kmixcfg
+@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kaboodle
 @dirrm share/doc/HTML/en/juk
+@dirrm share/doc/HTML/en/artsbuilder/images
+@dirrm share/doc/HTML/en/artsbuilder
+@dirrm share/config.kcfg
+@dirrm share/apps/profiles
+@dirrm share/apps/noatun/skins/winamp/Winamp
+@dirrm share/apps/noatun/skins/winamp
+@dirrm share/apps/noatun/skins/kjofol/vibrocentric
+@dirrm share/apps/noatun/skins/kjofol/phong
+@dirrm share/apps/noatun/skins/kjofol/kjofol
+@dirrm share/apps/noatun/skins/kjofol/HexoBronx
+@dirrm share/apps/noatun/skins/kjofol
+@dirrm share/apps/noatun/skins/kaiman/k9
+@dirrm share/apps/noatun/skins/kaiman/circle
+@dirrm share/apps/noatun/skins/kaiman/car-preset
+@dirrm share/apps/noatun/skins/kaiman
+@dirrm share/apps/noatun/skins
+@dirrm share/apps/noatun/icons/crystalsvg/48x48/actions
+@dirrm share/apps/noatun/icons/crystalsvg/48x48
+@dirrm share/apps/noatun/icons/crystalsvg/32x32/actions
+@dirrm share/apps/noatun/icons/crystalsvg/32x32
+@dirrm share/apps/noatun/icons/crystalsvg/22x22/actions
+@dirrm share/apps/noatun/icons/crystalsvg/22x22
+@dirrm share/apps/noatun/icons/crystalsvg/16x16/actions
+@dirrm share/apps/noatun/icons/crystalsvg/16x16
+@dirrm share/apps/noatun/icons/crystalsvg
+@dirrm share/apps/noatun/icons
+@dirrm share/apps/noatun/eq.preset
+@dirrm share/apps/noatun
+@dirrm share/apps/kscd/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kscd/icons/crystalsvg/22x22
+@dirrm share/apps/kscd/icons/crystalsvg
+@dirrm share/apps/kscd/icons
+@dirrm share/apps/kscd
+@dirrm share/apps/krec/icons/crystalsvg/32x32/mimetypes
+@dirrm share/apps/krec/icons/crystalsvg/32x32/actions
+@dirrm share/apps/krec/icons/crystalsvg/32x32
+@dirrm share/apps/krec/icons/crystalsvg/22x22/actions
+@dirrm share/apps/krec/icons/crystalsvg/22x22
+@dirrm share/apps/krec/icons/crystalsvg/16x16/actions
+@dirrm share/apps/krec/icons/crystalsvg/16x16
+@dirrm share/apps/krec/icons/crystalsvg
+@dirrm share/apps/krec/icons
+@dirrm share/apps/krec
+@dirrm share/apps/kmix/pics
+@dirrm share/apps/kmix
+@dirrm share/apps/kmid/maps
+@dirrm share/apps/kmid/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kmid/icons/crystalsvg/32x32
+@dirrm share/apps/kmid/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kmid/icons/crystalsvg/22x22
+@dirrm share/apps/kmid/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kmid/icons/crystalsvg/16x16
+@dirrm share/apps/kmid/icons/crystalsvg
+@dirrm share/apps/kmid/icons
+@dirrm share/apps/kmid/fm
+@dirrm share/apps/kmid
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
+@dirrm share/apps/kaboodle/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kaboodle/icons/crystalsvg/22x22
+@dirrm share/apps/kaboodle/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kaboodle/icons/crystalsvg/16x16
+@dirrm share/apps/kaboodle/icons/crystalsvg
+@dirrm share/apps/kaboodle/icons
+@dirrm share/apps/kaboodle
+@dirrm share/apps/artscontrol
+@dirrm share/apps/artsbuilder/pics
+@dirrm share/apps/artsbuilder/examples/todo
+@dirrm share/apps/artsbuilder/examples
+@dirrm share/apps/artsbuilder
+@dirrm lib/mcop/Noatun
+@dirrm lib/mcop/Arts/Environment
+@dirrm include/noatun
 @dirrm include/mpeglib_artsplug
+@dirrm include/mpeglib/util/yaf/yafxplayer
+@dirrm include/mpeglib/util/yaf/yafcore
+@dirrm include/mpeglib/util/yaf
+@dirrm include/mpeglib/util/render
+@dirrm include/mpeglib/util/mmx
+@dirrm include/mpeglib/util/file
+@dirrm include/mpeglib/util/abstract
+@dirrm include/mpeglib/util
+@dirrm include/mpeglib/splay
+@dirrm include/mpeglib/output
+@dirrm include/mpeglib/oggvorbis
+@dirrm include/mpeglib/mpegutil
+@dirrm include/mpeglib/input
+@dirrm include/mpeglib/frame
+@dirrm include/mpeglib/decoder
+@dirrm include/mpeglib
+@dirrm include/libwm
+@dirrm include/libkcddb

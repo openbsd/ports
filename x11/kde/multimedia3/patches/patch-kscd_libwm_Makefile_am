@@ -1,0 +1,28 @@
+$OpenBSD: patch-kscd_libwm_Makefile_am,v 1.5 2004/02/02 23:07:36 espie Exp $
+--- kscd/libwm/Makefile.am.orig	2004-02-02 19:55:44.000000000 +0100
++++ kscd/libwm/Makefile.am	2004-02-02 19:56:05.000000000 +0100
+@@ -7,19 +7,19 @@ subdirs = include
+ SUBDIRS = audio
+ INCLUDES = $(all_includes) 
+ 
+-lib_LTLIBRARIES  = libworkman.la
++lib_LTLIBRARIES  = libkworkman.la
+ 
+-libworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
++libkworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
+ 
+-libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
++libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
+ database.c index.c scsi.c cdda.c\
+ plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
+ plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
+ plat_osf1.c plat_sun.c plat_scor5.c \
+ drv_sony.c drv_toshiba.c
+ 
+-libworkmanincludedir = $(includedir)/libwm
+-libworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
++libkworkmanincludedir = $(includedir)/libwm
++libkworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
+ 
+ if libwm_with_cdda
+ CDDA_SLAVE = cddaslave

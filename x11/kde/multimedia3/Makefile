@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/02/01 23:58:30 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/02 23:07:35 espie Exp $
 
 COMMENT= 		"X11 toolkit, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -17,8 +17,5 @@ RUN_DEPENDS=:xanim-*:graphics/xanim
 SEPARATE_BUILD=flavored
 CONFIGURE_ARGS+=--without-lame
 CONFIGURE_ENV+=aktion_has_xanim=yes
-MAKE_FLAGS+= TOPSUBDIRS="arts audiofile_artsplugin doc kaboodle kfile-plugins kmid kmix libkcddb mpeglib krec noatun kioslave mpeglib_artsplug"
-
-FAKE_FLAGS= TOPSUBDIRS="arts audiofile_artsplugin doc kaboodle kfile-plugins kmid kmix libkcddb mpeglib krec noatun kioslave mpeglib_artsplug"  DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

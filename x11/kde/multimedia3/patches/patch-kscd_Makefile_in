@@ -1,0 +1,21 @@
+$OpenBSD: patch-kscd_Makefile_in,v 1.9 2004/02/02 23:07:36 espie Exp $
+--- kscd/Makefile.in.orig	2004-02-02 19:58:24.000000000 +0100
++++ kscd/Makefile.in	2004-02-02 19:58:44.000000000 +0100
+@@ -403,7 +403,7 @@ kscd_SOURCES=kvolumecontrol.cpp  kscd.cp
+ 
+ 
+ kscd_LDFLAGS = $(all_libraries) -lkutils
+-kscd_LDADD = $(top_builddir)/kscd/libwm/libworkman.la \
++kscd_LDADD = $(top_builddir)/kscd/libwm/libkworkman.la \
+              $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la
+ 
+ 
+@@ -450,7 +450,7 @@ kscd_OBJECTS = kvolumecontrol.$(OBJEXT) 
+ 	configdlg.$(OBJEXT) ledlamp.$(OBJEXT) CDDialog.$(OBJEXT) \
+ 	CDDialogData.$(OBJEXT) docking.$(OBJEXT) inexact.$(OBJEXT) \
+ 	mgconfdlg.$(OBJEXT) bwlednum.$(OBJEXT) configWidget.$(OBJEXT) kscd_skel.$(OBJEXT) panel.$(OBJEXT) configWidgetUI.$(OBJEXT)
+-kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libworkman.la \
++kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libkworkman.la \
+ 	$(top_builddir)/libkcddb/libkcddb.la
+ SCRIPTS = $(bin_SCRIPTS)
+ 

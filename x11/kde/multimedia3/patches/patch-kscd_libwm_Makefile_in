@@ -1,0 +1,225 @@
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.8 2004/02/02 23:07:36 espie Exp $
+--- kscd/libwm/Makefile.in.orig	2004-02-02 19:55:44.000000000 +0100
++++ kscd/libwm/Makefile.in	2004-02-02 19:58:09.000000000 +0100
+@@ -384,11 +384,11 @@ subdirs = include
+ SUBDIRS = audio
+ INCLUDES = $(all_includes) 
+ 
+-lib_LTLIBRARIES = libworkman.la
++lib_LTLIBRARIES = libkworkman.la
+ 
+-libworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
++libkworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
+ 
+-libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
++libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
+ database.c index.c scsi.c cdda.c\
+ plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
+ plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
+@@ -396,15 +396,15 @@ plat_osf1.c plat_sun.c plat_scor5.c \
+ drv_sony.c drv_toshiba.c
+ 
+ 
+-libworkmanincludedir = $(includedir)/libwm
+-libworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
++libkworkmanincludedir = $(includedir)/libwm
++libkworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
+ 
+ @libwm_with_cdda_TRUE@CDDA_SLAVE = cddaslave
+ 
+ bin_PROGRAMS = $(CDDA_SLAVE)
+ cddaslave_SOURCES = cddaslave.c plat_linux_cdda.c plat_sun_cdda.c
+ 
+-cddaslave_LDADD = audio/libworkmanaudio.a libworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
++cddaslave_LDADD = audio/libworkmanaudio.a libkworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
+ subdir = kscd/libwm
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+@@ -412,24 +412,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libworkman_la_LIBADD =
+-am_libworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
++libkworkman_la_LIBADD =
++am_libkworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
+ 	cdtext.lo database.lo index.lo scsi.lo cdda.lo plat_aix.lo \
+ 	plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo \
+ 	plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo \
+ 	plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo \
+ 	drv_sony.lo drv_toshiba.lo
+-#>- libworkman_la_OBJECTS = $(am_libworkman_la_OBJECTS)
++#>- libkworkman_la_OBJECTS = $(am_libkworkman_la_OBJECTS)
+ #>+ 9
+-libworkman_la_final_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo cdtext.lo database.lo index.lo scsi.lo cdda.lo plat_aix.lo plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo drv_sony.lo drv_toshiba.lo 
+-libworkman_la_nofinal_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
++libkworkman_la_final_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo cdtext.lo database.lo index.lo scsi.lo cdda.lo plat_aix.lo plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo drv_sony.lo drv_toshiba.lo 
++libkworkman_la_nofinal_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
+ 	cdtext.lo database.lo index.lo scsi.lo cdda.lo plat_aix.lo \
+ 	plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo \
+ 	plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo \
+ 	plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo \
+ 	drv_sony.lo drv_toshiba.lo
+-@KDE_USE_FINAL_FALSE@libworkman_la_OBJECTS = $(libworkman_la_nofinal_OBJECTS)
+-@KDE_USE_FINAL_TRUE@libworkman_la_OBJECTS = $(libworkman_la_final_OBJECTS)
++@KDE_USE_FINAL_FALSE@libkworkman_la_OBJECTS = $(libkworkman_la_nofinal_OBJECTS)
++@KDE_USE_FINAL_TRUE@libkworkman_la_OBJECTS = $(libkworkman_la_final_OBJECTS)
+ @libwm_with_cdda_TRUE@bin_PROGRAMS = cddaslave$(EXEEXT)
+ @libwm_with_cdda_FALSE@bin_PROGRAMS =
+ PROGRAMS = $(bin_PROGRAMS)
+@@ -443,7 +443,7 @@ cddaslave_nofinal_OBJECTS = cddaslave.$(
+ 	plat_sun_cdda.$(OBJEXT)
+ @KDE_USE_FINAL_FALSE@cddaslave_OBJECTS = $(cddaslave_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@cddaslave_OBJECTS = $(cddaslave_final_OBJECTS)
+-cddaslave_DEPENDENCIES = audio/libworkmanaudio.a libworkman.la
++cddaslave_DEPENDENCIES = audio/libworkmanaudio.a libkworkman.la
+ cddaslave_LDFLAGS =
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+@@ -495,8 +495,8 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
+-HEADERS = $(libworkmaninclude_HEADERS)
++DIST_SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
++HEADERS = $(libkworkmaninclude_HEADERS)
+ 
+ 
+ #>- RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
+@@ -510,10 +510,10 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+ 	all-recursive install-data-recursive install-exec-recursive \
+ 	installdirs-recursive install-recursive uninstall-recursive \
+ 	check-recursive installcheck-recursive nmcheck-recursive bcheck-recursive
+-DIST_COMMON = README $(libworkmaninclude_HEADERS) Makefile.am \
++DIST_COMMON = README $(libkworkmaninclude_HEADERS) Makefile.am \
+ 	Makefile.in
+ DIST_SUBDIRS = $(SUBDIRS)
+-SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
++SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
+ 
+ #>- all: all-recursive
+ #>+ 1
+@@ -558,8 +558,8 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libworkman.la: $(libworkman_la_OBJECTS) $(libworkman_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libworkman_la_LDFLAGS) $(libworkman_la_OBJECTS) $(libworkman_la_LIBADD) $(LIBS)
++libkworkman.la: $(libkworkman_la_OBJECTS) $(libkworkman_la_DEPENDENCIES) 
++	$(LINK) -rpath $(libdir) $(libkworkman_la_LDFLAGS) $(libkworkman_la_OBJECTS) $(libkworkman_la_LIBADD) $(LIBS)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+@@ -672,23 +672,23 @@ clean-libtool:
+ distclean-libtool:
+ 	-rm -f libtool
+ uninstall-info-am:
+-libworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
+-install-libworkmanincludeHEADERS: $(libworkmaninclude_HEADERS)
++libkworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
++install-libkworkmanincludeHEADERS: $(libkworkmaninclude_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(libworkmanincludedir)
+-	@list='$(libworkmaninclude_HEADERS)'; for p in $$list; do \
++	$(mkinstalldirs) $(DESTDIR)$(libkworkmanincludedir)
++	@list='$(libkworkmaninclude_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(libworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libworkmanincludedir)/$$f"; \
+-	  $(libworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libworkmanincludedir)/$$f; \
++	  echo " $(libkworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libkworkmanincludedir)/$$f"; \
++	  $(libkworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libkworkmanincludedir)/$$f; \
+ 	done
+ 
+-uninstall-libworkmanincludeHEADERS:
++uninstall-libkworkmanincludeHEADERS:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(libworkmaninclude_HEADERS)'; for p in $$list; do \
++	@list='$(libkworkmaninclude_HEADERS)'; for p in $$list; do \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(libworkmanincludedir)/$$f"; \
+-	  rm -f $(DESTDIR)$(libworkmanincludedir)/$$f; \
++	  echo " rm -f $(DESTDIR)$(libkworkmanincludedir)/$$f"; \
++	  rm -f $(DESTDIR)$(libkworkmanincludedir)/$$f; \
+ 	done
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+@@ -869,7 +869,7 @@ install-binPROGRAMS: install-libLTLIBRAR
+ 
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(libworkmanincludedir)
++	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(libkworkmanincludedir)
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -918,7 +918,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-libworkmanincludeHEADERS
++install-data-am: install-libkworkmanincludeHEADERS
+ 
+ install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
+ 
+@@ -946,7 +946,7 @@ ps: ps-recursive
+ ps-am:
+ 
+ uninstall-am: uninstall-binPROGRAMS uninstall-info-am \
+-	uninstall-libLTLIBRARIES uninstall-libworkmanincludeHEADERS
++	uninstall-libLTLIBRARIES uninstall-libkworkmanincludeHEADERS
+ 
+ uninstall-info: uninstall-info-recursive
+ 
+@@ -960,7 +960,7 @@ uninstall-info: uninstall-info-recursive
+ 	install-data-recursive install-exec install-exec-am \
+ 	install-exec-recursive install-info install-info-am \
+ 	install-info-recursive install-libLTLIBRARIES \
+-	install-libworkmanincludeHEADERS install-man install-recursive \
++	install-libkworkmanincludeHEADERS install-man install-recursive \
+ 	install-strip installcheck installcheck-am installdirs \
+ 	installdirs-am installdirs-recursive maintainer-clean \
+ 	maintainer-clean-generic maintainer-clean-recursive mostlyclean \
+@@ -969,7 +969,7 @@ uninstall-info: uninstall-info-recursive
+ 	ps-recursive tags tags-recursive uninstall uninstall-am \
+ 	uninstall-binPROGRAMS uninstall-info-am \
+ 	uninstall-info-recursive uninstall-libLTLIBRARIES \
+-	uninstall-libworkmanincludeHEADERS uninstall-recursive
++	uninstall-libkworkmanincludeHEADERS uninstall-recursive
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+@@ -995,7 +995,7 @@ clean-bcheck: 
+ bcheck: bcheck-recursive
+ 
+ bcheck-am:
+-	@for i in $(libworkmaninclude_HEADERS); do \
++	@for i in $(libkworkmaninclude_HEADERS); do \
+ 	    if test $(srcdir)/$$i -nt $$i.bchecktest.cc; then \
+ 	        echo "int main() {return 0;}" > $$i.bchecktest.cc ; \
+ 	        echo "#include \"$$i\"" >> $$i.bchecktest.cc ; \
+@@ -1012,19 +1012,19 @@ bcheck-am:
+ 
+ #>+ 3
+ final:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_final_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_final_OBJECTS)" all-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_final_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_final_OBJECTS)" all-am
+ 
+ #>+ 3
+ final-install:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_final_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_final_OBJECTS)" install-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_final_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_final_OBJECTS)" install-am
+ 
+ #>+ 3
+ no-final:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_nofinal_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_nofinal_OBJECTS)" all-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_nofinal_OBJECTS)" all-am
+ 
+ #>+ 3
+ no-final-install:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_nofinal_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_nofinal_OBJECTS)" install-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" cddaslave_OBJECTS="$(cddaslave_nofinal_OBJECTS)" install-am
+ 
+ #>+ 3
+ cvs-clean:
