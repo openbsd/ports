@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/23 15:44:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/07/03 20:37:37 naddy Exp $
 bin/opera
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/libnpp.so.0
@@ -8,7 +8,8 @@ lib/opera/plugins/operamotifwrapper
 libexec/opera
 share/doc/opera/LICENSE
 share/doc/opera/help
-share/examples/opera/operarc
+share/examples/opera/opera6rc
+share/examples/opera/opera6rc.fixed
 share/opera/buttons/DefSmall
 share/opera/buttons/Default
 share/opera/buttons/ReadMe.txt

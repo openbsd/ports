@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2002/04/23 15:44:43 naddy Exp $
+# $OpenBSD: INSTALL,v 1.6 2002/07/03 20:37:37 naddy Exp $
 #
 # Pre/post-installation setup of Opera
 
@@ -8,7 +8,8 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/opera6rc	# hardcoded to /etc
+CONFIG_FILE=/etc/opera6rc		# hardcoded to /etc
+CONFIG_FILE_FIXED=/etc/opera6rc.fixed	# hardcoded to /etc
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/opera
 
 # Function: tell the user what they need to do to use the port just installed
@@ -17,8 +18,12 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
-    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| The existing $1 configuration files,"
+    echo "|"
+    echo "|     ${CONFIG_FILE}"
+    echo "|     ${CONFIG_FILE_FIXED}"
+    echo "|"
+    echo "| have NOT been changed.  You may want to compare them to the"
     echo "| current sample files in ${SAMPLE_CONFIG_DIR}"
     echo "| and update your configuration as needed."
     echo "+---------------"
@@ -29,12 +34,17 @@ do_notice()
 #
 do_install()
 {
-    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/operarc ${CONFIG_FILE}
+    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/opera6rc ${CONFIG_FILE}
+    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/opera6rc.fixed ${CONFIG_FILE_FIXED}
     echo
     echo "+---------------"
-    echo "| The $1 configuration file, ${CONFIG_FILE},"
-    echo "| has been installed.  Please view this file and change"
-    echo "| the configuration to meet your needs"
+    echo "| The $1 configuration files,"
+    echo "|"
+    echo "|     ${CONFIG_FILE}"
+    echo "|     ${CONFIG_FILE_FIXED}"
+    echo "|"
+    echo "| have been installed.  Please view these files and change"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 }
@@ -53,7 +63,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -f ${CONFIG_FILE} ]; then
+	if [ -f ${CONFIG_FILE} -o -f ${CONFIG_FILE_FIXED} ]; then
 	    do_notice "$1"
 	else
 	    do_install "$1"

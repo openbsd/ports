@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/28 15:03:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/03 20:37:36 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast and customizable WWW browser"
 
-PKGNAME=	opera-6.01
-DISTNAME=	opera-6.01-20020523.1-static-qt.i386
+PKGNAME=	opera-6.02
+DISTNAME=	opera-6.02-20020701.1-static-qt.i386
 CATEGORIES=	www
 NEED_VERSION=	1.522
 HOMEPAGE=	http://www.opera.com/
@@ -30,7 +30,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://ftp.rge.com/pub/infosystems/opera/ \
 			http://www.rge.com/pub/infosystems/opera/
 
-MASTER_SITES=	${MASTER_SITES_OPERA:=linux/601/final/en/qt_static/}
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/602/final/en/qt_static/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	:redhat_base->=6.2p1:emulators/redhat/base \
@@ -44,10 +44,13 @@ do-install:
 	    --prefix=${PREFIX} \
 	    --exec_prefix=${PREFIX}/libexec \
 	    --plugindir=${PREFIX}/lib/opera/plugins
-	cd ${PREFIX}/share/doc/opera; \
+	cd ${PREFIX}/share/doc/opera && \
 	    ln -sf ../../opera/help .
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opera
-	${INSTALL_DATA} ${FILESDIR}/operarc ${PREFIX}/share/examples/opera
+	${INSTALL_DATA} ${FILESDIR}/operarc \
+	    ${PREFIX}/share/examples/opera/opera6rc
+	${INSTALL_DATA} ${FILESDIR}/operarc.fixed \
+	    ${PREFIX}/share/examples/opera/opera6rc.fixed
 	sed -e 's:@PREFIX@:${TRUEPREFIX}:g' \
 	    -e 's:@LOCALBASE@:${LOCALBASE}:g' \
 	    ${FILESDIR}/opera.sh >${PREFIX}/bin/opera

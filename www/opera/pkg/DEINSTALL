@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.5 2002/04/23 15:44:43 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.6 2002/07/03 20:37:37 naddy Exp $
 #
 # De-installation setup of Opera
 
@@ -8,7 +8,8 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/opera6rc	# hardcoded to /etc
+CONFIG_FILE=/etc/opera6rc		# hardcoded to /etc
+CONFIG_FILE_FIXED=/etc/opera6rc.fixed	# hardcoded to /etc
 
 # Function: tell the user what they need to do to delete the port completely
 #
@@ -19,7 +20,7 @@ do_notice()
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| these steps as root:"
     echo "|"
-    echo "|       rm -f ${CONFIG_FILE}"
+    echo "|       rm -f ${CONFIG_FILE} ${CONFIG_FILE_FIXED}"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."
@@ -38,7 +39,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -f ${CONFIG_FILE} ]; then
+	if [ -f ${CONFIG_FILE} -o -f ${CONFIG_FILE_FIXED} ]; then
 	    do_notice "$1"
 	fi
 	;;
