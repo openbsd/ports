@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/15 16:51:16 robert Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
 DISTNAME=	${PKGNAME:S,-,,}
-PKGNAME=	bnc-2.8.6
+PKGNAME=	bnc-2.8.9
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}files/
 
@@ -23,6 +23,7 @@ post-patch:
 		${WRKSRC}/bncsetup > ${WRKSRC}/bncsetup.new
 	@mv ${WRKSRC}/bncsetup.new ${WRKSRC}/bncsetup
 
+ALL_TARGET=	ALL
 NO_REGRESS=	Yes
 
 do-install:

@@ -1,0 +1,21 @@
+$OpenBSD: patch-server_c,v 1.1 2004/10/15 16:51:17 robert Exp $
+--- server.c.orig	Fri Oct 15 18:34:12 2004
++++ server.c	Fri Oct 15 18:36:30 2004
+@@ -343,7 +343,7 @@
+ 	
+ 	while(sbuf_getlength(&cptr->sendq) > 0)
+ 	{
+-		msg = sbuf_pagemap(&cptr->sendq, &length);
++		msg = sbuf_pagemap(&cptr->sendq, (size_t *)&length);
+ 		if(msg == NULL)
+ 			break; /*XXX*/
+ 		if(length <= 0)
+@@ -977,7 +977,7 @@
+ 	
+ 	while(sbuf_getlength(sendq) > 0)
+ 	{
+-		msg = sbuf_pagemap(sendq, &length);
++		msg = sbuf_pagemap(sendq, (size_t *)&length);
+ 		if(msg == NULL)
+ 			break; /*XXX*/
+ 		if(length <= 0)
