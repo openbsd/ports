@@ -1,3 +1,4 @@
+$OpenBSD: patch-ghc_rts_Adjustor_c,v 1.2 2003/08/01 14:03:40 avsm Exp $
 Ok. This is the magical "adjustor thunk". The entry point into
 Haskell land from C land. Problem is that it (1) uses dynamically
 generated code stored on the heap, as well as (2) a nasty little hack

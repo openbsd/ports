@@ -1,3 +1,4 @@
+$OpenBSD: patch-___ghc-4_08_2_ghc_rts_MBlock_c,v 1.2 2003/08/01 14:03:40 avsm Exp $
 In -current, mmap'd data wants to start at 0x60089000, on my
 build machine. I presume this is because data all got moved above the
 1G line for W^X...pushing everything up?

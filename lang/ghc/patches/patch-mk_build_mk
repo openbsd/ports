@@ -1,3 +1,4 @@
+$OpenBSD: patch-mk_build_mk,v 1.2 2003/08/01 14:03:40 avsm Exp $
 SplitObjs are unnecessary (it splits object files up), and seems
 to use enormous amounts of memory, eventually stomping on my
 stack/data/file size ulimits when set, and dumping core. Solution

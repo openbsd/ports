@@ -1,3 +1,4 @@
+$OpenBSD: patch-ghc_rts_obscure_ccall_s,v 1.2 2003/08/01 14:03:40 avsm Exp $
 The assembly code to go in .text, replacing the opcodes for this
 code that were stored in an array in .data land, by a C hacker.
 

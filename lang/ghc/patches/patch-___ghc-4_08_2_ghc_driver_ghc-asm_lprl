@@ -1,3 +1,4 @@
+$OpenBSD: patch-___ghc-4_08_2_ghc_driver_ghc-asm_lprl,v 1.2 2003/08/01 14:03:40 avsm Exp $
 Let asm mangler know of the ELF OpenBSD x86
 
 --- ../ghc-4.08.2/ghc/driver/ghc-asm.lprl.orig	Wed Apr 23 14:01:48 2003

@@ -1,3 +1,4 @@
+$OpenBSD: patch-ghc_compiler_Makefile,v 1.2 2003/08/01 14:03:40 avsm Exp $
 Note: -H sets the initial size of the garbage collected heap used
 by the compiler to compiled a Haskell file. There appears to be
 some kind of garbage collection bug in  the stage1 compiler build

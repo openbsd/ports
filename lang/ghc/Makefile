@@ -1,3 +1,4 @@
+# $OpenBSD: Makefile,v 1.5 2003/08/01 14:03:39 avsm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 #

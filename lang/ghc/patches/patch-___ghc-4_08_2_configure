@@ -1,3 +1,4 @@
+$OpenBSD: patch-___ghc-4_08_2_configure,v 1.3 2003/08/01 14:03:40 avsm Exp $
 Self explanatory, including the annoying falsely detected
 leading_underscore issue
 
