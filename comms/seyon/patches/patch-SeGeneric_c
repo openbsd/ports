@@ -1,0 +1,12 @@
+$OpenBSD: patch-SeGeneric_c,v 1.1 2002/02/20 21:46:49 naddy Exp $
+--- SeGeneric.c.orig	Wed Feb 20 22:26:53 2002
++++ SeGeneric.c	Wed Feb 20 22:27:07 2002
+@@ -179,7 +179,7 @@ TtyTimedReadChar(fd, readChar, expireTim
+  * TtyReadChar: reads one character from the tty.
+  */
+ 
+-char
++int
+ TtyReadChar(fd, readChar)
+      int             fd;
+ 	 char           *readChar;

@@ -1,0 +1,39 @@
+$OpenBSD: patch-SeDecl_h,v 1.1 2002/02/20 21:46:49 naddy Exp $
+--- SeDecl.h.orig	Fri Apr 23 12:09:50 1993
++++ SeDecl.h	Wed Feb 20 22:31:21 2002
+@@ -23,8 +23,6 @@ extern char    *str_strip_lead_end_space
+                *expand_fname(),
+                 itoa(),
+                *mport(),
+-                MdmReadChar(),
+-                TermReadChar(),
+                 read_seyon_file();
+ extern long     mbaud();
+ extern int      open_modem(),
+@@ -40,9 +38,11 @@ extern int      open_modem(),
+                 dial_number(),
+                 redial(),
+                 readbyte(),
++		usleep(),
+ 
+                 CloseModem(),
+                 OpenModem(),
++                MdmReadChar(),
+                 MdmSetGetBaud(),
+                 MdmSetGetCSize(),
+                 MdmSetGetParity(),
+@@ -50,13 +50,13 @@ extern int      open_modem(),
+                 MdmSetGetIStrip(),
+                 MdmSaveRestoreAttr(),
+                 Online(),
++                TermReadChar(),
+ 
+                 SuspContTerminal(),
+                 get_modem_fio();
+ extern FILE    *open_file(),
+                *open_file_va();
+ extern void     send_break(),
+-                usleep(),
+                 show(),
+                 showf(),
+                 SeyonMessage(),

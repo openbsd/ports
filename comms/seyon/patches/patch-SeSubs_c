@@ -1,6 +1,7 @@
---- SeSubs.c.orig	Fri Apr 23 06:24:17 1993
-+++ SeSubs.c	Thu Oct 21 16:53:17 1999
-@@ -249,6 +249,8 @@
+$OpenBSD: patch-SeSubs_c,v 1.1 2002/02/20 21:46:49 naddy Exp $
+--- SeSubs.c.orig	Fri Apr 23 12:24:17 1993
++++ SeSubs.c	Wed Feb 20 22:31:21 2002
+@@ -249,6 +249,8 @@ ExecShellCommand(command, top)
  
      if (setuid(getuid()) < 0)
        SePError("Failed to set effective uid");
