@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2002/09/15 14:51:51 jcs Exp $
+# $OpenBSD: Makefile,v 1.34 2002/10/07 00:42:32 jcs Exp $
 
-DISTNAME=	gaim-0.59.2
+DISTNAME=	gaim-0.59.4
 CATEGORIES=	net
 
 # GPL
