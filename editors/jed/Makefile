@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/05/14 01:08:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=	"text editor"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m termcap util
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	JED_ROOT="${PREFIX}/lib/jed"
@@ -30,6 +31,7 @@ ALL_TARGET=	all getmail
 .else
 USE_X11=	Yes
 ALL_TARGET=	all getmail xjed
+WANTLIB+=	X11 Xext Xft Xrender freetype
 .endif
 
 NO_REGRESS=	Yes

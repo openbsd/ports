@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/17 14:25:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=		"flexible and small GTK+ editor"
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	"may not sell"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk iconv intl m\
+			pthread stdc++
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scintilla/}
 EXTRACT_SUFX=		.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2004/08/10 08:32:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.42 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		c ncurses
 
 FLAVORS=	slang
 FLAVOR?=
@@ -31,6 +32,7 @@ CONFIGURE_ARGS=	--enable-all
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
+WANTLIB+=	m
 .endif
 
 post-install:

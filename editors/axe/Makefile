@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/26 00:39:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/24 11:08:02 espie Exp $
 
 COMMENT=		"simple to use text editor for X11"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
 MASTER_SITES=		${MASTER_SITE_XCONTRIB:=editors/}
 EXTRACT_SUFX=		.tar.Z

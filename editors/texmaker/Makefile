@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/09 14:43:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/24 11:08:03 espie Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		"LaTeX development environment"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		X11 Xext c m pthread stdc++
 
 MASTER_SITES=		${HOMEPAGE}			
 EXTRACT_SUFX=		.tar.bz2

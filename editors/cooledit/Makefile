@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/10/07 20:51:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/24 11:08:02 espie Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -13,11 +13,13 @@ FLAVORS=	python
 FLAVOR?=
 
 PYTHON_VER=	2.2
+WANTLIB=	X11 Xext Xpm c m util
 
 .if ${FLAVOR:L:Mpython}
 LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 CFLAGS+=	-pthread
 CONFIGURE_ENV+=	PYTHON_VER=${PYTHON_VER}
+WANTLIB+=	pthread
 .else
 CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif

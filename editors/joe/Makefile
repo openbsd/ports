@@ -1,5 +1,5 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.30 2002/09/26 23:00:08 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=		"joe's own editor"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 MAINTAINER=		Mike Pechkin <mpech@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=	"view and edit files in hexadecimal or ASCII"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses
 
 CONFIGURE_STYLE= gnu dest
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/05/24 15:30:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/11/24 11:08:03 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c m z
+
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/Ted-$V

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/26 00:39:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/24 11:08:03 espie Exp $
 
 COMMENT=	"full screen simple editor"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	"weird no fee license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"weird no fee license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap
 
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://aquest.com/pub/uemacs400/disk2/

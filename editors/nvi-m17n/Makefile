@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/09/15 18:01:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/11/24 11:08:03 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termlib
 
 
 FLAVORS= canna

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/26 00:39:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/24 11:08:03 espie Exp $
 #
 
 COMMENT=	"Jonathan's Own Version of Emacs"
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap
 
 WRKDIST=	${WRKDIR}/jove
 
