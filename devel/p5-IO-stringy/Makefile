@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/09 17:16:42 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/17 17:12:02 shell Exp $
 
 COMMENT=		"in-core objects like strings and arrays for I/O"
 
-VERSION=		2.105
+VERSION=		2.106
 DISTNAME=		IO-stringy-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
