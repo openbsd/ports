@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/09/24 00:52:55 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2004/02/25 01:59:44 jolan Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.2.0
@@ -28,10 +28,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=	gcc-* patch-*
-.endif
 
 .include <bsd.port.mk>
