@@ -1,6 +1,7 @@
---- lib/parser_inst.m4.orig	Fri Aug 20 09:05:33 1999
-+++ lib/parser_inst.m4	Sun Sep  3 14:30:59 2000
-@@ -166,10 +166,10 @@
+$OpenBSD: patch-lib_parser_inst_m4,v 1.1 2002/07/28 06:59:49 brad Exp $
+--- lib/parser_inst.m4.orig	Fri Aug 20 03:05:33 1999
++++ lib/parser_inst.m4	Sun Jul 28 02:59:43 2002
+@@ -166,10 +166,10 @@ __instantiate(Vector<Transition>)
  __instantiate(Vector<LeafContentToken*>)
  __instantiate(Vector<size_t>)
   // we really just want to test if size_t == unsigned int
