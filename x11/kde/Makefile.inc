@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2004/07/24 12:47:13 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2004/08/03 11:37:52 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -14,7 +14,7 @@ EXTRACT_SUFX?=	.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS?=	${NO_SHARED_ARCHS}
 MODKDE_VERSION?=	3.1
-MODULES?=	kde
+MODULES?=	x11/kde
 
 MODGNU_CONFIG_GUESS_DIRS?=	${MODKDE_CONFIG_GUESS_DIRS}
 
