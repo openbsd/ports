@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/09 01:42:47 kevlo Exp $
-libdata/perl5/site_perl/Mail/IMAPClient.pm
-libdata/perl5/site_perl/Mail/IMAPClient/BodyStructure.pm
-libdata/perl5/site_perl/Mail/IMAPClient/Parse.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/11/30 19:54:11 margarida Exp $
+${P5SITE}/Mail/IMAPClient.pm
+${P5SITE}/Mail/IMAPClient/BodyStructure.pm
+${P5SITE}/Mail/IMAPClient/BodyStructure/Parse.pm
+${P5SITE}/Mail/IMAPClient/MessageSet.pm
+${P5SITE}/Mail/IMAPClient/Thread.pm
 man/man3p/Mail::IMAPClient.3p
-man/man3p/Mail::IMAPClient::BodyStructure.3p
-man/man3p/Mail::IMAPClient::Parse.3p
-@dirrm libdata/perl5/site_perl/Mail/IMAPClient
+@dirrm ${P5SITE}/Mail/IMAPClient/BodyStructure
+@dirrm ${P5SITE}/Mail/IMAPClient
