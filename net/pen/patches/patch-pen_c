@@ -1,7 +1,7 @@
-$OpenBSD: patch-pen_c,v 1.2 2002/06/30 00:08:04 wcobb Exp $
---- pen.c.orig	Sat Jun 29 13:57:59 2002
-+++ pen.c	Sat Jun 29 14:01:55 2002
-@@ -1054,7 +1054,7 @@
+$OpenBSD: patch-pen_c,v 1.3 2002/07/12 17:01:15 pvalchev Exp $
+--- pen.c.orig	Wed Jul 10 19:26:49 2002
++++ pen.c	Fri Jul 12 10:59:24 2002
+@@ -1084,7 +1084,7 @@ static int open_listener(char *a)
  		*p = '\0';
  		port = getport(p+1);
  		setipaddress(&serv_addr.sin_addr, b);

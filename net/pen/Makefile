@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/30 00:08:04 wcobb Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/12 17:01:15 pvalchev Exp $
 
 COMMENT=		"load balancer for simple TCP-based protocols"
 
-VERSION=		0.9.2
+VERSION=		0.9.4
 DISTNAME=		pen-${VERSION}
 CATEGORIES=		net
-NEED_VERSION=		1.525
 HOMEPAGE=		http://siag.nu/pen/
 
 MASTER_SITES=		http://siag.nu/pub/pen/ \
