@@ -1,0 +1,20 @@
+*** iozone.c.old	Thu Nov 27 00:22:03 1997
+--- iozone.c	Thu Nov 27 00:35:11 1997
+***************
+*** 487,492 ****
+--- 487,501 ----
+  #endif
+  #define BSDtime
+  #endif
++ #ifdef bsd4_4
++ #define USE_FSYNC
++ #ifndef OS_TYPE
++ #define OS_TYPE "BSD 4.4"
++ #endif
++ #define BSDtime
++ #include <stdlib.h>
++ #include <string.h>
++ #endif
+  /*
+  If we made it this far and still don't know which operating system
+  we are running, check if we at least have ANSI C so we can do some
