@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/06 15:52:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 09:26:36 kevlo Exp $
 
-DISTNAME=	Class-MethodMaker-1.01
+DISTNAME=	Class-MethodMaker-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.348
@@ -16,7 +16,5 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Class
 
 CONFIGURE_STYLE= perl
-
-WRKDIST=	${WRKDIR}/Class-MethodMaker-1.00
 
 .include <bsd.port.mk>	
