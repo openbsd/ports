@@ -1,17 +1,13 @@
-# OpenBSD makefile for: 	bytebench
-# Version required:     
-# Date created:         1 December 1997
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/02/27 04:06:11 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/07 04:31:41 marc Exp $
 #
 
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks
-MASTER_SITES=   ftp://ftp.inria.fr/system/benchmark/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=   ftp://ftp.inria.fr/system/benchmark/
+EXTRACT_SUFX=	.tar.Z
 
 do-install:
 		-${MKDIR} $(PREFIX)/lib/bytebench
