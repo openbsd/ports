@@ -1,19 +1,55 @@
---- Makefile.orig	Thu Oct 22 21:27:22 1998
-+++ Makefile	Wed Oct 28 10:25:29 1998
-@@ -20,6 +20,7 @@
+--- Makefile.orig	Thu Oct 22 15:27:22 1998
++++ Makefile	Sat May  8 21:10:38 1999
+@@ -1,6 +1,6 @@
+ 
+-CC=gcc
+-CFLAGS=-Wall -O2 -fomit-frame-pointer -fno-strength-reduce
++#CC=gcc
++CFLAGS+=-Wall -fomit-frame-pointer -fno-strength-reduce
+ 
+ OBJS= blocksort.o  \
+       huffman.o    \
+@@ -10,9 +10,11 @@
+       decompress.o \
+       bzlib.o
+ 
+-all: lib bzip2 test
++.SUFFIXES: .c .so .o
+ 
+-bzip2: lib
++all: lib lib.so.${VER} bzip2
++
++bzip2: lib lib.so.${VER}
+ 	$(CC) $(CFLAGS) -c bzip2.c
+ 	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
+ 	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.c
+@@ -20,6 +22,11 @@
  lib: $(OBJS)
  	rm -f libbz2.a
  	ar clq libbz2.a $(OBJS)
 +	ranlib libbz2.a
++
++lib.so.${VER}: $(OBJS:S/o$/so/g)
++	rm -f libbz2.so.${VER}
++	ld -Bshareable -o libbz2.so.${VER} $(OBJS:S/o$/so/g)
  
  test: bzip2
  	@cat words1
-@@ -38,7 +39,7 @@
+@@ -34,12 +41,14 @@
+ 	cmp sample2.tst sample2.ref
+ 	@cat words3
+ 
+-
  clean: 
- 	rm -f *.o libbz2.a bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
+-	rm -f *.o libbz2.a bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
++	rm -f *.o *.so libbz2.a libbz2.so.${VER} bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
  
 -.c.o: $*.o bzlib.h bzlib_private.h
 +.c.o: bzlib.h bzlib_private.h
  	$(CC) $(CFLAGS) -c $*.c -o $*.o
++
++.c.so:
++	$(CC) -fPIC -DPIC $(CFLAGS) -c $*.c -o $*.so
  
  tarfile:
+ 	tar cvf interim.tar *.c *.h Makefile manual.texi manual.ps LICENSE bzip2.1 bzip2.1.preformatted bzip2.txt words1 words2 words3 sample1.ref sample2.ref sample1.bz2 sample2.bz2 *.html README CHANGES libbz2.def libbz2.dsp dlltest.dsp 
