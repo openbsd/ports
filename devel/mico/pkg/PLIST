@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 00:52:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/26 13:05:27 espie Exp $
 bin/containmentd
 bin/eventd
 bin/idl
@@ -131,6 +131,7 @@ include/mico/dynany.idl
 include/mico/dynany_impl.h
 include/mico/except.h
 include/mico/fixed.h
+@comment include/mico/fixed.h.orig
 include/mico/fltkmico.h
 include/mico/gtkmico.h
 include/mico/impl.h
@@ -209,6 +210,7 @@ include/mico/transport_impl.h
 include/mico/typecode.h
 include/mico/types.h
 include/mico/util.h
+@comment include/mico/util.h.orig
 include/mico/value.h
 include/mico/valuetype.h
 include/mico/valuetype.idl
@@ -286,7 +288,7 @@ share/doc/mico/examples/boa/account4/account
 share/doc/mico/examples/boa/account4/account.idl
 share/doc/mico/examples/boa/account4/client.cc
 share/doc/mico/examples/boa/account4/server.cc
-share/doc/mico/examples/boa/activate//
+share/doc/mico/examples/boa/activate/
 share/doc/mico/examples/boa/activate/Makefile
 share/doc/mico/examples/boa/activate/client.cc
 share/doc/mico/examples/boa/activate/hello-permethod
