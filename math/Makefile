@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/07/13 19:03:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2001/07/15 18:08:47 naddy Exp $
 #
 
      SUBDIR += R
@@ -33,7 +33,7 @@
      SUBDIR += netcdf
      SUBDIR += ntl
 #    SUBDIR += numpy
-#    SUBDIR += octave
+     SUBDIR += octave
 #    SUBDIR += oleo
      SUBDIR += p5-AI-NeuralNet-BackProp
      SUBDIR += p5-AI-NeuralNet-Mesh
