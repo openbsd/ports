@@ -1,7 +1,0 @@
-OS=OpenBSD
-CC=cc
-CFLAGS=-O2
-XINC=/usr/X11R6/include
-XLIB=/usr/X11R6/lib
-DEFS=-DBSD -DFREEBSD -DFAKE_RESOURCES -DTTYTAB=\"/etc/ttys\"
-UTMP=/var/run/utmp
