@@ -16,5 +16,5 @@
 ** The permissions of /operator/.amandahosts must be restricted:
 **
 **    chmod u=rw /operator/.amandahosts
-**    chown operator.operator /operator/.amandahosts
+**    chown operator:operator /operator/.amandahosts
 **

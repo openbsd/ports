@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=	"all W3C-published SGML DTDs for HTML"
 
@@ -25,6 +25,6 @@ pre-install:
 do-install:
 	@zcat ${FULLDISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
 	@chmod ${SHAREMODE} `find ${INSTDIR} -type f`
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

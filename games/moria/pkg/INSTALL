@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/08/11 03:23:46 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/14 15:02:09 wilfried Exp $
 #
 # Pre/post-installation setup of moria
 
@@ -17,7 +17,7 @@ do_install()
 {
     install -m 775 -d $SCORE_DIR
     touch $SCORE_FILE
-    chown root.games $SCORE_FILE
+    chown root:games $SCORE_FILE
     chmod 664 $SCORE_FILE
 }
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/01/31 15:53:50 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=		"send/receive faxes and share modems"
 DISTNAME=		hylafax-4.1.5
@@ -42,7 +42,7 @@ FAKE_FLAGS=	ROOT=${WRKINST} ${DESTDIRNAME}=${WRKINST}
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 post-install:
-	@chown uucp.dialer ${SUID_EXES}
+	@chown uucp:dialer ${SUID_EXES}
 	@chmod a=rx,u+s ${SUID_EXES}
 	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2001/05/12 16:41:09 naddy Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/04/14 15:02:09 wilfried Exp $
 #
 # Pre/post-installation setup of amanda
 
@@ -51,7 +51,7 @@ do_configuration()
 do_var()
 {
     mkdir -p /var/amanda/gnutar-lists
-    chown -R operator.operator /var/amanda
+    chown -R operator:operator /var/amanda
 }
 
 # create the needed /etc/amandates file if it does not exist 
@@ -60,7 +60,7 @@ do_var()
 do_amandates()
 {
     touch /etc/amandates
-    chown operator.operator /etc/amandates
+    chown operator:operator /etc/amandates
 }
 
 case $2 in

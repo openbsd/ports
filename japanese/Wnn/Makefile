@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.43 2003/03/31 13:44:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.44 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -151,12 +151,12 @@ post-install:
 	${INSTALL_DATA_DIR} ${PORT_JDOCDIR}
 	@(cd ${JDOC_FROM}; tar cf - manual manual.en | \
 		(cd ${PORT_JDOCDIR}; tar xf -))
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_JDOCDIR}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PORT_JDOCDIR}
 .if ${MULTI_PACKAGES:M-zh}
 	${INSTALL_DATA_DIR} ${PORT_CDOCDIR}
 	@(cd ${CDOC_FROM}; tar cf - manual manual.en | \
 		(cd ${PORT_CDOCDIR}; tar xf -))
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_CDOCDIR}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PORT_CDOCDIR}
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/wnn
 	${INSTALL_DATA} ${WRKDIST}/Wnn/jd/sysV/cvt_key* ${PREFIX}/lib/wnn

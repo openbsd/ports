@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=	"C-news"
 
@@ -38,8 +38,8 @@ do-install:
 	mkdir -p ${NEWSSPOOL}
 	-ln -s ${NEWSSPOOL} /var/news
 	mkdir -p ${NEWSBIN} ${NEWSLIB}
-	chown news.news ${NEWSSPOOL} ${NEWSLIB}
-	chown bin.bin ${NEWSBIN}
+	chown news:news ${NEWSSPOOL} ${NEWSLIB}
+	chown bin:bin ${NEWSBIN}
 	cd ${WRKSRC}; \
 		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} install | \
 		su -m bin
@@ -49,7 +49,7 @@ do-install:
 	cd ${WRKSRC}; \
 		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ui readpostcheck | \
 		su -m bin
-	chown news.news ${NEWSBIN}/input/newsspool
+	chown news:news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool
 	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
 	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5

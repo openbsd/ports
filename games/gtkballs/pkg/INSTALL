@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/02/18 19:35:49 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/04/14 15:02:09 wilfried Exp $
 #
 # installation score file setup for gtkballs
 
@@ -28,7 +28,7 @@ do_notice()
 do_install()
 {
     touch $SCORE_FILE
-    chown root.games $SCORE_FILE
+    chown root:games $SCORE_FILE
     chmod 664 $SCORE_FILE
 }
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/04/14 15:02:10 wilfried Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 COMMENT=	"character entity sets from ISO 8879:1986 (SGML)"
@@ -27,6 +27,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/ISO* ${PREFIX}/share/sgml/iso8879
 	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml/iso8879
 	@chmod ${SHAREMODE} ${PREFIX}/share/sgml/iso8879/*
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/sgml/iso8879
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/sgml/iso8879
 
 .include <bsd.port.mk>

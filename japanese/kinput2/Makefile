@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT-canna=		"X input method for Japanese, canna support"
 COMMENT-canna-wnn=	"X input method for Japanese, canna and wnn support"
@@ -49,6 +49,6 @@ post-install:
 	cp ${WRKSRC}/NEWS ${PORT_DOCDIR}
 	@(cd ${WRKSRC}/doc; tar -cf - . | \
 		(cd ${PORT_DOCDIR}; tar -xf -))
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_DOCDIR}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PORT_DOCDIR}
 
 .include <bsd.port.mk>

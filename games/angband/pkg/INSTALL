@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/08/11 17:18:50 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/14 15:02:09 wilfried Exp $
 #
 # Pre/post-installation setup of angband
 
@@ -19,7 +19,7 @@ do_install()
     install -m 775 -d $SCORE_DIR/save
     install -m 775 -d $SCORE_DIR/data
     install -m 775 -d $SCORE_DIR/bone
-    chown -R root.games $SCORE_DIR
+    chown -R root:games $SCORE_DIR
 }
 
 # verify proper execution

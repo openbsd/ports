@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: INSTALL,v 1.3 2002/10/30 15:07:54 naddy Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/04/14 15:02:09 wilfried Exp $
 #
 #      Mixmaster installation script, using many ideas from
 #      Adam Shostack's Install-Mix.
@@ -107,7 +107,7 @@ case $2 in
         ;;
     POST-INSTALL)
         : install config files, see below
-        chown mixmaster.mixmaster $MIXMASTER_BIN
+        chown mixmaster:mixmaster $MIXMASTER_BIN
         chmod 4550 $MIXMASTER_BIN
         do_install
         exit 0

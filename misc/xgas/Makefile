@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=	"animated simulation of an ideal gas"
 
@@ -19,6 +19,6 @@ NO_REGRESS=	Yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xgas
-	@chown bin.bin ${PREFIX}/bin/xgas
+	@chown bin:bin ${PREFIX}/bin/xgas
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/03/31 18:00:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -27,7 +27,7 @@ NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/c4 ${PREFIX}/bin/connect4
-	@chown root.games ${PREFIX}/bin/connect4
+	@chown root:games ${PREFIX}/bin/connect4
 	@chmod 2755 ${PREFIX}/bin/connect4
 	${INSTALL_MAN} ${FILESDIR}/connect4.6 ${PREFIX}/man/man6
 

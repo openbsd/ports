@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/31 05:28:20 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2003/04/14 15:02:09 wilfried Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
@@ -38,7 +38,7 @@ post-install:
 		ln -sf $$f $$g; \
 	done && \
 	sed -e s#libungif#libgif#g libungif.la > libgif.la && \
-	chown root.bin libgif.la && \
+	chown root:bin libgif.la && \
 	chmod 755 libgif.la
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
