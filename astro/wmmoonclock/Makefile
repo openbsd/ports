@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/03 14:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/05 12:02:00 naddy Exp $
 
 DISTNAME=	wmMoonClock-1.27
 PKGNAME=	${DISTNAME:L}
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-RUN_DEPENDS=	wmaker::x11/windowmaker
 
 WRKSRC=	${WRKDIST}/Src
 
