@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/19 08:28:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2002/04/07 21:11:45 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -43,13 +43,13 @@ FILES=			ar nm-new objdump ranlib size strings strip-new
 
 post-patch:
 	@cd ${WRKSRC}/bfd && autoconf
-	@-cd ${WRKSRC}/gas && ( automake; autoconf )
+	@-cd ${WRKSRC}/gas && { automake; autoconf }
 	@cd ${WRKSRC}/ld && automake
 
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
-	cd ${WRKSRC} && (						\
+	cd ${WRKSRC} && {						\
 	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
 	    ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin;		\
 	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
@@ -61,7 +61,7 @@ do-install:
 		${INSTALL_PROGRAM} binutils/$${s} ${TARGET_DIR}/bin/$${d}; \
 		${INSTALL_MAN} binutils/$${d}.1 ${TARGET_DIR}/man/man1;	\
 	    done							\
-	)
+	}
 
 SUBST_VARS=TARGET_ARCH OSREV
 
