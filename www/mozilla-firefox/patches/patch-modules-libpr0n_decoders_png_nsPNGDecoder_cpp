@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules-libpr0n_decoders_png_nsPNGDecoder_cpp,v 1.1 2004/08/08 17:19:37 robert Exp $
---- modules/libpr0n/decoders/png/nsPNGDecoder.cpp.orig	Thu Sep 11 04:59:31 2003
-+++ modules/libpr0n/decoders/png/nsPNGDecoder.cpp	Sat Aug  7 18:09:10 2004
-@@ -74,6 +74,24 @@
+$OpenBSD: patch-modules-libpr0n_decoders_png_nsPNGDecoder_cpp,v 1.2 2004/11/05 07:37:56 jolan Exp $
+--- modules/libpr0n/decoders/png/nsPNGDecoder.cpp.orig	Wed Sep 10 21:59:31 2003
++++ modules/libpr0n/decoders/png/nsPNGDecoder.cpp	Thu Nov  4 22:55:31 2004
+@@ -74,6 +74,24 @@ nsPNGDecoder::~nsPNGDecoder()
  /* void init (in imgILoad aLoad); */
  NS_IMETHODIMP nsPNGDecoder::Init(imgILoad *aLoad)
  {
@@ -26,7 +26,7 @@ $OpenBSD: patch-modules-libpr0n_decoders_png_nsPNGDecoder_cpp,v 1.1 2004/08/08 1
    mImageLoad = aLoad;
    mObserver = do_QueryInterface(aLoad);  // we're holding 2 strong refs to the request.
  
-@@ -94,6 +112,12 @@
+@@ -94,6 +112,12 @@ NS_IMETHODIMP nsPNGDecoder::Init(imgILoa
      return NS_ERROR_OUT_OF_MEMORY;
    }
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-modules-libpr0n_decoders_png_nsPNGDecoder_cpp,v 1.1 2004/08/08 1
    /* use this as libpng "progressive pointer" (retrieve in callbacks) */
    png_set_progressive_read_fn(mPNG, NS_STATIC_CAST(png_voidp, this),
                                info_callback, row_callback, end_callback);
-@@ -183,6 +207,15 @@
+@@ -183,6 +207,15 @@ info_callback(png_structp png_ptr, png_i
    png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth, &color_type,
                 &interlace_type, &compression_type, &filter_type);
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-modules-libpr0n_decoders_png_nsPNGDecoder_cpp,v 1.1 2004/08/08 1
    if (color_type == PNG_COLOR_TYPE_PALETTE)
      png_set_expand(png_ptr);
  
-@@ -518,5 +551,8 @@
+@@ -518,5 +551,8 @@ error_callback(png_structp png_ptr, png_
  void
  warning_callback(png_structp png_ptr, png_const_charp warning_msg)
  {
