@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/11/29 05:07:01 brad Exp $
-# $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
+# $OpenBSD: Makefile,v 1.29 2004/01/31 21:41:56 brad Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -14,6 +13,7 @@ MODULES=	iconv
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,8 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static \
-		 --with-included-gettext
+CONFIGURE_ARGS+= --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${LOCALBASE}/lib"
 
@@ -33,11 +32,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el
 	@cd ${PREFIX}/lib && \
-		mv libintl.la libintl.la.new && \
-		sed -e s#'-L${WRKBUILD}/intl/.libs '#''#g \
-			libintl.la.new > libintl.la && \
-		chown ${BINOWN}:${BINGRP} libintl.la && \
-		rm -f libintl.la.new
+		perl -pi -e s#'-L${WRKBUILD}/intl/.libs '#''#g \
+			libintl.la
 
 do-regress:
 	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
