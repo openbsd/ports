@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/09 21:20:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/16 07:24:16 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	1.2.4
+VERSION=	2.0.0
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
@@ -21,8 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:named-xfer-*:net/named-xfer
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-ipv6 \
-			--enable-dnssec \
+CONFIGURE_ARGS+=	--enable-dnssec \
 			--enable-bind8-stats \
 			--with-namedxfer=${LOCALBASE}/libexec/named-xfer \
 			--with-libwrap=/usr/lib \
