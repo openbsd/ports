@@ -1,0 +1,18 @@
+Japanese character encodings are not very well standardized.
+There are several distinct industrial standards.
+
+JIS and EUC are the most common, they only use 7 bit characters and 
+state-shift sequences.
+Shift-JIS (as known as Microsoft JIS) is a variant of JIS that use 
+8 bit characters instead of sequences to encode state-shift. It's a
+broken scheme, as was to be expected.
+
+All of this does NOT incorporate seemlessly into grander schemes such
+as unicode yet...
+
+Nkf is a tool to convert between all the commonest japanese encodings.
+It is also able to repair documents which have lost part of their
+escape sequences.
+
+The niftiest feature of nkf is that it can guess input encodings, and
+usually does this right.
