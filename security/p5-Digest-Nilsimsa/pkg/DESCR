@@ -1,0 +1,8 @@
+A nilsimsa code is something like a hash, but unlike hashes, a small
+change in the message results in a small change in the nilsimsa code.
+
+The Digest::Nilsimsa module allows you to compute nilsimsa codes from within
+Perl programs.
+
+Information on Nilsimsa can be found here:
+ http://ixazon.dynip.com/~cmeclax/nilsimsa.html
