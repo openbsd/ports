@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.12 1999/02/26 16:18:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 1999/02/26 17:48:37 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release.
@@ -50,7 +50,7 @@ VERSION= 1.1.2-pre2
 DIRECTORY=egcs/%SUBDIR%/
 
 # getting the right archives where they should be
-MASTER_SITE_SUBDIR=releases/egcs-${VERSION}
+MASTER_SITE_SUBDIR=snapshots/egcs-1.1.2-prerelease
 PATCH_SITE_SUBDIR=snapshots/egcs-1.1.2-prerelease
 .if defined(PREPATCH)
 DISTNAME= egcs-${PREPATCH}
