@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/08 20:37:26 espie Exp $
 
 DISTNAME=		tcpblast
 PKGNAME=		tcpblast-1.0
 CATEGORIES=		net benchmarks
-NEED_VERSION=		1.191
+NEED_VERSION=		1.230
 
 MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
-
-# Link the contained source files into the build environment
-FULLDISTDIR=		${.CURDIR}/src
-DISTFILES=		Makefile tcpblast.c
-EXTRACT_CMD=		ln
-EXTRACT_BEFORE_ARGS=	-sf
-EXTRACT_AFTER_ARGS=	${WRKSRC}
-
-NO_CHECKSUM=		yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+NO_CHECKSUM=		Yes
 WRKDIST=		${WRKDIR}
+FAKE=			Yes
+FAKE_FLAGS=	BINDIR="${PREFIX}/bin" DESTDIR="${WRKINST}" 
 
-fetch:
-	@true
+# Nothing to fetch
+DISTFILES=
+
+# Just link the contained source files into the build environment
+
+post-extract:		
+	lndir ${.CURDIR}/src ${WRKDIR}
 
 .include <bsd.port.mk>
