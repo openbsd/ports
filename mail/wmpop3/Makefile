@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:05:32 wilfried Exp $
+
+COMMENT=		'wm-dockapp; POP3 mail check'
 
 DISTNAME=		WMPop3-0.5.6a
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		mail x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.cs.mun.ca/~scotth/
 
@@ -26,8 +28,8 @@ WRKSRC=			${WRKDIST}/wmpop3
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmpop3 ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmpop3
-	${INSTALL_DATA} ${WRKBUILD}/wmpop3rc ${PREFIX}/share/examples/wmpop3
+	${INSTALL_DATA} ${WRKSRC}/wmpop3rc ${PREFIX}/share/examples/wmpop3
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wmpop3
-	${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
+	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/wmpop3
 
 .include <bsd.port.mk>

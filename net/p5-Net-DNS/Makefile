@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/09 14:28:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:07:13 wilfried Exp $
+
+COMMENT=		'module to interface the DNS resolver'
 
 DISTNAME=		Net-DNS-0.12
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.fuhr.org/~mfuhr/perldns/
 
