@@ -1,8 +1,9 @@
-#	$OpenBSD: Makefile,v 1.34 2003/02/18 16:51:42 sturm Exp $
+#	$OpenBSD: Makefile,v 1.35 2003/04/18 09:46:50 wilfried Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
 #   SUBDIR += a2ps43
+    SUBDIR += acrofonts
     SUBDIR += acroread
     SUBDIR += afm
 #   SUBDIR += apsfilter
