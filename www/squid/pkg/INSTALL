@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.8 2000/08/09 00:40:14 brad Exp $
+# $OpenBSD: INSTALL,v 1.9 2000/08/24 22:00:03 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -12,9 +12,9 @@ CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
 STATEDIR=${STATEDIR}
 
-install -d -o www -g www $STATEDIR
-install -d -o www -g www $STATEDIR/logs
-install -d -o www -g www $STATEDIR/cache
+install -d -o www -g www -m 755 $STATEDIR
+install -d -o www -g www -m 755 $STATEDIR/logs
+install -d -o www -g www -m 755 $STATEDIR/cache
 ln -sf $STATEDIR/logs/squid.pid /var/run/squid.pid
 
 do_notice_conf()
@@ -40,10 +40,10 @@ do_notice_errors_and_icons()
 
 do_install_conf()
 {
-    install -d -o root -g wheel $CONFIG_DIR
-    install -o root -g wheel $SAMPLE_CONFIG_DIR/conf/squid.conf.sample $CONFIG_DIR/squid.conf
-    install -o root -g wheel $SAMPLE_CONFIG_DIR/conf/mime.conf.sample $CONFIG_DIR/mime.conf
-    install -o root -g wheel $SAMPLE_CONFIG_DIR/conf/mib.txt.sample $CONFIG_DIR/mib.txt
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/squid.conf.sample $CONFIG_DIR/squid.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/mime.conf.sample $CONFIG_DIR/mime.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/mib.txt.sample $CONFIG_DIR/mib.txt
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed in $CONFIG_DIR."
@@ -52,8 +52,8 @@ do_install_conf()
 
 do_install_errors_and_icons()
 {
-    install -d -o root -g wheel $PREFIX/share/squid/icons
-    install -d -o root -g wheel $PREFIX/share/squid/errors
+    install -d -o root -g wheel -m 755 $PREFIX/share/squid/icons
+    install -d -o root -g wheel -m 755 $PREFIX/share/squid/errors
     cp -R $SAMPLE_CONFIG_DIR/errors/* $PREFIX/share/squid/errors
     cp -R $SAMPLE_CONFIG_DIR/icons/* $PREFIX/share/squid/icons
     echo "|"
