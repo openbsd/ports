@@ -1,0 +1,18 @@
+--- makefile.in.orig	Thu Aug 28 17:48:56 1997
++++ makefile.in	Thu Aug 28 17:50:29 1997
+@@ -51,6 +51,7 @@
+ exec_prefix = ${prefix}
+ bindir = $(exec_prefix)/bin
+ infodir = ${prefix}/info
++mandir = ${prefix}/man
+ 
+ #### End of system configuration section. ####
+ 
+@@ -126,6 +127,7 @@
+ install: all
+ 	${INSTALL_PROGRAM} indent ${bindir}/indent
+ 	${INSTALL_DATA} ${srcdir}/indent.info ${infodir}/indent.info
++	${INSTALL_DATA} ${srcdir}/indent.1 ${mandir}/man1/indent.1
+ 
+ 
+ # Cleaning up
