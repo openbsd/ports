@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/03 12:54:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/02 12:42:22 robert Exp $
+@conflict php5-core-*
 bin/pear
 bin/php
 bin/php-config
