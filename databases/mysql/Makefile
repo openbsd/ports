@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2003/12/30 20:42:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.90 2004/01/06 14:13:03 espie Exp $
 # Uses pthreads
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+= --enable-thread-safe-client \
 USE_GCC3?= No
 
 .if ${USE_GCC3:L} == "yes"
-CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++
+CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
 .endif
 
