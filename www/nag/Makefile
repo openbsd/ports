@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/03 11:31:14 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.5 2003/07/04 23:35:25 avsm Exp $ 
 
 COMMENT=	"task list manager for Horde"
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${MASTER_SITE_HORDE:=nag/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-NO_CONFIGURE=	Yes
 EXTRACT_ONLY=
 
 PREFIX=		/var/www

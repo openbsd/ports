@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/06/02 23:28:17 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.9 2003/07/04 23:35:25 avsm Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${MASTER_SITE_HORDE:=horde/tarballs/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-NO_CONFIGURE=	Yes
 EXTRACT_ONLY=
 
 PREFIX=		/var/www
