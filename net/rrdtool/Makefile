@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/28 19:35:32 danh Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/06 15:04:13 danh Exp $
 
 COMMENT=	"system to store and display time-series data"
 
@@ -24,15 +24,12 @@ SUBST_VARS=	VERSION
 FLAVORS=	tcl
 FLAVOR?=
 
-.if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS+=	tcl83::lang/tcl/8.3
-USE_GMAKE=	Yes
-.endif
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 
 .if ${FLAVOR:L:Mtcl}
+LIB_DEPENDS+=	tcl83::lang/tcl/8.3
+USE_GMAKE=	Yes
 CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.3"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.3"
 .else
