@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2000/05/31 22:02:29 marc Exp $
+# $OpenBSD: Makefile,v 1.43 2000/06/01 22:34:00 fgsch Exp $
 
-DISTNAME=	gimp-1.1.22
+DISTNAME=	gimp-1.1.23
 CATEGORIES=	graphics
 NEED_VERSION=	1.230
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/old/v1.1.22/ \
-		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/old/v1.1.22/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/unstable/old/v1.1.22/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.23/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.23/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.23/
 
 MAINTAINER=	brad@openbsd.org
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \
-		jpeg.62::graphics/jpeg \
 		mpeg.13::graphics/mpeg-lib \
 		png.1.6::graphics/png \
 		tiff.35::graphics/tiff
@@ -31,18 +30,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
-# People that installed an older version of gimp 1.1.x wound up with
-# shared libs with a major/minor of 1.3 or 1.4 ... these files
-# MUST be removed as the version was incorrect (it came from 1.1.x
-# sources). Check that out here (and bitch if necessary).
+# People that installed a previous version of gimp wound up with
+# shared libs that might not contain all the functions needed to
+# link the current objects.
+# Check that out here (and bitch if necessary).
 pre-extract:
-	@if [ -f ${X11BASE}/lib/libgimp.so.1.3 -o \
-	      -f ${X11BASE}/lib/libgimp.so.1.4 -o \
-	      -f ${LOCALBASE}/lib/libgimp.so.1.3 -o \
-	      -f ${LOCALBASE}/lib/libgimp.so.1.4 ]; then \
+	@if [ -f ${X11BASE}/lib/libgimp.so.?.? -o \
+	      -f ${LOCALBASE}/lib/libgimp.so.?.? ]; then \
 	   echo "+-------------------"; \
 	   echo "| ERROR: you MUST remove the existing gimp installation"; \
-	   echo "| before installing this version. To fully remove run"; \
+	   echo "| before compiling this version. To fully remove run"; \
 	   echo "| these commands as user root"; \
 	   echo "|"; \
 	   echo "|      pkg_delete -f `pkg_info -e 'gimp-*'`"; \

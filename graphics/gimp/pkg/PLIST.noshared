@@ -2,11 +2,11 @@ bin/gimp
 bin/gimp-config
 bin/gimptool
 include/gck/gck.h
-include/libgimp/color_display.h
-include/libgimp/color_selector.h
 include/libgimp/gimp.h
 include/libgimp/gimpchainbutton.h
 include/libgimp/gimpcolorbutton.h
+include/libgimp/gimpcolordisplay.h
+include/libgimp/gimpcolorselector.h
 include/libgimp/gimpcolorspace.h
 include/libgimp/gimpcompat.h
 include/libgimp/gimpdialog.h
@@ -22,6 +22,8 @@ include/libgimp/gimpmath.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
+include/libgimp/gimpparasite.h
+include/libgimp/gimpparasiteio.h
 include/libgimp/gimppatheditor.h
 include/libgimp/gimppixmap.h
 include/libgimp/gimpquerybox.h
@@ -33,10 +35,6 @@ include/libgimp/gimpunitmenu.h
 include/libgimp/gimputils.h
 include/libgimp/gimpvector.h
 include/libgimp/gimpwidgets.h
-include/libgimp/parasite.h
-include/libgimp/parasiteF.h
-include/libgimp/parasiteP.h
-include/libgimp/parasiteio.h
 lib/gimp/1.1/modules/libcdisplay_gamma.a
 lib/gimp/1.1/modules/libcdisplay_gamma.la
 lib/gimp/1.1/modules/libcdisplay_highcontrast.a
@@ -272,6 +270,8 @@ share/gimp/1.1/devel-docs/html/libgimp/index.sgml
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-color-display.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-color-selector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimp.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolordisplay.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolorselector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcompat.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpdialog.html
@@ -285,6 +285,8 @@ share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmath.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmatrix.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmenu.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmodule.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasite.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpprotocol.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpquerybox.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpsignal.html
