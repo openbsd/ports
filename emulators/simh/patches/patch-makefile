@@ -1,40 +1,36 @@
-$OpenBSD: patch-Makefile,v 1.5 2002/06/10 02:37:10 form Exp $
---- Makefile.orig	Sun Feb 17 13:50:26 2002
-+++ Makefile	Mon Jun 10 09:30:22 2002
-@@ -3,9 +3,9 @@
+$OpenBSD: patch-makefile,v 1.3 2002/10/29 23:55:01 fgsch Exp $
+--- makefile.orig	Sat Oct 26 08:09:58 2002
++++ makefile	Tue Oct 29 20:00:44 2002
+@@ -3,8 +3,9 @@
  # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
  # used. Try -O2 only with released simulators.
  #
--CC = gcc -O0 -lm -I .
-+#CC = gcc -O0 -lm -I .
+-CC = gcc -O2 -lm -I .
++#CC = gcc -O2 -lm -I .
  #CC = gcc -O2 -g -lm -I .
--
 +CFLAGS += -lm -I.
  
  
- #
-@@ -103,7 +103,8 @@ HP2100_OPT = -I ${HP2100D}
  
- I1401D = I1401/
- I1401 = ${I1401D}i1401_lp.c ${I1401D}i1401_cpu.c ${I1401D}i1401_iq.c \
--	${I1401D}i1401_cd.c ${I1401D}i1401_mt.c ${I1401D}i1401_sys.c
-+	${I1401D}i1401_cd.c ${I1401D}i1401_dp.c ${I1401D}i1401_mt.c \
-+	${I1401D}i1401_sys.c
- I1401_OPT = -I ${I1401D}
- 
- 
-@@ -140,8 +141,8 @@ ALTAIR_OPT = -I ${ALTAIRD}
+@@ -62,7 +63,7 @@ PDP11 = ${PDP11D}pdp11_fp.c ${PDP11D}pdp
+ 	${PDP11D}pdp11_tm.c ${PDP11D}pdp11_ts.c ${PDP11D}pdp11_io.c \
+ 	${PDP11D}pdp11_rq.c ${PDP11D}pdp11_tq.c ${PDP11D}pdp11_pclk.c \
+ 	${PDP11D}pdp11_ry.c ${PDP11D}pdp11_pt.c ${PDP11D}pdp11_hk.c \
+-	${PDP11D}pdp11_xq.c
++	${PDP11D}pdp11_xq.c sim_ether.c
+ PDP11_OPT = -I ${PDP11D}
  
  
- ALTAIRZ80D = AltairZ80/
--ALTAIRZ80 = ${ALTAIRZ80D}altairZ80_cpu.c ${ALTAIRZ80D}altairZ80_dsk.c \
--	${ALTAIRZ80D}altairZ80_sio.c ${ALTAIRZ80D}altairZ80_sys.c
-+ALTAIRZ80 = ${ALTAIRZ80D}altairz80_cpu.c ${ALTAIRZ80D}altairz80_dsk.c \
-+	${ALTAIRZ80D}altairz80_sio.c ${ALTAIRZ80D}altairz80_sys.c
- ALTAIRZ80_OPT = -I ${ALTAIRZ80D}
+@@ -73,7 +74,7 @@ VAX = ${VAXD}vax_cpu1.c ${VAXD}vax_cpu.c
+ 	${VAXD}vax_sysdev.c \
+ 	${PDP11D}pdp11_rl.c ${PDP11D}pdp11_rq.c ${PDP11D}pdp11_ts.c \
+ 	${PDP11D}pdp11_dz.c ${PDP11D}pdp11_lp.c ${PDP11D}pdp11_tq.c \
+-	${PDP11D}pdp11_pt.c ${PDP11D}pdp11_xq.c
++	${PDP11D}pdp11_pt.c ${PDP11D}pdp11_xq.c sim_ether.c
+ VAX_OPT = -I ${VAXD} -I ${PDP11D} -DUSE_INT64
  
- #
-@@ -158,87 +159,87 @@ all : ${BIN}pdp1 ${BIN}pdp4 ${BIN}pdp7 $
+ 
+@@ -208,106 +209,106 @@ all : ${BIN}pdp1 ${BIN}pdp4 ${BIN}pdp7 $
  # Individual builds
  #
  ${BIN}pdp1 : ${PDP1} ${SIM}
@@ -81,13 +77,13 @@ $OpenBSD: patch-Makefile,v 1.5 2002/06/10 02:37:10 form Exp $
  
  ${BIN}pdp11 : ${PDP11} ${SIM}
 -	${CC} ${PDP11} ${SIM} ${PDP11_OPT} -o $@
-+	${CC} ${CFLAGS} ${PDP11} ${SIM} ${PDP11_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP11} ${SIM} ${PDP11_OPT} -o $@ -lpcap
  
  
  
  ${BIN}vax : ${VAX} ${SIM}
 -	${CC} ${VAX} ${SIM} ${VAX_OPT} -o $@
-+	${CC} ${CFLAGS} ${VAX} ${SIM} ${VAX_OPT} -o $@
++	${CC} ${CFLAGS} ${VAX} ${SIM} ${VAX_OPT} -o $@ -lpcap
  
  
  
@@ -121,10 +117,14 @@ $OpenBSD: patch-Makefile,v 1.5 2002/06/10 02:37:10 form Exp $
  
  
  
- ${BIN}sds : ${SDS} ${SIM}
--	${CC} ${SDS} ${SIM} ${SDS_OPT} -o $@
-+	${CC} ${CFLAGS} ${SDS} ${SIM} ${SDS_OPT} -o $@
+ ${BIN}i1620 : ${I1620} ${SIM}
+-	${CC} ${I1620} ${SIM} ${I1620_OPT} -o $@
++	${CC} ${CFLAGS} ${I1620} ${SIM} ${I1620_OPT} -o $@
  
+ 
+ ${BIN}ibm1130 : ${IBM1130}
+-	${CC} ${IBM1130} ${SIM} ${IBM1130_OPT} -o $@
++	${CC} ${CFLAGS} ${IBM1130} ${SIM} ${IBM1130_OPT} -o $@
  
  
  ${BIN}s3 : ${S3} ${SIM}
@@ -137,6 +137,26 @@ $OpenBSD: patch-Makefile,v 1.5 2002/06/10 02:37:10 form Exp $
 +	${CC} ${CFLAGS} ${ALTAIR} ${SIM} ${ALTAIR_OPT} -o $@
  
  
- ${BIN}altairz80 : ${ALTAIRZ80} ${SIM}
+ ${BIN}altairz80 : ${ALTAIRZ80} ${SIM} ${ALTAIRZ80D}altairZ80_defs.h
 -	${CC} ${ALTAIRZ80_OPT} ${ALTAIRZ80} ${SIM} -o $@
 +	${CC} ${CFLAGS} ${ALTAIRZ80_OPT} ${ALTAIRZ80} ${SIM} -o $@
+ ${ALTAIRZ80D}altairZ80_defs.h : ${ALTAIRZ80D}altairz80_defs.h
+ 	cp ${ALTAIRZ80D}altairz80_defs.h ${ALTAIRZ80D}altairZ80_defs.h
+ 
+ ${BIN}gri : ${GRI} ${SIM}
+-	${CC} ${GRI} ${SIM} ${GRI_OPT} -o $@
++	${CC} ${CFLAGS} ${GRI} ${SIM} ${GRI_OPT} -o $@
+ 
+ ${BIN}id16 : ${ID16} ${SIM}
+-	${CC} ${ID16} ${SIM} ${ID16_OPT} -o $@
++	${CC} ${CFLAGS} ${ID16} ${SIM} ${ID16_OPT} -o $@
+ 
+ ${BIN}id32 : ${ID32} ${SIM}
+-	${CC} ${ID32} ${SIM} ${ID32_OPT} -o $@
++	${CC} ${CFLAGS} ${ID32} ${SIM} ${ID32_OPT} -o $@
+ 
+ ${BIN}sds : ${SDS} ${SIM}
+-	${CC} ${SDS} ${SIM} ${SDS_OPT} -o $@
++	${CC} ${CFLAGS} ${SDS} ${SIM} ${SDS_OPT} -o $@
+ 
+ 

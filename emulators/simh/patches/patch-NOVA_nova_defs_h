@@ -1,7 +1,7 @@
-$OpenBSD: patch-NOVA_nova_defs_h,v 1.1 2002/02/04 05:10:29 form Exp $
---- NOVA/nova_defs.h.orig	Thu Jan 31 22:27:45 2002
-+++ NOVA/nova_defs.h	Thu Jan 31 22:28:05 2002
-@@ -66,7 +66,7 @@
+$OpenBSD: patch-NOVA_nova_defs_h,v 1.2 2002/10/29 23:55:01 fgsch Exp $
+--- NOVA/nova_defs.h.orig	Thu Oct  3 16:59:44 2002
++++ NOVA/nova_defs.h	Thu Oct 24 20:37:41 2002
+@@ -67,7 +67,7 @@
  #define SIGN		0100000				/* sign */
  #define DMASK		0177777				/* data mask */
  #define CBIT		(DMASK + 1)			/* carry bit */

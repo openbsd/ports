@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/05/06 06:23:08 form Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/10/29 23:55:01 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -17,14 +17,18 @@ bin/simh-pdp9
 bin/simh-s3
 bin/simh-vax
 lib/simh/vax/ka655.bin
-share/doc/simh/0readme29.txt
+share/doc/simh/0readme210.txt
 share/doc/simh/altair.txt
-share/doc/simh/altairZ80.txt
+share/doc/simh/altairz80.txt
 share/doc/simh/eclipse.txt
+share/doc/simh/gri_doc.txt
 share/doc/simh/h316_doc.txt
 share/doc/simh/haltguide.txt
+share/doc/simh/hp2100_diag.txt
 share/doc/simh/hp2100_doc.txt
 share/doc/simh/i1401_doc.txt
+share/doc/simh/i1620_doc.txt
+share/doc/simh/id_doc.txt
 share/doc/simh/nova_doc.txt
 share/doc/simh/pdp10_doc.txt
 share/doc/simh/pdp11_doc.txt
@@ -33,10 +37,13 @@ share/doc/simh/pdp1_doc.txt
 share/doc/simh/pdp8_doc.txt
 share/doc/simh/readme1130.txt
 share/doc/simh/readme_s3.txt
+share/doc/simh/readme_update.txt
+share/doc/simh/sds_doc.txt
 share/doc/simh/simh_doc.txt
 share/doc/simh/simh_swre.txt
 share/doc/simh/system3.txt
 share/doc/simh/vax_doc.txt
+share/doc/simh/xq_README.txt
+@dirrm share/doc/simh
 @dirrm lib/simh/vax
 @dirrm lib/simh
-@dirrm share/doc/simh

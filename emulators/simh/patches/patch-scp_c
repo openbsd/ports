@@ -1,24 +1,15 @@
-$OpenBSD: patch-scp_c,v 1.5 2002/06/10 02:37:10 form Exp $
---- scp.c.orig	Sat May 18 13:26:12 2002
-+++ scp.c	Mon Jun 10 09:25:40 2002
-@@ -423,7 +423,10 @@ if ((argc > 1) && argv[1]) {				/* cmd f
- do {	printf ("sim> ");				/* prompt */
- 	cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */
- 	stat = SCPE_UNK;
+$OpenBSD: patch-scp_c,v 1.6 2002/10/29 23:55:01 fgsch Exp $
+--- scp.c.orig	Tue Oct 29 20:33:12 2002
++++ scp.c	Tue Oct 29 20:39:00 2002
+@@ -548,7 +548,10 @@ while (stat != SCPE_EXIT) {				/* in cas
+ 	if (sim_vm_read != NULL)			/* sim routine? */
+ 		cptr = (*sim_vm_read) (cbuf, CBUFSIZE, stdin);
+ 	else cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */
 -	if (cptr == NULL) continue;			/* ignore EOF */
-+	if (cptr == NULL || *cptr == 0) {		/* ignore EOF */
++	if (cptr == NULL) {
 +		putchar('\n');
-+		continue;
++		continue;				/* ignore EOF */
 +	}
  	if (*cptr == 0) continue;			/* ignore blank */
  	if (sim_log) fprintf (sim_log, "sim> %s\n", cbuf); /* log cmd */
  	cptr = get_glyph (cptr, gbuf, 0);		/* get command glyph */
-@@ -1478,7 +1481,7 @@ for (i = 1; (dptr = sim_devices[i]) != N
- 		    (UNIT_ATT + UNIT_SEQ))
- 			fseek (uptr -> fileref, uptr -> pos, SEEK_SET);  }  }
- stop_cpu = 0;
--if ((int) signal (SIGINT, int_handler) == -1) {		/* set WRU */
-+if (signal (SIGINT, int_handler) == (void *)-1) {		/* set WRU */
- 	return SCPE_SIGERR;  }
- if (ttrunstate () != SCPE_OK) {				/* set console */
- 	ttcmdstate ();

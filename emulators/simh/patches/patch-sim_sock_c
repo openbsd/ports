@@ -1,12 +1,12 @@
-$OpenBSD: patch-sim_sock_c,v 1.2 2002/06/10 02:37:10 form Exp $
---- sim_sock.c.orig	Mon Jun 10 09:24:34 2002
-+++ sim_sock.c	Mon Jun 10 09:24:43 2002
-@@ -130,7 +130,7 @@ return newsock;						/* got it! */
- SOCKET sim_accept_conn (SOCKET master, UNIT *uptr, uint32 *ipaddr)
+$OpenBSD: patch-sim_sock_c,v 1.3 2002/10/29 23:55:01 fgsch Exp $
+--- sim_sock.c.orig	Tue Oct  8 10:41:40 2002
++++ sim_sock.c	Thu Oct 24 20:37:41 2002
+@@ -132,7 +132,7 @@ return newsock;						/* got it! */
+ SOCKET sim_accept_conn (SOCKET master, uint32 *ipaddr)
  {
  int32 sta;
 -#if defined (macintosh) 
 +#if defined (macintosh) || defined(USE_SOCKLEN_T)
  socklen_t size;
- #elif defined (__EMX__)
+ #elif defined (WIN32) || defined (__EMX__)
  int size;
