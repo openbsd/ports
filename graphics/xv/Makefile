@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 1999/11/11 15:01:47 rohee Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/01 19:20:23 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	xv
 CATEGORIES=     graphics x11
 NO_CDROM=	"NOFEE: can not sell"
+NEED_VERSION=	1.175
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +17,6 @@ DISTFILES+=	xv-3.10a-png-1.2d.tar.gz:0
 
 # Up-to-date jpeg/tiff libraries
 #
-PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
 PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 
 # Various patches from the XV author's site
@@ -24,10 +24,10 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 # (xpm.patch is integrated in xvpng.diff that is in xv-3.10a-png-1.2d.tar.gz)
 # longname.patch is integrated in patches/patch-aj
 
-PATCH_SITES0=	ftp://ftp.trilon.com/pub/xv/patches/
-PATCHFILES+=	deepcolor.patch:0 exceed_grab_patch.txt:0 gifpatch:0 \
-		grabpatch:0 mp-tiff-patch:0 pdf.patch:0 vispatch:0 \
-		xvpng-fix2.patch:0
+MASTER_SITES1=	ftp://ftp.trilon.com/pub/xv/patches/
+PATCHFILES+=	deepcolor.patch:1 exceed_grab_patch.txt:1 gifpatch:1 \
+		grabpatch:1 mp-tiff-patch:1 pdf.patch:1 vispatch:1 \
+		xvpng-fix2.patch:1
 
 MAINTAINER=	rohee@OpenBSD.ORG
 
@@ -37,16 +37,16 @@ LIB_DEPENDS=    jpeg.62.:${PORTSDIR}/graphics/jpeg \
 		tiff.35.:${PORTSDIR}/graphics/tiff \
 		png.1.:${PORTSDIR}/graphics/png
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xcmap.diff
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xvpng.diff
-	@${MV} ${WRKDIR}/xvpng.c ${WRKSRC}
-	@${MV} ${WRKDIR}/bits/br_png ${WRKSRC}/bits
+	@mv ${WRKDIR}/xvpng.c ${WRKSRC}
+	@mv ${WRKDIR}/bits/br_png ${WRKSRC}/bits
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/xv
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xv
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xv
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
