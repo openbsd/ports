@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/10 15:28:38 jakob Exp $
 
 COMMENT=	"a class 1 and 2 DAV server for the Apache webserver"
 
@@ -37,8 +37,8 @@ post-build:
 NO_REGRESS=	Yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mod_dav-enable ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/libdav.so ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKBUILD}/mod_dav-enable ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKBUILD}/libdav.so ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}
