@@ -1,6 +1,7 @@
+$OpenBSD: patch-intl_Makefile_in,v 1.1 2001/02/19 20:25:50 danh Exp $
 --- intl/Makefile.in.orig	Mon Apr 27 17:53:18 1998
-+++ intl/Makefile.in	Tue Mar  7 17:03:17 2000
-@@ -114,26 +114,26 @@
++++ intl/Makefile.in	Mon Feb 19 15:16:34 2001
+@@ -114,26 +114,26 @@ install-exec: all
  	if test "$(PACKAGE)" = "gettext" \
  	   && test '@INTLOBJS@' = '$(GETTOBJS)'; then \
  	  if test -r $(MKINSTALLDIRS); then \

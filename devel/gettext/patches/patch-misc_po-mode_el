@@ -1,6 +1,7 @@
---- misc/po-mode.el.orig	Sun Jan 30 12:22:43 2000
-+++ misc/po-mode.el	Sun Jan 30 12:22:55 2000
-@@ -330,7 +330,7 @@
+$OpenBSD: patch-misc_po-mode_el,v 1.1 2001/02/19 20:25:51 danh Exp $
+--- misc/po-mode.el.orig	Wed Apr 29 18:28:56 1998
++++ misc/po-mode.el	Mon Feb 19 15:16:33 2001
+@@ -330,7 +330,7 @@ slightly different."
    :type 'face
    :group 'po)
  

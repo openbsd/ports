@@ -1,6 +1,37 @@
---- ltmain.sh.orig	Wed Mar 25 10:25:39 1998
-+++ ltmain.sh	Sat Oct 21 14:18:54 2000
-@@ -1002,7 +1002,15 @@
+$OpenBSD: patch-ltmain_sh,v 1.1 2001/02/19 20:25:50 danh Exp $
+--- ltmain.sh.orig	Mon Apr 27 17:22:35 1998
++++ ltmain.sh	Mon Feb 19 15:18:39 2001
+@@ -506,7 +506,28 @@ if test -z "$show_help"; then
+         deplibs="$deplibs $arg"
+         ;;
+ 
+-      -l*) deplibs="$deplibs $arg" ;;
++      -l*)
++        if test "$arg" = "-lc"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
++          esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
++        fi
++        deplibs="$deplibs $arg"
++        ;;
++ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
+ 
+       -no-undefined)
+ 	allow_undefined=no
+@@ -1002,7 +1023,15 @@ if test -z "$show_help"; then
  
        # Add libc to deplibs on all systems.
        dependency_libs="$deplibs"
@@ -17,7 +48,7 @@
  
        if test "$build_libtool_libs" = yes; then
          # Get the real and link names of the library.
-@@ -2023,37 +2031,6 @@
+@@ -2023,37 +2052,6 @@ libdir='$install_libdir'\
        done
      fi
  

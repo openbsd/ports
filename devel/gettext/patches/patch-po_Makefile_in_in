@@ -1,6 +1,7 @@
---- po/Makefile.in.in.orig	Tue Mar  7 17:18:48 2000
-+++ po/Makefile.in.in	Tue Mar  7 17:24:25 2000
-@@ -111,9 +111,9 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/02/19 20:25:51 danh Exp $
+--- po/Makefile.in.in.orig	Tue Apr 28 21:53:09 1998
++++ po/Makefile.in.in	Mon Feb 19 15:16:34 2001
+@@ -111,9 +111,9 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all
  	if test -r "$(MKINSTALLDIRS)"; then \
@@ -12,7 +13,7 @@
  	fi
  	@catalogs='$(CATALOGS)'; \
  	for cat in $$catalogs; do \
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ install-data-yes: all
  	    *)     destdir=$(localedir);; \
  	  esac; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
@@ -21,7 +22,7 @@
  	  if test -r "$(MKINSTALLDIRS)"; then \
  	    $(MKINSTALLDIRS) $$dir; \
  	  else \
-@@ -153,12 +153,12 @@
+@@ -153,12 +153,12 @@ install-data-yes: all
  	done
  	if test "$(PACKAGE)" = "gettext"; then \
  	  if test -r "$(MKINSTALLDIRS)"; then \
@@ -37,7 +38,7 @@
  	else \
  	  : ; \
  	fi
-@@ -171,12 +171,12 @@
+@@ -171,12 +171,12 @@ uninstall:
  	for cat in $$catalogs; do \
  	  cat=`basename $$cat`; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \

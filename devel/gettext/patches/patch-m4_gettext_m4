@@ -1,0 +1,13 @@
+$OpenBSD: patch-m4_gettext_m4,v 1.1 2001/02/19 20:25:50 danh Exp $
+--- m4/gettext.m4.orig	Fri May  1 01:45:20 1998
++++ m4/gettext.m4	Mon Feb 19 15:16:33 2001
+@@ -73,6 +73,9 @@ AC_DEFUN(AM_WITH_NLS,
+ 		INSTOBJEXT=.mo
+ 	      fi
+ 	    fi
++	    if test "$gt_cv_func_gettext_libintl" = "yes"; then
++		INTLLIBS='-lintl'
++	    fi
+ 	])
+ 
+         if test "$CATOBJEXT" = "NONE"; then

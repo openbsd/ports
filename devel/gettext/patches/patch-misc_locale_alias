@@ -1,0 +1,11 @@
+$OpenBSD: patch-misc_locale_alias,v 1.1 2001/02/19 20:25:51 danh Exp $
+--- misc/locale.alias.orig	Sat Oct 19 11:40:54 1996
++++ misc/locale.alias	Mon Feb 19 15:16:34 2001
+@@ -40,6 +40,7 @@ hungarian       hu_HU.ISO-8859-2
+ icelandic       is_IS.ISO-8859-1
+ italian         it_CH.ISO-8859-1
+ japanese	ja_JP.EUC
++korean		ko_KR.EUC
+ norwegian       no_NO.ISO-8859-1
+ polish          pl_PL.ISO-8859-2
+ portuguese      pt_PT.ISO-8859-1

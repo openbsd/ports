@@ -1,6 +1,7 @@
+$OpenBSD: patch-configure,v 1.1 2001/02/19 20:25:50 danh Exp $
 --- configure.orig	Fri May  1 01:48:25 1998
-+++ configure	Sun Feb  6 01:46:33 2000
-@@ -837,13 +837,8 @@
++++ configure	Mon Feb 19 15:16:34 2001
+@@ -837,13 +837,8 @@ echo "configure:837: checking for workin
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -14,7 +15,7 @@
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
  echo "configure:850: checking for working autoconf" >&5
-@@ -863,13 +858,8 @@
+@@ -863,13 +858,8 @@ echo "configure:863: checking for workin
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -28,7 +29,7 @@
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
  echo "configure:876: checking for working autoheader" >&5
-@@ -3958,7 +3948,7 @@
+@@ -3958,7 +3948,7 @@ fi
     fi
     
  
@@ -37,7 +38,7 @@
     
  
           test -d po || mkdir po
-@@ -4004,7 +3994,7 @@
+@@ -4004,7 +3994,7 @@ else
    ;;
  esac
  fi
