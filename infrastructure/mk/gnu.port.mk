@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.21 2005/01/11 07:14:36 sturm Exp $
+# $OpenBSD: gnu.port.mk,v 1.22 2005/02/07 12:22:28 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -38,6 +38,8 @@ CONFIGURE_ENV+=CONFIG_SITE='${CONFIG_SITE}'
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}
+MODGNU_SAVE_CACHE?= No
+MODGNU_SAVE_CACHE_LOCATION=${PORTSDIR}/config
 
 MODGNU_configure =
 .for _d in ${MODGNU_CONFIG_GUESS_DIRS}
@@ -47,8 +49,16 @@ MODGNU_configure += cp -f ${PORTSDIR}/infrastructure/db/config.sub ${_d};
 MODGNU_configure += chmod a+rx ${_d}/config.sub;
 .endfor
 MODGNU_configure += ${MODSIMPLE_configure}
+.if ${MODGNU_SAVE_CACHE:L} == "yes"
+MODGNU_configure += ; mkdir -p ${MODGNU_SAVE_CACHE_LOCATION}; \
+	cp ${WRKBUILD}/config.cache ${MODGNU_SAVE_CACHE_LOCATION}/${FULLPKGNAME} \
+	|| true
+.endif
 
 .if ${CONFIGURE_STYLE:L:Mgnu}
+.  if ${MODGNU_SAVE_CACHE:L} == "yes"
+CONFIGURE_ARGS+=--cache-file=${WRKBUILD}/config.cache
+.  endif
 .  if ${CONFIGURE_STYLE:L:Mdest}
 CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
 .  else
