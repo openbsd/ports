@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/24 12:54:37 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/01 11:11:51 shell Exp $
 
 COMMENT=	"callback framework for C++"
 
 DISTNAME=	libsigc++-1.0.4
 CATEGORIES=	devel
-NEED_VERSION=	1.481
+NEED_VERSION=	1.488
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libsigc
@@ -20,6 +20,14 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 DOCDIR=		${PREFIX}/share/doc/libsigc++/
+
+post-patch:
+	@cd ${WRKSRC}/scripts; \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
+	@chmod +x ${WRKSRC}/acconfig/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

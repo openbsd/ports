@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/08/31 08:13:39 shell Exp $
+# $OpenBSD: Makefile,v 1.24 2001/11/01 11:07:32 shell Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -27,6 +27,10 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+		patch-*
 
 MULTI_PACKAGES= -doc
 SUBPACKAGE?=
