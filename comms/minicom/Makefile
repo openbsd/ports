@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/03/29 09:56:43 form Exp $
+# $OpenBSD: Makefile,v 1.31 2001/03/30 11:33:39 form Exp $
 
 COMMENT=	"MS-DOS Telix-like serial communication program"
 
@@ -8,6 +8,8 @@ CATEGORIES=	comms
 NEED_VERSION=	1.320
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/serialcomm/dialout
+
+HOMEPAGE=	http://www.pp.clinet.fi/~walker/minicom.html
 
 BUILD_DEPENDS=	msgfmt::devel/gettext
 RUN_DEPENDS=	kermit::comms/kermit \
