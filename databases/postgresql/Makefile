@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.51 2001/08/23 16:29:55 peter Exp $
+# $OpenBSD: Makefile,v 1.52 2001/09/03 23:24:37 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.1.2
+VERSION=	7.1.3
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 FULLPKGNAME-docs=postgresql-docs-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.427
+NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -44,6 +44,10 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
+
+MAKE_FILE=	GNUmakefile
+
+SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
@@ -83,22 +87,12 @@ CONFIGURE_ARGS+= --without-openssl
 CONFIGURE_ARGS+= --with-openssl="/usr"
 .endif
 
-## making
-MAKE_FILE=	GNUmakefile
-
-DOCS=		${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
-		${WRKSRC}/INSTALL ${WRKSRC}/README \
-		${WRKSRC}/register.txt \
-		${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
-
 .if ${FLAVOR:L:Mno_locale}
 CONFIGURE_ARGS+= --disable-locale --disable-recode
 .else
 CONFIGURE_ARGS+= --enable-locale --enable-recode
 DOCS+=		${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp
 .endif
-
-SUBST_VARS=	VERSION
 
 .if ${FLAVOR:L:Mtcl}
 post-patch:
@@ -108,6 +102,11 @@ post-patch:
 		${WRKSRC}/src/bin/pgaccess/main.tcl.orig \
 		> ${WRKSRC}/src/bin/pgaccess/main.tcl
 .endif
+
+DOCS+=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
+	${WRKSRC}/INSTALL ${WRKSRC}/README \
+	${WRKSRC}/register.txt \
+	${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
@@ -128,6 +127,6 @@ SED_PLIST+=-e '/%%SHARED-tcl%%/d'
 .if ${FLAVOR:L:Modbc} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-odbc%%/r${PKGDIR}/PFRAG.odbc.shared' -e '//d'
 .elif ${FLAVOR:L:Modbc} && defined(NO_SHARED_LIBS) && \
-        ${NO_SHARED_LIBS:L} == "yes"
+	${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-odbc%%/d'
 .endif

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.7 2001/08/07 13:25:50 brad Exp $
+@comment $OpenBSD: PFRAG.tcl,v 1.8 2001/09/03 23:24:37 brad Exp $
 bin/pgaccess
 bin/pgtclsh
 bin/pgtksh
 include/postgresql/libpgtcl.h
+lib/libpgtcl.a
+%%SHARED-tcl%%
 man/man1/pgaccess.1
 man/man1/pgtclsh.1
 man/man1/pgtksh.1
-lib/libpgtcl.a
-%%SHARED-tcl%%
 share/postgresql/pgaccess/images/icon_button.gif
 share/postgresql/pgaccess/images/icon_checkbutton.gif
 share/postgresql/pgaccess/images/icon_entry.gif
