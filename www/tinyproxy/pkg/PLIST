@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/01/27 22:10:56 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/11/03 00:49:29 margarida Exp $
 man/man8/tinyproxy.8
 sbin/tinyproxy
+share/doc/tinyproxy/HTML_VARIABLES
 share/doc/tinyproxy/HTTP_ERROR_CODES
 share/doc/tinyproxy/RFC_INFO
+share/doc/tinyproxy/debug.html
+share/doc/tinyproxy/default.html
 share/doc/tinyproxy/filter-howto.txt
+share/doc/tinyproxy/stats.html
 share/examples/tinyproxy/tinyproxy.conf
 @dirrm share/examples/tinyproxy
 @dirrm share/doc/tinyproxy
+@cwd ${SYSCONFDIR}
+@extra tinyproxy/tinyproxy.conf
+@extra tinyproxy/ 
