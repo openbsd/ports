@@ -3,9 +3,7 @@
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:38 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.5 1999/10/26 13:44:30 dugsong Exp $
 
 DISTNAME=	xip-1.3.2
 
