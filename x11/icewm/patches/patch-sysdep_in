@@ -1,6 +1,7 @@
-$OpenBSD: patch-sysdep_in,v 1.1 2001/03/26 13:08:27 wilfried Exp $
---- sysdep.in.orig	Fri Mar 16 22:17:36 2001
-+++ sysdep.in	Mon Mar 26 14:57:19 2001
+$OpenBSD: patch-sysdep_in,v 1.2 2002/01/20 19:54:13 naddy Exp $
+# was in original icewm port, I left it as it was
+--- sysdep.in.orig	Tue Oct  9 09:54:02 2001
++++ sysdep.in	Thu Jan 10 23:56:46 2002
 @@ -5,7 +5,7 @@ SYS_CFLAGS = \
  	@DEBUG@ @CXXFLAGS@ @DEFS@ \
  	@CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ @GNOME_CFLAGS@

@@ -1,12 +1,16 @@
-$OpenBSD: patch-doc_icewm-7_html,v 1.1 2001/03/26 13:08:27 wilfried Exp $
---- doc/icewm-7.html.orig	Fri Mar 16 22:17:48 2001
-+++ doc/icewm-7.html	Mon Mar 26 13:52:01 2001
-@@ -20,7 +20,7 @@ directories:
+$OpenBSD: patch-doc_icewm-7_html,v 1.2 2002/01/20 19:54:13 naddy Exp $
+# Fix the location of the configuration files in on-line help
+--- doc/icewm-7.html.orig	Tue Oct  9 09:54:34 2001
++++ doc/icewm-7.html	Sun Jan 13 03:19:37 2002
+@@ -20,9 +20,8 @@ directories:
  <P>
  <DL>
  <DT><B>$HOME/.icewm</B><DD><P>user's personal customization
 -<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults
+-<DT><B>/usr/local/lib/X11/icewm</B><DD><P>compiled-in default directory with default files
+-(for .rpm packages the default is /usr/X11R6/lib/X11/icewm)
 +<DT><B>/etc/icewm</B><DD><P>system-wide customized defaults
- <DT><B>/usr/local/lib/X11/icewm</B><DD><P>compiled-in default directory with default files
- (for .rpm packages the default is /usr/X11R6/lib/X11/icewm)
++<DT><B>/usr/local/share/icewm</B><DD><P>compiled-in default directory with default files
  </DL>
+ <P>The directories are searched in the above order, so any file located
+ in the system/install directory can be overridden by the user by creating
