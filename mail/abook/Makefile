@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/26 19:52:51 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/08/03 20:02:40 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
-DISTNAME=	abook-0.4.8
+DISTNAME=	abook-0.4.9
 CATEGORIES=	mail
-NEED_VERSION=	1.308
+NEED_VERSION=	1.319
 MASTER_SITES=	http://members.linuxstart.com/~jheinonen/abook/
 
 HOMEPAGE=	http://members.linuxstart.com/~jheinonen/abook/
