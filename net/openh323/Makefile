@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/03/03 08:29:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2005/03/12 12:35:52 couderc Exp $
 
 BROKEN=			"Needs upgrade to newer version"
 
@@ -41,7 +41,7 @@ MAKE_ENV+=      ENDIAN="PLITTLE_ENDIAN"
 .else
 .       if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
         ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "powerpc" || \
-        ${MACHINE_ARCH} == "hppa")
+        ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64")
 MAKE_ENV+=      ENDIAN="PBIG_ENDIAN"
 .       else
 ERRORS+= "Fatal: Unknown endianness for ${MACHINE_ARCH}"
