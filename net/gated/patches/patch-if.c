@@ -1,6 +1,6 @@
---- src/gated/if.c.orig	Fri Mar 17 08:54:51 2000
-+++ src/gated/if.c	Sun Jul 30 19:03:25 2000
-@@ -2863,9 +2863,10 @@
+--- src/gated/if.c.orig	Fri Mar 17 00:54:51 2000
++++ src/gated/if.c	Sun Nov 17 13:35:50 2002
+@@ -2863,9 +2863,10 @@ if_rtup(if_addr *ifap)
  	    case IFS_LOOPBACK:
  	        /* Add a host route to the loopback interface */
  
