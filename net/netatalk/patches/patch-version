@@ -1,5 +1,6 @@
---- VERSION.orig	Fri Oct 15 17:33:50 1999
-+++ VERSION	Fri Oct 15 17:34:23 1999
+$OpenBSD: patch-version,v 1.2 2001/03/19 13:51:21 wilfried Exp $
+--- VERSION.orig	Sun Jan 31 09:49:05 1999
++++ VERSION	Thu Mar 15 19:34:56 2001
 @@ -1 +1 @@
 -990130
-+990130-OpenBSD-1.0
++990130-OpenBSD-1.1
