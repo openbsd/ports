@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.8 1999/01/22 22:40:17 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.9 1999/02/04 13:21:13 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -33,6 +33,7 @@
 
 #endif
 
+#ifndef OBSD_HAS_CORRECT_SPECS
 /* Controlling the compilation driver 
  * ---------------------------------- */
 #ifndef OBSD_NO_DYNAMIC_LIBRARIES
@@ -79,6 +80,7 @@
  */
 #undef LIB_SPEC
 #define LIB_SPEC "-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}"
+#endif
 
 /* Runtime target specification 
  * ---------------------------- */
