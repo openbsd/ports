@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_perl_mod_perl_c,v 1.1 2001/09/05 09:26:43 peter Exp $
+$OpenBSD: patch-src_modules_perl_mod_perl_c,v 1.2 2003/02/03 00:19:08 naddy Exp $
 --- src/modules/perl/mod_perl.c.orig	Wed Sep  5 09:19:45 2001
 +++ src/modules/perl/mod_perl.c	Wed Sep  5 09:19:55 2001
 @@ -485,7 +485,7 @@ static void mp_dso_unload(void *data) 
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_modules_perl_mod_perl_c,v 1.1 2001/09/05 09:26:43 peter Exp 
  
      librefs = xs_dl_librefs((pool *)data);
 -    perl_destruct_level = 2;
-+    perl_destruct_level = 0;
++    perl_destruct_level = -1;
      perl_shutdown(NULL, NULL);
      unload_xs_so(librefs);
  } 
