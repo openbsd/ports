@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/10 19:42:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/06 13:34:38 lebel Exp $
 # $FreeBSD: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
 #
 
@@ -7,6 +7,7 @@
     SUBDIR += bash2
     SUBDIR += bash2,static
     SUBDIR += es
+    SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += tcsh,static
