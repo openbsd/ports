@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.313 2000/07/07 15:49:32 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.314 2000/07/11 10:32:22 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1619,7 +1619,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		exit 1; \
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
-	@${SUDO} mtree -U -e -d -n -p ${WRKINST} \
+	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 .  if ${CONFIGURE_STYLE:L} == "perl"
 	@${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
