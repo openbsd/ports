@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/13 17:15:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/13 17:18:22 sturm Exp $
 
 COMMENT=	"Python interface to the Sybase relational database system"
 
@@ -25,6 +25,7 @@ MODPY_DISTUTILS_BUILDARGS=	-DHAVE_FREETDS=61
 LIB_DEPENDS=    tds.2,sybdb.3,ct.1::databases/freetds
 
 MAKE_ENV+=	SYBASE="${LOCALBASE}"
+NO_REGRESS=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-sybase
 
