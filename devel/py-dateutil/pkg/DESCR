@@ -1,0 +1,6 @@
+The dateutil module provides powerful extensions to the standard
+datetime module, available in Python 2.3+. It features computing of
+relative deltas (next month, next year, next monday, last week of month,
+etc), computing of dates based on very flexible recurrence rules, using
+a superset of the [FTP]iCalendar specification and generic parsing of
+dates in almost any string format.
