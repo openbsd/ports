@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/08 05:17:08 jolan Exp $
 lib/aspell/it.multi
 lib/aspell/it.rws
 lib/aspell/italian.alias
+lib/aspell/italiano.alias
 share/aspell/it.dat
