@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/02/18 21:49:36 obecian Exp $
+# $OpenBSD: Makefile,v 1.23 2001/02/22 22:19:52 espie Exp $
 
 DISTNAME=	curl-7.6.1
 CATEGORIES=	net
@@ -26,6 +26,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mkerberos}
 CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV"
+CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
 DOCS=	CHANGES LEGAL MITX.txt README
