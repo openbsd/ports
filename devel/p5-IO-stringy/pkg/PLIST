@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 19:09:12 peter Exp $
+libdata/perl5/site_perl/IO/AtomicFile.pm
+libdata/perl5/site_perl/IO/InnerFile.pm
+libdata/perl5/site_perl/IO/Lines.pm
+libdata/perl5/site_perl/IO/Scalar.pm
+libdata/perl5/site_perl/IO/ScalarArray.pm
+libdata/perl5/site_perl/IO/Stringy.pm
+libdata/perl5/site_perl/IO/Wrap.pm
+libdata/perl5/site_perl/IO/WrapTie.pm
+man/man3/IO::AtomicFile.3p
+man/man3/IO::InnerFile.3p
+man/man3/IO::Lines.3p
+man/man3/IO::Scalar.3p
+man/man3/IO::ScalarArray.3p
+man/man3/IO::Stringy.3p
+man/man3/IO::Wrap.3p
+man/man3/IO::WrapTie.3p
