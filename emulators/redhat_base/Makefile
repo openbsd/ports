@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/01 04:17:13 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/05 06:05:35 jasoni Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,8 +8,9 @@ PKGNAME=	redhat_base-6.2
 CATEGORIES=	emulators
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/%SUBDIR%/ \
+		ftp://sunsite.ualberta.ca/pub/Mirror/Linux/redhat/linux/6.2/i386/ \
 		ftp://ftp.freesoftware.com/pub/linux/redhat/%SUBDIR%/
-MASTER_SITE_SUBDIR= redhat-6.2/i386/RedHat/RPMS
+MASTER_SITE_SUBDIR= redhat-6.2-en/os/i386/RedHat/RPMS
 DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	
@@ -95,7 +96,7 @@ do-install:
 	@elf2olf -o linux ${PREFIX}/bin/rpm
 
 # run ldconfig
-	-chroot ${WRKINST} ${TRUEPREFIX}/sbin/ldconfig
+	-chroot ${PREFIX} /sbin/ldconfig
 
 post-install:
 	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
