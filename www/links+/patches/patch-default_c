@@ -1,0 +1,19 @@
+$OpenBSD: patch-default_c,v 1.1 2002/12/28 21:49:14 fgsch Exp $
+--- default.c.orig	Sat Oct 12 16:46:24 2002
++++ default.c	Sat Dec 28 18:10:51 2002
+@@ -1038,6 +1038,7 @@ int aspect_on=1;
+ unsigned char download_dir[MAX_STR_LEN] = "";
+ 
+ unsigned char default_anon_pass[MAX_STR_LEN] = "somebody@host.domain";
++int ftp_passive=0;    /* 1=use passive mode */
+ 
+ /* These are workarounds for some CGI script bugs */
+ struct http_bugs http_bugs = { 0, 1, 1, 0 };
+@@ -1113,6 +1114,7 @@ struct option links_options[] = {
+ 	{1, gen_cmd, cp_rd, cp_wr, 0, 0, &bookmarks_codepage, "bookmarks_codepage", "bookmarks-codepage"},
+ 	{1, gen_cmd, str_rd, str_wr, 0, MAX_STR_LEN, bookmarks_file, "bookmarks_file", "bookmarks-file"},
+ 	{1, gen_cmd, str_rd, str_wr, 0, MAX_STR_LEN, default_anon_pass, "ftp.anonymous_password", "ftp.anonymous-password"},
++	{1, gen_cmd, num_rd, num_wr, 0, 1, &ftp_passive, "ftp.passive", "ftp.passive"},
+ 	{1, gen_cmd, cp_rd, NULL, 0, 0, &dds.assume_cp, "assume_codepage", "assume-codepage"},
+ 	{1, NULL, term_rd, term_wr, 0, 0, NULL, "terminal", NULL},
+ 	{1, NULL, term2_rd, NULL, 0, 0, NULL, "terminal2", NULL},

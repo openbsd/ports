@@ -1,15 +1,16 @@
-$OpenBSD: patch-intl_english_lng,v 1.1 2002/12/17 05:50:51 fgsch Exp $
---- intl/english.lng.orig	Tue Dec 17 02:35:58 2002
-+++ intl/english.lng	Tue Dec 17 02:36:38 2002
-@@ -390,6 +390,7 @@ T_DISPLAY_OPTIMIZATION_LCD_BGR,"Display 
+$OpenBSD: patch-intl_english_lng,v 1.2 2002/12/28 21:49:14 fgsch Exp $
+--- intl/english.lng.orig	Sat Nov  2 14:22:52 2002
++++ intl/english.lng	Sat Dec 28 17:25:28 2002
+@@ -390,6 +390,8 @@ T_DISPLAY_OPTIMIZATION_LCD_BGR,"Display 
  T_ASPECT_RATIO, "Aspect ratio",
  T_ASPECT_CORRECTION_ON, "Aspect correction on",
  T_KEYBOARD_CODEPAGE, "Keyboard codepage",
 +T_COPY_TO_CLIPBOARD, "Copy to clipboard",
++T_USE_PASSIVE, "Use passive mode",
  T_HK_ADD_BOOKMARK, "A", 
  T_HK_BOOKMARKS, "S",
  T_HK_GOTO_URL, "G",
-@@ -460,3 +461,4 @@ T_HK_BEOS_TERMINAL, "B",
+@@ -460,3 +462,4 @@ T_HK_BEOS_TERMINAL, "B",
  T_HK_NEW_WINDOW, "N",
  T_HK_JAVASCRIPT_OPTIONS, "J",
  T_HK_MISCELANEOUS_OPTIONS, "O",

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/17 17:43:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/28 21:49:14 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
 VER=		2.1pre7
 DISTNAME=	links-${VER}
-PKGNAME=	links+-${VER}c
+PKGNAME=	links+-${VER}d
 CATEGORIES=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-post-patch:
+pre-configure:
 	cp ${FILESDIR}/auth.c ${WRKSRC}
 	cd ${WRKSRC}/intl && /bin/sh synclang
 

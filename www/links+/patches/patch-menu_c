@@ -1,6 +1,6 @@
-$OpenBSD: patch-menu_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
---- menu.c.orig	Sun Sep 15 10:16:34 2002
-+++ menu.c	Sun Sep 15 10:19:02 2002
+$OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
+--- menu.c.orig	Sat Oct 12 16:48:21 2002
++++ menu.c	Sat Dec 28 18:26:00 2002
 @@ -324,7 +324,7 @@ void flush_caches(struct terminal *term,
  /* jde v historii o psteps polozek dozadu */
  void go_backwards(struct terminal *term, void *psteps, struct session *ses)
@@ -64,7 +64,91 @@ $OpenBSD: patch-menu_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
  	}
  	sel = *ptr;
  	if (sel < 0) sel = 0;
-@@ -1729,7 +1729,7 @@ void miscelaneous_options(struct termina
+@@ -733,26 +733,68 @@ int dlg_http_options(struct dialog_data 
+ 	return 0;
+ }
+ 
++unsigned char *ftp_labels[] = { TEXT(T_USE_PASSIVE), TEXT(T_PASSWORD_FOR_ANONYMOUS_LOGIN) };
++
++void ftpopt_fn(struct dialog_data *dlg)
++{
++	struct terminal *term = dlg->win->term;
++	int max = 0, min = 0;
++	int w, rw;
++	int y = 0;
++	checkboxes_width(term, dlg->dlg->udata, &max, max_text_width);
++	checkboxes_width(term, dlg->dlg->udata, &min, min_text_width);
++	max_text_width(term, ftp_labels[1], &max, AL_LEFT);
++	min_text_width(term, ftp_labels[1], &min, AL_LEFT);
++	max_buttons_width(term, dlg->items + dlg->n - 2, 2, &max);
++	min_buttons_width(term, dlg->items + dlg->n - 2, 2, &min);
++	w = term->x * 9 / 10 - 2 * DIALOG_LB;
++	if (w > max) w = max;
++	if (w < min) w = min;
++	if (w > term->x - 2 * DIALOG_LB) w = term->x - 2 * DIALOG_LB;
++	if (w < 5) w = 5;
++	rw = 0;
++	dlg_format_checkboxes(dlg, NULL, dlg->items, dlg->n - 3, 0, &y, w, &rw, dlg->dlg->udata);
++	y += gf_val(1, G_BFU_FONT_SIZE);
++	dlg_format_text(dlg, NULL, ftp_labels[1], 0, &y, w, &rw, COLOR_DIALOG_TEXT, AL_LEFT);
++	y += gf_val(1, 2 * G_BFU_FONT_SIZE);
++	dlg_format_buttons(dlg, NULL, dlg->items + dlg->n - 2, 2, 0, &y, w, &rw, AL_CENTER);
++	w = rw;
++	dlg->xw = rw + 2 * DIALOG_LB;
++	dlg->yw = y + 2 * DIALOG_TB;
++	center_dlg(dlg);
++	draw_dlg(dlg);
++	y = dlg->y + DIALOG_TB + gf_val(1, G_BFU_FONT_SIZE);
++	dlg_format_checkboxes(dlg, term, dlg->items, dlg->n - 3, dlg->x + DIALOG_LB, &y, w, NULL, dlg->dlg->udata);
++	y += gf_val(1, G_BFU_FONT_SIZE);
++	dlg_format_text(dlg, term, ftp_labels[1], dlg->x + DIALOG_LB, &y, w, NULL, COLOR_DIALOG_TEXT, AL_LEFT);
++	dlg_format_field(dlg, term, dlg->items + 1, dlg->x + DIALOG_LB, &y, w, NULL, AL_LEFT);
++	y += gf_val(1, G_BFU_FONT_SIZE);
++	dlg_format_buttons(dlg, term, dlg->items + dlg->n - 2, 2, dlg->x + DIALOG_LB, &y, w, &rw, AL_CENTER);
++}
++
+ int dlg_ftp_options(struct dialog_data *dlg, struct dialog_item_data *di)
+ {
+ 	struct dialog *d;
+-	if (!(d = mem_alloc(sizeof(struct dialog) + 4 * sizeof(struct dialog_item)))) return 0;
+-	memset(d, 0, sizeof(struct dialog) + 4 * sizeof(struct dialog_item));
++	if (!(d = mem_alloc(sizeof(struct dialog) + 5 * sizeof(struct dialog_item)))) return 0;
++	memset(d, 0, sizeof(struct dialog) + 5 * sizeof(struct dialog_item));
+ 	d->title = TEXT(T_FTP_OPTIONS);
+-	d->fn = input_field_fn;
+-	d->udata = TEXT(T_PASSWORD_FOR_ANONYMOUS_LOGIN);
+-	d->items[0].type = D_FIELD;
+-	d->items[0].dlen = MAX_STR_LEN;
+-	d->items[0].data = di->cdata;
+-	d->items[1].type = D_BUTTON;
+-	d->items[1].gid = B_ENTER;
+-	d->items[1].fn = ok_dialog;
+-	d->items[1].text = TEXT(T_OK);
++	d->fn = ftpopt_fn;
++	d->udata = ftp_labels;
++	d->items[0].type = D_CHECKBOX;
++	d->items[0].dlen = sizeof(int);
++	d->items[0].data = (void *)&ftp_passive;
++	d->items[1].type = D_FIELD;
++	d->items[1].dlen = MAX_STR_LEN;
++	d->items[1].data = di->cdata;
+ 	d->items[2].type = D_BUTTON;
+-	d->items[2].gid = B_ESC;
+-	d->items[2].fn = cancel_dialog;
+-	d->items[2].text = TEXT(T_CANCEL);
+-	d->items[3].type = D_END;
++	d->items[2].gid = B_ENTER;
++	d->items[2].fn = ok_dialog;
++	d->items[2].text = TEXT(T_OK);
++	d->items[3].type = D_BUTTON;
++	d->items[3].gid = B_ESC;
++	d->items[3].fn = cancel_dialog;
++	d->items[3].text = TEXT(T_CANCEL);
++	d->items[4].type = D_END;
+  	do_dialog(dlg->win->term, d, getml(d, NULL));
+ 	return 0;
+ }
+@@ -1729,7 +1771,7 @@ void miscelaneous_options(struct termina
  
  void menu_set_language(struct terminal *term, void *pcp, struct session *ses)
  {
@@ -73,7 +157,7 @@ $OpenBSD: patch-menu_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
  	cls_redraw_all_terminals();
  }
  
-@@ -1741,7 +1741,7 @@ void menu_language_list(struct terminal 
+@@ -1741,7 +1783,7 @@ void menu_language_list(struct terminal 
  	if (!(mi = new_menu(1))) return;
  	for (i = 0; i < n_languages(); i++) {
  		n = language_name(i);

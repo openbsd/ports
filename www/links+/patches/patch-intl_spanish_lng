@@ -1,15 +1,16 @@
-$OpenBSD: patch-intl_spanish_lng,v 1.1 2002/12/17 13:31:39 fgsch Exp $
---- intl/spanish.lng.orig	Tue Dec 17 10:19:59 2002
-+++ intl/spanish.lng	Tue Dec 17 10:21:10 2002
-@@ -390,6 +390,7 @@ T_DISPLAY_OPTIMIZATION_LCD_BGR, NULL,
+$OpenBSD: patch-intl_spanish_lng,v 1.2 2002/12/28 21:49:14 fgsch Exp $
+--- intl/spanish.lng.orig	Sat Nov  2 14:22:52 2002
++++ intl/spanish.lng	Sat Dec 28 18:01:24 2002
+@@ -390,6 +390,8 @@ T_DISPLAY_OPTIMIZATION_LCD_BGR, NULL,
  T_ASPECT_RATIO, NULL,
  T_ASPECT_CORRECTION_ON, NULL,
  T_KEYBOARD_CODEPAGE, NULL,
 +T_COPY_TO_CLIPBOARD, "Copiar al portapapeles",
++T_USE_PASSIVE, "Usar modo pasivo",
  T_HK_ADD_BOOKMARK, "A", 
  T_HK_BOOKMARKS, "C",
  T_HK_GOTO_URL, "I",
-@@ -460,3 +461,4 @@ T_HK_BEOS_TERMINAL, "B",
+@@ -460,3 +462,4 @@ T_HK_BEOS_TERMINAL, "B",
  T_HK_NEW_WINDOW, "N",
  T_HK_JAVASCRIPT_OPTIONS, NULL,
  T_HK_MISCELANEOUS_OPTIONS, NULL,

@@ -1,6 +1,6 @@
-$OpenBSD: patch-links_h,v 1.4 2002/12/17 05:50:51 fgsch Exp $
+$OpenBSD: patch-links_h,v 1.5 2002/12/28 21:49:14 fgsch Exp $
 --- links.h.orig	Sat Nov  2 14:22:41 2002
-+++ links.h	Mon Dec 16 22:23:48 2002
++++ links.h	Sat Dec 28 17:19:38 2002
 @@ -137,6 +137,8 @@ x #endif*/
  #define longlong long
  #endif
@@ -37,7 +37,15 @@ $OpenBSD: patch-links_h,v 1.4 2002/12/17 05:50:51 fgsch Exp $
  
  #define B_ENTER		1
  #define B_ESC		2
-@@ -3876,5 +3882,30 @@ void save_bookmarks(void);
+@@ -3806,6 +3812,7 @@ struct http_bugs {
+ extern struct http_bugs http_bugs;
+ 
+ extern unsigned char default_anon_pass[];
++extern int ftp_passive;
+ 
+ /* listedit.c */
+ 
+@@ -3876,5 +3883,30 @@ void save_bookmarks(void);
  
  /* Launches bookmark manager */
  void menu_bookmark_manager(struct terminal *, void *, struct session *);

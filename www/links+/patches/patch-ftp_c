@@ -1,0 +1,273 @@
+$OpenBSD: patch-ftp_c,v 1.1 2002/12/28 21:49:14 fgsch Exp $
+--- ftp.c.orig	Tue May  7 07:13:18 2002
++++ ftp.c	Sat Dec 28 17:20:00 2002
+@@ -19,6 +19,7 @@ struct ftp_connection_info {
+ 	int d;
+ 	int dpos;
+ 	int buf_pos;
++	int use_pasv; /* Use PASV (yes or no) */
+ 	unsigned char ftp_buffer[FTP_BUF];
+ 	unsigned char cmdbuf[1];
+ };
+@@ -39,7 +40,58 @@ void ftp_got_final_response(struct conne
+ void got_something_from_data_connection(struct connection *);
+ void ftp_end_request(struct connection *);
+ 
+-int get_ftp_response(struct connection *c, struct read_buffer *rb, int part)
++/* Parse EPSV or PASV response for address and/or port.
++ * int *n should point to a sizeof(int) * 6 space.
++ * It returns zero on error or count of parsed numbers.
++ * It returns an error if:
++ * - there's more than 6 or less than 1 numbers.
++ * - a number is strictly greater than max.
++ *
++ * On success, array of integers *n is filled with numbers starting
++ * from end of array (ie. if we found one number, you can access it using
++ * n[5]).
++ *
++ * Important:
++ * Negative numbers aren't handled so -123 is taken as 123.
++ * We don't take care about separators.
++*/
++static int parse_psv_resp(unsigned char *data, int *n, int max_value)
++{
++	unsigned char *p = data;
++	int i = 5;
++
++	memset(n, 0, 6 * sizeof(int));
++
++	if (*p < ' ') return 0;
++
++	/* Find the end. */
++	while (*p >= ' ') p++;
++
++	/* Ignore non-numeric ending chars. */
++       	while (p != data && (*p < '0' || *p > '9')) p--;
++	if (p == data) return 0;
++
++	while (i >= 0) {
++		int x = 1;
++
++		/* Parse one number. */
++		while (p != data && *p >= '0' && *p <= '9') {
++			n[i] += (*p - '0') * x;
++			if (n[i] > max_value) return 0;
++			x *= 10;
++			p--;
++		}
++		/* Ignore non-numeric chars. */
++		while (p != data && (*p < '0' || *p > '9')) p--;
++		if (p == data) return (6 - i);
++		/* Get the next one. */
++		i--;
++	}
++
++	return 0;
++}
++
++int get_ftp_response(struct connection *c, struct read_buffer *rb, int part, struct sockaddr_in *sa)
+ {
+ 	int l;
+ 	set_timeout(c);
+@@ -48,6 +100,17 @@ int get_ftp_response(struct connection *
+ 		unsigned char *e;
+ 		int k = strtoul(rb->data, (char **)&e, 10);
+ 		if (e != rb->data + 3 || k < 100) return -1;
++		if (sa && k == 227) { /* PASV response parsing. */
++			struct sockaddr_in *s = (struct sockaddr_in *) sa;
++			int n[6];
++
++			if (parse_psv_resp(e, (int *) n, 255) != 6)
++				return -1;
++			memset(s, 0, sizeof(struct sockaddr_in));
++			s->sin_family = AF_INET;
++			s->sin_addr.s_addr = htonl((n[0] << 24) + (n[1] << 16) + (n[2] << 8) + n[3]);
++			s->sin_port = htons((n[4] << 8) + n[5]);
++		}
+ 		if (*e == '-') {
+ 			int i;
+ 			for (i = 0; i < rb->len - 5; i++) {
+@@ -127,7 +190,7 @@ void ftp_logged(struct connection *c)
+ 
+ void ftp_got_info(struct connection *c, struct read_buffer *rb)
+ {
+-	int g = get_ftp_response(c, rb, 0);
++	int g = get_ftp_response(c, rb, 0, NULL);
+ 	if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_got_info); return; }
+ 	if (g >= 400) { setcstate(c, S_FTP_UNAVAIL); retry_connection(c); return; }
+@@ -136,7 +199,7 @@ void ftp_got_info(struct connection *c, 
+ 
+ void ftp_got_user_info(struct connection *c, struct read_buffer *rb)
+ {
+-	int g = get_ftp_response(c, rb, 0);
++	int g = get_ftp_response(c, rb, 0, NULL);
+ 	if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_got_user_info); return; }
+ 	if (g >= 530 && g < 540) { setcstate(c, S_FTP_LOGIN); retry_connection(c); return; }
+@@ -169,7 +232,7 @@ void ftp_got_user_info(struct connection
+ 
+ void ftp_dummy_info(struct connection *c, struct read_buffer *rb)
+ {
+-	int g = get_ftp_response(c, rb, 0);
++	int g = get_ftp_response(c, rb, 0, NULL);
+ 	if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_dummy_info); return; }
+ 	ftp_retr_file(c, rb);
+@@ -184,7 +247,7 @@ void ftp_sent_passwd(struct connection *
+ 
+ void ftp_pass_info(struct connection *c, struct read_buffer *rb)
+ {
+-	int g = get_ftp_response(c, rb, 0);
++	int g = get_ftp_response(c, rb, 0, NULL);
+ 	if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_pass_info); setcstate(c, S_LOGIN); return; }
+ 	if (g >= 530 && g < 540) { setcstate(c, S_FTP_LOGIN); abort_connection(c); return; }
+@@ -215,7 +278,11 @@ struct ftp_connection_info *add_file_cmd
+ 		goto oom;
+ 	}
+ 	c->info = inf;
+-	if ((ps = get_pasv_socket(c, c->sock1, &c->sock2, pc))) return NULL;
++	inf->use_pasv = ftp_passive;
++	if (!inf->use_pasv) {
++		if ((ps = get_pasv_socket(c, c->sock1, &c->sock2, pc)))
++			return NULL;
++	}
+ 	if (!d) {
+ 		internal("get_url_data failed");
+ 		setcstate(c, S_INTERNAL);
+@@ -226,18 +293,23 @@ struct ftp_connection_info *add_file_cmd
+ 	if (d == de || de[-1] == '/') {
+ 		inf->dir = 1;
+ 		inf->pending_commands = 4;
+-		add_to_str(&s, &l, "TYPE A\r\nPORT ");
+-		add_num_to_str(&s, &l, pc[0]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[1]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[2]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[3]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[4]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[5]);
++		add_to_str(&s, &l, "TYPE A\r\n");
++		if (inf->use_pasv)
++			add_to_str(&s, &l, "PASV");
++		else {
++			add_to_str(&s, &l, "PORT ");
++			add_num_to_str(&s, &l, pc[0]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[1]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[2]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[3]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[4]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[5]);
++		}
+ 		add_to_str(&s, &l, "\r\nCWD /");
+ 		add_bytes_to_str(&s, &l, d, de - d);
+ 		add_to_str(&s, &l, "\r\nLIST\r\n");
+@@ -245,18 +317,23 @@ struct ftp_connection_info *add_file_cmd
+ 	} else {
+ 		inf->dir = 0;
+ 		inf->pending_commands = 3;
+-		add_to_str(&s, &l, "TYPE I\r\nPORT ");
+-		add_num_to_str(&s, &l, pc[0]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[1]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[2]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[3]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[4]);
+-		add_chr_to_str(&s, &l, ',');
+-		add_num_to_str(&s, &l, pc[5]);
++		add_to_str(&s, &l, "TYPE I\r\n");
++		if (inf->use_pasv)
++			add_to_str(&s, &l, "PASV");
++		else {
++			add_to_str(&s, &l, "PORT ");
++			add_num_to_str(&s, &l, pc[0]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[1]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[2]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[3]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[4]);
++			add_chr_to_str(&s, &l, ',');
++			add_num_to_str(&s, &l, pc[5]);
++		}
+ 		if (c->from) {
+ 			add_to_str(&s, &l, "\r\nREST ");
+ 			add_num_to_str(&s, &l, c->from);
+@@ -314,6 +391,8 @@ void ftp_retr_file(struct connection *c,
+ {
+ 	int g;
+ 	struct ftp_connection_info *inf = c->info;
++	int fd;
++	struct sockaddr_in sa;
+ 	if (0) {
+ 		rep:
+ 		if (!fast_ftp) {
+@@ -322,9 +401,19 @@ void ftp_retr_file(struct connection *c,
+ 		}
+ 	}
+ 	if (inf->pending_commands > 1) {
+-		g = get_ftp_response(c, rb, 0);
++		g = get_ftp_response(c, rb, 0, &sa);
+ 		if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 		if (!g) { read_from_socket(c, c->sock1, rb, ftp_retr_file); setcstate(c, S_GETH); return; }
++		if (g == 227) {
++			fd = socket(PF_INET, SOCK_STREAM, 0);
++			if (fd < 0) {
++				setcstate(c, S_FTP_ERROR);
++				abort_connection(c);
++				return;
++			}
++			c->sock2 = fd;
++			connect(fd, (struct sockaddr *) &sa, sizeof(struct sockaddr_in));
++		}
+ 		inf->pending_commands--;
+ 		switch (inf->opc - inf->pending_commands) {
+ 			case 1:		/* TYPE */
+@@ -341,7 +430,7 @@ void ftp_retr_file(struct connection *c,
+ 		}
+ 		internal("WHAT???");
+ 	}
+-	g = get_ftp_response(c, rb, 2);
++	g = get_ftp_response(c, rb, 2, NULL);
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_retr_file); setcstate(c, S_GETH); return; }
+ 	if (g >= 100 && g < 200) {
+ 		int est;
+@@ -369,7 +458,7 @@ void ftp_retr_file(struct connection *c,
+ void ftp_got_final_response(struct connection *c, struct read_buffer *rb)
+ {
+ 	struct ftp_connection_info *inf = c->info;
+-	int g = get_ftp_response(c, rb, 0);
++	int g = get_ftp_response(c, rb, 0, NULL);
+ 	if (g == -1) { setcstate(c, S_FTP_ERROR); abort_connection(c); return; }
+ 	if (!g) { read_from_socket(c, c->sock1, rb, ftp_got_final_response); if (c->state != S_TRANS) setcstate(c, S_GETH); return; }
+ 	if (g == 550) {
+@@ -477,8 +566,12 @@ void got_something_from_data_connection(
+ 		int ns;
+ 		inf->d = 1;
+ 		set_handlers(c->sock2, NULL, NULL, NULL, NULL);
+-		if ((ns = accept(c->sock2, NULL, NULL)) == -1) goto e;
+-		close(c->sock2);
++		if (inf->use_pasv)
++			ns = c->sock2;
++		else {
++			if ((ns = accept(c->sock2, NULL, NULL)) == -1) goto e;
++			close(c->sock2);
++		}
+ 		c->sock2 = ns;
+ 		set_handlers(ns, (void (*)(void *))got_something_from_data_connection, NULL, NULL, c);
+ 		return;
