@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2003/02/20 13:26:29 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
-DISTNAME=	nano-1.0.9
+DISTNAME=	nano-1.2.0
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	${MASTER_SITE_GNU:=nano/} \
-		ftp://ftp.nano-editor.org/pub/nano/v1.0/
+MASTER_SITES=	ftp://ftp.nano-editor.org/pub/nano/v1.2/ \
+		${MASTER_SITE_GNU:=nano/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
