@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_log_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_log.c.orig	2004-01-08 13:40:39.000000000 +0100
-+++ tcl/tcl_log.c	2004-01-08 13:41:16.000000000 +0100
+$OpenBSD: patch-tcl_tcl_log_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_log.c.orig	2003-04-24 18:25:54.000000000 +0200
++++ tcl/tcl_log.c	2004-01-10 11:21:10.000000000 +0100
 @@ -61,7 +61,7 @@ tcl_LogArchive(interp, objc, objv, envp)
  	i = 2;
  	while (i < objc) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_log_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[i]));
  		i++;
  		switch ((enum archopts)optindex) {
-@@ -308,7 +308,7 @@ tcl_LogPut(interp, objc, objv, envp)
+@@ -311,7 +311,7 @@ tcl_LogPut(interp, objc, objv, envp)
  	 */
  	if (objc == 4) {
  		if (Tcl_GetIndexFromObj(interp, objv[2],
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_log_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[2]));
  		}
  		switch ((enum logputopts)optindex) {
-@@ -452,7 +452,7 @@ logc_Cmd(clientData, interp, objc, objv)
+@@ -455,7 +455,7 @@ logc_Cmd(clientData, interp, objc, objv)
  	 * Get the command name index from the object based on the berkdbcmds
  	 * defined above.
  	 */
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_log_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &cmdindex) != TCL_OK)
  		return (IS_HELP(objv[1]));
  	switch ((enum logccmds)cmdindex) {
-@@ -526,7 +526,7 @@ tcl_LogcGet(interp, objc, objv, logc)
+@@ -529,7 +529,7 @@ tcl_LogcGet(interp, objc, objv, logc)
  	i = 2;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_util_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_util.c.orig	2004-01-08 00:45:46.000000000 +0100
-+++ tcl/tcl_util.c	2004-01-08 00:46:05.000000000 +0100
+$OpenBSD: patch-tcl_tcl_util_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_util.c.orig	2003-04-23 20:54:40.000000000 +0200
++++ tcl/tcl_util.c	2004-01-10 11:21:10.000000000 +0100
 @@ -59,7 +59,7 @@ bdb_RandCommand(interp, objc, objv)
  	 * in the 'berkdb' command.
  	 */
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_util_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -295,7 +295,7 @@ mutex_Cmd(clientData, interp, objc, objv
+@@ -294,7 +294,7 @@ mutex_Cmd(clientData, interp, objc, objv
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,

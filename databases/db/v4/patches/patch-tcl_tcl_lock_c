@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_lock.c.orig	2004-01-08 13:39:20.000000000 +0100
-+++ tcl/tcl_lock.c	2004-01-08 13:40:25.000000000 +0100
-@@ -92,7 +92,7 @@ tcl_LockDetect(interp, objc, objv, envp)
+$OpenBSD: patch-tcl_tcl_lock_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_lock.c.orig	2003-11-28 16:42:52.000000000 +0100
++++ tcl/tcl_lock.c	2004-01-10 11:21:10.000000000 +0100
+@@ -75,7 +75,7 @@ tcl_LockDetect(interp, objc, objv, envp)
  	i = 2;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[i]));
  		i++;
  		switch ((enum ldopts)optindex) {
-@@ -201,7 +201,7 @@ tcl_LockGet(interp, objc, objv, envp)
+@@ -184,7 +184,7 @@ tcl_LockGet(interp, objc, objv, envp)
  	flag = 0;
  	if (objc == 6) {
  		if (Tcl_GetIndexFromObj(interp, objv[(objc - 4)],
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[(objc - 4)]));
  		switch ((enum lgopts)optindex) {
  		case LGNOWAIT:
-@@ -371,7 +371,7 @@ lock_Cmd(clientData, interp, objc, objv)
+@@ -354,7 +354,7 @@ lock_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	switch ((enum lkcmds)cmdindex) {
-@@ -440,7 +440,7 @@ tcl_LockVec(interp, objc, objv, envp)
+@@ -425,7 +425,7 @@ tcl_LockVec(interp, objc, objv, envp)
  	 * If -nowait is given, it MUST be first arg.
  	 */
  	if (Tcl_GetIndexFromObj(interp, objv[2],
@@ -37,7 +37,7 @@ $OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		switch ((enum lvopts)optindex) {
  		case LVNOWAIT:
  			flag |= DB_LOCK_NOWAIT;
-@@ -485,7 +485,7 @@ tcl_LockVec(interp, objc, objv, envp)
+@@ -470,7 +470,7 @@ tcl_LockVec(interp, objc, objv, envp)
  		 * the return list.
  		 */
  		if (Tcl_GetIndexFromObj(interp, myobjv[0],
@@ -46,8 +46,8 @@ $OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			result = IS_HELP(myobjv[0]);
  			goto error;
  		}
-@@ -617,7 +617,7 @@ _LockMode(interp, obj, mode)
- {
+@@ -619,7 +619,7 @@ _LockMode(interp, obj, mode)
+ 	};
  	int optindex;
  
 -	if (Tcl_GetIndexFromObj(interp, obj, lkmode, "option",

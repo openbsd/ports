@@ -1,12 +1,12 @@
-$OpenBSD: patch-test_include_tcl,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
---- test/include.tcl.orig	2003-12-04 09:12:45.000000000 +0100
-+++ test/include.tcl	2003-12-04 09:13:09.000000000 +0100
+$OpenBSD: patch-test_include_tcl,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- test/include.tcl.orig	2004-01-10 11:55:48.000000000 +0100
++++ test/include.tcl	2004-01-10 11:21:10.000000000 +0100
 @@ -1,7 +1,7 @@
  # Automatically built by dist/s_test; may require local editing.
  
  set tclsh_path @TCL_TCLSH@
--set tcllib .libs/libdb_tcl-@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@.@MODSUFFIX@
-+set tcllib .libs/libdb_tcl.@MODSUFFIX@.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
+-set tcllib .libs/libdb_tcl-@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@@LIBTSO_MODSUFFIX@
++set tcllib .libs/libdb_tcl@LIBTSO_MODSUFFIX@.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
  
  set rpc_server localhost
  set rpc_path .

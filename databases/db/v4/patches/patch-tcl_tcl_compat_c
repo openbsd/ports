@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_compat_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_compat.c.orig	2002-08-17 16:23:36.000000000 +0200
-+++ tcl/tcl_compat.c	2004-01-08 13:44:47.000000000 +0100
+$OpenBSD: patch-tcl_tcl_compat_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_compat.c.orig	2003-03-10 19:22:09.000000000 +0100
++++ tcl/tcl_compat.c	2004-01-10 11:21:08.000000000 +0100
 @@ -71,7 +71,7 @@ bdb_HCommand(interp, objc, objv)
  	 * in the 'berkdb' command.
  	 */
@@ -55,12 +55,3 @@ $OpenBSD: patch-tcl_tcl_compat_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -717,7 +717,7 @@ ndbm_Cmd(clientData, interp, objc, objv)
- 		_debug_check();
- 		ret = dbm_error(dbp);
- 		Tcl_SetErrno(ret);
--		Tcl_SetResult(interp, Tcl_PosixError(interp), TCL_STATIC);
-+		Tcl_SetResult(interp, (char *)Tcl_PosixError(interp), TCL_STATIC);
- 		break;
- 	case NDBRDONLY:
- 		/*

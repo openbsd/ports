@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_db.c.orig	2002-08-07 17:23:09.000000000 +0200
-+++ tcl/tcl_db.c	2004-01-08 13:17:19.000000000 +0100
-@@ -167,7 +167,7 @@ db_Cmd(clientData, interp, objc, objv)
+$OpenBSD: patch-tcl_tcl_db_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_db.c.orig	2003-11-21 03:40:27.000000000 +0100
++++ tcl/tcl_db.c	2004-01-10 11:21:08.000000000 +0100
+@@ -208,7 +208,7 @@ db_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -508,7 +508,7 @@ tcl_DbClose(interp, objc, objv, dbp, dbi
+@@ -711,7 +711,7 @@ tcl_DbClose(interp, objc, objv, dbp, dbi
  
  	i = 2;
  	while (i < objc) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
  			arg = Tcl_GetStringFromObj(objv[i], NULL);
  			if (arg[0] == '-')
-@@ -623,7 +623,7 @@ tcl_DbPut(interp, objc, objv, dbp)
+@@ -826,7 +826,7 @@ tcl_DbPut(interp, objc, objv, dbp)
  	if (type == DB_QUEUE || type == DB_RECNO) {
  		i = 2;
  		while (i < objc - 1) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			    "option", TCL_EXACT, &optindex) != TCL_OK)
  				continue;
  			switch ((enum dbputapp)optindex) {
-@@ -643,7 +643,7 @@ tcl_DbPut(interp, objc, objv, dbp)
+@@ -846,7 +846,7 @@ tcl_DbPut(interp, objc, objv, dbp)
  	auto_commit = 0;
  	while (i < end) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -37,7 +37,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[i]));
  		i++;
  		switch ((enum dbputopts)optindex) {
-@@ -850,7 +850,7 @@ tcl_DbGet(interp, objc, objv, dbp, ispge
+@@ -1058,7 +1058,7 @@ tcl_DbGet(interp, objc, objv, dbp, ispge
  	(void)dbp->get_type(dbp, &type);
  	end = objc;
  	while (i < end) {
@@ -46,7 +46,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			arg = Tcl_GetStringFromObj(objv[i], NULL);
  			if (arg[0] == '-') {
-@@ -1406,7 +1406,7 @@ tcl_DbDelete(interp, objc, objv, dbp)
+@@ -1617,7 +1617,7 @@ tcl_DbDelete(interp, objc, objv, dbp)
  	 */
  	i = 2;
  	while (i < objc) {
@@ -55,7 +55,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			/*
  			 * If we don't have a -auto_commit, -glob or -txn,
-@@ -1647,7 +1647,7 @@ tcl_DbCursor(interp, objc, objv, dbp, db
+@@ -1858,7 +1858,7 @@ tcl_DbCursor(interp, objc, objv, dbp, db
  	txn = NULL;
  	i = 2;
  	while (i < objc) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			goto out;
-@@ -1731,7 +1731,7 @@ tcl_DbAssociate(interp, objc, objv, dbp)
+@@ -1942,7 +1942,7 @@ tcl_DbAssociate(interp, objc, objv, dbp)
  
  	i = 2;
  	while (i < objc) {
@@ -73,7 +73,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			if (result == TCL_OK)
-@@ -1911,7 +1911,7 @@ tcl_DbJoin(interp, objc, objv, dbp, dbcp
+@@ -2122,7 +2122,7 @@ tcl_DbJoin(interp, objc, objv, dbp, dbcp
  	i = 2;
  	adj = i;
  	while (i < objc) {
@@ -82,7 +82,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			if (result == TCL_OK)
-@@ -2008,7 +2008,7 @@ tcl_DbGetjoin(interp, objc, objv, dbp)
+@@ -2219,7 +2219,7 @@ tcl_DbGetjoin(interp, objc, objv, dbp)
  	i = 2;
  	adj = i;
  	while (i < objc) {
@@ -91,7 +91,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			if (result == TCL_OK)
-@@ -2263,7 +2263,7 @@ tcl_DbKeyRange(interp, objc, objv, dbp)
+@@ -2582,7 +2582,7 @@ tcl_DbKeyRange(interp, objc, objv, dbp)
  	txn = NULL;
  	i = 2;
  	while (i < objc) {
@@ -100,7 +100,7 @@ $OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			if (result == TCL_OK)
-@@ -2375,7 +2375,7 @@ tcl_DbTruncate(interp, objc, objv, dbp)
+@@ -2694,7 +2694,7 @@ tcl_DbTruncate(interp, objc, objv, dbp)
  
  	i = 2;
  	while (i < objc) {

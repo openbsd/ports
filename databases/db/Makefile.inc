@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2004/01/10 08:36:27 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2004/01/14 19:50:15 sturm Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu dest
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS+=	--enable-compat185 \
 			--enable-dump185 \
@@ -44,7 +43,7 @@ CONFIGURE_ARGS+=--enable-tcl \
 #CONFIGURE_ARGS+=--enable-test
 
 do-regress:
-	@cd ${WRKBUILD}; tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl
+	@cd ${WRKBUILD}; env PATH=${PORTPATH} tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl
 
 .else
 CONFIGURE_ARGS+=--disable-tcl

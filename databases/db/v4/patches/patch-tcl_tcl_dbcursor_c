@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_tcl_dbcursor_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_dbcursor.c.orig	2004-01-08 00:43:03.000000000 +0100
-+++ tcl/tcl_dbcursor.c	2004-01-08 00:43:39.000000000 +0100
+$OpenBSD: patch-tcl_tcl_dbcursor_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_dbcursor.c.orig	2003-05-17 17:15:45.000000000 +0200
++++ tcl/tcl_dbcursor.c	2004-01-10 11:21:09.000000000 +0100
 @@ -89,7 +89,7 @@ dbc_Cmd(clientData, interp, objc, objv)
  	 * Get the command name index from the object based on the berkdbcmds
  	 * defined above.
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_dbcursor_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			/*
  			 * Reset the result so we don't get
-@@ -456,7 +456,7 @@ tcl_DbcGet(interp, objc, objv, dbc, ispg
+@@ -459,7 +459,7 @@ tcl_DbcGet(interp, objc, objv, dbc, ispg
  	 */
  	i = 2;
  	while (i < objc) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_dbcursor_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
  			/*
  			 * Reset the result so we don't get
-@@ -845,7 +845,7 @@ tcl_DbcDup(interp, objc, objv, dbc)
+@@ -852,7 +852,7 @@ tcl_DbcDup(interp, objc, objv, dbc)
  	 */
  	i = 2;
  	while (i < objc) {

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/10 08:36:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/14 19:50:15 sturm Exp $
 
 REVISION=	4
-VERSION=	${REVISION}.1.25
-PKGNAME=	${DISTNAME}p2
+VERSION=	${REVISION}.2.52
 
-MASTER_SITES0=	${MASTER_SITES:S/snapshot/4.1.25/}                                                                                              
+MASTER_SITES0=	${MASTER_SITES:S/snapshot/${VERSION}/}
 PATCHFILES=	patch.${VERSION}.1:0
+
+CONFIGURE_STYLE=gnu
 
 DEST_SUBDIR=	${REVISION}
 

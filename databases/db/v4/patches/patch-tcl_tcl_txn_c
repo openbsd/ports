@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_txn.c.orig	2004-01-08 00:44:41.000000000 +0100
-+++ tcl/tcl_txn.c	2004-01-08 00:45:34.000000000 +0100
-@@ -88,7 +88,7 @@ tcl_TxnCheckpoint(interp, objc, objv, en
+$OpenBSD: patch-tcl_tcl_txn_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_txn.c.orig	2003-04-24 18:25:54.000000000 +0200
++++ tcl/tcl_txn.c	2004-01-10 11:21:10.000000000 +0100
+@@ -94,7 +94,7 @@ tcl_TxnCheckpoint(interp, objc, objv, en
  	i = 2;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[i]));
  		}
  		i++;
-@@ -174,7 +174,7 @@ tcl_Txn(interp, objc, objv, envp, envip)
+@@ -188,7 +188,7 @@ tcl_Txn(interp, objc, objv, envp, envip)
  	i = 2;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			return (IS_HELP(objv[i]));
  		}
  		i++;
-@@ -448,7 +448,7 @@ txn_Cmd(clientData, interp, objc, objv)
+@@ -466,7 +466,7 @@ txn_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -554,7 +554,7 @@ tcl_TxnCommit(interp, objc, objv, txnp, 
+@@ -572,7 +572,7 @@ tcl_TxnCommit(interp, objc, objv, txnp, 
  		return (TCL_ERROR);
  	}
  	if (objc == 3) {

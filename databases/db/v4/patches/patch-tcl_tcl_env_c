@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_env.c.orig	2002-08-07 17:23:10.000000000 +0200
-+++ tcl/tcl_env.c	2004-01-08 13:20:59.000000000 +0100
-@@ -167,7 +167,7 @@ env_Cmd(clientData, interp, objc, objv)
+$OpenBSD: patch-tcl_tcl_env_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_env.c.orig	2003-09-04 22:45:44.000000000 +0200
++++ tcl/tcl_env.c	2004-01-10 11:21:09.000000000 +0100
+@@ -233,7 +233,7 @@ env_Cmd(clientData, interp, objc, objv)
  	 * Get the command name index from the object based on the berkdbcmds
  	 * defined above.
  	 */
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &cmdindex) != TCL_OK)
  		return (IS_HELP(objv[1]));
  	res = NULL;
-@@ -483,7 +483,7 @@ tcl_EnvRemove(interp, objc, objv, dbenv,
+@@ -766,7 +766,7 @@ tcl_EnvRemove(interp, objc, objv, dbenv,
  
  	i = 2;
  	while (i < objc) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    TCL_EXACT, &optindex) != TCL_OK) {
  			result = IS_HELP(objv[i]);
  			goto error;
-@@ -755,7 +755,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
+@@ -1038,7 +1038,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
  	int on, optindex, ret;
  	u_int32_t wh;
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &optindex) != TCL_OK)
  		return (IS_HELP(which));
  
-@@ -778,7 +778,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
+@@ -1061,7 +1061,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
  	default:
  		return (TCL_ERROR);
  	}
@@ -37,7 +37,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &optindex) != TCL_OK)
  		return (IS_HELP(onoff));
  	switch ((enum verbonoff)optindex) {
-@@ -950,7 +950,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
+@@ -1346,7 +1346,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
  	/*
  	 * This must be the "copy" or "abort" portion of the command.
  	 */
@@ -46,7 +46,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &optindex) != TCL_OK) {
  		result = IS_HELP(objv[2]);
  		return (result);
-@@ -970,7 +970,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
+@@ -1366,7 +1366,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
  	/*
  	 * This must be the location portion of the command.
  	 */
@@ -55,7 +55,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  	    TCL_EXACT, &optindex) != TCL_OK) {
  		result = IS_HELP(objv[3]);
  		return (result);
-@@ -1085,7 +1085,7 @@ env_DbRemove(interp, objc, objv, dbenv)
+@@ -1461,7 +1461,7 @@ env_DbRemove(interp, objc, objv, dbenv)
  	 */
  	i = 2;
  	while (i < objc) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
  			arg = Tcl_GetStringFromObj(objv[i], NULL);
  			if (arg[0] == '-') {
-@@ -1214,7 +1214,7 @@ env_DbRename(interp, objc, objv, dbenv)
+@@ -1590,7 +1590,7 @@ env_DbRename(interp, objc, objv, dbenv)
  	 */
  	i = 2;
  	while (i < objc) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
---- dist/configure.orig	Thu Dec 19 10:55:03 2002
-+++ dist/configure	Sat Jan 11 20:39:05 2003
-@@ -5102,6 +5102,7 @@ openbsd*)
+$OpenBSD: patch-dist_configure,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- dist/configure.orig	2003-12-03 22:10:02.000000000 +0100
++++ dist/configure	2004-01-10 11:41:39.000000000 +0100
+@@ -5896,6 +5896,7 @@ openbsd*)
    else
      lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
    fi
@@ -9,7 +9,7 @@ $OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -8013,8 +8014,8 @@ nto-qnx)
+@@ -9516,8 +9517,8 @@ nto-qnx | nto-qnx6*)
  
  openbsd*)
    version_type=sunos
@@ -17,10 +17,10 @@ $OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
 -  need_version=no
 +  need_lib_prefix=yes
 +  need_version=yes
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
-@@ -9552,10 +9553,10 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -20138,10 +20139,10 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
  INSTALLER="\$(LIBTOOL) --mode=install cp -p"
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
@@ -32,8 +32,8 @@ $OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
 +MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info ${DB_VERSION_MAJOR}:${DB_VERSION_MINOR}"
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
- # Configure for shared libraries, static libraries, or both.  If both are
-@@ -10364,7 +10365,7 @@ fi
+ LIBTOOL="\$(SHELL) ./libtool"
+@@ -21441,7 +21442,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
@@ -41,4 +41,4 @@ $OpenBSD: patch-dist_configure,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
 +	ADDITIONAL_PROGS="db4_dump185 $ADDITIONAL_PROGS"
  fi
  
- # Checks for compiler characteristics.
+ # Checks for include files, structures, C types.

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.2 2004/01/10 08:36:28 sturm Exp $
+@comment $OpenBSD: PFRAG.tcl,v 1.3 2004/01/14 19:50:15 sturm Exp $
 lib/db4/libdb_tcl.a
 lib/db4/libdb_tcl.la
-lib/db4/libdb_tcl.so.4.1
-lib/libdb_tcl.so.4.1
+lib/db4/libdb_tcl.so.4.2
+lib/libdb_tcl.so.4.2
 share/doc/db4/api_tcl/db_close.html
 share/doc/db4/api_tcl/db_count.html
 share/doc/db4/api_tcl/db_cursor.html
@@ -34,6 +34,7 @@ share/doc/db4/api_tcl/tcl_index.html
 share/doc/db4/api_tcl/tcl_pindex.html
 share/doc/db4/api_tcl/txn.html
 share/doc/db4/api_tcl/txn_abort.html
+share/doc/db4/api_tcl/txn_checkpoint.html
 share/doc/db4/api_tcl/txn_commit.html
 share/doc/db4/api_tcl/version.html
 share/doc/db4/ref/tcl/error.html
@@ -42,5 +43,6 @@ share/doc/db4/ref/tcl/intro.html
 share/doc/db4/ref/tcl/program.html
 share/doc/db4/ref/tcl/using.html
 share/doc/db4/ref/upgrade.3.1/tcl.html
+share/doc/db4/ref/upgrade.4.2/tcl.html
 @dirrm share/doc/db4/ref/tcl
 @dirrm share/doc/db4/api_tcl

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_mp.c.orig	2004-01-08 13:41:30.000000000 +0100
-+++ tcl/tcl_mp.c	2004-01-08 13:42:10.000000000 +0100
-@@ -191,7 +191,7 @@ tcl_Mp(interp, objc, objv, envp, envip)
+$OpenBSD: patch-tcl_tcl_mp_c,v 1.2 2004/01/14 19:50:15 sturm Exp $
+--- tcl/tcl_mp.c.orig	2003-09-04 22:45:45.000000000 +0200
++++ tcl/tcl_mp.c	2004-01-10 11:21:10.000000000 +0100
+@@ -193,7 +193,7 @@ tcl_Mp(interp, objc, objv, envp, envip)
  	memset(newname, 0, MSG_SIZE);
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			/*
  			 * Reset the result so we don't get an errant
  			 * error message if there is another error.
-@@ -467,7 +467,7 @@ mp_Cmd(clientData, interp, objc, objv)
+@@ -483,7 +483,7 @@ mp_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,
@@ -19,7 +19,7 @@ $OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -544,7 +544,7 @@ tcl_MpGet(interp, objc, objv, mp, mpip)
+@@ -613,7 +613,7 @@ tcl_MpGet(interp, objc, objv, mp, mpip)
  	flag = 0;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
@@ -28,7 +28,7 @@ $OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  			/*
  			 * Reset the result so we don't get an errant
  			 * error message if there is another error.
-@@ -678,7 +678,7 @@ pg_Cmd(clientData, interp, objc, objv)
+@@ -747,7 +747,7 @@ pg_Cmd(clientData, interp, objc, objv)
  	 * defined above.
  	 */
  	if (Tcl_GetIndexFromObj(interp,
@@ -37,7 +37,7 @@ $OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
  		return (IS_HELP(objv[1]));
  
  	res = NULL;
-@@ -739,7 +739,7 @@ tcl_Pg(interp, objc, objv, page, mp, pgi
+@@ -809,7 +809,7 @@ tcl_Pg(interp, objc, objv, page, mp, pgi
  	flag = 0;
  	while (i < objc) {
  		if (Tcl_GetIndexFromObj(interp, objv[i],
