@@ -1,7 +1,7 @@
 --- config.h.orig	Tue May 12 17:09:14 1998
-+++ config.h	Mon Mar 27 15:12:54 2000
++++ config.h	Mon Dec 25 01:28:21 2000
 @@ -1,9 +1,9 @@
- /*$Id: patch-af,v 1.2 2000/03/27 20:16:39 brad Exp $*/
+ /*$Id: patch-af,v 1.3 2000/12/25 06:37:18 brad Exp $*/
  
 -#define USEdot_lock	/**/
 +/*#define USEdot_lock	/**/

@@ -1,6 +1,6 @@
---- authenticate.c.orig	Wed May 13 23:57:39 1998
-+++ authenticate.c	Thu Jan 13 00:26:51 2000
-@@ -22,7 +22,7 @@
+--- authenticate.c.orig	Mon Dec 25 01:20:36 2000
++++ authenticate.c	Mon Dec 25 01:25:08 2000
+@@ -28,7 +28,7 @@
  #else
  #include "config.h"
  
@@ -9,7 +9,7 @@
  
  #include <sys/types.h>
  #include <unistd.h>
-@@ -44,7 +44,7 @@
+@@ -50,7 +50,7 @@
  #define VIRTUALUSER	"vpop"
  
  #ifndef MAILSPOOLDIR
@@ -18,17 +18,17 @@
  #endif
  #ifndef MAILSPOOLHASH
  #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
-@@ -82,6 +82,7 @@
- 
- static void getlogname(user,sock)const char*user;const int sock;
- { struct sockaddr_in sockname;int namelen=sizeof sockname;const char*retval="";
+@@ -100,6 +100,7 @@
+   struct sockaddr_in sockname;
+ #endif
+   int namelen=sizeof sockname;const char*retval="";
 +  void *p;
    if(!getsockname(sock,(struct sockaddr*)&sockname,&namelen))
-    { const struct hostent*hent=
-       gethostbyaddr((void*)&sockname.sin_addr.s_addr,sizeof sockname.sin_addr,
-@@ -89,16 +90,17 @@
-      if(hent)
+    {
+ #ifdef INET6
+@@ -115,16 +116,17 @@
  	retval=hent->h_name;
+ #endif
     }
 -  if(auth_logname=			   /* memory leak when out of memory */
 -   realloc(auth_logname,(namelen=strlen(retval))+1+strlen(user)+1))
@@ -48,7 +48,7 @@
  #ifdef VIRTUALSERVER
    DB_ENV dbenv;DB*db;
    memset(&dbenv,0,sizeof dbenv);
-@@ -129,14 +131,18 @@
+@@ -155,14 +157,18 @@
  novirt:	      strcpy(auth_logname,user);
  	 }
  	db->close(db,0);

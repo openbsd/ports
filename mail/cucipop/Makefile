@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/25 06:37:18 brad Exp $
 
-DISTNAME=       cucipop-1.31
+DISTNAME=	cucipop-1.31
 CATEGORIES=	mail
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
+MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+
+PATCHFILES=	cucipop-1.31-v6-20001122.diff.gz:0
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	ports@openbsd.org
 
