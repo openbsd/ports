@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.3 2003/02/21 20:56:22 pvalchev Exp $
+libexec/auth/login_-ldap
+man/cat8/login_ldap.0
+share/login_ldap/active-directory.login_ldap.conf
+share/login_ldap/login_ldap.conf
+@dirrm share/login_ldap

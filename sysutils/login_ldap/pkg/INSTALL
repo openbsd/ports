@@ -1,0 +1,74 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2003/02/21 20:56:22 pvalchev Exp $
+#
+# Pre/post-installation setup of login_ldap
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+AUTH_MODULE=login_-ldap
+PROG_NAME=login_ldap
+SOURCE_DIR=${PREFIX}/libexec/auth
+AUTH_DIR=/usr/libexec/auth
+AUTH_USER=root
+AUTH_GROUP=auth
+FILE_MODE=0555
+
+do_notice_already_installed ()
+{
+  echo
+  echo "+---------------"
+  echo "|"
+  echo "| You appear to already have a ${AUTH_MODULE} module installed"
+  echo "| in ${AUTH_DIR}."
+  echo "|"
+  echo "| The newly installed ${AUTH_MODULE} will not be copied to"
+  echo "| ${AUTH_DIR}. To fix this do the following:"
+  echo "|"
+  echo "|           rm -f ${AUTH_DIR}/${AUTH_MODULE}"
+  echo "|"
+  echo "| and install $1 again."
+  echo "|"
+  echo "+---------------"
+  echo
+}
+
+do_notice_install ()
+{
+  echo
+  echo "+---------------"
+  echo "|"
+  echo "| The ${AUTH_MODULE} module has been installed into"
+  echo "| ${AUTH_DIR}."
+  echo "|"
+  echo "| See ${PROG_NAME}(8) for further instructions."
+  echo "|"
+  echo "+---------------"
+  echo
+}
+  
+do_install ()
+{
+  install -o ${AUTH_USER} -g ${AUTH_GROUP} -m ${FILE_MODE} \
+    ${SOURCE_DIR}/${AUTH_MODULE} ${AUTH_DIR}
+}
+
+# Verify/process the command
+#
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	if [ -f ${AUTH_DIR}/${AUTH_MODULE} ]; then
+	  do_notice_already_installed $1
+	else
+	  do_install $1
+	  do_notice_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;  
+esac
+
+exit 0

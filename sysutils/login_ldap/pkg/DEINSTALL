@@ -1,0 +1,21 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2003/02/21 20:56:22 pvalchev Exp $
+#
+# deinstallation of login_ldap
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+AUTH_MODULE=login_-ldap
+AUTH_DIR=/usr/libexec/auth
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you need"
+echo "| to perform these steps as root:"
+echo "|"
+echo "|           rm -f ${AUTH_DIR}/${AUTH_MODULE}"
+echo "|"
+echo "+---------------"
+echo
+
+exit 0
