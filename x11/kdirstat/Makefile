@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/25 18:41:38 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/27 01:34:05 kevlo Exp $
 
 COMMENT=	"graphical disk usage utility"
 
-DISTNAME=	kdirstat-2.1.1-beta
-PKGNAME=	${DISTNAME:S/-beta//}
+DISTNAME=	kdirstat-2.2.0
 CATEGORIES=	x11
 NEED_VERSION=	1.525
 
