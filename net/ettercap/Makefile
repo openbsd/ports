@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/13 08:57:47 margarida Exp $
+# $OpenBSD: Makefile,v 1.24 2003/05/13 11:22:53 margarida Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -31,10 +31,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--enable-gtk=no
+.else
+LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
 
 NO_REGRESS=	Yes
