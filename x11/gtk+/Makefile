@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 1999/04/10 04:40:09 marc Exp $
+# $OpenBSD: Makefile,v 1.19 1999/04/22 22:09:04 brad Exp $
 
-DISTNAME=	gtk+-1.2.1
+DISTNAME=	gtk+-1.2.2
 CATEGORIES=     x11
 
 NEED_VERSION=	1.79
@@ -50,8 +50,8 @@ post-extract:
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/
-	install-info ${PREFIX}/info/gtk.info ${PREFIX}/info/dir
-	install-info ${PREFIX}/info/gdk.info ${PREFIX}/info/dir
+	@install-info ${PREFIX}/info/gtk.info ${PREFIX}/info/dir
+	@install-info ${PREFIX}/info/gdk.info ${PREFIX}/info/dir
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

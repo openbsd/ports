@@ -1,7 +1,7 @@
---- gdk/gdkimage.c.orig	Mon Jan  4 10:33:27 1999
-+++ gdk/gdkimage.c	Sat Jan 16 02:01:30 1999
-@@ -18,12 +18,14 @@
-  */
+--- gdk/gdkimage.c.orig	Thu Apr 22 17:58:13 1999
++++ gdk/gdkimage.c	Thu Apr 22 17:58:52 1999
+@@ -26,12 +26,14 @@
+ 
  #include <config.h>
  
 +#ifdef __linux__
