@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 1999/03/21 05:55:24 brad Exp $
+# $OpenBSD: Makefile,v 1.32 1999/03/22 16:29:00 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -35,6 +35,7 @@
 #    SUBDIR += fvwm95
      SUBDIR += getbdf
      SUBDIR += gtk+
+     SUBDIR += gtkglarea
 #    SUBDIR += gwm
 #    SUBDIR += icewm
 #    SUBDIR += iv
