@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/11/13 17:50:13 espie Exp $
+lib/libfaad.so.0.0
+lib/libmp4v2.so.0.0
+DYNLIBDIR(%D/lib)

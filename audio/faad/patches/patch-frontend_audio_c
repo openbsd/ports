@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_audio_c,v 1.1.1.1 2002/11/13 17:50:13 espie Exp $
+--- frontend/audio.c.orig	Sat Nov  2 17:27:18 2002
++++ frontend/audio.c	Sat Nov  2 17:27:42 2002
+@@ -52,7 +52,7 @@ audio_file *open_audio_file(char *infile
+         break;
+     }
+     aufile->sfinfo.channels = channels;
+-    aufile->sfinfo.samples  = 0;
++    aufile->sfinfo.frames  = 0;
+ #ifdef _WIN32
+     if(infile[0] == '-')
+     {

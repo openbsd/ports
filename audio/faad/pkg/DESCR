@@ -1,0 +1,4 @@
+FAAD 2 is a LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder, completely
+written from scratch. FAAD 2 is licensed under the GPL.
+
+WWW: ${HOMEPAGE}
