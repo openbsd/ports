@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/01/05 16:35:59 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/14 03:59:20 todd Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -9,6 +9,8 @@ CATEGORIES=     editors
 NEED_VERSION=	1.336
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
+
+BROKEN=		"Home page does not exist anymore.  Alternate 400mb iso exists."
 
 PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial
