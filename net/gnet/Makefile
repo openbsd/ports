@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/23 21:26:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/07 21:03:09 pvalchev Exp $
 
 COMMENT=	"simple network library"
 DISTNAME=	gnet-1.1.9
@@ -26,5 +26,6 @@ PATCH_LIST=     gcc-* patch-*
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-glib2 --enable-threadsafe-gethostbyname
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
