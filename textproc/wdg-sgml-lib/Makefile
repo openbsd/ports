@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 15:45:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
 MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
 
+# custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

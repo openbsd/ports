@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"pure-Tcl implementation of XML parser"
 
@@ -9,9 +9,10 @@ MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No
+# custom 
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/06/14 09:51:34 shell Exp $
+# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"perl module for TrueType font hacking"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Font/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

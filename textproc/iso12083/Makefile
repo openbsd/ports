@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"SGML DTDs from The Electronic Publishing SIG"
 
@@ -8,6 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 
+# custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

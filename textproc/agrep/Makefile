@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 08:55:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"approximate grep (fast approximate pattern-matching tool)"
 
@@ -8,7 +8,8 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 
-PERMIT_PACKAGE_FTP=	Yes
+# custom
+PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"

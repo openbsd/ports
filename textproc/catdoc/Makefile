@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://www.fe.msk.ru/~vitus/catdoc/index.html
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

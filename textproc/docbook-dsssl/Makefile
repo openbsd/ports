@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"modular DSSSL stylesheets for the DocBook DTD"
 
@@ -9,6 +9,7 @@ CATEGORIES=    	textproc print
 HOMEPAGE=	http://docbook.sourceforge.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/27 17:26:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -15,8 +15,8 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Gripe to Van Jacobson for pissing off lgrind's current caretaker
 # into not maintaining it anymore.
-PERMIT_PACKAGE_CDROM=	May not be sold
-PERMIT_DISTFILES_CDROM=	May not be sold
+PERMIT_PACKAGE_CDROM=	"May not be sold"
+PERMIT_DISTFILES_CDROM=	"May not be sold"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"Provide regular expressions for some XML tokens"
 
@@ -8,6 +8,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

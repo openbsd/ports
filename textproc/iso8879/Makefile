@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/04/14 15:02:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2003/11/15 15:12:53 sturm Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 COMMENT=	"character entity sets from ISO 8879:1986 (SGML)"
@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
+# custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/18 15:57:43 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"perl interface for several perl XML modules"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 LIB_DEPENDS=	xml2.7::textproc/libxml
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/09/13 22:54:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xml2.6::textproc/libxml \
 		xslt.1,exslt.7::textproc/libxslt
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

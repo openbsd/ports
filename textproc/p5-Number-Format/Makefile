@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/01 21:05:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"Perl extension for formatting numbers"
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.bayview.com/software/perl.shtml
 
 MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
-# GPL/Artistic License
+# Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

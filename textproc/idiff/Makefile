@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/11/15 15:12:53 sturm Exp $
 #
 
 COMMENT=	"powerful command-line front end to diff"
@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/11/21 02:33:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.9 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=	"XML parsing library for GNOME"
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://xmlsoft.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-# MIT license
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/14 10:04:22 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"perl modules for creating and manipulating PDF"
 
@@ -8,6 +8,7 @@ CATEGORIES=	textproc perl5
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

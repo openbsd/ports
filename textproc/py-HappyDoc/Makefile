@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/07/31 19:11:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"python tool for generate Python API documents"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=happydoc/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-# BSD License
+# BSD License, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes

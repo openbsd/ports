@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/16 07:26:15 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"perl module for validating XML"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 RUN_DEPENDS=	:p5-XML-DOM->=1.29:textproc/p5-XML-DOM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"validating namespace-aware XML parser"
 
@@ -9,6 +9,7 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://www.cogsci.ed.ac.uk/~richard/rxp.html
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

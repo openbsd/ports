@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	'perl module to create WML cards'
 
@@ -9,6 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=WML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/07/08 04:51:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"xml parser for Java"
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://xml.apache.org/xerces2-j/index.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# Apache
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

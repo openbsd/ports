@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/11/13 08:43:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"module for approximate matching"
 
@@ -8,6 +8,7 @@ CATEGORIES=	textproc perl5
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# LGPL/Artistic
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

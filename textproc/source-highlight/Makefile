@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/15 04:49:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"C/C++,Prolog,Perl,PHP3 and Java sources to HTML converter"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://www.gnu.org/software/src-highlite/source-highlight.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"calculate the similarity of two strings"
 
@@ -8,6 +8,7 @@ CATEGORIES=	textproc perl5
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/07/04 06:15:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:54 sturm Exp $
 
 COMMENT=	"modules for parsing and evaluating XPath statements"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 BUILD_DEPENDS=  :p5-XML-Parser->=2.23:textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/02/17 13:29:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2003/11/15 15:12:55 sturm Exp $
 
 COMMENT=	"convert memos written in XML to the RFC format"
 
@@ -12,10 +12,11 @@ HOMEPAGE=	http://xml.resource.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# no real license, just "any lawful use is allowed"
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
 
 RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/10/26 23:49:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2003/11/15 15:12:53 sturm Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -67,6 +67,9 @@ PKGNAME$i=	ispell$i-${VERSION}
 .endfor
 SUBPACKAGE?=
 
+# dictionaries: GPL or BSD-like
+# XXX no license on german dictionary
+# ispell: BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
