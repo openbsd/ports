@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.144 1999/11/27 13:17:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.145 1999/11/28 14:12:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -419,11 +419,7 @@ CLEANDEPENDS?=No
 NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
 
-.if exists(${.CURDIR}/Makefile.${ARCH}-${OPSYS})
-.include "${.CURDIR}/Makefile.${ARCH}-${OPSYS}"
-.elif exists(${.CURDIR}/Makefile.${OPSYS})
-.include "${.CURDIR}/Makefile.${OPSYS}"
-.elif exists(${.CURDIR}/Makefile.${ARCH})
+.if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
 .endif
 
@@ -438,11 +434,7 @@ FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
-.if exists(${.CURDIR}/patches.${ARCH}-${OPSYS})
-PATCHDIR?=		${.CURDIR}/patches.${ARCH}-${OPSYS}
-.elif exists(${.CURDIR}/patches.${OPSYS})
-PATCHDIR?=		${.CURDIR}/patches.${OPSYS}
-.elif exists(${.CURDIR}/patches.${ARCH})
+.if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
 .else
 PATCHDIR?=		${.CURDIR}/patches
@@ -450,31 +442,19 @@ PATCHDIR?=		${.CURDIR}/patches
 
 PATCH_LIST?=    patch-*
 
-.if exists(${.CURDIR}/scripts.${ARCH}-${OPSYS})
-SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}-${OPSYS}
-.elif exists(${.CURDIR}/scripts.${OPSYS})
-SCRIPTDIR?=		${.CURDIR}/scripts.${OPSYS}
-.elif exists(${.CURDIR}/scripts.${ARCH})
+.if exists(${.CURDIR}/scripts.${ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}
 .else
 SCRIPTDIR?=		${.CURDIR}/scripts
 .endif
 
-.if exists(${.CURDIR}/files.${ARCH}-${OPSYS})
-FILESDIR?=		${.CURDIR}/files.${ARCH}-${OPSYS}
-.elif exists(${.CURDIR}/files.${OPSYS})
-FILESDIR?=		${.CURDIR}/files.${OPSYS}
-.elif exists(${.CURDIR}/files.${ARCH})
+.if exists(${.CURDIR}/files.${ARCH})
 FILESDIR?=		${.CURDIR}/files.${ARCH}
 .else
 FILESDIR?=		${.CURDIR}/files
 .endif
 
-.if exists(${.CURDIR}/pkg.${ARCH}-${OPSYS})
-PKGDIR?=		${.CURDIR}/pkg.${ARCH}-${OPSYS}
-.elif exists(${.CURDIR}/pkg.${OPSYS})
-PKGDIR?=		${.CURDIR}/pkg.${OPSYS}
-.elif exists(${.CURDIR}/pkg.${ARCH})
+.if exists(${.CURDIR}/pkg.${ARCH})
 PKGDIR?=		${.CURDIR}/pkg.${ARCH}
 .else
 PKGDIR?=		${.CURDIR}/pkg
