@@ -1,16 +1,19 @@
-$OpenBSD: patch-filters_Makefile,v 1.1 2000/06/04 23:08:34 espie Exp $
+$OpenBSD: patch-filters_Makefile,v 1.2 2001/03/17 15:36:09 wilfried Exp $
 --- filters/Makefile.orig	Thu Oct 24 03:26:14 1991
-+++ filters/Makefile	Mon Jun  5 00:48:26 2000
-@@ -34,7 +34,7 @@ BINARIES	= icon2ikon ikon2icon rs2icon
++++ filters/Makefile	Fri Mar 16 19:55:10 2001
+@@ -32,10 +32,8 @@ BINDIR		= /usr/local/bin
  
- CC		= cc
+ BINARIES	= icon2ikon ikon2icon rs2icon
+ 
+-CC		= cc
  CDEFS		= $(NOINDEX) $(SYSV)
 -CCOMP		= -g
-+CCOMP		= -pipe -O2
- CFLAGS		= $(CCOMP) $(CDEFS)
+-CFLAGS		= $(CCOMP) $(CDEFS)
++CFLAGS		+= $(CDEFS)
  
  all:		$(BINARIES)
-@@ -55,12 +55,12 @@ clean:
+ 
+@@ -55,12 +53,12 @@ clean:
  		rm -f *.o $(BINARIES)
  
  install:	$(BINARIES)

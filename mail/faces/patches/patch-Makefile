@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2000/06/04 23:08:33 espie Exp $
---- Makefile.orig	Mon Jun  5 01:00:01 2000
-+++ Makefile	Mon Jun  5 01:01:47 2000
+$OpenBSD: patch-Makefile,v 1.2 2001/03/17 15:36:09 wilfried Exp $
+--- Makefile.orig	Fri Mar 16 19:54:27 2001
++++ Makefile	Fri Mar 16 19:55:21 2001
 @@ -22,15 +22,18 @@
  #  uncommented and set accordingly, if needed.
  #
@@ -103,16 +103,22 @@ $OpenBSD: patch-Makefile,v 1.1 2000/06/04 23:08:33 espie Exp $
  			    NOINDEX=$(NOINDEX) SYSV=$(SYSV)
  
  #
-@@ -302,7 +306,7 @@ CDEFS		= $(AUDIO_SUPPORT) $(AUDIO_CMD) $
+@@ -302,8 +306,7 @@ CDEFS		= $(AUDIO_SUPPORT) $(AUDIO_CMD) $
  		  $(SELTYPE) $(SGIDEF) $(SPOOLDIR) $(SPOOLFILE) $(SYSV) \
  		  $(TTEXT) $(TOPIX) $(UPDATE) $(USE_BZERO) $(USE_GETWD) \
  		  $(X11R3) $(X11INCDIR) $(XVIEWINCDIR) $(DEBUG)
 -CCOMP		= -O
-+CCOMP		= -pipe -O2
- CFLAGS		= $(CCOMP) $(CDEFS)
+-CFLAGS		= $(CCOMP) $(CDEFS)
++CFLAGS		+= $(CDEFS)
  #
  #=======================================================================
-@@ -316,7 +320,7 @@ MAKE		= make
+ 
+@@ -311,12 +314,11 @@ CFLAGS		= $(CCOMP) $(CDEFS)
+ 
+ BINARIES	= psfaces svfaces xfaces xvfaces
+ 
+-CC		= cc
+ MAKE		= make
  
  STDSRCS		= address.c get.c main.c mon.c parsefrom.c rec.c
  STDOBJS		= address.o get.o main.o mon.o parsefrom.o rec.o
@@ -121,7 +127,7 @@ $OpenBSD: patch-Makefile,v 1.1 2000/06/04 23:08:33 espie Exp $
  
  COMPFACE	= compface
  FACES		= facedir
-@@ -357,7 +361,7 @@ SVIEWLIBS	= -lsuntool -lsunwindow -lpixr
+@@ -357,7 +359,7 @@ SVIEWLIBS	= -lsuntool -lsunwindow -lpixr
  #  Dell Unix (Interactive 386/ix): $(X11LIBDIR) -lX11 -linet
  #  AT&T's XWIN:                    $(X11LIBDIR) -lX11_s -lc_s -lnsl_s -lpt
  #
@@ -130,7 +136,7 @@ $OpenBSD: patch-Makefile,v 1.1 2000/06/04 23:08:33 espie Exp $
  XVIEWLIBS	= $(XVIEWLIBDIR) -lxview -lolgx -lX11
  
  help:
-@@ -375,7 +379,7 @@ help:
+@@ -375,7 +377,7 @@ help:
  		@echo "  make clean"
  		@echo
  
@@ -139,7 +145,7 @@ $OpenBSD: patch-Makefile,v 1.1 2000/06/04 23:08:33 espie Exp $
  
  news:		$(STDOBJS) news.o faces_cps.h
  		(cd compface; $(MAKE) $(MAKEOPTS))
-@@ -411,16 +415,18 @@ tables:
+@@ -411,16 +413,18 @@ tables:
  		-install -c -m 644 people.tab $(FACEDIR)
  
  install:
