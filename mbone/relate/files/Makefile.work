@@ -1,0 +1,10 @@
+#
+# Makefile for ${WRKSRC}.
+#
+install:
+
+clean:
+	cd linux; $(MAKE) $@
+
+all:
+	cd linux; $(MAKE)
