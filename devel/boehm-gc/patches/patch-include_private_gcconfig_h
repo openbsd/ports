@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.1 2002/08/27 15:41:30 todd Exp $
---- include/private/gcconfig.h.orig	Thu Jul 26 19:28:57 2001
-+++ include/private/gcconfig.h	Wed Jul 31 07:45:46 2002
+$OpenBSD: patch-include_private_gcconfig_h,v 1.2 2002/09/12 06:47:16 pvalchev Exp $
+--- include/private/gcconfig.h.orig	Thu Jul 26 11:28:57 2001
++++ include/private/gcconfig.h	Tue Jul 23 08:22:31 2002
 @@ -33,6 +33,10 @@
  #    define NETBSD
  # endif
@@ -29,6 +29,15 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.1 2002/08/27 15:41:30 todd Exp $
  #    define mach_type_known
  # endif
  # if defined(__NetBSD__) && defined(m68k)
+@@ -66,7 +72,7 @@
+ #    define ARM32
+ #    define mach_type_known
+ # endif
+-# if defined(vax)
++# if defined(vax) || defined(__vax__)
+ #    define VAX
+ #    ifdef ultrix
+ #	define ULTRIX
 @@ -196,7 +202,7 @@
  # endif
  # if defined(__alpha) || defined(__alpha__)
