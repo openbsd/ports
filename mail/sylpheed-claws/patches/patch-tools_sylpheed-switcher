@@ -1,12 +1,12 @@
-$OpenBSD: patch-tools_sylpheed-switcher,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
---- tools/sylpheed-switcher.orig	Mon Apr 14 00:54:46 2003
-+++ tools/sylpheed-switcher	Mon Apr 14 01:02:29 2003
+$OpenBSD: patch-tools_sylpheed-switcher,v 1.2 2003/07/04 13:06:13 wilfried Exp $
+--- tools/sylpheed-switcher.orig	Fri Dec  7 19:25:01 2001
++++ tools/sylpheed-switcher	Thu May 29 04:20:27 2003
 @@ -73,7 +73,7 @@ if ($sylphpath && $clawspath) {  ## this
  	if ($DIR_CHECK == 1) {
  		print "\nNow you can run either the main branch or the claws\n";
  		print "branch by using one of the following options:\n\n";
 -		print "./sylpheed-switcher --main\n./sylpheed-switcher --claws\n\n";
-+		print "   sylpheed-switcher --main\n   sylpheed-switcher --claws\n\n";
++		print "  sylpheed-switcher --main\n  sylpheed-switcher --claws\n\n";
  		exit;
  	}
  ## copy the directory tree
@@ -15,7 +15,7 @@ $OpenBSD: patch-tools_sylpheed-switcher,v 1.1.1.1 2003/04/17 10:13:58 wilfried E
  	print "\nNow you can run either the main branch or the claws\n";
  	print "branch by using one of the following options:\n\n";
 -	print "./sylpheed-switcher --main\n./sylpheed-switcher --claws\n\n";
-+	print "   sylpheed-switcher --main\n   sylpheed-switcher --claws\n\n";
++	print "  sylpheed-switcher --main\n  sylpheed-switcher --claws\n\n";
  	exit;
  }
  ## the --help option stuff
@@ -24,11 +24,11 @@ $OpenBSD: patch-tools_sylpheed-switcher,v 1.1.1.1 2003/04/17 10:13:58 wilfried E
  	print "to suit your set-up, but remember you need the full path with the\n";
  	print "executable included:\n";
 -	print "./sylpheed-switcher --main-path=/usr/local/bin/sylpheed --claws-path=/usr/bin/sylpheed\n\n";
-+	print "   sylpheed-switcher --main-path=%%PREFIX%%/bin/sylpheed --claws-path=%%PREFIX%%/bin/sylpheed-claws\n\n";
++	print "  sylpheed-switcher --main-path=%%PREFIX%%/bin/sylpheed --claws-path=%%PREFIX%%/bin/sylpheed\n\n";
  	print "When you have done the initial set-up, you run either the main branch\n";
  	print "or the claws branch by using one of the following switches:\n\n";
 -	print "./sylpheed-switcher --main\n./sylpheed-switcher --claws\n\n";
-+	print "   sylpheed-switcher --main\n   sylpheed-switcher --claws\n\n";
++	print "  sylpheed-switcher --main\n  sylpheed-switcher --claws\n\n";
          print "Add --debug to run sylpheed in debug mode\n\n";
  	exit;
  }

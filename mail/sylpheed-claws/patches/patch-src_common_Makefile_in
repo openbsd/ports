@@ -1,20 +1,16 @@
-$OpenBSD: patch-src_common_Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
---- src/common/Makefile.in.orig	Wed Mar 12 18:17:59 2003
-+++ src/common/Makefile.in	Sat Mar 22 01:11:14 2003
-@@ -63,6 +63,7 @@ CFLAGS = @CFLAGS@
- CPP = @CPP@
- 
- CPPFLAGS = \
-+	@CPPFLAGS@ \
- 	$(GLIB_CFLAGS) \
- 	$(OPENSSL_CFLAGS) \
- 	-DLOCALEDIR=\""$(localedir)"\"
-@@ -230,7 +231,7 @@ libsylpheedcommon_la_SOURCES = \
- 
- libsylpheedcommon_la_LIBADD = \
- 	$(GLIB_LIBS) \
--	$(OPENSSL_LIBS) \
-+	$(OPENSSL_LIBS) #\
- 	-lcrypt
+$OpenBSD: patch-src_common_Makefile_in,v 1.2 2003/07/04 13:06:12 wilfried Exp $
+--- src/common/Makefile.in.orig	Thu May 29 04:06:46 2003
++++ src/common/Makefile.in	Thu May 29 04:07:48 2003
+@@ -147,10 +147,10 @@ noinst_LTLIBRARIES = libsylpheedcommon.l
+ libsylpheedcommon_la_SOURCES =  	base64.c base64.h 	defs.h 	hooks.c hooks.h 	intl.h 	log.c log.h 	md5.c md5.h 	mgutils.c mgutils.h 	nntp.c nntp.h 	passcrypt.c passcrypt.h 	plugin.c plugin.h 	prefs.c prefs.h 	progressindicator.c progressindicator.h 	quoted-printable.c quoted-printable.h 	session.c session.h 	smtp.c smtp.h 	socket.c socket.h 	ssl_certificate.c ssl_certificate.h 	ssl.c ssl.h 	stringtable.c stringtable.h 	sylpheed.c sylpheed.h 	template.c template.h 	utils.c utils.h 	uuencode.c uuencode.h 	version.h 	xml.c xml.h 	xmlprops.c xmlprops.h
  
  
+-CPPFLAGS =  	$(GLIB_CFLAGS) 	$(OPENSSL_CFLAGS) 	-DLOCALEDIR=\""$(localedir)"\"
++CPPFLAGS =  	@CPPFLAGS@ $(GLIB_CFLAGS) 	$(OPENSSL_CFLAGS) 	-DLOCALEDIR=\""$(localedir)"\"
+ 
+ 
+-libsylpheedcommon_la_LIBADD =  	$(GLIB_LIBS) 	$(OPENSSL_LIBS) 	-lcrypt
++libsylpheedcommon_la_LIBADD =  	$(GLIB_LIBS) 	$(OPENSSL_LIBS)
+ 
+ 
+ EXTRA_DIST =  	version.h.in

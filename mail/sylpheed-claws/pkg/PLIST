@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/04 13:06:13 wilfried Exp $
 bin/sylpheed-claws
 bin/sylpheed-switcher
 man/man1/sylpheed-claws.1
@@ -155,6 +155,7 @@ share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ru/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws.png
 share/sylpheed-claws/OOo2sylpheed.pl
 share/sylpheed-claws/calypso_convert.pl
@@ -175,6 +176,8 @@ share/sylpheed-claws/uudec
 @exec mkdir -p %D/lib/sylpheed-claws/plugins
 @dirrm share/sylpheed-claws
 @comment @dirrm share/pixmaps
+@comment @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW.Big5
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr/LC_MESSAGES
@@ -228,5 +231,5 @@ share/sylpheed-claws/uudec
 @dirrm share/doc/sylpheed-claws/faq/de
 @dirrm share/doc/sylpheed-claws/faq
 @dirrm share/doc/sylpheed-claws
-@comment @dirrm lib/sylpheed-claws/plugins
-@comment @dirrm lib/sylpheed-claws
+@dirrm lib/sylpheed-claws/plugins
+@dirrm lib/sylpheed-claws

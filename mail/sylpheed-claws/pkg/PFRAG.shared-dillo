@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-dillo,v 1.1 2003/07/04 13:06:13 wilfried Exp $
+lib/sylpheed-claws/plugins/dillo_viewer.so

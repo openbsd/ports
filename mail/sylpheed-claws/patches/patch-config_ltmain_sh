@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_ltmain_sh,v 1.1 2003/04/29 13:08:13 wilfried Exp $
---- config/ltmain.sh.orig	Wed Mar 12 12:17:31 2003
-+++ config/ltmain.sh	Mon Apr 28 16:20:25 2003
+$OpenBSD: patch-config_ltmain_sh,v 1.2 2003/07/04 13:06:12 wilfried Exp $
+--- config/ltmain.sh.orig	Sat May 24 20:39:27 2003
++++ config/ltmain.sh	Thu May 29 04:04:12 2003
 @@ -1082,6 +1082,17 @@ compiler."
  	continue
  	;;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2003/04/22 14:10:11 danh Exp $
---- Makefile.am.orig	Tue Feb 25 16:10:31 2003
-+++ Makefile.am	Mon Apr 21 04:04:51 2003
+$OpenBSD: patch-Makefile_am,v 1.3 2003/07/04 13:06:12 wilfried Exp $
+--- Makefile.am.orig	Thu May 29 04:01:12 2003
++++ Makefile.am	Thu May 29 04:02:37 2003
 @@ -1,4 +1,4 @@
 -SUBDIRS = ac po intl src man manual faq tools config
 +SUBDIRS = ac po src man manual faq tools config
@@ -12,9 +12,10 @@ $OpenBSD: patch-Makefile_am,v 1.2 2003/04/22 14:10:11 danh Exp $
  	autogen.sh 
  
 -if SYLPHEED_GNOME
--pixmapdir=$(gnomedatadir)/pixmaps
+ pixmapdir=$(gnomedatadir)/pixmaps
 -pixmap_DATA=sylpheed.png
--gnomapdir=$(gnomedatadir)/gnome/apps/Internet
++pixmap_DATA=sylpheed-claws.png
+ gnomapdir=$(gnomedatadir)/gnome/apps/Internet
 -gnomap_DATA=sylpheed.desktop
 -else
 -pixmapdir=
@@ -22,9 +23,6 @@ $OpenBSD: patch-Makefile_am,v 1.2 2003/04/22 14:10:11 danh Exp $
 -gnomapdir=
 -gnomap_DATA=
 -endif
-+pixmapdir=$(datadir)/pixmaps
-+pixmap_DATA=sylpheed-claws.png
-+gnomapdir=$(datadir)/gnome/apps/Internet
 +gnomap_DATA=sylpheed-claws.desktop
  
  BZIP2_ENV =

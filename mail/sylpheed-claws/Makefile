@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2003/04/29 13:08:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/07/04 13:06:12 wilfried Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
+COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
+COMMENT-imageviewer=	"Image viewer plugin for sylpheed-claws"
 COMMENT-spamassassin=	"Spamassassin plugin for sylpheed-claws"
+COMMENT-themes=		"Sylpheed-claws themes"
 
-VERSION=		0.8.11
+VERSION=		0.9.0
 DISTNAME=		sylpheed-${VERSION}claws
 PKGNAME=		sylpheed-claws-${VERSION}
+THEMEFILE=		sylpheed-iconset-20030523
 CATEGORIES=		mail news x11
 
 HOMEPAGE=		http://sylpheed-claws.sourceforge.net/
@@ -18,7 +22,8 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
-EXTRACT_SUFX=		.tar.bz2
+DISTFILES=		$(DISTNAME).tar.bz2 \
+			$(THEMEFILE).tar.gz
 
 MODULES=		gettext
 LIB_DEPENDS=		gdk.1,gtk.1::x11/gtk+ \
@@ -27,14 +32,15 @@ LIB_DEPENDS=		gdk.1,gtk.1::x11/gtk+ \
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--enable-ipv6 --enable-openssl \
 			--program-suffix="-claws" \
-			--enable-spamassassin-plugin
+			--enable-spamassassin-plugin \
+			--enable-dillo-viewer-plugin
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=		compface gpgme jpilot ldap pixbuf
 FLAVOR?=
 
-MULTI_PACKAGES=		-spamassassin
+MULTI_PACKAGES=		-dillo -imageviewer -spamassassin -themes
 
 # Need GNU/aspell >= 0.50
 #.if ${FLAVOR:L:Maspell}
@@ -89,11 +95,18 @@ RUN_DEPENDS=            ::mail/sylpheed-claws
 RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
 .endif
 
+.if ${SUBPACKAGE:M-dillo}
+RUN_DEPENDS+=		:dillo-*:www/dillo
+.endif
+
 FILES=		OOo2sylpheed.pl calypso_convert.pl eud2gc.py \
 		filter_conv.pl gif2xface.pl google_msgid.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
 		newscache_clean.pl outlook2sylpheed.pl \
-		tb2sylpheed update-po uudec sylprint.pl sylprint.rc 
+		tb2sylpheed update-po uudec sylprint.pl sylprint.rc
+
+THEMES=		Crystal mongrel tml02c Kovico-sylpheed XeNtish mozilla \
+		New_Session black stw Plain_and_Bluish blue_anarchy sylzilla
 
 DATADIR=	${PREFIX}/share/sylpheed-claws
 DOCSDIR=	${PREFIX}/share/doc/sylpheed-claws
@@ -102,17 +115,25 @@ post-patch:
 	@cd ${WRKSRC} && mv sylpheed.png sylpheed-claws.png && \
 		mv sylpheed.desktop sylpheed-claws.desktop
 	@perl -pi -e 's|pheed|pheed-claws|g' ${WRKSRC}/sylpheed-claws.desktop
+	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/tools/sylpheed-switcher
 
 post-install:
-	${INSTALL_DATA_DIR} ${DATADIR}
-	@perl -pi -e 's|%%PREFIX%%|${TRUEPREFIX}|g' \
-		${WRKSRC}/tools/sylpheed-switcher
+	${INSTALL_DATA_DIR} ${DATADIR}/themes
+.for d in ${THEMES}
+	@cp -R ${WRKDIR}/${THEMEFILE}/$d ${DATADIR}/themes/
+.endfor
+	@find ${DATADIR}/themes -type d -print0 | xargs -0 chmod 755
+	@find ${DATADIR}/themes -type f -print0 | xargs -0 chmod 444
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin/
 .for f in ${FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/$f ${DATADIR}/$f
+	${INSTALL_DATA} ${WRKSRC}/tools/$f ${DATADIR}/$f
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 	${INSTALL_DATA} ${WRKSRC}/tools/README.sylprint ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKDIR}/${THEMEFILE}/README ${DOCSDIR}/README.themes
+	${INSTALL_DATA} ${WRKSRC}/src/plugins/dillo_viewer/README \
+		${DOCSDIR}/README.dillo
 	${INSTALL_DATA} ${WRKSRC}/src/plugins/spamassassin/README \
 		${DOCSDIR}/README.spamassassin
 .for f in AUTHORS README README.claws README.jp RELEASE_NOTES.claws 
