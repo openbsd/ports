@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.47 2002/08/29 18:35:40 avsm Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.48 2002/10/24 23:14:40 naddy Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -79,8 +79,8 @@ REPORT_PROBLEM?=exit 1
 # Need an actual list of all subdirs to complete SKIPPED
 _ALL_SUBDIR:=${SUBDIR}
 SKIPPED=
-.if defined(DUDS)
-.  for i in ${DUDS:S/:/,/}
+.if defined(SKIPDIR)
+.  for i in ${SKIPDIR:S/:/,/}
 SKIPPED+=${_ALL_SUBDIR:M$i}
 SUBDIR:=${SUBDIR:N$i}
 .  endfor
