@@ -1,0 +1,71 @@
+$OpenBSD: patch-sound_cc,v 1.1 2002/05/02 07:46:24 fgsch Exp $
+--- sound.cc.orig	Wed May  1 21:56:47 2002
++++ sound.cc	Wed May  1 22:05:06 2002
+@@ -45,6 +45,8 @@
+ 
+ #ifdef HAVE_SYS_SOUNDCARD_H
+ #include <sys/soundcard.h>
++#elif defined HAVE_SYS_AUDIOIO_H
++#include <sys/audioio.h>
+ #endif
+ 
+ SoundEvent::SoundEvent() {
+@@ -219,6 +221,58 @@ void SoundEvent::sine_beep(char *device,
+     i+=::write(fd,&wave[i],ts-i);
+ 
+   ioctl(fd,SNDCTL_DSP_POST,0);
++
++ leave1:
++  close(fd);
++ leave2:
++  free(wave);
++#elif defined HAVE_SYS_AUDIOIO_H
++  audio_info_t ai;
++  int rate=11025;         // Hz
++  int interval;
++
++  unsigned char *wave;
++  int bl,fd,i,ts;
++  double r,s;
++
++  interval=120*rate/1000; // 120 msec
++
++  wave=(unsigned char *)malloc(ts = (Count*(bl=(rate*duration)/1000) + (Count-1)*interval) );
++
++  if (!wave)
++    /*	return;	*/
++  memset(wave,127,ts);
++
++  for(i=0;i<bl;i++) {
++    r=(double)pitch;
++    r/=(double)rate;
++    r*=(double)i;
++    s=(double)i;
++    s/=(double)bl;
++    s=0.30+sin(M_PI*s)*0.70;
++    wave[i]=(unsigned char)(128.0+127.0*s*sin(M_PI*2.0*r));
++  }
++
++  for(i=1;i<Count;i++)
++    memcpy(wave+i*(bl+interval),wave,bl);
++
++  fd=open(device,O_WRONLY);
++  if (fd<0)
++    goto leave2;
++
++  AUDIO_INITINFO(&ai);
++  ai.mode = AUMODE_PLAY;
++  ai.play.sample_rate = rate;
++  ai.play.channels = 1;
++  ai.play.encoding = AUDIO_ENCODING_ULINEAR;
++  
++  if (ioctl(fd,AUDIO_SETINFO,&ai)==-1)
++    goto leave1;
++
++  for(i=0;i<ts;)
++    i+=::write(fd,&wave[i],ts-i);
++
++  ioctl(fd,AUDIO_DRAIN,0);
+ 
+  leave1:
+   close(fd);

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/02 07:43:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/02 07:46:24 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	eboard
 LIB_DEPENDS=		Imlib.19,gdk_imlib::graphics/imlib
 
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt
