@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2004/07/20 12:01:13 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2004/09/26 01:05:33 jolan Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -62,6 +62,7 @@ SUBDIR += russian
 SUBDIR += security
 SUBDIR += shells
 SUBDIR += sysutils
+SUBDIR += telephony
 SUBDIR += textproc
 #SUBDIR += vietnamese
 SUBDIR += www
