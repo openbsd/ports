@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/06/02 12:40:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.36 2004/06/10 06:54:48 sturm Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -32,7 +32,7 @@ ERRORS+=	"Fatal: FLAVOR 'no_x11' and the other FLAVORS are mutually exclusive."
 .endif
 
 MULTI_PACKAGES=	-share
-SUBPACKAGES?=
+SUBPACKAGE?=
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-share"
 # -client and -server
