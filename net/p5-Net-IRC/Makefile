@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/29 01:41:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/25 12:23:51 kevlo Exp $
 
 COMMENT=	"modules to implement the irc protocol"
 
-DISTNAME=	Net-IRC-0.71
+DISTNAME=	Net-IRC-0.72
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.503
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -18,5 +18,7 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net 
 
 CONFIGURE_STYLE= perl
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
