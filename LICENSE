@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.19 1999/09/21 16:24:40 turan Exp $
+$OpenBSD: LICENSE,v 1.20 1999/09/23 20:48:45 jakob Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -421,7 +421,7 @@ Y	net/ircii-epic			ircii2.8.2-EPIC3.help.tar.gz	COPY
 -	net/licq			licq-0.61.tar.gz
 Y	net/mirror			mirror-2.9.tar.gz		COPY
 -	net/mrtg			mrtg-2.7.2.tar.gz
--	net/mtr				mtr-0.33.tar.gz
+Y	net/mtr				mtr-0.41.tar.gz			GPL
 Y	net/ncftp			ncftp-2.4.3.tar.gz		GPL
 -	net/netatalk			netatalk-1.4b2.tar.gz
 Y	net/netpipe			netpipes-4.1.1-export.tar.gz	GPL
