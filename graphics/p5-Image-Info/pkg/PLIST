@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Image/Info.pm
-libdata/perl5/site_perl/Image/Info/BMP.pm
-libdata/perl5/site_perl/Image/Info/GIF.pm
-libdata/perl5/site_perl/Image/Info/JPEG.pm
-libdata/perl5/site_perl/Image/Info/PNG.pm
-libdata/perl5/site_perl/Image/Info/PPM.pm
-libdata/perl5/site_perl/Image/Info/SVG.pm
-libdata/perl5/site_perl/Image/Info/XBM.pm
-libdata/perl5/site_perl/Image/Info/XPM.pm
-libdata/perl5/site_perl/Image/TIFF.pm
+@comment $OpenBSD: PLIST,v 1.5 2002/07/06 10:26:28 shell Exp $
+${P5SITE}/Image/Info.pm
+${P5SITE}/Image/Info/BMP.pm
+${P5SITE}/Image/Info/GIF.pm
+${P5SITE}/Image/Info/JPEG.pm
+${P5SITE}/Image/Info/PNG.pm
+${P5SITE}/Image/Info/PPM.pm
+${P5SITE}/Image/Info/SVG.pm
+${P5SITE}/Image/Info/XBM.pm
+${P5SITE}/Image/Info/XPM.pm
+${P5SITE}/Image/TIFF.pm
 man/man3p/Image::Info.3p
 man/man3p/Image::Info::BMP.3p
 man/man3p/Image::Info::SVG.3p
 man/man3p/Image::Info::XBM.3p
 man/man3p/Image::Info::XPM.3p
-@dirrm libdata/perl5/site_perl/Image/Info
+@dirrm ${P5SITE}/Image/Info
