@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/06/09 05:36:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 18:29:15 naddy Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	i386
 DISTNAME=	Wingz-142
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	math
-NEED_VERSION=	1.496
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}
 EXTRACT_SUFX=	.tgz
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	"shareware"
 PERMIT_DISTFILES_CDROM=	"shareware"
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_BUILD=		Yes
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-configure:
 	@cd ${WRKDIST} && \

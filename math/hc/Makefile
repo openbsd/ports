@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/24 07:51:06 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 18:29:15 naddy Exp $
 
 COMMENT=	"multi-radix integer desk calculator"
 
 DISTNAME=	hc
 PKGNAME=	hc-1.1
 CATEGORIES=	math
-NEED_VERSION=	1.500
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
@@ -20,6 +19,8 @@ WRKDIST=	${WRKDIR}/hcdist
 MASTER_SITES=	http://www.geocities.com/connorbd/software/
 MAKE_FILE=	makefile
 EXTRACT_SUFX=	.tgz
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hc ${PREFIX}/bin

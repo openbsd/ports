@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/03 08:30:49 mark Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/27 18:29:15 naddy Exp $
 
 COMMENT=	"graphical reverse polish notation calculator"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin
