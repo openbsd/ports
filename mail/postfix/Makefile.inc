@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2001/09/14 23:48:45 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2001/09/28 23:32:47 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -24,6 +24,27 @@ MAKE_CCARGS?=
 MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
+
+FLAVORS=	pcre sasl ldap
+FLAVOR?=
+
+.if ${FLAVOR:L:Mpcre}
+LIB_DEPENDS+=	pcre::devel/pcre
+MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_PCRE
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+.endif
+
+.if ${FLAVOR:L:Msasl}
+LIB_DEPENDS+=	sasl::security/cyrus-sasl
+MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_SASL_AUTH 
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lkrb
+.endif
+
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+.endif
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
