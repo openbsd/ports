@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/24 12:13:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/14 06:45:39 pvalchev Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
-V=			0.5.11
+V=			0.6.2
 DISTNAME=		glade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.474
+NEED_VERSION=   	1.497
 HOMEPAGE=		http://glade.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -16,12 +16,15 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfi
                         patch-*
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
-RUN_DEPENDS=  		::devel/automake \
-			::devel/autoconf
+BUILD_DEPENDS=		::textproc/scrollkeeper
+RUN_DEPENDS=		::devel/automake \
+			::devel/autoconf \
+			::textproc/scrollkeeper
 
 FLAVORS=		gnome
 FLAVOR?=
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

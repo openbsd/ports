@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/09/19 20:33:01 naddy Exp $
---- po/Makefile.in.in.orig	Sun Sep 17 00:27:42 2000
-+++ po/Makefile.in.in	Wed Sep 19 21:29:06 2001
-@@ -24,6 +24,8 @@ gnulocaledir = $(prefix)/share/locale
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2001/11/14 06:45:40 pvalchev Exp $
+--- po/Makefile.in.in.orig	Wed Mar 28 19:27:04 2001
++++ po/Makefile.in.in	Tue Nov 13 22:38:19 2001
+@@ -25,6 +25,8 @@ gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/09/19 20:33:01 naddy Exp $
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
  MKINSTALLDIRS = $(top_srcdir)/@MKINSTALLDIRS@
-@@ -111,16 +113,16 @@ install-data: install-data-@USE_NLS@
+@@ -112,16 +114,16 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all
  	if test -r "$(MKINSTALLDIRS)"; then \
@@ -31,7 +31,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/09/19 20:33:01 naddy Exp $
  	  esac; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
  	  dir=$$destdir/$$lang/LC_MESSAGES; \
-@@ -153,12 +155,12 @@ install-data-yes: all
+@@ -154,12 +156,12 @@ install-data-yes: all
  	done
  	if test "$(PACKAGE)" = "gettext"; then \
  	  if test -r "$(MKINSTALLDIRS)"; then \
@@ -47,7 +47,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/09/19 20:33:01 naddy Exp $
  	else \
  	  : ; \
  	fi
-@@ -171,12 +173,12 @@ uninstall:
+@@ -172,12 +174,12 @@ uninstall:
  	for cat in $$catalogs; do \
  	  cat=`basename $$cat`; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
