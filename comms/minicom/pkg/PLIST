@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/09/28 00:46:11 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/12/16 16:42:31 naddy Exp $
 bin/ascii-xfr
 @mode 555
 bin/minicom
@@ -33,6 +33,7 @@ share/doc/minicom/fselector.txt
 share/doc/minicom/japanese
 share/doc/minicom/minicom.FAQ
 share/doc/minicom/minicom.users
+@comment share/doc/minicom/minicom.users.orig
 share/doc/minicom/minirc.dfl
 share/doc/minicom/modemu.README
 share/doc/minicom/pl-translation.txt
@@ -64,6 +65,25 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
 share/locale/ru/LC_MESSAGES/minicom.mo
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/ja_JP.SJIS/LC_MESSAGES
+@dirrm share/locale/ja_JP.SJIS
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi_FI/LC_MESSAGES
+@dirrm share/locale/fi_FI
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/cs_CZ/LC_MESSAGES
+@dirrm share/locale/cs_CZ
+@dirrm share/locale
 @dirrm share/examples/minicom/extras/terminfo
 @dirrm share/examples/minicom/extras/termcap
 @dirrm share/examples/minicom/extras/tables
