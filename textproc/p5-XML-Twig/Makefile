@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/29 21:14:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/12 21:12:35 msf Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -31,7 +31,7 @@ REGRESS_DEPENDS=::textproc/p5-XML-Simple \
 		::converters/p5-Unicode-Map \
 		::converters/p5-Unicode-Map8 \
 		::converters/p5-Unicode-String \
-		::textproc/p5-Test-Pod \
+		::devel/p5-Test-Pod \
 		::converters/p5-Text-Iconv
 
 .include <bsd.port.mk>
