@@ -1,6 +1,6 @@
 lib/ircd/example.conf
 lib/ircd/ircd.motd
 lib/ircd/ircd.m4
-man/man8/ircd.8.gz
+man/man8/ircd.8
 sbin/ircd
 sbin/chkconf

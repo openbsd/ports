@@ -19,7 +19,7 @@ lib/Counter/digits/E
 lib/Counter/digits/E/strip.gif
 lib/Counter/digits/mkstrip.sh
 bin/mkstrip
-man/man1/mkstrip.1.gz
+man/man1/mkstrip.1
 @exec touch /var/log/Counter.log
 @exec chown nobody.nogroup /var/log/Counter.log
 @exec chmod 644 /var/log/Counter.log

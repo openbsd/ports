@@ -124,8 +124,8 @@ lib/jed/lib/wmark.sl
 lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
-man/man1/jed.1.gz
-man/man1/rgrep.1.gz
+man/man1/jed.1
+man/man1/rgrep.1
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib
 @dirrm lib/jed

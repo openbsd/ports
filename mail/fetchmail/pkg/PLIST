@@ -1,5 +1,5 @@
 bin/fetchmail
-man/man1/fetchmail.1.gz
+man/man1/fetchmail.1
 share/doc/fetchmail/README
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ

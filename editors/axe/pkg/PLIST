@@ -3,8 +3,8 @@ bin/coaxe
 bin/axinfo
 bin/faxe
 bin/poleaxe
-man/man1/axe.1.gz
-man/man1/axinfo.1.gz
+man/man1/axe.1
+man/man1/axinfo.1
 lib/X11/app-defaults/Axe
 lib/X11/app-defaults/Axinfo
 lib/X11/axe.tcl
