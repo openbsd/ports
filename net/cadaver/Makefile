@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/19 01:47:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/19 02:39:12 lebel Exp $
 
 COMMENT=		"command-line WebDAV client"
 
@@ -25,5 +25,6 @@ MASTER_SITES=		http://www.webdav.org/cadaver/
 ALL_TARGET=		
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS=		--with-ssl --with-xml2 --with-included-neon
 
 .include <bsd.port.mk>
