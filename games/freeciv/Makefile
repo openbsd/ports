@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/05/06 01:06:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2001/06/03 22:02:38 brad Exp $
 
 COMMENT=	"Civilization clone for X; multiplayer"
 
@@ -26,8 +26,7 @@ FLAVORS=	gtk
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gtk"
-LIB_DEPENDS+=	gtk.1.2::x11/gtk+ \
-		Imlib.19::graphics/imlib
+LIB_DEPENDS+=	Imlib.19::graphics/imlib
 .else
 CONFIGURE_ARGS=	--with-xaw
 .endif
