@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/04/14 10:02:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/06/26 04:38:33 brad Exp $
 bin/esd
 bin/esd-config
 bin/esdcat
@@ -26,8 +26,7 @@ man/man1/esdplay.1
 man/man1/esdrec.1
 man/man1/esdsample.1
 share/aclocal/esd.m4
-share/examples/esound/esd.conf-sample
+share/examples/esound/esd.conf
 @dirrm share/examples/esound
-!%%SHARED%%
 @cwd ${SYSCONFDIR}
 @extra esd.conf

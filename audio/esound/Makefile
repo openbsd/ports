@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2004/04/08 00:05:48 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2004/06/26 04:38:33 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
 
-DISTNAME=	esound-0.2.28
+DISTNAME=	esound-0.2.34
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	audiofile::devel/libaudiofile
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-# GPL
+# GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,11 +23,10 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-libwrap
+# broken, relies upon v4-mapped addresses
+CONFIGURE_ARGS+= --disable-ipv6
 
 post-extract:
 	@cp -f ${FILESDIR}/audio_sun.c ${WRKSRC}
-
-post-install:
-	@cd ${PREFIX}/share/examples/esound && mv esd.conf esd.conf-sample
 
 .include <bsd.port.mk>
