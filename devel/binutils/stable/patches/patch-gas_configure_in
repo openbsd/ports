@@ -1,6 +1,6 @@
-$OpenBSD: patch-gas_configure_in,v 1.7 2003/06/08 19:02:58 brad Exp $
+$OpenBSD: patch-gas_configure_in,v 1.8 2003/06/12 14:26:20 brad Exp $
 --- gas/configure.in.orig	Wed Oct 30 12:07:32 2002
-+++ gas/configure.in	Sun Jun  8 15:06:52 2003
++++ gas/configure.in	Thu Jun 12 10:39:54 2003
 @@ -180,7 +180,7 @@ changequote([,])dnl
        alpha*-*-linuxecoff*) fmt=ecoff ;;
        alpha*-*-linux-gnu*)  fmt=elf em=linux ;;
@@ -20,23 +20,25 @@ $OpenBSD: patch-gas_configure_in,v 1.7 2003/06/08 19:02:58 brad Exp $
        hppa-*-osf*)          fmt=som em=hppa ;;
        hppa-*-rtems*)        fmt=elf em=hppa ;;
        hppa-*-hpux11*)	    case ${cpu} in
-@@ -260,7 +259,14 @@ changequote([,])dnl
+@@ -260,7 +259,16 @@ changequote([,])dnl
  					;;
  			    esac
  			    ;;
 -      i386-*-openbsd*)      fmt=aout em=nbsd bfd_gas=yes;;
++changequote(,)dnl
 +      i386-*-openbsd*)	    em=nbsd bfd_gas=yes
 +			       case ${os} in
-+				  openbsd[[0-2]].* | openbsd3.[[0-2]])
++				  openbsd[0-2].* | openbsd3.[0-2])
 +				     fmt=aout ;;
 +				  *)
 +				     fmt=elf ;;
 +			       esac
 +			    ;;
++changequote([,])dnl
        i386-*-linux*aout* | i386-*-linux*oldld)   fmt=aout em=linux ;;
        i386-*-linux*coff*)   fmt=coff em=linux ;;
        i386-*-linux-gnu*)    fmt=elf em=linux bfd_gas=yes ;;
-@@ -458,12 +464,15 @@ changequote([,])dnl
+@@ -458,12 +466,17 @@ changequote([,])dnl
                                  sparc64) fmt=elf ;;
                              esac
                              ;;
@@ -46,14 +48,16 @@ $OpenBSD: patch-gas_configure_in,v 1.7 2003/06/08 19:02:58 brad Exp $
 -                               sparc64) fmt=elf ;;
 -                            esac
 -                            ;;
++changequote(,)dnl
 +      sparc-*-openbsd*)   em=nbsd bfd_gas=yes
 +			     case ${os} in
-+			        openbsd[[0-2]].* | openbsd3.[[0-1]])
++			        openbsd[0-2].* | openbsd3.[0-1])
 +				   fmt=aout ;;
 +			        *)
 +				   fmt=elf ;;
 +			     esac
 +                          ;;
++changequote([,])dnl
 +      sparc64-*-openbsd*) em=nbsd bfd_gas=yes fmt=elf ;;
  
        strongarm-*-coff)     fmt=coff ;;
