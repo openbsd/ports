@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.355 2001/02/10 13:50:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.356 2001/02/13 12:09:07 wilfried Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1954,6 +1954,7 @@ lib-depends:
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
+		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
 		if [ ! -d "$$dir" ]; then \
 			echo ">> No directory for $$libname ($$dir)"; \
 		fi; \
@@ -1961,7 +1962,6 @@ lib-depends:
 			echo ">> Broken dependency: $$dir is a symbolic link"; \
 			exit 1; \
 		fi; \
-		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
 		reallib=`${LDCONFIG} -r | grep -e "-l$$lib" | awk '{ print $$3 }'`; \
 		if [ "X$$reallib" = X"" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
