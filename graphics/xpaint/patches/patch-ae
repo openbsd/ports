@@ -1,44 +1,19 @@
-*** readRC.c.orig	Tue Dec  2 22:45:27 1997
---- readRC.c	Tue Dec  2 22:47:59 1997
+*** rw/rwTable.c.orig	Wed May 20 16:21:04 1998
+--- rw/rwTable.c	Wed May 20 16:24:24 1998
 ***************
-*** 66,82 ****
+*** 231,242 ****
+--- 231,244 ----
+  char *
+  RWGetMsg()
   {
-      char *n;
-      char xx[256];
++ #if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(_NetBSD__)
+  #if defined(BSD4_4)
+      __const extern char *__const sys_errlist[];
+  #else
+      extern char *sys_errlist[];
+  #endif
+      extern int errno;
++ #endif
   
-      if ((n = getenv("TMPDIR")) == NULL)
-  	n = "/tmp";
-  
-      strcpy(xx, n);
-      strcat(xx, "/XPaintXXXXXXX");
-!     n = mktemp(xx);
-      tempName[++tempIndex] = XtNewString(n);
-      if (np != NULL)
-  	*np = tempName[tempIndex];
-!     return fopen(tempName[tempIndex], "w");
-  }
-  
-  static void 
---- 66,87 ----
-  {
-      char *n;
-      char xx[256];
-+     int fd;
-  
-      if ((n = getenv("TMPDIR")) == NULL)
-  	n = "/tmp";
-  
-      strcpy(xx, n);
-      strcat(xx, "/XPaintXXXXXXX");
-!     fd = mkstemp(xx);
-!     if (fd == -1)
-!       return NULL;
-! 
-!     n = strdup(xx);
-      tempName[++tempIndex] = XtNewString(n);
-      if (np != NULL)
-  	*np = tempName[tempIndex];
-!     return fdopen(fd, "w");
-  }
-  
-  static void 
+      if (RWtableMsg[0] == '\0') {
+  	if (errno == 0)

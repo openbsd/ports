@@ -1,11 +1,19 @@
---- rw/readTIFF.c.~1~	Tue Jun 25 01:50:41 1996
-+++ rw/readTIFF.c	Tue May  5 12:37:21 1998
-@@ -16,7 +16,7 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
--#include "tiffio.h"
-+#include <tiffio34.h>
- #include "image.h"
- #include "rwTable.h"
- 
+*** rw/readTIFF.c.orig	Wed May 20 16:25:10 1998
+--- rw/readTIFF.c	Wed May 20 16:25:34 1998
+***************
+*** 16,22 ****
+  
+  #include <stdio.h>
+  #include <stdlib.h>
+! #include "tiffio.h"
+  #include "image.h"
+  #include "rwTable.h"
+  
+--- 16,22 ----
+  
+  #include <stdio.h>
+  #include <stdlib.h>
+! #include <tiffio34.h>
+  #include "image.h"
+  #include "rwTable.h"
+  

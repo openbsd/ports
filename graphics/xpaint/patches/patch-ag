@@ -1,11 +1,35 @@
---- rw/writeTIFF.c.~1~	Tue Jun 25 01:50:41 1996
-+++ rw/writeTIFF.c	Tue May  5 12:37:30 1998
-@@ -16,7 +16,7 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
--#include <tiffio.h>
-+#include <tiffio34.h>
- #include "image.h"
- 
- #undef howmany
+*** rw/libpnmrw.c.orig	Wed May 20 16:26:40 1998
+--- rw/libpnmrw.c	Wed May 20 16:33:16 1998
+***************
+*** 16,21 ****
+--- 16,25 ----
+  #include <sys/param.h>
+  #endif
+  
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++ #include <errno.h>
++ #endif
++ 
+  #if defined(SVR2) || defined(SVR3) || defined(SVR4)
+  #ifndef SYSV
+  #define SYSV
+***************
+*** 131,136 ****
+--- 135,141 ----
+  static void
+  pm_perror(char *reason)
+  {
++ #if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
+  #if defined(BSD4_4)
+      __const extern char *__const sys_errlist[];
+  #else
+***************
+*** 138,143 ****
+--- 143,149 ----
+  #endif
+  #if !defined(__EMX__) || defined(__CYGWIN32__)
+      extern int errno;
++ #endif
+  #endif
+      char *e;
+  

@@ -1,24 +1,19 @@
---- misc.h.orig	Wed Aug 13 11:36:39 1997
-+++ misc.h	Tue May  5 12:28:51 1998
-@@ -23,9 +23,11 @@
- 
- #ifndef linux
- #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
--void srandom(unsigned int);
-+#endif
- #else
-+#if !defined(__OpenBSD__)
- int srandom(unsigned int);
-+void srandom(unsigned int);
- #endif	/* BSD4_4 */
- #endif	/* linux */
- #endif
-@@ -96,7 +98,7 @@
- void GetDefaultWH(int *w, int *h);
- char *GetDefaultRC(void);
- void SetIconImage(Widget w);
--void main(int argc, char *argv[]);
-+int main(int argc, char *argv[]);
- 
- /* misc.c */
- Widget GetToplevel(Widget w);
+*** Local.config.orig	Wed May 20 16:11:55 1998
+--- Local.config	Wed May 20 16:13:04 1998
+***************
+*** 140,146 ****
+  XPM_INCLUDE = -I/usr/X11R6/include/X11
+  #endif
+  
+! #if defined(FreeBSDArchitecture)
+  ARCH_DEFINES = -DHAVE_PARAM_H
+  TIFF_INCLUDE = -I/usr/local/include/tiff34
+  TIFF_LIB     = -L/usr/local/lib -ltiff34
+--- 140,146 ----
+  XPM_INCLUDE = -I/usr/X11R6/include/X11
+  #endif
+  
+! #if defined(FreeBSDArchitecture) || defined(OpenBSDArchitecture)
+  ARCH_DEFINES = -DHAVE_PARAM_H
+  TIFF_INCLUDE = -I/usr/local/include/tiff34
+  TIFF_LIB     = -L/usr/local/lib -ltiff34

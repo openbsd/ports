@@ -3,10 +3,10 @@
 # Date created:         December 2, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/05/06 02:54:46 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/05/20 09:45:04 form Exp $
 #
 
-DISTNAME=       xpaint-2.5
+DISTNAME=       xpaint-2.5.4
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 

@@ -1,14 +1,19 @@
---- dynPenOp.c.orig	Wed Aug 13 16:10:00 1997
-+++ dynPenOp.c	Fri Aug 29 14:08:48 1997
-@@ -28,6 +28,11 @@
- #include "misc.h"
- #include "Paint.h"
- 
-+#ifndef HZ
-+#include <time.h>
-+#define HZ CLK_TCK
-+#endif
-+
- #define XTIMEOUT ((unsigned long)(1.5*1000/HZ)) /* ms, should be larger than 1000/HZ */
- 
- typedef struct {
+*** rw/writeTIFF.c.orig	Wed May 20 16:09:47 1998
+--- rw/writeTIFF.c	Wed May 20 16:10:06 1998
+***************
+*** 16,22 ****
+  
+  #include <stdio.h>
+  #include <stdlib.h>
+! #include <tiffio.h>
+  #include "image.h"
+  
+  #undef howmany
+--- 16,22 ----
+  
+  #include <stdio.h>
+  #include <stdlib.h>
+! #include <tiffio34.h>
+  #include "image.h"
+  
+  #undef howmany
