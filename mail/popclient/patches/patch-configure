@@ -1,6 +1,7 @@
---- ./configure.org	Tue Jan 16 03:25:58 1996
-+++ ./configure	Tue Jan 16 03:31:11 1996
-@@ -1215,7 +1215,7 @@
+$OpenBSD: patch-configure,v 1.1 2000/06/05 00:31:34 espie Exp $
+--- configure.orig	Wed Nov 22 14:45:11 1995
++++ configure	Mon Jun  5 02:15:41 2000
+@@ -1215,7 +1215,7 @@ fi
  if test -z "$LEXLIB"
  then
    case "$LEX" in

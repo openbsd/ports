@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2000/06/05 00:31:33 espie Exp $
+--- Makefile.in.orig	Wed Nov 22 14:08:22 1995
++++ Makefile.in	Mon Jun  5 02:17:51 2000
+@@ -62,7 +62,7 @@ EXTRASRC = @EXTRASRC@
+ EXTRAOBJ = @EXTRAOBJ@
+ 
+ # Common prefix for machine-independent installed files.
+-prefix = /usr/local
++prefix = @prefix@
+ # Common prefix for machine-dependent installed files.
+ exec_prefix = $(prefix)
+ 
+@@ -187,7 +187,7 @@ $(infodir)/popclient.info: popclient.inf
+ # We use `$(SHELL) -c' because some shells do not
+ # fail gracefully when there is an unknown command.
+ 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+-	  install-info --infodir=$(infodir) $$dir/popclient.info; \
++	  install-info $(infodir)/popclient.info $(infodir)/dir; \
+ 	else true; fi
+ 
+ $(mandir)/$(instname).$(manext): popclient.man

@@ -1,6 +1,7 @@
---- orig/options.c	Mon Apr  1 13:49:19 1996
-+++ ./options.c	Mon Apr  1 13:49:24 1996
-@@ -233,7 +233,7 @@
+$OpenBSD: patch-options_c,v 1.1 2000/06/05 00:31:34 espie Exp $
+--- options.c.orig	Mon Aug 14 20:36:39 1995
++++ options.c	Mon Jun  5 02:15:41 2000
+@@ -233,7 +233,7 @@ struct optrec *options;
        case LA_PASSWORD:
          strncpy(options->password,optarg,sizeof(options->password)-1);
  	for (i = strlen(options->password)-1;  i >= 0;  i--) 

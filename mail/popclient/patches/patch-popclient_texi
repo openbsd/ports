@@ -1,0 +1,15 @@
+$OpenBSD: patch-popclient_texi,v 1.1 2000/06/05 00:31:34 espie Exp $
+--- popclient.texi.orig	Tue Aug  8 03:01:30 1995
++++ popclient.texi	Mon Jun  5 02:15:41 2000
+@@ -16,6 +16,11 @@
+ @setchapternewpage odd
+ @c %**end of header
+ 
++@dircategory Miscellaneous
++@direntry
++* Popclient: (popclient.info).	Retrieve mail using Post Office Protocol.
++@end direntry
++
+ @set EDITION 3.0
+ @set VERSION 3.0 
+ @set UPDATED 4 Aug 1995

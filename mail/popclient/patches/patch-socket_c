@@ -1,0 +1,12 @@
+$OpenBSD: patch-socket_c,v 1.1 2000/06/05 00:31:34 espie Exp $
+--- socket.c.orig	Mon Aug 14 20:36:48 1995
++++ socket.c	Mon Jun  5 02:15:42 2000
+@@ -102,7 +102,7 @@ int clientPort;
+     {
+         hp = gethostbyname(host);
+         if (hp == NULL)
+-            return -1;
++            return -2;
+         memcpy(&ad.sin_addr, hp->h_addr, hp->h_length);
+     }
+     ad.sin_port = htons(clientPort);
