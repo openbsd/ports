@@ -17,6 +17,7 @@ sbin/showq
 sbin/postalias
 sbin/postcat
 sbin/postconf
+sbin/postdrop
 sbin/postkick
 sbin/postlock
 sbin/postlog
@@ -26,6 +27,7 @@ man/man1/newaliases.1
 man/man1/postalias.1
 man/man1/postcat.1
 man/man1/postconf.1
+man/man1/postdrop.1
 man/man1/postfix.1
 man/man1/postkick.1
 man/man1/postlock.1
@@ -109,6 +111,7 @@ share/doc/postfix/pipe.8.html
 share/doc/postfix/postalias.1.html
 share/doc/postfix/postcat.1.html
 share/doc/postfix/postconf.1.html
+share/doc/postfix/postdrop.1.html
 share/doc/postfix/postfix.1.html
 share/doc/postfix/postkick.1.html
 share/doc/postfix/postlock.1.html

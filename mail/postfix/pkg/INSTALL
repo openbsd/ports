@@ -49,6 +49,9 @@ fi
 if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
 
 echo ""
+chgrp maildrop ${PKG_PREFIX}/sbin/postdrop
+chmod 2755 ${PKG_PREFIX}/sbin/postdrop
+
 if [ ! -d /etc/postfix ]; then
     echo "-> Creating postfix config directory /etc/postfix"
     mkdir /etc/postfix
