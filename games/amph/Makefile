@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/25 17:23:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/22 21:01:14 pvalchev Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
-VERSION=	0.8.8
+VERSION=	0.8.9
 DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
 PKGNAME=	amph-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.427
+NEED_VERSION=	1.457
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.dataway.ch/~lukasl/amph/amph.html
