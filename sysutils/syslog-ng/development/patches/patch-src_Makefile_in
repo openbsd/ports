@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2003/04/24 09:08:38 sturm Exp $
+--- src/Makefile.in.orig	Thu Apr 24 10:41:00 2003
++++ src/Makefile.in	Thu Apr 24 10:41:09 2003
+@@ -69,7 +69,7 @@ klogctl = @klogctl@
+ YFLAGS = @YFLAGS@
+ MAKE_CLASS = @MAKE_CLASS@
+ 
+-SUBDIRS = . tests
++SUBDIRS = . 
+ 
+ dist_h_files =  	syslog-ng.h 	cfgfile.h 	sources.h 	center.h 	filters.h 	destinations.h 	log.h 	afinter.h 	affile.h 	afsocket.h 	afuser.h 	afstreams.h 	afprogram.h 	afremctrl.h 	utils.h 	syslog-names.h 	nscache.h
+ 
