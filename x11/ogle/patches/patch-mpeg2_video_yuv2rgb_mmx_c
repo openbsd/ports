@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeg2_video_yuv2rgb_mmx_c,v 1.4 2003/04/12 17:12:25 pvalchev Exp $
+--- mpeg2_video/yuv2rgb_mmx.c.orig	Sat Feb 22 07:57:56 2003
++++ mpeg2_video/yuv2rgb_mmx.c	Sat Apr 12 00:10:37 2003
+@@ -62,7 +62,7 @@ void __yuv2rgb_mmx_preventwarnings_dontu
+ 	 MMX_grnmask);
+ };
+ 
+-#ifdef __OpenBSD__
++#if defined(__OpenBSD__) && !defined(__ELF__)
+ #define _	"_"
+ #else
+ #define _
