@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2000/04/22 20:32:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.28 2000/06/29 22:30:20 angelos Exp $
 
-DISTNAME=	lsof_4.49_W
-PKGNAME=	lsof-4.49_W
+DISTNAME=	lsof_4.50_W
+PKGNAME=	lsof-4.50_W
 CATEGORIES=	sysutils
 NEED_VERSION=	1.191
 FAKE=No
