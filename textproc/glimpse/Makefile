@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/26 22:05:36 marc Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 15:16:47 espie Exp $
 #
 
 DISTNAME=	glimpse-4.1
@@ -27,7 +27,7 @@ pre-build:
 	@echo ""
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/glimpse
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/glimpse
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/glimpse
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/glimpse
 	${INSTALL_PROGRAM} ${WRKSRC}/index/wgconvert ${PREFIX}/bin
