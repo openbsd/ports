@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.93 2003/06/10 15:43:20 brad Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -58,7 +58,7 @@ MULTI_PACKAGES=
 # No sub packages description
 DESCR=${PKGDIR}/DESCR
 
-REGRESS_DEPENDS=::lang/egcs/dejagnu
+REGRESS_DEPENDS=::devel/dejagnu
 
 # No way around it, java wants a pure parser
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
