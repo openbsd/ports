@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/30 21:01:14 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2003/07/16 19:17:21 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -55,11 +55,15 @@ REGRESS_DEPENDS=	::devel/dejagnu
 
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
-EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh
+EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh \
+			elf32_sparc_obsd.sh elf32ppc_obsd.sh \
+			elf64_sparc_obsd.sh elf64alpha_obsd.sh \
+			elf_i386_obsd.sh elf_x86_64_obsd.sh \
+			elf_obsd.sh
 
 post-extract:
 .for f in ${EMULPARAMS}
-	cp -f ${FILESDIR}/${f} ${WRKSRC}/ld/emulparams
+	@cp -f ${FILESDIR}/${f} ${WRKSRC}/ld/emulparams
 .endfor
 	@cp -f ${FILESDIR}/te-obsd.h ${WRKSRC}/gas/config
 
