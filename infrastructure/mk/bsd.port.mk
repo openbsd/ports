@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.510 2002/03/13 13:51:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.511 2002/03/15 13:29:13 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -530,7 +530,7 @@ _CIPHERS=		sha1 rmd160 md5
 # This is the one you can override
 PREFERRED_CIPHERS?= ${_CIPHERS}
 
-PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
+PORTPATH?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
@@ -1574,6 +1574,7 @@ ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
 .  endif
+	@mkdir -p ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} 
