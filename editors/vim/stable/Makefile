@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.44 2002/03/23 03:17:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.45 2002/03/24 20:26:24 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-6.0
-REVISION=	270
-VERSION=	6.0.${REVISION}
+DISTNAME=	vim-6.1
+#REVISION=	0
+#VERSION=	6.1.${REVISION}
+VERSION=	6.1
 PKGNAME=	vim-${VERSION}
 CATEGORIES=	editors
 NEED_VERSION=	1.487
@@ -25,11 +26,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-PATCHFILES+=	6.0.1-200.gz:0
-_patches!=	jot -w%03d - 201 ${REVISION} 1
-.for p in ${_patches}
-PATCHFILES+=	6.0.${p}:0
-.endfor
+#_patches!=	jot -w%03d - 1 ${REVISION} 1
+#.for p in ${_patches}
+#PATCHFILES+=	6.0.${p}:0
+#.endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
 .endif
 
-WRKDIST=		${WRKDIR}/vim60${V}
+WRKDIST=		${WRKDIR}/vim61
 WRKSRC=			${WRKDIST}/src
 
 SUBST_VARS=     	VERSION
