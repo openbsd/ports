@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/06/03 15:18:01 todd Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -8,7 +8,7 @@ DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.489
 HOMEPAGE=	http://www.sleepycat.com/
-MASTER_SITES=	${HOMEPAGE}/update/${VERSION}/
+MASTER_SITES=	${HOMEPAGE}/update/snapshot/
 
 JDK_VERSION=	1.1.8
 TCL_VERSION=	8.3
