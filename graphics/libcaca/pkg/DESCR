@@ -1,0 +1,5 @@
+The libcaca library is a graphics library that outputs text instead of
+pixels, so that it can work on older video cards or text terminals.  It
+is not unlike the famous AAlib library.  libcaca needs a terminal to
+work, thus it should work on all Unix systems using either the slang
+library or the ncurses library.
