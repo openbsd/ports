@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/16 05:19:12 brad Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
-
 
 COMMENT=		"utilities to manipulate ext2 filesystems"
 
 DISTNAME=		e2fsprogs-1.27
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://e2fsprogs.sourceforge.net/
@@ -26,7 +26,11 @@ CONFIGURE_ARGS+=	--enable-elf-shlibs
 USE_GMAKE=		Yes
 
 post-install:
-	cd ${PREFIX}/sbin && mv fsck pfsck
-	cd ${PREFIX}/man/man8 && mv fsck.8 pfsck.8
+	${INSTALL_DATA_DIR} ${PREFIX}/include/ext2fs
+	${INSTALL_DATA_DIR} ${PREFIX}/include/uuid
+	${INSTALL_DATA} ${WRKSRC}/lib/ext2fs/*.h ${PREFIX}/include/ext2fs
+	${INSTALL_DATA} ${WRKSRC}/lib/uuid/*.h ${PREFIX}/include/uuid
+	@cd ${PREFIX}/sbin && mv fsck pfsck
+	@cd ${PREFIX}/man/man8 && mv fsck.8 pfsck.8
 
 .include <bsd.port.mk>

@@ -1,8 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/06/16 05:19:13 brad Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/libext2fs.info
 bin/chattr
 bin/lsattr
 bin/uuidgen
+include/ext2fs/bitops.h
+include/ext2fs/brel.h
+include/ext2fs/dosio.h
+include/ext2fs/e2image.h
+include/ext2fs/ext2_ext_attr.h
+include/ext2fs/ext2_fs.h
+include/ext2fs/ext2_io.h
+include/ext2fs/ext2fs.h
+include/ext2fs/ext2fsP.h
+include/ext2fs/irel.h
+include/ext2fs/jfs_compat.h
+include/ext2fs/jfs_dat.h
+include/ext2fs/jfs_user.h
+include/ext2fs/kernel-jbd.h
+include/ext2fs/kernel-list.h
+include/uuid/uuid.h
+include/uuid/uuidP.h
 info/libext2fs.info
 lib/libe2p.a
 lib/libext2fs.a
@@ -18,13 +35,13 @@ man/man8/dumpe2fs.8
 man/man8/e2fsck.8
 man/man8/e2image.8
 man/man8/e2label.8
-man/man8/pfsck.8
 man/man8/fsck.ext2.8
 man/man8/fsck.ext3.8
 man/man8/mke2fs.8
 man/man8/mkfs.ext2.8
 man/man8/mkfs.ext3.8
 man/man8/mklost+found.8
+man/man8/pfsck.8
 man/man8/resize2fs.8
 man/man8/tune2fs.8
 sbin/badblocks
@@ -33,14 +50,16 @@ sbin/dumpe2fs
 sbin/e2fsck
 sbin/e2image
 sbin/e2label
-sbin/pfsck
 sbin/fsck.ext2
 sbin/fsck.ext3
 sbin/mke2fs
 sbin/mkfs.ext2
 sbin/mkfs.ext3
 sbin/mklost+found
+sbin/pfsck
 sbin/resize2fs
 sbin/tune2fs
 %%SHARED%%
+@dirrm include/uuid
+@dirrm include/ext2fs
 @exec install-info --info-dir=%D/info %D/info/libext2fs.info
