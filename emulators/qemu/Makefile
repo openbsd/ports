@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/08 16:29:43 todd Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc # no success building on other archs yet
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.FreeDaemonHosting.com/pub/users/todd/
 
+BUILD_DEPENDS=		::textproc/texi2html
 LIB_DEPENDS=    	SDL::devel/sdl
 USE_GMAKE=		Yes
 USE_X11=		Yes
