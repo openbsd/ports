@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2004/10/26 22:59:24 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2004/10/26 23:04:12 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -276,13 +276,13 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 .if ${COMPAT:L} == "yes" && ${FLAVOR:L:Mmt}
 .  for p in ${PROGRAMS}
-	cd ${PREFIX}/bin && ln -sf $p${MT_SUFFX} $p
+	cd ${PREFIX}/bin && ln -sf $p${MT_SUFX} $p
 .  endfor
 .  for p in ${PROGRAMS3}
-	cd ${PREFIX}/bin && ln -sf $p3${MT_SUFFX} $p3
+	cd ${PREFIX}/bin && ln -sf $p3${MT_SUFX} $p3
 .  endfor
-	cd ${PREFIX}/lib && ln -sf libqui${MT_SUFFX}.so.1.0 libqui.so.1.0
-	cd ${PREFIX}/lib/qt3 && ln -sf libqui${MT_SUFFX}.so.1.0 libqui.so.1.0
+	cd ${PREFIX}/lib && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
+	cd ${PREFIX}/lib/qt3 && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
 .endif
 
 .include <bsd.port.mk>
