@@ -1,5 +1,6 @@
+$OpenBSD: patch-configure,v 1.2 2001/07/30 15:33:22 espie Exp $
 --- configure.orig	Thu May 16 10:03:58 1996
-+++ configure	Tue Oct 31 10:34:12 2000
++++ configure	Mon Jul 30 17:25:38 2001
 @@ -1533,6 +1533,7 @@ rm -f conftest*
  			$x_includes/tk \
  			$x_includes \
