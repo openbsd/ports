@@ -1,3 +1,5 @@
 This module helps you implementing delay loading of object-data.
 While creating a stub-object, Object::Realize::Later simulates you
 got the real data.
+
+WWW: ${HOMEPAGE}
