@@ -1,6 +1,6 @@
---- builtins/enable.def.orig	Wed Dec 16 08:45:56 1998
-+++ builtins/enable.def	Fri Feb 19 16:54:16 1999
-@@ -290,9 +290,10 @@
+--- builtins/enable.def.orig	Thu Mar 23 19:49:42 2000
++++ builtins/enable.def	Thu Mar 23 19:50:56 2000
+@@ -305,9 +305,10 @@
        name = list->word->word;
  
        size = strlen (name);

@@ -1,10 +1,10 @@
---- configure.orig	Thu Feb 18 10:12:00 1999
-+++ configure	Fri Feb 19 16:54:18 1999
-@@ -734,6 +734,7 @@
- mips-irix6*)	opt_gnu_malloc=no ;;	# needs 8-byte alignment
- sparc-linux*)	opt_gnu_malloc=no ;;	# sparc running linux; requires ELF
- #*-freebsd*)	opt_gnu_malloc=no ;;	# they claim it's better
-+*-openbsd*)	opt_gnu_malloc=no ;;	# needs 8-byte alignment for one thing
- *-aix*)		opt_gnu_malloc=no ;;	# AIX machines
- *-nextstep*)	opt_gnu_malloc=no ;;	# NeXT machines running NeXTstep
- *-rhapsody*)	opt_gnu_malloc=no ;;	# Apple Rhapsody
+--- configure.orig	Thu Mar 23 19:51:31 2000
++++ configure	Thu Mar 23 19:52:44 2000
+@@ -762,6 +762,7 @@
+ m68k-sysv)	opt_bash_malloc=no ;;	# fixes file descriptor leak in closedir
+ sparc-linux*)	opt_bash_malloc=no ;;	# sparc running linux; requires ELF
+ #*-freebsd*)	opt_bash_malloc=no ;;	# they claim it's better
++*-openbsd*)    opt_gnu_malloc=no ;;    # needs 8-byte alignment for one thing
+ *-aix*)		opt_bash_malloc=no ;;	# AIX machines
+ *-nextstep*)	opt_bash_malloc=no ;;	# NeXT machines running NeXTstep
+ *-rhapsody*)	opt_bash_malloc=no ;;	# Apple Rhapsody

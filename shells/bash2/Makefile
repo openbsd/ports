@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/05 18:49:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/23 03:57:43 kevlo Exp $
 
-DISTNAME=	bash-2.03
+DISTNAME=	bash-2.04
 CATEGORIES=	shells
 NEED_VERSION=	1.218
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -10,7 +10,6 @@ DISTFILES=      ${DISTNAME}.tar.gz ${DOCNAME}.tar.gz
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,7 +26,7 @@ PKGNAME=	${DISTNAME}-static
 .endif
 
 post-install:
-	@mkdir -p ${PREFIX}/share/doc/bash
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.ps  \
 		${WRKDIR}/doc/article.txt  \
