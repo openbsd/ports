@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2002/06/08 12:06:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.77 2002/06/18 17:12:26 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += corewars
 #    SUBDIR += cosmo
      SUBDIR += cosmosmash
+     SUBDIR += cowsay
 #    SUBDIR += crossfire
      SUBDIR += crossfire-client
 #    SUBDIR += dontspace
