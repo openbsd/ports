@@ -1,0 +1,21 @@
+libmcrypt is the library which implements all the algorithms and
+modes found in mcrypt. It is currently under development but it
+seems to work pretty good.
+
+Unlike most encryption libraries libmcrypt does not have everything
+(random number generators, hashes, hmac implementation, key exchange,
+public key encryption etc.).  Libmcrypt only implements an interface
+to access block and stream encryption algorithms.
+
+Its purpose was to assist in the development of mcrypt by providing
+a uniform interface to access several different encryption algorithms,
+so that the main program is independent of the encryption algorithms
+and the modes used.
+
+Libmcrypt supports the algorithms: BLOWFISH, TWOFISH, DES, TripleDES,
+3-WAY, SAFER-sk64, SAFER-sk128, SAFER+, LOKI97, GOST, RC2, RC6,
+MARS, IDEA, RIJNDAEL-128 (AES), RIJNDAEL-192, RIJNDAEL-256, SERPENT,
+CAST-128 (known as CAST5), CAST-256, ARCFOUR and WAKE.  Block
+algorithms can be used in: CBC, ECB, CFB and OFB (8 bit and n bit,
+where n is the size of the algorithm's block length).
+
