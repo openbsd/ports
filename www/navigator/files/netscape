@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Wrapper for the navigator-4.05-fortified package.
+# Wrapper for the fortified Netscape navigator program.
 #
 # dugsong@OpenBSD.ORG
 

@@ -3,27 +3,26 @@
 # Date created:		1998-Jun-14
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $Id: Makefile,v 1.2 1998/09/14 18:03:12 marc Exp $
+# $Id: Makefile,v 1.3 1998/09/26 20:10:25 marc Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 # WARNING: Requires a kernel built with 'option COMPAT_BSDOS'
 #
-BROKEN=		"required navigator binary no longer available"
-DISTNAME=	navigator-v405-export.x86-bsdi-bsd2
-PKGNAME=	navigator-4.05-fortified
+DISTNAME=	navigator-v406-export.x86-bsdi-bsd2
+PKGNAME=	navigator-4.06-fortified
 CATEGORIES=     www
 DIST_SUBDIR=	${PKGNAME}
 WRKSRC=		${WRKDIR}
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 ONLY_FOR_ARCHS=	i386
 
-NAVIGATORNAME=	navigator-v405.x86-bsdi-bsd2
+NAVIGATORNAME=	navigator-v406.x86-bsdi-bsd2	
 
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.05/development/english/unix/bsdi21/navigator_standalone/
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.06/development/english/unix/bsdi21/navigator_standalone/
 
-FORTIFYNAME=	Fortify-1.2.4-unix
+FORTIFYNAME=	Fortify-1.2.6-unix-x86
 
 MASTER_SITES+=	ftp://fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \

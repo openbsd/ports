@@ -1,5 +1,5 @@
---- navigator-v405.x86-bsdi-bsd2/ns-install.orig	Thu Mar 26 20:48:42 1998
-+++ navigator-v405.x86-bsdi-bsd2/ns-install	Sun Jun 21 20:56:02 1998
+--- navigator-v406.x86-bsdi-bsd2/ns-install.orig	Thu Mar 26 20:48:42 1998
++++ navigator-v406.x86-bsdi-bsd2/ns-install	Sun Jun 21 20:56:02 1998
 @@ -87,21 +87,9 @@
  fi
  
