@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/11/18 16:36:18 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/11/24 19:03:15 robert Exp $
 @conflict php5-core-*
 bin/pear
 bin/php
@@ -12,3 +12,4 @@ sbin/phpxs
 share/examples/php4/
 share/examples/php4/php.ini-dist
 share/examples/php4/php.ini-recommended
+@unexec rm -f /usr/lib/apache/modules/libphp4.so

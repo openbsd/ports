@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/18 16:36:18 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/24 19:03:15 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php4-core-${V}p1
+PKGNAME=	php4-core-${V}p2
 FULLPKGNAME-pear= php4-pear-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
@@ -58,7 +58,9 @@ INSTALL_TARGET= install-pear install-headers install-build install-programs
 FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
 
 post-patch:
-	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" ${WRKSRC}/pear/PEAR/Config.php
+	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
+	    ${WRKSRC}/pear/PEAR/Config.php ${WRKSRC}/scripts/phpize.in \
+	    ${WRKSRC}/scripts/php-config.in
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${APACHE_MODULE_SUBDIR}

@@ -1,0 +1,14 @@
+To finish the install, enable the php4 module with:
+    ${PREFIX}/sbin/phpxs -s
+
+To enable parsing of PHP scripts, add the following to
+/var/www/conf/httpd.conf:
+    
+    AddType application/x-httpd-php .php
+
+Copy the config file below into ${PHP_CONFIG_FILE}
+${PREFIX}/share/examples/php4/php.ini-recommended
+
+Don't forget that the default OpenBSD httpd is chrooted
+into /var/www by default, so you may need to create support
+directories such as /var/www/tmp for PHP to work correctly.
