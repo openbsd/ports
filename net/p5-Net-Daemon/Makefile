@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:24:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/19 06:01:45 kevlo Exp $
 
 COMMENT=	"extension for portable daemons"
 
-DISTNAME=	Net-Daemon-0.36
+DISTNAME=	Net-Daemon-0.37
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.499
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
