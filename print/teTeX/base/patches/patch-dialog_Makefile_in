@@ -1,0 +1,24 @@
+--- dialog/Makefile.in.orig	Tue Apr 25 20:30:21 2000
++++ dialog/Makefile.in	Tue Apr 25 20:31:18 2000
+@@ -103,17 +103,17 @@ SHELL = /bin/sh
+ @SET_MAKE@
+ 
+ .PHONY: install installdirs install-exec
+-install: install-exec $(mandir)/dialog.$(manext)
++install: install-exec $(mandir)/tetex-dialog.$(manext)
+ 
+-install-exec: installdirs $(bindir)/dialog
++install-exec: installdirs $(bindir)/tetex-dialog
+ 
+ installdirs:
+ 	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(mandir)
+ 
+-$(bindir)/dialog: dialog
++$(bindir)/tetex-dialog: dialog
+ 	$(INSTALL_PROGRAM) dialog $@
+ 
+-$(mandir)/dialog.$(manext): dialog.man
++$(mandir)/tetex-dialog.$(manext): dialog.man
+ 	$(INSTALL_DATA) $(srcdir)/dialog.man $@
+ 
+ 

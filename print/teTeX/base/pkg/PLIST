@@ -1,7 +1,5 @@
 @comment teTeX actually includes texi2html-1.56k
 @pkgcfl texi2html-*
-@comment and a version of dialog
-@pkgcfl dialog-*
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
 @unexec install-info --delete --info-dir=%D/info %D/info/kpathsea.info
 @unexec install-info --delete --info-dir=%D/info %D/info/latex.info
@@ -13,7 +11,6 @@ bin/allcm
 bin/allec
 bin/allneeded
 bin/bibtex
-bin/dialog
 bin/dmp
 bin/dvi2fax
 bin/dvicopy
@@ -103,6 +100,7 @@ bin/readlink
 bin/rubibtex
 bin/rumakeindex
 bin/tangle
+bin/tetex-dialog
 bin/tex
 bin/texconfig
 bin/texdoc
@@ -204,7 +202,6 @@ man/man1/bibtex.1
 man/man1/cont-de.1
 man/man1/cont-en.1
 man/man1/cont-nl.1
-man/man1/dialog.1
 man/man1/dmp.1
 man/man1/dvicopy.1
 man/man1/dvilj.1
@@ -262,6 +259,7 @@ man/man1/tex.1
 man/man1/texconfig.1
 man/man1/texhash.1
 man/man1/texi2html.1
+man/man1/tetex-dialog.1
 man/man1/tftopl.1
 man/man1/tie.1
 man/man1/vftovp.1

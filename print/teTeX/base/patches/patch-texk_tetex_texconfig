@@ -1,0 +1,52 @@
+--- texk/tetex/texconfig.orig	Tue Apr 25 20:31:32 2000
++++ texk/tetex/texconfig	Tue Apr 25 20:48:01 2000
+@@ -122,26 +122,13 @@ find_fmt()
+ 
+ cls() { test -z "$NO_CLEAR" && clear; }
+ 
+-# Some systems have their own dialog. Use it then and do not use
+-# faked TERM and TERMINFO variables when calling that dialog.
+-find_dialogtype()
+-{
+-  own_dialog=false
+-  { u=`uname -s`; } 2>/dev/null
+-  case "$u" in
+-    FreeBSD|Linux)
+-      DIALOG_PROG=/usr/bin/dialog
+-      test -x "$DIALOG_PROG" && own_dialog=true;;
+-  esac
+-}
+- 
+ run_dialog()
+ {
+   test -z "$NO_CLEAR" && clear
+   if $own_dialog; then
+     $DIALOG_PROG --title "$version setup utility" "$@"
+   else
+-    TERM=$DIALOG_TERM TERMINFO=$DIALOG_TERMINFO dialog --title "$version setup utility" "$@"
++    TERM=$DIALOG_TERM TERMINFO=$DIALOG_TERMINFO tetex-dialog --title "$version setup utility" "$@"
+   fi
+ }
+ 
+@@ -1514,7 +1501,6 @@ config_formats()
+ #------------------ begin: initialisation -----------------------------------
+ find_echo
+ find_fmt
+-find_dialogtype
+ check_environ
+ require_binary kpsewhich pwd
+ 
+@@ -1696,6 +1682,13 @@ PAGER=${PAGER-$std_pager}
+ 
+ check_for_binary dialog >/dev/null
+ dialogok=$?
++if [ $dialogok == 0 ]; then
++	own_dialog=true
++else
++	check_for_binary tetex-dialog >/dev/null
++	own_dialog=false
++	dialogok=$?
++fi
+ 
+ # we have called some shellfunctions, so for HP-UX's shell, we need
+ # to set the positional parameters this again:

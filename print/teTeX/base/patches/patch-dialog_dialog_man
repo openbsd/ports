@@ -1,0 +1,10 @@
+--- dialog/dialog.man.orig	Tue Apr 25 20:48:40 2000
++++ dialog/dialog.man	Tue Apr 25 20:48:47 2000
+@@ -1,6 +1,6 @@
+ .TH DIALOG 1 "10 January 1994"
+ .SH NAME
+-dialog \- display dialog boxes from shell scripts
++tetex-dialog \- display dialog boxes from shell scripts
+ .SH SYNOPSIS
+ .B dialog --clear
+ .br
