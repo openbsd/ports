@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2000/07/04 04:23:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2000/07/08 08:45:36 fgsch Exp $
 
-DISTNAME=	mutt-1.2.2i
+DISTNAME=	mutt-1.2.4i
 CATEGORIES=     mail
-NEED_VERSION=	1.309
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=slang curses imap pop
-FLAVOR?=slang
+FLAVOR?=curses
 
 LIB_DEPENDS=	intl.1::devel/gettext 
 
