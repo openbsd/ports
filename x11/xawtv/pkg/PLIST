@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/09 07:10:27 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/05/15 23:27:26 robert Exp $
 bin/dump-mixers
 bin/ntsc-cc
-bin/pia
+@comment bin/pia
 bin/propwatch
-bin/record
+@comment bin/record
 bin/rootv
 bin/showqt
 bin/showriff
 bin/streamer
 bin/subtitles
-bin/v4lctl
+@comment bin/v4lctl
 bin/webcam
 bin/xawtv
 bin/xawtv-remote
@@ -28,32 +28,32 @@ lib/xawtv/read-avi.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 @comment man/es/man1/fbtv.1
-@comment man/es/man1/rootv.1
+man/es/man1/rootv.1
 @comment man/es/man1/scantv.1
-@comment man/es/man1/streamer.1
-@comment man/es/man1/subtitles.1
+man/es/man1/streamer.1
+man/es/man1/subtitles.1
 @comment man/es/man1/ttv.1
 @comment man/es/man1/v4lctl.1
-@comment man/es/man1/xawtv-remote.1
-@comment man/es/man1/xawtv.1
-@comment man/es/man5/xawtvrc.5
+man/es/man1/xawtv-remote.1
+man/es/man1/xawtv.1
+man/es/man5/xawtvrc.5
 @comment man/es/man8/v4l-conf.8
-@comment man/fr/man1/xawtv.1
+man/fr/man1/xawtv.1
 @comment man/man1/alevtd.1
 man/man1/dump-mixers.1
 @comment man/man1/fbtv.1
 @comment man/man1/motv.1
 @comment man/man1/mtt.1
 man/man1/ntsc-cc.1
-man/man1/pia.1
+@comment man/man1/pia.1
 man/man1/propwatch.1
 @comment man/man1/radio.1
-man/man1/record.1
+@comment man/man1/record.1
 man/man1/rootv.1
 @comment man/man1/scantv.1
 man/man1/showriff.1
 man/man1/streamer.1
-@comment man/man1/subtitles.1
+man/man1/subtitles.1
 @comment man/man1/ttv.1
 @comment man/man1/v4l-info.1
 @comment man/man1/v4lctl.1
@@ -89,12 +89,12 @@ share/xawtv/secam-france.list
 share/xawtv/secam-russia.list
 share/xawtv/uhf.list
 @dirrm share/xawtv
-@comment @dirrm man/fr/man1
-@comment @dirrm man/fr
+@dirrm man/fr/man1
+@dirrm man/fr
 @comment @dirrm man/es/man8
-@comment @dirrm man/es/man5
-@comment @dirrm man/es/man1
-@comment @dirrm man/es
+@dirrm man/es/man5
+@dirrm man/es/man1
+@dirrm man/es
 @dirrm lib/xawtv
 @cwd ${SYSCONFDIR}
 @extra xawtvrc

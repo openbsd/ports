@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/15 23:27:26 robert Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
 COMMENT=	"TV viewing application for bktr(4) cards"
 
-DISTNAME=	xawtv_3.91
-PKGNAME=	${DISTNAME:S,_,-,}
+DISTNAME=	xawtv-3.92
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -28,7 +27,7 @@ CONFIGURE_ARGS+=--enable-mmx
 .endif
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-aa --disable-motif
+CONFIGURE_ARGS+=--disable-aa --disable-motif --disable-gl
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
