@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:02 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/07/02 14:58:43 brad Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
+MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
-
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 pre-configure:
 	@${CP} ${FILESDIR}/openbsdplay.c ${WRKSRC}/config/openbsdplay.c
