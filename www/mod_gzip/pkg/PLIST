@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/15 22:52:46 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/13 03:27:09 brad Exp $
 lib/mod_gzip.so
-sbin/gzip-enable
+sbin/mod_gzip-enable
 share/examples/mod_gzip/mod_gzip.conf.sample
 @dirrm share/examples/mod_gzip
