@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/06/25 14:04:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2004/06/27 23:29:55 pvalchev Exp $
 
 COMMENT=	"extract, list & test files in a ZIP archive"
 
@@ -18,9 +18,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)' \
-		LOC="${CFLAGS} -DUSE_UNSHRINK"
+MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)'
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
+
+# Workaround compiler bug on hppa which causes crashes
+.if ${MACHINE_ARCH} == "hppa"
+MAKE_FLAGS+=	LOC="${CFLAGS} -O0 -DUSE_UNSHRINK"
+.else
+MAKE_FLAGS+=	LOC="${CFLAGS} -DUSE_UNSHRINK"
+.endif
 
 MAKE_FILE=	unix/Makefile
 
