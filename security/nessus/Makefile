@@ -3,7 +3,7 @@
 # Date created:         14 Mar 1999
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.11 2000/07/03 01:03:50 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/03 01:34:10 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
@@ -40,8 +40,6 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 GNU_CONFIGURE=	Yes
-
-CONFIGURE_ARGS=	--disable-shared
 
 # GNU build environment gone horribly wrong. ugh.
 post-extract:
