@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/12 00:58:23 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.4 2002/08/12 01:13:59 avsm Exp $ 
 
 COMMENT=	"highly configurable pop3/imap4 webmail client"
 
@@ -27,7 +27,7 @@ EXTRACT_ONLY=
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
-SUBST_VARS=	INSTDIR HORDE_NAME
+SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
 RUN_DEPENDS=	:horde->=2.1:devel/horde \
 		:php4-imap->=4.2.1:www/php4/extensions,-imap
