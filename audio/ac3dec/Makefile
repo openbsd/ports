@@ -1,6 +1,9 @@
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
-# $OpenBSD: Makefile,v 1.2 2000/03/30 22:40:32 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.3 2000/04/29 00:07:33 turan Exp $
+
+.if ${MACHINE_ARCH} != "i386"
+BROKEN=		i386 asm instructions in source code.
+.endif
 
 DISTNAME=	ac3dec-0.5.6
 CATEGORIES=	audio
