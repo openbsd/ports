@@ -1,0 +1,14 @@
+*** config.guess.orig	Wed Jul 14 15:29:09 1999
+--- config.guess	Wed Jul 14 15:29:26 1999
+***************
+*** 309,314 ****
+--- 309,317 ----
+      *:FreeBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++ 	exit 0 ;;
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
