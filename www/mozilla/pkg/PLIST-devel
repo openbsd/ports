@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.10 2005/03/13 05:02:17 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.11 2005/03/29 19:18:51 wilfried Exp $
 %%SHARED%%
 %%gtk2%%
 !%%gtk2%%
@@ -320,8 +320,11 @@ mozilla/include/docshell/nsIDocShell.h
 mozilla/include/docshell/nsIDocShellHistory.h
 mozilla/include/docshell/nsIDocShellLoadInfo.h
 mozilla/include/docshell/nsIDocShellTreeItem.h
+mozilla/include/docshell/nsIDocShellTreeItemTmp.h
 mozilla/include/docshell/nsIDocShellTreeNode.h
+mozilla/include/docshell/nsIDocShellTreeNodeTmp.h
 mozilla/include/docshell/nsIDocShellTreeOwner.h
+mozilla/include/docshell/nsIDocShellTreeOwnerTmp.h
 mozilla/include/docshell/nsIEditorDocShell.h
 mozilla/include/docshell/nsIGlobalHistory.h
 mozilla/include/docshell/nsIGlobalHistory2.h
