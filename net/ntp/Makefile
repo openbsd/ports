@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/08 14:01:17 danh Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/11 06:16:33 danh Exp $
 
 VERSION=	4.0.99k
 DISTNAME=	ntp-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.352
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
-		ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ntp3/
+		ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ntp4/
 
 HOMEPAGE=	http://www.eecis.udel.edu/~ntp/
 
