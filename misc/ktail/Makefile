@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 09:48:17 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/09 15:48:10 sturm Exp $
 
+BROKEN=		"qt3 incompatibilities"
 COMMENT=	"file monitor"
 
 DISTNAME=	ktail-0.6.1
