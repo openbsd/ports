@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/13 03:23:59 obecian Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/11 18:16:30 brad Exp $
 
-COMMENT=	"full-screen ncurses- or GTK-based audio mixer"
+COMMENT=	"full-screen ncurses or GTK-based audio mixer"
+
 DISTNAME=	aumix-2.7
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.460
 
 HOMEPAGE=	http://jpj.net/~trevor/aumix.html
 
@@ -19,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://jpj.net/~trevor/aumix/old/
 MASTER_SITE_SUBDIR= aumix
 
-LIB_DEPENDS=	intl.1::devel/gettext
+MODULES=	gettext
 
 FLAVORS=	no_x11 no_curses dummy
 FLAVOR?=
@@ -35,9 +36,11 @@ CONFIGURE_ARGS+= --without-gtk
 LIB_DEPENDS+=	gtk.1.2::x11/gtk+
 USE_X11=	Yes
 .endif
+
 .if ${FLAVOR:L:Mno_curses} 
 CONFIGURE_ARGS+= --without-ncurses
 .endif
+
 .if ${FLAVOR:L:Mdummy}
 CONFIGURE_ARGS+= --enable-dummy-mixer
 .endif
