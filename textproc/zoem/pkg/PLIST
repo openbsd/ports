@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/08 22:15:47 sturm Exp $
+bin/zoem
+man/man1/zoem.1
+man/man7/faq_zmm.7
+man/man7/generic_zmm.7
+man/man7/man_zmm.7
+man/man7/zoemzoem.7
+share/doc/zoem/doc/buzzz.1
+share/doc/zoem/doc/buzzz.azm
+share/doc/zoem/doc/buzzz.html
+share/doc/zoem/doc/buzzz.ps
+share/doc/zoem/doc/zoem.azm
+share/doc/zoem/doc/zoem.html
+share/doc/zoem/doc/zoem.ps
+share/doc/zoem/doc/zoemzoem.azm
+share/doc/zoem/doc/zoemzoem.html
+share/doc/zoem/doc/zoemzoem.ps
+share/doc/zoem/doc/zum.azm
+share/doc/zoem/doc/zum.html
+share/doc/zoem/examples/faq_zmm.azm
+share/doc/zoem/examples/generic_zmm.azm
+share/doc/zoem/examples/man_zmm.azm
+share/doc/zoem/mac/faq_zmm.html
+share/doc/zoem/mac/faq_zmm.ps
+share/doc/zoem/mac/generic_zmm.html
+share/doc/zoem/mac/generic_zmm.ps
+share/doc/zoem/mac/man_zmm.html
+share/doc/zoem/mac/man_zmm.ps
+share/examples/zoem/README
+share/examples/zoem/env.azm
+share/examples/zoem/fib.azm
+share/examples/zoem/meta.azm
+share/examples/zoem/nest.azm
+share/examples/zoem/regex.azm
+share/examples/zoem/reverse.azm
+share/examples/zoem/scope.azm
+share/examples/zoem/special.azm
+share/examples/zoem/stream.azm
+share/examples/zoem/stress.azm
+share/examples/zoem/tr.azm
+share/examples/zoem/xml.azm
+share/zoem/mac/doc.zmm
+share/zoem/mac/faq.zmm
+share/zoem/mac/man.zmm
+share/zoem/mac/zmm_x_generic
+@dirrm share/zoem/mac
+@dirrm share/zoem
+@dirrm share/examples/zoem
+@dirrm share/doc/zoem/mac
+@dirrm share/doc/zoem/examples
+@dirrm share/doc/zoem/doc
+@dirrm share/doc/zoem

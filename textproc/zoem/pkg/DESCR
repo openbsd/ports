@@ -1,0 +1,11 @@
+Zoem is an interpretive macro/programming language.
+
+It can be used as an allround macro language, but has more
+specialized uses as well.  One such specific use is its support
+for creating small mark-up languages that map to different
+devices (creating manual pages and FAQs for HTML, troff, and
+Postscript).  Zoem has character filtering capabilities tailored
+to this application.  It can also be used for general practical
+document creation, allowing semantic mark-up, abstraction from
+repeated (mark-up) elements, centralized control, automatic
+generation of TOC sections, and more of that cruft.
