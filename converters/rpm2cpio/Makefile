@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/11 22:24:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/12 16:54:21 espie Exp $
 
 DISTNAME=	rpm2cpio-1.0
 CATEGORIES=	converters archivers
 NEED_VERSION=	1.300
 
 HOMEPAGE=	http://www.iagora.com/~espel/hacks.html
-MASTER_SITES=	http://www.iagora.com/~espel/
+MASTER_SITES=	http://www.iagora.com/~espel/ \
+		ftp://quatramaran.ens.fr/pub/orabidoo/
+		
 # In case other versions are released
 DIST_SUBDIR=	rpm2cpio-1.0
 DISTFILES=	rpm2cpio
