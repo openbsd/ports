@@ -1,25 +1,14 @@
---- src/tools.c.orig	Fri Mar 24 15:55:31 2000
-+++ src/tools.c	Tue Jun 27 23:14:45 2000
-@@ -82,19 +82,15 @@
- mail_warranty(void)
- {
-     FILE *fp = NULL;
--    char *filename;
+--- src/tools.c.orig	Wed Jan  3 23:11:51 2001
++++ src/tools.c	Thu Jul 19 09:03:39 2001
+@@ -85,8 +85,9 @@
      static char command[256];
--    if ((filename = tempnam(NULL, appname)) == NULL)
--	return;
--    if ((fp = fopen(filename, "w")) == NULL)
+ #if HAVE_MKSTEMP
+     char filename[] = "/tmp/squid-XXXXXX";
+-    int tfd = mkstemp(filename);
+-    if (tfd < 0)
++    int tfd = -1;
 +
-+    snprintf(command, 256, "mail %s", Config.adminEmail);
-+    if ((fp = popen(command, "w")) == NULL)
++    if (mkstemp(filename) == -1)
  	return;
-     fprintf(fp, "From: %s\n", appname);
-     fprintf(fp, "To: %s\n", Config.adminEmail);
-     fprintf(fp, "Subject: %s\n", dead_msg());
-     fclose(fp);
--    snprintf(command, 256, "mail %s < %s", Config.adminEmail, filename);
--    system(command);		/* XXX should avoid system(3) */
--    unlink(filename);
- }
- 
- void
+     if ((fp = fdopen(tfd, "w")) == NULL)
+ 	return;
