@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2002/03/19 02:59:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.202 2002/03/24 01:59:52 jsyn Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -30,6 +30,7 @@
 #    SUBDIR += cvsup-mirror
      SUBDIR += dc_gui
      SUBDIR += dctc
+     SUBDIR += ddclient
      SUBDIR += dlint
      SUBDIR += dnstracer
      SUBDIR += doc
