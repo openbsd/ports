@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2001/03/22 03:10:50 avsm Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/02/17 16:14:34 avsm Exp $
 #
 # courier-imap installation to detect old-format config files
 
@@ -57,7 +57,7 @@ case $2 in
         if [ -f /etc/imapd.cnf -o -f /etc/imapd.config -o -f /etc/imapd-ssl.config ]; then
 		do_notice
 	fi
-	if [ ! -f ${COURIERCONF}/authdaemonrc ]; then
+	if [ -d ${COURIERCONF} -a ! -f ${COURIERCONF}/authdaemonrc ]; then
 		do_notice2
         fi
 	;;

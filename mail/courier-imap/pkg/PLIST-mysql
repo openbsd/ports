@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1 2002/07/08 21:24:51 avsm Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.2 2003/02/17 16:14:34 avsm Exp $
 libexec/authlib/authdaemond.mysql
 man/man7/authmysql.7
 share/examples/courier-imap/authmysqlrc
+share/doc/courier-imap/README.authmysql.html
+share/doc/courier-imap/README.authmysql.myownquery

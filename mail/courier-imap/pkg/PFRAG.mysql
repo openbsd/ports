@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.3 2002/02/11 00:51:27 avsm Exp $
-libexec/authlib/authdaemond.mysql
-man/man7/authmysql.7
-share/examples/courier-imap/authmysqlrc
