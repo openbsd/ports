@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 19:58:10 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:45:04 marcm Exp $
 bin/test-moniker
 include/libbonoboui-2.0/bonobo.h
 include/libbonoboui-2.0/bonobo/bonobo-canvas-component.h
@@ -41,6 +41,40 @@ lib/libglade/2.0/libbonobo.a
 lib/libglade/2.0/libbonobo.la
 lib/pkgconfig/libbonoboui-2.0.pc
 share/gnome-2.0/ui/Bonobo_Sample_Hello.xml
+share/gtk-doc/html/libbonoboui/bonobo-controls.html
+share/gtk-doc/html/libbonoboui/bonobo-support-utilities.html
+share/gtk-doc/html/libbonoboui/bonobo-ui.html
+share/gtk-doc/html/libbonoboui/ch01.html
+share/gtk-doc/html/libbonoboui/control-frame.png
+share/gtk-doc/html/libbonoboui/control.png
+share/gtk-doc/html/libbonoboui/home.png
+share/gtk-doc/html/libbonoboui/index.html
+share/gtk-doc/html/libbonoboui/index.sgml
+share/gtk-doc/html/libbonoboui/left.png
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-a11y.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-control-frame.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-control.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-file-selector-util.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-plug.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-property-control.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-selector-widget.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-selector.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-socket.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-component.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-container.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-engine-config.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-engine.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-node.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-preferences.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-sync.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-ui-util.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-widget.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-window.html
+share/gtk-doc/html/libbonoboui/libbonoboui-bonobo-wrapper.html
+share/gtk-doc/html/libbonoboui/libbonoboui-faq.html
+share/gtk-doc/html/libbonoboui/libbonoboui.devhelp
+share/gtk-doc/html/libbonoboui/right.png
+share/gtk-doc/html/libbonoboui/up.png
 share/locale/am/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ar/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/az/LC_MESSAGES/libbonoboui-2.0.mo
@@ -48,6 +82,7 @@ share/locale/be/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bg/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ca/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/cs/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/cy/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/da/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/de/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/el/LC_MESSAGES/libbonoboui-2.0.mo
@@ -64,6 +99,7 @@ share/locale/ja/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/kn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/ml/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/mn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ms/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/nl/LC_MESSAGES/libbonoboui-2.0.mo
@@ -76,12 +112,15 @@ share/locale/ro/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ru/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sl/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/sr/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sv/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ta/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/tr/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/uk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/vi/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/wa/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/yi/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 %%SHARED%%
@@ -89,6 +128,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/yi/LC_MESSAGES
+@comment @dirrm share/locale/yi
 @comment @dirrm share/locale/wa/LC_MESSAGES
 @comment @dirrm share/locale/wa
 @comment @dirrm share/locale/vi/LC_MESSAGES
@@ -101,6 +142,10 @@ share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 @comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sl/LC_MESSAGES
 @comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -125,6 +170,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/ko/LC_MESSAGES
@@ -157,6 +204,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
@@ -172,9 +221,13 @@ share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 @comment @dirrm share/locale/am/LC_MESSAGES
 @comment @dirrm share/locale/am
 @comment @dirrm share/locale
+@dirrm share/gtk-doc/html/libbonoboui
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
 @dirrm share/gnome-2.0/ui
 @dirrm share/gnome-2.0
 @comment @dirrm lib/pkgconfig
 @comment @dirrm lib/libglade
+@comment @dirrm lib/bonobo
 @dirrm include/libbonoboui-2.0/bonobo
 @dirrm include/libbonoboui-2.0

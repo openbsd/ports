@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:01:29 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:45:05 marcm Exp $
 bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg.h
@@ -28,5 +28,9 @@ share/doc/librsvg/html/up.png
 @dirrm share/doc/librsvg/html
 @dirrm share/doc/librsvg
 @comment @dirrm lib/pkgconfig
+@comment @exec mkdir -p %D/lib/gimp/1.3/plug-ins
+@comment @dirrm lib/gimp/1.3/plug-ins
+@comment @dirrm lib/gimp/1.3
+@comment @dirrm lib/gimp
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2

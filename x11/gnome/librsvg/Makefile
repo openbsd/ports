@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/12 20:01:28 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:05 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
-DISTNAME=		librsvg-2.2.4
+DISTNAME=		librsvg-2.2.5
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -25,13 +25,14 @@ LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			pangoft2-1.0.0.0::devel/pango \
 			popt::devel/popt \
 			xml2.6::textproc/libxml
-						
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 	--without-svgz
+CONFIGURE_ARGS+= 	--without-gimp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

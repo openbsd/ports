@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/12 20:18:43 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/06 20:45:06 marcm Exp $
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.a
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.la
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.so
+lib/gtk-2.0/2.2.0/engines/libhcengine.a
+lib/gtk-2.0/2.2.0/engines/libhcengine.la
+lib/gtk-2.0/2.2.0/engines/libhcengine.so
 lib/gtk-2.0/2.2.0/engines/liblighthouseblue.a
 lib/gtk-2.0/2.2.0/engines/liblighthouseblue.la
 lib/gtk-2.0/2.2.0/engines/liblighthouseblue.so
@@ -872,6 +875,7 @@ share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
 share/locale/he/LC_MESSAGES/gnome-themes.mo
+share/locale/hi/LC_MESSAGES/gnome-themes.mo
 share/locale/hu/LC_MESSAGES/gnome-themes.mo
 share/locale/id/LC_MESSAGES/gnome-themes.mo
 share/locale/it/LC_MESSAGES/gnome-themes.mo
@@ -891,6 +895,8 @@ share/locale/ru/LC_MESSAGES/gnome-themes.mo
 share/locale/sk/LC_MESSAGES/gnome-themes.mo
 share/locale/sl/LC_MESSAGES/gnome-themes.mo
 share/locale/sq/LC_MESSAGES/gnome-themes.mo
+share/locale/sr/LC_MESSAGES/gnome-themes.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-themes.mo
 share/locale/sv/LC_MESSAGES/gnome-themes.mo
 share/locale/th/LC_MESSAGES/gnome-themes.mo
 share/locale/tr/LC_MESSAGES/gnome-themes.mo
@@ -1631,6 +1637,10 @@ share/themes/Traditional/index.theme
 @comment @dirrm share/locale/th
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sq/LC_MESSAGES
 @comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
@@ -1669,6 +1679,8 @@ share/themes/Traditional/index.theme
 @comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/fr/LC_MESSAGES

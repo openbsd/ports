@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/12 20:05:07 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/06 20:45:03 marcm Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
-DISTNAME=		eel-2.2.2
+DISTNAME=		eel-2.2.4
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

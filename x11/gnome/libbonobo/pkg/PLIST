@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/12 19:51:14 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/06 20:45:04 marcm Exp $
 bin/echo-client-2
 include/libbonobo-2.0/bonobo/Bonobo.h
 include/libbonobo-2.0/bonobo/bonobo-arg.h
@@ -67,6 +67,7 @@ share/locale/be/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/bg/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ca/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/cs/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/cy/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/da/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/de/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/el/LC_MESSAGES/libbonobo-2.0.mo
@@ -84,6 +85,7 @@ share/locale/ja/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mk/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/ml/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mn/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ms/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/nl/LC_MESSAGES/libbonobo-2.0.mo
@@ -97,11 +99,14 @@ share/locale/ru/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/sk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/sl/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/sq/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/sr/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/sv/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ta/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/tr/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/uk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/vi/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/yi/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 %%SHARED%%
@@ -109,6 +114,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/yi/LC_MESSAGES
+@comment @dirrm share/locale/yi
 @comment @dirrm share/locale/vi/LC_MESSAGES
 @comment @dirrm share/locale/vi
 @comment @dirrm share/locale/uk/LC_MESSAGES
@@ -119,6 +126,10 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sq/LC_MESSAGES
 @comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
@@ -145,6 +156,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
 @comment @dirrm share/locale/mk/LC_MESSAGES
 @comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
@@ -179,6 +192,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
@@ -196,9 +211,14 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale
 @dirrm share/idl/bonobo-2.0
 @comment @dirrm share/idl
+@comment @exec mkdir -p %D/share/gtk-doc/html/libbonobo
+@comment @dirrm share/gtk-doc/html/libbonobo
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
 @comment @dirrm lib/pkgconfig
 @unexec rmdir %D/lib/bonobo/monikers 2>/dev/null || true
 @dirrm lib/bonobo-2.0/samples
 @dirrm lib/bonobo-2.0
+@comment @dirrm lib/bonobo
 @dirrm include/libbonobo-2.0/bonobo
 @dirrm include/libbonobo-2.0

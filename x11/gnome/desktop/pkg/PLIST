@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:06:12 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:45:03 marcm Exp $
 @pkgcfl gnome-core-*
 bin/gnome-about
 include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
@@ -59,6 +59,7 @@ share/locale/ko/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/ml/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -71,9 +72,9 @@ share/locale/ro/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sp/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -81,6 +82,7 @@ share/locale/tr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/yi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 share/pixmaps/advanced-directory.png
@@ -218,6 +220,8 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/yi/LC_MESSAGES
+@comment @dirrm share/locale/yi
 @comment @dirrm share/locale/wa/LC_MESSAGES
 @comment @dirrm share/locale/wa
 @comment @dirrm share/locale/vi/LC_MESSAGES
@@ -232,12 +236,12 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
 @comment @dirrm share/locale/sr/LC_MESSAGES
 @comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sq/LC_MESSAGES
 @comment @dirrm share/locale/sq
-@comment @dirrm share/locale/sp/LC_MESSAGES
-@comment @dirrm share/locale/sp
 @comment @dirrm share/locale/sl/LC_MESSAGES
 @comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -262,6 +266,8 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
 @comment @dirrm share/locale/mk/LC_MESSAGES
 @comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
@@ -332,12 +338,20 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @dirrm share/gnome/vfolders
+@comment @exec mkdir -p %D/share/gnome/help/lgpl/C/figures
+@comment @dirrm share/gnome/help/lgpl/C/figures
 @dirrm share/gnome/help/lgpl/C
 @dirrm share/gnome/help/lgpl
+@comment @exec mkdir -p %D/share/gnome/help/gpl/C/figures
+@comment @dirrm share/gnome/help/gpl/C/figures
 @dirrm share/gnome/help/gpl/C
 @dirrm share/gnome/help/gpl
+@comment @exec mkdir -p %D/share/gnome/help/gnome-feedback/C/figures
+@comment @dirrm share/gnome/help/gnome-feedback/C/figures
 @dirrm share/gnome/help/gnome-feedback/C
 @dirrm share/gnome/help/gnome-feedback
+@comment @exec mkdir -p %D/share/gnome/help/fdl/C/figures
+@comment @dirrm share/gnome/help/fdl/C/figures
 @dirrm share/gnome/help/fdl/C
 @dirrm share/gnome/help/fdl
 @comment @dirrm share/gnome/help

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/12 20:08:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/06 20:45:03 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
-VERSION=		2.2.1
+VERSION=		2.2.2
 DISTNAME=		control-center-${VERSION}
 PKGNAME=		control-center2-${VERSION}
 CATEGORIES=		x11 x11/gnome

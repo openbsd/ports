@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/12 20:18:43 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/06 20:45:06 marcm Exp $
 
 COMMENT=		"themes collection for GNOME"
 
-DISTNAME=		gnome-themes-2.2.1
+DISTNAME=		gnome-themes-2.2.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

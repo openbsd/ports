@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
---- configure.orig	Mon Mar 10 11:24:24 2003
-+++ configure	Mon May 12 11:12:55 2003
-@@ -5855,8 +5855,8 @@ else
+$OpenBSD: patch-configure,v 1.3 2003/08/06 20:45:05 marcm Exp $
+--- configure.orig	2003-03-18 08:23:59.000000000 -0800
++++ configure	2003-07-31 21:30:12.000000000 -0700
+@@ -5856,8 +5856,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -5865,8 +5865,8 @@ else
+@@ -5866,8 +5866,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
          ;;
        esac
      fi
-@@ -8292,21 +8292,21 @@ fi
+@@ -8212,21 +8212,21 @@ fi
  	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
  	glib-2.0 >= $GLIB_REQUIRED \
  	libart-2.0 >= $LIBART_REQUIRED \
@@ -51,7 +51,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
              echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
              succeeded=yes
-@@ -8314,10 +8314,10 @@ echo "${ECHO_T}yes" >&6
+@@ -8234,10 +8234,10 @@ echo "${ECHO_T}yes" >&6
              echo "$as_me:$LINENO: checking LIBRSVG_CFLAGS" >&5
  echo $ECHO_N "checking LIBRSVG_CFLAGS... $ECHO_C" >&6
              LIBRSVG_CFLAGS=`$PKG_CONFIG --cflags "\
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
  	pangoft2 >= $PANGOFT2_REQUIRED"`
              echo "$as_me:$LINENO: result: $LIBRSVG_CFLAGS" >&5
  echo "${ECHO_T}$LIBRSVG_CFLAGS" >&6
-@@ -8328,8 +8328,8 @@ echo $ECHO_N "checking LIBRSVG_LIBS... $
+@@ -8248,8 +8248,8 @@ echo $ECHO_N "checking LIBRSVG_LIBS... $
  	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
  	glib-2.0 >= $GLIB_REQUIRED \
  	libart-2.0 >= $LIBART_REQUIRED \
@@ -74,7 +74,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
              echo "$as_me:$LINENO: result: $LIBRSVG_LIBS" >&5
  echo "${ECHO_T}$LIBRSVG_LIBS" >&6
          else
-@@ -8341,8 +8341,8 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
+@@ -8261,8 +8261,8 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
  	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
  	glib-2.0 >= $GLIB_REQUIRED \
  	libart-2.0 >= $LIBART_REQUIRED \
@@ -85,7 +85,7 @@ $OpenBSD: patch-configure,v 1.2 2003/06/12 20:01:29 marcm Exp $
              echo $LIBRSVG_PKG_ERRORS
          fi
  
-@@ -8361,14 +8361,14 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
+@@ -8281,14 +8281,14 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
  	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
  	glib-2.0 >= $GLIB_REQUIRED \
  	libart-2.0 >= $LIBART_REQUIRED \

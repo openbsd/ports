@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 19:58:10 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/06 20:45:04 marcm Exp $
 
 COMMENT=		"user interface components for bonobo"
 
-DISTNAME=		libbonoboui-2.2.0.1
+DISTNAME=		libbonoboui-2.2.4
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -21,8 +21,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
-LIB_DEPENDS=		glade-2.0.0.0::devel/libglade2 \
-			gnome-2::x11/gnome/libgnome \
+LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
 			gnomecanvas-2::x11/gnome/libgnomecanvas
 
 SEPARATE_BUILD= 	concurrent

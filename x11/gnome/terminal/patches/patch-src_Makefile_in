@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/07/06 18:19:21 marcm Exp $
---- src/Makefile.in.orig	Sun Jul  6 10:42:51 2003
-+++ src/Makefile.in	Sun Jul  6 10:43:23 2003
-@@ -603,7 +603,6 @@ maintainer-clean-generic clean mostlycle
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/08/06 20:45:06 marcm Exp $
+--- src/Makefile.in.orig	2003-06-02 12:26:30.000000000 -0700
++++ src/Makefile.in	2003-08-04 23:29:52.000000000 -0700
+@@ -576,7 +576,6 @@ maintainer-clean-generic clean mostlycle
  
  
  install-data-local:

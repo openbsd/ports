@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/12 19:52:11 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/06 20:45:05 marcm Exp $
 
 COMMENT=		"MIME and Application database for GNOME"
 
-DISTNAME=		gnome-mime-data-2.2.0
+DISTNAME=		gnome-mime-data-2.2.1
 CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
