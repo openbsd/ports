@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.609 2004/02/07 22:18:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.610 2004/02/07 22:34:02 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -102,6 +102,15 @@ PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
 CDROM_PACKAGES?=	${PKGREPOSITORYBASE}/cdrom
 FTP_PACKAGES?=		${PKGREPOSITORYBASE}/ftp
 
+# local path locations
+.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
+
+WRKOBJDIR_${PKGPATH}?= ${WRKOBJDIR}
+FAKEOBJDIR_${PKGPATH}?= ${FAKEOBJDIR}
+BULK_${PKGPATH}?= ${BULK}
+BULK_TARGETS_${PKGPATH}?= ${BULK_TARGETS}
+CLEANDEPENDS_${PKGPATH}?= ${CLEANDEPENDS}
+
 # Commands and command settings.
 PKG_DBDIR?=		/var/db/pkg
 
@@ -163,7 +172,7 @@ _clean=${clean}
 .if empty(_clean) || ${_clean:L} == "depends"
 _clean+=work
 .endif
-.if ${CLEANDEPENDS:L} == "yes"
+.if ${CLEANDEPENDS_${PKGPATH}:L} == "yes"
 _clean+=depends
 .endif
 .if ${_clean:L:Mwork}
@@ -469,17 +478,17 @@ BZIP2?=	bzip2
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
-.if !empty(FAKEOBJDIR)
-WRKINST?=	${FAKEOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}
+.if !empty(FAKEOBJDIR_${PKGPATH})
+WRKINST?=	${FAKEOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .else
 WRKINST?=	${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
-.if !empty(WRKOBJDIR)
+.if !empty(WRKOBJDIR_${PKGPATH})
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR?=		${WRKOBJDIR}/${PKGNAME}
+WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
 .  else
-WRKDIR?=		${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}
+WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .else
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
@@ -1021,7 +1030,7 @@ _PACKAGE_DEPS=${_PACKAGE_COOKIES}
 .if defined(ALWAYS_PACKAGE)
 _INSTALL_DEPS+=${_PACKAGE_COOKIES}
 .endif
-.if ${BULK:L} == "yes"
+.if ${BULK_${PKGPATH}:L} == "yes"
 _INSTALL_DEPS+=${_BULK_COOKIE}
 _PACKAGE_DEPS+=${_BULK_COOKIE}
 .endif
@@ -1092,8 +1101,6 @@ _BUILD_DEP=
 _LIB_DEP2= ${LIB_DEPENDS}
 
 README_NAME?=	${TEMPLATES}/README.port
-
-.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
 ###
 ### end of variable setup. Only targets now
@@ -1490,7 +1497,7 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
-.for _i in ${BULK_TARGETS}
+.for _i in ${BULK_TARGETS_${PKGPATH}}
 	@${ECHO_MSG} "===> Running ${_i}"
 	@cd ${.CURDIR} && exec ${MAKE} ${_i} ${BULK_FLAGS}
 .endfor
