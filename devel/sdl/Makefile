@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2005/01/05 21:52:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2005/01/29 22:56:34 robert Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.7
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -84,11 +84,11 @@ CONFIGURE_ARGS+= --disable-video-aalib
 
 .if ${FLAVOR:L:Mcaca}
 PATCH_DIST_STRIP= -p1
-PATCHFILES=	patch-libsd1.2.6-libcaca0.9.diff:0
+PATCHFILES=	patch-libsd1.2.7-libcaca0.9.diff:0
 LIB_DEPENDS+=	caca::graphics/libcaca
 CONFIGURE_ARGS+= --enable-video-caca
 .else
-SUPDISTFILES+=	patch-libsd1.2.6-libcaca0.9.diff:0
+SUPDISTFILES+=	patch-libsd1.2.7-libcaca0.9.diff:0
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
