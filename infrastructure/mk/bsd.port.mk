@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.405 2001/04/20 16:25:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.406 2001/05/05 20:23:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1180,7 +1180,7 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 ${_DEP}-depends:
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
-	@unset DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
+	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
@@ -2127,7 +2127,7 @@ clean-depends:
 #
 describe:
 .if !defined(NO_DESCRIBE) 
-.  if !defined(PACKAGING) && ${SUBPACKAGE} != ""
+.  if !defined(PACKAGING) && defined(MULTI_PACKAGES)
 	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
 .  else
 	@echo -n "${FULLPKGNAME}|${FULLPKGPATH}|"
