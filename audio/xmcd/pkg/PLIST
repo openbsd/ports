@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:16:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/22 10:43:51 espie Exp $
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
@@ -34,12 +34,20 @@ share/doc/xmcd/README
 share/doc/xmcd/RELNOTES
 share/doc/xmcd/WEB
 share/examples/xmcd/
+@sample ${SYSCONFDIR}/xmcd/
+@sample /var/db/xmcd/
 share/examples/xmcd/bkgnd.gif
+@sample /var/db/xmcd/bkgnd.gif
 share/examples/xmcd/common.cfg
+@sample ${SYSCONFDIR}/xmcd/common.cfg
 share/examples/xmcd/device.cfg
+@sample ${SYSCONFDIR}/xmcd/device.cfg
 share/examples/xmcd/discog.html
+@sample /var/db/xmcd/discog.html
 share/examples/xmcd/sites
+@sample ${SYSCONFDIR}/xmcd/sites
 share/examples/xmcd/xmcdlogo.gif
+@sample /var/db/xmcd/xmcdlogo.gif
 share/xmcd/
 share/xmcd/app-defaults/
 share/xmcd/app-defaults/XKeysymDB
