@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.compat,v 1.1 2004/10/26 22:59:24 espie Exp $
+@comment $OpenBSD: PFRAG.compat,v 1.2 2004/10/27 19:57:16 espie Exp $
 @conflict qt3
 bin/assistant
 bin/designer3
@@ -13,4 +13,5 @@ bin/qt20fix3
 bin/qtconfig
 bin/qtrename1403
 bin/uic3
+lib/qt3/bin
 %%SHARED%%

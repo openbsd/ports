@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/10/26 23:04:12 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2004/10/27 19:57:16 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -284,5 +284,6 @@ do-install:
 	cd ${PREFIX}/lib && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
 	cd ${PREFIX}/lib/qt3 && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
 .endif
+	cd ${PREFIX}/lib/qt3 && ln -sf bin${MT_SUFX} bin
 
 .include <bsd.port.mk>
