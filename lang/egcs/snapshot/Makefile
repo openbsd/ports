@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2000/06/28 00:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2000/07/14 18:16:22 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -81,7 +81,7 @@ MULTI_PACKAGES+=-java
 BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
 .endif
 
-LATEST_DATE=2000-06-26
+LATEST_DATE=2000-07-10
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -93,7 +93,7 @@ LATEST_DATE=2000-06-26
 #PATCH_DEBUG=yes
 
 LATEST=${LATEST_DATE:S/-//g}
-DIRECTORY=egcs/snapshots/%DATE%/
+DIRECTORY=snapshots/%DATE%/
 .if defined(NEXT_DATE)
 NEXT=${NEXT_DATE:S/-//g}
 DISTNAME=	egcs-${NEXT}
@@ -112,52 +112,60 @@ PATCH_DIST_STRIP=-p1
 DISTFILES=  egcs-${LATEST}${EXTRACT_SUFX}
 
 SITES=	
-SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
-SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
-SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
-SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
-SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
-SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
-SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
 
-SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
-SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
-SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
-SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
-SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
-SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
-SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
-SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
-SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
-SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
-SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
-SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
-SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
-SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
-SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
-SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
-SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
-SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.uvsq.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.grolier.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
+SITES+= ftp://chardonnay.elis.rug.ac.be/pub/mirrors/gcc.cygnus.com/pub/gcc/${DIRECTORY}
+SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
+SITES+=	ftp://egcs.cygnus.com/pub/egcs/${DIRECTORY} 
+SITES+= ftp://ftp.goof.com/pub/pcg/egcs/${DIRECTORY}
+SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/${DIRECTORY}
+SITES+= ftp://cambridge.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/egcs/${DIRECTORY}
+
+SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.auc.dk/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.fu-berlin.de/unix/languages/egcs/egcs/${DIRECTORY}
+SITES+= ftp://ftp.gwdg.de/pub/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/egcs/${DIRECTORY}
+SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/egcs/${DIRECTORY}
+SITES+= ftp://ftp.sunet.se/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.ntua.gr/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://ftp.nluug.nl/pub/languages/egcs/${DIRECTORY}
+SITES+= ftp://ftp.dti.ad.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.win.or.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lab.kdd.co.jp/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.crc.ca/pub/packages/egcs/${DIRECTORY}
+SITES+= ftp://ftp.nc.orc.ru/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/egcs/${DIRECTORY}
+SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/egcs/${DIRECTORY}
+SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/egcs/${DIRECTORY}
 
 # Can't contact those, maybe they work ?
-SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
-SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
-SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
-SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
-SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
-SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
-SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
-SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
+SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.icm.edu.pl/pub/programming/egcs/${DIRECTORY}
+SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lca.uevora.pt/pub/egcs/${DIRECTORY}
+SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://linux.ihep.su/pub/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/egcs/${DIRECTORY}
+SITES+= ftp://ftp.ninemoons.com/pub/mirrors/egcs/${DIRECTORY}
 
+# Bad mirrors (no snapshot)
+# ftp.lip6.fr, ftp.ilog.fr, ftp.irisa.fr
+# No route to host
+# mirrors.aarnet.edu.au
+#SITES+=	ftp://ftp.lip6.fr/pub/egcs/${DIRECTORY}
+#SITES+= ftp://ftp.ilog.fr/pub/Mirrors/egcs/${DIRECTORY}
+#SITES+= ftp://ftp.irisa.fr/pub/mirrors/egcs.cygwin.com/gcc/${DIRECTORY}
 MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
-FAKE=		Yes
 FAKE_FLAGS=	DESTDIR=${WRKINST}
 # add a possible next snapshot
 
@@ -201,7 +209,7 @@ post-patch:
 # This should not be used for regular releases, but if you're using this
 # snapshot, you know what you're doing, don't you ?
 
-HAS_CONFIGURE=	yes
+CONFIGURE_STYLE=	gnu dest
 
 #CONFIGURE_SCRIPT=../source/configure
 
@@ -224,13 +232,12 @@ LANGS+=java
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
-CFLAGS=-O2
+CFLAGS=-O2 -g
 CONFIGURE_ENV=LANGUAGES='${LANGS}'  
 
 
 
-CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' \
---verbose --program-transform-name=s,^,e, \
+CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 --disable-subdir-texinfo \
 --disable-nls
 
