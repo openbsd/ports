@@ -1,6 +1,15 @@
---- ./lib/libxview/ttysw/tty_mapkey.c.orig	Tue Jun 29 07:17:20 1993
-+++ ./lib/libxview/ttysw/tty_mapkey.c	Sat Apr  1 18:25:33 2000
-@@ -500,7 +500,7 @@ ttysw_remove_caps(label, label_ptr)
+--- ./lib/libxview/ttysw/tty_mapkey.c.orig	Mon Jun 28 23:17:20 1993
++++ ./lib/libxview/ttysw/tty_mapkey.c	Wed Feb 20 16:04:45 2002
+@@ -96,7 +96,7 @@
+ 
+ 	lineno++;
+ 	if (line[strlen(line) - 1] != '\n') {
+-	    register char   c;
++	    int c;
+ 
+ 	    (void) printf(XV_MSG("%s: line %d longer than 1024 characters\n"), rc, lineno);
+ 	    while ((c = fgetc(fp)) != '\n' && c != EOF);
+@@ -500,7 +500,7 @@
   * have more time.
   */
  
