@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/16 23:06:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/15 14:35:54 camield Exp $
 
 DISTNAME=	publicfile-0.52
 HOMEPAGE=	http://cr.yp.to/publicfile.html
@@ -26,6 +26,7 @@ pre-build:
 	@echo ${PREFIX}/publicfile > ${WRKSRC}/conf-home
 
 pre-install:
+	sleep 1
 	@echo ${PREFIX}/publicfile > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
