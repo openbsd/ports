@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/25 06:57:44 matthieu Exp $
 
 COMMENT=	"Sendmail Log Analysis Report"
 
-VERSION=	1.3.2
+VERSION=	1.4
 DISTNAME=	sma-${VERSION}
 CATEGORIES=	mail
 
