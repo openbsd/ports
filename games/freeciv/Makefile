@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:18 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/15 02:38:18 turan Exp $
+
+BROKEN=		sources missing
 
 DISTNAME=	freeciv-1.8.1
 CATEGORIES=	games
