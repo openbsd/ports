@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.1 1998/04/13 03:35:20 marc Exp $
+$OpenBSD: LICENSE,v 1.2 1998/04/13 05:12:54 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -75,8 +75,9 @@ Y	benchmarks/bytebench		bytebench-3.1.tar.Z		NONE
 Y	benchmarks/iozone		iozone-2.01.shar.gz		COPY
 Y	benchmarks/lmbench		lmbench.tar.Z			GPL
 Y	benchmarks/tcpblast		-none-				NONE
-N	benchmarks/xengine		xengine/			NOFEE
+N	benchmarks/xengine		xengine				NOFEE
 Y	chinese/c2t			c2t.tar.gz			NONE
+Y	chinese/c2t			TONEPY.tit			NONE
 N	chinese/lunar			lunar-2.1.tar.gz		NOFEE
 Y	comms/bpl+			bpl+.tar.gz			COPY
 Y	comms/hylafax			hylafax-v4.0pl1-tar.gz		BSD
@@ -127,7 +128,7 @@ Y	graphics/xfig			xfig.3.2.tar.gz			X
 Y	graphics/xpaint			xpaint-2.5.tar.gz		BSD
 Y	graphics/xpdf			xpdf-0.7.tar.gz			COPY
 Y	graphics/xpm			xpm-3.4k.tar.gz			BSD
-Y	graphics/xv			xv-3.10a/			SHARE
+Y	graphics/xv			xv-3.10a			SHARE
 Y	lang/Gofer			gofer230a.tar.gz		BSD
 N	lang/STk			STk-3.1.tar.gz			NOFEE
 Y	lang/expect			expect.tar.gz			PD
@@ -142,14 +143,14 @@ Y	mail/exim			exim-texinfo-1.80.tar.gz	COPY
 N	mail/faces			faces-1.6.1.tar.Z		NOFEE
 Y	mail/fetchmail			fetchmail-4.3.8.tar.gz		GPL
 Y	mail/metamail			mm2.7.tar.Z			BSD
-Y	mail/pgpsendmail		PGPsendmail-v1.4.tar.gz		GPL
+Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
 Y	mail/pine			pine3.96.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
 N	mail/procmail			procmail-3.11pre7.tar.gz	NOFEE
 Y	mail/xfaces			xfaces-3.3.tar.Z		BSD
 Y	mail/xfaces			xfaces-sounds.tar.gz		NONE
 Y	misc/amanda			amanda-2.3.0.tar.gz		BSD
-N	misc/astrolog			astrolog/			NOFEE
+N	misc/astrolog			astrolog			NOFEE
 Y	misc/buffer			buffer-1.17.tar.gz		GPL
 Y	misc/cdrecord-current		cdrecord-1.6a7.tar.gz		GPL
 Y	misc/screen			screen-3.7.4.tar.gz		GPL
@@ -169,7 +170,7 @@ Y	net/trafshow			trafshow-2.0.tgz		BSD
 Y	net/ucd-snmp			ucd-snmp-3.2.tar.gz		BSD
 Y	net/wget			wget-1.4.5.tar.gz		GPL
 Y	net/ytalk			ytalk-v3pl2.tar.gz		COPY
-Y	news/aub			aub/				COPY
+Y	news/aub			aub				COPY
 Y	news/leafnode			leafnode-1.0.2.src.elf.tgz	COPY
 Y	news/newsfetch			newsfetch-1.0.tar.gz		NONE
 Y	news/plor			plor-0.3.1.tar.gz		GPL
@@ -180,8 +181,8 @@ Y	print/a2ps			a2ps-4.9.9.tar.gz		GPL
 Y	print/afm			afm-tar.Z			COPY
 Y	print/ghostscript5		ghostscript-5.10.tar.gz		COPY
 Y	print/ghostscript5		ghostscript-5.10gnu.tar.gz	GNU
-Y	print/ghostscript5		ghostscript-fonts-other-5.10.tar.gz
-Y	print/ghostscript5		ghostscript-fonts-std-5.10.tar.gz
+Y	print/ghostscript5	ghostscript-fonts-other-5.10.tar.gz	COPY
+Y	print/ghostscript5	ghostscript-fonts-std-5.10.tar.gz	COPY
 Y	print/ghostscript5		hp850.zip			NONE
 Y	print/ghostview			ghostview-1.5.tar.gz		GPL
 Y	print/gv			gv-3.5.8.tar.gz			GPL

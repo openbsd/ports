@@ -1,0 +1,123 @@
+#! /bin/sh
+#
+# $OpenBSD: license-check,v 1.1 1998/04/13 05:12:55 marc Exp $
+#
+# This script verifies that all files in a given directory are
+# mentioned in the ports LICENSE file as Distribution allowed.
+# Output is three lists:
+#
+#  Missing files:	files that should be in the directory (if the
+#			intent is to obtain all files that can be
+#			re-distributed) but are not.
+#
+#  Bad files:		files that must NOT be in a distribution
+#			directory.  These are listed in the form
+#			of a shell `rm -f xxx' command so they can
+#			be fed to the shell after manual verification.
+#
+#  Extra files:		Files that are in the given directory that are
+#			not mentioned in the ports LICENSE file.
+#
+
+# The ports base directory.  Note: this may be supplied from the environment
+# using the standard bsd.port.mkl name of PORTSDIR
+#
+LICENCE=${PORTSDIR:-/usr/ports}/LICENSE
+
+# Our name and a function to spit out the usage.  Exit.
+#
+prog=`basename $0`
+usage () {
+    if [ ! -z "$1" ]; then
+	echo "$prog: $1"
+    fi
+    echo "usage: $prog distribution-directory"
+    exit 1
+}
+
+# Verify we have one param and that it is the name of a directory.
+# If not spit out our usage and exit
+#
+if [ $# -eq 1 ]; then
+    if [ -d $1 ]; then
+	DIST=$1
+    else
+	usage "$1 is not a directory"
+    fi
+else
+    usage
+fi
+
+# This awk script matches the licence file agains an `ls' of of the given
+# distribution directory and spits instructions out to stdout.
+#
+/bin/ls $DIST |
+awk -v L=$LICENCE '
+BEGIN {
+    # Process license file
+    #
+    while ( getline <L ) {
+	if ( NF == 4 ) {
+	    if ( $1 == "Y" ) {
+		good_files[ $3 ] = 0
+	    } else if ( $1 == "N" ) {
+		bad_files[ $3 ] = 0
+	    }
+	}
+    }
+    unk_count = 0
+}
+
+$1 in good_files {
+    good_files[ $1 ] = 1
+    next
+}
+$1 in bad_files {
+    bad_files[ $1 ] = 1
+    next
+}
+{
+    unk_files[ unk_count++ ] = $1
+}
+
+END {
+    header = 0
+    for ( f in good_files ) {
+	if ( good_files[ f ] == 0 ) {
+	    if ( ! header ) {
+		print "You are missing the following files:"
+		print
+		header = 1
+	    }
+	    print f
+	}
+    }
+    if ( header ) {
+	print
+	header = 0
+    }
+    for ( f in bad_files ) {
+	if ( bad_files[ f ] == 1 ) {
+	    if ( ! header ) {
+		print "You MUST remove the following files:"
+		print
+		header = 1
+	    }
+	    print "rm -f", f
+	}
+    }
+    if ( header ) {
+	print
+	header = 0
+    }
+    if ( unk_count > 0 ) {
+	print "The following files are extra and should probably be removed:"
+	print
+	for ( i = 0; i < unk_count; i += 1 ) {
+	    print "rm -f", unk_files[ i ]
+	}
+	print
+    }
+}
+' 
+exit 0
