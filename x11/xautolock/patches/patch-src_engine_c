@@ -1,0 +1,20 @@
+--- src/engine.c.orig
++++ src/engine.c
+@@ -209,7 +209,7 @@
+ #else /* VMS */
+   if (lockerPid)
+   {
+-#if !defined (UTEKV) && !defined (SYSV) && !defined (SVR4)
++#if !defined (UTEKV) && !defined (SYSV) && !defined (SVR4) && !defined(__OpenBSD__)
+     union wait  status;      /* childs process status */
+ #else /* !UTEKV && !SYSV && !SVR4 */
+     int         status = 0;  /* childs process status */
+@@ -220,7 +220,7 @@
+       (void) kill (lockerPid, SIGTERM);
+     }
+ 
+-#if !defined (UTEKV) && !defined (SYSV) && !defined (SVR4)
++#if !defined (UTEKV) && !defined (SYSV) && !defined (SVR4) && !defined(__OpenBSD__) 
+     if (wait3 (&status, WNOHANG, 0))
+ #else /* !UTEKV && !SYSV && !SVR4 */
+     if (waitpid (-1, &status, WNOHANG)) 
