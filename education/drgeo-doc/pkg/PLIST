@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/21 20:47:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:39:58 espie Exp $
+share/drgeo/
+share/drgeo/help/
+share/drgeo/help/c/
 share/drgeo/help/c/contents.html
 share/drgeo/help/c/default_behaviour.html
 share/drgeo/help/c/drgenius.html
@@ -48,6 +51,7 @@ share/drgeo/help/c/drgenius_8.html
 share/drgeo/help/c/drgenius_9.html
 share/drgeo/help/c/drgenius_guile_script.html
 share/drgeo/help/c/editing_object_styles.html
+share/drgeo/help/c/figures/
 share/drgeo/help/c/figures/_fig3.png
 share/drgeo/help/c/figures/blank.png
 share/drgeo/help/c/figures/fig0.png
@@ -118,6 +122,7 @@ share/drgeo/help/c/other_tools.html
 share/drgeo/help/c/point_tools.html
 share/drgeo/help/c/transformation_tools.html
 share/drgeo/help/c/using_macro.html
+share/drgeo/help/es/
 share/drgeo/help/es/contents.html
 share/drgeo/help/es/default_behaviour.html
 share/drgeo/help/es/drgenius.html
@@ -209,6 +214,7 @@ share/drgeo/help/es/drgenius_97.html
 share/drgeo/help/es/drgenius_98.html
 share/drgeo/help/es/drgenius_guile_script.html
 share/drgeo/help/es/editing_object_styles.html
+share/drgeo/help/es/figures/
 share/drgeo/help/es/figures/_fig3.png
 share/drgeo/help/es/figures/blank.png
 share/drgeo/help/es/figures/fig0.png
@@ -281,6 +287,7 @@ share/drgeo/help/es/other_tools.html
 share/drgeo/help/es/point_tools.html
 share/drgeo/help/es/transformation_tools.html
 share/drgeo/help/es/using_macro.html
+share/drgeo/help/fr/
 share/drgeo/help/fr/contents.html
 share/drgeo/help/fr/default_behaviour.html
 share/drgeo/help/fr/drgenius.html
@@ -375,6 +382,7 @@ share/drgeo/help/fr/drgenius_98.html
 share/drgeo/help/fr/drgenius_99.html
 share/drgeo/help/fr/drgenius_guile_script.html
 share/drgeo/help/fr/editing_object_styles.html
+share/drgeo/help/fr/figures/
 share/drgeo/help/fr/figures/_fig3.png
 share/drgeo/help/fr/figures/blank.png
 share/drgeo/help/fr/figures/fig0.png
@@ -449,6 +457,7 @@ share/drgeo/help/fr/other_tools.html
 share/drgeo/help/fr/point_tools.html
 share/drgeo/help/fr/transformation_tools.html
 share/drgeo/help/fr/using_macro.html
+share/drgeo/help/it/
 share/drgeo/help/it/contents.html
 share/drgeo/help/it/default_behaviour.html
 share/drgeo/help/it/drgenius.html
@@ -530,6 +539,7 @@ share/drgeo/help/it/drgenius_88.html
 share/drgeo/help/it/drgenius_9.html
 share/drgeo/help/it/drgenius_guile_script.html
 share/drgeo/help/it/editing_object_styles.html
+share/drgeo/help/it/figures/
 share/drgeo/help/it/figures/blank.png
 share/drgeo/help/it/figures/fig0.png
 share/drgeo/help/it/figures/fig1.png
@@ -600,6 +610,7 @@ share/drgeo/help/it/other_tools.html
 share/drgeo/help/it/point_tools.html
 share/drgeo/help/it/transformation_tools.html
 share/drgeo/help/it/using_macro.html
+share/drgeo/help/nl/
 share/drgeo/help/nl/default_behaviour.html
 share/drgeo/help/nl/drgenius.html
 share/drgeo/help/nl/drgenius_11.html
@@ -672,6 +683,7 @@ share/drgeo/help/nl/drgenius_8.html
 share/drgeo/help/nl/drgenius_9.html
 share/drgeo/help/nl/drgenius_guile_script.html
 share/drgeo/help/nl/editing_object_styles.html
+share/drgeo/help/nl/figures/
 share/drgeo/help/nl/inhoudstabel.html
 share/drgeo/help/nl/inleiding.html
 share/drgeo/help/nl/line_tools.html
@@ -681,15 +693,3 @@ share/drgeo/help/nl/other_tools.html
 share/drgeo/help/nl/point_tools.html
 share/drgeo/help/nl/transformation_tools.html
 share/drgeo/help/nl/using_macro.html
-@exec mkdir -p %D/share/drgeo/help/nl/figures
-@dirrm share/drgeo/help/nl/figures
-@dirrm share/drgeo/help/nl
-@dirrm share/drgeo/help/it/figures
-@dirrm share/drgeo/help/it
-@dirrm share/drgeo/help/fr/figures
-@dirrm share/drgeo/help/fr
-@dirrm share/drgeo/help/es/figures
-@dirrm share/drgeo/help/es
-@dirrm share/drgeo/help/c/figures
-@dirrm share/drgeo/help/c
-@dirrm share/drgeo/help

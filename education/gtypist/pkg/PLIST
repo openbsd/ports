@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:01:42 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gtypist.info
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:39:58 espie Exp $
 bin/gtypist
 bin/typefortune
-info/gtypist.info
-man/man1/gtypist.1
-man/man1/typefortune.1
+@info info/gtypist.info
+@man man/man1/gtypist.1
+@man man/man1/typefortune.1
+@comment share/emacs/
+@comment share/emacs/site-lisp/
+@comment share/emacs/site-lisp/gtypist-mode.el
+@comment share/emacs/site-lisp/gtypist-mode.elc
+share/gtypist/
 share/gtypist/cs.typ
 share/gtypist/d.typ
 share/gtypist/demo.typ
@@ -36,20 +40,3 @@ share/locale/fi/LC_MESSAGES/gtypist.mo
 share/locale/fr/LC_MESSAGES/gtypist.mo
 share/locale/ru/LC_MESSAGES/gtypist.mo
 share/locale/zh_TW/LC_MESSAGES/gtypist.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/gtypist
-@exec install-info --info-dir=%D/info %D/info/gtypist.info
