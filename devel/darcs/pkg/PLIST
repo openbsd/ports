@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/20 03:55:46 avsm Exp $
+bin/darcs
+libexec/darcs/darcs-patcher
+libexec/darcs/darcs.cgi
+man/man1/darcs.1
+sbin/darcs-createrepo
+share/darcs/bash_completion.d/darcs
+share/darcs/cgi.conf
+share/darcs/zsh_completion_new
+share/darcs/zsh_completion_old
+share/doc/darcs/contents.png
+share/doc/darcs/darcs.css
+share/doc/darcs/darcs.html
+share/doc/darcs/darcs.ps
+share/doc/darcs/footnode.html
+share/doc/darcs/images.aux
+share/doc/darcs/images.log
+share/doc/darcs/images.pl
+share/doc/darcs/images.tex
+share/doc/darcs/img1.png
+share/doc/darcs/img10.png
+share/doc/darcs/img11.png
+share/doc/darcs/img12.png
+share/doc/darcs/img13.png
+share/doc/darcs/img14.png
+share/doc/darcs/img15.png
+share/doc/darcs/img16.png
+share/doc/darcs/img17.png
+share/doc/darcs/img18.png
+share/doc/darcs/img19.png
+share/doc/darcs/img2.png
+share/doc/darcs/img20.png
+share/doc/darcs/img21.png
+share/doc/darcs/img22.png
+share/doc/darcs/img3.png
+share/doc/darcs/img4.png
+share/doc/darcs/img5.png
+share/doc/darcs/img6.png
+share/doc/darcs/img7.png
+share/doc/darcs/img8.png
+share/doc/darcs/img9.png
+share/doc/darcs/index.html
+share/doc/darcs/internals.pl
+share/doc/darcs/labels.pl
+share/doc/darcs/next.png
+share/doc/darcs/next_g.png
+share/doc/darcs/node1.html
+share/doc/darcs/node10.html
+share/doc/darcs/node2.html
+share/doc/darcs/node3.html
+share/doc/darcs/node4.html
+share/doc/darcs/node5.html
+share/doc/darcs/node6.html
+share/doc/darcs/node7.html
+share/doc/darcs/node8.html
+share/doc/darcs/node9.html
+share/doc/darcs/prev.png
+share/doc/darcs/prev_g.png
+share/doc/darcs/up.png
+share/doc/darcs/up_g.png
+@dirrm share/doc/darcs
+@dirrm share/darcs/bash_completion.d
+@dirrm share/darcs
+@dirrm libexec/darcs

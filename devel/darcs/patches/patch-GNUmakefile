@@ -1,0 +1,51 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2003/07/20 03:55:46 avsm Exp $
+--- GNUmakefile.orig	Thu Jul  3 21:56:38 2003
++++ GNUmakefile	Sun Jul 20 01:07:51 2003
+@@ -23,23 +23,23 @@
+ 	install -d $(DESTDIR)/$(bindir)
+ 	install -c darcs $(DESTDIR)/$(bindir)
+ 
+-	install -d $(DESTDIR)/$(datadir)/doc/manual
+-	install -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc
+-	install -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/manual
+-
+-	install -d $(DESTDIR)/$(datadir)/doc/examples
+-	install -m 0644 zsh_completion_new $(DESTDIR)/$(datadir)/doc/examples/
+-	install -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/doc/examples/
++	install -d $(DESTDIR)/$(datadir)/doc/darcs
++	install -m 0644 darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
++	install -m 0644 manual/* $(DESTDIR)/$(datadir)/doc/darcs
++
++	install -d $(DESTDIR)/$(datadir)/darcs
++	install -m 0644 zsh_completion_new $(DESTDIR)/$(datadir)/darcs
++	install -m 0644 zsh_completion_old $(DESTDIR)/$(datadir)/darcs
+ 
+-	install -d $(DESTDIR)/$(sysconfdir)/bash_completion.d/
+-	install -m 0644 darcs_completion $(DESTDIR)/$(sysconfdir)/bash_completion.d/darcs
++	install -d $(DESTDIR)/$(datadir)/darcs/bash_completion.d/
++	install -m 0644 darcs_completion $(DESTDIR)/$(datadir)/darcs/bash_completion.d/darcs
+ 
+ 	install -d $(DESTDIR)/$(mandir)/man1
+ 	install -m 0644 darcs.1 $(DESTDIR)/$(mandir)/man1/
+ 
+ installserver:	darcs_cgi darcs-patcher darcs-createrepo
+-	install -d $(DESTDIR)/$(libexecdir)/cgi-bin
+-	install darcs_cgi $(DESTDIR)/$(libexecdir)/cgi-bin/darcs
++	install -d $(DESTDIR)/$(libexecdir)
++	install darcs_cgi $(DESTDIR)/$(libexecdir)/darcs.cgi
+ 
+ 	install -d $(DESTDIR)/$(sbindir)
+ 	install darcs-createrepo $(DESTDIR)/$(sbindir)
+@@ -47,9 +47,9 @@
+ 	install -d $(DESTDIR)/$(libexecdir)
+ 	install darcs-patcher $(DESTDIR)/$(libexecdir)
+ 
+-	install -d $(DESTDIR)/$(sysconfdir)/darcs
+-	test -e $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf || \
+-	    install -m 0644 cgi.conf $(DESTDIR)/$(sysconfdir)/darcs/cgi.conf
++	install -d $(DESTDIR)/$(datadir)/darcs
++	test -e $(DESTDIR)/$(datadir)/darcs/cgi.conf || \
++	    install -m 0644 cgi.conf $(DESTDIR)/$(datadir)/darcs/cgi.conf
+ 
+ dist:		darcs
+ 	./darcs dist --dist-name darcs-`./darcs --version`
