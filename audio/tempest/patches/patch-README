@@ -1,0 +1,61 @@
+$OpenBSD: patch-README,v 1.1 2002/03/18 15:37:37 wilfried Exp $
+--- README.orig	Sat Dec  1 18:45:25 2001
++++ README	Mon Mar 18 08:20:34 2002
+@@ -112,15 +112,8 @@ o The Complete, Unofficial TEMPEST Infor
+ 
+         http://www.eskimo.com/~joelm/tempest.html
+ 
+-Compiling and runnning
+-----------------------
+-
+-you must have libSDL installed.
+-see http://www.devolution.com/~slouken/SDL/
+-
+-type
+-  ./configure
+-  make
++Running
++-------
+ 
+ now start X11. make sure that you choose low colordepth this gives much higher speed !!!
+ 8 bpp is optimal.
+@@ -140,7 +133,7 @@ dial close to 10 Megahertz
+ 
+ now start
+ 
+-./tempest_for_eliza 105000000  1024     768      1400   10000000  songs/forelise
++tempest_for_eliza 105000000  1024     768      1400   10000000  songs/forelise
+                     pixelclock Hdisplay VDisplay HTotal radio     music
+                     *1000000                            frequency file
+ 
+@@ -174,14 +167,14 @@ Tempest for MP3
+ ---------------
+ 
+ get your favourite mp3 file to the current directory. let's call it
+-'foobar.mp3'. make sure you have "amp" and "sox" installed. you must
++'foobar.mp3'. make sure you have "madplay" and "sox" installed. you must
+ use X11 with 8 bits colordepth. use the old -bpp 8 option to your
+ xserver or the new -fbbpp 8 option if you have a newer Xserver.
+ 
+ first we need to find out what the correct sampling rate will
+ be. therefore start:
+ 
+-./tempest_for_mp3 115500000 1024 768 1350 810 1500000 0 20  notexist.raw
++tempest_for_mp3 115500000 1024 768 1350 810 1500000 0 20  notexist.raw
+                   pixel-clock    resy     vtotal      playmode
+                             resx     htotal   radio-frequency
+                                                         amplification
+@@ -199,11 +192,11 @@ it will display:
+ 
+ now take this value and convert your mp3 like this:
+ 
+-./mksong.sh 13519 foobar.mp3 cool.raw
++mksong.sh 13519 foobar.mp3 cool.raw
+ 
+ you can now listen to it with this command:
+ 
+-./tempest_for_mp3 115500000 1024 768 1350 810 1500000 0 20  cool.raw
++tempest_for_mp3 115500000 1024 768 1350 810 1500000 0 20  cool.raw
+ 
+ notice the low radio frequency of only 1500 KHz. well... i found out
+ that you actually don't need a short wave radio if you put your

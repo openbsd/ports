@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/18 15:37:37 wilfried Exp $
 
 COMMENT=	"sends AM radio signals using a monitor"
 
-VERSION=	1.0.4
+VERSION=	1.0.5
 DISTNAME=	tempest_for_eliza-${VERSION}
 PKGNAME=	tempest-${VERSION}
 CATEGORIES=	audio
-NEED_VERSION=	1.435
+NEED_VERSION=	1.505
 
 HOMEPAGE=	http://www.erikyyy.de/tempest/
 
@@ -21,6 +21,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
+RUN_DEPENDS=	:mad-*:audio/mad \
+		:sox-*:audio/sox
 LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
@@ -30,11 +32,10 @@ CONFIGURE_STYLE= gnu
 
 SONGS=	forelise jonny saints ungarian fruehling oldmacdonald tempest
 
-post-patch:
-	@touch ${WRKSRC}/Makefile ${WRKSRC}/Makefile.in
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/tempest_for_eliza ${PREFIX}/bin/tempest
+	${INSTALL_PROGRAM} ${WRKBUILD}/tempest_for_eliza ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/tempest_for_mp3 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mksong.sh ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tempest
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tempest
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tempest
