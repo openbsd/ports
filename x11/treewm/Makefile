@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/08 01:13:21 naddy Exp $
 
 COMMENT=		"tree window manager"
-DISTNAME=		treewm-0.4.2
-DISTFILES=		treewm_0.4.2.tar.gz
+DISTNAME=		treewm-0.4.5
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/} \
@@ -12,34 +11,28 @@ HOMEPAGE=		http://treewm.sourceforge.net/
 
 MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GMAKE=		Yes
 USE_X11=		Yes
+
+MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			PREFIX="${PREFIX}" \
+			LIBS="-L${X11BASE}/lib -lXxf86vm -lXpm -lXext -lX11" \
+			INCLUDES="-I${X11BASE}/include"
+
+FAKE_FLAGS=		ROOT="${DESTDIR}" \
+			DOCFILES="ChangeLog PROBLEMS README README.tiling"
 
 NO_REGRESS=		Yes
 
-LDFLAGS+=		-L${X11BASE}/lib
-CPPFLAGS+=		-I${X11BASE}/include 
-CFLAGS+=		-DSHAPE ${CPPFLAGS} -DPIXMAPS=\"${PREFIX}/share/treewm/pixmaps/\"
-MAKE_FLAGS+=		CCC='${CXX}' CC='${CC}' CFLAGS='${CFLAGS}' \
-			LDFLAGS='${LDFLAGS}'
-FAKE_FLAGS+=		PREFIX='${DESTDIR}${PREFIX}'
-
-DOCS	= ChangeLog PROBLEMS README README.tiling
-SAMPLES	= default.cfg sample.cfg treewm.kdevprj
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/treewm
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/treewm
-.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/treewm
-.for f in ${SAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/treewm
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/default.cfg ${WRKSRC}/sample.cfg \
+		${PREFIX}/share/examples/treewm
 
 .include <bsd.port.mk>
