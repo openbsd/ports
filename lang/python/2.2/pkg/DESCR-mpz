@@ -13,6 +13,3 @@ applications. See the internal documentation for hints.
 
 This package contains mpz, the GNU arbitrary magnitude integer
 module.
-
-WWW: ${HOMEPAGE}
-

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.2 2002/03/23 04:34:23 matt Exp $
+@comment $OpenBSD: PLIST-tools,v 1.3 2003/12/13 15:03:08 sturm Exp $
 @option no-default-conflict
 @pkgcfl python-tools-2.2*
 lib/python2.2/Tools/README
@@ -51,75 +51,6 @@ lib/python2.2/Tools/freeze/win32.html
 lib/python2.2/Tools/freeze/winmakemakefile.py
 lib/python2.2/Tools/i18n/msgfmt.py
 lib/python2.2/Tools/i18n/pygettext.py
-lib/python2.2/Tools/idle/AutoExpand.py
-lib/python2.2/Tools/idle/AutoIndent.py
-lib/python2.2/Tools/idle/Bindings.py
-lib/python2.2/Tools/idle/CallTipWindow.py
-lib/python2.2/Tools/idle/CallTips.py
-lib/python2.2/Tools/idle/ChangeLog
-lib/python2.2/Tools/idle/ClassBrowser.py
-lib/python2.2/Tools/idle/ColorDelegator.py
-lib/python2.2/Tools/idle/Debugger.py
-lib/python2.2/Tools/idle/Delegator.py
-lib/python2.2/Tools/idle/EditorWindow.py
-lib/python2.2/Tools/idle/FileList.py
-lib/python2.2/Tools/idle/FormatParagraph.py
-lib/python2.2/Tools/idle/FrameViewer.py
-lib/python2.2/Tools/idle/GrepDialog.py
-lib/python2.2/Tools/idle/IOBinding.py
-lib/python2.2/Tools/idle/Icons/folder.gif
-lib/python2.2/Tools/idle/Icons/minusnode.gif
-lib/python2.2/Tools/idle/Icons/openfolder.gif
-lib/python2.2/Tools/idle/Icons/plusnode.gif
-lib/python2.2/Tools/idle/Icons/python.gif
-lib/python2.2/Tools/idle/Icons/tk.gif
-lib/python2.2/Tools/idle/IdleConf.py
-lib/python2.2/Tools/idle/IdleHistory.py
-lib/python2.2/Tools/idle/MultiScrolledLists.py
-lib/python2.2/Tools/idle/MultiStatusBar.py
-lib/python2.2/Tools/idle/NEWS.txt
-lib/python2.2/Tools/idle/ObjectBrowser.py
-lib/python2.2/Tools/idle/OldStackViewer.py
-lib/python2.2/Tools/idle/OutputWindow.py
-lib/python2.2/Tools/idle/ParenMatch.py
-lib/python2.2/Tools/idle/PathBrowser.py
-lib/python2.2/Tools/idle/Percolator.py
-lib/python2.2/Tools/idle/PyParse.py
-lib/python2.2/Tools/idle/PyShell.py
-lib/python2.2/Tools/idle/README.txt
-lib/python2.2/Tools/idle/RemoteInterp.py
-lib/python2.2/Tools/idle/ReplaceDialog.py
-lib/python2.2/Tools/idle/ScriptBinding.py
-lib/python2.2/Tools/idle/ScrolledList.py
-lib/python2.2/Tools/idle/SearchBinding.py
-lib/python2.2/Tools/idle/SearchDialog.py
-lib/python2.2/Tools/idle/SearchDialogBase.py
-lib/python2.2/Tools/idle/SearchEngine.py
-lib/python2.2/Tools/idle/Separator.py
-lib/python2.2/Tools/idle/StackViewer.py
-lib/python2.2/Tools/idle/TODO.txt
-lib/python2.2/Tools/idle/ToolTip.py
-lib/python2.2/Tools/idle/TreeWidget.py
-lib/python2.2/Tools/idle/UndoDelegator.py
-lib/python2.2/Tools/idle/WidgetRedirector.py
-lib/python2.2/Tools/idle/WindowList.py
-lib/python2.2/Tools/idle/ZoomHeight.py
-lib/python2.2/Tools/idle/__init__.py
-lib/python2.2/Tools/idle/config-mac.txt
-lib/python2.2/Tools/idle/config-unix.txt
-lib/python2.2/Tools/idle/config-win.txt
-lib/python2.2/Tools/idle/config.txt
-lib/python2.2/Tools/idle/eventparse.py
-lib/python2.2/Tools/idle/extend.txt
-lib/python2.2/Tools/idle/help.txt
-lib/python2.2/Tools/idle/idle
-lib/python2.2/Tools/idle/idle.bat
-lib/python2.2/Tools/idle/idle.py
-lib/python2.2/Tools/idle/idle.pyw
-lib/python2.2/Tools/idle/idlever.py
-lib/python2.2/Tools/idle/keydefs.py
-lib/python2.2/Tools/idle/setup.py
-lib/python2.2/Tools/idle/testcode.py
 lib/python2.2/Tools/modulator/EXAMPLE.py
 lib/python2.2/Tools/modulator/README
 lib/python2.2/Tools/modulator/ScrolledListbox.py
@@ -246,8 +177,6 @@ lib/python2.2/Tools/world/world
 @dirrm lib/python2.2/Tools/pynche
 @dirrm lib/python2.2/Tools/modulator/Templates
 @dirrm lib/python2.2/Tools/modulator
-@dirrm lib/python2.2/Tools/idle/Icons
-@dirrm lib/python2.2/Tools/idle
 @dirrm lib/python2.2/Tools/i18n
 @dirrm lib/python2.2/Tools/freeze
 @dirrm lib/python2.2/Tools/faqwiz

@@ -12,5 +12,3 @@ Python is also adaptable as an extension language for existing
 applications. See the internal documentation for hints.
 
 This package contains extra tools that Python users may find useful.
-
-WWW: ${HOMEPAGE}

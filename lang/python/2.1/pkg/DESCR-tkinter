@@ -13,5 +13,3 @@ applications. See the internal documentation for hints.
 
 This package contains the Tkinter module, for using the tk toolkit
 in Python.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2003/06/02 15:13:42 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2003/12/13 15:03:07 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -6,11 +6,13 @@
 # Python itself.
 
 COMMENT=	"interpreted object-oriented programming language"
-COMMENT-tests=	"Python test suite"
-COMMENT-tools=	"extra tools for Python"
-COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
-COMMENT-tkinter="tk GUI module for Python"
 COMMENT-expat=	"expat module for Python"
+COMMENT-gdbm=	"GNU dbm module for Python"
+COMMENT-idle=	"IDE for Python"
+COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
+COMMENT-tests=	"Python test suite"
+COMMENT-tkinter="tk GUI module for Python"
+COMMENT-tools=	"extra tools for Python"
 
 PKGNAME=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
@@ -23,6 +25,8 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
 
+MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +34,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	no_mpz no_tkinter no_expat
+FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter
 FLAVOR?=
 
 MULTI_PACKAGES=	-tests -tools
@@ -46,6 +50,30 @@ RUN_DEPENDS=		::lang/python/${VERSION}
 # way to avoid pulling in dependencies, and don't actually show up
 # in the final package names.  On architectures without shared libs,
 # no_xxx flavors dictate what gets linked into the Python binary.
+
+.if empty(FLAVOR:L:Mno_gdbm)
+BUILD_DEPENDS+=		::databases/gdbm
+SETUP_LOCAL+=		Setup.gdbm
+.  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+MULTI_PACKAGES+=	-gdbm
+.  else
+LIB_DEPENDS+=		gdbm.3::databases/gdbm
+.  endif
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-gdbm"
+LIB_DEPENDS+=		gdbm.3::databases/gdbm
+.endif
+
+.if empty(FLAVOR:L:Mno_idle) && empty(FLAVOR:L:Mno_tkinter)
+.  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+MULTI_PACKAGES+=	-idle
+.  endif
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-idle"
+RUN_DEPENDS+=		::lang/python/${VERSION},-tkinter
+.endif
 
 .if empty(FLAVOR:L:Mno_tkinter)
 BUILD_DEPENDS+=		::x11/tk/8.3
@@ -98,14 +126,16 @@ LIB_DEPENDS+=		expat::textproc/expat
 # building the "monster" Python for platforms without shared libraries.
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_mpz//:S/-no_tkinter//:S/-no_expat//}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//}
 .endif
 
-FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-idle=	python-idle-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
@@ -151,6 +181,9 @@ post-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pydoc ${PREFIX}/bin/pydoc${VERSION}
+	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
+		${FILESDIR}/idle > ${WRKSRC}/idle
+	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
 	@strip ${PREFIX}/bin/python
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
