@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Finance_QuoteHist_Generic_pm,v 1.1.1.1 2003/04/13 19:31:33 sturm Exp $
---- lib/Finance/QuoteHist/Generic.pm.orig	Thu Mar 27 14:41:49 2003
-+++ lib/Finance/QuoteHist/Generic.pm	Thu Mar 27 14:42:35 2003
+$OpenBSD: patch-lib_Finance_QuoteHist_Generic_pm,v 1.2 2003/09/23 18:38:04 sturm Exp $
+--- lib/Finance/QuoteHist/Generic.pm.orig	2003-01-16 17:38:20.000000000 +1100
++++ lib/Finance/QuoteHist/Generic.pm	2003-09-02 01:34:03.000000000 +1000
 @@ -24,6 +24,7 @@ my @Scalar_Flags = qw(
  		      ratio_precision
  		      attempts
@@ -24,16 +24,37 @@ $OpenBSD: patch-lib_Finance_QuoteHist_Generic_pm,v 1.1.1.1 2003/04/13 19:31:33 s
        if ($empty_fetch{$s}) {
  	print STDERR ref $self,
  	   " passing on $s ($target) for now, empty fetch\n"
-@@ -1190,6 +1197,24 @@ of your rows is important you might want
- flag. If the overall order is not that important, then ignore this
+@@ -551,7 +558,9 @@ sub rows {
+ 
+   # Prep the rows
+   foreach (@$rows) {
++    next if (!defined($_));
+     foreach (@$_) {
++      next if (!defined($_));
+       # Zap leading and trailing white space
+       s/^\s+//;
+       s/\s+$//;
+@@ -709,6 +718,11 @@ sub non_quote_row {
+   my @non_quotes;
+   foreach (0 .. $#$row) {
+     next if $_ == $dcol;
++    # Rows which have undefined fields
++    # (Yahoo include "date,dividend" in with the quotes)
++    if (!defined($row->[$_])) {
++      return $row;
++    }
+     next if $row->[$_] =~ /^\s*$/;
+     if ($row->[$_] !~ /^\s*\$*[\d\.,]+\s*$/) {
+       return $row;
+@@ -1191,6 +1205,24 @@ flag. If the overall order is not that i
  flag. Typically, site-specific sub classes of this module will take
  care of setting this appropriately. The default is 0.
-+
+ 
 +=item reverse_fetch
 +
 +(The default value is 0.)
 +
-+If true, Twe fetch each batch of rows in the reverse order to that
++If true, we fetch each batch of rows in the reverse order to that
 +provided by C<quote_urls()>.
 +
 +Note that the order of rows within blocks is not affected,
@@ -46,6 +67,7 @@ $OpenBSD: patch-lib_Finance_QuoteHist_Generic_pm,v 1.1.1.1 2003/04/13 19:31:33 s
 +By requesting the blocks in the reverse order I get all the data.
 +I assume this would not work for any symbols without quotes within
 +the most recent requested block (ie defunct symbols).
- 
++
  =item attempts
  
+ Sets how persistently the module tries to retrieve the quotes. There
