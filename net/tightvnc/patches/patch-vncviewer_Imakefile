@@ -1,6 +1,6 @@
-$OpenBSD: patch-vncviewer_Imakefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
---- vncviewer/Imakefile.orig	Mon Jun 18 09:16:53 2001
-+++ vncviewer/Imakefile	Wed Sep  5 08:47:31 2001
+$OpenBSD: patch-vncviewer_Imakefile,v 1.2 2002/03/04 23:35:12 matt Exp $
+--- vncviewer/Imakefile.orig	Tue Nov 13 06:31:34 2001
++++ vncviewer/Imakefile	Sun Mar  3 18:20:11 2002
 @@ -13,10 +13,10 @@ XCOMM seems to cause problems on Digital
  DEFINES = -DMITSHM
  #endif
@@ -14,3 +14,9 @@ $OpenBSD: patch-vncviewer_Imakefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
  
  DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
  LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
+@@ -40,4 +40,4 @@ SRCS = \
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(vncviewer)
++ComplexProgramTargetNoMan(vncviewer)

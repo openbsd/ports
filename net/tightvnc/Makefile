@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/24 20:19:31 matt Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/04 23:35:12 matt Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
 
-VERSION=	1.2.1
+VERSION=	1.2.2
 PKGNAME=        tightvnc-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
