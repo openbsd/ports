@@ -5,14 +5,14 @@
 # Find all .cm Group and Library descriptions that are referenced
 # from the top level alias files in $SML_BASE/lib/
 #
-# $OpenBSD: get-cm,v 1.2 2002/06/30 01:02:47 naddy Exp $
+# $OpenBSD: get-cm,v 1.3 2002/06/30 13:37:42 espie Exp $
 
 # temp file
 tmpfile=`mktemp ${TMP:-/tmp}/chomp.XXXXXX`
 
 # attempt to change directory to work dir
 cd $1 || exit 1
-work_dir=`pwd`	# get the canonical name for the current directory
+work_dir=`pwd -P`	# get the canonical name for the current directory
 
 trap "rm -f $tmpfile" 0 1 2 3 15
 
