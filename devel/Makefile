@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2005/02/23 17:57:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.302 2005/02/24 15:52:11 todd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -65,6 +65,7 @@
      SUBDIR += gstreamer
      SUBDIR += gstreamer-plugins
      SUBDIR += guilib
+     SUBDIR += g-wrap
      SUBDIR += haddock
      SUBDIR += happy
      SUBDIR += help2man
