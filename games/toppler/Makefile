@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/18 21:43:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/09 09:52:09 espie Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoconf no-autoheader
 MAKE_FLAGS=	scoredir=/var/games
 
 USE_X11=	Yes

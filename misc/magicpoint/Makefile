@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/11/07 04:26:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/09 09:52:09 espie Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -24,7 +24,7 @@ RUN_DEPENDS+=	pnmscale::graphics/netpbm
 MODULES=	gettext
 
 USE_X11=	Yes
-CONFIGURE_STYLE=autoconf gnu imake
+CONFIGURE_STYLE=autoconf gnu imake no-autoheader
 CONFIGURE_ARGS=	--disable-vflib
 CONFIGURE_ARGS+= --enable-gif
 CONFIGURE_ARGS+= --enable-freetype-charset16

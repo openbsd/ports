@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/14 23:20:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/09 09:52:10 espie Exp $
 
 COMMENT=		"fast and light window manager with plug-ins"
 
@@ -19,7 +19,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=golem/}
 
 USE_X11=		Yes
 
-CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_STYLE=	autoconf dest no-autoheader
+AUTOCONF_VERSION=	2.52
 
 NO_REGRESS=		Yes
 

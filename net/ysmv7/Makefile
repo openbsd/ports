@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/23 20:24:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/04/09 09:52:10 espie Exp $
 
 COMMENT=		"ICQ console client with encryption support"
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.57
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
