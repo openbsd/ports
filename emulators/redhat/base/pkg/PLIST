@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/09/25 06:50:21 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/03/02 07:49:24 ish Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -54,8 +54,6 @@ bin/unlink
 etc/DIR_COLORS
 etc/DIR_COLORS.xterm
 etc/cron.daily/rpm
-etc/fonts/fonts.conf
-etc/fonts/fonts.dtd
 etc/gtk/gtkrc
 etc/gtk/gtkrc.az
 etc/gtk/gtkrc.be
@@ -8191,7 +8189,6 @@ usr/lib/libreadline.so.4.3
 @dirrm etc/pam.d
 @dirrm etc/logrotate.d
 @dirrm etc/gtk
-@dirrm etc/fonts
 @dirrm etc/cron.daily
 @dirrm etc
 @dirrm bin

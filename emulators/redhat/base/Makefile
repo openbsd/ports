@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/12/12 01:32:09 margarida Exp $
+# $OpenBSD: Makefile,v 1.21 2004/03/02 07:49:24 ish Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
@@ -38,7 +38,8 @@ RPMS=		glibc-2.3.2-4.80.8.i386.rpm:0 \
 		freetype-2.1.2-7.i386.rpm \
 		expat-1.95.4-1.i386.rpm
 
-REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/doc /usr/share/zoneinfo
+REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/doc \
+		/usr/share/zoneinfo /etc/fonts
 REMOVE_FILES=	/etc/localtime
 
 PATCH_LIST=
