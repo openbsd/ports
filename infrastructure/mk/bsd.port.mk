@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.572 2003/08/01 08:29:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.573 2003/08/01 09:02:42 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2270,7 +2270,7 @@ _recurse-solve-package-depends:
 		X) ;;\
 		*) \
 			echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
-			if fgrep -q "|$$default|" ${_DEPENDS_FILE}; then : ; else \
+			if ! fgrep -q "|$$default|" ${_DEPENDS_FILE}; then \
 				echo "lib|$$default|" >>${_DEPENDS_FILE}; \
 				toset="$$toset self=\"$$default\""; \
 				if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
@@ -2288,7 +2288,7 @@ _recurse-run-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
 		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
@@ -2317,7 +2317,7 @@ _recurse-all-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
 		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
@@ -2334,7 +2334,7 @@ _build-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
 		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
