@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/11 07:58:20 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/10 17:14:15 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
-DISTNAME=	libtool-1.3.3
+DISTNAME=	libtool-1.3.5
 CATEGORIES=	devel
-NEED_VERSION=	1.234
+NEED_VERSION=	1.299
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= libtool
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FAKE=	Yes
 
 SEPARATE_BUILD=	simple
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
