@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2002/01/06 05:31:48 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2002/02/26 01:52:02 brad Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
 
-DISTNAME=	iozone3_71
-PKGNAME=	iozone-3.71
+DISTNAME=	iozone3_83
+PKGNAME=	iozone-3.83
 CATEGORIES=	benchmarks
 NEED_VERSION=	1.500
 MASTER_SITES=	http://www.iozone.org/src/current/
