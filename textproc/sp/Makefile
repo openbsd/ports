@@ -3,8 +3,10 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/22 01:32:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/31 06:36:03 turan Exp $
 #
+
+BROKEN=		c++ syntax errors in entmgr_inst.cxx on i386.
 
 DISTNAME=	sp-1.2.1
 CATEGORIES=	textproc
