@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2002/11/24 03:40:08 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2003/02/07 03:40:25 brad Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
-DISTNAME=	curl-7.10.2
+DISTNAME=	curl-7.10.3
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -26,22 +26,20 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-thread \
-		 --with-random="/dev/arandom"
+CONFIGURE_ARGS+=--enable-static \
+		--with-random="/dev/arandom"
 
 FLAVORS=	kerberos
 FLAVOR?=
 
 .if ${FLAVOR:L:Mkerberos}
-CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV" \
-		 --disable-ipv6
+CONFIGURE_ARGS+=--with-krb4-includes="/usr/include/kerberosIV" \
+		--disable-ipv6
 .endif
-
-DOCS=	CHANGES COPYING README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/curl
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/curl
+	cd ${WRKSRC}; ${INSTALL_DATA} README ${PREFIX}/share/doc/curl
 	cd ${WRKSRC}; ${INSTALL_DATA} curl-mode.el ${PREFIX}/share/curl
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/11/24 03:40:08 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/02/07 03:40:25 brad Exp $
 bin/curl
 bin/curl-config
 include/curl/curl.h
@@ -47,8 +47,6 @@ man/man3/libcurl-multi.3
 man/man3/libcurl.3
 share/curl/curl-ca-bundle.crt
 share/curl/curl-mode.el
-share/doc/curl/CHANGES
-share/doc/curl/COPYING
 share/doc/curl/README
 @dirrm share/doc/curl
 @dirrm share/curl
