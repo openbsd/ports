@@ -5,7 +5,7 @@
 # Date created:         21 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/21 21:56:08 gene Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/29 22:06:36 todd Exp $
 #
 
 DISTNAME=       rzsz
@@ -20,7 +20,7 @@ BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	"This port is shareware"
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=    unzip
+EXTRACT_CMD=    ${SETENV} unzip
 EXTRACT_ARGS=   -q
 
 .include <bsd.port.mk>
