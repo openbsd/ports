@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2005/01/28 09:40:30 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2005/01/31 09:12:02 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.3.2
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION?=	3.3.0
 
 FLAVORS=debug
@@ -21,7 +21,11 @@ WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
 		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg m mad ogg \
 		ossaudio png pthread stdc++ util vorbis vorbisenc vorbisfile \
 		xml2 z
-CONFIGURE_ARGS+= --disable-cups
+CONFIGURE_ARGS+= --enable-cups
+
+BUILD_DEPENDS+=	::print/cups # crypto,ssl,cups
+LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
+		aspell::textproc/aspell/core
 
 SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample

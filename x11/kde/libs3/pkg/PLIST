@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.27 2004/12/28 01:01:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2005/01/31 09:12:03 espie Exp $
 @conflict kdebase-<3.3
 bin/artsmessage
 bin/checkXML
+bin/cupsdconf
+bin/cupsdoprint
 bin/dcop
 bin/dcopclient
 bin/dcopfind
@@ -52,6 +54,7 @@ bin/ktelnetservice
 bin/ktradertest
 bin/kwrapper
 bin/lnusertemp
+bin/make_driver_db_cups
 bin/make_driver_db_lpr
 bin/makekdewidgets
 bin/meinproc
@@ -735,6 +738,8 @@ include/scriptclientinterface.h
 include/scriptinterface.h
 include/scriptmanager.h
 ${KDE}/
+${KDE}/cupsdconf.la
+${KDE}/cupsdconf.so
 ${KDE}/dcopserver.la
 ${KDE}/dcopserver.so
 ${KDE}/kabc_dir.la
@@ -775,6 +780,8 @@ ${KDE}/kded_kwalletd.la
 ${KDE}/kded_kwalletd.so
 ${KDE}/kded_proxyscout.la
 ${KDE}/kded_proxyscout.so
+${KDE}/kdeprint_cups.la
+${KDE}/kdeprint_cups.so
 ${KDE}/kdeprint_ext.la
 ${KDE}/kdeprint_ext.so
 ${KDE}/kdeprint_lpdunix.la
@@ -795,6 +802,8 @@ ${KDE}/kimg_dds.la
 ${KDE}/kimg_dds.so
 ${KDE}/kimg_eps.la
 ${KDE}/kimg_eps.so
+${KDE}/kimg_exr.la
+${KDE}/kimg_exr.so
 ${KDE}/kimg_ico.la
 ${KDE}/kimg_ico.so
 ${KDE}/kimg_jp2.la
@@ -831,6 +840,8 @@ ${KDE}/klauncher.la
 ${KDE}/klauncher.so
 ${KDE}/knotify.la
 ${KDE}/knotify.so
+${KDE}/kspell_aspell.la
+${KDE}/kspell_aspell.so
 ${KDE}/kspell_ispell.la
 ${KDE}/kspell_ispell.so
 ${KDE}/ktexteditor_autobookmarker.la
@@ -891,6 +902,8 @@ lib/libkdefakes.la
 lib/libkdefakes_nonpic.a
 lib/libkdefx.la
 @lib lib/libkdefx.so.6.0
+lib/libkdeinit_cupsdconf.la
+lib/libkdeinit_cupsdconf.so
 lib/libkdeinit_dcopserver.la
 lib/libkdeinit_dcopserver.so
 lib/libkdeinit_kaddprinterwizard.la
@@ -1117,6 +1130,8 @@ share/apps/kde-conf-sample/xdg/menus/applications.menu
 share/apps/kdeprint/
 share/apps/kdeprint/apsdriver1
 share/apps/kdeprint/apsdriver2
+share/apps/kdeprint/cups_logo.png
+share/apps/kdeprint/cupsd.conf.template
 share/apps/kdeprint/filters/
 share/apps/kdeprint/filters/enscript.desktop
 share/apps/kdeprint/filters/enscript.xml
@@ -1208,6 +1223,7 @@ share/apps/kdeprint/icons/crystalsvg/64x64/
 share/apps/kdeprint/icons/crystalsvg/64x64/apps/
 share/apps/kdeprint/icons/crystalsvg/64x64/apps/kdeprint_printer.png
 share/apps/kdeprint/icons/crystalsvg/64x64/apps/kdeprint_printer_class.png
+share/apps/kdeprint/kde_logo.png
 share/apps/kdeprint/lprngtooldriver1
 share/apps/kdeprint/pics/
 share/apps/kdeprint/pics/kdeprint_collate.png
@@ -1229,10 +1245,13 @@ share/apps/kdeprint/pics/kdeprint_revportrait.png
 share/apps/kdeprint/pics/kdeprint_uncollate.png
 share/apps/kdeprint/pics/kdeprint_uncollate_reverse.png
 share/apps/kdeprint/plugins/
+share/apps/kdeprint/plugins/cups.print
 share/apps/kdeprint/plugins/ext.print
 share/apps/kdeprint/plugins/lpdunix.print
 share/apps/kdeprint/plugins/lpr.print
 share/apps/kdeprint/plugins/rlpr.print
+share/apps/kdeprint/preview-mini.png
+share/apps/kdeprint/preview.png
 share/apps/kdeprint/side.png
 share/apps/kdeprint/specials.desktop
 share/apps/kdeprint/testprint.ps
@@ -4824,6 +4843,7 @@ share/services/bmp.kimgio
 share/services/data.protocol
 share/services/dds.kimgio
 share/services/eps.kimgio
+share/services/exr.kimgio
 share/services/file.protocol
 share/services/ftp.protocol
 share/services/ghelp.protocol
@@ -4860,6 +4880,7 @@ share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
 share/services/kresources/kabc/net.desktop
+share/services/kspell_aspell.desktop
 share/services/kspell_ispell.desktop
 share/services/ktexteditor_autobookmarker.desktop
 share/services/ktexteditor_docwordcompletion.desktop
