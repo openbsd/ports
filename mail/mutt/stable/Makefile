@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/20 19:47:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/25 02:28:14 brad Exp $
 
 COMMENT=	"tty-based e-mail client"
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
-NEED_VERSION=	1.384
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 
 HOMEPAGE=	http://www.mutt.org/
 
-LIB_DEPENDS=	intl.1::devel/gettext 
+MODULES=	gettext
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
@@ -64,9 +64,8 @@ CONFIGURE_ARGS+= --enable-pop
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
-MIXMASTER=             ${LOCALBASE}/sbin/mixmaster
-CONFIGURE_ARGS+=       --with-mixmaster="${MIXMASTER}"
-RUN_DEPENDS+=          ${MIXMASTER}::mail/mixmaster
+CONFIGURE_ARGS+=       --with-mixmaster="${LOCALBASE}/sbin/mixmaster"
+RUN_DEPENDS+=          ::mail/mixmaster
 .endif
 
 .if defined(HOMESPOOL)

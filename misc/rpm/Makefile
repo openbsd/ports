@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/25 02:28:14 brad Exp $
 
 COMMENT=	"redhat package manager"
 
@@ -17,9 +17,9 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://www.rpm.org/
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
-LIB_DEPENDS=	bz2.::archivers/bzip2
-LIB_DEPENDS+=	intl.::devel/gettext 
-LIB_DEPENDS+=	popt.0.::devel/popt
+MODULES=	gettext
+LIB_DEPENDS+=	bz2.::archivers/bzip2 \
+		popt.0.::devel/popt
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt
