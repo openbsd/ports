@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.280 2000/05/17 12:14:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.281 2000/05/17 12:41:28 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1152,12 +1152,17 @@ fetch: fetch-depends
 .  endif
 
 
+# Set to true to try to retrieve older distfiles from ftp.openbsd.org if
+# checksums no longer match.
+
+REFETCH?=false
+
 checksum: fetch
 .  if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
-	  cd ${DISTDIR}; OK=true; \
+	  cd ${DISTDIR}; OK=true; list=''; \
 		for file in ${_CKSUMFILES}; do \
 		  for cipher in ${PREFERRED_CIPHERS}; do \
 			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
@@ -1178,6 +1183,7 @@ checksum: fetch
 				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
 				*) \
 				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
+				  list="$$list $$file $$cipher $$4"; \
 				  OK=false;; \
 			  esac;; \
 		  esac; \
@@ -1196,13 +1202,30 @@ checksum: fetch
 		  esac; \
 		done; \
 		if ! $$OK; then \
-		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-		  echo "are up to date.  If you want to override this check, type"; \
-		  echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
-		  exit 1; \
+		  if ${REFETCH}; then \
+		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
+		  else \
+			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+			echo "are up to date.  If you want to override this check, type"; \
+			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
+			exit 1; \
+		  fi; \
 		fi ; \
   fi
 .  endif
+
+refetch:
+	@set -- ${PROBLEMS}; \
+	 while [ $$# -gt 0 ]; do \
+		file=$$1; \
+		cipher=$$2; \
+		value=$$3; \
+		shift; shift; shift; \
+		rm ${FULLDISTDIR}/$$file; \
+		cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/$$file \
+			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/$$cipher/$$value/"; \
+	done;
+	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
 
 
 
