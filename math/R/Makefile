@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/14 23:34:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/09 06:25:32 pvalchev Exp $
 
 # R, a clone of the S-Plus (based on AT&T S) statistical package 
 
@@ -32,6 +32,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-readline
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/tools
 
 post-install:
 	cd ${PREFIX}/bin && \

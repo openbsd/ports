@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/05 11:00:19 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/09 06:25:32 pvalchev Exp $
 
 COMMENT=	"provides UTF-8 locale support"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/autoconf
 
 REGRESS_TARGET=	test
 
