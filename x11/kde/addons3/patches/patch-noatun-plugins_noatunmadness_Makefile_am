@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_noatunmadness_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/noatunmadness/Makefile.am.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/noatunmadness/Makefile.am	Sun Apr 21 02:24:36 2002
+@@ -3,7 +3,7 @@ INCLUDES= `sdl-config --cflags` $(all_in
+ kde_module_LTLIBRARIES = noatunmadness.la
+ noatunmadness_la_SOURCES = madness.cpp
+ noatunmadness_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined `sdl-config --libs`
+-noatunmadness_la_LIBADD = $(LIB_KFILE) -lnoatun -lm
++noatunmadness_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
+ noatunmadness_la_METASOURCES = AUTO
+ 
+ data_DATA = madness.plugin

@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_nexscope_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/nexscope/Makefile.in.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/nexscope/Makefile.in	Sun Apr 21 02:24:34 2002
+@@ -240,7 +240,7 @@ kde_module_LTLIBRARIES = noatunnexscope.
+ 
+ noatunnexscope_la_SOURCES = noatunplugin.cpp
+ noatunnexscope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatunnexscope_la_LIBADD = $(LIB_KFILE) -lnoatun
++noatunnexscope_la_LIBADD = $(LIB_KFILE) -lknoatun
+ 
+ bin_PROGRAMS = nexscope.bin
+ 

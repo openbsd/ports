@@ -1,0 +1,19 @@
+$OpenBSD: patch-noatun-plugins_synaescope_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/synaescope/Makefile.in.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/synaescope/Makefile.in	Sun Apr 21 02:23:49 2002
+@@ -240,13 +240,13 @@ kde_module_LTLIBRARIES = noatunsynaescop
+ 
+ noatunsynaescope_la_SOURCES = synaescope.cpp
+ noatunsynaescope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatunsynaescope_la_LIBADD = $(LIB_KFILE) -lnoatun -lm
++noatunsynaescope_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
+ 
+ bin_PROGRAMS = noatunsynaescope.bin
+ 
+ noatunsynaescope_bin_SOURCES = core.cpp main.cpp sdlwrap.cpp ui.cpp
+ noatunsynaescope_bin_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-noatunsynaescope_bin_LDADD = $(LIB_KDEUI) -lnoatun $(SDL_LIBS)
++noatunsynaescope_bin_LDADD = $(LIB_KDEUI) -lknoatun $(SDL_LIBS)
+ 
+ data_DATA = synaescope.plugin
+ subdir = noatun-plugins/synaescope

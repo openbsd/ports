@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_charlatan_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/charlatan/Makefile.in.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/charlatan/Makefile.in	Sun Apr 21 02:23:18 2002
+@@ -245,7 +245,7 @@ noatuncharlatan_la_SOURCES = \
+ 
+ noatuncharlatan_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+-noatuncharlatan_la_LIBADD = -lnoatuncontrols -lnoatun
++noatuncharlatan_la_LIBADD = -lnoatuncontrols -lknoatun
+ 
+ #>- noatuncharlatan_la_METASOURCES = AUTO
+ 

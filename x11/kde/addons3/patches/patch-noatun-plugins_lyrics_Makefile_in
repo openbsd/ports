@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_lyrics_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/lyrics/Makefile.in.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/lyrics/Makefile.in	Sun Apr 21 02:24:15 2002
+@@ -238,7 +238,7 @@ kde_module_LTLIBRARIES = noatunlyrics.la
+ noatunlyrics_la_SOURCES = lyrics.cpp
+ 
+ noatunlyrics_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatunlyrics_la_LIBADD = $(LIB_KHTML) $(LIB_KFILE) -lnoatun
++noatunlyrics_la_LIBADD = $(LIB_KHTML) $(LIB_KFILE) -lknoatun
+ 
+ #>- noatunlyrics_la_METASOURCES = AUTO
+ 

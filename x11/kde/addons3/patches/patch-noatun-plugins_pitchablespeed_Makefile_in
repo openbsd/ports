@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_pitchablespeed_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/pitchablespeed/Makefile.in.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/pitchablespeed/Makefile.in	Sun Apr 21 00:17:38 2002
+@@ -236,7 +236,7 @@ INCLUDES = -I$(kde_includes)/arts $(all_
+ 
+ kde_module_LTLIBRARIES = noatunpitchablespeed.la
+ noatunpitchablespeed_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatunpitchablespeed_la_LIBADD = $(LIB_KFILE) -lnoatun -lm -lartsmodules
++noatunpitchablespeed_la_LIBADD = $(LIB_KFILE) -lknoatun -lm -lartsmodules
+ 
+ noatunpitchablespeed_la_SOURCES = pitchablespeed.cpp speedtuner.cpp
+ #>- noatunpitchablespeed_la_METASOURCES = AUTO

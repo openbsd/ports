@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_dub_dub_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/dub/dub/Makefile.am.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/dub/dub/Makefile.am	Sun Apr 21 00:15:38 2002
+@@ -30,7 +30,7 @@ EXTRA_DIST = main.cpp dub.cpp dub.h dubd
+ INCLUDES += -I$(kde_includes)/noatun $(all_includes)
+ 
+ noatundub_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatundub_la_LIBADD = $(LIB_KFILE) -lnoatun
++noatundub_la_LIBADD = $(LIB_KFILE) -lknoatun
+ 
+ #libnoatungeneric_la_METASOURCES = AUTO
+ 

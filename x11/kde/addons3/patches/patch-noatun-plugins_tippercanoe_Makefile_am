@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_tippercanoe_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/tippercanoe/Makefile.am.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/tippercanoe/Makefile.am	Sun Apr 21 02:23:25 2002
+@@ -6,7 +6,7 @@ kde_module_LTLIBRARIES = noatuntippecano
+ 
+ noatuntippecanoe_la_SOURCES = synaescope.cpp
+ noatuntippecanoe_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatuntippecanoe_la_LIBADD = $(LIB_KFILE) $(kde_libraries)/libnoatun.so -lm
++noatuntippecanoe_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
+ 
+ bin_PROGRAMS = noatuntippecanoe.bin
+ 

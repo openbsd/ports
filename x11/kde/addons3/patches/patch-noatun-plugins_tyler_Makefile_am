@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_tyler_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
+--- noatun-plugins/tyler/Makefile.am.orig	Sun Apr 21 00:15:20 2002
++++ noatun-plugins/tyler/Makefile.am	Sun Apr 21 02:22:53 2002
+@@ -6,7 +6,7 @@ kde_module_LTLIBRARIES = noatuntyler.la
+ 
+ noatuntyler_la_SOURCES = tyler.cpp
+ noatuntyler_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatuntyler_la_LIBADD = $(LIB_KFILE) $(kde_libraries)/libnoatun.so -lm
++noatuntyler_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
+ 
+ bin_PROGRAMS = noatuntyler.bin
+ 
