@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.75 2003/06/16 17:25:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.76 2003/06/26 00:19:50 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
-MAKE_GXX=Yes
-MAKE_FORTRAN=Yes
-MAKE_OBJC=Yes
+MAKE_GXX=No
+MAKE_FORTRAN=No
+MAKE_OBJC=No
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=No
 
 
 .if ${MACHINE_ARCH} == "i386"
-MAKE_ADA=Yes
+#MAKE_ADA=Yes
+MAKE_ADA=No
 #AS_PATH=/usr/bin/as
 #LD_PATH=/usr/bin/ld
 .else
@@ -156,6 +157,10 @@ rm_dirs=zlib texinfo #boehm-gc
 post-patch:
 #	cp -R ${FILESDIR}/config/* ${WRKSRC}
 #	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
+	cp ${FILESDIR}/config/gcc/config/i386/openbsdelf.h \
+	    ${WRKSRC}/gcc/config/i386/openbsdelf.h 
+	cp ${FILESDIR}/config/gcc/config/exec-stack.h \
+	    ${WRKSRC}/gcc/config/exec-stack.h 
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
@@ -319,7 +324,7 @@ send-results:
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
 
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "7386" || ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
 SED_PLIST=|sed -e '/^IFPIC:/s///'
 .else
 SED_PLIST=|sed -e '/^IFPIC:/d'

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.14 2003/02/15 14:38:27 espie Exp $
---- gcc/config.gcc.orig	Thu Jan 30 15:03:42 2003
-+++ gcc/config.gcc	Sun Feb  9 22:57:59 2003
+$OpenBSD: patch-gcc_config_gcc,v 1.15 2003/06/26 00:19:50 espie Exp $
+--- gcc/config.gcc.orig	Thu Jan 30 09:03:42 2003
++++ gcc/config.gcc	Thu May 22 17:53:28 2003
 @@ -582,9 +582,11 @@ alpha*-*-netbsd*)
  	;;
  
@@ -13,7 +13,35 @@ $OpenBSD: patch-gcc_config_gcc,v 1.14 2003/02/15 14:38:27 espie Exp $
  	;;
  
  alpha*-dec-osf*)
-@@ -2751,8 +2753,8 @@ romp-*-openbsd*)
+@@ -1262,11 +1264,26 @@ x86_64-*-netbsd*)
+ 	tm_file="${tm_file} i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
+ 	float_format=i386
+ 	;;
+-i[34567]86-*-openbsd*)
++# Change ...[012] to i[34567]86-*-openbsd3.[0123] after we move to 3.4
++i[34567]86-*-openbsd2* | i[34567]86-*-openbsd3.[012])
+ 	# needed to unconfuse gdb
+ 	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
+ 	# we need collect2 until our bug is fixed...
+ 	use_collect2=yes
++	tm_file="i386/i386.h i386/att.h svr4.h i386/openbsd.h i386/perform.h"
++	gas=yes
++	gnu_ld=yes
++	stabs=yes
++	;;
++i[34567]86-*-openbsd*)
++	# needed to unconfuse gdb
++	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
++	tm_file="i386/i386.h i386/att.h dbxelf.h elfos.h i386/i386elf.h"
++	tm_file="${tm_file} exec-stack.h"
++	tm_file="${tm_file} openbsd.h i386/openbsdelf.h"
++	gas=yes
++	gnu_ld=yes
++	stabs=yes
+ 	;;
+ i[34567]86-*-coff*)
+ 	tm_file=i386/i386-coff.h
+@@ -2751,8 +2768,8 @@ romp-*-openbsd*)
  	# Nothing special
  	;;
  powerpc-*-openbsd*)
@@ -24,7 +52,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.14 2003/02/15 14:38:27 espie Exp $
  	;;
  powerpc64-*-linux*)
  	tm_file="${tm_file} dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h rs6000/linux64.h"
-@@ -3060,6 +3062,13 @@ sparc-*-openbsd*)
+@@ -3060,6 +3077,13 @@ sparc-*-openbsd*)
  	tmake_file="t-libc-ok t-openbsd sparc/t-openbsd"
  	# we need collect2 until our bug is fixed...
  	use_collect2=yes
