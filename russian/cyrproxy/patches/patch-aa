@@ -1,0 +1,44 @@
+--- Makefile.orig	Sat May  3 16:37:04 1997
++++ Makefile	Wed Jan 26 09:21:42 2000
+@@ -6,9 +6,9 @@
+ 
+ CHMOD=/bin/chmod
+ CHOWN=/usr/sbin/chown
+-GCC=gcc -O
+-CFLAGS=-funsigned-char -Wall
+-CC=${GCC} ${CFLAGS}
++#GCC=gcc -O
++CFLAGS+=-funsigned-char -Wall
++#CC=${GCC} ${CFLAGS}
+ # Some systems contains resolver routines in libresolv
+ # EXTRALIBS=lresolv
+ EXTRALIBS=
+@@ -23,15 +23,15 @@
+ TABLEOWN=root.wheel
+ 
+ #directory to place  binary
+-BINDIR=/usr/local/libexec
+-UTILDIR=/usr/local/bin
+-CGIPATH=/usr/local/www/cgi-bin
++BINDIR=${PREFIX}/libexec
++UTILDIR=${PREFIX}/bin
++CGIPATH=${PREFIX}/www/cgi-bin
+ # name of binaries
+ CYRPROXY=cyrproxy
+ SPY=tcpspy
+ 
+ # directory ty place recoding tables
+-TBLDIR=/usr/local/share/proxy
++TBLDIR=${PREFIX}/share/cyrproxy
+ 
+ # config file location
+ CONF_FILE=/etc/cyrproxy.conf
+@@ -58,7 +58,7 @@
+ ALLSRCS=${SRCS} spy.c
+ OBJS=com_gw.o readconf.o connect.o gopher_gw.o main.o telnet_gw.o http_gw.o log.o bufio.o
+ 
+-CFLAGS+= -Wall -O ${DEFINES}
++CFLAGS+= ${DEFINES}
+ 
+ 
+ all: ${CYRPROXY} ${SPY} subdirmake config.gen
