@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/29 02:24:28 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/01/12 01:38:10 brad Exp $
 
-DISTNAME=	fnlib-0.4
+DISTNAME=	fnlib-0.5
 CATEGORIES=    	graphics
-MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/ \
-		ftp://ftp.leirianet.pt/pub/X11/enlightenment/enlightenment/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
-		ftp://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/
+MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
+		http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/fnlib/ \
+		ftp://ftp.squish.org/pub/enlightenment/fnlib/
 
 NEED_VERSION=	1.73
 

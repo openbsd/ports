@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	Thu Jan 21 15:49:11 1999
-+++ config/Makefile.in	Sat Oct  9 17:33:05 1999
-@@ -107,14 +107,14 @@
+--- config/Makefile.in.orig	Mon Oct 18 20:43:55 1999
++++ config/Makefile.in	Sun Jan  2 02:10:20 2000
+@@ -108,14 +108,14 @@
  
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)

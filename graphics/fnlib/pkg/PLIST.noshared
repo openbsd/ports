@@ -1,8 +1,8 @@
-include/Fnlib_types.h
 include/Fnlib.h
+include/Fnlib_types.h
+lib/fnlib/fnrc.sample
 lib/libFnlib.a
 lib/libFnlib.la
-lib/fnlib/fnrc.sample
 share/fnlib_fonts/e/17/032.png
 share/fnlib_fonts/e/17/033.png
 share/fnlib_fonts/e/17/034.png
@@ -247,8 +247,8 @@ share/fnlib_fonts/shinymetal/fontinfo
 @dirrm lib/fnlib
 @dirrm share/fnlib_fonts/e/17
 @dirrm share/fnlib_fonts/e
-@dirrm share/fnlib_fonts/shinymetal/45
-@dirrm share/fnlib_fonts/shinymetal
 @dirrm share/fnlib_fonts/rock/90
 @dirrm share/fnlib_fonts/rock
+@dirrm share/fnlib_fonts/shinymetal/45
+@dirrm share/fnlib_fonts/shinymetal
 @dirrm share/fnlib_fonts
