@@ -1,39 +1,30 @@
-$OpenBSD: patch-configure,v 1.4 2002/11/03 02:14:54 naddy Exp $
---- configure.orig	Wed Sep 25 06:53:08 2002
-+++ configure	Sun Nov  3 02:45:50 2002
-@@ -5388,7 +5388,7 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-@@ -5398,7 +5398,7 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-         ;;
-       esac
-@@ -9519,7 +9519,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  . conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}"
-+  . ./conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}"
- else
-   echo "$as_me: program exited with status $ac_status" >&5
- echo "$as_me: failed program was:" >&5
-@@ -11113,7 +11113,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
+$OpenBSD: patch-configure,v 1.5 2003/04/18 00:28:40 naddy Exp $
+--- configure.orig	Mon Feb 24 01:42:48 2003
++++ configure	Mon Feb 24 01:44:20 2003
+@@ -9818,6 +9818,8 @@ _ACEOF
+   fi
+ 
+ 
++# Disable id3lib detection
++if false; then
+ 
+ # Check whether --with-id3lib or --without-id3lib was given.
+ if test "${with_id3lib+set}" = set; then
+@@ -10006,6 +10008,8 @@ echo "$as_me: WARNING: *** id3lib not fo
+ 
+ 	rm -f conf.id3libtest
+ 
++fi
++have_id3lib=no
+ 
+ 
+ if test x$have_id3lib = xyes; then
+@@ -11713,7 +11717,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
- 	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
+ 	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
  else
--	OUR_CFLAGS_TAIL="-O3 -DNDEBUG"
-+	OUR_CFLAGS_TAIL="-DNDEBUG"
+-	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -DNDEBUG"
++	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
  	if test x$GCC = xyes; then
- 		OUR_CFLAGS_TAIL="$OUR_CFLAGS_TAIL -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
+ 		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
  	fi
