@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/23 00:33:44 naddy Exp $
 
 COMMENT=	"SNPP client/server (alphanum pager software)"
 
@@ -16,13 +16,12 @@ CONFIGURE_STYLE=gnu
 
 NO_REGRESS=	Yes
 
-pre-install:
-		@mv ${WRKSRC}/example.cf ${WRKSRC}/example-qpage.cf
-		@mv ${WRKSRC}/qpage.man ${WRKSRC}/qpage.1
-
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qpage ${PREFIX}/bin
-		${INSTALL_MAN} ${WRKSRC}/qpage.1 ${PREFIX}/man/man1
-		${INSTALL_DATA} ${WRKSRC}/example-qpage.cf ${PREFIX}/share
+		${INSTALL_MAN} ${WRKSRC}/qpage.man \
+			${PREFIX}/man/man1/qpage.1
+		${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qpage
+		${INSTALL_DATA} ${WRKSRC}/example.cf \
+			${PREFIX}/share/examples/qpage/qpage.cf
 
 .include <bsd.port.mk>
