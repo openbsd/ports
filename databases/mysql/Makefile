@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2004/02/22 01:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.93 2004/02/25 08:21:18 brad Exp $
 # Uses pthreads
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -37,7 +37,7 @@ VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.54
+AUTOCONF_VERSION= 2.57
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
