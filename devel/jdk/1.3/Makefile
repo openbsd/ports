@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/29 22:17:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/03 03:30:55 pvalchev Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -54,12 +54,10 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		:jdk-1.3*:devel/jdk/1.3
-MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}" \
-			EMUL_CHECK="no"
+MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-BUILD_DEPENDS+=		:jdk-linux-1.3.1*:devel/jdk/1.3-linux
-MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux" \
-			EMUL_CHECK="yes"
+BUILD_DEPENDS+=		:jdk-linux->=1.3.1_10:devel/jdk/1.3-linux
+MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux"
 .endif
 
 .if !${FLAVOR:L:Mno_plugin}
@@ -111,11 +109,22 @@ MANPAGES=		appletviewer.1 extcheck.1 jar.1 jarsigner.1 java.1 javac.1 \
 			javadoc.1 javah.1 javap.1 jdb.1 keytool.1 native2ascii.1 \
 			rmic.1 rmid.1 rmiregistry.1 serialver.1 tnameserv.1
 
+SYSCTL=			${SUDO} sysctl -w kern.emul.linux
+
 pre-patch:
 	@cp -f ${FILESDIR}/cacerts ${CACERTSDIR}
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk131.patches
+
+.if !${FLAVOR:L:Mnative_bootstrap}
+pre-build:
+	@sysctl -n kern.emul.linux > ${WRKDIR}/.emul_linux
+	@${SYSCTL}=1
+
+post-build:
+	@${SYSCTL}=`cat ${WRKDIR}/.emul_linux`
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
