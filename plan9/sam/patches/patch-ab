@@ -1,0 +1,31 @@
+--- libXg/Makefile.dist	Thu Sep  3 19:20:34 1998
++++ libXg/Makefile	Thu Sep  3 22:23:12 1998
+@@ -8,17 +8,17 @@
+ #	
+ #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+ #	if your compiler supports posix-compatible compilation
+-OS=-DIRIX5 -ansiposix
++OS=-D_POSIX_SOURCE -DSOLARIS
+ 
+ #	add -Iincludedir for any include directories that need to be searched
+-INCS=-I../include
++INCS=-I../include -I/usr/X11R6/include
+ 
+ #	set this if your X libraries are in different locations
+ #	or if you need extra libraries to load with X11 applications
+ XLIBS=-lXt
+ 
+ #	add name of library orderer - use ":" if none
+-RANLIB=:
++RANLIB=ranlib
+ 
+ #	add name of librarian
+ AR=ar
+@@ -50,7 +50,5 @@
+ $(LIB):	$(OBJS)
+ 	$(AR) rv $(LIB) $(OBJS)
+ 	$(RANLIB) $(LIB)
+-
+-$(LIB)(%.o): %.o
+ 
+ $(OBJS):	../include/libg.h libgint.h ../include/libc.h

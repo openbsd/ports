@@ -1,0 +1,9 @@
+Tcs interprets the named file(s) (standard input default) as a
+stream of characters from the INPUT character set or format, converts
+them to runes, and then converts them into a stream of characters
+from the OUTPUT character set or format on the standard output.
+
+Available character sets:
+	utf utf1 ascii cp1251 ov sf1 sf2 jis(from) jis-kanji ujis
+	ms-kanji big5 gb euc-k tis viet1 viet2 viscii msdos msdos2
+	ps2 macrom next atari unicode ebcdic utf-l2 latin1 etc.

@@ -1,0 +1,31 @@
+--- sam/unix.c.dist	Thu Sep  3 19:23:37 1998
++++ sam/unix.c	Thu Sep  3 19:24:32 1998
+@@ -147,18 +147,18 @@
+ int
+ newtmp(int i)
+ {
+-	char *s;
+-	FILE *f;
+-	extern char *tempnam(const char*, const char*);
++	char file[40];
++	int fd;
++	extern int mkstemp(char *);
+ 
+-	s = tempnam(TMPDIR, "sam.");
+-	if (!s)
++	snprintf(file, 40, "%s/sam.XXXXXXXXXX", TMPDIR);
++	fd = mkstemp(file);
++	if(fd < 0){
++		unlink(file);
+ 		return -1;
+-	f = fopen(s, "w+");
+-	if (!f)
+-		return -1;
+-	unlink(s);
+-	return fileno(f);
++	}
++	unlink(file);
++	return fd;
+ }
+ 
+ void

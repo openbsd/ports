@@ -1,0 +1,25 @@
+--- samterm/Makefile.dist	Thu Sep  3 19:20:34 1998
++++ samterm/Makefile	Thu Sep  3 22:27:39 1998
+@@ -8,7 +8,7 @@
+ #	
+ #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+ #	if your compiler supports posix-compatible compilation
+-OS=-DIRIX5 -ansiposix
++OS=-D_POSIX_SOURCE -DSOLARIS
+ 
+ #	add -Iincludedir for any include directories that need to be searched
+ #	for posix header files (for UMIPS, add -I/usr/include/posix)
+@@ -16,11 +16,11 @@
+ 
+ #	SAMTERM contains the name of the file containing the samterm
+ #	executable.
+-SAMTERM=/v/bin/samterm
++SAMTERM=/usr/local/bin/samterm
+ 
+ #	set this if your X libraries are in different locations
+ #	or if you need extra libraries to load with X11 applications
+-XLIBS=-lXt -lX11
++XLIBS=-L/usr/X11R6/lib -lXt -lX11
+ 
+ CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+ 

@@ -1,0 +1,4 @@
+Documentation describing its use and construction are provided in
+subdirectory share/doc/sam.  The file sam.tut.ms is a tutorial
+that can be formatted with troff -ms, se.ps describes structural
+regular expressions, sam.ps contains a paper about sam.

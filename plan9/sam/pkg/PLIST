@@ -1,0 +1,12 @@
+@cwd /usr/local
+@name sam-4.3-19980506
+bin/samsave
+bin/sam
+bin/samterm
+man/man1/sam.1
+share/doc/sam/sam.ps
+share/doc/sam/sam.tut.ms
+share/doc/sam/se.ps
+share/doc/sam/Sam.ad
+share/doc/sam/README
+@dirrm share/doc/sam

@@ -1,0 +1,19 @@
+--- libframe/Makefile.dist	Thu Sep  3 19:20:34 1998
++++ libframe/Makefile	Thu Sep  3 22:20:25 1998
+@@ -8,14 +8,14 @@
+ #	
+ #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+ #	if your compiler supports posix-compatible compilation
+-OS=-DIRIX5 -ansiposix
++OS=-D_POSIX_SOURCE -DSOLARIS
+ 
+ #	add -Iincludedir for any include directories that need to be searched
+ #	for posix header files (for UMIPS, add -I/usr/include/posix)
+ INCS=-I../include
+ 
+ #	add name of library orderer - use ":" if none exists
+-RANLIB=:
++RANLIB=ranlib
+ 
+ #	add name of library
+ AR=ar

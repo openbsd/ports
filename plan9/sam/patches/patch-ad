@@ -1,0 +1,37 @@
+--- sam/Makefile.dist	Thu Sep  3 19:20:33 1998
++++ sam/Makefile	Thu Sep  3 22:17:14 1998
+@@ -8,7 +8,7 @@
+ #	
+ #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+ #	if your compiler supports posix-compatible compilation
+-OS=-DIRIX5 -ansiposix
++OS=-D_POSIX_SOURCE -DSOLARIS
+ 
+ #	add -Iincludedir for any include directories that need to be searched
+ #	for posix header files (for UMIPS, add -I/usr/include/posix)
+@@ -22,12 +22,12 @@
+ #	where sam is to be installed.  SAMSAVEDIR is the name of the directory
+ #	where the samsave file restoration script is stored.
+ RSAMNAME=sam
+-TERMNAME=/v/bin/samterm
+-SAMDIR=/usr/bin
+-SAMSAVEDIR=/v/bin
++TERMNAME=/usr/local/bin/samterm
++SAMDIR=/usr/local/bin
++SAMSAVEDIR=/usr/local/bin
+ 
+ #	Set TMP to a good place for tmp files (with lots of room)
+-TMP=/tmp
++TMP=/var/tmp
+ 
+ #	Set SHELLNAME and SHELLPATH to the name of a shell and the pathname
+ #	of its executable
+@@ -37,7 +37,7 @@
+ #	Set RXNAME and RXPATHNAME to the name of the remote execution command
+ #	and the pathname of its executable
+ RXNAME=rsh
+-RXPATHNAME=/usr/bsd/rsh
++RXPATHNAME=/usr/bin/rsh
+ 
+ SAMSAVE=/bin/sh\\n$(SAMSAVEDIR)/samsave
+ 
