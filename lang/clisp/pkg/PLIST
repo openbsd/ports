@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/11/03 19:30:37 naddy Exp $
 bin/clisp
 lib/clisp/
 lib/clisp/base/
@@ -33,6 +33,7 @@ lib/clisp/linkkit/exporting.lisp
 lib/clisp/linkkit/modprep.lisp
 lib/clisp/linkkit/modules.c
 lib/clisp/linkkit/modules.d
+@man man/man1/clisp.1
 share/doc/clisp/
 share/doc/clisp/ANNOUNCE
 share/doc/clisp/CLOS-guide.txt
@@ -65,6 +66,3 @@ share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
 share/locale/ru/LC_MESSAGES/clisp.mo
 share/locale/ru/LC_MESSAGES/clisplow.mo
-share/man/
-share/man/man1/
-@man share/man/man1/clisp.1
