@@ -1,0 +1,133 @@
+$OpenBSD: patch-src_peer_c,v 1.1.1.1 2004/04/15 03:37:43 jolan Exp $
+--- src/peer.c.orig	2004-04-06 23:14:44.000000000 -0500
++++ src/peer.c	2004-04-14 20:52:25.000000000 -0500
+@@ -46,6 +46,8 @@
+ #define REQUEST_SIZE 16384  /* Default request size */
+ char g_filebuffer[MAXREQUEST];	/* This should be moved to context or allocated in process_queue */
+ 
++int interest;
++
+ btPeerset* btPeerset_create( btPeerset *pset) {
+     if (!pset) {
+ 	pset = (btPeerset *)malloc(sizeof(btPeerset));
+@@ -458,6 +460,13 @@ static int rate_timer( btPeerStatus *ps,
+     return total;
+ }
+ 
++#define SHIFT_INT32(ptr,nbo,ival) \
++    (nbo=htonl(ival), memcpy(ptr,&nbo,sizeof(int32_t)), ptr+=sizeof(int32_t))
++#define SHIFT_BYTE(ptr,ival) ((*((unsigned char *)(ptr))++) = ival)
++
++#define UNSHIFT_INT32(ptr,nbo,ival) \
++    (memcpy(&nbo,ptr,sizeof(int32_t)), ival=ntohl(nbo), ptr+=sizeof(int32_t))
++#define UNSHIFT_BYTE(ptr,ival) (ival = (*((unsigned char *)(ptr))++)
+ /*
+  * Return 1 if there are more messages waiting
+  * Return 0 on success, 
+@@ -470,9 +479,10 @@ recv_peermsg( btContext *ctx, btPeer *pe
+     int32_t nbo_len;
+     int len;
+     char msg[80];
+-    char *nmsg;
++    char *nmsg, *param;
+     int res = 0;
+     int err;
++    int32_t nbo;
+ 
+     assert(peer->download<ctx->downloadcount);
+ 
+@@ -507,6 +517,7 @@ recv_peermsg( btContext *ctx, btPeer *pe
+ #endif
+ 
+     /* got message */
++    param = nmsg+5;
+     switch (nmsg[4]) {
+ 	case BT_MSG_CHOKE:
+ 	    {	    
+@@ -557,8 +568,9 @@ recv_peermsg( btContext *ctx, btPeer *pe
+ 	    break;
+ 	case BT_MSG_HAVE:
+ 	    {
+-		int block = ntohl(*(int *)(nmsg+5));
+-		int interest;
++		int block;
++
++		UNSHIFT_INT32(param,nbo,block);
+ 		bs_set( &peer->blocks, block);
+ 		interest = update_interested( ctx, peer);
+ 		if (interest && 
+@@ -576,9 +588,13 @@ recv_peermsg( btContext *ctx, btPeer *pe
+ 	    break;
+ 	case BT_MSG_REQUEST:
+ 	    {
+-		int piece = ntohl(*(int *)(nmsg+5));
+-		int offs = ntohl(*(int *)(nmsg+9));
+-		int len = ntohl(*(int *)(nmsg+13));
++		int piece;
++		int offs;
++		int len;
++
++		UNSHIFT_INT32(param,nbo,piece);
++		UNSHIFT_INT32(param,nbo,offs);
++		UNSHIFT_INT32(param,nbo,len);
+ 	        if (peer->local.choked) {
+ 		    /* ignore requests from choked peers */
+ 		    break;
+@@ -599,16 +615,13 @@ recv_peermsg( btContext *ctx, btPeer *pe
+ 	    break;
+ 	case BT_MSG_PIECE:
+ 	    {
+-		int32_t ibuf;
+ 
+ 		btPartialPiece *pp=peer->currentPiece;
+ 		int piece;
+ 		int offs;
+ 
+-		memcpy(&ibuf,nmsg+5,sizeof(int32_t));
+-		piece = ntohl(ibuf);
+-		memcpy(&ibuf,nmsg+9,sizeof(int32_t));
+-		offs = ntohl(ibuf);
++		UNSHIFT_INT32(param,nbo,piece);
++		UNSHIFT_INT32(param,nbo,offs);
+                 
+ #if 0
+ 		printf("%d: got piece %d, offs %d, len %d\n", 
+@@ -670,14 +683,10 @@ recv_peermsg( btContext *ctx, btPeer *pe
+ 	case BT_MSG_CANCEL:
+ 	    {
+ 	        int piece, offs, len;
+-		int32_t ibuf;
+ 		/* this cancels a specific request */
+-		memcpy(&ibuf,nmsg+5,sizeof(int32_t));
+-		piece = ntohl(ibuf);
+-		memcpy(&ibuf,nmsg+9,sizeof(int32_t));
+-		offs = ntohl(ibuf);
+-		memcpy(&ibuf,nmsg+13,sizeof(int32_t));
+-		len = ntohl(ibuf);
++		UNSHIFT_INT32(param,nbo,piece);
++		UNSHIFT_INT32(param,nbo,offs);
++		UNSHIFT_INT32(param,nbo,len);
+ 		
+ #if 0
+ 		printf("%d: got cancel %d, offs %d, len %d\n", 
+@@ -729,9 +738,6 @@ cleanup:
+  * -1 - permanent error sending msg size 
+  * -2 - permanent error sending message
+  */
+-#define SHIFT_INT32(ptr,nbo,ival) \
+-    (nbo=htonl(ival), memcpy(ptr,&nbo,sizeof(int32_t)), ptr+=sizeof(int32_t))
+-#define SHIFT_BYTE(ptr,ival) ((*((unsigned char *)(ptr))++) = ival)
+ int
+ send_message( btPeer *peer, char *buf, int len) {
+     int nslen = htonl( len);
+@@ -1046,7 +1052,9 @@ int
+ update_interested( btContext *ctx, btPeer *p) {
+     btDownload *dl=ctx->downloads[p->download];
+     assert (p->download<ctx->downloadcount);
+-    int interest = bs_hasInteresting( &dl->fileset.completed, &p->blocks, &dl->interested);
++
++    interest = bs_hasInteresting( &dl->fileset.completed, &p->blocks, &dl->interested);
++
+     if (interest != p->local.interested) {
+ 	if (send_interested( p, interest)) return -1;
+ 	if (interest == 0 && !p->remote.choked) {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/04/15 03:37:43 jolan Exp $
+--- configure.orig	2004-03-21 23:58:02.000000000 -0600
++++ configure	2004-04-14 21:03:14.000000000 -0500
+@@ -2495,7 +2495,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_uuid_uuid_generate=yes
++  ac_cv_lib_uuid_uuid_generate=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
