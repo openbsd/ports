@@ -1,8 +1,8 @@
-# $OpenBSD: patch-socks5-passwd-5,v 1.1 2000/03/27 23:02:48 form Exp $
+# $OpenBSD: patch-socks5-passwd-5,v 1.2 2000/11/02 17:39:47 espie Exp $
 
---- man/man5/socks5.passwd.5.orig	Tue Mar 28 06:22:38 2000
-+++ man/man5/socks5.passwd.5	Tue Mar 28 06:22:42 2000
-@@ -49,7 +49,7 @@
+--- man/man5/socks5.passwd.5.orig	Tue Jun  3 23:42:19 1997
++++ man/man5/socks5.passwd.5	Thu Nov  2 16:29:44 2000
+@@ -49,7 +49,7 @@ permit u - - - - - joe
  .SH SOCKS5 Clients
  The socks5 client library uses the SOCKS5_USER and SOCKS5_PASSWD environment variables for a user's username and password. Set the username on the client with the SOCKS5_USER environment variable. Set the password on the client with the SOCKS5_PASSWD variable.
  .SH SEE ALSO

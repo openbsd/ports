@@ -1,15 +1,19 @@
---- configure.orig	Mon Aug  2 11:01:03 1999
-+++ configure	Wed Aug  2 19:22:08 2000
-@@ -4711,7 +4711,7 @@
- 	UNIX_SV*|UNIX_System_V*)
- 		SHLIB_LFLAGS="-G"
- 		;;
--	FreeBSD*|NetBSD*)
-+	FreeBSD*|NetBSD*|OpenBSD*)
- 		SHLIB_LFLAGS="-Bshareable"
+--- configure.orig	Mon Aug  2 17:01:03 1999
++++ configure	Thu Nov  2 16:45:14 2000
+@@ -4716,6 +4716,12 @@ if test "$ac_cv_func_dlopen" = "yes" -o 
  		SHLIB_CFLAGS="-fpic"
  		PRELOADS="LD_PRELOAD"
-@@ -4763,7 +4763,7 @@
+ 		;;
++	OpenBSD*)
++		SHLIB_LD=gcc
++		SHLIB_LFLAGS="-shared -fpic"
++		SHLIB_CFLAGS="-fpic"
++		PRELOADS="LD_PRELOAD"
++		;;
+ 	SunOS*4.*)
+  		SHLIB_CFLAGS="-P"
+ 		SHLIB_LFLAGS="-dp -assert pure-text -assert nodefinitions"
+@@ -4763,7 +4769,7 @@ if test "$ac_cv_func_dlopen" = "yes" -o 
  		UNIX_SV*|UNIX_System_V*)
  			SHLIB_CFLAGS=
  			;;
