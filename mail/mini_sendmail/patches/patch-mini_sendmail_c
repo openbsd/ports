@@ -1,6 +1,6 @@
-$OpenBSD: patch-mini_sendmail_c,v 1.2 2003/11/05 04:51:08 jolan Exp $
---- mini_sendmail.c.orig	2003-09-29 11:17:25.000000000 -0500
-+++ mini_sendmail.c	2003-11-04 22:32:55.000000000 -0600
+$OpenBSD: patch-mini_sendmail_c,v 1.3 2004/10/14 01:44:07 jolan Exp $
+--- mini_sendmail.c.orig	Sun Nov 16 20:03:35 2003
++++ mini_sendmail.c	Wed Oct 13 01:43:32 2004
 @@ -43,6 +43,7 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -9,8 +9,8 @@ $OpenBSD: patch-mini_sendmail_c,v 1.2 2003/11/05 04:51:08 jolan Exp $
  #include <netdb.h>
  
  #ifdef DO_RECEIVED
-@@ -131,6 +132,8 @@ main( int argc, char** argv )
- 	    verbose = 1;
+@@ -137,6 +138,8 @@ main( int argc, char** argv )
+ 	    ;	/* ignore */
  	else if ( strcmp( argv[argn], "--" ) == 0 )
  	    ;	/* ignore */
 +	else if ( strcmp( argv[argn], "-i" ) == 0 || strcmp ( argv[argn], "-oi" ) == 0 )
@@ -18,22 +18,3 @@ $OpenBSD: patch-mini_sendmail_c,v 1.2 2003/11/05 04:51:08 jolan Exp $
  	else
  	    usage();
  	++argn;
-@@ -577,14 +580,16 @@ open_client_socket( void )
-     sock_family = PF_INET6;
- 
- #ifdef DO_MINUS_S
--    if ( inet_pton( PF_INET, server, (void*) &sa4.sin_addr ) == 0 )
-+
-+    (void) memset( (void*) &sa4, 0, sizeof(sa4) );
-+    if ( inet_pton( AF_INET, server, (void*) &sa4.sin_addr ) == 1 )
- 	{
- 	sock_family = PF_INET;
- 	sa4.sin_port = htons( SMTP_PORT );
- 	sa_len = sizeof(sa4);
- 	(void) memmove( &sa, &sa4, sa_len );
- 	}
--    else if ( inet_pton( PF_INET6, server, (void*) &sa.sin6_addr ) == -1 )
-+    else if ( inet_pton( AF_INET6, server, (void*) &sa.sin6_addr ) != 1 )
- 	{
- #ifdef DO_DNS
- 	(void) memset( &hints, 0, sizeof(hints) );

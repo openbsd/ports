@@ -1,6 +1,6 @@
-$OpenBSD: patch-mini_sendmail_8,v 1.2 2003/11/05 04:51:08 jolan Exp $
---- mini_sendmail.8.orig	2001-07-13 16:08:43.000000000 -0500
-+++ mini_sendmail.8	2003-11-04 22:25:11.000000000 -0600
+$OpenBSD: patch-mini_sendmail_8,v 1.3 2004/10/14 01:44:07 jolan Exp $
+--- mini_sendmail.8.orig	Sun Nov 16 19:47:33 2003
++++ mini_sendmail.8	Wed Oct 13 01:43:32 2004
 @@ -1,9 +1,11 @@
 -.TH mini_sendmail 8 "12 July 2001"
 +.TH mini_sendmail 8 "7 May 2003"
@@ -13,11 +13,12 @@ $OpenBSD: patch-mini_sendmail_8,v 1.2 2003/11/05 04:51:08 jolan Exp $
 +.RB [ -oi ]
  .RB [ -t ]
  .RB [ -s<server> ]
- .RB [ -T<timeout> ]
+ .RB [ -p<port> ]
 @@ -25,6 +27,14 @@ can be used to send email from inside a 
- .B -f
- Set the name of the "from" person (i.e. the sender of the mail).
  .TP
+ .B -f
+ Sets the name of the "from" person (i.e. the sender of the mail).
++.TP
 +.B -i
 +Don't parse for a dot-line, but read input up to an end-of-file.
 +Currently, this is always the case, but this option is needed for
@@ -25,7 +26,6 @@ $OpenBSD: patch-mini_sendmail_8,v 1.2 2003/11/05 04:51:08 jolan Exp $
 +.TP
 +.B -oi
 +Same as -i, needed for compatibility with sendmail.
-+.TP
+ .TP
  .B -t
  Read message for recipients.
- To:, Cc:, and Bcc: lines will be scanned for recipient addresses.

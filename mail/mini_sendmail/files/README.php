@@ -1,0 +1,25 @@
+	$OpenBSD: README.php,v 1.1 2004/10/14 01:44:06 jolan Exp $
+	Author: Jolan Luff <jolan@openbsd.org>
+
+First things first, we need to install the chroot subpackage of
+mini_sendmail if you have not done so already.  This will put a
+statically linked mini_sendmail binary into a location reachable by
+Apache when it is under chroot(2), /var/www/bin/mini_sendmail to be
+precise.
+
+Next, we need to tell PHP about our fake sendmail binary.  The php.ini
+examples leave the sendmail_path directive commented out.  We need to
+change it to point to mini_sendmail:
+
+;sendmail_path =
+sendmail_path = "/bin/mini_sendmail -t -i"
+
+PHP executes mini_sendmail by using the popen(3) function.
+Unfortunately, this means we are required to copy /bin/sh into the
+Apache chroot area:
+
+# cp -p /bin/sh /var/www/bin/sh
+
+If everything has been performed correctly, after a stop and restart of
+Apache (if it is running), we should now be able to utilize the PHP
+mail() function.
