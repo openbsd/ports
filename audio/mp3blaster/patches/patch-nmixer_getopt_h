@@ -1,0 +1,12 @@
+$OpenBSD: patch-nmixer_getopt_h,v 1.1 2002/10/23 15:24:34 naddy Exp $
+--- nmixer/getopt.h.orig	Wed Oct 23 16:49:16 2002
++++ nmixer/getopt.h	Wed Oct 23 16:49:25 2002
+@@ -103,7 +103,7 @@ struct option
+    errors, only prototype getopt for the GNU C library.  */
+ extern int getopt (int argc, char *const *argv, const char *shortopts);
+ #else /* not __GNU_LIBRARY__ */
+-extern int getopt ();
++/* extern int getopt (); */
+ #endif /* __GNU_LIBRARY__ */
+ extern int getopt_long (int argc, char *const *argv, const char *shortopts,
+ 		        const struct option *longopts, int *longind);

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/20 20:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/23 15:24:34 naddy Exp $
 
 COMMENT=	"text console audio player with an interactive interface"
 
-DISTNAME=	mp3blaster-3.1.1
+DISTNAME=	mp3blaster-3.1.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.stack.nl/~brama/mp3blaster/
 
