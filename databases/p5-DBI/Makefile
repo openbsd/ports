@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/05/14 04:54:31 brad Exp $
 
-DISTNAME=	DBI-0.93
-PKGNAME=	p5-DBI-0.93
-CATEGORIES=	databases perl5
-
-#BROKEN=	"newer version available"
+DISTNAME=	DBI-1.07
+PKGNAME=	p5-DBI-1.07
+CATEGORIES=	databases
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= DBI
 
 MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DBI
-
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
 
 .include <bsd.port.mk>
