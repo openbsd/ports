@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_ksh93_sh_1,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
+--- src/cmd/ksh93/sh.1.orig	Thu Apr 27 20:42:50 2000
++++ src/cmd/ksh93/sh.1	Sun Feb 18 03:36:06 2001
+@@ -4,7 +4,7 @@
+ .\"
+ .\" @(#)sh.1 (research!dgk) 12/28/93
+ .\"
+-.nr Z 0 \" set to 1 when command name is ksh rather than sh
++.nr Z 1 \" set to 1 when command name is ksh rather than sh
+ .nr Y 0 \" set to 1 for R&D UNIX
+ .if \nY=1 .nr Z 1
+ .ds OK [\|
