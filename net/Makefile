@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2002/07/04 20:21:17 miod Exp $
+# $OpenBSD: Makefile,v 1.224 2002/07/18 06:19:52 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -112,6 +112,8 @@
      SUBDIR += oidentd
      SUBDIR += oproute
      SUBDIR += p5-Chatbot-Eliza
+     SUBDIR += p5-IO-Interface
+     SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-Daemon
      SUBDIR += p5-Net-ICQ2000
