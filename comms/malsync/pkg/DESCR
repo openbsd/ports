@@ -1,21 +1,9 @@
+This is a bare bones utility to enable people who have Palm OS devices to
+sync to Mobile Application Link (MAL) compliant servers.  AvantGo
+(www.avantgo.com) and Puma Technologies (www.pumatech.com) are the first
+two companies committing to producing servers which speak this protocol.
+This utility will allow a user to sync with multiple servers,
+simultaneously or separately. The AvantGo.com service (www.avantgo.com)  
+is the first such server.
 
-malsync is built on the MAL (Mobile Application Link) protocol
-developed by/for AvantGo.com's site and customers.
-
-Generally, sites that are registered through avantgo provide formatted
-content to avantgo end users.  Any site may be synced to the palm
-through this library, though.
-
-You'll need a a personal AvantGo account from [2].
-
-This is the first release of the code, and is still considered
-"unsupported" by avantgo.  Please direct all questions to either
-the port maintainer, or email addresses in the src (and not to
-avantgo's help desk).
-
-[1] http://avantgo.com/
-[2] http://avantgo.com/setup/account_only.html
-
-Evan P Cordes
-evan.cordes@UMICH.EDU
-
+WWW: ${HOMEPAGE}
