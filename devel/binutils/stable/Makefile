@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/02/10 22:49:36 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2004/03/01 00:10:38 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--disable-nls --disable-commonbfdlib
 
 # cross-tools
 FLAVORS=		alpha arm armeb hppa i386 m68k m88k mips powerpc \
-			sparc sparc64 vax x86_64
+			sparc sparc64 vax amd64
 FLAVOR?=
 
 SEPARATE_BUILD=		flavored
@@ -39,7 +39,7 @@ SEPARATE_BUILD=		flavored
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
 TARGET_ARCH=		${FLAVOR:L}
 FULLPKGNAME=		binutils-${TARGET_ARCH}-$V
-.if ${FLAVOR} == "x86_64" || ${FLAVOR} == "sparc64" || ${FLAVOR} == "alpha"
+.if ${FLAVOR} == "alpha" || ${FLAVOR} == "amd64" || ${FLAVOR} == "sparc64"
 CONFIGURE_ARGS+=	--enable-64-bit-bfd
 .endif
 .else
