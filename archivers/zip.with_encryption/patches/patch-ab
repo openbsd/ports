@@ -1,0 +1,79 @@
+*** fileio.c.orig	Tue Jan 20 15:44:03 1998
+--- fileio.c	Tue Jan 20 15:51:36 1998
+***************
+*** 633,643 ****
+  }
+  
+  
+! char *tempname(zip)
+  char *zip;              /* path name of zip file to generate temp name for */
+! 
+  /* Return a temporary file name in its own malloc'ed space, using tempath. */
+  {
+    char *t = zip;   /* malloc'ed space for name (use zip to avoid warning) */
+  
+  #ifdef CMS_MVS
+--- 633,645 ----
+  }
+  
+  
+! char *tempname(zip,fpfp)
+  char *zip;              /* path name of zip file to generate temp name for */
+! FILE **fpfp;
+  /* Return a temporary file name in its own malloc'ed space, using tempath. */
+  {
++   int fdfd;
++ 
+    char *t = zip;   /* malloc'ed space for name (use zip to avoid warning) */
+  
+  #ifdef CMS_MVS
+***************
+*** 732,738 ****
+    }
+    else
+    {
+!     if ((t = malloc(12)) == NULL)
+        return NULL;
+      *t = 0;
+    }
+--- 734,740 ----
+    }
+    else
+    {
+!     if ((t = malloc(17)) == NULL)
+        return NULL;
+      *t = 0;
+    }
+***************
+*** 744,750 ****
+    }
+  #else
+    strcat(t, "ziXXXXXX"); /* must use lowercase for Linux dos file system */
+!   return mktemp(t);
+  #endif /* NO_MKTEMP */
+  #endif /* TANDEM */
+  #endif /* CMS_MVS */
+--- 746,768 ----
+    }
+  #else
+    strcat(t, "ziXXXXXX"); /* must use lowercase for Linux dos file system */
+! 
+!   fdfd = mkstemp(t);
+!   if (fdfd == -1)
+!   {
+! 	free(t);
+! 	return NULL;
+!   }
+! 
+!   *fpfp = fdopen(fdfd, "w+");
+!   if (*fpfp == NULL)
+!   {
+! 	free(t);
+! 	close(fdfd);
+! 	return NULL;
+!   }
+! 
+!   return t;
+  #endif /* NO_MKTEMP */
+  #endif /* TANDEM */
+  #endif /* CMS_MVS */

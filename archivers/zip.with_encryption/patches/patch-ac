@@ -1,0 +1,25 @@
+*** zip.c.orig	Tue Jan 20 15:54:41 1998
+--- zip.c	Tue Jan 20 15:55:39 1998
+***************
+*** 1615,1624 ****
+      if ((zfiles != NULL || zipbeg) && (x = fopen(zipfile, FOPR_EX)) == NULL) {
+        ZIPERR(ZE_NAME, zipfile);
+      }
+!     if ((tempzip = tempname(zipfile)) == NULL) {
+        ZIPERR(ZE_MEM, "allocating temp filename");
+      }
+!     if ((tempzf = y = fopen(tempzip, FOPW)) == NULL) {
+        ZIPERR(ZE_TEMP, tempzip);
+      }
+    }
+--- 1615,1624 ----
+      if ((zfiles != NULL || zipbeg) && (x = fopen(zipfile, FOPR_EX)) == NULL) {
+        ZIPERR(ZE_NAME, zipfile);
+      }
+!     if ((tempzip = tempname(zipfile, &y)) == NULL) {
+        ZIPERR(ZE_MEM, "allocating temp filename");
+      }
+!     if ((tempzf = y) == NULL) {
+        ZIPERR(ZE_TEMP, tempzip);
+      }
+    }

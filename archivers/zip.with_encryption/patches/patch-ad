@@ -1,0 +1,25 @@
+*** zipcloak.c.orig	Tue Jan 20 15:56:06 1998
+--- zipcloak.c	Tue Jan 20 16:02:19 1998
+***************
+*** 274,282 ****
+      attr = getfileattr(zipfile);
+  
+      /* Open output zip file for writing */
+!     if ((tempzf = outzip = fopen(tempzip = tempname(zipfile), FOPW)) == NULL) {
+!         ziperr(ZE_TEMP, tempzip);
+!     }
+  
+      /* Get password */
+      if (getp("Enter password: ", passwd, PWLEN+1) == NULL)
+--- 274,284 ----
+      attr = getfileattr(zipfile);
+  
+      /* Open output zip file for writing */
+!     tempzip = tempname(zipfile, &outzip);
+!     tempzf = outzip;
+! 
+!     if ((tempzip == NULL) || (outzip == NULL))
+! 	ziperr(ZE_TEMP, tempzip);
+  
+      /* Get password */
+      if (getp("Enter password: ", passwd, PWLEN+1) == NULL)
