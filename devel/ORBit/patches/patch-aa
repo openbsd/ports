@@ -1,6 +1,6 @@
---- src/IIOP/Makefile.in.orig	Wed Apr  7 14:49:37 1999
-+++ src/IIOP/Makefile.in	Thu May  6 11:16:31 1999
-@@ -90,9 +90,7 @@
+--- src/IIOP/Makefile.in.orig	Mon Aug 30 18:01:50 1999
++++ src/IIOP/Makefile.in	Thu Sep  9 17:54:46 1999
+@@ -92,9 +92,7 @@
  VERSION = @VERSION@
  YACC = @YACC@
  
@@ -11,7 +11,7 @@
  
  libIIOPincludedir = $(includedir)/IIOP
  
-@@ -110,7 +108,7 @@
+@@ -112,7 +110,7 @@
  
  BUILT_SOURCES = $(libwrap_files)
  
@@ -20,7 +20,7 @@
  
  EXTRA_DIST = IIOP-design.txt
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -123,10 +121,7 @@
+@@ -125,10 +123,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@

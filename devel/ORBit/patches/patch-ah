@@ -1,7 +1,7 @@
---- src/orb/Makefile.in.orig	Thu May  6 11:06:19 1999
-+++ src/orb/Makefile.in	Thu May  6 11:06:33 1999
-@@ -107,7 +107,7 @@
- IDL = $(top_builddir)/src/idl-compiler/orbit-idl
+--- src/orb/Makefile.in.orig	Wed Sep  8 18:39:49 1999
++++ src/orb/Makefile.in	Wed Sep  8 18:08:42 1999
+@@ -110,7 +110,7 @@
+ IDL = $(top_builddir)/src/orbit-idl-compiler/orbit-idl
  IRIDL = $(top_srcdir)/src/daemons/interface_repository/interface_repository.idl
  
 -libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)

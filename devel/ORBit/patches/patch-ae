@@ -1,6 +1,6 @@
---- src/services/name/Makefile.in.orig	Wed Apr  7 14:49:39 1999
-+++ src/services/name/Makefile.in	Thu May  6 11:07:44 1999
-@@ -105,7 +105,7 @@
+--- src/services/name/Makefile.in.orig	Mon Aug 30 18:01:52 1999
++++ src/services/name/Makefile.in	Thu Sep  9 17:56:26 1999
+@@ -107,7 +107,7 @@
  libORBitservicesinclude_HEADERS =  	CosNaming.h								CosNaming_impl.h							CosNaming.idl								LName.pidl
  
  
@@ -9,12 +9,3 @@
  
  
  INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
-@@ -781,7 +781,7 @@
- 
- 
- $(CosNaming_built): CosNaming.idl $(srcdir)/LName.h $(IDL)
--	$(IDL) $<
-+	$(IDL) CosNaming.idl
- 	cat $(srcdir)/LName.h >>CosNaming.h
- 
- $(srcdir)/name-client.c $(srcdir)/orbit-name-server.c $(srcdir)/new-name-server.c: CosNaming.h

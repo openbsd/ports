@@ -1,6 +1,6 @@
---- src/daemons/interface_repository/Makefile.in.orig	Wed Apr  7 14:49:43 1999
-+++ src/daemons/interface_repository/Makefile.in	Thu May  6 10:49:55 1999
-@@ -100,7 +100,7 @@
+--- src/daemons/interface_repository/Makefile.in.orig	Wed Sep  8 18:40:33 1999
++++ src/daemons/interface_repository/Makefile.in	Wed Sep  8 18:10:07 1999
+@@ -102,7 +102,7 @@
  
  
  orbit_ird_LDFLAGS = -static

@@ -1,15 +1,15 @@
---- popt/Makefile.in.orig	Wed Apr  7 14:49:28 1999
-+++ popt/Makefile.in	Thu May  6 12:18:08 1999
-@@ -109,7 +109,7 @@
+--- popt/Makefile.in.orig	Wed Sep  8 18:37:56 1999
++++ popt/Makefile.in	Wed Sep  8 18:06:07 1999
+@@ -108,7 +108,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
 -libpopt_la_LDFLAGS = 
-+libpopt_la_LDFLAGS = -version-info 0:4:0
++libpopt_la_LDFLAGS =  -version-info 0:4:0
  libpopt_la_LIBADD = 
  libpopt_la_OBJECTS =  popt.lo findme.lo poptparse.lo poptconfig.lo \
  popthelp.lo
-@@ -122,7 +122,7 @@
+@@ -121,7 +121,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)

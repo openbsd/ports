@@ -11,6 +11,7 @@ info/libIDL.info
 @exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/libIDL.info %D/info/dir
 share/aclocal/libIDL.m4
+include/orbit-idl2.h
 include/libIDL/IDL.h
 include/orb/allocator-defs.h
 include/orb/allocators.h
@@ -55,6 +56,7 @@ include/ORBitutil/thread-safety.h
 include/ORBitutil/trace.h
 include/ORBitutil/util.h
 include/ORBitutil/compat.h
+include/ORBitutil/os-specifics.h
 include/IIOP/IIOP-config.h
 include/IIOP/IIOP-types.h
 include/IIOP/IIOP.h
@@ -83,6 +85,7 @@ lib/libIIOP.so.0.4
 lib/libIIOP.la
 lib/libIIOP.a
 lib/libname-server.a
+lib/liborbit-c-backend.a
 lib/libORBitCosNaming.so.0.4
 @exec /sbin/ldconfig -m %B
 lib/libORBitCosNaming.la

@@ -1,6 +1,6 @@
---- libIDL/Makefile.in.orig	Wed Apr  7 14:49:29 1999
-+++ libIDL/Makefile.in	Thu May  6 11:09:27 1999
-@@ -89,7 +89,7 @@
+--- libIDL/Makefile.in.orig	Wed Sep  8 18:40:06 1999
++++ libIDL/Makefile.in	Wed Sep  8 18:09:18 1999
+@@ -92,7 +92,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
@@ -9,7 +9,7 @@
  NM = @NM@
  PACKAGE = @PACKAGE@
  RANLIB = @RANLIB@
-@@ -120,7 +120,7 @@
+@@ -123,7 +123,7 @@
  
  libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
  

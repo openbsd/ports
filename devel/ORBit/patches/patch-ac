@@ -1,6 +1,21 @@
---- configure.orig	Wed Apr  7 13:16:18 1999
-+++ configure	Thu May  6 10:49:51 1999
-@@ -5424,10 +5424,10 @@
+--- configure.orig	Mon Aug 30 17:48:31 1999
++++ configure	Mon Sep 13 17:46:13 1999
+@@ -5164,10 +5164,10 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
+ 
+-  case "$ac_given_INSTALL" in
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
++#  case "$ac_given_INSTALL" in
++#  [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#  esac
+ 
+   echo creating "$ac_file"
+   rm -f "$ac_file"
+@@ -5388,10 +5388,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
