@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2001/11/28 08:14:07 shell Exp $
+# $OpenBSD: Makefile,v 1.38 2002/01/10 11:08:55 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 
 COMMENT=	"X-Chat is an X11 IRC client"
 
 MAJOR=		1.8
-VERSION=	${MAJOR}.6
+VERSION=	${MAJOR}.7
 DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.488
+NEED_VERSION=	1.504
 
 MASTER_SITES=	http://xchat.org/files/source/${MAJOR}/ \
 		http://xchat.linuxpower.org/files/source/${MAJOR}/
@@ -31,7 +31,7 @@ FLAVOR?=
 
 CONFIGURE_ARGS+= --disable-imlib --disable-python \
 		 --disable-gnome --disable-zvt    \
-		 --enable-ipv6
+		 --disable-mmx --enable-ipv6
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
