@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/02 01:45:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/06/21 15:42:39 naddy Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
-DISTNAME=	multitail-3.0.6
+VERSION=	3.2.1
+DISTNAME=	multitail-${VERSION}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
@@ -21,7 +22,7 @@ EXTRACT_SUFX=	.tgz
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} -DVERSION=\"${VERSION}\"'
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/multitail
