@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2002/11/07 18:04:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.240 2002/11/10 19:49:02 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += dnstracer
      SUBDIR += doc
      SUBDIR += dxpc
+     SUBDIR += echoping
      SUBDIR += edonkey
      SUBDIR += edonkey-gui
      SUBDIR += epic4
