@@ -1,0 +1,51 @@
+$OpenBSD: SECURITY,v 1.1 1999/09/26 22:40:59 ho Exp $
+
+Quick notes on security issues using BIND 8
+-------------------------------------------
+
+The base version of BIND from ISC is 8.2.2-T3B, RC0, which is belived
+to be fairly secure (i.e no obvious or (to the author) known bugs).
+It is, however, a large and complex piece of software, so there are 
+bound to be bugs found in the future...
+
+On OpenBSD, the recommended configuration is to run named in a 
+chroot()-ed jail, typically /var/named, and also running named as
+non-root, this currently defaults to user 'named'.  
+
+The main configuration file /var/named/named.conf should be owned
+by 'root', group 'named' and set to mode 640.
+The user 'named' must be able to _read_ the file (reloading the 
+nameserver, etc) but 'named' should never be able to _write_ into 
+the file.
+
+From this follows that the /var/named directory should not be writable 
+by user 'named'. In fact, the directories that require writes by user
+'named' are all the zone directories and /var/named/var/run. 
+All other directories should be owned by 'root', group 'wheel'.
+The /var/named/var/tmp directory should be mode 1777 (sticky bit set).
+
+If you are using signed zones, don't store your private zone key(s) 
+under /var/named.
+
+Some additional work has been done to the source for this port/snapshot, 
+this currently includes: 
+
+	** Don't allow source routed sockets 
+	** Most sprintf() have been changed to snprintf() 
+	** Likewise strcpy() & strncpy() to strlcpy() in 
+	   binaries named and named-xfer 
+	** use mkstemp() instead of mktemp() 
+	** Generate good random query IDs
+	
+There are also some functionality/bugfix patches (from the indicated sources).
+[These are not strictly security related, but this seems a good place
+ to mention this anyway, so...]
+	
+	** global transfer-source option [ISC]
+	** allow trusted keys to be specified in hex [TISlabs]
+        ** support multiple CNAMEs [ISC]
+
+
+September 26, 1999
+Håkan Olsson <ho@openbsd.org>
+Jakob Schlyter <jakob@openbsd.org>
