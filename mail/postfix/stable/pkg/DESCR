@@ -78,11 +78,11 @@ Flavors
 
 * sasl - Add support for authenticated SMTP.
 
+* tls - Add support for TLS.
+
 * ldap - Add support for doing table lookups using LDAP.
 
 * mysql - Add support for doing table lookups using MySQL.
 
 
-More information
-
-  ${HOMEPAGE}
+WWW: ${HOMEPAGE}
