@@ -1,70 +1,51 @@
-*** session.c.orig	Mon Jan 12 21:35:25 1998
---- session.c	Mon Jan 12 22:36:03 1998
-***************
-*** 887,892 ****
---- 887,893 ----
-      return found;
-  }
-  
-+ #ifndef __OpenBSD__
-  /*===[ Unique Filename Generator ]===========================================*/
-  
-  static char *
-***************
-*** 916,921 ****
---- 917,923 ----
-  	return (NULL);
-  #endif
-  }
-+ #endif /* ! __OpenBSD__ */
-  
-  /*===[ SAVE WINDOW INFORMATION ]=============================================*/
-  
-***************
-*** 942,947 ****
---- 944,953 ----
-      char discardCommand[80];
-      int numVals, i;
-      char yes = 1;
-+ #ifdef __OpenBSD__
-+     int tmphandle;
-+     char tmpprefix[256];
-+ #endif
-      static int first_time = 1;
-  
-      if (first_time)
-***************
-*** 994,1005 ****
-       *        no longer the same since the new format supports
-       *        virtaul workspaces.
-       *========================================================*/
-      if ((filename = unique_filename (path, ".ctwm")) == NULL)
-  	goto bad;
-  
-      if (!(configFile = fopen (filename, "wb"))) /* wb = write bytes ? */
-  	goto bad;
-! 
-      if (!write_ushort (configFile, SAVEFILE_VERSION))
-  	goto bad;
-  
---- 1000,1019 ----
-       *        no longer the same since the new format supports
-       *        virtaul workspaces.
-       *========================================================*/
-+ #ifdef __OpenBSD__
-+     strncpy(tmpprefix, path, 256);
-+     strncat(tmpprefix, "/.ctwmXXXXXX", (sizeof(path) - 12));
-+     if ((tmphandle = mkstemp(tmpprefix)) == -1)
-+ 	goto bad;
-+     if ((configFile = fdopen(tmphandle, "wb")) == NULL)
-+ 	goto bad;
-+ #else
-      if ((filename = unique_filename (path, ".ctwm")) == NULL)
-  	goto bad;
-  
-      if (!(configFile = fopen (filename, "wb"))) /* wb = write bytes ? */
-  	goto bad;
-! #endif /* __OpenBSD__ */
-      if (!write_ushort (configFile, SAVEFILE_VERSION))
-  	goto bad;
-  
+--- session.c.orig	Mon Jul 10 23:56:53 2000
++++ session.c	Tue Jul 11 00:01:33 2000
+@@ -887,6 +887,7 @@
+     return found;
+ }
+ 
++#ifndef __OpenBSD__
+ /*===[ Unique Filename Generator ]===========================================*/
+ 
+ static char *
+@@ -917,6 +918,7 @@
+ #endif
+ }
+ 
++#endif /* ! __OpenBSD__ */
+ /*===[ SAVE WINDOW INFORMATION ]=============================================*/
+ 
+ void
+@@ -942,6 +944,10 @@
+     char discardCommand[80];
+     int numVals, i;
+     char yes = 1;
++#ifdef __OpenBSD__
++    int tmphandle;
++    char tmpprefix[256];
++#endif
+     static int first_time = 1;
+ 
+     if (first_time)
+@@ -994,12 +1000,20 @@
+      *        no longer the same since the new format supports
+      *        virtaul workspaces.
+      *========================================================*/
++#ifdef __OpenBSD__
++    strncpy(tmpprefix, path, 256);
++    strncat(tmpprefix, "/.ctwmXXXXXX", (sizeof(path) - 12));
++    if ((tmphandle = mkstemp(tmpprefix)) == -1)
++      goto bad;
++    if ((configFile = fdopen(tmphandle, "wb")) == NULL)
++      goto bad;
++#else
+     if ((filename = unique_filename (path, ".ctwm")) == NULL)
+ 	goto bad;
+ 
+     if (!(configFile = fopen (filename, "wb"))) /* wb = write bytes ? */
+ 	goto bad;
+-
++#endif /* __OpenBSD__ */
+     if (!write_ushort (configFile, SAVEFILE_VERSION))
+ 	goto bad;
+ 

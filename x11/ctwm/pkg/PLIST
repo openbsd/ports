@@ -1,6 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/10 08:38:12 kevlo Exp $
 bin/ctwm
 lib/X11/twm/system.ctwmrc
-man/cat1/ctwm.0
 lib/X11/twm/images/3D_Expand15.xpm
 lib/X11/twm/images/3D_Iconify15.xpm
 lib/X11/twm/images/3D_Lightning15.xpm
@@ -90,3 +90,6 @@ lib/X11/twm/images/xrn.goodnews.xpm
 lib/X11/twm/images/xrn.nonews.xpm
 lib/X11/twm/images/xrn.xpm
 lib/X11/twm/images/xterm.xpm
+man/cat1/ctwm.0
+@dirrm lib/X11/twm/images
+@dirrm lib/X11/twm

@@ -1,38 +1,22 @@
-*** Imakefile.orig	Sat Nov 15 16:09:18 1997
---- Imakefile	Sat Nov 15 16:09:09 1997
-***************
-*** 11,17 ****
-  #undef  USE_SOUND
-  #define XPM
-  #define USEM4
-! #undef X11R6
-  #define I18N
-  
-           YFLAGS = -d
---- 11,17 ----
-  #undef  USE_SOUND
-  #define XPM
-  #define USEM4
-! #define X11R6
-  #define I18N
-  
-           YFLAGS = -d
-***************
-*** 19,26 ****
-         LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
-  
-  #ifdef XPM
-!       XPMLIBDIR = 
-!       XPMINCDIR = 
-  
-       XPMDEFINES = -DXPM
-           XPMLIB = $(XPMLIBDIR) -lXpm
---- 19,26 ----
-         LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
-  
-  #ifdef XPM
-!       XPMLIBDIR = -L/usr/X11R6/lib
-!       XPMINCDIR = -I/usr/X11R6/include
-  
-       XPMDEFINES = -DXPM
-           XPMLIB = $(XPMLIBDIR) -lXpm
+--- Imakefile.orig	Mon Jul 10 23:55:01 2000
++++ Imakefile	Mon Jul 10 23:56:21 2000
+@@ -11,7 +11,7 @@
+ #undef  USE_SOUND
+ #define XPM
+ #define USEM4
+-#undef X11R6
++#define X11R6
+ #define I18N
+ 
+          YFLAGS = -d
+@@ -19,8 +19,8 @@
+        LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+ 
+ #ifdef XPM
+-      XPMLIBDIR = 
+-      XPMINCDIR = 
++      XPMLIBDIR = -L/usr/X11R6/lib
++      XPMINCDIR = -I/usr/X11R6/include
+ 
+      XPMDEFINES = -DXPM
+          XPMLIB = $(XPMLIBDIR) -lXpm
