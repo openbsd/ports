@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/01/18 05:04:00 brad Exp $
 
 VERSION=	0.7.10
 PKGNAME=	abiword-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.330
-MASTER_SITES=	http://download.abisource.com/releases/${VERSION}/src/lf/
+NEED_VERSION=	1.336
+MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
 DISTFILES=	abi-${VERSION}.tar.gz abidistfiles-${VERSION}.tar.gz \
 		libiconv-${VERSION}.tar.gz unixfonts-${VERSION}.tar.gz \
 		wv-${VERSION}.tar.gz
