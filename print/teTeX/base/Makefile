@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/04/04 21:19:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2004/10/13 18:09:03 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -61,6 +61,8 @@ pre-fake:
 	rm ${TEXMF_DIR}/ls-R
 
 post-install:
+	@mv ${PREFIX}/share/texmf/web2c/texmf.cnf \
+		${PREFIX}/share/texmf/web2c/texmf.cnf.dist
 	${INSTALL_DATA_DIR} ${TETEX_EXDIR}
 	${INSTALL_DATA} files/tetex.cfg ${TETEX_EXDIR}/tetex.cfg
 	${INSTALL_SCRIPT} files/tetex_setup.sh ${PREFIX}/bin/tetex_setup
