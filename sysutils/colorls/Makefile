@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/23 01:27:31 naddy Exp $
 
 COMMENT=	"ls that can use color to display file attributes"
 
-VERSION=	3.0
-DISTNAME=	ls-${VERSION}
-PKGNAME=	colorls-${VERSION}
+PKGNAME=	colorls-3.0.1
+DISTNAME=	ls-3.0
 CATEGORIES=	sysutils
-NEED_VERSION=	1.475
+NEED_VERSION=	1.504
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

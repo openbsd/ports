@@ -1,15 +1,17 @@
-$OpenBSD: patch-extern_h,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
---- extern.h.orig	Tue Oct 16 20:46:00 2001
-+++ extern.h	Tue Oct 16 20:48:13 2001
-@@ -56,3 +56,11 @@ void	 printlong __P((DISPLAY *));
+$OpenBSD: patch-extern_h,v 1.2 2002/01/23 01:27:32 naddy Exp $
+--- extern.h.orig	Mon Oct 15 22:12:15 2001
++++ extern.h	Wed Jan 23 00:33:04 2002
+@@ -56,3 +56,13 @@ void	 printlong __P((DISPLAY *));
  void	 printscol __P((DISPLAY *));
  void	 printstream __P((DISPLAY *));
  void	 usage __P((void));
 +#ifdef COLORLS
-+void	 parsecolors __P((char *cs));
++void	 parsecolors __P((const char *cs));
 +void	 colorquit __P((int));
 +
 +extern char *ansi_fgcol;
 +extern char *ansi_bgcol;
 +extern char *ansi_coloff;
++extern char *attrs_off;
++extern char *enter_bold;
 +#endif
