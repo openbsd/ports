@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/03 19:36:10 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 03:49:21 lebel Exp $
+
+COMMENT=	"extensible shell, derived from plan9's rc"
 
 DISTNAME=	es-0.9-beta1
 PKGNAME=	es-0.9b1
 CATEGORIES=	shells
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 
 MAINTAINER=	ports@openbsd.org

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/02/11 04:20:10 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 03:49:25 lebel Exp $
+
+COMMENT=	"the Z shell, Bourne shell-compatible, development flavor"
 
 VERSION=	3.1.9
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
