@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/04/19 21:36:39 niklas Exp $
+# $OpenBSD: Makefile,v 1.20 1999/04/29 19:55:07 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -96,6 +96,7 @@
 #    SUBDIR += sawt
 #    SUBDIR += scogdb
 #    SUBDIR += sfio
+     SUBDIR += shtool
      SUBDIR += swig
 #    SUBDIR += tclcheck
      SUBDIR += tkcvs
