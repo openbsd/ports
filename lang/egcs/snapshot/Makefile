@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.11 1998/12/19 00:55:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 1998/12/21 21:13:01 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -48,7 +48,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-12-13
+LATEST_DATE=1998-12-20
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -57,7 +57,7 @@ LATEST_DATE=1998-12-13
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1998-12-13
+#NEXT_DATE=1998-12-20
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -230,7 +230,7 @@ post-patch:
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 	cd ${WRKSRC}; \
-	for f in `cat ${FILESDIR}/fixdepend`;
+	for f in `cat ${FILESDIR}/fixdepend`; \
 	do \
 		[ -f $$f ] && touch $$f; \
 	done 

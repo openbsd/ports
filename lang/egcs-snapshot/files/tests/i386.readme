@@ -1,4 +1,4 @@
-As of 981122 snapshot *EVERYTHING* is configured for openbsd:
+Results for 1998-12-20 snapshot:
 
 		=== libio Summary ===
 
@@ -6,14 +6,11 @@ As of 981122 snapshot *EVERYTHING* is configured for openbsd:
 
 		=== libstdc++ Summary ===
 
-# of expected passes		27
-# of unexpected failures	1
-# of expected failures		2
-FAIL: tcomplex.cc -O compilation
+# of expected passes		30
 
 		=== gcc Summary ===
 
-# of expected passes		7785
+# of expected passes		7816
 # of unexpected failures	22
 # of expected failures		13
 # of unsupported tests		12
@@ -40,15 +37,16 @@ FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 FAIL: gcc.dg/980414-1.c (test for excess errors)
-
 		=== g++ Summary ===
 
-# of expected passes		4670
+# of expected passes		4774
 # of unexpected failures	16
-# of expected failures		78
+# of unexpected successes	1
+# of expected failures		86
 # of untested testcases		7
 
 FAIL: g++.law/profile1.C (test for excess errors)
+XPASS: g++.other/conv5.C discarding const - (test for errors, line 6)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -68,15 +66,7 @@ FAIL: g++.pt/instantiate4.C (test for excess errors)
 
 		=== g77 Summary ===
 
-# of expected passes		444
-# of unexpected failures	7
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O0 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O1 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
-FAIL: g77.f-torture/execute/u77-test.f execution,  -Os 
+# of expected passes		465
 
 		=== objc Summary ===
 
