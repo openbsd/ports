@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.13 2001/05/24 16:47:59 espie Exp $
+# $OpenBSD: make-plist,v 1.14 2001/08/18 13:11:10 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -40,6 +40,51 @@ use strict;
 use File::Find;
 use File::Spec;
 
+my %annotated;
+my $keep = '';
+my $manual = 0;
+
+sub annotate
+{
+	my $filename = shift;
+	my ($mode, $owner, $group, $nocheck) = ('', '', '', '');
+	open(OLDFILE, '<', $filename) or die "Can't read $filename";
+	while(<OLDFILE>) {
+		chomp;
+		if (m/^\@mode\s+/) {
+			$mode = $';
+		} elsif (m/^\@owner\s+/) {
+			$owner = $';
+		} elsif (m/^\@group\s+/) {
+			$group = $';
+		} elsif (m/^\@comment\s+no checksum$/) {
+			$nocheck = 1;
+		} elsif (m/^\@option no-default-conflict/||m/^\@pkgcfl/) {
+			$keep="$keep$_\n";
+		} elsif (m/^\@exec\s+/ || m/^\@unexec\s+/) {
+			$_=$';
+			# we don't warn for stuff we probably added...
+			next if m/^mkdir -p/||m/^install-info /;
+			$manual = 1;
+		} elsif (m/^\@/) {
+			next;
+		} elsif (m/^\!?\%\%(.*)\%\%/) {
+			my $frag = $1;
+			if ($frag ne "SHARED") {
+				$keep="$keep$_\n";
+				$manual = 1;
+			}
+		} elsif (m/\$\{.*\}/) {
+			$manual = 1;
+		}
+
+		if ("$mode$owner$group$nocheck" ne '') {
+			$annotated{$_} = [ $mode, $owner, $group, $nocheck ];
+			$nocheck = '';
+		}
+	}
+}
+
 my ($plist, $pshared);
 my @backsubst;
 
@@ -53,10 +98,12 @@ if (-e "$plist.orig" or -e "$pshared.orig") {
 	die "You must clean up old files first";
 }
 if (-e $plist) {
+    annotate($plist);
     rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
 }
 
 if (-e $pshared) {
+    annotate($pshared);
     rename($pshared, "$pshared.orig") or die "Can't rename $pshared to $pshared.orig";
 }
 
@@ -71,7 +118,7 @@ for (@ARGV) {
 	}
 }
 
-print "\@comment \$OpenBSD\$\n";
+print "\@comment \$OpenBSD\$\n$keep";
 
 # compare all files against those dates
 my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
@@ -181,8 +228,31 @@ for my $d (keys %$mtree) {
 
 add_info('@unexec install-info --delete', \%infodir);
 
+sub handle_file
+{
+    my $fname = strip(shift);
+    my $string = "$fname\n";
+
+    if (defined $annotated{$fname}) {
+    	my ($mode, $owner, $group, $nocheck) = @{$annotated{$fname}};
+	if ($mode ne '') {
+		$string="\@mode $mode\n$string\@mode\n";
+	}
+	if ($owner ne '') {
+		$string="\@owner $owner\n$string\@owner\n";
+	}
+	if ($group ne '') {
+		$string="\@group $group\n$string\@group\n";
+	}
+	if ($nocheck ne '') {
+		$string="\@comment no checksum\n$string";
+	}
+    }
+    print $string;
+}
+
 for my $f (sort @files) {
-	print strip($f), "\n" unless ($f =~ m|/dir$|) && (defined $infodir{$`});
+	handle_file($f) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
 }
 
 if (@libfiles > 0) {
@@ -212,3 +282,8 @@ for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 }
 	
 add_info('@exec install-info', \%infodir);
+
+if ($manual) {
+	print STDERR "make plist: subst/frag/exec/unexec spotted in original file\n";
+	print STDERR "\tMay require manual intervention\n";
+}
