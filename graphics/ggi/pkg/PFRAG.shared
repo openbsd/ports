@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/03/26 16:03:56 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2002/12/28 19:34:51 todd Exp $
+lib/libggi.so.2.2
+DYNLIBDIR(%D/lib)
 lib/ggi/default/color.so
 lib/ggi/default/ilbm.so
 lib/ggi/default/iplanar_2p.so
@@ -16,9 +18,8 @@ lib/ggi/default/stubs.so
 lib/ggi/default/text_16.so
 lib/ggi/default/text_32.so
 lib/ggi/display/X.so
-lib/ggi/display/X_misc.so
-lib/ggi/display/Xlib.so
 lib/ggi/display/file.so
+lib/ggi/display/ipc.so
 lib/ggi/display/mansync.so
 lib/ggi/display/memory.so
 lib/ggi/display/monotext.so
@@ -26,8 +27,12 @@ lib/ggi/display/multi.so
 lib/ggi/display/palemu.so
 lib/ggi/display/sub.so
 lib/ggi/display/tele.so
+lib/ggi/display/terminfo.so
 lib/ggi/display/tile.so
 lib/ggi/display/trueemu.so
-lib/libggi.so.2.0
-lib/libggimisc.so.2.0
-DYNLIBDIR(%D/lib)
+lib/ggi/helper/helper_x_dbe.so
+lib/ggi/helper/helper_x_evi.so
+lib/ggi/helper/helper_x_shm.so
+man/man3/ggiResourceAcquire.3
+man/man3/ggiResourceMustAcquire.3
+man/man3/ggiResourceRelease.3

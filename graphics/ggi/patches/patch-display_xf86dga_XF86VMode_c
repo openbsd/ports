@@ -1,0 +1,14 @@
+$OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.1 2002/12/28 19:34:51 todd Exp $
+--- display/xf86dga/XF86VMode.c.orig	Sat Dec 28 02:04:05 2002
++++ display/xf86dga/XF86VMode.c	Sat Dec 28 02:11:46 2002
+@@ -37,8 +37,10 @@ from Kaleb S. KEITHLEY.
+ /* THIS IS NOT AN X CONSORTIUM STANDARD */
+ 
+ #define _POSIX_C_SOURCE	199309L
++#if !defined(__OpenBSD__)
+ #define _POSIX_SOURCE
+ #define _XOPEN_SOURCE	500L
++#endif
+ #define _BSD_SOURCE
+ #define _SVID_SOURCE  
+ #define FUNCPROTO	15

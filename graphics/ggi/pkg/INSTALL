@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/09/24 00:01:04 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/12/28 19:34:51 todd Exp $
 #
 # Pre/post-installation setup of ggi
 
@@ -27,7 +27,6 @@ do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/libggi.conf.example $CONFIG_DIR/libggi.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/libggimisc.conf.example $CONFIG_DIR/libggimisc.conf
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed into"
