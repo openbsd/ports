@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/06 17:24:18 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/20 15:39:18 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
-DISTNAME=	BitchX-1.0c11
-PKGNAME=	bitchx-1.0c11
+DISTNAME=	BitchX-1.0c13
+PKGNAME=	bitchx-1.0c13
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.bitchx.com/pub/
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/
 
 MAINTAINER=	brad@openbsd.org
 

@@ -1,0 +1,18 @@
+--- source/irc.c.orig	Mon Dec 20 09:26:05 1999
++++ source/irc.c	Mon Dec 20 09:43:41 1999
+@@ -457,8 +457,14 @@
+ #if defined(WANT_DETACH) && !defined(GUI)
+ 		kill_attached_if_needed(0);
+ #endif
+-		current_ftarget = stdout;
++/*		current_ftarget = stdout;*/
++#if !defined(WINNT) && !defined(__EMX__)
++#if defined(LATIN1)
+ 		charset_lat1();
++#elif defined(CHARSET_CUSTOM)
++		charset_cst();
++#endif
++#endif
+ 		fprintf(stdout, "\r");
+ 		fflush(stdout);
+ 		exit(0);
