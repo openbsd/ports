@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2002/03/04 16:13:05 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2002/07/17 21:43:36 espie Exp $
 lib/qt3/examples/Makefile
 lib/qt3/examples/README
 lib/qt3/examples/aclock/.qmake.internal.cache
@@ -88,6 +88,51 @@ lib/qt3/examples/canvas/main.cpp
 lib/qt3/examples/canvas/makeimg.cpp
 lib/qt3/examples/canvas/qt-trans.xpm
 lib/qt3/examples/canvas/qtlogo.png
+lib/qt3/examples/chart/.qmake.internal.cache
+lib/qt3/examples/chart/Makefile
+lib/qt3/examples/chart/canvastext.h
+lib/qt3/examples/chart/canvasview.cpp
+lib/qt3/examples/chart/canvasview.h
+lib/qt3/examples/chart/chart
+lib/qt3/examples/chart/chart.doc
+lib/qt3/examples/chart/chart.pro
+lib/qt3/examples/chart/chartform.cpp
+lib/qt3/examples/chart/chartform.h
+lib/qt3/examples/chart/chartform_canvas.cpp
+lib/qt3/examples/chart/chartform_files.cpp
+lib/qt3/examples/chart/element.cpp
+lib/qt3/examples/chart/element.h
+lib/qt3/examples/chart/images/chart-forms.sk
+lib/qt3/examples/chart/images/file_new.xpm
+lib/qt3/examples/chart/images/file_open.xpm
+lib/qt3/examples/chart/images/file_print.xpm
+lib/qt3/examples/chart/images/file_save.xpm
+lib/qt3/examples/chart/images/file_saveaspostscript.xpm
+lib/qt3/examples/chart/images/options_horizontalbarchart.xpm
+lib/qt3/examples/chart/images/options_piechart.xpm
+lib/qt3/examples/chart/images/options_setdata.xpm
+lib/qt3/examples/chart/images/options_setfont.xpm
+lib/qt3/examples/chart/images/options_setoptions.xpm
+lib/qt3/examples/chart/images/options_verticalbarchart.xpm
+lib/qt3/examples/chart/images/pattern01.xpm
+lib/qt3/examples/chart/images/pattern02.xpm
+lib/qt3/examples/chart/images/pattern03.xpm
+lib/qt3/examples/chart/images/pattern04.xpm
+lib/qt3/examples/chart/images/pattern05.xpm
+lib/qt3/examples/chart/images/pattern06.xpm
+lib/qt3/examples/chart/images/pattern07.xpm
+lib/qt3/examples/chart/images/pattern08.xpm
+lib/qt3/examples/chart/images/pattern09.xpm
+lib/qt3/examples/chart/images/pattern10.xpm
+lib/qt3/examples/chart/images/pattern11.xpm
+lib/qt3/examples/chart/images/pattern12.xpm
+lib/qt3/examples/chart/images/pattern13.xpm
+lib/qt3/examples/chart/images/pattern14.xpm
+lib/qt3/examples/chart/main.cpp
+lib/qt3/examples/chart/optionsform.cpp
+lib/qt3/examples/chart/optionsform.h
+lib/qt3/examples/chart/setdataform.cpp
+lib/qt3/examples/chart/setdataform.h
 lib/qt3/examples/checklists/.qmake.internal.cache
 lib/qt3/examples/checklists/Makefile
 lib/qt3/examples/checklists/checklists
@@ -362,7 +407,6 @@ lib/qt3/examples/demo/qasteroids/view.cpp
 lib/qt3/examples/demo/qasteroids/view.h
 lib/qt3/examples/demo/qthumbwheel.cpp
 lib/qt3/examples/demo/qthumbwheel.h
-lib/qt3/examples/demo/sql/book.sql
 lib/qt3/examples/demo/sql/book.ui
 lib/qt3/examples/demo/sql/book.ui.h
 lib/qt3/examples/demo/sql/connect.ui
@@ -1492,6 +1536,8 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/customlayout
 @dirrm lib/qt3/examples/cursor
 @dirrm lib/qt3/examples/checklists
+@dirrm lib/qt3/examples/chart/images
+@dirrm lib/qt3/examples/chart
 @dirrm lib/qt3/examples/canvas
 @dirrm lib/qt3/examples/buttongroups
 @dirrm lib/qt3/examples/biff

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_widgets_qtoolbar_cpp,v 1.1 2002/07/17 21:43:36 espie Exp $
+--- src/widgets/qtoolbar.cpp.orig	Mon Jul  8 12:27:25 2002
++++ src/widgets/qtoolbar.cpp	Tue Jul 16 17:48:08 2002
+@@ -617,10 +617,14 @@ void QToolBar::resizeEvent( QResizeEvent
+ 	    hide = FALSE;
+ 	    QPoint p = w->parentWidget()->mapTo( this, w->geometry().bottomRight() );
+ 	    if ( orientation() == Horizontal ) {
+-		if ( p.x() > e->size().width()-d->extension->width()/2 )
++		if ( p.x() > ( doHide ?
++		               e->size().width()-d->extension->width()/2 :
++		               e->size().width() ) )
+ 		    hide = TRUE;
+ 	    } else {
+-		if ( p.y() > e->size().height()-d->extension->height()/2 )
++		if ( p.y() > ( doHide ?
++		               e->size().height()-d->extension->height()/2 :
++		               e->size().height() ) )
+ 		    hide = TRUE;
+ 	    }
+ 	    if ( hide && !w->isHidden() ) {

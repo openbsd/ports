@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2002/03/28 11:47:18 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Mon Mar 18 10:45:59 2002
-+++ qmake/generators/unix/unixmake2.cpp	Thu Mar 28 03:27:23 2002
-@@ -218,10 +218,14 @@ UnixMakefileGenerator::writeMakeParts(QT
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Mon Jul  8 12:27:37 2002
++++ qmake/generators/unix/unixmake2.cpp	Wed Jul 17 12:58:24 2002
+@@ -220,10 +220,14 @@ UnixMakefileGenerator::writeMakeParts(QT
      } else if (!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty()) {
  	t << "TARGETA	= " << var("TARGETA") << endl;
  	if(project->variables()["QMAKE_HPUX_SHLIBS"].isEmpty()) {
@@ -20,38 +20,47 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2002/03/28 11:47:18 es
  	}
  	else {
  	    t << "TARGETD	= " << var("TARGET_x") << endl;
-@@ -827,10 +831,6 @@ void UnixMakefileGenerator::init2()
- 	    project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
- 						    project->first("QMAKE_EXTENSION_SHLIB") +
- 						    "." + project->first("VER_MAJ"));
--	    project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
+@@ -916,6 +920,7 @@ void UnixMakefileGenerator::init2()
+ 							    project->first("VER_PAT"));
+ 	    }
+ 	    project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
++
+ 	} else {
+ 	    project->variables()["TARGET_"].append("lib" + project->first("TARGET") + "." +
+ 						   project->first("QMAKE_EXTENSION_SHLIB"));
+@@ -936,10 +941,19 @@ void UnixMakefileGenerator::init2()
+ 		project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
+ 							project->first("QMAKE_EXTENSION_SHLIB") +
+ 							"." + project->first("VER_MAJ"));
+-		project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
 -						      project->first("QMAKE_EXTENSION_SHLIB")
 -						      + "." + project->first("VER_MAJ") +
 -						      "." + project->first("VER_MIN"));
- 	    project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
- 							"." +
- 							project->variables()[
-@@ -838,7 +838,22 @@ void UnixMakefileGenerator::init2()
- 							project->first("VER_MAJ") + "." +
- 							project->first("VER_MIN") +  "." +
- 							project->first("VER_PAT"));
++		if ( !project->variables()["QMAKE_OPENBSD_SHLIBS"].isEmpty() ) {
++		    QString s;
++		    s.setNum(project->first("VER_MIN").toInt()*10+ project->first("VER_PAT").toInt());
++		    project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
++							  project->first("QMAKE_EXTENSION_SHLIB")
++							  + "." + project->first("VER_MAJ") +
++							  "." + s );
++		} else {
++		    project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
++							  project->first("QMAKE_EXTENSION_SHLIB")
++							  + "." + project->first("VER_MAJ") +
++							  "." + project->first("VER_MIN"));
++		}
+ 		project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
+ 							    "." +
+ 							    project->variables()[
+@@ -948,7 +962,10 @@ void UnixMakefileGenerator::init2()
+ 							    project->first("VER_MIN") +  "." +
+ 							    project->first("VER_PAT"));
+ 	    }
 -	    project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
-+	    if ( !project->variables()["QMAKE_OPENBSD_SHLIBS"].isEmpty() ) {
-+		 	QString s;
-+			s.setNum(project->first("VER_MIN").toInt()*10+
-+				project->first("VER_PAT").toInt());
-+		project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
-+						      project->first("QMAKE_EXTENSION_SHLIB")
-+						      + "." + project->first("VER_MAJ") +
-+						      "." + s );
++	    if ( !project->variables()["QMAKE_OPENBSD_SHLIBS"].isEmpty() )
 +		project->variables()["TARGET"] = project->variables()["TARGET_x.y"];
-+	    } else {
-+			   project->variables()["TARGET_x.y"].append("lib" + project->first("TARGET") + "." +
-+						      project->first("QMAKE_EXTENSION_SHLIB")
-+						      + "." + project->first("VER_MAJ") +
-+						      "." + project->first("VER_MIN"));
++	    else
 +		project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
-+	    }
  	}
  	project->variables()["QMAKE_LN_SHLIB"].append("-ln -s");
  	project->variables()["DESTDIR_TARGET"].append("$(TARGET)");

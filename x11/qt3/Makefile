@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/27 14:49:30 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/17 21:43:36 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
 
-VERSION=	0.3
+VERSION=	0.5
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 NEED_VERSION=	1.508
@@ -34,7 +34,7 @@ PERMIT_DISTFILES_FTP=	Yes
 #CXXFLAGS+=	-g
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
+#USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
@@ -58,6 +58,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
 #CONFIGURE_ARGS+=-static -debug
 #CONFIGURE_ARGS+=-debug
+#CONFIGURE_ARGS+=-static
 
 # For XFree 4
 #CONFIGURE_ARGS+=-xft
@@ -128,7 +129,7 @@ QT_DOC=		${PREFIX}/share/doc/qt3
 # for manpages in MESSAGE
 SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
 
-DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
+DOCS=	FAQ LICENSE.GPL README README.QT \
 	changes-3*
 
 post-configure:
@@ -150,10 +151,9 @@ pre-build:
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
 
-LIBRARIES=qt.so.3.3 editor.so.1.0 qui.so.1.0
-PROGRAMS3=moc findtr qt20fix qtrename140 uic designer
-PROGRAMS=assistant linguist lrelease lupdate qm2ts \
-	qtconfig qmake
+LIBRARIES=qt.so.3.5 editor.so.1.0 qui.so.1.0
+PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
+PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}

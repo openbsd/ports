@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/09 16:25:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/07/17 21:43:36 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -39,9 +39,8 @@ include/X11/qt3/private/qmutex_p.h
 include/X11/qt3/private/qpainter_p.h
 include/X11/qt3/private/qpluginmanager_p.h
 include/X11/qt3/private/qpsprinter_p.h
-include/X11/qt3/private/qremoteinterface_p.h
-include/X11/qt3/private/qremotemessage_p.h
 include/X11/qt3/private/qrichtext_p.h
+include/X11/qt3/private/qsharedmemory_p.h
 include/X11/qt3/private/qsqldriverinterface_p.h
 include/X11/qt3/private/qsqlmanager_p.h
 include/X11/qt3/private/qstyleinterface_p.h
@@ -145,6 +144,7 @@ include/X11/qt3/qfontmetrics.h
 include/X11/qt3/qframe.h
 include/X11/qt3/qftp.h
 include/X11/qt3/qgarray.h
+include/X11/qt3/qgb18030codec.h
 include/X11/qt3/qgbkcodec.h
 include/X11/qt3/qgcache.h
 include/X11/qt3/qgdict.h
@@ -272,8 +272,6 @@ include/X11/qt3/qrangect.h
 include/X11/qt3/qrect.h
 include/X11/qt3/qregexp.h
 include/X11/qt3/qregion.h
-include/X11/qt3/qremotefactory.h
-include/X11/qt3/qremoteplugin.h
 include/X11/qt3/qrtlcodec.h
 include/X11/qt3/qscrbar.h
 include/X11/qt3/qscrollbar.h
@@ -286,7 +284,6 @@ include/X11/qt3/qsessionmanager.h
 include/X11/qt3/qsettings.h
 include/X11/qt3/qsgistyle.h
 include/X11/qt3/qshared.h
-include/X11/qt3/qsharedmemory.h
 include/X11/qt3/qsignal.h
 include/X11/qt3/qsignalmapper.h
 include/X11/qt3/qsignalslotimp.h
@@ -522,6 +519,7 @@ lib/qt3/man/man3/QGLContext.3
 lib/qt3/man/man3/QGLFormat.3
 lib/qt3/man/man3/QGLWidget.3
 lib/qt3/man/man3/QGLayoutIterator.3
+lib/qt3/man/man3/QGb18030Codec.3
 lib/qt3/man/man3/QGbkCodec.3
 lib/qt3/man/man3/QGrid.3
 lib/qt3/man/man3/QGridLayout.3
@@ -603,6 +601,8 @@ lib/qt3/man/man3/QNetworkOperation.3
 lib/qt3/man/man3/QNetworkProtocol.3
 lib/qt3/man/man3/QObject.3
 lib/qt3/man/man3/QObjectCleanupHandler.3
+lib/qt3/man/man3/QObjectList.3
+lib/qt3/man/man3/QObjectListIt.3
 lib/qt3/man/man3/QPNGImagePacker.3
 lib/qt3/man/man3/QPaintDevice.3
 lib/qt3/man/man3/QPaintDeviceMetrics.3
@@ -891,6 +891,7 @@ lib/qt3/man/man3/qfontmanager.3
 lib/qt3/man/man3/qfontmetrics.3
 lib/qt3/man/man3/qframe.3
 lib/qt3/man/man3/qftp.3
+lib/qt3/man/man3/qgb18030codec.3
 lib/qt3/man/man3/qgbkcodec.3
 lib/qt3/man/man3/qgl.3
 lib/qt3/man/man3/qglayoutiterator.3
@@ -978,6 +979,8 @@ lib/qt3/man/man3/qnpstream.3
 lib/qt3/man/man3/qnpwidget.3
 lib/qt3/man/man3/qobject.3
 lib/qt3/man/man3/qobjectcleanuphandler.3
+lib/qt3/man/man3/qobjectlist.3
+lib/qt3/man/man3/qobjectlistit.3
 lib/qt3/man/man3/qpaintdevice.3
 lib/qt3/man/man3/qpaintdevicemetrics.3
 lib/qt3/man/man3/qpainter.3
@@ -1152,7 +1155,6 @@ lib/qt3/plugins/designer/librcplugin.so
 lib/qt3/plugins/designer/libwizards.so
 lib/qt3/plugins/imageformats/libqjpeg.so
 lib/qt3/plugins/imageformats/libqmng.so
-share/doc/qt3/ANNOUNCE
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
