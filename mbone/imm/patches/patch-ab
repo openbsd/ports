@@ -1,6 +1,6 @@
---- src/xlopen.c.orig	Tue Nov 19 12:33:53 1996
-+++ src/xlopen.c	Tue Nov 19 12:35:01 1996
-@@ -34,7 +34,7 @@
+--- src/xlopen.c.orig	1996-11-10 19:56:10.000000000 +0100
++++ src/xlopen.c	2004-01-05 00:56:52.000000000 +0100
+@@ -34,7 +34,7 @@ extern char *optarg;
  extern int optind, opterr;
  extern int useimageloader;
  extern struct hosttype *hosts_tail;
