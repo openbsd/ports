@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.64 2004/11/14 19:42:04 espie Exp $
+# $OpenBSD: make-plist,v 1.65 2004/12/27 00:00:27 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -229,6 +229,17 @@ sub register
 		$self->{copyfrom}->tag_along($self);
 	} else {
 		print "Bogus sample (unattached) detected\n";
+	}
+}
+
+package OpenBSD::PackingElement::Sysctl;
+sub register
+{
+	my ($self, $plist, $files, $comments) = @_;
+	if (defined $plist->{state}->{lastobject}) {
+		$plist->{state}->{lastobject}->tag_along($self);
+	} else {
+		$plist->{tag_marker}->tag_along($self);
 	}
 }
 
