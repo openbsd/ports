@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/02/06 13:28:00 niklas Exp $
+# $OpenBSD: Makefile,v 1.9 1998/04/29 05:04:13 angelos Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -9,7 +9,7 @@ SUBDIR += benchmarks
 #SUBDIR += cad
 SUBDIR += chinese
 SUBDIR += comms
-#SUBDIR += converters
+SUBDIR += converters
 SUBDIR += databases
 SUBDIR += devel
 SUBDIR += editors
