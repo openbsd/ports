@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/09 20:38:01 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/09 23:36:34 espie Exp $
 
-CATEGORIES=	math devel graphic
+CATEGORIES=	math devel graphics
 NEED_VERSION=	1.406
 
 COMMENT='graph drawing software'
