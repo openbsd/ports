@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.331 2000/09/16 13:54:56 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.332 2000/09/17 16:26:57 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -704,7 +704,7 @@ INSTALL_DATA_DIR= \
 INSTALL_MAN_DIR= \
 	${INSTALL} -d -o ${MANOWN} -g ${MANGRP} -m ${DIRMODE}
 
-INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+_INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 			BSD_INSTALL_DATA="${INSTALL_DATA}" \
 			BSD_INSTALL_MAN="${INSTALL_MAN}" \
@@ -712,8 +712,8 @@ INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_SCRIPT_DIR="${INSTALL_SCRIPT_DIR}" \
 			BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
-MAKE_ENV+=	${INSTALL_MACROS}
-SCRIPTS_ENV+=	${INSTALL_MACROS}
+MAKE_ENV+=	${_INSTALL_MACROS}
+SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 # The user can override the NO_PACKAGE by specifying this from
 # the make command line
