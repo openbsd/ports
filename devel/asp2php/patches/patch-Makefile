@@ -1,25 +1,25 @@
---- Makefile.orig	Tue Feb 27 08:50:21 2001
-+++ Makefile	Wed Mar 21 22:48:19 2001
-@@ -1,5 +1,7 @@
+$OpenBSD: patch-Makefile,v 1.2 2001/07/10 03:48:54 shell Exp $
+--- Makefile.orig	Mon Jul  9 02:54:24 2001
++++ Makefile	Mon Jul  9 02:55:51 2001
+@@ -1,5 +1,6 @@
  
 -CC=gcc
-+BINDIR=${PREFIX}/bin
-+
 +CC+= ${CFLAGS}
++BINDIR= ${PREFIX}/bin
  
  default:
  	$(CC) -c conditionals.c -Wall
-@@ -40,10 +42,10 @@ unipiss:
+@@ -44,10 +45,10 @@
  	$(CC) -o unipiss unipiss.c html.o general.o -Wall
  
  install:
--	@if [ -e asp2php ]; then cp asp2php /usr/local/bin; fi;
--	@if [ -e unipiss ]; then cp unipiss /usr/local/bin; fi;
--	@if [ -e gtkasp2php ]; then cp gtkasp2php /usr/local/bin; fi;
+-	@if [ -e asp2php ]; then install asp2php /usr/local/bin; fi;
+-	@if [ -e unipiss ]; then install unipiss /usr/local/bin; fi;
+-	@if [ -e gtkasp2php ]; then install gtkasp2php /usr/local/bin; fi;
 -	@echo "Compiled programs have been installed in /usr/local/bin"
-+	@if [ -e asp2php ]; then cp asp2php ${BINDIR}; fi;
-+	@if [ -e unipiss ]; then cp unipiss ${BINDIR}; fi;
-+	@if [ -e gtkasp2php ]; then cp gtkasp2php ${BINDIR}; fi;
++	@if [ -e asp2php ]; then install asp2php ${BINDIR}; fi;
++	@if [ -e unipiss ]; then install unipiss ${BINDIR}; fi;
++	@if [ -e gtkasp2php ]; then install gtkasp2php ${BINDIR}; fi;
 +	@echo "Compiled programs have been installed in ${BINDIR}"
  	@echo ""
  
