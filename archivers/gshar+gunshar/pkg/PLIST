@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/06/10 19:10:58 brad Exp $
 bin/gmail-files
 bin/gmailshar
 bin/gremsync
