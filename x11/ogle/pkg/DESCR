@@ -31,12 +31,13 @@ ogle can also use SystemV shared memory, but the
 shared memory requirements exceed default GENERIC parameters.
 You will need to crank them up. 
 
-Starting with OpenBSD 3.1, you can use config to change them
-without needing to recompile the kernel, e.g.,
-config -e -o bsd2 bsd
-adjust shmseg (number of segments, 16 is a good value)
-and shmmaxpgs (total size of systemV shared memory, crank to
-at least 4096).
+Starting with OpenBSD 3.3, sysctl(8) can modify the shared memory 
+parameters.  A reasonable choice would be:
+
+kern.shminfo.shmseg=32
+kern.shminfo.shmall=32768
+
+(to add to /etc/sysctl.conf, or to tweak manually with sysctl).
 
 Overall, ogle needs about 50% cpu for full-framerate decoding
 on a PIII700 with an ATI Mach64 Mobility and an ESS 
