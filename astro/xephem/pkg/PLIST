@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/07/24 15:17:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/08/03 11:32:04 espie Exp $
 bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/
@@ -49,4 +49,4 @@ lib/X11/xephem/tools/xephemdbd/stubs.c
 lib/X11/xephem/tools/xephemdbd/xephemdbd.c
 lib/X11/xephem/tools/xephemdbd/xephemdbd.html
 lib/X11/xephem/tools/xephemdbd/xephemdbd.pl
-man/cat1/xephem.0
+@man man/cat1/xephem.0
