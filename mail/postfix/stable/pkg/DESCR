@@ -3,12 +3,16 @@ same time being sendmail compatible enough to not upset existing users.
 Thus, the outside has a sendmail-ish flavor, but the inside is completely
 different.
 
-Port flavors:
+Extra features always included:
 
-ipv6	support IPv6 (${IPV6HOMEPAGE})
-tls	support SMTP over SSL/TLS (${TLSHOMEPAGE})
-sasl	support authenticated SMTP using Cyrus SASL v1 (deprecated)
-sasl2	support authenticated SMTP using Cyrus SASL v2 (recommended)
-pcre	support table lookups using PCRE (Perl-Compatible Regular Expression)
-ldap	support table lookups using LDAP
-mysql	support table lookups using MySQL
+- SMTP over SSL/TLS (${TLSHOMEPAGE})
+- IPv6 (${IPV6HOMEPAGE})
+- table lookups using PCRE (Perl-Compatible Regular Expression)
+
+Optional fetures included using flavors:
+
+- authenticated SMTP using Cyrus SASL v2
+- table lookups using LDAP
+- table lookups using MySQL
+- table lookups using PostgreSQL
+

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.36 2004/04/01 08:11:17 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.37 2004/04/25 10:36:39 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -16,12 +16,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://www.postfix.org/
 
-TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
-SUBST_VARS+=	TLSHOMEPAGE
-
-IPV6HOMEPAGE=	http://www.ipnet6.org/postfix/
-SUBST_VARS+=	IPV6HOMEPAGE
-
 PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	"cannot be sold, see section 4 of license"
@@ -36,16 +30,13 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS+=	pcre sasl2 ldap mysql tls ipv6
-FLAVOR?=
-
-.if ${FLAVOR:L:Mpcre}
+# always include pcre
 LIB_DEPENDS+=	pcre::devel/pcre
 MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
-.else
-MAKE_CCARGS+=	-DNO_PCRE
-.endif
+
+FLAVORS+=	sasl2 ldap mysql pgsql
+FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
 LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
@@ -65,112 +56,35 @@ MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
-.if ${FLAVOR:L:Mtls}
-MAKE_CCARGS+=	-DHAS_SSL
-MAKE_AUXLIBS+=	-lssl -lcrypto
-
-.if ${FLAVOR:L:Mipv6}
-.if defined(IPV6VERSION)
-PKGNAME:=		${PKGNAME}.ipv6+tlsr${IPV6VERSION}
-IPV6TLSDISTNAME=	tls+ipv6-${IPV6VERSION}-pf-${IPV6PFIXVERSION}
-IPV6TLSPATCH=		${IPV6TLSDISTNAME}.patch.gz
-DISTFILES+=		${IPV6TLSPATCH}:1
-MASTER_SITES1=		ftp://ftp.stack.nl/pub/postfix/tls+ipv6/${IPV6VERSION}/
-
-post-patch-tls:
-	@echo "===>  Applying IPv6+TLS patches for ${FULLPKGNAME}"
-	@mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
-	@cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
-	@cd ${WRKDIST} && gzcat ${DISTDIR}/postfix/${IPV6TLSPATCH} | \
-		${PATCH} -st -p1
-	@mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
-	@rm ${WRKDIST}/conf/master.cf.orig
-	@cd ${WRKDIST} && ${PATCH} -st -p0 < ${FILESDIR}/patch-tls-master.cf
-
-post-install-tls:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
-	${INSTALL_DATA} ${WRKSRC}/pfixtls/doc/* ${PREFIX}/share/doc/postfix/tls
-
-.else
-BROKEN=         "TLS+IPv6 patches not yet available for this version"
+.if ${FLAVOR:L:Mpgsql}
+LIB_DEPENDS+=	pq.3:postgresql-clients-7.*:databases/postgresql
+MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
-.else
-
-.if defined(TLSVERSION)
-PKGNAME:=	${PKGNAME}.tls${TLSVERSION}
-TLSDISTNAME=	pfixtls-${TLSVERSION}-${TLSPFIXVERSION}-${TLSSSLVERSION}
-MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
-		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
-DISTFILES+=	${TLSDISTNAME}${EXTRACT_SUFX}:0
-
-post-patch-tls:
-	@echo "===>  Applying TLS patches for ${FULLPKGNAME}"
-	@mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
-	@cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
-	@cd ${WRKDIST} && ${PATCH} -st -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
-	@mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
-	@rm ${WRKDIST}/conf/master.cf.orig
-	@cd ${WRKDIST} && ${PATCH} -st -p0 < ${FILESDIR}/patch-tls-master.cf
-
-post-install-tls:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
-	${INSTALL_DATA} ${WRKDIR}/${TLSDISTNAME}/doc/* \
-		${PREFIX}/share/doc/postfix/tls
-
-.else
-BROKEN=         "TLS patches not yet available for this version"
-.endif
-.endif
-
-.else
-
-.if ${FLAVOR:L:Mipv6}
-.if defined(IPV6VERSION)
-PKGNAME:=		${PKGNAME}.ipv6r${IPV6VERSION}
-IPV6DISTNAME=		ipv6-${IPV6VERSION}-pf-${IPV6PFIXVERSION}
-MASTER_SITES1=		ftp://ftp.stack.nl/pub/postfix/tls+ipv6/${IPV6VERSION}/
-PATCHFILES+=		${IPV6DISTNAME}.patch.gz:1
-PATCH_DIST_STRIP=	-p1
-.else
-BROKEN=         "IPv6 patches not yet available for this version"
-.endif
-.endif
-
-post-patch-tls:
-post-install-tls:
-
-.endif
-
-post-patch: post-patch-tls
-	@rm ${WRKDIST}/conf/*.orig
-
-post-install: post-install-tls
 
 do-configure:
-	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
 		CC="${CC}" OPT="${CFLAGS}" DEBUG="${MAKE_DEBUG}" \
 		CCARGS='${MAKE_CCARGS}' AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
-	(cd ${WRKSRC}; sh postfix-install \
+	@(cd ${WRKSRC}; sh postfix-install \
 		-non-interactive \
+		mail_owner=_postfix \
+		setgid_group=_postdrop \
 		install_root=${WRKINST} \
 		daemon_directory=${TRUEPREFIX}/libexec/postfix \
 		command_directory=${TRUEPREFIX}/sbin \
 		sendmail_path=${TRUEPREFIX}/sbin/sendmail \
 		newalises_path=${TRUEPREFIX}/sbin/newaliases \
 		mailq_path=${TRUEPREFIX}/sbin/mailq \
-		mail_owner=_postfix \
-		setgid_group=_postdrop \
 		manpage_directory=${TRUEPREFIX}/man \
 		readme_directory=${TRUEPREFIX}/share/doc/postfix/readme \
+		html_directory=${TRUEPREFIX}/share/doc/postfix/html \
 		)
-	${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
-	mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/html
-	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/postfix/html
-	${INSTALL_DATA} ${WRKSRC}/html/*.gif ${PREFIX}/share/doc/postfix/html
-	rm -fr ${WRKINST}/var/spool/postfix
+	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
+	@mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
+	@rm -fr ${WRKINST}/var/spool/postfix

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.10 2004/03/31 09:33:46 jakob Exp $
+# $OpenBSD: INSTALL,v 1.11 2004/04/25 10:36:40 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -144,7 +144,7 @@ do_notice()
     echo "+---------------"
     echo "| WARNING!"
     echo "|"
-    echo "| This port has changed its user/groups from 'postfix' to '_postfix'"
+    echo "| This port has changed its user/groups from 'postfix' to '_postfix'" 
     echo "| and 'postdrop' to '_postdrop'. If you installed this port before,"
     echo "| ensure all permissions are set correctly and then"
     echo "|    rmuser _postfix"

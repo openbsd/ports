@@ -1,30 +1,41 @@
-$OpenBSD: patch-master.cf,v 1.6 2003/01/28 16:41:32 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.7 2004/04/25 10:36:40 jakob Exp $
 
---- conf/master.cf.orig	Thu Jan 16 13:44:58 2003
-+++ conf/master.cf	Sat Jan 25 14:18:07 2003
-@@ -69,25 +69,25 @@
+--- conf/master.cf.orig	Sat Apr 24 23:39:28 2004
++++ conf/master.cf	Sat Apr 24 23:42:33 2004
+@@ -77,33 +77,33 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
 -smtp      inet  n       -       n       -       -       smtpd
+-#smtps    inet  n       -       n       -       -       smtpd
++smtp      inet  n       -       -       -       -       smtpd
++#smtps    inet  n       -       -       -       -       smtpd
+ #  -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes
+ #submission   inet    n       -       n       -       -       smtpd
+ #  -o smtpd_enforce_tls=yes -o smtpd_sasl_auth_enable=yes -o smtpd_etrn_restrictions=reject
 -#628      inet  n       -       n       -       -       qmqpd
 -pickup    fifo  n       -       n       60      1       pickup
 -cleanup   unix  n       -       n       -       0       cleanup
 -qmgr      fifo  n       -       n       300     1       qmgr
--#qmgr     fifo  n       -       n       300     1       nqmgr
+-#qmgr     fifo  n       -       n       300     1       oqmgr
+-#tlsmgr   fifo  -       -       n       300     1       tlsmgr
 -rewrite   unix  -       -       n       -       -       trivial-rewrite
 -bounce    unix  -       -       n       -       0       bounce
 -defer     unix  -       -       n       -       0       bounce
+-trace     unix  -       -       n       -       0       bounce
+-verify    unix  -       -       n       -       1       verify
 -flush     unix  n       -       n       1000?   0       flush
-+smtp      inet  n       -       -       -       -       smtpd
 +#628      inet  n       -       -       -       -       qmqpd
 +pickup    fifo  n       -       -       60      1       pickup
 +cleanup   unix  n       -       -       -       0       cleanup
 +qmgr      fifo  n       -       -       300     1       qmgr
-+#qmgr     fifo  n       -       -       300     1       nqmgr
++#qmgr     fifo  n       -       -       300     1       oqmgr
++#tlsmgr   fifo  -       -       -       300     1       tlsmgr
 +rewrite   unix  -       -       -       -       -       trivial-rewrite
 +bounce    unix  -       -       -       -       0       bounce
 +defer     unix  -       -       -       -       0       bounce
++trace     unix  -       -       -       -       0       bounce
++verify    unix  -       -       -       -       1       verify
 +flush     unix  n       -       -       1000?   0       flush
  proxymap  unix  -       -       n       -       -       proxymap
 -smtp      unix  -       -       n       -       -       smtp
@@ -39,7 +50,9 @@ $OpenBSD: patch-master.cf,v 1.6 2003/01/28 16:41:32 jakob Exp $
  local     unix  -       n       n       -       -       local
  virtual   unix  -       n       n       -       -       virtual
 -lmtp      unix  -       -       n       -       -       lmtp
+-anvil     unix  -       -       n       -       1       anvil
 +lmtp      unix  -       -       -       -       -       lmtp
++anvil     unix  -       -       -       -       1       anvil
  #
  # Interfaces to non-Postfix software. Be sure to examine the manual
  # pages of the non-Postfix software to find out what options it wants.
