@@ -1,0 +1,46 @@
+*** ps.c.orig	Mon Dec  1 20:11:03 1997
+--- ps.c	Mon Dec  1 20:15:42 1997
+***************
+*** 1560,1576 ****
+  	if (wantp) {
+  	    /* print */
+  	    char name[1024];
+  
+! 	    (void) tmpnam (name);
+  
+  	    /* VMS tmpnam() doesn't always include the required '.' */
+  	    if (!strchr (name, '.'))
+  		(void) strcat (name, ".ps");
+  
+  	    xpsc.prfile = XtNewString (name);
+! 	    if (XPSOpen (xpsc.prfile) == 0)
+  		call_go();
+! 
+  	} else {
+  	    /* save to file -- ask whether to clobber if it already exits */
+  	    char *name = XmTextFieldGetString (filename_w);
+--- 1560,1583 ----
+  	if (wantp) {
+  	    /* print */
+  	    char name[1024];
++ 	    int fd;
+  
+! 	    strcpy(name, "/tmp/xeXXXXXXXX");
+! 
+! 	    /*(void) tmpnam (name);*/
+! 	    fd = mkstemp(name);  
+  
+  	    /* VMS tmpnam() doesn't always include the required '.' */
+  	    if (!strchr (name, '.'))
+  		(void) strcat (name, ".ps");
+  
+  	    xpsc.prfile = XtNewString (name);
+! 	    if (XPSOpen (xpsc.prfile) == 0) {
+! 		close(fd);
+  		call_go();
+! 	    }
+! 	    else
+! 		close(fd);
+  	} else {
+  	    /* save to file -- ask whether to clobber if it already exits */
+  	    char *name = XmTextFieldGetString (filename_w);
