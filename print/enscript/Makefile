@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	enscript
-# Version required:	1.6.1
-# Date created:		1998-Jul-21
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.2 1999/03/07 01:39:00 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/03 09:12:57 marc Exp $
 #
 
 DISTNAME=		enscript-1.6.1
@@ -12,10 +7,12 @@ CATEGORIES=     	print
 MAINTAINER=		marc@openbsd.org
 
 MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= enscript
+MASTER_SITE_SUBDIR=	enscript
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/lib
 CONFIGURE_ARGS+=	--with-media=Letter
+
+post-install:
+	@PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

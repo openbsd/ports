@@ -1,0 +1,13 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 1999/04/03 09:12:58 marc Exp $
+#
+# Pre/post-uninstallation setup of enscript
+
+echo ""
+echo "** To completely deinstall the enscript package you need to perform"
+echo "** this steps as root:"
+echo "**"
+echo "**           rm -rf /etc/enscript.cfg"
+echo ""
+
+exit 0

@@ -8,7 +8,7 @@ man/man1/diffpp.1
 man/man1/sliceprint.1
 man/man1/states.1
 man/man1/enscript.1
-lib/enscript.cfg
+lib/enscript.cfg-sample
 share/locale/de/LC_MESSAGES/enscript.mo
 share/locale/fr/LC_MESSAGES/enscript.mo
 share/locale/nl/LC_MESSAGES/enscript.mo
