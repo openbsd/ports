@@ -1,5 +1,5 @@
---- audio.c.orig	Tue Apr  6 17:53:05 1999
-+++ audio.c	Wed Jan 12 12:10:25 2000
+--- audio.c.orig	Tue Apr  6 11:53:05 1999
++++ audio.c	Wed Aug  2 06:10:39 2000
 @@ -68,41 +68,42 @@
  {
  	int fmts;

@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Mar 19 20:42:07 2000
-+++ Makefile	Sun Mar 19 20:43:52 2000
+--- Makefile.orig	Wed Aug  2 06:10:36 2000
++++ Makefile	Wed Aug  2 06:11:51 2000
 @@ -9,8 +9,10 @@
  MANDIR=$(PREFIX)/man
  SECTION=1
@@ -30,14 +30,14 @@
 +openbsd:
 +	$(MAKE) CC="$(CC)" LDFLAGS= \
 +		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
-+		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O3 -fomit-frame-pointer \
++		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DTERM_CONTROL \
 +			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
 +
 +openbsd-i386:
 +	$(MAKE) CC="$(CC)" LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o audio_openbsd.o term.o' \
-+		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
++		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DTERM_CONTROL \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
  		mpg123-make

@@ -1,6 +1,6 @@
---- mpg123.c.orig	Tue Jun 15 22:21:36 1999
-+++ mpg123.c	Tue Jun 27 00:41:52 2000
-@@ -177,6 +177,9 @@ void init_output(void)
+--- mpg123.c.orig	Tue Jun 15 16:21:36 1999
++++ mpg123.c	Wed Aug  2 06:10:40 2000
+@@ -177,6 +177,9 @@
          _exit(0);
        default: /* parent */
          xfermem_init_writer (buffermem);
@@ -10,7 +10,7 @@
          param.outmode = DECODE_BUFFER;
      }
    }
-@@ -918,7 +921,7 @@ int main(int argc, char *argv[])
+@@ -918,7 +921,7 @@
  {
       const char *term_type;
           term_type = getenv("TERM");
