@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:12:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/11/11 17:14:15 naddy Exp $
+bin/ptar
 ${P5SITE}/Archive/
 ${P5SITE}/Archive/Tar/
 ${P5SITE}/Archive/Tar.pm
