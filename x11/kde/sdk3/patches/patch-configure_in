@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/01/11 10:59:01 sturm Exp $
+--- configure.in.orig	2003-09-10 04:43:31.000000000 +0200
++++ configure.in	2004-01-11 11:35:46.000000000 +0100
+@@ -91,6 +91,7 @@ AC_ARG_WITH(db-name,
+     [  ac_db_name="$withval"
+     ])
+ 
++kde_cv_berk_database=NO
+ AC_DEFUN([KDE_CHECK_DB_VERSION],
+ [
+ AC_TRY_LINK([
