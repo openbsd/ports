@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/07 00:59:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/09/15 01:49:27 jolan Exp $
 
 PKG_ARCH=	*
 
@@ -10,13 +10,11 @@ DIST_SUBDIR=	${PKGNAME}
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
 # Conditional
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=	"space constraints"
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
