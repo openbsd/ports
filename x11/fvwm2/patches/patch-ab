@@ -1,0 +1,22 @@
+--- Fvwm.tmpl.dist	Wed Jan 22 22:38:49 1997
++++ Fvwm.tmpl	Thu Jan 30 15:24:10 1997
+@@ -408,8 +408,19 @@
+ #else
+ #ifdef i386SVR4Architecture
+ KLUDGE_LIBS = -lnsl -lsocket
++#else
++#if defined(FreeBSDArchitecture)
++KLUDGE_LIBS = -lxpg4
++#ifdef notdef /* Hmm, I think it should be processed in FreeBSD.cf... */
++#if OSMajorVersion < 2 || (OSMajorVersion == 2 && OSMinorVersion < 2)
++KLUDGE_LIBS = 
++#else
++KLUDGE_LIBS = -lxpg4
++#endif /* FreeBSD 2.2 */
++#endif /* notdef */
+ #else /* all other systems shouldn't need anything */
+ KLUDGE_LIBS = 
++#endif /* FreeBSDArchitecture */
+ #endif /* i386SVR4Architecture */
+ #endif /* HPArchitecture */
+ #endif /* AlphaArchitecture */

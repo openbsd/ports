@@ -1,0 +1,23 @@
+*** sample.fvwmrc/system.fvwm2rc.dist	Thu Jan 16 05:29:42 1997
+--- sample.fvwmrc/system.fvwm2rc	Mon Mar  3 21:42:11 1997
+***************
+*** 4,12 ****
+  # fvwm web page (see the FAQ).
+  
+  # be sure to customize these paths for your installation:
+! ModulePath /usr/lib/X11/fvwm2
+! PixmapPath /usr/include/X11/pixmaps
+! IconPath   /usr/include/X11/bitmaps
+  
+  EdgeResistance 250 10
+  EdgeScroll 100 100
+--- 4,12 ----
+  # fvwm web page (see the FAQ).
+  
+  # be sure to customize these paths for your installation:
+! #ModulePath /usr/lib/X11/fvwm2
+! #PixmapPath /usr/include/X11/pixmaps
+! #IconPath   /usr/include/X11/bitmaps
+  
+  EdgeResistance 250 10
+  EdgeScroll 100 100
