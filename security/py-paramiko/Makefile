@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/28 14:58:31 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/08 17:45:54 xsa Exp $
 
 COMMENT=	"Python module that implements the SSH2 protocol"
 
-V=		0.9
-DISTNAME=	paramiko-${V}-ivysaur
-PKGNAME=	py-paramiko-${V}p0
+DISTNAME=	paramiko-1.0
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.lag.net/~robey/paramiko/
@@ -36,6 +35,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/public/* ${DOCSDIR}/public
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/{demo*,forward}.py ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*_key ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
