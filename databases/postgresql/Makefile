@@ -4,7 +4,7 @@
 # Whom:			mickey
 #			from:	Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/20 20:34:05 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/03 20:10:01 niklas Exp $
 
 DISTNAME=	postgresql-6.2.1
 CATEGORIES=	databases
@@ -29,7 +29,7 @@ MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=--prefix=${PREFIX}/pgsql \
 		--enable-locale \
-		--with-template=freebsd
+		--with-template=openbsd
 #		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'`
 
 MAN1=		cleardbdir.1 createdb.1 createuser.1 destroydb.1 \
