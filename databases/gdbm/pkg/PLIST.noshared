@@ -1,7 +1,0 @@
-lib/libgdbm.a
-lib/libgdbm.la
-include/gdbm.h
-man/man3/gdbm.3
-@unexec install-info --delete %D/info/gdbm.info %D/info/dir
-info/gdbm.info
-@exec install-info %D/info/gdbm.info %D/info/dir
