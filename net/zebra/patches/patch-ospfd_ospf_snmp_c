@@ -1,7 +1,19 @@
-$OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
+$OpenBSD: patch-ospfd_ospf_snmp_c,v 1.2 2004/10/13 01:58:14 danh Exp $
 --- ospfd/ospf_snmp.c.orig	Sat Jul  6 03:36:57 2002
-+++ ospfd/ospf_snmp.c	Wed Jul 17 17:50:35 2002
-@@ -1115,6 +1115,9 @@ ospfAreaRangeLookup (struct variable *v,
++++ ospfd/ospf_snmp.c	Fri Oct  8 13:28:56 2004
+@@ -24,9 +24,8 @@
+ #include <zebra.h>
+ 
+ #ifdef HAVE_SNMP
+-#include <asn1.h>
+-#include <snmp.h>
+-#include <snmp_impl.h>
++#include <net-snmp/net-snmp-config.h>
++#include <net-snmp/net-snmp-includes.h>
+ 
+ #include "if.h"
+ #include "log.h"
+@@ -1115,6 +1114,9 @@ ospfAreaRangeLookup (struct variable *v,
    int len;
    struct ospf_area *area;
    struct ospf_area_range *range;
@@ -11,7 +23,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
  
    if (exact) 
      {
-@@ -1136,8 +1139,9 @@ ospfAreaRangeLookup (struct variable *v,
+@@ -1136,8 +1138,9 @@ ospfAreaRangeLookup (struct variable *v,
  
        /* Lookup area range. */
        oid2in_addr (offset, IN_ADDR_SIZE, range_net);
@@ -22,7 +34,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
      }
    else
      {
-@@ -1201,7 +1205,6 @@ ospfAreaRangeEntry (struct variable *v, 
+@@ -1201,7 +1204,6 @@ ospfAreaRangeEntry (struct variable *v, 
  {
    struct ospf_area_range *range;
    struct in_addr area_id;
@@ -30,7 +42,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
    struct in_addr range_net;
    struct in_addr mask;
    
-@@ -1217,7 +1220,7 @@ ospfAreaRangeEntry (struct variable *v, 
+@@ -1217,7 +1219,7 @@ ospfAreaRangeEntry (struct variable *v, 
      return NULL;
  
    /* Convert prefixlen to network mask format. */
@@ -39,7 +51,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
  
    /* Return the current value of the variable */
    switch (v->magic) 
-@@ -1268,7 +1271,7 @@ ospfHostLookup (struct variable *v, oid 
+@@ -1268,7 +1270,7 @@ ospfHostLookup (struct variable *v, oid 
  
        oid2in_addr (name + v->namelen, IN_ADDR_SIZE, addr);
  
@@ -48,7 +60,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
  
        return nbr_nbma;
      }
-@@ -1653,7 +1656,7 @@ ospfIfEntry (struct variable *v, oid *na
+@@ -1653,7 +1655,7 @@ ospfIfEntry (struct variable *v, oid *na
        return SNMP_INTEGER (OSPF_POLL_INTERVAL_DEFAULT);
        break;
      case OSPFIFSTATE:		/* 12 */
@@ -57,7 +69,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
        break;
      case OSPFIFDESIGNATEDROUTER: /* 13 */
        return SNMP_IPADDRESS (DR (oi));
-@@ -1662,7 +1665,7 @@ ospfIfEntry (struct variable *v, oid *na
+@@ -1662,7 +1664,7 @@ ospfIfEntry (struct variable *v, oid *na
        return SNMP_IPADDRESS (BDR (oi));
        break;
      case OSPFIFEVENTS:		/* 15 */
@@ -66,7 +78,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
        break;
      case OSPFIFAUTHKEY:		/* 16 */
        *var_len = 0;
-@@ -1993,10 +1996,10 @@ ospfVirtIfEntry (struct variable *v, oid
+@@ -1993,10 +1995,10 @@ ospfVirtIfEntry (struct variable *v, oid
        return SNMP_INTEGER (OSPF_IF_PARAM (oi, v_wait));
        break;
      case OSPFVIRTIFSTATE:
@@ -79,7 +91,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
        break;
      case OSPFVIRTIFAUTHKEY:
        *var_len = 0;
-@@ -2031,7 +2034,7 @@ ospf_snmp_nbr_lookup (struct in_addr *nb
+@@ -2031,7 +2033,7 @@ ospf_snmp_nbr_lookup (struct in_addr *nb
        for (rn = route_top (oi->nbrs); rn; rn = route_next (rn))
  	if ((nbr = rn->info) != NULL
  	    && nbr != oi->nbr_self
@@ -88,7 +100,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
  	    && nbr->src.s_addr != 0)
  	  {
  	    if (IPV4_ADDR_SAME (&nbr->src, nbr_addr))
-@@ -2059,7 +2062,7 @@ ospf_snmp_nbr_lookup_next (struct in_add
+@@ -2059,7 +2061,7 @@ ospf_snmp_nbr_lookup_next (struct in_add
        for (rn = route_top (oi->nbrs); rn; rn = route_next (rn))
  	if ((nbr = rn->info) != NULL
  	    && nbr != oi->nbr_self
@@ -97,7 +109,7 @@ $OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2002/07/17 21:57:23 mickey Exp $
  	    && nbr->src.s_addr != 0)
  	  {
  	    if (first)
-@@ -2173,7 +2176,7 @@ ospfNbrEntry (struct variable *v, oid *n
+@@ -2173,7 +2175,7 @@ ospfNbrEntry (struct variable *v, oid *n
        return SNMP_INTEGER (nbr->priority);
        break;
      case OSPFNBRSTATE:

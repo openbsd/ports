@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/01/02 06:36:32 david Exp $
+# $OpenBSD: Makefile,v 1.27 2004/10/13 01:58:14 danh Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
@@ -39,7 +39,7 @@ FLAVORS=	snmp
 FLAVOR?=
 
 .if ${FLAVOR:L:Msnmp}
-LIB_DEPENDS=	snmp.42::net/ucd-snmp
+LIB_DEPENDS=	netsnmp.6.2::net/net-snmp
 CONFIGURE_ARGS+= --enable-snmp
 .else
 CONFIGURE_ARGS+= --disable-snmp
