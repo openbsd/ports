@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/08 14:51:49 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/03 16:25:49 naddy Exp $
 
-COMMENT=???
+COMMENT="otaku world sitter for kamor"
 DISTNAME=otakuworld-1.0
 WRKDIST=${WRKDIR}
 SITTER=otakuworld
