@@ -1,0 +1,34 @@
+*** fig.h.orig	Tue Jun 24 17:34:38 1997
+--- fig.h	Tue Dec  2 22:57:30 1997
+***************
+*** 28,33 ****
+--- 28,35 ----
+  #if defined(ultrix) || defined(__bsdi__) || defined(Mips)
+  #include <sys/types.h>	/* for stat structure */
+  #endif
++ 
++ #include <sys/param.h>
+  #include <sys/stat.h>
+  
+  #if defined(__convex__) && defined(__STDC__)
+***************
+*** 50,57 ****
+  #if !defined(__bsdi__) && !defined(__NetBSD__)
+  extern int	errno;
+  extern int	sys_nerr;
+! #if (! (defined(BSD) && (BSD >= 199306)))
+! extern char    *sys_errlist[];
+  #endif
+  #endif
+  
+--- 52,61 ----
+  #if !defined(__bsdi__) && !defined(__NetBSD__)
+  extern int	errno;
+  extern int	sys_nerr;
+! #if !defined(__OpenBSD__)
+! #if !defined(BSD) || (BSD >= 199306)
+! extern __const char    *__const sys_errlist[];
+! #endif
+  #endif
+  #endif
+  
