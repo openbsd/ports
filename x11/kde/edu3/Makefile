@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/10 01:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/15 18:05:26 todd Exp $
 
-COMMENT=		"X11 toolkit, addons"
+COMMENT=		"X11 toolkit, edutainment"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
 VERSION=		3.0
