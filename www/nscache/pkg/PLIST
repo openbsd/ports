@@ -1,8 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/30 19:26:42 naddy Exp $
 bin/nscache
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Internet/
-share/gnome/apps/Internet/nscache.desktop
-share/pixmaps/
-share/pixmaps/nscache.xpm

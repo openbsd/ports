@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/30 19:26:42 naddy Exp $
 
 COMMENT=	"Netscape cache browser"
 
@@ -16,5 +16,6 @@ PERMIT_DISTFILES_FTP=	yes
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-gnome
 
 .include <bsd.port.mk>
