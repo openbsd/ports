@@ -1,11 +1,13 @@
---- Makefile.orig	Fri Apr 20 19:26:50 2001
-+++ Makefile	Fri Apr 20 20:01:35 2001
-@@ -1,20 +1,17 @@
+--- Makefile.orig	Sun Jul 22 21:52:36 2001
++++ Makefile	Sun Jul 22 21:58:34 2001
+@@ -4,34 +4,33 @@
+ # Copyright (C) 2000 Matthew Russell 
+ # See LICENSE for more info
+ 
 -VERSION = $(shell cat VERSION)
  CC = gcc
--DYNAMICGDB = -Wl,--dynamic-linker,/lib/ld-linux.so.2 
 -CFLAGS = -g -Wall -pedantic `gtk-config --cflags`
-+CFLAGS += -Wall -g `gtk-config --cflags`
++CFLAGS = -Wall -g `gtk-config --cflags`
  LIBS  = `gtk-config --libs`
  OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
  PLUGIN-SRC = plugin-src
@@ -15,23 +17,41 @@
 -          $(PLUGIN-SRC)/text.simple-filters.so \
 -          $(PLUGIN-SRC)/utilities.notepad.so
 -TMPDIR = /usr/tmp
--DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
--            HISTORY LICENSE TODO ciphertext.txt 
--DISTFILES_DATA = data/*.dat
--DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile
 +#PLUGINS = $(PLUGIN-SRC)/monoalphabetic.hillclimb-cracker.so \
 +#          $(PLUGIN-SRC)/monoalphabetic.key-controls.so \
 +#          $(PLUGIN-SRC)/statistics.n-grams.so \
 +#          $(PLUGIN-SRC)/text.simple-filters.so \
 +#          $(PLUGIN-SRC)/utilities.notepad.so
++#TMPDIR = /usr/tmp
+ 
+ # Files for source distribution
+-DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
 +#DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
-+#            HISTORY LICENSE TODO ciphertext.txt 
+             HISTORY LICENSE TODO ciphertext.txt crank.def
+-DISTFILES_DATA = data/*.dat
+-DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile $(PLUGIN-SRC)/Makefile.mingw $(PLUGIN-SRC)/plugin-floating.def $(PLUGIN-SRC)/plugin-mode.def
 +#DISTFILES_DATA = data/*.dat
-+#DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile
++#DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile $(PLUGIN-SRC)/Makefile.mingw $(PLUGIN-SRC)/plugin-floating.def $(PLUGIN-SRC)/plugin-mode.def
+ 
+ # Files for binary distribution (leaving out actual binaries)
+-BINDISTFILES = README BUGS HISTORY LICENSE TODO ciphertext.txt
+-BINDISTFILES_DATA = data/*.dat
++#BINDISTFILES = README BUGS HISTORY LICENSE TODO ciphertext.txt
++#BINDISTFILES_DATA = data/*.dat
+ 
+ # Windows binaries
+-WINBIN_DIR = winbin
+-WINBINFILES = $(WINBIN_DIR)/crank.exe 
+-WINBINGTK = $(WINBIN_DIR)/*.dll
+-WINBINFILES_PLUGINS = $(WINBIN_DIR)/plugins/*.dll
++#WINBIN_DIR = winbin
++#WINBINFILES = $(WINBIN_DIR)/crank.exe 
++#WINBINGTK = $(WINBIN_DIR)/*.dll
++#WINBINFILES_PLUGINS = $(WINBIN_DIR)/plugins/*.dll
  
  all: crank plugin
  
-@@ -34,37 +31,11 @@ clean:
+@@ -51,96 +50,12 @@ clean:
  TAGS:
  	etags *.[ch] $(PLUGIN-SRC)/*.[ch]
  
@@ -43,6 +63,10 @@
 -	-mkdir plugins
 -	cd $(PLUGIN-SRC) && make install
 -	@echo Installation complete.
+-
+-
+-# Various packaging commands to make life easier
+-
 -dist:
 -	@echo ========================================
 -	@echo Building Crank $(VERSION) source distribution
@@ -68,7 +92,61 @@
 -	-cd $(TMPDIR)/crank-$(VERSION); make; make install
 -	-cd $(TMPDIR)/crank-$(VERSION); ./crank
 -	-rm -rf $(TMPDIR)/crank-$(VERSION)
+-bindist:
+-	@echo =================================
+-	@echo Building Crank $(VERSION) binary frame
+-	@echo =================================
+-	-rm -r crank-bin-$(VERSION)
+-	mkdir crank-bin-$(VERSION)
+-	-cp $(BINDISTFILES) crank-bin-$(VERSION)
+-	-mkdir crank-bin-$(VERSION)/data
+-	-cp $(BINDISTFILES_DATA) crank-bin-$(VERSION)/data
+-	-mkdir crank-bin-$(VERSION)/plugins
+-	ls -lR crank-bin-$(VERSION)
 -
+-windist:
+-	@echo ====================================	
+-	@echo Building Windows binary distribution
+-	@echo ====================================	
+-	-rm crank-win-$(VERSION).zip
+-	make bindist
+-	make windist-main
+-	make windist-gtk
+-	make windist-zip
+-	mv crank-win.zip crank-win-$(VERSION).zip
+-	ls -l crank-win-$(VERSION).zip
+-
+-windist-no-gtk:
+-	@echo ====================================	
+-	@echo Building Windows binary distribution
+-	@echo ====================================	
+-	-rm crank-win-no-gtk-$(VERSION).zip
+-	make bindist
+-	make windist-main
+-	make windist-zip
+-	mv crank-win.zip crank-win-no-gtk-$(VERSION).zip
+-	ls -l crank-win-no-gtk-$(VERSION).zip		
+-
+-windist-main:
+-	@echo ===================================
+-	@echo Copying main executable and plugins
+-	@echo ===================================
+-	cp $(WINBINFILES) crank-bin-$(VERSION)/
+-	cp $(WINBINFILES_PLUGINS) crank-bin-$(VERSION)/plugins/	
+-
+-windist-gtk:
+-	@echo ======================
+-	@echo Copying gtk+ libraries
+-	@echo ======================
+-	cp $(WINBINGTK) crank-bin-$(VERSION)/
+-
+-windist-zip:
+-	@echo ==========
+-	@echo Making zip
+-	@echo ==========
+-	mv crank-bin-$(VERSION) crank-win-$(VERSION)
+-	zip -r -9 crank-win crank-win-$(VERSION)/
+-	rm -r crank-win-$(VERSION)
 +#install:
 +#	@echo ======================
 +#	@echo Installing Crank $(VERSION)             
@@ -77,3 +155,4 @@
 +#	-mkdir plugins
 +#	cd $(PLUGIN-SRC) && make install
 +#	@echo Installation complete.
+ 
