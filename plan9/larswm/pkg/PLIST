@@ -1,3 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/15 02:40:28 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/22 20:46:19 brad Exp $
 bin/larswm
 man/cat1/larswm.0
+share/doc/larswm/ChangeLog
+share/doc/larswm/README
+share/doc/larswm/README.9wm
+share/examples/larswm/sample.barinfo
+share/examples/larswm/sample.larswmrc
+share/examples/larswm/sample.xsession
+@dirrm share/doc/larswm
+@dirrm share/examples/larswm
