@@ -1,0 +1,11 @@
+--- wv/libole2/Makefile.in.orig	Sat Sep 14 22:50:04 2002
++++ wv/libole2/Makefile.in	Sat Sep 14 22:50:36 2002
+@@ -13,7 +13,7 @@
+ HAVE_GLIB = @HAVE_GLIB@
+ HAVE_GNOMEVFS= @HAVE_GNOMEVFS@
+ 
+-CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ -I$(srcdir)/ -I$(srcdir)/.. -DTTFDIR=\"$(datadir)/wv/ttf\" -I$(srcdir)/../libole2 @WMF_CFLAGS@ @GLIB_CFLAGS@
++CFLAGS = @DEFS@ -I$(srcdir)/ -I$(srcdir)/.. -DTTFDIR=\"$(datadir)/wv/ttf\" -I$(srcdir)/../libole2 @WMF_CFLAGS@ @GLIB_CFLAGS@ @CPPFLAGS@ @CFLAGS@
+ ifneq ($(HAVE_GLIB), 1)
+ CFLAGS += -I$(srcdir)/../glib-wv/
+ endif

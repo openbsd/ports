@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/17 18:37:13 couderc Exp $
+# $OpenBSD: Makefile,v 1.23 2002/11/14 20:16:27 marcm Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -28,7 +28,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=	gnu autoconf
 CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
 			--with-libxml2 \
-			--disable-debug --disable-gnome
+			--disable-debug
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -41,8 +41,31 @@ WRKDIST=	${WRKDIR}/abiword-${VERSION}/abi
 
 PFILE=		${WRKDIR}/abiword-${VERSION}/wv/generic.c
 
+FLAVORS=	gnome
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgnome}
+CONFIGURE_ARGS+=	--enable-gnome
+LIB_DEPENDS+=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
+			gal.19::devel/gal \
+			glade.5,glade-gnome.5::devel/libglade,gnome \
+			gnomevfs::x11/gnome/vfs
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
+
 post-patch:
 	@mv ${PFILE} ${PFILE}.orig
 	@sed -e s/tmpnam/mkstemp/ ${PFILE}.orig > ${PFILE}
+	@cd ${WRKDIR}/abiword-${VERSION}; \
+	patch < ${FILESDIR}/patch-wv_libole2_Makefile_in
+
+.if ${FLAVOR:L:Mgnome}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gnome/apps/Applications
+	${INSTALL_DATA} ${WRKDIST}/src/pkg/linux/rpm/data/abiword.desktop ${PREFIX}/share/gnome/apps/Applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${PREFIX}/share/AbiSuite/icons/abiword_48.png ${PREFIX}/share/pixmaps
+.endif
 
 .include <bsd.port.mk>

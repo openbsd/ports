@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/10/17 18:37:13 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/11/14 20:16:27 marcm Exp $
+!%%gnome%%
+%%gnome%%
 bin/AbiWord
 bin/AbiWord_d
-bin/AbiWord_s
 bin/abiword
 bin/ttfadmin.sh
 bin/ttftool
