@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/22 23:06:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/11/11 18:15:53 naddy Exp $
 @man man/man5/pptpd.conf.5
 @man man/man8/pptpctrl.8
 @man man/man8/pptpd.8
@@ -9,3 +9,5 @@ share/doc/poptop/README.OpenBSD
 share/examples/poptop/
 share/examples/poptop/pptpd.conf-sample
 @sample ${SYSCONFDIR}/pptpd.conf
+@comment GRE support required for PPTP data
+@sysctl net.inet.gre.allow=1

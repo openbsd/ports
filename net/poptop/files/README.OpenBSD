@@ -1,35 +1,10 @@
                      PoPToP - Unix PPTP Server
                    ----------------------------
-1. Kernel
-   PoPToP requires a kernel compiled without GRE support.  See sections 5.3
-   and 5.4 of the OpenBSD FAQ for instructions on compiling a custom kernel
-   http://www.openbsd.org/faq/faq5.html#Options Essentially:
-1.1 Configuration
-   Grab a copy of the src tree (CD3 - src.tar.gz), you'll probably want to
-   sync this to -STABLE.
-        (See http://www.openbsd.org/faq/faq3.html#GetCurrent)
-   Make a copy of src/sys/conf/GENERIC (We'll call it PPTPSrv) Comment out
-   the following line:
-        pseudo-device   gre     1       # GRE encapsulation interface
-   Make a copy of src/sys/arch/`uname -m`/conf/GENERIC (We'll copy to PPTPSrv)
-   Edit the line:
-        include "../../../conf/GENERIC"
-   to point to the modified configuration file in src/sys/conf/ In our case:
-        include "../../../conf/PPTPSrv"
-1.2 Compilation
-   In the src/sys/arch/`uname -m`/conf directory, execute config with the
-   name of the modified configuration file.  (In our case PPTPSrv), then build
-   a new kernel.
-        /usr/sbin/config PPTPSrv cd ../compile/PPTPSrv make clean && make
-        depend && make
-   We now have a new kernel in src/sys/arch/`uname -m`/compile/ called 'bsd'
-   Backup old kernel
-        mv /bsd /bsd.old
-   Copy new kernel
-        cp src/sys/arch/`uname -m`/compile/PPTPSrv/bsd /bsd
-   Reboot. Note: If your source has changed (e.g. you updated to -STABLE),
-   you will most likely need to rebuild the rest of the source tree after
-   reboot.
+1. GRE Support
+   PoPToP requires GRE support to be enabled. As of 3.6, this is now done
+   via a sysctl - net.inet.gre.allow. Modify /etc/sysctl.conf, adding a
+   line such as:
+        net.inet.gre.allow=1			# GRE Support for PoPToP
 2. Configuration of PPTP
    A sample configuration file is copied into your configuration directory
    (normally /etc) as pptpd.conf. Personalise this config file to suit. At

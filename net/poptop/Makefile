@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/05 07:53:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/11 18:15:53 naddy Exp $
 
 COMMENT=		"PPTP Server"
 
 VERSION=		1.1.4-b4
-PKGNAME=		poptop-${VERSION:S/-b/.b/}
+PKGNAME=		poptop-${VERSION:S/-b/.b/}p1
 DISTNAME=		pptpd-${VERSION}
 CATEGORIES=		net
 
