@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/03/01 01:31:53 sturm Exp $
 
 COMMENT=	"record, playback and monitor RTPv2 data streams"
 
 DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
+MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"
