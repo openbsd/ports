@@ -1,44 +1,44 @@
-$OpenBSD: patch-makefile,v 1.6 2002/03/11 15:12:27 brad Exp $
---- makefile.orig	Mon Mar  4 18:09:11 2002
-+++ makefile	Mon Mar 11 09:55:40 2002
-@@ -260,7 +260,7 @@ freebsd: iozone_freebsd.o libbif.o
+$OpenBSD: patch-makefile,v 1.7 2003/07/07 01:11:21 brad Exp $
+--- makefile.orig	Thu Jun 19 13:44:16 2003
++++ makefile	Mon Jul  7 01:01:24 2003
+@@ -352,7 +352,7 @@ macosx:	iozone_macosx.o libbif.o
  #
  
- openbsd: iozone_openbsd.o libbif.o
+ openbsd:	iozone_openbsd.o libbif.o
 -	cc -O -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
 +	$(CC) $(CFLAGS) -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
  		iozone_openbsd.o libbif.o -o iozone
  
  #
-@@ -268,7 +268,7 @@ openbsd: iozone_openbsd.o libbif.o
+@@ -360,7 +360,7 @@ openbsd:	iozone_openbsd.o libbif.o
  #
  
- openbsd-threads: iozone_openbsd-threads.o libbif.o
+ openbsd-threads:	iozone_openbsd-threads.o libbif.o
 -	cc -O -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
 +	$(CC) $(CFLAGS) -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
- 		iozone_openbsd-threads.o libbif.o -o iozone
+ 		iozone_openbsd-threads.o \
+ 		libbif.o -o iozone
  
- #
-@@ -610,18 +610,18 @@ iozone_openbsd.o: iozone.c libbif.c
+@@ -801,18 +801,18 @@ iozone_openbsd.o:	iozone.c libbif.c
  	@echo ""
  	@echo "Build iozone for OpenBSD"
  	@echo ""
 -	cc -c -O -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
 +	$(CC) -c $(CFLAGS) -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
- 		-DSHARED_MEM iozone.c -o iozone_openbsd.o
+ 		-DNAME='"openbsd"' -DSHARED_MEM iozone.c -o iozone_openbsd.o
 -	cc -c -O -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
 +	$(CC) -c $(CFLAGS) -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
  		-DSHARED_MEM libbif.c -o libbif.o
  
- iozone_openbsd-threads.o: iozone.c libbif.c
+ iozone_openbsd-threads.o:	iozone.c libbif.c
  	@echo ""
  	@echo "Build iozone for OpenBSD with threads"
  	@echo ""
 -	cc -c -O -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
 +	$(CC) -c $(CFLAGS) -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
- 		iozone.c -o iozone_openbsd-threads.o
+ 		-DNAME='"openbsd-threads"' iozone.c -o iozone_openbsd-threads.o
 -	cc -c -O -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
 +	$(CC) -c $(CFLAGS) -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
  		libbif.c -o libbif.o
  
- iozone_OSFV3.o: iozone.c libbif.c
+ iozone_OSFV3.o:	iozone.c libbif.c
