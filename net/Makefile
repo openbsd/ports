@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2002/04/29 02:48:06 form Exp $
+# $OpenBSD: Makefile,v 1.211 2002/04/29 03:20:30 wcobb Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -126,6 +126,7 @@
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
+     SUBDIR += pen
      SUBDIR += pop3gwd
      SUBDIR += pptp
      SUBDIR += proxy-suite
