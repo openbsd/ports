@@ -1,4 +1,4 @@
-$MirBSD$
+$OpenBSD: patch-libgphoto2_port_libgphoto2_port_gphoto2-port-portability_h,v 1.2 2003/04/20 20:51:20 sturm Exp $
 --- libgphoto2_port/libgphoto2_port/gphoto2-port-portability.h.orig	Mon Apr  7 17:30:13 2003
 +++ libgphoto2_port/libgphoto2_port/gphoto2-port-portability.h	Mon Apr  7 17:30:46 2003
 @@ -60,8 +60,9 @@ typedef struct {
