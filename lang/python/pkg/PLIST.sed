@@ -60,6 +60,7 @@ include/python1.5/thread.h
 include/python1.5/token.h
 include/python1.5/traceback.h
 include/python1.5/tupleobject.h
+%%tools%%
 lib/python1.5/BaseHTTPServer.py
 lib/python1.5/BaseHTTPServer.pyc
 lib/python1.5/BaseHTTPServer.pyo
@@ -251,6 +252,7 @@ lib/python1.5/keyword.pyo
 lib/python1.5/knee.py
 lib/python1.5/knee.pyc
 lib/python1.5/knee.pyo
+%%SHARED%%
 lib/python1.5/lib-stdwin/Abstract.py
 lib/python1.5/lib-stdwin/Abstract.pyc
 lib/python1.5/lib-stdwin/Abstract.pyo
@@ -935,7 +937,6 @@ lib/python1.5/xmllib.pyo
 man/man1/python.1
 @dirrm include/python1.5
 @dirrm lib/python1.5/config
-@dirrm lib/python1.5/lib-dynload
 @dirrm lib/python1.5/lib-stdwin
 @dirrm lib/python1.5/lib-tk
 @dirrm lib/python1.5/plat-openbsd2
