@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/12/09 09:24:22 kevlo Exp $
+--- Makefile.PL.orig	Thu Dec  9 16:49:58 2004
++++ Makefile.PL	Thu Dec  9 16:50:19 2004
+@@ -212,7 +212,7 @@ sub MY::postamble {
+    my $self = shift ;
+    return join(
+       "",
+-      "\npure_all :: $io_test_files\n",
++      "\n#pure_all :: $io_test_files\n",
+       map(
+          "\n$_ : bin/gentrevml\n$io_scheme_revmls{$_}",
+ 	 sort keys %io_scheme_revmls

@@ -1,0 +1,156 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 09:24:22 kevlo Exp $
+bin/vcp
+${P5SITE}/RevML/
+${P5SITE}/RevML/Doctype/
+${P5SITE}/RevML/Doctype.pm
+${P5SITE}/RevML/Doctype/v0_35.pm
+${P5SITE}/RevML/Writer.pm
+${P5SITE}/VCP/
+${P5SITE}/VCP.pm
+${P5SITE}/VCP/Branches.pod
+${P5SITE}/VCP/ConfigFileUtils.pm
+${P5SITE}/VCP/DB.pm
+${P5SITE}/VCP/DB_File/
+${P5SITE}/VCP/DB_File.pm
+${P5SITE}/VCP/DB_File/big_records.pm
+${P5SITE}/VCP/DB_File/sdbm.pm
+${P5SITE}/VCP/Debug.pm
+${P5SITE}/VCP/DefaultFilters.pm
+${P5SITE}/VCP/Dest/
+${P5SITE}/VCP/Dest.pm
+${P5SITE}/VCP/Dest/branch_diagram.pm
+${P5SITE}/VCP/Dest/csv.pm
+${P5SITE}/VCP/Dest/cvs.pm
+${P5SITE}/VCP/Dest/data_dump.pm
+${P5SITE}/VCP/Dest/metadb.pm
+${P5SITE}/VCP/Dest/null.pm
+${P5SITE}/VCP/Dest/p4.pm
+${P5SITE}/VCP/Dest/perl_data.pm
+${P5SITE}/VCP/Dest/revml.pm
+${P5SITE}/VCP/Dest/summary.pm
+${P5SITE}/VCP/Dest/texttable.pm
+${P5SITE}/VCP/Dest/topo_table.pm
+${P5SITE}/VCP/Dest/vss.pm
+${P5SITE}/VCP/DiffFormat.pm
+${P5SITE}/VCP/Driver.pm
+${P5SITE}/VCP/FilesDB.pm
+${P5SITE}/VCP/Filter/
+${P5SITE}/VCP/Filter.pm
+${P5SITE}/VCP/Filter/addlabels.pm
+${P5SITE}/VCP/Filter/changesets.pm
+${P5SITE}/VCP/Filter/csv_trace.pm
+${P5SITE}/VCP/Filter/dumpdata.pm
+${P5SITE}/VCP/Filter/identity.pm
+${P5SITE}/VCP/Filter/labelmap.pm
+${P5SITE}/VCP/Filter/logmemsize.pm
+${P5SITE}/VCP/Filter/map.pm
+${P5SITE}/VCP/Filter/sort.pm
+${P5SITE}/VCP/Filter/stringedit.pm
+${P5SITE}/VCP/HeadRevsDB.pm
+${P5SITE}/VCP/Help.pm
+${P5SITE}/VCP/License.pod
+${P5SITE}/VCP/Logger.pm
+${P5SITE}/VCP/MainBranchIdDB.pm
+${P5SITE}/VCP/Maintenance.pod
+${P5SITE}/VCP/Newlines.pod
+${P5SITE}/VCP/Patch.pm
+${P5SITE}/VCP/Plugin.pm
+${P5SITE}/VCP/PodDESCRIPTIONParser.pm
+${P5SITE}/VCP/PodOPTIONSParser.pm
+${P5SITE}/VCP/Process.pod
+${P5SITE}/VCP/RefCountedFile.pm
+${P5SITE}/VCP/Rev.pm
+${P5SITE}/VCP/RevMapDB.pm
+${P5SITE}/VCP/Revs.pm
+${P5SITE}/VCP/Source/
+${P5SITE}/VCP/Source.pm
+${P5SITE}/VCP/Source/cvs.pm
+${P5SITE}/VCP/Source/metadb.pm
+${P5SITE}/VCP/Source/null.pm
+${P5SITE}/VCP/Source/p4.pm
+${P5SITE}/VCP/Source/revml.pm
+${P5SITE}/VCP/Source/vss.pm
+${P5SITE}/VCP/TestUtils.pm
+${P5SITE}/VCP/UI/
+${P5SITE}/VCP/UI.pm
+${P5SITE}/VCP/UI/Text.pm
+${P5SITE}/VCP/UIMachines.pm
+${P5SITE}/VCP/Utils/
+${P5SITE}/VCP/Utils.pm
+${P5SITE}/VCP/Utils/cvs.pm
+${P5SITE}/VCP/Utils/metadb.pm
+${P5SITE}/VCP/Utils/p4.pm
+${P5SITE}/VCP/Utils/revml.pm
+${P5SITE}/VCP/Utils/vss.pm
+@man man/man1/vcp.1
+@man man/man3p/RevML::Doctype.3p
+@man man/man3p/RevML::Writer.3p
+@man man/man3p/VCP.3p
+@man man/man3p/VCP::Branches.3p
+@man man/man3p/VCP::ConfigFileUtils.3p
+@man man/man3p/VCP::DB.3p
+@man man/man3p/VCP::DB_File.3p
+@man man/man3p/VCP::DB_File::big_records.3p
+@man man/man3p/VCP::DB_File::sdbm.3p
+@man man/man3p/VCP::Debug.3p
+@man man/man3p/VCP::DefaultFilters.3p
+@man man/man3p/VCP::Dest.3p
+@man man/man3p/VCP::Dest::branch_diagram.3p
+@man man/man3p/VCP::Dest::csv.3p
+@man man/man3p/VCP::Dest::cvs.3p
+@man man/man3p/VCP::Dest::data_dump.3p
+@man man/man3p/VCP::Dest::metadb.3p
+@man man/man3p/VCP::Dest::null.3p
+@man man/man3p/VCP::Dest::p4.3p
+@man man/man3p/VCP::Dest::perl_data.3p
+@man man/man3p/VCP::Dest::revml.3p
+@man man/man3p/VCP::Dest::summary.3p
+@man man/man3p/VCP::Dest::texttable.3p
+@man man/man3p/VCP::Dest::topo_table.3p
+@man man/man3p/VCP::Dest::vss.3p
+@man man/man3p/VCP::DiffFormat.3p
+@man man/man3p/VCP::Driver.3p
+@man man/man3p/VCP::FilesDB.3p
+@man man/man3p/VCP::Filter.3p
+@man man/man3p/VCP::Filter::addlabels.3p
+@man man/man3p/VCP::Filter::changesets.3p
+@man man/man3p/VCP::Filter::csv_trace.3p
+@man man/man3p/VCP::Filter::dumpdata.3p
+@man man/man3p/VCP::Filter::identity.3p
+@man man/man3p/VCP::Filter::labelmap.3p
+@man man/man3p/VCP::Filter::logmemsize.3p
+@man man/man3p/VCP::Filter::map.3p
+@man man/man3p/VCP::Filter::sort.3p
+@man man/man3p/VCP::Filter::stringedit.3p
+@man man/man3p/VCP::HeadRevsDB.3p
+@man man/man3p/VCP::License.3p
+@man man/man3p/VCP::Logger.3p
+@man man/man3p/VCP::MainBranchIdDB.3p
+@man man/man3p/VCP::Maintenance.3p
+@man man/man3p/VCP::Newlines.3p
+@man man/man3p/VCP::Patch.3p
+@man man/man3p/VCP::Plugin.3p
+@man man/man3p/VCP::PodDESCRIPTIONParser.3p
+@man man/man3p/VCP::PodOPTIONSParser.3p
+@man man/man3p/VCP::Process.3p
+@man man/man3p/VCP::RefCountedFile.3p
+@man man/man3p/VCP::Rev.3p
+@man man/man3p/VCP::RevMapDB.3p
+@man man/man3p/VCP::Revs.3p
+@man man/man3p/VCP::Source.3p
+@man man/man3p/VCP::Source::cvs.3p
+@man man/man3p/VCP::Source::metadb.3p
+@man man/man3p/VCP::Source::null.3p
+@man man/man3p/VCP::Source::p4.3p
+@man man/man3p/VCP::Source::revml.3p
+@man man/man3p/VCP::Source::vss.3p
+@man man/man3p/VCP::TestUtils.3p
+@man man/man3p/VCP::UI.3p
+@man man/man3p/VCP::UI::Text.3p
+@man man/man3p/VCP::UIMachines.3p
+@man man/man3p/VCP::Utils.3p
+@man man/man3p/VCP::Utils::cvs.3p
+@man man/man3p/VCP::Utils::metadb.3p
+@man man/man3p/VCP::Utils::p4.3p
+@man man/man3p/VCP::Utils::revml.3p
+@man man/man3p/VCP::Utils::vss.3p

@@ -1,0 +1,11 @@
+vcp (and the Perl module VCP.pm) is a system for copying resources under
+version control between repositories. CVS, p4 and VSS repositories are
+currently supported.
+
+vcp can filter, rearrange repositories, and alter metadata during a
+transfer.  These capabilities are used to handle conversion details like
+different branching models and legal character sets between various
+repositories.
+
+This is *NOT* a branch, nor a fork, from VCP's main repository
+This is merely a snapshot of versions that are known to work with svk.
