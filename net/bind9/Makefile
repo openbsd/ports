@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2002/07/07 11:21:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.33 2002/08/05 20:48:59 jakob Exp $
 
 COMMENT=		Berkeley Internet Name Daemon
 COMMENT-libbind=	BIND 8 compatible stub resolver library
@@ -6,7 +6,6 @@ COMMENT-libbind=	BIND 8 compatible stub resolver library
 VERSION=	9.2.1
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.499
 
 MULTI_PACKAGES=		-libbind
 PKGNAME-libbind=	libbind-${VERSION}
@@ -43,12 +42,8 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 REGRESS_TARGET=		test
 
-FLAVORS=		debug static threads
+FLAVORS=		static threads
 FLAVOR?=
-
-.if ${FLAVOR:L:Mdebug}
-CFLAGS+=		"-g"
-.endif
 
 .if ${FLAVOR:L:Mstatic}
 CFLAGS+=		"-static"
