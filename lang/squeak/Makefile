@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/23 16:24:18 espie Exp $
 
 
+COMMENT=	"smalltalk system"
 CATEGORIES=	lang
-NEED_VERSION=	1.355
+NEED_VERSION=	1.400
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -37,7 +38,7 @@ WRKSRC=	${WRKDIST}/src/unix
 SEPARATE_BUILD=simple
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=RANLIB=ranlib LIBS=-lossaudio
+CONFIGURE_ENV=RANLIB=ranlib
 #MAKE_FLAGS=CFLAGS=-O2
 #ALL_TARGET=squeak plugins map
 ALL_TARGET=all squeak.1
@@ -47,6 +48,10 @@ MAKE_FLAGS=INTERP=gnu-interp docdir=${TRUEPREFIX}/share/doc/squeak-$V
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 PLUGINS= Profiler.so SoundCodecPrims.so Squeak3D.so System.so
+
+post-extract:
+	cp ${FILESDIR}/sqOpenBSDSound.c ${WRKSRC}
+	rm ${WRKSRC}/sqUnixSound.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/squeak
