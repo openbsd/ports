@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1997/12/03 04:12:31 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1998/02/06 13:28:00 niklas Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -37,7 +37,7 @@ SUBDIR += textproc
 SUBDIR += www
 SUBDIR += x11
 
-PORTSTOP=	yes
+PORTSTOP?=	yes
 
 .include <bsd.port.subdir.mk>
 
