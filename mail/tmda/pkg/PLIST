@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/08 02:01:28 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/15 14:57:00 lebel Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -45,6 +45,7 @@ share/doc/tmda/resources.html
 share/doc/tmda/results.html
 share/doc/tmda/trouble.html
 share/examples/tmda/sample.tmdarc
+share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda
