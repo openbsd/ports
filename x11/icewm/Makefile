@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2004/01/30 15:00:45 naddy Exp $
 
 COMMENT=		"small, fast window manager"
 
@@ -23,7 +23,8 @@ LIB_DEPENDS=		Imlib.19::graphics/imlib
 USE_X11=		Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	autoconf dest
+AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS=		--with-imlib=${PREFIX}/bin \
 			--with-docdir=${PREFIX}/share/doc \
 			--with-libdir=${PREFIX}/share/icewm \
