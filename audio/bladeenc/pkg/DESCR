@@ -5,3 +5,5 @@ is the appearance and speed. BladeEnc doesn't have a nice,
 user-friendly interface like mpegEnc, but it is more than three
 times faster, and it works with several popular front-end graphical
 user interfaces.
+
+WWW: ${HOMEPAGE}
