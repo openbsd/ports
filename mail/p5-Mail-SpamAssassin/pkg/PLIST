@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/02/03 20:28:25 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/02/22 14:55:51 lebel Exp $
+bin/sa-learn
 bin/spamassassin
 bin/spamc
 bin/spamd
 ${P5SITE}/Mail/SpamAssassin.pm
+${P5SITE}/Mail/SpamAssassin/ArchiveIterator.pm
 ${P5SITE}/Mail/SpamAssassin/AuditMessage.pm
 ${P5SITE}/Mail/SpamAssassin/AutoWhitelist.pm
+${P5SITE}/Mail/SpamAssassin/Bayes.pm
+${P5SITE}/Mail/SpamAssassin/BayesStore.pm
+${P5SITE}/Mail/SpamAssassin/CmdLearn.pm
 ${P5SITE}/Mail/SpamAssassin/Conf.pm
 ${P5SITE}/Mail/SpamAssassin/ConfSourceSQL.pm
 ${P5SITE}/Mail/SpamAssassin/DBBasedAddrList.pm
@@ -12,12 +17,13 @@ ${P5SITE}/Mail/SpamAssassin/Dns.pm
 ${P5SITE}/Mail/SpamAssassin/EncappedMIME.pm
 ${P5SITE}/Mail/SpamAssassin/EncappedMessage.pm
 ${P5SITE}/Mail/SpamAssassin/EvalTests.pm
-${P5SITE}/Mail/SpamAssassin/ExposedMessage.pm
 ${P5SITE}/Mail/SpamAssassin/HTML.pm
 ${P5SITE}/Mail/SpamAssassin/Locales.pm
+${P5SITE}/Mail/SpamAssassin/Locker.pm
 ${P5SITE}/Mail/SpamAssassin/MailingList.pm
 ${P5SITE}/Mail/SpamAssassin/Message.pm
 ${P5SITE}/Mail/SpamAssassin/NoMailAudit.pm
+${P5SITE}/Mail/SpamAssassin/PerMsgLearner.pm
 ${P5SITE}/Mail/SpamAssassin/PerMsgStatus.pm
 ${P5SITE}/Mail/SpamAssassin/PersistentAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/PhraseFreqs.pm
@@ -25,11 +31,19 @@ ${P5SITE}/Mail/SpamAssassin/Replier.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SHA1.pm
 ${P5SITE}/Mail/SpamAssassin/TextCat.pm
+${P5SITE}/Mail/SpamAssassin/UnixLocker.pm
+${P5SITE}/Mail/SpamAssassin/Util.pm
+${P5SITE}/Mail/SpamAssassin/Win32Locker.pm
+man/man1/sa-learn.1
+man/man1/spamassassin.1
 man/man1/spamc.1
+man/man1/spamd.1
 man/man3p/Mail::SpamAssassin.3p
 man/man3p/Mail::SpamAssassin::AutoWhitelist.3p
+man/man3p/Mail::SpamAssassin::Bayes.3p
 man/man3p/Mail::SpamAssassin::Conf.3p
 man/man3p/Mail::SpamAssassin::ConfSourceSQL.3p
+man/man3p/Mail::SpamAssassin::PerMsgLearner.3p
 man/man3p/Mail::SpamAssassin::PerMsgStatus.3p
 man/man3p/Mail::SpamAssassin::PersistentAddrList.3p
 man/man8/spamd.8
@@ -44,9 +58,13 @@ share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
 share/spamassassin/20_head_tests.cf
+share/spamassassin/20_html_tests.cf
 share/spamassassin/20_meta_tests.cf
+share/spamassassin/20_phrases.cf
+share/spamassassin/20_porn.cf
 share/spamassassin/20_ratware.cf
 share/spamassassin/20_uri_tests.cf
+share/spamassassin/23_bayes.cf
 share/spamassassin/25_body_tests_es.cf
 share/spamassassin/25_body_tests_pl.cf
 share/spamassassin/25_head_tests_es.cf
@@ -54,8 +72,8 @@ share/spamassassin/25_head_tests_pl.cf
 share/spamassassin/30_text_de.cf
 share/spamassassin/30_text_es.cf
 share/spamassassin/30_text_fr.cf
+share/spamassassin/30_text_it.cf
 share/spamassassin/30_text_pl.cf
-share/spamassassin/40_spam_phrases.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
