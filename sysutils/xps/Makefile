@@ -3,7 +3,7 @@
 # Date created:         28 April 2001
 # Whom:                 Angelos D. Keromytis (angelos@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.4 2001/05/09 04:31:18 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/28 18:49:14 pvalchev Exp $
 #
 
 DISTNAME=       xps-3.21
@@ -25,8 +25,8 @@ HOMEPAGE=       http://www.netwinder.org/~rocky/xps-home/
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--x-includes=/usr/local/include \
-			--with-motif-libs=/usr/local/lib
+CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
+			--with-motif-libs=${LOCALBASE}/lib
 
 USE_X11=		Yes
 USE_MOTIF=		any
