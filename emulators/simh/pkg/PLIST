@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/11/28 16:41:12 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.12 2002/11/28 17:02:12 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
+bin/simh-gri
 bin/simh-h316
 bin/simh-hp2100
 bin/simh-i1401
+bin/simh-i1620
+bin/simh-ibm1130
 bin/simh-nova
 bin/simh-pdp1
 bin/simh-pdp10

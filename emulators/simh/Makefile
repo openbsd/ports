@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2002/11/28 16:47:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2002/11/28 17:02:12 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -28,8 +28,9 @@ COPTS+=			-O0
 
 NO_REGRESS=		Yes
 
-SIMS=			altair altairz80 eclipse h316 hp2100 i1401 nova pdp1 \
-			pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 s3 vax
+SIMS=			altair altairz80 eclipse gri h316 hp2100 i1401 i1620 \
+			ibm1130 nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 \
+			pdp9 s3 vax
 
 VMEM_WARNING=		Yes
 
