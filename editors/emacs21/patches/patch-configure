@@ -1,5 +1,6 @@
---- configure~	Fri Oct 19 11:04:37 2001
-+++ configure	Fri Feb 15 00:26:07 2002
+$OpenBSD: patch-configure,v 1.4 2002/03/23 19:13:14 pvalchev Exp $
+--- configure.orig	Fri Oct 19 12:04:37 2001
++++ configure	Fri Mar 22 22:38:15 2002
 @@ -834,7 +834,8 @@ case "${canonical}" in
        m68k-*-openbsd*)  machine=hp9000s300 ;;
        mipsel-*-openbsd*) machine=pmax ;;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_m_alpha_h,v 1.1 2002/03/23 19:13:14 pvalchev Exp $
+--- src/m/alpha.h.orig	Fri Mar 22 22:51:11 2002
++++ src/m/alpha.h	Fri Mar 22 22:51:22 2002
+@@ -115,10 +115,6 @@ NOTE-END
+ # endif
+ #endif
+ 
+-#if defined(__OpenBSD__)
+-#define ORDINARY_LINK
+-#endif
+-
+ #ifdef __ELF__
+ #undef UNEXEC
+ #define UNEXEC unexelf.o
