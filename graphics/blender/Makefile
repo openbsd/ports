@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/09 05:36:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
@@ -7,7 +7,6 @@ V=		2.23
 PKGNAME=	blender-${V}
 DISTNAME=	blender-creator-${V}-linux-glibc2.1.2-i386-static
 CATEGORIES=	graphics
-NEED_VERSION=	1.529
 
 HOMEPAGE=	http://www.blender.nl/
 

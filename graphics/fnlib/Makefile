@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/01/13 04:56:18 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"color font rendering library for X"
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.squish.org/pub/enlightenment/enlightenment/libs/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/fnlib/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/libs/

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 20:08:46 fgsch Exp $
 
 DISTNAME=	cqcam-0.91
 CATEGORIES=	graphics
-NEED_VERSION=	1.474
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

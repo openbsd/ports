@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/24 22:48:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:08:47 fgsch Exp $
 # $FreeBSD: ports/graphics/vid/Makefile,v 1.5 2001/02/21 07:48:56 roger Exp $
 
 COMMENT=	"get images from USB cameras using the OV511(+) chipsets"
 
 DISTNAME=	vid-1.0.1
 CATEGORIES=	graphics
-NEED_VERSION=   1.515
 
 HOMEPAGE=	http://members.home.com/housel/
 

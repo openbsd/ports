@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2002/04/26 14:48:19 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2002/12/29 20:08:46 fgsch Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 COMMENT=	"graphics library for fast PNG creation"
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.522
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 

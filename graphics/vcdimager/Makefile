@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/23 18:59:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"(S)VCD authoring software"
 
 VERSION=	0.6.2
 DISTNAME=	vcdimager-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.507
 
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.6/
 

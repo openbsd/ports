@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/28 02:40:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
 VERSION=		3.0.4
 DISTNAME=		gle-${VERSION}
 CATEGORIES=     	graphics devel
-NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.linas.org/gle/
 

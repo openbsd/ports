@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/09 05:36:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.525
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 

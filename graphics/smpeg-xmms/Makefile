@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/26 04:48:03 wcobb Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"MPEG and VCD video playback in XMMS"
 
@@ -6,7 +6,6 @@ VERSION=	0.3.5
 DISTNAME=	smpeg-xmms-${VERSION}
 PKGNAME=	xmms-smpeg-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.525
 HOMEPAGE=	http://www.xmms.org/files/plugins/smpeg-xmms/
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>

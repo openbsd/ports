@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/07 03:04:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:08:46 fgsch Exp $
 
 COMMENT=	"mpeg-1 video player"
 
 VERSION=	0.4.1
 DISTNAME=	enjoympeg-${VERSION}
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.419
 
 HOMEPAGE=	http://people.freenet.de/for_Ki/
 
