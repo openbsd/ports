@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/16 22:26:18 turan Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 DISTNAME=	bochs-991023a
@@ -6,12 +6,14 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.bochs.com/pub/
 NEED_VERSION=	1.191
 
-NO_CDROM=	"Commercial software"
-RESTRICTED=	"Commercial software"
-
 HOMEPAGE=	http://www.bochs.com/
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"trial period only"
+PERMIT_PACKAGE_FTP=	"trial period only"
+PERMIT_DISTFILES_CDROM=	"trial period only"
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	yes
 USE_X11=	yes

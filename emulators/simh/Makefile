@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/22 17:08:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/16 22:26:18 turan Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 DISTNAME=	sim_2.3d
@@ -8,6 +8,11 @@ MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/
 NEED_VERSION=	1.210
 
 MAINTAINER=	form@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 
