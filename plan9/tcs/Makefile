@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/28 02:05:29 naddy Exp $
 
 COMMENT=	"translate character sets"
 
 DISTNAME=	tcs
 PKGNAME=	tcs-19950325
 CATEGORIES=	plan9
-NEED_VERSION=	1.515
+
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z
@@ -23,6 +23,9 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
 ALL_TARGET=	tcs
 
 WRKDIST=	${WRKDIR}
+
+do-regress:
+	cd ${WRKSRC}; ./regress
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcs ${PREFIX}/bin
