@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.57 2001/09/28 17:43:01 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -12,7 +12,7 @@ FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.435
+NEED_VERSION=	1.460
 MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
 		http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
@@ -34,6 +34,7 @@ DB_DIR?=	/var/mysql
 SUBST_VARS=	DB_DIR VERSION
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/mit-pthreads/config
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --localstatedir="${DB_DIR}" \
@@ -48,8 +49,6 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-gemini
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
-
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/mit-pthreads/config
 
 FLAVORS=	max
 FLAVOR?=
@@ -67,7 +66,7 @@ CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
 LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
 .elif ${SUBPACKAGE} == "-server"
 LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
-RUN_DEPENDS=	mysql:mysql-client-3.23.*:databases/mysql
+RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql
 .endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
