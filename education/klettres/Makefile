@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/28 15:30:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/14 09:05:53 kevlo Exp $
 
 COMMENT=	"interactive learning the French alphabet"
 
-DISTNAME=	klettres-1.02
+DISTNAME=	klettres-1.3.01
 CATEGORIES=	education
 NEED_VERSION=	1.500
 
