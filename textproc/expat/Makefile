@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/22 16:40:22 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/01/23 03:27:11 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 DISTNAME=	expat-1.95.1
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= expat
 
 HOMEPAGE=	http://expat.sourceforge.net/
 
-MAINTAINER=	Dug Song <dugsong@monkey.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
