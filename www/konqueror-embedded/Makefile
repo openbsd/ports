@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/25 00:35:41 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/28 15:46:52 naddy Exp $
 
 COMMENT='stand-alone web browser'
 CATEGORIES=www x11
-NEED_VERSION=1.513
 
 MODULES=	qt2
 
@@ -19,7 +18,7 @@ AUTOCONF_NEW=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include:${LOCALBASE}/include/libpng
 CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
 CONFIGURE_ARGS+=	--disable-debug
