@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/02 04:41:02 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/24 03:03:07 brad Exp $
 #
 
 DISTNAME=       libggi-2.0b1
@@ -17,11 +17,12 @@ MASTER_SITES=   ftp://sunsite.unc.edu:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.unina.it:/pub/linux/ggi/ggi/2_0_beta_1/ \
 		ftp://sunsite.icm.edu.pl:/pub/unix/gui/ggi/ggi/2_0_beta_1/
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-
 LIB_DEPENDS=	gii\\.0\\.:${PORTSDIR}/graphics/gii
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static --with-gii=${PREFIX}/
 
 post-install:
 	${MKDIR} -p ${docdir}
@@ -33,7 +34,3 @@ post-install:
 docdir=${PREFIX}/share/doc/ggi
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=       --enable-static --with-gii=${PREFIX}/
-
-docdir=${PREFIX}/share/doc/ggi
