@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.581 2003/08/11 20:10:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.582 2003/08/13 19:41:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2071,10 +2071,10 @@ README_NAME?=	${TEMPLATES}/README.port
 
 readmes:
 .if defined(MULTI_PACKAGES) && !defined(PACKAGING)
-	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readme
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readmes
 .  if empty(SUBPACKAGE)
 .    for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} readme
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} readmes
 .    endfor
 .  endif
 .else
