@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_formulas_c,v 1.1 2002/10/23 07:16:11 pvalchev Exp $
+--- src/formulas.c.orig	Wed Oct 23 00:53:31 2002
++++ src/formulas.c	Wed Oct 23 00:56:21 2002
+@@ -200,7 +200,7 @@ really_remove_event(gpointer data, gpoin
+   gint i = 0;
+   gchar *text;
+ 
+-  gtk_clist_get_text((GtkCList *)user_data, (gint)data, 0, &text);
++  gtk_clist_get_text((GtkCList *)user_data, GPOINTER_TO_INT(data), 0, &text);
+   while(strcmp(text, formulas[i++]));
+   g_free(formulas[--i]);
+   nformulas--;
