@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.70 2004/07/13 17:24:29 brad Exp $
+# $OpenBSD: Makefile,v 1.71 2004/07/13 18:55:43 brad Exp $
 
-COMMENT=	"display and manipulate images under X11"
+COMMENT=	"image processing tools"
 
 VER=		6.0.0
 DASHVER=	2
