@@ -1,0 +1,15 @@
+--- mit-pthreads/machdep/freebsd-2.0/__unistd.h.orig	Wed Mar 26 15:26:39 1997
++++ mit-pthreads/machdep/freebsd-2.0/__unistd.h	Tue Sep  1 10:59:22 1998
+@@ -52,8 +52,12 @@
+ #define	_POSIX_SAVED_IDS	/* saved set-user-ID and set-group-ID */
+ #endif
+ 
++#ifndef _POSIX_VERSION
+ #define	_POSIX_VERSION		198808L
++#endif
++#ifndef _POSIX2_VERSION
+ #define	_POSIX2_VERSION		199212L
++#endif
+ 
+ /* execution-time symbolic constants */
+ 				/* chown requires appropriate privileges */

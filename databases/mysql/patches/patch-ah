@@ -1,0 +1,21 @@
+--- mit-pthreads/pthreads/Makefile.inc.orig	Mon Mar 24 17:42:01 1997
++++ mit-pthreads/pthreads/Makefile.inc	Sat Oct 10 16:32:05 1998
+@@ -48,16 +48,10 @@
+ .endif
+ 
+ syscall.o: syscall.S
+-	cpp ${CPPFLAGS} ${.CURDIR}/syscall.S > syscall.i
+-	as syscall.i 
+-	rm syscall.i
+-	mv a.out syscall.o
++	gcc -c -x assembler-with-cpp -o syscall.o ${.CURDIR}/syscall.S
+ 
+ syscall.po: syscall.S
+-	cpp ${CPPFLAGS} ${.CURDIR}/syscall.S > syscall.i
+-	as syscall.i 
+-	rm syscall.i
+-	mv a.out syscall.po
++	gcc -c -x assembler-with-cpp -o syscall.po ${.CURDIR}/syscall.S
+ 
+ MAN2+=
+ 

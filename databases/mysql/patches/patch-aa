@@ -1,0 +1,12 @@
+*** scripts/Makefile.in.orig	Mon Aug 31 14:01:42 1998
+--- scripts/Makefile.in	Tue Sep  1 10:54:33 1998
+***************
+*** 279,284 ****
+--- 279,285 ----
+  	  -e 's!@''datadir''@!$(datadir)!g' \
+  	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
+  	  -e 's!@''libexecdir''@!$(libexecdir)!g' \
++ 	  -e 's!@''pkgdatadir''@!$(pkgdatadir)!g' \
+  	  -e 's!@''CC''@!@CC@!'\
+  	  -e 's!@''CXX''@!@CXX@!'\
+  	  -e 's!@''GXX''@!@GXX@!'\

@@ -1,0 +1,30 @@
+#!/usr/bin/env perl
+#
+# FreeBSD: check_old_version,v 1.1.1.1 1997/06/18 19:35:30 jfitz Exp
+#
+
+if( -d "/var/db/mysql" ) {
+	if( ! $ENV{OVERWRITE_DB} ) {
+		print <<END;
+
+You appear to already have a mysql database directory in /var/db/mysql.
+
+In order to preserve your existing data, you should:
+	- dump all your databases
+	- kill mysql if it is running
+	- delete the /var/db/mysql directory
+	- run 'make install'
+	- start up mysql
+	- re-create all of your database
+	- re-load your data
+
+If you understand the consequences of this upgrade, please re-build this
+port with the environment variable OVERWRITE_DB defined.
+
+END
+		exit 1;
+	}
+}
+
+#
+# EOF
