@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/12/28 22:21:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2002/01/06 08:08:02 mark Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
-VER=		2.0.3
+VER=		2.0.4
 PROJ=		SDL_ttf
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-ttf-${VER}

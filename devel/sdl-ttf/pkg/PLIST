@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/17 22:16:13 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/06 08:08:02 mark Exp $
+bin/glfont
 bin/showfont
 include/SDL/SDL_ttf.h
 lib/libSDL_ttf.a
