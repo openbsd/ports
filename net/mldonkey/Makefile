@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/17 16:36:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/29 07:57:18 sturm Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -16,13 +16,14 @@ HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/release-2.5-3/official/
 DISTNAME=mldonkey-2.5.3
+PKGNAME=${DISTNAME}p0
 DISTFILES=mldonkey-2.5-3.sources.tar.gz
 WRKDIST=${WRKDIR}/mldonkey-2.5-3
 
 USE_GMAKE=Yes
 MODULES=ocaml
 BUILD_DEPENDS=::x11/lablgtk
-FAKE_FLAGS=prefix=${DESTDIR}${PREFIX}
+FAKE_FLAGS=prefix=${DESTDIR}${PREFIX} MODOCAML_NATIVE=${MODOCAML_NATIVE}
 
 post-install:
 	mkdir -p ${PREFIX}/share/mldonkey
