@@ -1,12 +1,6 @@
-# Ports collection makefile for:  ethereal
-# Version required:     	  0.3.16
-# Date created:			  8 Sep 1998
-# Whom:				  Jakob Schlyter <jakob@carlstedt.se>
-# More information:               http://ethereal.zing.org/
-
-# What port/package will be created
+# $OpenBSD: Makefile,v 1.2 1999/01/30 20:12:21 marc Exp $
 #
-DISTNAME=	ethereal-0.3.16
+DISTNAME=	ethereal-0.5.1
 CATEGORIES=	net x11
 
 # where to send comments about this port
@@ -29,5 +23,10 @@ LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk+
 #
 USE_X11=	yes
 GNU_CONFIGURE=	yes
+
+# Ethereal puts what should be a shared data file in the "sysconfdir"
+# I'm moving it to "${RREFIX}/share/ethereal"
+#
+CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/share/ethereal"
 
 .include <bsd.port.mk>

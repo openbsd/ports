@@ -1,2 +1,4 @@
 bin/ethereal
 man/man1/ethereal.1
+share/ethereal/manuf
+@dirrm share/ethereal
