@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/28 11:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/30 19:16:08 shell Exp $
 
 COMMENT=	"fast array facility to the Python language"
 COMMENT-module=	"extra modules for py-Numeric"
@@ -12,10 +12,11 @@ NEED_VERSION=	1.502
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"No licence"
-PERMIT_PACKAGE_FTP=	"No licence"
-PERMIT_DISTFILES_CDROM= "No licence"
-PERMIT_DISTFILES_FTP=	"No licence"
+# Python License
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy

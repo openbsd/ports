@@ -1,5 +1,5 @@
 Numarray is a reimplementation of Numeric which adds the ability
 to efficiently manipulate large numeric arrays in ways similar to
-Matlab and IDL.
+Matlab and IDL. This module is release under the Python License.
 
 WWW: ${HOMEPAGE}
