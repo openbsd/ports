@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/08/23 08:46:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"opensource Napster(tm) server"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 
 HOMEPAGE=	http://opennap.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

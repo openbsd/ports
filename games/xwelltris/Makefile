@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/09 13:50:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"2.5 dimensional tetris-like game"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${HOMEPAGE}src/
 
 HOMEPAGE=	http://xnc.dubna.su/xwelltris/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

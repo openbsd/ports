@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/11 09:17:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"ur-quan masters content package"
 
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://sc2.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Unresolved licensing issues"
 PERMIT_PACKAGE_FTP=	"Unresolved licensing issues"

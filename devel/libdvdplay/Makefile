@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/21 15:00:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"simple library designed for DVD navigation"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.videolan.org/pub/libdvdplay/1.0.1/
 
 HOMEPAGE=	http://developers.videolan.org/libdvdplay/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

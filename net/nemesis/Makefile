@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/03/27 17:41:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"Command line arbitrary packet builder"
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://cerberus.sourcefire.com/~jeff/nemesis/
 
 LIB_DEPENDS=	net::net/libnet
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

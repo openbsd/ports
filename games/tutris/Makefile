@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/16 19:47:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"graphical tetris clone"
 DISTNAME=	Tutris-1.0.0
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 
 HOMEPAGE=	http://www.2ndpoint.fi/projektit/tutris.html
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/04 04:02:53 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/12 08:23:47 jolan Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -10,7 +10,7 @@ DISTNAME=	silc-server-0.9.13.1
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

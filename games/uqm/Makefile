@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:47 jolan Exp $
 ONLY_FOR_ARCHS=	i386 macppc
 
 COMMENT=	"ur-quan masters: sdl port of star control 2"
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE=	http://sc2.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

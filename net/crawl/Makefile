@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/03/27 17:41:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
@@ -7,7 +7,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		http://www.monkey.org/~provos/crawl/
 
-MAINTAINER=		Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=		Jolan Luff <jolan@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 

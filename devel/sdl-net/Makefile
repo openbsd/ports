@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/04 02:18:00 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_net/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

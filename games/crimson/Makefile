@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/26 19:40:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"tactical war game like Battle Isle"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${HOMEPAGE}crimson/
 
 HOMEPAGE=	http://www.lanipage.de/jens/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

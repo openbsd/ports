@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/05 23:43:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"NetBIOS name network scanner"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.inetcat.org/software/
 
 HOMEPAGE=	http://www.inetcat.org/software/nbtscan.html
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

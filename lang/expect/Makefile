@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2002/12/15 00:22:03 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://expect.nist.gov/
 
 LIB_DEPENDS+=	tcl83.1::lang/tcl/8.3
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

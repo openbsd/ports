@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/04/06 03:44:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/05/12 08:23:48 jolan Exp $
 
 COMMENT=	"extremely fast password cracker"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.openwall.com/john/
 
 HOMEPAGE=	http://www.openwall.com/john/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

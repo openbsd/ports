@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/23 20:38:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/12 08:23:48 jolan Exp $
 
 COMMENT=	"lightweight userspace bandwidth shaper"
 DISTNAME=	trickle-1.05
@@ -7,7 +7,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://monkey.org/~marius/trickle/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

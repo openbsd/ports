@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"graphical multiplayer 3-d tank war game"
 DISTNAME=	bzflag-1.7g0
@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.bzflag.org/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

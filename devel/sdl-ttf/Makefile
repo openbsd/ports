@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/04/05 22:24:36 margarida Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/12 08:23:46 jolan Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_ttf/
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

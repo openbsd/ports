@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/15 13:17:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/12 08:23:47 jolan Exp $
 
 COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 
 HOMEPAGE=	http://www.2ndpoint.fi/projektit/oilwar.html
 
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
