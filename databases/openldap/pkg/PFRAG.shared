@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2001/09/08 22:27:54 jakob Exp $
-lib/liblber.so.2.8
-lib/libldap.so.2.8
-lib/libldap_r.so.2.8
+@comment $OpenBSD: PFRAG.shared,v 1.7 2001/09/11 15:54:12 jakob Exp $
+lib/liblber.so.2.9
+lib/libldap.so.2.9
+lib/libldap_r.so.2.9
 DYNLIBDIR(%B)
