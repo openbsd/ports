@@ -1,8 +1,8 @@
-$OpenBSD: patch-master.cf,v 1.9 2003/01/28 16:50:33 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.10 2003/11/24 19:33:09 jakob Exp $
 
---- conf/master.cf.orig	Thu Jan 16 13:44:40 2003
-+++ conf/master.cf	Tue Jan 28 17:41:14 2003
-@@ -69,27 +69,27 @@
+--- conf/master.cf.orig	2003-11-11 16:49:35.000000000 +0100
++++ conf/master.cf	2003-11-24 20:20:17.000000000 +0100
+@@ -77,28 +77,28 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -43,7 +43,9 @@ $OpenBSD: patch-master.cf,v 1.9 2003/01/28 16:50:33 jakob Exp $
  local     unix  -       n       n       -       -       local
  virtual   unix  -       n       n       -       -       virtual
 -lmtp      unix  -       -       n       -       -       lmtp
+-anvil     unix  -       -       n       -       1       anvil
 +lmtp      unix  -       -       -       -       -       lmtp
++anvil     unix  -       -       -       -       1       anvil
  #
  # Interfaces to non-Postfix software. Be sure to examine the manual
  # pages of the non-Postfix software to find out what options it wants.
