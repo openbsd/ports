@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2004/04/18 23:20:28 jcs Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
-
-MASTER_SITES=	ftp://rt.fm/pub/gtksee/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -28,8 +25,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-im-libs="${PREFIX}/lib" \
 		--with-im-incs="${PREFIX}/include"
-
-post-patch:
-	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 .include <bsd.port.mk>
