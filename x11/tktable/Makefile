@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2003/12/27 23:36:27 jose Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/24 02:35:26 kevlo Exp $
 
 COMMENT=	"tk extension"
 
-DISTNAME=	Tktable2.8
-PKGNAME=	Tktable-2.8
+DISTNAME=	Tktable2.9
+PKGNAME=	Tktable-2.9
 CATEGORIES=	x11
 
 HOMEPAGE= 	http://tktable.sourceforge.net/

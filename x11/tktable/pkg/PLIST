@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:32 espie Exp $
-lib/Tktable2.8/
-lib/Tktable2.8/README.txt
-lib/Tktable2.8/html/
-lib/Tktable2.8/html/tkTable.html
-lib/Tktable2.8/license.txt
-lib/Tktable2.8/pkgIndex.tcl
-lib/Tktable2.8/tkTable.tcl
+@comment $OpenBSD: PLIST,v 1.7 2004/11/24 02:35:28 kevlo Exp $
+lib/Tktable2.9/
+lib/Tktable2.9/README.txt
+lib/Tktable2.9/html/
+lib/Tktable2.9/html/tkTable.html
+lib/Tktable2.9/license.txt
+lib/Tktable2.9/pkgIndex.tcl
+lib/Tktable2.9/tkTable.tcl
 share/examples/Tktable/
 share/examples/Tktable/basic.tcl
 share/examples/Tktable/buttons.tcl
