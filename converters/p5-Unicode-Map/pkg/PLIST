@@ -1,0 +1,118 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/30 15:02:53 lebel Exp $
+bin/map
+bin/mirrorMappings
+bin/mkCSGB2312
+bin/mkmapfile
+${P5ARCH}/Unicode/Map.pm
+${P5ARCH}/Unicode/Map/ADOBE/STDENC.map
+${P5ARCH}/Unicode/Map/ADOBE/SYMBOL.map
+${P5ARCH}/Unicode/Map/ADOBE/ZDINGBAT.map
+${P5ARCH}/Unicode/Map/APPLE/ARABIC.map
+${P5ARCH}/Unicode/Map/APPLE/CENTEURO.map
+${P5ARCH}/Unicode/Map/APPLE/CHINSIMP.map
+${P5ARCH}/Unicode/Map/APPLE/CHINTRAD.map
+${P5ARCH}/Unicode/Map/APPLE/CROATIAN.map
+${P5ARCH}/Unicode/Map/APPLE/CYRILLIC.map
+${P5ARCH}/Unicode/Map/APPLE/DEVANAGA.map
+${P5ARCH}/Unicode/Map/APPLE/DINGBATS.map
+${P5ARCH}/Unicode/Map/APPLE/GREEK.map
+${P5ARCH}/Unicode/Map/APPLE/GUJARATI.map
+${P5ARCH}/Unicode/Map/APPLE/GURMUKHI.map
+${P5ARCH}/Unicode/Map/APPLE/HEBREW.map
+${P5ARCH}/Unicode/Map/APPLE/ICELAND.map
+${P5ARCH}/Unicode/Map/APPLE/JAPANESE.map
+${P5ARCH}/Unicode/Map/APPLE/KOREAN.map
+${P5ARCH}/Unicode/Map/APPLE/ROMAN.map
+${P5ARCH}/Unicode/Map/APPLE/ROMANIAN.map
+${P5ARCH}/Unicode/Map/APPLE/SYMBOL.map
+${P5ARCH}/Unicode/Map/APPLE/THAI.map
+${P5ARCH}/Unicode/Map/APPLE/TURKISH.map
+${P5ARCH}/Unicode/Map/EASTASIA/BIG5.map
+${P5ARCH}/Unicode/Map/EASTASIA/CNS-11643-1986.map
+${P5ARCH}/Unicode/Map/EASTASIA/EUC-JP.map
+${P5ARCH}/Unicode/Map/EASTASIA/EUC-KR.map
+${P5ARCH}/Unicode/Map/EASTASIA/GB12345-80.map
+${P5ARCH}/Unicode/Map/EASTASIA/GB2312-80.map
+${P5ARCH}/Unicode/Map/EASTASIA/GB2312.map
+${P5ARCH}/Unicode/Map/EASTASIA/JIS-X-0201.map
+${P5ARCH}/Unicode/Map/EASTASIA/JIS-X-0208.map
+${P5ARCH}/Unicode/Map/EASTASIA/JIS-X-0212.map
+${P5ARCH}/Unicode/Map/EASTASIA/JOHAB.map
+${P5ARCH}/Unicode/Map/EASTASIA/KSC1001.map
+${P5ARCH}/Unicode/Map/EASTASIA/KSC5601-1992.map
+${P5ARCH}/Unicode/Map/EASTASIA/SHIFTJIS.map
+${P5ARCH}/Unicode/Map/IBM/IBM038.map
+${P5ARCH}/Unicode/Map/ISO/8859-1.map
+${P5ARCH}/Unicode/Map/ISO/8859-10.map
+${P5ARCH}/Unicode/Map/ISO/8859-13.map
+${P5ARCH}/Unicode/Map/ISO/8859-14.map
+${P5ARCH}/Unicode/Map/ISO/8859-15.map
+${P5ARCH}/Unicode/Map/ISO/8859-2.map
+${P5ARCH}/Unicode/Map/ISO/8859-3.map
+${P5ARCH}/Unicode/Map/ISO/8859-4.map
+${P5ARCH}/Unicode/Map/ISO/8859-5.map
+${P5ARCH}/Unicode/Map/ISO/8859-6.map
+${P5ARCH}/Unicode/Map/ISO/8859-7.map
+${P5ARCH}/Unicode/Map/ISO/8859-8.map
+${P5ARCH}/Unicode/Map/ISO/8859-9.map
+${P5ARCH}/Unicode/Map/ISO/ISO646-US.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP437.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP737.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP775.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP850.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP852.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP855.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP857.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP860.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP861.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP862.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP863.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP864.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP865.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP866.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP869.map
+${P5ARCH}/Unicode/Map/MS/DOS/CP874.map
+${P5ARCH}/Unicode/Map/MS/EBCDIC/CP037.map
+${P5ARCH}/Unicode/Map/MS/EBCDIC/CP1026.map
+${P5ARCH}/Unicode/Map/MS/EBCDIC/CP500.map
+${P5ARCH}/Unicode/Map/MS/EBCDIC/CP875.map
+${P5ARCH}/Unicode/Map/MS/MAC/CYRILLIC.map
+${P5ARCH}/Unicode/Map/MS/MAC/GREEK.map
+${P5ARCH}/Unicode/Map/MS/MAC/ICELAND.map
+${P5ARCH}/Unicode/Map/MS/MAC/LATIN2.map
+${P5ARCH}/Unicode/Map/MS/MAC/ROMAN.map
+${P5ARCH}/Unicode/Map/MS/MAC/TURKISH.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1250.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1251.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1252.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1253.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1254.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1255.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1256.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1257.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP1258.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP932.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP936.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP949.map
+${P5ARCH}/Unicode/Map/MS/WIN/CP950.map
+${P5ARCH}/Unicode/Map/NEXT/NEXTSTEP.map
+${P5ARCH}/Unicode/Map/REGISTRY
+${P5ARCH}/auto/Unicode/Map/.packlist
+${P5ARCH}/auto/Unicode/Map/Map.bs
+${P5ARCH}/auto/Unicode/Map/Map.so
+man/man1/map.1
+man/man1/mkmapfile.1
+man/man3p/Unicode::Map.3p
+@dirrm ${P5ARCH}/auto/Unicode/Map
+@dirrm ${P5ARCH}/Unicode/Map/NEXT
+@dirrm ${P5ARCH}/Unicode/Map/MS/WIN
+@dirrm ${P5ARCH}/Unicode/Map/MS/MAC
+@dirrm ${P5ARCH}/Unicode/Map/MS/EBCDIC
+@dirrm ${P5ARCH}/Unicode/Map/MS/DOS
+@dirrm ${P5ARCH}/Unicode/Map/MS
+@dirrm ${P5ARCH}/Unicode/Map/ISO
+@dirrm ${P5ARCH}/Unicode/Map/IBM
+@dirrm ${P5ARCH}/Unicode/Map/EASTASIA
+@dirrm ${P5ARCH}/Unicode/Map/APPLE
+@dirrm ${P5ARCH}/Unicode/Map/ADOBE
+@dirrm ${P5ARCH}/Unicode/Map
