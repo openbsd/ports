@@ -1,12 +1,12 @@
-$OpenBSD: patch-help_c,v 1.1 2002/03/21 09:59:48 form Exp $
+$OpenBSD: patch-help_c,v 1.2 2002/04/24 11:27:20 form Exp $
 --- help.c.orig	Sun Jul 13 01:54:34 1997
-+++ help.c	Thu Mar 21 15:23:53 2002
++++ help.c	Wed Apr 24 18:27:02 2002
 @@ -10,7 +10,7 @@
  
  #define CS              34
  #define HELPDIR         "/usr/lib/deco/help/"
 -#define LCLHELPDIR      "/usr/local/lib/deco/help/"
-+#define LCLHELPDIR      "/usr/local/share/deco/help/"
++#define LCLHELPDIR      PREFIX "/share/deco/help/"
  
  struct helptab {
  	char row;
