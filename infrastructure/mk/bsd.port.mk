@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.503 2001/12/23 02:17:02 miod Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.504 2001/12/31 09:38:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -352,9 +352,25 @@ MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
 .endif
+AUTOCONF_NEW?=	No
+.if ${CONFIGURE_STYLE:L:Mautoupdate}
+CONFIGURE_STYLE+=autoconf
+.endif
 .if ${CONFIGURE_STYLE:L:Mautoconf}
 CONFIGURE_STYLE+=gnu
+.  if ${AUTOCONF_NEW:L} == "yes"
+BUILD_DEPENDS+=		::devel/autoconf-new
+AUTOCONF?=			autoconf-new
+AUTOUPDATE?=		autoupdate-new
+AUTOHEADER?=		autoheader-new
+MAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
+FAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
+.  else
+AUTOCONF?=		autoconf
+AUTOUPDATE?=	autoupdate
+AUTOHEADER?=	autoheader
 BUILD_DEPENDS+=		::devel/autoconf
+.  endif
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH}
@@ -503,7 +519,6 @@ _MAKE_COOKIE=touch -f
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
-AUTOCONF?=		autoconf
 
 # Compatibility game
 MD5_FILE?=		${FILESDIR}/md5
@@ -1671,6 +1686,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} post-patch
 .endif
 .if ${PATCH_CHECK_ONLY:L} != "yes"
+.  if ${CONFIGURE_STYLE:L:Mautoupdate}
+	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE}
+.  endif
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .  endif
