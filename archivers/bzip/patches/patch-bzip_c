@@ -1,5 +1,5 @@
---- bzip.c.orig	Fri Aug 30 16:35:28 1996
-+++ bzip.c	Fri Feb 18 07:57:32 2000
+--- bzip.c.orig	Fri Aug 30 22:35:28 1996
++++ bzip.c	Thu Oct  4 22:14:49 2001
 @@ -114,9 +114,9 @@
  --*/
  
@@ -11,7 +11,7 @@
     #include <sys/stat.h>
     #include <sys/times.h>
  
-@@ -2578,7 +2578,7 @@
+@@ -2578,7 +2578,7 @@ void bitStreamEOF ()
  
  
  /*---------------------------------------------*/
@@ -20,7 +20,7 @@
  {
     fprintf ( stderr, 
               "\n%s: Control-C (or similar) caught, quitting.\n",
-@@ -2588,7 +2588,7 @@
+@@ -2588,7 +2588,7 @@ void mySignalCatcher ( IntNative *n )
  
  
  /*---------------------------------------------*/
@@ -29,7 +29,7 @@
  {
     if (compressing)
        fprintf ( stderr,
-@@ -3130,11 +3130,6 @@
+@@ -3130,11 +3130,6 @@ IntNative main ( IntNative argc, Char *a
     signal (SIGBUS,  mySIGSEGVorSIGBUScatcher);
     #endif
  
@@ -41,7 +41,7 @@
     #if DEBUG
        if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
           fprintf ( stderr, "BZIP: *** compiled with debugging ON ***\n" );
-@@ -3204,6 +3199,12 @@
+@@ -3204,6 +3199,12 @@ IntNative main ( IntNative argc, Char *a
                           exit ( 1 );
                           break;
           }

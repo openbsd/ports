@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Aug 31 03:50:33 1996
-+++ Makefile	Fri Feb 18 10:07:35 2000
-@@ -7,22 +7,17 @@
+--- Makefile.orig	Sat Aug 31 09:50:33 1996
++++ Makefile	Thu Oct  4 22:15:59 2001
+@@ -7,22 +7,19 @@ CFLAGS = -O3 -fomit-frame-pointer -funro
  
  
  all:
@@ -19,8 +19,9 @@
 -	cmp sample1.tst sample1.ref
 -	cmp sample2.tst sample2.ref
 -	cat words3
--
 +	@ln -fs ./bzip ./bunzip
+ 
++regress:
 +	@echo "*** testing bzip and bunzip ***"
 +	./bzip -Q -1 < sample1.ref > sample1.rbz || exit 1
 +	./bzip -Q -2 < sample2.ref > sample2.rbz || exit 1
