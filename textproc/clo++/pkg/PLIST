@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/31 10:02:48 kevlo Exp $
+bin/clo++
+share/doc/clo++/handbook.html
+@dirrm share/doc/clo++
