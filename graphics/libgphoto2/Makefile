@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/19 16:08:19 pvalchev Exp $
 
 COMMENT=	'digital camera library'
 CATEGORIES=	graphics devel
@@ -22,6 +22,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52
 SEPARATE_BUILD=		simple
 CONFIGURE_ARGS=		--disable-nls
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS=		exif::graphics/libexif \
 			usb::devel/libusb
