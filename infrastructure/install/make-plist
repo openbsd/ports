@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.58 2004/09/14 22:24:39 espie Exp $
+# $OpenBSD: make-plist,v 1.59 2004/09/18 11:03:45 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -897,6 +897,12 @@ for my $plist (@l) {
 		}
 		if (defined $orig->{pkgcfl}) {
 			for my $cfl (@{$orig->{pkgcfl}}) {
+				$cfl->clone()->add_object($plist);
+				$plist->{nonempty} = 1;
+			}
+		}
+		if (defined $orig->{conflict}) {
+			for my $cfl (@{$orig->{conflict}}) {
 				$cfl->clone()->add_object($plist);
 				$plist->{nonempty} = 1;
 			}
