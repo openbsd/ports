@@ -1,0 +1,12 @@
+$OpenBSD: patch-uac_crt_h,v 1.1 2005/02/22 15:13:09 naddy Exp $
+--- uac_crt.h.orig	Wed Jul  1 10:29:00 1998
++++ uac_crt.h	Mon Feb 14 17:51:47 2005
+@@ -4,7 +4,7 @@
+ 
+ #include "acestruc.h"
+ 
+-CHAR *ace_fname(CHAR * s, thead * head, INT nopath);
++CHAR *ace_fname(CHAR * s, thead * head, INT nopath, unsigned int size);
+ INT  create_dest_file(CHAR * file, INT a);
+ 
+ #ifdef UNIX
