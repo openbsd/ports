@@ -1,4 +1,4 @@
-$OpenBSD $
+$OpenBSD: SECURITY,v 1.2 2001/03/29 12:26:54 wilfried Exp $
 
 Xxdiff uses strcpy, strncpy, and sprintf in 
 quite a few functions.  The included patches
