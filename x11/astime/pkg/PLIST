@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/09 08:40:16 wilfried Exp $
+bin/astime
+man/man1/astime.1
+share/examples/asclock/default.astimerc
+share/examples/asclock/modern.astimerc
+share/examples/asclock/sample.astimerc
+share/examples/asclock/thick.astimerc
+@dirrm share/examples/asclock
