@@ -1,7 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2003/01/18 16:52:17 sturm Exp $
---- Makefile.in.orig	Sat Dec 28 18:13:07 2002
-+++ Makefile.in	Sat Dec 28 18:13:16 2002
-@@ -80,7 +80,7 @@ subdirs: $(SUBDIRS)
+$OpenBSD: patch-Makefile_in,v 1.3 2003/05/01 16:11:53 sturm Exp $
+--- Makefile.in.orig	Mon Mar 31 21:26:57 2003
++++ Makefile.in	Thu May  1 12:44:20 2003
+@@ -28,7 +28,6 @@ bindir=		@bindir@
+ prefix=		@prefix@
+ exec_prefix=	@exec_prefix@
+ var_prefix=	@VAR_PREFIX@
+-DESTDIR=
+ 
+ CC=		@CC@
+ INSTALL=	@INSTALL@
+@@ -81,7 +80,7 @@ subdirs: $(SUBDIRS)
  	    (cd $$d; $(MAKE)); \
  	done
  

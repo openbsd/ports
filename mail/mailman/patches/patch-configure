@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
---- configure.orig	Thu Jan  2 18:30:06 2003
-+++ configure	Thu Jan  2 18:32:42 2003
+$OpenBSD: patch-configure,v 1.3 2003/05/01 16:11:53 sturm Exp $
+--- configure.orig	Tue Apr 22 05:34:49 2003
++++ configure	Thu May  1 12:23:55 2003
 @@ -1206,52 +1206,7 @@ fi
  USERNAME=$with_username
  echo "$ac_t""$USERNAME" 1>&6
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
  
  # Check for some other gid to use than `mailman'
  echo $ac_n "checking for --with-groupname""... $ac_c" 1>&6
-@@ -1270,104 +1225,7 @@ fi
+@@ -1270,107 +1225,7 @@ fi
  GROUPNAME=$with_groupname
  echo "$ac_t""$GROUPNAME" 1>&6
  
@@ -116,7 +116,10 @@ $OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
 -prefix = "$prefixcheck"
 -groupname = "$GROUPNAME"
 -mailmangroup = "$MAILMAN_GROUP"
--mailmangid = grp.getgrnam(mailmangroup)[2]
+-try:
+-    mailmangid = grp.getgrnam(mailmangroup)[2]
+-except KeyError:
+-    mailmangid = -1
 -problems = []
 -try: statdata = os.stat(prefix)
 -except OSError:
@@ -161,7 +164,7 @@ $OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
  
  # Now find the UIDs and GIDs
  # Support --with-mail-gid and --with-cgi-gid
-@@ -1576,7 +1434,7 @@ echo "$ac_t""$URLHOST" 1>&6
+@@ -1579,7 +1434,7 @@ echo "$ac_t""$URLHOST" 1>&6
  rm -f conftest.out conftest.py
  
  # Checks for libraries.
@@ -169,4 +172,4 @@ $OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
 +for ac_func in strerror syslog
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:1583: checking for $ac_func" >&5
+ echo "configure:1586: checking for $ac_func" >&5

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2003/02/10 22:18:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/01 16:11:53 sturm Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
-DISTNAME=	mailman-2.1.1
+DISTNAME=	mailman-2.1.2
 CATEGORIES=     mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
@@ -30,14 +30,15 @@ MMSPOOL=		/var/spool/mailman
 
 FAKE_FLAGS=		DIRSETGID=":"
 
+# gnu still breaks the pathes as prefix is actually mailman's home
 CONFIGURE_STYLE=	simple
-# Adding DESTDIR by hand, because 'CONFIGURE_STYLE= gnu dest' overwrites
-# our prefix without touching var-prefix
-CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${MMHOME}' \
+# do not use --without-permcheck as this requires the mailman user and group
+# to exist, otherwise there will be problems running mailman
+CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 			--with-mailhost=localhost.my.domain \
 			--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
 			--with-urlhost=localhost.my.domain \
-			--with-var-prefix='$${${DESTDIRNAME}}${MMSPOOL}'
+			--with-var-prefix='${MMSPOOL}'
 
 FLAVORS=	postfix
 FLAVOR?=
@@ -46,13 +47,6 @@ CONFIGURE_ARGS+=--with-mail-gid=nobody
 .else
 CONFIGURE_ARGS+=--with-mail-gid=daemon
 .endif
-
-post-configure:
-	@perl -i -pe 's#\$${${DESTDIRNAME}}##g' \
-		${WRKSRC}/Mailman/Defaults.py \
-		${WRKSRC}/cron/crontab.in \
-		${WRKSRC}/misc/mailman \
-		${WRKSRC}/misc/paths.py
 
 post-install:
 	@${INSTALL_DATA_DIR} ${MMDOC}
