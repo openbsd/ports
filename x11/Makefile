@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2000/04/02 15:27:35 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2000/04/02 17:15:58 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -35,6 +35,7 @@
 #    SUBDIR += emu
      SUBDIR += enlightenment
      SUBDIR += eterm
+     SUBDIR += eterm:kanji
 #    SUBDIR += etlfonts
      SUBDIR += explorer
 #    SUBDIR += fbsd-icons
