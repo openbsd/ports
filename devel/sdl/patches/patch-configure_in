@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.16 2002/05/03 19:27:17 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.17 2002/05/06 04:26:08 pvalchev Exp $
 --- configure.in.orig	Sat Apr 13 17:57:24 2002
-+++ configure.in	Fri May  3 13:11:35 2002
++++ configure.in	Sun May  5 22:14:47 2002
 @@ -468,7 +468,12 @@ CheckNASM()
                    NASMFLAGS="-f elf"
                    ;;
@@ -23,11 +23,14 @@ $OpenBSD: patch-configure_in,v 1.16 2002/05/03 19:27:17 pvalchev Exp $
          fi
          # Set up files for the cdrom library
          if test x$enable_cdrom = xyes; then
-@@ -2355,7 +2361,7 @@ fi
+@@ -2355,7 +2361,10 @@ fi
  if test $ARCH = solaris; then
    SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
  fi
 -if test $ARCH = openbsd -o $ARCH = bsdi; then
++if test $ARCH = openbsd -o x$enable_x11 = xtrue; then
++  SDL_RLD_FLAGS="-L${X11BASE}/lib"
++fi
 +if test $ARCH = bsdi; then
      SHARED_SYSTEM_LIBS="$SYSTEM_LIBS"
  else
