@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/26 02:52:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi Xss c gdk glib gmodule gtk iconv intl m \
+			pthread sigc stdc++
 
 USE_X11=		Yes
 

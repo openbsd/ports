@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/25 02:35:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:23 alek Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext c m otcl stdc++ tcl83 tk83 z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:tclcl->=1.0b13:devel/tclcl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/11 08:48:42 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=		"network sed"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
 

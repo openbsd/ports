@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/10/08 08:22:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/16 00:31:26 alek Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m pcap 
 
 BUILD_DEPENDS=  :bison-*:devel/bison
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/27 11:40:42 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:25 alek Exp $
 
 COMMENT=	"Cisco AAA protocol daemon"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=   "may not sell"
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "may not sell"
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c 
 
 MASTER_SITES=   ftp://ftpeng.cisco.com/pub/tacacs/ \
 		ftp://ftp.isc.tamu.edu/pub/OpenBSD/distfiles/

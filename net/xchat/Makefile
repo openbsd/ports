@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2004/11/28 19:50:20 couderc Exp $
+# $OpenBSD: Makefile,v 1.48 2004/12/16 00:31:27 alek Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
@@ -15,6 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 c crypto \
+			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
+			gobject-2.0.0.0 m pango-1.0.0.0 pangoft2-1.0.0.0 \
+			pangox-1.0.0.0 pangoxft-1.0.0.0 ssl Xcursor
 
 MASTER_SITES=	${HOMEPAGE}files/source/2.4/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=xchat/}

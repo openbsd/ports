@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/06/06 02:27:46 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"Internet Relay Chat client"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap
 
 MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \

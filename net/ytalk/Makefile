@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/28 01:38:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/16 00:31:27 alek Exp $
 COMMENT='enhanced talk that allows for multiple parties'
 
 DISTNAME=	ytalk-3.1.1
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses 
 
 CONFIGURE_STYLE= gnu dest
 
@@ -23,6 +24,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x
+.else
+WANTLIB+=	ICE SM X11 
 .endif
 
 NO_REGRESS=	Yes

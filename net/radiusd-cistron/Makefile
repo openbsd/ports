@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/07/12 13:32:11 danh Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/16 00:31:25 alek Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		c
 
 WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	Makefile.BSD

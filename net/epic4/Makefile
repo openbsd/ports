@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2004/06/06 01:43:13 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2004/12/16 00:31:21 alek Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ncurses ssl
 
 SUBST_VARS=	VERSION
 

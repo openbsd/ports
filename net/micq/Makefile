@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/11/23 22:33:32 david Exp $
+# $OpenBSD: Makefile,v 1.33 2004/12/16 00:31:23 alek Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}source/ \
 		http://http.uk.micq.org/source/ \
@@ -27,6 +28,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mssl}
 LIB_DEPENDS=	gnutls.12::security/gnutls
 CONFIGURE_ARGS+= --enable-ssl
+WANTLIB+=		gcrypt gpg-error iconv intl z
 .else
 CONFIGURE_ARGS+= --disable-ssl
 .endif

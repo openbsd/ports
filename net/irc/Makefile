@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/12/16 00:31:22 alek Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m z
 
 CONFDIR=	${SYSCONFDIR}/ircd
 CONFIGURE_STYLE= gnu old

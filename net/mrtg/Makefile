@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/01/25 19:27:26 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.57

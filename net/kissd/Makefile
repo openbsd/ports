@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/01/25 18:19:30 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"server for KiSS DP-500 network movie player"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 NO_REGRESS=	Yes
 

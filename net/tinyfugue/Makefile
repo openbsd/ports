@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/22 23:26:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:26 alek Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	"programmable MUD client, with macro support and more"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m termcap z 
 
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/16 00:31:21 alek Exp $
 
 COMMENT=	"gateway acl scanner (via static-source port traceroute)"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		c pcap
 
 CONFIGURE_STYLE= gnu dest
 

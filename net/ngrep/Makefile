@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/05/04 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"network grep"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"Restrictions on packages"
 PERMIT_PACKAGE_FTP=	"Restrictions on packages"
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap
 
 NO_REGRESS=	Yes
 

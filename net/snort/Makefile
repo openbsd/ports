@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/04/12 14:56:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2004/12/16 00:31:25 alek Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM= 	Yes
 PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP= 	Yes
+WANTLIB=		c m pcap 
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
@@ -39,6 +40,7 @@ CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
+WANTLIB+=	z
 .endif
 
 .if ${FLAVOR:L:Msmbalert}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/10/06 09:27:59 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:24 alek Exp $
 
 COMMENT=	"packet filter statistics visualization"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c jpeg m png ttf z 
 
 LIB_DEPENDS=	gd.18::graphics/gd
 

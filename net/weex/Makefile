@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/09 18:55:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:27 alek Exp $
 
 COMMENT=		"noninteractive ftp client"
 DISTNAME=		weex-2.6.1.5
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=weex/}	
 

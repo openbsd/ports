@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/25 02:35:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/16 00:31:23 alek Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m pcap stdc++ tcl83 tk83 
 
 HOMEPAGE=	http://www.isi.edu/nsnam/ns/
 

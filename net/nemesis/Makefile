@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/09/26 06:01:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"command line arbitrary packet builder"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/26 05:56:20 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:20 alek Exp $
 
 COMMENT=	"network application fingerprinting scanner"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl
 
 LIB_DEPENDS=	pcre::devel/pcre
 

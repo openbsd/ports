@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/10/08 10:04:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/16 00:31:20 alek Exp $
 
 COMMENT=	"monitor arp & rarp requests"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--quiet

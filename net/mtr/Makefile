@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/13 08:34:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		c m termcap
 
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.lysator.liu.se/mirror/unix/mtr/
@@ -30,6 +31,7 @@ CONFIGURE_ARGS+=	--without-gtk
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
+WANTLIB+=		X11 Xext Xi glib gmodule iconv intl
 .endif
 
 .include <bsd.port.mk>

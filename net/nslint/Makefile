@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:24 alek Exp $
 # $FreeBSD: ports/net/nslint/Makefile,v 1.10 2000/04/09 18:12:37 cpiazza Exp $
 
 COMMENT=		"performs consistency checks on BIND files"
@@ -20,6 +20,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV+=		LDFLAGS=-static
+.else
+WANTLIB=		c
 .endif
 
 CONFIGURE_STYLE=	gnu

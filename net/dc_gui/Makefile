@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/18 17:38:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:21 alek Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
@@ -11,6 +11,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib \
+			glib gmodule gtk iconv intl jpeg m png tiff ungif z
 
 MASTER_SITES=		${HOMEPAGE}
 

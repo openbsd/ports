@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2004/12/16 00:31:21 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		pthread c crypto des form ncurses ssl
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -33,6 +34,10 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=	--enable-gtk=no
 .else
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+WANTLIB+=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
+			freetype glib-2.0.0.0 gmodule-2.0.0.0 \
+			gobject-2.0.0.0 iconv intl m pango-1.0.0.0 \
+			pangox-1.0.0.0 pangoxft-1.0.0.0 Xcursor
 .endif
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:25 alek Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses pcap 
 
 MAKE_FLAGS=	OBJ_FLAG="-w ${CFLAGS} -c" EXE_FLAG="-w ${CFLAGS} -o sniffit"
 

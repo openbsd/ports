@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2004/12/07 02:09:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.51 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c crypto curses m readline ssl stdc++ util
 
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-ssl

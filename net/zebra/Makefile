@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/10/13 01:58:14 danh Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/16 00:31:27 alek Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses m ncurses readline 
 
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
@@ -41,6 +42,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Msnmp}
 LIB_DEPENDS=	netsnmp.6.2::net/net-snmp
 CONFIGURE_ARGS+= --enable-snmp
+WANTLIB+=	crypto
 .else
 CONFIGURE_ARGS+= --disable-snmp
 .endif

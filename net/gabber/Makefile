@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/09 19:04:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:21 alek Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
@@ -16,6 +16,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		audiofile esd gdk gdk_imlib gdk_pixbuf gdkmm glib \
+			gmodule gnome gnomecanvaspixbuf gnomesupport gnomeui \
+			gtk gtkmm iconv intl jpeg ungif xml ICE SM X11 Xext \
+			Xi Xss art_lgpl c crypto freetype m png pthread ssl \
+			stdc++ tiff z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gabber/}
 

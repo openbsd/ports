@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/14 21:33:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:24 alek Exp $
 
 COMMENT=		"PPTP Server"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c util 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=poptop/}
 

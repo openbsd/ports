@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:26 alek Exp $
 
 COMMENT=	"local network discovery tool"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap 
 
 CONFIGURE_STYLE= gnu old
 

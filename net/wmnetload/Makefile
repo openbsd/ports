@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/11 02:56:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:27 alek Exp $
 
 COMMENT=		"wm-dockapp; simple network interface monitoring tool"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c kvm m 
 
 MASTER_SITES=		ftp://truffula.com/pub/
 

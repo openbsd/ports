@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/02 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:25 alek Exp $
 
 COMMENT=	"SIP Express Router"
 
@@ -8,6 +8,7 @@ VERSION=	0.8.10
 DISTNAME=	ser-${VERSION}_src
 PKGNAME=	ser-${VERSION}
 CATEGORIES=	net
+WANTLIB=	c z 
 
 MASTER_SITES+=	ftp://ftp.berlios.de/pub/ser/${VERSION}/src/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:26 alek Exp $
 
 COMMENT=	"transparent IRC proxy"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}
 

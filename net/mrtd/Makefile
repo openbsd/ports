@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/16 00:31:23 alek Exp $
 # Uses pthreads
 
 COMMENT=		"daemon/libs/toolkit for routing BGP4+, RIP, OSPF, etc."
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_ARGS+=	--disable-ipv6 --disable-thread
 

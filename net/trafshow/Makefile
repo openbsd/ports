@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/03 16:28:12 david Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:26 alek Exp $
 
 COMMENT=	"full screen visualization of network traffic"
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses pcap termcap 
 
 CONFIGURE_STYLE= gnu
 #CONFIGURE_ENV=	CPPFLAGS="-DINET6"

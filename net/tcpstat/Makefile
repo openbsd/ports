@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:26 alek Exp $
 
 COMMENT=	"report network interface statistics"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m pcap 
 
 CONFIGURE_STYLE= gnu
 

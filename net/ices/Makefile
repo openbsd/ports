@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/26 13:34:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c iconv m ogg perl pthread util vorbis vorbisfile z
 
 MASTER_SITES=	http://icecast.org/files/ices/
 
@@ -34,6 +35,7 @@ PYTHON_VER=	2.2
 CONFIGURE_ARGS+=--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+WANTLIB+=	python2.2.0.0
 .else
 CONFIGURE_ARGS+=--without-python
 .endif

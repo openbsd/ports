@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/27 22:48:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:21 alek Exp $
 
 COMMENT=	"FTP listing and transfer tools"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"inscrutable license mix"
 PERMIT_PACKAGE_FTP=	"inscrutable license mix"
 PERMIT_DISTFILES_CDROM=	"inscrutable license mix"
 PERMIT_DISTFILES_FTP=	"inscrutable license mix"
+WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	prefix="${DESTDIR}/${PREFIX}"

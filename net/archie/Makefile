@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:20 alek Exp $
 
 COMMENT=	"Prospero client for the archie service"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/archie-1.4.1-FIX
 

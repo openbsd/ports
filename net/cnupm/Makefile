@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/08 09:18:14 grange Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:20 alek Exp $
 
 COMMENT=		"IPv4/IPv6 traffic collector"
 
@@ -25,6 +25,8 @@ FLAVOR?=
 .if ${FLAVOR:Mstatic}
 LDSTATIC=		-static
 MAKE_ENV+=		LDSTATIC=${LDSTATIC}
+.else
+WANTLIB=		c pcap
 .endif
 
 post-extract:

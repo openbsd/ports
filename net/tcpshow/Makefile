@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/16 00:31:26 alek Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 COMMENT=	"decode tcpdump(1) output"
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 WRKDIST=	${WRKDIR}
 

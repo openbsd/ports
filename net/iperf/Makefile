@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/16 10:42:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"tool for measuring maximum TCP and UDP bandwidth"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++
 
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 EXTRACT_SUFX=	-source.tar.gz

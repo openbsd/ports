@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/03/31 05:27:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:20 alek Exp $
 
 COMMENT=	"ftp client for X window system"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c 
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
@@ -23,10 +24,12 @@ FLAVORS=	gtk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS=    gtk.1.2::x11/gtk+
+LIB_DEPENDS=    gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS=	--with-gui=gtk
+WANTLIB+=		Xi m glib gmodule iconv intl
 .else
 USE_MOTIF=	any
+WANTLIB+=		ICE SM Xpm Xt
 .endif
 
 .include <bsd.port.mk>

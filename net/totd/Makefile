@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:26 alek Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 
 COMMENT=	"DNS proxy that supports IPv6 <==> IPv4 record translation"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 20:41:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:23 alek Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config

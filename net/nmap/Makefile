@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2004/10/31 18:06:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.54 2004/12/16 00:31:23 alek Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m pcap ssl stdc++ 
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-libpcap=/usr \
@@ -35,6 +36,7 @@ CONFIGURE_ARGS+=--without-nmapfe
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 USE_X11=	Yes
 ALL_TARGET=	nmap nmapfe/nmapfe
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl 
 .endif
 
 NO_REGRESS=	Yes

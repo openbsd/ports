@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/03/29 00:33:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:21 alek Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		c m util z
 
 MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
@@ -41,6 +42,7 @@ M3FLAGS=	 -DPREFIX=${PREFIX} -DX11BASE=${X11BASE}
 M3FLAGS+=	-DNOGUI
 .else
 USE_X11=	Yes
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt 
 .endif
 
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"

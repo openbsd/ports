@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/05/13 07:11:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/16 00:31:22 alek Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -26,6 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ncurses perl ssl util
 
 LIB_DEPENDS+=		glib.1.2,gmodule::devel/glib
 

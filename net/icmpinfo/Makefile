@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"look at the icmp messages received by the host"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 ALL_TARGET=
 

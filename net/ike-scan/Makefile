@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/07 19:49:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"VPN scanner and identifier"
 DISTNAME=	ike-scan-1.6
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
 

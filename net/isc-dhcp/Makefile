@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/26 21:16:21 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:22 alek Exp $
 
 COMMENT=	"Dynamic Host Control Protocol Server"
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_STYLE=	simple
 

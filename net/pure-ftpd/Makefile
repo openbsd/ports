@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/09/15 19:22:40 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2004/12/16 00:31:24 alek Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
@@ -47,6 +48,7 @@ LIB_DEPENDS+= lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 DOCS+=	README.MySQL
 CONF_FILE+= pureftpd-mysql.conf
+WANTLIB+=	m z
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
@@ -54,6 +56,7 @@ LIB_DEPENDS+= pq.2::databases/postgresql
 CONFIGURE_ARGS+= --with-pgsql="${LOCALBASE}"
 DOCS+=	README.PGSQL
 CONF_FILE+= pureftpd-pgsql.conf
+WANTLIB+=	m z
 .endif
 
 .if ${FLAVOR:L:Mno_banner}
