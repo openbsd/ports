@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/08/11 10:15:07 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2004/09/15 19:08:47 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -34,7 +34,6 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
-SED_PLIST=|sed -e '/^!%%no_x11%%/d'
 NETHACKCONFIG=${FILESDIR}/qt-config
 MODULES=	x11/qt3
 MODQT_MT=	Yes

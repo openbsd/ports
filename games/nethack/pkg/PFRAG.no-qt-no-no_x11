@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no-qt-no-no_x11,v 1.1 2004/09/15 19:08:47 espie Exp $
+lib/X11/app-defaults/NetHack-${V}

@@ -1,26 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/10 11:23:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:08:47 espie Exp $
 @option no-default-conflict
 @pkgcfl nethack-${V}
 @pkgcfl nethack-${V}-no_x11
 @pkgcfl nethack-${V}-qt
+@comment bin/nethack
 @group games
 bin/nethack-${V}
 bin/recover-${V}
-!%%no_x11%%
-%%qt%%
 @mode 0775
 ${GAMEDIR}/
-@mode 0664
-@comment no checksum
-${GAMEDIR}/logfile
-@comment no checksum
-${GAMEDIR}/perm
-@comment no checksum
-${GAMEDIR}/record
-@mode 2555
-${GAMEDIR}/nethack
-@mode 0575
-${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/Arc-fila.lev
 ${GAMEDIR}/Arc-filb.lev
@@ -110,6 +98,10 @@ ${GAMEDIR}/history
 ${GAMEDIR}/juiblex.lev
 ${GAMEDIR}/knox.lev
 ${GAMEDIR}/license
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+@mode
 ${GAMEDIR}/medusa-1.lev
 ${GAMEDIR}/medusa-2.lev
 ${GAMEDIR}/minefill.lev
@@ -123,14 +115,29 @@ ${GAMEDIR}/minetn-4.lev
 ${GAMEDIR}/minetn-5.lev
 ${GAMEDIR}/minetn-6.lev
 ${GAMEDIR}/minetn-7.lev
+@mode 2555
+${GAMEDIR}/nethack
+@mode
 ${GAMEDIR}/opthelp
 ${GAMEDIR}/options
 ${GAMEDIR}/oracle.lev
 ${GAMEDIR}/oracles
 ${GAMEDIR}/orcus.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/perm
+@mode
 ${GAMEDIR}/quest.dat
+@mode 0664
+@comment no checksum
+${GAMEDIR}/record
+@comment ${GAMEDIR}/recover
+@mode
 ${GAMEDIR}/rumors
 ${GAMEDIR}/sanctum.lev
+@mode 0575
+${GAMEDIR}/save/
+@mode
 ${GAMEDIR}/soko1-1.lev
 ${GAMEDIR}/soko1-2.lev
 ${GAMEDIR}/soko2-1.lev
@@ -151,3 +158,4 @@ ${GAMEDIR}/wizhelp
 @man man/man6/nethack-${V}.6
 @man man/man6/recover-${V}.6
 @unexec rm -rf ${GAMEDIR}/save/*
+!%%no_x11%%

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2004/08/10 11:23:24 espie Exp $
-lib/X11/app-defaults/NetHack-${V}
-@exec ln -sf %F %B/NetHack
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2004/09/15 19:08:47 espie Exp $
+!%%qt%%
 ${GAMEDIR}/pet_mark.xbm
-${GAMEDIR}/x11tiles
 ${GAMEDIR}/rip.xpm
+${GAMEDIR}/x11tiles
