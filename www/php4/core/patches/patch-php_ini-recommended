@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
---- php.ini-recommended.orig	Wed Aug 14 23:35:36 2002
-+++ php.ini-recommended	Sat Aug 24 12:54:49 2002
-@@ -361,9 +361,6 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-recommended,v 1.7 2003/04/03 10:26:25 avsm Exp $
+--- php.ini-recommended.orig	Thu Dec 26 13:27:08 2002
++++ php.ini-recommended	Sun Feb 16 22:39:08 2003
+@@ -420,9 +420,6 @@ default_mimetype = "text/html"
  ; UNIX: "/path1:/path2"  
  ;include_path = ".:/php/includes"
  ;
@@ -11,7 +11,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
  ; if you are running php as a CGI under any web server (other than IIS)
-@@ -376,7 +373,7 @@ doc_root =
+@@ -435,7 +432,7 @@ doc_root =
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -20,7 +20,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -417,85 +414,11 @@ upload_max_filesize = 2M
+@@ -489,7 +486,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -29,8 +29,10 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
+@@ -508,79 +505,6 @@ default_socket_timeout = 60
+ ; auto_detect_line_endings = Off
  
--
+ 
 -;;;;;;;;;;;;;;;;;;;;;;
 -; Dynamic Extensions ;
 -;;;;;;;;;;;;;;;;;;;;;;
@@ -57,36 +59,36 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
 -;Note that MySQL and ODBC support is now built in, so no dll is needed for it.
 -;
 -;extension=php_bz2.dll
--;extension=php_ctype.dll
 -;extension=php_cpdf.dll
+-;extension=php_crack.dll
 -;extension=php_curl.dll
--;extension=php_cybercash.dll
 -;extension=php_db.dll
 -;extension=php_dba.dll
 -;extension=php_dbase.dll
 -;extension=php_dbx.dll
 -;extension=php_domxml.dll
--;extension=php_dotnet.dll
 -;extension=php_exif.dll
 -;extension=php_fbsql.dll
 -;extension=php_fdf.dll
 -;extension=php_filepro.dll
 -;extension=php_gd.dll
+-;extension=php_gd2.dll
 -;extension=php_gettext.dll
 -;extension=php_hyperwave.dll
 -;extension=php_iconv.dll
 -;extension=php_ifx.dll
 -;extension=php_iisfunc.dll
 -;extension=php_imap.dll
--;extension=php_ingres.dll
 -;extension=php_interbase.dll
 -;extension=php_java.dll
 -;extension=php_ldap.dll
 -;extension=php_mbstring.dll
 -;extension=php_mcrypt.dll
 -;extension=php_mhash.dll
+-;extension=php_mime_magic.dll
 -;extension=php_ming.dll
 -;extension=php_mssql.dll
+-;extension=php_msql.dll
 -;extension=php_oci8.dll
 -;extension=php_openssl.dll
 -;extension=php_oracle.dll
@@ -97,17 +99,17 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
 -;extension=php_snmp.dll
 -;extension=php_sockets.dll
 -;extension=php_sybase_ct.dll
--;extension=php_tokenizer.dll
 -;extension=php_w32api.dll
+-;extension=php_xmlrpc.dll
 -;extension=php_xslt.dll
 -;extension=php_yaz.dll
--;extension=php_zlib.dll
+-;extension=php_zip.dll
 -
 -
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -507,11 +430,6 @@ allow_url_fopen = On
+@@ -592,11 +516,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -119,9 +121,9 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
  
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -892,6 +810,41 @@ sockets.use_system_read = On
- ;fbsql.max_results = 128
- ;fbsql.batchSize = 1000
+@@ -1083,6 +1002,56 @@ sockets.use_system_read = On
+ ;exif.decode_jis_motorola = JIS
+ ;exif.decode_jis_intel    = JIS
  
 -; Local Variables:
 -; tab-width: 4
@@ -133,34 +135,49 @@ $OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
 +; If you wish to have an extension loaded automatically, use the following
 +; syntax:
 +;
-+;   extension=modulename.extension
-+;
-+; For example under UNIX:
-+;
-+;   extension=msql.so
++;   extension=modulename.so
 +;
 +; Note that it should be the name of the module only; no directory information 
 +; needs to go here.  Specify the location of the extension with the
 +; extension_dir directive above.
 +
 +;extension=bz2.so
++;extension=cpdf.so
++;extension=crack.so
 +;extension=curl.so
++;extension=db.so
 +;extension=dba.so
 +;extension=dbase.so
++;extension=dbx.so
++;extension=domxml.so
++;extension=exif.so
++;extension=fbsql.so
++;extension=fdf.so
 +;extension=filepro.so
 +;extension=gd.so
-+;extension=gmp.so
++;extension=hyperwave.so
++;extension=ifx.so
 +;extension=imap.so
++;extension=interbase.so
++;extension=java.so
 +;extension=ldap.so
++;extension=mbstring.so
 +;extension=mcrypt.so
 +;extension=mhash.so
-+;extension=mysql.so
-+;extension=ncurses.so
-+;extension=odbc.so
++;extension=ming.so
++;extension=mssql.so
++;extension=msql.so
++;extension=oci8.so
++;extension=openssl.so
++;extension=oracle.so
 +;extension=pdf.so
 +;extension=pgsql.so
++;extension=printer.so
 +;extension=shmop.so
 +;extension=snmp.so
++;extension=sockets.so
 +;extension=sybase_ct.so
-+;extension=xml.so
++;extension=xmlrpc.so
 +;extension=xslt.so
++;extension=yaz.so
++;extension=zip.so

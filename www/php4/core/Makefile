@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2003/02/06 05:28:49 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2003/04/03 10:26:25 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
-PKGNAME=	php4-core-${V}p1
+PKGNAME=	php4-core-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
-		--without-xml \
+		--enable-xml \
 		--enable-cli \
 		--with-iconv=${LOCALBASE} \
 		--with-gettext=${LOCALBASE} \
 		--enable-dio \
-		--without-pear \
+		--with-pear=${PEAR_DIR} \
 		--enable-bcmath \
 		--enable-session \
 		--enable-trans-sid \

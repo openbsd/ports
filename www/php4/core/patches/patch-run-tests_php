@@ -1,0 +1,12 @@
+$OpenBSD: patch-run-tests_php,v 1.1 2003/04/03 10:26:25 avsm Exp $
+--- run-tests.php.orig	Thu Jan 23 13:26:55 2003
++++ run-tests.php	Thu Jan 23 13:27:05 2003
+@@ -44,6 +44,8 @@ if (getenv('TEST_PHP_SRCDIR')) {
+ 
+ $cwd = getcwd();
+ set_time_limit(0);
++
++ob_flush();
+ while(ob_get_level()) {
+ 	ob_end_clean();
+ }
