@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+# $OpenBSD: index-retrieve,v 1.1 2000/04/09 16:26:14 espie Exp $
+# Copyright (c) 2000
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# simple script to retrieve part of the INDEX
+
+for (@ARGV) {
+	$index = $' if m/^index\=/;
+	$iscategory = $' if m/^category\=/;
+	$isauthor = $' if m/^author\=/;
+	$iskey = $' if m/^key\=/;
+}
+
+die "No index" unless defined $index and -e $index;
+
+open(INDEX, $index);
+
+while(<INDEX>) {
+	chomp;
+	($key, $subdir, $author, $category) = (split(/\|/, $_) )[0, 1, 5, 6];
+	$author =~ s/\@.*//;
+	next if (defined($isauthor) && $author !~ m/$isauthor/);
+	next if (defined($iscategory) && $category !~ m/$iscategory/);
+	next if (defined($iskey) && $key !~ m/$iskey/);
+	print $subdir, " ";
+}
+		
+	
+

@@ -1,7 +1,23 @@
-# $OpenBSD: Makefile,v 1.22 2000/04/09 12:45:55 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/04/09 16:26:13 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
+
+.if defined(key) || defined(category) || defined(author)
+
+# set up subdirs from the index, assume it's up-to-date
+_CMD=perl ${.CURDIR}/infrastructure/build/index-retrieve index='${.CURDIR}/INDEX'
+.  if defined(key)
+_CMD+=key='${key}'
+.  endif
+.  if defined(category)
+_CMD+=category='${category}'
+.  endif
+.  if defined(author)
+_CMD+=author='${author}'
+.  endif
+SUBDIR != ${_CMD}
+.else
 SUBDIR += archivers
 SUBDIR += astro
 SUBDIR += audio
@@ -36,6 +52,7 @@ SUBDIR += textproc
 #SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
+.endif
 
 PORTSTOP?=	yes
 
