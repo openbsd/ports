@@ -1,44 +1,35 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/06/23 04:50:00 brad Exp $
+#
+# Dovecot de-installation
+
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 SYSCONFDIR=${SYSCONFDIR:-/etc}
-CONFIG_FILE=${SYSCONFDIR}/dovecot.conf
+CONFIG_FILE=$SYSCONFDIR/dovecot.conf
 DOVECOTDIR=/var/dovecot
 SSL_DIR=/etc/ssl
 DOVECOTUSER=_dovecot
 DOVECOTGROUP=_dovecot
 
-echo
-echo "+---------------"
-echo "| To completely deinstall the $1 package you need to perform"
-echo "| these steps as root:"
-echo "|"
-if userinfo -e $DOVECOTUSER; then
-echo "| userdel $DOVECOTUSER"
+if [ "$PKG_DELETE_EXTRA" != Yes ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need"
+    echo "| to perform these steps as root:"
+    echo "|"
+    echo "|           userdel $DOVECOTUSER"
+    echo "|           groupdel $DOVECOTGROUP"
+    echo "|           rm -f $CONFIG_FILE"
+    echo "|           rm -rf $DOVECOTDIR"
+    echo "|           rm $SSL_DIR/dovecot-openssl.cnf"
+    echo "|           rm $SSL_DIR/dovecotcert.pem"
+    echo "|           rm $SSL_DIR/private/dovecot.pem"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing"
+    echo "| $1 at some future time."
+    echo "+---------------"
+    echo
 fi
-if groupinfo -e $DOVECOTGROUP; then
-echo "| groupdel $DOVECOTGROUP"
-fi
-if [ -f $CONFIG_FILE ]; then
-echo "| rm $CONFIG_FILE"
-fi
-if [ -f $SSL_DIR/dovecot-openssl.cnf ]; then
-echo "| rm $SSL_DIR/dovecot-openssl.cnf"
-fi
-if [ -f $SSL_DIR/dovecotcert.pem ]; then
-echo "| rm $SSL_DIR/dovecotcert.pem"
-fi
-if [ -f $SSL_DIR/private/dovecot.pem ]; then
-echo "| rm $SSL_DIR/private/dovecot.pem"
-fi
-if [ -d $DOVECOTDIR ]; then
-echo "| rm -rf $DOVECOTDIR"
-fi
-echo "|"
-echo "| Do not do this if you plan on re-installing"
-echo "| $1 at some future time."
-echo "+---------------"
-echo
 
 exit 0
