@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2004/12/10 02:53:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.275 2004/12/10 03:34:36 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -118,6 +118,7 @@
      SUBDIR += nasm
      SUBDIR += nspr
      SUBDIR += opencm
+     SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
@@ -177,6 +178,7 @@
      SUBDIR += p5-File-Type
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
+     SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
@@ -202,8 +204,12 @@
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
+     SUBDIR += p5-PerlIO-eol
+     SUBDIR += p5-PerlIO-via-dynamic
+     SUBDIR += p5-PerlIO-via-symlink
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Regexp-Shellish
+     SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
@@ -226,6 +232,7 @@
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-TimeDate
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-moniker
