@@ -1,0 +1,42 @@
+--- Makefile.orig2	Sat May  8 15:11:39 1999
++++ Makefile	Sat May  8 15:11:59 1999
+@@ -61,4 +61,3 @@
+ 	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
+ 	mkdir -p ${PREFIX}/lib
+ 	install -c -m 644 -o bin -g bin libjbig/libjbig.a ${PREFIX}/lib
+-	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.0 ${PREFIX}/lib
+--- libjbig/Makefile.orig2	Sat May  8 15:13:43 1999
++++ libjbig/Makefile	Sat May  8 15:13:52 1999
+@@ -7,9 +7,7 @@
+ # Options for the compiler: A high optimization level is suggested
+ #CFLAGS += -Wall -ansi -pedantic
+ 
+-SOJBIGLIB=libjbig.so.1.0
+-
+-all: libjbig.a $(SOJBIGLIB)
++all: libjbig.a
+ 
+ tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
+ 	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
+@@ -20,20 +18,10 @@
+ 	ar rc libjbig.a jbig.o jbig_tab.o
+ 	ranlib libjbig.a
+ 
+-$(SOJBIGLIB): jbig.so jbig_tab.so
+-	rm -f ${.TARGET}
+-	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
+-	
+ jbig.o: jbig.c jbig.h
+ 
+-.SUFFIXES: .c .so
+-.c.so:
+-	${CC} -c -fPIC -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
+-jbig.so: jbig.c jbig.h
+-jbig_tab.so: jbig_tab.c
+-
+ test: tstcodec
+ 	./tstcodec
+ 
+ clean:
+-	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec libjbig.so.1.0 libjbig.a
++	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec libjbig.a

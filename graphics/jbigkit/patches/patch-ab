@@ -1,0 +1,42 @@
+--- libjbig/Makefile.orig	Fri Apr 10 21:33:27 1998
++++ libjbig/Makefile	Sat May  8 15:10:58 1999
+@@ -2,12 +2,14 @@
+ # $Id: patch-ab,v 1.1.1.1 1999/05/08 19:17:39 brad Exp $
+ 
+ # Select an ANSI/ISO C compiler here, GNU gcc is recommended
+-CC = gcc
++#CC = gcc
+ 
+ # Options for the compiler: A high optimization level is suggested
+-CFLAGS = -O -Wall -ansi -pedantic
++#CFLAGS += -Wall -ansi -pedantic
+ 
+-all: libjbig.a tstcodec
++SOJBIGLIB=libjbig.so.1.0
++
++all: libjbig.a $(SOJBIGLIB)
+ 
+ tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
+ 	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
+@@ -18,10 +20,20 @@
+ 	ar rc libjbig.a jbig.o jbig_tab.o
+ 	ranlib libjbig.a
+ 
++$(SOJBIGLIB): jbig.so jbig_tab.so
++	rm -f ${.TARGET}
++	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
++	
+ jbig.o: jbig.c jbig.h
+ 
++.SUFFIXES: .c .so
++.c.so:
++	${CC} -c -fPIC -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
++jbig.so: jbig.c jbig.h
++jbig_tab.so: jbig_tab.c
++
+ test: tstcodec
+ 	./tstcodec
+ 
+ clean:
+-	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
++	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec libjbig.so.1.0 libjbig.a
