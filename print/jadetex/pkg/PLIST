@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/13 15:05:00 avsm Exp $
+bin/jadetex
+bin/pdfjadetex
+share/texmf/tex/jadetex/dsssl.def
+share/texmf/tex/jadetex/jadetex.ltx
+share/texmf/web2c/jadetex.fmt
+share/texmf/web2c/pdfjadetex.fmt
+@dirrm share/texmf/tex/jadetex
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
