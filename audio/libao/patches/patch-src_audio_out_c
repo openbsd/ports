@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_audio_out_c,v 1.2 2001/06/30 13:16:42 naddy Exp $
+$OpenBSD: patch-src_audio_out_c,v 1.3 2001/07/22 00:12:55 naddy Exp $
 --- src/audio_out.c.orig	Sun May 13 05:30:40 2001
 +++ src/audio_out.c	Sat Jun 30 13:16:26 2001
 @@ -65,7 +65,7 @@ driver_tree_t *_get_plugin(char *plugin_
@@ -20,12 +20,3 @@ $OpenBSD: patch-src_audio_out_c,v 1.2 2001/06/30 13:16:42 naddy Exp $
  		dt->functions->get_driver_info = dlsym(dt->handle, "plugin_get_driver_info");
  		if (dlerror()) { free(dt->functions); free(dt); return NULL; }
  		dt->functions->open = dlsym(dt->handle, "plugin_open");
-@@ -138,7 +141,7 @@ void ao_initialize(void)
- 		if (plugindir != NULL) {
- 			while ((plugin_dirent = readdir(plugindir)) != NULL) {
- 				snprintf(fullpath, FILENAME_MAX, "%s/%s", AO_PLUGIN_PATH, plugin_dirent->d_name);
--				if (!stat(fullpath, &statbuf) && S_ISREG(statbuf.st_mode) && (ext = strrchr(plugin_dirent->d_name, '.')) != NULL) {
-+				if (!stat(fullpath, &statbuf) && S_ISREG(statbuf.st_mode) && (ext = strchr(plugin_dirent->d_name, '.')) != NULL) {
- 					if (strcmp(ext, SHARED_LIB_EXT) == 0) {
- 						plugin = _get_plugin(fullpath);
- 						if (plugin) {

@@ -1,13 +1,7 @@
-$OpenBSD: patch-src_plugins_arts_Makefile_in,v 1.1 2001/07/17 15:23:36 naddy Exp $
---- src/plugins/arts/Makefile.in.orig	Tue Jul 17 16:37:00 2001
-+++ src/plugins/arts/Makefile.in	Tue Jul 17 16:39:44 2001
-@@ -88,18 +88,17 @@ AUTOMAKE_OPTIONS = foreign
- 
- @HAVE_ARTS_TRUE@artsltlibs = libarts.la
- @HAVE_ARTS_FALSE@artsltlibs = 
--@HAVE_ARTS_TRUE@artsldflags = -export-dynamic -avoid-version
-+@HAVE_ARTS_TRUE@artsldflags = -export-dynamic -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
- @HAVE_ARTS_FALSE@artsldflags = 
+$OpenBSD: patch-src_plugins_arts_Makefile_in,v 1.2 2001/07/22 00:12:55 naddy Exp $
+--- src/plugins/arts/Makefile.in.orig	Mon Jun 18 18:05:49 2001
++++ src/plugins/arts/Makefile.in	Fri Jul 20 23:26:04 2001
+@@ -93,13 +93,12 @@ AUTOMAKE_OPTIONS = foreign
  @HAVE_ARTS_TRUE@artssources = ao_arts.c
  @HAVE_ARTS_FALSE@artssources = 
  

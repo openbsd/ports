@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/17 15:23:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/22 00:12:55 naddy Exp $
 
 COMMENT=	"portable audio output library"
-DISTNAME=	libao-0.7.0
+COMMENT-arts=	"aRts module for portable audio output library"
+COMMENT-esd=	"ESounD module for portable audio output library"
+
+VERSION=	0.7.0
+DISTNAME=	libao-${VERSION}
+PKGNAME-arts=	libao-arts-${VERSION}
+PKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
-NEED_VERSION=	1.363
+NEED_VERSION=	1.422
 HOMEPAGE=	http://www.vorbis.com
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -15,31 +21,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/rc1/unix/
 
-# no shared libraries?
-.if (${MACHINE_ARCH} == "hppa") || (${MACHINE_ARCH} == "mvme88k") || \
-    (${MACHINE_ARCH} == "vax")
+MULTI_PACKAGES=	-arts -esd
+SUBPACKAGE?=
 
-PLUGINS=
-
-.else
-
-FLAVORS=	arts esd sun
-FLAVOR?=	sun
-PLUGINS=	${FLAVOR}
-
-.if ${FLAVOR:L:Marts}
-LIB_DEPENDS+=	artsc.0::x11/kde/libs2
+.if !defined(PACKAGING)
+LIB_DEPENDS=	artsc.0::x11/kde/libs2 \
+		esd.2::audio/esound
 .endif
 
-.if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=	esd.2::audio/esound
-.endif
-
+.if   defined(PACKAGING) && ${SUBPACKAGE} == "-arts"
+LIB_DEPENDS=	ao.1::audio/libao \
+		artsc.0::x11/kde/libs2
+.elif defined(PACKAGING) && ${SUBPACKAGE} == "-esd"
+LIB_DEPENDS=	ao.1::audio/libao \
+		esd.2::audio/esound
 .endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
-MAKE_FLAGS=	PLUGINS='${PLUGINS}'
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

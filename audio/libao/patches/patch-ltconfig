@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+$OpenBSD: patch-ltconfig,v 1.2 2001/07/22 00:12:55 naddy Exp $
 --- ltconfig.orig	Thu Jul 13 23:54:59 2000
-+++ ltconfig	Mon Mar 12 19:59:17 2001
++++ ltconfig	Fri Jul 20 22:27:14 2001
 @@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
@@ -35,7 +35,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
      ;;
  
    os2*)
-@@ -2021,13 +2035,10 @@ netbsd*)
+@@ -2021,13 +2035,11 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
@@ -43,6 +43,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
 -    need_lib_prefix=no
 -    need_version=no
 -  fi
++  need_version=no
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH

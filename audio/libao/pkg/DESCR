@@ -4,6 +4,5 @@ it currently supports:
    * Null output
    * WAV files
    * Sun (OpenBSD's native sound system)
-   * ESD (ESounD or Enlightened Sound Daemon)
 
 WWW: ${HOMEPAGE}

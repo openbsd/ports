@@ -1,8 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2001/06/30 13:16:43 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2001/07/22 00:12:55 naddy Exp $
 lib/libao.so.1.1
 DYNLIBDIR(%B)
-@exec mkdir -p %D/lib/ao
-%%arts%%
-%%esd%%
-%%sun%%
+lib/ao/libsun.so
 @dirrm lib/ao
