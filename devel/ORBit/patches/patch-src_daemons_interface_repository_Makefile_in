@@ -1,6 +1,6 @@
---- src/daemons/interface_repository/Makefile.in.orig	Tue Jan 30 15:56:19 2001
-+++ src/daemons/interface_repository/Makefile.in	Wed Mar 14 17:10:31 2001
-@@ -102,7 +102,7 @@
+--- src/daemons/interface_repository/Makefile.in.orig	Mon Jan  7 04:23:57 2002
++++ src/daemons/interface_repository/Makefile.in	Sun Feb 24 16:56:20 2002
+@@ -102,7 +102,7 @@ orbit_ird_DEPENDENCIES = $(top_builddir)
  
  
  orbit_ird_LDFLAGS = -static

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltconfig,v 1.4 2001/09/26 03:08:12 pvalchev Exp $
---- ltconfig.orig	Sun May 13 01:12:26 2001
-+++ ltconfig	Mon Sep 24 18:34:15 2001
-@@ -501,7 +501,14 @@
+$OpenBSD: patch-ltconfig,v 1.5 2002/02/24 22:43:59 brad Exp $
+--- ltconfig.orig	Mon Jan  7 04:09:54 2002
++++ ltconfig	Sun Feb 24 16:56:18 2002
+@@ -501,7 +501,14 @@ fi
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -17,7 +17,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/09/26 03:08:12 pvalchev Exp $
  fi
  
  # Set sane defaults for `DLLTOOL', `OBJDUMP', and `AS', used on cygwin.
-@@ -1105,7 +1112,9 @@
+@@ -1105,7 +1112,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -28,7 +28,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/09/26 03:08:12 pvalchev Exp $
  esac
  
  ld_shlibs=yes
-@@ -1402,10 +1411,21 @@
+@@ -1402,10 +1411,21 @@ else
      ;;
  
    openbsd*)
@@ -52,7 +52,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/09/26 03:08:12 pvalchev Exp $
      ;;
  
    os2*)
-@@ -2021,9 +2041,23 @@
+@@ -2021,9 +2041,23 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
