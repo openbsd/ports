@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/02/15 19:19:33 nino Exp $
-@pkgcfl libart-*
+@comment $OpenBSD: PLIST,v 1.7 2002/08/07 08:20:46 nino Exp $
 @pkgcfl libgtop-*
 bin/dns-helper
 bin/gconfigger
