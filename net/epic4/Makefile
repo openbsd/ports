@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.50 2003/04/15 16:19:03 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -7,16 +7,15 @@ VERSION=	1.0.1
 HELP_DATE=	20011030
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
-MASTER_SITES0=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/ \
-		http://zuntum.utech.lublin.pl/patches/
+MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/
+MASTER_SITES0=	${MASTER_SITE_BACKUP}
 DISTFILES=	epic4-${VERSION}.tar.gz epic4-help-${HELP_DATE}.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
 PATCHFILES=	epic4-1.0.1-ipv6-20010418.patch.gz:0
 PATCH_DIST_STRIP= -p1
 
-HOMEPAGE=	http://www.epicsol.org/
+HOMEPAGE=	http://www.prbh.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
