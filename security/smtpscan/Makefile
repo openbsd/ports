@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2003/04/20 16:04:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/06 08:51:14 avsm Exp $
 
 COMMENT=	"Remote SMTP Server Detection"
 
-VERSION=	0.4
+VERSION=	0.5
 DISTNAME=	smtpscan-${VERSION}
 CATEGORIES=	security net mail
 
