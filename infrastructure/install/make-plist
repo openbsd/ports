@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.4 2000/04/17 21:00:56 espie Exp $
+# $OpenBSD: make-plist,v 1.5 2000/06/30 23:45:41 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -152,13 +152,12 @@ for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 	print "\@dirrm ",strip($d), "\n";
 }
 	
-my $ldconfig = $ENV{LDCONFIG};
-
 for my $d (sort (keys %ldconfig)) {
-	print "\@exec $ldconfig -m %D/", strip($d), "\n";
-	print "\@unexec $ldconfig -m %D/", strip($d) ,"\n";
+	if (defined $newdir{$d}) {
+		print "NEWDYNLIBDIR(", strip($d), ")\n";
+	} else {
+		print "DYNLIBDIR(", strip($d), ")\n";
+	}
 }
 	
 add_info('@exec install-info', \%infodir);
-
-	
