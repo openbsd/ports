@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2002/03/23 20:41:51 lebel Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -14,7 +14,7 @@ MAINTAINER=	Hakan Olsson <ho@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
 
 # XXX workaround gcc bugs on sparc64
 .if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=        -O0
+PATCH_LIST=     gcc-* patch-*
 .endif
 
 WRKDIST=	${WRKDIR}/named
