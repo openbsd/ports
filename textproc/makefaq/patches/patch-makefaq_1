@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefaq_1,v 1.1.1.1 2004/02/16 21:09:00 xsa Exp $
---- makefaq.1.orig	2002-11-11 12:49:45.000000000 +0100
-+++ makefaq.1	2004-02-16 21:21:35.000000000 +0100
+$OpenBSD: patch-makefaq_1,v 1.2 2004/04/01 13:39:36 xsa Exp $
+--- makefaq.1.orig	2004-02-29 08:21:02.000000000 +0100
++++ makefaq.1	2004-04-01 15:26:40.000000000 +0200
 @@ -3,15 +3,15 @@
  .\" <http://shell.ipoline.com/~elmert/hacks/docbook2X/> 
  .\" Please send any bug reports, improvements, comments, patches, 
@@ -57,3 +57,9 @@ $OpenBSD: patch-makefaq_1,v 1.1.1.1 2004/02/16 21:09:00 xsa Exp $
  I would also ask that you send the information about your
  locale and text strings to me at 'dyork@Lodestar2.com'
  so that I can add them to the program for others to use.
+@@ -215,4 +215,4 @@ Dave Seidel (dave@superluminal.com) and 
+ as the co-author of this code.
+ .SH "SEE ALSO"
+ 
+-\fBpython(1)\fR
++\fBpython%%MODPY_VERSION%%(1)\fR
