@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:32:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/23 07:12:57 espie Exp $
 bin/diffpp
 bin/enscript
 bin/mkafmmap
@@ -155,6 +155,7 @@ share/enscript/squeeze.hdr
 share/enscript/vms.enc
 share/examples/enscript/
 share/examples/enscript/enscript.cfg-sample
+@sample ${SYSCONFDIR}/enscript.cfg
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
@@ -177,5 +178,3 @@ share/locale/ru/LC_MESSAGES/enscript.mo
 share/locale/sl/
 share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/enscript.mo
-@cwd ${SYSCONFDIR}
-@extra enscript.cfg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/28 14:26:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/09/23 07:06:00 espie Exp $
 
 COMMENT=	"setup X11 fonts for russian language (koi8-r)"
 
@@ -21,5 +21,7 @@ NO_REGRESS=	Yes
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/../LICENSE.txt \
 		${PREFIX}/lib/X11/fonts/xcyrillic
+	cd ${PREFIX}/lib/X11/fonts/xcyrillic/misc && \
+		mv fonts.alias fonts.alias-xcyrillic
 
 .include <bsd.port.mk>

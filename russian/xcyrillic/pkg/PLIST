@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:33:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/23 07:06:00 espie Exp $
 lib/X11/fonts/
 lib/X11/fonts/xcyrillic/
-lib/X11/fonts/xcyrillic/100dpi/
+@fontdir lib/X11/fonts/xcyrillic/100dpi/
 lib/X11/fonts/xcyrillic/100dpi/crox1c.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox1cb.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox1cbo.pcf.gz
@@ -62,8 +62,8 @@ lib/X11/fonts/xcyrillic/100dpi/crox6t.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6tb.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6tbo.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox6to.pcf.gz
-lib/X11/fonts/xcyrillic/100dpi/fonts.dir
-lib/X11/fonts/xcyrillic/75dpi/
+@comment lib/X11/fonts/xcyrillic/100dpi/fonts.dir
+@fontdir lib/X11/fonts/xcyrillic/75dpi/
 lib/X11/fonts/xcyrillic/75dpi/crox1c.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox1cb.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox1cbo.pcf.gz
@@ -124,11 +124,11 @@ lib/X11/fonts/xcyrillic/75dpi/crox6t.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6tb.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6tbo.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6to.pcf.gz
-lib/X11/fonts/xcyrillic/75dpi/fonts.dir
+@comment lib/X11/fonts/xcyrillic/75dpi/fonts.dir
 lib/X11/fonts/xcyrillic/LICENSE.txt
-lib/X11/fonts/xcyrillic/misc/
-lib/X11/fonts/xcyrillic/misc/fonts.alias
-lib/X11/fonts/xcyrillic/misc/fonts.dir
+@fontdir lib/X11/fonts/xcyrillic/misc/
+lib/X11/fonts/xcyrillic/misc/fonts.alias-xcyrillic
+@comment lib/X11/fonts/xcyrillic/misc/fonts.dir
 lib/X11/fonts/xcyrillic/misc/koi10x16b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi10x20.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi12x24.pcf.gz
