@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/14 07:43:59 heko Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/07 15:32:34 naddy Exp $
+
+NOT_FOR_ARCHS=	alpha
 
 COMMENT=		"Qt-based 2D CAD system"
 
