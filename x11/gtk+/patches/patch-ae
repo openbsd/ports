@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr 22 17:56:24 1999
-+++ configure	Thu Apr 22 17:56:46 1999
-@@ -4509,7 +4509,7 @@
+--- configure.orig	Tue May 11 13:12:48 1999
++++ configure	Tue May 11 13:13:08 1999
+@@ -4062,7 +4062,7 @@
  
  # AM_GTK_GNU_GETTEXT above substs $DATADIRNAME
  # this is the directory where the *.{mo,gmo} files are installed

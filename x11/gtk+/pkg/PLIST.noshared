@@ -146,9 +146,16 @@ info/gtk.info
 @exec install-info %D/info/gtk.info %D/info/dir
 share/themes/Default/gtk/gtkrc
 share/aclocal/gtk.m4
+lib/gtk/gtkrc.cs
+lib/gtk/gtkrc.hr
+lib/gtk/gtkrc.hu
+lib/gtk/gtkrc.iso-8859-2
 lib/gtk/gtkrc.ja
 lib/gtk/gtkrc.ko
+lib/gtk/gtkrc.pl
 lib/gtk/gtkrc.ru
+lib/gtk/gtkrc.sk
+lib/gtk/gtkrc.sl
 @dirrm lib/gtk
 @dirrm include/gtk
 @dirrm include/gdk
