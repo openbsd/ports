@@ -1,15 +1,16 @@
 --- Makefile.orig	Fri Jun 23 16:34:47 2000
-+++ Makefile	Sat Sep 16 06:15:02 2000
-@@ -4,6 +4,8 @@
++++ Makefile	Mon Oct 16 14:49:33 2000
+@@ -4,6 +4,9 @@
  BIGFILES=-D_FILE_OFFSET_BITS=64
  CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
  
++PICFLAG= -fpic
 +SHLIB=	libbz2.so.10.1
 +
  OBJS= blocksort.o  \
        huffman.o    \
        crctable.o   \
-@@ -11,10 +13,17 @@
+@@ -11,10 +14,17 @@
        compress.o   \
        decompress.o \
        bzlib.o
@@ -28,7 +29,7 @@
  	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
  
  bzip2recover: bzip2recover.o
-@@ -29,49 +38,50 @@
+@@ -29,49 +39,50 @@
  		ranlib libbz2.a ; \
  	fi
  
@@ -48,7 +49,7 @@
 -	cmp sample3.tst sample3.ref
 -	@cat words3
 +$(SHLIB): $(SHOBJS)
-+	$(CC) -shared -o $(SHLIB) $(SHOBJS)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHOBJS)
  
 -PREFIX=/usr
 +test: bzip2
@@ -111,7 +112,7 @@
  	sample1.tst sample2.tst sample3.tst
 +
 +.c.so:
-+	$(CC) $(CFLAGS) -fpic -DPIC -c $? -o $@
++	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c $? -o $@
  
  blocksort.o: blocksort.c
  	@cat words0
