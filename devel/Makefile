@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2003/06/04 23:26:20 avsm Exp $
+# $OpenBSD: Makefile,v 1.175 2003/06/12 20:41:46 marcm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -195,6 +195,7 @@
      SUBDIR += snit
      SUBDIR += soup
      SUBDIR += splint
+     SUBDIR += startup-notification
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclcl
@@ -203,6 +204,7 @@
      SUBDIR += tmake
      SUBDIR += ucpp
      SUBDIR += varconf
+     SUBDIR += vte
      SUBDIR += xmake
 
 .include <bsd.port.subdir.mk>

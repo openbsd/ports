@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/01/31 19:20:44 todd Exp $
+# $OpenBSD: Makefile,v 1.8 2003/06/12 20:41:47 marcm Exp $
 
      SUBDIR += applets
      SUBDIR += applets2
@@ -11,6 +11,7 @@
      SUBDIR += desktop
      SUBDIR += eel
      SUBDIR += gail
+     SUBDIR += icon-theme
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libgnome
@@ -27,6 +28,7 @@
      SUBDIR += print
      SUBDIR += session
      SUBDIR += terminal
+     SUBDIR += themes
      SUBDIR += users-guide
      SUBDIR += vfs
      SUBDIR += vfs2

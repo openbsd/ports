@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2003/05/30 11:18:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.167 2003/06/12 20:41:47 marcm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -67,6 +67,7 @@
      SUBDIR += gtk-engines
      SUBDIR += gtk-engines2
      SUBDIR += gtk-theme-switch
+     SUBDIR += gtk-thinice-engine
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
      SUBDIR += gtop
