@@ -1,5 +1,5 @@
 --- autoconf.sh.orig	Tue Jan  5 06:27:53 1999
-+++ autoconf.sh	Mon Mar 25 11:57:03 2002
++++ autoconf.sh	Wed Mar 27 09:49:29 2002
 @@ -45,7 +45,8 @@ case "${M4}" in
  esac
  
@@ -10,12 +10,10 @@
  localdir=
  show_version=no
  
-@@ -95,9 +96,19 @@ case $# in
-   *) echo "$usage" >&2; exit 1 ;;
+@@ -96,8 +97,18 @@ case $# in
  esac
  
--trap 'rm -f $tmpin $tmpout; exit 1' 1 2 15
-+trap 'rm -f $tmpin $tmpout; exit 1' 0 1 2 3 13 15
+ trap 'rm -f $tmpin $tmpout; exit 1' 1 2 15
 +if fgrep AC_ $infile >/dev/null; then
 +  :
 +else 
