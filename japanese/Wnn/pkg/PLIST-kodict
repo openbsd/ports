@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-kodict,v 1.1 2000/04/21 00:45:30 espie Exp $
+@comment no checksum
+ko_KR/sys/full.fzk
+@comment no checksum
+ko_KR/sys/hword.dic
+@comment no checksum
+ko_KR/sys/single.dic
+@dirrm ko_KR/sys
+@dirrm ko_KR
+@exec /usr/local/lib/wnn/install-script chinese
+@unexec echo "Finish removing %D/ko_KR manually"

@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST-zhdict,v 1.1 2000/04/21 00:45:30 espie Exp $
+@comment no checksum
+sys/QianMa.dic
+@comment no checksum
+sys/WuBi.dic
+@comment no checksum
+sys/basic.dic
+@comment no checksum
+sys/computer.dic
+@comment no checksum
+sys/cwnn.dic
+@comment no checksum
+sys/full.con
+@comment no checksum
+sys/full.conR
+@comment no checksum
+sys/level_1.dic
+@comment no checksum
+sys/level_2.dic
+@comment no checksum
+zh_TW/sys/cns_ch.dic
+@comment no checksum
+zh_TW/sys/cns_wd.dic
+@comment no checksum
+zh_TW/sys/full.con
+@comment no checksum
+zh_TW/sys/full.conR
+@exec /usr/local/lib/wnn/install-script chinese
+@unexec echo "Finish removing %D/zh_TW manually"
+@dirrm zh_TW/sys
+@dirrm zh_TW
+@dirrm sys

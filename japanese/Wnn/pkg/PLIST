@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/04/20 23:32:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/04/21 00:45:30 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -493,7 +493,7 @@ share/doc/ja-Wnn/manual/6.jutil/wnntouch
 share/doc/ja-Wnn/manual/7.Protocol/KKTP
 share/doc/ja-Wnn/manual/intro
 share/doc/ja-Wnn/manual/v3tov4/v3tov4
-@exec /usr/local/lib/wnn/install-script
+@exec /usr/local/lib/wnn/install-script japanese
 @dirrm share/doc/ja-Wnn/manual/v3tov4
 @dirrm share/doc/ja-Wnn/manual/7.Protocol
 @dirrm share/doc/ja-Wnn/manual/6.jutil

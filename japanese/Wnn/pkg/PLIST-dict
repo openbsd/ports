@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-dict,v 1.1 2000/04/20 23:32:22 espie Exp $
+@comment $OpenBSD: PLIST-dict,v 1.2 2000/04/21 00:45:30 espie Exp $
 @comment no checksum
 ja_JP/pubdic/bio.dic
 @comment no checksum
@@ -36,6 +36,5 @@ ja_JP/src/fzk.shuutan
 ja_JP/wnncons/tankan2.dic
 @comment no checksum
 ja_JP/wnncons/tankan3.dic
-@exec /usr/local/lib/wnn/install-script
-@unexec echo "finish removing %D/ja_JP manually"
-@unexec echo "Don't forget to remove directory %D/ja_JP manually"
+@exec /usr/local/lib/wnn/install-script japanese
+@unexec echo "Finish removing %D/ja_JP manually"

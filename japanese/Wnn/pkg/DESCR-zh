@@ -1,0 +1,12 @@
+Wnn4.2 is a Japanese/Chinese/Korean input method.  
+This is the Chinese version.
+
+This is originally based on the FreeBSD port, with contributions by
+
+Satoshi (asami@cs.berkeley.edu)
+Hidekazu Kuroki (hidekazu@cs.titech.ac.jp)
+Yoshio KATAYAMA <kate@pfu.co.jp> 
+S. Taoka <taoka@infonets.hiroshima-u.ac.jp>
+
+The OpenBSD port separates the dictionaries into a separate package
+(zh-Wnn-dict-4.2) that installs under /var/dict.
