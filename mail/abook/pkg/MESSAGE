@@ -1,0 +1,4 @@
+
+To use abook from mutt add the following to your muttrc:
+set query_command="/usr/local/bin/abook --mutt-query '%s'"
+

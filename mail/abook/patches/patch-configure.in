@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure.in,v 1.1.1.1 2000/05/29 16:46:51 reinhard Exp $
+# ncurses->curses
+--- configure.in.orig	Sun May 28 14:05:37 2000
++++ configure.in	Mon May 29 14:52:24 2000
+@@ -7,17 +7,17 @@ AC_PROG_CC
+ AC_PROG_INSTALL
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS(unistd.h locale.h termios.h linux/termios.h sys/ioctl.h stdarg.h varargs.h)
+-AC_CHECK_HEADER(ncurses.h,,AC_MSG_ERROR([*** ncurses.h not installed - please install first ***]))
++AC_CHECK_HEADER(curses.h,,AC_MSG_ERROR([*** curses.h not installed - please install first ***]))
+ AC_CHECK_FUNCS(setlocale)
+ 
+ NCURSES_LIB=error
+-AC_CHECK_LIB(ncurses,initscr, [
+-        NCURSES_LIB="-lncurses" 
++AC_CHECK_LIB(curses,initscr, [
++        NCURSES_LIB="-lcurses" 
+ 	LIBS="$LIBS $NCURSES_LIB"
+ 	])
+ 
+ 	if test "x$NCURSES_LIB" = xerror; then
+-	        AC_MSG_ERROR([ *** ncurses developement libraries not installed - please install first *** ])
++	        AC_MSG_ERROR([ *** curses developement libraries not installed - please install first *** ])
+ fi
+ AC_SUBST(NCURSES_LIB)
+ 
