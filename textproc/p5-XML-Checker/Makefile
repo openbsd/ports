@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/09 05:32:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/15 03:56:47 shell Exp $
 
 COMMENT=	"perl module for validating XML"
 
-DISTNAME=	XML-Checker-0.10
+DISTNAME=	XML-Checker-0.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 RUN_DEPENDS=	:p5-XML-DOM->=1.29:textproc/p5-XML-DOM
