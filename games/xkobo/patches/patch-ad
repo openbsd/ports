@@ -1,0 +1,36 @@
+*** file.C.orig	Sun Jul 11 19:08:57 1999
+--- file.C	Sun Jul 11 19:09:43 1999
+***************
+*** 42,48 ****
+              ret = -2;
+              break;
+          }
+!         t += i;
+          len -= i;
+      } while (len > 0);
+      for (;;){
+--- 42,48 ----
+              ret = -2;
+              break;
+          }
+!         (char *) t += i;
+          len -= i;
+      } while (len > 0);
+      for (;;){
+***************
+*** 68,74 ****
+              ret = -2;
+              break;
+          }
+!         t += i;
+          len -= i;
+      } while (len > 0);
+      for (;;){
+--- 68,74 ----
+              ret = -2;
+              break;
+          }
+!         (char *) t += i;
+          len -= i;
+      } while (len > 0);
+      for (;;){
