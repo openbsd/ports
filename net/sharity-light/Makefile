@@ -1,39 +1,30 @@
-# New ports collection makefile for:	sharity-light
-# Version required:	1.0
-# Date created:		14 June 1997
-# Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
-#
-# $OpenBSD: Makefile,v 1.4 2000/01/03 17:57:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/09 18:07:15 brad Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
-#
 
 DISTNAME=	Sharity-Light.1.2
 PKGNAME=	sharity-light-1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
-		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
-		http://www.freebsd.org/~dt/distfiles/
+		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/
 
-MAINTAINER=	dt@FreeBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
-MAN8=		smbmount.8
+MAKE_FLAGS=	ARCH="" THE_CC="${CC}" CFLAGS="${CFLAGS} -Wall"
 
 post-extract:
-	@${MKDIR} ${WRKDIR}/unshlight
-	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
-	@${CP} ${FILESDIR}/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
+	@mkdir -p ${WRKSRC}/unshlight
+	@cp -f ${FILESDIR}/unshlight.c ${WRKSRC}/unshlight
+	@cp -f ${FILESDIR}/Makefile.unshlight ${WRKSRC}/unshlight/Makefile
 
 post-build:
-	cd ${WRKDIR}/unshlight && make
+	@cd ${WRKSRC}/unshlight && env ${MAKE_ENV} make ${MAKE_FLAGS}
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Sharity-Light
 	${INSTALL_PROGRAM} ${WRKSRC}/shlight ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKDIR}/unshlight/unshlight ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/Sharity-Light
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/Sharity-Light/README
+	${INSTALL_PROGRAM} ${WRKSRC}/unshlight/unshlight ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/Sharity-Light
 	${INSTALL_DATA} ${WRKSRC}/FAQ.txt ${PREFIX}/share/doc/Sharity-Light/FAQ
-.endif
 	${INSTALL_MAN} ${WRKSRC}/smbmount.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
