@@ -1,4 +1,13 @@
-Leafnode is a simple NNTP server designed for small sites.
-It "learns" which newsgroups should be downloaded based on what's
-accessed.
-It expires based on threads rather than articles.
+Leafnode is a USENET software package designed for small sites, with a
+few tens of readers and only a slow link to the net.
+
+It consists of several programs, three essential ones and several add-ons.
+
+ - Leafnode is the NNTP server.  It talks to the normal news clients,
+   and stores readership data.
+
+ - Fetchnews is the NNTP news-gatherer.  It looks at the readership data
+   Leafnode stores, and selects what groups to pull news from.
+
+ - Texpire is responsible for deleting old and uninteresting news.  It
+   deletes all discussion threads that are old and not recently read.

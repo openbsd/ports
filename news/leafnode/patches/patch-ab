@@ -1,21 +1,17 @@
---- xoverutil.c.orig	Tue Mar 16 22:30:06 1999
-+++ xoverutil.c	Tue Mar 16 22:32:35 1999
-@@ -518,7 +518,7 @@
- 		    error, getcwd( s, 1024 ) );
+--- INSTALL.orig	Mon May 22 14:31:49 2000
++++ INSTALL	Sat Jun 10 03:21:05 2000
+@@ -64,11 +64,11 @@
+ 9. Edit /etc/inetd.conf so that $(BINDIR)/leafnode is executed for incoming
+    NNTP connections.  Here is my inetd.conf line:
  
- 	strcpy( newfile, ".overview.XXXXXX" );
--	if ( (wfd=open( mktemp(newfile), O_WRONLY|O_CREAT|O_EXCL, 0664 )) ) {
-+	if ( (wfd=mkstemp(newfile)) != -1) {
- 	    struct iovec oooh[UIO_MAXIOV];
- 	    int vi, vc, va;
+-nntp    stream  tcp     nowait  news    /usr/sbin/tcpd /usr/local/sbin/leafnode
++nntp    stream  tcp     nowait  news    /usr/libexec/tcpd /usr/local/sbin/leafnode
  
-@@ -571,8 +571,7 @@
- 		   .overview file I think */
- 	    }
- 	} else {
--	    syslog( LOG_ERR, "open(O_WRONLY|O_CREAT|O_EXCL) of new "
--		    ".overview failed: %m" );
-+	    syslog( LOG_ERR, "mkstemp of new .overview failed: %m" );
- 	}
-     }
-     return 1;
+    This starts leafnode for all connections on the nntp port, subject to
+-   /etc/hosts/allow and /etc/hosts.deny screening.  If you don't have
+-   /usr/sbin/tcpd you might use this line instead:
++   /etc/hosts/allow and /etc/hosts.deny screening.  If you don't want to use
++   /usr/libexec/tcpd you might use this line instead:
+ 
+ nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
+ 

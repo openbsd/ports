@@ -1,16 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/06/10 19:00:16 fgsch Exp $
 bin/newsq
 man/man1/newsq.1
+man/man7/pcre.7
 man/man8/applyfilter.8
 man/man8/checkgroups.8
-man/man8/fetch.8
+man/man8/fetchnews.8
 man/man8/leafnode.8
 man/man8/texpire.8
-sbin/leafnode
-sbin/fetch
-sbin/texpire
-sbin/checkgroups
 sbin/applyfilter
-share/doc/leafnode/README
+sbin/checkgroups
+sbin/fetchnews
+sbin/leafnode
+sbin/texpire
+share/doc/leafnode/FAQ
 share/doc/leafnode/INSTALL
+share/doc/leafnode/README
 share/doc/leafnode/config.example
 @dirrm share/doc/leafnode

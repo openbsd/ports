@@ -1,0 +1,96 @@
+#! /bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/06/10 19:00:16 fgsch Exp $
+#
+# Pre/post-installation setup of leafnode - based on majordomo INSTALL
+# script from daniel@reichardt.ch
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_create_user()
+{
+  echo "Leafnode requires a user news to run properly."
+  echo -n "Let's see if there already is a user news... "
+  if id -u news >/dev/null 2>/dev/null
+  then
+    echo "yes"
+  else
+    echo "no"
+    user add -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin news
+  fi
+}
+
+do_create_local_dirs()
+{
+  echo -n "Creating local directories... "
+  if [ ! -d /var/run/news ]; then
+    install -d -o news -g news /var/run/news
+  fi
+  if [ ! -d /var/spool/news ]; then
+    install -d -o news -g news -m 2775 /var/spool/news
+    install -d -o news -g news /var/spool/news/leaf.node
+    install -d -o news -g news /var/spool/news/failed.posting
+    install -d -o news -g news /var/spool/news/message.id
+    install -d -o news -g news /var/spool/news/interesting.groups
+    install -d -o news -g news /var/spool/news/out.going
+    cd /var/spool/news/message.id; for a in 0 1 2 3 4 5 6 7 8 9; do
+      for b in 0 1 2 3 4 5 6 7 8 9; do
+        for c in 0 1 2 3 4 5 6 7 8 9; do
+          install -d -o news -g news $a$b$c
+    done; done; done
+  fi
+  echo "ok"
+}
+
+do_set_file_permissions()
+{
+  echo -n "Changing ownership of leafnode files... "
+  chown news:news ${PREFIX}/bin/newsq
+  chown news:news ${PREFIX}/sbin/applyfilter
+  chown news:news ${PREFIX}/sbin/checkgroups
+  chown news:news ${PREFIX}/sbin/fetchnews
+  chown news:news ${PREFIX}/sbin/leafnode
+  chown news:news ${PREFIX}/sbin/texpire
+  echo "ok"
+}
+
+do_install_configuration()
+{
+  echo -n "Let's see if there is already a configuration file... "
+  if [ -d /etc/leafnode -a -f /etc/leafnode/config ]; then
+    echo "yes"
+    echo "Please compare your existing configuration with"
+    echo "${PREFIX}/share/doc/config.example"
+  else
+    echo "no"
+    echo -n "Copying sample configuration file... "
+    install -d -o news -g news /etc/leafnode
+    install -o root -g news -m 640 \
+      ${PREFIX}/share/doc/leafnode/config.example /etc/leafnode/config
+    echo "ok"
+    echo "Please review new configuration /etc/leafnode/config"
+  fi
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+	do_create_user
+	;;
+    POST-INSTALL)
+	do_create_local_dirs
+	do_set_file_permissions
+	do_install_configuration
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
