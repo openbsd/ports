@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/07/12 02:09:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.37 2004/09/15 18:42:10 espie Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
@@ -23,5 +23,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-libxml-include-prefix='${LOCALBASE}/include/'
 CONFIGURE_ARGS+=	--without-python
+CONFIGURE_ENV+=		LIBGCRYPT_CONFIG=/dev/null
 
 .include <bsd.port.mk>
