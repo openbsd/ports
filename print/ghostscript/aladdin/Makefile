@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/07 01:37:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/19 00:24:19 espie Exp $
 
 DISTNAME=	ghostscript-6.0
 CATEGORIES=	print
@@ -31,8 +31,8 @@ MAINTAINER=	ports@openbsd.org
 JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
-BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:extract \
-		/nonexistent:${PNGDIR}:extract \
+BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:patch \
+		/nonexistent:${PNGDIR}:patch \
 		unzip:archivers/unzip \
 
 LIB_DEPENDS=	png.1.3:${PNGDIR}
