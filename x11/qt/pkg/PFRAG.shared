@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/05/22 10:48:56 espie Exp $
-lib/libqt.so.1.45
-lib/libqimgio.so.1.45
-@exec /sbin/ldconfig -m %B
