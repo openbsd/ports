@@ -1,15 +1,17 @@
-$OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
---- mozilla/nsprpub/configure.in.orig	2004-01-06 21:39:05.000000000 -0500
-+++ mozilla/nsprpub/configure.in	2004-01-06 21:43:56.000000000 -0500
-@@ -1483,6 +1483,7 @@ mips-sony-newsos*)
+$OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.2 2004/10/25 09:02:53 wilfried Exp $
+--- mozilla/nsprpub/configure.in.orig	Tue Nov 25 01:09:04 2003
++++ mozilla/nsprpub/configure.in	Fri Oct 22 16:14:35 2004
+@@ -1483,6 +1483,9 @@ mips-sony-newsos*)
      AC_DEFINE(XP_UNIX)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
 +    AC_DEFINE(HAVE_SOCKLEN_T)
++    AC_DEFINE(_PR_HAVE_GETPROTO_R)
++    AC_DEFINE(_PR_HAVE_GETPROTO_R_INT)
      CFLAGS="$CFLAGS -ansi -Wall"
      CXXFLAGS="$CXXFLAGS -ansi -Wall"
      DLL_SUFFIX=so.1.0
-@@ -1490,12 +1491,8 @@ mips-sony-newsos*)
+@@ -1490,12 +1493,8 @@ mips-sony-newsos*)
      MDCPUCFG_H=_openbsd.cfg
      PR_MD_CSRCS=openbsd.c
      USE_NSPR_THREADS=1
@@ -24,7 +26,7 @@ $OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.1.1.1 2004/01/29 21:57:53 pvalc
      ;;
  
  *-openvms*)
-@@ -2179,7 +2176,8 @@ if test -n "$USE_PTHREADS"; then
+@@ -2179,7 +2178,8 @@ if test -n "$USE_PTHREADS"; then
  	    AC_DEFINE(_THREAD_SAFE)
  	    dnl -pthread links in -lc_r, so don't specify it explicitly.
  	    if test "$ac_cv_have_dash_pthread" = "yes"; then

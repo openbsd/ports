@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 07:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/25 09:02:53 wilfried Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 # currently only supporting i386, but alpha sparc sparc64 are possible
@@ -25,15 +25,15 @@ MASTER_SITES=		http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_SCRIPT=	../configure
+AUTOCONF_VERSION=	2.13
+CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS+=	--disable-debug \
 			--with-pthreads
 
 NO_REGRESS=		Yes
 
-WRKSRC=			${WRKDIST}/mozilla/nsprpub/build
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
+WRKSRC=			${WRKDIST}/mozilla/nsprpub
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nspr
