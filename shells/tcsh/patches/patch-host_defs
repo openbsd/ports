@@ -1,27 +1,33 @@
-$OpenBSD: patch-host.defs,v 1.4 2004/06/01 06:08:51 brad Exp $
---- host.defs.orig	2003-02-08 15:03:25.000000000 -0500
-+++ host.defs	2004-06-01 01:26:56.000000000 -0400
-@@ -500,6 +500,29 @@ machtype: defined(vax)					: "vax"
+$OpenBSD: patch-host_defs,v 1.1 2004/10/11 02:08:53 jolan Exp $
+--- host.defs.orig	Sat Feb  8 14:03:25 2003
++++ host.defs	Sun Oct 10 21:06:53 2004
+@@ -500,6 +500,35 @@ machtype: defined(vax)					: "vax"
  machtype: defined(alpha)				: "alpha"
  enddef	:
  
 +newdef : defined(__OpenBSD__)
 +comment        : OpenBSD
 +vendor : defined(__alpha__)                            : "digital"
++vendor : defined(__amd64__)                            : "amd"
++vendor : defined(__arm__)                              : "arm"
 +vendor : defined(__hppa__)                             : "hp"
 +vendor : defined(M_intel)                              : "intel"
 +vendor : defined(__m68k__)                             : "motorola"
 +vendor : defined(__m88k__)                             : "motorola"
++vendor : defined(__mips__) && defined(__sgi__)         : "sgi"
 +vendor : defined(__powerpc__)                          : "motorola"
 +vendor : defined(__sparc__) || defined(__sparc64__)    : "sun"
 +vendor : defined(__vax__)                              : "digital"
 +hosttype:                                              : "OpenBSD"
 +ostype :                                               : "OpenBSD"
 +machtype: defined(__alpha__)                           : "alpha"
++machtype: defined(__amd64__)                           : "amd64"
++machtype: defined(__arm__)                             : "arm"
 +machtype: defined(__hppa__)                            : "hppa"
 +machtype: defined(M_i386)                              : "i386"
 +machtype: defined(__m68k__)                            : "m68k"
 +machtype: defined(__m88k__)                            : "m88k"
++machtype: defined(__mips__)                            : "mips"
 +machtype: defined(__sparc64__)                         : "sparc64"
 +machtype: defined(__sparc__)                           : "sparc"
 +machtype: defined(__powerpc__)                         : "powerpc"

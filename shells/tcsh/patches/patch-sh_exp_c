@@ -1,6 +1,6 @@
-$OpenBSD: patch-sh.exp.c,v 1.4 2004/06/01 06:08:51 brad Exp $
---- sh.exp.c.orig	2002-03-08 12:36:46.000000000 -0500
-+++ sh.exp.c	2004-06-01 01:26:56.000000000 -0400
+$OpenBSD: patch-sh_exp_c,v 1.1 2004/10/11 02:08:53 jolan Exp $
+--- sh.exp.c.orig	Fri Mar  8 11:36:46 2002
++++ sh.exp.c	Sun Oct 10 21:06:53 2004
 @@ -153,7 +153,7 @@ sh_access(fname, mode)
       * and they define _SC_NGROUPS_MAX without having sysconf
       */
