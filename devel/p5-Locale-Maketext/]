@@ -1,0 +1,10 @@
+Import Perl module Locale::Maketext 1.03.
+Submitted by Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>.
+
+Locale::Maketext is a base class providing a framework for localization 
+and inheritance-based lexicons, as described in an article in The Perl 
+Journal #13 (a corrected version of which appears in this dist).
+CVS: ----------------------------------------------------------------------
+CVS: Enter Log.  Lines beginning with `CVS:' are removed automatically
+CVS: 
+CVS: ----------------------------------------------------------------------

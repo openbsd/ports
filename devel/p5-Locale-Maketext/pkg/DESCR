@@ -1,0 +1,3 @@
+Locale::Maketext is a base class providing a framework for localization 
+and inheritance-based lexicons, as described in an article in The Perl 
+Journal #13 (a corrected version of which appears in this dist).
