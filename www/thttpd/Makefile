@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/28 07:38:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=	"tiny/turbo/throttling HTTP server"
 
 DISTNAME=	thttpd-2.23beta1
 PKGNAME=	thttpd-2.23b1
 CATEGORIES=    	www
-NEED_VERSION=	1.500
 
 HOMEPAGE=	http://www.acme.com/software/thttpd/
 
@@ -19,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.acme.com/software/thttpd/
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin

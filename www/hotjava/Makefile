@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/29 01:30:41 naddy Exp $
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
 
 COMMENT=	"Sun's Hotjava web browser"
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	i386
 
 DISTNAME=	hotjava-3.0
 CATEGORIES=	www
-NEED_VERSION=	1.515
+
 MASTER_SITES=
 DISTFILES=	hjb3_0-linux.sfx
 
@@ -30,6 +30,7 @@ JAR=	${JDK}/bin/jar
 JAVA=	${JDK}/bin/java
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}
 

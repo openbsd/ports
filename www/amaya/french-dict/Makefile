@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:24 espie Exp $
-# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
+# $OpenBSD: Makefile,v 1.8 2002/10/29 01:30:41 naddy Exp $
 #
 # Many variables moved to ../Makefile.inc
-#
 
 COMMENT=	"French dictionary for the Amaya browser/page composer"
 
 PKGNAME=		amaya-french-dict-19961217
 DISTNAME=		French
-NEED_VERSION=		1.496
 
 RUN_DEPENDS=		${DICT_RUN_DEPENDS}
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 DICNAME=		Fprinc
 

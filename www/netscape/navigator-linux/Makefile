@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/08/28 12:19:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/29 01:30:42 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -14,5 +14,6 @@ LOCATION=	linux22/navigator_standalone
 DIRNAME=	navigator-v${V2}.x86-unknown-linux2.2
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

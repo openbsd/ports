@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/20 23:26:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"banner-ad blocking proxy server"
 
 PKGNAME=	junkbuster-2.0.2p1
 DISTNAME=	ijb20
 CATEGORIES=	www
-NEED_VERSION=	1.490
+
 HOMEPAGE=	http://internet.junkbuster.com/
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +17,8 @@ MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/junkbuster

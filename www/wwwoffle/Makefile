@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=		"WWW OFFLine Explorer"
 
 DISTNAME=		wwwoffle-2.5e
 PKGNAME=		wwwoffle-2.5e
 CATEGORIES=		www
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.gedanken.demon.co.uk/wwwoffle/
 
@@ -24,5 +23,7 @@ MAKE_FLAGS=		prefix="${PREFIX}"
 FLAVORS=		de fr es ru pl it
 FLAVOR?=		
 MAKE_ENV=		FLAVOR="${FLAVOR}"
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"squid redirector"
 
 DISTNAME=	jesred-1.2pl1
 PKGNAME=	jesred-1.2.1
 CATEGORIES=     www
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/jesred/
 
@@ -19,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/
 
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jesred ${PREFIX}/libexec

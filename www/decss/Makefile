@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"strip cascading style sheets from webpages"
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6
 CATEGORIES=	www
-NEED_VERSION=	1.515
+
 MASTER_SITES=   ${HOMEPAGE}
 
 HOMEPAGE=       http://www.pigdog.org/decss/
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WRKDIST=	${WRKDIR}/source
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/DeCSS

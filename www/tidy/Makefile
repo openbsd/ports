@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
-# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
+# $OpenBSD: Makefile,v 1.12 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
@@ -8,7 +7,6 @@ DISTNAME=	tidy${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
 CATEGORIES=     www
-NEED_VERSION=	1.515
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
@@ -23,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # override program own Makefile (bad) settings
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin

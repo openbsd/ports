@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
@@ -32,6 +32,8 @@ WWWDIR=		/var/www
 pre-configure:
 	@sed -e "s,@PREFIX@,${PREFIX},g" -e "s,@WWWDIR@,${WWWDIR},g" \
 		${FILESDIR}/config.h.in > ${WRKSRC}/src/config.h
+
+NO_REGRESS=	Yes
 
 do-install:
 .for d in A B C D E bang cd cdd cdr

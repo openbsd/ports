@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/02 20:18:59 heko Exp $
-# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
+# $OpenBSD: Makefile,v 1.9 2002/10/29 01:30:41 naddy Exp $
 #
 # Many variables moved to ../Makefile.inc
-#
 
 COMMENT=		"test-bed browser/authoring tool of the W3C"
 
@@ -11,8 +9,6 @@ DISTNAME=		amaya-src-${AMAYA_VERSION}
 PKGNAME=		amaya-${AMAYA_VERSION}
 
 HOMEPAGE=		http://www.w3.org/Amaya/
-
-NEED_VERSION=		1.454
 
 FLAVORS=		motif gtk
 FLAVOR?=		motif
@@ -58,6 +54,8 @@ post-patch:
 
 post-configure:
 	@cd ${WRKBUILD} && cp Options.orig Options
+
+NO_REGRESS=		Yes
 	
 pre-install:
 	${STRIP} ${WRKBUILD}/bin/amaya

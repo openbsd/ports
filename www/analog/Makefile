@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.36 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
 DISTNAME=	analog-5.24
 CATEGORIES=	www
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
@@ -43,6 +43,8 @@ post-patch:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
 	@sed -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
 		> ${WRKSRC}/anlgform.pl
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/analog

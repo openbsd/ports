@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/10 03:14:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"html editor designed for the experienced web designer"
 
 DISTNAME=	august0.63b.src
 PKGNAME=	august-0.63b
 CATEGORIES=     www
-NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.lls.se/~johanb/august/
 
@@ -23,6 +22,7 @@ RUN_DEPENDS=    :weblint-*:www/weblint \
 		:tk-8.3.*:x11/tk/8.3
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/august

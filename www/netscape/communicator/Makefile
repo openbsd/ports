@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/28 15:54:01 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=	"Netscape Communicator (bsdi)"
 
@@ -12,5 +12,6 @@ LOCATION=	bsdi21/complete_install
 DIRNAME=	communicator-v${V2}.x86-bsdi-bsd2
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

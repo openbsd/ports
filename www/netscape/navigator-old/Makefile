@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/08/28 15:54:01 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/29 01:30:42 naddy Exp $
 
 COMMENT=	"Netscape Navigator"
 
@@ -16,5 +16,7 @@ DISTFILES=	${DISTNAME}.tar.gz:0 ${FORTIFY}.tar.gz:1
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -I../common" \
 		LDFLAGS="" YACC="yacc"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

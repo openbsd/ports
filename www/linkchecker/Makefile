@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/07 22:30:23 matt Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	checks HTML documents for broken links
 
 DISTNAME=	linkchecker-1.3.11
 CATEGORIES=    	www
-NEED_VERSION=	1.500
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -26,6 +25,8 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC}; python${PYTHON_VER} setup.py build
+
+NO_REGRESS=	Yes
 
 do-install:
 	cd ${WRKSRC}; python${PYTHON_VER} setup.py install \

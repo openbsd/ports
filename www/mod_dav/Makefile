@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/13 16:39:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/29 01:30:41 naddy Exp $
 
 COMMENT=	"a class 1 and 2 DAV server for the Apache webserver"
 
@@ -33,6 +33,8 @@ DOCFILES=	README INSTALL LICENSE.html
 post-build:
 	@sed 's,!!PREFIX!!,${PREFIX},' \
 		< ${FILESDIR}/mod_dav-enable > ${WRKBUILD}/mod_dav-enable
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mod_dav-enable ${PREFIX}/sbin
