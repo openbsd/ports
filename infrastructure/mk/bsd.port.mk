@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.452 2001/09/06 21:33:39 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.453 2001/09/07 09:48:23 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1670,7 +1670,7 @@ _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRK
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}"
-	@if [ `${SUDO} ${SH} -c umask` != ${DEF_UMASK} ]; then \
+	@if [ x`${SUDO} ${SH} -c umask` != x${DEF_UMASK} ]; then \
 		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
 		exit 1; \
 	fi
