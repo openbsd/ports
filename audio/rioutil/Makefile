@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/26 07:34:25 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/12 04:22:11 mjc Exp $
 
 COMMENT=		"utility for Rio mp3 players"
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=		usb.7.0::devel/libusb
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libusb
-CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
