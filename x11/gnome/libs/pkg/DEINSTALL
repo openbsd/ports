@@ -1,30 +1,32 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2001/09/18 21:42:04 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2002/02/15 19:19:33 nino Exp $
 #
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
-    echo
-    echo "+--------------- $1"
-    echo "| To really remove $1 from your system you should also"
-    echo "| remove the configuration files from the ${SYSCONFDIR} directory."
-    echo "| If you are planning on installing $1 again in the future"
-    echo "| you can leave it as it is."
-    echo "|"
-    echo "| FYI, the following configuration files belongs to this package:"
-    echo "|"
-    for f in \
-	mime-magic \
-	mime-magic.dat \
-	paper.config \
-	sound/events/gnome.soundlist \
-	sound/events/gtk-events.soundlist
-    do
-	echo "| ${SYSCONFDIR}/$f"
-    done
-    echo "+--------------- $1"
-    echo
+FILES='
+mime-magic
+mime-magic.dat
+paper.config
+sound/events/gnome.soundlist
+sound/events/gtk-events.soundlist
+'
+
+echo
+echo "+--------------- $1"
+echo "| To really remove $1 from your system you should also"
+echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+echo "| If you are planning on installing $1 again in the future"
+echo "| you can leave it as it is."
+echo "|"
+echo "| FYI, the following configuration files belongs to this package:"
+echo "|"
+for f in ${FILES}; do
+  echo "| ${SYSCONFDIR}/$f"
+done
+echo "+--------------- $1"
+echo
 
 exit 0

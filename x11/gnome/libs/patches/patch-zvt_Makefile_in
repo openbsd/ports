@@ -1,7 +1,7 @@
-$OpenBSD: patch-zvt_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- zvt/Makefile.in.orig	Thu Sep 20 16:25:17 2001
-+++ zvt/Makefile.in	Thu Sep 20 16:26:02 2001
-@@ -520,7 +520,7 @@ mostlyclean distclean maintainer-clean
+$OpenBSD: patch-zvt_Makefile_in,v 1.2 2002/02/15 19:19:33 nino Exp $
+--- zvt/Makefile.in.orig	Fri Jan 25 00:58:16 2002
++++ zvt/Makefile.in	Mon Feb  4 12:05:07 2002
+@@ -591,7 +591,7 @@ maintainer-clean-generic clean mostlycle
  
  # We really dont want $(LIBS) linked in with this
  gnome-pty-helper: gnome-pty-helper.o gnome-login-support.o gnome-utmp.o

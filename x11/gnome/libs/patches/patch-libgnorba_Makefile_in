@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgnorba_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- libgnorba/Makefile.in.orig	Thu Sep 20 16:30:17 2001
-+++ libgnorba/Makefile.in	Thu Sep 20 16:30:42 2001
-@@ -1068,7 +1068,7 @@ $(table_built): $(top_srcdir)/idl/Table.
+$OpenBSD: patch-libgnorba_Makefile_in,v 1.2 2002/02/15 19:19:33 nino Exp $
+--- libgnorba/Makefile.in.orig	Fri Jan 25 00:58:19 2002
++++ libgnorba/Makefile.in	Mon Feb  4 12:07:41 2002
+@@ -1173,7 +1173,7 @@ $(table_built): $(top_srcdir)/idl/Table.
  	$(ORBIT_IDL) $(IDL_FLAGS) $(top_srcdir)/idl/Table.idl
  
  install-data-hook:

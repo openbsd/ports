@@ -1,13 +1,13 @@
-$OpenBSD: patch-libgnomeui_gnome-init_c,v 1.3 2001/10/09 16:03:18 naddy Exp $
---- libgnomeui/gnome-init.c.orig	Fri Feb 16 05:22:29 2001
-+++ libgnomeui/gnome-init.c	Mon Oct  8 22:45:35 2001
-@@ -205,32 +205,11 @@ gnome_init_cb(poptContext ctx, enum popt
+$OpenBSD: patch-libgnomeui_gnome-init_c,v 1.4 2002/02/15 19:19:33 nino Exp $
+--- libgnomeui/gnome-init.c.orig	Mon Feb  4 11:44:01 2002
++++ libgnomeui/gnome-init.c	Mon Feb  4 11:46:21 2002
+@@ -205,32 +205,12 @@ gnome_init_cb(poptContext ctx, enum popt
  	switch(reason) {
  	case POPT_CALLBACK_REASON_PRE:
                  {
 -                        char *ctype, *old_ctype = NULL;
-+                        char *old_ctype = NULL;
-                         gboolean ctype_set;
+-                        gboolean ctype_set;
++                        char old_ctype = NULL;
  
                          gnome_segv_setup (FALSE);
 -                        ctype = setlocale (LC_CTYPE, NULL);
@@ -18,9 +18,9 @@ $OpenBSD: patch-libgnomeui_gnome-init_c,v 1.3 2001/10/09 16:03:18 naddy Exp $
 -                                ctype_set = TRUE;
 -                        } else
 -                                ctype_set = FALSE;
--
+ 
                          gtk_set_locale ();
--
+ 
 -                        if (ctype_set) {
 -                                char *setme;
 -
@@ -28,42 +28,10 @@ $OpenBSD: patch-libgnomeui_gnome-init_c,v 1.3 2001/10/09 16:03:18 naddy Exp $
 -                                        setme = g_strconcat ("LC_CTYPE=", old_ctype, NULL);
 -                                        g_free(old_ctype);
 -                                } else
--                                        setme = "LC_CTYPE";
+-                                        setme = "LC_CTYPE=";
 -
 -                                putenv (setme);
 -                        }
                          client = gnome_master_client();
                  }
  		break;
-@@ -686,12 +665,25 @@ imlib_image_loader(GdkWindow   *window,
- 		   GdkColor    *transparent_color,
- 		   const gchar *filename)
- {
--	GdkPixmap *retval;
--	
--	if (gdk_imlib_load_file_to_pixmap ((char *) filename, &retval, mask))
--		return retval;
--	else
--		return NULL;
-+        GdkPixmap *retval;
-+        
-+        if (gdk_imlib_load_file_to_pixmap ((char *) filename, &retval, mask)) {
-+                if (retval) {
-+                        if (mask && *mask)
-+                                gdk_pixmap_ref (*mask);
-+                        gdk_pixmap_ref (retval);
-+                        gdk_imlib_free_pixmap (retval);
-+                } else {
-+                        /* Paranoia */
-+                        if (mask && *mask) {
-+                                gdk_imlib_free_pixmap (*mask);
-+                                *mask = NULL;
-+                        }
-+                }
-+                return retval;
-+        }
-+        else
-+                return NULL;
- }
- 
- static gboolean

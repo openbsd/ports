@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/29 17:45:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/02/15 19:19:33 nino Exp $
 
 COMMENT=		"libraries for the GNOME project"
-V=			1.2.13
-DISTNAME=		gnome-libs-${V}
+
+DISTNAME=		gnome-libs-1.4.1.4
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.473
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-libs
 
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-                        patch-*
+PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+			${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+			patch-*
 
 LIB_DEPENDS=		Imlib,gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \
 			ORBit.5,ORBitutil.5,IIOP.5,ORBitCosNaming.5::devel/ORBit
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,6 +37,16 @@ CONFIGURE_ARGS+=	--disable-gtk-doc
 
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-build:
+        @if pkg dependencies check gnome-libs-\*; then \
+                if pkg dependencies check ${DISTNAME}; then \
+                        :; \
+                else \
+                        echo 1>&2 "Error: you must remove your old gnome-libs first"; \
+                        exit 1; \
+                fi; \
+        fi;
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-libs; \

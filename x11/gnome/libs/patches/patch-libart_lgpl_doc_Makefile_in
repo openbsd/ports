@@ -1,0 +1,12 @@
+$OpenBSD: patch-libart_lgpl_doc_Makefile_in,v 1.1 2002/02/15 19:19:33 nino Exp $
+--- libart_lgpl/doc/Makefile.in.orig	Fri Jan 25 00:58:06 2002
++++ libart_lgpl/doc/Makefile.in	Sun Feb  3 13:26:10 2002
+@@ -256,7 +256,7 @@ install-am: all-am
+ install: install-am
+ uninstall-am:
+ uninstall: uninstall-am
+-all-am: Makefile all-local
++all-am: Makefile
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install

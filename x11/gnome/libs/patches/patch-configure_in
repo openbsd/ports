@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2001/10/29 17:45:44 naddy Exp $
---- configure.in.orig	Fri Mar 16 20:45:53 2001
-+++ configure.in	Fri Oct 26 21:00:33 2001
-@@ -332,8 +332,8 @@ fi
+$OpenBSD: patch-configure_in,v 1.3 2002/02/15 19:19:33 nino Exp $
+--- configure.in.orig	Tue Aug 21 23:40:46 2001
++++ configure.in	Fri Nov 30 22:41:09 2001
+@@ -333,8 +333,8 @@ fi
  
  dnl look for db headers
  if test "$prefer_db1" = "yes"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.2 2001/10/29 17:45:44 naddy Exp $
  	  AC_MSG_ERROR([Berkeley db library required for Gnome])
  	fi
  	AC_DEFINE(PREFER_DB1)
-@@ -431,7 +431,7 @@ else
+@@ -432,7 +432,7 @@ else
    kde_datadir=$with_kde_datadir
  fi
  
