@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/05 14:46:32 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/12 00:16:12 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -9,7 +9,7 @@ COMMENT-mysql=		MySql plugin for qt3
 VERSION=	0.2
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.508
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/qt/
@@ -34,7 +34,7 @@ MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
 
 # For qsettings to write its setup
-MAKE_ENV+=	HOME="${WRKDIST}"
+PORTHOME="${WRKDIST}"
 
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
