@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/18 19:20:10 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/30 17:42:18 chris Exp $
 
-DISTNAME=	Klone348
-PKGNAME=	klone-2.0beta5
+DISTNAME=	Klone349
+PKGNAME=	klone-2.1
 CATEGORIES=	lang
 NEED_VERSION=	1.319
 MASTER_SITES=	ftp://koala.inria.fr/pub/Klone/
