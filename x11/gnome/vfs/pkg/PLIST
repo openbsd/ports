@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/10/21 05:55:16 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/03/28 07:36:48 marcm Exp $
 bin/gnome-vfs-config
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-async-ops.h
@@ -104,7 +104,7 @@ share/examples/gnome-vfs/vfs/modules/default-modules.conf
 @dirrm share/examples/gnome-vfs
 @dirrm lib/vfs/modules
 @dirrm lib/vfs/extfs
-@dirrm lib/vfs
+@comment @dirrm lib/vfs
 @dirrm lib/gnome-vfs-1.0/include
 @dirrm lib/gnome-vfs-1.0
 @dirrm include/gnome-vfs-1.0/libgnomevfs

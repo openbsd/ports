@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/28 07:36:48 marcm Exp $
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-async-ops.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-cancellation.h
@@ -243,7 +243,7 @@ share/schemas/gnome-vfs2/system_http_proxy.schemas
 @dirrm share/examples/gnome-vfs2
 @dirrm lib/vfs/2.0/extfs
 @dirrm lib/vfs/2.0
-@comment (gnome1 conflict) @dirrm lib/vfs
+@dirrm lib/vfs
 @comment @dirrm lib/pkgconfig
 @dirrm lib/gnome-vfs-2.0/modules
 @dirrm lib/gnome-vfs-2.0/include
