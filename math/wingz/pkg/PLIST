@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2001/08/13 18:27:17 pvalchev Exp $
 bin/Wingz
 lib/X11/Wingz/bin/brander
 lib/X11/Wingz/bin/Wingz
@@ -38,6 +39,7 @@ lib/X11/Wingz/REGISTER
 lib/X11/Wingz/INSTALL
 lib/X11/Wingz/SHAREWARE
 lib/X11/Wingz/WngzHelp
+@comment no checksum
 lib/X11/Wingz/.wingz
 @exec chmod 666 %D/%F
 lib/X11/Wingz/DG
