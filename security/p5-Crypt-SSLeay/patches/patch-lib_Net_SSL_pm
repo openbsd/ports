@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Net_SSL_pm,v 1.1 2001/01/09 23:30:44 avsm Exp $
+--- lib/Net/SSL.pm.orig	Tue Jan  9 23:19:00 2001
++++ lib/Net/SSL.pm	Tue Jan  9 23:19:15 2001
+@@ -238,7 +238,7 @@ sub proxy_connect_helper {
+ 	my $pass = $ENV{"HTTPS_PROXY_PASSWORD"};
+ 
+ 	my $credentials = encode_base64("$user:$pass", "");
+-	$connect_string = "CONNECT $host:$port HTTP/1.0\r\n\Proxy-authorization: Basic $credentials\r\n\r\n";
++	$connect_string = "CONNECT $host:$port HTTP/1.0\r\nProxy-authorization: Basic $credentials\r\n\r\n";
+     }else{
+ 	$connect_string = "CONNECT $host:$port HTTP/1.0\r\n\r\n";
+     }
