@@ -3,7 +3,7 @@
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1998/02/10 12:59:09 niklas Exp $
+# $OpenBSD: Makefile,v 1.5 1998/02/12 20:21:07 niklas Exp $
 #
 
 DISTNAME=       gsm-1.0.10
@@ -11,10 +11,6 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	angelos@openbsd.org
-
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		yes
-.endif
 
 WRKSRC=         ${WRKDIR}/gsm-1.0-pl10
 MAN1=		toast.1
