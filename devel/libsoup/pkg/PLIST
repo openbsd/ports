@@ -1,22 +1,62 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:04 naddy Exp $
-include/soup-2.0/libsoup/soup-address.h
-include/soup-2.0/libsoup/soup-context.h
-include/soup-2.0/libsoup/soup-error.h
-include/soup-2.0/libsoup/soup-headers.h
-include/soup-2.0/libsoup/soup-message.h
-include/soup-2.0/libsoup/soup-method.h
-include/soup-2.0/libsoup/soup-misc.h
-include/soup-2.0/libsoup/soup-ntlm.h
-include/soup-2.0/libsoup/soup-server-auth.h
-include/soup-2.0/libsoup/soup-server.h
-include/soup-2.0/libsoup/soup-socket.h
-include/soup-2.0/libsoup/soup-uri.h
-include/soup-2.0/libsoup/soup.h
-lib/libsoup-2.0.a
-lib/libsoup-2.0.la
-lib/pkgconfig/soup-2.0.pc
-libexec/libsoup-ssl-proxy
+@comment $OpenBSD: PLIST,v 1.3 2004/06/25 16:16:51 marcm Exp $
+include/libsoup-${API_VERSION}/libsoup/soup-address.h
+include/libsoup-${API_VERSION}/libsoup/soup-connection.h
+include/libsoup-${API_VERSION}/libsoup/soup-headers.h
+include/libsoup-${API_VERSION}/libsoup/soup-message-filter.h
+include/libsoup-${API_VERSION}/libsoup/soup-message-queue.h
+include/libsoup-${API_VERSION}/libsoup/soup-message.h
+include/libsoup-${API_VERSION}/libsoup/soup-method.h
+include/libsoup-${API_VERSION}/libsoup/soup-misc.h
+include/libsoup-${API_VERSION}/libsoup/soup-server-auth.h
+include/libsoup-${API_VERSION}/libsoup/soup-server-message.h
+include/libsoup-${API_VERSION}/libsoup/soup-server.h
+include/libsoup-${API_VERSION}/libsoup/soup-session-async.h
+include/libsoup-${API_VERSION}/libsoup/soup-session-sync.h
+include/libsoup-${API_VERSION}/libsoup/soup-session.h
+include/libsoup-${API_VERSION}/libsoup/soup-soap-message.h
+include/libsoup-${API_VERSION}/libsoup/soup-soap-response.h
+include/libsoup-${API_VERSION}/libsoup/soup-socket.h
+include/libsoup-${API_VERSION}/libsoup/soup-status.h
+include/libsoup-${API_VERSION}/libsoup/soup-types.h
+include/libsoup-${API_VERSION}/libsoup/soup-uri.h
+include/libsoup-${API_VERSION}/libsoup/soup.h
+lib/libsoup-${API_VERSION}.a
+lib/libsoup-${API_VERSION}.la
+lib/pkgconfig/libsoup-${API_VERSION}.pc
+share/gtk-doc/html/libsoup/SoupAddress.html
+share/gtk-doc/html/libsoup/SoupAuth.html
+share/gtk-doc/html/libsoup/SoupAuthBasic.html
+share/gtk-doc/html/libsoup/SoupAuthDigest.html
+share/gtk-doc/html/libsoup/SoupConnection.html
+share/gtk-doc/html/libsoup/SoupConnectionNTLM.html
+share/gtk-doc/html/libsoup/SoupMessage.html
+share/gtk-doc/html/libsoup/SoupServer.html
+share/gtk-doc/html/libsoup/SoupServerMessage.html
+share/gtk-doc/html/libsoup/SoupSession.html
+share/gtk-doc/html/libsoup/SoupSoapMessage.html
+share/gtk-doc/html/libsoup/SoupSocket.html
+share/gtk-doc/html/libsoup/ch01.html
+share/gtk-doc/html/libsoup/home.png
+share/gtk-doc/html/libsoup/index.html
+share/gtk-doc/html/libsoup/index.sgml
+share/gtk-doc/html/libsoup/left.png
+share/gtk-doc/html/libsoup/libsoup-soup-dns.html
+share/gtk-doc/html/libsoup/libsoup-soup-headers.html
+share/gtk-doc/html/libsoup/libsoup-soup-md5-utils.html
+share/gtk-doc/html/libsoup/libsoup-soup-message-private.html
+share/gtk-doc/html/libsoup/libsoup-soup-message-queue.html
+share/gtk-doc/html/libsoup/libsoup-soup-method.html
+share/gtk-doc/html/libsoup/libsoup-soup-misc.html
+share/gtk-doc/html/libsoup/libsoup-soup-server-auth.html
+share/gtk-doc/html/libsoup/libsoup-soup-ssl.html
+share/gtk-doc/html/libsoup/libsoup-soup-status.html
+share/gtk-doc/html/libsoup/libsoup-soup-uri.html
+share/gtk-doc/html/libsoup/libsoup.devhelp
+share/gtk-doc/html/libsoup/right.png
+share/gtk-doc/html/libsoup/up.png
 %%SHARED%%
-@dirrm lib/pkgconfig
-@dirrm include/soup-2.0/libsoup
-@dirrm include/soup-2.0
+@dirrm share/gtk-doc/html/libsoup
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
+@dirrm include/libsoup-${API_VERSION}/libsoup
+@dirrm include/libsoup-${API_VERSION}

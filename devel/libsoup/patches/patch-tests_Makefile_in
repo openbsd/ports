@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2004/06/25 16:16:51 marcm Exp $
+--- tests/Makefile.in.orig	2004-04-09 21:30:22.000000000 -0700
++++ tests/Makefile.in	2004-04-09 21:31:53.000000000 -0700
+@@ -118,7 +118,7 @@ INCLUDES = \
+ 	$(GLIB_CFLAGS)
+ 
+ 
+-LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la
++LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la $(GLIB_LIBS)
+ 
+ noinst_PROGRAMS = \
+ 	auth-test	\
