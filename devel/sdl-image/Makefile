@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/05 17:35:26 obecian Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/05 19:29:37 obecian Exp $
 
 COMMENT=	"SDL image library"
 
@@ -32,6 +32,7 @@ CONFIGURE_ENV+= 	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 .include <bsd.port.mk>
