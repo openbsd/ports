@@ -1,7 +1,20 @@
-$OpenBSD: patch-configure,v 1.3 2002/09/30 06:44:17 wilfried Exp $
---- configure.orig	Sat Sep 28 10:39:23 2002
-+++ configure	Sat Sep 28 10:39:51 2002
-@@ -4190,7 +4190,7 @@ echo "configure:4179: checking if libsup
+$OpenBSD: patch-configure,v 1.4 2002/11/04 16:59:05 wilfried Exp $
+--- configure.orig	Wed Oct 23 18:10:28 2002
++++ configure	Mon Nov  4 17:26:23 2002
+@@ -1208,9 +1208,9 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ 
+-FL_MAJOR_VERSION=1
+-FL_MINOR_VERSION=1
+-FL_PATCH_VERSION=1
++FL_MAJOR_VERSION=2
++FL_MINOR_VERSION=0
++FL_PATCH_VERSION=0
+ FL_RELEASE_VERSION=
+ FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
+ 
+@@ -8830,7 +8830,7 @@ echo "${ECHO_T}yes" >&6
  	    ;;
      esac
  
@@ -10,7 +23,7 @@ $OpenBSD: patch-configure,v 1.3 2002/09/30 06:44:17 wilfried Exp $
  
      # Show all standard warnings + unused variables when compiling...
      OPTIM="-Wall -Wunused $OPTIM"
-@@ -4217,7 +4217,7 @@ echo "configure:4179: checking if libsup
+@@ -8857,7 +8857,7 @@ echo "${ECHO_T}yes" >&6
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2002/09/17 15:19:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.23 2002/11/04 16:59:05 wilfried Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
-VER=		1.1.0rc6
+VER=		1.1.1
 DISTNAME=	fltk-${VER}
 CATEGORIES=	x11
 

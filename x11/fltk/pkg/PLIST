@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/08/10 19:57:20 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/11/04 16:59:05 wilfried Exp $
 bin/fltk-config
 bin/fluid
 include/FL/Enumerations.H
@@ -259,6 +259,7 @@ share/doc/fltk/Fl_Browser.html
 share/doc/fltk/Fl_Browser_.html
 share/doc/fltk/Fl_Button.html
 share/doc/fltk/Fl_Chart.html
+share/doc/fltk/Fl_Check_Browser.html
 share/doc/fltk/Fl_Check_Button.gif
 share/doc/fltk/Fl_Check_Button.html
 share/doc/fltk/Fl_Choice.html
