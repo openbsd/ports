@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/19 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/21 11:38:52 naddy Exp $
 
 # 
 # What port/package will be created
 #
-VERSION=		2002-07-20
+VERSION=		2002-09-19
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
-DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
+EXTRACT_SUFX=		.tar.bz2
+DISTFILES=		xemacs-sumo-${VERSION}${EXTRACT_SUFX}
+SUP_mule=		xemacs-mule-sumo-${VERSION}${EXTRACT_SUFX}
+SUPDISTFILES=		${SUP_mule}
 
 CATEGORIES=     	editors
 
@@ -45,8 +48,12 @@ FLAVORS=mule
 FLAVOR?=
 
 .if ${FLAVOR:L:Mmule}
-DISTFILES+= xemacs-mule-sumo-${VERSION}.tar.gz
+DISTFILES+= ${SUP_mule}
 .endif
+
+# have to force the bzip2 dependency, since setting extract_only to nil
+# does not set the automatic one
+BUILD_DEPENDS=		:bzip2-*:archivers/bzip2
 
 EXTRACT_ONLY=
 NO_BUILD=		Yes
@@ -54,7 +61,7 @@ NO_BUILD=		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xemacs
 .for archive in ${DISTFILES}
-	tar -C ${PREFIX}/lib/xemacs -xzf ${FULLDISTDIR}/${archive} 
+	${BZIP2} -dc ${FULLDISTDIR}/${archive} |tar -C ${PREFIX}/lib/xemacs -xf -
 .endfor
 
 .include <bsd.port.mk>

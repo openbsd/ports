@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.mule,v 1.5 2002/09/19 18:28:55 naddy Exp $
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/latin-unity.info
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/lookup.info
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/mule-ucs.info
@@ -310,8 +309,8 @@ lib/xemacs/mule-packages/lisp/lookup/auto-autoloads.el
 lib/xemacs/mule-packages/lisp/lookup/auto-autoloads.elc
 lib/xemacs/mule-packages/lisp/lookup/custom-load.el
 lib/xemacs/mule-packages/lisp/lookup/custom-load.elc
-lib/xemacs/mule-packages/lisp/lookup/evi${FLAVOR_EXT}.el
-lib/xemacs/mule-packages/lisp/lookup/evi${FLAVOR_EXT}.elc
+lib/xemacs/mule-packages/lisp/lookup/evi-mule.el
+lib/xemacs/mule-packages/lisp/lookup/evi-mule.elc
 lib/xemacs/mule-packages/lisp/lookup/evi.el
 lib/xemacs/mule-packages/lisp/lookup/evi.elc
 lib/xemacs/mule-packages/lisp/lookup/lookup-compile.el
@@ -378,8 +377,8 @@ lib/xemacs/mule-packages/lisp/mule-base/cyril-util.el
 lib/xemacs/mule-packages/lisp/mule-base/cyril-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/ethio-util.el
 lib/xemacs/mule-packages/lisp/mule-base/ethio-util.elc
-lib/xemacs/mule-packages/lisp/mule-base/isearch${FLAVOR_EXT}.el
-lib/xemacs/mule-packages/lisp/mule-base/isearch${FLAVOR_EXT}.elc
+lib/xemacs/mule-packages/lisp/mule-base/isearch-mule.el
+lib/xemacs/mule-packages/lisp/mule-base/isearch-mule.elc
 lib/xemacs/mule-packages/lisp/mule-base/japan-util.el
 lib/xemacs/mule-packages/lisp/mule-base/japan-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/kana-keyboard.el

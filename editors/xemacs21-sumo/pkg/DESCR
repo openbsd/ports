@@ -1,26 +1,31 @@
 Here is a list of bundled XEmacs' packages : (note that some are MULE-only)
 
-           ada	          apel	        auctex	          bbdb
-         build	     c-support	          calc	      calendar
-       cc-mode	        cookie	         crisp	         debug
-    dictionary	         dired	        edebug	         edict
-         ediff	    edit-utils	           edt	           efs
-       egg-its	         eieio	          elib	        emerge
-        eshell	         eterm	          eudc	      footnote
-         forms	    frame-icon	    fsf-compat	         games
-         gnats	          gnus	hm--html-menus	       idlwave
-         igrep	         ilisp	        ispell	           jde
-          leim	        locale	        lookup	      mail-lib
-     mailcrypt	           mew	          mh-e	          mine
-    misc-games	     mule-base	     net-utils	      os-utils
-            pc	       pcl-cvs	     pcomplete	    prog-modes
-         psgml	        reftex	         rmail	        scheme
-      semantic	          sgml	     sh-script	           skk
-        slider	     sounds-au	    sounds-wav	      speedbar
-       strokes	     supercite	       texinfo	    text-modes
-      textools	          time	            tm	      tooltalk
-           tpu	            vc	         vc-cc	          vhdl
-  view-process	         viper	            vm	            w3
-   xemacs-base	  xemacs-devel	  xslt-process	        zenirc
+            ada	           apel	         auctex           bbdb
+          build	      c-support	           calc       calendar
+        cc-mode	      clearcase	         cookie          crisp
+          debug	     dictionary	          dired     docbookide
+        ecrypto	         edebug	          edict          ediff
+     edit-utils	            edt	            efs        egg-its
+          eieio	           elib	         emerge         eshell
+            ess	          eterm	           eudc       footnote
+          forms	     frame-icon	     fsf-compat          games
+          gnats	           gnus	   haskell-mode hm--html-menus
+        ibuffer	        idlwave	          igrep          ilisp
+         ispell	            jde	    latin-unity           leim
+          liece	         locale	         lookup       mail-lib
+      mailcrypt	            mew	           mh-e           mine
+     misc-games	       mmm-mode	      mule-base       mule-ucs
+      net-utils	          ocaml	       os-utils             pc
+        pcl-cvs	      pcomplete	     prog-modes       ps-print
+          psgml	     psgml-dtds	         reftex          rmail
+           sasl	         scheme	       semantic           sgml
+      sh-script	          sieve	            skk         slider
+       sml-mode	      sounds-au	     sounds-wav       speedbar
+        strokes	      supercite	        texinfo     text-modes
+       textools	           time	             tm       tooltalk
+            tpu	          tramp	             vc          vc-cc
+           vhdl	   view-process	          viper             vm
+             w3	    xemacs-base	   xemacs-devel         xslide
+   xslt-process	         zenirc
 
 WWW: ${HOMEPAGE}
