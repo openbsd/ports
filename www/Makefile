@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2001/08/15 06:48:45 shell Exp $
+# $OpenBSD: Makefile,v 1.66 2001/08/22 17:44:30 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -25,6 +25,7 @@
      SUBDIR += http_ping
      SUBDIR += hotjava
      SUBDIR += jakarta-tomcat
+     SUBDIR += jesred
      SUBDIR += jserv
      SUBDIR += junkbuster
      SUBDIR += libghttp
