@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.675 2005/01/02 23:33:09 couderc Exp $
+#	$OpenBSD: bsd.port.mk,v 1.676 2005/01/04 20:44:45 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1197,6 +1197,8 @@ _DO_LOCK=\
 .else
 _DO_LOCK=:
 .endif
+
+_size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}' 
 ###
 ### end of variable setup. Only targets now
 ###
@@ -1259,6 +1261,10 @@ makesum: fetch-all
 		for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
+	@cd ${DISTDIR} && \
+		for file in ${_CKSUMFILES}; do \
+			${_size_fragment} >> ${CHECKSUM_FILE}; \
+		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 .endif
 
@@ -1270,6 +1276,10 @@ addsum: fetch-all
 	 	for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
+	@cd ${DISTDIR} && \
+		for file in ${_CKSUMFILES}; do \
+			${_size_fragment} >> ${CHECKSUM_FILE}; \
+		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
 		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
@@ -1949,7 +1959,19 @@ ${_F}:
 	for site in $$sites; do \
 		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
 		if ${FETCH_CMD} $${site}$$f; then \
-				exit 0; \
+				file=${_F:S@^${DISTDIR}/@@}; \
+				ck=`${_size_fragment}`; \
+				if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+					${ECHO_MSG} ">> Size matches for ${_F}"; \
+					exit 0; \
+				else \
+					if grep -q "SIZE ($$file)" ${CHECKSUM_FILE}; then \
+						${ECHO_MSG} ">> Size does not match for ${_F}"; \
+					else \
+						${ECHO_MSG} ">> No size recorded for ${_F}"; \
+						exit 0; \
+					fi; \
+				fi; \
 		fi; \
 	done; exit 1
 .  endif
