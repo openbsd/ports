@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/04/11 16:20:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/04/22 15:00:25 brad Exp $
 
 COMMENT=	"CDE like desktop with Gtk"
 
@@ -34,9 +34,9 @@ CONFIGURE_ARGS=	--disable-arts \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-locale-dir="${PREFIX}/share/locale" \
 		--with-xpm="${X11BASE}" \
-		--enable-xft=yes \
+		--enable-xft \
 		--enable-taskbar
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/freetype2" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
