@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/07/19 14:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2004/12/30 19:04:22 alek Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -27,6 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		GL ICE SM X11 Xext Xpm c m stdc++
 
 USE_X11=		Yes
 USE_LIBTOOL=	Yes
@@ -42,6 +43,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS+=	--with-esd-sound
 LIB_DEPENDS+=		esd.2::audio/esound
+WANTLIB+=		audiofile
 .else
 CONFIGURE_ARGS+=	--without-esd-sound
 .endif

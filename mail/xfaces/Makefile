@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/30 01:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/12/30 19:04:22 alek Exp $
 
 COMMENT=	"mail image display for X11"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 LIB_DEPENDS=	compface::mail/faces
 
