@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/19 21:04:54 jakob Exp $
 
 COMMENT=	"SSH remote version scanner"
 
-DISTNAME=	scanssh-1.6b
+DISTNAME=	scanssh-2.0
 CATEGORIES=	security
 MASTER_SITES=	http://monkey.org/~provos/ \
 		ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/scanssh/
@@ -21,6 +21,6 @@ CONFIGURE_STYLE= gnu
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/scanssh
+#WRKDIST=	${WRKDIR}/scanssh
 
 .include <bsd.port.mk>
