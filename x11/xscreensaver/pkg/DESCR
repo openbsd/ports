@@ -3,9 +3,9 @@ been idle for a period, and then runs a graphics demo chosen at
 random. It turns off as soon as there is any mouse or keyboard
 activity. It can also lock the screen (immediately, after a longer
 idle period, or on demand.) xscreensaver consists of two parts:
-xscreensaver itself, the (the ``driver'' or ``daemon''), which
-detects idleness and does locking; and the many graphics demos that
-are launched by xscreensaver.
+xscreensaver itself, the ``driver'' or ``daemon'', which detects
+idleness and does locking; and the many graphics demos that are
+launched by xscreensaver.
 
 Any X program that can draw on the root window can be used with
 xscreensaver, regardless of how that program is written, or what
