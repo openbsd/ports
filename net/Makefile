@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2003/02/21 13:04:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.254 2003/03/29 02:56:41 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += cvsup
      SUBDIR += cvsup,no_x11
 #    SUBDIR += cvsup-mirror
+     SUBDIR += cvsync
      SUBDIR += dc_gui
      SUBDIR += dctc
      SUBDIR += ddclient
