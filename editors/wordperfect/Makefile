@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/01 19:42:53 naddy Exp $
 
 COMMENT=	"graphical word processor ported from Windows"
 
@@ -23,7 +23,7 @@ MASTER_SITES=	see_do-fetch_target
 
 DISTNAME=	WordPerfect
 
-RUN_DEPENDS=    ::emulators/linux_lib
+RUN_DEPENDS=    ::emulators/redhat/base
 
 IS_INTERACTIVE=	yes
 
