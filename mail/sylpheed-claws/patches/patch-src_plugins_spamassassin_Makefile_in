@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
---- src/plugins/spamassassin/Makefile.in.orig	Sun Apr 13 04:25:54 2003
-+++ src/plugins/spamassassin/Makefile.in	Sun Apr 13 04:26:10 2003
+$OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.2 2003/04/29 13:08:13 wilfried Exp $
+--- src/plugins/spamassassin/Makefile.in.orig	Wed Mar 12 12:18:01 2003
++++ src/plugins/spamassassin/Makefile.in	Tue Apr 29 13:23:21 2003
 @@ -63,6 +63,7 @@ CFLAGS = @CFLAGS@
  CPP = @CPP@
  
@@ -9,3 +9,11 @@ $OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.1.1.1 2003/04/17 10:13:
  	$(ASPELL_CFLAGS) \
  	$(GLIB_CFLAGS) \
  	$(GTK_CFLAGS) \
+@@ -114,7 +115,6 @@ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LIBICONV = @LIBICONV@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBICONV = @LTLIBICONV@

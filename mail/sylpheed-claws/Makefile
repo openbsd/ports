@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/22 14:10:11 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/29 13:08:12 wilfried Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-spamassassin=	"Spamassassin plugin for sylpheed-claws"
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--enable-gdk-pixbuf --disable-imlib
 .endif
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=              sylpheed-claws${i}-${VERSION}
+FULLPKGNAME$i=		sylpheed-claws${i}-${VERSION}
 .endfor
 
 SUBPACKAGE?=
