@@ -1,0 +1,113 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}/privoxy
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/privoxy
+LOG_DIR=/var/log/privoxy
+PRIVOXYUSER=privoxy
+PRIVOXYGROUP=privoxy
+
+do_install_usergroup()
+{
+  # create privoxy user and group
+  groupinfo -e $PRIVOXYGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $PRIVOXYGROUP group for Privoxy"
+  else
+    echo "===> Creating $PRIVOXYGROUP group for Privoxy"
+    groupadd $PRIVOXYGROUP
+  fi
+  userinfo -e $PRIVOXYUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $PRIVOXYUSER user for Privoxy"
+  else
+    echo "===> Creating $PRIVOXYUSER user for Privoxy"
+    useradd -g $PRIVOXYGROUP -d /nonexistent -L daemon -c 'Privoxy Account' -s /sbin/nologin $PRIVOXYUSER
+  fi
+}
+
+do_message_top()
+{
+    echo
+    echo "+---------------"
+}
+
+do_notice_conf()
+{
+    echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
+    echo "| been changed.  You may want to compare them to the current samples in"
+    echo "| $SAMPLE_CONFIG_DIR and update your configuration"
+    echo "| files as needed."
+    echo "|"
+}
+
+do_install_conf()
+{
+    install -d -o root -g $PRIVOXYGROUP -m 755 $CONFIG_DIR
+    install -d -o root -g $PRIVOXYGROUP -m 755 $CONFIG_DIR/templates
+    install -o $PRIVOXYUSER -g $PRIVOXYGROUP -m 644 $SAMPLE_CONFIG_DIR/config $CONFIG_DIR
+    install -o $PRIVOXYUSER -g $PRIVOXYGROUP -m 644 $SAMPLE_CONFIG_DIR/*.action $CONFIG_DIR
+    install -o $PRIVOXYUSER -g $PRIVOXYGROUP -m 644 $SAMPLE_CONFIG_DIR/default.filter $CONFIG_DIR
+    install -o $PRIVOXYUSER -g $PRIVOXYGROUP -m 644 $SAMPLE_CONFIG_DIR/templates/* $CONFIG_DIR/templates
+    echo "| The $1 configuration files have been installed"
+    echo "| in $CONFIG_DIR."
+    echo "|"
+    echo "| Please view these files and change the configuration to meet your needs."
+    echo "|"
+}
+
+do_install_log()
+{
+    install -d -o root -g $PRIVOXYGROUP -m 775 $LOG_DIR
+    echo "| The $1 log directory has been installed"
+    echo "| in $LOG_DIR."
+    echo "|"
+}
+
+do_message_bottom()
+{
+    echo "| You will need to edit /etc/rc.local as appropriate and add a"
+    echo "| section similiar to the following:"
+    echo "|"
+    echo "|     if [ -x ${PREFIX}/sbin/privoxy ]; then"
+    echo "|             echo -n ' privoxy';"
+    echo "|             ${PREFIX}/sbin/privoxy --user privoxy.privoxy ${SYSCONFDIR}/privoxy/config"
+    echo "|     fi"
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_install_usergroup
+	;;
+    POST-INSTALL)
+	do_message_top
+	if [ ! -d $CONFIG_DIR ]; then
+	   do_install_conf $1
+	else
+	   do_notice_conf $1
+	fi
+	if [ ! -d $LOG_DIR ]; then
+	   do_install_log $1
+	fi
+	do_message_bottom
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

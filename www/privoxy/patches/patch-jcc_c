@@ -1,0 +1,39 @@
+$OpenBSD: patch-jcc_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- jcc.c.orig	Sun Nov 17 12:20:12 2002
++++ jcc.c	Sun Nov 17 12:47:28 2002
+@@ -845,7 +845,7 @@ static void chat(struct client_state *cs
+ 
+    if (http->cmd == NULL)
+    {
+-      strcpy(buf, CHEADER);
++      strlcpy(buf, CHEADER, sizeof(buf));
+       write_socket(csp->cfd, buf, strlen(buf));
+ 
+       log_error(LOG_LEVEL_CLF, "%s - - [%T] \" \" 400 0", csp->ip_addr_str);
+@@ -924,7 +924,7 @@ static void chat(struct client_state *cs
+            || (csp->action->flags & ACTION_LIMIT_CONNECT
+               && !match_portlist(csp->action->string[ACTION_STRING_LIMIT_CONNECT], csp->http->port)) )
+       {
+-         strcpy(buf, CFORBIDDEN);
++         strlcpy(buf, CFORBIDDEN, sizeof(buf));
+          write_socket(csp->cfd, buf, strlen(buf));
+ 
+          log_error(LOG_LEVEL_CONNECT, "Denying suspicious CONNECT request from %s", csp->ip_addr_str);
+@@ -1370,7 +1370,7 @@ static void chat(struct client_state *cs
+              * This is NOT the body, so
+              * Let's pretend the server just sent us a blank line.
+              */
+-            len = sprintf(buf, "\r\n");
++            len = snprintf(buf, sizeof(buf), "\r\n");
+ 
+             /*
+              * Now, let the normal header parsing algorithm below do its
+@@ -2297,7 +2297,7 @@ static void listen_loop(void)
+ 
+             log_error(LOG_LEVEL_ERROR, "can't fork: %E");
+ 
+-            sprintf(buf , "Privoxy: can't fork: errno = %d", errno);
++            snprintf(buf, sizeof(buf), "Privoxy: can't fork: errno = %d", errno);
+ 
+             write_socket(csp->cfd, buf, strlen(buf));
+             close_socket(csp->cfd);

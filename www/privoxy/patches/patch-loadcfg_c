@@ -1,0 +1,30 @@
+$OpenBSD: patch-loadcfg_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- loadcfg.c.orig	Sun Nov 17 12:48:16 2002
++++ loadcfg.c	Sun Nov 17 12:49:47 2002
+@@ -626,7 +626,7 @@ struct configuration_spec * load_config(
+       int vec_count;
+       char *vec[3];
+ 
+-      strcpy(tmp, buf);
++      strlcpy(tmp, buf, sizeof(tmp));
+ 
+       /* Copy command (i.e. up to space or tab) into cmd */
+       p = buf;
+@@ -644,7 +644,7 @@ struct configuration_spec * load_config(
+       }
+ 
+       /* Copy the argument into arg */
+-      strcpy(arg, p);
++      strlcpy(arg, p, sizeof(arg));
+ 
+       /* Should never happen, but check this anyway */
+       if (*cmd == '\0')
+@@ -1274,7 +1274,7 @@ struct configuration_spec * load_config(
+  * log-font-name fontnane
+  * *************************************************************************/
+          case hash_log_font_name :
+-            strcpy( g_szFontFaceName, arg );
++            strlcpy( g_szFontFaceName, arg , sizeof(g_szFontFaceName));
+             continue;
+ 
+ /* *************************************************************************

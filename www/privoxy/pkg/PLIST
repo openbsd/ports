@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+man/man1/privoxy.1
+sbin/privoxy
+share/doc/privoxy/README
+share/examples/privoxy/config
+share/examples/privoxy/default.action
+share/examples/privoxy/default.filter
+share/examples/privoxy/standard.action
+share/examples/privoxy/templates/blocked
+share/examples/privoxy/templates/cgi-error-404
+share/examples/privoxy/templates/cgi-error-bad-param
+share/examples/privoxy/templates/cgi-error-disabled
+share/examples/privoxy/templates/cgi-error-file
+share/examples/privoxy/templates/cgi-error-file-read-only
+share/examples/privoxy/templates/cgi-error-modified
+share/examples/privoxy/templates/cgi-error-parse
+share/examples/privoxy/templates/cgi-style.css
+share/examples/privoxy/templates/connect-failed
+share/examples/privoxy/templates/default
+share/examples/privoxy/templates/edit-actions-add-url-form
+share/examples/privoxy/templates/edit-actions-for-url
+share/examples/privoxy/templates/edit-actions-for-url-filter
+share/examples/privoxy/templates/edit-actions-list
+share/examples/privoxy/templates/edit-actions-list-button
+share/examples/privoxy/templates/edit-actions-list-section
+share/examples/privoxy/templates/edit-actions-list-url
+share/examples/privoxy/templates/edit-actions-remove-url-form
+share/examples/privoxy/templates/edit-actions-url-form
+share/examples/privoxy/templates/mod-local-help
+share/examples/privoxy/templates/mod-support-and-service
+share/examples/privoxy/templates/mod-title
+share/examples/privoxy/templates/mod-unstable-warning
+share/examples/privoxy/templates/no-such-domain
+share/examples/privoxy/templates/show-request
+share/examples/privoxy/templates/show-status
+share/examples/privoxy/templates/show-status-file
+share/examples/privoxy/templates/show-url-info
+share/examples/privoxy/templates/show-version
+share/examples/privoxy/templates/toggle
+share/examples/privoxy/templates/toggle-mini
+share/examples/privoxy/templates/untrusted
+share/examples/privoxy/user.action
+@dirrm share/examples/privoxy/templates
+@dirrm share/examples/privoxy
+@dirrm share/doc/privoxy

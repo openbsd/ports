@@ -1,0 +1,12 @@
+$OpenBSD: patch-gateway_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- gateway.c.orig	Sun Nov 17 12:20:12 2002
++++ gateway.c	Sun Nov 17 12:46:58 2002
+@@ -316,7 +316,7 @@ static jb_socket socks4_connect(const st
+             errno = EINVAL;
+             return(JB_INVALID_SOCKET);
+          }
+-         strcpy(cbuf + csiz, target_host);
++         strlcpy(cbuf + csiz, target_host, sizeof(cbuf) - csiz);
+          csiz = n;
+          break;
+       default:

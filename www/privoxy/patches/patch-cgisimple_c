@@ -1,0 +1,29 @@
+$OpenBSD: patch-cgisimple_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- cgisimple.c.orig	Sun Nov 17 12:20:12 2002
++++ cgisimple.c	Sun Nov 17 12:21:30 2002
+@@ -843,13 +843,13 @@ jb_err cgi_show_status(struct client_sta
+       perc_rej = (float)local_urls_rejected * 100.0F /
+             (float)local_urls_read;
+ 
+-      sprintf(buf, "%d", local_urls_read);
++      snprintf(buf, sizeof(buf), "%d", local_urls_read);
+       if (!err) err = map(exports, "requests-received", 1, buf, 1);
+ 
+-      sprintf(buf, "%d", local_urls_rejected);
++      snprintf(buf, sizeof(buf), "%d", local_urls_rejected);
+       if (!err) err = map(exports, "requests-blocked", 1, buf, 1);
+ 
+-      sprintf(buf, "%6.2f", perc_rej);
++      snprintf(buf, sizeof(buf), "%6.2f", perc_rej);
+       if (!err) err = map(exports, "percent-blocked", 1, buf, 1);
+    }
+ 
+@@ -1382,7 +1382,7 @@ static char *show_rcs(void)
+ #define SHOW_RCS(__x)              \
+    {                               \
+       extern const char __x[];     \
+-      sprintf(buf, "%s\n", __x);   \
++      snprintf(buf, sizeof(buf), "%s\n", __x);   \
+       string_append(&result, buf); \
+    }
+ 

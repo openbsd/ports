@@ -1,0 +1,21 @@
+$OpenBSD: patch-miscutil_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- miscutil.c.orig	Sun Nov 17 12:20:12 2002
++++ miscutil.c	Sun Nov 17 12:50:52 2002
+@@ -337,7 +337,7 @@ char *strdup( const char *s )
+ 
+    if (result != NULL)
+    {
+-      strcpy( result, s );
++      strlcpy( result, s, sizeof(result) );
+    }
+ 
+    return( result );
+@@ -375,7 +375,7 @@ char *safe_strerror(int err)
+ 
+    if (s == NULL)
+    {
+-      sprintf(buf, "(errno = %d)", err);
++      snprintf(buf, sizeof(buf), "(errno = %d)", err);
+       s = buf;
+    }
+ 

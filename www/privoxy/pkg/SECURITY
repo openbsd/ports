@@ -1,0 +1,12 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+
+sprintf() and strcpy() changed to snprintf() and strlcpy()
+respectively in:
+actions.c, cgi.c, cgisimple.c, errlog.c, filters.c, 
+gateway.c, jcc.c, loadcfg.c, miscutil.c, urlmatch.c
+
+The privoxy daemon should be run as a non-root user.  The
+install sets up a privoxy user and group, installs config
+and log files with that user and group, and points the 
+user at the way to start the daemon with the user and 
+group.

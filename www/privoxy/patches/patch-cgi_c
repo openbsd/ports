@@ -1,0 +1,30 @@
+$OpenBSD: patch-cgi_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- cgi.c.orig	Sun Nov 17 11:26:36 2002
++++ cgi.c	Sun Nov 17 12:19:16 2002
+@@ -1296,7 +1296,7 @@ jb_err cgi_error_unknown(struct client_s
+    rsp->head_length = 0;
+    rsp->is_static = 0;
+ 
+-   sprintf(errnumbuf, "%d", error_to_report);
++   snprintf(errnumbuf, sizeof(errnumbuf), "%d", error_to_report);
+ 
+    rsp->body = malloc(strlen(body_prefix) + strlen(errnumbuf) + strlen(body_suffix) + 1);
+    if (rsp->body == NULL)
+@@ -1481,7 +1481,7 @@ struct http_response *finish_http_respon
+    /* 
+     * Fill in the HTTP Status
+     */
+-   sprintf(buf, "HTTP/1.0 %s", rsp->status ? rsp->status : "200 OK");
++   snprintf(buf, sizeof(buf), "HTTP/1.0 %s", rsp->status ? rsp->status : "200 OK");
+    err = enlist_first(rsp->headers, buf);
+ 
+    /* 
+@@ -1493,7 +1493,7 @@ struct http_response *finish_http_respon
+    }
+    if (!err)
+    {
+-      sprintf(buf, "Content-Length: %d", (int)rsp->content_length);
++      snprintf(buf, sizeof(buf), "Content-Length: %d", (int)rsp->content_length);
+       err = enlist(rsp->headers, buf);
+    }
+ 

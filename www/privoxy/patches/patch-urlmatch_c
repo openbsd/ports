@@ -1,0 +1,12 @@
+$OpenBSD: patch-urlmatch_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- urlmatch.c.orig	Sun Nov 17 12:20:12 2002
++++ urlmatch.c	Sun Nov 17 12:33:11 2002
+@@ -664,7 +664,7 @@ jb_err create_url_spec(struct url_spec *
+          return JB_ERR_MEMORY;
+       }
+ 
+-      sprintf(rebuf, "^(%s)", url->path);
++      snprintf(rebuf, sizeof(rebuf), "^(%s)", url->path);
+ 
+       errcode = regcomp(url->preg, rebuf,
+             (REG_EXTENDED|REG_NOSUB|REG_ICASE));

@@ -1,0 +1,55 @@
+$OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- errlog.c.orig	Sun Nov 17 12:20:12 2002
++++ errlog.c	Sun Nov 17 12:45:19 2002
+@@ -540,7 +540,7 @@ void log_error(int loglevel, char *fmt, 
+          case 'd':
+             ival = va_arg( ap, int );
+             oldoutc = outc;
+-            outc += sprintf(tempbuf, "%d", ival);
++            outc += snprintf(tempbuf, sizeof(tempbuf), "%d", ival);
+             if (outc < BUFFER_SIZE-1) 
+             {
+                strcpy(outbuf + oldoutc, tempbuf);
+@@ -553,7 +553,7 @@ void log_error(int loglevel, char *fmt, 
+          case 'u':
+             uval = va_arg( ap, unsigned );
+             oldoutc = outc;
+-            outc += sprintf(tempbuf, "%u", uval);
++            outc += snprintf(tempbuf, sizeof(tempbuf), "%u", uval);
+             if (outc < BUFFER_SIZE-1) 
+             {
+                strcpy(outbuf + oldoutc, tempbuf);
+@@ -570,13 +570,13 @@ void log_error(int loglevel, char *fmt, 
+             {
+                lval = va_arg( ap, long );
+                oldoutc = outc;
+-               outc += sprintf(tempbuf, "%ld", lval);
++               outc += snprintf(tempbuf, sizeof(tempbuf), "%ld", lval);
+             }
+             else if (ch == 'u')
+             {
+                ulval = va_arg( ap, unsigned long );
+                oldoutc = outc;
+-               outc += sprintf(tempbuf, "%lu", ulval);
++               outc += snprintf(tempbuf, sizeof(tempbuf), "%lu", ulval);
+             }
+             else
+             {
+@@ -668,7 +668,7 @@ void log_error(int loglevel, char *fmt, 
+ #endif /* ndef HAVE_STRERROR */
+             if (sval == NULL)
+             {
+-               sprintf(tempbuf, "(errno = %d)", ival);
++               snprintf(tempbuf, sizeof(tempbuf), "(errno = %d)", ival);
+                sval = tempbuf;
+             }
+ #endif /* ndef _WIN32 */
+@@ -714,7 +714,7 @@ void log_error(int loglevel, char *fmt, 
+                hrs = ((days < -1 ? 24 : 1 < days ? -24 : days * 24) + tm_now->tm_hour - gmt.tm_hour); 
+                mins = hrs * 60 + tm_now->tm_min - gmt.tm_min; 
+                strftime (tempbuf, BUFFER_SIZE-6, "%d/%b/%Y:%H:%M:%S ", tm_now); 
+-               sprintf (tempbuf + strlen(tempbuf), "%+03d%02d", mins / 60, abs(mins) % 60); 
++               snprintf (tempbuf + strlen(tempbuf), sizeof(tempbuf) - strlen(tempbuf), "%+03d%02d", mins / 60, abs(mins) % 60); 
+             }
+             oldoutc = outc;
+             outc += strlen(tempbuf);

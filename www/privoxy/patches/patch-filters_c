@@ -1,0 +1,21 @@
+$OpenBSD: patch-filters_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- filters.c.orig	Thu Aug  1 13:18:28 2002
++++ filters.c	Sun Nov 17 12:56:21 2002
+@@ -950,7 +950,7 @@ struct http_response *trust_url(struct c
+    p = strdup("");
+    for (tl = csp->config->trust_list; (t = *tl) != NULL ; tl++)
+    {
+-      sprintf(buf, "<li>%s</li>\n", t->spec);
++      snprintf(buf, sizeof(buf), "<li>%s</li>\n", t->spec);
+       string_append(&p, buf);
+    }
+    err = map(exports, "trusted-referrers", 1, p, 0);
+@@ -972,7 +972,7 @@ struct http_response *trust_url(struct c
+       p = strdup("");
+       for (l = csp->config->trust_info->first; l ; l = l->next)
+       {
+-         sprintf(buf, "<li> <a href=\"%s\">%s</a><br>\n",l->str, l->str);
++         snprintf(buf, sizeof(buf), "<li> <a href=\"%s\">%s</a><br>\n",l->str, l->str);
+          string_append(&p, buf);
+       }
+       err = map(exports, "trust-info", 1, p, 0);

@@ -1,0 +1,21 @@
+$OpenBSD: patch-actions_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- actions.c.orig	Sun May 26 08:13:16 2002
++++ actions.c	Sun Nov 17 12:55:23 2002
+@@ -1194,7 +1194,7 @@ static int load_one_actions_file(struct 
+             init_action(cur_action);
+ 
+             /* trim { */
+-            strcpy(actions_buf, buf + 1);
++            strlcpy(actions_buf, buf + 1, sizeof(actions_buf));
+ 
+             /* check we have a trailing } and then trim it */
+             end = actions_buf + strlen(actions_buf) - 1;
+@@ -1294,7 +1294,7 @@ static int load_one_actions_file(struct 
+ 
+          new_alias->name = strdup(buf);
+ 
+-         strcpy(actions_buf, start);
++         strlcpy(actions_buf, start, sizeof(actions_buf));
+ 
+          if (get_actions(actions_buf, alias_list, new_alias->action))
+          {

@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+--- configure.in.orig	Mon Nov 25 21:04:43 2002
++++ configure.in	Mon Nov 25 21:05:32 2002
+@@ -1,4 +1,4 @@
+-dnl Process this file with autoconf to produce a configure script.
++/rdnl Process this file with autoconf to produce a configure script.
+ dnl 
+ dnl $Id: patch-configure_in,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+ dnl 
+@@ -617,24 +617,6 @@ if test $dodk != no; then
+ fi
+ AC_SUBST(WDUMP)
+ AC_SUBST(DB2HTML)
+-
+-dnl If we use rpm, we need to check where %_topdir is
+-AC_CHECK_PROGS(RPMBIN,rpm,false)
+-if test $RPMBIN != false; then
+-		RPM_BASE=`rpm --eval "%{_topdir}"`
+-		if test "$RPM_BASE" = ""; then
+-			RPM_BASE=/usr/src/redhat
+-		fi
+-fi
+-AC_SUBST(RPM_BASE)
+-
+-dnl Check for jade, so we can build the documentation
+-AC_CHECK_PROGS(JADEBIN,jade openjade,false)
+-AC_SUBST(JADEBIN)
+-
+-dnl Check for man2html for docs.
+-AC_CHECK_PROGS(MAN2HTML,man2html,false)
+-AC_SUBST(MAN2HTML)
+ 
+ dnl Set doc status flag for conditional content inclusions
+ DOC_STATUS=p-not-stable

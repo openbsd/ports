@@ -1,0 +1,52 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+
+COMMENT=	"web proxy with advanced filtering capabilities"
+
+DISTNAME=	privoxy-3.0.0-stable
+PKGNAME=	${DISTNAME:S/-stable//}
+CATEGORIES=	www
+
+HOMEPAGE=	http://www.privoxy.org/
+
+MAINTAINER=	Dan Weeks <danimal@danimal.org>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
+EXTRACT_SUFX=	-src.tar.gz
+
+NO_REGRESS=	Yes
+
+USE_GMAKE=	Yes
+MAKE_FILE=	GNUmakefile
+
+LIB_DEPENDS=	pcre,pcreposix::devel/pcre
+
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@cd ${WRKDIST} && PATH=${PORTPATH} autoheader
+
+# make install is broken
+do-install:
+	@perl -pi \
+		-e 's|%%SYSCONFDIR%%|${SYSCONFDIR}|g;' \
+		${WRKSRC}/config
+	${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/privoxy.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/privoxy
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/privoxy
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy
+	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/privoxy
+	${INSTALL_DATA} ${WRKSRC}/default.filter ${PREFIX}/share/examples/privoxy
+	${INSTALL_DATA} ${WRKSRC}/*.action ${PREFIX}/share/examples/privoxy
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy/templates
+	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/share/examples/privoxy/templates
+
+.include <bsd.port.mk>
