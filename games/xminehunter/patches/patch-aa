@@ -1,6 +1,6 @@
 --- Makefile.orig	Mon Jul 22 08:11:34 1996
-+++ Makefile	Fri Jun  2 21:26:29 2000
-@@ -1,8 +1,8 @@
++++ Makefile	Sat Mar 17 16:34:09 2001
+@@ -1,13 +1,12 @@
 -INSTALL_BIN_PATH = /usr/local/bin
 -INSTALL_SCORE_PATH = /usr/local/lib/xminehunter
 +INSTALL_BIN_PATH = ${LOCALBASE}/bin
@@ -11,9 +11,16 @@
 +INCLUDES = -I${LOCALBASE}/include -I${X11BASE}/include
 +LIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
  
++CC = ${CXX}
  
- CC = g++
-@@ -50,7 +50,7 @@ bitmap.o: ${HEADERS} bitmap.cc
+-CC = g++
+-
+-CFLAGS = -DMINE_SCORE_PATH=\"${INSTALL_SCORE_PATH}\"
++CFLAGS += -DMINE_SCORE_PATH=\"${INSTALL_SCORE_PATH}\"
+ 
+ # no need to change anything below this line
+ 
+@@ -50,7 +49,7 @@ bitmap.o: ${HEADERS} bitmap.cc
  
  install:
  	mkdir -p ${INSTALL_SCORE_PATH}
