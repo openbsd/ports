@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/16 11:55:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/21 22:55:41 sturm Exp $
 
 COMMENT=		"filter to print a wide range of file formats"
 
@@ -21,8 +21,8 @@ MASTER_SITES=		http://www.apsfilter.org/download/
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-shell=/bin/sh
 
-RUN_DEPENDS=		::print/psutils \
-			::print/a2ps
+RUN_DEPENDS=		:psutils-*:print/psutils \
+			:a2ps-*:print/a2ps
 
 WRKDIST=		${WRKDIR}/apsfilter/
 
