@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/26 22:21:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/20 20:22:06 wilfried Exp $
 
 COMMENT=		'wm-dockapp; displays scrolling text'
 
@@ -6,7 +6,7 @@ DISTNAME=		wminfo-1.51
 CATEGORIES=		x11 x11/windowmaker
 NEED_VERSION=		1.482
 
-HOMEPAGE=		http://boombox.campus.luth.se/wminfo.php
+HOMEPAGE=		http://boombox.campus.luth.se/wminfo.htm
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
