@@ -6,3 +6,5 @@ http://www.ee.ethz.ch/stats/mrtg/
 
 for an example. MRTG is based on Perl and C and works under UNIX and Windows
 NT. MRTG is being successfully used on many sites arrond the net.
+
+WWW: ${HOMEPAGE}
