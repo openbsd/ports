@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/07 08:06:47 kevlo Exp $
 #
 
 COMMENT=	"find color values by graphical color mixing"
@@ -12,7 +12,8 @@ DISTNAME=	xcoloredit
 PKGNAME=	xcoloredit-1.2
 CATEGORIES=	x11
 NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/ \
+		ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
