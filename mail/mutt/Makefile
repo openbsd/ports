@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2000/01/13 04:35:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2000/01/13 21:59:23 espie Exp $
 
+BROKEN="Update to 1.0 needed to solve security issues"
 DISTNAME=	mutt-0.95.7i
 CATEGORIES=     mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/historic/ \
