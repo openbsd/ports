@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.11 1999/10/26 14:50:05 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.12 1999/10/29 20:28:33 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -42,7 +42,7 @@ STRIP?=	-s
 .endif
 
 .if !defined(OPSYS)	# XXX !!
-OPSYS!=	uname -s
+OPSYS=	OpenBSD
 .endif
 
 ECHO_MSG?=	echo
@@ -142,3 +142,8 @@ README.html:
 			-e '/%%SUBDIR%%/d' \
 		> $@
 	@rm -f $@.tmp $@.tmp2
+
+.PHONY: all fetch fetch-list package extract configure build clean depend \
+	describe distclean deinstall reinstall tags checksum mirror-distfiles \
+	list-distfiles obj readmes readme \
+	beforeinstall afterinstall install realinstall
