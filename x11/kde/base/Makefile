@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/20 16:37:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/30 05:07:12 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.2
@@ -7,6 +7,8 @@ NEED_VERSION=	1.301
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 DIST_SUBDIR=	kde
+
+HOMEPAGE=	http://www.kde.org/
 
 BUILD_DEPENDS=	msgfmt::devel/gettext
 LIB_DEPENDS=	qt.1.45::x11/qt \
@@ -24,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_BZIP2=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --with-qt-includes="${LOCALBASE}/include/X11/qt" \
