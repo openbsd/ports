@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/07 21:30:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/14 23:38:16 naddy Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
-CATEGORIES=	security perl
-NEED_VERSION=	1.515
+CATEGORIES=	security perl5
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/07 19:47:29 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/14 23:38:16 naddy Exp $
 
 DISTNAME=	sybperl-2.13
 PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl
-NEED_VERSION=	1.515
+CATEGORIES=	databases perl5
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
