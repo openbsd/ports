@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/19 07:43:41 kevlo Exp $
 
 COMMENT=	"tcl/tk irc client"
 
-DISTNAME=	roxirc-1.72
+DISTNAME=	roxirc-1.8
 CATEGORIES=	net
 NEED_VERSION=	1.496
 
