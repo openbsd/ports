@@ -1,8 +1,11 @@
-$OpenBSD: patch-volume_c,v 1.1.1.1 2001/08/07 00:13:20 naddy Exp $
---- volume.c.orig	Sat Aug  4 11:45:46 2001
-+++ volume.c	Sat Aug  4 11:49:45 2001
-@@ -19,6 +19,8 @@
+--- volume.c.orig	Wed Nov 22 14:35:42 2000
++++ volume.c	Sun Mar 17 09:42:00 2002
+@@ -17,13 +17,16 @@
+ |  Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
  
++#include "volume.h"
++
  #ifdef __FreeBSD__
  #include <machine/soundcard.h>
 +#elif __OpenBSD__
@@ -10,3 +13,8 @@ $OpenBSD: patch-volume_c,v 1.1.1.1 2001/08/07 00:13:20 naddy Exp $
  #else
  #include <sys/soundcard.h>
  #endif
+ 
+-#include "volume.h"
+ #include <signal.h>
+ #include <string.h>
+ 
