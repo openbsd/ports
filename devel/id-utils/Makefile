@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/29 07:06:13 turan Exp $
+
+BROKEN=		Illegal variable name in id-utils.el
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
