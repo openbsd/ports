@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/23 18:59:27 jakob Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/vcdimager.info
+bin/vcdimager
+bin/vcdrip
+info/vcdimager.info
+man/man1/vcdimager.1
+man/man1/vcdrip.1
+@exec install-info --info-dir=%D/info %D/info/vcdimager.info

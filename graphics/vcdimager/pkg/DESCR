@@ -1,0 +1,5 @@
+This package contains 'vcdimager', an image authoring tool, and 'vcdrip',
+a VideoCD ripping tool. 'vcdrip' can be used to rip mpeg streams from
+VideoCD images and to show VideoCD information about the image.
+
+WWW: ${HOMEPAGE}

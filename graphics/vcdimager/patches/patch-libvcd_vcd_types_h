@@ -1,0 +1,13 @@
+$OpenBSD: patch-libvcd_vcd_types_h,v 1.1.1.1 2002/04/23 18:59:27 jakob Exp $
+
+--- libvcd/vcd_types.h.orig	Tue May 15 03:00:59 2001
++++ libvcd/vcd_types.h	Tue Apr 23 20:58:06 2002
+@@ -45,7 +45,7 @@ typedef u_int64_t uint64_t;
+ #endif /* HAVE_STDINT_H */
+ 
+ /* fix for bsdi... hope it works */
+-#ifdef __bsdi__
++#if defined(__bsdi__) || defined(__OpenBSD__)
+ # define UINT32_C(c) c ## U
+ # define UINT64_C(c) c ## ULL
+ #endif
