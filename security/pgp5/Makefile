@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/08/04 14:51:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2004/11/18 23:24:45 fgsch Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
@@ -19,8 +19,6 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
-
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=	http://www.pgpi.com
 

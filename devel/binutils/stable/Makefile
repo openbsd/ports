@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/09/15 19:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2004/11/18 23:23:56 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MAINTAINER=		Federico G. Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=		http://sources.redhat.com/binutils/
 
