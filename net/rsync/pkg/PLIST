@@ -1,7 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/01/14 23:07:49 naddy Exp $
 bin/rsync
 man/man1/rsync.1
 man/man5/rsyncd.conf.5
+share/doc/rsync/rsyncstats
 share/doc/rsync/tech_report.tex
 share/doc/rsync/test.sh
-share/doc/rsync/rsyncstats
 @dirrm share/doc/rsync

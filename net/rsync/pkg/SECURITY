@@ -1,7 +1,4 @@
-$OpenBSD: SECURITY,v 1.4 1999/11/21 23:42:53 espie Exp $
-
-${WRKDIR}/receiver.c
-	call to mktemp (wrapper function do_mktemp) does seem to be correct.
+$OpenBSD: SECURITY,v 1.5 2002/01/14 23:07:49 naddy Exp $
 
 The server makes extensive use of strlcpy/strlcat/snprintf.
 
