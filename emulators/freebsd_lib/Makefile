@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/24 07:04:05 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/01 03:41:14 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -20,8 +20,8 @@ NO_BUILD=	Yes
 PREFIX=		/usr/local/emul/freebsd
 
 pre-install:
-	@mkdir -p ${PREFIX}
-	@mkdir ${WRKINST}/emul
+	${INSTALL_DATA_DIR} ${PREFIX}
+	${INSTALL_DATA_DIR} ${WRKINST}/emul
 	@ln -sf ${TRUEPREFIX} ${WRKINST}/emul/freebsd
 
 do-install:
