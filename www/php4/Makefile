@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/07/05 22:55:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.45 2001/07/16 09:35:57 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -128,23 +128,26 @@ CONFIGURE_ARGS+=	--without-snmp
 
 .if ${FLAVOR:L:Mgd}
 MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
-LIB_DEPENDS+=		gd.18::graphics/gd
-.if ${FLAVOR:L:Mno_x11}
+LIB_DEPENDS+=		gd.18::graphics/gd \
+			tiff.35::graphics/tiff
 CONFIGURE_ARGS+=	--with-gd \
 			--with-jpeg-dir=${LOCALBASE} \
+			--with-tiff-dir=${LOCALBASE} \
 			--with-ttf
-.else
+.if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
-CONFIGURE_ARGS+=	--with-gd \
-			--with-jpeg-dir=${LOCALBASE} \
-			--with-xpm-dir=${X11BASE} \
-			--with-ttf
+CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 .endif
 .else
 CONFIGURE_ARGS+=	--without-gd
 .endif
 
 .if ${FLAVOR:L:Mpdflib}
+.if !${FLAVOR:L:Mgd}
+.BEGIN:
+	@echo "pdflib FLAVOR requires the gd FLAVOR also"
+	@exit 1
+.endif
 CONFIGURE_ARGS+=	--with-pdflib=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpdf.a::print/pdflib
 .else
