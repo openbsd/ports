@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.17 2000/02/22 17:08:33 espie Exp $
+# $OpenBSD: Makefile.template,v 1.18 2000/02/23 06:38:01 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -39,6 +39,7 @@ MAINTAINER=		ports@openbsd.org
 #             Read copyright before use, there may be usage restrictions
 #             even if distribution is allowed.
 # CRYPTO:     Third party crypto not allowed.
+# DISTONLY:   May distribute the distfile only.
 # GPL:        Licensed under the GNU GPL license.
 # INCLUDED:   Package is included in OpenBSD, distribution not needed.
 # LGPL:       Licensed under the GNU LGPL license.
@@ -51,6 +52,10 @@ MAINTAINER=		ports@openbsd.org
 # NOFEE:      Can not charge for distribution
 #             The software may be `free', but the copyright states 
 #             `may not charge for distribution' or words to that effect.
+# NOMODIFY:   May not distribute ports that are modified in any way,
+#             i.e, the package may not have any patches applied to it.
+#             Precompiled packages are fine as long as they do not
+#             change the original port.
 # NONE:       No license/copyright found in source code or related 
 #             documentation.  Assume no rights in these cases except for
 #             cases that are obviously meant to be distributed e.g.
