@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/05/02 19:49:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/07 14:02:32 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -272,18 +272,6 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php4"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 SYBASE_CT_DEPENDS=	tds.0,ct.0::databases/freetds
-.endif
-
-# wddx & xml
-PSEUDO_FLAVORS+=	no_xml
-.if ${FLAVOR:L:Mno_xml}
-CONFIGURE_ARGS+=	--without-wddx --disable-xml
-.else
-MULTI_PACKAGES+=	-xml
-COMMENT-xml=		"xml parsing extensions for php4"
-CONFIGURE_ARGS+=	--with-wddx=shared --enable-xml=shared \
-			--with-expat-dir=${LOCALBASE}
-XML_DEPENDS=		expat.2::textproc/expat
 .endif
 
 # xslt
