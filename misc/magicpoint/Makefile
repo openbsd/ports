@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/11/19 12:34:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2001/11/26 16:09:59 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -19,21 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.1::print/freetype \
 		png.2::graphics/png \
-		mng::graphics/libmng
+		mng::graphics/libmng \
+		ungif.5::graphics/libungif
 
 MODULES=	gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu imake
 CONFIGURE_ARGS=	--disable-vflib
-
-FLAVORS=	gif
-FLAVOR?=
-
-.if ${FLAVOR:L:Mgif}
-LIB_DEPENDS=	ungif.5::graphics/libungif
 CONFIGURE_ARGS+= --enable-gif
-.endif
 
 NO_REGRESS=	Yes
 
