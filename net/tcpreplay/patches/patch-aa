@@ -1,0 +1,25 @@
+*** Makefile.in-orig	Fri May 14 11:35:45 1999
+--- Makefile.in	Fri May 14 11:35:59 1999
+***************
+*** 16,25 ****
+  INSTALL		= @INSTALL@
+  INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+  
+! PCAPDIR		= libpcap-0.4
+! PCAPINCS	= -I$(PCAPDIR)
+! PCAPLIBS	= -L$(PCAPDIR) -lpcap
+! PCAPDEP		= $(PCAPDIR)/pcap.h $(PCAPDIR)/libpcap.a
+  
+  LNETDIR		= Libnet-0.99
+  LNETINCS	= -I$(LNETDIR)/include
+--- 16,25 ----
+  INSTALL		= @INSTALL@
+  INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+  
+! PCAPDIR		= 
+! PCAPINCS	= 
+! PCAPLIBS	= -lpcap
+! PCAPDEP		= 
+  
+  LNETDIR		= Libnet-0.99
+  LNETINCS	= -I$(LNETDIR)/include
