@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2004/04/13 14:03:44 peter Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
-VERSION=	1.01
+VERSION=	1.32
 DISTNAME=	DBD-Pg-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
@@ -12,6 +12,14 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
 
 LIB_DEPENDS=	pq.2::databases/postgresql
 BUILD_DEPENDS=	::databases/p5-DBI
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+FLAVOR?=
+FLAVORS=	regress
+
+.if ${FLAVOR:L:Mregress}
+MAKE_ENV+=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" DBI_PASS=""
+.endif
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
