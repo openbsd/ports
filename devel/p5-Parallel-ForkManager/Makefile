@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/28 16:14:56 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/28 00:26:59 david Exp $
 
 COMMENT=	"simple parallel processing fork manager"
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 
 HOMEPAGE=	http://hacks.dlux.hu/Parallel-ForkManager/
 
-MAINTAINER=	David Krause <openbsd@davidkrause.com>
+MAINTAINER=	David Krause <david@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

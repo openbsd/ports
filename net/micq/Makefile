@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/01/22 07:29:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/02/28 00:26:59 david Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
@@ -6,7 +6,7 @@ COMMENT=	"text-based ICQ implementation"
 DISTNAME=       micq-0.4.10
 CATEGORIES=	net
 
-MAINTAINER=	David Krause <openbsd@davidkrause.com>
+MAINTAINER=	David Krause <david@openbsd.org>
 HOMEPAGE=	http://www.micq.org
 
 # GPL
