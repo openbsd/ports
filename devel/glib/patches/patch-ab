@@ -1,6 +1,6 @@
---- gmodule/Makefile.in.orig	Thu Mar 25 21:50:33 1999
-+++ gmodule/Makefile.in	Thu Mar 25 21:50:58 1999
-@@ -107,7 +107,7 @@
+--- gmodule/Makefile.in.orig	Tue May 11 12:48:40 1999
++++ gmodule/Makefile.in	Tue May 11 12:49:24 1999
+@@ -109,7 +109,7 @@
  lib_LTLIBRARIES = libgmodule.la libgplugin_a.la libgplugin_b.la
  
  libgmodule_la_SOURCES = gmodule.c
