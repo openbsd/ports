@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/08/29 17:49:11 danh Exp $
-@unexec find %D/share/snmp/mibs -name '.index' -exec rm -f {} \;
+@comment $OpenBSD: PLIST,v 1.5 2000/09/20 00:07:27 danh Exp $
+@unexec rm -f %D/share/snmp/mibs/.index
 bin/encode_keychange
 bin/snmpbulkget
 bin/snmpbulkwalk
@@ -54,6 +54,9 @@ include/ucd-snmp/ucd-snmp-includes.h
 include/ucd-snmp/util_funcs.h
 include/ucd-snmp/var_struct.h
 include/ucd-snmp/version.h
+lib/libsnmp.a
+lib/libucdagent.a
+lib/libucdmibs.a
 man/man1/snmpbulkget.1
 man/man1/snmpbulkwalk.1
 man/man1/snmpcmd.1
@@ -144,7 +147,6 @@ share/snmp/mibs/UCD-DLMOD-MIB.txt
 share/snmp/mibs/UCD-IPFWACC-MIB.txt
 share/snmp/mibs/UCD-SNMP-MIB.txt
 share/snmp/mibs/UDP-MIB.txt
-%%!SHARED%%
 %%SHARED%%
 @dirrm share/snmp/mibs
 @dirrm share/snmp
