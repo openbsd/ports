@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/06 22:08:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/10 21:11:58 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
 VERSION=	4.1
-REVISION=	6	# Debian
+REVISION=	9	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REVISION}
@@ -50,6 +50,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${PREFIX}/man/man1/uufilter.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xloadimage
 	${INSTALL_DATA} ${WRKSRC}/xloadimagerc \
-	    ${PREFIX}/share/examples/xloadimage/xloadimagerc-sample
+	    ${PREFIX}/share/examples/xloadimage/xloadimagerc
 
 .include <bsd.port.mk>

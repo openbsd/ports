@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/06/06 22:08:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/07/10 21:12:02 naddy Exp $
 bin/uufilter
 bin/xloadimage
 bin/xsetbg
@@ -7,5 +7,5 @@ man/man1/uufilter.1
 man/man1/xloadimage.1
 man/man1/xsetbg.1
 man/man1/xview.1
-share/examples/xloadimage/xloadimagerc-sample
+share/examples/xloadimage/xloadimagerc
 @dirrm share/examples/xloadimage

@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile.in,v 1.2 2001/04/14 01:59:58 naddy Exp $
---- Makefile.in.orig	Sat Apr 14 03:19:51 2001
-+++ Makefile.in	Sat Apr 14 03:20:47 2001
-@@ -4,7 +4,7 @@
+$OpenBSD: patch-Makefile.in,v 1.3 2001/07/10 21:12:00 naddy Exp $
+--- Makefile.in.orig	Tue Jul 10 19:24:46 2001
++++ Makefile.in	Tue Jul 10 19:25:21 2001
+@@ -3,8 +3,8 @@
+ #
  
  CC = @CC@
- DEFS = @DEFS@
+-DEFS = @DEFS@ -DSYSPATHFILE=\"/etc/X11/Xloadimage\"
 -CFLAGS = @CFLAGS@
++DEFS = @DEFS@ -DSYSPATHFILE=\"@sysconfdir@/xloadimagerc\"
 +CFLAGS = @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@
  XLIB = @X_LIBS@ -lX11 @X_EXTRA_LIBS@
  LDFLAGS = @LDFLAGS@
