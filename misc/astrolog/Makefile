@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/02/04 23:12:33 naddy Exp $
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
 
@@ -43,8 +43,5 @@ do-install:
 		${INSTALL_DATA} Update.530 ${PREFIX}/share/doc/astrolog
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} README.530 ${PREFIX}/share/doc/astrolog
-	@echo
-	@echo "See the file ${PREFIX}/share/doc/astrolog/Helpfile.530 for help"
-	@echo "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>

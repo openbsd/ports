@@ -1,8 +1,3 @@
-#!/bin/sh
-if [ "$2" != "POST-INSTALL" ]; then
-  exit 0
-fi
-cat <<End_Of_License
 Wingz 1.4.2 is licensed as shareware defined as follows.
 
 Definition of Shareware
@@ -60,4 +55,4 @@ Site-License arrangements may be made by contacting IISC.
 Anyone distributing Wingz 1.4.2 for any kind of remuneration must
 first contact IISC for authorization (see the REGISTER file for the
 address).
-End_Of_License
+
