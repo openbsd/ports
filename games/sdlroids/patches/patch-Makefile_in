@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/07/18 15:25:07 lebel Exp $
+--- Makefile.in.orig	Tue Mar 27 18:27:30 2001
++++ Makefile.in	Mon Jul 16 11:25:08 2001
+@@ -434,9 +434,9 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	@/bin/sh $(srcdir)/mkinstalldirs $(SOUNDSDIR) $(GFXDIR)
+-	$(INSTALL_DATA) $(srcdir)/sounds/*.wav $(SOUNDSDIR)
+-	$(INSTALL_DATA)  $(srcdir)/bmp/*.bmp $(GFXDIR)
++	@/bin/sh $(srcdir)/mkinstalldirs $(DESTDIR)$(SOUNDSDIR) $(DESTDIR)$(GFXDIR)
++	$(INSTALL_DATA) $(srcdir)/sounds/*.wav $(DESTDIR)$(SOUNDSDIR)
++	$(INSTALL_DATA)  $(srcdir)/bmp/*.bmp $(DESTDIR)$(GFXDIR)
+ 
+ # Rule to build tar-gzipped distribution package
+ $(PACKAGE)-$(VERSION).tar.gz: dist
