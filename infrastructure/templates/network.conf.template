@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.55 2003/01/23 00:32:15 margarida Exp $
+# $OpenBSD: network.conf.template,v 1.56 2003/01/23 00:39:21 margarida Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -249,7 +249,7 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstormsecurity.org.pk/ \
 	http://packetstorm.security-guide.de/ \
 	http://packetstormsecurity.com.ar/ \
-	http://packetstormsecurity.packetstorm.org/
+	http://packetstormsecurity.packetstorm.org/ \
 	http://packetstorm.digital-network.net \
 	http://packetstorm.defcon.tv \
 	http://packetstorm.troop218.org \
