@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/22 16:43:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/13 11:37:44 sturm Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -33,7 +33,7 @@ ALL_TARGET=	all ${MODOCAML_NATIVE:S/Yes/opt/:S/No//}
 NO_REGRESS=	Yes
 
 do-configure:
-		cd ${WRKDIST}; gmake configure ${CONFIGURE_ARGS}
+		cd ${WRKDIST}; PATH=${PORTPATH} gmake configure ${CONFIGURE_ARGS}
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lablgtk
