@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 15:59:05 reinhard Exp $
+bin/hexcalc
+man/man1/hexcalc.1

@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/12 15:59:05 reinhard Exp $
+--- Makefile.orig	Tue Aug 22 16:48:35 1995
++++ Makefile	Tue Jan  9 21:24:40 2001
+@@ -53,7 +53,7 @@
+          COMPRESS = compress
+               CPP = /usr/lpp/X11/Xamples/util/cpp/cpp $(STD_CPP_DEFINES)
+     PREPROCESSCMD = cc -E $(STD_CPP_DEFINES)
+-          INSTALL = /usr/ucb/install
++          INSTALL = /usr/bin/install
+                LD = ld
+              LINT = lint
+       LINTLIBFLAG = -o
+@@ -69,9 +69,9 @@
+               TBL = tbl
+               EQN = eqn
+      STD_INCLUDES =
+-  STD_CPP_DEFINES = -DAIXV3 -D_NO_PROTO
+-      STD_DEFINES = -DAIXV3 -D_NO_PROTO
+- EXTRA_LOAD_FLAGS = -bnodelcsect
++  STD_CPP_DEFINES =
++      STD_DEFINES =
++ EXTRA_LOAD_FLAGS = 
+ 
+    EXTRA_INCLUDES =
+ 
+@@ -94,7 +94,7 @@
+      INSTDATFLAGS = -m 0444
+     INSTKMEMFLAGS = -m 4755
+ 
+-      PROJECTROOT = /usr/local/X11R5
++      PROJECTROOT = /usr/X11R6
+ 
+      TOP_INCLUDES = -I$(INCROOT)
+ 
+@@ -133,10 +133,10 @@
+ # X Window System make variables; this need to be coordinated with rules
+ 
+           PATHSEP = /
+-        USRLIBDIR = /usr/local/X11R5/lib
++        USRLIBDIR = /usr/X11R6/lib
+ 
+            BINDIR = /usr/local/bin
+-          INCROOT = /usr/local/X11R5/include
++          INCROOT = /usr/X11R6/include
+      BUILDINCROOT = $(TOP)
+       BUILDINCDIR = $(BUILDINCROOT)/X11
+       BUILDINCTOP = ..
