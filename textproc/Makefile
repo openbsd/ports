@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/01/03 03:33:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.37 2001/01/05 18:16:09 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += linuxdoc
      SUBDIR += mgdiff
      SUBDIR += openjade
+     SUBDIR += p5-XML-Writer
      SUBDIR += p5-sdf
      SUBDIR += par
      SUBDIR += pilot_makedoc
