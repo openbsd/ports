@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/11/28 15:44:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/12/14 15:25:20 brad Exp $
 
 DISTNAME=	php-4.0.3pl1
 PKGNAME=	php4-4.0.3pl1
@@ -46,18 +46,18 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
 FLAVORS+=	gd no_x11 pdflib
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql
-FLAVOR?=
+FLAVOR?= 
 
 .if ${FLAVOR:L:Mgdbm}
 CONFIGURE_ARGS+=	--with-gdbm
-BUILD_DEPENDS+=		${PREFIX}/lib/libgdbm.a::databases/gdbm
+LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
 .if ${FLAVOR:L:Mgettext}
 CONFIGURE_ARGS+=	--with-gettext
-BUILD_DEPENDS+=		${PREFIX}/lib/libintl.a::devel/gettext
+LIB_DEPENDS+=		intl.1::devel/gettext
 .else
 CONFIGURE_ARGS+=	--without-gettext
 .endif
@@ -70,28 +70,28 @@ CONFIGURE_ARGS+=	--disable-ftp
 
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+=	--with-imap=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
+LIB_DEPENDS+=		c-client.2::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/libldap.a::databases/openldap
+LIB_DEPENDS+=		ldap.2::databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${FLAVOR:L:Mmhash}
 CONFIGURE_ARGS+=	--with-mhash
-BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::security/mhash
+LIB_DEPENDS+=		mhash.2::security/mhash
 .else
 CONFIGURE_ARGS+=	--without-mhash
 .endif
 
 .if ${FLAVOR:L:Mmm}
 CONFIGURE_ARGS+=	--with-mm
-BUILD_DEPENDS+=		${PREFIX}/lib/libmm.a::devel/mm
+LIB_DEPENDS+=		mm.11::devel/mm
 .else
 CONFIGURE_ARGS+=	--without-mm
 .endif
@@ -105,25 +105,24 @@ CONFIGURE_ARGS+=	--without-recode
 
 .if ${FLAVOR:L:Msnmp}
 CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack --with-openssl
-BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
+LIB_DEPENDS+=		snmp.41::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp --without-openssl
 .endif
 
 .if ${FLAVOR:L:Mgd}
 MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
+LIB_DEPENDS+=		gd.18::graphics/gd
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-gd \
-			--with-jpeg-dir=${PREFIX} 
-BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd
+			--with-jpeg-dir=${PREFIX} \
+			--with-ttf
 .else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-gd \
 			--with-jpeg-dir=${PREFIX} \
 			--with-xpm-dir=${X11BASE} \
 			--with-ttf
-BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd \
-			${PREFIX}/lib/libttf.a::print/freetype
 .endif
 .else
 CONFIGURE_ARGS+=	--without-gd
@@ -150,7 +149,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
+LIB_DEPENDS+=		mysqlclient.6::databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
 .BEGIN:
 	@echo "Conflicting flavor: ${FLAVOR}"
@@ -164,7 +163,7 @@ CONFIGURE_ARGS+=	--without-mysql
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql
-BUILD_DEPENDS+=		${PREFIX}/pgsql/lib/libpq.a::databases/postgresql
+LIB_DEPENDS+=		pq.2::databases/postgresql
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif

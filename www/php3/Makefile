@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/12/14 14:04:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/12/14 15:25:20 brad Exp $
 
 DISTNAME=	php-3.0.18
 PKGNAME=	php3-3.0.18
@@ -31,26 +31,25 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 LIB_DEPENDS+=		expat.1.::textproc/expat
 
 FLAVORS=	imap mysql postgresql
-
-FLAVOR?=
+FLAVOR?= 
 
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+=	--with-imap=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
+LIB_DEPENDS+=		c-client.2::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql 
-BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
+LIB_DEPENDS+=		mysqlclient.6::databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql 
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
-BUILD_DEPENDS+=		${PREFIX}/pgsql/lib/libpq.a::databases/postgresql
+LIB_DEPENDS+=		pq.2::databases/postgresql
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
@@ -61,9 +60,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
 	${INSTALL_DATA} ${WRKSRC}/php3.ini-dist ${PREFIX}/share/doc/php3
-	sed 's,y0y0y0,${TRUEPREFIX},' \
+	@sed 's,y0y0y0,${TRUEPREFIX},' \
 		<${FILESDIR}/php3-enable >${PREFIX}/sbin/php3-enable
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php3-enable
-	chmod ${BINMODE} ${PREFIX}/sbin/php3-enable
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php3-enable
+	@chmod ${BINMODE} ${PREFIX}/sbin/php3-enable
 
 .include <bsd.port.mk>
