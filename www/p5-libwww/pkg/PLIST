@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/07/05 17:16:36 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/07/21 18:56:19 pvalchev Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -10,6 +10,8 @@ ${P5SITE}/Bundle/LWP.pm
 ${P5SITE}/File/Listing.pm
 ${P5SITE}/HTML/Form.pm
 ${P5SITE}/HTTP/Cookies.pm
+${P5SITE}/HTTP/Cookies/Microsoft.pm
+${P5SITE}/HTTP/Cookies/Netscape.pm
 ${P5SITE}/HTTP/Daemon.pm
 ${P5SITE}/HTTP/Date.pm
 ${P5SITE}/HTTP/Headers.pm
@@ -25,8 +27,10 @@ ${P5SITE}/HTTP/Status.pm
 ${P5SITE}/LWP.pm
 ${P5SITE}/LWP/Authen/Basic.pm
 ${P5SITE}/LWP/Authen/Digest.pm
+${P5SITE}/LWP/Authen/Ntlm.pm
 ${P5SITE}/LWP/ConnCache.pm
 ${P5SITE}/LWP/Debug.pm
+${P5SITE}/LWP/DebugFile.pm
 ${P5SITE}/LWP/MediaTypes.pm
 ${P5SITE}/LWP/MemberMixin.pm
 ${P5SITE}/LWP/Protocol.pm
@@ -53,6 +57,9 @@ ${P5SITE}/Net/HTTPS.pm
 ${P5SITE}/WWW/RobotRules.pm
 ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
 ${P5SITE}/lwpcook.pod
+${P5SITE}/lwptut.pod
+${P5ARCH}/auto/libwww-perl/.packlist
+${P5ARCH}/perllocal.pod
 man/man1/GET.1
 man/man1/HEAD.1
 man/man1/POST.1
@@ -64,6 +71,8 @@ man/man3p/Bundle::LWP.3p
 man/man3p/File::Listing.3p
 man/man3p/HTML::Form.3p
 man/man3p/HTTP::Cookies.3p
+man/man3p/HTTP::Cookies::Microsoft.3p
+man/man3p/HTTP::Cookies::Netscape.3p
 man/man3p/HTTP::Daemon.3p
 man/man3p/HTTP::Date.3p
 man/man3p/HTTP::Headers.3p
@@ -75,8 +84,10 @@ man/man3p/HTTP::Request::Common.3p
 man/man3p/HTTP::Response.3p
 man/man3p/HTTP::Status.3p
 man/man3p/LWP.3p
+man/man3p/LWP::Authen::Ntlm.3p
 man/man3p/LWP::ConnCache.3p
 man/man3p/LWP::Debug.3p
+man/man3p/LWP::DebugFile.3p
 man/man3p/LWP::MediaTypes.3p
 man/man3p/LWP::MemberMixin.3p
 man/man3p/LWP::Protocol.3p
@@ -88,9 +99,16 @@ man/man3p/Net::HTTP::NB.3p
 man/man3p/WWW::RobotRules.3p
 man/man3p/WWW::RobotRules::AnyDBM_File.3p
 man/man3p/lwpcook.3p
+man/man3p/lwptut.3p
+@dirrm ${P5ARCH}/auto/libwww-perl
 @dirrm ${P5SITE}/WWW/RobotRules
+@dirrm ${P5SITE}/WWW
 @dirrm ${P5SITE}/LWP/Protocol
 @dirrm ${P5SITE}/LWP/Authen
 @dirrm ${P5SITE}/LWP
 @dirrm ${P5SITE}/HTTP/Request
 @dirrm ${P5SITE}/HTTP/Headers
+@dirrm ${P5SITE}/HTTP/Cookies
+@dirrm ${P5SITE}/HTTP
+@dirrm ${P5SITE}/File
+@dirrm ${P5SITE}/Bundle

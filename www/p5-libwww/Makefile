@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/30 04:46:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2003/07/21 18:56:19 pvalchev Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
-DISTNAME=	libwww-perl-5.65
+DISTNAME=	libwww-perl-5.69
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=LWP/}
