@@ -1,0 +1,36 @@
+*** mirror.pl.orig	Sat Aug 10 12:28:16 1996
+--- mirror.pl	Sat Aug 10 12:28:54 1996
+***************
+*** 3228,3234 ****
+  
+  	&msg( "creating assocs ...\n" ) if $debug > 2;
+  	foreach $map ( @assocs ){
+! 		eval "\$$map = \"\$big_tmp/$map.$$\"";
+  		eval "dbmopen( $map, \$$map, 0644 )";
+  	}
+  	&msg( "creating assocs done\n" ) if $debug > 2;
+--- 3228,3234 ----
+  
+  	&msg( "creating assocs ...\n" ) if $debug > 2;
+  	foreach $map ( @assocs ){
+! 		eval "\$$map = \"\$big_temp/$map.$$\"";
+  		eval "dbmopen( $map, \$$map, 0644 )";
+  	}
+  	&msg( "creating assocs done\n" ) if $debug > 2;
+***************
+*** 3240,3246 ****
+  
+  	&msg( "deleting assocs ...\n" ) if $debug > 2;
+  	foreach $map ( @assocs ){
+! 		eval "\$$map = \"\$big_tmp/$map.$$\"";
+  		eval "dbmclose( $map )";
+  		&unlink_dbm( eval "\$$map" );
+  		eval "\%$map = ()";
+--- 3240,3246 ----
+  
+  	&msg( "deleting assocs ...\n" ) if $debug > 2;
+  	foreach $map ( @assocs ){
+! 		eval "\$$map = \"\$big_temp/$map.$$\"";
+  		eval "dbmclose( $map )";
+  		&unlink_dbm( eval "\$$map" );
+  		eval "\%$map = ()";
