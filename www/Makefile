@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/08/11 09:19:29 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/08/22 18:43:58 marc Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -28,6 +28,7 @@
 #    SUBDIR += mhonarc
 #    SUBDIR += mmm
 #    SUBDIR += momspider
+     SUBDIR += mozilla
 #    SUBDIR += netscape3
 #    SUBDIR += netscape4-communicator
 #    SUBDIR += netscape4-navigator
