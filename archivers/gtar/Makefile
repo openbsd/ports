@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	gtar
-# Version required:			1.12
-# Date created:				14 Jan 1998
-# Whom:					niklas
-#
-# $OpenBSD: Makefile,v 1.2 1999/03/07 01:38:58 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:16:37 brad Exp $
 
 DISTNAME=	tar-1.12
 CATEGORIES=	archivers

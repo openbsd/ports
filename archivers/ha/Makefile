@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/09 00:24:55 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:16:38 brad Exp $
 
 DISTNAME=       ha0999
 PKGNAME=        ha-0.999b

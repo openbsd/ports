@@ -1,10 +1,4 @@
-# New ports collection makefile for:    rar
-# Version required:     2.02
-# Date created:         8 Jul 1998
-# Whom:                 form
-#
-# $OpenBSD: Makefile,v 1.8 1998/10/20 08:39:43 form Exp $
-#
+# $OpenBSD: Makefile,v 1.9 1999/04/01 02:16:39 brad Exp $
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
@@ -14,12 +8,10 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"NOFEE: Can not charge for distribution"
 NO_PACKAGE=     Only unmodified original package can be distributed
 
-MAINTAINER=     form@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.creabel.com/pub/rar/
 EXTRACT_SUFX=
-
-
 
 NO_WRKSUBDIR=   yes
 EXTRACT_CMD=

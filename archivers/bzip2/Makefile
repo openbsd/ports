@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/21 09:13:01 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.8 1999/04/01 02:16:36 brad Exp $
 
 DISTNAME=	bzip2-0.9.0c
 PKGNAME=	bzip2-0.9.0c

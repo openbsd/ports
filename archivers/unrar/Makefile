@@ -1,10 +1,4 @@
-# OpenBSD makefile for:    unrar
-# Version required:     2.01
-# Date created:         16 Nov 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.3 1998/04/10 01:41:45 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:16:40 brad Exp $
 
 DISTNAME=       unrar-2.01
 CATEGORIES=	archivers
@@ -12,7 +6,7 @@ NO_CDROM=	"NOFEE: can not sell"
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 NO_WRKSUBDIR=   Yes
 

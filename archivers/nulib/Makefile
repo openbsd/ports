@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/12/18 03:34:56 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 02:16:38 brad Exp $
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25

@@ -1,10 +1,4 @@
-# OpenBSD makefile for:    arc
-# Version required:     5.21e
-# Date created:         06 November 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.4 1998/04/10 01:41:39 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 02:16:31 brad Exp $
 
 DISTNAME=       arc521e.pl8
 PKGNAME=        arc-5.21e
@@ -13,10 +7,9 @@ NO_CDROM=	"NOFEE: can not sell"
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 NO_WRKSUBDIR=	yes
-MAN1=		arc.1
 
 post-install:
 .if !defined(NOPORTDOCS)

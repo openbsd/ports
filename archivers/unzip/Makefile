@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/24 04:35:24 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/01 02:16:41 brad Exp $
 
 DISTNAME=	unzip540
 PKGNAME=	unzip-5.40
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 
-MAINTAINER=     form@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
-MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:
 	cd ${WRKSRC} && \
