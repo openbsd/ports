@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/22 10:49:14 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/28 09:32:31 obecian Exp $
 
-DISTNAME=	lyx-1.0.0
+COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
+
+DISTNAME=	lyx-1.1.6fix1
 CATEGORIES=	print
-NEED_VERSION=	1.305
-FAKE=No
-BROKEN=		"Completely outdated version, not faked"
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
