@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/01 13:27:13 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.5 2000/11/22 11:42:31 avsm Exp $ 
 
-DISTNAME=	courier-imap-1.1
+DISTNAME=	courier-imap-1.2.3
 CATEGORIES=	mail
-NEED_VERSION=	1.336
+NEED_VERSION=	1.340
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
@@ -15,17 +15,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FLAVORS=	pop3
+FLAVOR?=
+
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin
+CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin --with-userdb=/etc/userdb --with-authuserdb
+EXAMPLE_DIR=	${PREFIX}/share/examples/courier-imap
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
-	${INSTALL_DATA} ${WRKBUILD}/imapd-ssl.config \
-		${PREFIX}/share/examples/courier-imap
-	${INSTALL_DATA} ${WRKBUILD}/imapd.config \
-		${PREFIX}/share/examples/courier-imap
-	${INSTALL_DATA} ${WRKBUILD}/imapd.cnf \
-		${PREFIX}/share/examples/courier-imap
+.for i in pop3d imapd
+	${INSTALL_DATA} ${WRKBUILD}/$i-ssl.config ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/$i.config ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/$i.cnf ${EXAMPLE_DIR}
+.endfor
 
 .include <bsd.port.mk>

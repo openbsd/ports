@@ -19,5 +19,10 @@ the outside world, so you can bind the plain-text one to
 
 To control the daemon use ${PREFIX}/libexec/imapd.rc and
 ${PREFIX}/libexec/imapd-ssl.rc
+
+If you also installed the 'pop3' flavor, then the relevant
+configuration files are called pop3d-* instead of imapd-*
+Follow similar instructions to those above to activate this.
+
 ==============================================================
 

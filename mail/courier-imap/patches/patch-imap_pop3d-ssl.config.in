@@ -1,0 +1,11 @@
+--- imap/pop3d-ssl.config.in.orig	Sun Nov 19 01:11:54 2000
++++ imap/pop3d-ssl.config.in	Sun Nov 19 01:12:34 2000
+@@ -108,7 +108,7 @@ TLS_PROTOCOL=SSL3
+ # servers, and is optional for SSL/TLS clients.  TLS_CERTFILE is usually
+ # treated as confidential, and must not be world-readable.
+ #
+-TLS_CERTFILE=@datadir@/pop3d.pem
++TLS_CERTFILE=@sysconfdir@/ssl/private/pop3d.pem
+ 
+ # TLS_PEERCERTDIR, TLS_OURCACERT - when it is required that all peer
+ # certificates are signed by a specific certificate authority, set

@@ -1,10 +1,10 @@
---- Makefile.in.orig	Wed Nov  1 19:08:50 2000
-+++ Makefile.in	Wed Nov  1 19:09:09 2000
-@@ -763,9 +763,6 @@ install-exec-local:
+--- Makefile.in.orig	Sat Nov 18 23:06:22 2000
++++ Makefile.in	Sat Nov 18 23:06:53 2000
+@@ -805,9 +805,6 @@ install-exec-local:
  	test ! -x tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
  		tcpd/couriertls $(DESTDIR)$(bindir)/couriertls
  	$(mkinstalldirs) $(DESTDIR)$(sbindir)
--	for f in mkimapdcert vchkpw2userdb makeuserdb pw2userdb userdb ; \
+-	for f in mkimapdcert mkpop3dcert vchkpw2userdb makeuserdb pw2userdb userdb ; \
 -		do rm -f $(DESTDIR)$(sbindir)/$$f ; \
 -		$(LN_S) $(datadir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
  

@@ -1,0 +1,40 @@
+--- imap/mkpop3dcert.in.orig	Sun Nov 19 00:57:13 2000
++++ imap/mkpop3dcert.in	Sun Nov 19 00:58:11 2000
+@@ -13,25 +13,25 @@ test -x @OPENSSL@ || exit 0
+ 
+ prefix="@prefix@"
+ 
+-if test -f @datadir@/pop3d.pem
++if test -f @sysconfdir@/ssl/private/pop3d.pem
+ then
+-	echo "@datadir@/pop3d.pem already exists."
++	echo "@sysconfdir@/ssl/private/pop3d.pem already exists."
+ 	exit 1
+ fi
+ 
+-cp /dev/null @datadir@/pop3d.pem
+-chmod 600 @datadir@/pop3d.pem
+-chown @mailuser@ @datadir@/pop3d.pem
++cp /dev/null @sysconfdir@/ssl/private/pop3d.pem
++chmod 600 @sysconfdir@/ssl/private/pop3d.pem
++chown @mailuser@ @sysconfdir@/ssl/private/pop3d.pem
+ 
+ cleanup() {
+-	rm -f @datadir@/pop3d.pem
+-	rm -f @datadir@/pop3d.rand
++	rm -f @sysconfdir@/ssl/private/pop3d.pem
++	rm -f @sysconfdir@/ssl/private/pop3d.rand
+ 	exit 1
+ }
+ 
+-dd if=@RANDOMV@ of=@datadir@/pop3d.rand count=1 2>/dev/null
++dd if=@RANDOMV@ of=@sysconfdir@/ssl/private/pop3d.rand count=1 2>/dev/null
+ @OPENSSL@ req -new -x509 -days 365 -nodes \
+-	-config @sysconfdir@/pop3d.cnf -out @datadir@/pop3d.pem -keyout @datadir@/pop3d.pem || cleanup
+-@OPENSSL@ gendh -rand @datadir@/pop3d.rand 512 >>@datadir@/pop3d.pem || cleanup
+-@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @datadir@/pop3d.pem || cleanup
+-rm -f @datadir@/pop3d.rand
++	-config @sysconfdir@/pop3d.cnf -out @sysconfdir@/ssl/private/pop3d.pem -keyout @sysconfdir@/ssl/private/pop3d.pem || cleanup
++@OPENSSL@ gendh -rand @sysconfdir@/ssl/private/pop3d.rand 512 >>@sysconfdir@/ssl/private/pop3d.pem || cleanup
++@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @sysconfdir@/ssl/private/pop3d.pem || cleanup
++rm -f @sysconfdir@/ssl/private/pop3d.rand

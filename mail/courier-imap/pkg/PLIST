@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/10/01 13:27:14 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/11/22 11:42:34 avsm Exp $
 bin/couriertls
 bin/imapd
 bin/maildirmake
 libexec/authlib/authcram
+libexec/authlib/authcustom
 libexec/authlib/authpwd
 libexec/authlib/authuserdb
 libexec/couriertcpd
@@ -42,4 +43,5 @@ sbin/vchkpw2userdb
 share/examples/courier-imap/imapd-ssl.config
 share/examples/courier-imap/imapd.cnf
 share/examples/courier-imap/imapd.config
+%%pop3%%
 @dirrm share/examples/courier-imap
