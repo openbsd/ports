@@ -3,12 +3,14 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/03 02:15:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/10 20:04:09 marc Exp $
 #
 
 DISTNAME=	xscrabble
 PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/
 
 MAINTAINER=	angelos@openbsd.org
