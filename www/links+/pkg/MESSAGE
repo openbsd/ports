@@ -1,0 +1,9 @@
++---------------
+|
+| If X support was enabled, run:
+|
+|    ${PREFIX}/bin/links -g ${PREFIX}/share/links+/calibration.html
+|
+| and proceed with the calibration of your monitor and Links.
+|
++---------------
