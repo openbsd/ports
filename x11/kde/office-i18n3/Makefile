@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/07 15:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2003/02/23 13:55:37 espie Exp $
 
 FLAVORS=af ar bs cs da de el en_GB eo es et fr he hu \
     it ja lt lv mt nb nl nn pl pt pt_BR ru sk sl sv th tr uk ven \
@@ -27,6 +27,7 @@ PLIST=${PKGDIR}/PLIST.${FLAVOR}
 #.if ${FLAVOR:L:Mfr}
 #.endif
 
+MODKDE_VERSION=
 PATCH_LIST=patch-* 
 # some extra vars to compact PLISTs
 DOC=share/doc/HTML/${FLAVOR}/
