@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/24 19:21:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/06 19:34:03 jsyn Exp $
 
 COMMENT=	a PGP packet visualizer
 
@@ -18,5 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://pgp.iijlab.net/pub/pgp/tools/
 
 CONFIGURE_STYLE=	gnu
+
+post-install:
+	@strip ${PREFIX}/bin/pgpdump
 
 .include <bsd.port.mk>

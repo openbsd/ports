@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/11 13:14:39 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/06 19:34:04 jsyn Exp $
 
 COMMENT=	"IP stack integrity checker"
 
@@ -18,5 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+
+post-install:
+	@strip ${PREFIX}/bin/{esic,icmpsic,isic,tcpsic,udpsic}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/24 19:55:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/06 19:34:03 jsyn Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -20,5 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+post-install:
+	@strip ${PREFIX}/bin/pcregrep
 
 .include <bsd.port.mk>

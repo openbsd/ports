@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 03:45:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/07/06 19:34:04 jsyn Exp $
 
 COMMENT=	"scan C/C++ source code for security problems"
 
@@ -35,5 +35,8 @@ do-fetch:
 	   echo "" ; \
 	   exit 1 ; \
 	fi
+
+post-install:
+	@strip ${PREFIX}/bin/its4
 
 .include <bsd.port.mk>
