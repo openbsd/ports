@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/01/21 18:16:22 david Exp $
+# $OpenBSD: Makefile,v 1.30 2004/05/12 05:17:16 david Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
@@ -20,6 +20,14 @@ MASTER_SITES=	${HOMEPAGE}source/ \
 		http://http.bg.micq.org/source/
 
 EXTRACT_SUFX=	.tgz
+
+FLAVORS=	ssl
+FLAVOR?=
+
+.if ${FLAVOR:L:Mssl}
+LIB_DEPENDS=	gnutls.12::security/gnutls
+CONFIGURE_ARGS+= --enable-ssl
+.endif
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

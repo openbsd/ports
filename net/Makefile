@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2004/05/09 19:25:39 david Exp $
+# $OpenBSD: Makefile,v 1.316 2004/05/12 05:17:15 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -102,6 +102,7 @@
      SUBDIR += maradns
      SUBDIR += mbrowse
      SUBDIR += micq
+     SUBDIR += micq,ssl
      SUBDIR += mirror
      SUBDIR += mldonkey
      SUBDIR += mrtd
