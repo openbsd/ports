@@ -1,8 +1,5 @@
 bin/gtar
 libexec/grmt
-@exec echo "You might want to setup a link to /etc/rmt by issuing:"
-@exec echo "ln -sf %D/libexec/grmt /etc/rmt"
-@unexec if [ X`readlink /etc/rmt` = X%D/libexec/grmt ]; then rm -f /etc/rmt; echo "*** You should reset the /etc/rmt link to whatever it was earlier, perhaps:"; echo "*** ln -s /usr/sbin/rmt /etc"; fi
 @unexec install-info --delete %D/info/tar.info %D/info/dir
 info/tar.info
 info/tar.info-1

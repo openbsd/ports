@@ -1,0 +1,24 @@
+# $OpenBSD: DEINSTALL,v 1.1 1999/04/09 22:30:48 marc Exp $
+#
+# gtar de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+if [ X`readlink /etc/rmt` = X${PREFIX}/libexec/grmt ]; then
+    rm -f /etc/rmt
+    echo
+    echo "+---------------"
+    echo "| You should reset the /etc/rmt link to whatever it was
+    echo "| before gtar was installed, perhaps /usr/sbin/rmt
+    echo "| Try these steps as root:"
+    echo "|"
+    echo "|           cd /etc"
+    echo "|           ln -s /usr/sbin/rmt"
+    echo "|"
+    echo "+---------------"
+    echo
+fi
+
+exit 0
