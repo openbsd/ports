@@ -1,0 +1,11 @@
+$OpenBSD: patch-descriptors_c,v 1.1 2002/05/30 18:38:17 naddy Exp $
+--- descriptors.c.orig	Thu May 30 02:26:32 2002
++++ descriptors.c	Thu May 30 02:26:46 2002
+@@ -7,6 +7,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "usbi.h"
+ 
+ int usb_get_descriptor(usb_dev_handle *udev, unsigned char type, unsigned char index, void *buf, int size)

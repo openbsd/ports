@@ -1,15 +1,6 @@
-$OpenBSD: patch-bsd_c,v 1.2 2002/05/25 20:43:17 pvalchev Exp $
+$OpenBSD: patch-bsd_c,v 1.3 2002/05/30 18:38:17 naddy Exp $
 --- bsd.c.orig	Wed Feb  6 23:43:25 2002
 +++ bsd.c	Sat May 25 14:38:37 2002
-@@ -3,7 +3,7 @@
-  *
-  * Derived from Linux version by Richard Tobin.
-  *
-- * $Id: patch-bsd_c,v 1.2 2002/05/25 20:43:17 pvalchev Exp $
-+ * $Id: patch-bsd_c,v 1.2 2002/05/25 20:43:17 pvalchev Exp $
-  * $Name:  $
-  *
-  * This library is covered by the LGPL, read LICENSE for details.
 @@ -14,7 +14,7 @@
   * man pages and source to try and find things that did the same as
   * the Linux version. -- Richard
