@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 00:12:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/10 15:08:34 espie Exp $
 
 COMMENT=	"GNU automated testing framework"
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= dejagnu
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
 LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
-BUILD_DEPENDS=	expect::lang/expect
+RUN_DEPENDS=	::lang/expect
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
