@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/01/07 21:08:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.23 2001/01/12 23:06:36 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-DISTNAME=	php-4.0.4
-PKGNAME=	php4-4.0.4
+DISTNAME=	php-4.0.4pl1
+PKGNAME=	php4-4.0.4pl1
 CATEGORIES=	www lang
 NEED_VERSION=	1.346
 
