@@ -1,0 +1,35 @@
+--- Makefile.orig	Mon Sep  6 19:13:42 1999
++++ Makefile	Mon Sep  6 19:15:22 1999
+@@ -1,17 +1,17 @@
+ 
+-CC=gcc
++#CC=gcc
+ 
+ #required for djgpp, you can also use copy /b go32.exe+gif2png gif2png.exe
+ #COFF2EXE=coff2exe
+ COFF2EXE=@echo >/dev/null
+ 
+-PNGLIB=libpng-0.81
+-ZLIB=zlib-0.95
++#PNGLIB=libpng-0.81
++#ZLIB=zlib-0.95
+ 
+-LIBS=$(PNGLIB)/libpng.a $(ZLIB)/libz.a
+-INCLUDE=-I$(PNGLIB) -I$(ZLIB)
++LIBS=-L${LOCALBASE}/lib -lpng -lz
++INCLUDE=-I${LOCALBASE}/include
+ 
+-CFLAGS=$(INCLUDE) -g -O -Wall
++CFLAGS+=$(INCLUDE) -Wall
+ LDFLAGS=-g
+ 
+ #CFLAGS=$(INCLUDE) -O -Wall
+@@ -23,7 +23,7 @@
+ 
+ all-lib: libpng zlib all
+ 
+-gif2png: $(OBJS) $(LIBS)
++gif2png: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 	$(COFF2EXE) $@
+ 
