@@ -1,0 +1,11 @@
+$OpenBSD: patch-os_h,v 1.1 2001/03/24 22:31:19 brad Exp $
+--- os.h.orig	Wed Jul  1 04:29:10 1998
++++ os.h	Sat Mar 24 17:30:42 2001
+@@ -18,6 +18,7 @@
+ #endif
+ 
+ #if defined(UNIX)
++  #include <sys/types.h>
+   #define DIRSEP '/'
+ #endif
+ 

@@ -1,5 +1,6 @@
---- portable.h.orig	Thu Oct 21 18:39:51 1999
-+++ portable.h	Thu Oct 21 18:41:26 1999
+$OpenBSD: patch-portable_h,v 1.1 2001/03/24 22:31:19 brad Exp $
+--- portable.h.orig	Wed Jul  1 04:29:10 1998
++++ portable.h	Sat Mar 24 17:30:41 2001
 @@ -10,7 +10,7 @@
  
  #include "os.h"

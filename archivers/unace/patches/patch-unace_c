@@ -1,6 +1,7 @@
---- unace.c.orig	Thu Oct 21 18:39:24 1999
-+++ unace.c	Thu Oct 21 18:39:46 1999
-@@ -120,7 +120,7 @@
+$OpenBSD: patch-unace_c,v 1.1 2001/03/24 22:31:20 brad Exp $
+--- unace.c.orig	Wed Jul  1 04:29:10 1998
++++ unace.c	Sat Mar 24 17:30:41 2001
+@@ -120,7 +120,7 @@ INT  read_header(INT print_err)         
     if (read(archan, &head, 4)<4)
        return 0;                         // read CRC and header size
  

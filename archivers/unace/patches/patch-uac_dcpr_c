@@ -1,6 +1,7 @@
+$OpenBSD: patch-uac_dcpr_c,v 1.1 2001/03/24 22:31:20 brad Exp $
 --- uac_dcpr.c.orig	Wed Jul  1 04:29:10 1998
-+++ uac_dcpr.c	Mon Feb 14 16:46:29 2000
-@@ -64,7 +64,7 @@
++++ uac_dcpr.c	Sat Mar 24 17:30:41 2001
+@@ -64,7 +64,7 @@ void sortrange(INT left, INT right)
     while (zl < zr);
  
     //sort partial ranges - when very small, sort directly
@@ -9,7 +10,7 @@
        if (left < zr - 1)
           sortrange(left, zr);
        else if (sort_freq[left] < sort_freq[zr])
-@@ -72,8 +72,9 @@
+@@ -72,8 +72,9 @@ void sortrange(INT left, INT right)
           xchg_def(sort_freq[left], sort_freq[zr]);
           xchg_def(sort_org[left], sort_org[zr]);
        }
@@ -20,7 +21,7 @@
        if (zl < right - 1)
           sortrange(zl, right);
        else if (sort_freq[zl] < sort_freq[right])
-@@ -81,6 +82,7 @@
+@@ -81,6 +82,7 @@ void sortrange(INT left, INT right)
           xchg_def(sort_freq[zl], sort_freq[right]);
           xchg_def(sort_org[zl], sort_org[right]);
        }
@@ -28,7 +29,7 @@
  }
  
  void quicksort(INT n)
-@@ -102,7 +104,7 @@
+@@ -102,7 +104,7 @@ void readdat(void)
     buf_rd[0] = buf_rd[size_rdb - 2];
     buf_rd[1] = buf_rd[size_rdb - 1];
     read_adds_blk((CHAR *) & buf_rd[2], i);
@@ -37,7 +38,7 @@
     {
        ULONG *p;
        i>>=2;    // count LONGs not BYTEs
-@@ -137,7 +139,7 @@
+@@ -137,7 +139,7 @@ void dcpr_comm_init(void)
     i = comm_cpr_size > size_rdb * sizeof(LONG) ? size_rdb * sizeof(LONG) : comm_cpr_size;
     if (!f_err)
        memcpy(buf_rd, comm, i);
@@ -46,7 +47,7 @@
     {
        ULONG *p;
        i>>=2;    // count LONGs not BYTEs
-@@ -510,7 +512,7 @@
+@@ -510,7 +512,7 @@ void dcpr_init_file(void)
  
        i = size_rdb * sizeof(LONG);
        read_adds_blk((CHAR *) buf_rd, i);
