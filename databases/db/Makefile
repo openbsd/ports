@@ -3,7 +3,7 @@
 # Date created:	        26 Nov 1997
 # Whom:                 Stanislav Grozev <tacho@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.2 1997/12/29 22:01:01 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/06 13:39:46 niklas Exp $
 #
 
 DISTNAME=	db-2.3.12
@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	tacho@openbsd.org
+BROKEN=		yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build.unix
 
