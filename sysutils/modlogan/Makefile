@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/04 23:40:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/17 23:28:46 mjc Exp $
 
 COMMENT=	"modular log analyzer"
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	expat.3::textproc/expat \
 		gd.18::graphics/gd \
 		pcre::devel/pcre \
-		adns.1::net/adns
+		adns.1::net/adns \
+		bz2.10::archivers/bzip2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
