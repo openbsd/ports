@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2000/09/21 16:12:26 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2001/01/09 21:03:37 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -46,6 +46,9 @@
      SUBDIR += tracker
      SUBDIR += waveplay
      SUBDIR += workman
+     SUBDIR += wsoundprefs
+     SUBDIR += wsoundserver
+     SUBDIR += wsoundserver:esd
      SUBDIR += xcd
      SUBDIR += xcdplayer
      SUBDIR += xmcd
