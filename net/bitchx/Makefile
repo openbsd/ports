@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/17 07:24:24 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/17 07:25:19 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -20,8 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/security/socks5
 MAINTAINER=	brad@openbsd.org
 
 SEPARATE_BUILD=	concurrent
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 
 .if defined(USE_SOCKS5) && ${USE_SOCKS5:U} == YES
 CONFIGURE_ARGS=	--with-socks5="${LOCALBASE}"
