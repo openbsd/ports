@@ -1,0 +1,12 @@
+--- scripts/exim_install.orig	Mon May 10 12:31:20 2004
++++ scripts/exim_install	Thu Jul 15 17:39:22 2004
+@@ -192,8 +192,7 @@ while [ $# -gt 0 ]; do
+   # The exim binary is handled specially
+ 
+   if [ $name = exim${EXE} ]; then
+-    version=exim-`./exim -bV -C /dev/null | \
+-      awk '/Exim version/ { OFS=""; print $3,"-",substr($4,2,length($4)-1) }'`${EXE}
++    version=exim-4.40
+ 
+     if [ "${version}" = "exim-" ]; then
+       echo $com ""

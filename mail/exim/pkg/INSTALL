@@ -1,97 +1,126 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/06/23 19:11:12 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/07/26 10:56:01 peter Exp $
 #
 # Pre/post-installation setup of exim
 
-# exit on errors, use a sane path and install prefix
+# use a sane path and install prefix
 #
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/exim
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/exim
 
+EXIMSPOOL=/var/spool/exim
+EXIM=_exim
+ID=521
+
+# add user/group _exim if they don't already exist
+do_accts()
+{
+	echo
+	echo "+---------------------"
+
+	groupinfo -e $EXIM
+	if [ $? -eq 0 ]; then
+		echo "| Using existing group '$EXIM'"
+	else
+		echo "| Creating group '$EXIM'"
+		groupadd -g $ID $EXIM
+	fi
+
+	userinfo -e $EXIM
+	if [ $? -eq 0 ]; then
+		echo "| Using existing account '$EXIM'"
+	else
+		echo "| Creating user '$EXIM'"
+		if [ -d $EXIMSPOOL ]; then
+			EXIMCREATEHOME=""
+		else
+			EXIMCREATEHOME="-m"
+		fi
+		useradd -g $EXIM \
+			-c "$1 Account" \
+			$EXIMCREATEHOME -d $EXIMSPOOL \
+			-L daemon \
+			-u $ID $EXIM
+	fi
+
+	echo "+---------------------"
+	echo
+}
+
 # Function: tell the user what they need to do to use the port just installed
 #
 do_notice()
 {
-    echo
-    echo "+---------------"
-    echo "| It is strongly advised that you configure exim to use"
-    echo "| a UID and GID other that 0/0. You can do this by adding"
-    echo "| lines to the configure file like this:"
-    echo "| "
-    echo "|       exim_user = \"_exim\""
-    echo "|       exim_group = \"_exim\""
-    echo "|       with uid/gid = \"521\""
-    echo "| "
-    echo "| but you must remember to allow that user write"
-    echo "| permissions to /var/spool/exim."
-    echo "| "
-    echo "| If you want to do local deliveries as another user"
-    echo "| (e.g. if you allow users to put procmail into their"
-    echo "| .forward file) make the exim binary setuid root."
-    echo "| "
-    echo "| If you intend replacing sendmail with exim, then don't"
-    echo "| forget to modify /etc/mailer.conf accordingly; see"
-    echo "| mailwrapper(8)."
+	echo
+	echo "+---------------"
+	echo "| If you intend replacing sendmail with exim, then don't"
+	echo "| forget to modify /etc/mailer.conf accordingly; see"
+	echo "| mailwrapper(8)."
 }
 
 # Function: install configuration files
 #
 do_install_conf()
 {
-    install -d -o root -g wheel ${CONFIG_DIR}
-    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/configure \
-      ${CONFIG_DIR}/configure
-    echo "| "
-    echo "| The $1 configuration files have been installed in ${CONFIG_DIR}."
-    echo "| Please view these files and change the configuration to meet"
-    echo "| your needs."
-    echo "+---------------"
-    echo
+	install -d -o root -g wheel ${CONFIG_DIR}
+	install -o root -g wheel ${SAMPLE_CONFIG_DIR}/configure \
+		${CONFIG_DIR}/configure
+	echo "| "
+	echo "| A default $1 configuration file has been installed"
+	echo "| in ${CONFIG_DIR}."
+	echo "|"
+	echo "| Please review this file and change the configuration"
+	echo "| to meet your needs."
+	echo "+---------------"
+	echo
 }
 
 # Function: tell the user what they need to do to use the port just installed
 #
 do_notice_conf()
 {
-    echo "| "
-    echo "| The existing $1 configuration files in ${CONFIG_DIR} have NOT"
-    echo "| been changed.  You may want to compare them to the current samples"
-    echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
-    echo "| as needed."
-    echo "+---------------"
-    echo
+	echo "| "
+	echo "| The existing $1 configuration files in ${CONFIG_DIR} have NOT"
+	echo "| been changed.  You may want to compare them to the current samples"
+	echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
+	echo "| as needed."
+	echo "|"
+	echo "| A perl script may help converting from exim-3.xx config"
+	echo "| files and has been installed in"
+	echo "|       ${PREFIX}/share/examples/exim/convert4r4"
+	echo "+---------------"
+	echo
 }
 
 # Verify proper execution
 #
 if [ $# -ne 2 ]; then
-    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-    exit 1
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
 fi
 
 # Verify/process the command
 #
 case $2 in
-    PRE-INSTALL)
-	: nothing to pre-install for this port
-	;;
-    POST-INSTALL)
-	do_notice "$1"
-	if [ ! -d ${CONFIG_DIR} ]; then
-	    do_install_conf "$1"
-	elif [ ! -f ${CONFIG_DIR}/configure ]; then
-	    do_install_conf "$1"
-	else
-	    do_notice_conf "$1"
-	fi
-	;;
-    *)
-	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-	exit 1
-	;;
+	PRE-INSTALL)
+		do_accts $1
+		;;
+	POST-INSTALL)
+		do_notice "$1"
+		if [ ! -d ${CONFIG_DIR} ]; then
+		    do_install_conf "$1"
+		elif [ ! -f ${CONFIG_DIR}/configure ]; then
+		    do_install_conf "$1"
+		else
+		    do_notice_conf "$1"
+		fi
+		;;
+	*)
+		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+		exit 1
+		;;
 esac
 
 exit 0

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2000/08/02 15:44:12 naddy Exp $
-sbin/eximon
-sbin/eximon.bin
+bin/eximon
+bin/eximon.bin

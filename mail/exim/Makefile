@@ -1,59 +1,66 @@
-# $OpenBSD: Makefile,v 1.42 2004/07/26 10:14:27 peter Exp $
+# $OpenBSD: Makefile,v 1.43 2004/07/26 10:56:01 peter Exp $
 
-COMMENT=	"flexible mail transfer agent"
-
-VERSION=	3.36
-VERSION_DOC=	3.30
+COMMENT=	"Flexible mail transfer agent"
+VERSION=	4.41
 DISTNAME=	exim-${VERSION}
-PKGNAME=	${DISTNAME}p3
 CATEGORIES=	mail
-
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
-		ftp://ftp.exim.org/pub/exim/exim3/ \
-		ftp://ftp.fu-berlin.de/unix/mail/exim/exim3/
-DISTFILES=	exim-${VERSION}.tar.gz exim-texinfo-${VERSION_DOC}.tar.gz
-
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
+		http://ftp.planetmirror.com/pub/exim/exim4/ \
+		ftp://ftp.planetmirror.com/pub/exim/exim4/
+MASTER_SITES0=	http://duncanthrax.net/exiscan-acl/
+				
 HOMEPAGE=	http://www.exim.org/
+MAINTAINER=	ilya voronin <ivoronin@ivoronin.pp.ru> \
+		Peter Galbavy <peter.galbavy@knowtion.net>
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+# GPL
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-# ldap - once openldap is supported by exim
-FLAVORS=	no_x11 no_perl mysql postgresql ldap no_ssl
+FLAVORS=no_exiscan no_x11 mysql postgresql ldap iconv
 FLAVOR?=
 
-MAKE_ENV=	FLAVOR="${FLAVOR}"
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+NO_REGRESS=Yes
 
-EXIM_MAKECAT=
-EXIM_LOOKUP_INCLUDE=
-EXIM_LOOKUP_LIBS=
+.if !${FLAVOR:L:Mno_exiscan}
+PATCHFILES=		exiscan-acl-4.41-24.patch:0
+PATCH_DIST_STRIP=	-p1
+.endif
 
 .if !${FLAVOR:L:Mno_x11}
-USE_X11=	Yes
-EXIM_MAKECAT+=	"EXIM_MONITOR=eximon.bin\n"
-.endif
-
-.if !${FLAVOR:L:Mno_perl}
-EXIM_MAKECAT+=	"EXIM_PERL=perl.o\n"
-.endif
-
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap.2,lber:openldap-client-2.*:databases/openldap
-EXIM_MAKECAT+=	"LOOKUP_LDAP=yes\nLDAP_LIB_TYPE=OPENLDAP2\n"
-EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
-EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
+USE_X11=		Yes
+EXIM_MAKECAT+=		"EXIM_MONITOR=eximon.bin\n"
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
-EXIM_MAKECAT+=	"LOOKUP_MYSQL=yes\n"
+EXIM_MAKECAT+=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-*:databases/mysql
+.endif
+
+.if ${FLAVOR:L:Mpostgresql}
+EXIM_MAKECAT+=		"LOOKUP_PGSQL=yes\n"
+EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
+EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/ -lpq
+LIB_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
+.endif
+
+.if ${FLAVOR:L:Mldap}
+EXIM_MAKECAT+=		"LOOKUP_LDAP=yes\n"
+EXIM_MAKECAT+=		"LDAP_LIB_TYPE=OPENLDAP2\n"
+EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
+EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
+LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+.endif
+
+.if ${FLAVOR:L:Miconv}
+MODULES=		iconv
+EXIM_MAKECAT+=		"HAVE_ICONV=yes\n"
+EXIM_EXTRA_LIBS+=	-L${LOCALBASE}/lib -liconv
+EXIM_CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
@@ -63,31 +70,36 @@ EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
-.if !${FLAVOR:L:Mno_ssl}
-EXIM_MAKECAT+=	"SUPPORT_TLS=yes\nTLS_LIBS=-lssl -lcrypto\n"
-.endif
+EXIM_EXTRA_LIBS+=	-lwrap
 
-NO_REGRESS=	Yes
+EXIM_MAKECAT+=		"BIN_DIRECTORY=${PREFIX}/bin\n"
+EXIM_MAKECAT+=		"CONFIGURE_FILE=${SYSCONFDIR}/exim/configure\n"
+EXIM_MAKECAT+=		"LOOKUP_INCLUDE=${EXIM_LOOKUP_INCLUDE}\n"
+EXIM_MAKECAT+=		"LOOKUP_LIBS=${EXIM_LOOKUP_LIBS}\n"
+EXIM_MAKECAT+=		"EXTRALIBS_EXIM=${EXIM_EXTRA_LIBS}\n"
+EXIM_MAKECAT+=		"CFLAGS=${CFLAGS} ${EXIM_CFLAGS}\n"
 
 do-configure:
 	@mkdir -p ${WRKSRC}/Local
 	@cp ${FILESDIR}/Makefile ${WRKSRC}/Local
+	@echo -n ${EXIM_MAKECAT} >> ${WRKSRC}/Local/Makefile
 .if !${FLAVOR:L:Mno_x11}
 	@cp ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 .endif
-	@echo -n ${EXIM_MAKECAT} >> ${WRKSRC}/Local/Makefile
-	@echo "LOOKUP_INCLUDE=${EXIM_LOOKUP_INCLUDE}">>${WRKSRC}/Local/Makefile
-	@echo "LOOKUP_LIBS=${EXIM_LOOKUP_LIBS}">>${WRKSRC}/Local/Makefile
-	@cd ${WRKSRC}/doc ; \
-	for i in ../../exim-texinfo-${VERSION_DOC}/doc/* ; do \
-		ln -sf $$i ; \
-	done
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
+	${INSTALL_DATA} ${WRKINST}/etc/exim/configure ${PREFIX}/share/examples/exim
+	${INSTALL_DATA} ${WRKSRC}/build-`uname -s`-`uname -m`/convert4r4 ${PREFIX}/share/examples/exim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim/spec.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/README.SIEVE ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
+	${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${PREFIX}/man/man8
+
+.if !${FLAVOR:L:Mno_exiscan}
+	${INSTALL_DATA} ${WRKSRC}/doc/exiscan-acl-examples.txt ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/exiscan-acl-spec.txt ${PREFIX}/share/doc/exim
+.endif
 
 .include <bsd.port.mk>
