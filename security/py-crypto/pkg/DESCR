@@ -1,0 +1,3 @@
+Python extensions using OpenSSL which contains hashing algorithms,
+chaffing/winnowing, random number generation, various utility modules,
+and several block encryption and digital signature algorithms.
