@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2003/11/12 20:04:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.79 2003/12/22 16:09:29 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.2
-REVISION=	153
+REVISION=	154
 VERSION=	6.2.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
@@ -120,6 +120,10 @@ SUBST_VARS=     	P
 post-patch:
 	touch ${WRKBUILD}/auto/configure
 
+post-configure:
+	touch ${WRKBUILD}/auto/config.mk
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pf.vim ${PREFIX}/share/vim/${P}/syntax
+
 .include <bsd.port.mk>
