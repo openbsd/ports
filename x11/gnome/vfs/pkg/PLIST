@@ -1,0 +1,189 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
+bin/gnome-vfs-config
+include/libgnomevfs/gnome-vfs-application-registry.h
+include/libgnomevfs/gnome-vfs-async-ops.h
+include/libgnomevfs/gnome-vfs-backend.h
+include/libgnomevfs/gnome-vfs-cancellable-ops.h
+include/libgnomevfs/gnome-vfs-cancellation.h
+include/libgnomevfs/gnome-vfs-configuration.h
+include/libgnomevfs/gnome-vfs-constants.h
+include/libgnomevfs/gnome-vfs-context.h
+include/libgnomevfs/gnome-vfs-directory-filter.h
+include/libgnomevfs/gnome-vfs-directory.h
+include/libgnomevfs/gnome-vfs-file-info.h
+include/libgnomevfs/gnome-vfs-file-size.h
+include/libgnomevfs/gnome-vfs-find-directory.h
+include/libgnomevfs/gnome-vfs-handle.h
+include/libgnomevfs/gnome-vfs-inet-connection.h
+include/libgnomevfs/gnome-vfs-init.h
+include/libgnomevfs/gnome-vfs-iobuf.h
+include/libgnomevfs/gnome-vfs-list-sort.h
+include/libgnomevfs/gnome-vfs-messages.h
+include/libgnomevfs/gnome-vfs-method.h
+include/libgnomevfs/gnome-vfs-mime-handlers.h
+include/libgnomevfs/gnome-vfs-mime-info.h
+include/libgnomevfs/gnome-vfs-mime-magic.h
+include/libgnomevfs/gnome-vfs-mime-monitor.h
+include/libgnomevfs/gnome-vfs-mime-sniff-buffer.h
+include/libgnomevfs/gnome-vfs-mime.h
+include/libgnomevfs/gnome-vfs-module-shared.h
+include/libgnomevfs/gnome-vfs-module.h
+include/libgnomevfs/gnome-vfs-ops.h
+include/libgnomevfs/gnome-vfs-parse-ls.h
+include/libgnomevfs/gnome-vfs-private-types.h
+include/libgnomevfs/gnome-vfs-private-utils.h
+include/libgnomevfs/gnome-vfs-private.h
+include/libgnomevfs/gnome-vfs-regexp-filter.h
+include/libgnomevfs/gnome-vfs-result.h
+include/libgnomevfs/gnome-vfs-seekable.h
+include/libgnomevfs/gnome-vfs-shellpattern-filter.h
+include/libgnomevfs/gnome-vfs-types.h
+include/libgnomevfs/gnome-vfs-uri.h
+include/libgnomevfs/gnome-vfs-utils.h
+include/libgnomevfs/gnome-vfs-xfer.h
+include/libgnomevfs/gnome-vfs.h
+lib/libgnomevfs-pthread.a
+lib/libgnomevfs-pthread.la
+lib/libgnomevfs.a
+lib/libgnomevfs.la
+lib/locale/ca/LC_MESSAGES/gnome-vfs.mo
+lib/locale/da/LC_MESSAGES/gnome-vfs.mo
+lib/locale/de/LC_MESSAGES/gnome-vfs.mo
+lib/locale/el/LC_MESSAGES/gnome-vfs.mo
+lib/locale/es/LC_MESSAGES/gnome-vfs.mo
+lib/locale/fi/LC_MESSAGES/gnome-vfs.mo
+lib/locale/fr/LC_MESSAGES/gnome-vfs.mo
+lib/locale/ga/LC_MESSAGES/gnome-vfs.mo
+lib/locale/gl/LC_MESSAGES/gnome-vfs.mo
+lib/locale/hu/LC_MESSAGES/gnome-vfs.mo
+lib/locale/it/LC_MESSAGES/gnome-vfs.mo
+lib/locale/lt/LC_MESSAGES/gnome-vfs.mo
+lib/locale/nl/LC_MESSAGES/gnome-vfs.mo
+lib/locale/no/LC_MESSAGES/gnome-vfs.mo
+lib/locale/pl/LC_MESSAGES/gnome-vfs.mo
+lib/locale/pt_BR/LC_MESSAGES/gnome-vfs.mo
+lib/locale/ro/LC_MESSAGES/gnome-vfs.mo
+lib/locale/ru/LC_MESSAGES/gnome-vfs.mo
+lib/locale/sk/LC_MESSAGES/gnome-vfs.mo
+lib/locale/sl/LC_MESSAGES/gnome-vfs.mo
+lib/locale/sv/LC_MESSAGES/gnome-vfs.mo
+lib/locale/tr/LC_MESSAGES/gnome-vfs.mo
+lib/locale/uk/LC_MESSAGES/gnome-vfs.mo
+lib/locale/wa/LC_MESSAGES/gnome-vfs.mo
+lib/vfs/extfs/README
+lib/vfs/extfs/a
+lib/vfs/extfs/ar
+lib/vfs/extfs/arj
+lib/vfs/extfs/cpio
+lib/vfs/extfs/deb
+lib/vfs/extfs/hp48
+lib/vfs/extfs/lha
+lib/vfs/extfs/mailfs
+lib/vfs/extfs/patchfs
+lib/vfs/extfs/rar
+lib/vfs/extfs/rpm
+lib/vfs/extfs/rpms
+lib/vfs/extfs/tar
+lib/vfs/extfs/trpm
+lib/vfs/extfs/zip
+lib/vfs/extfs/zoo
+lib/vfs/include/gnome-vfs-file-size.h
+lib/vfs/modules/libbzip2.a
+lib/vfs/modules/libbzip2.la
+lib/vfs/modules/libcdda.a
+lib/vfs/modules/libcdda.la
+lib/vfs/modules/libextfs.a
+lib/vfs/modules/libextfs.la
+lib/vfs/modules/libfile.a
+lib/vfs/modules/libfile.la
+lib/vfs/modules/libftp.a
+lib/vfs/modules/libftp.la
+lib/vfs/modules/libgconf.a
+lib/vfs/modules/libgconf.la
+lib/vfs/modules/libgzip.a
+lib/vfs/modules/libgzip.la
+lib/vfs/modules/libhttp.a
+lib/vfs/modules/libhttp.la
+lib/vfs/modules/libvfs-pipe.a
+lib/vfs/modules/libvfs-pipe.la
+lib/vfs/modules/libvfs-test.a
+lib/vfs/modules/libvfs-test.la
+lib/vfs/modules/libvfs-translate.a
+lib/vfs/modules/libvfs-translate.la
+lib/vfsConf.sh
+lib/vfspthreadConf.sh
+man/man5/gnome-vfs-mime.5
+share/application-registry/gnome-vfs.applications
+share/gnome-vfs/gnome-vfs-mime-magic
+share/gnome-vfs/vfs/modules/cdda-module.conf
+share/gnome-vfs/vfs/modules/default-modules.conf
+share/gnome/html/gnome-vfs-decl.txt
+share/gnome/html/gnome-vfs-sections.txt
+share/mime-info/gnome-vfs.keys
+share/mime-info/gnome-vfs.mime
+%%SHARED%%
+@dirrm share/mime-info
+@exec mkdir -p %D/share/gnome/html/gnome-vfs
+@dirrm share/gnome/html/gnome-vfs
+@dirrm share/gnome/html
+@dirrm share/gnome-vfs/vfs/modules
+@dirrm share/gnome-vfs/vfs
+@dirrm share/gnome-vfs
+@dirrm share/gnome
+@dirrm share/application-registry
+@dirrm lib/vfs/modules
+@dirrm lib/vfs/include
+@dirrm lib/vfs/extfs
+@dirrm lib/vfs
+@dirrm lib/locale/wa/LC_MESSAGES
+@dirrm lib/locale/wa
+@dirrm lib/locale/uk/LC_MESSAGES
+@dirrm lib/locale/uk
+@dirrm lib/locale/tr/LC_MESSAGES
+@dirrm lib/locale/tr
+@dirrm lib/locale/sv/LC_MESSAGES
+@dirrm lib/locale/sv
+@dirrm lib/locale/sl/LC_MESSAGES
+@dirrm lib/locale/sl
+@dirrm lib/locale/sk/LC_MESSAGES
+@dirrm lib/locale/sk
+@dirrm lib/locale/ru/LC_MESSAGES
+@dirrm lib/locale/ru
+@dirrm lib/locale/ro/LC_MESSAGES
+@dirrm lib/locale/ro
+@dirrm lib/locale/pt_BR/LC_MESSAGES
+@dirrm lib/locale/pt_BR
+@dirrm lib/locale/pl/LC_MESSAGES
+@dirrm lib/locale/pl
+@dirrm lib/locale/no/LC_MESSAGES
+@dirrm lib/locale/no
+@dirrm lib/locale/nl/LC_MESSAGES
+@dirrm lib/locale/nl
+@dirrm lib/locale/lt/LC_MESSAGES
+@dirrm lib/locale/lt
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/it
+@dirrm lib/locale/hu/LC_MESSAGES
+@dirrm lib/locale/hu
+@dirrm lib/locale/gl/LC_MESSAGES
+@dirrm lib/locale/gl
+@dirrm lib/locale/ga/LC_MESSAGES
+@dirrm lib/locale/ga
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/fi/LC_MESSAGES
+@dirrm lib/locale/fi
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrm lib/locale/el/LC_MESSAGES
+@dirrm lib/locale/el
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/de
+@dirrm lib/locale/da/LC_MESSAGES
+@dirrm lib/locale/da
+@dirrm lib/locale/ca/LC_MESSAGES
+@dirrm lib/locale/ca
+@dirrm lib/locale
+@dirrm include/libgnomevfs
+@exec mkdir -p %D/doc
+@dirrm doc

@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
+#
+
+    echo
+    echo "*=================[ $1"
+    echo "* To really remove $1 from your system you should also"
+    echo "* remove the configuration files from the /etc directory."
+    echo "* If you are planning on installing $1 again in the future"
+    echo "* you can leave it as it is."
+    echo "*"
+    echo "* FYI, the following configuration files belongs to this package:"
+    echo "*"
+    for f in \
+	gnome-vfs-mime-magic \
+	vfs/modules/default-modules.conf
+    do
+	echo "* /etc/$f"
+    done
+    echo "*================= $1 ]"
+    echo
+
+exit 0

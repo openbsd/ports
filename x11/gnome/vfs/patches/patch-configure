@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
+--- configure.orig	Tue May  8 01:12:27 2001
++++ configure	Thu Aug 30 16:22:46 2001
+@@ -4048,7 +4048,7 @@ EOF
+    
+ 
+ 
+-ALL_LINGUAS="az ca da de el es fi fr ga gl hu it ja ko lt nl nn no pl pt_BR ro ru sk sl sv tr uk wa"
++ALL_LINGUAS="ca da de el es fi fr ga gl hu it lt nl no pl pt_BR ro ru sk sl sv tr uk wa"
+ echo $ac_n "checking for ANSI C header files""... $ac_c" 1>&6
+ echo "configure:4054: checking for ANSI C header files" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_stdc'+set}'`\" = set"; then
