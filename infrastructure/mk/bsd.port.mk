@@ -1,29 +1,24 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.329 2000/09/13 13:49:51 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.330 2000/09/13 14:06:55 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
-#
-# Please view me with 4 column tabs!
 
-# There are two different types of "maintainers" in the whole ports
-# framework concept.  Maintainers of the bsd.port*.mk files
-# are listed below in the ${OPSYS}_MAINTAINER entries (this file
-# is used by multiple *BSD flavors).  You should consult them directly
-# if you have any questions/suggestions regarding this file since only
-# they are allowed to modify the master copies in the CVS repository!
+# Each port has a MAINTAINER, which is the email address(es) of the person(s)
+# to contact if you have questions/suggestions about that specific port.
+# To obtain that address, just type 
+#	make show VARNAME=MAINTAINER
+# in the specific port's directory.
+# 
+# The ports@openbsd.org address is the `default' MAINTAINER (the generic
+# OpenBSD ports mailing-list).
 
-# For each port, the MAINTAINER variable is what you should consult for
-# contact information on the person(s) to contact if you have questions/
-# suggestions about that specific port.  By default (if no MAINTAINER
-# is listed), a port is maintained by the subscribers of the ports@openbsd.org
-# mailing list, and any correspondence should be directed there.  
-#
+# Enquiries as to the bsd.port.mk framework should usually be directed 
+# to ports@openbsd.org.
 
-OpenBSD_MAINTAINER= ports-maintainers@openbsd.org
 
 # recent /usr/share/mk/* should include bsd.own.mk, guard for older versions
 .if !defined(BSD_OWN_MK)
@@ -49,13 +44,37 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .  endif
 .endif
 
-# Supported Variables and their behaviors:
+# There is a transition in progress. When the dust settles, 
+# the definitive source of documentation to this file's working
+# should be bsd.port.mk(5).
 #
 # IMPORTANT: any variable or target starting with an underscore 
 # (e.g., _DEPEND_ECHO) is internal to bsd.port.mk, and 
 # liable to change without notice. 
 #
 # DON'T USE IN INDIVIDUAL PORTS !!!
+#
+# The following variables are deprecated, use
+# PERMIT_xxx, CONFIGURE_STYLE, or EXTRACT_CASES instead:
+# ========================================================================
+# NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
+# USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
+# USE_IMAKE		- Port uses imake.
+# HAS_CONFIGURE	- Says that the port has its own configure script.
+# GNU_CONFIGURE	- Set if you are using GNU configure (optional).
+# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
+#						target.
+# EXTRACT_CMD	- Command for extracting archives (default: "gzip",
+#				  "bzip2" if USE_BZIP2, "unzip" if USE_ZIP).
+# EXTRACT_SUFX	- Suffix for archive files (default: ".tar.gz",
+#				  ".tar.bz2" if USE_BZIP2, ".zip" if USE_ZIP).
+# EXTRACT_BEFORE_ARGS 
+#				- Arguments to ${EXTRACT_CMD} before filename
+#				  (default: "-dc" for gzip or bzip2, "-q" for unzip)
+# EXTRACT_AFTER_ARGS 
+#				- Arguments to ${EXTRACT_CMD} following filename
+#				  (default: "| ${TAR} -xf -", or "-d ${WKRDIR}" if USE_ZIP).
+# ========================================================================
 #
 # Variables that typically apply to all ports:
 # 
@@ -83,7 +102,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # XMKMF			- Set to path of `xmkmf' if not in $PORTPATH 
 #                 (default: xmkmf -a ).
 # MAINTAINER	- The e-mail address of the contact person for this port
-#				  Defaults: ports@openbsd.org
+#				  Default: ports@openbsd.org
 # CATEGORIES	- A list of descriptive categories into which this port falls.
 # WRKOBJDIR		- A top level directory where, if defined, the separate working
 #				  directories will get created, and symbolically linked to from
@@ -186,16 +205,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # USE_GMAKE		- Port uses gmake.
 # USE_LIBTOOL	- Port uses libtool.
 #
-# The following variables are deprecated:
-# NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
-# USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
-# USE_IMAKE		- Port uses imake.
-# HAS_CONFIGURE	- Says that the port has its own configure script.
-# GNU_CONFIGURE	- Set if you are using GNU configure (optional).
-# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
-#						target.
-#
-#
 # AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_X11		- Port uses X11.
 #
@@ -257,19 +266,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # DEPENDS		- A list of other ports this package depends on being
 #				  made first.  Use this for things that don't fall into
 #				  the above two categories.
-#
-# Those variables are deprecated, use EXTRACT_CASES instead.
-# EXTRACT_CMD	- Command for extracting archives (default: "gzip",
-#				  "bzip2" if USE_BZIP2, "unzip" if USE_ZIP).
-# EXTRACT_SUFX	- Suffix for archive files (default: ".tar.gz",
-#				  ".tar.bz2" if USE_BZIP2, ".zip" if USE_ZIP).
-# EXTRACT_BEFORE_ARGS 
-#				- Arguments to ${EXTRACT_CMD} before filename
-#				  (default: "-dc" for gzip or bzip2, "-q" for unzip)
-# EXTRACT_AFTER_ARGS 
-#				- Arguments to ${EXTRACT_CMD} following filename
-#				  (default: "| ${TAR} -xf -", or "-d ${WKRDIR}" if USE_ZIP).
-#
 #
 # FETCH_CMD		  - Full path to ftp/http fetch command if not in $PORTPATH
 #				  (default: /usr/bin/ftp).
