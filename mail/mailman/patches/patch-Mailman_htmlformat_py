@@ -1,7 +1,7 @@
-$OpenBSD: patch-Mailman_htmlformat_py,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
---- Mailman/htmlformat.py.orig	Thu Aug 23 18:59:15 2001
-+++ Mailman/htmlformat.py	Thu Aug 23 19:06:29 2001
-@@ -506,13 +506,14 @@ class DefinitionList(Container):
+$OpenBSD: patch-Mailman_htmlformat_py,v 1.2 2002/05/14 01:04:18 naddy Exp $
+--- Mailman/htmlformat.py.orig	Wed Apr 24 12:04:47 2002
++++ Mailman/htmlformat.py	Wed Apr 24 12:09:34 2002
+@@ -506,12 +506,14 @@ class DefinitionList(Container):
  from mm_cfg import MAILMAN_URL
  PYTHON_URL  = 'http://www.python.org/'
  GNU_URL     = 'http://www.gnu.org/'
@@ -12,28 +12,18 @@ $OpenBSD: patch-Mailman_htmlformat_py,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
  DELIVERED_BY = 'mailman.jpg'
  PYTHON_POWERED = 'PythonPowered.png'
  GNU_HEAD = 'gnu-head-tiny.jpg'
--
 +OBSD_HEAD = 'openbsd_pb.gif'
  
+ 
  def MailmanLogo():
-     t = Table(border=0, width='100%')
-@@ -529,18 +530,24 @@ def MailmanLogo():
-         gnulink = Link(GNU_URL,
-                        '<img src="%s" alt="GNU\'s Not Unix" border=0>' %
-                        logo(GNU_HEAD))
-+        obsdlink = Link(OBSD_URL,
-+                       '<img src="%s" alt="Powered by OpenBSD" border=0>' %
-+                       logo(OBSD_HEAD))
-         text = Container(Link(MAILMAN_URL, 'Mailman home page'),
-                          '<br>',
-                          Link(PYTHON_URL, 'Python home page'),
-                          '<br>',
-                          Link(GNU_URL, 'GNU home page'),
-+                         '<br>',
-+                         Link(OBSD_URL, 'OpenBSD home page'),
-                          )
--        t.AddRow([mmlink, pylink, gnulink, text])
-+        t.AddRow([mmlink, pylink, gnulink, obsdlink, text])
+@@ -525,12 +527,15 @@ def MailmanLogo():
+                  logo(PYTHON_POWERED)
+         gnulink = '<img src="%s" alt="GNU\'s Not Unix" border=0>' % \
+                   logo(GNU_HEAD)
+-        t.AddRow([mmlink, pylink, gnulink])
++        obsdlink = '<img src="%s" alt="Powered by OpenBSD" border=0>' % \
++                  logo(OBSD_HEAD)
++        t.AddRow([mmlink, pylink, gnulink, obsdlink])
      else:
          # use only textual links
          mmlink = Link(MAILMAN_URL,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/14 01:04:19 naddy Exp $
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -197,7 +197,6 @@ lib/mailman/bin/version
 lib/mailman/bin/withlist
 lib/mailman/cgi-bin/admin
 lib/mailman/cgi-bin/admindb
-lib/mailman/cgi-bin/archives
 lib/mailman/cgi-bin/edithtml
 lib/mailman/cgi-bin/handle_opts
 lib/mailman/cgi-bin/listinfo
@@ -269,6 +268,8 @@ share/examples/mailman/pending_subscriptions.db
 @unexec rm -f %D/lib/mailman/bin/paths.pyc
 @unexec rm -f %D/lib/mailman/cron/paths.pyc
 @unexec rm -f %D/lib/mailman/scripts/paths.pyc
+@dirrm share/examples/mailman
+@dirrm share/doc/mailman
 @dirrm lib/mailman/templates
 @dirrm lib/mailman/scripts
 @dirrm lib/mailman/mail
@@ -282,5 +283,3 @@ share/examples/mailman/pending_subscriptions.db
 @dirrm lib/mailman/Mailman/Cgi
 @dirrm lib/mailman/Mailman/Bouncers
 @dirrm lib/mailman/Mailman/Archiver
-@dirrm share/doc/mailman
-@dirrm share/examples/mailman
