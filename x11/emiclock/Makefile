@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/31 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/02 13:01:25 espie Exp $
 #
 
 DISTNAME=	EmiClock-1.0.2
@@ -16,6 +16,12 @@ MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	Yes
 FAKE=		Yes
+
+# Man page makes the license clear
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No Fee
+PERMIT_PACKAGE_CDROM=	No Fee
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	$(PREFIX)/lib/X11/ja_JP.EUC/app-defaults
