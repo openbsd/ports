@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/24 05:03:14 brad Exp $
-${KDE}/kwin_qinx.la
-${KDE}/libkwin_qinx.so.0.0
+@comment $OpenBSD: PLIST,v 1.2 2004/02/10 22:54:59 espie Exp $
+${KDE}/kstyle_qinx_config.la
+${KDE}/kwin3_qinx.la
 ${KDE}/kwin_qinx_config.la
-${KDE}/libkwin_qinx_config.so.0.0
 ${KDE}/plugins/styles/qinx.la
-${KDE}/plugins/styles/libqinx.so.0.0
 share/apps/kdisplay/color-schemes/qinx.kcsrc
 share/apps/kdisplay/color-schemes/qinxmodern.kcsrc
 share/apps/kstyle/themes/qinx.themerc
-share/apps/kstyle/themes/qinxflat.themerc
 share/apps/kwin/qinx.desktop
+%%SHARED%%
