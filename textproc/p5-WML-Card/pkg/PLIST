@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/06/10 06:14:23 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/18 01:50:36 naddy Exp $
 ${P5SITE}/WML/Card.pm
 ${P5SITE}/WML/Card/7110.pm
 ${P5SITE}/WML/Card/Palm.pm
 ${P5SITE}/WML/Card/UP.pm
 ${P5SITE}/WML/Deck.pm
+@comment ${P5ARCH}/auto/WML/Card/.packlist
 man/man3p/WML::Card.3p
 man/man3p/WML::Deck.3p
+@comment @dirrm ${P5ARCH}/auto/WML/Card
+@comment @dirrm ${P5ARCH}/auto/WML
 @dirrm ${P5SITE}/WML/Card
+@dirrm ${P5SITE}/WML

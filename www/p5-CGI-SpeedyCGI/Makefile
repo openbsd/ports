@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/31 10:23:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/18 01:50:36 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"speed up perl scripts by running them persistently"
 
