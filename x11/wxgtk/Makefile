@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/16 04:34:48 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/09 01:05:37 brad Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit"
 
 DISTNAME=	wxGTK-2.2.9
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 EXTRACT_SUFX=   .tar.gz
