@@ -1,11 +1,11 @@
-$OpenBSD: user.list,v 1.1 2003/06/22 09:59:35 sturm Exp $
+$OpenBSD: user.list,v 1.2 2003/06/23 19:20:58 sturm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
-'noauto'). All ports' users/groups have to start with an underscore. If a
-user/group pair is created, they share the same uid/gid. If a user is
-member of a system group, leave the group entry empty. If only a group is
-created, leave the user entry empty.
+'noauto'). All ports' users/groups have to start with an underscore and
+have to use a fixed uid/gid. If a user/group pair is created, they share
+the same uid/gid. If a user is member of a system group, leave the group
+entry empty. If only a group is created, leave the user entry empty.
 
 id  user		group		port options
 ----------------------------------------------------
