@@ -1,0 +1,12 @@
++------------
+| In order to use fvwm95 as your window manager, you must change your
+| .xinitrc or .xsession appropriately and add a line similiar to the
+| following:
+|
+| 	exec ${PREFIX}/bin/fvwm95
+|
+| Icons have been installed into ${PREFIX}/icons, and a system wide 
+| configuration has been put in ${PREFIX}/lib/X11/fvwm95/system.fvwm95rc. To 
+| use your own configuration, copy ${PREFIX}/lib/X11/fvwm95/system.fvwm95rc to
+| ~/.fvwm95rc and edit as appropriate.
++------------

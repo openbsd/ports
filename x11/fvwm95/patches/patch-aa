@@ -1,0 +1,11 @@
+--- modules/FvwmAudio/Makefile.in.orig	Wed May 31 13:05:08 2000
++++ modules/FvwmAudio/Makefile.in	Wed May 31 13:05:21 2000
+@@ -23,7 +23,7 @@
+ XPM_LIBRARY=-lXpm
+ XEXT_LIBRARY=-lXext
+ FVWM_LIBRARY=-l${fvwm_name}
+-RPLAY_LIBRARY=-lrplay
++RPLAY_LIBRARY=
+ LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} ${RPLAY_LIBRARY}
+ 
+ EXTRA_DEFINES=-DXPM -DSHAPE
