@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2004/11/11 04:06:57 djm Exp $
+# $OpenBSD: Makefile,v 1.131 2005/01/24 09:47:07 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += scrot
      SUBDIR += smpeg-xmms
      SUBDIR += sng
+     SUBDIR += sodipodi
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
      SUBDIR += swfdec
