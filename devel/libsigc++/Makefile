@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/15 10:03:05 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/04 01:46:38 krw Exp $
 
 DISTNAME=	libsigc++-1.0.1
 CATEGORIES=	devel
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/libsigc/
 
 MAINTAINER=	ports@openbsd.org

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/20 15:43:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/04 01:46:38 krw Exp $
 
 DISTNAME=	libIDL-0.6.5
 CATEGORIES=	devel
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/libraries/source/ \
 	http://atv.ne.mediaone.net/libIDL/
 

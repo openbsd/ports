@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/20 18:54:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/04 01:46:40 krw Exp $
 
 DISTNAME=		pcre-3.2
 CATEGORIES=     	devel
-NEED_VERSION=		1.302
+NEED_VERSION=		1.310
 
 MAINTAINER=		jakob@openbsd.org
 
