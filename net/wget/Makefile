@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/06 15:35:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/06 22:51:48 espie Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -17,7 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
-USE_GMAKE=	Yes
+
+# Less broken way to force Rebuild...
+post-patch:
+	@echo '.PHONY: $${SUBDIRS}' >>${WRKBUILD}/Makefile.in
+
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+=--disable-nls
