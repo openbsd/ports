@@ -1,0 +1,37 @@
+--- doc/Makefile.in.orig	Sat Mar 10 21:26:17 2001
++++ doc/Makefile.in	Thu Mar 22 16:28:56 2001
+@@ -24,7 +24,7 @@
+ bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+-datadir = @datadir@
++datadir = @datadir@/doc
+ sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+@@ -84,7 +84,7 @@
+ XSLT_LIBDIR = @XSLT_LIBDIR@
+ XSLT_LIBS = @XSLT_LIBS@
+ 
+-DOC_MODULE = libxslt-$(VERSION)
++DOC_MODULE = libxslt
+ 
+ # The top-level SGML file.
+ DOC_MAIN_SGML_FILE = libxslt.sgml
+@@ -92,7 +92,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = ..
+ 
+-HTML_DIR = $(prefix)/doc
++HTML_DIR = $(datadir)
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)/html
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -231,7 +231,6 @@
+ 	-@INSTALL@ -m 0644 $(srcdir)/xml.html $(DESTDIR)$(TARGET_DIR)
+ 	-@INSTALL@ -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(TARGET_DIR)
+ 	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)
+-	-(cd $(DESTDIR); gtkdoc-fixxref --module=libxslt --html-dir=$(HTML_DIR))
+ 
+ dist-hook:
+ 	(cd $(srcdir) ; tar cvf - *.html *.gif html/*.html html/*.sgml) | (cd $(distdir); tar xf -)
