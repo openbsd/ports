@@ -1,167 +1,202 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/14 05:58:19 kevlo Exp $
-share/java/classes/junit-3.7/junit.jar
-share/java/classes/junit-3.7/src.jar
-share/java/junit-3.7/README.html
-share/java/junit-3.7/doc/JUnitProperties.html
-share/java/junit-3.7/doc/changes21.html
-share/java/junit-3.7/doc/changes34.html
-share/java/junit-3.7/doc/cookbook/IMG00001.GIF
-share/java/junit-3.7/doc/cookbook/IMG00002.GIF
-share/java/junit-3.7/doc/cookbook/cookbook.htm
-share/java/junit-3.7/doc/cookbook/logo.gif
-share/java/junit-3.7/doc/cookstour/Image1.gif
-share/java/junit-3.7/doc/cookstour/Image2.gif
-share/java/junit-3.7/doc/cookstour/Image3.gif
-share/java/junit-3.7/doc/cookstour/Image4.gif
-share/java/junit-3.7/doc/cookstour/Image5.gif
-share/java/junit-3.7/doc/cookstour/Image6.gif
-share/java/junit-3.7/doc/cookstour/Image7.gif
-share/java/junit-3.7/doc/cookstour/cookstour.htm
-share/java/junit-3.7/doc/faq/faq.htm
-share/java/junit-3.7/doc/testinfected/IMG00001.GIF
-share/java/junit-3.7/doc/testinfected/IMG00002.GIF
-share/java/junit-3.7/doc/testinfected/IMG00003.GIF
-share/java/junit-3.7/doc/testinfected/logo.gif
-share/java/junit-3.7/doc/testinfected/testing.htm
-share/java/junit-3.7/javadoc/allclasses-frame.html
-share/java/junit-3.7/javadoc/deprecated-list.html
-share/java/junit-3.7/javadoc/help-doc.html
-share/java/junit-3.7/javadoc/index-all.html
-share/java/junit-3.7/javadoc/index.html
-share/java/junit-3.7/javadoc/junit/extensions/ActiveTestSuite.html
-share/java/junit-3.7/javadoc/junit/extensions/ExceptionTestCase.html
-share/java/junit-3.7/javadoc/junit/extensions/RepeatedTest.html
-share/java/junit-3.7/javadoc/junit/extensions/TestDecorator.html
-share/java/junit-3.7/javadoc/junit/extensions/TestSetup.html
-share/java/junit-3.7/javadoc/junit/extensions/package-frame.html
-share/java/junit-3.7/javadoc/junit/extensions/package-summary.html
-share/java/junit-3.7/javadoc/junit/extensions/package-tree.html
-share/java/junit-3.7/javadoc/junit/framework/Assert.html
-share/java/junit-3.7/javadoc/junit/framework/AssertionFailedError.html
-share/java/junit-3.7/javadoc/junit/framework/Protectable.html
-share/java/junit-3.7/javadoc/junit/framework/Test.html
-share/java/junit-3.7/javadoc/junit/framework/TestCase.html
-share/java/junit-3.7/javadoc/junit/framework/TestFailure.html
-share/java/junit-3.7/javadoc/junit/framework/TestListener.html
-share/java/junit-3.7/javadoc/junit/framework/TestResult.html
-share/java/junit-3.7/javadoc/junit/framework/TestSuite.html
-share/java/junit-3.7/javadoc/junit/framework/package-frame.html
-share/java/junit-3.7/javadoc/junit/framework/package-summary.html
-share/java/junit-3.7/javadoc/junit/framework/package-tree.html
-share/java/junit-3.7/javadoc/overview-frame.html
-share/java/junit-3.7/javadoc/overview-summary.html
-share/java/junit-3.7/javadoc/overview-tree.html
-share/java/junit-3.7/javadoc/package-list
-share/java/junit-3.7/javadoc/packages.html
-share/java/junit-3.7/javadoc/serialized-form.html
-share/java/junit-3.7/javadoc/stylesheet.css
-share/java/junit-3.7/junit/samples/AllTests.class
-share/java/junit-3.7/junit/samples/AllTests.java
-share/java/junit-3.7/junit/samples/SimpleTest.class
-share/java/junit-3.7/junit/samples/SimpleTest.java
-share/java/junit-3.7/junit/samples/VectorTest.class
-share/java/junit-3.7/junit/samples/VectorTest.java
-share/java/junit-3.7/junit/samples/money/IMoney.class
-share/java/junit-3.7/junit/samples/money/IMoney.java
-share/java/junit-3.7/junit/samples/money/Money.class
-share/java/junit-3.7/junit/samples/money/Money.java
-share/java/junit-3.7/junit/samples/money/MoneyBag.class
-share/java/junit-3.7/junit/samples/money/MoneyBag.java
-share/java/junit-3.7/junit/samples/money/MoneyTest.class
-share/java/junit-3.7/junit/samples/money/MoneyTest.java
-share/java/junit-3.7/junit/tests/ActiveTestTest$SuccessTest.class
-share/java/junit-3.7/junit/tests/ActiveTestTest.class
-share/java/junit-3.7/junit/tests/ActiveTestTest.java
-share/java/junit-3.7/junit/tests/AllTests.class
-share/java/junit-3.7/junit/tests/AllTests.java
-share/java/junit-3.7/junit/tests/AssertTest.class
-share/java/junit-3.7/junit/tests/AssertTest.java
-share/java/junit-3.7/junit/tests/ClassLoaderTest.class
-share/java/junit-3.7/junit/tests/ClassLoaderTest.java
-share/java/junit-3.7/junit/tests/ExceptionTestCaseTest$ThrowExceptionTestCase.class
-share/java/junit-3.7/junit/tests/ExceptionTestCaseTest$ThrowNoExceptionTestCase.class
-share/java/junit-3.7/junit/tests/ExceptionTestCaseTest$ThrowRuntimeExceptionTestCase.class
-share/java/junit-3.7/junit/tests/ExceptionTestCaseTest.class
-share/java/junit-3.7/junit/tests/ExceptionTestCaseTest.java
-share/java/junit-3.7/junit/tests/ExtensionTest$1.class
-share/java/junit-3.7/junit/tests/ExtensionTest$2.class
-share/java/junit-3.7/junit/tests/ExtensionTest$3.class
-share/java/junit-3.7/junit/tests/ExtensionTest$4.class
-share/java/junit-3.7/junit/tests/ExtensionTest$5.class
-share/java/junit-3.7/junit/tests/ExtensionTest$TornDown.class
-share/java/junit-3.7/junit/tests/ExtensionTest.class
-share/java/junit-3.7/junit/tests/ExtensionTest.java
-share/java/junit-3.7/junit/tests/Failure.class
-share/java/junit-3.7/junit/tests/Failure.java
-share/java/junit-3.7/junit/tests/InheritedTestCase.class
-share/java/junit-3.7/junit/tests/InheritedTestCase.java
-share/java/junit-3.7/junit/tests/LoadedFromJar.class
-share/java/junit-3.7/junit/tests/LoadedFromJar.java
-share/java/junit-3.7/junit/tests/NoTestCaseClass.class
-share/java/junit-3.7/junit/tests/NoTestCaseClass.java
-share/java/junit-3.7/junit/tests/NoTestCases.class
-share/java/junit-3.7/junit/tests/NoTestCases.java
-share/java/junit-3.7/junit/tests/NotPublicTestCase.class
-share/java/junit-3.7/junit/tests/NotPublicTestCase.java
-share/java/junit-3.7/junit/tests/NotVoidTestCase.class
-share/java/junit-3.7/junit/tests/NotVoidTestCase.java
-share/java/junit-3.7/junit/tests/OneTestCase.class
-share/java/junit-3.7/junit/tests/OneTestCase.java
-share/java/junit-3.7/junit/tests/OverrideTestCase.class
-share/java/junit-3.7/junit/tests/OverrideTestCase.java
-share/java/junit-3.7/junit/tests/RepeatedTestTest$SuccessTest.class
-share/java/junit-3.7/junit/tests/RepeatedTestTest.class
-share/java/junit-3.7/junit/tests/RepeatedTestTest.java
-share/java/junit-3.7/junit/tests/SorterTest$Swapper.class
-share/java/junit-3.7/junit/tests/SorterTest.class
-share/java/junit-3.7/junit/tests/SorterTest.java
-share/java/junit-3.7/junit/tests/StackFilterTest.class
-share/java/junit-3.7/junit/tests/StackFilterTest.java
-share/java/junit-3.7/junit/tests/Success.class
-share/java/junit-3.7/junit/tests/Success.java
-share/java/junit-3.7/junit/tests/SuiteTest.class
-share/java/junit-3.7/junit/tests/SuiteTest.java
-share/java/junit-3.7/junit/tests/TestCaseClassLoaderTest.class
-share/java/junit-3.7/junit/tests/TestCaseClassLoaderTest.java
-share/java/junit-3.7/junit/tests/TestCaseTest$1.class
-share/java/junit-3.7/junit/tests/TestCaseTest$2.class
-share/java/junit-3.7/junit/tests/TestCaseTest$3.class
-share/java/junit-3.7/junit/tests/TestCaseTest$4.class
-share/java/junit-3.7/junit/tests/TestCaseTest$5.class
-share/java/junit-3.7/junit/tests/TestCaseTest$6.class
-share/java/junit-3.7/junit/tests/TestCaseTest$7.class
-share/java/junit-3.7/junit/tests/TestCaseTest$TornDown.class
-share/java/junit-3.7/junit/tests/TestCaseTest.class
-share/java/junit-3.7/junit/tests/TestCaseTest.java
-share/java/junit-3.7/junit/tests/TestImplementorTest$1.class
-share/java/junit-3.7/junit/tests/TestImplementorTest$2.class
-share/java/junit-3.7/junit/tests/TestImplementorTest$DoubleTestCase.class
-share/java/junit-3.7/junit/tests/TestImplementorTest.class
-share/java/junit-3.7/junit/tests/TestImplementorTest.java
-share/java/junit-3.7/junit/tests/TestListenerTest$1.class
-share/java/junit-3.7/junit/tests/TestListenerTest$2.class
-share/java/junit-3.7/junit/tests/TestListenerTest$3.class
-share/java/junit-3.7/junit/tests/TestListenerTest.class
-share/java/junit-3.7/junit/tests/TestListenerTest.java
-share/java/junit-3.7/junit/tests/TextRunnerTest.class
-share/java/junit-3.7/junit/tests/TextRunnerTest.java
-share/java/junit-3.7/junit/tests/WasRun.class
-share/java/junit-3.7/junit/tests/WasRun.java
-share/java/junit-3.7/junit/tests/test.jar
-@dirrm share/java/junit-3.7/junit/tests
-@dirrm share/java/junit-3.7/junit/samples/money
-@dirrm share/java/junit-3.7/junit/samples
-@dirrm share/java/junit-3.7/junit
-@dirrm share/java/junit-3.7/javadoc/junit/framework
-@dirrm share/java/junit-3.7/javadoc/junit/extensions
-@dirrm share/java/junit-3.7/javadoc/junit
-@dirrm share/java/junit-3.7/javadoc
-@dirrm share/java/junit-3.7/doc/testinfected
-@dirrm share/java/junit-3.7/doc/faq
-@dirrm share/java/junit-3.7/doc/cookstour
-@dirrm share/java/junit-3.7/doc/cookbook
-@dirrm share/java/junit-3.7/doc
-@dirrm share/java/junit-3.7
-@dirrm share/java/classes/junit-3.7
-@unexec rmdir %D/share/java/classes || true
-@unexec rmdir %D/share/java || true
+@comment $OpenBSD: PLIST,v 1.2 2003/07/18 05:20:37 kevlo Exp $
+share/java/classes/junit-3.8.1/junit.jar
+share/java/classes/junit-3.8.1/src.jar
+share/java/junit-3.8.1/README.html
+share/java/junit-3.8.1/cpl-v10.html
+share/java/junit-3.8.1/doc/Changes34.html
+share/java/junit-3.8.1/doc/JUnitProperties.html
+share/java/junit-3.8.1/doc/changes21.html
+share/java/junit-3.8.1/doc/cookbook/IMG00001.GIF
+share/java/junit-3.8.1/doc/cookbook/cookbook.htm
+share/java/junit-3.8.1/doc/cookbook/logo.gif
+share/java/junit-3.8.1/doc/cookstour/Image1.gif
+share/java/junit-3.8.1/doc/cookstour/Image2.gif
+share/java/junit-3.8.1/doc/cookstour/Image3.gif
+share/java/junit-3.8.1/doc/cookstour/Image4.gif
+share/java/junit-3.8.1/doc/cookstour/Image5.gif
+share/java/junit-3.8.1/doc/cookstour/Image6.gif
+share/java/junit-3.8.1/doc/cookstour/Image7.gif
+share/java/junit-3.8.1/doc/cookstour/cookstour.htm
+share/java/junit-3.8.1/doc/faq/faq.htm
+share/java/junit-3.8.1/doc/testinfected/IMG00001.GIF
+share/java/junit-3.8.1/doc/testinfected/IMG00002.GIF
+share/java/junit-3.8.1/doc/testinfected/IMG00003.GIF
+share/java/junit-3.8.1/doc/testinfected/logo.gif
+share/java/junit-3.8.1/doc/testinfected/testing.htm
+share/java/junit-3.8.1/javadoc/allclasses-frame.html
+share/java/junit-3.8.1/javadoc/allclasses-noframe.html
+share/java/junit-3.8.1/javadoc/constant-values.html
+share/java/junit-3.8.1/javadoc/deprecated-list.html
+share/java/junit-3.8.1/javadoc/help-doc.html
+share/java/junit-3.8.1/javadoc/index-all.html
+share/java/junit-3.8.1/javadoc/index.html
+share/java/junit-3.8.1/javadoc/junit/extensions/ActiveTestSuite.html
+share/java/junit-3.8.1/javadoc/junit/extensions/ExceptionTestCase.html
+share/java/junit-3.8.1/javadoc/junit/extensions/RepeatedTest.html
+share/java/junit-3.8.1/javadoc/junit/extensions/TestDecorator.html
+share/java/junit-3.8.1/javadoc/junit/extensions/TestSetup.html
+share/java/junit-3.8.1/javadoc/junit/extensions/package-frame.html
+share/java/junit-3.8.1/javadoc/junit/extensions/package-summary.html
+share/java/junit-3.8.1/javadoc/junit/extensions/package-tree.html
+share/java/junit-3.8.1/javadoc/junit/framework/Assert.html
+share/java/junit-3.8.1/javadoc/junit/framework/AssertionFailedError.html
+share/java/junit-3.8.1/javadoc/junit/framework/ComparisonFailure.html
+share/java/junit-3.8.1/javadoc/junit/framework/Protectable.html
+share/java/junit-3.8.1/javadoc/junit/framework/Test.html
+share/java/junit-3.8.1/javadoc/junit/framework/TestCase.html
+share/java/junit-3.8.1/javadoc/junit/framework/TestFailure.html
+share/java/junit-3.8.1/javadoc/junit/framework/TestListener.html
+share/java/junit-3.8.1/javadoc/junit/framework/TestResult.html
+share/java/junit-3.8.1/javadoc/junit/framework/TestSuite.html
+share/java/junit-3.8.1/javadoc/junit/framework/package-frame.html
+share/java/junit-3.8.1/javadoc/junit/framework/package-summary.html
+share/java/junit-3.8.1/javadoc/junit/framework/package-tree.html
+share/java/junit-3.8.1/javadoc/overview-frame.html
+share/java/junit-3.8.1/javadoc/overview-summary.html
+share/java/junit-3.8.1/javadoc/overview-tree.html
+share/java/junit-3.8.1/javadoc/package-list
+share/java/junit-3.8.1/javadoc/packages.html
+share/java/junit-3.8.1/javadoc/serialized-form.html
+share/java/junit-3.8.1/javadoc/stylesheet.css
+share/java/junit-3.8.1/junit/samples/AllTests.class
+share/java/junit-3.8.1/junit/samples/AllTests.java
+share/java/junit-3.8.1/junit/samples/SimpleTest.class
+share/java/junit-3.8.1/junit/samples/SimpleTest.java
+share/java/junit-3.8.1/junit/samples/VectorTest.class
+share/java/junit-3.8.1/junit/samples/VectorTest.java
+share/java/junit-3.8.1/junit/samples/money/IMoney.class
+share/java/junit-3.8.1/junit/samples/money/IMoney.java
+share/java/junit-3.8.1/junit/samples/money/Money.class
+share/java/junit-3.8.1/junit/samples/money/Money.java
+share/java/junit-3.8.1/junit/samples/money/MoneyBag.class
+share/java/junit-3.8.1/junit/samples/money/MoneyBag.java
+share/java/junit-3.8.1/junit/samples/money/MoneyTest.class
+share/java/junit-3.8.1/junit/samples/money/MoneyTest.java
+share/java/junit-3.8.1/junit/tests/AllTests.class
+share/java/junit-3.8.1/junit/tests/AllTests.java
+share/java/junit-3.8.1/junit/tests/WasRun.class
+share/java/junit-3.8.1/junit/tests/WasRun.java
+share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest$SuccessTest.class
+share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest.class
+share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest.java
+share/java/junit-3.8.1/junit/tests/extensions/AllTests.class
+share/java/junit-3.8.1/junit/tests/extensions/AllTests.java
+share/java/junit-3.8.1/junit/tests/extensions/ExceptionTestCaseTest$ThrowExceptionTestCase.class
+share/java/junit-3.8.1/junit/tests/extensions/ExceptionTestCaseTest$ThrowNoExceptionTestCase.class
+share/java/junit-3.8.1/junit/tests/extensions/ExceptionTestCaseTest$ThrowRuntimeExceptionTestCase.class
+share/java/junit-3.8.1/junit/tests/extensions/ExceptionTestCaseTest.class
+share/java/junit-3.8.1/junit/tests/extensions/ExceptionTestCaseTest.java
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$1.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$2.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$3.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$4.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$5.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest$TornDown.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest.class
+share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest.java
+share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest$SuccessTest.class
+share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest.class
+share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest.java
+share/java/junit-3.8.1/junit/tests/framework/AllTests.class
+share/java/junit-3.8.1/junit/tests/framework/AllTests.java
+share/java/junit-3.8.1/junit/tests/framework/AssertTest.class
+share/java/junit-3.8.1/junit/tests/framework/AssertTest.java
+share/java/junit-3.8.1/junit/tests/framework/ComparisonFailureTest.class
+share/java/junit-3.8.1/junit/tests/framework/ComparisonFailureTest.java
+share/java/junit-3.8.1/junit/tests/framework/DoublePrecisionAssertTest.class
+share/java/junit-3.8.1/junit/tests/framework/DoublePrecisionAssertTest.java
+share/java/junit-3.8.1/junit/tests/framework/Failure.class
+share/java/junit-3.8.1/junit/tests/framework/Failure.java
+share/java/junit-3.8.1/junit/tests/framework/InheritedTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/InheritedTestCase.java
+share/java/junit-3.8.1/junit/tests/framework/NoArgTestCaseTest.class
+share/java/junit-3.8.1/junit/tests/framework/NoArgTestCaseTest.java
+share/java/junit-3.8.1/junit/tests/framework/NoTestCaseClass.class
+share/java/junit-3.8.1/junit/tests/framework/NoTestCaseClass.java
+share/java/junit-3.8.1/junit/tests/framework/NoTestCases.class
+share/java/junit-3.8.1/junit/tests/framework/NoTestCases.java
+share/java/junit-3.8.1/junit/tests/framework/NotPublicTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/NotPublicTestCase.java
+share/java/junit-3.8.1/junit/tests/framework/NotVoidTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/NotVoidTestCase.java
+share/java/junit-3.8.1/junit/tests/framework/OneTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/OneTestCase.java
+share/java/junit-3.8.1/junit/tests/framework/OverrideTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/OverrideTestCase.java
+share/java/junit-3.8.1/junit/tests/framework/Success.class
+share/java/junit-3.8.1/junit/tests/framework/Success.java
+share/java/junit-3.8.1/junit/tests/framework/SuiteTest.class
+share/java/junit-3.8.1/junit/tests/framework/SuiteTest.java
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$1.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$2.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$3.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$4.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$5.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$6.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$7.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$8.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$9.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest$TornDown.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest.class
+share/java/junit-3.8.1/junit/tests/framework/TestCaseTest.java
+share/java/junit-3.8.1/junit/tests/framework/TestImplementorTest$1.class
+share/java/junit-3.8.1/junit/tests/framework/TestImplementorTest$2.class
+share/java/junit-3.8.1/junit/tests/framework/TestImplementorTest$DoubleTestCase.class
+share/java/junit-3.8.1/junit/tests/framework/TestImplementorTest.class
+share/java/junit-3.8.1/junit/tests/framework/TestImplementorTest.java
+share/java/junit-3.8.1/junit/tests/framework/TestListenerTest$1.class
+share/java/junit-3.8.1/junit/tests/framework/TestListenerTest$2.class
+share/java/junit-3.8.1/junit/tests/framework/TestListenerTest$3.class
+share/java/junit-3.8.1/junit/tests/framework/TestListenerTest.class
+share/java/junit-3.8.1/junit/tests/framework/TestListenerTest.java
+share/java/junit-3.8.1/junit/tests/runner/AllTests.class
+share/java/junit-3.8.1/junit/tests/runner/AllTests.java
+share/java/junit-3.8.1/junit/tests/runner/BaseTestRunnerTest$MockRunner.class
+share/java/junit-3.8.1/junit/tests/runner/BaseTestRunnerTest$NonStatic.class
+share/java/junit-3.8.1/junit/tests/runner/BaseTestRunnerTest.class
+share/java/junit-3.8.1/junit/tests/runner/BaseTestRunnerTest.java
+share/java/junit-3.8.1/junit/tests/runner/ClassLoaderTest.class
+share/java/junit-3.8.1/junit/tests/runner/ClassLoaderTest.java
+share/java/junit-3.8.1/junit/tests/runner/LoadedFromJar.class
+share/java/junit-3.8.1/junit/tests/runner/LoadedFromJar.java
+share/java/junit-3.8.1/junit/tests/runner/SimpleTestCollectorTest.class
+share/java/junit-3.8.1/junit/tests/runner/SimpleTestCollectorTest.java
+share/java/junit-3.8.1/junit/tests/runner/SorterTest$Swapper.class
+share/java/junit-3.8.1/junit/tests/runner/SorterTest.class
+share/java/junit-3.8.1/junit/tests/runner/SorterTest.java
+share/java/junit-3.8.1/junit/tests/runner/StackFilterTest.class
+share/java/junit-3.8.1/junit/tests/runner/StackFilterTest.java
+share/java/junit-3.8.1/junit/tests/runner/TestCaseClassLoaderTest.class
+share/java/junit-3.8.1/junit/tests/runner/TestCaseClassLoaderTest.java
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$1.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$2.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$3.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$4.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$5.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$6.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$7.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest$TestResultPrinter.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest.class
+share/java/junit-3.8.1/junit/tests/runner/TextFeedbackTest.java
+share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest$1.class
+share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest.class
+share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest.java
+share/java/junit-3.8.1/junit/tests/runner/test.jar
+@dirrm share/java/junit-3.8.1/junit/tests/runner
+@dirrm share/java/junit-3.8.1/junit/tests/framework
+@dirrm share/java/junit-3.8.1/junit/tests/extensions
+@dirrm share/java/junit-3.8.1/junit/tests
+@dirrm share/java/junit-3.8.1/junit/samples/money
+@dirrm share/java/junit-3.8.1/junit/samples
+@dirrm share/java/junit-3.8.1/junit
+@dirrm share/java/junit-3.8.1/javadoc/junit/framework
+@dirrm share/java/junit-3.8.1/javadoc/junit/extensions
+@dirrm share/java/junit-3.8.1/javadoc/junit
+@dirrm share/java/junit-3.8.1/javadoc
+@dirrm share/java/junit-3.8.1/doc/testinfected
+@dirrm share/java/junit-3.8.1/doc/faq
+@dirrm share/java/junit-3.8.1/doc/cookstour
+@dirrm share/java/junit-3.8.1/doc/cookbook
+@dirrm share/java/junit-3.8.1/doc
+@dirrm share/java/junit-3.8.1
+@dirrm share/java/classes/junit-3.8.1
