@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.17 1999/09/19 13:58:47 turan Exp $
+$OpenBSD: LICENSE,v 1.18 1999/09/20 04:33:14 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -55,20 +55,23 @@ v	port name			distfile name			License
 
 N	archivers/arc			arc521e.pl8.tar.Z		NOFEE
 N	archivers/bzip			bzip-0.21.tar.gz		NOFEE
-Y	archivers/bzip2			bzip2-0.9.0c.tar.gz		BSD
+N	archivers/bzip2			bzip2-0.9.5c.tar.gz		COPY
 Y	archivers/freeze		freeze-2.5.tar.gz		NONE
 Y	archivers/gshar+gunshar		sharutils-4.2.tar.gz		GPL
-Y	archivers/gtar			tar-1.12.tar.gz			GPL
+Y	archivers/gtar			tar-1.13.tar.gz			GPL
 Y	archivers/ha			ha0999.tgz			GPL
-Y	archivers/lha			lha-114c.tgz			COPY
+Y	archivers/lha			lha-114f.tar.gz			NONE
+Y	archivers/lzo			lzo-1.04.tar.gz			GPL
 N	archivers/nulib			nulib325.tar.Z			NOFEE
 Y	archivers/p5-Compress-Zlib	Compress-Zlib-1.01.tar.gz	PERL
 N	archivers/rar			rarbsd				NOFEE
+Y	archivers/unace			unacepub.zip			NONE
 Y	archivers/unarj			unarj2.43.tgz			COPY
-N	archivers/unrar			unrar-2.01.tgz			NOFEE
+N	archivers/unrar			unrar-2.50.tar.gz		COPY
 Y	archivers/unzip			unzip540.tar.gz			COPY
 Y	archivers/zip			zip22.tar.gz			COPY
 Y	archivers/zoo			zoo-2.10pl1.tar.gz		COPY
+Y	astro/dgpsip			dgpsip-1.28.tar.gz		GPL
 N	astro/sattrack			sattrack-3.1.6.tar.gz		COPY
 N	astro/xearth			xearth-1.0.tar.gz		NOFEE
 N	astro/xephem			xephem-3.2.2.tar.gz		NOFEE
