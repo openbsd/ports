@@ -1,6 +1,7 @@
---- Makefile.orig	Sat Oct 30 16:51:23 1999
-+++ Makefile	Tue Nov  2 01:15:00 1999
-@@ -23,8 +23,8 @@
+$OpenBSD: patch-Makefile,v 1.1 2004/06/25 03:52:15 xsa Exp $
+--- Makefile.orig	Sat Oct 30 10:51:23 1999
++++ Makefile	Fri Jun 25 00:12:47 2004
+@@ -23,8 +23,8 @@ clean:
  	$(RM) -f *.o core buffer .merrs
  
  install: buffer
