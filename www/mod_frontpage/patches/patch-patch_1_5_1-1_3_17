@@ -1,5 +1,5 @@
 --- patch-1.5.1-1.3.17.orig	Tue Feb 20 18:42:01 2001
-+++ patch-1.5.1-1.3.17	Sat Jun 16 22:21:18 2001
++++ patch-1.5.1-1.3.17	Fri Mar 15 15:35:59 2002
 @@ -1,405 +1,3 @@
 -diff -rNu ../apache_1.3.17.orig/Makefile.tmpl ./Makefile.tmpl
 ---- ../apache_1.3.17.orig/Makefile.tmpl	Mon Jan 15 17:26:17 2001
@@ -406,6 +406,88 @@
  diff -rNu ../apache_1.3.17.orig/src/modules/frontpage/fpexec.c ./src/modules/frontpage/fpexec.c
  --- ../apache_1.3.17.orig/src/modules/frontpage/fpexec.c	Thu Jan  1 01:00:00 1970
  +++ ./src/modules/frontpage/fpexec.c	Wed Feb 21 00:35:27 2001
+@@ -647,7 +245,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +	exit(120);
+ +    }
+ +
+-+    sprintf(pathbuf, "PATH=%s", FP_SAFE_PATH);
+++    snprintf(pathbuf, sizeof pathbuf, "PATH=%s", FP_SAFE_PATH);
+ +    cleanenv[cidx] = strdup(pathbuf);
+ +    cidx++;
+ +
+@@ -933,8 +531,8 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +     * not writable by others.
+ +     */
+ +
+-+    strcpy(fpd, cwd);
+-+    strcat(fpd, "/" FP_HTACCESS);
+++    strlcpy(fpd, cwd, sizeof fpd);
+++    strlcat(fpd, "/" FP_HTACCESS, sizeof fpd);
+ +    if (((lstat(fpd, &fp_info)) != 0) || (S_ISLNK(fp_info.st_mode))) {
+ +	log_err("cannot stat: %s\n", fpd);
+ +	exit(117);
+@@ -959,8 +557,8 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +     * not writable by others.
+ +     */
+ +
+-+    strcpy(fpd, cwd);
+-+    strcat(fpd, _VTI_BIN);
+++    strlcpy(fpd, cwd, sizeof fpd);
+++    strlcat(fpd, _VTI_BIN, sizeof fpd);
+ +    if (((lstat(fpd, &fp_info)) != 0) || !(S_ISDIR(fp_info.st_mode))) {
+ +	log_err("cannot stat: %s\n", fpd);
+ +	exit(117);
+@@ -985,7 +583,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +     * exists and is not writable by others.
+ +     */
+ +
+-+    strcat(fpd, "/" FP_HTACCESS);
+++    strlcat(fpd, "/" FP_HTACCESS, sizeof fpd);
+ +    if (((lstat(fpd, &fp_info)) != 0) || (S_ISLNK(fp_info.st_mode))) {
+ +	log_err("cannot stat: %s\n", fpd);
+ +	exit(117);
+@@ -1012,11 +610,11 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +     */
+ +
+ +    if ((strcmp(cmd, ADMIN) == 0) || (strcmp(cmd, AUTHOR) == 0)) {
+-+	strcpy(fpd, cwd);
+++	strlcpy(fpd, cwd, sizeof fpd);
+ +	if (strcmp(cmd, ADMIN) == 0)
+-+	    strcat(fpd, _VTI_ADM);
+++	    strlcat(fpd, _VTI_ADM, sizeof fpd);
+ +	else
+-+	    strcat(fpd, _VTI_AUT);
+++	    strlcat(fpd, _VTI_AUT, sizeof fpd);
+ +	if (((lstat(fpd, &fp_info)) != 0) || !(S_ISDIR(fp_info.st_mode))) {
+ +	    log_err("cannot stat: %s\n", fpd);
+ +	    exit(117);
+@@ -1036,7 +634,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +	    exit(120);
+ +	}
+ +
+-+	strcat(fpd, "/" FP_HTACCESS);
+++	strlcat(fpd, "/" FP_HTACCESS, sizeof fpd);
+ +	if (((lstat(fpd, &fp_info)) != 0) || (S_ISLNK(fp_info.st_mode))) {
+ +	    log_err("cannot stat: %s\n", fpd);
+ +	    exit(117);
+@@ -1057,7 +655,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +	}
+ +    }
+ +
+-+    strcpy(fpd, FPDIR);
+++    strlcpy(fpd, FPDIR, sizeof fpd);
+ +    if (((lstat(fpd, &fp_info)) != 0) || !(S_ISDIR(fp_info.st_mode))) {
+ +	log_err("cannot stat: %s\n", fpd);
+ +	exit(117);
+@@ -1080,7 +678,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
+ +    /*
+ +     * Error out if we cannot stat the program.
+ +     */
+-+    strcat(fpd, cmd);
+++    strlcat(fpd, cmd, sizeof fpd);
+ +    if (((lstat(fpd, &prg_info)) != 0) || (S_ISLNK(prg_info.st_mode))) {
+ +	log_err("cannot stat program: %s\n", fpd);
+ +	exit(117);
 @@ -1260,7 +858,7 @@ diff -rNu ../apache_1.3.17.orig/src/modu
  + *               for fpEXEC.  For most systems, 500 or 100 is common.
  + */
