@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 1999/07/01 22:06:31 brad Exp $
+# $OpenBSD: Makefile,v 1.29 1999/07/17 04:42:21 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
-DISTNAME=	lesstif-0.88.1
+DISTNAME=	lesstif-0.88.9
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -18,8 +18,8 @@ USE_X11=	yes
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-debug --enable-build-12 \
-		 --disable-build-20 --with-editres
+CONFIGURE_ARGS+= --enable-static --enable-production --enable-build-12 \
+		 --disable-build-20 --disable-debug --with-editres
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
