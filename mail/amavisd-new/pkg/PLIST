@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/24 10:54:53 espie Exp $
+@newgroup _vscan:530
+@newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 sbin/amavisd
 share/doc/amavisd-new/
 share/doc/amavisd-new/AAAREADME.first
@@ -27,3 +29,8 @@ share/doc/amavisd-new/README.sendmail-dual
 share/doc/amavisd-new/RELEASE_NOTES
 share/doc/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
+@owner _vscan
+@group _vscan
+@mode 755
+@sample /var/amavisd/
+@extraunexec rm -rf /var/amavisd/* 2>/dev/null || true

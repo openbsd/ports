@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/24 10:48:41 espie Exp $
 @man man/man1/junkbuster.1
 sbin/junkbuster
 share/doc/junkbuster/
@@ -6,10 +6,16 @@ share/doc/junkbuster/gpl.html
 share/doc/junkbuster/ijbfaq.html
 share/doc/junkbuster/ijbman.html
 share/examples/junkbuster/
+@sample ${SYSCONFDIR}/junkbuster/
 share/examples/junkbuster/junkbstr.ini
+@sample ${SYSCONFDIR}/junkbuster/junkbstr.ini
 share/examples/junkbuster/saclfile.ini
+@sample ${SYSCONFDIR}/junkbuster/saclfile.ini
 share/examples/junkbuster/sblock.ini
+@sample ${SYSCONFDIR}/junkbuster/sblock.ini
 share/examples/junkbuster/scookie.ini
+@sample ${SYSCONFDIR}/junkbuster/scookie.ini
 share/examples/junkbuster/sforward.ini
+@sample ${SYSCONFDIR}/junkbuster/sforward.ini
 share/examples/junkbuster/strust.ini
-@extraunexec rm -rf ${SYSCONFDIR}/junkbuster
+@sample ${SYSCONFDIR}/junkbuster/strust.ini

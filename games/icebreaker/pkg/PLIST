@@ -1,9 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/24 10:45:37 espie Exp $
+@group games
+@mode g+s
 bin/icebreaker
-man/man1/icebreaker.6
+@mode
+@group
+@man man/man6/icebreaker.6
 share/icebreaker/
 share/icebreaker/crash.wav
 share/icebreaker/icebreaker_48.bmp
 share/icebreaker/ouch.wav
 share/icebreaker/penguin.bmp
 share/icebreaker/penguinicon_32.bmp
+share/examples/icebreaker/
+share/examples/icebreaker/icebreaker.scores
+@group games
+@mode 775
+@sample /var/games/icebreaker/
+@mode 664
+@sample /var/games/icebreaker/icebreaker.scores
