@@ -1,4 +1,4 @@
-ffproxy is a filtering HTTP proxy server.  It is able to filter by host,
+ffproxy is a filtering HTTP/HTTPS proxy server.  It is able to filter by host,
 URL, and header.  Custom header entries can be filtered and added.
 Contacting IPv6 servers is supported and allows transparent IPv6 over
 IPv4 browsing.
