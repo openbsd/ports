@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/02 06:21:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2000/07/25 10:13:39 brad Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -47,7 +47,7 @@ FLAVOR?=
 	@false
 .endif
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 .if ${FLAVOR:L} == "usa"
@@ -61,11 +61,11 @@ post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1
 
 post-configure:
-	@find ${WRKSRC} -name Makefile|xargs perl -pi.bak -e 's,MFLAGS,AM_MAKEFLAGS,'
+	@find ${WRKSRC} -name Makefile | xargs perl -pi.bak -e 's,MFLAGS,AM_MAKEFLAGS,'
 
 post-install:
-	strip ${PREFIX}/bin/pgp5
-	strip ${PREFIX}/bin/pgpk
+	@strip ${PREFIX}/bin/pgp5
+	@strip ${PREFIX}/bin/pgpk
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp5
 	${INSTALL_DATA} ${WRKSRC}/language50.txt ${PREFIX}/lib/pgp5
 
