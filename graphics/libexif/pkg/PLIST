@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/11 10:42:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/07 09:40:59 espie Exp $
 include/libexif/
 include/libexif/exif-byte-order.h
 include/libexif/exif-content.h
@@ -13,7 +13,14 @@ lib/libexif.a
 lib/libexif.la
 lib/pkgconfig/
 lib/pkgconfig/libexif.pc
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/libexif-8.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/libexif-8.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/libexif-8.mo
 %%SHARED%%
