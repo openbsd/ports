@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_configure_in,v 1.4 2002/05/29 23:00:27 espie Exp $
+$OpenBSD: patch-libstdc++-v3_configure_in,v 1.5 2002/05/30 12:20:09 espie Exp $
 --- libstdc++-v3/configure.in.orig	Wed May  8 06:27:59 2002
-+++ libstdc++-v3/configure.in	Wed May 29 17:36:49 2002
++++ libstdc++-v3/configure.in	Thu May 30 11:34:48 2002
 @@ -247,7 +247,7 @@ else
  
    # Check for available headers.
