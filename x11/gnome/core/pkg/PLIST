@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/19 13:37:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/09/20 18:58:42 naddy Exp $
 bin/deskguide_applet
 bin/gmenu
 bin/gnome-about
@@ -57,16 +57,16 @@ share/applets/Utility/tasklist_applet.desktop
 share/control-center/Desktop/gnome-panel-properties.desktop
 share/control-center/Session/gnome-hint-properties.desktop
 share/control-center/Session/session-properties.desktop
+share/examples/gnome-core/CORBA/servers/deskguide_applet.gnorba
+share/examples/gnome-core/CORBA/servers/fish_applet.gnorba
+share/examples/gnome-core/CORBA/servers/gen_util.gnorba
+share/examples/gnome-core/CORBA/servers/gnome-terminal.gnorba
+share/examples/gnome-core/CORBA/servers/help-browser.gnorba
+share/examples/gnome-core/CORBA/servers/panel.gnorba
+share/examples/gnome-core/CORBA/servers/tasklist_applet.gnorba
+share/examples/gnome-core/sound/events/mailcheck.soundlist
+share/examples/gnome-core/sound/events/panel.soundlist
 share/gnome-about/contributors.dat
-share/gnome-core/CORBA/servers/deskguide_applet.gnorba
-share/gnome-core/CORBA/servers/fish_applet.gnorba
-share/gnome-core/CORBA/servers/gen_util.gnorba
-share/gnome-core/CORBA/servers/gnome-terminal.gnorba
-share/gnome-core/CORBA/servers/help-browser.gnorba
-share/gnome-core/CORBA/servers/panel.gnorba
-share/gnome-core/CORBA/servers/tasklist_applet.gnorba
-share/gnome-core/sound/events/mailcheck.soundlist
-share/gnome-core/sound/events/panel.soundlist
 share/gnome-terminal/glade/gnome-terminal.glade
 share/gnome/apps/.directory
 share/gnome/apps/.order
@@ -1525,3 +1525,5 @@ share/pixmaps/vnterm.xpm
 @dirrm share/applets/Clocks
 @dirrm share/applets/Amusements
 @dirrm share/applets
+@exec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)
+@unexec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)

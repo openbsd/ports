@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/20 18:58:42 naddy Exp $
 
 COMMENT=		"core GNOME system"
 V=			1.4.0.4
@@ -36,7 +36,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/gnome-core; \
-	cp -pr ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-core/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-core; \
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-core/
 
 .include <bsd.port.mk>
