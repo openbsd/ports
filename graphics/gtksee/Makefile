@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/04/15 23:33:31 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/26 19:22:48 brad Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.497
+NEED_VERSION=	1.525
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
@@ -25,10 +25,9 @@ RUN_DEPENDS=	::archivers/bzip \
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-im-libs="${PREFIX}/lib" \
+CONFIGURE_ARGS+=--with-im-libs="${PREFIX}/lib" \
 		--with-im-incs="${PREFIX}/include"
 
 post-patch:
