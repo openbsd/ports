@@ -1,11 +1,11 @@
-$OpenBSD: patch-dns_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
---- dns.c.orig	Tue Jul 16 02:04:51 2002
-+++ dns.c	Tue Jul 16 02:05:38 2002
-@@ -141,7 +141,7 @@ dns_read(int fd, short why, void *arg)
+$OpenBSD: patch-dns_c,v 1.2 2004/04/07 22:51:03 brad Exp $
+--- dns.c.orig	Sun May 18 03:21:33 2003
++++ dns.c	Fri Apr  2 12:30:59 2004
+@@ -139,7 +139,7 @@
  		event_add(&child->ev_write, NULL);
  
  	if (atomicio(read, fd, &size, sizeof(size)) != sizeof(size))
--		err(1, __FUNCTION__": read(%d)", sizeof(size));
+-		err(1, "%s: read(%d)", __func__, sizeof(size));
 +		err(1, __FUNCTION__": read(%lu)", (unsigned long)sizeof(size));
  
  	if (size == -1)
