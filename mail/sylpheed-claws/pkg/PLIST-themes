@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-themes,v 1.1 2003/07/04 13:06:13 wilfried Exp $
+@comment $OpenBSD: PLIST-themes,v 1.2 2004/09/15 09:09:45 espie Exp $
 share/doc/sylpheed-claws/README.themes
+share/sylpheed-claws/themes/
+share/sylpheed-claws/themes/Crystal/
 @comment share/sylpheed-claws/themes/Crystal/.directory
 share/sylpheed-claws/themes/Crystal/close.xpm
 share/sylpheed-claws/themes/Crystal/continue.xpm
@@ -25,6 +27,7 @@ share/sylpheed-claws/themes/Crystal/preferences.xpm
 share/sylpheed-claws/themes/Crystal/properties.xpm
 share/sylpheed-claws/themes/Crystal/search.xpm
 share/sylpheed-claws/themes/Crystal/up_arrow.xpm
+share/sylpheed-claws/themes/Kovico-sylpheed/
 share/sylpheed-claws/themes/Kovico-sylpheed/address.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/address_book.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/close.xpm
@@ -73,6 +76,7 @@ share/sylpheed-claws/themes/Kovico-sylpheed/trash_open_hrm.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/unread.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/up_arrow.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/vcard.xpm
+share/sylpheed-claws/themes/New_Session/
 @comment share/sylpheed-claws/themes/New_Session/Readme.txt
 share/sylpheed-claws/themes/New_Session/address.xpm
 share/sylpheed-claws/themes/New_Session/address_book.xpm
@@ -122,6 +126,7 @@ share/sylpheed-claws/themes/New_Session/trash_open_hrm.xpm
 share/sylpheed-claws/themes/New_Session/unread.xpm
 share/sylpheed-claws/themes/New_Session/up_arrow.xpm
 share/sylpheed-claws/themes/New_Session/vcard.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/
 share/sylpheed-claws/themes/Plain_and_Bluish/address.xpm
 share/sylpheed-claws/themes/Plain_and_Bluish/address_book.xpm
 share/sylpheed-claws/themes/Plain_and_Bluish/close.xpm
@@ -170,6 +175,7 @@ share/sylpheed-claws/themes/Plain_and_Bluish/trash_open_hrm.xpm
 share/sylpheed-claws/themes/Plain_and_Bluish/unread.xpm
 share/sylpheed-claws/themes/Plain_and_Bluish/up_arrow.xpm
 share/sylpheed-claws/themes/Plain_and_Bluish/vcard.xpm
+share/sylpheed-claws/themes/XeNtish/
 @comment share/sylpheed-claws/themes/XeNtish/README
 share/sylpheed-claws/themes/XeNtish/address.xpm
 share/sylpheed-claws/themes/XeNtish/address_book.xpm
@@ -219,6 +225,7 @@ share/sylpheed-claws/themes/XeNtish/trash_open_hrm.xpm
 share/sylpheed-claws/themes/XeNtish/unread.xpm
 share/sylpheed-claws/themes/XeNtish/up_arrow.xpm
 share/sylpheed-claws/themes/XeNtish/vcard.xpm
+share/sylpheed-claws/themes/black/
 @comment share/sylpheed-claws/themes/black/README
 share/sylpheed-claws/themes/black/address.xpm
 share/sylpheed-claws/themes/black/address_book.xpm
@@ -280,6 +287,7 @@ share/sylpheed-claws/themes/black/trash_open_hrm.xpm
 share/sylpheed-claws/themes/black/unread.xpm
 share/sylpheed-claws/themes/black/up_arrow.xpm
 share/sylpheed-claws/themes/black/vcard.xpm
+share/sylpheed-claws/themes/blue_anarchy/
 @comment share/sylpheed-claws/themes/blue_anarchy/Readme.txt
 share/sylpheed-claws/themes/blue_anarchy/address.xpm
 share/sylpheed-claws/themes/blue_anarchy/address_book.xpm
@@ -321,6 +329,7 @@ share/sylpheed-claws/themes/blue_anarchy/trash_open.xpm
 share/sylpheed-claws/themes/blue_anarchy/unread.xpm
 share/sylpheed-claws/themes/blue_anarchy/up_arrow.xpm
 share/sylpheed-claws/themes/blue_anarchy/vcard.xpm
+share/sylpheed-claws/themes/mongrel/
 share/sylpheed-claws/themes/mongrel/address_book.xpm
 share/sylpheed-claws/themes/mongrel/close.xpm
 share/sylpheed-claws/themes/mongrel/dir_close.xpm
@@ -345,6 +354,7 @@ share/sylpheed-claws/themes/mongrel/mail_sign.xpm
 share/sylpheed-claws/themes/mongrel/news_compose.xpm
 share/sylpheed-claws/themes/mongrel/work_offline.xpm
 share/sylpheed-claws/themes/mongrel/work_online.xpm
+share/sylpheed-claws/themes/mozilla/
 @comment share/sylpheed-claws/themes/mozilla/README
 share/sylpheed-claws/themes/mozilla/address_book.xpm
 share/sylpheed-claws/themes/mozilla/close.xpm
@@ -370,6 +380,7 @@ share/sylpheed-claws/themes/mozilla/mail_sign.xpm
 share/sylpheed-claws/themes/mozilla/news_compose.xpm
 share/sylpheed-claws/themes/mozilla/work_offline.xpm
 share/sylpheed-claws/themes/mozilla/work_online.xpm
+share/sylpheed-claws/themes/stw/
 share/sylpheed-claws/themes/stw/address.xpm
 share/sylpheed-claws/themes/stw/address_book.xpm
 share/sylpheed-claws/themes/stw/book.xpm
@@ -430,6 +441,7 @@ share/sylpheed-claws/themes/stw/trash_open_hrm.xpm
 share/sylpheed-claws/themes/stw/unread.xpm
 share/sylpheed-claws/themes/stw/up_arrow.xpm
 share/sylpheed-claws/themes/stw/vcard.xpm
+share/sylpheed-claws/themes/sylzilla/
 @comment share/sylpheed-claws/themes/sylzilla/README
 share/sylpheed-claws/themes/sylzilla/address.xpm
 share/sylpheed-claws/themes/sylzilla/address_book.xpm
@@ -507,6 +519,7 @@ share/sylpheed-claws/themes/sylzilla/up_arrow.xpm
 share/sylpheed-claws/themes/sylzilla/vcard.xpm
 share/sylpheed-claws/themes/sylzilla/work_offline.xpm
 share/sylpheed-claws/themes/sylzilla/work_online.xpm
+share/sylpheed-claws/themes/tml02c/
 share/sylpheed-claws/themes/tml02c/address.xpm
 share/sylpheed-claws/themes/tml02c/address_book.xpm
 share/sylpheed-claws/themes/tml02c/book.xpm
@@ -574,16 +587,3 @@ share/sylpheed-claws/themes/tml02c/up_arrow.xpm
 share/sylpheed-claws/themes/tml02c/vcard.xpm
 share/sylpheed-claws/themes/tml02c/work_offline.xpm
 share/sylpheed-claws/themes/tml02c/work_online.xpm
-@dirrm share/sylpheed-claws/themes/tml02c
-@dirrm share/sylpheed-claws/themes/sylzilla
-@dirrm share/sylpheed-claws/themes/stw
-@dirrm share/sylpheed-claws/themes/mozilla
-@dirrm share/sylpheed-claws/themes/mongrel
-@dirrm share/sylpheed-claws/themes/blue_anarchy
-@dirrm share/sylpheed-claws/themes/black
-@dirrm share/sylpheed-claws/themes/XeNtish
-@dirrm share/sylpheed-claws/themes/Plain_and_Bluish
-@dirrm share/sylpheed-claws/themes/New_Session
-@dirrm share/sylpheed-claws/themes/Kovico-sylpheed
-@dirrm share/sylpheed-claws/themes/Crystal
-@dirrm share/sylpheed-claws/themes

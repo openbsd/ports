@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/27 20:31:44 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:45 espie Exp $
 bin/signify
-man/man1/signify.1
+@man man/man1/signify.1
+share/examples/signify/
 share/examples/signify/Columned
 share/examples/signify/Complex
 share/examples/signify/Simple
 share/examples/signify/SimpleOrColumned
-@dirrm share/examples/signify

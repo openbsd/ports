@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/17 16:45:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:43 espie Exp $
+${P5SITE}/MIME/
 ${P5SITE}/MIME/Body.pm
+${P5SITE}/MIME/Decoder/
 ${P5SITE}/MIME/Decoder.pm
 ${P5SITE}/MIME/Decoder/Base64.pm
 ${P5SITE}/MIME/Decoder/Binary.pm
@@ -8,11 +10,13 @@ ${P5SITE}/MIME/Decoder/NBit.pm
 ${P5SITE}/MIME/Decoder/QuotedPrint.pm
 ${P5SITE}/MIME/Decoder/UU.pm
 ${P5SITE}/MIME/Entity.pm
+${P5SITE}/MIME/Field/
 ${P5SITE}/MIME/Field/ConTraEnc.pm
 ${P5SITE}/MIME/Field/ContDisp.pm
 ${P5SITE}/MIME/Field/ContType.pm
 ${P5SITE}/MIME/Field/ParamVal.pm
 ${P5SITE}/MIME/Head.pm
+${P5SITE}/MIME/Parser/
 ${P5SITE}/MIME/Parser.pm
 ${P5SITE}/MIME/Parser/Filer.pm
 ${P5SITE}/MIME/Parser/Reader.pm
@@ -20,32 +24,24 @@ ${P5SITE}/MIME/Parser/Results.pm
 ${P5SITE}/MIME/Tools.pm
 ${P5SITE}/MIME/WordDecoder.pm
 ${P5SITE}/MIME/Words.pm
-@comment ${P5ARCH}/auto/MIME-tools/.packlist
-man/man3p/MIME::Body.3p
-man/man3p/MIME::Decoder.3p
-man/man3p/MIME::Decoder::Base64.3p
-man/man3p/MIME::Decoder::Binary.3p
-man/man3p/MIME::Decoder::Gzip64.3p
-man/man3p/MIME::Decoder::NBit.3p
-man/man3p/MIME::Decoder::QuotedPrint.3p
-man/man3p/MIME::Decoder::UU.3p
-man/man3p/MIME::Entity.3p
-man/man3p/MIME::Field::ConTraEnc.3p
-man/man3p/MIME::Field::ContDisp.3p
-man/man3p/MIME::Field::ContType.3p
-man/man3p/MIME::Field::ParamVal.3p
-man/man3p/MIME::Head.3p
-man/man3p/MIME::Parser.3p
-man/man3p/MIME::Parser::Filer.3p
-man/man3p/MIME::Parser::Reader.3p
-man/man3p/MIME::Parser::Results.3p
-man/man3p/MIME::Tools.3p
-man/man3p/MIME::WordDecoder.3p
-man/man3p/MIME::Words.3p
-@comment @dirrm ${P5ARCH}/auto/MIME-tools
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/MIME/Parser
-@dirrm ${P5SITE}/MIME/Field
-@dirrm ${P5SITE}/MIME/Decoder
-@dirrm ${P5SITE}/MIME
+@man man/man3p/MIME::Body.3p
+@man man/man3p/MIME::Decoder.3p
+@man man/man3p/MIME::Decoder::Base64.3p
+@man man/man3p/MIME::Decoder::Binary.3p
+@man man/man3p/MIME::Decoder::Gzip64.3p
+@man man/man3p/MIME::Decoder::NBit.3p
+@man man/man3p/MIME::Decoder::QuotedPrint.3p
+@man man/man3p/MIME::Decoder::UU.3p
+@man man/man3p/MIME::Entity.3p
+@man man/man3p/MIME::Field::ConTraEnc.3p
+@man man/man3p/MIME::Field::ContDisp.3p
+@man man/man3p/MIME::Field::ContType.3p
+@man man/man3p/MIME::Field::ParamVal.3p
+@man man/man3p/MIME::Head.3p
+@man man/man3p/MIME::Parser.3p
+@man man/man3p/MIME::Parser::Filer.3p
+@man man/man3p/MIME::Parser::Reader.3p
+@man man/man3p/MIME::Parser::Results.3p
+@man man/man3p/MIME::Tools.3p
+@man man/man3p/MIME::WordDecoder.3p
+@man man/man3p/MIME::Words.3p

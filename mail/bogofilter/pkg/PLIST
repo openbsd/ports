@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/05 13:18:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:41 espie Exp $
 bin/bogofilter
 bin/bogolexer
 bin/bogotune
 bin/bogoupgrade
 bin/bogoutil
-man/man1/bogofilter.1
-man/man1/bogolexer.1
-man/man1/bogotune.1
-man/man1/bogoupgrade.1
-man/man1/bogoutil.1
+@man man/man1/bogofilter.1
+@man man/man1/bogolexer.1
+@man man/man1/bogotune.1
+@man man/man1/bogoupgrade.1
+@man man/man1/bogoutil.1
+share/examples/bogofilter/
 share/examples/bogofilter/bogofilter.cf.example
-@dirrm share/examples/bogofilter

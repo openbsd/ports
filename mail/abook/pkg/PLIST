@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/30 22:44:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:41 espie Exp $
 bin/abook
-man/man1/abook.1
-man/man5/abookrc.5
+@man man/man1/abook.1
+@man man/man5/abookrc.5
+share/examples/abook/
 share/examples/abook/mail2abook.py
 share/examples/abook/sample.abookrc
 share/examples/abook/vcard2abook.pl
+share/examples/abook/whitelist/
 share/examples/abook/whitelist/README
 share/examples/abook/whitelist/abook2whitelist.sh
 share/examples/abook/whitelist/mutt.whitelist
 share/examples/abook/whitelist/whitelist.rc
-@dirrm share/examples/abook/whitelist
-@dirrm share/examples/abook

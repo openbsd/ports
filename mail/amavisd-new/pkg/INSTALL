@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/09/15 09:09:41 espie Exp $
 #
 # Pre/post-installation setup of amavisd-new
 
@@ -41,25 +41,6 @@ do_accts()
 #
 do_configs()
 {
-    if [ -f $CONFIG_DIR/amavisd.conf ]; then
-
-	echo ""
-
-	echo "+---------------"
-	echo "| The existing configuration file $CONFIG_DIR/amavisd.conf has been preserved."
-	echo "| You may want to compare it to the current sample files,"
-	echo "| ${PREFIX}/share/doc/amavisd-new/ , and update your configuration as needed."
-    	echo "+---------------"
-	echo ""
-    else
-	install -o root -g wheel -m 644 ${PREFIX}/share/doc/amavisd-new/amavisd.conf $CONFIG_DIR
-
-	echo "+---------------"
-	echo "| Configuration file has been installed to $CONFIG_DIR/amavisd.conf"
-	echo "| Please update this file to meet your needs."
-	echo "+---------------"
-    fi
-
     if [ -d ${WORK_DIR} ]; then
 
 	echo ""

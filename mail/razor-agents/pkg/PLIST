@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/04/24 08:10:23 peter Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:09:44 espie Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
 bin/razor-report
 bin/razor-revoke
+${P5ARCH}/Razor2/
+${P5ARCH}/Razor2/Client/
 ${P5ARCH}/Razor2/Client/Agent.pm
 @comment ${P5ARCH}/Razor2/Client/Agent.pm.orig
 ${P5ARCH}/Razor2/Client/Config.pm
@@ -12,6 +14,7 @@ ${P5ARCH}/Razor2/Client/Engine.pm
 ${P5ARCH}/Razor2/Client/Version.pm
 ${P5ARCH}/Razor2/Errorhandler.pm
 ${P5ARCH}/Razor2/Logger.pm
+${P5ARCH}/Razor2/Preproc/
 ${P5ARCH}/Razor2/Preproc/Manager.pm
 ${P5ARCH}/Razor2/Preproc/VR1.pm
 ${P5ARCH}/Razor2/Preproc/deBase64.pm
@@ -20,30 +23,25 @@ ${P5ARCH}/Razor2/Preproc/deHTMLxs.pm
 ${P5ARCH}/Razor2/Preproc/deNewline.pm
 ${P5ARCH}/Razor2/Preproc/deQP.pm
 ${P5ARCH}/Razor2/Preproc/enBase64.pm
+${P5ARCH}/Razor2/Signature/
 ${P5ARCH}/Razor2/Signature/Ephemeral.pm
 ${P5ARCH}/Razor2/String.pm
 ${P5ARCH}/Razor2/Syslog.pm
+${P5ARCH}/auto/Razor2/
+${P5ARCH}/auto/Razor2/Preproc/
+${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
+${P5ARCH}/auto/Razor2/Syslog/
 ${P5ARCH}/auto/Razor2/Syslog/autosplit.ix
-@comment ${P5ARCH}/auto/razor-agents/.packlist
-man/man1/razor-admin.1
-man/man1/razor-check.1
-man/man1/razor-report.1
-man/man1/razor-revoke.1
-man/man3p/Razor2::Errorhandler.3p
-man/man3p/Razor2::Preproc::deHTMLxs.3p
-man/man3p/Razor2::Syslog.3p
-man/man5/razor-agent.conf.5
-man/man5/razor-agents.5
-man/man5/razor-whitelist.5
-@comment @dirrm ${P5ARCH}/auto/razor-agents
-@dirrm ${P5ARCH}/auto/Razor2/Syslog
-@dirrm ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs
-@dirrm ${P5ARCH}/auto/Razor2/Preproc
-@dirrm ${P5ARCH}/auto/Razor2
-@dirrm ${P5ARCH}/Razor2/Signature
-@dirrm ${P5ARCH}/Razor2/Preproc
-@dirrm ${P5ARCH}/Razor2/Client
-@dirrm ${P5ARCH}/Razor2
+@man man/man1/razor-admin.1
+@man man/man1/razor-check.1
+@man man/man1/razor-report.1
+@man man/man1/razor-revoke.1
+@man man/man3p/Razor2::Errorhandler.3p
+@man man/man3p/Razor2::Preproc::deHTMLxs.3p
+@man man/man3p/Razor2::Syslog.3p
+@man man/man5/razor-agent.conf.5
+@man man/man5/razor-agents.5
+@man man/man5/razor-whitelist.5

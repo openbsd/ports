@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/07/17 03:44:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 09:09:42 espie Exp $
 @pkgcfl compface-*
 bin/addxface
 bin/compface
@@ -27,13 +27,13 @@ bin/xbmsize48
 include/compface.h
 lib/X11/app-defaults/Faces
 lib/libcompface.a
-%%SHARED%%
-man/man1/compface.1
-man/man1/face_update.1
-man/man1/faces.1
-man/man1/uncompface.1
-man/man3/compface.3
-man/man3/uncompface.3
+@man man/man1/compface.1
+@man man/man1/face_update.1
+@man man/man1/faces.1
+@man man/man1/uncompface.1
+@man man/man3/compface.3
+@man man/man3/uncompface.3
+share/faces/
 share/faces/machine.tab
 share/faces/people.tab
-@dirrm share/faces
+%%SHARED%%

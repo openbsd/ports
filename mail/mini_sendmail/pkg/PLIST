@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/22 23:01:16 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:43 espie Exp $
 bin/mini_sendmail
-man/man8/mini_sendmail.8
+@man man/man8/mini_sendmail.8
+share/doc/mini_sendmail/
 share/doc/mini_sendmail/README
-@dirrm share/doc/mini_sendmail

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/22 05:59:33 form Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:45 espie Exp $
 bin/xfmail
 lib/libeditor.a
 lib/libeditor.la
 lib/libmail.a
 lib/libmail.la
-man/man1/xfmail.1
+@man man/man1/xfmail.1
+share/xfmail/
 share/xfmail/abook.xpm
 share/xfmail/abort.xpm
 share/xfmail/attach.xpm
@@ -37,4 +38,3 @@ share/xfmail/sign.xpm
 share/xfmail/spell.xpm
 share/xfmail/view.xpm
 %%SHARED%%
-@dirrm share/xfmail

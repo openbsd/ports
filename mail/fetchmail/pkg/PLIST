@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/02/15 21:21:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 09:09:42 espie Exp $
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
-man/man1/fetchmail.1
-man/man1/fetchmailconf.1
+@man man/man1/fetchmail.1
+@man man/man1/fetchmailconf.1
+share/doc/fetchmail/
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
 share/doc/fetchmail/FEATURES
@@ -13,4 +14,3 @@ share/doc/fetchmail/design-notes.html
 share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/fetchmail-features.html
 share/doc/fetchmail/todo.html
-@dirrm share/doc/fetchmail

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/06/22 05:20:13 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:09:44 espie Exp $
 @pkgcfl postfix-*
+libexec/postfix/
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
@@ -22,59 +23,59 @@ libexec/postfix/tlsmgr
 libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
-man/man1/mailq.1
-man/man1/newaliases.1
-man/man1/postalias.1
-man/man1/postcat.1
-man/man1/postconf.1
-man/man1/postdrop.1
-man/man1/postfix.1
-man/man1/postkick.1
-man/man1/postlock.1
-man/man1/postlog.1
-man/man1/postmap.1
-man/man1/postqueue.1
-man/man1/postsuper.1
-man/man1/qshape.1
-man/man1/sendmail.1
-man/man5/access.5
-man/man5/aliases.5
-man/man5/body_checks.5
-man/man5/canonical.5
-man/man5/cidr_table.5
-man/man5/header_checks.5
-man/man5/ldap_table.5
-man/man5/mysql_table.5
-man/man5/pcre_table.5
-man/man5/pgsql_table.5
-man/man5/postconf.5
-man/man5/regexp_table.5
-man/man5/relocated.5
-man/man5/transport.5
-man/man5/virtual.5
-man/man8/bounce.8
-man/man8/cleanup.8
-man/man8/defer.8
-man/man8/error.8
-man/man8/flush.8
-man/man8/lmtp.8
-man/man8/local.8
-man/man8/master.8
-man/man8/oqmgr.8
-man/man8/pickup.8
-man/man8/pipe.8
-man/man8/proxymap.8
-man/man8/qmgr.8
-man/man8/qmqpd.8
-man/man8/showq.8
-man/man8/smtp.8
-man/man8/smtpd.8
-man/man8/spawn.8
-man/man8/tlsmgr.8
-man/man8/trace.8
-man/man8/trivial-rewrite.8
-man/man8/verify.8
-man/man8/virtual.8
+@man man/man1/mailq.1
+@man man/man1/newaliases.1
+@man man/man1/postalias.1
+@man man/man1/postcat.1
+@man man/man1/postconf.1
+@man man/man1/postdrop.1
+@man man/man1/postfix.1
+@man man/man1/postkick.1
+@man man/man1/postlock.1
+@man man/man1/postlog.1
+@man man/man1/postmap.1
+@man man/man1/postqueue.1
+@man man/man1/postsuper.1
+@man man/man1/qshape.1
+@man man/man1/sendmail.1
+@man man/man5/access.5
+@man man/man5/aliases.5
+@man man/man5/body_checks.5
+@man man/man5/canonical.5
+@man man/man5/cidr_table.5
+@man man/man5/header_checks.5
+@man man/man5/ldap_table.5
+@man man/man5/mysql_table.5
+@man man/man5/pcre_table.5
+@man man/man5/pgsql_table.5
+@man man/man5/postconf.5
+@man man/man5/regexp_table.5
+@man man/man5/relocated.5
+@man man/man5/transport.5
+@man man/man5/virtual.5
+@man man/man8/bounce.8
+@man man/man8/cleanup.8
+@man man/man8/defer.8
+@man man/man8/error.8
+@man man/man8/flush.8
+@man man/man8/lmtp.8
+@man man/man8/local.8
+@man man/man8/master.8
+@man man/man8/oqmgr.8
+@man man/man8/pickup.8
+@man man/man8/pipe.8
+@man man/man8/proxymap.8
+@man man/man8/qmgr.8
+@man man/man8/qmqpd.8
+@man man/man8/showq.8
+@man man/man8/smtp.8
+@man man/man8/smtpd.8
+@man man/man8/spawn.8
+@man man/man8/tlsmgr.8
+@man man/man8/trace.8
+@man man/man8/trivial-rewrite.8
+@man man/man8/verify.8
+@man man/man8/virtual.8
 sbin/mailq
 sbin/postalias
 sbin/postcat
@@ -91,6 +92,8 @@ sbin/postqueue
 sbin/postsuper
 sbin/qshape
 sbin/sendmail
+share/doc/postfix/
+share/doc/postfix/html/
 share/doc/postfix/html/ADDRESS_CLASS_README.html
 share/doc/postfix/html/ADDRESS_REWRITING_README.html
 share/doc/postfix/html/ADDRESS_VERIFICATION_README.html
@@ -189,6 +192,7 @@ share/doc/postfix/html/trivial-rewrite.8.html
 share/doc/postfix/html/verify.8.html
 share/doc/postfix/html/virtual.5.html
 share/doc/postfix/html/virtual.8.html
+share/doc/postfix/readme/
 share/doc/postfix/readme/AAAREADME
 share/doc/postfix/readme/ADDRESS_CLASS_README
 share/doc/postfix/readme/ADDRESS_REWRITING_README
@@ -232,6 +236,7 @@ share/doc/postfix/readme/VERP_README
 share/doc/postfix/readme/VIRTUAL_README
 share/doc/postfix/readme/XCLIENT_README
 share/doc/postfix/readme/XFORWARD_README
+share/doc/postfix/tls/
 share/doc/postfix/tls/conf.html
 share/doc/postfix/tls/index.html
 share/doc/postfix/tls/install.html
@@ -247,6 +252,7 @@ share/doc/postfix/tls/rfc3207.txt
 share/doc/postfix/tls/security.html
 share/doc/postfix/tls/setup.html
 share/doc/postfix/tls/test.html
+share/examples/postfix/
 share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
@@ -262,9 +268,3 @@ share/examples/postfix/postfix-script
 share/examples/postfix/relocated
 share/examples/postfix/transport
 share/examples/postfix/virtual
-@dirrm share/examples/postfix
-@dirrm share/doc/postfix/tls
-@dirrm share/doc/postfix/readme
-@dirrm share/doc/postfix/html
-@dirrm share/doc/postfix
-@dirrm libexec/postfix

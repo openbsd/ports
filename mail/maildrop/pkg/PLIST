@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/03/31 13:43:17 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
 @mode 0555
 bin/lockmail
 bin/mailbot
@@ -9,22 +9,24 @@ bin/makemime
 bin/reformail
 bin/reformime
 @mode
-man/man1/lockmail.1
-man/man1/mailbot.1
-man/man1/maildrop.1
-man/man1/makedat.1
-man/man1/makemime.1
-man/man1/reformail.1
-man/man1/reformime.1
-man/man5/maildir.5
-man/man5/maildropex.5
-man/man5/maildropfilter.5
-man/man5/maildropgdbm.5
-man/man7/maildirquota.7
+@man man/man1/lockmail.1
+@man man/man1/mailbot.1
+@man man/man1/maildrop.1
+@man man/man1/makedat.1
+@man man/man1/makemime.1
+@man man/man1/reformail.1
+@man man/man1/reformime.1
+@man man/man5/maildir.5
+@man man/man5/maildropex.5
+@man man/man5/maildropfilter.5
+@man man/man5/maildropgdbm.5
+@man man/man7/maildirquota.7
+share/doc/maildrop/
 share/doc/maildrop/INSTALL
 share/doc/maildrop/README
 share/doc/maildrop/README.postfix
 share/doc/maildrop/UPGRADE
+share/doc/maildrop/html/
 share/doc/maildrop/html/deliverquota.html
 share/doc/maildrop/html/lockmail.html
 share/doc/maildrop/html/mailbot.html
@@ -45,12 +47,10 @@ share/doc/maildrop/html/rfc2045.html
 share/doc/maildrop/html/rfc822.html
 share/doc/maildrop/html/userdb.html
 share/doc/maildrop/html/userdbpw.html
+share/doc/maildrop/scripts/
 share/doc/maildrop/scripts/makedat
 share/doc/maildrop/scripts/makeuserdb
 share/doc/maildrop/scripts/pw2userdb
 share/doc/maildrop/scripts/userdb
 share/doc/maildrop/scripts/userdbpw
 share/doc/maildrop/scripts/vchkpw2userdb
-@dirrm share/doc/maildrop/scripts
-@dirrm share/doc/maildrop/html
-@dirrm share/doc/maildrop

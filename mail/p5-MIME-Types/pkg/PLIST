@@ -1,14 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/16 23:51:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:43 espie Exp $
+${P5SITE}/MIME/
 ${P5SITE}/MIME/Type.pm
 ${P5SITE}/MIME/Type.pod
 ${P5SITE}/MIME/Types.pm
 ${P5SITE}/MIME/Types.pod
-@comment ${P5ARCH}/auto/MIME/Types/.packlist
-man/man3p/MIME::Type.3p
-man/man3p/MIME::Types.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/MIME/Types
-@comment @dirrm ${P5ARCH}/auto/MIME
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/MIME
+@man man/man3p/MIME::Type.3p
+@man man/man3p/MIME::Types.3p

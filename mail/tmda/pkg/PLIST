@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/02/14 22:25:25 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 09:09:45 espie Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -8,6 +8,7 @@ bin/tmda-ofmipd
 bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
+lib/python${PYTHON_VER}/site-packages/TMDA/
 lib/python${PYTHON_VER}/site-packages/TMDA/Address.py
 lib/python${PYTHON_VER}/site-packages/TMDA/Address.pyc
 lib/python${PYTHON_VER}/site-packages/TMDA/Auth.py
@@ -40,6 +41,8 @@ lib/python${PYTHON_VER}/site-packages/TMDA/Version.py
 lib/python${PYTHON_VER}/site-packages/TMDA/Version.pyc
 lib/python${PYTHON_VER}/site-packages/TMDA/__init__.py
 lib/python${PYTHON_VER}/site-packages/TMDA/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/
+lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/Charset.py
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/Charset.pyc
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/Encoders.py
@@ -84,6 +87,7 @@ lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/base64MIME.py
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/base64MIME.pyc
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/quopriMIME.py
 lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email/quopriMIME.pyc
+share/doc/tmda/
 share/doc/tmda/CRYPTO
 share/doc/tmda/INSTALL
 share/doc/tmda/README
@@ -95,6 +99,7 @@ share/doc/tmda/config-pre.html
 share/doc/tmda/config-server.html
 share/doc/tmda/config-vars.html
 share/doc/tmda/config.html
+share/doc/tmda/contrib/
 share/doc/tmda/contrib/collectaddys
 share/doc/tmda/contrib/def2html
 share/doc/tmda/contrib/printcdb
@@ -109,6 +114,7 @@ share/doc/tmda/features.html
 share/doc/tmda/filter-sources.html
 share/doc/tmda/history.html
 share/doc/tmda/howto-template.html
+share/doc/tmda/img/
 share/doc/tmda/img/tmda-186x253.png
 share/doc/tmda/img/tmda-47x64.png
 share/doc/tmda/img/tmda-562x765.png
@@ -123,15 +129,9 @@ share/doc/tmda/tmda-ofmipd.html
 share/doc/tmda/tmda-vdomains.html
 share/doc/tmda/trouble.html
 share/doc/tmda/upgrade.html
+share/examples/tmda/
 share/examples/tmda/sample.config
+share/tmda/
 share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
-@dirrm share/tmda
-@dirrm share/examples/tmda
-@dirrm share/doc/tmda/img
-@dirrm share/doc/tmda/contrib
-@dirrm share/doc/tmda
-@dirrm lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email
-@dirrm lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib
-@dirrm lib/python${PYTHON_VER}/site-packages/TMDA

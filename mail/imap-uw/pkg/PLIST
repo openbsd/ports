@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/09/18 08:19:06 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
 @pkgcfl imaputils-uw-*
 @pkgcfl mailutil-uw-*
 @pkgcfl courier-imap-*
 @pkgcfl courier-pop3-*
 bin/dmail
-bin/mailutil
 bin/tmail
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
-man/man1/dmail.1
-man/man1/mailutil.1
-man/man1/tmail.1
-man/man8/imapd.8
-man/man8/ipopd.8
+@man man/man1/dmail.1
+@man man/man1/tmail.1
+@man man/man8/imapd.8
+@man man/man8/ipopd.8
+share/doc/imap-uw/
 share/doc/imap-uw/FAQ.html
 share/doc/imap-uw/FAQ.txt
 share/doc/imap-uw/RELNOTES
@@ -23,4 +22,3 @@ share/doc/imap-uw/formats.txt
 share/doc/imap-uw/imaprc.txt
 share/doc/imap-uw/md5.txt
 share/doc/imap-uw/naming.txt
-@dirrm share/doc/imap-uw

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/21 23:35:01 danh Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:42 espie Exp $
+lib/majordomo/
+lib/majordomo/Tools/
 lib/majordomo/Tools/archive.pl
 lib/majordomo/Tools/archive_mh.pl
 lib/majordomo/Tools/digest.send
@@ -7,6 +9,7 @@ lib/majordomo/Tools/makeindex.pl
 lib/majordomo/Tools/new-list
 lib/majordomo/Tools/sequencer
 lib/majordomo/archive2.pl
+lib/majordomo/bin/
 lib/majordomo/bin/approve
 lib/majordomo/bin/bounce
 lib/majordomo/bin/medit
@@ -22,12 +25,13 @@ lib/majordomo/resend
 lib/majordomo/sample.cf
 lib/majordomo/shlock.pl
 lib/majordomo/wrapper
-man/man1/approve.1
-man/man1/bounce-remind.1
-man/man1/bounce.1
-man/man1/digest.1
-man/man1/resend.1
-man/man8/majordomo.8
+@man man/man1/approve.1
+@man man/man1/bounce-remind.1
+@man man/man1/bounce.1
+@man man/man1/digest.1
+@man man/man1/resend.1
+@man man/man8/majordomo.8
+share/doc/majordomo/
 share/doc/majordomo/Changelog
 share/doc/majordomo/FAQ
 share/doc/majordomo/FUTURE
@@ -41,7 +45,3 @@ share/doc/majordomo/majordomo-faq.html
 share/doc/majordomo/majordomo.lisa6.ps
 share/doc/majordomo/majordomo.ora
 share/doc/majordomo/post-install-notes
-@dirrm share/doc/majordomo
-@dirrm lib/majordomo/bin
-@dirrm lib/majordomo/Tools
-@dirrm lib/majordomo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/05/25 22:10:23 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/15 09:09:42 espie Exp $
 lib/evolution/1.2/camel-providers/libcamelimap.so
 lib/evolution/1.2/camel-providers/libcamellocal.so
 lib/evolution/1.2/camel-providers/libcamelpop3.so
@@ -6,16 +6,14 @@ lib/evolution/1.2/camel-providers/libcamelsendmail.so
 lib/evolution/1.2/camel-providers/libcamelsmtp.so
 lib/evolution/1.2/evolution-mail-importers/libmbox.so
 lib/evolution/1.2/evolution-mail-importers/liboutlook.so
-lib/evolution/1.2/libebook.so.0.0
-lib/evolution/1.2/libedb3util.so.0.0
-lib/evolution/1.2/libeutil.so.0.0
-lib/libcal-client.so.0.0
-lib/libcal-util.so.0.0
-lib/libcamel.so.0.0
-lib/libename.so.0.0
-lib/libeselectnames.so.0.0
-lib/libeshell.so.0.0
-lib/libevolution-importer.so.0.0
-lib/libwombat.so.0.0
-DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/evolution/1.2)
+@lib lib/evolution/1.2/libebook.so.0.0
+@lib lib/evolution/1.2/libedb3util.so.0.0
+@lib lib/evolution/1.2/libeutil.so.0.0
+@lib lib/libcal-client.so.0.0
+@lib lib/libcal-util.so.0.0
+@lib lib/libcamel.so.0.0
+@lib lib/libename.so.0.0
+@lib lib/libeselectnames.so.0.0
+@lib lib/libeshell.so.0.0
+@lib lib/libevolution-importer.so.0.0
+@lib lib/libwombat.so.0.0

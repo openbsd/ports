@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/07 01:54:50 naddy Exp $
-bin/pgpsendmail
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:44 espie Exp $
+bin/extract-addrs
+bin/match-email-addr
 bin/pgpdaemon
 bin/pgppipe
+bin/pgpsendmail
+bin/pgpsign
 bin/sendpgppass
-bin/match-email-addr
-bin/extract-addrs
-man/man8/pgpdaemon.8
-man/man1/pgppipe.1
-man/man1/sendpgppass.1
-man/man1/pgpsendmail.1
-man/man1/pgpsign.1
-man/man1/extract-addrs.1
-man/man1/match-email-addr.1
+@man man/man1/extract-addrs.1
+@man man/man1/match-email-addr.1
+@man man/man1/pgppipe.1
+@man man/man1/pgpsendmail.1
+@man man/man1/pgpsign.1
+@man man/man1/sendpgppass.1
+@man man/man8/pgpdaemon.8

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/12 02:19:45 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:43 espie Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -35,9 +35,9 @@ share/doc/mutt/html/manual-7.html
 share/doc/mutt/html/manual.html
 share/doc/mutt/manual.txt
 share/doc/mutt/patch-notes.txt
+@sample ${CONFDIR}/
 share/doc/mutt/samples/
 share/examples/mutt/
-@sample ${CONFDIR}/
 share/examples/mutt/Mush.rc
 share/examples/mutt/Muttrc.sample
 @sample ${CONFDIR}/Muttrc
@@ -71,8 +71,6 @@ share/examples/mutt/pgp6.rc
 share/examples/mutt/sample.mailcap
 share/examples/mutt/sample.muttrc
 share/examples/mutt/sample.muttrc-tlr
-share/locale/bg/
-share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/mutt.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
@@ -81,15 +79,11 @@ share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
 share/locale/el/LC_MESSAGES/mutt.mo
-share/locale/eo/
-share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/et/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/gl/LC_MESSAGES/mutt.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/mutt.mo
 share/locale/id/LC_MESSAGES/mutt.mo
 share/locale/it/LC_MESSAGES/mutt.mo
@@ -102,17 +96,9 @@ share/locale/nl/LC_MESSAGES/mutt.mo
 share/locale/pl/LC_MESSAGES/mutt.mo
 share/locale/pt_BR/LC_MESSAGES/mutt.mo
 share/locale/ru/LC_MESSAGES/mutt.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
 share/locale/tr/LC_MESSAGES/mutt.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/mutt.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/mutt.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/mutt.mo

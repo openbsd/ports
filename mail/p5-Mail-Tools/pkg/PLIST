@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/17 16:45:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 09:09:44 espie Exp $
+${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
 ${P5SITE}/Mail/Cap.pm
+${P5SITE}/Mail/Field/
 ${P5SITE}/Mail/Field.pm
 ${P5SITE}/Mail/Field/AddrList.pm
 ${P5SITE}/Mail/Field/Date.pm
@@ -8,6 +10,7 @@ ${P5SITE}/Mail/Filter.pm
 ${P5SITE}/Mail/Header.pm
 ${P5SITE}/Mail/Header.pm.orig
 ${P5SITE}/Mail/Internet.pm
+${P5SITE}/Mail/Mailer/
 ${P5SITE}/Mail/Mailer.pm
 ${P5SITE}/Mail/Mailer/mail.pm
 ${P5SITE}/Mail/Mailer/rfc822.pm
@@ -16,6 +19,9 @@ ${P5SITE}/Mail/Mailer/smtp.pm
 ${P5SITE}/Mail/Mailer/test.pm
 ${P5SITE}/Mail/Send.pm
 ${P5SITE}/Mail/Util.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Mail/
+${P5SITE}/auto/Mail/Internet/
 ${P5SITE}/auto/Mail/Internet/_prephdr.al
 ${P5SITE}/auto/Mail/Internet/add_signature.al
 ${P5SITE}/auto/Mail/Internet/autosplit.ix
@@ -26,34 +32,23 @@ ${P5SITE}/auto/Mail/Internet/send.al
 ${P5SITE}/auto/Mail/Internet/sign.al
 ${P5SITE}/auto/Mail/Internet/smtpsend.al
 ${P5SITE}/auto/Mail/Internet/unescape_from.al
+${P5SITE}/auto/Mail/Util/
 ${P5SITE}/auto/Mail/Util/autosplit.ix
 ${P5SITE}/auto/Mail/Util/mailaddress.al
 ${P5SITE}/auto/Mail/Util/maildomain.al
 ${P5SITE}/auto/Mail/Util/read_mbox.al
-@comment ${P5ARCH}/auto/Mail/.packlist
-man/man3p/Mail::Address.3p
-man/man3p/Mail::Cap.3p
-man/man3p/Mail::Field.3p
-man/man3p/Mail::Field::AddrList.3p
-man/man3p/Mail::Filter.3p
-man/man3p/Mail::Header.3p
-man/man3p/Mail::Internet.3p
-man/man3p/Mail::Mailer.3p
-man/man3p/Mail::Send.3p
-man/man3p/Mail::Util.3p
+@man man/man3p/Mail::Address.3p
+@man man/man3p/Mail::Cap.3p
+@man man/man3p/Mail::Field.3p
+@man man/man3p/Mail::Field::AddrList.3p
+@man man/man3p/Mail::Filter.3p
+@man man/man3p/Mail::Header.3p
+@man man/man3p/Mail::Internet.3p
+@man man/man3p/Mail::Mailer.3p
+@man man/man3p/Mail::Send.3p
+@man man/man3p/Mail::Util.3p
+share/examples/p5-MailTools/
 share/examples/p5-MailTools/README.demos
 share/examples/p5-MailTools/forwd_demo
 share/examples/p5-MailTools/rplyto_demo
 share/examples/p5-MailTools/send_demo
-@dirrm share/examples/p5-MailTools
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Mail
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/auto/Mail/Util
-@dirrm ${P5SITE}/auto/Mail/Internet
-@dirrm ${P5SITE}/auto/Mail
-@dirrm ${P5SITE}/auto
-@dirrm ${P5SITE}/Mail/Mailer
-@dirrm ${P5SITE}/Mail/Field
-@dirrm ${P5SITE}/Mail

@@ -1,6 +1,4 @@
-!%%no_x11%%
-!%%no_exiscan%%
-@comment $OpenBSD: PLIST,v 1.10 2004/07/29 22:15:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/09/15 09:09:42 espie Exp $
 bin/exicyclog
 bin/exigrep
 bin/exim
@@ -17,14 +15,16 @@ bin/exipick
 bin/exiqgrep
 bin/exiqsumm
 bin/exiwhat
-man/man8/exim.8
+@man man/man8/exim.8
+share/doc/exim/
 share/doc/exim/README.SIEVE
 share/doc/exim/filter.txt
 share/doc/exim/spec.txt
+share/examples/exim/
 share/examples/exim/configure
 share/examples/exim/convert4r4
-@dirrm share/examples/exim
-@dirrm share/doc/exim
+!%%no_x11%%
+!%%no_exiscan%%
 @extra ${SYSCONFDIR}/exim/
 @extraunexec groupdel _exim
 @extraunexec userdel -r _exim

@@ -1,7 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 17:28:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:45 espie Exp $
 bin/sylpheed-claws
 bin/sylpheed-switcher
-man/man1/sylpheed-claws.1
+lib/sylpheed-claws/
+lib/sylpheed-claws/plugins/
+lib/sylpheed-claws/plugins/dillo_viewer.a
+lib/sylpheed-claws/plugins/dillo_viewer.la
+lib/sylpheed-claws/plugins/image_viewer.a
+lib/sylpheed-claws/plugins/image_viewer.la
+lib/sylpheed-claws/plugins/spamassassin.a
+lib/sylpheed-claws/plugins/spamassassin.la
+lib/sylpheed-claws/plugins/spamassassin_gtk.a
+lib/sylpheed-claws/plugins/spamassassin_gtk.la
+@man man/man1/sylpheed-claws.1
+share/doc/sylpheed-claws/
 share/doc/sylpheed-claws/AUTHORS
 share/doc/sylpheed-claws/README
 share/doc/sylpheed-claws/README.claws
@@ -9,28 +20,36 @@ share/doc/sylpheed-claws/README.jp
 share/doc/sylpheed-claws/README.sylprint
 share/doc/sylpheed-claws/README.tools
 share/doc/sylpheed-claws/RELEASE_NOTES.claws
+share/doc/sylpheed-claws/faq/
+share/doc/sylpheed-claws/faq/de/
 share/doc/sylpheed-claws/faq/de/sylpheed-faq-1.html
 share/doc/sylpheed-claws/faq/de/sylpheed-faq-2.html
 share/doc/sylpheed-claws/faq/de/sylpheed-faq-3.html
 share/doc/sylpheed-claws/faq/de/sylpheed-faq.html
+share/doc/sylpheed-claws/faq/en/
 share/doc/sylpheed-claws/faq/en/sylpheed-faq-1.html
 share/doc/sylpheed-claws/faq/en/sylpheed-faq-2.html
 share/doc/sylpheed-claws/faq/en/sylpheed-faq-3.html
 share/doc/sylpheed-claws/faq/en/sylpheed-faq-4.html
 share/doc/sylpheed-claws/faq/en/sylpheed-faq.html
+share/doc/sylpheed-claws/faq/es/
 share/doc/sylpheed-claws/faq/es/sylpheed-faq-1.html
 share/doc/sylpheed-claws/faq/es/sylpheed-faq-2.html
 share/doc/sylpheed-claws/faq/es/sylpheed-faq-3.html
 share/doc/sylpheed-claws/faq/es/sylpheed-faq-4.html
 share/doc/sylpheed-claws/faq/es/sylpheed-faq.html
+share/doc/sylpheed-claws/faq/fr/
 share/doc/sylpheed-claws/faq/fr/sylpheed-faq-1.html
 share/doc/sylpheed-claws/faq/fr/sylpheed-faq-2.html
 share/doc/sylpheed-claws/faq/fr/sylpheed-faq-3.html
 share/doc/sylpheed-claws/faq/fr/sylpheed-faq.html
+share/doc/sylpheed-claws/faq/it/
 share/doc/sylpheed-claws/faq/it/sylpheed-faq-1.html
 share/doc/sylpheed-claws/faq/it/sylpheed-faq-2.html
 share/doc/sylpheed-claws/faq/it/sylpheed-faq-3.html
 share/doc/sylpheed-claws/faq/it/sylpheed-faq.html
+share/doc/sylpheed-claws/manual/
+share/doc/sylpheed-claws/manual/de/
 share/doc/sylpheed-claws/manual/de/sylpheed-1.html
 share/doc/sylpheed-claws/manual/de/sylpheed-10.html
 share/doc/sylpheed-claws/manual/de/sylpheed-11.html
@@ -52,6 +71,7 @@ share/doc/sylpheed-claws/manual/de/sylpheed-7.html
 share/doc/sylpheed-claws/manual/de/sylpheed-8.html
 share/doc/sylpheed-claws/manual/de/sylpheed-9.html
 share/doc/sylpheed-claws/manual/de/sylpheed.html
+share/doc/sylpheed-claws/manual/en/
 share/doc/sylpheed-claws/manual/en/sylpheed-1.html
 share/doc/sylpheed-claws/manual/en/sylpheed-10.html
 share/doc/sylpheed-claws/manual/en/sylpheed-11.html
@@ -75,6 +95,7 @@ share/doc/sylpheed-claws/manual/en/sylpheed-7.html
 share/doc/sylpheed-claws/manual/en/sylpheed-8.html
 share/doc/sylpheed-claws/manual/en/sylpheed-9.html
 share/doc/sylpheed-claws/manual/en/sylpheed.html
+share/doc/sylpheed-claws/manual/es/
 share/doc/sylpheed-claws/manual/es/sylpheed-1.html
 share/doc/sylpheed-claws/manual/es/sylpheed-10.html
 share/doc/sylpheed-claws/manual/es/sylpheed-11.html
@@ -96,6 +117,7 @@ share/doc/sylpheed-claws/manual/es/sylpheed-7.html
 share/doc/sylpheed-claws/manual/es/sylpheed-8.html
 share/doc/sylpheed-claws/manual/es/sylpheed-9.html
 share/doc/sylpheed-claws/manual/es/sylpheed.html
+share/doc/sylpheed-claws/manual/fr/
 share/doc/sylpheed-claws/manual/fr/sylpheed-1.html
 share/doc/sylpheed-claws/manual/fr/sylpheed-10.html
 share/doc/sylpheed-claws/manual/fr/sylpheed-11.html
@@ -117,6 +139,7 @@ share/doc/sylpheed-claws/manual/fr/sylpheed-7.html
 share/doc/sylpheed-claws/manual/fr/sylpheed-8.html
 share/doc/sylpheed-claws/manual/fr/sylpheed-9.html
 share/doc/sylpheed-claws/manual/fr/sylpheed.html
+share/doc/sylpheed-claws/manual/ja/
 share/doc/sylpheed-claws/manual/ja/sylpheed-1.html
 share/doc/sylpheed-claws/manual/ja/sylpheed-10.html
 share/doc/sylpheed-claws/manual/ja/sylpheed-11.html
@@ -136,11 +159,16 @@ share/doc/sylpheed-claws/manual/ja/sylpheed-8.html
 share/doc/sylpheed-claws/manual/ja/sylpheed-9.html
 share/doc/sylpheed-claws/manual/ja/sylpheed.html
 share/doc/sylpheed-claws/manual/ja/sylpheed.sgml
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Internet/
 share/gnome/apps/Internet/sylpheed-claws.desktop
 share/locale/bg/LC_MESSAGES/sylpheed-claws.mo
 share/locale/cs/LC_MESSAGES/sylpheed-claws.mo
 share/locale/de/LC_MESSAGES/sylpheed-claws.mo
 share/locale/el/LC_MESSAGES/sylpheed-claws.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/sylpheed-claws.mo
 share/locale/es/LC_MESSAGES/sylpheed-claws.mo
 share/locale/fr/LC_MESSAGES/sylpheed-claws.mo
@@ -153,10 +181,16 @@ share/locale/nl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ru/LC_MESSAGES/sylpheed-claws.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
+share/pixmaps/
 share/pixmaps/sylpheed-claws.png
+share/sylpheed-claws/
 share/sylpheed-claws/OOo2sylpheed.pl
 share/sylpheed-claws/calypso_convert.pl
 share/sylpheed-claws/eud2gc.py
@@ -173,63 +207,3 @@ share/sylpheed-claws/sylprint.rc
 share/sylpheed-claws/tb2sylpheed
 share/sylpheed-claws/update-po
 share/sylpheed-claws/uudec
-@exec mkdir -p %D/lib/sylpheed-claws/plugins
-@dirrm share/sylpheed-claws
-@dirrm share/pixmaps
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/doc/sylpheed-claws/manual/ja
-@dirrm share/doc/sylpheed-claws/manual/fr
-@dirrm share/doc/sylpheed-claws/manual/es
-@dirrm share/doc/sylpheed-claws/manual/en
-@dirrm share/doc/sylpheed-claws/manual/de
-@dirrm share/doc/sylpheed-claws/manual
-@dirrm share/doc/sylpheed-claws/faq/it
-@dirrm share/doc/sylpheed-claws/faq/fr
-@dirrm share/doc/sylpheed-claws/faq/es
-@dirrm share/doc/sylpheed-claws/faq/en
-@dirrm share/doc/sylpheed-claws/faq/de
-@dirrm share/doc/sylpheed-claws/faq
-@dirrm share/doc/sylpheed-claws
-@dirrm lib/sylpheed-claws/plugins
-@dirrm lib/sylpheed-claws

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/30 15:25:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:44 espie Exp $
 bin/prepop
+share/doc/prepop/
 share/doc/prepop/MANUAL
-@dirrm share/doc/prepop

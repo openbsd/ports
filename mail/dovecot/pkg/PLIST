@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/30 17:40:27 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:41 espie Exp $
 libexec/dovecot/
 libexec/dovecot/dovecot-auth
 libexec/dovecot/imap
@@ -18,14 +18,11 @@ share/doc/dovecot/nfs.txt
 share/doc/dovecot/securecoding.txt
 share/examples/dovecot/
 share/examples/dovecot/dovecot-example.conf
+@sample ${SYSCONFDIR}/dovecot.conf
 share/examples/dovecot/dovecot-openssl.cnf
-@cwd ${SYSCONFDIR}
-@extra dovecot.conf
-@cwd /etc/ssl
-@extra dovecot-openssl.cnf
-@extra dovecotcert.pem
-@cwd /etc/ssl/private
-@extra dovecot.pem
+@sample ${SYSCONFDIR}/ssl/dovecot-openssl.cnf
+@extra ${SYSCONFDIR}/ssl/dovecotcert.pem
+@extra ${SYSCONFDIR}/ssl/private/dovecot.pem
 @extraunexec rm -rf /var/dovecot
 @extraunexec userdel _dovecot
 @extraunexec groupdel _dovecot

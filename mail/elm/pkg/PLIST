@@ -1,43 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:50 naddy Exp $
-lib/prlong
-lib/elm.mimecharsets
-lib/elmcharset
-lib/elm-help.0
-lib/elm-help.1
-lib/elm-help.2
-lib/elm-help.3
-lib/elmrc-info
-lib/elm.mimetypes
-@unexec rm -f %D/lib/elm.mimetypes-dist
-man/cat1/answer.0
-man/cat1/checkalias.0
-man/cat1/elm.0
-man/cat1/elmalias.0
-man/cat1/fastmail.0
-man/cat1/frm.0
-man/cat1/listalias.0
-man/cat1/messages.0
-man/cat1/newalias.0
-man/cat1/newmail.0
-@exec ln -f %D/%F %D/man/cat1/wnewmail.0
-@unexec rm -f %D/man/cat1/wnewmail.0
-man/cat1/printmail.0
-man/cat1/readmsg.0
-man/cat1/elmcharset.0
-bin/elm
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:41 espie Exp $
 bin/answer
 bin/checkalias
+bin/elm
 bin/elmalias
 bin/fastmail
 bin/frm
-@exec ln -f %D/%F %D/bin/nfrm
-@unexec rm -f %D/bin/nfrm
 bin/listalias
 bin/messages
 bin/newalias
 bin/newmail
-@exec ln -f %D/%F %D/bin/wnewmail
-@unexec rm -f %D/bin/wnewmail
+bin/nfrm
 bin/printmail
 bin/readmsg
+bin/wnewmail
+lib/elm-help.0
+lib/elm-help.1
+lib/elm-help.2
+lib/elm-help.3
+lib/elm.mimecharsets
+lib/elm.mimetypes-dist
+@sample lib/elm.mimetypes
+lib/elmcharset
+lib/elmrc-info
+lib/prlong
+@man man/cat1/answer.0
+@man man/cat1/checkalias.0
+@man man/cat1/elm.0
+@man man/cat1/elmalias.0
+@man man/cat1/elmcharset.0
+@man man/cat1/fastmail.0
+@man man/cat1/frm.0
+@man man/cat1/listalias.0
+@man man/cat1/messages.0
+@man man/cat1/newalias.0
+@man man/cat1/newmail.0
+@man man/cat1/printmail.0
+@man man/cat1/readmsg.0
+@man man/cat1/wnewmail.0
 share/nls/C/elm2.4me+.cat

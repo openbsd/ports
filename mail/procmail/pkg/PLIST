@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/07/06 00:13:51 rohee Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:44 espie Exp $
 bin/formail
 bin/lockfile
 bin/mailstat
 bin/procmail
-man/man1/formail.1
-man/man1/lockfile.1
-man/man1/procmail.1
-man/man5/procmailex.5
-man/man5/procmailrc.5
-man/man5/procmailsc.5
+@man man/man1/formail.1
+@man man/man1/lockfile.1
+@man man/man1/procmail.1
+@man man/man5/procmailex.5
+@man man/man5/procmailrc.5
+@man man/man5/procmailsc.5
+share/examples/procmail/
 share/examples/procmail/1procmailrc
 share/examples/procmail/1rmail
 share/examples/procmail/2procmailrc
@@ -21,4 +22,3 @@ share/examples/procmail/forward
 share/examples/procmail/local_procmail_lmtp.m4
 share/examples/procmail/mailstat
 share/examples/procmail/procmail-rpm.spec
-@dirrm share/examples/procmail

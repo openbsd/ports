@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/27 23:34:42 jose Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:45 espie Exp $
 bin/tkrat
+lib/tkrat/
 lib/tkrat/pkgIndex.tcl
-man/man1/tkrat.1
+@man man/man1/tkrat.1
+share/doc/tkrat/
 share/doc/tkrat/CONFIGURATION
 share/doc/tkrat/interface
 share/doc/tkrat/userproc.example
 share/doc/tkrat/userprocs
+share/tkrat/
 share/tkrat/alias.tcl
 share/tkrat/client.tcl
 share/tkrat/compose.tcl
@@ -68,6 +71,7 @@ share/tkrat/tkrat.xpm
 share/tkrat/tkrat_small.xbm
 share/tkrat/tkrat_smallmask.xbm
 share/tkrat/tkratmask.xbm
+share/tkrat/util/
 share/tkrat/util/pkgIndex.tcl
 share/tkrat/util/rat_balloon.tcl
 share/tkrat/util/rat_ed.tcl
@@ -83,7 +87,3 @@ share/tkrat/vfolderdef.tcl
 share/tkrat/watcher.tcl
 share/tkrat/winctl.tcl
 %%SHARED%%
-@dirrm share/tkrat/util
-@dirrm share/tkrat
-@dirrm share/doc/tkrat
-@dirrm lib/tkrat

@@ -1,20 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/17 16:45:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:44 espie Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/IMAPClient/
 ${P5SITE}/Mail/IMAPClient.pm
 ${P5SITE}/Mail/IMAPClient.pod
+${P5SITE}/Mail/IMAPClient/BodyStructure/
 ${P5SITE}/Mail/IMAPClient/BodyStructure.pm
 ${P5SITE}/Mail/IMAPClient/BodyStructure/Parse.pm
 ${P5SITE}/Mail/IMAPClient/MessageSet.pm
 ${P5SITE}/Mail/IMAPClient/Thread.pm
-@comment ${P5ARCH}/auto/Mail/IMAPClient/.packlist
-man/man3p/Mail::IMAPClient.3p
-man/man3p/Mail::IMAPClient::BodyStructure.3p
-man/man3p/Mail::IMAPClient::MessageSet.3p
-man/man3p/Mail::IMAPClient::Parse.3p
-man/man3p/Mail::IMAPClient::Thread.3p
-@comment @dirrm ${P5ARCH}/auto/Mail/IMAPClient
-@comment @dirrm ${P5ARCH}/auto/Mail
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Mail/IMAPClient/BodyStructure
-@dirrm ${P5SITE}/Mail/IMAPClient
-@dirrm ${P5SITE}/Mail
+@man man/man3p/Mail::IMAPClient.3p
+@man man/man3p/Mail::IMAPClient::BodyStructure.3p
+@man man/man3p/Mail::IMAPClient::MessageSet.3p
+@man man/man3p/Mail::IMAPClient::Parse.3p
+@man man/man3p/Mail::IMAPClient::Thread.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/06 01:39:09 ian Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 09:09:44 espie Exp $
 bin/sa-learn
 bin/spamassassin
 bin/spamc
@@ -38,9 +38,6 @@ ${P5SITE}/Mail/SpamAssassin/TextCat.pm
 ${P5SITE}/Mail/SpamAssassin/UnixLocker.pm
 ${P5SITE}/Mail/SpamAssassin/Util.pm
 ${P5SITE}/Mail/SpamAssassin/Win32Locker.pm
-@comment ${P5ARCH}/auto/Mail/
-@comment ${P5ARCH}/auto/Mail/SpamAssassin/
-@comment ${P5ARCH}/auto/Mail/SpamAssassin/.packlist
 @man man/man1/sa-learn.1
 @man man/man1/spamassassin.1
 @man man/man1/spamc.1
@@ -61,7 +58,9 @@ share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
 share/examples/SpamAssassin/
+@sample ${CONFDIR}
 share/examples/SpamAssassin/local.cf
+@sample ${CONFDIR}/local.cf
 share/spamassassin/
 share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
@@ -92,4 +91,3 @@ share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
-@extraunexec rm -rf ${CONFDIR}

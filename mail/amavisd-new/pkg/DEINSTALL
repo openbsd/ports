@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/09/15 09:09:41 espie Exp $
 #
 # De-installation setup of amavisd-new
 
@@ -18,7 +18,6 @@ if [ "$PKG_DELETE_EXTRA" != Yes ]; then
     echo "|"
     echo "|           userdel $USER"
     echo "|           groupdel $GROUP"
-    echo "|           rm -rf $CONFIG_DIR/amavisd.conf"
     echo "|           rm -rf $WORK_DIR"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"

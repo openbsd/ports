@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/29 21:51:51 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:43 espie Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
 lib/python${MODPY_VERSION}/site-packages/offlineimap/CustomConfig.py
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/detector.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/detector.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/version.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/version.pyc
-man/man1/offlineimap.1
+@man man/man1/offlineimap.1
 share/doc/offlineimap/
 share/doc/offlineimap/manual.txt
 share/examples/offlineimap/

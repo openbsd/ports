@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/08/26 06:56:40 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/15 09:09:41 espie Exp $
 @pkgcfl imap-uw-*
 bin/couriertls
 @comment bin/deliverquota
@@ -6,6 +6,7 @@ bin/imapd
 bin/maildiracl
 bin/maildirkw
 @comment bin/maildirmake
+libexec/authlib/
 libexec/authlib/authcram
 libexec/authlib/authdaemon
 libexec/authlib/authdaemond
@@ -16,31 +17,43 @@ libexec/couriertcpd
 libexec/imapd-ssl.rc
 libexec/imapd.rc
 libexec/makedatprog
-man/man1/couriertcpd.1
-man/man1/maildiracl.1
-man/man1/maildirkw.1
-@comment man/man1/maildirmake.1
-@mode 0444
-man/man7/authlib.7
-@mode
-@comment man/man8/deliverquota.8
-man/man8/imapd.8
-@comment man/man8/makeuserdb.8
-man/man8/mkimapdcert.8
-@comment man/man8/userdb.8
-@comment man/man8/userdbpw.8
+@man man/man1/courierlogger.1
+@man man/man1/couriertcpd.1
+@man man/man1/maildiracl.1
+@man man/man1/maildirkw.1
+@comment @man man/man1/maildirmake.1
+@man man/man7/authcram.7
+@man man/man7/authdaemon.7
+@man man/man7/authdaemond.7
+@man man/man7/authlib.7
+@man man/man7/authpam.7
+@man man/man7/authpwd.7
+@man man/man7/authshadow.7
+@man man/man7/authuserdb.7
+@man man/man7/authvchkpw.7
+@comment @man man/man8/deliverquota.8
+@man man/man8/imapd.8
+@comment @man man/man8/makeuserdb.8
+@man man/man8/mkimapdcert.8
+@man man/man8/pw2userdb.8
+@comment @man man/man8/userdb.8
+@comment @man man/man8/userdbpw.8
+@man man/man8/vchkpw2userdb.8
 sbin/authenumerate
 sbin/courierlogger
 sbin/imaplogin
 @comment sbin/makeuserdb
 sbin/mkimapdcert
 @comment sbin/pw2userdb
+sbin/sharedindexinstall
+sbin/sharedindexsplit
+sbin/userdb
 @comment sbin/userdbpw
 @comment sbin/vchkpw2userdb
+share/doc/courier-imap/
+share/examples/courier-imap/
 share/examples/courier-imap/authdaemonrc
 share/examples/courier-imap/imapd
 share/examples/courier-imap/imapd-ssl
 share/examples/courier-imap/imapd.cnf
 share/examples/courier-imap/quotawarnmsg.example
-@dirrm share/examples/courier-imap
-@dirrm libexec/authlib

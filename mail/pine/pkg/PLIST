@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/05/11 22:29:23 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 09:09:44 espie Exp $
 bin/pine
 bin/rpdump
 bin/rpload
-man/man1/pine.1
-man/man1/rpdump.1
-man/man1/rpload.1
+@man man/man1/pine.1
+@man man/man1/rpdump.1
+@man man/man1/rpload.1
+share/doc/pine/
 share/doc/pine/tech-notes.txt
-@dirrm share/doc/pine

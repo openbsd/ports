@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/15 17:28:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 09:09:42 espie Exp $
 bin/csv2vcard
 bin/evolution
 bin/evolution-addressbook
@@ -23,6 +23,7 @@ bin/evolution-vcard-importer
 bin/load-gnomecard-addressbook
 bin/load-pine-addressbook
 bin/wombat
+include/camel/
 include/camel/broken-date-parser.h
 include/camel/camel-address.h
 include/camel/camel-arg.h
@@ -153,23 +154,30 @@ include/camel/camel.h
 include/camel/gstring-util.h
 include/camel/hash-table-utils.h
 include/camel/string-utils.h
+include/ename/
 include/ename/e-address-western.h
 include/ename/e-name-western-tables.h
 include/ename/e-name-western.h
+include/evolution/
+include/evolution/cal-client/
 include/evolution/cal-client/cal-client-multi.h
 include/evolution/cal-client/cal-client-types.h
 include/evolution/cal-client/cal-client.h
 include/evolution/cal-client/cal-query.h
 include/evolution/cal-client/evolution-calendar.h
+include/evolution/cal-util/
 include/evolution/cal-util/cal-component.h
 include/evolution/cal-util/cal-recur.h
 include/evolution/cal-util/cal-util.h
 include/evolution/cal-util/timeutil.h
+include/evolution/e-conduit/
 include/evolution/e-conduit/e-pilot-map.h
 include/evolution/e-conduit/e-pilot-settings.h
 include/evolution/e-conduit/e-pilot-util.h
+include/evolution/e-db3util/
 include/evolution/e-db3util/e-db3-utils.h
 include/evolution/e-db3util/e-dbhash.h
+include/evolution/e-util/
 include/evolution/e-util/e-bonobo-factory-util.h
 include/evolution/e-util/e-categories-config.h
 include/evolution/e-util/e-categories-master-list-wombat.h
@@ -198,6 +206,7 @@ include/evolution/e-util/e-time-utils.h
 include/evolution/e-util/e-url.h
 include/evolution/e-util/e-xml-hash-utils.h
 include/evolution/e-util/md5-utils.h
+include/evolution/ebook/
 include/evolution/ebook/addressbook.h
 include/evolution/ebook/e-book-listener.h
 include/evolution/ebook/e-book-types.h
@@ -212,11 +221,13 @@ include/evolution/ebook/e-card-types.h
 include/evolution/ebook/e-card.h
 include/evolution/ebook/e-destination.h
 include/evolution/ical.h
+include/evolution/importer/
 include/evolution/importer/GNOME_Evolution_Importer.h
 include/evolution/importer/evolution-importer-client.h
 include/evolution/importer/evolution-importer-listener.h
 include/evolution/importer/evolution-importer.h
 include/evolution/importer/evolution-intelligent-importer.h
+include/evolution/pas/
 include/evolution/pas/addressbook.h
 include/evolution/pas/pas-backend-card-sexp.h
 include/evolution/pas/pas-backend-summary.h
@@ -225,6 +236,7 @@ include/evolution/pas/pas-book-factory.h
 include/evolution/pas/pas-book-view.h
 include/evolution/pas/pas-book.h
 include/evolution/pas/pas-card-cursor.h
+include/evolution/pcs/
 include/evolution/pcs/cal-backend-util.h
 include/evolution/pcs/cal-backend.h
 include/evolution/pcs/cal-common.h
@@ -234,6 +246,7 @@ include/evolution/pcs/evolution-calendar.h
 include/evolution/pcs/job.h
 include/evolution/pcs/query-backend.h
 include/evolution/pcs/query.h
+include/evolution/shell/
 include/evolution/shell/Evolution.h
 include/evolution/shell/e-folder-list.h
 include/evolution/shell/e-folder-tree.h
@@ -253,6 +266,7 @@ include/evolution/shell/evolution-storage-listener.h
 include/evolution/shell/evolution-storage-set-view-listener.h
 include/evolution/shell/evolution-storage.h
 include/evolution/shell/evolution-wizard.h
+include/evolution/widgets/
 include/evolution/widgets/e-bonobo-widget.h
 include/evolution/widgets/e-calendar-item.h
 include/evolution/widgets/e-calendar.h
@@ -270,8 +284,12 @@ include/evolution/widgets/e-multi-config-dialog.h
 include/evolution/widgets/e-search-bar.h
 include/evolution/widgets/e-title-bar.h
 include/evolution/widgets/e-url-entry.h
+include/evolution/wombat/
 include/evolution/wombat/wombat-client.h
 lib/camelConf.sh
+lib/evolution/
+lib/evolution/1.2/
+lib/evolution/1.2/camel-providers/
 lib/evolution/1.2/camel-providers/libcamelimap.a
 lib/evolution/1.2/camel-providers/libcamelimap.la
 lib/evolution/1.2/camel-providers/libcamelimap.urls
@@ -287,6 +305,7 @@ lib/evolution/1.2/camel-providers/libcamelsendmail.urls
 lib/evolution/1.2/camel-providers/libcamelsmtp.a
 lib/evolution/1.2/camel-providers/libcamelsmtp.la
 lib/evolution/1.2/camel-providers/libcamelsmtp.urls
+lib/evolution/1.2/evolution-mail-importers/
 lib/evolution/1.2/evolution-mail-importers/libmbox.a
 lib/evolution/1.2/evolution-mail-importers/libmbox.la
 lib/evolution/1.2/evolution-mail-importers/liboutlook.a
@@ -328,32 +347,53 @@ lib/libicalvcal-evolution.a
 lib/libicalvcal-evolution.la
 lib/libwombat.a
 lib/libwombat.la
-man/man1/evolution.1
+@man man/man1/evolution.1
 sbin/camel-index-control
 sbin/camel-lock-helper
+@comment share/applnk/
+@comment share/applnk/Applications/
 @comment share/applnk/Applications/evolution.desktop
+share/evolution/
 share/evolution/Locations
 share/evolution/addresstypes.xml
 share/evolution/arrow.png
+share/evolution/default_user/
 share/evolution/default_user/addressbook-sources.xml
+share/evolution/default_user/local/
+share/evolution/default_user/local/Calendar/
 share/evolution/default_user/local/Calendar/folder-metadata.xml
+share/evolution/default_user/local/Contacts/
 share/evolution/default_user/local/Contacts/create-initial
 share/evolution/default_user/local/Contacts/folder-metadata.xml
+share/evolution/default_user/local/Drafts/
 share/evolution/default_user/local/Drafts/folder-metadata.xml
 share/evolution/default_user/local/Drafts/mbox
+share/evolution/default_user/local/Inbox/
 share/evolution/default_user/local/Inbox/folder-metadata.xml
 share/evolution/default_user/local/Inbox/mbox
+share/evolution/default_user/local/Outbox/
 share/evolution/default_user/local/Outbox/folder-metadata.xml
 share/evolution/default_user/local/Outbox/mbox
+share/evolution/default_user/local/Sent/
 share/evolution/default_user/local/Sent/folder-metadata.xml
 share/evolution/default_user/local/Sent/mbox
+share/evolution/default_user/local/Tasks/
 share/evolution/default_user/local/Tasks/folder-metadata.xml
+share/evolution/default_user/local/Trash/
 share/evolution/default_user/local/Trash/folder-metadata.xml
+share/evolution/default_user/private/
 share/evolution/default_user/searches.xml
 share/evolution/default_user/vfolders.xml
+share/evolution/default_user/views/
+share/evolution/default_user/views/addressbook/
+share/evolution/default_user/views/calendar/
+share/evolution/default_user/views/mail/
+share/evolution/default_user/views/tasks/
+share/evolution/ecps/
 share/evolution/ecps/medbook.ecps
 share/evolution/ecps/phonelist.ecps
 share/evolution/ecps/smallbook.ecps
+share/evolution/etspec/
 share/evolution/etspec/addressbook-config.etspec
 share/evolution/etspec/e-addressbook-view.etspec
 share/evolution/etspec/e-calendar-table.etspec
@@ -367,6 +407,7 @@ share/evolution/etspec/message-list.etspec
 share/evolution/etspec/subscribe-dialog.etspec
 share/evolution/evolutionperson.schema
 share/evolution/filtertypes.xml
+share/evolution/glade/
 share/evolution/glade/alarm-notify.glade
 share/evolution/glade/alarm-options.glade
 share/evolution/glade/alarm-page.glade
@@ -416,13 +457,18 @@ share/evolution/glade/task-details-page.glade
 share/evolution/glade/task-page.glade
 share/evolution/glade/thankyou.png
 share/evolution/glade/timezone-48.png
+share/evolution/sounds/
 share/evolution/sounds/default_alarm.wav
 share/evolution/vfoldertypes.xml
+share/evolution/views/
+share/evolution/views/addressbook/
 share/evolution/views/addressbook/Address_Cards.galview
 share/evolution/views/addressbook/By_Company.galview
 share/evolution/views/addressbook/Phone_List.galview
 share/evolution/views/addressbook/galview.xml
+share/evolution/views/calendar/
 share/evolution/views/calendar/galview.xml
+share/evolution/views/mail/
 share/evolution/views/mail/As_Sent_Folder.galview
 share/evolution/views/mail/By_Follow_Up_Flag.galview
 share/evolution/views/mail/By_Sender.galview
@@ -430,10 +476,19 @@ share/evolution/views/mail/By_Status.galview
 share/evolution/views/mail/By_Subject.galview
 share/evolution/views/mail/Messages.galview
 share/evolution/views/mail/galview.xml
+share/evolution/views/tasks/
 share/evolution/views/tasks/Tasks.galview
 share/evolution/views/tasks/With_Category.galview
 share/evolution/views/tasks/galview.xml
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Applications/
 share/gnome/apps/Applications/evolution.desktop
+@comment share/gnome/help/
+@comment share/gnome/help/cal/
+@comment share/gnome/help/cal/C/
+share/gnome/help/evolution/
+share/gnome/help/evolution/C/
 share/gnome/help/evolution/C/LEGALNOTICE.html
 share/gnome/help/evolution/C/access.html
 share/gnome/help/evolution/C/apx-fdl.html
@@ -464,6 +519,7 @@ share/gnome/help/evolution/C/fdl-section8.html
 share/gnome/help/evolution/C/fdl-section9.html
 share/gnome/help/evolution/C/fdl-using.html
 share/gnome/help/evolution/C/features.html
+share/gnome/help/evolution/C/figures/
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
 share/gnome/help/evolution/C/figures/config-mail.png
@@ -507,6 +563,7 @@ share/gnome/help/evolution/C/quickref-cal.html
 share/gnome/help/evolution/C/quickref-contact.html
 share/gnome/help/evolution/C/quickref-mail.html
 share/gnome/help/evolution/C/rsvp-stuff.html
+share/gnome/help/evolution/C/sgml/
 share/gnome/help/evolution/C/sgml/apx-authors.sgml
 share/gnome/help/evolution/C/sgml/apx-bugs.sgml
 share/gnome/help/evolution/C/sgml/apx-fdl.sgml
@@ -526,6 +583,7 @@ share/gnome/help/evolution/C/sgml/usage-mail.sgml
 share/gnome/help/evolution/C/sgml/usage-mainwindow.sgml
 share/gnome/help/evolution/C/sgml/usage-print.sgml
 share/gnome/help/evolution/C/sgml/usage-sync.sgml
+share/gnome/help/evolution/C/stylesheet-images/
 share/gnome/help/evolution/C/stylesheet-images/caution.gif
 share/gnome/help/evolution/C/stylesheet-images/home.gif
 share/gnome/help/evolution/C/stylesheet-images/important.gif
@@ -567,6 +625,10 @@ share/gnome/help/evolution/C/usage-summary.html
 share/gnome/help/evolution/C/usage-sync.html
 share/gnome/help/evolution/C/usage.html
 share/gnome/help/evolution/C/whats-new-in-one-two.html
+@comment share/gnome/html/
+@comment share/gnome/html/evolution-cal-client/
+@comment share/gnome/html/evolution-cal-util/
+share/gnome/ui/
 share/gnome/ui/evolution-addressbook.xml
 share/gnome/ui/evolution-calendar.xml
 share/gnome/ui/evolution-comp-editor.xml
@@ -585,6 +647,7 @@ share/gnome/ui/evolution-task-editor.xml
 share/gnome/ui/evolution-tasks.xml
 share/gnome/ui/evolution.xml
 share/gnome/ui/my-evolution.xml
+share/idl/
 share/idl/Composer.idl
 share/idl/Evolution-Activity.idl
 share/idl/Evolution-Addressbook-SelectNames.idl
@@ -607,6 +670,8 @@ share/idl/GNOME_Evolution_Importer.idl
 share/idl/Mailer.idl
 share/idl/addressbook.idl
 share/idl/evolution-calendar.idl
+share/images/
+share/images/evolution/
 share/images/evolution/16_copy.png
 share/images/evolution/16_customize.png
 share/images/evolution/16_cut.png
@@ -618,6 +683,7 @@ share/images/evolution/apply-filters-16.xpm
 share/images/evolution/bcg.png
 share/images/evolution/briefcase.png
 share/images/evolution/butterfly.png
+share/images/evolution/buttons/
 share/images/evolution/buttons/add-attachment.png
 share/images/evolution/buttons/add-service.png
 share/images/evolution/buttons/arrow-left-24.png
@@ -653,6 +719,7 @@ share/images/evolution/calendar-and-tasks-settings.png
 share/images/evolution/cellphone.png
 share/images/evolution/compose-message.png
 share/images/evolution/composer-settings.png
+share/images/evolution/conduits/
 share/images/evolution/conduits/evo-16-address-conduit.png
 share/images/evolution/conduits/evo-16-calendar-conduit.png
 share/images/evolution/conduits/evo-16-todo-conduit.png
@@ -809,6 +876,9 @@ share/images/evolution/work_offline.xpm
 share/images/evolution/work_online-16.png
 share/images/evolution/working-16.png
 share/images/evolution/world_map-960.png
+share/libical-evolution/
+share/libical-evolution/zoneinfo/
+share/libical-evolution/zoneinfo/Africa/
 share/libical-evolution/zoneinfo/Africa/Abidjan.ics
 share/libical-evolution/zoneinfo/Africa/Accra.ics
 share/libical-evolution/zoneinfo/Africa/Addis_Ababa.ics
@@ -861,6 +931,7 @@ share/libical-evolution/zoneinfo/Africa/Timbuktu.ics
 share/libical-evolution/zoneinfo/Africa/Tripoli.ics
 share/libical-evolution/zoneinfo/Africa/Tunis.ics
 share/libical-evolution/zoneinfo/Africa/Windhoek.ics
+share/libical-evolution/zoneinfo/America/
 share/libical-evolution/zoneinfo/America/Adak.ics
 share/libical-evolution/zoneinfo/America/Anchorage.ics
 share/libical-evolution/zoneinfo/America/Anguilla.ics
@@ -909,6 +980,7 @@ share/libical-evolution/zoneinfo/America/Guyana.ics
 share/libical-evolution/zoneinfo/America/Halifax.ics
 share/libical-evolution/zoneinfo/America/Havana.ics
 share/libical-evolution/zoneinfo/America/Hermosillo.ics
+share/libical-evolution/zoneinfo/America/Indiana/
 share/libical-evolution/zoneinfo/America/Indiana/Indianapolis.ics
 share/libical-evolution/zoneinfo/America/Indiana/Knox.ics
 share/libical-evolution/zoneinfo/America/Indiana/Marengo.ics
@@ -919,6 +991,7 @@ share/libical-evolution/zoneinfo/America/Iqaluit.ics
 share/libical-evolution/zoneinfo/America/Jamaica.ics
 share/libical-evolution/zoneinfo/America/Jujuy.ics
 share/libical-evolution/zoneinfo/America/Juneau.ics
+share/libical-evolution/zoneinfo/America/Kentucky/
 share/libical-evolution/zoneinfo/America/Kentucky/Louisville.ics
 share/libical-evolution/zoneinfo/America/Kentucky/Monticello.ics
 share/libical-evolution/zoneinfo/America/La_Paz.ics
@@ -944,6 +1017,7 @@ share/libical-evolution/zoneinfo/America/New_York.ics
 share/libical-evolution/zoneinfo/America/Nipigon.ics
 share/libical-evolution/zoneinfo/America/Nome.ics
 share/libical-evolution/zoneinfo/America/Noronha.ics
+share/libical-evolution/zoneinfo/America/North_Dakota/
 share/libical-evolution/zoneinfo/America/North_Dakota/Center.ics
 share/libical-evolution/zoneinfo/America/Panama.ics
 share/libical-evolution/zoneinfo/America/Pangnirtung.ics
@@ -980,6 +1054,7 @@ share/libical-evolution/zoneinfo/America/Whitehorse.ics
 share/libical-evolution/zoneinfo/America/Winnipeg.ics
 share/libical-evolution/zoneinfo/America/Yakutat.ics
 share/libical-evolution/zoneinfo/America/Yellowknife.ics
+share/libical-evolution/zoneinfo/Antarctica/
 share/libical-evolution/zoneinfo/Antarctica/Casey.ics
 share/libical-evolution/zoneinfo/Antarctica/Davis.ics
 share/libical-evolution/zoneinfo/Antarctica/DumontDUrville.ics
@@ -989,7 +1064,9 @@ share/libical-evolution/zoneinfo/Antarctica/Palmer.ics
 share/libical-evolution/zoneinfo/Antarctica/South_Pole.ics
 share/libical-evolution/zoneinfo/Antarctica/Syowa.ics
 share/libical-evolution/zoneinfo/Antarctica/Vostok.ics
+share/libical-evolution/zoneinfo/Arctic/
 share/libical-evolution/zoneinfo/Arctic/Longyearbyen.ics
+share/libical-evolution/zoneinfo/Asia/
 share/libical-evolution/zoneinfo/Asia/Aden.ics
 share/libical-evolution/zoneinfo/Asia/Almaty.ics
 share/libical-evolution/zoneinfo/Asia/Amman.ics
@@ -1065,6 +1142,7 @@ share/libical-evolution/zoneinfo/Asia/Vladivostok.ics
 share/libical-evolution/zoneinfo/Asia/Yakutsk.ics
 share/libical-evolution/zoneinfo/Asia/Yekaterinburg.ics
 share/libical-evolution/zoneinfo/Asia/Yerevan.ics
+share/libical-evolution/zoneinfo/Atlantic/
 share/libical-evolution/zoneinfo/Atlantic/Azores.ics
 share/libical-evolution/zoneinfo/Atlantic/Bermuda.ics
 share/libical-evolution/zoneinfo/Atlantic/Canary.ics
@@ -1076,6 +1154,7 @@ share/libical-evolution/zoneinfo/Atlantic/Reykjavik.ics
 share/libical-evolution/zoneinfo/Atlantic/South_Georgia.ics
 share/libical-evolution/zoneinfo/Atlantic/St_Helena.ics
 share/libical-evolution/zoneinfo/Atlantic/Stanley.ics
+share/libical-evolution/zoneinfo/Australia/
 share/libical-evolution/zoneinfo/Australia/Adelaide.ics
 share/libical-evolution/zoneinfo/Australia/Brisbane.ics
 share/libical-evolution/zoneinfo/Australia/Broken_Hill.ics
@@ -1086,6 +1165,7 @@ share/libical-evolution/zoneinfo/Australia/Lord_Howe.ics
 share/libical-evolution/zoneinfo/Australia/Melbourne.ics
 share/libical-evolution/zoneinfo/Australia/Perth.ics
 share/libical-evolution/zoneinfo/Australia/Sydney.ics
+share/libical-evolution/zoneinfo/Europe/
 share/libical-evolution/zoneinfo/Europe/Amsterdam.ics
 share/libical-evolution/zoneinfo/Europe/Andorra.ics
 share/libical-evolution/zoneinfo/Europe/Athens.ics
@@ -1137,6 +1217,7 @@ share/libical-evolution/zoneinfo/Europe/Warsaw.ics
 share/libical-evolution/zoneinfo/Europe/Zagreb.ics
 share/libical-evolution/zoneinfo/Europe/Zaporozhye.ics
 share/libical-evolution/zoneinfo/Europe/Zurich.ics
+share/libical-evolution/zoneinfo/Indian/
 share/libical-evolution/zoneinfo/Indian/Antananarivo.ics
 share/libical-evolution/zoneinfo/Indian/Chagos.ics
 share/libical-evolution/zoneinfo/Indian/Christmas.ics
@@ -1148,6 +1229,7 @@ share/libical-evolution/zoneinfo/Indian/Maldives.ics
 share/libical-evolution/zoneinfo/Indian/Mauritius.ics
 share/libical-evolution/zoneinfo/Indian/Mayotte.ics
 share/libical-evolution/zoneinfo/Indian/Reunion.ics
+share/libical-evolution/zoneinfo/Pacific/
 share/libical-evolution/zoneinfo/Pacific/Apia.ics
 share/libical-evolution/zoneinfo/Pacific/Auckland.ics
 share/libical-evolution/zoneinfo/Pacific/Chatham.ics
@@ -1195,19 +1277,29 @@ share/locale/cs/LC_MESSAGES/evolution.mo
 share/locale/da/LC_MESSAGES/evolution.mo
 share/locale/de/LC_MESSAGES/evolution.mo
 share/locale/el/LC_MESSAGES/evolution.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/evolution.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/evolution.mo
 share/locale/es/LC_MESSAGES/evolution.mo
 share/locale/et/LC_MESSAGES/evolution.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/evolution.mo
 share/locale/fi/LC_MESSAGES/evolution.mo
 share/locale/fr/LC_MESSAGES/evolution.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/evolution.mo
 share/locale/gl/LC_MESSAGES/evolution.mo
 share/locale/hu/LC_MESSAGES/evolution.mo
 share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/evolution.mo
 share/locale/lv/LC_MESSAGES/evolution.mo
 share/locale/nl/LC_MESSAGES/evolution.mo
@@ -1226,8 +1318,10 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 share/locale/vi/LC_MESSAGES/evolution.mo
 share/locale/zh_CN/LC_MESSAGES/evolution.mo
 share/locale/zh_TW/LC_MESSAGES/evolution.mo
+share/mime-info/
 share/mime-info/evolution.keys
 share/mime-info/evolution.mime
+share/oaf/
 share/oaf/GNOME_Evolution_Addressbook.oaf
 share/oaf/GNOME_Evolution_Addressbook_LDIF_Importer.oaf
 share/oaf/GNOME_Evolution_Addressbook_SelectNames.oaf
@@ -1245,177 +1339,10 @@ share/oaf/GNOME_Evolution_Pine_Intelligent_Importer.oaf
 share/oaf/GNOME_Evolution_Shell.oaf
 share/oaf/GNOME_Evolution_Summary.oaf
 share/oaf/GNOME_Evolution_Wombat.oaf
+share/omf/evolution/
 share/omf/evolution/evolution-C.omf
+share/pixmaps/
 share/pixmaps/evolution.png
-%%SHARED%%
-@dirrm share/pixmaps
-@dirrm share/omf/evolution
-@dirrm share/mime-info
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/eu/LC_MESSAGES
-@dirrm share/locale/eu
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/en_AU/LC_MESSAGES
-@dirrm share/locale/en_AU
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale
-@dirrm share/libical-evolution/zoneinfo/Pacific
-@dirrm share/libical-evolution/zoneinfo/Indian
-@dirrm share/libical-evolution/zoneinfo/Europe
-@dirrm share/libical-evolution/zoneinfo/Australia
-@dirrm share/libical-evolution/zoneinfo/Atlantic
-@dirrm share/libical-evolution/zoneinfo/Asia
-@dirrm share/libical-evolution/zoneinfo/Arctic
-@dirrm share/libical-evolution/zoneinfo/Antarctica
-@dirrm share/libical-evolution/zoneinfo/America/North_Dakota
-@dirrm share/libical-evolution/zoneinfo/America/Kentucky
-@dirrm share/libical-evolution/zoneinfo/America/Indiana
-@dirrm share/libical-evolution/zoneinfo/America
-@dirrm share/libical-evolution/zoneinfo/Africa
-@dirrm share/libical-evolution/zoneinfo
-@dirrm share/libical-evolution
-@dirrm share/images/evolution/conduits
-@dirrm share/images/evolution/buttons
-@dirrm share/images/evolution
-@dirrm share/images
-@dirrm share/gnome/ui
-@comment @exec mkdir -p %D/share/gnome/html/evolution-cal-util
-@comment @dirrm share/gnome/html/evolution-cal-util
-@comment @exec mkdir -p %D/share/gnome/html/evolution-cal-client
-@comment @dirrm share/gnome/html/evolution-cal-client
-@comment @dirrm share/gnome/html
-@dirrm share/gnome/help/evolution/C/stylesheet-images
-@dirrm share/gnome/help/evolution/C/sgml
-@dirrm share/gnome/help/evolution/C/figures
-@dirrm share/gnome/help/evolution/C
-@dirrm share/gnome/help/evolution
-@comment @exec mkdir -p %D/share/gnome/help/cal/C
-@comment @dirrm share/gnome/help/cal/C
-@comment @dirrm share/gnome/help/cal
-@comment @dirrm share/gnome/help
-@dirrm share/gnome/apps/Applications
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/evolution/views/tasks
-@dirrm share/evolution/views/mail
-@dirrm share/evolution/views/calendar
-@dirrm share/evolution/views/addressbook
-@dirrm share/evolution/views
-@dirrm share/evolution/sounds
-@dirrm share/evolution/glade
-@dirrm share/evolution/etspec
-@dirrm share/evolution/ecps
-@exec mkdir -p %D/share/evolution/default_user/views/tasks
-@dirrm share/evolution/default_user/views/tasks
-@exec mkdir -p %D/share/evolution/default_user/views/mail
-@dirrm share/evolution/default_user/views/mail
-@exec mkdir -p %D/share/evolution/default_user/views/calendar
-@dirrm share/evolution/default_user/views/calendar
-@exec mkdir -p %D/share/evolution/default_user/views/addressbook
-@dirrm share/evolution/default_user/views/addressbook
-@dirrm share/evolution/default_user/views
-@exec mkdir -p %D/share/evolution/default_user/private
-@dirrm share/evolution/default_user/private
-@dirrm share/evolution/default_user/local/Trash
-@dirrm share/evolution/default_user/local/Tasks
-@dirrm share/evolution/default_user/local/Sent
-@dirrm share/evolution/default_user/local/Outbox
-@dirrm share/evolution/default_user/local/Inbox
-@dirrm share/evolution/default_user/local/Drafts
-@dirrm share/evolution/default_user/local/Contacts
-@dirrm share/evolution/default_user/local/Calendar
-@dirrm share/evolution/default_user/local
-@dirrm share/evolution/default_user
-@dirrm share/evolution
-@comment @dirrm share/applnk/Applications
-@comment @dirrm share/applnk
-@dirrm lib/evolution/1.2/evolution-mail-importers
-@dirrm lib/evolution/1.2/camel-providers
-@dirrm lib/evolution/1.2
-@dirrm lib/evolution
-@dirrm include/evolution/wombat
-@dirrm include/evolution/widgets
-@dirrm include/evolution/shell
-@dirrm include/evolution/pcs
-@dirrm include/evolution/pas
-@dirrm include/evolution/importer
-@dirrm include/evolution/ebook
-@dirrm include/evolution/e-util
-@dirrm include/evolution/e-db3util
-@dirrm include/evolution/e-conduit
-@dirrm include/evolution/cal-util
-@dirrm include/evolution/cal-client
-@dirrm include/evolution
-@dirrm include/ename
-@dirrm include/camel
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
+%%SHARED%%

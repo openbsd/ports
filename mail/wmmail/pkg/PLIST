@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 14:08:08 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:45 espie Exp $
+GNUstep/Apps/WMMail.app/
+GNUstep/Apps/WMMail.app/Anims/
+GNUstep/Apps/WMMail.app/Anims/NeXT/
 GNUstep/Apps/WMMail.app/Anims/NeXT/Mail1.xpm
 GNUstep/Apps/WMMail.app/Anims/NeXT/Mail2.xpm
 GNUstep/Apps/WMMail.app/Anims/NeXT/Mail3.xpm
+GNUstep/Apps/WMMail.app/Anims/asmail/
 GNUstep/Apps/WMMail.app/Anims/asmail/asmail-new.xpm
 GNUstep/Apps/WMMail.app/Anims/asmail/asmail-no.xpm
 GNUstep/Apps/WMMail.app/Anims/asmail/asmail-old.xpm
+GNUstep/Apps/WMMail.app/Anims/e/
 GNUstep/Apps/WMMail.app/Anims/e/e-no.xpm
 GNUstep/Apps/WMMail.app/Anims/e/e0.xpm
 GNUstep/Apps/WMMail.app/Anims/e/e1.xpm
@@ -18,6 +23,7 @@ GNUstep/Apps/WMMail.app/Anims/e/e6.xpm
 GNUstep/Apps/WMMail.app/Anims/e/e7.xpm
 GNUstep/Apps/WMMail.app/Anims/e/e8.xpm
 GNUstep/Apps/WMMail.app/Anims/e/e9.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e0.xpm
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e1.xpm
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e10.xpm
@@ -31,9 +37,11 @@ GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e7.xpm
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e8.xpm
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e9.xpm
 GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-no.xpm
+GNUstep/Apps/WMMail.app/Defaults/
 GNUstep/Apps/WMMail.app/Defaults/WMMail
 GNUstep/Apps/WMMail.app/Help.txt
 GNUstep/Apps/WMMail.app/README
+GNUstep/Apps/WMMail.app/Sounds/
 GNUstep/Apps/WMMail.app/Sounds/NewMail.au
 GNUstep/Apps/WMMail.app/Sounds/NoMail.au
 GNUstep/Apps/WMMail.app/Sounds/bark.au
@@ -44,11 +52,3 @@ GNUstep/Apps/WMMail.app/Sounds/drip.au
 GNUstep/Apps/WMMail.app/Sounds/hammer.au
 GNUstep/Apps/WMMail.app/Sounds/monkey.au
 GNUstep/Apps/WMMail.app/WMMail
-@dirrm GNUstep/Apps/WMMail.app/Sounds
-@dirrm GNUstep/Apps/WMMail.app/Defaults
-@dirrm GNUstep/Apps/WMMail.app/Anims/monitor-e
-@dirrm GNUstep/Apps/WMMail.app/Anims/e
-@dirrm GNUstep/Apps/WMMail.app/Anims/asmail
-@dirrm GNUstep/Apps/WMMail.app/Anims/NeXT
-@dirrm GNUstep/Apps/WMMail.app/Anims
-@dirrm GNUstep/Apps/WMMail.app

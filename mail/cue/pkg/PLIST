@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/17 20:03:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:41 espie Exp $
 bin/cue
+share/doc/cue/
 share/doc/cue/cue.hlp
+share/examples/cue/
 share/examples/cue/sample.cuerc
-@dirrm share/examples/cue
-@dirrm share/doc/cue

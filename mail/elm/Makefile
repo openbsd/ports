@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/15 09:09:41 espie Exp $
 
 COMMENT=	"once-popular mail user agent"
 
@@ -37,12 +37,10 @@ NO_REGRESS=	Yes
 
 post-install:
 	@cd ${WRKSRC}/nls; make install
-	if [ -f ${PREFIX}/lib/elm.mimetypes ]; then \
-		${INSTALL_DATA} \
-			${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist; \
-	else \
-		${INSTALL_DATA} \
-			${FILESDIR}/elm.mimetypes ${PREFIX}/lib; \
-	fi
+	${INSTALL_DATA} \
+		${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist
+	ln -f ${PREFIX}/man/cat1/newmail.0 ${PREFIX}/man/cat1/wnewmail.0
+	ln -f ${PREFIX}/bin/frm ${PREFIX}/bin/nfrm
+	ln -f ${PREFIX}/bin/newmail ${PREFIX}/bin/wnewmail
 
 .include <bsd.port.mk>
