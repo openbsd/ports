@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.8 2005/03/07 11:15:33 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.9 2005/03/26 11:52:58 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -164,7 +164,6 @@ sub report_lib_issue
 	OpenBSD::SharedLibs::add_system_libs('/');
 	my $libspec = "$lib.0";
 	my $want = $lib;
-	$want =~ s/\.\d+$//;
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
