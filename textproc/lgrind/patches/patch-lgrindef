@@ -1,0 +1,20 @@
+$OpenBSD: patch-lgrindef,v 1.1.1.1 2000/12/04 22:47:50 espie Exp $
+--- lgrindef.orig	Mon Dec  4 23:16:25 2000
++++ lgrindef	Mon Dec  4 23:16:58 2000
+@@ -762,7 +762,6 @@ firstpreamble:\
+ \\documentclass[a4paper,twoside]{article}\n\
+ \\usepackage[procnames,noindent]{lgrind}\n\
+ \\usepackage{fancyhdr,a4wide}\n\
+-\\usepackage{german}\n\
+ \\usepackage{makeidx}\n\
+ \\pagestyle{fancy}\n\n\
+ \\makeindex\n\n\
+@@ -771,7 +770,7 @@ firstpreamble:\
+ # postamble to put at the very end of a stand-alone listing
+ postamble:\
+ \\printindex\n\
+-\\end{document}
++\\end{document}\n
+ 
+ # preamble to put before each file in a stand-alone listing
+ filepreamble:\

@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/04 22:47:50 espie Exp $
+bin/lgrind
+man/man1/lgrind.1
+man/man5/lgrindef.5
+share/texmf/tex/latex/lgrind/lgrindef
+share/texmf/doc/latex/lgrind/lgrind.dvi
+share/texmf/tex/latex/lgrind/lgrind.sty
+@dirrm share/texmf/tex/latex/lgrind
+@dirrm share/texmf/doc/latex/lgrind
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

@@ -1,0 +1,42 @@
+$OpenBSD: patch-lgrind_1,v 1.1.1.1 2000/12/04 22:47:50 espie Exp $
+--- lgrind.1.orig	Mon Dec  4 23:44:30 2000
++++ lgrind.1	Mon Dec  4 23:45:10 2000
+@@ -43,7 +43,7 @@ change tab width (default 8).
+ specifies text to go into the header.
+ .IP "\fB\-d\fP"
+ specifies the language definitions file (default is
+-\fB/usr/lib/texmf/tex/latex/lgrind/lgrindef\fP).
++\fB/usr/local/share/texmf/tex/latex/lgrind/lgrindef\fP).
+ .IP "\fB\-d!\fP"
+ same as above, but write patched executable.
+ .IP "\fB\-l\fP"
+@@ -85,7 +85,7 @@ This uses Piet van Oostrum's \fCfancyhdr
+ headers and footers.
+ .PP
+ For a more detailed explanation of these commands, refer to
+-\fC/usr/TeX/texmf/doc/latex/lgrind.dvi\fP.
++\fC/usr/local/share/texmf/doc/latex/lgrind.dvi\fP.
+ .PP
+ .SH "EMBEDDED PROGRAMS WITHIN A LaTeX FILE"
+ (From Jerry Leichter's notes.)
+@@ -197,16 +197,16 @@ that looks reasonable to me, though I ca
+ Doing a \fIreally\fP good job would require defining some special fonts.
+ .PP
+ .SH FILES
+-.IP "\fC/usr/bin/lgrind\fP"
++.IP "\fC/usr/local/bin/lgrind\fP"
+ Executable
+ .PP
+-.IP "\fC/usr/doc/lgrind/lgrind.dvi\fP"
++.IP "\fC/usr/local/share/texmf/doc/latex/lgrind/lgrind.dvi\fP"
+ Documentation
+ .PP
+-.IP "\fC/usr/lib/texmf/tex/latex/lgrind/lgrind.sty\fP"
++.IP "\fC/usr/local/share/texmf/tex/latex/lgrind/lgrind.sty\fP"
+ LaTeX style file
+ .PP
+-.IP "\fC/usr/lib/texmf/tex/latex/lgrind/lgrindef\fP"
++.IP "\fC/usr/local/share/texmf/tex/latex/lgrind/lgrindef\fP"
+ Language descriptions
+ .PP
+ .SH AUTHORS

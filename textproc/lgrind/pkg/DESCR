@@ -1,0 +1,10 @@
+LGrind - source pretty printer for LaTeX
+
+Welcome to LGrind. LGrind is a descendant of the Unix utility vgrind. It is
+used to produce a beautified version of your source code using LaTeX.
+Unlike other packages this is not pure TeX but an external preprocessor. 
+You run e.g.
+ lgrind example.c > example.tex
+ latex example.tex
+ to get a complete listing. Options for producing includable files
+ and processing embedded listings in LaTeX documents are provided.
