@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_CApplication_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
---- src/CApplication.cpp.orig	Sat Nov  2 14:47:25 2002
-+++ src/CApplication.cpp	Mon Nov  4 19:03:22 2002
-@@ -122,7 +122,7 @@ void CApplication::initGlobals(bool star
-   QString mydir = QDir::currentDirPath() + "/";
+$OpenBSD: patch-src_CApplication_cpp,v 1.2 2002/12/16 14:55:37 wilfried Exp $
+--- src/CApplication.cpp.orig	Fri Dec  6 00:06:57 2002
++++ src/CApplication.cpp	Mon Dec 16 14:58:15 2002
+@@ -123,7 +123,7 @@ void CApplication::initGlobals(bool star
+   //QString mydir = "/usr/share/mysqlcc/";  This needs to be done with a PREFIX define ..
    
    //Translations path
 -  translations_path = cfg->readStringEntry("Translations Path", mydir + "translations/");
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_CApplication_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
  
    //Current Language
    current_language = cfg->readStringEntry("Language File", "English");  
-@@ -141,12 +141,12 @@ void CApplication::initGlobals(bool star
+@@ -142,12 +142,12 @@ void CApplication::initGlobals(bool star
    CHistoryView::setHistorySize(history_size);
  
    //Syntax File
