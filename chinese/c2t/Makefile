@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/30 15:24:29 kevlo Exp $	
+# $OpenBSD: Makefile,v 1.12 2000/06/26 01:37:30 kevlo Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
-NEED_VERSION=	1.191
+NEED_VERSION=	1.307
 
 MAINTAINER=     kevlo@openbsd.org
 
@@ -16,7 +16,6 @@ MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
 DISTFILES=	c2t.tar.gz TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
 
-FAKE=		Yes
 WRKDIST=	${WRKDIR}
 
 do-install:
