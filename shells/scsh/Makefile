@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 20:17:31 turan Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -13,7 +13,7 @@ NO_CDROM=	"LIC: Requires licence for redistribution."
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 STRIP=
 
-MAINTAINER= 	gene@OpenBSD.ORG
+MAINTAINER= 	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 
