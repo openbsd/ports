@@ -1,6 +1,6 @@
---- Makefile.orig	Thu May 16 15:05:28 1996
-+++ Makefile	Fri Jul 24 17:27:10 1998
-@@ -165,27 +165,28 @@
+--- Makefile.orig	Fri May 17 00:05:28 1996
++++ Makefile	Wed Jun  7 03:03:13 2000
+@@ -165,27 +165,28 @@ INCLUDE = 
  #        If you add it, '-lkvm' must also be added to the SPECLIBS line
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
@@ -17,10 +17,10 @@
 -#CFDEST  = /usr/local/libexec
 -#MDEST   = /usr/local/man
 -#LOGDEST = /var/log
-+DEST    = ${PREFIX}/libexec
-+CFLIB   = ${PREFIX}/lib
-+CFDEST  = /etc
-+MDEST   = ${PREFIX}/man
++DEST    = ${DESTDIR}${PREFIX}/libexec
++CFLIB   = ${DESTDIR}${PREFIX}/lib
++CFDEST  = ${DESTDIR}/etc
++MDEST   = ${DESTDIR}${PREFIX}/man
 +LOGDEST = /var/log
  #
 -#OWNER   = root
@@ -38,13 +38,13 @@
 -#MODE    = 750
 -#CFMODE  = 664
 -#MMODE   = 444
-+MODE    = 750
++MODE    = 755
 +CFMODE  = 664
 +MMODE   = 444
  
  ######################################################################
  ######################################################################
-@@ -215,25 +216,25 @@
+@@ -215,25 +216,25 @@ INCLUDE = 
  # SVR4  --  Solaris 2.x
  # Use install3 for /usr/sbin/install
  # and install1 for /usr/ucb/install
@@ -86,7 +86,7 @@
  
  ######################################################################
  ######################################################################
-@@ -479,18 +480,16 @@
+@@ -479,18 +480,16 @@ install1: all 
  	@echo "file can serve as a guide, as well as the man pages."
  
  # BSD like, but with some enhancements like: install -s -> strip binary
@@ -110,7 +110,7 @@
  
  # Aix Prefers install2
  install2: all 
-@@ -527,7 +526,7 @@
+@@ -527,7 +526,7 @@ ${MAN}: idled.man.form idled.cf.man.form
  
  lint: ${SRC} ${SRCg}
  	lint -hxn ${DEFS} ${SRC} ${SRCg}
