@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.5 1999/02/20 00:42:29 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/01 22:36:41 espie Exp $
 #
 
 DISTNAME=       screen-3.7.6
@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 
 MAINTAINER=	gene@OpenBSD.ORG
 
+SEPARATE_BUILD=yes
 GNU_CONFIGURE=	yes
 MAN1=		screen.1
 
