@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2003/05/21 11:09:29 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.17 2003/05/21 11:15:28 wilfried Exp $
 bin/mozilla
 bin/run-mozilla.sh
 mozilla/LICENSE
@@ -104,6 +104,7 @@ mozilla/components/impComm4xMail.xpt
 mozilla/components/import.xpt
 mozilla/components/inspector.xpt
 mozilla/components/intl.xpt
+mozilla/components/ipcd.xpt
 mozilla/components/jar.xpt
 mozilla/components/jsconsole-clhandler.js
 mozilla/components/jsconsole.xpt
@@ -166,6 +167,7 @@ mozilla/components/pref.xpt
 mozilla/components/prefetch.xpt
 mozilla/components/prefmigr.xpt
 mozilla/components/profile.xpt
+mozilla/components/profilesharingsetup.xpt
 mozilla/components/progressDlg.xpt
 mozilla/components/proxyObjInst.xpt
 mozilla/components/rdf.xpt
@@ -176,6 +178,7 @@ mozilla/components/sidebar.xpt
 mozilla/components/signonviewer.xpt
 mozilla/components/smime-service.js
 mozilla/components/timebomb.xpt
+mozilla/components/transmngr.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt
@@ -219,6 +222,7 @@ mozilla/defaults/pref/editor.js
 mozilla/defaults/pref/inspector.js
 mozilla/defaults/pref/mailnews.js
 mozilla/defaults/pref/mdn.js
+mozilla/defaults/pref/non-shared.txt
 mozilla/defaults/pref/security-prefs.js
 mozilla/defaults/pref/smime.js
 mozilla/defaults/pref/unix.js
@@ -453,6 +457,7 @@ mozilla/components/libimpComm4xMail.so.1.0
 mozilla/components/libimpText.so.1.0
 mozilla/components/libimport.so.1.0
 mozilla/components/libinspector.so.1.0
+mozilla/components/libipcdc.so.1.0
 mozilla/components/libjar50.so.1.0
 mozilla/components/libjsd.so.1.0
 mozilla/components/libjsdom.so.1.0
@@ -482,6 +487,7 @@ mozilla/components/libpref.so.1.0
 mozilla/components/libprofile.so.1.0
 mozilla/components/librdf.so.1.0
 mozilla/components/libtransformiix.so.1.0
+mozilla/components/libtransmngr_client.so.1.0
 mozilla/components/libtxmgr.so.1.0
 mozilla/components/libtypeaheadfind.so.1.0
 mozilla/components/libuconv.so.1.0

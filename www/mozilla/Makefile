@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2003/05/18 20:41:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.43 2003/05/21 11:15:28 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -44,10 +44,7 @@ CONFIGURE_ARGS=					\
 		--enable-crypto			\
 		--disable-debug			\
 		--disable-tests			\
-		--disable-profilesharing	\
 		--disable-ldap
-# enable these once Mozilla actually runs
-#		--enable-optimize="${CFLAGS}"	\
 
 CONFIGURE_ENV=	CFLAGS="" CXXFLAGS=""
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
@@ -62,6 +59,7 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
 .for dir in chrome components defaults icons res plugins searchplugins
+	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
