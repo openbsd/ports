@@ -1,9 +1,0 @@
-$OpenBSD: patch-perltidy,v 1.1 2001/04/06 14:09:17 danh Exp $
---- perltidy.orig	Fri Apr  6 10:06:01 2001
-+++ perltidy	Fri Apr  6 10:06:17 2001
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/bin/perl
- ############################################################
- #
- #    perltidy - a perl script indenter and formatter
