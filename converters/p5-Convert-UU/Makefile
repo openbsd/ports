@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/28 13:44:31 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/08 14:00:22 espie Exp $
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	Convert-UU-0.40
@@ -15,8 +15,20 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 FAKE=			Yes
 
+pre-fake:
+	@mkdir -p ${WRKINST}/usr/libdata/perl5/i386-openbsd
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		/usr/bin/perl Makefile.PL PREFIX=${PREFIX} 
+	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
+	/usr/bin/perl Makefile.PL \
+	    PREFIX='$${DESTDIR}${PREFIX}' \
+	    INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
+	    INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
+	    INSTALLPRIVLIB='$${DESTDIR}/usr/libdata/perl5' \
+	    INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
+	    INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
+	    INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
+	    INSTALLBIN='$${PREFIX}/bin' \
+	    INSTALLSCRIPT='$${INSTALLBIN}'
 
 .include <bsd.port.mk>
