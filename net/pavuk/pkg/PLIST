@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/19 21:06:55 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/26 20:50:17 fgsch Exp $
 bin/pavuk
 man/man1/pavuk.1
 share/doc/pavuk/COPYING
@@ -7,5 +7,19 @@ share/doc/pavuk/README
 share/doc/pavuk/jsbind.txt
 share/doc/pavuk/wget-pavuk.HOWTO
 share/examples/pavuk/pavukrc.sample
+share/locale/cs/LC_MESSAGES/pavuk.mo
+share/locale/de/LC_MESSAGES/pavuk.mo
+share/locale/es/LC_MESSAGES/pavuk.mo
+share/locale/fr/LC_MESSAGES/pavuk.mo
+share/locale/it/LC_MESSAGES/pavuk.mo
+share/locale/ja/LC_MESSAGES/pavuk.mo
+share/locale/sk/LC_MESSAGES/pavuk.mo
+share/pavuk/icons/pavuk_16x16.xpm
+share/pavuk/icons/pavuk_32x32.xpm
+share/pavuk/icons/pavuk_64x64.xpm
+share/pavuk/icons/pavuk_as_icon.xpm
+share/pavuk/icons/pavuk_prg_icon.xpm
+@dirrm share/pavuk/icons
+@dirrm share/pavuk
 @dirrm share/examples/pavuk
 @dirrm share/doc/pavuk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/13 22:54:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/01/26 20:50:17 fgsch Exp $
 
 COMMENT=	"tool to mirror contents of HTTP and FTP servers"
 
@@ -23,9 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
+MODULES=	gettext
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-debug --disable-tree --disable-nls \
+CONFIGURE_ARGS+= --disable-debug --disable-tree  \
 		 --disable-gnome --with-regex=posix
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
@@ -36,9 +40,7 @@ CONFIGURE_ARGS+= --disable-gtk
 DOCS=		COPYING FAQ README jsbind.txt wget-pavuk.HOWTO
 SAMPLES=	pavukrc.sample
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/pavuk ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/man/pavuk.1 ${PREFIX}/man/man1
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pavuk
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pavuk
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pavuk
