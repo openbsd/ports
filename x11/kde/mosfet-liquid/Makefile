@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/07/30 12:59:23 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2003/08/26 20:47:15 sturm Exp $
 V=0.9.6pre4
 CATEGORIES=		x11 x11/kde
 COMMENT=	"KDE style engine"
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-BUILD_DEPENDS=	::devel/autoconf ::devel/automake
+BUILD_DEPENDS=	::devel/automake
 
 VERSION=3
 PATCH_LIST=	patch-*
