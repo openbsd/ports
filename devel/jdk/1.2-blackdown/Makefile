@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/13 13:10:08 matt Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/29 15:40:10 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 MASTER_SITES=	ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/JDK-1.2/i386/pre-v2/glibc2.0/
 DISTFILES=	jdk1.2pre-v2.tar.bz2
 
-BUILD_DEPENDS=	${LOCALBASE}/emul/redhat/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
-RUN_DEPENDS=	${LOCALBASE}/emul/redhat/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
+BUILD_DEPENDS=	/emul/linux/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
 
