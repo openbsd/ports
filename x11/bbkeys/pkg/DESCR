@@ -2,7 +2,4 @@ bbkeys is a general X Window System keygrabber, meant to be a working
 example of a better window-hinting scheme with the blackbox window
 manager.
 
-Flavor: qt
-	adds bbkeysconf (GUI configurator using QT2)
-
 WWW: ${HOMEPAGE}

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/28 02:57:49 naddy Exp $
 
 COMMENT=	"X keygrabber for blackbox"
 
-DISTNAME=	bbkeys-0.3.6
+DISTNAME=	bbkeys-0.8.4
 CATEGORIES=	x11
-NEED_VERSION=	1.483
-MASTER_SITES=	http://movingparts.windsofstorm.net/bbkeys/	\
-		http://openbsd.rutgers.edu/
-HOMEPAGE=	http://movingparts.windsofstorm.net/bbkeys.shtml
+NEED_VERSION=	1.504
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= bbkeys
+
+HOMEPAGE=	http://bbkeys.sourceforge.net/
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
@@ -18,20 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
-FLAVORS= qt
-FLAVOR?=
-
-.if ${FLAVOR:L:Mqt}
-MODULES=	qt2
-PATCH_LIST=	qt-*
-.else
-PATCH_LIST=
-.endif
 RUN_DEPENDS=	::x11/blackbox
 
 CONFIGURE_STYLE= gnu
-
-post-patch:
-	@cd ${WRKSRC} && touch Makefile.in configure.in aclocal.m4
 
 .include <bsd.port.mk>
