@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/12/24 05:08:02 kevlo Exp $
 bin/lupe
 man/cat1/lupe.0

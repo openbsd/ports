@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/24 05:07:55 kevlo Exp $
 
-DISTNAME=	lupe007
-PKGNAME=	lupe-0.07
+DISTNAME=	lupe008c
+PKGNAME=	lupe-0.08
 CATEGORIES=	x11
-NEED_VERSION=	1.305
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/misc/
+NEED_VERSION=	1.348
+MASTER_SITES=	${HOMEPAGE}
+
+HOMEPAGE=	http://www.oersted.co.jp/~yav/soft/
 
 MAINTAINER=	ports@openbsd.org
 
