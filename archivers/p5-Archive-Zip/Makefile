@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/04 22:16:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/10 10:55:04 db Exp $
 
 COMMENT=	"perl interface to ZIP files"
-DISTNAME=	Archive-Zip-1.05
+DISTNAME=	Archive-Zip-1.14
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
 
