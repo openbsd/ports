@@ -1,0 +1,13 @@
+Older xkobo did not auto-increment the ships number over some score.
+This makes some levels into a whole different experience...
+
+--- manage.C.orig	Wed Dec  1 14:53:32 1999
++++ manage.C	Wed Dec  1 14:54:00 1999
+@@ -333,7 +333,6 @@ void _manage::add_score(int sc)
+     else if (!cheat_mode){
+         if (score >= bonus_next){
+             bonus_next += BONUS_EVERY;
+-            ships++;
+             flush_ships_count = 50;
+         }
+         if ((score >= highscore) && (flush_score_count == 0)){
