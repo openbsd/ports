@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/15 13:27:41 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/05 21:29:21 espie Exp $
 
+COMMENT=	"Motif toolkit"
+COMMENT-debuglibs="Motif toolkit debug libraries"
+COMMENT-demos=	"Motif toolkit demos"
 VERSION=	2.1.30
 DISTNAME=	motif
 PATCHLEVEL=	5
 PKGNAME=	openmotif-${VERSION}.${PATCHLEVEL}
+PKGNAME-demos=	openmotif-demos-${VERSION}.${PATCHLEVEL}
+PKGNAME-debuglibs=openmotif-debuglibs-${VERSION}.${PATCHLEVEL}
+
 CATEGORIES=	x11
 NEED_VERSION=	1.340
 MASTER_SITES=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
@@ -87,9 +93,8 @@ post-install:
 	@for i in ${DOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; done
 	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
-.include <bsd.port.mk>
-
 .if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
-PKGNAME:=	openmotif${SUBPACKAGE}-${VERSION}.${PATCHLEVEL}
-LIB_DEPENDS=	Xm.2.1::x11/openmotif
+LIB_DEPENDS+=	Xm.2.1::x11/openmotif
 .endif
+
+.include <bsd.port.mk>
