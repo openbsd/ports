@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_fe-text_Makefile_in,v 1.4 2002/12/30 09:07:45 pvalchev Exp $
---- src/fe-gtk/Makefile.in.orig	Sun May 19 21:44:31 2002
-+++ src/fe-gtk/Makefile.in	Mon Dec 30 00:53:18 2002
-@@ -107,7 +107,7 @@ uniqpath = @uniqpath@
+$OpenBSD: patch-src_fe-text_Makefile_in,v 1.5 2003/04/19 15:45:22 couderc Exp $
+--- src/fe-gtk/Makefile.in.orig	Wed Dec 11 10:42:59 2002
++++ src/fe-gtk/Makefile.in	Sat Apr 19 16:19:19 2003
+@@ -125,7 +125,7 @@ localedir = $(datadir)/locale
  bin_PROGRAMS = xchat
  
  CFLAGS = $(GUI_CFLAGS)
 -LIBS = $(GUI_LIBS)
 +LIBS = $(GUI_LIBS) $(INTLLIBS)
  
- INCLUDES = -I$(includedir)
+ INCLUDES = -I$(includedir) -I$(top_srcdir)/intl -DLOCALEDIR=\"$(localedir)\"
  

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/06/10 01:12:24 shell Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/04/19 15:45:22 couderc Exp $
 bin/xchat
 bin/xchat-text
+@comment lib/charset.alias
 share/doc/xchat/README
 share/doc/xchat/xchat-1.html
 share/doc/xchat/xchat-10.html
@@ -27,10 +28,12 @@ share/locale/hu/LC_MESSAGES/xchat.mo
 share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
+@comment share/locale/locale.alias
 share/locale/lt/LC_MESSAGES/xchat.mo
 share/locale/lv/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/no/LC_MESSAGES/xchat.mo
+share/locale/pl/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
 share/locale/pt_BR/LC_MESSAGES/xchat.mo
 share/locale/ro/LC_MESSAGES/xchat.mo
@@ -41,6 +44,7 @@ share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/tr/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
+share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
 share/pixmaps/xchat.png
