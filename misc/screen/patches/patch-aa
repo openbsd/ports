@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Sep  1 18:50:31 1999
-+++ Makefile.in	Thu Dec  9 16:04:03 1999
++++ Makefile.in	Mon Dec 27 23:34:35 1999
 @@ -21,8 +21,8 @@
  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
  
@@ -11,3 +11,12 @@
  LIBS = @LIBS@
  
  CPP_DEPEND=$(CC) -MM
+@@ -62,7 +62,7 @@
+ 	kmapdef.o acls.o braille.o braille_tsi.o logfile.o layer.o \
+ 	sched.o teln.o nethack.o
+ 
+-all:	screen
++all:	screen screen.info
+ 
+ screen: $(OFILES)
+ 	$(CC) $(LDFLAGS) -o $@ $(OFILES) $(LIBS)
