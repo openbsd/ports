@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/01/13 23:36:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/02/03 18:25:09 xsa Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += dgpsip
@@ -6,6 +6,7 @@
      SUBDIR += jday
      SUBDIR += luna
      SUBDIR += phoon
+     SUBDIR += py-metar
      SUBDIR += sattrack
 #    SUBDIR += stars
      SUBDIR += sunclock
