@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/10 23:24:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/15 07:33:33 jakob Exp $
 
-DISTNAME=	postfix-20010228-pl06
-PKGNAME=	postfix-20010228.pl06
+DISTNAME=	postfix-20010228-pl07
+PKGNAME=	postfix-20010228.pl07
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
