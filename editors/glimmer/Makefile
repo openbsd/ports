@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/06/17 14:06:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/06/18 13:49:48 espie Exp $
 
 COMMENT=		"code editor for GNOME"
 
-DISTNAME=		glimmer-1.2.1p1
+DISTNAME=		glimmer-1.2.1
+PKGNAME=		glimmer-1.2.1p1
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://glimmer.sourceforge.net/
