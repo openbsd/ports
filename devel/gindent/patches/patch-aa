@@ -1,0 +1,13 @@
+--- indent.info.orig	Thu May 27 15:54:34 1999
++++ indent.info	Mon May 31 23:30:49 1999
+@@ -1,6 +1,10 @@
+ This is Info file indent.info, produced by Makeinfo version 1.68 from
+ the input file indent.texinfo.
+ 
++START-INFO-DIR-ENTRY
++* gindent: (indent).            The GNU C Program Source Indenter
++END-INFO-DIR-ENTRY
++
+    This is Edition 1.10.0 of `The `indent' Manual', for Indent Version
+ 1.10.0, last updated 26 May 1999.
+ 
