@@ -1,20 +1,28 @@
-$OpenBSD: patch-ltcf-c_sh,v 1.1 2001/07/16 14:48:46 lebel Exp $
---- ltcf-c.sh.orig	Tue May  1 19:57:55 2001
-+++ ltcf-c.sh	Mon Jul 16 10:29:38 2001
-@@ -454,10 +454,14 @@ else
+$OpenBSD: patch-ltcf-c_sh,v 1.2 2001/08/07 13:53:12 lebel Exp $
+--- ltcf-c.sh.orig	Tue Aug  7 09:46:42 2001
++++ ltcf-c.sh	Tue Aug  7 09:50:02 2001
+@@ -454,10 +454,22 @@ else
      ;;
  
    openbsd*)
 -    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
 -    hardcode_libdir_flag_spec='-R$libdir'
-+    archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
-+    archive_expsym_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
-+    old_archive_cmds="$old_archive_cmds~"'$RANLIB $oldlib'
-+    hardcode_libdir_flag_spec='${wl}-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-+    remove_lgcc=yes
-+    output_verbose_link_cmds='$CC $ac_cv_prog_cc_pic -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
++    case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++	  export_dynamic_flag_spec='${wl}-E'
++	fi
++     ;;
++    esac
++  
      ;;
  
    os2*)
