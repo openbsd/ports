@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/10 02:10:20 jcs Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/10 02:12:52 jcs Exp $
 
 COMMENT=	"ARP level ping utility"
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	net::net/libnet
 
 ALL_TARGET=	openbsd
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
