@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/09 04:11:57 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/07/01 22:31:21 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
-DISTNAME=       xosview-1.6.2.a
+DISTNAME=       xosview-1.7.0.b
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.ece.utexas.edu/~bgrayson/xosview/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	form@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes
