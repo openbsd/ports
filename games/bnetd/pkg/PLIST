@@ -2,16 +2,19 @@ bin/bnbot
 bin/bnclient
 bin/bnpass
 sbin/bnetd
-@exec if [ ! -d /etc/bnetd ]; then mkdir /etc/bnetd ; mkdir /etc/bnetd/files ; mkdir /etc/bnetd/users ; fi
+@exec if [ ! -d /etc/bnetd ]; then mkdir /etc/bnetd ; fi
+@exec if [ ! -d /etc/bnetd/files ]; then mkdir /etc/bnetd/files ; fi
+@exec if [ ! -d /etc/bnetd/users ]; then mkdir /etc/bnetd/users ; fi
 lib/bnetd/bnetd.conf.sample
-@exec if [ ! -d /etc/bnetd ]; then cp %D/%F /etc/bnetd/bnetd.conf; fi
+@exec if [ ! -f /etc/bnetd/bnetd.conf ]; then cp %D/%F /etc/bnetd/bnetd.conf; fi
 lib/bnetd/bnetd_default_user.sample
-@exec if [ ! -d /etc/bnetd ]; then cp %D/%F /etc/bnetd/bnetd_default_user; fi
+@exec if [ ! -f /etc/bnetd/bnetd_default_user ]; then cp %D/%F /etc/bnetd/bnetd_default_user; fi
 lib/bnetd/files/ad0512b.pcx.sample
-@exec if [ ! -d /etc/bnetd ]; then cp %D/%F /etc/bnetd/files/ad0512b.pcx; fi
+@exec if [ ! -f /etc/bnetd/files/ad0512b.pcx ]; then cp %D/%F /etc/bnetd/files/ad0512b.pcx; fi
 share/doc/bnetd/CHANGELOG
 share/doc/bnetd/README
 share/doc/bnetd/TODO
 @dirrm lib/bnetd/files
+@dirrm lib/bnetd/users
 @dirrm lib/bnetd
 @dirrm share/doc/bnetd

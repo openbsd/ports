@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 00:05:44 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/04 06:59:21 brad Exp $
 
 DISTNAME=	bnetd-0.4.1
 CATEGORIES=	games
@@ -19,25 +19,47 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/../TODO ${PREFIX}/share/doc/bnetd
 	${MKDIR} ${PREFIX}/lib/bnetd
 	${MKDIR} ${PREFIX}/lib/bnetd/files
+	${MKDIR} ${PREFIX}/lib/bnetd/users
 	${INSTALL_DATA} ${WRKSRC}/../conf/bnetd.conf ${PREFIX}/lib/bnetd/bnetd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/../conf/bnetd_default_user ${PREFIX}/lib/bnetd/bnetd_default_user.sample
 	${INSTALL_DATA} ${WRKSRC}/../files/ad0512b.pcx ${PREFIX}/lib/bnetd/files/ad0512b.pcx.sample
 	@${ECHO} ""
 	@${ECHO} "*** The latest sample config files"
 	@${ECHO} "*** can be found in ${PREFIX}/lib/bnetd"
-	@if [ -d /etc/bnetd ]; then \
-	  ${ECHO} "*** Your config files have NOT been changed"; \
-	 else \
+	@if [ ! -d /etc/bnetd ]; then \
 	  ${MKDIR} /etc/bnetd; \
+	fi
+	@if [ ! -d /etc/bnetd ]; then \
 	  ${MKDIR} /etc/bnetd/files; \
+	fi
+	@if [ ! -d /etc/bnetd ]; then \
 	  ${MKDIR} /etc/bnetd/users; \
+	fi
+	@if [ ! -f /etc/bnetd/bnetd.conf ]; then \
 	  cp ${PREFIX}/lib/bnetd/bnetd.conf.sample /etc/bnetd/bnetd.conf; \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** bnetd.conf has been copied into /etc/bnetd"; \
+	 else \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** Your /etc/bnetd/bnetd.conf has NOT been changed"; \
+
+	fi
+	@if [ ! -f /etc/bnetd/bnetd_default_user ]; then \
 	  cp ${PREFIX}/lib/bnetd/bnetd_default_user.sample /etc/bnetd/bnetd_default_user; \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** bnetd_default_user has been copied into /etc/bnetd"; \
+	 else \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** Your /etc/bnetd/bnetd_default_user has NOT been changed"; \
+	fi
+	@if [ ! -f /etc/bnetd/files/ad0512b.pcx ]; then \
 	  cp ${PREFIX}/lib/bnetd/files/ad0512b.pcx.sample /etc/bnetd/files/ad0512b.pcx; \
-	  ${ECHO} "*** config files have been copied into /etc/bnetd"; \
-	 fi
+	  ${ECHO} ""; \
+	  ${ECHO} "*** ad0512b.pcx has been copied into /etc/bnetd/files"; \
+	 else \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** Your /etc/bnetd/files/ad0512b.pcx has NOT been changed"; \
+	fi
 	@${ECHO} ""
-
-
 
 .include <bsd.port.mk>
