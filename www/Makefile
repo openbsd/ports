@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/07/16 09:40:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.60 2001/07/25 03:06:11 shell Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += august
      SUBDIR += bk2site
      SUBDIR += bluefish
+     SUBDIR += cgicc
      SUBDIR += cgiparse
 #    SUBDIR += chimera
 #    SUBDIR += comline
@@ -47,6 +48,7 @@
      SUBDIR += p5-Blatte-HTML
      SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
+     SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FromText
