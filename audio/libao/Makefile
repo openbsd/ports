@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/01/21 15:53:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/08 15:52:30 espie Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -51,14 +51,14 @@ CONFIGURE_ARGS+= --disable-esd
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"
 LIB_DEPENDS=	ao.3::audio/libao \
-		artsc.0::x11/kde/libs2
+		artsc.0::x11/kde/arts3
 .  elif ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=	ao.3::audio/libao \
 		esd.2::audio/esound
 .  endif
 .else
 .  if ${MULTI_PACKAGES:M-arts}
-LIB_DEPENDS+=	artsc.0::x11/kde/libs2
+LIB_DEPENDS+=	artsc.0::x11/kde/arts3
 .  endif
 .  if ${MULTI_PACKAGES:M-esd}
 LIB_DEPENDS+=	esd.2::audio/esound
