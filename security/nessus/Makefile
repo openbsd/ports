@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2003/11/27 19:53:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2004/04/08 16:32:39 sturm Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
 
-VERS=		2.0.9
+VERS=		2.0.10a
 
 DIST_SUBDIR=	nessus
 
@@ -31,7 +31,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.linux.org.tr/pub/nessus/nessus-${VERS}/src/ \
 		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/
 
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
+MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 HOMEPAGE=	http://www.nessus.org/
 
