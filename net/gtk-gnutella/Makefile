@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/21 18:50:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/09/30 05:35:06 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -39,5 +39,10 @@ CONFIGURE_ARGS=		-d  -e \
 
 FAKE_FLAGS=		INSTALL_PREFIX=${DESTDIR}
 INSTALL_TARGET=		install install.man
+
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+	${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=		patch-* gcc-*
+.endif
 
 .include <bsd.port.mk>

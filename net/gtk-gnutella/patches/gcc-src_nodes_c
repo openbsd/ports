@@ -1,0 +1,30 @@
+$OpenBSD: gcc-src_nodes_c,v 1.1 2004/09/30 05:35:06 sturm Exp $
+--- src/nodes.c.orig	Sat Sep 25 18:55:40 2004
++++ src/nodes.c	Sat Sep 25 19:18:23 2004
+@@ -2153,7 +2153,7 @@ void send_node_error(
+ {
+ 	gchar gnet_response[2048];
+ 	gchar msg_tmp[256];
+-	size_t rw;
++	gint rw;
+ 	ssize_t sent;
+ 	va_list args;
+ 
+@@ -3426,7 +3426,7 @@ static void node_process_handshake_heade
+ 	struct gnutella_node *n, header_t *head)
+ {
+ 	gchar gnet_response[10240];		/* Large in case Crawler info sent back */
+-	size_t rw;
++	gint rw;
+ 	gint sent;
+ 	const gchar *field;
+ 	gboolean incoming = (n->flags & NODE_F_INCOMING);
+@@ -4620,7 +4620,7 @@ void node_init_outgoing(struct gnutella_
+ {
+ 	struct gnutella_socket *s = n->socket;
+ 	gchar buf[MAX_LINE_SIZE];
+-	size_t len;
++	gint len;
+ 	ssize_t sent;
+ 
+ 	g_assert(s->gdk_tag == 0);
