@@ -1,0 +1,13 @@
+--- gdbm.texinfo.orig	Tue Jun 22 09:45:56 1999
++++ gdbm.texinfo	Tue Jun 22 09:48:55 1999
+@@ -2,6 +2,10 @@
+ @comment %**start of header (This is for running Texinfo on a region.)
+ @setfilename gdbm.info
+ @settitle gdbm
++@dircategory Programming & development tools
++@direntry
++* GDBM: (gdbm).			The GNU database manager.
++@end direntry
+ @c @setchapternewpage odd
+ @comment %**end of header (This is for running Texinfo on a region.)
+ 

@@ -1,7 +1,5 @@
 lib/libgdbm.a
 lib/libgdbm.la
-lib/libgdbm.so.2.0
-@exec /sbin/ldconfig -m %B
 include/gdbm.h
 man/man3/gdbm.3
 @unexec install-info --delete %D/info/gdbm.info %D/info/dir

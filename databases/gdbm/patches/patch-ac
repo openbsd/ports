@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Tue Jun 22 09:49:19 1999
++++ Makefile.in	Tue Jun 22 09:50:15 1999
+@@ -31,7 +31,7 @@
+ LDFLAGS =
+ 
+ # Common prefix for installation directories
+-prefix = /usr/local
++prefix = @prefix@
+ exec_prefix = $(prefix)
+ binprefix = $(exec_prefix)
+ manprefix = $(prefix)
+@@ -115,7 +115,7 @@
+ 
+ DISTFILES = $(SRCS) $(HDRS) $(MSCFILES)
+ 
+-all: libgdbm.la
++all: libgdbm.la info
+ 
+ progs: $(PROGS)
+ 
+@@ -187,7 +187,7 @@
+ 
+ info: gdbm.info
+ 
+-gdbm.info:
++gdbm.info: gdbm.texinfo
+ 	$(MAKEINFO) $(srcdir)/gdbm.texinfo
+ 
+ dvi: gdbm.dvi
