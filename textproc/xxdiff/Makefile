@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/29 12:27:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/30 11:06:38 wilfried Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	qt.2::x11/qt2
-BUILD_DEPENDS=	bison::devel/bison
+BUILD_DEPENDS=	bison::devel/bison \
+		uic::x11/qt2-designer
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
