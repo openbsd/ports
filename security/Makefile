@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2003/04/19 20:32:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.118 2003/05/01 17:13:33 sturm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
+     SUBDIR += libgcrypt
      SUBDIR += libident
      SUBDIR += libmcrypt
      SUBDIR += logsentry
