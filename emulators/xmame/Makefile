@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/04/17 07:47:22 pvalchev Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -128,8 +128,8 @@ DOCS=	changes.mame changes.mess changes.opengl changes.unix credits.mess \
 BUILD_DEPENDS+=	nasm::devel/nasm
 MAKE_FLAGS+=	MY_CPU=i386 \
 		X86_ASM_68000=1 \
-		NASM_FMT="-f aoutb" \
-		ASM_STRIP="true"
+		NASM_FMT="-f elf" \
+		ASM_STRIP="src/unix/contrib/porting/strip_"
 .  if   ${DISPLAY_METHOD} == "x11"
 MAKE_FLAGS+=	X11_DGA=1
 .  elif ${DISPLAY_METHOD} != "SDL"

@@ -1,5 +1,5 @@
---- src/configure.in.orig	Thu May 23 10:11:18 2002
-+++ src/configure.in	Wed Jul 17 05:17:37 2002
+--- src/configure.in.orig	Thu May 23 07:11:18 2002
++++ src/configure.in	Mon Apr  7 18:15:18 2003
 @@ -16,7 +16,7 @@ dnl See also: remarks supplied in the de
  AC_INIT(init.asm)
  AC_CONFIG_HEADER(config.h)	
@@ -9,6 +9,15 @@
  AC_PROG_CC
  AC_PATH_PROG(NASMPATH,nasm,[AC_MSG_ERROR(nasm 0.98 is required)])
  NFLAGS="$NFLAGS -w-orphan-labels"
+@@ -29,7 +29,7 @@ case "$target" in
+ 		;;
+ 	*-*-*openbsd*)
+ 		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
+-		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -D__OpenBSD__ -f aoutb"
++		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -D__OpenBSD__ -f elf"
+ 		;;
+ 	*-*-*bsd*)
+ 		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
 @@ -145,31 +145,6 @@ else
  	
  	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
