@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/16 18:18:43 jcs Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 10:26:50 xsa Exp $
 
 DISTNAME=	sybperl-2.16
 PKGNAME=	p5-${DISTNAME}p0
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.peppler.org/downloads/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	tds.3,sybdb.4,ct.2::databases/freetds
 
 CONFIGURE_STYLE= perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/08/09 00:21:28 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/10 10:26:50 xsa Exp $
 
 V=		0.62.4
 DISTNAME=	freetds-$V
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threadsafe \
 		--disable-odbc
 MAKE_ENV=	RM=rm
-MODULES=	gettext
+MODULES=	devel/gettext
 DOC=		share/doc/freetds-$V
 SUBST_VARS=	DOC V
 

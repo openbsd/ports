@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/25 16:21:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 10:26:50 xsa Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:pkgconfig->=0.12.0p1:devel/pkgconfig \

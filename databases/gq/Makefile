@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/04/01 08:44:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/10 10:26:50 xsa Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		ldap,lber::databases/openldap \
 		gdk_pixbuf::graphics/gdk-pixbuf
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.13

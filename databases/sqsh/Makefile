@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/16 18:18:25 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 10:26:50 xsa Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p0
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	tds.3,ct.2::databases/freetds
 
 CONFIGURE_STYLE= gnu old
