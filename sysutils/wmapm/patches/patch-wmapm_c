@@ -1,4 +1,4 @@
-$OpenBSD: patch-wmapm_c,v 1.1.1.1 2001/01/11 00:13:12 naddy Exp $
+$OpenBSD: patch-wmapm_c,v 1.2 2005/03/07 05:37:20 mcbride Exp $
 --- wmapm/wmapm.c.orig	Tue Jan 11 17:37:25 2000
 +++ wmapm/wmapm.c	Wed Jan 10 17:35:20 2001
 @@ -151,12 +151,17 @@
@@ -14,7 +14,7 @@ $OpenBSD: patch-wmapm_c,v 1.1.1.1 2001/01/11 00:13:12 naddy Exp $
 +#if defined(FreeBSD)
  #include <machine/apm_bios.h>
 +#elif defined(__OpenBSD__)
-+#include <i386/apmvar.h>
++#include <machine/apmvar.h>
  #endif 
 +#include <errno.h>
  #include <stdio.h>
