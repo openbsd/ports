@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/15 21:21:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/01/03 13:36:03 sturm Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
 
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=jakarta/tomcat-4/v$V/bin/} \
 
 HOMEPAGE=	http://jakarta.apache.org/
 
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
+MAINTAINER=	Kurt Miller <truk@apache.org>
 
 JDK_VERSION=	1.3.1-linux
 JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
