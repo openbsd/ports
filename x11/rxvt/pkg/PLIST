@@ -1,2 +1,6 @@
+@cwd /usr/X11R6
+@name rxvt-2.4.5
 bin/rxvt
+bin/rclock
 man/man1/rxvt.1
+man/man1/rclock.1
