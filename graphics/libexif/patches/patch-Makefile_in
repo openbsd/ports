@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/02/09 01:03:50 alek Exp $
+--- Makefile.in.orig	Sun Jan 30 20:09:00 2005
++++ Makefile.in	Sun Jan 30 20:09:04 2005
+@@ -113,7 +113,7 @@ VERSION = @VERSION@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-SUBDIRS = intl m4  libexif libjpeg test po
++SUBDIRS = intl m4  libexif po
+ 
+ EXTRA_DIST = config.rpath mkinstalldirs  @PACKAGE@.spec
+ 
