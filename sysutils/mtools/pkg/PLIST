@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:39:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/11/18 23:36:12 fgsch Exp $
+bin/amuFormat.sh
 bin/floppyd
 bin/floppyd_installtest
 bin/lz
@@ -7,6 +8,7 @@ bin/mbadblocks
 bin/mcat
 bin/mcd
 bin/mcheck
+bin/mclasserase
 bin/mcomp
 bin/mcopy
 bin/mdel
@@ -38,6 +40,7 @@ bin/uz
 @man man/man1/mbadblocks.1
 @man man/man1/mcat.1
 @man man/man1/mcd.1
+@man man/man1/mclasserase.1
 @man man/man1/mcopy.1
 @man man/man1/mdel.1
 @man man/man1/mdeltree.1
