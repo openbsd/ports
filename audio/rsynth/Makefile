@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/26 04:56:36 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.7 1999/11/09 20:41:52 jasoni Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio

@@ -4,7 +4,7 @@
 *** 6,12 ****
   PREFIX       = @prefix@
   BIN_DIR      = $(PREFIX)/bin
-  LIB_DIR      = $(PREFIX)/lib/dict
+! LIB_DIR      = $(PREFIX)/lib/dict
 ! LDLIBS       = @LIBS@
   XLIBS        = @XLIBS@
   CFLAGS       = @CFLAGS@
@@ -12,7 +12,7 @@
 --- 6,12 ----
   PREFIX       = @prefix@
   BIN_DIR      = $(PREFIX)/bin
-  LIB_DIR      = $(PREFIX)/lib/dict
+! LIB_DIR      = $(PREFIX)/share/dict
 ! LDLIBS       = @LIBS@ -lossaudio
   XLIBS        = @XLIBS@
   CFLAGS       = @CFLAGS@
