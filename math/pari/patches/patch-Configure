@@ -1,0 +1,12 @@
+$OpenBSD: patch-Configure,v 1.1.1.1 2005/02/08 02:36:12 msf Exp $
+--- Configure.orig	Sat Feb  5 20:59:57 2005
++++ Configure	Sat Feb  5 21:00:12 2005
+@@ -844,7 +844,7 @@ if test -n "$__gnuc__"; then
+       esac
+     ;;
+   esac
+-  OPTFLAGS="$OPTFLAGS -DGCC_INLINE $warn"
++  OPTFLAGS="$CFLAGS -DGCC_INLINE $warn"
+   DBGFLAGS="-g $warn"
+   # Some architectures need -fPIC for building dynamic lib
+   case "$osname-$arch" in hpux-*) DLCFLAGS=-fPIC;; esac
