@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.651 2004/10/11 10:32:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.652 2004/10/23 09:58:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -398,7 +398,7 @@ _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
 _INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
 _BULK_COOKIE=		${BULK_COOKIES_DIR}/${FULLPKGNAME}
-.if ${FAKE:L} == "yes"
+.if ${FAKE:L} != "no"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
 .elif defined(SEPARATE_BUILD)
@@ -551,7 +551,7 @@ _MODULES_DONE=
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
 
-.if ${FAKE:L} == "yes"
+.if ${FAKE:L} != "no"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 .else
 _PACKAGE_COOKIE_DEPS=${_INSTALL_COOKIE}
@@ -697,7 +697,7 @@ PKG_ARGS+=		-M ${MESSAGE}
 .if defined(UNMESSAGE)
 PKG_ARGS+=		-U ${UNMESSAGE}
 .endif
-.if ${FAKE:L} == "yes"
+.if ${FAKE:L} != "no"
 PKG_ARGS+=		-B ${WRKINST}
 .endif
 PKG_ARGS+=-A'${PKG_ARCH}'
@@ -1758,7 +1758,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-.if ${FAKE:L} == "yes"
+.if ${FAKE:L} != "no"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`${SUDO} ${SH} -c umask` != x${DEF_UMASK} ]; then \
@@ -1976,7 +1976,7 @@ _internal-clean:
 # Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-.if ${FAKE:L} == "yes"
+.if ${FAKE:L} != "no"
 .  if ${SHARED_ONLY:L} == "yes"
 _do_libs_too=
 .  else
