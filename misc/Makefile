@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/03/19 03:02:46 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/06/26 16:43:02 jakob Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -40,6 +40,7 @@
 #    SUBDIR += p5-Business-CreditCard
 #    SUBDIR += p5-Locale-Codes
 #    SUBDIR += p5-Search
+     SUBDIR += pi-address
      SUBDIR += plan
 #    SUBDIR += rpm
      SUBDIR += screen
