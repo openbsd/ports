@@ -8,7 +8,6 @@ info/jed.2in
 info/jed.3in
 @exec /usr/bin/install-info --section "Editors" --entry "* JED: (jed).		JED editor documentation" %D/info/jed.info %D/info/dir
 lib/jed/bin/getmail
-@dirrm lib/jed/bin
 lib/jed/lib/colors/README
 lib/jed/lib/colors/black1.sl
 lib/jed/lib/colors/black2.sl
@@ -53,6 +52,7 @@ lib/jed/lib/dos850.sl
 lib/jed/lib/edt.sl
 lib/jed/lib/emacs.sl
 lib/jed/lib/emacsmsc.sl
+lib/jed/lib/emul.sl
 lib/jed/lib/f90.sl
 lib/jed/lib/ff90.sl
 lib/jed/lib/filter.sl
@@ -232,10 +232,6 @@ lib/jed/lib/rmail.slc
 lib/jed/lib/dispesc.slc
 lib/jed/lib/iso-latin.slc
 lib/jed/lib/mail.slc
-@dirrm lib/jed/lib/colors
-@dirrm lib/jed/lib/tm
-@dirrm lib/jed/lib
-@dirrm lib/jed
 man/man1/jed.1
 man/man1/rgrep.1
 share/doc/jed/abbrev.txt
@@ -265,4 +261,9 @@ share/doc/jed/xjed.txt
 share/doc/jed/yankpop.txt
 share/doc/jed/README
 share/doc/jed/jed.tex
+@dirrm lib/jed/bin
+@dirrm lib/jed/lib/colors
+@dirrm lib/jed/lib/tm
+@dirrm lib/jed/lib
+@dirrm lib/jed
 @dirrm share/doc/jed

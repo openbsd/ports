@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/23 04:27:29 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/07/15 01:47:28 brad Exp $
 
-DISTNAME=       jed-B0.99-7
-PKGNAME=        jed-0.99.7
+DISTNAME=       jed-B0.99-8
+PKGNAME=        jed-0.99.8
 CATEGORIES=	editors
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/
 
 MAINTAINER=     ports@OpenBSD.ORG
 
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/
-
-BUILD_DEPENDS=	${PREFIX}/lib/libslang.a:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.13:${PORTSDIR}/devel/libslang
 
 # comment out the next line if you don't want the X version of JED.
 XJED=		xjed
