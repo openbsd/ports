@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 09:48:18 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/26 16:40:21 alek Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
 DISTNAME=		xcdroast-0.98alpha15
-PKGNAME=		${DISTNAME:L:S/alpha/a/}p0
+PKGNAME=		${DISTNAME:L:S/alpha/a/}p1
 CATEGORIES=		misc x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 

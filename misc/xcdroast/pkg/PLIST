@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 17:54:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/11/26 16:40:21 alek Exp $
 bin/xcdroast
 lib/xcdroast-0.98/
 lib/xcdroast-0.98/bin/
@@ -63,5 +63,4 @@ share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 share/pixmaps/
 share/pixmaps/xcdricon.xpm
-@cwd ${SYSCONFDIR}
-@extra xcdroast.conf
+@extra ${SYSCONFDIR}/xcdroast.conf
