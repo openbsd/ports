@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/05/29 06:49:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/05/29 10:34:20 kevlo Exp $
 
-DISTNAME=	xephem-3.2.2
+DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
-NEED_VERSION=	1.210
-MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/
+NEED_VERSION=	1.230
+MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/
 
 LICENSE_TYPE=   NOFEE
 PERMIT_PACKAGE_CDROM=   Yes

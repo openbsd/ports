@@ -18,9 +18,11 @@ lib/X11/xephem/catalogs/Messier.edb
 lib/X11/xephem/catalogs/NGC.edb
 lib/X11/xephem/catalogs/SAC.edb
 lib/X11/xephem/catalogs/YBS.edb
+lib/X11/xephem/catalogs/asteroids.edb
 lib/X11/xephem/catalogs/comets.edb
-lib/X11/xephem/catalogs/minorpl.edb
+lib/X11/xephem/catalogs/hickson.edb
 lib/X11/xephem/tools/README
+lib/X11/xephem/tools/astorb2edb.pl
 lib/X11/xephem/tools/extract.awk
 lib/X11/xephem/tools/mpcorb2edb.pl
 lib/X11/xephem/tools/gsc/Makefile
