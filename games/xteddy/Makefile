@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/04 14:49:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/24 10:35:09 kevlo Exp $
 
-DISTNAME=	xteddy-1.0
+DISTNAME=	xteddy-2.0.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/usenet/comp.sources.x/xteddy/
+NEED_VERSION=	1.319
+MASTER_SITES=	http://www.ITN.LiU.SE/~stegu/xteddy/
 
 MAINTAINER=	ports@openbsd.org
 
@@ -11,10 +12,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-USE_IMAKE=	Yes
+LIB_DEPENDS=	Imlib.19::graphics/imlib
 
-post-install:
-	@strip ${PREFIX}/bin/xteddy
+CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
