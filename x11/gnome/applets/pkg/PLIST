@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/11/30 04:51:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/02 08:18:43 marcm Exp $
 bin/another_clock_applet
 bin/asclock_applet
 bin/battery_applet
@@ -1202,92 +1202,92 @@ share/odometer/o/o-red.png
 share/odometer/o/themedata
 share/odometer/smplst/smplst.png
 share/odometer/smplst/themedata
-share/omf/gnome-applets/anotherclock_applet-C.omf
-share/omf/gnome-applets/anotherclock_applet-es.omf
-share/omf/gnome-applets/anotherclock_applet-it.omf
-share/omf/gnome-applets/anotherclock_applet-uk.omf
-share/omf/gnome-applets/asclock_applet-C.omf
-share/omf/gnome-applets/asclock_applet-it.omf
-share/omf/gnome-applets/asclock_applet-ja.omf
-share/omf/gnome-applets/battery_applet-C.omf
-share/omf/gnome-applets/battery_applet-es.omf
-share/omf/gnome-applets/battery_applet-it.omf
-share/omf/gnome-applets/battery_applet-ja.omf
-share/omf/gnome-applets/charpick_applet-C.omf
-share/omf/gnome-applets/charpick_applet-es.omf
-share/omf/gnome-applets/charpick_applet-it.omf
-share/omf/gnome-applets/charpick_applet-ja.omf
-share/omf/gnome-applets/clockmail_applet-C.omf
-share/omf/gnome-applets/clockmail_applet-it.omf
-share/omf/gnome-applets/clockmail_applet-ja.omf
-share/omf/gnome-applets/cpuload_applet-C.omf
-share/omf/gnome-applets/cpuload_applet-es.omf
-share/omf/gnome-applets/cpuload_applet-it.omf
-share/omf/gnome-applets/cpumemusage_applet-C.omf
-share/omf/gnome-applets/cpumemusage_applet-es.omf
-share/omf/gnome-applets/cpumemusage_applet-it.omf
-share/omf/gnome-applets/cpumemusage_applet-ja.omf
-share/omf/gnome-applets/diskusage_applet-C.omf
-share/omf/gnome-applets/diskusage_applet-es.omf
-share/omf/gnome-applets/diskusage_applet-it.omf
-share/omf/gnome-applets/diskusage_applet-ja.omf
-share/omf/gnome-applets/drivemount_applet-C.omf
-share/omf/gnome-applets/drivemount_applet-es.omf
-share/omf/gnome-applets/drivemount_applet-it.omf
-share/omf/gnome-applets/drivemount_applet-ja.omf
-share/omf/gnome-applets/fifteen_applet-C.omf
-share/omf/gnome-applets/fifteen_applet-it.omf
-share/omf/gnome-applets/geyes_applet-C.omf
-share/omf/gnome-applets/geyes_applet-es.omf
-share/omf/gnome-applets/geyes_applet-it.omf
-share/omf/gnome-applets/gkb_applet-C.omf
-share/omf/gnome-applets/gkb_applet-hu.omf
-share/omf/gnome-applets/gkb_applet-it.omf
-share/omf/gnome-applets/gnotes_applet-C.omf
-share/omf/gnome-applets/gnotes_applet-it.omf
-share/omf/gnome-applets/gweather_applet-C.omf
-share/omf/gnome-applets/gweather_applet-it.omf
-share/omf/gnome-applets/jbc_applet-C.omf
-share/omf/gnome-applets/jbc_applet-es.omf
-share/omf/gnome-applets/jbc_applet-it.omf
-share/omf/gnome-applets/life_applet-C.omf
-share/omf/gnome-applets/life_applet-es.omf
-share/omf/gnome-applets/life_applet-it.omf
-share/omf/gnome-applets/loadavg_applet-C.omf
-share/omf/gnome-applets/loadavg_applet-es.omf
-share/omf/gnome-applets/loadavg_applet-it.omf
-share/omf/gnome-applets/memload_applet-C.omf
-share/omf/gnome-applets/memload_applet-es.omf
-share/omf/gnome-applets/memload_applet-it.omf
-share/omf/gnome-applets/mini-commander_applet-C.omf
-share/omf/gnome-applets/mini-commander_applet-es.omf
-share/omf/gnome-applets/mini-commander_applet-it.omf
-share/omf/gnome-applets/mixer_applet-C.omf
-share/omf/gnome-applets/mixer_applet-es.omf
-share/omf/gnome-applets/mixer_applet-it.omf
-share/omf/gnome-applets/modemlights_applet-C.omf
-share/omf/gnome-applets/modemlights_applet-es.omf
-share/omf/gnome-applets/modemlights_applet-it.omf
-share/omf/gnome-applets/netload_applet-C.omf
-share/omf/gnome-applets/netload_applet-es.omf
-share/omf/gnome-applets/netload_applet-it.omf
-share/omf/gnome-applets/odometer_applet-C.omf
-share/omf/gnome-applets/odometer_applet-fr.omf
-share/omf/gnome-applets/odometer_applet-it.omf
-share/omf/gnome-applets/quicklaunch_applet-C.omf
-share/omf/gnome-applets/quicklaunch_applet-it.omf
-share/omf/gnome-applets/sound-monitor_applet-C.omf
-share/omf/gnome-applets/sound-monitor_applet-it.omf
-share/omf/gnome-applets/swapload_applet-C.omf
-share/omf/gnome-applets/swapload_applet-es.omf
-share/omf/gnome-applets/swapload_applet-it.omf
-share/omf/gnome-applets/tickastat_applet-C.omf
-share/omf/gnome-applets/tickastat_applet-it.omf
-share/omf/gnome-applets/webcontrol_applet-C.omf
-share/omf/gnome-applets/webcontrol_applet-it.omf
-share/omf/gnome-applets/whereami_applet-C.omf
-share/omf/gnome-applets/whereami_applet-es.omf
-share/omf/gnome-applets/whereami_applet-it.omf
+@comment share/omf/gnome-applets/anotherclock_applet-C.omf
+@comment share/omf/gnome-applets/anotherclock_applet-es.omf
+@comment share/omf/gnome-applets/anotherclock_applet-it.omf
+@comment share/omf/gnome-applets/anotherclock_applet-uk.omf
+@comment share/omf/gnome-applets/asclock_applet-C.omf
+@comment share/omf/gnome-applets/asclock_applet-it.omf
+@comment share/omf/gnome-applets/asclock_applet-ja.omf
+@comment share/omf/gnome-applets/battery_applet-C.omf
+@comment share/omf/gnome-applets/battery_applet-es.omf
+@comment share/omf/gnome-applets/battery_applet-it.omf
+@comment share/omf/gnome-applets/battery_applet-ja.omf
+@comment share/omf/gnome-applets/charpick_applet-C.omf
+@comment share/omf/gnome-applets/charpick_applet-es.omf
+@comment share/omf/gnome-applets/charpick_applet-it.omf
+@comment share/omf/gnome-applets/charpick_applet-ja.omf
+@comment share/omf/gnome-applets/clockmail_applet-C.omf
+@comment share/omf/gnome-applets/clockmail_applet-it.omf
+@comment share/omf/gnome-applets/clockmail_applet-ja.omf
+@comment share/omf/gnome-applets/cpuload_applet-C.omf
+@comment share/omf/gnome-applets/cpuload_applet-es.omf
+@comment share/omf/gnome-applets/cpuload_applet-it.omf
+@comment share/omf/gnome-applets/cpumemusage_applet-C.omf
+@comment share/omf/gnome-applets/cpumemusage_applet-es.omf
+@comment share/omf/gnome-applets/cpumemusage_applet-it.omf
+@comment share/omf/gnome-applets/cpumemusage_applet-ja.omf
+@comment share/omf/gnome-applets/diskusage_applet-C.omf
+@comment share/omf/gnome-applets/diskusage_applet-es.omf
+@comment share/omf/gnome-applets/diskusage_applet-it.omf
+@comment share/omf/gnome-applets/diskusage_applet-ja.omf
+@comment share/omf/gnome-applets/drivemount_applet-C.omf
+@comment share/omf/gnome-applets/drivemount_applet-es.omf
+@comment share/omf/gnome-applets/drivemount_applet-it.omf
+@comment share/omf/gnome-applets/drivemount_applet-ja.omf
+@comment share/omf/gnome-applets/fifteen_applet-C.omf
+@comment share/omf/gnome-applets/fifteen_applet-it.omf
+@comment share/omf/gnome-applets/geyes_applet-C.omf
+@comment share/omf/gnome-applets/geyes_applet-es.omf
+@comment share/omf/gnome-applets/geyes_applet-it.omf
+@comment share/omf/gnome-applets/gkb_applet-C.omf
+@comment share/omf/gnome-applets/gkb_applet-hu.omf
+@comment share/omf/gnome-applets/gkb_applet-it.omf
+@comment share/omf/gnome-applets/gnotes_applet-C.omf
+@comment share/omf/gnome-applets/gnotes_applet-it.omf
+@comment share/omf/gnome-applets/gweather_applet-C.omf
+@comment share/omf/gnome-applets/gweather_applet-it.omf
+@comment share/omf/gnome-applets/jbc_applet-C.omf
+@comment share/omf/gnome-applets/jbc_applet-es.omf
+@comment share/omf/gnome-applets/jbc_applet-it.omf
+@comment share/omf/gnome-applets/life_applet-C.omf
+@comment share/omf/gnome-applets/life_applet-es.omf
+@comment share/omf/gnome-applets/life_applet-it.omf
+@comment share/omf/gnome-applets/loadavg_applet-C.omf
+@comment share/omf/gnome-applets/loadavg_applet-es.omf
+@comment share/omf/gnome-applets/loadavg_applet-it.omf
+@comment share/omf/gnome-applets/memload_applet-C.omf
+@comment share/omf/gnome-applets/memload_applet-es.omf
+@comment share/omf/gnome-applets/memload_applet-it.omf
+@comment share/omf/gnome-applets/mini-commander_applet-C.omf
+@comment share/omf/gnome-applets/mini-commander_applet-es.omf
+@comment share/omf/gnome-applets/mini-commander_applet-it.omf
+@comment share/omf/gnome-applets/mixer_applet-C.omf
+@comment share/omf/gnome-applets/mixer_applet-es.omf
+@comment share/omf/gnome-applets/mixer_applet-it.omf
+@comment share/omf/gnome-applets/modemlights_applet-C.omf
+@comment share/omf/gnome-applets/modemlights_applet-es.omf
+@comment share/omf/gnome-applets/modemlights_applet-it.omf
+@comment share/omf/gnome-applets/netload_applet-C.omf
+@comment share/omf/gnome-applets/netload_applet-es.omf
+@comment share/omf/gnome-applets/netload_applet-it.omf
+@comment share/omf/gnome-applets/odometer_applet-C.omf
+@comment share/omf/gnome-applets/odometer_applet-fr.omf
+@comment share/omf/gnome-applets/odometer_applet-it.omf
+@comment share/omf/gnome-applets/quicklaunch_applet-C.omf
+@comment share/omf/gnome-applets/quicklaunch_applet-it.omf
+@comment share/omf/gnome-applets/sound-monitor_applet-C.omf
+@comment share/omf/gnome-applets/sound-monitor_applet-it.omf
+@comment share/omf/gnome-applets/swapload_applet-C.omf
+@comment share/omf/gnome-applets/swapload_applet-es.omf
+@comment share/omf/gnome-applets/swapload_applet-it.omf
+@comment share/omf/gnome-applets/tickastat_applet-C.omf
+@comment share/omf/gnome-applets/tickastat_applet-it.omf
+@comment share/omf/gnome-applets/webcontrol_applet-C.omf
+@comment share/omf/gnome-applets/webcontrol_applet-it.omf
+@comment share/omf/gnome-applets/whereami_applet-C.omf
+@comment share/omf/gnome-applets/whereami_applet-es.omf
+@comment share/omf/gnome-applets/whereami_applet-it.omf
 share/pixmaps/another_clock.xpm
 share/pixmaps/charpick.png
 share/pixmaps/gkb-icon.png
@@ -1524,7 +1524,7 @@ share/xmodmap/xmodmap.yu
 @dirrm share/pixmaps/mini-commander
 @dirrm share/pixmaps/gweather
 @dirrm share/pixmaps/gkb
-@dirrm share/omf/gnome-applets
+@comment @dirrm share/omf/gnome-applets
 @dirrm share/odometer/smplst
 @dirrm share/odometer/o
 @dirrm share/odometer/default
@@ -1769,5 +1769,3 @@ share/xmodmap/xmodmap.yu
 @dirrm share/asclock/Newstone
 @dirrm share/asclock/Freeamp
 @dirrm share/asclock
-@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
-@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
