@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/03 03:41:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/15 14:25:59 jolan Exp $
 
 # exits immediately (?)
 NOT_FOR_ARCHS=	powerpc
 
 COMMENT=	"videolan client; multimedia player"
 
-VER=		0.6.1
+VER=		0.6.2
 DISTNAME=	vlc-${VER}
 CATEGORIES=	x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/

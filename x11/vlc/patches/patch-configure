@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/07/20 21:09:29 jolan Exp $
---- configure.orig	Sun Jun 22 14:24:14 2003
-+++ configure	Thu Jul 17 15:13:53 2003
-@@ -14249,7 +14249,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+$OpenBSD: patch-configure,v 1.2 2003/08/15 14:25:59 jolan Exp $
+--- configure.orig	2003-08-13 13:55:09.000000000 -0500
++++ configure	2003-08-14 12:18:02.000000000 -0500
+@@ -14614,7 +14614,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/20 21:09:29 jolan Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -14304,7 +14304,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -14669,7 +14669,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/08/02 10:29:28 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/15 14:26:00 jolan Exp $
 !%%no_dvd%%
 %%i386%%
 %%powerpc%%
@@ -68,7 +68,6 @@ lib/vlc/demux/liba52sys_plugin.so
 lib/vlc/demux/libaac_plugin.so
 lib/vlc/demux/libasf_plugin.so
 lib/vlc/demux/libau_plugin.so
-lib/vlc/demux/libaudio_plugin.so
 lib/vlc/demux/libavi_plugin.so
 lib/vlc/demux/libdemuxdump_plugin.so
 lib/vlc/demux/libdemuxsub_plugin.so
@@ -79,6 +78,7 @@ lib/vlc/demux/libm3u_plugin.so
 lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmp4_plugin.so
 lib/vlc/demux/libmpeg_system_plugin.so
+lib/vlc/demux/libmpga_plugin.so
 lib/vlc/demux/libogg_plugin.so
 lib/vlc/demux/libps_plugin.so
 lib/vlc/demux/librawdv_plugin.so
