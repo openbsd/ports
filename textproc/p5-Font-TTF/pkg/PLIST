@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 21:54:48 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/13 19:58:30 naddy Exp $
 bin/eurofix.plx
 bin/hackos2.plx
 bin/psfix.plx
@@ -27,11 +27,23 @@ libdata/perl5/site_perl/Font/TTF/Head.pm
 libdata/perl5/site_perl/Font/TTF/Hhea.pm
 libdata/perl5/site_perl/Font/TTF/Hmtx.pm
 libdata/perl5/site_perl/Font/TTF/Kern.pm
+libdata/perl5/site_perl/Font/TTF/Kern/ClassArray.pm
+libdata/perl5/site_perl/Font/TTF/Kern/CompactClassArray.pm
+libdata/perl5/site_perl/Font/TTF/Kern/OrderedList.pm
+libdata/perl5/site_perl/Font/TTF/Kern/StateTable.pm
+libdata/perl5/site_perl/Font/TTF/Kern/Subtable.pm
 libdata/perl5/site_perl/Font/TTF/LTSH.pm
 libdata/perl5/site_perl/Font/TTF/Loca.pm
 libdata/perl5/site_perl/Font/TTF/Manual.pod
 libdata/perl5/site_perl/Font/TTF/Maxp.pm
 libdata/perl5/site_perl/Font/TTF/Mort.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Chain.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Contextual.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Insertion.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Ligature.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Noncontextual.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Rearrangement.pm
+libdata/perl5/site_perl/Font/TTF/Mort/Subtable.pm
 libdata/perl5/site_perl/Font/TTF/Name.pm
 libdata/perl5/site_perl/Font/TTF/OS_2.pm
 libdata/perl5/site_perl/Font/TTF/OldCmap.pm
@@ -71,11 +83,23 @@ man/man3/Font::TTF::Head.3p
 man/man3/Font::TTF::Hhea.3p
 man/man3/Font::TTF::Hmtx.3p
 man/man3/Font::TTF::Kern.3p
+man/man3/Font::TTF::Kern::ClassArray.3p
+man/man3/Font::TTF::Kern::CompactClassArray.3p
+man/man3/Font::TTF::Kern::OrderedList.3p
+man/man3/Font::TTF::Kern::StateTable.3p
+man/man3/Font::TTF::Kern::Subtable.3p
 man/man3/Font::TTF::LTSH.3p
 man/man3/Font::TTF::Loca.3p
 man/man3/Font::TTF::Manual.3p
 man/man3/Font::TTF::Maxp.3p
 man/man3/Font::TTF::Mort.3p
+man/man3/Font::TTF::Mort::Chain.3p
+man/man3/Font::TTF::Mort::Contextual.3p
+man/man3/Font::TTF::Mort::Insertion.3p
+man/man3/Font::TTF::Mort::Ligature.3p
+man/man3/Font::TTF::Mort::Noncontextual.3p
+man/man3/Font::TTF::Mort::Rearrangement.3p
+man/man3/Font::TTF::Mort::Subtable.3p
 man/man3/Font::TTF::Name.3p
 man/man3/Font::TTF::OS_2.3p
 man/man3/Font::TTF::OldCmap.3p
@@ -101,4 +125,6 @@ share/examples/p5-Font-TTF/ttfwidth.plx
 share/examples/p5-Font-TTF/xmldump.plx
 share/examples/p5-Font-TTF/zerohyph.plx
 @dirrm share/examples/p5-Font-TTF
+@dirrm libdata/perl5/site_perl/Font/TTF/Mort
+@dirrm libdata/perl5/site_perl/Font/TTF/Kern
 @dirrm libdata/perl5/site_perl/Font/TTF
