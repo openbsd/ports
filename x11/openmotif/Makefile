@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/01/21 20:06:29 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/13 04:19:08 brad Exp $
 
 VERSION=	2.1.30
 DISTNAME=	motif
@@ -30,17 +30,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-demos -debuglibs
 SUBPACKAGE?=
 
-.if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
-PKGNAME:=	openmotif${SUBPACKAGE}-${VERSION}.${PATCHLEVEL}
-LIB_DEPENDS=	Xm.2::x11/openmotif
-.endif
-
 USE_X11=	Yes
 
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 
-# This dialog has been copied off from lesstif port.
+# This dialog has been copied from the lesstif port.
 .if defined(HAVE_MOTIF) && ${HAVE_MOTIF:L} == "yes"
 IS_INTERACTIVE=	Yes
 
@@ -81,3 +76,8 @@ post-patch:
 	done
 
 .include <bsd.port.mk>
+
+.if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
+PKGNAME:=	openmotif${SUBPACKAGE}-${VERSION}.${PATCHLEVEL}
+LIB_DEPENDS=	Xm.2.1::x11/openmotif
+.endif
