@@ -1,0 +1,55 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 14:40:47 alek Exp $
+
+SHARED_ONLY=	Yes
+
+COMMENT=	"PHP interface to memcached"
+
+DISTNAME=	memcache-1.4
+PKGNAME=	pecl-${DISTNAME}
+CATEGORIES=	www
+
+HOMEPAGE=	http://pecl.php.net/package/memcache
+
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+
+# PHP License
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	http://pecl.php.net/get/
+EXTRACT_SUFX=	.tgz
+
+AUTOCONF_VER=	2.59
+AUTOMAKE_VER=	1.4
+
+BUILD_DEPENDS=	:php5-pear-*:www/php5/core,-pear \
+		::devel/autoconf/${AUTOCONF_VER} \
+		::devel/automake/${AUTOMAKE_VER} \
+		::devel/libtool
+RUN_DEPENDS=	:php5-core-*:www/php5/core
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-zlib-dir=/usr
+CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VER} \
+		AUTOCONF_VERSION=${AUTOCONF_VER}
+
+PREFIX=		/var/www
+FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
+SUBST_VARS=	LOCALBASE
+
+NO_REGRESS=	Yes
+
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
+
+post-configure:
+	@perl -pi -e 's,(finish_cmds=").*,\1" #,g' ${WRKSRC}/libtool
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pecl-memcache
+	@${INSTALL_DATA} ${WRKSRC}/example.php \
+		${PREFIX}/share/examples/pecl-memcache
+
+.include <bsd.port.mk>
