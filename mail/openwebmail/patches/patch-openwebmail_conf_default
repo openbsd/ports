@@ -1,49 +1,22 @@
---- cgi-bin/openwebmail/etc/openwebmail.conf.default.orig	Fri Mar 22 15:21:21 2002
-+++ cgi-bin/openwebmail/etc/openwebmail.conf.default	Fri Mar 22 15:23:30 2002
-@@ -161,7 +161,7 @@
- #
- # ow_cgidir : the directory for openwebmail cgi programs
- #
+--- cgi-bin/openwebmail/etc/openwebmail.conf.default.orig	Thu Jun 27 17:25:52 2002
++++ cgi-bin/openwebmail/etc/openwebmail.conf.default	Thu Jun 27 17:30:33 2002
+@@ -41,15 +41,15 @@
+ # openwebmail system configuration
+ ##############################################################################
+ http_protocol		auto
 -ow_cgidir		/usr/local/www/cgi-bin/openwebmail
 +ow_cgidir		/var/www/cgi-bin/openwebmail
- 
- #
- # ow_cgiurl : the url for ow_cgidir
-@@ -171,7 +171,7 @@
- #
- # ow_htmldir : the directory for openwebmail webpage/image/sound files
- #
+ ow_cgiurl		/cgi-bin/openwebmail
 -ow_htmldir		/usr/local/www/data/openwebmail
 +ow_htmldir		/var/www/htdocs/openwebmail
- 
- #
- # ow_htmlurl : the url for ow_htmldir
-@@ -194,7 +194,7 @@
- #     user that openwebmail script will be running as (root in many cases) for
- #     better security.
- #
+ ow_htmlurl		/openwebmail
 -ow_etcdir		%ow_cgidir%/etc
 +ow_etcdir		/var/www/conf/openwebmail
- 
- #
- # logo_url : This graphic that appears at the top of openwebmail login pages.
-@@ -226,7 +226,7 @@
- # logfile : This should be set either to 'no' or the filename of a file
- # you'd like to log actions to.
- #
+ logo_url		%ow_htmlurl%/images/openwebmail.gif
+ logo_link		http://openwebmail.org/
+ sound_url		%ow_htmlurl%/yougotmail.wav
 -logfile			%ow_cgidir%/openwebmail.log
 +logfile			/var/log/openwebmail.log
- 
- #
- # global_addressbook : addressbook shared by all user
-@@ -274,8 +274,8 @@
- #
- # these 2 converter will be required only if lang is 'tw' or 'cn'
- #
--g2b_converter		%ow_cgidir%/hc -mode g2b -t %ow_cgidir%/hc.tab
--b2g_converter		%ow_cgidir%/hc -mode b2g -t %ow_cgidir%/hc.tab
-+g2b_converter		/usr/local/bin/hc -mode g2b -t /usr/local/share/hc/hc.tab
-+b2g_converter		/usr/local/bin/hc -mode b2g -t /usr/local/share/hc/hc.tab
- 
- #
- # allowed_clientip : This limits the clients that can access the openwebmail
+ global_addressbook	%ow_etcdir%/address.book
+ global_filterbook	%ow_etcdir%/filter.book
+ g2b_map			%ow_etcdir%/g2b.map

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/28 11:45:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/28 01:11:45 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-1.63
+DISTNAME=	openwebmail-1.65
 CATEGORIES=	mail
 NEED_VERSION=	1.504
 
@@ -25,8 +25,7 @@ RUN_DEPENDS=	::net/p5-libnet \
 		::www/p5-CGI \
 		::converters/p5-MIME-Base64 \
 		::databases/p5-ldap \
-		::textproc/ispell \
-		::chinese/hc
+		::textproc/ispell
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
