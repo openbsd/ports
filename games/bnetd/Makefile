@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/30 02:10:44 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/31 03:23:47 brad Exp $
 
-DISTNAME=	bnetd-0.4
+DISTNAME=	bnetd-0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	brad@openbsd.org
 
-WRKSRC=		${WRKDIR}/bnetd-0.4/src/
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bnbot ${PREFIX}/bin
@@ -22,6 +22,7 @@ do-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/bnetd
 	${INSTALL_MAN} ${WRKSRC}/../CHANGELOG ${PREFIX}/share/doc/bnetd
 	${INSTALL_MAN} ${WRKSR}/../README ${PREFIX}/share/doc/bnetd
+	${INSTALL_MAN} ${WRKSR}/../TODO ${PREFIX}/share/doc/bnetd
 
 post-install:
 	@${ECHO} "***"

@@ -4,6 +4,7 @@ bin/bnpass
 sbin/bnetd
 share/doc/bnetd/CHANGELOG
 share/doc/bnetd/README
+share/doc/bnetd/TODO
 @dirrm share/doc/bnetd
 @exec echo "***"
 @exec echo "*** Finished installing bnetd."
