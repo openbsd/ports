@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2003/05/26 19:31:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.51 2003/05/27 14:37:59 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -103,7 +103,7 @@ LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim --disable-gtk2-check
 .elif ${FLAVOR:L:Mgtk2} && \
 	        !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=   gdk-x11-2.0.=0,gdk_pixbuf-2.0.=0,gtk-x11-2.0.=0::x11/gtk+2
+LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 .else
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
