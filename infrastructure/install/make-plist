@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.44 2004/08/05 23:51:44 espie Exp $
+# $OpenBSD: make-plist,v 1.45 2004/08/06 09:37:15 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -230,6 +230,8 @@ sub get_type
 		return "manpage";
 	} elsif (is_library($filename)) {
 		return "library";
+	} elsif (is_plugin($filename)) {
+		return "plugin";
 	} else {
 		return "file";
 	}
@@ -250,11 +252,9 @@ sub resolve_link
 	}
 }
 
-sub is_library
+sub is_shared_object
 {
 	my $filename = shift;
-
-	return 0 unless $filename =~ m/\.so(?:\.\d+\.\d+)?$/;
 	$filename = resolve_link($filename);
 	my $check=`/usr/bin/file $filename`;
 	chomp $check;
@@ -265,7 +265,23 @@ sub is_library
 		return 0;
 	}
 }
-		
+
+sub is_library
+{
+	my $filename = shift;
+
+	return 0 unless $filename =~ m/\/lib[^\/]*\.so\.\d+\.\d+$/;
+	return is_shared_object($filename);
+}
+
+sub is_plugin
+{
+	my $filename = shift;
+
+	return 0 unless $filename =~ m/\.so$/;
+	return is_shared_object($filename);
+}
+
 sub is_info
 {
 	my $filename = shift;
@@ -647,7 +663,7 @@ for my $i (sort keys %$files) {
 		$o->add_object($p);
 		$p->{nonempty} = 1;
 	} else {
-		if ($type eq 'library' && (!defined $item) && !$shared_only) {
+		if (($type eq 'library' || $type eq 'plugin') && (!defined $item) && !$shared_only) {
 			$p->{wantshared} = 1;
 			$p = $p->{shared};
 		}
@@ -669,7 +685,7 @@ for my $i (sort keys %$files) {
 			}
 		}
 		$o->add_object($p);
-		if ($type eq 'library' && $i=~ m|^/usr/local/lib/lib[^/]*\.so\.\d+\.\d+$|) {
+		if ($type eq 'library' && dirname($i) eq '/usr/local/lib') {
 			$p->{wantdynlibdir} = 1;
 		}
 		$p->{nonempty} = 1;
