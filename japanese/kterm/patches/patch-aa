@@ -1,6 +1,6 @@
---- main.c.orig	Tue Jul 28 21:33:29 1998
-+++ main.c	Tue Jul 28 21:38:02 1998
-@@ -142,9 +142,16 @@
+--- main.c.orig	Mon Apr 24 18:31:43 2000
++++ main.c	Mon Apr 24 18:31:44 2000
+@@ -142,9 +142,16 @@ static Bool IsPts = False;
  #define WTMP
  #endif
  
@@ -17,7 +17,7 @@
  #ifdef USE_TERMIOS
  #include <termios.h>
  /* this hacked termios support only works on SYSV */
-@@ -159,10 +166,12 @@
+@@ -159,10 +166,12 @@ static Bool IsPts = False;
  #include <sys/termio.h>
  #endif /* SYSV */
  #endif /* USE_TERMIOS else */
@@ -30,7 +30,7 @@
  
  #if defined(__sgi) && OSMAJORVERSION >= 5
  #undef TIOCLSET				/* defined, but not useable */
-@@ -225,7 +234,9 @@
+@@ -225,7 +234,9 @@ static Bool IsPts = False;
  #endif
  #else /* } !SYSV { */			/* BSD systems */
  #ifndef linux
@@ -40,7 +40,7 @@
  #endif
  #include <sys/resource.h>
  #define HAS_UTMP_UT_HOST
-@@ -251,6 +262,8 @@
+@@ -251,6 +262,8 @@ static Bool IsPts = False;
  
  #if (BSD >= 199103)
  #define USE_POSIX_WAIT
@@ -49,7 +49,7 @@
  #define HAS_POSIX_SAVED_IDS
  #endif
  
-@@ -434,6 +447,9 @@
+@@ -434,6 +447,9 @@ static struct ltchars d_ltc;
  static unsigned int d_lmode;
  #endif	/* TIOCLSET */
  #else /* not USE_SYSV_TERMIO */
@@ -59,7 +59,7 @@
  static struct  sgttyb d_sg = {
          0, 0, 0177, CKILL, EVENP|ODDP|ECHO|XTABS|CRMOD
  };
-@@ -457,6 +473,7 @@
+@@ -457,6 +473,7 @@ static struct jtchars d_jtc = {
  	'J', 'B'
  };
  #endif /* sony */
@@ -67,7 +67,7 @@
  #endif /* USE_SYSV_TERMIO */
  
  /* allow use of system default characters if defined and reasonable */
-@@ -1130,14 +1147,18 @@
+@@ -1130,14 +1147,18 @@ char **argv;
  	strcpy (ptydev, PTYDEV);
  #endif
  
@@ -87,7 +87,7 @@
  #if defined(macII) || defined(ATT) || defined(CRAY) /* { */
      	d_tio.c_cflag = B9600|CS8|CREAD|PARENB|HUPCL;
      	d_tio.c_lflag = ISIG|ICANON|ECHO|ECHOE|ECHOK;
-@@ -1161,9 +1182,11 @@
+@@ -1161,9 +1182,11 @@ char **argv;
  	d_tio.c_cc[VEOL2] = CNUL;
  	d_tio.c_cc[VSWTCH] = CNUL;
  
@@ -100,7 +100,7 @@
  	d_tio.c_cc[VREPRINT] = CRPRNT;
  	d_tio.c_cc[VDISCARD] = CFLUSH;
  	d_tio.c_cc[VWERASE] = CWERASE;
-@@ -1181,11 +1204,17 @@
+@@ -1181,11 +1204,17 @@ char **argv;
  	d_lmode = 0;
  #endif /* } TIOCLSET */
  #else  /* }{ else !macII, ATT, CRAY */
@@ -118,7 +118,7 @@
      	d_tio.c_lflag = ISIG|ICANON|ECHO|ECHOE|ECHOK;
  #ifdef ECHOKE
  	d_tio.c_lflag |= ECHOKE|IEXTEN;
-@@ -1193,11 +1222,13 @@
+@@ -1193,11 +1222,13 @@ char **argv;
  #ifdef ECHOCTL
  	d_tio.c_lflag |= ECHOCTL|IEXTEN;
  #endif
@@ -132,7 +132,7 @@
  #ifdef __sgi
          d_tio.c_cflag &= ~(HUPCL|PARENB);
          d_tio.c_iflag |= BRKINT|ISTRIP|IGNPAR;
-@@ -1246,8 +1277,14 @@
+@@ -1246,8 +1277,14 @@ char **argv;
  	    int i;
  
  	    for (i = 0; i <= 2; i++) {
@@ -148,7 +148,7 @@
  		    d_tio.c_cc[VINTR] = deftio.c_cc[VINTR];
  		    d_tio.c_cc[VQUIT] = deftio.c_cc[VQUIT];
  		    d_tio.c_cc[VERASE] = deftio.c_cc[VERASE];
-@@ -1302,9 +1339,11 @@
+@@ -1302,9 +1339,11 @@ char **argv;
          d_ltc.t_werasc = '\377';
          d_ltc.t_lnextc = '\377';
  #endif	/* } TIOCSLTC */
@@ -161,7 +161,7 @@
  	d_tio.c_cc[VREPRINT] = '\377';
  	d_tio.c_cc[VDISCARD] = '\377';
  	d_tio.c_cc[VWERASE] = '\377';
-@@ -2065,6 +2104,9 @@
+@@ -2065,6 +2104,9 @@ spawn ()
  	int zero = 0;
  	int status;
  #else	/* else not USE_SYSV_TERMIO */
@@ -171,7 +171,7 @@
  	unsigned lmode;
  	struct tchars tc;
  	struct ltchars ltc;
-@@ -2073,6 +2115,7 @@
+@@ -2073,6 +2115,7 @@ spawn ()
  	int jmode;
  	struct jtchars jtc;
  #endif /* sony */
@@ -179,7 +179,7 @@
  #endif	/* USE_SYSV_TERMIO */
  
  	char termcap [1024];
-@@ -2168,9 +2211,9 @@
+@@ -2168,9 +2211,9 @@ spawn ()
  #ifdef TIOCLSET
  				lmode = d_lmode;
  #endif	/* TIOCLSET */
@@ -191,7 +191,7 @@
  				sg = d_sg;
  				tc = d_tc;
  				discipline = d_disipline;
-@@ -2178,7 +2221,7 @@
+@@ -2178,7 +2221,7 @@ spawn ()
  				jmode = d_jmode;
  				jtc = d_jtc;
  #endif /* sony */
@@ -200,7 +200,7 @@
  			} else {
  			    SysError(ERROR_OPDEVTTY);
  			}
-@@ -2202,6 +2245,10 @@
+@@ -2202,6 +2245,10 @@ spawn ()
  			        tio = d_tio;
  
  #else	/* not USE_SYSV_TERMIO */
@@ -211,7 +211,7 @@
  			if(ioctl(tty, TIOCGETP, (char *)&sg) == -1)
  			        sg = d_sg;
  			if(ioctl(tty, TIOCGETC, (char *)&tc) == -1)
-@@ -2214,6 +2261,7 @@
+@@ -2214,6 +2261,7 @@ spawn ()
  			if(ioctl(tty, TIOCKGETC, (char *)&jtc) == -1)
  				jtc = d_jtc;
  #endif /* sony */
@@ -219,7 +219,7 @@
  #endif	/* USE_SYSV_TERMIO */
  			close (tty);
  			/* tty is no longer an open fd! */
-@@ -2581,7 +2629,7 @@
+@@ -2581,7 +2629,7 @@ spawn ()
  		 * set up the tty modes
  		 */
  		{
@@ -228,7 +228,7 @@
  #if defined(umips) || defined(CRAY) || defined(linux)
  		    /* If the control tty had its modes screwed around with,
  		       eg. by lineedit in the shell, or emacs, etc. then tio
-@@ -2598,12 +2646,15 @@
+@@ -2598,12 +2646,15 @@ spawn ()
  		    tio.c_iflag &= ~(INLCR|IGNCR);
  		    tio.c_iflag |= ICRNL;
  		    /* ouput: cr->cr, nl is not return, no delays, ln->cr/nl */
@@ -244,7 +244,7 @@
  #ifdef BAUD_0
  		    /* baud rate is 0 (don't care) */
  		    tio.c_cflag &= ~(CBAUD);
-@@ -2612,6 +2663,13 @@
+@@ -2612,6 +2663,13 @@ spawn ()
  		    tio.c_cflag &= ~(CBAUD);
  		    tio.c_cflag |= B9600;
  #endif	/* !BAUD_0 */
@@ -258,7 +258,7 @@
  		    tio.c_cflag &= ~CSIZE;
  		    if (screen->input_eight_bits)
  			tio.c_cflag |= CS8;
-@@ -2723,9 +2781,14 @@
+@@ -2723,9 +2781,14 @@ spawn ()
  		    if (ioctl (tty, TIOCLSET, (char *)&lmode) == -1)
  			    HsSysError(cp_pipe[1], ERROR_TIOCLSET);
  #endif	/* TIOCLSET */
@@ -274,7 +274,7 @@
  #ifdef KTERM
  		    sg.sg_flags &= ~(ALLDELAY | XTABS | CBREAK | RAW
  						| EVENP | ODDP);
-@@ -3272,11 +3335,11 @@
+@@ -3272,11 +3335,11 @@ spawn ()
  		shname_minus = malloc(strlen(shname) + 2);
  		(void) strcpy(shname_minus, "-");
  		(void) strcat(shname_minus, shname);

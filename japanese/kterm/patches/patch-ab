@@ -1,6 +1,26 @@
---- KTerm.ad.orig	Tue Apr 18 20:54:12 2000
-+++ KTerm.ad	Tue Apr 18 20:54:29 2000
-@@ -94,7 +94,7 @@ KTerm.JoinSession:False
+--- KTerm.ad.orig	Sun Jun 23 10:00:22 1996
++++ KTerm.ad	Mon Apr 24 20:32:52 2000
+@@ -73,7 +73,8 @@ KTerm.JoinSession:False
+ *fontMenu*font4*Label:	Medium
+ *VT100*fontList4:	-*-fixed-medium-r-normal--18-*,\
+ 			-*-gothic-medium-r-normal--18-*,\
+-			-*-mincho-medium-r-normal--18-*
++			-*-mincho-medium-r-normal--18-*,\
++			-*-courier-medium-r-normal--18-*
+ *fontMenu*font5*Label:	Large
+ *VT100*fontList5:	-*-fixed-medium-r-normal--24-*,\
+ 			-*-gothic-medium-r-normal--24-*,\
+@@ -81,7 +82,8 @@ KTerm.JoinSession:False
+ *fontMenu*font6*Label:	Huge
+ *VT100*fontList6:	-*-fixed-medium-r-normal--26-*,\
+ 			-*-gothic-medium-r-normal--26-*,\
+-			-*-mincho-medium-r-normal--26-*
++			-*-mincho-medium-r-normal--26-*,\
++			-*-lucidatypewriter-medium-r-normal-sans-26-*
+ *fontMenu*fontescape*Label:	Escape Sequence
+ *fontMenu*fontsel*Label:		Selection
+ !fontescape and fontsel overridden by application
+@@ -94,7 +96,7 @@ KTerm.JoinSession:False
  !*VT100*romanKanaBoldFont3:	-*-*-bold-r-normal--16-*-jisx0201.1976-0
  !*VT100*kanjiBoldFont3:		-*-*-bold-r-normal--16-*-jisx0208.1983-0
  

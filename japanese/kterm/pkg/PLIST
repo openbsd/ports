@@ -3,3 +3,4 @@ man/cat1/kterm.0
 @mode u+s
 @owner root
 bin/kterm
+@exec echo "You may wish to install some extra japanese font packages as well"
