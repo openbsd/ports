@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/12/14 21:15:55 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses ossaudio
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 DISTFILES=		emacs-${VERSION}.tar.gz leim-${VERSION}.tar.gz
@@ -48,25 +47,31 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
 SUBST_VARS=		GCCARCH VERSION
 
+myWANTLIB=		c m ncurses ossaudio
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
 USE_X11=Yes
-LIB_DEPENDS=		ungif.5::graphics/libungif \
+myLIB_DEPENDS=		ungif.5::graphics/libungif \
 			jpeg.62::graphics/jpeg \
 			png.2::graphics/png \
 			tiff.35::graphics/tiff
-WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+myWANTLIB+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE)
 RUN_DEPENDS=		:emacs-${VERSION}*:editors/emacs21
-LIB_DEPENDS=
-.  endif
+.  else
+LIB_DEPENDS=		$(myLIB_DEPENDS)
+WANTLIB=		$(myWANTLIB)
+.endif
 .  if ${SUBPACKAGE} == "-el"
 PKG_ARCH=		*
 .  endif
+.else
+LIB_DEPENDS=		$(myLIB_DEPENDS)
+WANTLIB=		$(myWANTLIB)
 .endif
 
 .include <bsd.port.mk>
