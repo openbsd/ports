@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2001/05/20 14:24:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.76 2001/05/29 23:23:49 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -141,7 +141,7 @@
 #    SUBDIR += sawt
 #    SUBDIR += scogdb
      SUBDIR += sdl
-     SUBDIR += sdl,oss,gl
+     SUBDIR += sdl,sun,esd,gl
      SUBDIR += sdl-image
      SUBDIR += sdl-mixer
      SUBDIR += sdl-net
