@@ -1,15 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/11/27 20:45:17 espie Exp $
-@mode u+s 
-@owner root
-bin/konsole_grantpty
-bin/kcheckpass
-@mode
-@owner
-@group utmp
-@mode g+s
-bin/konsole
-@group
-@mode
+@comment $OpenBSD: PLIST,v 1.8 2000/12/17 11:28:02 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -21,6 +10,7 @@ bin/kblankscrn.kss
 bin/kblob.kss
 bin/kbouboule.kss
 bin/kbsod.kss
+bin/kcheckpass
 bin/kcminit
 bin/kcmshell
 bin/kcontrol
@@ -48,6 +38,8 @@ bin/kman2html
 bin/kmatrix.kss
 bin/kmenuedit
 bin/konqueror
+bin/konsole
+bin/konsole_grantpty
 bin/kpager
 bin/kpolygon.kss
 bin/kpyro.kss
@@ -866,7 +858,6 @@ share/doc/HTML/en/kcontrol/action.html
 share/doc/HTML/en/kcontrol/background.html
 share/doc/HTML/en/kcontrol/batmon.html
 share/doc/HTML/en/kcontrol/bell.html
-share/doc/HTML/en/kcontrol/blockdev.html
 share/doc/HTML/en/kcontrol/borders.html
 share/doc/HTML/en/kcontrol/color.html
 share/doc/HTML/en/kcontrol/common
@@ -960,6 +951,8 @@ share/doc/HTML/en/kcontrol/kcmuseragent.docbook
 share/doc/HTML/en/kcontrol/kcmwinshare.docbook
 share/doc/HTML/en/kcontrol/kcmxservinfo.docbook
 share/doc/HTML/en/kcontrol/key-bindings.html
+share/doc/HTML/en/kcontrol/kfileman1.png
+share/doc/HTML/en/kcontrol/kfileman2.png
 share/doc/HTML/en/kcontrol/konq-browsing.html
 share/doc/HTML/en/kcontrol/laptop.html
 share/doc/HTML/en/kcontrol/locale.html
@@ -1038,9 +1031,26 @@ share/doc/HTML/en/khelpcenter/contact.docbook
 share/doc/HTML/en/khelpcenter/credits.html
 share/doc/HTML/en/khelpcenter/faq/.anchors
 share/doc/HTML/en/khelpcenter/faq/TODO
+share/doc/HTML/en/khelpcenter/faq/about.html
+share/doc/HTML/en/khelpcenter/faq/applications.html
 share/doc/HTML/en/khelpcenter/faq/common
+share/doc/HTML/en/khelpcenter/faq/configure.html
+share/doc/HTML/en/khelpcenter/faq/contribute.html
+share/doc/HTML/en/khelpcenter/faq/credits.html
+share/doc/HTML/en/khelpcenter/faq/desktop.html
+share/doc/HTML/en/khelpcenter/faq/filemanager.html
+share/doc/HTML/en/khelpcenter/faq/getting-kde.html
 share/doc/HTML/en/khelpcenter/faq/index.docbook
 share/doc/HTML/en/khelpcenter/faq/index.html
+share/doc/HTML/en/khelpcenter/faq/install.html
+share/doc/HTML/en/khelpcenter/faq/introduction.html
+share/doc/HTML/en/khelpcenter/faq/misc.html
+share/doc/HTML/en/khelpcenter/faq/more-info.html
+share/doc/HTML/en/khelpcenter/faq/non-kde-apps.html
+share/doc/HTML/en/khelpcenter/faq/not-kde.html
+share/doc/HTML/en/khelpcenter/faq/panel.html
+share/doc/HTML/en/khelpcenter/faq/tips.html
+share/doc/HTML/en/khelpcenter/faq/windowmanager.html
 share/doc/HTML/en/khelpcenter/help-system-user-manual.html
 share/doc/HTML/en/khelpcenter/help.docbook
 share/doc/HTML/en/khelpcenter/index.docbook
@@ -1083,13 +1093,13 @@ share/doc/HTML/en/khelpcenter/userguide/common
 share/doc/HTML/en/khelpcenter/userguide/creating-new-files-on-your-desktop.html
 share/doc/HTML/en/khelpcenter/userguide/desktop-components.html
 share/doc/HTML/en/khelpcenter/userguide/docu-staff.html
-share/doc/HTML/en/khelpcenter/userguide/entertainmentapplications.html
+share/doc/HTML/en/khelpcenter/userguide/entertainment-applications.html
 share/doc/HTML/en/khelpcenter/userguide/finding-your-lost-files.html
 share/doc/HTML/en/khelpcenter/userguide/first-impressions.html
 share/doc/HTML/en/khelpcenter/userguide/frequently-asked-questions.html
 share/doc/HTML/en/khelpcenter/userguide/getting-kde.html
 share/doc/HTML/en/khelpcenter/userguide/getting-started.html
-share/doc/HTML/en/khelpcenter/userguide/graphicalapplications.html
+share/doc/HTML/en/khelpcenter/userguide/graphical-applications.html
 share/doc/HTML/en/khelpcenter/userguide/index.docbook
 share/doc/HTML/en/khelpcenter/userguide/index.html
 share/doc/HTML/en/khelpcenter/userguide/installation.html
@@ -1105,8 +1115,8 @@ share/doc/HTML/en/khelpcenter/userguide/linux-installing-rpms.html
 share/doc/HTML/en/khelpcenter/userguide/more-help.html
 share/doc/HTML/en/khelpcenter/userguide/mouse-techniques.html
 share/doc/HTML/en/khelpcenter/userguide/moving-files-with-drag-and-drop.html
-share/doc/HTML/en/khelpcenter/userguide/multimediaapplications.html
-share/doc/HTML/en/khelpcenter/userguide/networkapplications.html
+share/doc/HTML/en/khelpcenter/userguide/multimedia-applications.html
+share/doc/HTML/en/khelpcenter/userguide/network-applications.html
 share/doc/HTML/en/khelpcenter/userguide/quitting-kde.html
 share/doc/HTML/en/khelpcenter/userguide/shortcuts.html
 share/doc/HTML/en/khelpcenter/userguide/source-distribution.html
@@ -1224,6 +1234,7 @@ share/doc/HTML/en/kmenuedit/introduction.html
 share/doc/HTML/en/kmenuedit/menu-reference.html
 share/doc/HTML/en/kmenuedit/using-kmenuedit.html
 share/doc/HTML/en/konqueror/.anchors
+share/doc/HTML/en/konqueror/autocomplete.html
 share/doc/HTML/en/konqueror/basics.html
 share/doc/HTML/en/konqueror/bookmarks.html
 share/doc/HTML/en/konqueror/browser.html
@@ -1235,10 +1246,13 @@ share/doc/HTML/en/konqueror/common
 share/doc/HTML/en/konqueror/config-prox.html
 share/doc/HTML/en/konqueror/config.html
 share/doc/HTML/en/konqueror/configure-bars.html
+share/doc/HTML/en/konqueror/cook.html
 share/doc/HTML/en/konqueror/credits.html
+share/doc/HTML/en/konqueror/crypto.html
 share/doc/HTML/en/konqueror/deleting.html
 share/doc/HTML/en/konqueror/dirtree.png
 share/doc/HTML/en/konqueror/dragdrop.png
+share/doc/HTML/en/konqueror/faq.html
 share/doc/HTML/en/konqueror/fileassoc.html
 share/doc/HTML/en/konqueror/filemanager.html
 share/doc/HTML/en/konqueror/filetype1.png
@@ -1249,9 +1263,6 @@ share/doc/HTML/en/konqueror/index.docbook
 share/doc/HTML/en/konqueror/index.html
 share/doc/HTML/en/konqueror/installation.html
 share/doc/HTML/en/konqueror/introduction.html
-share/doc/HTML/en/konqueror/kfind.png
-share/doc/HTML/en/konqueror/konqdoc5.png
-share/doc/HTML/en/konqueror/konqdoc9.png
 share/doc/HTML/en/konqueror/konqorg.png
 share/doc/HTML/en/konqueror/lmbmmb.html
 share/doc/HTML/en/konqueror/making.html
@@ -1267,6 +1278,7 @@ share/doc/HTML/en/konqueror/rmb-menus.html
 share/doc/HTML/en/konqueror/samba.html
 share/doc/HTML/en/konqueror/samba.png
 share/doc/HTML/en/konqueror/save-print-web.html
+share/doc/HTML/en/konqueror/saveset.html
 share/doc/HTML/en/konqueror/surf.html
 share/doc/HTML/en/konsole/.anchors
 share/doc/HTML/en/konsole/command-line-options.html
@@ -1277,6 +1289,7 @@ share/doc/HTML/en/konsole/index.docbook
 share/doc/HTML/en/konsole/index.html
 share/doc/HTML/en/konsole/installation.html
 share/doc/HTML/en/konsole/introduction.html
+share/doc/HTML/en/konsole/konsole.png
 share/doc/HTML/en/konsole/konsole1.gif
 share/doc/HTML/en/konsole/konsole2.gif
 share/doc/HTML/en/konsole/menubar.html
@@ -1324,9 +1337,9 @@ share/doc/HTML/en/kwrite/index.html
 share/doc/HTML/en/kwrite/introduction.html
 share/doc/HTML/en/kwrite/keybindings.html
 share/doc/HTML/en/kwrite/on-screen-fundamentals.html
-share/doc/HTML/en/kwrite/other-preferences.html
 share/doc/HTML/en/kwrite/pref-dialog.html
 share/doc/HTML/en/kwrite/pref-edit.html
+share/doc/HTML/en/kwrite/pref-highlighting.html
 share/doc/HTML/en/kwrite/pref-indent.html
 share/doc/HTML/en/kwrite/pref-select.html
 share/doc/HTML/en/kwrite/prefspellchecker.html
@@ -2068,7 +2081,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/sounds
 @dirrm share/services
 @dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ve
 @dirrm share/locale/l10n/vc
@@ -2143,23 +2155,37 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale
 @dirrm share/icons/locolor/32x32/devices
 @dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/devices
 @dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
+@exec mkdir -p %D/share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/48x48/filesystems
+@dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/devices
 @dirrm share/icons/hicolor/48x48/apps
+@exec mkdir -p %D/share/icons/hicolor/48x48/actions/kde
+@dirrm share/icons/hicolor/48x48/actions/kde
+@dirrm share/icons/hicolor/48x48/actions
 @dirrm share/icons/hicolor/48x48
+@exec mkdir -p %D/share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/filesystems
 @dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
+@exec mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@dirrm share/icons/hicolor/32x32/actions/kde
 @dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/32x32
+@exec mkdir -p %D/share/icons/hicolor/22x22/mimetypes
+@dirrm share/icons/hicolor/22x22/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/22x22/filesystems
+@dirrm share/icons/hicolor/22x22/filesystems
+@exec mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@dirrm share/icons/hicolor/22x22/actions/kde
 @dirrm share/icons/hicolor/22x22/actions
 @dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite

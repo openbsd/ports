@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2000/11/27 20:45:17 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2000/12/17 11:28:01 espie Exp $
 lib/libappletproxy.so.0.0
 lib/libclockapplet.so.1.0
 lib/libhtmlsearch.so.0.0

@@ -1,5 +1,5 @@
---- kdm/kgreeter.cpp.orig	Thu Sep 28 13:09:20 2000
-+++ kdm/kgreeter.cpp	Thu Sep 28 13:52:18 2000
+--- kdm/kgreeter.cpp.orig	Tue Oct 10 22:48:40 2000
++++ kdm/kgreeter.cpp	Sun Dec 17 03:41:16 2000
 @@ -77,9 +77,11 @@ extern "C" {
  #if defined(HAVE_LOGIN_CAP_H) && !defined(__NetBSD__)
  	#define USE_LOGIN_CAP 1
@@ -13,7 +13,7 @@
  #else
  	struct login_cap *lc;
  #endif
-@@ -524,7 +526,7 @@ KGreeter::restrict()
+@@ -523,7 +525,7 @@ KGreeter::restrict()
  #endif
  
  #ifdef USE_LOGIN_CAP
@@ -22,7 +22,7 @@
       lc = login_getclass(pwd->pw_class);
  #else
       lc = login_getpwclass(pwd);
-@@ -552,10 +554,12 @@ KGreeter::restrict_time()
+@@ -551,10 +553,12 @@ KGreeter::restrict_time()
       // don't deny a root log in
       if (!pwd->pw_uid) return false;
  
