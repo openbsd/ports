@@ -1,0 +1,37 @@
+*** main.c.orig	Sat Jun  6 17:23:46 1998
+--- main.c	Sat Jun  6 17:25:15 1998
+***************
+*** 1021,1026 ****
+--- 1021,1027 ----
+  	    FILE *outfile;
+  
+  	    /* Make a unique filename.  */
++ #if 0
+  #ifdef HAVE_MKTEMP
+  
+  #ifdef VMS
+***************
+*** 1033,1042 ****
+  	    static char name[L_tmpnam];
+  	    (void) tmpnam (name);
+  #endif
+  
+! 	    outfile = fopen (name, "w");
+  	    if (outfile == 0)
+! 	      pfatal_with_name ("fopen (temporary file)");
+  	    while (!feof (stdin))
+  	      {
+  		char buf[2048];
+--- 1034,1045 ----
+  	    static char name[L_tmpnam];
+  	    (void) tmpnam (name);
+  #endif
++ #endif
++ 	    static char name[] = "/tmp/GmXXXXXX";
+  
+! 	    outfile = fdopen (mkstemp(name), "w");
+  	    if (outfile == 0)
+! 	      pfatal_with_name ("fdopen (temporary file)");
+  	    while (!feof (stdin))
+  	      {
+  		char buf[2048];
