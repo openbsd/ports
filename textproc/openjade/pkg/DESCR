@@ -18,3 +18,5 @@ it into formats like:
 * SGML or XML format. This is used in conjunction with non-standard
   flow object classes to generate SGML, thus allowing OpenJade to be
   used for SGML/XML transformations. 
+
+WWW: ${HOMEPAGE}
