@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/31 20:04:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/02/27 01:08:34 brad Exp $
 ${P5SITE}/Pod/Simple.pm
 ${P5SITE}/Pod/Simple.pod
 ${P5SITE}/Pod/Simple/BlackBox.pm
@@ -20,10 +20,13 @@ ${P5SITE}/Pod/Simple/Subclassing.pod
 ${P5SITE}/Pod/Simple/Text.pm
 ${P5SITE}/Pod/Simple/TextContent.pm
 ${P5SITE}/Pod/Simple/TiedOutFH.pm
+${P5SITE}/Pod/Simple/Transcode.pm
+${P5SITE}/Pod/Simple/TranscodeDumb.pm
+${P5SITE}/Pod/Simple/TranscodeSmart.pm
 ${P5SITE}/Pod/Simple/XMLOutStream.pm
-@comment ${P5ARCH}/auto/Pod/Simple/.packlist
 @comment ${P5SITE}/perlpod.pod
 @comment ${P5SITE}/perlpodspec.pod
+@comment ${P5ARCH}/auto/Pod/Simple/.packlist
 man/man3p/Pod::Simple.3p
 man/man3p/Pod::Simple::Checker.3p
 man/man3p/Pod::Simple::Debug.3p

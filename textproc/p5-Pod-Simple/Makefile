@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/28 23:14:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/27 01:08:34 brad Exp $
 
-COMMENT=	"framework for parsing the perl Pod format"
+COMMENT=	"framework for parsing the Perl Pod format"
 
-DISTNAME=	Pod-Simple-0.96
+DISTNAME=	Pod-Simple-2.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
@@ -12,7 +12,7 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 RUN_DEPENDS=	::textproc/p5-Pod-Escapes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# Perl license
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
