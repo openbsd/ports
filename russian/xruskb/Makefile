@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1999/06/23 08:53:19 form Exp $
+# $OpenBSD: Makefile,v 1.6 1999/07/09 17:35:58 form Exp $
 
-DISTNAME=	xruskb-1.9.1
+DISTNAME=	xruskb-1.9.3
 CATEGORIES=	russian x11
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/cyrillic/x11/ \
-		ftp://vell.nsc.ru/pub/X11/cyrillic/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	form@openbsd.org
 
