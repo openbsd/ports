@@ -3,10 +3,10 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/11/03 01:17:07 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/09 03:43:23 turan Exp $
 #
 
-BROKEN=		mshell.c:52: syntax error before `1'
+BROKEN=		mshell.c:52: syntax error before 1
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
