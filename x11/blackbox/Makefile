@@ -1,3 +1,6 @@
+# $OpenBSD: Makefile,v 1.2 1998/11/27 23:35:33 jasoni Exp $
+#
+
 DISTNAME=		blackbox-0.50.0
 CATEGORIES=		x11
 
