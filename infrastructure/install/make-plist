@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.12 2001/05/23 14:18:25 espie Exp $
+# $OpenBSD: make-plist,v 1.13 2001/05/24 16:47:59 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -52,8 +52,13 @@ $pshared = File::Spec->catfile($plistdir, 'PFRAG.shared');
 if (-e "$plist.orig" or -e "$pshared.orig") {
 	die "You must clean up old files first";
 }
-rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
-rename($pshared, "$pshared.orig");
+if (-e $plist) {
+    rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
+}
+
+if (-e $pshared) {
+    rename($pshared, "$pshared.orig") or die "Can't rename $pshared to $pshared.orig";
+}
 
 open(PLIST, '>', $plist) or die "Can't write to $plist";
 select PLIST;
@@ -182,7 +187,7 @@ for my $f (sort @files) {
 
 if (@libfiles > 0) {
     	print "\%\%SHARED\%\%\n";
-	open(SHARED, ">$pshared-auto") or die "Can't write to $pshared-auto";
+	open(SHARED, ">$pshared") or die "Can't write to $pshared";
 	print SHARED "\@comment \$OpenBSD\$\n";
 	for my $f (sort @libfiles) {
 	    print SHARED strip($f), "\n";
