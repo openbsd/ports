@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2003/09/25 06:25:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.20 2004/04/09 10:11:36 sturm Exp $
 
 COMMENT=	"network grep"
 
-DISTNAME=	ngrep-1.40.1
+DISTNAME=	ngrep-1.42
 CATEGORIES=     net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://ngrep.sourceforge.net/
 
@@ -16,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/ngrep
-
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.57
 
 ALL_TARGET=	ngrep
 

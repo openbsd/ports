@@ -1,0 +1,19 @@
+--- configure.in.orig	Fri Apr  9 08:33:58 2004
++++ configure.in	Fri Apr  9 08:34:16 2004
+@@ -250,16 +250,6 @@
+ 
+ *bsd*)
+ 	AC_SUBST(OS, BSD)
+-
+-	echo 
+-        AC_MSG_WARN(
+-Your OS ($target_os) may have an old libpcap installation.
+-If the resulting ngrep binary segfaults when a BPF filter is specified 
+-without an ngrep match string then you should reconfigure ngrep with 
+-the option ``--disable-pcap-restart''.
+-)
+-	sleep 3
+-
+         ;;
+ 
+ *solaris*)
