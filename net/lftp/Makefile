@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/13 05:41:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/18 02:08:57 kevlo Exp $
 
-DISTNAME=	lftp-2.2.3
+DISTNAME=	lftp-2.2.4
 CATEGORIES=     net
 NEED_VERSION=	1.314
 MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
