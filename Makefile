@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/07/21 09:20:05 form Exp $
+# $OpenBSD: Makefile,v 1.13 1998/08/05 22:12:03 marc Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -17,7 +17,7 @@ SUBDIR += emulators
 SUBDIR += games
 #SUBDIR += german
 SUBDIR += graphics
-#SUBDIR += japanese
+SUBDIR += japanese
 #SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
