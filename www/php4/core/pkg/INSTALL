@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/06/26 21:32:56 avsm Exp $
 #
 # php4 installation
 
@@ -25,7 +25,7 @@ do_notice()
     echo "|"
     echo "|       AddType application/x-httpd-php .php"
     echo "|"
-    echo "| Copy the config file below into /var/www/confsample/php.ini"
+    echo "| Copy the config file below into /var/www/conf/php.ini"
     echo "| ${PREFIX}/share/doc/php4/php.ini-dist"
     echo "+---------------"
     echo
