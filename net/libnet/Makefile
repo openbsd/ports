@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/25 00:32:58 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/07/11 05:59:42 brad Exp $
 
 DISTNAME=	libnet-1.0.1b
 CATEGORIES=	net
@@ -18,6 +18,7 @@ CONFIGURE_STYLE= gnu
 
 WRKDIST=	${WRKDIR}/Libnet-1.0.1b
 
+# remove this incorrect symlink so bsd.port.mk does not complain about it.
 post-install:
 	@rm -f ${PREFIX}/lib/libpwrite
 
