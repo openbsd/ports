@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.484 2001/10/26 17:34:31 pvalchev Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.485 2001/10/28 04:59:26 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1331,7 +1331,7 @@ ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
 # Do a brute-force ldd on all files under WRKINST. 
-.if ${ELF_TOOLCHAIN} == no
+.if ${ELF_TOOLCHAIN:L} == "no"
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
 	@-${SUDO} cp -f /usr/libexec/ld.so ${WRKINST}/usr/libexec
