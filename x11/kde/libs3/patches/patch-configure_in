@@ -1,18 +1,27 @@
-$OpenBSD: patch-configure_in,v 1.8 2003/01/27 19:16:47 espie Exp $
---- configure.in.orig	Tue Jan 14 14:01:29 2003
-+++ configure.in	Tue Jan 14 16:31:26 2003
-@@ -1051,6 +1051,14 @@ else
+$OpenBSD: patch-configure_in,v 1.9 2003/02/25 15:03:12 espie Exp $
+--- configure.in.orig	Thu Jan 23 00:29:31 2003
++++ configure.in	Tue Feb 25 12:53:48 2003
+@@ -628,7 +628,7 @@ AC_CHECK_FUNC(getaddrinfo,
+   ]
+ )
+ case "$target" in
+-  *-*-openbsd*)
++  *-*-openbsd2.*|*-*-openbsd3.[0-2])
+     dnl OpenBSD's getaddrinfo is not thread-safe up to 3.2
+     AC_DEFINE(HAVE_BROKEN_GETADDRINFO, 1, [Define if getaddrinfo is broken and should be replaced])
+     ;;
+@@ -1049,6 +1049,14 @@ if test "$path_su" = "no"; then
+     AC_MSG_WARN(su was not found)
+ else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
- fi
- 
++fi
++
 +dnl Check for sudo
 +AC_PATH_PROG(path_sudo, "sudo", "no")
 +if test "$path_sudo" = "no"; then
 +    AC_MSG_WARN(sudo was not found)
 +else
 +    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
-+fi
-+
+ fi
+ 
  dnl Check for POSIX.1b scheduling
- AC_MSG_CHECKING([POSIX.1b scheduling])
- AC_TRY_LINK([
