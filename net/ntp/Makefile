@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/07 18:13:43 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/07 18:21:05 danh Exp $
 
 DISTNAME=	ntp-4.0.99k
 CATEGORIES=	net
@@ -22,6 +22,7 @@ SUBPACKAGE?=
 PKGNAME=	ntp-doc-4.0.99k
 .endif
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
 		 --enable-accurate-adjtime --disable-IRIG
