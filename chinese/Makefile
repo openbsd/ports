@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/24 03:20:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/14 05:57:05 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 
 #    SUBDIR += Wnn
@@ -19,6 +19,7 @@
      SUBDIR += hc
 #    SUBDIR += hztty
      SUBDIR += kcfonts
+     SUBDIR += libtabe
      SUBDIR += lunar
 #    SUBDIR += mule-wnn4
 #    SUBDIR += nvi-big5
