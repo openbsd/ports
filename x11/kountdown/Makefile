@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/06 11:41:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/23 03:00:41 kevlo Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
-DISTNAME=	kountdown-0.2p1
+DISTNAME=	kountdown-0.3
 CATEGORIES=	x11
-NEED_VERSION=	1.508
+NEED_VERSION=	1.524
 
 HOMEPAGE=	http://w1.911.telia.com/~u91117365/kountdown.html
 
@@ -17,17 +17,15 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	http://w1.911.telia.com/~u91117365/download/kountdown/
 
-BUILD_DEPENDS=	::x11/qt2-designer
+LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3
 
-LIB_DEPENDS=	kdecore.3,DCOP,kdesu,kdeui,kio,kscreensaver,kssl,ksycoca::x11/kde/libs2
-
-MODULES=	qt2
+MODULES=	qt3
 
 MAKE_ENV=	${CONFIGURE_ENV}
-# Ensure qt2 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
