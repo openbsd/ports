@@ -1,0 +1,46 @@
+$OpenBSD: patch-khtml_khtml_part_h,v 1.2 2004/08/14 18:03:48 brad Exp $
+--- khtml/khtml_part.h.orig	Sun Apr  4 03:08:39 2004
++++ khtml/khtml_part.h	Fri Aug 13 16:04:22 2004
+@@ -287,6 +287,7 @@ public:
+    */
+   KParts::BrowserExtension *browserExtension() const;
+   KParts::LiveConnectExtension *liveConnectExtension( const khtml::RenderPart *) const;
++  KParts::BrowserHostExtension *browserHostExtension() const;
+ 
+   /**
+    * Returns a pointer to the HTML document's view.
+@@ -812,6 +813,16 @@ public:
+   KHTMLPart *findFrame( const QString &f );
+ 
+   /**
++   * @internal
++   * Recursively finds the part containing the frame with name @p f 
++   * and checks if it is accessible by @p callingPart
++   * Returns 0L if no suitable frame can't be found.
++   * Returns parent part if a suitable frame was found and
++   * frame info in @p *childFrame
++   */
++  KHTMLPart *findFrameParent( KParts::ReadOnlyPart *callingPart, const QString &f, khtml::ChildFrame **childFrame=0 );
++
++  /**
+    * Return the current frame (the one that has focus)
+    * Not necessarily a direct child of ours, framesets can be nested.
+    * Returns "this" if this part isn't a frameset.
+@@ -1368,6 +1379,8 @@ private:
+ 
+   bool restoreURL( const KURL &url );
+   void emitSelectionChanged();
++  // Returns whether callingHtmlPart may access this part
++  bool checkFrameAccess(KHTMLPart *callingHtmlPart);
+   bool openURLInFrame( const KURL &url, const KParts::URLArgs &urlArgs );
+   void startAutoScroll();
+   void stopAutoScroll();
+@@ -1426,7 +1439,7 @@ private:
+   DOM::DocumentImpl *xmlDocImpl() const;
+   khtml::ChildFrame *frame( const QObject *obj );
+ 
+-  khtml::ChildFrame *recursiveFrameRequest( const KURL &url, const KParts::URLArgs &args, bool callParent = true );
++  khtml::ChildFrame *recursiveFrameRequest( KHTMLPart *callingHtmlPart, const KURL &url, const KParts::URLArgs &args, bool callParent = true );
+ 
+   bool checkLinkSecurity( const KURL &linkURL,const QString &message = QString::null, const QString &button = QString::null );
+   QVariant executeScript( const QString& filename, int baseLine, const DOM::Node &n, const QString& script );
