@@ -1,0 +1,21 @@
+$OpenBSD: patch-xdmchoose_conf,v 1.1.1.1 2001/02/18 16:27:28 naddy Exp $
+--- xdmchoose.conf.orig	Fri Jan 19 02:28:40 2001
++++ xdmchoose.conf	Thu Jan 25 02:34:39 2001
+@@ -15,7 +15,7 @@ app.allowbroadcast	0
+ 
+ # Uncomment the line below to specify a script executed when the chooser starts
+ 
+-# app.startscript		"/etc/xdmchooser-script"
++# app.startscript	"/etc/xdmchooser-script"
+ # app.startscriptkill	"Xdialog"
+ app.extratext		1
+ app.allowctrlc		1
+@@ -29,7 +29,7 @@ unknown.highlight	"#f0f0ff"
+ unknown.shadow		"#808090"
+ unknown.tentry		"gray90"
+ 
+-panel.background	"xdmchoose-blur.xpm"
++panel.background	"%%PREFIX%%/share/xdmchoose/xdmchoose-blur.xpm"
+ 
+ title.foreground	"#000090"
+ title.text		"X Window System"

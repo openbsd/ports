@@ -1,0 +1,68 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/02/18 16:27:28 naddy Exp $
+#
+# Pre/post-installation setup of xdmchoose
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/xdmchoose.conf
+SAMPLE_FILE=$PREFIX/share/examples/xdmchoose/xdmchoose.conf
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
+    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| current sample file ${SAMPLE_FILE}"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install configuration files
+#
+do_install()
+{
+    install -o root -g wheel ${SAMPLE_FILE} ${CONFIG_FILE}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file, ${CONFIG_FILE},"
+    echo "| has been installed.  Please view this file and change"
+    echo "| the configuration to meet your needs"
+    echo "+---------------"
+    echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f ${CONFIG_FILE} ]; then
+	    do_notice "$1"
+	else
+	    do_install "$1"
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

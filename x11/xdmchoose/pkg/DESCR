@@ -1,0 +1,17 @@
+xdmchooser is a modifided version of the standard X11 chooser, with
+a slighty nicer 3D-ish interface.  Instead of broadcasting, it
+allows the user to supply a host via the keyboard.  This is useful
+when the list of machines extends beyond the limit of a broadcast,
+or is too cumbersome to enter on the command line (in one of the
+xdm config files).
+
+xdmping is a quick way of determining if a host is willing to provide
+an xdm login session.  This is probably only useful in certain
+circumstances.
+
+To get this to work, add/modify the following line in the xdm-config
+file:
+
+DisplayManager*chooser:         ${PREFIX}/bin/xdmchooser
+
+WWW: ${HOMEPAGE}

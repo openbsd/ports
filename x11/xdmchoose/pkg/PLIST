@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/18 16:27:28 naddy Exp $
+bin/xdmchooser
+bin/xdmping
+share/examples/xdmchoose/xdmchoose.conf
+share/xdmchoose/xdmchoose-blur.xpm
+share/xdmchoose/xdmchoose-plain.xpm
+share/xdmchoose/xdmchoose-tiled.xpm
+@dirrm share/examples/xdmchoose
+@dirrm share/xdmchoose
