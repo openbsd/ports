@@ -1,0 +1,228 @@
+
+Gets rid of the extraneous documentation that we don't need/want.
+
+--- ctm/ctm_rmail/ctm_rmail.1.orig2	Mon Feb 28 07:32:22 2000
++++ ctm/ctm_rmail/ctm_rmail.1	Mon Feb 28 07:32:49 2000
+@@ -6,27 +6,12 @@
+ .\" Author: Stephen McKay
+ .\"
+ .Dd January 24, 1995
+-.Dt CTM_MAIL 1
++.Dt CTM_RMAIL 1
+ .Os
+ .Sh NAME
+-.Nm ctm_smail ,
+-.Nm ctm_dequeue ,
+ .Nm ctm_rmail
+-.Nd send and receive
+-.Xr ctm 1
+-deltas via mail
++.Nd send and receive ctm deltas via mail
+ .Sh SYNOPSIS
+-.Nm ctm_smail
+-.Op Fl l Ar log
+-.Op Fl m Ar maxmsgsize
+-.Op Fl c Ar maxctmsize
+-.Op Fl q Ar queue-dir
+-.Ar ctm-delta
+-.Ar mail-alias
+-.Nm ctm_dequeue
+-.Op Fl l Ar log
+-.Op Fl n Ar numchunks
+-.Ar queue-dir
+ .Nm ctm_rmail
+ .Op Fl Dfuv
+ .Op Fl l Ar log
+@@ -35,104 +20,13 @@
+ .Op Fl b Ar basedir
+ .Op Ar
+ .Sh DESCRIPTION
+-In conjunction with the
+-.Xr ctm 1
+-command,
+-.Nm ctm_smail ,
+-.Nm ctm_dequeue
+-and
+-.Nm ctm_rmail
+-are used to distribute changes to a source tree via email.
+-.Nm ctm_smail
+-is given a compressed
+-.Xr ctm
+-delta, and a mailing list to send it to.  It splits the delta into manageable
+-pieces, encodes them as mail messages and sends them to the mailing list
+-(optionally queued to spread the mail load).
+-Each recipient uses
++The
+ .Nm ctm_rmail
++program is used
+ (either manually or automatically) to decode and reassemble the delta, and
+ optionally call
+ .Xr ctm
+ to apply it to the source tree.
+-At the moment,
+-several source trees are distributed, and by several sites.  These include
+-the FreeBSD-current source and CVS trees, distributed by
+-.Li freefall.FreeBSD.org .
+-.Pp
+-Command line arguments for
+-.Nm ctm_smail :
+-.Bl -tag -width indent
+-.It Fl l Ar log
+-Instead of appearing on
+-.Em stderr ,
+-error diagnostics and informational messages (other than command line errors)
+-are time stamped and written to the file
+-.Em log .
+-.It Fl m Ar maxmsgsize
+-Limit the maximum size mail message that
+-.Nm ctm_smail
+-is allowed to send.  It is approximate since mail headers and other niceties
+-are not counted in this limit.  If not specified, it will default to 64000
+-bytes, leaving room for 1535 bytes of headers before the rumoured 64k mail
+-limit.
+-.It Fl c Ar maxctmsize
+-Limit the maximum size delta that will be sent.  Deltas bigger that this
+-limit will cause an apology mail message to be sent to the mailing list.
+-This is to prevent massive changes overwhelming users' mail boxes.  Note that
+-this is the size before encoding.  Encoding causes a 4/3 size increase before
+-mail headers are added.  If not specified, there is no limit.
+-.It Fl q Ar queue-dir
+-Instead of mailing the delta pieces now, store them in the given directory
+-to be mailed later using
+-.Nm ctm_dequeue .
+-This feature allows the mailing of large deltas to be spread out over
+-hours or even days to limit the impact on recipients with limited network
+-bandwidth or small mail spool areas.
+-.El
+-.Pp
+-.Ar ctm-delta
+-is the delta to be sent, and
+-.Ar mail-alias
+-is the mailing list to send the delta to.
+-The mail messages are sent using
+-.Xr sendmail 8 .
+-.Pp
+-Command line arguments for
+-.Nm ctm_dequeue :
+-.Bl -tag -width indent
+-.It Fl l Ar log
+-Instead of appearing on
+-.Em stderr ,
+-error diagnostics and informational messages (other than command line errors)
+-are time stamped and written to the file
+-.Em log .
+-.It Fl n Ar numchunks
+-Limit the number of mail messages that
+-.Nm ctm_dequeue
+-will send per run.  By default,
+-.Nm ctm_dequeue
+-will send one mail message per run.
+-.El
+-.Pp
+-.Ar queuedir
+-is the directory containing the mail messages stored by
+-.Nm ctm_smail .
+-Up to
+-.Ar numchunks
+-mail messages will be sent in each run.  The recipient mailing list is already
+-encoded in the queued files.
+-.Pp
+-It is safe to run
+-.Nm ctm_dequeue
+-while
+-.Nm ctm_smail
+-is adding entries to the queue, or even to run
+-.Nm ctm_smail
+-multiple times concurrently, but a separate queue directory should be used
+-for each tree being distributed.  This is because entries are served in
+-alphabetical order, and one tree will be unfairly serviced before any others,
+-based on the delta names, not delta creation times.
+ .Pp
+ Command line arguments for
+ .Nm ctm_rmail :
+@@ -272,19 +166,8 @@
+ .Pp
+ You are then on your own!
+ .Sh EXAMPLES
+-To send delta 32 of
+-.Em src-cur
+-to a group of wonderful code hackers known to
+-.Xr sendmail
+-as
+-.Em src-guys ,
+-limiting the mail size to roughly 60000 bytes, you could use:
+-.Bd -literal -offset indent
+-.Ic ctm_smail -m 60000 /wherever/it/is/src-cur.0032.gz src-guys
+-.Ed
+-.Pp
+ To decode every
+-.Nm ctm-mail
++.Xr ctm 1
+ message in your mailbox, assemble them into complete deltas, then apply
+ any deltas built or lying around, you could use:
+ .Bd -literal -offset indent
+@@ -359,7 +242,7 @@
+ which allows
+ .Nm ctm_rmail
+ to execute
+-.Xr ctm
++.Xr ctm 1
+ on the (non-OpenBSD) machine that this example was taken from.
+ .Sh SECURITY
+ If you automatically take your mail and pass it to a file tree patcher, you
+@@ -409,11 +292,8 @@
+ .\" This next request is for sections 1, 6, 7 & 8 only
+ .\"     (command return values (to shell) and fprintf/stderr type diagnostics)
+ .Sh DIAGNOSTICS
+-.Nm ctm_smail ,
+-.Nm ctm_dequeue
+-and
+ .Nm ctm_rmail
+-return exit status 0 for success, and 1 for various failures.
++returns exit status 0 for success, and 1 for various failures.
+ .Nm ctm_rmail
+ is expected to be called from a mail transfer program, and thus signals
+ failure only when the input mail message should be bounced (preferably into
+@@ -424,24 +304,6 @@
+ .Nm ctm_rmail
+ returns an exit status of 0.
+ .Pp
+-In normal operation,
+-.Nm ctm_smail
+-will report messages like:
+-.Bd -literal -offset indent
+-ctm_smail: src-cur.0250.gz 1/2 sent to src-guys
+-.Ed
+-.Pp
+-or, if queueing,
+-.Bd -literal -offset indent
+-ctm_smail: src-cur.0250.gz 1/2 queued for src-guys
+-.Ed
+-.Pp
+-.Nm ctm_dequeue
+-will report messages like:
+-.Bd -literal -offset indent
+-ctm_dequeue: src-cur.0250.gz 1/2 sent
+-.Ed
+-.Pp
+ .Nm ctm_rmail
+ will report messages like:
+ .Bd -literal -offset indent
+@@ -470,6 +332,8 @@
+ .Sh SEE ALSO
+ .Xr ctm 1 ,
+ .Xr ctm 5
++.Pp
++.Pa "http://www.openbsd.org/ctm.html"
+ .\" .Sh STANDARDS
+ .\" .Sh HISTORY
+ .Sh AUTHOR
+--- ctm/ctm_rmail/Makefile.orig2	Mon Feb 28 07:33:51 2000
++++ ctm/ctm_rmail/Makefile	Mon Feb 28 07:34:01 2000
+@@ -4,6 +4,5 @@
+ PROG=           ctm_rmail
+ SRCS=           ctm_rmail.c error.c
+ CFLAGS+=        -Wall
+-MLINKS+=	ctm_rmail.1 ctm_smail.1
+ 
+ .include <bsd.prog.mk>
