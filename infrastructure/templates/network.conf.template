@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.32 2002/04/04 11:27:28 wilfried Exp $
+# $OpenBSD: network.conf.template,v 1.33 2002/04/07 03:21:34 brad Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -176,8 +176,6 @@ MASTER_SITE_TEX_CTAN+=	\
  	ftp://ftp.sunet.se/pub/text-processing/TeX/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
-	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.sourceforge.net/pub/mirrors/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
