@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmtz_wmtz_c,v 1.1.1.1 2001/03/09 08:43:39 wilfried Exp $
+--- wmtz/wmtz.c.orig	Sun Sep 24 15:45:17 2000
++++ wmtz/wmtz.c	Thu Mar  8 13:27:08 2001
+@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
+   month[0] = "JAN";  month[1] = "FEB";  month[2] = "MAR";
+   month[3] = "APR";  month[4] = "MAY";  month[5] = "JUN";
+   month[6] = "JUL";  month[7] = "AUG";  month[8] = "SEP";
+-  month[9] = "OUT";  month[10] = "NOV";  month[11] = "DEC";
++  month[9] = "OCT";  month[10] = "NOV";  month[11] = "DEC";
+   
+   week_day[0] = "SUNDAY   ";
+   week_day[1] = "MONDAY   ";
