@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/02 17:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/01 23:05:02 robert Exp $
 
 COMMENT=		"Dynamic DNS service update client"
 
 DISTNAME=		ddclient-3.6.3
 CATEGORIES=		net
-
-MAINTAINER=     	Sam Smith <s@msmith.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
