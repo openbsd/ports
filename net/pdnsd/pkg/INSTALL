@@ -1,11 +1,10 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/05/10 15:25:25 sturm Exp $
 #
 # Pre/post-installation setup of pdnsd
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
+# don't "set -e" to exit on errors, as do_add_user() needs this
+# use a sane path and install prefix
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
@@ -15,17 +14,28 @@ ID=pdnsd
 
 # Function: user "pdnsd" is not available
 #
-do_notice_user()
+do_add_user()
 {
-echo
-echo "+---------------"
-echo "| Please add user ${ID} and group ${ID}"
-echo "| "$1" won't work without it."
-echo "| Example:"
-echo "| groupadd ${ID}"
-echo "| useradd -c PDNSD -d /nonexistent -g ${ID} -s /sbin/nologin ${ID}"
-echo "+---------------"
-exit 1
+	groupinfo -e ${ID}
+	if [ $? -eq 0 ]; then
+		echo "===>  Using existing group '${ID}'"
+	else
+		echo "===>  Creating group '${ID}'"
+		groupadd ${ID}
+	fi
+
+	userinfo -e ${ID}
+	if [ $? -eq 0 ]; then
+		echo "===>  Using existing account '${ID}'"
+	else
+		echo "===>  Creating user '${ID}'"
+		useradd -g ${ID} \
+		-c "Proxy DNS Server" \
+		-m -d /nonexistent \
+		-s /sbin/nologin \
+		-p \* \
+		${ID}
+	fi
 }
 
 # Function: install configuration files
@@ -109,8 +119,7 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	userinfo  -e ${ID} || do_notice_user "$1"
-	groupinfo -e ${ID} || do_notice_user "$1"
+	do_add_user "$1"
 	;;
     POST-INSTALL)
 	if [ ! -d ${CONFIG_DIR} ]; then
