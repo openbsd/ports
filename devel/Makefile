@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2004/04/24 16:15:05 peter Exp $
+# $OpenBSD: Makefile,v 1.220 2004/04/28 08:34:32 xsa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -194,6 +194,7 @@
      SUBDIR += prc-tools
      SUBDIR += pth
      SUBDIR += py-Checker
+     SUBDIR += py-cheetah
      SUBDIR += py-mxDateTime
      SUBDIR += py-mxDateTime,py2.1
      SUBDIR += py-optik
