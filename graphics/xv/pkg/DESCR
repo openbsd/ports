@@ -10,3 +10,5 @@ Please read the documentation in the directory
   /usr/X11R6/share/doc/xv
 
 for proper usage.
+
+WWW: ${HOMEPAGE}
