@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/31 04:09:21 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/08 00:27:24 jolan Exp $
 bin/uqm
+share/doc/uqm/
 share/doc/uqm/manual.txt
+share/uqm/
+share/uqm/content/
+share/uqm/content/packages/
+share/uqm/content/packages/addons/
+share/uqm/content/packages/addons/uqmremix/
 share/uqm/content/packages/uqm-0.3-content.zip
 share/uqm/content/version
-@dirrm share/uqm/content/packages/addons/uqmremix
-@dirrm share/uqm/content/packages/addons
-@dirrm share/uqm/content/packages
-@dirrm share/uqm/content
-@dirrm share/uqm
-@dirrm share/doc/uqm

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2004/03/31 03:42:16 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/08 00:27:24 jolan Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	i386 powerpc
 
 COMMENT=		"ur-quan masters: sdl port of star control 2"
-COMMENT-3domusic=	"ur-quan masters: 3DO music content"
 COMMENT-remix1=		"ur-quan masters: remix pack number one"
 COMMENT-remix2=		"ur-quan masters: remix pack number two"
+COMMENT-remix3=		"ur-quan masters: remix pack number three"
+COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
 COMMENT-voice=		"ur-quan masters: speech content"
 
 VER=			0.3
@@ -18,14 +19,16 @@ MDIST=			uqm-${VER}-3domusic.zip
 VDIST=			uqm-${VER}-voice.zip
 RM1DIST=		uqm-remix-pack1.zip
 RM2DIST=		uqm-remix-pack2.zip
+RM3DIST=		uqm-remix-pack3.zip
 DISTFILES=		${PDIST} ${CDIST}
-SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST}
+SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
 PKGNAME=		uqm-${VER}
-PKGNAME-3domusic=	uqm-3domusic-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
+PKGNAME-remix3=		uqm-remix3-${VER}
+PKGNAME-threedomusic=	uqm-threedomusic-${VER}
 PKGNAME-voice=		uqm-voice-${VER}
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
@@ -47,14 +50,10 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-PSEUDO_FLAVORS=	3domusic remix1 remix2 voice
+PSEUDO_FLAVORS=	remix1 remix2 remix3 threedomusic voice
 FLAVOR?=
 
 MULTI_PACKAGES=
-.if ${FLAVOR:L:M3domusic}
-DISTFILES+=	${MDIST}
-MULTI_PACKAGES+=-3domusic
-.endif
 .if ${FLAVOR:L:Mremix1}
 DISTFILES+=	${RM1DIST}
 MULTI_PACKAGES+=-remix1
@@ -62,6 +61,14 @@ MULTI_PACKAGES+=-remix1
 .if ${FLAVOR:L:Mremix2}
 DISTFILES+=	${RM2DIST}
 MULTI_PACKAGES+=-remix2
+.endif
+.if ${FLAVOR:L:Mremix3}
+DISTFILES+=	${RM3DIST}
+MULTI_PACKAGES+=-remix3
+.endif
+.if ${FLAVOR:L:Mthreedomusic}
+DISTFILES+=	${MDIST}
+MULTI_PACKAGES+=-threedomusic
 .endif
 .if ${FLAVOR:L:Mvoice}
 DISTFILES+=	${VDIST}
@@ -71,10 +78,6 @@ MULTI_PACKAGES+=-voice
 SUBPACKAGE?=
 
 .if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-3domusic"
-PKG_ARCH=	*
-RUN_DEPENDS=	::games/uqm
-. endif
 . if ${SUBPACKAGE} == "-remix1"
 PKG_ARCH=	*
 RUN_DEPENDS=	::games/uqm
@@ -82,6 +85,14 @@ RUN_DEPENDS=	::games/uqm
 . if ${SUBPACKAGE} == "-remix2"
 PKG_ARCH=	*
 RUN_DEPENDS=    ::games/uqm
+. endif
+. if ${SUBPACKAGE} == "-remix3"
+PKG_ARCH=	*
+RUN_DEPENDS=	::games/uqm
+. endif
+. if ${SUBPACKAGE} == "-threedomusic"
+PKG_ARCH=	*
+RUN_DEPENDS=	::games/uqm
 . endif
 . if ${SUBPACKAGE} == "-voice"
 PKG_ARCH=	*
@@ -117,10 +128,6 @@ do-install:
 		${PREFIX}/share/uqm/content
 	${INSTALL_DATA} ${FULLDISTDIR}/${CDIST} \
 		${PREFIX}/share/uqm/content/packages
-.if ${FLAVOR:L:M3domusic}
-	${INSTALL_DATA} ${FULLDISTDIR}/${MDIST} \
-		${PREFIX}/share/uqm/content/packages
-.endif
 .if ${FLAVOR:L:Mremix1}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM1DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
@@ -128,6 +135,14 @@ do-install:
 .if ${FLAVOR:L:Mremix2}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM2DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
+.endif
+.if ${FLAVOR:L:Mremix2}
+	${INSTALL_DATA} ${FULLDISTDIR}/${RM3DIST} \
+		${PREFIX}/share/uqm/content/packages/addons/uqmremix
+.endif
+.if ${FLAVOR:L:Mthreedomusic}
+	${INSTALL_DATA} ${FULLDISTDIR}/${MDIST} \
+		${PREFIX}/share/uqm/content/packages
 .endif
 .if ${FLAVOR:L:Mvoice}
 	${INSTALL_DATA} ${FULLDISTDIR}/${VDIST} \
