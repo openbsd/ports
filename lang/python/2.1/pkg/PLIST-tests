@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2004/09/18 10:11:57 espie Exp $
 @option no-default-conflict
-@pkgcfl python-tests-2.1*
+@conflict python-tests->=2.1,<2.2
 lib/python2.1/test/
 lib/python2.1/test/README
 lib/python2.1/test/__init__.py

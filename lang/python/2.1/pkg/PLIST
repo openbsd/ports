@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/18 10:11:57 espie Exp $
 @option no-default-conflict
-@pkgcfl python-2.1*
+@conflict python->=2.1,<2.2
 bin/pydoc2.1
 bin/python2.1
 include/python2.1/

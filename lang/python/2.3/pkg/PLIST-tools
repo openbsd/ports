@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-tools,v 1.2 2004/08/05 21:50:25 xsa Exp $
+@comment $OpenBSD: PLIST-tools,v 1.3 2004/09/18 10:11:57 espie Exp $
 @option no-default-conflict
-@pkgcfl python-tools-2.3*
+@conflict python-tools->=2.3,<2.4
 lib/python2.3/Tools/
 lib/python2.3/Tools/README
 lib/python2.3/Tools/audiopy/
