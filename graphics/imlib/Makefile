@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/30 06:43:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/30 21:35:09 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.4
@@ -15,7 +15,7 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff34 \
+		tiff:${PORTSDIR}/graphics/tiff34
 
 USE_GMAKE=	yes
 USE_X11=	yes
