@@ -1,0 +1,30 @@
+$OpenBSD: patch-wdsetup_c,v 1.1 2001/05/09 17:53:44 millert Exp $
+--- wdsetup.c.orig	Wed Jan 20 11:35:09 1999
++++ wdsetup.c	Wed May  9 11:28:32 2001
+@@ -17,12 +17,17 @@
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <string.h>
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <machine/sysarch.h>
++#else
+ #ifdef __alpha__
+ #define __KERNEL__
+ #include <sys/types.h>
+ #include <asm/types.h>
+ #include <sys/io.h>
+ #endif
++#endif
+ 
+ #define wdsetup_version "0.6b"
+ #define PERM_OFF 0
+@@ -2012,7 +2017,7 @@ note: if any of the following options ar
+    }
+  }
+ 
+- if (iopl(3)) {
++ if (i386_iopl(3)) {
+    perror("io-perm2");
+    exit (-1);
+  }
