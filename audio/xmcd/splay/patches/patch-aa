@@ -1,0 +1,19 @@
+*** mpegsound/rawplayer.cc	Thu Mar 27 22:18:47 1997
+--- mpegsound/rawplayer.cc	Tue Apr  1 19:33:46 1997
+***************
+*** 8,14 ****
+  
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <sys/soundcard.h>
+  
+  #include "mpegsound.h"
+  
+--- 8,14 ----
+  
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <machine/soundcard.h>
+  
+  #include "mpegsound.h"
+  

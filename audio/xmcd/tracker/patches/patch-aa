@@ -1,0 +1,73 @@
+*** Makefile.orig	Tue May  7 19:20:50 1996
+--- Makefile	Tue Nov 12 06:56:18 1996
+***************
+*** 20,26 ****
+  
+  OPTS=-c 
+  
+! PREFIX=/users/algo/espie/pub
+  # Destination directory for tracker binaries and manpage.
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+--- 20,26 ----
+  
+  OPTS=-c 
+  
+! PREFIX?=/users/algo/espie/pub
+  # Destination directory for tracker binaries and manpage.
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+***************
+*** 166,172 ****
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
+  
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions -fno-strength-reduce
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+--- 166,172 ----
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
+  
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+***************
+*** 250,256 ****
+  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+  st_virt$O automaton$O
+  
+! all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
+  
+  config.h: $(CONFIG)config.h 
+  	rm -f config.h
+--- 250,256 ----
+  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+  st_virt$O automaton$O
+  
+! all:    tracker${EXE} randomize${EXE}
+  
+  config.h: $(CONFIG)config.h 
+  	rm -f config.h
+***************
+*** 272,280 ****
+  install: 
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+- 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
+  
+  # no manpage available, use the texinfo manual.
+  install.man:
+--- 272,279 ----
+  install: 
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) Lib/compression_methods ${COMPRESSION_FILE}
+  
+  # no manpage available, use the texinfo manual.
+  install.man:

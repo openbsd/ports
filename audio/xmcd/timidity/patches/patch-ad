@@ -1,0 +1,13 @@
+*** gravis.cfg.bak	Mon May 20 20:10:15 1996
+--- gravis.cfg	Sun Nov 17 12:43:31 1996
+***************
+*** 3,8 ****
+--- 3,10 ----
+  # programs. 
+  #
+  
++ dir %PREFIX%/lib/timidity/patch
++ 
+  bank 0
+  
+  	0 acpiano

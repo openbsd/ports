@@ -1,0 +1,138 @@
+*** install.sh.orig	Tue Aug 12 19:12:27 1997
+--- install.sh	Sun Sep  7 16:23:43 1997
+***************
+*** 48,53 ****
+--- 48,56 ----
+  ERRFILE=/tmp/xmcd.err
+  TMPFILE=/tmp/xmcdinst.$$
+  
++ # Flag for indicating we do not want to prompt the user if possible.
++ NO_PROMPT=1
++ 
+  #
+  # Utility functions
+  #
+***************
+*** 586,592 ****
+  
+  while :
+  do
+! 	if getstr "\nEnter X binary directory\n[${BINDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 589,599 ----
+  
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X binary directory - using ${BINDIR}"
+! 		break
+! 	elif getstr "\nEnter X binary directory\n[${BINDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 634,640 ****
+  
+  while :
+  do
+! 	if getstr "\nEnter X library directory\n[${LIBDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 641,651 ----
+  
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X library directory - using ${LIBDIR}"
+! 		break
+! 	elif getstr "\nEnter X library directory\n[${LIBDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 657,663 ****
+  APPDEFAULTSDIR=$LIBDIR/app-defaults
+  while :
+  do
+! 	if getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 668,678 ----
+  APPDEFAULTSDIR=$LIBDIR/app-defaults
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X app-defaults directory - using ${LIBDIR}"
+! 		break
+! 	elif getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 680,686 ****
+  XMCDLIB=$LIBDIR/xmcd
+  while :
+  do
+! 	if getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 695,705 ----
+  XMCDLIB=$LIBDIR/xmcd
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "xmcd library directory - using ${XMCDLIB}"
+! 		break
+! 	elif getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 733,739 ****
+  $ECHO "\n\nThe on-line manual directory is where the man pages in"
+  $ECHO "in the xmcd package will be installed."
+  
+! if getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
+  then
+  	MANDIR=$ANS
+  fi
+--- 752,761 ----
+  $ECHO "\n\nThe on-line manual directory is where the man pages in"
+  $ECHO "in the xmcd package will be installed."
+  
+! if [ -n "$NO_PROMPT" ]
+! then
+! 	$ECHO "xmcd on-line manual directory - using ${MANDIR}"
+! elif getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
+  then
+  	MANDIR=$ANS
+  fi
+***************
+*** 758,764 ****
+  		MANSUFFIX=1
+  	fi
+  
+! 	if getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
+  	then
+  		MANSUFFIX=$ANS
+  	fi
+--- 780,789 ----
+  		MANSUFFIX=1
+  	fi
+  
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "xmcd on-line manual file name suffix - using ${MANSUFFIX}"
+! 	elif getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
+  	then
+  		MANSUFFIX=$ANS
+  	fi

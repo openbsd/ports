@@ -1,0 +1,46 @@
+*** cda_d/Imakefile.orig	Sun Nov 30 18:36:25 1997
+--- cda_d/Imakefile	Wed May 20 21:28:11 1998
+***************
+*** 86,92 ****
+  LOCAL_LIBRARIES=
+  #else
+  #if defined(OpenBSDArchitecture)
+! LOCAL_LIBRARIES=-lncurses -ltermlib
+  #else
+  #if defined(UltrixArchitecture)
+  LOCAL_LIBRARIES=-lcursesX
+--- 86,92 ----
+  LOCAL_LIBRARIES=
+  #else
+  #if defined(OpenBSDArchitecture)
+! LOCAL_LIBRARIES=-lcurses -ltermlib
+  #else
+  #if defined(UltrixArchitecture)
+  LOCAL_LIBRARIES=-lcursesX
+***************
+*** 97,103 ****
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+--- 97,103 ----
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses -ltermlib -lossaudio
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+***************
+*** 107,112 ****
+--- 107,113 ----
+  #endif	/* LinuxArchitecture OpenBSDArchitecture */
+  #endif	/* SunArchitecture */
+  
++ MANSUFFIX = 1
+  
+  /*
+   * C Source files

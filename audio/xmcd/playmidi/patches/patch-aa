@@ -1,0 +1,16 @@
+*** patchload.c.orig	Sun Nov 20 03:46:34 1994
+--- patchload.c	Mon Feb 27 23:02:13 1995
+***************
+*** 7,13 ****
+--- 7,17 ----
+   *************************************************************************/
+  
+  #include "playmidi.h"
++ #ifdef __FreeBSD__
++ #include <machine/ultrasound.h>
++ #else
+  #include <sys/ultrasound.h>
++ #endif
+  #include <sys/stat.h>
+  #include <fcntl.h>
+  #include <unistd.h>
