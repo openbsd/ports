@@ -1,14 +1,29 @@
-*** includes.h.orig	Tue Apr 21 17:30:18 1998
---- includes.h	Tue Apr 21 17:39:57 1998
+*** includes.h.orig	Mon May 11 15:37:45 1998
+--- includes.h	Tue May 12 11:41:46 1998
 ***************
-*** 554,559 ****
---- 554,562 ----
-  #define HAVE_MEMMOVE
-  #define USE_GETCWD
-  #define USE_SETSID
+*** 503,510 ****
+  #define USE_DIRECT
+  #endif
+  
+  
+! #ifdef NETBSD 
+  #ifdef NetBSD1_3
+  #include <string.h>
+  #ifdef ALLOW_CHANGE_PASSWORD
+--- 503,518 ----
+  #define USE_DIRECT
+  #endif
+  
++ #ifdef __OpenBSD__
++ #ifndef QSORT_CAST
++ #define QSORT_CAST (int (*)(const void *, const void *))
++ #endif /* QSORT_CAST */
 + #ifdef ALLOW_CHANGE_PASSWORD
 + #include <termios.h>
-+ #endif
-  #endif 
++ #endif /* ALLOW_CHANGE_PASSWORD) */
++ #endif /* __OpenBSD__ */
   
-  #ifdef AIX
+! #ifdef NETBSD
+  #ifdef NetBSD1_3
+  #include <string.h>
+  #ifdef ALLOW_CHANGE_PASSWORD

@@ -1,0 +1,19 @@
+*** slprintf.c.orig	Tue May 12 11:03:20 1998
+--- slprintf.c	Tue May 12 11:06:29 1998
+***************
+*** 45,51 ****
+  		/* note: we don't free the old memory (if any) as we don't 
+  		   want a malloc lib to reuse the memory as it will
+  		   have the wrong permissions */
+! 		buf = memalign(pagesize, len);
+  		if (buf) {
+  			if (mprotect(buf+(len-pagesize), pagesize, PROT_READ) != 0) {
+  				exit(1);
+--- 45,51 ----
+  		/* note: we don't free the old memory (if any) as we don't 
+  		   want a malloc lib to reuse the memory as it will
+  		   have the wrong permissions */
+! 		buf = malloc(len);
+  		if (buf) {
+  			if (mprotect(buf+(len-pagesize), pagesize, PROT_READ) != 0) {
+  				exit(1);

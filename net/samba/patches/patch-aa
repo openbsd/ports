@@ -1,5 +1,5 @@
-*** Makefile.orig	Sat Mar 28 05:59:09 1998
---- Makefile	Wed Apr 22 13:19:36 1998
+*** Makefile.orig	Mon May 11 15:37:44 1998
+--- Makefile	Mon May 11 20:15:46 1998
 ***************
 *** 5,11 ****
   ###########################################################################
@@ -108,7 +108,7 @@
   # set this to the name of the default account, which is the one
   # to use when no username or password is specified.  This can be overridden
 ***************
-*** 429,436 ****
+*** 430,437 ****
   
   # This is for OpenBSD
   # contributed by todd@openbsd.org
@@ -117,7 +117,7 @@
   
   # This is for NEXTSTEP Release 2.X
   # No Posix.
---- 430,437 ----
+--- 431,438 ----
   
   # This is for OpenBSD
   # contributed by todd@openbsd.org
@@ -127,7 +127,24 @@
   # This is for NEXTSTEP Release 2.X
   # No Posix.
 ***************
-*** 823,830 ****
+*** 755,761 ****
+  
+  smbd: $(SMBDOBJ) $(ARCFOUR_OBJ)
+  	@echo Linking smbd
+! 	@$(CC) $(CFLAGS) -o smbd $(SMBDOBJ) $(ARCFOUR_OBJ) $(LIBS) $(AFS_LIBS)
+  
+  smbrun: smbrun.o 
+  	@echo Linking smbrun
+--- 756,762 ----
+  
+  smbd: $(SMBDOBJ) $(ARCFOUR_OBJ)
+  	@echo Linking smbd
+! 	@$(CC) $(CFLAGS) -o smbd $(SMBDOBJ) $(ARCFOUR_OBJ) $(LIBS) $(LIBSM) $(AFS_LIBS)
+  
+  smbrun: smbrun.o 
+  	@echo Linking smbrun
+***************
+*** 824,831 ****
   install: installbin installman installscripts installcp
   
   installbin: all
@@ -136,7 +153,7 @@
   
   installscripts:
   	@$(SHELL) $(srcdir)installscripts.sh $(INSTALLPERMS) $(BINDIR) $(SCRIPTS)
---- 824,831 ----
+--- 825,832 ----
   install: installbin installman installscripts installcp
   
   installbin: all
@@ -146,7 +163,7 @@
   installscripts:
   	@$(SHELL) $(srcdir)installscripts.sh $(INSTALLPERMS) $(BINDIR) $(SCRIPTS)
 ***************
-*** 846,853 ****
+*** 847,854 ****
   	@$(SHELL) $(srcdir)uninstallman.sh $(MANDIR) $(srcdir)
   
   uninstallbin:
@@ -155,7 +172,7 @@
   
   uninstallscripts:
   	@$(SHELL) $(srcdir)uninstallscripts.sh $(INSTALLPERMS) $(BINDIR) $(SCRIPTS)
---- 847,854 ----
+--- 848,855 ----
   	@$(SHELL) $(srcdir)uninstallman.sh $(MANDIR) $(srcdir)
   
   uninstallbin:
