@@ -1,0 +1,31 @@
+--- docs/Makefile.in.orig	Mon Sep 18 08:49:22 2000
++++ docs/Makefile.in	Mon Sep 18 08:50:46 2000
+@@ -44,6 +44,8 @@
+ 
+ SHELL = /bin/sh
+ 
++DESTDIR = 
++
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+@@ -349,15 +351,15 @@
+ 
+ # For Unix and MSDOS only
+ install: gnuplot.gih
+-	$(top_srcdir)/mkinstalldirs $(datadir)
+-	$(INSTALL_DATA) gnuplot.gih $(datadir)/gnuplot.gih
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)
++	$(INSTALL_DATA) gnuplot.gih $(DESTDIR)$(datadir)/gnuplot.gih
+ 
+ uninstall:
+-	rm -f $(datadir)/gnuplot.gih
++	rm -f $(DESTDIR)$(datadir)/gnuplot.gih
+ 
+ # for VMS only
+ install-vms: gnuplot.hlp
+-	$(INSTALL_DATA) gnuplot.hlp $(datadir)/gnuplot.hlp
++	$(INSTALL_DATA) gnuplot.hlp $(DESTDIR)$(datadir)/gnuplot.hlp
+ 
+ distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+ 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/09/22 20:34:57 danh Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/09/22 21:27:30 brad Exp $
 bin/gnuplot
+!%%no_x11%%
 bin/lasergnu
 man/man1/gnuplot.1
 man/man1/lasergnu.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/22 20:34:56 danh Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/22 21:27:29 brad Exp $
 
 DISTNAME=	gnuplot-3.7.1
 CATEGORIES=	math graphics
@@ -9,9 +9,9 @@ MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnuplot
 
-HOMEPAGE=	http://www.gnuplot.org/
+LIB_DEPENDS=	png.1::graphics/png
 
-LIB_DEPENDS=	png::graphics/png
+HOMEPAGE=	http://www.gnuplot.org/
 
 MAINTAINER=	danh@openbsd.org
 
@@ -23,15 +23,16 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS+= --without-linux-vga --without-gd \
-		 --with-png --with-gnu-readline --with-lasergnu 
+USE_GMAKE=	Yes
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--without-linux-vga --without-gd \
+		--with-gnu-readline --with-lasergnu
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
 .else
 USE_X11=	Yes
-CONFIGURE_ARGS+= --with-x
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,55 @@
+--- Makefile.in.orig	Wed Oct 27 07:15:10 1999
++++ Makefile.in	Mon Sep 18 09:28:46 2000
+@@ -22,6 +22,8 @@
+ PACKAGE=@PACKAGE@
+ VERSION=@VERSION@
+ 
++DESTDIR = 
++
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+@@ -351,24 +353,24 @@
+ ################################################################
+ 
+ install: all $(LASERGNU)
+-	$(srcdir)/mkinstalldirs $(bindir)
+-	$(srcdir)/mkinstalldirs $(datadir)
+-	$(srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL_PROGRAM) gnuplot $(bindir)/gnuplot
+-	test ! -f gnuplot_x11 || $(INSTALL_PROGRAM) gnuplot_x11 $(bindir)/gnuplot_x11
+-	-$(INSTALL_DATA) $(srcdir)/docs/gnuplot.1 $(mandir)/man1/gnuplot.1
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(datadir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
++	$(INSTALL_PROGRAM) gnuplot $(DESTDIR)$(bindir)/gnuplot
++	test ! -f gnuplot_x11 || $(INSTALL_PROGRAM) gnuplot_x11 $(DESTDIR)$(bindir)/gnuplot_x11
++	-$(INSTALL_DATA) $(srcdir)/docs/gnuplot.1 $(DESTDIR)$(mandir)/man1/gnuplot.1
+ 	-cd docs && $(MAKE) $(MFLAGS) install
+ 	@LINUXSUID@
+ 
+ lasergnu_install: lasergnu docs/lasergnu.1
+-	$(INSTALL_SCRIPT) $(srcdir)/lasergnu $(bindir)/lasergnu
+-	$(INSTALL_DATA) $(srcdir)/docs/lasergnu.1 $(mandir)/man1/lasergnu.1
++	$(INSTALL_SCRIPT) $(srcdir)/lasergnu $(DESTDIR)$(bindir)/lasergnu
++	$(INSTALL_DATA) $(srcdir)/docs/lasergnu.1 $(DESTDIR)$(mandir)/man1/lasergnu.1
+ 
+ lasergnu_noinstall:
+ 
+ uninstall:
+-	rm -f $(bindir)/gnuplot $(bindir)/gnuplot_x11
+-	rm -f $(mandir)/man1/gnuplot.1 $(mandir)/man1/lasergnu.1
++	rm -f $(DESTDIR)$(bindir)/gnuplot $(DESTDIR)$(bindir)/gnuplot_x11
++	rm -f $(DESTDIR)$(mandir)/man1/gnuplot.1 $(DESTDIR)$(mandir)/man1/lasergnu.1
+ 	cd docs && $(MAKE) $(MFLAGS)
+ 
+ ################################################################
+@@ -387,7 +389,7 @@
+ 	cd docs && $(MAKE) $(MFLAGS) gnuplot.gih
+ 
+ demo/binary1 demo/binary2 demo/binary3: bf_test
+-	wd=`pwd` && cd $(srcdir)/demo && $$wd/bf_test
++	./bf_test
+ 
+ bf_test: bf_test.o binary.o alloc.o
+ 	$(LINK) bf_test.o binary.o alloc.o $(LIBS)
