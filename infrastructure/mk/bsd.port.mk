@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.635 2004/08/06 11:31:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.636 2004/08/08 16:43:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1287,7 +1287,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		Xpackage) early_exit=true;; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
-			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
+			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' _MASTER_LOCK=${FULLPKGNAME} WRKDIR=${WRKDIR}/$$dir"; \
 			dep="/nonexistent";; \
 		esac; \
 		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
@@ -2013,7 +2013,9 @@ _internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
 	SHARED_ONLY="${SHARED_ONLY}" \
-	perl ${PORTSDIR}/infrastructure/install/make-plist \
+	OWNER=`id -u` \
+	GROUP=`id -g` \
+	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
 	${_extra_prefixes} ${_tmpvars}
 .endif
 

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.48 2004/08/08 14:13:41 espie Exp $
+# $OpenBSD: make-plist,v 1.49 2004/08/08 16:43:15 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,6 +24,7 @@ use File::Spec;
 use File::Find;
 use File::Compare;
 use File::Basename;
+use POSIX;
 
 
 my $base;
@@ -743,6 +744,13 @@ for my $plist (@l) {
 		die $orig->{filename}.".orig present" 
 		    if -e $orig->{filename}.".orig";
 	}
+}
+
+if (defined $ENV{'GROUP'}) {
+	POSIX::setgid($ENV{'GROUP'});
+}
+if (defined $ENV{'OWNER'}) {
+	POSIX::setuid($ENV{'OWNER'});
 }
 
 for my $plist (@l) {
