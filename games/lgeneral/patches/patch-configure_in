@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2001/08/11 00:58:26 pvalchev Exp $
+--- configure.in.orig	Fri Aug  3 13:45:21 2001
++++ configure.in	Fri Aug 10 17:46:56 2001
+@@ -60,7 +60,7 @@ AC_SUBST(sound_flag)
+ AC_SUBST(mixer_flag)
+ 
+ dnl installation path
+-inst_dir=$datadir/games/lgeneral
++inst_dir=$datadir/lgeneral
+ inst_flag="-DSRC_DIR=\\\"$inst_dir\\\""
+ 
+ AC_ARG_ENABLE( install,

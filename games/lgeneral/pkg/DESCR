@@ -1,0 +1,8 @@
+LGeneral is a turn-based strategy engine heavily inspired by Panzer
+General. You play single scenarios or whole campaigns turn by turn
+against a human player or the AI. Things like entrenchment, rugged
+defence, defensive fire, ambushs, unit supplies, weather influence
+(implemented soon), reinforcements (implemented soon), etc contribute
+to the stratetgic depth of the game.
+
+WWW: ${HOMEPAGE}

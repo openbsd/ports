@@ -1,0 +1,99 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 00:58:26 pvalchev Exp $
+bin/lgeneral
+share/doc/lgeneral/README
+share/lgeneral/campaigns/test.cmp
+share/lgeneral/gfx/flags/test.bmp
+share/lgeneral/gfx/logo.bmp
+share/lgeneral/gfx/maps/test/airport.bmp
+share/lgeneral/gfx/maps/test/beach.bmp
+share/lgeneral/gfx/maps/test/crosshair.bmp
+share/lgeneral/gfx/maps/test/damage_bars.bmp
+share/lgeneral/gfx/maps/test/explosion.bmp
+share/lgeneral/gfx/maps/test/fog.bmp
+share/lgeneral/gfx/maps/test/forest.bmp
+share/lgeneral/gfx/maps/test/grid.bmp
+share/lgeneral/gfx/maps/test/harbor.bmp
+share/lgeneral/gfx/maps/test/mountains.bmp
+share/lgeneral/gfx/maps/test/pattern.bmp
+share/lgeneral/gfx/maps/test/plains.bmp
+share/lgeneral/gfx/maps/test/river.bmp
+share/lgeneral/gfx/maps/test/road.bmp
+share/lgeneral/gfx/maps/test/sel_frame.bmp
+share/lgeneral/gfx/maps/test/town.bmp
+share/lgeneral/gfx/maps/test/water.bmp
+share/lgeneral/gfx/themes/standard/accept_button.bmp
+share/lgeneral/gfx/themes/standard/air_mode_button.bmp
+share/lgeneral/gfx/themes/standard/cancel_button.bmp
+share/lgeneral/gfx/themes/standard/deploy_button.bmp
+share/lgeneral/gfx/themes/standard/down_arrow.bmp
+share/lgeneral/gfx/themes/standard/edit_back.bmp
+share/lgeneral/gfx/themes/standard/edit_frame.bmp
+share/lgeneral/gfx/themes/standard/embark_button.bmp
+share/lgeneral/gfx/themes/standard/end_turn_button.bmp
+share/lgeneral/gfx/themes/standard/grid_button.bmp
+share/lgeneral/gfx/themes/standard/hori_ctrl.bmp
+share/lgeneral/gfx/themes/standard/hori_ctrl_button.bmp
+share/lgeneral/gfx/themes/standard/life_bar_button.bmp
+share/lgeneral/gfx/themes/standard/list_frame.bmp
+share/lgeneral/gfx/themes/standard/lower_bar.bmp
+share/lgeneral/gfx/themes/standard/map_button.bmp
+share/lgeneral/gfx/themes/standard/melt_button.bmp
+share/lgeneral/gfx/themes/standard/menu_button.bmp
+share/lgeneral/gfx/themes/standard/menu_text_button.bmp
+share/lgeneral/gfx/themes/standard/music_button.bmp
+share/lgeneral/gfx/themes/standard/parent_back.bmp
+share/lgeneral/gfx/themes/standard/parent_frame.bmp
+share/lgeneral/gfx/themes/standard/rename_button.bmp
+share/lgeneral/gfx/themes/standard/scen_info_button.bmp
+share/lgeneral/gfx/themes/standard/show_cpu_turn_button.bmp
+share/lgeneral/gfx/themes/standard/sound_button.bmp
+share/lgeneral/gfx/themes/standard/stan_font.bmp
+share/lgeneral/gfx/themes/standard/status_font.bmp
+share/lgeneral/gfx/themes/standard/status_icons.bmp
+share/lgeneral/gfx/themes/standard/supply_button.bmp
+share/lgeneral/gfx/themes/standard/text_button.bmp
+share/lgeneral/gfx/themes/standard/title.bmp
+share/lgeneral/gfx/themes/standard/track_ball.bmp
+share/lgeneral/gfx/themes/standard/undo_button.bmp
+share/lgeneral/gfx/themes/standard/up_arrow.bmp
+share/lgeneral/gfx/themes/standard/upper_bar.bmp
+share/lgeneral/gfx/themes/standard/weather_button.bmp
+share/lgeneral/gfx/themes/standard/window_button.bmp
+share/lgeneral/gfx/units/test_allies.bmp
+share/lgeneral/gfx/units/test_axis.bmp
+share/lgeneral/gfx/units/test_blue.bmp
+share/lgeneral/gfx/units/test_red.bmp
+share/lgeneral/maps/test.mtd
+share/lgeneral/maps/test1.map
+share/lgeneral/maps/test2.map
+share/lgeneral/nations/test.nations
+share/lgeneral/packages/test.inf
+share/lgeneral/scenarios/test1.scn
+share/lgeneral/scenarios/test2.1.scn
+share/lgeneral/scenarios/test2.2.scn
+share/lgeneral/sounds/test/explosion.wav
+share/lgeneral/sounds/test/select.wav
+share/lgeneral/sounds/themes/standard/click.wav
+share/lgeneral/sounds/themes/standard/edit.wav
+share/lgeneral/units/test.ucd
+share/lgeneral/units/test_blue.units
+share/lgeneral/units/test_red.units
+@dirrm share/lgeneral/units
+@dirrm share/lgeneral/sounds/themes/standard
+@dirrm share/lgeneral/sounds/themes
+@dirrm share/lgeneral/sounds/test
+@dirrm share/lgeneral/sounds
+@dirrm share/lgeneral/scenarios
+@dirrm share/lgeneral/packages
+@dirrm share/lgeneral/nations
+@dirrm share/lgeneral/maps
+@dirrm share/lgeneral/gfx/units
+@dirrm share/lgeneral/gfx/themes/standard
+@dirrm share/lgeneral/gfx/themes
+@dirrm share/lgeneral/gfx/maps/test
+@dirrm share/lgeneral/gfx/maps
+@dirrm share/lgeneral/gfx/flags
+@dirrm share/lgeneral/gfx
+@dirrm share/lgeneral/campaigns
+@dirrm share/lgeneral
+@dirrm share/doc/lgeneral
