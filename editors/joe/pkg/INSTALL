@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/05/17 04:23:39 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/06/02 16:29:15 form Exp $
 #
 # Pre/post-installation setup of joe
 
@@ -29,7 +29,7 @@ do_notice()
 #
 do_install()
 {
-	install -o root -g wheel -m 755 ${CONFIG_DIR}
+	install -d -o root -g wheel -m 755 ${CONFIG_DIR}
 	install -o root -g wheel -m 644 ${SAMPLE_CONFIG_DIR}/* ${CONFIG_DIR}
 	echo
 	echo "+---------------"
