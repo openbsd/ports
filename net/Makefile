@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2000/05/26 01:54:43 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2000/06/02 13:47:26 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -79,7 +79,7 @@
      SUBDIR += nsping
      SUBDIR += ntop
 #    SUBDIR += p5-Archie
-#    SUBDIR += p5-Net
+     SUBDIR += p5-libnet
 #    SUBDIR += p5-Net-DNS
 #    SUBDIR += p5-Net-Whois
 #    SUBDIR += p5-SNMP
