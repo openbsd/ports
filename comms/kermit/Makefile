@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2002/01/27 17:38:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/02/09 12:48:21 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
-PKGNAME=	kermit-8.0.200
+PKGNAME=	kermit-8.0.200p1
 DISTNAME=	cku200
 CATEGORIES=	comms
 NEED_VERSION=	1.504
@@ -24,7 +24,8 @@ MAKE_FILE=	makefile
 ALL_TARGET=	xermit
 MAKE_FLAGS=	KTARGET=openbsd \
 		CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
-		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR" \
+		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
+		-DCKHTTP" \
 		LIBS="-lcurses -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
