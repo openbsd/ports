@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.347 2000/12/23 12:25:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.348 2000/12/23 12:27:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -803,12 +803,12 @@ _IGNOREFILES=	${IGNOREFILES}
 EXTRACT_ONLY?=	${_DISTFILES}
 
 # okay, time for some guess work
-.  if !empty(EXTRACT_ONLY:M*.zip)
+.if !empty(EXTRACT_ONLY:M*.zip)
 USE_ZIP?=	Yes
-.  endif
-.  if !empty(EXTRACT_ONLY:M*.tar.bz2)
+.endif
+.if !empty(EXTRACT_ONLY:M*.tar.bz2)
 USE_BZIP2?=	Yes
-.  endif
+.endif
 USE_ZIP?= No
 USE_BZIP2?= No
 
