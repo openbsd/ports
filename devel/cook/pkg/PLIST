@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/02/20 01:35:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/16 17:34:06 naddy Exp $
 bin/c_incl
 bin/cook
 bin/cook_bom
@@ -67,5 +67,8 @@ share/locale/en/LC_MESSAGES/find_libs.mo
 share/locale/en/LC_MESSAGES/fstrcmp.mo
 share/locale/en/LC_MESSAGES/make2cook.mo
 share/locale/en/LC_MESSAGES/roffpp.mo
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
+@dirrm share/locale
 @dirrm share/cook/en
 @dirrm share/cook

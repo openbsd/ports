@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/16 16:55:57 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/16 17:34:06 naddy Exp $
 bin/gconf-config
 bin/gconf-config-1
 bin/gconf-sanity-check-1
@@ -55,15 +55,17 @@ share/locale/tr/LC_MESSAGES/GConf.mo
 share/locale/uk/LC_MESSAGES/GConf.mo
 share/locale/zh_CN/LC_MESSAGES/GConf.mo
 %%SHARED%%
+@dirrm share/locale/ca
 @dirrm share/examples/gconf/gconf/schemas
 @dirrm share/examples/gconf/gconf/1
 @dirrm share/examples/gconf/gconf
 @dirrm share/examples/gconf
 @dirrm lib/GConf/1
-@unexec rmdir %D/lib/GConf 2>/dev/null || true
+@dirrm lib/GConf
+@dirrm lib/pkgconfig
 @dirrm include/gconf/1/gconf
 @dirrm include/gconf/1
-@unexec rmdir %D/include/gconf 2>/dev/null || true
+@dirrm include/gconf
 @cwd ${SYSCONFDIR}
 @extra gconf/schemas/desktop.schemas
 @extra gconf/schemas/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/07/24 15:34:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/16 17:34:06 naddy Exp $
 bin/kdbg
 share/applnk/Development/kdbg.desktop
 share/apps/kdbg/pics/brkcond.xpm
@@ -103,9 +103,54 @@ share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no_NY/LC_MESSAGES
+@dirrm share/locale/no_NY
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/ru/kdbg
+@dirrm share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kdbg
 @dirrm share/doc/HTML/de/kdbg
+@dirrm share/doc/HTML/de
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg/pics
 @dirrm share/apps/kdbg
+@dirrm share/applnk/Development

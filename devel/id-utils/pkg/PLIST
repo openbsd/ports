@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/16 17:34:06 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/id-utils.info
 bin/aid
 bin/defid
@@ -19,5 +19,10 @@ info/id-utils.info
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
 share/locale/fr/LC_MESSAGES/id-utils.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
+@dirrm lib/id-utils
 @exec install-info --info-dir=%D/info %D/info/id-utils.info
-
