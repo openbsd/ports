@@ -1,2 +1,4 @@
-etc/upsd.conf
 sbin/upsd
+@cwd /etc
+@cwd /etc
+upsd.conf
