@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2001/01/08 21:36:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/21 17:17:17 espie Exp $
 
-VERSION=1.4.6
+VERSION=1.6.2
 DISTNAME=ruby-${VERSION}
 CATEGORIES = lang
 NEED_VERSION=	1.336
@@ -12,7 +12,7 @@ MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
 MASTER_SITES0=${MASTER_SITES:C,$,doc/,}
 
 BINARCH=${DISTNAME}.tar.gz
-MANARCH=ruby-man-${VERSION}.tar.gz
+MANARCH=ruby-man-1.4.6.tar.gz
 DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
@@ -49,7 +49,7 @@ post-install:
 	tar -s/ruby-man-1.4/ruby/ -zxf ${FULLDISTDIR}/${MANARCH}
 
 
-REV=1.4
+REV=1.6
 SUB=${ARCH}-openbsd${OSREV}
 SUBST_VARS=SUB REV
 

@@ -1,19 +1,21 @@
-$OpenBSD: patch-findtcltk,v 1.3 2000/09/05 13:56:25 espie Exp $
---- ext/tcltklib/extconf.rb.orig	Tue May 30 06:10:31 2000
-+++ ext/tcltklib/extconf.rb	Tue Sep  5 15:26:21 2000
-@@ -23,6 +23,7 @@ def find_tcl(tcllib)
-     find_library(tcllib, func, *paths)
+$OpenBSD: patch-findtcltk,v 1.4 2001/02/21 17:17:18 espie Exp $
+--- ext/tcltklib/extconf.rb.orig	Tue Oct  3 09:48:51 2000
++++ ext/tcltklib/extconf.rb	Wed Feb 21 17:24:27 2001
+@@ -31,6 +31,8 @@ def find_tcl(tcllib, stubs)
+       find_library("tcl76", func, *paths)
    else
      find_library("tcl", func, *paths) or
++      find_library("tcl84", func, *paths) or
 +      find_library("tcl83", func, *paths) or
+       find_library("tcl8.4", func, *paths) or
        find_library("tcl8.3", func, *paths) or
        find_library("tcl8.2", func, *paths) or
-       find_library("tcl8.0", func, *paths) or
-@@ -37,6 +38,7 @@ def find_tk(tklib)
-     find_library(tklib, func, *paths)
+@@ -53,6 +55,8 @@ def find_tk(tklib, stubs)
+       find_library("tk42", func, *paths)
    else
      find_library("tk", func, *paths) or
++      find_library("tk84", func, *paths) or
 +      find_library("tk83", func, *paths) or
+       find_library("tk8.4", func, *paths) or
        find_library("tk8.3", func, *paths) or
        find_library("tk8.2", func, *paths) or
-       find_library("tk8.0", func, *paths) or
