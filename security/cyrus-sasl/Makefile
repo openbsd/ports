@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/09/30 11:41:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/30 11:49:48 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+
+SEPARATE_BUILD=		concurrent
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
@@ -38,6 +40,9 @@ LIB_DEPENDS+=		db::databases/db
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-dblib=berkeley
+
+post-patch:
+	(cd ${WRKSRC}; patch < ${FILESDIR}/patch-db)
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm
 .endif
