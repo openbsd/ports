@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/05/13 07:11:56 pvalchev Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -27,13 +27,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS+=		glib-2.0.0.0,gmodule-2.0.0.0::devel/glib2
+LIB_DEPENDS+=		glib.1.2,gmodule::devel/glib
 
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc --enable-ipv6 \
 	--with-proxy --enable-perl=yes --with-included-gettext \
-	--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
+	--with-perl-lib=${PREFIX}/libdata/perl5/site_perl --with-glib1
 
 FLAVORS=	socks
 FLAVOR?=
