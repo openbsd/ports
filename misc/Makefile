@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/10/01 12:14:23 form Exp $
+# $OpenBSD: Makefile,v 1.16 1998/11/19 00:07:25 yanick Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -14,6 +14,7 @@
 #    SUBDIR += ctk
      SUBDIR += deco
 #    SUBDIR += dejagnu
+     SUBDIR += dialog
 #    SUBDIR += dotfile
 #    SUBDIR += ecc
 #    SUBDIR += estic
