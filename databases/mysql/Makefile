@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2002/01/06 07:06:25 brad Exp $
+# $OpenBSD: Makefile,v 1.64 2002/01/11 16:50:30 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -42,7 +42,6 @@ CONFIGURE_ARGS+= --enable-static \
 		 --with-innodb \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap="/usr" \
-		 --with-mysqld-ldflags=--static \
 		 --with-mysqld-user="mysql" \
 		 --with-unix-socket-path="${DB_DIR}/mysql.sock" \
 		 --without-perl \
