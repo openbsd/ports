@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/18 03:56:51 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/19 00:57:35 brad Exp $
 
-DISTNAME=	dopewars-1.4.6
+DISTNAME=	dopewars-1.4.7
 CATEGORIES=	games
 MASTER_SITES=	http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall" LIBS="-lcurses"
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 
 DOCS=	index.html installation.html clientplay.html server.html \
 	credits.html aiplayer.html configfile.html commandline.html \
