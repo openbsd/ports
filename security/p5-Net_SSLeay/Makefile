@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/06 01:10:06 shell Exp $
 
 COMMENT=	"perl module for using OpenSSL"
 
-VERSION=	1.15
+VERSION=	1.16
 DISTNAME=	Net_SSLeay.pm-${VERSION}
 PKGNAME=	p5-Net-SSLeay-${VERSION}
 CATEGORIES=	security perl5

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/18 14:16:50 shell Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/06/06 01:10:06 shell Exp $
 ${P5ARCH}/Net/SSLeay.pm
 ${P5ARCH}/Net/SSLeay/Handle.pm
 ${P5ARCH}/Net/ptrtstrun.pl
@@ -45,15 +45,19 @@ ${P5ARCH}/auto/Net/SSLeay/want_read.al
 ${P5ARCH}/auto/Net/SSLeay/want_write.al
 man/man3p/Net::SSLeay.3p
 man/man3p/Net::SSLeay::Handle.3p
+share/examples/p5-Net-SSLeay/bio.pl
 share/examples/p5-Net-SSLeay/bulk.pl
 share/examples/p5-Net-SSLeay/callback.pl
+share/examples/p5-Net-SSLeay/cb-testi.pl
 share/examples/p5-Net-SSLeay/cli-cert.pl
+share/examples/p5-Net-SSLeay/ephemeral.pl
 share/examples/p5-Net-SSLeay/get_authenticated_page.pl
 share/examples/p5-Net-SSLeay/get_page.pl
 share/examples/p5-Net-SSLeay/get_page_cert.pl
 share/examples/p5-Net-SSLeay/https-proxy-snif.pl
 share/examples/p5-Net-SSLeay/makecert.pl
 share/examples/p5-Net-SSLeay/minicli.pl
+share/examples/p5-Net-SSLeay/passwd-cb.pl
 share/examples/p5-Net-SSLeay/req.conf
 share/examples/p5-Net-SSLeay/ssl-inetd-serv.pl
 share/examples/p5-Net-SSLeay/ssl_diff.pl
