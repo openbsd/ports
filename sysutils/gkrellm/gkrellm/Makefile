@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/25 16:37:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/19 17:27:55 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -50,7 +50,7 @@ LIB_DEPENDS+=	gdk-x11-2.0.=0,gdk_pixbuf-2.0.=0,gtk-x11-2.0.=0::x11/gtk+2
 WRKBUILD=	${WRKDIST}/server
 .endif
 
-post-patch:
+pre-configure:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
 		${WRKSRC}/server/gkrellmd.h
 
