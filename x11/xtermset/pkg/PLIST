@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/27 02:18:38 kevlo Exp $
+bin/xtermset
+man/man5/terms.5
+share/xtermset/terms
+@dirrm share/xtermset
