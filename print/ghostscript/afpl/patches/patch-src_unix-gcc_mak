@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix-gcc_mak,v 1.1 2004/05/23 18:51:59 sturm Exp $
+--- src/unix-gcc.mak.orig	2004-05-23 12:02:24.000000000 +0200
++++ src/unix-gcc.mak	2004-05-23 12:02:53.000000000 +0200
+@@ -201,7 +201,7 @@ RANLIB=ranlib
+ 
+ # Define the name of the C compiler.
+ 
+-CC=gcc
++#CC=gcc
+ 
+ # Define the name of the linker for the final link step.
+ # Normally this is the same as the C compiler.

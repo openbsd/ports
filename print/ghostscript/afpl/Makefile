@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2003/05/31 20:32:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/05/23 18:51:59 sturm Exp $
 
-COMMENT="AFPL PostScript interpreter"
+COMMENT=	"AFPL PostScript interpreter"
 
-BROKEN=		"Gnu ghostscript more recent, awaiting new port"
-VERSION=	7.00
+VERSION=	8.14
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 
@@ -13,7 +12,7 @@ MASTER_SITES1=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
-DISTFILES=	# ${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
+DISTFILES=	${GS_SOURCES} pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
@@ -31,11 +30,12 @@ PNGDIR=graphics/png
 
 BUILD_DEPENDS=	::${JPEGDIR}:patch ::${PNGDIR}:patch
 
+RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
+
 LIB_DEPENDS=	png.2::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 
-WRKDIST=	${WRKDIR}/gs${VERSION}
 WRKSRC=		${WRKDIST}/src
 WRKBUILD=	${WRKDIST}
 BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
@@ -77,9 +77,8 @@ $$(DD)pnggray.dev $$(DD)png16.dev $$(DD)png256.dev $$(DD)png16m.dev \
 $$(DD)psmono.dev $$(DD)psgray.dev $$(DD)psrgb.dev $$(DD)tiff12nc.dev \
 $$(DD)tiff24nc.dev $$(DD)tifflzw.dev $$(DD)tiffpack.dev $$(DD)ap3250.dev \
 $$(DD)appledmp.dev $$(DD)bj10e.dev $$(DD)bj200.dev $$(DD)bjc600.dev \
-$$(DD)bjc800.dev $$(DD)ccr.dev $$(DD)cdeskjet.dev $$(DD)cdjcolor.dev \
+$$(DD)bjc800.dev $$(DD)cdeskjet.dev $$(DD)cdjcolor.dev \
 $$(DD)cdjmono.dev $$(DD)cdj500.dev $$(DD)cdj550.dev \
-$$(DD)cp50.dev \
 $$(DD)declj250.dev $$(DD)djet500c.dev $$(DD)dnj650c.dev $$(DD)epson.dev \
 $$(DD)eps9mid.dev $$(DD)eps9high.dev $$(DD)epsonc.dev $$(DD)hl7x0.dev \
 $$(DD)ibmpro.dev $$(DD)imagen.dev $$(DD)iwhi.dev $$(DD)iwlo.dev \
@@ -91,17 +90,14 @@ $$(DD)okiibm.dev $$(DD)paintjet.dev $$(DD)pj.dev $$(DD)pjetxl.dev \
 $$(DD)pjxl.dev $$(DD)pjxl300.dev $$(DD)r4081.dev $$(DD)sj48.dev \
 $$(DD)st800.dev $$(DD)stcolor.dev $$(DD)t4693d2.dev $$(DD)t4693d4.dev \
 $$(DD)t4693d8.dev $$(DD)tek4696.dev $$(DD)uniprint.dev \
-$$(DD)dfaxhigh.dev $$(DD)dfaxlow.dev $$(DD)cif.dev $$(DD)inferno.dev \
-$$(DD)mgrmono.dev $$(DD)mgrgray2.dev $$(DD)mgrgray4.dev $$(DD)mgrgray8.dev \
-$$(DD)mgr4.dev $$(DD)mgr8.dev $$(DD)sgirgb.dev'
+$$(DD)dfaxhigh.dev $$(DD)dfaxlow.dev $$(DD)cif.dev \
+$$(DD)sgirgb.dev'
 
 
 # $$(DD)la50.dev $$(DD)la70.dev $$(DD)la75.dev $$(DD)la75plus.dev 
 # $$(DD)ln03.dev $$(DD)xes.dev 
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
-
-
-#MAKE_FILE=	src/unix-gcc.mak
+CFLAGS=		-DSYS_TYPES_HAS_STDINT_TYPES
 
 GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
@@ -151,8 +147,6 @@ pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
 	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin 
 	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	cd ${PREFIX}/share/ghostscript  && \
-			tar xzf ${FULLDISTDIR}/${GS_FONTS_STD}
 
 post-install:
 	strip ${PREFIX}/bin/gs
@@ -163,10 +157,12 @@ post-install:
 		ln -sf gslp.1 gsdj500.1 && \
 		ln -sf gslp.1 gslj.1 && \
 		ln -sf ps2pdf.1 ps2pdf12.1 && \
-		ln -sf ps2pdf.1 ps2pdf13.1
+		ln -sf ps2pdf.1 ps2pdf13.1 && \
+		ln -sf ps2pdf.1 ps2pdf14.1
 	cd ${PREFIX}/man/de/man1 && \
 		ln -sf ps2pdf.1 ps2pdf12.1 && \
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
+		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
 	${INSTALL_DATA} ${FULLDISTDIR}/pdf_sec.ps ${PREFIX}/${PDFDIR}
 
