@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/02/05 23:29:34 xsa Exp $
+# $OpenBSD: Makefile,v 1.22 2004/03/02 14:15:39 xsa Exp $
 
 COMMENT=		"C/C++ source code auditing tool"
 
@@ -22,6 +22,7 @@ MODULES=		python
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 DOC_DIR=		${PREFIX}/share/doc/flawfinder
 
