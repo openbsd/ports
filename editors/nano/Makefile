@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/02/20 21:30:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2004/02/22 17:18:44 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -38,6 +38,8 @@ post-patch:
 	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 post-install:
+	perl -i -pe 's:\$$SYSCONFDIR:${SYSCONFDIR}:g' \
+		${PREFIX}/man/man5/nanorc.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${PREFIX}/share/examples/nano
 
