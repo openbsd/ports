@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/30 06:35:11 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"high resolution ualarm, sleep, and gettimeofday module"
 
