@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysqlhotcopy_sh,v 1.1 2004/08/20 09:21:19 robert Exp $
---- scripts/mysqlhotcopy.sh.orig	Fri May 14 02:53:38 2004
-+++ scripts/mysqlhotcopy.sh	Fri Aug 20 01:21:57 2004
-@@ -7,6 +7,7 @@
+$OpenBSD: patch-scripts_mysqlhotcopy_sh,v 1.2 2004/10/20 01:54:05 brad Exp $
+--- scripts/mysqlhotcopy.sh.orig	Thu May 13 20:53:38 2004
++++ scripts/mysqlhotcopy.sh	Tue Oct 19 21:46:12 2004
+@@ -7,6 +7,7 @@ use File::Basename;
  use File::Path;
  use DBI;
  use Sys::Hostname;
@@ -9,7 +9,7 @@ $OpenBSD: patch-scripts_mysqlhotcopy_sh,v 1.1 2004/08/20 09:21:19 robert Exp $
  
  =head1 NAME
  
-@@ -610,7 +611,6 @@
+@@ -610,7 +611,6 @@ sub copy_files {
  sub copy_index
  {
    my ($method, $files, $source, $target) = @_;
@@ -17,7 +17,7 @@ $OpenBSD: patch-scripts_mysqlhotcopy_sh,v 1.1 2004/08/20 09:21:19 robert Exp $
    
    print "Copying indices for ".@$files." files...\n" unless $opt{quiet};  
    foreach my $file (@$files)
-@@ -636,23 +636,23 @@
+@@ -636,23 +636,23 @@ sub copy_index
        }
        close OUTPUT	   || die "Error on close of $to: $!\n";
      }
