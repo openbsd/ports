@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/03 13:19:39 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
+BROKEN=		"Gnu ghostscript more recent, awaiting new port"
 VERSION=	7.00
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
@@ -12,7 +13,7 @@ MASTER_SITES1=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
+DISTFILES=	# ${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
