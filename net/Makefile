@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 1999/02/27 15:54:09 rohee Exp $
+# $OpenBSD: Makefile,v 1.34 1999/03/07 02:20:38 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -7,6 +7,7 @@
 #    SUBDIR += ascend-radius
 #    SUBDIR += bb
      SUBDIR += bing
+     SUBDIR += bitchx
 #    SUBDIR += cap
 #    SUBDIR += choparp
      SUBDIR += clog
