@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/08/23 19:00:05 brad Exp $
+--- Makefile.in.orig	Thu Aug 23 14:49:06 2001
++++ Makefile.in	Thu Aug 23 14:49:33 2001
+@@ -80,7 +80,7 @@ VERSION = @VERSION@
+ EXTRA_DIST = .version Configure doc devel
+ 
+ #SUBDIRS = sqlplusint examples doc
+-SUBDIRS = sqlplusint examples
++SUBDIRS = sqlplusint
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h ./sqlplusint/exceptions.hh

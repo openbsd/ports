@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
---- Makefile.am.orig	Tue Nov 14 13:17:19 2000
-+++ Makefile.am	Fri Feb  9 15:42:21 2001
-@@ -1,4 +1,4 @@
- EXTRA_DIST = .version Configure doc devel
- 
- #SUBDIRS = sqlplusint examples doc
--SUBDIRS = sqlplusint examples
-+SUBDIRS = sqlplusint
