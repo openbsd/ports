@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/19 20:02:20 pvalchev Exp $
 
 COMMENT=	"scan mailboxes for messages matching a regular expression"
 
-DISTNAME=	mboxgrep-0.7.4
+DISTNAME=	mboxgrep-0.7.8
 CATEGORIES=	mail
 
-HOMEPAGE=	http://mboxgrep.sourceforge.net/
+HOMEPAGE=	http://www.mboxgrep.org/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
 
 LIB_DEPENDS=	pcre::devel/pcre
+
+WRKSRC=		${WRKDIR}/mboxgrep
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
