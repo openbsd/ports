@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_package_rpm_SOURCES_mozilla-mail_desktop,v 1.1 2003/07/04 06:59:15 marcm Exp $
---- build/package/rpm/SOURCES/mozilla-mail.desktop.orig	Thu Jul  3 17:35:17 2003
-+++ build/package/rpm/SOURCES/mozilla-mail.desktop	Thu Jul  3 17:35:48 2003
+$OpenBSD: patch-build_package_rpm_SOURCES_mozilla-mail_desktop,v 1.2 2003/07/18 20:44:33 wilfried Exp $
+--- build/package/rpm/SOURCES/mozilla-mail.desktop.orig	Wed Oct  3 20:40:11 2001
++++ build/package/rpm/SOURCES/mozilla-mail.desktop	Fri Jul 18 19:26:35 2003
 @@ -1,7 +1,8 @@
  [Desktop Entry]
  Name=Mozilla Mail
