@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2000/08/21 02:57:38 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/02 15:57:11 avsm Exp $
 
-DISTNAME=	DBI-1.14
-PKGNAME=	p5-DBI-1.14
+COMMENT=	'unified perl interface for database access'
+
+DISTNAME=	DBI-1.15
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
-NEED_VERSION=	1.310
+NEED_VERSION=	1.378
+
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= DBI
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Shell Hung <i@shellhung.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
