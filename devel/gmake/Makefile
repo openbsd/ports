@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2001/10/07 12:15:33 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/11 11:53:57 brad Exp $
 
 COMMENT=	"GNU make"
 DISTNAME=	make-3.79.1
 PKGNAME=	gmake-3.79.1
 CATEGORIES=	devel
-NEED_VERSION=	1.364
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= make
 
 HOMEPAGE=	http://www.gnu.org/software/make/
 
-LIB_DEPENDS=	intl.1::devel/gettext
+MODULES=	gettext
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
