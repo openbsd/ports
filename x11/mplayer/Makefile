@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2004/06/22 20:34:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2004/07/03 02:10:26 robert Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre4
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p1
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -27,11 +27,14 @@ MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
+MASTER_SITES1=		${MASTER_SITES:S,releases,patches,}
+
 MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
 SKIN=		default
 SKINVER=	1.7
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
+PATCHFILES+=	vuln04-fix.diff:1
 
 .include <bsd.own.mk>
 
