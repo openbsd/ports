@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/14 08:44:48 camield Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/22 12:07:51 camield Exp $
 
 DISTNAME=	djbdns-1.05
 HOMEPAGE=	http://cr.yp.to/djbdns.html
@@ -11,8 +11,8 @@ MASTER_SITES0=	ftp://ftp.innominate.org/gpa/djb/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-man${EXTRACT_SUFX}:0
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

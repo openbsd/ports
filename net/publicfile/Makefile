@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/25 07:40:15 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2001/04/22 12:07:52 camield Exp $
 
 DISTNAME=	publicfile-0.52
 HOMEPAGE=	http://cr.yp.to/publicfile.html
@@ -10,8 +10,8 @@ MASTER_SITES=	http://cr.yp.to/publicfile/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
@@ -25,8 +25,6 @@ FLAVORS=	compat
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcompat}
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
 PATCH_LIST=patch-Makefile patch-compat
 .else
 PATCH_LIST=patch-Makefile
