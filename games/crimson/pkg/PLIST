@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/21 22:31:34 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/12 06:38:55 jolan Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -10,6 +10,7 @@ man/man6/crimson.6
 share/crimson/cf.dat
 share/crimson/default.tiles
 share/crimson/default.units
+share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/Foxhole.lev
