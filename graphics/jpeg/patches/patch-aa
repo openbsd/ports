@@ -1,14 +1,16 @@
 *** makefile.cfg.orig	Wed Feb  7 19:09:39 1996
---- makefile.cfg	Fri Feb  6 19:15:52 1998
+--- makefile.cfg	Sat Feb  7 01:20:18 1998
 ***************
 *** 116,122 ****
---- 116,126 ----
+--- 116,128 ----
   TROBJECTS= jpegtran.o rdswitch.o cdjpeg.o
   
   
 + .if (${MACHINE_ARCH} != "alpha")
++ OUTLIB = libjpeg.so.7.0
 + all: @ANSI2KNR@ libjpeg.a libjpeg.so.7.0 cjpeg djpeg jpegtran rdjpgcom wrjpgcom
 + .else
++ OUTLIB = libjpeg.a
   all: @ANSI2KNR@ libjpeg.a cjpeg djpeg jpegtran rdjpgcom wrjpgcom
 + .endif
   
@@ -16,7 +18,7 @@
   @ISANSICOM@.c.o:
 ***************
 *** 125,130 ****
---- 129,139 ----
+--- 131,141 ----
   @ISANSICOM@	$(RM) T$*.c $*.o
   @ISANSICOM@	$(MV) T$*.o $*.o
   
@@ -44,40 +46,36 @@
   
   rdjpgcom: rdjpgcom.o
   	$(LN) $(LDFLAGS) -o rdjpgcom rdjpgcom.o $(LDLIBS)
---- 142,158 ----
+--- 144,160 ----
   	$(AR) libjpeg.a  $(LIBOBJECTS)
   	$(AR2) libjpeg.a
   
 ! libjpeg.so.7.0: @ANSI2KNR@  $(LIBOBJECTS:S/o$/so/g)
 ! 	ld -Bshareable -o libjpeg.so.7.0 $(LIBOBJECTS:S/o$/so/g)
 ! 
-! cjpeg: $(COBJECTS) libjpeg.so.7.0
+! cjpeg: $(COBJECTS) $(OUTLIB)
 ! 	$(LN) $(LDFLAGS) -o cjpeg $(COBJECTS) -L. -ljpeg $(LDLIBS)
   
-! djpeg: $(DOBJECTS) libjpeg.so.7.0
+! djpeg: $(DOBJECTS) $(OUTLIB)
 ! 	$(LN) $(LDFLAGS) -o djpeg $(DOBJECTS) -L. -ljpeg $(LDLIBS)
   
-! jpegtran: $(TROBJECTS) libjpeg.so.7.0
+! jpegtran: $(TROBJECTS) $(OUTLIB)
 ! 	$(LN) $(LDFLAGS) -o jpegtran $(TROBJECTS) -L. -ljpeg $(LDLIBS)
   
   rdjpgcom: rdjpgcom.o
   	$(LN) $(LDFLAGS) -o rdjpgcom rdjpgcom.o $(LDLIBS)
 ***************
 *** 165,172 ****
+--- 179,192 ----
   	$(INSTALL_DATA) $(srcdir)/rdjpgcom.1 $(mandir)/$(manprefix)rdjpgcom.$(manext)
   	$(INSTALL_DATA) $(srcdir)/wrjpgcom.1 $(mandir)/$(manprefix)wrjpgcom.$(manext)
   
-! install-lib: libjpeg.a install-headers
-  	$(INSTALL_DATA) libjpeg.a $(libdir)/$(binprefix)libjpeg.a
-  
-  install-headers: jconfig.h
-  	$(INSTALL_DATA) jconfig.h $(includedir)/jconfig.h
---- 177,186 ----
-  	$(INSTALL_DATA) $(srcdir)/rdjpgcom.1 $(mandir)/$(manprefix)rdjpgcom.$(manext)
-  	$(INSTALL_DATA) $(srcdir)/wrjpgcom.1 $(mandir)/$(manprefix)wrjpgcom.$(manext)
-  
-! install-lib: libjpeg.a libjpeg.so.7.0 install-headers
-! 	$(INSTALL_DATA) libjpeg.so.7.0 $(libdir)/$(binprefix)libjpeg.so.7.0
++ .if (${MACHINE_ARCH} != "alpha")
++ install-lib: libjpeg.a libjpeg.so.7.0 install-headers
++ 	$(INSTALL_DATA) libjpeg.so.7.0 $(libdir)/$(binprefix)libjpeg.so.7.0
++ .else
+  install-lib: libjpeg.a install-headers
++ .endif
   	$(INSTALL_DATA) libjpeg.a $(libdir)/$(binprefix)libjpeg.a
 + 	ranlib $(libdir)/$(binprefix)libjpeg.a
   
@@ -85,7 +83,7 @@
   	$(INSTALL_DATA) jconfig.h $(includedir)/jconfig.h
 ***************
 *** 203,208 ****
---- 217,271 ----
+--- 223,277 ----
   # GNU Make likes to know which target names are not really files to be made:
   .PHONY: all install install-lib install-headers clean distribute test check
   
