@@ -16,11 +16,11 @@ BINDIR		= @PREFIX@/bin
 MANDIR		= @PREFIX@/man
 
 # Compiler to use.
-CC		= cc
+CC		= @CC@
 
 # Compile options.
-CFLAGS		= -O2 ${DEBUG} -DSTRINGS_H -DTIME_H
-TCLCFLAGS	= -O2 ${DEBUG} -DSTRINGS_H -DTIME_H
+CFLAGS		+= ${DEBUG} -DSTRINGS_H -DTIME_H
+TCLCFLAGS	+= ${DEBUG} -DSTRINGS_H -DTIME_H
 
 # Lint flags
 LFLAGS		= -u  -DSTRINGS_H -DTIME_H
