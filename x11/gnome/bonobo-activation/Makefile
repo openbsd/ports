@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 19:50:10 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/06 06:20:16 marcm Exp $
 
 COMMENT=		"Bonobo object activation framework for GNOME"
 
-DISTNAME=		bonobo-activation-2.2.1.1
+DISTNAME=		bonobo-activation-2.2.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -22,7 +22,6 @@ MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 LIB_DEPENDS=		ORBit-2,ORBitCosNaming-2::devel/ORBit2 \
-			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.7::devel/glib2 \
 			xml2.6::textproc/libxml
 
 CONFDIR=		${SYSCONFDIR}/gnome

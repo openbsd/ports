@@ -1,7 +1,7 @@
-$OpenBSD: patch-gweather_Locations,v 1.1.1.1 2003/01/31 18:42:05 todd Exp $
---- gweather/Locations.orig	Thu Nov 28 22:27:00 2002
-+++ gweather/Locations	Thu Nov 28 22:30:33 2002
-@@ -682,103 +682,104 @@ loc21=Williamsport KIPT PAZ046 har
+$OpenBSD: patch-gweather_Locations,v 1.2 2003/08/06 06:20:16 marcm Exp $
+--- gweather/Locations.orig	2003-05-18 08:50:12.000000000 -0700
++++ gweather/Locations	2003-08-04 00:10:37.000000000 -0700
+@@ -681,103 +681,104 @@ loc21=Williamsport KIPT PAZ046 har
  name=California
  loc0=Alturas KS11 CAZ012 rbl
  loc1=Arcata KACV CAZ001 rbl
