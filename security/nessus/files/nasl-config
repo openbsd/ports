@@ -9,7 +9,7 @@
 PREFIX=@@WRKSRC@@/libnasl
 LIBDIR=$PREFIX/nasl/.libs
 INCLUDEDIR=$PREFIX/include
-VERSION=0.98.3
+VERSION=@@VERS@@
 
 usage()
 {

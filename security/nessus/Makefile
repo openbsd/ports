@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/03/25 19:17:48 matt Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 14:38:33 matt Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
-NEED_VERSION=	1.361
+NEED_VERSION=	1.405
 
 VERS=		1.0.7a
 
@@ -44,8 +44,11 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=no_x11
 FLAVOR?=
 
+# Can't do CONFIGURE_STYLE=autoconf because of configure wrapper
+# that builds each tarball in succession.
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE}
+CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE} \
+		--disable-nessuspcap
 
 LIB_DEPENDS=	gmp.4.1::devel/gmp
 

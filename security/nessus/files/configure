@@ -8,6 +8,6 @@
 
 for dir in @@NESSUS_DIRS@@  ; do
     echo "===>   Configuring $dir"
-    (cd $dir ; PATH=@@WRKSRC@@:$PATH ./configure $*)
+    (cd $dir; PATH=@@WRKSRC@@:$PATH NESSUSCONFIG=@@WRKSRC@@nessus-config NASLCONFIG=@@WRKSRC@@nasl-config ./configure $*)
 done
 
