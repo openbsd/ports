@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2000/08/04 17:39:37 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2000/08/15 05:47:15 brad Exp $
 #
 # wget de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/wgetrc
+CONFIG_FILE=${SYSCONFDIR}/wgetrc
 
 if [ -f $CONFIG_FILE ]; then
     echo
