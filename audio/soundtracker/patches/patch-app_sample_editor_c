@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_sample_editor_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
---- app/sample-editor.c.orig	Wed Jul 25 11:46:45 2001
-+++ app/sample-editor.c	Mon Feb  4 04:38:32 2002
-@@ -183,7 +183,7 @@ static void sample_editor_reverse_clicke
+$OpenBSD: patch-app_sample_editor_c,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+--- app/sample-editor.c.orig	Thu May 16 11:55:24 2002
++++ app/sample-editor.c	Tue May 21 18:21:30 2002
+@@ -186,7 +186,7 @@ static void sample_editor_reverse_clicke
  static void
  sample_editor_lock_sample (void)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-app_sample_editor_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
  }
  
  static void
-@@ -192,7 +192,7 @@ sample_editor_unlock_sample (void)
+@@ -195,7 +195,7 @@ sample_editor_unlock_sample (void)
      if(gui_playing_mode) {
  	mixer->updatesample(&current_sample->sample);
      }
@@ -19,7 +19,7 @@ $OpenBSD: patch-app_sample_editor_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
  }
  
  void
-@@ -462,7 +462,7 @@ sample_editor_page_create (GtkNotebook *
+@@ -465,7 +465,7 @@ sample_editor_page_create (GtkNotebook *
  #if !defined(NO_AUDIOFILE) && HAVE_DLFCN_H
      { // hack, hack
  	void *handle, *function;

@@ -1,6 +1,7 @@
---- FAQ.orig	Wed Jul 25 11:22:56 2001
-+++ FAQ	Mon Feb  4 23:35:44 2002
-@@ -2,39 +2,11 @@
+$OpenBSD: patch-FAQ,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+--- FAQ.orig	Tue May 21 19:23:27 2002
++++ FAQ	Tue May 21 19:23:41 2002
+@@ -2,12 +2,6 @@
  FAQ
  ====
  
@@ -10,44 +11,6 @@
 -a: You don't have thread-safe X libraries (you have a libc5
 -system). Read the INSTALL file.
 -
--------------------------------------------------------------------------
--
--QQQQ: SoundTracker complains about not being able to open /dev/dsp.
--
--a: Either you have not configured a sound driver for your system (you
--could check that by running an MP3 player or something) - or you are
--running GNOME and your soundcard is kept busy by the E Sound Daemon,
--which you can get rid of by using "killall esd" in a shell.
--
--There's also an "ESD" driver in the Audio settings, but it's not
--possible to do any serious tracking work because of the delay
--introduced by it.
--
--------------------------------------------------------------------------
--
--QQQQ: SoundTracker crashes as soon as I use the menu bar.
--
--a: You have a too old gtk+. Read the INSTALL file.
--
  ------------------------------------------------------------------------
  
- QQQQ: The sound output gets quite choppy under machine load.
- 
--a1: Don't run the compiled executable directly, but do a full 'make
--install', this installs the executable setuid root and the audio
--thread gets a much higher priority. Read the notes in the INSTALL file
--about this subject.
-+a1: Assign the soundtracker process a higher user priority (renice).
- 
- a2: Increase size of mixer buffer in the Preferences section.
- 
-@@ -47,9 +19,6 @@ scopes.
- 
- a5: Reduce scopes and patterns update frequency in the Preferences
- section.
--
--a6: Install at least glibc2.1.1pre3, this fixed a strange sound bug
--for me.
- 
- ------------------------------------------------------------------------
- 
+ QQQQ: SoundTracker complains about not being able to open /dev/dsp.

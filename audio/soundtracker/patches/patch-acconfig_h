@@ -1,7 +1,7 @@
-$OpenBSD: patch-acconfig_h,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
---- acconfig.h.orig	Mon Feb  4 12:37:14 2002
-+++ acconfig.h	Mon Feb  4 12:37:19 2002
-@@ -6,6 +6,7 @@
+$OpenBSD: patch-acconfig_h,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+--- acconfig.h.orig	Mon May 20 13:26:33 2002
++++ acconfig.h	Tue May 21 18:21:30 2002
+@@ -8,6 +8,7 @@
  #undef DRIVER_ALSA_050
  #undef DRIVER_ESD
  #undef DRIVER_SGI

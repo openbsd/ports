@@ -1,192 +1,7 @@
-$OpenBSD: patch-app_Makefile_in,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
---- app/Makefile.in.orig	Sun Aug 12 07:07:24 2001
-+++ app/Makefile.in	Mon Feb  4 22:01:15 2002
-@@ -1,6 +1,6 @@
--# Makefile.in generated automatically by automake 1.4 from Makefile.am
-+# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
- 
--# Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
-+# Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
- # This Makefile.in is free software; the Free Software Foundation
- # gives unlimited permission to copy and/or distribute it,
- # with or without modifications, as long as this notice is preserved.
-@@ -57,9 +57,12 @@ POST_INSTALL = :
- NORMAL_UNINSTALL = :
- PRE_UNINSTALL = :
- POST_UNINSTALL = :
-+host_alias = @host_alias@
-+host_triplet = @host@
- AUDIOFILE_CFLAGS = @AUDIOFILE_CFLAGS@
- AUDIOFILE_CONFIG = @AUDIOFILE_CONFIG@
- AUDIOFILE_LIBS = @AUDIOFILE_LIBS@
-+BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
- CATALOGS = @CATALOGS@
- CATOBJEXT = @CATOBJEXT@
- CC = @CC@
-@@ -69,18 +72,18 @@ ESD_CONFIG = @ESD_CONFIG@
- ESD_LIBS = @ESD_LIBS@
- GASPPATH = @GASPPATH@
- GENCAT = @GENCAT@
-+GLIBC21 = @GLIBC21@
- GMOFILES = @GMOFILES@
- GMSGFMT = @GMSGFMT@
- GTK_CFLAGS = @GTK_CFLAGS@
- GTK_CONFIG = @GTK_CONFIG@
- GTK_LIBS = @GTK_LIBS@
--GT_NO = @GT_NO@
--GT_YES = @GT_YES@
--INCLUDE_LOCALE_H = @INCLUDE_LOCALE_H@
- INSTOBJEXT = @INSTOBJEXT@
--INTLDEPS = @INTLDEPS@
-+INTLBISON = @INTLBISON@
- INTLLIBS = @INTLLIBS@
- INTLOBJS = @INTLOBJS@
-+INTL_LIBTOOL_SUFFIX_PREFIX = @INTL_LIBTOOL_SUFFIX_PREFIX@
-+LIBICONV = @LIBICONV@
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
-@@ -92,7 +95,6 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIB
- USE_NLS = @USE_NLS@
- VERSION = @VERSION@
- gnomepath = @gnomepath@
--l = @l@
- sedpath = @sedpath@
- 
- SUBDIRS = drivers mixers
-@@ -238,7 +240,8 @@ maintainer-clean-recursive:
- 	dot_seen=no; \
- 	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
- 	  rev="$$subdir $$rev"; \
--	  test "$$subdir" = "." && dot_seen=yes; \
-+	  test "$$subdir" != "." || dot_seen=yes; \
-+	  true; \
- 	done; \
- 	test "$$dot_seen" = "no" && rev=". $$rev"; \
- 	target=`echo $@ | sed s/-recursive//`; \
-@@ -299,7 +302,7 @@ distdir: $(DISTFILES)
- 	@for file in $(DISTFILES); do \
- 	  d=$(srcdir); \
- 	  if test -d $$d/$$file; then \
--	    cp -pr $$/$$file $(distdir)/$$file; \
-+	    cp -pr $$d/$$file $(distdir)/$$file; \
- 	  else \
- 	    test -f $(distdir)/$$file \
- 	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
-@@ -316,112 +319,6 @@ distdir: $(DISTFILES)
- 	      || exit 1; \
- 	  fi; \
- 	done
--audio.o: audio.c ../config.h poll.h i18n.h audio.h mixer.h driver-out.h \
--	driver.h preferences.h time-buffer.h event-waiter.h main.h xm.h \
--	xm-player.h endian-conv.h scope-group.h sample-display.h \
--	errors.h gui-settings.h
--audioconfig.o: audioconfig.c ../config.h i18n.h audioconfig.h gui-subs.h \
--	audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h sample-editor.h xm.h driver-in.h \
--	gui.h
--cheat-sheet.o: cheat-sheet.c ../config.h i18n.h
--clavier.o: clavier.c clavier.h
--endian-conv.o: endian-conv.c ../config.h endian-conv.h
--envelope-box.o: envelope-box.c ../config.h i18n.h gui-subs.h \
--	envelope-box.h xm.h mixer.h gui-settings.h
--errors.o: errors.c audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h
--event-waiter.o: event-waiter.c event-waiter.h
--extspinbutton.o: extspinbutton.c extspinbutton.h gui.h gui-subs.h \
--	audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h
--file-operations.o: file-operations.c ../config.h i18n.h \
--	file-operations.h keys.h track-editor.h tracker.h xm.h mixer.h \
--	tracker-settings.h gui-subs.h gui.h audio.h driver-out.h \
--	driver.h preferences.h time-buffer.h event-waiter.h errors.h
--gui-settings.o: gui-settings.c ../config.h i18n.h gui.h gui-subs.h \
--	audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h gui-settings.h scope-group.h \
--	sample-display.h track-editor.h tracker.h xm.h \
--	tracker-settings.h extspinbutton.h
--gui-subs.o: gui-subs.c ../config.h i18n.h gui.h gui-subs.h audio.h \
--	mixer.h driver-out.h driver.h preferences.h time-buffer.h \
--	event-waiter.h extspinbutton.h
--gui.o: gui.c ../config.h poll.h i18n.h gui.h gui-subs.h audio.h mixer.h \
--	driver-out.h driver.h preferences.h time-buffer.h \
--	event-waiter.h xm.h st-subs.h xm-player.h tracker.h main.h \
--	keys.h instrument-editor.h sample-editor.h driver-in.h \
--	track-editor.h tracker-settings.h scope-group.h \
--	sample-display.h module-info.h menubar.h tips-dialog.h \
--	gui-settings.h file-operations.h playlist.h extspinbutton.h
--instrument-editor.o: instrument-editor.c i18n.h ../config.h \
--	instrument-editor.h xm.h mixer.h envelope-box.h st-subs.h gui.h \
--	gui-subs.h audio.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h keys.h track-editor.h tracker.h \
--	tracker-settings.h clavier.h errors.h sample-editor.h \
--	driver-in.h gui-settings.h module-info.h file-operations.h
--keys.o: keys.c ../config.h i18n.h keys.h gui-subs.h gui.h audio.h \
--	mixer.h driver-out.h driver.h preferences.h time-buffer.h \
--	event-waiter.h menubar.h
--main.o: main.c ../config.h i18n.h gui.h gui-subs.h audio.h mixer.h \
--	driver-out.h driver.h preferences.h time-buffer.h \
--	event-waiter.h xm.h keys.h gui-settings.h audioconfig.h \
--	tips-dialog.h menubar.h track-editor.h tracker.h \
--	tracker-settings.h midi.h midi-settings.h
--menubar.o: menubar.c ../config.h i18n.h menubar.h gui.h gui-subs.h \
--	audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h main.h xm.h st-subs.h keys.h \
--	module-info.h scope-group.h sample-display.h track-editor.h \
--	tracker.h tracker-settings.h audioconfig.h gui-settings.h \
--	tips-dialog.h transposition.h cheat-sheet.h file-operations.h \
--	instrument-editor.h midi-settings.h
--midi-settings.o: midi-settings.c ../config.h
--midi-utils.o: midi-utils.c ../config.h
--midi.o: midi.c ../config.h
--module-info.o: module-info.c i18n.h ../config.h module-info.h gui.h \
--	gui-subs.h audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h xm.h st-subs.h main.h \
--	sample-editor.h driver-in.h instrument-editor.h keys.h \
--	track-editor.h tracker.h tracker-settings.h
--playlist.o: playlist.c ../config.h i18n.h playlist.h gui-subs.h
--poll.o: poll.c ../config.h
--preferences.o: preferences.c ../config.h i18n.h gui-subs.h preferences.h \
--	menubar.h scope-group.h sample-display.h track-editor.h \
--	tracker.h xm.h mixer.h tracker-settings.h errors.h
--recode.o: recode.c recode.h
--sample-display.o: sample-display.c sample-display.h
--sample-editor.o: sample-editor.c ../config.h i18n.h sample-editor.h xm.h \
--	mixer.h driver-in.h driver.h preferences.h st-subs.h gui.h \
--	gui-subs.h audio.h driver-out.h time-buffer.h event-waiter.h \
--	instrument-editor.h sample-display.h endian-conv.h keys.h \
--	track-editor.h tracker.h tracker-settings.h errors.h \
--	module-info.h file-operations.h gui-settings.h
--scope-group.o: scope-group.c ../config.h scope-group.h sample-display.h \
--	audio.h mixer.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h gui-subs.h gui-settings.h
--st-subs.o: st-subs.c st-subs.h xm.h mixer.h gui-settings.h
--time-buffer.o: time-buffer.c time-buffer.h
--tips-dialog.o: tips-dialog.c ../config.h i18n.h tips-dialog.h \
--	preferences.h
--track-editor.o: track-editor.c i18n.h ../config.h track-editor.h \
--	tracker.h xm.h mixer.h tracker-settings.h gui.h gui-subs.h \
--	audio.h driver-out.h driver.h preferences.h time-buffer.h \
--	event-waiter.h st-subs.h keys.h xm-player.h main.h \
--	gui-settings.h menubar.h
--tracker-settings.o: tracker-settings.c ../config.h tracker-settings.h \
--	tracker.h xm.h mixer.h i18n.h gui-subs.h preferences.h
--tracker.o: tracker.c tracker.h xm.h mixer.h main.h gui-settings.h
--transposition.o: transposition.c i18n.h ../config.h transposition.h \
--	main.h xm.h mixer.h gui-subs.h gui.h audio.h driver-out.h \
--	driver.h preferences.h time-buffer.h event-waiter.h st-subs.h \
--	track-editor.h tracker.h tracker-settings.h
--xm-player.o: xm-player.c ../config.h i18n.h xm-player.h xm.h mixer.h \
--	main.h audio.h driver-out.h driver.h preferences.h \
--	time-buffer.h event-waiter.h
--xm.o: xm.c i18n.h ../config.h gui-settings.h xm.h mixer.h xm-player.h \
--	endian-conv.h st-subs.h recode.h errors.h audio.h driver-out.h \
--	driver.h preferences.h time-buffer.h event-waiter.h
--
- info-am:
- info: info-recursive
- dvi-am:
-@@ -430,7 +327,7 @@ check-am: all-am
+$OpenBSD: patch-app_Makefile_in,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+--- app/Makefile.in.orig	Mon May 20 13:51:13 2002
++++ app/Makefile.in	Tue May 21 19:22:46 2002
+@@ -436,7 +436,7 @@ check-am: all-am
  check: check-recursive
  installcheck-am:
  installcheck: installcheck-recursive
@@ -195,17 +10,17 @@ $OpenBSD: patch-app_Makefile_in,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
  install-exec: install-exec-recursive
  
  install-data-am:
-@@ -492,24 +389,12 @@ all-recursive check-recursive installche
- dvi-recursive mostlyclean-recursive distclean-recursive clean-recursive \
+@@ -499,23 +499,12 @@ dvi-recursive mostlyclean-recursive dist
  maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
  distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
--dvi-am dvi check check-am installcheck-am installcheck \
+ dvi-am dvi check check-am installcheck-am installcheck \
 -install-exec-local install-exec-am install-exec install-data-am \
--install-data install-am install uninstall-am uninstall all-redirect \
--all-am all installdirs-am installdirs mostlyclean-generic \
--distclean-generic clean-generic maintainer-clean-generic clean \
--mostlyclean distclean maintainer-clean
--
++install-exec-am install-exec install-data-am \
+ install-data install-am install uninstall-am uninstall all-redirect \
+ all-am all installdirs-am installdirs mostlyclean-generic \
+ distclean-generic clean-generic maintainer-clean-generic clean \
+ mostlyclean distclean maintainer-clean
+ 
 -
 -install-exec-local:
 -	chown root.root $(bindir)/soundtracker
@@ -217,12 +32,6 @@ $OpenBSD: patch-app_Makefile_in,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
 -	@echo "*** if this is a multi-user machine. See file INSTALL."
 -	@echo "***"
 -	@echo ""
-+dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
-+install-exec install-data-am install-data install-am install \
-+uninstall-am uninstall all-redirect all-am all installdirs-am \
-+installdirs mostlyclean-generic distclean-generic clean-generic \
-+maintainer-clean-generic clean mostlyclean distclean maintainer-clean
-+
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

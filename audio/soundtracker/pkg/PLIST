@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/30 09:08:28 wcobb Exp $
 bin/soundtracker
 share/doc/soundtracker/FAQ
 share/doc/soundtracker/NEWS
 share/doc/soundtracker/README
-share/doc/soundtracker/hacking.txt
 share/doc/soundtracker/xi.txt
 share/doc/soundtracker/xm.txt
 share/locale/de/LC_MESSAGES/soundtracker.mo

@@ -89,7 +89,6 @@ sun_poll_ready_playing (gpointer data,
 			GdkInputCondition condition)
 {
     sun_driver * const d = data;
-    static int w;
     static int size;
     static struct timeval tv;
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_xm_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
---- app/xm.c.orig	Mon Feb  4 04:08:11 2002
-+++ app/xm.c	Mon Feb  4 04:39:22 2002
-@@ -760,7 +760,8 @@ xm_init_locks (XM *xm)
+$OpenBSD: patch-app_xm_c,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+--- app/xm.c.orig	Mon May 20 10:21:08 2002
++++ app/xm.c	Tue May 21 18:21:30 2002
+@@ -765,7 +765,8 @@ xm_init_locks (XM *xm)
      for(i = 0; i < sizeof(xm->instruments) / sizeof(xm->instruments[0]); i++) {
  	STInstrument *ins = &xm->instruments[i];
  	for(j = 0; j < sizeof(ins->samples) / sizeof(ins->samples[0]); j++) {
@@ -11,7 +11,7 @@ $OpenBSD: patch-app_xm_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
  	}
      }
  }
-@@ -1089,7 +1090,9 @@ XM_Free (XM *xm)
+@@ -1094,7 +1095,9 @@ XM_Free (XM *xm)
  	    STInstrument *ins = &xm->instruments[i];
  	    st_clean_instrument(ins, NULL);
  	    for(j = 0; j < sizeof(ins->samples) / sizeof(ins->samples[0]); j++) {
