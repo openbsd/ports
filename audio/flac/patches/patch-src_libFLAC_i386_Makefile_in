@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libFLAC_i386_Makefile_in,v 1.1 2001/06/07 20:17:50 naddy Exp $
+--- src/libFLAC/i386/Makefile.in.orig	Thu Jun  7 09:18:44 2001
++++ src/libFLAC/i386/Makefile.in	Thu Jun  7 20:55:12 2001
+@@ -295,8 +295,14 @@ mostlyclean-generic distclean-generic cl
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-%.lo: %.s
+-	$(NASM) -f elf -d ELF $< -o $@
++cpu_asm.lo: cpu_asm.s
++	$(NASM) -f aoutb -d AOUT $? -o $@
++
++fixed_asm.lo: fixed_asm.s
++	$(NASM) -f aoutb -d AOUT $? -o $@
++
++lpc_asm.lo: lpc_asm.s
++	$(NASM) -f aoutb -d AOUT $? -o $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

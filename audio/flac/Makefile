@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/20 12:06:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/07 20:17:49 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
 PKGNAME=	${DISTNAME:S/-src//}
-DISTNAME=	flac-0.9-src
+DISTNAME=	flac-0.10-src
 CATEGORIES=	audio archivers
-NEED_VERSION=	1.365
+NEED_VERSION=	1.402
 HOMEPAGE=	http://flac.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -18,7 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac
 
-USE_GMAKE=	Yes
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS=	nasm::devel/nasm
+.endif
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV=	XMMS_CONFIG=no

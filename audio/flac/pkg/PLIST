@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/28 12:27:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 20:17:50 naddy Exp $
 bin/flac
 bin/metaflac
 lib/libFLAC.a
 lib/libFLAC.la
-%%SHARED%%
 share/doc/flac/comparison.html
 share/doc/flac/developers.html
 share/doc/flac/documentation.html
@@ -12,9 +11,11 @@ share/doc/flac/features.html
 share/doc/flac/format.html
 share/doc/flac/goals.html
 share/doc/flac/id.html
+share/doc/flac/images/1x1.gif
+share/doc/flac/images/cafebug.gif
+share/doc/flac/images/logo.jpg
 share/doc/flac/index.html
 share/doc/flac/news.html
-share/doc/flac/images/1x1.gif
-share/doc/flac/images/logo.jpg
+%%SHARED%%
 @dirrm share/doc/flac/images
 @dirrm share/doc/flac
