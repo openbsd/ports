@@ -1,0 +1,13 @@
+--- netpipe.h.orig	Thu Mar 18 23:15:21 1999
++++ netpipe.h	Thu Mar 18 23:16:33 1999
+@@ -37,8 +37,10 @@
+ #define  MAXINT             2147483647
+ 
+ #define     ABS(x)     (((x) < 0)?(-(x)):(x))
++#ifndef __OpenBSD__
+ #define     MIN(x,y)   (((x) < (y))?(x):(y))
+ #define     MAX(x,y)   (((x) > (y))?(x):(y))
++#endif
+ 
+ /* Need to include the protocol structure header file.                       */
+ /* Change this to reflect the protocol                                       */
