@@ -1,21 +1,19 @@
---- Makefile.orig	Sun Nov 23 15:16:18 1997
-+++ Makefile	Sun Nov 23 15:18:13 1997
-@@ -15,13 +15,13 @@
- CC 		= gcc
- 
- ## Where to install the binary and icons, respectively
--BINDIR = ../bin
--LIBDIR = ../lib
-+BINDIR = ${PREFIX}/bin
-+LIBDIR = ${PREFIX}/lib/xcopilot
- 
--# set the following CFLAGS, IFLAGS and LFLAGS for linux or FreeBSD
-+# set the following CFLAGS, IFLAGS and LFLAGS for linux, FreeBSD or OpenBSD
- CFLAGS 		= -pipe -g -O5 -Wall
--IFLAGS		= -I/usr/X11R6/include -I. -I${MC68KDIR} -I${MXDIR}
--LFLAGS		= -L/usr/X11R6/lib -lXpm -lXext -lX11
-+IFLAGS		= -I${X11BASE}/include -I. -I${MC68KDIR} -I${MXDIR}
-+LFLAGS		= -L${X11BASE}/lib -lXpm -lXext -lX11
- 
- # set the following CFLAGS, IFLAGS and LFLAGS for SunOS 4.1.4
- #CFLAGS 	= -pipe -O3 -Wall -g -D__BIG_ENDIAN__  -DNEED_STRSEP
+*** mx/Makefile.in.orig	Mon Aug 31 21:56:13 1998
+--- mx/Makefile.in	Mon Aug 31 21:56:32 1998
+***************
+*** 101,107 ****
+  test_filesel_OBJECTS =  test_filesel.o
+  test_filesel_DEPENDENCIES =  libmx.a
+  test_filesel_LDFLAGS = 
+! CFLAGS = @CFLAGS@
+  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+  LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+  DIST_COMMON =  Makefile.am Makefile.in
+--- 101,107 ----
+  test_filesel_OBJECTS =  test_filesel.o
+  test_filesel_DEPENDENCIES =  libmx.a
+  test_filesel_LDFLAGS = 
+! CFLAGS = @CFLAGS@ $(X_CFLAGS)
+  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+  LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+  DIST_COMMON =  Makefile.am Makefile.in

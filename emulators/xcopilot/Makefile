@@ -1,24 +1,18 @@
 # OpenBSD makefile for: xcopilot
-# Version required:     0.4
+# Version required:     0.6.6
 # Date created:         August 31, 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/01 00:00:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/01 03:02:27 angelos Exp $
 #
 
-DISTNAME=       xcopilot-v0.4
-PKGNAME=	xcopilot-0.4.8
+DISTNAME=       xcopilot-0.6.6
+PKGNAME=	xcopilot-0.6.6
 CATEGORIES=     emulators pilot
-MASTER_SITES=   ftp://uiarchive.cso.uiuc.edu/pub/systems/PalmOS/
-
-PATCH_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
-PATCHFILES=	xcopilot-v0.4-iang8.diff
-PATCH_DIST_STRIP= -p1
+MASTER_SITES=   http://xcopilot.cuspy.com/build/
 
 MAINTAINER=     angelos@openbsd.org
-
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-
+GNU_CONFIGURE=	YES
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

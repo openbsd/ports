@@ -1,4 +1,2 @@
 bin/xcopilot
-lib/xcopilot/icon.xpm
-lib/xcopilot/icon2.xpm
-@dirrm lib/xcopilot
+man/man1/xcopilot.1
