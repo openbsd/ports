@@ -8,7 +8,7 @@ Flavors:
 	i386   - emulate 386 instruction set
 	i486   - emulate 486 instruction set
 	i686   - emulate 686 instruction set
-	x86_64 - emulate x86_64 instruction set
+	x86_64 - emulate x86-64 instruction set
 	pci    - build with support for i440FX PCI chipset
 	smp    - build with support for SMP (2 CPUs)
 	smp_4  - build with support for SMP (4 CPUs)

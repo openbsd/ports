@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/12/28 06:20:19 todd Exp $
+# $OpenBSD: Makefile,v 1.27 2003/01/03 18:44:33 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -12,6 +12,7 @@ HOMEPAGE=	http://bochs.sourceforge.net/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -40,15 +41,19 @@ CONFIGURE_ARGS+= --with-x11
 .endif
 
 .if ${FLAVOR:L:Mi386}
-CONFIGURE_ARGS+= --enable-cpu-level="3" --disable-mmx --disable-x86-64
+CONFIGURE_ARGS+= --enable-cpu-level="3" --disable-mmx
 .elif ${FLAVOR:L:Mi486}
-CONFIGURE_ARGS+= --enable-cpu-level="4" --disable-mmx --disable-x86-64
+CONFIGURE_ARGS+= --enable-cpu-level="4" --disable-mmx
 .elif ${FLAVOR:L:Mi686}
-CONFIGURE_ARGS+= --enable-cpu-leve="6" --disable-x86-64
+CONFIGURE_ARGS+= --enable-cpu-leve="6"
 .elif ${FLAVOR:L:Mx86_64}
 CONFIGURE_ARGS+= --enable-x86-64
 .else
-CONFIGURE_ARGS+= --enable-cpu-level="5" --disable-x86-64
+CONFIGURE_ARGS+= --enable-cpu-level="5"
+.endif
+
+.if !${FLAVOR:L:Mx86_64}
+CONFIGURE_ARGS+= --disable-x86-64
 .endif
 
 .if ${FLAVOR:L:Mpci}
