@@ -1,6 +1,5 @@
-$OpenBSD: patch-configure,v 1.9 2002/12/02 08:01:17 kevlo Exp $
---- configure.orig	Mon Dec  2 15:41:32 2002
-+++ configure	Mon Dec  2 15:49:13 2002
+--- configure.orig	Wed Oct 23 19:45:50 2002
++++ configure	Tue Jan 14 23:08:34 2003
 @@ -2438,9 +2438,14 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -41,6 +40,26 @@ $OpenBSD: patch-configure,v 1.9 2002/12/02 08:01:17 kevlo Exp $
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
+@@ -4029,16 +4035,16 @@
+ 	for i in $dirs ; do
+ 	    if test -r $i/libX11.a -o -r $i/libX11.so -o -r $i/libX11.sl; then
+ 		echo "$ac_t""$i" 1>&6
+-		XLIBSW="-L$i -lX11"
++		XLIBSW="-L$i -lX11 -lXext"
+ 		x_libraries="$i"
+ 		break
+ 	    fi
+ 	done
+     else
+ 	if test "$x_libraries" = ""; then
+-	    XLIBSW=-lX11
++	    XLIBSW="-lX11 -lXext"
+ 	else
+-	    XLIBSW="-L$x_libraries -lX11"
++	    XLIBSW="-L$x_libraries -lX11 -lXext"
+ 	fi
+     fi
+     if test "$XLIBSW" = nope ; then
 @@ -4778,13 +4784,12 @@
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
