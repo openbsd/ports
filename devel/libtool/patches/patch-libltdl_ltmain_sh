@@ -1,7 +1,25 @@
-$OpenBSD: patch-libltdl_ltmain_sh,v 1.5 2004/12/18 21:38:18 brad Exp $
+$OpenBSD: patch-libltdl_ltmain_sh,v 1.6 2004/12/18 23:30:36 brad Exp $
 --- libltdl/ltmain.sh.orig	Sun Sep 19 08:34:44 2004
-+++ libltdl/ltmain.sh	Sat Dec 18 16:33:27 2004
-@@ -1985,10 +1985,6 @@ EOF
++++ libltdl/ltmain.sh	Sat Dec 18 17:00:07 2004
+@@ -1950,6 +1950,17 @@ EOF
+ 	;;
+     esac
+     for pass in $passes; do
++      # The preopen pass in lib mode reverses $deplibs; put it back here
++      # so that -L comes before libs that need it for instance...
++      if test "$linkmode,$pass" = "lib,link"; then
++	## FIXME: Find the place where the list is rebuilt in the wrong
++	##        order, and fix it there properly
++	tmp_deplibs=
++	for deplib in $deplibs; do
++	  tmp_deplibs="$deplib $tmp_deplibs"
++	done
++	deplibs="$tmp_deplibs"
++      fi
+       if test "$linkmode,$pass" = "lib,link" ||
+ 	 test "$linkmode,$pass" = "prog,scan"; then
+ 	libs="$deplibs"
+@@ -1985,10 +1996,6 @@ EOF
  	    $echo "$modename: warning: \`-l' is ignored for archives/objects" 1>&2
  	    continue
  	  fi
@@ -12,7 +30,38 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.5 2004/12/18 21:38:18 brad Exp $
  	  name=`$echo "X$deplib" | $Xsed -e 's/^-l//'`
  	  for searchdir in $newlib_search_path $lib_search_path $sys_lib_search_path $shlib_search_path; do
  	    for search_ext in .la $std_shrext .so .a; do
-@@ -2611,7 +2607,7 @@ EOF
+@@ -2213,20 +2220,20 @@ EOF
+ 	    # It is a libtool convenience library, so add in its objects.
+ 	    convenience="$convenience $ladir/$objdir/$old_library"
+ 	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
+-	    tmp_libs=
+-	    for deplib in $dependency_libs; do
+-	      deplibs="$deplib $deplibs"
+-              if test "X$duplicate_deps" = "Xyes" ; then
+-	        case "$tmp_libs " in
+-	        *" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
+-	        esac
+-              fi
+-	      tmp_libs="$tmp_libs $deplib"
+-	    done
+ 	  elif test "$linkmode" != prog && test "$linkmode" != lib; then
+ 	    $echo "$modename: \`$lib' is not a convenience library" 1>&2
+ 	    exit $EXIT_FAILURE
+ 	  fi
++	  tmp_libs=
++	  for deplib in $dependency_libs; do
++	    deplibs="$deplib $deplibs"
++	    if test "X$duplicate_deps" = "Xyes" ; then
++	      case "$tmp_libs " in
++	      *" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
++	      esac
++	    fi
++	    tmp_libs="$tmp_libs $deplib"
++	  done
+ 	  continue
+ 	fi # $pass = conv
+ 
+@@ -2611,7 +2618,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -21,7 +70,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.5 2004/12/18 21:38:18 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5804,40 +5800,6 @@ relink_command=\"$relink_command\""
+@@ -5804,40 +5811,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
