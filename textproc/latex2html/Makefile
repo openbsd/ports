@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/04/04 17:12:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2005/04/06 18:21:51 sturm Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
@@ -21,7 +21,8 @@ RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
 		:teTeX_base-*:print/teTeX/base
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--shlibdir=${PREFIX}/share/latex2html
+CONFIGURE_ARGS=	--shlibdir=${PREFIX}/share/latex2html \
+		--with-texpath=${PREFIX}/share/texmf-local/tex/latex/html
 
 PKG_ARCH=	*
 
