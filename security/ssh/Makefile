@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2000/02/02 17:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2000/02/12 08:35:59 turan Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -17,6 +17,12 @@ NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	todd@openbsd.org
+
+LICENSE_TYPE=		CRYPTO
+PERMIT_PKG_CDROM=	NO
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	NO
+PERMIT_DISTF_FTP=	YES
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
