@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2003/07/22 22:05:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.289 2003/07/26 11:48:51 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += httptunnel
      SUBDIR += icb
      SUBDIR += icecast
+     SUBDIR += ices
      SUBDIR += ickle
      SUBDIR += icmpinfo
      SUBDIR += ike-scan
@@ -92,6 +93,7 @@
      SUBDIR += libdnet
      SUBDIR += libnet
      SUBDIR += libnids
+     SUBDIR += libshout
      SUBDIR += libst
      SUBDIR += licq
      SUBDIR += maradns
