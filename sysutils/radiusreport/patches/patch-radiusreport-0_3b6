@@ -1,5 +1,6 @@
+$OpenBSD: patch-radiusreport-0_3b6,v 1.1 2000/08/10 05:58:43 danh Exp $
 --- radiusreport-0.3b6.orig	Sun Apr 12 07:35:23 1998
-+++ radiusreport-0.3b6	Sun May 28 05:10:06 2000
++++ radiusreport-0.3b6	Thu Aug 10 01:54:01 2000
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
