@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/21 21:20:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/25 19:17:47 matt Exp $
+
+COMMENT=		"convert ASCII files to PostScript"
 
 DISTNAME=		enscript-1.6.1
-NEED_VERSION=		1.319
+NEED_VERSION=		1.361
 CATEGORIES=     	print
 
 MAINTAINER=		Matt Behrens <matt@openbsd.org>

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/26 23:50:26 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/25 19:17:45 matt Exp $
+
+COMMENT=	"Blackdown's JDK for Java 2"
 
 DISTNAME=	blackdown-jdk-1.2pre-v2
 CATEGORIES=	devel
-NEED_VERSION=	1.340
+NEED_VERSION=	1.361
 MASTER_SITES=	ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/JDK-1.2/i386/pre-v2/glibc2.0/
 
 JDK_VERSION=	1.2
