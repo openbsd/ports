@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/27 19:43:36 jolan Exp $
+bin/honeyd
+include/honeyd/debug.h
+include/honeyd/hooks.h
+include/honeyd/plugins.h
+include/honeyd/plugins_config.h
+lib/honeyd/libhoneyd.so
+man/man8/honeyd.8
+share/honeyd/README
+share/honeyd/config.sample
+share/honeyd/nmap.assoc
+share/honeyd/nmap.prints
+share/honeyd/xprobe2.conf
+@dirrm share/honeyd
+@dirrm lib/honeyd
+@dirrm include/honeyd

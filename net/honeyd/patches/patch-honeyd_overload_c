@@ -1,0 +1,30 @@
+$OpenBSD: patch-honeyd_overload_c,v 1.1.1.1 2003/06/27 19:43:36 jolan Exp $
+--- honeyd_overload.c.orig	Sun Jun 22 14:00:47 2003
++++ honeyd_overload.c	Tue Jun 24 05:41:16 2003
+@@ -595,7 +595,7 @@ poll(struct pollfd *fds, int nfds, int t
+ ssize_t
+ recv(int sock, void *buf, size_t len, int flags)
+ {
+-	ssize_t ret;
++	socklen_t ret;
+ 
+ 	INIT;
+ 
+@@ -611,7 +611,7 @@ ssize_t
+ recvfrom(int sock, void *buf, size_t len, int flags, struct sockaddr *from,
+     socklen_t *fromlen)
+ {
+-	ssize_t ret;
++	socklen_t ret;
+ 	struct fd *nfd;
+ 	socklen_t flen = fromlen != NULL ? *fromlen : 0;
+ 
+@@ -640,7 +640,7 @@ sendto(int sock, const void *buf, size_t
+     const struct sockaddr *to, socklen_t tolen)
+ {
+ 	struct fd *nfd;
+-	ssize_t ret;
++	socklen_t ret;
+ 
+ 	INIT;
+ 

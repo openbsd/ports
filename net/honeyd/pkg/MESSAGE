@@ -1,0 +1,9 @@
+
+Configuring honeyd for use on OpenBSD
+-------------------------------------
+
+The location to the honeyd configuration file must be specified via the
+-f switch.  Also, honeyd requires an arp daemon to (falsely) answer arp
+queries.  rarpd(8) in base or arpd from ports can both be used for this.
+See honeyd(8) for more detailed information on setting up honeyd.
+

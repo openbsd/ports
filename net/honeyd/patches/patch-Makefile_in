@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/06/27 19:43:36 jolan Exp $
+--- Makefile.in.orig	Mon Jun 23 19:24:35 2003
++++ Makefile.in	Tue Jun 24 04:58:58 2003
+@@ -135,7 +135,7 @@ honeyd_LDADD = @LIBOBJS@ @EVENTLIB@ @PCA
+ # Allow plugins to use honeyd's functions:
+ honeyd_LDFLAGS = -export-dynamic 
+ 
+-CFLAGS = -O2 -Wall -g 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)"
++CFLAGS += -Wall 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)"
+ 
+ 
+ INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@EVENTINC@ @PCAPINC@ @DNETINC@
