@@ -1,22 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/08/31 00:40:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/03/22 05:31:37 form Exp $
 bin/ascii-xfr
+@owner uucp
+@group dialer
+@mode 6111
 bin/minicom
+@owner
+@group
+@mode
 bin/runscript
-bin/xminicom
 man/man1/ascii-xfr.1
 man/man1/minicom.1
 man/man1/runscript.1
+share/doc/minicom/AUTHORS
 share/doc/minicom/Announce-1.78
 share/doc/minicom/Announce-1.82
 share/doc/minicom/Announce-1.82.1
 share/doc/minicom/Announce-1.83
-share/doc/minicom/Announce-1.83.1
 share/doc/minicom/COMPATABILITY.lrzsz
+share/doc/minicom/COPYING
 share/doc/minicom/ChangeLog
+share/doc/minicom/ChangeLog.old
 share/doc/minicom/HistSearch
 share/doc/minicom/Locales
 share/doc/minicom/Macros
-share/doc/minicom/Porting
 share/doc/minicom/QuickStart.modemu
 share/doc/minicom/README.lrzsz
 share/doc/minicom/RedHat
@@ -27,11 +33,6 @@ share/doc/minicom/Todo.Irix.dif
 share/doc/minicom/Todo.emacskey.dif
 share/doc/minicom/Todo.fsel
 share/doc/minicom/copyright.modemu
-share/doc/minicom/demos/htsalogin
-share/doc/minicom/demos/saralogin
-share/doc/minicom/demos/scriptdemo
-share/doc/minicom/demos/unixlogin
-share/doc/minicom/developers
 share/doc/minicom/fselector.txt
 share/doc/minicom/japanese
 share/doc/minicom/minicom.FAQ
@@ -41,19 +42,36 @@ share/doc/minicom/modemu.README
 share/doc/minicom/pl-translation.txt
 share/doc/minicom/portugues-brasil
 share/doc/minicom/suomeksi
-share/doc/minicom/tables/mc.iso
-share/doc/minicom/tables/mc.noconv
-share/doc/minicom/tables/mc.pc8
-share/doc/minicom/tables/mc.sf7
-share/examples/minicom/minicom.users
+share/examples/minicom/extras/htsalogin
+share/examples/minicom/extras/linux/INSTALL
+share/examples/minicom/extras/linux/README-FIRST
+share/examples/minicom/extras/linux/mtelnet
+share/examples/minicom/extras/saralogin
+share/examples/minicom/extras/scriptdemo
+share/examples/minicom/extras/tables/mc.iso
+share/examples/minicom/extras/tables/mc.noconv
+share/examples/minicom/extras/tables/mc.pc8
+share/examples/minicom/extras/tables/mc.sf7
+share/examples/minicom/extras/termcap/README
+share/examples/minicom/extras/termcap/termcap.long
+share/examples/minicom/extras/termcap/termcap.short
+share/examples/minicom/extras/terminfo/README
+share/examples/minicom/extras/terminfo/minicom
+share/examples/minicom/extras/unixlogin
+share/examples/minicom/minicom.users.sample
+share/locale/cs_CZ/LC_MESSAGES/minicom.mo
+share/locale/es/LC_MESSAGES/minicom.mo
 share/locale/fi_FI/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
-share/locale/ko/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
-@dirrm share/doc/minicom/tables
-@dirrm share/doc/minicom/demos
-@dirrm share/doc/minicom
+share/locale/ru/LC_MESSAGES/minicom.mo
+@dirrm share/examples/minicom/extras/terminfo
+@dirrm share/examples/minicom/extras/termcap
+@dirrm share/examples/minicom/extras/tables
+@dirrm share/examples/minicom/extras/linux
+@dirrm share/examples/minicom/extras
 @dirrm share/examples/minicom
+@dirrm share/doc/minicom

@@ -1,8 +1,8 @@
-$OpenBSD: patch-updown_c,v 1.1 2001/10/12 02:49:03 brad Exp $
---- updown.c.orig	Thu Mar 16 04:44:26 2000
-+++ updown.c	Thu Oct 11 22:16:06 2001
-@@ -238,7 +238,7 @@ int nr;
-     do_log(cmdline);   /* jl 22.06.97 */
+$OpenBSD: patch-src_updown_c,v 1.1 2002/03/22 05:31:37 form Exp $
+--- src/updown.c.orig	Wed Jul  4 23:27:47 2001
++++ src/updown.c	Fri Mar 22 09:02:49 2002
+@@ -245,7 +245,7 @@ int nr;
+     do_log("%s", cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {
 -    win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);

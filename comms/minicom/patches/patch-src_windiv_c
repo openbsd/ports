@@ -1,15 +1,15 @@
-$OpenBSD: patch-windiv_c,v 1.1 2001/10/12 02:49:03 brad Exp $
---- windiv.c.orig	Thu Jul 30 12:48:23 1998
-+++ windiv.c	Thu Oct 11 22:16:07 2001
-@@ -12,6 +12,7 @@
-  *
-  * hgk+jl 02.98 File selection window (no longer used this way..)
-  */
+$OpenBSD: patch-src_windiv_c,v 1.1 2002/03/22 05:31:37 form Exp $
+--- src/windiv.c.orig	Tue Feb  1 02:12:08 2000
++++ src/windiv.c	Fri Mar 22 09:03:35 2002
+@@ -19,6 +19,7 @@
+ #include "rcsid.h"
+ RCSID("$Id: patch-src_windiv_c,v 1.1 2002/03/22 05:31:37 form Exp $")
+ 
 +#include <sys/types.h>
  #include <dirent.h>
  #include <sys/stat.h>
  #include "port.h"
-@@ -244,8 +245,14 @@ char *file_dir;
+@@ -251,8 +252,14 @@ char *file_dir;
  
        /* get regular files */
        dirlist[nCnt].d_ino    = dirent->d_ino;

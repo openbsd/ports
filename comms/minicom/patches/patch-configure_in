@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/03/22 05:31:37 form Exp $
+--- configure.in.orig	Sun Sep 30 20:10:33 2001
++++ configure.in	Fri Mar 22 08:46:21 2002
+@@ -249,7 +249,7 @@ AC_CHECK_FUNC(select,
+ 	KEYSERV="",
+ 	KEYSERV="minicom.keyserv")
+ AC_SUBST(KEYSERV)
+-AC_REPLACE_FUNCS(snprintf usleep getopt getopt_long)
++AC_REPLACE_FUNCS(snprintf usleep)
+ 
+ dnl system capabilities
+ AC_SYS_LONG_FILE_NAMES
