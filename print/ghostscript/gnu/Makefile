@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/20 00:57:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/20 17:18:59 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
 CATEGORIES=	print
 
-# Eventually, this will show up on gnu's master sites... whenever the
-# FSF wakes up.
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
-		$(MASTER_SITE_GNU)
+DIR=		gnu/gs550
+
+# Eventually, the FSF should wake up...
+MASTER_SITE_SUBDIR=     ghostscript
+MASTER_SITES= ${GS_SITES} ${MASTER_SITE_GNU}
 
 HOMEPAGE=	http://www.cs.wisc.edu/%7Eghost/
 
 MASTER_SITES0=  http://www.erdw.ethz.ch/%7Ebonk/ftp/gs-driver-distrib/
 
-MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}:0 
 
