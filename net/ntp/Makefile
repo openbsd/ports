@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/05 14:16:16 danh Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/06 13:40:17 danh Exp $
 
 COMMENT=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
-BROKEN=		"May be holed"
 VERSION=	4.0.99k
 DISTNAME=	ntp-${VERSION}
 CATEGORIES=	net
