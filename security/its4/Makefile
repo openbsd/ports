@@ -3,9 +3,9 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/22 02:15:54 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/27 04:02:12 dugsong Exp $
 
-DISTNAME=	its4-1.0
+DISTNAME=	its4-1.0.1
 
 CATEGORIES=	security
 
