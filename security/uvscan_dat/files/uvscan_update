@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $Id: uvscan_update,v 1.1 2000/06/27 18:40:55 jakob Exp $
+
+PATH=/bin:/usr/bin; export PATH
+URLBASE=http://download.nai.com/products/datfiles/4.x/nai
+FILES="clean.dat internet.dat names.dat scan.dat"
+
+cd @PREFIX@/libexec/uvscan
+
+AVVER=`ftp -o - $URLBASE/readme.txt | head -1 | cut -d' ' -f11`
+DISTFILE=dat-$AVVER.tar
+
+if [ ! -f $DISTFILE ]; then
+	ftp $URLBASE/$DISTFILE
+
+	if [ -f $DISTFILE ]; then
+		for i in $FILES ; do
+			rm -f $i.bak
+			cp -p $i $i.bak
+		done
+		if tar xf dat-$AVVER.tar $FILES ; then
+			echo `date` Successfully updated AntiVirus DAT files to $AVVER
+		fi
+	fi
+fi

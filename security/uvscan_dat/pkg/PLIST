@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/26 19:32:59 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/06/27 18:40:55 jakob Exp $
 libexec/uvscan/clean.dat
 libexec/uvscan/internet.dat
 libexec/uvscan/names.dat
@@ -6,5 +6,6 @@ libexec/uvscan/scan.dat
 share/doc/uvscan/reseller.txt
 share/doc/uvscan/readme.txt
 share/doc/uvscan/packing.lst
+sbin/uvscan_update
 @dirrm libexec/uvscan
 @dirrm share/doc/uvscan
