@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/07/13 01:55:59 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/07/13 11:47:00 brad Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -23,8 +23,5 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-
-post-patch:
-	chmod -R ugo-w ${WRKSRC}
 
 .include <bsd.port.mk>
