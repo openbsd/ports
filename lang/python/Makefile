@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/20 04:11:04 jasoni Exp $
+# $OpenBSD: Makefile,v 1.20 2000/07/21 07:46:07 brad Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	1.302
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
@@ -17,18 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=tk mpz threads no_tools
-FLAVOR?=threads mpz
+FLAVORS=	tk mpz threads no_tools
+FLAVOR?=	threads mpz
 
 # don't package tools if not needed
 .if empty(FLAVOR:L:Mno_tools)
 MULTI_PACKAGES=	-tools
 .endif
 
-LIB_DEPENDS=
-
 .if ${FLAVOR:L:Mtk}
-LIB_DEPENDS+=	tk80.1.5::x11/tk/8.0
+LIB_DEPENDS=	tk80.1.5::x11/tk/8.0
 SETUP_LOCAL+=	Setup.tk
 .endif
 
