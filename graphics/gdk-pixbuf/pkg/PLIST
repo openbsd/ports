@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/04/18 11:19:49 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/13 20:35:34 todd Exp $
 bin/gdk-pixbuf-config
 include/gdk-pixbuf/gdk-pixbuf-features.h
 include/gdk-pixbuf/gdk-pixbuf-loader.h
 include/gdk-pixbuf/gdk-pixbuf-xlib.h
 include/gdk-pixbuf/gdk-pixbuf-xlibrgb.h
 include/gdk-pixbuf/gdk-pixbuf.h
+include/gdk-pixbuf/gnome-canvas-pixbuf.h
 lib/gdk_pixbufConf.sh
 lib/gdk_pixbuf_xlibConf.sh
 lib/gnomecanvaspixbufConf.sh
@@ -12,7 +13,8 @@ lib/libgdk_pixbuf.a
 lib/libgdk_pixbuf.la
 lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.la
-%%SHARED%%
+lib/libgnomecanvaspixbuf.a
+lib/libgnomecanvaspixbuf.la
 share/aclocal/gdk-pixbuf.m4
 share/html/gdk-pixbuf-decl.txt
 share/html/gdk-pixbuf-sections.txt
@@ -56,6 +58,12 @@ share/html/gdk-pixbuf/x3723.html
 share/html/gdk-pixbuf/x3735.html
 share/html/gdk-pixbuf/x3765.html
 share/html/gdk-pixbuf/x3787.html
+%%gnome%%
+%%SHARED%%
 @dirrm share/html/gdk-pixbuf
 @dirrm share/html
+@dirrm share/aclocal
+@exec mkdir -p %D/lib/gdk-pixbuf/loaders
+@dirrm lib/gdk-pixbuf/loaders
+@dirrm lib/gdk-pixbuf
 @dirrm include/gdk-pixbuf

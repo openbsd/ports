@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.gnome,v 1.1 2001/09/13 20:35:34 todd Exp $
+include/gdk-pixbuf/gnome-canvas-pixbuf.h
+lib/libgnomecanvaspixbuf.a
+lib/libgnomecanvaspixbuf.la
+lib/libgnomecanvaspixbuf.so.1.0
