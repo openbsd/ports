@@ -1,16 +1,16 @@
 # OpenBSD makefile for:	bash
-# Version required:     2.01.1
+# Version required:     2.02
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.5 1998/03/30 22:03:43 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/05/19 17:01:29 gene Exp $
 #
 
-DISTNAME=       bash-2.01.1
+DISTNAME=       bash-2.02
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU}
 .if !defined(NOPORTDOCS)
-DISTFILES=      bash-2.01.1.tar.gz bash-doc-2.01.tar.gz
+DISTFILES=      bash-2.02.tar.gz bash-doc-2.02.tar.gz
 .endif
 
 MAINTAINER=	gene@OpenBSD.ORG
@@ -27,16 +27,16 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.01/doc/article.ps  \
-		${WRKDIR}/bash-doc-2.01/doc/bashref.ps  \
+		${WRKDIR}/bash-doc-2.02/doc/article.ps  \
+		${WRKDIR}/bash-doc-2.02/doc/bashref.ps  \
 		${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.01/doc/bash.html  \
-		${WRKDIR}/bash-doc-2.01/doc/bashref.html  \
-		${WRKDIR}/bash-doc-2.01/doc/bashref_toc.html  \
+		${WRKDIR}/bash-doc-2.02/doc/bash.html  \
+		${WRKDIR}/bash-doc-2.02/doc/bashref.html  \
+		${WRKDIR}/bash-doc-2.02/doc/bashref_toc.html  \
 		${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.01/doc/article.txt  \
+		${WRKDIR}/bash-doc-2.02/doc/article.txt  \
 		${PREFIX}/share/doc/bash
 	${GZIP_CMD} ${PREFIX}/share/doc/bash/*.ps
 .endif
