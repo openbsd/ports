@@ -1,0 +1,62 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+#
+# installation score file setup for lbreakout2
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_FILE=/var/games/lbreakout2.hscr
+SAMPLE_FILE=${PREFIX}/share/lbreakout2/lbreakout2.hscr
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 score file,"
+    echo "| $SCORE_FILE,"
+    echo "| has NOT been changed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install a blank file to be used as the gtkballs score file
+#
+do_install()
+{
+    cp $SAMPLE_FILE $SCORE_FILE
+    chown root.games $SCORE_FILE
+    chmod 664 $SCORE_FILE
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f $SCORE_FILE ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

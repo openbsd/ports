@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+--- configure.orig	Sun Feb 24 09:14:38 2002
++++ configure	Sun Apr 28 02:10:06 2002
+@@ -1682,8 +1682,8 @@ fi
+ 
+ 
+ 
+-inst_dir="$datadir/games/lbreakout2"
+-hi_dir="/var/lib/games"
++inst_dir="$datadir/lbreakout2"
++hi_dir="/var/games"
+ 
+ # Check whether --enable-install or --disable-install was given.
+ if test "${enable_install+set}" = set; then

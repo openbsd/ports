@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+--- src/Makefile.in.orig	Sun Feb 24 09:15:23 2002
++++ src/Makefile.in	Sun Apr 28 02:02:05 2002
+@@ -425,12 +425,12 @@ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)
+ 	$(mkinstalldirs) $(DESTDIR)$(hi_dir)
+ 	if ! test -f $(DESTDIR)$(hi_dir)/lbreakout2.hscr; then \
+-	  $(INSTALL_DATA) --mode=666 empty.hscr $(DESTDIR)$(hi_dir)/lbreakout2.hscr; \
++	  $(INSTALL_DATA) --mode=666 empty.hscr $(DESTDIR)$(inst_dir)/lbreakout2.hscr; \
+ 	fi;
+ 
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(inst_dir)
+-	rm -f $(DESTDIR)$(hi_dir)/lbreakout2.hscr
++	rm -f $(DESTDIR)$(inst_dir)/lbreakout2.hscr
+ 	rm -rf $(DESTDIR)$(doc_dir)/lbreakout2
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
