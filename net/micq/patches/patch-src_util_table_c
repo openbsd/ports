@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_table_c,v 1.1 2001/05/28 05:15:38 form Exp $
+--- src/util_table.c.orig	Mon May 28 12:11:34 2001
++++ src/util_table.c	Mon May 28 12:11:40 2001
+@@ -157,7 +157,7 @@ const char *TableGetCountry (UWORD code)
+ {
+     int i;
+ 
+-    assert (TableCountryCodesSize == TableCountrySize);
++    /* assert (TableCountryCodesSize == TableCountrySize); */
+ 
+     if (!code)
+         return i18n (-1, TableCountry[0]);
