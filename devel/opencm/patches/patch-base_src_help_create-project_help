@@ -1,0 +1,51 @@
+$OpenBSD: patch-base_src_help_create-project_help,v 1.1 2002/08/28 22:23:29 todd Exp $
+--- base/src/help/create-project.help.orig	Wed Aug 28 14:26:40 2002
++++ base/src/help/create-project.help	Wed Aug 28 14:26:40 2002
+@@ -0,0 +1,47 @@
++@C Copyright (c) 2002, The EROS Group, LLC and Johns Hopkins
++@C University. All rights reserved.
++@C 
++@C This software was developed to support the EROS secure operating
++@C system project (http://www.eros-os.org). The latest version of
++@C the OpenCM software can be found at http://www.opencm.org.
++@C 
++@C Redistribution and use in source and binary forms, with or
++@C without modification, are permitted provided that the following
++@C conditions are met:
++@C 
++@C 1. Redistributions of source code must retain the above copyright
++@C    notice, this list of conditions and the following disclaimer.
++@C 
++@C 2. Redistributions in binary form must reproduce the above
++@C    copyright notice, this list of conditions and the following
++@C    disclaimer in the documentation and/or other materials
++@C    provided with the distribution.
++@C 
++@C 3. Neither the name of the The EROS Group, LLC nor the name of
++@C    Johns Hopkins University, nor the names of its contributors
++@C    may be used to endorse or promote products derived from this
++@C    software without specific prior written permission.
++@C 
++@C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
++@C CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
++@C INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
++@C MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
++@C DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
++@C BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
++@C EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
++@C TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++@C DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
++@C ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
++@C OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++@C OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++@C POSSIBILITY OF SUCH DAMAGE.
++@C
++@C
++@b{create project} @i{new-name}
++
++Creates a new project and a new empty branch and binds @i{new-name} to the
++new empty branch in the user's directory.  All projects are internally 
++referenced by branches and all operations are done relative to a branch. 
++Thus, you can always find the associated project name by listing any branch.
++
++See also:  @b{ls}, @b{create branch}

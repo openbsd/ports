@@ -1,0 +1,61 @@
+$OpenBSD: patch-base_src_client_Merge_c,v 1.1 2002/08/28 22:23:29 todd Exp $
+--- base/src/client/Merge.c.orig	Mon Aug  5 21:38:03 2002
++++ base/src/client/Merge.c	Wed Aug 28 14:26:39 2002
+@@ -1208,6 +1208,10 @@ static void
+ check_name_collisions(ObVec *tuples, StrVec *names)
+ {
+   unsigned u = 0;
++  OC_bool collisions = FALSE;	/* until proven otherwise */
++
++  /* Make sure names is sorted, since we use bsearch... */
++  strvec_sort(names);
+ 
+   /* Make a simulated deletion pass of the fsnames that are either
+      going to disappear entirely (due to being deleted or renamed) or
+@@ -1226,9 +1230,6 @@ check_name_collisions(ObVec *tuples, Str
+       continue;
+ 
+     assert(mt->result);
+-
+-    /* ws_Enumerate returns a sorted vector, so we can use bsearch()
+-       here: */
+     assert(mt->ws->cur_fsName);
+     assert(mt->finalName);
+     {
+@@ -1251,12 +1252,18 @@ check_name_collisions(ObVec *tuples, Str
+     assert(mt->result);
+     assert(mt->finalName);
+ 
+-    if (strvec_bsearch(names, mt->finalName) >= 0)
+-      THROW(ExObjectExists, 
+-	    format("Merge/Update would clobber \"%s\""
+-		   " -- move it out of the way.",
+-		   mt->finalName));
++    if (strvec_bsearch(names, mt->finalName) >= 0) {
++      collisions = TRUE;
++      report(0,"Merge/Update would clobber \"%s\""
++	     " -- move it out of the way.\n", mt->finalName);
++    }
+   }
++
++  /* Wait until all collisions are reported before throwing the
++     exception.  This allows the user to resolve all of them at
++     once. */
++  if (collisions)
++    THROW(ExObjectExists, "Merge/Update name collisions!");
+ }
+ 
+ static void
+@@ -1535,7 +1542,11 @@ ws_mergeFrom(WorkSpace *ws, Repository *
+      have to do this after executing the merge plan, because the
+      'merge' or 'update' command may add new files to the Workspace
+      and/or may rename current Workspace files. */
+-  names = ws_Enumerate(ws, WSE_UNFILTERED, 0); /* get EVERYTHING */
++  names = strvec_create();
++
++  /* Enumerate the filesystem space, getting everything.  Then do a
++     name collision check against that list. */
++  ws_EnumeratePath(ws, names, path_curdir(), WSE_UNFILTERED, 0);
+   check_name_collisions(tuples, names);
+ 
+   report(1, "No name collisions\n"

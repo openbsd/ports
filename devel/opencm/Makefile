@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/28 14:38:25 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/28 22:23:29 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -7,7 +7,7 @@ V=			0.1.0alpha16
 sV=			-1
 DISTNAME=		opencm-${V}${sV}-src
 PKGNAME=		opencm-${V}
-FULLPKGNAME=		opencm-${V}
+FULLPKGNAME=		opencm-${V}p1
 FULLPKGNAME-docs=	opencm-docs-${V}
 CATEGORIES=		devel
 

@@ -1,5 +1,6 @@
---- base/src/help/gremove.help.orig	Thu Aug 15 13:14:02 2002
-+++ base/src/help/gremove.help	Thu Aug 15 13:14:16 2002
+$OpenBSD: patch-base_src_help_gremove_help,v 1.2 2002/08/28 22:23:29 todd Exp $
+--- base/src/help/gremove.help.orig	Mon Jul 29 22:48:32 2002
++++ base/src/help/gremove.help	Wed Aug 28 14:26:40 2002
 @@ -41,4 +41,4 @@
  
  Removes specified @i{member} from the existing group @i{group-spec}. 

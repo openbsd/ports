@@ -1,12 +1,300 @@
-$OpenBSD: patch-base_src_client_opencm_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+$OpenBSD: patch-base_src_client_opencm_c,v 1.2 2002/08/28 22:23:29 todd Exp $
 --- base/src/client/opencm.c.orig	Mon Aug  5 23:58:07 2002
-+++ base/src/client/opencm.c	Tue Aug 27 12:25:26 2002
-@@ -334,7 +334,7 @@ client_doDupBranchMut(Repository *r, Res
- 		      unsigned mutFlags)
- {
-   Mutable *dupM = NULL;
--  unsigned long version = 0ul;
-+  u_int32_t version = 0ul;
++++ base/src/client/opencm.c	Wed Aug 28 14:26:40 2002
+@@ -104,8 +104,12 @@ relative_to_homedir(const char *path)
+   return path_join("~", path);
+ }
  
-   /* By default, we want to copy the ACLs when we duplicate the mutable.
-    * The --private command line option overrides this and sets the ACLs of
++/* Given command line args, convert them to pathnames (or "pathglobs")
++   that are relative to the top of the Workspace.  This is needed
++   because all client commands are currently executed with respect to
++   the Workspace topdir. */
+ static StrVec *
+-args_to_wsnames(WorkSpace *ws, int argc, char **argv)
++normalize_args(WorkSpace *ws, int argc, char **argv)
+ {
+   unsigned i;
+   StrVec *nmlist = strvec_create();
+@@ -129,19 +133,7 @@ args_to_wsnames(WorkSpace *ws, int argc,
+     if (nm == NULL)
+       continue;
+ 
+-    /* FIX: We have a bug when 'nm' is a dir but is missing! */
+-    if (path_isdir(nm)) {
+-      unsigned v;
+-
+-      for (v = 0; v < vec_size(ws->pc->entSet); v++) {
+-	WsEntity *wse_u = (WsEntity *) vec_fetch(ws->pc->entSet, v);
+-
+-	if(glob_match(wse_u->cur_fsName, nm, GM_FS_COMPONENT))
+-	  strvec_append(nmlist, wse_u->cur_fsName);
+-
+-      }
+-    } else
+-      strvec_append(nmlist, nm);
++    strvec_append(nmlist, nm);
+   }
+ 
+   return nmlist;
+@@ -195,7 +187,7 @@ opencm_resolve(WorkSpace *ws, int argc, 
+       Serializable *s = res->tail ? res->tail : res->s;
+       report(0, "tail[%s] s[%s] rest[%s] for %s (and fp_frag = %s)\n",
+ 	     res->tail ? res->tail->ser_type->tyName : "<fsdir>",
+-	     s->ser_trueName,
++             ser_getTrueName(s),
+ 	     res->rest,
+ 	     res->fullPath,
+ 	     res->fp_frag);
+@@ -920,6 +912,27 @@ opencm_create_repository(WorkSpace *ws, 
+ } 
+ 
+ void
++opencm_create_project(WorkSpace *ws, int argc, char **argv)
++{
++  char *description = NULL;
++  Mutable *m = NULL;
++  Repository *r = this_repos;
++  
++  xassert(opt_Name);
++  
++  if (!validate_pet_name(path_tail(argv[0])))
++    THROW(ExBadValue, format("Invalid name: %s", argv[0]));
++  
++  /* Note that get_message() will take whatever's in opt_Message if
++     it's not NULL.  It opt_Message is NULL, then user gets
++     prompted. */
++  description = get_message("Please enter description\n", 
++                            xstrcat(COMMENT_LEADER, " New Project:"), 0);
++  
++  m = client_doCreateProject(r, opt_Name, description, argv[0]); 
++}
++
++void
+ opencm_create_branch(WorkSpace *ws, int argc, char **argv)
+ {
+   char *description = NULL;
+@@ -1007,13 +1020,17 @@ void
+ opencm_preds(WorkSpace *ws, int argc, char **argv)
+ {
+   int i;
+-  void *v;
+   Entity *ent;
+   Repository *r = ws->r;
+-  
++  void *v;
++
+   for (i = 0; i < argc; i++) {
+     TRY {
+-      v = repos_GetEntity(r, argv[i]);
++      /* This is wrong, but at least it compiles now. Since I don't know what
++         this command is for, it's hard to know what should be done here.
++           - JL (8/20/2002)
++      */
++      v = repos_GetEntity(r, 0, argv[i]);
+     }
+     DEFAULT(AnyException) {
+       v = NULL;
+@@ -1022,8 +1039,8 @@ opencm_preds(WorkSpace *ws, int argc, ch
+     if (v == NULL)
+       continue;
+ 
+-    ent = (Entity *)v;
+-    xprintf("Entity:        %s\n", ent->serTrueName);
++    ent = (Entity*)v;
++    xprintf("Entity:        %s\n", ser_getTrueName(ent));
+     xprintf("  parent:      %s\n",
+ 	    ent->parent ? ent->parent : "<none>");
+     xprintf("  mergeParent: %s\n",
+@@ -1111,9 +1128,7 @@ opencm_checkout(WorkSpace *ws, int argc,
+ void
+ opencm_dump(WorkSpace *ws, int argc, char **argv)
+ {
+-  Repository *r = ws->r;
+-
+-  if (!ws->haveProject) {
++  if (!ws || !ws->haveProject) {
+     report(0, "No project found.\n");
+     return;
+   }
+@@ -1156,14 +1171,6 @@ static OC_bool __attribute__ ((unused))
+   return (ws_Lookup(ws, relpath) ? FALSE : TRUE);
+ }
+ 
+-#ifdef DEBUG
+-static OC_bool
+-is_not_ignored(WorkSpace *ws, const char *relpath)
+-{
+-  return TRUE;
+-}
+-#endif
+-
+ static int
+ check_for_conditionals(WorkSpace *ws)
+ {
+@@ -1279,7 +1286,7 @@ do_log_entity(WorkSpace *ws, Entity *ent
+ 	  } 
+ 	}
+ 	if (!found)
+-	  continue;
++	  break;
+ 
+ 	/* Now we have the parent Entity and can display its ci message */
+ 	ci = (CommitInfo *)repos_GetEntity(ws->r, ws->pc->branchURI, 
+@@ -1313,38 +1320,54 @@ do_remove(WorkSpace *ws, StrVec *argname
+ {
+   unsigned u;
+ 
+-  if (argnames) strvec_sort(argnames);
++  assert(argnames);
++
++  argnames = ws_EnumerateWsEnts(ws, argnames);
+ 
+-  for (u = 0; u < vec_size(argnames); u++) {
+-    ws_RemoveFile(ws, vec_fetch(argnames, u));
++  if (vec_size(argnames) == 0)
++    report(1, "Nothing to remove.\n");
++  else {
++    strvec_sort(argnames);
++
++    for (u = 0; u < vec_size(argnames); u++) {
++      ws_RemoveFile(ws, vec_fetch(argnames, u));
++    }
+   }
+ }
+ 
++/* Returns number of unknown files. */
+ static int
+ do_status(WorkSpace *ws, StrVec *argnames)
+ {
+   int i;
+-  StrVec *names = NULL;
++  StrVec *unknown = strvec_create();
+ 
+-  pendingchange_RecomputeStatus(ws->pc, argnames);
+-  pendingchange_ReportStatus(ws->pc, argnames);
++  /* Build a list of known WsEntity names from 'argnames'.  Use this
++     list for the pendingchange_XXX calls. */
++  StrVec *names = ws_EnumerateWsEnts(ws, argnames);
++
++  pendingchange_RecomputeStatus(ws->pc, names);
++  pendingchange_ReportStatus(ws->pc, names);
+ 
+   /* Now make a separate pass to report unknown files: */
+   if (argnames) {
+     unsigned u;
+-    names = strvec_create();
+ 
+     for (u = 0; u < vec_size(argnames); u++) 
+-      ws_EnumeratePath(ws, names, vec_fetch(argnames, u), 
+-		       WSE_NORMAL, discard_wsentities);
++      /* Ignore SYMLINKS and no need to NORMALIZE again: */
++      ws_EnumeratePath(ws, unknown, vec_fetch(argnames, u), 
++		       WSE_FILES|WSE_FILTER, discard_wsentities);
+   }
+   else
+-    names = ws_Enumerate(ws, WSE_NORMAL, discard_wsentities);
++    /* Ignore SYMLINKS and no need to NORMALIZE the ws->topDir */
++    ws_EnumeratePath(ws, unknown, path_curdir(), 
++                     WSE_FILES|WSE_FILTER, 
++		      discard_wsentities);
+ 
+-  for (i = 0; i < vec_size(names); i++)
+-    xprintf("? %s\n", vec_fetch(names, i));
++  for (i = 0; i < vec_size(unknown); i++)
++    xprintf("? %s\n", vec_fetch(unknown, i));
+ 
+-  return vec_size(names);
++  return vec_size(unknown);
+ }
+ 
+ void
+@@ -1529,7 +1552,7 @@ opencm_status(WorkSpace *ws, int argc, c
+     return;
+   }
+ 
+-  paths = args_to_wsnames(ws, argc, argv);
++  paths = normalize_args(ws, argc, argv);
+   (void) do_status(ws, paths);
+ 
+   /* Now that status updates things we need to track, we need to
+@@ -1561,7 +1584,7 @@ opencm_update(WorkSpace *ws, int argc, c
+   pendingchange_ReportStatus(ws->pc, 0);
+ 
+   names = strvec_create();
+-  names = ws_Enumerate(ws, WSE_NORMAL, discard_wsentities);
++  ws_EnumeratePath(ws, names, path_curdir(), WSE_STANDARD, discard_wsentities);
+ 
+   for (i = 0; i < vec_size(names); i++)
+     xprintf("? %s\n", vec_fetch(names, i));
+@@ -1618,7 +1641,7 @@ opencm_commit(WorkSpace *ws, int argc, c
+   report(3, "Before status");
+ 
+   if (argc > 0)
+-    names = args_to_wsnames(ws, argc, argv);
++    names = normalize_args(ws, argc, argv);
+ 
+   if (do_status(ws, names) &&
+       !opencm_confirm("Unknown files. Are you sure?", 1))
+@@ -1654,7 +1677,12 @@ opencm_add_file(WorkSpace *ws, int argc,
+       THROW(ExNoObject, 
+ 	    format("File/dir \"%s\" does not exist", argv[i]));
+ 
+-    ws_EnumeratePath(ws, names, argv[i], WSE_NORMAL, 0);
++    ws_EnumeratePath(ws, names, argv[i], WSE_STANDARD, 0);
++  }
++
++  if (vec_size(names) == 0) {
++    report(1, "Nothing to add.\n");
++    return;
+   }
+ 
+   /* This is trickier than it looks, because argv[x] is always
+@@ -1684,7 +1712,7 @@ opencm_remove_file(WorkSpace *ws, int ar
+     return;
+   }
+ 
+-  paths = args_to_wsnames(ws, argc, argv);
++  paths = normalize_args(ws, argc, argv);
+ 
+   do_remove(ws, paths);
+ 
+@@ -1700,7 +1728,7 @@ opencm_enumerate(WorkSpace *ws, int argc
+   StrVec *names;
+   StrVec *nmlist = nmlist_create(ws->relStartDir, argc, argv);
+ 
+-  names = ws_Enumerate(ws, is_not_ignored);
++  names = ws_EnumerateWsEnts(ws, nmlist);
+ 
+   for (i = 0; i < vec_size(names); i++) {
+     const char *nm = vec_fetch(names, i);
+@@ -1717,7 +1745,6 @@ opencm_diff(WorkSpace *ws, int argc, cha
+   ObVec *v;
+   int i;
+ 
+-  //StrVec *nmlist = nmlist_create(ws->relStartDir, argc, argv);
+   StrVec *names;
+ 
+   if (!ws->haveProject) {
+@@ -1725,18 +1752,19 @@ opencm_diff(WorkSpace *ws, int argc, cha
+     return;
+   }
+ 
++  names = strvec_create();
++
+   if (argc) {
+-    names = strvec_create();
+     for (i = 0; i < argc; i++) {
+       if (!path_exists(ws_NormalizePath(ws, argv[i])))
+ 	THROW(ExNoObject, 
+ 	      format("File/dir \"%s\" does not exist", argv[i]));
+ 
+-      ws_EnumeratePath(ws, names, argv[i], WSE_NORMAL, 0);
++      ws_EnumeratePath(ws, names, argv[i], WSE_STANDARD, 0);
+     }
+   }
+   else
+-    names = ws_Enumerate(ws, WSE_NORMAL, keep_wsentities);
++    ws_EnumeratePath(ws, names, path_curdir(), WSE_STANDARD, keep_wsentities);
+ 
+ 
+   if (opt_Against) {

@@ -1,0 +1,290 @@
+$OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2002/08/28 22:23:29 todd Exp $
+--- base/src/client/WorkSpace.c.orig	Mon Aug  5 20:07:37 2002
++++ base/src/client/WorkSpace.c	Wed Aug 28 14:26:39 2002
+@@ -193,7 +193,6 @@ ws_Init(struct command *cmd, const char 
+  */
+ 
+   WorkSpace *ws = GC_MALLOC(sizeof(WorkSpace));
+-  SER_MODIFIED(ws);
+ 
+   /* Eventually we will support layered projects, and it will be
+      possible for rootPath to be non-null. Until then, just barf if
+@@ -248,8 +247,6 @@ ws_Init(struct command *cmd, const char 
+ void
+ ws_Connect(WorkSpace *ws, PubKey *pk)
+ {
+-  SER_MODIFIED(ws);
+-
+   if (ws->r == NULL)
+     THROW(ExNoConnect, "No repository specified in Workspace.");
+ 
+@@ -270,7 +267,7 @@ ws_Connect(WorkSpace *ws, PubKey *pk)
+ void
+ ws_RewriteWorkspace(WorkSpace *ws)
+ {
+-  SER_MODIFIED(ws);
++  SER_MODIFIED(ws->pc);
+ 
+   if (ws->projPath == 0) {
+     const char *scratchPath;
+@@ -322,19 +319,31 @@ ws_AddFile(WorkSpace *ws, const char *fn
+   WsEntity *wse = pendingchange_FindEntity(ws->pc,fnm);
+ 
+   if (wse) {
+-    /* First, complain (rather aggressively) if user is trying to
+-       cancel a file that was deleted by a 'merge' operation. */
+-    if ((wse->flags & NEF_MERGED) && (wse->flags & NEF_DELETED))
+-      THROW(ExBadValue, 
+-	    format("File \"%s\"was just merged and I can't let you "
+-		   "partially undo a merge.  Use \"%s revert\" to "
+-		   "undo the merge first.", fnm, path_tail(appInvokedName)));
++    /* If NEF_JADD and NEF_DELETED, then change it back to just NEF_JADD */
++    if ((wse->flags & NEF_JADD) && (wse->flags & NEF_DELETED)) {
++      wse->flags &= ~ NEF_DELETED;
++      SER_MODIFIED(wse);
++    }
+ 
+-    else if (wse->flags & NEF_DELETED)
+-      wse->flags &= ~ NEF_DELETED; /* cancel a previous 'rm' */
+-    else if (wse->flags & NEF_CONDDEL)
++    /* If NEF_MERGED and NEF_DELETED, then just override the deletion
++       of this Entity: */
++    else if ((wse->flags & NEF_MERGED) && (wse->flags & NEF_DELETED)) {
++      wse->flags &= ~ (NEF_MERGED | NEF_DELETED);
++      SER_MODIFIED(wse);
++    }
++
++    /* If just NEF_DELETED, cancel that: */
++    else if (wse->flags & NEF_DELETED) {
++      wse->flags &= ~ NEF_DELETED; 
++      SER_MODIFIED(wse);
++    }
++
++    /* If just NEF_CONDDEL, cancel that: */
++    else if (wse->flags & NEF_CONDDEL) {
+       wse->flags &= ~ NEF_CONDDEL; /* cancel a previous CONDDEL set by
+                                       'merge' */
++      SER_MODIFIED(wse);
++    }
+     /* If the object is already in the workspace, silently ignore.
+        This is needed because ws_EnumeratePath is promiscuous. */
+   }
+@@ -356,47 +365,32 @@ ws_AddFile(WorkSpace *ws, const char *fn
+   return wse;
+ }
+ 
+-#if 0
+-WsEntity *
+-ws_AddFile(WorkSpace *ws, const char *fnm)
+-{
+-  WsEntity *wse = wsentity_addFromFile(ws->pc, fnm, opt_eType);
+-
+-  pendingchange_InsertEntity(ws->pc, wse);
+-
+-  SER_MODIFIED(wse);
+-
+-  return wse;
+-}
+-#endif
+-
+ void
+ ws_RemoveFile(WorkSpace *ws, const char *fnm)
+ {
+   WsEntity *wse = pendingchange_FindEntity(ws->pc,fnm);
+ 
+   if (wse) {
+-    /* First, complain (rather aggressively) if user is trying to remove
+-     a file that was either added or touched by a 'merge'
+-     operation. */
+-    if (wse->flags & NEF_JADD || 
+-	(wse->flags & NEF_MERGED && (wse->flags & NEF_DELETED) == 0))
+-      THROW(ExBadValue, 
+-	    format("File \"%s\" was just merged and I can't let you "
+-		   "partially undo a merge.  Use \"%s revert\" to "
+-		   "undo the merge first.", fnm, path_tail(appInvokedName)));
+-
++    /* If this is a mergespace orphan that was just added to the
++       Workspace from 'merge', (NEF_MERGED and NEF_JADD) change its
++       state to (NEF_MERGED | NEF_JADD | NEF_DELETED).  This allows
++       user to be wishy-washy and change this entity back to
++       (NEF_MERGED | NEF_JADD) if he wants. */
++    if (wse->flags & NEF_JADD && wse->flags & NEF_MERGED) {
++      wse->flags |= NEF_DELETED;
++      wsentity_ReportStatus(wse);
++      SER_MODIFIED(wse);
++    }
+     /* If WsEntity is marked NEF_ADDED, remove it from PendingChange,
+-     but leave the actual file in place.  This will result in that
+-     file becoming "unknown" to the 'status' command. */
+-    if (wse->flags & NEF_ADDED) {
++       but leave the actual file in place.  This will result in that
++       file becoming "unknown" to the 'status' command. */
++    else if (wse->flags & NEF_ADDED) {
+       pendingchange_RemoveEntity(ws->pc, wse);
+       xprintf("%s %10d %s\n",
+ 	      "[ forget ]",
+ 	      wse->lk_length,
+ 	      wse->cur_fsName);
+       SER_MODIFIED(ws->pc);
+-      SER_MODIFIED(ws);
+     }
+     else if (wse->flags & NEF_DELETED)
+       report(0, "File is already marked for deletion.\n");
+@@ -410,6 +404,7 @@ ws_RemoveFile(WorkSpace *ws, const char 
+       wse->flags |= NEF_DELETED;
+ 
+       SER_MODIFIED(wse);
++      wsentity_ReportStatus(wse);
+     }
+   }
+   else
+@@ -507,7 +502,8 @@ ws_EnumeratePath(WorkSpace *ws, 
+ {
+   /* Make sure 'path' is relative to the Workspace top dir, since
+      that's how everything is processed */
+-  path = ws_NormalizePath(ws, path);
++  if (flags & WSE_NORMALIZE)
++    path = ws_NormalizePath(ws, path);
+ 
+   /* If we are asked on the command line to enumerate a file, we need
+      to apply the user-supplied filter in all cases. */
+@@ -523,12 +519,32 @@ ws_EnumeratePath(WorkSpace *ws, 
+ }
+ 
+ StrVec *
+-ws_Enumerate(WorkSpace *ws, unsigned flags, OC_bool (*filter)(WorkSpace *, const char *))
++ws_EnumerateWsEnts(WorkSpace *ws, StrVec *regexpVec)
+ {
++  unsigned u, j;
+   StrVec *names = strvec_create();
+-  
+-  ws_EnumeratePath(ws, names, path_curdir(), flags, filter);
+ 
++  if (regexpVec) strvec_sort(regexpVec);
++
++  for (u = 0; u < vec_size(ws->pc->entSet); u++) {
++    WsEntity *wse = (WsEntity *) vec_fetch(ws->pc->entSet, u);
++
++    if (regexpVec == NULL || strvec_bsearch(regexpVec, wse->cur_fsName) >= 0) {
++      strvec_append(names, wse->cur_fsName);
++      continue;
++    }
++
++    /* In some cases, "names" can contain a glob expression, such as
++       the name of a subdir (which may or may not exist).  Here's
++       where we handle that. */
++    for (j = 0; j < vec_size(regexpVec); j++) {
++      const char *glob_expr = vec_fetch(regexpVec, j);
++
++      if (glob_match(wse->cur_fsName, glob_expr, GM_FS_COMPONENT))
++	strvec_append(names, wse->cur_fsName);
++    }
++  }
++  
+   strvec_sort(names);
+ 
+   return names;
+@@ -539,9 +555,11 @@ ws_PruneWorkspace(WorkSpace *ws) 
+ {
+   /* Grab an unfiltered list of directories: */
+ 
+-  StrVec *s = ws_Enumerate(ws, WSE_DIRS, 0);
++  StrVec *s = strvec_create();
+   unsigned u;
+ 
++  ws_EnumeratePath(ws, s, path_curdir(), WSE_DIRS, 0);
++
+   strvec_sort(s);
+ 
+   /* This is sleazy. We simply rely on the fact that rmdir() fails
+@@ -573,7 +591,7 @@ ws_BuildPendingChange(WorkSpace *ws,
+ 		      oc_uint64_t nRevs)
+ {
+   ws->pc = pendingchange_create(r, branchURI, nRevs);
+-  SER_MODIFIED(ws);
++  SER_MODIFIED(ws->pc);
+ }
+ 
+ static int
+@@ -655,7 +673,6 @@ ws_RestoreFiles(WorkSpace *ws, unsigned 
+       went->lk_modTime = 0;	/* force modify recomputation */
+       SER_MODIFIED(went);
+       SER_MODIFIED(ws->pc);
+-      SER_MODIFIED(ws);
+     }
+   }
+ 
+@@ -720,14 +737,13 @@ ws_Revert(WorkSpace *ws)
+     oc_uint64_t nRevs = ws->pc->nRevisions;
+ 
+     ws->pc = pendingchange_create(ws->r, branchURI, nRevs);
+-    SER_MODIFIED(ws);
++    SER_MODIFIED(ws->pc);
+   }
+ 
+   ws_RestoreFiles(ws, WSR_CHECKCOLLIDE|WSR_FORCE);
+ 
+   ws->pc->mergedChange = 0;
+   SER_MODIFIED(ws->pc);
+-  SER_MODIFIED(ws);
+ }
+ 
+ void
+@@ -735,7 +751,12 @@ ws_Populate(WorkSpace *ws)
+ {
+   unsigned i;
+   
+-  StrVec *names = ws_Enumerate(ws, WSE_NORMAL, 0); 
++  StrVec *names = strvec_create();
++
++  ws_EnumeratePath(ws, names, path_curdir(), 
++                   WSE_FILES | WSE_FILTER, /* don't normalize and NO
++                                              symlinks! */
++                   0); 
+ 
+   for (i = 0; i < vec_size(names); i++) {
+     const char *relpath = vec_fetch(names,i);
+@@ -750,7 +771,7 @@ ws_Populate(WorkSpace *ws)
+     }
+   }
+ 
+-  SER_MODIFIED(ws);
++  SER_MODIFIED(ws->pc);
+ }
+ 
+ static OC_bool
+@@ -843,7 +864,8 @@ ws_Rename(WorkSpace *ws, const char *old
+      non-OpenCM files as well as workspace entities, and it's quite
+      astonishing how many ways there are for these to collide. */
+ 
+-  fsvec = ws_Enumerate(ws, WSE_FILES|WSE_SYMLINKS, 0);
++  fsvec = strvec_create();
++  ws_EnumeratePath(ws, fsvec, path_curdir(), WSE_FILES|WSE_SYMLINKS, 0);
+   strvec_sort(fsvec);
+ 
+   /* First, go through the OpenCM workspace entries: */
+@@ -1034,7 +1056,7 @@ ws_Commit(WorkSpace *ws, StrVec *names)
+      */
+ 
+     pendingchange_addNote(ws->pc, opt_Message);
+-    SER_MODIFIED(ws);
++    SER_MODIFIED(ws->pc);
+ 
+     /* Smash opt_Message to point to the result of the combination in
+      * order to preserve the silent commit behavior:
+@@ -1232,7 +1254,6 @@ ws_Commit(WorkSpace *ws, StrVec *names)
+   ws->pc->isSorted = FALSE;
+ 
+   SER_MODIFIED(ws->pc);
+-  SER_MODIFIED(ws);    /* FIX: ws isn't a Serializable. ??? */
+ }
+ 
+ void
+@@ -1278,7 +1299,6 @@ ws_Update(WorkSpace *ws)
+   ws->pc->baseCmtInfoName = topChange->commitInfoTrueName;
+ 
+   SER_MODIFIED(ws->pc);
+-  SER_MODIFIED(ws);
+ }
+ 
+ void
