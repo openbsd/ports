@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_xfmail_cpp,v 1.1 2002/05/22 05:59:33 form Exp $
+--- src/ui/xfmail.cpp.orig	Fri May 17 09:47:10 2002
++++ src/ui/xfmail.cpp	Fri May 17 09:47:28 2002
+@@ -5458,7 +5458,7 @@ int main(int argc, char **argv) {
+ 		exit(1);
+ 	}
+ 
+-	if(xforms_revision != 88)
++	if(xforms_revision < 88)
+ 		fl_show_alert("WARNING, your version of XForms has been known to cause problems!",
+ 					  "Please remove your current version of XForms",
+ 					  "and install XForms version 0.88",

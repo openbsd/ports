@@ -1,48 +1,55 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/03 20:16:45 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/22 05:59:33 form Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
+# $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
-COMMENT=	"xforms-based mail application for Unix"
+COMMENT=		"xforms-based mail application for Unix"
 
-ONLY_FOR_ARCHS=	i386 sparc m68k
+DISTNAME=       	xfmail-1.5.2
+CATEGORIES=     	mail x11
+NEED_VERSION=		1.522
+MASTER_SITES=		ftp://ftp.xfmail.org/pub/xfmail/release/1.5.2/source/
 
-DISTNAME=       xfmail-1.4.6
-CATEGORIES=     mail x11
-NEED_VERSION=	1.522
-MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/old/1.4.6-3/src/ \
-		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/old/1.4.6-3/src/
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=		.tar.bz2
 
-HOMEPAGE=	http://www.xfmail.org/
+HOMEPAGE=		http://www.xfmail.org/
 
-LIB_DEPENDS=	forms::x11/xforms \
-		glib.1.2::devel/glib
+BUILD_DEPENDS=		automake::devel/automake
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+LIB_DEPENDS=		forms::x11/xforms \
+			glib.1.2::devel/glib
+
+MAINTAINER=		Oleg Safiullin <form@openbsd.org>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--without-nas-sound
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/X11" \
-		LDFLAGS="-L${LOCALBASE}/lib/X11"
+USE_X11=		Yes
+USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS=		--without-nas-sound
+CONFIGURE_ENV=		CPPFLAGS="-DX11FORMS_H"
 
-FLAVORS=	threads
+FLAVORS=		threads esd
 FLAVOR?=
 
-.if ${FLAVOR:L} == "threads"
-. if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"pthreads are currently not working on the SPARC architecture"
-. endif
+.if ${FLAVOR:L:Mthreads}
+CONFIGURE_ARGS+=	--with-threads
 .else
-CONFIGURE_ARGS+= --without-threads
+CONFIGURE_ARGS+=	--without-threads
 .endif
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xfmail
-	${INSTALL_DATA} ${WRKSRC}/Copyright ${PREFIX}/share/doc/xfmail
-	${INSTALL_PROGRAM} ${WRKSRC}/ui/xfmail ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ui/xfmail.1 ${PREFIX}/man/man1
+.if ${FLAVOR:L:Mesd}
+CONFIGURE_ARGS+=	--with-esd-sound
+LIB_DEPENDS+=		esd.2::audio/esound
+.else
+CONFIGURE_ARGS+=	--without-esd-sound
+.endif
+
+pre-configure:
+	@cd ${WRKSRC} && sh autogen.sh
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ui_dialogs_auto,v 1.1 2002/05/22 05:59:33 form Exp $
+--- src/ui/dialogs.auto.orig	Thu May  9 21:01:26 2002
++++ src/ui/dialogs.auto	Thu May  9 21:02:36 2002
+@@ -1,6 +1,10 @@
+ /* Form definition file generated with fdesign. */
+ 
++#ifdef X11FORMS_H
++#include <X11/forms.h>
++#else
+ #include "forms.h"
++#endif
+ #include <stdlib.h>
+ #include "dialogs.h"
+ 

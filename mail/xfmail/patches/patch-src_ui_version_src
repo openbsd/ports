@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ui_version_src,v 1.1 2002/05/22 05:59:33 form Exp $
+--- src/ui/version.src.orig	Wed May 22 12:49:25 2002
++++ src/ui/version.src	Wed May 22 12:50:08 2002
+@@ -16,6 +16,10 @@
+ #define XF_OS		"NetBSD"
+ #endif
+ 
++#ifdef __OpenBSD__
++#define XF_OS		"OpenBSD"
++#endif
++
+ #ifdef __linux__
+ #define XF_OS		"Linux"
+ #endif
