@@ -1,17 +1,20 @@
---- src/Makefile.orig	Wed Feb 28 20:25:58 2001
-+++ src/Makefile	Wed Feb 28 20:26:47 2001
-@@ -1,87 +1,9 @@
+--- src/Makefile.orig	Fri Jun 29 10:26:19 2001
++++ src/Makefile	Fri Jun 29 10:27:01 2001
+@@ -1,94 +1,8 @@
 -cmp=/usr/bin/cmp
 -cp=/bin/cp
 -mv=/bin/mv
 -ln=/bin/ln
- 
+-
 -all: impress transeps
-+all: impress 
++all: impress
  
  impress:	impress.tcl
  	cat impress.tcl >impress
  	chmod a+x impress
+-
+-../pstoedit/src/drvbase.h.orig:
+-	@-${mv} ../pstoedit/src/drvbase.h ../pstoedit/src/drvbase.h.orig
 -
 -../pstoedit/src/drvtk.cpp.orig:
 -	@-${mv} ../pstoedit/src/drvtk.cpp ../pstoedit/src/drvtk.cpp.orig
@@ -24,8 +27,10 @@
 -		echo "Updating drvtk.cpp" >&2 && ${cp} drvtk.cpp ../pstoedit/src
 -	@-${cmp} drvtk.h ../pstoedit/src/drvtk.h 2>/dev/null || \
 -		echo "Updating drvtk.h" >&2 && ${cp} drvtk.h ../pstoedit/src
+-	@-${cmp} drvbase.h ../pstoedit/src/drvbase.h 2>/dev/null || \
+-		echo "Updating drvbase.h" >&2 && ${cp} drvbase.h ../pstoedit/src
 -
--install: impress impress.tcl transeps COPYING CHANGES OPTIONS README tkFont-patch.diff installdrvtk
+-install: impress impress.tcl transeps COPYING CHANGES OPTIONS README tkFont-patch.diff tkUnixWm-patch.diff installdrvtk
 -	@-mkdir ../bin
 -	@-${cmp} impress ../bin/impress 2>/dev/null || \
 -		echo "Updating impress" >&2 && ${cp} impress ../bin
@@ -41,6 +46,8 @@
 -		echo "Updating OPTIONS" >&2 && ${cp} OPTIONS ..
 -	@-${cmp} tkFont-patch.diff ../tkFont-patch.diff 2>/dev/null || \
 -		echo "Updating tkFont-patch.diff" >&2 && ${cp} tkFont-patch.diff ..
+-	@-${cmp} tkUnixWm-patch.diff ../tkUnixWm-patch.diff 2>/dev/null || \
+-		echo "Updating tkUnixWm-patch.diff" >&2 && ${cp} tkUnixWm-patch.diff ..
 -	@-mkdir ../doc
 -	@-${cmp} doc/arrows.jpg ../doc/arrows.jpg 2>/dev/null || \
 -		echo "Updating arrows.jpg" >&2 && ${cp} doc/arrows.jpg ../doc

@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Nov 22 19:47:28 2000
-+++ Makefile	Wed Nov 22 19:49:14 2000
+--- Makefile.orig	Fri Jun 29 10:22:48 2001
++++ Makefile	Fri Jun 29 10:25:52 2001
 @@ -1,33 +1,11 @@
 -cmp=/usr/bin/cmp
 -cp=/bin/cp
@@ -10,7 +10,7 @@
 +PREFIX?=/usr/local
  
 -all:	make_impress make_font3d make_pstoedit
-+all:	make_impress 
++all:	make_impress
  
 -make_font3d:
 -	(cd font3d;make LDFLAGS=-static)
@@ -37,7 +37,7 @@
 -	install -c bin/transeps $(PREFIX)/bin
 -	install -c bin/font3d $(PREFIX)/bin
 -	install -c bin/pstoedit $(PREFIX)/bin
-+install:
++install: 
 +	install -c -m 755 src/impress $(PREFIX)/bin
 +	@mkdir $(PREFIX)/share/doc/impress
 +	@cp src/doc/*  $(PREFIX)/share/doc/impress
