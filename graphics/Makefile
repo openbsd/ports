@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 1999/03/19 08:05:19 brad Exp $
+# $OpenBSD: Makefile,v 1.25 1999/03/24 02:27:02 downsj Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -10,7 +10,7 @@
      SUBDIR += compface
 #    SUBDIR += dc3play
 #    SUBDIR += dore
-#    SUBDIR += fxtv
+     SUBDIR += fxtv
      SUBDIR += gd
 #    SUBDIR += geomview
 #    SUBDIR += gfont
