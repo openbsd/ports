@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/08 05:23:42 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/08 09:04:30 danh Exp $
 
 DISTNAME=	tcpslice-1.1a3
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.348
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
 
@@ -13,19 +13,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=gnu
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
 
-ALL_TARGET=	tcpslice
-WRKDIST=	${WRKDIR}/tcpslice-1.1a3
-
-DOCFILES=	CHANGES README
-
-do-install:
-	mkdir ${PREFIX}/share/doc/tcpslice
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpslice ${PREFIX}/bin
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/tcpslice.1 ${PREFIX}/man/man1/tcpslice.1
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tcpslice
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tcpslice
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/tcpslice
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tcpslice
 
 .include <bsd.port.mk>
