@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/09 18:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/05/15 12:55:06 sturm Exp $
 
 COMMENT=		"front-end to ssh-agent"
 
-DISTNAME=		keychain-2.0.3
+DISTNAME=		keychain-2.3.0
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gentoo.org/proj/en/keychain.xml
@@ -18,11 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.ibiblio.org/pub/Linux/distributions/gentoo/distfiles/
 EXTRACT_SUFX=		.tar.bz2
 
+NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
-
-do-build:
-	@perl -pi -e "s,bash_profile,profile," ${WRKDIST}/keychain{,.1}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/keychain ${PREFIX}/bin
