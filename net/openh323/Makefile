@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/03/29 15:27:26 couderc Exp $
+# $OpenBSD: Makefile,v 1.7 2004/03/03 08:29:10 pvalchev Exp $
 
 BROKEN=			"Needs upgrade to newer version"
 
@@ -36,7 +36,7 @@ MAKE_ENV=		PWLIBDIR=${WRKDIR}/pwlib \
 			OPENH323DIR=${WRKDIR}/openh323
 
 .if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
- ${MACHINE_ARCH} == "i386")
+ ${MACHINE_ARCH} == "i386") || ${MACHINE_ARCH} == "amd64"
 MAKE_ENV+=      ENDIAN="PLITTLE_ENDIAN"
 .else
 .       if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
