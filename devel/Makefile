@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2001/08/15 19:49:05 shell Exp $
+# $OpenBSD: Makefile,v 1.99 2001/08/20 06:24:20 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -49,6 +49,7 @@
      SUBDIR += libsigc++
      SUBDIR += libslang
      SUBDIR += libtool
+     SUBDIR += libusb
      SUBDIR += libuta
      SUBDIR += lincvs
      SUBDIR += m4
