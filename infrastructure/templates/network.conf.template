@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.51 2002/09/23 04:22:50 marcm Exp $
+# $OpenBSD: network.conf.template,v 1.52 2002/09/26 20:37:50 pvalchev Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -7,7 +7,9 @@
 # Default OpenBSD backup site
 _MASTER_SITE_OPENBSD?=	\
 	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/ \
-	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
+	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/  \
+	ftp://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/ \
+	ftp://ftp.usa.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=	\
