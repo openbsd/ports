@@ -1,19 +1,11 @@
-*** sh.exp.c.orig	Thu Dec 17 09:41:49 1998
---- sh.exp.c	Thu Dec 17 09:42:41 1998
-***************
-*** 155,161 ****
-       * and they define _SC_NGROUPS_MAX without having sysconf
-       */
-  #   undef _SC_NGROUPS_MAX	
-! #   if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
-  #    define GID_T gid_t
-  #   else
-  #    define GID_T int
---- 155,161 ----
-       * and they define _SC_NGROUPS_MAX without having sysconf
-       */
-  #   undef _SC_NGROUPS_MAX	
-! #   if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
-  #    define GID_T gid_t
-  #   else
-  #    define GID_T int
+--- sh.exp.c.orig	Sat Aug 21 12:57:18 1999
++++ sh.exp.c	Sat Aug 21 12:57:50 1999
+@@ -155,7 +155,7 @@
+      * and they define _SC_NGROUPS_MAX without having sysconf
+      */
+ #   undef _SC_NGROUPS_MAX	
+-#   if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
++#   if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
+ #    define GID_T gid_t
+ #   else
+ #    define GID_T int
