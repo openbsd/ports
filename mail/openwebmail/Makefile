@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/05 04:53:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/05 14:16:41 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
-		ftp://openwebmail.org/pub/
+		ftp://openwebmail.org/pub/ \
+		http://turtle.ee.ncku.edu.tw/openwebmail/download/old/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 
