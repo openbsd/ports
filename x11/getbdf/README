@@ -1,2 +1,0 @@
-No need for getbdf, as X11's fstobdf does the same thing and has a clear
-copyright.
