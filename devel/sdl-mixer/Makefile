@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2002/02/05 03:55:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/23 06:38:24 wcobb Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
-VER=		1.2.1
+VER=		1.2.4
 PROJ=		SDL_mixer
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-mixer-${VER}
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_FTP=   Yes
 FLAVORS=	vorbis mikmod
 FLAVOR?=
 
+LIB_DEPENDS=	smpeg.1::devel/smpeg
+
 .if ${FLAVOR:L} == "vorbis"
 LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
 .else
@@ -32,9 +34,6 @@ LIB_DEPENDS+=	mikmod.::audio/libmikmod
 .else
 CONFIGURE_ARGS+=--disable-music-mod
 .endif
-
-LIB_DEPENDS+=	SDL.::devel/sdl \
-		smpeg.1::devel/smpeg
 
 USE_X11=	Yes
 
