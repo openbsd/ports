@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/07/06 08:05:28 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/07/26 19:08:16 pvalchev Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
@@ -39,7 +39,7 @@ FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST} ${MAKE_FLAGS}
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/timidity.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/lib/timidity && \
-	tar zxf ${DISTDIR}/${TIINS} && \
+	${TAR} zxf ${DISTDIR}/${TIINS} && \
 	cp goemon.cfg goemon.cfg.bak && \
 	sed 's=dir goemon=dir ${TRUEPREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \
