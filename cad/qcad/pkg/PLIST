@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/12/09 17:35:57 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:18:52 espie Exp $
 bin/qcad
+share/doc/qcad/
+share/doc/qcad/en/
 share/doc/qcad/en/001.html
 share/doc/qcad/en/002.html
 share/doc/qcad/en/003.html
@@ -18,6 +20,7 @@ share/doc/qcad/en/015.html
 share/doc/qcad/en/016.html
 share/doc/qcad/en/017.html
 share/doc/qcad/en/018.html
+share/doc/qcad/en/img/
 share/doc/qcad/en/img/000000.png
 share/doc/qcad/en/img/boxangle.png
 share/doc/qcad/en/img/boxbevel.png
@@ -232,6 +235,7 @@ share/doc/qcad/en/img/zoomredraw.png
 share/doc/qcad/en/img/zoomtagged.png
 share/doc/qcad/en/img/zoomwindow.png
 share/doc/qcad/en/index.html
+share/examples/qcad/
 share/examples/qcad/ReadMe_Ja_Font.dxf
 share/examples/qcad/border.dxf
 share/examples/qcad/example01.dxf
@@ -242,10 +246,13 @@ share/examples/qcad/example05.dxf
 share/examples/qcad/patterns.dxf
 share/examples/qcad/styles.dxf
 share/examples/qcad/texts.dxf
+share/qcad/
+share/qcad/cur/
 share/qcad/cur/cur_cross_bmp.cur
 share/qcad/cur/cur_cross_mask.cur
 share/qcad/cur/cur_glass_bmp.cur
 share/qcad/cur/cur_glass_mask.cur
+share/qcad/fonts/
 share/qcad/fonts/courier.cxf
 share/qcad/fonts/cursive.cxf
 share/qcad/fonts/cyrilc2.cxf
@@ -279,6 +286,7 @@ share/qcad/fonts/symbol.cxf
 share/qcad/fonts/symbol_astro.cxf
 share/qcad/fonts/symbol_misc1.cxf
 share/qcad/fonts/symbol_misc2.cxf
+share/qcad/hatches/
 share/qcad/hatches/0.dxf
 share/qcad/hatches/135.dxf
 share/qcad/hatches/45.dxf
@@ -325,6 +333,11 @@ share/qcad/hatches/sand.dxf
 share/qcad/hatches/square.dxf
 share/qcad/hatches/triangle_a.dxf
 share/qcad/hatches/triangle_b.dxf
+share/qcad/libraries/
+share/qcad/libraries/electrical/
+share/qcad/libraries/electrical/denzuq/
+share/qcad/libraries/electrical/denzuq/diagrams/
+share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/01tr1.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/01tr2.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/01tr3.dxf
@@ -336,6 +349,7 @@ share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/31rat.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/41khk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/42khk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki/43zhk.dxf
+share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/01chd.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/02drk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/03drf.dxf
@@ -347,6 +361,7 @@ share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/31hrk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/41kds.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/51krt.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden/52kdd.dxf
+share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/01dak.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/02drk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/03drk.dxf
@@ -367,6 +382,7 @@ share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/36tkdr.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/37nkdr.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/38gjk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skkeiki/39hjk.dxf
+share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/01hjt.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/02ddk.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/11bel.dxf
@@ -390,6 +406,8 @@ share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/53gda.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/54gdb.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/55gha.dxf
 share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban/56ghb.dxf
+share/qcad/libraries/electrical/denzuq/parts/
+share/qcad/libraries/electrical/denzuq/parts/cablerakku/
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/cra01.dxf
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/cra02.dxf
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/cra03.dxf
@@ -431,6 +449,8 @@ share/qcad/libraries/electrical/denzuq/parts/cablerakku/crx08.dxf
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/crx09.dxf
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/crx10.dxf
 share/qcad/libraries/electrical/denzuq/parts/cablerakku/crx12.dxf
+share/qcad/libraries/electrical/denzuq/plans/
+share/qcad/libraries/electrical/denzuq/plans/bouka/
 share/qcad/libraries/electrical/denzuq/plans/bouka/01km1.dxf
 share/qcad/libraries/electrical/denzuq/plans/bouka/01mk2.dxf
 share/qcad/libraries/electrical/denzuq/plans/bouka/02nk1.dxf
@@ -442,6 +462,7 @@ share/qcad/libraries/electrical/denzuq/plans/bouka/11jh5.dxf
 share/qcad/libraries/electrical/denzuq/plans/bouka/11jh6.dxf
 share/qcad/libraries/electrical/denzuq/plans/bouka/21rs1.dxf
 share/qcad/libraries/electrical/denzuq/plans/bouka/21rs2.dxf
+share/qcad/libraries/electrical/denzuq/plans/denwa/
 share/qcad/libraries/electrical/denzuq/plans/denwa/01ndw.dxf
 share/qcad/libraries/electrical/denzuq/plans/denwa/02kdw.dxf
 share/qcad/libraries/electrical/denzuq/plans/denwa/03pdw.dxf
@@ -463,6 +484,7 @@ share/qcad/libraries/electrical/denzuq/plans/denwa/41tl1.dxf
 share/qcad/libraries/electrical/denzuq/plans/denwa/42tl2.dxf
 share/qcad/libraries/electrical/denzuq/plans/denwa/43tl3.dxf
 share/qcad/libraries/electrical/denzuq/plans/denwa/44tl4.dxf
+share/qcad/libraries/electrical/denzuq/plans/douryoku/
 share/qcad/libraries/electrical/denzuq/plans/douryoku/01mt1.dxf
 share/qcad/libraries/electrical/denzuq/plans/douryoku/01mt2.dxf
 share/qcad/libraries/electrical/denzuq/plans/douryoku/02cds.dxf
@@ -496,12 +518,14 @@ share/qcad/libraries/electrical/denzuq/plans/douryoku/17jsk.dxf
 share/qcad/libraries/electrical/denzuq/plans/douryoku/18ddb.dxf
 share/qcad/libraries/electrical/denzuq/plans/douryoku/18djb.dxf
 share/qcad/libraries/electrical/denzuq/plans/douryoku/19kks.dxf
+share/qcad/libraries/electrical/denzuq/plans/gaisen/
 share/qcad/libraries/electrical/denzuq/plans/gaisen/01cp1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gaisen/02mh1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gaisen/02mh2.dxf
 share/qcad/libraries/electrical/denzuq/plans/gaisen/03hh1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gaisen/03hh2.dxf
 share/qcad/libraries/electrical/denzuq/plans/gaisen/04msh.dxf
+share/qcad/libraries/electrical/denzuq/plans/gasumore/
 share/qcad/libraries/electrical/denzuq/plans/gasumore/01kt1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gasumore/01kt2.dxf
 share/qcad/libraries/electrical/denzuq/plans/gasumore/02kk1.dxf
@@ -513,6 +537,7 @@ share/qcad/libraries/electrical/denzuq/plans/gasumore/03ok4.dxf
 share/qcad/libraries/electrical/denzuq/plans/gasumore/04js1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gasumore/05tk1.dxf
 share/qcad/libraries/electrical/denzuq/plans/gasumore/06hjt.dxf
+share/qcad/libraries/electrical/denzuq/plans/haisen/
 share/qcad/libraries/electrical/denzuq/plans/haisen/01up.dxf
 share/qcad/libraries/electrical/denzuq/plans/haisen/02dn.dxf
 share/qcad/libraries/electrical/denzuq/plans/haisen/03tr.dxf
@@ -537,6 +562,7 @@ share/qcad/libraries/electrical/denzuq/plans/haisen/56js6.dxf
 share/qcad/libraries/electrical/denzuq/plans/haisen/61jse.dxf
 share/qcad/libraries/electrical/denzuq/plans/haisen/62jse.dxf
 share/qcad/libraries/electrical/denzuq/plans/haisen/71js0.dxf
+share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/01kd1.dxf
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/01kd2.dxf
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/02hjd.dxf
@@ -546,17 +572,20 @@ share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/04ks1.dxf
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/05hjt.dxf
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/11dgb.dxf
 share/qcad/libraries/electrical/denzuq/plans/hijoukeihou/12hks.dxf
+share/qcad/libraries/electrical/denzuq/plans/hirai/
 share/qcad/libraries/electrical/denzuq/plans/hirai/01ts1.dxf
 share/qcad/libraries/electrical/denzuq/plans/hirai/01ts2.dxf
 share/qcad/libraries/electrical/denzuq/plans/hirai/02st1.dxf
 share/qcad/libraries/electrical/denzuq/plans/hirai/02st2.dxf
 share/qcad/libraries/electrical/denzuq/plans/hirai/03stk.dxf
+share/qcad/libraries/electrical/denzuq/plans/interphone/
 share/qcad/libraries/electrical/denzuq/plans/interphone/01ip1.dxf
 share/qcad/libraries/electrical/denzuq/plans/interphone/01ip2.dxf
 share/qcad/libraries/electrical/denzuq/plans/interphone/02ip1.dxf
 share/qcad/libraries/electrical/denzuq/plans/interphone/02ip2.dxf
 share/qcad/libraries/electrical/denzuq/plans/interphone/03dp1.dxf
 share/qcad/libraries/electrical/denzuq/plans/interphone/03dp2.dxf
+share/qcad/libraries/electrical/denzuq/plans/jikahou/
 share/qcad/libraries/electrical/denzuq/plans/jikahou/01sd1.dxf
 share/qcad/libraries/electrical/denzuq/plans/jikahou/01sd2.dxf
 share/qcad/libraries/electrical/denzuq/plans/jikahou/02hs1.dxf
@@ -584,6 +613,7 @@ share/qcad/libraries/electrical/denzuq/plans/jikahou/61ks1.dxf
 share/qcad/libraries/electrical/denzuq/plans/jikahou/61ks2.dxf
 share/qcad/libraries/electrical/denzuq/plans/jikahou/61ks3.dxf
 share/qcad/libraries/electrical/denzuq/plans/jikahou/61ks4.dxf
+share/qcad/libraries/electrical/denzuq/plans/jouhou/
 share/qcad/libraries/electrical/denzuq/plans/jouhou/01jh1.dxf
 share/qcad/libraries/electrical/denzuq/plans/jouhou/02jh2.dxf
 share/qcad/libraries/electrical/denzuq/plans/jouhou/03jh3.dxf
@@ -595,6 +625,7 @@ share/qcad/libraries/electrical/denzuq/plans/jouhou/14hk4.dxf
 share/qcad/libraries/electrical/denzuq/plans/jouhou/21rtr.dxf
 share/qcad/libraries/electrical/denzuq/plans/jouhou/22hub.dxf
 share/qcad/libraries/electrical/denzuq/plans/jouhou/23jks.dxf
+share/qcad/libraries/electrical/denzuq/plans/kakusei/
 share/qcad/libraries/electrical/denzuq/plans/kakusei/01sp1.dxf
 share/qcad/libraries/electrical/denzuq/plans/kakusei/01sp2.dxf
 share/qcad/libraries/electrical/denzuq/plans/kakusei/01sp3.dxf
@@ -615,6 +646,7 @@ share/qcad/libraries/electrical/denzuq/plans/kakusei/28mpp.dxf
 share/qcad/libraries/electrical/denzuq/plans/kakusei/29vtr.dxf
 share/qcad/libraries/electrical/denzuq/plans/kakusei/30vpj.dxf
 share/qcad/libraries/electrical/denzuq/plans/kakusei/41scr.dxf
+share/qcad/libraries/electrical/denzuq/plans/kansen/
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban1.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban2.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban3.dxf
@@ -622,6 +654,7 @@ share/qcad/libraries/electrical/denzuq/plans/kansen/01ban4.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban5.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban6.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansen/01ban7.dxf
+share/qcad/libraries/electrical/denzuq/plans/kansicamera/
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/01cm1.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/02mon.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/03kck.dxf
@@ -629,10 +662,12 @@ share/qcad/libraries/electrical/denzuq/plans/kansicamera/04tvr.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/05ekk.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/06ebp.dxf
 share/qcad/libraries/electrical/denzuq/plans/kansicamera/07ehs.dxf
+share/qcad/libraries/electrical/denzuq/plans/kikaikeibi/
 share/qcad/libraries/electrical/denzuq/plans/kikaikeibi/01ksb.dxf
 share/qcad/libraries/electrical/denzuq/plans/kikaikeibi/02nsk.dxf
 share/qcad/libraries/electrical/denzuq/plans/kikaikeibi/03dkj.dxf
 share/qcad/libraries/electrical/denzuq/plans/kikaikeibi/04ks1.dxf
+share/qcad/libraries/electrical/denzuq/plans/konsento/
 share/qcad/libraries/electrical/denzuq/plans/konsento/01ct1.dxf
 share/qcad/libraries/electrical/denzuq/plans/konsento/01ct2.dxf
 share/qcad/libraries/electrical/denzuq/plans/konsento/01ct3.dxf
@@ -642,6 +677,7 @@ share/qcad/libraries/electrical/denzuq/plans/konsento/02ct3.dxf
 share/qcad/libraries/electrical/denzuq/plans/konsento/03ct1.dxf
 share/qcad/libraries/electrical/denzuq/plans/konsento/04ct1.dxf
 share/qcad/libraries/electrical/denzuq/plans/konsento/05ct1.dxf
+share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/01ip1.dxf
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/02hjt.dxf
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/03khj.dxf
@@ -650,6 +686,7 @@ share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/05bl1.dxf
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/05bl2.dxf
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/06ksk.dxf
 share/qcad/libraries/electrical/denzuq/plans/kyojukeihou/07buz.dxf
+share/qcad/libraries/electrical/denzuq/plans/musenhojo/
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/01at1.dxf
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/02kg1.dxf
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/032bk.dxf
@@ -661,6 +698,7 @@ share/qcad/libraries/electrical/denzuq/plans/musenhojo/21msh.dxf
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/21mso.dxf
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/22ck1.dxf
 share/qcad/libraries/electrical/denzuq/plans/musenhojo/23bpk.dxf
+share/qcad/libraries/electrical/denzuq/plans/nurcecall/
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/01ob1.dxf
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/01ob2.dxf
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/02oy1.dxf
@@ -669,6 +707,7 @@ share/qcad/libraries/electrical/denzuq/plans/nurcecall/04hj1.dxf
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/04hj2.dxf
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/05isp.dxf
 share/qcad/libraries/electrical/denzuq/plans/nurcecall/06hkb.dxf
+share/qcad/libraries/electrical/denzuq/plans/shouka/
 share/qcad/libraries/electrical/denzuq/plans/shouka/01kb1.dxf
 share/qcad/libraries/electrical/denzuq/plans/shouka/01kb2.dxf
 share/qcad/libraries/electrical/denzuq/plans/shouka/02bl1.dxf
@@ -679,6 +718,7 @@ share/qcad/libraries/electrical/denzuq/plans/shouka/04sir.dxf
 share/qcad/libraries/electrical/denzuq/plans/shouka/11sgb.dxf
 share/qcad/libraries/electrical/denzuq/plans/shouka/12hjb.dxf
 share/qcad/libraries/electrical/denzuq/plans/shouka/21hjt.dxf
+share/qcad/libraries/electrical/denzuq/plans/shoumei/
 share/qcad/libraries/electrical/denzuq/plans/shoumei/01hkt.dxf
 share/qcad/libraries/electrical/denzuq/plans/shoumei/02pdt.dxf
 share/qcad/libraries/electrical/denzuq/plans/shoumei/03slg.dxf
@@ -710,6 +750,7 @@ share/qcad/libraries/electrical/denzuq/plans/shoumei/42yd4.dxf
 share/qcad/libraries/electrical/denzuq/plans/shoumei/43ydi.dxf
 share/qcad/libraries/electrical/denzuq/plans/shoumei/51yk2.dxf
 share/qcad/libraries/electrical/denzuq/plans/shoumei/52yk4.dxf
+share/qcad/libraries/electrical/denzuq/plans/tenmetuki/
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/01sw1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/02sw1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/03sw02.dxf
@@ -723,6 +764,7 @@ share/qcad/libraries/electrical/denzuq/plans/tenmetuki/05rs1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/05rs2.dxf
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/05rs3.dxf
 share/qcad/libraries/electrical/denzuq/plans/tenmetuki/06pl1.dxf
+share/qcad/libraries/electrical/denzuq/plans/terebi/
 share/qcad/libraries/electrical/denzuq/plans/terebi/01ta1.dxf
 share/qcad/libraries/electrical/denzuq/plans/terebi/01ta2.dxf
 share/qcad/libraries/electrical/denzuq/plans/terebi/02bpk.dxf
@@ -738,11 +780,13 @@ share/qcad/libraries/electrical/denzuq/plans/terebi/11tv2.dxf
 share/qcad/libraries/electrical/denzuq/plans/terebi/11tv3.dxf
 share/qcad/libraries/electrical/denzuq/plans/terebi/21hda.dxf
 share/qcad/libraries/electrical/denzuq/plans/terebi/31ksh.dxf
+share/qcad/libraries/electrical/denzuq/plans/tokei/
 share/qcad/libraries/electrical/denzuq/plans/tokei/01kt1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tokei/01kt2.dxf
 share/qcad/libraries/electrical/denzuq/plans/tokei/01kt3.dxf
 share/qcad/libraries/electrical/denzuq/plans/tokei/11jk1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tokei/21ot1.dxf
+share/qcad/libraries/electrical/denzuq/plans/tyushajou/
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/01lcp.dxf
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/02lcs.dxf
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/03kk1.dxf
@@ -757,6 +801,7 @@ share/qcad/libraries/electrical/denzuq/plans/tyushajou/51cg1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/52cen.dxf
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/61hj1.dxf
 share/qcad/libraries/electrical/denzuq/plans/tyushajou/61hj2.dxf
+share/qcad/libraries/electrical/denzuq/plans/yobidasi/
 share/qcad/libraries/electrical/denzuq/plans/yobidasi/01obt.dxf
 share/qcad/libraries/electrical/denzuq/plans/yobidasi/02obt.dxf
 share/qcad/libraries/electrical/denzuq/plans/yobidasi/11nbt.dxf
@@ -769,6 +814,8 @@ share/qcad/libraries/electrical/denzuq/plans/yobidasi/42hjs.dxf
 share/qcad/libraries/electrical/denzuq/plans/yobidasi/43hjt.dxf
 share/qcad/libraries/electrical/denzuq/plans/yobidasi/44hjt.dxf
 share/qcad/libraries/electrical/denzuq/script.sh
+share/qcad/libraries/hydraulics/
+share/qcad/libraries/hydraulics/symbols/
 share/qcad/libraries/hydraulics/symbols/3wegemisch.dxf
 share/qcad/libraries/hydraulics/symbols/4wegmisch.dxf
 share/qcad/libraries/hydraulics/symbols/Druckbegrenzer.dxf
@@ -806,9 +853,14 @@ share/qcad/libraries/hydraulics/symbols/verschr.dxf
 share/qcad/libraries/hydraulics/symbols/waermetausch.dxf
 share/qcad/libraries/hydraulics/symbols/waermeverbr.dxf
 share/qcad/libraries/hydraulics/symbols/wassermangelsich.dxf
+share/qcad/libraries/mechanical/
+share/qcad/libraries/mechanical/bearing/
+share/qcad/libraries/mechanical/bearing/ball/
 share/qcad/libraries/mechanical/bearing/ball/608.dxf
+share/qcad/libraries/mechanical/bearing/cone_roll/
 share/qcad/libraries/mechanical/bearing/cone_roll/322_10.dxf
 share/qcad/libraries/mechanical/bearing/cone_roll/322_12.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/
 share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-b.dxf
 share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-c.dxf
 share/qcad/libraries/mechanical/bearing/shaft_nut/KM1-b.dxf
@@ -822,6 +874,7 @@ share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-b.dxf
 share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-c.dxf
 share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-b.dxf
 share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-c.dxf
+share/qcad/libraries/mechanical/notches/
 share/qcad/libraries/mechanical/notches/form_a.dxf
 share/qcad/libraries/mechanical/notches/form_a_2x2a_xL.dxf
 share/qcad/libraries/mechanical/notches/form_a_2x2c_xL.dxf
@@ -846,6 +899,7 @@ share/qcad/libraries/mechanical/notches/form_c_3x3c_xL.dxf
 share/qcad/libraries/mechanical/notches/form_c_4x4a_xL.dxf
 share/qcad/libraries/mechanical/notches/form_c_4x4c_xL.dxf
 share/qcad/libraries/mechanical/notches/form_c_6x6a_xL.dxf
+share/qcad/libraries/mechanical/nuts/
 share/qcad/libraries/mechanical/nuts/Hk-M10a.dxf
 share/qcad/libraries/mechanical/nuts/Hk-M10c.dxf
 share/qcad/libraries/mechanical/nuts/Hk-M12a.dxf
@@ -895,8 +949,11 @@ share/qcad/libraries/mechanical/nuts/M6c_nut.dxf
 share/qcad/libraries/mechanical/nuts/M8.dxf
 share/qcad/libraries/mechanical/nuts/M8_c.dxf
 share/qcad/libraries/mechanical/nuts/M8_nut.dxf
+share/qcad/libraries/mechanical/screws/
+share/qcad/libraries/mechanical/screws/chc/
 share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L10-L30.dxf
 share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L35-L60.dxf
+share/qcad/libraries/mechanical/screws/hex/
 share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L20-L35.dxf
 share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L40-L100.dxf
 share/qcad/libraries/mechanical/screws/hex/Hm-M12a-L25-L40.dxf
@@ -936,6 +993,7 @@ share/qcad/libraries/mechanical/screws/hex/M6_a.dxf
 share/qcad/libraries/mechanical/screws/hex/M6_c.dxf
 share/qcad/libraries/mechanical/screws/hex/M8_a.dxf
 share/qcad/libraries/mechanical/screws/hex/M8_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/
 share/qcad/libraries/mechanical/screws/in_hex/M10_a.dxf
 share/qcad/libraries/mechanical/screws/in_hex/M10_c.dxf
 share/qcad/libraries/mechanical/screws/in_hex/M12_a.dxf
@@ -960,6 +1018,11 @@ share/qcad/libraries/mechanical/screws/in_hex/M6_a.dxf
 share/qcad/libraries/mechanical/screws/in_hex/M6_c.dxf
 share/qcad/libraries/mechanical/screws/in_hex/M8_a.dxf
 share/qcad/libraries/mechanical/screws/in_hex/M8_c.dxf
+share/qcad/libraries/mechanical/tapers/
+@comment share/qcad/libraries/mechanical/tapers/ansi/
+@comment share/qcad/libraries/mechanical/tapers/brown&sharpe/
+share/qcad/libraries/mechanical/tapers/jarno/
+share/qcad/libraries/mechanical/tapers/jarno/internal/
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_2.dxf
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_3.dxf
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_4.dxf
@@ -967,6 +1030,8 @@ share/qcad/libraries/mechanical/tapers/jarno/internal/no_5.dxf
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_6.dxf
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_7.dxf
 share/qcad/libraries/mechanical/tapers/jarno/internal/no_8.dxf
+share/qcad/libraries/mechanical/tapers/morse/
+share/qcad/libraries/mechanical/tapers/morse/internal/
 share/qcad/libraries/mechanical/tapers/morse/internal/no_0.dxf
 share/qcad/libraries/mechanical/tapers/morse/internal/no_1.dxf
 share/qcad/libraries/mechanical/tapers/morse/internal/no_2.dxf
@@ -975,6 +1040,8 @@ share/qcad/libraries/mechanical/tapers/morse/internal/no_4.dxf
 share/qcad/libraries/mechanical/tapers/morse/internal/no_5.dxf
 share/qcad/libraries/mechanical/tapers/morse/internal/no_6.dxf
 share/qcad/libraries/mechanical/tapers/morse/internal/no_7.dxf
+share/qcad/libraries/mechanical/threads/
+share/qcad/libraries/mechanical/threads/external/
 share/qcad/libraries/mechanical/threads/external/M10.dxf
 share/qcad/libraries/mechanical/threads/external/M12.dxf
 share/qcad/libraries/mechanical/threads/external/M16.dxf
@@ -987,6 +1054,7 @@ share/qcad/libraries/mechanical/threads/external/M4.dxf
 share/qcad/libraries/mechanical/threads/external/M5.dxf
 share/qcad/libraries/mechanical/threads/external/M6.dxf
 share/qcad/libraries/mechanical/threads/external/M8.dxf
+share/qcad/libraries/mechanical/threads/internal/
 share/qcad/libraries/mechanical/threads/internal/M10_a.dxf
 share/qcad/libraries/mechanical/threads/internal/M10_c.dxf
 share/qcad/libraries/mechanical/threads/internal/M12_a.dxf
@@ -1011,6 +1079,7 @@ share/qcad/libraries/mechanical/threads/internal/M6_a.dxf
 share/qcad/libraries/mechanical/threads/internal/M6_c.dxf
 share/qcad/libraries/mechanical/threads/internal/M8_a.dxf
 share/qcad/libraries/mechanical/threads/internal/M8_c.dxf
+share/qcad/libraries/mechanical/washers/
 share/qcad/libraries/mechanical/washers/M3_a.dxf
 share/qcad/libraries/mechanical/washers/M3_c.dxf
 share/qcad/libraries/mechanical/washers/M4_a.dxf
@@ -1021,9 +1090,12 @@ share/qcad/libraries/mechanical/washers/M6_a.dxf
 share/qcad/libraries/mechanical/washers/M6_c.dxf
 share/qcad/libraries/mechanical/washers/M8_a.dxf
 share/qcad/libraries/mechanical/washers/M8_c.dxf
+share/qcad/libraries/misc/
+share/qcad/libraries/misc/bicycle/
 share/qcad/libraries/misc/bicycle/AusfE-rechts.dxf
 share/qcad/libraries/misc/bicycle/Daempfer1.dxf
 share/qcad/libraries/misc/bicycle/Flasche-075.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/
 share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-32.dxf
 share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-36.dxf
 share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-38.dxf
@@ -1031,6 +1103,7 @@ share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-42.dxf
 share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-48.dxf
 share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-52.dxf
 share/qcad/libraries/misc/bicycle/Lichthalter.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/
 share/qcad/libraries/misc/bicycle/Ritzel/R-10.dxf
 share/qcad/libraries/misc/bicycle/Ritzel/R-11.dxf
 share/qcad/libraries/misc/bicycle/Ritzel/R-22.dxf
@@ -1039,31 +1112,39 @@ share/qcad/libraries/misc/bicycle/Ritzel/Ritzel11.dxf
 share/qcad/libraries/misc/bicycle/Ritzel/Ritzel22.dxf
 share/qcad/libraries/misc/bicycle/Ritzel/Ritzel28.dxf
 share/qcad/libraries/misc/bicycle/Seculite.dxf
+share/qcad/libraries/misc/bicycle/Taschen/
 share/qcad/libraries/misc/bicycle/Taschen/Backroller-alt.dxf
 share/qcad/libraries/misc/bicycle/Taschen/Backroller-neu.dxf
 share/qcad/libraries/misc/bicycle/Taschen/Frontroller.dxf
 share/qcad/libraries/misc/example.dxf
+share/qcad/libraries/misc/igus/
 share/qcad/libraries/misc/igus/GFM-121418-20.dxf
 share/qcad/libraries/misc/igus/GSM-0810-10.dxf
 share/qcad/libraries/misc/igus/GTM-0818-015.dxf
 share/qcad/libraries/misc/screw.dxf
 share/qcad/libraries/misc/t-part.dxf
 share/qcad/libraries/misc/tux.dxf
+share/qcad/libraries/templates/
+share/qcad/libraries/templates/de/
 share/qcad/libraries/templates/de/DIN_A4.dxf
 share/qcad/libraries/templates/de/DIN_A4_quer.dxf
 share/qcad/libraries/templates/empty.dxf
+share/qcad/libraries/templates/en/
 share/qcad/libraries/templates/en/iso_en_a0.dxf
 share/qcad/libraries/templates/en/iso_en_a1.dxf
 share/qcad/libraries/templates/en/iso_en_a2.dxf
 share/qcad/libraries/templates/en/iso_en_a3.dxf
 share/qcad/libraries/templates/en/iso_en_a4.dxf
+share/qcad/libraries/templates/fr/
 share/qcad/libraries/templates/fr/A0_NF.dxf
 share/qcad/libraries/templates/fr/A1_NF.dxf
 share/qcad/libraries/templates/fr/A2_NF.dxf
 share/qcad/libraries/templates/fr/A3_NF.dxf
 share/qcad/libraries/templates/fr/A4_NF.dxf
 share/qcad/libraries/templates/fr/nomenclature.dxf
+share/qcad/libraries/templates/pt/
 share/qcad/libraries/templates/pt/A2.dxf
+share/qcad/messages/
 share/qcad/messages/qcad.lang
 share/qcad/messages/qcad_cs.qm
 share/qcad/messages/qcad_de.qm
@@ -1084,6 +1165,7 @@ share/qcad/messages/qcad_pt.qm
 share/qcad/messages/qcad_ru.qm
 share/qcad/messages/qcad_sk.qm
 share/qcad/messages/qcad_zh.qm
+share/qcad/xpm/
 share/qcad/xpm/addlayer.xpm
 share/qcad/xpm/aligncenter.xpm
 share/qcad/xpm/alignleft.xpm
@@ -1302,87 +1384,3 @@ share/qcad/xpm/zoomredraw.xpm
 share/qcad/xpm/zoomtagged.xpm
 share/qcad/xpm/zoomtopage.xpm
 share/qcad/xpm/zoomwindow.xpm
-@dirrm share/qcad/xpm
-@dirrm share/qcad/messages
-@dirrm share/qcad/libraries/templates/pt
-@dirrm share/qcad/libraries/templates/fr
-@dirrm share/qcad/libraries/templates/en
-@dirrm share/qcad/libraries/templates/de
-@dirrm share/qcad/libraries/templates
-@dirrm share/qcad/libraries/misc/igus
-@dirrm share/qcad/libraries/misc/bicycle/Taschen
-@dirrm share/qcad/libraries/misc/bicycle/Ritzel
-@dirrm share/qcad/libraries/misc/bicycle/Kettenblatt
-@dirrm share/qcad/libraries/misc/bicycle
-@dirrm share/qcad/libraries/misc
-@dirrm share/qcad/libraries/mechanical/washers
-@dirrm share/qcad/libraries/mechanical/threads/internal
-@dirrm share/qcad/libraries/mechanical/threads/external
-@dirrm share/qcad/libraries/mechanical/threads
-@dirrm share/qcad/libraries/mechanical/tapers/morse/internal
-@dirrm share/qcad/libraries/mechanical/tapers/morse
-@dirrm share/qcad/libraries/mechanical/tapers/jarno/internal
-@dirrm share/qcad/libraries/mechanical/tapers/jarno
-@comment exec mkdir -p %D/share/qcad/libraries/mechanical/tapers/brown&sharpe
-@comment dirrm share/qcad/libraries/mechanical/tapers/brown&sharpe
-@comment exec mkdir -p %D/share/qcad/libraries/mechanical/tapers/ansi
-@comment dirrm share/qcad/libraries/mechanical/tapers/ansi
-@dirrm share/qcad/libraries/mechanical/tapers
-@dirrm share/qcad/libraries/mechanical/screws/in_hex
-@dirrm share/qcad/libraries/mechanical/screws/hex
-@dirrm share/qcad/libraries/mechanical/screws/chc
-@dirrm share/qcad/libraries/mechanical/screws
-@dirrm share/qcad/libraries/mechanical/nuts
-@dirrm share/qcad/libraries/mechanical/notches
-@dirrm share/qcad/libraries/mechanical/bearing/shaft_nut
-@dirrm share/qcad/libraries/mechanical/bearing/cone_roll
-@dirrm share/qcad/libraries/mechanical/bearing/ball
-@dirrm share/qcad/libraries/mechanical/bearing
-@dirrm share/qcad/libraries/mechanical
-@dirrm share/qcad/libraries/hydraulics/symbols
-@dirrm share/qcad/libraries/hydraulics
-@dirrm share/qcad/libraries/electrical/denzuq/plans/yobidasi
-@dirrm share/qcad/libraries/electrical/denzuq/plans/tyushajou
-@dirrm share/qcad/libraries/electrical/denzuq/plans/tokei
-@dirrm share/qcad/libraries/electrical/denzuq/plans/terebi
-@dirrm share/qcad/libraries/electrical/denzuq/plans/tenmetuki
-@dirrm share/qcad/libraries/electrical/denzuq/plans/shoumei
-@dirrm share/qcad/libraries/electrical/denzuq/plans/shouka
-@dirrm share/qcad/libraries/electrical/denzuq/plans/nurcecall
-@dirrm share/qcad/libraries/electrical/denzuq/plans/musenhojo
-@dirrm share/qcad/libraries/electrical/denzuq/plans/kyojukeihou
-@dirrm share/qcad/libraries/electrical/denzuq/plans/konsento
-@dirrm share/qcad/libraries/electrical/denzuq/plans/kikaikeibi
-@dirrm share/qcad/libraries/electrical/denzuq/plans/kansicamera
-@dirrm share/qcad/libraries/electrical/denzuq/plans/kansen
-@dirrm share/qcad/libraries/electrical/denzuq/plans/kakusei
-@dirrm share/qcad/libraries/electrical/denzuq/plans/jouhou
-@dirrm share/qcad/libraries/electrical/denzuq/plans/jikahou
-@dirrm share/qcad/libraries/electrical/denzuq/plans/interphone
-@dirrm share/qcad/libraries/electrical/denzuq/plans/hirai
-@dirrm share/qcad/libraries/electrical/denzuq/plans/hijoukeihou
-@dirrm share/qcad/libraries/electrical/denzuq/plans/haisen
-@dirrm share/qcad/libraries/electrical/denzuq/plans/gasumore
-@dirrm share/qcad/libraries/electrical/denzuq/plans/gaisen
-@dirrm share/qcad/libraries/electrical/denzuq/plans/douryoku
-@dirrm share/qcad/libraries/electrical/denzuq/plans/denwa
-@dirrm share/qcad/libraries/electrical/denzuq/plans/bouka
-@dirrm share/qcad/libraries/electrical/denzuq/plans
-@dirrm share/qcad/libraries/electrical/denzuq/parts/cablerakku
-@dirrm share/qcad/libraries/electrical/denzuq/parts
-@dirrm share/qcad/libraries/electrical/denzuq/diagrams/skseigyoban
-@dirrm share/qcad/libraries/electrical/denzuq/diagrams/skkeiki
-@dirrm share/qcad/libraries/electrical/denzuq/diagrams/skjuhenden
-@dirrm share/qcad/libraries/electrical/denzuq/diagrams/skhenatuki
-@dirrm share/qcad/libraries/electrical/denzuq/diagrams
-@dirrm share/qcad/libraries/electrical/denzuq
-@dirrm share/qcad/libraries/electrical
-@dirrm share/qcad/libraries
-@dirrm share/qcad/hatches
-@dirrm share/qcad/fonts
-@dirrm share/qcad/cur
-@dirrm share/qcad
-@dirrm share/examples/qcad
-@dirrm share/doc/qcad/en/img
-@dirrm share/doc/qcad/en
-@dirrm share/doc/qcad

@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/30 19:59:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:18:51 espie Exp $
 bin/klogic
+share/apps/
+share/apps/klogic/
 share/apps/klogic/klogicui.rc
+share/apps/klogic/pics/
 share/apps/klogic/pics/AND.xpm
 share/apps/klogic/pics/Bot.xpm
 share/apps/klogic/pics/BotBlank.xpm
@@ -66,6 +69,7 @@ share/apps/klogic/pics/pxSSs9.xpm
 share/apps/klogic/pics/pxSSsoff.xpm
 share/apps/klogic/pics/pxSwitch0.xpm
 share/apps/klogic/pics/pxSwitch1.xpm
+share/apps/klogic/toolbar/
 share/apps/klogic/toolbar/tbAND.xpm
 share/apps/klogic/toolbar/tbBus.xpm
 share/apps/klogic/toolbar/tbD.xpm
@@ -98,28 +102,29 @@ share/apps/klogic/toolbar/tbTRI.xpm
 share/apps/klogic/toolbar/tbTXT.xpm
 share/apps/klogic/toolbar/tbUP.xpm
 share/apps/klogic/toolbar/tbXOR.xpm
+share/doc/HTML/
+share/doc/HTML/en/
+share/doc/HTML/en/klogic/
 share/doc/HTML/en/klogic/common
 share/doc/HTML/en/klogic/index.cache.bz2
 share/doc/HTML/en/klogic/index.docbook
+share/icons/
+share/icons/klogic/
 share/icons/klogic/klogic.xpm
 share/icons/klogic/klogicf.xpm
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/klogic.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/klogic.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/klogic.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/klogic.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/klogic.mo
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/icons/klogic
-@dirrm share/doc/HTML/en/klogic
-@dirrm share/apps/klogic/toolbar
-@dirrm share/apps/klogic/pics
-@dirrm share/apps/klogic
