@@ -1,6 +1,17 @@
-$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.1 2002/04/09 22:36:22 espie Exp $
+$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.2 2002/04/16 10:07:31 espie Exp $
 --- kioslave/man/man2html.cpp.orig	Fri Mar  8 02:16:51 2002
-+++ kioslave/man/man2html.cpp	Wed Apr 10 00:27:39 2002
++++ kioslave/man/man2html.cpp	Tue Apr 16 05:28:02 2002
+@@ -2218,8 +2218,8 @@ static char *scan_request(char *c)
+             } else if (i<words-1) out_html(", ");
+          }
+          if (mandoc_synopsis) {
+-            if (!inFdMode) out_html(")");
+-            out_html(";<br>");
++            if (!inFdMode) out_html(");");
++            out_html("<br>");
+          };
+          out_html(change_to_font('R'));
+          out_html(NEWLINE);
 @@ -2715,6 +2715,38 @@ static char *scan_request(char *c)
  	    out_html(" is currently in beta test.");
  	    if (fillout) curpos++; else curpos=0;
@@ -40,3 +51,12 @@ $OpenBSD: patch-kioslave_man_man2html_cpp,v 1.1 2002/04/09 22:36:22 espie Exp $
  	case V('B','x'):	/* BSD mandoc */
  	    trans_char(c,'"','\a');
  	    c=c+j;
+@@ -2797,7 +2829,7 @@ static char *scan_request(char *c)
+ 	      c = c+j;
+ 	      if (*c == '\n') c++; /* Skip spaces */
+ 	      while (isspace(*c) && *c != '\n') c++;
+-	      while (isalnum(*c)) { /* Copy the xyz part */
++	      while (isalnum(*c) || *c == '_' || *c == '-') { /* Copy the xyz part */
+ 		*bufptr = *c;
+ 		bufptr++; if (bufptr >= buff + MED_STR_MAX) break;
+ 		c++;
