@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/04/08 04:21:52 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/04/11 02:55:55 brad Exp $
 
 DISTNAME=	gimp-1.1.4
 CATEGORIES=	graphics
@@ -8,7 +8,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.4/ \
 
 MAINTAINER=	brad@openbsd.org
 
-RUN_DEPENDS=	wget:${PORTSDIR}/net/wget
+RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext \
+		wget:${PORTSDIR}/net/wget
 LIB_DEPENDS=	aa:${PORTSDIR}/graphics/aalib \
 		intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
