@@ -1,12 +1,14 @@
-You must add the ${PREFIX}/share/bochs/fonts directory to your X server's
-font path.  For XFree86, add the line:
+If you built bochs with X support (default unless you specified the
+no_x11 flavor) you must add the ${PREFIX}/share/bochs/fonts directory
+to your X server's font path.
+For XFree86, add the line:
 
 FontPath "${PREFIX}/share/bochs/fonts"
 
 in the "Files" section of your XF86Config file.  This is /etc/XF86Config
 for XFree86 version 3, and /etc/X11/XF86Config for XFree86 version 4.
-If you use a different X server, please see its documentation on how to do
-this.
+If you use a different X server, please see its documentation
+on how to do this.
 
 Then re-start your X server.
 

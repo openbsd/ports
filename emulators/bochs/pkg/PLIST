@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/01/13 14:55:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/01/09 16:15:04 fgsch Exp $
+!%%no_x11%%
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
 man/man1/bochs.1
 man/man1/bximage.1
+man/man5/bochsrc.5
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
 share/bochs/bios/BIOS-bochs-8-processors
@@ -13,10 +15,6 @@ share/bochs/bios/VGABIOS-elpin-LICENSE
 share/bochs/bios/VGABIOS-lgpl-README
 share/bochs/bios/VGABIOS-lgpl-latest
 share/bochs/bochsrc
-share/bochs/fonts/fonts.dir
-share/bochs/fonts/hercules.bdf
-share/bochs/fonts/vga.bdf
-share/bochs/fonts/vga.pcf
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
@@ -44,6 +42,5 @@ share/doc/bochs/undercon.gif
 share/doc/bochs/whatisbochs.html
 share/doc/bochs/win32.html
 @dirrm share/doc/bochs
-@dirrm share/bochs/fonts
 @dirrm share/bochs/bios
 @dirrm share/bochs
