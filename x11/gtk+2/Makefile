@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/30 03:59:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/26 23:22:50 espie Exp $
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
@@ -49,7 +49,8 @@ MAKE_ENV=			OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/; \
-	sed s,${WRKSRC}/modules/input,${LOCALBASE}/lib/gtk-2.0/2.2.0/immodules, ${WRKSRC}/modules/input/gtk.immodules > ${PREFIX}/share/examples/gtk+2/gtk.immodules; \
-	sed s,${WRKSRC}/gdk-pixbuf,${LOCALBASE}/lib/gtk-2.0/2.2.0/loaders, ${WRKSRC}/gdk-pixbuf/gdk-pixbuf.loaders > ${PREFIX}/share/examples/gtk+2/gdk-pixbuf.loaders
+	src=`cd ${WRKSRC} && pwd -P`; \
+	sed s,$$src/modules/input,${LOCALBASE}/lib/gtk-2.0/2.2.0/immodules, ${WRKSRC}/modules/input/gtk.immodules > ${PREFIX}/share/examples/gtk+2/gtk.immodules; \
+	sed s,$$src/gdk-pixbuf,${LOCALBASE}/lib/gtk-2.0/2.2.0/loaders, ${WRKSRC}/gdk-pixbuf/gdk-pixbuf.loaders > ${PREFIX}/share/examples/gtk+2/gdk-pixbuf.loaders
 
 .include <bsd.port.mk>
