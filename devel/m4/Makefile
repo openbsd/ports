@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/07 00:14:44 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/24 23:58:55 marc Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 #
 
@@ -10,8 +10,14 @@ MAINTAINER=	niklas@openbsd.org
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= m4
 
-GNU_CONFIGURE=yes
-CONFIGURE_ARGS= --program-prefix=g
+# This port does use gnu configure, but uses old autoconf files.
+# We can't say USE_AUTOCONF because then we'd get a circular dependency:
+# autoconf also requires this version of m4.  So we fake up what
+# GNU_CONFIGURE would do less the parts that its outdated configure
+# doesn't like.
+#
+CONFIGURE_ARGS=	--prefix=${PREFIX} --program-prefix=g
+HAS_CONFIGURE=	yes
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/gm4
