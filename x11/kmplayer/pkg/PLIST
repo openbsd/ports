@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/03/02 14:22:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/03/02 14:27:42 espie Exp $
 bin/kmplayer
 ${KDE}/kparts_kmplayer.la
 lib/kdeinit_kmplayer.la
@@ -17,4 +17,5 @@ share/mimelnk/video/x-ms-wmv.desktop
 share/services/kmplayer_component.desktop
 %%SHARED%%
 @dirrm share/doc/HTML/en/kmplayer
+@exec echo "This port may require careful setup. See pkg_info kmplayer"
 @dirrm share/apps/kmplayer

@@ -4,3 +4,12 @@ desktop files to embed it in konqueror.
 The front-end is not very useful, but the embeddable
 part means lots of windows video sites suddenly start
 working in konqueror.
+
+Care must be taken for the audio output. You can either:
+- install an sdl with arts support and use an mplayer with sdl audio output,
+- use an mplayer with direct arts support,
+- disable arts audio output in kde entirely 
+(control panel, multimedia, sound io, no output)
+
+The last option is possibly preferable, as kde arts does not yield real time
+performance.
