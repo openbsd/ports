@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2001/09/28 03:57:44 pvalchev Exp $
 
 COMMENT=	"Battle.net(r) server emulator"
 
@@ -15,8 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	gnu
 WRKSRC=			${WRKDIST}/src
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 
 MAKE_FLAGS=CFLAGS=-O2
 
