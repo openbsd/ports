@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/19 15:43:49 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/26 18:51:38 avsm Exp $
 
 DISTNAME=	File-Tail-0.96
 PKGNAME=	p5-${DISTNAME}
@@ -11,7 +11,7 @@ PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd
 BUILD_DEPENDS=	${PERL_MODULES}/Time/HiRes.pm::devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAINTAINER=	avsm@openbsd.org
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
