@@ -1242,7 +1242,6 @@ lib/xemacs-20.4/info/w3.info
 lib/xemacs-20.4/info/w3.info-1
 lib/xemacs-20.4/info/w3.info-2
 lib/xemacs-20.4/info/w3.info-3
-lib/xemacs-20.4/info/w3.info-4
 lib/xemacs-20.4/info/widget.info
 lib/xemacs-20.4/info/xemacs-faq.info
 lib/xemacs-20.4/info/xemacs-faq.info-1

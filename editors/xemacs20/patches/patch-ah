@@ -1,0 +1,11 @@
+--- man/texinfo.texi.orig	Mon Apr 17 02:39:54 2000
++++ man/texinfo.texi	Mon Apr 17 02:42:45 2000
+@@ -654,8 +654,6 @@ Finding Badly Referenced Nodes
+ 
+ How to Obtain @TeX{}
+ 
+-* New Texinfo Mode Commands::   The updating commands are especially useful.
+-* New Commands::                Many newly described @@-commands.
+ @end detailmenu
+ @end menu
+ 
