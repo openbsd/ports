@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/31 08:52:39 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/14 23:51:02 turan Exp $
 
-BROKEN=			waiting for turans@ to verify
+BROKEN=		packing list problems, can not make instal 2nd time as well
 
 DISTNAME=		xdtm-2.5.5
 CATEGORIES=		x11
