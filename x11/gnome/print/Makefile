@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/15 15:57:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/22 15:37:35 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -8,7 +8,7 @@ HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-print/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-print/0.36/}
 
 # fix for Alpha
 .if (${MACHINE_ARCH} == "alpha")

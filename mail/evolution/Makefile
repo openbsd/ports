@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/14 04:18:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/22 15:37:35 marcm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/evolution/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution/1.0/}
 
 MODULES=		gettext
 

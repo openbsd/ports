@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/22 15:37:35 marcm Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/bonobo/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/bonobo/1.0/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-docs

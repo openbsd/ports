@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/22 15:37:35 marcm Exp $
 
 COMMENT=		"high-performance 2D graphics library"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=2.0.0/sources/libart_lgpl/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libart_lgpl/2.3/}
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE= 	gnu
