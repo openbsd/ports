@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/21 12:31:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/02 07:13:08 kevlo Exp $
 bin/drgeo
+share/applications/
 share/applications/drgeo.desktop
+share/drgeo/
+share/drgeo/encode/
 share/drgeo/encode/latin1.ps
+share/drgeo/examples/
+share/drgeo/examples/figures/
 share/drgeo/examples/figures/accel.fgeo
 share/drgeo/examples/figures/angle-inscrit.fgeo
+share/drgeo/examples/figures/baballe.fgeo
+share/drgeo/examples/figures/braik_conic.fgeo
 share/drgeo/examples/figures/cercle-inscrit.fgeo
 share/drgeo/examples/figures/circle-locus.fgeo
 share/drgeo/examples/figures/conics.fgeo
@@ -25,6 +32,7 @@ share/drgeo/examples/figures/saliera.fgeo
 share/drgeo/examples/figures/signed-distance.fgeo
 share/drgeo/examples/figures/sinusoide.fgeo
 share/drgeo/examples/figures/slope.fgeo
+share/drgeo/examples/figures/steiner_conic.fgeo
 share/drgeo/examples/figures/symmetry-axe-2.fgeo
 share/drgeo/examples/figures/symmetry-center.fgeo
 share/drgeo/examples/figures/triangle-scale.fgeo
@@ -33,16 +41,21 @@ share/drgeo/examples/figures/triangles-homothetiques.fgeo
 share/drgeo/examples/figures/trigo1.fgeo
 share/drgeo/examples/figures/varignon.fgeo
 share/drgeo/examples/figures/wheel.fgeo
+share/drgeo/examples/macros/
 share/drgeo/examples/macros/bissectrice.mgeo
 share/drgeo/examples/macros/centre1.mgeo
 share/drgeo/examples/macros/orthocentre.mgeo
 share/drgeo/examples/macros/pentagone.mgeo
 share/drgeo/examples/macros/segment.mgeo
+share/drgeo/examples/scheme/
 share/drgeo/examples/scheme/baum.scm
 share/drgeo/examples/scheme/figure.scm
 share/drgeo/examples/scheme/polygon.scm
 share/drgeo/examples/scheme/polygon2.scm
+share/drgeo/examples/scheme/spiral.scm
 share/drgeo/examples/scheme/square.scm
+share/drgeo/examples/scheme/steiner.scm
+share/drgeo/glade/
 share/drgeo/glade/angle.png
 share/drgeo/glade/angle.xpm
 share/drgeo/glade/axial_symetry.png
@@ -82,6 +95,7 @@ share/drgeo/glade/eraser.png
 share/drgeo/glade/eraser.xpm
 share/drgeo/glade/free_point.png
 share/drgeo/glade/free_point.xpm
+share/drgeo/glade/grid.png
 share/drgeo/glade/half_line.png
 share/drgeo/glade/half_line.xpm
 share/drgeo/glade/homothetie.png
@@ -120,6 +134,7 @@ share/drgeo/glade/preferences.xpm
 share/drgeo/glade/property.png
 share/drgeo/glade/property.xpm
 share/drgeo/glade/quit.xpm
+share/drgeo/glade/rename.png
 share/drgeo/glade/rotation.png
 share/drgeo/glade/rotation.xpm
 share/drgeo/glade/round-empty.xpm
@@ -146,6 +161,7 @@ share/drgeo/glade/vectrex.png
 share/drgeo/glade/vectrex.xpm
 share/drgeo/glade/widget-script.png
 share/drgeo/glade/widget-script.xpm
+share/drgeo/scm/
 share/drgeo/scm/drgeo_config.scm
 share/drgeo/scm/drgeo_scm_interface.scm
 share/drgeo/scm/drgeo_scm_interface_constant.scm
@@ -154,22 +170,13 @@ share/drgeo/scm/drgeo_scm_interface_constant_fr.scm
 share/drgeo/scm/drgeo_scm_interface_constant_nl.scm
 share/drgeo/scm/drgeo_scm_interface_constant_sr.scm
 share/drgeo/scm/preferences.scm
+share/pixmaps/
 share/pixmaps/drgeo-book.png
 share/pixmaps/drgeo-file.png
 share/pixmaps/ofset-logo.png
+share/texmacs/
+share/texmacs/TeXmacs/
+share/texmacs/TeXmacs/plugins/
+share/texmacs/TeXmacs/plugins/drgeo/
+share/texmacs/TeXmacs/plugins/drgeo/progs/
 share/texmacs/TeXmacs/plugins/drgeo/progs/init-drgeo.scm
-@dirrm share/texmacs/TeXmacs/plugins/drgeo/progs
-@dirrm share/texmacs/TeXmacs/plugins/drgeo
-@dirrm share/texmacs/TeXmacs/plugins
-@dirrm share/texmacs/TeXmacs
-@dirrm share/texmacs
-@dirrm share/pixmaps
-@dirrm share/drgeo/scm
-@dirrm share/drgeo/glade
-@dirrm share/drgeo/examples/scheme
-@dirrm share/drgeo/examples/macros
-@dirrm share/drgeo/examples/figures
-@dirrm share/drgeo/examples
-@dirrm share/drgeo/encode
-@dirrm share/drgeo
-@dirrm share/applications

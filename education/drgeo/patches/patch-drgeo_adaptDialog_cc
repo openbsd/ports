@@ -1,12 +1,16 @@
-$OpenBSD: patch-drgeo_adaptDialog_cc,v 1.1.1.1 2004/02/21 12:31:02 espie Exp $
---- drgeo_adaptDialog.cc.orig	2004-02-12 01:19:01.000000000 +0100
-+++ drgeo_adaptDialog.cc	2004-02-12 01:19:06.000000000 +0100
-@@ -24,7 +24,7 @@
- #include <stdio.h>
- #include <time.h>
- #include <unistd.h>
--#include <crypt.h>
-+//#include <crypt.h>
- #include <string.h>
+$OpenBSD: patch-drgeo_adaptDialog_cc,v 1.2 2004/08/02 07:13:06 kevlo Exp $
+--- drgeo_adaptDialog.cc.orig	Sun Jun  6 17:30:06 2004
++++ drgeo_adaptDialog.cc	Mon Aug  2 14:36:10 2004
+@@ -34,7 +34,11 @@
+ #include "drgenius_mdi.h"
  
- #include <glade/glade.h>
+ #ifndef G_PLATFORM_WIN32
+-   #include <crypt.h>
++   #if defined(__OpenBSD__)
++      #include <unistd.h>
++   #else
++      #include <crypt.h>
++   #endif
+ #endif 
+ 
+ extern drgeniusMDI *mdi;
