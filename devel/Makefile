@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2001/08/21 13:17:57 shell Exp $
+# $OpenBSD: Makefile,v 1.101 2001/08/24 19:27:13 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Date-Calc
+     SUBDIR += p5-Date-Handler
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-File-Tail
      SUBDIR += p5-FreezeThaw
