@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2002/01/24 23:33:30 jsyn Exp $
+# $OpenBSD: Makefile,v 1.116 2002/01/26 18:43:18 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += gtl
      SUBDIR += guilib
      SUBDIR += help2man
+     SUBDIR += horde
      SUBDIR += id-utils
      SUBDIR += jad
      SUBDIR += jakarta-ant
