@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2002/12/12 01:18:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2003/03/29 00:32:46 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
-VERSION=	0.3.2.2
-M17N_VERSION=	20021207
+VERSION=	0.4.1
+M17N_VERSION=	20030308
 REVISION=
 
 DISTNAME=	w3m-${VERSION}
@@ -36,15 +36,15 @@ CONFIGURE_ARGS=	--nonstop \
 		--gc-libdir="${LOCALBASE}/lib" \
 		--sysconfdir="${SYSCONFDIR}/w3m" \
 		--model=monster \
-		--mimetypes=/var/www/mime.types
+		--mimetypes=/var/www/conf/mime.types
 CONFIGURE_ENV=	use_ssl_verify=y \
 		dmail=mail ded=vi dbrowser=lynx \
 		use_bundled_gclib=n
 
 NO_REGRESS=	Yes
 
-DOCS=	FAQ.html HISTORY MANUAL.html \
-	README README.dict README.func STORY.html \
+DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
+	README.mouse README.pre_form README.tab STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
