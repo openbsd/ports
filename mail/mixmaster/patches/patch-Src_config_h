@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_config_h,v 1.1 2003/09/29 20:17:49 sturm Exp $
---- Src/config.h.orig	2003-09-27 18:53:56.000000000 +0200
-+++ Src/config.h	2003-09-27 18:54:08.000000000 +0200
-@@ -138,7 +138,7 @@
+$OpenBSD: patch-Src_config_h,v 1.2 2003/11/23 18:52:40 sturm Exp $
+--- Src/config.h.orig	2003-11-09 12:09:25.000000000 +0100
++++ Src/config.h	2003-11-23 19:31:19.000000000 +0100
+@@ -142,7 +142,7 @@
  /* Give up if a file is larger than BUFFER_MAX bytes: */
  /* #define BUFFER_MAX 64*1024*1024 */
  
