@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/13 11:23:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/26 21:48:32 heko Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
 DISTNAME=	gnats-3.113
 CATEGORIES=	databases devel
-MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/ \
-		ftp://ftp.freesoftware.com/pub/sourceware/gnats/snapshots/ \
-		ftp://gd.tuwien.ac.at/gnu/sourceware/gnats/snapshots/ \
-		ftp://ftp.chg.ru/pub/sourceware/gnats/snapshots/ \
-      		ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/gnats/snapshots/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=gnats/snapshots
 HOMEPAGE=	http://sources.redhat.com/gnats/
 MAINTAINER=	Dug Song <dugsong@monkey.org>
-NEED_VERSION=	1.402
+NEED_VERSION=	1.444
 
 FLAVORS=	www
 FLAVOR?=
