@@ -1,38 +1,11 @@
-*** Fxtv.orig	Fri Feb  5 18:11:43 1999
---- Fxtv	Tue Mar 23 17:40:56 1999
-***************
-*** 137,143 ****
-  !!   after this point in your local app-default file.
-  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  
-! Fxtv.title:    FreeBSD TV
-  Fxtv.iconName: FXTV
-  
-  !  Menubar appearance
---- 137,143 ----
-  !!   after this point in your local app-default file.
-  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  
-! Fxtv.title:    FXTV
-  Fxtv.iconName: FXTV
-  
-  !  Menubar appearance
-*** app_rsrc.h.orig	Fri Feb  5 17:27:26 1999
---- app_rsrc.h	Tue Mar 23 17:41:51 1999
-***************
-*** 593,599 ****
-  
-  static String fallback_resources[] = { 
-   /*"Fxtv.geometry: +10+10",*/
-!    "Fxtv.title:    FreeBSD TV " VERS_STR,
-     "Fxtv.iconName: FXTV",
-  
-      /* Menubar appearance */
---- 593,599 ----
-  
-  static String fallback_resources[] = { 
-   /*"Fxtv.geometry: +10+10",*/
-!    "Fxtv.title:    FXTV " VERS_STR,
-     "Fxtv.iconName: FXTV",
-  
-      /* Menubar appearance */
+--- Fxtv.orig	Sun May 28 19:22:37 2000
++++ Fxtv	Sun May 28 19:22:51 2000
+@@ -151,7 +151,7 @@
+ !!   after this point in your local app-default file.
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+-Fxtv*title:    FreeBSD TV
++Fxtv*title:    FXTV
+ Fxtv*iconName: FXTV
+ 
+ !  Menubar appearance

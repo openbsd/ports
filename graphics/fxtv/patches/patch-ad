@@ -1,0 +1,20 @@
+--- app_rsrc.h.orig	Thu Nov  4 18:46:50 1999
++++ app_rsrc.h	Sun May 28 19:33:37 2000
+@@ -526,7 +526,7 @@
+ 
+ 
+ #define OPTION_HELP_STR "\
+-                    FreeBSD X TV (fxtv), Version " VERS_STR ".  
++                    FXTV, Version " VERS_STR ".  
+                          Written by Randall Hopper
+ 
+ Please mail Fxtv and Bt848 driver-related comments and help requests to the
+@@ -618,7 +618,7 @@
+ 
+ static String fallback_resources[] = { 
+  /*"Fxtv.geometry: +10+10",*/
+-   "Fxtv.title:    FreeBSD TV " VERS_STR,
++   "Fxtv.title:    FXTV " VERS_STR,
+    "Fxtv.iconName: FXTV",
+ 
+     /* Menubar appearance */

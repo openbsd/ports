@@ -1,0 +1,35 @@
+--- tv.c.orig	Sun May 28 19:26:36 2000
++++ tv.c	Sun May 28 19:27:37 2000
+@@ -220,6 +220,7 @@
+ 
+ static void TVRemoteCallback( const char key[] )
+ {
++#if !defined(__OpenBSD__)
+     TV_BOOL handled;
+ 
+     /*  First, pass these through the user's Remote translation table      */
+@@ -230,6 +231,7 @@
+         /*    generic "key" handler and take the default behavior.  */
+         TVACTIONKeyEventHdlr( key, &handled );
+     }
++#endif
+ }
+ 
+ 
+@@ -840,13 +842,15 @@
+     XtAddEventHandler( top_level, (EventMask) 0, True, _XEditResCheckMessages,
+                        NULL );
+ 
++#if !defined(__OpenBSD__)
+     /*  Attach remote, if configured  */
+     if ( App_res.remote_type[0] && !STREQ( App_res.remote_type, "None" ) && 
+                                    !STREQ( App_res.remote_type, "none" ) ) {
+         TVREMOTETRANSParse( XtDisplay( top_level ) );
+         TVREMOTEOpen( app_context, App_res.remote_type, TVRemoteCallback );
+     }
+-    
++#endif
++
+     XtVaSetValues( top_level, XtNallowShellResize, True,
+                              NULL );
+ 

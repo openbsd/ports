@@ -1,4 +1,5 @@
 bin/fxtv
+man/man1/fxtv.1
 lib/X11/app-defaults/Fxtv
 lib/X11/fxtv/README
 lib/X11/fxtv/bitmaps/mini-camera.xpm

@@ -1,0 +1,15 @@
+--- actions.c.orig	Sun May 28 19:23:57 2000
++++ actions.c	Sun May 28 19:24:17 2000
+@@ -740,10 +740,12 @@
+     TVSCREENSetZoomState( !d->zoom_on, fullscreen );
+     TVTOOLSSetToggleState( TV_TOOLITEM_FULLSCREEN, d->zoom_on );
+     
++#if !defined(__OpenBSD__)
+     /*  This is an ugly hack.  Changing the video mode can take a while,  */
+     /*    If this was initiated by a remote event, this delay messes up   */
+     /*    remote key debouncing.  Just flush the buffer of any repeats.   */
+     TVREMOTEFlush();
++#endif
+ }
+ 
+ 

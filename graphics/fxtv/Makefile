@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/12 19:28:44 angelos Exp $
+# $OpenBSD: Makefile,v 1.15 2000/05/28 23:41:33 angelos Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
-DISTNAME=	fxtv-0.48
+DISTNAME=	fxtv-1.02
 CATEGORIES=	graphics
 NEED_VERSION=	 1.230
 FAKE=No
