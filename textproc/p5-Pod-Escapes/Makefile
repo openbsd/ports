@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/28 23:12:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/01 13:46:45 msf Exp $
 
 COMMENT=	"library to resolve perl Pod escape sequences"
 
-DISTNAME=	Pod-Escapes-1.03
+DISTNAME=	Pod-Escapes-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Perl license
 PERMIT_PACKAGE_CDROM=	Yes
