@@ -1,0 +1,12 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2004/11/06 18:19:53 naddy Exp $
+--- aclocal.m4.orig	Sat Nov  6 17:39:04 2004
++++ aclocal.m4	Sat Nov  6 17:39:16 2004
+@@ -37,7 +37,7 @@ dnl       bug(s).
+ dnl This is a convenient macro which translates illegal characters for
+ dnl bourne shell variables into legal characters.  It has the same
+ dnl functionality as sed 'y%./+-:%__p__%'.
+-AC_DEFUN([smr_safe_translation], [patsubst(patsubst([$1], [+], [p]), [./-:], [_])])
++AC_DEFUN([smr_safe_translation], [patsubst(patsubst([$1], [\+], [p]), [./-:], [_])])
+ 
+ AC_DEFUN(smr_SWITCH,
+ [

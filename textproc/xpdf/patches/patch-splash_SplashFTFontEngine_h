@@ -1,0 +1,13 @@
+$OpenBSD: patch-splash_SplashFTFontEngine_h,v 1.1 2004/11/06 18:19:53 naddy Exp $
+--- splash/SplashFTFontEngine.h.orig	Sat Nov  6 18:11:44 2004
++++ splash/SplashFTFontEngine.h	Sat Nov  6 18:12:10 2004
+@@ -15,7 +15,8 @@
+ #pragma interface
+ #endif
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include "gtypes.h"
+ 
+ class SplashFontFile;

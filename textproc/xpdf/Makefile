@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/10/23 02:24:36 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2004/11/06 18:19:53 naddy Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_MOTIF=	openmotif
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=autoconf no-autoheader
+AUTOCONF_VERSION=2.57
 CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
 		 --without-libpaper-library
