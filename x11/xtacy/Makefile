@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.9 2000/08/21 03:33:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/12 13:44:12 wilfried Exp $
 #
 
 DISTNAME=	xtacy114
@@ -23,12 +23,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-NO_BUILD=	Yes
+CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/Xtacy
 
-pre-install:
-	@cp ${WRKSRC}/Makefile.orig ${WRKSRC}/Makefile
-	@cp ${WRKSRC}/xtacy.man ${PREFIX}/man/man1/xtacy.1
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/xtacy ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xtacy.man ${PREFIX}/man/man1/xtacy.1
 
 .include <bsd.port.mk>
