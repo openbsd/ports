@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST.sk,v 1.4 2003/12/15 20:56:40 naddy Exp $
-${DOC}koshell/common
-${DOC}koshell/${C}
-${DOC}koshell/${I}
+@comment $OpenBSD: PLIST.sk,v 1.5 2004/03/14 19:52:50 espie Exp $
+share/apps/koffice/autocorrect/sk.xml
 ${DOC}kpresenter/barmenus.png
 ${DOC}kpresenter/barstyle1.png
-${DOC}kpresenter/common
 ${DOC}kpresenter/faq.docbook
 ${DOC}kpresenter/great-presentations.docbook
 ${DOC}kpresenter/guides.docbook
-${DOC}kpresenter/${C}
-${DOC}kpresenter/${I}
 ${DOC}kpresenter/menus.docbook
 ${DOC}kpresenter/options.docbook
 ${DOC}kpresenter/screen.docbook
@@ -39,18 +34,21 @@ ${DOC}kpresenter/tutorial.docbook
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
-${LOC}graphite.mo
 ${LOC}karbon.mo
+${LOC}karbonepsfilter.mo
 ${LOC}kchart.mo
+${LOC}kexi.mo
 ${LOC}kfile_koffice.mo
+${LOC}kfile_ooo.mo
+${LOC}kformdesigner.mo
 ${LOC}kformula.mo
 ${LOC}kformulalatexfilter.mo
+${LOC}kformulamathmlfilter.mo
 ${LOC}kformulapngfilter.mo
 ${LOC}kivio.mo
 ${LOC}koconverter.mo
 ${LOC}kocryptfilter.mo
 ${LOC}koffice.mo
-${LOC}kontour.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
 ${LOC}kplato.mo
@@ -60,15 +58,23 @@ ${LOC}krita.mo
 ${LOC}kscan_plugin.mo
 ${LOC}kspread.mo
 ${LOC}kspreadcalc_calc.mo
+${LOC}kspreaddbasefilter.mo
+${LOC}kspreadlatexexportfilter.mo
+${LOC}kspreadopencalcfilter.mo
 ${LOC}kspreadqprofilter.mo
 ${LOC}kthesaurus.mo
 ${LOC}kugar.mo
 ${LOC}kword.mo
+${LOC}kwordabiwordfilter.mo
 ${LOC}kwordasciifilter.mo
 ${LOC}kwordhtmlexportfilter.mo
 ${LOC}kwordhtmlimportfilter.mo
+${LOC}kwordlatexexportfilter.mo
 ${LOC}kwordlatexfilter.mo
+${LOC}kwordlateximportfilter.mo
+${LOC}kwordmswordfilter.mo
 ${LOC}kwordmswritefilter.mo
+${LOC}kwordpdfimport.mo
 ${LOC}olefilterswinword97filter.mo
 ${LOC}thesaurus_tool.mo
 ${LOC}xsltexportfilter.mo
@@ -77,6 +83,8 @@ ${LOC}xsltimportfilter.mo
 @dirrm share/locale/sk
 @dirrm share/locale
 @dirrm ${DOC}kpresenter
-@dirrm ${DOC}koshell
 @dirrm share/doc/HTML/sk
 @dirrm share/doc/HTML
+@dirrm share/apps/koffice/autocorrect
+@dirrm share/apps/koffice
+@dirrm share/apps

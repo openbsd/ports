@@ -1,5 +1,4 @@
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/templatedtd.docbook
+@comment $OpenBSD: PLIST.zh_CN,v 1.1 2004/03/14 19:52:50 espie Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
@@ -50,9 +49,6 @@ ${LOC}olefilterswinword97filter.mo
 ${LOC}thesaurus_tool.mo
 ${LOC}xsltexportfilter.mo
 ${LOC}xsltimportfilter.mo
-@dirrm ${DOC}/kugar
-@dirrm share/doc/HTML/pt
-@dirrm share/doc/HTML
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm share/locale

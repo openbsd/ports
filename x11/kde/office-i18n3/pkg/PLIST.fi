@@ -1,12 +1,10 @@
-${DOC}kugar/datadtd.docbook
-${DOC}kugar/templatedtd.docbook
+@comment $OpenBSD: PLIST.fi,v 1.1 2004/03/14 19:52:50 espie Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}karbonepsfilter.mo
 ${LOC}kchart.mo
-${LOC}kexi.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kfile_ooo.mo
 ${LOC}kformdesigner.mo
@@ -20,7 +18,6 @@ ${LOC}kocryptfilter.mo
 ${LOC}koffice.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
-${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}kpresenterkwordfilter.mo
 ${LOC}krita.mo
@@ -50,9 +47,6 @@ ${LOC}olefilterswinword97filter.mo
 ${LOC}thesaurus_tool.mo
 ${LOC}xsltexportfilter.mo
 ${LOC}xsltimportfilter.mo
-@dirrm ${DOC}/kugar
-@dirrm share/doc/HTML/pt
-@dirrm share/doc/HTML
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
 @dirrm share/locale

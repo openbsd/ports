@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zh_TW,v 1.4 2003/12/15 20:56:40 naddy Exp $
+@comment $OpenBSD: PLIST.zh_TW,v 1.5 2004/03/14 19:52:50 espie Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
@@ -29,12 +29,17 @@ ${LOC}kthesaurus.mo
 ${LOC}kudesigner.mo
 ${LOC}kugar.mo
 ${LOC}kword.mo
+${LOC}kwordabiwordfilter.mo
 ${LOC}kwordasciifilter.mo
 ${LOC}kwordhtmlexportfilter.mo
 ${LOC}kwordhtmlfilter.mo
 ${LOC}kwordhtmlimportfilter.mo
+${LOC}kwordlatexexportfilter.mo
 ${LOC}kwordlatexfilter.mo
+${LOC}kwordlateximportfilter.mo
+${LOC}kwordmswordfilter.mo
 ${LOC}kwordmswritefilter.mo
+${LOC}kwordpdfimport.mo
 ${LOC}olefilterswinword97filter.mo
 ${LOC}xsltexportfilter.mo
 ${LOC}xsltfilter.mo

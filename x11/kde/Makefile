@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2004/03/08 11:10:15 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2004/03/14 19:52:50 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -69,8 +69,8 @@
      SUBDIR+= i18n3,zh_CN
      SUBDIR+= i18n3,zh_TW
      SUBDIR+= office-i18n3,af
-     SUBDIR+= office-i18n3,ar
-     SUBDIR+= office-i18n3,bs
+     SUBDIR+= office-i18n3,bg
+     SUBDIR+= office-i18n3,ca
      SUBDIR+= office-i18n3,cs
      SUBDIR+= office-i18n3,da
      SUBDIR+= office-i18n3,de
@@ -79,13 +79,14 @@
      SUBDIR+= office-i18n3,eo
      SUBDIR+= office-i18n3,es
      SUBDIR+= office-i18n3,et
+     SUBDIR+= office-i18n3,fa
+     SUBDIR+= office-i18n3,fi
      SUBDIR+= office-i18n3,fr
      SUBDIR+= office-i18n3,he
      SUBDIR+= office-i18n3,hu
      SUBDIR+= office-i18n3,it
      SUBDIR+= office-i18n3,ja
-     SUBDIR+= office-i18n3,lt
-     SUBDIR+= office-i18n3,lv
+     SUBDIR+= office-i18n3,lo
      SUBDIR+= office-i18n3,mt
      SUBDIR+= office-i18n3,nb
      SUBDIR+= office-i18n3,nl
@@ -96,12 +97,13 @@
      SUBDIR+= office-i18n3,ru
      SUBDIR+= office-i18n3,sk
      SUBDIR+= office-i18n3,sl
+     SUBDIR+= office-i18n3,sr
      SUBDIR+= office-i18n3,sv
      SUBDIR+= office-i18n3,th
      SUBDIR+= office-i18n3,tr
-     SUBDIR+= office-i18n3,uk
      SUBDIR+= office-i18n3,ven
      SUBDIR+= office-i18n3,xh
+     SUBDIR+= office-i18n3,zh_CN
      SUBDIR+= office-i18n3,zh_TW
      SUBDIR+= office-i18n3,zu
      SUBDIR+= anime-sitters
