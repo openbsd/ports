@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Nov 22 13:05:03 1999
-+++ Makefile.in	Sun Dec  5 21:32:45 1999
++++ Makefile.in	Sun Mar 26 05:44:59 2000
 @@ -73,7 +73,7 @@
  
  epic        = @epic@
@@ -9,14 +9,12 @@
  epicdir     = $(sharedir)/$(epic)
  
  ############ You ought not change anything below this line ###################
-@@ -81,8 +81,8 @@
- RM = rm -f
- CP = cp
- MV = mv
--INSTALL_PROGRAM = @srcdir@/bsdinstall -c -m 755
--INSTALL_DATA = @srcdir@/bsdinstall -c -m 644
-+INSTALL_PROGRAM = $(BSD_INSTALL_PROGRAM)
-+INSTALL_DATA = $(BSD_INSTALL_DATA)
+@@ -125,7 +125,7 @@
+ 			$(MV) $(IP)$(EPIC_LINK) $(IP)$(EPIC_OLD); \
+ 		fi; \
+ 		$(RM) $(IP)$(EPIC_LINK); \
+-		ln -s $(IP)$(EPIC) $(IP)$(EPIC_LINK); \
++		cd $(IP)$(bindir); ln -s $(epic)-$(VERSION) $(epic); \
+ 	fi
  
- VERSION  = @VERSION@
- 
+ #
