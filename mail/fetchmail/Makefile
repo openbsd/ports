@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2000/06/12 15:38:34 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2000/06/27 23:22:03 fgsch Exp $
 
 DISTNAME=	fetchmail-5.4.1
 CATEGORIES=	mail
-NEED_VERSION=	1.301
+NEED_VERSION=	1.308
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
 
@@ -17,11 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 
+FLAVORS=	kerberos ssl
+
+FLAVOR?=
 CONFIGURE_ARGS+= --disable-nls --enable-inet6
-.if defined(WITH_KERBEROS) && ${WITH_KERBEROS:U} == YES
+.if ${FLAVOR:L} == "kerberos"
 CONFIGURE_ARGS+= --with-kerberos
 .endif
-.if defined(WITH_SSL) && ${WITH_SSL:U} == YES
+.if ${FLAVOR:L} == "ssl"
 CONFIGURE_ARGS+= --with-ssl
 .endif
 
