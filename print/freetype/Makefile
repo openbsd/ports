@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/19 23:06:26 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/22 05:47:54 jakob Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
+USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
