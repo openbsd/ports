@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/27 18:17:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/28 13:58:41 kevlo Exp $
 
-DISTNAME=	TclXML-1.1.1
+DISTNAME=	TclXML-1.2.1
 CATEGORIES=	textproc
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
@@ -12,12 +12,13 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
-RUN_DEPENDS=	tclsh8.0::lang/tcl/8.0
+RUN_DEPENDS=	tclsh8.3::lang/tcl/8.3
 
+FAKE=		Yes
 NO_BUILD=       Yes
 NO_CONFIGURE=	Yes
 
-INSTDIR=	${PREFIX}/lib/tcl8.0/TclXML
+INSTDIR=	${PREFIX}/lib/tcl8.3/TclXML
 DOCDIR=		${PREFIX}/share/doc/TclXML
 
 do-install:

@@ -1,6 +1,6 @@
-lib/tcl8.0/TclXML/pkgIndex.tcl
-lib/tcl8.0/TclXML/sgml.tcl
-lib/tcl8.0/TclXML/xml.tcl
+lib/tcl8.3/TclXML/pkgIndex.tcl
+lib/tcl8.3/TclXML/sgml.tcl
+lib/tcl8.3/TclXML/xml.tcl
 share/doc/TclXML/reference.html
-@dirrm lib/tcl8.0/TclXML
+@dirrm lib/tcl8.3/TclXML
 @dirrm share/doc/TclXML
