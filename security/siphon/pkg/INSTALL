@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/16 14:56:26 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/06/30 00:48:50 lebel Exp $
 #
 # Pre/post-installation setup of siphon
 
@@ -50,9 +50,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ ! -d $CONFIG_DIR ]; then
-	    do_install $1
-	elif [ ! -f $CONFIG_DIR/Muttrc ]; then
+	if [ ! -f $CONFIG_FILE ]; then
 	    do_install $1
 	else
 	    do_notice $1
