@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/24 01:55:22 mark Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/09 15:37:24 brad Exp $
 
 COMMENT=		"parallelized login hacker"
 
@@ -7,7 +7,7 @@ CATEGORIES=    		security
 
 HOMEPAGE=		http://www.thehackerschoice.com/
 
-MAINTAINER=		Mark Grimes <mark@openbsd.org>
+MAINTAINER=		Mark Grimes <mark@stateful.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

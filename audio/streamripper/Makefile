@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/09 15:37:23 brad Exp $
 
 COMMENT=		"rip shoutcast streams to local mp3s"
 
@@ -7,7 +7,7 @@ CATEGORIES=		audio
 
 HOMEPAGE=		http://streamripper.sourceforge.net/
 
-MAINTAINER=		Mark Grimes <mark@openbsd.org>
+MAINTAINER=		Mark Grimes <mark@stateful.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

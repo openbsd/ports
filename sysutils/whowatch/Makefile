@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/09 15:37:24 brad Exp $
 
 COMMENT=	"interactive utility that displays info about online users"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 
 HOMEPAGE=	http://wizard.ae.krakow.pl/~mike/
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

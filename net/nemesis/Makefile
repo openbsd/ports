@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/09 15:37:24 brad Exp $
 
 COMMENT=	"Command line arbitrary packet builder"
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://jeff.wwti.com/nemesis/
 
 LIB_DEPENDS=	net::net/libnet
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

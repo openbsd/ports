@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/06/09 16:10:24 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2002/12/09 15:37:24 brad Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.lyx.org/
 
 MODULES=	gettext
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 # quasi-GPL (linked to closed source library)
 # no limitation of license; considered GPL

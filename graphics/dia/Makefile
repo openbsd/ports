@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/11/21 02:33:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/09 15:37:23 brad Exp $
 
 COMMENT=	visio-like technical drawing
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
 		popt::devel/popt \
 		xml2.6::textproc/libxml
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
