@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/18 21:43:58 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 15:54:24 naddy Exp $
 ${P5SITE}/MP3/Info.pm
 ${P5SITE}/MPEG/MP3Info.pm
 @comment ${P5ARCH}/auto/MP3/Info/.packlist
 @comment ${P5ARCH}/perllocal.pod
 man/man3p/MP3::Info.3p
 man/man3p/MPEG::MP3Info.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/MP3/Info
 @comment @dirrm ${P5ARCH}/auto/MP3
 @comment @dirrm ${P5ARCH}/auto

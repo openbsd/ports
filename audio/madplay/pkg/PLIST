@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/10 21:27:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 15:54:24 naddy Exp $
 bin/abxtest
 bin/madplay
 man/man1/abxtest.1
@@ -8,14 +8,14 @@ share/locale/es/LC_MESSAGES/madplay.mo
 share/locale/fr/LC_MESSAGES/madplay.mo
 share/locale/hr/LC_MESSAGES/madplay.mo
 share/locale/no/LC_MESSAGES/madplay.mo
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/hr/LC_MESSAGES
-@comment @dirrm share/locale/hr
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/en/LC_MESSAGES
-@comment @dirrm share/locale/en
-@comment @dirrm share/locale
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
+@dirrm share/locale

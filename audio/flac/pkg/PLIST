@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/04/18 00:28:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/15 15:54:24 naddy Exp $
 bin/flac
 bin/metaflac
 include/FLAC++/all.h
@@ -273,7 +273,7 @@ share/doc/flac/html/ru/news.html
 @dirrm share/doc/flac/html/api
 @dirrm share/doc/flac/html
 @dirrm share/doc/flac
-@comment @dirrm share/aclocal
+@dirrm share/aclocal
 @dirrm include/OggFLAC++
 @dirrm include/OggFLAC
 @dirrm include/FLAC++
