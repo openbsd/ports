@@ -1,9 +1,9 @@
 # OpenBSD makefile for:	xpdf
-# Version required:     0.7
+# Version required:     0.7a
 # Date created:         December 2, 1997
 # Whom:                 angelos@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.2 1998/05/16 00:28:27 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/05/16 01:46:32 angelos Exp $
 #
 
 DISTNAME=       xpdf-0.7a
