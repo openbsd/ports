@@ -1,0 +1,6 @@
+@comment $Id: PLIST-mon,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+@comment $OpenBSD: PLIST-mon,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+libexec/symon
+man/cat8/symon.0
+share/symon/symon.conf
+@dirrm share/symon

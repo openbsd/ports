@@ -1,0 +1,7 @@
+@comment $Id: PLIST-mux,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+@comment $OpenBSD: PLIST-mux,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+libexec/symux
+man/cat8/symux.0
+share/symon/c_smrrds.sh
+share/symon/symux.conf
+@dirrm share/symon

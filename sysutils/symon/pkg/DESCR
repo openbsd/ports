@@ -1,0 +1,10 @@
+symon is a lightweight system monitor that measures cpu, memory,
+interface and disk statistics every 5 seconds. This information is
+then spooled over "the network" to symux for further processing.
+
+The port will yield 4 packages: 
+symon-mon-${V}.tgz : symon daemon and manual
+symon-mux-${V}.tgz : symux daemon, manual and auxilliary scripts
+symon-web-${V}.tgz : web frontend
+symon-${V}.tgz     : all of the above rolled into a single package
+

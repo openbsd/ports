@@ -1,0 +1,7 @@
++---------------
+| An example configuration for symux has been installed in
+| ${PREFIX}/share/symon.
+|
+| RRD files can be obtained by running
+| ${PREFIX}/share/symon/c_smrrds.sh
++---------------

@@ -1,0 +1,8 @@
++---------------
+| The webapplication has been installed in 
+| ${PREFIX}/share/symon/web.
+|
+| Edit datasources.inc to point to the place where symux deposits the
+| rrd files. This should point to a directory that contains rrd files
+| in the following form: '.../machine/*.rrd'.
++---------------
