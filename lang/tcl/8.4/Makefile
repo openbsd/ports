@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/22 06:31:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/20 03:09:35 jolan Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -6,7 +6,7 @@ COMMENT=	"Tool Command Language"
 VERSION=	8.4.7
 
 DISTNAME=	tcl${VERSION}-src
-PKGNAME=	tcl-${VERSION}p0
+PKGNAME=	tcl-${VERSION}p1
 CATEGORIES=	lang lang/tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 WANTLIB=	c m
@@ -30,6 +30,7 @@ FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
+CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include/tcl8.4"
 
 WRKDIST=	${WRKDIR}/tcl${VERSION}/unix
 
