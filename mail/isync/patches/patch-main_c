@@ -1,0 +1,17 @@
+$OpenBSD: patch-main_c,v 1.1 2002/04/24 18:16:22 danh Exp $
+--- main.c.orig	Wed Apr 24 13:58:36 2002
++++ main.c	Wed Apr 24 14:00:23 2002
+@@ -212,11 +212,11 @@ main (int argc, char **argv)
+ 		    optarg += 6;
+ 		}
+ #endif
+-		global.host = optarg;
++		global.host = strdup(optarg);
+ 		break;
+ 	    case 'u':
+ 		free (global.user);
+-		global.user = optarg;
++		global.user = strdup(optarg);
+ 		break;
+ 	    case 'V':
+ 		Verbose = 1;

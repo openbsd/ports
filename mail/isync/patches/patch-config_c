@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_c,v 1.1 2002/04/24 18:16:22 danh Exp $
+--- config.c.orig	Wed Apr 24 13:53:28 2002
++++ config.c	Wed Apr 24 13:56:36 2002
+@@ -324,8 +324,12 @@ find_box (const char *s)
+ void
+ free_config (void)
+ {
+-    free (global.user);
+-    free (global.maildir);
+-    free (global.host);
+-    free (global.pass);
++    if (global.user)
++    	free (global.user);
++    if (global.maildir)
++    	free (global.maildir);
++    if (global.host)
++    	free (global.host);
++    if (global.pass)
++    	free (global.pass);
+ }
