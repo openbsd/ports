@@ -1,6 +1,7 @@
---- RULES/i386-freebsd-cc.rul.orig	Sun Apr 27 01:46:00 1997
-+++ RULES/i386-freebsd-cc.rul	Thu May  6 02:12:08 1999
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.1 2001/07/19 22:12:07 naddy Exp $
+--- RULES/i386-openbsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
++++ RULES/i386-openbsd-cc.rul	Thu Jul 19 23:37:54 2001
+@@ -24,7 +24,7 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
@@ -9,7 +10,7 @@
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ LIB_KVM=	
  
  LIBS_PATH=	-L$(OLIBSDIR)
  
@@ -18,7 +19,7 @@
  LDLIBS=		$(LIBS) $(LIBX)
  
  #LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH)
-@@ -57,14 +57,14 @@
+@@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
  
  FLOAT_OPTIONS=	
  
@@ -34,6 +35,6 @@
  TSORT=		tsort
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
 +MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); ${CCOM} -M
  MKDEP_OUT=

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/04/14 11:36:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/19 22:12:07 naddy Exp $
 
 COMMENT=	"faster and improved version of dd"
 
-DISTNAME=	sdd-1.22
+DISTNAME=	sdd-1.31
 CATEGORIES=	sysutils
 NEED_VERSION=	1.336
 
@@ -19,16 +19,14 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}" CCOM="${CC}"
 
+.if ${MACHINE} != "i386" || ${CC} != "cc"
 do-configure:
-	@cd ${WRKSRC}/RULES; \
-	sed -e s/freebsd/openbsd/ os-freebsd.id >os-openbsd.id; \
-	cp os-freebsd.def os-openbsd.def; \
-    	cp i386-freebsd-cc.rul ${MACHINE}-openbsd-${CC}.rul
-	@cd ${WRKSRC}/DEFAULTS; \
-	cp Defaults.freebsd Defaults.openbsd
+	@ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
+		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${MACHINE}-openbsd-${CC}/sdd \
+	${INSTALL_PROGRAM} ${WRKBUILD}/sdd/OBJ/${MACHINE}-openbsd-${CC}/sdd \
 		${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sdd/sdd.1 ${PREFIX}/man/man1
 
