@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/23 19:59:52 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2000/11/21 13:19:17 espie Exp $
 
 VERSION=	0.15
 DISTNAME=	solid-pop3d-${VERSION}
@@ -32,6 +32,7 @@ CONFIGURE_ARGS+= --localstatedir="/var/spool/spop3d" \
 # enable support for APOP authentication.
 .if ${FLAVOR:L:Mapop}
 CONFIGURE_ARGS+= --enable-userconfig --enable-apop
+PKGNAME=${DISTNAME}p1
 .else
 CONFIGURE_ARGS+= --disable-userconfig --disable-apop
 .endif
