@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/01/30 00:06:08 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/01/30 00:07:39 jasoni Exp $
 #
 # Pre/port-installation setup of xfstt
 
@@ -25,6 +25,8 @@ fi
 You should also add the following to your FontPath in /etc/XF86Config:
 
 	FontPath "unix/:7101"
+
+Note that previous versions used unix/:7100.
 
 TrueType fonts should be placed in /usr/X11R6/lib/X11/fonts/TrueType.
 Additional documentation can be found in /usr/X11R6/share/doc/xfstt.
