@@ -1,0 +1,22 @@
+--- configure.orig	Mon Feb 22 17:18:58 1999
++++ configure	Wed Jan  5 19:57:45 2000
+@@ -2602,16 +2602,16 @@
+         DL_LIBS="-ldl"
+         SHLD_FLAGS="-Wl,-Bexport"
+         ;;
+-    NetBSD-*|FreeBSD-*)
++    NetBSD-*|FreeBSD-*|OpenBSD-*)
+         # Not available on all versions:  check for include file.
+         if test -e /usr/include/dlfcn.h; then
+             SHLIB_CFLAGS="-fpic"
+             SHLIB_LD="ld -Bshareable"
+-            SHLIB_SUFFIX=".so"
++            SHLIB_SUFFIX=".so.1"
+             DL_LIBS=""
+             SHLD_FLAGS=""
+         else
+-            echo "NetBSD/FreeBSD with no support for dynamic loading"
++            echo "NetBSD/FreeBSD/OpenBSD with no support for dynamic loading"
+             echo " or shared libraries on this system."
+             SHLIB_CFLAGS=""
+             SHLIB_LD=":  Skipping shared libaries"

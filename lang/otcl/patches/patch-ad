@@ -1,0 +1,11 @@
+--- config.sub.orig	Fri Feb 19 15:33:35 1999
++++ config.sub	Wed Jan  5 21:16:02 2000
+@@ -609,7 +609,7 @@
+ 	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+ 	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+ 	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+-	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
++	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -openbsd* | -riscix* \
+ 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta | -udi | -eabi)
+ 		;;

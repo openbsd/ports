@@ -1,0 +1,12 @@
+--- config.guess.orig	Wed Jan  5 21:12:10 2000
++++ config.guess	Wed Jan  5 21:12:31 2000
+@@ -290,6 +290,9 @@
+     *:NetBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+ 	exit 0 ;;
++    *:OpenBSD:*:*)
++	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++	exit 0 ;;
+     *:GNU:*:*)
+ 	echo `echo ${UNAME_MACHINE}|sed -e 's,/.*$,,'`-unknown-gnu`echo ${UNAME_RELEASE}|sed -e 's,/.*$,,'`
+ 	exit 0 ;;
