@@ -1,5 +1,8 @@
-Guile is a portable, embeddable Scheme implementation written in C. Guile
-provides a machine independent execution platform that can be linked in as
-a library when building extensible programs.
+GUILE, GNU's Ubiquitous Intelligent Language for Extension,
+is a library that implements the Scheme language plus various
+convenient facilities. It's designed so that you can link it
+into an application or utility to make it extensible.  Our
+plan is to link this library into all GNU programs that call for 
+extensibility.
 
 WWW: ${HOMEPAGE}
