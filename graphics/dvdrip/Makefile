@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/25 22:00:35 naddy Exp $
 
 COMMENT=	"full featured DVD copy program"
 
@@ -21,7 +21,7 @@ WANTLIB=		c
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/	
 
 RUN_DEPENDS=	::graphics/ImageMagick \
-		::graphics/transcode \
+		::multimedia/transcode \
 		::devel/p5-Event \
 		::net/fping \
 		::x11/p5-Gtk

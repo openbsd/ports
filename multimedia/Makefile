@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 07:38:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2005/01/25 22:00:36 naddy Exp $
 #
 
      SUBDIR += libdv
@@ -8,6 +8,7 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += streamdvd
+     SUBDIR += transcode
      SUBDIR += xvidcore
 
 .include <bsd.port.subdir.mk>

@@ -1,9 +1,0 @@
-transcode is a text console video-stream processing tool. 
-It supports elementary video and audio frame transformations. 
-Some example modules are included to enable import of MPEG-1/2, 
-Digital Video, and other formats. It also includes export 
-modules for writing to AVI files with DivX, OpenDivX, XviD,
-Digital Video or other codecs. Direct DVD transcoding is also 
-supported. A set of tools is available to extract and decode 
-the sources into raw video/audio streams for import and to 
-enable post-processing of AVI files.

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.i386,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
-@comment lib/transcode/filter_dilyuvmmx.la
-lib/transcode/filter_dilyuvmmx.so
