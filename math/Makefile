@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/05 21:28:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2001/07/01 23:11:58 lebel Exp $
 #
 
      SUBDIR += R
@@ -13,6 +13,7 @@
 #    SUBDIR += eval
 #    SUBDIR += femlab
 #    SUBDIR += fftpack
+     SUBDIR += fftw
 #    SUBDIR += freefem
 #    SUBDIR += fudgit
      SUBDIR += geg
