@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2003/04/06 22:56:28 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2003/04/17 10:35:07 wilfried Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		i386 macppc sparc64
+ONLY_FOR_ARCHS=		i386 macppc
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-0.90rc4
+DISTNAME=		MPlayer-0.90
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
@@ -44,7 +44,8 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif,gif::graphics/libungif \
-		vorbis.0,vorbisfile.1::audio/libvorbis
+		vorbis.0,vorbisfile.1::audio/libvorbis \
+		iconv::converters/libiconv
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
@@ -55,6 +56,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-vidix \
 		--enable-vorbis \
 		--enable-menu \
+		--enable-iconv \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--confdir=${LOCALBASE}/share/mplayer
@@ -63,7 +65,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad win32 iconv no_x11 cdda faad aa lzo
+FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda faad aa lzo
 FLAVOR?=
 
 .if ${FLAVOR:L:Mfaad}
@@ -101,8 +103,7 @@ ERRORS+="Fatal: nonsense combination of flavors"
 CONFIGURE_ARGS+=--disable-gui \
 	--disable-gl \
 	--disable-xv \
-	--disable-x11 \
-	--disable-sunaudio
+	--disable-x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \
@@ -110,6 +111,7 @@ CONFIGURE_ARGS+=--enable-gui \
 USE_X11=	Yes
 LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
 .endif
+
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config
@@ -134,14 +136,6 @@ CONFIGURE_ARGS+=--enable-mad
 LIB_DEPENDS+=	mad::audio/mad
 .else
 CONFIGURE_ARGS+=--disable-mad
-.endif
-
-.if ${FLAVOR:L:Miconv}
-CONFIGURE_ARGS+=--enable-iconv
-LIB_DEPENDS+=	iconv::converters/libiconv
-.else
-CONFIGURE_ARGS+=--disable-iconv
-CONFIGURE_ARGS+=--disable-freetype
 .endif
 
 .if ${FLAVOR:L:Mwin32}
