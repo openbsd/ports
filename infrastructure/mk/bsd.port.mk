@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.153 1999/12/03 16:54:42 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.154 1999/12/03 17:20:02 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1885,13 +1885,10 @@ fetch-list-one-pkg:
 
 .if !target(makesum)
 makesum: fetch-all
-	@mkdir -p ${FILESDIR}
-	@if [ -f ${CHECKSUM_FILE} ]; then rm -f ${CHECKSUM_FILE}; fi
+	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
-	 for file in ${_CKSUMFILES}; do \
-	 	for cipher in ${_CIPHERS}; do \
-			$$cipher $$file >> ${CHECKSUM_FILE}; \
-		done; \
+		for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	 done
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
@@ -1901,13 +1898,10 @@ makesum: fetch-all
 
 .if !target(addsum)
 addsum: fetch-all
-	@mkdir -p ${FILESDIR}
-	@touch ${CHECKSUM_FILE}
+	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
-	 for file in ${_CKSUMFILES}; do \
-	 	for cipher in ${CIPHERS:R}; do \
-			$$cipher $$file >> ${CHECKSUM_FILE}; \
-		done; \
+	 	for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	 done
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
@@ -1926,7 +1920,7 @@ checksum: fetch
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 		${ECHO_MSG} ">> No checksum file."; \
 	else \
-		cd ${DISTDIR}; OK="true"; \
+		cd ${DISTDIR}; OK=true; \
 		  for file in ${_CKSUMFILES}; do \
 			for cipher in ${PREFERRED_CIPHERS}; do \
 				CKSUM2=`grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
@@ -1938,18 +1932,18 @@ checksum: fetch
 			done; \
 			if [ "$$CKSUM2" = "" ]; then \
 				${ECHO_MSG} ">> No checksum recorded for $$file."; \
-				OK="false"; \
+				OK=false; \
 			elif [ "$$CKSUM2" = "IGNORE" ]; then \
 				echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
 				echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-				OK="false"; \
+				OK=false; \
 			else \
 				CKSUM=`$$cipher < $$file`; \
 				if [ "$$CKSUM" = "$$CKSUM2" ]; then \
 					${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)"; \
 				else \
 					echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-					OK="false"; \
+					OK=false; \
 				fi; \
 			fi; \
 		  done; \
@@ -1957,14 +1951,14 @@ checksum: fetch
 			CKSUM2=`grep "($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
 			if [ "$$CKSUM2" = "" ]; then \
 				echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
-				OK="false"; \
+				OK=false; \
 			elif [ "$$CKSUM2" != "IGNORE" ]; then \
 				echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
 				echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
-				OK="false"; \
+				OK=false; \
 			fi; \
 		  done; \
-		  if [ "$$OK" != "true" ]; then \
+		  if ! $$OK; then \
 			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
 			echo "are up to date.  If you want to override this check, type"; \
 			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
