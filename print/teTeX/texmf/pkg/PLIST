@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/04/04 21:19:23 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/09/23 17:45:28 sturm Exp $
 @pkgcfl dvipdfm-*
 share/texmf/ChangeLog
 share/texmf/LICENSE.texmf
@@ -2731,7 +2731,8 @@ share/texmf/doc/latex/lettrine/00README
 share/texmf/doc/latex/lettrine/demo.pdf
 share/texmf/doc/latex/lettrine/lettrine.dvi
 share/texmf/doc/latex/listings/README
-share/texmf/doc/latex/listings/listings.dvi
+@comment share/texmf/doc/latex/listings/listings.dvi
+share/texmf/doc/latex/listings/listings.pdf
 share/texmf/doc/latex/mathtime/0readme
 share/texmf/doc/latex/mathtime/mathtime.dvi
 share/texmf/doc/latex/mdwtools/COPYING
@@ -10690,6 +10691,7 @@ share/texmf/tex/latex/koma-script/typearea.sty
 share/texmf/tex/latex/labels/labels.sty
 share/texmf/tex/latex/labels/olabels.sty
 share/texmf/tex/latex/listings/listings.cfg
+share/texmf/tex/latex/listings/listings.sty
 share/texmf/tex/latex/listings/lstdoc.sty
 share/texmf/tex/latex/listings/lstlang1.sty
 share/texmf/tex/latex/listings/lstlang2.sty
