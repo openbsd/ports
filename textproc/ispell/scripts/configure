@@ -10,50 +10,39 @@ if [ ! -f /usr/share/dict/words ]; then
 fi
 cd $WRKSRC || exit 1;
 
-if [ -f $WRKDIR/extra_dict ]; then
-  extra_dict=`cat $WRKDIR/extra_dict`;
-  case $extra_dict in
-    francais-IREQ*)
-    mkdir -p $WRKSRC/languages/francais-IREQ
-    LOCAL=' {francais-IREQ}'
-    for i in $WRKDIR/[A-Za-z]*; do
-      if [ -f $i ]; then cp $i  $WRKSRC/languages/francais-IREQ/; fi
-    done
-    (echo RM=rm -f; echo LIBDIR=$PREFIX/lib; echo HASH=../../buildhash) \
-           >> $WRKSRC/languages/francais-IREQ/Makefile
-    ;;
-    hk2-deutsch*)
-    OPT="worte.txt verben.txt adjektive.txt klein.txt imperat.txt"
-    OPT="$OPT abkuerz.txt vornamen.txt geographie.txt latein.txt"
-    OPT="$OPT informatik.txt infoabk.txt elektronik.txt alphabeta.txt"
-    OPT="$OPT roemisch.txt orgabk.txt marken.txt worte2.txt zusammen.txt"
-    OPT="$OPT technik.txt compeng.txt geogra2.txt vornam2.txt namen.txt"
-    LOCAL=" {deutsch,DICTOPTIONS=$OPT}"
-    for i in $WRKDIR/*.txt $WRKDIR/*.aff; do
-      if [ -f $i ]; then cp $i  $WRKSRC/languages/deutsch/; fi
-    done
-    M=$WRKSRC/languages/deutsch/Makefile
-    cp $M $M.orig
-    sed -e '/7bit/s/^/##/' < $M.orig > $M
-    ;;
-    *)
-    echo "I don't now how to configure ispell with $extra_dict"
-    exit 1;
-    ;;
-  esac
-fi
+# Setup french dictionary
+LOCAL=' {francais-IREQ}'
+(echo RM=rm -f; echo LIBDIR=$PREFIX/lib; echo HASH=../../buildhash) \
+       >> $WRKSRC/languages/francais-IREQ/Makefile
+
+# Setup german dictionary
+OPT="worte.txt verben.txt adjektive.txt klein.txt imperat.txt"
+OPT="$OPT abkuerz.txt vornamen.txt geographie.txt latein.txt"
+OPT="$OPT informatik.txt infoabk.txt elektronik.txt alphabeta.txt"
+OPT="$OPT roemisch.txt orgabk.txt marken.txt worte2.txt zusammen.txt"
+OPT="$OPT technik.txt compeng.txt geogra2.txt vornam2.txt namen.txt"
+LOCAL="${LOCAL} {deutsch,DICTOPTIONS=$OPT}"
+for i in $WRKDIR/*.txt $WRKDIR/*.aff; do
+  if [ -f $i ]; then cp $i  $WRKSRC/languages/deutsch/; fi
+done
+M=$WRKSRC/languages/deutsch/Makefile
+cp $M $M.orig
+sed -e '/7bit/s/^/##/' < $M.orig > $M
 
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
 echo "#undef NO8BIT" >> local.h 
-case $LANG in 
-    british)
-	echo "#define LANGUAGES \"{british,MASTERDICTS=british.xlg,HASHFILES=britishxlg.hash,EXTRADICT=}$LOCAL\""  >>local.h ||exit 1;
-    	echo '#define MASTERHASH "britishxlg.hash"'  >> local.h 
-        break ;;
-    *) 
-       echo "#define LANGUAGES \"{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\""  >>local.h ||exit 1;
-       :;;
-esac
+#case $LANG in 
+#    british)
+#	echo "#define LANGUAGES \"{british,MASTERDICTS=british.xlg,HASHFILES=britishxlg.hash,EXTRADICT=}$LOCAL\""  >>local.h ||exit 1;
+#    	echo '#define MASTERHASH "britishxlg.hash"'  >> local.h 
+#        break ;;
+#    *) 
+#       echo "#define LANGUAGES \"{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\""  >>local.h ||exit 1;
+#       :;;
+#esac
+
+echo "#define LANGUAGES \"{british,MASTERDICTS=british.xlg,HASHFILES=britishxlg.hash,EXTRADICT=} {american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\"" >> local.h || exit 1;
+echo '#define MASTERHASH "britishxlg.hash"'  >> local.h
 
 echo "#undef WORDS"  >> local.h 
 echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 

@@ -1,0 +1,93 @@
+#! /bin/sh
+#
+# Script to change the default language for ispell.
+# Parts borrowed from a similar script for Debian Linux.
+#
+# By: Jason Ish <jasoni@openbsd.org>
+#
+
+PREFIX=/usr/local
+DICT_DIR=/usr/local/lib/ispell
+
+choose_default()
+{
+	echo -n "Select the number of the new default dictionary [0] "
+	read num
+	selected_num=${num:-1}
+	selected=`echo -e $dictionaries | grep "\[$selected_num\]" | awk '{print $2}'`
+
+	if [ -z $selected ]
+	then
+	  echo -e "\nInvalid choice - try again!\n"
+	  choose_default
+	fi
+}
+
+# Do we have permission to change the default dictionary?
+if [ ! -w ${DICT_DIR} ]; then
+	echo ""
+	echo "***"
+	echo "Sorry, but you do not have permission to change"
+	echo "the default dictionary."
+	echo "***"
+	echo ""
+	exit
+fi
+
+# Get list of dictionaries.
+dictionaries=`ls ${DICT_DIR}/*.aff \
+	| grep -v default \
+	| sed "s%${DICT_DIR}/%%" \
+	| sed "s%\.aff%%" \
+	| awk '{printf ("\\\t[%d] %s\\\n", NR, $1)}'` 2> /dev/null
+if [ "x$dictionaries" == "x" ]; then
+	echo ""
+	echo "***"
+	echo "There are no languages present.  Install at least one language and re-run."
+	echo "***"
+	echo ""
+	exit
+fi
+
+# Get current default dictionary.
+if [ -f ${DICT_DIR}/default.aff ]; then
+	default_dict=`readlink ${DICT_DIR}/default.aff \
+		| sed "s%\.aff%%" \
+		| sed "s%.*/%%"` 
+	if [ -z $default_dict ]; then
+		default_dict="None"
+	fi
+else
+	default_dict="None"
+fi
+
+echo ""
+echo "Current default dictionary: $default_dict"
+dictionaries="\t[0] Current\n"${dictionaries}
+echo -e $dictionaries
+
+choose_default
+
+# Set the default dictionary
+if [ $selected_num == 0 ]; then
+	echo ""
+	echo "Keeping the current dictionary."
+	echo ""
+else
+	if [ ! -e ${DICT_DIR}/$selected.aff ]; then
+		echo "Error: $selected.aff does not exist."
+		exit
+	fi
+	if [ ! -e ${DICT_DIR}/$selected.hash ]; then
+		echo "Error: $selected.hash does not exist."
+		exit
+	fi
+	rm -f ${DICT_DIR}/default.aff
+	ln -s ./$selected.aff ${DICT_DIR}/default.aff
+	rm -f ${DICT_DIR}/default.hash
+	ln -s ./$selected.hash ${DICT_DIR}/default.hash
+
+	echo ""
+	echo "The default dictionary is now: $selected"
+	echo ""
+fi

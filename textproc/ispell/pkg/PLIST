@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/06/23 03:06:35 jasoni Exp $
 bin/ispell
 bin/buildhash
 bin/sq
@@ -7,13 +8,18 @@ bin/findaffix
 bin/munchlist
 bin/icombine
 bin/unsq
+bin/ispell-config
 @unexec install-info --delete %D/info/ispell.info %D/info/dir
 info/ispell.info
 @exec install-info %D/info/ispell.info %D/info/dir
-lib/americanmed+.hash
-lib/english.aff
-lib/american.hash
-lib/english.hash
+lib/ispell/default.aff
+lib/ispell/default.hash
+lib/ispell/americanmed+.hash
+lib/ispell/american.hash
+lib/ispell/american.aff
+lib/ispell/britishxlg.hash
+lib/ispell/british.hash
+lib/ispell/british.aff
 man/man1/ispell.1
 man/man1/sq.1
 man/man1/buildhash.1
@@ -23,3 +29,4 @@ man/man1/tryaffix.1
 man/man1/unsq.1
 man/man4/ispell.4
 man/man4/english.4
+@dirrm lib/ispell

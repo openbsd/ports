@@ -1,0 +1,17 @@
+--- local.h.samp.orig	Fri Jun 16 02:38:42 2000
++++ local.h.samp	Fri Jun 16 02:41:19 2000
+@@ -87,7 +87,7 @@
+  * Important directory paths
+  */
+ #define BINDIR	"/usr/local/bin"
+-#define LIBDIR	"/usr/local/lib"
++#define LIBDIR	"/usr/local/lib/ispell"
+ #define ELISPDIR "/usr/local/lib/emacs/site-lisp"
+ #define TEXINFODIR "/usr/local/info"
+ #define MAN1DIR	"/usr/local/man/man1"
+@@ -96,3 +96,5 @@
+ /*
+  * Place any locally-required #include statements here
+  */
++#define DEFHASH "default.hash"
++#define DEFLANG "default.aff"

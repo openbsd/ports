@@ -1,0 +1,49 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/06/23 03:06:34 jasoni Exp $
+#
+# Pre/post-installation setup of bash
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| This package has installed the American and British dictionaries."
+    echo "| Dictionary packages for other languages are available."
+    echo "+---------------"
+    echo
+}
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice
+	echo "invoking ${PREFIX}/bin/ispell-config"
+	${PREFIX}/bin/ispell-config
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
+
