@@ -1,0 +1,50 @@
+*** xvdir.c.orig	Tue Jan  3 16:21:39 1995
+--- xvdir.c	Sat Apr 25 20:13:32 1998
+***************
+*** 1596,1608 ****
+  #else
+      strcpy(outFName, "[]xvXXXXXX.lis");
+  #endif
+!     mktemp(outFName);
+      dopipe = 1;
+    }
+  
+  
+    /* see if file exists (ie, we're overwriting) */
+!   if (stat(outFName, &st)==0) {   /* stat succeeded, file must exist */
+      static char *foo[] = { "\nOk", "\033Cancel" };
+      char str[512];
+  
+--- 1620,1633 ----
+  #else
+      strcpy(outFName, "[]xvXXXXXX.lis");
+  #endif
+!     fp = fdopen(mkstemp(outFName), "w");
+      dopipe = 1;
+    }
+  
+  
+    /* see if file exists (ie, we're overwriting) */
+!   if (dopipe == 0 &&
+!       stat(outFName, &st)==0) {   /* stat succeeded, file must exist */
+      static char *foo[] = { "\nOk", "\033Cancel" };
+      char str[512];
+  
+***************
+*** 1612,1618 ****
+      
+  
+    /* Open file */
+!   fp = fopen(outFName, "w");
+    if (!fp) {
+      char  str[512];
+      sprintf(str,"Can't write file '%s'\n\n  %s.",outFName, ERRSTR(errno));
+--- 1637,1644 ----
+      
+  
+    /* Open file */
+!   if (dopipe == 0)
+!     fp = fopen(outFName, "w");
+    if (!fp) {
+      char  str[512];
+      sprintf(str,"Can't write file '%s'\n\n  %s.",outFName, ERRSTR(errno));
