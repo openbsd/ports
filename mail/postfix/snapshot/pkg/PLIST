@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2003/11/24 19:33:10 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.21 2003/12/26 16:46:34 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/anvil
@@ -181,6 +181,8 @@ share/doc/postfix/readme/ULTRIX_README
 share/doc/postfix/readme/UUCP_README
 share/doc/postfix/readme/VERP_README
 share/doc/postfix/readme/VIRTUAL_README
+share/doc/postfix/readme/XCLIENT_README
+share/doc/postfix/readme/XFORWARD_README
 share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
