@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.556 2003/07/18 18:18:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.557 2003/07/18 18:34:26 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -171,11 +171,11 @@ FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 .else
 FULLDISTDIR?=	${DISTDIR}
 .endif
-PACKAGES?=		${PORTSDIR}/packages/${MACHINE_ARCH}
+PKGREPOSITORYBASE?=	${PORTSDIR}/packages/${MACHINE_ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
-CDROM_PACKAGES?=	${PORTSDIR}/cdrom-packages/${MACHINE_ARCH}
-FTP_PACKAGES?=		${PORTSDIR}/ftp-packages/${MACHINE_ARCH}
+CDROM_PACKAGES?=	${PKGREPOSITORYBASE}/cdrom
+FTP_PACKAGES?=		${PKGREPOSITORYBASE}/ftp
 
 .if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
@@ -341,9 +341,8 @@ ERRORS+=	"Fatal: no flavors for this port."
 .  endif
 .endif
 
-PKGREPOSITORYSUBDIR?=	All
 PKG_SUFX?=		.tgz
-PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
+PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
 PKG_DBDIR?=		/var/db/pkg
 BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 
@@ -1403,7 +1402,7 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 .endif # IGNORECMD
 
-BULK_TARGETS?= ftp-packages cdrom-packages
+BULK_TARGETS?= 
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
@@ -1743,7 +1742,7 @@ _package: ${_PKG_PREREQ}
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
 	    ${MAKE} package-links; \
 	  else \
-	    ${SUDO} ${MAKE} delete-package; \
+	    ${SUDO} ${MAKE} clean=package; \
 	    exit 1; \
 	  fi
 # End of PACKAGE.
@@ -1774,38 +1773,6 @@ ${_F}:
 	done; exit 1
 .endfor
 
-# Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
-# Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
-
-.for _l in FTP CDROM
-
-.  if ${PERMIT_PACKAGE_${_l}:L} == "yes" && !defined(IGNORE)
-${_l:L}-packages: ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-.  else
-${_l:L}-packages:
-.  endif
-.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.    for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
-.    endfor
-.  endif
-
-${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${_PACKAGE_COOKIE${SUBPACKAGE}}
-.    if ${PERMIT_PACKAGE_${_l}:L} == "yes"
-	@mkdir -p ${${_l}_PACKAGES}
-	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-	@ln ${PKGFILE${SUBPACKAGE}} \
-	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
-	  cp -p ${PKGFILE${SUBPACKAGE}} \
-	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-.    else
-	@echo 1>&2 "Internal error: ${_l:L}-packages for a forbidden file ?"
-	@false
-.    endif
-
-.endfor
-
-
 # list the distribution and patch files used by a port.  Typical
 # use is		make ECHO_MSG=: list-distfiles | tee some-file
 #
@@ -1826,23 +1793,25 @@ list-distfiles:
 
 package-links:
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
-	@for cat in ${CATEGORIES}; do \
-		if [ ! -d ${PACKAGES}/$$cat ]; then \
-			if ! mkdir -p ${PACKAGES}/$$cat; then \
-				echo ">> Can't create directory ${PACKAGES}/$$cat."; \
-				exit 1; \
-			fi; \
-		fi; \
-		case $$cat in */*/*) parent=../../..;; */*) parent=../..;; *) parent=..;; esac; \
-		ln -s $$parent/${PKGREPOSITORYSUBDIR}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} ${PACKAGES}/$$cat; \
-	done;
+.for _l in FTP CDROM
+.  if ${PERMIT_PACKAGE_${_l}:L} == "yes"
+	@echo "Link to ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}"
+	@mkdir -p ${${_l}_PACKAGES}
+	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+	@ln ${PKGFILE${SUBPACKAGE}} \
+	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
+	  cp -p ${PKGFILE${SUBPACKAGE}} \
+	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+.  endif
+.endfor
 
 delete-package-links:
-	@cd ${PACKAGES} && find . -type l -name ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}|xargs rm -f
+.for _l in FTP CDROM
+	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+.endfor
 
 delete-package:
-	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
-	@rm -f ${PKGFILE${SUBPACKAGE}}
+	@cd ${.CURDIR} && exec ${MAKE} clean=package
 
 # Checkpatch
 #
@@ -1927,7 +1896,13 @@ clean:
 .endif
 .if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
 	rm -f ${_PACKAGE_COOKIES}
+.  if defined(MULTI_PACKAGES)
+.    for _s in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} delete-package-links
+.    endfor
+.  endif
 .elif ${clean:L:Mpackage}
+	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
 .endif
 .if ${clean:L:Mbulk}
@@ -2515,7 +2490,6 @@ homepage-links:
    describe distclean do-build do-configure do-extract \
    do-fetch do-install do-package do-patch extract list-distfiles \
    fetch fetch-depends install lib-depends makesum \
-   cdrom-packages ftp-packages \
    misc-depends package package-depends package-links package-name \
    package-noinstall patch plist update-plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
