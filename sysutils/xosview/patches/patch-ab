@@ -1,30 +1,22 @@
-*** /dev/null	Mon Nov 23 09:34:17 1998
---- bsd/obsdintr.h	Mon Nov 23 09:39:14 1998
-***************
-*** 0 ****
---- 1,25 ----
-+ #ifndef _OPENBSDINTR_H_
-+ #define _OPENBSDINTR_H_
-+ 
-+ #ifdef i386
-+ struct intrhand {
-+ 	int	(*ih_fun) __P((void *));
-+ 	void	*ih_arg;
-+ 	u_long	ih_count;
-+ 	struct	intrhand *ih_next;
-+ 	int	ih_level;
-+ 	int	ih_irq;
-+ 	char	*ih_what;
-+ };
-+ #endif
-+ 
-+ #ifdef pc532
-+ struct iv {
-+ 	void (*iv_vec)();
-+ 	void *iv_arg;
-+ 	int iv_cnt;
-+ 	char *iv_use;
-+ };
-+ #endif
-+ 
-+ #endif /* _OPENBSDINTR_H_ */
+# $OpenBSD: patch-ab,v 1.6 1999/07/01 22:07:44 form Exp $
+
+--- bsd/obsdintr.h.orig	Fri Jul  2 04:26:33 1999
++++ bsd/obsdintr.h	Fri Jul  2 04:26:50 1999
+@@ -1,7 +1,7 @@
+ #ifndef _OPENBSDINTR_H_
+ #define _OPENBSDINTR_H_
+ 
+-#ifdef i386
++#ifdef __i386__
+ struct intrhand {
+ 	int	(*ih_fun) __P((void *));
+ 	void	*ih_arg;
+@@ -13,7 +13,7 @@
+ };
+ #endif
+ 
+-#ifdef pc532
++#ifdef __pc532__
+ struct iv {
+ 	void (*iv_vec)();
+ 	void *iv_arg;

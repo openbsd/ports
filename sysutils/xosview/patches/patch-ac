@@ -1,15 +1,32 @@
---- xwin.cc.orig	Sat Jun 26 13:43:54 1999
-+++ xwin.cc	Sat Jun 26 13:42:38 1999
-@@ -53,9 +53,9 @@
+# $OpenBSD: patch-ac,v 1.2 1999/07/01 22:07:44 form Exp $
+
+--- configure.orig	Fri Jul  2 04:36:11 1999
++++ configure	Fri Jul  2 04:41:31 1999
+@@ -1658,6 +1658,19 @@
    
-   // Set up the default Events
-   events_ = NULL;
--  addEvent( new Event( this, ConfigureNotify, &configureEvent ) );
--  addEvent( new Event( this, ClientMessage, &deleteEvent ) );
--  addEvent( new Event( this, MappingNotify, &mappingNotify ) );
-+  addEvent( new Event( this, ConfigureNotify, &XWin::configureEvent ) );
-+  addEvent( new Event( this, ClientMessage, &XWin::deleteEvent ) );
-+  addEvent( new Event( this, MappingNotify, &XWin::mappingNotify ) );
+ 	  host_dir=linux
+           host_os=linux ;;
++
++##  Check for OpenBSD 2.0-2.4
++openbsd2.[01234]*)
++        EXTRALIBS="-lkvm $XPMLIB"
++        INSTALL_ARGS='-s -g kmem -m 02555'
++	cat >> confdefs.h <<\EOF
++#define XOSVIEW_OPENBSD 1
++EOF
++
++
++			host_dir=bsd
++	host_os=openbsd ;;
++
+ ##  Check for known versions of NetBSD...
+ netbsd1.[0123]*)  
+ 	host_os=netbsd
+@@ -1761,6 +1774,7 @@
+         INSTALL_ARGS='-s -g kmem -m 02555'
+ 	cat >> confdefs.h <<\EOF
+ #define XOSVIEW_OPENBSD 1
++#define HAVE_SWAPCTL 1
+ EOF
  
-   //openDisplay();  //  Done explicitly in xosview.cc.
- }
+ 

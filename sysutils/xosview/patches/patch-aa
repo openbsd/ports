@@ -1,138 +1,107 @@
-*** bsd/kernel.cc.orig	Fri Sep 25 02:21:30 1998
---- bsd/kernel.cc	Mon Nov 23 10:12:36 1998
-***************
-*** 32,37 ****
---- 32,41 ----
-  #include <sys/disk.h>		/*  For disk statistics.  */
-  #endif
-  
-+ #ifdef XOSVIEW_OPENBSD
-+ #include "obsdintr.h"		/* XXX: got from 2.4 */
-+ #endif
-+ 
-  #include <sys/socket.h>         /*  These two are needed for the  */
-  #include <net/if.h>             /*    NetMeter helper functions.  */
-  #if defined(XOSVIEW_FREEBSD) && (__FreeBSD_version >= 300000)
-***************
-*** 104,114 ****
---- 108,134 ----
-  
-  #endif /* XOSVIEW_FREEBSD */
-  
-+ #if defined(XOSVIEW_OPENBSD) && (defined(pc532) || defined(i386))
-+ 
-+ # ifdef i386
-+ { "_intrhand" },
-+ #define INTRHAND_SYM_INDEX	7
-+ { "_intrstray" },
-+ #define INTRSTRAY_SYM_INDEX	8
-+ # else
-+ { "_ivt" },
-+ #define IVT_SYM_INDEX		7
-+ # endif
-+ 
-+ #else /* XOSVIEW_OPENBSD && (pc532 || i386) */
-+ 
-  { "_intrcnt" },
-  #define INTRCNT_SYM_INDEX 	7
-  { "_eintrcnt" },
-  #define EINTRCNT_SYM_INDEX 	8
-  
-+ #endif /* XOSVIEW_OPENBSD && (pc532 || i386) */
-+ 
-    {NULL}
-  };
-  
-***************
-*** 441,447 ****
---- 461,470 ----
-  }
-  
-  /*  ---------------------- Interrupt Meter stuff  -----------------  */
-+ #if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) && defined(i386))
-  static unsigned long kvm_intrcnt[128];// guess at space needed
-+ #endif
-+ 
-  #ifdef XOSVIEW_FREEBSD
-  static unsigned long kvm_intrptrs[NUM_INTR];
-  #endif
-***************
-*** 449,457 ****
---- 472,487 ----
-  int
-  BSDIntrInit() {
-      OpenKDIfNeeded(); 
-+ #if defined(XOSVIEW_OPENBSD) && defined(i386)
-+     return ValidSymbol(INTRHAND_SYM_INDEX) && ValidSymbol(INTRSTRAY_SYM_INDEX);
-+ #elif defined (XOSVIEW_OPENBSD) && defined(pc532)
-+     return ValidSymbol(IVP_SYM_INDEX);
-+ #else
-      return ValidSymbol(INTRCNT_SYM_INDEX) && ValidSymbol(EINTRCNT_SYM_INDEX);
-+ #endif
-  }
-  
-+ #if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) || defined(i386))
-  int BSDNumInts() {
-    int nintr;
-    OpenKDIfNeeded(); 
-***************
-*** 471,476 ****
---- 501,507 ----
-  # endif
-  #endif
-  }
-+ #endif /* XOSVIEW_OPENBSD */
-  
-  void
-  BSDGetIntrStats (unsigned long intrCount[NUM_INTR])
-***************
-*** 496,507 ****
---- 527,574 ----
-    //  counts.  We'll just use the intrcnt array here.  If anyone
-    //  has problems, please mail me.  bgrayson
-    {
-+ #if defined(XOSVIEW_OPENBSD) && (defined(pc532) || defined(i386))
-+ # ifdef i386
-+   struct intrhand *intrhand[16], *ihp, ih;
-+   int intrstray[16];
-+ 
-+   safe_kvm_read(nlst[INTRHAND_SYM_INDEX].n_value, intrhand,
-+     sizeof(intrhand));
-+   safe_kvm_read(nlst[INTRSTRAY_SYM_INDEX].n_value, intrstray,
-+     sizeof(intrstray));
-+ 
-+   for (int i=0;i<16;i++) {
-+     ihp = intrhand[i];
-+     intrCount[i] = 0;
-+     while (ihp) {
-+       if (kvm_read(kd, (u_long)ihp, &ih, sizeof(ih)) != sizeof(ih)) {
-+         fprintf(stderr, "Error: kvm_read(): %s\n", kvm_geterr(kd));
-+         exit(1);
-+       }
-+       intrCount[i] = ih.ih_count;
-+       ihp = ih.ih_next;
-+     }
-+   }
-+ # endif /* i386 */
-+ # ifdef pc532
-+   struct iv ivt[32], *ivp = ivt;
-+ 
-+   safe_kvm_read(nlst[IVP_SYM_INDEX].n_value, ivp, sizeof(ivt));
-+   for (int i=0;i<16;i++,ivp++) {
-+     if (ivp->iv_vec && ivp->iv_use)
-+       intrCount[i] = ivp->iv_cnt;
-+     else
-+       intrCount[i] = 0;
-+   }
-+ # endif /* pc532 */
-+ #else /* XOSVIEW_OPENBSD && (pc532 || i386) */
-      int nintr = BSDNumInts();
-      safe_kvm_read(nlst[INTRCNT_SYM_INDEX].n_value, kvm_intrcnt,
-        sizeof(long)*nintr);
-      for (int i=0;i<nintr;i++) {
-        intrCount[i] = kvm_intrcnt[i];
-      }
-+ #endif /* XOSVIEW_OPENBSD && (pc532 || i386) */
-    }
-    return;
-  #endif
+# $OpenBSD: patch-aa,v 1.6 1999/07/01 22:07:44 form Exp $
+
+--- bsd/kernel.cc.orig	Tue Feb 16 20:09:21 1999
++++ bsd/kernel.cc	Fri Jul  2 04:46:10 1999
+@@ -67,7 +67,11 @@
+ 
+ #ifdef HAVE_SWAPCTL
+ #include <unistd.h>		/*  For swapctl proto.  */
++#ifdef XOSVIEW_OPENBSD
++#include <sys/swap.h>
++#else
+ #include <vm/vm_swap.h>		/*  For swapent, SWAP_*.  */
++#endif
+ #include <stdlib.h>		/*  For malloc(), free().  */
+ #endif
+ 
+@@ -110,9 +114,9 @@
+ { "_eintrcnt" },
+ #define EINTRCNT_SYM_INDEX 	8
+ 
+-#if defined(XOSVIEW_OPENBSD) && (defined(pc532) || defined(i386))
++#if defined(XOSVIEW_OPENBSD) && (defined(__pc532__) || defined(__i386__))
+ 
+-# ifdef i386
++# ifdef __i386__
+ { "_intrhand" },
+ #define INTRHAND_SYM_INDEX    9
+ { "_intrstray" },
+@@ -661,7 +665,7 @@
+ }
+ 
+ /*  ---------------------- Interrupt Meter stuff  -----------------  */
+-#if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) && defined(i386))
++#if !defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) || defined(__i386__))
+ static unsigned long kvm_intrcnt[128];// guess at space needed
+ #endif
+ 
+@@ -672,16 +676,16 @@
+ int
+ BSDIntrInit() {
+     OpenKDIfNeeded();
+-#if defined(XOSVIEW_OPENBSD) && defined(i386)
++#if defined(XOSVIEW_OPENBSD) && defined(__i386__)
+     return ValidSymbol(INTRHAND_SYM_INDEX) && ValidSymbol(INTRSTRAY_SYM_INDEX);
+-#elif defined (XOSVIEW_OPENBSD) && defined(pc532)
++#elif defined (XOSVIEW_OPENBSD) && defined(__pc532__)
+     return ValidSymbol(IVP_SYM_INDEX);
+ #else
+     return ValidSymbol(INTRCNT_SYM_INDEX) && ValidSymbol(EINTRCNT_SYM_INDEX);
+ #endif
+ }
+ 
+-#if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) || defined(i386))
++#if !defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) || defined(__i386__))
+ int
+ BSDNumInts() {
+   int nintr;
+@@ -702,7 +706,7 @@
+ # endif
+ #endif
+ }
+-#endif /* XOSVIEW_OPENBSD */
++#endif /* XOSVIEW_OPENBSD && !(__i386__ || __pc532__) */
+ 
+ void
+ BSDGetIntrStats (unsigned long intrCount[NUM_INTR]) {
+@@ -727,8 +731,8 @@
+   //  counts.  We'll just use the intrcnt array here.  If anyone
+   //  has problems, please mail me.  bgrayson
+   {
+-#if defined(XOSVIEW_OPENBSD) && (defined(pc532) || defined(i386))
+-# ifdef i386
++#if defined(XOSVIEW_OPENBSD) && (defined(__pc532__) || defined(__i386__))
++# ifdef __i386__
+   struct intrhand *intrhand[16], *ihp, ih;
+   int intrstray[16];
+ 
+@@ -749,8 +753,8 @@
+       ihp = ih.ih_next;
+     }
+   }
+-# endif /* i386 */
+-# ifdef pc532
++# endif /* __i386__ */
++# ifdef __pc532__
+   struct iv ivt[32], *ivp = ivt;
+ 
+   safe_kvm_read(nlst[IVP_SYM_INDEX].n_value, ivp, sizeof(ivt));
+@@ -760,15 +764,15 @@
+     else
+       intrCount[i] = 0;
+   }
+-# endif /* pc532 */
+-#else /* XOSVIEW_OPENBSD && (pc532 || i386) */
++# endif /* __pc532__ */
++#else /* XOSVIEW_OPENBSD && (__pc532__ || __i386__) */
+     int nintr = BSDNumInts();
+     safe_kvm_read(nlst[INTRCNT_SYM_INDEX].n_value, kvm_intrcnt,
+       sizeof(long)*nintr);
+     for (int i=0;i<nintr;i++) {
+       intrCount[i] = kvm_intrcnt[i];
+     }
+-#endif /* XOSVIEW_OPENBSD && (pc532 || i386) */
++#endif /* XOSVIEW_OPENBSD && (__pc532__ || __i386__) */
+   }
+   return;
+ #endif
