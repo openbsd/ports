@@ -1,64 +1,38 @@
-*** Makefile.orig	Wed Mar 31 19:11:01 1999
---- Makefile	Sat Jun 26 18:05:44 1999
-***************
-*** 2,18 ****
-  XINCLUDE= /usr/X11R6/include
-  # for Solaris use this instead
-  # XINCLUDE=/usr/openwin/include
-! INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include -I$(PILOT_LINK)/include
-  CFLAGS = -g -O2
-  
-  # uncommment the following line if you have linking errors on Solaris
-  # LFLAGS_ADD = /usr/lib/libnsl.so /usr/lib/libsocket.so 
-  # LFLAGS = $(LFLAGS_ADD) $(QTDIR)/lib/libqt.so $(PILOT_LINK)/lib/libpisock.a
-  
-! LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt $(PILOT_LINK)/lib/libpisock.a
-  
-  # try this one if you want to link against the shared library from pilot-link
-! # LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt -L$(PILOT_LINK)/lib -lpisock
-  
-  # uncomment the following line on HP-UX
-  # LFLAGS += -lX11 -lXext
---- 2,18 ----
-  XINCLUDE= /usr/X11R6/include
-  # for Solaris use this instead
-  # XINCLUDE=/usr/openwin/include
-! INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include/X11/qt -I$(PILOT_LINK)/include
-  CFLAGS = -g -O2
-  
-  # uncommment the following line if you have linking errors on Solaris
-  # LFLAGS_ADD = /usr/lib/libnsl.so /usr/lib/libsocket.so 
-  # LFLAGS = $(LFLAGS_ADD) $(QTDIR)/lib/libqt.so $(PILOT_LINK)/lib/libpisock.a
-  
-! # LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt $(PILOT_LINK)/lib/libpisock.a
-  
-  # try this one if you want to link against the shared library from pilot-link
-! LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt -L$(PILOT_LINK)/lib -lpisock
-  
-  # uncomment the following line on HP-UX
-  # LFLAGS += -lX11 -lXext
-***************
-*** 31,41 ****
-  RM_OPT = -f
-  
-  # Edited for Debian GNU/Linux
-! DESTDIR = 
-  
-! prefix = $(DESTDIR)/usr/X11R6
-! doc_prefix = $(DESTDIR)/usr/doc
-! conf_prefix = $(DESTDIR)/etc
-  
-  ####### Files
-  
---- 31,41 ----
-  RM_OPT = -f
-  
-  # Edited for Debian GNU/Linux
-! DESTDIR = $(LOCALBASE)
-  
-! prefix = $(DESTDIR)
-! doc_prefix = $(DESTDIR)/share/doc
-! conf_prefix = $(doc_prefix)/$(TARGET)
-  
-  ####### Files
-  
+--- Makefile.orig	Fri Sep  3 19:20:04 1999
++++ Makefile	Thu Sep 23 23:25:31 1999
+@@ -5,7 +5,7 @@
+ 
+ # be sure to set all include directories to correct values
+ #  (especially the directory for the pilot-link and Qt include files)
+-INCDIRS= -I$(XINCLUDE) -I/usr/X11R6/include/qt -I/usr/include/libpisock
++INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include/X11/qt -I$(PILOT_LINK)/include
+ 
+ #DEBUG = -g -D_DEBUG_
+ OPTIMIZE = -O2
+@@ -20,8 +20,8 @@
+ # try this one if you want to link against the shared library of pilot-link
+ # (edit LFLAGS_PISOCK_DIR and/or LFLAGS_QT_DIR and uncomment if libs are not 
+ #  in a standard directory)
+-# LFLAGS_PISOCK_DIR = -L/usr/lib
+-LFLAGS_QT_DIR = -L/usr/X11R6/lib
++LFLAGS_PISOCK_DIR = -L$(PILOT_LINK)/lib
++LFLAGS_QT_DIR = -L$(QTDIR)/lib
+ LFLAGS = $(LFLAGS_ADD) $(LFLAGS_QT_DIR) -lqt $(LFLAGS_PISOCK_DIR) -lpisock
+ 
+ # uncomment the following line on HP-UX
+@@ -41,11 +41,11 @@
+ RM_OPT = -f
+ 
+ # Edited for Debian GNU/Linux
+-DESTDIR = 
++DESTDIR = $(LOCALBASE)
+ 
+-prefix = $(DESTDIR)/usr/X11R6
+-doc_prefix = $(DESTDIR)/usr/doc
+-conf_prefix = $(DESTDIR)/etc
++prefix = $(DESTDIR)
++doc_prefix = $(DESTDIR)/share/doc
++conf_prefix = $(doc_prefix)/$(TARGET)
+ 
+ ####### Files
+ 

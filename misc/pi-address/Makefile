@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/06/26 16:40:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/23 21:35:22 jakob Exp $
 
-DISTNAME=	pi-address-0.3.1
-PKGNAME=	pi-address-0.3.1
+DISTNAME=	pi-address-0.3.2
 CATEGORIES=	misc x11
 
 MAINTAINER=	jakob@openbsd.org
