@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.127 1999/09/30 17:28:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.128 1999/09/30 17:34:22 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2334,6 +2334,26 @@ describe:
 	fi
 .endif
 
+.if !target(print-depends-list)
+print-depends-list:
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+	defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
+	@${ECHO} -n 'This port requires package(s) "'
+	@${ECHO} -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
+	@${ECHO} '" to build.'
+.endif
+.endif
+
+.if !target(print-package-depends)
+print-package-depends:
+.if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS) || \
+   target(package-depends)
+	@${ECHO} -n 'This port requires package(s) "'
+	@${ECHO} -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
+	@${ECHO} '" to run.'
+.endif
+.endif
+
 .if !target(depends-list)
 depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
@@ -2419,25 +2439,6 @@ README.html:
 			-e '/%%RUN_DEPENDS%%/d' \
 		>> $@
 	@rm -f $@.tmp*
-
-.if !target(print-depends-list)
-print-depends-list:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-	defined(LIB_DEPENDS) || defined(DEPENDS)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
-	@${ECHO} '" to build.'
-.endif
-.endif
-
-.if !target(print-package-depends)
-print-package-depends:
-.if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
-	@${ECHO} '" to run.'
-.endif
-.endif
 
 .if !target(print-depends)
 print-depends: 
