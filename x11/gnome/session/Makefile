@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2003/02/18 07:14:46 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/12 20:24:02 marcm Exp $
 
 COMMENT=		"GNOME session"
 
-DISTNAME=		gnome-session-2.0.9
+DISTNAME=		gnome-session-2.2.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -21,15 +21,17 @@ MODULES=		gettext
 
 BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
 			:scrollkeeper->=0.3.11:textproc/scrollkeeper
-RUN_DEPENDS=		:esound-*:audio/esound \
-			:gnome-applets2-*:x11/gnome/applets2 \
-			:gnome-terminal-*:x11/gnome/terminal \
-			:nautilus-*:x11/gnome/nautilus \
-			:yelp-*:x11/gnome/yelp \
-			:metacity-*:x11/gnome/metacity
 LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
 
-MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+# Here we hang all the additional ports that will make up a satisfying
+# Gnome2 user experience :)
+RUN_DEPENDS+=		:gnome-applets2-*:x11/gnome/applets2
+RUN_DEPENDS+=		:gnome-terminal-*:x11/gnome/terminal
+RUN_DEPENDS+=		:nautilus-*:x11/gnome/nautilus
+RUN_DEPENDS+=		:metacity-*:x11/gnome/metacity
+RUN_DEPENDS+=		:gnome-themes-*:x11/gnome/themes
+#RUN_DEPENDS+=		:yelp-*:x11/gnome/yelp
+RUN_DEPENDS+=		:xscreensaver-*:x11/xscreensaver,gtk2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
