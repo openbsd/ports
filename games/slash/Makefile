@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/08/02 01:53:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/07/12 14:52:22 naddy Exp $
 
 COMMENT=	"dungeon explorin', hackin' game, but harder than nethack"
 
@@ -52,6 +52,7 @@ post-extract:
 post-distpatch:
 	# Two patches failure, not to worry
 	@-cd ${WRKSRC} && ${PATCH} -p1 -z .bak.orig -s < ${WRKDIR}/slashe8.dif
+	@echo >>${WRKSRC}/dat/knox.des	# add trailing newline
 	@cd ${WRKSRC} && ${PATCH} -p1 -z .bak.orig -s < ${WRKDIR}/e8p1.dif
 
 do-configure:
