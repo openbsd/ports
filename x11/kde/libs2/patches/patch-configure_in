@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.5 2001/08/22 19:56:32 espie Exp $
+--- configure.in.orig	Mon Aug  6 03:26:30 2001
++++ configure.in	Wed Aug 22 15:34:12 2001
+@@ -629,7 +629,9 @@ if test "${with_qt_dir+set}" = set; then
+   kde_qtdir="$with_qt_dir"
+ fi
+ 
++if test -z "$QTDOCDIR"; then
+ AC_FIND_FILE(qcolordialog.html, [ $kde_qtdir/doc/html $QTDIR/doc/html /usr/share/doc/packages/qt2/html /usr/lib/qt/doc /usr/doc/qt2/html /usr/doc/qt2], QTDOCDIR)
++fi
+ AC_MSG_RESULT($QTDOCDIR)
+ 
+ AC_SUBST(QTDOCDIR)

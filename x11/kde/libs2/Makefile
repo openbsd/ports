@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/21 17:04:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/08/22 19:56:32 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -26,6 +26,7 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		bz2::archivers/bzip2
 
 BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
+BUILD_DEPENDS+=	${LOCALBASE}/share/doc/qt2/html/index.html::x11/qt2,-html
 
 # glib2.0 
 # qt docs
@@ -48,6 +49,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
+CONFIGURE_ENV+=		QTDOCDIR=${LOCALBASE}/share/doc/qt2/html
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
