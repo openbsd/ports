@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/01 07:13:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 17:58:49 espie Exp $
 
 COMMENT=	"encrypt and decrypt AES files and streams"
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ccrypt
+		${MASTER_SITE_SOURCEFORGE:=ccrypt/}
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"perl module to detect dangerous HTML code"
 
@@ -8,8 +8,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www security perl5
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= HTML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

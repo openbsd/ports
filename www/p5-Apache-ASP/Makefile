@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/22 08:49:29 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"Apache ASP support"
 
@@ -7,8 +7,7 @@ DISTNAME=	Apache-ASP-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 NEED_VERSION=	1.496
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Apache
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
 BUILD_DEPENDS=	::security/p5-Digest-MD5 \
 		::devel/p5-MLDBM-Sync

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 17:58:51 espie Exp $
 
 COMMENT=	"generate HTML tables for cgi scripts"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www.chime.ucl.ac.uk/~rmhiajp/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= HTML
+		${MASTER_SITE_PERL_CPAN:=HTML/}
 
 CONFIGURE_STYLE= perl
 

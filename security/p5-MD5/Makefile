@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"interface to md5 message-digest algorithm"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= MD5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MD5/}
 
 CONFIGURE_STYLE= perl
 

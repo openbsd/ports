@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
@@ -6,8 +6,7 @@ DISTNAME=	cgicc-3.1.5
 CATEGORIES=     www devel
 
 NEED_VERSION=	1.427
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	cgicc
+MASTER_SITES=	${MASTER_SITE_GNU:=cgicc/}
 
 HOMEPAGE=	http://www.gnu.org/software/cgicc/cgicc.html
 

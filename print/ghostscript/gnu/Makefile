@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/04/24 21:34:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/15 17:58:49 espie Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -8,13 +8,12 @@ CATEGORIES=	print lang
 NEED_VERSION=	1.525
 
 DIR=		gnu/gs${VERSION:S/.//}
-MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU}
-MASTER_SITES1=	${MASTER_SITE_GNU}
+MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU:=ghostscript/}
+MASTER_SITES1=	${MASTER_SITE_GNU:=ghostscript/}
 MASTER_SITES2=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
-MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD}:1 pdf_sec.ps:2
 
 SUBST_VARS=		OSREV	VERSION

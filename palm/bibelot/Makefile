@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/25 08:17:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:49 espie Exp $
 
 COMMENT=	"format/convert text documents into compressed .pdb files"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/bibelot
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= ${PROG}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bibelot/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=		"python Cryptographic Toolkit"
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cryptkit
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cryptkit/}
 
 PYTHON_VER=	2.1
 

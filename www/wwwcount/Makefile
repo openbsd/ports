@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/29 09:56:41 form Exp $
+# $OpenBSD: Makefile,v 1.19 2002/05/15 17:58:51 espie Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
@@ -6,14 +6,15 @@ DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
 NEED_VERSION=	1.305
-MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/%SUBDIR%/ \
-		http://mirror.njit.edu/counter/%SUBDIR%/ \
-		http://www.neonramp.com/Count/%SUBDIR%/ \
-		http://wwwcount.iinetwork.net/%SUBDIR%/ \
-		http://www.jesterscastle.com/mirror/Count/%SUBDIR%/ \
-		http://www.quiltersdream.com/Count/%SUBDIR%/ \
-		http://muquit.com/muquit/software/Count/%SUBDIR%/
-MASTER_SITE_SUBDIR=	src/wwwcount2.5
+MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/$S/ \
+		http://mirror.njit.edu/counter/$S/ \
+		http://www.neonramp.com/Count/$S/ \
+		http://wwwcount.iinetwork.net/$S/ \
+		http://www.jesterscastle.com/mirror/Count/$S/ \
+		http://www.quiltersdream.com/Count/$S/ \
+		http://muquit.com/muquit/software/Count/$S/
+
+S=	src/wwwcount2.5
 
 # For digit images look at:
 # http://www.digitmania.holowww.com/

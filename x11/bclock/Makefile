@@ -3,15 +3,14 @@
 # Date created:		8 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/15 17:58:51 espie Exp $
 
 COMMENT=	"round, analog X11 clock with bezier curve hands"
 
 DISTNAME=	bclock-1.0
 CATEGORIES=	x11
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=     X11/clocks
+MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

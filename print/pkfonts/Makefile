@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/05/15 17:58:49 espie Exp $
 
 COMMENT=	"English PK fonts (300dpi) for ghostscript, xdvi, etc."
 
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MASTER_SITES=   ftp://ports.jp.FreeBSD.org/pub/%SUBDIR%/ \
-                ftp://ftp4.jp.FreeBSD.org/pub/%SUBDIR%/ \
-                ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/%SUBDIR%/
-MASTER_SITE_SUBDIR=     FreeBSD-jp/ports-jp/LOCAL_PORTS/pkfonts
+S= FreeBSD-jp/ports-jp/LOCAL_PORTS/pkfonts
+MASTER_SITES=   ftp://ports.jp.FreeBSD.org/pub/$S/ \
+                ftp://ftp4.jp.FreeBSD.org/pub/$S/ \
+                ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/$S/
 EXTRACT_ONLY=	
 DIST_SUBDIR=	pkfonts-${VERSION}
 

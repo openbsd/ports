@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/01 15:25:32 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"object oriented interface for CGI script applications"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=CGI/}
 
 BUILD_DEPENDS=	::textproc/p5-XML-LibXSLT
 RUN_DEPENDS=	${BUILD_DEPENDS}

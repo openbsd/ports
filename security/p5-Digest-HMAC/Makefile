@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/08 06:56:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"interface to HMAC Message-Digest Algorithms"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Digest
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Digest/}
 
 BUILD_DEPENDS=	::security/p5-Digest-MD5 \
 		::security/p5-Digest-SHA1

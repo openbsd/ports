@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"perl module to create/verify PGP signatures"
 
@@ -6,8 +6,7 @@ DISTNAME=	PGP-Sign-0.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= PGP
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=PGP/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:49 espie Exp $
 
 COMMENT=	"threaded newsreader"
 
@@ -6,8 +6,7 @@ CATEGORIES=	news
 MAINTAINER= 	Marc Espie <espie@openbsd.org>
 NEED_VERSION=	1.515
 
-MASTER_SITES=${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=trn
+MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=76
 DISTNAME=trn-4.0-test$V
 PKGNAME=trn-4.0.$V

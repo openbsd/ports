@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
@@ -10,8 +10,7 @@ CATEGORIES=	www perl5
 NEED_VERSION=	1.515
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= 	../by-authors/id/B/BO/BOBG/
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

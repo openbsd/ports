@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/08 22:10:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:51 espie Exp $
 
 COMMENT=		"Desktop wallpaper manager and X11 screensaver"
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	chbg
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=chbg/}
 
 LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
 

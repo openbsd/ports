@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2002/04/07 00:54:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2002/05/15 17:58:51 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc
 
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	w3m
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
 SUPDISTFILES=	w3m-${VERSION}${EXTRACT_SUFX} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/15 17:58:51 espie Exp $
 
 COMMENT=	"perl parser that builds an HTML tree"
 
@@ -6,8 +6,7 @@ DISTNAME=	HTML-Tree-3.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= HTML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=  ::www/p5-HTML-Parser \
