@@ -1,3 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 12:47:38 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/30 19:12:06 wilfried Exp $
 ${P5SITE}/Class/Container.pm
+@comment ${P5ARCH}/auto/Class/Container/.packlist
+@comment ${P5ARCH}/perllocal.pod
 man/man3p/Class::Container.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Class/Container
+@comment @dirrm ${P5ARCH}/auto/Class
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@comment @dirrm ${P5SITE}/Class

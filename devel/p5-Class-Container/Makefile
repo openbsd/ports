@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/13 18:39:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/30 19:12:06 wilfried Exp $
 
 COMMENT=	"validate method/function parameters"
 
-DISTNAME=	Class-Container-0.08
+DISTNAME=	Class-Container-0.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 
-BUILD_DEPENDS=	:p5-Scalar-List-Utils->=1.07:devel/p5-Scalar-List-Utils \
-		:p5-Params-Validate->=0.23:devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:p5-Scalar-List-Utils->=1.11:devel/p5-Scalar-List-Utils \
+		:p5-Params-Validate->=0.58:devel/p5-Params-Validate
 
 CONFIGURE_STYLE=	perl
 
