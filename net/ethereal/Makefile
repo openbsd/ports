@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/05 18:30:37 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/15 07:47:55 jakob Exp $
 
 DISTNAME=	ethereal-0.8.4
 CATEGORIES=	net x11
@@ -25,6 +25,5 @@ SYSCONFDIR=	${PREFIX}/share/ethereal
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 .include <bsd.port.mk>
