@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/17 15:11:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/16 22:32:27 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Generic Apache Request Library"
 
-DISTNAME=	libapreq-1.0
+DISTNAME=	libapreq-1.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
+MAINTAINER=	Michael Coulter <mjc@bitz.ca>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,14 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-BUILD_DEPENDS=	:mod_perl-*:www/mod_perl 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	:mod_perl-*:www/mod_perl \
+		:p5-Apache-Test-*:www/p5-Apache-Test
 
-CONFIGURE_STYLE=	perl
+RUN_DEPENDS=	:mod_perl-*:www/mod_perl
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
+CONFIGURE_STYLE=perl
+
+# XXX broken, see p5-Apache-Test
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-libapreq
