@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Nov 22 15:37:42 2002
-+++ doc/Makefile.in	Sat Nov 30 17:28:11 2002
-@@ -136,7 +136,7 @@
+--- doc/Makefile.in.orig	Thu Jul 19 17:43:01 2001
++++ doc/Makefile.in	Thu Jul 19 17:43:26 2001
+@@ -117,7 +117,7 @@
  Z_CFLAGS = @Z_CFLAGS@
  Z_LIBS = @Z_LIBS@
  
@@ -9,12 +9,11 @@
  
  # The top-level SGML file.
  DOC_MAIN_SGML_FILE = gnome-xml.sgml
-@@ -363,8 +363,6 @@
- 	-@INSTALL@ -m 0644 $(srcdir)/xml.html $(srcdir)/encoding.html $(srcdir)/FAQ.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(srcdir)/smallfootonly.gif $(srcdir)/redhat.gif $(srcdir)/libxml.gif $(srcdir)/w3c.png $(srcdir)/Libxml2-Logo-180x168.gif $(srcdir)/Libxml2-Logo-90x34.gif $(DESTDIR)$(TARGET_DIR)
+@@ -263,7 +263,6 @@
+ 	-@INSTALL@ -m 0644 $(srcdir)/xml.html $(srcdir)/encoding.html $(srcdir)/FAQ.html $(srcdir)/structure.gif $(srcdir)/DOM.gif $(DESTDIR)$(TARGET_DIR)
  	-@INSTALL@ -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(TARGET_DIR)
  	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)
 -	-(cd $(DESTDIR); gtkdoc-fixxref --module=libxml --html-dir=$(HTML_DIR))
--	-@(tar cf - tutorial | (cd $(DESTDIR)$(TARGET_DIR) && tar xvf -)
  
- .PHONY : html sgml templates scan
- 
+ dist-hook:
+ 	(cd $(srcdir) ; tar cvf - *.html *.gif html/*.html html/*.sgml) | (cd $(distdir); tar xf -)
