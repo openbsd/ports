@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:29 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/22 18:11:27 espie Exp $
 
 DISTNAME=	xfig.3.2.3a
 PKGNAME=	xfig-3.2.3a
@@ -18,6 +18,7 @@ USE_IMAKE=	Yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
 		XFIGLIBDIR=${PREFIX}/lib/X11/xfig 
+FAKE=		Yes
 
 post-patch:
 	perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
