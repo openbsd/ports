@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/19 03:34:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/08/21 18:02:01 pvalchev Exp $
 #
 
      SUBDIR += bibelot
      SUBDIR += isilo
      SUBDIR += palm-bookmarks
      SUBDIR += palmpower
+     SUBDIR += palmos-sdk
      SUBDIR += pilrc
      SUBDIR += pilrc,no_x11
 
