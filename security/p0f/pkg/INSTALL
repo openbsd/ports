@@ -1,0 +1,65 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/10/29 03:20:38 jcs Exp $
+#
+# Pre/post-installation setup of p0f, stolen from jsyn's siphone scripts
+
+# exit on errors, use a sane path and install prefix
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/p0f.fp
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/p0f
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file in $CONFIG_FILE,"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample file in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/p0f.fp \
+                                    $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file has been installed at"
+    echo "| $CONFIG_FILE. Please view this file and change the configuration"
+    echo "| to meet your needs."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ ! -f $CONFIG_FILE ]; then
+            do_install $1
+        else
+            do_notice $1
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
