@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/07/20 06:02:02 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/08/18 16:19:03 brad Exp $
 
 DISTNAME=	WindowMaker-0.62.1
 PKGNAME=	windowmaker-0.62.1
@@ -35,9 +35,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-configure:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		./configure --prefix="${WRKINST}${PREFIX}"
+		./configure --prefix="${PREFIX}"
 
 post-install:
-	@cd ${WRKDIR}/WindowMaker-extra-0.1; make install
+	@cd ${WRKDIR}/WindowMaker-extra-0.1 && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${FAKE_FLAGS} -f ${MAKE_FILE} install
 
 .include <bsd.port.mk>
