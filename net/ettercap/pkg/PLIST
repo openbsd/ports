@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/12/13 07:37:09 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/02/16 07:33:22 mark Exp $
 lib/ettercap/ec_H00_lurker.so
+lib/ettercap/ec_H01_zaratan.so
 lib/ettercap/ec_H10_phantom.so
 lib/ettercap/ec_H20_dwarf.so
+lib/ettercap/ec_H30_thief.so
 lib/ettercap/ec_H99_dummy.so
 lib/ettercap/ec_arpcop.so
 lib/ettercap/ec_banshee.so
@@ -27,13 +29,16 @@ share/doc/ettercap/KNOWN-BUGS
 share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/README.WIN32
 share/doc/ettercap/THANKS
 share/doc/ettercap/TODO
+share/doc/ettercap/ZARATAN.HOWTO
 share/doc/ettercap/ettercap.fr.8.in
 share/ettercap/etter.conf
 share/ettercap/etter.dns
 share/ettercap/etter.filter
 share/ettercap/etter.filter.ssh
+share/ettercap/etter.mime
 share/ettercap/etter.passive.os.fp
 share/ettercap/etter.ssl.crt
 share/ettercap/mac-fingerprints
