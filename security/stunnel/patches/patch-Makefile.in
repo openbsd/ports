@@ -5,7 +5,7 @@
  libdir=@libdir@
  man8dir=@mandir@/man8
 -piddir=@localstatedir@/stunnel/
-+piddir=/var/run
++piddir=/var/run/
  ssldir=@ssldir@
  PEM_DIR=@PEM_DIR@
  @SET_MAKE@
