@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/22 03:45:11 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/22 09:27:51 turan Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -55,7 +55,7 @@ print-index:	${.CURDIR}/INDEX
 
 print-licenses: ${.CURDIR}/INDEX
 	@printf "Port                               PC PF DC DF L-Type    Maint\n"
-	@awk -F\| '{printf("%-35.35s%-3.2s%-3.2s%-3.2s%-3.2s%-10.9s%-20.20s\n",$$2,$$11,$$12,$$13,$$14,$$15,$$6);}' < ${.CURDIR}/INDEX
+	@awk -F\| '{printf("%-35.34s%-3.2s%-3.2s%-3.2s%-3.2s%-10.9s%-20.20s\n",$$2,$$11,$$12,$$13,$$14,$$15,$$6);}' < ${.CURDIR}/INDEX
 
 search:	${.CURDIR}/INDEX
 .if !defined(key)
