@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/11/23 02:22:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.33 2000/12/27 15:28:11 reinhard Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
+     SUBDIR += ttyrec
 #    SUBDIR += unclutter
      SUBDIR += viz
 #    SUBDIR += xcalendar
