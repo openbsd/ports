@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.11 2000/02/12 20:03:00 turan Exp $
+# $OpenBSD: Makefile.template,v 1.12 2000/02/13 07:14:13 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -27,6 +27,7 @@ CATEGORIES=     	???
 MAINTAINER=		ports@openbsd.org
 
 # Licensing for this port.  License types:
+# ARTISTIC:   PERL Artistic license, or similar.
 # BSD:        BSD (or a BSD like) license.
 #             Can be distributed.  Documentation that mentions package may
 #             need to include owners copyright.
@@ -52,7 +53,6 @@ MAINTAINER=		ports@openbsd.org
 #             related documentation.
 # PAT:        Patent or Patent Pending
 # PD:         Explicitly stated to be in the Public Domain.
-# PERL:       PERL (or PERL like) license.
 # RESTRICT:   Restrictive license
 # SHARE:      Shareware.
 # X:          X Consortium (or X consortium like, e.g. XFree86) license.
