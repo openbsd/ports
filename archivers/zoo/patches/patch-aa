@@ -1,5 +1,5 @@
-*** bsd.c.old	Thu Aug  8 09:34:07 1991
---- bsd.c	Thu Jan  5 05:20:03 1995
+*** bsd.c.orig	Sat May  1 00:21:53 1993
+--- bsd.c	Tue Nov 25 14:51:06 1997
 ***************
 *** 69,76 ****
   }
@@ -10,12 +10,16 @@
   #define SEC_IN_DAY	(24L * 60L * 60L)
   #define INV_VALUE		(SEC_IN_DAY + 1L)
   	static long retval = INV_VALUE;	     /* cache, init to impossible value */
---- 69,80 ----
+--- 69,84 ----
   }
   
   /* Function gettz() returns the offset from GMT in seconds */
 ! long gettz(t)
+! #if defined(__OpenBSD__)
+! time_t t;
+! #else
 ! long t;
+! #endif
   {
 + #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +    return -localtime(&t)->tm_gmtoff;
@@ -24,17 +28,17 @@
   #define INV_VALUE		(SEC_IN_DAY + 1L)
   	static long retval = INV_VALUE;	     /* cache, init to impossible value */
 ***************
-*** 83,88 ****
---- 87,93 ----
-  	/* Timezone fix thanks to Bill Davidsen <wedu@ge-crd.ARPA> */
-  	retval = tzp.tz_minuteswest * 60 - tzp.tz_dsttime * 3600L;
+*** 95,100 ****
+--- 103,109 ----
+  	retval = -tm->tm_gmtoff;
+  #endif
   	return retval;
 + #endif
   }
   
   /* Standard UNIX-compatible time routines */
 ***************
-*** 91,105 ****
+*** 103,117 ****
   /* Standard UNIX-specific file attribute routines */
   #include "nixmode.i"
   
@@ -50,7 +54,7 @@
   	int fd = fileno(f);
   	seekpos = lseek(fd, 0L, SEEK_CUR);
   	if (seekpos >= 0)
---- 96,114 ----
+--- 112,130 ----
   /* Standard UNIX-specific file attribute routines */
   #include "nixmode.i"
   
@@ -214,11 +218,11 @@
   #else
      direntry->tz = NO_TZ;                /* timezone unknown */
   #endif
-*** ar.h.orig	Sat May  1 08:04:22 1993
---- ar.h	Thu Jan  5 07:05:36 1995
+*** ar.h.orig	Sat May  1 00:04:22 1993
+--- ar.h	Tue Nov 25 14:47:57 1997
 ***************
-*** 15,23 ****
---- 15,25 ----
+*** 15,25 ****
+--- 15,29 ----
   /* uchar should be 8 bits or more */
   /* typedef unsigned char  uchar;   -- already in zoo.h */
   
@@ -226,7 +230,11 @@
   typedef unsigned int   uint;    /* 16 bits or more */
   #if !defined(__386BSD__) || !defined(_TYPES_H_)
   typedef unsigned short ushort;  /* 16 bits or more */
-+ #endif
   #endif
++ #endif
++ #if !(defined(__OpenBSD__))
   typedef unsigned long  ulong;   /* 32 bits or more */
++ #endif
   
+  /* T_UINT16 must be #defined in options.h to be 
+  a 16-bit unsigned integer type */
