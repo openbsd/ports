@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/11 14:11:30 heko Exp $
+bin/belt
+man/man1/belt.1
+share/belt/icons/DH.gif
+share/belt/icons/DS.gif
+share/belt/icons/LH.gif
+share/belt/icons/LS.gif
+share/belt/icons/RH.gif
+share/belt/icons/RS.gif
+share/belt/icons/UH.gif
+share/belt/icons/US.gif
+share/belt/icons/noicon.gif
+share/examples/belt/menu.conf.EXAMPLE
+@dirrm share/examples/belt
+@dirrm share/belt/icons
+@dirrm share/belt
