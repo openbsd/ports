@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/06/29 19:42:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/09/02 22:07:17 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		"programs compiled with this miss menus, fonts, etc."
+.endif
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
