@@ -1,0 +1,31 @@
+$OpenBSD: patch-tcptraceroute_c,v 1.3 2004/01/04 23:23:43 espie Exp $
+--- tcptraceroute.c.orig	2004-01-05 00:20:43.000000000 +0100
++++ tcptraceroute.c	2004-01-05 00:21:12.000000000 +0100
+@@ -391,10 +391,10 @@ void pfatal(char *err)
+ void usage(void)
+ {
+ 	printf("\n%s\n%s\n", VERSION, BANNER);
+-    fatal("Usage: %s [-nNFSAE] [-i <interface>] [-f <first ttl>]
+-       [-l <packet length>] [-q <number of queries>] [-t <tos>]
+-       [-m <max ttl>] [-pP] <source port>] [-s <source address>]
+-       [-w <wait time>] <host> [destination port] [packet length]\n\n", name);
++    fatal("Usage: %s [-nNFSAE] [-i <interface>] [-f <first ttl>]\n"
++"       [-l <packet length>] [-q <number of queries>] [-t <tos>]\n"
++"       [-m <max ttl>] [-pP] <source port>] [-s <source address>]\n"
++"       [-w <wait time>] <host> [destination port] [packet length]\n\n", name);
+ }
+ 
+ void about(void)
+@@ -1182,9 +1182,9 @@ void initcapture(void)
+ 	if (! (pcap = pcap_open_live(device, offset + SNAPLEN, 0, 10, errbuf)))
+ 		fatal("pcap_open_live failed: %s", errbuf);
+ 
+-	safe_snprintf(filter, TEXTSIZE, "
+-		(tcp and src host %s and src port %d and dst host %s)
+-		or ((icmp[0] == 11 or icmp[0] == 3) and dst host %s)",
++	safe_snprintf(filter, TEXTSIZE, "\n"
++"		(tcp and src host %s and src port %d and dst host %s)\n"
++"		or ((icmp[0] == 11 or icmp[0] == 3) and dst host %s)",
+ 			iptos(dst_ip), dst_prt, iptos(src_ip), iptos(src_ip));
+ 
+ 	if (o_nofilter)
