@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2001/12/27 02:56:38 jcs Exp $
---- configure.orig	Wed Dec 26 20:36:39 2001
-+++ configure	Wed Dec 26 20:37:43 2001
-@@ -5934,11 +5934,13 @@
+$OpenBSD: patch-configure,v 1.2 2002/09/12 00:12:48 jcs Exp $
+--- configure.orig	Wed Sep 11 18:47:55 2002
++++ configure	Wed Sep 11 18:48:19 2002
+@@ -3520,6 +3520,8 @@
  	CFLAGS="$CFLAGS -DIODBC";
  	ODBC_INC=$with_iodbc/include;
  	odbc=true
@@ -9,11 +9,4 @@ $OpenBSD: patch-configure,v 1.1 2001/12/27 02:56:38 jcs Exp $
 +	odbc=false
  fi
  
- # Check whether --with-iodbc or --without-iodbc was given.
--if test "${with_iodbc+set}" = set; then
--  withval="$with_iodbc"
-+if test "${with_unixodbc+set}" = set; then
-+  withval="$with_unixodbc"
-   :
- fi
- 
+ # Check whether --with-unixodbc or --without-unixodbc was given.

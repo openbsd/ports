@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/12 00:12:48 jcs Exp $
 
-DISTNAME=	freetds-0.53
+DISTNAME=	freetds-0.60
 CATEGORIES=	databases
-NEED_VERSION=	1.503
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
