@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/01/16 22:29:52 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/01/19 15:21:15 brad Exp $
 
 DISTNAME=	bash-1.14.7
 PKGNAME=	${DISTNAME}p1
@@ -22,5 +22,8 @@ FLAVOR?=
 .if ${FLAVOR:L} == "static"
 MAKE_ENV=	CPP_DEFINES="-DSYSDEP_LDFLAGS=-static"
 .endif
+
+post-install:
+	@strip ${PREFIX}/bin/bash
 
 .include <bsd.port.mk>
