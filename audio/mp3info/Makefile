@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/04/27 22:48:09 margarida Exp $
+# $OpenBSD: Makefile,v 1.16 2003/12/09 02:33:45 margarida Exp $
 
 COMMENT=	"MP3 information tool"
 
@@ -21,11 +21,17 @@ EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mp3info
-	cd ${WRKSRC} && ${INSTALL_DATA} README \
-	    ${PREFIX}/share/doc/mp3info
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+ALL_TARGET=	mp3info doc
+INSTALL_TARGET=	install-no_x11
+.else
+USE_X11=	Yes
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+	
+ALL_TARGET=
+INSTALL_TARGET=
+.endif
 
 .include <bsd.port.mk>
