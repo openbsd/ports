@@ -1,0 +1,10 @@
+$OpenBSD: patch-kmrml_kmrml_mrmlsearch_cpp,v 1.1 2003/03/02 21:23:03 pvalchev Exp $
+--- kmrml/kmrml/mrmlsearch.cpp.orig	Sun Mar  2 11:48:44 2003
++++ kmrml/kmrml/mrmlsearch.cpp	Sun Mar  2 11:48:55 2003
+@@ -70,5 +70,5 @@ int main( int argc, char **argv )
+ 
+     return execlp( "kfmclient",
+                    "kfmclient", "openURL", QFile::encodeName(url.url()).data(),
+-                   "text/mrml", 0 );
++                   "text/mrml", (void *)NULL);
+ }
