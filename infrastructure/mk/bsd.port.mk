@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.238 2000/03/27 01:52:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.239 2000/03/28 09:27:03 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2121,9 +2121,13 @@ clean-depends:
 #
 describe:
 .if !defined(NO_DESCRIBE) 
-	@echo -n "${PKGNAME}|${.CURDIR:S,^${PORTSDIR}/,,}|"; \
-	echo -n "${PREFIX}|"; \
-	if [ -f ${COMMENT} ]; then \
+	@echo -n "${PKGNAME}|${.CURDIR:S,^${PORTSDIR}/,,}|"
+.  if ${PREFIX} == ${LOCALBASE}
+	@echo -n "|"
+.  else
+	@echo -n "|${PREFIX}"
+.  endif
+	@if [ -f ${COMMENT} ]; then \
 		echo -n "`cat ${COMMENT}`|"; \
 	else \
 		echo -n "** No Description|"; \
