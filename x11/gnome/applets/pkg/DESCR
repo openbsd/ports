@@ -1,7 +1,0 @@
-This package contains the GNOME panel, the menu system, the session
-manager, the help system, the GNOME terminal, some essential applets and
-other basic tools.
-
-For more information about the GNOME project, visit:
-
-WWW: ${HOMEPAGE}

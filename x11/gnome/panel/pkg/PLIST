@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:51:44 marcm Exp $
-@pkgcfl gnome-core-*
+@comment $OpenBSD: PLIST,v 1.6 2003/09/26 05:04:05 marcm Exp $
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/gnome-panel-preferences

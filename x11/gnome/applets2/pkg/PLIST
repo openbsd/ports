@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/06 06:20:16 marcm Exp $
-@pkgcfl gnome-applets-1*
+@comment $OpenBSD: PLIST,v 1.5 2003/09/26 05:04:05 marcm Exp $
 bin/gkb_xmmap
 lib/bonobo/servers/GNOME_BattstatApplet.server
 lib/bonobo/servers/GNOME_CharpickerApplet.server
