@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2003/11/24 21:06:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.76 2003/12/21 09:31:18 jakob Exp $
 
 VERSION=	2.0.16-20031113
 
@@ -18,7 +18,7 @@ FLAVORS+=	pgsql
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpgsql}
-LIB_DEPENDS+=	pq.3:postgresql-7.*.*:databases/postgresql
+LIB_DEPENDS+=	pq.3:postgresql-clients-7.*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
