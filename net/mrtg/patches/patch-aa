@@ -1,0 +1,14 @@
+--- src/rateup.c.orig	Thu Feb 18 16:14:08 1999
++++ src/rateup.c	Mon Feb 22 20:58:08 1999
+@@ -34,10 +34,8 @@
+ #include <ctype.h>
+ 
+ /* BSDI 2.0.1 does not have malloc.h */
+-#ifndef bsdi
+-#ifndef __FreeBSD__
++#if !defined(bsdi) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+-#endif
+ #endif
+ 
+ /* WATCOM C/C++ 10.6 under Win95/NT */
