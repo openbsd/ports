@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/09/20 22:42:12 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/01/25 13:43:24 naddy Exp $
 bin/tf
 man/man1/tf.1
 share/tinyfugue/README
 share/tinyfugue/alias.tf
 share/tinyfugue/at.tf
+share/tinyfugue/bind-bash.tf
+share/tinyfugue/bind-emacs.tf
 share/tinyfugue/changes.tf
 share/tinyfugue/color.tf
 share/tinyfugue/complete.tf
+share/tinyfugue/completion.tf
 share/tinyfugue/examples.old
 share/tinyfugue/factoral.tf
+share/tinyfugue/factorial.tf
+share/tinyfugue/file-xfer.tf
 share/tinyfugue/filexfer.tf
 share/tinyfugue/finger.tf
 share/tinyfugue/grep.tf
@@ -22,17 +27,22 @@ share/tinyfugue/kbregion.tf
 share/tinyfugue/kbstack.tf
 share/tinyfugue/lisp.tf
 share/tinyfugue/local-eg.tf
+share/tinyfugue/local.tf.sample
 share/tinyfugue/map.tf
 share/tinyfugue/pcmd.tf
+share/tinyfugue/pref-shell.tf
 share/tinyfugue/psh.tf
 share/tinyfugue/quoter.tf
 share/tinyfugue/relog.tf
 share/tinyfugue/rwho.tf
 share/tinyfugue/self.tf
+share/tinyfugue/space_page.tf
 share/tinyfugue/spc-page.tf
 share/tinyfugue/spedwalk.tf
+share/tinyfugue/speedwalk.tf
 share/tinyfugue/spell.tf
 share/tinyfugue/stack-q.tf
+share/tinyfugue/stack_queue.tf
 share/tinyfugue/stdlib.tf
 share/tinyfugue/textutil.tf
 share/tinyfugue/tf-help
@@ -44,4 +54,5 @@ share/tinyfugue/tools.tf
 share/tinyfugue/tr.tf
 share/tinyfugue/watch.tf
 share/tinyfugue/world-q.tf
+share/tinyfugue/worldqueue.tf
 @dirrm share/tinyfugue
