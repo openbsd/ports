@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2004/11/24 11:40:00 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -72,6 +72,7 @@ CONFIGURE_ARGS+=--with-features=huge
 
 .if ${FLAVOR:L:Mperl}
 CONFIGURE_ARGS+=--enable-perlinterp
+WANTLIB+=	m perl util
 .endif
 
 .if ${FLAVOR:L:Mpython}
@@ -80,12 +81,14 @@ CONFIGURE_ENV+=	vi_cv_path_python=${LOCALBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
 LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+WANTLIB+=	m pthread util
 .endif
 
 .if ${FLAVOR:L:Mruby}
 CONFIGURE_ARGS+=--enable-rubyinterp
 MAKE_ENV+=	RUBY="${LOCALBASE}/bin/ruby"
 LIB_DEPENDS+=	ruby::lang/ruby
+WANTLIB+=	m
 .endif
 
 .if ${FLAVOR:L:Mno_x11} && \
@@ -96,9 +99,11 @@ CONFIGURE_ARGS+=--disable-gui --without-x
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=any
+WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mathena} && \
 	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk} && \
 	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
@@ -108,6 +113,10 @@ WANTLIB+=	ICE SM X11 Xext Xi Xt glib gmodule m
 	        !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk}
 LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
+WANTLIB+=	ICE SM X11 Xext Xft Xinerama Xrender Xt atk-1.0.0.0 \
+		fontconfig freetpe glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
+		pangoxft-1.0.0.0
 .else
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
 .endif
