@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/30 21:54:52 angelos Exp $
-
-BROKEN=		waiting for turans@ to verify
+# $OpenBSD: Makefile,v 1.9 1999/11/14 21:53:08 turan Exp $
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone

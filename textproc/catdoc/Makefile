@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/31 09:36:30 angelos Exp $
-
-BROKEN=		left for turans@ to verify
+# $OpenBSD: Makefile,v 1.4 1999/11/14 21:53:45 turan Exp $
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
