@@ -1,7 +1,7 @@
-$OpenBSD: patch-build,v 1.5 2001/09/27 16:52:40 brad Exp $
---- build.orig	Thu Sep 27 08:46:11 2001
-+++ build	Thu Sep 27 08:49:25 2001
-@@ -345,20 +345,6 @@ case $maketarg in
+$OpenBSD: patch-build,v 1.6 2001/11/19 02:01:58 brad Exp $
+--- build.orig	Sat Nov 17 20:56:27 2001
++++ build	Sat Nov 17 21:01:46 2001
+@@ -332,21 +332,6 @@ case $maketarg in
  	  echo "Including SSL functionality"
  	fi
  
@@ -13,16 +13,17 @@ $OpenBSD: patch-build,v 1.5 2001/09/27 16:52:40 brad Exp $
 -        ln -s imap/imapd imapd
 -        if [ -s ipopd    ] ; then rm -f ipopd    ; fi
 -        ln -s imap/ipopd ipopd
--        echo "Making c-client library, mtest and imapd"
--        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+-        echo "Making c-client library, imapd, and ipopd"
+-	echo $S1 $S2 $S3 $S4 $K1 > imap/SPECIALS
 -        cd $PHOME/imap
--        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+-        eval echo eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
+-        eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
 -        echo ''
 -
          echo "Making Pico and Pilot"
          cd $PHOME/pico
          eval echo make "$makeargs" -f makefile.$picotarg
-@@ -374,10 +360,6 @@ case $maketarg in
+@@ -362,10 +347,6 @@ case $maketarg in
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot rpload rpdump ipop2d ipop3d
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -33,7 +34,7 @@ $OpenBSD: patch-build,v 1.5 2001/09/27 16:52:40 brad Exp $
          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico       ; fi
          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot     ; fi
          if [ -s ../pine/rpload ] ;    then ln ../pine/rpload rpload   ; fi
-@@ -385,7 +367,7 @@ case $maketarg in
+@@ -373,7 +354,7 @@ case $maketarg in
          cd $PHOME
          echo ''
          echo "Links to executables are in bin directory:"
@@ -42,10 +43,11 @@ $OpenBSD: patch-build,v 1.5 2001/09/27 16:52:40 brad Exp $
  	case $maketarg in
  	    mnt)    echo "Fixing stacksizes ..."
  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-@@ -421,15 +403,12 @@ case $maketarg in
+@@ -409,16 +390,12 @@ case $maketarg in
  
  
      clean) # This only sort of works 
+-        rm -f c-client mtest imapd ipopd
 -        echo "Cleaning c-client and imapd"
 -	cd $PHOME/imap
 -	make clean

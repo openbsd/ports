@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.36 2001/09/28 19:06:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.37 2001/11/19 02:01:57 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
 COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
-VERSION=	4.40
-PICO_VERSION=	4.1
+VERSION=	4.41
+PICO_VERSION=	4.2
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine+pico-${VERSION}p1
+PKGNAME=	pine+pico-${VERSION}
 FULLPKGNAME-pico=pico-${PICO_VERSION}
-PKGNAME-pine=	pine-${VERSION}p1
-NEED_VERSION=	1.460
+PKGNAME-pine=	pine-${VERSION}
+NEED_VERSION=	1.489
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
@@ -33,10 +33,10 @@ SUBPACKAGE?=
 CATEGORIES=	editors
 .elif ${SUBPACKAGE} == "-pine"
 CATEGORIES=	mail news
-LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
+LIB_DEPENDS=	c-client.4:c-client->=4.41:mail/c-client
 .else
 CATEGORIES=	mail news editors
-LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
+LIB_DEPENDS=	c-client.4:c-client->=4.41:mail/c-client
 .endif
 
 .if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
@@ -48,13 +48,13 @@ MAKE_FLAGS=	LDAPLIBS="-lldap -llber" \
 		LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .endif
 
-post-patch:
+do-configure:
+	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+
+pre-build:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 		${WRKSRC}/doc/tech-notes.txt > ${WRKSRC}/doc/tech-notes.txt.new
 	@mv ${WRKSRC}/doc/tech-notes.txt.new ${WRKSRC}/doc/tech-notes.txt
-
-do-configure:
-	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
