@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/12/31 17:05:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2004/03/05 21:54:35 avsm Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -35,7 +35,7 @@ FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
-	${MACHINE_ARCH} == "alpha"
+	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=	world bootstrap opt opt.opt
 SED_PLIST=	|sed -e '/^%%native%%$$/r${PKGDIR}/PFRAG.native' -e '//d'
 .else

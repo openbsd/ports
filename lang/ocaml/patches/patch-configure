@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.4 2004/01/25 17:02:59 sturm Exp $
---- configure.orig	2003-09-25 10:17:13.000000000 +0200
-+++ configure	2004-01-24 09:51:55.000000000 +0100
-@@ -555,6 +555,7 @@ case "$host" in
+$OpenBSD: patch-configure,v 1.5 2004/03/05 21:54:36 avsm Exp $
+--- configure.orig	2003-09-25 09:17:13.000000000 +0100
++++ configure	2004-03-05 15:44:08.000000000 +0000
+@@ -537,6 +537,7 @@ case "$host" in
+   alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
+   alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
+   alpha*-*-openbsd*)            arch=alpha; system=openbsd;;
++  amd64-*-openbsd*)		arch=amd64; system=openbsd;;
+   sparc*-*-sunos4.*)            arch=sparc; system=sunos;;
+   sparc*-*-solaris2.*)          arch=sparc; system=solaris;;
+   sparc*-*-*bsd*)               arch=sparc; system=bsd;;
+@@ -555,6 +556,7 @@ case "$host" in
    powerpc-*-aix*)               arch=power; model=ppc; system=aix;;
    powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
@@ -9,18 +17,30 @@ $OpenBSD: patch-configure,v 1.4 2004/01/25 17:02:59 sturm Exp $
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
-@@ -629,8 +630,10 @@ esac
+@@ -629,8 +631,11 @@ esac
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
 +  alpha,*,openbsd) profiling='prof';;
    i386,*,linux_elf) profiling='prof';;
    i386,*,bsd_elf) profiling='prof';;
++  amd64,*,openbsd) profiling='prof';;
 +  sparc,*,bsd) profiling='prof';;
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1411,7 +1414,7 @@ fi
+@@ -654,8 +659,8 @@ if test "$arch" != "none"; then
+         echo "$d/objcopy does not support option --redefine-sym, discarded"
+         continue;
+       fi
+-      if test `$d/nm --version | grep -s -c 'GNU nm'` -eq 0; then
+-        echo "$d/nm is not from GNU binutils, discarded"
++      if test `$d/nm --version 2>&1|grep -E -s -c 'GNU nm|OpenBSD'` -eq 0; then
++        echo "$d/nm is not from GNU binutils or OpenBSD, discarded"
+         continue;
+       fi
+       binutils_objcopy="$d/objcopy"
+@@ -1411,7 +1416,7 @@ fi
  
  (
  cd ../../camlp4/config
