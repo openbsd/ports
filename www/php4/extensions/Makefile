@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/12 04:30:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/17 01:33:57 avsm Exp $
 
 PKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -255,7 +255,7 @@ MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared=${LOCALBASE} \
 			--with-expat-dir=shared,${LOCALBASE}
-XSLT_DEPENDS=		sablot.90::textproc/sablotron expat.2::textproc/expat
+XSLT_DEPENDS=		sablot.95::textproc/sablotron expat.2::textproc/expat
 .endif
 
 .for i in ${MULTI_PACKAGES}
