@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_php-config_in,v 1.1 2004/11/24 13:15:09 alek Exp $
+--- scripts/php-config.in.orig	Thu Nov 18 21:50:05 2004
++++ scripts/php-config.in	Thu Nov 18 21:51:36 2004
+@@ -1,8 +1,8 @@
+ #! /bin/sh
+ 
+-prefix="@prefix@"
++prefix=OPENBSD_PEAR_ROOT
+ version="@PHP_VERSION@"
+-includedir="@includedir@/php"
++includedir="@includedir@"
+ includes="-I$includedir -I$includedir/main -I$includedir/Zend"
+ ldflags="@PHP_LDFLAGS@"
+ libs="@EXTRA_LIBS@"

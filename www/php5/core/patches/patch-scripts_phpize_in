@@ -1,0 +1,16 @@
+$OpenBSD: patch-scripts_phpize_in,v 1.1 2004/11/24 13:15:09 alek Exp $
+--- scripts/phpize.in.orig	Thu Nov 18 21:27:27 2004
++++ scripts/phpize.in	Thu Nov 18 21:33:09 2004
+@@ -1,9 +1,9 @@
+ #!/bin/sh
+ 
+ # Variable declaration
+-prefix='@prefix@'
+-phpdir="$prefix/lib/php/build"
+-includedir="$prefix/include/php"
++prefix=OPENBSD_PEAR_ROOT
++phpdir="$prefix/build"
++includedir="$prefix/include"
+ builddir="`pwd`"
+ 
+ FILES_BUILD="mkdep.awk scan_makefile_in.awk shtool"
