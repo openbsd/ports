@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/01/06 00:29:48 jsg Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/28 22:24:53 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "hppa"
+BROKEN=		"gcc bug"
+.endif
 
 COMMENT=	"graphical adventure game interpreter"
 DISTNAME=	scummvm-0.7.0
