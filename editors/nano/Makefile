@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2001/11/07 01:02:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2001/12/18 18:53:43 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
-DISTNAME=	nano-1.0.6
+DISTNAME=	nano-1.0.7
 CATEGORIES=	editors
 NEED_VERSION=	1.474
 HOMEPAGE=	http://www.nano-editor.org/
@@ -25,7 +25,7 @@ FLAVOR?=
 
 MODULES=	gettext
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib'
 .if ${FLAVOR:L:Mslang}
