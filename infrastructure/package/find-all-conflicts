@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.1 2000/04/19 14:31:18 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.2 2001/03/24 15:16:53 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -71,8 +71,11 @@ sub analyze {
 		}
 	}
 	if ($default_conflict) {
-		$name =~ m/^(.*)-\d/ or $name =~ m/^(.*)-/;
-		push @$conflict_list, "\Q$1\E\-.*";
+		if ($name =~ m/^(.*)-\d/) {
+			push @$conflict_list, "\Q$1\E-\d.*";
+		} elsif ($name =~ m/^(.*)-/) {
+			push @$conflict_list, "\Q$1\E\-.*";
+		}
 	}
 	$conflicts{$name}=$conflict_list;
 }
