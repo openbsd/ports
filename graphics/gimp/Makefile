@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2001/05/24 02:27:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.61 2001/06/05 20:16:03 brad Exp $
 
-COMMENT=	"the GNU Image Manipulation Program"
+COMMENT=	"GNU Image Manipulation Program"
 
 DISTNAME=	gimp-1.2.1
 CATEGORIES=	graphics
