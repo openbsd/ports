@@ -1,14 +1,17 @@
---- template/freebsd.orig	Sat Jun 14 20:12:51 1997
-+++ template/freebsd	Sat Jun 14 20:13:06 1997
-@@ -1,9 +1,9 @@
- AROPT:cq
- SHARED_LIB:-fpic -DPIC
--CFLAGS:-O2 -m486 -pipe
-+CFLAGS:-pipe -O2
- SRCH_INC:/usr/local/include
- SRCH_LIB:/usr/local/lib
--USE_LOCALE:no
-+USE_LOCALE:yes
- DLSUFFIX:.so
- YFLAGS:-d
- YACC:bison -y
+*** template/openbsd.orig	Mon May 18 12:39:02 1998
+--- template/openbsd	Mon May 18 12:39:17 1998
+***************
+*** 1,6 ****
+  AROPT:cq
+  SHARED_LIB:-fpic -DPIC
+! CFLAGS:-O2 -m486 -pipe
+  SRCH_INC:/usr/local/include
+  SRCH_LIB:/usr/local/lib
+  USE_LOCALE:no
+--- 1,6 ----
+  AROPT:cq
+  SHARED_LIB:-fpic -DPIC
+! CFLAGS:-O2 -pipe
+  SRCH_INC:/usr/local/include
+  SRCH_LIB:/usr/local/lib
+  USE_LOCALE:no

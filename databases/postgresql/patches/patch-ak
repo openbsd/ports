@@ -1,0 +1,11 @@
+--- interfaces/libpgtcl/Makefile.in.orig	Tue Apr 21 23:11:21 1998
++++ interfaces/libpgtcl/Makefile.in	Tue Apr 21 23:11:34 1998
+@@ -31,7 +31,7 @@
+ install-shlib-dep :=
+ shlib             := 
+ 
+-LIBPQ			= -L $(SRCDIR)/interfaces/libpq -lpq
++LIBPQ			= -L $(SRCDIR)/interfaces/libpq -lpq -lcrypt
+ 
+ ifeq ($(PORTNAME), linux)
+   ifdef LINUX_ELF
