@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/02/01 14:59:24 espie Exp $
-${KDE}/libkfilereplacepart.so.1.0
-${KDE}/libkxsldbgpart.so.1.0
-lib/libkommanderwidgets.so.0.0
-lib/libqtnotfier.so.4.7
-lib/libxsldbg.so.4.7
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/18 17:42:01 pvalchev Exp $
+@lib ${KDE}/libkfilereplacepart.so.1.0
+@lib ${KDE}/libkxsldbgpart.so.1.0
+@lib lib/libkommanderwidgets.so.0.0
+@lib lib/libqtnotfier.so.4.7
+@lib lib/libxsldbg.so.4.7

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/07/24 12:47:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 17:42:01 pvalchev Exp $
 bin/kmdr-editor
 bin/kmdr-executor
 bin/kxsldbg
 bin/quanta
 include/kxsldbg_partif.h
 include/kxsldbgif.h
+${KDE}/
 ${KDE}/libkfilereplacepart.la
 ${KDE}/libkxsldbgpart.la
 lib/libkommanderwidgets.la
@@ -17,6 +18,7 @@ share/applnk/Development/
 share/applnk/Development/kmdr-editor.desktop
 share/applnk/Development/kxsldbg.desktop
 share/applnk/Development/quanta.desktop
+share/apps/
 share/apps/kafkapart/
 share/apps/kafkapart/entities
 share/apps/kafkapart/pics/
@@ -1313,6 +1315,8 @@ share/apps/templates/
 share/apps/templates/text/
 share/apps/templates/text/scripts/
 share/apps/templates/text/scripts/demo.php
+share/doc/HTML/
+share/doc/HTML/en/
 share/doc/HTML/en/kxsldbg/
 share/doc/HTML/en/kxsldbg/1downarrow.png
 share/doc/HTML/en/kxsldbg/breakpoints_window.png
@@ -1403,6 +1407,8 @@ share/doc/HTML/en/quanta/ttab.png
 share/doc/HTML/en/quanta/view_sidetree.png
 share/doc/HTML/en/quanta/vplsourceview.png
 share/doc/HTML/en/quanta/working-with-quanta.docbook
+share/icons/
+share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/1downarrow.png
@@ -1461,7 +1467,10 @@ share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kmdr/
 share/icons/locolor/32x32/apps/kmdr/executor.png
+share/mimelnk/
+share/mimelnk/application/
 share/mimelnk/application/x-kommander.desktop
+share/services/
 share/services/kfilereplacepart.desktop
 share/services/kxsldbg_part.desktop
 %%SHARED%%
