@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/10/31 08:49:40 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2004/11/09 21:59:42 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -64,7 +64,7 @@ PKGDEBUG=-debug
 PKGDEBUG=
 .endif
 
-FULLPKGNAME=		qt3-mt-${VERSION}p3${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p4${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
 
 .if !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
