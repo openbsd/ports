@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_proto_h,v 1.1 2005/04/03 11:05:07 espie Exp $
+--- src/proto.h.orig	Sun Apr  3 12:59:30 2005
++++ src/proto.h	Sun Apr  3 12:59:54 2005
+@@ -94,7 +94,7 @@ char *PushByte(struct Push *, char);
+ char *PushString(struct Push *, const char *);
+ char *PushNString(struct Push *, const char *, int);
+ 
+-char *strcasestr (char *, const char *);
++char *strcasestr (const char *, const char *);
+ char *strsav(const char *);
+ char *strreplace(char *, char *);
+ void strcpymax(char *, const char *, int);

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2005/04/03 11:05:07 espie Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
 VERSION=		2.1.8
 DISTNAME=		hypermail-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail www
 
 HOMEPAGE=		http://www.hypermail.org/
