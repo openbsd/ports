@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/24 22:47:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/24 22:48:32 naddy Exp $
 # $FreeBSD: ports/graphics/vid/Makefile,v 1.5 2001/02/21 07:48:56 roger Exp $
 
-COMMENT=	"Get images from USB cameras using the OV511(+) chipsets"
+COMMENT=	"get images from USB cameras using the OV511(+) chipsets"
 
 DISTNAME=	vid-1.0.1
 CATEGORIES=	graphics
@@ -25,5 +25,7 @@ MAKE_FLAGS=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vid ${PREFIX}/bin
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
