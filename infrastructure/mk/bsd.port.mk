@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.600 2004/01/18 07:52:49 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.601 2004/01/20 17:42:12 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -318,13 +318,13 @@ _FLAVOR_EXT2:=
 .if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}${SUBPACKAGE}' -e '//d' -e '/^%%${_i}%%$$/d'
 .    else
 _FLAVOR_EXT2:=${_FLAVOR_EXT2}-${_i}
 .    if empty(PSEUDO_FLAVORS:L:M${_i})
 FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
 .    endif
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}${SUBPACKAGE}' -e '//d'
 .    endif
 .  endfor
 .endif
