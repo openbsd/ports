@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/04 17:13:26 naddy Exp $
+bin/mlcc
+bin/mlclient
+bin/mlterm
+@comment lib/libkik.a
+@comment lib/libkik.la
+@comment lib/libmkf.a
+@comment lib/libmkf.la
+@comment lib/mlterm/libathena.a
+@comment lib/mlterm/libathena.la
+@comment lib/mlterm/libmotif.a
+@comment lib/mlterm/libmotif.la
+@comment lib/mlterm/libmozmodern.a
+@comment lib/mlterm/libmozmodern.la
+@comment lib/mlterm/libnext.a
+@comment lib/mlterm/libnext.la
+@comment lib/mlterm/libsample.a
+@comment lib/mlterm/libsample.la
+@comment lib/mlterm/libsample2.a
+@comment lib/mlterm/libsample2.la
+libexec/mlconfig
+libexec/mlterm-menu
+man/man1/mlclient.1
+man/man1/mlterm.1
+share/examples/mlterm/aafont
+share/examples/mlterm/color
+share/examples/mlterm/font
+share/examples/mlterm/font.ja
+share/examples/mlterm/key
+share/examples/mlterm/main
+share/examples/mlterm/main.ja
+share/examples/mlterm/taafont
+share/examples/mlterm/termcap
+share/examples/mlterm/tfont
+share/examples/mlterm/vaafont
+share/examples/mlterm/vfont
+share/examples/mlterm/xim
+share/locale/de/LC_MESSAGES/mlconfig.mo
+share/locale/ja/LC_MESSAGES/mlconfig.mo
+share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
+%%SHARED%%
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/examples/mlterm
+@dirrm lib/mlterm
