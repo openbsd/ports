@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2000/10/22 14:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2001/01/19 03:45:58 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.62.1
-PKGNAME=	windowmaker-0.62.1
+DISTNAME=	WindowMaker-0.63.1
+PKGNAME=	windowmaker-0.63.1
 CATEGORIES=	x11
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
