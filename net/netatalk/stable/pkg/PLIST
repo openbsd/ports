@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/22 11:18:19 naddy Exp $
 bin/achfile
 bin/acleandir.rc
 bin/add_netatalk_printer
@@ -31,7 +31,6 @@ bin/papstatus
 bin/parsecode
 bin/psorder
 bin/single2bin
-bin/test_parse_mtab
 bin/timeout
 bin/unbin
 bin/unhex
@@ -105,7 +104,6 @@ man/man5/netatalk.conf.5
 man/man5/papd.conf.5
 man/man8/afpd.8
 man/man8/atalkd.8
-man/man8/pap.8
 man/man8/papd.8
 man/man8/papstatus.8
 man/man8/psf.8
@@ -137,11 +135,8 @@ sbin/tfwpap
 sbin/tfwpaprev
 share/aclocal/netatalk.m4
 share/doc/netatalk/COPYRIGHT
-share/doc/netatalk/COPYRIGHT.mtab
 share/doc/netatalk/FAQ
 share/doc/netatalk/README.hidden-items
-share/doc/netatalk/README.mtab
-share/doc/netatalk/README.mtab.distribution
 share/doc/netatalk/README.platforms
 share/doc/netatalk/README.veto
 share/examples/netatalk/AppleVolumes.default

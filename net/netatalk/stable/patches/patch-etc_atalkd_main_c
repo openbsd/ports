@@ -1,8 +1,8 @@
-$OpenBSD: patch-etc_atalkd_main_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
---- etc/atalkd/main.c.orig	Sat Jun 15 04:22:01 2002
-+++ etc/atalkd/main.c	Sat Jun 15 04:25:31 2002
-@@ -274,12 +274,12 @@ void as_timer(void)
- 		    syslog( LOG_INFO, "config for no router" );
+$OpenBSD: patch-etc_atalkd_main_c,v 1.2 2003/08/22 11:18:19 naddy Exp $
+--- etc/atalkd/main.c.orig	Sat Oct  5 23:20:13 2002
++++ etc/atalkd/main.c	Fri Jan  3 03:51:16 2003
+@@ -278,12 +278,12 @@ static void as_timer(int sig)
+ 		    LOG(log_info, logtype_atalkd, "config for no router" );
  		      
  		    if ( iface->i_flags & IFACE_PHASE2 ) {
 -			iface->i_rt->rt_firstnet = 0;
@@ -15,10 +15,10 @@ $OpenBSD: patch-etc_atalkd_main_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
 +				htons(1), htons( STARTUP_LASTNET ));
  		    }
  		    if ( looproute( iface, RTMP_ADD ) ) { /* -1 or 1 */
- 			syslog( LOG_ERR,
-@@ -372,15 +372,15 @@ void as_timer(void)
+ 			LOG(log_error, logtype_atalkd,
+@@ -376,15 +376,15 @@ static void as_timer(int sig)
  
- 		    syslog( LOG_INFO, "as_timer last gateway down" );
+ 		    LOG(log_info, logtype_atalkd, "as_timer last gateway down" );
  
 -		    /* Set netrange to 0-fffe.  */
 +		    /* Set netrange to 1-fffe.  */

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/22 11:18:19 naddy Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
-DISTNAME=	netatalk-1.5.3.1
+DISTNAME=	netatalk-1.6.3
 CATEGORIES=	net
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
@@ -24,16 +24,20 @@ CONFIGURE_STYLE=	gnu
 CONFDIR=		${SYSCONFDIR}/netatalk
 SUBST_VARS=		CONFDIR
 
+# Experimantal at the moment.
+# LIB_DEPENDS=	db.3::databases/db
+# CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 
-CONFIGURE_ARGS+=	--with-flock-locks
 CONFIGURE_ARGS+=	--with-ssl=/usr
 CONFIGURE_ARGS+=	--with-config-dir=${CONFDIR}
 CONFIGURE_ARGS+=	--with-pkgconfdir=${CONFDIR}
 CONFIGURE_ARGS+=	--with-uams-path=${PREFIX}/lib/netatalk/uams
 CONFIGURE_ARGS+=	--with-tcp-wrappers
+CONFIGURE_ARGS+=	--disable-overwrite
+CONFIGURE_ARGS+=	--with-did=last
 
 post-patch:
-	@rm -rf $WRKSRC/sys/netatalk/*.h
 	@cp /usr/include/netatalk/*.h ${WRKSRC}/sys/netatalk
 
 post-install:
@@ -56,8 +60,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT \
 		${PREFIX}/share/doc/netatalk
 
-.for i in COPYRIGHT.mtab FAQ README.hidden-items README.mtab \
-	README.mtab.distribution README.platforms README.veto
+.for i in FAQ README.hidden-items \
+	README.platforms README.veto
 	${INSTALL_DATA} ${WRKSRC}/doc/$i \
 		${PREFIX}/share/doc/netatalk
 .endfor

@@ -1,13 +1,13 @@
-$OpenBSD: patch-libatalk_dsi_dsi_stream_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
---- libatalk/dsi/dsi_stream.c.orig	Tue Jul 23 17:00:48 2002
-+++ libatalk/dsi/dsi_stream.c	Tue Jul 23 17:02:36 2002
-@@ -79,7 +79,8 @@ size_t dsi_stream_read(DSI *dsi, void *d
+$OpenBSD: patch-libatalk_dsi_dsi_stream_c,v 1.2 2003/08/22 11:18:19 naddy Exp $
+--- libatalk/dsi/dsi_stream.c.orig	Fri Jan  3 02:32:21 2003
++++ libatalk/dsi/dsi_stream.c	Fri Jan  3 02:34:13 2003
+@@ -78,7 +78,8 @@ size_t dsi_stream_read(DSI *dsi, void *d
      else if (len > 0)
        stored += len;
      else { /* eof or error */
--      syslog(LOG_ERR, "dsi_stream_read(%d): %s", len, strerror(errno));
-+	if (len !=0 ) /* error */ 
-+      		syslog(LOG_ERR, "dsi_stream_read(%d): %s", len, strerror(errno));
+-      LOG(log_error, logtype_default, "dsi_stream_read(%d): %s", len, (len < 0)?strerror(errno):"unexpected EOF");
++     if (len !=0) /* error */
++      	LOG(log_error, logtype_default, "dsi_stream_read(%d): %s", len, (len < 0)?strerror(errno):"unexpected EOF");
        break;
      }
    }

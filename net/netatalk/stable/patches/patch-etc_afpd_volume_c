@@ -1,50 +1,56 @@
-$OpenBSD: patch-etc_afpd_volume_c,v 1.2 2002/07/26 15:12:17 naddy Exp $
---- etc/afpd/volume.c.orig	Sat Feb 16 09:09:31 2002
-+++ etc/afpd/volume.c	Wed Jul 24 16:59:53 2002
-@@ -1050,7 +1050,7 @@ int 	ibuflen, *rbuflen;
-     struct vol		*volume;
-     char	*data;
-     int			vcnt, len;
--
-+    u_int32_t	secs;
- 
-     if (!volumes)
-         load_volumes(obj);
-@@ -1090,9 +1090,10 @@ int 	ibuflen, *rbuflen;
-         *rbuflen = 0;
-         return AFPERR_PARAM;
-     }
--    tv.tv_sec = AD_DATE_FROM_UNIX(tv.tv_sec);
--    memcpy(data, &tv.tv_sec, sizeof( u_int32_t));
--    data += sizeof( u_int32_t);
-+    secs = tv.tv_sec;
-+    secs = htonl(secs);
-+    memcpy(data, &secs, sizeof(secs));
-+    data += sizeof(secs);
-     *data = vcnt;
-     return( AFP_OK );
- }
-@@ -1177,11 +1178,11 @@ int		ibuflen, *rbuflen;
-     bitmap = htons( bitmap );
-     memcpy(rbuf, &bitmap, sizeof( bitmap ));
- 
--    curdir = volume->v_dir;
-     if ( chdir( volume->v_path ) < 0 ) {
-         ret = AFPERR_PARAM;
-         goto openvol_err;
-     }
-+    curdir = volume->v_dir;
+$OpenBSD: patch-etc_afpd_volume_c,v 1.3 2003/08/22 11:18:19 naddy Exp $
+--- etc/afpd/volume.c.orig	Mon Aug 18 14:32:40 2003
++++ etc/afpd/volume.c	Mon Aug 18 14:37:44 2003
+@@ -385,11 +385,11 @@ static void volset(struct vol_option *op
  
  #ifdef CNID_DB
-     if (volume->v_dbpath)
-@@ -1231,9 +1232,8 @@ int		ibuflen, *rbuflen;
-         }
-     }
-     if ( ovol != NULL ) {
-+	if (chdir(ovol->v_path) == 0) {
-         curdir = ovol->v_dir;
--        if ( chdir( ovol->v_path ) < 0 ) {
--            return( AFPERR_PARAM );
-         }
+     } else if (optionok(tmp, "dbpath:", val)) {
+-	char t[MAXPATHLEN + 1];
++	char t[MAXPATHLEN];
+         if (options[VOLOPT_DBPATH].c_value)
+             free(options[VOLOPT_DBPATH].c_value);
+ 
+-	volxlate(obj, t, MAXPATHLEN, val, pwd, NULL);
++	volxlate(obj, t, (MAXPATHLEN-1), val, pwd, NULL);
+ 	options[VOLOPT_DBPATH].c_value = strdup(t + 1);
+ #endif /* CNID_DB */
+     } else if (optionok(tmp, "umask:", val)) {
+@@ -571,13 +571,13 @@ static int accessvol(args, name)
+ const char *args;
+ const char *name;
+ {
+-    char buf[MAXPATHLEN + 1], *p;
++    char buf[MAXPATHLEN], *p;
+     struct group *gr;
+ 
+     if (!args)
+         return -1;
+ 
+-    strncpy(buf, args, sizeof(buf));
++    (void)strlcpy(buf, args, sizeof(buf));
+     if ((p = strtok(buf, ",")) == NULL) /* nothing, return okay */
+         return -1;
+ 
+@@ -688,7 +688,7 @@ int		user;
+ struct passwd *pwent;
+ {
+     FILE		*fp;
+-    char		path[ MAXPATHLEN + 1], tmp[ MAXPATHLEN + 1],
++    char		path[MAXPATHLEN], tmp[MAXPATHLEN],
+     volname[ AFPVOL_NAMELEN + 1 ], buf[ BUFSIZ ],
+     type[ 5 ], creator[ 5 ];
+     char		*u, *p;
+@@ -699,10 +699,10 @@ struct passwd *pwent;
+     if (!p1)
+         return -1;
+ 
+-    strcpy( path, p1 );
++    (void)strlcpy(path, p1, sizeof(path));
+     if ( p2 != NULL ) {
+-        strcat( path, "/" );
+-        strcat( path, p2 );
++        (void)strlcat(path, "/", sizeof(path));
++        (void)strlcat( path, p2, sizeof(path));
      }
  
+     if (NULL == ( fp = fopen( path, "r" )) ) {

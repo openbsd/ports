@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_atalk_paths_h,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+$OpenBSD: patch-include_atalk_paths_h,v 1.2 2003/08/22 11:18:19 naddy Exp $
 --- include/atalk/paths.h.orig	Wed Aug  1 05:51:12 2001
 +++ include/atalk/paths.h	Fri Jun 21 06:16:32 2002
 @@ -16,65 +16,33 @@

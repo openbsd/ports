@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_atalk_util_h,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+$OpenBSD: patch-include_atalk_util_h,v 1.2 2003/08/22 11:18:19 naddy Exp $
 --- include/atalk/util.h.orig	Fri Feb  8 11:01:36 2002
 +++ include/atalk/util.h	Tue Jun 25 01:29:54 2002
 @@ -39,12 +39,16 @@ extern void mod_close    __P((void *));
