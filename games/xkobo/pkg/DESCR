@@ -5,6 +5,10 @@
        SHIFT  key  (or  the  left  mouse button). The game can be
        paused by pressing 's' (or the right mouse button).
 
+       On recent machines, consider the kobodeluxe port instead: sdl
+       support yields better gameplay on non 8 bits or large displays,
+       at the expense of an sdl dependency.
+
 Available flavor:
 harder
 	makes the game slightly harder by not giving you bonus lives
