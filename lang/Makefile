@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/05/05 22:20:35 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2001/10/24 12:22:01 naddy Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -60,10 +60,6 @@
      SUBDIR += python,threads
      SUBDIR += python,tk,threads,no_tools
      SUBDIR += python,tk,no_tools
-     SUBDIR += python15,
-     SUBDIR += python15,threads
-     SUBDIR += python15,tk,threads,no_tools
-     SUBDIR += python15,tk,no_tools
 #    SUBDIR += rexx-imc
      SUBDIR += ruby
 #    SUBDIR += scheme48
