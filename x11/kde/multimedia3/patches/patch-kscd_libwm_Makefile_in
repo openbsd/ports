@@ -1,7 +1,7 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- kscd/libwm/Makefile.in.orig	Sat Apr 20 05:02:39 2002
-+++ kscd/libwm/Makefile.in	Sat Apr 20 05:03:38 2002
-@@ -298,9 +298,9 @@ subdirs = include
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Sat Dec 21 08:07:52 2002
++++ kscd/libwm/Makefile.in	Sun Dec 22 13:56:29 2002
+@@ -297,9 +297,9 @@ subdirs = include
  
  INCLUDES = $(all_includes) 
  
@@ -13,16 +13,16 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
  
  #
  # Headers come later...
-@@ -310,7 +310,7 @@ include_HEADERS = 
+@@ -309,7 +309,7 @@ include_HEADERS = 
  
  # Which headers shouldn't be installed when a   make install  is done?
  #noinst_HEADERS =
 -libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
 +libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
- 	database.c index.c scsi.c \
- 	plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
- 	plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -323,24 +323,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ database.c index.c scsi.c \
+ plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
+ plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
+@@ -322,24 +322,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
  
  DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -368,11 +368,11 @@ CCLD = $(CC)
+@@ -381,11 +381,11 @@ CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  CFLAGS = @CFLAGS@
@@ -68,7 +68,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
  
  #>- all: all-am
  #>+ 1
-@@ -419,8 +419,8 @@ uninstall-libLTLIBRARIES:
+@@ -432,8 +432,8 @@ uninstall-libLTLIBRARIES:
  
  clean-libLTLIBRARIES:
  	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
@@ -79,7 +79,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT) core *.core
-@@ -651,16 +651,16 @@ force-reedit:
+@@ -664,16 +664,16 @@ force-reedit:
  
  #>+ 2
  final:
@@ -99,4 +99,4 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
 +	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" install-am
  #>+ 3
  cvs-clean:
- 	$(MAKE) -f $(top_srcdir)/admin/Makefile.common cvs-clean
+ 	$(MAKE) admindir=$(top_srcdir)/admin -f $(top_srcdir)/admin/Makefile.common cvs-clean

@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
---- noatun/library/Makefile.in.orig	Tue Nov 12 00:46:23 2002
-+++ noatun/library/Makefile.in	Mon Dec  2 15:39:10 2002
-@@ -301,9 +301,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
+$OpenBSD: patch-noatun_library_Makefile_in,v 1.3 2002/12/23 14:22:32 espie Exp $
+--- noatun/library/Makefile.in.orig	Sat Dec 21 08:07:53 2002
++++ noatun/library/Makefile.in	Sun Dec 22 14:28:01 2002
+@@ -300,9 +300,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
  
  SUBDIRS = noatunarts noatun . noatuntags
  
@@ -13,14 +13,14 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  	playlist.cpp pref.cpp \
  	player.cpp playlistsaver.cpp app.cpp \
  	pluginloader.cpp plugin.cpp \
-@@ -315,12 +315,12 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
+@@ -314,12 +314,12 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
  
  include_HEADERS = cmodule.h plugin_deps.h equalizerview.h effectview.h mimetypetree.h ksaver.h
  
 -libnoatun_la_LDFLAGS = -L$(top_builddir)/noatun/library/noatunarts \
 +libknoatun_la_LDFLAGS = -L$(top_builddir)/noatun/library/noatunarts \
- 	$(KDE_RPATH) $(all_libraries) -L$(top_builddir)/arts/gui/common \
- 	-L$(top_builddir)/arts/gui/kde
+ $(KDE_RPATH) $(all_libraries) -L$(top_builddir)/arts/gui/common \
+ -L$(top_builddir)/arts/gui/kde
  
  
 -libnoatun_la_LIBADD = $(top_builddir)/arts/gui/common/libartsgui.la	\
@@ -28,7 +28,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  	$(top_builddir)/arts/gui/kde/libartsgui_kde.la			\
  	$(top_builddir)/arts/modules/libartsmodules.la			\
  	-lkio -lqtmcop -lkmedia2_idl -lnoatunarts			\
-@@ -345,27 +345,27 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -344,26 +344,26 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  	effects.lo mimetypetree.lo stereobuttonaction.lo ksaver.lo
 -#>- libnoatun_la_OBJECTS = $(am_libnoatun_la_OBJECTS)
 +#>- libknoatun_la_OBJECTS = $(am_libknoatun_la_OBJECTS)
- #>+ 10
+ #>+ 9
 -libnoatun_la_final_OBJECTS = libnoatun_la.all_cpp.lo 
 -libnoatun_la_nofinal_OBJECTS = pluginmodule.lo cmodule.lo downloader.lo \
 +libknoatun_la_final_OBJECTS = libknoatun_la.all_cpp.lo 
@@ -54,17 +54,24 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  	pluginloader.lo plugin.lo noatunstdaction.lo conversion.lo \
  	noatunui.lo effectview.lo equalizerview.lo equalizer.lo \
  	effects.lo mimetypetree.lo stereobuttonaction.lo ksaver.lo\
- 	plugin_deps.moc.lo  \
--	libnoatun_la_meta_unload.lo 
+ plugin_deps.moc.lo 
 -@KDE_USE_FINAL_FALSE@libnoatun_la_OBJECTS = $(libnoatun_la_nofinal_OBJECTS)
 -@KDE_USE_FINAL_TRUE@libnoatun_la_OBJECTS = $(libnoatun_la_final_OBJECTS)
-+	libknoatun_la_meta_unload.lo 
 +@KDE_USE_FINAL_FALSE@libknoatun_la_OBJECTS = $(libknoatun_la_nofinal_OBJECTS)
 +@KDE_USE_FINAL_TRUE@libknoatun_la_OBJECTS = $(libknoatun_la_final_OBJECTS)
  libnoatuncontrols_la_DEPENDENCIES =
  am_libnoatuncontrols_la_OBJECTS = controls.lo scrollinglabel.lo
  #>- libnoatuncontrols_la_OBJECTS = $(am_libnoatuncontrols_la_OBJECTS)
-@@ -423,7 +423,7 @@ CXXLD = $(CXX)
+@@ -403,7 +403,7 @@ depcomp = $(SHELL) $(top_srcdir)/admin/d
+ #>- @AMDEP_TRUE@	$(DEPDIR)/scrollinglabel.Plo \
+ #>- @AMDEP_TRUE@	$(DEPDIR)/stereobuttonaction.Plo
+ #>+ 29
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/plugin_deps.moc.P  $(DEPDIR)/libnoatun_la.all_cpp.P $(DEPDIR)/libnoatuncontrols_la.all_cpp.P $(DEPDIR)/gentable.all_cpp.P  $(DEPDIR)/app.Plo $(DEPDIR)/cmodule.Plo \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/plugin_deps.moc.P  $(DEPDIR)/libknoatun_la.all_cpp.P $(DEPDIR)/libnoatuncontrols_la.all_cpp.P $(DEPDIR)/gentable.all_cpp.P  $(DEPDIR)/app.Plo $(DEPDIR)/cmodule.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	$(DEPDIR)/controls.Plo $(DEPDIR)/conversion.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	$(DEPDIR)/downloader.Plo $(DEPDIR)/effects.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	$(DEPDIR)/effectview.Plo $(DEPDIR)/engine.Plo \
+@@ -451,7 +451,7 @@ CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  CXXFLAGS = @CXXFLAGS@
@@ -73,7 +80,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  	$(gentable_SOURCES)
  DATA = $(magictable_DATA)
  
-@@ -436,7 +436,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+@@ -464,7 +464,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
  	uninstall-recursive check-recursive installcheck-recursive
  DIST_COMMON = $(include_HEADERS) Makefile.am Makefile.in
  DIST_SUBDIRS = $(SUBDIRS)
@@ -82,7 +89,7 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  
  #>- all: all-recursive
  #>+ 1
-@@ -483,8 +483,8 @@ uninstall-libLTLIBRARIES:
+@@ -511,8 +511,8 @@ uninstall-libLTLIBRARIES:
  
  clean-libLTLIBRARIES:
  	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
@@ -93,60 +100,32 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
  libnoatuncontrols.la: $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_DEPENDENCIES) 
  	$(CXXLINK) -rpath $(libdir) $(libnoatuncontrols_la_LDFLAGS) $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_LIBADD) $(LIBS)
  
-@@ -856,33 +856,33 @@ force-reedit:
+@@ -884,16 +884,16 @@ force-reedit:
  
- 
- #>+ 12
--libnoatun_la_meta_unload.cpp:  plugin_deps.moc.cpp mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc
--	@echo 'creating libnoatun_la_meta_unload.cpp'
--	@-rm -f libnoatun_la_meta_unload.cpp
-+libknoatun_la_meta_unload.cpp:  plugin_deps.moc.cpp mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc
-+	@echo 'creating libknoatun_la_meta_unload.cpp'
-+	@-rm -f libknoatun_la_meta_unload.cpp
- 	@if test ${kde_qtver} = 2; then \
--		echo 'static const char * _metalist_libnoatun_la[] = {' > libnoatun_la_meta_unload.cpp ;\
--		cat  plugin_deps.moc.cpp mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc | grep 'char.*className' | sed -e 's/.*[^A-Za-z0-9_:]\([A-Za-z0-9_:]*\)::className.*$$/\"\1\",/' | sort | uniq >> libnoatun_la_meta_unload.cpp ;\
--		echo '0};' >> libnoatun_la_meta_unload.cpp ;\
--		echo '#include <kunload.h>' >> libnoatun_la_meta_unload.cpp ;\
--		echo '_UNLOAD(libnoatun_la)' >> libnoatun_la_meta_unload.cpp ;\
--	else echo > libnoatun_la_meta_unload.cpp; fi
-+		echo 'static const char * _metalist_libknoatun_la[] = {' > libknoatun_la_meta_unload.cpp ;\
-+		cat  plugin_deps.moc.cpp mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc | grep 'char.*className' | sed -e 's/.*[^A-Za-z0-9_:]\([A-Za-z0-9_:]*\)::className.*$$/\"\1\",/' | sort | uniq >> libknoatun_la_meta_unload.cpp ;\
-+		echo '0};' >> libknoatun_la_meta_unload.cpp ;\
-+		echo '#include <kunload.h>' >> libknoatun_la_meta_unload.cpp ;\
-+		echo '_UNLOAD(libknoatun_la)' >> libknoatun_la_meta_unload.cpp ;\
-+	else echo > libknoatun_la_meta_unload.cpp; fi
- 
- 
- #>+ 3
- clean-moc-classes:
--	-rm -f  libnoatun_la_meta_unload.cpp
-+	-rm -f  libknoatun_la_meta_unload.cpp
  
  #>+ 11
--libnoatun_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/pluginmodule.cpp $(srcdir)/cmodule.cpp $(srcdir)/downloader.cpp $(srcdir)/engine.cpp $(srcdir)/playlist.cpp $(srcdir)/pref.cpp $(srcdir)/player.cpp $(srcdir)/playlistsaver.cpp $(srcdir)/app.cpp $(srcdir)/pluginloader.cpp $(srcdir)/plugin.cpp $(srcdir)/noatunstdaction.cpp $(srcdir)/conversion.cpp $(srcdir)/noatunui.cpp $(srcdir)/effectview.cpp $(srcdir)/equalizerview.cpp $(srcdir)/equalizer.cpp $(srcdir)/effects.cpp $(srcdir)/mimetypetree.cpp $(srcdir)/stereobuttonaction.cpp $(srcdir)/ksaver.cpp libnoatun_la_meta_unload.cpp  plugin_deps.moc.cpp mimetypetree.moc effectview.moc equalizerview.moc pluginmodule.moc cmodule.moc 
+-libnoatun_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/pluginmodule.cpp $(srcdir)/cmodule.cpp $(srcdir)/downloader.cpp $(srcdir)/engine.cpp $(srcdir)/playlist.cpp $(srcdir)/pref.cpp $(srcdir)/player.cpp $(srcdir)/playlistsaver.cpp $(srcdir)/app.cpp $(srcdir)/pluginloader.cpp $(srcdir)/plugin.cpp $(srcdir)/noatunstdaction.cpp $(srcdir)/conversion.cpp $(srcdir)/noatunui.cpp $(srcdir)/effectview.cpp $(srcdir)/equalizerview.cpp $(srcdir)/equalizer.cpp $(srcdir)/effects.cpp $(srcdir)/mimetypetree.cpp $(srcdir)/stereobuttonaction.cpp $(srcdir)/ksaver.cpp plugin_deps.moc.cpp  mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc
 -	@echo 'creating libnoatun_la.all_cpp.cpp ...'; \
 -	rm -f libnoatun_la.all_cpp.files libnoatun_la.all_cpp.final; \
 -	echo "#define KDE_USE_FINAL 1" >> libnoatun_la.all_cpp.final; \
--	for file in pluginmodule.cpp cmodule.cpp downloader.cpp engine.cpp playlist.cpp pref.cpp player.cpp playlistsaver.cpp app.cpp pluginloader.cpp plugin.cpp noatunstdaction.cpp conversion.cpp noatunui.cpp effectview.cpp equalizerview.cpp equalizer.cpp effects.cpp mimetypetree.cpp stereobuttonaction.cpp ksaver.cpp libnoatun_la_meta_unload.cpp  plugin_deps.moc.cpp; do \
--	  echo "#include \"$$file\"" >> libnoatun_la.all_cpp.files; \
--	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libnoatun_la.all_cpp.final; \
-+libknoatun_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/pluginmodule.cpp $(srcdir)/cmodule.cpp $(srcdir)/downloader.cpp $(srcdir)/engine.cpp $(srcdir)/playlist.cpp $(srcdir)/pref.cpp $(srcdir)/player.cpp $(srcdir)/playlistsaver.cpp $(srcdir)/app.cpp $(srcdir)/pluginloader.cpp $(srcdir)/plugin.cpp $(srcdir)/noatunstdaction.cpp $(srcdir)/conversion.cpp $(srcdir)/noatunui.cpp $(srcdir)/effectview.cpp $(srcdir)/equalizerview.cpp $(srcdir)/equalizer.cpp $(srcdir)/effects.cpp $(srcdir)/mimetypetree.cpp $(srcdir)/stereobuttonaction.cpp $(srcdir)/ksaver.cpp libknoatun_la_meta_unload.cpp  plugin_deps.moc.cpp mimetypetree.moc effectview.moc equalizerview.moc pluginmodule.moc cmodule.moc 
++libknoatun_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/pluginmodule.cpp $(srcdir)/cmodule.cpp $(srcdir)/downloader.cpp $(srcdir)/engine.cpp $(srcdir)/playlist.cpp $(srcdir)/pref.cpp $(srcdir)/player.cpp $(srcdir)/playlistsaver.cpp $(srcdir)/app.cpp $(srcdir)/pluginloader.cpp $(srcdir)/plugin.cpp $(srcdir)/noatunstdaction.cpp $(srcdir)/conversion.cpp $(srcdir)/noatunui.cpp $(srcdir)/effectview.cpp $(srcdir)/equalizerview.cpp $(srcdir)/equalizer.cpp $(srcdir)/effects.cpp $(srcdir)/mimetypetree.cpp $(srcdir)/stereobuttonaction.cpp $(srcdir)/ksaver.cpp plugin_deps.moc.cpp  mimetypetree.moc effectview.moc cmodule.moc pluginmodule.moc equalizerview.moc
 +	@echo 'creating libknoatun_la.all_cpp.cpp ...'; \
 +	rm -f libknoatun_la.all_cpp.files libknoatun_la.all_cpp.final; \
 +	echo "#define KDE_USE_FINAL 1" >> libknoatun_la.all_cpp.final; \
-+	for file in pluginmodule.cpp cmodule.cpp downloader.cpp engine.cpp playlist.cpp pref.cpp player.cpp playlistsaver.cpp app.cpp pluginloader.cpp plugin.cpp noatunstdaction.cpp conversion.cpp noatunui.cpp effectview.cpp equalizerview.cpp equalizer.cpp effects.cpp mimetypetree.cpp stereobuttonaction.cpp ksaver.cpp libknoatun_la_meta_unload.cpp  plugin_deps.moc.cpp; do \
+ 	for file in pluginmodule.cpp cmodule.cpp downloader.cpp engine.cpp playlist.cpp pref.cpp player.cpp playlistsaver.cpp app.cpp pluginloader.cpp plugin.cpp noatunstdaction.cpp conversion.cpp noatunui.cpp effectview.cpp equalizerview.cpp equalizer.cpp effects.cpp mimetypetree.cpp stereobuttonaction.cpp ksaver.cpp plugin_deps.moc.cpp ; do \
+-	  echo "#include \"$$file\"" >> libnoatun_la.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libnoatun_la.all_cpp.final; \
 +	  echo "#include \"$$file\"" >> libknoatun_la.all_cpp.files; \
 +	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libknoatun_la.all_cpp.final; \
  	done; \
--	cat libnoatun_la.all_cpp.final libnoatun_la.all_cpp.files  > libnoatun_la.all_cpp.cpp; \
+-	cat libnoatun_la.all_cpp.final libnoatun_la.all_cpp.files > libnoatun_la.all_cpp.cpp; \
 -	rm -f libnoatun_la.all_cpp.final libnoatun_la.all_cpp.files
-+	cat libknoatun_la.all_cpp.final libknoatun_la.all_cpp.files  > libknoatun_la.all_cpp.cpp; \
++	cat libknoatun_la.all_cpp.final libknoatun_la.all_cpp.files > libknoatun_la.all_cpp.cpp; \
 +	rm -f libknoatun_la.all_cpp.final libknoatun_la.all_cpp.files
  
  #>+ 11
- libnoatuncontrols_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/controls.cpp $(srcdir)/scrollinglabel.cpp  
-@@ -910,20 +910,20 @@ gentable.all_cpp.cpp: $(srcdir)/Makefile
+ libnoatuncontrols_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/controls.cpp $(srcdir)/scrollinglabel.cpp plugin_deps.moc.cpp 
+@@ -921,20 +921,20 @@ gentable.all_cpp.cpp: $(srcdir)/Makefile
  
  #>+ 3
  clean-final:
@@ -171,4 +150,4 @@ $OpenBSD: patch-noatun_library_Makefile_in,v 1.2 2002/12/02 16:27:21 espie Exp $
 +	$(MAKE) libknoatun_la_OBJECTS="$(libknoatun_la_nofinal_OBJECTS)" libnoatuncontrols_la_OBJECTS="$(libnoatuncontrols_la_nofinal_OBJECTS)" install-am
  #>+ 3
  cvs-clean:
- 	$(MAKE) -f $(top_srcdir)/admin/Makefile.common cvs-clean
+ 	$(MAKE) admindir=$(top_srcdir)/admin -f $(top_srcdir)/admin/Makefile.common cvs-clean

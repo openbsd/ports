@@ -1,8 +1,8 @@
-$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- mpeglib/lib/Makefile.in.orig	Mon Mar 25 00:15:53 2002
-+++ mpeglib/lib/Makefile.in	Sat Apr 20 06:41:27 2002
-@@ -312,16 +312,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
- 	yuv/libyuvPlugin.la
+$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- mpeglib/lib/Makefile.in.orig	Sat Dec 21 08:07:52 2002
++++ mpeglib/lib/Makefile.in	Sun Dec 22 14:25:31 2002
+@@ -311,16 +311,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
+ 			yuv/libyuvPlugin.la
  
  
 -lib_LTLIBRARIES = libmpeg.la
@@ -13,16 +13,16 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp 
  
 -libmpeg_la_LDFLAGS = $(all_libraries) \
 +libkmpeg_la_LDFLAGS = $(all_libraries) \
- 	-module \
- 	-release $(THIS_LIB_VERSION)
+ 				-module \
+ 				-release $(THIS_LIB_VERSION)
  
  
 -libmpeg_la_LIBADD = $(THIS_EXTRALIBS) $(MMXFILES) \
 +libkmpeg_la_LIBADD = $(THIS_EXTRALIBS) $(MMXFILES) \
- 	$(THIS_LIB_LIBS)
+ 				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/lib
-@@ -330,15 +330,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -329,15 +329,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp 
  
  DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -366,7 +366,7 @@ CXXLD = $(CXX)
+@@ -368,7 +368,7 @@ CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  CXXFLAGS = @CXXFLAGS@
@@ -51,7 +51,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp 
  
  RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
  	uninstall-info-recursive all-recursive install-data-recursive \
-@@ -374,7 +374,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+@@ -376,7 +376,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
  	uninstall-recursive check-recursive installcheck-recursive
  DIST_COMMON = README Makefile.am Makefile.in
  DIST_SUBDIRS = $(SUBDIRS)
@@ -60,7 +60,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp 
  
  #>- all: all-recursive
  #>+ 1
-@@ -421,8 +421,8 @@ uninstall-libLTLIBRARIES:
+@@ -423,8 +423,8 @@ uninstall-libLTLIBRARIES:
  
  clean-libLTLIBRARIES:
  	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
@@ -71,33 +71,3 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp 
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT) core *.core
-@@ -690,20 +690,20 @@ force-reedit:
- 
- 
- #>+ 11
--libmpeg_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/dummy.cpp  
--	@echo 'creating libmpeg_la.all_cpp.cpp ...'; \
--	rm -f libmpeg_la.all_cpp.files libmpeg_la.all_cpp.final; \
--	echo "#define KDE_USE_FINAL 1" >> libmpeg_la.all_cpp.final; \
-+libkmpeg_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/dummy.cpp  
-+	@echo 'creating libkmpeg_la.all_cpp.cpp ...'; \
-+	rm -f libkmpeg_la.all_cpp.files libkmpeg_la.all_cpp.final; \
-+	echo "#define KDE_USE_FINAL 1" >> libkmpeg_la.all_cpp.final; \
- 	for file in dummy.cpp ; do \
--	  echo "#include \"$$file\"" >> libmpeg_la.all_cpp.files; \
--	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libmpeg_la.all_cpp.final; \
-+	  echo "#include \"$$file\"" >> libkmpeg_la.all_cpp.files; \
-+	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkmpeg_la.all_cpp.final; \
- 	done; \
--	cat libmpeg_la.all_cpp.final libmpeg_la.all_cpp.files  > libmpeg_la.all_cpp.cpp; \
--	rm -f libmpeg_la.all_cpp.final libmpeg_la.all_cpp.files
-+	cat libkmpeg_la.all_cpp.final libkmpeg_la.all_cpp.files  > libkmpeg_la.all_cpp.cpp; \
-+	rm -f libkmpeg_la.all_cpp.final libkmpeg_la.all_cpp.files
- 
- #>+ 3
- clean-final:
--	-rm -f libmpeg_la.all_cpp.cpp
-+	-rm -f libkmpeg_la.all_cpp.cpp
- 
- #>+ 2
- final:

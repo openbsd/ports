@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
---- configure.in.orig	Mon Jun 24 12:58:24 2002
-+++ configure.in	Mon Aug  5 16:18:26 2002
-@@ -1070,7 +1070,7 @@ dnl    else
+$OpenBSD: patch-configure_in,v 1.5 2002/12/23 14:22:32 espie Exp $
+--- configure.in.orig	Sat Dec 21 08:07:20 2002
++++ configure.in	Sun Dec 22 13:52:17 2002
+@@ -1075,7 +1075,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
      EXTRATDEFS="$EXTRATDEFS -DIA_XAW"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
  dnl    if test "x$have_xext" = xyes; then
  dnl      a_so_libs="-lXext -lX11"
  dnl    else
-@@ -1223,7 +1223,7 @@ dnl this does not work, but to have no e
+@@ -1229,7 +1229,7 @@ dnl this does not work, but to have no e
  
  dnl Checks for header files.
  AC_CHECK_HEADERS(pthread.h pthread/mit/pthread.h)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
  
  
  AC_C_BIGENDIAN
-@@ -1401,8 +1401,13 @@ AC_MSG_RESULT($OS_TYPE)
+@@ -1407,8 +1407,13 @@ AC_MSG_RESULT($OS_TYPE)
  
  case "$ARCH_TYPE" in
    i?86)
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
      ;; 
  
    *)
-@@ -1417,6 +1422,9 @@ case "$OS_TYPE" in
+@@ -1423,6 +1428,9 @@ case "$OS_TYPE" in
    FreeBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1446,6 +1454,12 @@ case "$OS_TYPE" in
+@@ -1452,6 +1460,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-configure_in,v 1.4 2002/08/07 17:09:05 brad Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -1488,7 +1502,7 @@ esac
+@@ -1494,7 +1508,7 @@ esac
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

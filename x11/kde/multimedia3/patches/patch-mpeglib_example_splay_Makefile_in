@@ -1,22 +1,22 @@
-$OpenBSD: patch-mpeglib_example_splay_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- mpeglib/example/splay/Makefile.in.orig	Mon Mar 25 00:15:51 2002
-+++ mpeglib/example/splay/Makefile.in	Sat Apr 20 07:02:49 2002
-@@ -305,12 +305,12 @@ noinst_HEADERS = 
+$OpenBSD: patch-mpeglib_example_splay_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- mpeglib/example/splay/Makefile.in.orig	Sat Dec 21 08:07:52 2002
++++ mpeglib/example/splay/Makefile.in	Sun Dec 22 13:58:44 2002
+@@ -304,12 +304,12 @@ noinst_HEADERS = 
  
  splay_LDFLAGS = $(all_libraries) 
  
 -splay_LDADD = ../../lib/libmpeg.la \
 +splay_LDADD = ../../lib/libkmpeg.la \
- 	$(THIS_LIB_LIBS)
+ 				$(THIS_LIB_LIBS)
  
  
  mp3framing_LDFLAGS = $(all_libraries)
 -mp3framing_LDADD = ../../lib/libmpeg.la \
 +mp3framing_LDADD = ../../lib/libkmpeg.la \
- 	$(THIS_LIB_LIBS)
+ 				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/splay
-@@ -324,12 +324,12 @@ am_mp3framing_OBJECTS = mp3framing.$(OBJ
+@@ -323,12 +323,12 @@ am_mp3framing_OBJECTS = mp3framing.$(OBJ
  #>- mp3framing_OBJECTS = $(am_mp3framing_OBJECTS)
  #>+ 1
  mp3framing_OBJECTS = mp3framing.$(OBJEXT)

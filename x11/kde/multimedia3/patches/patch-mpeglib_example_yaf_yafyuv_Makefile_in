@@ -1,16 +1,16 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- mpeglib/example/yaf/yafyuv/Makefile.in.orig	Mon Mar 25 00:15:53 2002
-+++ mpeglib/example/yaf/yafyuv/Makefile.in	Sat Apr 20 07:02:37 2002
-@@ -305,7 +305,7 @@ yaf_yuv_LDFLAGS = $(all_libraries)
+$OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- mpeglib/example/yaf/yafyuv/Makefile.in.orig	Sat Dec 21 08:07:52 2002
++++ mpeglib/example/yaf/yafyuv/Makefile.in	Sun Dec 22 14:23:24 2002
+@@ -304,7 +304,7 @@ yaf_yuv_LDFLAGS = $(all_libraries)
  
  yaf_yuv_LDADD = ../yafxplayer/libyafxplayer.la \
- 	../yafcore/libyafcore.la \
--	../../../lib/libmpeg.la \
-+	../../../lib/libkmpeg.la \
- 	$(THIS_LIB_LIBS)
+ 				../yafcore/libyafcore.la \
+-				../../../lib/libmpeg.la \
++				../../../lib/libkmpeg.la \
+ 				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yafyuv
-@@ -320,7 +320,7 @@ am_yaf_yuv_OBJECTS = yuv_control.$(OBJEX
+@@ -319,7 +319,7 @@ am_yaf_yuv_OBJECTS = yuv_control.$(OBJEX
  #>+ 1
  yaf_yuv_OBJECTS = yuv_control.$(OBJEXT)
  yaf_yuv_DEPENDENCIES = ../yafxplayer/libyafxplayer.la \

@@ -1,16 +1,16 @@
-$OpenBSD: patch-noatun_modules_winskin_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- noatun/modules/winskin/Makefile.in.orig	Sat Apr 20 03:20:13 2002
-+++ noatun/modules/winskin/Makefile.in	Sat Apr 20 03:23:23 2002
-@@ -345,7 +345,7 @@ noatun_winskin_la_LDFLAGS = $(all_librar
- 	-module -avoid-version -no-undefined 
+$OpenBSD: patch-noatun_modules_winskin_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- noatun/modules/winskin/Makefile.in.orig	Sat Dec 21 08:07:53 2002
++++ noatun/modules/winskin/Makefile.in	Sun Dec 22 14:32:04 2002
+@@ -344,7 +344,7 @@ noatun_winskin_la_LDFLAGS = $(all_librar
+ 					-module -avoid-version -no-undefined 
  
  
 -noatun_winskin_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la \
 +noatun_winskin_la_LIBADD = $(top_builddir)/noatun/library/libknoatun.la \
- 	$(WINSKINVIS_LIB) 
+ 					$(WINSKINVIS_LIB) 
  
  
-@@ -357,7 +357,7 @@ CONFIG_CLEAN_FILES =
+@@ -356,7 +356,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_winskin_la_DEPENDENCIES = \

@@ -1,16 +1,16 @@
-$OpenBSD: patch-mpeglib_example_yaf_yaftplay_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- mpeglib/example/yaf/yaftplay/Makefile.in.orig	Mon Mar 25 00:15:52 2002
-+++ mpeglib/example/yaf/yaftplay/Makefile.in	Sat Apr 20 07:02:33 2002
-@@ -303,7 +303,7 @@ yaf_tplay_LDFLAGS = $(all_libraries)
+$OpenBSD: patch-mpeglib_example_yaf_yaftplay_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
+--- mpeglib/example/yaf/yaftplay/Makefile.in.orig	Sat Dec 21 08:07:52 2002
++++ mpeglib/example/yaf/yaftplay/Makefile.in	Sun Dec 22 14:22:36 2002
+@@ -302,7 +302,7 @@ yaf_tplay_LDFLAGS = $(all_libraries)
  
  yaf_tplay_LDADD = ../yafcore/libyafcore.la \
- 	../yafxplayer/libyafxplayer.la \
--	../../../lib/libmpeg.la \
-+	../../../lib/libkmpeg.la \
- 	$(THIS_LIB_LIBS)
+ 				../yafxplayer/libyafxplayer.la \
+-				../../../lib/libmpeg.la \
++				../../../lib/libkmpeg.la \
+ 				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yaftplay
-@@ -318,7 +318,7 @@ am_yaf_tplay_OBJECTS = tplay_control.$(O
+@@ -317,7 +317,7 @@ am_yaf_tplay_OBJECTS = tplay_control.$(O
  #>+ 1
  yaf_tplay_OBJECTS = tplay_control.$(OBJEXT)
  yaf_tplay_DEPENDENCIES = ../yafcore/libyafcore.la \
