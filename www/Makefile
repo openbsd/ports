@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2004/06/26 06:23:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.143 2004/06/30 08:30:09 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -95,6 +95,7 @@
 #    SUBDIR += p5-HTML-QuickCheck
      SUBDIR += p5-HTML-Stream
      SUBDIR += p5-HTML-Table
+     SUBDIR += p5-HTML-TableContentParser
      SUBDIR += p5-HTML-TableExtract
      SUBDIR += p5-HTML-Tagset
      SUBDIR += p5-HTML-Template
