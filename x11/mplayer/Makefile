@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/09 14:01:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/09 20:03:18 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 # Optimizations
 CONFIGURE_ARGS+= --enable-mmx --disable-sse --disable-sse2
 
-FLAVORS=	sdl ggi debug mad oss win32
+FLAVORS=	sdl ggi debug mad oss win32 dvd
 FLAVOR?=
 
 .if ${FLAVOR:L:Msdl}
