@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2003/11/02 02:13:50 margarida Exp $
 
 COMMENT=		"utility for sending/receiving data over TCP stream"
 
@@ -6,9 +6,9 @@ VERSION=		1.2.0
 DISTNAME=		tcpcat-${VERSION}
 CATEGORIES=		net
 
-MASTER_SITES=		${HOMEPAGE}
+HOMEPAGE=		http://www.gusnet.cx:8080/proj/tcpcat/
 
-HOMEPAGE=		http://www.gusnet.cx/proj/tcpcat/
+MASTER_SITES=		${HOMEPAGE}
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
