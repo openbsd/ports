@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/20 18:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/20 19:03:56 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.2
@@ -21,7 +21,6 @@ WRKDIST=	${WRKDIR}/jbigkit
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jbig
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
-	rm ${PREFIX}/man/man5/{pbm.5,pgm.5}
 
 test:	build
 	@cd ${WRKBUILD} && ${SETENV} LD_LIBRARY_PATH="${WRKBUILD}/libjbig" ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
