@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
+bin/gnutls-cli
+bin/gnutls-cli-debug
+bin/gnutls-serv
+bin/gnutls-srpcrypt
+bin/libgnutls-config
+bin/libgnutls-extra-config
+include/gnutls/compat4.h
+include/gnutls/extra.h
+include/gnutls/gnutls.h
+include/gnutls/openssl.h
+lib/libgnutls-extra.a
+lib/libgnutls-extra.la
+lib/libgnutls.a
+lib/libgnutls.la
+share/aclocal/libgnutls-extra.m4
+share/aclocal/libgnutls.m4
+share/doc/gnutls/README
+share/examples/gnutls/ex-alert.c
+share/examples/gnutls/ex-client-resume.c
+share/examples/gnutls/ex-client-srp.c
+share/examples/gnutls/ex-client1.c
+share/examples/gnutls/ex-client2.c
+share/examples/gnutls/ex-info.c
+share/examples/gnutls/ex-pgp-keyserver.c
+share/examples/gnutls/ex-rfc2818.c
+share/examples/gnutls/ex-serv-export.c
+share/examples/gnutls/ex-serv-pgp.c
+share/examples/gnutls/ex-serv-srp.c
+share/examples/gnutls/ex-serv1.c
+%%SHARED%%
+@dirrm share/examples/gnutls
+@dirrm share/doc/gnutls
+@comment @dirrm share/aclocal
+@dirrm include/gnutls

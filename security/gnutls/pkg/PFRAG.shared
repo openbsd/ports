@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
+lib/libgnutls-extra.so.8.6
+lib/libgnutls.so.8.6
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_retcodes_c,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
+--- src/retcodes.c.orig	Wed Apr 30 20:56:44 2003
++++ src/retcodes.c	Wed Apr 30 20:58:47 2003
+@@ -84,7 +84,7 @@ for (i=0;i>-400;i--)
+    j++;
+ }
+ 
+-qsort( names_to_sort, j, sizeof(error_name), compar);
++qsort( names_to_sort, j, sizeof(error_name), (const void *)compar);
+ 
+ for (i=0;i<j;i++)
+ {
