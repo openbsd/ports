@@ -22,6 +22,7 @@ Boston, MA 02111-1307, USA.  */
 #define OBSD_OLD_GAS 
 #include <openbsd.h>
 
+#undef CPP_PREDEFINES
 #define CPP_PREDEFINES "-D__unix__ -D__vax__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(vax) -Amachine(vax)"
 
 /* Layout of source language data types. */
