@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2003/04/09 10:44:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.163 2003/04/13 16:58:18 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -106,6 +106,7 @@
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
+     SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
@@ -126,12 +127,14 @@
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Tail
      SUBDIR += p5-FreezeThaw
+     SUBDIR += p5-Getargs-Long
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Locale-Maketext
      SUBDIR += p5-Locale-PGettext
+     SUBDIR += p5-Log-Agent
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-Net-Server
