@@ -25,6 +25,12 @@ tcpkill
 	libnids-based applications which require a full TCP 3-whs for
 	TCB creation).
 
+tcpnice
+	slow down specified in-progress TCP connections via "active"
+	traffic shaping (useful for sniffing fast networks). forges
+	tiny TCP window advertisements, and optionally ICMP source
+	quench replies.
+
 dsniff
 	simple password sniffer. handles FTP, Telnet, HTTP, POP, IMAP,
 	SNMP, Rlogin, NFS, X11 auth info. goes beyond most sniffers in
