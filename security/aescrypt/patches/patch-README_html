@@ -1,0 +1,22 @@
+$OpenBSD: patch-README_html,v 1.1 2001/07/09 12:42:04 lebel Exp $
+--- README.html.orig	Thu May 17 21:58:22 2001
++++ README.html	Mon Jul  9 08:37:51 2001
+@@ -24,7 +24,7 @@ aesget -k {keyfile}<br>
+ <p>
+ Encrypt/decrypt stdin using the Advanced Encryption Standard winner
+ "Rijndael" encryption algorithm in Cipher Block Feedback (stream)
+-mode. Uses /dev/urandom to create a salt. Prepends the output stream
++mode. Uses /dev/arandom to create a salt. Prepends the output stream
+ with salt when encrypting, strips it off when decrypting.
+ <p>
+ Keyfile format:
+@@ -57,8 +57,7 @@ to the contrary. Need a "-s" option to s
+ <li> Need a key generator! ( This should be a simple shell script -- use dd 
+ to grab some data, then md5sum to create a hex mix of that data, then
+ 'awk' to grab the hex part of the output of md5sum ). 
+-<li> Relies upon having /dev/urandom. See the Ocotillo PRNG if you don't
+-  have a /dev/urandom. 
++<li> Relies upon having /dev/arandom. 
+ 
+ <li>This program was deliberately kept extremely simple. It is not
+ intended to be a full encryption solution, it is intended to be used

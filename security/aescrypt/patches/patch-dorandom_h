@@ -1,0 +1,12 @@
+$OpenBSD: patch-dorandom_h,v 1.1 2001/07/09 12:42:04 lebel Exp $
+--- dorandom.h.orig	Thu May 17 21:58:22 2001
++++ dorandom.h	Mon Jul  9 08:34:10 2001
+@@ -23,7 +23,7 @@ $Date: 2001/07/09 12:42:04 $
+ #ifndef DO_RANDOM_H
+ #define DO_RANDOM_H 1
+ 
+-#define URAND_NAME "/dev/urandom"
++#define URAND_NAME "/dev/arandom"
+ 
+ int urand_seed(char * filename);  /* NULL for /dev/urandom  */
+ char *urand_get(int numbytes);
