@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/02/23 02:31:35 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2001/03/22 03:12:14 avsm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -9,6 +9,10 @@
      SUBDIR += c-client
      SUBDIR += checkpassword
      SUBDIR += courier-imap
+     SUBDIR += courier-imap:ldap
+     SUBDIR += courier-imap:ldap,pop3
+     SUBDIR += courier-imap:mysql
+     SUBDIR += courier-imap:mysql,pop3
      SUBDIR += courier-imap:pop3
      SUBDIR += cucipop
      SUBDIR += dot-forward
