@@ -1,0 +1,12 @@
+$OpenBSD: patch-no-ip_sh,v 1.1.1.1 2002/03/08 16:56:10 wilfried Exp $
+--- no-ip.sh.orig	Thu Oct 11 01:35:12 2001
++++ no-ip.sh	Thu Mar  7 11:28:58 2002
+@@ -89,7 +89,7 @@ done
+ #
+ if [ "$NAT" = "N" ] 
+ then
+-    devs=`tail +3 /proc/net/dev | awk -F: '{print $1}' | tr -d ' '|tr '\n' ' '`
++    devs=`ifconfig -a | awk -F: '/flags=/ {print $1}' | tr '\n' ' '`
+     DEV=foo
+     while [ "$DEV" = "foo" ]
+     do

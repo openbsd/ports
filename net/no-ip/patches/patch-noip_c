@@ -1,0 +1,73 @@
+$OpenBSD: patch-noip_c,v 1.1.1.1 2002/03/08 16:56:10 wilfried Exp $
+--- noip.c.orig	Thu Oct 11 01:48:12 2001
++++ noip.c	Fri Mar  8 17:40:50 2002
+@@ -94,9 +94,8 @@
+ #define CLIENT_IP_PORT		8245
+ #define OURBUFLEN		8192
+ #define IPLEN			16
+-#define SAVEDIPFILE		"/tmp/no-ip_save"
+-#define CONFIG_FILENAME		"/usr/local/lib/no-ip.conf"
+-#define CONFIG_FILENAME_ETC     "/usr/local/etc/no-ip.conf"
++#define SAVEDIPFILE		"/var/db/no-ip_save"
++#define CONFIG_FILENAME		SYSCONFDIR "/no-ip.conf"
+ #define CONFIGNUM		10
+ #define CONFSTRLEN		1024
+ #define NUMBER			2
+@@ -224,8 +223,8 @@ void Usage()
+ #ifdef DEBUG
+ 	fprintf(stderr, "         -d               increase debug verbosity\n");
+ #endif
+-	fprintf(stderr, "\n   config file is either\n");
+-	fprintf(stderr, "      %s or %s\n", CONFIG_FILENAME,CONFIG_FILENAME_ETC);
++	fprintf(stderr, "\n   config file is\n");
++	fprintf(stderr, "      %s\n", CONFIG_FILENAME);
+ 	fprintf(stderr, "      and must contain %d required entries", CONFIGNUM);
+ 	fprintf(stderr, " in the form of KEYWORD = value\n");
+ 	fprintf(stderr, "      A complete description of the config file is in the README file.\n");
+@@ -254,12 +253,8 @@ int main(int argc, char *argv[])
+ 	    program = argv[0];
+ 	openlog(program, LOG_PID, LOG_DAEMON);
+ 	process_options(argc, argv);
+-	if (config_filename == NULL) {
+-		if(!access(CONFIG_FILENAME, R_OK)) 
+-		 	config_filename = CONFIG_FILENAME;
+-		 else
+-			config_filename = CONFIG_FILENAME_ETC;
+-	}
++	if (config_filename == NULL)
++	    config_filename = CONFIG_FILENAME;
+ 	if (handle_config_error(parse_config()) != SUCCESS)
+ 	    return -1;
+ 	if (*groupname)
+@@ -375,7 +370,7 @@ void save_IP(int sig)
+ void getip(char *p)
+ {
+ 	int	fd;
+-	int	*x;
++	struct	sockaddr_in *sin;
+ 	struct	ifreq ifr;
+ 	struct	in_addr z;
+ 
+@@ -402,8 +397,8 @@ void getip(char *p)
+ 	    return;
+ 	}
+ 	close(fd);
+-	x = (int *)&ifr.ifr_addr;	// seems to be off by 2 bytes
+-	z.s_addr = x[1];
++	sin = (struct sockaddr_in *)&ifr.ifr_addr;
++	z = sin->sin_addr;
+ 	strcpy(p, inet_ntoa(z));
+ 	sprintf(suppliedIP, "&ip=%s", p);  // force sending local address
+ #ifdef DEBUG
+@@ -439,9 +434,9 @@ int run_as_background()
+ 		    fclose(fildes);
+ 		}
+ 		if (fp != NULL)
+-		    strncpy(Last_IP_Addr, buffer, IPLEN);
++		    strlcpy(Last_IP_Addr, buffer, IPLEN);
+ 		else
+-		    memset(Last_IP_Addr, 1, IPLEN);  // bogus address at start	
++		    memset(Last_IP_Addr, 0, IPLEN);  // bogus address at start	
+ 		unlink(SAVEDIPFILE);
+ 		while (background) {
+ 		    delay = MAX(60, interval * 60);

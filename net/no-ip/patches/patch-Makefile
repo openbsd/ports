@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/03/08 16:56:10 wilfried Exp $
+--- Makefile.orig	Thu Oct 11 01:35:12 2001
++++ Makefile	Thu Mar  7 18:15:47 2002
+@@ -1,7 +1,5 @@
+ TGT=noip
+ 
+-CC=gcc
+-
+ # these defines are for linux and BSD
+ LIBS=
+ ARCH=linux
+@@ -11,7 +9,7 @@ ARCH=linux
+ # ARCH=sun
+ 
+ ${TGT}: noip.c
+-	${CC} -O2 -g -D${ARCH} noip.c -o noip ${LIBS}
++	${CC} ${CFLAGS} -DSYSCONFDIR=\"${SYSCONFDIR}\" -D${ARCH} noip.c -o noip ${LIBS}
+ 
+ conf:
+ 	./no-ip.sh
