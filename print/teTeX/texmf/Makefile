@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/12/01 15:32:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 20:16:04 espie Exp $
 # Original from: Marc Espie
 
 NEED_VERSION=	1.116
@@ -11,17 +11,17 @@ MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
 DISTFILES=	${TETEX_TEXMF}
 TETEX_TEXMF=	teTeX-texmf-1.0.tar.gz
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
-NO_BUILD=yes
+NO_PATCH=	Yes
+NO_CONFIGURE=	Yes
+NO_BUILD=	Yes
 
 TEXMF_DIR=	${PREFIX}/share/texmf
 
 do-install:
-	@${MKDIR} ${TEXMF_DIR}
-	@cd ${TEXMF_DIR} && ${TAR} zxf ${FULLDISTDIR}/${TETEX_TEXMF}
+	@${INSTALL_DATA_DIR} ${TEXMF_DIR}
+	@cd ${TEXMF_DIR} && tar zxf ${FULLDISTDIR}/${TETEX_TEXMF}
 
 .include <bsd.port.mk>
