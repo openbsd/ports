@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/05/01 20:50:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/19 00:04:12 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -9,10 +9,10 @@ HOMEPAGE=	http://www.kornshell.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	"inscrutable license"
+PERMIT_PACKAGE_FTP=	"inscrutable license"
+PERMIT_DISTFILES_CDROM=	"inscrutable license"
+PERMIT_DISTFILES_FTP=	"inscrutable license"
 
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz

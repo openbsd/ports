@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/19 00:08:18 naddy Exp $
 
 COMMENT=	"module for ICQv7 protocol realisation"
 
@@ -8,10 +8,10 @@ CATEGORIES=	net perl5
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
