@@ -1,17 +1,28 @@
-# $OpenBSD: Makefile,v 1.81 2000/10/22 15:42:26 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2001/03/16 15:53:15 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
-# PLEASE use the regular egcs-stable for serious work, resort to this one
-# for experimentations and testing.
 
-# it only works right with a recent bsd.port.mk.
+COM=		GNU compiler collection (experimental)
+COMMENT=	${COM}: core C compiler
+COMMENT-c++=	${COM}: C++ compiler
+COMMENT-chill=	${COM}: Chill compiler
+COMMENT-g77=	${COM}: f77 compiler
+COMMENT-java=	${COM}: java compiler
+COMMENT-objc=	${COM}: obj C compiler
+
+PKGNAME=	${DISTNAME}-core
+PKGNAME-c++=	${DISTNAME}-c++
+PKGNAME-chill=	${DISTNAME}-chill
+PKGNAME-g77=	${DISTNAME}-g77
+PKGNAME-java=	${DISTNAME}-java
+PKGNAME-objc=	${DISTNAME}-objc
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.305
+NEED_VERSION=	1.361
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -49,11 +60,6 @@ MAKE_JAVA=Yes
 MULTI_PACKAGES=
 # No sub packages description
 DESCR=${PKGDIR}/DESCR
-SUBPACKAGE?=
-.if empty(SUBPACKAGE)
-PKGNAME=${DISTNAME}-core
-.endif
-
 
 PATCH_LIST=patch-core-*
 .if defined(MAKE_GXX)
