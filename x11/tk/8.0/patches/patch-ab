@@ -5,7 +5,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
 -LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+LIBS = -L${PREFIX}/lib -ltcl80 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++LIBS = @TCL_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the

@@ -1,15 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2004/07/03 21:05:52 jolan Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2004/12/05 11:39:06 sturm Exp $
 --- Makefile.in.orig	Mon Mar  1 18:04:48 2004
 +++ Makefile.in	Sat Jul  3 13:45:56 2004
-@@ -227,7 +227,7 @@ TCL_STUB_FLAGS		= @TCL_STUB_FLAGS@
- # Libraries to use when linking.  This definition is determined by the
- # configure script.
- LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@
--WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@
-+WISH_LIBS = -L${PREFIX}/lib -ltcl84 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@
- 
- # The symbol below provides support for dynamic loading and shared
- # libraries.  See configure.in for a description of what it means.
 @@ -390,7 +390,7 @@ DEMOPROGS = browse hello ixset rmt rolod
  
  all: binaries libraries doc
