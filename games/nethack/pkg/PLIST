@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/10 09:34:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/10 11:23:24 espie Exp $
+@option no-default-conflict
+@pkgcfl nethack-${V}
+@pkgcfl nethack-${V}-no_x11
+@pkgcfl nethack-${V}-qt
 @group games
-bin/nethack
-bin/recover
+bin/nethack-${V}
+bin/recover-${V}
 !%%no_x11%%
 %%qt%%
 @mode 0775
@@ -144,6 +148,6 @@ ${GAMEDIR}/wizard1.lev
 ${GAMEDIR}/wizard2.lev
 ${GAMEDIR}/wizard3.lev
 ${GAMEDIR}/wizhelp
-@man man/man6/nethack.6
-@man man/man6/recover.6
+@man man/man6/nethack-${V}.6
+@man man/man6/recover-${V}.6
 @unexec rm -rf ${GAMEDIR}/save/*

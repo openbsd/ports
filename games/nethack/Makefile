@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.34 2004/08/10 10:36:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.35 2004/08/10 11:23:24 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
-DISTNAME=	nethack-3.4.1
+V=3.4.1
+DISTNAME=	nethack-$V
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nethack/} \
 		ftp://ftp.nethack.org/pub/nethack/nh341/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU:=nethack/}
-DISTFILES=	nethack-341.tgz
+DISTFILES=	nethack-${V:S/.//g}.tgz
 
 HOMEPAGE=	http://nethack.org/
 
@@ -23,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-GAMEDIR=lib/nethackdir
-NHDIR=	${PREFIX}/${GAMEDIR}
+GAMEDIR=lib/nethackdir-$V
+NHDIR=	${TRUEPREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11 qt
@@ -45,7 +46,7 @@ USE_X11=	Yes
 RUN_DEPENDS=:hackdata-*:games/hackdata
 
 NO_REGRESS=	Yes
-SUBST_VARS=GAMEDIR
+SUBST_VARS=GAMEDIR V
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks
@@ -54,16 +55,14 @@ post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/util/recover ${PREFIX}/bin
-	@cd ${WRKSRC}/doc && \
-	    ${INSTALL_MAN} nethack.6 recover.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKBUILD}/util/recover ${PREFIX}/bin/recover-$V
+	${INSTALL_MAN} ${WRKSRC}/doc/nethack.6 ${PREFIX}/man/man6/nethack-$V.6
+	${INSTALL_MAN} ${WRKSRC}/doc/recover.6 ${PREFIX}/man/man6/recover-$V.6
+	${INSTALL_PROGRAM} ${PREFIX}/bin/nethack ${PREFIX}/bin/nethack-$V
 .if ${FLAVOR:L} == ""
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
-	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack && \
-	    ${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults
+	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack-$V && \
+	    ${INSTALL_DATA} NetHack-$V ${PREFIX}/lib/X11/app-defaults
 .endif
-#	@install -g games -m 0664 /dev/null ${NHDIR}/logfile
-#	@install -g games -m 0664 /dev/null ${NHDIR}/perm
-#	@install -g games -m 0664 /dev/null ${NHDIR}/record
 
 .include <bsd.port.mk>

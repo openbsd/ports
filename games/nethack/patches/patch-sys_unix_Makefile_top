@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_top,v 1.4 2003/02/25 00:05:07 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.5 2004/08/10 11:23:24 espie Exp $
 --- sys/unix/Makefile.top.orig	Sun Feb 23 15:43:39 2003
-+++ sys/unix/Makefile.top	Tue Feb 25 00:47:43 2003
++++ sys/unix/Makefile.top	Tue Aug 10 12:24:23 2004
 @@ -13,19 +13,19 @@
  # execute things like 'data' and 'rumors')
  # MAKE = make
@@ -33,7 +33,7 @@ $OpenBSD: patch-sys_unix_Makefile_top,v 1.4 2003/02/25 00:05:07 espie Exp $
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
-+REALGAMEDIR  = $(PREFIX)/lib/$(GAME)dir
++REALGAMEDIR  = $(NHDIR)
 +GAMEDIR  = $(DESTDIR)${REALGAMEDIR}
  VARDIR  = $(GAMEDIR)
 -SHELLDIR = $(PREFIX)/games
