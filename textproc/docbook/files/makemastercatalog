@@ -1,0 +1,133 @@
+#!/bin/sh
+
+# Builds a "master" XML catalog file for the docbook package
+
+# $OpenBSD: makemastercatalog,v 1.1 2003/06/17 16:20:04 marcm Exp $
+#
+# Copyright (c) 2003 Marc Matteo.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE OPENBSD PROJECT AND CONTRIBUTORS
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OPENBSD
+# PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+CATALOG=$PREFIX/share/xml/docbook/catalog.xml
+docbookdir=file://$TRUEPREFIX/share/xml/docbook
+latestdbdir=$docbookdir/4.2
+isodir=$latestdbdir/ent
+
+$TRUEPREFIX/bin/xmlcatalog --noout --create $CATALOG
+
+for v in 4.2 4.1.2 4.1; do
+	# DocBook driver file
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//DTD DocBook XML V$v//EN" \
+	    "$docbookdir/$v/docbookx.dtd" $CATALOG
+
+	# DocBook modules
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//DTD DocBook XML CALS Table Model V$v//EN" \
+	    "$docbookdir/$v/calstblx.dtd" $CATALOG
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//ELEMENTS DocBook XML Information Pool V$v//EN" \
+	    "$docbookdir/$v/dbpoolx.mod" $CATALOG
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V$v//EN" \
+	    "$docbookdir/$v/dbhierx.mod" $CATALOG
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//ENTITIES DocBook XML Additional General Entities V$v//EN" \
+	    "$docbookdir/$v/dbgenent.mod" $CATALOG
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//ENTITIES DocBook XML Notations V$v//EN" \
+	    "$docbookdir/$v/dbnotnx.mod" $CATALOG
+	$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+	    "-//OASIS//ENTITIES DocBook XML Character Entities V$v//EN" \
+	    "$docbookdir/$v/dbcentx.mod" $CATALOG
+done
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
+    "$latestdbdir/soextblx.dtd" $CATALOG
+
+# Rewrites
+$TRUEPREFIX/bin/xmlcatalog --noout --add "rewriteSystem" \
+    "http://www.oasis-open.org/docbook/xml" \
+    "$docbookdir" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "rewriteURI" \
+    "http://www.oasis-open.org/docbook/xml" \
+    "$docbookdir" $CATALOG
+
+# ISO entity sets
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Publishing//EN" \
+    "$isodir/iso-pub.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Greek Letters//EN" \
+    "$isodir/iso-grk1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Box and Line Drawing//EN" \
+    "$isodir/iso-box.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Greek Symbols//EN" \
+    "$isodir/iso-grk3.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN" \
+    "$isodir/iso-amsn.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN" \
+    "$isodir/iso-num.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN" \
+    "$isodir/iso-grk4.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Diacritical Marks//EN" \
+    "$isodir/iso-dia.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Monotoniko Greek//EN" \
+    "$isodir/iso-grk2.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN" \
+    "$isodir/iso-amsa.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN" \
+    "$isodir/iso-amso.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Russian Cyrillic//EN" \
+    "$isodir/iso-cyr1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES General Technical//EN" \
+    "$isodir/iso-tech.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN" \
+    "$isodir/iso-amsc.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Latin 1//EN" \
+    "$isodir/iso-lat1.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN" \
+    "$isodir/iso-amsb.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Latin 2//EN" \
+    "$isodir/iso-lat2.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN" \
+    "$isodir/iso-amsr.ent" $CATALOG
+$TRUEPREFIX/bin/xmlcatalog --noout --add "public" \
+    "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN" \
+    "$isodir/iso-cyr2.ent" $CATALOG
+

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/28 00:10:56 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2003/06/17 16:20:04 marcm Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
 DISTNAME=	docbook-4.2
+PKGNAME=	${DISTNAME}p1
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
@@ -40,8 +41,10 @@ XML_VERSIONS=	4.1 4.1.2 4.2
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
 
+BUILD_DEPENDS=	:libxml->=2.5.7:textproc/libxml
 RUN_DEPENDS=	::textproc/iso8879 \
-		:docbook-dsssl-*:textproc/docbook-dsssl
+		:docbook-dsssl-*:textproc/docbook-dsssl \
+		:libxml->=2.5.7:textproc/libxml
 
 .for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;
@@ -67,5 +70,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/x$i/ent/* ${XML_INSTDIR}/$i/ent
 	${INSTALL_DATA} ${FILESDIR}/xml_db${i:S/.//g}_catalog ${XML_INSTDIR}/$i/catalog
 .endfor
+	sh ${FILESDIR}/makemastercatalog
 
 .include <bsd.port.mk>
