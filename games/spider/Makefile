@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/08 15:31:52 kevlo Exp $
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
 CATEGORIES=	games
 NEED_VERSION=	1.305
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
-		http://www.lovett.com/~ade/FreeBSD/
+MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
