@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2000/06/23 09:45:14 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2000/06/30 07:01:33 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -34,16 +34,23 @@ QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt
 
 # for manpages in MESSAGE
-SUBST_VARS=	QT_LIBDIR
+SUBST_VARS=	QT_LIBDIR QT_DOC
 
 IMAGEIODIR=	${WRKSRC}/extensions/imageio/src
 
 post-patch:
-	@cd ${WRKSRC} && cp -R examples examples-src
-	@cd ${WRKSRC} && cp -R tutorial tutorial-src
+	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
+	    mv -f $$i $$i.bak && \
+		sed -e s,/usr/local,${LOCALBASE}, \
+		-e s,/usr/X11R6,${X11BASE}, <$$i.bak >$$i; \
+	done
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${USE_TARGET}
+
+post-configure:
+	@cd ${WRKSRC} && cp -R examples examples-src
+	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 
 post-build:
 	@cd ${IMAGEIODIR} && \
@@ -53,10 +60,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
 	${INSTALL_DATA_DIR} ${QT_MANDIR}/man1
 	${INSTALL_DATA_DIR} ${QT_MANDIR}/man3
-	${INSTALL_DATA_DIR} ${QT_EXAMPLES}/bin
-	${INSTALL_DATA_DIR} ${QT_EXAMPLES}/src
-	${INSTALL_DATA_DIR} ${QT_TUTORIAL}/bin
-	${INSTALL_DATA_DIR} ${QT_TUTORIAL}/src
+	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
+	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib; \
@@ -78,15 +83,15 @@ do-install:
 	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \
 	  	${INSTALL_MAN} $$j ${QT_MANDIR}/man3; \
 	done
-	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}/src
+	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}
 	@cd ${WRKSRC}/examples; for i in *; do \
 	if [ -x $$i/$$i ]; then \
-	    ${INSTALL_PROGRAM} $$i/$$i ${QT_EXAMPLES}/bin; \
+	    ${INSTALL_PROGRAM} $$i/$$i ${QT_EXAMPLES}/$$i; \
 	fi; done
-	cp -R ${WRKSRC}/tutorial-src/* ${QT_TUTORIAL}/src
+	cp -R ${WRKSRC}/tutorial-src/* ${QT_TUTORIAL}
 	@cd ${WRKSRC}/tutorial; for i in *; do \
 	if [ -x $$i/$$i ]; then \
-	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/bin; \
+	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
 	cd ${WRKSRC}; ${INSTALL_DATA} ANNOUNCE FAQ LICENSE README \
 	    README.QT changes-1.40 changes-1.41 changes-1.42 changes-1.43 \
