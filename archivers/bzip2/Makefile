@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2001/10/09 02:05:29 brad Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.444
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=bzip2/v100
+MASTER_SITE_SUBDIR= bzip2/v100
+
 HOMEPAGE=	http://sourceware.cygnus.com/bzip2/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
@@ -16,8 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -Winline \
-		-fomit-frame-pointer -fno-strength-reduce"
+BZ2_CFLAGS=	-Wall -Winline
+.if ${MACHINE_ARCH} != "sparc64"
+BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
+.endif
+
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}"
 FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
 
 test:   build
