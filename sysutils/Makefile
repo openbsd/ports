@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/04/19 07:15:43 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 1999/05/16 04:19:13 brad Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -18,10 +18,11 @@
      SUBDIR += mtools
 #    SUBDIR += pib
      SUBDIR += rtty
+     SUBDIR += sdd
      SUBDIR += setquota
 #    SUBDIR += skill
      SUBDIR += socket
-#    SUBDIR += star
+     SUBDIR += star
      SUBDIR += stat
 #    SUBDIR += su2
      SUBDIR += tcplist
