@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2002/11/07 06:21:18 pvalchev Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
 
 DISTNAME=	xosview-1.8.0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xosview/}
