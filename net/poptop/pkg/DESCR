@@ -1,0 +1,6 @@
+PoPTop is a PPTP server solution for Unix. PoPToP allows Unix Servers
+to function seamlessly in the PPTP VPN environment.  The current
+release version supports Windows(tm) 95/98/NT/2000 PPTP clients and
+Unix PPTP clients.
+
+WWW: ${HOMEPAGE}
