@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:50:53 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:09:04 avsm Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Entities.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Filter.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/HeadParser.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/LinkExtor.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Parser.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/HTML/TokeParser.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Parser/.packlist
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Parser/Parser.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Parser/Parser.so
 man/man3/HTML::Entities.3p

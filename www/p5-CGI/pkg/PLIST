@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/04 10:31:39 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:09:04 avsm Exp $
 libdata/perl5/site_perl/CGI/Base.pm
 libdata/perl5/site_perl/CGI/BasePlus.pm
 libdata/perl5/site_perl/CGI/Carp.pm
@@ -6,12 +6,10 @@ libdata/perl5/site_perl/CGI/Form.pm
 libdata/perl5/site_perl/CGI/MiniSvr.pm
 libdata/perl5/site_perl/CGI/Request.pm
 libdata/perl5/site_perl/CGI/test.pl
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/CGI/.packlist
 man/man3/CGI::Base.3p
 man/man3/CGI::BasePlus.3p
 man/man3/CGI::Carp.3p
 man/man3/CGI::Form.3p
 man/man3/CGI::MiniSvr.3p
 man/man3/CGI::Request.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/CGI
 @dirrm libdata/perl5/site_perl/CGI

@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/06 08:02:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:09:03 avsm Exp $
 libdata/perl5/site_perl/Apache/AuthDBI.pm
 libdata/perl5/site_perl/Apache/DBI.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/DBI/.packlist
 man/man3/Apache::AuthDBI.3p
 man/man3/Apache::DBI.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/DBI
