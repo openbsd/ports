@@ -12,4 +12,3 @@ man/cat1/cmdtool.0
 man/cat1/olwm.0
 man/cat1/olwmslave.0
 man/cat1/shelltool.0
-@dirrm lib/help
