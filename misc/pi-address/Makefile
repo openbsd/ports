@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/30 21:23:37 espie Exp $
 
 DISTNAME=	pi-address-0.3.4
 CATEGORIES=	misc x11
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://linux.in-berlin.de/pub/pilot/ \
 		ftp://pv915.pv.reshsg.uci.edu/pub/pilot/
 
 LIB_DEPENDS=	pisock::comms/pilot-link \
-		kde::x11/kdelibs
+		kde::x11/kde/libs
 
 MAKE_ENV+=	QTDIR=${X11BASE} PILOT_LINK=${LOCALBASE}
 
