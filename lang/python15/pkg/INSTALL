@@ -1,0 +1,52 @@
+#! /bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/12/13 05:09:47 jasoni Exp $
+#
+# python1.5.2 installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+	echo 
+	echo "+---------------"
+	echo "|"
+	echo "| $1 installation status:"
+	echo "|"
+	echo "|    - there appears to another version of python installed, to avoid"
+	echo "|      conflict, this python binary has been installed as:"
+	echo "|          ${PREFIX}/bin/python1.5"
+	echo "|"
+	echo "+---------------"
+	echo 
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+	if [ ! -e ${PREFIX}/bin/python ]; then
+		ln -s python1.5 ${PREFIX}/bin/python
+	else
+		do_notice $1
+	fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
