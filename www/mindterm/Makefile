@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/09 17:29:45 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/01 20:22:18 sturm Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -21,6 +21,7 @@ PREFIX?=	/var/www/htdocs
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
 
 do-install:

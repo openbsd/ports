@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"modular DSSSL stylesheets for the DocBook DTD"
 
@@ -21,6 +21,7 @@ DISTFILES=	docbook-dsssl-${V}${EXTRACT_SUFX} docbook-dsssl-doc-${V}${EXTRACT_SUF
 SEPARATE_BUILD=	concurrent
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 INST_DIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 DOC_DIR=	${PREFIX}/share/doc/docbook-dsssl

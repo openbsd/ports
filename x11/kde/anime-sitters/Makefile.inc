@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2002/05/08 14:51:49 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/02/01 20:17:47 sturm Exp $
 CATEGORIES=graphics x11 x11/kde
 MASTER_SITES=http://ftp.kde.com/Amusement_Toy/GWay_Sitters/
 
@@ -6,6 +6,7 @@ RUN_DEPENDS=:kdetoys->=3.0:x11/kde/toys3
 
 NO_BUILD=Yes
 NO_REGRESS=Yes
+PKG_ARCH=*
 
 AMORDIR=${PREFIX}/share/apps/amor
 

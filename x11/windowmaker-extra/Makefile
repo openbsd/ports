@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/17 14:46:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=		'themes and icons for Window Maker'
 
@@ -27,5 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--prefix="${PREFIX}"
 
 NO_BUILD=		Yes
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

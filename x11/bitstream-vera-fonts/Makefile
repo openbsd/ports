@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/09 17:44:23 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=		"Bitstream Vera TrueType fonts"
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ttf-bitstream-vera/1.10/}
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 FONTSDIR?=		${PREFIX}/lib/X11/fonts/bitstream-vera
 

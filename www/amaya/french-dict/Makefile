@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/06/13 14:40:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/01 20:22:18 sturm Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -11,6 +11,7 @@ RUN_DEPENDS=		${DICT_RUN_DEPENDS}
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 DICNAME=		Fprinc
 

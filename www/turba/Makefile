@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:59 sturm Exp $ 
+# $OpenBSD: Makefile,v 1.6 2004/02/01 20:22:18 sturm Exp $ 
 
 COMMENT=	"contact management module for Horde"
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_HORDE:=turba/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 EXTRACT_ONLY=
 
 PREFIX=		/var/www

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/09/23 15:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=		"Type1 font installation helper"
 DISTNAME=		type1inst-0.6.1
@@ -14,6 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE:=X11/xutils/}
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 INSTALL_STRIP=
 
 do-install:

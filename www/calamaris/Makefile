@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/07/03 14:18:13 grange Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/01 20:22:18 sturm Exp $
 # $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
 
 COMMENT=		"proxy-cache-servers logfiles analizer"
@@ -20,6 +20,7 @@ MASTER_SITES=		http://cord.de/tools/squid/calamaris/
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/calamaris ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/01 20:25:35 sturm Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 COMMENT=	"character entity sets from ISO 8879:1986 (SGML)"
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
 

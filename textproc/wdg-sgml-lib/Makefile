@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/22 17:25:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.htmlhelp.com/tools/validator/src/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}/wdg
 

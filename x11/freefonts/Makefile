@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=	"collection of ATM fonts from the CICA archives"
 
@@ -20,6 +20,7 @@ WRKDIST=	${WRKDIR}
 USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 
 do-install:

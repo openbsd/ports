@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \

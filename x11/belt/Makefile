@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/16 17:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 V=			1.18
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
+PKG_ARCH=		*
 WRKDIST=		${WRKDIR}
 EXTRACT_ONLY=		belticons.tar.gz
 

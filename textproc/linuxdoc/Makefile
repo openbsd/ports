@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/01 20:25:35 sturm Exp $
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
 
 COMMENT=	"Linuxdoc SGML DTD"
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	"no license"
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
 

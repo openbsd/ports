@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/27 23:33:12 jose Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"pure-Tcl implementation of XML parser"
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	:tcl-8.4.*:lang/tcl/8.4
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 INSTDIR=	${PREFIX}/lib/tcl8.4/TclXML
 DOCDIR=		${PREFIX}/share/doc/TclXML

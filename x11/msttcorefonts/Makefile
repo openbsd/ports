@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/10 03:33:45 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/01 20:17:47 sturm Exp $
 
 COMMENT=		"Microsoft TrueType core fonts"
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=		cabextract:cabextract-*:archivers/cabextract
 USE_X11=		Yes
 
 NO_BUILD=		Yes
+PKG_ARCH=		*
 
 DISTFILES=		andale32.exe \
 	 		arial32.exe \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.22 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"all W3C-published SGML DTDs for HTML"
 
@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=kuriyama/}
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
 
 INSTDIR=	${PREFIX}/share/sgml/html

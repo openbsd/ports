@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/22 17:26:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=		"HTML, XHTML validator"
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		:lq-sp-*:textproc/lq-sp \
 WRKDIST=		${WRKDIR}
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/validate ${PREFIX}/bin/

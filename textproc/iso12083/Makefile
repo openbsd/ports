@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/01 20:25:35 sturm Exp $
 
 COMMENT=	"SGML DTDs from The Electronic Publishing SIG"
 
@@ -18,6 +18,7 @@ DIST_SUBDIR=	iso12083
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	# empty
 

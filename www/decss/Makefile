@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/18 19:44:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/01 20:22:18 sturm Exp $
 
 COMMENT=	"strip cascading style sheets from webpages"
 
@@ -22,6 +22,7 @@ WRKDIST=	${WRKDIR}/source
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/DeCSS

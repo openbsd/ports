@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/27 23:42:29 jose Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/01 20:22:18 sturm Exp $
 
 COMMENT=	"html editor designed for the experienced web designer"
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=    :weblint-*:www/weblint \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/august
