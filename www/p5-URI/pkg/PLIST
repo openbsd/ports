@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/04/22 22:15:47 naddy Exp $
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
 @comment ${P5SITE}/URI/Escape.pm.orig
 ${P5SITE}/URI/Heuristic.pm
 ${P5SITE}/URI/QueryParam.pm
-@comment ${P5SITE}/URI/QueryParam.pm.orig
+${P5SITE}/URI/Split.pm
 ${P5SITE}/URI/URL.pm
 ${P5SITE}/URI/WithBase.pm
 ${P5SITE}/URI/_foreign.pm
 ${P5SITE}/URI/_generic.pm
+${P5SITE}/URI/_ldap.pm
 ${P5SITE}/URI/_login.pm
 ${P5SITE}/URI/_query.pm
 ${P5SITE}/URI/_segment.pm
@@ -28,7 +29,10 @@ ${P5SITE}/URI/gopher.pm
 ${P5SITE}/URI/http.pm
 ${P5SITE}/URI/https.pm
 ${P5SITE}/URI/ldap.pm
+${P5SITE}/URI/ldapi.pm
+${P5SITE}/URI/ldaps.pm
 ${P5SITE}/URI/mailto.pm
+${P5SITE}/URI/mms.pm
 ${P5SITE}/URI/news.pm
 ${P5SITE}/URI/nntp.pm
 ${P5SITE}/URI/pop.pm
@@ -41,6 +45,7 @@ ${P5SITE}/URI/sips.pm
 ${P5SITE}/URI/snews.pm
 ${P5SITE}/URI/ssh.pm
 ${P5SITE}/URI/telnet.pm
+${P5SITE}/URI/tn3270.pm
 ${P5SITE}/URI/urn.pm
 ${P5SITE}/URI/urn/isbn.pm
 ${P5SITE}/URI/urn/oid.pm
@@ -49,6 +54,7 @@ man/man3p/URI.3p
 man/man3p/URI::Escape.3p
 man/man3p/URI::Heuristic.3p
 man/man3p/URI::QueryParam.3p
+man/man3p/URI::Split.3p
 man/man3p/URI::URL.3p
 man/man3p/URI::WithBase.3p
 man/man3p/URI::data.3p

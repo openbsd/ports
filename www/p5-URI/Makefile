@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/11/30 22:09:50 margarida Exp $
+# $OpenBSD: Makefile,v 1.15 2004/04/22 22:15:47 naddy Exp $
 
 COMMENT=	"library to parse Uniform Resource Identifiers"
 
-VERSION=	1.22
-DISTNAME=	URI-${VERSION}
+DISTNAME=	URI-1.30
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
@@ -17,6 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE=perl
 
 .include <bsd.port.mk>
