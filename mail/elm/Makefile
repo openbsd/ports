@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/04 22:06:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/14 22:52:08 espie Exp $
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
@@ -26,6 +26,10 @@ pre-configure:
 	@sed -e s,/usr/local,${PREFIX}, ${WRKSRC}/nls/LANGS > ${WRKSRC}/nls/LANGS.new
 	@mv ${WRKSRC}/nls/LANGS.new ${WRKSRC}/nls/LANGS
 
+post-configure:
+	@perl -pi.bak -e 's,\$${DESTDIR},,g;' \
+		${WRKBUILD}/config.h ${WRKBUILD}/hdrs/sysdefs.h \
+		${WRKBUILD}/utils/{checkalias,listalias,messages,printmail}
 post-install:
 	@cd ${WRKSRC}/nls; make install
 	if [ -f ${PREFIX}/lib/elm.mimetypes ]; then \
