@@ -1,14 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/11/09 11:43:35 espie Exp $
 bin/ns
 man/man1/ns.1
 share/examples/ns2/agent-gen-script.tcl
 share/examples/ns2/agent-gen.tcl
 share/examples/ns2/callback_demo.tcl
+share/examples/ns2/dumbbell.tcl
 share/examples/ns2/fq-cbr.tcl
 share/examples/ns2/fq.tcl
 share/examples/ns2/hier-rtg-10.tcl
 share/examples/ns2/hier-rtg-100.tcl
 share/examples/ns2/hts100-0.tcl
 share/examples/ns2/lantest.tcl
+share/examples/ns2/large-scale-web-traffic.tcl
 share/examples/ns2/mac-test.tcl
 share/examples/ns2/many_tcp.tcl
 share/examples/ns2/manytcp_trmodel.tcl
@@ -24,6 +27,7 @@ share/examples/ns2/shuttle.tcl
 share/examples/ns2/simple-dyn.tcl
 share/examples/ns2/simple-eqp.tcl
 share/examples/ns2/simple-eqp1.tcl
+share/examples/ns2/simple-fsm-tcp.tcl
 share/examples/ns2/simple-heap.tcl
 share/examples/ns2/simple-rtg.tcl
 share/examples/ns2/simple-rtp.tcl
@@ -58,9 +62,14 @@ share/examples/ns2/tg.tcl
 share/examples/ns2/topo-gen-script.tcl
 share/examples/ns2/topo-gen.tcl
 share/examples/ns2/topo-view.tcl
+share/examples/ns2/trace-driven.tcl
+share/examples/ns2/varybell.tcl
 share/examples/ns2/virtual-classifier.tcl
 share/examples/ns2/vlantest-flat.tcl
 share/examples/ns2/vlantest-hier.tcl
 share/examples/ns2/vlantest-mcst.tcl
+share/examples/ns2/web-traffic.tcl
+share/examples/ns2/wired-cum-wireless-sim.tcl
+share/examples/ns2/wireless-test.tcl
 share/examples/ns2/wireless.tcl
 @dirrm share/examples/ns2

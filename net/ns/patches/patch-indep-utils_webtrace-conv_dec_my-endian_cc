@@ -1,0 +1,22 @@
+$OpenBSD: patch-indep-utils_webtrace-conv_dec_my-endian_cc,v 1.1 2000/11/09 11:43:34 espie Exp $
+--- indep-utils/webtrace-conv/dec/my-endian.cc.orig	Sun Nov  5 19:05:22 2000
++++ indep-utils/webtrace-conv/dec/my-endian.cc	Sun Nov  5 19:06:00 2000
+@@ -39,14 +39,14 @@ void ToOtherEndian(TEntry *e) {
+ 	e -> tail.status = swap2(e -> tail.status);
+ 	
+ 	if (sizeof(method_t) == 2)
+-		e -> tail.method = swap2(e -> tail.method);
++		e -> tail.method = (method_t)swap2(e -> tail.method);
+ 	else
+ 	if (sizeof(method_t) == 4)
+-		e -> tail.method = rotate4(e -> tail.method);
++		e -> tail.method = (method_t)rotate4(e -> tail.method);
+ 
+ 	if (sizeof(protocol_t) == 2)
+-		e -> tail.protocol = swap2(e -> tail.protocol);
++		e -> tail.protocol = (protocol_t)swap2(e -> tail.protocol);
+ 	else
+ 	if (sizeof(protocol_t) == 4)
+-		e -> tail.protocol = rotate4(e -> tail.protocol);
++		e -> tail.protocol = (protocol_t)rotate4(e -> tail.protocol);
+ }

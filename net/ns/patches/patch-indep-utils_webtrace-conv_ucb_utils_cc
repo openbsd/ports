@@ -1,0 +1,21 @@
+$OpenBSD: patch-indep-utils_webtrace-conv_ucb_utils_cc,v 1.1 2000/11/09 11:43:34 espie Exp $
+--- indep-utils/webtrace-conv/ucb/utils.cc.orig	Sun Nov  5 19:06:43 2000
++++ indep-utils/webtrace-conv/ucb/utils.cc	Sun Nov  5 19:07:20 2000
+@@ -351,7 +351,7 @@ int correct_read(int s, char *data, int 
+ int saccept(int s)
+ {
+     struct sockaddr_in from;
+-    int     fromlen;
++    socklen_t     fromlen;
+     int     ns;
+ 
+     fromlen = sizeof (from);
+@@ -463,7 +463,7 @@ int slisten(char *servicename)
+ int sportnum(int s)
+ {
+     struct sockaddr sockname;
+-    int     len;
++    socklen_t     len;
+ 
+     len = sizeof (sockname);
+     if (getsockname (s, &sockname, &len) < 0)
