@@ -1,0 +1,18 @@
+--- languages/english/english.3.orig	Tue Jan  4 14:23:57 2000
++++ languages/english/english.3	Tue Jan  4 14:24:29 2000
+@@ -5202,6 +5202,7 @@
+ dirndl
+ disaccredit
+ disafforest
++disappear
+ disbranch
+ disbud
+ discalced
+@@ -5236,7 +5237,6 @@
+ dispersoid
+ displayable
+ disproven
+-dissappear
+ disseminule
+ dissentious
+ dissepiment
