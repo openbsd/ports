@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/27 09:42:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/05 19:32:55 espie Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
 
-RUN_DEPENDS=	mpg123::audio/mpg123
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
