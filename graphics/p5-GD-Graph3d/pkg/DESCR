@@ -1,0 +1,7 @@
+This is the GD::Graph3d extensions module. It provides 3D graphs
+for the GD::Graph module by Martien Verbruggen, which in turn
+generates graph using Lincoln Stein's GD.pm.
+
+You use these modules just as you would any of the GD::Graph
+modules, except that they generate 3d-looking graphs.
+
