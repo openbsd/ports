@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/10/11 11:53:57 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2002/01/30 19:26:25 pvalchev Exp $
 
 COMMENT=	"GNU make"
 DISTNAME=	make-3.79.1
@@ -24,6 +24,11 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX workaround sparc64 gcc optimization bug
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=	-O0
+.endif
 
 post-extract:
 	@rm -f ${WRKSRC}/make.info*
