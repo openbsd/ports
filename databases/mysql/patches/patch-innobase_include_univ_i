@@ -1,7 +1,7 @@
-$OpenBSD: patch-innobase_include_univ_i,v 1.4 2003/12/30 05:57:30 brad Exp $
---- innobase/include/univ.i.orig	2003-12-14 16:23:49.000000000 -0500
-+++ innobase/include/univ.i	2003-12-21 01:53:42.000000000 -0500
-@@ -129,13 +129,9 @@ by one. */
+$OpenBSD: patch-innobase_include_univ_i,v 1.5 2004/07/18 11:38:23 espie Exp $
+--- innobase/include/univ.i.orig	Fri May 14 02:53:25 2004
++++ innobase/include/univ.i	Sun Jul 18 09:30:25 2004
+@@ -129,12 +129,8 @@ by one. */
  #define UNIV_INLINE  	__inline
  #else
  /* config.h contains the right def for 'inline' for the current compiler */
@@ -11,8 +11,7 @@ $OpenBSD: patch-innobase_include_univ_i,v 1.4 2003/12/30 05:57:30 brad Exp $
 -/* extern inline doesn't work with gcc 3.0.2 */
 +/* mysql people don't understand extern inline */
  #define UNIV_INLINE static inline
- #endif
 -#endif
+ #endif
  
  #else
- /* If we want to compile a noninlined version we use the following macro

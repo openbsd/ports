@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_my_global_h,v 1.1 2004/07/18 11:38:23 espie Exp $
+--- include/my_global.h.orig	Sun Jul 18 13:06:35 2004
++++ include/my_global.h	Sun Jul 18 13:07:13 2004
+@@ -43,6 +43,10 @@
+ #define HAVE_ERRNO_AS_DEFINE
+ #endif /* __CYGWIN__ */
+ 
++#if defined(__OpenBSD__)
++#define HAVE_ERRNO_AS_DEFINE
++#endif /* __OpenBSD__ */
++
+ #if defined(i386) && !defined(__i386__)
+ #define __i386__
+ #endif
