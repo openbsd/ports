@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/12/25 22:29:25 naddy Exp $
 bin/hot-babe
 @man man/man1/hot-babe.1
-share/doc/hot-babe/
-share/doc/hot-babe/LICENSE
-share/doc/hot-babe/copyright
 share/examples/hot-babe/
 share/examples/hot-babe/config.example
 share/hot-babe/
