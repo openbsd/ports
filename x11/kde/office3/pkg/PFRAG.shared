@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/09/26 15:49:58 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2003/01/27 20:28:31 espie Exp $
 ${KDE}/libabiwordexport.so.0.0
 ${KDE}/libabiwordimport.so.0.0
 ${KDE}/libamiproexport.so.0.0
@@ -93,4 +93,4 @@ lib/libkwmailmerge_interface.so.4.0
 lib/libkwmf.so.2.0
 lib/libkword.so.0.0
 lib/libkwordexportfilters.so.1.0
-DYNLIBDIR(%B)
+DYNLIBDIR(%D/lib)

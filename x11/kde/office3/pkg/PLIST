@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/06 13:40:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/01/27 20:28:31 espie Exp $
 bin/karbon
 bin/kchart
 bin/kformula
@@ -1764,7 +1764,15 @@ share/templates/TextDocument.desktop
 @dirrm share/icons/locolor/22x22/apps
 @dirrm share/icons/locolor/22x22
 @dirrm share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/22x22/mimetypes
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/thesaurus
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
