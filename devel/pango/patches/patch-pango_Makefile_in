@@ -1,7 +1,7 @@
-$OpenBSD: patch-pango_Makefile_in,v 1.1 2002/08/09 21:26:43 nino Exp $
---- pango/Makefile.in.orig	Fri Aug  9 22:36:49 2002
-+++ pango/Makefile.in	Fri Aug  9 22:38:12 2002
-@@ -213,7 +213,7 @@ libpangox_1_0_la_SOURCES = \
+$OpenBSD: patch-pango_Makefile_in,v 1.2 2003/04/17 05:58:47 marcm Exp $
+--- pango/Makefile.in.orig	Wed Jan 29 09:59:21 2003
++++ pango/Makefile.in	Tue Feb 25 15:37:59 2003
+@@ -217,7 +217,7 @@ libpangox_1_0_la_SOURCES = \
  
  
  libpango_1_0_la_LDFLAGS = \
@@ -10,7 +10,7 @@ $OpenBSD: patch-pango_Makefile_in,v 1.1 2002/08/09 21:26:43 nino Exp $
  	$(GLIB_LIBS)				\
  	$(no_undefined) $(pango_export_symbols)
  
-@@ -221,7 +221,7 @@ libpango_1_0_la_LDFLAGS = \
+@@ -225,7 +225,7 @@ libpango_1_0_la_LDFLAGS = \
  @HAVE_FRIBIDI_FALSE@libpango_1_0_la_LIBADD = @HAVE_FRIBIDI_FALSE@mini-fribidi/libmini-fribidi.la $(pango_win32res)
  libpango_1_0_la_DEPENDENCIES = $(pango_win32res)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-pango_Makefile_in,v 1.1 2002/08/09 21:26:43 nino Exp $
  libpangox_1_0_la_LIBADD = libpango-$(PANGO_API_VERSION).la $(INCLUDED_X_MODULES) $(X_LIBS) $(X_EXTRA_LIBS)
  libpangox_1_0_la_DEPENDENCIES = $(INCLUDED_X_MODULES) libpango-$(PANGO_API_VERSION).la
  
-@@ -248,7 +248,7 @@ libpangoxft_1_0_la_SOURCES = \
+@@ -252,7 +252,7 @@ libpangoxft_1_0_la_SOURCES = \
  	module-defs-xft.c
  
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-pango_Makefile_in,v 1.1 2002/08/09 21:26:43 nino Exp $
  libpangoxft_1_0_la_LIBADD = opentype/libpango-ot.la libpango-$(PANGO_API_VERSION).la $(INCLUDED_XFT_MODULES) $(XFT_LIBS) 
  libpangoxft_1_0_la_DEPENDENCIES = $(INCLUDED_XFT_MODULES) libpango-$(PANGO_API_VERSION).la
  
-@@ -260,7 +260,7 @@ libpangoft2_1_0_la_SOURCES = \
+@@ -264,7 +264,7 @@ libpangoft2_1_0_la_SOURCES = \
  	module-defs-ft2.c
  
  

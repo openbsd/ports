@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.3 2002/12/23 04:57:56 marcm Exp $
---- examples/Makefile.in.orig	Sun Oct 13 09:50:53 2002
-+++ examples/Makefile.in	Wed Dec  4 12:34:06 2002
-@@ -510,7 +510,7 @@ pango.modules:
+$OpenBSD: patch-examples_Makefile_in,v 1.4 2003/04/17 05:58:47 marcm Exp $
+--- examples/Makefile.in.orig	Wed Jan 29 09:59:30 2003
++++ examples/Makefile.in	Tue Feb 25 15:37:58 2003
+@@ -521,7 +521,7 @@ pango.modules:
  	if find ../modules -name '*.so' | grep 'so' > /dev/null ; then \
            echo "Writing a pango.modules file to use when running examples before installing Pango."; \
  	  (cd ../modules && \
