@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/28 19:35:51 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/02 21:28:34 naddy Exp $
+
+BROKEN=	"incomplete port"
 
 COMMENT=		"H.323 Video Conferencing library"
 
 VERSION=		1.8.5
 DISTNAME=		openh323_${VERSION}
 CATEGORIES=		net
-NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.openh323.org
 
@@ -23,34 +24,21 @@ MASTER_SITES=		http://www.openh323.org/bin/ \
 DISTFILES=		openh323_${VERSION}.tar.gz \
 			pwlib_1.2.17.tar.gz
 
+BUILD_DEPENDS=		::devel/bison
+USE_GMAKE=		Yes
 
+VMEM_WARNING=		Yes
+
+ALL_TARGET=		opt
 MAKE_FLAGS=		CC="${CC}"
 MAKE_ENV=		PWLIBDIR=${WRKDIR}/pwlib \
 			OPENH323DIR=${WRKDIR}/openh323
 
-BUILD_DEPENDS=		::devel/bison
+WRKDIST=		${WRKDIR}
+WRKSRC=			${WRKDIST}/openh323
 
-USE_GMAKE=		Yes
-
-WRKDIST=		${WRKDIR}/openh323
-
-ALL_TARGET=		opt
-
-PWLDIR=		${WRKDIR}/pwlib
-OPHDIR=		${WRKDIR}/openh323
-
-post-patch:
-	${PATCH} ${PWLDIR}/make/lib.mak < files/patch-lib_mak
-	${PATCH} ${PWLDIR}/make/unix.mak < files/patch-unix_mak
-
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+PWLDIR=		${WRKDIST}/pwlib
+OPHDIR=		${WRKDIST}/openh323
 
 do-install:
 	${INSTALL_DATA} ${PWLDIR}/include/ptlib.h ${PREFIX}/include
