@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.tls,v 1.3 2002/12/25 11:51:23 jakob Exp $
+@comment $OpenBSD: PFRAG.tls,v 1.4 2003/01/13 15:44:09 jakob Exp $
 libexec/postfix/tlsmgr
 man/man8/tlsmgr.8
 share/doc/postfix/tls/conf.html
@@ -12,6 +12,7 @@ share/doc/postfix/tls/references.html
 share/doc/postfix/tls/relaycert.html
 share/doc/postfix/tls/rfc2246.txt
 share/doc/postfix/tls/rfc2487.txt
+share/doc/postfix/tls/rfc3207.txt
 share/doc/postfix/tls/security.html
 share/doc/postfix/tls/setup.html
 share/doc/postfix/tls/test.html

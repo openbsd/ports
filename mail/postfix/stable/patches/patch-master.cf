@@ -1,10 +1,10 @@
-$OpenBSD: patch-master.cf,v 1.4 2002/12/25 11:51:23 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.5 2003/01/13 15:44:09 jakob Exp $
 
---- conf/master.cf.orig	Tue Dec 10 10:13:00 2002
-+++ conf/master.cf	Tue Dec 10 10:15:01 2002
-@@ -69,24 +69,24 @@
+--- conf/master.cf.orig	Sun Jan 12 18:04:35 2003
++++ conf/master.cf	Mon Jan 13 09:13:45 2003
+@@ -69,25 +69,25 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
- # 		(yes)	(yes)	(yes)	(never)	(50)
+ # 		(yes)	(yes)	(yes)	(never)	(100)
  # ==========================================================================
 -smtp	  inet	n	-	n	-	-	smtpd
 -#628	  inet	n	-	n	-	-	qmqpd
@@ -16,8 +16,6 @@ $OpenBSD: patch-master.cf,v 1.4 2002/12/25 11:51:23 jakob Exp $
 -bounce	  unix	-	-	n	-	0	bounce
 -defer	  unix	-	-	n	-	0	bounce
 -flush	  unix	n	-	n	1000?	0	flush
--smtp	  unix	-	-	n	-	-	smtp
--relay	  unix	-	-	n	-	-	smtp
 +smtp	  inet	n	-	-	-	-	smtpd
 +#628	  inet	n	-	-	-	-	qmqpd
 +pickup	  fifo	n	-	-	60	1	pickup
@@ -28,6 +26,9 @@ $OpenBSD: patch-master.cf,v 1.4 2002/12/25 11:51:23 jakob Exp $
 +bounce	  unix	-	-	-	-	0	bounce
 +defer	  unix	-	-	-	-	0	bounce
 +flush	  unix	n	-	-	1000?	0	flush
+ proxymap  unix	-	-	n	-	-	proxymap
+-smtp	  unix	-	-	n	-	-	smtp
+-relay	  unix	-	-	n	-	-	smtp
 +smtp	  unix	-	-	-	-	-	smtp
 +relay	  unix	-	-	-	-	-	smtp
  #	-o smtp_helo_timeout=5 -o smtp_connect_timeout=5

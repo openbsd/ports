@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2002/12/25 11:51:23 jakob Exp $
+# $OpenBSD: INSTALL,v 1.7 2003/01/13 15:44:09 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -135,18 +135,6 @@ do_configs()
 #
 do_notice()
 {
-
-    echo "+---------------"
-    echo "| The Postfix SMTP server will reject mail for unknown local users."
-    echo "| If the SMTP server is running chrooted, which is default in OpenBSD,"
-    echo "| you need to keep /etc/{passwd,pwd.db} in sync with"
-    echo "| /var/spool/postfix/etc/{passwd,pwd.db} or adjust the setting of the"
-    echo "| local_recipient_maps parameter in main.cf."
-    echo "|"
-    echo "| For more information, read ${PREFIX}/share/examples/postfix/main.cf"
-    echo "+---------------"
-    echo ""
-
     echo "+---------------"
     echo "| Postfix can be set up to replace sendmail entirely. Please read the"
     echo "| documentation at file:$PREFIX/share/doc/postfix/html/index.html or"

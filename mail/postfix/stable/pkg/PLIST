@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/12/25 11:51:23 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/01/13 15:44:09 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/bounce
@@ -11,6 +11,7 @@ libexec/postfix/master
 libexec/postfix/nqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
 libexec/postfix/showq
@@ -52,6 +53,7 @@ man/man8/master.8
 man/man8/nqmgr.8
 man/man8/pickup.8
 man/man8/pipe.8
+man/man8/proxymap.8
 man/man8/qmgr.8
 man/man8/qmqpd.8
 man/man8/showq.8
@@ -116,6 +118,7 @@ share/doc/postfix/html/postlog.1.html
 share/doc/postfix/html/postmap.1.html
 share/doc/postfix/html/postqueue.1.html
 share/doc/postfix/html/postsuper.1.html
+share/doc/postfix/html/proxymap.8.html
 share/doc/postfix/html/qmgr.8.html
 share/doc/postfix/html/qmqpd.8.html
 share/doc/postfix/html/queuing.html
