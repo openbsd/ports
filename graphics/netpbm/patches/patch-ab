@@ -1,5 +1,14 @@
---- pbmplus.h.orig	Tue Mar  1 10:46:36 1994
-+++ pbmplus.h	Mon Jan 11 00:33:32 1999
+--- pbmplus.h.orig	Tue Mar  1 03:46:36 1994
++++ pbmplus.h	Tue Feb  8 18:01:26 2000
+@@ -42,7 +42,7 @@
+ ** hex and decimal forms to specify colors (see ppm/pgmtoppm.1 for details).
+ */
+ #ifndef RGB_DB
+-#define RGB_DB "/usr/lib/X11/rgb"
++#define RGB_DB "/usr/X11R6/lib/X11/rgb"
+ /*#define RGB_DB "/usr/openwin/lib/rgb.txt"*/
+ #ifdef VMS
+ #define RGB_DB "PBMplus_Dir:RGB.TXT"
 @@ -119,10 +119,12 @@
  #ifndef VMS
  #include <unistd.h>
