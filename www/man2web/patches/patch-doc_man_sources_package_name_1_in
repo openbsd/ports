@@ -1,7 +1,28 @@
-$OpenBSD: patch-doc_man_sources_package_name_1_in,v 1.1.1.1 2003/04/20 19:04:17 naddy Exp $
---- doc/man_sources/package_name.1.in.orig	Sat Apr 19 14:11:03 2003
-+++ doc/man_sources/package_name.1.in	Sat Apr 19 14:11:19 2003
-@@ -215,7 +215,7 @@ can be the name of a man page or an abso
+$OpenBSD: patch-doc_man_sources_package_name_1_in,v 1.2 2003/04/28 14:06:13 naddy Exp $
+--- doc/man_sources/package_name.1.in.orig	Mon Apr 28 03:07:11 2003
++++ doc/man_sources/package_name.1.in	Mon Apr 28 15:43:04 2003
+@@ -151,8 +151,8 @@ FDL in the doc/ directory of the @packag
+ .SH "SYNOPSIS"
+ .IX Header "SYNOPSIS"
+ .PD 0
+-.IP "\fB@PACKAGE_NAME@\fR [\fB\-s\fR \fIsection\fR | \fB\-\-section\fR=\fIsection\fR] [\fB\-r\fR | \fB\-\-raw\fR] [\fB\-l\fR | \fB\-\-lynx\fR] \fIname\fR" 4
+-.IX Item "@PACKAGE_NAME@ [-s section | --section=section] [-r | --raw] [-l | --lynx] name"
++.IP "\fB@PACKAGE_NAME@\fR [\fB\-s\fR \fIsection\fR | \fB\-\-section\fR=\fIsection\fR] [\fB\-r\fR | \fB\-\-raw\fR] \fIname\fR" 4
++.IX Item "@PACKAGE_NAME@ [-s section | --section=section] [-r | --raw] name"
+ .IP "\fB@PACKAGE_NAME@\fR \fB\-a\fR | \fB\-k\fR | \fB\-\-apropos\fR | \fB\-\-keyword\fR  \fIkeyword\fR" 4
+ .IX Item "@PACKAGE_NAME@ -a | -k | --apropos | --keyword  keyword"
+ .IP "\fB@PACKAGE_NAME@\fR \fB\-p\fR | \fB\-\-print\-config\fR" 4
+@@ -193,9 +193,6 @@ Generate and print an index for \fIsecti
+ .IP "\fB\-r\fR, \fB\-\-raw\fR" 4
+ .IX Item "-r, --raw"
+ Do not convert the file, print the raw man output.
+-.IP "\fB\-l\fR, \fB\-\-lynx\fR" 4
+-.IX Item "-l, --lynx"
+-Display the output in Lynx.
+ .IP "\fB\-p\fR, \fB\-\-print\-config\fR" 4
+ .IX Item "-p, --print-config"
+ Print out the current configuration, suitable for saving as a
+@@ -217,7 +214,7 @@ This would output the man page for \fIna
  .IP "\fB@PACKAGE_NAME@ \-\-print\-config\fR > \fI@PACKAGE_NAME@.conf\fR" 4
  .IX Item "@PACKAGE_NAME@ --print-config > @PACKAGE_NAME@.conf"
  This would print out the current configuration, saving it to
