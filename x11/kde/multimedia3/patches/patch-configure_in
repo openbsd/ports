@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.5 2002/12/23 14:22:32 espie Exp $
---- configure.in.orig	Sat Dec 21 08:07:20 2002
-+++ configure.in	Sun Dec 22 13:52:17 2002
-@@ -1075,7 +1075,7 @@ dnl    else
+$OpenBSD: patch-configure_in,v 1.6 2003/01/27 19:53:58 espie Exp $
+--- configure.in.orig	Mon Nov 25 04:55:41 2002
++++ configure.in	Fri Jan  3 03:18:23 2003
+@@ -36,7 +36,7 @@ dnl Perform program name transformation
+ AC_ARG_PROGRAM
+ 
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdemultimedia, "3.1.0") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdemultimedia-3.1, "3.1.0") dnl searches for some needed programs
+ 
+ KDE_SET_PREFIX
+ 
+@@ -1548,7 +1548,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
      EXTRATDEFS="$EXTRATDEFS -DIA_XAW"
@@ -10,33 +19,8 @@ $OpenBSD: patch-configure_in,v 1.5 2002/12/23 14:22:32 espie Exp $
  dnl    if test "x$have_xext" = xyes; then
  dnl      a_so_libs="-lXext -lX11"
  dnl    else
-@@ -1229,7 +1229,7 @@ dnl this does not work, but to have no e
- 
- dnl Checks for header files.
- AC_CHECK_HEADERS(pthread.h pthread/mit/pthread.h)
--AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h)
-+AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h soundcard.h)
- 
- 
- AC_C_BIGENDIAN
-@@ -1407,8 +1407,13 @@ AC_MSG_RESULT($OS_TYPE)
- 
- case "$ARCH_TYPE" in
-   i?86)
--    AC_MSG_RESULT([Found Intel enable MMX support])
--    AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
-+    case "$OS_TYPE" in
-+    OpenBSD) ;;
-+    *)
-+	AC_MSG_RESULT([Found Intel enable MMX support])
-+	AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
-+	;;
-+    esac
-     ;; 
- 
-   *)
-@@ -1423,6 +1428,9 @@ case "$OS_TYPE" in
-   FreeBSD)
+@@ -1893,6 +1893,9 @@ case "$OS_TYPE" in
+   NetBSD)
      kde_mpeglib_compiles=yes
      ;;
 +  OpenBSD)
@@ -45,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.5 2002/12/23 14:22:32 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1452,6 +1460,12 @@ case "$OS_TYPE" in
+@@ -1922,6 +1925,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -58,7 +42,7 @@ $OpenBSD: patch-configure_in,v 1.5 2002/12/23 14:22:32 espie Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -1494,7 +1508,7 @@ esac
+@@ -1968,7 +1977,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

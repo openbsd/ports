@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_monoscope_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
---- noatun/modules/monoscope/Makefile.in.orig	Sat Dec 21 08:07:53 2002
-+++ noatun/modules/monoscope/Makefile.in	Sun Dec 22 13:52:21 2002
-@@ -295,7 +295,7 @@ noatun_monoscope_la_SOURCES = monoscope.
+$OpenBSD: patch-noatun_modules_monoscope_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- noatun/modules/monoscope/Makefile.in.orig	Mon Nov 25 04:56:44 2002
++++ noatun/modules/monoscope/Makefile.in	Wed Jan  1 16:18:47 2003
+@@ -331,7 +331,7 @@ noatun_monoscope_la_SOURCES = monoscope.
  
  #prefs.cpp
  noatun_monoscope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_monoscope_Makefile_in,v 1.2 2002/12/23 14:22:32 e
  
  #>- noatun_monoscope_la_METASOURCES = AUTO
  
-@@ -310,7 +310,7 @@ CONFIG_CLEAN_FILES =
+@@ -346,7 +346,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_monoscope_la_DEPENDENCIES = \

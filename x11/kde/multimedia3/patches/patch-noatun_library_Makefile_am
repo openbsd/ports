@@ -1,6 +1,6 @@
-$OpenBSD: patch-noatun_library_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- noatun/library/Makefile.am.orig	Sat Apr 20 03:14:34 2002
-+++ noatun/library/Makefile.am	Sat Apr 20 03:15:03 2002
+$OpenBSD: patch-noatun_library_Makefile_am,v 1.2 2003/01/27 19:53:58 espie Exp $
+--- noatun/library/Makefile.am.orig	Sun Sep 15 23:14:52 2002
++++ noatun/library/Makefile.am	Wed Jan  1 16:18:40 2003
 @@ -9,9 +9,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
  
  SUBDIRS=noatunarts noatun . noatuntags
@@ -13,7 +13,7 @@ $OpenBSD: patch-noatun_library_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie E
  	playlist.cpp pref.cpp \
  	player.cpp playlistsaver.cpp app.cpp \
  	pluginloader.cpp plugin.cpp \
-@@ -22,11 +22,11 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
+@@ -23,11 +23,11 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
  
  include_HEADERS  = cmodule.h plugin_deps.h equalizerview.h effectview.h mimetypetree.h ksaver.h
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
---- mpeglib/example/yaf/yafcdda/Makefile.in.orig	Sat Dec 21 08:07:52 2002
-+++ mpeglib/example/yaf/yafcdda/Makefile.in	Sun Dec 22 14:21:40 2002
-@@ -302,7 +302,7 @@ yaf_cdda_LDFLAGS = $(all_libraries)
+$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- mpeglib/example/yaf/yafcdda/Makefile.in.orig	Mon Nov 25 04:56:43 2002
++++ mpeglib/example/yaf/yafcdda/Makefile.in	Wed Jan  1 16:18:39 2003
+@@ -339,7 +339,7 @@ yaf_cdda_LDFLAGS = $(all_libraries)
  
  yaf_cdda_LDADD = ../yafxplayer/libyafxplayer.la \
  				../yafcore/libyafcore.la \
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.2 2002/12/23 14:22:3
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yafcdda
-@@ -317,7 +317,7 @@ am_yaf_cdda_OBJECTS = cdda_control.$(OBJ
+@@ -354,7 +354,7 @@ am_yaf_cdda_OBJECTS = cdda_control.$(OBJ
  #>+ 1
  yaf_cdda_OBJECTS = cdda_control.$(OBJEXT)
  yaf_cdda_DEPENDENCIES = ../yafxplayer/libyafxplayer.la \

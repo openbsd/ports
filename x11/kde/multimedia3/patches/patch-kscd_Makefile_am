@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- kscd/Makefile.am.orig	Sat Apr 20 05:04:34 2002
-+++ kscd/Makefile.am	Sat Apr 20 05:04:47 2002
+$OpenBSD: patch-kscd_Makefile_am,v 1.2 2003/01/27 19:53:58 espie Exp $
+--- kscd/Makefile.am.orig	Mon Jul  1 20:59:16 2002
++++ kscd/Makefile.am	Wed Jan  1 16:18:39 2003
 @@ -6,7 +6,7 @@ appsdir = $(kde_appsdir)/Multimedia
  CDDBDIR = $(kde_datadir)/kscd/cddb/
  
@@ -8,14 +8,14 @@ $OpenBSD: patch-kscd_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
 -kscd_LDADD   = libwm/libworkman.la $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) $(LIB_KDEUI)
 +kscd_LDADD   = libwm/libkworkman.la $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) $(LIB_KDEUI)
  INCLUDES= $(all_includes)
- LINK    = $(CXXLINK)
  
-@@ -30,7 +30,7 @@ kscd_SOURCES = kscd.cpp kscd.skel config
+ ####### Files
+@@ -29,7 +29,7 @@ kscd_SOURCES = kscd.cpp kscd.skel config
  
  
  #cddaslave_SOURCES = cddaslave.c
 -#cddaslave_LDADD = libwm/libworkman.la
 +#cddaslave_LDADD = libwm/libkworkman.la
  
- #SOURCES3=kscdmagic/bitmap.cpp  kscdmagic/core.cpp kscdmagic/main.cpp \
+ #SOURCES3=kscdmagic/bitmap.cpp  kscdmagic/core.cpp kscdmagic/main.cpp 
  #	kscdmagic/sound.cpp kscdmagic/xlibwrap.cpp kscdmagic/xlib.c

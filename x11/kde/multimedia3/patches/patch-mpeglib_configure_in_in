@@ -1,32 +1,7 @@
---- mpeglib/configure.in.in.orig	Sun Feb 17 12:39:29 2002
-+++ mpeglib/configure.in.in	Mon Aug  5 16:22:27 2002
-@@ -19,7 +19,7 @@ dnl this does not work, but to have no e
- 
- dnl Checks for header files.
- AC_CHECK_HEADERS(pthread.h pthread/mit/pthread.h)
--AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h)
-+AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h soundcard.h)
- 
- 
- AC_C_BIGENDIAN
-@@ -197,8 +197,13 @@ AC_MSG_RESULT($OS_TYPE)
- 
- case "$ARCH_TYPE" in
-   i?86)
--    AC_MSG_RESULT([Found Intel enable MMX support])
--    AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
-+    case "$OS_TYPE" in
-+    OpenBSD) ;;
-+    *)
-+	AC_MSG_RESULT([Found Intel enable MMX support])
-+	AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
-+	;;
-+    esac
-     ;; 
- 
-   *)
-@@ -213,6 +218,9 @@ case "$OS_TYPE" in
-   FreeBSD)
+--- mpeglib/configure.in.in.orig	Sun Oct 27 00:20:37 2002
++++ mpeglib/configure.in.in	Wed Jan  1 16:18:39 2003
+@@ -216,6 +216,9 @@ case "$OS_TYPE" in
+   NetBSD)
      kde_mpeglib_compiles=yes
      ;;
 +  OpenBSD)
@@ -35,7 +10,7 @@
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -242,6 +250,12 @@ case "$OS_TYPE" in
+@@ -245,6 +248,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -48,7 +23,7 @@
    FreeBSD)
      OS_TYPE="BSD"
      AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -284,5 +298,5 @@ esac
+@@ -291,5 +300,5 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

@@ -1,10 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2003/01/27 19:53:59 espie Exp $
+${KDE}/libkaboodlepart.so.0.0
+${KDE}/libkcm_audiocd.so.0.0
 ${KDE}/libkcm_kmix.so.0.0
+${KDE}/libkfile_au.so.0.0
+${KDE}/libkfile_avi.so.0.0
 ${KDE}/libkfile_m3u.so.0.0
 ${KDE}/libkfile_mp3.so.0.0
 ${KDE}/libkfile_ogg.so.0.0
 ${KDE}/libkfile_wav.so.0.0
-${KDE}/libkmix_panelapplet.so.1.0
+${KDE}/libkio_audiocd.so.0.0
+${KDE}/libkmidpart.so.0.0
+${KDE}/libkmix_panelapplet.so.0.0
 ${KDE}/libnoatun.so.0.0
 ${KDE}/libnoatun_dcopiface.so.0.0
 ${KDE}/libnoatun_excellent.so.0.0
@@ -22,6 +28,7 @@ ${KDE}/libnoatun_systray.so.0.0
 ${KDE}/libnoatun_ui.so.0.0
 ${KDE}/libnoatun_voiceprint.so.0.0
 ${KDE}/libnoatun_winskin.so.0.0
+${KDE}/libnoatunsimple.so.0.0
 lib/libaktion.so.1.0
 lib/libarts_mpeglib-0.3.0.so.0.3
 lib/libarts_mpeglib.so.0.3
@@ -35,15 +42,14 @@ lib/libartsmidi.so.0.0
 lib/libartsmidi_idl.so.0.0
 lib/libartsmodules.so.0.0
 lib/libaudiofilearts.so.0.0
-lib/libdummy.so.0.0
 lib/libkaboodle.so.0.0
 lib/libkaboodlepart.so.0.0
-lib/libkmidpart.so.1.0
 lib/libkmix.so.0.0
 lib/libkmixctrl.so.0.0
 lib/libkmpeg-0.3.0.so.0.0
 lib/libkmpeg.so.0.0
 lib/libknoatun.so.0.0
+lib/libkrec.so.0.0
 lib/libkworkman.so.5.3
 lib/libnoatunarts.so.0.0
 lib/libnoatuncontrols.so.0.0

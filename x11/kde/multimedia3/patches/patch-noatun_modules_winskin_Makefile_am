@@ -1,12 +1,12 @@
-$OpenBSD: patch-noatun_modules_winskin_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- noatun/modules/winskin/Makefile.am.orig	Sat Apr 20 03:20:13 2002
-+++ noatun/modules/winskin/Makefile.am	Sat Apr 20 03:23:19 2002
-@@ -61,7 +61,7 @@ noatun_winskin_la_SOURCES 		= 	fileInfo.
+$OpenBSD: patch-noatun_modules_winskin_Makefile_am,v 1.2 2003/01/27 19:53:59 espie Exp $
+--- noatun/modules/winskin/Makefile.am.orig	Sun Oct 27 00:20:56 2002
++++ noatun/modules/winskin/Makefile.am	Wed Jan  1 16:31:44 2003
+@@ -39,7 +39,7 @@ noatun_winskin_la_SOURCES 		= 	fileInfo.
  noatun_winskin_la_LDFLAGS		= 	$(all_libraries) \
  					-module -avoid-version -no-undefined 
  
 -noatun_winskin_la_LIBADD		= $(top_builddir)/noatun/library/libnoatun.la \
 +noatun_winskin_la_LIBADD		= $(top_builddir)/noatun/library/libknoatun.la \
- 					$(WINSKINVIS_LIB) 
+ 					$(top_builddir)/noatun/modules/winskin/vis/libwinskinvis.la
  
  noatun_winskin_la_METASOURCES	=	AUTO

@@ -1,29 +1,27 @@
-$OpenBSD: patch-mpeglib_lib_util_audio_audioIO_Linux_cpp,v 1.2 2002/04/30 19:01:52 espie Exp $
---- mpeglib/lib/util/audio/audioIO_Linux.cpp.orig	Tue Jun  5 20:55:39 2001
-+++ mpeglib/lib/util/audio/audioIO_Linux.cpp	Mon Apr 29 23:03:54 2002
-@@ -39,11 +39,21 @@
- #undef AUSIZ
- #include <sys/soundcard.h>
- #else
-+#if defined(HAVE_SOUNDCARD_H)
-+#undef AUSIZ
-+#include <soundcard.h>
-+#else
- // fallback:
- #include <linux/soundcard.h>
- 
+$OpenBSD: patch-mpeglib_lib_util_audio_audioIO_Linux_cpp,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- mpeglib/lib/util/audio/audioIO_Linux.cpp.orig	Sun Oct 27 00:20:37 2002
++++ mpeglib/lib/util/audio/audioIO_Linux.cpp	Fri Jan  3 14:41:49 2003
+@@ -30,6 +30,9 @@
+ #elif defined(HAVE_MACHINE_SOUNDCARD_H) 
+ 	#undef AUSIZ
+ 	#include <machine/soundcard.h>
++#elif defined(HAVE_SOUNDCARD_H)
++	#undef AUSIZ
++	#include <soundcard.h>
+ #elif defined(__NetBSD__)
+ 	#undef AUSIZ
+ 	#include <soundcard.h>
+@@ -37,6 +40,9 @@
+ 	// fallback:
+ 	#include <linux/soundcard.h>
  #endif
- #endif
-+#endif
 +#ifdef __OpenBSD__
 +#define AUDIO_DEVICE_NAME "/dev/audio"
-+#else
-+#define AUDIO_DEVICE_NAME "/dev/dsp"
 +#endif
  
  
  /* optimal fragment size */
-@@ -75,7 +85,7 @@ void audioDestruct() {
+@@ -68,7 +74,7 @@ void audioDestruct() {
     should open the audio device, perform any special initialization	
  */
  int  audioOpen() {

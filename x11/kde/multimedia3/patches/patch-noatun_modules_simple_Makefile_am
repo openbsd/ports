@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun_modules_simple_Makefile_am,v 1.1 2003/01/27 19:53:59 espie Exp $
+--- noatun/modules/simple/Makefile.am.orig	Fri Jan  3 15:06:44 2003
++++ noatun/modules/simple/Makefile.am	Fri Jan  3 15:06:57 2003
+@@ -4,7 +4,7 @@ kde_module_LTLIBRARIES = noatunsimple.la
+ 
+ noatunsimple_la_SOURCES = propertiesdialog.ui noatunui.cpp userinterface.cpp
+ noatunsimple_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-noatunsimple_la_LIBADD =  $(top_builddir)/noatun/library/libnoatun.la \
++noatunsimple_la_LIBADD =  $(top_builddir)/noatun/library/libknoatun.la \
+ 			  $(top_builddir)/noatun/library/libnoatuncontrols.la \
+ 			 -lkmedia2_idl -lsoundserver_idl -lartskde
+ 

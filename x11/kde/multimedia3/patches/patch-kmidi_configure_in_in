@@ -1,7 +1,7 @@
-$OpenBSD: patch-kmidi_configure_in_in,v 1.2 2002/12/23 14:22:32 espie Exp $
---- kmidi/configure.in.in.orig	Mon Dec 16 04:00:27 2002
-+++ kmidi/configure.in.in	Sun Dec 22 13:52:20 2002
-@@ -645,7 +645,7 @@ dnl    else
+$OpenBSD: patch-kmidi_configure_in_in,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- kmidi/configure.in.in.orig	Sun Oct 27 00:20:12 2002
++++ kmidi/configure.in.in	Wed Jan  1 16:18:39 2003
+@@ -639,7 +639,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
      EXTRATDEFS="$EXTRATDEFS -DIA_XAW"

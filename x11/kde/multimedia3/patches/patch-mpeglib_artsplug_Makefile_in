@@ -1,21 +1,39 @@
-$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
---- mpeglib_artsplug/Makefile.in.orig	Sat Dec 21 08:07:52 2002
-+++ mpeglib_artsplug/Makefile.in	Sun Dec 22 14:36:33 2002
-@@ -357,7 +357,7 @@ libarts_mpeglib_la_SOURCES = $(BUILT_SOU
- 
- 
- libarts_mpeglib_la_LDFLAGS = $(all_libraries) \
--					$(top_builddir)/mpeglib/lib/libmpeg.la \
-+					$(top_builddir)/mpeglib/lib/libkmpeg.la \
- 					-module \
+$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- mpeglib_artsplug/Makefile.in.orig	Mon Nov 25 04:56:43 2002
++++ mpeglib_artsplug/Makefile.in	Wed Jan  1 16:25:14 2003
+@@ -399,7 +399,7 @@ libarts_mpeglib_la_LDFLAGS = $(all_libra
  					-release $(MPEGLIB_ARTS_VERSION) \
  					-version-info $(MPEGLIB_ARTS_MAJOR_VERSION):$(MPEGLIB_ARTS_MINOR_VERSION):$(MPEGLIB_ARTS_MICRO_VERSION)
-@@ -368,7 +368,7 @@ libarts_splay_la_SOURCES = splayPlayObje
  
+-libarts_mpeglib_la_LIBADD = $(top_builddir)/mpeglib/lib/libmpeg.la 
++libarts_mpeglib_la_LIBADD = $(top_builddir)/mpeglib/lib/libkmpeg.la 
  
+ libarts_splay_la_SOURCES = splayPlayObject.cc \
+ 					splayPlayObject_impl.cpp
+@@ -408,7 +408,7 @@ libarts_splay_la_SOURCES = splayPlayObje
  libarts_splay_la_LDFLAGS = $(all_libraries) \
--					$(top_builddir)/mpeglib/lib/libmpeg.la \
-+					$(top_builddir)/mpeglib/lib/libkmpeg.la \
  					-module
  
+-libarts_splay_la_LIBADD = $(top_builddir)/mpeglib/lib/libmpeg.la
++libarts_splay_la_LIBADD = $(top_builddir)/mpeglib/lib/libkmpeg.la
  
+ bin_PROGRAMS = mpeglibartsplay
+ 
+@@ -427,7 +427,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libarts_mpeglib_la_DEPENDENCIES = $(top_builddir)/mpeglib/lib/libmpeg.la
++libarts_mpeglib_la_DEPENDENCIES = $(top_builddir)/mpeglib/lib/libkmpeg.la
+ am_libarts_mpeglib_la_OBJECTS = decoderBaseObject.lo splayPlayObject.lo \
+ 	decoderBaseObject_impl.lo oggPlayObject_impl.lo \
+ 	mpgPlayObject_impl.lo wavPlayObject_impl.lo \
+@@ -443,7 +443,7 @@ libarts_mpeglib_la_nofinal_OBJECTS = dec
+ 	vcdPlayObject_impl.lo nullPlayObject_impl.lo
+ @KDE_USE_FINAL_FALSE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_final_OBJECTS)
+-libarts_splay_la_DEPENDENCIES = $(top_builddir)/mpeglib/lib/libmpeg.la
++libarts_splay_la_DEPENDENCIES = $(top_builddir)/mpeglib/lib/libkmpeg.la
+ am_libarts_splay_la_OBJECTS = splayPlayObject.lo splayPlayObject_impl.lo
+ #>- libarts_splay_la_OBJECTS = $(am_libarts_splay_la_OBJECTS)
+ #>+ 4

@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_excellent_Makefile_in,v 1.2 2002/12/23 14:22:32 espie Exp $
---- noatun/modules/excellent/Makefile.in.orig	Sat Dec 21 08:07:53 2002
-+++ noatun/modules/excellent/Makefile.in	Sun Dec 22 13:52:21 2002
-@@ -297,7 +297,7 @@ noatun_excellent_la_SOURCES = noatunui.c
+$OpenBSD: patch-noatun_modules_excellent_Makefile_in,v 1.3 2003/01/27 19:53:58 espie Exp $
+--- noatun/modules/excellent/Makefile.in.orig	Mon Nov 25 04:56:44 2002
++++ noatun/modules/excellent/Makefile.in	Wed Jan  1 16:18:40 2003
+@@ -333,7 +333,7 @@ noatun_excellent_la_SOURCES = noatunui.c
  
  noatun_excellent_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
  noatun_excellent_la_LIBADD = $(LIB_KFILE) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_excellent_Makefile_in,v 1.2 2002/12/23 14:22:32 e
  	$(top_builddir)/noatun/library/libnoatuncontrols.la \
  	-lqtmcop -lkmedia2_idl -lsoundserver_idl
  
-@@ -314,7 +314,7 @@ CONFIG_CLEAN_FILES =
+@@ -350,7 +350,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_excellent_la_DEPENDENCIES = \
