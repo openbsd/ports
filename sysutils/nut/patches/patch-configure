@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.3 2003/01/18 18:29:27 marcm Exp $
+--- configure.orig	Sun Dec 29 20:49:56 2002
++++ configure	Sun Dec 29 20:50:29 2002
+@@ -688,7 +688,7 @@ BUILDOBJ=common.o
+ 
+ 
+ GD_INCLUDES=""
+-GD_LIBS="-L/usr/X11R6/lib -lgd -lpng -lz -ljpeg -lfreetype -lm -lXpm -lX11"
++GD_LIBS="-lgd -lpng -lz -ljpeg -lttf -lm"
+ 
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
