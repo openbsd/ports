@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2002/03/02 22:54:05 brad Exp $
+# $OpenBSD: INSTALL,v 1.4 2002/03/07 00:02:15 brad Exp $
 #
 # Pre/post-installation setup of dopewars
 
@@ -31,7 +31,7 @@ case $2 in
 	;;
     POST-INSTALL)
 	if [ ! -f $SCORE_FILE ]; then
-	    do_install_scorefile $1
+	    do_install_scorefile
 	fi
 	;;
     *)
