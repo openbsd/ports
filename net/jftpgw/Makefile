@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/15 00:17:10 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/24 00:58:00 brad Exp $
 
-DISTNAME=	jftpgw-0.0.10
+DISTNAME=	jftpgw-0.0.11
 CATEGORIES=	net
-NEED_VERSION=	1.320
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
