@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2003/09/23 23:40:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.115 2003/11/03 20:24:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -33,7 +33,6 @@
      SUBDIR += giftrans
      SUBDIR += gii
      SUBDIR += gimp
-     SUBDIR += gkrellkam
      SUBDIR += gle
      SUBDIR += glut
      SUBDIR += gphoto

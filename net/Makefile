@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2003/08/22 08:43:21 djm Exp $
+# $OpenBSD: Makefile,v 1.295 2003/11/03 20:24:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -58,7 +58,6 @@
      SUBDIR += gabber
      SUBDIR += gaim
      SUBDIR += gaim,audio
-     SUBDIR += gkrellm-wireless
      SUBDIR += gmudix
      SUBDIR += gnet
      SUBDIR += gnomeicu

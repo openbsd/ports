@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2003/11/03 15:04:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.173 2003/11/03 20:24:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -57,8 +57,6 @@
      SUBDIR += fvwm95
      SUBDIR += gatos-bin
      SUBDIR += gentoo
-     SUBDIR += gkrellweather
-     SUBDIR += gkrellshoot
      SUBDIR += gnome
      SUBDIR += gnomemm
      SUBDIR += golem

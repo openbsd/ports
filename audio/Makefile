@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2003/10/14 16:53:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.104 2003/11/03 20:24:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -17,9 +17,6 @@
      SUBDIR += faad
      SUBDIR += flac
      SUBDIR += flite
-     SUBDIR += gkrellm-volume
-     SUBDIR += gkrellmms
-     SUBDIR += gkrellmss
 #    SUBDIR += gmod
      SUBDIR += gogo
      SUBDIR += gom
