@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/24 01:24:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/24 09:02:07 avsm Exp $
 
-DISTNAME=	HTML-Parser-3.16
+DISTNAME=	HTML-Parser-3.17
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 NEED_VERSION=	1.348
