@@ -1,0 +1,8 @@
+The program accepts a list of devices on standard input, each device
+name optionally followed by a comma and a number.  The number, if
+given, indicates the number of occurrences of the named device.
+
+The output is a table of the same devices, with CSR and vector
+assignments according to DEC standards.  Floating assignments are
+flagged with asterisks, as in original SYSGEN output.  VMS device
+names and support info are, however, not printed.
