@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/30 01:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/17 23:56:43 djm Exp $
 
 COMMENT=	"Python charting and plotting API"
 
 DISTNAME=	matplotlib-0.64
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -48,6 +48,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/data/* \
 	    ${PREFIX}/share/examples/py-matplotlib/data
 
+VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

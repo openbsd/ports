@@ -1,0 +1,12 @@
+$OpenBSD: patch-src__gtkagg_cpp,v 1.1 2005/01/17 23:56:43 djm Exp $
+--- src/_gtkagg.cpp.orig	Tue Jan 18 09:56:11 2005
++++ src/_gtkagg.cpp	Tue Jan 18 09:56:23 2005
+@@ -6,7 +6,7 @@
+ #include <utility>
+ 
+ #include <pygobject.h>
+-#include <pygtk/pygtk.h>
++#include <pygtk-2.0/pygtk/pygtk.h>
+ 
+ #include "_backend_agg.h"
+ 
