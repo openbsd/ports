@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/11 18:00:30 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/23 08:51:15 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
+
+.if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"Broken on sparc"
+.endif
 
 DISTNAME=	pure-ftpd-1.0.10
 CATEGORIES=	net
