@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1998/07/01 05:39:29 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1998/11/10 06:22:23 marc Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -36,6 +36,7 @@
 #    SUBDIR += libdlmalloc
 #    SUBDIR += libmalloc
      SUBDIR += libslang
+     SUBDIR += libtool
 #    SUBDIR += linux_devel
 #    SUBDIR += linuxgdb
      SUBDIR += m4
