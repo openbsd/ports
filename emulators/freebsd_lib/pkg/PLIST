@@ -1,4 +1,4 @@
-LICENSE
+@comment $OpenBSD: PLIST,v 1.3 2000/06/20 18:14:13 brad Exp $
 sbin/ldconfig
 usr/lib/compat/libc.so.2.2
 usr/lib/compat/libdialog.so.2.0
@@ -62,6 +62,7 @@ usr/X11R6/lib/libXp.so.6.2
 usr/X11R6/lib/libXt.so.6.0
 usr/X11R6/lib/libXtst.so.6.1
 usr/X11R6/lib/liboldX.so.6.0
+var/run/ld.so.hints
 @dirrm sbin
 @dirrm usr/X11R6/lib
 @dirrm usr/X11R6
@@ -69,9 +70,5 @@ usr/X11R6/lib/liboldX.so.6.0
 @dirrm usr/lib/compat
 @dirrm usr/lib
 @dirrm usr
-@unexec rm -f %D/var/run/ld.so.hints
-@unexec rmdir %D/var/run > /dev/null || true
-@unexec rmdir %D/var > /dev/null || true
-@unexec rmdir %D > /dev/null || true
-@unexec rmdir /emul > /dev/null || true
-
+@dirrm var/run
+@dirrm var

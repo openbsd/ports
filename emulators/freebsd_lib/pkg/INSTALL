@@ -1,0 +1,48 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/06/20 18:14:13 brad Exp $
+#
+# Pre/post-installation setup of freebsd_lib
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local/emul/freebsd}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| Installation of $1 complete. See compat_freebsd(8)"
+    echo "| for more information."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+    	mkdir -p /emul
+	mkdir -p ${PREFIX}
+	ln -sf ${PREFIX} /emul/freebsd
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
