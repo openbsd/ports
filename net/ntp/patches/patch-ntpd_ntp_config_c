@@ -1,0 +1,12 @@
+$OpenBSD: patch-ntpd_ntp_config_c,v 1.1 2002/11/19 16:49:03 danh Exp $
+--- ntpd/ntp_config.c.orig	Mon Nov 19 22:08:41 2001
++++ ntpd/ntp_config.c	Tue Nov 19 11:32:24 2002
+@@ -1796,7 +1796,7 @@ gettokens_netinfo (
+ 				for (index = 0; index < namelist.ni_namelist_len; index++) {
+ 					char *value = namelist.ni_namelist_val[index];
+ 
+-					if (! (val_list[index] = (char*)malloc(strlen(value+1))))
++					if (! (val_list[index] = (char*)malloc(strlen(value)+1)))
+ 						{ msyslog(LOG_ERR, "out of memory while configuring"); break; }
+ 
+ 					strcpy(val_list[index], value);
