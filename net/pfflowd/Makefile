@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/26 16:41:46 djm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/16 07:52:24 djm Exp $
 
 COMMENT=	"PF to NetFlow converter"
 
-DISTNAME=	pfflowd-0.5
+DISTNAME=	pfflowd-0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 
