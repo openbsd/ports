@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/21 16:30:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/22 18:30:59 pvalchev Exp $
 
-BROKEN=		"very old and with broken build system"
+#BROKEN=		"very old and with broken build system"
 
 COMMENT=	"PalmPilot(tm) development environment"
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
 CATEGORIES=     devel palm
-NEED_VERSION=	1.402
+NEED_VERSION=	1.440
 FAKE=No
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
@@ -22,9 +22,8 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-# install things in ${LOCALBASE}/pilot to avoid conflicts
-PREFIX=		${LOCALBASE}/pilot
 WRKDIST=	${WRKDIR}/${PKGNAME}
+PREFIX=		${LOCALBASE}/pilot
 
 USE_PERL5=	yes
 ALL_TARGET=	gnutools all
@@ -47,6 +46,8 @@ STRIP=		build-prc \
 		pilrc \
 		txt2bitm
 
+WRKDIST=	${WRKDIR}
+
 # check for "-m486" and bomb out if the user has it
 pre-build:
 		@if echo ${CFLAGS} | grep -- "-m486" > /dev/null ; then \
@@ -61,9 +62,10 @@ pre-build:
 			echo "Your environment looks OK." ; \
 		fi
 
-# after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
-post-patch:
-		(cd ${WRKSRC} ; ${MAKE_PROGRAM} patch)
+# before we apply freebsd patches, apply prc-tools' patches to gcc/gdb/...
+pre-patch:
+		(cd ${WRKSRC}/${PKGNAME} && ${MAKE_PROGRAM} patch)
+		find ${WRKDIR}/ -name \*.orig -exec rm -f {} \;
 
 # the info files are redundant
 post-install:
