@@ -19,3 +19,4 @@ Major changes from fvwm are:
 - NEXTSTEP style icons. These styles are hard-coded in the program, which is
   good for the consistent look of the NEXTSTEP interface.
 
+WWW: ${HOMEPAGE}
