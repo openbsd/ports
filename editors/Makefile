@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/10 18:33:52 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/21 18:45:11 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -19,6 +19,7 @@
 #    SUBDIR += mule-common
      SUBDIR += nedit
 #    SUBDIR += nvi
+     SUBDIR += nvi-m17n
 #    SUBDIR += staroffice
      SUBDIR += textedit
 #    SUBDIR += thoteditor
@@ -32,6 +33,7 @@
 #    SUBDIR += xed
 #    SUBDIR += xemacs
      SUBDIR += xemacs20
+     SUBDIR += xemacs20:mule
 #    SUBDIR += xemacs21
 #    SUBDIR += xvile
      SUBDIR += xwpe

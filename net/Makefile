@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2000/04/11 05:58:16 camield Exp $
+# $OpenBSD: Makefile,v 1.70 2000/04/21 18:45:12 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += archie
+     SUBDIR += arpcatch
      SUBDIR += arpwatch
 #    SUBDIR += ascend-radius
 #    SUBDIR += bb
@@ -32,6 +33,7 @@
 #    SUBDIR += fspclient
 #    SUBDIR += ftpsearch
 #    SUBDIR += ftptool
+     SUBDIR += gaim
      SUBDIR += gated
      SUBDIR += gicq
 #    SUBDIR += gnu-finger
@@ -50,6 +52,7 @@
 #    SUBDIR += lftp
 #    SUBDIR += libsocket++
      SUBDIR += libnet
+     SUBDIR += libnids
      SUBDIR += licq
 #    SUBDIR += llnlxdir
 #    SUBDIR += llnlxftp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/04/17 23:52:58 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/04/21 18:45:14 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -18,6 +18,7 @@
 #    SUBDIR += gwstat
 #    SUBDIR += harvest
 #    SUBDIR += http-analyze
+     SUBDIR += hotjava
      SUBDIR += libghttp
 #    SUBDIR += libpics
 #    SUBDIR += libwww
@@ -29,6 +30,7 @@
 #    SUBDIR += momspider
      SUBDIR += mozilla
      SUBDIR += netscape
+     SUBDIR += nscache
 #    SUBDIR += p5-Apache
 #    SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
@@ -40,6 +42,7 @@
 #    SUBDIR += p5-libwww
      SUBDIR += php3
      SUBDIR += squid
+     SUBDIR += tidy
      SUBDIR += transproxy
 #    SUBDIR += vrweb
 #    SUBDIR += w3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2000/04/05 11:54:45 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2000/04/21 18:45:14 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += lupe
 #    SUBDIR += mlvwm
      SUBDIR += mouseclock
+     SUBDIR += mxconns
 #    SUBDIR += neXtaw
      SUBDIR += olvwm
 #    SUBDIR += p5-Tcl-Tk

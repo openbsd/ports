@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2000/04/11 06:02:28 turan Exp $
+# $OpenBSD: Makefile,v 1.38 2000/04/21 18:45:12 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,16 +27,19 @@
      SUBDIR += nbaudit
      SUBDIR += nessus
      SUBDIR += nfsshell
+     SUBDIR += outguess
 #    SUBDIR += p5-Authen-Radius
 #    SUBDIR += p5-Crypt-DES
 #    SUBDIR += p5-Crypt-IDEA
 #    SUBDIR += p5-MD5
 #    SUBDIR += p5-PGP
+     SUBDIR += parse
      SUBDIR += pgp
      SUBDIR += pgp5
      SUBDIR += pgplib
 #    SUBDIR += pidentd
      SUBDIR += portscanner
+     SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += rsaref
      SUBDIR += smurflog
@@ -54,6 +57,7 @@
      SUBDIR += tempwatch
 #    SUBDIR += tripwire
 #    SUBDIR += vscan
+     SUBDIR += whisker
 #    SUBDIR += xinetd
 
 .include <bsd.port.subdir.mk>
