@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/19 14:26:01 brad Exp $
 
 COMMENT=	"make pretty graphs from Analog logfiles"
 
 DISTNAME=	rmagic-2.13
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.reportmagic.org/
 
@@ -29,7 +29,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 do-install:
-	@perl -i -pe "s:%%PREFIX%%:${PREFIX}/share/reportmagic/:g" \
+	@perl -i -pe "s:%%PREFIX%%:${TRUEPREFIX}:g" \
 		${WRKSRC}/rmagic.pl
 	cd ${WRKSRC}; ${WRKSRC}/Install.PL -no_modules
 
