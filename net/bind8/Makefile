@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1999/10/04 16:31:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/04 17:13:24 ho Exp $
 
-DISTNAME=	bind-19990828-snapshot
-PKGNAME=	bind-8.2.2-t3b
+DISTNAME=	bind-19991004-snapshot
+PKGNAME=	bind-8.2.2-t4b
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/
 
-BROKEN="Security holes discovered. Update pending"
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
 WRKSRC=		${WRKDIR}/named
