@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2003/12/04 23:27:07 margarida Exp $
+# $OpenBSD: Makefile,v 1.52 2004/01/17 05:34:28 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
-VERSION=	4.0.1
+VERSION=	4.0.2
 DISTNAME=	screen-${VERSION}
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
@@ -19,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
+
+CFLAGS+=	-Wall
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
