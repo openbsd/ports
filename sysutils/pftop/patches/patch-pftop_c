@@ -1,6 +1,14 @@
---- pftop.c.orig	Thu Jan  9 23:01:15 2003
-+++ pftop.c	Thu Jan  9 23:01:20 2003
-@@ -1382,10 +1382,10 @@
+--- pftop.c.orig	Fri Feb 21 23:56:22 2003
++++ pftop.c	Fri Feb 21 23:58:32 2003
+@@ -1344,6 +1344,7 @@
+ 	struct pfioc_rule pr;
+ 	u_int32_t nr;
+ 
++	memset(&pr, 0, sizeof(pr));
+ 	if (ioctl(dev, DIOCGETRULES, &pr)) {
+ 		warnx("DIOCGETRULES");
+ 		return (-1);
+@@ -1381,10 +1382,10 @@
  void
  tb_print_addrw(struct pf_addr_wrap *addr, struct pf_addr *mask, u_int8_t af)
  {
@@ -14,7 +22,7 @@
  }
  #endif
  
-@@ -1433,39 +1433,40 @@
+@@ -1432,39 +1433,40 @@
  {
  	if (
  #if OS_LEVEL > 31
@@ -65,7 +73,7 @@
  #endif
  			tbprintf(" ");
  		}
-@@ -1476,25 +1477,25 @@
+@@ -1475,25 +1477,25 @@
  
  		tbprintf("to ");
  #if OS_LEVEL > 30
