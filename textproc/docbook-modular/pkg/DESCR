@@ -1,0 +1,7 @@
+These are DSSSL stylesheets for the DocBook DTD (they are also
+completely compatible with the DocBook XML DTD).
+
+DSSSL is a stylesheet language for both print and online rendering.
+The acronym stands for Document Style Semantics and Specification
+Language. It is defined by ISO/IEC 10179:1996. For more general
+information about DSSSL, see the DSSSL Page at http://www.jclark.com/dsssl
