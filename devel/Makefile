@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2001/05/29 23:23:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.77 2001/06/01 07:56:34 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += dejagnu
 #    SUBDIR += dmake
      SUBDIR += doc++
+     SUBDIR += flawfinder
 #    SUBDIR += f77flow
 #    SUBDIR += fpp
 #    SUBDIR += gcc11
