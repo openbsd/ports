@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2001/04/23 21:58:44 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2001/07/25 08:16:46 peter Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
-COMMENT-docs=	"PostgreSQL RDBMS documentaion"
+COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.1
+VERSION=	7.1.2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.405
+NEED_VERSION=	1.427
 
 HOMEPAGE=	http://www.postgresql.org/
 

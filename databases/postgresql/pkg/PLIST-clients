@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-clients,v 1.3 2001/04/21 18:25:57 peter Exp $
+@comment $OpenBSD: PLIST-clients,v 1.4 2001/07/25 08:16:47 peter Exp $
 @pkgcfl postgresql-[0-9]*
 @pkgcfl pgsql-[0-9]*
 @pkgcfl pgsql-clients-[0-9]*
@@ -9,10 +9,12 @@ bin/dropdb
 bin/droplang
 bin/dropuser
 bin/ecpg
+bin/ipcclean
 bin/pg_config
 bin/pg_dump
 bin/pg_dumpall
 bin/pg_id
+bin/pg_passwd
 bin/pg_restore
 bin/psql
 bin/vacuumdb
@@ -40,9 +42,18 @@ include/postgresql/pqexpbuffer.h
 include/postgresql/sql3types.h
 include/postgresql/sqlca.h
 lib/libecpg.a
+lib/libecpg.so
+lib/libecpg.so.3
 lib/libpgeasy.a
+lib/libpgeasy.so
+lib/libpgeasy.so.2
 lib/libpq++.a
+lib/libpq++.so
+lib/libpq++.so.3
 lib/libpq.a
+lib/libpq.so
+lib/libpq.so.2
+lib/plpgsql.so
 man/man1/createdb.1
 man/man1/createlang.1
 man/man1/createuser.1
@@ -50,10 +61,15 @@ man/man1/dropdb.1
 man/man1/droplang.1
 man/man1/dropuser.1
 man/man1/ecpg.1
+man/man1/ipcclean.1
 man/man1/pg_config.1
 man/man1/pg_dump.1
 man/man1/pg_dumpall.1
+man/man1/pg_passwd.1
 man/man1/pg_restore.1
+man/man1/pgaccess.1
+man/man1/pgtclsh.1
+man/man1/pgtksh.1
 man/man1/psql.1
 man/man1/vacuumdb.1
 man/manl/abort.l
@@ -132,15 +148,16 @@ share/doc/postgresql/README
 share/doc/postgresql/README.OpenBSD
 share/doc/postgresql/TODO
 share/doc/postgresql/register.txt
-%%tcl%%
-%%odbc%%
-%%SHARED%%
+share/postgresql/global.bki
+share/postgresql/global.description
+share/postgresql/pg_hba.conf.sample
+share/postgresql/pg_ident.conf.sample
+share/postgresql/postgresql.conf.sample
+share/postgresql/template1.bki
+share/postgresql/template1.description
+@dirrm share/postgresql
 @dirrm share/doc/postgresql
-@dirrm include/postgresql/utils
 @dirrm include/postgresql/libpq++
 @dirrm include/postgresql/libpq
 @dirrm include/postgresql/lib
-@dirrm include/postgresql/executor
-@dirrm include/postgresql/commands 
-@dirrm include/postgresql/access 
 @dirrm include/postgresql

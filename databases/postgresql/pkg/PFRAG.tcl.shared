@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.tcl.shared,v 1.5 2001/04/23 21:58:45 espie Exp $
+@comment $OpenBSD: PFRAG.tcl.shared,v 1.6 2001/07/25 08:16:47 peter Exp $
+lib/libpgtcl.so
+lib/libpgtcl.so.2
 lib/libpgtcl.so.2.1
 lib/pltcl.so
 DYNLIBDIR(%B)

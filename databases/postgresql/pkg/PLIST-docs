@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2001/04/23 21:58:45 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2001/07/25 08:16:47 peter Exp $
+share/doc/postgresql/COPYRIGHT
+share/doc/postgresql/FAQ
+share/doc/postgresql/FAQ_DEV
+share/doc/postgresql/HISTORY
+share/doc/postgresql/INSTALL
+share/doc/postgresql/README
+share/doc/postgresql/README.OpenBSD
+share/doc/postgresql/TODO
 share/doc/postgresql/html/admin.html
 share/doc/postgresql/html/advanced.html
 share/doc/postgresql/html/altern-locations.html
@@ -156,12 +164,12 @@ share/doc/postgresql/html/libpqpp-copy.html
 share/doc/postgresql/html/libpqpp-exec.html
 share/doc/postgresql/html/libpqpp-notify.html
 share/doc/postgresql/html/lisp.html
-share/doc/postgresql/html/ln11307.html
+share/doc/postgresql/html/ln11330.html
 share/doc/postgresql/html/ln1274.html
-share/doc/postgresql/html/ln15103.html
+share/doc/postgresql/html/ln15168.html
 share/doc/postgresql/html/ln24.html
-share/doc/postgresql/html/ln24896.html
-share/doc/postgresql/html/ln37046.html
+share/doc/postgresql/html/ln24997.html
+share/doc/postgresql/html/ln37163.html
 share/doc/postgresql/html/ln8.html
 share/doc/postgresql/html/lo-funcs.html
 share/doc/postgresql/html/lo-implementation.html
@@ -338,6 +346,7 @@ share/doc/postgresql/html/release-7-0-1.html
 share/doc/postgresql/html/release-7-0-2.html
 share/doc/postgresql/html/release-7-0-3.html
 share/doc/postgresql/html/release-7-0.html
+share/doc/postgresql/html/release-7-1-1.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/relmodel-formal.html
 share/doc/postgresql/html/relmodel-oper.html
@@ -475,6 +484,7 @@ share/doc/postgresql/html/user.html
 share/doc/postgresql/html/wal-configuration.html
 share/doc/postgresql/html/wal-implementation.html
 share/doc/postgresql/html/wal.html
+share/doc/postgresql/html/x14501.html
 share/doc/postgresql/html/xact-read-committed.html
 share/doc/postgresql/html/xact-serializable.html
 share/doc/postgresql/html/xaggr.html
@@ -488,4 +498,17 @@ share/doc/postgresql/html/xoper.html
 share/doc/postgresql/html/xplang.html
 share/doc/postgresql/html/xtypes.html
 share/doc/postgresql/html/y2k.html
+share/doc/postgresql/register.txt
+share/postgresql/global.bki
+share/postgresql/global.description
+share/postgresql/pg_hba.conf.sample
+share/postgresql/pg_ident.conf.sample
+share/postgresql/postgresql.conf.sample
+share/postgresql/template1.bki
+share/postgresql/template1.description
+%%tcl%%
+%%odbc%%
+%%SHARED%%
+@dirrm share/postgresql
 @dirrm share/doc/postgresql/html
+@dirrm share/doc/postgresql

@@ -1,5 +1,12 @@
-Using PostgreSQL in an OpenBSD environment:
--------------------------------------------
+Requirements
+------------
+
+Please note that OpenBSD port of PostgreSQL requires a kernel
+compiled with SYSVSEM and SYSVSHM options for proper operation.
+The GENERIC kernel has these settings.
+
+Using PostgreSQL in an OpenBSD environment
+------------------------------------------
 
 If you are installing PostgreSQL for the first time, the following
 steps are required:
@@ -33,7 +40,8 @@ add the following lines to /etc/rc.local:
 
 if [ -x !!PREFIX!!/bin/pg_ctl ]; then
 	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl start \
-		-D /var/postgresql/data -l /var/postgresql/logfile"
+		-D /var/postgresql/data -l /var/postgresql/logfile \
+		-o '-D /var/postgresql/data'"
 	echo -n ' postgresql'
 fi
 
@@ -43,7 +51,7 @@ add the following lines to /etc/rc.shutdown:
 if [ -f /var/postgresql/data/postmaster.pid ]; then
 	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
 		-D /var/postgresql/data"
-	rm -f /var/portgresql/data/postmaster.pid
+	rm -f /var/postgresql/data/postmaster.pid
 fi
 
 Network Connections and Tuning
@@ -56,11 +64,10 @@ To allow connections over TCP (and other options) edit the file:
 and also edit the pg_hba.conf (in the same directory) making the
 appropriate changes to allow connection from your network.
 
-Please note that OpenBSD port of PostgreSQL requires a kernel
-compiled with SYSVSEM and SYSVSHM options for proper operation.
-The GENERIC kernel has these settings but the default sizes are not
-really large enough for a database with more than a handful of
-connections and should have at least the following:
+The default sizes in the GENERIC kernel for SysV semaphores
+are not really large enough for a database with more than a
+handful of connections. A server running such a database should
+have at least the following:
 
 option          SEMMNI=256
 option          SEMMNS=2048
@@ -72,7 +79,10 @@ try:
 option		SHMMAXPGS=4096		# default on i386 is 2048 = 8Mb
 					# other archs may vary
 
-These numbers should be tweaked depending on system use.
+These numbers should be tweaked depending on system use. See
+options(4) and release(8) manual pages and the FAQ at
+http://www.openbsd.org/faq/faq5.html describe how to compile
+a new custom kernel.
 
 The ulimit settings can also be a problem.  The following can be
 added for the postgresql user in the /etc/login.conf file:

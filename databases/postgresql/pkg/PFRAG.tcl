@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.5 2001/04/23 21:58:45 espie Exp $
 bin/pgaccess
 bin/pgtclsh
 bin/pgtksh
@@ -7,6 +6,9 @@ man/man1/pgaccess.1
 man/man1/pgtclsh.1
 man/man1/pgtksh.1
 lib/libpgtcl.a
+lib/libpgtcl.so
+lib/libpgtcl.so.2
+lib/pltcl.so
 share/postgresql/pgaccess/images/icon_button.gif
 share/postgresql/pgaccess/images/icon_checkbutton.gif
 share/postgresql/pgaccess/images/icon_entry.gif
@@ -113,11 +115,16 @@ share/postgresql/pgaccess/lib/help/view_table_structure.hlp
 share/postgresql/pgaccess/lib/help/views.hlp
 share/postgresql/pgaccess/lib/help/visual_designer.hlp
 share/postgresql/pgaccess/lib/help/y2k.hlp
+share/postgresql/pgaccess/lib/languages/chinese_big5
+share/postgresql/pgaccess/lib/languages/chinese_gb
 share/postgresql/pgaccess/lib/languages/czech
 share/postgresql/pgaccess/lib/languages/deutsch
+share/postgresql/pgaccess/lib/languages/euskara
 share/postgresql/pgaccess/lib/languages/francais
 share/postgresql/pgaccess/lib/languages/italiano
+share/postgresql/pgaccess/lib/languages/japanese
 share/postgresql/pgaccess/lib/languages/magyar
+share/postgresql/pgaccess/lib/languages/nederlands
 share/postgresql/pgaccess/lib/languages/portugues
 share/postgresql/pgaccess/lib/languages/romana
 share/postgresql/pgaccess/lib/languages/russian.koi8r
