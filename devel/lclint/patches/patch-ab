@@ -1,0 +1,66 @@
+--- src/Makefile.orig	Mon Jun  7 23:26:33 1999
++++ src/Makefile	Mon Jun  7 23:32:37 1999
+@@ -60,7 +60,7 @@
+ 
+ quick: lclint
+ 
+-lclint : $(OBJ) 
++lclint : signature.c cgrammar.c llgrammar.c cscanner.c $(OBJ) 
+ 	@echo '// '
+ 	@echo '//  Linking:'
+ 	@echo '// '
+@@ -75,17 +75,18 @@
+ ### this is probably NOT compatible with yacc.
+ ###
+ 
+-signature.c : signature.c.der signature.y
+ ifdef BISON
++signature.c : signature.y
+ 	@$(BISON) $(YFLAGS) -p lsl signature.y
+ 	@$(CAT) bison.head signature.tab.c > signature.c
+ 	@$(MV) Headers/signature_gen.h Headers/signature_gen.bak
+ 	@$(CAT) bison.head signature.tab.h > Headers/signature_gen.h
+ else
++signature.c : signature.c.der 
+ 	$(CP) signature.c.der signature.c
+ endif
+ 
+-cgrammar.c : cgrammar.c.der cgrammar.y
++cgrammar.c : cgrammar.y
+ ifdef BISON
+ 	$(BISON) $(YFLAGS) cgrammar.y
+ 	@echo '//           Expect 113 shift/reduce conflicts and 36 reduce/reduce conflicts.'
+@@ -94,13 +95,14 @@
+ 	@$(MV) Headers/cgrammar_tokens.h Headers/cgrammar_tokens.bak
+ 	@$(CAT) bison.head cgrammar.tab.h > Headers/cgrammar_tokens.h
+ else
++cgrammar.c : cgrammar.c.der 
+ 	$(CP) cgrammar.c.der cgrammar.c
+ endif
+ 
+ ### llgrammar2.h is necessary so +singleinclude may be used
+ 
+-llgrammar.c  : llgrammar.c.der llgrammar.y
+ ifdef BISON
++llgrammar.c  : llgrammar.y
+ 	$(BISON) $(YFLAGS) -p yl llgrammar.y
+ 	@echo '//            Expect 2 shift/reduce conflicts.'
+ 	@$(CAT) bison.head llgrammar.tab.c > llgrammar.c
+@@ -109,14 +111,16 @@
+ 	@$(MV) Headers/llgrammar_gen.h Headers/llgrammar_gen.bak
+ 	@$(CAT) bison.head llgrammar.tab.h > Headers/llgrammar_gen.h
+ else
++llgrammar.c  : llgrammar.c.der 
+ 	$(CP) llgrammar.c.der llgrammar.c
+ endif
+ 
+-cscanner.c : cscanner.c.der cscanner.l
+ ifdef FLEX				
++cscanner.c : cscanner.l
+ 	$(FLEX) $(LFLAGS) cscanner.l 
+ 	$(CAT) flex.head lex.yy.c > cscanner.c
+ else
++cscanner.c : cscanner.c.der 
+ 	$(CP) cscanner.c.der cscanner.c
+ endif
+ 

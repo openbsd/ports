@@ -1,0 +1,79 @@
+--- Makefile.in.orig	Sun Apr 19 03:06:51 1998
++++ Makefile.in	Tue Jun  8 01:19:51 1999
+@@ -40,10 +40,10 @@
+ ### 
+ 
+ ### directory for lclint libraries
+-LIBDIR     = @installdir@/lib
++LIBDIR     = @installdir@/share/lclint-2.4b/lib
+ 
+ ### directory for lclint standard imports
+-IMPORTSDIR = @installdir@/imports
++IMPORTSDIR = @installdir@/share/lclint-2.4b/imports
+ 
+ ### directory for lclint binary
+ INSTALLDIR = @installdir@/bin
+@@ -90,9 +90,8 @@
+ ###	make install
+ ###
+ 
+-### installation command
+-INSTALL      = @INSTALL@
+-INSTALLFLAGS =           
++INSTALL_PROGRAM      = @INSTALL_PROGRAM@
++INSTALL_DATA 			= @INSTALL_DATA@
+ 
+ ### this works with nfs, change to whatever is needed to make
+ ### a file executable on your system
+@@ -114,7 +113,7 @@
+ ### optimizing compiler --- add optimization flags here
+ ### 
+ 
+-CCOPT = $(CC) @OPT@
++CCOPT = $(CC) @CFLAGS@
+ 
+ ###
+ ### link flags --- this links the lex or flex library
+@@ -164,6 +163,7 @@
+ 	setenv LINKFLAGS '$(LINKFLAGS)' ; \
+ 	setenv DEFAULT_LARCHPATH '".:$(LIBDIR)"' ; \
+ 	setenv DEFAULT_LCLIMPORTDIR '"$(IMPORTSDIR)"' ; \
++	unsetenv CFLAGS;\
+ 	$(MAKE) -e
+ else
+ 	cd src ; CC='$(CC)'; export CC; CCOPT='$(CCOPT)'; \
+@@ -173,6 +173,7 @@
+ 	DEFAULT_LARCHPATH='".:$(LIBDIR)/"' ; export DEFAULT_LARCHPATH ;\
+ 	LINKFLAGS='$(LINKFLAGS)'; export LINK_FLAGS; \
+ 	DEFAULT_LCLIMPORTDIR='"$(IMPORTSDIR)"' ; export DEFAULT_LCLIMPORTDIR ;\
++	unset CFLAGS;\
+ 	$(MAKE) -e 
+ endif
+ 	@echo '// '
+@@ -225,21 +226,21 @@
+ 
+ dobinaries:
+ 	@echo '//  Installing binaries in '$(INSTALLDIR)
+-	cd $(LCLINTBINDIR); $(INSTALL) $(INSTALLFLAGS) lclint $(INSTALLDIR)
++	cd $(LCLINTBINDIR); $(INSTALL_PROGRAM) lclint $(INSTALLDIR)
+ 	@echo '//  Installed: lclint in '$(INSTALLDIR) 
+ 
+ dolibraries:
+ 	@echo '//  Installing libraries in '$(LIBDIR)
+ 	@echo "    (This will complain if the directory already exists, don't worry about it.)"
+-	-mkdir $(LIBDIR)
+-	$(CP) $(LCLINTLIB)/* $(LIBDIR)
++	-mkdir -p $(LIBDIR)
++	$(INSTALL_DATA) $(LCLINTLIB)/* $(LIBDIR)
+ 	@echo '//  Installed libraries.'
+ 
+ doimports:
+ 	@echo '//  Installing imports in '$(IMPORTSDIR)
+ 	@echo "    (This will complain if the directory already exists, don't worry about it.)"
+-	-mkdir $(IMPORTSDIR)
+-	$(CP) $(LCLINTIMPORTS)/* $(IMPORTSDIR)
++	-mkdir -p $(IMPORTSDIR)
++	$(INSTALL_DATA) $(LCLINTIMPORTS)/* $(IMPORTSDIR)
+ 	@echo '//  Installed imports.'
+ 
+ 
