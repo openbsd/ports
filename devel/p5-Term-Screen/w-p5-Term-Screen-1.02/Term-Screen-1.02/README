@@ -1,0 +1,61 @@
+Term::Screen version 1.01
+=========================
+
+This module provides a simple interface to the terminal control features
+for character mode terminals.
+
+INSTALLATION
+
+This module will build in the usual way :
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+This last step may need to be done as a user with permission to write into
+the Perl library directories - if you are not able to do this you may run
+the first step with:
+
+   perl Makefile.PL PREFIX=/some/directory/you/can/write/to
+
+And then run the rest of the procedure as usual - you will need to add
+that path to @INC as described in the FAQ or in the manpage for the 'lib'
+pragma.
+
+DEPENDENCIES
+
+This module depends on version 1.01 or greater of Term::Cap - whilst this
+module has been in the core Perl distribution for some years it had 
+previously required a patch - 1.01 is available as part of the 5.7.2
+development release (not intended for general release) and will be in
+5.8.0 - it is hoped that 1.02 will be released to CPAN for those who
+dont want to upgrade their version of Perl just now.
+
+TO DO
+
+Make a terminfo version of this so better function key support would be
+built in.
+
+Make an MS-DOS version and a MAC version and an OS/2 version and a VMS 
+version, and ... so we can stop seeing "how can I read one char questions"
+
+SUPPORT
+
+Please contact the current maintainer of this module to report any bugs
+or suggest changes to this module.
+
+          Jonathan Stowe <jns@gellyfish.com>
+
+COPYRIGHT AND LICENSE
+
+Copyright (c) Mark Kaehny    1996
+              Jonathan Stowe 2001          
+
+
+This is free software it can be modified and distributed under the same
+terms as Perl itself - see the README file in the Perl Distribution for
+more information.
+
+Mark Kaehny
+kaehny@execpc.com 

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 23:34:37 margarida Exp $
+${P5SITE}/Term/Screen.pm
+man/man3p/Term::Screen.3p
