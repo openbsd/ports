@@ -1,6 +1,6 @@
---- configure.orig	Mon Jun 21 06:53:35 1999
-+++ configure	Tue Nov 30 19:36:14 1999
-@@ -44,7 +44,7 @@
+--- configure.orig	Mon Jun 21 12:53:35 1999
++++ configure	Fri Mar 16 20:36:56 2001
+@@ -44,7 +44,7 @@ case $OSTYPE in
                             ;;
    HP-UX                  ) OSTYPE=HPUX
                             ;;
@@ -9,13 +9,13 @@
                             ;;
    *                      ) echo "$OSTYPE not supported. Sorry."
                             exit
-@@ -118,6 +118,15 @@
+@@ -118,6 +118,15 @@ case $OSTYPE in
  	    OPTIMIZE="-O4"
  	    PROFILE="-pg"
              ;;
-+  OpenBSD ) CC="gcc"
-+            WFLAGS=$GCCWFLAGS
-+	    INCLUDE="-I/usr/local/include"
++  OpenBSD )
++            WFLAGS="${CFLAGS}"
++	    INCLUDE="-I${LOCALBASE}include"
 +	    LDLIBS="-lm"
 +	    DEBUG="-g"
 +	    CHAR="-fsigned-char"
@@ -25,7 +25,7 @@
    NetBSD )  CC="gcc"
              WFLAGS=$GCCWFLAGS
  	    INCLUDE="-I/usr/local/include"
-@@ -241,9 +250,6 @@
+@@ -241,9 +250,6 @@ do
  		CHECK_FLAG=-fbounds-checking
  		CHECK_LIB=-lcheck
  		echo "Enabled bounds checking option" 
