@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/08/25 17:15:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/26 19:46:09 naddy Exp $
 
 COMMENT=	"window manager based on the original Blackbox code"
 
@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}
 
 HOMEPAGE=		http://fluxbox.org/
 
-MAINTAINER=		Han Boetes <han@mijncomputer.nl>
+MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -31,5 +31,7 @@ MODGCC3_LANGS+=		c++
 USE_X11=		Yes
 SUBST_VARS=		VERSION
 
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/menu ${PREFIX}/share/fluxbox
 
 .include <bsd.port.mk>

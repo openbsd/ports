@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/08/25 17:15:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/08/26 19:46:09 naddy Exp $
 @pkgcfl blackbox-*
 @pkgcfl openbox-*
 bin/bsetbg
@@ -10,6 +10,7 @@ man/man1/bsetroot.1
 man/man1/fluxbox.1
 share/fluxbox/init
 share/fluxbox/keys
+share/fluxbox/menu
 share/fluxbox/nls/C/fluxbox.cat
 share/fluxbox/nls/POSIX
 share/fluxbox/nls/US_ASCII

@@ -1,0 +1,8 @@
+# $OpenBSD: menu,v 1.1 2003/08/26 19:46:09 naddy Exp $
+[begin] (Fluxbox)
+      [exec] (Xterm) {xterm}
+      [exec] (Generate Menu) {fluxbox-generate_menu}
+      [reconfig] (Reload config)
+      [restart] (Restart)
+      [exit] (Exit)
+[end]
