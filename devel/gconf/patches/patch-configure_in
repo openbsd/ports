@@ -1,21 +1,58 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/09/18 14:22:14 naddy Exp $
---- configure.in.orig	Tue Sep 18 15:28:19 2001
-+++ configure.in	Tue Sep 18 15:37:25 2001
-@@ -167,11 +167,14 @@ AC_SUBST(GNOME_CFLAGS)
+$OpenBSD: patch-configure_in,v 1.2 2001/11/13 14:04:41 wilfried Exp $
+--- configure.in.orig	Mon Oct 29 19:53:48 2001
++++ configure.in	Tue Nov 13 14:18:40 2001
+@@ -140,6 +140,13 @@ if test "x$docs_only" = "xyes"; then
+         AC_FYI("Only building documentation")
+ else
+ 
++AC_CHECK_HEADERS(sys/socket.h)
++
++dnl use xml headers from gnome-xml if they exist
++AC_CHECK_HEADERS(gnome-xml/tree.h gnome-xml/parser.h gnome-xml/entities.h gnome-xml/xmlmemory.h )
++
++AC_CHECK_HEADERS(sys/socket.h)
++
+ AC_CHECK_LIB(popt, poptGetArg, POPT_LIBS=-lpopt,
+ 	[AC_CHECK_HEADER(popt.h, , AC_MSG_ERROR([[
+ *** Couldn't find popt. Please download and install from
+@@ -167,19 +174,30 @@ AC_SUBST(XML_CFLAGS)
  BDB_LIBS=
  BDB_CFLAGS=
  
--AC_CHECK_LIB(db-3, db_env_create, BDB_LIBS=-ldb-3)
+-
+-for dblib in db-3.3 db-3.2 db-3.1 db-3; do
+-  AC_CHECK_LIB($dblib, db_env_create, BDB_LIBS=-l$dblib)
+-  if test "x$BDB_LIBS" != x; then
+-    break
++AC_ARG_ENABLE(db3,
++  [  --enable-db3=[no/yes]   build bdb backend],[
++  if test "x$enable_db3" = "xyes"; then
++  for dblib in db-3.3 db-3.2 db-3.1 db-3 db; do
++    AC_CHECK_LIB($dblib, db_env_create, BDB_LIBS=-l$dblib)
++    if test "x$BDB_LIBS" != x; then
++      break
++    fi
++  done
++  if test "x$BDB_LIBS" = x; then
++    AC_MSG_WARN(No db3 library found. Not building bdb backend.)
++  else
++    for dbheader in "db3/db.h db3.h"; do
++      AC_CHECK_HEADERS($dbheader, [
++        HAVE_BDBHEADER=yes
++        break
++      ], )
++    done
++    if test "x$HAVE_BDBHEADER" = x; then
++      AC_MSG_ERROR(Found db3 lib but no db3 header)
++    fi
+   fi
+-done
 -
 -if test "x$BDB_LIBS" = x; then
 -  AC_MSG_WARN(No db3 library found. Not building bdb backend.)
+-else
+-  AC_CHECK_HEADERS(db3/db.h,  , AC_MSG_ERROR([db3 library found but db3/db.h not found]))
 -fi
-+AC_ARG_ENABLE(db3,
-+  [  --enable-db3=[no/yes]   build bdb backend],[
-+  AC_CHECK_LIB(db, db_env_create, BDB_LIBS=-ldb,
-+    AC_CHECK_LIB(db-3, db_env_create, BDB_LIBS=-ldb-3))
-+  if test "x$BDB_LIBS" = x; then
-+    AC_MSG_WARN(No db3 library found. Not building bdb backend.)
 +  fi
 +  ],)
  

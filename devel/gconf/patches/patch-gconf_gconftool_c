@@ -1,0 +1,16 @@
+$OpenBSD: patch-gconf_gconftool_c,v 1.1 2001/11/13 14:04:41 wilfried Exp $
+--- gconf/gconftool.c.orig	Sun Nov 11 23:50:31 2001
++++ gconf/gconftool.c	Sun Nov 11 23:56:28 2001
+@@ -22,9 +22,9 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <popt.h>
+-#include <libxml/tree.h>
+-#include <libxml/parser.h>
+-#include <libxml/xmlmemory.h>
++#include <gnome-xml/tree.h>
++#include <gnome-xml/parser.h>
++#include <gnome-xml/xmlmemory.h>
+ #include <stdlib.h>
+ #include <errno.h>
+ 

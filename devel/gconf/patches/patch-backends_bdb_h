@@ -1,12 +1,24 @@
-$OpenBSD: patch-backends_bdb_h,v 1.1.1.1 2001/09/13 20:52:08 todd Exp $
---- backends/bdb.h.orig	Mon Aug 27 14:59:17 2001
-+++ backends/bdb.h	Mon Aug 27 14:59:27 2001
-@@ -116,7 +116,7 @@
+$OpenBSD: patch-backends_bdb_h,v 1.2 2001/11/13 14:04:41 wilfried Exp $
+--- backends/bdb.h.orig	Fri Oct 12 20:51:36 2001
++++ backends/bdb.h	Mon Nov 12 22:25:56 2001
+@@ -116,11 +116,18 @@
  
  #ifndef BDB_H
  
++#include <config.h>
++
+ #ifdef HAVE_DB3_DB_H
+-#include <db3/db.h>
++# include <db3/db.h>
+ #else
 -#include <db.h>
-+#include <db3.h>
++# ifdef HAVE_DB3_H
++#  include <db3.h>
++# else
++#  include <db.h>
++# endif
+ #endif
++
  #include <glib.h>
  #include <gconf/gconf.h>
  

@@ -1,0 +1,36 @@
+$OpenBSD: patch-config_h_in,v 1.1 2001/11/13 14:04:41 wilfried Exp $
+--- config.h.in.orig	Thu Oct  4 19:22:03 2001
++++ config.h.in	Tue Nov 13 11:27:53 2001
+@@ -49,7 +49,6 @@
+ #undef ENABLE_NLS
+ #undef HAVE_PTHREAD_H
+ #undef GETTEXT_PACKAGE
+-#undef HAVE_DB3_DB_H
+ 
+ /* Define if you have the __argz_count function.  */
+ #undef HAVE___ARGZ_COUNT
+@@ -107,6 +106,24 @@
+ 
+ /* Define if you have the <db3/db.h> header file.  */
+ #undef HAVE_DB3_DB_H
++
++/* Define if you have the <db3.h> header file.  */
++#undef HAVE_DB3_H
++
++/* Define if you have the <sys/socket.h> header file.  */
++#undef HAVE_SYS_SOCKET_H
++
++/* Define if you have the <gnome-xml/entities.h> header file.  */
++#undef HAVE_GNOME_XML_ENTITIES_H
++
++/* Define if you have the <gnome-xml/parser.h> header file.  */
++#undef HAVE_GNOME_XML_PARSER_H
++
++/* Define if you have the <gnome-xml/tree.h> header file.  */
++#undef HAVE_GNOME_XML_TREE_H
++
++/* Define if you have the <gnome-xml/xmlmemory.h> header file.  */
++#undef HAVE_GNOME_XML_XMLMEMORY_H
+ 
+ /* Define if you have the <dlfcn.h> header file.  */
+ #undef HAVE_DLFCN_H

@@ -1,4 +1,4 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/09/18 14:22:14 naddy Exp $
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2001/11/13 14:04:41 wilfried Exp $
 --- po/Makefile.in.in.orig	Fri Sep 15 06:30:24 2000
 +++ po/Makefile.in.in	Tue Sep 18 15:41:36 2001
 @@ -24,6 +24,8 @@ gnulocaledir = $(prefix)/share/locale
