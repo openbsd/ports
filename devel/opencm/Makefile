@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/05/27 22:08:42 todd Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/28 12:54:48 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -47,7 +47,7 @@ MULTI_PACKAGES=
 MAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 FAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 .else
-BUILD_DEPENDS+= :teTeX_base:print/teTeX/base
+BUILD_DEPENDS+= :teTeX_base-*:print/teTeX/base
 MULTI_PACKAGES+= -docs
 
 post-install:
