@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/06/30 03:57:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:52:47 marcm Exp $
 bin/pango-querymodules
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-break.h
@@ -120,3 +120,7 @@ share/gtk-doc/html/pango/up.png
 @dirrm lib/pango
 @dirrm include/pango-1.0/pango
 @dirrm include/pango-1.0
+@cwd ${SYSCONFDIR}
+@extra pango/pango.modules
+@extra pango/pangox.aliases
+@extra pango/

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2003/06/12 19:26:36 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/08/23 19:52:47 marcm Exp $
 #
 
 set -e
@@ -11,21 +11,45 @@ gtk-2.0/gtk.immodules
 gtk-2.0/gdk-pixbuf.loaders
 '
 
-echo
-echo "+--------------- $1"
-echo "| To really remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR}/gtk-2.0 directory."
-echo "| Remove the directory in which the files reside as well if empty."
-echo "|"
-echo "| If you are planning on installing $1 again in the"
-echo "| future you can leave it as it is."
-echo "|"
-echo "| FYI, the following configuration files belongs to this package:"
-echo "|"
-for f in ${FILES}; do
-  echo "| ${SYSCONFDIR}/$f"
-done
-echo "+--------------- $1"
-echo
+do_notice()
+{
+	echo
+	echo "+--------------- $1"
+	echo "| To really remove $1 from your system you should also"
+	echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+	echo "| Remove the directory in which the files reside as well if empty."
+	echo "|"
+	echo "| If you are planning on installing $1 again in the"
+	echo "| future you can leave it as it is."
+	echo "|"
+	echo "| FYI, the following configuration files belongs to this package:"
+	echo "|"
+	for f in ${FILES}; do
+		echo "| ${SYSCONFDIR}/$f"
+	done
+	echo "+--------------- $1"
+	echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	if [ "$PKG_DELETE_EXTRA" != Yes ]; then
+	    do_notice "$1"
+	fi
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
 
 exit 0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/08/15 21:07:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/08/23 19:52:47 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -451,3 +451,7 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm include/gtk-2.0/gdk-pixbuf
 @dirrm include/gtk-2.0/gdk
 @dirrm include/gtk-2.0
+@cwd ${SYSCONFDIR}
+@extra gtk-2.0/gtk.immodules
+@extra gtk-2.0/gdk-pixbuf.loaders
+@extra gtk-2.0/
