@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/06/14 09:44:20 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2003/08/22 06:14:39 espie Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
@@ -15,9 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://jclement.ca/Projects/pyrijndael.xml
-MASTER_SITES=	http://mecca.bluesine.com/dl/pyrijndael/ \
-		http://ftp.bluesine.com/pyrijndael/
+HOMEPAGE=	http://jclement.ca/software/pyrijndael/
+MASTER_SITES=	${HOMEPAGE}
 
 BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
