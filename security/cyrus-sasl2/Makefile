@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/07 19:06:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/08 11:14:29 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -33,7 +33,8 @@ CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
 			--without-bdb-incdir \
 			--enable-login \
 			--enable-krb4="/usr" \
-			--enable-gssapi="/usr"
+			--enable-gssapi="/usr" \
+			--disable-sample
 CFLAGS+=		-I/usr/include/kerberosV
 
 
