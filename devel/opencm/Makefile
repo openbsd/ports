@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/05/23 13:22:14 todd Exp $
+# $OpenBSD: Makefile,v 1.12 2003/05/27 22:08:42 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -47,7 +47,7 @@ MULTI_PACKAGES=
 MAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 FAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 .else
-BUILD_DEPENDS+= :teTeX_base-1.0.*:print/teTeX/base
+BUILD_DEPENDS+= :teTeX_base:print/teTeX/base
 MULTI_PACKAGES+= -docs
 
 post-install:
@@ -66,10 +66,11 @@ PATCHDIR=	${.CURDIR}/patches.nogc
 
 .else
 
-MAKE_FLAGS+= LIBGC=/usr/local/lib/libgc.a
-FAKE_FLAGS+= LIBGC=/usr/local/lib/libgc.a
-BUILD_DEPENDS=		gc.1:boehm-gc->=6.0:devel/boehm-gc
-LIB_DEPENDS=		gc.1::devel/boehm-gc
+LIBGC=-lgc
+
+MAKE_FLAGS+= LIBGC=${LIBGC}
+FAKE_FLAGS+= LIBGC=${LIBGC}
+LIB_DEPENDS+=		gc.1:boehm-gc->=6.1:devel/boehm-gc
 
 .endif
 
