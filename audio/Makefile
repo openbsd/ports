@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2002/02/01 15:45:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2002/02/02 19:50:47 lebel Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += grip
      SUBDIR += gsm
      SUBDIR += id3ed
+     SUBDIR += id3lib
      SUBDIR += knapster
      SUBDIR += ksmp3play
      SUBDIR += lame
