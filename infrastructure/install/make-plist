@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.62 2004/11/13 11:25:31 espie Exp $
+# $OpenBSD: make-plist,v 1.63 2004/11/13 11:49:03 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -291,8 +291,8 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	if (${$self->{cwd}} ne ${$plist->{state}->{cwd}}) {
-	    OpenBSD::PackingElement::Cwd->add($plist, $self->{cwd});
+	if ($self->cwd() ne $plist->{state}->cwd()) {
+	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd());
 	}
 	$self->clone()->add_object($plist);
 	$plist->{nonempty} = 1;
@@ -588,8 +588,7 @@ sub create_packinglist
 
 	my $plist = new OpenBSD::PackingList;
 	$plist->{filename} = $filename;
-	my $p = File::Spec->canonpath($prefix);
-	$plist->{state}->{cwd} = \$p;
+	$plist->{state}->set_cwd($prefix);
 	$prefix.='/' unless $prefix =~ m|/$|;
 	$plist->{stripprefix} = $prefix;
 	return $plist;
