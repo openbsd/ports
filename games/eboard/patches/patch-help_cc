@@ -1,12 +1,13 @@
-$OpenBSD: patch-help_cc,v 1.1 2002/12/14 08:36:40 fgsch Exp $
+$OpenBSD: patch-help_cc,v 1.2 2002/12/14 23:46:29 fgsch Exp $
 --- help.cc.orig	Wed Sep 25 22:11:53 2002
-+++ help.cc	Sat Dec 14 05:27:31 2002
-@@ -332,7 +332,7 @@ namespace Help {
++++ help.cc	Sat Dec 14 09:02:53 2002
+@@ -332,7 +332,8 @@ namespace Help {
        if (strchr(tags,*p)) {
  
  	if (p-q) gtk_text_insert(GTK_TEXT(text),f,pc,0,q,p-q);
 -	for(q=p;*q < 0;q++) ;
-+	for(q=p;!isprint(*q);q++) ;
++	for(q=p;!strchr(tags,*q);q++) ;
++
  
  	switch(*p) {
  	case '\200': f=fl; break;
