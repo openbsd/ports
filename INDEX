@@ -1226,7 +1226,7 @@ rrdtool-1.0.40|net/rrdtool||system to store and display time-series data|net/rrd
 rrdtool-1.0.40-tcl|net/rrdtool,tcl||system to store and display time-series data|net/rrdtool/pkg/DESCR|Dan Harnett <danh@openbsd.org>|net|tcl83::lang/tcl/8.3|:devel/gmake||any|y|y|y|y
 rsync-2.5.6|net/rsync||mirroring/synchronization over low bandwidth links|net/rsync/pkg/DESCR|Marc Espie <espie@openbsd.org>|net||||any|y|y|y|y
 ruby-pcap-0.6|net/ruby-pcap||Ruby interface to LBL Packet Capture library|net/ruby-pcap/pkg/DESCR|Damien Couderc <couderc@openbsd.org>|net|ruby.1.66::lang/ruby||:lang/ruby|any|y|y|y|y
-samba-2.2.7a|net/samba/stable||SMB and CIFS client and server for UNIX|net/samba/stable/pkg/DESCR|Daniel Hartmeier <dhartmei@openbsd.org>|net||:devel/autoconf/2.13 :devel/metaauto||any|y|y|y|y
+samba-2.2.8|net/samba/stable||SMB and CIFS client and server for UNIX|net/samba/stable/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net||:devel/autoconf/2.13 :devel/metaauto||any|y|y|y|y
 scli-0.2.12|net/scli||snmp command line utility|net/scli/pkg/DESCR|Margarida Sequeira <margarida@openbsd.org>|net|glib.1.2,gmodule.1.2::devel/glib iconv.2::converters/libiconv xml2::textproc/libxml||libiconv-*:converters/libiconv|any|y|y|y|y
 sharity-light-1.2|net/sharity-light||userland smbfs --- SMB to NFS protocols converter|net/sharity-light/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net||||any|y|y|y|y
 ser-0.8.10|net/ser||SIP Express Router|net/ser/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net|expat.2::textproc/expat mysqlclient.10:mysql-client-3.23.*:databases/mysql|:devel/gmake||i386 sparc64|y|y|y|y
