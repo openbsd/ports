@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Sat Mar 20 19:32:42 1999
-+++ lib/Makefile.in	Sat Mar 20 19:35:08 1999
-@@ -108,7 +108,7 @@
+--- lib/Makefile.in.orig	Wed Apr 21 17:31:48 1999
++++ lib/Makefile.in	Wed Apr 21 17:32:17 1999
+@@ -112,7 +112,7 @@
  x_libraries = @x_libraries@
  
  MAINTAINERCLEANFILES = Makefile.in

@@ -1,6 +1,6 @@
---- doc/lessdox/widgets/Makefile.in.orig	Sat Mar 20 19:09:23 1999
-+++ doc/lessdox/widgets/Makefile.in	Sat Mar 20 19:15:20 1999
-@@ -110,10 +110,10 @@
+--- doc/lessdox/widgets/Makefile.in.orig	Mon Apr 19 19:27:06 1999
++++ doc/lessdox/widgets/Makefile.in	Thu Apr 22 11:33:42 1999
+@@ -114,10 +114,10 @@
  EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -14,8 +14,8 @@
 +man5dir=	$(mandir)/man5
  
  man1_DATA = 
- man3_DATA =  	XmClipboard.3 LessTifInternals.3 	XmArrowButton.3 XmArrowButtonGadget.3 XmBulletinBoard.3 	XmCascadeButton.3 XmCascadeButtonGadget.3 	XmComboBox.3 XmCommand.3 XmDesktop.3 	XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 	XmDrawingArea.3 XmDrawnButton.3 XmDropSiteManager.3 	XmDropTransfer.3 XmFileSelectionBox.3 XmForm.3 	XmFrame.3 XmGadget.3 XmGrabShell.3 	XmIconGadget.3 XmLabel.3 	XmLabelGadget.3 XmList.3 	XmMainWindow.3 XmManager.3 XmMenuShell.3 	XmMessageBox.3 XmNotebook.3 XmPanedWindow.3 	XmPrimitive.3 XmProtocol.3 XmPushButton.3 	XmPushButtonGadget.3 XmRowColumn.3 	XmSash.3 XmScale.3 XmScreen.3 	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 	XmSeparator.3 XmSeparatorGadget.3 	XmSpinBox.3 XmTearOffButton.3 XmText.3 	XmTextField.3 XmToggleButton.3 	XmToggleButtonGadget.3 XmVendorShellExt.3 XmWorld.3 		ApplicationShell.3 Composite.3 Core.3 Object.3 OverrideShell.3 	Shell.3 TopLevelShell.3 TransientShell.3 WmShell.3 	Rect.3 UnNamedObj.3 Constraint.3
-@@ -129,7 +129,7 @@
+ man3_DATA =  	XmClipboard.3 LessTifInternals.3 	XmArrowButton.3 XmArrowButtonGadget.3 XmBulletinBoard.3 	XmCascadeButton.3 XmCascadeButtonGadget.3 	XmComboBox.3 XmCommand.3 XmDesktop.3 	XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 	XmDrawingArea.3 XmDrawnButton.3 XmDropSiteManager.3 	XmDropTransfer.3 XmFileSelectionBox.3 XmForm.3 	XmFrame.3 XmGadget.3 XmGrabShell.3 	XmIconGadget.3 XmLabel.3 	XmLabelGadget.3 XmList.3 	XmMainWindow.3 XmManager.3 XmMenuShell.3 	XmMessageBox.3 XmNotebook.3 XmPanedWindow.3 	XmPrimitive.3 XmProtocol.3 XmPushButton.3 	XmPushButtonGadget.3 XmRowColumn.3 	XmSash.3 XmScale.3 XmScreen.3 	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 	XmSeparator.3 XmSeparatorGadget.3 	XmSpinBox.3 XmTearOffButton.3 XmText.3 	XmTextField.3 XmToggleButton.3 	XmToggleButtonGadget.3 XmVendorShell.3 XmWorld.3 		ApplicationShell.3 Composite.3 Core.3 Object.3 OverrideShell.3 	Shell.3 TopLevelShell.3 TransientShell.3 WmShell.3 	Rect.3 UnNamedObj.3 Constraint.3 VendorShell.3
+@@ -133,7 +133,7 @@
  # build them.
  #
  
@@ -24,14 +24,12 @@
  
  @HaveMan2html_TRUE@html_DATA = ${man1_DATA:.1=.html} ${man3_DATA:.3=.html}                 ${man5_DATA:.5=.html}
  
-@@ -341,8 +341,8 @@
+@@ -345,7 +345,7 @@
  # in both the http://www.lesstif.org and the locally installed case.
  #
  install-data-hook:
--#	if [ ! -h $(exec_prefix)/LessTif/doc/Lessdox ]; then ln -s $(htmldir) $(exec_prefix)/LessTif/doc/Lessdox; fi
--	if [ ! -h $(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(prefix)/LessTif/doc && cd $(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
-+	if [ ! -h $(exec_prefix)/LessTif ]; then ln -fs $(pkgdatadir) $(exec_prefix)/LessTif; fi
-+#	if [ ! -h $(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(prefix)/LessTif/doc && cd $(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
+-	if [ ! -h $(DESTDIR)$(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(DESTDIR)$(prefix)/LessTif/doc && cd $(DESTDIR)$(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
++#	if [ ! -h $(DESTDIR)$(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(DESTDIR)$(prefix)/LessTif/doc && cd $(DESTDIR)$(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -9,13 +9,13 @@ lib/X11/mwm/system.mwmrc
 lib/X11/mwm/alt.map
 lib/X11/mwm/README
 lib/libXm.so.1.2
-lib/libXm.so.1
 lib/libXm.so
 lib/libXm.la
+lib/libXm.a
 lib/libMrm.so.1.2
-lib/libMrm.so.1
 lib/libMrm.so
 lib/libMrm.la
+lib/libMrm.a
 @exec /sbin/ldconfig -m %B
 include/Xm
 include/Mrm
@@ -77,7 +77,6 @@ man/man3/XmText.3
 man/man3/XmTextField.3
 man/man3/XmToggleButton.3
 man/man3/XmToggleButtonGadget.3
-man/man3/XmVendorShellExt.3
 man/man3/XmWorld.3
 man/man3/XtConfigureObject.3
 man/man3/XtDestroyWidget.3
@@ -371,7 +370,7 @@ LessTif/Motif2.0/include/Mrm/MrmAppl.h
 LessTif/Motif2.0/include/Mrm/MrmDecls.h
 LessTif/Motif2.0/include/Mrm/MrmPrivate.h
 LessTif/Motif2.0/include/Mrm/MrmPublic.h
-LessTif/LessTif
+LessTif/FAQ
 share/LessTif/doc/html/images/hungry.gif
 share/LessTif/doc/html/images/lesstif-realsmall.gif
 share/LessTif/doc/html/images/lesstif-small.gif
