@@ -1,0 +1,64 @@
+*** Makefile.orig	Fri Aug  1 08:00:30 1997
+--- Makefile	Tue Apr 21 22:46:59 1998
+***************
+*** 1,30 ****
+  #$Id: patch-aa,v 1.1.1.1 1998/04/26 04:48:28 marc Exp $
+  
+! BASENAME= /usr
+  
+  GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+   -Wpointer-arith -Wconversion -Waggregate-return \
+   #-Wimplicit -Wshadow #-Wuninitialized
+  
+! CFLAGS	= -O #$(GCC_WARNINGS)
+! LDFLAGS =
+  
+  O=o
+  
+! BINDIR=$(BASENAME)/sbin
+  MANDIR=$(BASENAME)/man/man8
+  
+! INSTALL=install -o root -m
+! BINPERM=02755 -s -g mail
+! REGPERM=0644
+  
+  #
+  # When compiling without APOP support, the md5 library can be omitted.
+  
+  MD5_OBJ=md5/md5c.$(O)
+  
+! OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
+! 	$(MD5_OBJ)
+  
+  all: cucipop
+  
+--- 1,29 ----
+  #$Id: patch-aa,v 1.1.1.1 1998/04/26 04:48:28 marc Exp $
+  
+! BASENAME= $(PREFIX)
+  
+  GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+   -Wpointer-arith -Wconversion -Waggregate-return \
+   #-Wimplicit -Wshadow #-Wuninitialized
+  
+! #CFLAGS	= -O #$(GCC_WARNINGS)
+! LDFLAGS +=
+  
+  O=o
+  
+! BINDIR=$(BASENAME)/libexec
+  MANDIR=$(BASENAME)/man/man8
+  
+! INSTALL=install -o bin -m
+! BINPERM=0555 -s -g bin
+! REGPERM=0444 -g bin
+  
+  #
+  # When compiling without APOP support, the md5 library can be omitted.
+  
+  MD5_OBJ=md5/md5c.$(O)
+  
+! OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O)
+  
+  all: cucipop
+  
