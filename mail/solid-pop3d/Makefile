@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/08/29 23:41:56 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/23 19:59:52 danh Exp $
 
 VERSION=	0.15
 DISTNAME=	solid-pop3d-${VERSION}
 CATEGORIES=	mail
-NEED_VERSION=	1.319
+NEED_VERSION=	1.334
 MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
 		ftp://ftp.rudykot.pl/pub/solidpop3d/ \
 		ftp://sedez.iq.pl/pub/solidpop3d/ \
@@ -11,7 +11,7 @@ MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
 
 HOMEPAGE=	http://solidpop3d.pld.org.pl/
 
-MAINTAINER=	danh@openbsd.org
+MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -21,13 +21,13 @@ PERMIT_DISTFILES_FTP=   Yes
 FLAVORS=	apop 
 FLAVOR?=
 
-SEPARATE_BUILD= 	concurrent
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	--localstatedir="/var/spool/spop3d" \
-			--mandir="${PREFIX}/man" \
-		 	--enable-last --enable-bulletins --enable-nonip \
-			--enable-ipv6 --enable-resolve --enable-connect \
-			--enable-logextend --enable-statistics 
+SEPARATE_BUILD= concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --localstatedir="/var/spool/spop3d" \
+		 --mandir="${PREFIX}/man" \
+		 --enable-last --enable-bulletins --enable-nonip \
+		 --enable-ipv6 --enable-resolve --enable-connect \
+		 --enable-logextend --enable-statistics 
 
 # enable support for APOP authentication.
 .if ${FLAVOR:L:Mapop}

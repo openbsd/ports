@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/06 19:19:10 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/23 19:59:54 danh Exp $
 
 VERSION=	1.0.25
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
-NEED_VERSION=	1.319
+NEED_VERSION=	1.334
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
 
 HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/
 
-MAINTAINER=	danh@openbsd.org
+MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/30 17:36:25 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/23 19:59:55 danh Exp $
 
 DISTNAME=	webalizer-2.00-12-src
 PKGNAME=	webalizer-2.00_12
 CATEGORIES=     www
-NEED_VERSION=	1.319
+NEED_VERSION=	1.334
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=    gd.18::graphics/gd
-
 HOMEPAGE=	http://www.mrunix.net/webalizer/
 
-MAINTAINER=	danh@openbsd.org
+LIB_DEPENDS=    gd.18::graphics/gd
+
+MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes

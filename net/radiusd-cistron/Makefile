@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/06 19:08:18 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/23 19:59:53 danh Exp $
 
 VERSION=	1.6.4
 DISTNAME=	radiusd-cistron-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.323
+NEED_VERSION=	1.334
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.mma.com.br/pub/cistron-radius/
 
 HOMEPAGE=	http://miquels.www.cistron.nl/radius/
 
-MAINTAINER=	danh@openbsd.org
+MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
