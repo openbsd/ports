@@ -1,0 +1,10 @@
+$OpenBSD: patch-nls_Makefile,v 1.1 2000/12/31 19:22:57 brad Exp $
+--- nls/Makefile.orig	Sun Dec 31 14:54:37 2000
++++ nls/Makefile	Sun Dec 31 14:54:41 2000
+@@ -1,5 +1,5 @@
+ 
+-SUBDIRS=	C finnish french german greek italian ja spanish
++SUBDIRS=	C finnish french german greek italian ja spanish ukrainian
+ #GENCAT=	gencat -new
+ GENCAT=		gencat
+ 

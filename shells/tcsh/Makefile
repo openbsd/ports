@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2000/11/15 16:10:41 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/12/31 19:22:56 brad Exp $
 
-DISTNAME=	tcsh-6.09.03
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	${PKGNAME:R}
+PKGNAME=	tcsh-6.10.00
 CATEGORIES=	shells
 NEED_VERSION=	1.336
-MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
+		http://www2.wbs.ne.jp/~znc/tcsh/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -19,13 +20,16 @@ FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ENV+=	LDFLAGS="-static"
+CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 ALL_TARGET=	all catalogs
 
+WRKDIST=	${WRKDIR}/${PKGNAME}
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/el_GR.ISO_8859-7
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/uk_UA.KOI8-U
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
 	${INSTALL_MAN} ${WRKSRC}/tcsh.man ${PREFIX}/man/man1/tcsh.1
 	${INSTALL_DATA} ${WRKSRC}/tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
@@ -42,5 +46,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tcsh.italian.cat ${PREFIX}/share/nls/it_CH.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.italian.cat ${PREFIX}/share/nls/it_IT.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.ja.cat ${PREFIX}/share/nls/ja_JP.EUC/tcsh.cat
+	${INSTALL_DATA} ${WRKSRC}/tcsh.ukrainian.cat ${PREFIX}/share/nls/uk_UA.KOI8-U/tcsh.cat
 
 .include <bsd.port.mk>
