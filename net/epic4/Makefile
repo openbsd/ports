@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2003/04/15 16:19:03 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2003/11/13 21:11:11 margarida Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -6,6 +6,7 @@ COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 VERSION=	1.0.1
 HELP_DATE=	20011030
 DISTNAME=	epic4-${VERSION}
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/
 MASTER_SITES0=	${MASTER_SITE_BACKUP}
