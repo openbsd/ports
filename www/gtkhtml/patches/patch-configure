@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2003/04/10 15:55:48 marcm Exp $
+$OpenBSD: patch-configure,v 1.5 2004/10/23 22:50:46 alek Exp $
 --- configure.orig	Mon Mar 31 10:06:33 2003
 +++ configure	Fri Apr  4 10:34:29 2003
 @@ -1819,7 +1819,7 @@ fi
@@ -41,6 +41,24 @@ $OpenBSD: patch-configure,v 1.4 2003/04/10 15:55:48 marcm Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
+@@ -6977,7 +6979,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6983 "configure"
+ #include "confdefs.h"
+@@ -7017,7 +7019,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 7023 "configure"
+ #include "confdefs.h"
 @@ -7058,6 +7060,10 @@ else
    echo "$ac_t""no" 1>&6
  fi
@@ -48,7 +66,7 @@ $OpenBSD: patch-configure,v 1.4 2003/04/10 15:55:48 marcm Exp $
 +	   fi
 +
 +	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+	      LIBS="$LIBS -lintl";
++	      LIBS="$LIBS -lintl -liconv";
  	   fi
  
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
