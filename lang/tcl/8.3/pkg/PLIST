@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/07/18 09:09:37 brad Exp $
 @option no-default-conflict
 @pkgcfl	tcl-8.3.*
 bin/tclsh8.3
@@ -21,8 +22,7 @@ include/tcl8.3/tclDecls.h
 include/tcl8.3/unix/tclUnixPort.h
 include/tcl8.3/unix/tclUnixThrd.h
 lib/libtcl83.a
-lib/libtcl83.so.1.3
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 lib/libtclstub83.a
 lib/tcl8.3/auto.tcl
 lib/tcl8.3/encoding/ascii.enc
