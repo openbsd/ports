@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/07/04 13:47:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/16 18:54:48 espie Exp $
 
 DISTNAME=ruby-1.4.4
 CATEGORIES = lang
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=${CONFIGURE_SHARED} \
     --with-tk-include=${PREFIX}/include/tk8.3 \
     --with-X11-dir=${X11BASE} 
 
-#USE_AUTOCONF=Yes
+USE_AUTOCONF=Yes
 
 # Force rebuild of parse.c with yacc
 post-extract: 
