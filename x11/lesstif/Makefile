@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1998/02/10 10:45:22 niklas Exp $
+# $OpenBSD: Makefile,v 1.5 1998/02/13 15:13:29 niklas Exp $
 #
 
 DISTNAME=	lesstif-0.82
@@ -19,7 +19,7 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 GNU_CONFIGURE=  yes
 USE_X11=	yes
 # change this and remove the strip statement in post-install for debugging
-CONFIGURE_ENV=	CCFLAGS="-O -pipe"
+CONFIGURE_ENV=	${SETENV} CCFLAGS="-O -pipe"
 # static library on alpha
 .ifdef (${MACHINE_ARCH} == "alpha")
 CONFIGURE_ARGS= --with-static --without-shared
