@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_t-stream_c,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
+--- tests/t-stream.c.orig	Wed Apr 30 18:27:42 2003
++++ tests/t-stream.c	Wed Apr 30 18:34:09 2003
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <sys/stat.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <time.h>
+@@ -288,7 +289,7 @@ get_sig_time (unsigned long timestamp)
+   static char buf[128];
+   struct tm * tmbuf;
+   
+-  tmbuf = localtime (&timestamp);
++  tmbuf = localtime ((const time_t *)&timestamp);
+   sprintf (buf, "%04d-%02d-%02d",
+            tmbuf->tm_year+1900, tmbuf->tm_mon+1, tmbuf->tm_mday);
+   return buf;

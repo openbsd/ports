@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
+--- configure.orig	Wed Apr 30 20:40:54 2003
++++ configure	Wed Apr 30 20:42:33 2003
+@@ -5790,12 +5790,12 @@ else
+     else
+       case "$host_os" in
+       openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
+-	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -6314,6 +6314,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
