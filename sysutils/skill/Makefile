@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2001/01/12 11:08:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 03:59:07 lebel Exp $
+
+COMMENT=	"signal or reprioritize specified processes"
 
 DISTNAME=		skill-4.0
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+NEED_VERSION=		1.402
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/22 12:12:33 camield Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 03:58:59 lebel Exp $
+
+COMMENT=	"clock synchronization tools"
 
 DISTNAME=	clockspeed-0.62
 HOMEPAGE=	http://cr.yp.to/clockspeed.html
 
 CATEGORIES=	sysutils
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MAINTAINER=	Brian Kifiak <bk@rt.fm>
 
 MASTER_SITES=	http://cr.yp.to/clockspeed/

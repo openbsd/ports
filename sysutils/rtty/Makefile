@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/09 22:20:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:59:05 lebel Exp $
 #
+
+COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 
 DISTNAME=       rtty-3.2
 CATEGORIES=	sysutils
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

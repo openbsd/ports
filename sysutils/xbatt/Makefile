@@ -3,13 +3,15 @@
 # Date created:		22 July 1998
 # Whom:			Niklas Hallqvist <niklas@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 03:59:14 lebel Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 #
 
+COMMENT=	"laptop battery status display for X11"
+
 DISTNAME=	xbatt-1.2.1
 CATEGORIES=	sysutils x11
-NEED_VERSION=	1.307
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>

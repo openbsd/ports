@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2001/04/22 12:12:34 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:59:00 lebel Exp $
+
+COMMENT=	"collection of tools for managing UNIX services"
 
 DISTNAME=	daemontools-0.70
 CATEGORIES=	sysutils
 
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 HOMEPAGE=	http://cr.yp.to/daemontools.html
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/

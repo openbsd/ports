@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 03:59:05 lebel Exp $
+
+COMMENT=	"UPS monitoring program supporting many brands"
 
 DISTNAME=	nut-0.44.2
 CATEGORIES=	sysutils
-NEED_VERSION=	1.346
+NEED_VERSION=	1.402
 HOMEPAGE=	http://www.exploits.org/nut/
 MASTER_SITES=	${HOMEPAGE}release/
 

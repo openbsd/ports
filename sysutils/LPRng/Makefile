@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/22 22:06:43 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 03:58:56 lebel Exp $
+
+COMMENT=	"enhanced printer spooler"
 
 BROKEN=		"installs files directly into /etc"
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
-NEED_VERSION=		1.336
+NEED_VERSION=		1.402
 MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=		.tgz
 

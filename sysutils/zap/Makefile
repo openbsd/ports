@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:59:16 lebel Exp $
+
+COMMENT=	"interactive process killer"
 
 PKGNAME=	zap-1.1
 DISTNAME=	zap-1.1
 WRKDIST=	${WRKDIR}/zap
 CATEGORIES=	sysutils
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>

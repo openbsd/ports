@@ -2,13 +2,15 @@
 # Date created:         28 Dec 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.10 2001/04/19 10:41:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 03:58:57 lebel Exp $
 #
+
+COMMENT=	"UPS software for APC UPS models"
 
 DISTNAME=       apc-upsd
 PKGNAME=        ${DISTNAME}-19991128
 CATEGORIES=     sysutils
-NEED_VERSION=	1.307
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www.knienieder.com/software/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>

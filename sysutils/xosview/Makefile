@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/25 03:55:20 form Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 03:59:15 lebel Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
+
+COMMENT=	"graphical performance meter"
 
 DISTNAME=	xosview-1.7.4
 CATEGORIES=	sysutils
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.openbsd.ru/pub/OpenBSD/distfiles/ \
 		ftp://vell.nsc.ru/pub/OpenBSD/distfiles/ \
 		http://lore.ece.utexas.edu/~bgrayson/xosview/

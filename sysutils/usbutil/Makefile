@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/04 21:54:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 03:59:12 lebel Exp $
+
+COMMENT=	"USB developer utilities"
 
 DISTNAME=	usbutil-0.4
 CATEGORIES=	sysutils
-NEED_VERSION=	1.302
+NEED_VERSION=	1.402
 
 MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/
 
