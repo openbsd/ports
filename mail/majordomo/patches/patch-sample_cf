@@ -1,5 +1,5 @@
---- sample.cf.orig	Wed Aug 27 17:00:31 1997
-+++ sample.cf	Thu Jan 11 13:17:17 2001
+--- sample.cf.orig	Thu Feb  6 20:20:08 2003
++++ sample.cf	Thu Feb  6 20:21:45 2003
 @@ -27,7 +27,7 @@
  
  # $listdir -- Where are the mailing lists?
@@ -52,7 +52,18 @@
  #
  #exit 75 if ($avg_15_minutes >= $max_loadavg);           # E_TEMPFAIL
  #
-@@ -169,8 +169,8 @@
+@@ -164,13 +164,18 @@
+ # number of hits that are allowed using which before an error is returned.
+ # Arguably this should be a per list settable number.
+ #
+-$max_which_hits = 0;
++# Setting the value to 0 disables the limit. Note that spammmers
++# could try to harvest your subscriber's addresses by sending a
++# broad which command. Compare with which_access and who_access
++# list configuration option.
++#
++$max_which_hits = 1;
+ 
  # Set the umask for the process. Used to set default file status for
  # config file.
  #
@@ -63,7 +74,7 @@
  
  # don't change this. It checks to make sure that you have a new enough
  # version of perl to run majordomo. It is in here because this file is
-@@ -188,9 +188,8 @@
+@@ -188,9 +193,8 @@
  # Directory where resend temporarily puts its rewritten output message.
  # For the paranoid, this could be changed to a directory that only
  # majordomo has r/w permission to.

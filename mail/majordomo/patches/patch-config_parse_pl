@@ -1,0 +1,13 @@
+--- config_parse.pl.orig	Fri Jan  7 15:00:26 2000
++++ config_parse.pl	Thu Feb  6 20:13:40 2003
+@@ -80,8 +80,8 @@
+ 	'announcements',	'yes', # send sub/unsub audits to list owner
+ 	'get_access',		"open\001closed\001list\001list", # open, anyone can access
+         'index_access',		"open\001closed\001list\001open", # closed, nobody can
+-        'who_access',		"open\001closed\001list\001open", # list, only list can access.
+-        'which_access',		"open\001closed\001list\001open", # ...more to come...
++        'who_access',		"open\001closed\001list\001closed", # list, only list can access.
++        'which_access',		"open\001closed\001list\001closed", # ...more to come...
+         'info_access',		"open\001closed\001list\001open", # 
+         'intro_access',		"open\001closed\001list\001list", # 
+         'advertise',		'', # if regexp matches address show list
