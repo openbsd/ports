@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/29 23:21:45 reinhard Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.230
+FAKE=		No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS=	i386
 
 IS_INTERACTIVE=	yes
 
-WRKBUILD=	${WRKDIR}
+WRKDIST=	${WRKDIR}
 NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
 NO_PACKAGE=	interactive port
@@ -36,9 +36,10 @@ do-fetch:
 	   echo "" ; \
 	   echo "  The source to this port may not be automatically fetched" ; \
 	   echo "  due to licensing restrictions. You MUST fetch the source" ; \
+	   echo "(http://linux.corel.com/products/linuxproducts_wp8_download.htm)" ; \
 	   echo "  manually after reading and agreeing to the license at:" ; \
 	   echo "" ; \
-	   echo "      http://linux.corel.com/linux8/download.htm" ; \
+	   echo "	http://linux.corel.com/wp8_agreement.htm" ; \
 	   echo "" ; \
 	   echo "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
 	   echo "  and then restart this build." ; \
@@ -54,7 +55,7 @@ pre-install:
 	echo "   This installation of WordPerfect will expire in 90 days," ; \
 	echo "   unless you retrieve a free registration key from" ; \
 	echo "" ; \
-	echo "         https://livewire.corel.com/wp8LinuxReg/" ; \
+	echo "   http://venus.corel.com/nasapps/wp8linuxreg/register.html" ; \
 	echo "" ; \
 	echo "   to register your copy TODAY. Do this now!" ; \
 	echo "" ; \
