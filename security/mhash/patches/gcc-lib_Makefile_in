@@ -1,0 +1,19 @@
+$OpenBSD: gcc-lib_Makefile_in,v 1.1 2002/02/01 02:03:24 pvalchev Exp $
+--- lib/Makefile.in.orig	Sun Feb  4 05:05:29 2001
++++ lib/Makefile.in	Thu Jan 31 19:33:55 2002
+@@ -266,6 +266,7 @@ crc32.lo crc32.o : crc32.c mhash_crc32.h
+ gosthash.lo gosthash.o : gosthash.c libdefs.h ../mhash_config.h \
+ 	gosthash.h
+ haval.lo haval.o : haval.c libdefs.h ../mhash_config.h mhash_haval.h
++	${LTCOMPILE} -O0 -c haval.c
+ keygen_asis.lo keygen_asis.o : keygen_asis.c libdefs.h ../mhash_config.h
+ keygen_hex.lo keygen_hex.o : keygen_hex.c libdefs.h ../mhash_config.h
+ keygen_mcrypt.lo keygen_mcrypt.o : keygen_mcrypt.c mhash.h libdefs.h \
+@@ -281,6 +282,7 @@ mhash.lo mhash.o : mhash.c libdefs.h ../
+ 	mhash_sha1.h mhash_tiger.h mhash_ripemd.h gosthash.h
+ ripemd.lo ripemd.o : ripemd.c mhash_ripemd.h libdefs.h ../mhash_config.h
+ sha1.lo sha1.o : sha1.c mhash_sha1.h libdefs.h ../mhash_config.h
++	${LTCOMPILE} -O0 -c sha1.c
+ swap.lo swap.o : swap.c libdefs.h ../mhash_config.h
+ tiger.lo tiger.o : tiger.c mhash_tiger.h libdefs.h ../mhash_config.h
+ tiger_sboxes.lo tiger_sboxes.o : tiger_sboxes.c libdefs.h \

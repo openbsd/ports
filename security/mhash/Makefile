@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/01 18:34:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/02/01 02:03:24 pvalchev Exp $
 
 COMMENT=	strong hash library
 
@@ -20,6 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
+
+# XXX workaround sparc64 gcc optimization bug
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST+=	gcc-*
+.endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
