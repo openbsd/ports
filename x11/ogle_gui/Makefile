@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/14 12:19:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/24 22:57:36 espie Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	"GUI for ogle"
-DISTNAME=	ogle_gui-0.8.5
+DISTNAME=	ogle_gui-0.9.0
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
-LIB_DEPENDS=	dvdcontrol.5,msgevents.5::x11/ogle \
+LIB_DEPENDS=	dvdcontrol.9,msgevents.6::x11/ogle \
 		xml2::textproc/libxml \
 		glade.5.0::devel/libglade \
 		gtk.1.2::x11/gtk+

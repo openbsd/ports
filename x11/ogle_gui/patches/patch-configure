@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.2 2002/06/15 23:53:50 espie Exp $
+$OpenBSD: patch-configure,v 1.3 2003/02/24 22:57:36 espie Exp $
 
---- configure.orig	Mon Jun 10 23:58:10 2002
-+++ configure	Sun Jun 16 01:09:11 2002
-@@ -10877,7 +10877,7 @@ cat >>confdefs.h <<_ACEOF
- _ACEOF
+--- configure.orig	Sun Feb 23 12:50:07 2003
++++ configure	Mon Feb 24 23:45:46 2003
+@@ -11244,7 +11244,7 @@ _ACEOF
+ 
  
  cat >>confdefs.h <<_ACEOF
 -#define LIBGLADE_LIB "libglade.so.0"
 +#define LIBGLADE_LIB "libglade.so.5.0"
  _ACEOF
  
- if test "x${prefix}" = "xNONE"; then
+ 
