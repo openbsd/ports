@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/08/28 01:41:11 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/12/01 19:18:22 margarida Exp $
 #
 # Pre/post-installation setup of devtodo
 
@@ -8,29 +8,29 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
-SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/devtodo
+CONFIG_FILE=${SYSCONFDIR}/todorc
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/devtodo/todorc.example
 
 do_notice()
 {
 	echo
 	echo "+------------"
-	echo "| The existing $1 configuration file in ${CONFIG_DIR},"
-	echo "| has NOT been changed. You may want to compare them"
-	echo "| to the current sample file in ${SAMPLE_CONFIG_DIR},"
+	echo "| The existing $1 configuration file in $CONFIG_FILE,"
+	echo "| has NOT been changed. 
+	echo "|	You may want to compare it to the current sample"
+	echo "| file in $SAMPLE_CONFIG_FILE,"
 	echo "| and update your configuration as needed."
 	echo "+------------"
 }
 
 do_install()
 {
-	install -d -o root -g wheel -m 755 ${CONFIG_DIR}
-	install -o root -g wheel -m 644 ${SAMPLE_CONFIG_DIR}/todorc.example ${CONFIG_DIR}/todorc
+	install -o root -g wheel $SAMPLE_CONFIG_FILE $CONFIG_FILE
 	echo
 	echo "+------------"
-	echo "| The $1 configuration file (todorc) has been installed"
-	echo "| into ${CONFIG_DIR}. Please view this file and change the"
-	echo "| configuration to meet your needs."
+	echo "| The $1 configuration file has been installed"
+	echo "| into $CONFIG_FILE. Please view this file and"
+	echo "| change the configuration to meet your needs."
 	echo "| You can also place it in ~/.todorc."
 	echo "+------------"
 }
@@ -49,9 +49,7 @@ case $2 in
 		: nothing to pre-install for this port
 		;;
 	POST-INSTALL)
-		if [ ! -d $CONFIG_DIR ]; then
-			do_install $1
-		elif [ ! -f $CONFIG_DIR/todorc ]; then
+		if [ ! -f $CONFIG_FILE ]; then
 			do_install $1
 		else
 			do_notice $1
