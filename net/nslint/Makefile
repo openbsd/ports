@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/29 14:37:48 naddy Exp $
 # $FreeBSD: ports/net/nslint/Makefile,v 1.10 2000/04/09 18:12:37 cpiazza Exp $
 
-COMMENT=	"performs consistency checks on BIND files"
+COMMENT=		"performs consistency checks on BIND files"
 
-DISTNAME=		nslint-2.0.2a2
+DISTNAME=		nslint-2.0.2
 CATEGORIES=     	net
-NEED_VERSION=	1.402
+NEED_VERSION=		1.402
 MAINTAINER=		Wangden Kelsang <wngdn@src.uchicago.edu>
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ENV=		LDFLAGS=-static
+CONFIGURE_ENV+=		LDFLAGS=-static
 .endif
 
 CONFIGURE_STYLE=	gnu
