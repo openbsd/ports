@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/25 06:23:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/28 15:33:01 jakob Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
-DISTNAME=	tnef-1.0.1
+DISTNAME=	tnef-1.1.1
 CATEGORIES=    	mail
 NEED_VERSION=	1.423
 
