@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/30 21:08:25 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/04 13:59:46 danh Exp $
 
 COMMENT=	"convert a MySQL dump to a PostgreSQL dump"
 
 DISTNAME=	mysql2pgsql
-PKGNAME=	mysql2pgsql-1.8
+PKGNAME=	mysql2pgsql-20010320
 CATEGORIES=	databases
 NEED_VERSION=	1.378
 MASTER_SITES=	http://www.rot13.org/~dpavlin/projects/sql/
@@ -12,6 +12,8 @@ EXTRACT_SUFX=	#empty
 EXTRACT_ONLY=	#empty
 
 HOMEPAGE=	http://www.rot13.org/~dpavlin/projects.html
+
+RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
 MAINTAINER=	Pete Fritchman <petef@databits.net>
 
