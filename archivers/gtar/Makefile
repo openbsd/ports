@@ -1,23 +1,33 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/10 20:22:13 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/27 20:11:37 brad Exp $
 
-DISTNAME=	tar-1.13
+DISTNAME=	tar-1.13.17
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
-NEED_VERSION=	1.301
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= tar
+NEED_VERSION=	1.330
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/
 
-BUILD_DEPENDS=	msgfmt::devel/gettext
+LIB_DEPENDS=	intl.1::devel/gettext
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --program-prefix="g"
+CONFIGURE_ARGS=	--program-prefix="g"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		DEFAULT_ARCHIVE="/dev/rst0"
+
+FLAVORS=	static
+FLAVOR?=
+
+.if ${FLAVOR:L:Mstatic}
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -static"
+.else
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+.endif
 
 post-extract:
 	@rm -f ${WRKSRC}/doc/tar.info*

@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Thu Jul 15 16:49:01 1999
-+++ doc/Makefile.in	Thu Jul 15 16:49:14 1999
-@@ -94,7 +94,7 @@
+--- doc/Makefile.in.orig	Fri Jan  7 17:10:51 2000
++++ doc/Makefile.in	Wed Sep 27 15:13:16 2000
+@@ -80,7 +80,7 @@
  INTLLIBS = @INTLLIBS@
  INTLOBJS = @INTLOBJS@
  LIBOBJS = @LIBOBJS@
