@@ -1,0 +1,21 @@
+// $OpenBSD: patch-aa,v 1.1.1.1 2000/01/28 21:56:11 yanick Exp $
+// Replace mktemp by mkstemp
+--- ./lib/otb/t/etc/socket.c.orig	Tue Nov 16 02:36:21 1999
++++ ./lib/otb/t/etc/socket.c	Thu Jan 27 20:32:09 2000
+@@ -215,6 +215,7 @@
+ {
+ 	int		len;
+ 	int		sd;
++	int		fd = -1;
+ 	struct sockaddr_un
+ 			server_un;		/* server address */
+ /*
+@@ -223,7 +224,7 @@
+  */
+ 	if (strlen(addr) == 0) {
+ 		strcpy(addr, "/tmp/sfh-sXXXXXX");
+-		if (mktemp(addr) == 0) {
++		if ( (fd = mkstemp(addr)) == -1) {
+ 			return(-1);
+ 		}
+ 	}
