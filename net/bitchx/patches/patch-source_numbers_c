@@ -1,0 +1,32 @@
+$OpenBSD: patch-source_numbers_c,v 1.1 2002/04/16 18:30:39 pvalchev Exp $
+--- source/numbers.c.orig	Tue Apr 16 11:45:34 2002
++++ source/numbers.c	Tue Apr 16 11:44:39 2002
+@@ -1454,7 +1454,7 @@ void numbered_command(char *from, int co
+ 			
+ 			if (!ArgList[1] || !*ArgList[1])
+ 				break;
+-			sscanf(ArgList[1], "%lu", &tme);
++			sscanf(ArgList[1], "%d", &tme);
+ 			strcpy(this_sucks, ctime(&tme));
+ 			this_sucks[strlen(this_sucks)-1] = '\0';		
+ 
+@@ -1465,16 +1465,16 @@ void numbered_command(char *from, int co
+ 			else
+ 			{
+ 				char cts[80], pts[80], ots[80];
+-				sscanf(ArgList[2], "%lu", &tme);
++				sscanf(ArgList[2], "%d", &tme);
+ 				strcpy(cts, ctime(&tme));
+ 				cts[strlen(cts)-1] = '\0';		
+-				sscanf(ArgList[2], "%lu", &tme);
++				sscanf(ArgList[2], "%d", &tme);
+ 				strcpy(pts, ctime(&tme));
+ 				pts[strlen(pts)-1] = '\0';		
+ 				ots[0] = 0;
+ 				if (ArgList[3])
+ 				{
+-					sscanf(ArgList[3], "%lu", &tme);
++					sscanf(ArgList[3], "%d", &tme);
+ 					strcpy(ots, ctime(&tme));
+ 				}
+ 				ots[strlen(ots)-1] = '\0';		
