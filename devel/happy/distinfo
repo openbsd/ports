@@ -4,3 +4,5 @@ RMD160 (happy-1.14-src.tar.gz) = 550bf53c1c5c6f29c3087ac15a306fc3f0dc36ae
 RMD160 (happy-regress-1.14.tar.bz2) = bc0a0a76e59c7fe6c7731cbb36e0a0778748fcdd
 SHA1 (happy-1.14-src.tar.gz) = 90571e8ef1906f2fd3daa0f84b7e9949204c863b
 SHA1 (happy-regress-1.14.tar.bz2) = 34458ecd9f7fd8a8287b73abe748e9929381f33d
+SIZE (happy-1.14-src.tar.gz) = 473967
+SIZE (happy-regress-1.14.tar.bz2) = 1688

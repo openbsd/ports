@@ -10,3 +10,7 @@ SHA1 (binutils-2.7.tar.gz) = 53572541f3bc0bbe7b7b0fbf5d4f6bf53521646f
 SHA1 (gcc-2.7.2.2.tar.gz) = 48e1c0adbe4f563122d920e8098a7f832668b913
 SHA1 (gdb-4.16.tar.gz) = 89962a7b046436d38b5a34d27291cbe1fdb361f3
 SHA1 (prc-tools.0.5.0.tar.gz) = cb5295fe0013910dad0a533b023d6c9953c8a4fd
+SIZE (binutils-2.7.tar.gz) = 4480163
+SIZE (gcc-2.7.2.2.tar.gz) = 7134021
+SIZE (gdb-4.16.tar.gz) = 5996836
+SIZE (prc-tools.0.5.0.tar.gz) = 547105

@@ -4,3 +4,5 @@ RMD160 (haddock-0.6-src.tar.gz) = 4c1b282571713db65a2f6e05c0bdd0a4ac08ad23
 RMD160 (haddock-regress-0.6.tgz) = 1e7ba5fc3ac5d77de002a04dbe11aea9416b23b8
 SHA1 (haddock-0.6-src.tar.gz) = 51c6fcf8b8a4e88e49815d62b23728b3195a96ae
 SHA1 (haddock-regress-0.6.tgz) = 4b890380baf34d844cd7fa6d9f200363883f0a38
+SIZE (haddock-0.6-src.tar.gz) = 429708
+SIZE (haddock-regress-0.6.tgz) = 9157

@@ -4,3 +4,5 @@ RMD160 (alex-2.0-src.tar.bz2) = 2e57aeb2d41997a467b40f97318568927d371b33
 RMD160 (alex-regress-2.0.tgz) = 8b555ba371bfd2322a58a76b68d775887cf55eed
 SHA1 (alex-2.0-src.tar.bz2) = 321f79d12ad7134ed2dc01ba69d5fb3155bea867
 SHA1 (alex-regress-2.0.tgz) = 3026c4f092f13da52733b92fc51961e37cccf499
+SIZE (alex-2.0-src.tar.bz2) = 316720
+SIZE (alex-regress-2.0.tgz) = 516

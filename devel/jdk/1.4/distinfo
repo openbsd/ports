@@ -10,3 +10,7 @@ SHA1 (bsd-jdk14-patches-7.tar.gz) = 168c10f94e87ac097c7ab1dc551f94eddad91e05
 SHA1 (j2sdk-1_4_2-bin-scsl.zip) = 6d304be453abf477c793005d6f5b12ebc9e7be57
 SHA1 (j2sdk-1_4_2-linux-i586.bin) = 723d6a1953fdb30625e4ed06977aaf57314f2aed
 SHA1 (j2sdk-1_4_2-src-scsl.zip) = a48f7df999e27a23071e259bd11f2eac18d99d3c
+SIZE (bsd-jdk14-patches-7.tar.gz) = 1137785
+SIZE (j2sdk-1_4_2-bin-scsl.zip) = 2513462
+SIZE (j2sdk-1_4_2-linux-i586.bin) = 35761623
+SIZE (j2sdk-1_4_2-src-scsl.zip) = 49269919

@@ -4,3 +4,5 @@ RMD160 (bsd-jdk131-patches-9.tar.gz) = a6ff124a88949abc9a3018361208dff3f5c41664
 RMD160 (j2sdk-1_3_1-src.tar.gz) = 4ed3dfb58e24c2fa5b4ec567445aa7635765886a
 SHA1 (bsd-jdk131-patches-9.tar.gz) = 7f38ff2c46bcf5563f01d18a17ea2e0d34189b3a
 SHA1 (j2sdk-1_3_1-src.tar.gz) = 90f6f7a7756ca574193ea8f2deaf2d0e095692d1
+SIZE (bsd-jdk131-patches-9.tar.gz) = 642883
+SIZE (j2sdk-1_3_1-src.tar.gz) = 29876595
