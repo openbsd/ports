@@ -16,7 +16,7 @@ zip-2.2|/usr/ports/archivers/zip|/usr/local|Create/update ZIP files compatabile 
 zoo-2.10.1|/usr/ports/archivers/zoo|/usr/local|Manipulate archives of files in compressed form.|/usr/ports/archivers/zoo/pkg/DESCR|angelos@openbsd.org|archivers|||any
 sattrack-3.1.6|/usr/ports/astro/sattrack|/usr/local|Real-time satellite tracking and orbit propagation program.|/usr/ports/astro/sattrack/pkg/DESCR|angelos@openbsd.org|astro|||any
 xearth-1.0|/usr/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/usr/ports/astro/xearth/pkg/DESCR|ports@OpenBSD.ORG|astro x11|||any
-xephem-3.1|/usr/ports/astro/xephem|/usr/X11R6|an interactive astronomical ephemeris program|/usr/ports/astro/xephem/pkg/DESCR|angelos@openbsd.org|astro|lesstif-0.87.0|lesstif-0.87.0|any
+xephem-3.2.2|/usr/ports/astro/xephem|/usr/X11R6|an interactive astronomical ephemeris program|/usr/ports/astro/xephem/pkg/DESCR|angelos@openbsd.org|astro|lesstif-0.87.0|lesstif-0.87.0|any
 xphoon-91.9.18|/usr/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/usr/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11|||any
 amp-0.7.6|/usr/ports/audio/amp|/usr/local|another mp3 player|/usr/ports/audio/amp/pkg/DESCR|angelos@openbsd.org|audio|gmake-3.77||any
 gsm-1.0.10|/usr/ports/audio/gsm|/usr/local|u-law to gsm encoding audio converter and library|/usr/ports/audio/gsm/pkg/DESCR|angelos@openbsd.org|audio|||any
@@ -48,7 +48,7 @@ zh-lunar-2.1|/usr/ports/chinese/lunar|/usr/local|Gregorian Solar Calendar (SC) -
 bpl+-1.0|/usr/ports/comms/bpl+|/usr/local|B Plus file transfer protocol|/usr/ports/comms/bpl+/pkg/DESCR|joey@OpenBSD.ORG|comms|||any
 conserver-5.21|/usr/ports/comms/conserver|/usr/local|Manage remote serial consoles via TCP/IP|/usr/ports/comms/conserver/pkg/DESCR|angelos@openbsd.org|comms|||any
 efax-0.8a|/usr/ports/comms/efax|/usr/local|A small, simple FAX send/receive program.|/usr/ports/comms/efax/pkg/DESCR|ian@OpenBSD.ORG|comm|||any
-hylafax-4.0.2|/usr/ports/comms/hylafax|/usr/local|send/receive faxes and share modems|/usr/ports/comms/hylafax/pkg/DESCR|d@openbsd.org|comms|afm-1.0 jpeg-6b tiff-3.4|ghostscript-5.10 jpeg-6b png-1.0.2 tiff-3.4|any
+hylafax-4.0.2|/usr/ports/comms/hylafax|/usr/local|send/receive faxes and share modems|/usr/ports/comms/hylafax/pkg/DESCR|d@openbsd.org|comms|afm-1.0 jpeg-6b tiff-3.4|ghostscript-5.10 jpeg-6b png-1.0.3 tiff-3.4|any
 kermit-6.0.192|/usr/ports/comms/kermit|/usr/local|File transfer/terminal emulation utilitiy|/usr/ports/comms/kermit/pkg/DESCR|ports@OpenBSD.ORG|comms|||any
 lrzsz-0.12.19|/usr/ports/comms/lrzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol|/usr/ports/comms/lrzsz/pkg/DESCR|obrien@FreeBSD.org|comms|gmake-3.77||any
 mgetty-1.1.20|/usr/ports/comms/mgetty+sendfax|/usr/local|Handle external logins, send and receive faxes.|/usr/ports/comms/mgetty+sendfax/pkg/DESCR|form@OpenBSD.ORG|comms|||any
@@ -57,7 +57,7 @@ pilot-link-0.9.0|/usr/ports/comms/pilot-link|/usr/local|PalmPilot communications
 qpage-3.2|/usr/ports/comms/qpage|/usr/local|SNPP client/server (alphanum pager software)|/usr/ports/comms/qpage/pkg/DESCR|angelos@openbsd.org|comms|||any
 rzsz-3.48|/usr/ports/comms/rzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol.|/usr/ports/comms/rzsz/pkg/DESCR|gene@OpenBSD.ORG|comms|unzip-5.3.2||any
 seyon-2.14b|/usr/ports/comms/seyon|/usr/X11R6|A communications package for the X Window system.|/usr/ports/comms/seyon/pkg/DESCR|joey@OpenBSD.ORG|comms x11|||any
-tkhylafax-3.0|/usr/ports/comms/tkhylafax|/usr/local|a tcl/tk interface to Sam Leffler's fax package|/usr/ports/comms/tkhylafax/pkg/DESCR|joey@OpenBSD.ORG|comms||Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 hylafax-4.0.2 jpeg-6b png-1.0.2 tiff-3.4|any
+tkhylafax-3.0|/usr/ports/comms/tkhylafax|/usr/local|a tcl/tk interface to Sam Leffler's fax package|/usr/ports/comms/tkhylafax/pkg/DESCR|joey@OpenBSD.ORG|comms||Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 hylafax-4.0.2 jpeg-6b png-1.0.3 tiff-3.4|any
 xcept-2.1.2|/usr/ports/comms/xcept|/usr/local|a decoder for the CEPT (Btx) protocol|/usr/ports/comms/xcept/pkg/DESCR|joey@OpenBSD.ORG|comms|||any
 zmtx-zmrx-1.02|/usr/ports/comms/zmtx-zmrx|/usr/local|Receive/Send files via ZMODEM protocol.  (unrestrictive)|/usr/ports/comms/zmtx-zmrx/pkg/DESCR|joey@OpenBSD.ORG|comms|||any
 base64-1.0|/usr/ports/converters/base64|/usr/local|A converter to/from base64 encoding.|/usr/ports/converters/base64/pkg/DESCR|angelos@openbsd.org|converters|||any
@@ -84,7 +84,9 @@ indent-1.9.1|/usr/ports/devel/gindent|/usr/local|GNU indent.|/usr/ports/devel/gi
 gettext-0.10|/usr/ports/devel/gettext|/usr/local|GNU gettext package.|/usr/ports/devel/gettext/pkg/DESCR|jasoni@openbsd.org|devel|||any
 glib-1.2.0|/usr/ports/devel/glib|/usr/local|Some useful routines of C programming.|/usr/ports/devel/glib/pkg/DESCR|rohee@OpenBSD.ORG|devel|||any
 gmake-3.77|/usr/ports/devel/gmake|/usr/local|GNU version of 'make' utility|/usr/ports/devel/gmake/pkg/DESCR|todd@OpenBSD.org|devel|||any
+gsl-0.3b|/usr/ports/devel/gsl|/usr/local|GNU Scientific Library|/usr/ports/devel/gsl/pkg/DESCR|rohee@OpenBSD.ORG|devel|||any
 id-utils-3.2|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|emacs-20.3 gmake-3.77||any
+libaudiofile-0.1.6|/usr/ports/devel/libaudiofile|/usr/local|SGI audiofile library GPLed clone|/usr/ports/devel/libaudiofile/pkg/DESCR|rohee@OpenBSD.ORG|audio|||any
 libPropList-0.8.3|/usr/ports/devel/libproplist|/usr/local|GNUstep/OPENSTEP property lists compatibility library|/usr/ports/devel/libproplist/pkg/DESCR|jasoni@openbsd.org|devel|||any
 libslang-1.2.2|/usr/ports/devel/libslang|/usr/local|A stack based interpreter for terminal applications.|/usr/ports/devel/libslang/pkg/DESCR|todd@OpenBSD.org|devel|||any
 libtool-1.2|/usr/ports/devel/libtool|/usr/local|Generic shared library support script.|/usr/ports/devel/libtool/pkg/DESCR|jbi130@mail.usask.ca|devel|||any
@@ -106,7 +108,7 @@ textedit-1.0|/usr/ports/editors/textedit|/usr/X11R6|The standard OPEN LOOK text 
 uemacs-4.0|/usr/ports/editors/uemacs|/usr/local|A full screen editor.|/usr/ports/editors/uemacs/pkg/DESCR|downsj@downsj.com|editors|unzip-5.3.2||any
 vim-5.3|/usr/ports/editors/vim|/usr/local|A vi "workalike", with many additional features.|/usr/ports/editors/vim/pkg/DESCR|jasoni@openbsd.org|editors|||any
 wordperfect-8.0|/usr/ports/editors/wordperfect|/usr/local|Graphical word processor ported from Windows|/usr/ports/editors/wordperfect/pkg/DESCR|dugsong@monkey.org|editors||linux_lib-2.6.1|i386
-xemacs-20.4|/usr/ports/editors/xemacs20|/usr/local|The extensible, customizable real-time display editor.|/usr/ports/editors/xemacs20/pkg/DESCR|hgweigand@wiesbaden.netsurf.de|editors|compface-1.0 gmake-3.77 jpeg-6b png-1.0.2|jpeg-6b png-1.0.2|any
+xemacs-20.4|/usr/ports/editors/xemacs20|/usr/local|The extensible, customizable real-time display editor.|/usr/ports/editors/xemacs20/pkg/DESCR|hgweigand@wiesbaden.netsurf.de|editors|compface-1.0 gmake-3.77 jpeg-6b png-1.0.3|jpeg-6b png-1.0.3|any
 xwpe-1.5.9a|/usr/ports/editors/xwpe|/usr/local|A powerfull programming editor.|/usr/ports/editors/xwpe/pkg/DESCR|yanick@fries.net|editors|||any
 bochs-990219a|/usr/ports/emulators/bochs|/usr/X11R6|Intel 80386 CPU emulator.|/usr/ports/emulators/bochs/pkg/DESCR|form@OpenBSD.ORG|emulators|gmake-3.77||any
 linux_lib-2.6.1|/usr/ports/emulators/linux_lib|/emul/linux|These are the libraries necessary for linux compatibility.|/usr/ports/emulators/linux_lib/pkg/DESCR|form@OpenBSD.ORG|emulators|||i386
@@ -162,27 +164,29 @@ xskat-1.6|/usr/ports/games/xskat|/usr/X11R6|Play the card game Skat.|/usr/ports/
 xsol-2.1.1|/usr/ports/games/xsol|/usr/X11R6|Solitaire.|/usr/ports/games/xsol/pkg/DESCR|angelos@openbsd.org|games|||any
 xsoldier-0.96|/usr/ports/games/xsoldier|/usr/X11R6|shooting game for x11|/usr/ports/games/xsoldier/pkg/DESCR|angelos@openbsd.org|games x11|||any
 xteddy-1.0|/usr/ports/games/xteddy|/usr/X11R6|A cuddlesome teddy for the X desktop.|/usr/ports/games/xteddy/pkg/DESCR|felix@mamba.pond.sub.org|games|||any
-ImageMagick-4.2.0|/usr/ports/graphics/ImageMagick|/usr/X11R6|X11 package for display and manipulation of images|/usr/ports/graphics/ImageMagick/pkg/DESCR|marc@openbsd.org|graphics x11|jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4|ghostscript-5.10 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4 transfig-3.2.1|any
+ImageMagick-4.2.0|/usr/ports/graphics/ImageMagick|/usr/X11R6|X11 package for display and manipulation of images|/usr/ports/graphics/ImageMagick/pkg/DESCR|marc@openbsd.org|graphics x11|jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4|ghostscript-5.10 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4 transfig-3.2.1|any
 MesaGL-3.0|/usr/ports/graphics/MesaGL|/usr/X11R6|A graphics library similar to SGI's OpenGL.|/usr/ports/graphics/MesaGL/pkg/DESCR|brad@openbsd.org|graphics|||any
+aalib-1.2|/usr/ports/graphics/aalib|/usr/local|An ascii art library|/usr/ports/graphics/aalib/pkg/DESCR|brad@openbsd.org|graphics|||any
 compface-1.0|/usr/ports/graphics/compface|/usr/local|Programs and library for the 'X-face' mail and news header|/usr/ports/graphics/compface/pkg/DESCR|hgweigand@wiesbaden.netsurf.de|graphics|||any
 gd-1.3|/usr/ports/graphics/gd|/usr/local|A graphics library for fast GIF creation|/usr/ports/graphics/gd/pkg/DESCR|brad@openbsd.org|graphics|||any
 libggi-2.0b1|/usr/ports/graphics/ggi|/usr/local|Generic Graphics Library|/usr/ports/graphics/ggi/pkg/DESCR|todd@openbsd.org|graphics|gmake-3.77 libgii-0.1|libgii-0.1|any
 giflib-3.0|/usr/ports/graphics/giflib|/usr/local|Gif Library and utilities.|/usr/ports/graphics/giflib/pkg/DESCR|yanick@fries.net|graphics|||any
 giftrans-1.12|/usr/ports/graphics/giftrans|/usr/local|a tool for GIF89a transparent option and inerlace mode.|/usr/ports/graphics/giftrans/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|graphics|||any
-gimp-1.0.2|/usr/ports/graphics/gimp|/usr/X11R6|The GIMP: the GNU Image Manipulation Program|/usr/ports/graphics/gimp/pkg/DESCR|dugsong@openbsd.org|graphics x11|gtk+-1.0.6 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4|gtk+-1.0.6 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4|any
+libgii-0.1|/usr/ports/graphics/gii|/usr/local|General Imput Library (used by libggi).|/usr/ports/graphics/gii/pkg/DESCR|todd@openbsd.org|graphics|gmake-3.77||any
+gimp-1.0.2|/usr/ports/graphics/gimp|/usr/X11R6|The GIMP: the GNU Image Manipulation Program|/usr/ports/graphics/gimp/pkg/DESCR|dugsong@openbsd.org|graphics x11|gettext-0.10 glib-1.2.0 gtk+-1.2.0 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4|gettext-0.10 glib-1.2.0 gtk+-1.2.0 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4|any
 jpeg-6b|/usr/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities.|/usr/ports/graphics/jpeg/pkg/DESCR|angelos@openbsd.org|graphics|||any
 mpeg_lib-1.2.1|/usr/ports/graphics/mpeg-lib|/usr/local|A collection of C routines to decode MPEG movies.|/usr/ports/graphics/mpeg-lib/pkg/DESCR|marc@OpenBSD.ORG|graphics|||any
 mpeg_play-2.4|/usr/ports/graphics/mpeg_play|/usr/X11R6|A program to play mpeg movies on X displays|/usr/ports/graphics/mpeg_play/pkg/DESCR|don@OpenBSD.ORG|graphics|||any
-netpbm-94.3.1|/usr/ports/graphics/netpbm|/usr/local|toolkit, convert images between different formats|/usr/ports/graphics/netpbm/pkg/DESCR|form@OpenBSD.ORG|graphics|jpeg-6b png-1.0.2 tiff-3.4|jpeg-6b png-1.0.2 tiff-3.4|any
-png-1.0.2|/usr/ports/graphics/png|/usr/local|Library for manipulating PNG images.|/usr/ports/graphics/png/pkg/DESCR|angelos@openbsd.org|graphics|||any
+netpbm-94.3.1|/usr/ports/graphics/netpbm|/usr/local|toolkit, convert images between different formats|/usr/ports/graphics/netpbm/pkg/DESCR|form@OpenBSD.ORG|graphics|jpeg-6b png-1.0.3 tiff-3.4|jpeg-6b png-1.0.3 tiff-3.4|any
+png-1.0.3|/usr/ports/graphics/png|/usr/local|Library for manipulating PNG images.|/usr/ports/graphics/png/pkg/DESCR|angelos@openbsd.org|graphics|||any
 tiff|/usr/ports/graphics/tiff|/usr/local|** No Description|/dev/null|marc@OpenBSD.org|graphics|||any
 tiff-3.4|/usr/ports/graphics/tiff34|/usr/local|support for the Tag Image File Format (TIFF)|/usr/ports/graphics/tiff34/pkg/DESCR|don@OpenBSD.ORG|graphics|jpeg-6b|jpeg-6b|any
 xanim-2.70.7.0|/usr/ports/graphics/xanim|/usr/X11R6|X11 animation player with supports for lots of formats|/usr/ports/graphics/xanim/pkg/DESCR|espie@openbsd.org|graphics x11|||any
 xbmbrowser-5.1|/usr/ports/graphics/xbmbrowser|/usr/X11R6|View complete directories of X bitmaps and X pixmaps.|/usr/ports/graphics/xbmbrowser/pkg/DESCR|form@OpenBSD.ORG|graphics|gmake-3.77||any
-xfig-3.2.2|/usr/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/usr/ports/graphics/xfig/pkg/DESCR|angelos@openbsd.org|graphics x11|Xaw3d-1.3 jpeg-6b|Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 jpeg-6b png-1.0.2 transfig-3.2.1|any
-xpaint-2.5.5|/usr/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/usr/ports/graphics/xpaint/pkg/DESCR|angelos@openbsd.org|graphics x11|jpeg-6b png-1.0.2 tiff-3.4|jpeg-6b png-1.0.2 tiff-3.4|any
+xfig-3.2.2|/usr/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/usr/ports/graphics/xfig/pkg/DESCR|angelos@openbsd.org|graphics x11|Xaw3d-1.3 jpeg-6b|Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 jpeg-6b png-1.0.3 transfig-3.2.1|any
+xpaint-2.5.5|/usr/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/usr/ports/graphics/xpaint/pkg/DESCR|angelos@openbsd.org|graphics x11|jpeg-6b png-1.0.3 tiff-3.4|jpeg-6b png-1.0.3 tiff-3.4|any
 xpm-3.4k|/usr/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/usr/ports/graphics/xpm/pkg/DESCR|ports@OpenBSD.ORG|graphics x11|||any
-xv-3.10a|/usr/ports/graphics/xv|/usr/X11R6|X11 image display and modification tool|/usr/ports/graphics/xv/pkg/DESCR|ports@OpenBSD.ORG|graphics x11|jpeg-6b png-1.0.2 tiff-3.4|jpeg-6b png-1.0.2 tiff-3.4|any
+xv-3.10a|/usr/ports/graphics/xv|/usr/X11R6|X11 image display and modification tool|/usr/ports/graphics/xv/pkg/DESCR|ports@OpenBSD.ORG|graphics x11|jpeg-6b png-1.0.3 tiff-3.4|jpeg-6b png-1.0.3 tiff-3.4|any
 ja-Wnn-4.2|/usr/ports/japanese/Wnn|/usr/local|Japanese/Chinese/Korean input method (built only Japanese)|/usr/ports/japanese/Wnn/../../japanese/Wnn/pkg/DESCR|espie@openbsd.org|japanese|||any
 ja-jvim-2.0r|/usr/ports/japanese/jvim|/usr/local|Japanized Vim|/usr/ports/japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|||any
 ja-jvim-wnn4-2.0r|/usr/ports/japanese/jvim-wnn4|/usr/local|Japanized Vim (with Wnn4)|/usr/ports/japanese/jvim-wnn4/pkg/DESCR|espie@openbsd.org|japanese editors|ja-Wnn-4.2 ja-onew-wnn4-2.2.10||any
@@ -202,7 +206,8 @@ guile-1.3|/usr/ports/lang/guile|/usr/local|GNU extension language, scheme as an 
 icon-9.3.1|/usr/ports/lang/icon|/usr/X11R6|programming language with generators|/usr/ports/lang/icon/pkg/DESCR|espie@openbsd.org|lang|||any
 icon_lib-9.3.1|/usr/ports/lang/icon_lib|/usr/X11R6|a set of useful and interesting programs for Icon|/usr/ports/lang/icon_lib/pkg/DESCR|espie@openbsd.org|lang|icon-9.3.1||any
 kaffe-1.0.b2|/usr/ports/lang/kaffe|/usr/local|Kaffe - a JIT and interpreting Java virtual machine.|/usr/ports/lang/kaffe/pkg/DESCR|ports@OpenBSD.ORG|lang|||any
-kaffe-1.0.b3|/usr/ports/lang/kaffe1|/usr/local|TransVirtual's BETA Java JDK1.1 compiler, runtime and libs.|/usr/ports/lang/kaffe1/pkg/DESCR|ian@OpenBSD.ORG|lang|jpeg-6b png-1.0.2|jpeg-6b png-1.0.2|any
+kaffe-1.0.b3|/usr/ports/lang/kaffe1|/usr/local|TransVirtual's BETA Java JDK1.1 compiler, runtime and libs.|/usr/ports/lang/kaffe1/pkg/DESCR|ian@OpenBSD.ORG|lang|giflib-3.0 jpeg-6b png-1.0.3|giflib-3.0 jpeg-6b png-1.0.3|any
+mawk-1.3.3|/usr/ports/lang/mawk|/usr/local|an implementation of new/posix awk|/usr/ports/lang/mawk/pkg/DESCR|brad@openbsd.org|lang|||any
 ocaml-2.01|/usr/ports/lang/ocaml|/usr/local|ML language based on complete class-based objective system|/usr/ports/lang/ocaml/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|lang|gmake-3.77||any
 python-1.5|/usr/ports/lang/python|/usr/local|An interpreted object-oriented programming language.|/usr/ports/lang/python/pkg/DESCR|don@OpenBSD.ORG|lang tk80|tcl-8.0.4 tk-8.0.4|tcl-8.0.4 tk-8.0.4|any
 tcl-8.0.4|/usr/ports/lang/tcl80|/usr/local|Tool Command Language.|/usr/ports/lang/tcl80/pkg/DESCR|niklas@openbsd.org|lang tcl80|||any
@@ -232,7 +237,7 @@ vrfy-98.08.20|/usr/ports/mail/vrfy|/usr/local|utility to verify email addresses 
 xfaces-3.3|/usr/ports/mail/xfaces|/usr/X11R6|mail image display for X|/usr/ports/mail/xfaces/pkg/DESCR|angelos@openbsd.org|mail|faces-1.6.1|faces-1.6.1|any
 xfmail-1.3|/usr/ports/mail/xfmail|/usr/X11R6|Xforms based mail application for Unix operating systems.|/usr/ports/mail/xfmail/pkg/DESCR|form@OpenBSD.ORG|mail x11|xforms-0.88|xforms-0.88|i386 sparc m68k hp300
 xlbiff-3.0|/usr/ports/mail/xlbiff|/usr/X11R6|display from/subject from incoming mails using X11|/usr/ports/mail/xlbiff/pkg/DESCR|angelos@openbsd.org|mail x11|||any
-gnuplot-3.7|/usr/ports/math/gnuplot|/usr/local|A command-driven interactive function plotting program.|/usr/ports/math/gnuplot/pkg/DESCR|angelos@openbsd.org|math graphics|png-1.0.2|png-1.0.2|any
+gnuplot-3.7|/usr/ports/math/gnuplot|/usr/local|A command-driven interactive function plotting program.|/usr/ports/math/gnuplot/pkg/DESCR|angelos@openbsd.org|math graphics|png-1.0.3|png-1.0.3|any
 hoc-1.1|/usr/ports/math/hoc|/usr/local|From Kernighan & Pike: a High Order Calculator|/usr/ports/math/hoc/pkg/DESCR|ian@openbsd.org|math|||any
 Wingz-142|/usr/ports/math/wingz|/usr/X11R6|A Commercial Spreadsheet|/usr/ports/math/wingz/pkg/DESCR|angelos@openbsd.org|math||linux_lib-2.6.1|i386
 xspread-2.1|/usr/ports/math/xspread|/usr/X11R6|A spreadsheet program under X.|/usr/ports/math/xspread/pkg/DESCR|angelos@openbsd.org|math|||any
@@ -240,7 +245,7 @@ imm-3.5a1|/usr/ports/mbone/imm|/usr/X11R6|Internet Image(or other data) Multicas
 rtptools-1.9|/usr/ports/mbone/rtptools|/usr/local|tools to record, playback and monitor RTPv2 data streams|/usr/ports/mbone/rtptools/pkg/DESCR|angelos@openbsd.org|mbone|||any
 sdr-2.4a7|/usr/ports/mbone/sdr|/usr/X11R6|MBone Session Directory|/usr/ports/mbone/sdr/pkg/DESCR|angelos@openbsd.org|mbone tk80|gmake-3.77 tcl-8.0.4 tk-8.0.4|tcl-8.0.4 tk-8.0.4|any
 speak_freely-6.1e|/usr/ports/mbone/speak_freely|/usr/local|Voice Communication Over Data Networks.|/usr/ports/mbone/speak_freely/pkg/DESCR|angelos@openbsd.org|mbone audio security|||any
-wb-1.59|/usr/ports/mbone/wb|/usr/X11R6|A shared drawing (whiteboard) tool using multicast.|/usr/ports/mbone/wb/pkg/DESCR|angelos@openbsd.org|mbone||ghostscript-5.10 png-1.0.2|i386
+wb-1.59|/usr/ports/mbone/wb|/usr/X11R6|A shared drawing (whiteboard) tool using multicast.|/usr/ports/mbone/wb/pkg/DESCR|angelos@openbsd.org|mbone||ghostscript-5.10 png-1.0.3|i386
 amanda-2.4.1p1|/usr/ports/misc/amanda|/usr/local|The Advanced Maryland Automatic Network Disk Archiver|/usr/ports/misc/amanda/pkg/DESCR|marc@OpenBSD.ORG|misc|||any
 astrolog-5.30|/usr/ports/misc/astrolog|/usr/local|An astrology program for X11 and alpha-numeric terminals|/usr/ports/misc/astrolog/pkg/DESCR|joey@OpenBSD.ORG|misc|||any
 buffer-1.17|/usr/ports/misc/buffer|/usr/local|Buffer sporadic binary I/O for faster tape use.|/usr/ports/misc/buffer/pkg/DESCR|naddy@unix-ag.uni-kl.de|misc|||any
@@ -262,7 +267,7 @@ tkman-2.0.6|/usr/ports/misc/tkman|/usr/local|A Tcl/Tk based manual browser|/usr/
 xdelta-0.23|/usr/ports/misc/xdelta|/usr/local|binary delta generator and prototype RCS replacement|/usr/ports/misc/xdelta/pkg/DESCR|felix@mamba.pond.sub.org|misc|gdbm-1.7.3||any
 xgas-1.0|/usr/ports/misc/xgas|/usr/X11R6|The animated simulation of an ideal gas|/usr/ports/misc/xgas/pkg/DESCR|angelos@openbsd.org|misc|||any
 xless-1.7|/usr/ports/misc/xless|/usr/X11R6|X11 viewer for text files|/usr/ports/misc/xless/pkg/DESCR|angelos@openbsd.org|misc|||any
-xtar-1.4|/usr/ports/misc/xtar|/usr/X11R6|View and manipulate contents of a tar file.|/usr/ports/misc/xtar/pkg/DESCR|angelos@openbsd.org|misc|||any
+xtar-1.4|/usr/ports/misc/xtar|/usr/X11R6|View and manipulate contents of a tar file.|/usr/ports/misc/xtar/pkg/DESCR|angelos@openbsd.org|misc|lesstif-0.87.0|lesstif-0.87.0|any
 xtimer-0.8087|/usr/ports/misc/xtimer|/usr/X11R6|A super simple digital timer for X11|/usr/ports/misc/xtimer/pkg/DESCR|angelos@openbsd.org|misc|||any
 archie-1.4.1|/usr/ports/net/archie|/usr/local|Prospero client for the archie service.|/usr/ports/net/archie/pkg/DESCR|joey@OpenBSD.ORG|net|||any
 arpwatch-2.1a3|/usr/ports/net/arpwatch|/usr/local|Monitor arp & rarp requests|/usr/ports/net/arpwatch/pkg/DESCR|ports@openbsd.org|net|||any
@@ -270,7 +275,7 @@ bing-1.0.4|/usr/ports/net/bing|/usr/local|Bing is a point-to-point bandwith meas
 bitchx-75p3|/usr/ports/net/bitchx|/usr/local|An alternative ircII color client.|/usr/ports/net/bitchx/pkg/DESCR|brad@openbsd.org|net|||any
 clog-1.6|/usr/ports/net/clog|/usr/local|tcp connection logger daemon|/usr/ports/net/clog/pkg/DESCR|form@OpenBSD.ORG|net security|||any
 dxpc-3.7.0|/usr/ports/net/dxpc|/usr/local|X windows over a low bandwidth link|/usr/ports/net/dxpc/pkg/DESCR|espie@openbsd.org|net X11|||any
-ethereal-0.5.1|/usr/ports/net/ethereal|/usr/X11R6|Ethereal - A network protocol analyzer.|/usr/ports/net/ethereal/pkg/DESCR|jakob@carlstedt.se|net x11|gtk+-1.0.6|gtk+-1.0.6|any
+ethereal-0.5.1|/usr/ports/net/ethereal|/usr/X11R6|Ethereal - A network protocol analyzer.|/usr/ports/net/ethereal/pkg/DESCR|jakob@carlstedt.se|net x11|gettext-0.10 glib-1.2.0 gtk+-1.2.0|gettext-0.10 glib-1.2.0 gtk+-1.2.0|any
 firewalk-0.7|/usr/ports/net/firewalk|/usr/local|Gateway acl scanner (via static-source port traceroute)|/usr/ports/net/firewalk/pkg/DESCR|dugsong@monkey.org|net|libnet-0.10a||any
 gated-3.5.7|/usr/ports/net/gated|/usr/local|Routing protocol daemon.|/usr/ports/net/gated/pkg/DESCR|joey@OpenBSD.ORG|net|||any
 icb-5.0.9|/usr/ports/net/icb|/usr/local|Internet CB - a mostly-defunct chat client|/usr/ports/net/icb/pkg/DESCR|form@OpenBSD.ORG|net|||any
@@ -281,7 +286,7 @@ ircii-2.8.2-epic3.004|/usr/ports/net/ircii-epic|/usr/local|An enhanced version o
 libnet-0.10a|/usr/ports/net/libnet|/usr/local|Raw IP packet construction library.|/usr/ports/net/libnet/pkg/DESCR|dugsong@monkey.org|net|||any
 licq-0.44|/usr/ports/net/licq|/usr/local|An ICQ clone for UNIX-like OS's.|/usr/ports/net/licq/pkg/DESCR|form@openbsd.org|net|gmake-3.77 qt-1.42|qt-1.42|any
 mirror-2.9|/usr/ports/net/mirror|/usr/local|Mirror packages on remote sites.|/usr/ports/net/mirror/pkg/DESCR|form@OpenBSD.ORG|net|||any
-mrtg-2.7.0|/usr/ports/net/mrtg|/usr/local|the multi-router traffic grapher|/usr/ports/net/mrtg/pkg/DESCR|brad@openbsd.org|net|gd-1.3||any
+mrtg-2.7.1|/usr/ports/net/mrtg|/usr/local|the multi-router traffic grapher|/usr/ports/net/mrtg/pkg/DESCR|brad@openbsd.org|net|gd-1.3||any
 mtr-0.28|/usr/ports/net/mtr|/usr/local|Matt's traceroute - a network diagnostic tool|/usr/ports/net/mtr/pkg/DESCR|jakob@carlstedt.se|net|||any
 ncftp-2.4.3|/usr/ports/net/ncftp|/usr/local|curses based ftp program|/usr/ports/net/ncftp/pkg/DESCR|shinobi@monkey.org|net|||any
 netatalk-1.4b2|/usr/ports/net/netatalk|/usr/local|File and Print Services for AppleTalk Networks|/usr/ports/net/netatalk/pkg/DESCR|ianm@cit.nepean.uws.edu.au|net print|||any
@@ -303,10 +308,10 @@ ucd-snmp-3.2|/usr/ports/net/ucd-snmp|/usr/local|An extendable SNMP implimentatio
 wget-1.5.3|/usr/ports/net/wget|/usr/local|Retrieve files from the 'net via HTTP and FTP.|/usr/ports/net/wget/pkg/DESCR|angelos@openbsd.org|net|||any
 wide-dhcp-1.4.0.3|/usr/ports/net/wide-dhcp|/usr/local|Dynamic Host Configuration Protocol, WIDE-Implimentation.|/usr/ports/net/wide-dhcp/pkg/DESCR|form@OpenBSD.ORG|net|||any
 xarchie-2.0.10|/usr/ports/net/xarchie|/usr/X11R6|X11 front-end program for the archie network search service|/usr/ports/net/xarchie/pkg/DESCR|form@OpenBSD.ORG|net|||any
-ytalk-3.0.2|/usr/ports/net/ytalk|/usr/local|A new "talk" that can talk to multiple parties at once|/usr/ports/net/ytalk/pkg/DESCR|joey@OpenBSD.ORG|net|||any
+ytalk-3.1|/usr/ports/net/ytalk|/usr/local|Enhanced "talk" that allows for multiple parties|/usr/ports/net/ytalk/pkg/DESCR|espie@cvs.openbsd.org|net|||any
 aub-2.0.5|/usr/ports/news/aub|/usr/local|assemble usenet binaries|/usr/ports/news/aub/pkg/DESCR|angelos@openbsd.org|news|||any
 cnews-cr.g|/usr/ports/news/cnews|/usr/local|C-news|/usr/ports/news/cnews/pkg/DESCR|ports@OpenBSD.ORG|news|||any
-leafnode-1.9|/usr/ports/news/leafnode|/usr/local|USENET news software package designed for small sites|/usr/ports/news/leafnode/pkg/DESCR|bob@prophecy.lu|news|||any
+leafnode-1.9.2|/usr/ports/news/leafnode|/usr/local|USENET news software package designed for small sites|/usr/ports/news/leafnode/pkg/DESCR|bob@prophecy.lu|news|||any
 newsfetch-1.21|/usr/ports/news/newsfetch|/usr/local|download news articles from NNTP server.|/usr/ports/news/newsfetch/pkg/DESCR|ejovi@openbsd.org|news|||any
 plor-0.3.2|/usr/ports/news/plor|/usr/local|An alpha-release reader for reading SOUP and QWK packets.|/usr/ports/news/plor/pkg/DESCR|joey@OpenBSD.ORG|news|||any
 slrn-0.9.5.4|/usr/ports/news/slrn|/usr/local|SLang-based newsreader|/usr/ports/news/slrn/pkg/DESCR|joey@OpenBSD.ORG|news|libslang-1.2.2|libslang-1.2.2|any
@@ -316,24 +321,25 @@ tin-1.4.980818|/usr/ports/news/tin|/usr/local|TIN newsreader (termcap based)|/us
 sam-4.3-19980506|/usr/ports/plan9/sam|/usr/local|This is an X11 version of Rob Pike's editor, sam.|/usr/ports/plan9/sam/pkg/DESCR|msfriedl@cs.fau.de|plan9|||any
 tcs-19950325|/usr/ports/plan9/tcs|/usr/local|translate character sets|/usr/ports/plan9/tcs/pkg/DESCR|msfriedl@cs.fau.de|plan9|||any
 wily-0.13.36|/usr/ports/plan9/wily|/usr/X11R6|A clone of the Plan9 editor `acme'.|/usr/ports/plan9/wily/pkg/DESCR|angelos@openbsd.org|plan9 editors|||any
-a2ps|/usr/ports/print/a2ps|/usr/local|Formats an ascii file for printing on a postscript printer.|/usr/ports/print/a2ps/pkg/DESCR|weingart@OpenBSD.org|print|ImageMagick-4.2.0 Xaw3d-1.3 ghostscript-5.10 gmake-3.77 gv-3.5.8 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 psutils-1.17 teTeX-0.4 tiff-3.4 unzip-5.3.2|ImageMagick-4.2.0 Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 psutils-1.17 teTeX-0.4 tiff-3.4 transfig-3.2.1|any
+a2ps|/usr/ports/print/a2ps|/usr/local|Formats an ascii file for printing on a postscript printer.|/usr/ports/print/a2ps/pkg/DESCR|weingart@OpenBSD.org|print|ImageMagick-4.2.0 Xaw3d-1.3 ghostscript-5.10 gmake-3.77 gv-3.5.8 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 psutils-1.17 teTeX-0.4 tiff-3.4 unzip-5.3.2|ImageMagick-4.2.0 Xaw3d-1.3 ghostscript-5.10 gv-3.5.8 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 psutils-1.17 teTeX-0.4 tiff-3.4 transfig-3.2.1|any
 acroread-3.01|/usr/ports/print/acroread|/usr/local|View, distribute and print PDF documents.|/usr/ports/print/acroread/pkg/DESCR|angelos@openbsd.org|print||linux_lib-2.6.1|i386
 afm-1.0|/usr/ports/print/afm|/usr/local|Adobe Font Metrics.|/usr/ports/print/afm/pkg/DESCR|david.leonard@dstc.edu.au|print|||any
 bibview-2.2|/usr/ports/print/bibview|/usr/X11R6|GUI for manipulating BibTeX bibliography databases|/usr/ports/print/bibview/pkg/DESCR|angelos@openbsd.org|databases print|||any
 detex-2.6|/usr/ports/print/detex|/usr/local|Strips TeX/LaTeX codes from a file|/usr/ports/print/detex/pkg/DESCR|angelos@openbsd.org|print|||any
 enscript-1.6.1|/usr/ports/print/enscript|/usr/local|Convert ASCII files to PostScript|/usr/ports/print/enscript/pkg/DESCR|marc@openbsd.org|print|||any
 freetype-1.1|/usr/ports/print/freetype|/usr/local|A free and portable TrueType font rendering engine|/usr/ports/print/freetype/pkg/DESCR|jasoni@openbsd.org|print|gmake-3.77||any
-ghostscript-5.10|/usr/ports/print/ghostscript5|/usr/local|Aladdin Postscript interpreter.|/usr/ports/print/ghostscript5/pkg/DESCR|ports@openbsd.org|print|jpeg-6b png-1.0.2 unzip-5.3.2|png-1.0.2|any
+ghostscript-5.10|/usr/ports/print/ghostscript5|/usr/local|Aladdin Postscript interpreter.|/usr/ports/print/ghostscript5/pkg/DESCR|ports@openbsd.org|print|jpeg-6b png-1.0.3 unzip-5.3.2|png-1.0.3|any
 ghostview-1.5|/usr/ports/print/ghostview|/usr/X11R6|An X11 front-end for ghostscript|/usr/ports/print/ghostview/pkg/DESCR|angelos@openbsd.org|print|||any
-gv-3.5.8|/usr/ports/print/gv|/usr/X11R6|A PostScript and PDF previewer.|/usr/ports/print/gv/pkg/DESCR|angelos@openbsd.org|print|Xaw3d-1.3|Xaw3d-1.3 ghostscript-5.10 png-1.0.2|any
+gv-3.5.8|/usr/ports/print/gv|/usr/X11R6|A PostScript and PDF previewer.|/usr/ports/print/gv/pkg/DESCR|angelos@openbsd.org|print|Xaw3d-1.3|Xaw3d-1.3 ghostscript-5.10 png-1.0.3|any
 lyx-1.0.0|/usr/ports/print/lyx|/usr/local|A graphical frontend for LaTeX (nearly WYSIWYG)|/usr/ports/print/lyx/pkg/DESCR|angelos@openbsd.org|print|gmake-3.77 teTeX-0.4 xforms-0.88 xpm-3.4k|ispell-3.1.20 teTeX-0.4 xforms-0.88 xpm-3.4k|any
 pkfonts300-1.0|/usr/ports/print/pkfonts|/usr/local|English PK fonts, for ghostscripts, xdvi and so on|/usr/ports/print/pkfonts/pkg/DESCR|angelos@openbsd.org|print|||any
 psutils-1.17|/usr/ports/print/psutils|/usr/local|Utilities for manipulating PostScript documents.|/usr/ports/print/psutils/pkg/DESCR|ports@openbsd.org|print|||any
 teTeX-0.4|/usr/ports/print/teTeX|/usr/local|TeX distribution for UNIX compatible systems|/usr/ports/print/teTeX/pkg/DESCR|angelos@openbsd.org|print|gmake-3.77||any
-transfig-3.2.1|/usr/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/usr/ports/print/transfig/pkg/DESCR|angelos@openbsd.org|print|jpeg-6b|ghostscript-5.10 jpeg-6b png-1.0.2|any
+transfig-3.2.1|/usr/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/usr/ports/print/transfig/pkg/DESCR|angelos@openbsd.org|print|jpeg-6b|ghostscript-5.10 jpeg-6b png-1.0.3|any
 xcyrillic-1.1|/usr/ports/russian/xcyrillic|/usr/X11R6|Setup X11 fonts for russian language (koi8-r)|/usr/ports/russian/xcyrillic/pkg/DESCR|form@OpenBSD.ORG|russian x11|||any
 xruskb-1.5.3|/usr/ports/russian/xruskb|/usr/X11R6|xruskb 1.5.3, english-russian keyboard switcher for X11|/usr/ports/russian/xruskb/pkg/DESCR|form@OpenBSD.ORG|russian x11|||any
-SSLeay-0.8.1b|/usr/ports/security/SSLeay|/usr/local|Eric Young's implementation of SSL and supporting libraries|/usr/ports/security/SSLeay/pkg/DESCR|dugsong@monkey.org|security|||any
+ADMsnmp-0.1|/usr/ports/security/ADMsnmp|/usr/local|SNMP audit scanner.|/usr/ports/security/ADMsnmp/pkg/DESCR|dugsong@monkey.org|security|||any
+SSLeay-0.9.0b|/usr/ports/security/SSLeay|/usr/local|Eric Young's implementation of SSL and supporting libraries|/usr/ports/security/SSLeay/pkg/DESCR|dugsong@monkey.org|security|||any
 bounix-1.21|/usr/ports/security/bounix|/usr/local|Back Orifice Unix client by the cDc.|/usr/ports/security/bounix/pkg/DESCR|dugsong@monkey.org|security|||any
 cfs-1.3.3|/usr/ports/security/cfs|/usr/local|A cryptographic file system (user-space NFS server)|/usr/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security|||any
 cops-1.04|/usr/ports/security/cops|/usr/local|A system secureness checker.|/usr/ports/security/cops/pkg/DESCR|joey@OpenBSD.ORG|security|||any
@@ -343,20 +349,20 @@ nbaudit-1.0|/usr/ports/security/nbaudit|/usr/local|NetBIOS Auditing Tool / Secur
 nessus-990201|/usr/ports/security/nessus|/usr/local|Free network security scanner.|/usr/ports/security/nessus/pkg/DESCR|dugsong@monkey.org|security|||any
 pgp-2.6.3|/usr/ports/security/pgp|/usr/local|Intl and US versions of Pretty Good Privacy 2.6.3[i]a|/usr/ports/security/pgp/pkg/DESCR|ports@openbsd.org|security|||any
 pgp-5.0i|/usr/ports/security/pgp5|/usr/local|Pretty Good Privacy 5.0i (international)|/usr/ports/security/pgp5/pkg/DESCR|fgsch@openbsd.org|security|||any
-PGPlib|/usr/ports/security/pgplib|/usr/local|library to generate (and manipulate) PGP packets|/usr/ports/security/pgplib/pkg/DESCR|ports@openbsd.org|security|SSLeay-0.8.1b gmake-3.77||any
-portscanner-1.0|/usr/ports/security/portscanner|/usr/local|a simple and easy to use TCP port scanner|/usr/ports/security/portscanner/pkg/DESCR|brad@openbsd.org|security net|||any
+PGPlib|/usr/ports/security/pgplib|/usr/local|library to generate (and manipulate) PGP packets|/usr/ports/security/pgplib/pkg/DESCR|ports@openbsd.org|security|SSLeay-0.9.0b gmake-3.77||any
+portscanner-1.0|/usr/ports/security/portscanner|/usr/local|a simple and easy to use TCP port scanner|/usr/ports/security/portscanner/pkg/DESCR|brad@openbsd.org|security|||any
 rsaref-2.0|/usr/ports/security/rsaref|/usr/local|encryption/authentication library, RSA/MDX/DES|/usr/ports/security/rsaref/pkg/DESCR|niklas@openbsd.org|security|||any
-socks5-1.0.8|/usr/ports/security/socks5|/usr/local|SOCKS v5 application layer gateway and clients|/usr/ports/security/socks5/pkg/DESCR|form@OpenBSD.ORG|net security|||any
+socks5-1.0.9|/usr/ports/security/socks5|/usr/local|SOCKS v5 application layer gateway and clients|/usr/ports/security/socks5/pkg/DESCR|form@OpenBSD.ORG|security|||any
 ssh-1.2.26|/usr/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/usr/ports/security/ssh/pkg/DESCR|todd@OpenBSD.ORG|security net|||any
 stel|/usr/ports/security/stel|/usr/local|Secure Telnet, encrypted version of the telnet daemon.|/usr/ports/security/stel/pkg/DESCR|turans@umich.edu|security|||any
-strobe-1.05|/usr/ports/security/strobe|/usr/local|Fast scatter/gather TCP port scanner|/usr/ports/security/strobe/pkg/DESCR|brad@openbsd.org|security net|||any
+strobe-1.05|/usr/ports/security/strobe|/usr/local|Fast scatter/gather TCP port scanner|/usr/ports/security/strobe/pkg/DESCR|brad@openbsd.org|security|||any
 swatch-2.2|/usr/ports/security/swatch|/usr/local|The Simple WATCHer and filter|/usr/ports/security/swatch/pkg/DESCR|joey@OpenBSD.ORG|security sysutils|||any
 bash-1.14.7|/usr/ports/shells/bash|/usr/local|The GNU Borne Again Shell.|/usr/ports/shells/bash/pkg/DESCR|gene@OpenBSD.ORG|shells|||any
 bash-2.03|/usr/ports/shells/bash2|/usr/local|The GNU Bourne Again Shell.|/usr/ports/shells/bash2/pkg/DESCR|marc@OpenBSD.ORG|shells|||any
 es-0.9a1|/usr/ports/shells/es|/usr/local|An extensible shell, derived from plan9's rc|/usr/ports/shells/es/pkg/DESCR|gene@OpenBSD.ORG|shells|||any
 scsh-0.5.1|/usr/ports/shells/scsh|/usr/local|A Unix shell embedded into Scheme|/usr/ports/shells/scsh/pkg/DESCR|gene@OpenBSD.ORG|shells lang|||any
 tcsh-6.08.00|/usr/ports/shells/tcsh|/usr/local|An extended C-shell with many useful features.|/usr/ports/shells/tcsh/pkg/DESCR|gene@OpenBSD.ORG|shells|||any
-zsh-3.1.5|/usr/ports/shells/zsh|/usr/local|The Z shell.|/usr/ports/shells/zsh/pkg/DESCR|gene@OpenBSD.ORG|shells|||any
+zsh-3.0.5|/usr/ports/shells/zsh|/usr/local|The Z shell.|/usr/ports/shells/zsh/pkg/DESCR|gene@OpenBSD.ORG|shells|||any
 LPRng-3.5.1|/usr/ports/sysutils/LPRng|/usr/local|An Enhanced Printer Spooler|/usr/ports/sysutils/LPRng/pkg/DESCR|marc@openbsd.org|sysutils print|||any
 cfengine-1.4.12|/usr/ports/sysutils/cfengine|/usr/local|GNU cfengine - a systems administration tool for networks.|/usr/ports/sysutils/cfengine/pkg/DESCR|marc@openbsd.org|sysutils|||any
 contool-3.3a|/usr/ports/sysutils/contool|/usr/X11R6|Console tool for openlook|/usr/ports/sysutils/contool/pkg/DESCR|ian@openbsd.org|sysutils|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1|any
@@ -385,7 +391,8 @@ iso12083-1993|/usr/ports/textproc/iso12083|/usr/local|SGML DTDs from The Electro
 iso8879-1986|/usr/ports/textproc/iso8879|/usr/local|Character entity sets from ISO 8879:1986 (SGML)|/usr/ports/textproc/iso8879/pkg/DESCR|matthieu@laas.fr|textproc|unzip-5.3.2||any
 ispell-3.1.20|/usr/ports/textproc/ispell|/usr/local|An interactive spelling checker.|/usr/ports/textproc/ispell/pkg/DESCR|joey@OpenBSD.ORG|textproc|||any
 jade-1.2.1|/usr/ports/textproc/jade|/usr/local|An object-oriented SGML/XML parser toolkit and DSSSL engine|/usr/ports/textproc/jade/pkg/DESCR|matthieu@laas.fr|textproc|||any
-latex2html-97.1|/usr/ports/textproc/latex2html|/usr/local|Latex to HTML converter.|/usr/ports/textproc/latex2html/pkg/DESCR|angelos@openbsd.org|textproc www||ghostscript-5.10 jpeg-6b netpbm-94.3.1 png-1.0.2 tiff-3.4|any
+latex2html-97.1|/usr/ports/textproc/latex2html|/usr/local|Latex to HTML converter.|/usr/ports/textproc/latex2html/pkg/DESCR|angelos@openbsd.org|textproc www||ghostscript-5.10 jpeg-6b netpbm-94.3.1 png-1.0.3 tiff-3.4|any
+libxml-1.0.0|/usr/ports/textproc/libxml|/usr/local|XML parsing library for Gnome|/usr/ports/textproc/libxml/pkg/DESCR|rohee@OpenBSD.ORG|textproc|||any
 linuxdoc-1.1|/usr/ports/textproc/linuxdoc|/usr/local|The Linuxdoc SGML DTD|/usr/ports/textproc/linuxdoc/pkg/DESCR|matthieu@laas.fr|textproc||iso8879-1986|any
 mgdiff-1.0|/usr/ports/textproc/mgdiff|/usr/X11R6|A graphical front end to the Unix diff command|/usr/ports/textproc/mgdiff/pkg/DESCR|angelos@openbsd.org|textproc|||any
 par-1.50|/usr/ports/textproc/par|/usr/local|Pargraph reformatter for email|/usr/ports/textproc/par/pkg/DESCR|angelos@openbsd.org|textproc|||any
@@ -420,7 +427,7 @@ explorer-0.72|/usr/ports/x11/explorer|/usr/X11R6|File manager with same look and
 freefonts-0.10|/usr/ports/x11/freefonts|/usr/X11R6|A collection of ATM fonts from the CICA archives.|/usr/ports/x11/freefonts/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 fvwm-2.0.46|/usr/ports/x11/fvwm2|/usr/X11R6|Internationalized (not japanised) fvwm version 2|/usr/ports/x11/fvwm2/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 getbdf-1.0|/usr/ports/x11/getbdf|/usr/X11R6|convert any X server font to .bdf format|/usr/ports/x11/getbdf/pkg/DESCR|angelos@openbsd.org|x11|||any
-gtk+-1.0.6|/usr/ports/x11/gtk+|/usr/X11R6|General Toolkit for X11 GUI.|/usr/ports/x11/gtk+/pkg/DESCR|marc@openbsd.org|x11|||any
+gtk+-1.2.0|/usr/ports/x11/gtk+|/usr/X11R6|General Toolkit for X11 GUI.|/usr/ports/x11/gtk+/pkg/DESCR|marc@openbsd.org|x11|gettext-0.10 glib-1.2.0|gettext-0.10 glib-1.2.0|any
 kdebase-1.0|/usr/ports/x11/kdebase|/usr/local|powerfull x11 libraries + a windows manager and much more|/usr/ports/x11/kdebase/pkg/DESCR|yanick@fries.net|x11|giflib-3.0 gmake-3.77 jpeg-6b kdelibs-1.0 qt-1.42|giflib-3.0 jpeg-6b kdelibs-1.0 qt-1.42|any
 kdelibs-1.0|/usr/ports/x11/kdelibs|/usr/local|powerfull x11 libraries + a windows manager and much more|/usr/ports/x11/kdelibs/pkg/DESCR|yanick@fries.net|x11|giflib-3.0 jpeg-6b|giflib-3.0 jpeg-6b|any
 lesstif-0.87.0|/usr/ports/x11/lesstif|/usr/X11R6|API compatible clone of the Motif toolkit.|/usr/ports/x11/lesstif/pkg/DESCR|form@OpenBSD.ORG|x11|||any
@@ -435,8 +442,9 @@ sliderule-1.0|/usr/ports/x11/sliderule|/usr/X11R6|The part of X11R3's xcalc feat
 swisswatch-0.06|/usr/ports/x11/swisswatch|/usr/X11R6|A Swiss railway clock emulation|/usr/ports/x11/swisswatch/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 tk-8.0.4|/usr/ports/x11/tk80|/usr/local|Graphical toolkit for TCL.|/usr/ports/x11/tk80/pkg/DESCR|niklas@openbsd.org|x11 tk80|tcl-8.0.4|tcl-8.0.4|any
 viewfax-2.3|/usr/ports/x11/viewfax|/usr/X11R6|Display files containing g3 and/or g4 coded fax pages.|/usr/ports/x11/viewfax/pkg/DESCR|form@OpenBSD.ORG|x11|||any
-WindowMaker-0.51.1|/usr/ports/x11/windowmaker|/usr/local|A windowmanager that emulates NEXTSTEP(tm).|/usr/ports/x11/windowmaker/pkg/DESCR|jasoni@openbsd.org|x11|giflib-3.0 jpeg-6b libPropList-0.8.3 png-1.0.2 tiff-3.4|giflib-3.0 jpeg-6b libPropList-0.8.3 png-1.0.2 tiff-3.4|any
+WindowMaker-0.51.2|/usr/ports/x11/windowmaker|/usr/local|A windowmanager that emulates NEXTSTEP(tm).|/usr/ports/x11/windowmaker/pkg/DESCR|jasoni@openbsd.org|x11|giflib-3.0 jpeg-6b libPropList-0.8.3 png-1.0.3 tiff-3.4|giflib-3.0 jpeg-6b libPropList-0.8.3 png-1.0.3 tiff-3.4|any
 wm2-4|/usr/ports/x11/wm2|/usr/X11R6|wm2 -- a window manager|/usr/ports/x11/wm2/pkg/DESCR|graichen@OpenBSD.ORG|x11|||any
+x2x-1.27|/usr/ports/x11/x2x|/usr/X11R6|One keyboard and/or mouse, multiple X displays.|/usr/ports/x11/x2x/pkg/DESCR|todd@openbsd.org|x11|||any
 xaniroc-1.02|/usr/ports/x11/xaniroc|/usr/X11R6|Animate your root-cursor.|/usr/ports/x11/xaniroc/pkg/DESCR|angelos@openbsd.org|x11|||any
 xantfarm-1.16|/usr/ports/x11/xantfarm|/usr/X11R6|ant hill simulation on X11 root window|/usr/ports/x11/xantfarm/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 xautolock-pl11|/usr/ports/x11/xautolock|/usr/X11R6|fire  up programs in case of user inactivity under X|/usr/ports/x11/xautolock/pkg/DESCR|graichen@OpenBSD.ORG|x11|||any
