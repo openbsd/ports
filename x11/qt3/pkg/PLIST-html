@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST-html,v 1.9 2004/01/08 01:20:13 brad Exp $
+@comment $OpenBSD: PLIST-html,v 1.10 2004/07/22 23:03:10 brad Exp $
 share/doc/qt3/html/3rdparty.html
 share/doc/qt3/html/aboutqt.html
 share/doc/qt3/html/abstract-connections.png
 share/doc/qt3/html/abstractwidgets.html
 share/doc/qt3/html/accelerators.html
 share/doc/qt3/html/aclock-example.html
+share/doc/qt3/html/activeqt-dotnet.html
 share/doc/qt3/html/activeqt-examples.html
+share/doc/qt3/html/activeqt-tools-dumpdoc.html
+share/doc/qt3/html/activeqt-tools-idc.html
+share/doc/qt3/html/activeqt-tools-testcon.html
+share/doc/qt3/html/activeqt-tools.html
 share/doc/qt3/html/activeqt.html
 share/doc/qt3/html/addressbook-example.html
 share/doc/qt3/html/advanced.html
@@ -385,10 +390,8 @@ share/doc/qt3/html/qaxbindable-h.html
 share/doc/qt3/html/qaxbindable-members.html
 share/doc/qt3/html/qaxbindable.html
 share/doc/qt3/html/qaxcontainer-example-qutlook.html
-share/doc/qt3/html/qaxcontainer-example-testcon.html
 share/doc/qt3/html/qaxcontainer-example-webbrowser.html
 share/doc/qt3/html/qaxcontainer-examples.html
-share/doc/qt3/html/qaxcontainer-faq.html
 share/doc/qt3/html/qaxcontainer.html
 share/doc/qt3/html/qaxfactory-h.html
 share/doc/qt3/html/qaxfactory-members.html
@@ -396,6 +399,13 @@ share/doc/qt3/html/qaxfactory.html
 share/doc/qt3/html/qaxobject-h.html
 share/doc/qt3/html/qaxobject-members.html
 share/doc/qt3/html/qaxobject.html
+share/doc/qt3/html/qaxscript-h.html
+share/doc/qt3/html/qaxscript-members.html
+share/doc/qt3/html/qaxscript.html
+share/doc/qt3/html/qaxscriptengine-members.html
+share/doc/qt3/html/qaxscriptengine.html
+share/doc/qt3/html/qaxscriptmanager-members.html
+share/doc/qt3/html/qaxscriptmanager.html
 share/doc/qt3/html/qaxserver-demo-hierarchy.html
 share/doc/qt3/html/qaxserver-demo-menus.html
 share/doc/qt3/html/qaxserver-demo-multiple.html
@@ -411,7 +421,6 @@ share/doc/qt3/html/qaxserver-example-simple.html
 share/doc/qt3/html/qaxserver-example-tetrax.html
 share/doc/qt3/html/qaxserver-example-wrapper.html
 share/doc/qt3/html/qaxserver-examples.html
-share/doc/qt3/html/qaxserver-faq.html
 share/doc/qt3/html/qaxserver.html
 share/doc/qt3/html/qaxwidget-h.html
 share/doc/qt3/html/qaxwidget-members.html
@@ -570,6 +579,7 @@ share/doc/qt3/html/qd-helptoolbuttons3.png
 share/doc/qt3/html/qd-mainwinwzd.png
 share/doc/qt3/html/qd-mainwinwzdpage2.png
 share/doc/qt3/html/qd-preface.png
+share/doc/qt3/html/qd-preferences-dlg.png
 share/doc/qt3/html/qdatabrowser-h.html
 share/doc/qt3/html/qdatabrowser-members.html
 share/doc/qt3/html/qdatabrowser.html
@@ -838,6 +848,8 @@ share/doc/qt3/html/qhttpresponseheader-members.html
 share/doc/qt3/html/qhttpresponseheader.html
 share/doc/qt3/html/qicondrag-members.html
 share/doc/qt3/html/qicondrag.html
+share/doc/qt3/html/qicondragevent-members.html
+share/doc/qt3/html/qicondragevent.html
 share/doc/qt3/html/qicondragitem-members.html
 share/doc/qt3/html/qicondragitem.html
 share/doc/qt3/html/qiconfactory-members.html
@@ -955,6 +967,9 @@ share/doc/qt3/html/qlistviewitem.html
 share/doc/qt3/html/qlistviewitemiterator-members.html
 share/doc/qt3/html/qlistviewitemiterator.html
 share/doc/qt3/html/qlistviewitems.png
+share/doc/qt3/html/qlocale-h.html
+share/doc/qt3/html/qlocale-members.html
+share/doc/qt3/html/qlocale.html
 share/doc/qt3/html/qlocalfs-h.html
 share/doc/qt3/html/qlocalfs-members.html
 share/doc/qt3/html/qlocalfs.html
@@ -977,6 +992,7 @@ share/doc/qt3/html/qmake-manual-4.html
 share/doc/qt3/html/qmake-manual-5.html
 share/doc/qt3/html/qmake-manual-6.html
 share/doc/qt3/html/qmake-manual-7.html
+share/doc/qt3/html/qmake-manual-8.html
 share/doc/qt3/html/qmake-manual.html
 share/doc/qt3/html/qmake.dcf
 share/doc/qt3/html/qmap-h.html
@@ -1118,6 +1134,9 @@ share/doc/qt3/html/qplatinumstyle.html
 share/doc/qt3/html/qpngimagepacker-members.html
 share/doc/qt3/html/qpngimagepacker.html
 share/doc/qt3/html/qpngio-h.html
+share/doc/qt3/html/qpocketpcstyle-members.html
+share/doc/qt3/html/qpocketpcstyle.html
+share/doc/qt3/html/qpocketpcstyle_wce-h.html
 share/doc/qt3/html/qpoint-h.html
 share/doc/qt3/html/qpoint-members.html
 share/doc/qt3/html/qpoint.html
@@ -1397,7 +1416,7 @@ share/doc/qt3/html/qt-members.html
 share/doc/qt3/html/qt-template-lib.html
 share/doc/qt3/html/qt.dcf
 share/doc/qt3/html/qt.html
-share/doc/qt3/html/qt32-class-chart.png
+share/doc/qt3/html/qt33-class-chart.png
 share/doc/qt3/html/qtab-members.html
 share/doc/qt3/html/qtab.html
 share/doc/qt3/html/qtabbar-h.html
@@ -1473,6 +1492,7 @@ share/doc/qt3/html/qtimerevent-members.html
 share/doc/qt3/html/qtimerevent.html
 share/doc/qt3/html/qtl-qvaluelist-example.html
 share/doc/qt3/html/qtl.html
+share/doc/qt3/html/qtmac-as-native.html
 share/doc/qt3/html/qtoolbar-h.html
 share/doc/qt3/html/qtoolbar-members.html
 share/doc/qt3/html/qtoolbar.html
@@ -1656,7 +1676,6 @@ share/doc/qt3/html/rd-image.png
 share/doc/qt3/html/rd-open.png
 share/doc/qt3/html/rd-pagetitle.png
 share/doc/qt3/html/rd-prefedit1.png
-share/doc/qt3/html/rd-prefgen1.png
 share/doc/qt3/html/rd-projset.png
 share/doc/qt3/html/rd-projset2.png
 share/doc/qt3/html/rd-replace.png
@@ -1671,6 +1690,7 @@ share/doc/qt3/html/rd-template.png
 share/doc/qt3/html/rd-text.png
 share/doc/qt3/html/rd-title.png
 share/doc/qt3/html/rd-tunepalette.png
+share/doc/qt3/html/regexptester-example.html
 share/doc/qt3/html/removed20.html
 share/doc/qt3/html/richtext-example.html
 share/doc/qt3/html/rintersect.png

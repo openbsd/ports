@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2003/04/05 14:45:19 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2004/07/22 23:03:09 brad Exp $
 lib/qt3/examples/Makefile
 lib/qt3/examples/README
 lib/qt3/examples/aclock/Makefile
@@ -47,6 +47,7 @@ lib/qt3/examples/application/fileprint.xpm
 lib/qt3/examples/application/filesave.xpm
 lib/qt3/examples/application/main.cpp
 lib/qt3/examples/biff/Makefile
+lib/qt3/examples/biff/biff
 lib/qt3/examples/biff/biff.cpp
 lib/qt3/examples/biff/biff.doc
 lib/qt3/examples/biff/biff.h
@@ -150,9 +151,11 @@ lib/qt3/examples/dclock/dclock.h
 lib/qt3/examples/dclock/dclock.pro
 lib/qt3/examples/dclock/main.cpp
 lib/qt3/examples/demo/Makefile
+lib/qt3/examples/demo/categoryinterface.h
 lib/qt3/examples/demo/demo
 lib/qt3/examples/demo/demo.doc
 lib/qt3/examples/demo/demo.pro
+lib/qt3/examples/demo/demo_pch.h
 lib/qt3/examples/demo/display.cpp
 lib/qt3/examples/demo/display.h
 lib/qt3/examples/demo/dnd/dnd.cpp
@@ -190,6 +193,9 @@ lib/qt3/examples/demo/opengl/glcontrolwidget.cpp
 lib/qt3/examples/demo/opengl/glcontrolwidget.h
 lib/qt3/examples/demo/opengl/glgear.cpp
 lib/qt3/examples/demo/opengl/glgear.h
+lib/qt3/examples/demo/opengl/glinfo.h
+lib/qt3/examples/demo/opengl/glinfo_x11.cpp
+lib/qt3/examples/demo/opengl/glinfotext.h
 lib/qt3/examples/demo/opengl/gllandscape.cpp
 lib/qt3/examples/demo/opengl/gllandscape.h
 lib/qt3/examples/demo/opengl/gllandscapeviewer.ui
@@ -203,6 +209,7 @@ lib/qt3/examples/demo/opengl/nurbs.xpm
 lib/qt3/examples/demo/opengl/printpreview.ui
 lib/qt3/examples/demo/opengl/printpreview.ui.h
 lib/qt3/examples/demo/opengl/qtlogo.bmp
+lib/qt3/examples/demo/opengl/qtlogo.png
 lib/qt3/examples/demo/opengl/snapshot.xpm
 lib/qt3/examples/demo/opengl/texture.xpm
 lib/qt3/examples/demo/opengl/wirebox.xpm
@@ -420,6 +427,8 @@ lib/qt3/examples/demo/textdrawing/textleft.png
 lib/qt3/examples/demo/textdrawing/textright.png
 lib/qt3/examples/demo/textdrawing/textunderline.png
 lib/qt3/examples/demo/textdrawing/undo.png
+lib/qt3/examples/demo/translations/demo_ar.qm
+lib/qt3/examples/demo/translations/demo_ar.ts
 lib/qt3/examples/demo/translations/demo_de.qm
 lib/qt3/examples/demo/translations/demo_de.ts
 lib/qt3/examples/demo/translations/demo_fr.qm
@@ -432,6 +441,7 @@ lib/qt3/examples/demo/widgets/widgetsbase_pro.ui
 lib/qt3/examples/demo/widgets/widgetsbase_pro.ui.h
 lib/qt3/examples/desktop/Makefile
 lib/qt3/examples/desktop/README
+lib/qt3/examples/desktop/desktop
 lib/qt3/examples/desktop/desktop.cpp
 lib/qt3/examples/desktop/desktop.doc
 lib/qt3/examples/desktop/desktop.pro
@@ -442,6 +452,13 @@ lib/qt3/examples/dirview/dirview.doc
 lib/qt3/examples/dirview/dirview.h
 lib/qt3/examples/dirview/dirview.pro
 lib/qt3/examples/dirview/main.cpp
+lib/qt3/examples/distributor/Makefile
+lib/qt3/examples/distributor/distributor
+lib/qt3/examples/distributor/distributor.doc
+lib/qt3/examples/distributor/distributor.pro
+lib/qt3/examples/distributor/distributor.ui
+lib/qt3/examples/distributor/distributor.ui.h
+lib/qt3/examples/distributor/main.cpp
 lib/qt3/examples/dragdrop/Makefile
 lib/qt3/examples/dragdrop/dragdrop
 lib/qt3/examples/dragdrop/dragdrop.doc
@@ -513,6 +530,31 @@ lib/qt3/examples/hello/hello.doc
 lib/qt3/examples/hello/hello.h
 lib/qt3/examples/hello/hello.pro
 lib/qt3/examples/hello/main.cpp
+lib/qt3/examples/helpdemo/Makefile
+lib/qt3/examples/helpdemo/about.txt
+lib/qt3/examples/helpdemo/doc/handbook.png
+lib/qt3/examples/helpdemo/doc/helpdemo.adp
+lib/qt3/examples/helpdemo/doc/index.html
+lib/qt3/examples/helpdemo/doc/logo.png
+lib/qt3/examples/helpdemo/doc/manual.html
+lib/qt3/examples/helpdemo/helpdemo
+lib/qt3/examples/helpdemo/helpdemo.cpp
+lib/qt3/examples/helpdemo/helpdemo.h
+lib/qt3/examples/helpdemo/helpdemo.pro
+lib/qt3/examples/helpdemo/helpdemobase.ui
+lib/qt3/examples/helpdemo/main.cpp
+lib/qt3/examples/helpsystem/Makefile
+lib/qt3/examples/helpsystem/appicon.png
+lib/qt3/examples/helpsystem/helpsystem
+lib/qt3/examples/helpsystem/helpsystem.doc
+lib/qt3/examples/helpsystem/helpsystem.pro
+lib/qt3/examples/helpsystem/main.cpp
+lib/qt3/examples/helpsystem/mainwindow.cpp
+lib/qt3/examples/helpsystem/mainwindow.h
+lib/qt3/examples/helpsystem/tooltip.cpp
+lib/qt3/examples/helpsystem/tooltip.h
+lib/qt3/examples/helpsystem/whatsthis.cpp
+lib/qt3/examples/helpsystem/whatsthis.h
 lib/qt3/examples/helpviewer/Makefile
 lib/qt3/examples/helpviewer/back.xpm
 lib/qt3/examples/helpviewer/forward.xpm
@@ -531,6 +573,8 @@ lib/qt3/examples/i18n/i18n.pro
 lib/qt3/examples/i18n/main.cpp
 lib/qt3/examples/i18n/mywidget.cpp
 lib/qt3/examples/i18n/mywidget.h
+lib/qt3/examples/i18n/mywidget_ar.qm
+lib/qt3/examples/i18n/mywidget_ar.ts
 lib/qt3/examples/i18n/mywidget_cs.qm
 lib/qt3/examples/i18n/mywidget_cs.ts
 lib/qt3/examples/i18n/mywidget_de.qm
@@ -628,13 +672,18 @@ lib/qt3/examples/menu/menu.doc
 lib/qt3/examples/menu/menu.h
 lib/qt3/examples/menu/menu.pro
 lib/qt3/examples/movies/Makefile
-lib/qt3/examples/movies/README
 lib/qt3/examples/movies/fire.mng
 lib/qt3/examples/movies/main.cpp
 lib/qt3/examples/movies/movies
 lib/qt3/examples/movies/movies.doc
 lib/qt3/examples/movies/movies.pro
 lib/qt3/examples/movies/trolltech.gif
+lib/qt3/examples/network/archivesearch/Makefile
+lib/qt3/examples/network/archivesearch/archivedialog.ui
+lib/qt3/examples/network/archivesearch/archivedialog.ui.h
+lib/qt3/examples/network/archivesearch/archivesearch.doc
+lib/qt3/examples/network/archivesearch/archivesearch.pro
+lib/qt3/examples/network/archivesearch/main.cpp
 lib/qt3/examples/network/clientserver/client/Makefile
 lib/qt3/examples/network/clientserver/client/client.cpp
 lib/qt3/examples/network/clientserver/client/client.pro
@@ -861,6 +910,13 @@ lib/qt3/examples/rangecontrols/rangecontrols.cpp
 lib/qt3/examples/rangecontrols/rangecontrols.doc
 lib/qt3/examples/rangecontrols/rangecontrols.h
 lib/qt3/examples/rangecontrols/rangecontrols.pro
+lib/qt3/examples/regexptester/Makefile
+lib/qt3/examples/regexptester/main.cpp
+lib/qt3/examples/regexptester/regexptester
+lib/qt3/examples/regexptester/regexptester.cpp
+lib/qt3/examples/regexptester/regexptester.doc
+lib/qt3/examples/regexptester/regexptester.h
+lib/qt3/examples/regexptester/regexptester.pro
 lib/qt3/examples/richtext/Makefile
 lib/qt3/examples/richtext/main.cpp
 lib/qt3/examples/richtext/marble.png
@@ -1147,6 +1203,13 @@ lib/qt3/examples/tooltip/tooltip.cpp
 lib/qt3/examples/tooltip/tooltip.doc
 lib/qt3/examples/tooltip/tooltip.h
 lib/qt3/examples/tooltip/tooltip.pro
+lib/qt3/examples/toplevel/Makefile
+lib/qt3/examples/toplevel/main.cpp
+lib/qt3/examples/toplevel/options.ui
+lib/qt3/examples/toplevel/options.ui.h
+lib/qt3/examples/toplevel/toplevel
+lib/qt3/examples/toplevel/toplevel.doc
+lib/qt3/examples/toplevel/toplevel.pro
 lib/qt3/examples/tux/Makefile
 lib/qt3/examples/tux/tux
 lib/qt3/examples/tux/tux.cpp
@@ -1316,6 +1379,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/wizard
 @dirrm lib/qt3/examples/widgets
 @dirrm lib/qt3/examples/tux
+@dirrm lib/qt3/examples/toplevel
 @dirrm lib/qt3/examples/tooltip
 @dirrm lib/qt3/examples/tictac
 @dirrm lib/qt3/examples/thread/semaphores
@@ -1369,6 +1433,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/scribble
 @dirrm lib/qt3/examples/rot13
 @dirrm lib/qt3/examples/richtext
+@dirrm lib/qt3/examples/regexptester
 @dirrm lib/qt3/examples/rangecontrols
 @dirrm lib/qt3/examples/qwerty
 @dirrm lib/qt3/examples/qtl
@@ -1404,6 +1469,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/network/clientserver/server
 @dirrm lib/qt3/examples/network/clientserver/client
 @dirrm lib/qt3/examples/network/clientserver
+@dirrm lib/qt3/examples/network/archivesearch
 @dirrm lib/qt3/examples/network
 @dirrm lib/qt3/examples/movies
 @dirrm lib/qt3/examples/menu
@@ -1418,6 +1484,8 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/iconview
 @dirrm lib/qt3/examples/i18n
 @dirrm lib/qt3/examples/helpviewer
+@dirrm lib/qt3/examples/helpsystem
+@dirrm lib/qt3/examples/helpdemo
 @dirrm lib/qt3/examples/hello
 @dirrm lib/qt3/examples/gridview
 @dirrm lib/qt3/examples/forever
@@ -1428,6 +1496,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/drawlines
 @dirrm lib/qt3/examples/drawdemo
 @dirrm lib/qt3/examples/dragdrop
+@dirrm lib/qt3/examples/distributor
 @dirrm lib/qt3/examples/dirview
 @dirrm lib/qt3/examples/desktop
 @dirrm lib/qt3/examples/demo/widgets

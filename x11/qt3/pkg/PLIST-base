@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-base,v 1.6 2004/01/08 01:20:13 brad Exp $
+@comment $OpenBSD: PLIST-base,v 1.7 2004/07/22 23:03:09 brad Exp $
 @pkgcfl qt3-0.*
 @pkgcfl qt3-1.0
 @pkgcfl qt3-1.1
@@ -11,7 +11,6 @@ include/X11/qt3/private/qapplication_p.h
 include/X11/qt3/private/qcolor_p.h
 include/X11/qt3/private/qcom_p.h
 include/X11/qt3/private/qcomlibrary_p.h
-include/X11/qt3/private/qcomplextext_p.h
 include/X11/qt3/private/qcomponentfactory_p.h
 include/X11/qt3/private/qcriticalsection_p.h
 include/X11/qt3/private/qdialogbuttons_p.h
@@ -23,13 +22,16 @@ include/X11/qt3/private/qfontcodecs_p.h
 include/X11/qt3/private/qfontdata_p.h
 include/X11/qt3/private/qfontengine_p.h
 include/X11/qt3/private/qgfxdriverinterface_p.h
+include/X11/qt3/private/qgl_x11_p.h
 include/X11/qt3/private/qgpluginmanager_p.h
 include/X11/qt3/private/qimageformatinterface_p.h
 include/X11/qt3/private/qinputcontext_p.h
 include/X11/qt3/private/qinternal_p.h
+include/X11/qt3/private/qisciicodec_p.h
 include/X11/qt3/private/qkbddriverinterface_p.h
 include/X11/qt3/private/qlayoutengine_p.h
 include/X11/qt3/private/qlibrary_p.h
+include/X11/qt3/private/qlocale_p.h
 include/X11/qt3/private/qlock_p.h
 include/X11/qt3/private/qmousedriverinterface_p.h
 include/X11/qt3/private/qmutex_p.h
@@ -47,6 +49,7 @@ include/X11/qt3/private/qsqlextension_p.h
 include/X11/qt3/private/qsqlmanager_p.h
 include/X11/qt3/private/qstyleinterface_p.h
 include/X11/qt3/private/qsvgdevice_p.h
+include/X11/qt3/private/qsyntaxhighlighter_p.h
 include/X11/qt3/private/qt_x11_p.h
 include/X11/qt3/private/qtextcodecinterface_p.h
 include/X11/qt3/private/qtextengine_p.h
@@ -202,6 +205,7 @@ include/X11/qt3/qlineedit.h
 include/X11/qt3/qlist.h
 include/X11/qt3/qlistbox.h
 include/X11/qt3/qlistview.h
+include/X11/qt3/qlocale.h
 include/X11/qt3/qlocalfs.h
 include/X11/qt3/qmainwindow.h
 include/X11/qt3/qmap.h
@@ -415,6 +419,9 @@ lib/qt3/man/man3/QAxBase.3
 lib/qt3/man/man3/QAxBindable.3
 lib/qt3/man/man3/QAxFactory.3
 lib/qt3/man/man3/QAxObject.3
+lib/qt3/man/man3/QAxScript.3
+lib/qt3/man/man3/QAxScriptEngine.3
+lib/qt3/man/man3/QAxScriptManager.3
 lib/qt3/man/man3/QAxWidget.3
 lib/qt3/man/man3/QBig5Codec.3
 lib/qt3/man/man3/QBig5hkscsCodec.3
@@ -561,6 +568,7 @@ lib/qt3/man/man3/QHttpResponseHeader.3
 lib/qt3/man/man3/QIMEvent.3
 lib/qt3/man/man3/QIODevice.3
 lib/qt3/man/man3/QIconDrag.3
+lib/qt3/man/man3/QIconDragEvent.3
 lib/qt3/man/man3/QIconDragItem.3
 lib/qt3/man/man3/QIconFactory.3
 lib/qt3/man/man3/QIconSet.3
@@ -600,6 +608,7 @@ lib/qt3/man/man3/QListView.3
 lib/qt3/man/man3/QListViewItem.3
 lib/qt3/man/man3/QListViewItemIterator.3
 lib/qt3/man/man3/QLocalFs.3
+lib/qt3/man/man3/QLocale.3
 lib/qt3/man/man3/QMacMime.3
 lib/qt3/man/man3/QMacStyle.3
 lib/qt3/man/man3/QMainWindow.3
@@ -648,6 +657,7 @@ lib/qt3/man/man3/QPicture.3
 lib/qt3/man/man3/QPixmap.3
 lib/qt3/man/man3/QPixmapCache.3
 lib/qt3/man/man3/QPlatinumStyle.3
+lib/qt3/man/man3/QPocketPCStyle.3
 lib/qt3/man/man3/QPoint.3
 lib/qt3/man/man3/QPointArray.3
 lib/qt3/man/man3/QPopupMenu.3
@@ -826,6 +836,9 @@ lib/qt3/man/man3/qaxbase.3
 lib/qt3/man/man3/qaxbindable.3
 lib/qt3/man/man3/qaxfactory.3
 lib/qt3/man/man3/qaxobject.3
+lib/qt3/man/man3/qaxscript.3
+lib/qt3/man/man3/qaxscriptengine.3
+lib/qt3/man/man3/qaxscriptmanager.3
 lib/qt3/man/man3/qaxwidget.3
 lib/qt3/man/man3/qbig5codec.3
 lib/qt3/man/man3/qbig5hkscscodec.3
@@ -970,6 +983,7 @@ lib/qt3/man/man3/qhttpheader.3
 lib/qt3/man/man3/qhttprequestheader.3
 lib/qt3/man/man3/qhttpresponseheader.3
 lib/qt3/man/man3/qicondrag.3
+lib/qt3/man/man3/qicondragevent.3
 lib/qt3/man/man3/qicondragitem.3
 lib/qt3/man/man3/qiconfactory.3
 lib/qt3/man/man3/qiconset.3
@@ -1010,6 +1024,7 @@ lib/qt3/man/man3/qlistboxtext.3
 lib/qt3/man/man3/qlistview.3
 lib/qt3/man/man3/qlistviewitem.3
 lib/qt3/man/man3/qlistviewitemiterator.3
+lib/qt3/man/man3/qlocale.3
 lib/qt3/man/man3/qlocalfs.3
 lib/qt3/man/man3/qmacmime.3
 lib/qt3/man/man3/qmacstyle.3
@@ -1059,6 +1074,7 @@ lib/qt3/man/man3/qpixmap.3
 lib/qt3/man/man3/qpixmapcache.3
 lib/qt3/man/man3/qplatinumstyle.3
 lib/qt3/man/man3/qpngimagepacker.3
+lib/qt3/man/man3/qpocketpcstyle.3
 lib/qt3/man/man3/qpoint.3
 lib/qt3/man/man3/qpointarray.3
 lib/qt3/man/man3/qpopupmenu.3
@@ -1220,6 +1236,8 @@ lib/qt3/man/man3/qxmlnamespacesupport.3
 lib/qt3/man/man3/qxmlparseexception.3
 lib/qt3/man/man3/qxmlreader.3
 lib/qt3/man/man3/qxmlsimplereader.3
+lib/qt3/mkspecs/aix-g++-64/qmake.conf
+lib/qt3/mkspecs/aix-g++-64/qplatformdefs.h
 lib/qt3/mkspecs/aix-g++/qmake.conf
 lib/qt3/mkspecs/aix-g++/qplatformdefs.h
 lib/qt3/mkspecs/aix-xlc-64/qmake.conf
@@ -1237,6 +1255,8 @@ lib/qt3/mkspecs/dgux-g++/qmake.conf
 lib/qt3/mkspecs/dgux-g++/qplatformdefs.h
 lib/qt3/mkspecs/freebsd-g++/qmake.conf
 lib/qt3/mkspecs/freebsd-g++/qplatformdefs.h
+lib/qt3/mkspecs/freebsd-icc/qmake.conf
+lib/qt3/mkspecs/freebsd-icc/qplatformdefs.h
 lib/qt3/mkspecs/hpux-acc-64/qmake.conf
 lib/qt3/mkspecs/hpux-acc-64/qplatformdefs.h
 lib/qt3/mkspecs/hpux-acc-o64/qmake.conf
@@ -1265,6 +1285,10 @@ lib/qt3/mkspecs/irix-g++/qmake.conf
 lib/qt3/mkspecs/irix-g++/qplatformdefs.h
 lib/qt3/mkspecs/linux-cxx/qmake.conf
 lib/qt3/mkspecs/linux-cxx/qplatformdefs.h
+lib/qt3/mkspecs/linux-ecc-64/qmake.conf
+lib/qt3/mkspecs/linux-ecc-64/qplatformdefs.h
+lib/qt3/mkspecs/linux-g++-64/qmake.conf
+lib/qt3/mkspecs/linux-g++-64/qplatformdefs.h
 lib/qt3/mkspecs/linux-g++/qmake.conf
 lib/qt3/mkspecs/linux-g++/qplatformdefs.h
 lib/qt3/mkspecs/linux-icc/qmake.conf
@@ -1321,6 +1345,7 @@ lib/qt3/mkspecs/win32-borland/qmake.conf
 lib/qt3/mkspecs/win32-borland/qplatformdefs.h
 lib/qt3/mkspecs/win32-g++/qmake.conf
 lib/qt3/mkspecs/win32-g++/qplatformdefs.h
+lib/qt3/mkspecs/win32-g++/qtcrtentrypoint.cpp
 lib/qt3/mkspecs/win32-icc/qmake.conf
 lib/qt3/mkspecs/win32-icc/qplatformdefs.h
 lib/qt3/mkspecs/win32-icc/win32app.dsp
@@ -1369,6 +1394,8 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/linux-kcc
 @dirrm lib/qt3/mkspecs/linux-icc
 @dirrm lib/qt3/mkspecs/linux-g++
+@dirrm lib/qt3/mkspecs/linux-g++-64
+@dirrm lib/qt3/mkspecs/linux-ecc-64
 @dirrm lib/qt3/mkspecs/linux-cxx
 @dirrm lib/qt3/mkspecs/irix-g++
 @dirrm lib/qt3/mkspecs/irix-cc-o32
@@ -1383,6 +1410,7 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/hpux-acc-o64
 @dirrm lib/qt3/mkspecs/hpux-acc-64
 @dirrm lib/qt3/mkspecs/hpux-acc
+@dirrm lib/qt3/mkspecs/freebsd-icc
 @dirrm lib/qt3/mkspecs/freebsd-g++
 @dirrm lib/qt3/mkspecs/dgux-g++
 @dirrm lib/qt3/mkspecs/darwin-g++
@@ -1391,6 +1419,7 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/aix-xlc-64
 @dirrm lib/qt3/mkspecs/aix-xlc
 @dirrm lib/qt3/mkspecs/aix-g++
+@dirrm lib/qt3/mkspecs/aix-g++-64
 @dirrm lib/qt3/mkspecs
 @dirrm lib/qt3/man/man3
 @dirrm lib/qt3/man/man1

@@ -1,39 +1,174 @@
-$OpenBSD: patch-src_iconview_qiconview_cpp,v 1.1 2004/01/08 01:12:59 brad Exp $
---- src/iconview/qiconview.cpp.orig	2003-12-29 04:26:24.000000000 -0500
-+++ src/iconview/qiconview.cpp	2003-12-29 05:12:33.000000000 -0500
-@@ -3264,9 +3264,11 @@ void QIconView::doAutoScroll()
- {
-     QRect oldRubber = QRect( *d->rubber );
+$OpenBSD: patch-src_iconview_qiconview_cpp,v 1.2 2004/07/22 23:03:09 brad Exp $
+--- src/iconview/qiconview.cpp.orig	2004-06-23 23:56:48.000000000 -0600
++++ src/iconview/qiconview.cpp	2004-06-23 23:56:34.000000000 -0600
+@@ -236,6 +236,7 @@ public:
+     QPoint dragStartPos;
+     QFontMetrics *fm;
+     int minLeftBearing, minRightBearing;
++    int rubberStartX, rubberStartY;
  
--    QPoint pos = QCursor::pos();
--    pos = viewport()->mapFromGlobal( pos );
--    pos = viewportToContents( pos );
-+    QPoint vp = viewport()->mapFromGlobal( QCursor::pos() );
-+    QPoint pos = viewportToContents( vp );
-+
-+    if ( pos == d->rubber->bottomRight() )
-+	return;
+     uint mousePressed		:1;
+     uint cleared		:1;
+@@ -255,9 +256,11 @@ public:
+     uint firstSizeHint : 1;
+     uint showTips		:1;
+     uint pressedSelected	:1;
++    uint canStartRubber		:1;
+     uint dragging		:1;
+     uint drawActiveSelection	:1;
+     uint inMenuMode		:1;
++    uint controlPressed         :1;
  
-     d->rubber->setRight( pos.x() );
-     d->rubber->setBottom( pos.y() );
-@@ -3360,14 +3362,14 @@ void QIconView::doAutoScroll()
- 	    emit selectionChanged( d->currentItem );
+     QIconViewToolTip *toolTip;
+     QPixmapCache maskCache;
+@@ -1060,7 +1063,7 @@ void QIconViewItem::setText( const QStri
+ 
+     if ( view ) {
+ 	if ( QRect( view->contentsX(), view->contentsY(),
+-		    view->visibleWidth(), view->visibleHeight() ).
++		    view->visibleWidthSB(), view->visibleHeightSB() ).
+ 	     intersects( oR ) )
+ 	    view->repaintContents( oR.x() - 1, oR.y() - 1,
+ 				   oR.width() + 2, oR.height() + 2, FALSE );
+@@ -1104,7 +1107,7 @@ void QIconViewItem::setPixmap( const QPi
+ 
+     if ( view ) {
+ 	if ( QRect( view->contentsX(), view->contentsY(),
+-		    view->visibleWidth(), view->visibleHeight() ).
++		    view->visibleWidthSB(), view->visibleHeightSB() ).
+ 	     intersects( oR ) )
+ 	    view->repaintContents( oR.x() - 1, oR.y() - 1,
+ 				   oR.width() + 2, oR.height() + 2, FALSE );
+@@ -1140,7 +1143,7 @@ void QIconViewItem::setPicture( const QP
+ 
+     if ( view ) {
+ 	if ( QRect( view->contentsX(), view->contentsY(),
+-		    view->visibleWidth(), view->visibleHeight() ).
++		    view->visibleWidthSB(), view->visibleHeightSB() ).
+ 	     intersects( oR ) )
+ 	    view->repaintContents( oR.x() - 1, oR.y() - 1,
+ 				   oR.width() + 2, oR.height() + 2, FALSE );
+@@ -1200,7 +1203,7 @@ void QIconViewItem::setPixmap( const QPi
+ 
+ 	    if ( view ) {
+ 		if ( QRect( view->contentsX(), view->contentsY(),
+-			    view->visibleWidth(), view->visibleHeight() ).
++			    view->visibleWidthSB(), view->visibleHeightSB() ).
+ 		     intersects( oR ) )
+ 		    view->repaintContents( oR.x() - 1, oR.y() - 1,
+ 					   oR.width() + 2, oR.height() + 2, FALSE );
+@@ -2727,10 +2730,12 @@ QIconView::QIconView( QWidget *parent, c
+     d->lastItem = 0;
+     d->count = 0;
+     d->mousePressed = FALSE;
++    d->controlPressed = FALSE;
+     d->selectionMode = Single;
+     d->currentItem = 0;
+     d->highlightedItem = 0;
+     d->rubber = 0;
++    d->canStartRubber = FALSE;
+     d->scrollTimer = 0;
+     d->startDragItem = 0;
+     d->tmpCurrentItem = 0;
+@@ -3292,9 +3297,18 @@ void QIconView::doAutoScroll()
+ 	    alreadyIntersected = TRUE;
+ 	    QIconViewItem *item = c->items.first();
+ 	    for ( ; item; item = c->items.next() ) {
+-		if ( d->selectedItems.find( item ) )
+-		    continue;
+-		if ( !item->intersects( nr ) ) {
++               if ( d->selectedItems.find( item ) ) {
++                   if ( item->intersects( nr ) && item->isSelected() && d->controlPressed ) {
++                       item->setSelected( FALSE );
++                       changed = TRUE;
++                       rr = rr.unite( item->rect() );
++                   } else if ( !item->intersects( nr ) && !item->isSelected() && d->controlPressed ) {
++                       item->setSelected( TRUE, TRUE );
++                       changed = TRUE;
++                       rr = rr.unite( item->rect() );
++                   } else
++                       continue;
++               } else if ( !item->intersects( nr ) ) {
+ 		    if ( item->isSelected() ) {
+ 			item->setSelected( FALSE );
+ 			changed = TRUE;
+@@ -4485,34 +4499,25 @@ void QIconView::contentsMousePressEventE
+ 	    }
+ 	}
+     } else if ( ( d->selectionMode != Single || e->button() == RightButton )
+-		&& !( e->state() & ControlButton ) )
++		&& !( e->state() & ControlButton ) && !( e->state() & ShiftButton ) )
+ 	selectAll( FALSE );
+ 
+     setCurrentItem( item );
+ 
++    d->canStartRubber = FALSE;
+     if ( e->button() == LeftButton ) {
+-	if ( !item && ( d->selectionMode == Multi ||
+-				  d->selectionMode == Extended ) ) {
+-	    d->tmpCurrentItem = d->currentItem;
+-	    d->currentItem = 0;
+-	    repaintItem( d->tmpCurrentItem );
+-	    if ( d->rubber )
+-		delete d->rubber;
+-	    d->rubber = 0;
+-	    d->rubber = new QRect( e->x(), e->y(), 0, 0 );
+-	    d->selectedItems.clear();
+-	    if ( ( e->state() & ControlButton ) == ControlButton ) {
+-		for ( QIconViewItem *i = firstItem(); i; i = i->nextItem() )
+-		    if ( i->isSelected() )
+-			d->selectedItems.insert( i, i );
+-	    }
++	if ( !item && ( d->selectionMode == Multi || d->selectionMode == Extended ) )
++	{
++	    d->canStartRubber = TRUE;
++	    d->rubberStartX = e->x();
++	    d->rubberStartY = e->y();
+ 	}
+-
+ 	d->mousePressed = TRUE;
++	d->controlPressed = ( ( e->state() & ControlButton ) == ControlButton );
      }
  
--    if ( !QRect( 0, 0, viewport()->width(), viewport()->height() ).contains( pos ) &&
-+    if ( !QRect( 50, 50, viewport()->width()-100, viewport()->height()-100 ).contains( vp ) &&
- 	 !d->scrollTimer ) {
- 	d->scrollTimer = new QTimer( this );
+  emit_signals:
+-    if ( !d->rubber ) {
++    if ( !d->canStartRubber ) {
+ 	emit mouseButtonPressed( e->button(), item, e->globalPos() );
+ 	emit pressed( item );
+ 	emit pressed( item, e->globalPos() );
+@@ -4556,6 +4561,7 @@ void QIconView::contentsMouseReleaseEven
+     d->mousePressed = FALSE;
+     d->startDragItem = 0;
  
- 	connect( d->scrollTimer, SIGNAL( timeout() ),
- 		 this, SLOT( doAutoScroll() ) );
- 	d->scrollTimer->start( 100, FALSE );
--    } else if ( QRect( 0, 0, viewport()->width(), viewport()->height() ).contains( pos ) &&
-+    } else if ( QRect( 50, 50, viewport()->width()-100, viewport()->height()-100 ).contains( vp ) &&
- 		d->scrollTimer ) {
- 	disconnect( d->scrollTimer, SIGNAL( timeout() ),
- 		    this, SLOT( doAutoScroll() ) );
-@@ -4773,7 +4775,7 @@ void QIconView::contentsDropEvent( QDrop
++    d->canStartRubber = FALSE;
+     if ( d->rubber ) {
+ 	QPainter p;
+ 	p.begin( viewport() );
+@@ -4645,7 +4651,22 @@ void QIconView::contentsMouseMoveEvent( 
+ 	    if ( d->tmpCurrentItem )
+ 		repaintItem( d->tmpCurrentItem );
+ 	}
+-    } else if ( d->mousePressed && !d->currentItem && d->rubber ) {
++    } else if ( d->mousePressed && ((!d->currentItem && d->rubber) || d->canStartRubber) ) {
++	if ( d->canStartRubber ) {
++	    d->canStartRubber = FALSE;
++	    d->tmpCurrentItem = d->currentItem;
++	    d->currentItem = 0;
++	    repaintItem( d->tmpCurrentItem );
++	    delete d->rubber;
++	    d->rubber = new QRect( d->rubberStartX, d->rubberStartY, 0, 0 );
++	    d->selectedItems.clear();
++	    if ( ( e->state() & ControlButton ) == ControlButton ||
++	         ( e->state() & ShiftButton ) == ShiftButton ) {
++		for ( QIconViewItem *i = firstItem(); i; i = i->nextItem() )
++		    if ( i->isSelected() )
++			d->selectedItems.insert( i, i );
++	    }
++	}
+ 	doAutoScroll();
+     }
+ }
+@@ -4775,7 +4796,7 @@ void QIconView::contentsDropEvent( QDrop
  
      QIconViewItem *i = findItem( e->pos() );
  
@@ -42,7 +177,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.1 2004/01/08 01:12:59 brad Exp $
  	if ( !d->rearrangeEnabled )
  	    return;
  	QRect r = d->currentItem->rect();
-@@ -5216,11 +5218,11 @@ QIconViewItem* QIconView::findItem( Dire
+@@ -5222,11 +5243,11 @@ QIconViewItem* QIconView::findItem( Dire
  	d->findContainers( dir, relativeTo, searchRect);
  
      cList->first();
@@ -56,7 +191,54 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.1 2004/01/08 01:12:59 brad Exp $
  		 item != currentItem() ) {
   		int ml = (relativeTo - item->rect().center()).manhattanLength();
  		if ( centerMatch ) {
-@@ -6148,7 +6150,9 @@ void QIconView::rebuildContainers()
+@@ -5448,8 +5469,8 @@ void QIconView::insertInGrid( QIconViewI
+ 	}
+ 	item->dirty = FALSE;
+     } else {
+-	QRegion r( QRect( 0, 0, QMAX( contentsWidth(), visibleWidth() ),
+-			  QMAX( contentsHeight(), visibleHeight() ) ) );
++	QRegion r( QRect( 0, 0, QMAX( contentsWidth(), visibleWidthSB() ),
++			  QMAX( contentsHeight(), visibleHeightSB() ) ) );
+ 
+ 	QIconViewItem *i = d->firstItem;
+ 	int y = -1;
+@@ -5707,7 +5728,7 @@ QIconViewItem *QIconView::makeRowLayout(
+ 	    QIconViewItem *item = begin;
+ 	    for (;;) {
+ 		x += d->spacing + item->width();
+-		if ( x > visibleWidth() && item != begin ) {
++		if ( x > visibleWidthSB() && item != begin ) {
+ 		    item = item->prev;
+ 		    break;
+ 		}
+@@ -5732,7 +5753,7 @@ QIconViewItem *QIconView::makeRowLayout(
+ 		int x;
+ 		if ( item == begin ) {
+ 		    if ( reverse )
+-			x = visibleWidth() - d->spacing - item->width();
++			x = visibleWidthSB() - d->spacing - item->width();
+ 		    else
+ 			x = d->spacing;
+ 		} else {
+@@ -5768,7 +5789,7 @@ QIconViewItem *QIconView::makeRowLayout(
+ 		    i += r;
+ 		    x = i * d->rastX + sp * d->spacing;
+ 		}
+-		if ( x > visibleWidth() && item != begin ) {
++		if ( x > visibleWidthSB() && item != begin ) {
+ 		    item = item->prev;
+ 		    break;
+ 		}
+@@ -5831,7 +5852,7 @@ QIconViewItem *QIconView::makeRowLayout(
+ 	    QIconViewItem *item = begin;
+ 	    for (;;) {
+ 		y += d->spacing + item->height();
+-		if ( y > visibleHeight() && item != begin ) {
++		if ( y > visibleHeightSB() && item != begin ) {
+ 		    item = item->prev;
+ 		    break;
+ 		}
+@@ -6145,7 +6166,9 @@ void QIconView::rebuildContainers()
  	    item->d->container2 = 0;
  	    c->items.append( item );
  	    item = item->next;
@@ -67,12 +249,28 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.1 2004/01/08 01:12:59 brad Exp $
  	    item->d->container1 = c;
  	    c->items.append( item );
  	    c = c->n;
-@@ -6292,7 +6296,7 @@ void QIconView::handleItemChange( QIconV
- 			    item->selected = TRUE;
- 			    selectedRect = selectedRect.unite( item->rect() );
- 			}
--		    } else if ( item->selected ) {
-+		    } else if ( item->selected && !control ) {
- 			item->selected = FALSE;
- 			unselectedRect = unselectedRect.unite( item->rect() );
- 			changed = TRUE;
+@@ -6378,4 +6401,24 @@ bool QIconView::isRenaming() const
+ #endif
+ }
+ 
++int QIconView::visibleWidthSB() const
++{
++    if ( vScrollBarMode() != Auto )
++        return visibleWidth();
++    
++    int offset = verticalScrollBar()->isVisible() ? 0
++        : style().pixelMetric( QStyle::PM_ScrollBarExtent, verticalScrollBar() );
++    return QMAX( 0, visibleWidth() - offset );
++}
++
++int QIconView::visibleHeightSB() const
++{
++    if ( hScrollBarMode() != Auto )
++        return visibleHeight();
++    
++    int offset = horizontalScrollBar()->isVisible() ? 0
++        : style().pixelMetric( QStyle::PM_ScrollBarExtent, horizontalScrollBar() );
++    return QMAX( 0, visibleHeight() - offset );
++}
++        
+ #endif // QT_NO_ICONVIEW

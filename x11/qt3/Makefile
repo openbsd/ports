@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/02/25 02:35:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2004/07/22 23:03:08 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -15,7 +15,7 @@ PKGNAME-examples=	qt3-examples-${VERSION}
 FULLPKGNAME-base=	qt3-base-${VERSION}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
-VERSION=	2.3
+VERSION=	3.2
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -164,7 +164,7 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt${MT_SUFX}.so.3.23 qui${MT_SUFX}.so.1.0
+LIBRARIES=qt${MT_SUFX}.so.3.32 qui${MT_SUFX}.so.1.0
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt
@@ -205,8 +205,8 @@ pre-install:
 .else
 
 post-patch:
-	-rm -rf ${WRKSRC}/examples
-	-rm -rf ${WRKSRC}/tutorial
+	@rm -rf ${WRKSRC}/examples
+	@rm -rf ${WRKSRC}/tutorial
 
 .endif
 
@@ -216,9 +216,6 @@ do-install:
 	${INSTALL_MAN_DIR} ${QT_MANDIR}/man3
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
 	# includes
-	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
-	@rm -f ${WRKSRC}/include/qmotif{,dialog,widget}.h
-	@rm -f ${WRKSRC}/include/qxtwidget.h
 	${INSTALL_DATA_DIR} ${QT_INCDIR}/private
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${QT_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/include/private/*.h ${QT_INCDIR}/private
