@@ -3,15 +3,16 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 1998/10/20 06:08:10 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1998/11/12 12:07:32 downsj Exp $
 #
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
-		ftp://bonk.ethz.ch/gs-driver-distrib/
+		ftp://bonk.ethz.ch/gs-driver-distrib/ \
+		http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV}
+		${HP850_DRV} ${PDFENCRYPT}
 
 MAINTAINER=	ports@openbsd.org
 
@@ -37,6 +38,9 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
 HP850_DRV=	hp850.zip
+
+# PDF Encryption support, see http://www.ozemail.com.au/~geoffk/pdfencrypt/
+PDFENCRYPT=	pdf_sec.ps
 
 # Location of the extracted jpeg sources
 #
@@ -66,6 +70,7 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/trees.o
 	@${LN} -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
 	@cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
+	@cp ${DISTDIR}/${PDFENCRYPT} ${WRKSRC}
 
 do-configure:
 .if defined(BATCH)
