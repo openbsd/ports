@@ -1,0 +1,48 @@
+$OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2004/03/07 19:10:53 espie Exp $
+--- config/Makefile.in.orig	2003-10-12 20:41:28.000000000 +0200
++++ config/Makefile.in	2003-12-31 16:48:40.000000000 +0100
+@@ -451,6 +451,8 @@ uninstall::
+ 	rm -f $(BINDIR)/mlnet
+ 	rm -f $(BINDIR)/mlgui
+ 
++ifeq ("$(MODOCAML_NATIVE)", "Yes")
++
+ install:: opt 
+ 	mkdir -p $(prefix)/bin
+ 	if test -e mlnet; then \
+@@ -460,7 +462,7 @@ install:: opt 
+              done; \
+          fi
+ 	if test -e mlgui; then \
+-             rm -f $(prefix)/bin/mlgui; cp -f mlnet $(prefix)/bin/mlgui; \
++             rm -f $(prefix)/bin/mlgui; cp -f mlgui $(prefix)/bin/mlgui; \
+              rm -f $(prefix)/bin/mldonkey_gui; cp -f mlgui $(prefix)/bin/mldonkey_gui; \
+          fi
+ 	if test -e mlnet+gui; then \
+@@ -470,9 +472,25 @@ install:: opt 
+              done; \
+          fi
+ 	if test -e mlim; then \
+-             rm -f $(prefix)/bin/mlim; cp -f mlnet $(prefix)/bin/mlim; \
++             rm -f $(prefix)/bin/mlim; cp -f mlim $(prefix)/bin/mlim; \
+          fi
+ 
++else
++
++install::
++	cp -f mlnet.byte $(prefix)/bin/mlnet
++	for link in mlslsk mldonkey mlgnut mldc mlbt; do \
++	  ln -s mlnet $(prefix)/bin/$$link; \
++	done
++	cp -f mlgui.byte $(prefix)/bin/mlgui
++	cp -f mlgui.byte $(prefix)/bin/mldonkey_gui
++	cp -f mlnet.byte $(prefix)/bin/mlnet+gui
++	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
++	  ln -s mlnet+gui $(prefix)/bin/$$link; \
++	done
++	cp -f mlim.byte $(prefix)/bin/mlim;
++
++endif
+ 
+ ifeq ("$(COMPILE_GUI)" , "yes")
+ 
