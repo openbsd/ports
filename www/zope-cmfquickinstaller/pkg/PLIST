@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/08 13:02:43 xsa Exp $
+@pkgcfl plone-*
+lib/zope/lib/python/Products/CMFQuickInstallerTool/
+lib/zope/lib/python/Products/CMFQuickInstallerTool/AUTHORS
+lib/zope/lib/python/Products/CMFQuickInstallerTool/ChangeLog
+lib/zope/lib/python/Products/CMFQuickInstallerTool/DEPENDS
+lib/zope/lib/python/Products/CMFQuickInstallerTool/InstalledProduct.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/InstalledProduct.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/QuickInstallerTool.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/QuickInstallerTool.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/README.txt
+lib/zope/lib/python/Products/CMFQuickInstallerTool/SkinRegistrar.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/SkinRegistrar.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/__init__.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/__init__.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/__pkginfo__.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/__pkginfo__.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/forms/
+lib/zope/lib/python/Products/CMFQuickInstallerTool/forms/install_products_form.pt
+lib/zope/lib/python/Products/CMFQuickInstallerTool/forms/installed_product_overview.pt
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/__init__.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/__init__.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/interface.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/interface.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/portal_quickinstaller.py
+lib/zope/lib/python/Products/CMFQuickInstallerTool/interfaces/portal_quickinstaller.pyc
+lib/zope/lib/python/Products/CMFQuickInstallerTool/refresh.txt
+lib/zope/lib/python/Products/CMFQuickInstallerTool/tool.gif
+lib/zope/lib/python/Products/CMFQuickInstallerTool/version.txt
