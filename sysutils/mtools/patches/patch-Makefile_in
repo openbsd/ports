@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Jul  1 14:21:58 1999
-+++ Makefile.in	Wed Nov 10 02:27:02 1999
-@@ -25,7 +25,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/02/24 09:08:55 fgsch Exp $
+--- Makefile.in.orig	Sat Feb 24 05:49:11 2001
++++ Makefile.in	Sat Feb 24 05:49:12 2001
+@@ -26,7 +26,7 @@ top_srcdir=@top_srcdir@
  srcdir=@srcdir@
  VPATH=@srcdir@
  
@@ -9,7 +10,7 @@
  exec_prefix = @exec_prefix@
  bindir      = @bindir@
  infodir     = @infodir@
-@@ -47,10 +47,11 @@
+@@ -48,10 +48,11 @@ SHLIB       = @SHLIB@
  MACHDEPLIBS = @MACHDEPLIBS@	
  LN_S        = @LN_S@
  
@@ -25,7 +26,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .o .c
-@@ -248,7 +249,7 @@
+@@ -258,7 +259,7 @@ install-links: $(bindir)/mtools
  install-scripts: $(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(bindir)
  	@for j in $(SCRIPTS) ; do \
@@ -34,7 +35,7 @@
  		echo $(bindir)/$$j ; \
  	done
  	rm -f $(bindir)/lz
-@@ -257,12 +258,12 @@
+@@ -267,12 +268,12 @@ install-scripts: $(bindir)/mtools
  install-man:
  	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)
  	@for j in $(MAN1); do \

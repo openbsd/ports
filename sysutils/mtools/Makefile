@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.33 2000/10/16 13:30:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2001/02/24 09:08:53 fgsch Exp $
 
-DATE=		20000821
+DATE=		20001213
 DISTNAME=	mtools-3.9.7
 PKGNAME=	mtools-3.9.7.${DATE}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.309
+NEED_VERSION=	1.355
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCHFILES=	mtools-3.9.7-${DATE}.diff.gz
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+
+HOMEPAGE=	http://alain.knaff.linux.lu/mtools/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
