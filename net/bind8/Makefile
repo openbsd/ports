@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/06 18:52:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/06 18:54:48 jakob Exp $
 
 DISTNAME=	bind-19991004-snapshot
 PKGNAME=	bind-8.2.2-t4b
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
-		ftp://ftp.sekure.net/pub/gsnig/ftp.gsnig.net/pub/openbsd-bind/
+		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
