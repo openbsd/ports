@@ -1,5 +1,0 @@
-ac_cv_header_X11_forms_h=${ac_cv_header_X11_forms_h=yes}
-ac_cv_lib_forms_fl_initialize=${ac_cv_lib_forms_fl_initialize=yes}
-ac_cv_lib_forms_fl_set_tabfolder_autofit=${ac_cv_lib_forms_fl_set_tabfolder_autofit=yes}
-xfmail_cv_xfversion=${xfmail_cv_xfversion=0.88.1}
-ac_cv_path_SENDMAIL=${ac_cv_path_SENDMAIL=/usr/sbin/sendmail}
