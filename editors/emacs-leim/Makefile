@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/07 13:46:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/12 23:46:54 naddy Exp $
 
 COMMENT=	"Library of Emacs Input Method"
 
@@ -38,7 +38,7 @@ do-configure:
 	> Makefile
 
 # leim assumes that the target directory exists already.
-pre-fake:
+pre-install:
 	@mkdir -p ${PREFIX}/${DATASUBDIR}/leim
 
 .include <bsd.port.mk>
