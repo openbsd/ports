@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.119 1999/09/26 10:47:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.120 1999/09/26 10:48:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -70,17 +70,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  (see PATCHFILES below) if not found locally.
 # PATCH_SITE_SUBDIR - Directory that "%SUBDIR%" in PATCH_SITES is
 #				  replaced by.
-#
-# MASTER_SITE_BACKUP - Backup location(s) for distribution files and patch
-#				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}
-#				  (default:
-#				  ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/
-#				  ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
-#				  ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/)
-# MASTER_SITE_OVERRIDE - If set, override the MASTER_SITES setting with this
-#				  value.
-# MASTER_SITE_OPENBSD - If set, only use ftp.openbsd.org as the
-#				  MASTER_SITE_OVERRIDE.
 # PACKAGES		- A top level directory where all packages go (rather than
 #				  going locally to each port). (default: ${PORTSDIR}/packages).
 # GMAKE			- Set to path of GNU make if not in $PORTPATH (default: gmake).
@@ -846,89 +835,6 @@ INSTALL_TARGET?=	install
 INSTALL_TARGET+=	install.man
 .endif
 
-# Popular master sites
-MASTER_SITE_XCONTRIB+=	\
-	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/%SUBDIR%/ \
-	ftp://ftp.x.org/contrib/%SUBDIR%/
-
-MASTER_SITE_GNU+=	\
-	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
-	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
-	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
-
-MASTER_SITE_PERL_CPAN+=	\
-	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/
-
-MASTER_SITE_TEX_CTAN+=	\
-	ftp://ftp.cdrom.com/pub/tex/ctan/%SUBDIR%/ \
-	ftp://ftp.wustl.edu/packages/TeX/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/ \
-	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/%SUBDIR%/ \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
-
-MASTER_SITE_SUNSITE+=	\
-	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%
-
-MASTER_SITE_KDE+=	\
-	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/
-
-MASTER_SITE_GNOME+=	\
-	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
-	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
-	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR%/ \
-	ftp://ftp.net.lut.ac.uk/gnome/%SUBDIR%/ \
-	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
-	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
-
-MASTER_SITE_AFTERSTEP+=	\
-	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/os/wm/AfterStep/%SUBDIR%/ \
-	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.bse.bg/pub/Unix/X11/wm/afterstep/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://ftp.lbi.ro/mirrors/ftp.afterstep.org/pub/%SUBDIR%/ \
-	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/
-
-MASTER_SITE_WINDOWMAKER+= \
-	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.io.com/pub/mirror/windowmaker/%SUBDIR%/ \
-	ftp://ftp.ensm-ales.fr/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
-	ftp://ftp.freenews.de/pub/windowmaker/%SUBDIR%/ \
-	http://jgo.local.net/cool_downloads/wm/%SUBDIR%/ \
-	ftp://ftp.cybertrails.com/pub/windowmaker/%SUBDIR%/ \
-	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
-
-MASTER_SITE_TCLTK+= \
-	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
-	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
-	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
-
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
 PATCH_SITES?=
@@ -938,24 +844,8 @@ _MASTER_SITES:=	${MASTER_SITES:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
 PATCH_SITES:=	${PATCH_SITES:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
 MASTER_SITES:= ${_MASTER_SITES}
 
-# Two backup master sites, First one at ftp.openbsd.org
-#
-_MASTER_SITE_OPENBSD?=	\
-	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/ \
-	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 
-# set the backup master sites.
-#
-MASTER_SITE_BACKUP?=	\
-	${_MASTER_SITE_OPENBSD} \
-	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
-
-# If the user has this set, go to the OpenBSD repository for everything.
-#
-.if defined(MASTER_SITE_OPENBSD)
-MASTER_SITE_OVERRIDE=  ${_MASTER_SITE_OPENBSD}
-.endif
-
+.include "${PORTSDIR}/infrastructure/db/network.conf"
 # Where to put distfiles that don't have any other master site
 # ;;; This is referenced in a few Makefiles -- I'd like to get rid of it
 #
