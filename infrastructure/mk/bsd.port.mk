@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.132 1999/11/05 22:44:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.133 1999/11/10 13:46:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2395,17 +2395,25 @@ print-package-depends:
 .endif
 .endif
 
+# Internal variables, used by recursive dependencies targets 
+
+_ALWAYS_DEP = ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} 
+
+_BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//}
+
+_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} 
+
 .if !target(depends-list)
 depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
    defined(LIB_DEPENDS) || defined(DEPENDS)
-	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
+	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP}  \
+	   | tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name depends-list ${_DEPEND_THRU} || \
+			make _DEPEND_ECHO="echo $$pname" package-name depends-list ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
@@ -2418,12 +2426,11 @@ depends-list:
 .if !target(package-depends)
 package-depends:
 .if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
-	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `${ECHO} ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
+	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name package-depends ${_DEPEND_THRU} || \
+			make _DEPEND_ECHO="echo $$pname" package-name package-depends ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
