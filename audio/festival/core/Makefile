@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/11 23:08:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/21 14:16:03 espie Exp $
 
 COMMENT=	"general multi-lingual speech synthesis system"
 V=		1.95
@@ -14,12 +14,6 @@ DISTFILES=	${DISTNAME}.tar.gz speech_tools-1.2.95-beta.tar.gz
 SUPDISTFILES=	OGIresLPC-2.0.9.tar.gz:0
 
 HOMEPAGE=	http://www.cstr.ed.ac.uk/projects/festival/
-
-# BSD-like
-PERMIT_DISTFILES_CDROM?=Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM?=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 
@@ -52,6 +46,13 @@ PATCH_LIST=	ogi-* patch-*
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_PACKAGE_CDROM=	"no fee"
 .endif
+
+# BSD-like
+PERMIT_DISTFILES_CDROM?=Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM?=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		c m ossaudio stdc++ termcap
 
 post-patch:
 	@cp ${FILESDIR}/OpenBSD.mak ${WRKSRC}/speech_tools/config/systems/OpenBSD.mak
