@@ -1,0 +1,31 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2003/05/11 20:28:33 naddy Exp $
+--- main.c.orig	Sat Feb 19 22:36:28 2000
++++ main.c	Fri May  9 06:32:41 2003
+@@ -7,6 +7,8 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
++#include <errno.h>
+ #include <time.h>
+ #include <math.h>
+ 
+@@ -1267,7 +1269,6 @@ int main(int argc, char *argv[])
+     return(1);
+   }
+   
+-
+ #if defined(PLAY_MOD)
+   /* Open the audio device Here if Using Audio */
+   /* Open the audio device */
+@@ -1300,6 +1301,10 @@ int main(int argc, char *argv[])
+     return(1);
+   }
+ 
++  if ( chdir(DATA_DIR) == -1 ) {
++  	fprintf(stderr, "%s: %s\n", DATA_DIR, strerror(errno));
++	return(1);
++  }
+   load_data();
+ 
+   // Get rid of the Mouse Pointer 

@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/05/11 20:28:33 naddy Exp $
+--- Makefile.orig	Sat Feb 19 14:28:54 2000
++++ Makefile	Fri May  9 06:28:31 2003
+@@ -3,9 +3,9 @@
+ 
+ TARGET=glutton
+ TARGET_DEF=LINUX
++DATA_DIR?=.
+ 
+-
+-CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
++CFLAGS+=$(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -DDATA_DIR=\"$(DATA_DIR)\" \
+ 	-D$(NOSOUNDFLAG) -D$(TARGET_DEF)
+ 
+ 
+@@ -13,8 +13,8 @@ CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DDATA_PR
+ 
+ MIXER=
+ SDL_LIB=$(SDL_LDFLAGS) $(MIXER)
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs)
++SDL_CFLAGS=`sdl-config --cflags`
++SDL_LDFLAGS=`sdl-config --libs`
+ NOSOUNDFLAG=NOSOUND
+ 
+ # Make commands:

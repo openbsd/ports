@@ -1,0 +1,42 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/05/11 20:28:33 naddy Exp $
+
+COMMENT= 	"Pac-Man clone"
+
+DISTNAME=	glutton-0.0.5
+CATEGORIES= 	games	
+HOMEPAGE=	http://kokido.sourceforge.net/glutton.html
+
+MAINTAINER=	Olivier Racine <darkroot@darkroot.net>
+
+# GPL
+PERMIT_PACKAGE_CDROM=  	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	http://mirror.csoft.org/glutton/
+
+LIB_DEPENDS= 	SDL::devel/sdl \
+	 	SDL_mixer::devel/sdl-mixer
+
+WRKDIST=	${WRKDIR}/glutton
+
+ALL_TARGET=	enablesound
+MAKE_FLAGS=	DATA_DIR=${PREFIX}/share/glutton
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/glutton ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/glutton
+	${INSTALL_DATA_DIR} ${PREFIX}/share/glutton/levels
+	${INSTALL_DATA_DIR} ${PREFIX}/share/glutton/data
+	cd ${WRKSRC} && for f in *.wav *.it; do \
+		${INSTALL_DATA} $$f ${PREFIX}/share/glutton; \
+	done
+	cd ${WRKSRC}/levels && for f in *.map; do \
+		${INSTALL_DATA} $$f ${PREFIX}/share/glutton/levels; \
+	done
+	cd ${WRKSRC}/data && for f in *.bmp; do \
+		${INSTALL_DATA} $$f ${PREFIX}/share/glutton/data; \
+	done
+
+.include <bsd.port.mk>
