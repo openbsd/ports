@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.i386,v 1.1 2003/10/11 00:55:25 brad Exp $
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.x
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xbn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xr
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xs
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xsc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xu
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/elf_i386_obsd.xz
+@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts
