@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/21 02:34:07 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/27 13:14:13 msf Exp $
 
 COMMENT=	"Perl module for comparing arrays"
 
-DISTNAME=	Array-Compare-1.11
+DISTNAME=	Array-Compare-1.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -15,6 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Array/}
+
+REGRESS_DEPENDS=	::devel/p5-Test-Pod \
+			::devel/p5-Test-Pod-Coverage
 
 CONFIGURE_STYLE= perl modbuild
 
