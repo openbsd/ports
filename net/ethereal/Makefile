@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2004/01/27 08:11:46 jakob Exp $
+# $OpenBSD: Makefile,v 1.82 2004/01/27 08:17:28 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
@@ -38,8 +38,12 @@ USE_X11=		Yes
 MULTI_PACKAGES+=	-x11
 
 CONFIGURE_ARGS+=	--enable-ethereal \
+			--with-pcre=${LOCALBASE} \
 			--with-glib-prefix=${LOCALBASE} \
 			--with-gtk-prefix=${LOCALBASE}
+
+MODULES+=		iconv
+LIB_DEPENDS+=		pcre::devel/pcre
 
 .if ${FLAVOR:L:Mgtk1}
 CONFIGURE_ARGS+=	--enable-gtk1
