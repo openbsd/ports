@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 1999/07/05 05:57:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 1999/08/21 16:27:59 brad Exp $
 
-DISTNAME=	ddd-3.1.5
+DISTNAME=	ddd-3.1.6
 CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
+		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
+		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
+		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
+		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
 MAINTAINER=	marc@openbsd.org
 
-MASTER_SITES=	ftp://ftp.archive.de.uu.net/pub/programming/debuggers/ddd/ \
-		ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
-
-# Library dependencies
-#
 USE_MOTIF=	yes
-USE_EGCC=yes
-USE_EGXX=yes
+USE_EGCC=	yes
+USE_EGXX=	yes
 USE_GMAKE=	yes
 USE_X11=	yes
 GNU_CONFIGURE=	yes
