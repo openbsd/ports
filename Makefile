@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2003/06/06 15:52:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.43 2003/12/15 17:56:40 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -105,7 +105,10 @@ mirror-maker:
 	@echo "EXEC=exec" >${MIRROR_MK}
 	@echo "default:: ftp cdrom" >>${MIRROR_MK}
 	@echo ".PHONY: default all ftp cdrom" >>${MIRROR_MK}
-	@${MAKE} fetch-makefile \
+	@_DONE_FILES=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
+	export _DONE_FILES; \
+	trap "rm -f $${_DONE_FILES}" 0 1 2 3 13 15; \
+	${MAKE} fetch-makefile \
 		ECHO_MSG='echo >&2' \
 		>>${MIRROR_MK}
 

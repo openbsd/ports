@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.590 2003/12/11 08:55:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.591 2003/12/15 17:56:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1926,19 +1926,29 @@ fetch-makefile:
 _fetch-makefile:
 .if !empty(ALLFILES)
 .  for _F in ${_ALLFILES}
+	@if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
+		echo "|${_F}|" >>$${_DONE_FILES}; \
+		${MAKE} _fetch-onefile _F=${_F}; \
+	fi
+.  endfor
+.endif
+	@echo
+
+
+_fetch-onefile:
 	@echo '${_F}: $$F'
 	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
-.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
-.    endif
+.endif
 	@echo '\\'
 	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
 	${_SITE_SELECTOR}; \
 	echo "\t SITES=\"$$sites\" \\"
-.    if ${FETCH_MANUALLY:L} != "no"
+.if ${FETCH_MANUALLY:L} != "no"
 	@echo '\t FETCH_MANUALLY="Yes" \\'
-.    endif
-.    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
+.endif
+.if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
 	  echo >&2 'Missing checksum file: $$checksum_file'; \
@@ -1959,11 +1969,8 @@ _fetch-makefile:
 		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" \\";; \
 	  esac; \
 	fi
-.    endif
-	@echo '\t $${EXEC} $${FETCH} "$$@"'
-.  endfor
 .endif
-	@echo
+	@echo '\t $${EXEC} $${FETCH} "$$@"'
 
 
 # Internal variables, used by dependencies targets
@@ -2424,7 +2431,7 @@ uninstall deinstall:
 .endif
 
 .PHONY: \
-	_build-dir-depends _delete-package-links _fetch-makefile \
+	_build-dir-depends _delete-package-links _fetch-makefile _fetch-onefile \
 	_package _package-links _print-packagename \
 	_recurse-all-dir-depends _recurse-lib-depends-check \ 
 	_recurse-run-dir-depends _solve-package-depends _refetch \
