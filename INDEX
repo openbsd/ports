@@ -495,12 +495,17 @@ stunnel-3.8|security/stunnel||SSL encryption wrapper for standard network daemon
 swatch-2.2|security/swatch||Simple WATCHer and filter|security/swatch/pkg/DESCR|ports@OpenBSD.ORG|security sysutils|||any|n|y|n|y
 tempwatch-1.0|security/tempwatch||temporary file auditing tool|security/tempwatch/pkg/DESCR|dugsong@monkey.org|security|||any|n|y|n|y
 bash-1.14.7|shells/bash||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+bash-1.14.7-static|shells/bash||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 bash-2.04|shells/bash2||GNU Bourne Again Shell|shells/bash2/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+bash-2.04-static|shells/bash2||GNU Bourne Again Shell|shells/bash2/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 es-0.9a1|shells/es||extensible shell, derived from plan9's rc|shells/es/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 scsh-0.5.1|shells/scsh||Unix shell embedded into Scheme|shells/scsh/pkg/DESCR|ports@openbsd.org|shells lang|||any|n|y|n|y
 tcsh-6.09.00|shells/tcsh||extended C-shell with many useful features|shells/tcsh/pkg/DESCR|brad@openbsd.org|shells|||any|y|y|y|y
+tcsh-6.09.00-static|shells/tcsh||extended C-shell with many useful features|shells/tcsh/pkg/DESCR|brad@openbsd.org|shells|||any|y|y|y|y
 zsh-3.0.7|shells/zsh||the Z shell, Bourne shell-compatible, release flavor|shells/zsh/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+zsh-3.0.7-static|shells/zsh||the Z shell, Bourne shell-compatible, release flavor|shells/zsh/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 zsh-3.1.6|shells/zsh-devel||the Z shell, Bourne shell-compatible, development flavor|shells/zsh-devel/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+zsh-3.1.6-static|shells/zsh-devel||the Z shell, Bourne shell-compatible, development flavor|shells/zsh-devel/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 LPRng-3.6.12|sysutils/LPRng||enhanced printer spooler|sysutils/LPRng/pkg/DESCR|ports@openbsd.org|sysutils print|||any|y|y|y|y
 apc-upsd|sysutils/apc-upsd||UPS software for APC ups models.|sysutils/apc-upsd/pkg/DESCR|kevlo@openbsd.org|sysutils|||any|y|y|y|y
 cfengine-1.4.12|sysutils/cfengine||GNU system administration tool for networks|sysutils/cfengine/pkg/DESCR|ports@openbsd.org|sysutils|||any|y|y|y|y
@@ -574,7 +579,18 @@ weblint-1.020|www/weblint||a perl lint program for html|www/weblint/pkg/DESCR|se
 wwwcount-2.5|www/wwwcount||access counter, clock and date for WWW pages|www/wwwcount/pkg/DESCR|form@openbsd.org|www|||any|y|y|y|y
 Xaw3d-1.5|x11/Xaw3d||a 3-D Athena Widget set that looks like Motif|x11/Xaw3d/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
 afterstep-1.8.0|x11/afterstep||Window manager, continuation of the Bowman NeXTSTEP clone|x11/afterstep/pkg/DESCR|ports@openbsd.org|x11|jpeg-6b png-1.0.3|jpeg-6b png-1.0.3|any|y|y|y|y
-asclock-1.0|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-english|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-german|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-portuguese|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-dutch|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-norwegian|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-italian|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-swedish|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-spanish|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-hungarian|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-breton|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-french|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
+asclock-1.0-czech|x11/asclock||Afterstep clock with some language extensions|x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
 aterm-0.3.6|x11/aterm||color vt102 terminal emulator with transparency support|x11/aterm/pkg/DESCR|brad@openbsd.org|x11|jpeg-6b png-1.0.3|jpeg-6b png-1.0.3|any|y|y|y|y
 bclock-1.0|x11/bclock||round, analog X11 clock with bezier curve hands|x11/bclock/pkg/DESCR|ports@OpenBSD.ORG|x11|||any|y|y|y|y
 blackbox-0.51.3.1|x11/blackbox||small & pretty window manager for 8 and more bits displays|x11/blackbox/pkg/DESCR|rohee@OpenBSD.ORG|x11|||any|y|y|y|y
