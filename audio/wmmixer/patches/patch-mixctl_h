@@ -1,4 +1,4 @@
-$OpenBSD: patch-mixctl_h,v 1.1.1.1 2001/02/06 11:54:55 wilfried Exp $
+$OpenBSD: patch-mixctl_h,v 1.2 2002/04/11 19:12:58 tdeval Exp $
 --- mixctl.h.orig	Sat Sep  5 17:11:33 1998
 +++ mixctl.h	Mon Feb  5 19:08:10 2001
 @@ -21,6 +21,9 @@
@@ -11,3 +11,12 @@ $OpenBSD: patch-mixctl_h,v 1.1.1.1 2001/02/06 11:54:55 wilfried Exp $
  #ifdef __linux__
  #include <linux/soundcard.h>
  #endif
+@@ -31,7 +34,7 @@
+    MixCtl(char *dname){
+       device=(char *)malloc(sizeof(char)*(strlen(dname)+1));
+       strcpy(device,dname);
+-      if(mixfdopen=(mixfd=open(device,O_RDONLY | O_NONBLOCK))!=-1){
++      if(mixfdopen=(mixfd=open(device,O_RDWR | O_NONBLOCK))!=-1){
+          nrdevices=SOUND_MIXER_NRDEVICES;
+          char *devnames[]=SOUND_DEVICE_NAMES;
+          char *devlabels[]=SOUND_DEVICE_LABELS;
