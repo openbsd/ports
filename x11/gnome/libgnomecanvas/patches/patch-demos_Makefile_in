@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_Makefile_in,v 1.1.1.1 2003/01/31 19:41:29 todd Exp $
---- demos/Makefile.in.orig	Sat Jul 20 11:59:11 2002
-+++ demos/Makefile.in	Sat Jul 20 12:00:48 2002
-@@ -139,7 +139,7 @@ canvas-curve.$(OBJEXT)
+$OpenBSD: patch-demos_Makefile_in,v 1.2 2003/06/12 19:56:33 marcm Exp $
+--- demos/Makefile.in.orig	Thu Feb 27 14:22:28 2003
++++ demos/Makefile.in	Sat May 10 20:01:28 2003
+@@ -166,7 +166,7 @@ canvas-curve.$(OBJEXT)
  canvas_demo_LDADD = $(LDADD)
  canvas_demo_DEPENDENCIES =  \
  $(top_builddir)/libgnomecanvas/libgnomecanvas-2.la
