@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/25 06:07:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/23 06:33:56 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
 MASTER_SITE_SUBDIR= mad
 
-LIB_DEPENDS=	intl.1:gettext-*:devel/gettext
+MODULES=	gettext
 
 FLAVORS=	debug
 FLAVOR?=
