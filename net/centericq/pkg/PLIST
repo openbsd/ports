@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/06/30 20:17:38 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/08/19 07:19:25 pvalchev Exp $
 bin/centericq
 man/man1/centericq.1
 share/centericq/cont.wav
@@ -12,6 +12,7 @@ share/doc/centericq/README
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
 share/locale/hu/LC_MESSAGES/centericq.mo
+share/locale/it/LC_MESSAGES/centericq.mo
 share/locale/pl/LC_MESSAGES/centericq.mo
 share/locale/pt_BR/LC_MESSAGES/centericq.mo
 share/locale/ro/LC_MESSAGES/centericq.mo
