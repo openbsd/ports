@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_src_client_Merge_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_Merge_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/Merge.c.orig	Sat Mar 29 16:15:24 2003
-+++ base/src/client/Merge.c	Thu May 22 17:46:41 2003
++++ base/src/client/Merge.c	Wed May 28 08:14:56 2003
 @@ -554,7 +554,7 @@ mergetuple_create()
    
    static unsigned mergeCount = 0;
  
 -  MergeTuple *tup = (MergeTuple *) GC_MALLOC(sizeof(MergeTuple));
-+  MergeTuple *tup = (MergeTuple *) malloc(sizeof(MergeTuple));
++  MergeTuple *tup = (MergeTuple *) calloc(1, sizeof(MergeTuple));
  
    tup->ndx = mergeCount++;
    

@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_src_client_PendingChange_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_PendingChange_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/PendingChange.c.orig	Sat Mar 29 16:15:21 2003
-+++ base/src/client/PendingChange.c	Thu May 22 17:46:42 2003
++++ base/src/client/PendingChange.c	Wed May 28 08:14:56 2003
 @@ -55,7 +55,7 @@ pendingchange_create(Repository *r,
    Revision *rev;
    Change *chg;
    PendingChange *pc = 
 -    (PendingChange *) GC_MALLOC(sizeof(PendingChange));
-+    (PendingChange *) malloc(sizeof(PendingChange));
++    (PendingChange *) calloc(1, sizeof(PendingChange));
  
    ser_init(pc, &PendingChange_SerType, PendingChange_SerType.ver);
    SER_MODIFIED(pc);
@@ -29,7 +29,7 @@ $OpenBSD: patch-base_src_client_PendingChange_c,v 1.1 2003/05/23 13:22:14 todd E
  {
    PendingChange *pc = (PendingChange *) 
 -    GC_MALLOC(sizeof(PendingChange));
-+    malloc(sizeof(PendingChange));
++    calloc(1, sizeof(PendingChange));
  
    ser_init(pc, &PendingChange_SerType, di->ver);
    SER_MODIFIED(pc);

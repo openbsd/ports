@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_src_client_message_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_message_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/message.c.orig	Sat Mar 29 16:15:27 2003
-+++ base/src/client/message.c	Thu May 22 17:46:42 2003
++++ base/src/client/message.c	Wed May 28 08:14:56 2003
 @@ -57,9 +57,12 @@ int
  opencm_confirm(const char *prompt, int dflt_yes)
  {
@@ -26,7 +26,7 @@ $OpenBSD: patch-base_src_client_message_c,v 1.1 2003/05/23 13:22:14 todd Exp $
       comment lines. Note extra character for trailing newline! */
    int len = path_file_length(fname); /* upper bound if text */
 -  char *msgbuf = (char *) GC_MALLOC(sizeof(char) * (len + 2));
-+  char *msgbuf = (char *) malloc(sizeof(char) * (len + 2));
++  char *msgbuf = (char *) calloc(1, sizeof(char) * (len + 2));
      
    f = xfopen(fname, 'r', 't');
  
@@ -57,7 +57,7 @@ $OpenBSD: patch-base_src_client_message_c,v 1.1 2003/05/23 13:22:14 todd Exp $
    if (opt_Message) {
      len = strlen(opt_Message);
 -    msgbuf = (char *) GC_MALLOC(sizeof(char) * (len + 2));
-+    msgbuf = (char *) malloc(sizeof(char) * (len + 2));
++    msgbuf = (char *) calloc(1, sizeof(char) * (len + 2));
      strcpy(msgbuf, opt_Message);
      msgbuf[len] = '\n';
      msgbuf[len+1] = '\0';

@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_src_client_FilterSet_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_FilterSet_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/FilterSet.c.orig	Sat Mar 29 16:15:28 2003
-+++ base/src/client/FilterSet.c	Thu May 22 17:46:40 2003
++++ base/src/client/FilterSet.c	Wed May 28 08:14:56 2003
 @@ -68,7 +68,7 @@ FilterSet *GlobalFilters;
  void
  filterset_append(FilterSet *fs, Filter *f)
@@ -15,7 +15,7 @@ $OpenBSD: patch-base_src_client_FilterSet_c,v 1.1 2003/05/23 13:22:14 todd Exp $
    Filter *list = global_filter_list;
    
 -  GlobalFilters = (FilterSet *) GC_MALLOC(sizeof(FilterSet)); 
-+  GlobalFilters = (FilterSet *) malloc(sizeof(FilterSet)); 
++  GlobalFilters = (FilterSet *) calloc(1, sizeof(FilterSet)); 
    GlobalFilters->filters = 0;
    GlobalFilters->size = 0;
    
@@ -24,7 +24,7 @@ $OpenBSD: patch-base_src_client_FilterSet_c,v 1.1 2003/05/23 13:22:14 todd Exp $
    FILE *f = NULL;
    
 -  FilterSet *fs = (FilterSet *) GC_MALLOC(sizeof(FilterSet)); 
-+  FilterSet *fs = (FilterSet *) malloc(sizeof(FilterSet)); 
++  FilterSet *fs = (FilterSet *) calloc(1, sizeof(FilterSet)); 
    fs->filters = 0;
    fs->size = 0;
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-base_src_client_FilterSet_c,v 1.1 2003/05/23 13:22:14 todd Exp $
    
      /* buffer is used to hold file data, so use _ATOMIC */
 -    char *buffer = (char *) GC_MALLOC_ATOMIC(len);
-+    char *buffer = (char *) malloc(len);
++    char *buffer = (char *) calloc(1, len);
      char *bufend;
      char *bufp;
      Filter *filt;
@@ -42,7 +42,7 @@ $OpenBSD: patch-base_src_client_FilterSet_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  	len = bufp - start;
  
 -	filt = (Filter *) GC_MALLOC(sizeof(Filter)); 
-+	filt = (Filter *) malloc(sizeof(Filter)); 
++	filt = (Filter *) calloc(1, sizeof(Filter)); 
  	filt->exclude = exclude;
  	filt->pattern = xstrndup(start, len);
  

@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_src_client_WsEntity_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_WsEntity_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/WsEntity.c.orig	Sat Mar 29 16:15:24 2003
-+++ base/src/client/WsEntity.c	Thu May 22 17:46:42 2003
++++ base/src/client/WsEntity.c	Wed May 28 08:14:56 2003
 @@ -172,7 +172,7 @@ wsentity_addFromFile(PendingChange *pc,
  {
    portstat_t ps;
  
 -  WsEntity *wse = (WsEntity *) GC_MALLOC(sizeof(WsEntity));
-+  WsEntity *wse = (WsEntity *) malloc(sizeof(WsEntity));
++  WsEntity *wse = (WsEntity *) calloc(1, sizeof(WsEntity));
    Buffer *content;
  
    if (eType == '?')
@@ -15,7 +15,7 @@ $OpenBSD: patch-base_src_client_WsEntity_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  wsentity_fromEntity(const Entity *e)
  {
 -  WsEntity *wse = (WsEntity *) GC_MALLOC(sizeof(WsEntity));
-+  WsEntity *wse = (WsEntity *) malloc(sizeof(WsEntity));
++  WsEntity *wse = (WsEntity *) calloc(1, sizeof(WsEntity));
  
    ser_init(wse, &WsEntity_SerType, WsEntity_SerType.ver);
    SER_MODIFIED(wse);
@@ -24,7 +24,7 @@ $OpenBSD: patch-base_src_client_WsEntity_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  wsentity_deserialize(const DeserializeInfo *di, SDR_stream *strm)
  {
 -  WsEntity *wse          = (WsEntity *) GC_MALLOC(sizeof(WsEntity));
-+  WsEntity *wse          = (WsEntity *) malloc(sizeof(WsEntity));
++  WsEntity *wse          = (WsEntity *) calloc(1, sizeof(WsEntity));
  
    ser_init(wse, &WsEntity_SerType, di->ver);
    SER_MODIFIED(wse);
@@ -33,7 +33,7 @@ $OpenBSD: patch-base_src_client_WsEntity_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  wsentity_ShallowCopy(const WsEntity *wse)
  {
 -  WsEntity *new_wse = GC_MALLOC(sizeof(*wse));
-+  WsEntity *new_wse = malloc(sizeof(*wse));
++  WsEntity *new_wse = calloc(1, sizeof(*wse));
  
    memcpy(new_wse, wse, sizeof(*wse));
  

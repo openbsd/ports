@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_src_client_opencm_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_opencm_c,v 1.2 2003/05/28 13:27:48 todd Exp $
 --- base/src/client/opencm.c.orig	Sun Apr  6 16:03:45 2003
-+++ base/src/client/opencm.c	Thu May 22 17:46:42 2003
++++ base/src/client/opencm.c	Wed May 28 08:14:56 2003
 @@ -1252,6 +1252,7 @@ static void
  display_log(Repository *r, const CommitInfo *ci)
  {
@@ -100,7 +100,7 @@ $OpenBSD: patch-base_src_client_opencm_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  
    if (rbn == TREE_NIL) {
 -    unsigned *data = GC_MALLOC_ATOMIC(sizeof(unsigned));
-+    unsigned *data = malloc(sizeof(unsigned));
++    unsigned *data = calloc(1, sizeof(unsigned));
      *data = 0;
  
      rbn = rbnode_create(lookupKey.vp, lookupKey.w, data);
@@ -151,7 +151,7 @@ $OpenBSD: patch-base_src_client_opencm_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  find_config_files(OC_bool needThem)
  {
 -  config_files *cfg = GC_MALLOC(sizeof(*cfg));
-+  config_files *cfg = malloc(sizeof(*cfg));
++  config_files *cfg = calloc(1, sizeof(*cfg));
  
    const char *user_dir = path_join(opt_ConfigDir, CM_USER_SUBDIR);
  
@@ -219,7 +219,7 @@ $OpenBSD: patch-base_src_client_opencm_c,v 1.1 2003/05/23 13:22:14 todd Exp $
  
      /* add 3 for intervening LF, trailing LF,trailing NUL */
 -    s = GC_MALLOC_ATOMIC(notes_len + msg_len + 3);
-+    s = malloc(notes_len + msg_len + 3);
++    s = calloc(1, notes_len + msg_len + 3);
      if (pc->notes) {
        strcpy(s, pc->notes);
        s[notes_len++] = '\n';
