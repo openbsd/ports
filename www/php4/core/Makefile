@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/01/30 15:29:07 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2005/02/06 13:10:38 wilfried Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 
 MODULES=	devel/gettext
 
-# some variables to substitute 
+# some variables to substitute
 SUBST_VARS=	PHP_CONFIG_FILE
 PHP_VERSION=	${V}
 
@@ -48,11 +48,11 @@ CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 PREFIX=		${CHROOT_DIR}
-RUN_DEPENDS=	:php4-core-${V}:www/php4/core 
+RUN_DEPENDS=	:php4-core-${V}:www/php4/core
 LIB_DEPENDS=
 MODULES=
 .else
-WANTLIB=	c crypto des m ssl stdc++ z 
+WANTLIB=	c crypto des m ssl stdc++ z
 .endif
 
 pre-fake:

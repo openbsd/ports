@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2005/01/30 15:29:07 alek Exp $
+# $OpenBSD: Makefile,v 1.39 2005/02/06 13:10:38 wilfried Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -10,7 +10,7 @@ SUBPACKAGE?=
 PREFIX?=	${CHROOT_DIR}
 
 FLAVORS=	no_x11
-FLAVOR?= 
+FLAVOR?=
 
 WANTLIB=	stdc++ m
 
@@ -28,7 +28,7 @@ GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
 
 GRAPHIC_CONFIG=		--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
-			--with-zlib-dir=/usr 
+			--with-zlib-dir=/usr
 
 # bz2
 PSEUDO_FLAVORS+=	no_bz2
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-dbx
 .else
 MULTI_PACKAGES+=	-dbx
 COMMENT-dbx=		"dbx database abstraction interface for php4"
-CONFIGURE_ARGS+=	--enable-dbx=shared 
+CONFIGURE_ARGS+=	--enable-dbx=shared
 .endif
 
 # domxml
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
-WANTLIB+=		X11 Xpm 
+WANTLIB+=		X11 Xpm
 .  endif
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
@@ -257,7 +257,7 @@ COMMENT-shmop=		"shared memory extensions for php4"
 CONFIGURE_ARGS+=	--enable-shmop=shared
 .endif
 
-# snmp 
+# snmp
 PSEUDO_FLAVORS+=	no_snmp
 .if ${FLAVOR:L:Mno_snmp}
 CONFIGURE_ARGS+=	--without-snmp

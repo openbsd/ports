@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: phpxs,v 1.5 2004/11/18 16:36:18 robert Exp $
+# $OpenBSD: phpxs,v 1.6 2005/02/06 13:10:38 wilfried Exp $
 #
 # Copyright (c) 2002-2004 Anil Madhavapeddy <anil@recoil.org>
-# 
+#
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
 # copyright notice and this permission notice appear in all copies.
@@ -31,7 +31,7 @@ php_module=${apache_module_path}/libphp4.so
 showusage() {
     echo
     echo "Usage: $0 -a [ -c <location of php.ini> ] <module>"
-    echo "       $0 -r [ -c <location of php.ini> ] <module>" 
+    echo "       $0 -r [ -c <location of php.ini> ] <module>"
     echo "       $0 -s"
     exit 2
 }
@@ -67,7 +67,7 @@ if [ $setup ]; then
     fi
 
     /usr/sbin/apxs -i -a -n php4 ${php_module}
-    echo 
+    echo
     echo "You should copy the sample configuration files from"
     echo "${php_example} to ${php_cfg}"
     exit;
@@ -109,7 +109,7 @@ if [ $add -gt 0 ]; then
         echo "Adding extension : $module";
         echo "extension=${module}.so" >> $php_cfg;
     fi
-elif [ $remove -gt 0 ]; then 
+elif [ $remove -gt 0 ]; then
     echo "Disabling extension: $module"
     /usr/bin/perl -pi -e "s/${extmatch}/\;extension=${module}.so/" $php_cfg;
 fi

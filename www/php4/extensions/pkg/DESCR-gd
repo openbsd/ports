@@ -2,7 +2,7 @@ You can use the image functions in PHP to get the size of JPEG,
 GIF, PNG, SWF, TIFF and JPEG2000 images.
 
 By using the GD library, you will also be able to create and
-manipulate images. Support for TrueType and PostScript fonts 
+manipulate images. Support for TrueType and PostScript fonts
 is also included.
 
 The format of images you are able to manipulate depend on the version

@@ -3,7 +3,7 @@ To finish the install, enable the php4 module with:
 
 To enable parsing of PHP scripts, add the following to
 /var/www/conf/httpd.conf:
-    
+
     AddType application/x-httpd-php .php
 
 Copy the config file below into ${PHP_CONFIG_FILE}
