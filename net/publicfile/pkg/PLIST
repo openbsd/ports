@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/15 14:35:54 camield Exp $
-publicfile/bin/configure
-publicfile/bin/ftpd
-publicfile/bin/httpd
-@dirrm publicfile/bin
-@dirrm publicfile
