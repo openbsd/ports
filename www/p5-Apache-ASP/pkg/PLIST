@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/11/22 12:21:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/01/17 15:11:19 naddy Exp $
 bin/asp-perl
 ${P5SITE}/Apache/ASP.pm
 ${P5SITE}/Apache/ASP/Application.pm
 ${P5SITE}/Apache/ASP/CGI.pm
+@comment ${P5SITE}/Apache/ASP/CGI/Table.pm
 ${P5SITE}/Apache/ASP/CGI/Test.pm
 ${P5SITE}/Apache/ASP/Collection.pm
 ${P5SITE}/Apache/ASP/CollectionItem.pm
@@ -22,10 +23,21 @@ ${P5SITE}/Apache/ASP/Share/CORE/MailErrorsHTML.inc
 ${P5SITE}/Apache/ASP/StatINC.pm
 ${P5SITE}/Apache/ASP/State.pm
 ${P5SITE}/Apache/ASP/StateManager.pm
+@comment ${P5SITE}/Bundle/Apache/ASP.pm
+@comment ${P5SITE}/Bundle/Apache/ASP/Extra.pm
+@comment ${P5ARCH}/auto/Apache/ASP/.packlist
 man/man1/asp-perl.1
 man/man3p/Apache::ASP.3p
+@comment man/man3p/Apache::ASP::CGI::Table.3p
+@comment man/man3p/Bundle::Apache::ASP.3p
+@comment man/man3p/Bundle::Apache::ASP::Extra.3p
+@comment @dirrm ${P5ARCH}/auto/Apache/ASP
+@comment @dirrm ${P5SITE}/Bundle/Apache/ASP
+@comment @dirrm ${P5SITE}/Bundle/Apache
+@comment @dirrm ${P5SITE}/Bundle
 @dirrm ${P5SITE}/Apache/ASP/Share/CORE
 @dirrm ${P5SITE}/Apache/ASP/Share
 @dirrm ${P5SITE}/Apache/ASP/Lang
 @dirrm ${P5SITE}/Apache/ASP/CGI
 @dirrm ${P5SITE}/Apache/ASP
+@dirrm ${P5SITE}/Apache

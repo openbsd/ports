@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 13:09:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:11:19 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Generic Apache Request Library"
 

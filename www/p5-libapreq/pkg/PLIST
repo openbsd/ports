@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/15 23:30:17 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/01/17 15:11:19 naddy Exp $
 ${P5ARCH}/Apache/Cookie.pm
 ${P5ARCH}/Apache/Request.pm
 ${P5ARCH}/Apache/libapreq.pm
@@ -6,11 +6,14 @@ ${P5ARCH}/auto/Apache/Cookie/Cookie.bs
 ${P5ARCH}/auto/Apache/Cookie/Cookie.so
 ${P5ARCH}/auto/Apache/Request/Request.bs
 ${P5ARCH}/auto/Apache/Request/Request.so
+@comment ${P5ARCH}/auto/libapreq/.packlist
 ${P5ARCH}/auto/libapreq/extralibs.ld
 ${P5ARCH}/auto/libapreq/include/apache_cookie.h
 ${P5ARCH}/auto/libapreq/include/apache_multipart_buffer.h
 ${P5ARCH}/auto/libapreq/include/apache_request.h
 ${P5ARCH}/auto/libapreq/libapreq.a
+@comment ${P5ARCH}/auto/libapreq/libapreq.bs
+@comment ${P5ARCH}/auto/libapreq/libapreq.so
 ${P5ARCH}/libapreq.pod
 man/man3p/Apache::Cookie.3p
 man/man3p/Apache::Request.3p
@@ -28,7 +31,7 @@ share/examples/p5-libapreq/perl/file_upload.pl
 @dirrm share/examples/p5-libapreq/c
 @dirrm share/examples/p5-libapreq
 @dirrm share/doc/libapreq
-@dirrm ${P5ARCH}/auto/Apache/Request
-@dirrm ${P5ARCH}/auto/Apache/Cookie
 @dirrm ${P5ARCH}/auto/libapreq/include
 @dirrm ${P5ARCH}/auto/libapreq
+@dirrm ${P5ARCH}/auto/Apache/Request
+@dirrm ${P5ARCH}/auto/Apache/Cookie
