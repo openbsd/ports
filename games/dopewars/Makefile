@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 01:06:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/02 22:54:05 brad Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
-DISTNAME=	dopewars-1.4.8
+DISTNAME=	dopewars-1.5.3
 CATEGORIES=	games
-NEED_VERSION=	1.402
-MASTER_SITES=	http://www.evansville.net/~goatpop/ \
-		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
+NEED_VERSION=	1.500
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= dopewars
 
-HOMEPAGE=	http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
+HOMEPAGE=	http://dopewars.sourceforge.net/
+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -17,21 +19,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES+=	gettext
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --enable-nls \
+		 --enable-strict \
+		 --datadir="/var/games"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=	index.html installation.html clientplay.html server.html \
-	credits.html aiplayer.html configfile.html commandline.html \
-	developer.html metaserver.html servercommands.html LICENCE \
-	README
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dopewars
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
-	${INSTALL_PROGRAM} ${WRKSRC}/dopewars ${PREFIX}/bin
-	@chown root.games ${PREFIX}/bin/dopewars
-	@chmod 2755 ${PREFIX}/bin/dopewars
-	${INSTALL_DATA} ${WRKSRC}/example-cfg ${PREFIX}/share/examples/dopewars/dopewars-cfg.sample
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/dopewars
+	${INSTALL_DATA} ${WRKSRC}/doc/example-cfg \
+		${PREFIX}/share/examples/dopewars/dopewars.cfg.sample
 
 .include <bsd.port.mk>
