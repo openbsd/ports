@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/13 11:23:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/06 00:05:30 heko Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
 PKGNAME=		${DISTNAME:S/-OpenBSD//}
 DISTNAME=		cdrchive-1.0.1-OpenBSD
 CATEGORIES=		misc x11
-NEED_VERSION=		1.427
+NEED_VERSION=		1.447
 
 HOMEPAGE=		http://www.drahthaar.clara.net/cdr.htm
 
@@ -20,8 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.drahthaar.clara.net/ \
 			ftp://ftp.jakemsr.com/pub/jakemsr/obsd-ports/
 
+MODULES=		qt2
+
 RUN_DEPENDS=		cdrecord::misc/cdrecord
-LIB_DEPENDS=		qt.2.::x11/qt2
 
 SEPARATE_BUILD=		concurrent
 
@@ -31,9 +32,7 @@ CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc/cdrchive \
 			--x-libraries=${X11BASE}/lib \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib \
-			--with-qt-includes=${LOCALBASE}/include/X11/qt2 \
-			--with-qt-libraries=${LOCALBASE}/lib/qt2
-CONFIGURE_ENV=		MOC=${LOCALBASE}/lib/qt2/bin/moc
+			${MODQT_CONFIGURE_ARGS}
 MAKE_FLAGS=		CFLAGS="${CXXFLAGS} -c" CLFLAGS=""
 
 WRKDIST=		${WRKDIR}/cdr-bsd
