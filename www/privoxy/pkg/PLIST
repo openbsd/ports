@@ -1,87 +1,245 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/11/25 21:07:50 alek Exp $
+@newgroup _privoxy:516
+@newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/nonexistent:/sbin/nologin
 @man man/man1/privoxy.1
 sbin/privoxy
 share/doc/privoxy/
 share/doc/privoxy/README
 share/examples/privoxy/
+@sample ${SYSCONFDIR}/privoxy/
 share/examples/privoxy/config
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/config
+@owner
+@group
 share/examples/privoxy/default.action
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/default.action
+@owner
+@group
 share/examples/privoxy/default.filter
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/default.filter
+@owner
+@group
 share/examples/privoxy/standard.action
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/standard.action
+@owner
+@group
 share/examples/privoxy/templates/
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/
+@owner
+@group
 share/examples/privoxy/templates/blocked
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/blocked
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-404
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-404
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-bad-param
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-bad-param
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-disabled
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-disabled
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-file
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-file
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-file-read-only
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-file-read-only
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-modified
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-modified
+@owner
+@group
 share/examples/privoxy/templates/cgi-error-parse
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-parse
+@owner
+@group
 share/examples/privoxy/templates/cgi-style.css
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/cgi-style.css
+@owner
+@group
 share/examples/privoxy/templates/connect-failed
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/connect-failed
+@owner
+@group
 share/examples/privoxy/templates/default
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/default
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-add-url-form
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-add-url-form
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-for-url
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-for-url
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-for-url-filter
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-for-url-filter
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-list
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-list-button
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-button
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-list-section
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-section
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-list-url
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-url
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-remove-url-form
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-remove-url-form
+@owner
+@group
 share/examples/privoxy/templates/edit-actions-url-form
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-url-form
+@owner
+@group
 share/examples/privoxy/templates/mod-local-help
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/mod-local-help
+@owner
+@group
 share/examples/privoxy/templates/mod-support-and-service
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/mod-support-and-service
+@owner
+@group
 share/examples/privoxy/templates/mod-title
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/mod-title
+@owner
+@group
 share/examples/privoxy/templates/mod-unstable-warning
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/mod-unstable-warning
+@owner
+@group
 share/examples/privoxy/templates/no-such-domain
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/no-such-domain
+@owner
+@group
 share/examples/privoxy/templates/show-request
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/show-request
+@owner
+@group
 share/examples/privoxy/templates/show-status
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/show-status
+@owner
+@group
 share/examples/privoxy/templates/show-status-file
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/show-status-file
+@owner
+@group
 share/examples/privoxy/templates/show-url-info
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/show-url-info
+@owner
+@group
 share/examples/privoxy/templates/show-version
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/show-version
+@owner
+@group
 share/examples/privoxy/templates/toggle
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/toggle
+@owner
+@group
 share/examples/privoxy/templates/toggle-mini
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/toggle-mini
+@owner
+@group
 share/examples/privoxy/templates/untrusted
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/untrusted
+@owner
+@group
 share/examples/privoxy/user.action
-@cwd ${SYSCONFDIR}
-@extra privoxy/templates/blocked
-@extra privoxy/templates/cgi-error-404
-@extra privoxy/templates/cgi-error-bad-param
-@extra privoxy/templates/cgi-error-disabled
-@extra privoxy/templates/cgi-error-file
-@extra privoxy/templates/cgi-error-file-read-only
-@extra privoxy/templates/cgi-error-modified
-@extra privoxy/templates/cgi-error-parse
-@extra privoxy/templates/cgi-style.css
-@extra privoxy/templates/connect-failed
-@extra privoxy/templates/default
-@extra privoxy/templates/edit-actions-add-url-form
-@extra privoxy/templates/edit-actions-for-url
-@extra privoxy/templates/edit-actions-for-url-filter
-@extra privoxy/templates/edit-actions-list
-@extra privoxy/templates/edit-actions-list-button
-@extra privoxy/templates/edit-actions-list-section
-@extra privoxy/templates/edit-actions-list-url
-@extra privoxy/templates/edit-actions-remove-url-form
-@extra privoxy/templates/edit-actions-url-form
-@extra privoxy/templates/mod-local-help
-@extra privoxy/templates/mod-support-and-service
-@extra privoxy/templates/mod-title
-@extra privoxy/templates/mod-unstable-warning
-@extra privoxy/templates/no-such-domain
-@extra privoxy/templates/show-request
-@extra privoxy/templates/show-status
-@extra privoxy/templates/show-status-file
-@extra privoxy/templates/show-url-info
-@extra privoxy/templates/show-version
-@extra privoxy/templates/toggle
-@extra privoxy/templates/toggle-mini
-@extra privoxy/templates/untrusted
-@extra privoxy/templates/
-@extra privoxy/config
-@extra privoxy/default.action
-@extra privoxy/standard.action
-@extra privoxy/user.action
-@extra privoxy/default.filter
-@extra privoxy/
-@extraunexec rm -rf /var/log/privoxy
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/user.action
+@mode 775
+@owner
+@sample /var/log/privoxy/
+@extraunexec rm -rf /var/log/privoxy/*

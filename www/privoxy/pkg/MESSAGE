@@ -1,0 +1,9 @@
+You will need to edit /etc/rc.local as appropriate and add a
+section similar to the following so that privoxy is started
+automatically:
+
+    if [ -x ${PREFIX}/sbin/privoxy ]; then
+            echo -n ' privoxy';
+            ${PREFIX}/sbin/privoxy --user _privoxy._privoxy \
+                    ${SYSCONFDIR}/privoxy/config
+    fi
