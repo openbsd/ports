@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/01/01 21:04:48 espie Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
-V=		2.1.19
+V=		2.2.0
 # cd-diskid version number
 V2=		0.9
 DISTNAME=	abcde_$V.orig
