@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/23 14:20:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2003/05/23 15:28:15 pvalchev Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -28,8 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	static
 
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mvax}
-# for the time being, force static on alpha/vax
+.if ${MACHINE_ARCH:Malpha}
+# for the time being, force static on alpha
 FLAVOR?=	static
 .else
 FLAVOR?=
