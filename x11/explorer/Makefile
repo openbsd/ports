@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 06:16:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/24 20:13:41 niklas Exp $
 #
 
 DISTNAME=	explorer-0.72
@@ -15,6 +15,7 @@ MAINTAINER=	angelos@openbsd.org
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	${SETENV}
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib/X11/explorer \
 			--with-qt-include=${PREFIX}/include/X11/qt
 
