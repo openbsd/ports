@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/28 05:22:23 brad Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
 DISTNAME=	openjade-1.3
 CATEGORIES=	textproc
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 
 HOMEPAGE=	http://openjade.sourceforge.net/
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	RANLIB="${RANLIB}" CFLAGS="${CFLAGS}" CC="${CC}" \
+MAKE_FLAGS=	RANLIB="${RANLIB}" CFLAGS="${CFLAGS}" CC="${CC}" CXX="${CXX} -fno-implicit-templates ${CXXFLAGS}" \
 		XDEFINES='-DJADE_MIF -DJADE_HTML -DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/catalog\"'
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 
