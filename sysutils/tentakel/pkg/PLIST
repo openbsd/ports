@@ -1,8 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 22:45:19 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/18 14:10:40 wilfried Exp $
 bin/tentakel
+lib/python${PYTHON_VER}/site-packages/lekatnet/__init__.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/lekatnet/config.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/config.pyc
+lib/python${PYTHON_VER}/site-packages/lekatnet/error.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/error.pyc
+lib/python${PYTHON_VER}/site-packages/lekatnet/remote.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/remote.pyc
+lib/python${PYTHON_VER}/site-packages/lekatnet/shell.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/shell.pyc
+lib/python${PYTHON_VER}/site-packages/lekatnet/tpg.py
+lib/python${PYTHON_VER}/site-packages/lekatnet/tpg.pyc
 man/man1/tentakel.1
-share/doc/tentakel/INSTALL
 share/doc/tentakel/README
-share/examples/tentakel/hostlist.example
-@dirrm share/examples/tentakel
+share/doc/tentakel/TODO
+share/examples/tentakel/tentakel.conf.example
 @dirrm share/doc/tentakel
+@dirrm share/examples/tentakel
+@dirrm lib/python${PYTHON_VER}/site-packages/lekatnet

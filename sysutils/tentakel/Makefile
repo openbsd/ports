@@ -1,30 +1,38 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/19 19:08:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/18 14:10:40 wilfried Exp $
 
 COMMENT=	"distributed command execution"
 
-DISTNAME=	tentakel-0.3.1
+DISTNAME=	tentakel-2.1.2
 CATEGORIES=	sysutils
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
-HOMEPAGE=	http://tentakel.sf.net/
+HOMEPAGE=	http://tentakel.biskalar.de/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tentakel/}
+EXTRACT_SUFX=	.tgz
 
-# BSD
+# BSD + LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tentakel/}
-EXTRACT_SUFX=	.tgz
+FLAVORS=	python2.2 python2.3
+FLAVOR?=	python2.3
+.if ${FLAVOR:L} == "python2.2"
+PYTHON_VER=	2.2
+.else
+PYTHON_VER=	2.3
+.endif
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+MAKE_ENV=	PYTHON="${LOCALBASE}/bin/${FLAVOR}"
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tentakel ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tentakel.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tentakel
-	${INSTALL_DATA} ${WRKSRC}/{README,INSTALL} ${PREFIX}/share/doc/tentakel
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+SUBST_VARS=	PYTHON_VER
+
+REGRESS_IS_INTERACTIVE=	yes
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tentakel
-	${INSTALL_DATA} ${WRKSRC}/hostlist.example ${PREFIX}/share/examples/tentakel
+	${INSTALL_DATA} ${WRKSRC}/tentakel.conf.example ${PREFIX}/share/examples/tentakel
 
 .include <bsd.port.mk>
