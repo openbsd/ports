@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/04/07 22:54:23 brad Exp $
 
 COMMENT=	"general-purpose multi-platform x86 assembler"
 
 ONLY_FOR_ARCHS=	i386
 
-DISTNAME=	nasm-0.98.35
+DISTNAME=	nasm-0.98.38
 CATEGORIES=	devel lang
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
