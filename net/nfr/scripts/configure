@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: configure,v 1.1.1.1 1998/07/04 20:52:54 marc Exp $
+#
+cd ${WRKSRC}
+cp ${FILESDIR}/Makefile-config include
+cp ${FILESDIR}/Makefile-openbsd include
+cp ${FILESDIR}/opts-openbsd.h include
+cp ${FILESDIR}/sys-openbsd.h include
+cp ${FILESDIR}/nfr-htpasswd.c web
+cp ${FILESDIR}/configure-nfr .
+bin/fixmake

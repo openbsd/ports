@@ -1,0 +1,38 @@
+# $OpenBSD: Makefile-openbsd,v 1.1.1.1 1998/07/04 20:52:53 marc Exp $
+#
+# NFR makefile for OpenBSD
+#
+
+CC=cc
+CFLAGS?= -g -O2
+CFLAGS+= $(INCDIRS) $(XCFLAGS) $(LCFLAGS)
+
+JAVAC=javac
+JFLAGS=
+
+LEX=lex
+YACC=yacc
+RANLIB=ranlib
+
+SELPOLL=select.o
+
+INCDIRS=-I$(NFR)/include
+NFRLIB=$(NFR)/lib/nfr/libnfr.a
+RCLIB=$(NFR)/lib/rc/librc.a
+RKIVELIB=$(NFR)/lib/rkive/librkive.a
+BACKLIB=$(NFR)/lib/back/libback.a
+CGILIB=$(NFR)/lib/cgi/libcgi.a
+PCAPDIR=$(NFR)/../thirdparty/libpcap-0.3.1a2
+PCAPLIB=$(PCAPDIR)/libpcap.a
+REGEXOBJ=$(NFR)/../thirdparty/regex-0.12/regex.o
+I=$(NFR)/include
+MAKESUBDIRS=sh $(NFR)/bin/makesubdirs
+UI_DIR=$(NFR)/ui
+
+MATHLIB=-lm
+
+.SUFFIXES: .class .java
+
+.java.class:
+	cd $(UI_DIR) ; $(JAVAC) $(JFLAGS) ./$(PKG_DIR)/$*.java
+

@@ -1,0 +1,14 @@
+--- bin/select_sys.~1~	Tue Mar  3 12:12:55 1998
++++ bin/select_sys	Tue Jun 23 19:16:10 1998
+@@ -73,6 +73,11 @@
+ 		type=netbsd
+ 		warn=y
+ 		;;
++	OpenBSD2.*)
++		echo NFR is NOT officially supported on OpenBSD 2.x systems
++		echo Unofficial support added by ports@openbsd.org
++		type=openbsd
++		;;
+ 	Linux*)
+ 		case $rev
+ 		in

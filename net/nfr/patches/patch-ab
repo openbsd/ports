@@ -1,0 +1,18 @@
+*** web/Makefile.proto-orig	Fri Jul  3 15:33:38 1998
+--- web/Makefile.proto	Fri Jul  3 15:35:38 1998
+***************
+*** 2,11 ****
+--- 2,14 ----
+  
+  all:
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
++ 	$(CC) $(CFLAGS) -o nfr-htpasswd nfr-htpasswd.c
+  
+  install:
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
++ 	cp nfr-htpasswd $(INSTALLDIR)/bin/htpasswd
+  
+  clean:
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
++ 	rm -f nfr-htpasswd *.core core
+  

@@ -1,0 +1,13 @@
+*** config/nfrstart.sh-orig	Fri Jul  3 15:51:35 1998
+--- config/nfrstart.sh	Fri Jul  3 15:51:40 1998
+***************
+*** 1,4 ****
+! #!/sbin/sh
+  #
+  # /etc/init.d/nfrstatrt:
+  #
+--- 1,4 ----
+! #!/bin/sh
+  #
+  # /etc/init.d/nfrstatrt:
+  #
