@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 14:52:09 shell Exp $
+libdata/perl5/site_perl/Data/Grove.pm
+libdata/perl5/site_perl/Data/Grove/Parent.pm
+libdata/perl5/site_perl/Data/Grove/Visitor.pm
+libdata/perl5/site_perl/XML/ESISParser.pm
+libdata/perl5/site_perl/XML/Handler/CanonXMLWriter.pm
+libdata/perl5/site_perl/XML/Handler/Sample.pm
+libdata/perl5/site_perl/XML/Handler/Subs.pm
+libdata/perl5/site_perl/XML/Handler/XMLWriter.pm
+libdata/perl5/site_perl/XML/Parser/PerlSAX.pm
+libdata/perl5/site_perl/XML/PatAct/ActionTempl.pm
+libdata/perl5/site_perl/XML/PatAct/Amsterdam.pm
+libdata/perl5/site_perl/XML/PatAct/MatchName.pm
+libdata/perl5/site_perl/XML/PatAct/PatternTempl.pm
+libdata/perl5/site_perl/XML/PatAct/ToObjects.pm
+libdata/perl5/site_perl/XML/Perl2SAX.pm
+libdata/perl5/site_perl/XML/SAX2Perl.pm
+man/man3/Data::Grove.3p
+man/man3/Data::Grove::Parent.3p
+man/man3/Data::Grove::Visitor.3p
+man/man3/XML::ESISParser.3p
+man/man3/XML::Handler::CanonXMLWriter.3p
+man/man3/XML::Handler::Sample.3p
+man/man3/XML::Handler::Subs.3p
+man/man3/XML::Handler::XMLWriter.3p
+man/man3/XML::Parser::PerlSAX.3p
+man/man3/XML::PatAct::ActionTempl.3p
+man/man3/XML::PatAct::Amsterdam.3p
+man/man3/XML::PatAct::MatchName.3p
+man/man3/XML::PatAct::PatternTempl.3p
+man/man3/XML::PatAct::ToObjects.3p
+man/man3/XML::Perl2SAX.3p
+man/man3/XML::SAX2Perl.3p
+@dirrm libdata/perl5/site_perl/XML/PatAct
+@dirrm libdata/perl5/site_perl/XML/Parser
+@dirrm libdata/perl5/site_perl/XML/Handler
+@dirrm libdata/perl5/site_perl/Data/Grove
