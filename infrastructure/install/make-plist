@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.5 2000/06/30 23:45:41 espie Exp $
+# $OpenBSD: make-plist,v 1.6 2000/07/03 13:01:49 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -39,7 +39,15 @@ use strict;
 
 use File::Find;
 
-my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files);
+my ($plist, $pshared);
+
+my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
+die "Update bsd.port.mk" if @ARGV == 0;
+$plist = shift;
+$pshared = $plist;
+$pshared =~ s/PLIST/PFRAG.shared/;
+open(PLIST, ">$plist-auto") or die "Can't write to $plist-auto";
+select PLIST;
 
 print "\@comment \$OpenBSD\$\n";
 
@@ -94,7 +102,6 @@ sub add_info {
 	}
 }
 
-
 # recursive traversal: mark specific `info' dirs, `ldconfig' dirs,
 # and potentially modified dirs
 
@@ -106,10 +113,11 @@ find(
 			if (-d _) {
 				$newdir{$File::Find::name} = 1;
 			} else {
-				push(@files, $File::Find::name);
 				if (/\.so\.\d+\.\d+$/) {
 					$ldconfig{$File::Find::dir} = 1;
+					push(@libfiles, $File::Find::name);
 				}
+				push(@files, $File::Find::name);
 				if (/\.info$/) {
 					my $d = $File::Find::dir;
 					$infodir{$d} = [] unless defined $infodir{$d};
@@ -143,6 +151,23 @@ for my $f (sort @files) {
 	print strip($f), "\n" unless ($f =~ m|/dir$|) && (defined $infodir{$`});
 }
 
+if (@libfiles > 0) {
+    	print "\%\%SHARED\%\%\n";
+	open(SHARED, ">$pshared-auto") or die "Can't write to $pshared-auto";
+	print SHARED "\@comment \$OpenBSD\$\n";
+	for my $f (sort @libfiles) {
+	    print SHARED strip($f), "\n";
+	}
+	for my $d (sort (keys %ldconfig)) {
+		if (defined $newdir{$d}) {
+			print SHARED "NEWDYNLIBDIR(", strip($d), ")\n";
+		} else {
+			print SHARED "DYNLIBDIR(", strip($d), ")\n";
+		}
+	}
+	close SHARED;
+}
+
 for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 	# case of new directory that does not hold anything: it's marked
 	# for removal, but it must exist first
@@ -150,14 +175,6 @@ for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 		print "\@exec mkdir -p \%D/", strip($d), "\n";
 	}
 	print "\@dirrm ",strip($d), "\n";
-}
-	
-for my $d (sort (keys %ldconfig)) {
-	if (defined $newdir{$d}) {
-		print "NEWDYNLIBDIR(", strip($d), ")\n";
-	} else {
-		print "DYNLIBDIR(", strip($d), ")\n";
-	}
 }
 	
 add_info('@exec install-info', \%infodir);
