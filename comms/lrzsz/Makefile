@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:05 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/15 06:18:08 turan Exp $
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_CDROM=	"possible copyright issue with rzsz"
 PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_CDROM=	"possible copyright issue with rzsz"
 PERMIT_DISTFILES_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
