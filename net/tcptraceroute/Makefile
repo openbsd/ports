@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/10 01:09:36 obecian Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/11 03:36:19 obecian Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.427
 
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
 
-MAINTAINER=		Mark Grimes <obecian@openbsd.org>
+MAINTAINER=		Patroklos Argyroudis <argp@otenet.gr>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
