@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2003/03/31 14:11:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/17 15:04:03 espie Exp $
 
 
 COMMENT=	"smalltalk system"
 CATEGORIES=	lang
 MAINTAINER=	Marc Espie <espie@openbsd.org>
+NOT_FOR_ARCHS=${LP64_ARCHS}
 
 
 # Apple license, similar to GPL, with a clause to protect Apple
