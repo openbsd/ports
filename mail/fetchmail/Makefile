@@ -1,16 +1,16 @@
 # OpenBSD makefile for:	fetchmail
-# Version required:     4.3.0
+# Version required:     4.3.8
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1997/12/31 11:34:28 tacho Exp $
+# $OpenBSD: Makefile,v 1.5 1998/03/01 05:40:44 marc Exp $
 #
 
-DISTNAME=       fetchmail-4.3.3
+DISTNAME=       fetchmail-4.3.8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+= --enable-opie

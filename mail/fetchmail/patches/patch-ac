@@ -1,0 +1,11 @@
+--- rcfile_y.y.~1~	Tue Feb 24 12:32:53 1998
++++ rcfile_y.y	Sat Feb 28 21:32:27 1998
+@@ -179,7 +179,7 @@
+ 					        free(request);
+ 					    }
+ #else
+-					    yyerror("network-security support disabled")
++					    yyerror("network-security support disabled");
+ #endif /* NET_SECURITY */
+ 					}
+ 		| INTERFACE STRING	{
