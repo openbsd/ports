@@ -1,8 +1,9 @@
---- SDLnetsys.h.orig	Sun Apr 15 21:43:16 2001
-+++ SDLnetsys.h	Sun Apr 15 21:45:42 2001
-@@ -48,6 +48,11 @@
- #include <unistd.h>
+$OpenBSD: patch-SDLnetsys_h,v 1.2 2002/09/03 06:28:40 mark Exp $
+--- SDLnetsys.h.orig	Fri Dec 14 05:06:00 2001
++++ SDLnetsys.h	Mon Sep  2 23:23:10 2002
+@@ -49,6 +49,11 @@
  #include <fcntl.h>
+ #include <netinet/in.h>
  #ifndef __BEOS__
 +#ifdef __OpenBSD__
 +#include <sys/types.h>
@@ -11,4 +12,4 @@
 +#endif /* OpenBSD */
  #include <arpa/inet.h>
  #endif
- #include <netinet/in.h>
+ #ifdef linux /* FIXME: what other platforms have this? */
