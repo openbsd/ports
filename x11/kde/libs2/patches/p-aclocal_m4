@@ -1,7 +1,7 @@
-$OpenBSD: p-aclocal_m4,v 1.4 2002/03/30 00:12:20 espie Exp $
---- aclocal.m4.orig	Thu Aug 23 06:48:31 2001
-+++ aclocal.m4	Fri Mar 29 18:23:25 2002
-@@ -2960,6 +2960,11 @@ LIBDL="-ldl"
+$OpenBSD: p-aclocal_m4,v 1.5 2002/03/30 02:24:18 espie Exp $
+--- aclocal.m4.orig	Sun Jan 27 19:33:25 2002
++++ aclocal.m4	Sun Mar 17 01:23:21 2002
+@@ -3361,6 +3361,11 @@ LIBDL="-ldl"
  ac_cv_have_dlfcn=yes
  ])
  
@@ -13,19 +13,7 @@ $OpenBSD: p-aclocal_m4,v 1.4 2002/03/30 00:12:20 espie Exp $
  AC_CHECK_LIB(dld, shl_unload, [
  LIBDL="-ldld"
  ac_cv_have_shload=yes
-@@ -3459,9 +3464,11 @@ fi
- 
- AC_DEFUN(KDE_CHECK_PYTHON,
- [
-+  KDE_CHECK_PYTHON_INTERN("2.2", [
-   KDE_CHECK_PYTHON_INTERN("2.1", [KDE_CHECK_PYTHON_INTERN("2.0",
-         [ KDE_CHECK_PYTHON_INTERN($1, $2) ])
-   ])
-+  ])
- ])
- 
- AC_DEFUN(KDE_CHECK_STL_SGI,
-@@ -4722,19 +4729,7 @@ netbsd*)
+@@ -5249,19 +5254,7 @@ netbsd*)
    ;;
  
  openbsd* )
