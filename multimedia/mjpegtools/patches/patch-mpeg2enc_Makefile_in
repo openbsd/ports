@@ -1,0 +1,31 @@
+$OpenBSD: patch-mpeg2enc_Makefile_in,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
+--- mpeg2enc/Makefile.in.orig	Tue Feb  3 14:58:31 2004
++++ mpeg2enc/Makefile.in	Wed Jun 30 15:03:55 2004
+@@ -326,7 +326,7 @@ libmpeg2encpp_la_DEPENDENCIES = \
+ 
+ 
+ libmpeg2encpp_la_LIBADD = \
+-	$(top_builddir)/utils/libmjpegutils.a \
++	-L$(top_builddir)/utils -lmjpegutils \
+ 	$(top_builddir)/utils/libcpuaccel.la \
+ 	$(top_builddir)/utils/libmotion.la \
+ 	$(LIBSIMDASM_LIB)
+@@ -634,7 +634,7 @@ distclean-compile:
+ 	$(CCASCOMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
+ .s.lo:
+-	$(LTCCASCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
++	$(LTCCASCOMPILE) -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -847,9 +847,6 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 	uninstall-info-am uninstall-libLTLIBRARIES \
+ 	uninstall-libmpeg2encpp_includeHEADERS
+ 
+-
+-%.lo: %.s
+-	$(LTCCASCOMPILE) -o $@ $<
+ 
+ #%.o: %.x86c ; 	$(CC) $(CFLAGS) -mmmx -o $@ $<
+ 

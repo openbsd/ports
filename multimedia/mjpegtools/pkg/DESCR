@@ -1,0 +1,16 @@
+The mjpegtools are a set of programs that can do recording, playback,
+editing and eventual MPEG compression of audio and video under Linux.
+
+Although primarily intended for use with capture / playback boards
+based on the Zoran ZR36067 MJPEG codec chip, the mjpegtools can easily
+be used to process and compress MJPEG video streams captured using
+xawtv using simple frame-buffer devices.
+
+There are two FLAVORs for this port:
+
+  optimized - This FLAVOR turns on processor specific compiler
+    optimizations.  Without this FLAVOR, these optimizations are
+    turned off.
+
+  quicktime - This FLAVOR allows the mjpegtools to read and write
+    Quicktime files.

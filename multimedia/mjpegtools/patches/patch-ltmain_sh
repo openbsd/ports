@@ -1,0 +1,62 @@
+$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
+--- ltmain.sh.orig	2004-02-03 14:58:07.000000000 -0800
++++ ltmain.sh	2004-06-19 16:43:48.000000000 -0700
+@@ -1354,6 +1354,17 @@ EOF
+ 
+       -o) prev=output ;;
+ 
++      -pthread)
++	case $host in
++	*-*-openbsd* | *-*-freebsd*)
++	  # These systems use the -pthread flag for pthreads.
++	  deplibs="$deplibs $arg"
++	  continue
++	  ;;
++	esac
++	continue
++	;;
++
+       -release)
+ 	prev=release
+ 	continue
+@@ -1898,6 +1909,22 @@ EOF
+ 	  esac # linkmode
+ 	  continue
+ 	  ;; # -L
++        -pthread)
++	  case $host in
++	  *-*-openbsd* | *-*-freebsd*)
++	    # These systems use the -pthread flag for pthreads.
++	    if test "$linkmode,$pass" = "prog,link"; then
++	      compile_deplibs="$deplib $compile_deplibs"
++	      finalize_deplibs="$deplib $finalize_deplibs"
++	    else
++	      deplibs="$deplib $deplibs"
++	      test "$linkmode" = lib && newdependency_libs="$deplib $newdependency_libs"
++	    fi
++	    continue
++	    ;;
++	  esac
++          continue
++	  ;;
+ 	-R*)
+ 	  if test "$pass" = link; then
+ 	    dir=`$echo "X$deplib" | $Xsed -e 's/^-R//'`
+@@ -2211,7 +2238,7 @@ EOF
+ 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
++	    #need_relink=yes
+ 	  fi
+ 	  # This is a shared library
+ 	
+@@ -3337,7 +3364,7 @@ EOF
+ 	      if test -n "$a_deplib" ; then
+ 		libname=`eval \\$echo \"$libname_spec\"`
+ 		for i in $lib_search_path $sys_lib_search_path $shlib_search_path; do
+-		  potential_libs=`ls $i/$libname[.-]* 2>/dev/null`
++		  potential_libs=`ls $i/$libname[.-]* $i/${libname}_pic.a 2>/dev/null`
+ 		  for potent_lib in $potential_libs; do
+ 		    potlib="$potent_lib" # see symlink-check above in file_magic test
+ 		    if eval $echo \"$potent_lib\" 2>/dev/null \

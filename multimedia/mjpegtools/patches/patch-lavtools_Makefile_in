@@ -1,0 +1,36 @@
+$OpenBSD: patch-lavtools_Makefile_in,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
+--- lavtools/Makefile.in.orig	2004-02-03 14:58:30.000000000 -0800
++++ lavtools/Makefile.in	2004-05-12 13:12:32.000000000 -0700
+@@ -241,12 +241,12 @@ LAV_ALL_LIB_OPTS = \
+ 
+ 
+ liblavfile_la_SOURCES = editlist.c lav_io.c avilib.c
+-liblavfile_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) \
++liblavfile_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) $(LDFLAGS) \
+ 	$(QUICKTIME_LIBS) $(JPEG_LIBS) $(DV_LIBS)
+ 
+ 
+ liblavjpeg_la_SOURCES = jpegutils.c
+-liblavjpeg_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) $(JPEG_LIBS)
++liblavjpeg_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) $(LDFLAGS) $(JPEG_LIBS)
+ 
+ liblavrec_la_SOURCES = liblavrec.c audiolib.c frequencies.c
+ liblavrec_la_LDFLAGS = $(LAV_ALL_LIB_OPTS)
+@@ -1507,7 +1507,7 @@ am_png2yuv_OBJECTS = png2yuv.$(OBJEXT) c
+ 	subsample.$(OBJEXT)
+ png2yuv_OBJECTS = $(am_png2yuv_OBJECTS)
+ png2yuv_DEPENDENCIES = $(top_builddir)/utils/libmjpegutils.a
+-png2yuv_LDFLAGS =
++png2yuv_LDFLAGS = $(LDFLAGS)
+ am_ppmtoy4m_OBJECTS = ppmtoy4m.$(OBJEXT) colorspace.$(OBJEXT) \
+ 	subsample.$(OBJEXT)
+ ppmtoy4m_OBJECTS = $(am_ppmtoy4m_OBJECTS)
+@@ -1629,7 +1629,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) -o $@
+ DIST_SOURCES = $(liblavfile_la_SOURCES) $(liblavjpeg_la_SOURCES) \
+ 	$(liblavplay_la_SOURCES) $(liblavrec_la_SOURCES) \
+ 	$(glav_SOURCES) $(jpeg2yuv_SOURCES) $(lav2wav_SOURCES) \
