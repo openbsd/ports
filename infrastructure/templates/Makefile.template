@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.39 2003/07/01 04:36:33 pvalchev Exp $
+# $OpenBSD: Makefile.template,v 1.40 2003/07/16 19:31:25 naddy Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -11,7 +11,6 @@
 #NOT_FOR_ARCHS=		???
 #COMES_WITH=		???
 #BROKEN=		"reason"
-#RESTRICTED=		"reason"
 
 #
 # Very short description of the package, 60 chars max

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/26 16:52:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2003/07/16 19:31:25 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
-RESTRICTED=	"Unsure of codec's license"
 
 COMMENT=	"Huge compilation of Win32 binary codecs"
 
