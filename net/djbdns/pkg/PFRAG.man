@@ -1,0 +1,27 @@
+@comment $OpenBSD: PFRAG.man,v 1.1 2001/01/09 15:25:26 camield Exp $
+man/man1/dnsfilter.1
+man/man1/dnsip.1
+man/man1/dnsipq.1
+man/man1/dnsmx.1
+man/man1/dnsname.1
+man/man1/dnsq.1
+man/man1/dnsqr.1
+man/man1/dnstrace.1
+man/man1/dnstracesort.1
+man/man1/dnstxt.1
+man/man5/qualification.5
+man/man8/axfr-get.8
+man/man8/axfrdns.8
+man/man8/dnscache-conf.8
+man/man8/dnscache.8
+man/man8/pickdns-conf.8
+man/man8/pickdns-data.8
+man/man8/pickdns.8
+man/man8/rbldns-conf.8
+man/man8/rbldns-data.8
+man/man8/rbldns.8
+man/man8/tinydns-conf.8
+man/man8/tinydns-data.8
+man/man8/tinydns.8
+man/man8/walldns-conf.8
+man/man8/walldns.8

@@ -5,7 +5,7 @@ Help on configuration: ${HOMEPAGE}
    file into /etc. This port deliberately does not touch /etc.
    dnscache-conf tries /etc/dnsroots.local first, then /etc/dnsroots.global.
 
-cp ${PREFIX}/share/dnscache/dnsroots.global /etc
+cp ${PREFIX}/share/djbdns/dnsroots.global /etc
 
 => _After_ running dnscache-conf, do the following in your new
    dnscache directory to get a strong(er) random seed:
