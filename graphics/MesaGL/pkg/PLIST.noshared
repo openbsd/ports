@@ -16,18 +16,8 @@ include/GL/svgamesa.h
 include/GL/wmesa.h
 include/GL/xmesa.h
 lib/libGL.a
-lib/libGL.so
-lib/libGL.so.3.0
 lib/libGLU.a
-lib/libGLU.so
-lib/libGLU.so.3.0
 lib/libMesaGL.a
-lib/libMesaGL.so
-lib/libMesaGL.so.3.0
 lib/libMesaGLU.a
-lib/libMesaGLU.so
-lib/libMesaGLU.so.3.0
 lib/libglut.a
-lib/libglut.so
-lib/libglut.so.3.7
 @dirrm include/GL
