@@ -1,0 +1,13 @@
+diff -ru ../../1/unix/makefile ./unix/makefile
+--- ../../1/unix/makefile	Wed Jul  1 05:29:10 1998
++++ ./unix/makefile	Tue Feb 23 20:48:11 1999
+@@ -16,7 +16,8 @@
+ #CFLAGS = -Wall -O3 -s #-DNDEBUG
+ #CFLAGS = -g -Wall -DMDEBUG
+ #CFLAGS = -O3 -fno-strength-reduce -fomit-frame-pointer # These are for Linux
+-CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
++#CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
++CFLAGS += -O3 -fno-strength-reduce -fomit-frame-pointer
+ CHALLOC = challoc.o
+ CHALLOC =
+ CHNEW = chnew.o challoc.o
