@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/04 22:00:13 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/27 19:34:42 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
 DISTNAME=	proftpd-1.2.0pre3
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
+MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
+		ftp://ftp3.proftpd.org/distrib/
 
 NEED_VERSION=	1.73
 
@@ -12,8 +13,8 @@ MAINTAINER=	brad@openbsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--localstatedir=/var/run --with-modules=mod_ratio
+CONFIGURE_ARGS=	--localstatedir=/var/run \
+		--with-modules=mod_ratio:mod_readme
 
 post-configure:
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
@@ -44,18 +45,10 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
 	@${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
-	@if [ ! -d /var/run/proftpd]; then \
-	  ${MKDIR} /var/run/proftpd; \
-	fi
 	@${MKDIR} ${PREFIX}/lib/proftpd
 	@${INSTALL_SCRIPT} ${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/lib/proftpd/proftpd.conf.sample
-	@if [ ! -f /etc/proftpd.conf ]; then \
-	  cp ${PREFIX}/lib/proftpd/proftpd.conf.sample /etc/proftpd.conf; \
-	  ${ECHO} ""; \
-	  ${ECHO} "*** proftpd.conf has been copied into /etc"; \
-	 else \
-	  ${ECHO} ""; \
-	  ${ECHO} "*** Your /etc/proftpd.conf has NOT been changed"; \
-	fi
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
