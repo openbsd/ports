@@ -1,19 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2002/03/21 20:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2002/03/24 23:07:24 brad Exp $
 
 COMMENT=	"superseded by splint"
 
-DISTNAME=	lclint-2.5r
+PKGNAME=	lclint
 CATEGORIES=	devel
-NEED_VERSION=	1.515
-DISTFILES=
+IGNORE=		"superseded by splint"
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-IGNORE=		"superseded by splint"
 
 .include <bsd.port.mk>
