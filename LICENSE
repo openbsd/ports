@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.6 1998/09/25 02:34:31 marc Exp $
+$OpenBSD: LICENSE,v 1.7 1998/09/27 20:15:26 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -173,7 +173,7 @@ Y	games/abuse			abuse_pd.tar.gz			PD
 ?	games/gnushogi			gnushogi-1.2p03.tar.gz		???
 ?	games/nethack			nethack-3.2.2.tar.gz		???
 ?	games/netris			netris-0.4.tar.gz		???
-N	games/slash			-none-				???
+?	games/slash			Slash-Unix.tar.gz		???
 ?	games/spider			spider.tar.gz			???
 ?	games/starlanes			starlanes-1.2.2.tar.gz		???
 ?	games/xasteroids		xasteroids.sh.Z			???
@@ -190,7 +190,7 @@ Y	games/xbill			xbill-2.0.tgz			GPL
 ?	games/xdino			xdino-5.4.4.tar.gz		???
 ?	games/xevil			xevil1.5.tar.Z			???
 ?	games/xgolgo			xeyes-g.tar.gz			???
-?	games/xinvaders			xinvaders.tar.gz		???
+N	games/xinvaders			xinvaders			NOFEE
 ?	games/xjewel			xjewel-1.6.tar.z		???
 ?	games/xjig			xjig-2.4.tgz			???
 ?	games/xkobo			xkobo-1.11.tar.gz		???
@@ -213,6 +213,7 @@ N	games/xscrabble			xscrabble.tar.gz		NOFEE
 Y	games/xsoldier			xsoldier-0.96.tar.gz		GPL
 ?	games/xteddy			xteddy-1.0.tar.gz		???
 ?	graphics/ImageMagick		ImageMagick-4.0.6.tar.gz	???
+?	graphics/compface		compface.tar.gz			???
 ?	graphics/giftrans		giftrans.tar.gz			???
 ?	graphics/gimp			gimp-1.0.0.tar.gz		???
 ?	graphics/gimp			gimp-data-extras-1.0.0.tar.gz	???
@@ -242,6 +243,10 @@ N	graphics/xv			xv-3.10a			NOFEE
 ?	japanese/less			less-332-iso243-244.patch.gz	???
 ?	japanese/less			less-332-iso244-245.patch.gz	???
 ?	japanese/onew-wnn4		jvim2.0r+onew2.2.10.tar.gz	???
+?	lang/egcs-snapshot		egcs-core-19980921.tar.gz	???
+?	lang/egcs-snapshot		egcs-g++-19980921.tar.gz	???
+?	lang/egcs-stable		egcs-core-1.1b.tar.gz		???
+?	lang/egcs-stable		egcs-g++-1.1b.tar.gz		???
 Y	lang/Gofer			gofer230a.tar.gz		BSD
 N	lang/STk			STk-3.1.tar.gz			NOFEE
 Y	lang/expect			expect.tar.gz			PD
