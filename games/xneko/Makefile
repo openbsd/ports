@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 18:14:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/31 21:29:08 brad Exp $
+
+# The source code for xneko is the same under both directories
+# (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
 
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
 CATEGORIES=	x11 games
-MASTER_SITES= ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite/usr/src/games/
+NEED_VERSION=	1.234
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite2/usr/src/games/
 EXTRACT_SUFX=	.tar
-IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
+IGNOREFILES=	xneko.tar
 
 MAINTAINER=	angelos@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=		Yes
+FAKE=	Yes
+FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
+		DESTDIR="${WRKINST}" BINOWN="root" BINMODE="755"
 
-FAKE=			Yes
-FAKE_FLAGS=	MANDIR=${PREFIX}/man/cat BINDIR=${PREFIX}/bin DESTDIR=${WRKINST}
+USE_X11=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/obj

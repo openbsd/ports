@@ -1,6 +1,6 @@
---- Makefile.orig	Mon May 31 21:46:11 1993
-+++ Makefile	Mon Sep 27 11:34:41 1999
-@@ -1,8 +1,16 @@
+--- Makefile.orig	Mon May 31 20:00:00 1993
++++ Makefile	Fri Mar 31 16:25:39 2000
+@@ -1,8 +1,10 @@
  #	@(#)Makefile	8.1 (Berkeley) 5/31/93
  
  PROG=	xneko
@@ -12,11 +12,5 @@
 +DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
 +CFLAGS+=	-I${X11BASE}/include
 +LDADD+=		-L${X11BASE}/lib -lX11 -lm
-+
-+MANDIR=        ${X11BASE}/man/cat
-+
-+BINOWN=        bin
-+BINDIR=        ${X11BASE}/bin
-+BINMODE=       755
  
  .include <bsd.prog.mk>
