@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2000/10/08 00:32:45 danh Exp $
---- Makefile.in.orig	Fri Oct  6 03:51:48 2000
-+++ Makefile.in	Sat Oct  7 20:12:57 2000
+$OpenBSD: patch-Makefile_in,v 1.4 2000/11/20 00:46:32 danh Exp $
+--- Makefile.in.orig	Tue Oct 17 00:15:53 2000
++++ Makefile.in	Sun Nov 19 19:23:38 2000
 @@ -24,7 +24,7 @@ MANDIR = @mandir@/man1
  ETCDIR = @ETCDIR@
  CC     = @CC@
  CFLAGS = @CFLAGS@
 -LIBS   = @LIBS@
 +LIBS   = @LIBS@ -ljpeg
- DEFS   = @DEFS@@OPTS@-DETCDIR='"@ETCDIR@"'
+ DEFS   = -DETCDIR=\"@ETCDIR@\" @DEFS@ @OPTS@
  LDFLAGS= @LDFLAGS@
  INSTALL= @INSTALL@
 @@ -86,9 +86,9 @@ distclean: clean
