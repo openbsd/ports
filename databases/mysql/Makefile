@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/07/22 22:25:51 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2001/08/12 22:48:37 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -8,10 +8,10 @@ COMMENT-tests=	"multithreaded SQL database (test suite)"
 VERSION=	3.23.40
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
-FULLPKGNAME-server=	mysql-server-${VERSION}${FLAVOR_EXT}
+PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.413
+NEED_VERSION=	1.435
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
@@ -20,10 +20,6 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
-
-.if !defined(PACKAGING)
-LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
-.endif
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -63,7 +59,9 @@ CONFIGURE_ARGS+= --with-berkeley-db --with-innodb
 CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-server"
+.if !defined(PACKAGING)
+LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+.elif ${SUBPACKAGE} == "-server"
 LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
 RUN_DEPENDS=	mysql:mysql-client-3.23.*:databases/mysql
 .endif
