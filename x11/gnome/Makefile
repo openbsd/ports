@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/10/07 05:48:53 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/07 17:08:03 marcm Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
@@ -14,6 +14,8 @@
      SUBDIR += libgnome
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomeui
+     SUBDIR += libgnomeprint
+     SUBDIR += libgnomeprintui
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
      SUBDIR += libs
