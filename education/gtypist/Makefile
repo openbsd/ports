@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/07 20:57:08 naddy Exp $
 
 COMMENT=	"interactive typing tutor"
 
-DISTNAME=	gtypist-2.5
+DISTNAME=	gtypist-2.6.2
 CATEGORIES=	education
-NEED_VERSION=	1.474
 HOMEPAGE=	http://www.gnu.org/software/gtypist/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -15,12 +14,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=gtypist/}
+MASTER_SITES=	${MASTER_SITE_GNU:=gtypist/}
 
 MODULES=	gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
+
+post-extract:
+	@rm -f ${WRKSRC}/doc/gtypist.info*
 
 .include <bsd.port.mk>
