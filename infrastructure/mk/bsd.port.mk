@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.380 2001/04/02 10:35:51 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.381 2001/04/02 11:32:32 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1645,7 +1645,7 @@ _package: ${_PKG_PREREQ}
 # PLIST should normally hold no duplicates.
 # This is left as a warning, because stuff such as @exec %F/%D
 # completion may cause legitimate dups.
-	@duplicates=`sort <${WRKPKG}/PLIST${SUBPACKAGE}|uniq -d`; \
+	@duplicates=`sort <${WRKPKG}/PLIST${SUBPACKAGE}|egrep -v '@(comment|mode|owner)'|uniq -d`; \
 	case "$${duplicates}" in "");; \
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
