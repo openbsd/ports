@@ -1,28 +1,25 @@
---- Makefile.orig	Tue Aug  8 14:28:27 1995
-+++ Makefile	Sat Jun 14 18:19:04 1997
-@@ -7,9 +7,9 @@
- #If the ar command fails on your system, consult the ar manpage
- #for your system. 
+--- Makefile.in.orig	Fri Jul 23 18:13:22 1999
++++ Makefile.in	Sun Jul 25 15:56:58 1999
+@@ -88,7 +88,7 @@
+ libgd_la_SOURCES = gd.c gd_io.c gd_io_file.c gd_io_dp.c gd_io_ss.c 	gd_png.c gd_ss.c gd_gd.c gd_gd2.c gdfontt.c gdfonts.c gdfontmb.c 	gdfontl.c gdfontg.c gdttf.c gdcache.c 	gd.h gdcache.h gdfontl.h gdfonts.h gd_io.h gdfontg.h 	gdfontmb.h gdfontt.h
  
--CC=gcc 
--AR=ar
--CFLAGS=-O
-+#CC=gcc 
-+#AR=ar
-+#CFLAGS=-O
- LIBS=-L./ -lgd -lm
  
- all: libgd.a gddemo giftogd webgif
-@@ -32,3 +32,11 @@
- clean:
- 	rm -f *.o *.a gddemo giftogd 
+-libgd_la_LIBADD = @LIBS@ -lm
++libgd_la_LIBADD = @LIBS@ -lm -L$(libdir) -lpng
  
-+install:
-+	install -cs -o bin -g bin gddemo giftogd webgif ${PREFIX}/bin
-+	install -c -o bin -g bin libgd.a ${PREFIX}/lib
-+	install -c -o bin -g bin gd.h gdfonts.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin gdfontt.h gdfontmb.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin gdfontl.h gdfontg.h ${PREFIX}/include/gd
-+	install -c -o bin -g bin index.html ${PREFIX}/share/examples/gd
-+	install -c -o bin -g bin demoin.gif ${PREFIX}/share/examples/gd
-
+ bin_PROGRAMS = pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
+ 
+@@ -138,11 +138,11 @@
+ LTLIBRARIES =  $(lib_LTLIBRARIES)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -I. -I$(srcdir) -I$(includedir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libgd_la_LDFLAGS = 
++libgd_la_LDFLAGS = -version-info 1:6:0
+ libgd_la_DEPENDENCIES = 
+ libgd_la_OBJECTS =  gd.lo gd_io.lo gd_io_file.lo gd_io_dp.lo gd_io_ss.lo \
+ gd_png.lo gd_ss.lo gd_gd.lo gd_gd2.lo gdfontt.lo gdfonts.lo gdfontmb.lo \
