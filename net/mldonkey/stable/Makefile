@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/03/07 19:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 18:24:40 naddy Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ocamlver=3.07
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 

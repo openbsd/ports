@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2004/06/20 01:25:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.51 2004/08/03 18:24:40 naddy Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= 	gnu dest
 CONFIGURE_ARGS=		--with-libpcap=/usr --with-libpcre=${LOCALBASE}
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nbase \
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcre \
 				${WRKSRC}/nsock/src \
 				${WRKSRC}/libpcap-possiblymodified
 

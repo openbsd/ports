@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/02 02:02:35 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/03 18:24:40 naddy Exp $
 
 COMMENT=	"wireless access point configuration tools"
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=	--without-included-gettext \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--with-libintl-prefix=${LOCALBASE}
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/systrace/

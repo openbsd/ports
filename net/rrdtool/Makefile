@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/06/22 22:00:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2004/08/03 18:24:40 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -33,7 +33,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
 		--enable-local-libpng \
 		--enable-local-zlib
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/contrib/php4
 
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS+=	tcl84::lang/tcl/8.4

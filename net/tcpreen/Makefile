@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/02 01:56:51 margarida Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/03 18:24:40 naddy Exp $
 
 COMMENT=		"simple tcp re-engineering tool"
 
@@ -23,5 +23,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		gettext
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin
 
 .include <bsd.port.mk>
