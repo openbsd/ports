@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_kernel_bsd_c,v 1.1 2001/04/16 12:15:26 lebel Exp $
+--- lib/kernel/bsd.c.orig	Wed Feb  2 15:46:42 2000
++++ lib/kernel/bsd.c	Thu Apr 12 10:56:21 2001
+@@ -7,7 +7,7 @@
+ 
+ #include <sys/sysctl.h>
+ /* #include <net/if_dl.h> */
+-#include <net/route.h>
++/* #include <net/route.h> */
+ 
+ struct sockaddr_dl *index2dl[MAX_INTERFACES];
+ 

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/10 14:01:19 espie Exp $
-# $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
+# $OpenBSD: Makefile,v 1.12 2001/04/16 12:15:22 lebel Exp $
 # Original from: Christopher Turan <turan@openbsd.org>
-#
 
-# 
-# What port/package will be created
-#
-DISTNAME=		mrt-1.6.0a-990430-src
-PKGNAME=		mrtd-1.6.0a
+COMMENT=		"daemon/libs/toolkit for routing BPG4, RIP, OSPF, etc."
+
+V=			2.2.2a
+DISTNAME=		mrt-${V}-src
+PKGNAME=		mrtd-${V}
+HOMEPAGE=		http://www.mrtd.net/
+
 CATEGORIES=     	net
-NEED_VERSION=		1.355
-
+NEED_VERSION=		1.392
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,7 +22,9 @@ MASTER_SITES=		ftp://ftp.merit.edu/net-research/mrt/
 
 CONFIGURE_STYLE=	gnu
 
-WRKDIST=			${WRKDIR}/mrt-1.6.0a/src
+WRKDIST=		${WRKDIR}/mrt-${V}/src
 
-FAKE_FLAGS=		DESTDIR=${WRKINST}/${TRUEPREFIX}/sbin MANDIR=${WRKINST}/${TRUEPREFIX}/man
+FAKE_FLAGS=		DESTDIR=${WRKINST}/${TRUEPREFIX}/sbin \
+			MANDIR=${WRKINST}/${TRUEPREFIX}/man
+
 .include <bsd.port.mk>

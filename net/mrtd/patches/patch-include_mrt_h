@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mrt_h,v 1.1 2001/04/16 12:15:25 lebel Exp $
+--- include/mrt.h.orig	Tue Dec 28 18:41:27 1999
++++ include/mrt.h	Thu Apr 12 10:56:21 2001
+@@ -680,7 +680,7 @@ int inet_pton (int af, const char *src, 
+ #ifdef NT
+ void *memmove (void *dest, const void *src, size_t n);
+ #else
+-char *memmove (char *dest, const char *src, size_t n);
++void *memmove (void *dest, const void *src, size_t n);
+ #endif /* NT */
+ #endif /* HAVE_MEMMOVE */
+ 
