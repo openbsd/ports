@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_connections_c,v 1.1 2003/04/18 14:24:10 avsm Exp $
+--- src/main/connections.c.orig	Tue Apr 15 19:45:12 2003
++++ src/main/connections.c	Tue Apr 15 19:46:12 2003
+@@ -140,7 +140,7 @@ int dummy_vfprintf(Rconnection con, cons
+     } else if(res < 0) { /* just a failure indication */
+ 	usedRalloc = TRUE;
+ 	b = R_alloc(10*BUFSIZE, sizeof(char));
+-	res = vsnprintf(buf, 10*BUFSIZE, format, ap);
++	res = vsnprintf(b, 10*BUFSIZE, format, ap);
+ 	if (res < 0) {
+ 	    *(b + 10*BUFSIZE) = '\0';
+ 	    warning("printing of extremely long output is truncated");
