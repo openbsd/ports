@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2004/08/08 17:14:24 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.9 2004/09/16 04:14:55 marcm Exp $
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gdk/
 share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
 share/gtk-doc/html/gdk-pixbuf/apas02.html
 share/gtk-doc/html/gdk-pixbuf/apas03.html
+share/gtk-doc/html/gdk-pixbuf/composite.png
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Module-Interface.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Versioning.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-animation.html
@@ -34,6 +37,7 @@ share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
 share/gtk-doc/html/gdk-pixbuf/rn01.html
 share/gtk-doc/html/gdk-pixbuf/rn02.html
+share/gtk-doc/html/gdk-pixbuf/style.css
 share/gtk-doc/html/gdk-pixbuf/up.png
 share/gtk-doc/html/gdk/GdkDisplay.html
 share/gtk-doc/html/gdk/GdkDisplayManager.html
@@ -135,6 +139,7 @@ share/gtk-doc/html/gdk/sizing.png
 share/gtk-doc/html/gdk/spider.png
 share/gtk-doc/html/gdk/spraycan.png
 share/gtk-doc/html/gdk/star.png
+share/gtk-doc/html/gdk/style.css
 share/gtk-doc/html/gdk/target.png
 share/gtk-doc/html/gdk/tcross.png
 share/gtk-doc/html/gdk/top_left_arrow.png
@@ -315,6 +320,7 @@ share/gtk-doc/html/gtk/WindowWidgets.html
 share/gtk-doc/html/gtk/ch01.html
 share/gtk-doc/html/gtk/checklist-gdkeventexpose-region.html
 share/gtk-doc/html/gtk/checklist-modifiers.html
+share/gtk-doc/html/gtk/glossary.html
 share/gtk-doc/html/gtk/gtk-Accelerator-Maps.html
 share/gtk-doc/html/gtk/gtk-Bindings.html
 share/gtk-doc/html/gtk/gtk-Clipboards.html
@@ -443,5 +449,6 @@ share/gtk-doc/html/gtk/stock_zoom_1_24.png
 share/gtk-doc/html/gtk/stock_zoom_fit_24.png
 share/gtk-doc/html/gtk/stock_zoom_in_24.png
 share/gtk-doc/html/gtk/stock_zoom_out_24.png
+share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png

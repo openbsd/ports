@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.5 2004/08/08 17:14:24 marcm Exp $
---- ltmain.sh.orig	Sun Apr 11 19:01:57 2004
-+++ ltmain.sh	Sat Aug  7 15:44:12 2004
-@@ -1857,9 +1857,12 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.6 2004/09/16 04:14:55 marcm Exp $
+--- ltmain.sh.orig	Thu Apr  8 06:34:47 2004
++++ ltmain.sh	Sun Sep  5 20:34:43 2004
+@@ -1847,9 +1847,12 @@ EOF
  	  if test "$linkmode,$pass" = "prog,link"; then
  	    compile_deplibs="$deplib $compile_deplibs"
  	    finalize_deplibs="$deplib $finalize_deplibs"
@@ -16,7 +16,7 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/08 17:14:24 marcm Exp $
  	  continue
  	  ;;
  	-l*)
-@@ -2024,6 +2027,7 @@ EOF
+@@ -2014,6 +2017,7 @@ EOF
  	  fi
  	  continue
  	  ;;
@@ -24,7 +24,7 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/08 17:14:24 marcm Exp $
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -2274,10 +2278,6 @@ EOF
+@@ -2262,10 +2266,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -33,11 +33,11 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/08 17:14:24 marcm Exp $
 -	    need_relink=yes
 -	  fi
  	  # This is a shared library
- 
- 	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5827,6 @@ relink_command=\"$relink_command\""
+ 	
+       # Warn about portability, can't link against -module's on some systems (darwin)
+@@ -5804,40 +5804,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit $EXIT_SUCCESS
+     test "$show" = : && exit 0
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -73,6 +73,6 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/08 17:14:24 marcm Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit $EXIT_SUCCESS
+     exit 0
      ;;
  
