@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 01:34:12 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/09 01:54:12 brad Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
@@ -17,8 +17,8 @@ CONFIGURE_ARGS+= --enable-transparency --enable-xpm-background
 #		--enable-wtmp \
 #		--enable-menubar
 
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wterm ${PREFIX}/bin
