@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 1999/02/27 15:44:09 rohee Exp $
+# $OpenBSD: Makefile,v 1.21 1999/12/05 18:28:28 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -13,7 +13,7 @@
      SUBDIR += exmh2
      SUBDIR += faces
      SUBDIR += fetchmail
-#    SUBDIR += imap-uw
+     SUBDIR += imap-uw
 #    SUBDIR += mailagent
 #    SUBDIR += majorcool
 #    SUBDIR += majordomo
