@@ -1,15 +1,28 @@
---- Makefile.orig	Tue Jan 26 09:35:18 1999
-+++ Makefile	Fri Oct 29 21:20:30 1999
-@@ -34,6 +34,7 @@
- 	@echo "make aix            IBM AIX (tested: 4.2)"
+--- Makefile.orig	Fri Feb 18 20:05:47 2000
++++ Makefile	Fri Feb 18 20:07:40 2000
+@@ -9,8 +9,10 @@
+ MANDIR=$(PREFIX)/man
+ SECTION=1
+ 
+-# Enable the below line If your plathome support IPv6
+-#CFLAGS+= -DINET6
++# Enable the below line if your platform supports IPv6
++.if defined(USE_INET6) && ${USE_INET6} == "YES"
++CFLAGS+= -DINET6
++.endif
+ # Additional LIBDIR and libraries if exist
+ IPV6LIBDIR=
+ IPV6LIB=
+@@ -54,6 +56,7 @@
+ 	@echo "make aix-tk3play    IBM AIX"
  	@echo "make os2            IBM OS/2"
  	@echo "make netbsd         NetBSD"
 +	@echo "make openbsd        OpenBSD"
  	@echo "make bsdos          BSDI BSD/OS"
+ 	@echo "make bsdos4         BSDI BSD/OS 4.0"
  	@echo "make bsdos-nas      BSDI BSD/OS with NAS support"
- 	@echo "make mint           MiNT on Atari"
-@@ -364,6 +365,21 @@
- 		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+@@ -508,6 +511,21 @@
+ 		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
  			-funroll-all-loops -ffast-math -DROT_I386 \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DNETBSD' \
 +		mpg123-make
@@ -17,14 +30,14 @@
 +openbsd:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
-+		CFLAGS='-Wall -ansi -pedantic -O3 -fomit-frame-pointer \
++		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O3 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DTERM_CONTROL \
 +			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
 +
 +openbsd-i386:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o audio_openbsd.o term.o' \
-+		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
++		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DTERM_CONTROL \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
  		mpg123-make
