@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/01 15:44:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/06 22:28:19 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -23,12 +23,11 @@ MASTER_SITE_SUBDIR=	flac
 
 LIB_DEPENDS=	xmms.2::audio/xmms \
 		FLAC.2::audio/flac
-BUILD_DEPENDS=	::devel/automake
 
 WRKDIST=	${WRKDIR}/flac-${VERSION}
 WRKSRC=		${WRKDIST}/src/plugin_xmms
 
-CONFIGURE_STYLE=		gnu
+CONFIGURE_STYLE=		gnu automake
 MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}
 
 post-patch:
