@@ -1,0 +1,5 @@
+This port is used for people who want/need to use a very recent version
+of egcs. It tracks the latest snapshots. At any given point, it's likely
+to be somewhat broken. Use egcs-stable for the released version.
+
+For more details, refer to to http://egcs.cygnus.org/
