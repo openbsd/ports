@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/16 23:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/20 17:34:14 brad Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
 PKGNAME=	netpbm-19940301
 CATEGORIES=	graphics
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/
 MASTER_SITES0=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/ \
 		ftp://ftp.x.org/contrib/utilities/
@@ -12,19 +12,18 @@ MASTER_SITES1=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
 		pnmtopng-2.37.3.tar.gz:1
 
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+		tiff.35::graphics/tiff \
+		png.1.6::graphics/png
+
 MAINTAINER=	brad@openbsd.org
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-
 # Jumble of licenses, some of them don't allow for commercial redistribution
 # TODO: Sort out, maybe separate into two distinct packages ?
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_PACKAGE_CDROM=	No
-
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff \
-		png.1.6::graphics/png
 
 MAKE_ENV=	PREFIX=${PREFIX} MANCP="${INSTALL_MAN}"
 FAKE_FLAGS= 	PREFIX=${WRKINST}${PREFIX} MANCP="${INSTALL_MAN}"
