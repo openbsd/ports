@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/03/29 00:39:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/24 11:47:52 espie Exp $
 
 COMMENT=	"typing tutor for dvorak keyboards"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		c ncurses
 
 MASTER_SITES=	http://www.linalco.com/ragnar/
 
