@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/10 19:57:04 jakob Exp $
+bin/speedy
+bin/speedy_backend
+lib/mod_speedycgi.so
+sbin/mod_speedycgi-enable
+${P5SITE}/CGI/SpeedyCGI.pm
+@dirrm ${P5ARCH}/auto/CGI/SpeedyCGI

@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2002/11/10 19:57:04 jakob Exp $
+--- Makefile.PL.orig	Wed Sep 18 08:21:06 2002
++++ Makefile.PL	Sun Nov 10 16:03:21 2002
+@@ -16,11 +16,11 @@ requires a working copy of "apxs" in you
+ support, and additional Apache configuration.
+ 
+ END
+-print "Compile mod_speedycgi (default no)? ";
++#print "Compile mod_speedycgi (default no)? ";
+ 
+ my @dirs = qw(src speedy_backend speedy);
+ my $macro = $write_makefile_common{macro};
+-if (<STDIN> =~ /y/i) {
++if (1) {
+     die "ERROR: Could not find a working copy of 'apxs' in your path.\n"
+ 	unless $macro->{APACHE_APXS_WORKS};
+     print "Compiling for Apache version $macro->{APACHE_VERSION}\n";

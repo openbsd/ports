@@ -1,0 +1,12 @@
+SpeedyCGI is a way to run perl scripts persistently, which can make them
+run much more quickly.
+
+After the script is initially run, instead of exiting, the perl
+interpreter is kept running. During subsequent runs, this interpreter is
+used to handle new executions instead of starting a new perl interpreter
+each time. A very fast frontend program, written in C, is executed for
+each request. This fast frontend then contacts the persistent Perl
+process, which is usually already running, to do the work and return the
+results.
+
+WWW: ${HOMEPAGE}
