@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/30 06:42:47 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/01 00:27:02 marc Exp $
 # FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp
 #
 
@@ -33,12 +33,14 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 
 CONFIGURE_ARGS+=	--with-mit-threads=no
 
+.if !defined(NO_WARNINGS)
 .if (${MACHINE_ARCH} != "i386")
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "*** WARNING: this port has only been tested on i386"
 	@${ECHO} "*** and may not work on other architectures"
 	@${ECHO} ""
+.endif
 .endif
 
 pre-install:
