@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/18 04:11:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/03/25 00:35:41 brad Exp $
 bin/konq-e
-libexec/konq-e
 lib/konq-e/apps/Applications/konqueror.desktop
 lib/konq-e/pics/konqueror.png
 lib/konq-e/share/apps/khtml/css/html4.css
 lib/konq-e/share/apps/kssl/caroot/ca-bundle.crt
 lib/konq-e/share/config/charsets
 lib/konq-e/share/config/khtmlrc
+libexec/konq-e
 @dirrm lib/konq-e/share/config
 @dirrm lib/konq-e/share/apps/kssl/caroot
 @dirrm lib/konq-e/share/apps/kssl

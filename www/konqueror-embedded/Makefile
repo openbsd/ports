@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/18 04:11:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/25 00:35:41 brad Exp $
 
 COMMENT='stand-alone web browser'
 CATEGORIES=www x11
@@ -6,8 +6,9 @@ NEED_VERSION=1.513
 
 MODULES=	qt2
 
-DISTNAME=konqueror-embedded-snapshot_20020127
-PKGNAME=konqueror-20020127
+DATE=	20020311
+DISTNAME=konqueror-embedded-snapshot-${DATE}
+PKGNAME=konqueror-${DATE}
 HOMEPAGE=http://www.konqueror.org/embedded.html
 MASTER_SITES= http://devel-home.kde.org/~hausmann/snapshots/
 
@@ -27,7 +28,6 @@ CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 PATCH_LIST=	${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
-
 USE_GMAKE=Yes
 
 LIB_DEPENDS=	png.2::graphics/png \
@@ -44,7 +44,6 @@ MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 #MAKE_FLAGS+=AM_CXXFLAGS=-g AM_CFLAGS=-g
 
 # ensures configure does not pick up automake
-
 
 KONQ=${PREFIX}/lib/konq-e
 post-build:

@@ -1,16 +1,16 @@
-$OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.2 2002/03/18 03:24:34 espie Exp $
---- konq-embed/dropin/klibloader.cpp.orig	Fri Oct 12 01:03:53 2001
-+++ konq-embed/dropin/klibloader.cpp	Mon Mar 18 04:14:44 2002
-@@ -25,6 +25,8 @@
- 
- #include "klibloader.h"
+$OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.3 2002/03/25 00:35:41 brad Exp $
+--- konq-embed/dropin/klibloader.cpp.orig	Sun Feb  3 10:25:38 2002
++++ konq-embed/dropin/klibloader.cpp	Sun Mar 24 02:09:01 2002
+@@ -27,6 +27,8 @@
+ #include "kglobal.h"
+ #include <kstddirs.h>
  
 +#include <stdlib.h>
 +#include <string.h>
  #include <assert.h>
  
  #if defined(HAVE_DLFCN)
-@@ -85,6 +87,17 @@ KDLOpenLibrary::~KDLOpenLibrary()
+@@ -87,6 +89,17 @@ KDLOpenLibrary::~KDLOpenLibrary()
  void *KDLOpenLibrary::symbol( const char *name )
  {
      void *res = dlsym( m_handle, name );
@@ -28,7 +28,7 @@ $OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.2 2002/03/18 03:24:34 espie
      if ( !res )
          res = KLibrary::symbol( name );
      return res;
-@@ -119,6 +132,9 @@ KLibrary *KLibLoader::library( const cha
+@@ -144,6 +157,9 @@ KLibrary *KLibLoader::library( const cha
  
  KLibrary *KLibLoader::globalLibrary( const char *name )
  {
