@@ -1,3 +1,4 @@
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib/kaffe
 man/man1/kaffe.1
 bin/appletviewer
 bin/install-jar
@@ -58,4 +59,4 @@ share/kaffe/servlet.jar
 @dirrm share/kaffe
 @dirrm include/kaffe
 @dirrm lib/kaffe
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib/kaffe
