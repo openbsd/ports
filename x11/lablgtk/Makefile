@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/20 01:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/21 16:10:02 naddy Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+RUN_DEPENDS=	::lang/ocaml
 
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk
