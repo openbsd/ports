@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/04/22 16:07:23 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/05/13 02:10:43 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.88.1
@@ -10,7 +10,7 @@ MAINTAINER=	brad@openbsd.org
 
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
-		ftp://ftp.mathematik.th-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
+		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
 
 USE_X11=	yes
 SEPARATE_BUILD=	yes
