@@ -1,6 +1,6 @@
---- common.h.orig	Tue Jan  4 20:42:00 1994
-+++ common.h	Mon Nov 29 08:57:09 1999
-@@ -73,7 +73,7 @@
+--- common.h.orig	Wed Jan  5 02:42:00 1994
++++ common.h	Mon Oct  8 00:08:30 2001
+@@ -73,7 +73,7 @@ common.h
  #endif
  
  #ifdef  UNIX
@@ -9,3 +9,11 @@
  /* name of environment variable holding path of table files */
  #define         MPEGTABENV      "MPEGTABLES"
  #define         PATH_SEPARATOR  "/"        /* how to build paths */
+@@ -116,6 +116,7 @@ common.h
+ 
+ #ifdef  UNIX
+ #include        <unistd.h>
++#include        <stdlib.h>
+ #endif  /* UNIX */
+ 
+ #ifdef  MACINTOSH
