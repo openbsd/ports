@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/04/18 17:21:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/23 12:09:18 robert Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -20,8 +20,10 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}release/ \
 		http://www.devolution.com/~slouken/SDL/release/
+MASTER_SITES0=	http://dev.beastie.hu/ \
+		http://www.beastie.hu/
 
-FLAVORS=	sun esd arts aa no_x11
+FLAVORS=	sun esd arts aa caca no_x11
 FLAVOR?=	sun
 
 SEPARATE_BUILD=	concurrent
@@ -70,6 +72,13 @@ LIB_DEPENDS+=	aa::graphics/aalib
 CONFIGURE_ARGS+= --enable-video-aalib
 .else
 CONFIGURE_ARGS+= --disable-video-aalib
+.endif
+
+.if ${FLAVOR:L:Mcaca}
+PATCH_DIST_STRIP= -p1
+PATCHFILES=	patch-libsd1.2.6-libcaca0.9.diff:0
+LIB_DEPENDS+=	caca::graphics/libcaca
+CONFIGURE_ARGS+= --enable-video-caca
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
