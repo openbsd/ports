@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2003/04/30 14:37:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/21 18:18:31 sturm Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.76
+VERSION=		0.87
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
 HOMEPAGE=		http://tmda.net/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
+MAINTAINER=		Dave Steinberg <dave@redterror.net>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,15 +19,9 @@ MASTER_SITES=		http://tmda.net/releases/ \
 			http://tmda.net/releases/old/
 EXTRACT_SUFX=		.tgz
 
-FLAVORS=		no_x11
-FLAVOR?=
-
 PYTHON_VER=     	2.2
 
-.if ${FLAVOR} != "no_x11"
-RUN_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter
-.endif
-RUN_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 PYTHON_LIBDIR=		lib/python${PYTHON_VER}/site-packages
@@ -49,9 +43,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tmda
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
-.if ${FLAVOR} == "no_x11"
-	@rm -f ${PREFIX}/bin/tmda-gui
-.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tmda/contrib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tmda
 	${INSTALL_DATA} ${WRKSRC}/contrib/sample.config \
