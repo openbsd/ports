@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/09/15 04:01:31 shell Exp $
+# $OpenBSD: Makefile,v 1.28 2002/09/20 09:45:36 kevlo Exp $
 
 COMMENT=	"XSLT C Library for GNOME"
 
@@ -8,7 +8,7 @@ HOMEPAGE=	http://xmlsoft.org/XSLT/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-LIB_DEPENDS=	xml2.6.23::textproc/libxml
+LIB_DEPENDS=	xml2.6::textproc/libxml
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
