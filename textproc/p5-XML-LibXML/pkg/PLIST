@@ -1,27 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/07/01 07:16:34 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/08/07 17:09:41 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Attr.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Boolean.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/CDATASection.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Comment.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Document.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/DocumentFragment.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Dtd.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Element.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Literal.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Namespace.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Node.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/NodeList.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Number.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Builder.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Generator.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Text.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.so
 man/man3/XML::LibXML.3p
 man/man3/XML::LibXML::Attr.3p
+man/man3/XML::LibXML::Boolean.3p
 man/man3/XML::LibXML::CDATASection.3p
 man/man3/XML::LibXML::Comment.3p
 man/man3/XML::LibXML::Document.3p
 man/man3/XML::LibXML::DocumentFragment.3p
 man/man3/XML::LibXML::Dtd.3p
 man/man3/XML::LibXML::Element.3p
+man/man3/XML::LibXML::Literal.3p
 man/man3/XML::LibXML::Namespace.3p
 man/man3/XML::LibXML::Node.3p
+man/man3/XML::LibXML::NodeList.3p
+man/man3/XML::LibXML::Number.3p
+man/man3/XML::LibXML::SAX::Builder.3p
+man/man3/XML::LibXML::SAX::Generator.3p
 man/man3/XML::LibXML::Text.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML

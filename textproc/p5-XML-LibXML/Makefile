@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/20 17:38:12 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/08/07 17:09:41 shell Exp $
 
 COMMENT=	"perl interface to the libxml2 library"
 
-VERSION=	0.99
+VERSION=	1.00
 DISTNAME=	XML-LibXML-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
