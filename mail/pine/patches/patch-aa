@@ -2,7 +2,7 @@
 --- pico/makefile.bsf	Fri Jun 14 00:15:20 1996
 ***************
 *** 0 ****
---- 1,95 ----
+--- 1,88 ----
 + #
 + #   Michael Seibel
 + #   Networks and Distributed Computing
@@ -59,8 +59,6 @@
 + 
 + HFILES=		estruct.h edef.h efunc.h ebind.h pico.h osdep.h
 + 
-+ # Need this for the shared library rule to work correctly
-+ .SUFFIXES: .o .so
 + 
 + #
 + # dependencies for the Unix versions of pico and libpico.a
@@ -79,16 +77,11 @@
 + 		$(LIBCMD) $(LIBARGS) libpico.a $(OFILES)
 + 		$(RANLIB) libpico.a
 + 
-+ libpico.so.1.3:	osdep.c osdep.h $(SOFILES)
-+ 		ld -Bshareable -x -o libpico.so.1.3 $(SOFILES)
-+ 
-+ pico:		main.c libpico.so.1.3
++ pico:		main.c libpico.a
 + 		$(CC) $(CFLAGS) main.c -L. -lpico $(LIBS) -o pico
 + 
-+ pilot:		pilot.c libpico.so.1.3
++ pilot:		pilot.c libpico.a
 + 		$(CC) $(CFLAGS) pilot.c -L. -lpico $(LIBS) -o pilot
-+ 
-+ .c.so:		; $(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 + 
 + .c.o:		; $(CC) -c $(CFLAGS) $*.c
 + 
@@ -97,4 +90,4 @@
 + $(SOFILES):	$(HFILES)
 + 
 + clean:
-+ 		rm -f *.a *.so.1.3 *.o *.so *~ osdep.c osdep.h pico pilot
++ 		rm -f *.a *.so.1.3 *.o *~ osdep.c osdep.h pico pilot
