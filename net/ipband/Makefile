@@ -1,13 +1,13 @@
 COMMENT=	"pcap based IP traffic monitor"
 
-VERSION=	0.7
+VERSION=	0.7.1
 DISTNAME=	ipband-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.504
 
 HOMEPAGE=	http://ipband.sourceforge.net/
 
-MAINTAINER=	Vincent Derrien <vincent@derrien.org>
+MAINTAINER=	Vincent Derrien <vincent.derrien@free.fr>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
