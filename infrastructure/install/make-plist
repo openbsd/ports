@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.49 2004/08/08 16:43:15 espie Exp $
+# $OpenBSD: make-plist,v 1.50 2004/08/08 18:09:04 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,7 +24,6 @@ use File::Spec;
 use File::Find;
 use File::Compare;
 use File::Basename;
-use POSIX;
 
 
 my $base;
@@ -746,27 +745,31 @@ for my $plist (@l) {
 	}
 }
 
-if (defined $ENV{'GROUP'}) {
-	POSIX::setgid($ENV{'GROUP'});
-}
-if (defined $ENV{'OWNER'}) {
-	POSIX::setuid($ENV{'OWNER'});
-}
+{
+	local ($), $>);
 
-for my $plist (@l) {
-	if (!$plist->{nonempty}) {
-		print $plist->{filename}, " is empty\n";
-		next;
+	if (defined $ENV{'GROUP'}) {
+		$) = $ENV{'GROUP'};
 	}
-	my $orig = $plist->{original};
-	if (defined $orig) {
-		rename($orig->{filename}, $orig->{filename}.".orig");
+	if (defined $ENV{'OWNER'}) {
+		$> = $ENV{'OWNER'};
 	}
-	$plist->tofile($plist->{filename});
-	if (defined $orig) {
-		if (compare($plist->{filename}, $orig->{filename}.".orig") == 0) {
-			print $plist->{filename}, " unchanged, removing ", $orig->{filename}.".orig\n";
-			unlink($orig->{filename}.".orig");
+
+	for my $plist (@l) {
+		if (!$plist->{nonempty}) {
+			print $plist->{filename}, " is empty\n";
+			next;
+		}
+		my $orig = $plist->{original};
+		if (defined $orig) {
+			rename($orig->{filename}, $orig->{filename}.".orig");
+		}
+		$plist->tofile($plist->{filename});
+		if (defined $orig) {
+			if (compare($plist->{filename}, $orig->{filename}.".orig") == 0) {
+				print $plist->{filename}, " unchanged, removing ", $orig->{filename}.".orig\n";
+				unlink($orig->{filename}.".orig");
+			}
 		}
 	}
 }
