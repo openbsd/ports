@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2002/03/29 02:53:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2002/03/29 03:41:08 brad Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
 DISTNAME=	mrtg-2.9.12a
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/mrtg/ \
 		http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg -lttf -lpng -lz -lXpm -lX11"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg -lttf"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
