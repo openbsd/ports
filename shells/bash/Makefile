@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/01/19 15:21:15 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/26 20:37:08 brad Exp $
 
 DISTNAME=	bash-1.14.7
 PKGNAME=	${DISTNAME}p1
@@ -24,6 +24,8 @@ MAKE_ENV=	CPP_DEFINES="-DSYSDEP_LDFLAGS=-static"
 .endif
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/documentation/builtins.1 \
+		${PREFIX}/man/man1/bash_builtins.1
 	@strip ${PREFIX}/bin/bash
 
 .include <bsd.port.mk>
