@@ -1,15 +1,25 @@
---- surfraw.conf.in.orig	Tue Aug 22 19:01:50 2000
-+++ surfraw.conf.in	Sun Oct  7 07:21:14 2001
-@@ -27,7 +27,7 @@ def   SURFRAW_conf		$HOME/.surfraw.conf
+--- surfraw.conf.in.orig	Thu Oct 25 02:04:43 2001
++++ surfraw.conf.in	Fri Oct 26 22:26:37 2001
+@@ -27,15 +27,15 @@ def   SURFRAW_conf			$HOME/.surfraw.conf
+ 
+ # graphical browser? defaults to yes for meatminds. text browser users can
+ # work it out how to chang eit.
+-def   SURFRAW_graphical		yes
++def   SURFRAW_graphical		no
+ 
+ # name/path of text browser executable
+ # e.g links, lynx, w3m
+-def   SURFRAW_text_browser		@sr_text_browser@
++def   SURFRAW_text_browser		lynx
  
  # name/path of browser executable
- # e.g links, lynx, w3m, surfraw-netscape-remote, netscape etc
--def   SURFRAW_browser		@sr_browser@
-+def   SURFRAW_browser		/usr/bin/lynx
+ # e.g mozilla, netscape etc
+-def   SURFRAW_graphical_browser	@sr_graphical_browser@
++def   SURFRAW_graphical_browser	none
  
- # browser arguments, or "none"
- def   SURFRAW_browser_args	none
-@@ -59,4 +59,4 @@ def   SURFRAW_results		30
+ # text browser arguments, or "none"
+ def   SURFRAW_text_browser_args	none
+@@ -73,4 +73,4 @@ def   SURFRAW_results		30
  defyn SURFRAW_escape_url_args	yes
  
  # file containing list of elvi

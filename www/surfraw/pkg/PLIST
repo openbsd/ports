@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/07 18:17:44 heko Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/10/26 23:39:44 naddy Exp $
 bin/W
 bin/altavista
 bin/amazon
@@ -9,31 +9,34 @@ bin/britannica
 bin/cite
 bin/cnn
 bin/currency
+bin/debbugs
+bin/debcontents
+bin/debpackages
 bin/deja
 bin/excite
 bin/fast
 bin/freshmeat
 bin/ftpsearch
 bin/google
-bin/ircsearch
 bin/jake
 bin/linuxdoc
 bin/netbsd
-bin/newscientist
 bin/pubmed
 bin/raging
 bin/rhyme
 bin/scaleplus
 bin/slashdot
+bin/sourceforge
 bin/stockquote
 bin/sundocs
 bin/sunsolve
 bin/surfraw
-bin/surfraw-netscape-remote
+bin/swhois
 bin/thesaurus
 bin/translate
 bin/webster
 bin/wetandwild
+bin/woffle
 bin/xxx
 bin/yahoo
 share/doc/surfraw/HACKING

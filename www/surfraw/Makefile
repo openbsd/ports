@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/07 18:17:44 heko Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/26 23:39:44 naddy Exp $
 
 COMMENT=	"command line interface to popular WWW search engines"
 
-DISTNAME=	surfraw-1.0.3
+DISTNAME=	surfraw-1.0.4
 CATEGORIES=	www
 NEED_VERSION=	1.363
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= surfraw
-
 HOMEPAGE=	http://surfraw.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
+		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
 
 CONFIGURE_STYLE= gnu
 
