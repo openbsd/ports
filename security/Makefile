@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/02/10 22:09:27 dugsong Exp $
+# $OpenBSD: Makefile,v 1.34 2000/02/23 03:33:23 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -17,6 +17,7 @@
 #    SUBDIR += fwtk
      SUBDIR += gnupg
      SUBDIR += isic
+     SUBDIR += its4
      SUBDIR += john
      SUBDIR += l0phtcrack
      SUBDIR += libident
