@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/02 23:32:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/11 12:55:28 jolan Exp $
 
 COMMENT=        "Zope documentation"
 
@@ -8,7 +8,7 @@ DISTNAME=	ZopeBook
 PKGNAME=	zopebook-${VERSION}
 CATEGORIES=	books
 
-HOMEPAGE=	http://www.zope.org/Documentation/Books/ZopeBook/current/
+HOMEPAGE=	http://old.zope.org/Documentation/Books/ZopeBook/current/
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zopebook-${VERSION}
