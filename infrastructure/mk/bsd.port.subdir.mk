@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.62 2003/08/11 20:10:41 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.63 2003/08/15 00:35:10 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -158,11 +158,10 @@ README.html:
 _print-packagename:
 	@echo "README"
 
-.PHONY: all fetch fetch-list package extract configure build clean \
-	describe distclean deinstall reinstall checksum mirror-distfiles \
-	list-distfiles show readmes \
-	install fake \
-	all-packages cdrom-packages ftp-packages packageinstall \
-	link-categories unlink-categories dir-depends package-dir-depends \
-	regress lib-depends-check homepage-links manpages-check \
-	print-packagename license-check
+.PHONY: all fetch package fake extract configure \
+	build describe distclean deinstall install \
+	reinstall checksum show fetch-makefile \
+	link-categories unlink-categories regress lib-depends-check \
+	homepage-links manpages-check license-check \
+	all-dir-depends build-dir-depends run-dir-depends \
+	clean readmes _print-packagename
