@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/05 00:17:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/04 23:07:25 pvalchev Exp $
 
-COMMENT=		"a reminder/task program aimed at developers"
+COMMENT=		"reminder/task program aimed at developers"
 
 VERSION=		0.1.17
 DISTNAME=		devtodo-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/08 01:28:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/04 23:07:25 pvalchev Exp $
 
-COMMENT=		"a PDF viewer for GNOME"
+COMMENT=		"PDF viewer for GNOME"
 
 DISTNAME=		gpdf-0.110
 CATEGORIES=		textproc x11/gnome
