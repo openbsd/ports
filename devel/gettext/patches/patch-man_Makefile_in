@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2001/05/30 02:14:13 brad Exp $
+--- man/Makefile.in.orig	Tue May 29 21:47:03 2001
++++ man/Makefile.in	Tue May 29 21:47:37 2001
+@@ -101,7 +101,7 @@ lispdir = @lispdir@
+ 
+ VERSION = @VERSION@
+ mandir = @mandir@
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(datadir)/doc/@PACKAGE@
+ htmldir = $(docdir)
+ 
+ AUTOMAKE_OPTIONS = 1.2 gnits

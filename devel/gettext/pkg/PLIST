@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/05/14 20:59:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2001/05/30 02:14:14 brad Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -15,12 +15,25 @@ info/gettext.info
 lib/libintl.a
 lib/libintl.la
 %%SHARED%%
+man/man3/bind_textdomain_codeset.3
+man/man3/bindtextdomain.3
+man/man3/dcgettext.3
+man/man3/dcngettext.3
+man/man3/dgettext.3
+man/man3/dngettext.3
+man/man3/gettext.3
+man/man3/ngettext.3
+man/man3/textdomain.3
 share/aclocal/codeset.m4
 share/aclocal/gettext.m4
+share/aclocal/glibc21.m4
 share/aclocal/iconv.m4
 share/aclocal/isc-posix.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
+share/doc/gettext/bind_textdomain_codeset.3.html
+share/doc/gettext/bindtextdomain.3.html
+share/doc/gettext/gettext.3.html
 share/doc/gettext/gettext_1.html
 share/doc/gettext/gettext_10.html
 share/doc/gettext/gettext_11.html
@@ -37,6 +50,8 @@ share/doc/gettext/gettext_8.html
 share/doc/gettext/gettext_9.html
 share/doc/gettext/gettext_foot.html
 share/doc/gettext/gettext_toc.html
+share/doc/gettext/ngettext.3.html
+share/doc/gettext/textdomain.3.html
 share/gettext/ABOUT-NLS
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
@@ -64,19 +79,25 @@ share/gettext/intl/localcharset.c
 share/gettext/intl/locale.alias
 share/gettext/intl/localealias.c
 share/gettext/intl/ngettext.c
+share/gettext/intl/plural.c
 share/gettext/intl/plural.y
 share/gettext/intl/ref-add.sin
 share/gettext/intl/ref-del.sin
 share/gettext/intl/textdomain.c
 share/gettext/po-mode.el
 share/gettext/po/Makefile.in.in
+share/locale/cs/LC_MESSAGES/gettext.mo
 share/locale/da/LC_MESSAGES/gettext.mo
 share/locale/de/LC_MESSAGES/gettext.mo
 share/locale/el/LC_MESSAGES/gettext.mo
 share/locale/en@boldquot/LC_MESSAGES/gettext.mo
 share/locale/en@quot/LC_MESSAGES/gettext.mo
 share/locale/es/LC_MESSAGES/gettext.mo
+share/locale/et/LC_MESSAGES/gettext.mo
 share/locale/fr/LC_MESSAGES/gettext.mo
+share/locale/gl/LC_MESSAGES/gettext.mo
+share/locale/id/LC_MESSAGES/gettext.mo
+share/locale/it/LC_MESSAGES/gettext.mo
 share/locale/ja/LC_MESSAGES/gettext.mo
 share/locale/ko/LC_MESSAGES/gettext.mo
 share/locale/locale.alias
@@ -86,9 +107,11 @@ share/locale/no/LC_MESSAGES/gettext.mo
 share/locale/pl/LC_MESSAGES/gettext.mo
 share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/pt_BR/LC_MESSAGES/gettext.mo
+share/locale/ru/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 share/locale/tr/LC_MESSAGES/gettext.mo
+share/locale/zh/LC_MESSAGES/gettext.mo
 @dirrm share/gettext/po
 @dirrm share/gettext/intl
 @dirrm share/gettext

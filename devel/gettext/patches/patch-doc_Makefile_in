@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Thu Apr 19 14:12:22 2001
-+++ doc/Makefile.in	Mon May 14 15:46:14 2001
-@@ -94,7 +94,7 @@ YACC = @YACC@
+--- doc/Makefile.in.orig	Wed May 23 16:48:53 2001
++++ doc/Makefile.in	Tue May 29 20:57:55 2001
+@@ -97,7 +97,7 @@ YACC = @YACC@
  aclocaldir = @aclocaldir@
  lispdir = @lispdir@
  
@@ -9,7 +9,7 @@
  dvidir = $(docdir)
  psdir = $(docdir)
  pdfdir = $(docdir)
-@@ -105,7 +105,7 @@ AUTOMAKE_OPTIONS = 1.2 gnits
+@@ -108,7 +108,7 @@ AUTOMAKE_OPTIONS = 1.2 gnits
  SED = sed
  RM = rm -f
  
