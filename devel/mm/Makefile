@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/02 15:20:32 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/06/09 15:08:59 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
-DISTNAME=	mm-1.0.5
+DISTNAME=	mm-1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/mm/
 
