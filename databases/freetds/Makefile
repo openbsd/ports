@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2005/02/19 22:25:48 alek Exp $
 
 V=		0.62.4
 DISTNAME=	freetds-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
 
 # GPL
@@ -24,7 +25,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threadsafe \
 		--disable-odbc
 MAKE_ENV=	RM=rm
-MODULES=	devel/gettext
+MODULES=	converters/libiconv
 DOC=		share/doc/freetds-$V
 SUBST_VARS=	DOC V
 
