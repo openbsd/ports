@@ -1,6 +1,6 @@
-$OpenBSD: patch-Xdefaults_in,v 1.1 2001/12/06 04:09:54 form Exp $
---- Xdefaults.in.orig	Thu Jul  6 11:44:36 2000
-+++ Xdefaults.in	Thu Dec  6 09:59:45 2001
+$OpenBSD: patch-Xdefaults_in,v 1.2 2002/03/18 06:51:24 form Exp $
+--- Xdefaults.in.orig	Mon Feb 25 04:00:47 2002
++++ Xdefaults.in	Mon Mar 18 12:20:41 2002
 @@ -44,7 +44,7 @@ xosview*usedlabels:         True
  xosview*usedLabelColor:     wheat
  xosview*borderwidth:        0
@@ -10,7 +10,7 @@ $OpenBSD: patch-Xdefaults_in,v 1.1 2001/12/06 04:09:54 form Exp $
  xosview*foreground:         wheat
  xosview*enableStipple:	    False ! Change to true to try beta stipple support.
  xosview*samplesPerSec:      10    ! not yet supported
-@@ -175,7 +175,7 @@ xosview*intPriority:	    1
+@@ -191,7 +191,7 @@ xosview*intPriority:	    1
  ! Interrupt Rate Meter Resources
  xosview*irqrate:	True
  xosview*irqrateUsedColor:	red

@@ -1,0 +1,18 @@
+$OpenBSD: patch-bsd_swapinternal_h,v 1.1 2002/03/18 06:51:24 form Exp $
+--- bsd/swapinternal.h.orig	Mon Mar 18 12:26:20 2002
++++ bsd/swapinternal.h	Mon Mar 18 12:27:00 2002
+@@ -8,11 +8,14 @@
+ 
+ //  Header file for the swap internal/NetBSD-specific code.
+ 
++#if defined(XOSVIEW_OPENBSD) && defined(HAVE_SWAPCTL)
++#else
+ int
+ BSDInitSwapInfo();
+ 
+ void
+ BSDGetSwapInfo(int* total, int* free);
++#endif
+ 
+ void
+ BSDGetSwapCtlInfo(int* total, int* free);

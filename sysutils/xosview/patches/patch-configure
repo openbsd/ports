@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2001/08/17 12:28:37 form Exp $
---- configure.orig	Tue Jul 18 01:54:42 2000
-+++ configure	Fri Aug 17 19:19:47 2001
-@@ -1676,6 +1676,18 @@ fi
-   
- 	  host_dir=linux
-           host_os=linux ;;
+$OpenBSD: patch-configure,v 1.3 2002/03/18 06:51:24 form Exp $
+--- configure.orig	Fri Mar 15 08:28:14 2002
++++ configure	Fri Mar 15 08:32:59 2002
+@@ -1869,20 +1869,63 @@ EOF
+ 
+ 			host_dir=bsd
+ 	host_os=freebsd ;;
 +
 +##  Check for OpenBSD 2.0-2.5
 +openbsd2.[012345]*)
@@ -17,22 +17,12 @@ $OpenBSD: patch-configure,v 1.2 2001/08/17 12:28:37 form Exp $
 +	host_dir=bsd
 +	host_os=openbsd ;;
 +
- ##  Check for known versions of NetBSD...
- netbsd1.[012345]*)  
- 	host_os_full=$host_os
-@@ -1813,16 +1825,48 @@ EOF
- 
- 			host_dir=bsd
- 	host_os=freebsd ;;
--openbsd*) 
--        EXTRALIBS="-lkvm $XPMLIB"
--        INSTALL_ARGS='-s -g kmem -m 02555'
 +openbsd2.[6-9]*)
 +	EXTRALIBS="-lkvm $XPMLIB"
 +	INSTALL_ARGS='-s -g kmem -m 02555'
- 	NetMeter_Default_Setting=True
- 	cat >> confdefs.h <<\EOF
- #define XOSVIEW_OPENBSD 1
++	NetMeter_Default_Setting=True
++	cat >> confdefs.h <<\EOF
++#define XOSVIEW_OPENBSD 1
 +#define HAVE_SWAPCTL 1
 +EOF
 +	## Also check for the existence of UVM.  This is a nasty,
@@ -51,25 +41,30 @@ $OpenBSD: patch-configure,v 1.2 2001/08/17 12:28:37 form Exp $
 +	if test x$uvmstring != x ; then
 +		cat >> confdefs.h <<\EOF
 +#define UVM 1
- EOF
++EOF
 +	fi
- 
++
 +	host_dir=bsd
 +	host_os=openbsd ;;
-+openbsd*)
-+	EXTRALIBS="-lkvm $XPMLIB"
-+	INSTALL_ARGS='-s -g kmem -m 02555'
-+	NetMeter_Default_Setting=True
-+	cat >> confdefs.h <<\EOF
-+#define XOSVIEW_OPENBSD 1
++
+ openbsd*) 
+         EXTRALIBS="-lkvm $XPMLIB"
+         INSTALL_ARGS='-s -g kmem -m 02555'
+ 	NetMeter_Default_Setting=True
+ 	cat >> confdefs.h <<\EOF
+ #define XOSVIEW_OPENBSD 1
 +#define HAVE_SWAPCTL 1
-+EOF
++#define UVM 1
+ EOF
+-
+-
+ 	
+ 	EXTRA_CXXFLAGS="-Wall -O4 -pipe"
  
 -			host_dir=bsd
-+	cat >> confdefs.h <<\EOF
-+#define UVM 1
-+EOF
 +	host_dir=bsd
  	host_os=openbsd ;;
++
  bsdi*) 
  	EXTRALIBS="-lkvm $XPMLIB"
+ 	INSTALL_ARGS='-s -g kmem -m 02555'
