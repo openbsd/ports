@@ -3,13 +3,15 @@
 # Date created:			  17 Jul 1998
 # Whom:				  Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/20 04:50:00 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/20 05:03:03 form Exp $
 # FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp
 #
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
+MASTER_SITES=	http://www.freebsd.org/~obrien/ \
+		http://www.cs.berkeley.edu/~daw/mike/
+
 DISTFILES=	tcpshow.c tcpshow.1
 
 MAINTAINER=     form@vs.itam.nsc.ru
@@ -23,7 +25,7 @@ do-extract:
 	@${CP} ${DISTDIR}/tcpshow.1 ${WRKDIR}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o tcpshow tcpshow.c)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DNOETHERNAMES -o tcpshow tcpshow.c)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${PREFIX}/bin
