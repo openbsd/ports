@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/07/10 22:54:33 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/08/04 18:30:39 brad Exp $
 #
 # Pre/post-installation setup of pine
 
@@ -16,7 +16,7 @@ do_notice()
     echo
     echo "+---------------"
     echo "| Some documentation for $1 can be found in"
-    echo "| ${PREFIX}/share/doc/pine as well as pine(1)."
+    echo "| $PREFIX/share/doc/pine as well as pine(1)."
     echo "|"
     echo "| Please read the documentation for instruction on how to make/update"
     echo "| the configuration files /etc/pine.conf and /etc/pine.conf.fixed"
