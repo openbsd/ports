@@ -1,0 +1,79 @@
+*** sattrack/sattrack.c.orig	Tue Jan 14 00:06:10 1997
+--- sattrack/sattrack.c	Tue Apr 28 23:17:47 1998
+***************
+*** 2081,2092 ****
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+  
+! #ifdef FREEBSD
+          ioctl(STDIN_FILENO,TIOCGETA,&original);
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD))
+          ioctl(STDIN_FILENO,TCGETS,&original);
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+--- 2081,2092 ----
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+  
+! #if defined(FREEBSD) || defined(__OpenBSD__)
+          ioctl(STDIN_FILENO,TIOCGETA,&original);
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD)) && !defined(__OpenBSD__)
+          ioctl(STDIN_FILENO,TCGETS,&original);
+          memcpy((char *)&modified,(char *)&original,sizeof(struct termios));
+  #endif
+***************
+*** 2114,2124 ****
+       ioctl(STDIN_FILENO,XCSETA,&modified);
+  #endif
+  
+! #ifdef FREEBSD
+      ioctl(STDIN_FILENO,TIOCSETA,&modified);
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD))
+      ioctl(STDIN_FILENO,TCSETS,&modified);
+  #endif
+  
+--- 2114,2124 ----
+       ioctl(STDIN_FILENO,XCSETA,&modified);
+  #endif
+  
+! #if defined(FREEBSD) || defined(__OpenBSD__)
+      ioctl(STDIN_FILENO,TIOCSETA,&modified);
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD)) && !defined(__OpenBSD__)
+      ioctl(STDIN_FILENO,TCSETS,&modified);
+  #endif
+  
+***************
+*** 2138,2148 ****
+       ioctl(STDIN_FILENO,XCSETA,&original);
+  #endif
+  
+! #ifdef FREEBSD
+      ioctl(STDIN_FILENO,TIOCSETA,&original);
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD))
+      ioctl(STDIN_FILENO,TCSETS,&original);
+  #endif
+  
+--- 2138,2148 ----
+       ioctl(STDIN_FILENO,XCSETA,&original);
+  #endif
+  
+! #if defined(FREEBSD) || defined(__OpenBSD__)
+      ioctl(STDIN_FILENO,TIOCSETA,&original);
+  #endif
+  
+! #if (!defined(HPUX) && !defined(SCOV5) && !defined(FREEBSD)) && !defined(__OpenBSD__)
+      ioctl(STDIN_FILENO,TCSETS,&original);
+  #endif
+  
