@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1999/03/06 22:51:40 dugsong Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/27 17:06:25 niklas Exp $
 
 DISTNAME=		nfr-2.0.3-research-src
 PKGNAME=		nfr-2.0.3
@@ -41,7 +41,7 @@ pre-install:
 	@${CP} ${FILESDIR}/createuser ${PREFIX}/nfr/bin
 
 post-install:
-	sh ${PKGDIR}/INSTALL nfr POST-INSTALL
+	PREFIX=${PREFIX} sh ${PKGDIR}/INSTALL nfr POST-INSTALL
 
 pre-deinstall:
 	sh ${PKGDIR}/DEINSTALL

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $OpenBSD: createuser,v 1.2 1999/03/06 22:51:40 dugsong Exp $
+# $OpenBSD: createuser,v 1.3 1999/03/27 17:06:25 niklas Exp $
 #
 # Create the NFR user and group, if they don't already exist.
 
@@ -37,7 +37,7 @@ else {
     }
     ($null, $null, $nfr_gid) = getgrnam("nfr");
     print "Creating NFR user 'nfr' with uid $nfr_uid, gid $nfr_gid\n";
-    system( "/usr/bin/chpass -a \"nfr:*:$nfr_uid:$nfr_gid:\:\:\:Network Flight Recorder:$nfr_home:/sbin/nologin\"" );
+    system( "/usr/bin/chpass -l -a \"nfr:*:$nfr_uid:$nfr_gid:\:\:\:Network Flight Recorder:$nfr_home:/sbin/nologin\"" );
 }
 
 print("Using NFR user 'nfr' with uid $nfr_uid, gid $nfr_gid, and homedir $nfr_home\n\n");
