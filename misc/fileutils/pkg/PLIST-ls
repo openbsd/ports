@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-ls,v 1.1 2001/03/15 18:32:59 wilfried Exp $
+@pkgcfl fileutils-[0-9].[0-9]
+bin/gdir
+bin/gdircolors
+bin/gls
+bin/gvdir
+man/man1/gdir.1
+man/man1/gdircolors.1
+man/man1/gls.1
+man/man1/gvdir.1
+share/locale/cs/LC_MESSAGES/fileutils.mo
+share/locale/de/LC_MESSAGES/fileutils.mo
+share/locale/el/LC_MESSAGES/fileutils.mo
+share/locale/es/LC_MESSAGES/fileutils.mo
+share/locale/fr/LC_MESSAGES/fileutils.mo
+share/locale/ko/LC_MESSAGES/fileutils.mo
+share/locale/nl/LC_MESSAGES/fileutils.mo
+share/locale/no/LC_MESSAGES/fileutils.mo
+share/locale/pl/LC_MESSAGES/fileutils.mo
+share/locale/pt/LC_MESSAGES/fileutils.mo
+share/locale/ru/LC_MESSAGES/fileutils.mo
+share/locale/sk/LC_MESSAGES/fileutils.mo
+share/locale/sl/LC_MESSAGES/fileutils.mo
+share/locale/sv/LC_MESSAGES/fileutils.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/14 21:51:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/15 18:32:58 wilfried Exp $
 
 DISTNAME=		fileutils-4.0
 CATEGORIES=		misc
@@ -23,5 +23,11 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--program-prefix=g
+
+MULTI_PACKAGES=		-ls -info
+
+.if defined(SUBPACKAGE)
+PKGNAME=                ${DISTNAME:C/-[^-]*$//}${SUBPACKAGE}${DISTNAME:C/^[^-]*//}
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-info,v 1.1 2001/03/15 18:32:59 wilfried Exp $
+@pkgcfl fileutils-[0-9].[0-9]
+@unexec install-info --delete --info-dir=%D/info %D/info/fileutils.info
+info/fileutils.info
+@exec install-info --info-dir=%D/info %D/info/fileutils.info

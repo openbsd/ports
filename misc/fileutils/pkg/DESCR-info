@@ -1,0 +1,3 @@
+The fileutils package includes a number of GNU versions of common and
+popular file management utilities.  This subpackage includes only the info
+document.

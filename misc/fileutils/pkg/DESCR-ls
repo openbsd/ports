@@ -1,0 +1,6 @@
+The fileutils package includes a number of GNU versions of common and
+popular file management utilities.  This subpackage includes only the ls,
+dir and dircolors binaries.
+
+All the binaries are prefixed by the letter g to differentiate them
+with the standard applications with the same name.
