@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/27 01:55:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/30 12:14:11 turan Exp $
 
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
@@ -8,12 +8,16 @@ MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 HOMEPAGE=	http://homepage1.nifty.com/herumi/gogo_e.html
 EXTRACT_SUFX=	.tgz
 
-
 ONLY_FOR_ARCHS= i386
 
 BUILD_DEPENDS=	nasm::devel/nasm
 
 MAINTAINER=	beck@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	MP3 patent, mp3licensing.com/details/software.html
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	MP3 patent. decoders are free. encoders are not.
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 FAKE=		Yes
