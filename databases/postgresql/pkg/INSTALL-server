@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL-server,v 1.1 2004/07/26 10:10:46 peter Exp $
+# $OpenBSD: INSTALL-server,v 1.2 2004/10/12 21:03:13 espie Exp $
 #
 # Pre/post-installation setup of postgresql
 
@@ -11,45 +11,10 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 
 PGHOME=/var/postgresql
 PG=_postgresql
-ID=503
-
-# add user/group _postgresql if they don't already exist
-do_accts()
-{
-	echo
-	echo "+---------------------"
-
-	groupinfo -e $PG
-	if [ $? -eq 0 ]; then
-		echo "| Using existing group '$PG'"
-	else
-		echo "| Creating group '$PG'"
-		groupadd -g $ID $PG
-	fi
-
-	userinfo -e $PG
-	if [ $? -eq 0 ]; then
-		echo "| Using existing account '$PG'"
-	else
-		echo "| Creating user '$PG'"
-		if [ -d $PGHOME ]; then
-			PGCREATEHOME=""
-		else
-			PGCREATEHOME="-m"
-		fi
-		useradd -g $PG \
-			-c "PostgreSQL Manager" \
-			$PGCREATEHOME -d $PGHOME \
-			-L daemon \
-			-u $ID $PG
-	fi
-
-	echo "+---------------------"
-	echo
-}
 
 do_initdb()
 {
+	install -d -o $PG -g $PG -m 0755 $PGHOME
 	if [ ! -d $PGHOME/data ]; then
 		echo
 		echo "+---------------------"
@@ -84,39 +49,11 @@ do_initdb()
 	fi
 }
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
-do_notice()
-{
-	echo
-	echo "+---------------------"
-	echo "| The $1 package installation completed."
-	echo "| See $PREFIX/share/doc/postgresql/README.OpenBSD for more"
-	echo "| information on using PostgreSQL package in OpenBSD environment."
-	echo "+---------------------"
-	echo
-}
-
-# verify proper execution
-#
-if [ $# -ne 2 ]; then
-	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-	exit 1
-fi
-
 # Verify/process the command
 #
 case $2 in
-	PRE-INSTALL)
-		do_accts $1
-		;;
 	POST-INSTALL)
 		do_initdb $1
-		do_notice $1
-		;;
-	*)
-		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-		exit 1
 		;;
 esac
 

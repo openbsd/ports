@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2004/09/18 10:35:36 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2004/10/12 21:03:13 espie Exp $
+@newgroup _postgresql:503
+@newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -372,5 +374,3 @@ share/postgresql/pg_service.conf.sample
 share/postgresql/postgres.bki
 share/postgresql/postgresql.conf.sample
 %%SHARED%%
-@extraunexec userdel -r _postgresql 
-@extraunexec groupdel _postgresql
