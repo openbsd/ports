@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/08 21:32:48 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/15 20:18:31 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"linux compatibility package based on Redhat 6.2"
 
-PKGNAME=	redhat_base-6.2
+PKGNAME=	redhat_base-6.2p1
 CATEGORIES=	emulators
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
