@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/04 00:15:38 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.6 2004/04/15 10:28:37 dhartmei Exp $
 
 COMMENT=	"proxy IRC client with ICB server"
 
-DISTNAME=	icbirc-1.6
+DISTNAME=	icbirc-1.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
