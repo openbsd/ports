@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/11 06:19:52 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/30 22:01:21 sturm Exp $
 
 COMMENT=		"a Gnome/Bonobo component for spell checking"
 
@@ -27,6 +27,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-spell/1.0/}
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		aspell.15::textproc/aspell/core \
 			gnomeui-2::x11/gnome/libgnomeui
 
