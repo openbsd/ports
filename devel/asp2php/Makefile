@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2001/12/21 00:04:43 shell Exp $
+# $OpenBSD: Makefile,v 1.15 2002/06/06 02:24:20 shell Exp $
 
 COMMENT=	"convert ASP code to PHP code"
 
-DISTNAME=	asp2php-0.75.25
+DISTNAME=	asp2php-0.76.10
 CATEGORIES=	devel www
-NEED_VERSION=	1.502
+NEED_VERSION=	1.531
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 HOMEPAGE=	http://asp2php.naken.cc/
-MASTER_SITES=	http://home.swbell.net/mikekohn/asp2php/
+MASTER_SITES=	http://65.108.58.129/asp2php/
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,10 +22,9 @@ FLAVOR?=
 .if ${FLAVOR} != "no_x11"
 USE_X11=	Yes
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
-ALL_TARGET=	all gtkasp2php
+ALL_TARGET=	all gui
 .endif
 
-WRKDIST=	${WRKDIR}/asp2php
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

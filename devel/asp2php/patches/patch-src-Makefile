@@ -1,0 +1,11 @@
+$OpenBSD: patch-src-Makefile,v 1.1 2002/06/06 02:24:20 shell Exp $
+
+--- src/Makefile.orig	Thu Jun  6 10:20:43 2002
++++ src/Makefile	Thu Jun  6 10:20:56 2002
+@@ -1,5 +1,5 @@
+ 
+-CC=gcc
++CC+=${CFLAGS}
+ LD=ld
+ #FLAGS=-DDEBUG
+ 
