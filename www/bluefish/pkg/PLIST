@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/08/02 15:26:19 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/08/27 12:41:32 naddy Exp $
 bin/bluefish
 share/bluefish/bluefish_splash.png
 share/bluefish/custom_menu.default
 share/bluefish/encodings.default
 share/bluefish/filetypes.default
+share/bluefish/funcref_html.xml
+share/bluefish/funcref_php.xml
 share/bluefish/highlighting.default
 share/bluefish/icon_c.png
 share/bluefish/icon_cfml.png

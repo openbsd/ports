@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/08/02 15:26:19 couderc Exp $
+# $OpenBSD: Makefile,v 1.26 2003/08/27 12:41:32 naddy Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -24,13 +24,16 @@ LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
 		pcre::devel/pcre \
 		aspell::textproc/aspell
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-icon-path=${PREFIX}/share/pixmaps/
+CONFIGURE_STYLE=gnu dest
+CONFIGURE_ARGS=	--with-icon-path='$${DESTDIR}${PREFIX}/share/pixmaps/'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	Yes
 
 NO_REGRESS=	Yes
+
+pre-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
