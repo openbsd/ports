@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/09 23:26:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/15 02:08:03 pvalchev Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=   Yes
 MAKE_FlAGS=	PREFIX="${PREFIX}" CC="${CC}" \
 		CFLAGS="${CFLAGS}"
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gtk-config::x11/gtk+
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 USE_X11=	Yes
