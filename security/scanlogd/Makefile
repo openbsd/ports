@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/03/13 19:42:40 couderc Exp $
 
 DISTNAME=	scanlogd-2.2.5
 CATEGORIES=	security
 COMMENT=	"TCP port scan detection tool"
 HOMEPAGE=	http://www.openwall.com/scanlogd/
+
+MAINTAINER=	Alexandre Anriot <aanriot@atlantilde.com>
 
 MASTER_SITES=	ftp://ftp.openwall.com/pub/projects/scanlogd/ \
 		ftp://rt.fm/pub/scanlogd/
