@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/27 02:11:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/28 13:18:50 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -42,7 +42,7 @@
 #    SUBDIR += moscow_ml
 #    SUBDIR += objc
      SUBDIR += ocaml
-#    SUBDIR += otcl
+     SUBDIR += otcl
 #    SUBDIR += p2c
 #    SUBDIR += p5-Tcl
 #    SUBDIR += p5-ePerl
@@ -52,7 +52,7 @@
 #    SUBDIR += pgcc-current
      SUBDIR += python
 #    SUBDIR += rexx-imc
-#    SUBDIR += ruby
+     SUBDIR += ruby
 #    SUBDIR += scheme48
 #    SUBDIR += schemetoc
 #    SUBDIR += scm
@@ -61,10 +61,6 @@
 #    SUBDIR += sr
 #    SUBDIR += swi-pl
      SUBDIR += tcl
-#    SUBDIR += tcl75
-#    SUBDIR += tcl76
-#    SUBDIR += tcl80
-#    SUBDIR += tcl82
 #    SUBDIR += tclX75
 #    SUBDIR += tclplugin
 #    SUBDIR += xpl
