@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/24 22:46:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/05/04 20:02:33 david Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	"self-scaling network benchmark"
@@ -6,6 +6,8 @@ COMMENT=	"self-scaling network benchmark"
 DISTNAME=	netpipe-2.4
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/
+
+HOMEPAGE=	http://www.scl.ameslab.gov/netpipe/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
