@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/04 18:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/11 17:21:58 weingart Exp $
 
 COMMENT=	"text search engine"
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
 
-MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
+MAINTAINER=	The OpenBSD ports mailing-list <ports@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
