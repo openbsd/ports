@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/21 17:41:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/21 17:54:34 espie Exp $
 V=0.5
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.402
@@ -16,15 +16,16 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		png.2.::graphics/png \
 		jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
-		kdecore.3.::x11/kde/libs2
+		kdecore.3.::x11/kde/libs2 \
+		kwin::x11/kde/base2
 
 USE_GMAKE=Yes
 
 # QPL
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGES_FTP=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGES_CDROM=	"Not without the source"
+PERMIT_PACKAGE_CDROM=	"Not without the source"
 
 
 CONFIGURE_STYLE=gnu
