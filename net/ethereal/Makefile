@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2000/11/18 10:17:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.39 2000/11/20 07:24:10 jakob Exp $
+
+BROKEN=		"buffer overflow in print-afs"
 
 DISTNAME=	ethereal-0.8.13
 CATEGORIES=	net x11
