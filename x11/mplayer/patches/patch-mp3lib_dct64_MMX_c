@@ -1,0 +1,21 @@
+$OpenBSD: patch-mp3lib_dct64_MMX_c,v 1.1 2002/12/22 14:19:47 espie Exp $
+--- mp3lib/dct64_MMX.c.orig	Fri May 24 03:56:01 2002
++++ mp3lib/dct64_MMX.c	Sun Dec 22 14:50:34 2002
+@@ -843,10 +843,6 @@ void __attribute__ (( __stdcall__ )) dct
+ "	fsts  960(%%edi)\n\t"
+ "	fadds  92(%%edx)\n\t"
+ "	fstps 832(%%edi)\n\t"
+-"	addl $256,%%esp\n\t"
+-"	popl %%edi\n\t"
+-"	popl %%esi\n\t"
+-"	popl %%ebx\n\t"
+ "	jmp	.L_bye\n\t"
+ ".L01:\n\t"
+ /* Phase 8*/
+@@ -985,5 +981,5 @@ void __attribute__ (( __stdcall__ )) dct
+ ".L_bye:"
+ 	:
+ 	:"m"(a),"m"(b),"m"(c),"m"(tmp[0])
+-	:"memory","%ebx","%esi","%edi");
++	:"memory","%eax","%ebx","%ecx","%edx","%esi","%edi");
+ }

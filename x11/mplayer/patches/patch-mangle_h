@@ -1,0 +1,14 @@
+$OpenBSD: patch-mangle_h,v 1.1 2002/12/22 14:19:47 espie Exp $
+--- mangle.h.orig	Sun Dec  8 21:13:38 2002
++++ mangle.h	Sun Dec  8 21:13:51 2002
+@@ -11,8 +11,10 @@
+ #if defined(__CYGWIN__) || defined(__OS2__) || \
+    (defined(__OpenBSD__) && !defined(__ELF__))
+ #define MANGLE(a) "_" #a
++#define MANGLEA(a) _ ## a
+ #else
+ #define MANGLE(a) #a
++#define MANGLEA(a) a
+ #endif
+ 
+ #endif /* !__MANGLE_H */

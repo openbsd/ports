@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2002/11/13 17:54:35 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2002/12/22 14:19:47 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player supporting MPEG, DIVX, AVI, ASF, MOV & more"
-DISTNAME=		MPlayer-0.90pre10
+DISTNAME=		MPlayer-0.90rc1
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad aa
 FLAVOR?=
 
 .if ${FLAVOR:L:Mfaad}
@@ -148,8 +148,12 @@ BUILD_DEPENDS+= cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoi
 CONFIGURE_ARGS+=--disable-cdparanoia
 .endif
 
+.if ${FLAVOR:L:Maa}
+CONFIGURE_ARGS+=--enable-aa
+LIB_DEPENDS+=  aa.1.3::graphics/aalib
+.else
 CONFIGURE_ARGS+=--disable-aa
-
+.endif
 
 .if ${ELF_TOOLCHAIN} == "no"
 post-patch:
