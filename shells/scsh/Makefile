@@ -3,11 +3,13 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.4 1997/12/15 04:48:03 gene Exp $
+# $OpenBSD: Makefile,v 1.5 1998/04/12 22:26:30 marc Exp $
 #
 
 DISTNAME=	scsh-0.5.1
 CATEGORIES=	shells lang
+NO_CDROM=	"LIC: Requires licence for redistribution."
+
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 STRIP=
 
