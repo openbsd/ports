@@ -1,7 +1,7 @@
-$OpenBSD: patch-innobase_include_univ_i,v 1.5 2004/07/18 11:38:23 espie Exp $
---- innobase/include/univ.i.orig	Fri May 14 02:53:25 2004
-+++ innobase/include/univ.i	Sun Jul 18 09:30:25 2004
-@@ -129,12 +129,8 @@ by one. */
+$OpenBSD: patch-innobase_include_univ_i,v 1.6 2005/03/23 03:47:20 brad Exp $
+--- innobase/include/univ.i.orig	Fri Mar  4 19:38:15 2005
++++ innobase/include/univ.i	Tue Mar 15 09:38:55 2005
+@@ -131,12 +131,8 @@ by one. */
  #define UNIV_INLINE  	__inline
  #else
  /* config.h contains the right def for 'inline' for the current compiler */

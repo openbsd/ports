@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2005/01/14 01:42:58 brad Exp $
---- ltmain.sh.orig	Wed Jan 12 22:58:48 2005
-+++ ltmain.sh	Wed Jan 12 23:00:27 2005
-@@ -1322,7 +1322,7 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.2 2005/03/23 03:47:20 brad Exp $
+--- ltmain.sh.orig	Fri Mar  4 19:38:28 2005
++++ ltmain.sh	Tue Mar 15 09:38:55 2005
+@@ -1403,7 +1403,7 @@ EOF
          ;;
  
        -shrext)
@@ -10,30 +10,3 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2005/01/14 01:42:58 brad Exp $
  	continue
  	;;
  
-@@ -2755,7 +2755,7 @@ EOF
-       case $outputname in
-       lib*)
- 	name=`$echo "X$outputname" | $Xsed -e 's/\.la$//' -e 's/^lib//'`
--	eval shared_ext=\"$shrext\"
-+	eval shared_ext=\"$shrext_cmds\"
- 	eval libname=\"$libname_spec\"
- 	;;
-       *)
-@@ -2767,7 +2767,7 @@ EOF
- 	if test "$need_lib_prefix" != no; then
- 	  # Add the "lib" prefix for modules if required
- 	  name=`$echo "X$outputname" | $Xsed -e 's/\.la$//'`
--	  eval shared_ext=\"$shrext\"
-+	  eval shared_ext=\"$shrext_cmds\"
- 	  eval libname=\"$libname_spec\"
- 	else
- 	  libname=`$echo "X$outputname" | $Xsed -e 's/\.la$//'`
-@@ -3523,7 +3523,7 @@ EOF
- 	fi
- 
- 	# Get the real and link names of the library.
--	eval shared_ext=\"$shrext\"
-+	eval shared_ext=\"$shrext_cmds\"
- 	eval library_names=\"$library_names_spec\"
- 	set dummy $library_names
- 	realname="$2"

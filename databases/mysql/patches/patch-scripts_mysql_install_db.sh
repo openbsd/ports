@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.17 2005/01/14 01:42:58 brad Exp $
---- scripts/mysql_install_db.sh.orig	Mon Sep  6 18:29:38 2004
-+++ scripts/mysql_install_db.sh	Wed Sep 15 15:38:38 2004
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Fri Mar  4 19:38:15 2005
++++ scripts/mysql_install_db.sh	Tue Mar 15 09:38:55 2005
 @@ -7,16 +7,12 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -136,7 +136,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.17 2005/01/14 01:42:58 brad Exp 
  
  # Initialize variables
  c_d="" i_d=""
-@@ -361,12 +335,6 @@ $c_c
+@@ -363,12 +337,6 @@ $c_c
  END_OF_DATA
  then
    echo ""
@@ -149,7 +149,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.17 2005/01/14 01:42:58 brad Exp 
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
    echo "$bindir/mysqladmin -u root password 'new-password'"
-@@ -382,15 +350,6 @@ then
+@@ -384,15 +352,6 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo

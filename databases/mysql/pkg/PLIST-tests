@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.11 2005/01/14 01:42:58 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.12 2005/03/23 03:47:20 brad Exp $
 share/mysql-test/
 share/mysql-test/README
 share/mysql-test/include/
@@ -208,6 +208,7 @@ share/mysql-test/r/rpl_max_relay_size.result
 share/mysql-test/r/rpl_multi_delete.result
 share/mysql-test/r/rpl_multi_delete2.result
 share/mysql-test/r/rpl_multi_update.result
+share/mysql-test/r/rpl_multi_update2.result
 share/mysql-test/r/rpl_mystery22.result
 share/mysql-test/r/rpl_optimize.result
 share/mysql-test/r/rpl_redirect.result
@@ -496,6 +497,8 @@ share/mysql-test/t/rpl_multi_delete.test
 share/mysql-test/t/rpl_multi_delete2-slave.opt
 share/mysql-test/t/rpl_multi_delete2.test
 share/mysql-test/t/rpl_multi_update.test
+share/mysql-test/t/rpl_multi_update2-slave.opt
+share/mysql-test/t/rpl_multi_update2.test
 share/mysql-test/t/rpl_mystery22.test
 share/mysql-test/t/rpl_optimize.test
 share/mysql-test/t/rpl_redirect.test
