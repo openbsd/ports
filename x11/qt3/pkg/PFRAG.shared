@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:45:19 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2003/06/26 15:46:03 sturm Exp $
+lib/libqt${FLAVOR_EXT}.so.3.12
 lib/libqui${FLAVOR_EXT}.so.1.0
+lib/qt3/libqt${FLAVOR_EXT}.so.3.12
 lib/qt3/libqui${FLAVOR_EXT}.so.1.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/qt3)
