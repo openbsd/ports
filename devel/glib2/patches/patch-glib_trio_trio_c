@@ -1,0 +1,257 @@
+$OpenBSD: patch-glib_trio_trio_c,v 1.1 2004/01/12 22:23:19 brad Exp $
+--- glib/trio/trio.c.orig	2003-08-25 20:17:43.000000000 -0400
++++ glib/trio/trio.c	2004-01-12 17:11:29.000000000 -0500
+@@ -3575,9 +3575,12 @@ TRIO_ARGS2((format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
++
+   assert(VALID(format));
+ 
+-  return TrioFormat(stdout, 0, TrioOutStreamFile, format, &args, NULL);
++  G_VA_COPY(args2, args);
++  return TrioFormat(stdout, 0, TrioOutStreamFile, format, &args2, NULL);
+ }
+ 
+ /**
+@@ -3644,10 +3647,13 @@ TRIO_ARGS3((file, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
++
+   assert(VALID(file));
+   assert(VALID(format));
+-  
+-  return TrioFormat(file, 0, TrioOutStreamFile, format, &args, NULL);
++
++  G_VA_COPY(args2, args);  
++  return TrioFormat(file, 0, TrioOutStreamFile, format, &args2, NULL);
+ }
+ 
+ /**
+@@ -3716,9 +3722,12 @@ TRIO_ARGS3((fd, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
++
+   assert(VALID(format));
+-  
+-  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, &args, NULL);
++
++  G_VA_COPY(args2, args);  
++  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, &args2, NULL);
+ }
+ 
+ /**
+@@ -3775,6 +3784,7 @@ TRIO_ARGS4((stream, closure, format, arg
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   trio_custom_t data;
+ 
+   assert(VALID(stream));
+@@ -3782,7 +3792,8 @@ TRIO_ARGS4((stream, closure, format, arg
+ 
+   data.stream.out = stream;
+   data.closure = closure;
+-  return TrioFormat(&data, 0, TrioOutStreamCustom, format, &args, NULL);
++  G_VA_COPY(args2, args);
++  return TrioFormat(&data, 0, TrioOutStreamCustom, format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -3850,12 +3861,14 @@ TRIO_ARGS3((buffer, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   int status;
+ 
+   assert(VALID(buffer));
+   assert(VALID(format));
+ 
+-  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, &args, NULL);
++  G_VA_COPY(args2, args);
++  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, &args2, NULL);
+   *buffer = NIL;
+   return status;
+ }
+@@ -3938,13 +3951,15 @@ TRIO_ARGS4((buffer, max, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   int status;
+ 
+   assert(max == 0 || VALID(buffer));
+   assert(VALID(format));
+ 
++  G_VA_COPY(args2, args);
+   status = TrioFormat(&buffer, max > 0 ? max - 1 : 0,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, &args2, NULL);
+   if (max > 0)
+     *buffer = NIL;
+   return status;
+@@ -4019,6 +4034,7 @@ TRIO_ARGS4((buffer, max, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   int status;
+   size_t buf_len;
+   
+@@ -4027,8 +4043,9 @@ TRIO_ARGS4((buffer, max, format, args),
+ 
+   buf_len = trio_length(buffer);
+   buffer = &buffer[buf_len];
++  G_VA_COPY(args2, args);
+   status = TrioFormat(&buffer, max - 1 - buf_len,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, &args2, NULL);
+   *buffer = NIL;
+   return status;
+ }
+@@ -4072,6 +4089,7 @@ TRIO_ARGS2((format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   trio_string_t *info;
+   char *result = NULL;
+   
+@@ -4080,8 +4098,9 @@ TRIO_ARGS2((format, args),
+   info = trio_xstring_duplicate("");
+   if (info)
+     {
++      G_VA_COPY(args2, args);
+       (void)TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-		       format, &args, NULL);
++		       format, &args2, NULL);
+       trio_string_terminate(info);
+       result = trio_string_extract(info);
+       trio_string_destroy(info);
+@@ -4132,6 +4151,7 @@ TRIO_ARGS3((result, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   int status;
+   trio_string_t *info;
+   
+@@ -4146,8 +4166,9 @@ TRIO_ARGS3((result, format, args),
+     }
+   else
+     {
++      G_VA_COPY(args2, args);
+       status = TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-			  format, &args, NULL);
++			  format, &args2, NULL);
+       if (status >= 0)
+ 	{
+ 	  trio_string_terminate(info);
+@@ -4834,9 +4855,11 @@ TRIO_ARGS3((ref, format, arglist),
+ 	   TRIO_CONST char *format,
+ 	   va_list arglist)
+ {
++  va_list args2;
+   assert(VALID(format));
+-  
+-  return TrioFormatRef((trio_reference_t *)ref, format, &arglist, NULL);
++
++  G_VA_COPY(args2, arglist); 
++  return TrioFormatRef((trio_reference_t *)ref, format, &args2, NULL);
+ }
+ 
+ /*************************************************************************
+@@ -6487,11 +6510,13 @@ TRIO_ARGS2((format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   assert(VALID(format));
+-  
++
++  G_VA_COPY(args2, args);
+   return TrioScan((trio_pointer_t)stdin, 0,
+ 		  TrioInStreamFile,
+-		  format, &args, NULL);
++		  format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6538,12 +6563,15 @@ TRIO_ARGS3((file, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
++
+   assert(VALID(file));
+   assert(VALID(format));
+-  
++
++  G_VA_COPY(args2, args);  
+   return TrioScan((trio_pointer_t)file, 0,
+ 		  TrioInStreamFile,
+-		  format, &args, NULL);
++		  format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6591,11 +6619,13 @@ TRIO_ARGS3((fd, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   assert(VALID(format));
+-  
++
++  G_VA_COPY(args2, args); 
+   return TrioScan((trio_pointer_t)&fd, 0,
+ 		  TrioInStreamFileDescriptor,
+-		  format, &args, NULL);
++		  format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6646,6 +6676,7 @@ TRIO_ARGS4((stream, closure, format, arg
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
+   trio_custom_t data;
+   
+   assert(VALID(stream));
+@@ -6653,7 +6684,9 @@ TRIO_ARGS4((stream, closure, format, arg
+ 
+   data.stream.in = stream;
+   data.closure = closure;
+-  return TrioScan(&data, 0, TrioInStreamCustom, format, &args, NULL);
++
++  G_VA_COPY(args2, args);
++  return TrioScan(&data, 0, TrioInStreamCustom, format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6705,12 +6738,15 @@ TRIO_ARGS3((buffer, format, args),
+ 	   TRIO_CONST char *format,
+ 	   va_list args)
+ {
++  va_list args2;
++
+   assert(VALID(buffer));
+   assert(VALID(format));
+-  
++
++  G_VA_COPY(args2, args);  
+   return TrioScan((trio_pointer_t)&buffer, 0,
+ 		  TrioInStreamString,
+-		  format, &args, NULL);
++		  format, &args2, NULL);
+ }
+ 
+ TRIO_PUBLIC int
