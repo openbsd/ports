@@ -1,18 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/07 01:54:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:02:07 espie Exp $
 bin/sfecho
-bin/sfspeaker
-bin/sfmike
+bin/sflaunch
 bin/sflwl
 bin/sflwld
-bin/sfvod
+bin/sfmike
 bin/sfreflect
-lib/speak_freely/ring.au
+bin/sfspeaker
+bin/sfvod
+lib/speak_freely/
 lib/speak_freely/busy.au
-man/man1/sfecho.1
-man/man1/sflwl.1
-man/man1/sflwld.1
-man/man1/sfmike.1
-man/man1/sfspeaker.1
-man/man1/sfvod.1
-man/man1/sfreflect.1
-@dirrm lib/speak_freely
+lib/speak_freely/ring.au
+@man man/man1/sfecho.1
+@man man/man1/sflaunch.1
+@man man/man1/sflwl.1
+@man man/man1/sflwld.1
+@man man/man1/sfmike.1
+@man man/man1/sfreflect.1
+@man man/man1/sfspeaker.1
+@man man/man1/sfvod.1

@@ -1,6 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:04:35 espie Exp $
 @pkgcfl mplex-*
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/mjpeg-howto.info
 bin/glav
 bin/jpeg2yuv
 bin/lav2avi.sh
@@ -41,6 +40,7 @@ bin/yuvmedianfilter
 bin/yuvplay
 bin/yuvscaler
 bin/yuvycsnoise
+include/mjpegtools/
 include/mjpegtools/audiolib.h
 include/mjpegtools/avilib.h
 include/mjpegtools/editlist.h
@@ -52,6 +52,7 @@ include/mjpegtools/liblavplay.h
 include/mjpegtools/liblavrec.h
 include/mjpegtools/mjpeg_logging.h
 include/mjpegtools/mjpeg_types.h
+include/mjpegtools/mpeg2enc/
 include/mjpegtools/mpeg2enc/elemstrmwriter.hh
 include/mjpegtools/mpeg2enc/encoderparams.hh
 include/mjpegtools/mpeg2enc/macroblock.hh
@@ -70,6 +71,7 @@ include/mjpegtools/mpeg2enc/synchrolib.h
 include/mjpegtools/mpeg2enc/syntaxconsts.h
 include/mjpegtools/mpegconsts.h
 include/mjpegtools/mpegtimecode.h
+include/mjpegtools/mplex/
 include/mjpegtools/mplex/audiostrm.hpp
 include/mjpegtools/mplex/aunit.hpp
 include/mjpegtools/mplex/bits.hpp
@@ -86,10 +88,7 @@ include/mjpegtools/mplex/systems.hpp
 include/mjpegtools/mplex/vector.hpp
 include/mjpegtools/mplex/videostrm.hpp
 include/mjpegtools/yuv4mpeg.h
-info/mjpeg-howto.info
-info/mjpeg-howto.info-1
-info/mjpeg-howto.info-2
-info/mjpeg-howto.info-3
+@info info/mjpeg-howto.info
 lib/liblavfile.a
 lib/liblavfile.la
 lib/liblavjpeg.a
@@ -102,35 +101,32 @@ lib/libmpeg2encpp.a
 lib/libmpeg2encpp.la
 lib/libmplex2.a
 lib/libmplex2.la
+lib/pkgconfig/
 lib/pkgconfig/mjpegtools.pc
-man/man1/jpeg2yuv.1
-man/man1/lav2mpeg.1
-man/man1/lav2wav.1
-man/man1/lav2yuv.1
-man/man1/lavpipe.1
-man/man1/lavplay.1
-@comment man/man1/lavrec.1
-man/man1/lavtrans.1
-man/man1/mjpegtools.1
-man/man1/mp2enc.1
-man/man1/mpeg2enc.1
-man/man1/mplex.1
-man/man1/pgmtoy4m.1
-man/man1/ppmtoy4m.1
-man/man1/y4mcolorbars.1
-man/man1/y4mtoppm.1
-man/man1/yuv2lav.1
-man/man1/yuvdenoise.1
-man/man1/yuvfps.1
-man/man1/yuvinactive.1
-man/man1/yuvkineco.1
-man/man1/yuvmedianfilter.1
-man/man1/yuvplay.1
-man/man1/yuvscaler.1
-man/man1/yuvycsnoise.1
-man/man5/yuv4mpeg.5
+@man man/man1/jpeg2yuv.1
+@man man/man1/lav2mpeg.1
+@man man/man1/lav2wav.1
+@man man/man1/lav2yuv.1
+@man man/man1/lavpipe.1
+@man man/man1/lavplay.1
+@comment @man man/man1/lavrec.1
+@man man/man1/lavtrans.1
+@man man/man1/mjpegtools.1
+@man man/man1/mp2enc.1
+@man man/man1/mpeg2enc.1
+@man man/man1/mplex.1
+@man man/man1/pgmtoy4m.1
+@man man/man1/ppmtoy4m.1
+@man man/man1/y4mcolorbars.1
+@man man/man1/y4mtoppm.1
+@man man/man1/yuv2lav.1
+@man man/man1/yuvdenoise.1
+@man man/man1/yuvfps.1
+@man man/man1/yuvinactive.1
+@man man/man1/yuvkineco.1
+@man man/man1/yuvmedianfilter.1
+@man man/man1/yuvplay.1
+@man man/man1/yuvscaler.1
+@man man/man1/yuvycsnoise.1
+@man man/man5/yuv4mpeg.5
 %%SHARED%%
-@dirrm include/mjpegtools/mplex
-@dirrm include/mjpegtools/mpeg2enc
-@dirrm include/mjpegtools
-@exec install-info --info-dir=%D/info %D/info/mjpeg-howto.info

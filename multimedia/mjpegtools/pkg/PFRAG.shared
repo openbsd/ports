@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
-lib/liblavfile.so.2.2
-lib/liblavjpeg.so.2.2
-lib/liblavplay.so.2.2
-lib/libmpeg2encpp.so.2.2
-lib/libmplex2.so.2.2
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:04:35 espie Exp $
+@lib lib/liblavfile.so.2.2
+@lib lib/liblavjpeg.so.2.2
+@lib lib/liblavplay.so.2.2
+@lib lib/libmpeg2encpp.so.2.2
+@lib lib/libmplex2.so.2.2

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:04:35 espie Exp $
 bin/libquicktime_config
 bin/lqt-config
 bin/lqtplay
@@ -9,6 +9,7 @@ bin/qtrechunk
 bin/qtrecover
 bin/qtstreamize
 bin/qtyuv4toyuv
+include/quicktime/
 include/quicktime/colormodels.h
 include/quicktime/jpeg.h
 include/quicktime/libmjpeg.h
@@ -19,6 +20,7 @@ include/quicktime/lqt_codecinfo.h
 include/quicktime/lqt_version.h
 include/quicktime/qtprivate.h
 include/quicktime/quicktime.h
+lib/libquicktime/
 lib/libquicktime.a
 lib/libquicktime.la
 lib/libquicktime/lqt_audiocodec.a
@@ -56,8 +58,7 @@ lib/libquicktime/lqt_xanim.a
 lib/libquicktime/lqt_xanim.so
 lib/libquicktime_mjpeg.a
 @comment lib/libquicktime_mjpeg.la
-man/man1/lqtplay.1
+@man man/man1/lqtplay.1
+share/aclocal/
 share/aclocal/lqt.m4
 %%SHARED%%
-@dirrm lib/libquicktime
-@dirrm include/quicktime
