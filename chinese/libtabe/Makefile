@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/09 07:03:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/19 06:19:25 kevlo Exp $
 
 COMMENT=	"library for Chinese language processing"
 
@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 LIB_DEPENDS=	lib/db/db.3:db->3,<4:databases/db/v3
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \
 		--with-db-lib=${LOCALBASE}/lib/db \
