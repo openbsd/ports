@@ -1,0 +1,8 @@
+The SILC Toolkit is a set of libraries that provide not only the full
+protocol implementation, but also mathematical and cryptographic
+utilities the developer will find handy when developing SILC
+applications.
+
+It provides a well structured, flexible and extensively documented API,
+making it a good start point for anyone wanting to develop applications
+in this protocol.

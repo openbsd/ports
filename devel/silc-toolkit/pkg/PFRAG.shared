@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/04/11 21:25:15 jolan Exp $
+lib/libsilc.so.3.0
+lib/libsilcclient.so.3.0
+DYNLIBDIR(%D/lib)
