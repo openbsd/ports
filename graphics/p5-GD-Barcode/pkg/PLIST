@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/04 01:32:46 brad Exp $
+${P5SITE}/GD/Barcode.pm
+${P5SITE}/GD/Barcode/COOP2of5.pm
+${P5SITE}/GD/Barcode/Code39.pm
+${P5SITE}/GD/Barcode/EAN13.pm
+${P5SITE}/GD/Barcode/EAN8.pm
+${P5SITE}/GD/Barcode/IATA2of5.pm
+${P5SITE}/GD/Barcode/ITF.pm
+${P5SITE}/GD/Barcode/Industrial2of5.pm
+${P5SITE}/GD/Barcode/Matrix2of5.pm
+${P5SITE}/GD/Barcode/NW7.pm
+${P5SITE}/GD/Barcode/UPCA.pm
+${P5SITE}/GD/Barcode/UPCE.pm
+man/man3p/GD::Barcode.3p
+man/man3p/GD::Barcode::COOP2of5.3p
+man/man3p/GD::Barcode::Code39.3p
+man/man3p/GD::Barcode::EAN13.3p
+man/man3p/GD::Barcode::EAN8.3p
+man/man3p/GD::Barcode::IATA2of5.3p
+man/man3p/GD::Barcode::ITF.3p
+man/man3p/GD::Barcode::Industrial2of5.3p
+man/man3p/GD::Barcode::Matrix2of5.3p
+man/man3p/GD::Barcode::NW7.3p
+man/man3p/GD::Barcode::UPCA.3p
+man/man3p/GD::Barcode::UPCE.3p
+@dirrm ${P5SITE}/GD/Barcode
