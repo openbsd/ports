@@ -1,13 +1,15 @@
-$OpenBSD: patch-ROX-Filer_AppRun,v 1.4 2004/02/07 17:47:50 couderc Exp $
+$OpenBSD: patch-ROX-Filer_AppRun,v 1.5 2004/02/20 20:11:47 couderc Exp $
 --- ROX-Filer/AppRun.orig	2004-01-18 19:29:48.000000000 +0100
-+++ ROX-Filer/AppRun	2004-02-07 13:42:49.000000000 +0100
-@@ -6,9 +6,6 @@ APP_DIR=`dirname $0`
++++ ROX-Filer/AppRun	2004-02-20 21:02:49.000000000 +0100
+@@ -5,10 +5,7 @@ PROG=ROX-Filer
+ APP_DIR=`dirname $0`
  APP_DIR=`cd "$APP_DIR";pwd`; export APP_DIR
  
- ARCH=`uname -m`
+-ARCH=`uname -m`
 -case "$ARCH" in
 -	i?86) ARCH=ix86 ;;
 -esac
++ARCH=`arch -s`
  
  PLATFORM=`uname -s`-"$ARCH"
  
