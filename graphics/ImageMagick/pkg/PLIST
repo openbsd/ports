@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2004/09/15 00:50:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2004/10/19 00:38:06 espie Exp $
 bin/Magick++-config
 bin/Magick-config
 bin/Wand-config
@@ -121,7 +121,7 @@ lib/pkgconfig/Wand.pc
 @man man/man1/ImageMagick.1
 @man man/man1/Magick++-config.1
 @man man/man1/Magick-config.1
-@man man/man1/Wand-config.1
+@comment @man man/man1/Wand-config.1
 @man man/man1/compare.1
 @man man/man1/composite.1
 @man man/man1/conjure.1
