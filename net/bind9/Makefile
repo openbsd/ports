@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/13 14:26:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/02/19 15:49:44 brad Exp $
 
 VERSION=	9.1.1rc2
 DISTNAME=	bind-${VERSION}
@@ -20,7 +20,6 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-randomdev="/dev/srandom" \
 			--with-openssl="/usr" \
 			--with-libtool
 
