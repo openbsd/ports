@@ -1,5 +1,6 @@
+$OpenBSD: patch-configure,v 1.6 2002/05/22 09:58:37 mark Exp $
 --- configure.orig	Sat May 18 01:40:53 2002
-+++ configure	Mon May 20 07:58:43 2002
++++ configure	Tue May 21 20:07:34 2002
 @@ -2660,12 +2660,6 @@ else
    SILC_DIST_WIN32DLL_FALSE=
  fi

@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_silccrypt_Makefile_in,v 1.1 2002/05/20 16:28:20 fgsch Exp $
---- lib/silccrypt/Makefile.in.orig	Sun May 19 22:25:47 2002
-+++ lib/silccrypt/Makefile.in	Sun May 19 23:12:05 2002
+$OpenBSD: patch-lib_silccrypt_Makefile_in,v 1.2 2002/05/22 09:58:37 mark Exp $
+--- lib/silccrypt/Makefile.in.orig	Sat May 18 01:40:59 2002
++++ lib/silccrypt/Makefile.in	Tue May 21 20:07:34 2002
 @@ -290,6 +290,9 @@ mostlyclean-compile:
  distclean-compile:
  	-rm -f *.tab.c

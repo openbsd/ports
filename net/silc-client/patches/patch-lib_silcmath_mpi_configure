@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_silcmath_mpi_configure,v 1.1.1.1 2002/01/16 21:22:34 naddy Exp $
---- lib/silcmath/mpi/configure.orig	Mon Jan 14 22:11:09 2002
-+++ lib/silcmath/mpi/configure	Mon Jan 14 22:13:05 2002
+$OpenBSD: patch-lib_silcmath_mpi_configure,v 1.2 2002/05/22 09:58:37 mark Exp $
+--- lib/silcmath/mpi/configure.orig	Sat May 18 01:41:04 2002
++++ lib/silcmath/mpi/configure	Tue May 21 20:07:34 2002
 @@ -977,7 +977,7 @@ PATH_SEPARATOR="$ac_path_separator"
  rm -f conftest.sh
  
