@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2002/09/12 05:02:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.43 2002/09/15 19:00:35 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
@@ -7,8 +7,7 @@ DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
-		ftp://ftp.crc.ca/packages/lsof/ \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/
+		ftp://ftp.crc.ca/packages/lsof/
 
 HOMEPAGE=	http://www-rcd.cc.purdue.edu/~abe/
 
