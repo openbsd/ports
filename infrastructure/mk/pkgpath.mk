@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.2 2003/08/04 14:37:10 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.3 2003/08/15 00:05:41 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -14,6 +14,8 @@ PKGDEPTH=
 .else
 PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}/
 .endif
+
+PORTSDIR_PATH?=${PORTSDIR}:${PORTSDIR}/mystuff
 
 # Code to invoke to split dir,-multi,flavor
 
@@ -43,16 +45,21 @@ _flavor_fragment= \
 	if $$sawflavor; then \
 		toset="$$toset FLAVOR=\"$$flavor\""; \
 	fi; \
-	cd ${PORTSDIR}; \
-	if [ -L $$dir ]; then \
-		echo 1>&2 ">> Broken dependency: $$dir is a symbolic link"; \
-		exit 1; \
-	fi; \
-	if cd $$dir 2>/dev/null || cd mystuff/$$dir 2>/dev/null; then \
-		:; \
-	else \
-		echo 1>&2 ">> Broken dependency: $$dir non existent"; \
-		exit 1; \
+	IFS=:; found_dir=false; bases=${PORTSDIR_PATH}; \
+	for base in $$bases; do \
+	    cd $$base 2>/dev/null || continue; \
+	    if [ -L $$dir ]; then \
+		    echo 1>&2 ">> Broken dependency: $$base/$$dir is a symbolic link"; \
+		    exit 1; \
+	    fi; \
+	    if cd $$dir 2>/dev/null; then \
+	    	found_dir=true; \
+		break; \
+	    fi; \
+	done; \
+	if ! $$found_dir; then \
+	    echo 1>&2 ">> Broken dependency: $$dir non existent"; \
+	    exit 1; \
 	fi
 
 _depfile_fragment= \
