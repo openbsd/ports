@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/28 06:11:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/28 13:31:25 brad Exp $
 
 COMMENT=	University of Washington IMAP utilities
 
 DISTNAME=	imap-utils
 PKGNAME=	imaputils-uw-20001219
 CATEGORIES=	mail
-NEED_VERSION=	1.444
+NEED_VERSION=	1.460
 
 HOMEPAGE=	http://www.washington.edu/imap/
 
@@ -20,21 +20,21 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PKGNAME}
 
-LIB_DEPENDS=	c-client.2::mail/c-client
+LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
 
 WRKDIST=	${WRKDIR}
 SUBDIRS=	chkmail dmail icat ifrom imapcopy imapxfer \
 		mbxcopy mbxcreat mbxcvt tmail
 
-CFLAGS+=	-I${PREFIX}/include/c-client
-LIBS+=		-L${PREFIX}/lib -lc-client \
+CFLAGS+=	-I${LOCALBASE}/include/c-client
+LIBS+=		-L${LOCALBASE}/lib -lc-client \
 		-lssl -lcrypto \
 		-lgssapi -lkrb5 -lasn1 -lcom_err
 
 do-build:
 .for prog in ${SUBDIRS}
-	(cd ${WRKDIST}/${prog}; \
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${prog} ${prog}.c ${LIBS})
+	cd ${WRKDIST}/${prog}; \
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${prog} ${prog}.c ${LIBS}
 .endfor
 
 do-install:
@@ -42,9 +42,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/${prog}/${prog} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIST}/${prog}/${prog}.1 ${PREFIX}/man/man1
 .endfor
-	ln -sf imapcopy ${PREFIX}/bin/imapmove
-	ln -sf mbxcopy ${PREFIX}/bin/mbxmove
-	ln -sf imapcopy.1 ${PREFIX}/man/man1/imapmove.1
-	ln -sf mbxcopy.1 ${PREFIX}/man/man1/mbxmove.1
+	@cd ${PREFIX}/bin; ln -sf imapcopy imapmove
+	@cd ${PREFIX}/bin; ln -sf mbxcopy mbxmove
+	@cd ${PREFIX}/man/man1; ln -sf imapcopy.1 imapmove.1
+	@cd ${PREFIX}/man/man1; ln -sf mbxcopy.1 mbxmove.1
 
 .include <bsd.port.mk>
