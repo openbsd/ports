@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.29 2001/04/13 15:52:16 espie Exp $
+# $OpenBSD: Makefile.template,v 1.30 2001/07/08 00:05:02 pvalchev Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -111,7 +111,7 @@ MASTER_SITES=		???
 # You would write
 #
 #FLAVORS=1 2 3 a b
-#FLAVOR?
+#FLAVOR?=
 # grab multiple choice value
 #CHOICE=${FLAVOR:L:Na:Nb}
 # check that CHOICE is 1 OR 2 OR 3, or error out
