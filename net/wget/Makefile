@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/18 04:14:31 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/04/22 04:23:13 brad Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
@@ -14,7 +14,7 @@ PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.gnu.org/software/wget/
 
-LIB_DEPENDS=	intl.1:gettext->=0.10.35:devel/gettext
+LIB_DEPENDS=	intl.1::devel/gettext
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
