@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/05/13 02:32:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/05/13 04:14:27 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -18,10 +18,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	sigc.0:libsigc++-*:devel/libsigc++ \
-		glib.::devel/glib \
-		iconv.::converters/libiconv
+		glib.::devel/glib
 
-MODULES=	gcc3 gettext
+MODULES=	gcc3 gettext iconv
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	c++
 
