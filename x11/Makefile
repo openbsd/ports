@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2003/04/24 21:43:28 matthieu Exp $
+# $OpenBSD: Makefile,v 1.165 2003/04/27 08:04:26 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -74,6 +74,7 @@
      SUBDIR += icewm
      SUBDIR += ion
 #    SUBDIR += iv
+     SUBDIR += jmk-fonts
      SUBDIR += kde
      SUBDIR += kdirstat
      SUBDIR += kountdown
