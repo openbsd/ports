@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/21 01:19:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/07 12:40:44 sturm Exp $
 
 COMMENT=	"perl module for IPv4 address parsing"
 
-VERSION=	1.15
+VERSION=	1.20
 DISTNAME=	Net-IP-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
