@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/16 07:37:59 jolan Exp $
+%%SHARED%%
+bin/dvdnav-config
+include/dvdnav/
+include/dvdnav/dvd_reader.h
+include/dvdnav/dvd_types.h
+include/dvdnav/dvd_udf.h
+include/dvdnav/dvdnav.h
+include/dvdnav/dvdnav_events.h
+include/dvdnav/ifo_read.h
+include/dvdnav/ifo_types.h
+include/dvdnav/nav_print.h
+include/dvdnav/nav_read.h
+include/dvdnav/nav_types.h
+lib/libdvdnav.la
