@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/02/21 18:08:35 danh Exp $
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.so
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk.so
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/gtk.so
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/types.so
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sgtk-types.so

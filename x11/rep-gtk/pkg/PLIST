@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/21 18:08:35 danh Exp $
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.la
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk.a
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk.la
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/gtk.a
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/gtk.la
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/types.a
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/types.la
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sgtk-types.a
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sgtk-types.la
+%%SHARED%%
+@dirrm libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk
+@dirrm libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gui

@@ -1,0 +1,5 @@
+This is a binding of GTK+ for the librep Lisp interpreter. It is based
+on Marius Vollmer's guile-gtk package (initially version 0.15, updated
+to 0.17), with a new glue-code generator.
+
+WWW: ${HOMEPAGE}
