@@ -5,10 +5,9 @@ Accordingly, egcs C++ compiler is more suitable for C++ development as
 gnu gcc.  Its library approaches the standard, template support is almost
 complete, namespace support is coming in, it also includes a newer
 scheduler (haifa) that gives improved results on HPRisc and Alpha
-architecture.  Hopefully, most features of egcs will migrate to 
-gcc over time...
+architecture.  
 
-I still have to port over and check the g77, objective-C and java
-front-end. egcs' g77 is more advanced and integrated than GNU-cc g++.
+egcs is now the official gcc compiler, and the next release of OpenBSD
+is going to ship with gcc 2.95.1, at least.
 
 See http://egcs.cygnus.com for more details.

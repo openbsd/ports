@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/08/22 15:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.22 1999/08/22 17:28:42 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -49,7 +49,7 @@ DIRECTORY=egcs/releases/%SUBDIR%/
 
 # getting the right archives where they should be
 MASTER_SITE_SUBDIR=gcc-2.95.1
-DISTNAME= gcc-${VERSION}
+DISTNAME= egcc-${VERSION}
 USE_BZIP2=yes
 
 DIST_SUBDIR=egcs
