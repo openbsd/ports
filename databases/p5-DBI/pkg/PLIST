@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/03/30 06:11:20 shell Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/04/10 13:53:13 shell Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/Bundle/DBI.pm
@@ -31,7 +31,6 @@ ${P5ARCH}/auto/DBI/Driver_xst.h
 ${P5ARCH}/auto/DBI/dbd_xsh.h
 ${P5ARCH}/auto/DBI/dbi_sql.h
 ${P5ARCH}/auto/DBI/dbipport.h
-${P5ARCH}/perllocal.pod
 man/man1/dbiprof.1
 man/man1/dbiproxy.1
 man/man3p/Bundle::DBI.3p
