@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:04 turan Exp $	
+# $OpenBSD: Makefile,v 1.9 2000/02/23 07:37:55 kevlo Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 
 MAINTAINER=     kevlo@openbsd.org
 
-LICENSE_TYPE=		NONE
+LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
