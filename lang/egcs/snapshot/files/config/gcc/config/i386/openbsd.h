@@ -1,9 +1,6 @@
-/*	$OpenBSD: openbsd.h,v 1.3 1999/01/10 02:50:05 espie Exp $	*/
+/* $OpenBSD: openbsd.h,v 1.4 1999/01/11 21:23:26 espie Exp $	*/
 /* vi:ts=8: 
  */
-
-/* This should go away when the math-emulator is fixed */
-#define TARGET_CPU_DEFAULT TARGET_NO_FANCY_MATH_387 
 
 /* This is tested by i386gas.h.  */
 #define YES_UNDERSCORES

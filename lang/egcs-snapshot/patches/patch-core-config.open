@@ -1,5 +1,5 @@
---- gcc/configure.in.orig	Thu Dec 17 22:09:07 1998
-+++ gcc/configure.in	Mon Dec 28 23:03:47 1998
+--- gcc/configure.in.orig	Wed Dec 30 23:05:07 1998
++++ gcc/configure.in	Mon Jan 11 22:08:12 1999
 @@ -497,11 +497,19 @@
  	tm_file=${cpu_type}/${cpu_type}.h
  	xm_file=${cpu_type}/xm-${cpu_type}.h
@@ -21,19 +21,20 @@
  	esac
  
  	case $machine in
-@@ -581,6 +589,11 @@
+@@ -581,6 +589,12 @@
  		fixincludes=fixinc.wrap
  		gas=yes gnu_ld=yes
  		;;
 +
 +	alpha*-*-openbsd*)
-+		# nothing special
++		# default x-alpha is only appropriate for dec-osf.
++		target_cpu_default="MASK_GAS"
++		xmake_file=none
 +		;;
-+
  		
  	alpha*-dec-osf*)
  		if test x$stabs = xyes
-@@ -771,6 +784,9 @@
+@@ -771,6 +785,9 @@
  	h8300-*-*)
  		float_format=i32
  		;;
@@ -43,7 +44,7 @@
  	hppa1.1-*-pro*)
  		tm_file="pa/pa-pro.h ${tm_file} pa/pa-pro-end.h libgloss.h"
  		xm_file=pa/xm-papro.h
-@@ -1096,10 +1112,8 @@
+@@ -1097,10 +1114,8 @@
  		fixincludes=fixinc.wrap
  		tmake_file=i386/t-freebsd
  		;;
@@ -55,19 +56,20 @@
  changequote([,])dnl
  		tm_file=i386/netbsd.h
  		# On NetBSD, the headers are already okay, except for math.h.
-@@ -1107,6 +1121,11 @@
+@@ -1108,6 +1123,12 @@
  		tmake_file=t-netbsd
  		;;
  changequote(,)dnl
 +	i[34567]86-*-openbsd*)
 +changequote([,])dnl
-+		# nothing special
++		# Remove when the math emulator is fixed
++		target_cpu_default="TARGET_NO_FANCY_MATCH_387"
 +		;;
 +changequote(,)dnl
  	i[34567]86-*-coff*)
  changequote([,])dnl
  		tm_file=i386/i386-coff.h
-@@ -1967,6 +1986,9 @@
+@@ -1968,6 +1989,9 @@
  		tmake_file=t-netbsd
  		float_format=m68k
  		;;
@@ -77,7 +79,7 @@
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
  		xm_file="xm-alloca.h ${xm_file}"
  		xm_defines=USG
-@@ -2298,6 +2320,12 @@
+@@ -2299,6 +2323,12 @@
  		gas=yes
  		fixincludes=Makefile.in 
  		;;
@@ -90,7 +92,7 @@
  	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.
  		tm_file="mips/news4.h ${tm_file}"
  		if test x$stabs = xyes; then
-@@ -2648,6 +2676,9 @@
+@@ -2649,6 +2679,9 @@
                  ;;
          pdp11-*-*)
  		;;
@@ -100,7 +102,7 @@
  	pyramid-*-*)
  		cpu_type=pyr
  		xmake_file=pyr/x-pyr
-@@ -2660,6 +2691,12 @@
+@@ -2661,6 +2694,12 @@
  		xmake_file=romp/x-mach
  		use_collect2=yes
  		;;
@@ -113,7 +115,7 @@
  	powerpc-*-beos*)
  		cpu_type=rs6000
  		tm_file=rs6000/beos.h
-@@ -2949,6 +2986,9 @@
+@@ -2950,6 +2989,9 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		;;
@@ -123,7 +125,7 @@
  	sparc-*-bsd*)
  		tm_file=sparc/bsd.h
  		;;
-@@ -3167,6 +3207,9 @@
+@@ -3168,6 +3210,9 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		float_format=vax

@@ -1,7 +1,9 @@
-/* $OpenBSD: openbsd.h,v 1.2 1999/01/10 02:50:06 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.3 1999/01/11 21:23:27 espie Exp $ */
 /* vi:ts=8: 
  */
 
+/* m68k is an old configuration that does not use the TARGET_CPU_DEFAULT
+ * framework. */
 #define TARGET_DEFAULT (MASK_BITFIELD | MASK_68881 | MASK_68020)
 
 #include <m68k/m68k.h>

@@ -1,11 +1,9 @@
-/* $OpenBSD: openbsd.h,v 1.1 1999/01/10 02:50:05 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.2 1999/01/11 21:23:25 espie Exp $ */
 /* vi:ts=8: 
  */
 
 /* We settle for little endian for now */
 #define TARGET_ENDIAN_DEFAULT 0
-
-#define TARGET_DEFAULT (MASK_GAS | MASK_FP | MASK_FPREGS)
 
 #include <alpha/alpha.h>
 
@@ -40,3 +38,27 @@
 
 /* We don't have an init section yet */
 #undef HAS_INIT_SECTION
+
+/* taken from alpha/osf.h. This used to be common to all alpha
+ * configurations, but elf has departed from it.
+ * Check alpha/alpha.h, alpha/osf.h for it when egcs is upgraded.
+ */
+#ifndef ASM_FILE_START
+#define ASM_FILE_START(FILE)					\
+{								\
+  alpha_write_verstamp (FILE);					\
+  fprintf (FILE, "\t.set noreorder\n");				\
+  fprintf (FILE, "\t.set volatile\n");                          \
+  fprintf (FILE, "\t.set noat\n");				\
+  if (TARGET_SUPPORT_ARCH)					\
+    fprintf (FILE, "\t.arch %s\n",				\
+             alpha_cpu == PROCESSOR_EV6 ? "ev6"			\
+	     : (alpha_cpu == PROCESSOR_EV5			\
+		? (TARGET_MAX ? "pca56" : TARGET_BWX ? "ev56" : "ev5") \
+		: "ev4"));					\
+								\
+  ASM_OUTPUT_SOURCE_FILENAME (FILE, main_input_filename);	\
+}
+#endif
+
+
