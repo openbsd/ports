@@ -1,4 +1,8 @@
 bin/calc
+bin/cscript/mersenne
+bin/cscript/piforever
+bin/cscript/plus
+bin/cscript/simple
 include/calc/align32.h
 include/calc/alloc.h
 include/calc/args.h
@@ -6,7 +10,6 @@ include/calc/blkcpy.h
 include/calc/block.h
 include/calc/byteswap.h
 include/calc/calc.h
-include/calc/calc_errno.h
 include/calc/calcerr.h
 include/calc/cmath.h
 include/calc/conf.h
@@ -30,6 +33,7 @@ include/calc/have_offscl.h
 include/calc/have_posscl.h
 include/calc/have_rusage.h
 include/calc/have_stdlib.h
+include/calc/have_strdup.h
 include/calc/have_string.h
 include/calc/have_times.h
 include/calc/have_uid_t.h
@@ -59,7 +63,6 @@ include/calc/zmath.h
 include/calc/zrand.h
 include/calc/zrandom.h
 lib/calc/README
-lib/calc/altbind
 lib/calc/beer.cal
 lib/calc/bernoulli.cal
 lib/calc/bigprime.cal
@@ -72,6 +75,8 @@ lib/calc/custom/pzasusb8.cal
 lib/calc/deg.cal
 lib/calc/ellip.cal
 lib/calc/hello.cal
+lib/calc/help/COPYING
+lib/calc/help/COPYING-LGPL
 lib/calc/help/abs
 lib/calc/help/access
 lib/calc/help/acos
@@ -82,11 +87,11 @@ lib/calc/help/acsc
 lib/calc/help/acsch
 lib/calc/help/address
 lib/calc/help/agd
-lib/calc/help/altbind
 lib/calc/help/append
 lib/calc/help/appr
 lib/calc/help/archive
 lib/calc/help/arg
+lib/calc/help/argv
 lib/calc/help/arrow
 lib/calc/help/asec
 lib/calc/help/asech
@@ -134,6 +139,7 @@ lib/calc/help/cp
 lib/calc/help/credit
 lib/calc/help/csc
 lib/calc/help/csch
+lib/calc/help/cscript
 lib/calc/help/ctime
 lib/calc/help/custhelp/argv
 lib/calc/help/custhelp/devnull
@@ -212,6 +218,7 @@ lib/calc/help/ilog
 lib/calc/help/ilog10
 lib/calc/help/ilog2
 lib/calc/help/im
+lib/calc/help/indices
 lib/calc/help/inputlevel
 lib/calc/help/insert
 lib/calc/help/int
@@ -326,6 +333,7 @@ lib/calc/help/rcpow
 lib/calc/help/rcsq
 lib/calc/help/re
 lib/calc/help/remove
+lib/calc/help/resource
 lib/calc/help/reverse
 lib/calc/help/rewind
 lib/calc/help/rm
@@ -337,6 +345,7 @@ lib/calc/help/saveval
 lib/calc/help/scale
 lib/calc/help/scan
 lib/calc/help/scanf
+lib/calc/help/script
 lib/calc/help/search
 lib/calc/help/sec
 lib/calc/help/sech
@@ -356,7 +365,6 @@ lib/calc/help/srand
 lib/calc/help/srandom
 lib/calc/help/ssq
 lib/calc/help/statement
-lib/calc/help/stdlib
 lib/calc/help/str
 lib/calc/help/strcat
 lib/calc/help/strerror
@@ -424,6 +432,7 @@ lib/calc/test4600.cal
 lib/calc/test5100.cal
 lib/calc/test5200.cal
 lib/calc/test8400.cal
+lib/calc/test8500.cal
 lib/calc/unitfrac.cal
 lib/calc/varargs.cal
 lib/calc/xx_print.cal
@@ -433,3 +442,4 @@ man/man1/calc.1
 @dirrm lib/calc/custom
 @dirrm lib/calc
 @dirrm include/calc
+@dirrm bin/cscript
