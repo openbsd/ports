@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2001/08/14 20:56:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.73 2001/08/14 21:14:19 camield Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -7,13 +7,11 @@
      SUBDIR += asmail
      SUBDIR += bulk_mailer
      SUBDIR += c-client
-     SUBDIR += checkpassword
      SUBDIR += cmail
      SUBDIR += courier-imap
      SUBDIR += courier-imap,ldap
      SUBDIR += courier-imap,mysql
      SUBDIR += cucipop
-     SUBDIR += dot-forward
      SUBDIR += elm
      SUBDIR += exim
      SUBDIR += exim,mysql
@@ -26,10 +24,7 @@
      SUBDIR += exim,mysql,postgresql,ldap,no_x11
      SUBDIR += exmh
      SUBDIR += exmh2
-     SUBDIR += ezmlm
-     SUBDIR += ezmlm,idx
      SUBDIR += faces
-     SUBDIR += fastforward
      SUBDIR += fetchmail
      SUBDIR += fetchmail,kerberos4
      SUBDIR += grepmail
@@ -42,7 +37,6 @@
      SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += majordomo
-     SUBDIR += mess822
      SUBDIR += metamail
      SUBDIR += mh
      SUBDIR += mixmaster
@@ -64,9 +58,6 @@
      SUBDIR += poppy
      SUBDIR += postfix
      SUBDIR += procmail
-     SUBDIR += qmail
-     SUBDIR += qmailanalog
-     SUBDIR += serialmail
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
