@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2005/02/10 12:38:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2005/03/16 21:55:54 naddy Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -126,9 +126,10 @@ CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
 WANTLIB+=		X11 Xpm
 .  endif
+FULLPKGNAME-gd=		php4-gd-${V}p2
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
-FULLPKGNAME-gd=		php4-gd-${V}-no_x11
+FULLPKGNAME-gd=		php4-gd-${V}p2-no_x11
 .endif
 .endif
 
