@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/29 03:09:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/08 06:45:16 kevlo Exp $
 
 COMMENT=	"module to map charset names registered with IANA"
 
-DISTNAME=	I18N-Charset-1.09
+DISTNAME=	I18N-Charset-1.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.402
