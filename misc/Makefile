@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/09/22 22:08:36 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/26 19:34:44 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -49,7 +49,7 @@
      SUBDIR += pi-address
      SUBDIR += plan
      SUBDIR += remind
-#    SUBDIR += rpm
+     SUBDIR += rpm
      SUBDIR += screen
      SUBDIR += splitvt
 #    SUBDIR += team
