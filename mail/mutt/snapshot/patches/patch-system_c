@@ -1,0 +1,12 @@
+$OpenBSD: patch-system_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
+--- system.c.orig	Sun Dec 29 00:39:00 2002
++++ system.c	Sun Dec 29 00:39:26 2002
+@@ -110,7 +110,7 @@ int _mutt_system (const char *cmd, int f
+     sigaction (SIGTSTP, &act, NULL);
+     sigaction (SIGCONT, &act, NULL);
+ 
+-    execl (EXECSHELL, "sh", "-c", cmd, NULL);
++    execl (EXECSHELL, "sh", "-c", cmd, (void *)NULL);
+     _exit (127); /* execl error */
+   }
+   else if (thepid != -1)

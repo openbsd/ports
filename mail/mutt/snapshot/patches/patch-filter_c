@@ -1,0 +1,12 @@
+$OpenBSD: patch-filter_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
+--- filter.c.orig	Sun Dec 29 00:38:57 2002
++++ filter.c	Sun Dec 29 00:39:20 2002
+@@ -113,7 +113,7 @@ mutt_create_filter_fd (const char *cmd, 
+       close (fderr);
+     }
+ 
+-    execl (EXECSHELL, "sh", "-c", cmd, NULL);
++    execl (EXECSHELL, "sh", "-c", cmd, (void *)NULL);
+     _exit (127);
+   }
+   else if (thepid == -1)

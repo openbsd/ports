@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
+--- utils.c.orig	Sun Dec 29 00:51:47 2002
++++ utils.c	Sun Dec 29 00:51:57 2002
+@@ -169,7 +169,7 @@ void run_command(qiv_image *q, int n, ch
+     
+     snprintf(nr, sizeof nr, "%i", n);
+ 	if (!fork()) {
+-	    execlp("qiv-command", "qiv-command", nr, filename, 0);
++	    execlp("qiv-command", "qiv-command", nr, filename, (void *)NULL);
+ 	    perror("error calling qiv-command");
+ 	    abort();
+ 	}

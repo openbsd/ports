@@ -1,0 +1,12 @@
+$OpenBSD: patch-mutt_tunnel_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
+--- mutt_tunnel.c.orig	Sun Dec 29 00:39:07 2002
++++ mutt_tunnel.c	Sun Dec 29 00:39:33 2002
+@@ -91,7 +91,7 @@ static int tunnel_socket_open (CONNECTIO
+     /* Don't let the subprocess think it can use the controlling tty */
+     setsid ();
+ 
+-    execl (EXECSHELL, "sh", "-c", Tunnel, NULL);
++    execl (EXECSHELL, "sh", "-c", Tunnel, (void *)NULL);
+     _exit (127);
+   }
+   mutt_unblock_signals_system (1);
