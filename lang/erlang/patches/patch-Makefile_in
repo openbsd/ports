@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/10/14 17:24:13 espie Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2001/10/20 13:31:26 naddy Exp $
 --- Makefile.in.orig	Sun Oct 14 18:13:32 2001
 +++ Makefile.in	Sun Oct 14 18:15:06 2001
 @@ -70,8 +70,8 @@ new_libraries:
@@ -8,7 +8,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/10/14 17:24:13 espie Exp $
 -	${INSTALL_PROGRAM} erts/bin/$(TARGET)/erlc ${BINDIR}/erlc
 -	${INSTALL_PROGRAM} ${ERLANG_BINDIR}/erl    ${BINDIR}/erl
 +	${INSTALL_PROGRAM} erts/bin/$(TARGET)/erlc $(DESTDIR)${BINDIR}/erlc
-+	${INSTALL_PROGRAM} ${ERLANG_BINDIR}/erl    $(DESTDIR)${BINDIR}/erl
++	${INSTALL_PROGRAM} ${DESTDIR}${ERLANG_BINDIR}/erl    $(DESTDIR)${BINDIR}/erl
  
  install.lib:
  	( cc_root=`pwd`; PATH=$${cc_root}/erts/bin:$${PATH}; export PATH; \
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/10/14 17:24:13 espie Exp $
 -	${INSTALL_PROGRAM} ${ERLANG_ERTSBINDIR}/erl ${ERLANG_BINDIR}/erl
 -	ln -s ../${ERTS}/bin/epmd     ${ERLANG_BINDIR}/epmd || true
 -	ln -s ../${ERTS}/bin/erl_call ${ERLANG_BINDIR}/erl_call || true
-+	${INSTALL_PROGRAM} ${ERLANG_ERTSBINDIR}/erl $(DESTDIR)${ERLANG_BINDIR}/erl
++	${INSTALL_PROGRAM} ${DESTDIR}${ERLANG_ERTSBINDIR}/erl $(DESTDIR)${ERLANG_BINDIR}/erl
 +	ln -s ../${ERTS}/bin/epmd     $(DESTDIR)${ERLANG_BINDIR}/epmd || true
 +	ln -s ../${ERTS}/bin/erl_call $(DESTDIR)${ERLANG_BINDIR}/erl_call || true
  	for s in script boot ; do \
