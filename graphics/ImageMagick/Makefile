@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/12/19 01:28:52 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/12/27 06:14:20 brad Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
@@ -16,7 +16,7 @@ NEED_VERSION=	1.73
 MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	bz2.9.5:${PORTSDIR}/archivers/bzip2 \
-		jbig.1.0:${PORTSDIR}/graphics/jbigkit \
+		jbig.1.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
 		png.1.3:${PORTSDIR}/graphics/png \
