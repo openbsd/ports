@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.248 2003/01/16 10:12:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.249 2003/01/20 17:17:02 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += aggregate
      SUBDIR += angst
+     SUBDIR += ap-utils
      SUBDIR += archie
      SUBDIR += ari-yahoo
      SUBDIR += arpcatch
