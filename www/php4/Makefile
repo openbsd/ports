@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/12/15 21:36:09 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/18 20:29:25 dugsong Exp $
 
 DISTNAME=	php-4.0.3pl1
 PKGNAME=	php4-4.0.3pl1p1
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 
 FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
 FLAVORS+=	gd no_x11 pdflib
-FLAVORS+=	dbase filepro mysql mysql_bundled postgresql
+FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mgdbm}
@@ -168,6 +168,12 @@ LIB_DEPENDS+=		pq.2::databases/postgresql
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
+.if ${FLAVOR:L:Miodbc}
+CONFIGURE_ARGS+=        --with-iodbc
+BUILD_DEPENDS+=         ${PREFIX}/lib/libiodbc.a::databases/iodbc
+.else
+CONFIGURE_ARGS+=        --without-iodbc
+.endif        
 
 post-extract:
 	@(cd ${WRKSRC}; tar xzf ${FULLDISTDIR}/number4.tar.gz)
