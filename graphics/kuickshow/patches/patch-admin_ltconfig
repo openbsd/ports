@@ -1,0 +1,11 @@
+--- admin/ltconfig.orig	Tue Jun 26 14:02:58 2001
++++ admin/ltconfig	Tue Jun 26 14:03:47 2001
+@@ -1140,6 +1140,8 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   # OpenBSD 2.7 the overriding is needed for fast-install
+   shlibpath_overrides_runpath=yes
++  deplib_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib /usr/local/lib/qt2'
+   ;;
+ 
+ os2*)
