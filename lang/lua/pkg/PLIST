@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/03 00:56:43 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/08 01:44:41 jolan Exp $
 bin/bin2c
 bin/lua
 bin/luac
@@ -9,6 +9,7 @@ lib/liblua.a
 lib/liblualib.a
 man/man1/lua.1
 man/man1/luac.1
+share/doc/lua/contents.html
 share/doc/lua/logo.gif
 share/doc/lua/lua.html
 share/doc/lua/luac.html
