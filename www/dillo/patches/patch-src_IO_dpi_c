@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_IO_dpi_c,v 1.1 2003/02/22 17:11:05 couderc Exp $
+--- src/IO/dpi.c.orig	Thu Feb 13 22:56:14 2003
++++ src/IO/dpi.c	Thu Feb 20 21:24:50 2003
+@@ -362,7 +362,7 @@ static gint Dpi_connect_socket()
+       return -1;
+    }
+ 
+-   if (connect(SockFD, (void*)&pun, D_SUN_LEN(&pun)) == -1) {
++   if (connect(SockFD, (void*)&pun, SUN_LEN(&pun)) == -1) {
+       perror("[connect]");
+       return -1;
+    }
