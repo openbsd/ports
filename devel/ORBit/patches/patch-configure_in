@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2002/02/24 22:43:59 brad Exp $
+$OpenBSD: patch-configure_in,v 1.3 2002/05/12 18:15:14 brad Exp $
 --- configure.in.orig	Mon Jan  7 04:09:28 2002
-+++ configure.in	Sun Feb 24 16:56:17 2002
++++ configure.in	Sun May 12 13:53:25 2002
 @@ -161,7 +161,7 @@ for I in $LDFLAGS $LIBS -L/usr/lib; do
  	-L*)
  	THEFILE="`echo $I | sed -e 's,^-L,,'`"
@@ -27,4 +27,12 @@ $OpenBSD: patch-configure_in,v 1.2 2002/02/24 22:43:59 brad Exp $
 +if test -n "$LIBWRAP_PATH" || test -n "$LIB_WRAP"; then
  	AC_DEFINE(HAVE_HOSTS_ACCESS)
  fi
+ 
+@@ -324,7 +324,6 @@ AC_CHECK_ALIGNOF(CORBA_pointer)
+ CPPFLAGS=$orig_CPPFLAGS 
+ 
+ AC_CONFIG_SUBDIRS(libIDL)
+-AC_CONFIG_SUBDIRS(popt)
+ 
+ AC_SUBST(pkglibdir)
  

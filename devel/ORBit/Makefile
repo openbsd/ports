@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/02/24 22:43:59 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2002/05/12 18:15:14 brad Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/popt ${WRKSRC}/libIDL
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-indent
