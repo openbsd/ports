@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.50 2002/02/23 12:31:34 naddy Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -17,6 +17,7 @@
 #    SUBDIR += eperl
      SUBDIR += erlang
      SUBDIR += expect
+     SUBDIR += ezm3
 #    SUBDIR += forth
 #    SUBDIR += g77
      SUBDIR += gawk
