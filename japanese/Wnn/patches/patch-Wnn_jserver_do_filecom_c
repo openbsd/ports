@@ -1,0 +1,14 @@
+$OpenBSD: patch-Wnn_jserver_do_filecom_c,v 1.1 2000/04/28 21:20:39 espie Exp $
+--- Wnn/jserver/do_filecom.c.orig	Fri Apr 28 23:18:03 2000
++++ Wnn/jserver/do_filecom.c	Fri Apr 28 23:19:02 2000
+@@ -82,7 +82,9 @@ file_init()
+ 
+ /*	mkdir	*/
+ 
+-#define	MODE (0000000 | 0000777)
++#define MODE	0755
++
++/* #define	MODE (0000000 | 0000777) */
+ #if defined(BSD42) || defined(uniosu) || defined(UX386) || defined(DGUX)
+ /* #define	MODE (0040000 | 0000731) */
+ /* #define	MODE (0000000 | 0000733) */ 
