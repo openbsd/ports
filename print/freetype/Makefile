@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/30 17:12:36 shell Exp $
+# $OpenBSD: Makefile,v 1.22 2001/08/30 17:20:36 shell Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	freetype
 
 HOMEPAGE=	http://www.freetype.org/
 
-MAINTAINER=	Shell Hung <shell@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
