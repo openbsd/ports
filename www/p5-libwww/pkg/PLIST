@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:55:30 avsm Exp $
+bin/GET
+bin/HEAD
+bin/POST
+bin/lwp-download
+bin/lwp-mirror
+bin/lwp-request
+bin/lwp-rget
+libdata/perl5/site_perl/Bundle/LWP.pm
+libdata/perl5/site_perl/File/Listing.pm
+libdata/perl5/site_perl/HTML/Form.pm
+libdata/perl5/site_perl/HTTP/Cookies.pm
+libdata/perl5/site_perl/HTTP/Daemon.pm
+libdata/perl5/site_perl/HTTP/Date.pm
+libdata/perl5/site_perl/HTTP/Headers.pm
+libdata/perl5/site_perl/HTTP/Headers/Auth.pm
+libdata/perl5/site_perl/HTTP/Headers/ETag.pm
+libdata/perl5/site_perl/HTTP/Headers/Util.pm
+libdata/perl5/site_perl/HTTP/Message.pm
+libdata/perl5/site_perl/HTTP/Negotiate.pm
+libdata/perl5/site_perl/HTTP/Request.pm
+libdata/perl5/site_perl/HTTP/Request/Common.pm
+libdata/perl5/site_perl/HTTP/Response.pm
+libdata/perl5/site_perl/HTTP/Status.pm
+libdata/perl5/site_perl/LWP.pm
+libdata/perl5/site_perl/LWP/Authen/Basic.pm
+libdata/perl5/site_perl/LWP/Authen/Digest.pm
+libdata/perl5/site_perl/LWP/Debug.pm
+libdata/perl5/site_perl/LWP/MediaTypes.pm
+libdata/perl5/site_perl/LWP/MemberMixin.pm
+libdata/perl5/site_perl/LWP/Protocol.pm
+libdata/perl5/site_perl/LWP/Protocol/data.pm
+libdata/perl5/site_perl/LWP/Protocol/file.pm
+libdata/perl5/site_perl/LWP/Protocol/ftp.pm
+libdata/perl5/site_perl/LWP/Protocol/gopher.pm
+libdata/perl5/site_perl/LWP/Protocol/http.pm
+libdata/perl5/site_perl/LWP/Protocol/https.pm
+libdata/perl5/site_perl/LWP/Protocol/mailto.pm
+libdata/perl5/site_perl/LWP/Protocol/nntp.pm
+libdata/perl5/site_perl/LWP/RobotUA.pm
+libdata/perl5/site_perl/LWP/Simple.pm
+libdata/perl5/site_perl/LWP/UserAgent.pm
+libdata/perl5/site_perl/LWP/media.types
+libdata/perl5/site_perl/WWW/RobotRules.pm
+libdata/perl5/site_perl/WWW/RobotRules/AnyDBM_File.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/libwww-perl/.packlist
+libdata/perl5/site_perl/lwpcook.pod
+man/man1/lwp-download.1
+man/man1/lwp-mirror.1
+man/man1/lwp-request.1
+man/man1/lwp-rget.1
+man/man3/Bundle::LWP.3p
+man/man3/File::Listing.3p
+man/man3/HTML::Form.3p
+man/man3/HTTP::Cookies.3p
+man/man3/HTTP::Daemon.3p
+man/man3/HTTP::Date.3p
+man/man3/HTTP::Headers.3p
+man/man3/HTTP::Headers::Util.3p
+man/man3/HTTP::Message.3p
+man/man3/HTTP::Negotiate.3p
+man/man3/HTTP::Request.3p
+man/man3/HTTP::Request::Common.3p
+man/man3/HTTP::Response.3p
+man/man3/HTTP::Status.3p
+man/man3/LWP.3p
+man/man3/LWP::Debug.3p
+man/man3/LWP::MediaTypes.3p
+man/man3/LWP::MemberMixin.3p
+man/man3/LWP::Protocol.3p
+man/man3/LWP::RobotUA.3p
+man/man3/LWP::Simple.3p
+man/man3/LWP::UserAgent.3p
+man/man3/WWW::RobotRules.3p
+man/man3/WWW::RobotRules::AnyDBM_File.3p
+man/man3/lwpcook.3p
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto/libwww-perl
+@dirrm libdata/perl5/site_perl/WWW/RobotRules
+@dirrm libdata/perl5/site_perl/LWP/Protocol
+@dirrm libdata/perl5/site_perl/LWP/Authen
+@dirrm libdata/perl5/site_perl/HTTP/Request
+@dirrm libdata/perl5/site_perl/HTTP/Headers
