@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/07/14 17:44:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/11 16:41:49 provos Exp $
 #
 
 #    SUBDIR += Scilab
 #    SUBDIR += apc
 #    SUBDIR += blas
-#    SUBDIR += calc
+     SUBDIR += calc
 #    SUBDIR += calctool
 #    SUBDIR += eispack
 #    SUBDIR += eval
