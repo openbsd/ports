@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/02 21:45:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/08/02 22:01:26 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
 DISTNAME=	imap-2000c
 PKGNAME=	c-client-2000c
 CATEGORIES=	mail devel
-NEED_VERSION=	1.384
+NEED_VERSION=	1.427
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.cac.washington.edu/imap/old/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
@@ -27,7 +27,7 @@ MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
 
 ALL_TARGET=	bso
 
-HEADERS=	c-client.h env.h env_unix.h fs.h ftl.h imap4r1.h \
+HEADERS=	c-client.h env.h env_unix.h flstring.h fs.h ftl.h imap4r1.h \
 		linkage.c linkage.h mail.h misc.h nl.h nntp.h osdep.h \
 		pop3.h rfc822.h smtp.h tcp.h utf8.h
 
