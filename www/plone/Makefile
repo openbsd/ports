@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/21 18:46:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/10/15 22:58:30 naddy Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-VERSION=	1.0.4
+VERSION=	1.0.5
 DISTNAME=	CMFPlone${VERSION}
 PKGNAME=	plone-${VERSION}
 CATEGORIES=	www
