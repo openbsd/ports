@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.9 2002/07/06 09:24:06 pvalchev Exp $
+# $OpenBSD: gnu.port.mk,v 1.10 2003/02/15 14:06:58 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -12,22 +12,22 @@ BUILD_DEPENDS+=		::devel/automake
 CONFIGURE_STYLE+=autoconf
 .endif
 .if ${CONFIGURE_STYLE:L:Mautoconf}
+BUILD_DEPENDS+=		::devel/metaauto
 .  if ${AUTOCONF_NEW:L} == "yes"
-BUILD_DEPENDS+=		::devel/autoconf-new
-AUTOCONF?=			autoconf-new
-AUTOUPDATE?=		autoupdate-new
-AUTOHEADER?=		autoheader-new
+AUTOCONF_VERSION=2.52
+.  else
+AUTOCONF_VERSION?=2.13
+.  endif
+BUILD_DEPENDS+=::devel/autoconf/${AUTOCONF_VERSION}
+AUTOCONF?=			autoconf
+AUTOUPDATE?=		autoupdate
+AUTOHEADER?=		autoheader
 MAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
 FAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
-.  else
-AUTOCONF?=		autoconf
-AUTOUPDATE?=	autoupdate
-AUTOHEADER?=	autoheader
-BUILD_DEPENDS+=		::devel/autoconf
-.  endif
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
-AUTOCONF_ENV=PATH=${PORTPATH}
+AUTOCONF_ENV=PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION}
+MAKE_ENV+=AUTOCONF_VERSION=${AUTOCONF_VERSION}
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}
@@ -57,6 +57,7 @@ CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
 
 REGRESS_TARGET?=	check
 
+PATCH_CHECK_ONLY?=	No
 .if ${PATCH_CHECK_ONLY:L} != "yes"
 .  if ${CONFIGURE_STYLE:L:Mautoupdate}
 MODGNU_post-patch+= cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
