@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcptrace_h,v 1.1 2002/10/17 18:21:29 naddy Exp $
+--- tcptrace.h.orig	Wed Oct 16 21:21:39 2002
++++ tcptrace.h	Wed Oct 16 21:23:12 2002
+@@ -711,7 +711,7 @@ int finite(double);
+ /* note that many machines have an ether_ntoa, but the output differs, as does
+    the prototype, so we'll include our own and change the name to avoid conflicts
+    with local prototypes if they exist and differ */
+-char *Ether_Ntoa(struct ether_addr *e);
++/* char *Ether_Ntoa(struct ether_addr *e);* /
+ 
+ /* global routine decls */
+ void *MallocZ(int);

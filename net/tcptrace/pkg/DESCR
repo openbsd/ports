@@ -8,18 +8,8 @@ sent and received, retransmissions, round trip times, window
 advertisements, throughput, etc.  Its output format ranges from
 Simple to Long to Very Detailed.
 
-It can also produce three different types of graphs, as follows: 
+It can also produce three different types of graphs: Time Sequence 
+Graph, Instantaneous Throughput, and Round Trip Times.  The graphs 
+produced are viewable only by the xplot program (in math/xplot).
 
-   Time Sequence Graph 
-     This is the format that Tim Shepard started using at MIT some
-     years ago. It shows segments sent and ACKs returned as a
-     function of time.
-   Instantaneous Throughput 
-     This format shows the instantaneous (averaged over a few
-     segments) throughput of the connection as a function of time.
-   Round Trip Times 
-     This format shows the round trip times for the ACKs as a
-     function of time.
-
-The graphs produced are viewable only by Tim Shepard's wonderful
-xplot program (in math/xplot).
+WWW: ${HOMEPAGE}

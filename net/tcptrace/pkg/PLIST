@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/10/17 18:21:29 naddy Exp $
 bin/tcptrace
 man/man1/tcptrace.1
 share/doc/tcptrace/ARGS
-share/doc/tcptrace/BUGS
-share/doc/tcptrace/CHANGES
 share/doc/tcptrace/COPYRIGHT
 share/doc/tcptrace/FAQ
 share/doc/tcptrace/README
@@ -11,5 +9,5 @@ share/doc/tcptrace/README.mailing_list
 share/doc/tcptrace/README.modules
 share/doc/tcptrace/README.tput_graphs
 share/doc/tcptrace/WWW
-share/doc/tcptrace/dot_tcptracerc.sample
+share/doc/tcptrace/dot_tcptracerc
 @dirrm share/doc/tcptrace

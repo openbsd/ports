@@ -1,0 +1,46 @@
+$OpenBSD: patch-print_c,v 1.1 2002/10/17 18:21:29 naddy Exp $
+--- print.c.orig	Mon Dec  3 10:58:49 2001
++++ print.c	Wed Oct 16 21:53:19 2002
+@@ -137,8 +137,8 @@ static void
+ printeth_packet(
+     struct ether_header *pep)
+ {
+-    printf("\tETH Srce: %s\n", Ether_Ntoa((struct ether_addr *)&pep->ether_shost));
+-    printf("\tETH Dest: %s\n", Ether_Ntoa((struct ether_addr *)&pep->ether_dhost));
++    printf("\tETH Srce: %s\n", ether_ntoa((struct ether_addr *)&pep->ether_shost));
++    printf("\tETH Dest: %s\n", ether_ntoa((struct ether_addr *)&pep->ether_dhost));
+ 
+     printf(
+ 	hex?"\t    Type: 0x%x %s\n":"\t    Type: %d %s\n",
+@@ -751,6 +751,7 @@ ipv6addr2str(
+ /* Lots of machines HAVE this, but they give slightly different formats */
+ /* and it messes up my cross-platform testing.  I'll just do it the */
+ /* "one true" way!  :-)  */
++#if 0
+ char *
+ Ether_Ntoa (struct ether_addr *e)
+ {
+@@ -762,8 +763,7 @@ Ether_Ntoa (struct ether_addr *e)
+ 	    pe[0], pe[1], pe[2], pe[3], pe[4], pe[5]);
+     return(buf);
+ }
+-
+-
++#endif
+ 
+ /* represent the sequence numbers absolute or relative to 0 */
+ /* N.B.: will fail will sequence space wraps around more than once */
+@@ -776,11 +776,11 @@ PrintSeqRep(
+     
+     if (ptcb && print_seq_zero && (ptcb->syn_count>0)) {
+ 	/* Relative form */
+-	sprintf(buf,hex?"0x%08x(R)":"%d(R)",
++	snprintf(buf, sizeof(buf), hex?"0x%08x(R)":"%d(R)",
+ 		seq - ptcb->syn);
+     } else {
+ 	/* Absolute form */
+-	sprintf(buf,hex?"0x%08x":"%d",seq);
++	snprintf(buf, sizeof(buf), hex?"0x%08x":"%d", seq);
+     }
+     return(buf);
+ }
