@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_GfxState_cc,v 1.1 2002/12/29 23:45:20 brad Exp $
---- xpdf/GfxState.cc.orig	Thu Dec 26 23:05:20 2002
-+++ xpdf/GfxState.cc	Thu Dec 26 23:22:59 2002
-@@ -788,9 +788,19 @@ GfxColorSpace *GfxIndexedColorSpace::par
+$OpenBSD: patch-xpdf_GfxState_cc,v 1.2 2003/02/12 08:28:20 sturm Exp $
+--- xpdf/GfxState.cc.orig	Fri Dec  6 00:44:32 2002
++++ xpdf/GfxState.cc	Tue Feb 11 16:53:52 2003
+@@ -815,9 +815,19 @@ GfxColorSpace *GfxIndexedColorSpace::par
    obj1.free();
    if (!arr->get(2, &obj1)->isInt()) {
      error(-1, "Bad Indexed color space (hival)");
