@@ -1,0 +1,17 @@
+Openbox is a window manager for the X11 windowing system. It was originally
+based on Blackbox and currently remains very similar, even using Blackbox
+styles for its themeing.
+
+Openbox is written to be fast. It is designed to be both fast in functionality
+and in performance. Meaning that you, as a user, can do what you want quickly,
+and the window manager will respond quickly to your every request.
+
+Another goal of Openbox is to be usable. What good is a piece of software if
+it is hard to use and, then ends up going unused. Openbox aims to take its
+original codebase to the next level. To make everything - from shading a
+window to configuring the window manager - easier. But to do this while
+maintaining the bloat-free approach that has been present in Blackbox from
+the beginning. To present a slim, speedy, attractive
+window-manager-alternative for everybody. 
+
+WWW: ${HOMEPAGE}

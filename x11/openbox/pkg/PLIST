@@ -1,0 +1,67 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/28 17:33:04 brad Exp $
+@pkgcfl fluxbox-*
+@pkgcfl blackbox-*
+bin/bsetbg
+bin/bsetroot
+bin/openbox
+man/man1/bsetroot.1
+man/man1/openbox.1
+share/openbox/menu
+share/openbox/nls/C/openbox.cat
+share/openbox/nls/POSIX
+share/openbox/nls/US_ASCII
+share/openbox/nls/da_DK/openbox.cat
+share/openbox/nls/de
+share/openbox/nls/de_DE/openbox.cat
+share/openbox/nls/en
+share/openbox/nls/en_US
+share/openbox/nls/es
+share/openbox/nls/es_ES/openbox.cat
+share/openbox/nls/et_EE/openbox.cat
+share/openbox/nls/fr
+share/openbox/nls/fr_FR/openbox.cat
+share/openbox/nls/it
+share/openbox/nls/it_IT/openbox.cat
+share/openbox/nls/ja_JP/openbox.cat
+share/openbox/nls/nl
+share/openbox/nls/nl_NL/openbox.cat
+share/openbox/nls/pt_BR/openbox.cat
+share/openbox/nls/ru_RU/openbox.cat
+share/openbox/nls/sl_SI/openbox.cat
+share/openbox/nls/sv_SE/openbox.cat
+share/openbox/nls/tr_TR/openbox.cat
+share/openbox/nls/zh_CN/openbox.cat
+share/openbox/styles/artwiz
+share/openbox/styles/bluebox
+share/openbox/styles/cthulhain
+share/openbox/styles/flux
+share/openbox/styles/frobozz
+share/openbox/styles/frobust
+share/openbox/styles/nyz
+share/openbox/styles/nyzclone
+share/openbox/styles/operation
+share/openbox/styles/outcomes
+share/openbox/styles/shade
+share/openbox/styles/steelblue
+share/openbox/styles/steelblue2
+share/openbox/styles/the_orange
+share/openbox/styles/trisb
+share/openbox/styles/twice
+@dirrm share/openbox/styles
+@dirrm share/openbox/nls/zh_CN
+@dirrm share/openbox/nls/tr_TR
+@dirrm share/openbox/nls/sv_SE
+@dirrm share/openbox/nls/sl_SI
+@dirrm share/openbox/nls/ru_RU
+@dirrm share/openbox/nls/pt_BR
+@dirrm share/openbox/nls/nl_NL
+@dirrm share/openbox/nls/ja_JP
+@dirrm share/openbox/nls/it_IT
+@dirrm share/openbox/nls/fr_FR
+@dirrm share/openbox/nls/et_EE
+@dirrm share/openbox/nls/es_ES
+@dirrm share/openbox/nls/de_DE
+@dirrm share/openbox/nls/da_DK
+@dirrm share/openbox/nls/C
+@dirrm share/openbox/nls
+@dirrm share/openbox
