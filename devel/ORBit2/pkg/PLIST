@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 19:35:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/07/10 20:43:32 marcm Exp $
 bin/ior-decode-2
 bin/orbit-idl-2
 bin/orbit2-config
@@ -73,7 +73,7 @@ share/aclocal/ORBit2.m4
 share/idl/orbit-2.0/CosNaming.idl
 %%SHARED%%
 @dirrm share/idl/orbit-2.0
-@comment @dirrm share/idl
+@unexec rmdir %D/share/idl 2>/dev/null || true
 @comment @dirrm share/aclocal
 @comment @dirrm lib/pkgconfig
 @dirrm lib/orbit-2.0

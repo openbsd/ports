@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2002/03/08 14:34:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2003/07/10 20:43:32 marcm Exp $
 bin/libIDL-config
 bin/name-client
 bin/old-name-server
@@ -91,7 +91,7 @@ share/idl/orbit-1.0/CosTypedEventChannel.idl
 share/idl/orbit-1.0/CosTypedEventComm.idl
 share/idl/orbit-1.0/LName.pidl
 @dirrm share/idl/orbit-1.0
-@dirrm share/idl
+@unexec rmdir %D/share/idl 2>/dev/null || true
 @dirrm share/examples/orbit
 @dirrm include/orbit-1.0/orb
 @dirrm include/orbit-1.0/ORBitutil
