@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2003/06/05 19:15:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/17 00:26:14 jcs Exp $
 
      SUBDIR += bibelot
+     SUBDIR += coldsync
      SUBDIR += isilo
      SUBDIR += p5-Palm
      SUBDIR += palm-bookmarks
