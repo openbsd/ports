@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/12/29 19:32:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2003/10/07 17:17:31 fgsch Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -19,7 +19,8 @@ HOMEPAGE=	http://www.pilot-link.org
 
 MASTER_SITES=	${HOMEPAGE}/source/
 
-LIB_DEPENDS=	tk83::x11/tk/8.3
+FLAVORS=	debug
+FLAVOR?=
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
@@ -29,6 +30,12 @@ CONFIGURE_ARGS= --enable-static \
 		--without-itcl \
 		--without-python \
 		--without-java
+
+.if ${FLAVOR:L:Mdebug} 
+LIB_DEPENDS=	tk83::x11/tk/8.3
+.else
+CONFIGURE_ARGS+= --without-tk
+.endif
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
 

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/02/18 21:37:41 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/10/07 17:17:31 fgsch Exp $
+%%debug%%
 bin/addresses
 bin/ccexample
 bin/debugsh
@@ -21,7 +22,6 @@ bin/pi-nredir
 bin/pi-port
 bin/pilot-addresses
 bin/pilot-clip
-bin/pilot-debug
 bin/pilot-dedupe
 bin/pilot-file
 bin/pilot-mail
@@ -75,7 +75,6 @@ include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.la
-%%SHARED%%
 lib/pix/b1.gif
 lib/pix/b2.gif
 lib/pix/b3.gif
@@ -96,4 +95,5 @@ man/man1/pilot-addresses.1
 man/man1/pilot-xfer.1
 man/man1/read-ical.1
 man/man7/pilot-link.7
+%%SHARED%%
 @dirrm lib/pix
