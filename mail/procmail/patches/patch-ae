@@ -1,0 +1,19 @@
+*** src/autoconf.orig	Fri Apr 11 06:29:04 1997
+--- src/autoconf	Mon Apr 27 23:37:20 1998
+***************
+*** 215,221 ****
+    echo ""
+    if test -z "$LOCKINGTEST"
+    then
+!      read b
+    elif test dummy = "$LOCKINGTEST"
+    then
+       b=""
+--- 215,221 ----
+    echo ""
+    if test -z "$LOCKINGTEST"
+    then
+!      b=""
+    elif test dummy = "$LOCKINGTEST"
+    then
+       b=""
