@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2005/03/09 02:57:53 jcs Exp $
+# $OpenBSD: Makefile,v 1.90 2005/03/25 07:24:50 jolan Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -13,6 +13,7 @@
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += contool
+     SUBDIR += dmidecode
      SUBDIR += dvd+rw-tools
      SUBDIR += e2fsprogs
      SUBDIR += findlib
