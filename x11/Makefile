@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2001/08/01 06:49:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.110 2001/08/07 16:25:16 shell Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Gtk
+     SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Tk
      SUBDIR += paragui
      SUBDIR += piewm
