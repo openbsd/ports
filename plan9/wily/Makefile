@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/05/11 21:21:59 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/01 23:55:32 brad Exp $
 
 DISTNAME=	wily-0.13.41
 CATEGORIES=	plan9 editors
@@ -11,7 +11,7 @@ MAINTAINER=	angelos@openbsd.org
 
 USE_X11=	yes
 USE_AUTOCONF=	yes
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	simple
 
 WILYDOCDIR=	${PREFIX}/share/doc/wily
 WILYTUTEDIR=	${WILYDOCDIR}/tute
