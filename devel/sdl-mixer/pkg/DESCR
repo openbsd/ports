@@ -1,13 +1,10 @@
-SDL_mixer is a sample multi-channel audio mixer library. It supports any number
-of simultaneously playing channels of 16 bit stereo audio, plus a single
-channel of music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
-libraries.
+SDL_mixer is a sample multi-channel audio mixer library.  It supports
+any number of simultaneously playing channels of 16 bit stereo audio,
+plus a single channel of music, mixed by the popular MikMod MOD, Ogg
+Vorbis, Timidity MIDI, and SMPEG MP3 libraries.
 
-Packages can be built with additional flavors:
+A Package can be built with an additional flavor:
   
-  vorbis:	Enable Ogg Vorbis music.
-  		This FLAVOR requires the vorbis package.
-
   mikmod:	Enable MOD music via mikmod.
   		This FLAVOR requires the libmikmod package.
 
