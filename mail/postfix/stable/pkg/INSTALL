@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/09/25 21:02:35 jakob Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/01/25 08:14:30 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -13,12 +13,18 @@ SPOOL_DIR=/var/spool/postfix
 #
 do_accts()
 {
-    groupinfo -e maildrop
+    groupinfo -e postdrop
     if [ $? -eq 0 ]; then
-	echo "-> Using group 'maildrop' for postdrop"
+	echo "-> Using group 'postdrop' for postdrop"
     else
-	echo "-> Creating maildrop group"
-	groupadd maildrop
+        groupinfo -e maildrop
+        if [ $? -eq 0 ]; then
+	    echo "-> Renaming group 'maildrop' to 'postdrop'"
+	    groupmod -n postdrop maildrop
+        else
+	    echo "-> Creating postdrop group"
+	    groupadd postdrop
+        fi
     fi
 
     userinfo -e postfix
@@ -28,7 +34,7 @@ do_accts()
 	echo "-> Creating postfix user & group"
 	useradd \
 	    -g =uid \
-	    -c "Disgruntled Postal Worker" \
+	    -c "Postfix Daemon" \
 	    -d /nonexistent \
 	    -s /sbin/nologin \
 	    -p \* \
@@ -85,12 +91,9 @@ do_configs()
 	# Install config files.
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
 	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
-	sed "s@y0y0y0@$PREFIX@g" $CONFIG_DIR/main.cf > $CONFIG_DIR/main.cf.$$
-	install -o root -g wheel -m 644 $CONFIG_DIR/main.cf.$$ $CONFIG_DIR/main.cf
-	rm -f $CONFIG_DIR/main.cf.$$
 
-	# The correct postfix-script will be installed later.
-	rm -f $CONFIG_DIR/postfix-script*
+	# The correct files will be installed later.
+	rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
 
 	echo ""
 	echo "+---------------"
@@ -101,10 +104,12 @@ do_configs()
 	echo ""
     fi
 
-    # Configure setgid maildrop
-    install -o root -g wheel -m 755 $SAMPLE_CONFIG_DIR/postfix-script-sgid $CONFIG_DIR/postfix-script
-    chgrp maildrop $PREFIX/sbin/postdrop
-    chmod 2755 $PREFIX/sbin/postdrop
+    install -o root -g wheel -m 544 \
+	$SAMPLE_CONFIG_DIR/{postfix-script,post-install} $CONFIG_DIR
+    install -o root -g wheel -m 444 \
+	$SAMPLE_CONFIG_DIR/postfix-files $CONFIG_DIR
+
+    $CONFIG_DIR/post-install command_directory=${PREFIX}/sbin set-permissions
 }
 
 # Function: tell the user what s/he needs to do to use the port just installed

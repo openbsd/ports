@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.14 2001/11/28 09:35:14 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2002/01/25 08:14:29 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
 CATEGORIES=	mail
 NEED_VERSION=	1.491
 
-MASTER_SITES=	ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/%SUBDIR%/ \
+		ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/%SUBDIR%/ \
 		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/%SUBDIR%/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/%SUBDIR%/
@@ -23,7 +24,7 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=
-MAKE_CCARGS?=
+MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
@@ -56,6 +57,8 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mtls}
+PKGNAME:=	${PKGNAME}.tls${TLSVERSION}
+
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
 
@@ -88,17 +91,24 @@ do-configure:
 		CCARGS="${MAKE_CCARGS}" AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/postfix
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/sbin
+	(cd ${WRKSRC}; sh postfix-install \
+		-non-interactive \
+		install_root=${WRKINST} \
+		daemon_directory=${TRUEPREFIX}/libexec/postfix \
+		command_directory=${TRUEPREFIX}/sbin \
+		sendmail_path=${TRUEPREFIX}/sbin/sendmail \
+		newalises_path=${TRUEPREFIX}/sbin/newaliases \
+		mailq_path=${TRUEPREFIX}/sbin/mailq \
+		mail_owner=postfix \
+		setgid_group=postdrop \
+		manpage_directory=${TRUEPREFIX}/man \
+		readme_directory=${TRUEPREFIX}/share/doc/postfix/readme \
+		)
 	${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/libexec/* ${PREFIX}/libexec/postfix
-	${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/share/examples/postfix
-	@(cd ${WRKSRC}/man; \
-	  for mandir in man[0-9]; do \
-	     ${INSTALL_MAN} $$mandir/* ${PREFIX}/man/$$mandir; \
-	  done)
-	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/postfix
-	${INSTALL_DATA} ${WRKSRC}/html/*.gif ${PREFIX}/share/doc/postfix
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
+	mv ${WRKINST}/etc/postfix/* ${PREFIX}/share/examples/postfix
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/html
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/postfix/html
+	${INSTALL_DATA} ${WRKSRC}/html/*.gif ${PREFIX}/share/doc/postfix/html
+	rm -fr ${WRKINST}/var/spool/postfix
