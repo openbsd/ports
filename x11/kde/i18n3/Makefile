@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/02 16:27:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/06 07:34:01 espie Exp $
 
 FLAVORS=af ar az bg bs ca cs da de el en_GB eo es et fi fr he hr hu id is \
     it ja ko lt lv mt nb nl nn pl pt pt_BR ro ru sk sl sv ta th tr uk ven \
@@ -24,9 +24,7 @@ WRKDIST=${WRKDIR}/kde-i18n-${FLAVOR}
 BUILD_DEPENDS = ::x11/kde/libs3
 
 PLIST=${PKGDIR}/PLIST.${FLAVOR}
-#.if ${FLAVOR:L:Mfr}
-#PATCH_LIST=patch-* fr-patch-*
-#.endif
+PATCH_LIST=	patch-*
 
 # some extra vars to compact PLISTs
 DOC=share/doc/HTML/${FLAVOR}/
