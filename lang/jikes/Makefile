@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/03/27 01:04:46 ian Exp $
+# $OpenBSD: Makefile,v 1.12 2005/03/31 22:39:45 sturm Exp $
 
 COMMENT="compile Java source into .class files (quickly!)"
 
@@ -6,8 +6,8 @@ COMMENT="compile Java source into .class files (quickly!)"
 
 DISTNAME=	jikes-1.22
 CATEGORIES=	lang
-HOMEPAGE=	http://oss.software.ibm.com/developerworks/opensource/jikes/
-MASTER_SITES=	ftp://www-126.ibm.com/pub/jikes/1.22/
+HOMEPAGE=	http://jikes.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jikes/}
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
