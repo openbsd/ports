@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2003/01/18 19:49:16 pvalchev Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
 COMMENT-fvwm2=	"multiple virtual desktop window manager, without icons"
 
-VERSION=	2.4.8
+VERSION=	2.4.14
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}

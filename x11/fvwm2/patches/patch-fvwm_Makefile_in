@@ -1,7 +1,7 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.1 2002/09/24 18:55:11 pvalchev Exp $
---- fvwm/Makefile.in.orig	Tue Sep 24 12:29:24 2002
-+++ fvwm/Makefile.in	Tue Sep 24 12:30:38 2002
-@@ -582,10 +582,10 @@ check-am: all-am
+$OpenBSD: patch-fvwm_Makefile_in,v 1.2 2003/01/18 19:49:16 pvalchev Exp $
+--- fvwm/Makefile.in.orig	Fri Nov 29 13:10:56 2002
++++ fvwm/Makefile.in	Sat Jan 18 12:12:12 2003
+@@ -581,10 +581,10 @@ check-am: all-am
  check: check-am
  installcheck-am:
  installcheck: installcheck-am
