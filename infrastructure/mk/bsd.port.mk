@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.221 2000/03/05 16:00:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.222 2000/03/05 16:33:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1075,7 +1075,9 @@ fetch: fetch-depends
 	@cd ${.CURDIR} && make do-fetch
 .  else
 # What FETCH normally does:
+.    if !empty(ALLFILES)
 	@cd ${.CURDIR} && make ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.    endif
 # End of FETCH
 .  endif
 .  if target(post-fetch)
@@ -1847,17 +1849,18 @@ _fetch-makefile-helper:
 	  echo "$${name}:: "`make depends-list package-depends FULL_PACKAGE_NAME=Yes |${_SORT_DEPENDS}`;; \
 	esac; \
 	echo "$${name}:: ${_ALLFILES}"
-.for _F in ${_ALLFILES}
+.if !empty(ALLFILES)
+.  for _F in ${_ALLFILES}
 	@echo '${_F}: $$F'
 	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
-.  if defined(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR)
 	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
-.  endif
+.    endif
 	@echo '\\'
 	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
 	${_SITE_SELECTOR}; \
 	echo "\t SITES=\"$$sites\" \\"
-.  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
+.    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  echo >&2 'Missing checksum file: ${CHECKSUM_FILE}'; \
 	  echo '\t ERROR="no checksum file" \\'; \
@@ -1877,9 +1880,10 @@ _fetch-makefile-helper:
 		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" \\";; \
 	  esac; \
 	fi
-.  endif
+.    endif
 	@echo '\t $${FETCH} "$$@"'
-.endfor
+.  endfor
+.endif
 	@echo
 	
 

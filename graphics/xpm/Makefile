@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/25 21:20:12 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 16:33:38 espie Exp $
 #
 
-PKGNAME=	xpm
+DISTNAME=	xpm
+
+# No distfiles, so no fetch
+DISTFILES=
 CATEGORIES=	graphics x11
 
 COMES_WITH=	2.3
