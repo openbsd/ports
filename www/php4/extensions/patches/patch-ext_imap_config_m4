@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_imap_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
+$OpenBSD: patch-ext_imap_config_m4,v 1.2 2002/07/09 18:14:17 avsm Exp $
 --- ext/imap/config.m4.orig	Tue Aug  7 12:18:04 2001
 +++ ext/imap/config.m4	Sat Apr  6 17:40:25 2002
 @@ -36,10 +36,12 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
@@ -12,7 +12,7 @@ $OpenBSD: patch-ext_imap_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
 -    PHP_ADD_LIBRARY(k5crypto, 1, IMAP_SHARED_LIBADD)
 -    PHP_ADD_LIBRARY(com_err,  1, IMAP_SHARED_LIBADD)
 +    PHP_ADD_LIBRARY(asn1, 1, IMAP_SHARED_LIBADD)
-+#    PHP_ADD_LIBRARY(com_err_pic,  1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(des,  1, IMAP_SHARED_LIBADD)
 +    PHP_ADD_LIBRARY(kafs, 1, IMAP_SHARED_LIBADD)
    else
      AC_EGREP_HEADER(auth_gss, $IMAP_INC_DIR/linkage.h, [
@@ -22,7 +22,7 @@ $OpenBSD: patch-ext_imap_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
      LIBS="$LIBS -L$IMAP_LIBDIR -l$IMAP_LIB"
      if test $PHP_KERBEROS != "no"; then
 -      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-+      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb -lkrb5 -lasn1 -lcom_err_pic -lkafs"
++      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb -lkrb5 -lasn1 -lcom_err_pic -lkafs -ldes"
      fi
  
      AC_TRY_RUN([

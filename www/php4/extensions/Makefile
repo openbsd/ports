@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/02 01:09:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/09 18:14:16 avsm Exp $
 
 PKGNAME=	php4-gd-${V}
 
@@ -54,12 +54,12 @@ CONFIGURE_ARGS+=	--enable-filepro=shared
 
 # gd
 COMMENT=		"image manipulation extensions for php4"
-CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE} --with-ttf=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE}
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
-CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
+CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE} --with-ttf=shared,${LOCALBASE} --without-freetype-dir
 .else
-CONFIGURE_ARGS+=	--without-xpm-dir
+CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir --without-ttf
 .endif
 
 # gmp
