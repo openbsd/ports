@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.7 2003/12/11 19:05:38 david Exp $
+$OpenBSD: user.list,v 1.8 2003/12/15 22:33:57 sturm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -34,3 +34,4 @@ id  user		group		port options
 523 _ffproxy		_ffproxy	www/ffproxy
 524			_mail		mail/openwebmail
 525 _quagga		_quagga		net/quagga
+526 _tomcat		_tomcat		www/jakarta-tomcat
