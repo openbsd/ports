@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/11 22:47:26 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/19 22:56:58 brad Exp $
+
+COMMENT=	"OpenGL widget for GTK+ GUI toolkit"
 
 DISTNAME=	gtkglarea-1.2.2
 CATEGORIES=	x11 graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 
-LIB_DEPENDS=	MesaGL.3::graphics/Mesa \
-		gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -20,8 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS+= --enable-static --with-lib-GL
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkglarea
