@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/31 03:16:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2000/04/18 09:48:00 turan Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -10,8 +10,10 @@ MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 
 MAINTAINER=	ports@openbsd.org
 
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-RESTRICTED=	"Crypto; export-controlled"
+PERMIT_PACKAGE_CDROM=	"no commercial use"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no commercial use"
+PERMIT_DISTFILES_FTP=	Yes
 
 IS_INTERACTIVE=	Yes
 WRKDIST=	${WRKDIR}/src

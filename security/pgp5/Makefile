@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/09 17:38:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/18 09:48:01 turan Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -20,10 +20,12 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
 
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-RESTRICTED=	"Crypto; export-controlled"
-
 MAINTAINER=	fgsch@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no commercial use"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no commercial use"
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_AUTOCONF=	Yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
