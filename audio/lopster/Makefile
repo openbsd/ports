@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/18 06:39:20 kevlo Exp $
-
 DISTNAME=	lopster-0.9.3
 CATEGORIES=	audio
-NEED_VERSION=	1.330
-MASTER_SITES=	http://download.sourceforge.net/lopster/
+NEED_VERSION=	1.320
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= lopster
 
 HOMEPAGE=	http://lopster.sourceforge.net
 

@@ -4,3 +4,5 @@ between users.  With Napster, the files stay on the client machine,
 never passing through the server. The server provides the ability to 
 search for particular files and initiate a direct transfer between the 
 clients. In addition, chat forums similar to IRC are available.
+
+WWW: ${HOMEPAGE}
