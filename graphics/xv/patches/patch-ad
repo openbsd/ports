@@ -64,7 +64,7 @@
 +#ifdef UseInstalledPng
 +PNG = -DDOPNG
 +LIBPNG = -L/usr/local/lib -lpng
-+PNGINCLUDE = -I/usr/local/include
++PNGINCLUDE = -I$(LOCALBASE)/include/libpng
 +#endif
 +
  #ifdef HavePDS
