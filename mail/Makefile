@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/07/20 10:10:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.34 2000/08/04 23:42:23 fgsch Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -19,7 +19,9 @@
      SUBDIR += ezmlm
      SUBDIR += faces
      SUBDIR += fastforward
-     SUBDIR += fetchmail
+     SUBDIR += fetchmail:kerberos
+     SUBDIR += fetchmail:kerberos,ssl
+     SUBDIR += fetchmail:ssl
      SUBDIR += hypermail
      SUBDIR += imap-uw
 #    SUBDIR += mailagent
