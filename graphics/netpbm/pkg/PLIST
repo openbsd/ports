@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/01 22:49:20 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/10/14 21:37:11 naddy Exp $
 bin/411toppm
 bin/anytopnm
 bin/asciitopgm
@@ -15,7 +15,6 @@ bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
 bin/hipstopgm
-bin/hpcdtoppm
 bin/icontopbm
 bin/ilbmtoppm
 bin/imgtoppm
@@ -264,7 +263,6 @@ man/man1/g3topbm.1
 man/man1/giftopnm.1
 man/man1/gouldtoppm.1
 man/man1/hipstopgm.1
-man/man1/hpcdtoppm.1
 man/man1/icontopbm.1
 man/man1/ilbmtoppm.1
 man/man1/imgtoppm.1
