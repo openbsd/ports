@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
+lib/libbonobo-print.so.2.0
+lib/libbonobo.so.2.0
+lib/libbonobox.so.2.0
+lib/libefs.so.1.0
+lib/bonobo/monikers/libmoniker_std.so
+lib/bonobo/plugin/libstorage_efs.so
+lib/bonobo/plugin/libstorage_fs.so
+DYNLIBDIR(%D/lib)
+

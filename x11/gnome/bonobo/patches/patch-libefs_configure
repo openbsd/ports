@@ -1,0 +1,47 @@
+$OpenBSD: patch-libefs_configure,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
+--- libefs/configure.orig	Thu Apr 11 08:11:03 2002
++++ libefs/configure	Mon May 20 11:42:08 2002
+@@ -2930,6 +2930,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
++    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
++  ;;
++
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -4640,8 +4650,8 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
++    archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++    hardcode_libdir_flag_spec='${wl}-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     ;;
+@@ -5124,10 +5134,11 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
++  need_lib_prefix=no
++  need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  shlibpath_overrides_runpath=yes
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
