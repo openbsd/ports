@@ -1,7 +1,13 @@
 GNU Stow is a Perl program for managing the installation of
-software packages, keeping them separate (/opt/stow/emacs-21.3.1
-vs. /opt/stow/perl-5.8.0, for example) while making them appear
-to be installed in the same place (/opt).
+software packages, keeping them separated from each other while
+making them appear to be installed in the same place by using
+symbolic links.
+
+Stow is particularly useful when installing software distributed
+with a GNU "configure" script (use the --prefix=path option).
 
 Stow may be used by non-root users to set up a private hierarchy
-under e.g. $HOME/local.
+under e.g. $HOME/local, or by local administrators who wants
+to install software that is not managed by the native package
+or port system, and make it available under e.g. /opt/local or
+/usr/pkg.
