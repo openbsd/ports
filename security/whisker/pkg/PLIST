@@ -1,8 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/08/07 04:34:05 obecian Exp $
 bin/whisker
+bin/whisker-listgen
+bin/whisker-multi
+share/doc/whisker/whisker.txt
 share/whisker/brute.db
 share/whisker/dumb.db
 share/whisker/scan.db
 share/whisker/server.db
+share/whisker/lists/CREDIT
+share/whisker/lists/cfnames.txt
+share/whisker/lists/clnames.txt
+share/whisker/lists/fnames.txt
+share/whisker/lists/lnames.txt
+share/whisker/lists/pass.txt
+share/whisker/lists/pr0n.txt
+share/whisker/lists/tech.txt
+@dirrm share/whisker/lists
 @dirrm share/whisker
-share/doc/whisker/whisker.txt
 @dirrm share/doc/whisker
