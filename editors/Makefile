@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/05/06 07:10:15 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/09 07:43:52 downsj Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -9,7 +9,7 @@
 #    SUBDIR += e93
      SUBDIR += emacs
 #    SUBDIR += gvim
-     SUBDIR += jed
+#    SUBDIR += jed
      SUBDIR += joe
      SUBDIR += jove
 #    SUBDIR += mule
