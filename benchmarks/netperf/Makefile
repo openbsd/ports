@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/05 21:59:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 09:01:12 jakob Exp $
 
 COMMENT=	"Network performance benchmark"
-DISTNAME=	netperf-2.1pl3
+
+DISTNAME=	netperf-2.2alpha
 CATEGORIES=	benchmarks net
 NEED_VERSION=	1.302
 
@@ -20,11 +21,12 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
+MAKE_FLAGS+=	CFLAGS='-O -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
 
 SHAREDIR=	${PREFIX}/share/netperf
-SCRIPTS=	tcp_range_script tcp_stream_script tcp_rr_script \
-		udp_stream_script udp_rr_script \
-		snapshot_script
+SCRIPTS=	arr_script snapshot_script \
+		tcp_range_script tcp_rr_script tcp_stream_script \
+		udp_rr_script udp_stream_script
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netperf ${PREFIX}/bin
