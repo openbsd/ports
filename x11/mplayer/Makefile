@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2002/10/29 23:05:44 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.mplayerhq.hu
 
 PERMIT_PACKAGE_CDROM=	"patents"
-PERMIT_PACKAGE_FTP=	"patents"
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
