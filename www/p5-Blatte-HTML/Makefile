@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/10 22:11:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/14 22:00:05 naddy Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
-DISTNAME=	Blatte-HTML-0.8.2
+DISTNAME=	Blatte-HTML-0.9
 PKGNAME=	p5-${DISTNAME}
 HOMEPAGE=	http://www.blatte.org/
 
