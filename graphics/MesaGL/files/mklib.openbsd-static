@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Make a standard Unix .a library file with 'ar q'
+# Make a standard Unix .a library file with 'ar cq'
 
 #--common--------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/09 02:09:08 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/10 13:55:31 brad Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 DISTNAME=       MesaLib-3.0
@@ -42,8 +42,8 @@ do-install:
 
 .include <bsd.port.mk>
 
-.if !defined(NO_SHARED_LIBS)
+.if defined(NO_SHARED_LIBS)
 ALL_TARGET=     openbsd
 .else
-BROKEN=		"Currently does not build correctly"
+ALL_TARGET=	openbsd-static
 .endif
