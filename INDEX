@@ -23,7 +23,7 @@ xephem-3.2.2|/usr/ports/astro/xephem|/usr/X11R6|interactive astronomical ephemer
 xphoon-91.9.18|/usr/ports/astro/xphoon|/usr/X11R6|set the root window to the moon in its current phase|/usr/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11|||any
 amp-0.7.6|/usr/ports/audio/amp|/usr/local|MP3 player|/usr/ports/audio/amp/pkg/DESCR|angelos@openbsd.org|audio|gmake-3.77||any
 bladeenc-0.85|/usr/ports/audio/bladeenc|/usr/local|MP3 encoder|/usr/ports/audio/bladeenc/pkg/DESCR|brad@openbsd.org|audio|||any
-esound-0.2.8|/usr/ports/audio/esound|/usr/local|sound library for enlightenment|/usr/ports/audio/esound/pkg/DESCR|brad@openbsd.org|audio|libaudiofile-0.1.7|libaudiofile-0.1.7|any
+esound-0.2.15|/usr/ports/audio/esound|/usr/local|sound library for enlightenment|/usr/ports/audio/esound/pkg/DESCR|brad@openbsd.org|audio|libaudiofile-0.1.9|libaudiofile-0.1.9|any
 gom-0.29.99|/usr/ports/audio/gom|/usr/local|a generic audio mixer|/usr/ports/audio/gom/pkg/DESCR|scott@tranzoa.com|audio|m4-1.4 xview-config-3.2.1 autoconf-2.13 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1|any
 gqmpeg-0.6.3|/usr/ports/audio/gqmpeg|/usr/local|mpg123 front-end with skin support|/usr/ports/audio/gqmpeg/pkg/DESCR|rohee@OpenBSD.ORG|audio|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5d jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 glib-1.2.4 gettext-0.10.35 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 imlib-1.9.4|glib-1.2.4 gettext-0.10.35 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 mpg123-0.59q imlib-1.9.4|any
 gsm-1.0.10|/usr/ports/audio/gsm|/usr/local|u-law to gsm encoding audio converter and library|/usr/ports/audio/gsm/pkg/DESCR|angelos@openbsd.org|audio|||any
@@ -84,7 +84,7 @@ MIME-Base64-2.11|/usr/ports/converters/p5-MIME-Base64|/usr/local|Perl5 module fo
 recode-3.5|/usr/ports/converters/recode|/usr/local|convert files between character sets and usages|/usr/ports/converters/recode/pkg/DESCR|angelos@openbsd.org|converters|m4-1.4 autoconf-2.13||any
 trans-1.20|/usr/ports/converters/trans|/usr/local|character encoding converter generator package|/usr/ports/converters/trans/pkg/DESCR|angelos@openbsd.org|converters russian|||any
 db-2.7.5|/usr/ports/databases/db|/usr/local|Berkeley DB package, revision 2|/usr/ports/databases/db/pkg/DESCR|tacho@openbsd.org|databases|||any
-gdbm-1.8.0|/usr/ports/databases/gdbm|/usr/local|GNU dbm|/usr/ports/databases/gdbm/pkg/DESCR|felix@mamba.pond.sub.org|databases|||any
+gdbm-1.8.0|/usr/ports/databases/gdbm|/usr/local|GNU dbm|/usr/ports/databases/gdbm/pkg/DESCR|hannah@mamba.pond.sub.org|databases|||any
 mysql-3.22.22|/usr/ports/databases/mysql|/usr/local|multithreaded SQL database|/usr/ports/databases/mysql/pkg/DESCR|ports@openbsd.org|databases|||any
 p5-DBD-Pg-0.69|/usr/ports/databases/p5-DBD-Pg|/usr/local|access to PostgreSQL databases through the DBI|/usr/ports/databases/p5-DBD-Pg/pkg/DESCR|ports@openbsd.org|databases perl5|bison-1.27 gmake-3.77 p5-DBI-1.13 postgresql-6.3.2||any
 p5-DBI-1.13|/usr/ports/databases/p5-DBI|/usr/local|perl5 Database Interface, required for DBD::* modules|/usr/ports/databases/p5-DBI/pkg/DESCR|ports@openbsd.org|databases|||any
@@ -95,7 +95,7 @@ ORBit-0.4.96|/usr/ports/devel/ORBit|/usr/local|high-performance CORBA ORB with s
 autoconf-2.13|/usr/ports/devel/autoconf|/usr/local|automatically configure source code on many Un*x platforms|/usr/ports/devel/autoconf/pkg/DESCR|ports@openbsd.org|devel|m4-1.4|m4-1.4|any
 automake-1.4|/usr/ports/devel/automake|/usr/local|GNU Standards-compliant Makefile generator|/usr/ports/devel/automake/pkg/DESCR|jasoni@openbsd.org|devel|||any
 bison-1.27|/usr/ports/devel/bison|/usr/local|GNU parser generator|/usr/ports/devel/bison/pkg/DESCR|d@openbsd.org|devel|||any
-boehm-gc-4.12|/usr/ports/devel/boehm-gc|/usr/local|garbage collection and memory leak detection for C and C++|/usr/ports/devel/boehm-gc/pkg/DESCR|niklas@openbsd.org|devel|||any
+boehm-gc-4.12|/usr/ports/devel/boehm-gc|/usr/local|garbage collection and memory leak detection for C and C++|/usr/ports/devel/boehm-gc/pkg/DESCR|niklas@openbsd.org|devel|||i386 m68k sparc
 ddd-3.1.6|/usr/ports/devel/ddd|/usr/X11R6|Data Display Debugger, graphical front-end for GDB, etc|/usr/ports/devel/ddd/pkg/DESCR|marc@openbsd.org|devel|gmake-3.77 lesstif-0.89.0|lesstif-0.89.0|any
 dejagnu-1.3|/usr/ports/devel/dejagnu|/usr/local|GNU automated testing framework|/usr/ports/devel/dejagnu/pkg/DESCR|niklas@openbsd.org|devel|tcl-8.0.5 tk-8.0.5 expect-5.30||any
 indent-2.2.2|/usr/ports/devel/gindent|/usr/local|GNU indent|/usr/ports/devel/gindent/pkg/DESCR|ports@OpenBSD.ORG|devel|||any
@@ -104,9 +104,9 @@ glib-1.2.4|/usr/ports/devel/glib|/usr/local|useful routines for C programming|/u
 gmake-3.77|/usr/ports/devel/gmake|/usr/local|GNU version of 'make'|/usr/ports/devel/gmake/pkg/DESCR|todd@openbsd.org|devel|||any
 gperf-2.7-19981006|/usr/ports/devel/gperf|/usr/local|perfect hash functions, to help write parsers|/usr/ports/devel/gperf/pkg/DESCR|espie@cvs.openbsd.org|devel|||any
 gsl-0.3b|/usr/ports/devel/gsl|/usr/local|GNU Scientific Library|/usr/ports/devel/gsl/pkg/DESCR|rohee@OpenBSD.ORG|devel|||any
-id-utils-3.2d|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|m4-1.4 autoconf-2.13 gmake-3.77||any
+id-utils-3.2d|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|gmake-3.77 emacs-20.3||any
 lclint-2.4b|/usr/ports/devel/lclint|/usr/local|advanced lint: statically check C programs|/usr/ports/devel/lclint/pkg/DESCR|espie@cvs.openbsd.org|devel|bison-1.27 gmake-3.77||any
-libaudiofile-0.1.7|/usr/ports/devel/libaudiofile|/usr/local|SGI audiofile library GPLed clone|/usr/ports/devel/libaudiofile/pkg/DESCR|rohee@openbsd.org|devel|||any
+libaudiofile-0.1.9|/usr/ports/devel/libaudiofile|/usr/local|SGI audiofile library GPLed clone|/usr/ports/devel/libaudiofile/pkg/DESCR|rohee@openbsd.org|devel|||any
 libicq-0.33|/usr/ports/devel/libicq|/usr/local|library to add ICQ support to your software|/usr/ports/devel/libicq/pkg/DESCR|brad@openbsd.org|devel|glib-1.2.4|glib-1.2.4|any
 libPropList-0.8.3|/usr/ports/devel/libproplist|/usr/local|GNUstep/OPENSTEP property lists compatibility library|/usr/ports/devel/libproplist/pkg/DESCR|jasoni@openbsd.org|devel|||any
 libslang-1.3.9|/usr/ports/devel/libslang|/usr/local|stack-based interpreter for terminal applications|/usr/ports/devel/libslang/pkg/DESCR|todd@openbsd.org|devel|||any
@@ -190,7 +190,7 @@ xscrabble-1.0|/usr/ports/games/xscrabble|/usr/X11R6|X11 version of the popular b
 xskat-3.2|/usr/ports/games/xskat|/usr/X11R6|the card game Skat|/usr/ports/games/xskat/pkg/DESCR|angelos@openbsd.org|games|||any
 xsol-2.1.1|/usr/ports/games/xsol|/usr/X11R6|solitaire|/usr/ports/games/xsol/pkg/DESCR|angelos@openbsd.org|games|||any
 xsoldier-0.96|/usr/ports/games/xsoldier|/usr/X11R6|shooting game for X11|/usr/ports/games/xsoldier/pkg/DESCR|angelos@openbsd.org|games x11|||any
-xteddy-1.0|/usr/ports/games/xteddy|/usr/X11R6|cuddlesome teddy for the X11 desktop|/usr/ports/games/xteddy/pkg/DESCR|felix@mamba.pond.sub.org|games|||any
+xteddy-1.0|/usr/ports/games/xteddy|/usr/X11R6|cuddlesome teddy for the X11 desktop|/usr/ports/games/xteddy/pkg/DESCR|hannah@mamba.pond.sub.org|games|||any
 ImageMagick-4.2.8|/usr/ports/graphics/ImageMagick|/usr/X11R6|display and manipulate images under X11|/usr/ports/graphics/ImageMagick/pkg/DESCR|brad@openbsd.org|graphics|jpeg-6b png-1.0.3 tiff-3.4b37 gmake-3.77 unzip-5.40 bzip2-0.9.5d jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1|bzip2-0.9.5d jbigkit-1.0 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4b37 freetype-1.2|any
 Mesa-3.0|/usr/ports/graphics/Mesa|/usr/X11R6|graphics library similar to SGI's OpenGL|/usr/ports/graphics/Mesa/pkg/DESCR|brad@openbsd.org|graphics|||any
 aalib-1.2|/usr/ports/graphics/aalib|/usr/local|ascii art library|/usr/ports/graphics/aalib/pkg/DESCR|brad@openbsd.org|graphics|||any
@@ -309,14 +309,14 @@ splitvt-1.6.3|/usr/ports/misc/splitvt|/usr/local|run two shells in a split windo
 tkcron-2.12|/usr/ports/misc/tkcron|/usr/local|frontend to crontab|/usr/ports/misc/tkcron/pkg/DESCR|angelos@openbsd.org|misc tk80||tcl-8.0.5 tk-8.0.5|any
 tkinfo-1.8|/usr/ports/misc/tkinfo|/usr/local|Tk script to read GNU info files and display them|/usr/ports/misc/tkinfo/pkg/DESCR|angelos@openbsd.org|misc tk80||tcl-8.0.5 tk-8.0.5|any
 tkman-2.0.6|/usr/ports/misc/tkman|/usr/local|Tcl/Tk-based manual browser|/usr/ports/misc/tkman/pkg/DESCR|angelos@openbsd.org|misc tk80|tcl-8.0.5 tk-8.0.5|tcl-8.0.5 glimpse-4.1 rman-3.0.5 tk-8.0.5|any
-xdelta-0.23|/usr/ports/misc/xdelta|/usr/local|binary delta generator and prototype RCS replacement|/usr/ports/misc/xdelta/pkg/DESCR|felix@mamba.pond.sub.org|misc|gdbm-1.8.0||any
+xdelta-0.23|/usr/ports/misc/xdelta|/usr/local|binary delta generator and prototype RCS replacement|/usr/ports/misc/xdelta/pkg/DESCR|hannah@mamba.pond.sub.org|misc|gdbm-1.8.0||any
 xgas-1.0|/usr/ports/misc/xgas|/usr/X11R6|animated simulation of an ideal gas|/usr/ports/misc/xgas/pkg/DESCR|angelos@openbsd.org|misc|||any
 xless-1.7|/usr/ports/misc/xless|/usr/X11R6|X11 viewer for text files|/usr/ports/misc/xless/pkg/DESCR|angelos@openbsd.org|misc|||any
 xtar-1.4|/usr/ports/misc/xtar|/usr/X11R6|view and manipulate contents of a tar file|/usr/ports/misc/xtar/pkg/DESCR|angelos@openbsd.org|misc|lesstif-0.89.0|lesstif-0.89.0|any
 xtimer-0.8087|/usr/ports/misc/xtimer|/usr/X11R6|super simple digital timer for X11|/usr/ports/misc/xtimer/pkg/DESCR|angelos@openbsd.org|misc|||any
 archie-1.4.1|/usr/ports/net/archie|/usr/local|Prospero client for the archie service|/usr/ports/net/archie/pkg/DESCR|ports@OpenBSD.ORG|net|||any
 arpwatch-2.1a4|/usr/ports/net/arpwatch|/usr/local|monitor arp & rarp requests|/usr/ports/net/arpwatch/pkg/DESCR|ports@openbsd.org|net|||any
-bind-8.2.2-t3b|/usr/ports/net/bind8|/|Berkeley Internet Name Daemon|/usr/ports/net/bind8/pkg/DESCR|ho@openbsd.org,jakob@openbsd.org|net|||any
+bind-8.2.2-t4b|/usr/ports/net/bind8|/|Berkeley Internet Name Daemon|/usr/ports/net/bind8/pkg/DESCR|ho@openbsd.org,jakob@openbsd.org|net|||any
 bing-1.0.4|/usr/ports/net/bing|/usr/local|point-to-point bandwith measurement tool|/usr/ports/net/bing/pkg/DESCR|ports@OpenBSD.ORG|net|||any
 bitchx-75p3|/usr/ports/net/bitchx|/usr/local|alternative ircII color client|/usr/ports/net/bitchx/pkg/DESCR|brad@openbsd.org|net|||any
 clog-1.6|/usr/ports/net/clog|/usr/local|tcp connection logger daemon|/usr/ports/net/clog/pkg/DESCR|ports@openbsd.org|net security|||any
@@ -324,7 +324,7 @@ curl-5.11|/usr/ports/net/curl|/usr/local|get files from FTP, GOPHER, HTTP or HTT
 dxpc-3.7.0|/usr/ports/net/dxpc|/usr/local|X11 over a low bandwidth link|/usr/ports/net/dxpc/pkg/DESCR|espie@openbsd.org|net X11|m4-1.4 autoconf-2.13||any
 epic4pre2.004-19990927|/usr/ports/net/epic4|/usr/local|The (E)nhanced (P)rogrammable (I)RC-II (C)lient.|/usr/ports/net/epic4/pkg/DESCR|brad@openbsd.org|net|||any
 ethereal-0.7.5|/usr/ports/net/ethereal|/usr/X11R6|network protocol analyzer|/usr/ports/net/ethereal/pkg/DESCR|jakob@openbsd.org|net x11|gettext-0.10.35 glib-1.2.4 gtk+-1.2.4|gettext-0.10.35 glib-1.2.4 gtk+-1.2.4|any
-firewalk-0.8|/usr/ports/net/firewalk|/usr/local|gateway acl scanner (via static-source port traceroute)|/usr/ports/net/firewalk/pkg/DESCR|dugsong@monkey.org|net|libnet-0.99c||any
+firewalk-0.8|/usr/ports/net/firewalk|/usr/local|gateway acl scanner (via static-source port traceroute)|/usr/ports/net/firewalk/pkg/DESCR|dugsong@monkey.org|net|libnet-0.99g||any
 gated-3.5.11|/usr/ports/net/gated|/usr/local|routing protocol daemon|/usr/ports/net/gated/pkg/DESCR|ports@OpenBSD.ORG|net|||any
 gicq-0.33|/usr/ports/net/gicq|/usr/X11R6|GTK based ICQ program|/usr/ports/net/gicq/pkg/DESCR|brad@openbsd.org|net|gettext-0.10.35 glib-1.2.4 libicq-0.33 gtk+-1.2.4|gettext-0.10.35 glib-1.2.4 libicq-0.33 gtk+-1.2.4|any
 httptunnel-2.0|/usr/ports/net/httptunnel|/usr/local|HTTP tunneling utility|/usr/ports/net/httptunnel/pkg/DESCR|jakob@openbsd.org|net|||any
@@ -333,7 +333,7 @@ icmpinfo-1.11|/usr/ports/net/icmpinfo|/usr/local|look at the icmp messages recei
 irc-2.10.1|/usr/ports/net/irc|/usr/local|'Internet Relay Chat' server|/usr/ports/net/irc/pkg/DESCR|marc@OpenBSD.ORG|net|||any
 ircII-4.4|/usr/ports/net/ircII|/usr/local|'Internet Relay Chat' client|/usr/ports/net/ircII/pkg/DESCR|brad@openbsd.org|net|||any
 ircii-2.8.2-epic3.004|/usr/ports/net/ircii-epic|/usr/local|enhanced version of ircII (internet relay chat)|/usr/ports/net/ircii-epic/pkg/DESCR|brad@openbsd.org|net|||any
-libnet-0.99c|/usr/ports/net/libnet|/usr/local|raw IP packet construction library|/usr/ports/net/libnet/pkg/DESCR|dugsong@monkey.org|net|||any
+libnet-0.99g|/usr/ports/net/libnet|/usr/local|raw IP packet construction library|/usr/ports/net/libnet/pkg/DESCR|dugsong@monkey.org|net|||any
 licq-0.61|/usr/ports/net/licq|/usr/local|ICQ clone for UNIX|/usr/ports/net/licq/pkg/DESCR|ports@openbsd.org|net|Mesa-3.0 gmake-3.77 qt-1.44|Mesa-3.0 qt-1.44|any
 micq-0.4.2|/usr/ports/net/micq|/usr/local|Text-based ICQ implementation.|/usr/ports/net/micq/pkg/DESCR|form@openbsd.org|net|||any
 mirror-2.9|/usr/ports/net/mirror|/usr/local|mirror packages on remote sites|/usr/ports/net/mirror/pkg/DESCR|ports@openbsd.org|net|||any
@@ -481,7 +481,7 @@ spiff-1.0|/usr/ports/textproc/spiff|/usr/local|very flexible diff-like program|/
 texi2html-1.52|/usr/ports/textproc/texi2html|/usr/local|texinfo to HTML converter|/usr/ports/textproc/texi2html/pkg/DESCR|angelos@openbsd.org|textproc|||any
 wdiff-0.5|/usr/ports/textproc/wdiff|/usr/local|word differences between text files|/usr/ports/textproc/wdiff/pkg/DESCR|angelos@openbsd.org|textproc|||any
 xml2rfc|/usr/ports/textproc/xml2rfc|/usr/local|convert memos written in XML to the RFC format|/usr/ports/textproc/xml2rfc/pkg/DESCR|jakob@openbsd.org|textproc||tcl-8.0.5 TclXML-1.1.1 tk-8.0.5|any
-xpdf-0.90|/usr/ports/textproc/xpdf|/usr/X11R6|PDF viewer for X|/usr/ports/textproc/xpdf/pkg/DESCR|apollo@slcnet.net|textproc|||any
+xpdf-0.90|/usr/ports/textproc/xpdf|/usr/X11R6|PDF viewer for X|/usr/ports/textproc/xpdf/pkg/DESCR|eep@inconnect.com|textproc|||any
 amaya-2.1|/usr/ports/www/amaya|/usr/local|test-bed browser/authoring tool of the W3C|/usr/ports/www/amaya/pkg/DESCR|rohee@OpenBSD.ORG|www|gmake-3.77 lesstif-0.89.0|lesstif-0.89.0|any
 amaya-english-dict|/usr/ports/www/amaya-english-dict|/usr/local|English dictionary for the Amaya browser/page composer|/usr/ports/www/amaya-english-dict/pkg/DESCR|rohee@openbsd.org|www||lesstif-0.89.0 amaya-2.1|any
 amaya-french-dict|/usr/ports/www/amaya-french-dict|/usr/local|French dictionary for the Amaya browser/page composer|/usr/ports/www/amaya-french-dict/pkg/DESCR|rohee@openbsd.org|www||lesstif-0.89.0 amaya-2.1|any
@@ -506,7 +506,7 @@ blast-1.0|/usr/ports/x11/blast|/usr/X11R6|blow holes through windows|/usr/ports/
 bricons-3.0|/usr/ports/x11/bricons|/usr/X11R6|quick start-up utility for applications on an X11 display|/usr/ports/x11/bricons/pkg/DESCR|angelos@openbsd.org|x11|||any
 ctwm-3.5|/usr/ports/x11/ctwm|/usr/X11R6|twm, plus support for multiple virtual screens, etc|/usr/ports/x11/ctwm/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 emiclock-1.0.2|/usr/ports/x11/emiclock|/usr/X11R6|hyper-animated face analog clock for X11|/usr/ports/x11/emiclock/pkg/DESCR|angelos@openbsd.org|x11|||any
-enlightenment-0.15.5|/usr/ports/x11/enlightenment|/usr/X11R6|a "themed" window manager|/usr/ports/x11/enlightenment/pkg/DESCR|op21@squish.org|x11|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5d jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 gettext-0.10.35 glib-1.2.4 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 libaudiofile-0.1.7 imlib-1.9.4 esound-0.2.8 fnlib-0.4 libghttp-1.0.4|gettext-0.10.35 glib-1.2.4 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 libaudiofile-0.1.7 imlib-1.9.4 esound-0.2.8 fnlib-0.4 freetype-1.2 libghttp-1.0.4|any
+enlightenment-0.15.5|/usr/ports/x11/enlightenment|/usr/X11R6|a "themed" window manager|/usr/ports/x11/enlightenment/pkg/DESCR|op21@squish.org|x11|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5d jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 gettext-0.10.35 glib-1.2.4 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 libaudiofile-0.1.9 imlib-1.9.4 esound-0.2.15 fnlib-0.4 libghttp-1.0.4|gettext-0.10.35 glib-1.2.4 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 libaudiofile-0.1.9 imlib-1.9.4 esound-0.2.15 fnlib-0.4 freetype-1.2 libghttp-1.0.4|any
 explorer-0.72|/usr/ports/x11/explorer|/usr/X11R6|file manager with same look and feel as Windows95(tm)|/usr/ports/x11/explorer/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.77 Mesa-3.0 qt-1.44|Mesa-3.0 qt-1.44|any
 freefonts-0.10|/usr/ports/x11/freefonts|/usr/X11R6|collection of ATM fonts from the CICA archives|/usr/ports/x11/freefonts/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 fvwm-2.0.46|/usr/ports/x11/fvwm2|/usr/X11R6|internationalized (not japanised) fvwm version 2|/usr/ports/x11/fvwm2/pkg/DESCR|don@OpenBSD.ORG|x11|||any
