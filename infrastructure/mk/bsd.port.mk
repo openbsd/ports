@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.354 2001/02/10 13:47:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.355 2001/02/10 13:50:13 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1491,7 +1491,8 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
 	@cd ${.CURDIR} && \
-	  if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE}; \
 	    ${MAKE} package-links; \
 	  else \
 	    ${MAKE} delete-package; \
