@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/05 02:35:23 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.5 2001/02/12 09:56:31 espie Exp $ 
 
 DISTNAME=       ttfm-0.9.3
 PKGNAME=        zh-${DISTNAME}
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
-LIB_DEPENDS=	tiff.35::graphics/tiff
+LIB_DEPENDS=	ttf.1.::print/freetype
 
 DOCS=	README USAGE
 
