@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2004/09/15 19:06:57 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2004/10/20 09:14:40 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -20,7 +20,7 @@ MAKE_OBJC?=No
 MAKE_JAVA?=No
 MAKE_ADA?=No
 
-MYDIR=lang/egcs/snapshot
+MYDIR=lang/egcs/stable
 
 # This is a configuration file for gcc
 
