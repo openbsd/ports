@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2004/04/23 02:17:50 dons Exp $
+$OpenBSD: patch-configure,v 1.3 2004/05/17 03:41:25 dons Exp $
 Let alex know about the new archs Haskell runs on.
 
 --- configure.orig	Wed Aug 13 23:36:18 2003
@@ -7,7 +7,7 @@ Let alex know about the new archs Haskell runs on.
          HostVendor_CPP='unknown'
          HostOS_CPP='freebsd'
          ;;
-+amd64*-unknown-openbsd*)
++amd64*-*-openbsd*|x86_64-*-openbsd*)
 +	HostPlatform=x86_64-unknown-openbsd
 +	TargetPlatform=x86_64-unknown-openbsd
 +	BuildPlatform=x86_64-unknown-openbsd
