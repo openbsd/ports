@@ -1,0 +1,10 @@
+A curses-based textmode ICQ client implementation. It is a
+fully featured client, can do things like file transfer. Has
+the ability to associate sounds with different actions/evens
+and play them through a sound card, as well as the standart
+beeping.
+
+Things like colors are not hard-coded in the program itself,
+but can be set in the corresponding config files.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/09 09:43:24 reinhard Exp $
+bin/centericq
+share/centericq/cont.wav
+share/centericq/email.wav
+share/centericq/file.wav
+share/centericq/msg.wav
+share/centericq/online.wav
+share/centericq/url.wav
+share/doc/centericq/FAQ
+share/doc/centericq/README
+@dirrm share/doc/centericq
+@dirrm share/centericq

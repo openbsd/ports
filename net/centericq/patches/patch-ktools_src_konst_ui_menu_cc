@@ -1,0 +1,19 @@
+$OpenBSD: patch-ktools_src_konst_ui_menu_cc,v 1.1.1.1 2001/03/09 09:43:22 reinhard Exp $
+--- ktools/src/konst.ui.menu.cc.orig	Sun Feb 18 04:25:58 2001
++++ ktools/src/konst.ui.menu.cc	Thu Feb 22 22:12:08 2001
+@@ -215,6 +215,7 @@ int verticalmenu::open() {
+                     ret = 0;
+                     break;
+         
++		case 'k':
+                 case KEY_UP:
+                     if(curelem > 0) {
+                         shownelem(curelem, 0);
+@@ -236,6 +237,7 @@ int verticalmenu::open() {
+                     }
+                     break;
+ 
++		case 'j':
+                 case KEY_DOWN:
+                     if(!items.empty()) {
+                         if(curelem < items.size()-1) {
