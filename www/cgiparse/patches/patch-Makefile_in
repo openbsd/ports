@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jun  8 21:34:11 2001
++++ Makefile.in	Fri Jun  8 21:34:21 2001
+@@ -33,7 +33,7 @@
+ SONAME = lib$(LIB).so.$(MAJOR)
+ PANAME = lib$(LIB)_p.a
+ 
+-prefix = @prefix@
++prefix = ${DESTDIR}@prefix@
+ exec_prefix = @exec_prefix@
+ LIBDIR = @libdir@
+ LIBOWN = 0
