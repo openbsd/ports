@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/06 21:36:29 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/08/16 16:42:00 turan Exp $
 
 DISTNAME=	bladeenc-0.93.7-src-unstable-2
 PKGNAME=	bladeenc-0.93.7
@@ -11,9 +11,9 @@ HOMEPAGE=	http://bladeenc.mp3.no/
 
 MAINTAINER=	brad@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu

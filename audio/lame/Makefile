@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/31 09:15:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/08/16 16:42:01 turan Exp $
 
 DISTNAME=		lame3.85beta
 PKGNAME=		lame-3.85beta
@@ -12,9 +12,9 @@ HOMEPAGE=		http://www.sulaco.org/mp3/
 
 MAINTAINER=		jakob@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
