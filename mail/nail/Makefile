@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/11 17:01:48 pvalchev Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
@@ -6,7 +6,7 @@ DISTNAME=		nail-10.7
 CATEGORIES=		mail
 HOMEPAGE=		http://nail.sourceforge.net/
 
-MAINTAINER=		Jeffrey Neitzel <jneitzel@bluemarble.net>
+MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
