@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/12/31 12:30:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2002/03/20 14:32:43 espie Exp $
+@pkgcfl arts-*
 bin/artsc-config
 bin/artscat
 bin/artsd
