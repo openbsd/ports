@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/17 18:36:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/23 03:00:07 dons Exp $
 
 COMMENT=	"parser generator for the functional language Haskell"
 
@@ -7,7 +7,7 @@ DISTNAME=	happy-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/ghc/
-MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
+MAINTAINER=	Don Stewart <dons@openbsd.org>
 
 MODULES=	ghc
 
