@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/03/31 12:35:52 sturm Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
@@ -11,6 +11,8 @@ PERMIT_DISTFILES_CDROM= "May not be bundled, according to copyright."
 PERMIT_DISTFILES_FTP=   Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+
+USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/SatTrack-3.1.6/src
 
