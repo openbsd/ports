@@ -1,0 +1,71 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
+--- Makefile.orig	Fri Jul 27 21:32:18 2001
++++ Makefile	Fri Jul 27 21:32:31 2001
+@@ -1,14 +1,14 @@
+ # These two definitions are used if you 'make install'
+ # the value of LIBDIR should be the same as OMEGALIB in defs.h
+-BINDIR = /home/sdossey/omega/
+-LIBDIR = /home/sdossey/omega/lib/
++BINDIR = ${TRUEPREFIX}/bin
++LIBDIR = ${TRUEPREFIX}/share/omega
+ 
+ # One of these should be uncommented, as appropriate, unless your compiler
+ # does it for you.  You can test this by simply trying to 'make' omega -
+ # it will fail if none of them are defined.  If you do uncomment
+ # one, make sure you comment out the other definition of CFLAGS lower down
+ 
+-CFLAGS = -DBSD -ggdb
++CFLAGS+= -DBSD -DOMEGALIB=\"${LIBDIR}/\"
+ #CFLAGS = -DSYSV -O
+ # I also had to define -cckr (K&R style C) for system V
+ #CFLAGS = -DMSDOS -O
+@@ -17,21 +17,21 @@ CFLAGS = -DBSD -ggdb
+ # CPP should contain the command to run the C preprocessor.
+ #CPP = cc -E
+ #CPP = /lib/cpp
+-CPP = gcc -E
++CPP = ${CC} -E
+ 
+ # If you have gcc and don't intend to hack around with the game,
+ # I recommend setting CC to gcc and using -O (as the CFLAGS).
+ 
+ #CFLAGS = -O
+ #LDFLAGS = -s
+-CC = gcc
++#CC = gcc
+ 
+ # comment out one of the following two, after establishing whether your
+ # machine uses termcap (most BSD machines) or terminfo (System-V)
+ #LIBS = -lcurses -ltermcap
+ #LIBS = -lcurses -ltermlib
+ # Linux links in term?? automatically.
+-LIBS = -lncurses
++LIBS = -lcurses -ltermcap
+ 
+ #################### that's it for changing the Makefile ####################
+ 
+@@ -48,14 +48,16 @@ OBJ = omega.o abyss.o aux1.o aux2.o aux3
+ omega: $(OBJ)
+ 	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o omega
+ 
+-install: omega $(BINDIR) $(LIBDIR)
+-	cp omega $(BINDIR)
+-	chmod 4711 $(BINDIR)/omega
+-	- cp lib/* $(LIBDIR)
+-	chmod 0644 $(LIBDIR)/help*.txt $(LIBDIR)/license.txt $(LIBDIR)/motd.txt $(LIBDIR)/thanks.txt $(LIBDIR)/update.txt
+-	chmod 0600 $(LIBDIR)/abyss.txt $(LIBDIR)/scroll[1234].txt $(LIBDIR)/*.dat
+-	chmod 0600 $(LIBDIR)/omega.hi $(LIBDIR)/omega.log $(LIBDIR)/omegahi.bak
+-
++install: omega
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	cp omega $(DESTDIR)$(BINDIR)
++	chown root:games $(DESTDIR)$(BINDIR)/omega
++	chmod 711 $(DESTDIR)$(BINDIR)/omega; chmod g+s $(DESTDIR)$(BINDIR)/omega
++	cp lib/* $(DESTDIR)$(LIBDIR); chown -R root:games $(DESTDIR)$(LIBDIR) 
++	chmod 0644 $(DESTDIR)$(LIBDIR)/help*.txt $(DESTDIR)$(LIBDIR)/license.txt $(DESTDIR)$(LIBDIR)/motd.txt $(DESTDIR)$(LIBDIR)/thanks.txt $(DESTDIR)$(LIBDIR)/update.txt
++	chmod 0660 $(DESTDIR)$(LIBDIR)/abyss.txt $(DESTDIR)$(LIBDIR)/scroll[1234].txt $(DESTDIR)$(LIBDIR)/*.dat
++	chmod 0660 $(DESTDIR)$(LIBDIR)/omega.hi $(DESTDIR)$(LIBDIR)/omega.log
++ 
+ install_not_suid: omega $(BINDIR) $(LIBDIR)
+ 	cp omega $(BINDIR)
+ 	chmod 0711 $(BINDIR)/omega

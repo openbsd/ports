@@ -1,0 +1,15 @@
+$OpenBSD: patch-genclr_c,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
+--- genclr.c.orig	Sat Aug  8 08:53:38 1998
++++ genclr.c	Fri Jul 27 20:59:03 2001
+@@ -281,7 +281,11 @@ int main (int argc, char **argv)
+      */
+     fp = emitopen (cfile, argv);
+     fprintf (fp, "\
++#ifdef __FreeBSD__\n\
++#include <ncurses.h>\n\
++#else\n\
+ #include <curses.h>\n\
++#endif\n\
+ #include <stdio.h>\n\
+ #include <stdlib.h>\n\
+ 

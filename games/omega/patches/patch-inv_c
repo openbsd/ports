@@ -1,0 +1,16 @@
+$OpenBSD: patch-inv_c,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
+--- inv.c.orig	Thu Dec 31 19:08:11 1998
++++ inv.c	Fri Jul 27 20:59:03 2001
+@@ -8,7 +8,11 @@
+ # ifdef AMIGA
+ #  include <curses210.h>
+ # else
+-#  include <curses.h>
++#  ifdef __FreeBSD__
++#   include <ncurses.h>
++#  else
++#   include <curses.h>
++#  endif
+ # endif
+ #endif
+ 
