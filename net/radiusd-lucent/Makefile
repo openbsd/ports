@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/13 20:37:45 danh Exp $
 
 COMMENT=	"Lucent remote access RADIUS server"
 
 DISTNAME=	radius21
 PKGNAME=	radiusd-lucent-2.1p1
 CATEGORIES=	net
-NEED_VERSION=	1.434
+NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.livingston.com/pub/le/radius/
 MASTER_SITES0=	ftp://ftp.vergenet.net/pub/lucent_radius/
 PATCHFILES=	radius-2.1.va.1.patch.gz:0
