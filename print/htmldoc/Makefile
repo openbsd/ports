@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/16 17:01:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2005/02/21 20:24:52 alek Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		png ssl X11 m crypto c jpeg Xext z
 
 USE_X11=		Yes
 

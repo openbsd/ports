@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 19:15:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/21 20:24:21 alek Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
@@ -29,5 +29,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m ncurses readline
 
 .include <bsd.port.mk>
