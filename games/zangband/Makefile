@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/02/15 14:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
@@ -6,8 +6,6 @@ VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
 CATEGORIES=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/
-
-MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

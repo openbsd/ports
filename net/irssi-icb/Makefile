@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/04 02:08:03 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/09/15 00:06:59 pvalchev Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
@@ -14,8 +14,6 @@ MASTER_SITES=   http://www.irssi.org/files/plugins/icb/ \
                 http://us.irssi.org/files/plugins/icb/
 
 CATEGORIES=     net
-
-MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 BUILD_DEPENDS=  ::net/irssi:configure \
 		::devel/glib

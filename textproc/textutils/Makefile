@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 08:46:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/15 00:07:00 pvalchev Exp $
 
 COMMENT=		"GNU text utilities"
 
 DISTNAME=		textutils-2.0
 CATEGORIES=		textproc
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

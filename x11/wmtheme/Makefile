@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/15 00:07:00 pvalchev Exp $
 
 COMMENT=		"window manager theme utility"
 
@@ -6,8 +6,6 @@ DISTNAME=		wmtheme-1.3.2
 CATEGORIES=		x11 
 
 HOMEPAGE=		http://wmtheme.sourceforge.net/
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

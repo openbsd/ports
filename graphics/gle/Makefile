@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/09/22 22:53:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
@@ -7,8 +7,6 @@ DISTNAME=		gle-${VERSION}
 CATEGORIES=     	graphics devel
 
 HOMEPAGE=		http://www.linas.org/gle/
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 LIB_DEPENDS=		glut.3::graphics/glut
 

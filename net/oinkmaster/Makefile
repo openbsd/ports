@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/29 14:05:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=	"update your Snort 1.8+ rules"
 
@@ -7,8 +7,6 @@ CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oinkmaster/}
 
 HOMEPAGE=       http://oinkmaster.sourceforge.net/
-
-MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM= 	Yes

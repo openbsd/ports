@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/05 03:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -6,8 +6,6 @@ V=			3.0.0
 DISTNAME=		grip-${V}
 CATEGORIES=		audio
 EXTRACT_SUFX=		.tar.gz
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 HOMEPAGE=		http://www.nostatic.org/grip/
 

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/24 01:29:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/15 00:06:58 pvalchev Exp $
 
 COMMENT=		"GNU copy-in/out (cpio)"
 
 DISTNAME=		cpio-2.5
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		archivers
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes

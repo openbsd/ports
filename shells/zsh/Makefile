@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/07/12 19:46:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.31 2004/09/15 00:07:00 pvalchev Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -17,8 +17,6 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
 HOMEPAGE=	http://www.zsh.org/
-
-MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

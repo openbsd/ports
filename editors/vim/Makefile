@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2004/08/05 11:56:30 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -20,8 +20,6 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 DIST_SUBDIR=	vim6
 
 HOMEPAGE=	http://www.vim.org/
-
-MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1

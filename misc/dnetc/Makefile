@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/12 14:45:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=		"official distributed.net client"
 
@@ -26,8 +26,6 @@ CATEGORIES=		misc
 HOMEPAGE=		http://www.distributed.net/
 
 MASTER_SITES=		http://http.distributed.net/pub/dcti/v${V}/
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 ONLY_FOR_ARCHS=		i386 sparc m68k
 

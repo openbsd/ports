@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=		"encrypt/decrypt using Rijndael encryption algorithm"
 
 V=			0.7
 DISTNAME=		aescrypt-${V}
 CATEGORIES=		security
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 HOMEPAGE=		http://aescrypt.sourceforge.net/
 

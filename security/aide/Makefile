@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/04 15:29:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/15 00:07:00 pvalchev Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
 V=			0.10
 DISTNAME=		aide-${V}
 CATEGORIES=		security
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 BUILD_DEPENDS=		::devel/bison \
 			::security/mhash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/08/04 19:14:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.18 2004/09/15 00:06:59 pvalchev Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -9,8 +9,6 @@ DISTNAME=		ipcheck.${V}
 CATEGORIES=		net
 
 HOMEPAGE=		http://ipcheck.sourceforge.net/
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
