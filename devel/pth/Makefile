@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/21 00:36:37 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/27 17:51:20 brad Exp $
 
 COMMENT=	"GNU portable threads"
 
-DISTNAME=	pth-1.4.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	pth-1.4.1
 CATEGORIES=	devel
 NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -25,6 +24,10 @@ CONFIGURE_ARGS+= --enable-static --enable-pthread \
 		 --enable-batch \
 		 --includedir="${PREFIX}/include/pth" \
 		 --libdir="${PREFIX}/lib/pth"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 REGRESS_TARGET=	test
 
