@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/12 17:29:12 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/12 21:37:30 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 
 DISTNAME=	strobe-1.05
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.ne.jp/pub/network/misc/
 
 MAINTAINER=	brad@openbsd.org
