@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2002/09/13 17:09:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.234 2002/09/21 23:00:02 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -19,6 +19,7 @@
      SUBDIR += bnc
      SUBDIR += cadaver
      SUBDIR += centericq
+     SUBDIR += cftp
      SUBDIR += cidr
      SUBDIR += clog
      SUBDIR += courtney
