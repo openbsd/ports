@@ -1,0 +1,10 @@
+arpd replies to any ARP request for an IP address matching the specified
+destination net with the hardware MAC address of the specified
+interface, but only after determining if another host already claims it.
+
+Any IP address cliamed by arpd is eventually forgotten after a period of
+inactivity or after a hard timeout, and is relinquished if the real
+owner shows up.
+
+This enables a single host to claim all unassigned addresses on a LAN
+for network monitoring or simulation.
