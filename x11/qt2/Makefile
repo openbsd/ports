@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2002/11/14 05:16:27 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -22,6 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 #CXXFLAGS+=	-g
 
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	C++
 USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
@@ -87,7 +90,6 @@ post-configure:
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm
-
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
