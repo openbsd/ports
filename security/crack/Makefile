@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/12 15:20:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2001/03/22 22:06:41 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
@@ -38,7 +38,7 @@ do-build:
 .endif
 
 do-install:
-	@mkdir -p ${PREFIX}/crack
+	${INSTALL_DATA_DIR} ${PREFIX}/crack
 	@rm -f ${WRKSRC}/Run/*
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
 

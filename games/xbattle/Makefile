@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:37 brad Exp $
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=imake
 
 post-install:
-	@mkdir -p $(PREFIX)/share/doc/xbattle
-	@mkdir -p $(PREFIX)/share/xbattle
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xbattle
+	${INSTALL_DATA_DIR} ${PREFIX}/share/xbattle
 	@cp $(WRKSRC)/tutorial* $(PREFIX)/share/doc/xbattle/ 
 	@cp $(WRKSRC)/README $(PREFIX)/share/doc/xbattle/ 
 	@cp -R $(WRKSRC)/xbas $(PREFIX)/share/xbattle/

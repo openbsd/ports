@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/23 16:17:13 ho Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/22 22:06:36 brad Exp $
 
 DISTNAME=	jpilot-0.99
 CATEGORIES=	comms
@@ -22,7 +22,7 @@ USE_X11=		yes
 CONFIGURE_STYLE=	autoconf
 
 post-install:
-	mkdir -p ${PREFIX}/share/doc/jpilot
-	cp ${WRKSRC}/docs/plugin.html ${PREFIX}/share/doc/jpilot
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpilot
+	${INSTALL_DATA} ${WRKSRC}/docs/plugin.html ${PREFIX}/share/doc/jpilot
 
 .include <bsd.port.mk>

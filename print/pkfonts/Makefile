@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:40 brad Exp $
 #
 
 DISTNAME=	pkfonts
@@ -54,7 +54,7 @@ pre-fetch:
 .endif
 
 do-install:
-	mkdir -p ${PREFIX}/lib/fonts
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/fonts
 	tar -C ${PREFIX}/lib/fonts -xzf ${FULLDISTDIR}/${DISTFILES}
 	@cp ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
 

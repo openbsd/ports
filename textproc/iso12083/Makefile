@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:42 brad Exp $
 #
 
 DISTNAME=	iso12083-1993
@@ -28,7 +28,7 @@ EXTRACT_ONLY=	# empty
 INSTDIR=	${PREFIX}/share/sgml/iso12083
 
 pre-install:
-	@[ -d ${INSTDIR} ] || mkdir -p ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}
 
 do-install:
 	@for i in ${DISTFILES}; do \

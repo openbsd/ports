@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:42 brad Exp $
 #
 
 DISTNAME=	mouseclock-1.0
@@ -24,9 +24,7 @@ CONFIGURE_STYLE=	imake noman
 XMKMF=		xmkmf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mouseclock
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mouseclock
-.endif
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mouseclock
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mouseclock
 
 .include <bsd.port.mk>

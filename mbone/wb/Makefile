@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:40 brad Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -35,12 +35,10 @@ pre-fetch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/NOTES ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/lblwb.ps ${PREFIX}/share/doc/wb
-.endif
 
 .include <bsd.port.mk>

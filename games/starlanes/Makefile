@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:01 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/22 22:06:37 brad Exp $
 
 DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
@@ -19,7 +19,7 @@ pre-build:
 	@rm ${WRKSRC}/starlanes
 
 do-install:
-	@mkdir -p ${PREFIX}/share/doc/starlanes
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/starlanes
 	${INSTALL_PROGRAM} ${WRKSRC}/starlanes ${PREFIX}/bin/starlanes
 	${INSTALL_MAN} ${WRKSRC}/starlanes.6 ${PREFIX}/man/man6
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/starlanes/COPYING

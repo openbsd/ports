@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:41 brad Exp $
 #
 
 DISTNAME=	html-4.0b
@@ -26,7 +26,7 @@ WRKDIST=	${WRKDIR}
 INSTDIR=	${PREFIX}/share/sgml/html
 
 pre-install:
-	@[ -d ${INSTDIR} ] || mkdir -p ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}
 
 do-install:
 	@zcat ${FULLDISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:44:09 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/22 22:06:42 brad Exp $
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -29,7 +29,7 @@ do-configure:
 	cd ${WRKDIST} && SUBDIRS=clients make depend
 
 pre-install:
-	@mkdir -p ${PREFIX}/lib/help
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/help
 	@cd ${WRKSRC} && make ${MAKE_FLAGS} -f ${MAKE_FILE} install.man
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 16:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/22 22:06:41 brad Exp $
 
 DISTNAME=	ppgen-1.0
 CATEGORIES=	security
@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 CONFIGURE_STYLE=gnu old dest
 
 post-install:
-	mkdir -p ${PREFIX}/share/ppgen
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ppgen
 	gzip -dc ${FULLDISTDIR}/en.gz > ${PREFIX}/share/ppgen/en
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/31 22:43:44 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/22 22:06:37 brad Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
@@ -65,7 +65,7 @@ post-install:
 	@cd ${WRKSRC}/doc && \
 	    ${INSTALL_MAN} slash.6 srecover.6 ${PREFIX}/man/man6
 .if ${FLAVOR:L} == ""
-	@mkdir -p ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	sed -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \
 	${INSTALL_DATA} Slash ${PREFIX}/lib/X11/app-defaults

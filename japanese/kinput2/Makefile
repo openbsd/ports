@@ -40,7 +40,7 @@ pre-configure:
 .endif
 
 post-install:
-	-mkdir ${PREFIX}/share/doc/kinput2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kinput2
 	cp ${WRKSRC}/README ${PORT_DOCDIR}
 	cp ${WRKSRC}/NEWS ${PORT_DOCDIR}
 	@(cd ${WRKSRC}/doc; tar -cf - . | \

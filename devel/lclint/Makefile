@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/22 15:41:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/03/22 22:06:36 brad Exp $
 
 DISTNAME=	lclint-2.5q
 CATEGORIES=	devel
@@ -46,7 +46,7 @@ post-build:
 	cd ${LIBSRC} && $(LCLINT) -nolib ansi.h posix.h unix.h -dump unix
 	cd ${LIBSRC} && $(LCLINT) -DSTRICT -nolib ansi.h posix.h unix.h -dump unixstrict
 post-install:
-	@mkdir -p ${DOCDIR}
+	${INSTALL_DATA_DIR} ${DOCDIR}
 	cd ${DOCDIR} && tar -zxv -s ,lclint-guide/,, -f ${FULLDISTDIR}/${GUIDE} 
 
 test: install

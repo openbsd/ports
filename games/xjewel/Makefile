@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/22 22:06:39 brad Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=imake
 
 pre-install:
-	@mkdir -p ${PREFIX}/lib/xjewel.font
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/xjewel.font
 	@(cd ${WRKSRC}/bitmaps; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
 		${PREFIX}/lib/xjewel.font)
 

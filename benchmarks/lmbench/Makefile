@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/22 22:06:35 brad Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
@@ -39,7 +39,7 @@ pre-patch:
 	@mv ${WRKSRC}/src/RCS ${WRKSRC}/src/RCS-
 
 pre-install:
-	[ -d ${PREFIX}/lib/lmbench ] || mkdir -p ${PREFIX}/lib/lmbench
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/lmbench
 
 do-install:
 	rm -rf ${WRKSRC}/{Results/RCS,doc/RCS,scripts/RCS,RCS}

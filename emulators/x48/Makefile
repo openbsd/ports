@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:56 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/22 22:06:36 brad Exp $
 #
 
 DISTNAME=		x48-0.4.0
@@ -18,8 +18,9 @@ MASTER_SITE_SUBDIR=	system/emulators
 CONFIGURE_STYLE=imake noman
 
 post-install:
-	mkdir -p ${PREFIX}/share/x48
-	cp ${WRKSRC}/README ${PREFIX}/share/x48/README-x48
-	cp ${WRKSRC}/doc/CARDS.doc ${WRKSRC}/doc/ROMDump.doc ${PREFIX}/share/x48
+	${INSTALL_DATA_DIR} ${PREFIX}/share/x48
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/x48/README-x48
+	${INSTALL_DATA} ${WRKSRC}/doc/CARDS.doc ${WRKSRC}/doc/ROMDump.doc \
+			${PREFIX}/share/x48
 
 .include <bsd.port.mk>

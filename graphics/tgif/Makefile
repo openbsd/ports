@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/11/18 10:33:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/03/22 22:06:39 brad Exp $
 
 DISTNAME=	tgif-4.1.40
 CATEGORIES=	graphics
@@ -30,7 +30,7 @@ post-extract:
 		${WRKDIR}/${DISTNAME}/Tgif.tmpl
 
 post-install:
-	@mkdir -p ${TGIFDOC}
+	${INSTALL_DATA_DIR} ${TGIFDOC}
 	cd ${WRKSRC} ;\
 		${INSTALL_DATA} ${DEMO_FILES} ${TGIFDOC} ;\
 		${INSTALL_DATA} ${READMES} ${TGIFDOC}

@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/09 00:21:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:41 brad Exp $
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
@@ -53,7 +53,7 @@ post-configure:
 
 # need the texmf part visible...
 pre-fake:
-	mkdir -p ${PREFIX}/share/texmf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf
 	lndir ${TRUEPREFIX}/share/texmf ${PREFIX}/share/texmf
 	#	mktexlsr is too smart for its own good
 	rm ${PREFIX}/share/texmf/ls-R

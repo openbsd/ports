@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:36 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:42 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
 #BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
@@ -25,9 +25,7 @@ post-install:
 	strip ${PREFIX}/bin/Isearch
 	strip ${PREFIX}/bin/Iindex
 	strip ${PREFIX}/bin/Iutil
-.if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/Isearch
-	${INSTALL_MAN} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/Isearch
-.endif
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Isearch
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/Isearch
 
 .include <bsd.port.mk>

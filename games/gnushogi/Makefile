@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:36 brad Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
@@ -32,17 +32,15 @@ do-build:
 	make gnushogix )
 
 do-install:
-	@mkdir -p ${PREFIX}/share/gnushogi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gnushogi
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogi ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogir ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogix ${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/src/gnushogi.bbk ${PREFIX}/share/gnushogi
 	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.1 ${PREFIX}/man/man6/gnushogi.6
-.if !defined(NOPORTDOCS)
-	@mkdir -p ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnushogi
 .for doc in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${PREFIX}/share/doc/gnushogi
 .endfor
-.endif
 
 .include <bsd.port.mk>

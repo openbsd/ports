@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/22 22:06:39 brad Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -34,10 +34,8 @@ do-install:
 # and no man pages at all yet.
 # But include the very limited documentation
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imm
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
 	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm
-.endif
 # The sdr plugin is pretty much required.
 	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${PREFIX}/share/doc/imm
 

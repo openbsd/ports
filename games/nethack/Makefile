@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/02/08 11:55:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/22 22:06:37 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -51,7 +51,7 @@ post-install:
 	@cd ${WRKSRC}/doc && \
 	    ${INSTALL_MAN} nethack.6 recover.6 ${PREFIX}/man/man6
 .if ${FLAVOR:L} == ""
-	@mkdir -p ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack && \
 	    ${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/05 16:02:21 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/22 22:06:43 brad Exp $
 
 BROKEN=		"installs files directly into /etc"
 
@@ -39,7 +39,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lpd.perms ${PREFIX}/lib/lpd.perms-sample
 	test -f /etc/lpd.conf || ${INSTALL_DATA} ${WRKSRC}/lpd.conf /etc
 	test -f /etc/lpd.perms || ${INSTALL_DATA} ${WRKSRC}/lpd.perms /etc
-	mkdir -p ${PREFIX}/share/doc/LPRng
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/LPRng
 	cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
 		${PREFIX}/share/doc/LPRng
 	@cat ${PKGDIR}/MESSAGE

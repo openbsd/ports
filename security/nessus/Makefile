@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/02/13 03:00:11 matt Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/22 22:06:41 brad Exp $
 
 PKGNAME=	nessus-${VERS}
 
@@ -77,7 +77,7 @@ post-configure:
 	@touch ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap_installed
 
 pre-install:
-	mkdir -p -m 755 ${PREFIX}/include/nessus
+	${INSTALL_DATA_DIR} ${PREFIX}/include/nessus
 
 .include <bsd.port.mk>
 
