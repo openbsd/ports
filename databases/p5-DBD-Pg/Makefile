@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/07 22:20:32 peter Exp $
+# $OpenBSD: Makefile,v 1.28 2001/09/07 22:23:16 peter Exp $
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= DBD
 LIB_DEPENDS=	pq.2::databases/postgresql
 BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
