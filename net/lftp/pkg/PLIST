@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/05/24 07:04:47 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/08/06 05:55:11 kevlo Exp $
 bin/lftp
 bin/lftpget
-man/man1/lftp.1
+lib/lftp/
+@man man/man1/lftp.1
+share/examples/lftp/
 share/examples/lftp/lftp.conf-sample
+share/lftp/
 share/lftp/import-ncftp
 share/lftp/import-netscape
 share/locale/de/LC_MESSAGES/lftp.mo
@@ -16,11 +19,3 @@ share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
 share/locale/zh_TW/LC_MESSAGES/lftp.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/lftp
-@dirrm share/examples/lftp
-@exec mkdir -p %D/lib/lftp
-@dirrm lib/lftp

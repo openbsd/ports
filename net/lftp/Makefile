@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2004/06/08 03:49:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.46 2004/08/06 05:55:09 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
-DISTNAME=	lftp-3.0.5
+DISTNAME=	lftp-3.0.6
 CATEGORIES=	net
 MASTER_SITES=	http://the.wiretapped.net/mirrors/lftp/ \
 		http://the.wiretapped.net/mirrors/lftp/old/ \
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-ssl
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 NO_REGRESS=	Yes
 
