@@ -1,6 +1,6 @@
-$OpenBSD: patch-mergemaster_sh,v 1.4 2003/05/12 21:54:32 naddy Exp $
+$OpenBSD: patch-mergemaster_sh,v 1.5 2003/05/13 20:40:04 naddy Exp $
 --- mergemaster.sh.orig	Sat May 10 16:06:02 2003
-+++ mergemaster.sh	Sat May 10 18:30:36 2003
++++ mergemaster.sh	Tue May 13 11:58:38 2003
 @@ -404,7 +404,7 @@ fi
  
  # Define what CVS $Id tag to look for to aid portability.
@@ -34,16 +34,18 @@ $OpenBSD: patch-mergemaster_sh,v 1.4 2003/05/12 21:54:32 naddy Exp $
    ;; # End of the "RERUN" test
  esac
  
-@@ -569,9 +561,6 @@ esac
+@@ -567,10 +559,7 @@ esac
+ # or spwd.db.  Instead, we want to compare the text versions, and run *_mkdb.
+ # Prompt the user to do so below, as needed.
  #
- rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/passwd
- 
+-rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/passwd
+-
 -# We only need to compare things like freebsd.cf once
 -find ${TEMPROOT}/usr/obj -type f -delete 2>/dev/null
--
++rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/mail/*.db ${TEMPROOT}/etc/passwd
+ 
  # Get ready to start comparing files
  
- # Check umask if not specified on the command line,
 @@ -605,50 +594,6 @@ fi
  
  CONFIRMED_UMASK=${NEW_UMASK:-0022}
@@ -106,7 +108,7 @@ $OpenBSD: patch-mergemaster_sh,v 1.4 2003/05/12 21:54:32 naddy Exp $
 -    $(echo "obase=10; ibase=8; $(stat -f "%OMp%OLp" ${1})" | bc) )) 
 -  printf "%04o\n" ${OCTAL}
 +  perl -e 'printf "%04o\n", (((stat("$ARGV[0]"))[2] & 07777) &~ \
-+    oct("$ARGV[1]"))' "${1}" "${CONFIRMED_UMASK}"`
++    oct("$ARGV[1]"))' "${1}" "${CONFIRMED_UMASK}"
  }
  
  mm_install () {
