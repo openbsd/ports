@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2005/02/15 10:03:07 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.71 2005/03/09 09:20:21 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -9,6 +9,7 @@
      SUBDIR += gnats
      SUBDIR += gq
      SUBDIR += iodbc
+     SUBDIR += mnemo
      SUBDIR += mysql
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlcc
