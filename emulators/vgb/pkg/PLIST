@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/12 08:55:51 aaron Exp $
+bin/vgb
+share/doc/vgb/VGB.html
+share/vgb/CART.GB
+@dirrm share/vgb
+@dirrm share/doc/vgb
