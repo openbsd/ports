@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2004/09/24 20:47:21 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2004/11/16 02:31:28 pvalchev Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -39,7 +39,7 @@ MULTI_PACKAGES=	-tcl
 SUBPACKAGE?=
 
 TCL_VERSION=	8.4
-LIB_DEPENDS=	tcl${TCL_VERSION:S/.//}:tcl-8.4:lang/tcl/${TCL_VERSION}
+LIB_DEPENDS=	tcl${TCL_VERSION:S/.//}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VERSION}
 CONFIGURE_ARGS+=--enable-tcl \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}
