@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/17 10:07:12 reinhard Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/08 01:07:12 pvalchev Exp $
 
 COMMENT=	'module for generating images'
 
 DISTNAME=	Imager-0.37
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.397
+NEED_VERSION=	1.407
 
 HOMEPAGE=	http://www.eecs.umich.edu/~addi/perl/Imager/
 
