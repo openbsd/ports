@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/07/12 14:52:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/08/10 09:48:24 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin' game, but harder than nethack"
 
@@ -27,8 +27,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=	${PREFIX}/lib/slashdir
+GAMEDIR=lib/slashdir
+NHDIR=	${PREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+SUBST_VARS=GAMEDIR
 
 FLAVORS=no_x11
 FLAVOR?=
@@ -74,5 +76,8 @@ post-install:
 	sed -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \
 	${INSTALL_DATA} Slash ${PREFIX}/lib/X11/app-defaults
 .endif
+	@install -g games -m 0664 /dev/null ${NHDIR}/logfile
+	@install -g games -m 0664 /dev/null ${NHDIR}/perm
+	@install -g games -m 0664 /dev/null ${NHDIR}/record
 
 .include <bsd.port.mk>
