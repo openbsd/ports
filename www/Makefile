@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/01/05 14:40:53 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/30 12:51:11 form Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -11,7 +11,7 @@
 #    SUBDIR += arena
 #    SUBDIR += ashe           # requires Motif
 #    SUBDIR += aswedit
-#    SUBDIR += cgiparse
+     SUBDIR += cgiparse
 #    SUBDIR += chimera
 #    SUBDIR += comline
 #    SUBDIR += fxhtml
