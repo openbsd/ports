@@ -1,25 +1,20 @@
-# $OpenBSD: Makefile,v 1.51 2003/11/13 21:11:11 margarida Exp $
+# $OpenBSD: Makefile,v 1.52 2004/02/25 02:35:04 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 
-VERSION=	1.0.1
-HELP_DATE=	20011030
+VERSION=	2.0
+HELP_DATE=	20030114
 DISTNAME=	epic4-${VERSION}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/
-MASTER_SITES0=	${MASTER_SITE_BACKUP}
-DISTFILES=	epic4-${VERSION}.tar.gz epic4-help-${HELP_DATE}.tar.gz
-EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
+DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.gz
 
-PATCHFILES=	epic4-1.0.1-ipv6-20010418.patch.gz:0
-PATCH_DIST_STRIP= -p1
-
-HOMEPAGE=	http://www.prbh.org/
+HOMEPAGE=	http://www.epicsol.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,24 +22,27 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
 
-MAKE_FLAGS=	wserv_exe='$$(libexecdir)/wserv-epic'
 FAKE_FLAGS=	IP="${WRKINST}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		${MAKE_FLAGS}
+		INSTALL_DATA="${INSTALL_DATA}"
+
+SEPARATE_BUILD=	simple
+CONFIGURE_STYLE= gnu 
+CONFIGURE_ARGS+= --without-perl --without-tcl
+
+INSTALL_TARGET=	install installhelp
 
 NO_REGRESS=	Yes
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= autoconf
+DOCS=	README
 
-DOCS=	README README.v6 doc/IPv4-6.txt
+post-extract:
+	@mv -f ${WRKDIR}/help ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/epic4
-	@cd ${PREFIX}/bin && ln -sf epic-EPIC4-${VERSION} epic
+	@cd ${PREFIX}/bin && mv -f epic-EPIC4-${VERSION} epic
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/epic4
-	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
-	@cd ${PREFIX}/share/epic && ${TAR} -zxf ${FULLDISTDIR}/epic4-help-${HELP_DATE}.tar.gz
+	@find ${PREFIX}/share/epic -name 'CVS' -print0 | xargs -0 rm -rf
 
 .include <bsd.port.mk>
