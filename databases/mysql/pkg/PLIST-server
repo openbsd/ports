@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.13 2004/08/10 00:52:43 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.14 2004/10/12 21:14:42 espie Exp $
+@newgroup _mysql:502
+@newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -217,7 +219,5 @@ share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
-@extraunexec userdel _mysql
-@extraunexec groupdel _mysql
 @extraunexec rm -rf ${DB_DIR}
 @extraunexec rm -rf ${SOCKET_DIR}

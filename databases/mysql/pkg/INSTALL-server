@@ -1,14 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.9 2004/06/23 04:04:05 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.10 2004/10/12 21:14:42 espie Exp $
 #
 # Pre/post-installation setup of MySQL
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-MYSQLUSER=_mysql
-MYSQLGROUP=_mysql
-ID=502
 
 do_notice_existingdir()
 {
@@ -27,46 +24,19 @@ do_notice_existingdir()
   echo
 }
 
-do_usergroup_install()
-{
-  # Create MySQL user and group
-  groupinfo -e $MYSQLGROUP
-  if [ $? -eq 0 ]; then
-    echo "===> Using $MYSQLGROUP group for MySQL"
-  else
-    echo "===> Creating $MYSQLGROUP group for MySQL"
-    groupadd -g $ID $MYSQLGROUP
-  fi
-  userinfo -e $MYSQLUSER
-  if [ $? -eq 0 ]; then
-    echo "===> Using $MYSQLUSER user for MySQL"
-  else
-    echo "===> Creating $MYSQLUSER user for MySQL"
-    useradd -g $MYSQLGROUP -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin -u $ID $MYSQLUSER
-  fi
-}
-
 do_database_install()
 {
   $PREFIX/bin/mysql_install_db
 }
 
 case $2 in 
-    PRE-INSTALL)
-	if [ -d $DB_DIR ]; then
-	  do_notice_existingdir $1
-	fi
-	do_usergroup_install
-	;;
     POST-INSTALL)
-	if [ ! -d $DB_DIR ]; then
+	if [ -d $DB_DIR ]; then
+	  do_notice_existingdir
+	else
 	  do_database_install
 	fi
 	;;
-    *)
-	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-	exit 1
-	;;  
 esac
 
 exit 0
