@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-sdl,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
+bin/quake-sdl
+bin/qw-client-sdl
+

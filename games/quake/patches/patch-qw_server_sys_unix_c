@@ -1,0 +1,12 @@
+$OpenBSD: patch-qw_server_sys_unix_c,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
+--- qw_server/sys_unix.c.orig	Mon Jul 23 04:26:39 2001
++++ qw_server/sys_unix.c	Mon Jul 23 04:26:39 2001
+@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place - Suit
+ #endif
+ 
+ // FIXME: use autoconf
+-#if defined(unix) || defined(_AIX) || defined(__NetBSD__)
++#if defined(unix) || defined(_AIX) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/time.h>
