@@ -32,7 +32,7 @@ something like:
 you probably need them.
 
 Once the package is installed, just edit your XF86Config file, to add
-${PREFIX}/X11/lib/modules, e.g.,
+${PREFIX}/lib/X11/modules, e.g.,
 
      ModulePath "${PREFIX}/lib/X11/modules"
      ModulePath "${X11BASE}/lib/modules"
