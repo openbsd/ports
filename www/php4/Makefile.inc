@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.8 2002/10/29 01:42:41 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2003/04/03 10:25:23 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
 
-V=		4.2.3
+V=		4.3.1
 DISTNAME=	php-${V}
 
 CATEGORIES=	www lang
@@ -31,6 +31,7 @@ PHP_CONFIG_FILE=	${PHP_CONFIG_PATH}/php.ini
 
 MODULES_SUBDIR=		lib/php/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
+PEAR_DIR=		${LOCALBASE}/lib/php
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -49,5 +50,5 @@ CONFIGURE_ARGS+=	--enable-shared \
 CONFIGURE_ARGS+= 	--with-openssl \
 			--with-zlib 
 
-# XXX  How to run the test suite?
-NO_REGRESS=		Yes
+REGRESS_TARGET=		test
+REGRESS_FLAGS=		NO_INTERACTION=1
