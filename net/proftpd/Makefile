@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/09/28 17:34:20 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/09/28 18:43:29 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
 DISTNAME=	proftpd-1.2.0pre7
@@ -7,6 +7,16 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
 
 NEED_VERSION=	1.73
+
+# If you remove that BROKEN line, the port will build.
+#
+# But there have been a series of holes and exploits posted recently,
+# so using proftpd is a sure way to let yourself be vulnerable.
+#
+# It is recommended that you don't use proftpd for now, 
+# unless you're really sure you know what you are doing.
+#
+BROKEN="Needs a security audit. Use at your own risk"
 
 MAINTAINER=	brad@openbsd.org
 
