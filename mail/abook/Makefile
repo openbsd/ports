@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2003/10/17 19:02:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/12/30 22:44:39 sturm Exp $
 
 COMMENT=	"addressbook program with mutt support"
 
-DISTNAME=	abook-0.5.0
+DISTNAME=	abook-0.5.1
 CATEGORIES=	mail
 
-HOMEPAGE=	http://abook.sourceforge.net
+HOMEPAGE=	http://abook.sourceforge.net/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -19,16 +19,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=abook/}
 
 CONFIGURE_STYLE=gnu
 
+EXAMPLESDIR=	${PREFIX}/share/examples/abook
 WHITELIST=README abook2whitelist.sh mutt.whitelist whitelist.rc
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abook/whitelist
-	${INSTALL_DATA} ${WRKSRC}/contrib/mail2abook.py \
-		${PREFIX}/share/examples/abook
-	${INSTALL_DATA} ${WRKSRC}/contrib/vcard2abook.pl \
-		${PREFIX}/share/examples/abook
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/whitelist
+	${INSTALL_DATA} ${WRKSRC}/contrib/mail2abook.py ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/vcard2abook.pl ${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib/whitelist && \
-		${INSTALL_DATA} ${WHITELIST} \
-			${PREFIX}/share/examples/abook/whitelist
+		${INSTALL_DATA} ${WHITELIST} ${EXAMPLESDIR}/whitelist
+	${INSTALL_DATA} ${WRKSRC}/sample.abookrc ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
