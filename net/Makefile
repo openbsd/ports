@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2001/11/15 06:19:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.179 2001/11/27 05:13:22 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -61,6 +61,7 @@
      SUBDIR += ircII
      SUBDIR += irssi
      SUBDIR += jftpgw
+     SUBDIR += kinkatta
      SUBDIR += kmago
      SUBDIR += kmago,wget
      SUBDIR += kxicq2
