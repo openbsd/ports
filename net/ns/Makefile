@@ -1,9 +1,9 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/11/01 16:22:48 espie Exp $
 #
 
-BROKEN=		compile errors.
+BROKEN=		tclcl API for delay_bind_dispatch changed
 
 DISTNAME=	ns-2.1b5
 DISTFILES=	ns-src-2.1b5.tar.gz
