@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/15 05:04:22 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/16 06:50:28 kevlo Exp $
 
-BROKEN=		sources missing
-
-DISTNAME=	freeciv-1.8.1
+DISTNAME=	freeciv-1.9.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/
 
