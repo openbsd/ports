@@ -7,7 +7,7 @@
 -	DSOSUF=so.${DIST_MAJOR}.${DIST_MINOR}
 -	LIBCOPTS='-fpic'
 +	DSOSUF=so.${DIST_MAJOR}${DIST_MINOR}.${DIST_POINT}
-+	if [ `uname -m` = "sparc64" ]; then
++	if [ "`uname -m`" = "sparc64" ]; then
 +	  LIBCOPTS='-fPIC'
 +	else
 +	  LIBCOPTS='-fpic'
