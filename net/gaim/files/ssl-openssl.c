@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.7 2004/06/25 19:31:36 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.8 2004/09/21 02:44:19 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -22,6 +22,7 @@
 #include "debug.h"
 #include "plugin.h"
 #include "sslconn.h"
+#include "version.h"
 
 #define SSL_OPENSSL_PLUGIN_ID "ssl-openssl"
 
@@ -277,7 +278,9 @@ static gboolean plugin_unload(GaimPlugin *plugin)
 
 static GaimPluginInfo info =
 {
-  GAIM_PLUGIN_API_VERSION,                          /* api_version    */
+  GAIM_PLUGIN_MAGIC,
+  GAIM_MAJOR_VERSION,
+  GAIM_MINOR_VERSION,
   GAIM_PLUGIN_STANDARD,                             /* type           */
   NULL,                                             /* ui_requirement */
   GAIM_PLUGIN_FLAG_INVISIBLE,                       /* flags          */

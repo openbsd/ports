@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2004/09/17 02:07:35 brad Exp $
+# $OpenBSD: Makefile,v 1.66 2004/09/21 02:44:19 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
-DISTNAME=	gaim-0.82.1
+DISTNAME=	gaim-1.0.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://gaim.sourceforge.net/
@@ -36,8 +36,9 @@ CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-perl \
 		 --disable-tcl \
 		 --disable-tk \
-		 --enable-openssl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/silc -I${LOCALBASE}/include" \
+		 --enable-openssl \
+		 --with-silc-includes="${LOCALBASE}/include/silc"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	audio debug gtkspell
