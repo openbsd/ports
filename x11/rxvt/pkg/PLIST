@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/06/22 20:51:19 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/08/05 21:56:58 brad Exp $
 @mode 4755
 bin/rxvt
+@mode
 lib/librxvt.a
 lib/librxvt.la
 man/man1/rxvt.1
