@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/13 11:24:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/07 11:32:54 wilfried Exp $
 
 COMMENT=		'wm-app; minesweeper'
 
 DISTNAME=		wmtimebomb.20
 PKGNAME=		wmtimebomb-0.2.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.454
 
 HOMEPAGE=		http://www.maliwan.org/wmtimebomb.shtml
 
@@ -20,6 +20,7 @@ MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 LIB_DEPENDS=		wraster.4::x11/windowmaker \
+			intl::devel/gettext \
 			PropList.2::devel/libproplist
 
 USE_X11=		Yes

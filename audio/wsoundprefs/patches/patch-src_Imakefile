@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Imakefile,v 1.1.1.1 2001/01/09 21:01:14 naddy Exp $
+$OpenBSD: patch-src_Imakefile,v 1.2 2001/09/07 11:32:54 wilfried Exp $
 --- src/Imakefile.orig	Mon Oct 18 10:35:58 1999
-+++ src/Imakefile	Tue Jan  9 21:43:40 2001
++++ src/Imakefile	Fri Sep  7 12:50:17 2001
 @@ -5,9 +5,7 @@ SUBDIRS = xpm tiff
  
  ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
@@ -12,3 +12,12 @@ $OpenBSD: patch-src_Imakefile,v 1.1.1.1 2001/01/09 21:01:14 naddy Exp $
  
  XCOMM EFENCELIB = -lefence
  EFENCELIB =
+@@ -18,7 +16,7 @@ WSOUNDLIBS = `get-wsound-flags --libs`
+ WRASTERCFLAGS = `get-wraster-flags --cflags`
+ WRASTERLFLAGS = `get-wraster-flags --lflags`
+ WRASTERLIBS = `get-wraster-flags --libs`
+-WINGSLIBS = -lWINGs -lPropList
++WINGSLIBS = -lWINGs -lPropList -lintl
+ 
+ STD_INCLUDES = $(WRASTERCFLAGS) $(WSOUNDCFLAGS)
+ DEPLIBS = $(DEPXLIB) 

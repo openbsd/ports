@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/13 11:23:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/07 11:32:54 wilfried Exp $
 
 COMMENT=		'preferences program for wsoundserver'
 
 DISTNAME=		WSoundPrefs-1.1.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.364
+NEED_VERSION=		1.454
 
 HOMEPAGE=		http://shadowmere.student.utwente.nl/
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=		wsoundserver::audio/wsoundserver
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			wsound::audio/wsoundserver \
 			audiofile::devel/libaudiofile \
-			wraster.4::x11/windowmaker
+			wraster.4::x11/windowmaker \
+			intl::devel/gettext
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake noman
