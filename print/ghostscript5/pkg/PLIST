@@ -47,7 +47,6 @@ share/ghostscript/5.10/cdj550.upp
 share/ghostscript/5.10/decrypt.ps
 share/ghostscript/5.10/doc/COPYING
 share/ghostscript/5.10/doc/NEWS
-share/ghostscript/5.10/doc/PUBLIC
 share/ghostscript/5.10/doc/README
 share/ghostscript/5.10/doc/bug-form.txt
 share/ghostscript/5.10/doc/c-style.txt
@@ -358,7 +357,7 @@ share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
-@dirrm share/ghostscript/5.10/doc
 @dirrm share/ghostscript/5.10/examples
+@dirrm share/ghostscript/5.10/doc
 @dirrm share/ghostscript/5.10
 @dirrm share/ghostscript
