@@ -3,7 +3,7 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/02 17:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:58:16 turan Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -17,6 +17,12 @@ MASTER_SITES0= 	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z:0
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		PD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1  \
 	mh-chart.1 mh.1 mhl.1 mhook.1 mhmail.1 mhn.1 mhparam.1 mhpath.1  \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/12/07 01:30:20 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/12 08:58:16 turan Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
@@ -12,6 +12,12 @@ NEED_VERSION=	1.121
 HOMEPAGE=	http://www.crack.com/games/abuse/
 
 MAINTAINER=	rohee@openbsd.org
+
+LICENSE_TYPE=		PD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"Does not work on SPARC"
