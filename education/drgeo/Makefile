@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 08:32:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/09 14:47:09 sturm Exp $
 
 COMMENT=	"interactive geometry program"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 
 MODULES=	devel/gettext
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glade-2.0.=0::devel/libglade2 \
 		guile::lang/guile
 

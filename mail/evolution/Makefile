@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/09 14:45:19 sturm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -28,7 +28,8 @@ DISTFILES=		${DISTNAME}.tar.gz \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper \
+			:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
 			bonobo_conf::x11/gnome/bonobo-conf \
