@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/21 11:56:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/30 22:13:11 margarida Exp $
 ${P5SITE}/GD/Graph/axestype3d.pm
 ${P5SITE}/GD/Graph/bars3d.pm
+${P5SITE}/GD/Graph/cylinder.pm
+${P5SITE}/GD/Graph/cylinder3d.pm
 ${P5SITE}/GD/Graph/lines3d.pm
 ${P5SITE}/GD/Graph/pie3d.pm
 ${P5SITE}/GD/Graph3d.pm
