@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 1999/09/06 15:38:26 espie Exp $
+# $OpenBSD: Makefile,v 1.24 1999/09/17 11:42:05 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -11,6 +11,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
+COMES_WITH= 2.6
 
 # Testers for the new configurations:
 # Jason L.Wright & Marco S.Hyman for sparc,
