@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/28 03:14:58 matt Exp $
+# $OpenBSD: Makefile,v 1.11 2000/07/28 10:32:52 matt Exp $
 
 DISTNAME=		enscript-1.6.1
+NEED_VERSION=		1.319
 CATEGORIES=     	print
 
 MAINTAINER=		matt@openbsd.org
