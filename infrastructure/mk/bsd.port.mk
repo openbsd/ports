@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.421 2001/07/16 15:14:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.422 2001/07/17 16:11:45 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -33,16 +33,12 @@ _VERSION_NEEDED=${NEED_VERSION:C/\..*//}
 _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .  if ${_VERSION_NEEDED} > ${_VERSION} || \
    (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
-.BEGIN:
-	@echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
-	exit 1;
+ERRORS+=	"Fatal: Need version ${NEED_VERSION} of bsd.port.mk."
 .  endif
 .endif
 
 .if ${.MAKEFLAGS:MFLAVOR=*}
-.BEGIN:
-	@echo "Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead"
-	@exit 1
+ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 .endif
 
 # There is a transition in progress. When the dust settles, 
@@ -359,9 +355,7 @@ LIB_DEPENDS+=		Xm.1.::x11/lesstif
 LIB_DEPENDS+=		Xm.2.::x11/openmotif
 .    endif
 .  else
-.BEGIN:
-	@echo >&2 "Unknown USE_MOTIF=${USE_MOTIF} settings"
-	@exit 1
+ERRORS+= "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
 .  endif
 MOTIFLIB=-L${LOCALBASE}/lib -lXm
 .endif
@@ -369,9 +363,7 @@ MOTIFLIB=-L${LOCALBASE}/lib -lXm
 .if !empty(SUBPACKAGE)
 .  for _i in ${SUBPACKAGE}
 .    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M${_i})
-.BEGIN:
-	@echo >&2 "Subpackage ${SUBPACKAGE} does not exist"
-	@exit 1
+ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .    endif
 .  endfor
 .endif
@@ -511,10 +503,8 @@ FLAVOR_EXT:=
 .  if defined(FLAVOR)
 .    for _i in ${FLAVOR:L}
 .      if empty(FLAVORS:L:M${_i})
-.BEGIN:
-	@echo >&2 "Unknown flavor: ${_i}"
-	@echo >&2 "Possible flavors are: ${FLAVORS}"
-	@exit 1
+ERRORS+=	"Fatal: Unknown flavor: ${_i}"
+ERRORS+= "   (Possible flavors are: ${FLAVORS})."
 .      endif
 .    endfor
 .  endif
@@ -652,7 +642,7 @@ ${WRKPKG}/COMMENT${SUBPACKAGE}:
 .if defined(_COMMENT)
 	@echo ${_COMMENT} >$@
 .else
-	@echo 2>&1 "Error: missing comment"
+ERRORS+="Fatal: Missing comment."
 .endif
 
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
@@ -938,9 +928,7 @@ PATCH_CASES+= *) ${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
 MAINTAINER?=	ports@openbsd.org
 
 .if !defined(CATEGORIES)
-.BEGIN:
-	@echo "CATEGORIES is mandatory."
-	@exit 1
+ERRORS+=	"Fatal: CATEGORIES is mandatory."
 .endif
 
 PKGREPOSITORYSUBDIR?=	All
@@ -1012,6 +1000,16 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .    endif
 .  endfor
 .endfor
+
+.if defined(ERRORS)
+.BEGIN:
+.  for _m in ${ERRORS}
+	@echo 1>&2 ${_m}
+.  endfor
+.  if !empty(ERRORS:M"Fatal\:*")
+	@exit 1
+.  endif
+.endif
 
 .if defined(show)
 VARNAME=${show}
