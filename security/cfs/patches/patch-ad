@@ -1,0 +1,11 @@
+--- cfs_fh.c.orig	Sun Oct 31 16:07:18 1999
++++ cfs_fh.c	Sun Oct 31 16:06:29 1999
+@@ -363,7 +363,7 @@
+ 
+ 
+ static fh_u roothandle;
+-cfs_fileid rootnode={1,0,"\0\0\0\0\0\0\0\0","/NOWHERE/null",NULL,NULL,0,NULL,NULL};/* fileid=1; should be unique */
++cfs_fileid rootnode={1,0,{0,0,0,0,0,0,0,0},{'/','N','O','W','H','E','R','E','/','n','u','l','l'},NULL,NULL,0,NULL,NULL};/* fileid=1; should be unique */
+ nfstime roottime={0,0};
+ 
+ static u_char magictest[8]={0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef};

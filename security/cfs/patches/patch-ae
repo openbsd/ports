@@ -1,0 +1,14 @@
+--- cfs_des.c.orig	Wed Mar 20 14:57:56 1996
++++ cfs_des.c	Sun Oct 31 16:15:22 1999
+@@ -140,7 +140,10 @@
+ 	register key_offset;
+ 	int j,k;
+ 	static int lk= -1;
+-	static char lastkey[4][8]={"xxxxxxx","xxxxxxx","xxxxxxx","xxxxxxx"};
++	static char lastkey[4][8]={
++	    {'x','x','x','x','x','x','x'}, {'x','x','x','x','x','x','x'},
++	    {'x','x','x','x','x','x','x'}, {'x','x','x','x','x','x','x'}
++	};
+ 	static char expanded_key[4][128];
+ 
+ 	/* now caches 4 session keys.  drops least recently added  */

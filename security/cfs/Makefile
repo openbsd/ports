@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/27 19:05:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/31 23:31:04 fgsch Exp $
 #
 
 DISTNAME=	cfs-1.3.3
@@ -13,8 +13,6 @@ ALL_TARGET=	cfs
 MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1
 MAN8=		ccat.8 cfsd.8 cname.8
 RESTRICTED=	"contains crypto code"
-
-BROKEN=		"build fails on cfs_fh.c"
 
 do-build:
 	(cd ${WRKSRC} ; sh make_with_bad_rpcgen cfs)
