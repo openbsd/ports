@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST-kpilot,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+bin/kpilot
+bin/kpilotDaemon
+include/kpilot/kpilotlink.h
+include/kpilot/pilotDatabase.h
+include/kpilot/pilotLocalDatabase.h
+include/kpilot/pilotRecord.h
+include/kpilot/pilotSerialDatabase.h
+include/kpilot/plugin.h
+include/kpilot/syncAction.h
+include/kpilot/uiDialog.h
+lib/libkpilot.la
+share/applnk/Utilities/kpilot.desktop
+share/applnk/Utilities/kpilotdaemon.desktop
+share/apps/kpilot/icons/hicolor/16x16/actions/backup.png
+share/apps/kpilot/icons/hicolor/16x16/actions/busysync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/fastsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/hotsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/restore.png
+share/apps/kpilot/kpilot-address.png
+share/apps/kpilot/kpilot-fileinstaller.png
+share/apps/kpilot/kpilot-hotsync.png
+share/apps/kpilot/kpilot-knotes.png
+share/apps/kpilot/kpilot-splash.png
+share/apps/kpilot/kpilotui.rc
+%%SHARED%%
+@dirrm share/apps/kpilot/icons/hicolor/16x16/actions
+@dirrm share/apps/kpilot/icons/hicolor/16x16
+@dirrm share/apps/kpilot/icons/hicolor
+@dirrm share/apps/kpilot/icons
+@dirrm share/apps/kpilot
+@dirrm include/kpilot

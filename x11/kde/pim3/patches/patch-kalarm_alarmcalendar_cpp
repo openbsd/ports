@@ -1,0 +1,11 @@
+$OpenBSD: patch-kalarm_alarmcalendar_cpp,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+--- kalarm/alarmcalendar.cpp.orig	Mon Dec 23 15:40:13 2002
++++ kalarm/alarmcalendar.cpp	Mon Dec 23 15:40:49 2002
+@@ -40,6 +40,7 @@ extern "C" {
+ #include <ical.h>
+ }
+ 
++#undef Status
+ #include <libkcal/vcaldrag.h>
+ #include <libkcal/vcalformat.h>
+ #include <libkcal/icalformat.h>

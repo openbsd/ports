@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+${KDE}/libabbrowserconduit.so.0.0
+${KDE}/libexpenseconduit.so.0.0
+${KDE}/libkcm_alarmdaemonctrl.so.0.0
+${KDE}/libknotesconduit.so.0.0
+${KDE}/libkorg_datenums.so.0.0
+${KDE}/libkorg_holidays.so.0.0
+${KDE}/libkorg_projectview.so.0.0
+${KDE}/libkorg_webexport.so.0.0
+${KDE}/libnullconduit.so.0.0
+${KDE}/libpopmailconduit.so.0.0
+${KDE}/libtodoconduit.so.0.0
+${KDE}/libvcalconduit.so.0.0
+lib/libkalarmd.so.0.0
+lib/libkcal.so.2.0
+lib/libkgantt.so.0.2
+lib/libkorganizer.so.1.0
