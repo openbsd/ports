@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.15 2000/03/04 18:16:02 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.16 2000/03/05 16:20:02 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -49,27 +49,23 @@ ECHO_MSG?=	echo
 
 _SUBDIRUSE: .USE
 	@for entry in ${SUBDIR}; do \
-		OK=""; \
 		for dud in $$DUDS; do \
 			if [ $${dud} = $${entry} ]; then \
-				OK="false"; \
 				${ECHO_MSG} "===> ${DIRPRFX}$${entry} skipped"; \
+				continue 2; \
 			fi; \
 		done; \
-		if test -d ${.CURDIR}/$${entry}.${MACHINE}; then \
+		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
 			edir=$${entry}.${MACHINE}; \
-		elif test -d ${.CURDIR}/$${entry}; then \
+		elif cd ${.CURDIR}/$${entry} 2>/dev/null; then \
 			edir=$${entry}; \
 		else \
-			OK="false"; \
 			${ECHO_MSG} "===> ${DIRPRFX}$${entry} non-existent"; \
+			continue; \
 		fi; \
-		if [ "$$OK" = "" ]; then \
-			${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
-			cd ${.CURDIR}/$${edir}; \
-			${MAKE} ${.TARGET:realinstall=install} \
-				DIRPRFX=${DIRPRFX}$$edir/; \
-		fi; \
+		${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
+		${MAKE} ${.TARGET:realinstall=install} \
+			DIRPRFX=${DIRPRFX}$$edir/; \
 	done
 
 ${SUBDIR}::
