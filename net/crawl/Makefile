@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/08 08:16:10 mark Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/16 15:26:58 naddy Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
-BUILD_DEPENDS=		::devel/libevent
 LIB_DEPENDS=		db::databases/db
 
 CONFIGURE_STYLE=	autoconf
