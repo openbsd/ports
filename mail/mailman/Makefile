@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/05/31 15:34:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2004/07/09 18:12:35 xsa Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -55,6 +55,6 @@ post-install:
 	@for file in FAQ NEWS README* UPGRADING; do \
 	    ${INSTALL_DATA} ${WRKDIST}/$$file ${MMDOC}; \
 	done
-	@${INSTALL_DATA} files/README.OpenBSD ${MMDOC}
+	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${MMDOC}
 
 .include <bsd.port.mk>
