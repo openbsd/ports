@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/12 12:37:18 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/08/12 12:40:19 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.8.2
@@ -6,6 +6,8 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gqview
+
+HOMEPAGE=	http://gqview.sourceforge.net
 
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
 
