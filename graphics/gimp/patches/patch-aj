@@ -1,6 +1,6 @@
---- configure.orig	Wed Feb  2 21:10:43 2000
-+++ configure	Sat Feb  5 16:26:35 2000
-@@ -7013,7 +7013,7 @@
+--- configure.orig	Fri Feb 11 13:32:12 2000
++++ configure	Mon Feb 14 22:09:02 2000
+@@ -7018,7 +7018,7 @@
  
  gimpdatadir=$datadir/gimp
  gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION

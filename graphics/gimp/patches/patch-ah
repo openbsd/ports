@@ -1,6 +1,6 @@
---- plug-ins/common/Makefile.in.orig	Wed Feb  2 21:36:59 2000
-+++ plug-ins/common/Makefile.in	Sat Feb  5 16:28:19 2000
-@@ -227,7 +227,7 @@
+--- plug-ins/common/Makefile.in.orig	Fri Feb 11 13:42:52 2000
++++ plug-ins/common/Makefile.in	Mon Feb 14 22:08:13 2000
+@@ -230,7 +230,7 @@
  animoptimize_SOURCES =  	animoptimize.c
  
  
@@ -9,7 +9,7 @@
  
  
  apply_lens_SOURCES =  	apply_lens.c
-@@ -239,13 +239,13 @@
+@@ -242,13 +242,13 @@
  autocrop_SOURCES =  	autocrop.c
  
  
@@ -25,7 +25,7 @@
  
  
  blinds_SOURCES =  	blinds.c
-@@ -269,13 +269,13 @@
+@@ -272,13 +272,13 @@
  bz2_SOURCES =  	bz2.c
  
  
@@ -41,7 +41,7 @@
  
  
  checkerboard_SOURCES =  	checkerboard.c
-@@ -479,7 +479,7 @@
+@@ -482,7 +482,7 @@
  gradmap_SOURCES =  	gradmap.c
  
  
@@ -50,7 +50,7 @@
  
  
  grid_SOURCES =  	grid.c
-@@ -497,13 +497,13 @@
+@@ -500,13 +500,13 @@
  guillotine_SOURCES =  	guillotine.c
  
  
@@ -66,7 +66,7 @@
  
  
  header_SOURCES =  	header.c
-@@ -551,7 +551,7 @@
+@@ -554,7 +554,7 @@
  laplace_SOURCES =  	laplace.c
  
  
@@ -75,7 +75,7 @@
  
  
  lic_SOURCES =  	lic.c
-@@ -611,7 +611,7 @@
+@@ -614,7 +614,7 @@
  normalize_SOURCES =  	normalize.c
  
  
@@ -84,7 +84,7 @@
  
  
  nova_SOURCES =  	nova.c
-@@ -695,7 +695,7 @@
+@@ -698,7 +698,7 @@
  psd_SOURCES =  	psd.c
  
  
@@ -93,7 +93,7 @@
  
  
  psp_SOURCES =  	psp.c
-@@ -719,7 +719,7 @@
+@@ -722,7 +722,7 @@
  rotate_SOURCES =  	rotate.c
  
  
@@ -102,7 +102,7 @@
  
  
  sample_colorize_SOURCES =  	sample_colorize.c
-@@ -749,7 +749,7 @@
+@@ -752,7 +752,7 @@
  semiflatten_SOURCES =  	semiflatten.c
  
  
@@ -111,7 +111,7 @@
  
  
  sharpen_SOURCES =  	sharpen.c
-@@ -839,7 +839,7 @@
+@@ -842,7 +842,7 @@
  tiler_SOURCES =  	tiler.c
  
  
@@ -120,7 +120,7 @@
  
  
  unsharp_SOURCES =  	unsharp.c
-@@ -851,7 +851,7 @@
+@@ -854,7 +854,7 @@
  url_SOURCES =  	url.c
  
  
@@ -129,7 +129,7 @@
  
  
  video_SOURCES =  	video.c
-@@ -863,7 +863,7 @@
+@@ -866,7 +866,7 @@
  vinvert_SOURCES =  	vinvert.c
  
  
@@ -138,7 +138,7 @@
  
  
  vpropagate_SOURCES =  	vpropagate.c
-@@ -923,7 +923,7 @@
+@@ -926,7 +926,7 @@
  zealouscrop_SOURCES =  	zealouscrop.c
  
  

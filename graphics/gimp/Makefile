@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.33 2000/02/15 05:04:32 turan Exp $
+# $OpenBSD: Makefile,v 1.34 2000/02/16 05:19:59 brad Exp $
 
-DISTNAME=	gimp-1.1.16
+DISTNAME=	gimp-1.1.17
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.16/ \
-		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/v1.1.16/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/unstable/v1.1.16/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.17/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/v1.1.17/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/unstable/v1.1.17/
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+LICENSE_TYPE=	GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		aa.1.3:${PORTSDIR}/graphics/aalib \
@@ -21,8 +21,8 @@ LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.35:${PORTSDIR}/graphics/tiff
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

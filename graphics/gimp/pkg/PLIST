@@ -30,6 +30,7 @@ include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
 include/libgimp/gimppatheditor.h
+include/libgimp/gimpquerybox.h
 include/libgimp/gimpsizeentry.h
 include/libgimp/gimpui.h
 include/libgimp/gimpunit.h
@@ -266,6 +267,42 @@ share/gimp/brushes/pixel.gbr
 share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/vine.gih
 share/gimp/brushes/xcf.gbr
+share/gimp/devel-docs/html/libgimp/book1.html
+share/gimp/devel-docs/html/libgimp/gimpchainbutton.html
+share/gimp/devel-docs/html/libgimp/gimpcolorbutton.html
+share/gimp/devel-docs/html/libgimp/gimpdefinitions.html
+share/gimp/devel-docs/html/libgimp/gimpfileselection.html
+share/gimp/devel-docs/html/libgimp/gimpmodule.html
+share/gimp/devel-docs/html/libgimp/gimppatheditor.html
+share/gimp/devel-docs/html/libgimp/gimpsizeentry.html
+share/gimp/devel-docs/html/libgimp/gimpunitmenu.html
+share/gimp/devel-docs/html/libgimp/libgimp-color-display.html
+share/gimp/devel-docs/html/libgimp/libgimp-color-selector.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimp.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpcompat.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpdialog.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpenums.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpenv.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpexport.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpfeatures.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimphelpui.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimplimits.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpmath.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpmatrix.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpmenu.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpprotocol.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpunit.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpwidgets.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpwire.html
+share/gimp/devel-docs/html/libgimp/libgimp-gserialize.html
+share/gimp/devel-docs/html/libgimp/libgimp-parasite.html
+share/gimp/devel-docs/html/libgimp/libgimp-parasitef.html
+share/gimp/devel-docs/html/libgimp/libgimp-parasiteio.html
+share/gimp/devel-docs/html/libgimp/libgimp-parasitep.html
+share/gimp/devel-docs/html/libgimp/libgimp.html
+share/gimp/devel-docs/html/libgimp/libgimpui.html
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
@@ -491,7 +528,6 @@ share/gimp/gradients/Wood_2
 share/gimp/gradients/Yellow_Contrast
 share/gimp/gradients/Yellow_Orange
 share/gimp/gtkrc
-share/gimp/gtkrc.forest2
 share/gimp/help/C/channels/channel_to_selection.html
 share/gimp/help/C/channels/channels.html
 share/gimp/help/C/channels/delete_channel.html
@@ -1105,6 +1141,8 @@ share/locale/da/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/da/LC_MESSAGES/gimp.mo
 share/locale/de/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/de/LC_MESSAGES/gimp.mo
+share/locale/en_GB/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/en_GB/LC_MESSAGES/gimp.mo
 share/locale/fi/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/fi/LC_MESSAGES/gimp.mo
 share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
@@ -1139,6 +1177,9 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm lib/gimp
 @dirrm share/gimp/brushes
 @dirrm share/gimp/fractalexplorer
+@dirrm share/gimp/devel-docs/html/libgimp
+@dirrm share/gimp/devel-docs/html
+@dirrm share/gimp/devel-docs
 @dirrm share/gimp/gfig
 @dirrm share/gimp/gflare
 @dirrm share/gimp/gimpressionist/Brushes
