@@ -1,22 +1,21 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-prefs_pl,v 1.4 2004/03/04 06:34:11 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-prefs.pl.orig	Thu Mar  4 12:50:00 2004
-+++ cgi-bin/openwebmail/openwebmail-prefs.pl	Thu Mar  4 12:50:38 2004
-@@ -1,4 +1,4 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-prefs_pl,v 1.5 2004/07/12 05:54:53 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-prefs.pl.orig	Mon Jul 12 11:03:22 2004
++++ cgi-bin/openwebmail/openwebmail-prefs.pl	Mon Jul 12 11:03:49 2004
+@@ -1,14 +1,14 @@
 -#!/usr/bin/suidperl -T
-+#!/usr/bin/perl -T
++#!/usr/bin/perl
  #
  # openwebmail-prefs.pl - preference configuration, book editing program
  #
-@@ -5,10 +5,10 @@
  
  use vars qw($SCRIPT_DIR);
  if ( $0 =~ m!^(\S*)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1 }
--if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
-+if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
+-if ($SCRIPT_DIR eq '' && open(F, '/etc/openwebmail_path.conf')) {
++if ($SCRIPT_DIR eq '' && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
     $_=<F>; close(F); if ( $_=~/^(\S*)/) { $SCRIPT_DIR=$1 }
  }
--if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
-+if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
+-if ($SCRIPT_DIR eq '') { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
++if ($SCRIPT_DIR eq '') { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
  push (@INC, $SCRIPT_DIR);
  
  foreach (qw(PATH ENV BASH_ENV CDPATH IFS TERM)) { $ENV{$_}='' }	# secure ENV

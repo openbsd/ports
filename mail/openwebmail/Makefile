@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2004/03/04 06:34:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2004/07/12 05:54:51 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-2.30
+DISTNAME=	openwebmail-2.32
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
-		ftp://openwebmail.org/pub/ \
+MASTER_SITES=	${HOMEPAGE}/openwebmail/download/ \
+		http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/old/
 EXTRACT_SUFX=	.tgz
 

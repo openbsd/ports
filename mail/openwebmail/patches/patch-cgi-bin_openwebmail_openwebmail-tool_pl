@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:11 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Sat Jan  3 04:16:50 2004
-+++ cgi-bin/openwebmail/openwebmail-tool.pl	Thu Mar  4 11:45:57 2004
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.7 2004/07/12 05:54:53 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Tue May 25 17:53:48 2004
++++ cgi-bin/openwebmail/openwebmail-tool.pl	Mon Jul 12 10:38:54 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
@@ -11,25 +11,26 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
  #
  use vars qw($SCRIPT_DIR);
  if ( $0 =~ m!^(\S*)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1 }
--if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
-+if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
+-if ($SCRIPT_DIR eq '' && open(F, '/etc/openwebmail_path.conf')) {
++if ($SCRIPT_DIR eq '' && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
     $_=<F>; close(F); if ( $_=~/^(\S*)/) { $SCRIPT_DIR=$1 }
  }
- if (!$SCRIPT_DIR) {
+ if ($SCRIPT_DIR eq '') {
     print qq|\nOpen WebMail is unable to locate itself on this system,\n|.
           qq|please put 'the path of openwebmail CGI directory' to\n|.
 -         qq|the first line of file /etc/openwebmail_path.conf\n\n|.
 +         qq|the first line of file %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf\n\n|.
           qq|For example, if the script is\n\n|.
 -         qq|/usr/local/www/cgi-bin/openwebmail/openwebmail-tool.pl,\n\n|.
-+         qq|/var/www/cgi-bin/openwebmail/openwebmail-tool.pl,\n\n|.
-          qq|then the content of /etc/openwebmail_path.conf should be:\n\n|.
+-         qq|then the content of /etc/openwebmail_path.conf should be:\n\n|.
 -         qq|/usr/local/www/cgi-bin/openwebmail/\n\n|;
++         qq|/var/www/cgi-bin/openwebmail/openwebmail-tool.pl,\n\n|.
++         qq|then the content of %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf should be:\n\n|.
 +         qq|/var/www/cgi-bin/openwebmail/\n\n|;
     exit 0;
  }
  push (@INC, $SCRIPT_DIR);
-@@ -307,10 +307,10 @@
+@@ -306,10 +306,10 @@
     my $err=0;
     print "\n";
  
@@ -44,7 +45,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
     }
  
     $logindomain=$default_logindomain||ow::tool::hostname();
-@@ -469,7 +469,7 @@
+@@ -409,7 +409,7 @@
     }
  
     if ($in_init && $err) {
@@ -53,7 +54,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
              qq|dbm_ext         \t$str{conf_dbm_ext}\n|.
              qq|dbmopen_ext     \t$str{conf_dbmopen_ext}\n|.
              qq|dbmopen_haslock \t$str{conf_dbmopen_haslock}\n|.
-@@ -479,7 +479,7 @@
+@@ -419,7 +419,7 @@
              qq|dbmopen_haslock \t$str{dbmopen_haslock}\n\n\n|;
     }
     if (!$in_init) {
@@ -62,16 +63,16 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
              qq|dbm_ext         \t$str{dbm_ext}\n|.
              qq|dbmopen_ext     \t$str{dbmopen_ext}\n|.
              qq|dbmopen_haslock \t$str{dbmopen_haslock}\n\n\n|;
-@@ -496,7 +496,7 @@
+@@ -436,7 +436,7 @@
     $>=0;
     if ($>!=0) {
        print qq|Your system didn't have saved suid support,\n|.
--            qq|please set the following option in $SCRIPT_DIR/etc/openwebmail.conf\n\n|.
-+            qq|please set the following option in %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n\n|.
+-            qq|please set the following option in $SCRIPT_DIR/etc/suid.conf\n\n|.
++            qq|please set the following option in %%SYSCONFDIR%%/openwebmail/suid.conf\n\n|.
              qq|\thas_savedsuid_support no\n\n\n|;
        return -1;
     }
-@@ -580,10 +580,10 @@
+@@ -520,10 +520,10 @@
     my $loaded_domain=0;
     my %userhash=();
  
@@ -86,7 +87,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
     }
  
     # trap this once now.  Let usertool() test it at the domain level later
-@@ -615,10 +615,10 @@
+@@ -555,10 +555,10 @@
  
     foreach $logindomain (@domains) {
        %config_raw=();
@@ -101,7 +102,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.6 2004/03/04 06:34:1
        }
  
        if ( -f "$config{'ow_sitesconfdir'}/$logindomain") {
-@@ -690,16 +690,16 @@
+@@ -630,16 +630,16 @@
        $>=$euid_to_use;
  
        %config_raw=();
