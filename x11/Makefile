@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1998/11/23 19:28:55 yanick Exp $
+# $OpenBSD: Makefile,v 1.26 1998/11/27 23:32:33 jasoni Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -12,6 +12,7 @@
 #    SUBDIR += asfiles
 #    SUBDIR += auis
      SUBDIR += bclock
+     SUBDIR += blackbox
      SUBDIR += blast
 #    SUBDIR += blt
      SUBDIR += bricons
