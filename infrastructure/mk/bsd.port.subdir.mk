@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.31 2000/12/16 15:49:13 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.32 2001/03/28 10:55:52 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -70,14 +70,21 @@ RECURSIVE_FETCH_LIST?=	No
 
 REPORT_PROBLEM?=exit 1
 
+# Need an actual list of all subdirs to complete SKIPPED
+_ALL_SUBDIR:=${SUBDIR}
+SKIPPED=
+.if defined(DUDS)
+.  for i in ${DUDS:S/:/,/}
+SKIPPED+=${_ALL_SUBDIR:M$i}
+SUBDIR:=${SUBDIR:N$i}
+.  endfor
+.endif
+
 _SUBDIRUSE: .USE
+.  for i in ${SKIPPED}
+	@echo "===> ${PKGPATH}${_SEP}$i skipped"
+.  endfor
 	@for entry in ${SUBDIR}; do \
-		for dud in $$DUDS; do \
-			if [ $${dud} = $${entry} ]; then \
-				${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${entry} skipped"; \
-				continue 2; \
-			fi; \
-		done; \
 		if expr "$$entry" : '.*[,:]' >/dev/null; then \
 			flavor=`echo $$entry | sed -e 's/[^,:]*[,:]//' -e 's/,/ /g'`; \
 			entry=`echo $$entry | sed -e 's/[:,].*//'`; \
