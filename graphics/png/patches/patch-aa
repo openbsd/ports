@@ -16,8 +16,8 @@
 -CC=cc
 -CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
 -LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+ZLIBLIB=/usr/local/lib
-+ZLIBINC=/usr/local/include
++#ZLIBLIB=/usr/local/lib
++#ZLIBINC=/usr/local/include
 +#ZLIBLIB=../zlib
 +#ZLIBINC=../zlib
 +
