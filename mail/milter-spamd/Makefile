@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/05/24 07:35:47 dhartmei Exp $
-
-.if !exists(/usr/lib/libmilter.a)
-IGNORE="Fatal: milter required, see instructions in DESCR"
-.endif
+# $OpenBSD: Makefile,v 1.2 2004/06/29 06:20:55 jolan Exp $
 
 COMMENT=	"sendmail milter plugin for SpamAssassin spamd"
 

@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/03/30 09:57:17 dhartmei Exp $
-
-.if !exists(/usr/lib/libmilter.a)
-IGNORE="Fatal: milter required, see instructions in DESCR"
-.endif
+# $OpenBSD: Makefile,v 1.10 2004/06/29 06:20:55 jolan Exp $
 
 COMMENT=	"sendmail milter plugin for regular expression filtering"
 
