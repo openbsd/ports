@@ -1,0 +1,66 @@
+$OpenBSD: patch-hacks_glx_Makefile_in,v 1.1.1.1 2001/06/20 19:16:45 lebel Exp $
+--- hacks/glx/Makefile.in.orig	Sun Jun  3 19:43:49 2001
++++ hacks/glx/Makefile.in	Tue Jun 19 10:28:09 2001
+@@ -9,7 +9,7 @@
+ srcdir		= @srcdir@
+ VPATH		= @srcdir@
+ 
+-install_prefix	=
++DESTDIR	=
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+@@ -131,7 +131,7 @@ install-strip:
+ # the hacks, in $HACKDIR
+ install-program:: $(EXES)
+ 	@exes="$(HACK_EXES)" ;						\
+-	 idir="$(install_prefix)$(HACKDIR)" ;				\
++	 idir="$(DESTDIR)$(HACKDIR)" ;				\
+ 	 if [ "$$exes" != "" ]; then					\
+ 	   if [ ! -d $$idir ]; then					\
+ 	     $(INSTALL_DIRS) $$idir ;					\
+@@ -145,7 +145,7 @@ install-program:: $(EXES)
+ # the xscreensaver-gl-helper program, in $bindir
+ install-program:: $(EXES)
+ 	@exes="$(GL_UTIL_EXES)" ;					\
+-	 idir="$(install_prefix)$(bindir)" ;				\
++	 idir="$(DESTDIR)$(bindir)" ;				\
+ 	 if [ "$$exes" != "" ]; then					\
+ 	   if [ ! -d $$idir ]; then					\
+ 	     $(INSTALL_DIRS) $$idir ;					\
+@@ -158,7 +158,7 @@ install-program:: $(EXES)
+ 
+ install-man: $(MEN)
+ 	@men="$(MEN)" ;							\
+-	 idir="$(install_prefix)$(man1dir)" ;				\
++	 idir="$(DESTDIR)$(man1dir)" ;				\
+ 	 if [ ! -d $$idir ]; then					\
+ 	  $(INSTALL_DIRS) $$idir ;					\
+ 	 fi ;								\
+@@ -171,7 +171,7 @@ install-man: $(MEN)
+ # the hacks, in $HACKDIR
+ uninstall-program::
+ 	@exes="$(HACK_EXES)" ;						\
+-	 idir="$(install_prefix)$(HACKDIR)" ;				\
++	 idir="$(DESTDIR)$(HACKDIR)" ;				\
+ 	 for program in $$exes; do					\
+ 	   echo rm -f $$idir/$$program ;				\
+ 		rm -f $$idir/$$program ;				\
+@@ -180,7 +180,7 @@ uninstall-program::
+ # the xscreensaver-gl-helper program, in $bindir
+ uninstall-program::
+ 	@exes="$(GL_UTIL_EXES)" ;					\
+-	 idir="$(install_prefix)$(bindir)" ;				\
++	 idir="$(DESTDIR)$(bindir)" ;				\
+ 	 for program in $$exes; do					\
+ 	   echo rm -f $$idir/$$program ;				\
+ 		rm -f $$idir/$$program ;				\
+@@ -188,7 +188,7 @@ uninstall-program::
+ 
+ uninstall-man:
+ 	@men="$(MEN)" ;							\
+-	 idir="$(install_prefix)$(man1dir)" ;				\
++	 idir="$(DESTDIR)$(man1dir)" ;				\
+ 	 for man in $$men; do						\
+ 	   instname=`echo $$man | sed 's/\.man$$/\.$(mansuffix)/'` ;	\
+ 	   echo rm -f $$idir/$$instname ;				\

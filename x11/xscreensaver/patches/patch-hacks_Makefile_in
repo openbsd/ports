@@ -1,0 +1,92 @@
+$OpenBSD: patch-hacks_Makefile_in,v 1.1.1.1 2001/06/20 19:16:45 lebel Exp $
+--- hacks/Makefile.in.orig	Sun Jun  3 19:43:42 2001
++++ hacks/Makefile.in	Sat Jun 16 23:09:24 2001
+@@ -8,7 +8,7 @@
+ srcdir		= @srcdir@
+ VPATH		= @srcdir@
+ 
+-install_prefix	=
++DESTDIR	=
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+@@ -185,14 +185,14 @@ install-strip:
+ 
+ # the hacks, in $HACKDIR
+ install-program:: $(EXES)
+-	@if [ ! -d $(install_prefix)$(HACKDIR) ]; then			\
+-	  $(INSTALL_DIRS) $(install_prefix)$(HACKDIR) ;			\
++	@if [ ! -d $(DESTDIR)$(HACKDIR) ]; then			\
++	  $(INSTALL_DIRS) $(DESTDIR)$(HACKDIR) ;			\
+ 	 fi ;								\
+ 	for program in $(NEXES); do					\
+ 	  echo $(INSTALL_PROGRAM) $$program				\
+-	    $(install_prefix)$(HACKDIR)/$$program ;			\
++	    $(DESTDIR)$(HACKDIR)/$$program ;			\
+ 	  $(INSTALL_PROGRAM) $$program					\
+-	    $(install_prefix)$(HACKDIR)/$$program ;			\
++	    $(DESTDIR)$(HACKDIR)/$$program ;			\
+ 	done ;								\
+ 	if [ @SETUID_HACKS@ = yes ]; then				\
+ 	  sinst="$(INSTALL_SETUID)" ;					\
+@@ -200,8 +200,8 @@ install-program:: $(EXES)
+ 	  sinst="$(INSTALL_PROGRAM)" ;					\
+ 	fi ;								\
+ 	for program in $(SEXES); do					\
+-	  echo $$sinst $$program $(install_prefix)$(HACKDIR)/$$program ;\
+-	       $$sinst $$program $(install_prefix)$(HACKDIR)/$$program ;\
++	  echo $$sinst $$program $(DESTDIR)$(HACKDIR)/$$program ;\
++	       $$sinst $$program $(DESTDIR)$(HACKDIR)/$$program ;\
+ 	done
+ 
+ install-scripts: $(SCRIPTS) munge-scripts
+@@ -212,9 +212,9 @@ install-scripts: $(SCRIPTS) munge-script
+ 	    p=$(srcdir)/$$program ;					\
+ 	  fi ;								\
+ 	  echo $(INSTALL_SCRIPT) $$p					\
+-	    $(install_prefix)$(HACKDIR)/$$program ;			\
++	    $(DESTDIR)$(HACKDIR)/$$program ;			\
+ 	  $(INSTALL_SCRIPT) $$p						\
+-	    $(install_prefix)$(HACKDIR)/$$program ;			\
++	    $(DESTDIR)$(HACKDIR)/$$program ;			\
+ 	done
+ 
+ munge-scripts: $(SCRIPTS)
+@@ -233,29 +233,29 @@ munge-scripts: $(SCRIPTS)
+ 
+ install-man: $(MEN)
+ 	@men="$(MEN)" ;							\
+-	if [ ! -d $(install_prefix)$(man1dir) ]; then			\
+-	  $(INSTALL_DIRS) $(install_prefix)$(man1dir) ;			\
++	if [ ! -d $(DESTDIR)$(man1dir) ]; then			\
++	  $(INSTALL_DIRS) $(DESTDIR)$(man1dir) ;			\
+ 	 fi ;								\
+ 	for man in $$men; do						\
+ 	  instname=`echo $$man | sed 's/\.man$$/\.$(mansuffix)/'` ;	\
+ 	  echo $(INSTALL_DATA) $(srcdir)/$$man				\
+-	   $(install_prefix)$(man1dir)/$$instname ;			\
++	   $(DESTDIR)$(man1dir)/$$instname ;			\
+ 	  $(INSTALL_DATA) $(srcdir)/$$man				\
+-	    $(install_prefix)$(man1dir)/$$instname ;			\
++	    $(DESTDIR)$(man1dir)/$$instname ;			\
+ 	done
+ 
+ uninstall-program:
+ 	@for program in $(EXES) $(SCRIPTS); do				\
+-	  echo rm -f $(install_prefix)$(HACKDIR)/$$program ;		\
+-	  rm -f $(install_prefix)$(HACKDIR)/$$program ;			\
++	  echo rm -f $(DESTDIR)$(HACKDIR)/$$program ;		\
++	  rm -f $(DESTDIR)$(HACKDIR)/$$program ;			\
+ 	done
+ 
+ uninstall-man:
+ 	@men="$(MEN)" ;							\
+ 	for man in $$men; do						\
+ 	  instname=`echo $$man | sed 's/\.man$$/\.$(mansuffix)/'` ;	\
+-	  echo rm -f $(install_prefix)$(man1dir)/$$instname ;		\
+-	  rm -f $(install_prefix)$(man1dir)/$$instname ;		\
++	  echo rm -f $(DESTDIR)$(man1dir)/$$instname ;		\
++	  rm -f $(DESTDIR)$(man1dir)/$$instname ;		\
+ 	done
+ 
+ clean:
