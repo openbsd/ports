@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/27 19:34:42 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/08/23 00:53:25 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
 DISTNAME=	proftpd-1.2.0pre3
@@ -6,6 +6,10 @@ PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
 		ftp://ftp3.proftpd.org/distrib/
+
+PATCH_SITES=	ftp://ftp.tos.net/pub/proftpd/
+PATCHFILES=	proftpd-1.2.0pre3a.patch.gz
+PATCH_DIST_STRIP= -p1
 
 NEED_VERSION=	1.73
 

@@ -1,5 +1,5 @@
---- modules/mod_auth.c.orig	Fri Mar 12 10:05:47 1999
-+++ modules/mod_auth.c	Fri Mar 12 10:11:32 1999
+--- modules/mod_auth.c.orig	Sun Aug 22 20:23:51 1999
++++ modules/mod_auth.c	Sun Aug 22 20:23:53 1999
 @@ -69,7 +69,7 @@
  		  (void*)0,NULL);
  
@@ -25,7 +25,7 @@
        origuser,session.c->remote_name,
        inet_ascii(p,session.c->remote_ipaddr),
        inet_ascii(p,session.c->local_ipaddr),
-@@ -1156,7 +1156,7 @@
+@@ -1155,7 +1155,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -34,7 +34,7 @@
                 max);
        end_login(0);
      }
-@@ -1180,7 +1180,7 @@
+@@ -1179,7 +1179,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -43,7 +43,7 @@
                 max);
        end_login(0);
      }
-@@ -1267,7 +1267,7 @@
+@@ -1266,7 +1266,7 @@
  
      if(++auth_tries >= max) {
        send_response(R_530,"Login incorrect");
