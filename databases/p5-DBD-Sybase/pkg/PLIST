@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/19 00:11:32 jcs Exp $
+${P5ARCH}/DBD/Sybase.pm
+${P5ARCH}/DBD/dbd-sybase.pod
+${P5ARCH}/auto/DBD/Sybase/Sybase.bs
+${P5ARCH}/auto/DBD/Sybase/Sybase.so
+man/man3p/DBD::Sybase.3
+@dirrm ${P5ARCH}/auto/DBD/Sybase
