@@ -1,7 +1,6 @@
 bin/arc
 bin/marc
 man/man1/arc.1
-@exec mkdir -p %D/share/doc/arc
 share/doc/arc/Arc521.doc
 share/doc/arc/Arcinfo
 @dirrm share/doc/arc
