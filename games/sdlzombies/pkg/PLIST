@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/29 01:43:43 pvalchev Exp $
 bin/sdlzombies
+share/doc/sdlzombies/README
 share/sdlzombies/data/background/back_1.png
 share/sdlzombies/data/background/back_10.png
 share/sdlzombies/data/background/back_2.png
@@ -83,3 +84,4 @@ share/sdlzombies/data/zombies/zombies_stop.png
 @dirrm share/sdlzombies/data/background
 @dirrm share/sdlzombies/data
 @dirrm share/sdlzombies
+@dirrm share/doc/sdlzombies

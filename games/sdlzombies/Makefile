@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/29 01:43:42 pvalchev Exp $
 
 COMMENT=	"zombies clone"
 
@@ -24,5 +24,13 @@ LIB_DEPENDS=	SDL_image.0.0:sdl-image-*:devel/sdl-image \
 USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
+
+post-patch:
+	@cd ${WRKSRC} && touch aclocal.m4 configure Makefile.in \
+	src/Makefile.in data/Makefile.in stamp-h.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlzombies
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sdlzombies/
 
 .include <bsd.port.mk>
