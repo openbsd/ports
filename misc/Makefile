@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2004/11/10 20:27:07 alek Exp $
+# $OpenBSD: Makefile,v 1.81 2004/12/29 05:17:19 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -66,7 +66,6 @@
 #    SUBDIR += p5-Search
      SUBDIR += pdmenu
      SUBDIR += pfm
-     SUBDIR += pi-address
      SUBDIR += plan
      SUBDIR += py-imdb
      SUBDIR += remind
