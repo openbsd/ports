@@ -1,0 +1,14 @@
+$OpenBSD: patch-file_Makefile_in,v 1.1 2004/01/04 18:31:10 espie Exp $
+--- file/Makefile.in.orig	2001-10-22 19:38:36.000000000 +0200
++++ file/Makefile.in	2004-01-04 19:27:35.000000000 +0100
+@@ -504,9 +504,7 @@ magic: Header Localstuff $(magic_FRAGMEN
+ 	done >> $@
+ 
+ magic.inc: magic
+-	echo -n "\"" > $@
+-	sed -e 's/\\/\\\\/g' -e 's/"/\\\"/g' magic >> $@
+-	echo -n "\"" >> $@
++	sed -e 's/\\/\\\\/g' -e 's/"/\\\"/g' -e 's/^/\"/' -e 's/$$/\\n\"/' magic > $@
+ 
+ file.1:	Makefile file.man
+ 	@rm -f $@
