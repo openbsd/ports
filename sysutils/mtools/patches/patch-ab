@@ -1,0 +1,37 @@
+--- mdir.c.orig	Sun May 28 07:20:44 2000
++++ mdir.c	Fri Jun 30 00:07:27 2000
+@@ -209,7 +209,7 @@
+ 	if(!filesInDir)
+ 		printf("No files\n");
+ 	else {		
+-		char *s1;
++		char *s1 = NULL;
+ 		printf("      %3d file", files);
+ 		if(files == 1)
+ 			putchar(' ');
+@@ -230,13 +230,13 @@
+ 		return;
+ 	leaveDirectory(haveError);
+ 	if(!concise && !haveError) {
+-		char *s1;
+ 
+ 		if(dirsOnDrive > 1) {
+ 			printf("\nTotal files listed:\n");
+ 			printSummary(filesOnDrive, bytesOnDrive);
+ 		}
+ 		if(RootDir && !fast) {
++			char *s1 = NULL;
+ 			mt_off_t bytes = getfree(RootDir);
+ 			printf("                  %s bytes free\n\n",
+ 			       dotted_num(bytes,17, &s1));
+@@ -246,9 +246,9 @@
+ 			printf("                  %s bytes free\n\n",
+ 			       dotted_num(bytes,17, &s1));
+ #endif
+-		}
+ 		if(s1)
+ 			free(s1);
++		}
+ 	}
+ 	FREE(&RootDir);
+ 	currentDrive = '\0';
