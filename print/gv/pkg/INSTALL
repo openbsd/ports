@@ -4,12 +4,8 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 if [ `gs -v|sed -e 's/.*Ghostscript *\([0-9]\).*/\1/' -e q` -ge 7 ]; then
-	cd ${PREFIX}/lib/X11/app-defaults
-	mv GV GV.bak
-	sed -e 's,\(GV.gsX11AlphaDevice:\).*,\1 -dNOPLATFONTS -sDEVICE=x11 -dTextAlphaBits=4 -dGraphicsAlphaBits=4,' GV.bak >GV
-	rm GV.bak
-	cd ${PREFIX}/lib/X11/gv
-	mv gv_system.ad gv_system.ad.bak
-	sed -e 's,\(GV.gsX11AlphaDevice:\).*,\1 -dNOPLATFONTS -sDEVICE=x11 -dTextAlphaBits=4 -dGraphicsAlphaBits=4,' gv_system.ad.bak >gv_system.ad
-	rm gv_system.ad.bak
+    echo "Ghostscript version >=7.00 include an x11 display with aa"
+    echo "Set -sDISPLAY=x11 -dNOPLATFONTS -dTextAlphaBits=4 -dGraphicsAlphaBits=4"
+    echo "To use it"
+    echo "It has better rendering than x11alpha, but is significantly slower"
 fi
