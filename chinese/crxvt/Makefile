@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/20 01:57:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/21 03:17:58 kevlo Exp $
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-${DISTNAME}
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 post-configure:

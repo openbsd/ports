@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/20 02:59:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/21 03:18:27 kevlo Exp $
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 CINS=	cj.cin cj.tab cj.tab.rev phone.tab phone.cin phone.tab phone.tab.rev \
