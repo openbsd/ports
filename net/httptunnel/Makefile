@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/04 21:54:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/10 18:57:29 jakob Exp $
 
-DISTNAME=	httptunnel-3.0.3
+DISTNAME=	httptunnel-3.0.5
 CATEGORIES=	net
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.nocrew.org/software/httptunnel/ \
