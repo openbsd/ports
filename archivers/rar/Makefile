@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/12/19 15:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2001/02/27 17:53:12 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -14,12 +14,13 @@ SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
 
 CATEGORIES=	archivers
 NEED_VERSION=	1.330
-MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/
+MASTER_SITES=	${HOMEPAGE}/rar/ \
+		ftp://ftp.netlab.sk/public/rarsoft/rar/
 
-EXTRACT_CASES=	*.sfx) chmod u+x ${FULLDISTDIR}/$$archive && \
+EXTRACT_CASES=	*.sfx) ${SUDO} chmod a+x ${FULLDISTDIR}/$$archive && \
 	${FULLDISTDIR}/$$archive;;
 
-HOMEPAGE=	http://www.rarsoft.com/
+HOMEPAGE=	http://www.rarsoft.com
 
 MAINTAINER=	ports@openbsd.org
 
@@ -43,8 +44,10 @@ pre-fetch:
 .elif ${MACHINE_ARCH} == "sparc"
 	@echo
 	@echo "WARNING:	This application requires a kernel compiled with"
-	@echo "		'option COMPAT_SVR4' for proper operation.  The"
-	@echo "		GENERIC kernel contains this option."
+	@echo "		'option COMPAT_SVR4' and Solaris shared libraries"
+	@echo "		for proper operation; see compat_svr4(8) for"
+	@echo "		further details.  The GENERIC kernel contains this"
+	@echo "		option."
 	@echo
 .endif
 .endif
