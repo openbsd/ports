@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/05/15 14:34:37 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/05/16 13:52:06 wilfried Exp $
 bin/mozilla
 bin/mozilla-config
 bin/run-mozilla.sh
@@ -150,7 +150,6 @@ mozilla/components/nsKillAll.js
 mozilla/components/nsProgressDialog.js
 mozilla/components/nsProxyAutoConfig.js
 mozilla/components/nsResetPref.js
-mozilla/components/nsSample.js
 mozilla/components/nsSidebar.js
 mozilla/components/nsUpdateNotifier.js
 mozilla/components/nsXmlRpcClient.js
@@ -163,7 +162,6 @@ mozilla/components/prefmigr.xpt
 mozilla/components/profile.xpt
 mozilla/components/progressDlg.xpt
 mozilla/components/proxyObjInst.xpt
-mozilla/components/proxytest.xpt
 mozilla/components/rdf.xpt
 mozilla/components/related.xpt
 mozilla/components/search.xpt
@@ -191,7 +189,6 @@ mozilla/components/windowds.xpt
 mozilla/components/windowwatcher.xpt
 mozilla/components/wsdl.xpt
 mozilla/components/wsproxy.xpt
-mozilla/components/wsproxytest.xpt
 mozilla/components/xml-rpc.xpt
 mozilla/components/xmlextras.xpt
 mozilla/components/xmlextras_interfaceinfo.xpt
@@ -205,9 +202,7 @@ mozilla/components/xpcom_io.xpt
 mozilla/components/xpcom_obsolete.xpt
 mozilla/components/xpcom_threads.xpt
 mozilla/components/xpcom_xpti.xpt
-mozilla/components/xpcomsample.xpt
 mozilla/components/xpconnect.xpt
-mozilla/components/xpconnect_tests.xpt
 mozilla/components/xpinstall.xpt
 mozilla/components/xremoteservice.xpt
 mozilla/components/xuldoc.xpt
@@ -288,7 +283,6 @@ mozilla/res/html/gopher-text.gif
 mozilla/res/html/gopher-unknown.gif
 mozilla/res/inspector/search-registry.rdf
 mozilla/res/inspector/viewer-registry.rdf
-mozilla/res/jarlist.dat
 mozilla/res/langGroups.properties
 mozilla/res/language.properties
 mozilla/res/loading-image.gif
@@ -324,7 +318,6 @@ mozilla/res/samples/demoform.css
 mozilla/res/samples/dexopenchrome.xul
 mozilla/res/samples/dexparamdialog.html
 mozilla/res/samples/dexparamdialog.xul
-mozilla/res/samples/embed-test.html
 mozilla/res/samples/find.html
 mozilla/res/samples/gear1.gif
 mozilla/res/samples/hidetoolicon.css
@@ -379,15 +372,8 @@ mozilla/res/samples/toolbarTest1.xul
 mozilla/res/samples/treeTest1.css
 mozilla/res/samples/treeTest1.xul
 mozilla/res/samples/widgets.xul
-mozilla/res/samples/xpconnect-sample.html
 mozilla/res/samples/xpmenu.xul
 mozilla/res/samples/xulTest.css
-mozilla/res/strres-test.dtd
-mozilla/res/strres-test.html
-mozilla/res/strres-test.js
-mozilla/res/strres-test.xul
-mozilla/res/strres.properties
-mozilla/res/test.properties
 mozilla/res/throbber/anim.gif
 mozilla/res/throbber/anims00.gif
 mozilla/res/throbber/anims01.gif
@@ -421,8 +407,6 @@ mozilla/res/throbber/anims28.gif
 mozilla/res/throbber/anims29.gif
 mozilla/res/ua.css
 mozilla/res/unixcharset.properties
-mozilla/res/urlparse.dat
-mozilla/res/urlparse_unx.dat
 mozilla/res/viewer.properties
 mozilla/res/viewsource.css
 mozilla/searchplugins/NetscapeSearch.gif
@@ -437,7 +421,6 @@ mozilla/searchplugins/lxrmozilla.gif
 mozilla/searchplugins/lxrmozilla.src
 mozilla/searchplugins/mozilla.gif
 mozilla/searchplugins/mozilla.src
-mozilla/components/libMyService.so.1.0
 mozilla/components/libaccessibility.so.1.0
 mozilla/components/libaddrbook.so.1.0
 mozilla/components/libappcomps.so.1.0
@@ -488,8 +471,6 @@ mozilla/components/libp3p.so.1.0
 mozilla/components/libpref.so.1.0
 mozilla/components/libprofile.so.1.0
 mozilla/components/librdf.so.1.0
-mozilla/components/libsmimestb.so.1.0
-mozilla/components/libtestdynamic.so.1.0
 mozilla/components/libtransformiix.so.1.0
 mozilla/components/libtxmgr.so.1.0
 mozilla/components/libtypeaheadfind.so.1.0
@@ -501,16 +482,12 @@ mozilla/components/libwallet.so.1.0
 mozilla/components/libwalletviewers.so.1.0
 mozilla/components/libwebbrwsr.so.1.0
 mozilla/components/libwidget_gtk.so.1.0
-mozilla/components/libwsproxytest.so.1.0
 mozilla/components/libxmlextras.so.1.0
 mozilla/components/libxpcom_compat_c.so.1.0
-mozilla/components/libxpcomsample.so.1.0
 mozilla/components/libxpconnect.so.1.0
-mozilla/components/libxpctest.so.1.0
 mozilla/components/libxpinstall.so.1.0
 mozilla/components/libxremote_client.so.1.0
 mozilla/components/libxremoteservice.so.1.0
-mozilla/libDebugRobot.so.1.0
 mozilla/libgkgfx.so.1.0
 mozilla/libgtkembedmoz.so.1.0
 mozilla/libgtksuperwin.so.1.0
