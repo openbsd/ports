@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2002/03/11 23:00:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2002/04/07 00:54:46 naddy Exp $
 
-ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
+ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc
 
 COMMENT=	"pager/text-based web browser"
 
