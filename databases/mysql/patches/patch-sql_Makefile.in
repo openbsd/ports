@@ -1,7 +1,7 @@
-$OpenBSD: patch-sql_Makefile.in,v 1.13 2001/12/29 17:56:56 brad Exp $
---- sql/Makefile.in.orig	Thu Dec 27 07:37:46 2001
-+++ sql/Makefile.in	Sat Dec 29 12:16:16 2001
-@@ -1859,8 +1859,7 @@ sql_yacc.h:	sql_yacc.yy
+$OpenBSD: patch-sql_Makefile.in,v 1.14 2002/02/10 03:49:53 brad Exp $
+--- sql/Makefile.in.orig	Thu Feb  7 16:13:59 2002
++++ sql/Makefile.in	Sat Feb  9 19:50:49 2002
+@@ -1861,8 +1861,7 @@ sql_yacc.h:	sql_yacc.yy
  
  sql_yacc.o:	sql_yacc.cc sql_yacc.h
  		@echo "Note: The following compile may take a long time."

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2002/02/09 00:50:14 brad Exp $
+# $OpenBSD: Makefile,v 1.67 2002/02/10 03:49:53 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -7,11 +7,14 @@ COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (test suite)"
 
 # More architectures need testing of MySQL+native threads
+# alpha, hppa, m68k, m88k, vax - untested
+# sparc64 - linker issue?
+# powerpc - seems to work, possible instability? needs more testing, @pval
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc"
 BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
 .endif
 
-VERSION=	3.23.47
+VERSION=	3.23.48
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -78,7 +81,7 @@ CONFIGURE_ARGS+= --without-berkeley-db
 
 .if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql \
-		::databases/p5-DBD-Msql-Mysql
+		:p5-DBD-Msql-Mysql-*:databases/p5-DBD-Msql-Mysql
 .endif
 
 VMEM_WARNING=	Yes
