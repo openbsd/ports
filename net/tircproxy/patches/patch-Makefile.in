@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Sat Jul 15 19:00:49 2000
++++ Makefile.in	Sat Jul 15 19:02:55 2000
+@@ -12,6 +12,8 @@
+ TARGETNAME=@sbindir@/tircproxy
+ STRIP=@STRIP@
+ 
++DESTDIR= 
++
+ ALL_CFLAGS=-Wall -I. -I@srcdir@ $(CFLAGS)
+ 
+ .SUFFIXES:
+@@ -29,20 +31,20 @@
+ 	pgp -sba $@ -u 3004
+ 
+ manual:
+-	@(cd docs; make all)
++	@cd docs; $(MAKE) all
+ 
+-all:	tircproxy tircproxy.static documentation
++all:	tircproxy
+ 
+ install:	tircproxy
+-	$(INSTALL) -o bin -g bin -m 555 tircproxy $(TARGETNAME)
+-	$(INSTALL) -o root -g man -m 644 tircproxy.8 $(prefix)/man/man8/
++	$(INSTALL) -o bin -g bin -m 555 tircproxy $(DESTDIR)$(TARGETNAME)
++	$(INSTALL) -o root -g wheel -m 444 tircproxy.8 $(DESTDIR)$(prefix)/man/man8
+ 
+ install-strip: install
+-	$(STRIP) $(TARGETNAME)
++	$(STRIP) $(DESTDIR)$(TARGETNAME)
+ 
+ clean:
+ 	rm -f tircproxy.o tircproxy tircproxy.static *~ .*~ *.bak *.tar.gz*
+-	@(cd docs; make clean)
++	@cd docs; $(MAKE) clean
+ 
+ dist-clean:	clean
+ 	rm -f config.h config.cache config.status config.log *.asc
