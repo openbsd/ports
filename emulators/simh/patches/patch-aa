@@ -1,0 +1,29 @@
+$NetBSD: patch-aa,v 1.2 1998/08/12 22:44:52 tv Exp $
+
+--- scp.c.orig	Wed Aug 12 18:21:13 1998
++++ scp.c	Wed Aug 12 18:24:25 1998
+@@ -240,6 +240,7 @@
+ 
+ do {	printf ("sim> ");				/* prompt */
+ 	cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */
++	if (cptr == NULL) break;			/* exit on eof */
+ 	stat = SCPE_UNK;
+ 	if (cptr == NULL) continue;			/* ignore EOF */
+ 	if (*cptr == 0) continue;			/* ignore blank */
+@@ -254,6 +255,7 @@
+ 
+ detach_all (0);
+ ttclose ();
++puts("");
+ return 0;
+ }
+ 
+@@ -879,7 +881,7 @@
+ 		    (UNIT_ATT + UNIT_SEQ))
+ 			fseek (uptr -> fileref, uptr -> pos, SEEK_SET);  }  }
+ stop_cpu = 0;
+-if ((int) signal (SIGINT, int_handler) == -1) {		/* set WRU */
++if (signal (SIGINT, int_handler) == (void *)-1) {	/* set WRU */
+ 	printf ("Simulator interrupt handler setup failed\n");
+ 	return SCPE_OK;  }
+ if (ttrunstate () != SCPE_OK) {				/* set console */
