@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/12 20:45:09 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/24 23:53:08 brad Exp $
 
 DISTNAME=	SSLeay-0.9.0b
 CATEGORIES=     security
@@ -49,10 +49,12 @@ CONFIGURE_ARGS+= -I../../rsaref/ -DRSAref
 # gcc-2.8.* confuses DES names? destest fails, but not with gcc-2.7.*. fix.
 CONFIGURE_ARGS+= -DPERL5
 
-.if (${MACHINE_ARCH} == "i386")
-CONFIGURE_ARGS+=	OpenBSD-x86
-.elif (${MACHINE_ARCH} == "sparc")
+.if (${MACHINE_ARCH} == "sparc")
 CONFIGURE_ARGS+=	OpenBSD-sparc
+.elif (${MACHINE_ARCH} == "i386")
+CONFIGURE_ARGS+=	OpenBSD-x86
+.elif (${MACHINE_ARCH} == "m68k")
+CONFIGURE_ARGS+=	OpenBSD-m68k
 .elif (${MACHINE_ARCH} == "alpha")
 CONFIGURE_ARGS+=	alpha-gcc
 .else
