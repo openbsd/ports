@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/08 20:20:41 couderc Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/08 20:28:30 couderc Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchat/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
+
+MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
