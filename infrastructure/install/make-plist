@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.39 2004/07/22 22:24:51 espie Exp $
+# $OpenBSD: make-plist,v 1.40 2004/08/03 10:16:58 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -69,6 +69,18 @@ sub is_info
 	} else {
 		return 0;
 	}
+}
+
+sub is_manpage
+{
+	local $_ = shift;
+	if (m/\/man\/man(.*?)\/[^\/]+\.\1(?:\.gz|\.Z)?$/) {
+		return 1;
+	}
+	if (m/\/man\/cat.*?\/[^\/]+\.0(?:\.gz|\.Z)?$/) {
+		return 1;
+	}
+	return 0;
 }
 
 sub is_dir
@@ -150,6 +162,8 @@ sub annotate
 			$manual = 1;
 			next;
 		} elsif (m/^\@info\s+/) {
+			$_=$';
+		} elsif (m/^\@man\s+/) {
 			$_=$';
 		} elsif (m/^\@/) {
 			$manual = 1;
@@ -264,6 +278,9 @@ sub handle_file
     my $string = "$fname\n";
     if (is_info $item) {
     	$string= "\@info $string";
+    }
+    if (is_manpage $item) {
+    	$string="\@man $string";
     }
 
     if (defined $newdir->{$item}) {
