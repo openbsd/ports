@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/06/19 21:37:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2004/10/08 10:04:26 espie Exp $
 
 COMMENT=	"monitor arp & rarp requests"
 
@@ -31,6 +31,7 @@ do-install:
 	@for i in ethercodes.dat d.awk e.awk p.awk; do \
 		${INSTALL_DATA} ${WRKSRC}/$$i ${EXAMPLESDIR}; \
 	done
+	@${INSTALL_DATA} /dev/null ${EXAMPLESDIR}/arp.dat
 	@${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
