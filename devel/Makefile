@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2004/05/29 21:11:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.235 2004/06/01 02:16:17 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -153,6 +153,7 @@
      SUBDIR += p5-Date-Simple
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
+     SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Error
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
@@ -181,6 +182,7 @@
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
+     SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
