@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/17 21:43:36 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/08/02 22:13:19 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -142,14 +142,7 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
+VMEM_WARNING=	Yes
 
 LIBRARIES=qt.so.3.5 editor.so.1.0 qui.so.1.0
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
