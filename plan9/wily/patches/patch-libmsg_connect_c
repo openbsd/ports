@@ -1,6 +1,7 @@
---- libmsg/connect.c.orig	Tue May 11 13:45:26 1999
-+++ libmsg/connect.c	Tue May 11 13:48:06 1999
-@@ -106,11 +106,13 @@
+$OpenBSD: patch-libmsg_connect_c,v 1.1 2003/05/24 19:13:08 pvalchev Exp $
+--- libmsg/connect.c.orig	Sun Apr 12 13:37:42 1998
++++ libmsg/connect.c	Sat May 24 13:12:29 2003
+@@ -109,11 +109,13 @@ client_connect(void)
  
  	/* bind it to a unix-domain at a temporary address */
  	addr.sun_family = AF_UNIX;
@@ -15,7 +16,7 @@
  		perror("bind");
  		return -1;
  	}
-@@ -119,10 +121,14 @@
+@@ -122,10 +124,14 @@ client_connect(void)
  
  	fd = wilyfifotalk();		/* fifo to wily */
  	if(fd<0)
