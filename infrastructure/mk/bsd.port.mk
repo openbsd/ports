@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.669 2004/11/27 14:07:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.670 2004/11/28 11:44:00 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1363,7 +1363,7 @@ ${_LIBLIST}: ${_FAKE_COOKIE}
 .else
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@cd ${WRKINST} && ${SUDO} find . -type f|\
-		xargs objdump -p 2>/dev/null |\
+		${SUDO} xargs objdump -p 2>/dev/null |\
 		sed -n \
 			-e '/^ *NEEDED *\(.*\)\.so\.\([0-9][0-9]*\)\.\([0-9][0-9]*\)$$/s//\1 \2 \3/p' \
 			-e '/^ *NEEDED *\(.*\)\.so$$/s//\1/p'| \
