@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2002/02/25 21:25:37 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2002/03/23 04:34:22 matt Exp $
 
 COMMENT=	"interpreted object-oriented programming language"
 COMMENT-tests=	"Python testsuite"
@@ -32,13 +32,19 @@ FLAVOR?=
 MULTI_PACKAGES=	-tests -tools
 SUBPACKAGE?=
 
+# All subpackages depend on the main python package.
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=		::lang/python/${VERSION}
+.endif
+
 # On architectures with shared libs, no_xxx flavors are pretty much
 # a convenient way to avoid pulling in dependencies, and don't actually
 # show up in the final package names.  On architectures without shared
 # libs, some no_xxx flavors mean something.
 
 .if empty(FLAVOR:L:Mno_tkinter)
-LIB_DEPENDS+=		tk83::x11/tk/8.3
+BUILD_DEPENDS+=		::x11/tk/8.3
 SETUP_LOCAL+=		Setup.tkinter
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-tkinter
@@ -52,11 +58,11 @@ SED_PLIST+=		| sed -e '/^%%tkinter%%/d'
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=	tk83::x11/tk/8.3
+LIB_DEPENDS=		tk83::x11/tk/8.3
 .endif
 
 .if empty(FLAVOR:L:Mno_mpz)
-BUILD_DEPENDS+=		gmp::devel/gmp
+BUILD_DEPENDS+=		::devel/gmp
 SETUP_LOCAL+=		Setup.mpz
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+= 	-mpz
@@ -66,11 +72,11 @@ LIB_DEPENDS+=		gmp::devel/gmp
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-mpz"
-LIB_DEPENDS+=		gmp::devel/gmp
+LIB_DEPENDS=		gmp::devel/gmp
 .endif
 
 .if empty(FLAVOR:L:Mno_expat)
-BUILD_DEPENDS+=		expat::textproc/expat
+BUILD_DEPENDS+=		::textproc/expat
 SETUP_LOCAL+=		Setup.expat
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+= 	-expat
@@ -80,7 +86,7 @@ LIB_DEPENDS+=		expat::textproc/expat
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS+=		expat::textproc/expat
+LIB_DEPENDS=		expat::textproc/expat
 .endif
 
 # Strip off no_xxx flavors from the package name.
