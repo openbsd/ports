@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 04:07:03 obecian Exp $
+bin/playmus
+bin/playwave
+include/SDL/SDL_mixer.h
+lib/libSDL_mixer.a
+lib/libSDL_mixer.la
+%%SHARED%%
+@dirrm include/SDL
