@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/08 21:11:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/29 16:39:39 naddy Exp $
 
 VERSION=		2.3
 PATCHLEVEL=		.3
@@ -17,10 +17,8 @@ LIB_DEPENDS=		bz2::archivers/bzip2
 
 FLAVORS=		no_bsddb
 
-.if ${MACHINE_ARCH} == "alpha"
+.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "sparc64")
 PATCH_LIST=		patch-* sup64-*
-.elif ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=		patch-* sup64-* gcc-*
 .endif
 
 .include <bsd.port.mk>
