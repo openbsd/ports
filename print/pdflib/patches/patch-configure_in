@@ -1,7 +1,50 @@
-$OpenBSD: patch-configure_in,v 1.1 2003/12/18 03:32:20 naddy Exp $
---- configure.in.orig	2003-12-17 19:48:14.000000000 -0700
-+++ configure.in	2003-12-17 19:48:55.000000000 -0700
-@@ -685,7 +685,8 @@ AC_ARG_WITH(pnglib,
+$OpenBSD: patch-configure_in,v 1.2 2003/12/26 17:07:56 naddy Exp $
+--- configure.in.orig	2002-06-15 22:41:53.000000000 +0200
++++ configure.in	2003-12-26 17:32:02.000000000 +0100
+@@ -601,42 +601,6 @@ AC_SUBST(TCLINCLUDE)
+ AC_SUBST(TCLPACKAGEDIR)
+ AC_SUBST(TCLBIN)
+ 
+-# ----------------------------------------------------------------
+-#  PDFlib auxiliary library: TIFFlib
+-#  We bring our own copy of tifflib but the client may choose to
+-#  use an installed one instead. This is only support for C/C++ clients.
+-# ----------------------------------------------------------------
+-
+-# The list of Makefile targets for our internal libraries
+-LIBTARGETS=""
+-INTERNALLIBS=""
+-
+-WITH_INTERNALTIFFLIB="yes"
+-TIFFLIBINC=""
+-EXTERNALLIBS="$MATHLIB"
+-
+-AC_ARG_WITH(tifflib,
+-[  --with-tifflib          use installed tifflib instead of internal (not rec.)],
+-[
+-    AC_CHECK_LIB(tiff, TIFFOpen, [EXTERNALLIBS="$EXTERNALLIBS -ltiff"],
+-	AC_MSG_ERROR([No usable tifflib library found.]))
+-
+-    AC_CHECK_HEADER(tiff.h, , 
+-	AC_MSG_ERROR([No usable tifflib include file found.]))
+-
+-    AC_MSG_RESULT([         Note: user-supplied tifflib - language bindings disabled])
+-    WITH_INTERNALTIFFLIB="no"
+-],[
+-    AC_C_BIGENDIAN()
+-
+-    TIFFLIBINC="-I../tiff"
+-    INTERNALLIBS="$INTERNALLIBS \$(top_builddir)/tiff/libtiff.la"
+-    LIBTARGETS="$LIBTARGETS libtiff"
+-    GENERATED_FILES="$GENERATED_FILES tiff/Makefile"
+-])
+-
+-AC_SUBST(TIFFLIBINC)
+-
+ # ----------------------------------------------------------------------
+ #  PDFlib auxiliary library: Zlib
+ #  We bring our own copy of zlib but the client may choose to
+@@ -685,7 +649,8 @@ AC_ARG_WITH(pnglib,
      dnl Make sure libpng sits in front of libz
      AC_CHECK_LIB(png, png_create_read_struct,
  	[EXTERNALLIBS="-lpng $EXTERNALLIBS"],
@@ -11,3 +54,60 @@ $OpenBSD: patch-configure_in,v 1.1 2003/12/18 03:32:20 naddy Exp $
  
      AC_CHECK_HEADER(png.h, , 
  	AC_MSG_ERROR([No usable pnglib include file found.]))
+@@ -707,6 +672,56 @@ AC_ARG_WITH(pnglib,
+ AC_SUBST(PNGLIBINC)
+ 
+ # ----------------------------------------------------------------
++#  PDFlib auxiliary library: TIFFlib
++#  We bring our own copy of tifflib but the client may choose to
++#  use an installed one instead. This is only support for C/C++ clients.
++# ----------------------------------------------------------------
++
++# The list of Makefile targets for our internal libraries
++LIBTARGETS=""
++INTERNALLIBS=""
++
++WITH_INTERNALTIFFLIB="yes"
++TIFFLIBINC=""
++EXTERNALLIBS="$EXTERNALLIBS $MATHLIB"
++
++AC_ARG_WITH(tifflib,
++[  --with-tifflib          use installed tifflib instead of internal (not rec.)],
++[
++    if test "$WITH_INTERNALZLIB" = "yes"; then
++	AC_MSG_ERROR([--with-tifflib requires --with-zlib])
++    fi
++
++    AC_CHECK_LIB(jpeg, jpeg_read_header,
++	[EXTERNALLIBS="-ljpeg $EXTERNALLIBS"])
++
++    dnl Make sure libtiff sits in front of libz
++    AC_CHECK_LIB(tiff, TIFFOpen,
++	[EXTERNALLIBS="-ltiff $EXTERNALLIBS"],
++	AC_MSG_ERROR([No usable tifflib library found.]),
++	$EXTERNALLIBS)
++
++    AC_CHECK_HEADER(tiff.h, , 
++	AC_MSG_ERROR([No usable tifflib include file found.]))
++
++    AC_MSG_RESULT([         Note: user-supplied tifflib - language bindings disabled])
++    WITH_INTERNALTIFFLIB="no"
++],[
++    if test "$WITH_INTERNALZLIB" = "no"; then
++	AC_MSG_ERROR([--with-zlib requires --with-tifflib])
++    fi
++
++    AC_C_BIGENDIAN()
++
++    TIFFLIBINC="-I../tiff"
++    INTERNALLIBS="$INTERNALLIBS \$(top_builddir)/tiff/libtiff.la"
++    LIBTARGETS="$LIBTARGETS libtiff"
++    GENERATED_FILES="$GENERATED_FILES tiff/Makefile"
++])
++
++AC_SUBST(TIFFLIBINC)
++
++# ----------------------------------------------------------------
+ #  PDFlib auxiliary library: PDI (PDF import library)
+ # ----------------------------------------------------------------
+ 

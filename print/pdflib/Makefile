@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/28 13:38:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/12/26 17:07:56 naddy Exp $
 
 COMMENT=		"C library to produce PDF files"
 
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 
-LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			png.2::graphics/png \
+LIB_DEPENDS=		png.2::graphics/png \
 			tiff.35::graphics/tiff
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	autoconf dest
+AUTOCONF_VERSION=	2.13
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-tifflib \
