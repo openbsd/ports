@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/09 03:48:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/09 01:42:01 kevlo Exp $
 
 COMMENT=	"simple interface to subversion's editor interface"
 
-DISTNAME=	SVN-Simple-0.26
+DISTNAME=	SVN-Simple-0.27
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CL/CLKAO/}
