@@ -1,20 +1,23 @@
---- fileio.c.orig	Wed Dec 15 07:28:21 1999
-+++ fileio.c	Mon Jan 17 10:49:27 2000
-@@ -3039,7 +3039,7 @@
+--- fileio.c.orig	Wed Dec 15 06:28:21 1999
++++ fileio.c	Sat Jan 29 01:28:22 2000
+@@ -2990,6 +2990,7 @@
+ vim_tempname(extra_char)
+     int	    extra_char;	    /* character to use in the name instead of '?' */
+ {
++	int itmp_fd;
+ #ifdef WIN32
+     char	szTempFile[_MAX_PATH+1];
+     char	buf4[4];
+@@ -3039,8 +3040,10 @@
  	    STRCAT(itmp, TEMPNAME);
  	    if ((p = vim_strchr(itmp, '?')) != NULL)
  		*p = extra_char;
 -	    if (mktemp((char *)itmp) == NULL)
-+	    if (mkstemp((char *)itmp) == NULL)
- 		continue;
+-		continue;
++		if ((itmp_fd = mkstemp((char *)itmp)) == -1) 
++	        	continue;
++		else 
++			close(itmp_fd);
  	    return vim_strsave(itmp);
  	}
-@@ -3084,7 +3084,7 @@
-     STRCPY(itmp, TEMPNAME);
-     if ((p = vim_strchr(itmp, '?')) != NULL)
- 	*p = extra_char;
--    if (mktemp((char *)itmp) == NULL)
-+    if (mkstemp((char *)itmp) == NULL)
- 	return NULL;
- #   endif
- #  endif
+     }

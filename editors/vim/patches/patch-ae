@@ -1,29 +1,41 @@
---- ctags/entry.c.orig	Fri Sep 17 03:00:10 1999
-+++ ctags/entry.c	Thu Dec  9 13:20:15 1999
-@@ -408,7 +408,7 @@
+--- ctags/entry.c.orig	Tue Sep 28 20:20:25 1999
++++ ctags/entry.c	Sat Jan 29 01:13:55 2000
+@@ -397,6 +397,7 @@
+ extern void openTagFile()
+ {
+     static char tempName[L_tmpnam];
++    int tmp_fd;
+ 
+     setDefaultTagFileName();
+     TagsToStdout = isDestinationStdout();
+@@ -408,8 +409,10 @@
       */
      if (TagsToStdout)
      {
 -	TagFile.name = tmpnam(tempName);
-+	TagFile.name = mkstemp(tempName);
- 	TagFile.fp = fopen(TagFile.name, "w");
+-	TagFile.fp = fopen(TagFile.name, "w");
++        strcpy(tempName, "/var/tmp/ctags-XXXXXXXXXX");
++        tmp_fd = mkstemp(tempName);
++        if ((TagFile.fp = fdopen(tmp_fd, "w")) == NULL)
++	 	close(tmp_fd);
      }
      else
-@@ -472,7 +472,7 @@
- {
-     char tempName[L_tmpnam];
- 
--    if (tmpnam(tempName) != NULL)
-+    if (mkstemp(tempName) != NULL)
      {
- 	copyFile(name, tempName, size);
- 	copyFile(tempName, name, WHOLE_FILE);
-@@ -564,7 +564,7 @@
+@@ -564,10 +567,14 @@
  
  extern void beginEtagsFile()
  {
 -    tmpnam(TagFile.etags.name);
-+    mkstemp(TagFile.etags.name);
-     TagFile.etags.fp = fopen(TagFile.etags.name, "w+b");
-     if (TagFile.etags.fp == NULL)
+-    TagFile.etags.fp = fopen(TagFile.etags.name, "w+b");
+-    if (TagFile.etags.fp == NULL)
++    int tmp_fd;
++    strcpy(TagFile.etags.name, "/var/tmp/etags-XXXXXXXXXX");
++    tmp_fd = mkstemp(TagFile.etags.name);
++    TagFile.etags.fp = fdopen(tmp_fd, "w+b");
++    if (TagFile.etags.fp == NULL) {
++       close(tmp_fd);
  	error(FATAL | PERROR, "cannot open \"%s\"", TagFile.etags.name);
++    }
+     TagFile.etags.byteCount = 0;
+ }
+ 
