@@ -1,0 +1,109 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/06 07:52:46 brad Exp $
+lib/mod_perl.so
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Connection.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Constants.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Constants/Exports.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Debug.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/ExtUtils.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/FakeRequest.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/File.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Include.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Leak.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Log.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/ModuleConfig.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/MyConfig.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Opcode.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Options.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/PerlRun.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/PerlRunXS.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/PerlSections.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/RedirectLogFix.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Registry.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/RegistryBB.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/RegistryLoader.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/RegistryNG.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Resource.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/SIG.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Server.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/SizeLimit.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/StatINC.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Status.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Symbol.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Symdump.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Table.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/URI.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Util.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/httpd_conf.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/src.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Apache/test.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Bundle/Apache.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Leak/Leak.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Leak/Leak.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Symbol/Symbol.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Symbol/Symbol.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/ap_config_auto.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl/apache_inc.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl/mod_perl.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl/mod_perl_version.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl/mod_perl_xs.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl/perl_PL.h
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/mod_perl.exp
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/typemap
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/mod_perl/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/cgi_to_mod_perl.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_cvs.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_hooks.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_hooks.pm.PL
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_method_handlers.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_traps.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/mod_perl_tuning.pod
+man/man3/Apache.3p
+man/man3/Apache::Constants.3p
+man/man3/Apache::Debug.3p
+man/man3/Apache::ExtUtils.3p
+man/man3/Apache::FakeRequest.3p
+man/man3/Apache::File.3p
+man/man3/Apache::Include.3p
+man/man3/Apache::Leak.3p
+man/man3/Apache::Log.3p
+man/man3/Apache::Options.3p
+man/man3/Apache::PerlRun.3p
+man/man3/Apache::PerlRunXS.3p
+man/man3/Apache::PerlSections.3p
+man/man3/Apache::RedirectLogFix.3p
+man/man3/Apache::Registry.3p
+man/man3/Apache::RegistryLoader.3p
+man/man3/Apache::Resource.3p
+man/man3/Apache::SIG.3p
+man/man3/Apache::SizeLimit.3p
+man/man3/Apache::StatINC.3p
+man/man3/Apache::Status.3p
+man/man3/Apache::Symbol.3p
+man/man3/Apache::Symdump.3p
+man/man3/Apache::Table.3p
+man/man3/Apache::URI.3p
+man/man3/Apache::Util.3p
+man/man3/Apache::httpd_conf.3p
+man/man3/Apache::src.3p
+man/man3/Bundle::Apache.3p
+man/man3/cgi_to_mod_perl.3p
+man/man3/mod_perl.3p
+man/man3/mod_perl_cvs.3p
+man/man3/mod_perl_method_handlers.3p
+man/man3/mod_perl_traps.3p
+man/man3/mod_perl_tuning.3p
+sbin/mod_perl-enable
+share/doc/mod_perl/mod_perl.html
+@dirrm share/doc/mod_perl
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/mod_perl
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules/perl
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include/modules
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/include
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Symbol
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache/Leak
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Apache
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Apache/Constants
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Apache

@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/09/06 07:52:46 brad Exp $
+#
+# mod_perl de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
+
+rm -f /usr/lib/apache/modules/libperl.so
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you"
+echo "| need to perform these steps as root:"
+echo "|"
+echo "|        edit ${CONF}"
+echo "|        and remove the line LoadModule perl_module"
+echo "|"
+echo "| Do not do this if you plan on re-installing mod_perl"
+echo "| package at some future time."
+echo "+---------------"
+echo
+
+exit 0

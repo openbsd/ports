@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/09/06 07:52:46 brad Exp $
+#
+# mod_perl installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To finish the install of $1, you need to enable the"
+    echo "| module using the following command"
+    echo "|"
+    echo "|   $PREFIX/sbin/mod_perl-enable"
+    echo "|"
+    echo "| If you already have Apache running on your machine,"
+    echo "| you should not use "apachectl restart" - instead,"
+    echo "| you fully stop and then restart the server."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
