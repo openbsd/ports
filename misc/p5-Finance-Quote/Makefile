@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/21 01:42:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/16 23:08:47 avsm Exp $
 
-DISTNAME=	Finance-Quote-1.04
+DISTNAME=	Finance-Quote-1.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.351
