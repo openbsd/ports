@@ -1,9 +1,9 @@
-$OpenBSD: patch-pm_config_h,v 1.1 2001/10/03 03:09:31 brad Exp $
---- pm_config.h.orig	Sun Jun 10 19:37:08 2001
-+++ pm_config.h	Wed Sep  5 21:13:36 2001
-@@ -19,6 +19,10 @@
- 
- **************************************************************************/
+$OpenBSD: patch-pm_config_h,v 1.2 2002/03/01 22:49:20 brad Exp $
+--- pm_config.h.orig	Wed Jan 16 18:14:55 2002
++++ pm_config.h	Fri Mar  1 16:16:07 2002
+@@ -35,6 +35,10 @@
+ typedef unsigned int uint32n;
+ typedef signed int int32n;
  
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-pm_config_h,v 1.1 2001/10/03 03:09:31 brad Exp $
  #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
  #define SYSV
  #endif
-@@ -28,7 +32,7 @@
+@@ -44,7 +48,7 @@ typedef signed int int32n;
  ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
  ** probably better off setting SYSV - all it affects is string handling.
  */
@@ -21,7 +21,7 @@ $OpenBSD: patch-pm_config_h,v 1.1 2001/10/03 03:09:31 brad Exp $
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -48,9 +52,9 @@
+@@ -86,9 +90,9 @@ typedef signed int int32n;
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else

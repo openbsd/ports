@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/10/03 03:09:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/03/01 22:49:20 brad Exp $
 bin/411toppm
 bin/anytopnm
 bin/asciitopgm
@@ -11,7 +11,6 @@ bin/eyuvtoppm
 bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
-bin/gemtopbm
 bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
@@ -32,8 +31,11 @@ bin/neotoppm
 bin/palmtopnm
 bin/pamchannel
 bin/pamcut
+bin/pamdeinterlace
 bin/pamfile
 bin/pamoil
+bin/pamstretch
+bin/pamstretch-gen
 bin/pamtopnm
 bin/pbmclean
 bin/pbmlife
@@ -102,6 +104,7 @@ bin/pngtopnm
 bin/pnmalias
 bin/pnmarith
 bin/pnmcat
+bin/pnmcolormap
 bin/pnmcomp
 bin/pnmconvol
 bin/pnmcrop
@@ -114,17 +117,16 @@ bin/pnmgamma
 bin/pnmhisteq
 bin/pnmhistmap
 bin/pnmindex
-bin/pnminterp
-bin/pnminterp-gen
 bin/pnminvert
 bin/pnmmargin
 bin/pnmmerge
 bin/pnmmontage
 bin/pnmnlfilt
-bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
 bin/pnmpsnr
+bin/pnmquant
+bin/pnmremap
 bin/pnmrotate
 bin/pnmscale
 bin/pnmscalefixed
@@ -151,6 +153,7 @@ bin/ppmbrighten
 bin/ppmchange
 bin/ppmcie
 bin/ppmcolormask
+bin/ppmcolors
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
@@ -229,6 +232,8 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
+include/pam.h
+include/pammap.h
 include/pbm.h
 include/pgm.h
 include/pm.h
@@ -256,7 +261,6 @@ man/man1/eyuvtoppm.1
 man/man1/fitstopnm.1
 man/man1/fstopgm.1
 man/man1/g3topbm.1
-man/man1/gemtopnm.1
 man/man1/giftopnm.1
 man/man1/gouldtoppm.1
 man/man1/hipstopgm.1
@@ -277,8 +281,11 @@ man/man1/netpbm.1
 man/man1/palmtopnm.1
 man/man1/pamchannel.1
 man/man1/pamcut.1
+man/man1/pamdeinterlace.1
 man/man1/pamfile.1
 man/man1/pamoil.1
+man/man1/pamstretch-gen.1
+man/man1/pamstretch.1
 man/man1/pamtopnm.1
 man/man1/pbmclean.1
 man/man1/pbmlife.1
@@ -345,6 +352,7 @@ man/man1/pngtopnm.1
 man/man1/pnmalias.1
 man/man1/pnmarith.1
 man/man1/pnmcat.1
+man/man1/pnmcolormap.1
 man/man1/pnmcomp.1
 man/man1/pnmconvol.1
 man/man1/pnmcrop.1
@@ -357,8 +365,6 @@ man/man1/pnmgamma.1
 man/man1/pnmhisteq.1
 man/man1/pnmhistmap.1
 man/man1/pnmindex.1
-man/man1/pnminterp-gen.1
-man/man1/pnminterp.1
 man/man1/pnminvert.1
 man/man1/pnmmargin.1
 man/man1/pnmmontage.1
@@ -366,6 +372,8 @@ man/man1/pnmnlfilt.1
 man/man1/pnmpad.1
 man/man1/pnmpaste.1
 man/man1/pnmpsnr.1
+man/man1/pnmquant.1
+man/man1/pnmremap.1
 man/man1/pnmrotate.1
 man/man1/pnmscale.1
 man/man1/pnmscalefixed.1
@@ -392,6 +400,7 @@ man/man1/ppmbrighten.1
 man/man1/ppmchange.1
 man/man1/ppmcie.1
 man/man1/ppmcolormask.1
+man/man1/ppmcolors.1
 man/man1/ppmdim.1
 man/man1/ppmdist.1
 man/man1/ppmdither.1

@@ -1,5 +1,5 @@
---- pbm/Makefile.orig	Mon Sep 10 22:17:16 2001
-+++ pbm/Makefile	Mon Sep 10 22:20:36 2001
+--- pbm/Makefile.orig	Thu Jan 10 18:19:44 2002
++++ pbm/Makefile	Fri Mar  1 16:03:29 2002
 @@ -52,6 +52,7 @@ MERGE_OBJECTS = $(patsubst %,%.o2, $(MER
  
  # Library objects to be built and linked by Makefile.common:
@@ -36,10 +36,10 @@
  
  HEADERLINKS = pm_config.h version.h compile.h
  
-@@ -109,6 +105,5 @@ $(BUILDDIR)/shhopt/libshhopt.a:
- .PHONY: clean
+@@ -110,6 +106,5 @@ $(BUILDDIR)/shhopt/libshhopt.a:
  clean: clean.common
  	rm -f thinkjettopbm.c
+ 	rm -f compile.h
 -	$(MAKE) -C pbmtoppa clean
  
  FORCE:

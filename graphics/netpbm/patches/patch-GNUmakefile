@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile,v 1.1 2001/10/03 03:09:31 brad Exp $
---- GNUmakefile.orig	Mon Sep 10 22:12:09 2001
-+++ GNUmakefile	Mon Sep 10 22:13:36 2001
-@@ -69,7 +69,7 @@ SUBDIRS = pbm pgm ppm pnm
+$OpenBSD: patch-GNUmakefile,v 1.2 2002/03/01 22:49:20 brad Exp $
+--- GNUmakefile.orig	Thu Jan 10 18:28:24 2002
++++ GNUmakefile	Fri Mar  1 17:13:24 2002
+@@ -71,7 +71,7 @@ SUBDIRS = pbm pgm ppm pnm
  
  default: $(DEFAULT_TARGET)
  
@@ -10,21 +10,25 @@ $OpenBSD: patch-GNUmakefile,v 1.1 2001/10/03 03:09:31 brad Exp $
  
  .PHONY: nonmerge
  nonmerge: $(SUBDIRS)
-@@ -160,10 +160,10 @@ $(INSTALLHDRS):
+@@ -139,7 +139,6 @@ install.lib: $(INSTALLLIBS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.lib ; \
+ 	done
+-	$(SRCDIR)/buildtools/try_ldconfig
+ endif
  
- .PHONY: install.hdr
+ 
+@@ -159,10 +158,10 @@ install-dev: install.hdr install.staticl
  install.hdr: $(INSTALLHDRS) $(SRCDIR)/pm_config.h
--	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+ # See notes in Makefile.common about how $(INSTALL) varies from one 
+ # platform to another.
+-	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
 +	${BSD_INSTALL_DATA} \
  	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
--	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+-	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
 -	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} \
 +	    $(SRCDIR)/shhopt/pm_shhopt.h $(INSTALLHDRS)
  	for i in $(SUBDIRS) ; do \
  	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.hdr ; \
  	done
-@@ -210,4 +210,4 @@ dep:
- 	done
- # The following endif is for the else block that contains virtually the
- # whole file, for the test of the existence of CURDIR.
