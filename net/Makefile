@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2002/08/04 18:47:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.229 2002/09/01 20:34:31 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -75,10 +75,6 @@
      SUBDIR += irssi-icb
      SUBDIR += isc-dhcp
      SUBDIR += jftpgw
-     SUBDIR += kinkatta
-     SUBDIR += kmago
-     SUBDIR += kmago,wget
-     SUBDIR += kxicq2
      SUBDIR += ldistfp
      SUBDIR += lftp
      SUBDIR += libdnet
