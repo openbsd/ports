@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/18 18:58:08 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/03 18:31:21 sturm Exp $
 bin/dr_exec
 bin/dr_progress
 bin/dr_splitpipe
@@ -96,8 +96,8 @@ ${P5SITE}/Video/DVDRip/TranscodeRC.pm
 ${P5SITE}/Video/DVDRip/icon.xpm
 ${P5SITE}/Video/DVDRip/splash.png
 @comment ${P5ARCH}/auto/Video/DVDRip/.packlist
-man/man1/dr_progress.1
-man/man1/dr_splitpipe.1
+@comment man/man1/dr_progress.1
+@comment man/man1/dr_splitpipe.1
 man/man1/dvdrip.1
 man/man3p/Video::DVDRip.3p
 man/man3p/Video::DVDRip::CPAN::Scanf.3p

@@ -4,3 +4,8 @@ GUI to control almost all aspects of the ripping and
 transcoding process. It uses the widely known video 
 processing swissknife transcode and many other 
 Open Source tools.
+
+dvd::rip has quite a few soft dependencies. Check
+"Debug -> Check dependencies" in dvd::rip for details.
+If operated in cluster mode, only transcode has to be
+installed on all slave nodes, not dvd::rip itself.

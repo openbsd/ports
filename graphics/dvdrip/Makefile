@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/18 18:58:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/03 18:31:20 sturm Exp $
 
 COMMENT=	"full featured DVD copy program"
 
 VERSION=	0.50.18
-PKGNAME=	dvdrip-${VERSION}
+PKGNAME=	dvdrip-${VERSION}p0
 DISTNAME=	Video-DVDRip-${VERSION}
 CATEGORIES=	graphics audio perl
 
@@ -21,11 +21,18 @@ MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 
 RUN_DEPENDS=	::graphics/ImageMagick \
 		::graphics/transcode \
+		::devel/p5-Event \
+		::net/fping \
 		::x11/p5-Gtk
 
 CONFIGURE_STYLE=perl
 
 REGRESS_DEPENDS=::x11/p5-Gtk
 REGRESS_FLAGS=	HOME=${TMPDIR}
+
+pre-build:
+	@perl -pi -e "s,/usr/sbin/fping,${LOCALBASE}/sbin/fping,g" \
+		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm \
+		${WRKSRC}/lib/Video/DVDRip/Depend.pm
 
 .include <bsd.port.mk>
