@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/06 01:50:08 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kbouboule.kss
@@ -2855,6 +2855,7 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/icons/Locolor/16x16/actions
 @dirrm share/icons/Locolor/16x16
 @dirrm share/icons/Locolor
+@comment @dirrm share/config
 @dirrm share/apps/kworldclock/maps/rainfall
 @dirrm share/apps/kworldclock/maps/mggd
 @dirrm share/apps/kworldclock/maps/caida_bw
@@ -2863,3 +2864,4 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/apps/kworldclock/maps/alt
 @dirrm share/apps/kwin/icewm-themes/Model
 @dirrm share/apps/kwin/icewm-themes/MenschMaschine
+@comment @dirrm share/apps

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/12/02 16:27:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/06 01:50:08 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -805,6 +805,8 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kmail
 @dirrm share/doc/HTML/en/kit
 @dirrm share/doc/HTML/en/kdict
+@comment @dirrm share/doc/HTML
+@comment @dirrm share/config
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -906,4 +908,5 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/hicolor
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
+@comment @dirrm share/apps
 @dirrm include/mimelib

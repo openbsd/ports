@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/06 01:50:08 espie Exp $
 bin/kasteroids
 bin/katomic
 bin/kbackgammon
@@ -1977,6 +1977,7 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kbackgammon
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kasteroids
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default
@@ -2075,4 +2076,5 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/carddecks/cards-default
 @dirrm share/apps/carddecks/cards-aisleriot
 @dirrm share/apps/carddecks
+@comment @dirrm share/apps
 @dirrm include/kgame

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/06 01:50:08 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -222,6 +222,7 @@ share/services/kfile_ps.desktop
 @dirrm share/doc/HTML/en/kfract
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/kviewshell
 @dirrm share/apps/kviewerpart
 @dirrm share/apps/kview/toolbar
@@ -240,3 +241,4 @@ share/services/kfile_ps.desktop
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
+@comment @dirrm share/apps
