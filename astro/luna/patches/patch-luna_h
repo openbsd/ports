@@ -1,8 +1,32 @@
-$OpenBSD: patch-luna_h,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
---- luna.h.orig	Fri Nov  9 11:44:17 2001
-+++ luna.h	Fri Nov  9 11:44:51 2001
-@@ -32,7 +32,7 @@ typedef enum {
+$OpenBSD: patch-luna_h,v 1.2 2002/08/02 01:43:47 wcobb Exp $
+--- luna.h.orig	Thu Aug  1 20:35:34 2002
++++ luna.h	Thu Aug  1 20:42:19 2002
+@@ -11,6 +11,7 @@
  
+ 
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	<ctype.h>
+ #include	<string.h>
+ #include	<time.h>
+@@ -19,20 +20,18 @@
+ # include	<dos.h>
+ #endif	/* MSDOS */
+ #include	"pyramid.h"
+-#include	"iprintf/iprint.h"
+ 
+ typedef enum {
+ 	FALSE,
+ 	TRUE
+ }	BOOLEAN;
+ 
+-#define	printf	iprintf
+-#define	sprintf	isprintf
+-#define	fprintf	ifprintf
+-
++extern int		getext(int, int, int);
++extern int		getmoon(int, int);
++extern int		ymd2yday(int, int, int);
  
  #if defined(ANSI)
 -	extern void		main(int argc, char **argv);
@@ -10,7 +34,7 @@ $OpenBSD: patch-luna_h,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
  	extern void		drawluna(int aotmoon);
  	extern void		usage(void);
  	extern void		getoptions(int argc, char **argv,
-@@ -40,7 +40,7 @@ typedef enum {
+@@ -40,7 +39,7 @@ typedef enum {
  	extern int		getext(int year, int mon, int day);
  	extern void		printextstate(int age);
  #else
