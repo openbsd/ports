@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.61 2003/04/14 13:15:28 avsm Exp $
+# $OpenBSD: network.conf.template,v 1.62 2003/05/13 10:52:11 avsm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -54,7 +54,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.digex.net/pub/gnu/ \
 	ftp://ftp.wustl.edu/systems/gnu/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
 	ftp://ftp.rediris.es/mirror/gnu/ \
