@@ -4,7 +4,7 @@
  			break;
  
  		case Key_Return:
-+			time.stop();
++			timer.stop();
  			waitForAuthentication = true;
  			if ( tryPassword() )
  				emit passOk();
