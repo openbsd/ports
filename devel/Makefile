@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2004/04/11 21:28:18 jolan Exp $
+# $OpenBSD: Makefile,v 1.215 2004/04/15 03:39:26 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -76,6 +76,7 @@
      SUBDIR += libaudiofile
      SUBDIR += libavl
      SUBDIR += libbio
+     SUBDIR += libbt
      SUBDIR += libdockapp
      SUBDIR += libdsk
      SUBDIR += libdvdplay
