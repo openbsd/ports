@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.341 2000/12/01 16:31:11 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.342 2000/12/14 13:08:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -864,6 +864,8 @@ BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
 EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .  endif
 EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
+EXTRACT_CASES+= *.shar.gz|*.shar.Z|*.sh.Z|*.sh.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
+EXTRACT_CASES+= *.shar | *.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 
