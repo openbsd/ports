@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	texi2html
-# Version required:	1.52
-# Date created:		May 17 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 05:03:32 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/06/03 01:39:53 brad Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
@@ -15,14 +9,12 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-EXTRACT_CMD=	uncompress
-EXTRACT_BEFORE_ARGS=	-c
-EXTRACT_AFTER_ARGS=	| sh
 NO_WRKSUBDIR=	yes
-NO_CONFIGURE=	yes
-NO_BUILD=	yes
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS= | ${SH}
 
-MAN1=		texi2html.1
+NO_BUILD=	yes
 
 post-extract:
 	@cd ${WRKSRC}; split -l 1881 texi2html texi2html.
