@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/29 01:30:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/18 19:44:58 sturm Exp $
 
 COMMENT=	"tiny/turbo/throttling HTTP server"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://www.acme.com/software/thttpd/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 

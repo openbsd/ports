@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/22 14:16:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:45 sturm Exp $
 
 COMMENT=	"Apache MySQL authentication module"
 
@@ -16,10 +16,10 @@ MAINTAINER=	Sam Smith <S@mSmith.net>
 HOMEPAGE=	http://sourceforge.net/projects/mod-auth-mysql
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mod-auth-mysql/}
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 LIB_DEPENDS=    mysqlclient.10::databases/mysql
 BUILD_DEPENDS=  ${LIB_DEPENDS}

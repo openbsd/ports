@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/04/01 22:11:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2003/10/18 19:44:59 sturm Exp $
 
 COMMENT=	"transparent www proxy driver for pf"
 
@@ -12,6 +12,7 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://www.transproxy.nlc.net.au/
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

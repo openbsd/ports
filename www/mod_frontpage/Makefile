@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/05/12 19:39:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:47 sturm Exp $
 
 COMMENT=	"Microsoft FrontPage Server extensions for Apache"
 
@@ -14,6 +14,7 @@ HOMEPAGE=	http://mirfak.sourceforge.net
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

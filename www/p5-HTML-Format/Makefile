@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2003/10/18 19:44:53 sturm Exp $
 
 COMMENT=	"HTML text formating class"
 
@@ -8,6 +8,7 @@ CATEGORIES=	devel perl5
 
 MAINTAINER=	Marco S Hyman <marc@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/10/18 19:44:51 sturm Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
@@ -10,6 +10,7 @@ CATEGORIES=	www perl5
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

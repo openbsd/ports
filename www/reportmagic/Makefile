@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/09/02 22:10:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:57 sturm Exp $
 
 BROKEN=		"not functional; needs update"
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://www.reportmagic.org/
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2002/08/28 15:54:01 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2003/10/18 19:44:49 sturm Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -48,10 +48,10 @@ DIST_SUBDIR=	netscape
 
 HOMEPAGE=	http://www.netscape.com/
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	"Commercial software"
+PERMIT_PACKAGE_FTP=	"Commercial software"
+PERMIT_DISTFILES_CDROM=	"Commercial software"
+PERMIT_DISTFILES_FTP=	"Commercial software"
 
 WRKDIST=	${WRKDIR}
 

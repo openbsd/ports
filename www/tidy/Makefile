@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/29 01:30:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:59 sturm Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.w3.org/People/Raggett/
 HOMEPAGE=	http://www.w3.org/People/Raggett/tidy/
 EXTRACT_SUFX=	.tgz
 
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

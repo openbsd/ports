@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/30 01:21:28 margarida Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:43 sturm Exp $
 
 COMMENT=	"HTTP latency performance testing client"
 
@@ -12,6 +12,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

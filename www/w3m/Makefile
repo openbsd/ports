@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2003/03/29 00:32:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2003/10/18 19:45:00 sturm Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://w3m.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

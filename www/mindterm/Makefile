@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/18 19:44:45 sturm Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -13,9 +13,10 @@ HOMEPAGE=	http://www.appgate.com/ag.asp?template=products&level1=product_mindter
 
 MAINTAINER=	Marc Matteo <marcm@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"non-commercial use only"
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"non-commercial use only"
+# custom
+PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_FTP=	"may not distribute as part of a commercial product"
+PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX?=	/var/www/htdocs

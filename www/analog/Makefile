@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2003/06/22 21:29:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2003/10/18 19:44:41 sturm Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 
 HOMEPAGE=	http://www.analog.cx/
 
+# custom/BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

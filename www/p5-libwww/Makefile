@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/07/21 18:56:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/10/18 19:44:57 sturm Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
@@ -13,6 +13,7 @@ BUILD_DEPENDS=  :p5-URI->1.10:www/p5-URI \
 		:p5-HTTP-GHTTP-*:www/p5-HTTP-GHTTP
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

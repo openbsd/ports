@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/10/18 19:44:43 sturm Exp $
 
 COMMENT=	"strip cascading style sheets from webpages"
 
@@ -12,6 +12,7 @@ HOMEPAGE=       http://www.pigdog.org/decss/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
+# Artistic License
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

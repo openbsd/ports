@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/08/27 12:41:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2003/10/18 19:44:42 sturm Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -15,6 +15,7 @@ MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
 		http://bluefish.shellhung.org/downloads/
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/22 14:16:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:46 sturm Exp $
 
 COMMENT=	"a class 1 and 2 DAV server for the Apache webserver"
 
@@ -16,6 +16,7 @@ HOMEPAGE=	http://www.webdav.org/mod_dav/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
+# Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

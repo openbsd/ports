@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/23 21:51:53 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/18 19:44:42 sturm Exp $
 
 COMMENT=	"web log rotation program"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://www.cronolog.org/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

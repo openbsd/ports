@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/01/21 05:16:43 danh Exp $
+# $OpenBSD: Makefile,v 1.17 2003/10/18 19:45:00 sturm Exp $
 
 COMMENT=	"web server log file analysis program"
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=    gd.18::graphics/gd
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 

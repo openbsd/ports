@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:44 sturm Exp $
 
 COMMENT=	"checks HTML documents for broken links"
 
@@ -11,6 +11,7 @@ HOMEPAGE=	http://linkchecker.sourceforge.net/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

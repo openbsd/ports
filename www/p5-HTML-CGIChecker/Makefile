@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:52 sturm Exp $
 
 COMMENT=	"perl module to detect dangerous HTML code"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/10/11 01:43:03 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/18 19:44:48 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -12,6 +12,7 @@ CATEGORIES=	www
 
 HOMEPAGE=	http://www.mozilla.org/projects/firebird/
 
+# mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

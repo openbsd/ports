@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/04 18:10:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2003/10/18 19:44:41 sturm Exp $
 
 COMMENT=	"convert Netscape bookmarks into a Yahoo-like website"
 
@@ -8,6 +8,7 @@ HOMEPAGE=	http://bk2site.sourceforge.net/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/04 23:35:25 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:59 sturm Exp $ 
 
 COMMENT=	"contact management module for Horde"
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-# GPL
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

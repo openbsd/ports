@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/24 15:37:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/18 19:44:47 sturm Exp $
 
 COMMENT=	"transparently compress Apache output"
 
@@ -16,6 +16,7 @@ EXTRACT_SUFX=   .tgz
 HOMEPAGE=	http://www.schroepl.net/projekte/mod_gzip/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
+# Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:53 sturm Exp $
 
 COMMENT=	"embperl allows you to embed perl in your HTML documents"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/18 19:44:56 sturm Exp $
 
 COMMENT=	"perl interface to the Gnome GHTTP library"
 
@@ -7,6 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTTP/}
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

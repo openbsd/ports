@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/08/20 11:19:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/10/18 19:44:57 sturm Exp $
 
 COMMENT=	"command line interface to popular WWW search engines"
 
@@ -6,6 +6,7 @@ DISTNAME=	surfraw-1.0.7
 CATEGORIES=	www
 HOMEPAGE=	http://surfraw.sourceforge.net/
 
+# Public Domain 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/02/12 01:00:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:49 sturm Exp $
 
 COMMENT=	"Apache ASP support"
 
@@ -13,7 +13,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		::www/mod_perl
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
-		
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:53 sturm Exp $
 
 COMMENT=	"convert text to HTML with controlling options"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

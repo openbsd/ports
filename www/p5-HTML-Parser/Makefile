@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/06/20 04:39:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.21 2003/10/18 19:44:54 sturm Exp $
 
 COMMENT=	"modules to parse and extract information from HTML"
  
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 BUILD_DEPENDS=	:p5-HTML-Tagset->=3:www/p5-HTML-Tagset
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

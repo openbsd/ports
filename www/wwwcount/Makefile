@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/18 19:45:01 sturm Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
@@ -19,6 +19,7 @@ S=	src/wwwcount2.5
 # http://www.digitmania.holowww.com/
 HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
 
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
