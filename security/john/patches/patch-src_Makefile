@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2003/09/26 17:57:38 marcm Exp $
---- src/Makefile.orig	2003-09-18 03:33:18.000000000 -0700
-+++ src/Makefile	2003-09-26 10:41:57.000000000 -0700
+$OpenBSD: patch-src_Makefile,v 1.2 2004/09/23 21:52:08 fgsch Exp $
+--- src/Makefile.orig	Sat Nov 29 23:02:25 2003
++++ src/Makefile	Thu Sep 23 18:08:15 2004
 @@ -16,7 +16,7 @@ NULL = /dev/null
  CPPFLAGS = -E
  CFLAGS = -c -Wall -O2 -fomit-frame-pointer
@@ -10,7 +10,17 @@ $OpenBSD: patch-src_Makefile,v 1.1 2003/09/26 17:57:38 marcm Exp $
  OPT_NORMAL = -funroll-loops
  OPT_INLINE = -finline-functions
  
-@@ -183,7 +183,7 @@ openbsd-x86-any:
+@@ -204,11 +204,17 @@ openbsd-x86-any-elf:
+ 		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
+ 		ASFLAGS="$(ASFLAGS) -DBSD"
+ 
++openbsd-x86-mmx-elf:
++	$(LN) x86-mmx.h arch.h
++	$(MAKE) $(PROJ) \
++		JOHN_OBJS="$(JOHN_OBJS) x86.o x86-mmx.o" \
++		ASFLAGS="$(ASFLAGS) -DBSD"
++
+ openbsd-x86-any-a.out:
  	$(LN) x86-any.h arch.h
  	$(MAKE) $(PROJ) \
  		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
@@ -19,7 +29,7 @@ $OpenBSD: patch-src_Makefile,v 1.1 2003/09/26 17:57:38 marcm Exp $
  
  openbsd-sparc:
  	$(MAKE) use-openbsd-sparc HAMMER=use-openbsd-sparc NAIL=sparc.h
-@@ -194,7 +194,7 @@ use-openbsd-sparc:
+@@ -219,7 +225,7 @@ use-openbsd-sparc:
  	$(MAKE) $(NAIL) \
  		BENCH_DES_OBJS_DEPEND="$(BENCH_DES_OBJS_ORIG) sparc.o" \
  		JOHN_OBJS="$(JOHN_OBJS_ORIG) sparc.o" \

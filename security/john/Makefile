@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/04/16 17:26:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2004/09/23 21:52:08 fgsch Exp $
 
 COMMENT=		"extremely fast password cracker"
 
@@ -27,7 +27,13 @@ MAKE_FLAGS=		CC=${CC} AS=${CC} LD=${CC} \
 			CFLAGS="${CFLAGS} -c"
 
 .if ${MACHINE_ARCH} == "i386"
+FLAVORS=		no_mmx
+FLAVOR?=
+.if ${FLAVOR:L:Mno_mmx}
 ALL_TARGET=		openbsd-x86-any-elf
+.else
+ALL_TARGET=		openbsd-x86-mmx-elf
+.endif
 .elif ${MACHINE_ARCH} == "sparc"
 ALL_TARGET=		openbsd-sparc
 .elif ${MACHINE_ARCH} == "vax"
