@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2003/07/22 21:33:56 brad Exp $
+# $OpenBSD: Makefile,v 1.125 2003/09/27 11:11:13 naddy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -40,7 +40,6 @@
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
-     SUBDIR += john,k6
      SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
