@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/20 23:45:12 reinhard Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:29:50 espie Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
 DISTNAME=	irssi-0.7.98.3
 CATEGORIES=	net
-NEED_VERSION=	1.401
+NEED_VERSION=	1.474
 MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://nl.irssi.org/files/ \
 		http://fi.irssi.org/files/ \
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		msgfmt::devel/gettext
-LIB_DEPENDS=		glib.1.2::devel/glib 
+LIB_DEPENDS=		glib.1.2,gmodule::devel/glib 
 
 SEPARATE_BUILD=		Concurrent
 

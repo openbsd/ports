@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/10/07 19:18:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.53 2001/10/24 12:29:50 espie Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -6,7 +6,7 @@ VERSION=	0.8.19
 DISTNAME=	ethereal-${VERSION}
 PKGNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.363
+NEED_VERSION=	1.474
 
 MASTER_SITES=	http://www.ethereal.com/distribution/ \
 		http://ethereal.zing.org/distribution/ \
@@ -38,11 +38,11 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
 USE_X11=		No
-LIB_DEPENDS=		glib.1.2::devel/glib
+LIB_DEPENDS=		glib.1.2,gmodule.1.2::devel/glib
 CONFIGURE_ARGS+=	--disable-ethereal
 .else
 USE_X11=		Yes
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=	--enable-ethereal
 .endif
 
