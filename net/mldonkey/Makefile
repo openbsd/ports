@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2003/06/17 16:36:05 lebel Exp $
+
 COMMENT='e-donkey client'
 CATEGORIES=net
 
