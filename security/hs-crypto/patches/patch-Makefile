@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2004/05/03 07:36:32 dons Exp $
+
+* Install into a decent place
+* Make it easier to install docs
+* Generate a working package descr
+
+--- Makefile.orig	2003-12-23 04:31:57.000000000 +1100
++++ Makefile	2004-05-02 15:48:09.000000000 +1000
+@@ -3,7 +3,7 @@ AR = ar
+ LD = ld
+ INSTALL = install
+ 
+-LIBRARY = /usr/local/lib
++LIBRARY = ${PREFIX}/lib
+ 
+ PREFIXE = Codec/Encryption
+ PREFIXA = Codec/ASN1
+@@ -40,15 +40,24 @@ package: $(OBJSE) $(OBJSA)
+ 	rm -f libHScrypto.a
+ 	$(AR) -q libHScrypto.a $^
+ 	$(LD) -r -o HScrypto.o $^
+-
+-install: libHScrypto.a HScrypto.o
+-	$(INSTALL) libHScrypto.a $(LIBRARY)/libHScrypto.a
+-	$(INSTALL) HScrypto.o $(LIBRARY)/HScrypto.o
+-	$(INSTALL) -d $(LIBRARY)/imports/HScrypto
++	echo [] > package.conf
++	echo [] > package.conf.inplace
++	cpp           < package.conf.in | sed 's/^#.*$$//g' > package.conf.install.in
++	cpp -DINPLACE < package.conf.in | sed 's/^#.*$$//g' > package.conf.inplace.in
++	ghc-pkg --force -f package.conf         -u < package.conf.install.in
++	ghc-pkg --force -f package.conf.inplace -u < package.conf.inplace.in
++
++install: doc libHScrypto.a HScrypto.o
++	$(INSTALL) -d $(LIBRARY)/hs-crypto
++	$(INSTALL) libHScrypto.a $(LIBRARY)/hs-crypto/libHScrypto.a
++	$(INSTALL) HScrypto.o $(LIBRARY)/hs-crypto/HScrypto.o
++	$(INSTALL) -d $(LIBRARY)/hs-crypto/imports/HScrypto
+ 	for i in $(HISRCS); do \
+-	   $(INSTALL) -d $(LIBRARY)/imports/HScrypto/`dirname $$i`; \
+-	   $(INSTALL) -c $$i $(LIBRARY)/imports/HScrypto/`dirname $$i`; \
++	   $(INSTALL) -d $(LIBRARY)/hs-crypto/imports/HScrypto/`dirname $$i`; \
++	   $(INSTALL) -c $$i $(LIBRARY)/hs-crypto/imports/HScrypto/`dirname $$i`; \
+ 	done
++	$(INSTALL) package.conf $(LIBRARY)/hs-crypto/package.conf
++	cp -R hs-crypto $(PREFIX)/share/doc/
+ 
+ Test:	$(OBJSE) Test.o
+ 	$(HC) -o $@ $(HC_OPTS) $(OBJSE) Test.o
+@@ -63,7 +72,8 @@ RSATest: $(OBJSE) RSATest.o
+ 	$(HC) -c $< $(HC_OPTS) -package-name crypto
+ 
+ doc: 
+-	haddock -h $(PRESRCSE) $(PRESRCSA)
++	mkdir hs-crypto
++	haddock -o hs-crypto -h $(PRESRCSE) $(PRESRCSA)
+ 
+ clean:
+ 	rm -f $(OBJSE) $(HISRCSE) $(PREHTMLSE) \

@@ -1,0 +1,7 @@
+------------------------------------------------------------------------
+To link against the library, add:
+
+  -package-conf /usr/local/lib/hs-crypto/package.conf -package crypto
+
+to the GHC command line
+------------------------------------------------------------------------

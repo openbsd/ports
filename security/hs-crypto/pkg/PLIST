@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/03 07:36:32 dons Exp $
+lib/hs-crypto/HScrypto.o
+lib/hs-crypto/imports/HScrypto/Codec/ASN1/ASN1.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/Blowfish.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/BlowfishAux.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/DES.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/DESAux.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/EMEOAEP.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/MGF.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/Modes.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/NumberTheory.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/PKCS8.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/Padding.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/RSA.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/SHA1.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/SHA1Aux.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/Utils.hi
+lib/hs-crypto/libHScrypto.a
+lib/hs-crypto/package.conf
+share/doc/hs-crypto/Codec.ASN1.ASN1.html
+share/doc/hs-crypto/Codec.Encryption.Blowfish.html
+share/doc/hs-crypto/Codec.Encryption.BlowfishAux.html
+share/doc/hs-crypto/Codec.Encryption.DES.html
+share/doc/hs-crypto/Codec.Encryption.DESAux.html
+share/doc/hs-crypto/Codec.Encryption.EMEOAEP.html
+share/doc/hs-crypto/Codec.Encryption.MGF.html
+share/doc/hs-crypto/Codec.Encryption.Modes.html
+share/doc/hs-crypto/Codec.Encryption.NumberTheory.html
+share/doc/hs-crypto/Codec.Encryption.PKCS8.html
+share/doc/hs-crypto/Codec.Encryption.Padding.html
+share/doc/hs-crypto/Codec.Encryption.RSA.html
+share/doc/hs-crypto/Codec.Encryption.SHA1.html
+share/doc/hs-crypto/Codec.Encryption.SHA1Aux.html
+share/doc/hs-crypto/Codec.Encryption.Utils.html
+share/doc/hs-crypto/doc-index-47.html
+share/doc/hs-crypto/doc-index-A.html
+share/doc/hs-crypto/doc-index-B.html
+share/doc/hs-crypto/doc-index-C.html
+share/doc/hs-crypto/doc-index-D.html
+share/doc/hs-crypto/doc-index-E.html
+share/doc/hs-crypto/doc-index-F.html
+share/doc/hs-crypto/doc-index-G.html
+share/doc/hs-crypto/doc-index-H.html
+share/doc/hs-crypto/doc-index-I.html
+share/doc/hs-crypto/doc-index-M.html
+share/doc/hs-crypto/doc-index-N.html
+share/doc/hs-crypto/doc-index-O.html
+share/doc/hs-crypto/doc-index-P.html
+share/doc/hs-crypto/doc-index-R.html
+share/doc/hs-crypto/doc-index-S.html
+share/doc/hs-crypto/doc-index-T.html
+share/doc/hs-crypto/doc-index-U.html
+share/doc/hs-crypto/doc-index-V.html
+share/doc/hs-crypto/doc-index.html
+share/doc/hs-crypto/haddock.css
+share/doc/hs-crypto/haskell_icon.gif
+share/doc/hs-crypto/index.html
+@dirrm share/doc/hs-crypto
+@dirrm lib/hs-crypto/imports/HScrypto/Codec/Encryption
+@dirrm lib/hs-crypto/imports/HScrypto/Codec/ASN1
+@dirrm lib/hs-crypto/imports/HScrypto/Codec
+@dirrm lib/hs-crypto/imports/HScrypto
+@dirrm lib/hs-crypto/imports
+@dirrm lib/hs-crypto
