@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Apr  9 22:15:40 2000
-+++ Makefile	Sun Apr  9 17:17:24 2000
-@@ -773,16 +773,16 @@
+--- Makefile.orig	Mon Dec  4 22:14:47 2000
++++ Makefile	Mon Dec  4 22:14:49 2000
+@@ -788,16 +788,16 @@ SCRIPTLOC	= $(VIMRTLOC)
  ### some sed trickery. (the files are installed into a temporary directory
  ### for building the package, but they eventually end up in /usr/... . This
  ### ensures that the correct path is put into the man page.)
