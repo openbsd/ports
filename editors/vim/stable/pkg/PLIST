@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/24 20:26:24 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/08/31 17:12:08 lebel Exp $
 !%%no_x11%%
 bin/ex
 bin/rview
@@ -286,6 +286,7 @@ share/vim/vim61/plugin/netrw.vim
 share/vim/vim61/plugin/rrhelper.vim
 share/vim/vim61/procset.ps
 share/vim/vim61/scripts.vim
+share/vim/vim61/synmenu.vim
 share/vim/vim61/syntax/2html.vim
 share/vim/vim61/syntax/README.txt
 share/vim/vim61/syntax/abaqus.vim
