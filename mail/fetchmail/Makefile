@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2001/06/26 02:35:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.69 2001/07/09 00:19:47 fgsch Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
-DISTNAME=	fetchmail-5.8.10
+DISTNAME=	fetchmail-5.8.11
 CATEGORIES=	mail
 NEED_VERSION=	1.402
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
@@ -18,14 +18,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu autoconf
 CONFIGURE_ARGS=	--disable-nls --enable-inet6 --with-ssl
 
-FLAVORS=	kerberos
+FLAVORS=	kerberos4 kerberos5
 FLAVOR?=
 
-.if ${FLAVOR:L:Mkerberos}
+.if ${FLAVOR:L:Mkerberos4}
 CONFIGURE_ARGS+= --with-kerberos
+.endif
+.if ${FLAVOR:L:Mkerberos5}
+CONFIGURE_ARGS+= --with-kerberos5
 .endif
 
 DOCS=	FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
@@ -34,7 +37,7 @@ DOCS=	FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
 	  ${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
-	@tbl ${WRKSRC}/fetchmail.man > ${WRKSRC}/fetchmail.tbl; \
+	@tbl ${WRKSRC}/fetchmail.man > ${WRKSRC}/fetchmail.tbl && \
 	  cp -f ${WRKSRC}/fetchmail.tbl ${WRKSRC}/fetchmail.man
 
 post-install:
