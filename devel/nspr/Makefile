@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 07:24:49 espie Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 # currently only supporting i386, but alpha sparc sparc64 are possible
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nspr
 	cd ${WRKSRC}/dist/include && tar cfL - . | \
 		(cd ${PREFIX}/include && tar -xf -)
-	cd ${WRKSRC}/dist/lib && tar cf - . | \
+	cd ${WRKSRC}/dist/lib && tar cfL - . | \
 		(cd ${PREFIX}/lib && tar -xf -)
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 
