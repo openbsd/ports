@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2000/09/28 01:39:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.27 2000/09/28 02:51:55 brad Exp $
 bin/gimp
 bin/gimp-config
 bin/gimp-remote
@@ -1310,10 +1310,10 @@ share/locale/uk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm include/gck
 @dirrm include/libgimp
-@dirrm lib/gimp
-@dirrm lib/gimp/1.1
 @dirrm lib/gimp/1.1/modules
 @dirrm lib/gimp/1.1/plug-ins
+@dirrm lib/gimp/1.1
+@dirrm lib/gimp
 @dirrm share/gimp/1.1/brushes
 @dirrm share/gimp/1.1/devel-docs/html/libgimp
 @dirrm share/gimp/1.1/devel-docs/html
