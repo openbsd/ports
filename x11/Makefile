@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2002/03/17 21:48:34 jcs Exp $
+# $OpenBSD: Makefile,v 1.131 2002/03/17 22:21:33 jcs Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -14,7 +14,9 @@
      SUBDIR += asfiles
      SUBDIR += astime
      SUBDIR += aterm
+     SUBDIR += aterm,big5
      SUBDIR += aterm,lite
+     SUBDIR += aterm,big5,lite
 #    SUBDIR += auis
      SUBDIR += bbdate
      SUBDIR += bbkeys
