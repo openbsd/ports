@@ -1,19 +1,20 @@
-$OpenBSD: patch-mk_package_mk,v 1.3 2004/04/26 23:48:50 dons Exp $
+$OpenBSD: patch-mk_package_mk,v 1.4 2005/02/14 01:26:56 dons Exp $
 Substitute in the path to localbase in the runtime package file,
 so it can find libgmp.
 
---- mk/package.mk.orig	Tue Mar  2 22:08:31 2004
-+++ mk/package.mk	Fri Mar 26 16:15:31 2004
-@@ -23,10 +23,12 @@
+--- mk/package.mk.orig	Mon Jan 31 14:46:41 2005
++++ mk/package.mk	Mon Jan 31 14:47:09 2005
+@@ -23,11 +23,13 @@ PKGCONF_CPP_EXTRA_OPTS =
  endif
  
  package.conf.inplace   : package.conf.in
 +	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
  	$(CPP) $(RAWCPP_FLAGS) -P $(PKGCONF_CPP_EXTRA_OPTS) -x c $(PACKAGE_CPP_OPTS) $< | \
+ 	grep -v '^#pragma GCC' | \
  	sed -e 's/""//g' -e 's/\[ *,/[ /g' >$@
  
  package.conf.installed : package.conf.in
 +	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
  	$(CPP) $(RAWCPP_FLAGS) -P $(PKGCONF_CPP_EXTRA_OPTS) -DINSTALLING -x c $(PACKAGE_CPP_OPTS) $< | \
+ 	grep -v '^#pragma GCC' | \
  	sed -e 's/""//g' -e 's/\[ *,/[ /g' >$@
- 

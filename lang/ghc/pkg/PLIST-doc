@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.6 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PLIST-doc,v 1.7 2005/02/14 01:26:56 dons Exp $
 share/doc/ghc/
 share/doc/ghc/building/
 share/doc/ghc/building/building-docs.html
@@ -517,8 +517,8 @@ share/doc/ghc/users_guide/win32.html
 share/doc/ghc/users_guide/wrong-compilee.html
 share/doc/ghc/users_guide/wrong.html
 share/doc/ghc/users_guide/x1075.html
-share/doc/ghc/users_guide/x11075.html
-share/doc/ghc/users_guide/x11083.html
-share/doc/ghc/users_guide/x11094.html
 share/doc/ghc/users_guide/x1712.html
 share/doc/ghc/users_guide/x956.html
+share/doc/ghc/users_guide/x11124.html
+share/doc/ghc/users_guide/x11132.html
+share/doc/ghc/users_guide/x11143.html

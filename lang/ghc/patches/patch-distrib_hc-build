@@ -1,4 +1,4 @@
-$OpenBSD: patch-distrib_hc-build,v 1.3 2004/04/26 23:48:50 dons Exp $
+$OpenBSD: patch-distrib_hc-build,v 1.4 2005/02/14 01:26:56 dons Exp $
 SplitObjs just slows things down, and can overrun ulimits. It does
 produce smaller binaries though...
 
@@ -13,9 +13,12 @@ and *.a files from the libraries. Can't work out why.
 
 Touch some things so that 'make fake' doesn't rebuild the compiler
 
---- distrib/hc-build.orig	Wed Sep  3 05:15:19 2003
-+++ distrib/hc-build	Sun Apr 18 21:33:49 2004
-@@ -29,10 +29,10 @@
+Make stage=2 after everything else, so as to get a working ghci. Unknown
+why ghci doesn't work just via .hc files.
+
+--- distrib/hc-build.orig	Wed Sep  3 21:15:19 2003
++++ distrib/hc-build	Wed Feb  2 13:00:23 2005
+@@ -29,20 +29,30 @@ fi
  case "$configopts" in
  *--enable-hc-boot-unregisterised*)
  cat >mk/build.mk <<END
@@ -28,7 +31,6 @@ Touch some things so that 'make fake' doesn't rebuild the compiler
  END
  ;;
  
-@@ -39,10 +39,20 @@
  *)
  cat >mk/build.mk <<END
  # empty
@@ -49,7 +51,7 @@ Touch some things so that 'make fake' doesn't rebuild the compiler
  echo "*** Building compiler..."
  ./configure --enable-hc-boot $configopts
  
-@@ -77,7 +87,7 @@
+@@ -77,7 +87,7 @@ PRIMOP_BITS="primop-data-decl.hs-incl \
  # Remove the old libraries.  Don't use make clean, because we don't
  # want to delete the .hs files generated from the .hsc files, because
  # we don't have hsc2hs built yet.
@@ -58,11 +60,15 @@ Touch some things so that 'make fake' doesn't rebuild the compiler
  
  # Do includes and RTS now
  $MAKE -C ghc/includes boot && $MAKE -C ghc/includes all
-@@ -95,6 +105,6 @@
+@@ -95,6 +105,10 @@ $MAKE -C hslibs  boot all
  # The reconfigure step updates a few files, which can lead to
  # unnecessary recompilations.  Touch a bunch of things here to avoid
  # having to recompile stuff that we've already built.
 -(cd ghc/compiler; touch $PRIMOP_BITS parser/hschooks.o prelude/PrimOp.o main/Config.hs main/Config.o ghc-*)
-+(cd ghc/compiler/; touch $PRIMOP_BITS main/Config.hs stage1/parser/hschooks.o stage1/prelude/PrimOp.o stage1/main/Config.o stage1/ghc-* ghc-inplace)
++#(cd ghc/compiler/; touch $PRIMOP_BITS main/Config.hs stage1/parser/hschooks.o stage1/prelude/PrimOp.o stage1/main/Config.o stage1/ghc-* ghc-inplace)
  
  # At this point, the tree should be safe to do 'make install' in.
++
++# now, ghci doesn't work when build via .hc, so make stage=2, and build
++# it via .hs
++(cd ghc/compiler; touch prelude/primops.txt ; gmake boot stage=2 && gmake stage=2)

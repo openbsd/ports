@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2004/05/20 00:08:22 dons Exp $
+# $OpenBSD: Makefile,v 1.18 2005/02/14 01:26:56 dons Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
 
-ONLY_FOR_ARCHS= i386 sparc amd64
+ONLY_FOR_ARCHS= i386 
+#                   sparc amd64
  
 # The general solution for other architectures will be to boot
 # via unregisterised .hc files generated on openbsd-*-i386. See:
@@ -22,7 +23,7 @@ ONLY_FOR_ARCHS= i386 sparc amd64
 COMMENT=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
 
-V=		6.2.1
+V=		6.2.2
 
 DISTNAME=	ghc-${V}
 CATEGORIES=	lang
@@ -56,9 +57,9 @@ DISTFILES=	ghc-${V}-src.tar.bz2 \
 		ghc-regress-${V}.tar.bz2:2
 
 # this tarball is the first step in porting to a new architecture
-SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2  \
-		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2 \
-		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
+SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2
+#		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2 \
+#		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
 
 # datasize around 130M on amd64
 VMEM_WARNING=	Yes
@@ -84,7 +85,7 @@ do-build:
 
 # note: ghci not in PLIST since it doesnt work yet
 
-FAKE_FLAGS+="stage=1"
+FAKE_FLAGS+="stage=2"
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
@@ -95,8 +96,8 @@ post-install:
 
 REGRESS_DEPENDS=::lang/python/2.2
 REGRESS_RESULT=	${WRKSRC}/actual.result
-REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage1/ghc-inplace"
-REGRESS_FLAGS+=	EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}" \
+REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage2/ghc-inplace"
+REGRESS_FLAGS+= EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}" \
 		PYTHON="${LOCALBASE}/bin/python2.2"
 
 # BSD w/o advertising clause
