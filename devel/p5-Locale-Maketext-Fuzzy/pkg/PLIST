@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 18:19:40 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/12/08 18:32:15 msf Exp $
+${P5SITE}/Locale/
+${P5SITE}/Locale/Maketext/
 ${P5SITE}/Locale/Maketext/Fuzzy.pm
 @man man/man3p/Locale::Maketext::Fuzzy.3p
