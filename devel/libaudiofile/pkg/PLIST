@@ -1,0 +1,10 @@
+bin/sfconvert
+bin/sfinfo
+bin/audiofile-config
+lib/libaudiofile.so.0.0
+lib/libaudiofile.la
+lib/libaudiofile.a
+share/aclocal/audiofile.m4
+include/audiofile.h
+include/aupvlist.h
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

@@ -1,0 +1,8 @@
+bin/sfconvert
+bin/sfinfo
+bin/audiofile-config
+lib/libaudiofile.la
+lib/libaudiofile.a
+share/aclocal/audiofile.m4
+include/audiofile.h
+include/aupvlist.h
