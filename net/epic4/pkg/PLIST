@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2000/07/12 05:20:18 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2000/07/15 06:45:16 brad Exp $
 bin/epic
-bin/epic-EPIC4pre2.700
+bin/epic-EPIC4-0.9.0
 libexec/wserv-epic
 man/man1/epic.1
 share/epic/help/1_General/1_General

@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2000/07/12 05:20:18 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/07/15 06:45:16 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-VERSION=	2.700
-DISTNAME=	epic4pre${VERSION}
-PKGNAME=	epic4-pre${VERSION}
+VERSION=	0.9.0
+DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
-		ftp://mirror.pipex.net/pub/epic/EPIC4-ALPHA/ \
-		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-ALPHA/
-MASTER_SITES1=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
-DISTFILES=	epic4pre${VERSION}.tar.gz epic4pre2-help.tar.gz:1
-EXTRACT_ONLY=	epic4pre${VERSION}.tar.gz
+DISTFILES=	epic4-${VERSION}.tar.gz epic4pre2-help.tar.gz
+EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
 HOMEPAGE=	http://www.epicsol.org/
 
@@ -32,7 +28,7 @@ FAKE_FLAGS=	IP="${WRKINST}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:
-	@cd ${PREFIX}/bin && ln -sf epic-EPIC4pre${VERSION} epic
+	@cd ${PREFIX}/bin && ln -sf epic-EPIC4-${VERSION} epic
 	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/share/epic && tar -zxf ${FULLDISTDIR}/epic4pre2-help.tar.gz
 
