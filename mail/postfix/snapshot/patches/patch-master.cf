@@ -1,8 +1,8 @@
-$OpenBSD: patch-master.cf,v 1.13 2004/12/28 09:08:12 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.14 2005/02/07 22:31:32 jakob Exp $
 
---- conf/master.cf.orig	Thu Dec 16 16:46:38 2004
-+++ conf/master.cf	Tue Dec 28 09:19:27 2004
-@@ -6,39 +6,39 @@
+--- conf/master.cf.orig	Mon Jan 24 20:12:46 2005
++++ conf/master.cf	Mon Feb  7 23:15:42 2005
+@@ -6,41 +6,41 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -44,9 +44,11 @@ $OpenBSD: patch-master.cf,v 1.13 2004/12/28 09:08:12 jakob Exp $
 +flush     unix  n       -       -       1000?   0       flush
  proxymap  unix  -       -       n       -       -       proxymap
 -smtp      unix  -       -       n       -       -       smtp
--relay     unix  -       -       n       -       -       smtp
 +smtp      unix  -       -       -       -       -       smtp
+ # When relaying mail as backup MX, disable fallback_relay to avoid MX loops
+-relay     unix  -       -       n       -       -       smtp
 +relay     unix  -       -       -       -       -       smtp
+ 	-o fallback_relay=
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
