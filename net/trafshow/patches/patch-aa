@@ -1,0 +1,265 @@
+diff -ru ../1/trafshow-2.0/Makefile ./Makefile
+--- ../1/trafshow-2.0/Makefile	Tue Jan 16 06:28:26 1996
++++ ./Makefile	Wed Jan 28 13:03:47 1998
+@@ -2,15 +2,16 @@
+ #	Main Makefile. Build everything in directories...
+ #
+ 
+-# This options intended for BSD/OS V2
+-CC	= shlicc2
++# This options intended for FreeBSD 2.1.0
++CC	= cc
+ FLAGS	= -O2
+-DEFINE	=
+-LIB	= ../lib/libbpft.a -lcurses -ltermcap -ll
++DEFINE	= -DETHER_SERVICE
++LIB	= ../lib/libbpft.a -lcurses -ltermlib -ll
+ 
+-BINDIR	= /usr/local/bin
+-MANDIR	= /usr/local/man/man1
+-MODE	= 750
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man/man1
++MODE	= 550
++OWNER	= bin
+ GROUP	= wheel
+ 
+ INCLUDE	= -I../include
+@@ -20,23 +21,17 @@
+ 
+ 
+ all:
+-	@(cd lib; echo "Build library in `pwd`"; \
+-	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' ARFLAGS=$(ARFLAGS))
+-	@(cd trafshow; echo "Build trafshow in `pwd`"; \
+-	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+-	@echo Done.
++	@(cd lib; $(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' ARFLAGS=$(ARFLAGS))
++	@(cd trafshow; $(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+ 
+ install: all
+-	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(BINDIR)
+-	install -c -m 644 trafshow.1 $(MANDIR)
+-	@echo Done.
++	install -s -o $(OWNER) -g $(GROUP) -m $(MODE) trafshow/trafshow $(BINDIR)
++	install -c -o bin -g bin -m 444 trafshow.1 $(MANDIR)
+ 
+ depend:
+ 	@(cd lib; $(MAKE) depend)
+ 	@(cd trafshow; $(MAKE) depend)
+-	@echo Done.
+ 
+ clean:
+ 	@(cd lib; $(MAKE) DEPFLAGS='$(DEPFLAGS)' clean)
+ 	@(cd trafshow; $(MAKE) DEPFLAGS='$(DEPFLAGS)' clean)
+-	@echo Done.
+Only in .: Makefile.orig
+diff -ru ../1/trafshow-2.0/lib/Makefile ./lib/Makefile
+--- ../1/trafshow-2.0/lib/Makefile	Wed Jan 10 07:51:15 1996
++++ ./lib/Makefile	Wed Jan 14 13:16:16 1998
+@@ -12,7 +12,7 @@
+ 
+ CC	= gcc
+ FLAGS	= -g
+-DEFINE	=
++DEFINE	= -DETHER_SERVICE
+ 
+ INCLUDE	= -I../include
+ CFLAGS	= $(FLAGS) $(INCLUDE) $(DEFINE)
+Only in ./lib: Makefile.orig
+diff -ru ../1/trafshow-2.0/lib/addrtoname.c ./lib/addrtoname.c
+--- ../1/trafshow-2.0/lib/addrtoname.c	Fri Jan 12 04:42:37 1996
++++ ./lib/addrtoname.c	Wed Jan 28 13:45:47 1998
+@@ -48,6 +48,7 @@
+ #include <stdio.h>
+ #include <strings.h>
+ #include <ctype.h>
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+@@ -293,10 +294,10 @@
+ 
+ #ifdef ETHER_SERVICE
+ 	if (!nflag) {
+-		cp = ETHER_ntohost(ep);
+-		if (cp) {
+-			tp->e_name = cp;
+-			return cp;
++		char buf[128];
++		if (ether_ntohost(buf, (struct ether_addr *)ep) == 0) {
++			tp->e_name =strdup(buf);
++			return tp->e_name;
+ 		}
+ 	}
+ #endif		
+Only in ./lib: addrtoname.c.orig
+Only in ./lib: addrtoname.o
+Only in ./lib: bpf.o
+Only in ./lib: bpf_dump.o
+Only in ./lib: bpf_filter.o
+Only in ./lib: bpf_image.o
+Only in ./lib: etherent.o
+diff -ru ../1/trafshow-2.0/lib/gencode.c ./lib/gencode.c
+--- ../1/trafshow-2.0/lib/gencode.c	Tue Jan  9 23:27:13 1996
++++ ./lib/gencode.c	Wed Jan 28 13:46:03 1998
+@@ -42,6 +42,7 @@
+ #ifdef __STDC__
+ #include <stdlib.h>
+ #endif
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+@@ -840,6 +841,7 @@
+ 	u_long mask, addr, **alist;
+ 	struct block *b, *tmp;
+ 	int port, real_proto;
++	static char wrk[6];
+ 
+ 	switch (q.addr) {
+ 
+@@ -854,7 +856,10 @@
+ 	case Q_HOST:
+ 		if (proto == Q_LINK) {
+ 			/* XXX Should lookup hw addr based on link layer */
+-			eaddr = ETHER_hostton(name);
++			if (ether_hostton(name, (struct ether_addr *)wrk) == 0)
++				eaddr = wrk;
++			else
++				eaddr = 0;
+ 			if (eaddr == 0)
+ 				error("unknown ether host '%s'", name);
+ 			return gen_ehostop(eaddr, dir);
+@@ -895,7 +900,11 @@
+ 		return gen_port(port, real_proto, dir);
+ 
+ 	case Q_GATEWAY:
+-		eaddr = ETHER_hostton(name);
++		/* XXX Should lookup hw addr based on link layer */
++		if (ether_hostton(name, (struct ether_addr *)wrk) == 0)
++			eaddr = wrk;
++		else
++			eaddr = 0;
+ 		if (eaddr == 0)
+ 			error("unknown ether host: %s", name);
+ 			
+Only in ./lib: gencode.c.orig
+Only in ./lib: gencode.o
+diff -ru ../1/trafshow-2.0/lib/inet.c ./lib/inet.c
+--- ../1/trafshow-2.0/lib/inet.c	Wed Jan 10 00:44:31 1996
++++ ./lib/inet.c	Wed Jan 28 13:45:16 1998
+@@ -44,6 +44,7 @@
+ #include <ctype.h>
+ #include <strings.h>
+ #include <ctype.h>
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/file.h>
+Only in ./lib: inet.c.orig
+Only in ./lib: inet.o
+diff -ru ../1/trafshow-2.0/lib/interfaces.c ./lib/interfaces.c
+--- ../1/trafshow-2.0/lib/interfaces.c	Fri Jun  9 11:24:47 1995
++++ ./lib/interfaces.c	Wed Jan 28 13:46:14 1998
+@@ -17,12 +17,20 @@
+  */
+ 
+ #include <sys/param.h>
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+ #include <net/slip.h>
+ #include <net/if_slvar.h>
++#ifdef __OpenBSD__
++#include <net/bpf.h>
++#include <net/ppp_defs.h>
++#include <net/if_pppvar.h>
++#include <net/if_ppp.h>
++#else
+ #include <net/ppp_proto.h>
++#endif
+ #include <netinet/in.h>
+ #include <netinet/if_ether.h>
+ #include <netinet/in_systm.h>
+@@ -129,12 +137,20 @@
+ 	 * Thanks to Gregory J. Miller <gmiller@gateway.mitre.org> for
+ 	 * help of true PPP header parsing.
+ 	 */
++#ifdef PPP_HDRLEN		/* ppp-2.2 or later */
++	if (caplen < PPP_HDRLEN)
++#else
+ 	if (caplen < sizeof(struct ppp_header))
++#endif
+ 		return;
+ 	packetp = (u_char *)p;
+ 	snapend = (u_char *)p + caplen;
+ 	hdrlength = 0;
++#ifdef __OpenBSD__
++	if (p[0] == PPP_ALLSTATIONS && p[1] == PPP_UI)
++#else
+ 	if (p[0] == PPP_ADDRESS && p[1] == PPP_CONTROL)
++#endif
+ 		p += 2, hdrlength = 2;
+ 	/* Retrive the protocol type */
+ 	if (*p & 01) {	/* Compressed protocol field */
+Only in ./lib: interfaces.c.orig
+Only in ./lib: interfaces.o
+Only in ./lib: libbpft.a
+diff -ru ../1/trafshow-2.0/lib/nametoaddr.c ./lib/nametoaddr.c
+--- ../1/trafshow-2.0/lib/nametoaddr.c	Wed Oct 27 12:04:12 1993
++++ ./lib/nametoaddr.c	Wed Jan 28 13:46:26 1998
+@@ -44,6 +44,7 @@
+ 
+ #include <stdio.h>
+ #include <ctype.h>
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+Only in ./lib: nametoaddr.c.orig
+Only in ./lib: nametoaddr.o
+Only in ./lib: optimize.o
+Only in ./lib: tcpgram.o
+diff -ru ../1/trafshow-2.0/lib/tcpgram.y ./lib/tcpgram.y
+--- ../1/trafshow-2.0/lib/tcpgram.y	Wed Oct 27 12:04:12 1993
++++ ./lib/tcpgram.y	Wed Jan 28 13:46:46 1998
+@@ -22,6 +22,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+Only in ./lib: tcpgram.y.orig
+Only in ./lib: tcplex.o
+Only in ./lib: util.o
+Only in ./lib: version.o
+diff -ru ../1/trafshow-2.0/lib/y.tab.h ./lib/y.tab.h
+--- ../1/trafshow-2.0/lib/y.tab.h	Tue Jan 16 06:30:07 1996
++++ ./lib/y.tab.h	Wed Jan 28 13:46:47 1998
+@@ -1,4 +1,3 @@
+-#define YYEMPTY (-1)
+ #define DST 257
+ #define SRC 258
+ #define HOST 259
+Only in ./trafshow: keyb.o
+diff -ru ../1/trafshow-2.0/trafshow/main.c ./trafshow/main.c
+--- ../1/trafshow-2.0/trafshow/main.c	Mon Jan 15 09:10:42 1996
++++ ./trafshow/main.c	Wed Jan 28 13:43:01 1998
+@@ -11,9 +11,9 @@
+  * THIS SOFTWARE IS PROVIDED ``AS IS'' WITHOUT ANY WARRANTIES OF ANY KIND.
+  */
+ 
+-#include <curses.h>
+ #include <stdlib.h>
+ #include <signal.h>
++#include <curses.h>
+ 
+ #include "interface.h"
+ #include "addrtoname.h"
+Only in ./trafshow: main.o
+Only in ./trafshow: show.o
+Only in ./trafshow: trafshow
