@@ -1,6 +1,6 @@
---- libgimp/Makefile.in.orig	Fri Feb 11 13:42:12 2000
-+++ libgimp/Makefile.in	Mon Feb 14 22:05:14 2000
-@@ -186,7 +186,7 @@
+--- libgimp/Makefile.in.orig	Thu Jun 22 18:47:39 2000
++++ libgimp/Makefile.in	Tue Jun 27 14:45:21 2000
+@@ -184,7 +184,7 @@
  AM_CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@
  
  
@@ -9,8 +9,8 @@
  
  
  EXTRA_DIST =  	gimpfeatures.h.in		makefile.msc			makefile.cygwin			gimp.def			gimpui.def
-@@ -209,11 +209,11 @@
- gimpinclude_HEADERS =  	color_display.h			color_selector.h		gimp.h				gimpchainbutton.h		gimpcolorbutton.h		gimpcolorspace.h	        gimpcompat.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimphelpui.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimppatheditor.h		gimpquerybox.h			gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpwidgets.h			gimpintl.h			gserialize.h			parasite.h			parasiteF.h			parasiteP.h			parasiteio.h
+@@ -213,11 +213,11 @@
+ gimpinclude_HEADERS =  	gimp.h				${PDB_WRAPPERS_H}		gimpchainbutton.h		gimpchannel.h			gimpcolorbutton.h		gimpcolordisplay.h		gimpcolorselector.h		gimpcolorspace.h	        gimpcompat.h			gimpdrawable.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimpgradientselect.h		gimphelpui.h			gimpimage.h			gimplayer.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimpparasite.h			gimpparasiteio.h		gimppatheditor.h		gimppixelrgn.h			gimppixmap.h			gimpproceduraldb.h		gimpquerybox.h			gimpselection.h			gimpsignal.h			gimpsizeentry.h			gimptile.h			gimptypes.h			gimpui.h			gimpunit.h			gimpunitmenu.h			gimputils.h			gimpvector.h			gimpwidgets.h			gimpintl.h
  
  
 -libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)

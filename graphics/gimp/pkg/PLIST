@@ -1,39 +1,82 @@
-@comment $OpenBSD: PLIST,v 1.21 2000/06/15 19:02:37 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2000/06/28 02:15:55 brad Exp $
 bin/gimp
 bin/gimp-config
 bin/gimptool
 include/gck/gck.h
 include/libgimp/gimp.h
+include/libgimp/gimp_pdb.h
+include/libgimp/gimpbrushes_pdb.h
+include/libgimp/gimpbrushselect_pdb.h
 include/libgimp/gimpchainbutton.h
+include/libgimp/gimpchannel.h
+include/libgimp/gimpchannel_pdb.h
+include/libgimp/gimpchannelops_pdb.h
+include/libgimp/gimpcolor_pdb.h
 include/libgimp/gimpcolorbutton.h
 include/libgimp/gimpcolordisplay.h
 include/libgimp/gimpcolorselector.h
 include/libgimp/gimpcolorspace.h
 include/libgimp/gimpcompat.h
+include/libgimp/gimpconvert_pdb.h
 include/libgimp/gimpdialog.h
+include/libgimp/gimpdisplay_pdb.h
+include/libgimp/gimpdrawable.h
+include/libgimp/gimpdrawable_pdb.h
+include/libgimp/gimpedit_pdb.h
 include/libgimp/gimpenums.h
 include/libgimp/gimpenv.h
 include/libgimp/gimpexport.h
 include/libgimp/gimpfeatures.h
+include/libgimp/gimpfileops_pdb.h
 include/libgimp/gimpfileselection.h
+include/libgimp/gimpfloatingsel_pdb.h
+include/libgimp/gimpgimprc_pdb.h
+include/libgimp/gimpgradients_pdb.h
+include/libgimp/gimpgradientselect.h
+include/libgimp/gimpgradientselect_pdb.h
+include/libgimp/gimpguides_pdb.h
+include/libgimp/gimphelp_pdb.h
 include/libgimp/gimphelpui.h
+include/libgimp/gimpimage.h
+include/libgimp/gimpimage_pdb.h
 include/libgimp/gimpintl.h
+include/libgimp/gimplayer.h
+include/libgimp/gimplayer_pdb.h
 include/libgimp/gimplimits.h
 include/libgimp/gimpmath.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
+include/libgimp/gimpmessage_pdb.h
+include/libgimp/gimpmisc_pdb.h
 include/libgimp/gimpmodule.h
+include/libgimp/gimppalette_pdb.h
 include/libgimp/gimpparasite.h
+include/libgimp/gimpparasite_pdb.h
 include/libgimp/gimpparasiteio.h
 include/libgimp/gimppatheditor.h
+include/libgimp/gimppaths_pdb.h
+include/libgimp/gimppatterns_pdb.h
+include/libgimp/gimppatternselect_pdb.h
+include/libgimp/gimppixelrgn.h
 include/libgimp/gimppixmap.h
+include/libgimp/gimpplugin_pdb.h
+include/libgimp/gimpproceduraldb.h
+include/libgimp/gimpproceduraldb_pdb.h
 include/libgimp/gimpquerybox.h
+include/libgimp/gimpselection.h
+include/libgimp/gimpselection_pdb.h
 include/libgimp/gimpsignal.h
 include/libgimp/gimpsizeentry.h
+include/libgimp/gimptexttool_pdb.h
+include/libgimp/gimptile.h
+include/libgimp/gimptools_pdb.h
+include/libgimp/gimptypes.h
 include/libgimp/gimpui.h
 include/libgimp/gimpunit.h
+include/libgimp/gimpunit_pdb.h
 include/libgimp/gimpunitmenu.h
 include/libgimp/gimputils.h
+include/libgimp/gimpundo_pdb.h
 include/libgimp/gimpvector.h
 include/libgimp/gimpwidgets.h
 lib/gimp/1.1/modules/libcdisplay_gamma.a
@@ -244,6 +287,9 @@ share/gimp/1.1/brushes/9fcircle.gbr
 share/gimp/1.1/brushes/DStar11.gbr
 share/gimp/1.1/brushes/DStar17.gbr
 share/gimp/1.1/brushes/DStar25.gbr
+share/gimp/1.1/brushes/SketchBrush-16.gih
+share/gimp/1.1/brushes/SketchBrush-32.gih
+share/gimp/1.1/brushes/SketchBrush-64.gih
 share/gimp/1.1/brushes/callig1.gbr
 share/gimp/1.1/brushes/callig2.gbr
 share/gimp/1.1/brushes/callig3.gbr
@@ -272,29 +318,56 @@ share/gimp/1.1/devel-docs/html/libgimp/index.sgml
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-color-display.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-color-selector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimp.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpbrushes.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpchannel.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpchannelops.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolor.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolordisplay.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolorselector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpcompat.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpconvert.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpdialog.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpdisplay.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpdrawable.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpedit.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpenums.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpenv.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpexport.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpfeatures.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpfileops.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpfloatingsel.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpgimprc.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpgradients.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpguides.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimphelp.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimphelpui.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpimage.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimplayer.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimplimits.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmath.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmatrix.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmenu.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmessage.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmisc.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpmodule.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimppalette.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasite.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimppixelrgn.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpplugin.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpproceduraldb.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpprotocol.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpquerybox.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpselection.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpsignal.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptexttool.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptile.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimptools.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpui.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpunit.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimputils.html
+share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpundo.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpvector.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpwidgets.html
 share/gimp/1.1/devel-docs/html/libgimp/libgimp-gimpwire.html
@@ -1216,45 +1289,6 @@ share/locale/uk/LC_MESSAGES/gimp-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp-script-fu.mo
 share/locale/uk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/uk/LC_MESSAGES/gimp.mo
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm share/gimp/1.1/tips
 @dirrm share/gimp/1.1/scripts
 @dirrm share/gimp/1.1/patterns
@@ -1305,7 +1339,6 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm share/gimp/1.1/brushes
 @dirrm share/gimp/1.1
 @dirrm share/gimp
-@dirrm share/aclocal
 @dirrm lib/gimp/1.1/plug-ins
 @dirrm lib/gimp/1.1/modules
 @dirrm lib/gimp/1.1

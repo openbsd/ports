@@ -1,11 +1,36 @@
---- docs/Makefile.in.orig	Fri Feb 11 13:46:43 2000
-+++ docs/Makefile.in	Mon Feb 14 22:07:34 2000
-@@ -141,7 +141,7 @@
- LT_REVISION = @LT_REVISION@
- MAILER = @MAILER@
- MAINT = @MAINT@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- MKINSTALLDIRS = @MKINSTALLDIRS@
- MPEG = @MPEG@
- MSGFMT = @MSGFMT@
+--- gimptool.in.orig	Tue Jun 27 20:47:46 2000
++++ gimptool.in	Tue Jun 27 20:50:23 2000
+@@ -234,27 +234,27 @@
+     | --uninstall-script | --uninstall-admin-script )
+       case $1 in
+         --*install-bin)
+-          install_cmd="@INSTALL_PROGRAM@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$HOME/@gimpdir@/plug-ins"
+           ;;
+         --install-bin-strip)
+-          install_cmd="@INSTALL_PROGRAM@ -s"
++          install_cmd="@INSTALL_SCRIPT@ -s"
+           install_dir="$HOME/@gimpdir@/plug-ins"
+           ;;
+         --*install-admin-bin)
+-          install_cmd="@INSTALL_PROGRAM@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$gimpplugindir/plug-ins"
+           ;;
+         --install-admin-bin-strip)
+-          install_cmd="@INSTALL_PROGRAM@ -s"
++          install_cmd="@INSTALL_SCRIPT@ -s"
+           install_dir="$gimpplugindir/plug-ins"
+           ;;
+         --*install-script)
+-          install_cmd="@INSTALL_DATA@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$HOME/@gimpdir@/scripts"
+           ;;
+         --*install-admin-script)
+-          install_cmd="@INSTALL_DATA@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$gimpdatadir/scripts"
+           ;;
+       esac

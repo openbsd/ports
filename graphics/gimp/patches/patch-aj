@@ -1,8 +1,8 @@
---- configure.orig	Fri Feb 11 13:32:12 2000
-+++ configure	Mon Feb 14 22:09:02 2000
-@@ -7018,7 +7018,7 @@
+--- configure.orig	Thu Jun 22 16:49:05 2000
++++ configure	Tue Jun 27 14:55:45 2000
+@@ -7150,7 +7150,7 @@
  
- gimpdatadir=$datadir/gimp
+ gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 -localedir='${prefix}/${DATADIRNAME}/locale'
 +localedir='${prefix}/share/locale'
