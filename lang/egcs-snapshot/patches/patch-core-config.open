@@ -63,7 +63,7 @@
 +	i[34567]86-*-openbsd*)
 +changequote([,])dnl
 +		# Remove when the math emulator is fixed
-+		target_cpu_default="TARGET_NO_FANCY_MATCH_387"
++		target_cpu_default="TARGET_NO_FANCY_MATH_387"
 +		;;
 +changequote(,)dnl
  	i[34567]86-*-coff*)
