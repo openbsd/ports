@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.6 2004/01/22 06:28:35 sturm Exp $
+# $OpenBSD: python.port.mk,v 1.7 2004/02/06 08:37:22 xsa Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,7 +7,9 @@ MODPY_VERSION?=		2.3
 
 _MODPY_BUILD_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 
+.if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
+.endif
 RUN_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
