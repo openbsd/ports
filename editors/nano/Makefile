@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/20 22:33:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/24 19:52:29 naddy Exp $
 
-DISTNAME=	nano-0.9.99pre3
+COMMENT=	"small, easy to use editor"
+DISTNAME=	nano-1.0.0
 CATEGORIES=	editors
-NEED_VERSION=	1.338
+NEED_VERSION=	1.363
 HOMEPAGE=	http://www.nano-editor.org
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${HOMEPAGE}/dist/
+		${MASTER_SITE_GNU} \
+		ftp://ftp.nano-editor.org/pub/nano/
 MASTER_SITE_SUBDIR=	nano
 
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -24,9 +26,9 @@ LIB_DEPENDS=	intl.1::devel/gettext
 LIB_DEPENDS+=	slang.14::devel/libslang
 .endif
 
-CONFIGURE_STYLE=	gnu autoconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=		CPPFLAGS='-I${LOCALBASE}/include' \
+			LDFLAGS='-L${LOCALBASE}/lib'
 .if ${FLAVOR:L:Mslang}
 CONFIGURE_ARGS+=	--with-slang='${LOCALBASE}'
 .endif
