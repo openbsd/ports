@@ -6,10 +6,8 @@ edit it to reflect your environment.
 Next, setup /etc/ppp/{options,chap-secrets,pap-secrets} with
 information provided by your ISP.
 
-If you get "LCP timeout sending config request" messages, build a
-kernel without "GRE encapsulation interface" support.
-(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre     1".)
-
+You can enable or disable GRE with sysctl -w net.inet.gre.allow=1.
+It needs to be enabled for some situations.
 
 See http://www.counterpane.com/pptp-faq.html for a list of security flaws.
 ==========================================================================

@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.4 2005/03/24 00:57:58 naddy Exp $
+--- Makefile.orig	Sat Mar  5 16:17:49 2005
++++ Makefile	Sat Mar  5 16:18:02 2005
+@@ -11,12 +11,12 @@ BINDIR=$(DESTDIR)/usr/sbin
+ MANDIR=$(DESTDIR)/usr/share/man/man8
+ PPPDIR=$(DESTDIR)/etc/ppp
+ 
+-CC	= gcc
++CC?	= gcc
+ RM	= rm -f
+ OPTIMIZE= -O0
+ DEBUG	= -g
+ INCLUDE =
+-CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE)
++CFLAGS?  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE)
+ LIBS	= -lutil
+ LDFLAGS	=
+ 

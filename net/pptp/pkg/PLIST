@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/03/24 00:57:58 naddy Exp $
 @man man/man8/pptp.8
 sbin/pptp
 sbin/pptp-reconnect
@@ -9,6 +9,7 @@ share/doc/pptp/Documentation/DESIGN.PPTP
 share/doc/pptp/Documentation/PORTING
 share/doc/pptp/Reference/
 share/doc/pptp/Reference/README
+share/doc/pptp/Reference/README.Reference
 share/doc/pptp/Reference/ms-chap.txt
 share/doc/pptp/Reference/pptp-draft.txt
 share/doc/pptp/Reference/rfc1661.txt
