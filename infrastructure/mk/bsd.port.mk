@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.327 2000/09/11 18:06:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.328 2000/09/12 02:52:01 marc Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2058,7 +2058,9 @@ pre-distclean:
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
-		rm -f ${_DISTFILES} ${_PATCHFILES}; \
+		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
+			rm -f ${_DISTFILES} ${_PATCHFILES}; \
+		fi \
 	fi
 .  if defined(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}  
