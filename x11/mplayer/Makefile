@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2003/01/03 23:06:35 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2003/01/04 00:58:43 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad aa
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad aa lzo
 FLAVOR?=
 
 .if ${FLAVOR:L:Mfaad}
@@ -72,6 +72,13 @@ CONFIGURE_ARGS+=--enable-faad
 LIB_DEPENDS+=   faad::audio/faad
 .else
 CONFIGURE_ARGS+=--disable-faad
+.endif
+
+.if ${FLAVOR:L:Mlzo}
+CONFIGURE_ARGS+=--enable-liblzo
+LIB_DEPENDS+=lzo::archivers/lzo
+.else
+CONFIGURE_ARGS+=--disable-liblzo
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
