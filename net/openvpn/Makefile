@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/25 17:27:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/30 21:29:53 sturm Exp $
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
@@ -36,6 +36,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-config-files
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-keys
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-scripts
+	@perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' ${WRKSRC}/easy-rsa/*
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/easy-rsa
 	${INSTALL_DATA} ${WRKSRC}/sample-config-files/* ${SAMPLES_DIR}/sample-config-files/
 	${INSTALL_DATA} ${WRKSRC}/sample-keys/* ${SAMPLES_DIR}/sample-keys/
