@@ -1,0 +1,11 @@
+--- Imakefile.orig	Tue Apr  4 22:05:30 2000
++++ Imakefile	Tue Apr  4 22:05:53 2000
+@@ -43,7 +43,7 @@ install::
+ 		echo "deleting temporary build directory $(BUILDINCDIR) ..."; \
+ 		$(RM) -r $(BUILDINCDIR); \
+ 	else exit 0; fi
+-	$(MKDIRHIER) $(XVDESTDIR)
++	$(MKDIRHIER) $(DESTDIR)$(XVDESTDIR)
+ #endif
+ 
+ InstallManPage(xview,$(MANDIR))

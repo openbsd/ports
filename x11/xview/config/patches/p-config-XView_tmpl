@@ -1,11 +1,11 @@
 --- config/XView.tmpl.orig	Mon Jun 27 04:10:00 1994
-+++ config/XView.tmpl	Sun Apr  2 02:10:40 2000
++++ config/XView.tmpl	Tue Apr  4 22:09:21 2000
 @@ -96,7 +96,7 @@
   *      Work around small conflict with Project.tmpl file
   */
  #if UseInstalled
 -              MKDIRHIER = BourneShell BinDir/mkdirhier
-+              MKDIRHIER = mkdirhier
++              MKDIRHIER = mkdir -p
  #endif
  
  #if OsHasLocale
