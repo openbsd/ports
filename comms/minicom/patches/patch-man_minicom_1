@@ -1,0 +1,16 @@
+$OpenBSD: patch-man_minicom_1,v 1.1 2003/03/28 21:27:52 rohee Exp $
+
+Cross reference other minicom programs.
+
+--- man/minicom.1.orig	Mon Mar 24 23:55:56 2003
++++ man/minicom.1	Tue Mar 25 00:02:31 2003
+@@ -821,6 +821,9 @@
+ $HOME/minicom.log
+ /usr/share/locale/*/LC_MESSAGES/minicom.mo
+ .fi
++.SH "SEE ALSO"
++\fIascii-xfr\fP(1),
++\fIrunscript\fP(1)
+ .SH VERSION
+ Minicom is now up to version 2.00.0.
+ .SH AUTHORS
