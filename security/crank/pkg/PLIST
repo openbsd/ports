@@ -1,12 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/06 08:07:48 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/21 03:32:33 obecian Exp $
 bin/crank
-share/crank/bift.dat
-share/crank/slft.dat
-share/crank/trift.dat
+share/crank/data/bift.dat
+share/crank/data/slft.dat
+share/crank/data/trift.dat
+share/crank/plugins/monoalphabetic.hillclimb-cracker.so
+share/crank/plugins/monoalphabetic.key-controls.so
+share/crank/plugins/statistics.n-grams.so
+share/crank/plugins/text.simple-filters.so
+share/crank/plugins/utilities.notepad.so
 share/doc/crank/BUGS
 share/doc/crank/HISTORY
 share/doc/crank/LICENSE
 share/doc/crank/README
 share/doc/crank/ciphertext.txt
+@dirrm share/crank/plugins
+@dirrm share/crank/data
 @dirrm share/crank
 @dirrm share/doc/crank

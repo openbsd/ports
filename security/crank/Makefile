@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/28 08:33:55 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/21 03:32:32 obecian Exp $
 
 COMMENT=	"classical (pen-and-paper) cipher cryptanalysis toolkit"
 
-DISTNAME=	crank-0.0.5
+DISTNAME=	crank-0.1.1
 CATEGORIES=	security
 NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,23 +20,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-ALL_TARGET=	crank
+ALL_TARGET=	all
 
-DATA=	bift.dat slft.dat trift.dat
 DOC=	BUGS HISTORY LICENSE README ciphertext.txt
-
-post-patch:
-	cd ${WRKSRC}; \
-	cp crank.h _bad_crank.h; \
-	sed -e s#!!LOCALBASE!!#${LOCALBASE}#g _bad_crank.h > crank.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crank ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/crank
+	${INSTALL_DATA_DIR} ${PREFIX}/share/crank/data
+	${INSTALL_DATA_DIR} ${PREFIX}/share/crank/plugins
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/crank
-.for file in ${DATA}
-	@ ${INSTALL_DATA} ${WRKSRC}/data/${file} ${PREFIX}/share/crank
-.endfor                                         
+	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${PREFIX}/share/crank/data
+	${INSTALL_DATA} ${WRKSRC}/plugin-src/*.so ${PREFIX}/share/crank/plugins
 .for file in ${DOC}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/crank
 .endfor

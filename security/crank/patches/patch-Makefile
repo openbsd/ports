@@ -1,10 +1,79 @@
---- Makefile.orig	Sat Mar 17 12:33:13 2001
-+++ Makefile	Sat Mar 17 12:33:38 2001
-@@ -1,6 +1,6 @@
- VERSION = $(shell cat VERSION)
+--- Makefile.orig	Fri Apr 20 19:26:50 2001
++++ Makefile	Fri Apr 20 20:01:35 2001
+@@ -1,20 +1,17 @@
+-VERSION = $(shell cat VERSION)
  CC = gcc
--CFLAGS = -Wall -g `gtk-config --cflags`
+-DYNAMICGDB = -Wl,--dynamic-linker,/lib/ld-linux.so.2 
+-CFLAGS = -g -Wall -pedantic `gtk-config --cflags`
 +CFLAGS += -Wall -g `gtk-config --cflags`
  LIBS  = `gtk-config --libs`
  OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
- DISTFILES = *.c *.h Makefile Makefile.mingw README BUGS VERSION \
+ PLUGIN-SRC = plugin-src
+-PLUGINS = $(PLUGIN-SRC)/monoalphabetic.hillclimb-cracker.so \
+-          $(PLUGIN-SRC)/monoalphabetic.key-controls.so \
+-          $(PLUGIN-SRC)/statistics.n-grams.so \
+-          $(PLUGIN-SRC)/text.simple-filters.so \
+-          $(PLUGIN-SRC)/utilities.notepad.so
+-TMPDIR = /usr/tmp
+-DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
+-            HISTORY LICENSE TODO ciphertext.txt 
+-DISTFILES_DATA = data/*.dat
+-DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile
++#PLUGINS = $(PLUGIN-SRC)/monoalphabetic.hillclimb-cracker.so \
++#          $(PLUGIN-SRC)/monoalphabetic.key-controls.so \
++#          $(PLUGIN-SRC)/statistics.n-grams.so \
++#          $(PLUGIN-SRC)/text.simple-filters.so \
++#          $(PLUGIN-SRC)/utilities.notepad.so
++#DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
++#            HISTORY LICENSE TODO ciphertext.txt 
++#DISTFILES_DATA = data/*.dat
++#DISTFILES_PLUGINS = $(PLUGIN-SRC)/*.[ch] $(PLUGIN-SRC)/Makefile
+ 
+ all: crank plugin
+ 
+@@ -34,37 +31,11 @@ clean:
+ TAGS:
+ 	etags *.[ch] $(PLUGIN-SRC)/*.[ch]
+ 
+-install:
+-	@echo ======================
+-	@echo Installing Crank $(VERSION)             
+-	@echo ======================
+-	@echo Currently only installs to local directory by installing the plugins.
+-	-mkdir plugins
+-	cd $(PLUGIN-SRC) && make install
+-	@echo Installation complete.
+-dist:
+-	@echo ========================================
+-	@echo Building Crank $(VERSION) source distribution
+-	@echo ========================================
+-	@echo Crank:	`cat *.[ch] | wc -l` lines - `ls -l *.[ch] | wc -l` source files 
+-	@echo Plugins:	`cat plugin-src/*.[ch] | wc -l` lines - `ls -l plugin-src/*.[ch] | wc -l` source files 
+-	@echo Total:	`cat *.[ch] plugin-src/*.[ch] | wc -l` lines - `ls -l *.[ch] plugin-src/*.[ch] | wc -l` source files 
+-	-mkdir crank-$(VERSION)
+-	cp $(DISTFILES) crank-$(VERSION)
+-	-mkdir crank-$(VERSION)/data
+-	cp $(DISTFILES_DATA) crank-$(VERSION)/data
+-	-mkdir crank-$(VERSION)/plugin-src
+-	cp $(DISTFILES_PLUGINS) crank-$(VERSION)/plugin-src
+-	tar cvf crank-$(VERSION).tar crank-$(VERSION) 
+-	gzip -fv -best crank-$(VERSION).tar
+-	rm -r crank-$(VERSION)
+-	ls -l crank-$(VERSION).tar.gz
+-distcheck:
+-	@echo ======================================	
+-	@echo Test building Crank $(VERSION) distribution
+-	@echo ======================================	
+-	tar xzf crank-$(VERSION).tar.gz --directory $(TMPDIR)
+-	-cd $(TMPDIR)/crank-$(VERSION); make; make install
+-	-cd $(TMPDIR)/crank-$(VERSION); ./crank
+-	-rm -rf $(TMPDIR)/crank-$(VERSION)
+-
++#install:
++#	@echo ======================
++#	@echo Installing Crank $(VERSION)             
++#	@echo ======================
++#	@echo Currently only installs to local directory by installing the plugins.
++#	-mkdir plugins
++#	cd $(PLUGIN-SRC) && make install
++#	@echo Installation complete.
