@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/12/08 04:37:20 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/01/05 21:57:48 brad Exp $
 @pkgcfl fluxbox-*
 @pkgcfl blackbox-*
 bin/bsetbg
@@ -49,6 +49,8 @@ share/openbox/nls/nl
 share/openbox/nls/nl_NL/openbox.cat
 share/openbox/nls/no
 share/openbox/nls/no_NO/openbox.cat
+share/openbox/nls/pl
+share/openbox/nls/pl_PL/openbox.cat
 share/openbox/nls/pt
 share/openbox/nls/pt_BR/openbox.cat
 share/openbox/nls/ro
@@ -97,6 +99,7 @@ share/openbox/styles/warp-xp
 @dirrm share/openbox/nls/ru_RU
 @dirrm share/openbox/nls/ro_RO
 @dirrm share/openbox/nls/pt_BR
+@dirrm share/openbox/nls/pl_PL
 @dirrm share/openbox/nls/no_NO
 @dirrm share/openbox/nls/nl_NL
 @dirrm share/openbox/nls/ko_KO

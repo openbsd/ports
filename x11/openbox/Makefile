@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/04 18:04:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2003/01/05 21:57:47 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
-DISTNAME=	openbox-2.2.2
+DISTNAME=	openbox-2.2.3
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # gcc3
-MODULES+=               gcc3 
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
+MODULES+=		gcc3 
+MODGCC3_ARCHES=		sparc64
+MODGCC3_LANGS+=		c++
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
