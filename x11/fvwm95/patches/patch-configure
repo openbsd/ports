@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2001/03/19 03:44:21 danh Exp $
+--- configure.orig	Sun Mar 18 22:40:49 2001
++++ configure	Sun Mar 18 22:41:10 2001
+@@ -518,8 +518,6 @@ fi
+ 
+ 
+ 
+-CFLAGS=-O
+-
+ #-------------------------------------------------------------------
+ #
+ # Remove the ./config.cache file and rerun configure if
