@@ -1,6 +1,6 @@
---- sbr/m_scratch.c.~1~	Sun Jan  4 14:15:18 1998
-+++ sbr/m_scratch.c	Tue Apr 28 22:58:25 1998
-@@ -13,13 +13,18 @@
+--- sbr/m_scratch.c.orig	Sun Jan  4 14:15:18 1998
++++ sbr/m_scratch.c	Sun Jul 26 16:30:44 1998
+@@ -13,13 +13,19 @@
  {
      char *cp;
      static char buffer[BUFSIZ], tmpfil[BUFSIZ];
@@ -13,12 +13,13 @@
 +    if ( fd == -1 ) {
 +        return 0;
 +    }
++    close( fd );
++    unlink( tmpfil );
      if ((cp = r1bindex (file, '/')) == file)
  	strcpy (buffer, tmpfil);
      else
 -	sprintf (buffer, "%.*s%s", cp - file, file, tmpfil);
 +	snprintf (buffer, BUFSIZ, "%.*s%s", cp - file, file, tmpfil);
-+    close( fd );
      unlink (buffer);
  
      return buffer;
