@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2002/03/19 13:58:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.41 2002/04/19 15:15:33 wilfried Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += MyCC
@@ -17,6 +17,7 @@
      SUBDIR += p5-DBD-Msql-Mysql
      SUBDIR += p5-DBD-Msql-Mysql,dbimon
      SUBDIR += p5-DBD-Pg
+     SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
      SUBDIR += p5-DBIx-XHTML_Table
      SUBDIR += p5-SQL-Statement
