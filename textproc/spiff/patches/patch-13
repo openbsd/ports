@@ -1,0 +1,54 @@
+--- compare.c.orig	Mon Feb  5 15:17:15 1990
++++ compare.c	Wed Sep 23 18:42:18 1998
+@@ -17,12 +17,15 @@
+ #include "token.h"
+ #include "line.h"
+ #include "float.h"
+-#include "compare.h"
+ 
+ #include <ctype.h>
+ 
+-X_com(a,b,flags)
+-int a,b,flags;
++static int _X_cmptokens(K_token p1,K_token p2,int flags);
++static int _X_strcmp(char *s1, char *s2, int flags);
++static int _X_floatdiff(F_float p1,F_float p2,T_tol the_tol);
++
++int
++X_com(int a, int b, int flags)
+ {
+ 	K_token atmp,btmp;
+ 
+@@ -47,9 +50,7 @@
+ **	same as strcmp() except that case can be optionally ignored
+ */
+ static int
+-_X_strcmp(s1,s2,flags)
+-char *s1,*s2;
+-int flags;
++_X_strcmp(char *s1, char *s2, int flags)
+ {
+ 	if (flags & U_NO_CASE)
+ 	{
+@@ -84,9 +85,7 @@
+ **	routine to compare two tokens
+ */
+ static int
+-_X_cmptokens(p1,p2,flags)
+-K_token p1, p2;
+-int flags;
++_X_cmptokens(K_token p1,K_token p2,int flags)
+ {
+ 	if (K_gettype(p1) !=  K_gettype(p2))
+ 	{
+@@ -114,9 +113,7 @@
+ **	compare two F_floats using a tolerance
+ */
+ static int
+-_X_floatdiff(p1,p2,the_tol)
+-F_float p1,p2;
+-T_tol the_tol;
++_X_floatdiff(F_float p1,F_float p2,T_tol the_tol)
+ {
+ 	F_float diff, float_tmp;
+ 	T_tol tol_tmp;

@@ -1,0 +1,49 @@
+--- spiff.c.orig	Mon Feb  5 15:17:20 1990
++++ spiff.c	Wed Sep 23 18:42:19 1998
+@@ -27,7 +27,8 @@
+ #include "visual.h"
+ #include "output.h"
+ 
+-extern void _Y_doargs();
++static void _Y_doargs(int argc, char *argv[], char **file1, 
++	char **file2, int *max_d);
+ 
+ static int _Y_eflag = 0;	/* use exact match algorithm */
+ static int _Y_vflag = 0;	/* use visual mode */
+@@ -38,9 +39,8 @@
+ */
+ static int _Y_flags;
+ 
+-main(argc,argv)
+-int argc;
+-char *argv[];
++int
++main(int argc, char *argv[])
+ {
+ 	E_edit edit_end;
+ 	char *filename[2];
+@@ -120,9 +120,9 @@
+ 	if (E_NULL != edit_end)
+ 	{
+ 		O_output(edit_end,_Y_flags);
+-		return(1);
++		return 1;
+ 	}
+-	return(0);
++	return 0;
+ }
+ 
+ /*
+@@ -174,11 +174,7 @@
+ #define SETPTR	{if(strlen(argv[1]) == 2) {argv++;argc--;ptr=argv[1];}else ptr=(&argv[1][2]);}
+ 
+ static void
+-_Y_doargs(argc,argv,file1,file2,max_d)
+-int argc;
+-char *argv[];
+-char **file1,**file2;
+-int *max_d;
++_Y_doargs(int argc, char *argv[], char **file1, char **file2, int *max_d)
+ {
+ 	char *ptr;
+ 

@@ -1,0 +1,22 @@
+Spiff compares the contents of two files and prints a description
+of the important differences between the files.  White space is
+ignored except to separate other objects.  Spiff maintains tolerances
+below which differences between two floating point numbers are
+ignored.  Differences in floating point notation (such as 3.4 3.40
+and 3.4e01) are treated as unimportant.  User specified delimited
+strings (i.e. comments) can also be ignored.  There are options for
+C and other languages; comments are understood and normally ignored.
+Inside other user specified delimited strings (i.e. quoted strings)
+whitespace can be significant.
+
+Spiff's operation can be altered via command line options, a command
+script, and with commands that are embedded in the input files.
+
+Each of two input files is read and stored in core.  Then it is
+parsed into a series of tokens (literal strings and floating point
+numbers, white space is ignored).  The token sequences are stored
+in core as well.  After both files have been parsed, a differencing
+algorithm is applied to the token sequences.  The differencing
+algorithm produces an edit script, which is then passed to an output
+routine.  The result is much slower than regular diff, but much
+more controllable.

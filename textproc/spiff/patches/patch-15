@@ -1,0 +1,12 @@
+--- spiff.1.orig	Mon Feb  5 15:17:23 1990
++++ spiff.1	Wed Sep 23 18:42:19 1998
+@@ -1,9 +1,5 @@
+-.ll 6i
+-.pl 10.5i
+-.po 1.25i
+ .\"	@(#)spiff.1	1.0 (Bellcore) 9/20/87
+ .\"
+-.lt 6.0i
+ .TH SPIFF 1 "February 2, 1988"
+ .AT 3
+ .SH NAME

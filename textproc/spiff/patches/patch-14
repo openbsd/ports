@@ -1,0 +1,19 @@
+--- misc.h.orig	Wed Sep 23 14:07:19 1998
++++ misc.h	Wed Sep 23 18:42:18 1998
+@@ -33,16 +33,6 @@
+ #define Z_ALLOC(n,type)	((type*) _Z_myalloc((n) * sizeof (type)))
+ extern int *_Z_myalloc();
+ 
+-/*
+-**	lines needed to shut up lint
+-*/
+-extern char *sprintf();
+-extern char *strcat();
+-extern char *strncat();
+-extern char *strcpy();
+-extern char *strncpy();
+-extern char *malloc();
+-
+ extern void Z_complain();
+ extern void Z_fatal();
+ extern void Z_exceed();
