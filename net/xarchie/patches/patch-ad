@@ -1,0 +1,19 @@
+*** FWF/FileChooser/FChooser.h.orig	Wed May  6 11:55:00 1998
+--- FWF/FileChooser/FChooser.h	Wed May  6 11:58:49 1998
+***************
+*** 49,55 ****
+  typedef struct _XfwfFileChooserClassRec	*XfwfFileChooserWidgetClass;
+  typedef struct _XfwfFileChooserRec	*XfwfFileChooserWidget;
+  
+! #define	XtNcurrentDirectory		"currentDirectory"
+  #define	XtNcurrentFile			"currentFile"
+  #define	XtNsortMode			"sortMode"
+  #define	XtNpattern			"pattern"
+--- 49,55 ----
+  typedef struct _XfwfFileChooserClassRec	*XfwfFileChooserWidgetClass;
+  typedef struct _XfwfFileChooserRec	*XfwfFileChooserWidget;
+  
+! /* #define	XtNcurrentDirectory		"currentDirectory" */
+  #define	XtNcurrentFile			"currentFile"
+  #define	XtNsortMode			"sortMode"
+  #define	XtNpattern			"pattern"

@@ -1,0 +1,19 @@
+*** regex.c.orig	Wed May  6 12:00:39 1998
+--- regex.c	Wed May  6 12:02:12 1998
+***************
+*** 588,594 ****
+  #define CHRSKIP	3	/* [CLO] CHR chr END ...     */
+  #define CCLSKIP 18	/* [CLO] CCL 16bytes END ... */
+  
+! static char *
+  pmatch(lp, ap)
+  register char *lp;
+  register CHAR *ap;
+--- 588,594 ----
+  #define CHRSKIP	3	/* [CLO] CHR chr END ...     */
+  #define CCLSKIP 18	/* [CLO] CCL 16bytes END ... */
+  
+! char *
+  pmatch(lp, ap)
+  register char *lp;
+  register CHAR *ap;

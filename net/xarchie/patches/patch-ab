@@ -1,0 +1,21 @@
+*** query.c.orig	Wed May  6 12:02:31 1998
+--- query.c	Wed May  6 12:03:32 1998
+***************
+*** 369,376 ****
+      struct tm *presenttime;
+      long now;
+  
+!     (void)time(&now);
+!     presenttime = localtime(&now);
+      if (strcmp(vl->type,"DIRECTORY") == 0) {
+  	*typep = DB_DIRECTORY;
+      } else {
+--- 369,376 ----
+      struct tm *presenttime;
+      long now;
+  
+!     (void)time((time_t *)&now);
+!     presenttime = localtime((time_t *)&now);
+      if (strcmp(vl->type,"DIRECTORY") == 0) {
+  	*typep = DB_DIRECTORY;
+      } else {
