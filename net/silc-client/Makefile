@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/02/19 23:07:27 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
-DISTNAME=	silc-client-1.0
+DISTNAME=	silc-client-1.0.1
 CATEGORIES=	net
+
 HOMEPAGE=	http://www.silcnet.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
@@ -33,14 +34,14 @@ CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.57
+AUTOCONF_VERSION= 2.59
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
-CONFIGURE_ARGS+=--enable-ipv6 \
-		--with-helpdir=${PREFIX}/share/silc/help \
-		--with-docdir=${PREFIX}/share/doc/silc \
-		--with-etcdir=${CONFDIR} \
-		--with-iconv=${LOCALBASE} \
-		--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl
+CONFIGURE_ARGS+= --enable-ipv6 \
+		 --with-helpdir=${PREFIX}/share/silc/help \
+		 --with-docdir=${PREFIX}/share/doc/silc \
+		 --with-etcdir=${CONFDIR} \
+		 --with-iconv=${LOCALBASE} \
+		 --with-perl-lib=${PREFIX}/libdata/perl5/site_perl
 
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
