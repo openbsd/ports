@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/07/15 14:03:24 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1999/07/15 14:38:12 angelos Exp $
 #
 
     SUBDIR += imm
@@ -7,5 +7,6 @@
     SUBDIR += speak_freely
     SUBDIR += vic
     SUBDIR += wb
+    SUBDIR += wbd
 
 .include <bsd.port.subdir.mk>
