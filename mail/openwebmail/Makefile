@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/02/02 17:45:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/03/04 06:34:09 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-2.21
+DISTNAME=	openwebmail-2.30
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -41,13 +41,15 @@ SCRIPTFILES=	openwebmail-abook.pl openwebmail-advsearch.pl \
 		openwebmail-read.pl openwebmail-send.pl \
 		openwebmail-spell.pl openwebmail-tool.pl \
 		openwebmail-vdomain.pl openwebmail-viewatt.pl \
-		openwebmail-webdisk.pl openwebmail.pl ow-shared.pl 
+		openwebmail-webdisk.pl openwebmail.pl
 
 do-configure:
 .for file in ${SCRIPTFILES}
 	@perl -pi -e 's@%%SYSCONFDIR%%@${CONFDIR}@g' \
 		${WRKSRC}/cgi-bin/openwebmail/${file}
 .endfor
+	@perl -pi -e 's@%%SYSCONFDIR%%@${CONFDIR}@g' \
+		${WRKSRC}/cgi-bin/openwebmail/shares/ow-shared.pl
 	@cd ${WRKSRC} && cp -Rp data htdocs
 	@find ${WRKSRC}/cgi-bin -name '*.orig' |xargs rm
 	@cd ${WRKSRC} && mkdir -p conf/openwebmail && \

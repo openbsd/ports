@@ -1,18 +1,22 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-cal_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-cal.pl.orig	Mon Nov 18 12:28:23 2002
-+++ cgi-bin/openwebmail/openwebmail-cal.pl	Thu Jan 30 14:45:07 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-cal_pl,v 1.3 2004/03/04 06:34:11 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-cal.pl.orig	Sat Jan  3 04:16:50 2004
++++ cgi-bin/openwebmail/openwebmail-cal.pl	Thu Mar  4 11:37:48 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl -T
  #
  # openwebmail-cal.pl - calendar program
  #
-@@ -11,7 +11,7 @@
+@@ -19,10 +19,10 @@
  
  use vars qw($SCRIPT_DIR);
- if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
+ if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1 }
 -if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
 +if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
-    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
+    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1 }
  }
- if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
+-if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
++if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
+ push (@INC, $SCRIPT_DIR);
+ 
+ foreach (qw(PATH ENV BASH_ENV CDPATH IFS TERM)) { $ENV{$_}='' }	# secure ENV
