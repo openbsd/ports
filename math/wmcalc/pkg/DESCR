@@ -1,0 +1,42 @@
+wmcalc is a program designed to act as a simple four-function
+calculator.  It is different from other calculator programs,
+however in that it is designed to take up very little desktop
+space.  As such, it can be left running on the desktop at all
+times.
+
+It is intended to placed in the WindowMaker dock, or in Wharf
+under Afterstep, though it should run as well under any
+window manager.  
+
+You need a ~/.wmcalc file, copy a sample from ${SAMPLE_DIR}.
+
+wmcalc -h gives you usage info.
+
+Buttons are defined as:
+ ____________________
+|       x99          | 	where: x = 1 for Left Mouse Button   
+| 0 1 2 3 4 5 6 7 8 9|         x = 2 for Middle Mouse Button
+|--------------------|	       x = 3 for Right Mouse Button
+|x11 x07 x08 x09 x51 |                
+|x12 x04 x05 x06 x52 |	Note: the numbers 0..9 are the
+|x13 x01 x02 x03 x53 |        indicators for memory cells
+|x14 x00 x34 x44 x54 |        0..9 respectively.
+ --------------------
+
+Button Functions:
+199	Reinitialize the calculator, and both Registers
+        (Clear All).
+299	Clear all the memory registers (0..10).
+399     Clear the current number being entered only.
+x13	Start a program defined by CalcStart variable in
+        config file.
+1yy	Perform function shown on button.
+2yy	Recall number from memory location [0-9] to display
+	for calculation,
+		if yy = 0,1,2,3,4,5,6,7,8,9.
+3yy	Store Displayed number in memory location [0-9],
+		if yy = 0,1,2,3,4,5,6,7,8,9.
+1zz	Hopefully the other functions are obvious from
+        their button graphics.
+
+WWW: ${HOMEPAGE}

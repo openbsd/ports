@@ -1,0 +1,50 @@
+$OpenBSD: patch-wmcalcswitch_c,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
+--- wmcalcswitch.c.orig	Tue Oct 31 03:15:36 2000
++++ wmcalcswitch.c	Fri Jan 12 11:58:31 2001
+@@ -347,7 +347,7 @@ int write_config(void) {
+   extern int Verbose;
+   extern double MemArray[];
+   extern char configfile[];
+-  extern char tempfile[];
++  extern char tempfile[CONFIGFILEMAX];
+   extern char *CfgVarList[];
+   FILE *fp, *fptmp;
+   char *line = NULL;
+@@ -364,8 +364,8 @@ int write_config(void) {
+   /* Open Temporary File */
+   if ((fptmp = fopen(tempfile, "w")) == NULL) {  // Can't open file in /tmp
+     fprintf(stderr, "%s: Temporary File Open Failed\n", tempfile);
+-    strcpy(tempfile, getenv("HOME"));
+-    strcat(tempfile, "wmcalc.tmp");
++    strlcpy(tempfile, getenv("HOME"), sizeof(tempfile));
++    strlcat(tempfile, "wmcalc.tmp", sizeof(tempfile));
+     if ((fptmp = fopen(tempfile, "w")) == NULL) {  // Can't open file in HOME
+       fprintf(stderr, "%s: Temporary File Open Failed\n", tempfile);
+       return(BAD_FILE);
+@@ -397,7 +397,7 @@ int write_config(void) {
+ 
+   /* Copy temp file over original */
+   /* Note:  If changing command, make sure to adjust size of string above!! */
+-  sprintf(movefilecmd, "mv -f %s %s\n", tempfile, configfile); 
++  snprintf(movefilecmd, sizeof(movefilecmd), "mv -f %s %s", tempfile, configfile); 
+   err_code = system(movefilecmd);
+   
+   if (err_code) {
+@@ -418,7 +418,7 @@ int read_config(void) {
+   extern char *CfgVarList[];
+   extern char ImagChar;
+   extern char configfile[];
+-  extern char SysCalcCmd[];
++  extern char SysCalcCmd[CALC_CMD_SIZE];
+   FILE *fp;
+   int i = 0;
+   int err_code = OKAY;
+@@ -507,7 +507,7 @@ int read_config(void) {
+ 	  case CALC_LABEL:
+ 	    if (Verbose)
+ 	      fprintf(stderr, "Assign Calc Command:\n%s", cfg_var_ptr);
+-	    strcpy(SysCalcCmd, cfg_var_ptr);
++	    strlcpy(SysCalcCmd, cfg_var_ptr, sizeof(SysCalcCmd));
+ 	    break;
+ 
+ 	  default:

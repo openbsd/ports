@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
+bin/wmcalc
+share/examples/wmcalc/dot.wmcalc.sample
+@dirrm share/examples/wmcalc

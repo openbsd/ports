@@ -1,0 +1,17 @@
+$OpenBSD: patch-wmcalc_c,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
+--- wmcalc.c.orig	Tue Oct 31 03:42:32 2000
++++ wmcalc.c	Fri Jan 12 11:53:28 2001
+@@ -89,10 +89,10 @@ int main( int argc, char **argv ) {
+   char Geometry_str[64] = "64x64+0+0";
+   char Display_str[64] = "";
+   
+-  strcpy(configfile, getenv("HOME"));  // Added to wmbutton by Casey Harkin, 3/6/99
+-  strcat(configfile, CONFFILENAME);    // Fixed Bug - didn't look in home directory
++  strlcpy(configfile, getenv("HOME"), sizeof(configfile));  // Added to wmbutton by Casey Harkin, 3/6/99
++  strlcat(configfile, CONFFILENAME, sizeof(configfile));    // Fixed Bug - didn't look in home directory
+                                        // but startup directory
+-  strcat(tempfile, CONFTEMPFILE);      // Setup name for temp file
++  strlcat(tempfile, CONFTEMPFILE, sizeof(tempfile));      // Setup name for temp file
+ 
+   /* Clear the Calculator Display */
+   for(i=0; i<11; i++) DispString[i] = ' ';
