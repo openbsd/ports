@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/www/php4/core/files/pear.port.mk"
+.include "${PORTSDIR}/www/php4/pear/pear.port.mk"

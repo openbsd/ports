@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST-pear,v 1.8 2004/07/15 00:49:47 robert Exp $
-@dir pear
-@dir pear/build
+@comment $OpenBSD: PLIST-pear,v 1.9 2004/08/03 12:54:40 espie Exp $
+pear/
+pear/build/
 pear/build/Makefile.global
 pear/build/acinclude.m4
 pear/build/mkdep.awk
 pear/build/phpize.m4
 pear/build/scan_makefile_in.awk
 pear/build/shtool
-@dir pear/data
-@dir pear/data/PEAR
+pear/data/
+pear/data/PEAR/
 pear/data/PEAR/package.dtd
 pear/data/PEAR/template.spec
-@dir pear/doc
-@dir pear/doc/Archive_Tar
-@dir pear/doc/Archive_Tar/docs
+pear/doc/
+pear/doc/Archive_Tar/
+pear/doc/Archive_Tar/docs/
 pear/doc/Archive_Tar/docs/Archive_Tar.txt
-@dir pear/doc/DB
-@dir pear/doc/DB/doc
+pear/doc/DB/
+pear/doc/DB/doc/
 pear/doc/DB/doc/IDEAS
 pear/doc/DB/doc/MAINTAINERS
 pear/doc/DB/doc/STATUS
 pear/doc/DB/doc/TESTERS
-@dir pear/include
-@dir pear/include/TSRM
+pear/include/
+pear/include/TSRM/
 pear/include/TSRM/TSRM.h
 pear/include/TSRM/acconfig.h
 pear/include/TSRM/readdir.h
@@ -34,7 +34,7 @@ pear/include/TSRM/tsrm_nw.h
 pear/include/TSRM/tsrm_strtok_r.h
 pear/include/TSRM/tsrm_virtual_cwd.h
 pear/include/TSRM/tsrm_win32.h
-@dir pear/include/Zend
+pear/include/Zend/
 pear/include/Zend/FlexLexer.h
 pear/include/Zend/acconfig.h
 pear/include/Zend/zend.h
@@ -76,10 +76,10 @@ pear/include/Zend/zend_static_allocator.h
 pear/include/Zend/zend_types.h
 pear/include/Zend/zend_variables.h
 pear/include/acconfig.h
-@dir pear/include/ext
-@dir pear/include/ext/mbstring
-@dir pear/include/ext/mbstring/libmbfl
-@dir pear/include/ext/mbstring/libmbfl/mbfl
+pear/include/ext/
+pear/include/ext/mbstring/
+pear/include/ext/mbstring/libmbfl/
+pear/include/ext/mbstring/libmbfl/mbfl/
 pear/include/ext/mbstring/libmbfl/mbfl/mbfilter.h
 pear/include/ext/mbstring/libmbfl/mbfl/mbfilter_8bit.h
 pear/include/ext/mbstring/libmbfl/mbfl/mbfilter_pass.h
@@ -98,14 +98,14 @@ pear/include/ext/mbstring/mbstring.h
 pear/include/ext/mbstring/php_mbregex.h
 pear/include/ext/mbstring/php_unicode.h
 pear/include/ext/mbstring/unicode_data.h
-@dir pear/include/ext/pgsql
+pear/include/ext/pgsql/
 pear/include/ext/pgsql/php_pgsql.h
-@dir pear/include/ext/session
+pear/include/ext/session/
 pear/include/ext/session/mod_files.h
 pear/include/ext/session/mod_mm.h
 pear/include/ext/session/mod_user.h
 pear/include/ext/session/php_session.h
-@dir pear/include/ext/standard
+pear/include/ext/standard/
 pear/include/ext/standard/aggregation.h
 pear/include/ext/standard/base64.h
 pear/include/ext/standard/basic_functions.h
@@ -164,8 +164,8 @@ pear/include/ext/standard/uniqid.h
 pear/include/ext/standard/url.h
 pear/include/ext/standard/url_scanner.h
 pear/include/ext/standard/url_scanner_ex.h
-@dir pear/include/ext/xml
-@dir pear/include/ext/xml/expat
+pear/include/ext/xml/
+pear/include/ext/xml/expat/
 pear/include/ext/xml/expat/ascii.h
 pear/include/ext/xml/expat/asciitab.h
 pear/include/ext/xml/expat/expat.h
@@ -179,7 +179,7 @@ pear/include/ext/xml/expat/xmlrole.h
 pear/include/ext/xml/expat/xmltok.h
 pear/include/ext/xml/expat/xmltok_impl.h
 pear/include/ext/xml/php_xml.h
-@dir pear/include/main
+pear/include/main/
 pear/include/main/SAPI.h
 pear/include/main/build-defs.h
 pear/include/main/config.nw.h
@@ -214,15 +214,15 @@ pear/include/main/safe_mode.h
 pear/include/main/snprintf.h
 pear/include/main/spprintf.h
 pear/include/main/win95nt.h
-@dir pear/include/regex
+pear/include/regex/
 pear/include/regex/cclass.h
 pear/include/regex/cname.h
 pear/include/regex/regex.h
 pear/include/regex/regex2.h
 pear/include/regex/regex_extra.h
 pear/include/regex/utils.h
-@dir pear/lib
-@dir pear/lib/.registry
+pear/lib/
+pear/lib/.registry/
 pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg
 pear/lib/.registry/db.reg
@@ -233,11 +233,11 @@ pear/lib/.registry/net_socket.reg
 pear/lib/.registry/pear.reg
 pear/lib/.registry/xml_parser.reg
 pear/lib/.registry/xml_rpc.reg
-@dir pear/lib/Archive
+pear/lib/Archive/
 pear/lib/Archive/Tar.php
-@dir pear/lib/Console
+pear/lib/Console/
 pear/lib/Console/Getopt.php
-@dir pear/lib/DB
+pear/lib/DB/
 pear/lib/DB.php
 pear/lib/DB/common.php
 pear/lib/DB/dbase.php
@@ -255,23 +255,23 @@ pear/lib/DB/sqlite.php
 pear/lib/DB/storage.php
 pear/lib/DB/sybase.php
 pear/lib/HTTP.php
-@dir pear/lib/Mail
+pear/lib/Mail/
 pear/lib/Mail.php
 pear/lib/Mail/RFC822.php
 pear/lib/Mail/mail.php
 pear/lib/Mail/null.php
 pear/lib/Mail/sendmail.php
 pear/lib/Mail/smtp.php
-@dir pear/lib/Net
+pear/lib/Net/
 pear/lib/Net/SMTP.php
 pear/lib/Net/Socket.php
-@dir pear/lib/OS
+pear/lib/OS/
 pear/lib/OS/Guess.php
-@dir pear/lib/PEAR
+pear/lib/PEAR/
 pear/lib/PEAR.php
 pear/lib/PEAR/Autoloader.php
 pear/lib/PEAR/Builder.php
-@dir pear/lib/PEAR/Command
+pear/lib/PEAR/Command/
 pear/lib/PEAR/Command.php
 pear/lib/PEAR/Command/Auth.php
 pear/lib/PEAR/Command/Build.php
@@ -287,28 +287,28 @@ pear/lib/PEAR/Config.php
 pear/lib/PEAR/Dependency.php
 pear/lib/PEAR/Downloader.php
 pear/lib/PEAR/ErrorStack.php
-@dir pear/lib/PEAR/Frontend
+pear/lib/PEAR/Frontend/
 pear/lib/PEAR/Frontend/CLI.php
 pear/lib/PEAR/Installer.php
 pear/lib/PEAR/Packager.php
 pear/lib/PEAR/Registry.php
 pear/lib/PEAR/Remote.php
 pear/lib/System.php
-@dir pear/lib/XML
+pear/lib/XML/
 pear/lib/XML/Parser.php
-@dir pear/lib/XML/RPC
+pear/lib/XML/RPC/
 pear/lib/XML/RPC.php
 pear/lib/XML/RPC/Server.php
 pear/lib/pearcmd.php
-@dir pear/tests
-@dir pear/tests/DB
-@dir pear/tests/DB/tests
+pear/tests/
+pear/tests/DB/
+pear/tests/DB/tests/
 pear/tests/DB/tests/db_error.phpt
 pear/tests/DB/tests/db_error2.phpt
 pear/tests/DB/tests/db_factory.phpt
 pear/tests/DB/tests/db_ismanip.phpt
 pear/tests/DB/tests/db_parsedsn.phpt
-@dir pear/tests/DB/tests/driver
+pear/tests/DB/tests/driver/
 pear/tests/DB/tests/driver/01connect.phpt
 pear/tests/DB/tests/driver/02fetch.phpt
 pear/tests/DB/tests/driver/03simplequery.phpt
@@ -344,8 +344,8 @@ pear/tests/DB/tests/sequences.inc
 pear/tests/DB/tests/simplequery.inc
 pear/tests/DB/tests/skipif.inc
 pear/tests/DB/tests/transactions.inc
-@dir pear/tests/XML_Parser
-@dir pear/tests/XML_Parser/tests
+pear/tests/XML_Parser/
+pear/tests/XML_Parser/tests/
 pear/tests/XML_Parser/tests/001.phpt
 pear/tests/XML_Parser/tests/002.phpt
 pear/tests/XML_Parser/tests/003.phpt

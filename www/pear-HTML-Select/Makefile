@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/21 07:01:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/03 12:54:39 espie Exp $
 
 COMMENT=	"class for generating HTML form select elements for PHP"
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-MODULES=	pear
+MODULES=	www/php4/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

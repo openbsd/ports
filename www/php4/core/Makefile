@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/06/08 15:59:54 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/03 12:54:40 espie Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--enable-yp \
 		--enable-exif
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # some variables to substitute 
 SUBST_VARS=	PHP_CONFIG_FILE
