@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/04/21 14:33:47 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=	"u-law to gsm encoding audio converter and library"
 
 DISTNAME=	gsm-1.0.10
 CATEGORIES=	audio
-NEED_VERSION=	1.384
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

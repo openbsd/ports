@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/23 02:02:45 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/03/21 20:35:41 espie Exp $
 
 COMMENT=	"extract, view & test ACE archives"
 
 DISTNAME=	unace-1.2b
 CATEGORIES=	archivers
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/compress
 

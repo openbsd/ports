@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2002/02/15 19:53:42 matt Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
 DISTNAME=       bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.475
+NEED_VERSION=	1.515
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/10 19:20:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=	"interface to libcdaudio"
 DISTNAME=	Audio-CD-0.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

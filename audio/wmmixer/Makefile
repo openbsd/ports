@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/26 22:21:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
 DISTNAME=		wmmixer-1.0-beta1
 PKGNAME=		wmmixer-1.0b1
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

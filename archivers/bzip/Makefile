@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/28 13:05:44 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/03/21 20:35:41 espie Exp $
 
 COMMENT=	"block-sorting file compressor, encumbered"
 
 DISTNAME=	bzip-0.21
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 PERMIT_PACKAGE_CDROM=	No

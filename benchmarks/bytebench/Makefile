@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/27 20:56:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"BYTE magazine benchmark suite"
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.250
+NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

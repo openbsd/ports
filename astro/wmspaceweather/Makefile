@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 20:35:41 espie Exp $
 
 COMMENT=		'wm-dockapp; space weather monitor'
 
 DISTNAME=		wmSpaceWeather-1.04
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		astro x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 

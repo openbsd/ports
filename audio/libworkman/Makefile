@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=		'multi-platform CD-Player library'
 
 DISTNAME=		libworkman-1999-06-20
 PKGNAME=		libworkman-1.4
 CATEGORIES=		audio
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://studserver.uni-dortmund.de/~su0922/WorkMan/
 

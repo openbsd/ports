@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/08/30 02:05:14 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"performance test of filesystem I/O"
 
 DISTNAME=	Bonnie
 PKGNAME=	bonnie-1.0
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.435
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
 		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
 EXTRACT_SUFX=	.tar.Z

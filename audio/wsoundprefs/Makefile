@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=		'preferences program for wsoundserver'
 
 DISTNAME=		WSoundPrefs-1.1.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://shadowmere.student.utwente.nl/
 

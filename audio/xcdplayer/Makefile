@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"CD player for X11"
 DISTNAME=	xcdplayer-2.2
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z

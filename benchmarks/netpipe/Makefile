@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/05 21:59:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:35:43 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	"self-scaling network benchmark"
 DISTNAME=	netpipe-2.4
 CATEGORIES=	benchmarks net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

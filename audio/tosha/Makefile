@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/24 12:41:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=	"read CD digital audio data through the SCSI bus"
 DISTNAME=	tosha-0.6
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

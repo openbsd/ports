@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/03/21 20:35:41 espie Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -6,7 +6,7 @@ COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
 DISTNAME=	zip23
 PKGNAME=	zip-2.3
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
 		ftp://ftp.icce.rug.nl/infozip/src/
 

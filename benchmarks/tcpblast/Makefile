@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"measure the throughput of a TCP connection"
 
 PKGNAME=	tcpblast-1.0
 CATEGORIES=	net benchmarks
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 DISTFILES=
 
 PERMIT_PACKAGE_CDROM=	Yes

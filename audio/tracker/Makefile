@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/10 00:51:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=	MOD player
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
-NEED_VERSION=	1.383
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=	.tgz
 

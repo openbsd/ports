@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 20:35:41 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
 
 DISTNAME=	star-1.3
 CATEGORIES=	archivers sysutils
-NEED_VERSION=	1.405
+NEED_VERSION=	1.515
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

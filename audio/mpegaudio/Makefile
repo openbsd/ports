@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/13 03:24:11 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=	"MPEG/audio Layer 1 and Layer 2 encoder/decoder"
 DISTNAME=	mpegaudio
 PKGNAME=	mpegaudio-3.9
 CATEGORIES=	audio
-NEED_VERSION=   1.364
+NEED_VERSION=   1.515
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tar.Z
 

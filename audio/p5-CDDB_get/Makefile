@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/13 12:40:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=		"perl interface to query for cddb-information"
 
 DISTNAME=		CDDB_get-1.66
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		audio perl5
-NEED_VERSION=		1.413
+NEED_VERSION=		1.515
 
 HOMEPAGE= 		http://armin.emx.at/cddb/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 20:35:42 espie Exp $
 
 COMMENT=		'wm-dockapp; sound mixer'
 
 DISTNAME=		Mixer.app-1.7.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.fukt.hk-r.se/~per/mixer/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 20:35:43 espie Exp $
 
 COMMENT=	"chinese big5/gb truetype fonts"
 
 DISTNAME=       zh-arphicttf-2.11
 PKGNAME=	zh-fonts-arphicttf-2.11
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

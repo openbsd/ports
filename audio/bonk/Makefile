@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:35:41 espie Exp $
 
 COMMENT=	"lossy/lossless audio coder"
 
 DISTNAME=	bonk-0.5
 CATEGORIES=	audio
-NEED_VERSION=	1.419
+NEED_VERSION=	1.515
 HOMEPAGE=	http://yoyo.cc.monash.edu.au/~pfh/bonk/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
