@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_drivers_openbsd_c,v 1.1 2003/05/18 07:40:55 naddy Exp $
+--- src/drivers/openbsd.c.orig	Sat May 17 14:40:43 2003
++++ src/drivers/openbsd.c	Sat May 17 15:15:37 2003
+@@ -39,7 +39,6 @@ static void shutdown (void);
+ static void dummy () { }
+ 
+ static char *help[] = {
+-    "gain=val", "Audio output gain (0 to 255)",
+     "buffer=val", "Audio buffer size (default is 32768)",
+     NULL
+ };
+@@ -75,29 +74,22 @@ struct xmp_drv_info drv_openbsd = {
+ static int setaudio (struct xmp_control *ctl)
+ {
+     audio_info_t ainfo;
+-    int gain = 128;
+     int bsize = 32 * 1024;
+     char *token;
+     char **parm = ctl->parm;
+ 
+     parm_init ();
+-    chkparm1 ("gain", gain = atoi (token));
+     chkparm1 ("buffer", bsize = atoi (token));
+     parm_end ();
+ 
+-    if (gain < AUDIO_MIN_GAIN)
+-	gain = AUDIO_MIN_GAIN;
+-    if (gain > AUDIO_MAX_GAIN)
+-	gain = AUDIO_MAX_GAIN;
+-
+     AUDIO_INITINFO (&ainfo);
+ 
++    ainfo.mode = AUMODE_PLAY;
+     ainfo.play.sample_rate = ctl->freq;
+     ainfo.play.channels = ctl->outfmt & XMP_FMT_MONO ? 1 : 2;
+     ainfo.play.precision = ctl->resol;
+     ainfo.play.encoding = ctl->resol > 8 ?
+ 	AUDIO_ENCODING_SLINEAR : AUDIO_ENCODING_ULINEAR;
+-    ainfo.play.gain = gain;
+     ainfo.play.buffer_size = bsize;
+ 
+     if (ioctl (audio_fd, AUDIO_SETINFO, &ainfo) == -1) {

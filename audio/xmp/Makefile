@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/27 19:38:16 margarida Exp $
+# $OpenBSD: Makefile,v 1.19 2003/05/18 07:40:55 naddy Exp $
 
-COMMENT=	"extended Module Player; many formats plus an X11 display"
-DISTNAME=	xmp-1.1.5
+COMMENT=	"extended module player"
+COMMENT-xmms=	"extended module player plugin for XMMS"
+DISTNAME=	xmp-2.0.4
+PKGNAME-xmms=	xmms-${DISTNAME}
 CATEGORIES=	audio
 
 HOMEPAGE=	http://xmp.sourceforge.net/
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmp/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,17 +14,50 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PATCH_DIST_STRIP= -p1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmp/}
+
+PSEUDO_FLAVORS=	no_xmms
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "vax"
+FLAVOR?=	no_xmms
+.else
+FLAVOR?=
+.endif
+
+MULTI_PACKAGES=
+.if !{FLAVOR:L:Mno_xmms}
+MULTI_PACKAGES+= -xmms
+.endif
+SUBPACKAGE?=
+
+LIB_DEPENDS=	esd.2::audio/esound
+.if ${MULTI_PACKAGES:M-xmms}
+LIB_DEPENDS+=	xmms.3::audio/xmms
+.else
+CONFIGURE_ARGS+= --disable-xmms
+.endif
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/scripts
-USE_GMAKE=	Yes
-USE_X11=	Yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xmp ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xxmp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/xmp.1 ${PREFIX}/man/man1
-	@ln -sf xmp.1 ${PREFIX}/man/man1/xxmp.1
+FAKE_FLAGS=	DEST_DIR=${WRKINST} \
+		SYSCONF_DIR=${PREFIX}/share/examples/xmp
+
+pre-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmp \
+		${PREFIX}/lib/xmms/Input
+
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-xmms"
+LIB_DEPENDS=
+RUN_DEPENDS=	::audio/xmms
+.  else
+LIB_DEPENDS=	esd.2::audio/esound
+.  endif
+.endif
 
 .include <bsd.port.mk>

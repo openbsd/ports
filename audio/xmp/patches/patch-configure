@@ -1,17 +1,13 @@
-$OpenBSD: patch-configure,v 1.1 2001/04/05 19:31:42 espie Exp $
---- configure.orig	Wed May 20 20:43:13 1998
-+++ configure	Thu Apr  5 20:52:58 2001
-@@ -1317,6 +1317,13 @@ EOF
- #define DRIVER_SUNOS 1
- EOF
+$OpenBSD: patch-configure,v 1.2 2003/05/18 07:40:55 naddy Exp $
+--- configure.orig	Fri May 16 22:41:43 2003
++++ configure	Fri May 16 22:42:21 2003
+@@ -593,9 +593,6 @@ CINCS="${CPPFLAGS}"
+ PLUGIN=""
  
-+    ;;
-+    openbsd*)
-+	DRIVERS="${DRIVERS} solaris.o"
-+	cat >> confdefs.h <<\EOF
-+#define DRIVER_SOLARIS 1
-+EOF
-+    ;;
-     esac
- fi 
+ 
+-LDFLAGS=""
+-
+-
+ X_XMP="xxmp"
+ 
  
