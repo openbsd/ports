@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/08/25 15:01:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/13 15:39:37 naddy Exp $
 
-DISTNAME=	xterm-144
+DISTNAME=	xterm-146
 CATEGORIES=	x11
 NEED_VERSION=	1.319
 
@@ -19,6 +19,7 @@ FLAVOR?=
 MASTER_SITES=	ftp://dickey.his.com/xterm/
 EXTRACT_SUFX=	.tgz
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-wide-chars
 CFLAGS+=		-DUSE_POSIX_TERMIOS=1
