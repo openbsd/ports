@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/06/10 18:16:10 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/06/20 17:08:15 espie Exp $
 include/jbig.h
 bin/pbmtojbg
 bin/jbgtopbm
@@ -6,7 +6,5 @@ lib/libjbig.a
 %%SHARED%%
 man/man1/jbgtopbm.1
 man/man1/pbmtojbg.1
-man/man5/pbm.5
-man/man5/pgm.5
 share/doc/jbig/jbig.doc
 @dirrm share/doc/jbig
