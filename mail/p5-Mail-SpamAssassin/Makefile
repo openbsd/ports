@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/17 22:08:59 lebel Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.20
+DISTNAME=		Mail-SpamAssassin-2.30
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 NEED_VERSION=		1.515
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/released/ \
 			${MASTER_SITE_PERL_CPAN:=Mail/}
 
-RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS
+RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
+			:p5-Time-HiRes-*:devel/p5-Time-HiRes
 
 CONFIGURE_STYLE=	perl
 

@@ -1,34 +1,44 @@
-$OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.2 2002/05/02 15:26:37 wilfried Exp $
---- lib/Mail/SpamAssassin.pm.orig	Tue Apr 30 19:55:24 2002
-+++ lib/Mail/SpamAssassin.pm	Tue Apr 30 19:59:28 2002
-@@ -82,7 +82,6 @@ $DEBUG = 0;
- @default_rules_path = qw(
-         __prefix__/share/spamassassin
-         /usr/local/share/spamassassin
--  	/usr/share/spamassassin
- 	./rules
- 	../rules
- );
-@@ -91,10 +90,6 @@ $DEBUG = 0;
- @site_rules_path = qw(
-         __prefix__/etc/mail/spamassassin
-         __prefix__/etc/spamassassin
--        /usr/local/etc/spamassassin
--	/usr/pkg/etc/spamassassin
--        /usr/etc/spamassassin
--  	/etc/mail/spamassassin
-   	/etc/spamassassin
+$OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.3 2002/06/17 22:08:59 lebel Exp $
+--- lib/Mail/SpamAssassin.pm.orig	Fri Jun 14 19:17:15 2002
++++ lib/Mail/SpamAssassin.pm	Mon Jun 17 17:06:22 2002
+@@ -89,33 +89,28 @@ $HOME_URL = "http://spamassassin.org/";
+ @default_rules_path = (
+         '__prefix__/share/spamassassin',
+         '/usr/local/share/spamassassin',
+-  	'/usr/share/spamassassin',
+-	'./rules',
+-	'../rules',
++	    './rules',
++	    '../rules'
  );
  
-@@ -106,9 +101,9 @@ $DEBUG = 0;
- @default_prefs_path = qw(
-         __prefix__/etc/mail/spamassassin/user_prefs.template
-         __prefix__/share/spamassassin/user_prefs.template
--        /etc/mail/spamassassin/user_prefs.template
-         /usr/local/share/spamassassin/user_prefs.template
--        /usr/share/spamassassin/user_prefs.template
-+	./rules/user_prefs.template
-+	../rules/user_prefs.template
+ # first 3 are BSDish, latter 2 Linuxish
+ @site_rules_path = (
+         '__prefix__/etc/mail/spamassassin',
+         '__prefix__/etc/spamassassin',
+-        '/usr/local/etc/spamassassin',
+-	'/usr/pkg/etc/spamassassin',
+-        '/usr/etc/spamassassin',
+-  	'/etc/mail/spamassassin',
+-  	'/etc/spamassassin',
++  	    '/etc/spamassassin'
  );
  
- @default_userprefs_path = qw(
+ @old_site_rules_path = (
+-  	'/etc/mail/spamassassin.cf',
+-  	'/etc/spamassassin.cf',
++  	    '/etc/mail/spamassassin.cf',
++  	    '/etc/spamassassin.cf'
+ );
+     
+ @default_prefs_path = (
+         '__prefix__/etc/mail/spamassassin/user_prefs.template',
+         '__prefix__/share/spamassassin/user_prefs.template',
+-        '/etc/mail/spamassassin/user_prefs.template',
+         '/usr/local/share/spamassassin/user_prefs.template',
+-        '/usr/share/spamassassin/user_prefs.template',
++        './rules/user_prefs.template',
++        './rules/user_prefs.template'
+ );
+ 
+ @default_userprefs_path = (

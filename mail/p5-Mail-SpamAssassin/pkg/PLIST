@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/02 15:26:37 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/06/17 22:08:59 lebel Exp $
 bin/spamassassin
 bin/spamc
 bin/spamd
@@ -22,6 +22,7 @@ ${P5SITE}/Mail/SpamAssassin/PhraseFreqs.pm
 ${P5SITE}/Mail/SpamAssassin/Replier.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SMTP/SmartHost.pm
+${P5SITE}/Mail/SpamAssassin/TextCat.pm
 ${P5SITE}/auto/Mail/SpamAssassin/SMTP/SmartHost/autosplit.ix
 man/man1/spamassassin.1
 man/man1/spamc.1
@@ -43,12 +44,17 @@ share/spamassassin/20_head_tests.cf
 share/spamassassin/20_uri_tests.cf
 share/spamassassin/25_body_tests_es.cf
 share/spamassassin/25_body_tests_pl.cf
+share/spamassassin/25_head_tests_es.cf
 share/spamassassin/25_head_tests_pl.cf
+share/spamassassin/30_text_de.cf
 share/spamassassin/30_text_es.cf
+share/spamassassin/30_text_fr.cf
 share/spamassassin/30_text_pl.cf
 share/spamassassin/40_spam_phrases.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_whitelist.cf
+share/spamassassin/languages
+share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
 @dirrm share/spamassassin
 @dirrm share/doc/SpamAssassin
