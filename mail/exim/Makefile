@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.45 2004/10/10 10:29:53 sturm Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 VERSION=	4.41
@@ -89,7 +89,7 @@ do-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
-	${INSTALL_DATA} ${WRKINST}/etc/exim/configure ${PREFIX}/share/examples/exim
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/exim/configure ${PREFIX}/share/examples/exim
 	${INSTALL_DATA} ${WRKSRC}/build-`uname -s`-`uname -m`/convert4r4 ${PREFIX}/share/examples/exim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
