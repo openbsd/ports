@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.272 2000/04/22 18:57:00 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.273 2000/04/22 19:20:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2053,7 +2053,7 @@ _fetch-makefile-helper:
 FULL_PACKAGE_NAME=No
 .endif 
 
-# Make variables to pass along on recursive depends computations
+# Make variables to pass along on recursive builds
 _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR='' SUBPACKAGE=''
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
@@ -2132,7 +2132,7 @@ ${_DEP}-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
-			if cd $$dir && make $$target; then \
+			if cd $$dir && make ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
 			else \
 				exit 1; \
@@ -2165,7 +2165,7 @@ lib-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$lib in $$dir"; \
-			if cd $$dir && make $$target; then \
+			if cd $$dir && make ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				rm -f $$tmp; \
@@ -2194,7 +2194,7 @@ lib-depends:
 		if [ "X$$reallib" = X"" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
-			if cd $$dir && make $$target; then \
+			if cd $$dir && make ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				exit 1; \
@@ -2222,7 +2222,7 @@ misc-depends:
 		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
-		if cd $$dir && make $$target; then \
+		if cd $$dir && make ${_DEPEND_THRU} $$target; then \
 			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 		else \
 			exit 1; \
@@ -2255,7 +2255,7 @@ clean-depends:
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null ; then \
-			make CLEANDEPENDS=No clean clean-depends; \
+			make CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 		fi \
 	done
 .  endif
