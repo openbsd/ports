@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/08 12:46:54 naddy Exp $
 
-DISTNAME=	ion-20001229
+DISTNAME=	ion-20010106
 HOMEPAGE=	http://www.students.tut.fi/~tuomov/ion/
 
 CATEGORIES=	x11
