@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/08 20:15:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/15 20:35:50 jolan Exp $
 
 COMMENT=	"Beneath A Steel Sky"
 DISTNAME=	BASS-CD
-DIST_SUBDIR=	bass
 PKGNAME=	bass-0	# Unversioned
+DIST_SUBDIR=	${PKGNAME}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
