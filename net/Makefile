@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2002/02/27 01:37:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.198 2002/02/28 19:46:51 couderc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -137,6 +137,7 @@
      SUBDIR += rrdtool
      SUBDIR += rrdtool,tcl
      SUBDIR += rsync
+     SUBDIR += ruby-pcap
      SUBDIR += samba
      SUBDIR += sharity-light
      SUBDIR += silc-client
