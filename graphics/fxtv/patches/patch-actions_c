@@ -1,6 +1,7 @@
---- actions.c.orig	Sun May 28 19:23:57 2000
-+++ actions.c	Sun May 28 19:24:17 2000
-@@ -740,10 +740,12 @@
+$OpenBSD: patch-actions_c,v 1.1 2001/03/07 07:55:58 fgsch Exp $
+--- actions.c.orig	Mon Feb 12 16:26:23 2001
++++ actions.c	Wed Mar  7 04:25:01 2001
+@@ -749,10 +749,12 @@ static void TVActionToggleZoomAction(
      TVSCREENSetZoomState( !d->zoom_on, fullscreen );
      TVTOOLSSetToggleState( TV_TOOLITEM_FULLSCREEN, d->zoom_on );
      

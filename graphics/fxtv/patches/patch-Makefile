@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/07 07:55:57 fgsch Exp $
+--- Makefile.orig	Mon Feb 12 19:08:59 2001
++++ Makefile	Wed Mar  7 04:35:13 2001
+@@ -82,7 +82,7 @@ endif
+ override LDFLAGS           = $(LD_INC) 
+ override VIDEOLIB_LIB      = $(VIDEOLIB_DIR)/libvideo.a
+ override LIBS              = -ltiff -ljpeg -lXaw3d -lXmu -lXt -lXpm \
+-                             -lSM -lICE -lXext -lX11 -lm
++                             -lSM -lICE -lXext -lX11 -lm -lossaudio
+ ifeq ($(HAVE_XFREE86),YES)
+   override LIBS           += -lXxf86dga -lXxf86vm
+ endif
+@@ -91,7 +91,7 @@ ifneq ($(DEBUG),NO)
+   override LDFLAGS        := -g $(LDFLAGS)
+ endif
+ 
+-override FXTV_LIBDIR       = $(X11BASEINST)/lib/X11/fxtv
++override FXTV_LIBDIR       = $(PREFIX)/lib/X11/fxtv
+ 
+ override CSRC              = $(wildcard *.c)
+ override PIXMAPS           = $(wildcard bitmaps/*.x?m)
+@@ -119,11 +119,11 @@ install : fxtv
+ 	mkdir -p $(FXTV_LIBDIR)/bitmaps
+ 	install -c -m 444 -o root $(PIXMAPS) $(FXTV_LIBDIR)/bitmaps
+ 	install -c -m 444 -o root README $(FXTV_LIBDIR)
+-	mkdir -p $(X11BASEINST)/lib/X11/app-defaults
+-	install -c -m 444 -o root Fxtv $(X11BASEINST)/lib/X11/app-defaults
+-	mkdir -p $(X11BASEINST)/bin
+-	install -c -m 444 -o root fxtv.1 $(X11BASEINST)/man/man1/fxtv.1
+-	install -c -m 555 -o root fxtv $(X11BASEINST)/bin
++	mkdir -p $(PREFIX)/lib/X11/app-defaults
++	install -c -m 444 -o root Fxtv $(PREFIX)/lib/X11/app-defaults
++	mkdir -p $(PREFIX)/bin
++	install -c -m 444 -o root fxtv.1 $(PREFIX)/man/man1/fxtv.1
++	install -c -m 555 -o root fxtv $(PREFIX)/bin
+ 	install -c -m 555 -o root fxtv_cnvt.sh $(FXTV_LIBDIR)
+ 
+ clean:

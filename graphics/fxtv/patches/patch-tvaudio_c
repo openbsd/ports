@@ -1,0 +1,18 @@
+$OpenBSD: patch-tvaudio_c,v 1.1 2001/03/07 07:55:59 fgsch Exp $
+--- tvaudio.c.orig	Mon Feb 12 11:56:29 2001
++++ tvaudio.c	Wed Mar  7 04:26:42 2001
+@@ -104,12 +104,14 @@ static void TVAUDIOSetMixerMask()
+         Mixer_dev_mask = SOUND_MASK_MIC;
+         Mixer_dev_name = "MIC";
+     }
++#if !defined(__OpenBSD__)
+ #ifdef SOUND_MIXER_VIDEO
+     else if ( STREQ( buf, "VIDEO" ) ) {
+        Mixer_dev_id   = SOUND_MIXER_VIDEO;
+        Mixer_dev_mask = SOUND_MASK_VIDEO;
+        Mixer_dev_name = "VIDEO";
+     }
++#endif
+ #endif
+     else if ( STREQ( buf, "LINE" ) ) {
+         Mixer_dev_id   = SOUND_MIXER_LINE;

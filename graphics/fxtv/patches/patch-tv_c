@@ -1,6 +1,7 @@
---- tv.c.orig	Sun May 28 19:26:36 2000
-+++ tv.c	Sun May 28 19:27:37 2000
-@@ -220,6 +220,7 @@
+$OpenBSD: patch-tv_c,v 1.1 2001/03/07 07:55:59 fgsch Exp $
+--- tv.c.orig	Mon Feb 12 16:03:09 2001
++++ tv.c	Wed Mar  7 04:25:01 2001
+@@ -220,6 +220,7 @@ static void TVNewFrameHdlr( TV_IMAGE *im
  
  static void TVRemoteCallback( const char key[] )
  {
@@ -8,7 +9,7 @@
      TV_BOOL handled;
  
      /*  First, pass these through the user's Remote translation table      */
-@@ -230,6 +231,7 @@
+@@ -230,6 +231,7 @@ static void TVRemoteCallback( const char
          /*    generic "key" handler and take the default behavior.  */
          TVACTIONKeyEventHdlr( key, &handled );
      }
@@ -16,7 +17,7 @@
  }
  
  
-@@ -840,13 +842,15 @@
+@@ -842,13 +844,15 @@ int main( int argc, char *argv[] )
      XtAddEventHandler( top_level, (EventMask) 0, True, _XEditResCheckMessages,
                         NULL );
  
