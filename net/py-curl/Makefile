@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/31 19:24:21 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/04 05:10:05 shell Exp $
 
 COMMENT=	"python interface to cURL library"
 
-VERSION=	0.4.4
+VERSION=	0.4.5
 DISTNAME=	pycurl-${VERSION}
 PKGNAME=	py-curl-${VERSION}
 CATEGORIES=    	net
