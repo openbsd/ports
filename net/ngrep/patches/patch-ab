@@ -1,13 +1,16 @@
---- ngrep.c-orig	Tue Jun 22 23:58:26 1999
-+++ ngrep.c	Tue Jun 22 23:58:42 1999
-@@ -176,10 +176,6 @@
+--- ngrep.c-orig	Mon Jun 28 10:16:15 1999
++++ ngrep.c	Mon Jun 28 10:19:28 1999
+@@ -209,10 +209,12 @@
      ip_offset = PPPHDR_SIZE;
      break;
  
--  case DLT_RAW: 
--    ip_offset = RAWHDR_SIZE;
--    break;
++#if defined(DLT_RAW)
+   case DLT_RAW: 
+     ip_offset = RAWHDR_SIZE;
+     break;
 -
++#endif
++    
    default:
      fprintf(stderr,"fatal: unsupported interface type\n");
      exit(-1);
