@@ -8,8 +8,6 @@ bin/ssh-agent
 bin/ssh-askpass
 bin/ssh-keygen
 bin/make-ssh-known-hosts
-etc/ssh_config
-etc/sshd_config
 man/man1/make-ssh-known-hosts.1
 man/man1/scp.1
 man/man1/ssh-add.1
