@@ -1,0 +1,13 @@
+--- libpcap-possiblymodified/pcap-bpf.h.orig	Tue Jan 25 22:38:15 2005
++++ libpcap-possiblymodified/pcap-bpf.h	Tue Jan 25 22:39:42 2005
+@@ -239,8 +239,9 @@
+  * define it as 108 here.  If OpenBSD picks up this file, it should
+  * define DLT_LOOP as 12 in its version, as per the comment above -
+  * and should not use 108 as a DLT_ value.
++ *
+  */
+-#define DLT_LOOP	108
++#define DLT_LOOP	12
+ 
+ /*
+  * Encapsulated packets for IPsec; DLT_ENC is 13 in OpenBSD, but that's
