@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2003/02/18 23:59:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2003/04/13 19:32:47 sturm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -59,6 +59,7 @@
      SUBDIR += p5-CreditCard
 #    SUBDIR += p5-Business-CreditCard
      SUBDIR += p5-Finance-Quote
+     SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
      SUBDIR += p5-I18N-LangTags
      SUBDIR += p5-Locale-Codes
