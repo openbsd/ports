@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/10/26 21:21:18 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/08/07 03:54:16 brad Exp $
 #
 # Pre/post-installation setup of dopewars
 
@@ -14,9 +14,9 @@ SCORE_FILE=/var/games/dopewars.sco
 #
 do_install()
 {
-    touch /var/games/dopewars.sco
-    chown root.games /var/games/dopewars.sco
-    chmod 664 /var/games/dopewars.sco
+    touch $SCORE_FILE
+    chown root.games $SCORE_FILE
+    chmod 664 $SCORE_FILE
 }
 
 # verify proper execution

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/18 07:15:14 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/07 03:54:15 brad Exp $
 
 DISTNAME=	dopewars-1.4.8
 CATEGORIES=	games
@@ -25,10 +25,11 @@ DOCS=	index.html installation.html clientplay.html server.html \
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dopewars
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
 	${INSTALL_PROGRAM} ${WRKSRC}/dopewars ${PREFIX}/bin
 	@chown root.games ${PREFIX}/bin/dopewars
 	@chmod 2755 ${PREFIX}/bin/dopewars
-	${INSTALL_DATA} ${WRKSRC}/example-cfg ${PREFIX}/share/doc/dopewars/dopewars-cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/example-cfg ${PREFIX}/share/examples/dopewars/dopewars-cfg.sample
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/dopewars
 
 .include <bsd.port.mk>
