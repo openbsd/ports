@@ -1,6 +1,8 @@
+V=		4.0.3
+
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4/desktop
 
-MASTER_SITES?=	http://www.xfce.org/archive/xfce-4.0.2/src/
+MASTER_SITES?=	http://www.xfce.org/archive/xfce-${V}/src/
 DIST_SUBDIR?=	xfce4
 
 HOMEPAGE?=	http://www.xfce.org/

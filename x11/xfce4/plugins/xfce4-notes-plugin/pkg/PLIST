@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/09 01:27:43 jolan Exp $
 lib/xfce4/panel-plugins/libnotes.a
 lib/xfce4/panel-plugins/libnotes.la
 lib/xfce4/panel-plugins/libnotes.so
 share/xfce4/notes/note.png
 @dirrm share/xfce4/notes
-@dirrm share/xfce4
-@dirrm lib/xfce4/panel-plugins
-@dirrm lib/xfce4

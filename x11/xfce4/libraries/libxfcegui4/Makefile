@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 21:48:00 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:43 jolan Exp $
 
 COMMENT=	"widget library required by xfce4 and xfwm4"
-DISTNAME=	libxfcegui4-4.0.2
+DISTNAME=	libxfcegui4-${V}
 
 LIB_DEPENDS=	${GTK2} \
 		${UTIL}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 21:47:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:42 jolan Exp $
 
 COMMENT=	"settings manager plug-ins for xfce4"
-DISTNAME=	xfce-mcs-plugins-4.0.2
+DISTNAME=	xfce-mcs-plugins-${V}
 
 LIB_DEPENDS=	${GTK2} \
 		${MCS} \

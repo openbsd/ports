@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/09 01:27:43 jolan Exp $
 lib/locale/de/LC_MESSAGES/xfce4-fsguard.mo
 lib/xfce4/panel-plugins/libfsguard.a
 lib/xfce4/panel-plugins/libfsguard.la
 lib/xfce4/panel-plugins/libfsguard.so
-@dirrm lib/xfce4/panel-plugins
-@dirrm lib/xfce4
 @dirrm lib/locale/de/LC_MESSAGES
 @dirrm lib/locale/de
 @dirrm lib/locale

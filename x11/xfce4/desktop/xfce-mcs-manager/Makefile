@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 21:47:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:42 jolan Exp $
 
 COMMENT=	"settings manager for xfce4"
-DISTNAME=	xfce-mcs-manager-4.0.2
+DISTNAME=	xfce-mcs-manager-${V}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 21:48:00 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:43 jolan Exp $
 
 CATEGORIES=	x11/xfce4 x11/xfce4/libraries devel
 
 COMMENT=	"basic utility library for xfce4"
-DISTNAME=	libxfce4util-4.0.2
+DISTNAME=	libxfce4util-${V}
 
 USE_X11=	No
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:50 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/09 01:27:43 jolan Exp $
 share/xfwm4/themes/adept/README
 share/xfwm4/themes/adept/bottom-active.xpm
 share/xfwm4/themes/adept/bottom-inactive.xpm
@@ -2718,5 +2718,3 @@ share/xfwm4/themes/xfce/top-right-inactive.xpm
 @dirrm share/xfwm4/themes/agualemon
 @dirrm share/xfwm4/themes/agua
 @dirrm share/xfwm4/themes/adept
-@dirrm share/xfwm4/themes
-@dirrm share/xfwm4

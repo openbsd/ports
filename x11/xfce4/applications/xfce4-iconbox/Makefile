@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 21:47:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:42 jolan Exp $
 
 COMMENT=	"icon box; possible xfce-utils taskbar alternative"
-DISTNAME=	xfce4-iconbox-4.0.2
+DISTNAME=	xfce4-iconbox-${V}
 
 LIB_DEPENDS=	${GTK2} \
 		${MCS} \

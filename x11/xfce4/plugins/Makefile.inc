@@ -1,6 +1,8 @@
+V=	4.0.3
+
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4-plugins
 
-MASTER_SITE_EXTRAS=	http://www.xfce.org/archive/xfce-4.0.2/src/
+MASTER_SITE_EXTRAS=	http://www.xfce.org/archive/xfce-${V}/src/
 MASTER_SITE_GOODIES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR?=	xfce4
 

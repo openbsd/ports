@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/09 01:27:43 jolan Exp $
 share/xfce4/themes/BeOS/LICENSE
 share/xfce4/themes/BeOS/README
 share/xfce4/themes/BeOS/edit.png
@@ -115,5 +115,3 @@ share/xfce4/themes/Sky/unknown.png
 @dirrm share/xfce4/themes/Sky
 @dirrm share/xfce4/themes/Lush
 @dirrm share/xfce4/themes/BeOS
-@dirrm share/xfce4/themes
-@dirrm share/xfce4
