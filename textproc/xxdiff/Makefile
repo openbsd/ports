@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/02 16:37:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/24 23:04:10 naddy Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -37,7 +37,10 @@ post-extract:
 	@rm ${WRKSRC}/getopt1.c
 
 do-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/tmake -t xxdiff.t xxdiff.pro > ${WRKSRC}/Makefile
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/tmake -t xxdiff.t xxdiff.pro \
+		> ${WRKSRC}/Makefile
+	@cd ${WRKSRC} && make resParser.l.c && \
+		perl -i -pe 's/(\s)errno\b/$$1::errno/g' resParser.l.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxdiff ${PREFIX}/bin/xxdiff
