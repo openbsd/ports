@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/09 19:55:55 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/08 23:10:59 avsm Exp $
 
 DISTNAME=	GDGraph-1.33
 PKGNAME=	p5-GD-Graph-1.33
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= GD
 RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/GD.pm::graphics/p5-GD \
 		${LOCALBASE}/libdata/perl5/site_perl/GD/Text.pm::graphics/p5-GD-TextUtil
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
