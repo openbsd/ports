@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_linux_main_linux_c,v 1.1.1.1 2005/03/08 14:36:26 niallo Exp $
+--- src/linux/main_linux.c.orig	Fri Mar  4 10:57:15 2005
++++ src/linux/main_linux.c	Fri Mar  4 10:57:46 2005
+@@ -17,8 +17,9 @@ UNIX systems */
+ 
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/stat.h>
++#include <signal.h>
+ 
+ #include "types.h"
+ #include "nsf.h"
+@@ -223,7 +224,7 @@ static void open_hardware(const char *de
+    doesn't show up as a char device. The original author (Matthew Conte) seems
+    to have thought that esddsp should work without this hack.  Is doing this 
+    bad? --Matthew Strait */
+-   if( !S_ISCHR(status.st_mode) && strcmp("/dev/dsp", device))
++   if( !S_ISCHR(status.st_mode) && strcmp("/dev/audio", device))
+    {
+       printf("%s is not a character device.\n", device);
+       exit(1);
+@@ -305,7 +306,7 @@ static void show_help(void)
+    printf("\t-h  \tHelp\n");
+    printf("\t-v  \tVersion information\n");
+    printf("\n\t-t x\tStart playing track x (default: 1)\n");
+-   printf("\n\t-d x\tUse device x (default: /dev/dsp)\n");
++   printf("\n\t-d x\tUse device x (default: /dev/audio)\n");
+    printf("\t-s x\tPlay at x times the normal speed.\n");
+    printf("\t-f x\tUse x sampling rate (default: 44100)\n");
+    printf("\t-l x\tLimit total playing time to x seconds (0 = unlimited)\n");
+@@ -565,7 +566,7 @@ static void close_nsf_file(void)
+ /* HAS ROOT PERMISSIONS -- BE CAREFUL */
+ int main(int argc, char **argv)
+ {
+-   char *device = "/dev/dsp";
++   char *device = "/dev/audio";
+    char *filename;
+    int track = 1;
+    int done = 0;
