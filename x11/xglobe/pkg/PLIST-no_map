@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-no_map,v 1.1 2000/05/19 14:04:38 espie Exp $
+bin/xglobe
+lib/xglobe/xglobe-markers
+@exec echo "This package flavor does not hold a default map"
+@exec echo "See http://wwwrzstud.rz.uni-karlsruhe.de/~uddn/xglobe/"
+@dirrm lib/xglobe
