@@ -2,7 +2,7 @@
 # Date created:         May 18 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 03:55:37 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/09 20:23:11 marc Exp $
 #
 
 DISTNAME=	xfed
@@ -15,6 +15,11 @@ MAINTAINER=	angelos@opensbd.org
 USE_IMAKE=	yes
 MAKE_FLAGS=	MANDIR=${PREFIX}/man/man1
 BINDIR=${PREFIX}/bin -f
+
+# As the xfed tarball is created on the fly the checksum will always
+# be incorrect; so don't bother...
+#
+NO_CHECKSUM=	yes
 
 pre-clean:
 	-rm -rf ${.CURDIR}/src
