@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/12 18:42:10 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/12 19:28:44 angelos Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
-
-BROKEN=		bad packaging
 
 DISTNAME=	fxtv-0.48
 CATEGORIES=	graphics

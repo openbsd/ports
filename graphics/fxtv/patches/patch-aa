@@ -1,38 +1,44 @@
-*** Makefile.orig	Sat Jan 16 11:13:47 1999
---- Makefile	Tue Mar 23 17:59:08 1999
-***************
-*** 9,15 ****
-  override CF_VERS           = -DVERS_STR=\"0.48\"
-  override INC               = -I$(X11BASE)/include -I/usr/local/include \
-  	                     -I/usr/local/include/tiff34 -I.
-! override LD_INC            = -L$(X11BASE)/lib -L/usr/local/lib -rpath-link /usr/local/lib
-  override CFLAGS            = -O2 -m486 $(INC) $(CF_VERS)
-  ifeq ($(DEBUG),YES)
-    override CFLAGS          = -DDEBUG -g $(INC) $(CF_VERS)
---- 9,15 ----
-  override CF_VERS           = -DVERS_STR=\"0.48\"
-  override INC               = -I$(X11BASE)/include -I/usr/local/include \
-  	                     -I/usr/local/include/tiff34 -I.
-! override LD_INC            = -L$(X11BASE)/lib -L/usr/local/lib
-  override CFLAGS            = -O2 -m486 $(INC) $(CF_VERS)
-  ifeq ($(DEBUG),YES)
-    override CFLAGS          = -DDEBUG -g $(INC) $(CF_VERS)
-***************
-*** 19,26 ****
-  endif
-  
-  override LDFLAGS           = $(LD_INC) 
-! override LIBS              = -ltiff34 -lXaw3d -lXmu -lXt -lXpm -lSM -lICE \
-!                              -lXext -lX11 -lm
-  ifeq ($(HAVE_XFREE86),YES)
-    override LIBS           += -lXxf86dga -lXxf86vm
-  endif
---- 19,26 ----
-  endif
-  
-  override LDFLAGS           = $(LD_INC) 
-! override LIBS              = -ltiff -ljpeg -lz -lXaw3d -lXmu -lXt -lXpm \
-! 			     -lSM -lICE -lXext -lX11 -lm -lossaudio
-  ifeq ($(HAVE_XFREE86),YES)
-    override LIBS           += -lXxf86dga -lXxf86vm
-  endif
+--- Makefile.orig	Sat Jan 16 14:13:47 1999
++++ Makefile	Wed Apr 12 15:19:51 2000
+@@ -9,7 +9,7 @@
+ override CF_VERS           = -DVERS_STR=\"0.48\"
+ override INC               = -I$(X11BASE)/include -I/usr/local/include \
+ 	                     -I/usr/local/include/tiff34 -I.
+-override LD_INC            = -L$(X11BASE)/lib -L/usr/local/lib -rpath-link /usr/local/lib
++override LD_INC            = -L$(X11BASE)/lib -L/usr/local/lib
+ override CFLAGS            = -O2 -m486 $(INC) $(CF_VERS)
+ ifeq ($(DEBUG),YES)
+   override CFLAGS          = -DDEBUG -g $(INC) $(CF_VERS)
+@@ -19,8 +19,8 @@
+ endif
+ 
+ override LDFLAGS           = $(LD_INC) 
+-override LIBS              = -ltiff34 -lXaw3d -lXmu -lXt -lXpm -lSM -lICE \
+-                             -lXext -lX11 -lm
++override LIBS              = -ltiff -ljpeg -lz -lXaw3d -lXmu -lXt -lXpm \
++			     -lSM -lICE -lXext -lX11 -lm -lossaudio
+ ifeq ($(HAVE_XFREE86),YES)
+   override LIBS           += -lXxf86dga -lXxf86vm
+ endif
+@@ -29,7 +29,7 @@
+   override LDFLAGS        := -g $(LDFLAGS)
+ endif
+ 
+-override FXTV_LIBDIR       = $(X11BASE)/lib/X11/fxtv
++override FXTV_LIBDIR       = $(PREFIX)/lib/X11/fxtv
+ 
+ override CSRC              = $(wildcard *.c)
+ override PIXMAPS           = $(wildcard bitmaps/*.x?m)
+@@ -58,8 +58,8 @@
+ 	mkdir -p $(FXTV_LIBDIR)/bitmaps
+ 	install -c -m 444 -o root $(PIXMAPS) $(FXTV_LIBDIR)/bitmaps
+ 	install -c -m 444 -o root README $(FXTV_LIBDIR)
+-	mkdir -p $(X11BASE)/lib/X11/app-defaults
+-	install -c -m 444 -o root Fxtv $(X11BASE)/lib/X11/app-defaults
+-	mkdir -p $(X11BASE)/bin
+-	install -c -m 555 -o root fxtv $(X11BASE)/bin
++	mkdir -p $(PREFIX)/lib/X11/app-defaults
++	install -c -m 444 -o root Fxtv $(PREFIX)/lib/X11/app-defaults
++	mkdir -p $(PREFIX)/bin
++	install -c -m 555 -o root fxtv $(PREFIX)/bin
+ 	install -c -m 555 -o root fxtv_cnvt.sh $(FXTV_LIBDIR)
