@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2005/03/22 20:48:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2005/04/05 09:18:20 espie Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	teTeX_base-${VERSION}p0
-PKGNAME-fmt=	teTeX_base-fmt-${VERSION}
+PKGNAME=	teTeX_base-${VERSION}p1
+FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
@@ -57,9 +57,8 @@ SUBPACKAGE?=
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-fmt"
 PREFIX=		/var
-FULLPKGNAME-fmt=${PKGNAME-fmt}
 .  else
-RUN_DEPENDS+=	::print/teTeX/base,-fmt
+RUN_DEPENDS+=	:teTeX_base-fmt-${VERSION}:print/teTeX/base,-fmt
 .  endif
 .endif
 
