@@ -1,0 +1,36 @@
+--- hier.c.orig	Sun Dec 26 12:21:40 1999
++++ hier.c	Sun Dec 26 12:21:59 1999
+@@ -2,20 +2,20 @@
+ 
+ void hier()
+ {
+-  h(auto_home,-1,-1,02755);
++  h(auto_home,-1,-1,0755);
+ 
+-  d(auto_home,"bin",-1,-1,02755);
+-  d(auto_home,"lib",-1,-1,02755);
+-  d(auto_home,"include",-1,-1,02755);
+-  d(auto_home,"man",-1,-1,02755);
+-  d(auto_home,"man/man1",-1,-1,02755);
+-  d(auto_home,"man/man3",-1,-1,02755);
+-  d(auto_home,"man/man5",-1,-1,02755);
+-  d(auto_home,"man/man8",-1,-1,02755);
+-  d(auto_home,"man/cat1",-1,-1,02755);
+-  d(auto_home,"man/cat3",-1,-1,02755);
+-  d(auto_home,"man/cat5",-1,-1,02755);
+-  d(auto_home,"man/cat8",-1,-1,02755);
++  d(auto_home,"bin",-1,-1,0755);
++  d(auto_home,"lib",-1,-1,0755);
++  d(auto_home,"include",-1,-1,0755);
++  d(auto_home,"man",-1,-1,0755);
++  d(auto_home,"man/man1",-1,-1,0755);
++  d(auto_home,"man/man3",-1,-1,0755);
++  d(auto_home,"man/man5",-1,-1,0755);
++  d(auto_home,"man/man8",-1,-1,0755);
++  d(auto_home,"man/cat1",-1,-1,0755);
++  d(auto_home,"man/cat3",-1,-1,0755);
++  d(auto_home,"man/cat5",-1,-1,0755);
++  d(auto_home,"man/cat8",-1,-1,0755);
+ 
+   c(auto_home,"lib","mess822.a",-1,-1,0644);
+   c(auto_home,"include","mess822.h",-1,-1,0644);
