@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2004/04/18 17:38:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2004/06/30 22:18:45 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
-DISTNAME=	nano-1.2.3
+DISTNAME=	nano-1.2.4
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -23,7 +23,7 @@ FLAVOR?=
 MODULES=	gettext
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.57
+AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
@@ -36,7 +36,8 @@ CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
 post-install:
 	perl -i -pe 's:\$$SYSCONFDIR:${SYSCONFDIR}:g' \
 		${PREFIX}/man/man5/nanorc.5 \
-		${PREFIX}/man/man1/nano.1
+		${PREFIX}/man/man1/nano.1 \
+		${PREFIX}/info/nano.info
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${PREFIX}/share/examples/nano
 
