@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/02/19 06:42:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/02/19 20:53:50 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -27,7 +27,7 @@ FLAVOR?=	sun
 USE_GMAKE=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV+=	X11BASE="${X11BASE}"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
