@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.31 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2002/09/11 16:50:41 pvalchev Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.13
 CATEGORIES=	devel
-NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/ORBit/}
 
 HOMEPAGE=	http://www.labs.redhat.com/orbit/
+
+# workaround for a ld.so problem on alpha w/ orbit-idl
+.if (${MACHINE_ARCH} == "alpha")
+PATCH_LIST=		patch-* sup-alpha-*
+.endif
 
 MODULES=	gettext
 LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib \
