@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.308 2000/06/20 16:51:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.309 2000/06/28 15:06:26 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -788,12 +788,6 @@ _SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 _SED_SUBST+=-e 's,$${FLAVORS},${_FEXT},g' -e 's,$$\\,$$,g'
 # and append it to the PLIST substitution pipeline
 SED_PLIST+=|${_SED_SUBST}
-
-# compatibility kludge
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed${SUBPACKAGE})
-PLIST=${PKGDIR}/PLIST.sed${SUBPACKAGE}
-_SED_SUBST+=-e 's/@ARCH@/${ARCH}/g' -e 's/@FLAVORS@/${_FEXT}/g'
-.endif
 
 # find out the most appropriate PLIST  source
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.${ARCH})
