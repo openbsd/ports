@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/18 06:01:58 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/21 19:17:44 shell Exp $
 
 COMMENT=		"Python bindings for Gtk"
 COMMENT-gnome=		"Python bindings for Gtk and Gnome"
@@ -7,52 +7,54 @@ COMMENT-gnome=		"Python bindings for Gtk and Gnome"
 # overlaps py-gtk. Because of this version number inconsistancy, we use
 # py-gnome's version number, even for py-gtk.
 
-V=		1.4.1			## For py-gtk, this really is 0.6.8
-PKGNAME=	py-Gtk-${V}
-DISTNAME=	gnome-python-${V}
-CATEGORIES=	x11 devel
-NEED_VERSION=	1.405
+V=			1.4.1		## For py-gtk, this really is 0.6.8
+PKGNAME=		py-Gtk-${V}
+DISTNAME=		gnome-python-${V}
+CATEGORIES=		x11 devel
+NEED_VERSION=		1.405
 
-MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-python/
+MASTER_SITES=		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/gnome-python
 
-HOMEPAGE=	http://www.daa.com.au/~james/gnome/
 
-MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
+HOMEPAGE=		http://www.daa.com.au/~james/gnome/
+
+MAINTAINER=		Maurice Nonnekes <maurice@amaze.nl>
 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-LIB_DEPENDS+=	Imlib.19::graphics/imlib \
-		gtkgl.1.2::x11/gtkglarea
-
-FLAVORS=	gnome
+FLAVORS=		gnome
 FLAVOR?=
 
-USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+LIB_DEPENDS+=		Imlib.19::graphics/imlib \
+			gtkgl.1.2::x11/gtkglarea
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-thread
+USE_X11=		Yes
+USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
-PYTHON_VER=	2.1
-SUBST_VARS=	PYTHON_VER
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-thread
 
-CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
+PYTHON_VER=		2.1
+SUBST_VARS=		PYTHON_VER
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
+CONFIGURE_ENV=		PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
+
+RUN_DEPENDS+=		python${PYTHON_VER}::lang/python
+BUILD_DEPENDS+=		${RUN_DEPENDS}
 
 .if ${FLAVOR:L:Mgnome}
-  LIB_DEPENDS+=	glade.4::devel/libglade,gnome
+  LIB_DEPENDS+=		glade-gnome.4::devel/libglade,gnome
 .else
-  PATCH_STRIP=	-p1
-  PATCH_LIST=	patch-pygtk_configure patch-pygtk_gtkmodule_c
+  PATCH_STRIP=		-p1
+  PATCH_LIST=		patch-pygtk_configure patch-pygtk_gtkmodule_c
 
-  LIB_DEPENDS+=	glade.4::devel/libglade
-  WRKDIST=	${WRKDIR}/${DISTNAME}/pygtk
+  LIB_DEPENDS+=		glade.4::devel/libglade
+  WRKDIST=		${WRKDIR}/${DISTNAME}/pygtk
 .endif
 
 .include <bsd.port.mk>
