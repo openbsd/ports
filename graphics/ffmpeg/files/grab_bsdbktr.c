@@ -1,4 +1,4 @@
-/* $OpenBSD: grab_bsdbktr.c,v 1.3 2004/10/06 01:34:48 jolan Exp $
+/* $OpenBSD: grab_bsdbktr.c,v 1.4 2004/10/13 01:38:21 jolan Exp $
  *
  * FreeBSD video grab interface
  * Copyright (c) 2002 Steve O'Hara-Smith
@@ -255,6 +255,7 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	st = av_new_stream(s1, 0);
 	if (!st)
 		return -ENOMEM;
+	av_set_pts_info(st, 48, 1, 1000000); /* 48 bits pts in use */
 
 	s->width = width;
 	s->height = height;
@@ -271,7 +272,6 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	st->codec.frame_rate = frame_rate;
 	st->codec.frame_rate_base = frame_rate_base;
 
-	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in use */
 
    if (ap->standard) {
 		if (!strcasecmp(ap->standard, "pal"))

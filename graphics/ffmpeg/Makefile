@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/10/07 06:12:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2004/10/13 01:38:21 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	ffmpeg-0.4.9-pre1
@@ -9,16 +9,19 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
 
 HOMEPAGE=	http://ffmpeg.sourceforge.net/
 
+MAINTAINER=	Jacob Meuser <jakemsr@jakemsr.com>
+
 # GPL
 PERMIT_DISTFILES_CDROM=	"patents"
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	SDL.2.0::devel/sdl \
 		a52::audio/liba52 \
 		mp3lame.0.1::audio/lame \
-		vorbis.3.0,vorbisenc.2.0::audio/libvorbis \
+		vorbis.3.0,vorbisenc.2.0::audio/libvorbis
 
 NO_REGRESS=	Yes	# Possible to adapt with some work
 USE_GMAKE=	Yes
@@ -42,6 +45,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-vorbis \
 		--enable-a52bin \
 		--enable-gpl \
+		--enable-pthreads \
 		--disable-debug
 
 MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -55,9 +59,12 @@ post-extract:
 	@cp ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ffmpeg
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${PREFIX}/share/examples/ffmpeg
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffmpeg ${PREFIX}/bin/ffmpeg
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffplay ${PREFIX}/bin/ffplay
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffserver ${PREFIX}/bin/ffserver

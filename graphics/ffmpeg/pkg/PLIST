@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/07 06:12:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/13 01:38:21 jolan Exp $
 %%SHARED%%
 bin/ffmpeg
 bin/ffplay
@@ -16,5 +16,14 @@ include/postproc/
 include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavformat.a
+@man man/man1/ffmpeg.1
+@man man/man1/ffplay.1
+@man man/man1/ffserver.1
+share/doc/ffmpeg/
+share/doc/ffmpeg/faq.html
+share/doc/ffmpeg/ffmpeg-doc.html
+share/doc/ffmpeg/ffplay-doc.html
+share/doc/ffmpeg/ffserver-doc.html
+share/doc/ffmpeg/hooks.html
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf

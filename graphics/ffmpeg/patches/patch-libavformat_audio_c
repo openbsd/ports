@@ -1,19 +1,29 @@
-$OpenBSD: patch-libavformat_audio_c,v 1.1 2004/04/18 00:36:22 jolan Exp $
---- libavformat/audio.c.orig	2003-09-28 10:26:40.000000000 -0500
-+++ libavformat/audio.c	2004-02-24 22:02:33.000000000 -0600
-@@ -21,7 +21,11 @@
+$OpenBSD: patch-libavformat_audio_c,v 1.2 2004/10/13 01:38:21 jolan Exp $
+--- libavformat/audio.c.orig	Fri Jun 18 20:59:34 2004
++++ libavformat/audio.c	Wed Oct  6 22:27:57 2004
+@@ -21,7 +21,12 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
 +#if defined(__OpenBSD__)
 +#include <soundcard.h>
++#include <sys/audioio.h>
 +#else
  #include <sys/soundcard.h>
 +#endif
  #include <unistd.h>
  #include <fcntl.h>
  #include <sys/ioctl.h>
-@@ -49,7 +53,7 @@ static int audio_open(AudioData *s, int 
+@@ -43,13 +48,16 @@ typedef struct {
+ 
+ static int audio_open(AudioData *s, int is_output, const char *audio_device)
+ {
++#ifdef __OpenBSD__
++    audio_info_t audio_if;
++#endif
+     int audio_fd;
+     int tmp, err;
+     char *flip = getenv("AUDIO_FLIP_LEFT");
  
      /* open linux audio device */
      if (!audio_device)
@@ -22,3 +32,26 @@ $OpenBSD: patch-libavformat_audio_c,v 1.1 2004/04/18 00:36:22 jolan Exp $
  
      if (is_output)
          audio_fd = open(audio_device, O_WRONLY);
+@@ -133,6 +141,22 @@ static int audio_open(AudioData *s, int 
+     }
+     s->sample_rate = tmp; /* store real sample rate */
+     s->fd = audio_fd;
++
++#ifdef __OpenBSD__
++    AUDIO_INITINFO(&audio_if);
++    if (is_output) {
++        audio_if.play.pause = 0;
++        audio_if.record.pause = 1;
++    } else {
++        audio_if.play.pause = 1;
++        audio_if.record.pause = 0;
++    }
++    err = ioctl(audio_fd, AUDIO_SETINFO, &audio_if);
++    if (err < 0) {
++        perror("AUDIO_SETINFO");
++        goto fail;
++    }
++#endif
+ 
+     return 0;
+  fail:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2004/10/07 06:12:11 jolan Exp $
---- configure.orig	Mon Jul  5 13:06:16 2004
-+++ configure	Thu Oct  7 00:38:53 2004
+$OpenBSD: patch-configure,v 1.8 2004/10/13 01:38:21 jolan Exp $
+--- configure.orig	Mon Jul  5 11:06:16 2004
++++ configure	Fri Oct  8 17:42:35 2004
 @@ -232,6 +232,12 @@ make="gmake"
  CFLAGS="-pthread"
  LDFLAGS="$LDFLAGS -export-dynamic -pthread"
@@ -26,3 +26,18 @@ $OpenBSD: patch-configure,v 1.7 2004/10/07 06:12:11 jolan Exp $
    ;;
    --extra-libs=*) extralibs=${opt#--extra-libs=}
    ;;
+@@ -1122,8 +1128,12 @@ fi
+ if test "$pthreads" = "yes" ; then
+   echo "HAVE_PTHREADS=yes" >> config.mak
+   echo "#define HAVE_PTHREADS 1" >> $TMPH
+-  if test $targetos != FreeBSD; then
+-     extralibs="$extralibs -lpthread"
++  if test $targetos = OpenBSD; then
++     extralibs="$extralibs -pthread"
++  else
++     if test $targetos != FreeBSD; then
++        extralibs="$extralibs -lpthread"
++     fi
+   fi
+ fi
+ if test "$sdl" = "yes" ; then
