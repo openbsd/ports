@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/08/24 01:21:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/10 11:16:44 xsa Exp $
 
 # sync with mplayer archs due to dependency
 ONLY_FOR_ARCHS=i386 macppc
@@ -7,7 +7,7 @@ DISTNAME=mplayer-fontmaker-0.90
 CATEGORIES=x11
 COMMENT='subtitle fonts generator for mplayer'
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 BUILD_DEPENDS=	::x11/mplayer:configure
 DISTFILES=
 NO_CHECKSUM=	Yes

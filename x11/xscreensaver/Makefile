@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/06/24 16:23:37 marcm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/08/10 11:16:44 xsa Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS+=		xml2.6::textproc/libxml
 

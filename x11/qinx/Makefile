@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/03/04 18:48:17 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/10 11:16:44 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 
 AUTOCONF_VERSION= 2.57
 MODKDE_VERSION= 3.2
-MODULES=	kde
+MODULES=	x11/kde
 
 PORTHOME=	${WRKDIR}
 

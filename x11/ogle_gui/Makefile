@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 11:16:44 xsa Exp $
 
 CATEGORIES=	x11
 
@@ -34,7 +34,7 @@ LIB_DEPENDS+=	glade-2.0.0.0::devel/libglade2 \
 CONFIGURE_ARGS+=--enable-gtk2
 .endif
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_ENV+= CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 11:16:43 xsa Exp $
 
 
 COMMENT='front-end/embeddable kpart for mplayer'
@@ -13,7 +13,7 @@ VERSION=3
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MODKDE_VERSION=	3.1
-MODULES=kde
+MODULES=	x11/kde
 MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52

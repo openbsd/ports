@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/08/10 11:16:43 xsa Exp $
 
 COMMENT=	"file manager with same look and feel as Windows95(tm)"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	qt
+MODULES=	x11/qt
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \

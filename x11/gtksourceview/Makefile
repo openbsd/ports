@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/08 13:21:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 11:16:44 xsa Exp $
 
 COMMENT=		"Text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.0.1	
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtksourceview/1.0/}	
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig 
 LIB_DEPENDS=		gnomeprintui-2-2::x11/gnome/libgnomeprintui \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/02 08:06:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 11:16:43 xsa Exp $
 
 COMMENT=	"graphical disk usage utility for KDE"
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	kdecore.6,DCOP,kdesu,kdeui,kio,kdefx::x11/kde/libs3
 
-MODULES=	kde
+MODULES=	x11/kde
 
 # catch $HOME/.kde/share/config
 # that meinproc creates during build.

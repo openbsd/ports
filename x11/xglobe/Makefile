@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/02/25 10:34:02 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/08/10 11:16:44 xsa Exp $
 
 COMMENT=	"display the Earth on X11"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-MODULES=		qt3
+MODULES=		x11/qt3
 MODQT_MT=Yes
 
 MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}

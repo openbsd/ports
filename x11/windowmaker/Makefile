@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2003/08/16 19:06:07 tedu Exp $
+# $OpenBSD: Makefile,v 1.58 2004/08/10 11:16:44 xsa Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
@@ -49,7 +49,7 @@ SUBPACKAGE?=
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=		:windowmaker->=0.80.1:x11/windowmaker
 .else
-MODULES=		gettext
+MODULES=		devel/gettext
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/20 17:20:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 11:16:43 xsa Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3
 
 AUTOCONF_VERSION= 2.52
 MODKDE_VERSION= 3.1
-MODULES=	kde
+MODULES=	x11/kde
 
 PORTHOME=	${WRKDIR}
 
