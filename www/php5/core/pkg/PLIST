@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/02 12:36:49 robert Exp $
+@conflict php4-core-*
+%%SHARED%%
+bin/pear
+bin/php
+bin/php-config
+bin/phpextdist
+bin/phpize
+lib/php/
+@man man/man1/php.1
+sbin/phpxs
+share/doc/php5/
+share/doc/php5/php.ini-dist
+share/doc/php5/php.ini-recommended
