@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Wed Oct 24 13:44:18 2001
++++ src/Makefile.in	Wed Oct 24 13:46:08 2001
+@@ -250,6 +250,18 @@ maintainer-clean-compile:
+ .S.lo:
+ 	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+ 
++lzo1b_5.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
++
++lzo1b_6.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
++
++lzo1c_5.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
++
++lzo1c_6.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
++
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 

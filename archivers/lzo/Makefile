@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/10/11 07:41:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/24 20:45:43 brad Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
@@ -24,9 +24,12 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/acconfig
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
+# Internal Compiler Error
 .if ${MACHINE_ARCH} == "sparc64"
-CONFIGURE_ARGS+= --enable-debug
+PATCH_LIST=	patch-* sup-sparc64
 .endif
+
+REGRESS_TARGET=	test
 
 post-patch:
 	@cd ${WRKSRC}/acconfig; \
@@ -39,8 +42,5 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lzo
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo
-
-test:	build
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} test
 
 .include <bsd.port.mk>
