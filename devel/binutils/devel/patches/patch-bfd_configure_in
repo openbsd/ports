@@ -1,6 +1,6 @@
-$OpenBSD: patch-bfd_configure_in,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+$OpenBSD: patch-bfd_configure_in,v 1.2 2002/04/21 22:09:14 fgsch Exp $
 --- bfd/configure.in.orig	Fri Mar  8 03:12:11 2002
-+++ bfd/configure.in	Sat Apr  6 22:09:50 2002
++++ bfd/configure.in	Sun Apr 21 18:58:03 2002
 @@ -163,6 +163,7 @@ if test "${target}" = "${host}"; then
  	TRAD_HEADER='"hosts/alphalinux.h"'
  	;;
@@ -9,3 +9,27 @@ $OpenBSD: patch-bfd_configure_in,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
    alpha*-*-*)		COREFILE=osf-core.lo ;;
    arm-*-freebsd*)	COREFILE='' ;;
    arm-*-netbsd*)	COREFILE=netbsd-core.lo ;;
+@@ -341,10 +342,15 @@ changequote([,])dnl
+   sparc-*-netbsd* | sparc-*-openbsd*)
+ 	COREFILE=netbsd-core.lo
+ 	;;
++  sparc64-*-openbsd*)	COREFILE=netbsd-core.lo ;;
+   tahoe-*-*)
+ 	COREFILE=trad-core.lo
+ 	TRAD_HEADER='"hosts/tahoe.h"'
+ 	;;
++  vax-*-openbsd*)
++	COREFILE=netbsd-core.lo
++	COREFLAG=-DNETBSD_CORE
++	;;
+   vax-*-ultrix2*)
+ 	COREFILE=trad-core.lo
+ 	TRAD_HEADER='"hosts/vaxult2.h"'
+@@ -715,6 +721,7 @@ do
+     tic54x_coff2_beh_vec)	tb="$tb coff-tic54x.lo" ;;
+     tic54x_coff2_vec)		tb="$tb coff-tic54x.lo" ;;
+     tic80coff_vec)		tb="$tb coff-tic80.lo cofflink.lo" ;;
++    vaxnetbsd_vec)		tb="$tb vaxnetbsd.lo aout32.lo" ;;
+     versados_vec)		tb="$tb versados.lo" ;;
+     vms_alpha_vec)		tb="$tb vms.lo vms-hdr.lo vms-gsd.lo vms-tir.lo vms-misc.lo"; target_size=64 ;;
+     vms_vax_vec)		tb="$tb vms.lo vms-hdr.lo vms-gsd.lo vms-tir.lo vms-misc.lo" ;;
