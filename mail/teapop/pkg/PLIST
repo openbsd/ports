@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/08 05:58:24 pvalchev Exp $
+libexec/teapop
+man/man8/teapop.8
+sbin/cronpopauth.pl
+share/examples/teapop/teapop.passwd
+@dirrm share/examples/teapop

@@ -1,0 +1,9 @@
+Teapop is an RFC1939 and RFC2449 compliant POP3-server, which is quickly 
+gaining world-wide recognition. With its' flexible virtual domain support, 
+Teapop distinguishes itself from other POP3-servers. The possibility to 
+authenticate users in several different ways, for example 
+PostgreSQL-databases and Apache htpasswd files, lets Teapop adapt itself 
+to Your	setup, rather than the other way around as with traditional 
+POP3-servers. 
+
+WWW: ${HOMEPAGE}

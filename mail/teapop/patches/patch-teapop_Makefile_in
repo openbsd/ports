@@ -1,0 +1,12 @@
+$OpenBSD: patch-teapop_Makefile_in,v 1.1.1.1 2002/06/08 05:58:24 pvalchev Exp $
+--- teapop/Makefile.in.orig	Thu Apr 25 12:59:05 2002
++++ teapop/Makefile.in	Thu Apr 25 12:59:29 2002
+@@ -7,7 +7,7 @@ libexecdir	= @libexecdir@
+ localstatedir  = @localstatedir@
+ 
+ CC       = @CC@
+-CFLAGS   = -I../include -I../config -DETC_DIR=\"$(sysconfdir)\" -DVAR_DIR=\"$(localstatedir)\" @CFLAGS@
++CFLAGS   = -I../include -I../config -DETC_DIR=\"$(sysconfdir)\" -DVAR_DIR=\"/var\" @CFLAGS@
+ LDFLAGS  = @LDFLAGS@
+ LIBS     = @LIBS@
+ 
