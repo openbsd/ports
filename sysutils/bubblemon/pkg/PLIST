@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/30 14:57:15 avsm Exp $
-bin/bubblemon-gnome1
-@comment man/hu/man1/bubblemon-gnome1.1
-man/man1/bubblemon-gnome1.1
-@comment man/sv/man1/bubblemon-gnome1.1
-share/applets/Monitors/bubblemon-gnome1.desktop
-share/examples/bubblemon/CORBA/servers/bubblemon-gnome1.gnorba
+@comment $OpenBSD: PLIST,v 1.5 2003/09/23 21:24:52 marcm Exp $
+lib/bonobo/servers/GNOME_BubblemonApplet.server
+libexec/bubblemon-gnome2
+@comment man/hu/man1/bubblemon-gnome2.1
+man/man1/bubblemon-gnome2.1
+@comment man/sv/man1/bubblemon-gnome2.1
+share/gnome-2.0/ui/GNOME_BubblemonApplet.xml
 share/locale/da/LC_MESSAGES/bubblemon.mo
 share/locale/de/LC_MESSAGES/bubblemon.mo
 share/locale/es/LC_MESSAGES/bubblemon.mo
@@ -18,45 +18,26 @@ share/locale/no/LC_MESSAGES/bubblemon.mo
 share/locale/pl/LC_MESSAGES/bubblemon.mo
 share/locale/pt/LC_MESSAGES/bubblemon.mo
 share/locale/ro/LC_MESSAGES/bubblemon.mo
+share/locale/ru/LC_MESSAGES/bubblemon.mo
 share/locale/sh/LC_MESSAGES/bubblemon.mo
 share/locale/sv/LC_MESSAGES/bubblemon.mo
 share/pixmaps/bubblemon.png
 @comment @dirrm share/pixmaps
 @comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sh/LC_MESSAGES
-@comment @dirrm share/locale/sh
+@comment @dirrm share/locale/ru/LC_MESSAGES
 @comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/ro
 @comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pt
 @comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
 @comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
 @comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ko
 @comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
 @comment @dirrm share/locale/is/LC_MESSAGES
-@comment @dirrm share/locale/is
 @comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
 @comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
 @comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
 @comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale
-@dirrm share/examples/bubblemon/CORBA/servers
-@dirrm share/examples/bubblemon/CORBA
-@dirrm share/examples/bubblemon
 @comment @dirrm man/sv/man1
-@comment @dirrm man/sv
 @comment @dirrm man/hu/man1
-@comment @dirrm man/hu
