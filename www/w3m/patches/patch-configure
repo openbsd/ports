@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure,v 1.1 2001/03/30 17:19:09 naddy Exp $
---- configure.orig	Fri Mar 30 18:58:53 2001
-+++ configure	Fri Mar 30 19:00:23 2001
-@@ -796,6 +796,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2001/10/24 12:23:32 naddy Exp $
+--- configure.orig	Thu Oct 11 18:00:58 2001
++++ configure	Thu Oct 11 18:01:30 2001
+@@ -793,6 +793,7 @@ if [ -n "$extlib" ]; then
+   echo "additional library found: $extlib"
+ fi
+ 
++if false; then # always use the included gclib for now
  gclib=''
  gcinclude=''
  gctarget=''
-+if false; then	# always use the included gclib for now
- for libdir in /lib /usr/lib /usr/local/lib /usr/ucblib /usr/ccslib /usr/ccs/lib ${HOME}/lib
- do
-   if [ -f $libdir/libgc.a -o -f $libdir/libgc.so ] ; then 
-@@ -858,6 +859,7 @@ EOF
-     gclib="gc/gc.a"
-     gctarget=$gclib
+@@ -812,6 +813,7 @@ do
+     break
    fi
+ done
 +fi
- fi
  
- if [ -z "$gclib" -o -z "$gcinclude" ]; then
+ case $sysname in
+   linux|Linux|LINUX|aix|Aix|AIX)
