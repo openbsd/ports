@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2001/08/21 02:41:15 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2001/10/02 13:47:56 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
 
 DISTNAME=	libtool-1.3.5
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
-NEED_VERSION=	1.435
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= libtool
 
