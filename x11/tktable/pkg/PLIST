@@ -1,0 +1,17 @@
+lib/Tktable/pkgIndex.tcl
+lib/Tktable/tkTable.tcl
+lib/Tktable/Tktable.so.2.5
+lib/Tktable/demos/basic.tcl
+lib/Tktable/demos/buttons.tcl
+lib/Tktable/demos/command.tcl
+lib/Tktable/demos/debug.tcl
+lib/Tktable/demos/dynarows.tcl
+lib/Tktable/demos/loadtable.tcl
+lib/Tktable/demos/maxsize.tcl
+lib/Tktable/demos/spreadsheet.tcl
+lib/Tktable/demos/tcllogo.gif
+lib/Tktable/demos/valid.tcl
+@exec /sbin/ldconfig -m %B
+man/mann/tkTable.n
+@dirrm lib/Tktable/demos
+@dirrm lib/Tktable

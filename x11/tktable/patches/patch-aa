@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Jun  1 23:31:36 1999
++++ Makefile.in	Wed Jun  7 16:14:56 2000
+@@ -82,7 +82,7 @@
+ 		  -I$(TCL_SRC_DIR)/generic\
+ 		  -I$(TK_SRC_DIR)/generic
+ 
+-DLL		= $(PACKAGE)$(SHLIB_SUFFIX)
++DLL		= $(PACKAGE)$(SHLIB_SUFFIX).$(TBL_VERSION)
+ STATIC_LIB	= $(PACKAGE).a
+ PACKAGEDIR	= $(PACKAGE)$(TBL_VERSION)
+ STATIC_EXEC	= tablewish
+@@ -126,7 +126,7 @@
+ 	echo 'if {[catch {package require Tcl $(TCL_VERSION)}]} return';\
+ 	echo 'package ifneeded $(PACKAGE) $(TBL_VERSION)\
+ 	    "package require Tk $(TK_VERSION);\
+-	     [list load [file join $$dir $(DLL).$(TBL_VERSION)] $(PACKAGE)]"'\
++	     [list load [file join $$dir $(DLL)] $(PACKAGE)]"'\
+ 	) > pkgIndex.tcl
+ 
+ install: all
