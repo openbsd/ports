@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/04/25 02:59:09 form Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/04/12 11:55:24 xsa Exp $
 bin/jmacs
 bin/joe
 bin/jpico
@@ -15,3 +15,4 @@ share/examples/joe/jstarrc
 share/examples/joe/rjoerc
 @dirrm share/examples/joe
 @dirrm share/doc/joe
+@extraunexec rm -rf ${SYSCONFDIR}/joe
