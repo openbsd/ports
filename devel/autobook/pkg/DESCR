@@ -1,0 +1,43 @@
+Autoconf, Automake and Libtool are packages for making your software
+more portable and to simplify building it--usually on someone else's
+system.  Software portability and effective build systems are crucial
+aspects of modern software engineering practice. It is unlikely
+that a software project would be started today with the expectation
+that the software would run on only one platform. Hardware constraints
+may change the choice of platform, new customers with different
+kinds of systems may emerge or your vendor might introduce incompatible
+changes in newer versions of their operating system. In addition,
+tools that make building software easier and less error prone are
+valuable.
+
+Autoconf is a tool that helps make your packages more portable by
+performing tests to discover system characteristics before the
+package is compiled.  Your source code can then adapt to these
+differences.
+
+Automake is a tool for generating Makefiles--descriptions of what
+to build--that conform to a number of standards. Automake substantially
+simplifies the process of describing the organization of a package
+and performs additional functions such as dependency tracking between
+source files.
+
+Libtool is a command line interface to the compiler and linker that
+makes it easy to portably generate static and shared libraries,
+regardless of the platform it is running on.
+
+This book is a tutorial for Autoconf, Automake and Libtool, hereafter
+referred to as the GNU Autotools. The GNU manuals that accompany
+each tools adequately document each tool in isolation. Until now,
+there has not been a guide that has described how these tools work
+together.
+
+Thanks go to New Riders (www.newriders.com) for allowing this document to 
+be licensed under the Open Publication License  and redistributed freely.
+
+Copyright (c) 2000 by Gary V. Vaughan, Ben Elliston, Tom Tromey and Ian
+Lance Taylor. This material may be distributed only subject to the terms 
+and conditions set forth in the Open Publication License, 
+draft v1.0 or later (the latest version is presently
+available at http://www.opencontent.org/openpub/). 
+
+See ${WWW} for errata.
