@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Fri May 19 14:12:53 2000
++++ man/Makefile.in	Fri May 19 14:12:59 2000
+@@ -20,8 +20,6 @@
+ prefix = @prefix@
+ mandir = @mandir@
+ 
+-DESTDIR =
+-
+ top_builddir = ..
+ 
+ INSTALL = @INSTALL@

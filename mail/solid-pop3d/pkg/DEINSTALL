@@ -1,0 +1,17 @@
+#!/bin/sh
+
+do-deinstall () 
+{
+	if [ -d /var/spool/spop3d ]; then
+		rm -rf /var/spool/spop3d
+	fi
+	if [ -f /etc/spop3d.conf ]; then
+		echo "+------------"
+		echo "| If you are removing this package and not planning"
+		echo "| to re-install it at a future time, it is safe to"
+		echo "| remove /etc/spop3d.conf."
+		echo "+------------"
+	fi
+}
+
+do-deinstall

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+post_install () 
+{
+	if [ ! -d /var/spool/spop3d ]; then
+		install -d -m 755 -o root -g wheel /var/spool/spop3d
+		install -d -m 755 -o root -g wheel /var/spool/spop3d/bulletins
+	fi
+}
+
+usage ()
+{
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+}
+
+if [ $# -ne 2 ]; then
+	usage
+fi
+
+case ${2} in
+	"PRE-INSTALL")
+		;;
+	"POST-INSTALL")
+		post_install
+		;;
+	*)
+		usage
+		;;
+esac

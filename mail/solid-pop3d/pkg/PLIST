@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/26 01:51:34 espie Exp $
+man/man5/dot-spop3d.5
+man/man5/spop3d.conf.5
+man/man8/spop3d.8
+sbin/spop3d
