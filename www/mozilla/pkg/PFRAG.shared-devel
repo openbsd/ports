@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared-devel,v 1.1 2003/05/23 10:09:17 wilfried Exp $
+mozilla/lib/libfort.so.1.0
+mozilla/lib/libgkgfx.so.1.0
+mozilla/lib/libgtkembedmoz.so.1.0
+mozilla/lib/libgtksuperwin.so.1.0
+mozilla/lib/libgtkxtbin.so.1.0
+mozilla/lib/libjsj.so.1.0
+mozilla/lib/libmozjs.so.1.0
+mozilla/lib/libmsgbaseutil.so.1.0
+mozilla/lib/libnspr4.so.1.0
+mozilla/lib/libnss3.so.1.0
+mozilla/lib/libnssckbi.so.1.0
+mozilla/lib/libplc4.so.1.0
+mozilla/lib/libplds4.so.1.0
+mozilla/lib/libsmime3.so.1.0
+mozilla/lib/libsoftokn3.so.1.0
+mozilla/lib/libssl3.so.1.0
+mozilla/lib/libswft.so.1.0
+mozilla/lib/libxlibrgb.so.1.0
+mozilla/lib/libxpcom.so.1.0
+mozilla/lib/libxpcom_compat.so.1.0
+mozilla/lib/libxpistub.so.1.0
