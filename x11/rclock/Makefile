@@ -3,8 +3,10 @@
 # Date created:			  May 19 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:38:34 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/31 07:49:01 turan Exp $
 #
+
+BROKEN=		checksum mismatch
 
 PKGNAME=	rclock-2.20
 DISTNAME=	rxvt-2.20
