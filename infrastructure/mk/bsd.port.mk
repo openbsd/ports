@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.186 2000/02/06 18:35:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.187 2000/02/09 00:23:26 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -93,9 +93,9 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #
 # WRKDIR 		- A temporary working directory that gets *clobbered* on clean
 #				  (default: ${.CURDIR}/work).
-# WRKSRC		- A subdirectory of ${WRKDIR} where the distribution actually
-#				  unpacks to.  (Default: ${WRKDIR}/${DISTNAME} unless
-#				  NO_WRKSUBDIR is set, in which case simply ${WRKDIR}).
+# WRKDIST 		- A subdirectory of ${WRKDIR} where the distribution actually
+#				  unpacks to.  (Default: ${WRKDIR}/${DISTNAME}).
+# WRKSRC		- where the actual source lives (default ${WRKDIST}).
 # WRKBUILD		- The directory where the port is actually built, useful for 
 #                 ports that need a separate directory (default: ${WRKSRC}).
 #				  This is intended for GNU configure.
@@ -166,6 +166,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
+#				  (deprecated, use WRKDIST=${WRKDIR} instead)
 # NO_DEPENDS	- Don't verify build of dependencies.
 # CLEANDEPENDS  - Nuke dependent dirs on make clean (Default: no)
 # BROKEN		- Port is broken.  Set this string to the reason why.
@@ -293,11 +294,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
 #
-# CLEANDISTORIG - Set to yes to clear *.orig files after applying
-#                 distribution patches 
-#
 # Variables that serve as convenient "aliases" for your *-install targets.
-# Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
+# Use these like: "${INSTALL_PROGRAM} ${WRKBUILD}/prog ${PREFIX}/bin".
 #
 # INSTALL_PROGRAM		- A command to install binary executables.
 # INSTALL_SCRIPT		- A command to install executable scripts.
@@ -553,20 +551,18 @@ FETCH_CMD?=		/usr/bin/ftp
 # By default, distfiles have no restrictions placed on them
 MIRROR_DISTFILE?=	Yes
 
-
-CLEANDISTORIG?= No
-
+DISTORIG?=	bak.orig
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	Yes
-PATCH_ARGS?=	-d ${WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${WRKDIST} -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DEBUG_TMP=	No
-PATCH_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${WRKDIST} --forward --quiet -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -630,10 +626,12 @@ WRKDIR?=		${.CURDIR}/work
 .endif
 
 .if defined(NO_WRKSUBDIR)
-WRKSRC?=		${WRKDIR}
+WRKDIST?=		${WRKDIR}
 .else
-WRKSRC?=		${WRKDIR}/${DISTNAME}
+WRKDIST?=		${WRKDIR}/${DISTNAME}
 .endif
+
+WRKSRC?=	   ${WRKDIR}
 
 .if defined(SEPARATE_BUILD)
 WRKBUILD?=		${WRKDIR}/build-${ARCH}
@@ -937,10 +935,10 @@ CONFIGURE_SHARED?=	--disable-shared
 CONFIGURE_SHARED?=	--enable-shared
 .endif
 
-# Passed to most of script invocations
+# Passed to configure invocations, and user scripts
 SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
-          PATH=${PORTPATH} \
-		  WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
+          PATH=${PORTPATH} WRKDIR=${WRKDIR} WRKDIST=${WRKDIST} \
+		  WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
 		  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
 		  PORTSDIR=${PORTSDIR} DEPENDS="${DEPENDS}" \
 		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
@@ -1276,9 +1274,6 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  if target(post-distpatch)
 	@cd ${.CURDIR} && make post-distpatch
 .  endif
-.  if ${CLEANDISTORIG:L} == "yes"
-	@cd ${WRKSRC} && find . -name '*.orig' | xargs rm
-.  endif
 .endif
 	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
 
@@ -1296,7 +1291,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
-.    if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) || ${CLEANDISTORIG:L} == "yes"
+.    if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
 	@cd ${.CURDIR} && make distpatch
 .    endif 
 	@if cd ${PATCHDIR} 2>/dev/null; then \
