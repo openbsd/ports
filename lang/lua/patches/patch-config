@@ -1,5 +1,5 @@
---- config.orig	2003-04-11 09:00:41.000000000 -0500
-+++ config	2003-11-29 16:39:40.000000000 -0600
+--- config.orig	Fri Apr 11 11:00:41 2003
++++ config	Fri Aug  6 11:04:48 2004
 @@ -25,7 +25,7 @@ USERCONF=
  # interface (e.g., Linux, Solaris, IRIX, BSD, AIX, HPUX, and probably others),
  # uncomment the next two lines.
@@ -9,6 +9,15 @@
  #DLLIB= -ldl
  #
  # In Linux with gcc, you should also uncomment the next definition for
+@@ -45,7 +45,7 @@ USERCONF=
+ # If your system is not POSIX but has popen and pclose, define USE_POPEN=1.
+ # If you don't want to support pipes, define USE_POPEN=0.
+ #
+-#POPEN= -DUSE_POPEN=1
++POPEN= -DUSE_POPEN=1
+ #POPEN= -DUSE_POPEN=0
+ #
+ # The form below will probably work in (some) Windows systems.
 @@ -59,7 +59,7 @@ USERCONF=
  # use tmpnam even if you're not compiling with gcc, define USE_TMPNAME=0.
  #
