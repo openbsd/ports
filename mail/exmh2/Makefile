@@ -1,54 +1,45 @@
-# OpenBSD Makefile for: 	exmh2
-# Version required:		2.0zeta
-# Date released:		May 16 1998
-# Whom:				Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:46:11 lebel Exp $
-#
+# $OpenBSD: Makefile,v 1.12 2001/07/12 21:51:18 lebel Exp $
 
-COMMENT=	"X11/Tk-based mail reader front end to MH"
+COMMENT=		"TCL/TK based interface to the MH mail system"
+DISTNAME=		exmh-2.4
+CATEGORIES=     	mail
+NEED_VERSION=		1.400
 
-DISTNAME=	exmh-2.0.2
-CATEGORIES=	mail tk80
-NEED_VERSION=	1.402
-FAKE=No
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
-EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+HOMEPAGE=		http://www.beedub.com/exmh/
+MAINTAINER=		Michael Paddon <michael@paddon.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.0::x11/tk/8.0
-BUILD_DEPENDS=	tclsh8.0::lang/tcl/8.0
-WISH=		wish8.0
-TCLSH=		tclsh8.0
+MASTER_SITES=		ftp://ftp.scriptics.com/pub/tcl/exmh/ \
+			ftp://tcl.activestate.com/pub/tcl/exmh/ \
+			http://dev.scriptics.com/ftp/exmh/
 
-# exmh is pretty useless without this, but it's not needed to build it.
-RUN_DEPENDS+=	repl::mail/nmh
+BUILD_DEPENDS=		tclsh8.3::lang/tcl/8.3
+RUN_DEPENDS=		expect::lang/expect \
+			mhparam::mail/nmh \
+			mmencode::mail/metamail \
+			wish8.3::x11/tk/8.3
+USE_X11=		Yes
+SEPARATE_BUILD=		concurrent
 
-# full mime support needs mmencode/mmdecode from metamail
-RUN_DEPENDS+=	mmencode::mail/metamail
-
-# Additionally, exmh will use the following ports if present:
-# lang/expect
-# misc/glimpse
-# security/pgp
-# mail/faces
-# audio/rplay
-
-NO_PACKAGE=	needs per-host config at build time
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
-		WISH=${PREFIX}/bin/${WISH} WRKSRC=${WRKSRC} \
-		FILESDIR=${FILESDIR} ${SH} ${SCRIPTDIR}/build
+NO_BUILD=		Yes
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
-		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
+	${INSTALL_SCRIPT} ${WRKBUILD}/exmh ${PREFIX}/bin/exmh
+	${INSTALL_SCRIPT} ${WRKBUILD}/exmh-bg ${PREFIX}/bin/exmh-bg
+	${INSTALL_SCRIPT} ${WRKBUILD}/exmh-async ${PREFIX}/bin/exmh-async
+	${INSTALL_SCRIPT} ${WRKBUILD}/ftp.expect ${PREFIX}/bin/ftp.expect
+	${INSTALL_SCRIPT} ${WRKBUILD}/inc.expect ${PREFIX}/bin/inc.expect
+	${INSTALL_SCRIPT} ${WRKBUILD}/exmh-strip ${PREFIX}/bin/exmh-strip
+	${INSTALL_MAN} ${WRKSRC}/exmh.l ${PREFIX}/man/man1/exmh.1
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${DISTNAME}
+	cp -r ${WRKSRC}/lib/. ${PREFIX}/lib/${DISTNAME}
+	cd ${PREFIX}/lib && echo 'auto_mkindex ${DISTNAME}' | tclsh8.3
+	chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/${DISTNAME}
+	find ${PREFIX}/lib/${DISTNAME} -type d | xargs chmod ${DIRMODE}
+	find ${PREFIX}/lib/${DISTNAME} -type f | xargs chmod ${SHAREMODE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# Configuration script for exmh-2.4.
+# $OpenBSD: configure,v 1.1 2001/07/12 21:51:19 lebel Exp $
+#
+
+set -e
+
+export CONFIG='
+# Saved state from exmh.install
+# Wed Jun 20 14:29:09 EST 2001
+set wish /usr/local/bin/wish8.3
+set exmh(version) {version 2.4 05/15/2001}
+set exmh(name) exmh
+set exmh(maintainer) welch@acm.org
+set mh_path /usr/local/bin
+set exmh(slocal) /usr/local/libexec/slocal
+set mime(dir) /usr/local/bin
+set mailcap_default /etc/mailcap
+set mimetypes_default /usr/local/lib/exmh-2.4/mime.types
+set exmh(expect) /usr/local/bin/expect
+set exmh(expectk) /usr/local/bin/expectk
+set faces(dir) /usr/local/faces/faces
+set faces(set,user) {local users usenix misc}
+set faces(set,unknown) {domains unknown}
+set faces(set,news) news
+set faces(defaultDomain) eng.sun.com
+set faces(suffix) {xpm gif xbm}
+set pgp(pgp,path) /usr/local/bin
+set pgp(pgp5,path) /usr/local/bin
+set pgp(gpg,path) /usr/local/bin
+set pgp(pgp6,path) /usr/local/bin
+set glimpse(path) /usr/local/bin
+set sound(cmd) /usr/bin/aucat
+set exmh(library) /usr/local/lib/exmh-2.4
+set install(dir,bin) /usr/local/bin
+set install(dir,man) /usr/local/man/manl
+set install(dir,lib) /usr/local/lib/exmh-2.4
+'
+
+for master in "$WRKSRC"/*.MASTER
+do
+	awk '
+		NR == 1 {
+			sub ("^#!expect","#!/usr/local/bin/expect");
+			sub ("^#!tclsh","#!/usr/local/bin/tclsh8.3");
+			sub ("^#!wish","#!/usr/local/bin/wish8.3");
+		}
+		/^#CONFIGURATION$/ {
+			print;
+			print ENVIRON["CONFIG"];
+			quiet = 1;
+		}
+		/^#END CONFIGURATION$/ {
+			quiet = 0;
+		}
+		!quiet {
+			print;
+		}
+	' "$master" > "$WRKBUILD"/`basename "$master" .MASTER`
+done
