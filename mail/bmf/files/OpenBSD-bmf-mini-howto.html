@@ -34,7 +34,7 @@ EXITCODE=$?
 * ^X-Spam-Status: Yes
 zspam # This is the mailbox where all spam goes.</pre></dd></dl>
 
-<p>Now you have to tell bmf the difference between spam and non-spam messages. 
+<p>Now you have to tell bmf the difference between spam and non-spam messages.
 
 As an example you can add these shortcuts to your <tt class="FILENAME">.muttrc</tt>
 
@@ -46,33 +46,30 @@ macro pager &lt;f4&gt; "|bmf -N\n&lt;save-message&gt;=Maildir\n" "NO SPAM"
 </pre></dd></dl>
 
 <p>Now you can press the F3-button to tell bmf a message in  your  inbox
-   is spam ( <tt class="FILENAME">bmf -S</tt>  )  and  move  it  to  you
+   is spam ( <tt class="FILENAME">bmf -S</tt>  ) and  move  it  to  your
    spam-folder.
- 
+
 
 <h3>Feeding a spam-archive to bmf:</h3>
 <p>To speed up the process of feeding  the  bmf-database  you  can  also
    download a recent
-   <a href="http://www.em.ca/~bruceg/spam/">spam archive</a> 
+   <a href="http://www.em.ca/~bruceg/spam/">spam archive</a>
    and run the files in the archive through the following oneliner:
 
 <dl><dd><pre>for i in * ; do bmf -s -i $i; done</pre></dd></dl>
 
 <p>This method is not recommended by the author since the headers  of  a
    message are also taken in account and the  headers  of  the  messages
-   from a spam-archive do not match your, but I had  good  results  with
+   from a spam-archive do not match yours, but I had good  results  with
    this method.
 
 <h3>Mixing with spamassassin:</h3>
 
 <p>You can also mix bmf with
-   <a  href="http://spamassassin.org">spamassassin</a>.  bmf   is   much
-   lighter than spamassassin  but  spamassassin  does  not  have  to  be
-   trained. All messages missed by bmf but caught by  spamassassin  will
-   be fed to the bmf-database automatically.
-
-  All you have to do is  to  change  the  spamfilter-part  of  your  <tt
-  class="FILENAME">.procmailrc</tt> to:
+   <a  href="http://spamassassin.org">spamassassin</a>.
+   bmf is much lighter than spamassassin but spamassassin does not have
+   to be trained. You can actually use spamassassin to train bmf. Change
+   your <tt class="FILENAME">.procmailrc</tt> to something like this:
 
 <dl><dd><pre>
 :0fw
@@ -108,7 +105,9 @@ EXITCODE=$?
 }
 </pre></dd></dl>
 
-<p>In other words: All mail cought by bmf will be send to the zspam-bmf folder. All spam missed by bmf but cought by spamassassin will be fed to bmf and send to the zspam-sa folder.
+<p>All mail cought by bmf will be send to the zspam-bmf folder. All spam
+   missed by bmf but cought by spamassassin will be fed to bmf for
+   training and send to the zspam-sa folder.
 
 
 <h3>Disclaimer:</h3>
