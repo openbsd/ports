@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/04/16 21:23:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/05/15 14:35:01 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -24,8 +24,9 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure
-# don't run interactively
-CONFIGURE_ARGS=		-d \
+# -d don't run interactively
+# -e fixes bulk package build
+CONFIGURE_ARGS=		-d  -e \
 			-D mansrc="${PREFIX}/man/man1" \
 			-D prefix="${PREFIX}" \
 			-D privlib="${PREFIX}/share/gtk-gnutella" \

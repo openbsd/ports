@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.1 2004/04/09 10:20:47 sturm Exp $
+$OpenBSD: patch-Configure,v 1.2 2004/05/15 14:35:01 sturm Exp $
 --- Configure.orig	2004-01-25 21:22:03.000000000 +0100
-+++ Configure	2004-04-08 19:42:26.000000000 +0200
++++ Configure	2004-05-15 16:22:46.000000000 +0200
 @@ -278,7 +278,7 @@ d_isascii=''
  d_memcpy=''
  d_nls=''
@@ -10,6 +10,15 @@ $OpenBSD: patch-Configure,v 1.1 2004/04/09 10:20:47 sturm Exp $
  d_random=''
  d_sendfile=''
  d_srandom=''
+@@ -849,7 +849,7 @@ for file in $*; do
+ 			dir=`expr X$file : 'X\(.*\)/'`
+ 			file=`expr X$file : 'X.*/\(.*\)'`
+ 			(set x $dir; shift; eval $mkdir_p)
+-			sh <$SRC/$dir/$file
++			cd $dir && sh $SRC/$dir/$file
+ 			;;
+ 		*)
+ 			sh <$SRC/$file
 @@ -5384,15 +5384,6 @@ If you'd like to make any changes to the
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
