@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/08/05 16:14:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/10/01 22:38:47 naddy Exp $
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 @man man/man1/gqmpeg.1
@@ -7,10 +7,6 @@ share/doc/gqmpeg/FAQ
 share/doc/gqmpeg/README
 share/doc/gqmpeg/README.plugin
 share/doc/gqmpeg/SKIN-SPECS-V1
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Multimedia/
-share/gnome/apps/Multimedia/gqmpeg.desktop
 share/gqmpeg/
 share/gqmpeg/skins/
 share/gqmpeg/skins/README
@@ -88,5 +84,3 @@ share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
-share/pixmaps/
-share/pixmaps/gqmpeg.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/08/10 08:04:02 xsa Exp $
+# $OpenBSD: Makefile,v 1.35 2004/10/01 22:38:47 naddy Exp $
 
 COMMENT=		"front-end to various audio players"
 
@@ -27,7 +27,8 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_GNOME_CONFIG=no
 
 DOCS=			FAQ README SKIN-SPECS-V1 \
 			plugin/README.plugin
