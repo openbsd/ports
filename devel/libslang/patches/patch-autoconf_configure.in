@@ -1,6 +1,6 @@
---- autoconf/configure.in.orig	Sun Feb 10 02:39:19 2002
-+++ autoconf/configure.in	Tue May  7 19:57:00 2002
-@@ -105,7 +105,8 @@ slang_minor_version=`echo $slang_version
+--- autoconf/configure.in.orig	Mon Oct  7 16:36:22 2002
++++ autoconf/configure.in	Fri Oct 18 22:31:58 2002
+@@ -106,7 +106,8 @@ slang_minor_version=`echo $slang_version
  slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
   awk '{ print ([$]1 - [$]2*10000 - [$]3*100) }'`
  
