@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_libsoup_soup-message_c,v 1.1.1.1 2002/12/03 19:39:32 marcm Exp $
+--- src/libsoup/soup-message.c.orig	Fri Nov 22 21:29:02 2002
++++ src/libsoup/soup-message.c	Fri Nov 22 21:29:54 2002
+@@ -907,9 +907,9 @@ typedef struct {
+ 
+ 	SoupHandlerKind   kind;
+ 	union {
++		const gchar      *header;
+ 		guint             errorcode;
+ 		SoupErrorClass    errorclass;
+-		const gchar      *header;
+ 	} data;
+ } SoupHandlerData;
+ 
+@@ -922,7 +922,7 @@ static SoupHandlerData global_handlers [
+ 		redirect_handler, 
+ 		NULL, 
+ 		RESPONSE_HEADER_HANDLER, 
+-		{ (guint) "Location" }
++		{ "Location" }
+ 	},
+ 	/* 
+ 	 * Handle authorization.
+@@ -932,7 +932,7 @@ static SoupHandlerData global_handlers [
+ 		(SoupCallbackFn) authorize_handler, 
+ 		GINT_TO_POINTER (FALSE), 
+ 		RESPONSE_ERROR_CODE_HANDLER, 
+-		{ 401 }
++		{ GINT_TO_POINTER(401) }
+ 	},
+ 	/* 
+ 	 * Handle proxy authorization.
+@@ -942,7 +942,7 @@ static SoupHandlerData global_handlers [
+ 		(SoupCallbackFn) authorize_handler, 
+ 		GINT_TO_POINTER (TRUE), 
+ 		RESPONSE_ERROR_CODE_HANDLER, 
+-		{ 407 }
++		{ GINT_TO_POINTER(407) }
+ 	},
+ 	{ 0 }
+ };

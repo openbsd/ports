@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libsoup_soup-queue_c,v 1.1.1.1 2002/12/03 19:39:32 marcm Exp $
+--- src/libsoup/soup-queue.c.orig	Thu Oct 17 09:49:11 2002
++++ src/libsoup/soup-queue.c	Thu Oct 17 09:49:16 2002
+@@ -30,7 +30,7 @@
+ #include "soup-ssl.h"
+ #include "soup-transfer.h"
+ 
+-static GSList *soup_active_requests = NULL, *soup_active_request_next = NULL;
++GSList *soup_active_requests = NULL, *soup_active_request_next = NULL;
+ 
+ static guint soup_queue_idle_tag = 0;
+ 
