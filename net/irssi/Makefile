@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/12/14 04:45:41 margarida Exp $
+# $OpenBSD: Makefile,v 1.22 2004/01/12 00:17:45 brad Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0::devel/glib2
+LIB_DEPENDS+=		glib-2.0.0.0,gmodule-2.0.0.0::devel/glib2
 
 CONFIGURE_STYLE=	gnu
 
@@ -38,7 +38,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Msocks}
 CONFIGURE_ARGS+=	--with-socks
-BUILD_DEPENDS=		socks.1::security/dante
+BUILD_DEPENDS+=		::security/dante
 .endif
 
 SAMPLE=		default.theme colorless.theme
