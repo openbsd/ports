@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/14 22:57:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/03 14:23:32 pedro Exp $
 
 COMMENT=		"FastCGI Development Kit"
 
@@ -7,7 +7,7 @@ CATEGORIES=		www
 
 HOMEPAGE=		http://www.fastcgi.com/
 
-MAINTAINER=		Pedro Martelletto <pbastos@rdc.puc-rio.br>
+MAINTAINER=		Pedro Martelletto <pedro@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=   Yes

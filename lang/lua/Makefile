@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/05/25 12:14:30 pedro Exp $
+# $OpenBSD: Makefile,v 1.12 2004/07/03 14:23:32 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 
 HOMEPAGE=	http://www.lua.org/
 
-MAINTAINER=	Pedro Martelletto <pbastos@inf.puc-rio.br>
+MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
