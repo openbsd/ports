@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/31 18:42:14 espie Exp $
 
 DISTNAME=	enlightenment-0.16.3
 CATEGORIES=     x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/
 
@@ -22,12 +22,12 @@ LIB_DEPENDS=	esd.2.16::audio/esound \
 		ttf.1.3::print/freetype \
 		ghttp.1::www/libghttp
 
-USE_X11=	Yes 
 USE_GMAKE=	Yes
-SEPARATE_BUILD=	Yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes 
+FAKE=		Yes
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
