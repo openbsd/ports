@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/15 00:29:25 espie Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -31,11 +31,11 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${LOCALBASE}/grace
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpdf.a::print/pdflib
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png \
-		t1.2::devel/t1lib \
-		tiff.35::graphics/tiff
+		t1.3::devel/t1lib \
+		tiff.35::graphics/tiff \
+		pdf.2::print/pdflib
 
 FLAVORS=	no_x11 fftw netcdf xmhtml
 FLAVOR?=
