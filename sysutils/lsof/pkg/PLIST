@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/09/02 03:26:57 brad Exp $
-man/cat8/lsof.8
+@comment $OpenBSD: PLIST,v 1.7 2000/09/09 22:41:55 brad Exp $
+man/cat8/lsof.0
 sbin/lsof
 share/lsof/00MANIFEST
 share/lsof/00README
