@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile.in,v 1.1.1.1 2001/05/24 19:21:09 jakob Exp $
+
+--- Makefile.in.orig	Thu May 24 21:15:52 2001
++++ Makefile.in	Thu May 24 21:15:59 2001
+@@ -4,6 +4,8 @@ bindir = @bindir@
+ mandir = @mandir@/man1
+ LIBS = @LIBS@
+ 
++DESTDIR =
++
+ CFLAGS = -O -Wall
+ RM = rm -f
+ INSTALL  = install -c -m
+@@ -34,5 +36,5 @@ clean:
+ distclean:
+ 	$(RM) $(OBJS) $(PROG) $(CNF) $(MKF)
+ install:
+-	$(INSTALL) 555 $(PROG) $(bindir)
+-	$(INSTALL) 444 $(MAN) $(mandir)
++	$(INSTALL) 555 $(PROG) $(DESTDIR)$(bindir)
++	$(INSTALL) 444 $(MAN) $(DESTDIR)$(mandir)
