@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/20 03:48:38 jasoni Exp $
-lib/libPropList.so.2.2
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/09 15:20:24 espie Exp $
+@lib lib/libPropList.so.2.2

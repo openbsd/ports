@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/21 03:19:52 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:20:24 espie Exp $
 bin/libicq2000-config
+include/libicq2000/
+include/libicq2000/libicq2000/
 include/libicq2000/libicq2000/Cache.h
 include/libicq2000/libicq2000/Capabilities.h
 include/libicq2000/libicq2000/Client.h
@@ -42,8 +44,7 @@ include/libicq2000/libicq2000/userinfohelpers.h
 include/libicq2000/libicq2000/version.h
 lib/libicq2000.a
 lib/libicq2000.la
-%%SHARED%%
-man/man1/libicq2000-config.1
+@man man/man1/libicq2000-config.1
+share/aclocal/
 share/aclocal/libicq2000.m4
-@dirrm include/libicq2000/libicq2000
-@dirrm include/libicq2000
+%%SHARED%%

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/10/24 12:54:37 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/09 15:20:24 espie Exp $
 bin/sigc-config
+include/sigc++-1.0/
+include/sigc++-1.0/sigc++/
 include/sigc++-1.0/sigc++/adaptor.h
 include/sigc++-1.0/sigc++/basic_signal.h
 include/sigc++-1.0/sigc++/bind.h
@@ -9,6 +11,7 @@ include/sigc++-1.0/sigc++/func_slot.h
 include/sigc++-1.0/sigc++/generator.h
 include/sigc++-1.0/sigc++/handle.h
 include/sigc++-1.0/sigc++/handle_system.h
+include/sigc++-1.0/sigc++/macros/
 include/sigc++-1.0/sigc++/macros/basic_signal.h.m4
 include/sigc++-1.0/sigc++/macros/bind.h.m4
 include/sigc++-1.0/sigc++/macros/class_slot.h.m4
@@ -31,8 +34,12 @@ include/sigc++-1.0/sigc++/thread.h
 include/sigc++-1.0/sigc++/type.h
 lib/libsigc.a
 lib/libsigc.la
+lib/sigc++-1.0/
+lib/sigc++-1.0/include/
 lib/sigc++-1.0/include/sigc++config.h
+share/aclocal/
 share/aclocal/sigc++.m4
+share/doc/libsigc++/
 share/doc/libsigc++/API
 share/doc/libsigc++/FAQ
 share/doc/libsigc++/UML
@@ -45,9 +52,3 @@ share/doc/libsigc++/riscos
 share/doc/libsigc++/signals
 share/doc/libsigc++/win32
 %%SHARED%%
-@dirrm share/doc/libsigc++
-@dirrm lib/sigc++-1.0/include
-@dirrm lib/sigc++-1.0
-@dirrm include/sigc++-1.0/sigc++/macros
-@dirrm include/sigc++-1.0/sigc++
-@dirrm include/sigc++-1.0
