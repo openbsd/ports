@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 1999/12/05 18:24:48 dugsong Exp $
+# $OpenBSD: Makefile,v 1.27 1999/12/05 18:29:46 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += ssh
      SUBDIR += stel
      SUBDIR += strobe
+     SUBDIR += stunnel
 #    SUBDIR += sudo
 #    SUBDIR += super
      SUBDIR += swatch
