@@ -1,12 +1,54 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2002/01/04 04:05:14 brad Exp $
---- Makefile.in.orig	Fri Jul 27 16:33:34 2001
-+++ Makefile.in	Sun Nov 18 12:28:42 2001
-@@ -76,7 +76,7 @@ PACKAGE = @PACKAGE@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
+$OpenBSD: patch-Makefile_in,v 1.3 2002/08/05 01:14:29 brad Exp $
+--- Makefile.in.orig	Sun Aug  4 20:58:35 2002
++++ Makefile.in	Sun Aug  4 21:03:12 2002
+@@ -24,6 +24,8 @@ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
  
--SUBDIRS = lib examples xmlwf
-+SUBDIRS = lib xmlwf
- INSTALLSUBDIRS = lib xmlwf
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- CONFIG_HEADERS = config.h
++DESTDIR = 
++
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+@@ -49,7 +51,7 @@ default:  buildlib xmlwf/xmlwf
+ 
+ buildlib: $(LIBRARY)
+ 
+-all: $(LIBRARY) xmlwf/xmlwf examples/elements examples/outline
++all: $(LIBRARY) xmlwf/xmlwf
+ 
+ clean:
+ 	cd lib && rm -f $(LIBRARY) *.o *.lo && rm -rf .libs _libs
+@@ -69,22 +71,22 @@ check: tests/runtests
+ 	tests/runtests
+ 
+ install: xmlwf/xmlwf installlib
+-	$(mkinstalldirs) $(bindir) $(mandir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) xmlwf/xmlwf $(bindir)/xmlwf
+-	$(INSTALL_DATA) $(MANFILE) $(mandir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) xmlwf/xmlwf $(DESTDIR)$(bindir)/xmlwf
++	$(INSTALL_DATA) $(MANFILE) $(DESTDIR)$(mandir)
+ 
+ installlib: $(LIBRARY) $(APIHEADER)
+-	$(mkinstalldirs) $(libdir) $(includedir)
+-	$(LIBTOOL) --mode=install $(INSTALL) $(LIBRARY) $(libdir)/$(LIBRARY)
+-	$(INSTALL_DATA) $(APIHEADER) $(includedir)
++	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)
++	$(LIBTOOL) --mode=install $(INSTALL) $(LIBRARY) $(DESTDIR)$(libdir)/$(LIBRARY)
++	$(INSTALL_DATA) $(APIHEADER) $(DESTDIR)$(includedir)
+ 
+ uninstall: uninstalllib
+-	$(LIBTOOL) --mode=uninstall rm -f $(bindir)/xmlwf
+-	rm -f $(mandir)/xmlwf.1
++	$(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(bindir)/xmlwf
++	rm -f $(DESTDIR)$(mandir)/xmlwf.1
+ 
+ uninstalllib:
+-	$(LIBTOOL) --mode=uninstall rm -f $(libdir)/$(LIBRARY)
+-	rm -f $(includedir)/$(APIHEADER)
++	$(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$(LIBRARY)
++	rm -f $(DESTDIR)$(includedir)/$(APIHEADER)
+ 
+ # for VPATH builds (invoked by configure)
+ mkdir-init:

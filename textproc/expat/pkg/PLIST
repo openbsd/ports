@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/21 19:17:41 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/08/05 01:14:29 brad Exp $
 bin/xmlwf
 include/expat.h
 lib/libexpat.a
 lib/libexpat.la
 %%SHARED%%
+man/man1/xmlwf.1

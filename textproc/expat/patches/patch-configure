@@ -1,12 +1,25 @@
-$OpenBSD: patch-configure,v 1.2 2002/01/04 04:05:14 brad Exp $
---- configure.orig	Fri Jul 27 16:33:34 2001
-+++ configure	Sun Nov 18 12:28:42 2001
-@@ -561,7 +561,7 @@ VERSION=$EXPAT_VERSION
- PACKAGE=expat
- 
- 
--LIBCURRENT=1
-+LIBCURRENT=2
- LIBREVISION=0
- LIBAGE=1
- 
+$OpenBSD: patch-configure,v 1.3 2002/08/05 01:14:29 brad Exp $
+--- configure.orig	Sun Aug  4 21:03:45 2002
++++ configure	Sun Aug  4 21:05:03 2002
+@@ -5072,8 +5072,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5082,8 +5082,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
