@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.11 1999/03/10 19:33:48 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.12 1999/04/18 20:34:28 brad Exp $
 
-DISTNAME=	lsof_4.41_W
-PKGNAME=	lsof-4.41
+DISTNAME=	lsof_4.42_W
+PKGNAME=	lsof-4.42
 CATEGORIES=	sysutils
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/ \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 NO_PACKAGE=	compile from source to set proper options
 
 MAINTAINER=     angelos@openbsd.org
 
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
-		ftp://ftp.crc.doc.ca/packages/lsof/ \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/
-
 HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	Configure
+CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
-
 
 .if ( ${MACHINE_ARCH} == "sparc" )
 IS_INTERACTIVE=	yes
