@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2002/03/22 15:28:10 peter Exp $
+# $OpenBSD: Makefile,v 1.81 2002/04/29 10:39:20 form Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += august
      SUBDIR += bk2site
      SUBDIR += bluefish
+     SUBDIR += calamaris
      SUBDIR += cgicc
      SUBDIR += cgiparse
 #    SUBDIR += chimera
