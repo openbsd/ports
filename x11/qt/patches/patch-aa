@@ -1,0 +1,23 @@
+*** src/tools/qglobal.h.orig	Sat Jan 10 13:13:45 1998
+--- src/tools/qglobal.h	Sat Jan 10 13:14:37 1998
+***************
+*** 43,48 ****
+--- 43,49 ----
+  //   LINUX	- Linux
+  //   FREEBSD	- FreeBSD
+  //   NETBSD	- NetBSD
++ //   OPENBSD	- OpenBSD
+  //   IRIX	- SGI Irix
+  //   OSF	- OSF Unix
+  //   BSDI	- BSDI Unix
+***************
+*** 79,84 ****
+--- 80,87 ----
+  #define _OS_FREEBSD_
+  #elif defined(__NetBSD__)
+  #define _OS_NETBSD_
++ #elif defined(__OpenBSD__)
++ #define _OS_OPENBSD_
+  #elif defined(sgi) || defined(__sgi)
+  #define _OS_IRIX_
+  #elif defined(__osf__)
