@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2003/01/28 00:08:00 margarida Exp $
+# $OpenBSD: Makefile,v 1.68 2003/02/18 23:59:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += figlet
      SUBDIR += fileutils
      SUBDIR += findutils
+     SUBDIR += ftdi-eeprom
      SUBDIR += gacc
      SUBDIR += garmin-utils
 #    SUBDIR += git
