@@ -1,12 +1,9 @@
---- configure.orig	Mon Mar 20 13:20:42 2000
-+++ configure	Tue Sep 26 01:55:45 2000
-@@ -1155,6 +1155,16 @@
+--- configure.orig	Mon Mar 20 11:20:42 2000
++++ configure	Sun Oct  7 23:09:35 2001
+@@ -1155,6 +1155,13 @@
  	DSO=FREEBSD
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
-+    alpha-*-openbsd*)
-+	DSO=no
-+	;;
 +    *-openbsd*)
 +	DSOSUF=so
 +	DSOSUF_VERSION=${DSOSUF}.35.5
