@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/02 16:06:30 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/09 05:44:44 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.1.8
-DISTNAME=	Xerces-J-bin.1.2.3
-PKGNAME=	xerces-1.2.3
+DISTNAME=	Xerces-J-bin.1.3.0
+PKGNAME=	xerces-1.3.0
 CATEGORIES=	textproc
 NEED_VERSION=	1.348
 
@@ -23,14 +23,14 @@ RUN_DEPENDS=    ${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
 
 NO_BUILD=	Yes
 
-WRKDIST=	${WRKDIR}/xerces-1_2_3
+WRKDIST=	${WRKDIR}/xerces-1_3_0
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/xerces-1_2_3
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/xerces-1_2_3
-	cp ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/xerces-1_2_3
-	cp -R ${WRKSRC}/docs ${PREFIX}/share/java/xerces-1_2_3
-	cp -R ${WRKSRC}/data ${PREFIX}/share/java/xerces-1_2_3
-	cp -R ${WRKSRC}/samples ${PREFIX}/share/java/xerces-1_2_3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/xerces-1_3_0
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/xerces-1_3_0
+	cp ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/xerces-1_3_0
+	cp -R ${WRKSRC}/docs ${PREFIX}/share/java/xerces-1_3_0
+	cp -R ${WRKSRC}/data ${PREFIX}/share/java/xerces-1_3_0
+	cp -R ${WRKSRC}/samples ${PREFIX}/share/java/xerces-1_3_0
 
 .include <bsd.port.mk>
