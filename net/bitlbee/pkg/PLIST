@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/28 07:38:29 sturm Exp $
 libexec/bitlbee
 man/man8/bitlbee.8
 share/bitlbee/help.txt
+share/bitlbee/motd.txt
 share/doc/bitlbee/user-guide.html
 @dirrm share/doc/bitlbee
 @dirrm share/bitlbee

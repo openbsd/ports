@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/22 10:09:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/28 07:38:29 sturm Exp $
 COMMENT=		"IRC-proxy to connect to icq, aol, msn and jabber"
 
-DISTNAME=		bitlbee-0.73
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		bitlbee-0.80
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lintux.cx/bitlbee.html
@@ -26,7 +25,8 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 			--mandir=${PREFIX}/man \
-			--config=${DB_DIR}
+			--config=${DB_DIR} \
+			--etcdir=${PREFIX}/share/bitlbee
 
 LIB_DEPENDS=		glib::devel/glib
 
