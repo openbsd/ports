@@ -1,9 +1,0 @@
-#! /bin/sh
-
-mv ${WRKSRC}/pgaccess.tcl ${WRKSRC}/pgaccess.tcl.$$
-
-sed -e "s|load libpgtcl.so|load ${PREFIX}/pgsql/lib/libpgtcl.so|" \
-	< ${WRKSRC}/pgaccess.tcl.$$ \
-	> ${WRKSRC}/pgaccess.tcl
-
-rm -f ${WRKSRC}/pgaccess.tcl.$$
