@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/01/18 21:18:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2001/02/14 15:46:40 wilfried Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += vmailmgr
      SUBDIR += vrfy
      SUBDIR += wmbiff
+     SUBDIR += wmpop3
      SUBDIR += xfaces
      SUBDIR += xfmail
      SUBDIR += xlbiff
