@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/25 01:58:55 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/20 01:35:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	"like make(1), but more powerful and clean"
 
-DISTNAME=	cook-2.17
+DISTNAME=	cook-2.19
 CATEGORIES=	devel
-NEED_VERSION=	1.474
+NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
@@ -27,6 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS= --libdir="${PREFIX}/share/locale"
 
 REGRESS_TARGET=	sure
-REGRESS_FLAGS=HOME=/ LOGNAME=nobody
+REGRESS_FLAGS=	HOME=/ LOGNAME=nobody
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2002/02/20 01:35:56 naddy Exp $
+--- configure.orig	Tue Feb 19 01:16:02 2002
++++ configure	Wed Feb 20 02:28:30 2002
+@@ -2792,7 +2792,7 @@ case "$libdir" in
+ */cook/* | */cook )
+ 	;;
+ *)
+-	libdir="${libdir}/cook"
++	libdir="${libdir}"
+ 	;;
+ esac
+ case "$datadir" in
