@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/10 23:05:01 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2001/06/12 17:06:38 avsm Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 
-DISTNAME=	maildrop-1.3.2
+DISTNAME=	maildrop-1.3.3
 CATEGORIES=    	mail
 NEED_VERSION=	1.391
 
@@ -23,7 +23,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc \
 			--enable-sendmail=/usr/sbin/sendmail \
 			--enable-maildrop-gid=bin \
-			--disable-tempdir --enable-restricted-trusted=1
+			--disable-tempdir --enable-restricted-trusted=1 \
+			--enable-syslog=1
 
 DOCFILES=		README INSTALL UPGRADE README.postfix
 
