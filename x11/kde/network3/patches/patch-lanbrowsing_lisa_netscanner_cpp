@@ -1,0 +1,33 @@
+$OpenBSD: patch-lanbrowsing_lisa_netscanner_cpp,v 1.1 2002/11/29 14:18:16 brad Exp $
+--- lanbrowsing/lisa/netscanner.cpp.orig	Sat Feb  2 17:27:59 2002
++++ lanbrowsing/lisa/netscanner.cpp	Sun Nov 24 04:26:40 2002
+@@ -36,6 +36,10 @@
+ #include <netinet/ip.h>
+ #include <netinet/ip_icmp.h>
+ 
++#ifndef INADDR_NONE
++#define INADDR_NONE -1
++#endif
++
+ #define mgetDebug() getDebug()<<procId
+ 
+ struct ICMPEchoRequest
+@@ -133,7 +137,7 @@ void NetScanner::configure(Config& confi
+       {
+          if ((m_strictMode) && (hostsAdded>=STRICTMODEMAXHOSTS))
+             break;
+-         memcpy(&server_addr, hp->h_addr, hp->h_length);
++         memcpy(&server_addr, hp->h_addr, sizeof(server_addr));
+          char *ip=inet_ntoa(server_addr);
+          mgetDebug()<<"NetScanner::configure(): looking up "<<nextName<<" gives -"<<ip<<"-"<<std::endl;
+          ipRangeStr=ipRangeStr+ip+';';
+@@ -377,6 +381,9 @@ void NetScanner::nmblookupScan(SimpleLis
+          };
+       };
+    } while (!done);
++
++   // Warning: The return value of plcose may be incorrect due to the
++   // SIGCHLD handler that is installed. Ignore it!
+    pclose(nmblookupFile);
+ 
+    delete [] tmpBuf;

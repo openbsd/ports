@@ -1,0 +1,120 @@
+$OpenBSD: patch-lanbrowsing_lisa_netmanager_cpp,v 1.1 2002/11/29 14:18:16 brad Exp $
+--- lanbrowsing/lisa/netmanager.cpp.orig	Sat Feb  2 17:27:59 2002
++++ lanbrowsing/lisa/netmanager.cpp	Sun Nov 24 04:26:40 2002
+@@ -27,6 +27,7 @@
+ #include <strings.h>
+ #include <errno.h>
+ #include <string.h>
++#include <pwd.h>
+ 
+ #ifndef AF_LOCAL
+ #define AF_LOCAL AF_UNIX
+@@ -70,7 +71,7 @@ NetManager::NetManager(int& rawSocketFD,
+ 
+ NetManager::~NetManager()
+ {
+-   mgetDebug()<<"netknife destructor ..."<<std::endl;
++   mgetDebug()<<"NetManager destructor ..."<<std::endl;
+    if (m_receiveBuffer!=0) delete [] m_receiveBuffer;
+    ::close(m_listenFD);
+    ::close(m_bcFD);
+@@ -131,14 +132,28 @@ int NetManager::prepare()
+       m_listenFD=::socket(AF_LOCAL, SOCK_STREAM, 0);
+       //m_listenFD=::socket(AF_LOCAL, SOCK_STREAM, IPPROTO_TCP);
+       MyString socketName("/tmp/resLisa-");
+-      socketName+=getenv("LOGNAME");
++      struct passwd *user = getpwuid( getuid() );
++      if ( user )
++         socketName+=user->pw_name;
++      else
++         //should never happen
++         socketName+="???";
+       ::unlink(socketName.data());
+       sockaddr_un serverAddr;
+-//      bzero((char*)&serverAddr, sizeof(serverAddr));
++      if (socketName.length() >= sizeof(serverAddr.sun_path))
++      {
++         std::cout<<"NetManager::prepare: your user name  \""<<user->pw_name<<"\" is too long, exiting."<<std::endl;
++         return 0;
++      }
+       memset((void*)&serverAddr, 0, sizeof(serverAddr));
+-      serverAddr.sun_family      = AF_LOCAL;
+-      strcpy(serverAddr.sun_path,socketName.data());
+-      ::bind(m_listenFD,(sockaddr*) &serverAddr,sizeof(serverAddr));
++      serverAddr.sun_family=AF_LOCAL;
++      strncpy(serverAddr.sun_path,socketName.data(),sizeof(serverAddr.sun_path));
++      result=::bind(m_listenFD,(sockaddr*) &serverAddr,sizeof(serverAddr));
++      if (result!=0)
++      {
++         std::cout<<"NetManager::prepare: bind (UNIX socket) failed, errno: "<<errno<<std::endl;
++         return 0;
++      }
+    }
+    else
+    {
+@@ -148,7 +163,7 @@ int NetManager::prepare()
+       {
+          std::cout<<"NetManager::prepare: socket(TCP) failed, errno: "<<errno<<std::endl;
+          return 0;
+-      };
++      }
+ 
+       sockaddr_in serverAddress;
+ //      bzero((char*)&serverAddress, sizeof(serverAddress));
+@@ -654,6 +669,10 @@ int NetManager::readDataFromFD(int fd)
+    m_receivedBytes+=result;
+    if (m_receiveBuffer!=0) delete [] m_receiveBuffer;
+    m_receiveBuffer=newBuf;
++   // too much data - abort at 2MB to avoid memory exhaustion
++   if (m_receivedBytes>2*1024*1024)
++     return 0;
++
+    return 1;
+ };
+ 
+@@ -665,14 +684,15 @@ int NetManager::processScanResults()
+ 
+    char *tmpBuf=m_receiveBuffer;
+    int bytesLeft=m_receivedBytes;
+-   int tmpIP;
+    mgetDebug()<<"m_receivedBytes: "<<m_receivedBytes<<" bytesLeft: "<<bytesLeft<<std::endl;
+    //this should be large enough for a name
+    //and the stuff which is inserted into the buffer
+-   //comes only from ourselves
++   //comes only from ourselves ... or attackers :-(
+    char tmpName[1024*4];
+    while (bytesLeft>0)
+    {
++      int tmpIP=2;  // well, some impossible IP address, 0 and 1 are already used for the last line of output
++      tmpName[0]='\0';
+       if ((memchr(tmpBuf,0,bytesLeft)==0) || (memchr(tmpBuf,int('\n'),bytesLeft)==0))
+       {
+          delete newNodes;
+@@ -687,14 +707,16 @@ int NetManager::processScanResults()
+          return 0;
+       };
+       //mgetDebug()<<"NetManager::processScanResults: processing -"<<tmpBuf;
+-      sscanf(tmpBuf,"%u %s\n",&tmpIP,tmpName);
+       //since we check for 0 and \n with memchr() we can be sure
+       //at this point that tmpBuf is correctly terminated
+       int length=strlen(tmpBuf)+1;
++      if (length<(4*1024))
++         sscanf(tmpBuf,"%u %s\n",&tmpIP,tmpName);
++
+       bytesLeft-=length;
+       tmpBuf+=length;
+       mgetDebug()<<"length: "<<length<<" bytesLeft: "<<bytesLeft<<std::endl;
+-      if ((bytesLeft==0) && (strstr(tmpName,"succeeded")!=0) && ((tmpIP==0) ||(tmpIP==1)))
++      if ((bytesLeft==0) && ((tmpIP==0) ||(tmpIP==1)) && (strstr(tmpName,"succeeded")!=0))
+       {
+          mgetDebug()<<"NetManager::processScanResults: succeeded :-)"<<std::endl;
+          delete hostList;
+@@ -712,7 +734,7 @@ int NetManager::processScanResults()
+ 
+          return 1;
+       }
+-      else
++      else if (tmpIP!=2)
+       {
+          //mgetDebug()<<"NetManager::processScanResults: adding host: "<<tmpName<<" with ip: "<<tmpIP<<std::endl;
+          newNodes->append(Node(tmpName,tmpIP));
