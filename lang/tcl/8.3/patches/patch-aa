@@ -1,6 +1,16 @@
---- Makefile.in.orig	Wed May 24 00:50:16 2000
-+++ Makefile.in	Wed May 24 01:04:09 2000
-@@ -396,7 +396,7 @@
+--- Makefile.in.orig	Tue Aug  8 19:17:11 2000
++++ Makefile.in	Mon Feb 26 14:36:03 2001
+@@ -37,6 +37,9 @@
+ # when installing files.
+ INSTALL_ROOT		=
+ 
++# Path for the platform independent Tcl scripting generic header files:
++TCL_INCLUDE_GENERIC	= $(prefix)/include/tcl$(VERSION)/generic
++
+ # Path for the platform independent Tcl scripting libraries:
+ TCL_LIBRARY		= $(prefix)/lib/tcl$(VERSION)
+ 
+@@ -397,7 +400,7 @@
  
  all: binaries libraries doc
  
@@ -9,7 +19,7 @@
  
  libraries:
  
-@@ -407,12 +407,15 @@
+@@ -408,12 +411,15 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
@@ -27,7 +37,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -522,8 +525,10 @@
+@@ -523,8 +529,10 @@
  	    fi
  	@echo "Installing $(TCL_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -39,7 +49,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -532,7 +537,8 @@
+@@ -533,7 +541,8 @@
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
@@ -49,7 +59,7 @@
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(TCL_STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
-@@ -540,7 +546,8 @@
+@@ -541,7 +550,8 @@
  	    fi
  
  install-libraries: libraries
@@ -59,7 +69,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -562,10 +569,18 @@
+@@ -563,10 +573,18 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -80,16 +90,16 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
-@@ -627,6 +642,14 @@
+@@ -628,6 +646,14 @@
  	    done;
  	@echo "Cross-linking command (.n) docs";
  	@$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
-+	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
-+	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
-+	@echo "tclDecls.h   in $(INCLUDE_INSTALL_DIR)/tclDecls.h"
++	@echo "tclConfig.sh in $(TCL_LIBRARY)/tclConfig.sh"
++	@echo "tcl.h        in $(TCL_INCLUDE_GENERIC)/tcl.h"
++	@echo "tclDecls.h   in $(TCL_INCLUDE_GENERIC)/tclDecls.h"
 +	@echo "These are NOT in the default place, but in a good place to avoid"
 +	@echo "conflicting with another version of Tcl/Tk."
  
