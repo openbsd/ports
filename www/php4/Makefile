@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2001/11/17 00:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2001/11/19 01:50:34 brad Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -16,7 +16,7 @@ PKGNAME=	php4-${V}p1
 FULLPKGNAME-pear= php4-pear-${V}p1
 
 CATEGORIES=	www lang
-NEED_VERSION=	1.474
+NEED_VERSION=	1.489
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -79,7 +79,7 @@ CONFIGURE_ARGS+=	--without-gettext
 
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+=	--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE} --with-kerberos
-LIB_DEPENDS+=		c-client.3::mail/c-client
+LIB_DEPENDS+=		c-client.3:c-client->=4.40p1:mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif

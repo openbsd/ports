@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2001/10/04 21:27:44 avsm Exp $
---- configure.orig	Thu Jun 21 06:28:57 2001
-+++ configure	Thu Oct  4 21:38:55 2001
+$OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
+--- configure.orig	Thu Jun 21 02:28:57 2001
++++ configure	Sun Nov 18 17:12:35 2001
 @@ -6577,6 +6577,7 @@ for ac_func in asctime_r \
  chroot \
  ctime_r \
@@ -231,6 +231,33 @@ $OpenBSD: patch-configure,v 1.6 2001/10/04 21:27:44 avsm Exp $
  
  
    ;;
+@@ -22757,22 +22798,22 @@ EOF
+   esac
+ 
+     
+- case "com_err" in
++ case "com_err_pic" in
+  c|c_r|pthread*) ;;
+  *)
+ 
+    if test "$ext_shared" = "yes"; then
+      
+-  IMAP_SHARED_LIBADD="$IMAP_SHARED_LIBADD -lcom_err"
++  IMAP_SHARED_LIBADD="$IMAP_SHARED_LIBADD -lcom_err_pic"
+ 
+    else
+      
+- case "com_err" in
++ case "com_err_pic" in
+  c|c_r|pthread*) ;;
+  *)
+ 
+    
+-  LIBS="$LIBS -lcom_err"
++  LIBS="$LIBS -lcom_err_pic"
+ 
+ 
+   ;;
 @@ -22783,59 +22824,49 @@ EOF
    ;;
    esac
@@ -338,7 +365,7 @@ $OpenBSD: patch-configure,v 1.6 2001/10/04 21:27:44 avsm Exp $
 +    LIBS="$LIBS -L$IMAP_LIBDIR -l$IMAP_LIB"
      if test $PHP_KERBEROS != "no"; then
 -      LIBS="$LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-+      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb5 -lcom_err -lasn1"
++      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb5 -lasn1 -lcom_err_pic"
      fi
 +
      if test "$cross_compiling" = yes; then
