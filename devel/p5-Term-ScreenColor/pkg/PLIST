@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 23:55:05 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 16:20:04 naddy Exp $
 ${P5SITE}/Term/ScreenColor.pm
+@comment ${P5ARCH}/auto/Term/ScreenColor/.packlist
 man/man3p/Term::ScreenColor.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Term/ScreenColor
+@comment @dirrm ${P5ARCH}/auto/Term
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Term

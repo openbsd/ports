@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:03 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Curses.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Curses/Curses.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Curses/Curses.so
+@comment $OpenBSD: PLIST,v 1.6 2003/12/31 16:20:04 naddy Exp $
+${P5ARCH}/Curses.pm
+@comment ${P5ARCH}/auto/Curses/.packlist
+${P5ARCH}/auto/Curses/Curses.bs
+${P5ARCH}/auto/Curses/Curses.so
 man/man3p/Curses.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Curses
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}

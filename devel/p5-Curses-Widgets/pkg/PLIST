@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/30 19:39:13 margarida Exp $
-@option no-default-conflict
-@pkgcfl p5-Curses-Widgets-[0-9\.]*
+@comment $OpenBSD: PLIST,v 1.6 2003/12/31 16:20:04 naddy Exp $
 ${P5SITE}/Curses/Widgets.pm
 ${P5SITE}/Curses/Widgets/ButtonSet.pm
 ${P5SITE}/Curses/Widgets/Calendar.pm
@@ -14,6 +12,7 @@ ${P5SITE}/Curses/Widgets/TextField.pm
 ${P5SITE}/Curses/Widgets/TextMemo.pm
 ${P5SITE}/Curses/Widgets/Tutorial.pod
 ${P5SITE}/Curses/Widgets/Tutorial/Creation.pod
+@comment ${P5ARCH}/auto/Curses/Widgets/.packlist
 man/man3p/Curses::Widgets.3p
 man/man3p/Curses::Widgets::ButtonSet.3p
 man/man3p/Curses::Widgets::Calendar.3p
@@ -29,6 +28,8 @@ man/man3p/Curses::Widgets::Tutorial.3p
 man/man3p/Curses::Widgets::Tutorial::Creation.3p
 share/examples/p5-Curses-Widgets/demo.pl
 @dirrm share/examples/p5-Curses-Widgets
+@comment @dirrm ${P5ARCH}/auto/Curses/Widgets
 @dirrm ${P5SITE}/Curses/Widgets/Tutorial
 @dirrm ${P5SITE}/Curses/Widgets/ListBox
 @dirrm ${P5SITE}/Curses/Widgets
+@dirrm ${P5SITE}/Curses
