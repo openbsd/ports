@@ -1,4 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/03/26 16:03:59 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2002/12/28 19:10:50 todd Exp $
+lib/libgg.so.0.8
+lib/libgii.so.0.8
+DYNLIBDIR(%D/lib)
 lib/ggi/filter/keytrans.so
 lib/ggi/filter/mouse.so
 lib/ggi/filter/save.so
@@ -12,6 +15,3 @@ lib/ggi/input/stdin.so
 lib/ggi/input/tcp.so
 lib/ggi/input/x.so
 lib/ggi/input/xwin.so
-lib/libgg.so.0.7
-lib/libgii.so.0.7
-DYNLIBDIR(%D/lib)

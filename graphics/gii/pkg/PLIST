@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/03/26 16:04:00 todd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/12/28 19:10:50 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/errors.h
@@ -10,7 +10,6 @@ include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
 include/ggi/internal/gii-dl.h
 include/ggi/internal/gii.h
-include/ggi/internal/gii_debug.h
 include/ggi/keyboard.h
 include/ggi/system.h
 lib/ggi/filter/keytrans.a
@@ -44,22 +43,53 @@ lib/libgg.la
 lib/libgii.a
 lib/libgii.la
 man/man1/mhub.1
-man/man3/giiAddEventMask.3gii
-man/man3/giiClose.3gii
-man/man3/giiEventPoll.3gii
-man/man3/giiEventRead.3gii
-man/man3/giiEventSelect.3gii
-man/man3/giiEventSend.3gii
-man/man3/giiEventsQueued.3gii
-man/man3/giiExit.3gii
-man/man3/giiGetEventMask.3gii
-man/man3/giiInit.3gii
-man/man3/giiJoinInputs.3gii
-man/man3/giiOpen.3gii
-man/man3/giiPanic.3gii
-man/man3/giiRemoveEventMask.3gii
-man/man3/giiSetEventMask.3gii
-man/man7/libgii.7gii
+man/man3/giiAddEventMask.3
+man/man3/giiClose.3
+man/man3/giiEventPoll.3
+man/man3/giiEventRead.3
+man/man3/giiEventSelect.3
+man/man3/giiEventSend.3
+man/man3/giiEventsQueued.3
+man/man3/giiExit.3
+man/man3/giiGetEventMask.3
+man/man3/giiInit.3
+man/man3/giiJoinInputs.3
+man/man3/giiMTInit.3
+man/man3/giiOpen.3
+man/man3/giiPanic.3
+man/man3/giiQueryDeviceInfo.3
+man/man3/giiQueryDeviceInfoByNumber.3
+man/man3/giiQueryValInfo.3
+man/man3/giiRemoveEventMask.3
+man/man3/giiSetEventMask.3
+man/man3/giiSplitInputs.3
+man/man3/gii_any_event.3
+man/man3/gii_cmd_event.3
+man/man3/gii_cmddata_getdevinfo.3
+man/man3/gii_cmddata_getvalinfo.3
+man/man3/gii_event.3
+man/man3/gii_event_mask.3
+man/man3/gii_event_type.3
+man/man3/gii_expose_event.3
+man/man3/gii_key_event.3
+man/man3/gii_pbutton_event.3
+man/man3/gii_phystype.3
+man/man3/gii_pmove_event.3
+man/man3/gii_val_event.3
+man/man3/gii_valrange.3
+man/man7/filter-key.7
+man/man7/filter-keytrans.7
+man/man7/filter-mouse.7
+man/man7/filter-save.7
+man/man7/filter-tcp.7
+man/man7/input-directx.7
+man/man7/input-linux-evdev.7
+man/man7/input-linux-kbd.7
+man/man7/input-linux-mouse.7
+man/man7/input-lk201.7
+man/man7/input-mouse.7
+man/man7/input-tcp.7
+man/man7/libgii.7
 share/doc/gii/README
 share/examples/gii/libgii.conf.example
 %%SHARED%%
@@ -67,7 +97,6 @@ share/examples/gii/libgii.conf.example
 @dirrm share/doc/gii
 @dirrm lib/ggi/input
 @dirrm lib/ggi/filter
-@dirrm lib/ggi
 @dirrm include/ggi/internal
 @dirrm include/ggi/input
 @dirrm include/ggi
