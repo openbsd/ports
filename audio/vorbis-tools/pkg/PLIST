@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 01:58:25 todd Exp $
+bin/ogg123
+bin/oggenc
+bin/vorbiscomment
+man/man1/ogg123.1
+man/man1/oggenc.1
+share/examples/vorbis-tools/dot.ogg123rc
+@dirrm share/examples/vorbis-tools

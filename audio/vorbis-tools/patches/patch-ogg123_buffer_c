@@ -1,0 +1,14 @@
+$OpenBSD: patch-ogg123_buffer_c,v 1.1.1.1 2001/03/14 01:58:25 todd Exp $
+--- ogg123/buffer.c.orig	Tue Mar 13 17:35:55 2001
++++ ogg123/buffer.c	Tue Mar 13 17:36:36 2001
+@@ -13,10 +13,6 @@
+ #include <unistd.h> /* for fork and pipe*/
+ #include <fcntl.h>
+ 
+-#ifndef DARWIN
+-#include <malloc.h>
+-#endif
+-
+ #include "ogg123.h"
+ #include "buffer.h"
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogg123_Makefile_in,v 1.1.1.1 2001/03/14 01:58:25 todd Exp $
+--- ogg123/Makefile.in.orig	Tue Mar 13 17:48:16 2001
++++ ogg123/Makefile.in	Tue Mar 13 17:49:35 2001
+@@ -85,7 +85,7 @@ AUTOMAKE_OPTIONS = foreign
+ bin_PROGRAMS = ogg123
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ doc_DATA = ogg123rc-example
+-mandir = $(datadir)/man
++mandir = $(prefix)/man
+ man_MANS = ogg123.1
+ 
+ INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @AO_CFLAGS@
