@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/04/15 00:01:50 brad Exp $
+--- configure.in.orig	Mon Apr 14 19:41:24 2003
++++ configure.in	Mon Apr 14 19:41:35 2003
+@@ -68,8 +68,6 @@ dnl AC_PROG_YACC dnl __kdevelop__
+ 
+ KDE_CREATE_SUBDIRSLIST
+ AC_CONFIG_FILES([ Makefile ])
+-AC_CONFIG_FILES([ doc/Makefile ])
+-AC_CONFIG_FILES([ doc/en/Makefile ])
+ AC_CONFIG_FILES([ kountdown/Makefile ])
+ AC_CONFIG_FILES([ kountdown/setupdlg/Makefile ])
+ AC_CONFIG_FILES([ po/Makefile ])
