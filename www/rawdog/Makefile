@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/01 09:32:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/25 08:03:54 xsa Exp $
 
 COMMENT=	"RSS Aggregator Without Delusions Of Grandeur"
 
-DISTNAME=	rawdog-1.11
+DISTNAME=	rawdog-1.12
 CATEGORIES=	www news
 
 HOMEPAGE=	http://offog.org/code/rawdog.html
