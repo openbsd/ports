@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/25 13:08:33 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/16 16:26:47 naddy Exp $
 
 COMMENT=		"python module for writing basic XML applications"
 
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 PYTHON_VER=     2.1
 
-RUN_DEPENDS+=   python${PYTHON_VER}::lang/python
+LIB_DEPENDS=	expat.2::textproc/expat
+RUN_DEPENDS=	::lang/python
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
 SUBST_VARS=     PYTHON_VER
@@ -35,7 +36,8 @@ SRC_DOCFILES=		package-summary.txt xml-howto.tex \
 
 do-build:
 	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py build \
-		--build-base=${WRKSRC}
+		--build-base=${WRKSRC} \
+		--with-libexpat=${LOCALBASE}
 
 do-install:
 	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py install \
