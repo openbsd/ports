@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/09/10 13:38:04 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/16 15:22:45 brad Exp $
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
@@ -22,5 +22,5 @@ post-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS)
-MAKE_ENV+= NO_SHARED_LIBS=yes
+MAKE_ENV=	NO_SHARED_LIBS=Yes
 .endif
