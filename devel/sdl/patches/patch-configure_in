@@ -1,65 +1,25 @@
---- configure.in.orig	Thu Nov  8 03:28:00 2001
-+++ configure.in	Wed Jan 23 07:03:39 2002
-@@ -432,7 +432,13 @@
+$OpenBSD: patch-configure_in,v 1.15 2002/04/21 00:20:08 pvalchev Exp $
+--- configure.in.orig	Sat Apr 13 17:57:24 2002
++++ configure.in	Sat Apr 20 01:19:21 2002
+@@ -468,7 +468,12 @@ CheckNASM()
                    NASMFLAGS="-f elf"
                    ;;
              esac
 -            AC_SUBST(NASMFLAGS)
-+            case "$target" in
-+  	      *-*-openbsd*)
-+	          NASMFLAGS="-f aoutb"
-+		  ;;
++	    case "$target" in
++		    *-*-openbsd*)
++		      NASMFLAGS="-f aoutb"
++		      ;;
 +	    esac
-+       	    AC_SUBST(NASMFLAGS)
-+	    
++	    	AC_SUBST(NASMFLAGS)
              CFLAGS="$CFLAGS -I\$(top_srcdir)/src/hermes"
              SDL_EXTRADIRS="$SDL_EXTRADIRS hermes"
              SDL_EXTRALIBS="$SDL_EXTRALIBS hermes/libhermes.la"
-@@ -1530,22 +1536,15 @@
-         CheckPTHREAD
-         # Set up files for the main() stub
-         COPY_ARCH_SRC(src/main, linux, SDL_main.c)
--        # Set up files for the audio library
--        # We use the OSS and native API's, not the Sun audio API
--        #if test x$enable_audio = xyes; then
--        #    CFLAGS="$CFLAGS -DSUNAUDIO_SUPPORT"
--        #    AUDIO_SUBDIRS="$AUDIO_SUBDIRS sun"
--        #    AUDIO_DRIVERS="$AUDIO_DRIVERS sun/libaudio_sun.la"
--        #fi
--        # OpenBSD needs linking with ossaudio emulation library
-         if test x$have_oss = xyes; then
-+            # OpenBSD needs linking with ossaudio emulation library
-             SYSTEM_LIBS="$SYSTEM_LIBS -lossaudio"
-         fi
-         # Set up files for the joystick library
--        # (No joystick support yet)
+@@ -1681,6 +1686,7 @@ case "$target" in
          if test x$enable_joystick = xyes; then
--            JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS dummy"
--            JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS dummy/libjoystick_dummy.la"
-+            JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS bsd"
-+            JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS bsd/libjoystick_bsd.la"
+             JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS bsd"
+             JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS bsd/libjoystick_bsd.la"
 +	    SYSTEM_LIBS="$SYSTEM_LIBS -lusbhid"
          fi
          # Set up files for the cdrom library
          if test x$enable_cdrom = xyes; then
-@@ -2160,7 +2159,11 @@
- fi
- 
- if test $ARCH = openbsd; then
--  SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
-+	if test x$have_x = xyes; then
-+		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
-+	else
-+		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
-+	fi
- fi
- 
- dnl Output the video drivers we use
-@@ -2277,6 +2280,7 @@
- src/joystick/Makefile
- src/joystick/amigaos/Makefile
- src/joystick/beos/Makefile
-+src/joystick/bsd/Makefile
- src/joystick/darwin/Makefile
- src/joystick/dummy/Makefile
- src/joystick/linux/Makefile

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2002/02/25 22:33:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2002/04/21 00:20:08 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.3
+VERSION=	1.2.4
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
-NEED_VERSION=	1.504
+NEED_VERSION=	1.524
 
 HOMEPAGE=	http://www.libsdl.org
 
@@ -70,7 +70,7 @@ USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 0:4:0"
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 1:0:0"
 
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
