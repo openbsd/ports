@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/12/23 01:34:13 pvalchev Exp $
 bin/plan
 bin/netplan
 bin/notifier
@@ -8,28 +8,27 @@ share/doc/plan/Mkdoc
 share/doc/plan/Mkdoc.nawk
 share/doc/plan/plan.help
 share/doc/plan/plan_cal.ps
-share/doc/plan/examples/holiday_australia
-share/doc/plan/examples/holiday_bavarian
-share/doc/plan/examples/holiday_belgium
-share/doc/plan/examples/holiday_canada
-share/doc/plan/examples/holiday_dutch
-share/doc/plan/examples/holiday_finnish
-share/doc/plan/examples/holiday_french
-share/doc/plan/examples/holiday_frswiss
-share/doc/plan/examples/holiday_german
-share/doc/plan/examples/holiday_italy
-share/doc/plan/examples/holiday_japan
-share/doc/plan/examples/holiday_quebec
-share/doc/plan/examples/holiday_spain
-share/doc/plan/examples/holiday_swedish
-share/doc/plan/examples/holiday_uk
-share/doc/plan/examples/holiday_us
+share/examples/plan/holiday_australia
+share/examples/plan/holiday_bavarian
+share/examples/plan/holiday_belgium
+share/examples/plan/holiday_canada
+share/examples/plan/holiday_dutch
+share/examples/plan/holiday_finnish
+share/examples/plan/holiday_french
+share/examples/plan/holiday_frswiss
+share/examples/plan/holiday_german
+share/examples/plan/holiday_italy
+share/examples/plan/holiday_japan
+share/examples/plan/holiday_quebec
+share/examples/plan/holiday_spain
+share/examples/plan/holiday_swedish
+share/examples/plan/holiday_uk
+share/examples/plan/holiday_us
 share/doc/plan/BlackWhite
 share/doc/plan/Monochrome
 share/doc/plan/README
 man/man1/netplan.1
 man/man1/plan.1
 man/man4/plan.4
-@dirrm share/netplan.dir
-@dirrm share/doc/plan/examples
+@dirrm share/examples/plan
 @dirrm share/doc/plan
