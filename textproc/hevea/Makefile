@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/08/22 18:12:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/26 15:22:48 pvalchev Exp $
 
 COMMENT=	"LaTeX to html translator"
 
@@ -25,7 +25,8 @@ MAKE_FLAGS=LIBDIR='${PREFIX}/lib/hevea' BINDIR='${PREFIX}/bin'
 FAKE_FLAGS=LIBDIR='${WRKINST}${PREFIX}/lib/hevea' BINDIR='${WRKINST}${PREFIX}/bin'
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc" && \
-	${MACHINE_ARCH} != "alpha"
+	${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "amd64" && \
+	${MACHINE_ARCH} != "powerpc"
 RUN_DEPENDS=	:ocaml-*:lang/ocaml
 MAKE_FLAGS+=	TARGET='byte'
 FAKE_FLAGS+=	TARGET='byte'
