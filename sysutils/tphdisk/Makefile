@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/09 02:56:14 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/09 02:58:59 jcs Exp $
 
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
@@ -25,6 +25,8 @@ NO_REGRESS=	yes
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 MAKE_FILE=	${FILESDIR}/Makefile
+
+WANTLIB=	c
 
 post-extract:
 	cp ${FULLDISTDIR}/${DISTFILES} ${WRKDIR}
