@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/07/01 16:11:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/10/03 19:03:11 xsa Exp $
 
 COMMENT=	"IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo"
 
@@ -23,11 +23,6 @@ ETCDIR=			${SYSCONFDIR}/bitlbee
 EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
 DOCS=			${WRKSRC}/doc/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
-BITLBEEUSER=		_bitlbee
-BITLBEEGROUP=		_bitlbee
-ID=			509
-SUBST_VARS=		DB_DIR ETCDIR EXAMPLEDIR DOCDIR \
-			BITLBEEUSER BITLBEEGROUP ID
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.0::devel/glib2

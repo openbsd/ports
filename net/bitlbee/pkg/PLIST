@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:17:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/03 19:03:11 xsa Exp $
+@newgroup _bitlbee:509
+@newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
 libexec/bitlbee
 @man man/man5/bitlbee.conf.5
 @man man/man8/bitlbee.8
@@ -8,8 +10,7 @@ share/doc/bitlbee/
 share/doc/bitlbee/user-guide.html
 share/examples/bitlbee/
 share/examples/bitlbee/bitlbee.conf
+@sample ${SYSCONFDIR}/bitlbee/
+@sample ${SYSCONFDIR}/bitlbee/bitlbee.conf
 share/examples/bitlbee/motd.txt
-@extraunexec rm -rf ${DB_DIR}
-@extraunexec rm -rf ${ETCDIR}
-@extraunexec userdel ${BITLBEEUSER}
-@extraunexec groupdel ${BITLBEEGROUP}
+@sample /var/bitlbee/
