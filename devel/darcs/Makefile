@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/23 18:27:53 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/03 18:16:46 avsm Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-V=		0.9.11
+V=		0.9.12
 DISTNAME=	darcs-${V}
 CATEGORIES=	devel
 
