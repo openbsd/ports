@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/28 19:35:34 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/16 16:35:59 espie Exp $
 
 COMMENT=	"win95-like window manager based on fvwm 2.x"
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
 PKGNAME=	fvwm95-2.0.43a
 CATEGORIES=     x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/	\
 		ftp://ftp.plig.org/pub/fvwm95/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	ftp://mitac11.uia.ac.be/html-test/fvwm95.html
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a::audio/rplay
+LIB_DEPENDS=	rplay::audio/rplay
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
