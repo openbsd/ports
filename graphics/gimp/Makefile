@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2001/11/01 02:39:05 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -19,8 +19,8 @@ LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		mpeg.13::graphics/mpeg-lib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
-BUILD_DEPENDS=	wget:wget-*:net/wget
-RUN_DEPENDS=	wget:wget-*:net/wget
+BUILD_DEPENDS=	:wget-*:net/wget
+RUN_DEPENDS=	:wget-*:net/wget
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

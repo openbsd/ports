@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -15,7 +15,7 @@ PKGNAME=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
 
 CATEGORIES=	misc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://www.amanda.org/
 
@@ -34,9 +34,9 @@ MASTER_SITE_SUBDIR=	amanda
 # Amanda configure looks for gtar and smbclient so that it can hard-code
 # the pathnames.
 # Configure looks for gnuplot to see if it should build amplot.
-BUILD_DEPENDS+= gtar::archivers/gtar \
-		smbclient::net/samba \
-		gnuplot::math/gnuplot
+BUILD_DEPENDS+= ::archivers/gtar \
+		::net/samba \
+		::math/gnuplot
 
 # There is no need to set RUN_DEPENDS, because Amanda will run fine
 # without gtar, smbclient, and gnuplot.  They will only be required

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/30 12:29:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
 DISTNAME=	ctrace-0.8
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
 MAINTAINER=	Patroklos Argyroudis <argp@bsd.gr>
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${HOMEPAGE}download/
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-BUILD_DEPENDS=	${PERL_MODULES}/Net/RawIP.pm::net/p5-Net-RawIP
+BUILD_DEPENDS=	::net/p5-Net-RawIP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/03 17:52:08 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=		"per-line Perl profiler"
 
 DISTNAME=		Devel-SmallProf-0.9
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.414
+NEED_VERSION=		1.489
 
 MAINTAINER=		Srebrenko Sehic <haver@insecure.dk>
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
 
-PERL_MODULES=   	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-BUILD_DEPENDS=  	${PERL_MODULES}/Time/HiRes.pm::devel/p5-Time-HiRes
+BUILD_DEPENDS=  	::devel/p5-Time-HiRes
 RUN_DEPENDS=    	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/10/24 17:10:59 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 
 HOMEPAGE=	http://www.ethereal.com/
 
-BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
+BUILD_DEPENDS=	:zsh-*:shells/zsh/stable
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/01 08:27:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"solving toolkit for linear equalities and inequalities"
 
@@ -20,7 +20,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
 		patch-*
 
-BUILD_DEPENDS=	bison::devel/bison
+BUILD_DEPENDS=	::devel/bison
 LIB_DEPENDS=	GTL.1::devel/gtl \
 		guile.9::lang/guile
 

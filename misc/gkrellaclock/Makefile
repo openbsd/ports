@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/24 14:14:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"analog clock plugin for gkrellm"
 V=		0.1
@@ -22,8 +22,8 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/gkrellAclock-${V}
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm
-RUN_DEPENDS=	gkrellm::sysutils/gkrellm
+BUILD_DEPENDS=	::sysutils/gkrellm
+RUN_DEPENDS=	::sysutils/gkrellm
 ALL_TARGET=	
 
 do-install:

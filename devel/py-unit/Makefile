@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/05 17:04:11 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:47 espie Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -7,7 +7,7 @@ VERSION=		1.4.1
 DISTNAME=		pyunit-${VERSION}
 PKGNAME=		py-unit-${VERSION}
 CATEGORIES=     	devel
-NEED_VERSION=		1.448
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://pyunit.sourceforge.net/
 
@@ -29,9 +29,9 @@ PYTHON_VER=	2.1
 
 .if ${FLAVOR} != "no_x11"
 PY_MODULE=	${LOCALBASE}/lib/python${PYTHON_VER}/lib-dynload/_tkinter.so
-BUILD_DEPENDS=	${PY_MODULE}::lang/python,tk
+BUILD_DEPENDS=	::lang/python,tk
 .else
-BUILD_DEPENDS=	python${PYTHON_VER}::lang/python
+BUILD_DEPENDS=	::lang/python
 .endif
 
 RUN_DEPENDS=	${BUILD_DEPENDS}

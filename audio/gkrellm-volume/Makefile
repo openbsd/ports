@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:47 espie Exp $
 
 DISTNAME=	volume-0.8
 PKGNAME=	gkrellm-${DISTNAME}
 CATEGORIES=	audio
-NEED_VERSION=	1.433
+NEED_VERSION=	1.489
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -22,8 +22,8 @@ NO_REGRESS=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/volume
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm
-RUN_DEPENDS=	gkrellm::sysutils/gkrellm
+BUILD_DEPENDS=	::sysutils/gkrellm
+RUN_DEPENDS=	::sysutils/gkrellm
 MAKE_FLAGS=	GKRELLM_INCLUDE="-I${LOCALBASE}/include" \
 		SYSLIB="-lossaudio"
 

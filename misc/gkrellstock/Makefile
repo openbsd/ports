@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:48 espie Exp $
 
 DISTNAME=	gkrellstock-0.2
 CATEGORIES=	misc
-NEED_VERSION=	1.444
+NEED_VERSION=	1.489
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,9 +21,9 @@ NO_REGRESS=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/gkrellStock-0.2
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm
-RUN_DEPENDS=	gkrellm::sysutils/gkrellm \
-		${LOCALBASE}/libdata/perl5/site_perl/Finance/Quote.pm::misc/p5-Finance-Quote
+BUILD_DEPENDS=	::sysutils/gkrellm
+RUN_DEPENDS=	::sysutils/gkrellm \
+		::misc/p5-Finance-Quote
 ALL_TARGET=	
 
 do-install:

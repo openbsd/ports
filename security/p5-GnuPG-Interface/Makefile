@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/07 22:35:17 peter Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"perl5 interface to GnuPG"
 
@@ -6,13 +6,13 @@ VERSION=	0.31
 DISTNAME=	GnuPG-Interface-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.448
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GnuPG
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/Class/MethodMaker.pm::devel/p5-Class-MethodMaker
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/Class/MethodMaker.pm::devel/p5-Class-MethodMaker \
-		${LOCALBASE}/bin/gpg:gnupg-*:security/gnupg
+BUILD_DEPENDS=	::devel/p5-Class-MethodMaker
+RUN_DEPENDS=	::devel/p5-Class-MethodMaker \
+		:gnupg-*:security/gnupg
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 

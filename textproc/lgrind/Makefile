@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:11:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:50 espie Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
 CATEGORIES=	textproc devel print
+NEED_VERSION=	1.489
 VERSION=3.64
 DISTNAME=	lgrind-${VERSION}
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
 	source/retest.c source/lgrind.1 source/lgrindef.5 source/Makefile \
 	lgrindef lgrind.dtx lgrind.ins lgrind.gls
-NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -29,8 +29,8 @@ DIST_SUBDIR=${DISTNAME}
 MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION}
 FAKE_FLAGS=BASEDIR=${WRKINST}${PREFIX}
 
-BUILD_DEPENDS=latex::print/teTeX/base
-RUN_DEPENDS=latex::print/teTeX/base
+BUILD_DEPENDS=::print/teTeX/base
+RUN_DEPENDS=::print/teTeX/base
 
 post-build:
 	cd ${WRKDIST} && latex lgrind.ins

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/24 12:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:49 espie Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		msgfmt::devel/gettext
+BUILD_DEPENDS=		::devel/gettext
 LIB_DEPENDS=		glib.1.2,gmodule::devel/glib 
 
 SEPARATE_BUILD=		Concurrent

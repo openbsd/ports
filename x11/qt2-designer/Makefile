@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/24 12:48:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:53 espie Exp $
 
 COMMENT=	designer for qt2
 
@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 EXTRACT_ONLY=	
 
-BUILD_DEPENDS=	/nonexistent::x11/qt2:configure
-RUN_DEPENDS=	${LOCALBASE}/share/doc/qt2/html::x11/qt2,-html
+BUILD_DEPENDS=	::x11/qt2:configure
+RUN_DEPENDS=	::x11/qt2,-html
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:53 espie Exp $
 
-COMMENT=	"extensible window manager for the X Window System."
+COMMENT=	"extensible window manager"
 
 VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= sawmill
 
 HOMEPAGE=       http://sawmill.sourceforge.net/
 
-BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a::x11/rep-gtk
-RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a::x11/rep-gtk
+BUILD_DEPENDS=	::x11/rep-gtk
+RUN_DEPENDS=	::x11/rep-gtk
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		rep.10::lang/librep \

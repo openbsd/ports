@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/17 06:37:34 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"perl module for accessing NNTP articles"
 
 DISTNAME=	News-Article-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	news perl5
-NEED_VERSION=	1.364
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= News
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=	${PERL_MODULES}/PGP/Sign.pm::security/p5-PGP-Sign \
-		${PERL_MODULES}/Net/NNTP.pm::net/p5-libnet
+BUILD_DEPENDS=	::security/p5-PGP-Sign \
+		::net/p5-libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

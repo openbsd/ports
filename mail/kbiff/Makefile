@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/06 16:58:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=		"new mail notification utility"
 
 DISTNAME=		kbiff-3.5
 CATEGORIES=		mail
-NEED_VERSION=		1.410
+NEED_VERSION=		1.489
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.granroth.org/kbiff/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=  	Yes
 
 MASTER_SITES=		http://devel-home.kde.org/~granroth/kbiff/
 
-BUILD_DEPENDS=		uic::x11/qt2-designer
+BUILD_DEPENDS=		::x11/qt2-designer
 LIB_DEPENDS=		kdecore.3.::x11/kde/libs2
 
 PATCH_LIST=		${PORTSDIR}/x11/kde/libs2/patches/p-*

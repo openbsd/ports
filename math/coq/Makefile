@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/22 14:24:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
@@ -22,8 +22,8 @@ DISTFILES=		${DISTNAME}.tar.gz \
 			all-ps-docs.tar.gz:0
 DIST_SUBDIR=		coq
 
-BUILD_DEPENDS=		ocamlc::lang/ocaml \
-			camlp4::lang/camlp4
+BUILD_DEPENDS=		::lang/ocaml \
+			::lang/camlp4
 
 FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
 

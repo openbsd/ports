@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/17 15:46:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:53 espie Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
 VERSION=	0.7.2
 DISTNAME=	paragui-${VERSION}
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.433
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://www.bms-austria.com/projects/paragui/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
-BUILD_DEPENDS=	zip:zip-*:archivers/zip
+BUILD_DEPENDS=	:zip-*:archivers/zip
 
 LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl \
 		SDL_ttf.0.3:sdl-ttf-*:devel/sdl-ttf \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.86 2001/09/30 19:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2001/11/10 15:00:48 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
-BROKEN=		"Older than stable port, needs to be updated"
+BROKEN=		"Need to be updated beyond stable port"
 COM=		'GNU compiler collection (experimental)'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
@@ -20,10 +20,10 @@ PKGNAME-objc=	${DISTNAME}-objc
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-BUILD_DEPENDS=	autoconf::devel/autoconf
+BUILD_DEPENDS=	::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.361
+NEED_VERSION=	1.489
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -85,15 +85,15 @@ MULTI_PACKAGES+=-java
 .endif
 
 .if defined(MAKE_TESTS) && ${MAKE_TESTS:L} == "yes"
-BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
+BUILD_DEPENDS+=	::lang/egcs/dejagnu
 .endif
 
 # No way around it, java wants a pure parser
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
-BUILD_DEPENDS+=bison::devel/bison
+BUILD_DEPENDS+=::devel/bison
 .endif
 
-LATEST_DATE=2000-07-31
+LATEST_DATE=2001-11-05
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -108,9 +108,9 @@ LATEST=${LATEST_DATE:S/-//g}
 DIRECTORY=snapshots/%DATE%/
 .if defined(NEXT_DATE)
 NEXT=${NEXT_DATE:S/-//g}
-DISTNAME=	egcs-${NEXT}
+DISTNAME=	gcc-${NEXT}
 .else
-DISTNAME=   egcs-${LATEST}
+DISTNAME=   gcc-${LATEST}
 .endif
 
 # getting the right archives where they should be
@@ -121,10 +121,11 @@ DIST_SUBDIR=egcs
 
 PATCH_DIST_STRIP=-p1
 
-DISTFILES=  egcs-${LATEST}${EXTRACT_SUFX}
+DISTFILES=  gcc-${LATEST}${EXTRACT_SUFX}
 
 SITES=	
 
+SITES+=	ftp://gcc.gnu.org/pub/gcc/${DIRECTORY}
 SITES+= ftp://ftp.uvsq.fr/pub/egcs/${DIRECTORY}
 SITES+= ftp://ftp.grolier.fr/pub/egcs/${DIRECTORY}
 SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2001/07/20 16:22:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.54 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
-NEED_VERSION=	1.413
+NEED_VERSION=	1.489
 MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/ \
 		ftp://ftp.dqc.org/pub/brad/source/
 
@@ -17,8 +17,8 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
 		xml2.6::textproc/libxml
-BUILD_DEPENDS=	fig2dev:transfig-*:print/transfig \
-		picttoppm:netpbm-*:graphics/netpbm
+BUILD_DEPENDS=	:transfig-*:print/transfig \
+		:netpbm-*:graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

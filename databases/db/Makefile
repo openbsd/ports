@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/26 02:48:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -6,7 +6,7 @@ VMM=		3.1
 VERSION=	${VMM}.17
 DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.444
+NEED_VERSION=	1.489
 HOMEPAGE=	http://www.sleepycat.com/
 MASTER_SITES=	${HOMEPAGE}/update/${VERSION}/
 
@@ -17,10 +17,10 @@ MAINTAINER=	Heikki Korpela <heko@openbsd.org>
 
 # License: BSD+SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_SCRIPT=	../dist/configure
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--disable-cxx
 .if ${FLAVOR:L:Mjava}
 BROKEN=			"requires native JDK"
 ONLY_FOR_ARCHS=		i386
-BUILD_DEPENDS=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk/1.1
+BUILD_DEPENDS=		::devel/jdk/1.1
 CONFIGURE_ARGS+=	--enable-java
 PORTPATH=		/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/jdk${JDK_VERSION}/bin
 .endif

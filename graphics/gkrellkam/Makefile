@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/29 02:44:21 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"image and webcam display plugin for gkrellm"
 
 DISTNAME=	gkrellkam-0.2.3b
 CATEGORIES=	graphics
-NEED_VERSION=	1.444
+NEED_VERSION=	1.489
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,9 +24,9 @@ USE_GMAKE=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/gkrellkam-0.2.3b
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm
-RUN_DEPENDS=	gkrellm::sysutils/gkrellm \
-		wget::net/wget
+BUILD_DEPENDS=	::sysutils/gkrellm
+RUN_DEPENDS=	::sysutils/gkrellm \
+		::net/wget
 
 ALL_TARGET=	
 

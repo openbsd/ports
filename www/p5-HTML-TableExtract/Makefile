@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/10 22:11:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=	"module to extract text contained within HTML tables"
 
 DISTNAME=	HTML-TableExtract-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=	${PERL_MODULES}/${MACHINE_ARCH}-openbsd/HTML/Entities.pm::www/p5-HTML-Parser
+BUILD_DEPENDS=	::www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

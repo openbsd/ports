@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/28 08:48:18 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:53 espie Exp $
 
 COMMENT=            "Gtk bindings for Python"
 COMMENT-gnome=      "Gtk and Gnome bindings for Python"
@@ -44,7 +44,7 @@ SUBST_VARS=     PYTHON_VER
 
 CONFIGURE_ENV=  PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 
-RUN_DEPENDS+=   python${PYTHON_VER}::lang/python
+RUN_DEPENDS+=   ::lang/python
 BUILD_DEPENDS+= ${RUN_DEPENDS}
 
 .if ${FLAVOR:L:Mgnome}

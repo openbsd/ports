@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"download manager for KDE"
 
 DISTNAME=	kmago-1.1.2
 CATEGORIES=	net
-NEED_VERSION=	1.387
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://kmago.sourceforge.net/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kmago
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 MAKE_ENV=	${CONFIGURE_ENV}
@@ -38,7 +38,7 @@ FLAVORS=	wget
 FLAVOR?=
 
 .if ${FLAVOR:L} == "wget"
-RUN_DEPENDS=	wget::net/wget
+RUN_DEPENDS=	::net/wget
 .else
 CONFIGURE_ARGS+= --disable-wget
 .endif

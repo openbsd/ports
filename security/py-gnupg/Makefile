@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/05 17:04:11 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:49 espie Exp $
 
 
 COMMENT=		"python module for GnuPG interface"
@@ -7,7 +7,7 @@ VERSION=		0.3.1
 DISTNAME=		GnuPGInterface-${VERSION}
 PKGNAME=		py-gnupg-${VERSION}
 CATEGORIES=     	security devel
-NEED_VERSION=		1.448
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://py-gnupg.sourceforge.net/
 
@@ -23,8 +23,8 @@ MASTER_SITE_SUBDIR=	py-gnupg
 
 PYTHON_VER=	2.1
 
-BUILD_DEPENDS+=	python${PYTHON_VER}::lang/python \
-		gpg::security/gnupg
+BUILD_DEPENDS+=	::lang/python \
+		::security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"ICQ client for KDE"
 
 DISTNAME=	kxicq2-0.0.6
 CATEGORIES=	net
-NEED_VERSION=	1.420
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://kxicq.sourceforge.net/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kxicq
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 MAKE_ENV=	${CONFIGURE_ENV}

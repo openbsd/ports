@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/29 12:19:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:48 espie Exp $
 
 CATEGORIES=	math devel graphics
-NEED_VERSION=	1.406
+NEED_VERSION=	1.489
 
 COMMENT='graph drawing software'
 PKGNAME=graphviz-1.7.6
@@ -46,8 +46,8 @@ LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
 		jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
-BUILD_DEPENDS=	autoconf::devel/autoconf \
-		automake::devel/automake
+BUILD_DEPENDS=	::devel/autoconf \
+		::devel/automake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/graphviz

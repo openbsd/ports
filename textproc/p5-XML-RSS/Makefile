@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/11 07:04:56 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:50 espie Exp $
 
 COMMENT=	'perl module to manage XML RSS files'
 
 DISTNAME=	XML-RSS-0.97
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.408
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= XML
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=  ${PERL_MODULES}/${MACHINE_ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser
+BUILD_DEPENDS=  ::textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

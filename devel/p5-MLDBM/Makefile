@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=	"store multi-level hash structure in single-level tied hash"
 
 DISTNAME=	MLDBM-2.00
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= MLDBM
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/FreezeThaw.pm::devel/p5-FreezeThaw
+BUILD_DEPENDS=	::devel/p5-FreezeThaw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

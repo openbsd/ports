@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/10/24 12:48:53 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	xview.3,olgx::x11/xview/lib
-BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
+BUILD_DEPENDS=	::x11/xview/config
 
 USE_X11=	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/26 18:24:56 aaron Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=	"weather display plugin for gkrellm"
 
 DISTNAME=	gkrellweather-0.2.7
 CATEGORIES=	x11
-NEED_VERSION=	1.444
+NEED_VERSION=	1.489
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,8 +21,8 @@ USE_X11=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/gkrellweather-0.2.7
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm
-RUN_DEPENDS=	gkrellm::sysutils/gkrellm wget::net/wget
+BUILD_DEPENDS=	::sysutils/gkrellm
+RUN_DEPENDS=	::sysutils/gkrellm ::net/wget
 ALL_TARGET=	
 
 do-install:

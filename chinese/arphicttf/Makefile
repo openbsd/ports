@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/02 15:28:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=	"chinese big5/gb truetype fonts"
 
 DISTNAME=       zh-arphicttf-2.11
 PKGNAME=	zh-fonts-arphicttf-2.11
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.489
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
-BUILD_DEPENDS=	ttfm.sh::chinese/ttfm
+BUILD_DEPENDS=	::chinese/ttfm
 
 NO_BUILD=	Yes
 

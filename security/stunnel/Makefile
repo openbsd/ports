@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/03 13:24:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/10 15:00:50 espie Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-3.21b
 CATEGORIES=	security
-NEED_VERSION=	1.363
+NEED_VERSION=	1.489
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
 		ftp://ftp.all.de/pub2/unix/security/stunnel/
 
-BUILD_DEPENDS=  sdf::textproc/p5-sdf
+BUILD_DEPENDS=  ::textproc/p5-sdf
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tcp-wrappers \

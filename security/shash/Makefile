@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/20 20:50:46 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	generates or checks digests or mac
 
 DISTNAME=	shash-0.2.4
 CATEGORIES=     security
-NEED_VERSION=	1.363
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://mcrypt.hellug.gr/shash/
 
@@ -24,7 +24,7 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L:Mstatic}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libmhash.a::security/mhash
+BUILD_DEPENDS+=		::security/mhash
 CONFIGURE_ARGS+=	--enable-static-link
 .else
 LIB_DEPENDS+=		mhash.2::security/mhash

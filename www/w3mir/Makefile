@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:22:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:52 espie Exp $
 
-COMMENT=	"utility to mirror web pages"
+COMMENT=		"utility to mirror web pages"
 
 DISTNAME=		w3mir-1.0.10
 CATEGORIES=     	www
-NEED_VERSION=	1.402
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://langfeldt.net/w3mir/
 MAINTAINER=		Jeff Bachtel <jeff@cepheid.org>
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=  ${PERL_MODULES}/URI.pm::www/p5-URI \
-		${PERL_MODULES}/LWP.pm::www/p5-libwww \
-		${PERL_MODULES}/${ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64
+BUILD_DEPENDS=  ::www/p5-URI \
+		::www/p5-libwww \
+		::converters/p5-MIME-Base64
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

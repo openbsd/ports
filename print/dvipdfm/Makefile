@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=	"converts DVI files to PDF format"
 
 DISTNAME=		dvipdfm-0.13.2b
 CATEGORIES=     	print
-NEED_VERSION=	1.402
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://gaspra.kettering.edu/dvipdfm/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a::print/teTeX/base
+BUILD_DEPENDS=		::print/teTeX/base
 LIB_DEPENDS=		png.2::graphics/png
 
 CONFIGURE_STYLE=	gnu dest

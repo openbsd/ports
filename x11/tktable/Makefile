@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/11 16:04:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:53 espie Exp $
 
 COMMENT=	"tk extension"
 
 DISTNAME=	Tktable2.7
 PKGNAME=	Tktable-2.7
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 
 HOMEPAGE= 	http://tktable.sourceforge.net/
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
 MASTER_SITE_SUBDIR=	tktable
 
-BUILD_DEPENDS=	wish8.3::x11/tk/8.3
+BUILD_DEPENDS=	::x11/tk/8.3
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 

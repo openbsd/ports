@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/11 23:53:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
 DISTNAME=		jadetex-3.11
 CATEGORIES=     	print
-NEED_VERSION=		1.364
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://jadetex.sourceforge.net/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -20,8 +20,8 @@ MASTER_SITE_SUBDIR=	jadetex
 WRKDIST=		${WRKDIR}/jadetex
 
 LIB_DEPENDS=		png.2::graphics/png
-BUILD_DEPENDS=		tex::print/teTeX/base \
-			${LOCALBASE}/share/texmf/web2c/texmf.cnf::print/teTeX/texmf
+BUILD_DEPENDS=		::print/teTeX/base \
+			::print/teTeX/texmf
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 ALL_TARGET=		jadetex.fmt pdfjadetex.fmt

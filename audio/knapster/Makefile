@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=		"Napster client for KDE 2"
 VERSION=		0.3
 DISTNAME=		knapster2-${VERSION}
 CATEGORIES=     	audio
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://knapster.sourceforge.net/
 
@@ -18,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	knapster
 
 LIB_DEPENDS=		kdecore.3::x11/kde/libs2
-BUILD_DEPENDS=		uic::x11/qt2-designer
+BUILD_DEPENDS=		::x11/qt2-designer
 
 USE_GMAKE=		Yes
 

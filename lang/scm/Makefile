@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/07 14:20:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:48 espie Exp $
 # losely based on the FreeBSD port
 
 COMMENT=	"scheme r5 interpreter"
 
 CATEGORIES=	lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 
 V=5d3
 DISTNAME=	scm$V
@@ -42,8 +42,8 @@ OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
 .endif
 
-BUILD_DEPENDS=${LOCALBASE}/share/slib::devel/slib
-RUN_DEPENDS=${LOCALBASE}/share/slib::devel/slib
+BUILD_DEPENDS=::devel/slib
+RUN_DEPENDS=::devel/slib
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \

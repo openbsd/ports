@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/12 16:59:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"perl module for an IMAP Client API"
 
 DISTNAME=	Mail-IMAPClient-2.1.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
-NEED_VERSION=	1.399
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Mail
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=	${PERL_MODULES}/Parse/RecDescent.pm::devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	::devel/p5-Parse-RecDescent
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

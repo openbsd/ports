@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/31 20:09:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
 DISTNAME=	mailman-2.0.6
 CATEGORIES=     mail
-NEED_VERSION=	1.448
+NEED_VERSION=	1.489
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/mailman.html
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=		.tgz
 
-BUILD_DEPENDS=		python::lang/python
+BUILD_DEPENDS=		::lang/python
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 NO_REGRESS=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/22 13:26:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=		"Tcl/Tk-based interface to the MH mail system"
 DISTNAME=		exmh-2.5
 CATEGORIES=     	mail
-NEED_VERSION=		1.440
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://www.beedub.com/exmh/
 MAINTAINER=		Michael Paddon <michael@paddon.org>
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	exmh
 
-BUILD_DEPENDS=		tclsh8.3::lang/tcl/8.3
-RUN_DEPENDS=		expect::lang/expect\
-			mhparam::mail/nmh\
-			mmencode::mail/metamail\
-			wish8.3::x11/tk/8.3
+BUILD_DEPENDS=		::lang/tcl/8.3
+RUN_DEPENDS=		::lang/expect\
+			::mail/nmh\
+			::mail/metamail\
+			::x11/tk/8.3
 USE_X11=		Yes
 NO_BUILD=		Yes
 

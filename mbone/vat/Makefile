@@ -1,12 +1,12 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.19 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 GSM_DIR=	audio/gsm
 
-BUILD_DEPENDS=  /nonexistent::${GSM_DIR}:patch
+BUILD_DEPENDS=  ::${GSM_DIR}:patch
 LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0 \
 		gsm.1::${GSM_DIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/09/11 12:16:32 heko Exp $
+# $OpenBSD: Makefile,v 1.18 2001/11/10 15:00:48 espie Exp $
 
 COMMENT=	"Pre-Processor-Pretty-Printer for Objective Caml"
 COMMENT-doc=	"Camlp4 documentation"
@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
                 ${DISTNAME}-refman.html${EXTRACT_SUFX} \
                 ${DISTNAME}-tutorial.html${EXTRACT_SUFX}
 CATEGORIES=	lang
-NEED_VERSION=	1.454
+NEED_VERSION=	1.489
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/camlp4/ \
 		http://cristal.inria.fr/~ddr/Camlp4/ftp/
 
@@ -19,8 +19,8 @@ HOMEPAGE=	http://caml.inria.fr/camlp4/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-BUILD_DEPENDS=	ocamlc::lang/ocaml
-RUN_DEPENDS=	ocamlrun::lang/ocaml
+BUILD_DEPENDS=	::lang/ocaml
+RUN_DEPENDS=	::lang/ocaml
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=   No

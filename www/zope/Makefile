@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/02 03:35:11 matt Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=	"object-oriented web application server"
 
@@ -21,9 +21,9 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
-BUILD_DEPENDS=	python2.1:python-2.1*-threads:lang/python \
-		gtar::archivers/gtar					
-RUN_DEPENDS=	python2.1:python-2.1*-threads:lang/python
+BUILD_DEPENDS=	:python-2.1*-threads:lang/python \
+		::archivers/gtar					
+RUN_DEPENDS=	:python-2.1*-threads:lang/python
 
 # Note that the configure script is really just for pcgi, but it's
 # the only one in the package.

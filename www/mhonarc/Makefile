@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/12 17:15:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
 DISTNAME=		MHonArc2.4.9
 PKGNAME=		mhonarc-2.4.9
 CATEGORIES=     	www mail
-NEED_VERSION=		1.391
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://www.mhonarc.org/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -21,7 +21,7 @@ MASTER_SITES=		http://www.mhonarc.org/tar/ \
 			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ 
 
 PERL_MODULES=		${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=		${PERL_MODULES}/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
+BUILD_DEPENDS=		::security/p5-Digest-MD5
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 post-extract:

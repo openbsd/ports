@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2001/11/10 15:00:52 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -9,7 +9,7 @@
 
 .if ${EMUL_TYPE} == "linux"
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-BUILD_DEPENDS=	/emul/linux/lib/ld.so::emulators/redhat/base 
+BUILD_DEPENDS=	::emulators/redhat/base 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 SUPPORTED=	supported
 ONLY_FOR_ARCHS=	i386
@@ -32,7 +32,7 @@ SUPPORTED?=	unsupported
 
 
 CATEGORIES=     www
-NEED_VERSION=	1.413
+NEED_VERSION=	1.489
 MASTER_SITES= \
 	ftp://ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/www/netscape/%SUBDIR%/ \

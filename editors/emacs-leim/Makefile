@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/12 23:46:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:47 espie Exp $
 
 COMMENT=	"Library of Emacs Input Method"
 
@@ -6,7 +6,7 @@ VERSION=	20.7
 PKGNAME=	emacs-leim-${VERSION}
 DISTNAME=	leim-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-BUILD_DEPENDS=	emacs-${VERSION}::editors/emacs
-RUN_DEPENDS=	emacs-${VERSION}::editors/emacs
+BUILD_DEPENDS=	::editors/emacs
+RUN_DEPENDS=	::editors/emacs
 
 SUBST_VARS=	VERSION
 

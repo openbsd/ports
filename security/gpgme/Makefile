@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/06 23:25:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:49 espie Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
 DISTNAME=		gpgme-0.2.3
 CATEGORIES=     	security devel
-NEED_VERSION=		1.427
+NEED_VERSION=		1.489
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
@@ -22,6 +22,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		gpg::security/gnupg
+RUN_DEPENDS=		::security/gnupg
 
 .include <bsd.port.mk>

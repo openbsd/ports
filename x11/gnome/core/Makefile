@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/24 12:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:52 espie Exp $
 
 COMMENT=		"core GNOME system"
 V=			1.4.0.4
@@ -22,8 +22,8 @@ LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			capplet::x11/gnome/controlcenter
 
-BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
-RUN_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
+BUILD_DEPENDS=		::textproc/scrollkeeper
+RUN_DEPENDS=		::textproc/scrollkeeper
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
