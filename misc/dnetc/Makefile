@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/07/10 15:40:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/12 14:45:08 lebel Exp $
 
 COMMENT=		"official distributed.net client"
 
@@ -8,9 +8,9 @@ V=			2.9005
 SV=			483
 .endif
 .if ${MACHINE_ARCH:L} == "i386"
-A=			x86-aout
-V=			2.9005
-SV=			484
+A=			x86-elf
+V=			2.9007
+SV=			486
 .endif
 .if ${MACHINE_ARCH:L} == "sparc"
 A=			sparc-aout
@@ -19,7 +19,8 @@ SV=			479
 .endif
 
 PKGNAME=		dnetc-${V}.${SV}
-DISTNAME=		dnetc${SV}-openbsd-${A}
+DISTNAME=              	dnetc${SV}-openbsd-${A}
+
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.distributed.net/
@@ -37,6 +38,8 @@ PERMIT_DISTFILES_FTP=	No
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+
+WRKSRC=			${WRKDIR}/dnetc${SV}-openbsd-${A}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnetc ${PREFIX}/bin/
