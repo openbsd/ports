@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/08 05:20:30 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/12/10 14:27:04 brad Exp $
 
 DISTNAME=	bash-2.03
 CATEGORIES=	shells
@@ -11,8 +11,8 @@ MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 
-# invoke with -DSTATIC to build a static binary
-.if defined(STATIC)
+# invoke make with STATIC=yes to build a static binary
+.if defined(STATIC) && ${STATIC:U} == YES
 CONFIGURE_ENV+= LDFLAGS=-static
 PKGNAME=	${DISTNAME}-static
 .endif
