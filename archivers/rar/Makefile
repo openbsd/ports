@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/06/10 20:22:16 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/09/06 06:03:10 brad Exp $
 
 DISTNAME=	rarbsd
 PKGNAME=	rar-2.02
@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.sfx
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
+
+HOMEPAGE=	http://www.rarsoft.com/
 
 ONLY_FOR_ARCHS=	i386
 
