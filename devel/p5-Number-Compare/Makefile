@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/29 18:11:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 2004/04/11 11:56:55 sturm Exp $
 
 COMMENT=	"Compare numbers"
 
 DISTNAME=	Number-Compare-0.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Number/}
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 
-# Artistic/GPL
+# Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

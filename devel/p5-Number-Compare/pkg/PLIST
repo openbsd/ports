@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/29 18:11:02 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.1.1.2 2004/04/11 11:56:55 sturm Exp $
 ${P5SITE}/Number/Compare.pm
 @comment ${P5ARCH}/auto/Number/Compare/.packlist
-@comment ${P5ARCH}/perllocal.pod
 man/man3p/Number::Compare.3p
-@dirrm man/man3p
+@comment @dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Number/Compare
 @comment @dirrm ${P5ARCH}/auto/Number
 @comment @dirrm ${P5ARCH}/auto
