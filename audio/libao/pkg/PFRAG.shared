@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+lib/ao/liboss.la
+lib/ao/liboss.so.1.0
+lib/libao.so.1.0
+DYNLIBDIR(%B)
+@dirrm lib/ao

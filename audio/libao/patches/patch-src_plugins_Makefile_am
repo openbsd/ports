@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_plugins_Makefile_am,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+--- src/plugins/Makefile.am.orig	Sat Dec 30 06:03:25 2000
++++ src/plugins/Makefile.am	Wed Mar 14 00:30:25 2001
+@@ -1,4 +1,4 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+ AUTOMAKE_OPTIONS = foreign
+-SUBDIRS = oss esd alsa arts # solaris irix
++SUBDIRS = $(PLUGINS)

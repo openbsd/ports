@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+--- doc/Makefile.am.orig	Tue Mar 13 23:29:50 2001
++++ doc/Makefile.am	Tue Mar 13 23:29:56 2001
+@@ -2,7 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = API USAGE DRIVERS WANTED
+ 

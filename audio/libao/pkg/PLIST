@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+include/ao/ao.h
+include/ao/os_types.h
+lib/libao.a
+lib/libao.la
+%%SHARED%%
+share/aclocal/ao.m4
+share/doc/libao/API
+share/doc/libao/DRIVERS
+share/doc/libao/USAGE
+share/doc/libao/WANTED
+@dirrm share/doc/libao
+@dirrm include/ao

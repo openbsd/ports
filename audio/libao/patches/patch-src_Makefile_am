@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+--- src/Makefile.am.orig	Mon Oct 30 01:46:41 2000
++++ src/Makefile.am	Wed Mar 14 00:41:09 2001
+@@ -10,6 +10,7 @@ lib_LTLIBRARIES = libao.la
+ libao_la_SOURCES = audio_out.c ao_wav.c ao_null.c
+ libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ 
++CFLAGS = @CFLAGS@ -DSHARED_LIB_EXT=\".so.@LIB_CURRENT@.@LIB_REVISION@\"
+ 
+ debug:
+ 	$(MAKE) all CFLAGS="@DEBUG@"

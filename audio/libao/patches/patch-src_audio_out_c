@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_audio_out_c,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+--- src/audio_out.c.orig	Sat Feb 24 02:31:46 2001
++++ src/audio_out.c	Wed Mar 14 01:36:51 2001
+@@ -63,7 +63,7 @@ driver_tree_t *_get_plugin(char *plugin_
+ 	driver_tree_t *dt;
+ 	void *handle;
+ 	
+-	handle = dlopen(plugin_file, RTLD_NOW);
++	handle = dlopen(plugin_file, RTLD_LAZY);
+ 	if (handle) {
+ 		dt = (driver_tree_t *)malloc(sizeof(driver_tree_t));
+ 		if (!dt) return NULL;
+@@ -76,6 +76,9 @@ driver_tree_t *_get_plugin(char *plugin_
+ 			return NULL;
+ 		}
+ 
++#ifndef __ELF__
++#define dlsym(h,s) dlsym(h, "_" s)
++#endif
+ 		dt->functions->get_driver_info = dlsym(dt->handle, "plugin_get_driver_info");
+ 		if (dlerror()) { free(dt->functions); free(dt); return NULL; }
+ 		dt->functions->open = dlsym(dt->handle, "plugin_open");
+@@ -126,7 +129,7 @@ void ao_initialize(void)
+ 		if (plugindir != NULL) {
+ 			while ((plugin_dirent = readdir(plugindir)) != NULL) {
+ 				snprintf(fullpath, FILENAME_MAX, "%s/%s", AO_PLUGIN_PATH, plugin_dirent->d_name);
+-				if (!stat(fullpath, &statbuf) && S_ISREG(statbuf.st_mode) && (ext = strrchr(plugin_dirent->d_name, '.')) != NULL) {
++				if (!stat(fullpath, &statbuf) && S_ISREG(statbuf.st_mode) && (ext = strchr(plugin_dirent->d_name, '.')) != NULL) {
+ 					if (strcmp(ext, SHARED_LIB_EXT) == 0) {
+ 						plugin = _get_plugin(fullpath);
+ 						if (plugin) {
