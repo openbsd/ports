@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.524 2002/04/17 16:53:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.525 2002/04/24 21:29:26 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -453,6 +453,7 @@ BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 PKGNAME?=${DISTNAME}
 FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
 PKGFILE=${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
+_MASTER?=
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
@@ -1294,14 +1295,19 @@ _DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
 ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
-	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
+	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
-		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
-		case "X$$target" in Xinstall|Xreinstall) early_exit=false;; \
-		Xpackage) early_exit=true;; \
-		*) early_exit=true; dep="/nonexistent";; esac; \
 		${_flavor_fragment}; defaulted=false; \
+		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+		case "X$$target" in \
+		Xinstall|Xreinstall) early_exit=false;; \
+		Xpackage) early_exit=true;; \
+		*) \
+			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
+			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
+			dep="/nonexistent";; \
+		esac; \
 		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
 			defaulted=true;; esac; \
 		for abort in false false true; do \
@@ -1316,16 +1322,16 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			*)  \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$what - found"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
 				else \
 					: $${msg:= not found}; \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$what -$$msg"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what -$$msg"; \
 				fi;; \
 			esac; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
 			if eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
-				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}"; \
+				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
 				exit 1; \
 			fi; \
@@ -1380,7 +1386,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 fetch checksum extract patch configure all build install regress \
 uninstall deinstall fake package lib-depends-check manpages-check:
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${IGNORE}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
 
 .else 
@@ -1416,7 +1422,7 @@ manpages-check: ${_FAKE_COOKIE}
 
 fetch: fetch-depends
 # See ports/infrastructure/templates/Makefile.template
-	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
 .  endif
@@ -1539,7 +1545,7 @@ package: ${_PACKAGE_DEPS}
 .  if defined(_IGNORE_REGRESS)
 regress:
 .    if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${_IGNORE_REGRESS}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_REGRESS}."
 .    endif
 .  else
 regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
@@ -1572,7 +1578,7 @@ _create_wrkobjdir =	\
 # disabled, and there are hooks to override behavior.
 
 ${_WRKDIR_COOKIE}:
-.  if defined(WRKOBJDIR)
+.  if defined(WRKOBJDIR) && empty(_MASTER)
 	@${_create_wrkobjdir}
 .  else
 	@rm -rf ${WRKDIR}
@@ -1583,7 +1589,7 @@ ${_WRKDIR_COOKIE}:
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} 
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
-	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${MAKE} pre-extract
 .endif
@@ -1629,7 +1635,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .else
 # What DISTPATCH normally does
 .  if defined(_PATCHFILES)
-	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
 	@cd ${FULLDISTDIR}; \
 	  for patchfile in ${_PATCHFILES}; do \
 	  	case "${PATCH_DEBUG:L}" in \
@@ -1653,7 +1659,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # The real patch
 
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
-	@${ECHO_MSG} "===>  Patching for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Patching for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-patch)
 	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .endif
@@ -1720,7 +1726,7 @@ MODSIMPLE_configure= \
 # The real configure
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
-	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${WRKBUILD} ${WRKPKG}
 .if target(pre-configure)
 	@cd ${.CURDIR} && exec ${MAKE} pre-configure
@@ -1751,7 +1757,7 @@ VMEM_WARNING?=	No
 
 ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if ${NO_BUILD:L} == "no"
-	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}${_MASTER}"
 .if ${VMEM_WARNING:L} == "yes"
 	@echo ""; \
 	echo "*** WARNING: you may see an error such as"; \
@@ -1783,7 +1789,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 
 ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .if ${NO_REGRESS:L} == "no"
-	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-regress)
 	@cd ${.CURDIR} && exec ${MAKE} pre-regress
 .  endif
@@ -1808,7 +1814,7 @@ PROTECT_MOUNT_POINTS?=
 
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
-	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`${SUDO} ${SH} -c umask` != x${DEF_UMASK} ]; then \
 		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
 		exit 1; \
@@ -1844,12 +1850,12 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${FULLPKGNAME}${_MASTER}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
 	@${SUDO} ${GUNZIP_CMD} ${manpage}.gz
 .      endfor
 .    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>   Compressing manual pages for ${FULLPKGNAME}${_MASTER}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
 	@if [ -L ${manpage} ]; then \
 		set - `file ${manpage}`; \
