@@ -1,0 +1,10 @@
+--- Fortify-1.4.6-unix-src/Index.orig	Sun Jul  9 15:21:12 2000
++++ Fortify-1.4.6-unix-src/Index	Sun Jul  9 15:22:05 2000
+@@ -1333,6 +1333,7 @@
+ 14494100 - 45580e185035dd63c8dddb6b5023363e comm 4.72 0 2 morphs-1.2 sparc-sun-solaris2.4 -
+ 15585412 - 6d0c1904fc890d14f727a98c087346e4 comm 4.72 0 2 morphs-1.2 sparc-sun-solaris2.5.1 -
+ 10784768 - 92842d102ecb515b1d334d1059086e45 comm 4.72 0 2 morphs-1.2 x86-bsdi-bsd2 -
++10784768 - b92858d61ec336c56547addb1d9b6b58 comm 4.73 0 2 morphs-1.2 x86-bsdi-bsd2 -
+ 11203448 - 3b2b7d9f05dccdd2c6150b668a706aca comm 4.72 0 2 morphs-1.2 x86-sun-solaris2.4 -
+ 11227508 - 98a00ea33eacee73bff1ff1ac299b396 comm 4.72 0 2 morphs-1.2 x86-sun-solaris2.5.1 -
+ 13303808 - 1e88d8a6d133a828c1a5d533b26fdf0c comm 4.72 0 2 morphs-1.2 x86-unknown-freebsd -

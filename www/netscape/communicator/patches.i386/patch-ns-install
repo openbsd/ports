@@ -1,6 +1,6 @@
---- communicator-v472.x86-bsdi-bsd2/ns-install.orig	Thu Sep 16 19:59:00 1999
-+++ communicator-v472.x86-bsdi-bsd2/ns-install	Sun Apr  9 17:32:07 2000
-@@ -84,22 +84,10 @@ then
+--- communicator-v473.x86-bsdi-bsd2/ns-install.orig	Fri May  5 12:34:27 2000
++++ communicator-v473.x86-bsdi-bsd2/ns-install	Sun Jul  9 17:33:39 2000
+@@ -84,22 +84,10 @@
  	exit 1
  fi
  #
@@ -26,7 +26,7 @@
  #
  #
  # See if we have to use the lame SYS-V echo command flags.
-@@ -137,63 +125,22 @@ do
+@@ -137,63 +125,22 @@
  	fi
  done
  #
@@ -97,7 +97,7 @@
  	if test ${flag} -eq 0
  	then
  		(echo "Write test." 2>/dev/null > ${TARGET}/${TESTFILE}) 2>/dev/null
-@@ -217,13 +164,6 @@ echo ""
+@@ -217,13 +164,6 @@
  echo ""
  echo "Installing ${PRODUCT} files..."
  #
@@ -111,7 +111,7 @@
  # Keep a log of this installation for reference.
  #
  LOGFILE="ns-install.log-$$"
-@@ -231,30 +171,6 @@ date > ${LOGFILE}
+@@ -231,30 +171,6 @@
  echo "Files installed:" >> ${LOGFILE}
  echo "================" >> ${LOGFILE}
  #
@@ -142,7 +142,7 @@
  # Actually install the package in TARGET.
  #
  ${GZIP} -dc ${PACKAGE} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
-@@ -269,33 +185,28 @@ if test "${PRODUCT}" = "Communicator" -o
+@@ -269,33 +185,28 @@
  then
  	echo ""
  	echo "Installing ${PRODUCT} Java files..."
@@ -181,7 +181,7 @@
  			AIX)
  				PLATFORM="aix"
  				;;
-@@ -317,19 +228,6 @@ then
+@@ -317,19 +228,6 @@
  			mv ${TARGET}/java/classes/${PLATFORM}/* ${TARGET}/java/classes/.
  		fi
  	fi
@@ -201,7 +201,7 @@
  fi
  #
  echo ""
-@@ -356,7 +254,6 @@ do
+@@ -356,7 +254,6 @@
  	esac
  	${GZIP} -dc ${pkg} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
  	echo "${pkg},${BLDVERS},${TARGET}" >> ${REG_INFILE}
@@ -209,7 +209,7 @@
  done
  #
  #
-@@ -374,20 +271,7 @@ fi
+@@ -382,20 +279,7 @@
  #
  # Install the vreg binary in the TARGET directory.
  #
@@ -231,7 +231,7 @@
  #
  #
  # Register the product so Automatic Software Download can work.
-@@ -413,7 +297,6 @@ then
+@@ -421,7 +305,6 @@
  	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
  	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
  	echo ""
@@ -239,7 +239,7 @@
  	exit 3
  fi
  #
-@@ -422,11 +305,6 @@ echo ""
+@@ -430,11 +313,6 @@
  echo "The Netscape ${PRODUCT} software installation is complete."
  echo ""
  echo ""
