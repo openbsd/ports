@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2004/12/07 00:23:21 alek Exp $
+# $OpenBSD: Makefile,v 1.40 2004/12/25 22:37:36 sturm Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -64,7 +64,7 @@ SUBST_VARS+=	VERSION
 MULTI_PACKAGES=	-dutch -french -german -swedish -russian -portuguese \
 		-slovak -spanish
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	ispell$i-${VERSION}
+PKGNAME$i=	ispell$i-${VERSION}p0
 .endfor
 SUBPACKAGE?=
 

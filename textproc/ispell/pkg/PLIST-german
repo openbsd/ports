@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST-german,v 1.3 2002/04/17 16:09:40 naddy Exp $
+@comment $OpenBSD: PLIST-german,v 1.4 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/deutsch.aff
 lib/ispell/deutsch.hash
-@exec echo 'invoking %D/bin/ispell-config'
-@exec %D/bin/ispell-config
