@@ -5,7 +5,9 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.2 1999/09/22 10:34:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/29 10:19:37 turan Exp $
+
+BROKEN=		illegal use of gzip
 
 NEED_VERSION=	1.116
 DISTNAME=	Wnn4.2
