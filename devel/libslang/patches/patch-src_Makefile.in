@@ -1,5 +1,5 @@
 --- src/Makefile.in.orig	Sat Aug 19 22:20:31 2000
-+++ src/Makefile.in	Sat Sep 16 08:33:27 2000
++++ src/Makefile.in	Tue Oct 17 22:04:40 2000
 @@ -32,11 +32,13 @@
  #---------------------------------------------------------------------------
  # Directory where library is going to go when installed
@@ -15,13 +15,11 @@
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
  #---------------------------------------------------------------------------
  # Misc commands (safe to leave these untouched)
-@@ -107,11 +109,9 @@
- 
+@@ -108,10 +110,8 @@
  $(ELFDIR_ELF_LIB): $(ELFDIR) $(CONFIG_H) $(ELFOBJS)
  	-$(RM) $(ELFDIR_ELF_LIB)
--	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
+ 	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
 -	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB)
-+	cd $(ELFDIR); $(ELF_LINK) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
  	@echo ""
  	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
 -	@echo The link $(ELFLIB) to $(ELFLIB_MAJOR_MINOR) was also created.
