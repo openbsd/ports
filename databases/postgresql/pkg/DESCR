@@ -1,20 +1,20 @@
-PostgreSQL is Object-Relational Database Management System.  It
-supports almost all SQL constructs, including transactions, subselects,
-and user-defined types and functions. Write-ahead logging means
-increased performance while retaining data integrity.
+PostgreSQL RDBMS client applications, libraries and include files
+for database administration, maintenance and integration with other
+applications.
 
 The OpenBSD PostgreSQL port build produces several packages:
 
-* postgresql-${VERSION} - complete package
-  Contains all files needed for creating, administering and maintaining
-  databases, querying and manipulating data in them, libraries and
-  header files for database applications development and man pages.
+* postgresql-client-${VERSION} - client package
+  Client-side applications, headers and libraries.
 
-* postgresql-clients-${VERSION} - client-side applications and headers
-  Reduced variant of complete package without backend-related files.
+* postgresql-server-${VERSION} - server package
+  Contains additional files needed for performing backend server
+  functions - such as providing the database server itself.
 
 * postgresql-docs-${VERSION} - documentation
   Additional documentation: FAQs, READMEs; PostgreSQL manuals in
   HTML format: Administrator's Guide, Programmer's Manual, PostgreSQL
   Tutorial and User's Guide and Integrated Documentation package
   contains all the above documentation.
+
+WWW: ${HOMEPAGE}

@@ -1,35 +1,18 @@
-@comment $OpenBSD: PLIST-clients,v 1.8 2003/02/12 17:09:03 naddy Exp $
-@pkgcfl postgresql-[0-9]*
 @pkgcfl pgsql-[0-9]*
 @pkgcfl pgsql-clients-[0-9]*
-bin/createdb
-bin/createlang
-bin/createuser
-bin/dropdb
-bin/droplang
-bin/dropuser
-bin/ecpg
-bin/pg_config
-bin/pg_dump
-bin/pg_dumpall
-bin/pg_id
-bin/pg_restore
-bin/psql
-bin/vacuumdb
-include/postgresql/ecpgerrno.h
-include/postgresql/ecpglib.h
-include/postgresql/ecpgtype.h
-include/postgresql/internal/c.h
-include/postgresql/internal/lib/dllist.h
-include/postgresql/internal/libpq-int.h
-include/postgresql/internal/libpq/pqcomm.h
-include/postgresql/internal/postgres_fe.h
-include/postgresql/internal/pqexpbuffer.h
-include/postgresql/libpq-fe.h
-include/postgresql/libpq/libpq-fs.h
-include/postgresql/pg_config.h
-include/postgresql/pg_config_os.h
-include/postgresql/postgres_ext.h
+@pkgcfl postgresql-clients-[0-9]*
+@pkgcfl postgresql-server-[0-9]*
+@pkgcfl postgresql-[0-9]*
+@comment $OpenBSD: PLIST-server,v 1.1 2004/07/26 10:10:46 peter Exp $
+bin/initdb
+bin/initlocation
+bin/ipcclean
+bin/pg_controldata
+bin/pg_ctl
+bin/pg_encoding
+bin/pg_resetxlog
+bin/postgres
+bin/postmaster
 include/postgresql/server/access/attnum.h
 include/postgresql/server/access/clog.h
 include/postgresql/server/access/genam.h
@@ -51,6 +34,7 @@ include/postgresql/server/access/rtree.h
 include/postgresql/server/access/rtscan.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
+include/postgresql/server/access/slru.h
 include/postgresql/server/access/strat.h
 include/postgresql/server/access/transam.h
 include/postgresql/server/access/tupdesc.h
@@ -101,6 +85,7 @@ include/postgresql/server/catalog/pg_statistic.h
 include/postgresql/server/catalog/pg_trigger.h
 include/postgresql/server/catalog/pg_type.h
 include/postgresql/server/catalog/pg_version.h
+include/postgresql/server/commands/alter.h
 include/postgresql/server/commands/async.h
 include/postgresql/server/commands/cluster.h
 include/postgresql/server/commands/comment.h
@@ -117,6 +102,7 @@ include/postgresql/server/commands/schemacmds.h
 include/postgresql/server/commands/sequence.h
 include/postgresql/server/commands/tablecmds.h
 include/postgresql/server/commands/trigger.h
+include/postgresql/server/commands/typecmds.h
 include/postgresql/server/commands/user.h
 include/postgresql/server/commands/vacuum.h
 include/postgresql/server/commands/variable.h
@@ -151,9 +137,12 @@ include/postgresql/server/executor/nodeTidscan.h
 include/postgresql/server/executor/nodeUnique.h
 include/postgresql/server/executor/spi.h
 include/postgresql/server/executor/spi_priv.h
+include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
 include/postgresql/server/fmgr.h
 include/postgresql/server/funcapi.h
+include/postgresql/server/getaddrinfo.h
+include/postgresql/server/getopt_long.h
 include/postgresql/server/lib/dllist.h
 include/postgresql/server/lib/lispsort.h
 include/postgresql/server/lib/stringinfo.h
@@ -161,15 +150,16 @@ include/postgresql/server/libpq/auth.h
 include/postgresql/server/libpq/be-fsstubs.h
 include/postgresql/server/libpq/crypt.h
 include/postgresql/server/libpq/hba.h
+include/postgresql/server/libpq/ip.h
 include/postgresql/server/libpq/libpq-be.h
 include/postgresql/server/libpq/libpq-fs.h
 include/postgresql/server/libpq/libpq.h
-include/postgresql/server/libpq/password.h
 include/postgresql/server/libpq/pqcomm.h
 include/postgresql/server/libpq/pqformat.h
 include/postgresql/server/libpq/pqsignal.h
 include/postgresql/server/mb/pg_wchar.h
 include/postgresql/server/miscadmin.h
+include/postgresql/server/nodes/bitmapset.h
 include/postgresql/server/nodes/execnodes.h
 include/postgresql/server/nodes/makefuncs.h
 include/postgresql/server/nodes/memnodes.h
@@ -223,11 +213,14 @@ include/postgresql/server/parser/parser.h
 include/postgresql/server/parser/parsetree.h
 include/postgresql/server/parser/scansup.h
 include/postgresql/server/pg_config.h
+include/postgresql/server/pg_config_manual.h
 include/postgresql/server/pg_config_os.h
 include/postgresql/server/pgstat.h
+include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
 include/postgresql/server/port/beos.h
 include/postgresql/server/port/bsdi.h
+include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
 include/postgresql/server/port/dgux.h
 include/postgresql/server/port/freebsd.h
@@ -246,16 +239,14 @@ include/postgresql/server/port/svr4.h
 include/postgresql/server/port/ultrix4.h
 include/postgresql/server/port/univel.h
 include/postgresql/server/port/unixware.h
-include/postgresql/server/port/win.h
 include/postgresql/server/port/win32.h
 include/postgresql/server/postgres.h
 include/postgresql/server/postgres_ext.h
 include/postgresql/server/postgres_fe.h
-include/postgresql/server/regex/cclass.h
-include/postgresql/server/regex/cname.h
+include/postgresql/server/regex/regcustom.h
+include/postgresql/server/regex/regerrs.h
 include/postgresql/server/regex/regex.h
-include/postgresql/server/regex/regex2.h
-include/postgresql/server/regex/utils.h
+include/postgresql/server/regex/regguts.h
 include/postgresql/server/rewrite/prs2lock.h
 include/postgresql/server/rewrite/rewriteDefine.h
 include/postgresql/server/rewrite/rewriteHandler.h
@@ -282,7 +273,6 @@ include/postgresql/server/storage/lmgr.h
 include/postgresql/server/storage/lock.h
 include/postgresql/server/storage/lwlock.h
 include/postgresql/server/storage/off.h
-include/postgresql/server/storage/page.h
 include/postgresql/server/storage/pg_sema.h
 include/postgresql/server/storage/pg_shmem.h
 include/postgresql/server/storage/pmsignal.h
@@ -305,7 +295,6 @@ include/postgresql/server/tcop/utility.h
 include/postgresql/server/utils/acl.h
 include/postgresql/server/utils/array.h
 include/postgresql/server/utils/ascii.h
-include/postgresql/server/utils/bit.h
 include/postgresql/server/utils/builtins.h
 include/postgresql/server/utils/cash.h
 include/postgresql/server/utils/catcache.h
@@ -315,12 +304,14 @@ include/postgresql/server/utils/datum.h
 include/postgresql/server/utils/dynahash.h
 include/postgresql/server/utils/dynamic_loader.h
 include/postgresql/server/utils/elog.h
-include/postgresql/server/utils/fcache.h
+include/postgresql/server/utils/errcodes.h
 include/postgresql/server/utils/fmgroids.h
 include/postgresql/server/utils/fmgrtab.h
 include/postgresql/server/utils/formatting.h
 include/postgresql/server/utils/geo_decls.h
 include/postgresql/server/utils/guc.h
+include/postgresql/server/utils/guc_tables.h
+include/postgresql/server/utils/help_config.h
 include/postgresql/server/utils/hsearch.h
 include/postgresql/server/utils/inet.h
 include/postgresql/server/utils/int8.h
@@ -345,124 +336,25 @@ include/postgresql/server/utils/timestamp.h
 include/postgresql/server/utils/tqual.h
 include/postgresql/server/utils/tuplesort.h
 include/postgresql/server/utils/tuplestore.h
+include/postgresql/server/utils/typcache.h
 include/postgresql/server/utils/varbit.h
-include/postgresql/sql3types.h
-include/postgresql/sqlca.h
-lib/libecpg.a
-lib/libpq.a
-man/man1/createdb.1
-man/man1/createlang.1
-man/man1/createuser.1
-man/man1/dropdb.1
-man/man1/droplang.1
-man/man1/dropuser.1
-man/man1/ecpg.1
-man/man1/pg_config.1
+man/man1/initdb.1
+man/man1/initlocation.1
+man/man1/ipcclean.1
+man/man1/pg_controldata.1
 man/man1/pg_ctl.1
-man/man1/pg_dump.1
-man/man1/pg_dumpall.1
-man/man1/pg_restore.1
-man/man1/psql.1
-man/man1/vacuumdb.1
-man/man7/abort.7
-man/man7/alter_database.7
-man/man7/alter_group.7
-man/man7/alter_table.7
-man/man7/alter_trigger.7
-man/man7/alter_user.7
-man/man7/analyze.7
-man/man7/begin.7
-man/man7/checkpoint.7
-man/man7/close.7
-man/man7/cluster.7
-man/man7/comment.7
-man/man7/commit.7
-man/man7/copy.7
-man/man7/create_aggregate.7
-man/man7/create_cast.7
-man/man7/create_constraint_trigger.7
-man/man7/create_conversion.7
-man/man7/create_database.7
-man/man7/create_domain.7
-man/man7/create_function.7
-man/man7/create_group.7
-man/man7/create_index.7
-man/man7/create_language.7
-man/man7/create_operator.7
-man/man7/create_operator_class.7
-man/man7/create_rule.7
-man/man7/create_schema.7
-man/man7/create_sequence.7
-man/man7/create_table.7
-man/man7/create_table_as.7
-man/man7/create_trigger.7
-man/man7/create_type.7
-man/man7/create_user.7
-man/man7/create_view.7
-man/man7/deallocate.7
-man/man7/declare.7
-man/man7/delete.7
-man/man7/drop_aggregate.7
-man/man7/drop_cast.7
-man/man7/drop_conversion.7
-man/man7/drop_database.7
-man/man7/drop_domain.7
-man/man7/drop_function.7
-man/man7/drop_group.7
-man/man7/drop_index.7
-man/man7/drop_language.7
-man/man7/drop_operator.7
-man/man7/drop_operator_class.7
-man/man7/drop_rule.7
-man/man7/drop_schema.7
-man/man7/drop_sequence.7
-man/man7/drop_table.7
-man/man7/drop_trigger.7
-man/man7/drop_type.7
-man/man7/drop_user.7
-man/man7/drop_view.7
-man/man7/end.7
-man/man7/execute.7
-man/man7/explain.7
-man/man7/fetch.7
-man/man7/grant.7
-man/man7/insert.7
-man/man7/listen.7
-man/man7/load.7
-man/man7/lock.7
-man/man7/move.7
-man/man7/notify.7
-man/man7/prepare.7
-man/man7/reindex.7
-man/man7/reset.7
-man/man7/revoke.7
-man/man7/rollback.7
-man/man7/select.7
-man/man7/select_into.7
-man/man7/set.7
-man/man7/set_constraints.7
-man/man7/set_session_authorization.7
-man/man7/set_transaction.7
-man/man7/show.7
-man/man7/start_transaction.7
-man/man7/truncate.7
-man/man7/unlisten.7
-man/man7/update.7
-man/man7/vacuum.7
-share/doc/postgresql/COPYRIGHT
-share/doc/postgresql/FAQ
-share/doc/postgresql/FAQ_DEV
-share/doc/postgresql/HISTORY
-share/doc/postgresql/INSTALL
-share/doc/postgresql/README
+man/man1/pg_resetxlog.1
+@comment man/man1/pgtclsh.1
+@comment man/man1/pgtksh.1
+man/man1/postgres.1
+man/man1/postmaster.1
 share/doc/postgresql/README.OpenBSD
-share/doc/postgresql/README.mb.big5
-share/doc/postgresql/README.mb.jp
-share/doc/postgresql/TODO
-share/doc/postgresql/register.txt
+share/postgresql/pg_hba.conf.sample
+share/postgresql/pg_ident.conf.sample
+share/postgresql/pg_service.conf.sample
+share/postgresql/postgres.bki
+share/postgresql/postgresql.conf.sample
 %%SHARED%%
-@dirrm share/postgresql
-@dirrm share/doc/postgresql
 @dirrm lib/postgresql
 @dirrm include/postgresql/server/utils
 @dirrm include/postgresql/server/tcop
@@ -482,8 +374,5 @@ share/doc/postgresql/register.txt
 @dirrm include/postgresql/server/bootstrap
 @dirrm include/postgresql/server/access
 @dirrm include/postgresql/server
-@dirrm include/postgresql/libpq
-@dirrm include/postgresql/internal/libpq
-@dirrm include/postgresql/internal/lib
-@dirrm include/postgresql/internal
-@dirrm include/postgresql
+@extraunexec userdel -r _postgresql 
+@extraunexec groupdel _postgresql

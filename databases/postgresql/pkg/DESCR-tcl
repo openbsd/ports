@@ -1,4 +1,0 @@
-PostgreSQL RDBMS tcl applications, libraries and include files
-for use by tcl/tk.
-
-Package includes pgtksh/pgtclsh - SQL enabled shells for tk and tcl.
