@@ -1,0 +1,17 @@
+--- main.c.~1~	Wed Aug 13 11:36:28 1997
++++ main.c	Tue May  5 12:44:49 1998
+@@ -197,7 +197,7 @@
+ }
+ 
+ 
+-void 
++int
+ main(int argc, char *argv[])
+ {
+     Display *dpy;
+@@ -369,4 +369,5 @@
+ 	XtDispatchEvent(&event);
+     }
+     while (!Global.timeToDie);
++    return 0;
+ }

@@ -3,7 +3,7 @@
 # Date created:         December 2, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/25 23:16:55 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/05/06 02:54:46 marc Exp $
 #
 
 DISTNAME=       xpaint-2.5
@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
+		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm   \
 		png\\.1\\.:${PORTSDIR}/graphics/png
 

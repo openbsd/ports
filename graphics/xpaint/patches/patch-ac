@@ -1,25 +1,24 @@
-*** misc.h.orig	Tue Dec  2 22:17:09 1997
---- misc.h	Tue Dec  2 22:18:41 1997
-***************
-*** 23,31 ****
-  
-  #ifndef linux
-  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
-! void srandom(unsigned int);
-  #else
-  int srandom(unsigned int);
-  #endif	/* BSD4_4 */
-  #endif	/* linux */
-  #endif
---- 23,33 ----
-  
-  #ifndef linux
-  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
-! #endif
-  #else
-+ #if !defined(__OpenBSD__)
-  int srandom(unsigned int);
-+ void srandom(unsigned int);
-  #endif	/* BSD4_4 */
-  #endif	/* linux */
-  #endif
+--- misc.h.orig	Wed Aug 13 11:36:39 1997
++++ misc.h	Tue May  5 12:28:51 1998
+@@ -23,9 +23,11 @@
+ 
+ #ifndef linux
+ #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
+-void srandom(unsigned int);
++#endif
+ #else
++#if !defined(__OpenBSD__)
+ int srandom(unsigned int);
++void srandom(unsigned int);
+ #endif	/* BSD4_4 */
+ #endif	/* linux */
+ #endif
+@@ -96,7 +98,7 @@
+ void GetDefaultWH(int *w, int *h);
+ char *GetDefaultRC(void);
+ void SetIconImage(Widget w);
+-void main(int argc, char *argv[]);
++int main(int argc, char *argv[]);
+ 
+ /* misc.c */
+ Widget GetToplevel(Widget w);

@@ -1,0 +1,11 @@
+--- rw/writeTIFF.c.~1~	Tue Jun 25 01:50:41 1996
++++ rw/writeTIFF.c	Tue May  5 12:37:30 1998
+@@ -16,7 +16,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <tiffio.h>
++#include <tiffio34.h>
+ #include "image.h"
+ 
+ #undef howmany
