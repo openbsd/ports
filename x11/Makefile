@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2002/05/22 05:30:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.136 2002/05/27 14:42:37 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -82,6 +82,7 @@
 #    SUBDIR += neXtaw
      SUBDIR += ogle
      SUBDIR += ogle,altivec
+     SUBDIR += ogle_gui
      SUBDIR += olvwm
      SUBDIR += openbox
      SUBDIR += openmotif
