@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:12 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/31 13:49:10 espie Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
 NEED_VERSION=	1.210
-FAKE=No
+FAKE=		Yes
 
 MAINTAINER=	ports@openbsd.org
 
@@ -25,17 +25,10 @@ EXTRACT_AFTER_ARGS=	|sh
 WRKDIST=	${WRKDIR}
 MAKE_FILE=	makefile
 
-PKG_CMD=	/usr/sbin/pkg_create -D ${PKGDIR}/licence
-
 do-install:
 .for f in zmrx zmtx
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin 
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/$f ${PREFIX}/bin 
+	${INSTALL_MAN} ${WRKSRC}/$f.1 ${PREFIX}/man/man1
 .endfor
-
-post-install:
-	@echo ""
-	@more ${PKGDIR}/licence
-	@echo ""
 
 .include <bsd.port.mk>
