@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2002/03/08 06:06:21 drahn Exp $
---- configure.in.orig	Sun Aug 15 17:29:43 1999
-+++ configure.in	Thu Mar  7 23:31:11 2002
+$OpenBSD: patch-configure_in,v 1.5 2002/06/14 12:11:18 naddy Exp $
+--- configure.in.orig	Mon Aug 16 00:29:43 1999
++++ configure.in	Fri Jun 14 13:41:57 2002
 @@ -1,28 +1,23 @@
  AC_INIT(interface/interface.c)
  
@@ -20,18 +20,18 @@ $OpenBSD: patch-configure_in,v 1.4 2002/03/08 06:06:21 drahn Exp $
  if test -z "$GCC"; then
  	DEBUG="-g"
 -	OPT="-O"
-+	OPT="-O ${COPTS}"
++	OPT="${CFLAGS}"
  else
  	case $host in 
 -	i?86-*-linux*)
 +	i?86-*-*)
  		DEBUG="-g -Wall -fsigned-char"
 -		OPT="-O20 -ffast-math -fsigned-char -finline-functions";;
-+		OPT="-O20 -ffast-math -fsigned-char -finline-functions ${COPTS}";;
++		OPT="${CFLAGS} -ffast-math -fsigned-char -finline-functions";;
  	*)
  		DEBUG="-g -Wall -fsigned-char"
 -		OPT="-O20 -fsigned-char";;
-+		OPT="-O20 -fsigned-char ${COPTS}";;
++		OPT="${CFLAGS} -fsigned-char";;
          esac
  fi
  

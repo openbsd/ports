@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_utils_h,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
---- interface/utils.h.orig	Tue Sep 19 16:20:29 2000
-+++ interface/utils.h	Tue Sep 19 16:16:36 2000
+$OpenBSD: patch-interface_utils_h,v 1.2 2002/06/14 12:11:18 naddy Exp $
+--- interface/utils.h.orig	Mon Aug 16 00:13:44 1999
++++ interface/utils.h	Fri Jun 14 13:51:02 2002
 @@ -1,4 +1,16 @@
 +#ifdef __linux__
  #include <endian.h>
@@ -34,3 +34,35 @@ $OpenBSD: patch-interface_utils_h,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
  
  #if BYTE_ORDER == LITTLE_ENDIAN
  
+@@ -112,6 +126,7 @@ static void cderror(cdrom_drive *d,const
+       break;
+     case CDDA_MESSAGE_FORGETIT:
+     default:
++      break;
+     }
+   }
+ }
+@@ -127,6 +142,7 @@ static void cdmessage(cdrom_drive *d,con
+       break;
+     case CDDA_MESSAGE_FORGETIT:
+     default:
++      break;
+     }
+   }
+ }
+@@ -169,6 +185,7 @@ static void idperror(int messagedest,cha
+       break;
+     case CDDA_MESSAGE_FORGETIT:
+     default:
++      break;
+     }
+   }
+   if(malloced)free(buffer);
+@@ -205,6 +222,7 @@ static void idmessage(int messagedest,ch
+       break;
+     case CDDA_MESSAGE_FORGETIT:
+     default:
++      break;
+     }
+   }
+   if(malloced)free(buffer);
