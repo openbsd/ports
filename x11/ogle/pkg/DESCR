@@ -27,11 +27,15 @@ which is the encoding that ogle is looking for.
 
 Alternately, at the expense of more cpu power,
 ogle can also use SystemV shared memory, but the
-shared memory requirements exceed GENERIC parameters.
-You will need to crank them up. Configure a kernel with
-option 	SHMMAXPGS=4096
-and edit param.c to set SHMSEG to 16, then recompile.
+shared memory requirements exceed default GENERIC parameters.
+You will need to crank them up. 
 
+Starting with OpenBSD 3.1, you can use config to change them
+without needing to recompile the kernel, e.g.,
+config -e -o bsd2 bsd
+adjust shmseg (number of segments, 16 is a good value)
+and shmmaxpgs (total size of systemV shared memory, crank to
+at least 4096).
 
 The graphical interface add-on  ogle-gui currently
 does not work on OpenBSD, but the program can be fully
