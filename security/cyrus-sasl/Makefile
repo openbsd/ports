@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/09/30 13:50:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/01 13:28:43 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -42,7 +42,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-dblib=berkeley
 
 post-patch:
-	(cd ${WRKSRC}; patch < ${FILESDIR}/patch-db)
+	cd ${WRKSRC} && patch < ${FILESDIR}/patch-db
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm
 .endif
