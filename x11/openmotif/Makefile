@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/10 20:01:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/15 13:27:41 matt Exp $
 
 VERSION=	2.1.30
 DISTNAME=	motif
@@ -67,8 +67,6 @@ post-patch:
 # mwmrc is not a kernel interface!!
 	@cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4
 	@cd ${WRKSRC}/doc/man/man5 && perl -pi -e "s|file formats|5|" *.5
-	@cd ${WRKSRC}/config/cf && \
-	    perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" host.def Motif.tmpl
 # Import from our current X installation.
 	@cp -f `ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\|host.def\)'` ${WRKDIR}/motif/config/cf
 	@mkdir -p ${WRKSRC}/imports/x11
@@ -76,6 +74,9 @@ post-patch:
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
 	done
+# respect PREFIX
+	@cd ${WRKSRC}/config/cf && \
+	    perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" host.def Motif.tmpl config.cf
 
 DOCS=BUGREPORT CLOSEDBUGS COPYRIGHT.MOTIF OPENBUGS README RELEASE RELNOTES
 DOCDIR=${PREFIX}/share/doc/openmotif

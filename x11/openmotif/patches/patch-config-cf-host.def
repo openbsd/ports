@@ -132,6 +132,6 @@
 +#define ManSourcePath $(MANPATH)/man
 +
 +#undef ConfigDir
-+#define ConfigDir /usr/local/lib/X11/config
++#define ConfigDir %%PREFIX%%/lib/X11/config
 +
 +#endif /* AfterVendorCF */
