@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/01 16:11:53 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/10/09 15:39:33 sturm Exp $
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -253,6 +253,8 @@ lib/mailman/Mailman/Queue/NewsRunner.py
 lib/mailman/Mailman/Queue/NewsRunner.pyc
 lib/mailman/Mailman/Queue/OutgoingRunner.py
 lib/mailman/Mailman/Queue/OutgoingRunner.pyc
+lib/mailman/Mailman/Queue/RetryRunner.py
+lib/mailman/Mailman/Queue/RetryRunner.pyc
 lib/mailman/Mailman/Queue/Runner.py
 lib/mailman/Mailman/Queue/Runner.pyc
 lib/mailman/Mailman/Queue/Switchboard.py
@@ -298,6 +300,7 @@ lib/mailman/bin/cleanarch
 lib/mailman/bin/clone_member
 lib/mailman/bin/config_list
 lib/mailman/bin/convert.py
+lib/mailman/bin/discard
 lib/mailman/bin/dumpdb
 lib/mailman/bin/find_member
 lib/mailman/bin/fix_url.py
@@ -315,6 +318,7 @@ lib/mailman/bin/paths.py
 lib/mailman/bin/qrunner
 lib/mailman/bin/remove_members
 lib/mailman/bin/rmlist
+lib/mailman/bin/show_qfiles
 lib/mailman/bin/sync_members
 lib/mailman/bin/transcheck
 lib/mailman/bin/unshunt
@@ -349,6 +353,8 @@ lib/mailman/icons/mm-icon.png
 lib/mailman/mail/mailman
 lib/mailman/messages/cs/LC_MESSAGES/mailman.mo
 lib/mailman/messages/cs/LC_MESSAGES/mailman.po
+lib/mailman/messages/da/LC_MESSAGES/mailman.mo
+lib/mailman/messages/da/LC_MESSAGES/mailman.po
 lib/mailman/messages/de/LC_MESSAGES/mailman.mo
 lib/mailman/messages/de/LC_MESSAGES/mailman.po
 lib/mailman/messages/de/README.de
@@ -357,6 +363,9 @@ lib/mailman/messages/es/LC_MESSAGES/mailman.po
 lib/mailman/messages/es/README.es
 lib/mailman/messages/et/LC_MESSAGES/mailman.mo
 lib/mailman/messages/et/LC_MESSAGES/mailman.po
+lib/mailman/messages/eu/LC_MESSAGES/mailman.mo
+lib/mailman/messages/eu/LC_MESSAGES/mailman.po
+lib/mailman/messages/eu/README.eu
 lib/mailman/messages/fi/LC_MESSAGES/mailman.mo
 lib/mailman/messages/fi/LC_MESSAGES/mailman.po
 lib/mailman/messages/fi/README.fi
@@ -391,9 +400,13 @@ lib/mailman/messages/pt_BR/LC_MESSAGES/mailman.po
 lib/mailman/messages/ru/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ru/LC_MESSAGES/mailman.po
 lib/mailman/messages/ru/README.ru
+lib/mailman/messages/sr/LC_MESSAGES/mailman.mo
+lib/mailman/messages/sr/LC_MESSAGES/mailman.po
 lib/mailman/messages/sv/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sv/LC_MESSAGES/mailman.po
 lib/mailman/messages/sv/README.sv
+lib/mailman/messages/uk/LC_MESSAGES/mailman.mo
+lib/mailman/messages/uk/LC_MESSAGES/mailman.po
 lib/mailman/pythonlib/email/Charset.py
 lib/mailman/pythonlib/email/Charset.pyc
 lib/mailman/pythonlib/email/Encoders.py
@@ -775,6 +788,48 @@ lib/mailman/templates/et/unsub.txt
 lib/mailman/templates/et/unsubauth.txt
 lib/mailman/templates/et/userpass.txt
 lib/mailman/templates/et/verify.txt
+lib/mailman/templates/eu/admindbdetails.html
+lib/mailman/templates/eu/admindbpreamble.html
+lib/mailman/templates/eu/admindbsummary.html
+lib/mailman/templates/eu/adminsubscribeack.txt
+lib/mailman/templates/eu/adminunsubscribeack.txt
+lib/mailman/templates/eu/admlogin.html
+lib/mailman/templates/eu/approve.txt
+lib/mailman/templates/eu/archidxentry.html
+lib/mailman/templates/eu/archidxfoot.html
+lib/mailman/templates/eu/archidxhead.html
+lib/mailman/templates/eu/archlistend.html
+lib/mailman/templates/eu/archliststart.html
+lib/mailman/templates/eu/archtoc.html
+lib/mailman/templates/eu/archtocentry.html
+lib/mailman/templates/eu/article.html
+lib/mailman/templates/eu/bounce.txt
+lib/mailman/templates/eu/checkdbs.txt
+lib/mailman/templates/eu/convert.txt
+lib/mailman/templates/eu/cronpass.txt
+lib/mailman/templates/eu/disabled.txt
+lib/mailman/templates/eu/emptyarchive.html
+lib/mailman/templates/eu/headfoot.html
+lib/mailman/templates/eu/help.txt
+lib/mailman/templates/eu/invite.txt
+lib/mailman/templates/eu/listinfo.html
+lib/mailman/templates/eu/masthead.txt
+lib/mailman/templates/eu/newlist.txt
+lib/mailman/templates/eu/nomoretoday.txt
+lib/mailman/templates/eu/options.html
+lib/mailman/templates/eu/postack.txt
+lib/mailman/templates/eu/postauth.txt
+lib/mailman/templates/eu/postheld.txt
+lib/mailman/templates/eu/private.html
+lib/mailman/templates/eu/refuse.txt
+lib/mailman/templates/eu/roster.html
+lib/mailman/templates/eu/subauth.txt
+lib/mailman/templates/eu/subscribe.html
+lib/mailman/templates/eu/subscribeack.txt
+lib/mailman/templates/eu/unsub.txt
+lib/mailman/templates/eu/unsubauth.txt
+lib/mailman/templates/eu/userpass.txt
+lib/mailman/templates/eu/verify.txt
 lib/mailman/templates/fi/admindbdetails.html
 lib/mailman/templates/fi/admindbpreamble.html
 lib/mailman/templates/fi/admindbsummary.html
@@ -1244,7 +1299,6 @@ lib/mailman/templates/pt_BR/admindbsummary.html
 lib/mailman/templates/pt_BR/adminsubscribeack.txt
 lib/mailman/templates/pt_BR/adminunsubscribeack.txt
 lib/mailman/templates/pt_BR/admlogin.html
-lib/mailman/templates/pt_BR/admlogin.txt
 lib/mailman/templates/pt_BR/approve.txt
 lib/mailman/templates/pt_BR/article.html
 lib/mailman/templates/pt_BR/bounce.txt
@@ -1315,6 +1369,49 @@ lib/mailman/templates/ru/unsub.txt
 lib/mailman/templates/ru/unsubauth.txt
 lib/mailman/templates/ru/userpass.txt
 lib/mailman/templates/ru/verify.txt
+lib/mailman/templates/sr/admindbdetails.html
+lib/mailman/templates/sr/admindbpreamble.html
+lib/mailman/templates/sr/admindbsummary.html
+lib/mailman/templates/sr/adminsubscribeack.txt
+lib/mailman/templates/sr/adminunsubscribeack.txt
+lib/mailman/templates/sr/admlogin.html
+lib/mailman/templates/sr/approve.txt
+lib/mailman/templates/sr/archidxentry.html
+lib/mailman/templates/sr/archidxfoot.html
+lib/mailman/templates/sr/archidxhead.html
+lib/mailman/templates/sr/archlistend.html
+lib/mailman/templates/sr/archliststart.html
+lib/mailman/templates/sr/archtoc.html
+lib/mailman/templates/sr/archtocentry.html
+lib/mailman/templates/sr/article.html
+lib/mailman/templates/sr/bounce.txt
+lib/mailman/templates/sr/checkdbs.txt
+lib/mailman/templates/sr/convert.txt
+lib/mailman/templates/sr/cronpass.txt
+lib/mailman/templates/sr/disabled.txt
+lib/mailman/templates/sr/emptyarchive.html
+lib/mailman/templates/sr/handle_opts.html
+lib/mailman/templates/sr/headfoot.html
+lib/mailman/templates/sr/help.txt
+lib/mailman/templates/sr/invite.txt
+lib/mailman/templates/sr/listinfo.html
+lib/mailman/templates/sr/masthead.txt
+lib/mailman/templates/sr/newlist.txt
+lib/mailman/templates/sr/nomoretoday.txt
+lib/mailman/templates/sr/options.html
+lib/mailman/templates/sr/postack.txt
+lib/mailman/templates/sr/postauth.txt
+lib/mailman/templates/sr/postheld.txt
+lib/mailman/templates/sr/private.html
+lib/mailman/templates/sr/refuse.txt
+lib/mailman/templates/sr/roster.html
+lib/mailman/templates/sr/subauth.txt
+lib/mailman/templates/sr/subscribe.html
+lib/mailman/templates/sr/subscribeack.txt
+lib/mailman/templates/sr/unsub.txt
+lib/mailman/templates/sr/unsubauth.txt
+lib/mailman/templates/sr/userpass.txt
+lib/mailman/templates/sr/verify.txt
 lib/mailman/templates/sv/admindbdetails.html
 lib/mailman/templates/sv/admindbpreamble.html
 lib/mailman/templates/sv/admindbsummary.html
@@ -1352,6 +1449,48 @@ lib/mailman/templates/sv/unsub.txt
 lib/mailman/templates/sv/unsubauth.txt
 lib/mailman/templates/sv/userpass.txt
 lib/mailman/templates/sv/verify.txt
+lib/mailman/templates/uk/admindbdetails.html
+lib/mailman/templates/uk/admindbpreamble.html
+lib/mailman/templates/uk/admindbsummary.html
+lib/mailman/templates/uk/adminsubscribeack.txt
+lib/mailman/templates/uk/adminunsubscribeack.txt
+lib/mailman/templates/uk/admlogin.html
+lib/mailman/templates/uk/approve.txt
+lib/mailman/templates/uk/archidxentry.html
+lib/mailman/templates/uk/archidxfoot.html
+lib/mailman/templates/uk/archidxhead.html
+lib/mailman/templates/uk/archlistend.html
+lib/mailman/templates/uk/archliststart.html
+lib/mailman/templates/uk/archtoc.html
+lib/mailman/templates/uk/archtocentry.html
+lib/mailman/templates/uk/article.html
+lib/mailman/templates/uk/bounce.txt
+lib/mailman/templates/uk/checkdbs.txt
+lib/mailman/templates/uk/convert.txt
+lib/mailman/templates/uk/cronpass.txt
+lib/mailman/templates/uk/disabled.txt
+lib/mailman/templates/uk/emptyarchive.html
+lib/mailman/templates/uk/headfoot.html
+lib/mailman/templates/uk/help.txt
+lib/mailman/templates/uk/invite.txt
+lib/mailman/templates/uk/listinfo.html
+lib/mailman/templates/uk/masthead.txt
+lib/mailman/templates/uk/newlist.txt
+lib/mailman/templates/uk/nomoretoday.txt
+lib/mailman/templates/uk/options.html
+lib/mailman/templates/uk/postack.txt
+lib/mailman/templates/uk/postauth.txt
+lib/mailman/templates/uk/postheld.txt
+lib/mailman/templates/uk/private.html
+lib/mailman/templates/uk/refuse.txt
+lib/mailman/templates/uk/roster.html
+lib/mailman/templates/uk/subauth.txt
+lib/mailman/templates/uk/subscribe.html
+lib/mailman/templates/uk/subscribeack.txt
+lib/mailman/templates/uk/unsub.txt
+lib/mailman/templates/uk/unsubauth.txt
+lib/mailman/templates/uk/userpass.txt
+lib/mailman/templates/uk/verify.txt
 lib/mailman/tests/EmailBase.py
 lib/mailman/tests/TestBase.py
 lib/mailman/tests/bounces/bounce_01.txt
@@ -1439,7 +1578,9 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/tests/msgs
 @dirrm lib/mailman/tests/bounces
 @dirrm lib/mailman/tests
+@dirrm lib/mailman/templates/uk
 @dirrm lib/mailman/templates/sv
+@dirrm lib/mailman/templates/sr
 @dirrm lib/mailman/templates/ru
 @dirrm lib/mailman/templates/pt_BR
 @dirrm lib/mailman/templates/pt
@@ -1454,6 +1595,7 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/templates/gb
 @dirrm lib/mailman/templates/fr
 @dirrm lib/mailman/templates/fi
+@dirrm lib/mailman/templates/eu
 @dirrm lib/mailman/templates/et
 @dirrm lib/mailman/templates/es
 @dirrm lib/mailman/templates/en
@@ -1476,8 +1618,12 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/pythonlib/japanese
 @dirrm lib/mailman/pythonlib/email
 @dirrm lib/mailman/pythonlib
+@dirrm lib/mailman/messages/uk/LC_MESSAGES
+@dirrm lib/mailman/messages/uk
 @dirrm lib/mailman/messages/sv/LC_MESSAGES
 @dirrm lib/mailman/messages/sv
+@dirrm lib/mailman/messages/sr/LC_MESSAGES
+@dirrm lib/mailman/messages/sr
 @dirrm lib/mailman/messages/ru/LC_MESSAGES
 @dirrm lib/mailman/messages/ru
 @dirrm lib/mailman/messages/pt_BR/LC_MESSAGES
@@ -1504,12 +1650,16 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/messages/fr
 @dirrm lib/mailman/messages/fi/LC_MESSAGES
 @dirrm lib/mailman/messages/fi
+@dirrm lib/mailman/messages/eu/LC_MESSAGES
+@dirrm lib/mailman/messages/eu
 @dirrm lib/mailman/messages/et/LC_MESSAGES
 @dirrm lib/mailman/messages/et
 @dirrm lib/mailman/messages/es/LC_MESSAGES
 @dirrm lib/mailman/messages/es
 @dirrm lib/mailman/messages/de/LC_MESSAGES
 @dirrm lib/mailman/messages/de
+@dirrm lib/mailman/messages/da/LC_MESSAGES
+@dirrm lib/mailman/messages/da
 @dirrm lib/mailman/messages/cs/LC_MESSAGES
 @dirrm lib/mailman/messages/cs
 @dirrm lib/mailman/messages
@@ -1529,3 +1679,7 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/Mailman/Archiver
 @comment @dirrm lib/mailman/Mailman
 @comment @dirrm lib/mailman
+@extra /var/cron/tabs/_mailman
+@extraunexec rm -fr /var/spool/mailman
+@extraunexec userdel -r _mailman
+@extraunexec groupdel _mailman

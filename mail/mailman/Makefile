@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/22 10:05:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/09 15:39:33 sturm Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
-DISTNAME=	mailman-2.1.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mailman-2.1.3
 CATEGORIES=     mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,7 +36,8 @@ CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 			--with-mailhost=localhost.my.domain \
 			--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
 			--with-urlhost=localhost.my.domain \
-			--with-var-prefix='${MMSPOOL}'
+			--with-var-prefix='${MMSPOOL}' \
+			--without-permcheck
 
 FLAVORS=	postfix
 FLAVOR?=

@@ -1,14 +1,21 @@
-$OpenBSD: patch-configure,v 1.4 2003/06/22 10:05:29 sturm Exp $
---- configure.orig	Tue Apr 22 05:34:49 2003
-+++ configure	Thu May  1 12:23:55 2003
-@@ -1206,52 +1206,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2003/10/09 15:39:33 sturm Exp $
+--- configure.orig	2003-09-22 04:54:04.000000000 +0200
++++ configure	2003-09-30 22:23:40.000000000 +0200
+@@ -2631,65 +2631,13 @@ fi;
+ 
+ if test -z "$with_username"
+ then
+-        with_username="mailman"
++        with_username="_mailman"
+ fi
  USERNAME=$with_username
- echo "$ac_t""$USERNAME" 1>&6
+ echo "$as_me:$LINENO: result: $USERNAME" >&5
+ echo "${ECHO_T}$USERNAME" >&6
  
 -# User `mailman' must exist
 -
--echo $ac_n "checking for user name \"$USERNAME\"""... $ac_c" 1>&6
--echo "configure:1213: checking for user name \"$USERNAME\"" >&5
+-echo "$as_me:$LINENO: checking for user name \"$USERNAME\"" >&5
+-echo $ECHO_N "checking for user name \"$USERNAME\"... $ECHO_C" >&6
 -
 -# MAILMAN_USER == variable name
 -# $USERNAME == user id to check for
@@ -42,28 +49,42 @@ $OpenBSD: patch-configure,v 1.4 2003/06/22 10:05:29 sturm Exp $
 -then
 -  if test "$with_permcheck" = "yes"
 -  then
--    { echo "configure: error: 
+-    { { echo "$as_me:$LINENO: error:
 -***** No \"$USERNAME\" user found!
 -***** Your system must have a \"$USERNAME\" user defined
 -***** (usually in your /etc/passwd file).  Please see the INSTALL
--***** file for details." 1>&2; exit 1; }
+-***** file for details." >&5
+-echo "$as_me: error:
+-***** No \"$USERNAME\" user found!
+-***** Your system must have a \"$USERNAME\" user defined
+-***** (usually in your /etc/passwd file).  Please see the INSTALL
+-***** file for details." >&2;}
+-   { (exit 1); exit 1; }; }
 -  fi
 -fi
--echo "$ac_t""okay" 1>&6
+-echo "$as_me:$LINENO: result: okay" >&5
+-echo "${ECHO_T}okay" >&6
 -
 +MAILMAN_USER=_mailman
  
  # Check for some other gid to use than `mailman'
- echo $ac_n "checking for --with-groupname""... $ac_c" 1>&6
-@@ -1270,107 +1225,7 @@ fi
+ echo "$as_me:$LINENO: checking for --with-groupname" >&5
+@@ -2703,66 +2651,13 @@ fi;
+ 
+ if test -z "$with_groupname"
+ then
+-        with_groupname="mailman"
++        with_groupname="_mailman"
+ fi
  GROUPNAME=$with_groupname
- echo "$ac_t""$GROUPNAME" 1>&6
+ echo "$as_me:$LINENO: result: $GROUPNAME" >&5
+ echo "${ECHO_T}$GROUPNAME" >&6
  
 -
 -# Target group must exist
 -
--echo $ac_n "checking for group name \"$GROUPNAME\"""... $ac_c" 1>&6
--echo "configure:1278: checking for group name \"$GROUPNAME\"" >&5
+-echo "$as_me:$LINENO: checking for group name \"$GROUPNAME\"" >&5
+-echo $ECHO_N "checking for group name \"$GROUPNAME\"... $ECHO_C" >&6
 -
 -# MAILMAN_GROUP == variable name
 -# $GROUPNAME == user id to check for
@@ -97,79 +118,32 @@ $OpenBSD: patch-configure,v 1.4 2003/06/22 10:05:29 sturm Exp $
 -then
 -  if test "$with_permcheck" = "yes"
 -  then
--    { echo "configure: error: 
+-    { { echo "$as_me:$LINENO: error:
 -***** No \"$GROUPNAME\" group found!
 -***** Your system must have a \"$GROUPNAME\" group defined
 -***** (usually in your /etc/group file).  Please see the INSTALL
--***** file for details." 1>&2; exit 1; }
+-***** file for details." >&5
+-echo "$as_me: error:
+-***** No \"$GROUPNAME\" group found!
+-***** Your system must have a \"$GROUPNAME\" group defined
+-***** (usually in your /etc/group file).  Please see the INSTALL
+-***** file for details." >&2;}
+-   { (exit 1); exit 1; }; }
 -  fi
 -fi
--echo "$ac_t""okay" 1>&6
--
--
--echo $ac_n "checking permissions on $prefixcheck""... $ac_c" 1>&6
--echo "configure:1323: checking permissions on $prefixcheck" >&5
--
--cat > conftest.py <<EOF
--import os, grp
--from stat import *
--prefix = "$prefixcheck"
--groupname = "$GROUPNAME"
--mailmangroup = "$MAILMAN_GROUP"
--try:
--    mailmangid = grp.getgrnam(mailmangroup)[2]
--except KeyError:
--    mailmangid = -1
--problems = []
--try: statdata = os.stat(prefix)
--except OSError:
--    problems.append("Directory doesn't exist: " + prefix)
--else:
--    mode = statdata[ST_MODE]
--    gid = statdata[ST_GID]
--    if mailmangid <> gid:
--        problems.append("Directory must be owned by group " +
--                        groupname + ": " + prefix)
--    if (mode & S_ISGID) <> S_ISGID:
--        problems.append("Set-gid bit must be set for directory: " + prefix)
--    perms = S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH
--    if (mode & perms) <> perms:
--        problems.append("Permissions should be at least 02775: " + prefix)
--if not problems:
--    msg = "okay\n"
--else:
--    msg = '***** ' + '\n***** '.join(problems) + '\n'
--fp = open("conftest.out", "w")
--fp.write(msg)
--fp.close()
--EOF
--
--$PYTHON conftest.py
--status=`cat conftest.out`
--rm -f conftest.out conftest.py
--if test "$with_permcheck" = "yes"
--then
--    if test "$status" != "okay"
--    then
--        { echo "configure: error: 
--***** Installation directory $prefixcheck is not configured properly!
--$status" 1>&2; exit 1; }
--    fi
--else
--    status="skipped"
--fi
--echo "$ac_t""$status" 1>&6
+-echo "$as_me:$LINENO: result: okay" >&5
+-echo "${ECHO_T}okay" >&6
 -
 +MAILMAN_GROUP=_mailman
  
- # Now find the UIDs and GIDs
- # Support --with-mail-gid and --with-cgi-gid
-@@ -1579,7 +1434,7 @@ echo "$ac_t""$URLHOST" 1>&6
- rm -f conftest.out conftest.py
+ echo "$as_me:$LINENO: checking permissions on $prefixcheck" >&5
+ echo $ECHO_N "checking permissions on $prefixcheck... $ECHO_C" >&6
+@@ -3057,7 +2952,7 @@ rm -f conftest.out conftest.py
  
- # Checks for libraries.
+ 
+ 
 -for ac_func in strerror setregid syslog
 +for ac_func in strerror syslog
  do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:1586: checking for $ac_func" >&5
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_func" >&5

@@ -33,5 +33,3 @@ mailing list manager, and more:
 
 Flavors:
     postfix - makes the mailwrapper work with postfix
- 
-WWW: ${HOMEPAGE}
