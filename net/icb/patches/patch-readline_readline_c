@@ -1,6 +1,6 @@
-$OpenBSD: patch-readline_readline_c,v 1.1 2001/05/14 16:42:54 millert Exp $
---- readline/readline.c.orig	Fri Feb 24 14:20:03 1995
-+++ readline/readline.c	Mon May 14 10:33:03 2001
+$OpenBSD: patch-readline_readline_c,v 1.2 2004/06/07 05:58:45 david Exp $
+--- readline/readline.c.orig	1995-02-24 15:20:03.000000000 -0600
++++ readline/readline.c	2004-06-06 22:06:07.000000000 -0500
 @@ -610,22 +610,22 @@ rl_signal_handler (sig)
  
  rl_set_signals ()
@@ -63,3 +63,20 @@ $OpenBSD: patch-readline_readline_c,v 1.1 2001/05/14 16:42:54 millert Exp $
  #endif
  }
  #endif  /* HANDLE_SIGNALS */
+@@ -1700,8 +1700,14 @@ update_line (old, new, current_line)
+     return;
+ 
+   wsatend = 1;			/* flag for trailing whitespace */
+-  ols = oe - 1;			/* find last same */
+-  nls = ne - 1;
++
++  /* find last same */
++  ols = oe;
++  if (oe != old)
++    ols--;
++  nls = ne;
++  if (ne != new)
++    nls--;
+   while ((*ols == *nls) && (ols > ofd) && (nls > nfd))
+     {
+       if (*ols != ' ')
