@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:50:00 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/09/27 20:43:09 brad Exp $
 
 DISTNAME=       xmj
 PKGNAME=	xmj-1.0
 CATEGORIES=	games
-
-#BROKEN=	"specified master site no longer exists"
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/X11/
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
