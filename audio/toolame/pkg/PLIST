@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 08:11:38 sturm Exp $
+bin/toolame
+share/doc/toolame/FUTURE
+share/doc/toolame/HISTORY
+share/doc/toolame/README
+@dirrm share/doc/toolame
