@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/06/18 18:20:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.56 2001/07/12 20:46:49 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += ascd
      SUBDIR += aumix
      SUBDIR += bladeenc
+     SUBDIR += bonk
      SUBDIR += cdparanoia
 #    SUBDIR += cam
 #    SUBDIR += cddbd
