@@ -1,0 +1,145 @@
+$OpenBSD: patch-libmpdemux_vcd_read_fbsd_h,v 1.1 2002/06/07 23:58:14 espie Exp $
+--- libmpdemux/vcd_read_fbsd.h.orig	Sat May 18 14:49:21 2002
++++ libmpdemux/vcd_read_fbsd.h	Sat May 18 15:15:07 2002
+@@ -1,5 +1,7 @@
+ #include <sys/cdio.h>
++#if defined(__FreeBSD__)
+ #include <sys/cdrio.h>
++#endif
+ 
+ //=================== VideoCD ==========================
+ #define	CDROM_LEADOUT	0xAA
+@@ -13,22 +15,30 @@ typedef struct {
+ } cdsector_t;
+ 
+ static cdsector_t vcd_buf;
++#if defined(__FreeBSD__)
+ static struct ioc_read_toc_single_entry vcd_entry;
++#define MSF(a)	((a).entry.addr.msf)
++#endif
++#if defined(__OpenBSD__)
++static struct cd_toc_entry vcd_entry;
++#define MSF(a) ((a).addr.msf)
++#endif
+ 
+ static inline void vcd_set_msf(unsigned int sect){
+-  vcd_entry.entry.addr.msf.frame=sect%75;
++  MSF(vcd_entry).frame=sect%75;
+   sect=sect/75;
+-  vcd_entry.entry.addr.msf.second=sect%60;
++  MSF(vcd_entry).second=sect%60;
+   sect=sect/60;
+-  vcd_entry.entry.addr.msf.minute=sect;
++  MSF(vcd_entry).minute=sect;
+ }
+ 
+ static inline unsigned int vcd_get_msf(){
+-  return vcd_entry.entry.addr.msf.frame +
+-        (vcd_entry.entry.addr.msf.second+
+-         vcd_entry.entry.addr.msf.minute*60)*75;
++  return MSF(vcd_entry).frame +
++        (MSF(vcd_entry).second+
++         MSF(vcd_entry).minute*60)*75;
+ }
+ 
++#if defined(__FreeBSD__)
+ int vcd_seek_to_track(int fd,int track){
+   vcd_entry.address_format = CD_MSF_FORMAT;
+   vcd_entry.track  = track;
+@@ -38,20 +48,32 @@ int vcd_seek_to_track(int fd,int track){
+   }
+   return VCD_SECTOR_DATA*vcd_get_msf();
+ }
++#endif
++#if defined(__OpenBSD__)
++int vcd_seek_to_track(int fd,int track)
++{
++	struct ioc_read_toc_entry t;
++	t.data = &vcd_entry;
++	t.address_format = CD_MSF_FORMAT;
++	t.starting_track = track;
++	t.data_len = sizeof(vcd_entry);
++	if (ioctl(fd, CDIOREADTOCENTRYS, &t) == -1) {
++		perror("ioctl dif1");
++		return -1;
++	}
++	return VCD_SECTOR_DATA*vcd_get_msf();
++}
++#endif
+ 
+ int vcd_get_track_end(int fd,int track){
+   struct ioc_toc_header tochdr;
+   if (ioctl(fd,CDIOREADTOCHEADER,&tochdr)==-1)
+     { perror("read CDROM toc header: "); return -1; }
+-  vcd_entry.address_format = CD_MSF_FORMAT;
+-  vcd_entry.track  = track<tochdr.ending_track?(track+1):CDROM_LEADOUT;
+-  if (ioctl(fd, CDIOREADTOCENTRY, &vcd_entry)) {
+-    perror("ioctl dif2");
+-    return -1;
+-  }
+-  return VCD_SECTOR_DATA*vcd_get_msf();
++  return vcd_seek_to_track(fd, 
++  	track<tochdr.ending_track?(track+1):CDROM_LEADOUT);
+ }
+ 
++#if defined(__FreeBSD__)
+ void vcd_read_toc(int fd){
+   struct ioc_toc_header tochdr;
+   int i;
+@@ -77,19 +99,49 @@ void vcd_read_toc(int fd){
+       );
+     }
+ }
++#endif
++
++#if defined(__OpenBSD__)
++void vcd_read_toc(int fd){
++  struct ioc_toc_header tochdr;
++  struct cd_toc_entry e;
++  int i;
++  if (ioctl(fd,CDIOREADTOCHEADER,&tochdr)==-1)
++    { perror("read CDROM toc header: "); return; }
++  for (i=tochdr.starting_track ; i<=tochdr.ending_track ; i++){
++    	struct ioc_read_toc_entry t;
++	t.data = &e;
++	t.data_len = sizeof(e);
++	t.starting_track = i;
++	t.address_format = CD_MSF_FORMAT;
++      if (ioctl(fd,CDIOREADTOCENTRYS,&t)==-1)
++	{ perror("read CDROM toc entry: "); return; }
++        
++      printf("track %02d:  adr=%d  ctrl=%d  %02d:%02d:%02d\n",
++          (int)e.track,
++          (int)e.addr_type,
++          (int)e.control,
++          (int)e.addr.msf.minute,
++          (int)e.addr.msf.second,
++          (int)e.addr.msf.frame
++      );
++    }
++}
++#endif
+ 
+ static int vcd_read(int fd,char *mem){
+ 
+       if (pread(fd,&vcd_buf,VCD_SECTOR_SIZE,vcd_get_msf()*VCD_SECTOR_SIZE)
+ 	 != VCD_SECTOR_SIZE) return 0;  // EOF?
+ 
+-      vcd_entry.entry.addr.msf.frame++;
+-      if (vcd_entry.entry.addr.msf.frame==75){
+-        vcd_entry.entry.addr.msf.frame=0;
+-        vcd_entry.entry.addr.msf.second++;
+-        if (vcd_entry.entry.addr.msf.second==60){
+-          vcd_entry.entry.addr.msf.second=0;
+-          vcd_entry.entry.addr.msf.minute++;
++      MSF(vcd_entry).frame++;
++
++      if (MSF(vcd_entry).frame==75){
++        MSF(vcd_entry).frame=0;
++        MSF(vcd_entry).second++;
++        if (MSF(vcd_entry).second==60){
++          MSF(vcd_entry).second=0;
++          MSF(vcd_entry).minute++;
+         }
+       }
+       memcpy(mem,vcd_buf.data,VCD_SECTOR_DATA);
