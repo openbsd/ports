@@ -3,7 +3,7 @@
 # Date created:	 	December 18, 1997	
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/20 02:56:45 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/10 13:59:44 niklas Exp $
 #
 
 # NOTE:
@@ -20,6 +20,9 @@ MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	don@OpenBSD.ORG
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		yes
+.endif
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
