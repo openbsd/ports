@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/02/26 02:47:41 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/02/26 02:55:34 brad Exp $
 
 DISTNAME=	libnet-1.0.2a
 CATEGORIES=	net
@@ -19,3 +19,7 @@ CONFIGURE_STYLE= gnu
 WRKDIST=	${WRKDIR}/Libnet-1.0.2a
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+MAKE_ENV=	NO_SHARED_LIBS=Yes
+.endif

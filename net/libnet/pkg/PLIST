@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/25 00:32:59 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/02/26 02:55:35 brad Exp $
 bin/libnet-config
 lib/libnet.a
+%%SHARED%%
 include/libnet.h
 include/libnet/libnet-asn1.h
 include/libnet/libnet-functions.h
