@@ -1,7 +1,7 @@
-$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.1 2002/03/30 18:48:59 espie Exp $
---- konq-embed/dropin/kio/kio_ftp.h.orig	Sat Mar 30 18:35:59 2002
-+++ konq-embed/dropin/kio/kio_ftp.h	Sat Mar 30 18:35:16 2002
-@@ -0,0 +1,276 @@
+$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie Exp $
+--- konq-embed/dropin/kio/kio_ftp.h.orig	Sat Mar 30 21:19:45 2002
++++ konq-embed/dropin/kio/kio_ftp.h	Sat Mar 30 22:26:55 2002
+@@ -0,0 +1,278 @@
 +/*  This file is part of the KDE libraries
 +    Copyright (C) 2000 David Faure <faure@kde.org>
 +
@@ -21,7 +21,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.1 2002/03/30 18:48:59 espie 
 +    Boston, MA 02111-1307, USA.
 +*/
 +
-+// $Id: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.1 2002/03/30 18:48:59 espie Exp $
++// $Id: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie Exp $
 +
 +#ifndef __ftp_h__
 +#define __ftp_h__
@@ -221,6 +221,8 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.1 2002/03/30 18:48:59 espie 
 +   * @return first char of response (rspbuf[0]), '\0' if we couldn't read the response
 +   */
 +  char readresp();
++
++  void getDir( const KURL& url);
 +
 +private: // data members
 +

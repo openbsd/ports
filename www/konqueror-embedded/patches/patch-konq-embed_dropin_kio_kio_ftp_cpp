@@ -1,7 +1,7 @@
-$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espie Exp $
---- konq-embed/dropin/kio/kio_ftp.cpp.orig	Sat Mar 30 18:37:43 2002
-+++ konq-embed/dropin/kio/kio_ftp.cpp	Sat Mar 30 19:25:28 2002
-@@ -0,0 +1,2222 @@
+$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espie Exp $
+--- konq-embed/dropin/kio/kio_ftp.cpp.orig	Sat Mar 30 21:19:45 2002
++++ konq-embed/dropin/kio/kio_ftp.cpp	Sat Mar 30 22:54:47 2002
+@@ -0,0 +1,2272 @@
 +/*  This file is part of the KDE libraries
 +    Copyright (C) 2000 David Faure <faure@kde.org>
 +
@@ -21,7 +21,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espi
 +    Boston, MA 02111-1307, USA.
 +*/
 +
-+// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espie Exp $
++// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espie Exp $
 +
 +#include "kio_ftp.h"
 +
@@ -62,6 +62,8 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espi
 +#include <kio/ioslave_defaults.h>
 +#include <kio/slaveconfig.h>
 +#include <kconfig.h>
++
++#include <qtextstream.h>
 +
 +#define FTP_LOGIN QString::fromLatin1("anonymous")
 +#define FTP_PASSWD QString::fromLatin1("kde-user@kde.org")
@@ -1847,7 +1849,9 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espi
 +      {
 +          // Ok it's a dir in fact
 +          kdDebug(7102) << "Ftp::get: it is a directory in fact" << endl;
-+          error( ERR_IS_DIRECTORY, url.path() );
++	  getDir(url);
++	  return;
++//          error( ERR_IS_DIRECTORY, url.path() );
 +      }
 +      else
 +      {
@@ -2223,4 +2227,50 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.1 2002/03/30 18:48:59 espi
 +size_t Ftp::ftpWrite(void *buffer, long len)
 +{
 +  return( KSocks::self()->write( sData, buffer, len ) );
++}
++void Ftp::getDir( const KURL& url)
++{
++	QByteArray header_buffer;
++	QString listarg;
++	QTextStream header_stream( header_buffer, IO_WriteOnly );
++	header_stream << QString::fromLatin1( "<html><body><pre>" );
++	data( header_buffer );
++
++	if( !ftpOpenCommand( "list", listarg, 'A', ERR_DOES_NOT_EXIST ) ) {
++		kdError(7102) << "COULD NOT LIST" << endl;
++		return;
++	}
++
++	dirfile = fdopen( sData, "r" );
++	if( !dirfile ) {
++		error( ERR_DOES_NOT_EXIST, url.path() );
++		return;
++	}
++
++	kdDebug(7102) << "Starting of list was ok" << endl;
++
++	FtpEntry *e;
++	while ((e = ftpReadDir())) {
++		KURL f(url);
++		QByteArray buffer;
++
++		f.addPath(e->name);
++		QTextStream stream( buffer, IO_WriteOnly );
++
++		stream << QString::fromLatin1( "<a href=\"%1\">%2</a>\n" )
++		    .arg( f.url() )
++		    .arg( e->name );
++
++		data( buffer );
++	}
++	// the footer
++	QByteArray footer_buffer;
++	QTextStream footer_stream( header_buffer, IO_WriteOnly );
++	footer_stream << QString::fromLatin1( "</pre></body></html>" );
++	data( footer_buffer );
++
++	data( QByteArray() );
++	(void) ftpCloseDir();
++
++	finished();
 +}
