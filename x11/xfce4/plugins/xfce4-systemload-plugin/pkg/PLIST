@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+lib/xfce4/panel-plugins/libsystemload.a
+lib/xfce4/panel-plugins/libsystemload.la
+lib/xfce4/panel-plugins/libsystemload.so
+share/locale/ca/LC_MESSAGES/xfce4-systemload.mo
+share/locale/de/LC_MESSAGES/xfce4-systemload.mo
+share/locale/hu/LC_MESSAGES/xfce4-systemload.mo
+share/locale/lt/LC_MESSAGES/xfce4-systemload.mo
+share/locale/uk/LC_MESSAGES/xfce4-systemload.mo
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale
+@dirrm lib/xfce4/panel-plugins
+@dirrm lib/xfce4

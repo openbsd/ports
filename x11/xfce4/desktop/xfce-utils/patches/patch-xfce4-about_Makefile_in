@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce4-about_Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+--- xfce4-about/Makefile.in.orig	2003-11-11 09:03:31.000000000 -0600
++++ xfce4-about/Makefile.in	2003-12-02 22:07:27.000000000 -0600
+@@ -173,7 +173,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-aboutdir = $(datadir)/xfce4
++aboutdir = $(datadir)/doc/xfce4
+ 
+ about_DATA = \
+ 	AUTHORS								\

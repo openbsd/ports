@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+lib/libxfce4mcs-client.so.1.0
+lib/libxfce4mcs-manager.so.1.0
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+lib/xfce4/panel-plugins/libwavelan.a
+@comment lib/xfce4/panel-plugins/libwavelan.la
+lib/xfce4/panel-plugins/libwavelan.so
+@dirrm lib/xfce4/panel-plugins
+@dirrm lib/xfce4

@@ -1,0 +1,21 @@
+$OpenBSD: patch-settings_workspaces_settings_c,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+--- settings/workspaces_settings.c.orig	2003-06-18 15:36:07.000000000 -0500
++++ settings/workspaces_settings.c	2003-12-14 23:39:21.000000000 -0600
+@@ -148,7 +148,7 @@ static void update_names(McsManager *man
+ }
+ 
+ /* create the channel and initialize settings */
+-static void set_ws_count_hint(int count)
++static void set_ws_count_hint(long count)
+ {
+     gdk_error_trap_push();
+     gdk_property_change(gdk_get_default_root_window(), 
+@@ -177,7 +177,7 @@ static void create_workspaces_channel(Mc
+ 	ws_count = setting->data.v_int;
+ 
+ 	/* only the first time when wm isn't running yet */
+-	set_ws_count_hint(ws_count);
++	set_ws_count_hint((long) ws_count);
+     }
+ 
+     /* ws names */

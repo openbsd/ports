@@ -1,0 +1,5 @@
+xfce4-panel is the panel of the XFce Desktop Environment.  It is modeled
+slightly after the CDE panel and, of course, previous versions of xfce.
+The panel provides program lauchers, detachable, non-hierarchical menus
+(easier to read at a glance), and several panel 'plugins' like a clock and a
+pager.  Additional plugins may be installed separately.

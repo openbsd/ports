@@ -1,0 +1,34 @@
+$OpenBSD: patch-scripts_xinitrc,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+--- scripts/xinitrc.orig	2003-10-13 13:01:21.000000000 -0500
++++ scripts/xinitrc	2003-12-09 21:39:09.000000000 -0600
+@@ -24,19 +24,19 @@ test -f $HOME/.Xmodmap && xmodmap $HOME/
+ # test -f $HOME/.Xdefaults && xrdb -merge $HOME/.Xdefaults
+ 
+ # Launch xscreensaver (if available), but only as non-root user
+-test $UID -gt 0 && xscreensaver -no-splash &
++#test $UID -gt 0 && xscreensaver -no-splash &
+ 
+ # Run xfce4-session if installed
+-xfcesm=`which xfce4-session`
+-case "x$xfcesm" in
+-	x|xno*)
+-		;;
+-	*)
+-		exec $xfcesm
+-		# Shouldn't get there, but anyway...
+-		exit
+-		;;
+-esac
++#xfcesm=`which xfce4-session`
++#case "x$xfcesm" in
++#	x|xno*)
++#		;;
++#	*)
++#		exec $xfcesm
++#		# Shouldn't get there, but anyway...
++#		exit
++#		;;
++#esac
+ 
+ # or use old-fashioned startup script otherwise
+ xfce-mcs-manager

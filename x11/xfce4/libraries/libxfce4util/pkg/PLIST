@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+include/xfce4/libxfce4util/debug.h
+include/xfce4/libxfce4util/i18n.h
+include/xfce4/libxfce4util/utf8.h
+include/xfce4/libxfce4util/util.h
+lib/libxfce4util.a
+lib/libxfce4util.la
+lib/pkgconfig/libxfce4util-1.0.pc
+share/xfce4/i18n/nls.alias
+share/xfce4/m4/X11.m4
+share/xfce4/m4/debug.m4
+share/xfce4/m4/depends.m4
+share/xfce4/m4/i18n.m4
+%%SHARED%%
+@dirrm share/xfce4/m4
+@dirrm share/xfce4/i18n
+@dirrm share/xfce4
+@dirrm lib/pkgconfig
+@dirrm include/xfce4/libxfce4util
+@dirrm include/xfce4

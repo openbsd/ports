@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/12/15 06:11:41 jolan Exp $
+lib/libxffm.so.0.0
+lib/libxffm_actions.so.0.0
+lib/libxffm_apps.so.0.0
+lib/libxffm_book.so.0.0
+lib/libxffm_calls.so.0.0
+lib/libxffm_fgr.so.0.0
+lib/libxffm_fstab.so.0.0
+lib/libxffm_tubo.so.0.0
+lib/libxffmsmb.so.0.0
+DYNLIBDIR(%D/lib)

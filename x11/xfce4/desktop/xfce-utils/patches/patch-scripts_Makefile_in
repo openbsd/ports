@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+--- scripts/Makefile.in.orig	2003-11-11 09:03:30.000000000 -0600
++++ scripts/Makefile.in	2003-12-02 22:03:37.000000000 -0600
+@@ -192,7 +192,7 @@ edit = sed \
+ 	-e 's,@BROWSER_DEFAULT\@,@BROWSER_DEFAULT@,g'
+ 
+ 
+-conffilesdir = @sysconfdir@/xfce4
++conffilesdir = $(prefix)/share/examples/xfce-utils
+ conffiles_DATA = \
+ 	xinitrc
+ 

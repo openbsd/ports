@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+share/xfce4/backdrops/xfce-evil.jpg
+share/xfce4/backdrops/xfce-gradiented.png
+share/xfce4/backdrops/xfce-rio.png
+share/xfce4/backdrops/xfce-transparent.png
+@dirrm share/xfce4/backdrops
+@dirrm share/xfce4

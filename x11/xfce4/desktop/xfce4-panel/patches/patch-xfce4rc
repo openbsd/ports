@@ -1,0 +1,92 @@
+$OpenBSD: patch-xfce4rc,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+--- xfce4rc.orig	2003-10-13 13:01:21.000000000 -0500
++++ xfce4rc	2003-12-09 21:32:28.000000000 -0600
+@@ -12,51 +12,6 @@
+       </Control>
+     </Group>
+     <Group>
+-      <Popup>
+-        <Item>
+-          <Caption>Konqueror</Caption>
+-          <Command term="0" sn="0">konqueror</Command>
+-          <Tooltip>Konqueror File Manager</Tooltip>
+-          <Icon id="2"/>
+-        </Item>
+-        <Item>
+-          <Caption>Nautilus</Caption>
+-          <Command term="0" sn="0">nautilus --no-desktop</Command>
+-          <Tooltip>Nautlius File Manager</Tooltip>
+-          <Icon id="2"/>
+-        </Item>
+-      </Popup>
+-      <Control id="-2" popup="1">
+-        <Command term="0" sn="1">xffm</Command>
+-        <Tooltip>File manager</Tooltip>
+-        <Icon id="2"/>
+-      </Control>
+-    </Group>
+-    <Group>
+-      <Popup/>
+-      <Control id="-2" popup="0">
+-        <Command term="0" sn="0">mozilla -splash</Command>
+-        <Tooltip>Mozilla Web Browser</Tooltip>
+-        <Icon id="7"/>
+-      </Control>
+-    </Group>
+-    <Group>
+-      <Popup/>
+-      <Control id="-1" filename="libmailcheck.so">
+-        <Mailcheck interval="30">
+-          <Command term="0" sn="0">mozilla -mail -splash</Command>
+-        </Mailcheck>
+-      </Control>
+-    </Group>
+-    <Group>
+-      <Popup/>
+-      <Control id="-2" popup="0">
+-        <Command term="0" sn="0">xmms</Command>
+-        <Tooltip>Music player</Tooltip>
+-        <Icon id="6"/>
+-      </Control>
+-    </Group>
+-    <Group>
+       <Popup/>
+       <Control id="-1" filename="libseparator.so"/>
+     </Group>
+@@ -69,14 +24,6 @@
+       <Control id="-1" filename="libseparator.so"/>
+     </Group>
+     <Group>
+-      <Popup>
+-        <Item>
+-          <Caption>Screensaver</Caption>
+-          <Command term="0" sn="0">xscreensaver-demo</Command>
+-          <Tooltip>Screensaver</Tooltip>
+-          <Icon id="3"/>
+-        </Item>
+-      </Popup>
+       <Control id="-2" popup="1">
+         <Command term="0" sn="0">xfce-setting-show</Command>
+         <Tooltip>Settings</Tooltip>
+@@ -84,21 +31,6 @@
+       </Control>
+     </Group>
+     <Group>
+-      <Popup>
+-        <Item>
+-          <Caption>Printer Management</Caption>
+-          <Command term="0" sn="0">xfprint-manager</Command>
+-          <Tooltip>Printer Management</Tooltip>
+-          <Icon id="9"/>
+-        </Item>
+-      </Popup>
+-      <Control id="-2" popup="1">
+-        <Command term="0" sn="1">xfprint4</Command>
+-        <Tooltip>Drag file to print</Tooltip>
+-        <Icon id="9"/>
+-      </Control>
+-    </Group>
+-    <Group>
+       <Popup/>
+       <Control id="-2" popup="0">
+         <Command term="0" sn="0">xfhelp4</Command>
