@@ -3,7 +3,7 @@
 # Date created:		December 21, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 22:44:37 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/03 21:08:41 espie Exp $
 #
 
 DISTNAME=	xzoom-0.3
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=		Yes
+FAKE=			Yes
 
 .include <bsd.port.mk>
