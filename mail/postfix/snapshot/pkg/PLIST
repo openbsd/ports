@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/04/25 10:36:39 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.26 2004/06/19 20:30:59 jakob Exp $
 @pkgcfl postfix-*
+libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
@@ -49,8 +50,10 @@ man/man5/pgsql_table.5
 man/man5/postconf.5
 man/man5/regexp_table.5
 man/man5/relocated.5
+man/man5/tcp_table.5
 man/man5/transport.5
 man/man5/virtual.5
+man/man8/anvil.8
 man/man8/bounce.8
 man/man8/cleanup.8
 man/man8/defer.8
@@ -132,6 +135,7 @@ share/doc/postfix/html/XCLIENT_README.html
 share/doc/postfix/html/XFORWARD_README.html
 share/doc/postfix/html/access.5.html
 share/doc/postfix/html/aliases.5.html
+share/doc/postfix/html/anvil.8.html
 share/doc/postfix/html/bounce.8.html
 share/doc/postfix/html/canonical.5.html
 share/doc/postfix/html/cidr_table.5.html
@@ -182,6 +186,7 @@ share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
 share/doc/postfix/html/trace.8.html
+share/doc/postfix/html/tcp_table.5.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html
 share/doc/postfix/html/verify.8.html
