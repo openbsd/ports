@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-spanish,v 1.1 2002/12/07 16:51:14 jakob Exp $
+lib/ispell/spanish.aff
+lib/ispell/spanish.hash
+@exec echo 'invoking %D/bin/ispell-config'
+@exec %D/bin/ispell-config

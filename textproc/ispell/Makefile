@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/11/28 22:38:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2002/12/07 16:51:14 jakob Exp $
 
 COMMENT=		interactive spelling checker
 COMMENT-french=		ispell dictionary for French
@@ -7,6 +7,7 @@ COMMENT-swedish=	ispell dictionary for Swedish
 COMMENT-russian=	ispell dictionary for Russian
 COMMENT-portuguese=	ispell dictionary for Rortuguese
 COMMENT-slovak=		ispell dictionary for Slovak
+COMMENT-spanish=	ispell dictionary for Spanish
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
@@ -25,6 +26,7 @@ MASTER_SITES3=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
 MASTER_SITES4=	http://natura.di.uminho.pt/~jj/pln/
 MASTER_SITES5=	http://ispell.hq.sk/
+MASTER_SITES6=	ftp://ftp.fi.upm.es/pub/unix/
 
 DIST_SUBDIR=	ispell
 
@@ -34,6 +36,7 @@ SWEDISH_DICT=		iswedish-1.2.1
 RUSSIAN_DICT=		rus-ispell-0.99e7
 PORTUGUESE_DICT=	UMportugues
 SLOVAK_DICT=		ispell-sk-0.1.10
+SPANISH_DICT=		espa~nol
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FRENCH_DICT}.tar.gz:0 \
@@ -41,16 +44,18 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${SWEDISH_DICT}.tar.gz:2 \
 		${RUSSIAN_DICT}.tar.gz:3 \
 		${PORTUGUESE_DICT}.tgz:4 \
-		${SLOVAK_DICT}.tar.gz:5
+		${SLOVAK_DICT}.tar.gz:5  \
+		${SPANISH_DICT}.tar.gz:6
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		${SWEDISH_DICT}.tar.gz \
 		${PORTUGUESE_DICT}.tgz \
-		${SLOVAK_DICT}.tar.gz
+		${SLOVAK_DICT}.tar.gz  \
+		${SPANISH_DICT}.tar.gz
 
 SUBST_VARS+=	VERSION
 
-MULTI_PACKAGES=	-french -german -swedish -russian -portuguese -slovak
+MULTI_PACKAGES=	-french -german -swedish -russian -portuguese -slovak -spanish
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
@@ -81,6 +86,10 @@ post-extract:
 	@mkdir -p ${WRKDIR}/russian
 	@(cd ${WRKDIR}/russian; \
 	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${RUSSIAN_DICT}.tar.gz)
+	
+	@(cd ${WRKDIR}/${SPANISH_DICT}-1.7/; \
+	mv espa~nol.aff spanish.aff; \
+	mv espa~nol.words+ spanish.words+)
 
 post-patch:
 	@sed "s%/usr/local%${PREFIX}%g" ${WRKSRC}/local.h.samp > \
@@ -114,6 +123,9 @@ post-build:
 	@(cd ${WRKDIR}/${SLOVAK_DICT}; \
 	cat *.words | sort -u -f > slovak.words; \
 	${WRKDIST}/buildhash slovak.words slovak.aff slovak.hash)
+
+	@(cd ${WRKDIR}/${SPANISH_DICT}-1.7; \
+	${WRKDIST}/buildhash spanish.words+ spanish.aff spanish.hash)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
@@ -159,6 +171,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/portugues/portuguese.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/${SLOVAK_DICT}/slovak.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/${SPANISH_DICT}-1.7/spanish.{aff,hash} \
 		${PREFIX}/lib/ispell
 
 .include <bsd.port.mk>
