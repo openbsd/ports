@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/01 23:10:44 lebel Exp $
+lib/libfftw.so.2.5
+lib/librfftw.so.2.5
+DYNLIBDIR(%D/lib)
