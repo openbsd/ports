@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.434 2001/08/07 11:46:17 heko Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.435 2001/08/12 11:33:10 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -411,39 +411,28 @@ PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PKG_DBDIR?=		/var/db/pkg
 
 
-.if defined(FULLPKGNAME)
-_FULLPKGNAME=${FULLPKGNAME}
-.elif defined(PKGNAME)
-_FULLPKGNAME=${PKGNAME}${FLAVOR_EXT}
-.else
-_FULLPKGNAME=${DISTNAME}${FLAVOR_EXT}
-.endif
-_PKGFILE=${PKGREPOSITORY}/${_FULLPKGNAME}${PKG_SUFX}
+PKGNAME?=${DISTNAME}
+FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
+PKGFILE=${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-.    if defined(FULLPKGNAME${_s})
-_FULLPKGNAME${_s} = ${FULLPKGNAME${_s}}
-.    elif defined(PKGNAME${_s})
-_FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
-.    else
-_FULLPKGNAME${_s} = ${DISTNAME}${_s}${FLAVOR_EXT}
+.    if !defined(FULLPKGNAME${_s})
+.      if defined(PKGNAME${_s})
+FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
+.      else
+FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
+.      endif
 .    endif
-_PKGFILE${_s} = ${PKGREPOSITORY}/${_FULLPKGNAME${_s}}${PKG_SUFX}
+PKGFILE${_s} = ${PKGREPOSITORY}/${FULLPKGNAME${_s}}${PKG_SUFX}
 .  endfor
 .endif
-
-# Backward compatibility, for now
-FULLPKGNAME?=${_FULLPKGNAME${SUBPACKAGE}}
-PKGNAME?=		${DISTNAME}${SUBPACKAGE}
-
-PKGFILE?=		${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
 
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
-_INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME}/+CONTENTS
+_INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
 .if ${FAKE:L} == "yes"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
@@ -453,7 +442,7 @@ _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
 _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
-_PACKAGE_COOKIE=	${_PKGFILE}
+_PACKAGE_COOKIE=	${PKGFILE}
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
@@ -591,7 +580,7 @@ ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .endif
 
 .for _s in ${MULTI_PACKAGES}
-_PACKAGE_COOKIE${_s} = ${_PKGFILE${_s}}
+_PACKAGE_COOKIE${_s} = ${PKGFILE${_s}}
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE${_s}}
 .  if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE${_s}}:
@@ -713,7 +702,7 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >>$@.tmp
+	@self=${FULLPKGNAME${SUBPACKAGE}} exec ${MAKE} new-depends|sort -u >>$@.tmp
 .if defined(NO_SHARED_LIBS)
 	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
@@ -1116,7 +1105,7 @@ IGNORE= "is not for ${NOT_FOR_ARCHS}"
 .  endif
 .  if !defined(IGNORE) && defined(COMES_WITH)
 .    if ( ${OPSYS_VER} >= ${COMES_WITH} )
-IGNORE= "-- ${FULLPKGNAME:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
+IGNORE= "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
 .    endif
 .  endif
 
@@ -1253,6 +1242,9 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 
 # and the rules for the actual dependencies
 
+_print-packagename:
+	@echo ${FULLPKGNAME${SUBPACKAGE}}
+
 _EARLY_EXIT?=false
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
@@ -1264,7 +1256,7 @@ ${_DEP}-depends:
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		${_flavor_fragment}; \
 		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-			eval $$toset ${MAKE} show VARNAME=FULLPKGNAME`;; esac; \
+			eval $$toset ${MAKE} _print-packagename`;; esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
@@ -1284,15 +1276,15 @@ ${_DEP}-depends:
 			*) earlyexit=${_EARLY_EXIT}; \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
-					${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - found"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - found"; \
 					break; \
 				else \
-					${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - not found"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - not found"; \
 				fi;; \
 			esac; \
 			${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
 			if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
-				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
+				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}"; \
 			else \
 				exit 1; \
 			fi; \
@@ -1310,7 +1302,7 @@ ${_DEP}-depends:
 fetch checksum extract patch configure all build install \
 uninstall deinstall fake package:
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME} ${IGNORE}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${IGNORE}."
 .  endif
 
 .else 
@@ -1737,7 +1729,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@cd ${.CURDIR} && DEPENDS_TARGET=package _EARLY_EXIT=true exec ${MAKE} run-depends lib-depends
-	@${ECHO_MSG} "===>  Installing ${_FULLPKGNAME${SUBPACKAGE}} from ${_PKGFILE${SUBPACKAGE}}"
+	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${PKGFILE${SUBPACKAGE}}"
 # Kludge
 .  if ${CONFIGURE_STYLE:Mimake}
 	@${SUDO} mkdir -p /usr/local/lib/X11
@@ -1746,13 +1738,13 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	fi
 .  endif
 .  if ${TRUST_PACKAGES:L} == "yes"
-	@if pkg dependencies check ${_FULLPKGNAME${SUBPACKAGE}}; then \
-		echo "Package ${_FULLPKGNAME${SUBPACKAGE}} is already installed"; \
+	@if pkg dependencies check ${FULLPKGNAME${SUBPACKAGE}}; then \
+		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGFILE${SUBPACKAGE}}; \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${PKGFILE${SUBPACKAGE}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGFILE${SUBPACKAGE}}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${PKGFILE${SUBPACKAGE}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif 
@@ -1768,7 +1760,7 @@ _package: ${_PKG_PREREQ}
 	@cd ${.CURDIR} && exec ${MAKE} do-package
 .  else
 # What PACKAGE normally does:
-	@${ECHO_MSG} "===>  Building package for ${_FULLPKGNAME${SUBPACKAGE}}"
+	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if [ ! -d ${PKGREPOSITORY} ]; then \
 	   if ! mkdir -p ${PKGREPOSITORY}; then \
 	      echo ">> Can't create directory ${PKGREPOSITORY}."; \
@@ -1783,8 +1775,8 @@ _package: ${_PKG_PREREQ}
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
 	@cd ${.CURDIR} && \
-	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${_PKGFILE${SUBPACKAGE}}; then \
-	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PKGFILE${SUBPACKAGE}}; \
+	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
+	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
 	    ${MAKE} package-links; \
 	  else \
 	    ${MAKE} delete-package; \
@@ -1797,7 +1789,7 @@ _package: ${_PKG_PREREQ}
 .  endif
 .else
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${_FULLPKGNAME${SUBPACKAGE}} may not be packaged: ${NO_PACKAGE}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} may not be packaged: ${NO_PACKAGE}."
 .  endif
 .endif
 
@@ -1828,7 +1820,7 @@ ${_F}:
 bulk-packages:
 	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
 
-all-packages: ${PKGFILE}
+all-packages: ${PKGFILE${SUBPACKAGE}}
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
@@ -1837,7 +1829,7 @@ all-packages: ${PKGFILE}
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 .if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
-cdrom-packages: ${CDROM_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
+cdrom-packages: ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 .else
 cdrom-packages:
 .endif
@@ -1849,7 +1841,7 @@ cdrom-packages:
 
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
 .if defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
-ftp-packages: ${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
+ftp-packages: ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 .else
 ftp-packages:
 .endif
@@ -1860,22 +1852,21 @@ ftp-packages:
 .endif
 
 
-${PKGFILE}:
+${PKGFILE${SUBPACKAGE}}:
 	@mkdir -p ${PORTSDIR}/logs/${MACHINE_ARCH}
 	@cd ${.CURDIR} && exec ${MAKE} package ALWAYS_PACKAGE=Yes 2>&1 | \
 		tee ${PORTSDIR}/logs/${MACHINE_ARCH}/${FULLPKGNAME}.log
 
-${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}: ${PKGFILE}
+${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${PKGFILE${SUBPACKAGE}}
 	@mkdir -p ${FTP_PACKAGES}
-	@rm -f ${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
-	@ln ${PKGFILE} ${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX} 2>/dev/null || \
-	cp -p ${PKGFILE} ${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
+	@rm -f ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+	@ln ${PKGFILE${SUBPACKAGE}} ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
+	cp -p ${PKGFILE${SUBPACKAGE}} ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 
-${CDROM_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}: ${PKGFILE}
-	@mkdir -p ${CDROM_PACKAGES}
-	@rm -f ${CDROM_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
-	@ln ${PKGFILE} ${CDROM_PACKAGES}/${FULLPKGNAME}${PKG_SUFX} 2>/dev/null || \
-	cp -p ${PKGFILE} ${CDROM_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}
+${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${PKGFILE${SUBPACKAGE}} @mkdir -p ${CDROM_PACKAGES}
+	@rm -f ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+	@ln ${PKGFILE${SUBPACKAGE}} ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
+	cp -p ${PKGFILE${SUBPACKAGE}} ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 
 # list the distribution and patch files used by a port.  Typical
 # use is		make ECHO_MSG=: list-distfiles | tee some-file
@@ -1927,19 +1918,19 @@ package-links:
 				exit 1; \
 			fi; \
 		fi; \
-		ln -s ../${PKGREPOSITORYSUBDIR}/${FULLPKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
+		ln -s ../${PKGREPOSITORYSUBDIR}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} ${PACKAGES}/$$cat; \
 	done;
 .endif
 
 .if !target(delete-package-links)
 delete-package-links:
-	@cd ${PACKAGES} && find . -type l -name ${FULLPKGNAME}${PKG_SUFX}|xargs rm -f
+	@cd ${PACKAGES} && find . -type l -name ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}|xargs rm -f
 .endif
 
 .if !target(delete-package)
 delete-package:
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
-	@rm -f ${_PKGFILE${SUBPACKAGE}}
+	@rm -f ${PKGFILE${SUBPACKAGE}}
 .endif
 
 # Checkpatch
@@ -1956,7 +1947,7 @@ checkpatch:
 # Special target to re-run install
 
 reinstall:
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
+	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
 
 # Rebuild
@@ -1971,8 +1962,8 @@ rebuild:
 # Special target to remove installation
 
 uninstall deinstall:
-	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
+	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
+	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
 
 
 ################################################################
@@ -1990,7 +1981,7 @@ clean: pre-clean
 .  if ${CLEANDEPENDS:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
-	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
@@ -2002,7 +1993,7 @@ pre-distclean:
 
 .if !target(distclean)
 distclean: pre-distclean clean
-	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
 			rm -f ${_DISTFILES} ${_PATCHFILES}; \
@@ -2123,9 +2114,9 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 # XXX
 package-name:
 .  if (${FULL_PACKAGE_NAME:L} == "yes")
-	@${_DEPEND_ECHO} '${PKGPATH}/${FULLPKGNAME}'
+	@${_DEPEND_ECHO} '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
 .  else
-	@${_DEPEND_ECHO} '${FULLPKGNAME}'
+	@${_DEPEND_ECHO} '${FULLPKGNAME${SUBPACKAGE}}'
 .  endif 
 
 # Build a package but don't check the package cookie
@@ -2191,7 +2182,7 @@ describe:
 .  if !defined(PACKAGING) && defined(MULTI_PACKAGES)
 	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
 .  else
-	@echo -n "${FULLPKGNAME}|${FULLPKGPATH}|"
+	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
 .    if ${PREFIX} == ${LOCALBASE}
 	@echo -n "|"
 .    else
@@ -2271,7 +2262,7 @@ describe:
 
 
 README.html:
-	@echo ${FULLPKGNAME} | ${HTMLIFY} > $@.tmp3
+	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
 	@cd ${.CURDIR} && ${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
 .endif
