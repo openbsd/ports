@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/02/15 19:42:18 matt Exp $
---- configure.in.orig	Fri Dec  7 07:38:26 2001
-+++ configure.in	Mon Dec 17 12:06:44 2001
+$OpenBSD: patch-configure_in,v 1.2 2002/04/16 03:40:02 brad Exp $
+--- configure.in.orig	Fri Dec  7 10:38:26 2001
++++ configure.in	Fri Mar 15 10:36:34 2002
 @@ -799,7 +799,21 @@ then
  	Linux*) LDSHARED="gcc -shared";;
  	dgux*) LDSHARED="ld -G";;
@@ -24,3 +24,18 @@ $OpenBSD: patch-configure_in,v 1.1 2002/02/15 19:42:18 matt Exp $
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
  			LDSHARED="cc -shared ${LDFLAGS}"
+@@ -1013,6 +1027,14 @@ then
+     AC_DEFINE(WITH_THREAD)
+     posix_threads=yes
+     LIBOBJS="$LIBOBJS thread.o"
++elif test "$ac_sys_system" = "OpenBSD"
++then
++    posix_threads=yes
++    LIBS="-pthread $LIBS"
++    LIBOBJS="$LIBOBJS thread.o"
++    AC_DEFINE(WITH_THREAD)
++    AC_DEFINE(_REENTRANT)
++    AC_DEFINE(_POSIX_THREADS)
+ else
+     if test ! -z "$with_threads" -a -d "$with_threads"
+     then LDFLAGS="$LDFLAGS -L$with_threads"
