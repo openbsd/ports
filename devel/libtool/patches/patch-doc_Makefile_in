@@ -1,6 +1,7 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2001/02/20 18:26:38 danh Exp $
 --- doc/Makefile.in.orig	Sat May 27 07:23:34 2000
-+++ doc/Makefile.in	Sat Jun 10 13:49:55 2000
-@@ -71,7 +71,7 @@
++++ doc/Makefile.in	Tue Feb 20 13:25:13 2001
+@@ -71,7 +71,7 @@ LD = @LD@
  LIBTOOL = @LIBTOOL@
  LIBTOOL_FLAGS = @LIBTOOL_FLAGS@
  LN_S = @LN_S@

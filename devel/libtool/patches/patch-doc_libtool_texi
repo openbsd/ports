@@ -1,5 +1,6 @@
---- doc/libtool.texi.orig	Fri Apr 30 15:30:12 1999
-+++ doc/libtool.texi	Fri Apr 30 15:30:29 1999
+$OpenBSD: patch-doc_libtool_texi,v 1.1 2001/02/20 18:26:38 danh Exp $
+--- doc/libtool.texi.orig	Tue Nov  2 07:36:23 1999
++++ doc/libtool.texi	Tue Feb 20 13:25:13 2001
 @@ -11,7 +11,7 @@
  @set MAILLIST the libtool mailing list @email{libtool@@gnu.org}
  @set objdir .libs

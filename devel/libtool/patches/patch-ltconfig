@@ -1,6 +1,7 @@
+$OpenBSD: patch-ltconfig,v 1.1 2001/02/20 18:26:38 danh Exp $
 --- ltconfig.orig	Sat May 27 07:15:00 2000
-+++ ltconfig	Fri Jan 19 12:57:33 2001
-@@ -1105,6 +1105,9 @@
++++ ltconfig	Tue Feb 20 13:25:13 2001
+@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -10,7 +11,7 @@
  
  esac
  
-@@ -1402,10 +1405,21 @@
+@@ -1402,10 +1405,21 @@ else
      ;;
  
    openbsd*)
@@ -34,7 +35,7 @@
      ;;
  
    os2*)
-@@ -2021,13 +2035,10 @@
+@@ -2021,13 +2035,10 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
