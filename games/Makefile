@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2003/08/08 22:04:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.103 2003/08/09 14:11:50 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += kslide
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
+     SUBDIR += late
      SUBDIR += lbreakout2
      SUBDIR += lgeneral
      SUBDIR += life
