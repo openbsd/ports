@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/08/17 20:55:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2000/08/17 21:44:18 brad Exp $
 
 DISTNAME=	glib-1.2.8
 CATEGORIES=	devel
@@ -21,11 +21,13 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --includedir="${PREFIX}/include/glib"
 
-FLAVORS=	no_threads
+FLAVORS=	threads
 FLAVOR?=
 
-.if ${FLAVOR:L} == "no_threads"
-CONFIGURE_ARGS+=  --disable-threads
+.if ${FLAVOR:L} == "threads"
+CONFIGURE_ARGS+= --enable-threads
+.else
+CONFIGURE_ARGS+= --disable-threads
 .endif
 
 post-extract:
