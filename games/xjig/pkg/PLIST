@@ -1,2 +1,4 @@
 bin/xjig
 man/man1/xjig.1
+share/xjig/tina.gif
+@dirrm share/xjig
