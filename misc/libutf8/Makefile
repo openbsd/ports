@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/09 06:25:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 20:44:48 naddy Exp $
 
 COMMENT=	"provides UTF-8 locale support"
 
 DISTNAME=	libutf8-0.7.3
 CATEGORIES=     misc devel
-NEED_VERSION=	1.488
+
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/utf8/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/devel/
 
@@ -18,7 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/autoconf
-
-REGRESS_TARGET=	test
 
 .include <bsd.port.mk>
