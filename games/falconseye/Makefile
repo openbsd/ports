@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/05 13:57:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/09 16:50:53 pvalchev Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://falconseye.sourceforge.net/
 
-#MAINTAINER=	Peter Valchev <pvalchev@pobox.com>
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
