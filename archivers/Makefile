@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/11/27 15:16:16 reinhard Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/03 20:03:16 wcobb Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += rar
      SUBDIR += star
      SUBDIR += star,static
+     SUBDIR += ucl
      SUBDIR += unace
      SUBDIR += unarj
      SUBDIR += unrar
