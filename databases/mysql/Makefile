@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2002/07/11 15:42:17 brad Exp $
+# $OpenBSD: Makefile,v 1.81 2002/11/14 03:51:45 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -7,9 +7,9 @@ COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
 # More architectures need testing of MySQL+native threads
-# alpha, m68k, sparc64 - does not work
+# alpha, m68k - does not work
 # hppa, m88k, vax - untested
-WORKING_ARCHS=	i386 powerpc sparc
+WORKING_ARCHS=	i386 powerpc sparc sparc64
 
 .for _arch in ${MACHINE_ARCH}
 .  if empty(WORKING_ARCHS:M${_arch})
@@ -21,9 +21,8 @@ VERSION=	3.23.49
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
-FULLPKGNAME-tests=	mysql-tests-${VERSION}
+FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.500
 V=		MySQL-3.23
 MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/$V/ \
 		ftp://ftp.shellhung.org/pub/Mirror/mysql/Downloads/$V/
@@ -104,9 +103,7 @@ post-install:
 		libmysqlclient.so.10.0 ;\
 	fi
 
-# Don't try to run the join test. It always fails
-# though MySQL seems to work just fine otherwise.
 do-regress:
-	@cd ${WRKSRC}/mysql-test && ./mysql-test-run --skip-test=join
+	@cd ${WRKSRC}/mysql-test && ./mysql-test-run --force
 
 .include <bsd.port.mk>
