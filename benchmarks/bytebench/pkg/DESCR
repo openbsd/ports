@@ -9,7 +9,7 @@ version available from some web suite, from where results are made available,
 too.
 
 Since they offer some results of non-Linux systems for comparison, they might 
-be interested in FreeBSD reports, too ;-)
+be interested in OpenBSD/FreeBSD reports, too ;-)
 
 
 Quoting from "README.submittal" of the Linux version of this benchmark suite:
@@ -42,7 +42,7 @@ Cache:  	256K sync-burst
 Controller:	PCI - Adaptec 2940W ctrler
 Disk:   	1.08 Gig Fujitsu SCSI-III (Wide SCSI)
 Load:   	1 user, running pppd and httpd
-Kernel:		FreeBSD-2.1R
-pgms:   	gcc 2.6.3 compiled;
+Kernel:		OpenBSD-2.2
+pgms:   	gcc 2.7.2 compiled;
         	options = -s -static -O -m486 -finline-functions \
 				funroll-loops -fomit-frame-pointer

@@ -1,0 +1,11 @@
+--- src/execl.c.~1~	Wed Feb  5 02:08:40 1992
++++ src/execl.c	Thu Feb 26 19:29:57 1998
+@@ -44,7 +44,7 @@
+ 	char *fullpath;
+ 	int 	duration;
+ 	char	count_str[6], start_str[12], path_str[81], *dur_str;
+-	long	start_time, this_time;
++	time_t	start_time, this_time;
+ 
+ #ifdef DEBUG
+ 	int count;

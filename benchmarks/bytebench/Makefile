@@ -3,7 +3,7 @@
 # Date created:         1 December 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 01:41:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/27 04:06:11 marc Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -30,6 +30,7 @@ do-install:
 		chmod 755 $(PREFIX)/lib/bytebench/doc
 		chmod 755 $(PREFIX)/lib/bytebench/pgms
 		chmod 755 $(PREFIX)/lib/bytebench/pgms/*
+		${RM} -f $(PREFIX)/lib/bytebench/pgms/*.orig
 		chmod 755 $(PREFIX)/lib/bytebench/results
 		chmod 755 $(PREFIX)/lib/bytebench/testdir
 
