@@ -1,8 +1,8 @@
-$OpenBSD: operops-patch-silcd_command_c,v 1.3 2003/10/31 16:40:06 brad Exp $
---- silcd/command.c.orig	2003-10-30 10:01:41.000000000 -0500
-+++ silcd/command.c	2003-10-31 11:04:58.000000000 -0500
-@@ -3329,6 +3329,8 @@ SILC_SERVER_CMD_FUNC(cumode)
-   }
+$OpenBSD: operops-patch-silcd_command_c,v 1.4 2004/02/29 07:12:42 brad Exp $
+--- silcd/command.c.orig	2004-02-24 09:39:10.000000000 -0500
++++ silcd/command.c	2004-02-29 01:05:33.000000000 -0500
+@@ -3354,6 +3354,8 @@ SILC_SERVER_CMD_FUNC(cumode)
+ 						  client_id, TRUE, NULL);
  
    if (target_client != client &&
 +      !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
@@ -10,18 +10,20 @@ $OpenBSD: operops-patch-silcd_command_c,v 1.3 2003/10/31 16:40:06 brad Exp $
        !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
        !(sender_mask & SILC_CHANNEL_UMODE_CHANOP)) {
      silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
-@@ -3440,7 +3442,9 @@ SILC_SERVER_CMD_FUNC(cumode)
+@@ -3473,8 +3475,10 @@ SILC_SERVER_CMD_FUNC(cumode)
      /* Promote to operator */
      if (!(chl->mode & SILC_CHANNEL_UMODE_CHANOP)) {
        if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
 -          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO)) {
+-        silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
 +          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
 +          !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
 +          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) {
-         silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
++	silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
  					     SILC_STATUS_ERR_NO_CHANNEL_PRIV,
  					     0, 2, tmp_ch_id, tmp_ch_len);
-@@ -3453,7 +3457,9 @@ SILC_SERVER_CMD_FUNC(cumode)
+         goto out;
+@@ -3486,7 +3490,9 @@ SILC_SERVER_CMD_FUNC(cumode)
    } else {
      if (chl->mode & SILC_CHANNEL_UMODE_CHANOP) {
        if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
