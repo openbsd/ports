@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/23 05:15:35 turan Exp $
 # $FreeBSD: Makefile,v 1.5 1999/01/26 22:19:07 billf Exp $
 
 DISTNAME=	PortScanner-1.0
@@ -9,6 +9,11 @@ MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 

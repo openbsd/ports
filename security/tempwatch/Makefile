@@ -3,13 +3,18 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/23 05:15:35 turan Exp $
 
 PKGNAME=	tempwatch-1.0
 
 CATEGORIES=	security
 
 MAINTAINER=	dugsong@monkey.org
+
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	tempwatch
 DISTFILES=	l0pht-watch${EXTRACT_SUFX} watch.txt

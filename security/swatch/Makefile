@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/06 19:44:59 rohee Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 05:15:35 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=      	swatch-2.2
@@ -9,6 +9,11 @@ MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	YES
 
