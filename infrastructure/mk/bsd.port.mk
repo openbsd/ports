@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.250 2000/04/02 18:35:41 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.251 2000/04/03 17:09:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -702,8 +702,6 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 # Support architecture and flavor dependent packing lists
 #
 SED_PLIST?=
-SED_PLIST+=-e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared' -e '//d'
-SED_PLIST+=-e 's/@ARCH@/${ARCH}/'
 
 FLAVOR?=
 
@@ -721,20 +719,28 @@ _FEXT:=
 .  endif
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=-e '/%%${_i}%%/d'
+SED_PLIST+=|sed -e '/%%${_i}%%/d'
 .    else
 _FEXT:=${_FEXT}-${_i}
-SED_PLIST+=-e '/%%${_i}%%/r${PKGDIR}/PFRAG.${FLAVOR}' -e '//d'
+SED_PLIST+=|sed -e '/%%${_i}%%/r${PKGDIR}/PFRAG.${_i}' -e '//d'
 .    endif
 .  endfor
 .endif
+SED_PLIST+=|sed -e 's/@ARCH@/${ARCH}/'
 
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed)
 PLIST=${WRKBUILD}/PLIST
 
 ${PLIST}: ${PKGDIR}/PLIST.sed
-	@sed ${SED_PLIST} <$? >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
+.  if defined(NO_SHARED_LIBS)
+	@sed -e '/%%SHARED%%/d' <$? \
+		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
+.  else
+	@sed -e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared' -e '//d' <$? \
+		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
+.  endif
 .endif
+
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${_FEXT}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${_FEXT}.${ARCH}
 .endif
