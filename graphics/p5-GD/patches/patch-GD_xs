@@ -1,0 +1,29 @@
+$OpenBSD: patch-GD_xs,v 1.1 2002/11/30 05:31:47 brad Exp $
+--- GD.xs.orig	Sun Nov 24 03:38:02 2002
++++ GD.xs	Sun Nov 24 03:38:39 2002
+@@ -17,6 +17,7 @@
+ #endif
+ /* Copyright 1995 - 1998, Lincoln D. Stein.  See accompanying README file for
+ 	usage restrictions */
++#define gdFree free
+ 
+ static int
+ not_here(char *s)
+@@ -1351,7 +1352,7 @@ gdstringUp(image,font,x,y,s,color)
+ 	}
+ 
+ void
+-gdstringFT(image,fgcolor,fontname,ptsize,angle,x,y,string)
++gdstringTTF(image,fgcolor,fontname,ptsize,angle,x,y,string)
+         SV *	        image
+         int             fgcolor
+ 	char *          fontname
+@@ -1376,7 +1377,7 @@ gdstringFT(image,fgcolor,fontname,ptsize
+ 	    img = NULL;
+ 	  }
+ 
+-	  err = gdImageStringFT(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
++	  err = gdImageStringTTF(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
+ 	  if (err) {
+ 	    errormsg = perl_get_sv("@",0);
+ 	    if (errormsg != NULL)
