@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/23 20:14:19 turan Exp $
 #
 
 DISTNAME=	asclock
@@ -14,6 +14,11 @@ MASTER_SITE_SUBDIR=		applications
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	yes
 
