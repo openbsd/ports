@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/06/05 23:01:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/06/18 17:10:26 naddy Exp $
 
 COMMENT=		"lightweight window manager with emphasis on usability"
 
@@ -10,7 +10,6 @@ MASTER_SITES=		http://modeemi.cs.tut.fi/~tuomov/dl/
 
 MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
 
-# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
