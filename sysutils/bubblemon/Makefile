@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/20 18:51:02 naddy Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 V=			1.0.5
@@ -26,7 +26,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@install -d ${PREFIX}/share/bubblemon; \
-	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/bubblemon/
+	@${INSTALL_DATA_DIR} -d ${PREFIX}/share/examples/bubblemon; \
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/bubblemon/
 
 .include <bsd.port.mk>
