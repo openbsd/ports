@@ -1,0 +1,8 @@
+--- gd.c.orig	Mon Jun 12 13:18:39 2000
++++ gd.c	Mon Jun 12 13:21:25 2000
+@@ -1,5 +1,4 @@
+ #ifndef _OSD_POSIX	/* _OSD_POSIX defines *alloc() in stdlib.h */
+-#include <malloc.h>
+ #endif /*_OSD_POSIX*/
+ #include <stdio.h>
+ #include <math.h>
