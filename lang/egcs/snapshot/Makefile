@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 1999/12/03 11:30:11 espie Exp $
+# $OpenBSD: Makefile,v 1.62 1999/12/14 00:19:15 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -47,7 +47,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-12-01
+LATEST_DATE=1999-12-08
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -55,7 +55,7 @@ LATEST_DATE=1999-12-01
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-12-01
+#NEXT_DATE=1999-12-08
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -331,14 +331,16 @@ ALL_TARGET=bootstrap
 # desactivate the fixincludes mechanism by supplying a script which does
 # nothing
 pre-build:
-	echo "#!/bin/sh" >${WRKBUILD}/gcc/fixinc.sh
+	sed -e s,@WRKBUILD@,${WRKBUILD}, -e s,@FILESDIR@,${FILESDIR}, \
+	${FILESDIR}/fixinc.sh.m4 >${WRKBUILD}/gcc/fixinc.sh
+	chmod a+x ${WRKBUILD}/gcc/fixinc.sh
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
-	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} make ${ALL_TARGET} 2>warnings) || \
-	(echo "*** Make bootstrap failed."; \
-	echo "*** Look at ${WRKBUILD}/warnings for errors"; ${FALSE})
+	@{ cd ${WRKBUILD}; \
+	${MAKE_ENV} make ${ALL_TARGET} 2>warnings; } || \
+	{ echo "*** Make bootstrap failed."; \
+	echo "*** Look at ${WRKBUILD}/warnings for errors"; exit 1; }
 
 ####
 # Install & tests section 
