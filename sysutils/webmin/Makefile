@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/02 09:46:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2000/07/04 02:25:25 kevlo Exp $
 
-DISTNAME=       webmin-0.79
+DISTNAME=       webmin-0.80
 CATEGORIES=     sysutils
+NEED_VERSION=	1.310
 FAKE=No
 MASTER_SITES=   http://www.webmin.com/webmin/download/
 
 MAINTAINER=     kevlo@openbsd.org
 
-LICENSE_TYPE=           BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,53 +1,97 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/04 02:25:38 kevlo Exp $
+lib/webmin/acl/admin.acl
 lib/webmin/acl/config
+lib/webmin/admin.acl
+lib/webmin/apache/admin.acl
 lib/webmin/apache/config
+lib/webmin/bind8/admin.acl
 lib/webmin/bind8/config
+lib/webmin/bsdexports/admin.acl
 lib/webmin/bsdexports/config
 lib/webmin/config
+lib/webmin/cron/admin.acl
 lib/webmin/cron/config
+lib/webmin/custom/admin.acl
 lib/webmin/custom/config
+lib/webmin/dfsadmin/admin.acl
 lib/webmin/dfsadmin/config
+lib/webmin/dhcpd/admin.acl
 lib/webmin/dhcpd/config
+lib/webmin/dnsadmin/admin.acl
 lib/webmin/dnsadmin/config
+lib/webmin/exports/admin.acl
 lib/webmin/exports/config
+lib/webmin/fdisk/admin.acl
 lib/webmin/fdisk/config
+lib/webmin/file/admin.acl
 lib/webmin/file/config
+lib/webmin/format/admin.acl
 lib/webmin/format/config
+lib/webmin/help/admin.acl
 lib/webmin/help/config
+lib/webmin/hpuxexports/admin.acl
 lib/webmin/hpuxexports/config
+lib/webmin/inetd/admin.acl
 lib/webmin/inetd/config
+lib/webmin/init/admin.acl
 lib/webmin/init/config
+lib/webmin/inittab/admin.acl
 lib/webmin/inittab/config
+lib/webmin/lilo/admin.acl
 lib/webmin/lilo/config
+lib/webmin/lpadmin/admin.acl
 lib/webmin/lpadmin/config
-lib/webmin/man/config
+lib/webmin/majordomo/admin.acl
 lib/webmin/majordomo/config
-lib/webmin/mysql/config
+lib/webmin/man/admin.acl
+lib/webmin/man/config
 lib/webmin/miniserv.conf
 lib/webmin/miniserv.pem
 lib/webmin/miniserv.users
+lib/webmin/mount/admin.acl
 lib/webmin/mount/config
+lib/webmin/mysql/admin.acl
+lib/webmin/mysql/config
+lib/webmin/net/admin.acl
 lib/webmin/net/config
+lib/webmin/pap/admin.acl
 lib/webmin/pap/config
 lib/webmin/perl-path
+lib/webmin/postfix/admin.acl
+lib/webmin/postfix/config
+lib/webmin/proc/admin.acl
 lib/webmin/proc/config
+lib/webmin/quota/admin.acl
 lib/webmin/quota/config
+lib/webmin/raid/admin.acl
 lib/webmin/raid/config
+lib/webmin/samba/admin.acl
 lib/webmin/samba/config
+lib/webmin/sendmail/admin.acl
 lib/webmin/sendmail/config
+lib/webmin/servers/admin.acl
 lib/webmin/servers/config
+lib/webmin/software/admin.acl
 lib/webmin/software/config
+lib/webmin/squid/admin.acl
 lib/webmin/squid/config
-lib/webmin/syslog/config
 lib/webmin/start
 lib/webmin/stop
+lib/webmin/syslog/admin.acl
+lib/webmin/syslog/config
+lib/webmin/telnet/admin.acl
 lib/webmin/telnet/config
+lib/webmin/time/admin.acl
 lib/webmin/time/config
 lib/webmin/uninstall.sh
+lib/webmin/useradmin/admin.acl
 lib/webmin/useradmin/config
 lib/webmin/var-path
 lib/webmin/version
-lib/webmin/webmin.acl
+lib/webmin/webmin/admin.acl
 lib/webmin/webmin/config
+lib/webmin/webmin.acl
+lib/webmin/wuftpd/admin.acl
 lib/webmin/wuftpd/config
 @dirrm lib/webmin/acl
 @dirrm lib/webmin/apache
@@ -75,6 +119,7 @@ lib/webmin/wuftpd/config
 @dirrm lib/webmin/mysql
 @dirrm lib/webmin/net
 @dirrm lib/webmin/pap
+@dirrm lib/webmin/postfix
 @dirrm lib/webmin/proc
 @dirrm lib/webmin/quota
 @dirrm lib/webmin/raid
