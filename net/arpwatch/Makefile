@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/21 14:50:41 kevlo Exp $
 
 DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
-FAKE=No
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
@@ -10,13 +9,13 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	yes
+FAKE=		Yes
+HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 
