@@ -1,0 +1,12 @@
+$OpenBSD: patch-bsd_pagemeter_h,v 1.1 2000/07/18 04:17:47 form Exp $
+--- bsd/pagemeter.h.orig	Tue Jul 18 11:12:36 2000
++++ bsd/pagemeter.h	Tue Jul 18 11:12:53 2000
+@@ -22,7 +22,7 @@
+ #include "fieldmetergraph.h"
+ #if defined(UVM)
+ #include <sys/param.h>
+-#if defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ <= 105010000)
++#if (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ <= 105010000)) || defined(XOSVIEW_OPENBSD)
+ // Earlier versions of NetBSD still required vm/vm.h to be included.
+ #include <vm/vm.h>
+ #else
