@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/01/02 11:03:44 reinhard Exp $
+# $OpenBSD: Makefile,v 1.19 2003/12/08 00:44:16 naddy Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
@@ -30,7 +30,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc --enable-ipv6 \
 	--with-proxy --enable-perl=yes --with-included-gettext \
-	--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl
+	--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
 
 FLAVORS=	socks
 FLAVOR?=
@@ -42,14 +42,12 @@ BUILD_DEPENDS=		socks.1::security/dante
 
 SAMPLE=		default.theme colorless.theme
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/a$//}
-
 pre-configure:
 	@perl -pi -e 's,doc/irssi,irssi,g' ${WRKSRC}/docs/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi
-	(cd ${WRKDIST} && ${INSTALL_DATA} ${SAMPLE} \
-		${PREFIX}/share/examples/irssi)
+	cd ${WRKDIST} && ${INSTALL_DATA} ${SAMPLE} \
+		${PREFIX}/share/examples/irssi
 
 .include <bsd.port.mk>
