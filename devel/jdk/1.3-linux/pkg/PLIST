@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/09/17 14:17:21 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/11 18:49:18 espie Exp $
 @option no-default-conflict
 @pkgcfl jdk-linux-1.3*
 jdk1.3.1-linux/COPYRIGHT
@@ -11,52 +11,52 @@ jdk1.3.1-linux/bin/HtmlConverter
 jdk1.3.1-linux/bin/appletviewer
 jdk1.3.1-linux/bin/awt_robot
 jdk1.3.1-linux/bin/extcheck
-jdk1.3.1-linux/bin/i386/green_threads/appletviewer
-jdk1.3.1-linux/bin/i386/green_threads/extcheck
-jdk1.3.1-linux/bin/i386/green_threads/idlj
-jdk1.3.1-linux/bin/i386/green_threads/jar
-jdk1.3.1-linux/bin/i386/green_threads/jarsigner
-jdk1.3.1-linux/bin/i386/green_threads/java
-jdk1.3.1-linux/bin/i386/green_threads/javac
-jdk1.3.1-linux/bin/i386/green_threads/javadoc
-jdk1.3.1-linux/bin/i386/green_threads/javah
-jdk1.3.1-linux/bin/i386/green_threads/javap
-jdk1.3.1-linux/bin/i386/green_threads/jdb
-jdk1.3.1-linux/bin/i386/green_threads/keytool
-jdk1.3.1-linux/bin/i386/green_threads/native2ascii
-jdk1.3.1-linux/bin/i386/green_threads/oldjava
-jdk1.3.1-linux/bin/i386/green_threads/oldjavac
-jdk1.3.1-linux/bin/i386/green_threads/oldjdb
-jdk1.3.1-linux/bin/i386/green_threads/policytool
-jdk1.3.1-linux/bin/i386/green_threads/rmic
-jdk1.3.1-linux/bin/i386/green_threads/rmid
-jdk1.3.1-linux/bin/i386/green_threads/rmiregistry
-jdk1.3.1-linux/bin/i386/green_threads/serialver
-jdk1.3.1-linux/bin/i386/green_threads/tnameserv
-jdk1.3.1-linux/bin/i386/native_threads/appletviewer
-jdk1.3.1-linux/bin/i386/native_threads/extcheck
-jdk1.3.1-linux/bin/i386/native_threads/idlj
-jdk1.3.1-linux/bin/i386/native_threads/jar
-jdk1.3.1-linux/bin/i386/native_threads/jarsigner
-jdk1.3.1-linux/bin/i386/native_threads/java
-jdk1.3.1-linux/bin/i386/native_threads/java_vm
-jdk1.3.1-linux/bin/i386/native_threads/javac
-jdk1.3.1-linux/bin/i386/native_threads/javadoc
-jdk1.3.1-linux/bin/i386/native_threads/javah
-jdk1.3.1-linux/bin/i386/native_threads/javap
-jdk1.3.1-linux/bin/i386/native_threads/jdb
-jdk1.3.1-linux/bin/i386/native_threads/keytool
-jdk1.3.1-linux/bin/i386/native_threads/native2ascii
-jdk1.3.1-linux/bin/i386/native_threads/oldjava
-jdk1.3.1-linux/bin/i386/native_threads/oldjavac
-jdk1.3.1-linux/bin/i386/native_threads/oldjdb
-jdk1.3.1-linux/bin/i386/native_threads/policytool
-jdk1.3.1-linux/bin/i386/native_threads/rmic
-jdk1.3.1-linux/bin/i386/native_threads/rmid
-jdk1.3.1-linux/bin/i386/native_threads/rmiregistry
-jdk1.3.1-linux/bin/i386/native_threads/serialver
-jdk1.3.1-linux/bin/i386/native_threads/tnameserv
-jdk1.3.1-linux/bin/i386/realpath
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/appletviewer
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/extcheck
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/idlj
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/jar
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/jarsigner
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/java
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/javac
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/javadoc
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/javah
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/javap
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/jdb
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/keytool
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/native2ascii
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/oldjava
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/oldjavac
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/oldjdb
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/policytool
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/rmic
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/rmid
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/rmiregistry
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/serialver
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/appletviewer
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/extcheck
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/idlj
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/jar
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/jarsigner
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/java
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/java_vm
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/javac
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/javadoc
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/javah
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/javap
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/jdb
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/keytool
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/native2ascii
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/oldjava
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/oldjavac
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/oldjdb
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/policytool
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/rmic
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/rmid
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/rmiregistry
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/serialver
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/tnameserv
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/realpath
 jdk1.3.1-linux/bin/idlj
 jdk1.3.1-linux/bin/jar
 jdk1.3.1-linux/bin/jarsigner
@@ -632,36 +632,36 @@ jdk1.3.1-linux/jre/Welcome.html
 jdk1.3.1-linux/jre/bin/.java_wrapper
 jdk1.3.1-linux/jre/bin/ControlPanel
 jdk1.3.1-linux/jre/bin/awt_robot
-jdk1.3.1-linux/jre/bin/i386/green_threads/appletviewer
-jdk1.3.1-linux/jre/bin/i386/green_threads/extcheck
-jdk1.3.1-linux/jre/bin/i386/green_threads/idlj
-jdk1.3.1-linux/jre/bin/i386/green_threads/jar
-jdk1.3.1-linux/jre/bin/i386/green_threads/jarsigner
-jdk1.3.1-linux/jre/bin/i386/green_threads/java
-jdk1.3.1-linux/jre/bin/i386/green_threads/javac
-jdk1.3.1-linux/jre/bin/i386/green_threads/javadoc
-jdk1.3.1-linux/jre/bin/i386/green_threads/javah
-jdk1.3.1-linux/jre/bin/i386/green_threads/javap
-jdk1.3.1-linux/jre/bin/i386/green_threads/jdb
-jdk1.3.1-linux/jre/bin/i386/green_threads/keytool
-jdk1.3.1-linux/jre/bin/i386/green_threads/native2ascii
-jdk1.3.1-linux/jre/bin/i386/green_threads/oldjava
-jdk1.3.1-linux/jre/bin/i386/green_threads/oldjavac
-jdk1.3.1-linux/jre/bin/i386/green_threads/oldjdb
-jdk1.3.1-linux/jre/bin/i386/green_threads/policytool
-jdk1.3.1-linux/jre/bin/i386/green_threads/rmic
-jdk1.3.1-linux/jre/bin/i386/green_threads/rmid
-jdk1.3.1-linux/jre/bin/i386/green_threads/rmiregistry
-jdk1.3.1-linux/jre/bin/i386/green_threads/serialver
-jdk1.3.1-linux/jre/bin/i386/green_threads/tnameserv
-jdk1.3.1-linux/jre/bin/i386/native_threads/java
-jdk1.3.1-linux/jre/bin/i386/native_threads/java_vm
-jdk1.3.1-linux/jre/bin/i386/native_threads/keytool
-jdk1.3.1-linux/jre/bin/i386/native_threads/policytool
-jdk1.3.1-linux/jre/bin/i386/native_threads/rmid
-jdk1.3.1-linux/jre/bin/i386/native_threads/rmiregistry
-jdk1.3.1-linux/jre/bin/i386/native_threads/tnameserv
-jdk1.3.1-linux/jre/bin/i386/realpath
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/appletviewer
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/extcheck
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/idlj
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/jar
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/jarsigner
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/java
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/javac
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/javadoc
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/javah
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/javap
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/jdb
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/keytool
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/native2ascii
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/oldjava
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/oldjavac
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/oldjdb
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/policytool
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/rmic
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/rmid
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/rmiregistry
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/serialver
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/java
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/java_vm
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/keytool
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/policytool
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/rmid
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/rmiregistry
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/tnameserv
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/realpath
 jdk1.3.1-linux/jre/bin/java
 jdk1.3.1-linux/jre/bin/keytool
 jdk1.3.1-linux/jre/bin/policytool
@@ -694,34 +694,34 @@ jdk1.3.1-linux/jre/lib/fonts/LucidaTypewriterOblique.ttf
 jdk1.3.1-linux/jre/lib/fonts/LucidaTypewriterRegular.ttf
 jdk1.3.1-linux/jre/lib/fonts/fonts.dir
 jdk1.3.1-linux/jre/lib/i18n.jar
-jdk1.3.1-linux/jre/lib/i386/classic/Xusage.txt
-jdk1.3.1-linux/jre/lib/i386/classic/libjvm.so
-jdk1.3.1-linux/jre/lib/i386/client/Xusage.txt
-jdk1.3.1-linux/jre/lib/i386/client/libjvm.so
-jdk1.3.1-linux/jre/lib/i386/green_threads/libhpi.so
-jdk1.3.1-linux/jre/lib/i386/hotspot
-jdk1.3.1-linux/jre/lib/i386/libJdbcOdbc.so
-jdk1.3.1-linux/jre/lib/i386/libagent.so
-jdk1.3.1-linux/jre/lib/i386/libawt.so
-jdk1.3.1-linux/jre/lib/i386/libcmm.so
-jdk1.3.1-linux/jre/lib/i386/libdcpr.so
-jdk1.3.1-linux/jre/lib/i386/libfontmanager.so
-jdk1.3.1-linux/jre/lib/i386/libhprof.so
-jdk1.3.1-linux/jre/lib/i386/libioser12.so
-jdk1.3.1-linux/jre/lib/i386/libjava.so
-jdk1.3.1-linux/jre/lib/i386/libjavaplugin_jni.so
-jdk1.3.1-linux/jre/lib/i386/libjawt.so
-jdk1.3.1-linux/jre/lib/i386/libjcov.so
-jdk1.3.1-linux/jre/lib/i386/libjpeg.so
-jdk1.3.1-linux/jre/lib/i386/libjsound.so
-jdk1.3.1-linux/jre/lib/i386/libmlib_image.so
-jdk1.3.1-linux/jre/lib/i386/libnet.so
-jdk1.3.1-linux/jre/lib/i386/libpreemptive_close.so
-jdk1.3.1-linux/jre/lib/i386/libverify.so
-jdk1.3.1-linux/jre/lib/i386/libzip.so
-jdk1.3.1-linux/jre/lib/i386/native_threads/libhpi.so
-jdk1.3.1-linux/jre/lib/i386/server/Xusage.txt
-jdk1.3.1-linux/jre/lib/i386/server/libjvm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic/Xusage.txt
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic/libjvm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client/Xusage.txt
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client/libjvm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/green_threads/libhpi.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/hotspot
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libJdbcOdbc.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libagent.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libawt.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libcmm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libdcpr.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libfontmanager.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libhprof.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libioser12.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjava.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjavaplugin_jni.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjawt.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjcov.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjpeg.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libjsound.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libmlib_image.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libnet.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libpreemptive_close.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libverify.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libzip.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/native_threads/libhpi.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 jdk1.3.1-linux/jre/lib/images/cursors/cursors.properties
 jdk1.3.1-linux/jre/lib/images/cursors/invalid32x32.gif
 jdk1.3.1-linux/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -754,12 +754,12 @@ jdk1.3.1-linux/jre/lib/security/java.policy
 jdk1.3.1-linux/jre/lib/security/java.security
 jdk1.3.1-linux/jre/lib/sunrsasign.jar
 jdk1.3.1-linux/jre/lib/tzmappings
-jdk1.3.1-linux/jre/plugin/i386/ns4/javaplugin.so
-jdk1.3.1-linux/jre/plugin/i386/ns600/libjavaplugin_oji.so
+jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns4/javaplugin.so
+jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns600/libjavaplugin_oji.so
 jdk1.3.1-linux/lib/dt.jar
 jdk1.3.1-linux/lib/htmlconverter.jar
-jdk1.3.1-linux/lib/i386/libdt_socket.so
-jdk1.3.1-linux/lib/i386/libjdwp.so
+jdk1.3.1-linux/lib/${MACHINE_ARCH}/libdt_socket.so
+jdk1.3.1-linux/lib/${MACHINE_ARCH}/libjdwp.so
 jdk1.3.1-linux/lib/ir.idl
 jdk1.3.1-linux/lib/orb.idl
 jdk1.3.1-linux/lib/tools.jar
@@ -803,11 +803,11 @@ jdk1.3.1-linux/src.jar
 @dirrm jdk1.3.1-linux/man/ja_JP.eucJP/man1
 @dirrm jdk1.3.1-linux/man/ja_JP.eucJP
 @dirrm jdk1.3.1-linux/man
-@dirrm jdk1.3.1-linux/lib/i386
+@dirrm jdk1.3.1-linux/lib/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/lib
-@dirrm jdk1.3.1-linux/jre/plugin/i386/ns600
-@dirrm jdk1.3.1-linux/jre/plugin/i386/ns4
-@dirrm jdk1.3.1-linux/jre/plugin/i386
+@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns600
+@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns4
+@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/jre/plugin
 @dirrm jdk1.3.1-linux/jre/lib/security
 @dirrm jdk1.3.1-linux/jre/lib/locale/zh_TW/LC_MESSAGES
@@ -837,12 +837,12 @@ jdk1.3.1-linux/src.jar
 @dirrm jdk1.3.1-linux/jre/lib/locale
 @dirrm jdk1.3.1-linux/jre/lib/images/cursors
 @dirrm jdk1.3.1-linux/jre/lib/images
-@dirrm jdk1.3.1-linux/jre/lib/i386/server
-@dirrm jdk1.3.1-linux/jre/lib/i386/native_threads
-@dirrm jdk1.3.1-linux/jre/lib/i386/green_threads
-@dirrm jdk1.3.1-linux/jre/lib/i386/client
-@dirrm jdk1.3.1-linux/jre/lib/i386/classic
-@dirrm jdk1.3.1-linux/jre/lib/i386
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/native_threads
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/green_threads
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic
+@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/jre/lib/fonts
 @exec mkdir -p %D/jdk1.3.1-linux/jre/lib/ext
 @dirrm jdk1.3.1-linux/jre/lib/ext
@@ -851,9 +851,9 @@ jdk1.3.1-linux/src.jar
 @exec mkdir -p %D/jdk1.3.1-linux/jre/lib/applet
 @dirrm jdk1.3.1-linux/jre/lib/applet
 @dirrm jdk1.3.1-linux/jre/lib
-@dirrm jdk1.3.1-linux/jre/bin/i386/native_threads
-@dirrm jdk1.3.1-linux/jre/bin/i386/green_threads
-@dirrm jdk1.3.1-linux/jre/bin/i386
+@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads
+@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads
+@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/jre/bin
 @dirrm jdk1.3.1-linux/jre
 @dirrm jdk1.3.1-linux/include/linux
@@ -955,8 +955,8 @@ jdk1.3.1-linux/src.jar
 @dirrm jdk1.3.1-linux/demo/applets/Animator
 @dirrm jdk1.3.1-linux/demo/applets
 @dirrm jdk1.3.1-linux/demo
-@dirrm jdk1.3.1-linux/bin/i386/native_threads
-@dirrm jdk1.3.1-linux/bin/i386/green_threads
-@dirrm jdk1.3.1-linux/bin/i386
+@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads
+@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads
+@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/bin
 @dirrm jdk1.3.1-linux
