@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2000/06/25 04:53:10 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/07/04 02:49:34 krw Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 #BROKEN=	installs files automatically in /etc
 
 DISTNAME=	mysql-3.22.32
 CATEGORIES=	databases
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.he.net/Downloads/MySQL-3.22/ \
 		http://www.buoy.com/mysql/Downloads/MySQL-3.22/ \
