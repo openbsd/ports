@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_reader_conf,v 1.1.1.1 2003/06/14 15:05:28 sturm Exp $
+--- doc/reader.conf.orig	Fri May 23 15:16:01 2003
++++ doc/reader.conf	Fri May 23 15:16:10 2003
+@@ -12,7 +12,7 @@
+ # Towitoko Chipdrive Micro (COM1)
+ FRIENDLYNAME	"Towitoko Chipdrive Micro"
+ DEVICENAME	TOWITOKO_CHIPDRIVE_MICRO
+-LIBPATH		/usr/local/towitoko/lib/libtowitoko.so.2.0.0
++LIBPATH		%%PREFIX%%/lib/libtowitoko.so.2.0
+ CHANNELID	0x000001
+ 
+ # Note: Use the full path on LIBPATH.

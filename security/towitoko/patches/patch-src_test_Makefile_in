@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_test_Makefile_in,v 1.1.1.1 2003/06/14 15:05:28 sturm Exp $
+--- src/test/Makefile.in.orig	Sun Aug 18 11:14:29 2002
++++ src/test/Makefile.in	Fri May 23 13:56:23 2003
+@@ -116,7 +116,7 @@ subdir = src/test
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-bin_PROGRAMS = tester$(EXEEXT)
++bin_PROGRAMS = towitoko-tester$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am_tester_OBJECTS = tester.$(OBJEXT)
+@@ -182,7 +182,7 @@ clean-binPROGRAMS:
+ 	  echo " rm -f $$p $$f"; \
+ 	  rm -f $$p $$f ; \
+ 	done
+-tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
++towitoko-tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+ 	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
+ 
