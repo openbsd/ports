@@ -1,34 +1,30 @@
-*** yacc/main.c.orig	Thu Feb 12 20:55:43 1998
---- yacc/main.c	Thu Feb 12 20:57:50 1998
-***************
-*** 88,94 ****
---- 88,96 ----
-  short **derives;
-  char *nullable;
-  
-+ #if !defined(__OpenBSD__)
-  extern char *mktemp(char *);
-+ #endif
-  extern char *getenv(const char *);
-  
-  
-***************
-*** 282,291 ****
---- 284,300 ----
-      union_file_name[len + 5] = 'u';
-  
-  #ifndef NO_UNIX
-+ #ifdef __OpenBSD__
-+     close(mkstemp(action_file_name));
-+     close(mkstemp(entry_file_name));
-+     close(mkstemp(text_file_name));
-+     close(mkstemp(union_file_name));
-+ #else
-      mktemp(action_file_name);
-      mktemp(entry_file_name);
-      mktemp(text_file_name);
-      mktemp(union_file_name);
-+ #endif
-  #endif
-  
-      len = strlen(file_prefix);
+--- yacc/main.c.orig	Thu Jul  8 21:24:20 1999
++++ yacc/main.c	Thu Jul  8 21:25:51 1999
+@@ -88,7 +88,9 @@
+ short **derives;
+ char *nullable;
+ 
++#if !defined(__OpenBSD__)
+ extern char *mktemp(char *);
++#endif
+ extern char *getenv(const char *);
+ 
+ 
+@@ -282,10 +284,17 @@
+     union_file_name[len + 5] = 'u';
+ 
+ #ifndef NO_UNIX
++#ifdef __OpenBSD__
++    close(mkstemp(action_file_name));
++    close(mkstemp(entry_file_name));
++    close(mkstemp(text_file_name));
++    close(mkstemp(union_file_name));
++#else
+     mktemp(action_file_name);
+     mktemp(entry_file_name);
+     mktemp(text_file_name);
+     mktemp(union_file_name);
++#endif
+ #endif
+ 
+     len = strlen(file_prefix);
