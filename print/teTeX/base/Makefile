@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.16 2001/11/15 14:42:07 todd Exp $
+# $OpenBSD: Makefile,v 1.17 2002/04/05 22:07:00 naddy Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -55,6 +55,10 @@ USE_X11= Yes
 post-configure:
 	cd ${WRKBUILD} && find . -name Makefile -print | PREFIX=${PREFIX} \
 		xargs perl -pi.bak ${FILESDIR}/fix-Makefiles
+.if ${MACHINE_ARCH} == "alpha"
+	# work around internal compiler error in gcc 2.95.3
+	perl -pi -e 's|(\$$\(CC\) \$$\(CFLAGS_NORMAL\) )(-c \$$\(srcdir\)/softscroll.c)|$$1-O0 $$2|;' ${WRKBUILD}/libs/ncurses/ncurses/Makefile
+.endif
 	cd ${WRKBUILD} && find . -name Makefile -print | \
 		while read i; do touch -r $$i.bak $$i; done
 
