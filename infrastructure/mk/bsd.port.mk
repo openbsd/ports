@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.488 2001/10/29 12:51:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.489 2001/11/01 12:26:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1335,7 +1335,7 @@ ${_LIBLIST}: ${_FAKE_COOKIE}
 	@-${SUDO} cp -f /usr/libexec/ld.so ${WRKINST}/usr/libexec
 	@-${SUDO} cp -f /usr/lib/libc.so.* ${WRKINST}
 	@-${SUDO} cp -f /usr/bin/ldd ${WRKINST}
-	@(cd ${WRKINST} && ${SUDO} find . -type f)|\
+	@cd ${WRKINST} && ${SUDO} find . -type f|\
 		${SUDO} env LD_LIBRARY_PATH=. xargs chroot ${WRKINST} \
 		./ldd -f '\tlibrary: %o %m %n\n' -f '\tlibrary: %o %m %n\n' 2>/dev/null|\
 		grep '^	'|\
