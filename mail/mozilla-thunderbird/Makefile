@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/01/04 21:27:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2005/01/10 10:17:08 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
@@ -54,6 +54,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
+		--without-system-nspr		\
 		--enable-xft			\
 		--enable-optimize=-Os		\
 		--disable-debug			\
