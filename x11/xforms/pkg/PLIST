@@ -1,0 +1,15 @@
+bin/fd2ps
+bin/fdesign
+include/X11/forms.h
+lib/libforms.a
+@exec ln -sf %D/%F %D/lib/libxforms.a
+@unexec rm -f %D/lib/libxforms.a
+lib/libforms.so.0.88
+@exec ln -sf %D/%F %D/lib/libxforms.so.0.88
+@unexec rm -f %D/lib/libxforms.so.0.88
+@exec if [ -x /sbin/ldconfig ]; then /sbin/ldconfig -m; fi
+@unexec if [ -x /sbin/ldconfig ]; then /sbin/ldconfig; fi
+man/man1/fd2ps.1
+man/man1/fdesign.1
+man/man5/forms.5
+man/man5/xforms.5
