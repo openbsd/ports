@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_malloc_prmem_c,v 1.1 2003/05/14 21:50:59 wilfried Exp $
+--- nsprpub/pr/src/malloc/prmem.c.orig	Wed May 14 10:04:40 2003
++++ nsprpub/pr/src/malloc/prmem.c	Wed May 14 12:52:28 2003
+@@ -524,7 +524,7 @@
+ ** locking. This makes malloc somewhat faster so maybe it's a good thing
+ ** anyway.
+ */
+-#ifdef _PR_OVERRIDE_MALLOC
++#if 0 && defined(_PR_OVERRIDE_MALLOC)
+ 
+ /* Imports */
+ extern void *_PR_UnlockedMalloc(size_t size);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.1 2003/05/14 21:50:59 wilfried Exp $
+--- nsprpub/pr/src/misc/prinit.c.orig	Wed May 14 10:04:47 2003
++++ nsprpub/pr/src/misc/prinit.c	Wed May 14 12:52:59 2003
+@@ -227,7 +227,7 @@
+  * XXX: call _PR_InitMem only on those platforms for which nspr implements
+  *	malloc, for now.
+  */
+-#ifdef _PR_OVERRIDE_MALLOC
++#if 0 && defined(_PR_OVERRIDE_MALLOC)
+     _PR_InitMem();
+ #endif
+ 

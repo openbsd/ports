@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpcom_glue_nsIGenericFactory_h,v 1.1 2003/05/14 21:50:59 wilfried Exp $
+--- xpcom/glue/nsIGenericFactory.h.orig	Sat May 10 21:22:54 2003
++++ xpcom/glue/nsIGenericFactory.h	Wed May 14 00:46:21 2003
+@@ -347,7 +347,7 @@
+     NS_IMPL_NSGETMODULE_WITH_CTOR_DTOR(_name, _components, nsnull, _dtor)
+ 
+ #define NS_IMPL_NSGETMODULE_WITH_CTOR_DTOR(_name, _components, _ctor, _dtor)  \
+-nsModuleInfo NSMODULEINFO(_name) = {                                          \
++static nsModuleInfo NSMODULEINFO(_name) = {                                          \
+     NS_MODULEINFO_VERSION,                                                    \
+     (#_name),                                                                 \
+     (_components),                                                            \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_malloc_prmalloc_c,v 1.1 2003/05/14 21:50:59 wilfried Exp $
+--- nsprpub/pr/src/malloc/prmalloc.c.orig	Wed May 14 10:04:33 2003
++++ nsprpub/pr/src/malloc/prmalloc.c	Wed May 14 12:52:18 2003
+@@ -39,7 +39,7 @@
+ ** nspr20 user level threads.  When we're debugging, we can make our
+ ** version of malloc fail occasionally.
+ */
+-#ifdef _PR_OVERRIDE_MALLOC
++#if 0 && defined(_PR_OVERRIDE_MALLOC)
+ 
+ /*
+ ** Thread safe version of malloc, calloc, realloc, free

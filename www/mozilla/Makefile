@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/04/13 02:40:48 david Exp $
+# $OpenBSD: Makefile,v 1.26 2003/05/14 21:50:59 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -8,7 +8,7 @@ DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 
-BROKEN=		core dumps in dynamic library constructor
+BROKEN=		More debugging needed
 
 CATEGORIES=	www
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--disable-profilesharing        \
 		--disable-ldap
 # disable this for now
 #		--enable-crypto			\

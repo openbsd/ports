@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpcom_sample_Makefile_in,v 1.1 2003/05/14 21:50:59 wilfried Exp $
+--- xpcom/sample/Makefile.in.orig	Mon May 12 12:39:00 2003
++++ xpcom/sample/Makefile.in	Mon May 12 12:38:41 2003
+@@ -54,7 +54,7 @@ XPIDLSRCS	= nsISample.idl
+ 
+ TESTCPPSRCS	= nsTestSample.cpp
+ 
+-CPPSRCS		+= $(TESTCPPSRCS)
++#CPPSRCS		+= $(TESTCPPSRCS)
+ 
+ SIMPLE_PROGRAMS	= $(TESTCPPSRCS:.cpp=$(BIN_SUFFIX))
+ 
