@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.125 1999/09/30 16:35:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.126 1999/09/30 16:56:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1897,7 +1897,11 @@ fetch-list:
 fetch-list-recursive:
 	@${MAKE} fetch-list-one-pkg
 .if ${RECURSIVE_FETCH_LIST} != "NO"
-	@for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}  ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	@for dir in `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
 		(cd $$dir; ${MAKE} fetch-list-recursive; ); \
 	done
 .endif # ${RECURSIVE_FETCH_LIST} != "NO"
@@ -2104,7 +2108,9 @@ package-path:
 package-depends:
 .if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	for dir in `${ECHO} ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
 			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name package-depends ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
@@ -2293,8 +2299,11 @@ clean-depends:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) \
 	|| defined(RUN_DEPENDS) || defined(DEPENDS)
 	@for dir in \
-	   `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` \
-	   `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	   `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	   ${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
+	   ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	   ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
+	   ${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null ; then \
 			${MAKE} CLEANDEPENDS=No clean clean-depends; \
 		fi \
@@ -2307,7 +2316,10 @@ depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
    defined(LIB_DEPENDS) || defined(DEPENDS)
 	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	for dir in `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
 			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name depends-list ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
