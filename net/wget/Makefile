@@ -1,14 +1,10 @@
-# OpenBSD makefile for:	wget
-# Version required:	1.5.2
-# Date created:		December 6, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/27 23:03:39 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/24 04:29:05 fgsch Exp $
 #
 
-DISTNAME=	wget-1.5.2
+DISTNAME=	wget-1.5.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= wget
 
 MAINTAINER=	angelos@openbsd.org
 
