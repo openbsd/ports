@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2003/12/31 16:03:30 naddy Exp $
+# $OpenBSD: INSTALL,v 1.6 2004/06/24 03:09:31 brad Exp $
 #
 # Pre/post-installation setup of Bitlbee
 
@@ -72,24 +72,6 @@ do_manual_notice() {
 EOF
 }
 
-do_warning() {
-    cat << EOF
-+---------------
-| WARNING!
-|
-| This port has changed the user/group it uses from bitlbee to $BITLBEEUSER.
-| If you installed this port before, ensure all permissions are set correctly
-| with:
-|
-|   # ls -ld $DB_DIR
-|   # chown -R $BITLBEEUSER:$BITLBEEGROUP $DB_DIR
-|
-| And don't forget to remove the old user/group.
-+---------------
-
-EOF
-}
-
 do_config_install() {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/bitlbee.conf $CONFIG_DIR
@@ -132,7 +114,6 @@ case $2 in
 	    do_database_install
 	fi
 	do_manual_notice
-	do_warning
 	if [ ! -f $CONFIG_DIR/bitlbee.conf ]; then
 	    do_config_install $1
 	else

@@ -8,9 +8,3 @@
 | tacacs+	49/tcp
 |
 +------------
-| WARNING!
-|
-| This port has changed its user/group from 'tacacs' to '_tacacs'. If you
-| installed this port before, ensure all permissions are set correctly and
-| then "rmuser tacacs".
-+------------

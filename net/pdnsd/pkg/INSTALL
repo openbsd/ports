@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2003/06/22 14:07:22 sturm Exp $
+# $OpenBSD: INSTALL,v 1.4 2004/06/24 03:09:31 brad Exp $
 #
 # Pre/post-installation setup of pdnsd
 
@@ -106,18 +106,6 @@ do_notice_docs()
     echo "+---------------"
 }
 
-do_warning()
-{
-    echo
-    echo "+---------------"
-    echo "| WARNING!"
-    echo "|"
-    echo "| This port has changed its user/group from 'pdnsd' to '_pdnsd'."
-    echo "| If you installed this port before, ensure all permissions are set"
-    echo "| correctly and then \"rmuser pdnsd\"."
-    echo "+---------------"
-}
-
 # Verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -145,7 +133,6 @@ case $2 in
 	    do_notice_cachedir "$1"
 	fi
 	do_notice_docs "$1"
-	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
