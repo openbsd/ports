@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/19 16:43:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/23 21:33:01 turan Exp $
 #
 
 DISTNAME=	olvwm4
@@ -9,6 +9,11 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
 MAINTAINER= ian@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"missing license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"missing license"
+PERMIT_DISTFILES_FTP=	Yes
 
 # The Patch01 and Patch02 patches are included in the patches directory.
 #
