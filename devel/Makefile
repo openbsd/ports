@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2005/02/04 18:50:00 alek Exp $
+# $OpenBSD: Makefile,v 1.299 2005/02/05 21:03:11 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -162,6 +162,7 @@
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
+     SUBDIR += p5-Data-Buffer
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ShowTable
