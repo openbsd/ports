@@ -18,6 +18,7 @@ Flavors:
 	athena	   - build using the Athena toolkit;
 	no_x11	   - build without X11 support;
 	perl	   - build with Perl support;
-	python	   - build with Python support.
+	python	   - build with Python support;
+	huge	   - build with --with-features=huge.
  
 WWW: ${HOMEPAGE}
