@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/02/14 20:18:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/04/09 02:38:12 espie Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -88,6 +88,7 @@ etc/host.conf
 etc/hosts.allow
 etc/hosts.deny
 etc/inputrc
+@comment no checksum
 etc/ld.so.cache
 etc/ld.so.conf
 etc/nsswitch.conf
@@ -4868,13 +4869,21 @@ usr/share/zoneinfo/right/WET
 usr/share/zoneinfo/right/Zulu
 usr/share/zoneinfo/zone.tab
 var/db/Makefile
+@comment no checksum
 var/lib/rpm/conflictsindex.rpm
+@comment no checksum
 var/lib/rpm/fileindex.rpm
+@comment no checksum
 var/lib/rpm/groupindex.rpm
+@comment no checksum
 var/lib/rpm/nameindex.rpm
+@comment no checksum
 var/lib/rpm/packages.rpm
+@comment no checksum
 var/lib/rpm/providesindex.rpm
+@comment no checksum
 var/lib/rpm/requiredby.rpm
+@comment no checksum
 var/lib/rpm/triggerindex.rpm
 var/log/lastlog
 usr/X11R6/lib/libICE.so.6.3
