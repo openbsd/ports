@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
+bin/geoipexport
+bin/geoiplookup
+bin/geoipupdate
+include/GeoIP.h
+include/GeoIPBitReader.h
+include/GeoIPCity.h
+include/GeoIPUpdate.h
+lib/libGeoIP.a
+lib/libGeoIP.la
+lib/libGeoIPBitReader.a
+lib/libGeoIPBitReader.la
+lib/libGeoIPUpdate.a
+lib/libGeoIPUpdate.la
+man/man1/geoiplookup.1
+share/examples/GeoIP/GeoIP.conf
+share/examples/GeoIP/GeoIP.dat
+%%SHARED%%
+@dirrm share/examples/GeoIP

@@ -1,0 +1,32 @@
+$OpenBSD: patch-man_geoiplookup_1,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
+--- man/geoiplookup.1.orig	Thu Nov 21 07:12:38 2002
++++ man/geoiplookup.1	Thu Jun 26 00:24:19 2003
+@@ -3,23 +3,22 @@
+ .SH NAME
+ geoiplookup - look up country using IP Address or hostname
+ .SH SYNOPSIS
+-geoiplookup [-lv] <ipaddress|hostname>
++geoiplookup [-v] <ipaddress|hostname>
+ .SH DESCRIPTION
+ geoiplookup uses the GeoIP library and database to find the Country
+ that an IP address or hostname originates from.
+ .PP
+ For example
+ .PP
+-.I geoiplookup -l 80.60.233.195
++.I geoiplookup 80.60.233.195
+ .PP
+-will find the Country that 80.60.233.195 originates from, in long format:
++will find the Country that 80.60.233.195 originates from:
+ .PP
++.I NL
++,
+ .I Netherlands
+ .PP
+ .SH OPTIONS
+-.IP "-l"
+-By default, geoiplookup returns the ISO 3166 country code.  By specifying this
+-option, geoiplookup prints the long format, namely the full country name.
+ .IP "-v"
+ Lists the GeoIP database date and build number.
+ .SH AUTHOR
