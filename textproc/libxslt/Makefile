@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/04/19 10:12:48 shell Exp $
+# $OpenBSD: Makefile,v 1.23 2002/04/24 13:06:52 shell Exp $
 
 COMMENT=	"XSLT C Library for GNOME"
 
@@ -20,8 +20,6 @@ MASTER_SITES=	ftp://xmlsoft.org/ \
 		ftp://xmlsoft.org/old/ \
 		ftp://speakeasy.rpmfind.net/pub/libxml/ \
 		ftp://fr.rpmfind.net/pub/libxml/
-
-USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
