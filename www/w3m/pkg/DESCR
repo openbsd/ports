@@ -6,13 +6,8 @@ it has several features Lynx doesn't have:
 * w3m can display documents from standard input
 * w3m is small
 
-The kanji flavor provides Japanese menus and documentation, and
-properly displays Japanese characters in kterm.
-
-The multilingualization (m17n) flavor allows to display pages in
-all kinds of scripts and encodings in a UTF-8 xterm.  (Experimental.)
-
-The image flavor supports displaying inline images when run from
-an X11 terminal emulator.  (Experimental.)
+Available flavors:
+  japanese      - Provide Japanese menus and documentation, and
+	          properly display Japanese characters in kterm.
 
 WWW: ${HOMEPAGE}

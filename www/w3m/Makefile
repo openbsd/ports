@@ -1,25 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2001/11/05 15:40:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2001/11/16 21:35:44 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
-COMMENT-kanji=		"Japanese text-based web browser/pager"
-COMMENT-image=		"text-based web browser/pager with inline image support"
-COMMENT-m17n=		"multi-script text-based web browser/pager"
-COMMENT-kanji-m17n=	"Japanese multi-script text-based web browser/pager"
-COMMENT-kanji-image=	"Japanese text-based web browser/pager with image support"
+COMMENT-japanese=	"Japanese text-based web browser/pager"
 
-V_AITO=		0.2.1	# aito's official release
-V_INU=		1.5	# inu branch
-V_IMG=		1.12	# image extension
-V_M17N=		0.19	# multilingualization extension
-
-AITO_DISTNAME=	w3m-${V_AITO}
-INU_DISTNAME=	w3m-${V_AITO}-inu-${V_INU}
-
+DISTNAME=	w3m-0.2.2
 CATEGORIES=	www
-NEED_VERSION=	1.474
-HOMEPAGE=	http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/
+NEED_VERSION=	1.498
+HOMEPAGE=	http://w3m.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -28,24 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
-		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
-		http://www.instinct.org/w3m/ \
-		ftp://ftp.wiretapped.net/pub/w3m/
-MASTER_SITES0=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inu/200110/
-MASTER_SITES1=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	w3m
 
-INU_DISTFILE=	${INU_DISTNAME}${EXTRACT_SUFX}:0
-IMG_PATCH=	w3m-${V_AITO}-inu-${V_INU}-img-${V_IMG}.patch:1
-M17N_PATCH=	w3m-${V_AITO}-m17n-${V_M17N}.patch.gz:1
-PATCH_DIST_STRIP= -p1
-SUPDISTFILES=	${AITO_DISTNAME}${EXTRACT_SUFX} ${INU_DISTFILE} \
-		${IMG_PATCH} ${M17N_PATCH}
-
-FLAVORS=	kanji image m17n
+FLAVORS=	japanese
 FLAVOR?=
-
-PATCH_LIST=	patch-*
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= -nonstop -prefix="${PREFIX}" -cflags="${CFLAGS}" \
@@ -55,53 +31,13 @@ CONFIGURE_ENV=	use_nntp=y use_ssl_verify=y \
 		dtermlib="${TERMLIB}" def_helpdir="${PREFIX}/share/w3m" \
 		def_libdir="${PREFIX}/libexec/w3m"
 
-NO_REGRESS=	Yes
-
 DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
-.if ${FLAVOR:L:Mimage} && ${FLAVOR:L:Mm17n}
-ERRORS+=	"Fatal: Flavors 'image' and 'm17n' are mutually exclusive."
-.endif
+.if ${FLAVOR:L:Mjapanese}
 
-.if  ${FLAVOR:L:Mimage}
-
-DISTNAME=	${INU_DISTNAME}
-PKGNAME=	w3m-${V_AITO}.inu.${V_INU}.${V_IMG}
-DISTFILES=	${INU_DISTFILE}
-PATCHFILES=	${IMG_PATCH}
-HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
-DOCS+=		README.img
-LIB_DEPENDS+=	Imlib.19::graphics/imlib
-
-.elif ${FLAVOR:L:Mm17n}
-
-DISTNAME=	${AITO_DISTNAME}
-PKGNAME=	${DISTNAME}.${V_M17N}p1
-PATCHFILES=	${M17N_PATCH}
-HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
-CONFIGURE_ARGS+= -suffix="" -charset=UTF-8
-DOCS+=		README.m17n
-PATCH_LIST+=	m17n-*
-
-.else
-
-DISTNAME=	${INU_DISTNAME}
-PKGNAME=	w3m-${V_AITO}.inu.${V_INU}
-DISTFILES=	${INU_DISTFILE}
-
-.endif
-
-.if ${FLAVOR:L:Mkanji}
-
-.  if   ${FLAVOR:L:Mimage}
-FULLPKGNAME=	ja-${PKGNAME}-img
-.  elif ${FLAVOR:L:Mm17n}
-FULLPKGNAME=	ja-${PKGNAME}-m17n
-.  else
 FULLPKGNAME=	ja-${PKGNAME}
-.  endif
 CATEGORIES+=	japanese
 CONFIGURE_ARGS+= -lang=ja -code=n
 DOCS+=		README.SSL README.cookie README.keymap \
@@ -115,9 +51,14 @@ DOCSRC=		${WRKSRC}/doc
 
 .endif
 
+pre-build:
+	@cd ${WRKBUILD}/gc; ${MAKE_PROGRAM} clean
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m
 	${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
-	cd ${DOCSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/w3m
+	cd ${DOCSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/w3m
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

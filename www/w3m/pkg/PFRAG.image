@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.image,v 1.1 2001/07/31 15:27:08 naddy Exp $
-libexec/w3m/w3mimgdisplay
-libexec/w3m/w3mimgsize
-share/doc/w3m/README.img

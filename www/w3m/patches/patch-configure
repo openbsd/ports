@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.2 2001/10/24 12:23:32 naddy Exp $
---- configure.orig	Thu Oct 11 18:00:58 2001
-+++ configure	Thu Oct 11 18:01:30 2001
-@@ -793,6 +793,7 @@ if [ -n "$extlib" ]; then
-   echo "additional library found: $extlib"
+$OpenBSD: patch-configure,v 1.3 2001/11/16 21:35:45 naddy Exp $
+--- configure.orig	Thu Nov 15 01:32:13 2001
++++ configure	Fri Nov 16 19:29:45 2001
+@@ -859,6 +859,7 @@ else
+   inflate=
  fi
  
 +if false; then # always use the included gclib for now
  gclib=''
  gcinclude=''
  gctarget=''
-@@ -812,6 +813,7 @@ do
+@@ -878,6 +879,7 @@ do
      break
    fi
  done
@@ -17,3 +17,22 @@ $OpenBSD: patch-configure,v 1.2 2001/10/24 12:23:32 naddy Exp $
  
  case $sysname in
    linux|Linux|LINUX|aix|Aix|AIX)
+@@ -967,17 +969,7 @@ echo "dldflags='$ldflags'" >> config.par
+ echo "Checking machine dependency."
+ 
+ ###### mime.types
+-MIME_TYPES=""
+-for d in /usr/lib /usr/local/lib $prefix/lib /usr/local/lib/mosaic /usr/local/mosaic /usr/local/netscape /usr/local/lib/netscape
+-do
+-  if [ -f $d/mime.types ]; then
+-    MIME_TYPES="$d/mime.types"
+-  fi
+-done
+-if [ -z "$MIME_TYPES" ]; then
+-  echo "Global mime.types not found; Hope /usr/local/lib/mime.types works."
+-  MIME_TYPES=/usr/local/lib/mime.types
+-fi
++MIME_TYPES=/var/www/conf/mime.types
+ 
+ ####### ranlib
+ if ./which ranlib > /dev/null

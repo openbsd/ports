@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.kanji,v 1.1 2001/03/24 12:56:17 naddy Exp $
+@comment $OpenBSD: PFRAG.japanese,v 1.1 2001/11/16 21:35:45 naddy Exp $
 @pkgcfl w3m-*
 share/doc/w3m/README.SSL
 share/doc/w3m/README.cookie
