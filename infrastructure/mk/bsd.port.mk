@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.351 2001/01/08 22:34:51 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.352 2001/01/18 14:58:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -19,11 +19,6 @@ FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.351 2001/01/08 22:34:51 brad Exp $$
 # Enquiries as to the bsd.port.mk framework should usually be directed 
 # to ports@openbsd.org.
 
-
-# recent /usr/share/mk/* should include bsd.own.mk, guard for older versions
-.if !defined(BSD_OWN_MK)
-.  include <bsd.own.mk>
-.endif
 
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build
@@ -69,9 +64,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # Variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
 #
-# PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
-# FORCE_PKG_REGISTER - If set, it will overwrite any existing package
-#				  registration information in ${PKG_DBDIR}/${PKGNAME}.
 # COMES_WITH	- The first version that a port was made part of the
 #				  standard OpenBSD distribution.  If the current OpenBSD
 #				  version is >= this version then a notice will be
@@ -463,9 +455,6 @@ INSTALL_DATA= \
 INSTALL_MAN= \
 	${INSTALL} ${INSTALL_COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
 
-# DIRMODE lives in bsd.own.mk, but only starting from OpenBSD 2.7 !
-DIRMODE?=755
-
 INSTALL_PROGRAM_DIR= \
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${DIRMODE}
 INSTALL_SCRIPT_DIR= \
@@ -631,8 +620,6 @@ PKG_ARGS+=		-s ${WRKINST}${PREFIX}
 .endif
 
 PKG_SUFX?=		.tgz
-# where pkg_add records its dirty deeds.
-PKG_DBDIR?=		/var/db/pkg
 
 # shared/dynamic motif libs
 .if defined(USE_MOTIF) || defined(HAVE_MOTIF)
