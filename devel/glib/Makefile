@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/05/11 18:40:18 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/06/09 20:33:41 brad Exp $
 
 DISTNAME=	glib-1.2.3
 CATEGORIES=	devel
@@ -10,7 +10,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
