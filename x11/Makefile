@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.158 2003/01/22 17:12:44 margarida Exp $
+# $OpenBSD: Makefile,v 1.159 2003/02/03 03:39:36 margarida Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
 #    SUBDIR += XFree86
 #    SUBDIR += XFree86-contrib
      SUBDIR += Xaw3d
+     SUBDIR += XawMu
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
@@ -91,9 +92,10 @@
      SUBDIR += mplayer-fonts,luxi-sans-bold
      SUBDIR += mplayer-fonts,luxi-sans-italic
      SUBDIR += msttcorefonts
+     SUBDIR += mowitz
      SUBDIR += mterm
      SUBDIR += mxconns
-#    SUBDIR += neXtaw
+     SUBDIR += neXtaw
      SUBDIR += ogle
      SUBDIR += ogle,altivec
      SUBDIR += ogle_gui
