@@ -1,17 +1,17 @@
---- video.c.orig	Mon Sep 25 10:17:49 1995
-+++ video.c	Tue Jun 30 15:07:27 1998
-@@ -40,6 +40,10 @@
- #include "util.h"
+--- video.c.orig	Sat Jul 24 00:00:51 1999
++++ video.c	Thu Dec 23 22:41:32 1999
+@@ -49,6 +49,10 @@
  #include "proto.h"
+ #include "my_dmalloc.h"
  
 +#ifdef _HAVE_PARAM_H
 +#include <sys/param.h>
 +#endif
 +
  /* Declarations of functions. */
- static void ReconIMBlock();
- static void ReconPMBlock();
-@@ -436,7 +440,9 @@
+ static void ReconIMBlock(VidStream *,int);
+ static void ReconPMBlock(VidStream *,int,int,int,int);
+@@ -445,7 +449,9 @@
    static int num_calls = 0;
    unsigned int data;
    int i, status;

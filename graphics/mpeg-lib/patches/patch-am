@@ -1,0 +1,12 @@
+--- hybrid.c.orig	Sat Jan  8 13:51:39 2000
++++ hybrid.c	Sat Jan  8 13:51:51 2000
+@@ -21,7 +21,9 @@
+ /* This file contains C code to implement an ordered dither. */
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "video.h"
+ #include "proto.h"

@@ -1,0 +1,12 @@
+--- mb_ordered.c.orig	Sat Jan  8 13:56:05 2000
++++ mb_ordered.c	Sat Jan  8 13:56:16 2000
+@@ -21,7 +21,9 @@
+ /* This file contains C code to implement an ordered dither. */
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "video.h"
+ #include "proto.h"

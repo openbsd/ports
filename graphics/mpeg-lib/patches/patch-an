@@ -1,0 +1,14 @@
+--- hybriderr.c.orig	Sat Jan  8 13:52:19 2000
++++ hybriderr.c	Sat Jan  8 13:53:02 2000
+@@ -23,8 +23,10 @@
+ */
+ 
+ #include <config.h>
+-#include <memory.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
++#include <memory.h>
+ #include "video.h"
+ #include "proto.h"
+ #include "dither.h"

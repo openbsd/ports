@@ -1,0 +1,12 @@
+--- fs4.c.orig	Sat Jan  8 13:50:55 2000
++++ fs4.c	Sat Jan  8 13:51:03 2000
+@@ -21,7 +21,9 @@
+ /* This file contains C code to do YCrCb -> colormap space. */
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "fs4.h"
+ #include "video.h"

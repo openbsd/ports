@@ -1,0 +1,12 @@
+--- 2x2.c.orig	Fri Dec 24 01:40:29 1999
++++ 2x2.c	Fri Dec 24 01:40:52 1999
+@@ -21,7 +21,9 @@
+ 
+ #include <config.h>
+ #include <stdlib.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include "video.h"
+ #include "dither.h"
+ #include "proto.h"

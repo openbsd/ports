@@ -1,0 +1,12 @@
+--- mono.c.orig	Sat Jan  8 13:54:02 2000
++++ mono.c	Sat Jan  8 13:54:11 2000
+@@ -24,7 +24,9 @@
+  */
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "video.h"
+ #include "proto.h"

@@ -1,0 +1,12 @@
+--- gdith.c.orig	Sun Jan  2 00:46:44 2000
++++ gdith.c	Sun Jan  2 00:46:54 2000
+@@ -21,7 +21,9 @@
+ 
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "mpeg.h"
+ #include "dither.h"
