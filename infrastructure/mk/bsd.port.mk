@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.350 2001/01/08 22:10:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.351 2001/01/08 22:34:51 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -56,8 +56,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # liable to change without notice. 
 #
 # DON'T USE IN INDIVIDUAL PORTS !!!
-#
-# NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
 #
 # Variables that typically apply to all ports:
 # 
@@ -230,7 +228,7 @@ NO_SHARED_LIBS=	Yes
 
 # Compatibility kludge for old scripts
 .if defined(NOCLEANDEPENDS)
-.  if ${NOCLEANDEPENDS:L}=="no"
+.  if ${NOCLEANDEPENDS:L} == "no"
 CLEANDEPENDS?=Yes
 .  else
 CLEANDEPENDS?=No
@@ -331,7 +329,7 @@ _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
 .elif defined(SEPARATE_BUILD)
@@ -628,7 +626,7 @@ ${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .endif
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 PKG_ARGS+=		-s ${WRKINST}${PREFIX}
 .endif
 
@@ -881,7 +879,7 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 MANPREFIX?=  ${WRKINST}${TRUEPREFIX}
 CATPREFIX?=  ${WRKINST}${TRUEPREFIX}
 .endif
@@ -939,8 +937,6 @@ IGNORE=	"is not an interactive port"
 IGNORE=	"requires Motif"
 .  elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
 IGNORE=	"does not require Motif"
-.  elif (defined(NO_CDROM) && defined(FOR_CDROM))
-IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
 .  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
 .  elif (!empty(CONFIGURE_STYLE:L:Mimake) || defined(USE_X11)) && !exists(${X11BASE})
@@ -1393,7 +1389,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
 
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} 
 	@${ECHO_MSG} "===>  Faking installation for ${PKGNAME}"
 	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
@@ -1469,7 +1465,7 @@ _SUBPACKAGE_COOKIES=
 .  for _sub in ${MULTI_PACKAGES}
 
 _SUBPACKAGE_COOKIES+= ${_PACKAGE_COOKIE}${_sub}
-.    if ${FAKE:U} == "YES"
+.    if ${FAKE:L} == "yes"
 ${_PACKAGE_COOKIE}${_sub}: ${_FAKE_COOKIE}
 .    else
 ${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
@@ -1480,7 +1476,7 @@ ${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
 .endif
 
 
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 ${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 .else
 ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
@@ -1709,7 +1705,7 @@ pre-clean:
 
 .if !target(clean)
 clean: pre-clean
-.  if ${CLEANDEPENDS:L}=="yes"
+.  if ${CLEANDEPENDS:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
@@ -1743,7 +1739,7 @@ RECURSIVE_FETCH_LIST?=	Yes
 # Note: add @comment PACKAGE(arch=${ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-.if ${FAKE:U} == "YES"
+.if ${FAKE:L} == "yes"
 plist: fake
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${PORTSDIR}/infrastructure/db/fake.mtree \
@@ -2349,7 +2345,7 @@ unlink-categories:
 	fi
 .endfor
     
-.if ${FAKE:U} == "NO"
+.if ${FAKE:L} == "no"
 .  include "${PORTSDIR}/infrastructure/mk/old-install.mk"
 .endif
 
