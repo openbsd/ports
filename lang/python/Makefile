@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2000/11/20 22:15:30 jasoni Exp $
+# $OpenBSD: Makefile,v 1.25 2000/11/21 16:57:16 jasoni Exp $
 
 DISTNAME=	Python-1.6
 PKGNAME=	python-1.6
 CATEGORIES=	lang
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
+MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
+		ftp://ftp.cwi.nl/pub/python/src/
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -63,11 +64,6 @@ pre-configure:
 # Depends on NO_SHARED_LIBS.
 post-configure:
 	cd ${.CURDIR} && make finish-setup
-
-post-build:
-	@cd ${WRKDIST} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} -f ${MAKE_FILE} test
 
 post-install:
 	@strip ${PREFIX}/bin/python
