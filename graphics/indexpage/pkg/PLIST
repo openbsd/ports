@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/13 03:02:36 kevlo Exp $
+bin/indexpage
+share/doc/indexpage/README
+@dirrm share/doc/indexpage
