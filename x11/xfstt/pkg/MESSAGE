@@ -1,0 +1,15 @@
+To start the TrueType font server for X11 at boot time, put 
+the following in /etc/rc.local:
+
+if [ -x ${PREFIX}/bin/xfstt ]; then
+        echo -n ' xfstt';       ${PREFIX}/bin/xfstt --user nobody --daemon
+fi
+
+You should also add the following to your FontPath in /etc/X11/XF86Config:
+
+	FontPath "unix/:7101"
+
+Note that previous versions used unix/:7100.
+
+TrueType fonts should be placed in ${PREFIX}/lib/X11/fonts/TrueType.
+Additional documentation can be found in ${PREFIX}/share/doc/xfstt.
