@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Sun Nov  4 20:24:01 2001
-+++ ltmain.sh	Tue Nov  6 12:41:48 2001
-@@ -1021,15 +1021,18 @@
+--- ltmain.sh.orig	Fri Nov 22 16:36:27 2002
++++ ltmain.sh	Mon Dec  2 11:36:14 2002
+@@ -1046,15 +1046,18 @@ compiler."
  	;;
  
        -l*)
@@ -24,9 +24,9 @@
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
  	    ;;
- 	  esac
- 	fi
-@@ -1037,6 +1040,17 @@
+ 	  *-*-openbsd*)
+ 	    # Do not include libc due to us having libc/libc_r.
+@@ -1073,6 +1076,17 @@ compiler."
  	continue
  	;;
  
@@ -44,7 +44,7 @@
        -module)
  	module=yes
  	continue
-@@ -2405,6 +2419,9 @@
+@@ -2496,6 +2510,9 @@ compiler."
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
  	    ;;
@@ -54,9 +54,9 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-@@ -4412,40 +4429,6 @@
+@@ -4526,40 +4543,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"

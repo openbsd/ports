@@ -1,11 +1,11 @@
---- include/libxml/Makefile.in.orig	Thu Oct 25 13:44:37 2001
-+++ include/libxml/Makefile.in	Thu Oct 25 13:45:42 2001
-@@ -120,7 +120,7 @@
+--- include/libxml/Makefile.in.orig	Fri Nov 22 16:37:14 2002
++++ include/libxml/Makefile.in	Mon Dec  2 11:36:14 2002
+@@ -135,7 +135,7 @@ XPTR_OBJ = @XPTR_OBJ@
  Z_CFLAGS = @Z_CFLAGS@
  Z_LIBS = @Z_LIBS@
  
 -xmlincdir = $(includedir)/libxml2/libxml
 +xmlincdir = $(includedir)/libxml
  
- xmlinc_HEADERS =  		SAX.h 		entities.h 		encoding.h 		parser.h 		parserInternals.h 		xmlerror.h 		HTMLparser.h 		HTMLtree.h 		debugXML.h 		tree.h 		list.h 		hash.h 		xpath.h 		xpathInternals.h 		xpointer.h 		xinclude.h 		xmlIO.h 		xmlmemory.h 		nanohttp.h 		nanoftp.h 		uri.h 		valid.h 		xlink.h 		xmlversion.h 		xmlwin32version.h 		DOCBparser.h 		catalog.h
- 
+ xmlinc_HEADERS = \
+ 		SAX.h \

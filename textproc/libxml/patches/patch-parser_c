@@ -1,0 +1,12 @@
+$OpenBSD: patch-parser_c,v 1.1 2002/12/02 12:23:47 espie Exp $
+--- parser.c.orig	Mon Dec  2 11:37:43 2002
++++ parser.c	Mon Dec  2 11:37:57 2002
+@@ -9820,7 +9820,7 @@ xmlParseBalancedChunkMemoryInternal(xmlP
+ 	ctxt->myDoc = oldctxt->myDoc;
+         content = ctxt->myDoc->children;
+     }
+-    ctxt->myDoc->children = xmlNewDocNode(newDoc, NULL,
++    ctxt->myDoc->children = xmlNewDocNode(ctxt->myDoc, NULL,
+ 	                                  BAD_CAST "pseudoroot", NULL);
+     if (ctxt->myDoc->children == NULL) {
+ 	ctxt->sax = oldsax;
