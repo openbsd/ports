@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2002/01/25 23:46:33 jsyn Exp $
+# $OpenBSD: Makefile,v 1.48 2002/02/12 15:47:31 wilfried Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -19,6 +19,7 @@
      SUBDIR += expect
 #    SUBDIR += forth
 #    SUBDIR += g77
+     SUBDIR += gawk
 #    SUBDIR += gcl
 #    SUBDIR += gnat
      SUBDIR += guavac
