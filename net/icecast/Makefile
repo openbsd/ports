@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/03 01:37:38 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/08 16:02:14 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"Internet based broadcasting system"
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SYSCONFDIR=	/etc/icecast
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --with-libwrap
 
 # disabled for now
