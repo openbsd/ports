@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/01 19:57:26 msf Exp $
+bin/mech-dump
+${P5SITE}/WWW/Mechanize/
+${P5SITE}/WWW/Mechanize.pm
+${P5SITE}/WWW/Mechanize/Cookbook.pod
+${P5SITE}/WWW/Mechanize/Examples.pod
+${P5SITE}/WWW/Mechanize/FAQ.pod
+${P5SITE}/WWW/Mechanize/Image.pm
+${P5SITE}/WWW/Mechanize/Link.pm
+@man man/man1/mech-dump.1
+@man man/man3p/WWW::Mechanize.3p
+@man man/man3p/WWW::Mechanize::Cookbook.3p
+@man man/man3p/WWW::Mechanize::Examples.3p
+@man man/man3p/WWW::Mechanize::FAQ.3p
+@man man/man3p/WWW::Mechanize::Image.3p
+@man man/man3p/WWW::Mechanize::Link.3p
