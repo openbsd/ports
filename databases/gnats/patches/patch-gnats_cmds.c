@@ -1,6 +1,7 @@
---- gnats/cmds.c.orig	Wed Mar 17 18:45:36 1999
-+++ gnats/cmds.c	Thu Jan 11 11:06:54 2001
-@@ -115,28 +115,26 @@
+$OpenBSD: patch-gnats_cmds.c,v 1.2 2002/05/09 16:16:02 millert Exp $
+--- gnats/cmds.c.orig	Sun Feb  4 13:56:10 2001
++++ gnats/cmds.c	Wed May  8 22:08:48 2002
+@@ -115,28 +115,26 @@ get_text ()
  {
    register FILE *tf;
    char *path = (char *) xmalloc (PATH_MAX);

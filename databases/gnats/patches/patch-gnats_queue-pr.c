@@ -1,3 +1,4 @@
+$OpenBSD: patch-gnats_queue-pr.c,v 1.3 2002/05/09 16:16:02 millert Exp $
 --- gnats/queue-pr.c.orig	Wed Nov 25 07:15:20 1998
 +++ gnats/queue-pr.c	Wed May  8 21:44:36 2002
 @@ -226,13 +226,10 @@ drop_msg ()

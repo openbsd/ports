@@ -1,3 +1,4 @@
+$OpenBSD: patch-gnats_internal.c,v 1.3 2002/05/09 16:16:02 millert Exp $
 --- gnats/internal.c.orig	Tue Mar  2 17:18:53 1999
 +++ gnats/internal.c	Wed May  8 21:41:29 2002
 @@ -32,28 +32,25 @@ write_index (index_start)
