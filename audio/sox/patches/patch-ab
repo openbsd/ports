@@ -1,32 +1,29 @@
-*** Makefile.unx.orig	Fri Oct  7 20:14:48 1994
---- Makefile.unx	Sat May 16 21:02:55 1998
-***************
-*** 153,162 ****
-  # RM  = del /q
-  
-  
-  all: sox
-  
-  sox: sox.o $(SOUNDLIB)
-! 	$(CC) $(CFLAGS) -o sox sox.o $(SOUNDLIB) -lm
-  
-  $(SOUNDLIB): $(LIBOBJS)
-  	$(RM) $(SOUNDLIB)
---- 153,169 ----
-  # RM  = del /q
-  
-  
-+ 
-+ # FreeBSD 1.x / 2.x / 3.x
-+ CFLAGS		= -O -DLINUXSOUND -D_HAVE_PARAM_H
-+ CC		= cc
-+ AR		= ar r
-+ RANLIB		= ranlib
-+ 
-  all: sox
-  
-  sox: sox.o $(SOUNDLIB)
-! 	$(CC) $(CFLAGS) -o sox sox.o $(SOUNDLIB) -lm -lossaudio
-  
-  $(SOUNDLIB): $(LIBOBJS)
-  	$(RM) $(SOUNDLIB)
+--- Makefile.unx.orig	Wed Sep 30 23:06:13 1998
++++ Makefile.unx	Sun Mar 21 20:17:35 1999
+@@ -95,7 +95,7 @@
+ # Chose the best compiler you got from the following:
+ #
+ # GCC with all warnings and debug info
+-CC		= gcc -g -Wall
++CC		= cc
+ #
+ # GCC with no special options
+ # CC		= gcc
+@@ -124,7 +124,7 @@
+ # If your system has the more advanced version of getopt() that
+ # also has its own getopt.h file (Such as the case with GNU libc 2.0)
+ # then uncomment the following line:
+-GETOPT_DEFINES	= -DHAS_GETOPT_H
++# GETOPT_DEFINES	= -DHAS_GETOPT_H
+ 
+ # Uncomment the following if your system does not have a built in
+ # strerror().  This includes SunOS.
+@@ -217,7 +217,7 @@
+ ##############################################################################
+ 
+ SOX_PRE_LIBS	= $(GSM_PRE_LIBS)
+-SOX_POST_LIBS	= $(GSM_POST_LIBS) -lm
++SOX_POST_LIBS	= $(GSM_POST_LIBS) -lm -lossaudio
+ SOX_INCLUDES	= $(GSM_INCLUDES)
+ SOX_DEFINES	= $(GSM_DEFINES) $(OSS_DEFINES) $(SUNAUDIO_DEFINES) \
+   $(BLASTER) $(GETOPT_DEFINES) $(STRERR_DEFINES) $(MEMMOVE_DEFINES) \

@@ -1,9 +1,9 @@
---- au.c.orig	Wed Aug  3 22:13:29 1994
-+++ au.c	Thu Apr 24 13:37:59 1997
-@@ -299,6 +299,8 @@
+--- au.c.orig	Sun Mar 21 19:40:43 1999
++++ au.c	Sun Mar 21 19:41:56 1999
+@@ -302,6 +302,8 @@
  	wblong(ft, magic);
  
- 	/* hdr_size = SUN_HDRSIZE;		/* + strlen(ft->comment); */
+ 	/* hdr_size = SUN_HDRSIZE;		 + strlen(ft->comment); */
 +	if (ft->comment == NULL)
 +		ft->comment = "";
  	hdr_size = SUN_HDRSIZE + strlen(ft->comment);

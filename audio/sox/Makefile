@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 00:17:39 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/03/22 01:27:06 brad Exp $
 
-DISTNAME=	soxgamma
-PKGNAME=	sox-12.12
+DISTNAME=	sox-12.15
 CATEGORIES=	audio
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	http://www.spies.com/Sox/Archive/
+MASTER_SITES=	http://metalab.unc.edu/pub/Linux/apps/sound/convert/ \
+		http://home.sprynet.com/~cbagwell/
 
-NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.unx
 MAN1=		sox.1
 
