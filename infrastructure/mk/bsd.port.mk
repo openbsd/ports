@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.345 2000/12/16 15:47:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.346 2000/12/16 15:49:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2524,6 +2524,28 @@ depend:
 tags:
 .endif
 
+link-categories:
+.for _CAT in ${CATEGORIES}
+	@linkname=${PORTSDIR}/${_CAT}/`basename ${.CURDIR}`; \
+	if [ ! -e $$linkname ]; then \
+		echo "$$linkname -> ${.CURDIR}"; \
+		mkdir -p ${PORTSDIR}/${_CAT}; \
+		ln -s ${.CURDIR} $$linkname; \
+	fi
+.endfor
+
+unlink-categories:
+.for _CAT in ${CATEGORIES}
+	@linkname=${PORTSDIR}/${_CAT}/`basename ${.CURDIR}`; \
+	if [ -L $$linkname ]; then \
+		echo "rm $$linkname"; \
+		rm $$linkname; \
+		if rmdir ${PORTSDIR}/${_CAT} 2>/dev/null; then \
+			echo "rmdir ${PORTSDIR}/${_CAT}"; \
+	    fi; \
+	fi
+.endfor
+    
 .PHONY: \
    addsum all build build-depends checkpatch \
    checksum clean clean-depends configure deinstall \
@@ -2542,4 +2564,5 @@ tags:
    readmes reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
-   distpatch real-distpatch do-distpatch post-distpatch show
+   distpatch real-distpatch do-distpatch post-distpatch show \
+   link-categories unlink-categories
