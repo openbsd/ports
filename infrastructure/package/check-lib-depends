@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.1 2004/09/14 22:22:17 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.2 2004/09/14 22:30:36 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -30,35 +30,6 @@ use File::Temp;
 use Getopt::Std;
 
 package OpenBSD::PackingList;
-
-sub visit
-{
-	my ($self, $method, @l) = @_;
-
-	if (defined $self->{cvstags}) {
-		for my $item (@{$self->{cvstags}}) {
-			$item->$method(@l);
-		}
-	}
-
-	for my $special (OpenBSD::PackageInfo::info_names()) {
-		$self->{$special}->$method(@l, 0) if defined $self->{$special};
-	}
-
-	for my $unique_item (qw(name no-default-conflict manual-installation extrainfo arch)) {
-		$self->{$unique_item}->$method(@l) if defined $self->{$unique_item};
-	}
-	for my $listname (qw(modules pkgcfl pkgdep newdepend libdepend items)) {
-		if (defined $self->{$listname}) {
-			for my $item (@{$self->{$listname}}) {
-				$item->$method(@l);
-			}
-		}
-	}
-	for my $special (OpenBSD::PackageInfo::info_names()) {
-		$self->{$special}->$method(@l, 1) if defined $self->{$special};
-	}
-}
 
 package OpenBSD::PackingElement;
 sub check_libs
