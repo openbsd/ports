@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/08 04:24:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2002/01/08 05:25:12 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
-VERS=		1.2.5.1
-DISTNAME=	mutt-${VERS}
+VERSION=	1.2.5.1
+DISTNAME=	mutt-${VERSION}
 CATEGORIES=     mail
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
@@ -44,10 +44,10 @@ CONFIGURE_ARGS+= --with-curses
 .endif
 
 # compressed folder support provided by
-# http://www.spinnaker.de/mutt/compressed/patch-1.2.5.rr.compressed.1.gz
+# http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-${VERS}.rr.compressed.1.gz:0
+PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 .endif
@@ -83,8 +83,8 @@ post-install:
 	@strip ${PREFIX}/bin/mutt
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
 	${INSTALL_DATA} ${WRKSRC}/Muttrc \
-	 ${PREFIX}/share/examples/mutt/Muttrc.sample
+	  ${PREFIX}/share/examples/mutt/Muttrc.sample
 	${INSTALL_DATA} ${WRKSRC}/mime.types \
-	 ${PREFIX}/share/examples/mutt/mime.types.sample
+	  ${PREFIX}/share/examples/mutt/mime.types.sample
 
 .include <bsd.port.mk>
