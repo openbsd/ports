@@ -1,9 +1,4 @@
-# New ports collection makefile for:   bochs
-# Version required:    980513a
-# Date created:        20 Apr 1998
-# Whom:                form
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 07:11:31 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/15 04:33:25 marc Exp $
 # FreeBSD: Makefile,v 1.9 1998/05/18 23:49:17 alex Exp
 #
 
@@ -13,23 +8,26 @@ DATE= 		980513
 
 DISTNAME=	bochs-${DATE}a
 CATEGORIES= 	emulators
-MASTER_SITES= 	ftp://ftp.std.com/pub/bochs/
 
-MAINTAINER=	form@vs.itam.nsc.ru
-
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-80386 --enable-memory=16 \
-	--enable-v8086-mode --enable-paging --enable-vga \
-	--enable-bochs-bios-hooks --enable-dma-floppy-io \
-	--enable-processor-ips=200000
-
-WRKSRC=		${WRKDIR}/bochs-${DATE}
-
-RESTRICTED=	"Commercial software"
+ONLY_FOR_ARCHS=	i386
+BROKEN=		"BROKEN: newer version available"
+RESTRICTED=	"COMM: Commercial software"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
-ONLY_FOR_ARCHS=	i386
+
+MAINTAINER=	form@vs.itam.nsc.ru
+
+MASTER_SITES= 	ftp://ftp.std.com/pub/bochs/
+
+
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--enable-80386 --enable-memory=16 \
+		--enable-v8086-mode --enable-paging --enable-vga \
+		--enable-bochs-bios-hooks --enable-dma-floppy-io \
+		--enable-processor-ips=200000
+
+WRKSRC=		${WRKDIR}/bochs-${DATE}
 
 GZIP!=		which gzip
 MKFONTDIR!=	which mkfontdir
