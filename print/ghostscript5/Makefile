@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/04/05 23:51:17 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/04/18 23:39:49 brad Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
@@ -11,6 +11,7 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 MAINTAINER=	ports@openbsd.org
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
+		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
@@ -19,7 +20,6 @@ EXTRACT_ONLY=	${GS_SOURCES}
 WRKSRC=		${WRKDIR}/gs5.10
 MAKEFILE=	unix-gcc.mak
 MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
-MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1
 
 GS_SOURCES=	ghostscript-5.10.tar.gz
 GS_SOURCES+=	ghostscript-5.10gnu.tar.gz
@@ -40,8 +40,10 @@ PDFENCRYPT=	pdf_sec.ps
 #
 .if defined(OBJMACHINE)
 JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work.${MACHINE_ARCH}/jpeg-6b
+PNG_DIR=	${PORTSDIR}/graphics/png/work.${MACHINE_ARCH}/libpng-1.0.3
 .else
 JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work/jpeg-6b
+PNG_DIR=	${PORTSDIR}/graphics/png/work/libpng-1.0.3
 .endif
 
 .if defined(A4)
@@ -65,6 +67,7 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/deflate.o
 	@${TOUCH} ${WRKSRC}/trees.o
 	@${LN} -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
+	@${LN} -sf ${PNG_DIR} ${WRKSRC}/libpng
 	@cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
 	@cp ${DISTDIR}/${PDFENCRYPT} ${WRKSRC}
 
