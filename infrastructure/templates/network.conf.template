@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.68 2004/05/18 08:38:28 xsa Exp $
+# $OpenBSD: network.conf.template,v 1.69 2004/05/25 10:31:08 xsa Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -205,11 +205,9 @@ MASTER_SITE_TCLTK+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
-	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/ \
-	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/ \
-	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/
+	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/ \
+	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
 
 MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.windowmaker.org/pub/ \
