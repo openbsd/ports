@@ -1,0 +1,58 @@
+$OpenBSD: patch-gui_gdmchooser_c,v 1.1 2004/09/15 04:15:25 marcm Exp $
+--- gui/gdmchooser.c.orig	Tue Aug  3 16:01:28 2004
++++ gui/gdmchooser.c	Sun Sep 12 11:34:54 2004
+@@ -44,6 +44,7 @@
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ #include <net/if.h>
++#include <ifaddrs.h>
+ #ifdef HAVE_SYS_SOCKIO_H
+ #include <sys/sockio.h>
+ #endif
+@@ -690,9 +691,38 @@ gdm_chooser_decode_packet (GIOChannel   
+ 
+ 
+ /* Find broadcast address for all active, non pointopoint interfaces */
++#ifdef __OpenBSD__
+ static void
+ gdm_chooser_find_bcaddr (void)
+ {
++	struct ifaddrs *ifa, *ifaddrs;
++	struct sockaddr_in *sin;
++	int i;
++
++	if (getifaddrs(&ifaddrs))
++		return;
++
++	for (ifa = ifaddrs, i = 0; ifa != NULL; ifa = ifa -> ifa_next) {
++		if (ifa->ifa_addr == NULL || !(ifa->ifa_flags & IFF_UP) ||
++			!(ifa->ifa_flags & IFF_BROADCAST))
++			continue;
++
++		switch(ifa->ifa_addr->sa_family) {
++			case AF_INET:
++				sin = (struct sockaddr_in *)ifa->ifa_broadaddr;
++				bcaddr =  g_slist_append (bcaddr, sin);
++				i++;
++				break;
++		}
++	}
++	freeifaddrs(ifaddrs);
++}
++
++#else
++
++static void
++gdm_chooser_find_bcaddr (void)
++{
+ 	int i = 0, num;
+ 	int sock;
+ 	struct ifconf ifc;
+@@ -752,6 +782,7 @@ gdm_chooser_find_bcaddr (void)
+ 
+ 	g_free (buf);
+ }
++#endif /*__OpenBSD__*/
+ 
+ /* Append multicast address into the list */
+ #ifdef ENABLE_IPV6

@@ -1,6 +1,6 @@
-$OpenBSD: patch-daemon_slave_c,v 1.3 2004/06/24 23:58:34 marcm Exp $
---- daemon/slave.c.orig	Wed May 26 19:13:14 2004
-+++ daemon/slave.c	Thu Jun 24 10:38:29 2004
+$OpenBSD: patch-daemon_slave_c,v 1.4 2004/09/15 04:15:25 marcm Exp $
+--- daemon/slave.c.orig	Wed Aug 18 12:57:19 2004
++++ daemon/slave.c	Fri Sep 10 20:42:41 2004
 @@ -2658,7 +2658,7 @@ gdm_slave_greeter (void)
  
  	exec_command (EXPANDED_BINDIR "/gdmlogin", NULL);
@@ -20,7 +20,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.3 2004/06/24 23:58:34 marcm Exp $
  		gdm_child_exit (DISPLAY_REMANAGE,
  				_("%s: setusercontext() failed for %s. "
  				  "Aborting."), "session_child_run",
-@@ -4835,7 +4834,7 @@ check_for_interruption (const char *msg)
+@@ -4838,7 +4837,7 @@ check_for_interruption (const char *msg)
  					execl (GdmSoundProgram,
  					       GdmSoundProgram,
  					       GdmSoundOnLoginFile,

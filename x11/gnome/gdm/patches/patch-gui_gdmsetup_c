@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_gdmsetup_c,v 1.1 2004/09/15 04:15:25 marcm Exp $
+--- gui/gdmsetup.c.orig	Wed Aug 18 12:27:40 2004
++++ gui/gdmsetup.c	Fri Sep 10 20:42:41 2004
+@@ -2025,7 +2025,7 @@ install_response (GtkWidget *chooser, gi
+ 		/* HACK! */
+ 		argv[0] = chown;
+ 		argv[1] = "-R";
+-		argv[2] = "root:root";
++		argv[2] = "root:wheel";
+ 		argv[3] = quoted;
+ 		argv[4] = NULL;
+ 		simple_spawn_sync (argv);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/24 23:58:34 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 04:15:26 marcm Exp $
 bin/gdm
 bin/gdm-binary
 bin/gdmXnest
@@ -10,35 +10,70 @@ bin/gdmlogin
 bin/gdmphotosetup
 bin/gdmsetup
 bin/gdmthemetester
+lib/gtk-2.0/
+lib/gtk-2.0/modules/
 lib/gtk-2.0/modules/libdwellmouselistener.a
 lib/gtk-2.0/modules/libdwellmouselistener.la
 lib/gtk-2.0/modules/libkeymouselistener.a
 lib/gtk-2.0/modules/libkeymouselistener.la
 libexec/gdmtranslate
-man/man1/gdm.1
+@man man/man1/gdm.1
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
 sbin/gdmconfig
+share/applications/
 share/applications/gdmflexiserver-xnest.desktop
 share/applications/gdmflexiserver.desktop
 share/applications/gdmsetup.desktop
+@sample ${SYSCONFDIR}/X11/gdm/
+@sample ${SYSCONFDIR}/X11/gdm/Init/
+share/examples/gdm/
+@comment share/examples/gdm/dm/
+share/examples/gdm/gdm/
+share/examples/gdm/gdm/Init/
 share/examples/gdm/gdm/Init/Default
+@sample ${SYSCONFDIR}/X11/gdm/Init/Default
+@exec chmod 555 ${SYSCONFDIR}/X11/gdm/Init/Default
+@sample ${SYSCONFDIR}/X11/gdm/PostLogin/
+share/examples/gdm/gdm/PostLogin/
 share/examples/gdm/gdm/PostLogin/Default.sample
+@sample ${SYSCONFDIR}/X11/gdm/PostSession/
+share/examples/gdm/gdm/PostSession/
 share/examples/gdm/gdm/PostSession/Default
+@sample ${SYSCONFDIR}/X11/gdm/PostSession/Default
+@exec chmod 555 ${SYSCONFDIR}/X11/gdm/PostSession/Default
+@sample ${SYSCONFDIR}/X11/gdm/PreSession/
+share/examples/gdm/gdm/PreSession/
 share/examples/gdm/gdm/PreSession/Default
+@sample ${SYSCONFDIR}/X11/gdm/PreSession/Default
+@exec chmod 555 ${SYSCONFDIR}/X11/gdm/PreSession/Default
 share/examples/gdm/gdm/XKeepsCrashing
+@sample ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
+@exec chmod 555 ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
 share/examples/gdm/gdm/Xsession
+@sample ${SYSCONFDIR}/X11/gdm/Xsession
+@exec chmod 555 ${SYSCONFDIR}/X11/gdm/Xsession
 @comment share/examples/gdm/gdm/factory-gdm.conf
 share/examples/gdm/gdm/gdm.conf
+@sample ${SYSCONFDIR}/X11/gdm/gdm.conf
 share/examples/gdm/gdm/locale.alias
+@sample ${SYSCONFDIR}/X11/gdm/locale.alias
+@sample ${SYSCONFDIR}/X11/gdm/modules/
+share/examples/gdm/gdm/modules/
 share/examples/gdm/gdm/modules/AccessDwellMouseEvents
+@sample ${SYSCONFDIR}/X11/gdm/modules/AccessDwellMouseEvents
 share/examples/gdm/gdm/modules/AccessKeyMouseEvents
+@sample ${SYSCONFDIR}/X11/gdm/modules/AccessKeyMouseEvents
 @comment share/examples/gdm/gdm/modules/factory-AccessDwellMouseEvents
 @comment share/examples/gdm/gdm/modules/factory-AccessKeyMouseEvents
+share/gdm/
+share/gdm/BuiltInSessions/
 share/gdm/BuiltInSessions/default.desktop
 share/gdm/gdmchooser.glade
 share/gdm/gdmsetup.glade
+share/gdm/themes/
+share/gdm/themes/circles/
 share/gdm/themes/circles/GdmGreeterTheme.desktop
 share/gdm/themes/circles/background.svg
 share/gdm/themes/circles/circles.xml
@@ -46,6 +81,8 @@ share/gdm/themes/circles/flower.png
 share/gdm/themes/circles/help.png
 share/gdm/themes/circles/options.png
 share/gdm/themes/circles/screenshot.png
+share/gdm/themes/happygnome/
+share/gdm/themes/happygnome-list/
 share/gdm/themes/happygnome-list/GdmGreeterTheme.desktop
 share/gdm/themes/happygnome-list/background.svg
 share/gdm/themes/happygnome-list/disconnect.png
@@ -64,106 +101,181 @@ share/gdm/themes/happygnome/options.png
 share/gdm/themes/happygnome/screenshot.png
 share/gdm/themes/happygnome/session.png
 share/gdm/themes/happygnome/system.png
+share/gnome/
+share/gnome/capplets/
 share/gnome/capplets/gdmphotosetup.desktop
+share/gnome/help/
+share/gnome/help/gdm/
+share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
+share/gnome/help/gdm/de/
+share/gnome/help/gdm/de/figures/
 share/gnome/help/gdm/de/figures/gdm_window.png
 share/gnome/help/gdm/de/gdm.xml
 share/gnome/help/gdm/de/legal.xml
+share/gnome/help/gdm/es/
+share/gnome/help/gdm/es/figures/
 share/gnome/help/gdm/es/figures/gdm_window.png
 share/gnome/help/gdm/es/gdm.xml
 share/gnome/help/gdm/es/legal.xml
+share/gnome/help/gdm/fr/
+share/gnome/help/gdm/fr/figures/
 share/gnome/help/gdm/fr/figures/gdm_window.png
 share/gnome/help/gdm/fr/gdm.xml
 share/gnome/help/gdm/fr/legal.xml
+share/gnome/help/gdm/it/
+share/gnome/help/gdm/it/figures/
 share/gnome/help/gdm/it/figures/gdm_window.png
 share/gnome/help/gdm/it/gdm.xml
 share/gnome/help/gdm/it/legal.xml
+share/gnome/help/gdm/ja/
+share/gnome/help/gdm/ja/figures/
 share/gnome/help/gdm/ja/figures/gdm_window.png
 share/gnome/help/gdm/ja/gdm.xml
 share/gnome/help/gdm/ja/legal.xml
+share/gnome/help/gdm/ko/
+share/gnome/help/gdm/ko/figures/
 share/gnome/help/gdm/ko/figures/gdm_window.png
 share/gnome/help/gdm/ko/gdm.xml
 share/gnome/help/gdm/ko/legal.xml
+share/gnome/help/gdm/sv/
+share/gnome/help/gdm/sv/figures/
 share/gnome/help/gdm/sv/figures/gdm_window.png
 share/gnome/help/gdm/sv/gdm.xml
 share/gnome/help/gdm/sv/legal.xml
+share/gnome/help/gdm/zh_CN/
+share/gnome/help/gdm/zh_CN/figures/
 share/gnome/help/gdm/zh_CN/figures/gdm_window.png
 share/gnome/help/gdm/zh_CN/gdm.xml
 share/gnome/help/gdm/zh_CN/legal.xml
+share/gnome/help/gdm/zh_HK/
+share/gnome/help/gdm/zh_HK/figures/
 share/gnome/help/gdm/zh_HK/figures/gdm_window.png
 share/gnome/help/gdm/zh_HK/gdm.xml
 share/gnome/help/gdm/zh_HK/legal.xml
+share/gnome/help/gdm/zh_TW/
+share/gnome/help/gdm/zh_TW/figures/
 share/gnome/help/gdm/zh_TW/figures/gdm_window.png
 share/gnome/help/gdm/zh_TW/gdm.xml
 share/gnome/help/gdm/zh_TW/legal.xml
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
-share/locale/af/LC_MESSAGES/gdm-2.6.mo
-share/locale/am/LC_MESSAGES/gdm-2.6.mo
-share/locale/ar/LC_MESSAGES/gdm-2.6.mo
-share/locale/az/LC_MESSAGES/gdm-2.6.mo
-share/locale/be/LC_MESSAGES/gdm-2.6.mo
-share/locale/bg/LC_MESSAGES/gdm-2.6.mo
-share/locale/bn/LC_MESSAGES/gdm-2.6.mo
-share/locale/ca/LC_MESSAGES/gdm-2.6.mo
-share/locale/cs/LC_MESSAGES/gdm-2.6.mo
-share/locale/cy/LC_MESSAGES/gdm-2.6.mo
-share/locale/da/LC_MESSAGES/gdm-2.6.mo
-share/locale/de/LC_MESSAGES/gdm-2.6.mo
-share/locale/el/LC_MESSAGES/gdm-2.6.mo
-share/locale/en_CA/LC_MESSAGES/gdm-2.6.mo
-share/locale/en_GB/LC_MESSAGES/gdm-2.6.mo
-share/locale/es/LC_MESSAGES/gdm-2.6.mo
-share/locale/et/LC_MESSAGES/gdm-2.6.mo
-share/locale/eu/LC_MESSAGES/gdm-2.6.mo
-share/locale/fa/LC_MESSAGES/gdm-2.6.mo
-share/locale/fi/LC_MESSAGES/gdm-2.6.mo
-share/locale/fr/LC_MESSAGES/gdm-2.6.mo
-share/locale/ga/LC_MESSAGES/gdm-2.6.mo
-share/locale/gl/LC_MESSAGES/gdm-2.6.mo
-share/locale/gu/LC_MESSAGES/gdm-2.6.mo
-share/locale/he/LC_MESSAGES/gdm-2.6.mo
-share/locale/hi/LC_MESSAGES/gdm-2.6.mo
-share/locale/hr/LC_MESSAGES/gdm-2.6.mo
-share/locale/hu/LC_MESSAGES/gdm-2.6.mo
-share/locale/id/LC_MESSAGES/gdm-2.6.mo
-share/locale/is/LC_MESSAGES/gdm-2.6.mo
-share/locale/it/LC_MESSAGES/gdm-2.6.mo
-share/locale/ja/LC_MESSAGES/gdm-2.6.mo
-share/locale/ko/LC_MESSAGES/gdm-2.6.mo
-share/locale/lt/LC_MESSAGES/gdm-2.6.mo
-share/locale/lv/LC_MESSAGES/gdm-2.6.mo
-share/locale/mi/LC_MESSAGES/gdm-2.6.mo
-share/locale/mk/LC_MESSAGES/gdm-2.6.mo
-share/locale/ml/LC_MESSAGES/gdm-2.6.mo
-share/locale/mn/LC_MESSAGES/gdm-2.6.mo
-share/locale/mr/LC_MESSAGES/gdm-2.6.mo
-share/locale/ms/LC_MESSAGES/gdm-2.6.mo
-share/locale/nl/LC_MESSAGES/gdm-2.6.mo
-share/locale/nn/LC_MESSAGES/gdm-2.6.mo
-share/locale/no/LC_MESSAGES/gdm-2.6.mo
-share/locale/pa/LC_MESSAGES/gdm-2.6.mo
-share/locale/pl/LC_MESSAGES/gdm-2.6.mo
-share/locale/pt/LC_MESSAGES/gdm-2.6.mo
-share/locale/pt_BR/LC_MESSAGES/gdm-2.6.mo
-share/locale/ro/LC_MESSAGES/gdm-2.6.mo
-share/locale/ru/LC_MESSAGES/gdm-2.6.mo
-share/locale/sk/LC_MESSAGES/gdm-2.6.mo
-share/locale/sl/LC_MESSAGES/gdm-2.6.mo
-share/locale/sq/LC_MESSAGES/gdm-2.6.mo
-share/locale/sr/LC_MESSAGES/gdm-2.6.mo
-share/locale/sr@Latn/LC_MESSAGES/gdm-2.6.mo
-share/locale/sv/LC_MESSAGES/gdm-2.6.mo
-share/locale/ta/LC_MESSAGES/gdm-2.6.mo
-share/locale/th/LC_MESSAGES/gdm-2.6.mo
-share/locale/tr/LC_MESSAGES/gdm-2.6.mo
-share/locale/uk/LC_MESSAGES/gdm-2.6.mo
-share/locale/vi/LC_MESSAGES/gdm-2.6.mo
-share/locale/wa/LC_MESSAGES/gdm-2.6.mo
-share/locale/zh_CN/LC_MESSAGES/gdm-2.6.mo
-share/locale/zh_TW/LC_MESSAGES/gdm-2.6.mo
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/gdm.mo
+share/locale/am/LC_MESSAGES/gdm.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/gdm.mo
+share/locale/az/LC_MESSAGES/gdm.mo
+share/locale/be/LC_MESSAGES/gdm.mo
+share/locale/bg/LC_MESSAGES/gdm.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/gdm.mo
+share/locale/ca/LC_MESSAGES/gdm.mo
+share/locale/cs/LC_MESSAGES/gdm.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
+share/locale/cy/LC_MESSAGES/gdm.mo
+share/locale/da/LC_MESSAGES/gdm.mo
+share/locale/de/LC_MESSAGES/gdm.mo
+share/locale/el/LC_MESSAGES/gdm.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
+share/locale/en_CA/LC_MESSAGES/gdm.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/gdm.mo
+share/locale/es/LC_MESSAGES/gdm.mo
+share/locale/et/LC_MESSAGES/gdm.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/gdm.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/gdm.mo
+share/locale/fi/LC_MESSAGES/gdm.mo
+share/locale/fr/LC_MESSAGES/gdm.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
+share/locale/ga/LC_MESSAGES/gdm.mo
+share/locale/gl/LC_MESSAGES/gdm.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/gdm.mo
+share/locale/he/LC_MESSAGES/gdm.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/gdm.mo
+share/locale/hr/LC_MESSAGES/gdm.mo
+share/locale/hu/LC_MESSAGES/gdm.mo
+share/locale/id/LC_MESSAGES/gdm.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/gdm.mo
+share/locale/it/LC_MESSAGES/gdm.mo
+share/locale/ja/LC_MESSAGES/gdm.mo
+share/locale/ko/LC_MESSAGES/gdm.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/gdm.mo
+share/locale/lv/LC_MESSAGES/gdm.mo
+share/locale/mi/
+share/locale/mi/LC_MESSAGES/
+share/locale/mi/LC_MESSAGES/gdm.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/gdm.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/gdm.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
+share/locale/mn/LC_MESSAGES/gdm.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/gdm.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/gdm.mo
+share/locale/nb/LC_MESSAGES/gdm.mo
+share/locale/nl/LC_MESSAGES/gdm.mo
+share/locale/nn/LC_MESSAGES/gdm.mo
+share/locale/no/LC_MESSAGES/gdm.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/gdm.mo
+share/locale/pl/LC_MESSAGES/gdm.mo
+share/locale/pt/LC_MESSAGES/gdm.mo
+share/locale/pt_BR/LC_MESSAGES/gdm.mo
+share/locale/ro/LC_MESSAGES/gdm.mo
+share/locale/ru/LC_MESSAGES/gdm.mo
+share/locale/sk/LC_MESSAGES/gdm.mo
+share/locale/sl/LC_MESSAGES/gdm.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/gdm.mo
+share/locale/sr/LC_MESSAGES/gdm.mo
+share/locale/sr@Latn/LC_MESSAGES/gdm.mo
+share/locale/sv/LC_MESSAGES/gdm.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/gdm.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/gdm.mo
+share/locale/tr/LC_MESSAGES/gdm.mo
+share/locale/uk/LC_MESSAGES/gdm.mo
+share/locale/vi/LC_MESSAGES/gdm.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
+share/locale/wa/LC_MESSAGES/gdm.mo
+share/locale/zh_CN/LC_MESSAGES/gdm.mo
+share/locale/zh_TW/LC_MESSAGES/gdm.mo
+share/omf/gdm/
 share/omf/gdm/gdm-C.omf
 share/omf/gdm/gdm-de.omf
 share/omf/gdm/gdm-es.omf
@@ -175,6 +287,7 @@ share/omf/gdm/gdm-sv.omf
 share/omf/gdm/gdm-zh_CN.omf
 share/omf/gdm/gdm-zh_HK.omf
 share/omf/gdm/gdm-zh_TW.omf
+share/pixmaps/
 share/pixmaps/gdm-foot-logo.png
 share/pixmaps/gdm-setup.png
 share/pixmaps/gdm-xnest.png
@@ -182,66 +295,11 @@ share/pixmaps/gdm.png
 share/pixmaps/login-photo.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
+share/xsessions/
 share/xsessions/gnome.desktop
-@dirrm share/xsessions
-@dirrm share/omf/gdm
-@dirrm share/gnome/help/gdm/zh_TW/figures
-@dirrm share/gnome/help/gdm/zh_TW
-@dirrm share/gnome/help/gdm/zh_HK/figures
-@dirrm share/gnome/help/gdm/zh_HK
-@dirrm share/gnome/help/gdm/zh_CN/figures
-@dirrm share/gnome/help/gdm/zh_CN
-@dirrm share/gnome/help/gdm/sv/figures
-@dirrm share/gnome/help/gdm/sv
-@dirrm share/gnome/help/gdm/ko/figures
-@dirrm share/gnome/help/gdm/ko
-@dirrm share/gnome/help/gdm/ja/figures
-@dirrm share/gnome/help/gdm/ja
-@dirrm share/gnome/help/gdm/it/figures
-@dirrm share/gnome/help/gdm/it
-@dirrm share/gnome/help/gdm/fr/figures
-@dirrm share/gnome/help/gdm/fr
-@dirrm share/gnome/help/gdm/es/figures
-@dirrm share/gnome/help/gdm/es
-@dirrm share/gnome/help/gdm/de/figures
-@dirrm share/gnome/help/gdm/de
-@dirrm share/gnome/help/gdm/C
-@dirrm share/gnome/help/gdm
-@dirrm share/gnome/help
-@dirrm share/gnome/capplets
-@dirrm share/gnome
-@dirrm share/gdm/themes/happygnome-list
-@dirrm share/gdm/themes/happygnome
-@dirrm share/gdm/themes/circles
-@dirrm share/gdm/themes
-@dirrm share/gdm/BuiltInSessions
-@dirrm share/gdm
-@dirrm share/examples/gdm/gdm/modules
-@dirrm share/examples/gdm/gdm/PreSession
-@dirrm share/examples/gdm/gdm/PostSession
-@dirrm share/examples/gdm/gdm/PostLogin
-@dirrm share/examples/gdm/gdm/Init
-@dirrm share/examples/gdm/gdm
-@comment @exec mkdir -p %D/share/examples/gdm/dm
-@comment @dirrm share/examples/gdm/dm
-@dirrm share/examples/gdm
-@dirrm share/applications
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
-@cwd ${SYSCONFDIR}/X11
-@extra gdm/gdm.conf
-@extra gdm/locale.alias
-@extra gdm/modules/AccessDwellMouseEvents
-@extra gdm/modules/AccessKeyMouseEvents
-@extra gdm/modules/
-@extra gdm/Init/Default
-@extra gdm/Init/
-@extra gdm/PostLogin/Default.sample
-@extra gdm/PostLogin/
-@extra gdm/PostSession/Default
-@extra gdm/PostSession/
-@extra gdm/PreSession/Default
-@extra gdm/PreSession/
-@extra gdm/XKeepsCrashing
-@extra gdm/Xsession
-@extra gdm/
+@exec install -d -g _x11 -m 1770 /var/db/gdm
+@exec install -d -m 0755 /var/log/gdm
+@extraunexec rm -fr /var/db/gdm/
+@extraunexec rm -fr /var/log/gdm/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_gdm_conf_in,v 1.2 2004/06/24 23:58:34 marcm Exp $
---- config/gdm.conf.in.orig	Wed May 26 18:59:56 2004
-+++ config/gdm.conf.in	Thu Jun 24 17:07:36 2004
+$OpenBSD: patch-config_gdm_conf_in,v 1.3 2004/09/15 04:15:25 marcm Exp $
+--- config/gdm.conf.in.orig	Mon Aug  2 15:20:59 2004
++++ config/gdm.conf.in	Fri Sep 10 20:42:41 2004
 @@ -72,8 +72,8 @@ TimedLoginDelay=30
  # you should create these user and group.  Anyone found running this as
  # someone too privilaged will get a kick in the ass.  This should have
@@ -32,12 +32,3 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.2 2004/06/24 23:58:34 marcm Exp $
  # Should double login be treated with a warning (and possibility to change
  # vts on linux systems for console logins)
  #DoubleLoginWarning=true
-@@ -421,7 +421,7 @@ Enable=false
- # Definition of the standard X server.
- [server-Standard]
- name=Standard server
--command=@X_SERVER@ -audit 0
-+command=@X_SERVER@ -audit 0 vt5
- flexible=true
- 
- # To use this server type you should add -query host or -indirect host
