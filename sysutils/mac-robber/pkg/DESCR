@@ -1,0 +1,6 @@
+mac-robber is a forensics and incident response program that collects 
+Modified, Access, and Change (MAC) times from files. 
+Its output can be used as input to the 'mactime' tool in The @stake 
+Sleuth Kit (TASK) to make a time line of file activity.
+
+WWW: ${HOMEPAGE}

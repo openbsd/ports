@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/17 00:48:00 brad Exp $
+bin/mac-robber
+share/doc/mac-robber/README
+@dirrm share/doc/mac-robber
