@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/09 10:05:30 reinhard Exp $ 
+# $OpenBSD: Makefile,v 1.4 2001/02/24 17:56:21 espie Exp $ 
 
 PKGNAME=	gtl-1.0.0
 DISTNAME=	GTL-1.0.0
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	"use requires written permission"
 
 HOMEPAGE=	http://infosun.fmi.uni-passau.de/GTL/
 
-MASTER_SITES=	see_do-fetch_target
+MASTER_SITES=	#see_do-fetch_target
 
 CONFIGURE_STYLE= gnu
 MAKE_ENV+=	GTL_VERS="1.0.0"
