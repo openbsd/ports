@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/16 03:39:40 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/05/20 21:03:29 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -13,29 +13,29 @@
 ONLY_FOR_ARCHS=	i386 sparc
 NEED_VERSION=	1.89
 
-NS_i386=	communicator-v451-export.x86-bsdi-bsd2.tar.gz
-NS_SPARC=	communicator-v451-export.sparc-sun-sunos4.1.3_U1.tar.gz
-FORTIFY_i386=	Fortify-1.4.1-unix-x86.tar.gz
-FORTIFY_SPARC=	Fortify-1.4.1-unix-sparc.tar.gz
+NS_i386=	communicator-v46-export.x86-bsdi-bsd2.tar.gz
+NS_SPARC=	communicator-v46-export.sparc-sun-sunos4.1.3_U1.tar.gz
+FORTIFY_i386=	Fortify-1.4.2-unix-x86.tar.gz
+FORTIFY_SPARC=	Fortify-1.4.2-unix-sparc.tar.gz
 
 .if ${MACHINE_ARCH} == "i386"
-DISTNAME=	communicator-v451-export.x86-bsdi-bsd2
-COMMUNICATORNAME= communicator-v451.x86-bsdi-bsd2
-FORTIFYNAME=	Fortify-1.4.1-unix-x86
+DISTNAME=	communicator-v46-export.x86-bsdi-bsd2
+COMMUNICATORNAME= communicator-v46.x86-bsdi-bsd2
+FORTIFYNAME=	Fortify-1.4.2-unix-x86
 .endif
 .if ${MACHINE_ARCH} == "sparc"
-DISTNAME=	communicator-v451-export.sparc-sun-sunos4.1.3_U1
-COMMUNICATORNAME= communicator-v451.sparc-sun-sunos4.1.3_U1
-FORTIFYNAME=	Fortify-1.4.1-unix-sparc
+DISTNAME=	communicator-v46-export.sparc-sun-sunos4.1.3_U1
+COMMUNICATORNAME= communicator-v46.sparc-sun-sunos4.1.3_U1
+FORTIFYNAME=	Fortify-1.4.2-unix-sparc
 .endif
 
-PKGNAME=	communicator-4.51-fortified
+PKGNAME=	communicator-4.6-fortified
 CATEGORIES=     www
 DIST_SUBDIR=	${PKGNAME}
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/ \
-		ftp://ftp.netscape.com/pub/communicator/4.51/english/unix/unsupported/bsdi21/complete_install/ \
-		ftp://ftp.netscape.com/pub/communicator/4.51/english/unix/unsupported/sunos413/complete_install/ \
+		ftp://ftp.netscape.com/pub/communicator/4.6/english/unix/unsupported/bsdi21/complete_install/ \
+		ftp://ftp.netscape.com/pub/communicator/4.6/english/unix/unsupported/sunos413/complete_install/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
@@ -82,8 +82,9 @@ do-install:
 
 post-install:
 .if ${MACHINE_ARCH} == "sparc"
-	@${MV} ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
-	@${MV} ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
+	@${CP} ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
+	@${CP} ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
+	@${RM} ${PREFIX}/netscape/netscape_dns
 .endif
 	@cd ${WRKDIR}/${FORTIFYNAME} && \
 	src/cmdline/fortify ${PREFIX}/netscape/netscape
