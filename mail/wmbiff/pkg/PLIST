@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/03/25 12:40:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/11/06 02:07:07 jolan Exp $
 bin/wmbiff
+@comment lib/wmbiff/security.debian.rb
 man/man1/wmbiff.1
 man/man5/wmbiffrc.5
-share/examples/wmbiff/dot.wmbiffrc
+share/examples/wmbiff/sample.wmbiffrc
+share/wmbiff/skins/wmbiff-master-contrast.xpm
+share/wmbiff/skins/wmbiff-master-led.xpm
+@dirrm share/wmbiff/skins
+@dirrm share/wmbiff
 @dirrm share/examples/wmbiff
+@comment @dirrm lib/wmbiff
