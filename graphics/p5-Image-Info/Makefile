@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/13 19:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 06:26:54 shell Exp $
 
 COMMENT=	"perl module for getting image information"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 NEED_VERSION=	1.391
 
-MAINTAINER=	Shell Hung <i@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Image

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/02 15:57:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/17 06:26:52 shell Exp $
 
 COMMENT=	'unified perl interface for database access'
 
@@ -10,7 +10,7 @@ NEED_VERSION=	1.378
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= DBI
 
-MAINTAINER=	Shell Hung <i@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

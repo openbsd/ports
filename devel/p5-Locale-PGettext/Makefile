@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/29 17:30:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 06:26:53 shell Exp $
 
 COMMENT=		"perl perl i18n routines"
 
@@ -7,7 +7,7 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=     	devel
 NEED_VERSION=		1.364
 
-MAINTAINER=		Shell Hung <i@shellhung.org>
+MAINTAINER=		Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/13 20:47:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 06:26:52 shell Exp $
 
 COMMENT=	"on-the-fly HTML to WML conversion"
 
@@ -9,7 +9,7 @@ NEED_VERSION=   1.378
 MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
 HOMEPAGE=	http://maddingue.free.fr/techie/html2wml.html
 
-MAINTAINER=     Shell Hung <i@shellhung.org>
+MAINTAINER=     Shell Hung <shell@openbsd.org>
 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes

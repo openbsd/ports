@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/28 22:18:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/17 06:26:54 shell Exp $
 
 COMMENT=	'provides UTF-8 locale support'
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/utf8/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/devel/
 
-MAINTAINER=	Shell Hung <i@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
