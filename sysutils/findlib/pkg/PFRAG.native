@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2004/06/12 21:45:34 avsm Exp $
+lib/ocaml/site-lib/findlib/findlib.a
+lib/ocaml/site-lib/findlib/findlib.cmxa

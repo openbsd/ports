@@ -1,0 +1,16 @@
+findlib provides a scheme to manage reusable Objective Caml software
+components in the form of libraries, and includes tools that support
+this scheme.
+
+A library installed as a findlib component is also called a package.
+The point is that the findlib scheme allows it to store metainformation
+about the library, especially how it can be used in programs. The
+packages are kept in the filesystem hierarchy, but the directory
+structure is defined by findlib, and there is no way to deviate
+from this standard. The library contains functions to look the
+directory up that stores a package, to query metainformation about
+a package, and to retrieve dependency information about multiple
+packages. There is also a tool that allows the user to enter queries
+on the command-line. In order to simplify compilation and linkage,
+there are new frontends of the various OCaml compilers that can
+directly deal with packages.
