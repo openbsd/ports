@@ -1,12 +1,18 @@
-# $OpenBSD: Makefile,v 1.40 2001/06/03 05:32:17 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2001/06/12 15:07:29 avsm Exp $
+
+MULTI_PACKAGES=	-pear
 
 COMMENT=	"server-side HTML-embedded scripting language"
+COMMENT-pear=	"collection of base classes for common PHP tasks"
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-DISTNAME=	php-4.0.5
-PKGNAME=	php4-4.0.5
+V=		4.0.5
+DISTNAME=	php-${V}
+PKGNAME=	php4-${V}
+FULLPKGNAME-pear= php4-pear-${V}
+
 CATEGORIES=	www lang
 NEED_VERSION=	1.402
 
@@ -191,5 +197,6 @@ do-install:
 		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
 	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
+	cd ${WRKSRC}/pear && make install
 
 .include <bsd.port.mk>
