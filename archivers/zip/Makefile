@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/24 01:56:45 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/07 20:54:27 brad Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 DISTNAME=	zip23
 PKGNAME=	zip-2.3
 CATEGORIES=	archivers
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
+DISTFILES=	zip23.tar.gz zcrypt29.zip
 
 HOMEPAGE=	http://www.freesoftware.com/pub/infozip/
 
@@ -25,8 +26,13 @@ ALL_TARGET=	generic
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
+DOCS=	README WHERE
+
+post-extract:
+	@mv -f ${WRKDIR}/{crypt.c,crypt.h} ${WRKSRC}
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zip
-	cd ${WRKSRC}; ${INSTALL_DATA} README WHERE ${PREFIX}/share/doc/zip
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/zip
 
 .include <bsd.port.mk>
