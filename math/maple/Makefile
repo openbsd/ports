@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/13 19:13:22 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -15,6 +15,9 @@ CATEGORIES=     math
 # if someone wants to buy the sparc version and check it, be my guest...
 
 ONLY_FOR_ARCHS=	i386
+
+LICENSE_TYPE=COMM
+# This should imply the following
 NO_CDROM=	"Commercial"
 MIRROR_DISTFILE=no
 
