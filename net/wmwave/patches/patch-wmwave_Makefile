@@ -1,0 +1,31 @@
+$OpenBSD: patch-wmwave_Makefile,v 1.1.1.1 2001/03/14 14:10:49 wilfried Exp $
+--- Makefile.orig	Tue Mar 13 13:53:09 2001
++++ Makefile	Wed Mar 14 07:38:32 2001
+@@ -6,22 +6,20 @@
+ # Revision 1.1  1999/08/15 15:38:09  carsten
+ # Added wmwave project to repository
+ 
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11 -lm
+-FLAGS = -O6
+-OBJS =	 \
+-		wmgeneral.o \
++OBJS = wmgeneral.o
+ 
+ default:all
+ 
+ .c.o:
+-	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
++	${CC} -I${X11BASE}/include $(CFLAGS) -c -Wall $< -o $*.o
+ 
+ wmwave.o: wmwave.c wmwave-master.xpm
+-	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall wmwave.c -o $*.o
++	${CC} -I${X11BASE}/include $(CFLAGS) -c -Wall wmwave.c -o $*.o
+ 
+ wmwave: $(OBJS) wmwave.o
+-	cc $(FLAGS) -o wmwave $(OBJS) -lXext $(LIBDIR) $(LIBS) wmwave.o
++	${CC} $(CFLAGS) -o wmwave $(OBJS) -lXext $(LIBDIR) $(LIBS) wmwave.o
+ 
+ all:: wmwave
+ 
