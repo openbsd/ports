@@ -1,122 +1,79 @@
 #!/bin/sh
+# $OpenBSD: INSTALL,v 1.2 2000/02/23 10:26:14 camield Exp $
 #
-# Inspired by INSTALL from postfix port by dugsong@
+# Written by Camiel Dobbelaar <cd@sentia.nl>, 2000
+# This file is in the public domain.
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 QMAILDIR=${PREFIX:-$PKG_PREFIX}
+NOSHELL=/sbin/nologin
 
-# Unlikely, but not impossible: these UIDs may clash
-# with already installed UIDs.
-# Workaround: make these users and groups yourself
-# before installing the port or package.
+QMAILGID=2850
+NOFILESGID=32750
 
-ALIASUID=2750
+ALIASUID=2849
 QMAILDUID=2850
 QMAILLUID=2851
 QMAILPUID=2852
 QMAILQUID=2853
 QMAILRUID=2854
 QMAILSUID=2855
-QMAILGID=2850
-NOFILESGID=32750
 
-# set up qmail user/group accounts.
-#
-do_accts()
+# create_group and create_user work like this:
+# 1) if user or group already exist: return (success)
+# 2) if uid or gid already exist: abort with exitcode 1 (fail)
+# 3) create user or group: abort with exitcode 1 if this operation fails,
+#    otherwise return (success) 
+# BUGS:
+# - no argument checking
+# - step 1) could do additional checking on the other password/group field(s)
+
+create_group()
 {
-    # Create qmail and nofiles group.
-    # qmail
-    line=`egrep '^qmail:' /etc/group`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILGID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        echo "qmail:*:${QMAILGID}:" >> /etc/group
-    fi
-    echo "group 'qmail', gid $QMAILGID"
-    # nofiles
-    line=`egrep '^nofiles:' /etc/group`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        NOFILESGID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        echo "nofiles:*:${NOFILESGID}:" >> /etc/group
-    fi
-    echo "group 'nofiles', gid $NOFILESGID"
+        GROUP=$1
+        GID=$2
 
-    # Create users alias, qmaild, qmaill, qmailp, qmailq, qmailr, qmails
-    # alias
-    line=`egrep '^alias:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        ALIASUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "alias:*:${ALIASUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}/alias:/sbin/nologin"
-    fi
-    echo "account 'alias', uid $ALIASUID, gid $NOFILESGID"
-    # qmaild
-    line=`egrep '^qmaild:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILDUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmaild:*:${QMAILDUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
-    fi
-    echo "account 'qmaild', uid $QMAILDUID, gid $NOFILESGID"
-    # qmaill
-    line=`egrep '^qmaill:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILLUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmaill:*:${QMAILLUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
-    fi
-    echo "account 'qmaill', uid $QMAILLUID, gid $NOFILESGID"
-    # qmailp
-    line=`egrep '^qmailp:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILPUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmailp:*:${QMAILPUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
-    fi
-    echo "account 'qmailp', uid $QMAILPUID, gid $NOFILESGID"
-    # qmailq
-    line=`egrep '^qmailq:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILQUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmailq:*:${QMAILQUID}:${QMAILGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
-    fi
-    echo "account 'qmailq', uid $QMAILQUID, gid $QMAILGID"
-    # qmailr
-    line=`egrep '^qmailr:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	echo -n "-> Using "
-        QMAILRUID=`echo $line | cut -f3 -d:`
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmailr:*:${QMAILRUID}:${QMAILGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
-    fi
-    echo "account 'qmailr', uid $QMAILRUID, gid $QMAILGID"
-    # qmails
-    line=`egrep '^qmails:' /etc/passwd`
-    if [ "$line" != "" ]; then
-        QMAILSUID=`echo $line | cut -f3 -d:`
-	echo -n "-> Using "
-    else
-        echo -n "-> Creating "
-        chpass -l -a "qmails:*:${QMAILSUID}:${QMAILGID}::::QMAIL:${PREFIX}:/sbin/nologin"
-    fi
-    echo "account 'qmails', uid $QMAILSUID, gid $QMAILGID"
+        echo -n "creating group '$GROUP' with gid '$GID': "
+
+        if grep -q "^$GROUP:" /etc/group; then
+                echo "OK, group already exists" >&2
+                return
+        fi
+        cut -f3 -d':' /etc/group | grep -qw $GID
+        if [ $? == 0 ]; then
+                echo "ERR, gid taken" >&2
+                exit 1
+        fi
+        echo "$GROUP:*:$GID:" 2>/dev/null >>/etc/group || {
+                echo "ERR, cannot append to /etc/group" >&2
+                exit 1
+	}
+        echo "OK, created succesfully" >&2
+        return
+}
+
+create_user()
+{
+        NAME=$1;  UID=$2;  GID=$3
+        GECOS=$4; HOME=$5; SHELL=$6
+        
+        echo -n "creating user '$NAME' with uid '$UID': "
+        
+        if grep -q "^$NAME:" /etc/passwd; then
+                echo "OK, user already exists" >&2
+                return
+        fi
+        cut -f3 -d':' /etc/passwd | grep -qw $UID
+        if [ $? == 0 ]; then
+                echo "ERR, uid taken" >&2
+                exit 1
+        fi
+        chpass -l -a "$NAME:*:$UID:$GID::::$GECOS:$HOME:$SHELL" 2>/dev/null || {
+                echo "ERR, cannot add user to database" >&2
+                exit 1
+	}
+        echo "OK, created successfully" >&2
+        return
 }
 
 do_advice()
@@ -124,6 +81,8 @@ do_advice()
 	echo "----------------"
 	echo "qmail is installed"
 	echo "----------------"
+	echo
+	echo "qmail does NOT automatically work yet at this point."
 	echo
 	echo "To activate qmail, please read $QMAILDIR/doc/INSTALL"
 	echo "Steps 1, 2, 3 and 5 have been done by this port/package."
@@ -150,22 +109,27 @@ do_advice()
 
 do_aliases()
 {
-	touch ${QMAILDIR}/alias/.qmail-postmaster	\
-	      ${QMAILDIR}/alias/.qmail-mailer-daemon	\
-	      ${QMAILDIR}/alias/.qmail-root	
-	chmod 644 ${QMAILDIR}/alias/.qmail-postmaster		\
-		  ${QMAILDIR}/alias/.qmail-mailer-daemon	\
-		  ${QMAILDIR}/alias/.qmail-root	
+	cd $QMAILDIR/alias
+	touch .qmail-postmaster	.qmail-mailer-daemon .qmail-root	
+	chmod 644 .qmail-postmaster .qmail-mailer-daemon .qmail-root	
 }
 		
 case $2 in
     PRE-INSTALL)
-	do_accts
+	create_group qmail   $QMAILGID
+	create_group nofiles $NOFILESGID
+	create_user alias  $ALIASUID  $NOFILESGID qmail $QMAILDIR/alias $NOSHELL
+	create_user qmaild $QMAILDUID $NOFILESGID qmail $QMAILDIR       $NOSHELL
+	create_user qmaill $QMAILLUID $NOFILESGID qmail $QMAILDIR       $NOSHELL
+	create_user qmailp $QMAILPUID $NOFILESGID qmail $QMAILDIR       $NOSHELL
+	create_user qmailq $QMAILQUID $QMAILGID   qmail $QMAILDIR       $NOSHELL
+	create_user qmailr $QMAILRUID $QMAILGID   qmail $QMAILDIR       $NOSHELL
+	create_user qmails $QMAILSUID $QMAILGID   qmail $QMAILDIR       $NOSHELL
 	;;
     POST-INSTALL)
 	# Install will abort because it cannot install all files.
 	# It will make qmail/queue though, which is what we want.
-	sh -c "${QMAILDIR}/setup/install >/dev/null 2>&1"
+	sh -c "$QMAILDIR/setup/install >/dev/null 2>&1"
 	do_aliases
 	do_advice
 	;;
