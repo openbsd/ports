@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2003/06/13 21:51:09 marcm Exp $
+# $OpenBSD: Makefile,v 1.63 2003/06/17 03:40:03 marcm Exp $
 
 COMMENT=		"XML parsing library"
 
 VERSION=		2.5.7
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}
+PKGNAME=		libxml-${VERSION}p1
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/ \
 			ftp://xmlsoft.org/old/
@@ -26,9 +26,5 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share"
 CONFIGURE_ARGS+=	--with-iconv="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-python
-
-# Set the default XML catalog to someplace other ports can modify it
-MAKE_FLAGS=		-DXML_XML_DEFAULT_CATALOG="file:///var/db/xmlcatalog" \
-			-DXML_SGML_DEFAULT_CATALOG="file:///var/db/sgmlcatalog"
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmllint_c,v 1.1 2003/06/17 03:40:03 marcm Exp $
+--- xmllint.c.orig	Fri Jun 13 23:32:20 2003
++++ xmllint.c	Fri Jun 13 23:32:48 2003
+@@ -89,7 +89,7 @@
+ #endif
+ 
+ #ifndef XML_XML_DEFAULT_CATALOG
+-#define XML_XML_DEFAULT_CATALOG "file:///etc/xml/catalog"
++#define XML_XML_DEFAULT_CATALOG "file:///var/db/xmlcatalog"
+ #endif
+ 
+ #ifdef LIBXML_DEBUG_ENABLED

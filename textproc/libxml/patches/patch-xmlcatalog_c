@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmlcatalog_c,v 1.1 2003/06/17 03:40:03 marcm Exp $
+--- xmlcatalog.c.orig	Fri Jun 13 23:31:32 2003
++++ xmlcatalog.c	Fri Jun 13 23:32:03 2003
+@@ -42,7 +42,7 @@ static char *filename;
+ #ifdef LIBXML_CATALOG_ENABLED
+ 
+ #ifndef XML_SGML_DEFAULT_CATALOG
+-#define XML_SGML_DEFAULT_CATALOG "/etc/sgml/catalog"
++#define XML_SGML_DEFAULT_CATALOG "/var/db/sgmlcatalog"
+ #endif
+ 
+ /************************************************************************
