@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2001/10/31 18:05:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.91 2001/11/15 06:22:00 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += tempwatch
      SUBDIR += uvscan
      SUBDIR += uvscan_dat
+     SUBDIR += vomit
      SUBDIR += whisker
      SUBDIR += zebedee
 
