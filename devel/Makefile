@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2004/07/01 21:55:17 robert Exp $
+# $OpenBSD: Makefile,v 1.243 2004/07/06 21:04:49 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -199,6 +199,7 @@
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-Memory-Cycle
+     SUBDIR += p5-Test-MockObject
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
