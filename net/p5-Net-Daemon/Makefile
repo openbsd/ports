@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/20 12:48:27 kevlo Exp $
 
 COMMENT=	"extension for portable daemons"
 
-DISTNAME=	Net-Daemon-0.34
+DISTNAME=	Net-Daemon-0.35
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 NEED_VERSION=	1.402
