@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/08/11 02:39:38 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/08/11 09:42:40 brad Exp $
 @option no-default-conflict
 @pkgcfl tk-8.3.*
 bin/wish8.3
+include/tk8.3/tk.h
+include/tk8.3/tkDecls.h
 include/tk8.3/generic/default.h
 include/tk8.3/generic/ks_names.h
 include/tk8.3/generic/tk.h
@@ -25,19 +27,39 @@ include/tk8.3/generic/tkScale.h
 include/tk8.3/generic/tkScrollbar.h
 include/tk8.3/generic/tkSelect.h
 include/tk8.3/generic/tkText.h
-include/tk8.3/tk.h
-include/tk8.3/tkDecls.h
 include/tk8.3/unix/tkUnixDefault.h
 include/tk8.3/unix/tkUnixInt.h
 include/tk8.3/unix/tkUnixPort.h
 lib/libtk83.a
 lib/libtkstub83.a
+%%SHARED%%
 lib/tk8.3/bgerror.tcl
 lib/tk8.3/button.tcl
 lib/tk8.3/choosedir.tcl
 lib/tk8.3/clrpick.tcl
 lib/tk8.3/comdlg.tcl
 lib/tk8.3/console.tcl
+lib/tk8.3/dialog.tcl
+lib/tk8.3/entry.tcl
+lib/tk8.3/focus.tcl
+lib/tk8.3/listbox.tcl
+lib/tk8.3/menu.tcl
+lib/tk8.3/msgbox.tcl
+lib/tk8.3/obsolete.tcl
+lib/tk8.3/optMenu.tcl
+lib/tk8.3/palette.tcl
+lib/tk8.3/prolog.ps
+lib/tk8.3/safetk.tcl
+lib/tk8.3/scale.tcl
+lib/tk8.3/scrlbar.tcl
+lib/tk8.3/tclIndex
+lib/tk8.3/tearoff.tcl
+lib/tk8.3/text.tcl
+lib/tk8.3/tk.tcl
+lib/tk8.3/tkAppInit.c
+lib/tk8.3/tkConfig.sh
+lib/tk8.3/tkfbox.tcl
+lib/tk8.3/xmfbox.tcl
 lib/tk8.3/demos/README
 lib/tk8.3/demos/arrow.tcl
 lib/tk8.3/demos/bind.tcl
@@ -61,17 +83,6 @@ lib/tk8.3/demos/hscale.tcl
 lib/tk8.3/demos/icon.tcl
 lib/tk8.3/demos/image1.tcl
 lib/tk8.3/demos/image2.tcl
-lib/tk8.3/demos/images/earth.gif
-lib/tk8.3/demos/images/earthris.gif
-lib/tk8.3/demos/images/face.bmp
-lib/tk8.3/demos/images/flagdown.bmp
-lib/tk8.3/demos/images/flagup.bmp
-lib/tk8.3/demos/images/gray25.bmp
-lib/tk8.3/demos/images/letters.bmp
-lib/tk8.3/demos/images/noletter.bmp
-lib/tk8.3/demos/images/pattern.bmp
-lib/tk8.3/demos/images/tcllogo.gif
-lib/tk8.3/demos/images/teapot.ppm
 lib/tk8.3/demos/items.tcl
 lib/tk8.3/demos/ixset
 lib/tk8.3/demos/label.tcl
@@ -97,9 +108,17 @@ lib/tk8.3/demos/timer
 lib/tk8.3/demos/twind.tcl
 lib/tk8.3/demos/vscale.tcl
 lib/tk8.3/demos/widget
-lib/tk8.3/dialog.tcl
-lib/tk8.3/entry.tcl
-lib/tk8.3/focus.tcl
+lib/tk8.3/demos/images/earth.gif
+lib/tk8.3/demos/images/earthris.gif
+lib/tk8.3/demos/images/face.bmp
+lib/tk8.3/demos/images/flagdown.bmp
+lib/tk8.3/demos/images/flagup.bmp
+lib/tk8.3/demos/images/gray25.bmp
+lib/tk8.3/demos/images/letters.bmp
+lib/tk8.3/demos/images/noletter.bmp
+lib/tk8.3/demos/images/pattern.bmp
+lib/tk8.3/demos/images/tcllogo.gif
+lib/tk8.3/demos/images/teapot.ppm
 lib/tk8.3/images/README
 lib/tk8.3/images/logo.eps
 lib/tk8.3/images/logo100.gif
@@ -113,7 +132,6 @@ lib/tk8.3/images/pwrdLogo175.gif
 lib/tk8.3/images/pwrdLogo200.gif
 lib/tk8.3/images/pwrdLogo75.gif
 lib/tk8.3/images/tai-ku.gif
-lib/tk8.3/listbox.tcl
 lib/tk8.3/man/man1/wish.1
 lib/tk8.3/man/man3/3DBorder.3
 lib/tk8.3/man/man3/AddOption.3
@@ -507,34 +525,16 @@ lib/tk8.3/man/mann/tkwait.n
 lib/tk8.3/man/mann/toplevel.n
 lib/tk8.3/man/mann/winfo.n
 lib/tk8.3/man/mann/wm.n
-lib/tk8.3/menu.tcl
-lib/tk8.3/msgbox.tcl
-lib/tk8.3/obsolete.tcl
-lib/tk8.3/optMenu.tcl
-lib/tk8.3/palette.tcl
-lib/tk8.3/prolog.ps
-lib/tk8.3/safetk.tcl
-lib/tk8.3/scale.tcl
-lib/tk8.3/scrlbar.tcl
-lib/tk8.3/tclIndex
-lib/tk8.3/tearoff.tcl
-lib/tk8.3/text.tcl
-lib/tk8.3/tk.tcl
-lib/tk8.3/tkAppInit.c
-lib/tk8.3/tkConfig.sh
-lib/tk8.3/tkfbox.tcl
-lib/tk8.3/xmfbox.tcl
-%%SHARED%%
-@dirrm lib/tk8.3/man/mann
-@dirrm lib/tk8.3/man/man3
-@dirrm lib/tk8.3/man/man1
-@dirrm lib/tk8.3/man
 @exec echo "tk8.3 manpages are in %D/lib/tk8.3/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tk8.3/man from /etc/man.conf manually if needed"
-@dirrm lib/tk8.3/images
+@dirrm include/tk8.3/generic
+@dirrm include/tk8.3/unix
+@dirrm include/tk8.3
 @dirrm lib/tk8.3/demos/images
 @dirrm lib/tk8.3/demos
+@dirrm lib/tk8.3/images
+@dirrm lib/tk8.3/man/man1
+@dirrm lib/tk8.3/man/man3
+@dirrm lib/tk8.3/man/mann
+@dirrm lib/tk8.3/man
 @dirrm lib/tk8.3
-@dirrm include/tk8.3/unix
-@dirrm include/tk8.3/generic
-@dirrm include/tk8.3

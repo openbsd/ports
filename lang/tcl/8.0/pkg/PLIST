@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/07/18 08:25:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/08/11 09:42:36 brad Exp $
 @option no-default-conflict
 @pkgcfl	tcl-8.0.*
 bin/tclsh8.0
+include/tcl8.0/tcl.h
 include/tcl8.0/generic/tcl.h
 include/tcl8.0/generic/tclCompile.h
 include/tcl8.0/generic/tclInitScript.h
@@ -9,26 +10,23 @@ include/tcl8.0/generic/tclInt.h
 include/tcl8.0/generic/tclMath.h
 include/tcl8.0/generic/tclPort.h
 include/tcl8.0/generic/tclRegexp.h
-include/tcl8.0/tcl.h
 include/tcl8.0/unix/tclUnixPort.h
 lib/libtcl80.a
 %%SHARED%%
 lib/tcl8.0/history.tcl
-lib/tcl8.0/http1.0/http.tcl
-lib/tcl8.0/http1.0/pkgIndex.tcl
-lib/tcl8.0/http2.0/http.tcl
-lib/tcl8.0/http2.0/pkgIndex.tcl
 lib/tcl8.0/init.tcl
 lib/tcl8.0/ldAix
 lib/tcl8.0/ldAout.tcl
-lib/tcl8.0/opt0.1/optparse.tcl
-lib/tcl8.0/opt0.1/pkgIndex.tcl
 lib/tcl8.0/parray.tcl
 lib/tcl8.0/safe.tcl
 lib/tcl8.0/tclAppInit.c
 lib/tcl8.0/tclConfig.sh
 lib/tcl8.0/tclIndex
 lib/tcl8.0/word.tcl
+lib/tcl8.0/http1.0/http.tcl
+lib/tcl8.0/http1.0/pkgIndex.tcl
+lib/tcl8.0/http2.0/http.tcl
+lib/tcl8.0/http2.0/pkgIndex.tcl
 lib/tcl8.0/man/man1/tclsh.1
 lib/tcl8.0/man/man3/AddErrInfo.3
 lib/tcl8.0/man/man3/Alloc.3
@@ -433,10 +431,8 @@ lib/tcl8.0/man/mann/upvar.n
 lib/tcl8.0/man/mann/variable.n
 lib/tcl8.0/man/mann/vwait.n
 lib/tcl8.0/man/mann/while.n
-@dirrm lib/tcl8.0/man/man1
-@dirrm lib/tcl8.0/man/man3
-@dirrm lib/tcl8.0/man/mann
-@dirrm lib/tcl8.0/man
+lib/tcl8.0/opt0.1/optparse.tcl
+lib/tcl8.0/opt0.1/pkgIndex.tcl
 @exec echo "tcl8.0 manpages are in %D/lib/tcl8.0/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tcl8.0/man from /etc/man.conf manually if needed"
 @dirrm include/tcl8.0/generic
@@ -444,5 +440,9 @@ lib/tcl8.0/man/mann/while.n
 @dirrm include/tcl8.0
 @dirrm lib/tcl8.0/http1.0
 @dirrm lib/tcl8.0/http2.0
+@dirrm lib/tcl8.0/man/man1
+@dirrm lib/tcl8.0/man/man3
+@dirrm lib/tcl8.0/man/mann
+@dirrm lib/tcl8.0/man
 @dirrm lib/tcl8.0/opt0.1
 @dirrm lib/tcl8.0
