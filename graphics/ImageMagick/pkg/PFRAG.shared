@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2001/02/05 15:58:09 brad Exp $
-lib/libMagick++.so.5.28
-lib/libMagick.so.5.28
+@comment $OpenBSD: PFRAG.shared,v 1.7 2001/02/09 21:59:27 brad Exp $
+lib/libMagick++.so.5.29
+lib/libMagick.so.5.29
 DYNLIBDIR(%B)

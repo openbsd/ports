@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.46 2001/02/05 15:58:08 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2001/02/09 21:59:27 brad Exp $
 
-DISTNAME=	ImageMagick-5.2.8
+DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
 		ftp://ftp.cdrom.com/pub/ImageMagick/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/ftp.wizards.dupont.com/pub/ImageMagick/
+		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
+		ftp://ftp.fifi.org/pub/ImageMagick/ \
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
+		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
+		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
 
 HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
