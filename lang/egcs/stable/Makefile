@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2001/07/04 15:07:28 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2001/07/04 15:37:20 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
@@ -76,7 +76,7 @@ BUILD_DEPENDS+=bison:bison-*:devel/bison
 #### fetch section
 
 LATEST=3.0
-DIRECTORY=release/%DATE%/
+DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-${LATEST}
 
 # getting the right archives where they should be
