@@ -1,6 +1,6 @@
-$OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.1 2002/03/17 00:57:53 espie Exp $
---- konq-embed/dropin/klibloader.cpp.orig	Sat Mar 16 13:19:40 2002
-+++ konq-embed/dropin/klibloader.cpp	Sat Mar 16 19:58:28 2002
+$OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.2 2002/03/18 03:24:34 espie Exp $
+--- konq-embed/dropin/klibloader.cpp.orig	Fri Oct 12 01:03:53 2001
++++ konq-embed/dropin/klibloader.cpp	Mon Mar 18 04:14:44 2002
 @@ -25,6 +25,8 @@
  
  #include "klibloader.h"
@@ -16,7 +16,7 @@ $OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.1 2002/03/17 00:57:53 espie
      void *res = dlsym( m_handle, name );
 +#ifdef __OpenBSD__
 +    if ( !res ) {
-+    	name2 = malloc(strlen(name)+2);
++    	char *name2 = (char *)malloc(strlen(name)+2);
 +	if (name2) {
 +	    name2[0] = '_';
 +	    strcpy(name2+1, name);
@@ -28,14 +28,13 @@ $OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.1 2002/03/17 00:57:53 espie
      if ( !res )
          res = KLibrary::symbol( name );
      return res;
-@@ -121,8 +134,10 @@ KLibrary *KLibLoader::globalLibrary( con
+@@ -119,6 +132,9 @@ KLibrary *KLibLoader::library( const cha
+ 
+ KLibrary *KLibLoader::globalLibrary( const char *name )
  {
++#ifndef RTLD_GLOBAL
++# define RTLD_GLOBAL 0
++#endif 
  #if defined(HAVE_DLFCN)
      void *handle = dlopen( name, RTLD_LAZY | RTLD_GLOBAL );
-+    kdDebug(7029) << "Essai d'ouverture" << endl;
      if ( !handle )
-         return 0;
-+    kdDebug(7029) << "Reussi" << endl;
-  
-     KLibrary *lib = new KDLOpenLibrary( name, handle );
-     m_libs.insert( name, lib );
