@@ -1,0 +1,3 @@
+This perl library simplifies the creation of WML cards on the fly.
+It produces the most suitable wml code for the browser requesting
+the card. 
