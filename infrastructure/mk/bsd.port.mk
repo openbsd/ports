@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.515 2002/03/18 01:55:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.516 2002/03/21 21:28:29 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -504,8 +504,6 @@ _MAKE_COOKIE=touch -f
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 
-# Compatibility game
-MD5_FILE?=		${FILESDIR}/md5
 CHECKSUM_FILE?=	${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
@@ -1158,7 +1156,7 @@ DEPENDS_TARGET=	install
 
 makesum: fetch-all
 .if !defined(NO_CHECKSUM) 
-	@rm -f ${CHECKSUM_FILE} ${MD5_FILE}
+	@rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
@@ -1172,9 +1170,6 @@ makesum: fetch-all
 
 addsum: fetch-all
 .if !defined(NO_CHECKSUM)
-	@if [ -f ${MD5_FILE} ]; then \
-	  mv -f ${MD5_FILE} ${CHECKSUM_FILE}; \
-	fi
 	@touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
@@ -1440,7 +1435,6 @@ REFETCH?=false
 checksum: fetch
 .  if ! defined(NO_CHECKSUM)
 	@checksum_file=${CHECKSUM_FILE}; \
-	test -f $$checksum_file || checksum_file=${MD5_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
@@ -2220,7 +2214,6 @@ _fetch-makefile-helper:
 	echo "\t SITES=\"$$sites\" \\"
 .    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
-	test -f $$checksum_file || checksum_file=${MD5_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
 	  echo >&2 'Missing checksum file: $$checksum_file'; \
 	  echo '\t ERROR="no checksum file" \\'; \
