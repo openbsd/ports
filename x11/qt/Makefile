@@ -3,7 +3,7 @@
 # Date created:		9 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 1998/07/22 12:49:44 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/07/23 03:57:51 form Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
@@ -21,6 +21,10 @@ MAINTAINER=	form@vs.itam.nsc.ru
 #.if defined(USE_MESAGL)
 #LIB_DEPENDS=	MesaGL\\.2\\.:${PORTSDIR}/graphics/MesaGL
 #.endif
+
+.if ( ${MACHINE_ARCH} == "sparc" )
+BROKEN=		"Currently doesn't build on sparc due to g++ bug"
+.endif
 
 USE_GMAKE=	yes
 USE_X11=	yes
