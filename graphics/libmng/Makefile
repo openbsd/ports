@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/19 18:51:05 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/14 00:59:04 brad Exp $
+
+COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
 DISTNAME=	libmng-1.0.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libmng
 
