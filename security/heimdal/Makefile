@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/16 15:20:21 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/13 01:28:01 brad Exp $
 
 COMMENT=	a Kerberos 5 implementation
 
@@ -30,7 +30,6 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-USE_X11=		No
 CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=		Yes
