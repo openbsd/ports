@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/27 13:35:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/19 14:13:28 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.447
-VERSION=		2.2
+VERSION=		2.2.1
 DISTNAME=		kdegraphics-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -34,6 +34,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+
+CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:

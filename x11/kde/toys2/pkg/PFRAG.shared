@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2001/08/20 23:48:48 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2001/09/19 14:13:29 espie Exp $
 lib/libkeyesapplet.so.1.0
 lib/libkfifteenapplet.so.1.0
 lib/libkscoreapplet.so.1.0

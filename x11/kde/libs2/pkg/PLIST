@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/08/22 19:56:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/09/19 14:13:28 espie Exp $
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -510,6 +510,7 @@ lib/libDCOP.la
 lib/libartsc.la
 lib/libartscbackend.la
 lib/libartsdsp.la
+lib/libartsdsp_st.la
 lib/libartsflow.la
 lib/libartsflow_idl.la
 lib/libartskde.la
@@ -1373,20 +1374,6 @@ share/config/kdebugrc
 share/config/kdeprintrc
 share/config/ui/kprintpreviewui.rc
 share/config/ui/ui_standards.rc
-share/doc/HTML/en/api/README
-share/doc/HTML/en/api/common
-share/doc/HTML/en/api/configure.in.in
-share/doc/HTML/en/api/index.cache.bz2
-share/doc/HTML/en/api/index.docbook
-share/doc/HTML/en/api/install-dep.entities
-share/doc/HTML/en/api/install-dep.entities.in
-share/doc/HTML/en/api/kcolordialog.png
-share/doc/HTML/en/api/kdatepicker.png
-share/doc/HTML/en/api/kedittoolbar.png
-share/doc/HTML/en/api/kfiledialog.png
-share/doc/HTML/en/api/kfontdialog.png
-share/doc/HTML/en/api/kkeydialog.png
-share/doc/HTML/en/api/kpixmapio-perf.png
 share/doc/HTML/en/common/1.png
 share/doc/HTML/en/common/10.png
 share/doc/HTML/en/common/2.png
@@ -1430,9 +1417,6 @@ share/doc/HTML/en/common/up.png
 share/doc/HTML/en/common/warning.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
-share/doc/HTML/en/kspell/common
-share/doc/HTML/en/kspell/index.cache.bz2
-share/doc/HTML/en/kspell/index.docbook
 share/icons/hicolor/16x16/actions/1downarrow.png
 share/icons/hicolor/16x16/actions/1leftarrow.png
 share/icons/hicolor/16x16/actions/1rightarrow.png
@@ -2548,9 +2532,7 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
 @dirrm share/icons
-@dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/common
-@dirrm share/doc/HTML/en/api
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/config/ui

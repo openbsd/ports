@@ -1,15 +1,5 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/08/26 12:04:44 espie Exp $
---- configure.in.orig	Mon Aug  6 03:30:14 2001
-+++ configure.in	Sat Aug 25 14:15:36 2001
-@@ -35,7 +35,7 @@ dnl Perform program name transformation
- AC_ARG_PROGRAM
- 
- dnl Automake doc recommends to do this only here. (Janos)
--AM_INIT_AUTOMAKE(kdebase, "2.2") dnl searches for some needed programs
-+AM_INIT_AUTOMAKE(kdebase-2.2, "2.2") dnl searches for some needed programs
- 
- KDE_SET_PREFIX
- 
+--- configure.in.orig	Sat Sep  8 02:34:45 2001
++++ configure.in	Tue Sep 18 23:11:58 2001
 @@ -789,6 +789,11 @@ if test "x$with_cdparanoia" = "xCHECK" ;
          break
        fi
@@ -57,64 +47,11 @@ $OpenBSD: patch-configure_in,v 1.1 2001/08/26 12:04:44 espie Exp $
        LIBS="$ac_save_LIBS"
      fi
      LAME_INCS=
-@@ -1017,7 +1027,7 @@ no) AC_MSG_RESULT(no) ;;
- NOTFOUND) AC_MSG_RESULT(searched but not found) ;;
- *)
-   if test "x$with_vorbis" = "xFOUND" ; then
--    msg="incs=$vorbis_libdir libs=$vorbis_incdir"
-+    msg="incs=$vorbis_incdir libs=$vorbis_libdir"
-   else
-     msg="$with_vorbis"
-     VORBIS_ROOT="$with_vorbis"
-@@ -1031,8 +1041,10 @@ NOTFOUND) AC_MSG_RESULT(searched but not
-   non_compile=no
-   if test "x$enable_vorbistest" = xyes ; then
-     ac_save_CFLAGS="$CFLAGS"
-+    ac_save_CXXFLAGS="$CXXFLAGS"
-     ac_save_LIBS="$LIBS"
-     CFLAGS="$CFLAGS $all_includes $VORBIS_INCS"
-+    CXXFLAGS="$CXXFLAGS $all_includes $VORBIS_INCS"
-     LIBS="$LIBS $all_libraries $VORBIS_LIBS"
-     rm -f conf.vorbistest
-     AC_TRY_RUN([
-@@ -1049,6 +1061,7 @@ int main ()
- 
- ], , non_compile=yes , [echo $ac_n "cross compiling; assumed OK... $ac_c"])
-     CFLAGS="$ac_save_CFLAGS"
-+    CXXFLAGS="$ac_save_CXXFLAGS"
-     LIBS="$ac_save_LIBS"
-     # bogus return value, but it _did_ run
-     test -f conf.vorbistest && non_compile="no"
-@@ -1059,12 +1072,13 @@ int main ()
-      AC_MSG_RESULT($msg)
-      AC_DEFINE_UNQUOTED(HAVE_VORBIS, 1, [Define if you have vorbis])
-      VORBISFILE_LIBS="-lvorbisfile"
--     VORBISENC_LIBS="-lvorbisenc"
-+     VORBISENC_LIBS="-lvorbisenc -lvorbis"
-      KCM_AUDIOCD="kcmaudiocd"	
-   else
-      AC_MSG_RESULT(no (but first try gave $msg))
-      echo "*** Could not run Vorbis test program, checking why..."
-      CFLAGS="$CFLAGS $all_includes $VORBIS_INCS"
-+     CXXFLAGS="$CXXFLAGS $all_includes $VORBIS_INCS"
-      LIBS="$LIBS $all_libraries $VORBIS_LIBS"
-      AC_TRY_LINK([
- #include <stdio.h>
-@@ -1083,6 +1097,7 @@ int main ()
-      echo "*** exact error that occured. This usually means Vorbis was incorrectly installed"
-      echo "*** or that you have moved Vorbis since it was installed." ])
-      CFLAGS="$ac_save_CFLAGS"
-+     CXXFLAGS="$ac_save_CXXFLAGS"
-      LIBS="$ac_save_LIBS"
-      VORBIS_INCS=""
-      VORBIS_LIBS=""
-@@ -1655,8 +1670,8 @@ kdcop/Makefile \
- kdebugdialog/Makefile \
- kdeprint/Makefile \
- kdeprint/descriptions/Makefile \
--kdeprint/kdeprintfax/Makefile \
- kdeprint/kdeprint_part/Makefile \
-+kdeprint/kdeprintfax/Makefile \
- kdeprint/kjobviewer/Makefile \
- kdeprint/kprinter/Makefile \
- kdeprint/printmgr/Makefile \
+@@ -1296,6 +1306,7 @@ AC_MSG_CHECKING(if ksysguardd can be com
+ case "$host" in 
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-openbsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
+   *) ksysguard_compile=no; UNAME='' ;;
+ esac

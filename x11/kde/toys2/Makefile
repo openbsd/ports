@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/27 12:48:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/19 14:13:29 espie Exp $
 
 COMMENT=	"some useless kde applications"
 
 CATEGORIES=		x11 x11/kde games
 NEED_VERSION=		1.447
-VERSION=		2.2
+VERSION=		2.2.1
 DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 # Ensure qt2 will always be at the front

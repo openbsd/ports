@@ -1,0 +1,13 @@
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.1 2001/09/19 14:13:28 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/CPU.c.orig	Mon Sep  3 12:34:58 2001
++++ ksysguard/ksysguardd/FreeBSD/CPU.c	Mon Sep  3 12:35:14 2001
+@@ -25,7 +25,9 @@
+ 
+ #include <kvm.h>
+ #include <nlist.h>
++#ifndef __OpenBSD__
+ #include <devstat.h>
++#endif
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>

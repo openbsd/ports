@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/20 23:44:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/19 14:13:29 espie Exp $
 bin/kabalone
 bin/kasteroids
 bin/katomic
@@ -877,6 +877,7 @@ share/apps/katomic/levels/.cvsignore
 share/apps/katomic/levels/CVS/Entries
 share/apps/katomic/levels/CVS/Repository
 share/apps/katomic/levels/CVS/Root
+share/apps/katomic/levels/CVS/Tag
 share/apps/katomic/levels/level_1
 share/apps/katomic/levels/level_10
 share/apps/katomic/levels/level_11

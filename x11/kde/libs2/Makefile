@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2001/08/27 09:58:35 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/19 14:13:28 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.447
-VERSION=		2.2
+VERSION=		2.2.1
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -49,6 +49,10 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		QTDOCDIR=${LOCALBASE}/share/doc/qt2/html
+
+# you don't want to know...
+CONFIGURE_ENV+=		ac_aux_files=''
+
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:

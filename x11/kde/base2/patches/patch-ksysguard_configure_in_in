@@ -1,0 +1,11 @@
+$OpenBSD: patch-ksysguard_configure_in_in,v 1.1 2001/09/19 14:13:28 espie Exp $
+--- ksysguard/configure.in.in.orig	Sun May 13 23:20:29 2001
++++ ksysguard/configure.in.in	Tue Sep 18 23:11:59 2001
+@@ -3,6 +3,7 @@ AC_MSG_CHECKING(if ksysguardd can be com
+ case "$host" in 
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-openbsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
+   *) ksysguard_compile=no; UNAME='' ;;
+ esac

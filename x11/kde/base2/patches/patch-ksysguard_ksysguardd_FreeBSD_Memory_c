@@ -1,0 +1,48 @@
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2001/09/19 14:13:28 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Mon Sep  3 12:35:22 2001
++++ ksysguard/ksysguardd/FreeBSD/Memory.c	Mon Sep  3 12:37:47 2001
+@@ -67,7 +67,13 @@ updateMemory(void)
+         char buf[256];
+ 
+         len = sizeof (Total);
++#ifdef __OpenBSD__
++        mib[0] = CTL_HW;
++        mib[1] = HW_PHYSMEM;
++        sysctl(mib, 2, &Total, &len, NULL, 0);
++#else
+         sysctlbyname("hw.physmem", &Total, &len, NULL, 0);
++#endif
+         Total /= 1024;
+ 
+         /* Q&D hack for swap display. Borrowed from xsysinfo-1.4 */
+@@ -93,20 +99,30 @@ updateMemory(void)
+ 
+ 
+         len = sizeof (Buffers);
++#ifndef __OpenBSD__
+         if ((sysctlbyname("vfs.bufspace", &Buffers, &len, NULL, 0) == -1) || !len)
++#endif
+                 Buffers = 0; /* Doesn't work under FreeBSD v2.2.x */
+         Buffers /= 1024;
+ 
+ 
+         len = sizeof (Cached);
++#ifndef __OpenBSD__
+         if ((sysctlbyname("vm.stats.vm.v_cache_count", &Cached, &len, NULL, 0) == -1) || !len)
++#endif
+                 Cached = 0; /* Doesn't work under FreeBSD v2.2.x */
+         Cached *= getpagesize() / 1024;
+ 
+ 
+ 	/* initializes the pointer to the vmmeter struct */
+ 	len = sizeof (p);
++#ifdef __OpenBSD__
++        mib[0] = CTL_VM;
++        mib[1] = VM_METER;
++        sysctl(mib, 2, &p, &len, NULL, 0);
++#else
+ 	sysctlbyname("vm.vmmeter", &p, &len, NULL, 0);
++#endif
+         MFree = p.t_free * getpagesize() / 1024;
+         Used = p.t_arm * getpagesize() / 1024 + Buffers + Cached;
+ 

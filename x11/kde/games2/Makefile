@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/21 10:59:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/19 14:13:29 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -30,7 +30,7 @@ COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
 NEED_VERSION=		1.404
-VERSION=		2.2
+VERSION=		2.2.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -78,6 +78,8 @@ CONFIGURE_ARGS+=	--disable-debug
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
 	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+
+CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:

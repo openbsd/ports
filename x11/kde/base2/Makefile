@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/08/27 12:11:17 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/19 14:13:28 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.447
-VERSION=		2.2
+VERSION=		2.2.1
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
 DIST_SUBDIR=		kde
@@ -26,7 +26,7 @@ SUBPACKAGE?=
 USE_MOTIF=	any
 .endif
 
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
+LIB_DEPENDS=	kdecore.3,kdeui,kdezoinx::x11/kde/libs2 \
 		ldap.2::databases/openldap \
 		vorbis.::audio/libvorbis \
 		cdda_paranoia.::audio/cdparanoia
@@ -52,6 +52,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 LAMEDIR=${WRKDIR}/lamestub

@@ -1,5 +1,5 @@
---- kioslave/audiocd/configure.in.in.orig	Sun Jul 29 06:56:35 2001
-+++ kioslave/audiocd/configure.in.in	Sat Aug 25 14:14:01 2001
+--- kioslave/audiocd/configure.in.in.orig	Wed Sep  5 01:16:12 2001
++++ kioslave/audiocd/configure.in.in	Tue Sep 18 23:11:59 2001
 @@ -38,6 +38,11 @@ if test "x$with_cdparanoia" = "xCHECK" ;
          break
        fi
@@ -48,54 +48,3 @@
        LIBS="$ac_save_LIBS"
      fi
      LAME_INCS=
-@@ -266,7 +276,7 @@ no) AC_MSG_RESULT(no) ;;
- NOTFOUND) AC_MSG_RESULT(searched but not found) ;;
- *)
-   if test "x$with_vorbis" = "xFOUND" ; then
--    msg="incs=$vorbis_libdir libs=$vorbis_incdir"
-+    msg="incs=$vorbis_incdir libs=$vorbis_libdir"
-   else
-     msg="$with_vorbis"
-     VORBIS_ROOT="$with_vorbis"
-@@ -280,8 +290,10 @@ NOTFOUND) AC_MSG_RESULT(searched but not
-   non_compile=no
-   if test "x$enable_vorbistest" = xyes ; then
-     ac_save_CFLAGS="$CFLAGS"
-+    ac_save_CXXFLAGS="$CXXFLAGS"
-     ac_save_LIBS="$LIBS"
-     CFLAGS="$CFLAGS $all_includes $VORBIS_INCS"
-+    CXXFLAGS="$CXXFLAGS $all_includes $VORBIS_INCS"
-     LIBS="$LIBS $all_libraries $VORBIS_LIBS"
-     rm -f conf.vorbistest
-     AC_TRY_RUN([
-@@ -298,6 +310,7 @@ int main ()
- 
- ], , non_compile=yes , [echo $ac_n "cross compiling; assumed OK... $ac_c"])
-     CFLAGS="$ac_save_CFLAGS"
-+    CXXFLAGS="$ac_save_CXXFLAGS"
-     LIBS="$ac_save_LIBS"
-     # bogus return value, but it _did_ run
-     test -f conf.vorbistest && non_compile="no"
-@@ -308,12 +321,13 @@ int main ()
-      AC_MSG_RESULT($msg)
-      AC_DEFINE_UNQUOTED(HAVE_VORBIS, 1, [Define if you have vorbis])
-      VORBISFILE_LIBS="-lvorbisfile"
--     VORBISENC_LIBS="-lvorbisenc"
-+     VORBISENC_LIBS="-lvorbisenc -lvorbis"
-      KCM_AUDIOCD="kcmaudiocd"	
-   else
-      AC_MSG_RESULT(no (but first try gave $msg))
-      echo "*** Could not run Vorbis test program, checking why..."
-      CFLAGS="$CFLAGS $all_includes $VORBIS_INCS"
-+     CXXFLAGS="$CXXFLAGS $all_includes $VORBIS_INCS"
-      LIBS="$LIBS $all_libraries $VORBIS_LIBS"
-      AC_TRY_LINK([
- #include <stdio.h>
-@@ -332,6 +346,7 @@ int main ()
-      echo "*** exact error that occured. This usually means Vorbis was incorrectly installed"
-      echo "*** or that you have moved Vorbis since it was installed." ])
-      CFLAGS="$ac_save_CFLAGS"
-+     CXXFLAGS="$ac_save_CXXFLAGS"
-      LIBS="$ac_save_LIBS"
-      VORBIS_INCS=""
-      VORBIS_LIBS=""
