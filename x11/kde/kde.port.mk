@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.3 2003/02/28 15:08:21 brad Exp $
+# $OpenBSD: kde.port.mk,v 1.4 2003/05/17 04:49:28 brad Exp $
 MODULES+=	qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
@@ -35,7 +35,7 @@ SUBST_VARS+=	KDE
 
 MODKDE_VERSION?=
 .if ${MODKDE_VERSION} == "3.1"
-PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-*
+PATCH_LIST?=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-*
 .elif ${MODKDE_VERSION} == "2.2.2"
-PATCH_LIST=	${PORTSDIR}/x11/kde/patches-2.2.2/patch-* patch-*
+PATCH_LIST?=	${PORTSDIR}/x11/kde/patches-2.2.2/patch-* patch-*
 .endif
