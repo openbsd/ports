@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/17 16:04:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/04/25 15:38:55 matt Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/ZServer/DebugLogger.py
@@ -353,6 +353,7 @@ lib/zope/lib/python/AccessControl/tests/private_module/__init__.py
 lib/zope/lib/python/AccessControl/tests/private_module/submodule/__init__.py
 lib/zope/lib/python/AccessControl/tests/public_module/__init__.py
 lib/zope/lib/python/AccessControl/tests/public_module/submodule/__init__.py
+lib/zope/lib/python/AccessControl/tests/testClassSecurityInfo.py
 lib/zope/lib/python/AccessControl/tests/testDeprecatedAPI.py
 lib/zope/lib/python/AccessControl/tests/testModuleSecurity.py
 lib/zope/lib/python/AccessControl/tests/testPasswordDigest.py
@@ -532,6 +533,8 @@ lib/zope/lib/python/BTrees/_OOBTree.so
 lib/zope/lib/python/BTrees/__init__.py
 lib/zope/lib/python/BTrees/__init__.pyc
 lib/zope/lib/python/BTrees/__init__.pyo
+lib/zope/lib/python/BTrees/_fsBTree.c
+lib/zope/lib/python/BTrees/_fsBTree.so
 lib/zope/lib/python/BTrees/convert.py
 lib/zope/lib/python/BTrees/convert.pyc
 lib/zope/lib/python/BTrees/convert.pyo
@@ -897,10 +900,11 @@ lib/zope/lib/python/Products/ExternalMethod/help/External-Method_Try-It.stx
 lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
 lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.pyo
+lib/zope/lib/python/Products/ExternalMethod/tests/Extensions/Test.py
+lib/zope/lib/python/Products/ExternalMethod/tests/__init__.py
+lib/zope/lib/python/Products/ExternalMethod/tests/testExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/version.txt
 lib/zope/lib/python/Products/ExternalMethod/www/function.gif
-lib/zope/lib/python/Products/Hotfix_2002-04-15/README.txt
-lib/zope/lib/python/Products/Hotfix_2002-04-15/__init__.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyc
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyo
@@ -2388,6 +2392,12 @@ lib/zope/lib/python/ZODB/coptimizations.so
 lib/zope/lib/python/ZODB/dbmStorage.py
 lib/zope/lib/python/ZODB/dbmStorage.pyc
 lib/zope/lib/python/ZODB/dbmStorage.pyo
+lib/zope/lib/python/ZODB/fsIndex.py
+lib/zope/lib/python/ZODB/fsIndex.pyc
+lib/zope/lib/python/ZODB/fsIndex.pyo
+lib/zope/lib/python/ZODB/fsdump.py
+lib/zope/lib/python/ZODB/fsdump.pyc
+lib/zope/lib/python/ZODB/fsdump.pyo
 lib/zope/lib/python/ZODB/fsrecover.py
 lib/zope/lib/python/ZODB/fsrecover.pyc
 lib/zope/lib/python/ZODB/fsrecover.pyo
@@ -2403,9 +2413,11 @@ lib/zope/lib/python/ZODB/tests/Corruption.py
 lib/zope/lib/python/ZODB/tests/HistoryStorage.py
 lib/zope/lib/python/ZODB/tests/IteratorStorage.py
 lib/zope/lib/python/ZODB/tests/LocalStorage.py
+lib/zope/lib/python/ZODB/tests/MTStorage.py
 lib/zope/lib/python/ZODB/tests/MinPO.py
 lib/zope/lib/python/ZODB/tests/PackableStorage.py
 lib/zope/lib/python/ZODB/tests/PersistentStorage.py
+lib/zope/lib/python/ZODB/tests/ReadOnlyStorage.py
 lib/zope/lib/python/ZODB/tests/RevisionStorage.py
 lib/zope/lib/python/ZODB/tests/StorageTestBase.py
 lib/zope/lib/python/ZODB/tests/Synchronization.py
@@ -2414,13 +2426,16 @@ lib/zope/lib/python/ZODB/tests/TransactionalUndoVersionStorage.py
 lib/zope/lib/python/ZODB/tests/VersionStorage.py
 lib/zope/lib/python/ZODB/tests/__init__.py
 lib/zope/lib/python/ZODB/tests/speed.py
+lib/zope/lib/python/ZODB/tests/testCache.py
 lib/zope/lib/python/ZODB/tests/testDemoStorage.py
 lib/zope/lib/python/ZODB/tests/testFileStorage.py
 lib/zope/lib/python/ZODB/tests/testMappingStorage.py
 lib/zope/lib/python/ZODB/tests/testPersistentMapping.py
+lib/zope/lib/python/ZODB/tests/testTimeStamp.py
 lib/zope/lib/python/ZODB/tests/testTransaction.py
 lib/zope/lib/python/ZODB/tests/testUtils.py
 lib/zope/lib/python/ZODB/tests/testZODB.py
+lib/zope/lib/python/ZODB/tests/testfsIndex.py
 lib/zope/lib/python/ZODB/utils.py
 lib/zope/lib/python/ZODB/utils.pyc
 lib/zope/lib/python/ZODB/utils.pyo
@@ -2476,6 +2491,7 @@ lib/zope/lib/python/ZPublisher/maybe_lock.pyc
 lib/zope/lib/python/ZPublisher/maybe_lock.pyo
 lib/zope/lib/python/ZPublisher/tests/__init__.py
 lib/zope/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
+lib/zope/lib/python/ZPublisher/tests/testHTTPRequest.py
 lib/zope/lib/python/ZPublisher/xmlrpc.py
 lib/zope/lib/python/ZPublisher/xmlrpc.pyc
 lib/zope/lib/python/ZPublisher/xmlrpc.pyo
@@ -2618,6 +2634,7 @@ lib/zope/pcgi/Util/pcgifile.pyc
 lib/zope/pcgi/Util/pcgifile.pyo
 lib/zope/pcgi/config.guess
 lib/zope/pcgi/config.h.in
+lib/zope/pcgi/config.sub
 lib/zope/pcgi/configure
 lib/zope/pcgi/configure.in
 lib/zope/pcgi/install-sh
@@ -2833,8 +2850,9 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/MailHost/dtml
 @dirrm lib/zope/lib/python/Products/MailHost
 @dirrm lib/zope/lib/python/Products/MIMETools
-@dirrm lib/zope/lib/python/Products/Hotfix_2002-04-15
 @dirrm lib/zope/lib/python/Products/ExternalMethod/www
+@dirrm lib/zope/lib/python/Products/ExternalMethod/tests/Extensions
+@dirrm lib/zope/lib/python/Products/ExternalMethod/tests
 @dirrm lib/zope/lib/python/Products/ExternalMethod/help
 @dirrm lib/zope/lib/python/Products/ExternalMethod/dtml
 @dirrm lib/zope/lib/python/Products/ExternalMethod

@@ -1,11 +1,26 @@
-$OpenBSD: patch-w_pcgi_py,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+$OpenBSD: patch-w_pcgi_py,v 1.2 2002/04/25 15:38:55 matt Exp $
 
         We don't need to make a resource file; that's handled by
         zope-instance.
 
---- w_pcgi.py.orig	Thu Jul 22 18:00:17 1999
-+++ w_pcgi.py	Sat Jul 28 07:14:47 2001
-@@ -102,9 +102,6 @@ def main(me):
+--- w_pcgi.py.orig	Wed Nov 28 10:50:49 2001
++++ w_pcgi.py	Thu Apr 25 10:43:13 2002
+@@ -10,6 +10,14 @@
+ # FOR A PARTICULAR PURPOSE
+ # 
+ ##############################################################################
++
++# NOTICE AS REQUIRED BY LICENSE
++#
++# August 5, 2001
++#
++# Remove the make_resource steps, as this is handled by our zope-instance
++# script.
++
+ """Try to do all of the installation steps.
+ 
+ This must be run from the top-level directory of the installation.
+@@ -30,9 +38,6 @@ def main(me):
      home=setup(me)
      
      import build_pcgi

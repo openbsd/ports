@@ -1,11 +1,26 @@
-$OpenBSD: patch-inst_build_pcgi_py,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+$OpenBSD: patch-inst_build_pcgi_py,v 1.2 2002/04/25 15:38:55 matt Exp $
 
         This patch overrides pcgi's configure script, since the
         port already runs configure.
 
---- inst/build_pcgi.py.orig	Thu Jul 22 16:01:09 1999
-+++ inst/build_pcgi.py	Sun Jul 15 14:44:55 2001
-@@ -93,6 +93,5 @@ print "Building the PCGI wrapper"
+--- inst/build_pcgi.py.orig	Wed Nov 28 10:50:50 2001
++++ inst/build_pcgi.py	Thu Apr 25 10:42:09 2002
+@@ -10,6 +10,14 @@
+ # FOR A PARTICULAR PURPOSE
+ # 
+ ##############################################################################
++
++# NOTICE AS REQUIRED BY LICENSE
++#
++# August 5, 2001
++#
++# This file has been modified to remove the call to the configure script,
++# since the OpenBSD package build process already takes care of this.
++
+ """Build a PCGI
+ 
+ You must be in the directory containing this script.
+@@ -21,6 +29,5 @@ print "Building the PCGI wrapper"
  from do import *
  
  os.chdir('pcgi')
