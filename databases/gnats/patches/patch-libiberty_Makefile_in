@@ -1,0 +1,12 @@
+$OpenBSD: patch-libiberty_Makefile_in,v 1.1 2003/06/19 21:21:10 pvalchev Exp $
+--- libiberty/Makefile.in.orig	Thu Jun 19 15:07:46 2003
++++ libiberty/Makefile.in	Thu Jun 19 15:09:52 2003
+@@ -246,7 +246,7 @@ dummy.o: $(srcdir)/dummy.c $(srcdir)/fun
+ 	$(CC) -c $(CFLAGS) -I. -I$(INCDIR) $(HDEFINES) $(srcdir)/dummy.c 2>/dev/null
+ 
+ errors: dummy.o $(EXTRA_OFILES)
+-	-($(ERRORS_CC) -o dummy $(CFLAGS) $(LDFLAGS) $(ERRORS_LDFLAGS) dummy.o $(EXTRA_OFILES) $(LOADLIBES)) >errors 2>&1 || true
++	-($(ERRORS_CC) -o dummy $(CFLAGS) $(LDFLAGS) $(ERRORS_LDFLAGS) dummy.o $(EXTRA_OFILES) $(LOADLIBES)) | grep -v warning >errors 2>&1 || true
+ 
+ # required-list is used when building a shared bfd/opcodes/libiberty library.
+ required-list: Makefile
