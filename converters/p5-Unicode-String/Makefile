@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/06 16:06:04 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"modules to handle various Unicode issues"
 

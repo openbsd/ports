@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 16:06:03 espie Exp $
+include/mimepp/
 include/mimepp/address.h
 include/mimepp/addrlist.h
 include/mimepp/binhex.h
@@ -34,6 +35,7 @@ include/mimepp/token.h
 include/mimepp/utility.h
 include/mimepp/uuencode.h
 lib/libmimepp.a
+share/doc/mimepp/
 share/doc/mimepp/CPYRIGHT
 share/doc/mimepp/LICENSE
 share/doc/mimepp/README
@@ -68,6 +70,7 @@ share/doc/mimepp/string.html
 share/doc/mimepp/text.html
 share/doc/mimepp/util.html
 share/doc/mimepp/uuencode.html
+share/examples/mimepp/
 share/examples/mimepp/Makefile
 share/examples/mimepp/attach.cpp
 share/examples/mimepp/attach.h
@@ -85,6 +88,3 @@ share/examples/mimepp/exampl05.cpp
 share/examples/mimepp/exampl05.txt
 share/examples/mimepp/multipar.cpp
 share/examples/mimepp/multipar.h
-@dirrm include/mimepp
-@dirrm share/doc/mimepp
-@dirrm share/examples/mimepp

@@ -1,25 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 18:34:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/06 16:06:04 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Jcode/
 ${P5ARCH}/Jcode.pm
 ${P5ARCH}/Jcode/Constants.pm
 ${P5ARCH}/Jcode/H2Z.pm
 ${P5ARCH}/Jcode/Tr.pm
+${P5ARCH}/Jcode/Unicode/
 ${P5ARCH}/Jcode/Unicode.pm
 ${P5ARCH}/Jcode/Unicode/Constants.pm
 ${P5ARCH}/Jcode/Unicode/NoXS.pm
 ${P5ARCH}/Jcode/_test.pl
+${P5ARCH}/auto/
+${P5ARCH}/auto/Jcode/
 @comment ${P5ARCH}/auto/Jcode/.packlist
+${P5ARCH}/auto/Jcode/Unicode/
 ${P5ARCH}/auto/Jcode/Unicode/Unicode.bs
 ${P5ARCH}/auto/Jcode/Unicode/Unicode.so
 @comment ${P5ARCH}/mac_install.pl
 @comment ${P5ARCH}/win_install.pl
-man/man3p/Jcode.3p
-man/man3p/Jcode::Unicode.3p
-man/man3p/Jcode::Unicode::Constants.3p
-man/man3p/Jcode::Unicode::NoXS.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Jcode/Unicode
-@dirrm ${P5ARCH}/auto/Jcode
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Jcode/Unicode
-@dirrm ${P5ARCH}/Jcode
-@dirrm ${P5ARCH}
+@man man/man3p/Jcode.3p
+@man man/man3p/Jcode::Unicode.3p
+@man man/man3p/Jcode::Unicode::Constants.3p
+@man man/man3p/Jcode::Unicode::NoXS.3p

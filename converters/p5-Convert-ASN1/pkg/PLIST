@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/24 00:36:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/06 16:06:03 espie Exp $
+${P5SITE}/Convert/
+${P5SITE}/Convert/ASN1/
 ${P5SITE}/Convert/ASN1.pm
 ${P5SITE}/Convert/ASN1.pod
 ${P5SITE}/Convert/ASN1/Debug.pm
@@ -6,12 +8,9 @@ ${P5SITE}/Convert/ASN1/IO.pm
 ${P5SITE}/Convert/ASN1/_decode.pm
 ${P5SITE}/Convert/ASN1/_encode.pm
 ${P5SITE}/Convert/ASN1/parser.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Convert/
+@comment ${P5ARCH}/auto/Convert/ASN1/
 @comment ${P5ARCH}/auto/Convert/ASN1/.packlist
-man/man3p/Convert::ASN1.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Convert/ASN1
-@comment @dirrm ${P5ARCH}/auto/Convert
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Convert/ASN1
-@dirrm ${P5SITE}/Convert
+@man man/man3p/Convert::ASN1.3p

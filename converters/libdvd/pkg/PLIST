@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/03/02 22:42:14 hshoexer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 16:06:03 espie Exp $
+include/libdvd/
 include/libdvd/libdvd.h
 lib/libdvd.a
 lib/libdvd.la
 %%SHARED%%
-@dirrm include/libdvd

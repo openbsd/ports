@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 02:14:14 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 16:06:04 espie Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/IDN/
+${P5SITE}/Net/IDN/Nameprep/
 ${P5SITE}/Net/IDN/Nameprep.pm
 ${P5SITE}/Net/IDN/Nameprep/Mapping.pm
 ${P5SITE}/Net/IDN/Nameprep/Prohibited.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Net/
+@comment ${P5ARCH}/auto/Net/IDN/
+@comment ${P5ARCH}/auto/Net/IDN/Nameprep/
 @comment ${P5ARCH}/auto/Net/IDN/Nameprep/.packlist
-man/man3p/Net::IDN::Nameprep.3p
-man/man3p/Net::IDN::Nameprep::Mapping.3p
-man/man3p/Net::IDN::Nameprep::Prohibited.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/IDN/Nameprep
-@comment @dirrm ${P5ARCH}/auto/Net/IDN
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/IDN/Nameprep
-@dirrm ${P5SITE}/Net/IDN
-@dirrm ${P5SITE}/Net
+@man man/man3p/Net::IDN::Nameprep.3p
+@man man/man3p/Net::IDN::Nameprep::Mapping.3p
+@man man/man3p/Net::IDN::Nameprep::Prohibited.3p

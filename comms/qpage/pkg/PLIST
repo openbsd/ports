@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/23 00:33:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 16:06:03 espie Exp $
 bin/qpage
-man/man1/qpage.1
+@man man/man1/qpage.1
+share/examples/qpage/
 share/examples/qpage/qpage.cf
-@dirrm share/examples/qpage

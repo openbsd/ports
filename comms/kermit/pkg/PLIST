@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/01/27 17:38:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/06 16:06:03 espie Exp $
 bin/kermit
-man/man1/kermit.1
+@man man/man1/kermit.1
+share/doc/kermit/
 share/doc/kermit/COPYING.TXT
 share/doc/kermit/ckaaaa.txt
 share/doc/kermit/ckcbwr.txt
@@ -11,7 +12,6 @@ share/doc/kermit/ckermit80.txt
 share/doc/kermit/ckubwr.txt
 share/doc/kermit/ckuins.txt
 share/doc/kermit/ckututor.txt
+share/examples/kermit/
 share/examples/kermit/dot.kermrc
 share/examples/kermit/dot.mykermrc
-@dirrm share/examples/kermit
-@dirrm share/doc/kermit

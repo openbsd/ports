@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/10 15:29:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/06 16:06:04 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to iconv() codeset conversion function"
 

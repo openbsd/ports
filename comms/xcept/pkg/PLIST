@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/03 16:24:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 16:06:03 espie Exp $
 bin/xcept
-libexec/ceptd
-man/man1/xcept.1
-man/man8/ceptd.8
+lib/xcept/
 lib/xcept/Bundesbahn.xcept
 lib/xcept/DeutscheBank-Kontoauszug.xcept
 lib/xcept/Sparkasse.xcept
@@ -13,7 +11,9 @@ lib/xcept/client-mode
 lib/xcept/on-off.xcept
 lib/xcept/popup.xcept
 lib/xcept/xcept.pl
+libexec/ceptd
+@man man/man1/xcept.1
+@man man/man8/ceptd.8
+share/cept/
 share/cept/cept.init.sample
 share/cept/cept.users.sample
-@dirrm share/cept
-@dirrm lib/xcept

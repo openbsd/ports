@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/06 16:06:04 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"module to implement efficient mapping tables"
 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/31 18:34:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 16:06:04 espie Exp $
+${P5SITE}/Unicode/
 ${P5SITE}/Unicode/MapUTF8.pm
+@comment ${P5ARCH}/auto/Unicode/MapUTF8/
 @comment ${P5ARCH}/auto/Unicode/MapUTF8/.packlist
-man/man3p/Unicode::MapUTF8.3p
-@comment @dirrm ${P5ARCH}/auto/Unicode/MapUTF8
-@dirrm ${P5SITE}/Unicode
+@man man/man3p/Unicode::MapUTF8.3p

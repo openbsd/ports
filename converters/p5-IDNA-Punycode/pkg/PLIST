@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 02:12:53 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 16:06:04 espie Exp $
+${P5SITE}/IDNA/
 ${P5SITE}/IDNA/Punycode.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/IDNA/
+@comment ${P5ARCH}/auto/IDNA/Punycode/
 @comment ${P5ARCH}/auto/IDNA/Punycode/.packlist
-man/man3p/IDNA::Punycode.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/IDNA/Punycode
-@comment @dirrm ${P5ARCH}/auto/IDNA
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/IDNA
+@man man/man3p/IDNA::Punycode.3p
