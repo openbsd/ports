@@ -1,6 +1,6 @@
-$OpenBSD: patch-args_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
---- args.c.orig	Sun May 19 00:35:16 2002
-+++ args.c	Sun May 19 00:38:18 2002
+$OpenBSD: patch-args_c,v 1.2 2002/08/02 11:32:54 naddy Exp $
+--- args.c.orig	Wed Nov 14 22:05:10 2001
++++ args.c	Fri Aug  2 13:23:06 2002
 @@ -35,6 +35,7 @@ do_args(int argc, char **argv, int envfl
      int consumed;
      int currarg;
@@ -33,12 +33,11 @@ $OpenBSD: patch-args_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
                                  opt_encoding = 1;
                              }
                          }
-@@ -442,7 +442,7 @@ do_env()
+@@ -442,7 +442,6 @@ do_env()
          libdir = env;
  
      if ((env = getenv("MPAGE")) != NULL) {
 -        strcpy(copy, env);
-+        (void)strlcpy(copy, env, sizeof(copy));
          if ((copy = strdup(env)) == NULL) {
              fprintf(stderr, "%s: Unable to alloc memory for environment args\n",
                      MPAGE);
