@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 09:05:24 sturm Exp $
+bin/nikto
+share/examples/nikto/nikto.conf
+share/nikto/LW.pm
+share/nikto/nikto_apacheusers.plugin
+share/nikto/nikto_core.plugin
+share/nikto/nikto_headers.plugin
+share/nikto/nikto_httpoptions.plugin
+share/nikto/nikto_msgs.plugin
+share/nikto/nikto_mutate.plugin
+share/nikto/nikto_outdated.plugin
+share/nikto/nikto_passfiles.plugin
+share/nikto/nikto_plugin_order.txt
+share/nikto/nikto_realms.plugin
+share/nikto/nikto_robots.plugin
+share/nikto/nikto_user_enum_apache.plugin
+share/nikto/nikto_user_enum_cgiwrap.plugin
+share/nikto/outdated.db
+share/nikto/realms.db
+share/nikto/scan_database.db
+share/nikto/server_msgs.db
+share/nikto/servers.db
+@dirrm share/nikto
+@dirrm share/examples/nikto
+@cwd ${SYSCONFDIR}
+@extra nikto.conf
