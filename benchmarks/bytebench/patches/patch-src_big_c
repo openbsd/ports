@@ -1,6 +1,7 @@
---- src/big.c.orig	Wed Feb  5 02:08:47 1992
-+++ src/big.c	Thu Feb 26 19:55:18 1998
-@@ -81,10 +81,10 @@
+$OpenBSD: patch-src_big_c,v 1.1 2002/07/17 21:57:21 lebel Exp $
+--- src/big.c.orig	Wed Feb  5 05:08:47 1992
++++ src/big.c	Wed Jul 17 17:36:08 2002
+@@ -81,10 +81,10 @@ char	*argv[];
      int		nch;		/* # characters to write */
      int		written;	/* # characters actully written */
      char	logname[15];	/* name of the log file(s) */
@@ -15,7 +16,7 @@
      int		pvec[2];	/* for pipes */
      char	*p;
      char	*prog;		/* my name */
-@@ -383,22 +383,28 @@
+@@ -383,22 +383,28 @@ bepatient:
  
  }
  
@@ -47,7 +48,7 @@
  	sigpipe++;
  }
  
-@@ -434,9 +440,13 @@
+@@ -434,9 +440,13 @@ getwork()
      char		c;
      char		*malloc(), *realloc();
  

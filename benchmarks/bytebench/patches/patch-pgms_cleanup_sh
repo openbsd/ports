@@ -1,0 +1,14 @@
+$OpenBSD: patch-pgms_cleanup_sh,v 1.1 2002/07/17 21:57:21 lebel Exp $
+--- pgms/cleanup.sh.orig	Wed Feb  5 05:08:37 1992
++++ pgms/cleanup.sh	Wed Jul 17 17:36:08 2002
+@@ -86,8 +86,8 @@ do
+ 	;;
+     
+     -r) : reason for failure
+-	echo $1
+-	echo $1 >>$LOGFILE
++	echo -e $1
++	echo -e $1 >>$LOGFILE
+ 	shift
+ 	;;
+ 

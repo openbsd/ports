@@ -1,6 +1,7 @@
---- src/execl.c.~1~	Wed Feb  5 02:08:40 1992
-+++ src/execl.c	Thu Feb 26 19:29:57 1998
-@@ -44,7 +44,7 @@
+$OpenBSD: patch-src_execl_c,v 1.1 2002/07/17 21:57:21 lebel Exp $
+--- src/execl.c.orig	Wed Feb  5 05:08:40 1992
++++ src/execl.c	Wed Jul 17 17:36:08 2002
+@@ -44,7 +44,7 @@ char	*argv[];
  	char *fullpath;
  	int 	duration;
  	char	count_str[6], start_str[12], path_str[81], *dur_str;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dhry_1_c,v 1.1 2002/07/17 21:57:21 lebel Exp $
+--- src/dhry_1.c.orig	Wed Feb  5 05:08:47 1992
++++ src/dhry_1.c	Wed Jul 17 17:36:08 2002
+@@ -78,7 +78,7 @@ extern  int     times ();
+                 /* Measurements should last at least about 2 seconds */
+ #endif
+ #ifdef TIME
+-extern long     time();
++extern time_t     time();
+                 /* see library function "time"  */
+ #define Too_Small_Time 2
+                 /* Measurements should last at least 2 seconds */
