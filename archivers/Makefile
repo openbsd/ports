@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/03 20:03:16 wcobb Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/22 11:03:01 peter Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -18,6 +18,8 @@
      SUBDIR += lzop
      SUBDIR += makeself
      SUBDIR += nulib
+     SUBDIR += p5-Archive-Tar
+     SUBDIR += p5-Archive-Zip
      SUBDIR += p5-Compress-LZO
      SUBDIR += p5-Compress-Zlib
      SUBDIR += rar
