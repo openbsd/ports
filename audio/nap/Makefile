@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/09 23:26:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/02 00:50:22 pvalchev Exp $
 
 COMMENT=	"gnu curses-based napster client"
 
-KS=		1.4.4
-PS=		ps9
-DISTNAME=	nap-${KS}-${PS}
+VERSION=	1.4.5
+DISTNAME=	nap-${VERSION}
 CATEGORIES=    	audio
-NEED_VERSION=	1.401
+NEED_VERSION=	1.417
 
 HOMEPAGE=	http://theory.stanford.edu/~selinger/nap/
 
