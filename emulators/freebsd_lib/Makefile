@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/04/10 11:44:04 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/10 11:45:08 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -9,6 +9,8 @@ CATEGORIES=	emulators
 NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 EXTRACT_ONLY=
+
+HOMEPAGE=	http://www.freebsd.org/
 
 MAINTAINER=	ports@openbsd.org
 
