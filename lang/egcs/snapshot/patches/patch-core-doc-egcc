@@ -1,5 +1,5 @@
---- gcc/gcc.texi.orig	Sun Nov  1 20:04:09 1998
-+++ gcc/gcc.texi	Sun Nov  1 20:04:35 1998
+--- gcc/gcc.texi.orig	Mon Aug  9 08:47:01 1999
++++ gcc/gcc.texi	Sat Aug 21 00:23:58 1999
 @@ -1,6 +1,6 @@
  \input texinfo  @c -*-texinfo-*-
  @c %**start of header
@@ -12,8 +12,8 @@
  @ifinfo
  @dircategory Programming
  @direntry
--* gcc: (gcc).                  The GNU C compiler.
-+* egcc: (egcc).                  The experimental GNU C compiler.
+-* gcc: (gcc).                  The GNU Compiler Collection.
++* egcc: (egcc).                  The GNU Compiler Collection.
  @end direntry
  @ifset INTERNALS
  @ifset USING
