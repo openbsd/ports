@@ -1,4 +1,3 @@
-
 MPlayer is a movie player for LINUX (runs on many other Unices, and
 non-x86 CPUs, see the documentation). It plays most MPEG, VOB, AVI,
 VIVO, ASF/WMV, QT/MOV, FLI, NuppelVideo, yuv4mpeg, FILM, RoQ, and some
@@ -41,5 +40,3 @@ Flavors:
          need to enable the machdep.userldt sysctl, either via
          /etc/sysctl.conf, or by entering (as root):
 		sysctl -w machdep.userldt=1
-
-WWW: ${HOMEPAGE}

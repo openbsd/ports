@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2003/09/25 20:59:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.60 2003/10/26 19:54:46 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-0.92
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p1
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -43,6 +43,9 @@ LIB_DEPENDS=	png::graphics/png \
 		ungif,gif::graphics/libungif \
 		vorbis.0,vorbisfile.1::audio/libvorbis
 
+CONFDIR=	${SYSCONFDIR}/mplayer
+SUBST_VARS=	CONFDIR
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--disable-alsa \
@@ -55,7 +58,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-iconv \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
-		--confdir=${LOCALBASE}/share/mplayer
+		--confdir=${CONFDIR}
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--target=ppc-openbsd
@@ -165,11 +168,14 @@ CONFIGURE_ARGS+=--disable-aa
 NO_REGRESS=	Yes
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mplayer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/Skin/${SKIN}
 	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/Skin/${SKIN}
-	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf \
-			${PREFIX}/share/mplayer
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
+	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf codecs.conf \
+		${PREFIX}/share/examples/mplayer
+	${INSTALL_DATA} ${WRKDIST}/etc/example.conf \
+		${PREFIX}/share/examples/mplayer/mplayer.conf
 	${INSTALL_DATA} ${WRKDIST}/DOCS/*.html ${PREFIX}/share/doc/mplayer
 
 .include <bsd.port.mk>
