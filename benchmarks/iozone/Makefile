@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 1999/09/20 20:38:13 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/09/23 22:39:27 brad Exp $
 
-DISTNAME=	iozone
+DISTNAME=	iozone3_9
 PKGNAME=	iozone-3.9
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.iozone.org/src/
+MASTER_SITES=	http://www.iozone.org/src/stable/
 EXTRACT_SUFX=	.tar
 
 NEED_VERSION=	1.92
