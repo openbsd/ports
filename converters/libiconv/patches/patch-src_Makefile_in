@@ -1,12 +1,19 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2002/06/13 03:45:57 brad Exp $
---- src/Makefile.in.orig	Mon Jun 10 20:22:26 2002
-+++ src/Makefile.in	Mon Jun 10 20:22:55 2002
-@@ -78,7 +78,7 @@ install : all force
+$OpenBSD: patch-src_Makefile_in,v 1.2 2002/09/17 01:33:05 brad Exp $
+--- src/Makefile.in.orig	Wed May 29 10:04:10 2002
++++ src/Makefile.in	Mon Sep 16 20:20:59 2002
+@@ -51,7 +51,6 @@ top_builddir = ..
+ # without internationalization and not linked with libintl.
+ 
+ all : iconv_no_i18n iconv.@OBJEXT@
+-	chmod 777 .
+ 
+ # This is the temporary iconv executable, without internationalization.
+ iconv_no_i18n : iconv_no_i18n.@OBJEXT@ ../lib/libiconv.la
+@@ -78,6 +77,7 @@ install : all force
  	if [ ! -d $(DESTDIR)$(bindir) ] ; then mkdir $(DESTDIR)$(bindir) ; fi
  	case "@host_os@" in \
  	  hpux*) $(CC) $(LDFLAGS) iconv.@OBJEXT@ -L$(libdir) -liconv @LIBINTL@ -o iconv;; \
--	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
-+	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(DESTDIR)$(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
++	  openbsd*) $(CC) $(LDFLAGS) iconv.@OBJEXT@ -L$(DESTDIR)$(libdir) -liconv @LIBINTL@ -o iconv;; \
+ 	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
  	esac
  	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/iconv
- 
