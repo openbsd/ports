@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/07/15 18:08:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2001/07/30 13:48:02 espie Exp $
 #
 
      SUBDIR += R
@@ -20,6 +20,7 @@
      SUBDIR += gnuplot
      SUBDIR += gnuplot,no_x11
      SUBDIR += grace
+     SUBDIR += graphviz
      SUBDIR += grpn
      SUBDIR += hexcalc
      SUBDIR += hoc
