@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/05/26 01:54:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/06/29 04:12:18 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -8,6 +8,7 @@
 #    SUBDIR += arena
 #    SUBDIR += ashe           # requires Motif
 #    SUBDIR += aswedit
+     SUBDIR += august
      SUBDIR += bluefish
      SUBDIR += cgiparse
 #    SUBDIR += chimera
