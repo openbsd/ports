@@ -1,20 +1,14 @@
-# OpenBSD makefile for:	gsm
-# Version required:     gsm-1.0.10
-# Date created:		December 4, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.6 1998/02/26 20:34:31 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/10/06 22:50:46 marc Exp $
 #
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	angelos@openbsd.org
 
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
+
 WRKSRC=         ${WRKDIR}/gsm-1.0-pl10
-MAN1=		toast.1
-MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3
 
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
