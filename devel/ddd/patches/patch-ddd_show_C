@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_show_C,v 1.2 2002/03/21 05:28:21 fgsch Exp $
---- ddd/show.C.orig	Tue Jan  9 15:00:51 2001
-+++ ddd/show.C	Wed Mar 13 04:32:04 2002
-@@ -58,6 +58,7 @@ char show_rcsid[] = 
+$OpenBSD: patch-ddd_show_C,v 1.3 2003/04/10 16:51:21 sturm Exp $
+--- ddd/show.C.orig	Fri Apr 27 00:17:19 2001
++++ ddd/show.C	Fri Mar 28 10:35:58 2003
+@@ -59,6 +59,7 @@ char show_rcsid[] = 
  #include <fstream.h>
  #include <string.h>
  #include <errno.h>
@@ -9,20 +9,3 @@ $OpenBSD: patch-ddd_show_C,v 1.2 2002/03/21 05:28:21 fgsch Exp $
  
  #include "Xpm.h"
  #include "HelpCB.h"
-@@ -403,11 +404,14 @@ void show_configuration(ostream& os)
- 
- static int uncompress(ostream& os, const char *text, int size)
- {
--    string tempfile = tmpnam(0);
--    FILE *fp = fopen(tempfile, "w");
-+    char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
-+    int temp_fd = mkstemp(temp_name);
-+    string tempfile = temp_name;
-+    FILE *fp = fdopen(temp_fd, "w");
-     if (fp == 0)
-     {
- 	os << tempfile << ": " << strerror(errno);
-+	close(temp_fd);
- 	return -1;
-     }
- 

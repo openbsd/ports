@@ -1,7 +1,6 @@
-$OpenBSD: SECURITY,v 1.1 2000/10/30 13:54:51 espie Exp $
+$OpenBSD: SECURITY,v 1.2 2003/04/10 16:51:21 sturm Exp $
 
-There are lots of tmpnam() warnings in ddd.
-Most are temporary files that are used locally.
-A few are passed off to an external gnuplot process.
-Fortunately, gnuplot has no compunction about writing over 
-an existing file, so those can be fixed.
+Temporary file handling has improved in this version, but still needs
+work. It now uses mkstemp(), but because there is no way to create an
+ofstream object from a file descriptor there are still race conditions.
+Similarly for passing temp file names to gnuplot.

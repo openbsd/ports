@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_comm-manag_C,v 1.3 2002/10/13 21:45:46 naddy Exp $
---- ddd/comm-manag.C.orig	Tue Jan 16 05:51:37 2001
-+++ ddd/comm-manag.C	Fri Oct 11 12:13:38 2002
-@@ -85,6 +85,7 @@ char comm_manager_rcsid[] =
+$OpenBSD: patch-ddd_comm-manag_C,v 1.4 2003/04/10 16:51:21 sturm Exp $
+--- ddd/comm-manag.C.orig	Tue Mar 27 02:40:05 2001
++++ ddd/comm-manag.C	Fri Mar 28 10:35:57 2003
+@@ -86,6 +86,7 @@ char comm_manager_rcsid[] =
  
  #include <ctype.h>
  #include <fstream.h>
@@ -9,22 +9,3 @@ $OpenBSD: patch-ddd_comm-manag_C,v 1.3 2002/10/13 21:45:46 naddy Exp $
  
  
  //-----------------------------------------------------------------------------
-@@ -800,13 +801,16 @@ void init_session(const string& restart,
- 	info = new InitSessionInfo;
- 	info->restart  = restart;
- 	info->settings = settings;
--	info->tempfile = tmpnam(0);
-+ 	char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
-+ 	int temp_fd = mkstemp(temp_name);
-+ 	info->tempfile = temp_name;
- 
- 	string file_commands = "set confirm off\n";
- 	bool recording_defines = false;
- 
- 	{
--	    ofstream os(info->tempfile);
-+ 	    close(temp_fd); // hack but how to mix mkstemp & ofstream ...
-+ 	    ofstream os(info->tempfile); // without a ctor ofstream(fd) ?
- 	    while (init_commands != "")
- 	    {
- 		string cmd = init_commands.before('\n');
