@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/08/06 07:35:11 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/06 08:03:39 xsa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,10 +26,10 @@ PYTHON_VER=	2.3
 PYTHON_BIN=	${LOCALBASE}/bin/python${PYTHON_VER}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/python/${PYTHON_VER}
+RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-RUN_DEPENDS+=	::lang/python/${PYTHON_VER},-expat
+RUN_DEPENDS+=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
 .endif
 
 CONFIGURE_STYLE=simple
