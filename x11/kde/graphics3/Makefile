@@ -1,19 +1,42 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/05 14:53:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2003/04/10 00:00:23 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
+COMMENT-kamera=		"kde interface to digital cameras"
+COMMENT-kpov=		"modeller for povray"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.1.1
 DISTNAME=		kdegraphics-${VERSION}
 
-LIB_DEPENDS=Imlib::graphics/imlib \
-	ungif::graphics/libungif \
-	kdecore.4,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3 \
-	glut::graphics/glut
-
-RUN_DEPENDS= :ghostscript-*:print/ghostscript/gnu
-
 SEPARATE_BUILD=flavored
+MULTI_PACKAGES=-kamera -kpov
+FULLPKGNAME-kamera=kamera-${VERSION}
+FULLPKGNAME-kpov=kpovmodeller-${VERSION}
+SUBPACKAGE?=
 
-CONFIGURE_ARGS+=--without-kamera
+LIB_DEPENDS= \
+	kdecore.4,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
+
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-kamera"
+LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
+.  elif ${SUBPACKAGE} == "-kpov"
+LIB_DEPENDS+=	glut::graphics/glut
+RUN_DEPENDS+=	::graphics/povray
+.  elif ${SUBPACKAGE} == ""
+RUN_DEPENDS+= :ghostscript-*:print/ghostscript/gnu
+LIB_DEPENDS+=	Imlib::graphics/imlib \
+		ungif::graphics/libungif \
+		glut::graphics/glut
+.  endif
+.else
+LIB_DEPENDS+=Imlib::graphics/imlib \
+	ungif::graphics/libungif \
+	gphoto2,gphoto2_port::graphics/libgphoto2 \
+	glut::graphics/glut
+.endif
+
+
+
+#CONFIGURE_ARGS+=--without-kamera
 
 .include <bsd.port.mk>

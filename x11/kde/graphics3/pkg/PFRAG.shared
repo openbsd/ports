@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:53:39 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2003/04/10 00:00:24 espie Exp $
 ${KDE}/libkcm_kmrml.so.0.0
 ${KDE}/libkded_daemonwatcher.so.0.0
 ${KDE}/libkdvipart.so.0.0
@@ -15,7 +15,6 @@ ${KDE}/libkfile_xbm.so.0.0
 ${KDE}/libkghostviewpart.so.0.0
 ${KDE}/libkio_mrml.so.0.0
 ${KDE}/libkmrmlpart.so.0.0
-${KDE}/libkpovmodelerpart.so.0.0
 ${KDE}/libkview_browserplugin.so.0.0
 ${KDE}/libkview_presenterplugin.so.0.0
 ${KDE}/libkview_scannerplugin.so.0.0
