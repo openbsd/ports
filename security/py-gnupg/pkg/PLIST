@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/22 05:20:25 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/12 08:39:39 shell Exp $
 lib/python${PYTHON_VER}/site-packages/GnuPGInterface.py
 lib/python${PYTHON_VER}/site-packages/GnuPGInterface.pyc
+lib/python${PYTHON_VER}/site-packages/GnuPGInterface.pyo

@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/12 08:39:39 shell Exp $
 
 
-COMMENT=		"python module for GnuPG interface"
+COMMENT=	"python module for GnuPG interface"
 
-VERSION=		0.3.1
-DISTNAME=		GnuPGInterface-${VERSION}
-PKGNAME=		py-gnupg-${VERSION}
-CATEGORIES=     	security devel
-NEED_VERSION=		1.489
+VERSION=	0.3.2
+DISTNAME=	GnuPGInterface-${VERSION}
+PKGNAME=	py-gnupg-${VERSION}
+CATEGORIES=    	security devel
+NEED_VERSION=	1.504
 
-HOMEPAGE=		http://py-gnupg.sourceforge.net/
+HOMEPAGE=	http://py-gnupg.sourceforge.net/
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py-gnupg
 
 PYTHON_VER=	2.1
@@ -36,6 +36,6 @@ do-build:
 	${PY_CMD} build --build-base=${WRKSRC}
 
 do-install:
-	${PY_CMD} install --prefix=${PREFIX}
+	${PY_CMD} install -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
