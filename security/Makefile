@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2005/02/23 20:11:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.152 2005/03/30 02:53:07 jolan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -91,6 +91,7 @@
      SUBDIR += p5-Digest-BubbleBabble
      SUBDIR += p5-Digest-HMAC
      SUBDIR += p5-Digest-MD2
+     SUBDIR += p5-Digest-MD5-M4p
      SUBDIR += p5-Digest-Nilsimsa
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-GPG
