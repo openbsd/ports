@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/05 06:05:35 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/09 03:53:44 jasoni Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -28,6 +28,7 @@ NO_BUILD=	Yes
 
 PREFIX=		${LOCALBASE}/emul/redhat
 
+RPM=		${LOCALBASE}/bin/rpm
 RPMFLAGS=	--ignoreos --ignorearch --root ${PREFIX} --nodeps --noscripts \
 		--excludedocs --replacepkgs --dbpath /var/lib/rpm
 RPMDIR=		${FULLDISTDIR}
@@ -68,16 +69,16 @@ pre-install:
 
 do-install:
 # Initialize the RPM database.
-	@rpm --initdb --root ${PREFIX} --dbpath /var/lib/rpm
+	@${RPM} --initdb --root ${PREFIX} --dbpath /var/lib/rpm
 
 # Install RPM's.  
 # Redirect stderr for now b/c rpm tries to open /etc/mnttab which is not pretty.
 	@for rpm in ${RPM_SET1}; do \
-		rpm -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
+		${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
 	done
 
 	@for rpm in ${RPM_SET2}; do \
-		rpm -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
+		${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
 	done
 
 # Get rid of some unnecessary files and directories.
