@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/04 10:51:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/19 10:03:38 kevlo Exp $
 #
 
-DISTNAME=        xdino-5.4.4
+DISTNAME=	xdino-5.5.2
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.307
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -17,8 +17,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
 WRKDIST=	${WRKDIR}/xdino
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake	
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xdino ${PREFIX}/bin
