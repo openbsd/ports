@@ -1,8 +1,7 @@
 bin/zsh
-bin/zsh-3.0.6
+bin/zsh-3.0.7
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/zsh.info %D/info/dir
 man/man1/zshcompctl.1
 man/man1/zshexpn.1

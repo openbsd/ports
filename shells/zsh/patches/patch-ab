@@ -1,21 +1,28 @@
---- Doc/Makefile.in.orig	Tue Aug  3 22:56:17 1999
-+++ Doc/Makefile.in	Tue Aug  3 22:57:17 1999
-@@ -91,7 +91,8 @@
+--- Doc/Makefile.in.orig	Mon Aug  2 01:54:47 1999
++++ Doc/Makefile.in	Tue Dec  7 17:16:03 1999
+@@ -27,7 +27,7 @@
+ SHELL = /bin/sh
+ 
+ # Program to format Texinfo source into Info files.
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ # Program to format Texinfo source into DVI files.
+ TEXI2DVI = texi2dvi
+ # Program to convert DVI files to PostScript
+@@ -91,6 +91,7 @@
  everything: all zsh_us.ps zsh_a4.ps zsh_toc.html
  
  zsh.info: zsh.texi
--	@$(MAKEINFO) -I$(srcdir) $(srcdir)/zsh.texi || { \
 +	@rm -f zsh.info*
-+	@$(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/zsh.texi || { \
+ 	@$(MAKEINFO) -I$(srcdir) $(srcdir)/zsh.texi || { \
  	echo Info documentation cannot be compiled without $(MAKEINFO). ; \
  	echo You can find precompiled info files in zsh-doc.tar.gz. ; }
- 
 @@ -125,7 +126,7 @@
  # install info pages, creating install directory if necessary
  install.info: zsh.info
  	$(top_srcdir)/mkinstalldirs $(infodir)
 -	for file in zsh.info zsh.info-[1-9]*; do \
-+	for file in zsh.info*; do \
++	for file in zsh.info; do \
  	  [ -f "$$file" ] && $(INSTALL_DATA) $$file $(infodir) ; \
  	done
  
