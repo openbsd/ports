@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/10/05 21:11:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2003/07/18 17:53:19 fgsch Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
@@ -33,6 +33,11 @@ CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 
 WRKDIST=	${WRKDIR}/pgp50i/src
+
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST= patch-* gcc-*
+.endif
 
 post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_pgp_include_pgpUsuals_h,v 1.1 2003/07/18 17:53:19 fgsch Exp $
+--- lib/pgp/include/pgpUsuals.h.orig	Sat Aug  9 18:44:58 1997
++++ lib/pgp/include/pgpUsuals.h	Thu Jul 17 20:55:40 2003
+@@ -52,7 +52,6 @@ typedef long int32;
+ #if ULONG_MAX == 0xfffffffffffffffful
+ typedef ulong bnword64;
+ #define BNWORD64 bnword64
+-#define HAVE64 1
+ #endif
+ #endif
+ 

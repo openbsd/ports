@@ -1,0 +1,10 @@
+$OpenBSD: gcc-patch-lib_pgp_hash_Makefile_in,v 1.1 2003/07/18 17:53:19 fgsch Exp $
+--- lib/pgp/hash/Makefile.in.orig	Fri Jul 18 12:01:53 2003
++++ lib/pgp/hash/Makefile.in	Fri Jul 18 12:02:23 2003
+@@ -10,3 +10,6 @@ OBJS= pgpHash.o pgpMD5.o pgpSHA.o pgpRIP
+ SHAREDHDRS= pgpHash.h
+ 
+ all:: DONE
++
++pgpSHA.o:
++	$(CC) $(CFLAGS) -O0 -c $<
