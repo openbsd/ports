@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/22 21:19:44 espie Exp $
 bin/pwm
 @man man/man1/pwm.1
 share/doc/pwm/
 share/doc/pwm/LICENSE
 share/doc/pwm/config.txt
 share/examples/pwm/
+@sample ${SYSCONFDIR}/pwm/
 share/examples/pwm/buttons-default.conf
+@sample ${SYSCONFDIR}/pwm/buttons-default.conf
 share/examples/pwm/keys-default.conf
+@sample ${SYSCONFDIR}/pwm/keys-default.conf
 share/examples/pwm/look-beoslike.conf
+@sample ${SYSCONFDIR}/pwm/look-beoslike.conf
 share/examples/pwm/look-brownsteel.conf
+@sample ${SYSCONFDIR}/pwm/look-brownsteel.conf
 share/examples/pwm/menus-default.conf
+@sample ${SYSCONFDIR}/pwm/menus-default.conf
 share/examples/pwm/pwm.conf
-@extraunexec rm -rf ${SYSCONFDIR}/pwm
+@sample ${SYSCONFDIR}/pwm/pwm.conf
