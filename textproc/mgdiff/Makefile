@@ -1,10 +1,4 @@
-# OpenBSD makefile for:    		mgdiff
-# Version required:     		1.0
-# Date created:         		May 21 1998
-# Whom:                 		Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/22 01:16:52 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/05/04 03:03:46 brad Exp $
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
@@ -14,12 +8,12 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	angelos@openbsd.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=      yes
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/mgdiff
 	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${PREFIX}/lib/X11/mgdiff
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${INSTALL_MAN} ${WRKSRC}/mgdiff.man ${PREFIX}/man/man1/mgdiff.1
 
 .include <bsd.port.mk>
