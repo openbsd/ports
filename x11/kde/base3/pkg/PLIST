@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/04 18:29:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/04/09 01:48:51 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -9,7 +9,11 @@ bin/kaddressbook
 bin/kappfinder
 bin/kate
 bin/kblankscrn.kss
+@owner root
+@mode u+s
 bin/kcheckpass
+@mode
+@owner
 bin/kcminit
 bin/kcmshell
 bin/kcontrol
@@ -38,7 +42,11 @@ bin/klipper
 bin/kmenuedit
 bin/konqueror
 bin/konsole
+@owner root
+@chmod u+s
 bin/konsole_grantpty
+@mode
+@owner
 bin/kpager
 bin/kpersonalizer
 bin/kpm
@@ -256,6 +264,9 @@ lib/libsensordisplays.la
 lib/libtaskbar.la
 lib/libtaskmanager.la
 libexec/genkdmconf
+@exec mkdir -p %D/share/config/kdm
+@exec %D/libexec/genkdmconf --in %D/share/config/kdm || true
+@unexec echo "Remove %D/share/config/kdm by hand"
 share/applnk/.directory
 share/applnk/.hidden/konqfilemgr.desktop
 share/applnk/Applications/.directory
