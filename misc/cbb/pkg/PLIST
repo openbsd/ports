@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/10 00:01:10 brad Exp $
 bin/cbb
 share/cbb/wrapper.pl
 share/cbb/categories.pl
