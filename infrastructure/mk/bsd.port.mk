@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.685 2005/03/13 22:51:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.686 2005/03/30 08:14:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2339,7 +2339,7 @@ _print-package-args:
 		IFS=:; read dep pkg pkgpath target; \
 		dir=$$pkgpath; ${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
-		: $${pkg:=$$default}; \
+		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
 		echo "-P $$pkgpath:$$pkg:$$default"; \
 	}
 .endfor
