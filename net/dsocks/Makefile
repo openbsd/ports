@@ -1,5 +1,8 @@
+# $OpenBSD: Makefile,v 1.2 2005/03/16 15:34:49 naddy Exp $
+
 COMMENT=		"SOCKS client wrapper for *BSD"
 DISTNAME=		dsocks-1.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://monkey.org/~dugsong/dsocks/

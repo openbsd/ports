@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:39:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/03/16 15:34:49 naddy Exp $
+@conflict cups-*
 bin/cancel
 bin/lp
 bin/lpq

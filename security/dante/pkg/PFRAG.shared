@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/02/10 18:50:47 robert Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/03/16 15:34:49 naddy Exp $
+@conflict dsocks-*
 @lib lib/libdsocks.so.1.0
 @lib lib/libsocks.so.1.0
