@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/07/28 02:11:37 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2002/10/30 00:35:33 naddy Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -45,8 +45,14 @@ LIB_DEPENDS+=	tcl83.1.3::lang/tcl/${TCL_VERSION}
 CFLAGS+=-I${LOCALBASE}/include/tcl${TCL_VERSION}
 CONFIGURE_ARGS+= --enable-tcl 
 CONFIGURE_ARGS+= --with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}
+# Regression suite requires Tcl.
+CONFIGURE_ARGS+= --enable-test
+
+do-regress:
+	@cd ${WRKBUILD}; tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl
 .else
 CONFIGURE_ARGS+= --disable-tcl
+NO_REGRESS=	Yes
 .endif
 
 post-install:
