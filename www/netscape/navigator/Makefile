@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/31 10:04:45 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/31 10:10:55 brad Exp $
 
-#ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386
 NEED_VERSION=	1.322
 
 PROGRAM_V=	4.75
