@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/02 20:59:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/02 21:18:27 angelos Exp $
 #
 
     SUBDIR += common
     SUBDIR += imm
+    SUBDIR += nte
     SUBDIR += rtptools
     SUBDIR += sdr
     SUBDIR += speak_freely
