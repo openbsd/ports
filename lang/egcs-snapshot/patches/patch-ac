@@ -1,0 +1,10 @@
+--- libstdc++/configure.in.orig	Thu Oct  1 00:58:32 1998
++++ libstdc++/configure.in	Thu Oct  1 00:59:19 1998
+@@ -49,6 +49,7 @@
+     *-*-irix[56]*)	frags="${frags} irix5.ml" ;;
+     *-*-linux*aout*)	;;
+     *-*-linux*)		frags="${frags} linux.ml" ;;
++	 *-*-openbsd*)		frags="${frags} openbsd.ml" ;;
+     *-*-sysv4*)		frags="${frags} elf.ml" ;;
+     *-*-solaris*)	frags="${frags} sol2shm.ml" ;;
+     *-*-sunos4*)	frags="${frags} sunos4.ml" ;;

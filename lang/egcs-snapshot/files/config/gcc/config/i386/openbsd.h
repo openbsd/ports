@@ -30,8 +30,13 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* there are conflicting reports about whether this system uses
-   a different assembler syntax.  wilson@cygnus.com says # is right. */
+/*	$OpenBSD: openbsd.h,v 1.1 1998/10/02 18:57:29 espie Exp $	*/
+
+/* There are conflicting reports about whether this system uses
+   a different assembler syntax.  wilson@cygnus.com says # is right.  */
+#undef COMMENT_BEGIN
+#define COMMENT_BEGIN "#"
+
 #undef ASM_APP_ON
 #define ASM_APP_ON "#APP\n"
 
@@ -58,7 +63,7 @@
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
-/* i386 netbsd still uses old binutils that don't insert nops by default
+/* i386 openbsd still uses old binutils that don't insert nops by default
    when the .align directive demands to insert extra space in the text
    segment.  */
 #undef ASM_OUTPUT_ALIGN

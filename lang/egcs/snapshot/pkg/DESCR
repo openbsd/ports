@@ -1,5 +1,34 @@
-This port is used for people who want/need to use a very recent version
-of egcs. It tracks the latest snapshots. At any given point, it's likely
-to be somewhat broken. Use egcs-stable for the released version.
+egcs is an experimental spin-off of gcc that started when people got 
+fed up waiting for gcc 2.8. As the C++ standard finally emerged,
+egcs people strove trying to implement as much of it as possible.
+Accordingly, egcs C++ compiler is more suitable for C++ development as
+gnu gcc.  Its library approaches the standard, template support is almost
+complete, namespace support is coming in, it also includes a newer
+scheduler (haifa) that gives improved results on HPRisc and Alpha
+architecture.  
 
-For more details, refer to to http://egcs.cygnus.org/
+There is some on-going work in egcs that makes it interesting to make
+a recent snapshot available. 
+
+As of ss-19980921, there are some problems: gmake bootstrap fails during the
+build of libstdc++. Restarting gmake from that point finishes
+the build. Accordingly, the tests show a regression in libstdc++... it
+seems that either the build is not truely okay, or eg++ has trouble finding
+some of its files...
+
+Notably, the standard C++ library has been updated to a version much closer 
+to the ANSI standard.  The namespace support is much better than the
+release version.
+
+Also, there is some on-going work in improving numerical computations
+with C++.  
+
+
+Finally, some flavors of the scheduler have been improved.
+For instance, there is a new sparc scheduler that is not available as
+a release yet.  
+
+On the other hand, work upon the integration of pgcc with mainline egcs
+is not ready yet.
+
+See http://egcs.cygnus.com for more details.

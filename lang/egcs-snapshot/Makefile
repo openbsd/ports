@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/25 22:45:26 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/02 18:57:28 espie Exp $
 #
 
 # This is a configuration file for egcs, recent snapshot
@@ -15,46 +15,48 @@ DISTNAME=	egcs-${LATEST}
 
 DISTFILES=	egcs-core-${LATEST}${EXTRACT_SUFX}
 DISTFILES+=     egcs-g++-${LATEST}${EXTRACT_SUFX}
+# see files/tests for testing procedure
+DISTFILES+=egcs-tests-${LATEST}${EXTRACT_SUFX}
+
 CATEGORIES=	lang 
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
 	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 
 MAINTAINER=	Marc.Espie@openbsd.org
 
-# Should be CONFIGURE_DEPENDS, if we had it
-DEPENDS=  ${PORTSDIR}/devel/autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
-ONLY_FOR_ARCHS= i386
+# will improve over time as more and more architectures are handled
+ONLY_FOR_ARCHS = i386
 
 GNU_CONFIGURE=	yes
 USE_GMAKE= yes
-MAKE_ENV="CFLAGS=-O2"
 
 # don't make bootstrap if you're impatient/you know what you're doing
 # use bootstrap-lean if you don't have room.
 ALL_TARGET=bootstrap
 
-# should remove --enable-shared for alpha
-# use --enable-haifa- on some archs (alpha, sparc, pa-risc)
+CONFIGURE_SCRIPT=../source/configure
 
-CONFIGURE_ARGS=--verbose --enable-shared --program-prefix=e
-INSTALL_TARGET=	install
+CONFIGURE_ENV=CFLAGS=-O2
+CONFIGURE_ARGS= --prefix=${PREFIX} \
+--verbose \
+--program-transform-name=s,^,e,
+
+.if (${MACHINE_ARCH} != "alpha")
+CONFIGURE_ARGS+=--enable-shared
+.endif
 
 # get openbsd configuration files where they should be
-post-extract:
-	cp -R files/* ${WRKSRC}
-	rm -rf ${WRKSRC}/texinfo
-
-# we should change libstdc++ name so that we will get the right one
 post-patch:
-	
-CONFIGURE_SCRIPT=../source/configure
+	cp -R ${FILESDIR}/config/* ${WRKSRC}
+	rm -rf ${WRKSRC}/texinfo ${WRKSRC}/gcc/ch
 
 # rebuild configure file after patching, then move file around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 # + kludge to build in a separate directory.
 pre-configure:
-	cd ${WRKSRC}/gcc && /usr/local/bin/autoconf
+	cd ${WRKSRC}/gcc && autoconf
 	mv ${WRKSRC} ${WRKDIR}/source
 	mkdir ${WRKSRC}
 

@@ -1,17 +1,27 @@
---- gcc/configure.in.orig	Fri Sep 25 15:26:12 1998
-+++ gcc/configure.in	Fri Sep 25 15:26:21 1998
-@@ -950,6 +950,14 @@
- 		tmake_file=t-netbsd
+--- gcc/configure.in.orig	Thu Oct  1 00:56:26 1998
++++ gcc/configure.in	Thu Oct  1 00:57:40 1998
+@@ -1003,15 +1003,21 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=i386/t-freebsd
  		;;
+-	# We are hoping OpenBSD is still close enough to NetBSD that we can
+-	# share the configurations.
  changequote(,)dnl
+-	i[34567]86-*-netbsd* | i[34567]86-*-openbsd*)
++	i[34567]86-*-netbsd*)
+ changequote([,])dnl
+ 		tm_file=i386/netbsd.h
+ 		# On NetBSD, the headers are already okay, except for math.h.
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
++		;;
++changequote(,)dnl
 +	i[34567]86-*-openbsd*)
 +changequote([,])dnl
 +		tm_file=i386/openbsd.h
 +		# On OpenBSD, the headers are already okay, except for math.h.
 +		fixincludes=fixinc.wrap
 +		tmake_file=t-openbsd
-+		;;
-+changequote(,)dnl
+ 		;;
+ changequote(,)dnl
  	i[34567]86-*-coff*)
- changequote([,])dnl
- 		tm_file=i386/i386-coff.h

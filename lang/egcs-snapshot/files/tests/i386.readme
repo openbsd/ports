@@ -1,0 +1,32 @@
+Here are the test results on i386 for
+the 980921 snapshot:
+
+
+                === libio Summary ===
+
+# of expected passes            40
+
+                === libstdc++ Summary ===
+
+# of expected passes            27
+# of unexpected failures        1
+# of expected failures          2
+
+                === gcc Summary ===
+
+# of expected passes            7573
+# of unexpected failures        15
+# of expected failures          7
+# of unsupported tests          12
+
+                === g++ Summary ===
+
+# of expected passes            4459
+# of unexpected failures        22
+# of unexpected successes       1
+# of expected failures          88
+# of untested testcases         7
+
+
+Some more thorough analysis will be needed, compared to 1.1b, since 
+there are more results, hence everything is not that easy to interpret.
