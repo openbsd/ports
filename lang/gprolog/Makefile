@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/09/26 14:48:29 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/09/26 15:21:13 espie Exp $
 
 COMMENT=		Prolog compiler
 
@@ -22,17 +22,12 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gprolog/}
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf dest no-autoheader
 
-# --prefix overwrited by --with-install-dir
-#CONFIGURE_ARGS+= --with-install-dir=${WRKINST}${LOCALBASE} --without-links-dir --disable-ebp --disable-fast-call --disable-piped-consult --disable-gui-console --disable-sockets --disable-fd-solver --with-examples-dir=${WRKINST}${LOCALBASE}/share/examples/gprolog --with-html-dir=${WRKINST}${LOCALBASE}/share/doc/gprolog/html --with-doc-dir=${WRKINST}${LOCALBASE}/share/doc/gprolog
 
-CONFIGURE_ARGS+= --with-install-dir='$${DESTDIR}${PREFIX}' \
+CONFIGURE_ARGS+= --with-install-dir='$${DESTDIR}${PREFIX}/libdata/gprolog' \
 	--without-links-dir \
 	--disable-ebp \
-	--disable-fast-call \
 	--disable-piped-consult \
 	--disable-gui-console \
-	--disable-sockets \
-	--disable-fd-solver \
 	--with-examples-dir='$${DESTDIR}${PREFIX}/share/examples/gprolog' \
 	--with-html-dir='$${DESTDIR}${PREFIX}/share/doc/gprolog/html' \
 	--with-doc-dir='$${DESTDIR}${PREFIX}/share/doc/gprolog'
@@ -41,5 +36,10 @@ WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
 INSTALL_TARGET=        install-strip
 
+post-install:
+	for i in gplc hexgplc gprolog pl2wam wam2ma ma2asm fd2c; do \
+		ln -sf ${TRUEPREFIX}/lib/gprolog/$$i ${PREFIX}/bin/$$i; \
+	done
+	
 
 .include <bsd.port.mk>
