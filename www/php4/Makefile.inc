@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2002/06/24 19:17:49 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2002/06/24 19:36:07 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -38,7 +38,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--disable-rpath \
 			--with-config-file-path=${PHP_CONFIG_FILE} \
-			--with-pear \
 			--enable-inline-optimization \
 			--with-pic
 
