@@ -25,7 +25,7 @@ add the following lines to /etc/rc.local:
 
 if [ -x @PREFIX@/bin/pgwrap -a -x @PREFIX@/pgsql/bin/postmaster ]; then
 	@PREFIX@/bin/pgwrap -o /var/pgsql/log postmaster -i -S -o -F
-	echo -n 'pgsql'
+	echo -n ' pgsql'
 fi
 
 Don't forget to add @PREFIX@/pgsql/lib directory to shared libraries path in
@@ -79,4 +79,4 @@ unless already set):
 
 You must have root privilegies to run `pgwrap'.
 
-$OpenBSD: README.OpenBSD.in,v 1.1 1999/11/11 02:40:05 kevlo Exp $
+$OpenBSD: README.OpenBSD.in,v 1.2 1999/12/15 06:34:06 form Exp $
