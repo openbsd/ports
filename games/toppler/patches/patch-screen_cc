@@ -1,0 +1,12 @@
+$OpenBSD: patch-screen_cc,v 1.1 2002/10/09 12:21:43 naddy Exp $
+--- screen.cc.orig	Wed Oct  9 13:43:55 2002
++++ screen.cc	Wed Oct  9 13:44:10 2002
+@@ -540,7 +540,7 @@ void scr_writetext(long x, long y, const
+   }
+ }
+ 
+-void scr_putbar(int x, int y, int br, int h, unsigned char col = 0) {
++void scr_putbar(int x, int y, int br, int h, unsigned char col) {
+   SDL_Rect r;
+   r.w = br;
+   r.h = h;
