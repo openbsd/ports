@@ -2,5 +2,8 @@ bin/xtraceroute
 share/xtraceroute/earth.tif
 share/xtraceroute/hosts.cache
 share/xtraceroute/networks.cache
+share/locale/es/LC_MESSAGES/xtraceroute.mo
+share/locale/ja/LC_MESSAGES/xtraceroute.mo
+share/locale/fr/LC_MESSAGES/xtraceroute.mo
 man/man1/xtraceroute.1
 @dirrm share/xtraceroute
