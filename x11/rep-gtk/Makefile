@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/09 15:27:00 naddy Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
@@ -29,6 +29,6 @@ USE_X11=	Yes
 USE_GMAKE=      Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --without-gdk-pixbuf --without-gnome
+CONFIGURE_ARGS+= --without-gdk-pixbuf --without-gnome --without-libglade
 
 .include <bsd.port.mk>
