@@ -1,16 +1,9 @@
-# Ports collection makefile for:  tcpshow
-# Version required:     	  1.0
-# Date created:			  17 Jul 1998
-# Whom:				  Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:47 form Exp $
-# FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp
-#
+# $OpenBSD: Makefile,v 1.5 1999/02/25 23:53:08 brad Exp $
+# $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-MASTER_SITES=	http://www.freebsd.org/~obrien/ \
-		http://www.cs.berkeley.edu/~daw/mike/
+MASTER_SITES=	http://www.freebsd.org/~obrien/
 
 DISTFILES=	tcpshow.c tcpshow.1
 
