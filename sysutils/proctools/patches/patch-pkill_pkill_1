@@ -1,4 +1,4 @@
-$OpenBSD: patch-pkill_pkill_1,v 1.1.1.1 2003/01/06 18:03:44 lebel Exp $
+$OpenBSD: patch-pkill_pkill_1,v 1.2 2003/03/28 22:11:24 david Exp $
 Document the -V flag.
 Document return values.
 Added NOTES section.
@@ -9,7 +9,7 @@ Added NOTES section.
  .\"USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  .\"
 -.Dd May 21, 2001
-+.Dd Jan 6, 2003
++.Dd January 6, 2003
  .Dt PKILL 1
  .Os
  .Sh NAME
