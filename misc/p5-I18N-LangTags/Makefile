@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/11/17 18:59:31 pvalchev Exp $
+
+IGNORE=         "comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"deal with RFC-1766-style language tags"
 
 DISTNAME=	I18N-LangTags-0.27
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/30 00:07:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/17 18:59:31 pvalchev Exp $
 
 IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
@@ -16,9 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Locale/}
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::misc/p5-I18N-LangTags
 
 CONFIGURE_STYLE=	perl
 
