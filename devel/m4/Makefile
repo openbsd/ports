@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/15 09:49:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/15 09:59:58 fgsch Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 DISTNAME=	m4-1.4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
 NEED_VERSION=	1.303
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= m4
 
 MAINTAINER=	niklas@openbsd.org
@@ -25,6 +25,5 @@ CONFIGURE_ARGS=		--prefix='$${DESTDIR}${PREFIX}' --program-prefix=g
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gm4
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
-	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
