@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/02 19:53:58 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/07/04 13:07:53 fgsch Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 VERSION=	2.511
@@ -31,8 +31,8 @@ FAKE_FLAGS=	IP="${WRKINST}" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:
-	@rm -f ${PREFIX}/bin/epic
-	@cd ${PREFIX}/bin; ln -sf epic-EPIC4pre${VERSION} epic
+	@cd ${PREFIX}/bin && ln -sf epic-EPIC4pre${VERSION} epic
+	strip ${PREFIX}/bin/epic
 	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/share/epic && tar -zxf ${FULLDISTDIR}/epic4pre2-help.tar.gz
 
