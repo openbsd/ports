@@ -1,5 +1,5 @@
 --- ltconfig.orig	Thu Sep 25 08:22:04 1997
-+++ ltconfig	Sat Oct 21 13:17:57 2000
++++ ltconfig	Mon Dec 25 16:00:59 2000
 @@ -451,12 +451,13 @@
    esac
  fi
@@ -56,7 +56,7 @@
 +      ;;
 +      *)
 +	archive_cmds='$CC -shared $pic_flag -o $lib$libobjs$deplibs'
-+        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
 +      ;;
 +    esac
 +    ;;
