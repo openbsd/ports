@@ -1,6 +1,6 @@
---- ac-tools/ltconfig.orig	Thu Aug  5 07:12:42 1999
-+++ ac-tools/ltconfig	Wed Mar  7 12:16:56 2001
-@@ -1105,6 +1105,9 @@
+--- ac-tools/ltconfig.orig	Mon Jan 15 15:46:31 2001
++++ ac-tools/ltconfig	Wed Jun 27 09:16:04 2001
+@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1391,10 +1394,21 @@
+@@ -1402,10 +1405,21 @@ else
      ;;
  
    openbsd*)
@@ -34,7 +34,7 @@
      ;;
  
    os2*)
-@@ -1955,13 +1969,10 @@
+@@ -2021,13 +2035,10 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
