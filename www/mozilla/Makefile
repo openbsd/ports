@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2003/04/13 02:40:48 david Exp $
 # Uses pthreads
 
-COMMENT=	"free version of the Netscape browser"
+COMMENT=	"open source version of the Netscape browser"
 
-VER=		0.9.3
+VER=		1.4a
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
@@ -12,6 +12,8 @@ BROKEN=		core dumps in dynamic library constructor
 
 CATEGORIES=	www
 
+HOMEPAGE=	http://www.mozilla.org/
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,42 +21,32 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
-#BUILD_DEPENDS=	zip:archivers/zip
-#LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-#		ORBit.2:devel/ORBit \
-#		jpeg.9:graphics/jpeg \
-#		png.4:graphics/png \
-#		mng.1:graphics/libmng \
-#		gdk-pixbuf.2:graphics/gdk-pixbuf
+BUILD_DEPENDS=	:zip->=2.3:archivers/zip
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
+		glib.1.2::devel/glib \
+		IDL.4::devel/ORBit \
+		jpeg.62::graphics/jpeg \
+		png.3::graphics/png \
+		mng.1::graphics/libmng
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=					\
-		--disable-cpp-exceptions	\
-		--disable-cpp-rtti		\
-		--disable-debug			\
-		--disable-idltool		\
-		--disable-md			\
-		--disable-pedantic		\
-		--disable-xterm-updates		\
-		--enable-crypto			\
-		--enable-double-buffer		\
-		--enable-editor			\
-		--enable-mailnews		\
-		--enable-mathml			\
-		--enable-optimize="${CFLAGS}"	\
-		--enable-pics			\
-		--enable-svg			\
-		--enable-tests			\
-		--enable-toolkit=gtk		\
-		--enable-x11-shm		\
-		--enable-chrome-format=jar	\
-		--with-jpeg=${LOCALBASE}	\
-		--with-png=${LOCALBASE}		\
-		--with-mng=${LOCALBASE}		\
-		--with-pthreads
+		--with-system-jpeg=${LOCALBASE}	\
+		--with-system-mng=${LOCALBASE}	\
+		--with-system-png=${LOCALBASE}	\
+		--with-system-zlib=/usr/lib	\
+		--disable-ldap
+# disable this for now
+#		--enable-crypto			\
+# does not pass NSPR tests
+#		--with-pthreads			\
+# enable these once Mozilla actually runs
+#		--disable-debug			\
+#		--enable-optimize="${CFLAGS}"	\
+#		--disable-tests			\
 
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS="-pthread" \
 		CFLAGS="" CXXFLAGS=""
