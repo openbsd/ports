@@ -1,0 +1,99 @@
+$OpenBSD: patch-fping_c,v 1.1 2001/12/06 06:05:43 form Exp $
+--- fping.c.orig	Thu Jan  9 02:29:43 1997
++++ fping.c	Thu Dec  6 11:44:20 2001
+@@ -186,7 +186,11 @@ extern "C" {
+ 
+ #include <string.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/time.h>
+ #include <sys/socket.h>
+ 
+@@ -217,10 +221,19 @@ extern "C" {
+ 
+ /* externals */
+ 
++#if !(defined(BSD) && (BSD >= 199103))
++extern char *sys_errlist[];
++#endif
++
++#ifndef __OpenBSD__
+ extern char *optarg;
+ extern int optind,opterr;
+-extern char *sys_errlist[];
+ extern int h_errno;
++#endif
++
++#ifdef HAVE_PROGNAME
++extern char *__progname;
++#endif
+ 
+ #ifdef __cplusplus
+ }
+@@ -473,9 +486,14 @@ int main(int argc, char **argv)
+   s = socket(AF_INET, SOCK_RAW, proto->p_proto);
+   if (s<0) errno_crash_and_burn("can't create raw socket");
+ 
+-  /*seteuid(getuid());*/
++  seteuid(getuid());
++  setuid(getuid());
+ 
+-  prog = argv[0];
++#ifdef HAVE_PROGNAME
++  prog = __progname;
++#else
++  prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
++#endif
+   ident = getpid() & 0xFFFF;
+ 
+   verbose_flag = 1;
+@@ -662,8 +680,12 @@ int main(int argc, char **argv)
+              ++argv;
+   } else if (filename) {
+          FILE *ping_file;
+-         char line[132];
+-         char host[132],*p;
++#ifdef MAXHOSTNAMELEN
++         char line[MAXHOSTNAMELEN], host[MAXHOSTNAMELEN];
++#else
++         char line[256], char host[256];
++#endif
++         char *p;
+          if (strcmp(filename,"-")==0) {
+              ping_file=fdopen(0,"r");
+          } else {
+@@ -671,8 +693,11 @@ int main(int argc, char **argv)
+          }
+          if (!ping_file) errno_crash_and_burn("fopen");
+          while(fgets(line,132,ping_file)) {
+-           if (sscanf(line,"%s",host) != 1)
+-	     continue;
++#ifdef HAVE_SNPRINTF
++           snprintf(host,sizeof(host),"%s",line);
++#else
++           sprintf(host,"%s",line);
++#endif
+               if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
+                 continue;
+ 	   p = cpystr(host);
+@@ -1099,6 +1124,8 @@ int wait_for_reply()
+ 
+   result=recvfrom_wto(s,buffer,4096,
+                      (struct sockaddr *)&response_addr,select_time);
++  /* get time of receipt as close to the real time as possible */
++  gettimeofday(&current_time,&tz);
+   if (result<0) { return 0; } /* timeout */
+   
+ #ifdef DEBUG
+@@ -1144,7 +1171,6 @@ int wait_for_reply()
+   h=table[n];
+ 
+   /* received ping is cool, so process it */
+-  gettimeofday(&current_time,&tz);
+   h->waiting = 0;
+   h->timeout = timeout;
+   h->num_recv++;  h->num_recv_i++;

@@ -1,34 +1,30 @@
+# $OpenBSD: Makefile,v 1.8 2001/12/06 06:05:43 form Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
-# $OpenBSD: Makefile,v 1.7 2001/08/05 20:46:50 jsyn Exp $
 
-COMMENT=	"quickly ping N hosts w/o flooding the network"
+COMMENT=		"quickly ping N hosts w/o flooding the network"
 
-DISTNAME=	part01
-PKGNAME=	fping-1.20
-CATEGORIES=	net
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.digital.com/pub/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.wustl.edu/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.isnet.is/pub/Usenet/Usenet.src/comp.sources.unix/v26/fping/
-
-EXTRACT_SUFX=	.Z
-EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_SED_FIX_SHAR} | /bin/sh;;
+DISTNAME=		fping-2.2b1
+CATEGORIES=		net
+NEED_VERSION=		1.500
+MASTER_SITES=		ftp://ftp.stanford.edu/dept/networking/pub/fping/ \
+			ftp://sntop.sourceforge.net/pub/sntop/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
+MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
-DIST_SUBDIR=	fping
-WRKDIST=	${WRKDIR}
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--bindir=${PREFIX}/sbin
+COPTS=			-DHAVE_SNPRINTF -DHAVE_PROGNAME
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/fping ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKBUILD}/fping.man ${PREFIX}/man/man8/fping.8
+	${INSTALL_MAN} ${WRKBUILD}/fping.8 ${PREFIX}/man/man8
 	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/fping
-	${INSTALL_MAN} ${WRKBUILD}/README* ${PREFIX}/share/doc/fping
+	${INSTALL_MAN} ${WRKBUILD}/COPYING ${PREFIX}/share/doc/fping
+	${INSTALL_MAN} ${WRKBUILD}/README ${PREFIX}/share/doc/fping
 
 .include <bsd.port.mk>
