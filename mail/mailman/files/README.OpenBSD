@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2001/11/12 13:29:21 wilfried Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -82,8 +82,8 @@ OpenBSD specific comments added. It's a good time to become root, now.
   Specifically check to make sure the variables DEFAULT_HOST_NAME
   and DEFAULT_URL are correct.  The latter MUST end in a slash.
 
-  The install process will copy an existing mm_cfg.py file to
-  mm_cfg.py.old so you can freely make changes to this file.
+  The (un-)install process will not (delete/)overwrite an existing 
+  mm_cfg.py file so you can freely make changes to it.
 
 - Create the site password using:
 
