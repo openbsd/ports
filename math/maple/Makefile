@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/18 15:32:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/22 10:18:26 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 # Directory where the maple CDROM was mounted
 CDROM?=/cdrom
+NEED_VERSION=1.116
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
@@ -45,14 +46,14 @@ post-extract:
 ALL_TARGET=resolv_display
 
 do-fetch:
-	@mkdir -p ${_DISTDIR}
+	@mkdir -p ${FULLDISTDIR}
 	@cd ${CDROM}; \
 	for file in ${DISTFILES}; do\
-		[ -f ${_DISTDIR}/$$file ] || \
+		[ -f ${FULLDISTDIR}/$$file ] || \
 		if [ -f $$file ]; \
 		then\
-			mkdir -p ${_DISTDIR}/`dirname $$file`;\
-			ln -sf ${CDROM}/$$file ${_DISTDIR}/$$file;\
+			mkdir -p ${FULLDISTDIR}/`dirname $$file`;\
+			ln -sf ${CDROM}/$$file ${FULLDISTDIR}/$$file;\
 		else\
 			${ECHO} "File $$file not found. Is your cdrom mounted as ${CDROM} ?";\
 		fi\
@@ -62,7 +63,7 @@ MAPLE_SCRIPTS=maple march mint updtsrc xmaple
 
 do-install:
 	@mkdir ${MAPLE_DIR} || ${ECHO} "${MAPLE_DIR} already exists"
-	@cd ${MAPLE_DIR} && yes | ${_DISTDIR}/install
+	@cd ${MAPLE_DIR} && yes | ${FULLDISTDIR}/install
 	@${ECHO} "But this installation script does it for you"
 	@for file in ${MAPLE_SCRIPTS}; do\
 		sed -e 's,/usr/local/maple,${MAPLE_DIR},' ${MAPLE_DIR}/bin/$$file >${WRKDIR}/$$file; \
