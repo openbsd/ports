@@ -1,0 +1,7 @@
+Provides code to generate responses to common SASL mechanisms, including:
+
+- Digest-MD5
+- CramMD5
+- Plain
+- Anonymous
+- Login (Pseudo mechanism)
