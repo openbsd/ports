@@ -1,0 +1,25 @@
+$OpenBSD: patch-etc_jesred_conf,v 1.1.1.1 2001/08/22 17:42:11 pvalchev Exp $
+--- etc/jesred.conf.orig	Fri Aug 14 22:17:54 1998
++++ etc/jesred.conf	Wed Aug 22 10:47:21 2001
+@@ -1,17 +1,17 @@
+ # file with IP addresses, for which URL rewriting is [not] allowed
+-allow = /local/squid/etc/redirect.acl
++allow = /etc/jesred/redirect.acl
+ 
+ # file with rules for URL rewriting
+-rules = /local/squid/etc/redirect.rules
++rules = /etc/jesred/redirect.rules
+ 
+ # log file for general, error and debug messages (empty value or commenting
+ # this out disables logging)
+-redirect_log = /local/squid/logs/redirect.log
++redirect_log = /var/squid/logs/redirect.log
+ 
+ # log file for URL rewrites (empty value or commenting this out disables
+ # logging of URL rewrites)
+ # Log file format: Timestamp Client/Ident URL RURL NO
+-rewrite_log = /local/squid/logs/rewrite.log
++rewrite_log = /var/squid/logs/rewrite.log
+ 
+ # Debug mode: if set to yes and DEBUG option was compiled in, this enables
+ # debug logging to redirect_log

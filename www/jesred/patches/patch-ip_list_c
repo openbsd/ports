@@ -1,0 +1,16 @@
+$OpenBSD: patch-ip_list_c,v 1.1.1.1 2001/08/22 17:42:11 pvalchev Exp $
+--- ip_list.c.orig	Wed Apr 11 14:14:45 2001
++++ ip_list.c	Wed Apr 11 14:15:11 2001
+@@ -96,10 +96,10 @@
+  *   re-implementations of code complying to this set of standards.  
+  */
+ 
+-#ifdef __FreeBSD__
++#ifdef __OpenBSD__
+ #  include <stddef.h>
+ #  include <sys/types.h>
+-#endif /* __FreeBSD__ */
++#endif /* __OpenBSD__ */
+ 
+ #include<netinet/in.h>
+ #include<arpa/inet.h>
