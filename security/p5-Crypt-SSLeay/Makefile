@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/05/16 09:44:29 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"library to provide LWP https support via OpenSSL"
 
-DISTNAME=	Crypt-SSLeay-0.45
+DISTNAME=	Crypt-SSLeay-0.51
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
