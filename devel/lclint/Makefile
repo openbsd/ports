@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/10/04 23:47:57 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/04 23:54:58 espie Exp $
 
 COMMENT=	"advanced lint: statically check C programs"
 
@@ -51,7 +51,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cd ${DOCDIR} && tar -zxv -s ,lclint-guide/,, -f ${FULLDISTDIR}/${GUIDE} 
 
-test: install
-	@cd ${WRKSRC} && ${MAKE_PROGRAM} test
-	
+REGRESS_DEPENDS=::devel/lclint
+REGRESS_TARGET=test
+
 .include <bsd.port.mk>
