@@ -1,0 +1,133 @@
+--- Src/Display_x.i.bak.orig	Wed Aug  6 20:56:26 1997
++++ Src/Display_x.i	Thu Jan 11 02:58:27 2001
+@@ -4,6 +4,7 @@
+  *
+  *  Frodo (C) 1994-1997 Christian Bauer
+  *  X11 stuff by Bernd Schmidt/Lutz Vieweg
++ *  Support for visuals >8 bits by Michael Krause and Marc Espie
+  */
+ 
+ #include "CmdPipe.h"
+@@ -35,7 +36,9 @@ static XImage *img;
+ static Visual *vis;
+ static XVisualInfo visualInfo;
+ static int bitdepth;
+-static char *bufmem;
++static char *bufmem, *bufmem8;
++static uint32 trans[1<<12];
++static uint32 eight2thirtytwo[16];
+ static int hsize;
+ 
+ // For LED error blinking
+@@ -382,13 +385,10 @@ int init_graphics(void)
+ 
+ 	screen = XDefaultScreen(display);
+ 	rootwin = XRootWindow(display, screen);
+-#if 0  
+ 	if (XMatchVisualInfo(display, screen, 16, TrueColor, &visualInfo)) {
++	} else if (XMatchVisualInfo(display, screen, 32, TrueColor, &visualInfo)) {
+ 	} else if (XMatchVisualInfo(display, screen, 24, TrueColor, &visualInfo)) {
+-	} else 
+-#endif
+-	if (XMatchVisualInfo(display, screen, 8, PseudoColor, &visualInfo)) {
+-		/* for our HP boxes */
++	} else if (XMatchVisualInfo(display, screen, 8, PseudoColor, &visualInfo)) {
+ 	} else if (XMatchVisualInfo(display, screen, 8, GrayScale, &visualInfo)) {
+ 	} else {
+ 		fprintf(stderr, "Can't obtain appropriate X visual\n");
+@@ -398,7 +398,7 @@ int init_graphics(void)
+ 	vis = visualInfo.visual;
+ 	bitdepth = visualInfo.depth;
+ 	pixbytes = (bitdepth == 24 || bitdepth == 32 ? 4 : bitdepth == 12 || bitdepth == 16 ? 2 : 1);
+-	fprintf(stderr, "Using %d bit visual\n", bitdepth);
++	fprintf(stderr, "Using %d bit visual%s", bitdepth, bitdepth>8 ? " - please use 8 bits for highest performance!\n" : "\n");
+ 
+ 	hsize = (DISPLAY_X + 3) & ~3;
+ 
+@@ -419,6 +419,10 @@ int init_graphics(void)
+ 	img = XCreateImage(display, vis, bitdepth, ZPixmap, 0, bufmem, hsize, DISPLAY_Y, 32, 0);
+ #endif
+ 
++	if(bitdepth > 8) {
++	    bufmem8 = (char*)malloc(hsize * DISPLAY_Y);
++	}
++
+ 	cmap = XCreateColormap(display, rootwin, vis, AllocNone);
+ 
+ 	XParseColor(display, cmap, "#000000", &black);
+@@ -484,6 +488,33 @@ void C64Display::Update(void)
+ {
+ 	// Update C64 display
+ 	XSync(display, 0);
++
++	if(bitdepth == 16) {
++	    // Best thing would be to change
++	    // VIC.cpp so it could render directly into 16-bit or 32-bit
++	    // memory instead of into an 8-bit chunky buffer.
++	    uint16 *p = (uint16*)bufmem8, *x = p + hsize*DISPLAY_Y/2;
++	    uint32 *d = (uint32*)bufmem;
++	    while(p < x) {
++		*d++ = trans[*p++ & 0x0fff];
++	    }
++#if 0
++	    // Just a plain version. Might be necessary on non-i386
++	    // machines?
++	    uint8 *p = (uint8*)bufmem8, *x = p + hsize*DISPLAY_Y;
++	    uint16 *d = (uint16*)bufmem;
++	    while(p < x) {
++		*d++ = eight2sixteen[*p++];
++	    }
++#endif
++	} else if (bitdepth == 32 || bitdepth == 24) {
++	    uint8 *p = (uint8*)bufmem8, *x = p + hsize*DISPLAY_Y;
++	    uint32 *d = (uint32*)bufmem;
++	    while(p < x) {
++		*d++ = eight2thirtytwo[*p++];
++	    }
++    	}
++
+ #if defined(X_USE_SHM)
+ 	XShmPutImage(display, mywin, black_gc, img, 0, 0, 0, 0, DISPLAY_X, DISPLAY_Y, 0);
+ #else
+@@ -566,7 +597,7 @@ void C64Display::Speedometer(int speed)
+ 
+ uint8 *C64Display::BitmapBase(void)
+ {
+-	return (uint8 *)bufmem;
++	return (uint8*)(bitdepth>8 ? bufmem8 : bufmem);
+ }
+ 
+ 
+@@ -776,14 +807,32 @@ void C64Display::InitColors(uint8 *color
+ 	int i;
+ 	XColor col;
+ 	char str[20];
++	uint16 eight2sixteen[16];
+ 
+ 	for (i=0; i< 256; i++) {
++	    if(bitdepth == 16) {
++		colors[i] = i & 0x0f;
++		if(i < 16) {
++		    eight2sixteen[i] = ((uint16(palette_red[i]) << 8) & 0xf800) | ((uint16(palette_green[i]) << 3) & 0x07e0) | (palette_blue[i] >> 3);
++		}
++	    } else if(bitdepth == 32 || bitdepth == 24) {
++	    	colors[i] = i & 0x0f;
++		if(i <16) {
++		    eight2thirtytwo[i] = (uint32(palette_red[i]) << 16) | (uint32(palette_green[i]) << 8) | palette_blue[i];
++		}
++	    } else {
+ 		sprintf(str, "rgb:%x/%x/%x", palette_red[i & 0x0f], palette_green[i & 0x0f], palette_blue[i & 0x0f]);
+ 		XParseColor(display, cmap, str, &col);
+ 		if (XAllocColor(display, cmap, &col))
+ 			colors[i] = col.pixel;
+ 		else
+ 			fprintf(stderr, "Couldn't get all colors\n");
++	    }
++	}
++
++	// Table to translate two 8-bit src -> two 16-bit dest
++	for(i=0; i<1<<12;i++) {
++	    trans[i] = eight2sixteen[i & 0x0f] | (eight2sixteen[i >> 8] << 16);
+ 	}
+ }
+ 
