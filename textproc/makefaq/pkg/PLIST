@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/16 21:09:00 xsa Exp $
+bin/makefaq
+man/man1/makefaq.1
+share/doc/makefaq/faq-output.xml
+share/doc/makefaq/faq.css
+share/doc/makefaq/faq.dat
+share/doc/makefaq/faq.html
+share/doc/makefaq/faq.txt
+share/doc/makefaq/faq.xml
+share/doc/makefaq/faqfooter.html
+share/doc/makefaq/faqfooter.txt
+share/doc/makefaq/faqfooter.xml
+share/doc/makefaq/faqheader.html
+share/doc/makefaq/faqheader.txt
+share/doc/makefaq/faqheader.xml
+share/doc/makefaq/makefaq-xml-1-0.dtd
+@dirrm share/doc/makefaq

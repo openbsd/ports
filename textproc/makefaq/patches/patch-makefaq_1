@@ -1,0 +1,59 @@
+$OpenBSD: patch-makefaq_1,v 1.1.1.1 2004/02/16 21:09:00 xsa Exp $
+--- makefaq.1.orig	2002-11-11 12:49:45.000000000 +0100
++++ makefaq.1	2004-02-16 21:21:35.000000000 +0100
+@@ -3,15 +3,15 @@
+ .\" <http://shell.ipoline.com/~elmert/hacks/docbook2X/> 
+ .\" Please send any bug reports, improvements, comments, patches, 
+ .\" etc. to Steve Cheng <steve@ggi-project.org>.
+-.TH "MAKEFAQ.PY" "1" "11 Nov 2002" "" ""
++.TH "MAKEFAQ" "1" "11 Nov 2002" "" ""
+ .SH NAME
+-makefaq.py \- creates a FAQ HTML page or text file
++makefaq \- creates a FAQ HTML page or text file
+ .SH SYNOPSIS
+ .sp
+-\fBmakefaq.py [-h] [-v] [-n] [-N] [-l] [-j] [-s] [-r 1] [-c config-name] [-i input-file] [-o output-file] [-t header-file] [-b footer-file] [-d delimiter]\fR
++\fBmakefaq [-h] [-v] [-n] [-N] [-l] [-j] [-s] [-r 1] [-c config-name] [-i input-file] [-o output-file] [-t header-file] [-b footer-file] [-d delimiter]\fR
+ .SH "DESCRIPTION"
+ .PP
+-\fBmakefaq.py\fR is a Python program that creates a Frequently 
++\fBmakefaq\fR is a Python program that creates a Frequently 
+ Asked Questions (FAQ) HTML page or text file from a specially formatted
+ text data file.
+ .SH "OPTIONS"
+@@ -64,10 +64,10 @@ default is the pipe character ('|')
+ It has no effect if the '-r' option is not used.
+ .SH "EXAMPLE"
+ .PP
+-\fBmakefaq.py -c default -i input.dat -o output.html\fR
++\fBmakefaq -c default -i input.dat -o output.html\fR
+ .SH "CONFIGURATIONS"
+ .PP
+-makefaq.py includes five configurations in the code:
++makefaq includes five configurations in the code:
+ .sp
+ .nf
+ default - standard files, writes to faq.html
+@@ -170,11 +170,11 @@ the locale, the easiest option is to use
+ command-line option to set the locale to whatever you want.
+ For example:
+ .PP
+-\fB\&./makefaq.py -L 'fr_FR'\fR
++\fB\&./makefaq -L 'fr_FR'\fR
+ .PP
+ It will work fine with any other command-line options.
+ .PP
+-You also can edit the makefaq.py file directly and change
++You also can edit the makefaq file directly and change
+ the LOCALE variable at the very top of the file. Note that 
+ this variable is ONLY consulted if LANG is *NOT* defined
+ in your operating system environment. If LANG *is* defined,
+@@ -199,7 +199,7 @@ of text that looks like:
+ .sp
+ .fi
+ .PP
+-to the function "LocalizeStrings" inside of makefaq.py. 
++to the function "LocalizeStrings" inside of makefaq. 
+ I would also ask that you send the information about your
+ locale and text strings to me at 'dyork@Lodestar2.com'
+ so that I can add them to the program for others to use.
