@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/04/09 22:29:15 espie Exp $
+--- configure.in.orig	Tue Apr  9 03:16:46 2002
++++ configure.in	Tue Apr  9 03:16:59 2002
+@@ -906,6 +906,7 @@ AC_MSG_RESULT($kde_cv_have_struct_ucred)
+ if test "$kde_cv_have_struct_ucred" = yes; then
+    AC_DEFINE(HAVE_STRUCT_UCRED,1, [Define if struct ucred is present from sys/socket.h])
+ fi
++AC_CHECK_FUNCS(getpeereid)
+ 
+ # don't use it yet
+ HELP_SUBDIR=kdoctools
