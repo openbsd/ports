@@ -1,0 +1,27 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
+#
+# icecast de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/icecast
+LOG_DIR=/var/log/icecast
+
+if [ -d ${CONFIG_DIR} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| these steps as root:"
+    echo "|"
+    echo "|           rm -rf ${CONFIG_DIR}"
+    echo "|           rm -rf ${LOG_DIR}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0

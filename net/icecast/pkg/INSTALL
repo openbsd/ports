@@ -1,0 +1,74 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
+#
+# Pre/post-installation setup of icecast
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/icecast
+CONFIG_FILE=${CONFIG_DIR}/icecast.conf
+LOG_DIR=/var/log/icecast
+
+install -d -o root -g wheel -m 755 ${LOG_DIR}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files, ${PREFIX}/share/examples/icecast/icecast.conf.dist,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install the icecast configuration files from the samples
+#
+do_install()
+{
+    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
+    install -o root -g wheel -m 644 \
+	${PREFIX}/share/examples/icecast/icecast.conf.dist ${CONFIG_FILE}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files in ${CONFIG_DIR},"
+    echo "| have been installed.  Please view these files and change"
+    echo "| the configuration to meet your needs"
+    echo "+---------------"
+    echo
+
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f $CONFIG_FILE ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

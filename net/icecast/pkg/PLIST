@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
+bin/icecast
+share/doc/icecast/AUTHORS
+share/doc/icecast/BUGS
+share/doc/icecast/CHANGES
+share/doc/icecast/COPYING
+share/doc/icecast/FAQ
+share/doc/icecast/README
+share/doc/icecast/manual.html
+share/examples/icecast/groups.aut.dist
+share/examples/icecast/icecast.conf.dist
+share/examples/icecast/mounts.aut.dist
+share/examples/icecast/users.aut.dist
+share/icecast/templates/306.html
+share/icecast/templates/400.html
+share/icecast/templates/403.html
+share/icecast/templates/404.html
+share/icecast/templates/504.html
+share/icecast/templates/admin.html
+share/icecast/templates/admin_change.html
+share/icecast/templates/admin_describe.html
+share/icecast/templates/alias_add.html
+share/icecast/templates/alias_del.html
+share/icecast/templates/bodytag.html
+share/icecast/templates/footer.html
+share/icecast/templates/header.html
+share/icecast/templates/info.html
+share/icecast/templates/list_directory.html
+share/icecast/templates/mountlist.html
+share/icecast/templates/statistics.html
+@dirrm share/icecast/templates
+@dirrm share/icecast
+@dirrm share/examples/icecast
+@dirrm share/doc/icecast
