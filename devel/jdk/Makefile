@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2000/03/30 03:07:25 chris Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/30 06:51:29 chris Exp $
 #
 # See http://www.freebsd.org/java/ for software updates, etc.
 
@@ -14,6 +14,7 @@ MAINTAINER=	chris@OpenBSD.org
 
 RUN_DEPENDS=	/emul/freebsd/usr/lib/libc.so.3.1:emulators/freebsd_lib
 
+LICENSE_TYPE=		NOFEE
 PERMIT_PACKAGE_CDROM=	NO
 PERMIT_PACKAGE_FTP=	NO
 PERMIT_DISTFILES_CDROM=	NO
