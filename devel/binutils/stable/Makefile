@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/20 05:27:18 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
 DISTNAME=		binutils-2.11.2
 CATEGORIES=		devel
-NEED_VERSION=		1.500
+NEED_VERSION=		1.504
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils
 
@@ -29,12 +29,17 @@ FLAVORS=		alpha hppa i386 m68k m88k powerpc sparc sparc64
 #FLAVORS+=		 vax
 FLAVOR?=
 
-BINUTILS=		ar nm-new objdump ranlib size strings strip-new 
-
 # XXX: special handling needed for powerpc arch's and bootstraping
 .if !empty(FLAVOR:L) && ${FLAVOR:L} != ${MACHINE_ARCH}
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
+TARGET_ARCH=		${FLAVOR:L}
+.else
+TARGET_ARCH=		${MACHINE_ARCH}
 .endif
+
+TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
+
+FILES=			ar nm-new objdump ranlib size strings strip-new 
 
 post-patch:
 	@cd ${WRKSRC}/bfd && autoconf
@@ -42,18 +47,22 @@ post-patch:
 	@cd ${WRKSRC}/ld && automake
 
 do-install:
+	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
+	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
 	cd ${WRKSRC} && (						\
-	    ${INSTALL_PROGRAM} gas/as-new ${PREFIX}/bin/as;		\
-	    ${INSTALL_PROGRAM} gprof/gprof ${PREFIX}/bin;		\
-	    ${INSTALL_PROGRAM} ld/ld-new ${PREFIX}/bin/ld;		\
-	    ${INSTALL_MAN} gas/doc/as.1 ${PREFIX}/man/man1;		\
-	    ${INSTALL_MAN} gprof/gprof.1 ${PREFIX}/man/man1;		\
-	    ${INSTALL_MAN} ld/ld.1 ${PREFIX}/man/man1;			\
-	    for s in ${BINUTILS}; do					\
+	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
+	    ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin;		\
+	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
+	    ${INSTALL_MAN} gas/doc/as.1 ${TARGET_DIR}/man/man1;		\
+	    ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1;	\
+	    ${INSTALL_MAN} ld/ld.1 ${TARGET_DIR}/man/man1;		\
+	    for s in ${FILES}; do					\
 		d=`echo $${s} | sed s/-new//`;				\
-		${INSTALL_PROGRAM} binutils/$${s} ${PREFIX}/bin/$${d};	\
-		${INSTALL_MAN} binutils/$${d}.1 ${PREFIX}/man/man1;	\
+		${INSTALL_PROGRAM} binutils/$${s} ${TARGET_DIR}/bin/$${d}; \
+		${INSTALL_MAN} binutils/$${d}.1 ${TARGET_DIR}/man/man1;	\
 	    done							\
 	)
+
+SUBST_VARS=TARGET_ARCH OSREV
 
 .include <bsd.port.mk>
