@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2003/02/18 16:40:38 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2003/02/18 17:17:44 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -47,7 +47,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-ossaudio \
-		--disable-arts \
 		--disable-nas \
 		--enable-select \
 		--enable-vidix \
@@ -61,7 +60,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad aa lzo
+FLAVORS=	arts esd sdl ggi debug mad win32 iconv no_x11 cdda faad aa lzo
 FLAVOR?=
 
 .if ${FLAVOR:L:Mfaad}
@@ -69,6 +68,20 @@ CONFIGURE_ARGS+=--enable-faad
 LIB_DEPENDS+=   faad::audio/faad
 .else
 CONFIGURE_ARGS+=--disable-faad
+.endif
+
+.if ${FLAVOR:L:Marts}
+CONFIGURE_ARGS+=--enable-arts
+LIB_DEPENDS+=	artsc::x11/kde/arts3
+.else
+CONFIGURE_ARGS+=--disable-arts
+.endif
+
+.if ${FLAVOR:L:Mesd}
+CONFIGURE_ARGS+=--enable-esd
+LIB_DEPENDS+=	esd::audio/esound
+.else
+CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if ${FLAVOR:L:Mlzo}
