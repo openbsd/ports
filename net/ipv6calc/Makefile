@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/21 21:52:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 22:55:18 naddy Exp $
 
 COMMENT=	"tool for manipulating IPv6 addresses"
 
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 
 MAKE_FLAGS=	CC="${CC}" COPTS="${CFLAGS}"
+
+REGRESS_TARGET=	test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin/
