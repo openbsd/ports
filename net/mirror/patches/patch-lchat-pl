@@ -1,0 +1,69 @@
+# $NetBSD: patch-ad,v 1.5 1999/12/28 18:15:43 itojun Exp $
+# $OpenBSD: patch-lchat-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+
+--- lchat.pl.orig	Wed Jun  7 22:19:22 1995
++++ lchat.pl	Wed May 12 18:10:54 1999
+@@ -79,7 +79,7 @@
+ 
+ 	# We may be multi-homed, start with 0, fixup once connexion is made
+ 	$thisaddr = "\0\0\0\0" ;
+-	$thisproc = pack($sockaddr, 2, 0, $thisaddr);
++	$thisproc = pack_sockaddr_in(0, $thisaddr);
+ 
+ 	if ($server =~ /^(\d+)+\.(\d+)\.(\d+)\.(\d+)$/) {
+ 		$serveraddr = pack('C4', $1, $2, $3, $4);
+@@ -90,7 +90,7 @@
+ 		}
+ 		$serveraddr = $x[4];
+ 	}
+-	$serverproc = pack($sockaddr, 2, $port, $serveraddr);
++	$serverproc = pack_sockaddr_in($port, $serveraddr);
+ 	unless (socket(S, $main'pf_inet, $main'sock_stream, $main'tcp_proto)) {
+ 		($!) = ($!, close(S)); # close S while saving $!
+ 		return undef;
+@@ -99,12 +99,12 @@
+ 	# The SOCKS documentation claims that this bind before the connet
+ 	# is unnecessary.  Not just, that, but when used with SOCKS,
+ 	# a connect() must not follow a bind(). -Erez Zadok.
+-	unless( $using_socks ){
+-		unless (bind(S, $thisproc)) {
+-			($!) = ($!, close(S)); # close S while saving $!
+-			return undef;
+-		}
+-	}
++#	unless( $using_socks ){
++#		unless (bind(S, $thisproc)) {
++#			($!) = ($!, close(S)); # close S while saving $!
++#			return undef;
++#		}
++#	}
+ 	unless (connect(S, $serverproc)) {
+ 		($!) = ($!, close(S)); # close S while saving $!
+ 		return undef;
+@@ -114,7 +114,7 @@
+ # multi-homed, with IP forwarding off, so fix-up.
+ 	local($fam,$lport);
+ 	($fam,$lport,$thisaddr) = unpack($sockaddr, getsockname(S));
+-	$thisproc = pack($sockaddr, 2, 0, $thisaddr);
++	$thisproc = pack_sockaddr_in(0, $thisaddr);
+ # end of post-connect fixup
+ 	select((select(S), $| = 1)[0]);
+ 	return 1;
+@@ -129,7 +129,7 @@
+ 
+ 	# We may be multi-homed, start with 0, fixup once connexion is made
+ 	$thisaddr = "\0\0\0\0" ;
+-	$thisproc = pack($sockaddr, 2, 0, $thisaddr);
++	$thisproc = pack_sockaddr_in(0, $thisaddr);
+ 
+ 	if ($server =~ /^(\d+)+\.(\d+)\.(\d+)\.(\d+)$/) {
+ 		$serveraddr = pack('C4', $1, $2, $3, $4);
+@@ -151,7 +151,7 @@
+ # multi-homed, with IP forwarding off, so fix-up.
+ 	local($fam,$lport);
+ 	($fam,$lport,$thisaddr) = unpack($sockaddr, getsockname($newsock));
+-	$thisproc = pack($sockaddr, 2, 0, $thisaddr);
++	$thisproc = pack_sockaddr_in(0, $thisaddr);
+ # end of post-connect fixup
+ 	select((select($newsock), $| = 1)[0]);
+ 	return 1;

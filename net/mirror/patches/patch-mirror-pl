@@ -1,0 +1,79 @@
+# $NetBSD: patch-ac,v 1.4 2000/03/26 22:33:18 kim Exp $
+# $OpenBSD: patch-mirror-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+
+--- mirror.pl.orig	Mon Jun  8 06:55:27 1998
++++ mirror.pl	Sat Mar 25 02:55:39 2000
+@@ -104,7 +104,7 @@
+ # Try to find the default location of various programs via
+ # the users PATH then using $extra_path
+ if( ! $on_win ){
+-	$extra_path = '/usr/local/bin:/usr/new/bin:/usr/public/bin:/usr/ucb:/usr/bin:/bin:/etc:/usr/etc:/usr/local/etc';
++	$extra_path = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:@PREFIX@/bin:@PREFIX@/sbin';
+ }
+ if( $extra_path ne '' ){
+ 	$ENV{ 'PATH' } .= $path_sep . $extra_path;
+@@ -159,19 +159,20 @@
+ $rm_prog = &find_prog( 'rm' );
+ 
+ # Generate checksums
+-$sum_prog = &find_prog( 'sum' );
++$sum_prog = &find_prog( 'md5' );
+ 
+ # SPECIAL NOTE: This is eval'd, so DONT put double-quotes (") in it.
+ # You can get local variables to appear as in the second example:
+-$mail_subject = '-s \'mirror update\'';
+-# $mail_subject = ' -s \'mirror update of $package\'';
++# $mail_subject = '-s \'mirror update\'';
++$mail_subject = ' -s \'mirror update of $package\'';
+ 
+ # When scanning the local directory, how often to prod the remote
+ # system to keep the connection alive
+ $prod_interval = 60;
+ 
+ # Put the directory that mirror is actually in at the start of PERLLIB.
+-$dir = &real_dir_from_path( $0 );
++# $dir = &real_dir_from_path( $0 );
++$dir = "@PREFIX@/lib/mirror";
+ unshift( @INC, $dir );
+ 
+ # Debian GNU/Linux stores mirror.defaults in /etc/mirror
+@@ -1807,7 +1808,7 @@
+   			local( $f );
+   			$f = $dirtmp;
+ 			$f =~ s/($shell_metachars)/\\$1/g;
+-			$dirtmp = "$unsquish -d < \"$f\" |";
++			$dirtmp = "$unsquish -f -d < \"$f\" |";
+   		}
+ 		if( ! open( DIRTMP, $dirtmp ) ){
+ 			&msg( "Cannot open $dirtmp\n" );
+@@ -1845,7 +1846,7 @@
+   			$f = $dirtmp;
+   			$dirtmp =~ s/\.($sys_compress_suffix|$gzip_suffix|$old_gzip_suffix)$//;
+   			$udirtmp =~ s/\.($sys_compress_suffix|$gzip_suffix|$ol_gzip_suffix)$//;
+-			if( &sys( "$unsquish -d < \"$f\" > \"$dirtmp\"" ) != 0 ){
++			if( &sys( "$unsquish -f -d < \"$f\" > \"$dirtmp\"" ) != 0 ){
+ 				&msg( "Cannot uncompress directory listing\n" );
+ 				return 0;
+ 			}
+@@ -2760,7 +2761,7 @@
+   			local( $f ) = $src_file;
+ 			$f =~ s/($shell_metachars)/\\$1/g;
+   			$comptemp = "$big_temp/.out$$";
+-			&sys( "$compress_prog < \"$f\" > \"$comptemp\"" );
++			&sys( "$compress_prog -f < \"$f\" > \"$comptemp\"" );
+   			$src_file = $comptemp;
+ 		}
+ 		
+@@ -2840,10 +2841,10 @@
+   		# Am I doing compress to gzip conversion?
+    		if( $compress_conv_patt && $src_path =~ /$compress_conv_patt/ &&
+   		    $compress_suffix eq $gzip_suffix ){
+-			$comp = "$sys_compress_prog -d < \"$f\" | $gzip_prog > \"$temp\"";
++			$comp = "$sys_compress_prog -f -d < \"$f\" | $gzip_prog > \"$temp\"";
+   		}
+   		else {
+-			$comp = "$compress_prog < \"$f\" > \"$temp\"";
++			$comp = "$compress_prog -f < \"$f\" > \"$temp\"";
+   		}
+   		&sys( $comp );
+ 		$temp =~ s/\\($shell_metachars)/$1/g;

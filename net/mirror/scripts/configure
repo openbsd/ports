@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $Id: configure,v 1.1.1.1 1998/01/04 18:17:06 joey Exp $
-#
-
-mv ${WRKSRC}/mirror.pl ${WRKSRC}/mirror.pl.bak
-sed <${WRKSRC}/mirror.pl.bak >${WRKSRC}/mirror.pl s+!!PREFIX!!+$PREFIX+g

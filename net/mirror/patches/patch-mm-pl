@@ -1,0 +1,14 @@
+# $NetBSD: patch-af,v 1.1 2000/03/26 22:33:18 kim Exp $
+# $OpenBSD: patch-mm-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+
+--- mm.pl.orig	Fri May 29 15:09:54 1998
++++ mm.pl	Sat Mar 25 03:09:36 2000
+@@ -63,7 +63,7 @@
+ # $pkg is the package number fixed up to replace characters likely to give
+ # grief under unix.
+ # This expects the directory logs to already exist.
+-$mirror = "exec ./mirror \$args -p'\$package' packages/\$site > logs/\$site:\$pkg 2>&1";
++$mirror = "exec @PREFIX@/bin/mirror \$args -p'\$package' packages/\$site > logs/\$site:\$pkg 2>&1";
+ 
+ $status_file = 'mm.status';
+ 

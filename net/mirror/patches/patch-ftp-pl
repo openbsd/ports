@@ -1,0 +1,65 @@
+# $NetBSD: patch-ae,v 1.6 2000/04/20 03:22:50 kim Exp $
+# $OpenBSD: patch-ftp-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+
+--- ftp.pl.orig	Fri Jun  5 05:10:27 1998
++++ ftp.pl	Wed Apr 19 23:14:00 2000
+@@ -233,7 +233,7 @@
+ 			}
+ 			else {
+ 				print $showfd "proxy connection failed " if $proxy;
+-				print $showfd "Cannot open ftp to $connect_site\n" if $ftp_show;
++				print $showfd "Cannot open ftp to $newhost:$newport\n" if $ftp_show;
+ 				return 0;
+ 			}
+ 		}
+@@ -270,6 +270,14 @@
+ 	$SIG{ 'PIPE' } = "ftp'ftp__sighandler";
+ }
+ 
++# Setup a signal handler for user interrupts.
++sub ftp'set_user_signals
++{
++ 	$ftp_logger = @_;
++ 	$SIG{ 'INT' } = "ftp'ftp__sighandler";
++}
++ 
++
+ # &ftp'set_namemap( function to map outgoing name,  function to map incoming )
+ sub ftp'set_namemap
+ {
+@@ -486,7 +494,7 @@
+ 		return 0;
+ 	}
+ 	if( $ret == 1 ) {
+-		if( $response =~ m/^227 Entering Passive Mode \((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/ ){
++		if($response =~ m/^227 .*\((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/){
+ 			$newhost = sprintf( "%d.%d.%d.%d", $1, $2, $3, $4 );
+ 			$newport = $5 * 256 + $6;
+ 		}
+@@ -581,6 +589,9 @@
+ 		return 0;
+ 	}
+ 
++ 	# shut down our end of the socket
++ 	&close_data_socket;
++
+ 	# read the close
+ 	#
+ 	$ret = &expect($timeout,
+@@ -590,8 +601,6 @@
+ 		$ret = 0;
+ 	}
+ 
+-	# shut down our end of the socket
+-	&close_data_socket;
+ 
+ 	if( ! $ret ){
+ 		return 0;
+@@ -708,6 +717,7 @@
+ 	if( ! $service_open ){
+ 		return 0;
+ 	}
++	chmod 0600, $loc_fname;
+ 
+ 	if( $loc_fname eq "" ){
+ 		$loc_fname = $rem_fname;
