@@ -1,4 +1,45 @@
 This directory does not hold ports, but rather stuff to help
-with building specific ports.
+with building specific ports, or with checking packages.
 
-Documentation will be written as this progresses.
+Better documentation will be written as this progresses.
+
+Quick list of what exists, most useful stuff first
+
+build/bundle-readmes: 
+	create README.html files and bundle them as one tar archive.
+
+fetch/check-distfiles
+	heuristic to check the whole contents of /usr/ports/distfiles against
+	all MD5 files in the ports tree.
+	
+packages/check-dependencies
+	Check dependencies for all packages in the current directory.
+	Basically, verifies that the tsort in bsd.port.mk did their job.
+
+build/find-build-order
+	used such as cat db/essentials | build/find-build-order
+	outputs a list of stuff that actually needs to be built to obtain those
+	packges, in a suitable order for removing backward dependencies.
+
+	Optional arg `build' or `run' to take only build or run dependencies
+	into account.
+
+	Major defect: tsort is not a stable sort, so find-build-order will
+	rearrange the list it gets as input.
+
+build/out-of-date
+	compare installed registered  packages with INDEX, try to find out 
+	of date ports.
+
+install/make-plist
+	perl helper for the make plist target
+
+db/network.conf
+	Distfiles configuration. Tweakable by the user
+
+fetch/check-license
+	legacy script used by Marco to check the LICENSE files
+
+install/create-user
+	simple script to create new users account, based on db/users.db
+
