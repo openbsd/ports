@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/06 00:07:14 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/09/06 00:30:08 brad Exp $
 
 DISTNAME=	jed-B0.99-11
 PKGNAME=	jed-0.99.11
@@ -25,6 +25,7 @@ FLAVORS=	xjed
 FLAVOR?=
 
 .if ${FLAVOR:L:Mxjed}
+USE_X11=	Yes
 ALL_TARGET+=	xjed
 .endif
 
