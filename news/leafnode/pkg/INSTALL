@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/06/10 19:00:16 fgsch Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/03/05 06:19:18 fgsch Exp $
 #
 # Pre/post-installation setup of leafnode - based on majordomo INSTALL
 # script from daniel@reichardt.ch
@@ -30,7 +30,7 @@ do_create_local_dirs()
   if [ ! -d /var/spool/news ]; then
     install -d -o news -g news -m 2775 /var/spool/news
     install -d -o news -g news /var/spool/news/leaf.node
-    install -d -o news -g news /var/spool/news/failed.posting
+    install -d -o news -g news /var/spool/news/failed.postings
     install -d -o news -g news /var/spool/news/message.id
     install -d -o news -g news /var/spool/news/interesting.groups
     install -d -o news -g news /var/spool/news/out.going
