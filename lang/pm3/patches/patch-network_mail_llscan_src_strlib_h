@@ -1,0 +1,11 @@
+$OpenBSD: patch-network_mail_llscan_src_strlib_h,v 1.1 2004/01/04 22:35:01 espie Exp $
+--- network/mail/llscan/src/strlib.h.orig	2004-01-04 23:22:48.000000000 +0100
++++ network/mail/llscan/src/strlib.h	2004-01-04 23:22:58.000000000 +0100
+@@ -36,6 +36,6 @@ char *sconc(/* s1, s2 */);
+ char *substr(/* s, p1, p2 */);
+ int findstr(/* text, pat */);
+ 
+-char *format(/* control, ... */);
++char *format(string, ... );
+ 
+ #endif

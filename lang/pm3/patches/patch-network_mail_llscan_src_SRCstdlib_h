@@ -1,0 +1,11 @@
+$OpenBSD: patch-network_mail_llscan_src_SRCstdlib_h,v 1.1 2004/01/04 22:35:01 espie Exp $
+--- network/mail/llscan/src/SRCstdlib.h.orig	2004-01-04 23:24:40.000000000 +0100
++++ network/mail/llscan/src/SRCstdlib.h	2004-01-04 23:24:49.000000000 +0100
+@@ -36,6 +36,6 @@ typedef int (*proc)();
+ char *malloc();
+ string getenv();
+ 
+-extern void error();
++extern void error(string msg, ...);
+ 
+ #endif
