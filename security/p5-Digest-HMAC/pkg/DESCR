@@ -1,0 +1,8 @@
+HMAC is used for message integrity checks between two parties that
+share a secret key, and works in combination with some other Digest
+algorithm, usually MD5 or SHA-1.  The HMAC mechanism is described in
+RFC 2104.
+
+The Digest::HMAC module follow the common Digest:: interface, but the
+constructor takes the secret key and the name of some other simple
+Digest:: module as argument.
