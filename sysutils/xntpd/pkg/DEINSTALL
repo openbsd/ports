@@ -1,13 +1,13 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 1999/04/08 04:37:27 marc Exp $
+# $OpenBSD: DEINSTALL,v 1.2 1999/04/08 17:14:03 marc Exp $
 #
 # xtnpd de-installation
 
 if [ -f /etc/ntp.conf ]; then
     echo
     echo "+---------------"
-    echo "| To completely deinstall $1 package you need to perform"
-    echo "| this steps as root:"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
     echo "|"
     echo "|           rm -rf /etc/ntp.*"
     echo "|"
