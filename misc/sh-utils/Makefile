@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/16 00:43:38 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/10 13:35:26 lebel Exp $
+
+COMMENT=		"GNU command line utilities"
 
 DISTNAME=		sh-utils-2.0
 CATEGORIES=		misc
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
-MAINTAINER=		David Lebel <lebel@lebel.org>
+MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/16 07:31:18 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/10 13:33:14 lebel Exp $
+
+COMMENT= 		"tools for creating and reading constant databases"
 
 DISTNAME=		cdb-0.75
 HOMEPAGE=		http://cr.yp.to/cdb.html
 
 CATEGORIES=		databases
-NEED_VERSION=		1.340
-MAINTAINER=		David Lebel <lebel@lebel.org>
+NEED_VERSION=		1.364
+MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 MASTER_SITES=		http://cr.yp.to/cdb/
 

@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/16 00:47:37 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/10 13:36:14 lebel Exp $
+
+COMMENT=		"finds and then operates on files"
 
 DISTNAME=		findutils-4.1
 CATEGORIES=		misc
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
 
-MAINTAINER=		David Lebel <lebel@lebel.org>
+MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
