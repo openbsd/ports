@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/07 15:41:12 wilfried Exp $
+bin/wmifinfo
+share/doc/wmifinfo/README
+@dirrm share/doc/wmifinfo
