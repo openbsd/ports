@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/11 16:42:21 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/23 05:21:57 dons Exp $
 
 COMMENT=	"liberalised reimplementation of cpp in Haskell"
 
-V=		0.8
+V=		0.9
 DISTNAME=	cpphs-${V}
 CATEGORIES=	devel
 MAINTAINER=	Don Stewart <dons@openbsd.org>
