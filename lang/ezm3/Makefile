@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 12:23:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/07 14:02:35 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Modula-3 distribution for building CVSup"
 DISTNAME=	ezm3-1.0
 CATEGORIES=	lang
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.polstra.com/projects/freeware/ezm3/
 
@@ -28,7 +27,9 @@ MASTER_SITES:=	${MASTER_SITES:=development/CVSup/ezm3/}
 DISTFILES=	${DISTNAME}-${M3ARCH}-boot.tar.bz2 \
 		${DISTNAME}-src.tar.bz2
 
-USE_X11=	Yes
+# Ezm3 provides full X11 GUI support even when compiled on systems
+# which do not have X11 installed.
+USE_X11=	No
 USE_GMAKE=	Yes
 ALL_TARGET=	exportall
 
