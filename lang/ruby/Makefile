@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/28 13:16:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/18 18:37:59 espie Exp $
 
-DISTNAME=ruby-1.4.3
+DISTNAME=ruby-1.4.4
 CATEGORIES = lang
 MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
     ftp://ftp.iij.ad.jp/pub/lang/ruby/ \
@@ -10,7 +10,7 @@ MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
 MASTER_SITES0=${MASTER_SITES:C,$,doc/,}
 
 BINARCH=${DISTNAME}.tar.gz
-MANARCH=ruby-man-1.4.3.tar.gz
+MANARCH=ruby-man-1.4.4.tar.gz
 DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
@@ -50,18 +50,8 @@ post-install:
 	cd ${PREFIX}/share/doc && \
 	tar -s/ruby-man-1.4/ruby/ -zxf ${FULLDISTDIR}/${MANARCH}
 
-PLIST=${WRKBUILD}/PLIST
-
-M4FLAGS=-Uinclude -Uindex -DSUB=${ARCH}-openbsd${OSREV} -DREV=1.4
-pre-package: 
-	@cd ${.CURDIR} && make ${PLIST}
-
 
 .include <bsd.port.mk>
-.if !defined(NO_SHARED_LIBS)
-M4FLAGS+= -DDYNAMIC
-.endif
 
-${PLIST}: ${FILESDIR}/PLIST.template
-	m4 ${M4FLAGS} <${FILESDIR}/PLIST.template >${PLIST}
-
+# Need to do this late, because I want to substitute the fragment as well.
+SED_PLIST+=|sed -e 's/REV/1.4/' -e 's/SUB/${ARCH}-openbsd${OSREV}/'

@@ -1,3 +1,4 @@
+$OpenBSD: patch-mkstemp1,v 1.2 2000/05/18 18:37:59 espie Exp $
 --- util.c.orig	Fri Aug 13 07:45:15 1999
 +++ util.c	Mon Dec 13 03:14:01 1999
 @@ -19,6 +19,7 @@

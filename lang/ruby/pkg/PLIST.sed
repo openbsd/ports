@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.template,v 1.2 2000/05/18 18:37:59 espie Exp $
+@comment $OpenBSD: PLIST.sed,v 1.1 2000/05/18 18:38:00 espie Exp $
 bin/ruby
 @exec mkdir -p %D/lib/ruby/site_ruby/REV/SUB
 lib/ruby/REV/English.rb
@@ -22,22 +22,6 @@ lib/ruby/REV/ftools.rb
 lib/ruby/REV/ftplib.rb
 lib/ruby/REV/getoptlong.rb
 lib/ruby/REV/getopts.rb
-ifdef(`DYNAMIC',dnl
-lib/libruby.so
-lib/libruby.so.1.4.4
-@exec /sbin/ldconfig -m %B
-lib/ruby/REV/SUB/curses.so
-lib/ruby/REV/SUB/dbm.so
-lib/ruby/REV/SUB/etc.so
-lib/ruby/REV/SUB/fcntl.so
-lib/ruby/REV/SUB/md5.so
-lib/ruby/REV/SUB/nkf.so
-lib/ruby/REV/SUB/pty.so
-lib/ruby/REV/SUB/sdbm.so
-lib/ruby/REV/SUB/socket.so
-lib/ruby/REV/SUB/tcltklib.so
-lib/ruby/REV/SUB/tkutil.so
-)dnl
 lib/ruby/REV/SUB/config.h
 lib/ruby/REV/SUB/defines.h
 lib/ruby/REV/SUB/dln.h
@@ -77,8 +61,11 @@ lib/ruby/REV/mkmf.rb
 lib/ruby/REV/monitor.rb
 lib/ruby/REV/mutex_m.rb
 lib/ruby/REV/net/pop.rb
-lib/ruby/REV/net/session.rb
+lib/ruby/REV/net/ftp.rb
+lib/ruby/REV/net/http.rb
+lib/ruby/REV/net/protocol.rb
 lib/ruby/REV/net/smtp.rb
+lib/ruby/REV/net/telnet.rb
 lib/ruby/REV/observer.rb
 lib/ruby/REV/open3.rb
 lib/ruby/REV/ostruct.rb
@@ -114,6 +101,7 @@ lib/ruby/REV/tktext.rb
 lib/ruby/REV/tkvirtevent.rb
 lib/ruby/REV/tracer.rb
 lib/ruby/REV/weakref.rb
+%%SHARED%%
 man/man1/ruby.1
 share/doc/ruby/NilClass.html
 share/doc/ruby/Exception.html

@@ -1,3 +1,4 @@
+$OpenBSD: patch-socket,v 1.2 2000/05/18 18:38:00 espie Exp $
 --- ext/socket/addrinfo.h.orig	Wed Dec  8 14:26:11 1999
 +++ ext/socket/addrinfo.h	Wed Dec  8 14:26:22 1999
 @@ -113,12 +113,6 @@
