@@ -1,0 +1,168 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/08 01:28:19 marcm Exp $
+bin/gpdf
+lib/bonobo/servers/GNOME_PDF.server
+libexec/gnome-pdf-viewer
+share/application-registry/gpdf.applications
+share/applications/gpdf.desktop
+share/gnome-2.0/ui/gpdf-control-ui.xml
+share/gnome-2.0/ui/gpdf-window-ui.xml
+share/gpdf/glade/gpdf-properties-dialog.glade
+share/locale/am/LC_MESSAGES/gpdf.mo
+share/locale/az/LC_MESSAGES/gpdf.mo
+share/locale/be/LC_MESSAGES/gpdf.mo
+share/locale/ca/LC_MESSAGES/gpdf.mo
+share/locale/cs/LC_MESSAGES/gpdf.mo
+share/locale/cy/LC_MESSAGES/gpdf.mo
+share/locale/da/LC_MESSAGES/gpdf.mo
+share/locale/de/LC_MESSAGES/gpdf.mo
+share/locale/el/LC_MESSAGES/gpdf.mo
+share/locale/eo/LC_MESSAGES/gpdf.mo
+share/locale/es/LC_MESSAGES/gpdf.mo
+share/locale/fi/LC_MESSAGES/gpdf.mo
+share/locale/fr/LC_MESSAGES/gpdf.mo
+share/locale/ga/LC_MESSAGES/gpdf.mo
+share/locale/gl/LC_MESSAGES/gpdf.mo
+share/locale/he/LC_MESSAGES/gpdf.mo
+share/locale/hi/LC_MESSAGES/gpdf.mo
+share/locale/hu/LC_MESSAGES/gpdf.mo
+share/locale/is/LC_MESSAGES/gpdf.mo
+share/locale/it/LC_MESSAGES/gpdf.mo
+share/locale/ja/LC_MESSAGES/gpdf.mo
+share/locale/kn/LC_MESSAGES/gpdf.mo
+share/locale/ko/LC_MESSAGES/gpdf.mo
+share/locale/lt/LC_MESSAGES/gpdf.mo
+share/locale/lv/LC_MESSAGES/gpdf.mo
+share/locale/mk/LC_MESSAGES/gpdf.mo
+share/locale/ml/LC_MESSAGES/gpdf.mo
+share/locale/ms/LC_MESSAGES/gpdf.mo
+share/locale/nl/LC_MESSAGES/gpdf.mo
+share/locale/nn/LC_MESSAGES/gpdf.mo
+share/locale/no/LC_MESSAGES/gpdf.mo
+share/locale/pl/LC_MESSAGES/gpdf.mo
+share/locale/pt/LC_MESSAGES/gpdf.mo
+share/locale/pt_BR/LC_MESSAGES/gpdf.mo
+share/locale/ro/LC_MESSAGES/gpdf.mo
+share/locale/ru/LC_MESSAGES/gpdf.mo
+share/locale/sk/LC_MESSAGES/gpdf.mo
+share/locale/sq/LC_MESSAGES/gpdf.mo
+share/locale/sr/LC_MESSAGES/gpdf.mo
+share/locale/sr@Latn/LC_MESSAGES/gpdf.mo
+share/locale/sv/LC_MESSAGES/gpdf.mo
+share/locale/ta/LC_MESSAGES/gpdf.mo
+share/locale/th/LC_MESSAGES/gpdf.mo
+share/locale/tr/LC_MESSAGES/gpdf.mo
+share/locale/uk/LC_MESSAGES/gpdf.mo
+share/locale/vi/LC_MESSAGES/gpdf.mo
+share/locale/wa/LC_MESSAGES/gpdf.mo
+share/locale/zh_CN/LC_MESSAGES/gpdf.mo
+share/locale/zh_TW/LC_MESSAGES/gpdf.mo
+share/mime-info/gpdf.keys
+share/pixmaps/gnome-pdf.png
+share/pixmaps/gpdf/fitwidth.png
+@dirrm share/pixmaps/gpdf
+@comment @dirrm share/pixmaps
+@comment @dirrm share/mime-info
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/th/LC_MESSAGES
+@comment @dirrm share/locale/th
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/kn/LC_MESSAGES
+@comment @dirrm share/locale/kn
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/eo/LC_MESSAGES
+@comment @dirrm share/locale/eo
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/gpdf/glade
+@dirrm share/gpdf
+@comment @dirrm share/applications
+@comment @dirrm share/application-registry
+@comment @dirrm lib/bonobo
