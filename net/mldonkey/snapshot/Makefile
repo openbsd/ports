@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/03/07 19:11:33 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/19 08:42:25 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -16,8 +16,8 @@ CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
-DISTNAME=mldonkey-2.5.11
-WRKDIST=${WRKDIR}/mldonkey-2.5.11
+DISTNAME=mldonkey-2.5.18
+WRKDIST=${WRKDIR}/mldonkey-2.5.18
 
 USE_GMAKE=Yes
 MODULES=ocaml

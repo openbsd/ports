@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_configure,v 1.1.1.1 2004/03/07 19:11:33 espie Exp $
---- config/configure.orig	2004-02-12 19:49:17.000000000 +0100
-+++ config/configure	2004-02-12 19:49:34.000000000 +0100
-@@ -7800,10 +7800,7 @@ _ACEOF
+$OpenBSD: patch-config_configure,v 1.2 2004/04/19 08:42:25 espie Exp $
+--- config/configure.orig	2004-04-16 19:17:11.000000000 +0200
++++ config/configure	2004-04-18 16:47:21.000000000 +0200
+@@ -8297,10 +8297,7 @@ _ACEOF
  
  else
  
