@@ -3,12 +3,14 @@
 # Date created:		1998-Mar-20
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/03/21 05:38:13 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/14 05:45:40 marc Exp $
 #
 
 DISTNAME=	xv-3.10a
 DIST_SUBDIR=	${DISTNAME}
 CATEGORIES=     graphics x11
+NO_CDROM=	"NOFEE: can not sell"
+
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
