@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/08/22 00:32:00 angelos Exp $
+# $OpenBSD: Makefile,v 1.17 2001/09/11 22:21:51 heko Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -19,7 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS=--tkdefs '-I${LOCALBASE}/include/tk8.3 -I${LOCALBASE}/include/tcl8.3'
+CONFIGURE_ARGS+=-tkdefs '-I${LOCALBASE}/include/tk8.3 -I${LOCALBASE}/include/tcl8.3' 
+CONFIGURE_ARGS+=-tklibs -L${LOCALBASE}/lib 
+CONFIGURE_ARGS+=-prefix ${PREFIX} 
+CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
+CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
+
 LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3 \
 		tk83.1.3::x11/tk/8.3
 
