@@ -1,0 +1,12 @@
+$OpenBSD: patch-kontour_GPage_cc,v 1.1.1.1 2002/04/05 16:04:24 espie Exp $
+--- kontour/GPage.cc.orig	Wed Sep  5 22:40:04 2001
++++ kontour/GPage.cc	Wed Sep  5 22:40:20 2001
+@@ -41,7 +41,7 @@
+ #include <assert.h>
+ #include <kdebug.h>
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <math.h>
+ #else
+ #include <values.h>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-kchart_kdchart_KDChartTable_h,v 1.1.1.1 2002/04/05 16:04:24 espie Exp $
+--- kchart/kdchart/KDChartTable.h.orig	Mon Dec 10 12:53:35 2001
++++ kchart/kdchart/KDChartTable.h	Fri Apr  5 02:03:32 2002
+@@ -28,9 +28,17 @@ Copyright (C) 1998, 1999, 2000 Torben We
+ #define MAXDOUBLE DBL_MAX
+ #define MINDOUBLE DBL_MIN
+ #else
++#ifdef __OpenBSD__
++#include <float.h>
++#include <limits.h>
++#include <math.h>
++#define MAXDOUBLE DBL_MAX
++#define MINDOUBLE DBL_MIN
++#else
+ #include <values.h>
+ #include <limits.h>
+ #include <math.h>
++#endif
+ #endif
+ 
+ #if defined SUN7 || ( defined HP11_aCC && defined HP1100 )

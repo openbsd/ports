@@ -1,0 +1,12 @@
+$OpenBSD: patch-kivio_plugins_kivioconnectortool_straight_connector_Makefile_in,v 1.1.1.1 2002/04/05 16:04:24 espie Exp $
+--- kivio/plugins/kivioconnectortool/straight_connector/Makefile.in.orig	Fri Mar 29 16:17:44 2002
++++ kivio/plugins/kivioconnectortool/straight_connector/Makefile.in	Fri Apr  5 02:03:33 2002
+@@ -537,7 +537,7 @@ maintainer-clean: maintainer-clean-am
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	$(LIBTOOL)  --mode=install $(INSTALL) ./.libs/libstraight_connector.so $(DESTDIR)$(libdir)/straight_connector.ksp;
++	$(LIBTOOL)  --mode=install $(INSTALL) ./.libs/libstraight_connector.so.1.0 $(DESTDIR)$(libdir)/straight_connector.ksp;
+ 
+ uninstall-libLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
