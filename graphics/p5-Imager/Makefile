@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/09 23:26:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/10 12:08:57 naddy Exp $
 
 COMMENT=	"module for generating images"
 
@@ -30,8 +30,8 @@ LIB_DEPENDS=	t1.::devel/t1lib \
 		gif.::graphics/giflib \
 		jpeg.::graphics/jpeg \
 		tiff.::graphics/tiff
-CONFIGURE_ENV=	IM_LIBPATH="/usr/local/lib:/usr/X11R6/lib" \
-		IM_INCPATH="/usr/local/include:/usr/X11R6/include"
+CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib:${X11BASE}/lib" \
+		IM_INCPATH="${LOCALBASE}/include:${X11BASE}/include"
 PATCH_LIST=
 USE_X11=	Yes
 .else
