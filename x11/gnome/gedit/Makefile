@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/06 08:42:29 alek Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
-DISTNAME=		gedit-2.8.2
+DISTNAME=		gedit-2.8.3
 CATEGORIES=		editors x11/gnome
 
-HOMEPAGE=		http://www.gnome.org/	
+HOMEPAGE=		http://www.gnome.org/projects/gedit/
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
 
