@@ -1,6 +1,6 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl
 #
-# $OpenBSD: check_old_version,v 1.2 1999/05/11 21:25:18 brad Exp $
+# $OpenBSD: check_old_version,v 1.3 1999/12/02 00:44:42 brad Exp $
 # $FreeBSD: check_old_version,v 1.1.1.1 1997/06/18 19:35:30 jfitz Exp $
 #
 
