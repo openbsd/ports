@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 00:34:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/25 11:50:14 espie Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
 DISTNAME=	FrodoV4_1a.Src
-PKGNAME=	frodo-4.1a
+PKGNAME=	frodo-4.1b
+DISTFILES=	FrodoV4_1a.Src${EXTRACT_SUFX} TkGui.tcl.gz
+EXTRACT_ONLY=	FrodoV4_1a.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
 NEED_VERSION=	1.402
@@ -37,6 +39,8 @@ MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/ \
 WRKDIST=${WRKDIR}/Frodo
 WRKSRC=${WRKDIST}/Src
 
+post-extract:
+	zcat ${FULLDISTDIR}/TkGui.tcl.gz >${WRKDIST}/TkGui.tcl
 
 post-patch:
 	cp ${FILESDIR}/SID_openbsd.i	${WRKSRC}
