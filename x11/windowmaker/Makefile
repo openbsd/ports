@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2004/08/10 11:16:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.59 2004/12/19 17:27:02 alek Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
@@ -54,6 +54,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png \
 			ungif.5::graphics/libungif
+WANTLIB=		X11 Xext Xpm c m z
 .endif
 
 post-patch:

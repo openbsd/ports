@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/22 22:48:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/19 17:27:02 alek Exp $
 
 COMMENT=		"waimea mini pager"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

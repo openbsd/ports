@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/19 17:27:05 alek Exp $
 
 COMMENT=	"minimal window manager"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xext Xpm c m stdc++
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	gnu

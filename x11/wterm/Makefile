@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/12/01 13:41:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.24 2004/12/19 17:27:05 alek Exp $
 
 COMMENT=		'color vt102 terminal emulator with transparency support'
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xpm c util
 
 MASTER_SITES=		http://largo.windowmaker.org/files/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/17 14:46:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/19 17:27:05 alek Exp $
 
 COMMENT=		'wm-dockapp; displays the time in different time zones'
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c m
 
 MASTER_SITES=		${HOMEPAGE}
 

@@ -1,5 +1,5 @@
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.17 2004/01/25 21:10:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/19 17:27:02 alek Exp $
 
 COMMENT=	"twm with a virtual desktop"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=window_managers/}
 

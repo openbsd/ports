@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/17 14:46:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/19 17:27:05 alek Exp $
 
 COMMENT=		'wm-dockapp; weather monitor'
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
