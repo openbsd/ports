@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/03/15 14:42:40 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/03/19 03:22:40 danh Exp $
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
@@ -16,7 +16,7 @@ LIB_DEPENDS=	esd.2::audio/esound \
 		ghttp.1::www/libghttp \
 		ttf.1.3::print/freetype
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Paul Wang <op21@squish.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
