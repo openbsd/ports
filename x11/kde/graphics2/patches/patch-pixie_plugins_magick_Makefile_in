@@ -1,0 +1,19 @@
+$OpenBSD: patch-pixie_plugins_magick_Makefile_in,v 1.1 2001/04/23 21:16:53 espie Exp $
+--- pixie/plugins/magick/Makefile.in.orig	Mon Apr 23 20:47:47 2001
++++ pixie/plugins/magick/Makefile.in	Mon Apr 23 20:48:57 2001
+@@ -231,13 +231,12 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libkif_magick_la_DEPENDENCIES =  ../../../libminimagick/libminimagick.la \
+-../../libifplugin/libkifplugin.la
++libkif_magick_la_DEPENDENCIES =  ../../../libminimagick/libminimagick.la
+ #>- libkif_magick_la_OBJECTS =  dialog.lo magick.lo
+ #>+ 4
+ libkif_magick_la_final_OBJECTS = libkif_magick_la.all_cpp.lo 
+ libkif_magick_la_nofinal_OBJECTS = dialog.lo magick.lo
+-@KDE_USE_FINAL_FALSE@libkif_magick_la_OBJECTS = $(libkif_magick_la_nofinal_OBJECTS)
++@KDE_USE_FINAL_FALSE@libkif_magick_la_OBJECTS = $(libkif_magick_la_nofinal_OBJECTS) ../../libifplugin/ifplugin.lo
+ @KDE_USE_FINAL_TRUE@libkif_magick_la_OBJECTS = $(libkif_magick_la_final_OBJECTS)
+ CXXFLAGS = @CXXFLAGS@
+ #>- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/22 16:33:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/23 21:16:52 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
@@ -12,7 +12,6 @@ MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
-USE_MOTIF=	any
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
