@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/10 23:32:23 couderc Exp $
+bin/fribidi
+bin/fribidi-config
+include/fribidi/fribidi.h
+include/fribidi/fribidi_char_sets.h
+include/fribidi/fribidi_char_sets_cap_rtl.h
+include/fribidi/fribidi_char_sets_cp1255.h
+include/fribidi/fribidi_char_sets_cp1256.h
+include/fribidi/fribidi_char_sets_isiri_3342.h
+include/fribidi/fribidi_char_sets_iso8859_6.h
+include/fribidi/fribidi_char_sets_iso8859_8.h
+include/fribidi/fribidi_char_sets_utf8.h
+include/fribidi/fribidi_config.h
+include/fribidi/fribidi_mem.h
+include/fribidi/fribidi_types.h
+include/fribidi/fribidi_unicode.h
+lib/libfribidi.a
+lib/libfribidi.la
+lib/pkgconfig/fribidi.pc
+%%SHARED%%
+@comment @dirrm lib/pkgconfig
+@dirrm include/fribidi
