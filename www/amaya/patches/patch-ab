@@ -1,13 +1,11 @@
-This one is due to the strange build process for amaya
-
---- Makefile.in.orig	Wed Feb  3 21:44:06 1999
-+++ Makefile.in	Wed Feb  3 21:44:12 1999
-@@ -170,7 +170,7 @@
- 	@(localdir=`pwd` ; libwwwdir="$(THOTDIR)/$(LIBWWW)" ; cd $(LIBWWW) ; \
- 	  unset LANG; \
- 	  if [ ! -x Makefile ] ; then \
--	  	../$$libwwwdir/configure --disable-shared \
-+	  	$$libwwwdir/configure --disable-shared \
- 			-with-zlib="$$localdir/libz.a"; \
- 	  fi)
- 	@(cd $(LIBWWW)/Library/src ; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)")
+--- amaya/Makefile.in.orig	Fri Apr  2 22:26:51 1999
++++ amaya/Makefile.in	Fri Apr  2 22:27:31 1999
+@@ -15,7 +15,7 @@
+ 	  $(AMAYA_MATH_LIBS) $(AMAYA_GRAPH_LIBS) $(AMAYA_ILU_LIBS) \
+           -L../tablelib -L../thotlib -L.. -lThotTable -lThotEditor \
+           $(AMAYA_OPTION_EXTRA_LIBS) $(IMGLIBS) \
+-	  $(MOTIF_LIBRARIES) $(XMLIB) $(X_LIBS) -lXt $(X_PRE_LIBS) \
++	  -L/usr/X11R6/lib -lXm -lXt $(X_PRE_LIBS) \
+ 	  -lXext -lX11 $(X_EXTRA_LIBS) @LIBS@ @EXTRA_LIBS@ -lm
+ 
+ CONFIGFILES=XKeysymDB thot.ini amaya.keyboard \
