@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2004/09/30 22:36:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2004/10/02 23:14:53 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -49,6 +49,7 @@
      SUBDIR += skill
      SUBDIR += sleuthkit
      SUBDIR += socket
+     SUBDIR += socklog
      SUBDIR += stat
      SUBDIR += stow
      SUBDIR += stress
