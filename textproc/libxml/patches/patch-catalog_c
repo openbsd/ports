@@ -1,7 +1,7 @@
-$OpenBSD: patch-catalog_c,v 1.1 2003/06/17 03:40:03 marcm Exp $
---- catalog.c.orig	Fri Jun 13 23:30:31 2003
-+++ catalog.c	Fri Jun 13 23:31:21 2003
-@@ -61,10 +61,10 @@
+$OpenBSD: patch-catalog_c,v 1.2 2003/08/26 16:33:11 marcm Exp $
+--- catalog.c.orig	2003-08-04 11:41:42.000000000 -0700
++++ catalog.c	2003-08-19 20:44:38.000000000 -0700
+@@ -62,10 +62,10 @@
  #define XML_URN_PUBID "urn:publicid:"
  #define XML_CATAL_BREAK ((xmlChar *) -1)
  #ifndef XML_XML_DEFAULT_CATALOG

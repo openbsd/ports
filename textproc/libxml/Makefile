@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.66 2003/08/20 00:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2003/08/26 16:33:11 marcm Exp $
 
 COMMENT=		"XML parsing library"
 
-VERSION=		2.5.8
+VERSION=		2.5.10
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
 CATEGORIES=		textproc
@@ -26,5 +26,6 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share"
 CONFIGURE_ARGS+=	--with-iconv="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-python
+CONFIGURE_ARGS+=	--without-threads
 
 .include <bsd.port.mk>
