@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1998/12/09 04:07:46 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/14 17:52:47 espie Exp $
 #
 
 DISTNAME=	ddd-3.1.1
 CATEGORIES=	devel
 
+BROKEN="Newer version available"
 MAINTAINER=	marc@openbsd.org
 
 MASTER_SITES=	ftp://ftp.archive.de.uu.net/pub/programming/debuggers/ddd/ \
