@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/14 15:48:49 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/09 18:51:11 brad Exp $
 
-DISTNAME=		gsl-0.3b
-CATEGORIES=		devel
+DISTNAME=	gsl-0.3b
+CATEGORIES=	devel
+MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/
 
-NEED_VERSION=		1.78
+NEED_VERSION=	1.78
 
-MAINTAINER=             rohee@OpenBSD.ORG
+MAINTAINER=	rohee@openbsd.org
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
-
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
