@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.3 2003/08/07 05:55:45 marcm Exp $
+--- configure.orig	2003-08-06 14:23:39.000000000 -0700
++++ configure	2003-08-06 14:24:11.000000000 -0700
+@@ -9881,8 +9881,7 @@ CFLAGS="$YELP_CFLAGS $CFLAGS"
+ 
+ YELP_MODULES="gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0"
+ 
+-YELP_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0 bonobo-activation-2.0| sed -e 's/^/ /' -e 's/ \+$//' -e 's/ \+/ -I /g' -e 's/^ \+//'`"
+-
++YELP_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir libgtkhtml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0 bonobo-activation-2.0| xargs -n1 echo -n ' -I '`"
+ 
+ echo "$as_me:$LINENO: checking for bzread in -lbz2" >&5
+ echo $ECHO_N "checking for bzread in -lbz2... $ECHO_C" >&6
