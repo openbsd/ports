@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/09/06 13:02:04 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/11/18 18:24:19 lebel Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
 bin/zsh
 bin/zsh-${VERSION}
-@unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
 info/zsh.info
-@exec install-info --info-dir=%D/info %D/info/zsh.info
 %%SHARED%%
 man/man1/zsh.1
 man/man1/zshall.1
@@ -40,6 +39,7 @@ share/zsh/${VERSION}/functions/_bindkey
 share/zsh/${VERSION}/functions/_bison
 share/zsh/${VERSION}/functions/_brace_parameter
 share/zsh/${VERSION}/functions/_bsd_pkg
+share/zsh/${VERSION}/functions/_bts
 share/zsh/${VERSION}/functions/_bug
 share/zsh/${VERSION}/functions/_builtin
 share/zsh/${VERSION}/functions/_bzip2
@@ -47,6 +47,7 @@ share/zsh/${VERSION}/functions/_cache_invalid
 share/zsh/${VERSION}/functions/_call_function
 share/zsh/${VERSION}/functions/_call_program
 share/zsh/${VERSION}/functions/_cd
+share/zsh/${VERSION}/functions/_chflags
 share/zsh/${VERSION}/functions/_chown
 share/zsh/${VERSION}/functions/_combination
 share/zsh/${VERSION}/functions/_command
@@ -137,6 +138,7 @@ share/zsh/${VERSION}/functions/_kill
 share/zsh/${VERSION}/functions/_killall
 share/zsh/${VERSION}/functions/_kld
 share/zsh/${VERSION}/functions/_limits
+share/zsh/${VERSION}/functions/_links
 share/zsh/${VERSION}/functions/_list
 share/zsh/${VERSION}/functions/_loadkeys
 share/zsh/${VERSION}/functions/_logical_volumes
@@ -218,6 +220,7 @@ share/zsh/${VERSION}/functions/_retrieve_cache
 share/zsh/${VERSION}/functions/_rlogin
 share/zsh/${VERSION}/functions/_rpm
 share/zsh/${VERSION}/functions/_ruby
+share/zsh/${VERSION}/functions/_samba
 share/zsh/${VERSION}/functions/_sched
 share/zsh/${VERSION}/functions/_sep_parts
 share/zsh/${VERSION}/functions/_set
@@ -238,6 +241,7 @@ share/zsh/${VERSION}/functions/_su
 share/zsh/${VERSION}/functions/_sub_commands
 share/zsh/${VERSION}/functions/_subscript
 share/zsh/${VERSION}/functions/_sudo
+share/zsh/${VERSION}/functions/_sysctl
 share/zsh/${VERSION}/functions/_tags
 share/zsh/${VERSION}/functions/_tar
 share/zsh/${VERSION}/functions/_tar_archive
@@ -256,6 +260,7 @@ share/zsh/${VERSION}/functions/_unhash
 share/zsh/${VERSION}/functions/_unsetopt
 share/zsh/${VERSION}/functions/_update-alternatives
 share/zsh/${VERSION}/functions/_urls
+share/zsh/${VERSION}/functions/_user_admin
 share/zsh/${VERSION}/functions/_user_at_host
 share/zsh/${VERSION}/functions/_users
 share/zsh/${VERSION}/functions/_users_on
@@ -309,13 +314,13 @@ share/zsh/${VERSION}/functions/_zcat
 share/zsh/${VERSION}/functions/_zcompile
 share/zsh/${VERSION}/functions/_zdump
 share/zsh/${VERSION}/functions/_zed
-share/zsh/${VERSION}/functions/_zftp
 share/zsh/${VERSION}/functions/_zip
 share/zsh/${VERSION}/functions/_zle
 share/zsh/${VERSION}/functions/_zmodload
 share/zsh/${VERSION}/functions/_zpty
 share/zsh/${VERSION}/functions/_zstyle
 share/zsh/${VERSION}/functions/allopt
+share/zsh/${VERSION}/functions/bash-backward-kill-word
 share/zsh/${VERSION}/functions/checkmail
 share/zsh/${VERSION}/functions/colors
 share/zsh/${VERSION}/functions/compaudit
@@ -362,3 +367,4 @@ share/zsh/${VERSION}/functions/zstyle+
 @dirrm share/zsh/${VERSION}/functions
 @dirrm share/zsh/${VERSION}
 @dirrm share/zsh
+@exec install-info --info-dir=%D/info %D/info/zsh.info

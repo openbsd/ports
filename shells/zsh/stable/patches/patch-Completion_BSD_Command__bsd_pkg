@@ -1,34 +1,12 @@
-$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2001/06/08 14:52:33 lebel Exp $
---- Completion/BSD/Command/_bsd_pkg.orig	Tue Jun  5 15:20:16 2001
-+++ Completion/BSD/Command/_bsd_pkg	Tue Jun  5 15:23:42 2001
-@@ -7,7 +7,7 @@ _bsd_pkg_packages() {
+$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.2 2001/11/18 18:24:19 lebel Exp $
+--- Completion/BSD/Command/_bsd_pkg.orig	Wed Sep 19 11:19:32 2001
++++ Completion/BSD/Command/_bsd_pkg	Sun Nov 18 12:45:30 2001
+@@ -16,7 +16,7 @@ _bsd_pkg_packages() {
    paths=( "${(@)${(@s.:.)PKG_PATH}:#}" )
    _files "$@" -g \*.tgz && ret=0
    (( $#path )) && _files "$@" -W paths -g \*.tgz && ret=0
--  compadd "$@" - /usr/ports/packages/All/*.tgz && ret=0
-+  compadd "$@" - ${PORTSDIR-/usr/ports}/packages/$(arch -s)/All/*.tgz(\:t) && ret=0
+-  compadd "$@" - $portsdir/packages/All/*.tgz && ret=0
++  compadd "$@" - $portsdir/packages/$(arch -s)/All/*.tgz && ret=0
  
    return ret
- }
-@@ -37,7 +37,7 @@ _bsd_pkg() {
- 	'-d[remove empty directories]' \
- 	'-f[force deinstallation]' \
-         '-p:prefix directory:_files -/' \
--        '*:package to deinstall:compadd - /var/db/pkg/*(\:t)'
-+        '*:package to deinstall:compadd - ${PKG_DBDIR-/var/db/pkg}/*(\:t)'
-     ;;
- 
-   pkg_info)
-@@ -57,10 +57,10 @@ _bsd_pkg() {
- 	'-R[show list list of installed requiring packages]' \
- 	'-m[show mtree files]' \
- 	'-L[show full pathnames of files]' \
--        '-e[test if package is installed]:package name:compadd - /var/db/pkg/*(\:t)' \
-+        '-e[test if package is installed]:package name:compadd - ${PKG_DBDIR-/var/db/pkg}/*(\:t)' \
-         '-l:prefix directory:_files -/' \
-         '-t:mktemp template:_files -/' \
--        '(-a)*:package name:compadd - /var/db/pkg/*(\:t)'
-+        '(-a)*:package name:compadd - ${PKG_DBDIR-/var/db/pkg}/*(\:t)'
-     ;;
-   esac
  }

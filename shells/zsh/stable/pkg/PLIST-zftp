@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-zftp,v 1.3 2001/07/01 15:43:42 lebel Exp $
+@comment $OpenBSD: PLIST-zftp,v 1.4 2001/11/18 18:24:19 lebel Exp $
 @pkgdep zsh-${VERSION}
 %%SHARED%%
 man/man1/zshzftpsys.1
+share/zsh/${VERSION}/functions/_zftp
 share/zsh/${VERSION}/functions/zfanon
 share/zsh/${VERSION}/functions/zfautocheck
 share/zsh/${VERSION}/functions/zfcd
