@@ -1,0 +1,39 @@
+--- fzap.c.orig	Mon Feb 15 17:50:46 1999
++++ fzap.c	Thu Apr  6 15:52:19 2000
+@@ -40,6 +40,7 @@
+ 
+ void _init()
+ {
++#ifndef __OpenBSD__
+     void *handle;
+ 
+     handle = dlopen(LIB_PATH, 1);
+@@ -52,14 +53,15 @@
+ 	fprintf(stderr, "\n[fzap] dlopen error!\n");
+ 	return;
+     }
++#endif
+     DBG("Warning: fzap loaded!");
+ }
+ 
+ 
+ CONNECT(__fd, __addr, __len)
+ {
+-    int result, truc, t2 = sizeof(int), loport = 0;
+-    struct sockaddr_in *my_addr;
++    int result = -1, truc, t2 = sizeof(int), loport = 0;
++    struct sockaddr_in *my_addr = NULL;
+     char *lprt;
+     void *handle;
+ 
+@@ -146,8 +148,8 @@
+ 
+ BIND(__fd, __addr, __len)
+ {
+-    int result, truc, t2 = sizeof(int), loport = 0, oldport = 0;
+-    struct sockaddr_in *my_addr;
++    int result = 0, truc, t2 = sizeof(int), loport = 0, oldport = 0;
++    struct sockaddr_in *my_addr = NULL;
+     char *lprt;
+     void *handle;
+ 

@@ -1,0 +1,32 @@
+--- fzap.h.orig	Mon Feb 15 18:50:43 1999
++++ fzap.h	Thu Apr  6 15:51:10 2000
+@@ -1,8 +1,9 @@
++#include <sys/param.h>
+ 
+ void DBG(char *fmt,...)
+ {
+-    va_list *ap;
+ #ifdef DEBUG
++    va_list *ap;
+     va_start(ap, fmt);
+     fprintf(stderr, "\n[fzap:DBG]\t");
+     vfprintf(stderr, fmt, ap);
+@@ -47,12 +48,12 @@
+ #endif
+ 
+ 
+-#ifdef __FreeBSD__
+-#define LIB_PATH "/usr/lib/libc.so.3.0"
+-#define CONNECT(A,B,C) int connect(int A, const struct sockaddr *B, int C)
+-int (*old_connect)(int, const struct sockaddr *, int)=NULL;
+-#define BIND(A,B,C) int bind __P((int A, const struct sockaddr * B, int C))
+-int (*old_bind)(int, const struct sockaddr *, int);
++#ifdef BSD
++#define LIB_PATH "/usr/lib/libc.so.23.1"
++#define CONNECT(A,B,C) int connect(int A, const struct sockaddr *B, socklen_t C)
++int (*old_connect)(int, const struct sockaddr *, socklen_t)=NULL;
++#define BIND(A,B,C) int bind __P((int A, const struct sockaddr * B, socklen_t C))
++int (*old_bind)(int, const struct sockaddr *, socklen_t);
+ #endif
+ 
+ 

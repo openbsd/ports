@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# ADMfzap wrapper.
+#
+# Dug Song <dugsong@monkey.org>
+#
+# $Id: ADMfzap,v 1.1.1.1 2000/04/06 20:45:01 dugsong Exp $
+
+LIBFZAP=y0y0y0
+
+function usage {
+    echo "Usage: ADMfzap [-p port] command ..." >&2; exit 1
+}
+
+while getopts p: opt 2>&-; do
+    case "$opt" in
+	p) LPORT=$OPTARG ;;
+	\?) usage ;;
+    esac
+done
+
+shift $(($OPTIND - 1))
+
+if [ $# -eq 0 ]; then usage; fi
+
+LD_PRELOAD=$LIBFZAP exec $*
+

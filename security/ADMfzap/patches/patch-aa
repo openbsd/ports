@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Feb 15 18:49:35 1999
++++ Makefile	Thu Apr  6 15:37:46 2000
+@@ -20,8 +20,8 @@
+ 	$(CC) $(COPT) fzap.c -g -DLINUX_GLIBC $(DEBUG)
+ 	ld -Bshareable -o fzap.so fzap.o $(LDOPT)
+ 
+-freebsd:
+-	$(CC) $(COPT) fzap.c -g $(DEBUG)
++openbsd freebsd:
++	$(CC) $(CFLAGS) $(COPT) fzap.c -g $(DEBUG)
+ 	ld -Bshareable -o fzap.so fzap.o
+ 
+ 
