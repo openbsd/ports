@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2005/03/03 00:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.137 2005/03/13 09:14:39 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += jhead
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
+     SUBDIR += kimdaba
      SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libcaca
