@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2002/12/16 14:31:06 grange Exp $
+# $OpenBSD: Makefile,v 1.152 2002/12/19 01:21:53 margarida Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -71,6 +71,7 @@
      SUBDIR += libslang
      SUBDIR += libspectrum
      SUBDIR += libtool
+     SUBDIR += libunicode
      SUBDIR += libusb
      SUBDIR += libuta
      SUBDIR += lincvs
