@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 16:41:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/22 17:26:48 naddy Exp $
 
 COMMENT=		"HTML, XHTML validator"
 
-DISTNAME=		validate-1.1.2
+DISTNAME=		validate-1.2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.htmlhelp.com/tools/validator/offline/
@@ -18,8 +18,8 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=
 EXTRACT_CASES=		*) cp ${FULLDISTDIR}/$$archive ${WRKDIST}/validate ;;
 
-RUN_DEPENDS=		::textproc/lq-sp \
-			::textproc/wdg-sgml-lib
+RUN_DEPENDS=		:lq-sp-*:textproc/lq-sp \
+			:wdg-sgml-lib-*:textproc/wdg-sgml-lib
 
 WRKDIST=		${WRKDIR}
 NO_BUILD=		Yes
