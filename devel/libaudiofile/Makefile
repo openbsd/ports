@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/22 04:27:07 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/22 04:35:35 brad Exp $
 
 DISTNAME=	audiofile-0.1.6
 PKGNAME=	lib${DISTNAME}
@@ -10,7 +10,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	rohee@OpenBSD.ORG
 
-BUILD_SEPARATE=	yes
+SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
