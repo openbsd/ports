@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/22 01:39:49 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/23 23:40:25 brad Exp $
 
-DISTNAME=		leafnode-1.9.2
-CATEGORIES=		news
+DISTNAME=	leafnode-1.9.2
+CATEGORIES=	news
 
-MAINTAINER=		bob@prophecy.lu
+MAINTAINER=	bob@prophecy.lu
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/news/transport
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= system/news/transport
 
-SYSCONFDIR=		/etc/leafnode
-GNU_CONFIGURE=          yes
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var
-
-MAN1=	newsq.1
-MAN8=	fetch.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
-
+SYSCONFDIR=	/etc/leafnode
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= --sysconfdir=${SYSCONFDIR} --localstatedir=/var
 
 update: install
 	(cd $(WRKSRC) && make update)
