@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2000/09/06 17:26:28 marc Exp $
+# $OpenBSD: Makefile,v 1.24 2000/09/07 05:44:32 brad Exp $
 
-DISTNAME=       pgp263is
+DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.320
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
@@ -15,26 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
-IS_INTERACTIVE=	Yes
-WRKDIST=	${WRKDIR}/src
-
-FAKE=		Yes
-
-FLAVORS=	usa intl
-
-# common C flags
-CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
-	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
-
-RSAOBJS= rsaglue1.o
-
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
+
+WRKDIST=	${WRKDIR}/src
 
 # library and doc files to install
 LIBFILES= config.txt de.hlp en.hlp es.hlp fr.hlp keys.asc \
 	language.txt pgp.hlp
 
-DOCFILES= appnote.doc blurb.txt changes.doc faq.txt keyserv.doc \
+DOCS=	appnote.doc blurb.txt changes.doc faq.txt keyserv.doc \
 	mitlicen.txt pgformat.doc pgp262i.dif pgp263i.dif \
 	pgp_vms.hlp pgpdoc1.txt pgpdoc2.txt politic.doc przon26i.asc
 
@@ -56,21 +45,18 @@ pre-build:
 	 fi
 
 do-build:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} make -f makefile all \
-	  RSAOBJS="${RSAOBJS}" RSALIBS="${RSALIBS}" \
-	  CFLAGS="${CFLAGS} `cat ${WRKDIR}/.endian`" 
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f makefile all \
+	  CFLAGS="${CFLAGS} -DUNIX -DPORTABLE -DMERIT -DIDEA32 \
+		-DMAX_NAMELEN=255 -DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\" \
+		`cat ${WRKDIR}/.endian`"
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp
-	@${INSTALL_DATA_DIR} ${PGP_DOC_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp
+	${INSTALL_DATA_DIR} ${PGP_DOC_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/pgp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/doc/pgp.1 ${PREFIX}/man/man1
-.for libfile in ${LIBFILES}
-	${INSTALL_DATA} ${WRKDIR}/${libfile} ${PREFIX}/lib/pgp
-.endfor
 	${INSTALL_DATA} ${WRKDIR}/setup.doc ${PGP_DOC_DIR}
-.for docfile in ${DOCFILES}
-	${INSTALL_DATA} ${WRKDIR}/doc/${docfile} ${PGP_DOC_DIR}
-.endfor
+	cd ${WRKDIR}; ${INSTALL_DATA} ${LIBFILES} ${PREFIX}/lib/pgp
+	cd ${WRKDIR}/doc; ${INSTALL_DATA} ${DOCS} ${PGP_DOC_DIR}
 
 .include <bsd.port.mk>
