@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/21 02:56:48 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/03 09:54:57 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/CDATASection.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Comment.pod
@@ -6,7 +6,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Document.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Element.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Node.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Text.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/.packlist
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.so
 man/man3/XML::LibXML.3p
