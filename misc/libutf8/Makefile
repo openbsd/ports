@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/30 07:14:53 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/05 11:00:19 shell Exp $
 
 COMMENT=	"provides UTF-8 locale support"
 
 DISTNAME=	libutf8-0.7.3
-CATEGORIES=     devel misc
+CATEGORIES=     misc devel
 NEED_VERSION=	1.488
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/utf8/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/devel/
