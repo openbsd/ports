@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/09/29 23:45:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/11/20 15:54:32 naddy Exp $
 
 COMMENT=	"patent-free speech codec"
 
-DISTNAME=	speex-1.0.2
+DISTNAME=	speex-1.0.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.speex.org/
 
