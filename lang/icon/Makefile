@@ -1,35 +1,29 @@
-# Simple Icon port, does not yet support variant translators
-# $OpenBSD: Makefile,v 1.2 1998/10/13 14:58:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/05/09 21:55:37 brad Exp $
 
-DISTNAME=icon-9.3.1
-DIST_SUBDIR=icon
+DISTNAME=	icon-9.3.1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
+DIST_SUBDIR=	icon
+DISTFILES=	unix.tgz
 
-CATEGORIES=lang
+MAINTAINER=	espie@openbsd.org
 
-MAINTAINER=espie@openbsd.org
+NO_WRKDIR=	yes
+USE_X11=	yes
 
-MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/packages/unix/
-DISTFILES=unix.tgz
-USE_X11=yes
-WRKSRC=${WRKDIR}
+SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
+MAKE_ENV=	ARCH="${MACHINE_ARCH}"
+CONF_DIR=	${WRKSRC}/config/unix/openbsd
 
-
-# need to pass architecture type to the configure script
-SCRIPTS_ENV=ARCH="${ARCH}"
-MAKE_ENV=ARCH="${ARCH}"
-
-CONF_DIR=${WRKSRC}/config/unix/openbsd
-
-ALL_TARGET=Icon-icont
+ALL_TARGET=	Icon-icont
 
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
 	if [ -f ${CONF_DIR}/${ARCH}_rswitch.c ] ; then \
-		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
+		${LN} -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
 	else \
 		touch ${CONF_DIR}/rswitch.c ;\
 	fi 
-
 
 # We put a wrapper around icont for finding the library files when
 # they're installed
