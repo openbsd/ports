@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/02/12 12:17:07 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/13 18:37:32 alek Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
 DISTNAME=	dovecot-0.99.14
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -23,6 +24,8 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+=--without-pam --without-shadow --without-vpopmail \
 		--localstatedir=/var --with-ssldir=/etc/ssl --with-ssl=openssl
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 post-configure:
 	@perl -pi -e 's|_PREFIX_|${PREFIX}|g' ${WRKSRC}/dovecot-example.conf

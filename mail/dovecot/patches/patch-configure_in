@@ -1,10 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.4 2004/06/22 21:05:20 brad Exp $
---- configure.in.orig	2004-06-18 15:11:59.000000000 -0400
-+++ configure.in	2004-06-22 16:36:27.000000000 -0400
-@@ -682,6 +682,44 @@ AC_TRY_COMPILE([
+$OpenBSD: patch-configure_in,v 1.5 2005/02/13 18:37:32 alek Exp $
+--- configure.in.orig	Wed Jan 19 16:15:45 2005
++++ configure.in	Sun Feb 13 18:31:22 2005
+@@ -12,6 +12,7 @@ AC_STDC_HEADERS
+ AC_C_INLINE
+ AC_ARG_PROGRAM
+ AM_PROG_LIBTOOL
++LIBS="${LIBS} -liconv"
+ AM_ICONV
+ 
+ AC_CHECK_HEADERS(string.h stdlib.h stdint.h unistd.h dirent.h)
+@@ -681,6 +682,44 @@ AC_TRY_COMPILE([
+ ], [
    AC_MSG_RESULT(no)
  ])
- 
++
 +dnl * If mmap() plays nicely with write()
 +AC_MSG_CHECKING([whether we need to use MS_INVALIDATE with mmaps])
 +AC_TRY_RUN([
@@ -42,7 +51,6 @@ $OpenBSD: patch-configure_in,v 1.4 2004/06/22 21:05:20 brad Exp $
 +  AC_DEFINE(NEED_MS_INVALIDATE,, Define if your mmap() implementation requires use of MS_INVALIDATE to work with write())
 +])
 +
-+
+ 
  dnl * Solaris compatible sendfilev()
  AC_CHECK_LIB(sendfile, sendfilev, [
-   LIBS="$LIBS -lsendfile"
