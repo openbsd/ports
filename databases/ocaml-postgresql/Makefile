@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/12 22:03:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/29 23:29:12 avsm Exp $
 
 COMMENT=	"Objective Caml bindings for PostgreSQL"
 CATEGORIES=	databases
 
-V=		1.3.3
+V=		1.3.4
 DISTNAME=	postgresql-ocaml-${V}
 PKGNAME=	ocaml-postgresql-${V}
 MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
