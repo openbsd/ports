@@ -1,10 +1,10 @@
---- perftest.cpp.orig	Wed Dec 23 21:21:45 1998
-+++ perftest.cpp	Wed Dec 23 21:22:15 1998
+--- perftest.cpp.orig	Mon Jan 24 23:37:20 2000
++++ perftest.cpp	Mon Jan 24 23:37:40 2000
 @@ -1,7 +1,7 @@
  // test ttf engine performance
  // (C) Copyright 1997-1998 Herbert Duerr
  
--#define TTFONTDIR	"/usr/ttfonts"
+-#define TTFONTDIR	"/usr/share/fonts/truetype"
 +#define TTFONTDIR	"/usr/X11R6/lib/X11/fonts/TrueType"
  #define MAXFONTBUFSIZE (2048*2048)
  
