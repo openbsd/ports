@@ -1,0 +1,71 @@
+--- Makefile.in.orig	Thu Jul  6 13:06:10 2000
++++ Makefile.in	Sun Aug 20 01:25:42 2000
+@@ -11,10 +11,12 @@
+ DEBUG= -g
+ #uncomment the following if you need libpcap based build under linux
+ #(not raccomanded)
+-COMPILE_TIME= @FORCE_LIBPCAP@ @LIMITWHENSUID@ @HAVE_PROC@
++COMPILE_TIME= @LIMITWHENSUID@ @HAVE_PROC@
+ INSTALL_MANPATH=@MANPATH@
+ @PCAP@
+ 
++TARGET = hping
++
+ OBJ=	main.o getifname.o getlhs.o \
+ 	linux_sockpacket.o parseoptions.o datafiller.o \
+ 	datahandler.o getdefaultif.o gethostname.o \
+@@ -30,14 +32,10 @@
+ 	memlock.o memunlock.o ip_opt_build.o \
+ 	display_ipopt.o sendrawip.o
+ 
+-all: hping2
++all: $(TARGET)
+ 
+-hping2: byteorder.h $(OBJ) $(PCAP)
+-	$(CC) -o hping2 $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(OBJ) $(PCAP)
+-	@echo
+-	./hping2 -v
+-	@echo "use \`make strip' to strip hping2 binary"
+-	@echo "use \`make install' to install hping2"
++$(TARGET): byteorder.h $(OBJ)
++	$(CC) -o $(TARGET) $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(OBJ) -lpcap
+ 
+ byteorder.h:
+ 	./configure
+@@ -46,26 +44,23 @@
+ 	$(CC) -c $(CCOPT) $(DEBUG) $(COMPILE_TIME) $<
+ 
+ clean:
+-	rm -rf hping2 *.o
++	rm -f $(TARGET) *.o
+ 	-(cd libpcap; make clean)
+ 	-(cd utils; make clean)
+ 
+ distclean:
+-	rm -rf hping2 *.o byteorder byteorder.h systype.h Makefile
++	rm -f $(TARGET) *.o byteorder byteorder.h systype.h Makefile
+ 	-(cd libpcap; make distclean)
+ 	-(cd utils; make clean)
+ 
+-install: hping2
+-	cp -f hping2 /usr/sbin/
+-	chmod 755 /usr/sbin/hping2
+-	ln -sf /usr/sbin/hping2 /usr/sbin/hping
+-	cp ./docs/hping2.8.gz ${INSTALL_MANPATH}/man8
+-	chmod 644 ${INSTALL_MANPATH}/man8/hping2.8.gz
+-
+-strip: hping2
+-	@ls -l ./hping2
+-	strip hping2
+-	@ls -l ./hping2
++install: $(TARGET) 
++	${BSD_INSTALL_PROGRAM} $(TARGET) ${PREFIX}/sbin
++	${BSD_INSTALL_MAN} docs/$(TARGET).8 ${PREFIX}/man/man8
++
++strip: $(TARGET)
++	@ls -l ./$(TARGET)
++	strip $(TARGET)
++	@ls -l ./$(TARGET)
+ 
+ libpcap/libpcap.a:
+ 	(cd libpcap; ./configure; make)

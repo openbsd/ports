@@ -1,31 +1,25 @@
-# Makefile for:		hping
-# Version required:	2.0b49
-# Date created:		Oct 28 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.8 2000/04/14 14:13:18 dugsong Exp $
+# $OpenBSD: Makefile,v 1.9 2000/08/20 06:08:01 obecian Exp $
 
-PKGNAME=	hping-2.0b53
-
-DISTNAME=	hping2-beta53
-
+DISTNAME=	hping2-beta54
+PKGNAME=	hping-2.0b54
 CATEGORIES=	net
-NEED_VERSION=	1.191
-
+NEED_VERSION=	1.310
 MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
 
 MAINTAINER=	dugsong@monkey.org
 
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	yes
+MAKE_FLAGS=	CC="${CC}" CCOPT="${CFLAGS} -Wall"
 
-FAKE=		yes
+CONFIGURE_STYLE= simple
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${PREFIX}/sbin/hping
+post-extract:
+	@sed -e s#hping2#hping# \
+	     -e s#HPING2#HPING# \
+		${WRKSRC}/docs/hping2.8 > ${WRKSRC}/docs/hping.8
 
 .include <bsd.port.mk>

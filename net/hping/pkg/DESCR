@@ -1,12 +1,6 @@
-from HPING2-HOWTO.TXT:
-
-0001: What is hping?
-
-  Hping is a software to do TCP/IP stack auditing, to uncover firewall
-  policy, to scan TCP port in a lot of different modes, to transfer
-  files accross a firewall and many other stuff. Using hping you are
-  able to do a lot of not security-regarding stuff. For example you
-  can test networks performance, check if a host is up, check if TOS
-  is handled et cetera.
-
--d.
+Hping is a software to do TCP/IP stack auditing, to uncover firewall
+policy, to scan TCP port in a lot of different modes, to transfer
+files accross a firewall and many other stuff. Using hping you are
+able to do a lot of not security-regarding stuff. For example you
+can test networks performance, check if a host is up, check if TOS
+is handled et cetera.

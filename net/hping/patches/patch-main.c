@@ -1,6 +1,6 @@
---- main.c.orig	Thu Oct 28 13:47:33 1999
-+++ main.c	Thu Oct 28 13:48:55 1999
-@@ -138,8 +138,8 @@
+--- main.c.orig	Sat Aug 19 21:46:16 2000
++++ main.c	Sat Aug 19 21:43:54 2000
+@@ -147,8 +147,8 @@ int main(int argc, char **argv)
  
  	if ( parse_options(argc, argv) == -1 )
  	{
