@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/31 11:59:50 wilfried Exp $
 
 COMMENT=		'dockapp-making standard library for Window Maker'
 
@@ -16,6 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+
+PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
+			${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltmain_sh \
+			patch-*
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

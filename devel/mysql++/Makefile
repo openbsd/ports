@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/31 11:59:50 wilfried Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -20,6 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/mysql++/ \
 			ftp://ftp.mysql.com/mysql++/
+
+PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+			${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+			patch-*
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=

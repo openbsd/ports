@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/31 11:59:50 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -18,6 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+
+PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
+			${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltmain_sh \
+			patch-*
 
 RUN_DEPENDS=		::x11/windowmaker
 LIB_DEPENDS=		wraster.4::x11/windowmaker \
