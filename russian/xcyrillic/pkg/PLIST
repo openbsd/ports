@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/15 05:31:54 form Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/06/26 22:20:40 form Exp $
 lib/X11/fonts/xcyrillic/100dpi/crox1c.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox1cb.pcf.gz
 lib/X11/fonts/xcyrillic/100dpi/crox1cbo.pcf.gz
@@ -121,17 +121,32 @@ lib/X11/fonts/xcyrillic/75dpi/crox6tb.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6tbo.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/crox6to.pcf.gz
 lib/X11/fonts/xcyrillic/75dpi/fonts.dir
+lib/X11/fonts/xcyrillic/LICENSE.txt
 lib/X11/fonts/xcyrillic/misc/fonts.alias
 lib/X11/fonts/xcyrillic/misc/fonts.dir
 lib/X11/fonts/xcyrillic/misc/koi10x16b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi10x20.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi12x24.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi12x24b.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi5x8.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi6x10.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi6x13.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi6x13b.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi6x9.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi7x14.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi7x14b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi8x13.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi8x16.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi8x16b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi9x15.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi9x15b.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi9x18.pcf.gz
+lib/X11/fonts/xcyrillic/misc/koi9x18b.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koinil2.pcf.gz
-@dirrm lib/X11/fonts/xcyrillic/100dpi
-@dirrm lib/X11/fonts/xcyrillic/75dpi
+lib/X11/fonts/xcyrillic/misc/screen8x16.pcf.gz
+lib/X11/fonts/xcyrillic/misc/screen8x16b.pcf.gz
 @dirrm lib/X11/fonts/xcyrillic/misc
+@dirrm lib/X11/fonts/xcyrillic/75dpi
+@dirrm lib/X11/fonts/xcyrillic/100dpi
 @dirrm lib/X11/fonts/xcyrillic
+@dirrm lib/X11/fonts
