@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.54 2002/11/26 19:57:05 margarida Exp $
+# $OpenBSD: network.conf.template,v 1.55 2003/01/23 00:32:15 margarida Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -243,16 +243,17 @@ MASTER_SITE_FREEBSD_LOCAL+=	\
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.linuxsecurity.com/ \
-	http://packetstorm.dnsi.info/ \
 	http://packetstorm.decepticons.org/ \
 	http://packetstormsecurity.nl/ \
 	http://packetstorm.acm.miami.edu/ \
 	http://packetstormsecurity.org.pk/ \
 	http://packetstorm.security-guide.de/ \
-	http://packetstorm.globalhostnet.com/ \
 	http://packetstormsecurity.com.ar/ \
-	http://packetstorm.nulldetector.com/ \
 	http://packetstormsecurity.packetstorm.org/
+	http://packetstorm.digital-network.net \
+	http://packetstorm.defcon.tv \
+	http://packetstorm.troop218.org \
+	http://packetstorm.blackroute.net
 
 MASTER_SITE_HORDE+=		\
 	ftp://ftp.horde.org/pub/ \
