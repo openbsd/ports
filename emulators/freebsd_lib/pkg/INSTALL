@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2001/02/15 01:03:03 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2001/08/24 18:36:06 brad Exp $
 #
 # Pre/post-installation setup of freebsd_lib
 
@@ -61,7 +61,7 @@ case $2 in
 	    ln -sf $PREFIX /emul/freebsd
 	fi
 	
-	do_notice_bottom
+	do_notice_bottom $1
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
