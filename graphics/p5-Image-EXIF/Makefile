@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/18 20:52:48 naddy Exp $
 
 COMMENT=	"interface to read EXIF tags in JPEG images"
 
@@ -22,10 +22,7 @@ EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	exif.8::graphics/libexif
 
-CONFIGURE_STYLE= perl
-
-MAKE_FLAGS=	CC='${CC}' \
-		LD='${CC}'
+CONFIGURE_STYLE=perl
 
 post-patch:
 	@perl -i -p -e 's#/usr/local#${LOCALBASE}#' ${WRKDIST}/Makefile.PL
