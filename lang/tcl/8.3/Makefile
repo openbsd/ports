@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.9 2001/07/04 07:08:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/30 02:12:26 brad Exp $
+# Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
 
