@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.i386,v 1.9 2004/09/18 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST.i386,v 1.10 2004/11/09 14:48:27 alek Exp $
 @conflict communicator-*
 @conflict navigator-*
 bin/netscape
@@ -152,4 +152,4 @@ netscape/plugins/
 netscape/plugins/cpPack1.jar
 netscape/registry
 netscape/vreg
-@exec sysctl -w kern.emul.${EMUL_TYPE}=1
+@sysctl kern.emul.${EMUL_TYPE}=1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:32:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/11/09 14:48:26 alek Exp $
 Acrobat5/
 Acrobat5/Browsers/
 Acrobat5/Browsers/intellinux/
@@ -68,4 +68,4 @@ Acrobat5/Resource/LICFONT.TXT
 Acrobat5/bin/
 Acrobat5/bin/acroread
 bin/acroread
-@exec sysctl -w kern.emul.linux=1
+@sysctl kern.emul.linux=1

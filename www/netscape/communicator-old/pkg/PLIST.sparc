@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sparc,v 1.7 2004/09/18 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST.sparc,v 1.8 2004/11/09 14:48:26 alek Exp $
 @conflict navigator-*
 bin/netscape
 netscape/LICENSE
@@ -164,4 +164,4 @@ netscape/vreg
 @dirrm netscape/plugins
 @dirrm netscape/spell
 @dirrm netscape
-@exec sysctl -w kern.emul.${EMUL_TYPE}=1
+@sysctl kern.emul.${EMUL_TYPE}=1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/22 17:28:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/11/09 14:48:25 alek Exp $
 @option no-default-conflict
 @conflict jdk-linux->=1.3,<1.4
 jdk1.3.1-linux/
@@ -965,4 +965,4 @@ jdk1.3.1-linux/man/man1/
 @man jdk1.3.1-linux/man/man1/serialver.1
 @man jdk1.3.1-linux/man/man1/tnameserv.1
 jdk1.3.1-linux/src.jar
-@exec sysctl -w kern.emul.linux=1
+@sysctl kern.emul.linux=1

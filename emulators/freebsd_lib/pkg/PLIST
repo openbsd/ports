@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:42:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/11/09 14:48:25 alek Exp $
 sbin/
 sbin/ldconfig
 usr/
@@ -265,3 +265,4 @@ var/
 var/run/
 var/run/ld-elf.so.hints
 var/run/ld.so.hints
+@sysctl kern.emul.freebsd=1

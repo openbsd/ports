@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.7 2004/03/11 20:33:11 lebel Exp $
+# $OpenBSD: INSTALL,v 1.8 2004/11/09 14:48:25 alek Exp $
 #
 # Pre/post-installation setup of freebsd_lib
 
@@ -54,7 +54,6 @@ case $2 in
 	install -d -o root -g bin -m 755 $PREFIX
 	;;
     POST-INSTALL)
-	sysctl -w kern.emul.freebsd=1
 	do_notice_top
 
 	if [ -e /emul/freebsd ]; then
