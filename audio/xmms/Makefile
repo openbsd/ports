@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/24 17:38:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/01/16 19:25:30 naddy Exp $
 # Uses pthreads
-
-ONLY_FOR_ARCHS=	i386
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
