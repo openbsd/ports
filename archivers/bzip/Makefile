@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/17 17:57:21 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/17 17:59:54 brad Exp $
 
 DISTNAME=	bzip-0.21
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@openbsd.org
 
