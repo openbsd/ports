@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_libgtop_texi,v 1.1 2004/08/09 15:01:56 espie Exp $
+--- doc/libgtop.texi.orig	Mon Aug  9 16:53:10 2004
++++ doc/libgtop.texi	Mon Aug  9 16:55:14 2004
+@@ -8,6 +8,12 @@
+ @include auto-macros.texi
+ @include version.texi
+ 
++@ifnottex
++@dircategory Programming & development tools
++@direntry
++* libgtop (libgtop).		libgtop programming manual
++@end direntry
++@end ifnottex
+ @ifinfo
+ This is the LibGTop Reference Manual version @value{VERSION}
+ (last modified @value{UPDATED}).
