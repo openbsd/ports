@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample_golem_golemrc,v 1.1.1.1 2001/11/14 18:04:31 heko Exp $
---- sample.golem/golemrc.orig	Sun Sep 30 12:47:15 2001
-+++ sample.golem/golemrc	Sun Sep 30 12:48:46 2001
-@@ -136,7 +136,12 @@ keys {
+$OpenBSD: patch-sample_golem_golemrc,v 1.2 2002/01/11 00:51:05 naddy Exp $
+--- sample.golem/golemrc.orig	Wed Dec 12 16:02:07 2001
++++ sample.golem/golemrc	Wed Dec 12 16:03:42 2001
+@@ -160,7 +160,12 @@ keys {
  # wmclass_defs after mwm_hints if you want it to override
  # what mwmhints has set.
  #

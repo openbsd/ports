@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/14 18:04:31 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/11 00:51:05 naddy Exp $
 bin/golem
 bin/golem.install
 %%SHARED%%
@@ -12,7 +12,6 @@ share/golem/themes/AbsoluteE/bar_focused_near.xpm
 share/golem/themes/AbsoluteE/bar_normal_far.xpm
 share/golem/themes/AbsoluteE/bar_normal_mid.xpm
 share/golem/themes/AbsoluteE/bar_normal_near.xpm
-share/golem/themes/AbsoluteE/bevel_bg_normal.png
 share/golem/themes/AbsoluteE/border_horiz_far.xpm
 share/golem/themes/AbsoluteE/border_horiz_far_foc.xpm
 share/golem/themes/AbsoluteE/border_horiz_mid.xpm
@@ -31,6 +30,11 @@ share/golem/themes/AbsoluteE/forplug/setroot/bg_v.jpg
 share/golem/themes/AbsoluteE/forplug/setroot/rc
 share/golem/themes/AbsoluteE/rc
 share/golem/themes/MudGolem/README
+share/golem/themes/MudGolem/forplug/pager/focpagedwin.xpm
+share/golem/themes/MudGolem/forplug/pager/nonsel.xpm
+share/golem/themes/MudGolem/forplug/pager/pagedwin.xpm
+share/golem/themes/MudGolem/forplug/pager/rc
+share/golem/themes/MudGolem/forplug/pager/sel.xpm
 share/golem/themes/MudGolem/forplug/pier/rc
 share/golem/themes/MudGolem/forplug/pier/tile.xpm
 share/golem/themes/MudGolem/forplug/setroot/Enigmas-Oven-2.jpg
@@ -153,6 +157,9 @@ share/golem/themes/microGUI/bottom_near.xpm
 share/golem/themes/microGUI/close.xpm
 share/golem/themes/microGUI/close_clicked.xpm
 share/golem/themes/microGUI/close_unfoc.xpm
+share/golem/themes/microGUI/forplug/pager/focpagedwin.xpm
+share/golem/themes/microGUI/forplug/pager/pagedwin.xpm
+share/golem/themes/microGUI/forplug/pager/rc
 share/golem/themes/microGUI/forplug/pier/rc
 share/golem/themes/microGUI/forplug/pier/tile.xpm
 share/golem/themes/microGUI/forplug/start_slide/greybg.xpm
@@ -194,6 +201,7 @@ share/golem/themes/twm/topbar.xpm
 @dirrm share/golem/themes/twm
 @dirrm share/golem/themes/microGUI/forplug/start_slide
 @dirrm share/golem/themes/microGUI/forplug/pier
+@dirrm share/golem/themes/microGUI/forplug/pager
 @dirrm share/golem/themes/microGUI/forplug
 @dirrm share/golem/themes/microGUI
 @dirrm share/golem/themes/eBlueSteel/styles
@@ -217,6 +225,7 @@ share/golem/themes/twm/topbar.xpm
 @dirrm share/golem/themes/MudGolem/forplug/simple_menus
 @dirrm share/golem/themes/MudGolem/forplug/setroot
 @dirrm share/golem/themes/MudGolem/forplug/pier
+@dirrm share/golem/themes/MudGolem/forplug/pager
 @dirrm share/golem/themes/MudGolem/forplug
 @dirrm share/golem/themes/MudGolem
 @dirrm share/golem/themes/AbsoluteE/forplug/setroot
