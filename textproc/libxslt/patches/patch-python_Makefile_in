@@ -1,6 +1,6 @@
-$OpenBSD: patch-python_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
---- python/Makefile.in.orig	Sun Jul  7 04:13:42 2002
-+++ python/Makefile.in	Fri Jul 12 01:10:14 2002
+$OpenBSD: patch-python_Makefile_in,v 1.2 2002/09/14 07:52:03 shell Exp $
+--- python/Makefile.in.orig	Sat Sep 14 15:43:54 2002
++++ python/Makefile.in	Sat Sep 14 15:45:16 2002
 @@ -129,7 +129,7 @@ INCLUDES = \
  	-I$(top_srcdir)
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-python_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
  # libxsltclass.txt is generated
  DOCS = TODO
  
-@@ -477,7 +477,7 @@ maintainer-clean-generic clean mostlycle
+@@ -478,7 +478,7 @@ maintainer-clean
  @WITH_PYTHON_TRUE@libxslt.py: $(srcdir)/libxsl.py libxsltclass.py
  @WITH_PYTHON_TRUE@	cat $(srcdir)/libxsl.py libxsltclass.py > libxslt.py
  
 -@WITH_PYTHON_TRUE@install-data-local:
 +install-data-local:
- @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DESTDIR)$(PYTHON_SITE_PACKAGES)
- @WITH_PYTHON_TRUE@	-@INSTALL@ -m 0644 libxslt.py $(DESTDIR)$(PYTHON_SITE_PACKAGES)
- @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DESTDIR)$(DOCS_DIR)
+ @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(libdir)/python${PYTHON_VERSION}/site-packages
+ @WITH_PYTHON_TRUE@	@INSTALL@ -m 0644 libxslt.py $(libdir)/python${PYTHON_VERSION}/site-packages
+ @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DOCS_DIR)

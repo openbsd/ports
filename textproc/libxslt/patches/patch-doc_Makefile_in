@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
---- doc/Makefile.in.orig	Sun Jul  7 04:13:40 2002
-+++ doc/Makefile.in	Fri Jul 12 00:53:08 2002
-@@ -24,7 +24,7 @@ exec_prefix = @exec_prefix@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2002/09/14 07:52:03 shell Exp $
+--- doc/Makefile.in.orig	Sat Sep 14 15:42:52 2002
++++ doc/Makefile.in	Sat Sep 14 15:43:39 2002
+@@ -22,7 +22,7 @@ exec_prefix = @exec_prefix@
  bindir = @bindir@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -10,16 +10,16 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
  sysconfdir = @sysconfdir@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
-@@ -118,7 +118,7 @@ XSLT_INCLUDEDIR = @XSLT_INCLUDEDIR@
- XSLT_LIBDIR = @XSLT_LIBDIR@
- XSLT_LIBS = @XSLT_LIBS@
+@@ -123,7 +123,7 @@ EXTRA_DIST = \
  
+ 
+ # The name of the module.
 -DOC_MODULE = libxslt-$(VERSION)
 +DOC_MODULE = libxslt
  
  # The top-level SGML file.
  DOC_MAIN_SGML_FILE = libxslt.sgml
-@@ -126,7 +126,7 @@ DOC_MAIN_SGML_FILE = libxslt.sgml
+@@ -131,7 +131,7 @@ DOC_MAIN_SGML_FILE = libxslt.sgml
  # The directory containing the source code (if it contains documentation).
  DOC_SOURCE_DIR = ..
  
@@ -28,11 +28,11 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
  
  TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)/html
  PAGES = API.html bugs.html contribs.html docs.html downloads.html \
-@@ -345,7 +345,6 @@ install-data-local: 
+@@ -350,7 +350,6 @@ install-data-local: 
  	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)
  	$(mkinstalldirs) $(DESTDIR)$(TARGET_DIR)/tutorial
  	-@INSTALL@ -m 0644 $(srcdir)/tutorial/* $(DESTDIR)$(TARGET_DIR)/tutorial
 -	-(cd $(DESTDIR); gtkdoc-fixxref --module=libxslt --html-dir=$(HTML_DIR))
  
  dist-hook:
- 	(cd $(srcdir) ; tar cvf - *.1 *.html site.xsl *.gif html/*.html html/*.sgml tutorial/libxslt* libxslt-decl.txt libxslt-api.xml) | (cd $(distdir); tar xf -)
+ 	(cd $(srcdir) ; tar cvf - *.1 *.html site.xsl *.gif html/*.html html/*.sgml tutorial/libxslt*) | (cd $(distdir); tar xf -)
