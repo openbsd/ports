@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2001/01/08 05:26:19 obecian Exp $
+# $OpenBSD: Makefile,v 1.107 2001/01/08 10:25:01 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += ns
      SUBDIR += nsping
      SUBDIR += ntop
+     SUBDIR += p5-Net-Pcap
      SUBDIR += p5-libnet
      SUBDIR += pchar
      SUBDIR += pop3gwd
