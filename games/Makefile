@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2003/08/09 14:11:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.104 2003/10/10 16:11:05 sturm Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += falconseye
      SUBDIR += fire
 #    SUBDIR += flying
+     SUBDIR += forcedattack
      SUBDIR += freeciv
      SUBDIR += freeciv,gtk
      SUBDIR += freedroid
