@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2004/02/01 14:59:22 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2004/02/04 01:09:45 espie Exp $
 ${KDE}/kstyle_plastik_config.so
 ${KDE}/kwin3_cde.so
 ${KDE}/kwin3_glow.so
@@ -13,3 +13,4 @@ ${KDE}/kwin_icewm_config.so
 ${KDE}/kwin_plastik_config.so
 ${KDE}/plugins/styles/dotnet.so
 ${KDE}/plugins/styles/plastik.so
+DYNLIBDIR(%D/${KDE})
