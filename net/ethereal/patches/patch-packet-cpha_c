@@ -1,0 +1,12 @@
+$OpenBSD: patch-packet-cpha_c,v 1.1 2003/04/15 18:44:11 avsm Exp $
+--- packet-cpha.c.orig	Tue Apr 15 16:51:02 2003
++++ packet-cpha.c	Tue Apr 15 16:51:40 2003
+@@ -237,7 +237,7 @@ dissect_cpha(tvbuff_t *tvb, packet_info 
+   hdr.filler = g_ntohs(hdr.filler);
+   opcode  = g_ntohs(hdr.opcode);
+ 
+-  snprintf(info,50,"CPHAv%d: %s",g_ntohs(hdr.ha_protocol_ver), opcode2str_short(opcode));
++  snprintf(info, sizeof info, "CPHAv%d: %s",g_ntohs(hdr.ha_protocol_ver), opcode2str_short(opcode));
+   if (check_col(pinfo->cinfo, COL_INFO))
+     col_add_str(pinfo->cinfo, COL_INFO,info);
+ 
