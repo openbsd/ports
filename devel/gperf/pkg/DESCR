@@ -9,9 +9,7 @@ Output from the GPERF program is used to recognize reserved words in
 the GNU C, GNU C++, and GNU Pascal compilers, as well as with the GNU
 indent program.
 
-Author: Douglas C. Schmidt
+Authors: Douglas C. Schmidt and Bruno Haible
 
 Gperf was bundled with libg++. Now that libg++ has been removed from 
 the main tree, some people may find gperf useful.
-
-the 19981006 patch adds the flags needed to rebuild egcs from gperf files.
