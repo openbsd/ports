@@ -12,6 +12,7 @@ E.g.: civclient -P sdl -S /home/deraadt/civsounds/file.spec
 (Note: Sound specs might have relative paths.)
 
 Flavors:
- * gtk - build UI using GTK widgets
- * sdl - sound support using SDL library
- * esd - sound support using ESD library
+        * no_x11 - don't build UI subpackage
+        * gtk2   - build UI using GTK v2 widgets
+        * sdl    - sound support using SDL library
+        * esd    - sound support using ESD library

@@ -1,12 +1,21 @@
-$OpenBSD: patch-configure,v 1.5 2002/07/17 21:08:09 naddy Exp $
---- configure.orig	Mon Jul 15 15:30:45 2002
-+++ configure	Mon Jul 15 15:32:58 2002
-@@ -7294,7 +7295,7 @@ else
- have_new_readline_lib=0
- fi
+$OpenBSD: patch-configure,v 1.6 2004/06/02 12:40:42 sturm Exp $
+--- configure.orig	2004-05-31 13:55:42.000000000 +0200
++++ configure	2004-05-31 13:57:44.000000000 +0200
+@@ -11745,7 +11745,7 @@ if test "${ac_cv_lib_SDL_mixer_Mix_OpenA
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lSDL_mixer  $LIBS"
++LIBS="$SDL_LIBS -lSDL_mixer  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11802,7 +11802,7 @@ echo $ECHO_N "checking building SDL_mixe
+     if test "x$SDL_mixer_h" = "x1"; then
+       if test "x$SDL_mixer" = "xyes"; then
+         SOUND_CFLAGS="$SOUND_CFLAGS $SDL_CFLAGS"
+-        SOUND_LIBS="$SOUND_LIBS $SDL_LIBS -lSDL_mixer"
++        SOUND_LIBS="$SOUND_LIBS $SDL_LIBS -lSDL_mixer"
  
--           if test "$have_readline_lib" != "1" && test "$have_new_readline_lib" != "1"; then
-+           if test "$have_readline_lib" == "1" && test "$have_new_readline_lib" != "1"; then
-                                                                                           
-                echo $ac_n "checking for tgetent in -ltermlib""... $ac_c" 1>&6
- echo "configure:7301: checking for tgetent in -ltermlib" >&5
+ cat >>confdefs.h <<\_ACEOF
+ #define SDL 1
