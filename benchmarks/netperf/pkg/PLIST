@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 20:03:21 jakob Exp $
 bin/netperf
 bin/netserver
 man/man1/netperf.1

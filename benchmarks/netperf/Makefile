@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/08 20:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/20 20:03:20 jakob Exp $
 
 DISTNAME=	netperf-2.1pl3
 CATEGORIES=	benchmarks net
-NEED_VERSION=	1.210
+NEED_VERSION=	1.302
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
-FAKE=		Yes
 
 SHAREDIR=	${PREFIX}/share/netperf
 SCRIPTS=	tcp_range_script tcp_stream_script tcp_rr_script \
