@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2001/07/05 20:12:09 jsyn Exp $
+# $OpenBSD: Makefile,v 1.81 2001/07/27 18:49:18 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += bounix
      SUBDIR += cfs
      SUBDIR += cgichk
+     SUBDIR += chrootuid
      SUBDIR += cops
      SUBDIR += corkscrew
      SUBDIR += crack
