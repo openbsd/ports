@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/06/22 08:21:49 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/06/28 17:22:52 brad Exp $
 
 DISTNAME=	libpng-1.0.6
 PKGNAME=	png-1.0.6
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L. libpng.la -lz -lm"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="libpng.la -lz -lm"
 
 MAKE_FILE=	scripts/makefile.std
 
@@ -32,6 +32,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libpng.txt ${PREFIX}/share/doc/png
 
 test:	build
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
 
 .include <bsd.port.mk>
