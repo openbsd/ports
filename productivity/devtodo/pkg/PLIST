@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/12/23 04:57:47 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/11/02 20:16:35 margarida Exp $
 bin/devtodo
 bin/tda
 bin/tdd
@@ -29,3 +29,5 @@ share/examples/devtodo/todo2pdf.xslt
 share/examples/devtodo/todorc.example
 @dirrm share/examples/devtodo
 @dirrm share/doc/devtodo
+@cwd ${SYSCONFDIR}
+@extra todorc
