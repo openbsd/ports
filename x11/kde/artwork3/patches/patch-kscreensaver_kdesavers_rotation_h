@@ -1,0 +1,12 @@
+$OpenBSD: patch-kscreensaver_kdesavers_rotation_h,v 1.1 2004/09/22 21:22:28 espie Exp $
+--- kscreensaver/kdesavers/rotation.h.orig	Mon Sep  6 15:32:23 2004
++++ kscreensaver/kdesavers/rotation.h	Mon Sep  6 15:32:37 2004
+@@ -27,6 +27,8 @@
+ // KRotationSetupUi
+ #include "rotationcfg.h"
+ 
++#undef _B
++#undef _C
+ //--------------------------------------------------------------------
+ 
+ /** @brief ODE solver for the Euler equations.
