@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
+@lib lib/libxosd.so.4.12

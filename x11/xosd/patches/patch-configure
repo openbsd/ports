@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
+--- configure.orig	Mon Sep 13 20:05:56 2004
++++ configure	Wed Nov 10 23:09:18 2004
+@@ -20708,7 +20708,7 @@
+   ;;
+ esac
+ fi
+-GTK_CONFIG=$ac_cv_path_GTK_CONFIG
++GTK_CONFIG=no
+ 
+ if test -n "$GTK_CONFIG"; then
+   echo "$as_me:$LINENO: result: $GTK_CONFIG" >&5
+@@ -22143,7 +22143,7 @@
+   ;;
+ esac
+ fi
+-XMMS_CONFIG=$ac_cv_path_XMMS_CONFIG
++XMMS_CONFIG=no
+ 
+ if test -n "$XMMS_CONFIG"; then
+   echo "$as_me:$LINENO: result: $XMMS_CONFIG" >&5
+@@ -22380,7 +22380,7 @@
+   ;;
+ esac
+ fi
+-GDK_PIXBUF_CONFIG=$ac_cv_path_GDK_PIXBUF_CONFIG
++GDK_PIXBUF_CONFIG=no
+ 
+ if test -n "$GDK_PIXBUF_CONFIG"; then
+   echo "$as_me:$LINENO: result: $GDK_PIXBUF_CONFIG" >&5

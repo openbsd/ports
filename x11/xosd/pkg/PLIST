@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
+%%SHARED%%
+bin/osd_cat
+bin/xosd-config
+include/xosd.h
+lib/libxosd.a
+lib/libxosd.la
+@man man/man1/osd_cat.1
+@man man/man1/xosd-config.1
+@man man/man3/xosd.3
+@man man/man3/xosd_create.3
+@man man/man3/xosd_destroy.3
+@man man/man3/xosd_display.3
+@man man/man3/xosd_get_number_lines.3
+@man man/man3/xosd_hide.3
+@man man/man3/xosd_is_onscreen.3
+@man man/man3/xosd_set_align.3
+@man man/man3/xosd_set_bar_length.3
+@man man/man3/xosd_set_horizontal_offset.3
+@man man/man3/xosd_set_pos.3
+@man man/man3/xosd_set_shadow_offset.3
+@man man/man3/xosd_set_vertical_offset.3
+@man man/man3/xosd_show.3
+@man man/man3/xosd_uninit.3
+share/aclocal/
+share/aclocal/libxosd.m4
+share/xosd/
+share/xosd/bottom-left.png
+share/xosd/bottom-right.png
+share/xosd/bottom.png
+share/xosd/centre.png
+share/xosd/left.png
+share/xosd/right.png
+share/xosd/top-left.png
+share/xosd/top-right.png
+share/xosd/top.png
