@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/22 19:30:16 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/01 23:44:47 matt Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
-COMMENT=	"display X & Win32 desktops on remote X/Win32/Java displays"
+COMMENT=	"cross-platform remote desktop access"
+COMMENT-viewer=	"client for cross-platform remote desktop access"
 
 VERSION=	3.3.3r2
 PKGNAME=        vnc-${VERSION}
+PKGNAME-viewer=	vnc-viewer-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 
 HOMEPAGE=	http://www.uk.research.att.com/vnc/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
@@ -21,6 +23,9 @@ MASTER_SITES=   http://www.uk.research.att.com/vnc/dist/
 DISTFILES=	${DISTNAME}.tgz ${IGNOREFILES}
 IGNOREFILES=	vnc-latest_doc.tgz
 
+MULTI_PACKAGES=	-viewer
+SUBPACKAGE?=
+
 CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/vnc_unixsrc
@@ -33,6 +38,8 @@ post-install:
 		${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd \
 		${PREFIX}/bin/vncpasswd
+	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect \
+		${PREFIX}/bin/vncconnect
 	sed -e s%/usr/local/vnc/classes%${TRUEPREFIX}/share/vnc/classes% \
 		< ${WRKSRC}/vncserver \
 		> ${WRKSRC}/vncserver.local
