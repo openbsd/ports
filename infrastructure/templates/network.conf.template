@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.48 2002/08/17 01:40:15 avsm Exp $
+# $OpenBSD: network.conf.template,v 1.49 2002/08/17 01:43:24 avsm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -254,11 +254,11 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstormsecurity.packetstorm.org/
 
 MASTER_SITE_HORDE+=		\
-	ftp://ftp.horde.org/pub/horde/ \
-	ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/ \
-	ftp://ftp.nl.horde.org/sites/ftp.horde.org/pub/horde/ \
-	ftp://ftp.it.horde.org/pub/mirror/horde.org/pub/horde/ \
-	ftp://ftp.pt.horde.org/pub/horde-ftp/pub/horde/ \
-	ftp://ftp.br.horde.org/pub/mirrors/ftp.horde.org/pub/horde/ \
-	ftp://ftp.au.horde.org/pub/horde/
+	ftp://ftp.horde.org/pub/ \
+	ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/ \
+	ftp://ftp.nl.horde.org/sites/ftp.horde.org/pub/ \
+	ftp://ftp.it.horde.org/pub/mirror/horde.org/pub/ \
+	ftp://ftp.pt.horde.org/pub/horde-ftp/pub/ \
+	ftp://ftp.br.horde.org/pub/mirrors/ftp.horde.org/pub/ \
+	ftp://ftp.au.horde.org/pub/
 
