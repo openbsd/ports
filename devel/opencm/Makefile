@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/28 12:54:48 todd Exp $
+# $OpenBSD: Makefile,v 1.14 2003/06/12 21:33:36 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -36,6 +36,8 @@ CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
 LDFLAGS=-L${LOCALBASE}/lib
 
 MAKE_ENV= LDFLAGS="${LDFLAGS}"
+
+NO_REGRESS=	Yes
 
 PSEUDO_FLAVORS=	no_docs
 FLAVORS=	nogc
