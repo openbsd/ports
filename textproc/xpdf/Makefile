@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/02/14 21:06:54 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2004/04/06 02:35:44 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -35,5 +35,8 @@ NO_REGRESS=	Yes
 post-install:
 	@cd ${PREFIX}/bin && \
 	  strip pdffonts pdfimages pdfinfo pdftoppm pdftops pdftotext xpdf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpdf
+	${INSTALL_DATA} ${WRKSRC}/doc/sample-xpdfrc \
+		${PREFIX}/share/examples/xpdf/xpdfrc
 
 .include <bsd.port.mk>

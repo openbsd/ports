@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_sample-xpdfrc,v 1.1 2004/04/06 02:35:44 brad Exp $
+--- doc/sample-xpdfrc.orig	2004-04-04 16:21:43.000000000 +0200
++++ doc/sample-xpdfrc	2004-04-04 16:22:02.000000000 +0200
+@@ -73,7 +73,7 @@
+ 
+ # Set the default PostScript file or command.
+ 
+-#psFile			"|lpr -Pmyprinter"
++psFile			"|lpr"
+ 
+ # Set the default PostScript paper size -- this can be letter, legal,
+ # A4, or A3.  You can also specify a paper size as width and height
