@@ -1,5 +1,6 @@
---- src/ipopd//Makefile.orig	Sun Feb 18 13:13:23 2001
-+++ src/ipopd//Makefile	Sun Feb 18 13:28:30 2001
+$OpenBSD: patch-src_ipopd_Makefile,v 1.2 2001/03/19 17:50:28 wilfried Exp $
+--- src/ipopd/Makefile.orig	Wed Oct 25 01:55:07 2000
++++ src/ipopd/Makefile	Mon Mar 19 17:43:30 2001
 @@ -18,30 +18,22 @@
  # CPYRIGHT, included with this Distribution.
  
@@ -13,8 +14,8 @@
 -CC = `cat $C/CCTYPE`
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+CFLAGS = -I$(PREFIX)/include/c-client
-+LDFLAGS = -L$(PREFIX)/lib -lc-client -lssl -lcrypto
++CFLAGS += -I$(PREFIX)/include/c-client
++LDFLAGS += -L$(PREFIX)/lib -lc-client -lssl -lcrypto
  
  ipopd: ipop2d ipop3d
  

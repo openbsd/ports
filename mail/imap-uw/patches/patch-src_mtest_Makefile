@@ -1,5 +1,6 @@
---- src/mtest///Makefile.orig	Sun Feb 18 13:14:24 2001
-+++ src/mtest///Makefile	Sun Feb 18 13:28:40 2001
+$OpenBSD: patch-src_mtest_Makefile,v 1.2 2001/03/19 17:50:28 wilfried Exp $
+--- src/mtest/Makefile.orig	Wed Oct 25 01:55:39 2000
++++ src/mtest/Makefile	Mon Mar 19 17:43:25 2001
 @@ -18,25 +18,17 @@
  # CPYRIGHT, included with this Distribution.
  
@@ -13,8 +14,8 @@
 -CC = `cat $C/CCTYPE`
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+CFLAGS = -I$(PREFIX)/include/c-client
-+LDFLAGS = -L$(PREFIX)/lib -lc-client -lssl -lcrypto
++CFLAGS += -I$(PREFIX)/include/c-client
++LDFLAGS += -L$(PREFIX)/lib -lc-client -lssl -lcrypto
  
  all:	mtest
  
