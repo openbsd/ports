@@ -1,0 +1,3 @@
+OMAPI is an programming layer designed for controlling remote 
+applications, and for querying them for their state. It is currently used 
+by the ISC DHCP server.

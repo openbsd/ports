@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-client,v 1.1 2005/03/10 16:24:21 jakob Exp $
+@man man/cat5/dhclient.conf.0
+@man man/cat5/dhclient.leases.0
+@man man/cat8/dhclient-script.0
+@man man/cat8/dhclient.0
+sbin/dhclient
+sbin/dhclient-script
+share/examples/isc-dhcp/
+share/examples/isc-dhcp/dhclient.conf

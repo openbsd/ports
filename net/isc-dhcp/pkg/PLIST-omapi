@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-omapi,v 1.1 2005/03/10 16:24:21 jakob Exp $
+bin/omshell
+include/dhcpctl.h
+include/isc-dhcp/
+include/isc-dhcp/boolean.h
+include/isc-dhcp/dst.h
+include/isc-dhcp/int.h
+include/isc-dhcp/lang.h
+include/isc-dhcp/list.h
+include/isc-dhcp/result.h
+include/isc-dhcp/types.h
+include/omapip/
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+lib/libdhcpctl.a
+lib/libomapi.a
+@man man/cat1/omshell.0
+@man man/cat3/dhcpctl.0
+@man man/cat3/omapi.0
+@man man/cat3/omshell.0
