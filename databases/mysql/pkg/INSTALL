@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/01/01 05:54:13 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/01/04 17:39:43 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-DB_DIR=${PKG_DB_DIR:-/var/mysql
+DB_DIR=${PKG_DB_DIR:-/var/mysql}
 MYSQLGID=40
 MYSQLUID=40
 PASS=`dd if=/dev/urandom count=1 bs=12 2> /dev/null | encrypt -b 6`
@@ -19,15 +19,13 @@ PASS=`dd if=/dev/urandom count=1 bs=12 2> /dev/null | encrypt -b 6`
 do_pre_install()
 {
 # Add group 'mysql' to /etc/group
-line=`egrep '^mysql:' /etc/group`
-if [ "$line" = "" ]; then
+if [ "`egrep '^mysql:' /etc/group`" = "" ]; then
       	echo "===> Creating mysql group, gid $MYSQLGID"
         echo "mysql:*:${MYSQLGID}:" >> /etc/group
 fi
 
 # Add user 'mysql' in /etc/passwd
-line=`egrep '^mysql:' /etc/passwd`
-if [ "$line" = "" ]; then
+if [ "`egrep '^mysql:' /etc/passwd`" = "" ]; then
         echo "===> Creating MySQL user, uid $MYSQLUID"
 	adduser -batch mysql mysql "MySQL Account,,," ${PASS} > /dev/null 2>&1 /dev/null
 	if [ $? -eq 0 ]; then
@@ -49,7 +47,7 @@ echo "===> Created ${DB_DIR} directory to store db files and mysql.sock"
 #
 do_post_install()
 {
-${PREFIX}/bin/mysql_install_db
+su mysql -c ${PREFIX}/bin/mysql_install_db
 }
 
 # Verify/process the command

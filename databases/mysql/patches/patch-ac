@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Sun Dec 19 01:16:27 1999
-+++ scripts/mysql_install_db.sh	Sun Dec 19 01:33:38 1999
+--- scripts/mysql_install_db.sh.orig	Sun Sep 19 07:16:46 1999
++++ scripts/mysql_install_db.sh	Mon Jan  3 14:23:05 2000
 @@ -15,10 +15,6 @@
  force=0
  IN_RPM=0
@@ -11,7 +11,7 @@
  # Get mysqld/safe_mysqld options from /etc/my.cnf or ~/.my.cnf
  if test -w /
  then
-@@ -49,21 +45,11 @@
+@@ -49,20 +45,12 @@
  
  if test ! -x $execdir/mysqld
  then
@@ -29,11 +29,11 @@
 -# On IRIX hostname is in /usr/bsd so add this to the path
 -PATH=$PATH:/usr/bsd
 -hostname=`hostname`		# Install this too in the user table
--
++hostname=`hostname -s`		# Install this too in the user table
+ 
  # Check if hostname is valid
  if test "$IN_RPM" -eq 0 -a $force -eq 0
- then
-@@ -255,12 +241,6 @@
+@@ -255,12 +243,6 @@
  END_OF_DATA
  then
    echo ""

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/01/03 08:36:19 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/01/04 17:39:42 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.29
@@ -71,5 +71,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Docs/Img/*.gif ${PREFIX}/share/doc/mysql/Img
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib/mysql
+.if !defined(PACKAGE_BUILDING)
+	@PKG_PREFIX="${PREFIX}" PKG_DB_DIR="${DB_DIR}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.mk>

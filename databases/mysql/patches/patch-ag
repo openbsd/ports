@@ -1,5 +1,14 @@
 --- configure.orig	Sat Jan  1 11:33:47 2000
-+++ configure	Sun Jan  2 22:23:42 2000
++++ configure	Mon Jan  3 14:24:18 2000
+@@ -2740,7 +2740,7 @@
+   ;;
+ esac
+ fi
+-HOSTNAME="$ac_cv_path_HOSTNAME"
++HOSTNAME="$ac_cv_path_HOSTNAME -s"
+ if test -n "$HOSTNAME"; then
+   echo "$ac_t""$HOSTNAME" 1>&6
+ else
 @@ -2868,30 +2868,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
  echo "configure:2870: checking "how to check if pid exists"" >&5
