@@ -9,11 +9,9 @@ bin/lid
 bin/mkid
 bin/xtokid
 info/id-utils.info
-share/emacs/site-lisp/id-utils.el
-share/emacs/site-lisp/id-utils.elc
+lib/emacs/site-lisp/id-utils.el
+lib/emacs/site-lisp/id-utils.elc
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
 share/locale/fr/LC_MESSAGES/id-utils.mo
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs
 @exec install-info --info-dir=%D/info %D/info/id-utils.info
