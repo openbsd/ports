@@ -1,15 +1,14 @@
-$OpenBSD: LICENSE,v 1.7 1998/09/27 20:15:26 marc Exp $
+$OpenBSD: LICENSE,v 1.8 1998/10/08 04:45:44 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
-not be placed on any OpenBSD CD-ROM nor will they be stored on the
-OpenBSD FTP server.
+not be placed on any OpenBSD CD-ROM.
 
 	As a safety measure a distribution MUST be listed in this
 	file and MUST be marked as Distribution allowed = Y for it
 	to be in the distfiles directory of either the FTP server
-	or the OpenBSD CD-ROM.  (These files can be found in the 
-	licensed directory of the ftp server).
+	or the OpenBSD CD-ROM.  (Some of `Distribution allowed = N'
+	file may be found in the licensed directory of the ftp server).
 
 License types:
 
@@ -18,8 +17,9 @@ BSD:	BSD (or a BSD like) license.
 	need to include owners copyright.
 COMM:	Commercial software.
 	For fee software.
-COPY:	Copyrighted, may be other restrictions but distribution allowed.
-	Read copyright before use, there may be usage restrictions.
+COPY:	Copyright that explicitly allows or denys distribution
+	Read copyright before use, there may be usage restrictions even
+	if distribution is allowed.
 CRYPTO:	Third party crypto not allowed.
 ELM:	Can not charge _extra_ for distribution
 	May distribute when the price of the distribution does would
@@ -65,72 +65,72 @@ Y	archivers/p5-Compress-Zlib	Compress-Zlib-0.50.tar.gz	PERL
 N	archivers/rar			rarbsd				NOFEE
 Y	archivers/unarj			unarj241.tar.Z			COPY
 N	archivers/unrar			unrar-2.01.tgz			NOFEE
-?	archivers/unzip			unzip532.tar.gz			COPY
-?	archivers/zip			zip22.tar.gz			COPY
+Y	archivers/unzip			unzip532.tar.gz			COPY
+Y	archivers/zip			zip22.tar.gz			COPY
 Y	archivers/zoo			zoo-2.10pl1.tar.gz		COPY
-?	astro/sattrack			sattrack-3.1.6.tar.gz		???
+N	astro/sattrack			sattrack-3.1.6.tar.gz		COPY
 N	astro/xearth			xearth-1.0.tar.gz		NOFEE
-?	astro/xephem			xephem-3.1.tar.gz		NOFEE
+N	astro/xephem			xephem-3.1.tar.gz		NOFEE
 N	astro/xphoon			xphoon.tar.Z			NOFEE
-?	audio/amp			amp-0.7.6.tar.gz		???
+Y	audio/amp			amp-0.7.6.tar.gz		COPY
 Y	audio/gsm			gsm-1.0.10.tar.gz		BSD
-?	audio/mpegaudio			mpegaudio.tar.Z			???
-?	audio/mpg123			mpg123-0.59o.tar.gz		???
-?	audio/nspmod			nspmod-0.1.tar.gz		???
-?	audio/rplay			rplay-3.3.0.tar.gz		GPL
-?	audio/rsynth			rsynth-2.0.tar.gz		???
-?	audio/sox			soxgamma.tar.gz			???
-?	audio/tosha			tosha-0.05.tar.gz		???
-?	audio/tracker			tracker-5.3.tgz			???
-?	audio/workman			WorkMan-1.3a.tar.gz		???
+Y	audio/mpegaudio			mpegaudio.tar.Z			COPY
+Y	audio/mpg123			mpg123-0.59o.tar.gz		COPY
+Y	audio/nspmod			nspmod-0.1.tar.gz		GPL
+Y	audio/rplay			rplay-3.3.0.tar.gz		GPL
+Y	audio/rsynth			rsynth-2.0.tar.gz		NONE
+Y	audio/sox			soxgamma.tar.gz			COPY
+Y	audio/tosha			tosha-0.05.tar.gz		BSD
+Y	audio/tracker			tracker-5.3.tgz			COPY
+Y	audio/workman			WorkMan-1.3a.tar.gz		GPL
 Y	audio/xcd			xcd-1.6.tar.gz			COPY
-?	audio/xcdplayer			xcdplayer-2.2.tar.Z		???
-?	audio/xmcd			xmcd-2.3.tar.gz			???
-?	audio/xmix			xmix-2.1.tar.gz			???
-?	audio/xmix			xmix-2.1.mixers.patch		???
-?	audio/xmmix			xmmix-1.2.tar.gz		???
-?	audio/xmp			xmp-1.1.5.tar.gz		???
+Y	audio/xcdplayer			xcdplayer-2.2.tar.Z		BSD
+Y	audio/xmcd			xmcd-2.3.tar.gz			GPL
+Y	audio/xmix			xmix-2.1.tar.gz			GPL
+Y	audio/xmix			xmix-2.1.mixers.patch		GPL
+Y	audio/xmmix			xmmix-1.2.tar.gz		GPL
+Y	audio/xmp			xmp-1.1.5.tar.gz		GPL
 Y	benchmarks/bonnie		Bonnie.tar.Z			BSD
 Y	benchmarks/bytebench		bytebench-3.1.tar.Z		NONE
 Y	benchmarks/iozone		iozone-2.01.shar.gz		COPY
 Y	benchmarks/lmbench		lmbench.tar.Z			GPL
 N	benchmarks/tcpblast		-none-				NONE
 N	benchmarks/xengine		xengine				NOFEE
-?	cad/spice/			sp3f4.kit.tar.Z			???
-?	cad/spice/			sp3f4.patch.tar.Z		???
+Y	cad/spice/			sp3f4.kit.tar.Z			COPY
+Y	cad/spice/			sp3f4.patch.tar.Z		COPY
 Y	chinese/c2t			c2t.tar.gz			NONE
 Y	chinese/c2t			TONEPY.tit			NONE
 N	chinese/lunar			lunar-2.1.tar.gz		NOFEE
 Y	comms/bpl+			bpl+.tar.gz			COPY
-?	comms/conserver			conserver-5.21-Beta.shar.gz	???
-?	comms/efax			efax08a.tar.gz			???
-?	comms/hylafax			hylafax-v4.0pl2-tar.gz		BSD
+Y	comms/conserver			conserver-5.21-Beta.shar.gz	BSD
+Y	comms/efax			efax08a.tar.gz			GPL
+Y	comms/hylafax			hylafax-v4.0pl2-tar.gz		BSD
 N	comms/kermit			cku192src.tar.gz		NOFEE
-?	comms/mgetty+sendfax		mgetty1.1.17-Aug07.tar.gz	???
-?	comms/minicom			minicom-1.78.src.tar.gz		???
-?	comms/pilot-link		pilot-link.0.9.0.tar.gz		???
-?	comms/qpage			qpage-3.2.tar.Z			???
+Y	comms/mgetty+sendfax		mgetty1.1.17-Aug07.tar.gz	COPY
+Y	comms/minicom			minicom-1.78.src.tar.gz		GPL
+Y	comms/pilot-link		pilot-link.0.9.0.tar.gz		GPL
+Y	comms/qpage			qpage-3.2.tar.Z			COPY
 N	comms/rzsz			rzsz.zip			COMM
 Y	comms/seyon			Seyon-2.14b-tar.Z		BSD
 Y	comms/tkhylafax			tkhylafax-3.0b2.tar.gz		BSD
 Y	comms/xcept			xcept-2.1.2.tar.gz		BSD
 Y	comms/zmtx-zmrx			zmtx-zmrx.shar.gz		COPY
-?	converters/btoa			btoa-5.2.tar.gz			???
-?	converters/btoa			btoa-5.2-patch1.gz		???
-?	converters/base64		base64.tar.gz			???
-?	converters/ish			ish-1.11.tar.gz			???
-?	converters/mimepp		mimepp-1.0.tar.gz		???
-?	converters/mpack		mpack-1.5-src.tar.Z		???
-?	converters/p5-Convert-UU	Convert-UU-0.04.tar.gz		???
-?	converters/p5-MIME-Base64	MIME-Base64-2.03.tar.gz		???
-?	converters/recode		recode-3.4.tar.gz		???
-?	converters/trans		trans120.tar.gz			???
+Y	converters/btoa			btoa-5.2.tar.gz			COPY
+Y	converters/btoa			btoa-5.2-patch1.gz		COPY
+Y	converters/base64		base64.tar.gz			PD
+Y	converters/ish			ish-1.11.tar.gz			PD
+N	converters/mimepp		mimepp-1.0.tar.gz		REST
+Y	converters/mpack		mpack-1.5-src.tar.Z		BSD
+Y	converters/p5-Convert-UU	Convert-UU-0.04.tar.gz		PERL
+Y	converters/p5-MIME-Base64	MIME-Base64-2.03.tar.gz		PERL
+Y	converters/recode		recode-3.4.tar.gz		GPL
+N	converters/trans		trans120.tar.gz			LIC
 Y	databases/db			db-2.3.16.tar.gz		BSD
-?	databases/gdbm			gdbm-1.7.3.tar.gz		???
+Y	databases/gdbm			gdbm-1.7.3.tar.gz		GPL
 Y	databases/p5-DBD-Pg		DBD-Pg-0.69.tar.gz		GPL/PERL
 Y	databases/p5-DBI		DBI-0.93.tar.gz			GPL/PERL
-?	databases/pgaccess		pgaccess-0.88.tar.gz		???
-?	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
+Y	databases/pgaccess		pgaccess-0.88.tar.gz		BSD
+Y	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
 Y	devel/autoconf			autoconf-2.12.tar.gz		GPL
 Y	devel/automake			automake-1.2.tar.gz		GPL
 Y	devel/bison			bison-1.25.tar.gz		GPL
@@ -251,6 +251,8 @@ Y	lang/Gofer			gofer230a.tar.gz		BSD
 N	lang/STk			STk-3.1.tar.gz			NOFEE
 Y	lang/expect			expect.tar.gz			PD
 ?	lang/guavac			guavac-1.2.tar.gz		GPL
+?	lang/icon			icon				???
+?	lang/icon_lib			icon				???
 ?	lang/kaffe			kaffe-0.8.4			???
 ?	lang/kaffe1			kaffe-1.0.b1.tar.gz		???
 Y	lang/ocaml			ocaml-1.07.tar.gz		COPY
@@ -295,6 +297,7 @@ Y	mail/xfaces			xfaces-sounds.tar.gz		NONE
 Y	misc/amanda			amanda-2.3.0.tar.gz		BSD
 N	misc/astrolog			astrolog			NOFEE
 Y	misc/buffer			buffer-1.17.tar.gz		GPL
+?	misc/calentool			calentool-2.3.tar.gz		???
 ?	misc/cbb			cbb-0.73.tar.gz			???
 ?	misc/cdrecord			cdrecord-1.6.tar.gz		???
 ?	misc/gnuls			fileutils-3.16.tar.gz		???
@@ -351,8 +354,10 @@ Y	news/slrn			slrn0.9.4.3.tar.gz		GPL
 N	news/tin			tinpre-1.4-980818.tgz		NOFEE
 Y	plan9/9menu			9menu-1.5.shar.gz		COPY
 ?	plan9/9wm			9wm-1.1.shar.gz			???
+?	plan9/sam			sam.shar.gz			???
+?	plan9/tcs			tcs.shar.Z			???
 ?	plan9/wily			wily-0.13.36.tgz		???
-Y	print/a2ps			a2ps-4.10.3.tar.gz		GPL
+Y	print/a2ps			a2ps-4.10.4.tar.gz		GPL
 ?	print/acroread			acroread_linux_301.tar.gz	???
 Y	print/afm			afm-tar.Z			COPY
 ?	print/bibview			bibview-2.2.tar.gz		???
@@ -381,6 +386,7 @@ N	security/crack			crack5.0.tar.gz			CRYPTO
 N	security/pgp			pgp263is.tar.gz			CRYPTO
 N	security/pgp			pgp263i.patch			CRYPTO
 N	security/pgp			rsaref2.tar.gz			CRYPTO
+?	security/pgplib			PGPlib-1.1.tar.gz		???
 N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
 N	security/socks5			socks5-v1.0r6.tar.gz		LIC
 N	security/ssh			ssh-1.2.26.tar.gz		CRYPTO
@@ -406,6 +412,7 @@ Y	sysutils/tcplist		tcplist-2.2.shar		BSD
 ?	sysutils/xbatt			xbatt-1.2.tar.gz		???
 ?	sysutils/xntpd			xntp3-5.93-export.tar.gz	???
 ?	sysutils/xosview		xosview-1.5.1.tar.gz		???
+?	sysutils/zap			zap-1.0.tar.gz			???
 N	textproc/agrep			agrep-2.04.tar.Z		NOFEE
 Y	textproc/c2html			c2html-0.1.tar.gz		GPL
 ?	textproc/catdoc			catdoc-0.90b4.tar.gz		???
@@ -413,6 +420,7 @@ Y	textproc/c2html			c2html-0.1.tar.gz		GPL
 ?	textproc/docbook		docbk30.tar.Z			???
 N	textproc/glimpse		glimpse-4.1.src.tar.gz		NOFEE
 Y	textproc/html			html-4.0b.tar.gz		NONE
+?	textproc/idiff			idiff-1.0.tar.gz		???
 ?	textproc/info2html		info2html-1.1.tar.gz		???
 Y	textproc/isearch		Isearch-1.14.tar.gz		BSD
 ?	textproc/iso12083		iso12083			???
@@ -435,6 +443,7 @@ N	www/apache			-none-				INC
 ?	www/cgiparse			cgiparse-0.8e.tar.gz		???
 N	www/lynx			-none-				INC
 ?	www/mozilla			mozilla-19980728.tar.gz		???
+?	www/navigator			navigator-4.06-fortified	???
 ?	www/squid			squid-1.1.22-src.tar.gz		???
 ?	www/transproxy			transproxy-0.4.tgz		???
 Y	www/wwwcount			wwwcount2.4.tar.gz		BSD
@@ -454,6 +463,7 @@ N	x11/fvwm2			-none-				INC
 Y	x11/lesstif			lesstif-0.86.0.tar.gz		GPL
 ?	x11/lupe			lupe007.tar.gz			???
 ?	x11/mouseclock			mouseclock-1.0.tar.gz		???
+?	x11/olvwm			olvwm4.tar.Z			???
 Y	x11/piewm			piewm.tar.Z			X
 Y	x11/qt				qt-1.40.tar.gz			REST
 ?	x11/rclock			rxvt-2.20.tar.gz		???
