@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2002/05/27 16:58:29 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2002/05/28 01:13:46 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc
 
@@ -50,7 +50,7 @@ MAKE_FORTRAN=Yes
 # we don't care about chill
 #MAKE_CHILL=yes
 MAKE_OBJC=Yes
-#MAKE_JAVA=Yes
+MAKE_JAVA=Yes
 
 MULTI_PACKAGES=
 # No sub packages description
@@ -188,6 +188,7 @@ MULTI_PACKAGES+=-objc
 .endif
 .if defined(MAKE_JAVA)
 LANGS:=${LANGS},java
+MULTI_PACKAGES+=-java
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
@@ -195,6 +196,8 @@ LANGS:=${LANGS},java
 CFLAGS=-O2 -g
 
 
+#CONFIGURE_ENV=ADAC=${WRKDIR}/bin/adac GNATBIND=${WRKDIR}/bin/gnatbind
+#MAKE_ENV=ADAC=${WRKDIR}/bin/adac GNATBIND=${WRKDIR}/bin/gnatbind
 CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 --disable-nls  --with-system-zlib
 
