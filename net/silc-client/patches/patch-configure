@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2002/12/09 15:17:43 brad Exp $
---- configure.orig	Thu Dec  5 16:38:53 2002
-+++ configure	Sun Dec  8 00:13:57 2002
-@@ -3098,13 +3098,6 @@ else
+$OpenBSD: patch-configure,v 1.11 2003/01/15 03:06:26 brad Exp $
+--- configure.orig	Wed Jan  8 11:19:37 2003
++++ configure	Mon Jan 13 20:09:18 2003
+@@ -3099,13 +3099,6 @@ else
  fi
  
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.10 2002/12/09 15:17:43 brad Exp $
  #
  # Library versioning.
  #
-@@ -5962,7 +5955,7 @@ else
+@@ -5963,7 +5956,7 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure,v 1.10 2002/12/09 15:17:43 brad Exp $
        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
        export_dynamic_flag_spec='${wl}-E'
      else
-@@ -5972,7 +5965,7 @@ else
+@@ -5973,7 +5966,7 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.10 2002/12/09 15:17:43 brad Exp $
          hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
          ;;
        esac
-@@ -12511,19 +12504,16 @@ echo "${ECHO_T}yes" >&6
+@@ -12512,19 +12505,16 @@ echo "${ECHO_T}yes" >&6
  #define SILC_DEBUG 1
  _ACEOF
  

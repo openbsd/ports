@@ -1,7 +1,25 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2002/12/09 15:17:43 brad Exp $
---- Makefile.in.orig	Thu Dec  5 16:38:56 2002
-+++ Makefile.in	Sat Dec  7 23:47:13 2002
-@@ -773,7 +773,7 @@ generate-server-key:
+$OpenBSD: patch-Makefile_in,v 1.6 2003/01/15 03:06:26 brad Exp $
+--- Makefile.in.orig	Wed Jan  8 11:19:40 2003
++++ Makefile.in	Tue Jan 14 09:07:54 2003
+@@ -706,7 +706,7 @@ install-dirs:
+ 
+ install-dirs-client: install-dirs
+ 	-mkdir -p $(helpdir)
+-	-mkdir -p $(mandir)/man1
++	-mkdir -p $(DESTDIR)$(mandir)/man1
+ 
+ install-dirs-server: install-dirs
+ 	-mkdir -p $(logsdir)
+@@ -727,7 +727,7 @@ doc-install:
+ doc-install-client: doc-install
+ 	$(INSTALL_DATA) $(srcdir)/irssi/silc.conf $(docdir)/example_silc.conf
+ 	-@if test -f $(srcdir)/doc/silc.1 ; then \
+-	 $(INSTALL_DATA) $(srcdir)/doc/silc.1 $(mandir)/man1; \
++	 $(INSTALL_DATA) $(srcdir)/doc/silc.1 $(DESTDIR)$(mandir)/man1; \
+ 	fi
+ 
+ doc-install-server: doc-install
+@@ -775,7 +775,7 @@ generate-server-key:
  	  $(sbindir)/silcd -C $(etcdir); \
  	fi
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/10 15:34:30 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2003/01/15 03:06:26 brad Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
-DISTNAME=	silc-client-0.9.10.1
+DISTNAME=	silc-client-0.9.11
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
@@ -52,5 +52,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silc
 	mv -f ${PREFIX}/share/doc/silc/example_silc.conf \
 		${PREFIX}/share/examples/silc/silc.conf.default
+	${INSTALL_DATA} ${WRKSRC}/doc/silcalgs.conf \
+		${PREFIX}/share/examples/silc/silcalgs.conf.default
 
 .include <bsd.port.mk>
