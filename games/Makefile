@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2003/04/11 15:31:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.87 2003/04/12 15:23:29 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -58,6 +58,8 @@
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
      SUBDIR += kslide
+     SUBDIR += kobodeluxe
+     SUBDIR += kobodeluxe,harder
      SUBDIR += lbreakout2
      SUBDIR += lgeneral
      SUBDIR += lincity
