@@ -1,0 +1,16 @@
+$OpenBSD: patch-usb_c,v 1.1 2002/07/06 16:32:16 fgsch Exp $
+--- usb.c.orig	Sat Jul  6 12:20:18 2002
++++ usb.c	Sat Jul  6 12:25:03 2002
+@@ -91,6 +91,12 @@ int USB_camera_init(struct usb_device **
+ 						printf("Canon S100 found\n");
+ 					return USB_INIT_S100;
+ 					break;
++				case PRODUCT_ID_S200:
++					*camera_dev = dev;
++					if (opt_debug)
++						printf("Canon S200 found\n");
++					return USB_INIT_S100;
++					break;
+ 				case PRODUCT_ID_G1:
+ 					*camera_dev = dev;
+ 					if (opt_debug)

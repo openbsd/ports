@@ -1,0 +1,11 @@
+$OpenBSD: patch-usb_h,v 1.1 2002/07/06 16:32:16 fgsch Exp $
+--- usb.h.orig	Sat Jul  6 12:20:22 2002
++++ usb.h	Sat Jul  6 12:24:55 2002
+@@ -28,6 +28,7 @@
+ #define PRODUCT_ID_S100_US	0x3045	/* S100, aka. Digital Ixus, Elph */
+ #define PRODUCT_ID_S100_EU	0x3047	/* S100, aka. Digital Ixus, Elph */
+ #define PRODUCT_ID_G1		0x3048	/* PowerShot G1 */
++#define PRODUCT_ID_S200		0x3065	/* PowerShot S200 */
+ 
+ /* The Canon USB protocol of the S10, S20, S100, G1 is the same.
+  * We can hope that the next cameras will adopt a compatible protocol
