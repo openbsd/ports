@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_input_Makefile_in,v 1.1.1.1 2002/07/25 09:42:35 nino Exp $
+--- modules/input/Makefile.in.orig	Sun Jun 16 07:16:30 2002
++++ modules/input/Makefile.in	Mon Jun 24 19:38:53 2002
+@@ -786,7 +786,8 @@ install-data-local:
+         fi
+ 
+ gtk.immodules: Makefile.am $(module_LTLIBRARIES)
+-	$(top_builddir)/gtk/gtk-query-immodules-2.0 *.la > gtk.immodules
++	LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs/:$(top_builddir)/gdk/.libs/:$(top_builddir)/gtk/.libs/ \
++			$(top_builddir)/gtk/gtk-query-immodules-2.0 *.la > gtk.immodules
+ 
+ all-local: gtk.immodules
+ 
