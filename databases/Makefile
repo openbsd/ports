@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.39 2002/01/24 23:22:06 jsyn Exp $
+# $OpenBSD: Makefile,v 1.40 2002/03/19 13:58:40 wilfried Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
+     SUBDIR += MyCC
      SUBDIR += db
      SUBDIR += db,java
      SUBDIR += freetds
