@@ -1,5 +1,5 @@
---- Makefile.~1~	Fri Mar 20 20:19:03 1998
-+++ Makefile	Fri Mar 20 20:23:32 1998
+--- Makefile.~1~	Fri Sep 11 13:21:25 1998
++++ Makefile	Fri Sep 11 13:30:28 1998
 @@ -3,31 +3,46 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
@@ -10,17 +10,17 @@
 -ZLIBINC=../zlib
 -
 -CC=cc
--CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
+-CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
 -LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
 +ZLIBLIB=/usr/local/lib
 +ZLIBINC=/usr/local/include
 +#ZLIBLIB=../zlib
 +#ZLIBINC=../zlib
 +
-+VER=1.1
++VER=1.2
 +#CC=cc
-+#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
-+LDFLAGS=-L. -lpng -lz -lm -static
++#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
++LDFLAGS=-L. -lpng -lz -lm
  
  #RANLIB=echo
  RANLIB=ranlib
@@ -57,7 +57,7 @@
  pngtest: pngtest.o libpng.a
  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
  
-@@ -37,12 +52,15 @@
+@@ -37,12 +52,12 @@
  install: libpng.a
  	-@mkdir $(prefix)/include
  	-@mkdir $(prefix)/lib
@@ -67,14 +67,11 @@
 -	chmod 644 $(prefix)/include/pngconf.h
 -	cp libpng.a $(prefix)/lib
 -	chmod 644 $(prefix)/lib/libpng.a
-+	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h \
-+		$(prefix)/include
-+	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a \
-+		$(prefix)/lib
-+	ranlib $(prefix)/lib/libpng.a
++	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
++	${BSD_INSTALL_DATA} libpng.a $(prefix)/lib
++	${RANLIB} $(prefix)/lib/libpng.a
 +.if(${MACHINE_ARCH} != "alpha")
-+	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.so.${VER} \
-+		$(prefix)/lib
++	${BSD_INSTALL_DATA} libpng.so.${VER} $(prefix)/lib
 +.endif
  
  clean:
