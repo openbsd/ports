@@ -1,17 +1,9 @@
-# New ports collection makefile for:	cucipop
-# Version required:     1.21
-# Date created:		21 Apr 1998
-# Whom:			form@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.3 1998/10/20 08:39:46 form Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/18 23:48:20 brad Exp $
 
 DISTNAME=       cucipop-1.31
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 
-MAINTAINER=	form@OpenBSD.ORG
-
-MAN8=		cucipop.8
+MAINTAINER=	ports@openbsd.org
 
 .include <bsd.port.mk>
