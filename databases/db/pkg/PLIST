@@ -7,12 +7,11 @@ bin/db_load
 bin/db_printlog
 bin/db_recover
 bin/db_stat
-lib/libdb_cxx.a
-lib/libdb.a
-lib/libdb3.so
-include/db_185.h
 include/db3.h
+include/db_185.h
 include/db_cxx.h
+lib/libdb.a
+lib/libdb_cxx.a
 share/doc/db/api_c/c_flags.html
 share/doc/db/api_c/c_index.html
 share/doc/db/api_c/db_close.html
@@ -228,7 +227,6 @@ share/doc/db/api_cxx/log_register.html
 share/doc/db/api_cxx/log_stat.html
 share/doc/db/api_cxx/log_unregister.html
 share/doc/db/api_cxx/lsn_class.html
-share/doc/db/api_cxx/mempfile_class.html
 share/doc/db/api_cxx/memp_fclose.html
 share/doc/db/api_cxx/memp_fget.html
 share/doc/db/api_cxx/memp_fopen.html
@@ -239,10 +237,11 @@ share/doc/db/api_cxx/memp_register.html
 share/doc/db/api_cxx/memp_stat.html
 share/doc/db/api_cxx/memp_sync.html
 share/doc/db/api_cxx/memp_trickle.html
+share/doc/db/api_cxx/mempfile_class.html
 share/doc/db/api_cxx/txn_abort.html
 share/doc/db/api_cxx/txn_begin.html
-share/doc/db/api_cxx/txn_class.html
 share/doc/db/api_cxx/txn_checkpoint.html
+share/doc/db/api_cxx/txn_class.html
 share/doc/db/api_cxx/txn_commit.html
 share/doc/db/api_cxx/txn_id.html
 share/doc/db/api_cxx/txn_prepare.html
@@ -370,15 +369,13 @@ share/doc/db/api_tcl/txn.html
 share/doc/db/api_tcl/txn_abort.html
 share/doc/db/api_tcl/txn_commit.html
 share/doc/db/api_tcl/version.html
-share/doc/db/sleepycat/contact.html
-share/doc/db/sleepycat/legal.html
-share/doc/db/sleepycat/products.html
-share/doc/db/ref/txn/config.html
-share/doc/db/ref/txn/intro.html
-share/doc/db/ref/txn/limits.html
-share/doc/db/ref/txn/nested.html
-share/doc/db/ref/txn/other.html
-share/doc/db/ref/txn/stability.html
+share/doc/db/images/api.gif
+share/doc/db/images/next.gif
+share/doc/db/images/prev.gif
+share/doc/db/images/ps.gif
+share/doc/db/images/ref.gif
+share/doc/db/images/sleepycat.gif
+share/doc/db/index.html
 share/doc/db/ref/am/close.html
 share/doc/db/ref/am/curclose.html
 share/doc/db/ref/am/curdel.html
@@ -416,12 +413,12 @@ share/doc/db/ref/am_conf/recno.html
 share/doc/db/ref/am_conf/renumber.html
 share/doc/db/ref/am_conf/select.html
 share/doc/db/ref/arch/apis.html
-share/doc/db/ref/arch/smallpic.gif
+share/doc/db/ref/arch/bigpic.gif
 share/doc/db/ref/arch/bigpic.html
 share/doc/db/ref/arch/progmodel.html
 share/doc/db/ref/arch/script.html
+share/doc/db/ref/arch/smallpic.gif
 share/doc/db/ref/arch/utilities.html
-share/doc/db/ref/arch/bigpic.gif
 share/doc/db/ref/build_unix/aix.html
 share/doc/db/ref/build_unix/conf.html 
 share/doc/db/ref/build_unix/flags.html
@@ -485,10 +482,10 @@ share/doc/db/ref/lock/twopl.html
 share/doc/db/ref/log/config.html
 share/doc/db/ref/log/intro.html
 share/doc/db/ref/log/limits.html
-share/doc/db/ref/mp/intro.html
 share/doc/db/ref/mp/config.html
+share/doc/db/ref/mp/intro.html
 share/doc/db/ref/perl/intro.html
-share/doc/db/ref/program/solaris.txt
+share/doc/db/ref/program/appsignals.html
 share/doc/db/ref/program/byteorder.html
 share/doc/db/ref/program/compatible.html
 share/doc/db/ref/program/dbsizes.html
@@ -498,8 +495,8 @@ share/doc/db/ref/program/errorret.html
 share/doc/db/ref/program/mt.html
 share/doc/db/ref/program/namespace.html
 share/doc/db/ref/program/runtime.html
+share/doc/db/ref/program/solaris.txt
 share/doc/db/ref/program/version.html
-share/doc/db/ref/program/appsignals.html
 share/doc/db/ref/refs/bdb_usenix.html
 share/doc/db/ref/refs/bdb_usenix.ps
 share/doc/db/ref/refs/embedded.html
@@ -523,18 +520,24 @@ share/doc/db/ref/tcl/intro.html
 share/doc/db/ref/tcl/program.html
 share/doc/db/ref/tcl/using.html
 share/doc/db/ref/test/run.html
-share/doc/db/ref/transapp/writetest.txt
+share/doc/db/ref/toc.html
+share/doc/db/ref/transapp/admin.html
 share/doc/db/ref/transapp/apps.html
 share/doc/db/ref/transapp/archival.html
 share/doc/db/ref/transapp/checkpoint.html
 share/doc/db/ref/transapp/deadlock.html
 share/doc/db/ref/transapp/filesys.html
 share/doc/db/ref/transapp/intro.html
-share/doc/db/ref/transapp/throughput.html
 share/doc/db/ref/transapp/reclimit.html
 share/doc/db/ref/transapp/recovery.html
-share/doc/db/ref/transapp/admin.html
-share/doc/db/ref/toc.html
+share/doc/db/ref/transapp/throughput.html
+share/doc/db/ref/transapp/writetest.txt
+share/doc/db/ref/txn/config.html
+share/doc/db/ref/txn/intro.html
+share/doc/db/ref/txn/limits.html
+share/doc/db/ref/txn/nested.html
+share/doc/db/ref/txn/other.html
+share/doc/db/ref/txn/stability.html
 share/doc/db/ref/upgrade.2.0/convert.html
 share/doc/db/ref/upgrade.2.0/disk.html
 share/doc/db/ref/upgrade.2.0/intro.html
@@ -568,7 +571,9 @@ share/doc/db/ref/upgrade.3.0/xa.html
 share/doc/db/ref/xa/config.html
 share/doc/db/ref/xa/faq.html
 share/doc/db/ref/xa/intro.html
-share/doc/db/utility/index.html
+share/doc/db/sleepycat/contact.html
+share/doc/db/sleepycat/legal.html
+share/doc/db/sleepycat/products.html
 share/doc/db/utility/db_archive.html
 share/doc/db/utility/db_checkpoint.html
 share/doc/db/utility/db_deadlock.html
@@ -577,13 +582,7 @@ share/doc/db/utility/db_load.html
 share/doc/db/utility/db_printlog.html
 share/doc/db/utility/db_recover.html
 share/doc/db/utility/db_stat.html
-share/doc/db/images/api.gif
-share/doc/db/images/prev.gif
-share/doc/db/images/next.gif
-share/doc/db/images/ref.gif
-share/doc/db/images/ps.gif
-share/doc/db/images/sleepycat.gif
-share/doc/db/index.html
+share/doc/db/utility/index.html
 share/examples/db/AccessExample.cpp
 share/examples/db/AccessExample.java
 share/examples/db/BtRecExample.cpp
@@ -604,14 +603,11 @@ share/examples/db/ex_mpool.c
 share/examples/db/ex_thread.c
 share/examples/db/ex_tpcb.c
 share/examples/db/ex_tpcb.h
-@dirrm share/examples/db
-@dirrm share/doc/db/images
 @dirrm share/doc/db/api_c
 @dirrm share/doc/db/api_cxx
 @dirrm share/doc/db/api_java
 @dirrm share/doc/db/api_tcl
-@dirrm share/doc/db/utility
-@dirrm share/doc/db/sleepycat
+@dirrm share/doc/db/images
 @dirrm share/doc/db/ref/am
 @dirrm share/doc/db/ref/am_conf
 @dirrm share/doc/db/ref/arch
@@ -641,4 +637,7 @@ share/examples/db/ex_tpcb.h
 @dirrm share/doc/db/ref/upgrade.3.0
 @dirrm share/doc/db/ref/xa
 @dirrm share/doc/db/ref
+@dirrm share/doc/db/sleepycat
+@dirrm share/doc/db/utility
 @dirrm share/doc/db
+@dirrm share/examples/db
