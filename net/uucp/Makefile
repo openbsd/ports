@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/13 20:16:15 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/10 12:06:50 fgsch Exp $
 
 COMMENT=	"UUCP suite"
 
@@ -31,5 +31,7 @@ post-install:
 	@cd ${WRKDIST}/doc && rm -f uucp.info* 
 	@cd ${WRKDIST} && ${MAKE} ${MAKE_FLAGS} install-info
 	@mv ${PREFIX}/libexec/uucp/uusched ${PREFIX}/bin
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/cu
+	@chmod ${BINMODE} ${PREFIX}/bin/cu
 
 .include <bsd.port.mk>
