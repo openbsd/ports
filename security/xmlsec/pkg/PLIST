@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/29 14:22:48 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/02 04:32:29 margarida Exp $
 bin/xmlsec1
 bin/xmlsec1-config
 include/xmlsec1/xmlsec/base64.h
@@ -6,6 +6,9 @@ include/xmlsec1/xmlsec/buffer.h
 include/xmlsec1/xmlsec/crypto.h
 include/xmlsec1/xmlsec/errors.h
 include/xmlsec1/xmlsec/exports.h
+include/xmlsec1/xmlsec/gnutls/app.h
+include/xmlsec1/xmlsec/gnutls/crypto.h
+include/xmlsec1/xmlsec/gnutls/symbols.h
 include/xmlsec1/xmlsec/io.h
 include/xmlsec1/xmlsec/keyinfo.h
 include/xmlsec1/xmlsec/keys.h
@@ -29,6 +32,8 @@ include/xmlsec1/xmlsec/xmldsig.h
 include/xmlsec1/xmlsec/xmlenc.h
 include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
+lib/libxmlsec1-gnutls.a
+lib/libxmlsec1-gnutls.la
 lib/libxmlsec1-openssl.a
 lib/libxmlsec1-openssl.la
 lib/libxmlsec1.a
@@ -40,5 +45,6 @@ man/man1/xmlsec1.1
 %%SHARED%%
 @comment @dirrm lib/pkgconfig
 @dirrm include/xmlsec1/xmlsec/openssl
+@dirrm include/xmlsec1/xmlsec/gnutls
 @dirrm include/xmlsec1/xmlsec
 @dirrm include/xmlsec1

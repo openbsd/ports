@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/29 14:22:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2003/05/02 04:32:29 margarida Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
 
 VERSION=	1.0.1
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME=	xmlsec-${VERSION}
+PKGNAME=	xmlsec-${VERSION}p1
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 
@@ -23,15 +23,17 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
 
-MULTI_PACKAGES=	-docs
+MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-MODULES=	iconv
-LIB_DEPENDS=	xslt.1::textproc/libxslt
+MODULES=		iconv
+LIB_DEPENDS=		xslt.1::textproc/libxslt \
+			gnutls.8::security/gnutls
 .endif
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
 
 .include <bsd.port.mk>
