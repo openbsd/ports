@@ -6,3 +6,5 @@ extra functions.
 Lower level gdkgl functions make it easy to render on any widget
 that has OpenGL capable visual, rendering to off-screen pixmaps is
 also supported.
+
+WWW: ${HOMEPAGE}

@@ -1,9 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/07/20 05:25:09 brad Exp $
 include/gtkgl/gdkgl.h
 include/gtkgl/gtkglarea.h
 lib/libgtkgl.a
 lib/libgtkgl.la
-lib/libgtkgl.so.1.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 share/aclocal/gtkgl.m4
 share/doc/gtkglarea/HOWTO.txt
 share/doc/gtkglarea/gdkgl.txt
