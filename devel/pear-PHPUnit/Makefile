@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/24 18:39:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/29 00:34:01 avsm Exp $
 
 COMMENT=	"regression testing framework for PHP"
 
-V=		0.6.1
+V=		0.6.2
 DISTNAME=	PHPUnit-${V}
 PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
