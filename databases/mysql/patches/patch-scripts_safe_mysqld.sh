@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.8 2002/12/14 23:56:43 brad Exp $
---- scripts/safe_mysqld.sh.orig	Thu Dec  5 04:37:05 2002
-+++ scripts/safe_mysqld.sh	Sat Dec 14 04:13:07 2002
-@@ -68,34 +68,16 @@ parse_arguments() {
+$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.9 2003/01/29 16:35:55 brad Exp $
+--- scripts/safe_mysqld.sh.orig	Tue Jan 21 15:41:56 2003
++++ scripts/safe_mysqld.sh	Tue Jan 28 10:09:43 2003
+@@ -70,34 +70,16 @@ parse_arguments() {
    done
  }
  
@@ -43,19 +43,7 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.8 2002/12/14 23:56:43 brad Exp $
  
  # Use the mysqld-max binary by default if the user doesn't specify a binary
  if test -x $ledir/mysqld-max
-@@ -159,9 +141,9 @@ then
-   NOHUP_NICENESS=`nohup nice 2>&1`
-   if test $? -eq 0 && test x"$NOHUP_NICENESS" != x0 && nice --1 echo foo > /dev/null 2>&1
-   then
--    if $NOHUP_NICENESS -gt 0
-+    if test $NOHUP_NICENESS -gt 0
-     then
--      $NOHUP_NICENESS="nice --$NOHUP_NICENESS nohup"
-+      NOHUP_NICENESS="nice --$NOHUP_NICENESS nohup"
-     else
-       NOHUP_NICENESS="nice -$NOHUP_NICENESS nohup"
-     fi
-@@ -226,10 +208,17 @@ fi
+@@ -228,10 +210,17 @@ fi
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -77,7 +65,7 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.8 2002/12/14 23:56:43 brad Exp $
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -244,34 +233,6 @@ do
+@@ -246,34 +235,6 @@ do
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break

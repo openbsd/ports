@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2002/12/14 23:56:43 brad Exp $
+# $OpenBSD: Makefile,v 1.84 2003/01/29 16:35:55 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -6,7 +6,7 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	3.23.54
+VERSION=	3.23.55
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
