@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/20 06:05:41 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/10/16 16:48:49 pvalchev Exp $
 bin/edict
 bin/ethes
-share/doc/edict/README 
+share/doc/edict/README
 @dirrm share/doc/edict
