@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2004/06/23 14:17:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/08/23 08:43:16 espie Exp $
 
 COMMENT=		"object oriented script language with threads"
 
+SHARED_ONLY=		Yes
 VERSION=		1.8.1
 DISTNAME=		ruby-${VERSION}
 CATEGORIES=		lang
@@ -36,6 +37,7 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
 .else
 CONFIGURE_ARGS+=	--without-x11
 .endif
+CONFIGURE_ARGS+=	--with-dbm-type=bogus
 
 REGRESS_TARGET=	test
 
