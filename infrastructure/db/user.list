@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.24 2005/01/11 16:02:27 jakob Exp $
+$OpenBSD: user.list,v 1.25 2005/01/16 13:19:33 mbalmer Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -49,3 +49,4 @@ id  user		group		port options
 538 _vilter		_vilter		mail/smtp-vilter
 539 _clamav		_clamav		security/clamav
 540 _dspam		_dspam		mail/dspam
+541 _cups		_cups		print/cups
