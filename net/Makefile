@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2001/10/30 20:51:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.178 2001/11/15 06:19:35 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -120,6 +120,7 @@
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
      SUBDIR += rain
+     SUBDIR += resolv
      SUBDIR += roxirc
      SUBDIR += rrdtool
      SUBDIR += rrdtool,tcl
