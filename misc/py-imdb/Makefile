@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/07 14:14:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/08 07:58:38 xsa Exp $
 
 COMMENT=	"Python package to retrieve data of the IMDb movie database"
 
-V=		1.2
+V=		1.3
 DISTNAME=	imdbpy-${V}
 PKGNAME=	py-imdb-${V}
 CATEGORIES=	misc
@@ -23,21 +23,15 @@ MODULES=	python
 
 WRKDIST=	${WRKDIR}/IMDbPY-${V}
 
-DOCDIR=		${PREFIX}/share/doc/py-imdb
+NO_REGRESS=	Yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-imdb
 EXAMPLESDIR=	${PREFIX}/share/examples/py-imdb
 
-TESTS=	test_imdb.py test_movie.py test_person.py test_utils.py
-
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/README* ${DOCDIR}
+	${INSTALL_DATA_DIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README* ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/* ${EXAMPLESDIR}
-
-do-regress: fake
-.for t in ${TESTS}
-	@cd ${WRKSRC}/test && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./${t}
-.endfor
 
 .include <bsd.port.mk>
