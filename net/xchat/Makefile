@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2002/01/10 11:08:55 shell Exp $
+# $OpenBSD: Makefile,v 1.39 2002/03/30 04:50:09 brad Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
-
 
 COMMENT=	"X-Chat is an X11 IRC client"
 
 MAJOR=		1.8
-VERSION=	${MAJOR}.7
+VERSION=	${MAJOR}.8
 DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.504
@@ -24,23 +23,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+LIB_DEPENDS=	gdk_pixbuf::graphics/gdk-pixbuf
 
-FLAVORS=	no_ssl
-FLAVOR?=
-
-CONFIGURE_ARGS+= --disable-imlib --disable-python \
-		 --disable-gnome --disable-zvt    \
-		 --disable-mmx --enable-ipv6
+MODULES=	iconv gettext
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
-
-LIB_DEPENDS=	gdk_pixbuf::graphics/gdk-pixbuf
-
-.if ${FLAVOR} != "no_ssl"
-CONFIGURE_ARGS+= --enable-openssl="/usr"
-.endif
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --disable-python --disable-gnome \
+		 --disable-zvt --disable-mmx \
+		 --enable-ipv6 --enable-openssl="/usr" \
+		 --enable-japanese-conv \
+		 --with-libiconv-prefix="${LOCALBASE}"
 
 DOCDIR=		${PREFIX}/share/doc/xchat
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fe-text_Makefile_in,v 1.1 2001/07/25 11:19:38 shell Exp $
---- src/fe-text/Makefile.in.orig	Wed Jul 25 05:58:47 2001
-+++ src/fe-text/Makefile.in	Wed Jul 11 13:14:41 2001
-@@ -124,7 +124,7 @@
+$OpenBSD: patch-src_fe-text_Makefile_in,v 1.2 2002/03/30 04:50:09 brad Exp $
+--- src/fe-text/Makefile.in.orig	Tue Mar  5 21:25:20 2002
++++ src/fe-text/Makefile.in	Wed Mar 27 19:35:39 2002
+@@ -127,7 +127,7 @@ LIBS = @LIBS@
  @USE_MYGLIB_TRUE@xchat_text_OBJECTS =  fe-text.o glib.o
  xchat_text_DEPENDENCIES =  ../common/libxchatmain.a
  xchat_text_LDFLAGS = 
