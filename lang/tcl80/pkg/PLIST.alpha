@@ -260,6 +260,7 @@ man/man3/Tcl_NewObj.3
 man/man3/Tcl_NewStringObj.3
 man/man3/Tcl_NextHashEntry.3
 man/man3/Tcl_NotifyChannel.3
+man/man3/Tcl_GetNameOfExecutable.3
 man/man3/Tcl_ObjGetVar2.3
 man/man3/Tcl_ObjSetVar2.3
 man/man3/Tcl_OpenCommandChannel.3
@@ -337,6 +338,7 @@ man/man3/Tcl_VarTraceInfo2.3
 man/man3/Tcl_WaitForEvent.3
 man/man3/Tcl_Write.3
 man/man3/Tcl_WrongNumArgs.3
+man/mann/SafeBase.n
 man/mann/Tcl.n
 man/mann/after.n
 man/mann/append.n

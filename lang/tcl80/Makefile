@@ -1,20 +1,15 @@
-# New ports collection makefile for:	tcl8.0
-# Version required:	8.0
-# Date created:		2 December 1997
-# Whom:			niklas
-#
-# $OpenBSD: Makefile,v 1.6 1998/11/03 15:43:16 niklas Exp $
+# $OpenBSD: Makefile,v 1.7 1999/01/11 01:21:18 marc Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
-DISTNAME=	tcl8.0.3
-PKGNAME=	tcl-8.0.3
+DISTNAME=	tcl8.0.4
+PKGNAME=	tcl-8.0.4
 CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 MAINTAINER=	niklas@openbsd.org
 
-WRKSRC=		${WRKDIR}/tcl8.0.3/unix
+WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS=	--enable-shared
