@@ -1,7 +1,7 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2005/01/04 21:10:03 wilfried Exp $
 #
-# De-installation setup of mozilla
+# De-installation setup of mozilla-firefox
 
 # exit on errors, use a sane path and install prefix
 #
@@ -27,7 +27,8 @@ case $2 in
 	rm -rf chrome.rdf overlayinfo
 	cd ${MOZ}
 	rm -f .autoreg components.ini install.log registry
-	rm -f extensions/Extensions.rdf
+	rm -f extensions/Extensions.rdf extensions/installed-extensions-processed.txt
+	rm -rf extensions/{*
 	rmdir extensions
 	;;
     *)
