@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/12/26 19:15:09 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/02/09 14:15:09 dhartmei Exp $
 #
 # Pre/post-installation setup of samba
 
@@ -8,10 +8,10 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}/samba
+CONFIG_DIR=${SYSCONFDIR}
 CONFIG_FILE=$CONFIG_DIR/smb.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/samba
-SAMBA_SPOOL=/var/spool/samba
+SAMBA_SPOOL=${SAMBA_SPOOL}
 
 install -d -o root -g wheel -m 1755 $SAMBA_SPOOL
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/05 09:07:13 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/09 14:15:08 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-2.2.3
+DISTNAME=	samba-2.2.3a
 CATEGORIES=	net
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
@@ -28,14 +28,20 @@ FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
 		SWATDIR="${WRKINST}${PREFIX}/share/swat" \
 		SBINDIR="${WRKINST}${PREFIX}/libexec"
 
+SYSCONFDIR=	/etc/samba
+SAMBA_SPOOL=	/var/spool/samba
+SAMBA_LOGDIR=	/var/log
+SUBST_VARS=	SAMBA_SPOOL
+
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
-		--with-configdir="${SYSCONFDIR}/samba" \
-		--with-lockdir="/var/spool/samba" \
-		--with-privatedir="${SYSCONFDIR}/samba" \
+		--with-configdir="${SYSCONFDIR}" \
+		--with-lockdir="${SAMBA_SPOOL}" \
+		--with-logfilebase="${SAMBA_LOGDIR}" \
+		--with-privatedir="${SYSCONFDIR}" \
 		--with-swatdir="${PREFIX}/share/swat" \
 		--with-ssl \
 		--with-sslinc="/usr/include/ssl" \
@@ -51,9 +57,6 @@ NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/source
 
-SAMBA_SPOOL=	/var/spool/samba
-SAMBA_LOGDIR=	/var/log
-
 SAMBA_DOCS=${WRKSRC}/../README \
 	${WRKSRC}/../docs/THANKS \
 	${WRKSRC}/../docs/history \
@@ -65,7 +68,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/faq
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/textdocs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
-	@cp -r ${WRKSRC}/../examples/* ${PREFIX}/share/examples/samba
+	@cp -R ${WRKSRC}/../examples/* ${PREFIX}/share/examples/samba
 	@chown -R root.bin ${PREFIX}/share/examples/samba
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/samba
 	@for i in ${SAMBA_DOCS}; do \

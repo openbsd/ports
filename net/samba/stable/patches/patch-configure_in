@@ -1,11 +1,25 @@
---- configure.in.orig	Fri Nov  2 22:56:11 2001
-+++ configure.in	Fri Nov  2 22:56:36 2001
-@@ -19,7 +19,7 @@
-     codepagedir="\$(LIBDIR)/codepages"
-     configdir="\$(LIBDIR)"
-     lockdir="\$(VARDIR)/locks"
--    logfilebase="\$(VARDIR)"
-+    logfilebase="\$(VARDIR)/log"
-     privatedir="\${prefix}/private"
-     swatdir="\${prefix}/swat")
- 
+--- configure.in.orig	Wed Feb  6 21:56:47 2002
++++ configure.in	Fri Feb  8 11:44:50 2002
+@@ -810,7 +810,21 @@ case "$host_os" in
+ 			LDSHFLAGS="-Wl,-h,\$@ -G"
+ 			PICFLAG="-KPIC"   # Is this correct for SunOS
+ 		;;
+-		*bsd*)  BLDSHARED="true"
++		*openbsd*)
++			BLDSHARED="true"
++			case "$host_os" in
++			*openbsd[[01]].* | *openbsd2.[[0-7]] | *openbsd2.[[0-7]].*)
++			  SHLD="ld"
++			  LDSHFLAGS="-Bshareable"
++			  ;;
++			*)
++			  LDSHFLAGS="-shared -fPIC"
++			  ;;
++			esac
++			PICFLAG="-fPIC"
++			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
++		;;
++		*freebsd* | *netbsd*)  BLDSHARED="true"
+ 			LDSHFLAGS="-Wl,-soname,\$@ -shared"
+ 			PICFLAG="-fPIC"
+ 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
