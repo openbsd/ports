@@ -1,9 +1,9 @@
 # OpenBSD makefile for:	xdaliclock
-# Version required	2.10
+# Version required	2.11
 # Date created:		21 December, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 1998/03/02 12:37:50 dgregor Exp $
+# $OpenBSD: Makefile,v 1.3 1998/03/02 12:40:16 dgregor Exp $
 #
 
 DISTNAME=	xdaliclock-2.11
