@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/24 22:11:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/31 06:10:35 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 BROKEN=		installs files automatically in /etc
@@ -15,17 +15,15 @@ MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.pingzero.net/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ 
 
-
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		COPY
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 .if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"pthreads are currently not working SPARC"
+BROKEN=		"pthreads are currently not working on the SPARC architecture"
 .endif
 
 DB_DIR?=	/var/mysql
@@ -33,7 +31,6 @@ DB_DIR?=	/var/mysql
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
-		 --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
 		 --without-perl \
 		 --without-debug \
