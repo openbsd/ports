@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/29 18:27:26 shell Exp $
+bin/gpgme-config
+include/gpgme.h
+lib/libgpgme.a
+lib/libgpgme.la
+share/examples/gpgme/gpgme.m4
+%%SHARED%%
+@dirrm share/examples/gpgme
