@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/24 20:19:31 matt Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
 
-VERSION=	1.2.0
+VERSION=	1.2.1
 PKGNAME=        tightvnc-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
-NEED_VERSION=	1.448
+NEED_VERSION=	1.500
 MASTER_SITES=   http://prdownloads.sourceforge.net/vnc-tight/ \
 		ftp://ftp.sourceforge.net/pub/sourceforge/vnc-tight/
 MASTER_SITES0=	http://www.uk.research.att.com/vnc/dist/
@@ -35,6 +35,8 @@ SUBPACKAGE?=
 CONFIGURE_STYLE=	imake
 
 ALL_TARGET=    	World
+
+NO_REGRESS=	Yes
 
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.
