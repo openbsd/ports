@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:56 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/08/10 19:47:19 espie Exp $
 #
 
 DISTNAME=       xasteroids
@@ -9,8 +9,7 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.sh.Z
-EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
-EXTRACT_ARGS=	<
+EXTRACT_AFTER_ARGS=	|sh -s
 
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
