@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2002/08/30 12:23:57 wcobb Exp $
+# $OpenBSD: Makefile,v 1.27 2002/09/03 01:22:21 wcobb Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-gnome=		"GNOME applet for XMMS"
 COMMENT-esd=		"Esound output plugin for XMMS"
 COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
+COMMENT-mp3=		"MP3 input plugin for XMMS"
 
 VERSION=		1.2.7
 DISTNAME=		xmms-${VERSION}
@@ -12,6 +13,7 @@ PKGNAME-gnome=		xmms-gnome-${VERSION}
 PKGNAME-esd=		xmms-esd-${VERSION}
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
+PKGNAME-mp3=		xmms-mp3-${VERSION}
 SUNDRIVER=		xmms_sun-${VERSION}
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -33,7 +35,7 @@ MASTER_SITES=		http://www.xmms.org/files/$V/ \
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			http://mirror.csoft.org/xmms/
 
-PSEUDO_FLAVORS=		no_gnome no_esd no_vorbis no_mikmod
+PSEUDO_FLAVORS=		no_gnome no_esd no_vorbis no_mikmod no_mp3
 FLAVOR?=
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_gnome}
@@ -47,6 +49,9 @@ MULTI_PACKAGES+=	-vorbis
 .endif
 .if !${FLAVOR:L:Mno_mikmod}
 MULTI_PACKAGES+=	-mikmod
+.endif
+.if !${FLAVOR:L:Mno_mp3}
+MULTI_PACKAGES+=	-mp3
 .endif
 
 SUBPACKAGE?=
@@ -87,6 +92,11 @@ RUN_DEPENDS=		::audio/xmms
 . endif
 . if ${SUBPACKAGE} == "-mikmod"
 LIB_DEPENDS=		mikmod.0::audio/libmikmod
+RUN_DEPENDS=		::audio/xmms
+. endif
+. if ${SUBPACKAGE} == "-mp3"
+PERMIT_PACKAGE_CDROM=	"patent issues"
+PERMIT_DISTFILES_CDROM= "patent issues"
 RUN_DEPENDS=		::audio/xmms
 . endif
 .else
@@ -132,6 +142,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmms-gnome
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/xmms-gnome
 .endif
-
 
 .include <bsd.port.mk>

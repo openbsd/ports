@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2002/03/11 17:38:05 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2002/09/03 01:22:22 wcobb Exp $
 lib/libxmms.la
 lib/libxmms.so.3.1
 DYNLIBDIR(%B)
@@ -6,7 +6,6 @@ lib/xmms/Output/libdisk_writer.so
 lib/xmms/Output/libsun.so
 lib/xmms/Input/libwav.so
 lib/xmms/Input/libtonegen.so
-lib/xmms/Input/libmpg123.so
 lib/xmms/Input/libcdaudio.so
 lib/xmms/Input/libidcin.so
 lib/xmms/Effect/libvoice.so
