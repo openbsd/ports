@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/12/08 23:21:34 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/03/15 02:28:49 brad Exp $
 bin/ircII
 bin/ircII-${VERSION}
 bin/ircbug
@@ -11,6 +11,7 @@ man/man1/ircbug.1
 share/irc/help/!
 share/irc/help/.date
 share/irc/help/:
+share/irc/help/@
 share/irc/help/abort
 share/irc/help/admin
 share/irc/help/alias/alias
