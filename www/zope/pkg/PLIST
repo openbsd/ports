@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/04/25 15:38:55 matt Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/09/29 06:02:19 brad Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/ZServer/DebugLogger.py
@@ -905,6 +905,8 @@ lib/zope/lib/python/Products/ExternalMethod/tests/__init__.py
 lib/zope/lib/python/Products/ExternalMethod/tests/testExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/version.txt
 lib/zope/lib/python/Products/ExternalMethod/www/function.gif
+lib/zope/lib/python/Products/Hotfix_2002-06-14/README.txt
+lib/zope/lib/python/Products/Hotfix_2002-06-14/__init__.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyc
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyo
@@ -2850,6 +2852,7 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/MailHost/dtml
 @dirrm lib/zope/lib/python/Products/MailHost
 @dirrm lib/zope/lib/python/Products/MIMETools
+@dirrm lib/zope/lib/python/Products/Hotfix_2002-06-14
 @dirrm lib/zope/lib/python/Products/ExternalMethod/www
 @dirrm lib/zope/lib/python/Products/ExternalMethod/tests/Extensions
 @dirrm lib/zope/lib/python/Products/ExternalMethod/tests

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/09 12:32:34 matt Exp $
+# $OpenBSD: Makefile,v 1.14 2002/09/29 06:02:18 brad Exp $
 
 COMMENT=	"object-oriented web application server"
 
 VERSION=	2.5.1
-PORT_VERSION=	${VERSION}
+PORT_VERSION=	${VERSION}p1
 
 DISTNAME=	Zope-${VERSION}-src
 PKGNAME=	zope-${PORT_VERSION}
@@ -23,9 +23,17 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
+DIST_SUBDIR=	zope
+
 MASTER_SITES0=	http://www.zope.org/Members/zigg/UnixSecurityPatch/
 PATCHFILES=	Zope-${VERSION}-unix-security.patch:0
 PATCH_DIST_STRIP=-p1
+
+HOTFIX_DATE1= 	2002-06-14
+MASTER_SITES1= 	http://www.zope.org/Products/Zope/Hotfix_${HOTFIX_DATE1}/
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Hotfix_${HOTFIX_DATE1}.tgz:1
 
 BUILD_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1 \
 		:gtar-*:archivers/gtar					
@@ -78,6 +86,10 @@ do-install:
 		${PREFIX}/share/doc/zope/changenotes
 	echo "Zope ${VERSION} (OpenBSD package zope-${PORT_VERSION})" \
 		> ${PREFIX}/lib/zope/lib/python/version.txt
+	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE1}
+	${INSTALL_DATA} \
+		${WRKDIR}/lib/python/Products/Hotfix_${HOTFIX_DATE1}/* \
+		${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE1}
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/python2.1 utilities/testrunner.py -a
