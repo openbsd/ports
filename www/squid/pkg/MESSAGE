@@ -15,6 +15,9 @@ The local (OpenBSD) differences are:
 - logs are stored in 			/var/squid/logs
 - the ugid squid runs as is		www:www
 
+Please remember to initialize the cache by running "squid -z" before
+trying to run squid for the first time.
+
 You can also edit /etc/rc.local so that Squid is started automatically:
     if [ -x /usr/local/bin/squid ]; then
 	echo -n ' squid';	/usr/local/bin/squid &
