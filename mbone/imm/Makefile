@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/27 18:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/06 14:31:01 kevlo Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -18,11 +18,12 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0
 
 USE_X11=	Yes
+FAKE=		Yes
 
 WRKDIST=		${WRKDIR}/mnm
 
 post-extract:
-	@mkdir -p ${WRKSRC}/openbsd
+	${INSTALL_DATA_DIR} ${WRKSRC}/openbsd
 	@cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
 	@cp ${FILESDIR}/Makefile.openbsd ${WRKSRC}/src
 
@@ -33,7 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/openbsd/lscomp ${PREFIX}/bin
 # and no man pages at all yet.
 # But include the very limited documentation
-	@mkdir -p ${PREFIX}/share/doc/imm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imm
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
 	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm
