@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2000/06/11 08:44:19 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.21 2000/06/15 19:02:37 brad Exp $
 bin/gimp
 bin/gimp-config
 bin/gimptool
@@ -38,20 +38,14 @@ include/libgimp/gimpvector.h
 include/libgimp/gimpwidgets.h
 lib/gimp/1.1/modules/libcdisplay_gamma.a
 lib/gimp/1.1/modules/libcdisplay_gamma.la
-lib/gimp/1.1/modules/libcdisplay_gamma.so.0.0
 lib/gimp/1.1/modules/libcdisplay_highcontrast.a
 lib/gimp/1.1/modules/libcdisplay_highcontrast.la
-lib/gimp/1.1/modules/libcdisplay_highcontrast.so.0.0
 lib/gimp/1.1/modules/libcolorsel_gtk.a
 lib/gimp/1.1/modules/libcolorsel_gtk.la
-lib/gimp/1.1/modules/libcolorsel_gtk.so.0.0
 lib/gimp/1.1/modules/libcolorsel_triangle.a
 lib/gimp/1.1/modules/libcolorsel_triangle.la
-lib/gimp/1.1/modules/libcolorsel_triangle.so.0.0
 lib/gimp/1.1/modules/libcolorsel_water.a
 lib/gimp/1.1/modules/libcolorsel_water.la
-lib/gimp/1.1/modules/libcolorsel_water.so.0.0
-@exec /sbin/ldconfig -m %B
 lib/gimp/1.1/plug-ins/AlienMap
 lib/gimp/1.1/plug-ins/AlienMap2
 lib/gimp/1.1/plug-ins/CEL
@@ -213,14 +207,11 @@ lib/gimp/1.1/plug-ins/xwd
 lib/gimp/1.1/plug-ins/zealouscrop
 lib/libgck.a
 lib/libgck.la
-lib/libgck.so.1.1
 lib/libgimp.a
 lib/libgimp.la
-lib/libgimp.so.1.1
 lib/libgimpui.a
 lib/libgimpui.la
-lib/libgimpui.so.1.1
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/gimp.1
 man/man1/gimptool.1
 man/man5/gimprc.5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2000/06/11 08:44:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.45 2000/06/15 19:02:36 brad Exp $
 
 DISTNAME=	gimp-1.1.23
 CATEGORIES=	graphics
@@ -7,27 +7,25 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.23/
 
-MAINTAINER=	brad@openbsd.org
-
-LICENSE_TYPE=	GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \
 		mpeg.13::graphics/mpeg-lib \
 		png.1.6::graphics/png \
 		tiff.35::graphics/tiff
 
+MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # People that installed a previous version of gimp wound up with
 # shared libs that might not contain all the functions needed to
