@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/01 01:52:19 brad Exp $
+lib/libjscript.so.1.2
+lib/libkab.so.1.2
+lib/libkdecore.so.1.2
+lib/libkdeui.so.1.2
+lib/libkfile.so.1.2
+lib/libkfm.so.1.2
+lib/libkhtmlw.so.1.2
+lib/libkimgio.so.1.2
+lib/libkspell.so.1.2
+lib/libmediatool.so.1.2
+DYNLIBDIR(%B)

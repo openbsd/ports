@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/07/01 01:52:20 brad Exp $
 include/addressbook.h
 include/bison2cpp.h
 include/booktoken.h
@@ -125,35 +126,25 @@ include/stl_headers.h
 include/xview.h
 lib/libjscript.a
 lib/libjscript.la
-lib/libjscript.so.1.2
 lib/libkab.a
 lib/libkab.la
-lib/libkab.so.1.2
 lib/libkdecore.a
 lib/libkdecore.la
-lib/libkdecore.so.1.2
 lib/libkdeui.a
 lib/libkdeui.la
-lib/libkdeui.so.1.2
 lib/libkfile.a
 lib/libkfile.la
-lib/libkfile.so.1.2
 lib/libkfm.a
 lib/libkfm.la
-lib/libkfm.so.1.2
 lib/libkhtmlw.a
 lib/libkhtmlw.la
-lib/libkhtmlw.so.1.2
 lib/libkimgio.a
 lib/libkimgio.la
-lib/libkimgio.so.1.2
 lib/libkspell.a
 lib/libkspell.la
-lib/libkspell.so.1.2
 lib/libmediatool.a
 lib/libmediatool.la
-lib/libmediatool.so.1.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 share/apps/kab/pics/background_1.jpg
 share/apps/kab/pics/dialog_background.jpg
 share/apps/kde/pics/arrow_down.xbm
@@ -185,63 +176,65 @@ share/doc/HTML/en/kfiledialog/viewmag.gif
 share/doc/HTML/en/kspell/ksconfig.html
 share/doc/HTML/en/kspell/ksdialog.html
 share/doc/HTML/en/kspell/kspell.html
+share/locale/br/LC_MESSAGES/kde.mo
+share/locale/br/charset
+share/locale/ca/LC_MESSAGES/kde.mo
+share/locale/ca/charset
+share/locale/cs/LC_MESSAGES/kde.mo
+share/locale/cs/charset
 share/locale/da/LC_MESSAGES/kde.mo
+share/locale/da/charset
 share/locale/de/LC_MESSAGES/kde.mo
+share/locale/de/charset
+share/locale/el/LC_MESSAGES/kde.mo
+share/locale/en_UK/LC_MESSAGES/kde.mo
+share/locale/eo/LC_MESSAGES/kde.mo
+share/locale/eo/charset
 share/locale/es/LC_MESSAGES/kde.mo
+share/locale/es/charset
+share/locale/et/LC_MESSAGES/kde.mo
+share/locale/et/charset
+share/locale/fi/LC_MESSAGES/kde.mo
+share/locale/fi/charset
 share/locale/fr/LC_MESSAGES/kde.mo
+share/locale/fr/charset
+share/locale/he/LC_MESSAGES/kde.mo
+share/locale/he/charset
+share/locale/hr/LC_MESSAGES/kde.mo
+share/locale/hr/charset
+share/locale/hs/charset
+share/locale/hu/LC_MESSAGES/kde.mo
+share/locale/hu/charset
+share/locale/is/LC_MESSAGES/kde.mo
+share/locale/is/charset
+share/locale/it/LC_MESSAGES/kde.mo
+share/locale/it/charset
+share/locale/ja/LC_MESSAGES/kde.mo
 share/locale/ko/LC_MESSAGES/kde.mo
+share/locale/mk/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
 share/locale/no/LC_MESSAGES/kde.mo
-share/locale/pl/LC_MESSAGES/kde.mo
-share/locale/pt/LC_MESSAGES/kde.mo
-share/locale/sl/LC_MESSAGES/kde.mo
-share/locale/sv/LC_MESSAGES/kde.mo
-share/locale/cs/LC_MESSAGES/kde.mo
-share/locale/hr/LC_MESSAGES/kde.mo
-share/locale/it/LC_MESSAGES/kde.mo
-share/locale/pt_BR/LC_MESSAGES/kde.mo
-share/locale/fi/LC_MESSAGES/kde.mo
-share/locale/ru/LC_MESSAGES/kde.mo
-share/locale/hu/LC_MESSAGES/kde.mo
-share/locale/el/LC_MESSAGES/kde.mo
-share/locale/ro/LC_MESSAGES/kde.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
-share/locale/sk/LC_MESSAGES/kde.mo
-share/locale/ca/LC_MESSAGES/kde.mo
-share/locale/en_UK/LC_MESSAGES/kde.mo
-share/locale/mk/LC_MESSAGES/kde.mo
-share/locale/eo/LC_MESSAGES/kde.mo
-share/locale/is/LC_MESSAGES/kde.mo
-share/locale/tr/LC_MESSAGES/kde.mo
-share/locale/th/LC_MESSAGES/kde.mo
-share/locale/he/LC_MESSAGES/kde.mo
-share/locale/et/LC_MESSAGES/kde.mo
-share/locale/br/LC_MESSAGES/kde.mo
-share/locale/da/charset
-share/locale/de/charset
-share/locale/es/charset
-share/locale/fr/charset
 share/locale/no/charset
+share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/pl/charset
+share/locale/pt/LC_MESSAGES/kde.mo
 share/locale/pt/charset
-share/locale/sl/charset
-share/locale/sv/charset
-share/locale/cs/charset
-share/locale/hr/charset
-share/locale/it/charset
+share/locale/pt_BR/LC_MESSAGES/kde.mo
 share/locale/pt_BR/charset
-share/locale/fi/charset
-share/locale/ru/charset
-share/locale/hu/charset
+share/locale/ro/LC_MESSAGES/kde.mo
 share/locale/ro/charset
+share/locale/ru/LC_MESSAGES/kde.mo
+share/locale/ru/charset
+share/locale/sk/LC_MESSAGES/kde.mo
 share/locale/sk/charset
-share/locale/ca/charset
-share/locale/eo/charset
-share/locale/is/charset
-share/locale/he/charset
-share/locale/et/charset
-share/locale/br/charset
+share/locale/sl/LC_MESSAGES/kde.mo
+share/locale/sl/charset
+share/locale/sv/LC_MESSAGES/kde.mo
+share/locale/sv/charset
+share/locale/th/LC_MESSAGES/kde.mo
+share/locale/tr/LC_MESSAGES/kde.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
 share/toolbar/add_point.xpm
 share/toolbar/airbrush.xpm
 share/toolbar/back.xpm
@@ -312,13 +305,14 @@ share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
 @exec ln -sf en %D/share/doc/HTML/default
 @unexec rm -f %D/share/doc/HTML/default
-@dirrm share/toolbar
-@dirrm share/doc/HTML/en/kspell
-@dirrm share/doc/HTML/en/kfiledialog
-@dirrm share/doc/HTML/en/kdelibs
-@dirrm share/apps/khtmlw/pics
-@dirrm share/apps/khtmlw
-@dirrm share/apps/kde/pics
-@dirrm share/apps/kde
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
+@dirrm share/apps/kde/pics
+@dirrm share/apps/kde
+@dirrm share/apps/khtmlw/pics
+@dirrm share/apps/khtmlw
+@dirrm share/doc/HTML/en/kdelibs
+@dirrm share/doc/HTML/en/kfiledialog
+@dirrm share/doc/HTML/en/kspell
+@dirrm share/doc/HTML/en
+@dirrm share/toolbar
