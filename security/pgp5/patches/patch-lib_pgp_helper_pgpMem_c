@@ -1,3 +1,4 @@
+$OpenBSD: patch-lib_pgp_helper_pgpMem_c,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 $NetBSD: patch-ag,v 1.1 1999/01/05 14:31:01 frueauf Exp $
 
 From Julian Coleman <J.D.Coleman@newcastle.ac.uk> posted to
@@ -22,8 +23,8 @@ tries to modify 'context->filesize'.
 
 PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
 
---- lib/pgp/helper/pgpMem.c.orig	Mon Aug 11 02:05:32 1997
-+++ lib/pgp/helper/pgpMem.c	Tue Jan  5 15:03:27 1999
+--- lib/pgp/helper/pgpMem.c.orig	Sun Aug 10 21:05:32 1997
++++ lib/pgp/helper/pgpMem.c	Tue Apr 23 03:06:29 2002
 @@ -19,6 +19,20 @@
  #include "pgpDebug.h"
  #include "pgpLeaks.h"
@@ -45,7 +46,7 @@ PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
  /* Fills allocated/deallocated memory with 0xDD's */
  #ifndef DEBUG_FILL_MEM
  #define DEBUG_FILL_MEM			DEBUG
-@@ -69,11 +83,11 @@
+@@ -69,11 +83,11 @@ struct MemHeader
  };
  
  #define UserPtrToMemHeader(userPtr)		\
@@ -60,7 +61,7 @@ PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
  
  /*
  * Defines the sequence of tail magic bytes. We want every byte to be
-@@ -269,7 +283,7 @@
+@@ -269,7 +283,7 @@ pgpMemSetTailMagic(
  	MemHeader *	header)
  {
  #if DEBUG_MEM_TAIL_MAGIC
@@ -69,7 +70,7 @@ PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
  	int			i;
  	
  	for (i = 0; i < DEBUG_MEM_TAIL_MAGIC; i++)
-@@ -287,8 +301,9 @@
+@@ -287,8 +301,9 @@ PGP_INTERNAL_ALLOC(
  	MemHeader *		header;
  	void *			userPtr;
  	
@@ -80,7 +81,7 @@ PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
  		return NULL;
  
  	MaybeFillMem(header, FullBlockSize(size));
-@@ -352,7 +367,7 @@
+@@ -352,7 +367,7 @@ pgpRealloc(
  		if (newHeader == NULL)
  			return PGPERR_NOMEM;
  		pgpCopyMemory((void *)oldHeader, (void *)newHeader,

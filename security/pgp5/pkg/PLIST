@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/11 01:50:22 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/23 06:38:48 fgsch Exp $
 @option no-default-conflict
 @pkgcfl pgp-5.*
 bin/pgp5
+bin/pgp_old
 bin/pgpe
+bin/pgpk
 bin/pgps
 bin/pgpv
-bin/pgp_old
-bin/pgpk
-man/man1/pgp5.1
-man/man1/pgpe.1
-man/man1/pgps.1
-man/man1/pgpv.1
-man/man1/pgpk.1
-man/man5/pgp.cfg.5
-man/man7/pgp-intro.7
-man/man7/pgp-integration.7
 lib/libbn.a
 lib/libpgp.a
 lib/libpgptty.a
 lib/libsimple.a
 lib/pgp5/language50.txt
+man/man1/pgp5.1
+man/man1/pgpe.1
+man/man1/pgpk.1
+man/man1/pgps.1
+man/man1/pgpv.1
+man/man5/pgp.cfg.5
+man/man7/pgp-integration.7
+man/man7/pgp-intro.7
 @dirrm lib/pgp5

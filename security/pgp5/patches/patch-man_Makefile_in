@@ -1,7 +1,8 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 --- man/Makefile.in.orig	Sat Feb  7 16:54:57 1998
-+++ man/Makefile.in	Mon Jan 25 23:33:58 1999
++++ man/Makefile.in	Tue Apr 23 03:06:28 2002
 @@ -6,7 +6,7 @@
- # $Id: patch-ac,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
+ # $Id: patch-man_Makefile_in,v 1.1 2002/04/23 06:38:48 fgsch Exp $
  #
  
 -MAN1=pgp.1 pgpe.1 pgpk.1 pgps.1 pgpv.1

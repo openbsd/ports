@@ -1,6 +1,7 @@
+$OpenBSD: patch-man_pgp-integration_7,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 --- man/pgp-integration.7.orig	Sat Feb  7 17:08:45 1998
-+++ man/pgp-integration.7	Tue Jan 26 11:11:48 1999
-@@ -272,7 +272,7 @@
++++ man/pgp-integration.7	Tue Apr 23 03:06:28 2002
+@@ -272,7 +272,7 @@ documentation, which details how to pass
  command line, including the public and private keyrings your
  application wishes to use.
  .SH "SEE ALSO"

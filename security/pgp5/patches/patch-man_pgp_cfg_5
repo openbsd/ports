@@ -1,5 +1,6 @@
+$OpenBSD: patch-man_pgp_cfg_5,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 --- man/pgp.cfg.5.orig	Sat Feb  7 16:54:57 1998
-+++ man/pgp.cfg.5	Tue Jan 26 00:09:25 1999
++++ man/pgp.cfg.5	Tue Apr 23 03:06:28 2002
 @@ -11,7 +11,7 @@
  .TH PGP 5.0 "JULY 1997 (v5.0)" PGP "User Manual"
  .SH NAME
@@ -9,7 +10,7 @@
  .SH DESCRIPTION
  The default location for this file is ~/.pgp.  You may specify another
  location by setting the environment variable
-@@ -125,9 +125,9 @@
+@@ -125,9 +125,9 @@ decrypt such messages.  The default is o
  
  .SH BUGS
  See

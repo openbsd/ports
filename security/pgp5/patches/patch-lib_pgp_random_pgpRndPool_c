@@ -1,6 +1,7 @@
---- lib/pgp/random/pgpRndPool.c.orig	Sat Aug  9 23:45:13 1997
-+++ lib/pgp/random/pgpRndPool.c	Sun Jul 18 22:59:19 1999
-@@ -296,7 +296,7 @@
+$OpenBSD: patch-lib_pgp_random_pgpRndPool_c,v 1.1 2002/04/23 06:38:48 fgsch Exp $
+--- lib/pgp/random/pgpRndPool.c.orig	Sat Aug  9 18:45:13 1997
++++ lib/pgp/random/pgpRndPool.c	Tue Apr 23 03:06:29 2002
+@@ -296,7 +296,7 @@ struct PgpRandomContext const pgpRandomP
  * #define UMULH_32(r,a,b) (r) = 0
  */
  #ifndef UMULH_32

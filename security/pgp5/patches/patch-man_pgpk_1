@@ -1,6 +1,7 @@
+$OpenBSD: patch-man_pgpk_1,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 --- man/pgpk.1.orig	Sat Feb  7 16:54:57 1998
-+++ man/pgpk.1	Tue Jan 26 00:19:31 1999
-@@ -242,10 +242,10 @@
++++ man/pgpk.1	Tue Apr 23 03:06:28 2002
+@@ -242,10 +242,10 @@ for further details.
  .SH BUGS
  .RS
  See
