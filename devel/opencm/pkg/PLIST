@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/27 16:46:09 todd Exp $
+bin/cm
+share/opencm/help/add.help
+share/opencm/help/adduser.help
+share/opencm/help/bind.help
+share/opencm/help/checkout.help
+share/opencm/help/commit.help
+share/opencm/help/create-branch.help
+share/opencm/help/create-group.help
+share/opencm/help/create-repository.help
+share/opencm/help/create-user.help
+share/opencm/help/diff.help
+share/opencm/help/gadd.help
+share/opencm/help/gremove.help
+share/opencm/help/import.help
+share/opencm/help/log.help
+share/opencm/help/logmail.help
+share/opencm/help/ls.help
+share/opencm/help/merge.help
+share/opencm/help/mkdir.help
+share/opencm/help/note.help
+share/opencm/help/notes.help
+share/opencm/help/opt-basic.help
+share/opencm/help/opt-obscure.help
+share/opencm/help/opt-server.help
+share/opencm/help/rebind.help
+share/opencm/help/rename-entity.help
+share/opencm/help/revert.help
+share/opencm/help/revoke.help
+share/opencm/help/rm.help
+share/opencm/help/server.help
+share/opencm/help/set-description.help
+share/opencm/help/set-group.help
+share/opencm/help/set-name.help
+share/opencm/help/set-user.help
+share/opencm/help/set-ws-repos.help
+share/opencm/help/set-ws-user.help
+share/opencm/help/show-ws-repos.help
+share/opencm/help/show-ws-user.help
+share/opencm/help/status.help
+share/opencm/help/tag.help
+share/opencm/help/unbind.help
+share/opencm/help/update.help
+share/opencm/help/version.help
+share/opencm/tools/cvsconvert.py
+share/opencm/tools/rcsparse.py
+@dirrm share/opencm/tools
+@dirrm share/opencm/help
+@dirrm share/opencm

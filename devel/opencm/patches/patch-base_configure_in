@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_configure_in,v 1.1.1.1 2002/08/27 16:46:09 todd Exp $
+--- base/configure.in.orig	Wed Jul 31 09:35:43 2002
++++ base/configure.in	Wed Jul 31 09:38:08 2002
+@@ -42,7 +42,7 @@ AC_INIT(src/client/opencm.c)
+ AC_REVISION($Revision 0.1$)
+ AC_CONFIG_HEADER(config.h)
+ AC_AUTOCONFIG_GC()
+-AC_CONFIG_SUBDIRS(gc6.0)
++dnl AC_CONFIG_SUBDIRS(gc6.0)
+ 
+ AC_CANONICAL_HOST
+ 

@@ -1,0 +1,20 @@
+--- base/doc/opencm.texi.orig	Wed Aug 14 17:50:54 2002
++++ base/doc/opencm.texi	Wed Aug 14 17:51:03 2002
+@@ -855,7 +855,7 @@
+ When the administrator receives the certificate, they can create
+ authorize this user by typing:
+ @example
+-@value{OPENCMD} -u admin add user jack.pem rw
++@value{OPENCMD} -u admin adduser jack.pem rw
+ @end example
+ 
+ The argument @kbd{jack.pem} is the path to the certificate file for the
+@@ -1592,7 +1592,7 @@
+ @cmdarg{member} to the existing @cmdarg{group}.
+ 
+ @item
+-@command{add user} @cmdarg{certfile} @cmdarg{r|w|rw} Registers a user on
++@command{adduser} @cmdarg{certfile} @cmdarg{r|w|rw} Registers a user on
+ a repository with the specified repository access (@cmdarg{r} is
+ read-only and @cmdarg{w} is write-access).  You must specify the path to
+ the user's certificate file as @cmdarg{certfile} and all certificates

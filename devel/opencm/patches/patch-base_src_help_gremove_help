@@ -1,0 +1,8 @@
+--- base/src/help/gremove.help.orig	Thu Aug 15 13:14:02 2002
++++ base/src/help/gremove.help	Thu Aug 15 13:14:16 2002
+@@ -41,4 +41,4 @@
+ 
+ Removes specified @i{member} from the existing group @i{group-spec}. 
+ 
+-See also:  @b{add member}, @{ls}
++See also:  @b{add member}, @b{ls}

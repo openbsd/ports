@@ -1,0 +1,11 @@
+--- base/src/help/opt-obscure.help.orig	Thu Aug 15 13:23:06 2002
++++ base/src/help/opt-obscure.help	Thu Aug 15 13:23:38 2002
+@@ -39,7 +39,7 @@
+ @C
+  @i{Option}             @i{Description}
+ 
+- @b{--configdir} @i{dir}    Override the location of @HOME/.opencm for testing
++ @b{--configdir} @i{dir}    Override the location of $HOME/.opencm for testing
+                     purposes. 
+ 
+  @b{--flush-io}         Flush all output to stdout as soon as it is ready. This

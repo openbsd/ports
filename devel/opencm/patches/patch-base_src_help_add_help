@@ -1,0 +1,9 @@
+--- base/src/help/add.help.orig	Thu Aug 15 12:56:03 2002
++++ base/src/help/add.help	Thu Aug 15 12:56:19 2002
+@@ -43,5 +43,5 @@
+ 
+ User's workspace specifies the current (working) branch into which
+ the specified files will go.  Permanent changes don't take effect until 
+-the execution of the @i{ commit} command.  To undo any additions, use 
++the execution of the @i{commit} command.  To undo any additions, use 
+ the @i{revert} command.

@@ -1,0 +1,12 @@
+--- base/src/help/revert.help.orig	Thu Aug 15 02:27:03 2002
++++ base/src/help/revert.help	Thu Aug 15 02:27:48 2002
+@@ -43,7 +43,7 @@
+ the last @b{commit}.
+ 
+ If you only want to revert a single file, or a group of files, delete
+-the files with 'rm' (not OpenCM's @{rm} command) and run @{update},
++the files with 'rm' (not OpenCM's @b{rm} command) and run @b{update},
+ which will retrieve the files as they exist in the repository.
+ 
+-See also:  @{update}, @{commit}
++See also:  @b{update}, @b{commit}

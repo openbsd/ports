@@ -1,0 +1,11 @@
+--- base/src/client/command.c.orig	Wed Aug 14 17:54:02 2002
++++ base/src/client/command.c	Wed Aug 14 17:54:18 2002
+@@ -154,7 +154,7 @@
+   { "add",       opencm_add_file,   1, CF_OPTARGS|CF_NOCONNECT|CF_WSINIT, 0,
+     "add.help" },
+   { "adduser",   opencm_add_user,   2, CF_ADMIN, 0,
+-    "add-user.help" },
++    "adduser.help" },
+   { "bind",      opencm_bind,       2, 0, 0,
+     "bind.help" },
+   { "browse",    opencm_browse,     0, CF_OPTARGS, 0, 0 },

@@ -1,0 +1,8 @@
+--- base/src/help/gadd.help.orig	Wed Aug 14 17:51:19 2002
++++ base/src/help/gadd.help	Wed Aug 14 17:51:26 2002
+@@ -43,4 +43,4 @@
+ @i{member} must either be a user or group and must be defined in executing
+ user's directory.
+ 
+-See also:  @b{bind}, @b{add user}, @b{create group}
++See also:  @b{bind}, @b{adduser}, @b{create group}
