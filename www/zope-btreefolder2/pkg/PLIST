@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/10 15:38:02 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 10:29:19 xsa Exp $
+@pkgcfl plone-*
+lib/zope/lib/python/Products/BTreeFolder2/
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
 lib/zope/lib/python/Products/BTreeFolder2/CHANGES.txt
@@ -10,10 +12,9 @@ lib/zope/lib/python/Products/BTreeFolder2/__init__.pyc
 lib/zope/lib/python/Products/BTreeFolder2/btreefolder2.gif
 lib/zope/lib/python/Products/BTreeFolder2/contents.dtml
 lib/zope/lib/python/Products/BTreeFolder2/folderAdd.dtml
+lib/zope/lib/python/Products/BTreeFolder2/tests/
 lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.py
 lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.pyc
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
 lib/zope/lib/python/Products/BTreeFolder2/version.txt
-@dirrm lib/zope/lib/python/Products/BTreeFolder2/tests
-@dirrm lib/zope/lib/python/Products/BTreeFolder2
