@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2003/03/30 12:27:58 miod Exp $
+# $OpenBSD: Makefile,v 1.52 2003/04/06 22:56:28 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -141,6 +141,7 @@ CONFIGURE_ARGS+=--enable-iconv
 LIB_DEPENDS+=	iconv::converters/libiconv
 .else
 CONFIGURE_ARGS+=--disable-iconv
+CONFIGURE_ARGS+=--disable-freetype
 .endif
 
 .if ${FLAVOR:L:Mwin32}
