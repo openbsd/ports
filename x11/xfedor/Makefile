@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:34 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/13 05:06:16 kevlo Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -9,13 +9,13 @@ MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
 MAINTAINER=     angelos@openbsd.org
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=      yes
+FAKE=		Yes
+USE_IMAKE=      Yes
 
 XFHELP= ${X11BASE}/lib/X11/xfedor # See patches too
 XCAT1= ${X11BASE}/man/cat1
@@ -23,7 +23,7 @@ XCAT1= ${X11BASE}/man/cat1
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_PROGRAM} xfedor ${PREFIX}/bin
-	-mkdir -p ${XFHELP}
+	${INSTALL_DATA_DIR} ${XFHELP}
 	chown ${SHAREOWN}.${SHAREGRP} ${XFHELP}
 	chmod 755 ${XFHELP}
 	cd ${WRKSRC}/help; \
