@@ -3,7 +3,7 @@
 # Date created:		8 Feb 1998
 # Whom:			d
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/02/08 06:00:08 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/13 14:40:59 niklas Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl1
@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	d@fnarg.net.au
+MAINTAINER=	d@openbsd.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
