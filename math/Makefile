@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/10/14 20:29:11 marcm Exp $
+# $OpenBSD: Makefile,v 1.41 2004/02/05 23:40:43 xsa Exp $
 #
 
      SUBDIR += R
@@ -51,6 +51,7 @@
 #    SUBDIR += p5-MatrixReal
      SUBDIR += p5-Set-IntSpan
      SUBDIR += py-Numeric
+     SUBDIR += py-gnuplot
 #    SUBDIR += pari
 #    SUBDIR += plplot
 #    SUBDIR += r
