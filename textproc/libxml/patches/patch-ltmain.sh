@@ -1,6 +1,24 @@
---- ltmain.sh.orig	Fri Aug 17 21:15:18 2001
-+++ ltmain.sh	Fri Aug 17 21:20:01 2001
-@@ -1037,6 +1037,10 @@
+--- ltmain.sh.orig	Thu Aug 23 19:24:25 2001
++++ ltmain.sh	Wed Sep  5 15:11:27 2001
+@@ -1031,12 +1031,28 @@ compiler."
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    test "X$arg" = "X-lc" && continue
++	    ;;
++	  esac
++	fi
++	if test "X$arg" = "X-lc_r"; then
++	  case $host in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
+ 	  esac
+ 	fi
+ 	deplibs="$deplibs $arg"
  	continue
  	;;
  
@@ -11,7 +29,7 @@
        -module)
  	module=yes
  	continue
-@@ -2401,6 +2405,9 @@
+@@ -2401,6 +2417,9 @@ compiler."
  	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
  	    # these systems don't actually have a c library (as such)!
  	    ;;
@@ -21,7 +39,7 @@
  	  *-*-rhapsody* | *-*-darwin1.[012])
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
-@@ -4412,40 +4419,6 @@
+@@ -4412,40 +4431,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
