@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2001/07/09 10:26:20 espie Exp $
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2001/07/13 14:06:57 espie Exp $
 --- gcc/config/openbsd.h.orig	Mon Sep 25 13:45:51 2000
-+++ gcc/config/openbsd.h	Fri Jul  6 16:46:31 2001
++++ gcc/config/openbsd.h	Tue Jul 10 12:39:40 2001
 @@ -78,12 +78,16 @@ Boston, MA 02111-1307, USA.  */
     since all code must be compiled with -pthread to work. 
     This two-stage defines makes it easy to pick that for targets that
@@ -19,23 +19,15 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2001/07/09 10:26:20 espie Exp $
  
  #ifndef OBSD_HAS_CORRECT_SPECS
  
-@@ -103,6 +107,15 @@ Boston, MA 02111-1307, USA.  */
+@@ -103,6 +107,7 @@ Boston, MA 02111-1307, USA.  */
     pic code.  */
  #undef ASM_SPEC
  #define ASM_SPEC "%{fpic:-k} %{fPIC:-k -K} %|"
 +
-+/* Exception region output.  */
-+
-+#undef ASM_PREFERRED_EH_DATA_FORMAT
-+#define ASM_PREFERRED_EH_DATA_FORMAT(CODE,GLOBAL)                      \
-+  (flag_pic ? (GLOBAL ? DW_EH_PE_indirect : 0) | DW_EH_PE_datarel      \
-+     : DW_EH_PE_absptr)
-+
-+
  #else
  /* Since we use gas, stdin -> - is a good idea, but we don't want to
     override native specs just for that.  */
-@@ -116,10 +129,10 @@ Boston, MA 02111-1307, USA.  */
+@@ -116,10 +121,10 @@ Boston, MA 02111-1307, USA.  */
  #undef LINK_SPEC
  #ifdef OBSD_NO_DYNAMIC_LIBRARIES
  #define LINK_SPEC \

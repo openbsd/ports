@@ -1,0 +1,11 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd_h,v 1.1 2001/07/13 14:06:58 espie Exp $
+--- gcc/config/sparc/openbsd.h.orig	Fri Jul 13 16:03:16 2001
++++ gcc/config/sparc/openbsd.h	Fri Jul 13 16:03:46 2001
+@@ -64,5 +64,6 @@ Boston, MA 02111-1307, USA.  */
+    configuration files...  */
+ #define DWARF2_UNWIND_INFO 0
+ 
+-/* Default sparc.h does already define ASM_OUTPUT_MI_THUNK */
++#undef ASM_PREFERRED_EH_DATA_FORMAT
+ 
++/* Default sparc.h does already define ASM_OUTPUT_MI_THUNK */
