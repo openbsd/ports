@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/14 08:27:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/08 07:43:19 kevlo Exp $
 
 COMMENT=	"web-based collaboration platform"
 
@@ -7,8 +7,6 @@ PKGNAME=	TWiki-20030201
 CATEGORIES=	www
 
 HOMEPAGE=	http://twiki.org/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
