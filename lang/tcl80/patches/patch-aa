@@ -1,43 +1,27 @@
-*** configure.orig	Tue Nov 25 08:31:42 1997
---- configure	Tue Feb 10 18:58:52 1998
-***************
-*** 3780,3787 ****
-  fi
-  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-!   
-! 	    SHLIB_CFLAGS="-fpic"
-  	    SHLIB_LD="ld -Bshareable -x"
-  	    SHLIB_LD_LIBS=""
-  	    SHLIB_SUFFIX=".so"
---- 3780,3792 ----
-  fi
-  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-! 
-! 	    case `machine` in
-! 	    sparc)
-! 		SHLIB_CFLAGS="-fPIC";;
-! 	    *)
-! 	    	SHLIB_CFLAGS="-fpic";;
-! 	    esac
-  	    SHLIB_LD="ld -Bshareable -x"
-  	    SHLIB_LD_LIBS=""
-  	    SHLIB_SUFFIX=".so"
-***************
-*** 3789,3795 ****
-  	    DL_LIBS=""
-  	    LD_FLAGS=""
-  	    LD_SEARCH_FLAGS=""
-! 	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
-  	
-  else
-    echo "$ac_t""no" 1>&6
---- 3794,3800 ----
-  	    DL_LIBS=""
-  	    LD_FLAGS=""
-  	    LD_SEARCH_FLAGS=""
-! 	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.2'
-  	
-  else
-    echo "$ac_t""no" 1>&6
+--- configure.orig	Tue Nov 25 08:31:42 1997
++++ configure	Wed Apr 15 19:26:53 1998
+@@ -3780,8 +3780,13 @@
+ fi
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  
+-	    SHLIB_CFLAGS="-fpic"
++
++	    case `machine` in
++	    sparc)
++		SHLIB_CFLAGS="-fPIC";;
++	    *)
++	    	SHLIB_CFLAGS="-fpic";;
++	    esac
+ 	    SHLIB_LD="ld -Bshareable -x"
+ 	    SHLIB_LD_LIBS=""
+ 	    SHLIB_SUFFIX=".so"
+@@ -3789,7 +3794,7 @@
+ 	    DL_LIBS=""
+ 	    LD_FLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+-	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.2'
+ 	
+ else
+   echo "$ac_t""no" 1>&6
