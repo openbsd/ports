@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
+$OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.2 2001/03/30 18:53:25 todd Exp $
 --- cpu/ctrl_xfer32.cc.orig	Sat Mar 25 21:39:07 2000
-+++ cpu/ctrl_xfer32.cc	Tue Oct 31 12:52:03 2000
++++ cpu/ctrl_xfer32.cc	Fri Mar 30 11:34:57 2001
 @@ -52,7 +52,7 @@ BX_CPU_C::RETnear32_Iw(BxInstruction_t *
  
      if (protected_mode()) {
@@ -15,7 +15,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
        if (protected_mode() &&
            (return_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) ) {
 -        bx_panic("retnear_iw: EIP > limit\n");
-+        bio->printf("[CPU%u] retnear_iw: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
++        bio->printd("[CPU%u] retnear_iw: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
 +		return_EIP, BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
 +        exception(BX_GP_EXCEPTION, 0, 0);
          }
@@ -42,7 +42,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
        if ( return_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
 -        bx_panic("retnear: EIP > limit\n");
 -        //exception(BX_GP_EXCEPTION, 0, 0);
-+        bio->printf("[CPU%u] retnear: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
++        bio->printd("[CPU%u] retnear: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
 +		return_EIP,
 +		BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
 +        exception(BX_GP_EXCEPTION, 0, 0);
@@ -54,7 +54,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
    if ( protected_mode() ) {
      if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
 -      bx_panic("call_av: offset outside of CS limits\n");
-+      bio->panic("call_av: offset outside of CS limits\n");
++      bio->printd("call_av: offset outside of CS limits\n");
        exception(BX_GP_EXCEPTION, 0, 0);
        }
      }
@@ -63,7 +63,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
      if (protected_mode()) {
        if (op1_32 > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) {
 -        bx_panic("call_ev: EIP out of CS limits!\n");
-+        bio->printf("[CPU%u] call_ev: EIP(0x%x) out of CS limits(0x%x)!\n", BX_SIM_ID,
++        bio->printd("[CPU%u] call_ev: EIP(0x%x) out of CS limits(0x%x)!\n", BX_SIM_ID,
 +		op1_32,
 +		BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
          exception(BX_GP_EXCEPTION, 0, 0);
@@ -88,7 +88,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
    if (protected_mode()) {
      if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
 -      bx_panic("jmp_jv: offset outside of CS limits\n");
-+      bio->panic("jmp_jv: offset outside of CS limits\n");
++      bio->printd("jmp_jv: offset outside of CS limits\n");
        exception(BX_GP_EXCEPTION, 0, 0);
        }
      }
@@ -97,7 +97,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
      if (protected_mode()) {
        if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
 -        bx_panic("jo_routine: offset outside of CS limits\n");
-+        bio->panic("jo_routine: offset outside of CS limits\n");
++        bio->printd("jo_routine: offset outside of CS limits\n");
          exception(BX_GP_EXCEPTION, 0, 0);
          }
        }
@@ -106,7 +106,7 @@ $OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
    if (protected_mode()) {
      if (new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) {
 -      bx_panic("jmp_ev: IP out of CS limits!\n");
-+      bio->panic("jmp_ev: IP out of CS limits!\n");
++      bio->printd("jmp_ev: IP out of CS limits!\n");
        exception(BX_GP_EXCEPTION, 0, 0);
        }
      }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_proc_ctrl_cc,v 1.2 2001/03/30 16:47:02 todd Exp $
+$OpenBSD: patch-cpu_proc_ctrl_cc,v 1.3 2001/03/30 18:53:25 todd Exp $
 --- cpu/proc_ctrl.cc.orig	Sat Mar 25 21:39:09 2000
-+++ cpu/proc_ctrl.cc	Fri Mar 30 10:09:57 2001
++++ cpu/proc_ctrl.cc	Fri Mar 30 12:42:03 2001
 @@ -35,7 +35,7 @@ BX_CPU_C::UndefinedOpcode(BxInstruction_
    if (i->b1 != 0x63) {
      // Windows hits the ARPL command a bunch of times.
@@ -685,25 +685,27 @@ $OpenBSD: patch-cpu_proc_ctrl_cc,v 1.2 2001/03/30 16:47:02 todd Exp $
  
    if (prev_pe==0 && BX_CPU_THIS_PTR cr0.pe) {
      enter_protected_mode();
-@@ -1121,7 +1126,7 @@ BX_CPU_C::RSM(BxInstruction_t *i)
+@@ -1121,7 +1126,8 @@ BX_CPU_C::RSM(BxInstruction_t *i)
  #if BX_CPU_LEVEL >= 4
    invalidate_prefetch_q();
  
 -  bx_panic("RSM: System Management Mode not implemented yet\n");
-+  bio->panic("RSM: System Management Mode not implemented yet\n");
++  bio->printd("RSM: System Management Mode not implemented yet\n");
++  UndefinedOpcode(i);
  #else
    UndefinedOpcode(i);
  #endif
-@@ -1131,7 +1136,7 @@ BX_CPU_C::RSM(BxInstruction_t *i)
+@@ -1131,7 +1137,8 @@ BX_CPU_C::RSM(BxInstruction_t *i)
  BX_CPU_C::RDTSC(BxInstruction_t *i)
  {
  #if BX_CPU_LEVEL >= 5
 -  bx_panic("RDTSC: not implemented yet\n");
-+  bio->panic("RDTSC: not implemented yet\n");
++  bio->printd("RDTSC: not implemented yet\n");
++  UndefinedOpcode(i);
  #else
    UndefinedOpcode(i);
  #endif
-@@ -1141,7 +1146,8 @@ BX_CPU_C::RDTSC(BxInstruction_t *i)
+@@ -1141,7 +1148,8 @@ BX_CPU_C::RDTSC(BxInstruction_t *i)
  BX_CPU_C::RDMSR(BxInstruction_t *i)
  {
  #if BX_CPU_LEVEL >= 5
@@ -713,12 +715,13 @@ $OpenBSD: patch-cpu_proc_ctrl_cc,v 1.2 2001/03/30 16:47:02 todd Exp $
  #else
    UndefinedOpcode(i);
  #endif
-@@ -1153,7 +1159,7 @@ BX_CPU_C::WRMSR(BxInstruction_t *i)
+@@ -1153,7 +1161,8 @@ BX_CPU_C::WRMSR(BxInstruction_t *i)
  #if BX_CPU_LEVEL >= 5
    invalidate_prefetch_q();
  
 -  bx_panic("WRMSR: not implemented yet\n");
-+  bio->panic("WRMSR: not implemented yet\n");
++  bio->printd("WRMSR: not implemented yet\n");
++  UndefinedOpcode(i);
  #else
    UndefinedOpcode(i);
  #endif

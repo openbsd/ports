@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
+$OpenBSD: patch-cpu_access_cc,v 1.2 2001/03/30 18:53:25 todd Exp $
 --- cpu/access.cc.orig	Sat Mar 25 21:39:07 2000
-+++ cpu/access.cc	Tue Oct 31 12:48:34 2000
++++ cpu/access.cc	Fri Mar 30 11:16:57 2001
 @@ -39,18 +39,18 @@ BX_CPU_C::write_virtual_checks(bx_segmen
  
    if ( protected_mode() ) {
@@ -10,11 +10,11 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
 -      bx_printf("write_virtual_checks: valid bit = 0\n");
 -bx_printf("CS: %04x\n", (unsigned) BX_CPU_THIS_PTR sregs[1].selector.value);
 -bx_printf("IP: %04x\n", (unsigned) BX_CPU_THIS_PTR prev_eip);
-+      bio->printf("[CPU%u] seg = %s\n", BX_CPU_THIS_PTR strseg(seg), BX_SIM_ID);
-+      bio->printf("[CPU%u] seg->selector.value = %04x\n", BX_SIM_ID, (unsigned) seg->selector.value);
-+      bio->printf("[CPU%u] write_virtual_checks: valid bit = 0\n", BX_SIM_ID);
-+bio->printf("[CPU%u] CS: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR sregs[1].selector.value);
-+bio->printf("[CPU%u] IP: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR prev_eip);
++      bio->printd("[CPU%u] seg = %s\n", BX_SIM_ID, BX_CPU_THIS_PTR strseg(seg));
++      bio->printd("[CPU%u] seg->selector.value = %04x\n", BX_SIM_ID, (unsigned) seg->selector.value);
++      bio->printd("[CPU%u] write_virtual_checks: valid bit = 0\n", BX_SIM_ID);
++bio->printd("[CPU%u] CS: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR sregs[1].selector.value);
++bio->printd("[CPU%u] IP: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR prev_eip);
  debug(BX_CPU_THIS_PTR eip);
        exception(BX_GP_EXCEPTION, 0, 0);
        return;
@@ -22,7 +22,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
  
      if (seg->cache.p == 0) { /* not present */
 -bx_printf("write_virtual_checks(): segment not present\n");
-+bio->printf("[CPU%u] write_virtual_checks(): segment not present\n", BX_SIM_ID);
++bio->printd("[CPU%u] write_virtual_checks(): segment not present\n", BX_SIM_ID);
        exception(int_number(seg), 0, 0);
        return;
        }
@@ -31,14 +31,14 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
        case 12: case 13: // execute only, conforming
        case 14: case 15: // execute/read-only, conforming
 -bx_printf("write_virtual_checks(): no write access to seg\n");
-+bio->printf("[CPU%u] write_virtual_checks(): no write access to seg\n", BX_SIM_ID);
++bio->printd("[CPU%u] write_virtual_checks(): no write access to seg\n", BX_SIM_ID);
          exception(int_number(seg), 0, 0);
          return;
  
        case 2: case 3: /* read/write */
          if ( (offset+length-1) > seg->cache.u.segment.limit_scaled ) {
 -bx_printf("write_virtual_checks(): write beyond limit, r/w\n");
-+bio->printf("[CPU%u] write_virtual_checks(): write beyond limit, r/w\n", BX_SIM_ID);
++bio->printd("[CPU%u] write_virtual_checks(): write beyond limit, r/w\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -47,7 +47,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
               (offset > upper_limit) ||
               ((upper_limit - offset) < (length - 1)) ) {
 -bx_printf("write_virtual_checks(): write beyond limit, r/w ED\n");
-+bio->printf("[CPU%] write_virtual_checks(): write beyond limit, r/w ED\n", BX_SIM_ID);
++bio->printd("[CPU%] write_virtual_checks(): write beyond limit, r/w ED\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -56,7 +56,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
    else { /* real mode */
      if ( (offset + length - 1)  >  seg->cache.u.segment.limit_scaled) {
 -      //bx_printf("write_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n",
-+      //bio->printf("[CPU%u] write_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n", BX_SIM_ID,
++      //bio->printd("[CPU%u] write_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n", BX_SIM_ID,
        //  (unsigned) seg->selector.value, (unsigned) offset, (unsigned) length);
        if (seg == & BX_CPU_THIS_PTR sregs[2]) exception(BX_SS_EXCEPTION, 0, 0);
        else exception(BX_GP_EXCEPTION, 0, 0);
@@ -68,13 +68,13 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
 -      bx_printf("seg->selector.value = %04x\n", (unsigned) seg->selector.value);
 -      //bx_printf("read_virtual_checks: valid bit = 0\n");
 -      //bx_printf("CS: %04x\n", (unsigned)
-+      bio->printf("[CPU%u] seg = %s\n", BX_CPU_THIS_PTR strseg(seg), BX_SIM_ID);
-+      bio->printf("[CPU%u] seg->selector.value = %04x\n", BX_SIM_ID, (unsigned) seg->selector.value);
-+      //bio->printf("[CPU%u] read_virtual_checks: valid bit = 0\n", BX_SIM_ID);
-+      //bio->printf("[CPU%u] CS: %04x\n", BX_SIM_ID, (unsigned)
++      bio->printd("[CPU%u] seg = %s\n", BX_CPU_THIS_PTR strseg(seg), BX_SIM_ID);
++      bio->printd("[CPU%u] seg->selector.value = %04x\n", BX_SIM_ID, (unsigned) seg->selector.value);
++      //bio->printd("[CPU%u] read_virtual_checks: valid bit = 0\n", BX_SIM_ID);
++      //bio->printd("[CPU%u] CS: %04x\n", BX_SIM_ID, (unsigned)
        //   BX_CPU_THIS_PTR sregs[1].selector.value);
 -      //bx_printf("IP: %04x\n", (unsigned) BX_CPU_THIS_PTR prev_eip);
-+      //bio->printf("[CPU%u] IP: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR prev_eip);
++      //bio->printd("[CPU%u] IP: %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR prev_eip);
        //debug(BX_CPU_THIS_PTR eip);
        exception(BX_GP_EXCEPTION, 0, 0);
        return;
@@ -82,7 +82,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
  
      if (seg->cache.p == 0) { /* not present */
 -bx_printf("read_virtual_checks(): segment not present\n");
-+bio->printf("[CPU%u] read_virtual_checks(): segment not present\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): segment not present\n", BX_SIM_ID);
        exception(int_number(seg), 0, 0);
        return;
        }
@@ -91,7 +91,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
        case 14: case 15: /* execute/read-only, conforming */
          if ( (offset+length-1) > seg->cache.u.segment.limit_scaled ) {
 -bx_printf("read_virtual_checks(): write beyond limit\n");
-+bio->printf("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -100,7 +100,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
        case 2: case 3: /* read/write */
          if ( (offset+length-1) > seg->cache.u.segment.limit_scaled ) {
 -bx_printf("read_virtual_checks(): write beyond limit\n");
-+bio->printf("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -109,7 +109,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
               (offset > upper_limit) ||
               ((upper_limit - offset) < (length - 1)) ) {
 -bx_printf("read_virtual_checks(): write beyond limit\n");
-+bio->printf("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -118,7 +118,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
               (offset > upper_limit) ||
               ((upper_limit - offset) < (length - 1)) ) {
 -bx_printf("read_virtual_checks(): write beyond limit\n");
-+bio->printf("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): write beyond limit\n", BX_SIM_ID);
            exception(int_number(seg), 0, 0);
            return;
            }
@@ -127,7 +127,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
        case 12: case 13: /* execute only, conforming */
          /* can't read or write an execute-only segment */
 -bx_printf("read_virtual_checks(): execute only\n");
-+bio->printf("[CPU%u] read_virtual_checks(): execute only\n", BX_SIM_ID);
++bio->printd("[CPU%u] read_virtual_checks(): execute only\n", BX_SIM_ID);
          exception(int_number(seg), 0, 0);
          return;
          break;
@@ -136,7 +136,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
    else { /* real mode */
      if ( (offset + length - 1)  >  seg->cache.u.segment.limit_scaled) {
 -      //bx_printf("read_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n",
-+      //bio->printf("[CPU%u] read_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n", BX_SIM_ID,
++      //bio->printd("[CPU%u] read_virtual_checks() SEG EXCEPTION:  %x:%x + %x\n", BX_SIM_ID,
        //  (unsigned) seg->selector.value, (unsigned) offset, (unsigned) length);
        if (seg == & BX_CPU_THIS_PTR sregs[2]) exception(BX_SS_EXCEPTION, 0, 0);
        else exception(BX_GP_EXCEPTION, 0, 0);
@@ -145,7 +145,7 @@ $OpenBSD: patch-cpu_access_cc,v 1.1 2001/02/02 16:59:06 todd Exp $
    else if (seg == &BX_CPU_THIS_PTR sregs[5]) return("GS");
    else {
 -    bx_printf("undefined segment passed to strseg()!\n");
-+    bio->printf("[CPU%u] undefined segment passed to strseg()!\n", BX_SIM_ID);
++    bio->printd("[CPU%u] undefined segment passed to strseg()!\n", BX_SIM_ID);
      return("??");
      }
  }

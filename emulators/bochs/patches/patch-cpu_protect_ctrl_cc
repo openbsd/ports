@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
+$OpenBSD: patch-cpu_protect_ctrl_cc,v 1.2 2001/03/30 18:53:25 todd Exp $
 --- cpu/protect_ctrl.cc.orig	Sat Mar 25 21:39:09 2000
-+++ cpu/protect_ctrl.cc	Tue Oct 31 13:12:54 2000
++++ cpu/protect_ctrl.cc	Fri Mar 30 11:26:13 2001
 @@ -35,7 +35,7 @@
  BX_CPU_C::ARPL_EwGw(BxInstruction_t *i)
  {
@@ -28,7 +28,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
    if (descriptor.valid==0) {
      set_ZF(0);
 -    //bx_printf("lar(): descriptor valid bit cleared\n");
-+    //bio->printf("[CPU%u] lar(): descriptor valid bit cleared\n", BX_SIM_ID);
++    //bio->printd("[CPU%u] lar(): descriptor valid bit cleared\n", BX_SIM_ID);
      return;
      }
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
          set_ZF(0);
 -        bx_printf("lar(): not accepted type\n");
 +		if(bio->getdbg().cpu)
-+        bio->printf("[CPU%u] lar(): not accepted type\n", BX_SIM_ID);
++        bio->printd("[CPU%u] lar(): not accepted type\n", BX_SIM_ID);
          return;
          break;
        }
@@ -120,7 +120,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      if (selector.ti != 0) {
 -      bx_printf("LLDT: selector.ti != 0\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] LLDT: selector.ti != 0\n", BX_SIM_ID);
++      bio->printd("[CPU%u] LLDT: selector.ti != 0\n", BX_SIM_ID);
        exception(BX_GP_EXCEPTION, raw_selector & 0xfffc, 0);
        }
  
@@ -136,7 +136,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
          (descriptor.type!=2) ) {
 -      bx_printf("lldt: doesn't point to an LDT descriptor!\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] lldt: doesn't point to an LDT descriptor!\n", BX_SIM_ID);
++      bio->printd("[CPU%u] lldt: doesn't point to an LDT descriptor!\n", BX_SIM_ID);
        exception(BX_GP_EXCEPTION, raw_selector & 0xfffc, 0);
        }
  
@@ -144,13 +144,13 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      if (descriptor.p==0) {
 -      bx_printf("lldt: LDT descriptor not present!\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] lldt: LDT descriptor not present!\n", BX_SIM_ID);
++      bio->printd("[CPU%u] lldt: LDT descriptor not present!\n", BX_SIM_ID);
        exception(BX_NP_EXCEPTION, raw_selector & 0xfffc, 0);
        }
  
      if (descriptor.u.ldt.limit < 7) {
 -      bx_printf("lldt: ldtr.limit < 7\n");
-+      bio->printf("[CPU%u] lldt: ldtr.limit < 7\n", BX_SIM_ID);
++      bio->printd("[CPU%u] lldt: ldtr.limit < 7\n", BX_SIM_ID);
        }
  
      BX_CPU_THIS_PTR ldtr.selector = selector;
@@ -250,7 +250,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERR: null selector\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: null selector\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: null selector\n", BX_SIM_ID);
      return;
      }
  
@@ -260,7 +260,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERR: not in table\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: not in table\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: not in table\n", BX_SIM_ID);
      return;
      }
  
@@ -270,7 +270,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0); /* inaccessible */
 -    bx_printf("VERR: system descriptor\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: system descriptor\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: system descriptor\n", BX_SIM_ID);
      return;
      }
  
@@ -278,7 +278,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERR: valid bit cleared\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: valid bit cleared\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: valid bit cleared\n", BX_SIM_ID);
      return;
      }
  
@@ -288,14 +288,14 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
        set_ZF(1); /* accessible */
 -      bx_printf("VERR: conforming code, OK\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] VERR: conforming code, OK\n", BX_SIM_ID);
++      bio->printd("[CPU%u] VERR: conforming code, OK\n", BX_SIM_ID);
        return;
        }
      if ( descriptor.u.segment.r_w==0 ) {
        set_ZF(0); /* inaccessible */
 -      bx_printf("VERR: code not readable\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] VERR: code not readable\n", BX_SIM_ID);
++      bio->printd("[CPU%u] VERR: code not readable\n", BX_SIM_ID);
        return;
        }
      /* readable, non-conforming code segment */
@@ -303,13 +303,13 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
        set_ZF(0); /* inaccessible */
 -      bx_printf("VERR: non-coforming code not withing priv level\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] VERR: non-coforming code not withing priv level\n", BX_SIM_ID);
++      bio->printd("[CPU%u] VERR: non-coforming code not withing priv level\n", BX_SIM_ID);
        return;
        }
      set_ZF(1); /* accessible */
 -    bx_printf("VERR: code seg readable\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: code seg readable\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: code seg readable\n", BX_SIM_ID);
      return;
      }
    else { /* data segment */
@@ -317,13 +317,13 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
        set_ZF(0); /* not accessible */
 -      bx_printf("VERR: data seg not withing priv level\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] VERR: data seg not withing priv level\n", BX_SIM_ID);
++      bio->printd("[CPU%u] VERR: data seg not withing priv level\n", BX_SIM_ID);
        return;
        }
      set_ZF(1); /* accessible */
 -    bx_printf("VERR: data segment OK\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERR: data segment OK\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERR: data segment OK\n", BX_SIM_ID);
      return;
      }
  }
@@ -347,7 +347,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERW: null selector\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERW: null selector\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERW: null selector\n", BX_SIM_ID);
      return;
      }
  
@@ -357,7 +357,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERW: not in table\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERW: not in table\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERW: not in table\n", BX_SIM_ID);
      return;
      }
  
@@ -367,7 +367,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERW: system seg or code\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERW: system seg or code\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERW: system seg or code\n", BX_SIM_ID);
      return;
      }
  
@@ -375,7 +375,7 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
      set_ZF(0);
 -    bx_printf("VERW: valid bit cleared\n");
 +		if(bio->getdbg().cpu)
-+    bio->printf("[CPU%u] VERW: valid bit cleared\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERW: valid bit cleared\n", BX_SIM_ID);
      return;
      }
  
@@ -385,18 +385,18 @@ $OpenBSD: patch-cpu_protect_ctrl_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
        set_ZF(0); /* not accessible */
 -      bx_printf("VERW: writable data seg not within priv level\n");
 +		if(bio->getdbg().cpu)
-+      bio->printf("[CPU%u] VERW: writable data seg not within priv level\n", BX_SIM_ID);
++      bio->printd("[CPU%u] VERW: writable data seg not within priv level\n", BX_SIM_ID);
        return;
        }
      set_ZF(1); /* accessible */
 -    bx_printf("VERW: data seg writable\n");
-+    bio->printf("[CPU%u] VERW: data seg writable\n", BX_SIM_ID);
++    bio->printd("[CPU%u] VERW: data seg writable\n", BX_SIM_ID);
      return;
      }
  
    set_ZF(0); /* not accessible */
 -  bx_printf("VERW: data seg not writable\n");
-+  bio->printf("[CPU%u] VERW: data seg not writable\n", BX_SIM_ID);
++  bio->printd("[CPU%u] VERW: data seg not writable\n", BX_SIM_ID);
    return;
  }
  

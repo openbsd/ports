@@ -1,5 +1,5 @@
 --- iodev/harddrv.cc.orig	Sat Mar 25 21:28:49 2000
-+++ iodev/harddrv.cc	Fri Mar 30 10:31:29 2001
++++ iodev/harddrv.cc	Fri Mar 30 10:55:24 2001
 @@ -103,10 +103,11 @@ bx_hard_drive_c::init(bx_devices_c *d, b
    BX_HD_THIS s[1].hard_drive->cylinders = bx_options.diskd.cylinders;
    BX_HD_THIS s[1].hard_drive->heads     = bx_options.diskd.heads;
@@ -135,7 +135,7 @@
 -	      if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -		    bx_printf ("disk: Read all drive ID Bytes ...\n");
 +	      if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+		    bio->printf ("[HDD] Read all drive ID Bytes ...\n");
++		    bio->printd ("[HDD] Read all drive ID Bytes ...\n");
                }
  	    if (io_len == 1) {
  		  value8 = (Bit8u)value32;
@@ -165,10 +165,10 @@
 +				    if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
  					  if (!BX_SELECTED_HD.cdrom.remaining_blocks)
 -						bx_printf("disk: Last READ block loaded {CDROM}\n");
-+						bio->printf("[HDD] Last READ block loaded {CDROM}\n");
++						bio->printd("[HDD] Last READ block loaded {CDROM}\n");
  					  else
 -						bx_printf("disk: READ block loaded (%d remaining) {CDROM}\n",
-+						bio->printf("[HDD] READ block loaded (%d remaining) {CDROM}\n",
++						bio->printd("[HDD] READ block loaded (%d remaining) {CDROM}\n",
  							  BX_SELECTED_HD.cdrom.remaining_blocks);
  
  				    // one block transfered
@@ -188,7 +188,7 @@
 -			      if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -				    bx_printf("disk: PACKET drq bytes read\n");
 +			      if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+				    bio->printf("[HDD] PACKET drq bytes read\n");
++				    bio->printd("[HDD] PACKET drq bytes read\n");
  			      BX_SELECTED_CONTROLLER.interrupt_reason.i_o = 1;
  			      BX_SELECTED_CONTROLLER.status.busy = 0;
  			      BX_SELECTED_CONTROLLER.status.drq = 1;
@@ -199,7 +199,7 @@
 -			      if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -				    bx_printf("disk: PACKET all bytes read\n");
 +			      if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+				    bio->printf("[HDD] PACKET all bytes read\n");
++				    bio->printd("[HDD] PACKET all bytes read\n");
  			      BX_SELECTED_CONTROLLER.interrupt_reason.i_o = 1;
  			      BX_SELECTED_CONTROLLER.interrupt_reason.c_d = 1;
  			      BX_SELECTED_CONTROLLER.status.drive_ready = 1;
@@ -217,7 +217,7 @@
          goto return_value8;
          }
 -      bx_panic("disk: IO read(0x1f2): current command not read/write\n");
-+      bio->printf("[HDD] IO read(0x1f2): current command(0x%x) not read/write\n",
++      bio->printd("[HDD] IO read(0x1f2): current command(0x%x) not read/write\n",
 +		BX_SELECTED_CONTROLLER.current_command);
 +	value8 = BX_SELECTED_CONTROLLER.sector_count;
 +	goto return_value8;
@@ -241,7 +241,7 @@
 -  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -    bx_printf("disk: 32-bit read from %04x = %08x {%s}\n",
 +  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+    bio->printf("[HDD] 32-bit read from %04x = %08x {%s}\n",
++    bio->printd("[HDD] 32-bit read from %04x = %08x {%s}\n",
  	      (unsigned) address, value32, DEVICE_TYPE_STRING);
    return value32;
  
@@ -249,7 +249,7 @@
 -  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -    bx_printf("disk: 16-bit read from %04x = %04x {%s}\n",
 +  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+    bio->printf("[HDD] 16-bit read from %04x = %04x {%s}\n",
++    bio->printd("[HDD] 16-bit read from %04x = %04x {%s}\n",
  	      (unsigned) address, value16, DEVICE_TYPE_STRING);
    return value16;
  
@@ -257,7 +257,7 @@
 -  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -    bx_printf("disk: 8-bit read from %04x = %02x {%s}\n",
 +  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+    bio->printf("[HDD] 8-bit read from %04x = %02x {%s}\n",
++    bio->printd("[HDD] 8-bit read from %04x = %02x {%s}\n",
  	      (unsigned) address, value8, DEVICE_TYPE_STRING);
    return value8;
  }
@@ -274,32 +274,32 @@
  	switch (io_len) {
  	      case 1:
 -		    bx_printf("disk: 8-bit write to %04x = %02x {%s}\n",
-+		    bio->printf("[HDD] 8-bit write to %04x = %02x {%s}\n",
++		    bio->printd("[HDD] 8-bit write to %04x = %02x {%s}\n",
  			      (unsigned) address, (unsigned) value, DEVICE_TYPE_STRING);
  		    break;
  		    
  	      case 2:
 -		    bx_printf("disk: 16-bit write to %04x = %04x {%s}\n",
-+		    bio->printf("[HDD] 16-bit write to %04x = %04x {%s}\n",
++		    bio->printd("[HDD] 16-bit write to %04x = %04x {%s}\n",
  			      (unsigned) address, (unsigned) value, DEVICE_TYPE_STRING);
  		    break;
  
  	      case 4:
 -		    bx_printf("disk: 32-bit write to %04x = %08x {%s}\n",
-+		    bio->printf("[HDD] 32-bit write to %04x = %08x {%s}\n",
++		    bio->printd("[HDD] 32-bit write to %04x = %08x {%s}\n",
  			      (unsigned) address, (unsigned) value, DEVICE_TYPE_STRING);
  		    break;
  
  	      default:
 -		    bx_printf("disk: unknown-size write to %04x = %08x {%s}\n",
-+		    bio->printf("[HDD] unknown-size write to %04x = %08x {%s}\n",
++		    bio->printd("[HDD] unknown-size write to %04x = %08x {%s}\n",
  			      (unsigned) address, (unsigned) value, DEVICE_TYPE_STRING);
  		    break;
  	}
    }
  
 -//bx_printf("disk: IO write to %04x = %02x\n",
-+//bio->printf("[HDD] IO write to %04x = %02x\n",
++//bio->printd("[HDD] IO write to %04x = %02x\n",
  //      (unsigned) address, (unsigned) value);
  
    switch (address) {
@@ -346,7 +346,7 @@
 -			if (bx_dbg.cdrom)
 -				bx_printf("cdrom: ATAPI command 0x%x started\n", atapi_command);
 +			if (bio->getdbg().cdrom)
-+				bio->printf("[CDD]  ATAPI command 0x%x started\n", atapi_command);
++				bio->printd("[CDD]  ATAPI command 0x%x started\n", atapi_command);
  
  			switch (atapi_command) {
  			      case 0x00: // test unit ready
@@ -386,7 +386,7 @@
  						      default:
  							    // not implemeted by this device
 -							    bx_printf("cdrom: MODE SENSE PC=%x, PageCode=%x,"
-+							    bio->printf("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
++							    bio->printd("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
  								      " not implemented by device\n",
  								      PC, PageCode);
  							    atapi_cmd_error(SENSE_ILLEGAL_REQUEST,
@@ -402,7 +402,7 @@
  						      default:
  							    // not implemeted by this device
 -							    bx_printf("cdrom: MODE SENSE PC=%x, PageCode=%x,"
-+							    bio->printf("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
++							    bio->printd("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
  								      " not implemented by device\n",
  								      PC, PageCode);
  							    atapi_cmd_error(SENSE_ILLEGAL_REQUEST,
@@ -418,7 +418,7 @@
  						      default:
  							    // not implemeted by this device
 -							    bx_printf("cdrom: MODE SENSE PC=%x, PageCode=%x,"
-+							    bio->printf("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
++							    bio->printd("[CDD]  MODE SENSE PC=%x, PageCode=%x,"
  								      " not implemented by device\n",
  								      PC, PageCode);
  							    atapi_cmd_error(SENSE_ILLEGAL_REQUEST,
@@ -436,7 +436,7 @@
  				    if (BX_SELECTED_HD.cdrom.ready) {
  					  uint32 capacity = BX_SELECTED_HD.cdrom.capacity;
 -					  bx_printf("disk: Capacity is %d sectors (%d bytes)\n", capacity, capacity * 2048);
-+					  bio->printf("[HDD] Capacity is %d sectors (%d bytes)\n", capacity, capacity * 2048);
++					  bio->printd("[HDD] Capacity is %d sectors (%d bytes)\n", capacity, capacity * 2048);
  					  BX_SELECTED_CONTROLLER.buffer[0] = (capacity >> 24) & 0xff;
  					  BX_SELECTED_CONTROLLER.buffer[1] = (capacity >> 16) & 0xff;
  					  BX_SELECTED_CONTROLLER.buffer[2] = (capacity >> 8) & 0xff;
@@ -472,7 +472,7 @@
  					  atapi_cmd_nop();
  					  raise_interrupt();
 -					  bx_printf("disk: READ(10) with transfer length 0, ok\n");
-+					  bio->printf("[HDD] READ(10) with transfer length 0, ok\n");
++					  bio->printd("[HDD] READ(10) with transfer length 0, ok\n");
  					  break;
  				    }
  
@@ -481,7 +481,7 @@
  				    }
  
 -				    //bx_printf("cdrom: READ LBA=%d LEN=%d\n", lba, transfer_length);
-+				    //bio->printf("[CDD]  READ LBA=%d LEN=%d\n", lba, transfer_length);
++				    //bio->printd("[CDD]  READ LBA=%d LEN=%d\n", lba, transfer_length);
  
  				    // handle command
  				    init_send_atapi_command(atapi_command, transfer_length * 2048,
@@ -490,7 +490,7 @@
  						break;
  					}
 -					bx_printf("cdrom: SEEK (ignored)\n");
-+					bio->printf("[CDD]  SEEK (ignored)\n");
++					bio->printd("[CDD]  SEEK (ignored)\n");
  					atapi_cmd_nop();
  					raise_interrupt();
  				}
@@ -528,10 +528,10 @@
 +	  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom)) {
  		if (value == 0xff)
 -		      bx_printf("disk: no precompensation {%s}\n", DEVICE_TYPE_STRING);
-+		      bio->printf("[HDD] no precompensation {%s}\n", DEVICE_TYPE_STRING);
++		      bio->printd("[HDD] no precompensation {%s}\n", DEVICE_TYPE_STRING);
  		else
 -		      bx_printf("disk: precompensation value %02x {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
-+		      bio->printf("[HDD] precompensation value %02x {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
++		      bio->printd("[HDD] precompensation value %02x {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
  	  }
        break;
  
@@ -540,7 +540,7 @@
 -	  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -		bx_printf("disk: sector count = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
 +	  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+		bio->printf("[HDD] sector count = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
++		bio->printd("[HDD] sector count = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
  	  break;
  
      case 0x1f3: /* hard disk sector number */
@@ -548,7 +548,7 @@
 -	  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -		bx_printf("disk: sector number = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
 +	  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+		bio->printf("[HDD] sector number = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
++		bio->printd("[HDD] sector number = %u {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
        break;
  
      case 0x1f4: /* hard disk cylinder low */
@@ -556,7 +556,7 @@
 -	  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -		bx_printf("disk: cylinder low = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
 +	  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+		bio->printf("[HDD] cylinder low = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
++		bio->printd("[HDD] cylinder low = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
  	  break;
  
      case 0x1f5: /* hard disk cylinder high */
@@ -564,7 +564,7 @@
 -	  if (bx_dbg.disk || (CDROM_SELECTED && bx_dbg.cdrom))
 -		bx_printf("disk: cylinder high = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
 +	  if (bio->getdbg().disk || (CDROM_SELECTED && bio->getdbg().cdrom))
-+		bio->printf("[HDD] cylinder high = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
++		bio->printd("[HDD] cylinder high = %02xh {%s}\n", (unsigned) value, DEVICE_TYPE_STRING);
  	  break;
  
      case 0x1f6: // hard disk drive and head register
@@ -573,12 +573,12 @@
        // b3..0 HD3..HD0
        if ( (value & 0xe0) != 0xa0 ) // 101xxxxx
 -        bx_printf("disk: IO write 1f6 (%02x): not 101xxxxxb\n", (unsigned) value);
-+        bio->printf("[HDD] IO write 1f6 (%02x): not 101xxxxxb\n", (unsigned) value);
++        bio->printd("[HDD] IO write 1f6 (%02x): not 101xxxxxb\n", (unsigned) value);
        BX_HD_THIS drive_select = (value >> 4) & 0x01;
        WRITE_HEAD_NO(value & 0xf);
        if (BX_SELECTED_CONTROLLER.lba_mode == 0 && ((value >> 6) & 1) == 1)
 -	    bx_printf("disk: enabling LBA mode\n");
-+	    bio->printf("[HDD] enabling LBA mode\n");
++	    bio->printd("[HDD] enabling LBA mode\n");
        WRITE_LBA_MODE((value >> 6) & 1);
        break;
  
@@ -604,7 +604,7 @@
              BX_SELECTED_CONTROLLER.status.err = 1;
  	    raise_interrupt();
 -            bx_printf("disk: calibrate drive != 0, with diskd not present\n");
-+            bio->printf("[HDD] calibrate drive != 0, with diskd not present\n");
++            bio->printd("[HDD] calibrate drive != 0, with diskd not present\n");
              break;
              }
  
@@ -622,7 +622,7 @@
  	      !BX_SELECTED_CONTROLLER.cylinder_no &&
  	      !BX_SELECTED_CONTROLLER.sector_no) {
 -		bx_printf("disk: Read from 0/0/0, aborting command\n");
-+		bio->printf("[HDD] Read from 0/0/0, aborting command\n");
++		bio->printd("[HDD] Read from 0/0/0, aborting command\n");
  		command_aborted(value);
  		break;
  	  }
@@ -939,7 +939,7 @@
  bx_hard_drive_c::command_aborted(unsigned value)
  {
 -  bx_printf("disk: aborting on command 0x%02x {%s}\n", value, DEVICE_TYPE_STRING);
-+  bio->printf("[HDD] aborting on command 0x%02x {%s}\n", value, DEVICE_TYPE_STRING);
++  bio->printd("[HDD] aborting on command 0x%02x {%s}\n", value, DEVICE_TYPE_STRING);
    BX_SELECTED_CONTROLLER.current_command = 0;
    BX_SELECTED_CONTROLLER.status.busy = 0;
    BX_SELECTED_CONTROLLER.status.drive_ready = 1;

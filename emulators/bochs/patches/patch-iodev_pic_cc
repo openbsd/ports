@@ -1,6 +1,6 @@
-$OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
+$OpenBSD: patch-iodev_pic_cc,v 1.3 2001/03/30 18:53:25 todd Exp $
 --- iodev/pic.cc.orig	Sat Mar 25 21:28:49 2000
-+++ iodev/pic.cc	Fri Feb  2 16:07:23 2001
++++ iodev/pic.cc	Fri Mar 30 12:29:11 2001
 @@ -121,11 +121,11 @@ bx_pic_c::read(Bit32u address, unsigned 
    UNUSED(this_ptr);
  #endif // !BX_USE_PIC_SMF
@@ -12,7 +12,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -  if (bx_dbg.pic)
 -    bx_printf("pic: IO read from %04x\n", (unsigned) address);
 +  if (bio->getdbg().pic)
-+    bio->printf("[PIC] IO read from %04x\n", (unsigned) address);
++    bio->printd("[PIC] IO read from %04x\n", (unsigned) address);
  
    /*
     8259A PIC
@@ -21,40 +21,40 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
      case 0x20:
        if (BX_PIC_THIS s.master_pic.read_reg_select) { /* ISR */
 -        if (bx_dbg.pic) bx_printf("pic: read master ISR = %02x\n",
-+        if (bio->getdbg().pic) bio->printf("[PIC] read master ISR = %02x\n",
++        if (bio->getdbg().pic) bio->printd("[PIC] read master ISR = %02x\n",
  	                  (unsigned) BX_PIC_THIS s.master_pic.isr);
  	return(BX_PIC_THIS s.master_pic.isr);
  	}
        else { /* IRR */
 -        if (bx_dbg.pic) bx_printf("pic: read master IRR = %02x\n",
-+        if (bio->getdbg().pic) bio->printf("[PIC] read master IRR = %02x\n",
++        if (bio->getdbg().pic) bio->printd("[PIC] read master IRR = %02x\n",
  	                  (unsigned) BX_PIC_THIS s.master_pic.irr);
  	return(BX_PIC_THIS s.master_pic.irr);
  	}
        break;
      case 0x21:
 -      if (bx_dbg.pic) bx_printf("pic: read master IMR = %02x\n",
-+      if (bio->getdbg().pic) bio->printf("[PIC] read master IMR = %02x\n",
++      if (bio->getdbg().pic) bio->printd("[PIC] read master IMR = %02x\n",
                          (unsigned) BX_PIC_THIS s.master_pic.imr);
        return(BX_PIC_THIS s.master_pic.imr);
        break;
      case 0xA0:
        if (BX_PIC_THIS s.slave_pic.read_reg_select) { /* ISR */
 -        if (bx_dbg.pic) bx_printf("pic: read slave ISR = %02x\n",
-+        if (bio->getdbg().pic) bio->printf("[PIC] read slave ISR = %02x\n",
++        if (bio->getdbg().pic) bio->printd("[PIC] read slave ISR = %02x\n",
                            (unsigned) BX_PIC_THIS s.slave_pic.isr);
  	return(BX_PIC_THIS s.slave_pic.isr);
  	}
        else { /* IRR */
 -        if (bx_dbg.pic) bx_printf("pic: read slave IRR = %02x\n",
-+        if (bio->getdbg().pic) bio->printf("[PIC] read slave IRR = %02x\n",
++        if (bio->getdbg().pic) bio->printd("[PIC] read slave IRR = %02x\n",
                            (unsigned) BX_PIC_THIS s.slave_pic.irr);
  	return(BX_PIC_THIS s.slave_pic.irr);
  	}
        break;
      case 0xA1:
 -      if (bx_dbg.pic) bx_printf("pic: read slave IMR = %02x\n",
-+      if (bio->getdbg().pic) bio->printf("[PIC] read slave IMR = %02x\n",
++      if (bio->getdbg().pic) bio->printd("[PIC] read slave IMR = %02x\n",
                          (unsigned) BX_PIC_THIS s.slave_pic.imr);
        return(BX_PIC_THIS s.slave_pic.imr);
        break;
@@ -76,7 +76,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -  if (bx_dbg.pic)
 -    bx_printf("pic: IO write to %04x = %02x\n",
 +  if (bio->getdbg().pic)
-+    bio->printf("[PIC] IO write to %04x = %02x\n",
++    bio->printd("[PIC] IO write to %04x = %02x\n",
        (unsigned) address, (unsigned) value);
  
    /*
@@ -88,13 +88,13 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -        if (bx_dbg.pic) {
 -          bx_printf("pic:master: init command 1 found\n");
 -          bx_printf("            requires 4 = %u\n",
-+	    // bio->printf("[PIC] master: init command 1 found %02x\n", (unsigned) value);
++	    // bio->printd("[PIC] master: init command 1 found %02x\n", (unsigned) value);
 +        if (bio->getdbg().pic) {
-+          bio->printf("[PIC] master: init command 1 found\n");
-+          bio->printf("[PIC]            requires 4 = %u\n",
++          bio->printd("[PIC] master: init command 1 found\n");
++          bio->printd("[PIC]            requires 4 = %u\n",
              (unsigned) (value & 0x01) );
 -          bx_printf("            cascade mode: [0=cascade,1=single] %u\n",
-+          bio->printf("[PIC]            cascade mode: [0=cascade,1=single] %u\n",
++          bio->printd("[PIC]            cascade mode: [0=cascade,1=single] %u\n",
              (unsigned) ((value & 0x02) >> 1));
            }
          BX_PIC_THIS s.master_pic.init.in_init = 1;
@@ -130,7 +130,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
          case 0xC7: // 7 6 5 4 3 2 1 0
            // ignore for now
 -          bx_printf("pic: IRQ lowest command 0x%x\n", value);
-+          bio->printf("[PIC] IRQ lowest command 0x%x\n", value);
++          bio->printd("[PIC] IRQ lowest command 0x%x\n", value);
            break;
  
          default:
@@ -147,8 +147,8 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -		  bx_printf("pic:master: init command 2 = %02x\n", (unsigned) value);
 -		  bx_printf("            offset = INT %02x\n",
 +	    if (bio->getdbg().pic) {
-+		  bio->printf("[PIC] master: init command 2 = %02x\n", (unsigned) value);
-+		  bio->printf("[PIC]            offset = INT %02x\n",
++		  bio->printd("[PIC] master: init command 2 = %02x\n", (unsigned) value);
++		  bio->printd("[PIC]            offset = INT %02x\n",
  			    BX_PIC_THIS s.master_pic.interrupt_offset);
  	    }
              return;
@@ -157,7 +157,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -	    if (bx_dbg.pic)
 -		  bx_printf("pic:master: init command 3 = %02x\n", (unsigned) value);
 +	    if (bio->getdbg().pic)
-+		  bio->printf("[PIC] master: init command 3 = %02x\n", (unsigned) value);
++		  bio->printd("[PIC] master: init command 3 = %02x\n", (unsigned) value);
              if (BX_PIC_THIS s.master_pic.init.requires_4) {
                BX_PIC_THIS s.master_pic.init.byte_expected = 4;
  	      }
@@ -170,15 +170,15 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -		  if (value & 0x02) bx_printf("pic:        auto EOI\n");
 -		  else bx_printf("pic: normal EOI interrupt\n");
 +	    if (bio->getdbg().pic) {
-+		  bio->printf("[PIC] master: init command 4 = %02x\n", (unsigned) value);
-+		  if (value & 0x02) bio->printf("[PIC]        auto EOI\n");
-+		  else bio->printf("[PIC] normal EOI interrupt\n");
++		  bio->printd("[PIC] master: init command 4 = %02x\n", (unsigned) value);
++		  if (value & 0x02) bio->printd("[PIC]        auto EOI\n");
++		  else bio->printd("[PIC] normal EOI interrupt\n");
  	    }
  	    if (value & 0x01) {
 -		  if (bx_dbg.pic)
 -			bx_printf("pic:        80x86 mode\n");
 +		  if (bio->getdbg().pic)
-+			bio->printf("[PIC]        80x86 mode\n");
++			bio->printd("[PIC]        80x86 mode\n");
  	    } else
 -		  bx_panic("pic:        not 80x86 mode\n");
 +		  bio->panic("[PIC]        not 80x86 mode\n");
@@ -195,7 +195,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -      if (bx_dbg.pic)
 -        bx_printf("pic: setting master pic IMR to %02x\n", value);
 +      if (bio->getdbg().pic)
-+        bio->printf("[PIC] setting master pic IMR to %02x\n", value);
++        bio->printd("[PIC] setting master pic IMR to %02x\n", value);
        BX_PIC_THIS s.master_pic.imr = value;
        service_master_pic();
        return;
@@ -207,11 +207,11 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -          bx_printf("pic:slave: init command 1 found\n");
 -          bx_printf("           requires 4 = %u\n",
 +        if (bio->getdbg().pic) {
-+          bio->printf("[PIC] slave: init command 1 found\n");
-+          bio->printf("[PIC]           requires 4 = %u\n",
++          bio->printd("[PIC] slave: init command 1 found\n");
++          bio->printd("[PIC]           requires 4 = %u\n",
              (unsigned) (value & 0x01) );
 -          bx_printf("           cascade mode: [0=cascade,1=single] %u\n",
-+          bio->printf("[PIC]           cascade mode: [0=cascade,1=single] %u\n",
++          bio->printd("[PIC]           cascade mode: [0=cascade,1=single] %u\n",
              (unsigned) ((value & 0x02) >> 1));
            }
          BX_PIC_THIS s.slave_pic.init.in_init = 1;
@@ -238,7 +238,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
            BX_PIC_THIS s.slave_pic.special_mask = 1;
            service_slave_pic();
 -          bx_printf("pic:slave: OCW3 not implemented (%02x)\n",
-+          bio->printf("[PIC] slave: OCW3 not implemented (%02x)\n",
++          bio->printd("[PIC] slave: OCW3 not implemented (%02x)\n",
              (unsigned) value);
            }
          return;
@@ -259,8 +259,8 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -		  bx_printf("pic:slave: init command 2 = %02x\n", (unsigned) value);
 -		  bx_printf("           offset = INT %02x\n",
 +	    if (bio->getdbg().pic) {
-+		  bio->printf("[PIC] slave: init command 2 = %02x\n", (unsigned) value);
-+		  bio->printf("[PIC]           offset = INT %02x\n",
++		  bio->printd("[PIC] slave: init command 2 = %02x\n", (unsigned) value);
++		  bio->printd("[PIC]           offset = INT %02x\n",
  			    BX_PIC_THIS s.slave_pic.interrupt_offset);
  	    }
              return;
@@ -269,7 +269,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -		if (bx_dbg.pic)
 -		      bx_printf("pic:slave: init command 3 = %02x\n", (unsigned) value);
 +		if (bio->getdbg().pic)
-+		      bio->printf("[PIC] slave: init command 3 = %02x\n", (unsigned) value);
++		      bio->printd("[PIC] slave: init command 3 = %02x\n", (unsigned) value);
              if (BX_PIC_THIS s.slave_pic.init.requires_4) {
                BX_PIC_THIS s.slave_pic.init.byte_expected = 4;
  	      }
@@ -282,16 +282,16 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -		      if (value & 0x02) bx_printf("pic:       auto EOI\n");
 -		      else bx_printf("pic: normal EOI interrupt\n");
 +		if (bio->getdbg().pic) {
-+		      bio->printf("[PIC] slave: init command 4 = %02x\n", (unsigned) value);
-+		      if (value & 0x02) bio->printf("[PIC]       auto EOI\n");
-+		      else bio->printf("[PIC] normal EOI interrupt\n");
++		      bio->printd("[PIC] slave: init command 4 = %02x\n", (unsigned) value);
++		      if (value & 0x02) bio->printd("[PIC]       auto EOI\n");
++		      else bio->printd("[PIC] normal EOI interrupt\n");
  		}
  		if (value & 0x01) {
 -		      if (bx_dbg.pic)
 -			    bx_printf("pic:       80x86 mode\n");
 -		} else bx_panic("pic: not 80x86 mode\n");
 +		      if (bio->getdbg().pic)
-+			    bio->printf("[PIC]       80x86 mode\n");
++			    bio->printd("[PIC]       80x86 mode\n");
 +		} else bio->panic("[PIC] not 80x86 mode\n");
              BX_PIC_THIS s.slave_pic.init.in_init = 0;
              return;
@@ -306,7 +306,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -      if (bx_dbg.pic)
 -        bx_printf("pic: setting slave pic IMR to %02x\n", value);
 +      if (bio->getdbg().pic)
-+        bio->printf("[PIC] setting slave pic IMR to %02x\n", value);
++        bio->printd("[PIC] setting slave pic IMR to %02x\n", value);
        BX_PIC_THIS s.slave_pic.imr = value;
        service_slave_pic();
        return;
@@ -321,7 +321,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -  if (bx_dbg.pic)
 -    bx_printf("trigger_irq(%d decimal)\n", (unsigned) irq_no);
 +  if (bio->getdbg().pic)
-+    bio->printf("[PIC] trigger_irq(%d decimal)\n", (unsigned) irq_no);
++    bio->printd("[PIC] trigger_irq(%d decimal)\n", (unsigned) irq_no);
  
    if (irq_no <= 7) {
      irq_no_bitmask = 1 << irq_no;
@@ -336,7 +336,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -  if (bx_dbg.pic)
 -    bx_printf("untrigger_irq(%d decimal)\n", (unsigned) irq_no);
 +  if (bio->getdbg().pic)
-+    bio->printf("[PIC] untrigger_irq(%d decimal)\n", (unsigned) irq_no);
++    bio->printd("[PIC] untrigger_irq(%d decimal)\n", (unsigned) irq_no);
  
    if (irq_no <= 7) {
      irq_no_bitmask = 1 << irq_no;
@@ -356,7 +356,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -        if (bx_dbg.pic)
 -          bx_printf("pic: signalling IRQ(%u)\n",
 +        if (bio->getdbg().pic)
-+          bio->printf("[PIC] signalling IRQ(%u)\n",
++          bio->printd("[PIC] signalling IRQ(%u)\n",
              (unsigned) irq);
          BX_PIC_THIS s.master_pic.irr &= ~(1 << irq);
          /*??? do for slave too: BX_PIC_THIS s.master_pic.isr |=  (1 << irq);*/
@@ -376,7 +376,7 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -        if (bx_dbg.pic)
 -          bx_printf("pic(slave): signalling IRQ(%u)\n",
 +        if (bio->getdbg().pic)
-+          bio->printf("pic(slave): signalling IRQ(%u)\n",
++          bio->printd("pic(slave): signalling IRQ(%u)\n",
              (unsigned) 8 + irq);
          BX_PIC_THIS s.slave_pic.irr &= ~(1 << irq);
          BX_PIC_THIS s.slave_pic.INT = 1;
@@ -388,8 +388,8 @@ $OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 -bx_printf("s.master_pic.isr = %02x\n", BX_PIC_THIS s.master_pic.isr);
 -bx_printf("s.master_pic.irr = %02x\n", BX_PIC_THIS s.master_pic.irr);
 -bx_printf("s.master_pic.irq = %02x\n", BX_PIC_THIS s.master_pic.irq);
-+bio->printf("[PIC] s.master_pic.imr = %02x\n", BX_PIC_THIS s.master_pic.imr);
-+bio->printf("[PIC] s.master_pic.isr = %02x\n", BX_PIC_THIS s.master_pic.isr);
-+bio->printf("[PIC] s.master_pic.irr = %02x\n", BX_PIC_THIS s.master_pic.irr);
-+bio->printf("[PIC] s.master_pic.irq = %02x\n", BX_PIC_THIS s.master_pic.irq);
++bio->printd("[PIC] s.master_pic.imr = %02x\n", BX_PIC_THIS s.master_pic.imr);
++bio->printd("[PIC] s.master_pic.isr = %02x\n", BX_PIC_THIS s.master_pic.isr);
++bio->printd("[PIC] s.master_pic.irr = %02x\n", BX_PIC_THIS s.master_pic.irr);
++bio->printd("[PIC] s.master_pic.irq = %02x\n", BX_PIC_THIS s.master_pic.irq);
  }

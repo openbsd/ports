@@ -1,6 +1,6 @@
-$OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+$OpenBSD: patch-iodev_dma_cc,v 1.2 2001/03/30 18:53:25 todd Exp $
 --- iodev/dma.cc.orig	Sat Mar 25 21:28:48 2000
-+++ iodev/dma.cc	Tue Oct 31 12:16:53 2000
++++ iodev/dma.cc	Fri Mar 30 11:22:51 2001
 @@ -140,12 +140,12 @@ bx_dma_c::read( Bit32u   address, unsign
    Bit8u channel;
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -  if (bx_dbg.dma)
 -    bx_printf("dma: read addr=%04x\n", (unsigned) address);
 +  if (bio->getdbg().dma)
-+    bio->printf("[DMA] read addr=%04x\n", (unsigned) address);
++    bio->printd("[DMA] read addr=%04x\n", (unsigned) address);
  
  #if BX_DMA_FLOPPY_IO < 1
    /* if we're not supporting DMA/floppy IO just return a bogus value */
@@ -32,7 +32,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
        channel = channelindex[address - 0x89] + 4;
 -      bx_printf("dma: read: unsupported address=%04x (channel %d)\n", 
 +	if(bio->getdbg().dma)
-+      bio->printf("[DMA] read: unsupported address=%04x (channel %d)\n", 
++      bio->printd("[DMA] read: unsupported address=%04x (channel %d)\n", 
  		(unsigned) address, channel);
        return( 0x00 );
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      case 0x00de:
 -      bx_printf("dma: read: unsupported address=%04x\n", (unsigned) address);
 +	if(bio->getdbg().dma)
-+      bio->printf("[DMA] read: unsupported address=%04x\n", (unsigned) address);
++      bio->printd("[DMA] read: unsupported address=%04x\n", (unsigned) address);
        return(0x0000);
        break;
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -  if (bx_dbg.dma)
 -    bx_printf("\ndma: write: address=%04x value=%02x\n",
 +  if (bio->getdbg().dma)
-+    bio->printf("[DMA] write: address=%04x value=%02x\n",
++    bio->printd("[DMA] write: address=%04x value=%02x\n",
        (unsigned) address, (unsigned) value);
  
  #if BX_DMA_FLOPPY_IO < 1
@@ -76,7 +76,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -      if (bx_dbg.dma)
 -        bx_printf("  DMA-1 base and current address, channel %d\n", channel);
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1] base and current address, channel %d\n", channel);
++        bio->printd("[DMA1] base and current address, channel %d\n", channel);
        if (BX_DMA_THIS s.flip_flop==0) { /* 1st byte */
          BX_DMA_THIS s.chan[channel].base_address = value;
          BX_DMA_THIS s.chan[channel].current_address = value;
@@ -87,10 +87,10 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -        if (bx_dbg.dma) {
 -          bx_printf("    base = %04x\n",
 +        if (bio->getdbg().dma) {
-+          bio->printf("[DMA]    base = %04x\n",
++          bio->printd("[DMA]    base = %04x\n",
              (unsigned) BX_DMA_THIS s.chan[channel].base_address);
 -          bx_printf("    curr = %04x\n",
-+          bio->printf("[DMA]    curr = %04x\n",
++          bio->printd("[DMA]    curr = %04x\n",
              (unsigned) BX_DMA_THIS s.chan[channel].current_address);
            }
          }
@@ -101,7 +101,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -      if (bx_dbg.dma)
 -        bx_printf("  DMA-1 base and current count, channel %d\n", channel);
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1]  base and current count, channel %d\n", channel);
++        bio->printd("[DMA1]  base and current count, channel %d\n", channel);
        if (BX_DMA_THIS s.flip_flop==0) { /* 1st byte */
          BX_DMA_THIS s.chan[channel].base_count = value;
          BX_DMA_THIS s.chan[channel].current_count = value;
@@ -112,10 +112,10 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -        if (bx_dbg.dma) {
 -          bx_printf("    base = %04x\n",
 +        if (bio->getdbg().dma) {
-+          bio->printf("[DMA]    base = %04x\n",
++          bio->printd("[DMA]    base = %04x\n",
              (unsigned) BX_DMA_THIS s.chan[channel].base_count);
 -          bx_printf("    curr = %04x\n",
-+          bio->printf("[DMA]    curr = %04x\n",
++          bio->printd("[DMA]    curr = %04x\n",
              (unsigned) BX_DMA_THIS s.chan[channel].current_count);
            }
          }
@@ -124,7 +124,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      case 0x08: /* DMA-1: command register */
        if (value != 0x04)
 -        bx_printf("DMA: write to 0008: value(%02xh) not 04h\n",
-+        bio->printf("[DMA1] write to 0008: value(%02xh) not 04h\n",
++        bio->printd("[DMA1] write to 0008: value(%02xh) not 04h\n",
            (unsigned) value);
        BX_DMA_THIS s.command_reg = value;
        return;
@@ -132,7 +132,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
      case 0x09: // DMA-1: request register
 -      bx_printf("DMA-1: write to request register (%02x)\n", (unsigned) value);
-+      bio->printf("[DMA1] write to request register (%02x)\n", (unsigned) value);
++      bio->printd("[DMA1] write to request register (%02x)\n", (unsigned) value);
        // note: write to 0x0d clears this register
        if (value & 0x04) {
          // set request bit
@@ -141,7 +141,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
          channel = value & 0x03;
          BX_DMA_THIS s.status_reg &= ~(1 << (channel+4));
 -        bx_printf("dma-1: cleared request bit for channel %u\n", (unsigned) channel);
-+        bio->printf("[DMA1] cleared request bit for channel %u\n", (unsigned) channel);
++        bio->printd("[DMA1] cleared request bit for channel %u\n", (unsigned) channel);
          }
        return;
        break;
@@ -152,7 +152,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -      if (bx_dbg.dma)
 -        bx_printf("DMA1: set_mask_bit=%u, channel=%u, mask now=%02xh\n",
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1] set_mask_bit=%u, channel=%u, mask now=%02xh\n",
++        bio->printd("[DMA1] set_mask_bit=%u, channel=%u, mask now=%02xh\n",
            (unsigned) set_mask_bit, (unsigned) channel, (unsigned) BX_DMA_THIS s.mask[channel]);
        return;
        break;
@@ -161,12 +161,12 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
        BX_DMA_THIS s.chan[channel].mode.autoinit_enable = (value >> 4) & 0x01;
        BX_DMA_THIS s.chan[channel].mode.transfer_type = (value >> 2) & 0x03;
 -//bx_printf("DMA1: mode register[%u] = %02x\n",
-+//bio->printf("[DMA1] mode register[%u] = %02x\n",
++//bio->printd("[DMA1] mode register[%u] = %02x\n",
  //(unsigned) channel, (unsigned) value);
 -      if (bx_dbg.dma)
 -        bx_printf("DMA1: mode register[%u] = %02x\n",
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1] mode register[%u] = %02x\n",
++        bio->printd("[DMA1] mode register[%u] = %02x\n",
            (unsigned) channel, (unsigned) value);
        return;
        break;
@@ -175,7 +175,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -      if (bx_dbg.dma)
 -        bx_printf("DMA1: clear flip/flop\n");
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1] clear flip/flop\n");
++        bio->printd("[DMA1] clear flip/flop\n");
        BX_DMA_THIS s.flip_flop = 0;
        return;
        break;
@@ -183,7 +183,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      case 0x0d: // dma-1: master disable
        /* ??? */
 -      bx_printf("dma: master disable\n");
-+      bio->printf("[DMA] master disable\n");
++      bio->printd("[DMA] master disable\n");
        // writing any value to this port resets DMA controller 1
        // same action as a hardware reset
        // mask register is set (chan 0..3 disabled)
@@ -192,7 +192,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
      case 0x0e: // dma-1: clear mask register
 -      bx_printf("dma-1: clear mask register\n");
-+      bio->printf("[DMA1] clear mask register\n");
++      bio->printd("[DMA1] clear mask register\n");
        BX_DMA_THIS s.mask[0] = 0;
        BX_DMA_THIS s.mask[1] = 0;
        BX_DMA_THIS s.mask[2] = 0;
@@ -201,7 +201,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
      case 0x0f: // dma-1: write all mask bits
 -      bx_printf("dma-1: write all mask bits\n");
-+      bio->printf("[DMA1] write all mask bits\n");
++      bio->printd("[DMA1] write all mask bits\n");
        BX_DMA_THIS s.mask[0] = value & 0x01; value >>= 1;
        BX_DMA_THIS s.mask[1] = value & 0x01; value >>= 1;
        BX_DMA_THIS s.mask[2] = value & 0x01; value >>= 1;
@@ -212,7 +212,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -      if (bx_dbg.dma)
 -        bx_printf("DMA1: page register %d = %02x\n", channel, (unsigned) value);
 +      if (bio->getdbg().dma)
-+        bio->printf("[DMA1] page register %d = %02x\n", channel, (unsigned) value);
++        bio->printd("[DMA1] page register %d = %02x\n", channel, (unsigned) value);
        return;
        break;
  
@@ -221,7 +221,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      //case 0xd0: /* DMA-2 command register */
      //  if (value != 0x04)
 -    //    bx_printf("DMA2: write command register: value(%02xh)!=04h\n",
-+    //    bio->printf("[DMA2] write command register: value(%02xh)!=04h\n",
++    //    bio->printd("[DMA2] write command register: value(%02xh)!=04h\n",
      //      (unsigned) value);
      //  return;
      //  break;
@@ -230,7 +230,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      case 0x00dc:
      case 0x00de:
 -      bx_printf("DMA(ignored): write: %04xh = %04xh\n",
-+      bio->printf("[DMA] write: %04xh = %04xh (ignored)\n",
++      bio->printd("[DMA] write: %04xh = %04xh (ignored)\n",
          (unsigned) address, (unsigned) value);
        return;
        break;
@@ -238,7 +238,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
      default:
 -      bx_printf("DMA(ignored): write: %04xh = %02xh\n",
-+      bio->printf("[DMA] write: %04xh = %02xh (ignored)\n",
++      bio->printd("[DMA] write: %04xh = %02xh (ignored)\n",
          (unsigned) address, (unsigned) value);
      }
  }
@@ -257,7 +257,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  #endif
    if (!val) {
 -    //bx_printf("bx_dma_c::DRQ(): val == 0\n");
-+    //bio->printf("[DMA] bx_dma_c::DRQ(): val == 0\n");
++    //bio->printd("[DMA] bx_dma_c::DRQ(): val == 0\n");
      // clear bit in status reg
      // deassert HRQ if not pending DRQ's ?
      // etc.
@@ -277,18 +277,18 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -  bx_printf(".base_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
 -  bx_printf(".current_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].current_count);
 -  bx_printf(".page_reg: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].page_reg);
-+  bio->printf("[DMA] BX_DMA_THIS s.mask[2]: %02x\n", (unsigned) BX_DMA_THIS s.mask[2]);
-+  bio->printf("[DMA] BX_DMA_THIS s.flip_flop: %u\n", (unsigned) BX_DMA_THIS s.flip_flop);
-+  bio->printf("[DMA] BX_DMA_THIS s.status_reg: %02x\n", (unsigned) BX_DMA_THIS s.status_reg);
-+  bio->printf("[DMA] mode_type: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.mode_type);
-+  bio->printf("[DMA] address_decrement: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.address_decrement);
-+  bio->printf("[DMA] autoinit_enable: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.autoinit_enable);
-+  bio->printf("[DMA] transfer_type: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.transfer_type);
-+  bio->printf("[DMA] .base_address: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_address);
-+  bio->printf("[DMA] .current_address: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].current_address);
-+  bio->printf("[DMA] .base_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
-+  bio->printf("[DMA] .current_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].current_count);
-+  bio->printf("[DMA] .page_reg: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].page_reg);
++  bio->printd("[DMA] BX_DMA_THIS s.mask[2]: %02x\n", (unsigned) BX_DMA_THIS s.mask[2]);
++  bio->printd("[DMA] BX_DMA_THIS s.flip_flop: %u\n", (unsigned) BX_DMA_THIS s.flip_flop);
++  bio->printd("[DMA] BX_DMA_THIS s.status_reg: %02x\n", (unsigned) BX_DMA_THIS s.status_reg);
++  bio->printd("[DMA] mode_type: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.mode_type);
++  bio->printd("[DMA] address_decrement: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.address_decrement);
++  bio->printd("[DMA] autoinit_enable: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.autoinit_enable);
++  bio->printd("[DMA] transfer_type: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].mode.transfer_type);
++  bio->printd("[DMA] .base_address: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_address);
++  bio->printd("[DMA] .current_address: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].current_address);
++  bio->printd("[DMA] .base_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
++  bio->printd("[DMA] .current_count: %04x\n", (unsigned) BX_DMA_THIS s.chan[channel].current_count);
++  bio->printd("[DMA] .page_reg: %02x\n", (unsigned) BX_DMA_THIS s.chan[channel].page_reg);
  #endif
  
    BX_DMA_THIS s.status_reg |= (1 << (channel+4));
@@ -317,15 +317,15 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -bx_printf("dma_base_count = %08x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
 -bx_printf("dma_roof = %08x\n", (unsigned) dma_roof);
 -    bx_panic("dma: DMA request outside 64k boundary\n");
-+bio->printf("[DMA] dma_base = %08x\n", (unsigned) dma_base);
-+bio->printf("[DMA] dma_base_count = %08x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
-+bio->printf("[DMA] dma_roof = %08x\n", (unsigned) dma_roof);
++bio->printd("[DMA] dma_base = %08x\n", (unsigned) dma_base);
++bio->printd("[DMA] dma_base_count = %08x\n", (unsigned) BX_DMA_THIS s.chan[channel].base_count);
++bio->printd("[DMA] dma_roof = %08x\n", (unsigned) dma_roof);
 +    bio->panic("[DMA] DMA request outside 64k boundary\n");
      }
  
  
 -  //bx_printf("DRQ set up for single mode, increment, auto-init disabled, write\n");
-+  //bio->printf("[DMA] DRQ set up for single mode, increment, auto-init disabled, write\n");
++  //bio->printd("[DMA] DRQ set up for single mode, increment, auto-init disabled, write\n");
    // should check mask register VS DREQ's in status register here?
    // assert Hold ReQuest line to CPU
    bx_pc_system.set_HRQ(1);
@@ -339,7 +339,7 @@ $OpenBSD: patch-iodev_dma_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      }
  
 -  //bx_printf("hlda: OK in response to DRQ(%u)\n", (unsigned) channel);
-+  //bio->printf("[DMA] hlda: OK in response to DRQ(%u)\n", (unsigned) channel);
++  //bio->printd("[DMA] hlda: OK in response to DRQ(%u)\n", (unsigned) channel);
    phy_addr = (BX_DMA_THIS s.chan[channel].page_reg << 16) |
               BX_DMA_THIS s.chan[channel].current_address;
  

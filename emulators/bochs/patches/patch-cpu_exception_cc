@@ -1,12 +1,12 @@
-$OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
+$OpenBSD: patch-cpu_exception_cc,v 1.3 2001/03/30 18:53:25 todd Exp $
 --- cpu/exception.cc.orig	Sat Mar 25 21:39:08 2000
-+++ cpu/exception.cc	Tue Feb 27 10:29:42 2001
++++ cpu/exception.cc	Fri Mar 30 11:15:14 2001
 @@ -52,7 +52,7 @@ BX_CPU_C::interrupt(Bit8u vector, Boolea
    BX_CPU_THIS_PTR show_flag |= Flag_intsig;
  #endif
  
 -//fprintf(stderr, "::interrupt(%u)\n", vector);
-+//bio->printf("[CPU%d] interrupt(%u)\n", BX_SIM_ID, vector);
++//bio->printd("[CPU%d] interrupt(%u)\n", BX_SIM_ID, vector);
  
    BX_INSTR_INTERRUPT(vector);
    invalidate_prefetch_q();
@@ -17,7 +17,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 -  if (bx_dbg.interrupts)
 -    bx_printf("interrupt(): vector = %u, INT = %u, EXT = %u\n",
 +  if (bio->getdbg().interrupts)
-+    bio->printf("[CPU%u] interrupt(): vector = %u, INT = %u, EXT = %u\n",
++    bio->printd("[CPU%u] interrupt(): vector = %u, INT = %u, EXT = %u\n",
 +	BX_SIM_ID,
        (unsigned) vector, (unsigned) is_INT, (unsigned) BX_CPU_THIS_PTR EXT);
  
@@ -32,13 +32,13 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 -        bx_printf("interrupt vector must be within IDT table limits\n");
 -        bx_printf("bailing\n");
 +      if (bio->getdbg().interrupts) {
-+        bio->printf("[CPU%u] IDT.limit = %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR idtr.limit);
-+        bio->printf("[CPU%u] IDT.base  = %06x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR idtr.base);
-+        bio->printf("[CPU%u] interrupt vector must be within IDT table limits\n",BX_SIM_ID);
-+        bio->printf("[CPU%u] bailing\n",BX_SIM_ID);
++        bio->printd("[CPU%u] IDT.limit = %04x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR idtr.limit);
++        bio->printd("[CPU%u] IDT.base  = %06x\n", BX_SIM_ID, (unsigned) BX_CPU_THIS_PTR idtr.base);
++        bio->printd("[CPU%u] interrupt vector must be within IDT table limits\n",BX_SIM_ID);
++        bio->printd("[CPU%u] bailing\n",BX_SIM_ID);
          }
 -      bx_printf("interrupt(): vector > idtr.limit\n");
-+      bio->printf("[CPU%u] interrupt(): vector > idtr.limit\n",BX_SIM_ID);
++      bio->printd("[CPU%u] interrupt(): vector > idtr.limit\n",BX_SIM_ID);
  
        exception(BX_GP_EXCEPTION, vector*8 + 2, 0);
        }
@@ -57,7 +57,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
        default:
 -        bx_printf("interrupt(): gate.type(%u) != {5,6,7,14,15}\n",
 -          (unsigned) gate_descriptor.type);
-+        bio->printf("[CPU%u] interrupt(): gate.type(%u) != {5,6,7,14,15}\n",
++        bio->printd("[CPU%u] interrupt(): gate.type(%u) != {5,6,7,14,15}\n",
 +          BX_SIM_ID, (unsigned) gate_descriptor.type);
          exception(BX_GP_EXCEPTION, vector*8 + 2, 0);
          return;
@@ -67,7 +67,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
      if (is_INT  &&  (gate_descriptor.dpl < CPL)) {
  /* ??? */
 -      bx_printf("interrupt(): is_INT && (dpl < CPL)\n");
-+      // bio->printf("[CPU%u] interrupt(): is_INT && (dpl < CPL)\n", BX_SIM_ID);
++      bio->printd("[CPU%u] interrupt(): is_INT && (dpl < CPL)\n", BX_SIM_ID);
        exception(BX_GP_EXCEPTION, vector*8 + 2, 0);
        return;
        }
@@ -75,7 +75,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
      // Gate must be present, else #NP(vector * 8 + 2 + EXT)
      if (gate_descriptor.p == 0) {
 -      bx_printf("interrupt(): p == 0\n");
-+      bio->printf("[CPU%u] interrupt(): p == 0\n", BX_SIM_ID);
++      bio->printd("[CPU%u] interrupt(): p == 0\n", BX_SIM_ID);
        exception(BX_NP_EXCEPTION, vector*8 + 2, 0);
        }
  
@@ -84,7 +84,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
  // PPro+ says #GP(selector)
          if (tss_selector.ti) {
 -          bx_panic("interrupt: tss_selector.ti=1\n");
-+          bio->printf("[CPU%u] interrupt: tss_selector.ti=1\n",BX_SIM_ID);
++          bio->printd("[CPU%u] interrupt: tss_selector.ti=1\n",BX_SIM_ID);
            exception(BX_TS_EXCEPTION, raw_tss_selector & 0xfffc, 0);
            return;
            }
@@ -93,7 +93,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
          parse_descriptor(dword1, dword2, &tss_descriptor);
          if (tss_descriptor.valid==0 || tss_descriptor.segment) {
 -          bx_panic("exception: TSS selector points to bad TSS\n");
-+          bio->printf("[CPU%u] exception: TSS selector points to bad TSS\n",BX_SIM_ID);
++          bio->printd("[CPU%u] exception: TSS selector points to bad TSS\n",BX_SIM_ID);
            exception(BX_TS_EXCEPTION, raw_tss_selector & 0xfffc, 0);
            return;
            }
@@ -126,7 +126,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
               cs_descriptor.u.segment.executable==0 ||
               cs_descriptor.dpl>CPL ) {
 -          bx_printf("interrupt(): not code segment\n");
-+          bio->printf("[CPU%u] interrupt(): not code segment\n",BX_SIM_ID);
++          bio->printd("[CPU%u] interrupt(): not code segment\n",BX_SIM_ID);
            exception(BX_GP_EXCEPTION, cs_selector.value & 0xfffc, 0);
            }
  
@@ -144,7 +144,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 -          if (bx_dbg.interrupts)
 -            bx_printf("interrupt(): INTERRUPT TO INNER PRIVILEGE\n");
 +          if (bio->getdbg().interrupts)
-+            bio->printf("[CPU%u] interrupt(): INTERRUPT TO INNER PRIVILEGE\n",BX_SIM_ID);
++            bio->printd("[CPU%u] interrupt(): INTERRUPT TO INNER PRIVILEGE\n",BX_SIM_ID);
  
            // check selector and descriptor for new stack in current TSS
            get_SS_ESP_from_TSS(cs_descriptor.dpl,
@@ -233,7 +233,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 -          if (bx_dbg.interrupts)
 -            bx_printf("int_trap_gate286(): INTERRUPT TO SAME PRIVILEGE\n");
 +          if (bio->getdbg().interrupts)
-+            bio->printf("[CPU%u] int_trap_gate286(): INTERRUPT TO SAME PRIVILEGE\n",BX_SIM_ID);
++            bio->printd("[CPU%u] int_trap_gate286(): INTERRUPT TO SAME PRIVILEGE\n",BX_SIM_ID);
  
            // Current stack limits must allow pushing 6|8 bytes, else #SS(0)
            if (gate_descriptor.type >= 14) { // 386 gate
@@ -242,7 +242,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
            if ( !can_push(&BX_CPU_THIS_PTR sregs[BX_SEG_REG_SS].cache,
                           temp_ESP, bytes) ) {
 -            bx_printf("interrupt(): stack doesn't have room\n");
-+            bio->printf("[CPU%u] interrupt(): stack doesn't have room\n",BX_SIM_ID);
++            bio->printd("[CPU%u] interrupt(): stack doesn't have room\n",BX_SIM_ID);
              exception(BX_SS_EXCEPTION, 0, 0);
              }
  
@@ -259,13 +259,13 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
          // else #GP(CS selector + ext)
 -        bx_printf("interrupt: bad descriptor\n");
 -        bx_printf("c_ed=%u, descriptor.dpl=%u, CPL=%u\n",
-+        bio->printf("[CPU%u] interrupt: bad descriptor\n", BX_SIM_ID);
-+        bio->printf("[CPU%u] c_ed=%u, descriptor.dpl=%u, CPL=%u\n", BX_SIM_ID,
++        bio->printd("[CPU%u] interrupt: bad descriptor\n", BX_SIM_ID);
++        bio->printd("[CPU%u] c_ed=%u, descriptor.dpl=%u, CPL=%u\n", BX_SIM_ID,
            (unsigned) cs_descriptor.u.segment.c_ed,
            (unsigned) cs_descriptor.dpl,
            (unsigned) CPL);
 -        bx_printf("cs.segment = %u\n", (unsigned) cs_descriptor.segment);
-+        bio->printf("[CPU%u] cs.segment = %u\n", BX_SIM_ID, (unsigned) cs_descriptor.segment);
++        bio->printd("[CPU%u] cs.segment = %u\n", BX_SIM_ID, (unsigned) cs_descriptor.segment);
          exception(BX_GP_EXCEPTION, cs_selector.value & 0xfffc, 0);
          break;
  
@@ -289,7 +289,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
    unsigned prev_errno;
  
 -//fprintf(stderr, "::exception(%u)\n", vector);
-+//bio->printf("::exception(%u)\n", vector);
++//bio->printd("::exception(%u)\n", vector);
  
    BX_INSTR_EXCEPTION(vector);
    invalidate_prefetch_q();
@@ -299,7 +299,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 -  if (bx_dbg.exceptions)
 -    bx_printf("exception(%02x h)\n", (unsigned) vector);
 +  if (bio->getdbg().exceptions)
-+    bio->printf("[CPU%u] exception(%02x h)\n", (unsigned) vector);
++    bio->printd("[CPU%u] exception(%02x h)\n", (unsigned) vector);
  
    // if not initial error, restore previous register values from
    // previous attempt to handle exception
@@ -369,7 +369,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
      BX_CPU_THIS_PTR interrupt(vector, 0, push_error, error_code);
  //    if (BX_CPU_THIS_PTR errorno > prev_errno) {
 -//      bx_printf("segment_exception(): errorno changed\n");
-+//      bio->printf("[CPU%u] segment_exception(): errorno changed\n", BX_SIM_ID);
++//      bio->printd("[CPU%u] segment_exception(): errorno changed\n", BX_SIM_ID);
  //      longjmp(jmp_buf_env, 1); // go back to main decode loop
  //      return;
  //      }
