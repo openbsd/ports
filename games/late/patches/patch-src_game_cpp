@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_game_cpp,v 1.1.1.1 2003/08/09 14:10:37 jolan Exp $
+--- src/game.cpp.orig	2003-08-05 09:40:42.000000000 -0500
++++ src/game.cpp	2003-08-09 00:05:23.000000000 -0500
+@@ -38,6 +38,7 @@ using namespace std;
+ #include "explosiveball.h"
+ #include <fstream>
+ #include <iostream>
++#include <time.h>
+ #include "menu.h"
+ #include "killerball.h"
+ 
