@@ -1,9 +1,9 @@
-# New ports collection makefile for:	poppassd
+# OpenBSD makefile for:	poppassd
 # Version required:	4.0
-# Date Created:	21 August 1996
-# Whom:	Andrew Stevenson <andrew@ugh.net.au> based heavily on the changes by Stephen Melvin <melvin@zytek.com>
+# Date Created:		May 16 1998
+# Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 04:00:26 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/17 04:03:24 angelos Exp $
 #
 
 DISTNAME=	pwserve-4
@@ -11,7 +11,7 @@ PKGNAME=	poppassd-4.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	angelos@openbsd.org
 
 EXTRACT_CMD=	/bin/cat
 EXTRACT_SUFX=	
