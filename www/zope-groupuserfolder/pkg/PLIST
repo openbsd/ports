@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/18 13:15:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/10/05 14:09:15 xsa Exp $
 @conflict plone-*
 lib/zope/lib/python/Products/GroupUserFolder/
 lib/zope/lib/python/Products/GroupUserFolder/CHANGES
@@ -56,6 +56,7 @@ lib/zope/lib/python/Products/GroupUserFolder/debian/templates
 lib/zope/lib/python/Products/GroupUserFolder/debian/watch
 lib/zope/lib/python/Products/GroupUserFolder/design.txt
 lib/zope/lib/python/Products/GroupUserFolder/doc/
+lib/zope/lib/python/Products/GroupUserFolder/doc/GRUF3.0.stx
 lib/zope/lib/python/Products/GroupUserFolder/doc/interview.txt
 lib/zope/lib/python/Products/GroupUserFolder/doc/py2htmldoc.py
 lib/zope/lib/python/Products/GroupUserFolder/doc/py2htmldoc.pyc
