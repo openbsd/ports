@@ -17,6 +17,7 @@ lib/libwraster.la
 lib/libwraster.a
 lib/libWINGs.a
 lib/libWMaker.a
+@exec /sbin/ldconfig -m %B
 man/man1/geticonset.1x
 man/man1/setstyle.1x
 man/man1/wxpaste.1x
@@ -370,4 +371,3 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
-@exec /sbin/ldconfig -m %B
