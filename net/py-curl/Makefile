@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/31 19:21:39 shell Exp $
-
+# $OpenBSD: Makefile,v 1.2 2001/12/31 19:24:21 shell Exp $
 
 COMMENT=	"python interface to cURL library"
 
@@ -9,7 +8,8 @@ PKGNAME=	py-curl-${VERSION}
 CATEGORIES=    	net
 NEED_VERSION=	1.504
 
-HOMEPAGE=	http://curl.sf.net/
+HOMEPAGE=	http://pycurl.sourceforge.net/
+MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	http://pycurl.sourceforge.net/
 
 PYTHON_VER=	2.1
 LIB_DEPENDS=	curl.2::net/curl
