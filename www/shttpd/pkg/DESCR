@@ -1,0 +1,16 @@
+echo-httpd, redir-httpd, and cgi-httpd are HTTP daemons designed
+to complement publicfile.
+
+* echo-httpd echos HTTP requests. 
+* echo-config configures echo-httpd. 
+* redir-httpd redirects HTTP requests via cdb lookup. 
+* redir-config configures redir-httpd. 
+* cgi-httpd executes a cgi script. 
+* cgi-config configures cgi-httpd. 
+* constant-httpd prints the same file for each HTTP request. 
+* constant-config configures constant-httpd. 
+
+Each instance of an shttpd daemon listens on a separate address,
+in a chroot directory, typically running as a nonprivileged user.
+
+WWW: ${HOMEPAGE}

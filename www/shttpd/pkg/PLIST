@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/22 15:04:11 camield Exp $
+shttpd/bin/cgi-config
+shttpd/bin/cgi-httpd
+shttpd/bin/cgi-success
+shttpd/bin/constant-config
+shttpd/bin/constant-httpd
+shttpd/bin/echo-config
+shttpd/bin/echo-httpd
+shttpd/bin/redir-config
+shttpd/bin/redir-httpd

@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/22 15:04:11 camield Exp $
+
+Needed for fake installation. This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
+
+--- Makefile.orig	Mon Jul 17 18:25:33 2000
++++ Makefile	Wed Mar 21 10:59:42 2001
+@@ -6,7 +6,7 @@ default: it
+ 
+ 
+ setup: \
+-it install
++install
+ 	./install
+ 
+ load: \
+@@ -1000,7 +1000,7 @@ strerr.h error.h readwrite.h exit.h
+ 	./compile instcheck.c
+ 
+ check: \
+-it instcheck
++instcheck
+ 	./instcheck
+ 
+ rts: \
