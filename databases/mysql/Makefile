@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2002/02/20 18:03:32 brad Exp $
+# $OpenBSD: Makefile,v 1.73 2002/03/03 06:02:11 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -7,7 +7,8 @@ COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
 # More architectures need testing of MySQL+native threads
-# alpha, hppa, m68k, m88k, vax - untested
+# alpha - does not work
+# hppa, m68k, m88k, vax - untested
 # sparc64 - linker issue?
 WORKING_ARCHS=	i386 sparc powerpc
 
