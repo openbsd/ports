@@ -1,54 +1,31 @@
---- configure.orig	Fri May 15 07:59:21 1998
-+++ configure	Wed Jun 10 10:30:53 1998
-@@ -6996,8 +6996,8 @@
- EOF
+--- etc/Makefile.in.~1~	Thu Jun 25 07:23:57 1998
++++ etc/Makefile.in	Mon Aug 10 11:43:28 1998
+@@ -281,6 +281,8 @@
+ all-local: a2ps.cfg
  
- cat >> $CONFIG_STATUS <<EOF
--ac_sources="$nls_cv_header_libgt $nls_cv_header_libgt"
--ac_dests="$nls_cv_header_intl $nls_cv_header_intl"
-+ac_sources="$nls_cv_header_libgt"
-+ac_dests="$nls_cv_header_intl"
- EOF
+ install-data-local: a2ps.cfg
++	@$(mkinstalldirs) ${PREFIX}/lib
++	@$(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg ${PREFIX}/lib/$(PACKAGE).cfg-sample;
+ 	$(mkinstalldirs) $(sysconfdir)
+ 	@if test -r $(sysconfdir)/$(PACKAGE).cfg; then \
+ 	  if cmp $(sysconfdir)/$(PACKAGE).cfg $(top_builddir)/etc/$(PACKAGE).cfg 2> /dev/null ; then \
+@@ -289,15 +291,14 @@
+ 	     echo;	\
+ 	     echo "*******************";	\
+ 	     echo "* Warning: $(sysconfdir)/$(PACKAGE).cfg exist."; \
+-	     echo "* It has been moved as $(sysconfdir)/$(PACKAGE).cfg.old"; \
++	     echo "* It has NOT been changed.  You must update by hand."; \
++	     echo "* See ${PREFIX}/lib/$(PACKAGE).cfg-sample."; \
+ 	     echo "*******************";	\
+ 	     echo; \
+-	     mv $(sysconfdir)/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg.old; \
+-	     $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg ; \
+ 	  fi \
+-	else \
++	 else \
+ 	  $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg; \
+-	fi
++	 fi
  
- cat >> $CONFIG_STATUS <<\EOF
-Only in a2ps-4.10.2-patched/etc: a2ps.cfg
-Only in a2ps-4.10.2-patched/intl: libintl.h
-diff -ur a2ps-4.10.2/lib/ppd.c a2ps-4.10.2-patched/lib/ppd.c
---- lib/ppd.c.orig	Wed Mar  4 11:27:02 1998
-+++ lib/ppd.c	Wed Jun 10 11:44:47 1998
-@@ -94,7 +94,7 @@
- /* It must include the white spaces put before */
- #define TAB_MAX	76
-   char * cp;
--  char ** fonts;
-+  char ** fonts, **save;
-   int tab = TAB_MAX, len;
- 
-   if (ppd->nickname)
-@@ -106,7 +106,7 @@
-   title (stream, '-', "%s (%s)", cp, ppd->key);
- 
-   /* Report the known fonts */
--  fonts = string_htable_dump_sorted (ppd->fonts);
-+  save = fonts = string_htable_dump_sorted (ppd->fonts);
-   fputs (_("List of the known fonts:"), stream);
-   if (!*fonts)
-     fputs (_("\n   None.\n"), stream);
-@@ -124,7 +124,7 @@
- 	  fputs (*(fonts + 1) ? ", " : ".\n", stream);
- 	}
-     }
--  FREE (fonts);
-+  FREE (save);
-   putc ('\n', stream);
- }
- 
-diff -ur a2ps-4.10.2/ogonkify/compose a2ps-4.10.2-patched/ogonkify/compose
---- ogonkify/compose.orig	Sun Apr  5 04:47:12 1998
-+++ ogonkify/compose	Wed Jun 10 10:39:48 1998
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- # Create a composite font program.
- # By J. Chroboczek <jec at dcs.ed.ac.uk>
- # Copyright (c) 1996, 1997 by J. Chroboczek
+ uninstall-local:
+ 	rm -f $(sysconfdir)/$(PACKAGE).cfg

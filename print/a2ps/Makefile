@@ -3,25 +3,43 @@
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.4 1998/06/18 22:55:45 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1998/08/10 22:01:56 marc Exp $
 #
 
-PKGNAME=	a2ps-4.10.2
-DISTNAME=	a2ps-4.10.2
+DISTNAME=	a2ps-4.10.3
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
-DISTFILES=	a2ps-4.10.2.tar.gz
 
 MAINTAINER=	weingart@OpenBSD.org
 
+# Note: You can get by without these
+#
+BUILD_DEPENDS=	gv:${PORTSDIR}/print/gv \
+		dvips:${PORTSDIR}/print/teTeX \
+		ps2pdf:${PORTSDIR}/print/ghostscript5 \
+		psselect:${PORTSDIR}/print/psutils \
+		convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
+		dvips:${PORTSDIR}/print/teTeX \
+		ps2pdf:${PORTSDIR}/print/ghostscript5 \
+		psselect:${PORTSDIR}/print/psutils \
+		convert:${PORTSDIR}/graphics/ImageMagick
+
+IS_INTERACTIVE=		yes
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter or A4
 GNU_CONFIGURE=	yes
-MAN1=		a2ps.1 ogonkify.1
+
 
 PAPERSIZE?=
 STRIP=
-CONFIGURE_ARGS=	--with-medium=$(PAPERSIZE) --disable-shared
-
+CONFIGURE_ARGS=		--with-medium=$(PAPERSIZE) \
+			--enable-static \
+			--sysconfdir=/etc
+.if (${MACHINE_ARCH} == "alpha")
+CONFIGURE_ARGS+=	--disable-shared
+.else
+CONFIGURE_ARGS+=	--enable-shared
+.endif
 
 Letter::
 	$(MAKE) PAPERSIZE=Letter
