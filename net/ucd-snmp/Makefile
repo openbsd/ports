@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2001/12/11 15:36:02 danh Exp $
+# $OpenBSD: Makefile,v 1.34 2002/02/13 21:22:03 danh Exp $
 
 COMMENT=	"extendable SNMP implementation"
 
-VERSION=	4.2.2
+VERSION=	4.2.3
 DISTNAME=	ucd-snmp-${VERSION}
-PKGNAME=	ucd-snmp-${VERSION}p1
 CATEGORIES=     net
-NEED_VERSION=	1.456
+NEED_VERSION=	1.504
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} 
 MASTER_SITE_SUBDIR= net-snmp
 
