@@ -1,6 +1,6 @@
-$OpenBSD: patch-cd_c,v 1.1.1.1 2001/05/19 00:21:00 lebel Exp $
---- cd.c.orig	Wed Oct 18 15:12:53 2000
-+++ cd.c	Tue Apr 10 15:00:59 2001
+$OpenBSD: patch-cd_c,v 1.2 2001/06/25 12:44:33 lebel Exp $
+--- cd.c.orig	Mon Jun 25 08:35:29 2001
++++ cd.c	Mon Jun 25 08:35:35 2001
 @@ -46,7 +46,7 @@
  #include <sys/cdio.h>
  #endif
@@ -128,3 +128,13 @@ $OpenBSD: patch-cd_c,v 1.1.1.1 2001/05/19 00:21:00 lebel Exp $
      cdte.address_format = CD_MSF_FORMAT;
      cdte.starting_track = 0;
      cdte.data = toc_buffer;
+@@ -547,6 +588,9 @@ int CDEject(int cd_desc)
+     perror("CDIOCEJECT");
+     return -1;
+   }
++#ifdef __OpenBSD__
++  close( cd_desc );
++#endif
+ #endif
+ #ifdef CDROMEJECT
+   if(ioctl(cd_desc, CDROMEJECT) < 0)
