@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1 2000/05/22 10:48:57 espie Exp $
+@comment $OpenBSD: PLIST.sed,v 1.2 2000/05/23 21:25:37 espie Exp $
 bin/moc
 include/X11/qt/jri.h
 include/X11/qt/jri_md.h
@@ -194,9 +194,6 @@ include/X11/qt/qwindow.h
 include/X11/qt/qwindowdefs.h
 include/X11/qt/qwmatrix.h
 include/X11/qt/qxt.h
-include/X11/qt/qimageio.h
-include/X11/qt/qjpegio.h
-include/X11/qt/qpngio.h
 %%SHARED%%
 lib/qt/examples/README
 lib/qt/examples/aclock

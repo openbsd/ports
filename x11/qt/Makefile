@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2000/05/22 11:31:15 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2000/05/23 21:25:37 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -56,7 +56,6 @@ do-install:
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
-	${INSTALL_DATA} ${IMAGEIODIR}/*.h ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	@for i in ${WRKSRC}/man/man3/*; do \
 	  j=$${i%qt}; \
