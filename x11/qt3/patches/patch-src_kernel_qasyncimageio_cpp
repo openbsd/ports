@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_kernel_qasyncimageio_cpp,v 1.1 2004/08/24 15:46:55 espie Exp $
+--- src/kernel/qasyncimageio.cpp.orig	Mon Apr 19 11:36:02 2004
++++ src/kernel/qasyncimageio.cpp	Tue Aug 24 10:58:24 2004
+@@ -992,6 +992,7 @@ int QGIFFormat::decode(QImage& img, QIma
+ 		accum = 0;
+ 		bitcount = 0;
+ 		sp = stack;
++                firstcode = oldcode = 0;
+ 		needfirst = FALSE;
+ 		out_of_bounds = FALSE;
+ 	    }
+@@ -1106,7 +1107,7 @@ int QGIFFormat::decode(QImage& img, QIma
+ 			oldcode=incode;
+ 			while (sp>stack) {
+ 			    --sp;
+-			    if (!out_of_bounds && *sp!=trans_index)
++			    if (!out_of_bounds && line && *sp!=trans_index)
+ 				line[y][x] = color(*sp);
+ 			    x++;
+ 			    if (x>=swidth) out_of_bounds = TRUE;
