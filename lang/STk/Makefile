@@ -3,8 +3,10 @@
 # Date created:		3 Febuary 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/13 03:35:20 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/29 10:31:02 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=       STk-3.1
 CATEGORIES=	lang
