@@ -1,0 +1,72 @@
+$OpenBSD: patch-doc_mcrypt_3,v 1.1 2003/01/18 22:53:57 avsm Exp $
+--- doc/mcrypt.3.orig	Sat Jan 18 22:37:15 2003
++++ doc/mcrypt.3	Sat Jan 18 22:40:13 2003
+@@ -85,7 +85,7 @@ and highly flexible. It uses a 128bit bl
+ LOKI97 was designed by Lawrie Brown and Josef Pieprzyk. It has a 128-bit
+ block length and a 256bit key schedule, which can be initialized
+ using 128, 192 or 256 bit keys. It has evolved from the
+-earlier LOKI89 and LOKI91 64-bit block ciphers, with a strenghtened key
++earlier LOKI89 and LOKI91 64-bit block ciphers, with a strengthened key
+ schedule and a larger keyspace.
+ 
+ .B RC2:
+@@ -138,7 +138,7 @@ WAKE stands for Word Auto Key Encryption
+ medium speed encryption of blocks and of high security. 
+ WAKE was designed by David J. Wheeler. It is intended to 
+ be fast on most computers and relies on repeated table use and having a 
+-large state spece. 
++large state space. 
+ 
+ .B SERPENT:
+ Serpent is a 128-bit block cipher designed by Ross Anderson, Eli Biham and
+@@ -158,7 +158,7 @@ for the IDEA algorithm. IDEA is provided
+ 
+ .B ENIGMA (UNIX crypt):
+ A one-rotor machine designed along the lines of Enigma but considerable
+-trivialized. Very easy to break for a skilled cryptanalist.
++trivialized. Very easy to break for a skilled cryptanalyst.
+ I suggest against using it. Added just for completeness.
+ 
+ .B GOST:
+@@ -391,7 +391,7 @@ If sizes is zero and returns NULL then a
+ supported by the algorithm. If it is 1 then only the mcrypt_get_key_size()
+ size is supported and sizes[0] is equal to it. If it is greater than 1 then
+ that number specifies the number of elements in sizes which are the key
+-sizes that the algorithm supports. The retured value is allocated with
++sizes that the algorithm supports. The returned value is allocated with
+ malloc, so you should not forget to free it.
+ 
+ .B    int mcrypt_enc_get_iv_size( MCRYPT td); 
+@@ -409,13 +409,13 @@ may need an IV even if the mode itself d
+ .B    char* mcrypt_enc_get_algorithms_name( MCRYPT td);
+ 
+ Returns a character array containing the name of the algorithm.
+-The retured value is allocated with malloc, so you should not forget to 
++The returned value is allocated with malloc, so you should not forget to 
+ free it.
+ 
+ .B    char* mcrypt_enc_get_modes_name( MCRYPT td);
+ 
+ Returns a character array containing the name of the mode.
+-The retured value is allocated with malloc, so you should not forget to 
++The returned value is allocated with malloc, so you should not forget to 
+ free it.
+ 
+ .P
+@@ -465,14 +465,14 @@ allocated (not static), thus it should b
+ 
+ .B char** mcrypt_list_algorithms ( char* libdir, int* size);
+ 
+-Returns a pointer to a character array cointaining all
++Returns a pointer to a character array containing all
+ the mcrypt algorithms located in the libdir, or if it is NULL, in
+ the default directory. The size is the number of the character arrays.
+ The arrays are allocated internally and should be freed by using mcrypt_free_p().
+ 
+ .B char** mcrypt_list_modes ( char* libdir, int *size);
+ 
+-Returns a pointer to a character array cointaining all
++Returns a pointer to a character array containing all
+ the mcrypt modes located in the libdir, or if it is NULL, in
+ the default directory. The size is the number of the character arrays.
+ The arrays should be freed by using mcrypt_free_p().
