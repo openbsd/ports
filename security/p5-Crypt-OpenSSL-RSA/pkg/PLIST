@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/15 11:20:10 wilfried Exp $
+${P5ARCH}/Crypt/OpenSSL/RSA.pm
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/DESTROY.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.bs
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.so
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/_set_hash_mode.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/autosplit.ix
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/get_padding_mode.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/get_private_key_string.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/get_public_key_string.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/import_random_seed.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/load_private_key.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/load_public_key.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/new.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_md5_hash.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_no_padding.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_pkcs1_oaep_padding.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_pkcs1_padding.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_ripemd160_hash.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_sha1_hash.al
+${P5ARCH}/auto/Crypt/OpenSSL/RSA/use_sslv23_padding.al
+man/man3p/Crypt::OpenSSL::RSA.3p
+@dirrm ${P5ARCH}/auto/Crypt/OpenSSL/RSA

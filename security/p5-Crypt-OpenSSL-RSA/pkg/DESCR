@@ -1,0 +1,14 @@
+This module is an XS perl module designed to provide basic RSA
+functionality. It does this by providing a glue to the RSA functions
+in the OpenSSL library. In particular, it provides the following
+functions:
+
+loadPublicKey, loadPrivateKey - load a key from a string
+getPublicKeyString, getPrivateKeyString - save a key to a string
+generateKey - make a new key
+encrypt, decrypt, sign, verify,
+use_pkcs1_oaep_padding, use_pkcs1_padding,
+use_sslv23_padding, use_no_padding,
+use_md5_hash, use_sha1_hash, use_ripemd60_hash
+size - returns the size, in bytes, of the key
+checkKey - checks the validity of the key
