@@ -1,25 +1,13 @@
-*** Makefile.orig	Wed May 20 04:18:24 1998
---- Makefile	Wed May 20 04:19:00 1998
-***************
-*** 15,24 ****
-  #    this must be a directory that's in your bin PATH.
-  # MANDIR holds the man page.
-  
-! BINDIR = /private/share/bin
-! #BINDIR = /usr/local/bin
-! MANDIR = /home/auspex/h/bair/phelps/man/man1
-! #MANDIR = /usr/local/man/man1
-  
-  
-  ### if you have GNU gcc v2.x, use these definitions
---- 15,24 ----
-  #    this must be a directory that's in your bin PATH.
-  # MANDIR holds the man page.
-  
-! #BINDIR = /private/share/bin
-! BINDIR = /usr/local/bin
-! #MANDIR = /home/auspex/h/bair/phelps/man/man1
-! MANDIR = /usr/local/man/man1
-  
-  
-  ### if you have GNU gcc v2.x, use these definitions
+--- Makefile.orig	Thu Jun 29 17:26:58 2000
++++ Makefile	Thu Jun 29 17:28:05 2000
+@@ -17,8 +17,8 @@
+ 
+ BINDIR = /usr/local/bin
+ #BINDIR = //C/bin
+-MANDIR = /home/auspex/h/bair/phelps/man/man1
+-#MANDIR = /usr/local/man/man1
++#MANDIR = /home/auspex/h/bair/phelps/man/man1
++MANDIR = /usr/local/man/man1
+ 
+ 
+ ### if you have GNU gcc v2.x, use these definitions
