@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/02/26 12:34:22 alek Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -23,13 +23,14 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto curses kvm m readline 
 
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
 PKG_ARCH=	*
+.else
+WANTLIB=		c crypto curses kvm m readline 
 .endif
 
 SEPARATE_BUILD=	concurrent
