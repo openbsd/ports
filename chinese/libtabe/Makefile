@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/03/02 04:46:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2004/03/30 09:26:54 kevlo Exp $
 
 COMMENT=	"library for Chinese language processing"
 
@@ -24,8 +24,6 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \
 		--with-db-lib=${LOCALBASE}/lib/db \
 		${CONFIGURE_SHARED}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKDIST=	${WRKDIR}/libtabe
 
