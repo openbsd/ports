@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/10 20:59:27 jsyn Exp $
+# $OpenBSD: Makefile,v 1.18 2003/12/08 04:05:28 margarida Exp $
 
-COMMENT=	"Simple WATCHdog log filtering program"
+COMMENT=	"simple WATCHdog log filtering program"
 
-DISTNAME=	swatch-3.0.1
+DISTNAME=	swatch-3.0.8
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/ \
-		ftp://ftp.stanford.edu/general/security-tools/swatch/ \
-      		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/} \
+		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 
-HOMEPAGE=	http://www.stanford.edu/~atkins/swatch/
+HOMEPAGE=	http://swatch.sourceforge.net/
 
 MAINTAINER=	Jason Peel <jsyn@openbsd.org>
 
