@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/17 21:34:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/03 10:02:52 jakob Exp $
 
 COMMENT=	optimise a list of route prefixes
 
-DISTNAME=	aggregate-1.3
+DISTNAME=	aggregate-1.5
 CATEGORIES=	net
 NEED_VERSION=	1.363
 
