@@ -1,8 +1,8 @@
-# $OpenBSD: tomcat.rc,v 1.1 2003/12/15 21:25:06 sturm Exp $
+# $OpenBSD: tomcat.rc,v 1.2 2004/04/01 05:55:47 sturm Exp $
 #
 # define JAVA_HOME for tomcat-user; sudo doesn't pass environment variables
 # allows to start tomcat with following command:
-# $ sudo -u tomcat y0y0y0/bin/startup.sh
+# $ sudo -u _tomcat y0y0y0/bin/startup.sh
 #
 
 JAVA_HOME=y0y0y1
