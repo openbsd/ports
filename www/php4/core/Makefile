@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2003/08/21 15:05:21 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2003/08/28 22:30:38 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
-#BROKEN=	'writes all over /var/www'
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"

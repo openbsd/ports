@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile.inc,v 1.14 2003/05/28 19:29:14 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2003/08/28 22:30:38 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-V=		4.3.2
+V=		4.3.3
 DISTNAME=	php-${V}
 CATEGORIES=	www lang
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://www.php.net/
 
-MASTER_SITES=	http://www.php.net/distributions/ \
+MASTER_SITES=	http://us2.php.net/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/ \
 		http://uk.php.net/distributions/

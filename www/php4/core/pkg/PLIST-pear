@@ -1,13 +1,13 @@
-pear/lib/.registry/Archive_Tar.reg
-pear/lib/.registry/Console_Getopt.reg
-pear/lib/.registry/PEAR.reg
-pear/lib/.registry/DB.reg
-pear/lib/.registry/HTTP.reg
-pear/lib/.registry/Mail.reg
-pear/lib/.registry/Net_SMTP.reg
-pear/lib/.registry/Net_Socket.reg
-pear/lib/.registry/XML_Parser.reg
-pear/lib/.registry/XML_RPC.reg
+pear/lib/.registry/archive_tar.reg
+pear/lib/.registry/console_getopt.reg
+pear/lib/.registry/pear.reg
+pear/lib/.registry/db.reg
+pear/lib/.registry/http.reg
+pear/lib/.registry/mail.reg
+pear/lib/.registry/net_smtp.reg
+pear/lib/.registry/net_socket.reg
+pear/lib/.registry/xml_parser.reg
+pear/lib/.registry/xml_rpc.reg
 pear/lib/.lock
 pear/lib/.filemap
 pear/lib/Archive/Tar.php
@@ -23,6 +23,7 @@ pear/lib/PEAR/Command/Install.php
 pear/lib/PEAR/Command/Package.php
 pear/lib/PEAR/Command/Registry.php
 pear/lib/PEAR/Command/Remote.php
+pear/lib/PEAR/Command/Mirror.php
 pear/lib/PEAR/Command/Auth.php
 pear/lib/PEAR/Config.php
 pear/lib/PEAR/Dependency.php
@@ -52,6 +53,7 @@ pear/lib/DB/odbc.php
 pear/lib/DB/pgsql.php
 pear/lib/DB/sybase.php
 pear/lib/DB/storage.php
+pear/lib/DB/sqlite.php
 pear/lib/DB/common.php
 pear/lib/DB.php
 pear/lib/HTTP.php
@@ -61,80 +63,46 @@ pear/lib/Mail/RFC822.php
 pear/lib/Mail/mail.php
 pear/lib/Mail.php
 pear/doc/Archive_Tar/docs/Archive_Tar.txt
-pear/doc/DB/DB/MAINTAINERS
-pear/doc/DB/DB/STATUS
-pear/doc/DB/DB/TESTERS
-pear/doc/DB/DB/IDEAS
+pear/doc/DB/doc/MAINTAINERS
+pear/doc/DB/doc/STATUS
+pear/doc/DB/doc/TESTERS
+pear/doc/DB/doc/IDEAS
 pear/data/PEAR/template.spec
 pear/data/PEAR/package.dtd
 pear/tests/DB/tests/db_parsedsn.phpt
 pear/tests/DB/tests/db_factory.phpt
 pear/tests/DB/tests/db_ismanip.phpt
 pear/tests/DB/tests/db_error2.phpt
-pear/tests/DB/tests/oci8/08affectedrows.phpt
-pear/tests/DB/tests/oci8/09numrows.phpt
-pear/tests/DB/tests/oci8/13limit.phpt
-pear/tests/DB/tests/oci8/05sequences.phpt
-pear/tests/DB/tests/oci8/07errornative.phpt
-pear/tests/DB/tests/oci8/01connect.phpt
-pear/tests/DB/tests/oci8/10errormap.phpt
-pear/tests/DB/tests/oci8/04numcols.phpt
-pear/tests/DB/tests/oci8/03simplequery.phpt
-pear/tests/DB/tests/oci8/02fetch.phpt
-pear/tests/DB/tests/oci8/06prepexec.phpt
-pear/tests/DB/tests/odbc/09numrows.phpt
-pear/tests/DB/tests/odbc/07errornative.phpt
-pear/tests/DB/tests/odbc/01connect.phpt
-pear/tests/DB/tests/odbc/10errormap.phpt
-pear/tests/DB/tests/odbc/04numcols.phpt
-pear/tests/DB/tests/odbc/03simplequery.phpt
-pear/tests/DB/tests/odbc/02fetch.phpt
-pear/tests/DB/tests/odbc/06prepexec.phpt
-pear/tests/DB/tests/ibase/05sequences.phpt
-pear/tests/DB/tests/ibase/01connect.phpt
-pear/tests/DB/tests/ibase/10errormap.phpt
-pear/tests/DB/tests/ibase/04numcols.phpt
-pear/tests/DB/tests/ibase/03simplequery.phpt
-pear/tests/DB/tests/ibase/02fetch.phpt
-pear/tests/DB/tests/ibase/06prepexec.phpt
-pear/tests/DB/tests/mysql/08affectedrows.phpt
-pear/tests/DB/tests/mysql/09numrows.phpt
-pear/tests/DB/tests/mysql/13limit.phpt
-pear/tests/DB/tests/mysql/05sequences.phpt
-pear/tests/DB/tests/mysql/07errornative.phpt
-pear/tests/DB/tests/mysql/12tableinfo.phpt
-pear/tests/DB/tests/mysql/01connect.phpt
-pear/tests/DB/tests/mysql/10errormap.phpt
-pear/tests/DB/tests/mysql/04numcols.phpt
-pear/tests/DB/tests/mysql/03simplequery.phpt
-pear/tests/DB/tests/mysql/14fetchmode_object.phpt
-pear/tests/DB/tests/mysql/02fetch.phpt
-pear/tests/DB/tests/mysql/06prepexec.phpt
-pear/tests/DB/tests/pgsql/11transact.phpt
-pear/tests/DB/tests/pgsql/08affectedrows.phpt
-pear/tests/DB/tests/pgsql/09numrows.phpt
-pear/tests/DB/tests/pgsql/13limit.phpt
-pear/tests/DB/tests/pgsql/05sequences.phpt
-pear/tests/DB/tests/pgsql/07errornative.phpt
-pear/tests/DB/tests/pgsql/01connect.phpt
-pear/tests/DB/tests/pgsql/10errormap.phpt
-pear/tests/DB/tests/pgsql/04numcols.phpt
-pear/tests/DB/tests/pgsql/03simplequery.phpt
-pear/tests/DB/tests/pgsql/14fetchmode_object.phpt
-pear/tests/DB/tests/pgsql/02fetch.phpt
-pear/tests/DB/tests/pgsql/06prepexec.phpt
+pear/tests/DB/tests/errors.inc
+pear/tests/DB/tests/fetchmode_object.inc
+pear/tests/DB/tests/fetchmodes.inc
+pear/tests/DB/tests/fetchrow.inc
+pear/tests/DB/tests/include.inc
+pear/tests/DB/tests/limit.inc
+pear/tests/DB/tests/numcols.inc
+pear/tests/DB/tests/numrows.inc
+pear/tests/DB/tests/prepexe.inc
+pear/tests/DB/tests/sequences.inc
+pear/tests/DB/tests/simplequery.inc
+pear/tests/DB/tests/tableinfo.inc
+pear/tests/DB/tests/transactions.inc
+pear/tests/DB/tests/driver/02fetch.phpt
+pear/tests/DB/tests/driver/03simplequery.phpt
+pear/tests/DB/tests/driver/04numcols.phpt
+pear/tests/DB/tests/driver/05sequences.phpt
+pear/tests/DB/tests/driver/06prepexec.phpt
 pear/tests/DB/tests/driver/08affectedrows.phpt
 pear/tests/DB/tests/driver/09numrows.phpt
-pear/tests/DB/tests/driver/13limit.phpt
-pear/tests/DB/tests/driver/05sequences.phpt
-pear/tests/DB/tests/driver/15quote.phpt
-pear/tests/DB/tests/driver/01connect.phpt
 pear/tests/DB/tests/driver/10errormap.phpt
-pear/tests/DB/tests/driver/04numcols.phpt
-pear/tests/DB/tests/driver/03simplequery.phpt
+pear/tests/DB/tests/driver/13limit.phpt
 pear/tests/DB/tests/driver/14fetchmode_object.phpt
-pear/tests/DB/tests/driver/02fetch.phpt
-pear/tests/DB/tests/driver/06prepexec.phpt
+pear/tests/DB/tests/driver/15quote.phpt
+pear/tests/DB/tests/driver/bug22328.phpt
+pear/tests/DB/tests/driver/connect.inc
+pear/tests/DB/tests/driver/mktable.inc
+pear/tests/DB/tests/driver/setup.inc
+pear/tests/DB/tests/driver/skipif.inc
+pear/tests/DB/tests/driver/01connect.phpt
 pear/tests/DB/tests/db_error.phpt
 pear/tests/XML_Parser/tests/002.phpt
 pear/tests/XML_Parser/tests/003.phpt
@@ -263,6 +231,7 @@ pear/include/ext/xml/expat/winconfig.h
 pear/include/ext/xml/expat/utf8tab.h
 pear/include/ext/xml/expat/nametab.h
 pear/include/ext/xml/expat/latin1tab.h
+pear/include/ext/xml/expat/internal.h
 pear/include/ext/xml/expat/iasciitab.h
 pear/include/ext/xml/expat/expat.h
 pear/include/ext/xml/expat/asciitab.h
@@ -334,38 +303,43 @@ pear/build/Makefile.global
 pear/build/shtool
 pear/build/mkdep.awk
 pear/build/phpize.m4
-@dirrm pear/lib/.registry
-@dirrm pear/lib/PEAR/Command
-@dirrm pear/lib/PEAR/Frontend
-@dirrm pear/lib/PEAR
-@dirrm pear/doc/Archive_Tar/docs
-@dirrm pear/doc/Archive_Tar
-@dirrm pear/doc/DB/DB
-@dirrm pear/doc/DB
-@dirrm pear/doc
-@dirrm pear/data/PEAR
-@dirrm pear/data
-@dirrm pear/tests/DB/tests/oci8
-@dirrm pear/tests/DB/tests/odbc
-@dirrm pear/tests/DB/tests/ibase
-@dirrm pear/tests/DB/tests/mysql
-@dirrm pear/tests/DB/tests/pgsql
+@dirrm pear/build
+@dirrm pear/include/regex
+@dirrm pear/include/main
+@dirrm pear/include/ext/pgsql
+@dirrm pear/include/ext/mbstring
+@dirrm pear/include/ext/xml/expat
+@dirrm pear/include/ext/xml
+@dirrm pear/include/ext/session
+@dirrm pear/include/ext/standard
+@dirrm pear/include/ext
+@dirrm pear/include/TSRM
+@dirrm pear/include/Zend
+@dirrm pear/include
+@dirrm pear/tests/XML_Parser/tests
+@dirrm pear/tests/XML_Parser
 @dirrm pear/tests/DB/tests/driver
 @dirrm pear/tests/DB/tests
 @dirrm pear/tests/DB
-@dirrm pear/tests/XML_Parser/tests
-@dirrm pear/tests/XML_Parser
 @dirrm pear/tests
-@dirrm pear/include/Zend
-@dirrm pear/include/TSRM
-@dirrm pear/include/ext/standard
-@dirrm pear/include/ext/session
-@dirrm pear/include/ext/xml/expat
-@dirrm pear/include/ext/xml
-@dirrm pear/include/ext/mbstring
-@dirrm pear/include/ext/pgsql
-@dirrm pear/include/ext
-@dirrm pear/include/main
-@dirrm pear/include/regex
-@dirrm pear/include
-@dirrm pear/build
+@dirrm pear/data/PEAR
+@dirrm pear/data
+@dirrm pear/doc/DB/doc
+@dirrm pear/doc/DB
+@dirrm pear/doc/Archive_Tar/docs
+@dirrm pear/doc/Archive_Tar
+@dirrm pear/doc
+@dirrm pear/lib/Mail
+@dirrm pear/lib/DB
+@dirrm pear/lib/XML/RPC
+@dirrm pear/lib/XML
+@dirrm pear/lib/Net
+@dirrm pear/lib/OS
+@dirrm pear/lib/PEAR/Frontend
+@dirrm pear/lib/PEAR/Command
+@dirrm pear/lib/PEAR
+@dirrm pear/lib/Console
+@dirrm pear/lib/Archive
+@dirrm pear/lib/.registry
+@dirrm pear/lib
+@dirrm pear
