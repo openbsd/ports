@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.110 1999/08/17 03:11:35 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.111 1999/08/22 23:44:51 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -786,6 +786,8 @@ MOTIFLIB?=	-L${X11BASE}/lib -lXm
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
 CAT?=		/bin/cat
+CHMOD?=		/bin/chmod
+CHOWN?=		/usr/sbin/chown
 CP?=		/bin/cp
 DIRNAME?=	/usr/bin/dirname
 ECHO?=		/bin/echo
@@ -832,20 +834,24 @@ INSTALL_TARGET+=	install.man
 # Popular master sites
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.eu.net/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.uni-paderborn.de/pub/X11/contrib/%SUBDIR%/ \
+	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
-	ftp://prep.ai.mit.edu/pub/gnu/%SUBDIR%/ \
-	ftp://wuarchive.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.cs.ubc.ca/mirror2/gnu/%SUBDIR%/ \
+	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.gamma.ru/pub/gnu/%SUBDIR%/ \
-	ftp://tron.um.u-tokyo.ac.jp/pub/GNU/prep/%SUBDIR%/
+	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
+	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
+	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
+	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
