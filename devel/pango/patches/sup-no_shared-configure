@@ -1,0 +1,21 @@
+$OpenBSD: sup-no_shared-configure,v 1.1 2003/08/13 16:57:51 marcm Exp $
+--- configure.orig	2003-06-08 21:24:11.000000000 -0700
++++ configure	2003-08-12 15:15:19.000000000 -0700
+@@ -19923,7 +19923,7 @@ echo "${ECHO_T}$FONTCONFIG_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking FONTCONFIG_LIBS" >&5
+ echo $ECHO_N "checking FONTCONFIG_LIBS... $ECHO_C" >&6
+-            FONTCONFIG_LIBS=`$PKG_CONFIG --libs "fontconfig >= 1.0.1"`
++            FONTCONFIG_LIBS="`$PKG_CONFIG --libs "fontconfig >= 1.0.1"` -lexpat"
+             echo "$as_me:$LINENO: result: $FONTCONFIG_LIBS" >&5
+ echo "${ECHO_T}$FONTCONFIG_LIBS" >&6
+         else
+@@ -20145,7 +20145,7 @@ echo "${ECHO_T}$XFT_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking XFT_LIBS" >&5
+ echo $ECHO_N "checking XFT_LIBS... $ECHO_C" >&6
+-            XFT_LIBS=`$PKG_CONFIG --libs "xft >= 2.0.0"`
++            XFT_LIBS="`$PKG_CONFIG --libs "xft >= 2.0.0"` -lexpat"
+             echo "$as_me:$LINENO: result: $XFT_LIBS" >&5
+ echo "${ECHO_T}$XFT_LIBS" >&6
+         else

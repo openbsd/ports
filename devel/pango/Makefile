@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/06/30 03:57:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/08/13 16:57:51 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
@@ -40,3 +40,8 @@ post-install:
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/pango/
 
 .include <bsd.port.mk>
+
+# Work around a fontconfig linking issue on static arches
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+PATCH_LIST=		patch-* sup-no_shared-*
+.endif
