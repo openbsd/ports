@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2002/03/20 02:13:44 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2002/03/20 08:27:43 mark Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += bnetd
      SUBDIR += burgerspace
 #    SUBDIR += bs
+     SUBDIR += castle-combat
      SUBDIR += cgoban
      SUBDIR += connect4
      SUBDIR += corewars
