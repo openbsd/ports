@@ -1,6 +1,7 @@
---- mencal.orig	Wed Jun 26 09:59:57 2002
-+++ mencal	Wed Jun 26 10:00:31 2002
-@@ -271,12 +271,6 @@
+$OpenBSD: patch-mencal,v 1.2 2003/06/10 06:33:05 kevlo Exp $
+--- mencal.orig	Tue Jun 10 14:24:55 2003
++++ mencal	Tue Jun 10 14:25:26 2003
+@@ -276,12 +276,6 @@ package Main;
      }
    }
    
