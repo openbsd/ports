@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1998/04/14 22:53:07 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/05/06 02:50:59 marc Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
+LIB_DEPENDS=	png\\.1\\.:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
-		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
@@ -56,7 +56,7 @@ post-extract:
 	${TOUCH} ${WRKSRC}/adler32.o
 	${TOUCH} ${WRKSRC}/deflate.o
 	${TOUCH} ${WRKSRC}/trees.o
-	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6a ${WRKSRC}/jpeg-6a
+	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg-6b
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.1 ${WRKSRC}/libpng
 	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
 

@@ -1,12 +1,39 @@
---- unix-gcc.mak.orig	Tue Nov 25 03:29:01 1997
-+++ unix-gcc.mak	Wed Feb 11 20:35:43 1998
-@@ -1,3 +1,5 @@
+--- unix-gcc.mak.orig	Mon Nov 24 18:29:01 1997
++++ unix-gcc.mak	Mon May  4 11:39:53 1998
+@@ -1,3 +1,7 @@
++DEVICE_DEVS=/openbsd/ports/print/ghostscript5/scripts/configure:.dev /openbsd/ports/print/ghostscript5/scripts/configure[156]:.dev /usr/bin/dialog:.dev not.dev found.dev
++DEVICE_DEVS=/openbsd/ports/print/ghostscript5/scripts/configure:.dev /openbsd/ports/print/ghostscript5/scripts/configure[156]:.dev /usr/bin/dialog:.dev not.dev found.dev
 +DEVICE_DEVS=/d/c1d/ports/print/ghostscript5/scripts/configure:.dev /d/c1d/ports/print/ghostscript5/scripts/configure[156]:.dev /usr/bin/dialog:.dev not.dev found.dev
 +DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev sxlcrt.dev ap3250.dev appledmp.dev bj10e.dev bj200.dev bjc600.dev bjc800.dev ccr.dev cdeskjet.dev cdjcolor.dev cdjmono.dev cdj500.dev cdj550.dev cdj850.dev cp50.dev declj250.dev deskjet.dev djet500.dev djet500c.dev dnj650c.dev epson.dev eps9mid.dev eps9high.dev epsonc.dev ibmpro.dev imagen.dev iwhi.dev iwlo.dev iwlq.dev jetp3852.dev laserjet.dev la50.dev la70.dev la75.dev la75plus.dev lbp8.dev lips3.dev ln03.dev lj250.dev ljet2p.dev ljet3.dev ljet3d.dev ljet4.dev lj4dith.dev ljetplus.dev lj5mono.dev lj5gray.dev lp2563.dev lp8000.dev m8510.dev necp6.dev oce9050.dev oki182.dev okiibm.dev paintjet.dev pj.dev pjetxl.dev pjxl.dev pjxl300.dev pxlmono.dev pxlcolor.dev r4081.dev sj48.dev st800.dev stcolor.dev t4693d2.dev t4693d4.dev t4693d8.dev tek4696.dev uniprint.dev xes.dev dfaxhigh.dev dfaxlow.dev faxg3.dev faxg32d.dev faxg4.dev tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev epswrite.dev pdfwrite.dev pswrite.dev pxlmono.dev pxlcolor.dev bit.dev bitrgb.dev bitcmyk.dev bmpmono.dev bmp16.dev bmp256.dev bmp16m.dev cgmmono.dev cgm8.dev cgm24.dev cif.dev jpeg.dev jpeggray.dev miff24.dev mgrmono.dev mgrgray2.dev mgrgray4.dev mgrgray8.dev mgr4.dev mgr8.dev pdfwrite.dev pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev pcxcmyk.dev pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev pkmraw.dev pngmono.dev pnggray.dev png16.dev png256.dev png16m.dev psmono.dev psgray.dev sgirgb.dev tiff12nc.dev tiff24nc.dev tifflzw.dev tiffpack.dev
  #    Copyright (C) 1997 Aladdin Enterprises.  All rights reserved.
  # 
  # This file is part of Aladdin Ghostscript.
-@@ -151,7 +153,7 @@
+@@ -130,7 +134,7 @@
+ # You may need to change this if the IJG library version changes.
+ # See jpeg.mak for more information.
+ 
+-JSRCDIR=jpeg-6a
++JSRCDIR=jpeg-6b
+ JVERSION=6
+ 
+ # Define the directory where the PNG library sources are stored,
+@@ -138,26 +142,26 @@
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-PSRCDIR=libpng
+-PVERSION=96
++PSRCDIR=/usr/local/include
++#PVERSION=96
+ 
+ # Choose whether to use a shared version of the PNG library, and if so,
+ # what its name is.
+ # See gs.mak and make.txt for more information.
+ 
+-SHARE_LIBPNG=0
++SHARE_LIBPNG=1
+ LIBPNG_NAME=png
+ 
  # Define the directory where the zlib sources are stored.
  # See zlib.mak for more information.
  
@@ -15,7 +42,14 @@
  
  # Choose whether to use a shared version of the zlib library, and if so,
  # what its name is (usually libz, but sometimes libgz).
-@@ -176,7 +178,7 @@
+ # See gs.mak and make.txt for more information.
+ 
+-SHARE_ZLIB=0
++SHARE_ZLIB=1
+ #ZLIB_NAME=gz
+ ZLIB_NAME=z
+ 
+@@ -176,7 +180,7 @@
  
  # Define the name of the C compiler.
  
@@ -24,7 +58,16 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -218,7 +220,7 @@
+@@ -208,7 +212,7 @@
+ # Define platform flags for ld.
+ # SunOS 4.n may need -Bstatic.
+ # XLDFLAGS can be set from the command line.
+-XLDFLAGS=
++XLDFLAGS=-L/usr/local/lib
+ 
+ LDFLAGS=$(XLDFLAGS)
+ 
+@@ -218,7 +222,7 @@
  # SVR4 may need -lnsl.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -33,7 +76,7 @@
  
  # Define the include switch(es) for the X11 header files.
  # This can be null if handled in some other way (e.g., the files are
-@@ -228,7 +230,7 @@
+@@ -228,7 +232,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -42,7 +85,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -243,9 +245,9 @@
+@@ -243,9 +247,9 @@
  #XLIBS=Xt SM ICE Xext X11
  
  #XLIBDIRS=-L/usr/local/X/lib
@@ -54,7 +97,7 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -287,22 +289,22 @@
+@@ -287,22 +291,22 @@
  
  # Choose the device(s) to include.  See devs.mak for details.
  
@@ -93,7 +136,7 @@
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -3676,8 +3678,8 @@
+@@ -3676,8 +3680,8 @@
  libpng95.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
  	$(SETMOD) libpng95 pngwio.$(OBJ) -include crc32
  
@@ -104,7 +147,7 @@
  #    Copyright (C) 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
  # 
  # This file is part of Aladdin Ghostscript.
-@@ -3758,7 +3760,7 @@
+@@ -3758,7 +3762,7 @@
  zlibe_1.dev: $(MAKEFILE) $(ZLIB_MAK) $(ECHOGS_XE)
  	$(SETMOD) zlibe_1 -lib $(ZLIB_NAME)
  
@@ -113,7 +156,7 @@
  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
  	$(SETMOD) zlibe_0 $(zlibe_)
  	$(ADDMOD) zlibe_0 -include zlibc
-@@ -3805,11 +3807,11 @@
+@@ -3805,11 +3809,11 @@
  
  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
@@ -130,7 +173,7 @@
  
  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
  	$(CP_) $(ZSRC)infblock.c .
-@@ -4584,8 +4586,13 @@
+@@ -4584,8 +4588,13 @@
  
  cdeskjet_=gdevcdj.$(OBJ) $(HPPCL)
  
