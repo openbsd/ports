@@ -1,0 +1,5 @@
+man/man1/zip.1.gz
+bin/zip
+bin/zipnote
+bin/zipsplit
+bin/zipcloak
