@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1 2000/06/04 22:42:06 espie Exp $
+--- Makefile.orig	Wed Apr 12 11:44:50 2000
++++ Makefile	Mon Jun  5 00:34:11 2000
+@@ -65,7 +65,12 @@ go:; @cd build-$(buildname); $(MAKE) SHE
+ # The installation commands are kept in a separate script, which expects
+ # to be run from inside the build directory.
+ 
+-install:; 	@cd build-$(buildname); $(SHELL) ../scripts/exim_install
++install:
++	@cd build-$(buildname); \
++    INST_BIN_DIRECTORY=$(DESTDIR)/usr/local/sbin \
++    INST_INFO_DIRECTORY=${DESTDIR}/usr/local/info \
++    INST_CONFIGURE_FILE=${DESTDIR}/etc/exim/configure \
++    $(SHELL) ../scripts/exim_install
+ 
+ # Tidy-up targets
+ 

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/06/04 22:42:06 espie Exp $
 sbin/exim
 sbin/eximon
 sbin/eximon.bin
@@ -12,17 +13,17 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
 sbin/exim_lock
-@unexec install-info --delete %D/info/exim_overview.info %D/info/dir
-@unexec install-info --delete %D/info/exim.info %D/info/dir
-@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
 info/exim_overview.info
 info/exim.info
 info/exim_filter.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
 @exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
 @exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
+@unexec install-info --delete %D/info/exim_overview.info %D/info/dir
+@unexec install-info --delete %D/info/exim.info %D/info/dir
+@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
+lib/exim/configure.sample
 @exec [ -d /etc/exim ] || mkdir /etc/exim
-@cwd /etc/exim
-configure.sample
-@exec [ -f %D/configure ] || install -m 644 %D/configure.sample %D/configure
+@exec [ -f /etc/exim/configure ] || install -m 644 %D/%F /etc/exim/configure
+@dirrm lib/exim
+@unexec echo "Please remove the /etc/exim directory manually"

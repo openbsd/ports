@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/26 09:40:57 peter Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/04 22:42:05 espie Exp $
 #
 
 DISTNAME=	exim-3.14
 CATEGORIES=	mail
-FAKE=No
+#FAKE=No
 
 MAINTAINER=	peter.galbavy@knowledge.com
 
@@ -25,26 +25,11 @@ do-configure:
 	done )
 
 pre-install:
-	${INSTALL} -d /etc/exim
+	${INSTALL} -d ${DESTDIR}/etc/exim
 
 post-install:
-	@cp ${WRKSRC}/src/configure.default /etc/exim/configure.sample
-	@echo "EXIM is installed. You must now edit /etc/exim/configure"
-	@echo "and set the correct values for your system."
-	@echo
-	@echo "It is strongly advised that you configure exim to use"
-	@echo "a UID and GID other that 0/0. You can do this by adding"
-	@echo "lines to the configure file like this:"
-	@echo
-	@echo "\texim_user = \"nobody\""
-	@echo "\texim_group = \"nogroup\""
-	@echo
-	@echo "but you must remember to allow that user write"
-	@echo "permissions to /var/log/exim and /var/spool/exim"
-	@echo
-	@echo "If you intend replacing sendmail with exim, then don't"
-	@echo "forget to modify /etc/mailer.conf accordingly."
-	@echo
+	${INSTALL_DATA_DIR}	${PREFIX}/lib/exim
+	@cp ${WRKSRC}/src/configure.default ${PREFIX}/lib/exim/configure.sample
 
 
 .include <bsd.port.mk>

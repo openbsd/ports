@@ -1,0 +1,16 @@
+EXIM is installed. You must now edit /etc/exim/configure
+and set the correct values for your system.
+
+It is strongly advised that you configure exim to use
+a UID and GID other that 0/0. You can do this by adding
+lines to the configure file like this:
+
+\texim_user = "nobody"
+\texim_group = "nogroup"
+
+but you must remember to allow that user write
+permissions to /var/log/exim and /var/spool/exim
+
+If you intend replacing sendmail with exim, then don't
+forget to modify /etc/mail/mailer.conf accordingly.
+

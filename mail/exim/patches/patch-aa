@@ -1,6 +1,6 @@
---- src/transports/appendfile.c.orig	Sat Apr 22 12:20:32 2000
-+++ src/transports/appendfile.c	Sat Apr 22 13:20:23 2000
-@@ -2330,9 +2330,16 @@
+--- src/transports/appendfile.c.orig	Wed Apr 12 11:44:59 2000
++++ src/transports/appendfile.c	Mon Jun  5 00:14:52 2000
+@@ -2330,9 +2330,16 @@ opened, so that it goes away on closure.
  #ifdef SUPPORT_MBX
  if (yield == OK && ob->mbx_format)
    {
