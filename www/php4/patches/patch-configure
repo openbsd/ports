@@ -1,0 +1,10 @@
+--- configure	Tue Aug 29 14:37:36 2000
++++ configure	Mon Sep  4 15:56:54 2000
+@@ -22456,6 +22456,7 @@
+ echo "configure:22457: checking for MySQL UNIX socket" >&5
+   MYSQL_SOCK=/tmp/mysql.sock
+   for i in  \
++      /var/mysql/mysql.sock \
+       /var/run/mysqld/mysqld.sock \
+       /var/tmp/mysql.sock \
+       /var/lib/mysql/mysql.sock \
