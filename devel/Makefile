@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/03/30 21:14:30 danh Exp $
+# $OpenBSD: Makefile,v 1.67 2001/04/02 15:16:58 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -72,6 +72,7 @@
 #    SUBDIR += mkmf
      SUBDIR += mm
 #    SUBDIR += mprof
+     SUBDIR += mysql++
 #    SUBDIR += nana
      SUBDIR += nasm
 #    SUBDIR += noweb
