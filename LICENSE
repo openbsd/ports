@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.43 1999/12/05 18:35:07 jakob Exp $
+$OpenBSD: LICENSE,v 1.44 1999/12/12 22:10:48 jakob Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -401,7 +401,7 @@ Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
 Y	mail/pine			pine4.20.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
 Y	mail/poppassd			pwserve-4			NONE
-Y	mail/postfix			postfix-19990906-pl08.tar.gz	COPY
+Y	mail/postfix			postfix-19990906-pl09.tar.gz	COPY
 Y	mail/procmail			procmail-3.13.1.tar.gz		GPL
 Y	mail/vrfy			vrfy_990522.tar.Z		BSD
 Y	mail/xfaces			xfaces-3.3.tar.Z		BSD
