@@ -3,11 +3,13 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/03 02:31:40 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/04/12 21:41:01 marc Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
 

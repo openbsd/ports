@@ -4,13 +4,15 @@
 # Date created:         2 December 1997
 # Whom:                 niklas
 #
-# $OpenBSD: Makefile,v 1.2 1998/02/10 10:45:19 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 21:41:02 marc Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
 PKGNAME=        rsaref-2.0
 DISTNAME=       rsaref20.1996
 CATEGORIES=     security
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
 EXTRACT_SUFX=   .tar.Z
 

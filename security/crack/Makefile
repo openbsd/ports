@@ -4,12 +4,14 @@
 # Date created:         19 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/20 00:18:15 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/12 21:40:59 marc Exp $
 #
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+
 MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
 		ftp://ftp.lerc.nasa.gov/security/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \

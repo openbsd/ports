@@ -3,11 +3,13 @@
 # Date created:					19 Nov 97
 # Whom:						ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/19 23:21:01 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/12 21:41:05 marc Exp $
 #
 
 DISTNAME=      	swatch-2.2
 CATEGORIES=	security sysutils 
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 

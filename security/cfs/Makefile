@@ -3,11 +3,12 @@
 # Date created:		26 November 1997
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1 1997/11/27 22:22:48 angelos Exp $
+# $Id: Makefile,v 1.2 1998/04/12 21:40:56 marc Exp $
 #
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 MASTER_SITES=	ftp://utopia.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/
 

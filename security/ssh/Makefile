@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.17 1998/04/05 07:29:05 marc Exp $
+# $OpenBSD: Makefile,v 1.18 1998/04/12 21:41:03 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -11,6 +11,8 @@
 
 DISTNAME=       ssh-1.2.22
 CATEGORIES=	security net
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+
 MASTER_SITES= 	\
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/
