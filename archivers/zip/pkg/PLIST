@@ -1,5 +1,8 @@
-man/man1/zip.1
 bin/zip
 bin/zipnote
 bin/zipsplit
 bin/zipcloak
+man/man1/zip.1
+share/doc/zip/README
+share/doc/zip/WHERE
+@dirrm share/doc/zip
