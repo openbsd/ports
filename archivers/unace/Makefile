@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/04/20 17:35:35 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"extract, view & test ACE archives"
 
@@ -25,5 +25,7 @@ WRKDIST=	${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unace ${PREFIX}/bin
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

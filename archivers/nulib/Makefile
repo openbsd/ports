@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/20 17:35:34 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"NuFX archiver"
 
@@ -23,5 +23,7 @@ WRKDIST=	${WRKDIR}/nulib
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nulib ${PREFIX}/bin/nulib
 	${INSTALL_MAN} ${WRKSRC}/nulib.1 ${PREFIX}/man/man1/nulib.1
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

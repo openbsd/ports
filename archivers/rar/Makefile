@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/08/10 14:25:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2001/10/04 22:26:48 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -76,4 +76,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/share/rar
 	${INSTALL_DATA} ${WRKSRC}/Dos.SFX ${PREFIX}/share/rar/dos.sfx
 
+NO_REGRESS=	Yes
 .include <bsd.port.mk>

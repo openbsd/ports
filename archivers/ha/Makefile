@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/20 17:35:33 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"archive files using the HSC compression method"
 
@@ -30,5 +30,7 @@ ALL_TARGET=	ha
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/08/14 18:35:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"extract, list & test files in a ZIP archive"
 
@@ -33,5 +33,9 @@ DOCS=	COPYING.OLD LICENSE README WHERE
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unzip
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/unzip
+
+do-regress:
+	cd ${WRKBUILD} && ./unzip -x -a -o testmake.zip
+	cmp -s ${WRKBUILD}/notes files/notes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/20 17:35:37 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"handle the old .ZOO archive format"
 
@@ -22,5 +22,7 @@ MAKE_FILE=	makefile
 ALL_TARGET=	bsdansi
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/20 17:35:31 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"create & extract files from DOS .ARC files"
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}"
 
 WRKDIST=	${WRKDIR}
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

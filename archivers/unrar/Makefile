@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/20 17:35:36 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"extract, list & test RAR archives"
 
@@ -23,5 +23,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unrar
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} unrar ${PREFIX}/bin
 	cd ${WRKSRC}; ${INSTALL_MAN} readme.txt license.txt ${PREFIX}/share/doc/unrar
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

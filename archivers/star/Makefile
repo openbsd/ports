@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/26 12:03:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/04 22:26:48 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
@@ -48,5 +48,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/star
 	${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl \
 		${PREFIX}/share/examples/star/srmt.conf.sample
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

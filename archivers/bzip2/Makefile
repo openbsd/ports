@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/09/26 18:38:43 heko Exp $
+# $OpenBSD: Makefile,v 1.37 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -30,6 +30,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKBUILD}/*.html ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKBUILD}/bzip2.info ${PREFIX}/info
+
+REGRESS_TARGET=test
 
 .include <bsd.port.mk>
 

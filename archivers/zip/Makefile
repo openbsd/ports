@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/08/14 18:57:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/04 22:26:48 espie Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -38,5 +38,7 @@ post-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zip
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/zip
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

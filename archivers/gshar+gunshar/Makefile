@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/20 17:35:33 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"packing and unpacking of shell archives"
 
@@ -20,5 +20,8 @@ CONFIGURE_ARGS+= --program-prefix="g" --disable-uucode --disable-nls
 
 post-patch:
 	@touch ${WRKSRC}/po/sharutils.pot
+
+# Regression tests apply to uudecode, which we don't build
+NO_REGRESS=Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/20 17:35:36 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/04 22:26:48 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
 
 COMMENT=	"extract files from ARJ archives"
@@ -20,5 +20,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unarj
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} unarj ${PREFIX}/bin
 	cd ${WRKSRC}; ${INSTALL_DATA} unarj.doc technote.doc ${PREFIX}/share/doc/unarj
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

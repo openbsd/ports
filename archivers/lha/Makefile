@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/20 17:35:34 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/04 22:26:48 espie Exp $
 
 COMMENT=	"archive files using LZW compression (.LZH files)"
 
@@ -24,5 +24,6 @@ FAKE_FLAGS=	BINDIR='$${PREFIX}/bin' MANDIR='$${PREFIX}/man/ja_JP.EUC' \
 		INSTALLMAN="${INSTALL_MAN}"
 
 MANLANG=	ja_JP.EUC
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
