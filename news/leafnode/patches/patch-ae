@@ -1,11 +1,20 @@
---- fetch.c.orig	Sun Oct 27 19:34:06 1996
-+++ fetch.c	Fri Dec 19 16:42:23 1997
-@@ -645,7 +645,7 @@
- 	struct newsgroup * g;
+--- texpire.c.orig	Wed Jul 23 11:35:26 1997
++++ texpire.c	Fri Jul 24 22:38:02 1998
+@@ -59,7 +59,7 @@
+     FILE * f;
+     char  *l, *group, *stime, *end;
+     unsigned long i;
+-    struct expire_entry *ent, *prev = NULL;
++    struct expire_entry *ent = NULL, *prev = NULL;
+     
+     sprintf(s, "%s/expireinfo", libdir);
+     if ((f = fopen(s, "r"))) {
+@@ -493,7 +493,7 @@
+     }
  
- 	strcpy( newfile, ".supplement.XXXXX" );
--	o = fopen( mktemp( newfile ), "w" );
-+	o = fopen( mkstemp( newfile ), "w" );
- 	
- 	sprintf( s, "%s/interesting.groups", 
- 		 spooldir );
+     setgid( pw->pw_gid );
+-    setreuid( pw->pw_uid, pw->pw_uid );
++    setuid( pw->pw_uid );
+ 
+     if ( getuid() != pw->pw_uid || getgid() != pw->pw_gid ) {
+ 	fprintf( stderr, "%s: must be run as news or root\n", argv[0] );

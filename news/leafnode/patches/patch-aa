@@ -1,12 +1,114 @@
-*** fetch.c.orig	Fri Jul  4 10:32:32 1997
---- fetch.c	Fri Jul  4 10:32:39 1997
-***************
-*** 14,20 ****
-  #include <ctype.h>
-  #include <dirent.h>
-  #include <fcntl.h>
-- #include <malloc.h>
-  #include <netdb.h>
-  #include <netinet/in.h>
-  #include <pwd.h>
---- 14,19 ----
+--- Makefile.orig	Sun Mar  1 11:48:31 1998
++++ Makefile	Fri Jul 24 22:58:37 1998
+@@ -4,7 +4,7 @@
+ DEBUG = $(RPM_OPT_FLAGS) -O2 -Wall -Wformat -Wstrict-prototypes -Wmissing-prototypes 
+ CFLAGS = $(DEBUG)
+ LIBS = 
+-PREFIX_USR = /usr
++PREFIX_USR = ${PREFIX}
+ PREFIX_VAR = /var
+ BINDIR = $(PREFIX_USR)/sbin
+ MANDIR = $(PREFIX_USR)/man
+@@ -13,13 +13,18 @@
+ # this is the directory where the news is stored.
+ SPOOLDIR = $(PREFIX_VAR)/spool/news
+ #
+-# this is the directory where the configuration and group information is
+-# kept.  It should preferably not be on the same partition as spooldir
++# ETCDIR is where the program will look for configuration and
++# group information, LIBDIR is where an example configuration
++# file will be placed.
++# They should preferably not be on the same partition as spooldir
+ LIBDIR = $(PREFIX_USR)/lib/leafnode
++ETCDIR = /etc/leafnode
++
+ #
+ # This is the lock file for fetch.  The normal locations for such lock
+ # files are /var/run or /var/lock.
+-LOCKFILE = "/var/run/news/fetch.lck"
++LOCKDIR = ${PREFIX_VAR}/run/news
++LOCKFILE = ${LOCKDIR}/fetch.lck
+ 
+ all: nntpd fetch texpire checkgroups
+ 
+@@ -43,7 +48,7 @@
+ 
+ config.o: config.c Makefile
+ 	$(CC) -c -DSPOOLDIR=\"$(SPOOLDIR)\" \
+-		-DLIBDIR=\"$(LIBDIR)\" \
++		-DLIBDIR=\"$(ETCDIR)\" \
+ 		-DLOCKFILE=\"$(LOCKFILE)\" \
+ 		-DVERSION=\"$(VERSION)\" $<
+ 
+@@ -53,23 +58,23 @@
+ 	cp texpire $(BINDIR)/texpire
+ 	cp checkgroups $(BINDIR)/checkgroups
+ 	cp *.8 $(MANDIR)/man8
+-	-mkdir -p /var/run/news
+-	chown news.news /var/run/news
++	-mkdir -p ${LOCKDIR}
++	chown news.news ${LOCKDIR}
+ 	chmod 750 $(BINDIR)/{leafnode,fetch,texpire,checkgroups}
+ 	chown news.news $(BINDIR)/{leafnode,fetch,texpire,checkgroups}
+ 
+ install: nntpd fetch texpire checkgroups
+-	cp nntpd $(BINDIR)/leafnode
+-	cp fetch $(BINDIR)/fetch
+-	cp texpire $(BINDIR)/texpire
+-	cp checkgroups $(BINDIR)/checkgroups
+-	cp newsq $(BINDIR)/newsq
+-	cp texpire.cron $(BINDIR)/texpire.cron
+-	cp *.8 $(MANDIR)/man8
+-	cp newsq.1 $(MANDIR)/man1
+-	-mkdir -p $(PREFIX_VAR)/run/news
+-	chown news.news $(PREFIX_VAR)/run/news
+-	-mkdir -p $(SPOOLDIR) $(LIBDIR)
++	${BSD_INSTALL_PROGRAM} nntpd $(BINDIR)/leafnode
++	${BSD_INSTALL_PROGRAM} fetch $(BINDIR)/fetch
++	${BSD_INSTALL_PROGRAM} texpire $(BINDIR)/texpire
++	${BSD_INSTALL_PROGRAM} checkgroups $(BINDIR)/checkgroups
++	${BSD_INSTALL_PROGRAM} newsq $(BINDIR)/newsq
++	${BSD_INSTALL_PROGRAM} texpire.cron $(BINDIR)/texpire.cron
++	${BSD_INSTALL_MAN} *.8 $(MANDIR)/man8
++	${BSD_INSTALL_MAN} newsq.1 $(MANDIR)/man1
++	-mkdir -p $(LOCKDIR)
++	chown news.news $(LOCKDIR)
++	-mkdir -p $(SPOOLDIR) $(LIBDIR) $(ETCDIR)
+ 	-mkdir -p $(SPOOLDIR)/{message.id,interesting.groups,out.going,failed.postings}
+ 	cd $(SPOOLDIR)/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \
+ 		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
+@@ -78,12 +83,20 @@
+ 				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
+ 				$${a}$${b}9 ; \
+ 			done ; done
+-	cp config.example $(LIBDIR)/config
+-	chown -R news.news $(LIBDIR) $(SPOOLDIR)
++	${BSD_INSTALL_DATA} README INSTALL config.example $(LIBDIR)
++	test -f $(ETCDIR)/config || \
++		${BSD_INSTALL_DATA} config.example $(ETCDIR)/config
++	chown -R news.news $(ETCDIR) $(LIBDIR) $(SPOOLDIR)
+ 	chmod 2750 $(SPOOLDIR)
+ 	chmod 750 $(BINDIR)/{leafnode,fetch,texpire,checkgroups,newsq,texpire.cron}
+ 	chown news.news $(BINDIR)/{leafnode,fetch,texpire,checkgroups,newsq,texpire.cron}
+-	@echo edit /etc/inetd.conf to start $(BINDIR)/leafnode
++	@echo ""
++	@echo "*** edit /etc/inetd.conf to start $(BINDIR)/leafnode"
++	@echo "*** Verify $(ETCDIR)/config -- a copy of which is saved"
++	@echo "*** as $(LIBDIR)/config.example."
++	@echo "*** See $(LIBDIR)/README" and
++	@echo "*** $(LIBDIR)/INSTALL for more information"
++	@echo ""
+ 
+ install-bin: 
+ 	cp linux.bin/nntpd $(BINDIR)/leafnode
+@@ -94,8 +107,8 @@
+ 	cp texpire.cron $(BINDIR)/texpire.cron
+ 	cp *.8 $(MANDIR)/man8
+ 	cp newsq.1 $(MANDIR)/man1
+-	-mkdir -p $(PREFIX_VAR)/run/news
+-	chown news.news $(PREFIX_VAR)/run/news
++	-mkdir -p $(LOCKDIR)
++	chown news.news $(LOCKDIR)
+ 	-mkdir -p $(SPOOLDIR) $(LIBDIR)
+ 	-mkdir -p $(SPOOLDIR)/{message.id,interesting.groups,out.going,failed.postings}
+ 	cd $(SPOOLDIR)/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \

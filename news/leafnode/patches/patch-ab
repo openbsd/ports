@@ -1,33 +1,30 @@
-*** util.c.orig	Fri Jul  4 10:29:40 1997
---- util.c	Fri Jul  4 10:32:43 1997
-***************
-*** 16,22 ****
-  #include <ctype.h>
-  #include <errno.h>
-  #include <limits.h>
-- #include <malloc.h>
-  #include <netdb.h>
-  #include <setjmp.h>
-  #include <signal.h>
---- 16,21 ----
-***************
-*** 485,491 ****
-  
-      strcpy(s, libdir);
-      strcat(s, "/groupinfo");
--     fd = open( s, O_RDONLY );
-      if ( stat( s, &st ) ) {
-  	syslog( LOG_ERR, "can't stat %s: %m", s );
-  	return;
---- 484,489 ----
-***************
-*** 494,499 ****
---- 492,499 ----
-      if ( (fd=open( s, O_RDONLY))<0 ||
-  	 (read( fd, stuff, st.st_size ) < st.st_size) ) {
-  	syslog( LOG_ERR, "can't open/read %s: %m", s );
-+ 	if (fd >= 0)
-+ 	    close( fd );
-  	return;
-      } else {
-  	close( fd );
+--- util.c.~1~	Sun Mar  1 09:50:07 1998
++++ util.c	Fri Jul 24 22:09:07 1998
+@@ -1172,7 +1172,7 @@
+ 			supplement = ns;
+ 		    } else {
+ 			syslog( LOG_ERR, 
+-				"impossibility 122", s );
++				"impossibility 122" );
+ 			exit( 2 );
+ 		    }
+ 		} else {
+@@ -1686,7 +1686,7 @@
+ 		    error, getcwd( s, 1024 ) );
+ 
+ 	strcpy( newfile, ".overview.XXXXXX" );
+-	if ( (wfd=open( mktemp(newfile), O_WRONLY|O_CREAT|O_EXCL, 0664 )) ) {
++	if ( (wfd=mkstemp(newfile)) != -1 ) {
+ 	    struct iovec oooh[UIO_MAXIOV];
+ 	    int vi, vc, va;
+ 
+@@ -1739,8 +1739,7 @@
+ 		   .overview file I think */
+ 	    }
+ 	} else {
+-	    syslog( LOG_ERR, "open(O_WRONLY|O_CREAT|O_EXCL) of new "
+-		    ".overview failed: %m" );
++	    syslog( LOG_ERR, "mkstemp of new .overview failed: %m" );
+ 	}
+     }
+     return 1;
