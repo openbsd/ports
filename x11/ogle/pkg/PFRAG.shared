@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2004/07/14 13:15:02 espie Exp $
-lib/libdvdcontrol.so.11.0
-lib/libmsgevents.so.8.0
-lib/ogle/libdvdcontrol.so.11.0
-lib/ogle/libmsgevents.so.8.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.12 2004/08/10 22:03:35 espie Exp $
+@lib lib/libdvdcontrol.so.11.0
+@lib lib/libmsgevents.so.8.0
+@lib lib/ogle/libdvdcontrol.so.11.0
+@lib lib/ogle/libmsgevents.so.8.0
