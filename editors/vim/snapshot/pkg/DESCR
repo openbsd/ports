@@ -12,8 +12,21 @@ Vim currently runs under Amiga DOS, MS-DOS, MS-Windows 95/98/NT, Atari MiNT,
 Macintosh, BeOS, VMS, RISC OS, OS/2 and almost all flavours of UNIX.
 Porting to other systems should not be very difficult.
 
+WARNING: This is an unstable version.  Most functionality should work fine, but
+in some cases it might crash or even destroy your work.
+
+If you run into something that doesn't work, please try to figure out why, try
+to solve it and send me a patch.  If you can't do that, at least let me know
+exactly how to reproduce the problem.
+
+More info about the new 6.2 features with ":help version6-2".
+
+If you don't like the syntax of a command, the name of an option or how the new
+features work, let's discuss this in the vim-dev maillist.
+
 Flavors:
         gtk        - build using the Gtk+ toolkit (default);
+        gtk2       - build using the Gtk+2 toolkit;
 	motif	   - build using the Motif toolkit;
 	athena	   - build using the Athena toolkit;
 	no_x11	   - build without X11 support;
