@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/03 16:34:36 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/18 01:49:50 brad Exp $
+
+COMMENT=	"SGI audiofile library GPLed clone"
 
 DISTNAME=	audiofile-0.2.1
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.68k.org/pub/michael/ \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/audiofile
