@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2000/02/03 02:41:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.25 2000/05/30 14:23:44 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
      SUBDIR += amanda
      SUBDIR += astrolog
      SUBDIR += buffer
+     SUBDIR += brs
 #    SUBDIR += cal
      SUBDIR += calentool
      SUBDIR += cbb
