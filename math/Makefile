@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/01/28 15:29:58 avsm Exp $
+# $OpenBSD: Makefile,v 1.21 2001/02/04 18:44:47 reinhard Exp $
 #
 
 #    SUBDIR += Scilab
@@ -41,6 +41,7 @@
 #    SUBDIR += pari
 #    SUBDIR += plplot
 #    SUBDIR += r
+     SUBDIR += sc
 #    SUBDIR += siag
 #    SUBDIR += simpack
 #    SUBDIR += ss
