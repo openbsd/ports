@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/04/21 18:45:11 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/05/28 06:25:25 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -39,6 +39,7 @@
      SUBDIR += id-utils
 #    SUBDIR += ilu
      SUBDIR += jdk
+     SUBDIR += jfc
      SUBDIR += kdbg
      SUBDIR += lclint
      SUBDIR += libaudiofile
