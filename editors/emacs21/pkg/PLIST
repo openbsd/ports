@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/05/14 02:15:34 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/07/05 00:27:08 naddy Exp $
 @pkgcfl xemacs-20*
 bin/b2m
 bin/ctags
@@ -11,17 +11,17 @@ bin/grep-changelog
 bin/rcs-checkin
 @unexec install-info --delete %D/info/ada-mode %D/info/dir
 info/ada-mode
-@exec install-info %D/info/ada-mode %D/info/dir
+@exec   install-info          %D/info/ada-mode %D/info/dir
 @unexec install-info --delete %D/info/autotype %D/info/dir
 info/autotype
-@exec install-info %D/info/autotype %D/info/dir
+@exec   install-info          %D/info/autotype %D/info/dir
 @unexec install-info --delete %D/info/ccmode %D/info/dir
 info/ccmode
 info/ccmode-1
 info/ccmode-2
 info/ccmode-3
 info/ccmode-4
-@exec install-info %D/info/ccmode %D/info/dir
+@exec   install-info          %D/info/ccmode %D/info/dir
 @unexec install-info --delete %D/info/cl %D/info/dir
 info/cl
 info/cl-1
@@ -30,7 +30,7 @@ info/cl-3
 info/cl-4
 info/cl-5
 info/cl-6
-@exec install-info %D/info/cl %D/info/dir
+@exec   install-info          %D/info/cl %D/info/dir
 @unexec install-info --delete %D/info/dired-x %D/info/dir
 info/dired-x
 @exec install-info %D/info/dired-x %D/info/dir
@@ -42,7 +42,7 @@ info/ediff
 info/ediff-1
 info/ediff-2
 info/ediff-3
-@exec install-info %D/info/ediff %D/info/dir
+@exec   install-info          %D/info/ediff %D/info/dir
 @unexec install-info --delete %D/info/efaq %D/info/dir
 info/efaq
 info/efaq-1
@@ -50,7 +50,7 @@ info/efaq-2
 info/efaq-3
 info/efaq-4
 info/efaq-5
-@exec install-info %D/info/efaq %D/info/dir
+@exec   install-info          %D/info/efaq %D/info/dir
 @unexec install-info --delete %D/info/emacs %D/info/dir
 info/emacs
 info/emacs-1
@@ -92,16 +92,16 @@ info/emacs-9
 @exec install-info %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/emacs-mime %D/info/dir
 info/emacs-mime
-@exec install-info %D/info/emacs-mime %D/info/dir
+@exec   install-info          %D/info/emacs-mime %D/info/dir
 @unexec install-info --delete %D/info/eshell %D/info/dir
 info/eshell
-@exec install-info %D/info/eshell %D/info/dir
+@exec   install-info          %D/info/eshell %D/info/dir
 @unexec install-info --delete %D/info/eudc %D/info/dir
 info/eudc
-@exec install-info %D/info/eudc %D/info/dir
+@exec   install-info          %D/info/eudc %D/info/dir
 @unexec install-info --delete %D/info/forms %D/info/dir
 info/forms
-@exec install-info %D/info/forms %D/info/dir
+@exec   install-info          %D/info/forms %D/info/dir
 @unexec install-info --delete %D/info/gnus %D/info/dir
 info/gnus
 info/gnus-1
@@ -121,26 +121,26 @@ info/gnus-6
 info/gnus-7
 info/gnus-8
 info/gnus-9
-@exec install-info %D/info/gnus %D/info/dir
+@exec   install-info          %D/info/gnus %D/info/dir
 @unexec install-info --delete %D/info/idlwave %D/info/dir
 info/idlwave
-@exec install-info %D/info/idlwave %D/info/dir
+@exec   install-info          %D/info/idlwave %D/info/dir
 @unexec install-info --delete %D/info/info %D/info/dir
 info/info
-@exec install-info %D/info/info %D/info/dir
+@exec   install-info          %D/info/info %D/info/dir
 @unexec install-info --delete %D/info/message %D/info/dir
 info/message
-@exec install-info %D/info/message %D/info/dir
+@exec   install-info          %D/info/message %D/info/dir
 @unexec install-info --delete %D/info/mh-e %D/info/dir
 info/mh-e
 info/mh-e-1
 info/mh-e-2
 info/mh-e-3
 info/mh-e-4
-@exec install-info %D/info/mh-e %D/info/dir
+@exec   install-info          %D/info/mh-e %D/info/dir
 @unexec install-info --delete %D/info/pcl-cvs %D/info/dir
 info/pcl-cvs
-@exec install-info %D/info/pcl-cvs %D/info/dir
+@exec   install-info          %D/info/pcl-cvs %D/info/dir
 @unexec install-info --delete %D/info/reftex %D/info/dir
 info/reftex
 info/reftex-1
@@ -148,21 +148,21 @@ info/reftex-2
 info/reftex-3
 info/reftex-4
 info/reftex-5
-@exec install-info %D/info/reftex %D/info/dir
+@exec   install-info          %D/info/reftex %D/info/dir
 @unexec install-info --delete %D/info/sc %D/info/dir
 info/sc
 info/sc-1
 info/sc-2
 info/sc-3
-@exec install-info %D/info/sc %D/info/dir
+@exec   install-info          %D/info/sc %D/info/dir
 @unexec install-info --delete %D/info/speedbar %D/info/dir
 info/speedbar
-@exec install-info %D/info/speedbar %D/info/dir
+@exec   install-info          %D/info/speedbar %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 info/vip
 info/vip-1
 info/vip-2
-@exec install-info %D/info/vip %D/info/dir
+@exec   install-info          %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
 info/viper
 info/viper-1
@@ -170,13 +170,13 @@ info/viper-2
 info/viper-3
 info/viper-4
 info/viper-5
-@exec install-info %D/info/viper %D/info/dir
+@exec   install-info          %D/info/viper %D/info/dir
 @unexec install-info --delete %D/info/widget %D/info/dir
 info/widget
-@exec install-info %D/info/widget %D/info/dir
+@exec   install-info          %D/info/widget %D/info/dir
 @unexec install-info --delete %D/info/woman %D/info/dir
 info/woman
-@exec install-info %D/info/woman %D/info/dir
+@exec   install-info          %D/info/woman %D/info/dir
 libexec/emacs/${VERSION}/${GCCARCH}/cvtmail
 libexec/emacs/${VERSION}/${GCCARCH}/digest-doc
 libexec/emacs/${VERSION}/${GCCARCH}/emacsserver
@@ -189,132 +189,131 @@ libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
 libexec/emacs/${VERSION}/${GCCARCH}/sorted-doc
 libexec/emacs/${VERSION}/${GCCARCH}/vcdiff
 libexec/emacs/${VERSION}/${GCCARCH}/yow
-@dirrm libexec/emacs/${VERSION}/${GCCARCH}
-@dirrm libexec/emacs/${VERSION}
-@dirrm libexec/emacs
 man/man1/ctags.1
 man/man1/emacs.1
 man/man1/etags.1
 man/man1/gfdl.1
-share/emacs/${VERSION}/etc/BABYL
-share/emacs/${VERSION}/etc/CENSORSHIP
-share/emacs/${VERSION}/etc/COOKIES
-share/emacs/${VERSION}/etc/COPYING
-share/emacs/${VERSION}/etc/DEBUG
-share/emacs/${VERSION}/etc/DISTRIB
-share/emacs/${VERSION}/etc/DOC-${VERSION}.1
-share/emacs/${VERSION}/etc/FTP
-share/emacs/${VERSION}/etc/GNU
-share/emacs/${VERSION}/etc/HELLO
-share/emacs/${VERSION}/etc/INTERVIEW
-share/emacs/${VERSION}/etc/JOKES
-share/emacs/${VERSION}/etc/LEDIT
-share/emacs/${VERSION}/etc/LINUX-GNU
-share/emacs/${VERSION}/etc/LPF
-share/emacs/${VERSION}/etc/MACHINES
-share/emacs/${VERSION}/etc/MAILINGLISTS
-share/emacs/${VERSION}/etc/MH-E-NEWS
-share/emacs/${VERSION}/etc/MH-E-ONEWS
-share/emacs/${VERSION}/etc/MORE.STUFF
-share/emacs/${VERSION}/etc/MOTIVATION
-share/emacs/${VERSION}/etc/NEWS
-share/emacs/${VERSION}/etc/ONEWS
-share/emacs/${VERSION}/etc/ONEWS.1
-share/emacs/${VERSION}/etc/ONEWS.2
-share/emacs/${VERSION}/etc/ONEWS.3
-share/emacs/${VERSION}/etc/ONEWS.4
-share/emacs/${VERSION}/etc/ORDERS
-share/emacs/${VERSION}/etc/ORDERS.EUROPE
-share/emacs/${VERSION}/etc/ORDERS.JAPAN
-share/emacs/${VERSION}/etc/OTHER.EMACSES
-share/emacs/${VERSION}/etc/PROBLEMS
-share/emacs/${VERSION}/etc/README
-share/emacs/${VERSION}/etc/SERVICE
-share/emacs/${VERSION}/etc/TERMS
-share/emacs/${VERSION}/etc/THE-GNU-PROJECT
-share/emacs/${VERSION}/etc/TODO
-share/emacs/${VERSION}/etc/TUTORIAL
-share/emacs/${VERSION}/etc/TUTORIAL.cs
-share/emacs/${VERSION}/etc/TUTORIAL.de
-share/emacs/${VERSION}/etc/TUTORIAL.es
-share/emacs/${VERSION}/etc/TUTORIAL.ja
-share/emacs/${VERSION}/etc/TUTORIAL.ko
-share/emacs/${VERSION}/etc/TUTORIAL.nl
-share/emacs/${VERSION}/etc/TUTORIAL.pl
-share/emacs/${VERSION}/etc/TUTORIAL.ro
-share/emacs/${VERSION}/etc/TUTORIAL.sk
-share/emacs/${VERSION}/etc/TUTORIAL.sl
-share/emacs/${VERSION}/etc/TUTORIAL.th
-share/emacs/${VERSION}/etc/WHY-FREE
-share/emacs/${VERSION}/etc/Xkeymap.txt
-share/emacs/${VERSION}/etc/celibacy.1
-share/emacs/${VERSION}/etc/condom.1
-share/emacs/${VERSION}/etc/copying.paper
-share/emacs/${VERSION}/etc/cs-dired-ref.ps
-share/emacs/${VERSION}/etc/cs-dired-ref.tex
-share/emacs/${VERSION}/etc/cs-refcard.ps
-share/emacs/${VERSION}/etc/cs-refcard.tex
-share/emacs/${VERSION}/etc/cs-survival.tex
-share/emacs/${VERSION}/etc/ctags.1
-share/emacs/${VERSION}/etc/de-refcard.ps
-share/emacs/${VERSION}/etc/de-refcard.tex
-share/emacs/${VERSION}/etc/dired-ref.ps
-share/emacs/${VERSION}/etc/dired-ref.tex
-share/emacs/${VERSION}/etc/e/eterm
-share/emacs/${VERSION}/etc/e/eterm.ti
-@dirrm share/emacs/${VERSION}/etc/e
-share/emacs/${VERSION}/etc/echo.msg
-share/emacs/${VERSION}/etc/edt-user.doc
-share/emacs/${VERSION}/etc/emacs.1
-share/emacs/${VERSION}/etc/emacs.bash
-share/emacs/${VERSION}/etc/emacs.csh
-share/emacs/${VERSION}/etc/emacs.icon
-share/emacs/${VERSION}/etc/emacs.xbm
-share/emacs/${VERSION}/etc/emacsclient.1
-share/emacs/${VERSION}/etc/emacstool.1
-share/emacs/${VERSION}/etc/enriched.doc
-share/emacs/${VERSION}/etc/etags.1
-share/emacs/${VERSION}/etc/fr-drdref.ps
-share/emacs/${VERSION}/etc/fr-drdref.tex
-share/emacs/${VERSION}/etc/fr-refcard.ps
-share/emacs/${VERSION}/etc/fr-refcard.tex
-share/emacs/${VERSION}/etc/future-bug
-share/emacs/${VERSION}/etc/gfdl.1
-share/emacs/${VERSION}/etc/gnu.xpm
-share/emacs/${VERSION}/etc/gnus-pointer.xbm
-share/emacs/${VERSION}/etc/gnus-pointer.xpm
-share/emacs/${VERSION}/etc/gnus-tut.txt
-share/emacs/${VERSION}/etc/gnus.pbm
-share/emacs/${VERSION}/etc/gnus.xpm
-share/emacs/${VERSION}/etc/ledit.l
-share/emacs/${VERSION}/etc/letter.xbm
-share/emacs/${VERSION}/etc/ms-7bkermit
-share/emacs/${VERSION}/etc/ms-kermit
-share/emacs/${VERSION}/etc/pl-refcard.ps
-share/emacs/${VERSION}/etc/pl-refcard.tex
-share/emacs/${VERSION}/etc/ps-prin0.ps
-share/emacs/${VERSION}/etc/ps-prin1.ps
-share/emacs/${VERSION}/etc/refcard.ps
-share/emacs/${VERSION}/etc/refcard.tex
-share/emacs/${VERSION}/etc/rgb.txt
-share/emacs/${VERSION}/etc/sex.6
-share/emacs/${VERSION}/etc/sk-dired-ref.ps
-share/emacs/${VERSION}/etc/sk-dired-ref.tex
-share/emacs/${VERSION}/etc/sk-refcard.ps
-share/emacs/${VERSION}/etc/sk-refcard.tex
-share/emacs/${VERSION}/etc/sk-survival.tex
-share/emacs/${VERSION}/etc/splash.pbm
-share/emacs/${VERSION}/etc/splash.xpm
-share/emacs/${VERSION}/etc/splash8.xpm
-share/emacs/${VERSION}/etc/spook.lines
-share/emacs/${VERSION}/etc/survival.tex
-share/emacs/${VERSION}/etc/tasks.texi
-share/emacs/${VERSION}/etc/termcap.src
-share/emacs/${VERSION}/etc/ulimit.hack
-share/emacs/${VERSION}/etc/vipcard.tex
-share/emacs/${VERSION}/etc/viperCard.tex
-share/emacs/${VERSION}/etc/yow.lines
-@dirrm share/emacs/${VERSION}/etc
+share/emacs/${VERSION}${SYSCONFDIR}/BABYL
+share/emacs/${VERSION}${SYSCONFDIR}/CENSORSHIP
+share/emacs/${VERSION}${SYSCONFDIR}/COOKIES
+share/emacs/${VERSION}${SYSCONFDIR}/COPYING
+share/emacs/${VERSION}${SYSCONFDIR}/DEBUG
+share/emacs/${VERSION}${SYSCONFDIR}/DISTRIB
+share/emacs/${VERSION}${SYSCONFDIR}/DOC-${VERSION}.1
+share/emacs/${VERSION}${SYSCONFDIR}/FTP
+share/emacs/${VERSION}${SYSCONFDIR}/GNU
+share/emacs/${VERSION}${SYSCONFDIR}/HELLO
+share/emacs/${VERSION}${SYSCONFDIR}/INTERVIEW
+share/emacs/${VERSION}${SYSCONFDIR}/JOKES
+share/emacs/${VERSION}${SYSCONFDIR}/LEDIT
+share/emacs/${VERSION}${SYSCONFDIR}/LINUX-GNU
+share/emacs/${VERSION}${SYSCONFDIR}/LPF
+share/emacs/${VERSION}${SYSCONFDIR}/MACHINES
+share/emacs/${VERSION}${SYSCONFDIR}/MAILINGLISTS
+share/emacs/${VERSION}${SYSCONFDIR}/MH-E-NEWS
+share/emacs/${VERSION}${SYSCONFDIR}/MH-E-ONEWS
+share/emacs/${VERSION}${SYSCONFDIR}/MORE.STUFF
+share/emacs/${VERSION}${SYSCONFDIR}/MOTIVATION
+share/emacs/${VERSION}${SYSCONFDIR}/NEWS
+share/emacs/${VERSION}${SYSCONFDIR}/ONEWS
+share/emacs/${VERSION}${SYSCONFDIR}/ONEWS.1
+share/emacs/${VERSION}${SYSCONFDIR}/ONEWS.2
+share/emacs/${VERSION}${SYSCONFDIR}/ONEWS.3
+share/emacs/${VERSION}${SYSCONFDIR}/ONEWS.4
+share/emacs/${VERSION}${SYSCONFDIR}/ORDERS
+share/emacs/${VERSION}${SYSCONFDIR}/ORDERS.EUROPE
+share/emacs/${VERSION}${SYSCONFDIR}/ORDERS.JAPAN
+share/emacs/${VERSION}${SYSCONFDIR}/OTHER.EMACSES
+share/emacs/${VERSION}${SYSCONFDIR}/PROBLEMS
+share/emacs/${VERSION}${SYSCONFDIR}/README
+share/emacs/${VERSION}${SYSCONFDIR}/SERVICE
+share/emacs/${VERSION}${SYSCONFDIR}/TERMS
+share/emacs/${VERSION}${SYSCONFDIR}/THE-GNU-PROJECT
+share/emacs/${VERSION}${SYSCONFDIR}/TODO
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.cs
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.de
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.es
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.fr
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.it
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.ja
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.ko
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.nl
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.pl
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.ro
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.sk
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.sl
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.sv
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.th
+share/emacs/${VERSION}${SYSCONFDIR}/TUTORIAL.translators
+share/emacs/${VERSION}${SYSCONFDIR}/WHY-FREE
+share/emacs/${VERSION}${SYSCONFDIR}/Xkeymap.txt
+share/emacs/${VERSION}${SYSCONFDIR}/celibacy.1
+share/emacs/${VERSION}${SYSCONFDIR}/condom.1
+share/emacs/${VERSION}${SYSCONFDIR}/copying.paper
+share/emacs/${VERSION}${SYSCONFDIR}/cs-dired-ref.ps
+share/emacs/${VERSION}${SYSCONFDIR}/cs-dired-ref.tex
+share/emacs/${VERSION}${SYSCONFDIR}/cs-refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/cs-refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/cs-survival.tex
+share/emacs/${VERSION}${SYSCONFDIR}/ctags.1
+share/emacs/${VERSION}${SYSCONFDIR}/de-refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/de-refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/dired-ref.ps
+share/emacs/${VERSION}${SYSCONFDIR}/dired-ref.tex
+share/emacs/${VERSION}${SYSCONFDIR}/e/eterm
+share/emacs/${VERSION}${SYSCONFDIR}/e/eterm.ti
+share/emacs/${VERSION}${SYSCONFDIR}/echo.msg
+share/emacs/${VERSION}${SYSCONFDIR}/edt-user.doc
+share/emacs/${VERSION}${SYSCONFDIR}/emacs.1
+share/emacs/${VERSION}${SYSCONFDIR}/emacs.bash
+share/emacs/${VERSION}${SYSCONFDIR}/emacs.csh
+share/emacs/${VERSION}${SYSCONFDIR}/emacs.icon
+share/emacs/${VERSION}${SYSCONFDIR}/emacs.xbm
+share/emacs/${VERSION}${SYSCONFDIR}/emacsclient.1
+share/emacs/${VERSION}${SYSCONFDIR}/emacstool.1
+share/emacs/${VERSION}${SYSCONFDIR}/enriched.doc
+share/emacs/${VERSION}${SYSCONFDIR}/etags.1
+share/emacs/${VERSION}${SYSCONFDIR}/fr-drdref.ps
+share/emacs/${VERSION}${SYSCONFDIR}/fr-drdref.tex
+share/emacs/${VERSION}${SYSCONFDIR}/fr-refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/fr-refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/future-bug
+share/emacs/${VERSION}${SYSCONFDIR}/gfdl.1
+share/emacs/${VERSION}${SYSCONFDIR}/gnu.xpm
+share/emacs/${VERSION}${SYSCONFDIR}/gnus-pointer.xbm
+share/emacs/${VERSION}${SYSCONFDIR}/gnus-pointer.xpm
+share/emacs/${VERSION}${SYSCONFDIR}/gnus-tut.txt
+share/emacs/${VERSION}${SYSCONFDIR}/gnus.pbm
+share/emacs/${VERSION}${SYSCONFDIR}/gnus.xpm
+share/emacs/${VERSION}${SYSCONFDIR}/ledit.l
+share/emacs/${VERSION}${SYSCONFDIR}/letter.xbm
+share/emacs/${VERSION}${SYSCONFDIR}/ms-7bkermit
+share/emacs/${VERSION}${SYSCONFDIR}/ms-kermit
+share/emacs/${VERSION}${SYSCONFDIR}/pl-refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/pl-refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/ps-prin0.ps
+share/emacs/${VERSION}${SYSCONFDIR}/ps-prin1.ps
+share/emacs/${VERSION}${SYSCONFDIR}/refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/rgb.txt
+share/emacs/${VERSION}${SYSCONFDIR}/sex.6
+share/emacs/${VERSION}${SYSCONFDIR}/sk-dired-ref.ps
+share/emacs/${VERSION}${SYSCONFDIR}/sk-dired-ref.tex
+share/emacs/${VERSION}${SYSCONFDIR}/sk-refcard.ps
+share/emacs/${VERSION}${SYSCONFDIR}/sk-refcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/sk-survival.tex
+share/emacs/${VERSION}${SYSCONFDIR}/splash.pbm
+share/emacs/${VERSION}${SYSCONFDIR}/splash.xpm
+share/emacs/${VERSION}${SYSCONFDIR}/splash8.xpm
+share/emacs/${VERSION}${SYSCONFDIR}/spook.lines
+share/emacs/${VERSION}${SYSCONFDIR}/survival.tex
+share/emacs/${VERSION}${SYSCONFDIR}/tasks.texi
+share/emacs/${VERSION}${SYSCONFDIR}/termcap.src
+share/emacs/${VERSION}${SYSCONFDIR}/ulimit.hack
+share/emacs/${VERSION}${SYSCONFDIR}/vipcard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/viperCard.tex
+share/emacs/${VERSION}${SYSCONFDIR}/yow.lines
 share/emacs/${VERSION}/lisp/COPYING
 share/emacs/${VERSION}/lisp/README
 share/emacs/${VERSION}/lisp/abbrev.el
@@ -401,7 +400,6 @@ share/emacs/${VERSION}/lisp/calendar/timeclock.el
 share/emacs/${VERSION}/lisp/calendar/timeclock.elc
 share/emacs/${VERSION}/lisp/calendar/todo-mode.el
 share/emacs/${VERSION}/lisp/calendar/todo-mode.elc
-@dirrm share/emacs/${VERSION}/lisp/calendar
 share/emacs/${VERSION}/lisp/case-table.el
 share/emacs/${VERSION}/lisp/case-table.elc
 share/emacs/${VERSION}/lisp/cdl.el
@@ -593,7 +591,6 @@ share/emacs/${VERSION}/lisp/emacs-lisp/tq.el
 share/emacs/${VERSION}/lisp/emacs-lisp/tq.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/trace.el
 share/emacs/${VERSION}/lisp/emacs-lisp/trace.elc
-@dirrm share/emacs/${VERSION}/lisp/emacs-lisp
 share/emacs/${VERSION}/lisp/emacs-lock.el
 share/emacs/${VERSION}/lisp/emacs-lock.elc
 share/emacs/${VERSION}/lisp/emerge.el
@@ -646,7 +643,6 @@ share/emacs/${VERSION}/lisp/emulation/viper.el
 share/emacs/${VERSION}/lisp/emulation/viper.elc
 share/emacs/${VERSION}/lisp/emulation/ws-mode.el
 share/emacs/${VERSION}/lisp/emulation/ws-mode.elc
-@dirrm share/emacs/${VERSION}/lisp/emulation
 share/emacs/${VERSION}/lisp/enriched.el
 share/emacs/${VERSION}/lisp/enriched.elc
 share/emacs/${VERSION}/lisp/env.el
@@ -709,7 +705,6 @@ share/emacs/${VERSION}/lisp/eshell/esh-var.el
 share/emacs/${VERSION}/lisp/eshell/esh-var.elc
 share/emacs/${VERSION}/lisp/eshell/eshell.el
 share/emacs/${VERSION}/lisp/eshell/eshell.elc
-@dirrm share/emacs/${VERSION}/lisp/eshell
 share/emacs/${VERSION}/lisp/expand.el
 share/emacs/${VERSION}/lisp/expand.elc
 share/emacs/${VERSION}/lisp/facemenu.el
@@ -1006,7 +1001,6 @@ share/emacs/${VERSION}/lisp/gnus/uudecode.elc
 share/emacs/${VERSION}/lisp/gnus/webmail.el
 share/emacs/${VERSION}/lisp/gnus/webmail.elc
 share/emacs/${VERSION}/lisp/gnus/wry.pbm
-@dirrm share/emacs/${VERSION}/lisp/gnus
 share/emacs/${VERSION}/lisp/gs.el
 share/emacs/${VERSION}/lisp/gs.elc
 share/emacs/${VERSION}/lisp/gud.el
@@ -1101,9 +1095,12 @@ share/emacs/${VERSION}/lisp/international/swedish.el
 share/emacs/${VERSION}/lisp/international/swedish.elc
 share/emacs/${VERSION}/lisp/international/titdic-cnv.el
 share/emacs/${VERSION}/lisp/international/titdic-cnv.elc
+share/emacs/${VERSION}/lisp/international/ucs-tables.el
+share/emacs/${VERSION}/lisp/international/ucs-tables.elc
+share/emacs/${VERSION}/lisp/international/utf-16.el
+share/emacs/${VERSION}/lisp/international/utf-16.elc
 share/emacs/${VERSION}/lisp/international/utf-8.el
 share/emacs/${VERSION}/lisp/international/utf-8.elc
-@dirrm share/emacs/${VERSION}/lisp/international
 share/emacs/${VERSION}/lisp/isearch.el
 share/emacs/${VERSION}/lisp/isearch.elc
 share/emacs/${VERSION}/lisp/iswitchb.el
@@ -1172,7 +1169,6 @@ share/emacs/${VERSION}/lisp/language/viet-util.el
 share/emacs/${VERSION}/lisp/language/viet-util.elc
 share/emacs/${VERSION}/lisp/language/vietnamese.el
 share/emacs/${VERSION}/lisp/language/vietnamese.elc
-@dirrm share/emacs/${VERSION}/lisp/language
 share/emacs/${VERSION}/lisp/lazy-lock.el
 share/emacs/${VERSION}/lisp/lazy-lock.elc
 share/emacs/${VERSION}/lisp/ledit.el
@@ -1266,7 +1262,6 @@ share/emacs/${VERSION}/lisp/mail/unrmail.el
 share/emacs/${VERSION}/lisp/mail/unrmail.elc
 share/emacs/${VERSION}/lisp/mail/vms-pmail.el
 share/emacs/${VERSION}/lisp/mail/vms-pmail.elc
-@dirrm share/emacs/${VERSION}/lisp/mail
 share/emacs/${VERSION}/lisp/makesum.el
 share/emacs/${VERSION}/lisp/makesum.elc
 share/emacs/${VERSION}/lisp/man.el
@@ -1333,15 +1328,12 @@ share/emacs/${VERSION}/lisp/net/webjump.el
 share/emacs/${VERSION}/lisp/net/webjump.elc
 share/emacs/${VERSION}/lisp/net/zone-mode.el
 share/emacs/${VERSION}/lisp/net/zone-mode.elc
-@dirrm share/emacs/${VERSION}/lisp/net
 share/emacs/${VERSION}/lisp/newcomment.el
 share/emacs/${VERSION}/lisp/newcomment.elc
 share/emacs/${VERSION}/lisp/novice.el
 share/emacs/${VERSION}/lisp/novice.elc
 share/emacs/${VERSION}/lisp/obsolete/auto-show.el
 share/emacs/${VERSION}/lisp/obsolete/auto-show.elc
-share/emacs/${VERSION}/lisp/obsolete/c-mode.el
-share/emacs/${VERSION}/lisp/obsolete/c-mode.elc
 share/emacs/${VERSION}/lisp/obsolete/cplus-md.el
 share/emacs/${VERSION}/lisp/obsolete/cplus-md.elc
 share/emacs/${VERSION}/lisp/obsolete/hilit19.el
@@ -1370,7 +1362,6 @@ share/emacs/${VERSION}/lisp/obsolete/x-apollo.el
 share/emacs/${VERSION}/lisp/obsolete/x-apollo.elc
 share/emacs/${VERSION}/lisp/obsolete/x-menu.el
 share/emacs/${VERSION}/lisp/obsolete/x-menu.elc
-@dirrm share/emacs/${VERSION}/lisp/obsolete
 share/emacs/${VERSION}/lisp/options.el
 share/emacs/${VERSION}/lisp/options.elc
 share/emacs/${VERSION}/lisp/paren.el
@@ -1454,7 +1445,6 @@ share/emacs/${VERSION}/lisp/play/yow.el
 share/emacs/${VERSION}/lisp/play/yow.elc
 share/emacs/${VERSION}/lisp/play/zone.el
 share/emacs/${VERSION}/lisp/play/zone.elc
-@dirrm share/emacs/${VERSION}/lisp/play
 share/emacs/${VERSION}/lisp/progmodes/ada-mode.el
 share/emacs/${VERSION}/lisp/progmodes/ada-mode.elc
 share/emacs/${VERSION}/lisp/progmodes/ada-prj.el
@@ -1581,7 +1571,6 @@ share/emacs/${VERSION}/lisp/progmodes/tcl.el
 share/emacs/${VERSION}/lisp/progmodes/tcl.elc
 share/emacs/${VERSION}/lisp/progmodes/vhdl-mode.el
 share/emacs/${VERSION}/lisp/progmodes/vhdl-mode.elc
-@dirrm share/emacs/${VERSION}/lisp/progmodes
 share/emacs/${VERSION}/lisp/ps-bdf.el
 share/emacs/${VERSION}/lisp/ps-bdf.elc
 share/emacs/${VERSION}/lisp/ps-mule.el
@@ -1710,7 +1699,6 @@ share/emacs/${VERSION}/lisp/term/wyse50.el
 share/emacs/${VERSION}/lisp/term/x-win.el
 share/emacs/${VERSION}/lisp/term/x-win.elc
 share/emacs/${VERSION}/lisp/term/xterm.el
-@dirrm share/emacs/${VERSION}/lisp/term
 share/emacs/${VERSION}/lisp/terminal.el
 share/emacs/${VERSION}/lisp/terminal.elc
 share/emacs/${VERSION}/lisp/textmodes/artist.el
@@ -1789,7 +1777,6 @@ share/emacs/${VERSION}/lisp/textmodes/two-column.el
 share/emacs/${VERSION}/lisp/textmodes/two-column.elc
 share/emacs/${VERSION}/lisp/textmodes/underline.el
 share/emacs/${VERSION}/lisp/textmodes/underline.elc
-@dirrm share/emacs/${VERSION}/lisp/textmodes
 share/emacs/${VERSION}/lisp/thingatpt.el
 share/emacs/${VERSION}/lisp/thingatpt.elc
 share/emacs/${VERSION}/lisp/time-stamp.el
@@ -1861,7 +1848,6 @@ share/emacs/${VERSION}/lisp/toolbar/undo.pbm
 share/emacs/${VERSION}/lisp/toolbar/undo.xpm
 share/emacs/${VERSION}/lisp/toolbar/up_arrow.pbm
 share/emacs/${VERSION}/lisp/toolbar/up_arrow.xpm
-@dirrm share/emacs/${VERSION}/lisp/toolbar
 share/emacs/${VERSION}/lisp/tooltip.el
 share/emacs/${VERSION}/lisp/tooltip.elc
 share/emacs/${VERSION}/lisp/type-break.el
@@ -1921,12 +1907,32 @@ share/emacs/${VERSION}/lisp/xscheme.el
 share/emacs/${VERSION}/lisp/xscheme.elc
 share/emacs/${VERSION}/lisp/xt-mouse.el
 share/emacs/${VERSION}/lisp/xt-mouse.elc
-@dirrm share/emacs/${VERSION}/lisp
 share/emacs/${VERSION}/site-lisp/subdirs.el
-@dirrm share/emacs/${VERSION}/site-lisp
-@exec mkdir -p %D/share/emacs/${VERSION}/leim
-@dirrm share/emacs/${VERSION}/leim
-@dirrm share/emacs/${VERSION}
 share/emacs/site-lisp/subdirs.el
 @dirrm share/emacs/site-lisp
+@dirrm share/emacs/${VERSION}/site-lisp
+@dirrm share/emacs/${VERSION}/lisp/toolbar
+@dirrm share/emacs/${VERSION}/lisp/textmodes
+@dirrm share/emacs/${VERSION}/lisp/term
+@dirrm share/emacs/${VERSION}/lisp/progmodes
+@dirrm share/emacs/${VERSION}/lisp/play
+@dirrm share/emacs/${VERSION}/lisp/obsolete
+@dirrm share/emacs/${VERSION}/lisp/net
+@dirrm share/emacs/${VERSION}/lisp/mail
+@dirrm share/emacs/${VERSION}/lisp/language
+@dirrm share/emacs/${VERSION}/lisp/international
+@dirrm share/emacs/${VERSION}/lisp/gnus
+@dirrm share/emacs/${VERSION}/lisp/eshell
+@dirrm share/emacs/${VERSION}/lisp/emulation
+@dirrm share/emacs/${VERSION}/lisp/emacs-lisp
+@dirrm share/emacs/${VERSION}/lisp/calendar
+@dirrm share/emacs/${VERSION}/lisp
+@exec mkdir -p %D/share/emacs/${VERSION}/leim
+@dirrm share/emacs/${VERSION}/leim
+@dirrm share/emacs/${VERSION}${SYSCONFDIR}/e
+@dirrm share/emacs/${VERSION}${SYSCONFDIR}
+@dirrm share/emacs/${VERSION}
 @dirrm share/emacs
+@dirrm libexec/emacs/${VERSION}/${GCCARCH}
+@dirrm libexec/emacs/${VERSION}
+@dirrm libexec/emacs

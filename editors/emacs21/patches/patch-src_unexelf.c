@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unexelf.c,v 1.4 2002/03/28 00:13:49 mark Exp $
---- src/unexelf.c.orig	Tue Sep 26 07:01:57 2000
-+++ src/unexelf.c	Sun Mar 24 18:35:20 2002
-@@ -508,7 +508,12 @@ typedef struct {
+$OpenBSD: patch-src_unexelf.c,v 1.5 2003/07/05 00:27:08 naddy Exp $
+--- src/unexelf.c.orig	Tue Oct 15 16:21:22 2002
++++ src/unexelf.c	Fri Jun 27 00:18:44 2003
+@@ -537,7 +537,12 @@ typedef struct {
  
  #ifdef __OpenBSD__
  # include <sys/exec_elf.h>
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_unexelf.c,v 1.4 2002/03/28 00:13:49 mark Exp $
  
  #if __GNU_LIBRARY__ - 0 >= 6
  # include <link.h>	/* get ElfW etc */
-@@ -520,10 +525,12 @@ typedef struct {
+@@ -549,10 +554,12 @@ typedef struct {
  # else
  #  define ElfBitsW(bits, type) Elf/**/bits/**/_/**/type
  # endif

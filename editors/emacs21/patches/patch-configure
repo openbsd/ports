@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2002/03/23 19:13:14 pvalchev Exp $
---- configure.orig	Fri Oct 19 12:04:37 2001
-+++ configure	Fri Mar 22 22:38:15 2002
+$OpenBSD: patch-configure,v 1.5 2003/07/05 00:27:08 naddy Exp $
+disable Xaw3d
+--- configure.orig	Fri Jul  4 15:14:27 2003
++++ configure	Fri Jul  4 15:13:05 2003
 @@ -834,7 +834,8 @@ case "${canonical}" in
        m68k-*-openbsd*)  machine=hp9000s300 ;;
        mipsel-*-openbsd*) machine=pmax ;;
@@ -11,3 +12,15 @@ $OpenBSD: patch-configure,v 1.4 2002/03/23 19:13:14 pvalchev Exp $
        vax-*-openbsd*)	machine=vax ;;
      esac
    ;;
+@@ -5038,9 +5039,9 @@ EOF
+   fi
+ fi
+ 
+-### Is -lXaw3d available?
++### Never pick up Xaw3d
+ HAVE_XAW3D=no
+-if test "${HAVE_X11}" = "yes"; then
++if false; then
+   if test "${USE_X_TOOLKIT}" != "none"; then
+     ac_safe=`echo "X11/Xaw3d/Scrollbar.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for X11/Xaw3d/Scrollbar.h""... $ac_c" 1>&6

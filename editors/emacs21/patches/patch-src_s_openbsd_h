@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_s_openbsd_h,v 1.1 2003/07/05 00:27:08 naddy Exp $
+--- src/s/openbsd.h.orig	Wed Mar 22 13:08:18 2000
++++ src/s/openbsd.h	Fri Jun 27 01:17:51 2003
+@@ -9,3 +9,8 @@
+ /*  David Mazieres <dm@reeducation-labor.lcs.mit.edu> says this
+     is necessary.  Otherwise Emacs dumps core when run -nw.  */
+ #undef LIBS_TERMCAP
++
++/*  Idea From the FreeBSD port. Seems to work well.
++    Needs testing and then commiting to emacs developers */
++#define TERMINFO
++#define LIBS_TERMCAP -lncurses
