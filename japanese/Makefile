@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/28 15:13:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/03/28 15:23:09 espie Exp $
 
      SUBDIR += Wnn
      SUBDIR += canna
@@ -6,9 +6,9 @@
      SUBDIR += kinput2,wnn
      SUBDIR += kinput2,canna
      SUBDIR += kinput2,canna,wnn
-     SUBDIR += onew-wnn4
-     SUBDIR += onew-canna
-     SUBDIR += onew-wnn4-canna
+     SUBDIR += onew,wnn4
+     SUBDIR += onew,canna
+     SUBDIR += onew,wnn4,canna
      SUBDIR += kakasi
      SUBDIR += intlfonts
      SUBDIR += funetfonts
