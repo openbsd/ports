@@ -1,8 +1,4 @@
 bin/tclsh8.0
-lib/libtcl80.a
-lib/libtcl80.so.1.5
-@exec /sbin/ldconfig -m %B
-include/tcl8.0/tcl.h
 include/tcl8.0/generic/tcl.h
 include/tcl8.0/generic/tclCompile.h
 include/tcl8.0/generic/tclInitScript.h
@@ -10,26 +6,30 @@ include/tcl8.0/generic/tclInt.h
 include/tcl8.0/generic/tclMath.h
 include/tcl8.0/generic/tclPort.h
 include/tcl8.0/generic/tclRegexp.h
+include/tcl8.0/tcl.h
 include/tcl8.0/unix/tclUnixPort.h
+lib/libtcl80.a
+lib/libtcl80.so.1.5
+@exec /sbin/ldconfig -m %B
 lib/tcl8.0/history.tcl
-lib/tcl8.0/init.tcl
-lib/tcl8.0/ldAout.tcl
-lib/tcl8.0/parray.tcl
-lib/tcl8.0/safe.tcl
-lib/tcl8.0/word.tcl
-lib/tcl8.0/tclAppInit.c
-lib/tcl8.0/ldAix
-lib/tcl8.0/tclIndex
-lib/tcl8.0/tclConfig.sh
-lib/tcl8.0/http2.0/http.tcl
-lib/tcl8.0/http2.0/pkgIndex.tcl
 lib/tcl8.0/http1.0/http.tcl
 lib/tcl8.0/http1.0/pkgIndex.tcl
+lib/tcl8.0/http2.0/http.tcl
+lib/tcl8.0/http2.0/pkgIndex.tcl
+lib/tcl8.0/init.tcl
+lib/tcl8.0/ldAix
+lib/tcl8.0/ldAout.tcl
 lib/tcl8.0/opt0.1/optparse.tcl
 lib/tcl8.0/opt0.1/pkgIndex.tcl
+lib/tcl8.0/parray.tcl
+lib/tcl8.0/safe.tcl
+lib/tcl8.0/tclAppInit.c
+lib/tcl8.0/tclConfig.sh
+lib/tcl8.0/tclIndex
+lib/tcl8.0/word.tcl
 man/man1/tclsh.1
-man/man3/Alloc.3
 man/man3/AddErrInfo.3
+man/man3/Alloc.3
 man/man3/AllowExc.3
 man/man3/AppInit.3
 man/man3/AssocData.3
@@ -89,15 +89,10 @@ man/man3/SetResult.3
 man/man3/SetVar.3
 man/man3/Sleep.3
 man/man3/SplitList.3
-man/man3/UpVar.3
 man/man3/SplitPath.3
 man/man3/StaticPkg.3
 man/man3/StrMatch.3
 man/man3/StringObj.3
-man/man3/Tcl_Main.3
-man/man3/TraceVar.3
-man/man3/Translate.3
-man/man3/WrongNumArgs.3
 man/man3/TclConcatObj.3
 man/man3/Tcl_AddErrorInfo.3
 man/man3/Tcl_AddObjErrorInfo.3
@@ -127,7 +122,6 @@ man/man3/Tcl_CreateAlias.3
 man/man3/Tcl_CreateAliasObj.3
 man/man3/Tcl_CreateChannel.3
 man/man3/Tcl_CreateChannelHandler.3
-man/man3/Tcl_Eof.3
 man/man3/Tcl_CreateCloseHandler.3
 man/man3/Tcl_CreateCommand.3
 man/man3/Tcl_CreateEventSource.3
@@ -171,6 +165,7 @@ man/man3/Tcl_DoOneEvent.3
 man/man3/Tcl_DoWhenIdle.3
 man/man3/Tcl_DontCallWhenDeleted.3
 man/man3/Tcl_DuplicateObj.3
+man/man3/Tcl_Eof.3
 man/man3/Tcl_Eval.3
 man/man3/Tcl_EvalFile.3
 man/man3/Tcl_EvalObj.3
@@ -196,7 +191,6 @@ man/man3/Tcl_GetAliasObj.3
 man/man3/Tcl_GetAssocData.3
 man/man3/Tcl_GetBoolean.3
 man/man3/Tcl_GetBooleanFromObj.3
-man/man3/Tcl_GetDouble.3
 man/man3/Tcl_GetChannel.3
 man/man3/Tcl_GetChannelBufferSize.3
 man/man3/Tcl_GetChannelHandle.3
@@ -207,6 +201,7 @@ man/man3/Tcl_GetChannelOption.3
 man/man3/Tcl_GetChannelType.3
 man/man3/Tcl_GetCommandInfo.3
 man/man3/Tcl_GetCommandName.3
+man/man3/Tcl_GetDouble.3
 man/man3/Tcl_GetDoubleFromObj.3
 man/man3/Tcl_GetErrno.3
 man/man3/Tcl_GetHashKey.3
@@ -217,6 +212,7 @@ man/man3/Tcl_GetIntFromObj.3
 man/man3/Tcl_GetInterpPath.3
 man/man3/Tcl_GetLongFromObj.3
 man/man3/Tcl_GetMaster.3
+man/man3/Tcl_GetNameOfExecutable.3
 man/man3/Tcl_GetObjResult.3
 man/man3/Tcl_GetObjType.3
 man/man3/Tcl_GetOpenFile.3
@@ -249,6 +245,7 @@ man/man3/Tcl_ListObjGetElements.3
 man/man3/Tcl_ListObjIndex.3
 man/man3/Tcl_ListObjLength.3
 man/man3/Tcl_ListObjReplace.3
+man/man3/Tcl_Main.3
 man/man3/Tcl_MakeFileChannel.3
 man/man3/Tcl_MakeSafe.3
 man/man3/Tcl_MakeTcpClientChannel.3
@@ -262,7 +259,6 @@ man/man3/Tcl_NewObj.3
 man/man3/Tcl_NewStringObj.3
 man/man3/Tcl_NextHashEntry.3
 man/man3/Tcl_NotifyChannel.3
-man/man3/Tcl_GetNameOfExecutable.3
 man/man3/Tcl_ObjGetVar2.3
 man/man3/Tcl_ObjSetVar2.3
 man/man3/Tcl_OpenCommandChannel.3
@@ -340,6 +336,11 @@ man/man3/Tcl_VarTraceInfo2.3
 man/man3/Tcl_WaitForEvent.3
 man/man3/Tcl_Write.3
 man/man3/Tcl_WrongNumArgs.3
+man/man3/TraceVar.3
+man/man3/Translate.3
+man/man3/UpVar.3
+man/man3/WrongNumArgs.3
+man/mann/Http.n
 man/mann/SafeBase.n
 man/mann/Tcl.n
 man/mann/after.n
@@ -396,8 +397,9 @@ man/mann/namespace.n
 man/mann/open.n
 man/mann/package.n
 man/mann/pid.n
-man/mann/proc.n
 man/mann/pkgMkIndex.n
+man/mann/pkg_mkIndex.n
+man/mann/proc.n
 man/mann/puts.n
 man/mann/pwd.n
 man/mann/read.n
@@ -429,12 +431,10 @@ man/mann/upvar.n
 man/mann/variable.n
 man/mann/vwait.n
 man/mann/while.n
-man/mann/Http.n
-man/mann/pkg_mkIndex.n
 @dirrm include/tcl8.0/generic
 @dirrm include/tcl8.0/unix
 @dirrm include/tcl8.0
-@dirrm lib/tcl8.0/http2.0
 @dirrm lib/tcl8.0/http1.0
+@dirrm lib/tcl8.0/http2.0
 @dirrm lib/tcl8.0/opt0.1
 @dirrm lib/tcl8.0
