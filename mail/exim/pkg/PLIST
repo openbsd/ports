@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/11/18 23:26:41 alek Exp $
+@newgroup _exim:521
+@newuser _exim:521:_exim:daemon:Exim Account:/var/spool/exim:/sbin/nologin
 bin/exicyclog
 bin/exigrep
 bin/exim
@@ -21,10 +23,10 @@ share/doc/exim/README.SIEVE
 share/doc/exim/filter.txt
 share/doc/exim/spec.txt
 share/examples/exim/
+@sample ${SYSCONFDIR}/exim/
 share/examples/exim/configure
+@sample ${SYSCONFDIR}/exim/configure
 share/examples/exim/convert4r4
 !%%no_x11%%
 !%%no_exiscan%%
-@extra ${SYSCONFDIR}/exim/
-@extraunexec groupdel _exim
-@extraunexec userdel -r _exim
+@extraunexec rm -rf /var/spool/exim/
