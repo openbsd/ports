@@ -1,5 +1,5 @@
---- communicator-v478.x86-unknown-linux2.2/ns-install.orig	Thu Jul 30 20:10:00 2001
-+++ communicator-v478.x86-unknown-linux2.2/ns-install	Thu Jul 30 20:21:32 2001
+--- communicator-v479.x86-unknown-linux2.2/ns-install.orig	Wed Oct 17 15:25:48 2001
++++ communicator-v479.x86-unknown-linux2.2/ns-install	Mon Nov 19 09:11:37 2001
 @@ -84,22 +84,10 @@
  	exit 1
  fi

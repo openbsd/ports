@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/19 12:26:12 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	"Netscape Navigator (linux)"
 
 NEED_VERSION=	1.484
 
-PROGRAM_V=	4.78
+PROGRAM_V=	4.79
 V2:=		${PROGRAM_V:S/.//}
 EMUL_TYPE=	linux
 
