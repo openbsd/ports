@@ -1,3 +1,4 @@
+@unexec install-info --delete --info-dir=%D/info %D/info/gettext.info
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -6,21 +7,15 @@ bin/msgfmt
 bin/msgmerge
 bin/msgunfmt
 bin/xgettext
-@unexec install-info --delete %D/info/gettext.info %D/info/dir
-info/gettext.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/gettext.info %D/info/dir
 include/libintl.h
+info/gettext.info
 lib/libintl.a
 lib/libintl.la
 lib/libintl.so.1.0
-@exec /sbin/ldconfig -m %B
 share/aclocal/gettext.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
 share/gettext/ABOUT-NLS
-share/gettext/po-mode.el
-share/gettext/po/Makefile.in.in
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
 share/gettext/intl/VERSION
@@ -42,13 +37,16 @@ share/gettext/intl/loadinfo.h
 share/gettext/intl/loadmsgcat.c
 share/gettext/intl/localealias.c
 share/gettext/intl/po2tbl.sed.in
-share/gettext/intl/xopen-msg.sed
 share/gettext/intl/textdomain.c
+share/gettext/intl/xopen-msg.sed
+share/gettext/po-mode.el
+share/gettext/po/Makefile.in.in
 share/locale/da/LC_MESSAGES/gettext.mo
 share/locale/de/LC_MESSAGES/gettext.mo
 share/locale/es/LC_MESSAGES/gettext.mo
 share/locale/fr/LC_MESSAGES/gettext.mo
 share/locale/ko/LC_MESSAGES/gettext.mo
+share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/gettext.mo
 share/locale/no/LC_MESSAGES/gettext.mo
 share/locale/no@nynorsk/LC_MESSAGES/gettext.mo
@@ -56,7 +54,9 @@ share/locale/pl/LC_MESSAGES/gettext.mo
 share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
-share/locale/locale.alias
-@dirrm share/gettext/intl
 @dirrm share/gettext/po
+@dirrm share/gettext/intl
 @dirrm share/gettext
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@exec install-info --info-dir=%D/info %D/info/gettext.info
