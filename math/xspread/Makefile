@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 01:59:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/11 06:20:11 pvalchev Exp $
 #
 
 COMMENT=	"spreadsheet program under X11"
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://linux.tucows.com/files/x11/office/
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
