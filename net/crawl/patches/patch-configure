@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2004/01/10 08:33:11 sturm Exp $
---- configure.orig	2002-01-29 03:37:38.000000000 +0100
-+++ configure	2004-01-10 00:42:16.000000000 +0100
-@@ -1017,8 +1017,8 @@ EOF
+$OpenBSD: patch-configure,v 1.5 2004/04/16 15:06:48 naddy Exp $
+--- configure.orig	Sun May 18 03:50:55 2003
++++ configure	Fri Apr 16 17:02:14 2004
+@@ -2616,8 +2616,8 @@
  
  	DBINC="-I$withval/dist"
  	DBLIB="-L$withval/dist -ldb"
@@ -11,13 +11,15 @@ $OpenBSD: patch-configure,v 1.4 2004/01/10 08:33:11 sturm Exp $
 +	       -f $withval/lib/db/libdb.a; then
  	owd=`pwd`
  	if cd $withval; then withval=`pwd`; cd $owd; fi
- 	cat >> confdefs.h <<\EOF
-@@ -1026,7 +1026,7 @@ EOF
- EOF
  
- 	DBINC="-I$withval/include"
+@@ -2625,8 +2625,8 @@
+ #define HAVE_DB_185_H 1
+ _ACEOF
+ 
+-	DBINC="-I$withval/include"
 -	DBLIB="-L$withval/lib -ldb"
++	DBINC="-I$withval/include/db"
 +	DBLIB="-L$withval/lib/db -ldb"
       else
-         { echo "configure: error: db_185.h or libdb.a not found in $withval or not configured with --enable-compat185" 1>&2; exit 1; }
-      fi
+         { { echo "$as_me:$LINENO: error: db_185.h or libdb.a not found in $withval or not configured with --enable-compat185" >&5
+ echo "$as_me: error: db_185.h or libdb.a not found in $withval or not configured with --enable-compat185" >&2;}
