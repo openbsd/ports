@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/31 17:38:29 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/03 07:39:51 sturm Exp $
 @option no-default-conflict
 @pkgcfl python-2.3*
+%%tkinter%%
 bin/pydoc2.3
 bin/python2.3
 include/python2.3/Python.h
