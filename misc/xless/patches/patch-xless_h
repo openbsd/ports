@@ -1,0 +1,19 @@
+$OpenBSD: patch-xless_h,v 1.1 2002/07/26 19:38:47 naddy Exp $
+--- xless.h.orig	Fri Jul 29 04:56:41 1994
++++ xless.h	Fri Jul 26 21:35:26 2002
+@@ -38,13 +38,14 @@
+ 
+ #define XLESS_MAX_INPUT		256
+ 
+-/* handle differences between K&R and ANSI C */
++/* handle differences between K&R and ANSI C
+ #if __STDC__
+ #define __P(a)	a
+ #else
+ #define __P(a)	()
+ #define const
+ #endif
++*/
+ 
+ /*
+  * The default editor; make sure the file exists.

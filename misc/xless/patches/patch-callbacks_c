@@ -1,0 +1,14 @@
+$OpenBSD: patch-callbacks_c,v 1.1 2002/07/26 19:38:47 naddy Exp $
+--- callbacks.c.orig	Fri Jul 29 04:29:23 1994
++++ callbacks.c	Fri Jul 26 21:35:26 2002
+@@ -454,8 +454,8 @@ XtPointer callData;
+   if (wi->file == NULL) {
+ 
+     /* create a temporary file */
+-    printfile = tmpnam(0);
+-    file = fopen(printfile, "w");
++    printfile = strdup("/tmp/ab.XXXXXXXX");
++    file = fdopen(mkstemp(printfile), "w");
+ 
+ #ifdef WIMPY_STDIO
+     /* write stdin (line by line) to temporary file */
