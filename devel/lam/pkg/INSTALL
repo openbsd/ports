@@ -1,0 +1,53 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2001/04/13 20:29:16 todd Exp $
+#
+# Pre/post-installation setup of LAM
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+DB_DIR=${DB_DIR}
+
+do_post_install()
+{
+	for f in bhost.def bhost.lam conf.lam conf.otb helpfile; do
+		file=/etc/lam-$f
+		if [ -f $file ]; then
+			existing="$existing $file"
+		else
+			install="$install $file"
+			cp ${PREFIX}/share/examples/lam/lam-$f $file
+		fi
+	done
+
+	echo
+	echo "+---------------"
+	if ! [ X"${install}" = X"" ]; then
+		echo "| The following files have been copied from the"
+		echo "| ${PREFIX}/share/examples/lam directory to /etc/"
+		echo "|   $install"
+	fi
+	if ![ X"${existing}" = X"" ]; then
+		echo "| The following files were already present.  Current"
+		echo "| examples for this package are found in:"
+		echo "| ${PREFIX}/share/examples/lam"
+	fi
+	echo "+---------------"
+	echo
+
+}
+
+# Verify/process the command
+#
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	  do_post_install
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;  
+esac
+
+exit 0

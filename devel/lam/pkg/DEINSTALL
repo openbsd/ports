@@ -1,0 +1,22 @@
+# $OpenBSD: DEINSTALL,v 1.1 2001/04/13 20:29:16 todd Exp $
+#
+# LAM de-installation
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+DB_DIR=${DB_DIR}
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you need to perform"
+echo "| these steps as root:"
+echo "|"
+echo "|           cd /etc"
+echo "|           rm -f lam-*"
+echo "|"
+echo "| Do not do this if you plan on re-installing $1"
+echo "| at some future time."
+echo "+---------------"
+echo
+
+exit 0
