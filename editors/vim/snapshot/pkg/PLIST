@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2001/09/13 21:14:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.23 2001/09/16 21:55:01 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -34,6 +34,7 @@ share/vim/vim60${V}/compiler/README.txt
 share/vim/vim60${V}/compiler/ant.vim
 share/vim/vim60${V}/compiler/jikes.vim
 share/vim/vim60${V}/compiler/msvc.vim
+share/vim/vim60${V}/compiler/tex.vim
 share/vim/vim60${V}/compiler/tidy.vim
 share/vim/vim60${V}/delmenu.vim
 share/vim/vim60${V}/doc/autocmd.txt
@@ -102,7 +103,7 @@ share/vim/vim60${V}/doc/sign.txt
 share/vim/vim60${V}/doc/starting.txt
 share/vim/vim60${V}/doc/syntax.txt
 share/vim/vim60${V}/doc/tags
-share/vim/vim60${V}/doc/tags.txt
+share/vim/vim60${V}/doc/tagsrch.txt
 share/vim/vim60${V}/doc/term.txt
 share/vim/vim60${V}/doc/tips.txt
 share/vim/vim60${V}/doc/todo.txt
@@ -393,6 +394,7 @@ share/vim/vim60${V}/syntax/lout.vim
 share/vim/vim60${V}/syntax/lprolog.vim
 share/vim/vim60${V}/syntax/lss.vim
 share/vim/vim60${V}/syntax/lua.vim
+share/vim/vim60${V}/syntax/lynx.vim
 share/vim/vim60${V}/syntax/m4.vim
 share/vim/vim60${V}/syntax/mail.vim
 share/vim/vim60${V}/syntax/make.vim
@@ -460,6 +462,7 @@ share/vim/vim60${V}/syntax/python.vim
 share/vim/vim60${V}/syntax/qf.vim
 share/vim/vim60${V}/syntax/r.vim
 share/vim/vim60${V}/syntax/radiance.vim
+share/vim/vim60${V}/syntax/ratpoison.vim
 share/vim/vim60${V}/syntax/rc.vim
 share/vim/vim60${V}/syntax/rcslog.vim
 share/vim/vim60${V}/syntax/readline.vim
