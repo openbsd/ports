@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/16 07:55:47 reinhard Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/16 08:39:39 reinhard Exp $
 
 COMMENT=	3D filesystem visualizer 
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	gnu
 CFLAGS+=	-I${LOCALBASE}/include
 
