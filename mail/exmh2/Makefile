@@ -3,12 +3,12 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 03:21:12 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/29 22:34:48 marc Exp $
 #
 
 DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
