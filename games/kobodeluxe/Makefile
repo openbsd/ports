@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/12 08:23:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2003/10/31 04:23:28 jolan Exp $
 
 COMMENT=	"sdl port of xkobo"
 DISTNAME=	KoboDeluxe-0.4pre8
@@ -6,7 +6,7 @@ PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}download/
 
-HOMEPAGE=	http://olofson.net/skobo/
+HOMEPAGE=	http://olofson.net/kobodl/
 FLAVORS=	harder
 FLAVOR?=
 
