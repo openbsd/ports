@@ -1,5 +1,5 @@
 *** server/dhcps.c.orig	Tue Aug 19 14:14:39 1997
---- server/dhcps.c	Fri Jun  5 09:27:41 1998
+--- server/dhcps.c	Fri Jul 17 18:33:37 1998
 ***************
 *** 126,132 ****
   
@@ -39,6 +39,16 @@
   
     init_db();               /* initialize databases */
 ***************
+*** 526,531 ****
+--- 526,532 ----
+      syslog(LOG_ERR, "Cannot open the binding database \"%s\"", binding_db);
+      exit(1);
+    }
++   unlink(ADDRPOOL_DUMP);
+    if ((dump_fp = fopen(ADDRPOOL_DUMP, "w+")) == NULL) {
+      syslog(LOG_ERR, "Cannot open the resource dump file \"%s\"",ADDRPOOL_DUMP);
+      exit(1);
+***************
 *** 1832,1838 ****
       snd.dhcp->options[off_options] = END;
     } else if (off_extopt > 0 && off_extopt < maxoptlen - DFLTOPTLEN &&
@@ -47,7 +57,7 @@
     }
   
     if (off_extopt < sbufvec[1].iov_len) {
---- 1832,1838 ----
+--- 1833,1839 ----
       snd.dhcp->options[off_options] = END;
     } else if (off_extopt > 0 && off_extopt < maxoptlen - DFLTOPTLEN &&
   	     sbufvec[1].iov_base != NULL) {
@@ -57,7 +67,7 @@
     if (off_extopt < sbufvec[1].iov_len) {
 ***************
 *** 2290,2296 ****
---- 2290,2300 ----
+--- 2291,2301 ----
     char *inserted;
     char flag;
   {
@@ -78,7 +88,7 @@
         off_extopt += len;
         return(0);
       }
---- 2855,2861 ----
+--- 2856,2862 ----
         len -= done;
         off_options += done; /* invalid offset, So, to access
   					    here will cause fatal error */
@@ -95,7 +105,7 @@
     delarp(ip);
   #else
     delarp(ip, sockfd);
---- 2931,2937 ----
+--- 2932,2938 ----
       return(GOOD);
     }
   
