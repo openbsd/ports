@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/10/04 15:01:44 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/01/12 23:56:27 xsa Exp $
 bin/linkchecker
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/_linkchecker_configdata.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/HtmlParser/
@@ -149,13 +151,13 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sql.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/text.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/xmllog.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/mem.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/optcomplete.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/robotparser2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/strformat.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_cgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_containers.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_filenames.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_linkname.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_parser.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_robotparser.py

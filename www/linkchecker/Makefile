@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2004/10/22 12:33:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.18 2005/01/12 23:56:27 xsa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"checks HTML documents for broken links"
 
-DISTNAME=	linkchecker-1.13.5
+DISTNAME=	linkchecker-2.1
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
@@ -23,7 +23,7 @@ MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 
-BUILD_DEPENDS+=	:py-dns-*:net/py-dns
+BUILD_DEPENDS=	:py-dns-*:net/py-dns
 
 NO_REGRESS=	Yes
 
