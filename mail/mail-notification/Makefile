@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/11 00:51:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/13 10:29:32 sturm Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-0.6.2
@@ -58,7 +58,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mail-notification
-	${INSTALL_DATA} ${WRKINST}/etc/sound/events/mail-notification.soundlist \
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/sound/events/mail-notification.soundlist \
 			${PREFIX}/share/examples/mail-notification.soundlist
 	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/mail-notification
 	${INSTALL_DATA} ${WRKSRC}/data/mail-notification.schemas \
