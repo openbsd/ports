@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.596 2004/01/06 15:02:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.597 2004/01/06 16:27:11 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -168,10 +168,8 @@ DEF_UMASK?=		022
 
 .if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
-.else
-.if exists(${.CURDIR}/Makefile.${MACHINE_ARCH})
+.elif exists(${.CURDIR}/Makefile.${MACHINE_ARCH})
 .include "${.CURDIR}/Makefile.${MACHINE_ARCH}"
-.endif
 .endif
 
 NO_DEPENDS?= No
