@@ -1,48 +1,26 @@
-$OpenBSD: patch-configure_in,v 1.10 2004/01/27 00:55:24 naddy Exp $
---- configure.in.orig	2003-09-11 13:13:32.000000000 -0600
-+++ configure.in	2004-01-26 16:51:44.000000000 -0700
-@@ -183,11 +183,11 @@ AC_CHECK_HEADER(vorbis/vorbisfile.h,
+<<<<<<< patch-configure_in
+$OpenBSD: patch-configure_in,v 1.11 2004/02/01 14:59:23 espie Exp $
+--- configure.in.orig	2004-01-18 14:05:23.000000000 +0100
++++ configure.in	2004-02-01 13:34:16.000000000 +0100
+@@ -40,7 +40,7 @@ dnl Perform program name transformation
+ AC_ARG_PROGRAM
  
- AC_CHECK_LIB(vorbisfile, ov_open,
- 	[USELESS_VAR=1],
--	[HAVE_VORBIS=""], -lvorbis -logg)
-+	[HAVE_VORBIS=""], -lvorbis -lm -logg)
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdemultimedia, "3.2.0") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdemultimedia-3.1.95, "3.2.0") dnl searches for some needed programs
  
- AC_CHECK_LIB(vorbis, vorbis_info_init,
- 	[USELESS_VAR=1],
--	[HAVE_VORBIS=""])
-+	[HAVE_VORBIS=""], -lm -logg)
+ KDE_SET_PREFIX
  
- AC_CHECK_LIB(ogg, ogg_page_version,
- 	[USELESS_VAR=1],
-@@ -813,7 +813,7 @@ if test "x$with_vorbis" = "xCHECK" ; the
-           VORBIS_LIBS="-L$vorbis_libdir "
-           test "$USE_RPATH" = yes && VORBIS_RPATH="-R $vorbis_libdir"
-         fi
--        VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm"
-+        VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm -logg"
-         with_vorbis=FOUND
-         break
-       fi
-@@ -835,7 +835,7 @@ NOTFOUND) AC_MSG_RESULT(searched but not
-       VORBIS_LIBS="-L${VORBIS_ROOT}/lib "
-       test "$USE_RPATH" = yes && VORBIS_RPATH="-R ${VORBIS_ROOT}/lib"
-     fi
--    VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm"
-+    VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm -logg"
-     codec_h="$VORBIS_ROOT/include/vorbis/codec.h"
-     # Hmm.  May be we should even disallow vorbis completely if there
-     # is no codec.h in the directory provided by the user
-@@ -1580,7 +1580,7 @@ dnl    else
- dnl      lib_xaw_opt=-lXaw
- dnl    fi
-     EXTRATDEFS="$EXTRATDEFS -DIA_XAW"
--    EXTRATLIBS="$EXTRATLIBS $all_libraries -lXaw -lXt -lX11"
-+    EXTRATLIBS="$EXTRATLIBS $all_libraries -lXaw -lXmu -lXt -lX11"
- dnl    if test "x$have_xext" = xyes; then
- dnl      a_so_libs="-lXext -lX11"
- dnl    else
-@@ -1927,6 +1927,9 @@ case "$OS_TYPE" in
+@@ -1114,7 +1114,7 @@ case "$host" in
+   *-*-*bsdi*) kscd_compile=yes;; 
+   *-*-*freebsd*) kscd_compile=yes;;
+   *-*-*netbsd*) kscd_compile=yes;;
+-  *-*-*openbsd*) kscd_compile=yes;;
++  *-*-*openbsd*) kscd_compile=no;;
+   *) kscd_compile=yes;;
+ esac
+ AC_MSG_RESULT($kscd_compile)
+@@ -1411,6 +1411,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -52,7 +30,7 @@ $OpenBSD: patch-configure_in,v 1.10 2004/01/27 00:55:24 naddy Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1956,6 +1959,12 @@ case "$OS_TYPE" in
+@@ -1440,6 +1443,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -65,12 +43,12 @@ $OpenBSD: patch-configure_in,v 1.10 2004/01/27 00:55:24 naddy Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -2002,7 +2011,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1486,7 +1495,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "
 -THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD}"
 +THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD} ${LIBOSSAUDIO}"
  AC_SUBST(THIS_LIB_LIBS)
- 
- 
+ dnl =======================================================
+ dnl FILE: ./mpeglib/lib/mpegplay/configure.in.in

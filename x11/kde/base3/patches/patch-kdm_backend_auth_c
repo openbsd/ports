@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdm_backend_auth_c,v 1.1 2003/03/12 01:17:57 espie Exp $
---- kdm/backend/auth.c.orig	Tue Mar 11 17:41:21 2003
-+++ kdm/backend/auth.c	Wed Mar 12 01:51:12 2003
-@@ -47,6 +47,9 @@ from The Open Group.
+$OpenBSD: patch-kdm_backend_auth_c,v 1.2 2004/02/01 14:59:22 espie Exp $
+--- kdm/backend/auth.c.orig	2003-10-28 13:39:37.000000000 +0100
++++ kdm/backend/auth.c	2004-01-21 01:24:30.000000000 +0100
+@@ -46,6 +46,9 @@ from The Open Group.
  #include <sys/stat.h>
  #include <fcntl.h>
  #include <stdlib.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-kdm_backend_auth_c,v 1.1 2003/03/12 01:17:57 espie Exp $
  
  #include <sys/ioctl.h>
  
-@@ -345,6 +348,25 @@ SaveServerAuthorizations (
+@@ -333,6 +336,25 @@ SaveServerAuthorizations (
  	    return FALSE;
  	}
      }
@@ -34,6 +34,6 @@ $OpenBSD: patch-kdm_backend_auth_c,v 1.1 2003/03/12 01:17:57 espie Exp $
 +	fchown(fileno(auth_file), uid, gid);
 +    }
 +#endif
-     Debug ("File: %s auth: %p\n", d->authFile, auths);
+     Debug ("file: %s  auth: %p\n", d->authFile, auths);
      ret = TRUE;
      for (i = 0; i < count; i++)

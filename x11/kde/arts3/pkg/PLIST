@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/01/27 19:10:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/02/01 14:59:21 espie Exp $
 @pkgcfl kdelibs-2.*
 bin/artsc-config
 bin/artscat
@@ -9,7 +9,6 @@ bin/artsrec
 bin/artsshell
 bin/artswrapper
 bin/mcopidl
-bin/testdhandle
 include/arts/anyref.h
 include/arts/artsflow.h
 include/arts/artsflow.idl
@@ -38,7 +37,6 @@ include/arts/extensionloader.h
 include/arts/factory.h
 include/arts/fft.h
 include/arts/flowsystem.h
-include/arts/gsl/gslartsthreads.h
 include/arts/gsl/gslcommon.h
 include/arts/gsl/gslconfig.h
 include/arts/gsl/gslconvert.h
@@ -51,7 +49,6 @@ include/arts/gsl/gsldefs.h
 include/arts/gsl/gslengine.h
 include/arts/gsl/gslfft.h
 include/arts/gsl/gslfilter.h
-include/arts/gsl/gslglib.h
 include/arts/gsl/gslieee754.h
 include/arts/gsl/gslloader.h
 include/arts/gsl/gslmagic.h
@@ -61,6 +58,7 @@ include/arts/gsl/gslosctable.h
 include/arts/gsl/gslsignal.h
 include/arts/gsl/gslwavechunk.h
 include/arts/gsl/gslwaveosc.h
+include/arts/gslschedule.h
 include/arts/idlfilereg.h
 include/arts/ifacerepo_impl.h
 include/arts/iomanager.h

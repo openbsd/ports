@@ -1,11 +1,11 @@
-$OpenBSD: patch-kdesu_su_h,v 1.1 2002/05/15 17:19:44 espie Exp $
---- kdesu/su.h.orig	Wed May 15 10:47:17 2002
-+++ kdesu/su.h	Wed May 15 11:53:22 2002
-@@ -44,6 +44,7 @@ public:
+$OpenBSD: patch-kdesu_su_h,v 1.2 2004/02/01 14:59:23 espie Exp $
+--- kdesu/su.h.orig	2003-10-26 11:53:31.000000000 +0100
++++ kdesu/su.h	2004-01-19 13:21:50.000000000 +0100
+@@ -45,6 +45,7 @@ public:
       * Checks if a password is needed.
       */
      int checkNeedPassword();
 +    void setUseSudo(bool sudo);
  
  private:
-     int ConverseSU(const char *password);
+     enum SuErrors { error=-1, ok=0, killme=1, notauthorized=2 } ;

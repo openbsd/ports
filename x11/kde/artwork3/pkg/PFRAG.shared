@@ -1,7 +1,15 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2003/06/12 19:16:15 espie Exp $
-${KDE}/libkwin_cde.so.0.0
-${KDE}/libkwin_cde_config.so.0.0
-${KDE}/libkwin_glow.so.0.0
-${KDE}/libkwin_glow_config.so.0.0
-${KDE}/libkwin_openlook.so.0.0
-${KDE}/plugins/styles/libdotnet.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.9 2004/02/01 14:59:22 espie Exp $
+${KDE}/kstyle_plastik_config.so
+${KDE}/kwin3_cde.so
+${KDE}/kwin3_glow.so
+${KDE}/kwin3_icewm.so
+${KDE}/kwin3_kde1.so
+${KDE}/kwin3_kstep.so
+${KDE}/kwin3_openlook.so
+${KDE}/kwin3_plastik.so
+${KDE}/kwin_cde_config.so
+${KDE}/kwin_glow_config.so
+${KDE}/kwin_icewm_config.so
+${KDE}/kwin_plastik_config.so
+${KDE}/plugins/styles/dotnet.so
+${KDE}/plugins/styles/plastik.so

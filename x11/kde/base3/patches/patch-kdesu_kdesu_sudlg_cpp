@@ -1,14 +1,14 @@
-$OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.1 2003/01/07 00:19:34 espie Exp $
---- kdesu/kdesu/sudlg.cpp.orig	Tue Jan  7 01:11:18 2003
-+++ kdesu/kdesu/sudlg.cpp	Tue Jan  7 01:13:21 2003
+$OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.2 2004/02/01 14:59:22 espie Exp $
+--- kdesu/kdesu/sudlg.cpp.orig	2003-04-11 14:27:59.000000000 +0200
++++ kdesu/kdesu/sudlg.cpp	2004-01-21 01:23:41.000000000 +0100
 @@ -14,10 +14,12 @@
  #include "sudlg.h"
  
  
 -KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
-+KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep,
++KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, 
 +    bool useSudo)
-     : KPasswordDialog(Password, "", enableKeep, User1)
+     : KPasswordDialog(Password, enableKeep, User1)
  {
      m_User = auth_user;
 +    m_Sudo = useSudo;

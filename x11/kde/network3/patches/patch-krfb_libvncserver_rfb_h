@@ -1,6 +1,6 @@
-$OpenBSD: patch-krfb_libvncserver_rfb_h,v 1.1 2003/01/28 12:23:17 espie Exp $
---- krfb/libvncserver/rfb.h.orig	Thu Dec  5 21:49:32 2002
-+++ krfb/libvncserver/rfb.h	Mon Jan 13 22:34:37 2003
+$OpenBSD: patch-krfb_libvncserver_rfb_h,v 1.2 2004/02/01 14:59:24 espie Exp $
+--- krfb/libvncserver/rfb.h.orig	2004-01-26 15:32:19.000000000 +0100
++++ krfb/libvncserver/rfb.h	2004-01-26 15:32:36.000000000 +0100
 @@ -62,7 +62,7 @@ typedef unsigned long KeySym;
  
  #ifdef __linux__

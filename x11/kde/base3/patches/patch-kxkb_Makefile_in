@@ -1,26 +1,30 @@
-$OpenBSD: patch-kxkb_Makefile_in,v 1.2 2003/07/30 12:59:22 espie Exp $
---- kxkb/Makefile.in.orig	Tue Jul 15 12:03:50 2003
-+++ kxkb/Makefile.in	Wed Jul 16 01:18:27 2003
-@@ -432,7 +432,7 @@ bin_PROGRAMS = kxkb
- 
- kxkb_SOURCES = dummy.cpp
- kxkb_LDFLAGS = $(all_libraries) $(KDE_RPATH)
--kxkb_LDADD = kxkb.la -lxkbfile
-+kxkb_LDADD = kxkb.la -lxkbfile_pic
- 
- lib_LTLIBRARIES = kxkb.la
- kde_module_LTLIBRARIES = kcm_keyboard.la
-@@ -441,11 +441,11 @@ kde_module_LTLIBRARIES = kcm_keyboard.la
+$OpenBSD: patch-kxkb_Makefile_in,v 1.3 2004/02/01 14:59:22 espie Exp $
+--- kxkb/Makefile.in.orig	2004-01-18 14:19:56.000000000 +0100
++++ kxkb/Makefile.in	2004-01-21 01:31:57.000000000 +0100
+@@ -479,7 +479,7 @@ kcm_keyboard_la_SOURCES=rules.cpp kcmlay
+ #>- kcm_keyboard_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
  #>+ 1
- kcm_keyboard_la_SOURCES=rules.cpp kcmlayout.cpp pixmap.cpp kcmmisc.cpp  kcmmiscwidget.cpp
- kcm_keyboard_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ kcm_keyboard_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined $(KDE_NO_UNDEFINED)
 -kcm_keyboard_la_LIBADD = $(XTESTLIB) $(LIB_KIO) -lxkbfile
 +kcm_keyboard_la_LIBADD = $(XTESTLIB) $(LIB_KIO) -lxkbfile_pic
  
- kxkb_la_SOURCES = kxkb.cpp rules.cpp extension.cpp pixmap.cpp
+ #kxkb_la_includedir = .
+ #kxkb_la_include_HEADERS = kxkb.h
+@@ -488,7 +488,7 @@ kcm_keyboard_la_LIBADD = $(XTESTLIB) $(L
+ kxkb_la_SOURCES = kxkb_la_dummy.cpp
+ libkdeinit_kxkb_la_SOURCES = kxkb.cpp rules.cpp extension.cpp pixmap.cpp  kxkb_skel.cpp
  kxkb_la_LDFLAGS = $(all_libraries) -module -avoid-version
--kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile
-+kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile_pic
+-#>- kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile
++#>- kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile_pic
+ #>+ 1
+ kxkb_la_LIBADD = libkdeinit_kxkb.la
  
- data_DATA = keyboard.desktop
- data2_DATA = keyboard_layout.desktop
+@@ -1120,7 +1120,7 @@ messages: rc.cpp
+ .NOEXPORT:
+ 
+ #>+ 2
+-libkdeinit_kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile
++libkdeinit_kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile_pic
+ 
+ #>+ 2
+ libkdeinit_kxkb_la_LDFLAGS = -avoid-version $(all_libraries)

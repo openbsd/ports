@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.6 2003/07/30 12:59:23 espie Exp $
---- config.h.in.orig	Wed May  7 19:23:13 2003
-+++ config.h.in	Tue Jul  1 16:39:30 2003
-@@ -907,6 +907,9 @@ int snprintf(char *str, size_t n, char c
+$OpenBSD: patch-config_h_in,v 1.7 2004/02/01 14:59:23 espie Exp $
+--- config.h.in.orig	2004-01-18 14:21:22.000000000 +0100
++++ config.h.in	2004-01-19 13:21:50.000000000 +0100
+@@ -941,6 +941,9 @@ int snprintf(char *str, size_t n, char c
  /* path to su */
  #undef __PATH_SU
  

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2003/06/12 19:16:15 espie Exp $
-${KDE}/libkio_atlantik.so.0.0
-${KDE}/libkolf.so.0.0
-lib/libatlantic.so.2.0
-lib/libatlantikclient.so.2.0
-lib/libatlantikui.so.2.0
-lib/libkdegames.so.2.0
-lib/libkkolf.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/02/01 14:59:23 espie Exp $
+${KDE}/kio_atlantik.so
+${KDE}/kolf.so
+lib/libatlantic.so.3.0
+lib/libatlantikclient.so.3.0
+lib/libatlantikui.so.3.0
+lib/libkdegames.so.3.0
+lib/libkdeinit_kolf.so
+lib/libkolf.so.3.0
 DYNLIBDIR(%D/lib)

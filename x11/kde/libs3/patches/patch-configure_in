@@ -1,10 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.11 2003/12/07 20:19:14 espie Exp $
---- configure.in.orig	2003-09-10 03:55:38.000000000 +0200
-+++ configure.in	2003-12-04 02:08:43.000000000 +0100
-@@ -1054,6 +1054,14 @@ else
+$OpenBSD: patch-configure_in,v 1.12 2004/02/01 14:59:23 espie Exp $
+--- configure.in.orig	2004-01-18 14:21:10.000000000 +0100
++++ configure.in	2004-01-19 13:40:55.000000000 +0100
+@@ -18,7 +18,7 @@ AC_CANONICAL_SYSTEM
+ AC_ARG_PROGRAM
+ 
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdelibs, "3.2.0") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdelibs-3.1.95, "3.2.0") dnl searches for some needed programs
+ 
+ AC_PROG_INSTALL
+ 
+@@ -1176,6 +1176,13 @@ if test "$path_su" = "no"; then
+ else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
  fi
- 
 +dnl Check for sudo
 +AC_PATH_PROG(path_sudo, "sudo", "no")
 +if test "$path_sudo" = "no"; then
@@ -12,7 +21,6 @@ $OpenBSD: patch-configure_in,v 1.11 2003/12/07 20:19:14 espie Exp $
 +else
 +    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
 +fi
-+
+ 
  dnl Check for POSIX.1b scheduling
  AC_MSG_CHECKING([POSIX.1b scheduling])
- AC_TRY_LINK([

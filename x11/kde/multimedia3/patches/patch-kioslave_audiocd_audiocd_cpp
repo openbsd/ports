@@ -1,7 +1,7 @@
-$OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.1 2003/06/18 16:55:17 espie Exp $
---- kioslave/audiocd/audiocd.cpp.orig	Wed Jun 11 09:21:32 2003
-+++ kioslave/audiocd/audiocd.cpp	Wed Jun 11 09:21:43 2003
-@@ -1374,6 +1374,7 @@ AudioCDProtocol::parseArgs(const KURL & 
+$OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.2 2004/02/01 14:59:23 espie Exp $
+--- kioslave/audiocd/audiocd.cpp.orig	2004-01-17 13:53:40.000000000 +0100
++++ kioslave/audiocd/audiocd.cpp	2004-01-26 21:05:34.000000000 +0100
+@@ -1549,6 +1549,7 @@ AudioCDProtocol::parseArgs(const KURL & 
  
  }
  

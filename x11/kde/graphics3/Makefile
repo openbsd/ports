@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2003/12/08 02:17:43 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2004/02/01 14:59:23 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
 COMMENT-kpov=		"modeller for povray"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.4
+VERSION=		3.1.95
 DISTNAME=		kdegraphics-${VERSION}
+MODKDE_VERSION=		3.2
 
+FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
 FULLPKGNAME-kamera=kamera-${VERSION}
@@ -34,5 +36,6 @@ LIB_DEPENDS+=Imlib::graphics/imlib \
 	glut::graphics/glut \
 	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
+BUILD_DEPENDS+=::print/teTeX/base
 
 .include <bsd.port.mk>

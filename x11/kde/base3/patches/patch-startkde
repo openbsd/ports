@@ -1,8 +1,8 @@
-$OpenBSD: patch-startkde,v 1.3 2003/12/07 20:19:13 espie Exp $
---- startkde.orig	2003-09-03 02:03:03.000000000 +0200
-+++ startkde	2003-12-04 02:56:13.000000000 +0100
+$OpenBSD: patch-startkde,v 1.4 2004/02/01 14:59:22 espie Exp $
+--- startkde.orig	2003-10-26 11:45:35.000000000 +0100
++++ startkde	2004-01-21 01:30:50.000000000 +0100
 @@ -3,6 +3,11 @@
- #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.1.4 )
+ #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.2 )
  #
  
 +case X"$DISPLAY" in

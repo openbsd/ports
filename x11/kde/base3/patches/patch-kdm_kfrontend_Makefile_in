@@ -1,14 +1,12 @@
-$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.6 2003/07/30 12:59:22 espie Exp $
---- kdm/kfrontend/Makefile.in.orig	Tue Jul 15 12:03:32 2003
-+++ kdm/kfrontend/Makefile.in	Wed Jul 16 01:18:27 2003
-@@ -982,8 +982,8 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.7 2004/02/01 14:59:22 espie Exp $
+--- kdm/kfrontend/Makefile.in.orig	2004-01-18 14:19:50.000000000 +0100
++++ kdm/kfrontend/Makefile.in	2004-01-21 01:25:38.000000000 +0100
+@@ -1150,7 +1150,7 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local: genkdmconf
--	@$(mkinstalldirs) $(DESTDIR)$(kde_confdir)/kdm
--	@./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm
-+#	@$(mkinstalldirs) $(DESTDIR)$(kde_confdir)/kdm
-+#	@./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm
+-	./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm --face-src $(srcdir)/pics $(GENKDMCONF_FLAGS)
++#	./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm --face-src $(srcdir)/pics $(GENKDMCONF_FLAGS)
  
  messages:
  	$(XGETTEXT) $(kdm_greet_SOURCES) -o $(podir)/kdmgreet.pot

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2003/12/08 02:19:43 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2004/02/01 14:59:23 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.4
+VERSION=		3.1.95
 DISTNAME=		kdelibs-${VERSION}
+MODKDE_VERSION?=	3.2
 
 FLAVORS=debug
 LIB_DEPENDS= 	png.2::graphics/png \
@@ -21,52 +22,10 @@ LIB_DEPENDS= 	png.2::graphics/png \
 SEPARATE_BUILD=	flavored
 # To investigate
 #CONFIGURE_ARGS=--enable-fast-malloc=full
+SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
+EXTRA_CONFIG=xdg/menus/applications.menu
+SUBST_VARS=EXTRA_CONFIG SAMPLECONFDIR
 
-EXTRA_DIRECTORIES= \
-	share/applnk/Editors \
-	share/applnk/Edutainment \
-	share/applnk/Games/Arcade \
-	share/applnk/Games/Board \
-	share/applnk/Games/Card \
-	share/applnk/Games/TacticStrategy \
-	share/applnk/Games/Kidsgames \
-	share/applnk/Graphics/More \
-	share/applnk/Office \
-	share/applnk/Settings/Information \
-	share/applnk/Settings/PowerControl \
-	share/applnk/Settings/System \
-	share/applnk/System/ScreenSavers \
-	share/applnk/Toys \
-	share/applnk/Utilities \
-	share/apps/kdesktop/programs \
-	share/apps/kicker/applets \
-	share/apps/knewsticker \
-	share/apps/konqueror/servicemenus \
-	share/apps/kscreensaver \
-	share/apps/kthememgr/Themes \
-	share/apps/kwin/icewm-themes \
-	share/apps/kworldclock/maps/depths \
-	share/doc/HTML/en \
-	share/icons/hicolor/22x22/apps \
-	share/icons/hicolor/32x32/apps \
-	share/icons/hicolor/48x48/apps \
-	share/icons/locolor/16x16/apps \
-	share/icons/locolor/32x32/apps \
-	share/icons/crystalsvg/128x128/apps \
-	share/icons/crystalsvg/64x64/apps \
-	share/icons/crystalsvg/64x64/apps \
-	share/icons/crystalsvg/48x48/apps \
-	share/icons/crystalsvg/32x32/apps \
-	share/icons/crystalsvg/16x16/apps \
-	share/apps/konqueror/servicemenus \
-	share/locale \
-	share/sounds \
-	share/templates/.source \
-	share/wallpapers
-
-post-install:
-.for i in ${EXTRA_DIRECTORIES}
-	@${INSTALL_DATA_DIR} ${PREFIX}/$i
-.endfor
-
+FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+	
 .include <bsd.port.mk>

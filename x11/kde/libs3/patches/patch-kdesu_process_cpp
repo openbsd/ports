@@ -1,19 +1,19 @@
-$OpenBSD: patch-kdesu_process_cpp,v 1.6 2003/12/08 02:42:45 brad Exp $
---- kdesu/process.cpp.orig	2003-05-07 07:46:21.000000000 -0400
-+++ kdesu/process.cpp	2003-12-07 21:42:40.000000000 -0500
-@@ -369,8 +369,13 @@ int PtyProcess::waitForChild()
+$OpenBSD: patch-kdesu_process_cpp,v 1.7 2004/02/01 14:59:23 espie Exp $
+--- kdesu/process.cpp.orig	2003-11-30 10:46:50.000000000 +0100
++++ kdesu/process.cpp	2004-01-19 14:40:46.000000000 +0100
+@@ -421,8 +421,13 @@ int PtyProcess::waitForChild()
+ 
      while (1) 
      {
-         tv.tv_sec = 1; tv.tv_usec = 0;
 -        FD_SET(m_Fd, &fds);
--        ret = select(m_Fd+1, &fds, 0L, 0L, &tv);
-+	if (m_Fd != -1)
-+	{
-+	    FD_SET(m_Fd, &fds);
-+	    ret = select(m_Fd+1, &fds, 0L, 0L, &tv);
-+	}
-+	else
-+	    ret = 0;
+-        int ret = select(m_Fd+1, &fds, 0L, 0L, 0L);
++	int ret = 0;
++
++ 	if (m_Fd != -1)
++ 	{
++ 	    FD_SET(m_Fd, &fds);
++ 	    ret = select(m_Fd+1, &fds, 0L, 0L, 0L);
++ 	}
          if (ret == -1) 
          {
-             if (errno == EINTR) continue;
+             if (errno != EINTR) 

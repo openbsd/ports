@@ -1,6 +1,6 @@
-$OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
---- kcontrol/clock/tzone.cpp.orig	Mon Jan 13 10:23:21 2003
-+++ kcontrol/clock/tzone.cpp	Mon Jan 13 11:51:56 2003
+$OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.2 2004/02/01 14:59:22 espie Exp $
+--- kcontrol/clock/tzone.cpp.orig	2004-01-17 13:47:47.000000000 +0100
++++ kcontrol/clock/tzone.cpp	2004-01-21 01:20:49.000000000 +0100
 @@ -50,8 +50,14 @@
  #include <sys/stat.h>
  
@@ -15,8 +15,8 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
 +#endif
  
  Tzone::Tzone(QWidget * parent, const char *name)
-   : QWidget (parent, name)
-@@ -94,14 +100,15 @@ void Tzone::fillTimeZones()
+   : QGroupBox(parent, name)
+@@ -86,14 +92,15 @@ void Tzone::fillTimeZones()
  
      tzonelist->insertItem(i18n("[No selection]"));
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
  
      fp = popen(buf, "r");
      if (fp)
-@@ -109,8 +116,8 @@ void Tzone::fillTimeZones()
+@@ -101,8 +108,8 @@ void Tzone::fillTimeZones()
          while(fgets(buf, MAXPATHLEN - 1, fp) != NULL)
          {
              buf[strlen(buf) - 1] = '\0';
@@ -46,7 +46,7 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
          }
          pclose(fp);
      }
-@@ -174,6 +181,14 @@ void Tzone::load()
+@@ -166,6 +173,14 @@ void Tzone::load()
          }
          pclose(fp);
      }
@@ -61,7 +61,7 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
  #else
      QFile f("/etc/timezone");
      if(f.open(IO_ReadOnly))
-@@ -272,6 +287,7 @@ void Tzone::save()
+@@ -264,6 +279,7 @@ void Tzone::save()
  
          QString val = selectedzone;
  #else
@@ -69,7 +69,7 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
          QFile fTimezoneFile("/etc/timezone");
  
          if (fTimezoneFile.open(IO_WriteOnly | IO_Truncate) )
-@@ -281,6 +297,7 @@ void Tzone::save()
+@@ -273,6 +289,7 @@ void Tzone::save()
              fTimezoneFile.close();
          }
  
@@ -77,7 +77,7 @@ $OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
          tz = "/usr/share/zoneinfo/" + selectedzone;
  
          kdDebug() << "Set time zone " << tz << endl;
-@@ -299,7 +316,9 @@ void Tzone::save()
+@@ -294,7 +311,9 @@ void Tzone::save()
  
      } else {
  #if !defined(USE_SOLARIS) // Do not update the System!

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kcontrol_clock_main_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
---- kcontrol/clock/main.cpp.orig	Sat Sep 21 18:54:57 2002
-+++ kcontrol/clock/main.cpp	Mon Jan 13 10:48:30 2003
-@@ -65,8 +65,13 @@ KclockModule::KclockModule(QWidget *pare
+$OpenBSD: patch-kcontrol_clock_main_cpp,v 1.2 2004/02/01 14:59:22 espie Exp $
+--- kcontrol/clock/main.cpp.orig	2003-11-30 10:42:22.000000000 +0100
++++ kcontrol/clock/main.cpp	2004-01-21 01:20:49.000000000 +0100
+@@ -63,8 +63,13 @@ KclockModule::KclockModule(QWidget *pare
  void KclockModule::save()
  {
  //  The order here is important

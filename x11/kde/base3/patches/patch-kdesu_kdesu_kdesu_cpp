@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.4 2003/12/07 20:19:13 espie Exp $
---- kdesu/kdesu/kdesu.cpp.orig	2003-09-01 13:31:18.000000000 +0200
-+++ kdesu/kdesu/kdesu.cpp	2003-12-04 02:56:13.000000000 +0100
-@@ -275,10 +275,12 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.5 2004/02/01 14:59:22 espie Exp $
+--- kdesu/kdesu/kdesu.cpp.orig	2003-08-01 09:46:21.000000000 +0200
++++ kdesu/kdesu/kdesu.cpp	2004-01-21 01:23:01.000000000 +0100
+@@ -313,10 +313,12 @@ static int startApp()
      KConfig *config = KGlobal::config();
      config->setGroup("Passwords");
      int timeout = config->readNumEntry("Timeout", defTimeout);
@@ -14,20 +14,20 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.4 2003/12/07 20:19:13 espie Exp $
      int needpw = proc.checkNeedPassword();
      if (needpw < 0)
      {
-@@ -301,7 +303,7 @@ int main(int argc, char *argv[])
- 	KStartupInfoData data;
- 	data.setSilent( KStartupInfoData::Yes );
- 	KStartupInfo::sendChange( id, data );
--	KDEsuDialog dlg(user, auth_user, keep && !terminal);
-+	KDEsuDialog dlg(user, auth_user, keep && !terminal, useSudo);
- 	dlg.addLine(i18n("Command:"), command);
- 	if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) 
- 	{
-@@ -344,6 +346,7 @@ int main(int argc, char *argv[])
- 	proc.setTerminal(terminal);
- 	proc.setErase(true);
- 	proc.setUser(user);
-+	proc.setUseSudo(useSudo);
- 	if (!new_dcop)
- 	{
- 	    proc.setXOnly(true);
+@@ -339,7 +341,7 @@ static int startApp()
+         KStartupInfoData data;
+         data.setSilent( KStartupInfoData::Yes );
+         KStartupInfo::sendChange( id, data );
+-        KDEsuDialog dlg(user, auth_user, keep && !terminal);
++        KDEsuDialog dlg(user, auth_user, keep && !terminal, useSudo);
+         dlg.addLine(i18n("Command:"), command);
+         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
+         {
+@@ -390,6 +392,7 @@ static int startApp()
+         proc.setTerminal(terminal);
+         proc.setErase(true);
+         proc.setUser(user);
++ 	proc.setUseSudo(useSudo);
+         if (!new_dcop)
+         {
+             proc.setXOnly(true);

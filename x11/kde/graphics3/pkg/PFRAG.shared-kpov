@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.shared-kpov,v 1.1 2003/04/10 00:00:24 espie Exp $
-${KDE}/libkpovmodelerpart.so.0.0
+@comment $OpenBSD: PFRAG.shared-kpov,v 1.2 2004/02/01 14:59:23 espie Exp $
+${KDE}/libkpovmodelerpart.so
+lib/libkpovmodeler.so.0.0
