@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/12 13:16:02 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/08 04:45:53 margarida Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
-VERSION=		1.61
+VERSION=		1.66
 DISTNAME=		sleuthkit-${VERSION}
 CATEGORIES=		sysutils security
 
@@ -23,14 +23,19 @@ MAKE_FLAGS=		CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 
 NO_REGRESS=		Yes
 
+SCRIPTS=		mactime sorter
+PROGRAMS=		dcalc dcat dls dstat ffind icat fls fsstat \
+			icat ifind ils istat hfind mmls
 DOCS=			README docs/* tct.docs/*
+EXAMPLES=		share/sorter/*
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/task
-	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} mactime sorter ${PREFIX}/bin
-	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} dcalc dcat dls dstat ffind \
-	  icat fls fsstat icat ifind ils istat hfind ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sleuthkit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sleuthkit
+	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} * ${PREFIX}/man/man1
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/task
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/sleuthkit
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/sleuthkit
 	 
 .include <bsd.port.mk>

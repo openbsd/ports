@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/12 13:16:02 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/08 04:45:53 margarida Exp $
 bin/dcalc
 bin/dcat
 bin/dls
@@ -12,12 +12,14 @@ bin/ifind
 bin/ils
 bin/istat
 bin/mactime
+bin/mmls
 bin/sorter
 man/man1/dcalc.1
 man/man1/dcat.1
 man/man1/dls.1
 man/man1/dstat.1
 man/man1/ffind.1
+man/man1/file.1
 man/man1/fls.1
 man/man1/fsstat.1
 man/man1/hfind.1
@@ -26,17 +28,27 @@ man/man1/ifind.1
 man/man1/ils.1
 man/man1/istat.1
 man/man1/mactime.1
+man/man1/mmls.1
 man/man1/sorter.1
-share/doc/task/CHANGES.FROM.TCT
-share/doc/task/README
-share/doc/task/README.FIRST
-share/doc/task/additional-resources
-share/doc/task/bibliography
-share/doc/task/fat.README
-share/doc/task/filesystem.README
-share/doc/task/help-recovering-file
-share/doc/task/help-when-broken-into
-share/doc/task/ntfs.README
-share/doc/task/sorter.README
-share/doc/task/timeline.README
-@dirrm share/doc/task
+share/doc/sleuthkit/CHANGES.FROM.TCT
+share/doc/sleuthkit/README
+share/doc/sleuthkit/README.FIRST
+share/doc/sleuthkit/additional-resources
+share/doc/sleuthkit/bibliography
+share/doc/sleuthkit/help-recovering-file
+share/doc/sleuthkit/help-when-broken-into
+share/doc/sleuthkit/nsrl.txt
+share/doc/sleuthkit/other.txt
+share/doc/sleuthkit/ref_fs.txt
+share/doc/sleuthkit/ref_timeline.txt
+share/doc/sleuthkit/skins_fat.txt
+share/doc/sleuthkit/skins_ntfs.txt
+share/examples/sleuthkit/default.sort
+share/examples/sleuthkit/freebsd.sort
+share/examples/sleuthkit/images.sort
+share/examples/sleuthkit/linux.sort
+share/examples/sleuthkit/openbsd.sort
+share/examples/sleuthkit/solaris.sort
+share/examples/sleuthkit/windows.sort
+@dirrm share/examples/sleuthkit
+@dirrm share/doc/sleuthkit
