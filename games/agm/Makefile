@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 08:05:51 pvalchev Exp $
 #
 
 COMMENT=		"AnaGram search utility"
@@ -9,7 +9,7 @@ CATEGORIES=		games
 PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"
 PERMIT_DISTFILES_CDROM=	"no license available"
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	"no license available"
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
 
