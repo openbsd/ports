@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2003/01/18 23:29:52 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2003/06/12 20:33:12 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
+
+BROKEN=		"even regress fails with 'Memory fault' immediately."
 
 VERSION=	6.1
 DISTNAME=	gc${VERSION}
