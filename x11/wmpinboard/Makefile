@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/01 17:34:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/09 14:28:53 wilfried Exp $
 
-DISTNAME=	wmpinboard-1.0
-CATEGORIES=	x11 x11/windowmaker
-NEED_VERSION=	1.340
-HOMEPAGE=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
-MASTER_SITES=	${HOMEPAGE}
+DISTNAME=		wmpinboard-1.0
+CATEGORIES=		x11 x11/windowmaker
+NEED_VERSION=		1.340
 
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
+HOMEPAGE=		http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
+
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=		${HOMEPAGE}
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

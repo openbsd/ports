@@ -1,40 +1,42 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/09 13:06:24 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:49 wilfried Exp $
 
-PKGNAME=	wmtimebomb-0.2.0
-DISTNAME=	wmtimebomb.20
-CATEGORIES=	games x11 x11/windowmaker
-NEED_VERSION=	1.340
-HOMEPAGE=	http://www.maliwan.org/wmtimebomb.shtml
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
-		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/
+DISTNAME=		wmtimebomb.20
+PKGNAME=		wmtimebomb-0.2.0
+CATEGORIES=		games x11 x11/windowmaker
+NEED_VERSION=		1.340
 
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
+HOMEPAGE=		http://www.maliwan.org/wmtimebomb.shtml
 
-LIB_DEPENDS=	wraster.2::x11/windowmaker \
-		PropList.2::devel/libproplist \
-		jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff \
-		png.1::graphics/png \
-		gif.4::graphics/giflib
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	8bpp
-FLAVOR?=
+MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
+			ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/
 
-USE_X11=	Yes
+LIB_DEPENDS=		wraster.2::x11/windowmaker \
+			PropList.2::devel/libproplist \
+			jpeg.62::graphics/jpeg \
+			tiff.35::graphics/tiff \
+			png.1::graphics/png \
+			gif.4::graphics/giflib
+
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
-WRKDIST=	${WRKDIR}/wmtimebomb.app
+FLAVORS=		8bpp
+FLAVOR?=
 
-SAMPLE_DIR=	${PREFIX}/share/examples/wmtimebomb
-SUBST_VARS+=	SAMPLE_DIR
+WRKDIST=		${WRKDIR}/wmtimebomb.app
+
+SAMPLE_DIR=		${PREFIX}/share/examples/wmtimebomb
+SUBST_VARS+=		SAMPLE_DIR
 
 pre-configure:
-.if ${FLAVOR:L} == "8bpp"
+.if ${FLAVOR:L:M8pp}
 	cd ${WRKSRC} && \
 		rm XPM && ln -s XPM.lo XPM
 .else

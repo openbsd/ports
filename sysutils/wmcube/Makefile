@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/01 17:34:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:51 wilfried Exp $
 
-DISTNAME=	wmcube-0.98
-CATEGORIES=	sysutils x11 x11/windowmaker
-NEED_VERSION=	1.340
-MASTER_SITES=	http://boombox.campus.luth.se/files/
-HOMEPAGE=	http://boombox.campus.luth.se/projects.php
+DISTNAME=		wmcube-0.98
+CATEGORIES=		sysutils x11 x11/windowmaker
+NEED_VERSION=		1.340
 
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
+HOMEPAGE=		http://boombox.campus.luth.se/projects.php
+
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
-WRKDIST=	${WRKDIR}/wmcube
-WRKSRC=		${WRKDIST}/wmcube
+MASTER_SITES=		http://boombox.campus.luth.se/files/
 
-MAKE_FILE=	Makefile.OPENBSD
+USE_X11=		Yes
 
-BINGRP=		kmem
-BINMODE=	2555
+MAKE_FILE=		Makefile.OPENBSD
+WRKDIST=		${WRKDIR}/wmcube
+WRKSRC=			${WRKDIST}/wmcube
 
-3D_OBJECTS=	${PREFIX}/share/wmcube
+BINGRP=			kmem
+BINMODE=		2555
+
+3D_OBJECTS=		${PREFIX}/share/wmcube
 
 post-install:
 	${INSTALL_DATA_DIR} ${3D_OBJECTS}

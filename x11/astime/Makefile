@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/09 08:40:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:52 wilfried Exp $
 
 DISTNAME=		astime-2.8
-CATEGORIES=     	x11 x11/windowmaker
+CATEGORIES=		x11 x11/windowmaker
 NEED_VERSION=		1.359
 
 HOMEPAGE=		http://www.tigr.net/afterstep/as-apps/
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-jpeg
 

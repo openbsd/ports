@@ -1,37 +1,39 @@
-# $OpenBSD: Makefile,v 1.8 2001/02/27 07:49:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/09 14:28:47 wilfried Exp $
 
-DISTNAME=	WSoundServer-0.4.0
-PKGNAME=	${DISTNAME:L}
-CATEGORIES=	audio
-NEED_VERSION=	1.336
-MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
-HOMEPAGE=	http://shadowmere.student.utwente.nl/
+DISTNAME=		WSoundServer-0.4.0
+PKGNAME=		${DISTNAME:L}
+CATEGORIES=		audio
+NEED_VERSION=		1.340
 
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
+HOMEPAGE=		http://shadowmere.student.utwente.nl/
+
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	wraster.2::x11/windowmaker \
-		PropList.2::devel/libproplist \
-		audiofile::devel/libaudiofile \
-		dockapp::devel/libdockapp
-RUN_DEPENDS=	wmaker::x11/windowmaker
+MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
-USE_X11=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static
+RUN_DEPENDS=		wmaker::x11/windowmaker
+LIB_DEPENDS=		wraster.2::x11/windowmaker \
+			PropList.2::devel/libproplist \
+			audiofile::devel/libaudiofile \
+			dockapp::devel/libdockapp
 
-FLAVORS=	esd
+USE_X11=		Yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
+
+FLAVORS=		esd
 FLAVOR?=
 
-.if ${FLAVOR:L} == "esd"
-LIB_DEPENDS+= esd::audio/esound
-CONFIGURE_ARGS+= --enable-esd
+.if ${FLAVOR:L:Mesd}
+LIB_DEPENDS+=		esd::audio/esound
+CONFIGURE_ARGS+=	--enable-esd
 .else
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 post-patch:

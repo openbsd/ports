@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/09 08:43:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:54 wilfried Exp $
 
 DISTNAME=		wmtz-0.6
 CATEGORIES=     	x11 x11/windowmaker
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
+
+USE_X11=		Yes
 
 WRKSRC=			${WRKDIST}/wmtz
 

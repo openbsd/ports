@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/01 17:34:26 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:48 wilfried Exp $
 
-DISTNAME=	wmeyes
-PKGNAME=	${DISTNAME}-0.0
-CATEGORIES=	games x11 x11/windowmaker
-NEED_VERSION=	1.340
-MASTER_SITES=	http://home.istar.ca/~jenora/
-EXTRACT_SUFX=	.tgz
-HOMEPAGE=	http://home.istar.ca/~jenora/wmeyes.html
+DISTNAME=		wmeyes
+PKGNAME=		${DISTNAME}-0.0
+CATEGORIES=		games x11 x11/windowmaker
+NEED_VERSION=		1.340
 
-MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
+HOMEPAGE=		http://home.istar.ca/~jenora/wmeyes.html
+
+MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-WRKDIST=	${WRKDIR}
+MASTER_SITES=		http://home.istar.ca/~jenora/
+EXTRACT_SUFX=		.tgz
 
-USE_X11=	Yes
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake noman
+
+WRKDIST=		${WRKDIR}
 
 .include <bsd.port.mk>
