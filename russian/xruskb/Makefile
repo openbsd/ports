@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/03/13 14:42:32 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/03/13 15:42:44 brad Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
@@ -15,16 +15,12 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 
-.if defined(USE_MOTIF) && ${USE_MOTIF:U} == YES
-FLAVOR=		motif
-.endif
-
 FLAVORS=	motif
 FLAVOR?=
 
 .if ${FLAVOR:L:Mmotif}
-CONFIGURE_ARGS=	--with-motif --without-Xaw
 USE_MOTIF=	Yes
+CONFIGURE_ARGS=	--with-motif --without-Xaw
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif
