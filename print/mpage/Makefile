@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.1.1.1 1999/08/24 22:49:10 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/08/28 10:32:03 maja Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ianm@cit.nepean.uws.edu.au
 
 fetch-depends:
+.if !defined(NO_WARNINGS)
 .if !defined(PAGESIZE)
 	@${ECHO} ""
 	@${ECHO} You must define your favorite page size:
@@ -25,6 +26,7 @@ fetch-depends:
 	@${ECHO} or by the command \"make PAGESIZE=PAGE_A4\"
 	@${ECHO} ""
 	@${FALSE}
+.endif
 .endif
 
 .include <bsd.port.mk>
