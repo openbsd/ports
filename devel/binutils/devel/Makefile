@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2003/02/27 19:27:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2003/06/07 23:38:01 brad Exp $
+
+BROKEN=			"update to a snapshot"
 
 COMMENT=		"GNU development tools"
 
