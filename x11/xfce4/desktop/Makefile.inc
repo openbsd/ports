@@ -1,8 +1,8 @@
-V?=		4.0.3
+V?=		4.0.5
 
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4/desktop
 
-MASTER_SITES?=	http://www.xfce.org/archive/xfce-${V}/src/
+MASTER_SITES?=	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${V}/src/
 DIST_SUBDIR?=	xfce4
 
 HOMEPAGE?=	http://www.xfce.org/

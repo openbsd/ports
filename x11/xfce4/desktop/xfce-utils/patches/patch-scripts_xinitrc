@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_xinitrc,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
---- scripts/xinitrc.orig	2003-10-13 13:01:21.000000000 -0500
-+++ scripts/xinitrc	2003-12-09 21:39:09.000000000 -0600
+$OpenBSD: patch-scripts_xinitrc,v 1.2 2004/04/18 00:28:57 jolan Exp $
+--- scripts/xinitrc.orig	2004-03-06 06:27:35.000000000 -0600
++++ scripts/xinitrc	2004-04-17 14:34:02.000000000 -0500
 @@ -24,19 +24,19 @@ test -f $HOME/.Xmodmap && xmodmap $HOME/
  # test -f $HOME/.Xdefaults && xrdb -merge $HOME/.Xdefaults
  
  # Launch xscreensaver (if available), but only as non-root user
--test $UID -gt 0 && xscreensaver -no-splash &
-+#test $UID -gt 0 && xscreensaver -no-splash &
+-test $UID -gt 0 && test -z $VNCSESSION && xscreensaver -no-splash &
++#test $UID -gt 0 && test -z $VNCSESSION && xscreensaver -no-splash &
  
  # Run xfce4-session if installed
 -xfcesm=`which xfce4-session`

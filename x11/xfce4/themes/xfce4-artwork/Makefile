@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/18 00:28:58 jolan Exp $
+PKG_ARCH=	*
 
 COMMENT=	"additional background images for xfce4"
 DISTNAME=	xfce4-artwork-0.0.4

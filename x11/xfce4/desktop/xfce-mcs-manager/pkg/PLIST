@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/09 01:27:42 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/18 00:28:57 jolan Exp $
 bin/xfce-mcs-manager
 bin/xfce-setting-show
 include/xfce4/xfce-mcs-manager/manager-plugin.h
 lib/pkgconfig/xfce-mcs-manager.pc
 share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/bg/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/fa_IR/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fr/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/hi/LC_MESSAGES/xfce-mcs-manager.mo
@@ -22,6 +24,7 @@ share/locale/ms/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/nl/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/no/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/pl/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/pt_BR/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ru/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/sv/LC_MESSAGES/xfce-mcs-manager.mo
@@ -48,6 +51,8 @@ share/xfce4/doc/fr/xfce-mcs-manager.html
 @dirrm share/xfce4/doc
 @dirrm share/locale/pt_PT/LC_MESSAGES
 @dirrm share/locale/pt_PT
+@dirrm share/locale/fa_IR/LC_MESSAGES
+@dirrm share/locale/fa_IR
 @dirrm share/locale/es_MX/LC_MESSAGES
 @dirrm share/locale/es_MX
 @dirrm include/xfce4/xfce-mcs-manager

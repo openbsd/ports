@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/14 00:51:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/18 00:28:58 jolan Exp $
 
-V=	4.0.3.1
 COMMENT=	"xfce4 window mananger"
 DISTNAME=	xfwm4-${V}
 

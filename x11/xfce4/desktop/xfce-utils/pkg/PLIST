@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/09 01:27:42 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/18 00:28:57 jolan Exp $
 bin/startxfce4
 bin/xfce4-about
 bin/xfhelp4
@@ -10,41 +10,16 @@ bin/xfterm4
 lib/xfce4/mcs-plugins/xftaskbar_plugin.a
 lib/xfce4/mcs-plugins/xftaskbar_plugin.la
 lib/xfce4/mcs-plugins/xftaskbar_plugin.so
-share/doc/xfce4/AUTHORS
-share/doc/xfce4/AUTHORS.az
-share/doc/xfce4/AUTHORS.ca
-share/doc/xfce4/AUTHORS.de
-share/doc/xfce4/AUTHORS.fr
-share/doc/xfce4/AUTHORS.html
-share/doc/xfce4/AUTHORS.html.az
-share/doc/xfce4/AUTHORS.html.ca
-share/doc/xfce4/AUTHORS.html.de
-share/doc/xfce4/AUTHORS.html.fr
-share/doc/xfce4/AUTHORS.vi
-share/doc/xfce4/BSD
-share/doc/xfce4/BSD.html
-share/doc/xfce4/COPYING
-share/doc/xfce4/COPYING.html
-share/doc/xfce4/COPYING.vi
-share/doc/xfce4/GPL
-share/doc/xfce4/GPL.html
-share/doc/xfce4/INFO
-share/doc/xfce4/INFO.ca
-share/doc/xfce4/INFO.fr
-share/doc/xfce4/INFO.html
-share/doc/xfce4/INFO.html.ca
-share/doc/xfce4/INFO.html.de
-share/doc/xfce4/INFO.html.fr
-share/doc/xfce4/INFO.vi
-share/doc/xfce4/LGPL
-share/doc/xfce4/LGPL.html
 share/examples/xfce-utils/xinitrc
+share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
+share/locale/bg/LC_MESSAGES/xfce-utils.mo
 share/locale/ca/LC_MESSAGES/xfce-utils.mo
 share/locale/cs/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/es/LC_MESSAGES/xfce-utils.mo
 share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
+share/locale/fa_IR/LC_MESSAGES/xfce-utils.mo
 share/locale/fi/LC_MESSAGES/xfce-utils.mo
 share/locale/fr/LC_MESSAGES/xfce-utils.mo
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
@@ -57,6 +32,7 @@ share/locale/ms/LC_MESSAGES/xfce-utils.mo
 share/locale/nl/LC_MESSAGES/xfce-utils.mo
 share/locale/no/LC_MESSAGES/xfce-utils.mo
 share/locale/pl/LC_MESSAGES/xfce-utils.mo
+share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
@@ -66,6 +42,42 @@ share/locale/uk/LC_MESSAGES/xfce-utils.mo
 share/locale/vi/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_CN/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_TW/LC_MESSAGES/xfce-utils.mo
+share/xfce4/AUTHORS
+share/xfce4/AUTHORS.az
+share/xfce4/AUTHORS.ca
+share/xfce4/AUTHORS.de
+share/xfce4/AUTHORS.es
+share/xfce4/AUTHORS.fr
+share/xfce4/AUTHORS.html
+share/xfce4/AUTHORS.html.az
+share/xfce4/AUTHORS.html.ca
+share/xfce4/AUTHORS.html.de
+share/xfce4/AUTHORS.html.es
+share/xfce4/AUTHORS.html.fr
+share/xfce4/AUTHORS.html.it
+share/xfce4/AUTHORS.it
+share/xfce4/AUTHORS.vi
+share/xfce4/BSD
+share/xfce4/BSD.html
+share/xfce4/COPYING
+share/xfce4/COPYING.html
+share/xfce4/COPYING.vi
+share/xfce4/GPL
+share/xfce4/GPL.html
+share/xfce4/INFO
+share/xfce4/INFO.ca
+share/xfce4/INFO.es
+share/xfce4/INFO.fr
+share/xfce4/INFO.html
+share/xfce4/INFO.html.ca
+share/xfce4/INFO.html.de
+share/xfce4/INFO.html.es
+share/xfce4/INFO.html.fr
+share/xfce4/INFO.html.it
+share/xfce4/INFO.it
+share/xfce4/INFO.vi
+share/xfce4/LGPL
+share/xfce4/LGPL.html
 share/xfce4/doc/C/BSD.html
 share/xfce4/doc/C/GPL.html
 share/xfce4/doc/C/LGPL.html
@@ -96,6 +108,5 @@ share/xfce4/doc/fr/xfce4-use.html
 share/xfce4/doc/fr/xfce4-user-guide.html
 share/xfce4/doc/xfce.css
 @dirrm share/examples/xfce-utils
-@dirrm share/doc/xfce4
 @dirrm lib/xfce4/mcs-plugins
 @dirrm lib/xfce4
