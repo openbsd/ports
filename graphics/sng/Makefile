@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/28 09:25:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/15 21:53:20 xsa Exp $
 
 COMMENT=		"PNG to ASCII compiler and decompiler"
 
@@ -7,7 +7,7 @@ CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sng/}
 
 HOMEPAGE=		http://sng.sourceforge.net/
-MAINTAINER=		Thorsten Glaser <x86@ePost.de>
+MAINTAINER=		Thorsten Glaser <tg@66h.42h.de>
 
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
