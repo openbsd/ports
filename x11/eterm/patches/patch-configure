@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug 12 04:49:16 2000
++++ configure	Sat Aug 12 04:49:29 2000
+@@ -3822,7 +3822,7 @@
+ EOF
+ 
+ 
+-for ac_func in atexit _exit unsetenv setutent seteuid memmove putenv strsep setresuid setresgid memmem usleep snprintf
++for ac_func in atexit _exit unsetenv setutent seteuid setegid memmove putenv strsep setresuid setresgid memmem usleep snprintf
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:3829: checking for $ac_func" >&5

@@ -1,0 +1,12 @@
+--- config.h.in.orig	Sat Aug 12 04:48:22 2000
++++ config.h.in	Sat Aug 12 04:48:42 2000
+@@ -154,6 +154,9 @@
+ /* Define if you have the seteuid function.  */
+ #undef HAVE_SETEUID
+ 
++/* Define if you have the setegid function.  */
++#undef HAVE_SETEGID
++
+ /* Define if you have the setresgid function.  */
+ #undef HAVE_SETRESGID
+ 
