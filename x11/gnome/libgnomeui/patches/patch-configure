@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
---- configure.orig	Wed Nov 20 08:41:52 2002
-+++ configure	Wed Nov 27 23:23:19 2002
-@@ -5243,8 +5243,8 @@ else
+$OpenBSD: patch-configure,v 1.2 2003/06/12 19:59:35 marcm Exp $
+--- configure.orig	Thu Jan 23 06:22:37 2003
++++ configure	Sun May 11 20:39:43 2003
+@@ -5960,8 +5960,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -5253,8 +5253,8 @@ else
+@@ -5970,8 +5970,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -23,12 +23,3 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
          ;;
        esac
      fi
-@@ -10502,7 +10502,7 @@ EOF
- 
-   fi
- 
--GNOMEUI_MODULES="libgnome-2.0 >= 2.0.0 libgnomecanvas-2.0 >= 2.0.0 libbonoboui-2.0 >= 2.0.0 gconf-2.0 >= 1.1.11"
-+GNOMEUI_MODULES="gtk+-2.0 >= 2.0.0 libgnome-2.0 >= 2.0.0 libgnomecanvas-2.0 >= 2.0.0 libbonoboui-2.0 >= 2.0.0 gconf-2.0 >= 1.1.11"
- 
-   succeeded=no
- 

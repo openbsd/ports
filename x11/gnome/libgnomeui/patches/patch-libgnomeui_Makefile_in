@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgnomeui_Makefile_in,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
---- libgnomeui/Makefile.in.orig	Tue Aug  6 06:26:06 2002
-+++ libgnomeui/Makefile.in	Sat Aug 10 09:57:50 2002
-@@ -341,7 +341,7 @@ uninstall-libexecPROGRAMS:
+$OpenBSD: patch-libgnomeui_Makefile_in,v 1.2 2003/06/12 19:59:35 marcm Exp $
+--- libgnomeui/Makefile.in.orig	Thu Jan 23 06:33:36 2003
++++ libgnomeui/Makefile.in	Sun May 11 20:39:43 2003
+@@ -478,7 +478,7 @@ uninstall-libexecPROGRAMS:
  
  gnome_segv2$(EXEEXT): $(gnome_segv2_OBJECTS) $(gnome_segv2_DEPENDENCIES)
  	@rm -f gnome_segv2$(EXEEXT)

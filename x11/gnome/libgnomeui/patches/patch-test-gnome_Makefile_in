@@ -1,7 +1,7 @@
-$OpenBSD: patch-test-gnome_Makefile_in,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
---- test-gnome/Makefile.in.orig	Tue Jun 11 14:02:33 2002
-+++ test-gnome/Makefile.in	Mon Aug  5 19:51:47 2002
-@@ -259,19 +259,19 @@ maintainer-clean-libtool:
+$OpenBSD: patch-test-gnome_Makefile_in,v 1.2 2003/06/12 19:59:35 marcm Exp $
+--- test-gnome/Makefile.in.orig	Thu Jan 23 06:33:40 2003
++++ test-gnome/Makefile.in	Sun May 11 20:39:44 2003
+@@ -286,19 +286,19 @@ maintainer-clean-libtool:
  
  test-gnome$(EXEEXT): $(test_gnome_OBJECTS) $(test_gnome_DEPENDENCIES)
  	@rm -f test-gnome$(EXEEXT)
