@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpi2c++_src_mpi2c++_Makefile_in,v 1.1 2001/04/13 20:29:16 todd Exp $
---- mpi2c++/src/mpi2c++/Makefile.in.orig	Fri Apr 13 13:53:32 2001
-+++ mpi2c++/src/mpi2c++/Makefile.in	Fri Apr 13 13:53:51 2001
+$OpenBSD: patch-mpi2c++_src_mpi2c++_Makefile_in,v 1.2 2001/04/13 22:16:09 todd Exp $
+--- mpi2c++/src/mpi2c++/Makefile.in.orig	Wed Apr  4 12:15:24 2001
++++ mpi2c++/src/mpi2c++/Makefile.in	Fri Apr 13 16:19:47 2001
 @@ -300,7 +300,7 @@ maintainer-clean-generic clean mostlycle
  install-exec-hook:
  	(rm -f $(DESTDIR)$(includedir)/mpi++.h ; \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1 2001/04/13 22:16:08 todd Exp $
+--- etc/Makefile.in.orig	Fri Apr 13 16:42:05 2001
++++ etc/Makefile.in	Fri Apr 13 16:42:39 2001
+@@ -33,7 +33,7 @@ bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+ datadir = @datadir@
+-sysconfdir = @sysconfdir@
++sysconfdir = ${prefix}/share/examples/lam
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+ libdir = @libdir@

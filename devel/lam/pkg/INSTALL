@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/04/13 20:29:16 todd Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/04/13 22:16:10 todd Exp $
 #
 # Pre/post-installation setup of LAM
 
@@ -12,9 +12,9 @@ do_post_install()
 	for f in bhost.def bhost.lam conf.lam conf.otb helpfile; do
 		file=/etc/lam-$f
 		if [ -f $file ]; then
-			existing="$existing $file"
+			existing="$existing lam-$f"
 		else
-			install="$install $file"
+			install="$install lam-$f"
 			cp ${PREFIX}/share/examples/lam/lam-$f $file
 		fi
 	done
@@ -26,7 +26,7 @@ do_post_install()
 		echo "| ${PREFIX}/share/examples/lam directory to /etc/"
 		echo "|   $install"
 	fi
-	if ![ X"${existing}" = X"" ]; then
+	if ! [ X"${existing}" = X"" ]; then
 		echo "| The following files were already present.  Current"
 		echo "| examples for this package are found in:"
 		echo "| ${PREFIX}/share/examples/lam"
