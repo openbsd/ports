@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2004/03/04 12:57:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.67 2004/03/15 22:42:28 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc amd64
@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-ossaudio \
 		--disable-nas \
 		--disable-liblzo \
+		--enable-runtime-cpudetection \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
