@@ -1,4 +1,4 @@
-# $OpenBSD: essentials,v 1.10 2003/03/25 04:10:39 pvalchev Exp $
+# $OpenBSD: essentials,v 1.11 2003/03/31 03:53:23 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages
 # for the 3.3 CD.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
@@ -7,8 +7,8 @@ net/uucp
 net/rsync
 net/cvsup
 sysutils/mergemaster
-net/ntp
-net/ntp,-doc
+net/ntp/stable
+net/ntp/stable,-doc
 editors/vim/stable,no_x11
 editors/emacs21
 archivers/unzip
@@ -24,7 +24,7 @@ mail/fetchmail
 misc/screen
 sysutils/mtools
 net/samba
-net/netatalk
+net/netatalk/stable
 converters/recode
 misc/buffer
 databases/postgresql
@@ -48,10 +48,6 @@ mail/mutt/stable
 audio/libao,-esd
 audio/vorbis-tools
 audio/mpg321
-audio/xmms,no_gnome
-audio/xmms,-esd,no_gnome
-audio/xmms,-vorbis,no_gnome
-audio/xmms,-mikmod,no_gnome
 net/curl
 net/wget
 graphics/gimp
@@ -69,6 +65,7 @@ x11/openmotif
 x11/qt2
 x11/qt2,-examples
 x11/qt2,-html
+x11/qt3,-base
 x11/kde/base3
 x11/kde/office3
 x11/kde/games3
@@ -168,7 +165,6 @@ graphics/xfig
 x11/xautolock
 emulators/freebsd_lib
 mail/sylpheed
-graphics/smpeg-xmms
 x11/wterm
 net/gaim
 devel/gmake
@@ -189,9 +185,13 @@ net/unison
 comms/jpilot
 lang/egcs/stable
 lang/egcs/stable,-c++
+lang/egcs/stable,-estdc
 lang/egcs/stable,-g77
-lang/egcs/stable,-ada
 mail/evolution
 audio/soundtracker,gnome,esd
 emulators/zsnes
 print/lyx
+net/libdnet
+net/pure-ftpd
+net/nsd
+net/ucd-snmp
