@@ -1,5 +1,5 @@
---- src/log.c.orig	Fri Sep 10 17:17:02 1999
-+++ src/log.c	Sun Sep 12 10:32:18 1999
+--- src/log.c.orig	Sun Sep 26 02:00:34 1999
++++ src/log.c	Tue Sep 28 13:30:12 1999
 @@ -44,7 +44,7 @@
  static int syslog_discard = FALSE;
  static int logstderr = TRUE;
@@ -9,7 +9,7 @@
  static int set_facility = -1;
  static char *syslog_fn = NULL;
  static char *syslog_hostname;
-@@ -710,7 +710,7 @@
+@@ -739,7 +739,7 @@
    log(priority,facility,buf);
  }
  
@@ -18,12 +18,12 @@
   * facility (presumable it doesn't need to be seen by everyone
   */
  
-@@ -725,7 +725,7 @@
+@@ -754,7 +754,7 @@
  
    buf[1023] = '\0';
  
--  log(priority,LOG_AUTHPRIV,buf);
-+  log(priority,LOG_FTP,buf);
+-  log(priority, LOG_AUTHPRIV, buf);
++  log(priority, LOG_FTP, buf);
  }
  
  /* Disable logging to stderr, should be done right before forking
