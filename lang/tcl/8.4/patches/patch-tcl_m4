@@ -1,5 +1,5 @@
---- tcl.m4.orig	2004-03-01 23:58:59.000000000 +0000
-+++ tcl.m4	2004-05-17 12:45:28.000000000 +0000
+--- tcl.m4.orig	Mon Mar  1 17:58:59 2004
++++ tcl.m4	Sat Jul  3 12:27:16 2004
 @@ -1209,7 +1209,7 @@ dnl AC_CHECK_TOOL(AR, ar)
  	    CC_SEARCH_FLAGS=""
  	    LD_SEARCH_FLAGS=""
@@ -9,14 +9,19 @@
  	    # Not available on all versions:  check for include file.
  	    AC_CHECK_HEADER(dlfcn.h, [
  		# NetBSD/SPARC needs -fPIC, -fpic will not do.
-@@ -1251,6 +1251,56 @@ dnl AC_CHECK_TOOL(AR, ar)
- 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
- 	    TCL_LIB_VERSIONS_OK=nodots
- 	    ;;
+@@ -1245,6 +1245,55 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+ 		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+ 	    ])
++
++	    # FreeBSD doesn't handle version numbers with dots.
++
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
++	    TCL_LIB_VERSIONS_OK=nodots
++	    ;;
 +	OpenBSD-*)
 +	    case `machine` in
-+	    hppa|luna88k|mvme88k|vax)
-+		# XXX not sure tclLdAout will work on hppa...
++	    luna88k|mvme88k|vax)
 +		SHLIB_CFLAGS=""
 +		SHLIB_LD="echo tclLdAout $CC \{$SHLIB_CFLAGS\} | `pwd`/tclsh -r"
 +		SHLIB_LD_LIBS='${LIBS}'
@@ -57,12 +62,6 @@
 +		)
 +		;;
 +	    esac
-+
-+	    # FreeBSD doesn't handle version numbers with dots.
-+
-+	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
-+	    TCL_LIB_VERSIONS_OK=nodots
-+	    ;;
- 	FreeBSD-*)
- 	    # FreeBSD 3.* and greater have ELF.
- 	    SHLIB_CFLAGS="-fPIC"
+ 
+ 	    # FreeBSD doesn't handle version numbers with dots.
+ 
