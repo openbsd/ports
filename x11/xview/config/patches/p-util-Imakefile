@@ -1,6 +1,16 @@
---- util/Imakefile.orig	Tue Apr  4 22:17:16 2000
-+++ util/Imakefile	Tue Apr  4 22:17:24 2000
-@@ -24,7 +24,7 @@ MakeSubdirs($(SUBDIRS))
+--- util/Imakefile.orig	Tue Jun 29 07:14:22 1993
++++ util/Imakefile	Fri Apr  7 02:51:47 2000
+@@ -16,7 +16,9 @@ SOELIM_DIR = soelim
+ 
+ CONV_DIR = conversion
+ 
++#if 0
+ MSG_UTIL = xgettext msgfmt
++#endif
+ 
+ SUBDIRS = $(CPP_DIR) $(SOELIM_DIR) $(CONV_DIR) $(MSG_UTIL)
+ 
+@@ -24,7 +26,7 @@ MakeSubdirs($(SUBDIRS))
  DependSubdirs($(SUBDIRS))
  
  install::
