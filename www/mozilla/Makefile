@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2003/07/01 11:10:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.54 2003/07/04 06:59:15 marcm Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -91,5 +91,11 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOB}/bin/mozilla-config ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/bin/regchrome ${MOB}/bin/regxpcom ${MOB}/bin/mozilla-bin ${MOZ}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+.for file in mozilla mozilla-mail mozilla-compose
+	${INSTALL_DATA} ${WRKSRC}/build/package/rpm/SOURCES/${file}.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/build/package/rpm/SOURCES/${file}-icon.* ${PREFIX}/share/pixmaps
+.endfor
 
 .include <bsd.port.mk>

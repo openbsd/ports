@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_package_rpm_SOURCES_mozilla-mail_desktop,v 1.1 2003/07/04 06:59:15 marcm Exp $
+--- build/package/rpm/SOURCES/mozilla-mail.desktop.orig	Thu Jul  3 17:35:17 2003
++++ build/package/rpm/SOURCES/mozilla-mail.desktop	Thu Jul  3 17:35:48 2003
+@@ -1,7 +1,8 @@
+ [Desktop Entry]
+ Name=Mozilla Mail
+ Comment=Read Mail with Mozilla
+-Exec=/usr/bin/mozilla -mail
++Exec=mozilla -mail
+ Icon=mozilla-mail-icon.gif
+ Terminal=0
+-Type=Application
++Type=Application
++Categories=Application;Network;

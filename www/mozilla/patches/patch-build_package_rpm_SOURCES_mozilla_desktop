@@ -1,0 +1,13 @@
+$OpenBSD: patch-build_package_rpm_SOURCES_mozilla_desktop,v 1.1 2003/07/04 06:59:15 marcm Exp $
+--- build/package/rpm/SOURCES/mozilla.desktop.orig	Thu Jul  3 17:25:49 2003
++++ build/package/rpm/SOURCES/mozilla.desktop	Thu Jul  3 17:26:30 2003
+@@ -1,7 +1,8 @@
+ [Desktop Entry]
+ Name=Mozilla
+ Comment=Web Browser
+-Exec=/usr/bin/mozilla
++Exec=mozilla
+ Icon=mozilla-icon.png
+ Terminal=0
+ Type=Application
++Categories=Application;Network;

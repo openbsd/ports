@@ -1,0 +1,13 @@
+$OpenBSD: patch-build_package_rpm_SOURCES_mozilla-compose_desktop,v 1.1 2003/07/04 06:59:15 marcm Exp $
+--- build/package/rpm/SOURCES/mozilla-compose.desktop.orig	Thu Jul  3 17:25:43 2003
++++ build/package/rpm/SOURCES/mozilla-compose.desktop	Thu Jul  3 17:27:12 2003
+@@ -1,7 +1,8 @@
+ [Desktop Entry]
+ Name=Mozilla Mail Message
+ Comment=Compose a Mail Message with Mozilla
+-Exec=/usr/bin/mozilla -compose
++Exec=mozilla -compose
+ Icon=mozilla-compose-icon.gif
+ Terminal=0
+ Type=Application
++Categories=Application;Network;
