@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2001/05/05 22:15:19 espie Exp $
+@pkgcfl cvsupd-bin-*
+bin/cvpasswd
+man/man1/cvpasswd.1
+man/man8/cvsupd.8
+sbin/cvsupd
