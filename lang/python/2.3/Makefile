@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/30 12:06:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/12 21:31:06 sturm Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"compiler hangs on py-Checker for example"
@@ -6,7 +6,7 @@ BROKEN=			"compiler hangs on py-Checker for example"
 
 VERSION=		2.3
 PATCHLEVEL=		.4
-PKG_PATCHLEVEL=		p3
+PKG_PATCHLEVEL=		p4
 
 COMMENT-bsddb=		"Berkeley db module for Python"
 

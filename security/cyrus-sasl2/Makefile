@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2005/01/05 10:03:14 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2005/01/12 21:31:06 sturm Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-2.1.20
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -39,7 +39,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-dblib=berkeley \
 			--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 			--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS=		lib/db4/db.4::databases/db/v4
+LIB_DEPENDS=		lib/db4/db.=4:db-4.*:databases/db/v4
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm \
 			--without-bdb-libdir \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2004/12/30 12:06:22 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2005/01/12 21:31:06 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -58,12 +58,12 @@ SETUP_LOCAL+=		Setup.bsddb
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-bsddb
 .  else
-LIB_DEPENDS+=		lib/db4/db.4:db-4.*:databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
 .  endif
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-bsddb"
-LIB_DEPENDS+=		lib/db4/db.4:db-4.*:databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
 .endif
 
 .if empty(FLAVOR:L:Mno_gdbm)

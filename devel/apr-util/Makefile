@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/28 14:42:08 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/12 21:31:06 sturm Exp $
 
 COMMENT=	"companion library to APR"
 
 DISTNAME=	apr-util-1.0.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.apache.org/dist/apr/ \
 		http://www.eu.apache.org/dist/apr/
 
-LIB_DEPENDS=	db.4:db->=4:databases/db/v4 \
+LIB_DEPENDS=	db.=4:db-4.*:databases/db/v4 \
 		expat.4:expat->=1.95.6:textproc/expat \
 		apr-1.0:apr-1.0.1:devel/apr
 

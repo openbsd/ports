@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/01/12 21:31:06 sturm Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
 DISTNAME=		crawl-0.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.monkey.org/~provos/crawl/
@@ -16,7 +17,7 @@ WANTLIB=		c
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
-LIB_DEPENDS=		lib/db/db.3:db->3,<4:databases/db/v3
+LIB_DEPENDS=		lib/db/db.=3:db-3.*:databases/db/v3
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"

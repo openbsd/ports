@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/12 21:31:06 sturm Exp $
 
 REVISION=	3
 VERSION=	${REVISION}.1.17
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CONFIGURE_STYLE=gnu dest
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 21:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/01/12 21:31:06 sturm Exp $
 
 COMMENT=	"library for Chinese language processing"
 
 DISTNAME=	libtabe-0.2.5
-PKGNAME=	zh-${DISTNAME}
+PKGNAME=	zh-${DISTNAME}p0
 CATEGORIES=	chinese
 
 HOMEPAGE=	http://libtabe.sourceforge.net/
@@ -18,7 +18,7 @@ WANTLIB=		c
 
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
-LIB_DEPENDS=	lib/db/db.3:db->3,<4:databases/db/v3
+LIB_DEPENDS=	lib/db/db.=3:db-3.*:databases/db/v3
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu dest
