@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/05/20 13:00:31 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/08/18 03:46:17 kevlo Exp $
 bin/xml2-config
 bin/xmllint
 include/libxml/DOCBparser.h
@@ -24,6 +24,7 @@ include/libxml/xmlIO.h
 include/libxml/xmlerror.h
 include/libxml/xmlmemory.h
 include/libxml/xmlversion.h
+include/libxml/xmlwin32version.h
 include/libxml/xpath.h
 include/libxml/xpathInternals.h
 include/libxml/xpointer.h
