@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2003/09/29 05:59:33 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/21 22:25:33 marcm Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
-VERSION=		0.3.12
+VERSION=		0.3.14
 DISTNAME=		scrollkeeper-${VERSION}
-PKGNAME=		scrollkeeper-${VERSION}p1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
@@ -23,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		gettext
 
 BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
-			:intltool->=0.8.4:textproc/intltool
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
 			:libxml->=2.5.7p1:textproc/libxml
 LIB_DEPENDS=		xml2.7::textproc/libxml \
@@ -34,6 +33,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var
 CONFIGURE_ARGS+=	--with-omfdirs=${LOCALBASE}/share/omf
+CONFIGURE_ARGS+=	--with-xml-catalog=/var/db/xmlcatalog
 CONFIGURE_ENV=   	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
