@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/09/26 15:21:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/09/26 15:32:27 espie Exp $
 
 COMMENT=		Prolog compiler
 
@@ -38,7 +38,7 @@ INSTALL_TARGET=        install-strip
 
 post-install:
 	for i in gplc hexgplc gprolog pl2wam wam2ma ma2asm fd2c; do \
-		ln -sf ${TRUEPREFIX}/lib/gprolog/$$i ${PREFIX}/bin/$$i; \
+		ln -sf ${TRUEPREFIX}/libdata/gprolog/bin/$$i ${PREFIX}/bin/$$i; \
 	done
 	
 
