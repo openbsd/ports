@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_rrdfetchnames_Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+--- contrib/rrdfetchnames/Makefile.in.orig	Mon Jun 12 14:29:43 2000
++++ contrib/rrdfetchnames/Makefile.in	Tue Jun 13 22:11:11 2000
+@@ -32,8 +32,6 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
+-
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -87,7 +85,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = rrdfetchnames.pl.in
+ 
+-contribdir = $(prefix)/contrib/rrdfetchnames
++contribdir = $(prefix)/share/examples/rrdtool/contrib/rrdfetchnames
+ contrib_DATA = README
+ contrib_SCRIPTS = rrdfetchnames.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

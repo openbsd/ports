@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_add_ds_Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+--- contrib/add_ds/Makefile.in.orig	Mon Jun 12 14:29:38 2000
++++ contrib/add_ds/Makefile.in	Tue Jun 13 22:11:11 2000
+@@ -32,8 +32,6 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
+-
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -87,7 +85,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = add_ds.pl.in batch.pl.in
+ 
+-contribdir = $(prefix)/contrib/add_ds
++contribdir = $(prefix)/share/examples/rrdtool/contrib/add_ds
+ contrib_DATA = README
+ contrib_SCRIPTS = add_ds.pl  batch.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

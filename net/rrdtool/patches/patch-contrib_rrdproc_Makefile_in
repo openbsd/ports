@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_rrdproc_Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+--- contrib/rrdproc/Makefile.in.orig	Mon Jun 12 14:29:33 2000
++++ contrib/rrdproc/Makefile.in	Tue Jun 13 22:11:11 2000
+@@ -32,8 +32,6 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
+-
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -86,7 +84,7 @@ VERSION = @VERSION@
+ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = rrdproc.c
+-contribdir = $(prefix)/contrib/rrdproc
++contribdir = $(prefix)/share/examples/rrdtool/contrib/rrdproc
+ contrib_DATA = README rrdproc.c
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../../config/config.h

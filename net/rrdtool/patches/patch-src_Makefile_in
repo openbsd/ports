@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2000/06/14 05:57:49 jakob Exp $
+--- src/Makefile.in.orig	Mon Jun 12 14:29:15 2000
++++ src/Makefile.in	Tue Jun 13 22:11:11 2000
+@@ -37,8 +37,6 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
+-
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
