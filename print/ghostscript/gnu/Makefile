@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/13 16:43:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/13 17:01:05 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 COMMENT=	"GNU Postscript interpreter"
@@ -58,7 +58,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSGENDIR=./objects \
 		DEVICE_DEVS="`cat ${FILESDIR}/devices`"
 
-PDFDIR=${PREFIX}/share/ghostscript/${VERSION}
+PDFDIR=share/ghostscript/${VERSION}
 
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 FAKE_FLAGS=	${BASE_FLAGS} prefix=${WRKINST}${PREFIX}

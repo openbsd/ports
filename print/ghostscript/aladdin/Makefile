@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/13 16:44:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/13 17:01:03 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -57,7 +57,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSGENDIR=./objects \
 		STDLIBS='-lc_r -lm' 
 
-PDFDIR=${PREFIX}/share/ghostscript/${VERSION}/lib
+PDFDIR=share/ghostscript/${VERSION}/lib
 
 BASE_FLAGS+=	DEVICE_DEVS='\
 $$(DD)x11.dev $$(DD)x11alpha.dev $$(DD)x11cmyk.dev $$(DD)x11cmyk2.dev \

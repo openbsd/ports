@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/02 14:51:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/13 17:01:04 espie Exp $
 
 COMMENT=	"encrypted pdf add-on for ghostscript"
 CATEGORIES=	print
@@ -27,18 +27,26 @@ FLAVOR=aladdin
 FLAVOR?=gnu
 
 .if ${FLAVOR:L} == "aladdin"
-GSDIR=${PREFIX}/share/ghostscript/6.01/lib
-RUN_DEPENDS=${GSDIR}::print/ghostscript/aladdin
+GSDIR=print/ghostscript/aladdin
 .else
-# Gnu ghostscript, default
-GSDIR=${PREFIX}/share/ghostscript/5.50
-RUN_DEPENDS=${GSDIR}::print/ghostscript/gnu
+GSDIR=print/ghostscript/gnu
 .endif
 
+
+.if !defined(HACK)
+PORTSDIR!=cd ${.CURDIR} && HACK=yes ${MAKE} show VARNAME=PORTSDIR
+PDFDIR!=cd ${PORTSDIR} && cd ${GSDIR} && \
+	{ unset FLAVOR; ${MAKE} show VARNAME=PDFDIR ; }
+.endif
+
+RUN_DEPENDS=${LOCALBASE}/${PDFDIR}::${GSDIR}
+
+SUBST_VARS=	PDFDIR
+
 pre-fake:
-	${INSTALL_DATA_DIR} ${GSDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${PDFDIR}
 
 do-install:
-	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} ${GSDIR}
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} ${PREFIX}/${PDFDIR}
 	
 .include <bsd.port.mk>
