@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/04 02:09:21 krw Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/03 23:44:36 brad Exp $
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
@@ -15,7 +15,7 @@ PATCHFILES=	giflib-4.1.0-19990224.patch.gz:0 \
 		giflib-4.1.0-19990523.patch.gz:0
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	yanick@fries.net
+MAINTAINER=	brad@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -27,6 +27,13 @@ SYSCONFDIR=	${PREFIX}/lib
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --sysconfdir="${SYSCONFDIR}"
+CONFIGURE_ARGS+= --enable-static
+
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L} == "no_x11"
+CONFIGURE_ARGS+= --without-x
+.endif
 
 .include <bsd.port.mk>
