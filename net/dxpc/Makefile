@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 21:25:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/16 10:56:57 espie Exp $
 
 VERSION=	3.8.0
 DISTNAME=	dxpc-${VERSION}
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/
+MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/ \
 		ftp://ftp.x.org/contrib/utilities/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/xutils/
 
