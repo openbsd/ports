@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/27 01:02:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/03/31 13:57:49 sturm Exp $
 
 COMMENT=	"XFree86-based xterm with Korean language support"
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 MODULES=	iconv
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${PREFIX}/include" \
