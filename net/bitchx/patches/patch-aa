@@ -1,0 +1,29 @@
+--- include/config.h.orig	Thu Mar  4 20:16:16 1999
++++ include/config.h	Thu Mar  4 20:16:48 1999
+@@ -33,7 +33,7 @@
+  * too peruse this function all you like. It's not a BACKDOOR in any way, 
+  * shape or form.
+  */
+-#define WANT_NOTIFY_BITCHX_COM ON
++#undef WANT_NOTIFY_BITCHX_COM ON
+ 
+ 
+ /*
+@@ -188,7 +188,7 @@
+  * translation tables from ircII for this to work. Also enable /set TRANSLATE
+  */
+  
+-#define TRANSLATION_PATH "/usr/local/lib/bx/translation"
++#define TRANSLATION_PATH "__PREFIX__/lib/bitchx/translation"
+ 
+ /*
+  * Below are the IRCII variable defaults.  For boolean variables, use 1 for
+@@ -584,7 +584,7 @@
+ #define DEFAULT_BITCHX_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.hlp"
+ #else
+ #define DEFAULT_MSGLOGFILE "BitchX.away"
+-#define DEFAULT_CTOOLZ_DIR "~/.BitchX"
++#define DEFAULT_CTOOLZ_DIR "__PREFIX__/lib/bitchx"
+ #define DEFAULT_SCRIPT_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.help"
+ #define DEFAULT_BITCHX_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.help"
+ #endif
