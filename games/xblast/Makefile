@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 03:37:27 angelos Exp $
 #
 
-DISTNAME=       xblast-2.2
+DISTNAME=       xblast-2.6.beta
+PKGNAME=	xblast-2.6b
 CATEGORIES=	games
-
-#BROKEN?:	The file xblast-2.2-sound.tar.gz is also available.
-#		Would the port be better if this was included?
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= games/multiplayer
+# after end of beta test period:
+# MASTER_SITES= ${MASTER_SITE_XCONTRIB}
+# MASTER_SITE_SUBDIR= games/multiplayer
+# but right now only available from:
+MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
 
-WRKSRC=		${WRKDIR}/XBlast-2.2
+WRKSRC=		${WRKDIR}/XBlast-2.6.beta
 USE_IMAKE=      yes
 
 .include <bsd.port.mk>
