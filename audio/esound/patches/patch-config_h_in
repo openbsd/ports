@@ -1,8 +1,8 @@
---- config.h.in.orig	Fri Feb  8 02:53:05 2002
-+++ config.h.in	Tue Mar  5 09:21:38 2002
-@@ -9,6 +9,7 @@
- #undef DRIVER_ALSA
+--- config.h.in.orig	Tue Jun  4 10:41:36 2002
++++ config.h.in	Fri Jul 19 18:08:06 2002
+@@ -43,6 +43,7 @@
  #undef DRIVER_NEWALSA
+ #undef DRIVER_ALSA_09
  #undef DRIVER_DART
 +#undef DRIVER_SUN
  #undef DRIVER_NONE

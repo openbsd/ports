@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Mar  1 17:07:05 2002
-+++ configure.in	Tue Mar  5 09:21:38 2002
+--- configure.in.orig	Wed Jun 19 10:03:32 2002
++++ configure.in	Fri Jul 19 18:08:06 2002
 @@ -151,6 +151,16 @@ if test "x$enable_local_sound" = "xyes";
        esac
     fi
@@ -17,7 +17,7 @@
     case ${host_os} in
     os2*)
        found_sound=yes
-@@ -200,7 +210,9 @@ if test "x$enable_local_sound" = "xyes";
+@@ -203,7 +213,9 @@ if test "x$enable_local_sound" = "xyes";
     echo "---------------------------------------------------------------------"
     echo "--- Checking to see which audio libraries are required for linking.";
     echo "--- Most of these checks should also fail. Do not be alarmed.";
@@ -28,7 +28,7 @@
     AC_CHECK_FUNC(ALnewconfig,,[AC_CHECK_LIB(audio,ALnewconfig)])
     if test "x$enable_alsa" = "xyes"; then
        AC_CHECK_FUNC(snd_cards,,[AC_CHECK_LIB(sound,snd_cards)])
-@@ -285,7 +297,8 @@ if test "x$with_libwrap" = "xyes"; then
+@@ -290,7 +302,8 @@ if test "x$with_libwrap" = "xyes"; then
  
     wrap_ok=no
     AC_TRY_LINK(
@@ -38,7 +38,7 @@
  #include <syslog.h>
  int allow_severity = LOG_INFO;
  int deny_severity = LOG_WARNING;],
-@@ -295,7 +308,8 @@ int deny_severity = LOG_WARNING;],
+@@ -300,7 +313,8 @@ int deny_severity = LOG_WARNING;],
         wrap_ok=yes],
        [LIBS="$LIBS -lnsl"
         AC_TRY_LINK(

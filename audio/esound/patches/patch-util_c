@@ -1,0 +1,66 @@
+$OpenBSD: patch-util_c,v 1.1 2002/07/26 19:57:23 brad Exp $
+--- util.c.orig	Fri May 17 16:09:32 2002
++++ util.c	Fri Jul 19 18:44:08 2002
+@@ -1,40 +1,38 @@
+ #include "esd.h"
++#include <limits.h>
++#include <pwd.h>
++#include <stdio.h>
+ #include <stdlib.h>
+ #include <strings.h>
+ 
+ const char*
+ esd_get_socket_dirname (void) 
+ {
+-	char *audiodev;
+-	static char *dirname = NULL;
++	static char *sockdir = NULL, sockdirbuf[PATH_MAX];
++	struct passwd *pw;
+ 
+-	if (dirname == NULL) {
+-		if (!(audiodev = getenv("AUDIODEV"))) {
+-			audiodev = "";
+-		} else {
+-			audiodev = strrchr(audiodev, '/');
+-			audiodev++;
+-		}
+-		dirname = malloc(strlen(audiodev) + sizeof("/tmp/.esd"));
+-		strcpy(dirname, "/tmp/.esd");
+-		strcat(dirname, audiodev);
++	if (sockdir != NULL)
++		return (sockdir);
++	pw = getpwuid(getuid());
++	if (pw == NULL || pw->pw_dir == NULL) {
++		fprintf(stderr, "esd: could not find home directory\n");
++		exit(1);
+ 	}
+-
+-	return dirname;
++	snprintf(sockdirbuf, sizeof(sockdirbuf), "%s/.esd", pw->pw_dir);
++	endpwent();
++	sockdir = sockdirbuf;
++	return (sockdir);
+ }
+ 
+ const char*
+ esd_get_socket_name (void) 
+ {
+-	const char *dirname;
+-	static char *name = NULL;
+-
+-	if (name == NULL) {
+-		dirname = esd_get_socket_dirname();
+-		name = malloc(strlen(dirname) + sizeof("/socket"));
+-		strcpy(name, dirname);
+-		strcat(name, "/socket");
+-	}
++	static char *sockname = NULL, socknamebuf[PATH_MAX];
+ 
+-	return name;
++	if (sockname != NULL)
++		return (sockname);
++	snprintf(socknamebuf, sizeof(socknamebuf), "%s/socket",
++	    esd_get_socket_dirname());
++	sockname = socknamebuf;
++	return (sockname);
+ }

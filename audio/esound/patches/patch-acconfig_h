@@ -1,8 +1,8 @@
---- acconfig.h.orig	Sat Jul 21 00:21:12 2001
-+++ acconfig.h	Sat Jul 21 00:21:18 2001
-@@ -8,6 +8,7 @@
- #undef DRIVER_ALSA
+--- acconfig.h.orig	Tue Apr 23 05:33:07 2002
++++ acconfig.h	Fri Jul 19 18:08:06 2002
+@@ -9,6 +9,7 @@
  #undef DRIVER_NEWALSA
+ #undef DRIVER_ALSA_09
  #undef DRIVER_DART
 +#undef DRIVER_SUN
  #undef DRIVER_NONE

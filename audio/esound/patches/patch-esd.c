@@ -1,6 +1,6 @@
---- esd.c.orig	Fri Jul 13 14:59:50 2001
-+++ esd.c	Tue Mar  5 09:21:39 2002
-@@ -211,12 +211,12 @@ struct stat dir_stats;
+--- esd.c.orig	Mon Jun 17 05:33:23 2002
++++ esd.c	Fri Jul 19 18:08:06 2002
+@@ -221,12 +221,12 @@ struct stat dir_stats;
  
  #if defined(S_ISVTX)
  #define ESD_UNIX_SOCKET_DIR_MODE (S_IRUSR|S_IWUSR|S_IXUSR|\

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar  1 17:07:42 2002
-+++ Makefile.in	Tue Mar  5 09:21:37 2002
-@@ -234,7 +234,7 @@ esdplay_LDADD = $(LIBOBJS) $(LDADD)
+--- Makefile.in.orig	Wed Jun 19 10:05:14 2002
++++ Makefile.in	Fri Jul 19 18:08:06 2002
+@@ -168,7 +168,7 @@ esd_LDADD = $(WRAP_LIB) $(LDADD)
  m4datadir = $(datadir)/aclocal
  m4data_DATA = esd.m4
  
@@ -8,4 +8,4 @@
 +esdconfdir = $(datadir)/examples/esound
  esdconf_DATA = esd.conf
  
- CLEANFILES = esound.spec esound.pc
+ pkgconfigdir = $(libdir)/pkgconfig
