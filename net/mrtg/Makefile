@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/06/02 02:40:09 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2002/03/25 15:03:24 brad Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg -lttf"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
