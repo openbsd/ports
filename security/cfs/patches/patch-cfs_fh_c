@@ -1,7 +1,7 @@
-$OpenBSD: patch-cfs_fh_c,v 1.1 2001/03/17 15:46:39 wilfried Exp $
---- cfs_fh.c.orig	Fri Mar 16 20:23:02 2001
-+++ cfs_fh.c	Fri Mar 16 20:23:02 2001
-@@ -363,7 +363,7 @@ isbndry(d)
+$OpenBSD: patch-cfs_fh_c,v 1.2 2004/06/15 18:32:22 sturm Exp $
+--- cfs_fh.c.orig	2004-06-09 15:09:29.000000000 +0200
++++ cfs_fh.c	2004-06-09 15:11:41.000000000 +0200
+@@ -359,7 +359,7 @@ isbndry(d)
  
  
  static fh_u roothandle;
@@ -9,4 +9,13 @@ $OpenBSD: patch-cfs_fh_c,v 1.1 2001/03/17 15:46:39 wilfried Exp $
 +cfs_fileid rootnode={1,0,{0,0,0,0,0,0,0,0},{'/','N','O','W','H','E','R','E','/','n','u','l','l'},NULL,NULL,0,NULL,NULL};/* fileid=1; should be unique */
  nfstime roottime={0,0};
  
- static u_char magictest[8]={0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef};
+ /* Had to change this - someone else was using the same magic number! */
+@@ -1160,7 +1160,7 @@ rootrd(cookie)
+ 	} else while (cookie<(NINSTANCES+2)) {
+ 		if (instances[cookie-2] != NULL) {
+ 			if (instances[cookie-2]->anon)
+-				sprintf(d.d_name,".ANON_%d",cookie-2);
++				sprintf(d.d_name,".ANON_%ld",cookie-2);
+ 			else
+ 				strcpy(d.d_name,
+ 				       instances[cookie-2]->name);

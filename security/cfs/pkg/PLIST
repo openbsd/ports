@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/06/15 18:32:22 sturm Exp $
 bin/cattach
 bin/cdetach
 bin/cmkdir
+bin/cmkkey
 bin/cpasswd
 man/man1/cattach.1
 man/man1/cdetach.1
 man/man1/cmkdir.1
+man/man1/cmkkey.1
 man/man1/cpasswd.1
-man/man8/ccat.8
 man/man8/cfsd.8
-man/man8/cname.8
-sbin/ccat
 sbin/cfsd
-sbin/cname
 share/doc/cfs/README.install
 share/doc/cfs/notes.ms
 @dirrm share/doc/cfs
+@extraunexec umount /crypt > /dev/null 2>&1
+@extraunexec rm -r /crypt
+@extraunexec rm -r /null

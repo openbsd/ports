@@ -1,0 +1,14 @@
+$OpenBSD: patch-cattach_c,v 1.1 2004/06/15 18:32:22 sturm Exp $
+--- cattach.c.orig	2004-06-09 15:12:55.000000000 +0200
++++ cattach.c	2004-06-09 15:23:40.000000000 +0200
+@@ -167,8 +167,8 @@ main(argc,argv)
+ 		sprintf(dir,"%s/%s",buf,dirarg);
+ 	} else
+ 		strcpy(dir,dirarg);
+-	sprintf(lname,"%s/..data",dir,1024);
+-	sprintf(kname,"%s/..k",dir,1024);
++	sprintf(lname,"%s/..data",dir);
++	sprintf(kname,"%s/..k",dir);
+ 	if (chdir(lname) >= 0)
+ 		strcpy(dir,lname);
+ 	else if (chdir(dir)<0) {
