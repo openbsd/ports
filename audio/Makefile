@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/07/31 09:16:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.33 2000/08/21 02:00:41 brad Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -28,7 +28,7 @@
 #    SUBDIR += mxv
 #    SUBDIR += nas
      SUBDIR += nspmod
-     SUBDIR += p5-MPEG-MP3Info
+     SUBDIR += p5-MP3-Info
      SUBDIR += p5-cddb
 #    SUBDIR += playmidi
 #    SUBDIR += radio
