@@ -9,6 +9,7 @@
 	native-chroot: permit
 	native-clock_gettime: permit
 	native-close: permit
+	native-closefrom: permit
 	native-compat_43_ogetdtablesize: permit
 	native-compat_43_ogetpagesize: permit
 	native-compat_43_olseek: permit
