@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2004/10/20 18:27:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/20 18:30:56 avsm Exp $
 
 COMMENT=	"interface to access block/stream encryption algorithms"
 
 DISTNAME=	libmcrypt-2.5.7
 CATEGORIES=	security
-MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
-		ftp://argeas.cs-net.gr/pub/unix/mcrypt/libmcrypt/
 
-HOMEPAGE=	http://mcrypt.hellug.gr/lib/
+HOMEPAGE=	http://mcrypt.sf.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 LIB_DEPENDS=	mhash.2::security/mhash \
 		ltdl.1::devel/libtool
