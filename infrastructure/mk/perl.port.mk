@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.5 2003/07/28 17:17:05 sturm Exp $
+# $OpenBSD: perl.port.mk,v 1.6 2003/12/03 03:47:07 millert Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -9,13 +9,13 @@ MODPERL_configure= \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
      /usr/bin/perl Makefile.PL \
-     	PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
-		INSTALLSITELIB='$${${DESTDIRNAME}}${PREFIX}/libdata/perl5/site_perl' \
+     	PREFIX='${PREFIX}' \
+		INSTALLSITELIB='${PREFIX}/libdata/perl5/site_perl' \
 		INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
-		INSTALLPRIVLIB='$${${DESTDIRNAME}}/usr/./libdata/perl5' \
+		INSTALLPRIVLIB='/usr/./libdata/perl5' \
 		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
-		INSTALLMAN1DIR='$${${DESTDIRNAME}}${PREFIX}/man/man1' \
-		INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3p' \
+		INSTALLMAN1DIR='${PREFIX}/man/man1' \
+		INSTALLMAN3DIR='${PREFIX}/man/man3p' \
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
 
