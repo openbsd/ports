@@ -1,28 +1,18 @@
-# OpenBSD makefile for: 	  rclock
-# Version required:		  2.19
-# Date created:			  May 19 1998
-# Whom:				  Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1999/10/31 07:49:01 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/31 18:50:52 brad Exp $
 
-BROKEN=		checksum mismatch
-
-PKGNAME=	rclock-2.20
-DISTNAME=	rxvt-2.20
+PKGNAME=	rclock-2.6.1
+DISTNAME=	rxvt-2.6.1
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		ftp://ftp.nuclecu.unam.mx/linux/local/rxvt/  \
-		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/
-MASTER_SITE_SUBDIR=	utils/file/managers/mc/rxvt
-#MASTER_SITE_SUBDIR=	X11/xutils/terms
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
+		ftp://mason.primenet.com.au/pub/rxvt/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= X11/terms
 
 MAINTAINER=	angelos@openbsd.org
 
-CFLAGS+=	'-DMAIL_SPOOL=\"/var/mail/\"'
 USE_X11=	yes
 GNU_CONFIGURE=  yes
+
 ALL_TARGET=	clock
-MAN1=		rclock.1
 
 .include <bsd.port.mk>

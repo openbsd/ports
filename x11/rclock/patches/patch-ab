@@ -1,0 +1,11 @@
+--- rclock/feature.h.orig	Sun Oct 31 12:37:05 1999
++++ rclock/feature.h	Sun Oct 31 12:37:31 1999
+@@ -53,7 +53,7 @@
+ #define MAIL
+ /* #define MAIL_BELL */
+ /* #define MAIL_SPAWN	"xmh\ -font\ 7x14\&" */
+-/* #define MAIL_SPOOL	"/var/spool/mail/" */
++#define MAIL_SPOOL	"/var/mail/"
+ 
+ /*----------------------------------------------------------------------*
+  * #define CLOCKUPDATE	30
