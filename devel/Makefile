@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2004/05/08 07:23:14 dons Exp $
+# $OpenBSD: Makefile,v 1.223 2004/05/09 10:32:34 dons Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -65,6 +65,7 @@
      SUBDIR += help2man
      SUBDIR += hmake
      SUBDIR += horde
+     SUBDIR += hs-ports
      SUBDIR += id-utils
      SUBDIR += jad
      SUBDIR += jakarta-servletapi
