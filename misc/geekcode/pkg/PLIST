@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/05 19:31:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 14:17:03 xsa Exp $
 bin/geekcode
+share/doc/geekcode/
 share/doc/geekcode/geekcode.txt
-@dirrm share/doc/geekcode
