@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/02 18:47:25 espie Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
 NEED_VERSION=	1.114
-FAKE=No
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.z
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 pre-install:
 	@mkdir -p ${PREFIX}/lib/xjewel.font
@@ -25,7 +24,7 @@ pre-install:
 post-install:
 	@(mv ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
 	  echo "#!/bin/sh"				>  ${PREFIX}/bin/xjewel; \
-	  echo "xset +fp ${PREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
+	  echo "xset +fp ${TRUEPREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
 	  echo "xjewel_"				>> ${PREFIX}/bin/xjewel; \
 	  ${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
 

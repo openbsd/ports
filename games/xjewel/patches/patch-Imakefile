@@ -1,0 +1,11 @@
+$OpenBSD: patch-Imakefile,v 1.1 2000/06/02 18:47:25 espie Exp $
+--- Imakefile.orig	Fri Jun  2 20:40:32 2000
++++ Imakefile	Fri Jun  2 20:40:40 2000
+@@ -52,5 +52,5 @@ FontTarget($(FONT))
+ all:: $(CFONT)
+ 
+ install::
+-	touch  $(HSCORE_FILE)
+-	chmod a+w $(HSCORE_FILE)
++	touch  $(DESTDIR)$(HSCORE_FILE)
++	chmod a+w $(DESTDIR)$(HSCORE_FILE)
