@@ -1,0 +1,42 @@
+--- Imakefile.orig	Sat Apr  8 09:35:16 1995
++++ Imakefile	Tue Apr 18 00:24:00 2000
+@@ -37,7 +37,7 @@ InstallManSubdirs(Subdirs)
+ 
+ CppScriptTarget(xfm.install.script,bin/xfm.install.cpp,\
+ -DLIBDIR=$(XFMLIBDIR),)
+-InstallScript(xfm.install,$(DESTDIR)$(BINDIR))
++InstallScript(xfm.install,$(BINDIR))
+ 
+ /* rules to create and install the appdefaults file, the config files and the
+    pixmaps */
+@@ -53,18 +53,18 @@ CppFileTarget(Xfm.ad,lib/Xfm.cpp,-DLIBDI
+ InstallAppDefaults(Xfm)
+ 
+ install::
+-	MakeDir($(XFMLIBDIR)/dot.xfm)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/$(XFMRC) $(XFMLIBDIR)/dot.xfm/xfmrc
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/xfmdev $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/magic $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Apps $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Graphics $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Hosts $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Toolbox $(XFMLIBDIR)/dot.xfm
+-	MakeDir($(XFMLIBDIR)/bitmaps)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/bitmaps/?* $(XFMLIBDIR)/bitmaps
+-	MakeDir($(XFMLIBDIR)/pixmaps)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/pixmaps/?* $(XFMLIBDIR)/pixmaps
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/dot.xfm)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/$(XFMRC) $(DESTDIR)$(XFMLIBDIR)/dot.xfm/xfmrc
++	$(INSTALL) -c $(INSTDATFLAGS) lib/xfmdev $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/magic $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Apps $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Graphics $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Hosts $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Toolbox $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/bitmaps)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/bitmaps/?* $(DESTDIR)$(XFMLIBDIR)/bitmaps
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/pixmaps)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/pixmaps/?* $(DESTDIR)$(XFMLIBDIR)/pixmaps
+ 
+ /* Use the following before installing over an existing version of xfm. (You
+    might wish to back up your old configuration first. ;-) */
