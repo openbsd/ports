@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/25 05:43:49 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/20 10:56:49 jsyn Exp $
 
 COMMENT=		"high level firewall language"
 
 DISTNAME=		hlfl-0.52
 CATEGORIES=    		security lang
-NEED_VERSION=		1.425
+NEED_VERSION=		1.499
 
 HOMEPAGE=		http://www.hlfl.org/
 
@@ -19,7 +19,10 @@ MASTER_SITES=		http://www.hlfl.org/hlfl/ \
 			ftp://ftp.hlfl.org/pub/hlfl/
 
 CONFIGURE_STYLE=	gnu 
-FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} datadir=${WRKINST}${PREFIX}/share/examples
+FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} \
+			datadir=${WRKINST}${PREFIX}/share/examples
+
+NO_REGRESS=		Yes
 
 post-extract:
 	@perl -pi -e 's#\$${prefix}\/share\/hlfl\/services\.hlfl#${SYSCONFDIR}/services.hlfl#' ${WRKSRC}/doc/hlfl.1
