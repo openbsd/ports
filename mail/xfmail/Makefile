@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2002/05/02 00:14:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2002/05/03 20:16:45 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 COMMENT=	"xforms-based mail application for Unix"
 
-ONLY_FOR_ARCHS=	i386 sparc m68k hp300
+ONLY_FOR_ARCHS=	i386 sparc m68k
 
 DISTNAME=       xfmail-1.4.6
 CATEGORIES=     mail x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.522
 MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/old/1.4.6-3/src/ \
 		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/old/1.4.6-3/src/
 EXTRACT_SUFX=	.tar.bz2
