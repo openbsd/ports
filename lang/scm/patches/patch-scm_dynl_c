@@ -1,6 +1,6 @@
-$OpenBSD: patch-scm_dynl_c,v 1.1 2001/01/31 22:51:41 espie Exp $
+$OpenBSD: patch-scm_dynl_c,v 1.2 2001/02/01 12:26:14 espie Exp $
 --- scm/dynl.c.orig	Tue Sep  7 15:14:00 1999
-+++ scm/dynl.c	Wed Jan 31 23:01:47 2001
++++ scm/dynl.c	Thu Feb  1 00:50:38 2001
 @@ -419,7 +419,23 @@ SCM l_dyn_call(symb, shl)
    ASSERT(NIMP(symb) && STRINGP(symb), symb, ARG1, s_call);
    ASSERT(NIMP(shl) && CAR(shl)==tc16_shl, shl, ARG2, s_call);
@@ -15,7 +15,7 @@ $OpenBSD: patch-scm_dynl_c,v 1.1 2001/01/31 22:51:41 espie Exp $
 +  if (n) {
 +  	*n = '_';
 +	strcpy(n+1, CHARS(symb));
-+	func = dlsym(SHL(shl), CHARS(symb));
++	func = dlsym(SHL(shl), n);
 +	free(n);
 +  }
 +  }
@@ -40,7 +40,7 @@ $OpenBSD: patch-scm_dynl_c,v 1.1 2001/01/31 22:51:41 espie Exp $
 +  if (n) {
 +  	*n = '_';
 +	strcpy(n+1, CHARS(symb));
-+	func = dlsym(SHL(shl), CHARS(symb));
++	func = dlsym(SHL(shl), n);
 +	free(n);
 +  }
 +  }
