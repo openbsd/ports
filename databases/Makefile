@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2004/11/07 00:25:31 djm Exp $
+# $OpenBSD: Makefile,v 1.66 2004/12/02 21:35:05 robert Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -30,6 +30,7 @@
      SUBDIR += p5-DBD-CSV
      SUBDIR += p5-DBD-Pg
      SUBDIR += p5-DBD-SQLite
+     SUBDIR += p5-DBD-SQLite2
      SUBDIR += p5-DBD-Sybase
      SUBDIR += p5-DBD-mysql
      SUBDIR += p5-DBD-mysqlPP
