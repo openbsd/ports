@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2000/06/27 22:14:26 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2000/06/28 00:14:45 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -78,7 +78,7 @@ MULTI_PACKAGES+=-java
 .endif
 
 .if defined(MAKE_TESTS)
-BUILD_DEPENDS+=	runtest::devel/dejagnu
+BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
 .endif
 
 LATEST_DATE=2000-06-26

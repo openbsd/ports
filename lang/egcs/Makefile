@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/08/25 02:48:57 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/28 00:14:44 espie Exp $
 
+SUBDIR += dejagnu
 SUBDIR += stable
 SUBDIR += snapshot
 
