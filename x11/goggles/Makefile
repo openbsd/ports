@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/13 18:53:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/12 02:19:39 espie Exp $
 
 COMMENT='gui for ogle'
 CATEGORIES=x11
 
-DISTNAME=goggles-0.7.0
-DISTFILES=Goggles-0.7.0.tar.gz
+DISTNAME=goggles-0.7.2
+DISTFILES=Goggles-0.7.2.tar.gz
 MASTER_SITES=http://www.fifthplanet.net/files/
 HOMEPAGE=http://www.fifthplanet.net/goggles.html
 MAINTAINER=Marc Espie <espie@openbsd.org>

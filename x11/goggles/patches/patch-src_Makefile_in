@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/11/13 18:53:43 espie Exp $
---- src/Makefile.in.orig	2003-11-10 17:25:17.000000000 +0100
-+++ src/Makefile.in	2003-11-10 17:25:28.000000000 +0100
-@@ -519,10 +519,10 @@ uninstall-am: uninstall-binPROGRAMS unin
+$OpenBSD: patch-src_Makefile_in,v 1.2 2004/02/12 02:19:40 espie Exp $
+--- src/Makefile.in.orig	2003-11-27 04:32:41.000000000 +0100
++++ src/Makefile.in	2004-02-12 02:57:13.000000000 +0100
+@@ -528,10 +528,10 @@ uninstall-am: uninstall-binPROGRAMS unin
  main.cpp: icons.h icons.cpp
  
  icons.h: $(ICONS)
