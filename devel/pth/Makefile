@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/26 23:54:42 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/24 00:07:13 brad Exp $
 
 COMMENT=	"GNU portable threads"
 
 DISTNAME=	pth-1.4.0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
-NEED_VERSION=	1.363
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= pth
 
