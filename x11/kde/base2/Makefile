@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2001/08/27 05:44:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2001/08/27 12:11:17 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.405
+NEED_VERSION=		1.447
 VERSION=		2.2
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
@@ -19,6 +19,7 @@ EXTRACT_SUFX=		.tar.bz2
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 MULTI_PACKAGES=-plugins
+MODULES=qt2
 
 SUBPACKAGE?=
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-plugins"
@@ -35,12 +36,12 @@ BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
 BUILD_DEPENDS+= ${LOCALBASE}/include/lame/lame.h::audio/lame
 
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
-CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
+CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--disable-debug
+CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
@@ -50,8 +51,7 @@ CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
-CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 LAMEDIR=${WRKDIR}/lamestub
@@ -67,7 +67,7 @@ pre-build:
 
 
 # Ensure qt2 will always be at the front
-MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 MAKE_FLAGS+=LAMEDIR='${LAMEDIR}'
 
