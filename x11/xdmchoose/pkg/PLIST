@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/22 13:21:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/08 15:51:06 naddy Exp $
 bin/xdmchooser
 bin/xdmping
-man/man1/xdmchoose.1
-man/man5/xdmchoose.conf.5
+@man man/man1/xdmchoose.1
+@man man/man5/xdmchoose.conf.5
+share/examples/xdmchoose/
 share/examples/xdmchoose/xdmchoose.conf
+@sample ${SYSCONFDIR}/xdmchoose.conf
+share/xdmchoose/
 share/xdmchoose/xdmchoose-blur.xpm
 share/xdmchoose/xdmchoose-plain.xpm
 share/xdmchoose/xdmchoose-tiled.xpm
-@dirrm share/xdmchoose
-@dirrm share/examples/xdmchoose
-@cwd ${SYSCONFDIR}
-@extra xdmchoose.conf
