@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.39 2002/05/15 18:20:43 espie Exp $
+# $OpenBSD: network.conf.template,v 1.40 2002/05/15 19:27:10 brad Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -134,7 +134,8 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dataplus.se/pub/linux/gnome/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/ \
-	ftp://ftp.sourceforge.net/pub/mirrors/gnome/ \
+	http://east.dl.sourceforge.net/mirrors/gnome/ \
+	http://west.dl.sourceforge.net/mirrors/gnome/ \
 	ftp://ftp.uvsq.fr/pub/X11/gnome/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/ \
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/
@@ -142,7 +143,8 @@ MASTER_SITE_GNOME+=	\
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://gatekeeper.dec.com/pub/plan/perl/CPAN/modules/by-module/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
-	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/ \
+	http://east.dl.sourceforge.net/mirrors/CPAN/modules/by-module/ \
+	http://west.dl.sourceforge.net/mirrors/CPAN/modules/by-module/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
 	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
 	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
