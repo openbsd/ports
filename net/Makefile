@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2005/01/21 02:13:18 jolan Exp $
+# $OpenBSD: Makefile,v 1.348 2005/01/25 04:00:51 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -236,6 +236,7 @@
      SUBDIR += snort
      SUBDIR += ssldump
      SUBDIR += sslsniffer
+     SUBDIR += synergy
      SUBDIR += tacacs+
      SUBDIR += tclcurl
      SUBDIR += tcpcat
