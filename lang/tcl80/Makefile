@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/01/11 01:21:18 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/18 01:28:30 marc Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
@@ -11,7 +11,7 @@ MAINTAINER=	niklas@openbsd.org
 
 WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS=	--enable-shared
 .endif
 .if (${MACHINE_ARCH} == "mips")
