@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/21 06:18:27 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/23 18:23:32 brad Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
-DISTNAME=	pngcrush-1.4.7
+DISTNAME=	pngcrush-1.4.8
 CATEGORIES=	graphics
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
