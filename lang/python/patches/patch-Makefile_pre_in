@@ -1,7 +1,27 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1 2001/06/05 17:00:23 jasoni Exp $
---- Makefile.pre.in.orig	Sat Apr 14 10:57:07 2001
-+++ Makefile.pre.in	Sun Jun  3 09:16:44 2001
-@@ -552,7 +552,7 @@ maninstall:
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2001/09/24 16:54:25 espie Exp $
+--- Makefile.pre.in.orig	Thu Jul 19 15:21:05 2001
++++ Makefile.pre.in	Mon Sep 24 13:40:20 2001
+@@ -274,7 +274,7 @@ all:		$(PYTHON) oldsharedmods sharedmods
+ $(PYTHON):	Modules/$(MAINOBJ) $(LDLIBRARY)
+ 		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
+ 			Modules/$(MAINOBJ) \
+-			$(LDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
++			-lpython$(VERSION) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+ 
+ platform: $(PYTHON)
+ 	./$(PYTHON) -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
+@@ -325,6 +325,10 @@ libpython$(VERSION).so:	$(LIBRARY)
+ 	    ;; \
+ 	esac
+ 
++# This rule for OpenBSD...
++libpython$(VERSION).so.$(MAJOR).$(MINOR):	$(LIBRARY)
++	$(LDSHARED) -o $@ $(LIBRARY_OBJS)
++
+ # This rule is here for OPENSTEP/Rhapsody/MacOSX
+ libpython$(VERSION).dylib: $(LIBRARY)
+ 	libtool -o $(LDLIBRARY) -dynamic $(OTHER_LIBTOOL_OPT) $(LIBRARY) \
+@@ -552,7 +556,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \

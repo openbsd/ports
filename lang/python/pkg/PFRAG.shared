@@ -1,6 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/06/05 17:00:26 jasoni Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2001/09/24 16:54:25 espie Exp $
 %%mm%%
 %%tk%%
+lib/libpython2.1.so.0.0
+lib/python2.1/config/libpython2.1.so.0.0
 lib/python2.1/lib-dynload/_codecsmodule.so
 lib/python2.1/lib-dynload/_curses_panel.so
 lib/python2.1/lib-dynload/_cursesmodule.so
