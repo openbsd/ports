@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/10/27 19:46:03 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 1999/11/11 20:32:04 fgsch Exp $
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 USE_X11	=	yes
 GNU_CONFIGURE=	yes
 
-BROKEN=		"build fails on msdos/dpmi.c"
+BROKEN=		"needs verification"
 
 WRKSRC=	${WRKDIR}/${PKGNAME}
 

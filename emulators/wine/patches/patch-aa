@@ -1,5 +1,5 @@
---- msdos/dpmi.c.orig	Fri Feb 26 23:03:40 1999
-+++ msdos/dpmi.c	Fri Feb 26 23:04:10 1999
+--- msdos/dpmi.c.orig	Thu Feb 25 14:32:56 1999
++++ msdos/dpmi.c	Tue Nov  9 02:42:00 1999
 @@ -20,6 +20,7 @@
  #include "process.h"
  #include "callback.h"
@@ -8,3 +8,26 @@
  
  #define DOS_GET_DRIVE(reg) ((reg) ? (reg) - 1 : DRIVE_GetCurrentDrive())
  
+@@ -212,6 +213,7 @@
+         if (flag & 1) {
+             /* 32-bit DPMI client */
+             __asm__ __volatile__("
++                 pushl %%si
+                  pushl %%es
+                  pushl %%ds
+                  pushfl
+@@ -221,12 +223,13 @@
+                  popl %%ds
+                  movl %%es,%0
+                  popl %%es
++                 popl %%si
+              "
+              : "=g" (es), "=D" (edi)
+              : "m" (rmcb->proc_ofs),
+                "g" (ss), "g" (rmcb->regs_sel),
+                "S" (ESP_reg(context)), "D" (rmcb->regs_ofs)
+-             : "eax", "ecx", "edx", "esi", "ebp" );
++             : "eax", "ecx", "edx", "ebp" );
+         } else {
+             /* 16-bit DPMI client */
+             CONTEXT ctx = *context;
