@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/04/09 17:38:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/29 00:01:41 turan Exp $
 
 PKGNAME=	l0phtcrack-2.52
 
@@ -12,6 +12,11 @@ NEED_VERSION=	1.191
 FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	l0phtcrack
 DISTFILES=	lcsrc${EXTRACT_SUFX} readsmb.c
