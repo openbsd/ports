@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/05/06 01:27:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.35 2002/04/15 07:25:31 espie Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
@@ -38,7 +38,6 @@ post-extract:
 post-patch:
 	@touch ${WRKSRC}/configure
 
-test:	build
-	@cd ${WRKBUILD}; ${MAKE} test
+REGRESS_TARGET=test
 
 .include <bsd.port.mk>
