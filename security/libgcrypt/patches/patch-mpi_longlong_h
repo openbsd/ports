@@ -1,0 +1,19 @@
+$OpenBSD: patch-mpi_longlong_h,v 1.1 2004/06/22 04:37:42 sturm Exp $
+--- mpi/longlong.h.orig	Mon Jun 21 22:06:32 2004
++++ mpi/longlong.h	Mon Jun 21 22:07:36 2004
+@@ -170,6 +170,7 @@ MA 02111-1307, USA. */
+     (pl) = __m0 * __m1; 						\
+   } while (0)
+ #define UMUL_TIME 46
++#if 0
+ #ifndef LONGLONG_STANDALONE
+ #define udiv_qrnnd(q, r, n1, n0, d) \
+   do { UDItype __r;							\
+@@ -179,6 +180,7 @@ MA 02111-1307, USA. */
+ extern UDItype __udiv_qrnnd ();
+ #define UDIV_TIME 220
+ #endif /* LONGLONG_STANDALONE */
++#endif /* 0 */
+ #endif /* __alpha */
+ 
+ /***************************************
