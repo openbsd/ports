@@ -1,0 +1,4 @@
+phpLDAPadmin is a web-based LDAP client. It provides easy, anywhere-accessible,
+multi-language administration for your LDAP server. To accomplish the latter 
+you'll need a properly set up LDAP server.  It is up to you to install and 
+configure such a system.
