@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.477 2001/10/24 11:44:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.478 2001/10/24 11:47:41 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1854,6 +1854,22 @@ ${_F}:
 bulk-packages:
 	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
 	@exec ${MAKE} ftp-packages cdrom-packages BATCH=Yes
+# bulk-packages is just 
+# make bulk-do BULK_TARGETS='package ftp-packages cdrom-packages clean'
+#			   BULK_FLAGS='BATCH=Yes CLEANDEPENDS=Yes'
+#
+# You can, for instance, do:
+# make clean='distclean install package'
+# make bulk-do 
+#	BULK_TARGETS='distclean clean=package regress lib-depends-check 
+#		package ftp-packages cdrom-packages clean'
+#	BULK_FLAGS='BATCH=Yes CLEANDEPENDS=Yes'
+#
+bulk-do:
+.for _i in ${BULK_TARGETS}
+	@exec ${MAKE} ${_i} ${BULK_FLAGS}
+.endfor
+
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
@@ -2655,4 +2671,5 @@ unlink-categories:
    distpatch real-distpatch do-distpatch post-distpatch show \
    link-categories unlink-categories _package new-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
-   _package-recurse-dir-depends recursebuild-depends-list run-depends-list
+   _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
+   bulk-packages bulk-do
