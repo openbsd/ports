@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/12 12:02:26 angelos Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
@@ -57,19 +57,19 @@ post-patch:
 post-install:
 		${RM} -rf ${PREFIX}/info
 		(cd ${PREFIX}/bin; strip ${STRIP})
-		${ECHO} ""
-		${ECHO} "	To upgrade to the PalmOS3 SDK, download "
-		${ECHO} "	http://palm.3com.com/devzone/tools/winsdk30.zip "
-		${ECHO} "	and after unzipping it, move the directory 'Incs' "
-		${ECHO} "	to ${PREFIX}/m68k-palmos-coff/include/, under "
-		${ECHO} "	the name 'PalmOS3'. Then delete the link "
-		${ECHO} "	PalmOS -> PalmOS2, and make a symbolic link "
-		${ECHO} "	PalmOS -> PalmOS3 in the same directory. "
-		${ECHO} ""
-		${ECHO} "	You will need to rename the file PalmOS3/UI/Event.H "
-		${ECHO} "	to PalmOS3/UI/Event.h, and remove the nested "
-		${ECHO} "	comment at the begining of PalmOS3/UI/Category.h "
-		${ECHO} "	Also, you should edit PalmOS3/System/Unix/unix_string.h "
-		${ECHO} "	and change the include from StdArg.h to stdarg.h "
-		${ECHO} ""
+		@${ECHO} ""
+		@${ECHO} "	To upgrade to the PalmOS3 SDK, download "
+		@${ECHO} "	http://palm.3com.com/devzone/tools/winsdk30.zip "
+		@${ECHO} "	and after unzipping it, move the directory 'Incs' "
+		@${ECHO} "	to ${PREFIX}/m68k-palmos-coff/include/, under "
+		@${ECHO} "	the name 'PalmOS3'. Then delete the link "
+		@${ECHO} "	PalmOS -> PalmOS2, and make a symbolic link "
+		@${ECHO} "	PalmOS -> PalmOS3 in the same directory. "
+		@${ECHO} ""
+		@${ECHO} "	You will need to rename the file PalmOS3/UI/Event.H "
+		@${ECHO} "	to PalmOS3/UI/Event.h, and remove the nested "
+		@${ECHO} "	comment at the begining of PalmOS3/UI/Category.h "
+		@${ECHO} "	Also, you should edit PalmOS3/System/Unix/unix_string.h "
+		@${ECHO} "	and change the include from StdArg.h to stdarg.h "
+		@${ECHO} ""
 .include <bsd.port.mk>
