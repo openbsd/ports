@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.589 2003/11/22 12:03:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.590 2003/12/11 08:55:24 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -691,7 +691,7 @@ ${WRKPKG}/depends${SUBPACKAGE}:
 .if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
 	@${_depfile_fragment}; \
 	echo "|${FULLPKGNAME${SUBPACKAGE}}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _recurse-solve-package-depends
+	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _solve-package-depends
 .endif
 
 MTREE_FILE?=
@@ -2217,7 +2217,7 @@ _recurse-lib-depends-check:
 
 
 # Write a correct list of dependencies for packages.
-_recurse-solve-package-depends:
+_solve-package-depends:
 .for _i in ${RUN_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo '${_i}' |{ \
@@ -2225,15 +2225,7 @@ _recurse-solve-package-depends:
 		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
-		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; \
-		if fgrep -q "|$$default|" $${_DEPENDS_FILE}; then : ; else \
-			echo "|$$default|" >>$${_DEPENDS_FILE}; \
-			toset="$$toset self=\"$$default\""; \
-			if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-				exit 1; \
-			fi; \
-		fi; }
+		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; }
 .endfor
 .if !defined(NO_SHARED_LIBS)
 .  for _i in ${LIB_DEPENDS}
@@ -2266,14 +2258,6 @@ _recurse-solve-package-depends:
 		X) ;;\
 		*) \
 			echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
-			if ! fgrep -q "|$$default|" $${_DEPENDS_FILE}; then \
-				echo "lib|$$default|" >>$${_DEPENDS_FILE}; \
-				toset="$$toset self=\"$$default\""; \
-				if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
-					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-					exit 1; \
-				fi; \
-			fi;; \
 		esac; \
 	}
 .  endfor
@@ -2443,7 +2427,7 @@ uninstall deinstall:
 	_build-dir-depends _delete-package-links _fetch-makefile \
 	_package _package-links _print-packagename \
 	_recurse-all-dir-depends _recurse-lib-depends-check \ 
-	_recurse-run-dir-depends _recurse-solve-package-depends _refetch \
+	_recurse-run-dir-depends _solve-package-depends _refetch \
 	addsum \
 	all all-dir-depends build \
 	build-depends build-depends-list build-dir-depends \
