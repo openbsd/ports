@@ -18,14 +18,14 @@
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O3 -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math \
++			-funroll-all-loops -ffast-math -DTERM_CONTROL \
 +			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
 +
 +openbsd-i386:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DROT_I386 \
++			-funroll-all-loops -ffast-math -DROT_I386 -DTERM_CONTROL \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
  		mpg123-make
  

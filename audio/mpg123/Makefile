@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/01 15:26:59 ho Exp $
+# $OpenBSD: Makefile,v 1.9 1999/12/01 16:22:01 espie Exp $
 
 DISTNAME=	mpg123-0.59q
 CATEGORIES=	audio
@@ -18,6 +18,6 @@ ALL_TARGET=	openbsd-i386
 .endif
 
 post-patch:
-	@${CP} ${FILESDIR}/audio_openbsd.c ${WRKSRC}
+	@cp ${FILESDIR}/{audio_openbsd.c,term.c} ${WRKSRC}
 
 .include <bsd.port.mk>
