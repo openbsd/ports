@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 22:12:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/30 21:59:26 brad Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
-NEED_VERSION=	1.210
-MASTER_SITES=	http://squid.nlanr.net/Versions/v2/2.2/
-MASTER_SITES0=	http://squid.nlanr.net/Versions/v2/2.2/bugs/
+NEED_VERSION=	1.218
+MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.2/
+MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.2/bugs/
 EXTRACT_SUFX=	-src.tar.gz
+DIST_SUBDIR=	squid
 
 PATCHFILES=	squid-2.2.stable5-no_cache.patch:0 \
 		squid-2.2.stable5-ipcache_negative.patch:0 \
 		squid-2.2.stable5-newlines_in_auth.patch:0 \
 		squid-2.2.stable5-domain-match.patch:0
-
 .if defined(PATCH_DEBUG) && ${PATCH_DEBUG:U} == YES
 PATCH_DIST_ARGS=-d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else
@@ -21,20 +21,18 @@ PATCH_DIST_ARGS=-d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 SYSCONFDIR=	/etc/squid
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir="/var/squid"
+CONFIGURE_ARGS=	--localstatedir="/var/squid"
 
 MAKE_FILE=	makefile
-STRIP=		# won't install scripts correctly otherwise.
 
 post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
