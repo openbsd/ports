@@ -1,0 +1,16 @@
+$OpenBSD: patch-admin_old-ltconfig,v 1.1 2002/07/20 01:01:24 brad Exp $
+--- admin/old-ltconfig.orig	Mon Mar 25 22:26:17 2002
++++ admin/old-ltconfig	Fri Jul 19 21:07:40 2002
+@@ -1246,10 +1246,8 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
++  need_lib_prefix=yes
++  need_version=yes
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
