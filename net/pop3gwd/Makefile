@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/16 19:24:23 turan Exp $
 #
 # OpenBSD port for pop3gwd.
 # Created: 1999/12/28 ianm@cit.nepean.uws.edu.au
 # 
+
+BROKEN=		sources missing
 
 DISTNAME=		pop3gwd-1.2
 CATEGORIES=     	net mail
