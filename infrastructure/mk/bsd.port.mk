@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.263 2000/04/16 20:59:22 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.264 2000/04/16 21:41:07 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1482,6 +1482,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .endif
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 
+_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
 
 .if ${FAKE:U} == "YES"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} 
@@ -1494,21 +1495,21 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 .  if target(pre-fake)
-	@cd ${.CURDIR} && make pre-fake TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+	@cd ${.CURDIR} && make pre-fake ${_FAKE_SETUP}
 .  endif
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && make pre-install TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+	@cd ${.CURDIR} && make pre-install ${_FAKE_SETUP}
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && make do-install TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+	@cd ${.CURDIR} && make do-install ${_FAKE_SETUP}
 .  else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && make post-install TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+	@cd ${.CURDIR} && make post-install ${_FAKE_SETUP}
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
