@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/03/26 21:51:41 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/03/27 01:28:27 lebel Exp $
 !%%no_gle%%
 bin/xscreensaver
 bin/xscreensaver-command
@@ -33,7 +33,6 @@ lib/xscreensaver/config/cubenetic.xml
 lib/xscreensaver/config/cynosure.xml
 lib/xscreensaver/config/dangerball.xml
 lib/xscreensaver/config/decayscreen.xml
-lib/xscreensaver/config/deco.xml
 lib/xscreensaver/config/deluxe.xml
 lib/xscreensaver/config/demon.xml
 lib/xscreensaver/config/discrete.xml
@@ -145,6 +144,7 @@ lib/xscreensaver/config/whirlygig.xml
 lib/xscreensaver/config/worm.xml
 lib/xscreensaver/config/xaos.xml
 lib/xscreensaver/config/xdaliclock.xml
+lib/xscreensaver/config/xdeco.xml
 lib/xscreensaver/config/xearth.xml
 lib/xscreensaver/config/xfishtank.xml
 lib/xscreensaver/config/xflame.xml
@@ -181,7 +181,6 @@ libexec/xscreensaver/cubenetic
 libexec/xscreensaver/cynosure
 libexec/xscreensaver/dangerball
 libexec/xscreensaver/decayscreen
-libexec/xscreensaver/deco
 libexec/xscreensaver/deluxe
 libexec/xscreensaver/demon
 libexec/xscreensaver/discrete
@@ -289,6 +288,7 @@ libexec/xscreensaver/webcollage-helper
 libexec/xscreensaver/whirlwindwarp
 libexec/xscreensaver/whirlygig
 libexec/xscreensaver/worm
+libexec/xscreensaver/xdeco
 libexec/xscreensaver/xflame
 libexec/xscreensaver/xjack
 libexec/xscreensaver/xlyap
@@ -307,7 +307,6 @@ man/man1/bubbles.1
 man/man1/bumps.1
 man/man1/critical.1
 man/man1/decayscreen.1
-man/man1/xdeco.1
 man/man1/distort.1
 man/man1/drift.1
 man/man1/epicycle.1
@@ -375,6 +374,7 @@ man/man1/vines.1
 man/man1/webcollage.1
 man/man1/whirlwindwarp.1
 man/man1/whirlygig.1
+man/man1/xdeco.1
 man/man1/xflame.1
 man/man1/xjack.1
 man/man1/xlyap.1
