@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.14 1998/02/23 19:50:15 don Exp $
+# $OpenBSD: Makefile,v 1.15 1998/04/03 01:24:49 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -69,8 +69,16 @@ MAN8=		sshd.8
 
 
 pre-patch:
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+	@cp ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
+.endif
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
+
+post-patch:
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+	@rm ${PATCHDIR}/patch-rsaref2
+.endif
 
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
