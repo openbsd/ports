@@ -1,19 +1,72 @@
 @cwd /usr/local
-@name egcs-1.1b
-@pkgdep autoconf-2.12
-@pkgdep m4-1.4
-@unexec install-info --delete %D/info/egcc.info %D/info/dir
-@unexec install-info --delete %D/info/ecpp.info %D/info/dir
-ARCH/include/_G_config.h
-ARCH/lib/libiberty.a
-bin/ARCH-gcc
-bin/ec++
-bin/ec++filt
-bin/eg++
+@name DISTNAME
 bin/egcc
 bin/eprotoize
 bin/eunprotoize
 bin/gcov
+bin/ARCH-gcc
+ARCH/include/_G_config.h
+lib/gcc-lib/ARCH/VERSION/SYSCALLS.c.X
+lib/gcc-lib/ARCH/VERSION/cc1
+lib/gcc-lib/ARCH/VERSION/cpp
+lib/gcc-lib/ARCH/VERSION/libgcc.a
+lib/gcc-lib/ARCH/VERSION/specs
+lib/gcc-lib/ARCH/VERSION/include/syslimits.h
+lib/gcc-lib/ARCH/VERSION/include/limits.h
+lib/gcc-lib/ARCH/VERSION/include/float.h
+lib/gcc-lib/ARCH/VERSION/include/README
+ARCH/lib/libiberty.a
+lib/libiberty.a
+info/ecpp.info
+info/ecpp.info-1
+info/ecpp.info-2
+info/ecpp.info-3
+info/egcc.info
+info/egcc.info-1
+info/egcc.info-10
+info/egcc.info-11
+info/egcc.info-12
+info/egcc.info-13
+info/egcc.info-14
+info/egcc.info-15
+info/egcc.info-16
+info/egcc.info-17
+info/egcc.info-18
+info/egcc.info-19
+info/egcc.info-2
+info/egcc.info-20
+info/egcc.info-21
+info/egcc.info-22
+info/egcc.info-23
+info/egcc.info-24
+info/egcc.info-25
+info/egcc.info-26
+info/egcc.info-27
+info/egcc.info-28
+info/egcc.info-29
+info/egcc.info-3
+info/egcc.info-4
+info/egcc.info-5
+info/egcc.info-6
+info/egcc.info-7
+info/egcc.info-8
+info/egcc.info-9
+man/man1/ecccp.1
+man/man1/egcc.1
+ifdef(`CHILL',
+bin/chill
+info/chill.info
+lib/gcc-lib/ARCH/VERSION/cc1chill
+lib/gcc-lib/ARCH/VERSION/chillrt0.o
+lib/gcc-lib/ARCH/VERSION/libchill.a
+)ifdef(`GXX',
+bin/ec++
+bin/ec++filt
+bin/eg++
+lib/gcc-lib/ARCH/VERSION/include/typeinfo
+lib/gcc-lib/ARCH/VERSION/include/exception
+lib/gcc-lib/ARCH/VERSION/include/new
+lib/gcc-lib/ARCH/VERSION/include/new.h
 include/g++/PlotFile.h
 include/g++/SFile.h
 include/g++/algo.h
@@ -150,67 +203,69 @@ include/g++/type_traits.h
 include/g++/utility
 include/g++/vector
 include/g++/vector.h
-info/ecpp.info
-info/ecpp.info-1
-info/ecpp.info-2
-info/ecpp.info-3
-info/egcc.info
-info/egcc.info-1
-info/egcc.info-2
-info/egcc.info-3
-info/egcc.info-4
-info/egcc.info-5
-info/egcc.info-6
-info/egcc.info-7
-info/egcc.info-8
-info/egcc.info-9
-info/egcc.info-10
-info/egcc.info-11
-info/egcc.info-12
-info/egcc.info-13
-info/egcc.info-14
-info/egcc.info-15
-info/egcc.info-16
-info/egcc.info-17
-info/egcc.info-18
-info/egcc.info-19
-info/egcc.info-20
-info/egcc.info-21
-info/egcc.info-22
-info/egcc.info-23
-info/egcc.info-24
-info/egcc.info-25
-info/egcc.info-26
-info/egcc.info-27
-info/egcc.info-28
-info/egcc.info-29
-lib/gcc-lib/ARCH/egcs-2.91.57/SYSCALLS.c.X
-lib/gcc-lib/ARCH/egcs-2.91.57/cc1
-lib/gcc-lib/ARCH/egcs-2.91.57/cc1plus
-lib/gcc-lib/ARCH/egcs-2.91.57/collect2
-lib/gcc-lib/ARCH/egcs-2.91.57/cpp
-lib/gcc-lib/ARCH/egcs-2.91.57/libgcc.a
-lib/gcc-lib/ARCH/egcs-2.91.57/specs
-lib/gcc-lib/ARCH/egcs-2.91.57/include/README
-lib/gcc-lib/ARCH/egcs-2.91.57/include/exception
-lib/gcc-lib/ARCH/egcs-2.91.57/include/float.h
-lib/gcc-lib/ARCH/egcs-2.91.57/include/limits.h
-lib/gcc-lib/ARCH/egcs-2.91.57/include/new
-lib/gcc-lib/ARCH/egcs-2.91.57/include/new.h
-lib/gcc-lib/ARCH/egcs-2.91.57/include/syslimits.h
-lib/gcc-lib/ARCH/egcs-2.91.57/include/typeinfo
-lib/libiberty.a
 lib/libstdc++.a
-lib/libstdc++.so
+ifdef(`DYNAMIC',
 lib/libstdc++.so.2.9
 lib/libstdc++.so.2.9.0
-man/man1/ecccp.1
+lib/libstdc++.so
+)lib/gcc-lib/ARCH/VERSION/cc1plus
+lib/gcc-lib/ARCH/VERSION/collect2
 man/man1/eg++.1
-man/man1/egcc.1
+)ifdef(`FORTRAN',
+bin/eg77
+info/eg77.info
+info/eg77.info-1
+info/eg77.info-10
+info/eg77.info-11
+info/eg77.info-12
+info/eg77.info-13
+info/eg77.info-14
+info/eg77.info-15
+info/eg77.info-16
+info/eg77.info-17
+info/eg77.info-18
+info/eg77.info-19
+info/eg77.info-2
+info/eg77.info-20
+info/eg77.info-3
+info/eg77.info-4
+info/eg77.info-5
+info/eg77.info-6
+info/eg77.info-7
+info/eg77.info-8
+info/eg77.info-9
+lib/gcc-lib/ARCH/VERSION/f771
+lib/gcc-lib/ARCH/VERSION/include/g2c.h
+lib/gcc-lib/ARCH/VERSION/libg2c.a
+man/man1/eg77.1
+)ifdef(`OBJC',
+lib/gcc-lib/ARCH/VERSION/cc1obj
+lib/gcc-lib/ARCH/VERSION/libobjc.a
+lib/gcc-lib/ARCH/VERSION/include/objc/NXConstStr.h
+lib/gcc-lib/ARCH/VERSION/include/objc/Object.h
+lib/gcc-lib/ARCH/VERSION/include/objc/Protocol.h
+lib/gcc-lib/ARCH/VERSION/include/objc/encoding.h
+lib/gcc-lib/ARCH/VERSION/include/objc/hash.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc-api.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc-list.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc.h
+lib/gcc-lib/ARCH/VERSION/include/objc/sarray.h
+lib/gcc-lib/ARCH/VERSION/include/objc/thr.h
+lib/gcc-lib/ARCH/VERSION/include/objc/typedstream.h
+)ifdef(`JAVA',
+bin/egcj
+bin/gcjh
+bin/jcf-dump
+bin/jv-scan
+lib/gcc-lib/ARCH/VERSION/jc1
+lib/gcc-lib/ARCH/VERSION/jvgenmain
+)ifdef(`GXX',
 @dirrm include/g++/std
 @dirrm include/g++
-@dirrm lib/gcc-lib/ARCH/egcs-2.91.57/include
-@dirrm lib/gcc-lib/ARCH/egcs-2.91.57
+)ifdef(`OBJC',
+@dirrm lib/gcc-lib/ARCH/VERSION/include/objc)
+@dirrm lib/gcc-lib/ARCH/VERSION/include
+@dirrm lib/gcc-lib/ARCH/VERSION
+@dirrm lib/gcc-lib/ARCH
+@dirrm lib/gcc-lib
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
-@exec install-info %D/info/egcc.info %D/info/dir
-@exec install-info %D/info/ecpp.info %D/info/dir

@@ -1,27 +1,66 @@
 # OpenBSD makefile for:	egcs
-# Version required:	release 1.1b
+# Version required:	release 1.1b, plus pre-rel 1.1.1 patch 1/2
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.4 1998/10/13 14:52:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1998/12/04 00:24:31 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release
-# right now, we only configure i386, C and C++.
-# g77 and objc didn't make it for 2.4.
+# right now, we only configure i386.
 
-DISTNAME=	egcs-1.1b
-DIRECTORY=egcs/releases/egcs-1.1b/
-
-DISTFILES=	egcs-core-1.1b${EXTRACT_SUFX}
-DISTFILES+=     egcs-g++-1.1b${EXTRACT_SUFX}
-# see files/tests for testing procedure
-#DISTFILES+=egcs-tests-1.1b${EXTRACT_SUFX}
-# to be added...
-#DISTFILES+=egcs-g77-1.1b${EXTRACT_SUFX}
-#DISTFILES+=egcs-objc-1.1b${EXTRACT_SUFX}
+# we could remove this dependency by patching configure, but this is not
+# reasonable...
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 CATEGORIES=	lang 
+MAINTAINER=	Marc.Espie@openbsd.org
+
+# this will improve over time as more and more architectures are handled
+# with some help from Jason L. Wright for sparc...
+ONLY_FOR_ARCHS = i386 sparc m68k
+
+# user configuration section
+
+# see files/tests for testing procedure
+MAKE_TESTS=yes
+MAKE_GXX=yes
+MAKE_FORTRAN=yes
+MAKE_OBJC=yes
+
+# not yet in 1.1.1
+#MAKE_CHILL=yes
+#MAKE_JAVA=yes
+
+.if defined(MAKE_TESTS)
+BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
+.endif
+
+# if you want/need to use the mammoth archive
+#ONE_ARCHIVE=yes
+
+VERSION=1.1.1
+DISTNAME=	egcs-${VERSION}
+DIRECTORY=egcs/releases/%SUBDIR%/
+DIST_SUBDIR=egcs
+MASTER_SITE_SUBDIR=${DISTNAME}
+
+DISTFILES=	egcs-core-${VERSION}${EXTRACT_SUFX}
+.if defined(MAKE_GXX)
+DISTFILES+=     egcs-g++-${VERSION}${EXTRACT_SUFX}
+.endif
+.if defined(MAKE_TESTS)
+DISTFILES+=egcs-tests-${VERSION}${EXTRACT_SUFX}
+.endif
+# to be added...
+.if defined(MAKE_FORTRAN)
+DISTFILES+=egcs-g77-${VERSION}${EXTRACT_SUFX}
+.endif
+.if defined(MAKE_OBJC)
+DISTFILES+=egcs-objc-${VERSION}${EXTRACT_SUFX}
+.endif
+
+
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
@@ -62,19 +101,51 @@ MASTER_SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
 
-MAINTAINER=	Marc.Espie@openbsd.org
+PATCH_SITE= ${MASTER_SITES}
+PATCH_DIST_STRIP=-p1
+#PATCHFILES= egcs-1.1b-1.1.1-prerelease.diff.gz
+#PATCHFILES+= egcs-1.1.1-prerelease-1.1.1-prerelease-2.diff.gz
+#PATCHFILES+= egcs-1.1.1-prerelease-2-1.1.1-prerelease-3.diff.gz
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+#### 
+# Patch section
 
-# will improve over time as more and more architectures are handled
-ONLY_FOR_ARCHS = i386 amiga atari hp300 mac68k mvme68k
+PATCH_LIST=patch-core-*
+.if defined(MAKE_GXX)
+PATCH_LIST+=patch-g++-*
+.endif
+.if defined(MAKE_OBJC)
+PATCH_LIST+=patch-objc-*
+.endif
+.if defined(MAKE_CHILL)
+PATCH_LIST+=patch-chill-*
+.endif
+.if defined(MAKE_FORTRAN)
+PATCH_LIST+=patch-g77-*
+.endif
+.if defined(MAKE_JAVA)
+PATCH_LIST+=patch-java-*
+.endif
+
+# get openbsd configuration files where they should be
+post-patch:
+	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
+	${RM} -rf ${WRKSRC}/texinfo 
+.if !defined(MAKE_GXX)
+	-${RM} -rf ${WRKSRC}/gcc/cp ${WRKSRC}/libstdc++ ${WRKSRC}/libio
+.endif
+.if !defined(MAKE_FORTRAN)
+	-${RM} -rf ${WRKSRC}/gcc/f ${WRKSRC}/libf2c
+.endif
+.if !defined(MAKE_OBJC)
+	-${RM} -rf ${WRKSRC}/gcc/objc
+.endif
+
+####
+# configure section
+#
 
 GNU_CONFIGURE=	yes
-USE_GMAKE= yes
-
-# don't make bootstrap if you're impatient/you know what you're doing
-# use bootstrap-lean if you don't have room.
-ALL_TARGET=bootstrap
 
 CONFIGURE_SCRIPT=../source/configure
 
@@ -82,31 +153,62 @@ CONFIGURE_ENV=CFLAGS=-O2
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e,
+
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
-# get openbsd configuration files where they should be
-post-patch:
-	cp -R ${FILESDIR}/config/* ${WRKSRC}
-	rm -rf ${WRKSRC}/texinfo
-
-# rebuild configure file after patching, then move file around !!!
+# rebuild configure file after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-# + kludge to build in a separate directory.
 pre-configure:
 	cd ${WRKSRC}/gcc && autoconf
-	mv ${WRKSRC} ${WRKDIR}/source
-	mkdir ${WRKSRC}
+	-${MV} ${WRKSRC} ${WRKDIR}/source
+	${MKDIR} ${WRKSRC}
 
-# use the same trick that's used for emacs
-pre-install:
-.if (${MACHINE_ARCH} != "alpha")
-	${RM} -f ${PKGDIR}/PLIST
-	${SED} -e "s/ARCH/`${WRKDIR}/source/config.guess`/" ${FILESDIR}/PLIST.template >${PKGDIR}/PLIST
-.else
-	cp ${FILESDIR}/PLIST.alpha ${PKGDIR}/PLIST
+####
+# build section
+# should work without gmake. If it turns out to be needed, this must be 
+# reported to the egcs folks
+#USE_GMAKE= yes
+
+ALL_TARGET=bootstrap
+.if defined(MAKE_TESTS)
+ALL_TARGET+=check
 .endif
-	
+
+# XXX we need to override do-build to get the warnings from within make
+do-build:
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings)
+
+
+####
+# Install section
+
+PLIST=${WRKDIR}/PLIST
+
+M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
+.if defined(MAKE_GXX)
+M4FLAGS+= -DGXX
+.endif
+.if defined(MAKE_FORTRAN)
+M4FLAGS+= -DFORTRAN
+.endif
+.if defined(MAKE_CHILL)
+M4FLAGS+= -DCHILL
+.endif
+.if defined(MAKE_OBJC)
+M4FLAGS+= -DOBJC
+.endif
+.if defined(MAKE_JAVA)
+M4FLAGS+= -DJAVA
+.endif
+.if (${MACHINE_ARCH}) != "alpha")
+M4FLAGS+= -DDYNAMIC
+.endif
+
 pre-install:
+	${M4} ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
+	-DVERSION=`${SED} -e 's/.*\"\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
+	<${FILESDIR}/PLIST.template >${PLIST}
+
 .include <bsd.port.mk>
