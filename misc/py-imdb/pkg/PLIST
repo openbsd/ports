@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/11/15 21:31:58 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/12/24 18:04:40 xsa Exp $
+%%SHARED%%
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/imdb/
@@ -26,10 +27,20 @@ lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchPersonParser.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/searchPersonParser.pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/utils.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/__init__.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/movieParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/movieParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/personParser.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/personParser.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/utils.py
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/utils.py
 lib/python${MODPY_VERSION}/site-packages/imdb/utils.pyc
 share/doc/py-imdb/
 share/doc/py-imdb/README.devel
+share/doc/py-imdb/README.local
 share/doc/py-imdb/README.package
 share/doc/py-imdb/README.txt
 share/doc/py-imdb/README.users

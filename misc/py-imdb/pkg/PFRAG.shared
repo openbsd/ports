@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/12/24 18:04:40 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/local/ratober.so
