@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/07 10:03:33 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/18 18:42:12 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--sbindir="${PREFIX}/libexec" \
 		--with-configdir="${SYSCONFDIR}" \
 		--with-lockdir="${SAMBA_SPOOL}" \
+		--with-piddir="${SAMBA_SPOOL}" \
 		--with-logfilebase="${SAMBA_LOGDIR}" \
 		--with-privatedir="${SYSCONFDIR}" \
 		--with-swatdir="${PREFIX}/share/swat" \
