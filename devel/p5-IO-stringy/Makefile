@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/17 06:26:53 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/09 17:16:42 shell Exp $
 
 COMMENT=		"in-core objects like strings and arrays for I/O"
 
-VERSION=		1.220
+VERSION=		2.105
 DISTNAME=		IO-stringy-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.384
+NEED_VERSION=		1.434
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 
@@ -25,21 +25,11 @@ CONFIGURE_STYLE= perl
 
 EG_DIR=			${WRKBUILD}/docs
 EG_LOC=			${PREFIX}/share/doc/p5-IO-stringy
-EG_FILES=		index-menu.html index.html index.menu
-EG_IO=			AtomicFile InnerFile Lines Scalar Stringy \
-			Wrap WrapTie ScalarArray
-EG_ICONS=		h1bullet h2bullet zeegee
 
 post-install:
 	${INSTALL_DATA_DIR} ${EG_LOC}/IO/icons
-.for i in ${EG_FILES}
-	${INSTALL_DATA} ${EG_DIR}/$i ${EG_LOC}/$i
-.endfor
-.for i in ${EG_IO}
-	${INSTALL_DATA} ${EG_DIR}/IO/$i.pm.html ${EG_LOC}/IO/$i.pm.html
-.endfor
-.for i in ${EG_ICONS}
-	${INSTALL_DATA} ${EG_DIR}/IO/icons/$i.gif ${EG_LOC}/IO/icons/$i.gif
-.endfor
+	${INSTALL_DATA} ${EG_DIR}/IO/icons/*.gif ${EG_LOC}/IO/icons/
+	${INSTALL_DATA} ${EG_DIR}/IO/*.pm.html ${EG_LOC}/IO/
+	${INSTALL_DATA} ${EG_DIR}/index* ${EG_LOC}/
 
 .include <bsd.port.mk>
