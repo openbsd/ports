@@ -1,11 +1,5 @@
-# Imported from FreeBSD on july 29 1998
-# New ports collection makefile for:	jvim
-# Version required:	jvim2.0r+onew2.2.10
-# Date created:		5 Sep 1997
-# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
-#
+# $OpenBSD: Makefile,v 1.3 1999/09/22 20:30:20 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
-#
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME?=	ja-jvim-2.0r
@@ -13,8 +7,9 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
-#MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
-MAINTAINER = espie@openbsd.org
+NEED_VERSION=	1.114
+
+MAINTAINER=	espie@openbsd.org
 
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
@@ -73,8 +68,8 @@ do-install:
 	cd ${WRKSRC}/src; make install
 
 post-install:
-	for file in jcat jgrep jfold jvim; do \
-		strip ${LOCALBASE}/bin/$$file; \
+	@for file in jcat jgrep jfold jvim; do \
+		${STRIP} ${LOCALBASE}/bin/$$file; \
 	done
 	@echo "You may have to add man/ja_JP.EUC to _default in /etc/man.conf manually"
 
