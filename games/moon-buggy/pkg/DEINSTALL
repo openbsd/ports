@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/03/18 20:07:43 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/01/09 20:49:36 sturm Exp $
 #
 # moon-buggy de-installation
 
@@ -34,7 +34,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -d $SCORE_DIR ]; then
+	if [ $PKG_DELETE_EXTRA != "Yes" -a -d $SCORE_DIR ]; then
 	    do_notice "$1"
 	fi
 	;;
