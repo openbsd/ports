@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/05/11 16:52:29 sturm Exp $
+--- Makefile.orig	Sat May  3 13:43:44 2003
++++ Makefile	Sat May  3 13:44:25 2003
+@@ -42,10 +42,10 @@ DOSDISTFILES = $(DISTFILES) jpeg2ps.exe
+ 
+ # Location where to install the binary. This is a suitable value for Linux
+ # (and possibly other unix-like) systems.
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ 
+ # Location where to install the manual page.
+-MANDIR = /usr/local/man/man1
++MANDIR = ${PREFIX}/man/man1
+ 
+ CONVFILES = \
+ 	jpeg2ps.c psimage.h readjpeg.c asc85ec.c getopt.c	\
