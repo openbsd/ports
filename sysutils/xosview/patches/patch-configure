@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2000/07/17 16:24:47 form Exp $
---- configure.orig	Mon Jul 17 23:02:37 2000
-+++ configure	Mon Jul 17 23:09:45 2000
+$OpenBSD: patch-configure,v 1.2 2001/08/17 12:28:37 form Exp $
+--- configure.orig	Tue Jul 18 01:54:42 2000
++++ configure	Fri Aug 17 19:19:47 2001
 @@ -1676,6 +1676,18 @@ fi
    
  	  host_dir=linux
@@ -20,25 +20,25 @@ $OpenBSD: patch-configure,v 1.1 2000/07/17 16:24:47 form Exp $
  ##  Check for known versions of NetBSD...
  netbsd1.[012345]*)  
  	host_os_full=$host_os
-@@ -1805,16 +1817,34 @@ EOF
+@@ -1813,16 +1825,48 @@ EOF
  
  			host_dir=bsd
  	host_os=freebsd ;;
 -openbsd*) 
 -        EXTRALIBS="-lkvm $XPMLIB"
 -        INSTALL_ARGS='-s -g kmem -m 02555'
-+openbsd*)
++openbsd2.[6-9]*)
 +	EXTRALIBS="-lkvm $XPMLIB"
 +	INSTALL_ARGS='-s -g kmem -m 02555'
  	NetMeter_Default_Setting=True
  	cat >> confdefs.h <<\EOF
  #define XOSVIEW_OPENBSD 1
 +#define HAVE_SWAPCTL 1
- EOF
++EOF
 +	## Also check for the existence of UVM.  This is a nasty,
 +	## complicated check.  This could be avoided by having the *BSD
 +	## platform-specific Makefiles include <bsd.own.mk> on their own.
- 
++
 +	cat > confmkfile <<\EOF
 +.include <bsd.own.mk>
 +all:
@@ -51,10 +51,24 @@ $OpenBSD: patch-configure,v 1.1 2000/07/17 16:24:47 form Exp $
 +	if test x$uvmstring != x ; then
 +		cat >> confdefs.h <<\EOF
 +#define UVM 1
-+EOF
+ EOF
 +	fi
  
++	host_dir=bsd
++	host_os=openbsd ;;
++openbsd*)
++	EXTRALIBS="-lkvm $XPMLIB"
++	INSTALL_ARGS='-s -g kmem -m 02555'
++	NetMeter_Default_Setting=True
++	cat >> confdefs.h <<\EOF
++#define XOSVIEW_OPENBSD 1
++#define HAVE_SWAPCTL 1
++EOF
+ 
 -			host_dir=bsd
++	cat >> confdefs.h <<\EOF
++#define UVM 1
++EOF
 +	host_dir=bsd
  	host_os=openbsd ;;
  bsdi*) 

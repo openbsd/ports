@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 03:59:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2001/08/17 12:28:37 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
@@ -19,10 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
-
-#MAKE_ENV+=	UVM=${UVM}
-#MAKE_FLAGS=	ARCH=${ARCH}
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib" \
+		UVM=Yes
 
 .if (${MACHINE_ARCH} == "alpha")
 BROKEN=		"compilation errors"
