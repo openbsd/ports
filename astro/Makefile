@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 1998/04/29 03:26:01 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/03 00:14:20 marc Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 #
 
+     SUBDIR += dgpsip
 #    SUBDIR += ephem
 #    SUBDIR += luna
      SUBDIR += sattrack
