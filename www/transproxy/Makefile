@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2001/08/21 20:44:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/12/06 07:28:11 jasoni Exp $
 
 COMMENT=	"transparent www proxy driver for IPFILTER"
-
-BROKEN=		"requires ipf"
 
 DISTNAME=	transproxy-1.4
 CATEGORIES=	www net
