@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/03 14:59:27 xsa Exp $
 
 COMMENT=	"read and manipulate ID3 tags on MP3 files with Python"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

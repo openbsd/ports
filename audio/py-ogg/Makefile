@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/03 14:59:27 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-MODULES=	python
+MODULES=	lang/python
 
 LIB_DEPENDS=	ogg::audio/libogg
 

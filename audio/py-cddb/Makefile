@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/03 14:59:27 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cddb-py/}
 # avoid possible conflict with the audio/p5-cddb distfile
 DIST_SUBDIR=	${PKGNAME}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

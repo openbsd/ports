@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/03 22:07:40 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 14:59:26 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-MODULES=	python
+MODULES=	lang/python
 
 LIB_DEPENDS=	ao.3::audio/libao
 
