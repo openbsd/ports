@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/21 01:41:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/31 17:41:49 pvalchev Exp $
 
 COMMENT=	"record what you eat and analyze your meals for nutrient composition"
 
-PKGNAME=	nutdb-10.7
-DISTNAME=	nut-10.7
+PKGNAME=	nutdb-10.8
+DISTNAME=	nut-10.8
 CATEGORIES=	biology
 HOMEPAGE=	http://www.lafn.org/~av832/
 
