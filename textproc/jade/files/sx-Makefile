@@ -1,7 +1,0 @@
-PROG=	sx
-SRCS=	sx.cxx XmlOutputEventHandler.cxx sx_inst.cxx
-LDADD=	${CPPLIB} -L${.CURDIR}/../lib -lsp
-
-NOMAN=	noman
-
-.include <bsd.prog.mk>
