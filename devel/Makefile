@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2000/09/19 05:28:04 mickey Exp $
+# $OpenBSD: Makefile,v 1.43 2000/10/01 21:24:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += ctm
 #    SUBDIR += cutils
      SUBDIR += cvs2cl 
+     SUBDIR += cvsweb
 #    SUBDIR += cxref
      SUBDIR += ddd
      SUBDIR += dejagnu
