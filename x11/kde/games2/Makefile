@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/03/05 14:09:00 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/03/21 16:36:58 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -45,11 +45,12 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 LIB_DEPENDS= kdecore.3,DCOP,artsflow,artsflow_idl,kdeprint,kdesu,kdeui,kfile,kio,kmedia2_idl,kparts,kssl,ksycoca,mcop,qtmcop,soundserver_idl::x11/kde/libs2
 BUILD_DEPENDS=	::x11/qt2-designer
 
+MODULES=qt2
+
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
-CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
-CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
+CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-motif
@@ -79,14 +80,13 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-debug
 
 USE_GMAKE=		Yes
-CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 
 CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 # Ensure qt2 will always be at the front
-MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}"
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
