@@ -1,18 +1,26 @@
---- Makefile.orig	Fri Oct 20 21:20:10 2000
-+++ Makefile	Fri Oct 20 21:23:30 2000
-@@ -17,9 +17,9 @@ GTK_DIR =
+--- Makefile.orig	Tue Jun  1 03:46:31 1999
++++ Makefile	Fri Mar 16 17:35:55 2001
+@@ -3,7 +3,7 @@
+ # Please read the next few lines and enter the correct values.
+ 
+ # What compiler should be used
+-CC = gcc 
++#CC = gcc 
+ 
+ # Where to find the gtk-config script
+ GTK_DIR =
+@@ -17,9 +17,7 @@ GTK_DIR =
  # add -DUSE_GNOME if you want to make grpn GNOME compliant.
  
  
 -CFLAGS = -g -O2 -I/usr/X11/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
-+CFLAGS = -g -O2 -I/usr/X11R6/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
- 
+-
 -DFLAGS =  -L/usr/X11/lib 
-+DFLAGS =  -L/usr/X11R6/lib 
++CFLAGS += `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
  
  # end of user configurable section
  
-@@ -36,7 +36,7 @@ OBJS = test_gtk_ver.o real.o complex.o m
+@@ -36,7 +34,7 @@ OBJS = test_gtk_ver.o real.o complex.o m
  
  LIBS   = `$(GTK_DIR)gtk-config --libs` -lX11 -lm 
  
@@ -21,7 +29,7 @@
  grpn:	$(OBJS)
  	$(CC) $(DFLAGS) -o $@ $(OBJS) $(LIBS) 
  
-@@ -44,8 +44,6 @@ pure:	$(OBJS)
+@@ -44,8 +42,6 @@ pure:	$(OBJS)
  	$(PURIFY) $(CC) $(DFLAGS) -o $@ $(OBJS) $(LIBS) 
  
  install:	grpn
