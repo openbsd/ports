@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 05:04:46 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/17 22:58:45 turan Exp $
+
+BROKEN=		sources missing
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
