@@ -1,0 +1,13 @@
+$OpenBSD: patch-scm_ioext_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/ioext.c.orig	Tue Jan 30 12:57:54 2001
++++ scm/ioext.c	Tue Jan 30 12:58:30 2001
+@@ -70,6 +70,9 @@ SCM	stat2scm P((struct stat *stat_temp))
+ #ifdef __FreeBSD__
+ # include <unistd.h>
+ #endif
++#ifdef __OpenBSD__
++# include <unistd.h>
++#endif
+ /* added by Denys Duchier */
+ #ifdef __SVR4
+ # include <sys/types.h>

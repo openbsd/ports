@@ -1,0 +1,27 @@
+$OpenBSD: patch-scm_scm_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/scm.c.orig	Tue Sep 21 05:14:03 1999
++++ scm/scm.c	Tue Jan 30 14:28:01 2001
+@@ -62,6 +62,9 @@
+ # ifdef SVR4
+ #  include <unistd.h>
+ # endif
++# ifdef __OpenBSD__
++#  include <unistd.h>
++# endif
+ # ifdef __amigados__
+ #  include <unistd.h>
+ # endif
+@@ -601,6 +604,13 @@ void final_scm(freeall)
+ # define DIRSEP "/"
+ # ifndef MSDOS			/* DJGPP defines both */
+ #  define SYSTNAME "unix"
++# endif
++#else 
++# ifdef __unix__
++#  define DIRSEP "/"
++#  ifndef MSDOS			/* DJGPP defines both */
++#   define SYSTNAME "unix"
++#  endif
+ # endif
+ #endif
+ #ifdef MWC

@@ -1,0 +1,14 @@
+$OpenBSD: patch-scm_posix_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/posix.c.orig	Thu Oct 14 05:46:15 1999
++++ scm/posix.c	Tue Jan 30 14:14:04 2001
+@@ -60,6 +60,10 @@
+ # else
+ #  ifdef linux
+ #    include <unistd.h>
++#  else
++#   ifdef __OpenBSD__
++#    include <unistd.h>
++#   endif
+ #  endif
+ # endif
+ #endif

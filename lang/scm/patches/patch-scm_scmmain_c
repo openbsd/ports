@@ -1,0 +1,13 @@
+$OpenBSD: patch-scm_scmmain_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/scmmain.c.orig	Tue Jan 30 14:28:32 2001
++++ scm/scmmain.c	Tue Jan 30 14:29:35 2001
+@@ -45,6 +45,9 @@
+ #include "scm.h"
+ #include "patchlvl.h"
+ 
++#ifdef __OpenBSD__
++# include <unistd.h>
++#endif
+ #ifndef GENERIC_NAME
+ # define GENERIC_NAME "scm"
+ #endif

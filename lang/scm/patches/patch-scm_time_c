@@ -1,0 +1,28 @@
+$OpenBSD: patch-scm_time_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/time.c.orig	Tue May  2 04:21:39 2000
++++ scm/time.c	Tue Jan 30 10:00:34 2001
+@@ -44,6 +44,11 @@
+ 
+ #include "scm.h"
+ 
++#ifdef __unix__
++# ifndef unix
++#  define unix 1
++# endif
++#endif
+ #ifdef STDC_HEADERS
+ # include <time.h>
+ # ifdef M_SYSV
+@@ -104,6 +109,12 @@
+ # define USE_GETTIMEOFDAY
+ #endif
+ #ifdef __FreeBSD__
++# include <sys/types.h>
++# include <sys/time.h>
++# include <sys/timeb.h>
++# define USE_GETTIMEOFDAY
++#endif
++#ifdef __OpenBSD__
+ # include <sys/types.h>
+ # include <sys/time.h>
+ # include <sys/timeb.h>

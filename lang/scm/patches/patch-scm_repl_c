@@ -1,0 +1,24 @@
+$OpenBSD: patch-scm_repl_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/repl.c.orig	Thu Mar 30 21:06:07 2000
++++ scm/repl.c	Tue Jan 30 14:44:45 2001
+@@ -53,6 +53,11 @@ void	scm_fill_freelist P((void));
+ # include <sys/types.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++# include <ctype.h>
++# include <unistd.h>
++#endif
++
+ #ifdef ARM_ULIB
+ # include <termio.h>
+ int set_erase()
+@@ -1452,7 +1457,7 @@ void init_sbrk()
+ }
+ void scm_brk_report()
+ {
+-  unsigned long scm_curbrk = sbrk(0),
++  unsigned long scm_curbrk = (unsigned long)sbrk(0),
+     dif1 = ((dumped ? scm_dumped_brk : scm_curbrk) - scm_init_brk)/1024,
+     dif2 = (scm_curbrk - scm_dumped_brk)/1024;
+ 

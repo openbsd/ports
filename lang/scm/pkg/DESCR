@@ -1,0 +1,31 @@
+Scm conforms to Revised^5 Report on the Algorithmic Language Scheme
+and the IEEE P1178 specification.  Scm is written in C and runs under
+Amiga, Atari-ST, MacOS, MS-DOS, OS/2, NOS/VE, Unicos, VMS, Unix and
+similar systems.  ASCII and EBCDIC are supported.
+
+Documentation is included explaining the many Scheme Language
+extensions in scm, the internal representation and how to extend or
+include scm in other programs.
+
+SLIB is a portable Scheme library which SCM uses.
+
+-- OpenBSD issues
+
+1.  Pathname dependencies:
+	The init file is hardcoded as ${PREFIX}/share/scm/Init.scm.
+	Alternatively, one can set the environment variable SCM_INIT_PATH to
+	the pathname of Init.scm.
+
+	The library files are in ${PREFIX}/share/scm/slib.  Alternatively,
+	one can set the environment variable SCHEME_LIBRARY_PATH to
+	the slib directory.  Remember to use a trailing / on the
+	pathname.
+
+2.  Documentation:
+	People not familiar with scheme may wish to install scheme-report
+	as well.
+
+3.  Sicp compliance:
+	Two interpreters, scm and scm-sicp, are compiled by default.
+	scm conforms to R^5, scm-sicp to SCIP. If you don't know what I'm
+	talking about, use scm.

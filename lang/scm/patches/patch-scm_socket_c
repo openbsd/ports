@@ -1,0 +1,13 @@
+$OpenBSD: patch-scm_socket_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/socket.c.orig	Tue Jan 30 14:16:50 2001
++++ scm/socket.c	Tue Jan 30 14:17:26 2001
+@@ -69,6 +69,9 @@
+ # ifdef SVR4
+ #  include <unistd.h>
+ # endif
++# ifdef __OpenBSD__
++#  include <unistd.h>
++# endif
+ #endif /* STDC_HEADERS */
+ 
+ static char s_inetaddr[] = "inet:string->address";

@@ -1,0 +1,82 @@
+$OpenBSD: patch-scm_build_scm,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/build.scm.orig	Sat Feb  5 03:37:17 2000
++++ scm/build.scm	Tue Jan 30 14:14:59 2001
+@@ -451,6 +451,7 @@
+      (microsoft-c-nt	 i386	   ms-dos    cl	       ) ;link
+      (microsoft-quick-c	 8086	   ms-dos    qcl       ) ;qlink
+      (ms-dos		 8086	   ms-dos    cc	       ) ;link
++     (openbsd		 *unknown* unix	     gcc       ) ;gcc
+      (os/2-cset		 i386	   os/2	     icc       ) ;link386
+      (os/2-emx		 i386	   os/2	     gcc       ) ;gcc
+      (svr4-gcc-sun-ld	 sparc	   sunos     gcc       ) ;ld
+@@ -582,6 +583,8 @@
+      (dlll freebsd "-DSUN_DL" "" "" () ())
+      (nostart freebsd "" "-e start -dc -dp -Bstatic -lgnumalloc" #f ("pre-crt0.c") ())
+      (dump freebsd "" "/usr/lib/crt0.o" "" ("unexsunos4.c") ())
++     (m openbsd "" "-lm" #f () ())
++     (curses openbsd "" "-lcurses" "/usr/lib/libcurses.a" () ())
+      ))
+ 
+   '(compile-commands
+@@ -1389,6 +1392,61 @@
+     (and (batch:try-command
+ 	  parms
+ 	  "ld" "-Bshareable" "-o"
++	  (string-append
++	   (car (parameter-list-ref parms 'implvic))
++	   oname ".so")
++	  objects)
++	 (batch:rebuild-catalog parms)
++	 (string-append
++	  (car (parameter-list-ref parms 'implvic))
++	  oname ".so"))))
++
++(defcommand compile-c-files openbsd
++  (lambda (files parms)
++    (and (batch:try-chopped-command
++	  parms
++	  "cc" "-O2" "-Wall" "-c"
++	  (c-includes parms)
++	  (c-flags parms)
++	  files)
++	 (map c->o files))))
++(defcommand link-c-program openbsd
++  (lambda (oname objects libs parms)
++    (batch:rename-file parms
++		       oname (string-append oname "~"))
++    (and (batch:try-command parms
++			    "cc" "-o" oname
++			    (must-be-first
++			     '("-nostartfiles"
++			       "pre-crt0.o" "crt0.o"
++			       "/usr/lib/crt0.o")
++			     (append libs objects)))
++	 oname)))
++(defcommand compile-dll-c-files openbsd
++  (lambda (files parms)
++    (and (batch:try-chopped-command
++	  parms
++	  "cc" "-O2" "-Wall" "-fPIC" "-c"
++	  (string-append
++	   "-I" (parameter-list-ref parms 'scm-srcdir))
++	  (c-includes parms)
++	  (c-flags parms)
++	  files)
++	 (let ((objs (map c->o files)))
++	   (every
++	    (lambda (f)
++	      (and (batch:try-command
++		    parms "gcc" "-shared" "-fPIC" f)
++		   (batch:try-command
++		    parms "mv" "a.out" f)))
++	    objs)
++	   objs))))
++
++(defcommand make-dll-archive openbsd
++  (lambda (oname objects libs parms)
++    (and (batch:try-command
++	  parms
++	  "gcc" "-shared" "-fPIC" "-o"
+ 	  (string-append
+ 	   (car (parameter-list-ref parms 'implvic))
+ 	   oname ".so")

@@ -1,0 +1,11 @@
+$OpenBSD: patch-scm_scm_h,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/scm.h.orig	Tue Jan 30 14:46:01 2001
++++ scm/scm.h	Tue Jan 30 14:46:52 2001
+@@ -649,6 +649,7 @@ SCM	my_time P((void));
+ SCM	your_time P((void));
+ void	init_iprocs P((iproc *subra, int type));
+ 
++void	final_scm P((int));
+ void	init_sbrk P((void));
+ int	init_buf0 P((FILE *inport));
+ void	scm_init_from_argv P((int argc, char **argv, char *script_arg,

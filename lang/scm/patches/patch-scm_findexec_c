@@ -1,0 +1,17 @@
+$OpenBSD: patch-scm_findexec_c,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+--- scm/findexec.c.orig	Tue May  2 04:21:39 2000
++++ scm/findexec.c	Tue Jan 30 14:39:37 2001
+@@ -72,6 +72,13 @@ Wed Feb 21 23:06:35 1996  Aubrey Jaffer 
+ # include <sys/types.h>
+ # include <sys/stat.h>
+ #endif
++#ifdef __OpenBSD__
++/* This might be same for 44bsd derived system. */
++# include <stdlib.h>
++# include <unistd.h>
++# include <sys/types.h>
++# include <sys/stat.h>
++#endif
+ #ifdef __alpha
+ # include <string.h>
+ # include <stdlib.h>
