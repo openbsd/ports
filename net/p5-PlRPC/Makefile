@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:05:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/12 03:35:19 kevlo Exp $
 
-DISTNAME=	PlRPC-0.2012
+DISTNAME=	PlRPC-0.2014
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 NEED_VERSION=	1.351
