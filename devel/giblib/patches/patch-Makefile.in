@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile.in,v 1.1.1.1 2004/07/01 21:50:44 robert Exp $
---- Makefile.in.orig	Thu May 20 02:03:34 2004
-+++ Makefile.in	Thu May 20 02:03:52 2004
-@@ -84,7 +84,7 @@ VERSION = @VERSION@
+$OpenBSD: patch-Makefile.in,v 1.2 2004/11/09 19:26:43 naddy Exp $
+--- Makefile.in.orig	Tue Sep 14 14:18:52 2004
++++ Makefile.in	Tue Sep 14 14:19:15 2004
+@@ -95,7 +95,7 @@ VERSION = @VERSION@
  SUBDIRS = giblib
  
  docs_DATA = README AUTHORS ChangeLog TODO
 -docsdir = $(prefix)/doc/giblib
 +docsdir = $(prefix)/share/doc/giblib
  
- EXTRA_DIST = $(docs_DATA)
+ EXTRA_DIST = $(docs_DATA) giblib.pc.in
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/01 21:50:44 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/09 19:26:43 naddy Exp $
 
 COMMENT=		"utility library including a imlib2 wrapper"
 
-DISTNAME=		giblib-1.2.3
+DISTNAME=		giblib-1.2.4
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.linuxbrit.co.uk/giblib/
