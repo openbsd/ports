@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/05 01:42:08 espie Exp $
 
 DISTNAME=	xcolors
 PKGNAME=	xcolors-1.3
@@ -10,12 +10,14 @@ MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/xcolors
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
+MAKE_FLAGS=	RGBDBFILE=${X11BASE}/lib/X11/rgb
 
 .include <bsd.port.mk>
