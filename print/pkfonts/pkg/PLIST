@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-dpi300,v 1.1 2001/10/02 14:18:49 heko Exp $
-@option no-default-conflict
-@pkgcfl pkfonts-1.0-dpi300
+@comment $OpenBSD: PLIST,v 1.1 2001/10/05 22:49:29 heko Exp $
 lib/fonts/pk300/cmb10.200pk
 lib/fonts/pk300/cmb10.240pk
 lib/fonts/pk300/cmb10.300pk
