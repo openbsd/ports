@@ -39,8 +39,6 @@ Boston, MA 02111-1307, USA.  */
   do						\
     {						\
     	OPENBSD_OS_CPP_BUILTINS_ELF();		\
-	builtin_define ("__unix__");		\
-	builtin_assert ("system=bsd");		\
     }						\
   while (0)
 
@@ -111,9 +109,7 @@ Boston, MA 02111-1307, USA.  */
 
 /* Assembler format: exception region output.  */
 
-/* All configurations that don't use elf must be explicit about not using
-   dwarf unwind information. egcs doesn't try too hard to check internal
-   configuration files...  */
+/* our configuration still doesn't handle dwarf2 correctly */
 #define DWARF2_UNWIND_INFO 0
 
 /* Assembler format: alignment output.  */
