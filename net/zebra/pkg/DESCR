@@ -2,7 +2,8 @@ GNU Zebra is a free software (distributed under GNU Generic Public
 License) which manages TCP/IP based routing protocols.
 
 It supports BGP-4 protocol as described in RFC1771 (A Border Gateway
-Protocol 4) and RIPv1, RIPv2 and OSPFv2.
+Protocol 4) and RIPv1, RIPv2 and OSPFv2. It also supports IPv6
+versions of BGP, RIP and OSPF.
 
 Zebra uses multithread technology under multithread supported UNIX
 kernels.  However it can be run under not-multithread supported
