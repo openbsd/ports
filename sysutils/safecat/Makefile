@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/04 13:17:34 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/12 16:41:26 danh Exp $
 
 COMMENT=	"copy stdin to a qmail-style maildir"
 
 DISTNAME=	safecat-1.9
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
 MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/safecat/ \
 		http://sunsite.unc.edu/pub/Linux/utils/file/
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/12 16:41:26 danh Exp $
 
 COMMENT=	"flexible POP3 server"
 
 VERSION=	0.15
 DISTNAME=	solid-pop3d-${VERSION}
 CATEGORIES=	mail
-NEED_VERSION=	1.364
 MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
 		ftp://ftp.rudykot.pl/pub/solidpop3d/ \
 		ftp://sedez.iq.pl/pub/solidpop3d/ \
