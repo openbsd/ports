@@ -1,30 +1,39 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/24 02:28:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/06 10:12:31 kevlo Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
-DISTNAME=	AfterStep-1.8.0
-PKGNAME=	afterstep-1.8.0
+DISTNAME=	AfterStep-1.8.8
+PKGNAME=	afterstep-1.8.8
 CATEGORIES=     x11
 NEED_VERSION=	1.402
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 HOMEPAGE=	http://www.afterstep.org/
 
+RUN_DEPENDS=	asclock::x11/asclock
 LIB_DEPENDS=	png.2::graphics/png \
-		jpeg.62::graphics/jpeg
+		jpeg.62::graphics/jpeg \
+		rplay.::audio/rplay
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--prefix"=${X11BASE}" \
-		--disable-save-windows \
-		--enable-different-looknfeels
-
-INSTALL_TARGET=	install install.man
+CONFIGURE_ARGS=	 --enable-different-looknfeels
+CONFIGURE_ARGS+= --with-helpcommand="xterm -e man"
+CONFIGURE_ARGS+= --with-jpeg-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-jpeg-library=${LOCALBASE}/lib
+CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-png-library=${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+		
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${PREFIX}/share/afterstep/desktop/icons/common
 
 .include <bsd.port.mk>

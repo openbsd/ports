@@ -1,0 +1,26 @@
+--- src/afterstep/configure.c.orig	Wed Jun  6 10:42:52 2001
++++ src/afterstep/configure.c	Wed Jun  6 11:33:45 2001
+@@ -2192,7 +2192,7 @@
+ {
+   FILE *pipeFileIn;		/* input channel from the popen'ed process */
+   FILE *fileOut;		/* tmp file storing the popen results */
+-  char errMsg[128], tmpFileName[PATH_MAX];
++  char errMsg[128], tmpFileName[PATH_MAX] = "as.xxxxxxxx";
+   int readChar;
+   static int semaCounter = 0;
+ 
+@@ -2201,13 +2201,7 @@
+ 
+   sprintf (errMsg, "ReadPipeConfig (%d)", semaCounter);
+ 
+-  if (tmpnam (tmpFileName) == NULL)
+-    {
+-      afterstep_err (errMsg, "cannot tmpnam", NULL, NULL);
+-      semaCounter--;
+-      return;
+-    }
+-  if ((fileOut = fopen (tmpFileName, "w")) == NULL)
++  if ((fileOut = fdopen (mkstemp (tmpFileName), "w")) == NULL)
+     {
+       afterstep_err (errMsg, "cannot open the temp file", tmpFileName, NULL);
+       semaCounter--;
