@@ -1,11 +1,15 @@
---- Makefile.in.orig	Mon Dec 18 01:26:57 2000
-+++ Makefile.in	Mon Dec 18 01:27:15 2000
-@@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@
+$OpenBSD$
+--- Makefile.in.orig	Sun Dec 23 20:03:25 2001
++++ Makefile.in	Mon Oct 28 18:25:50 2002
+@@ -9,9 +9,9 @@ exec_prefix=@exec_prefix@
  sbindir=@sbindir@
  libdir=@libdir@
  man8dir=@mandir@/man8
 -piddir=@localstatedir@/stunnel/
 +piddir=/var/run/
  ssldir=@ssldir@
+-openssl=$(ssldir)/bin/openssl
++openssl=openssl
  PEM_DIR=@PEM_DIR@
  @SET_MAKE@
+ VERSION=stunnel-@VERSION@

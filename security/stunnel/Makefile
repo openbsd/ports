@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2001/12/24 22:36:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2002/10/28 17:30:52 naddy Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-3.22
 CATEGORIES=	security
-NEED_VERSION=	1.500
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -30,6 +29,8 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pem-dir=${SYSCONFDIR}/ssl \
 			--with-random=/dev/arandom
 ALL_TARGET=		stunnel stunnel.8
+REGRESS_TARGET=		test
+REGRESS_IS_INTERACTIVE=	Yes
 
 post-configure:
 	rm ${WRKSRC}/stunnel.8
