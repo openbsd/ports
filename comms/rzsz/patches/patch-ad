@@ -1,21 +1,26 @@
---- sz.c.orig	Wed Mar  3 11:01:52 1999
-+++ sz.c	Thu May 20 19:50:27 1999
-@@ -1,5 +1,5 @@
--#define VERSION "3.49 03-03-99"
--#define PUBDIR "/usr/spool/uucppublic"
-+#define VERSION "3.49/ache 03-03-99"
-+#define PUBDIR "/var/spool/uucppublic"
- 
- /*
-  **************************************************************************
-@@ -192,17 +192,18 @@
+--- sz.c.orig	Tue Nov 30 15:08:18 1999
++++ sz.c	Tue Nov 30 15:49:37 1999
+@@ -192,6 +192,8 @@
  
  STATIC jmp_buf intrjmp;	/* For the interrupt on RX CAN */
  
-+int log_to_screen = 0;  /* Don't make log file */
++int log_to_screen = 0;  /* Don't make log file *
++
  
- /* called by signal interrupt or terminate to clean things up */
- void
+ /* send cancel string to get the other end to shut up */
+ canit()
+@@ -199,9 +201,8 @@
+ 	static char canistr[] = {
+ 	 24,24,24,24,24,24,24,24,24,24,0
+ 	};
+-
++        purgeline();    /* Do read next time ... */
+ 	zmputs(canistr);
+-	Lleft=0;	/* Do read next time ... */
+ }
+ 
+ 
+@@ -210,11 +211,11 @@
  bibi(n)
  {
  	canit(); fflush(stdout); mode(0);
@@ -25,34 +30,34 @@
  		abort();
  	if (n == 99)
 -		fprintf(stderr, "mode(2) in rbsb.c not implemented!!\n");
-+		fprintf(Logstream, "mode(2) in rbsb.c not implemented!!\n");
++		fprintf(Logstream, "mode(2) in rbsb.c not implemented!!\n"); 
  	exit(3);
  }
  
-@@ -251,9 +252,9 @@
+@@ -252,9 +253,9 @@
  {
  	if (Verbose <= 0)
  		return;
 -	fprintf(stderr, "Retry %d: ", errors);
--	fprintf(stderr, s, p, u);
+-	fprintf(stderr, s, p);
 -	fprintf(stderr, "\n");
 +	fprintf(Logstream, "Retry %d: ", errors);
-+	fprintf(Logstream, s, p, u);
++	fprintf(Logstream, s, p);
 +	fprintf(Logstream, "\n");
  }
  
- 
-@@ -348,6 +349,9 @@
+ void
+@@ -360,6 +361,9 @@
  					mode(0);  exit(0);
  				case 'u':
  					++Unlinkafter; break;
-+				case 'V':
++			        case 'V':
 +					log_to_screen = 1;
-+					/* fall */
++					/* fall */	
  				case 'v':
  					++Verbose; break;
  				case 'w':
-@@ -396,13 +400,13 @@
+@@ -408,13 +412,13 @@
  	}
  	if (npats < 1 && !Command && !Test) 
  		usage();
@@ -71,7 +76,7 @@
  	}
  	vfile("%s %s for %s tty=%s\n", Progname, VERSION, OS, Nametty);
  
-@@ -452,12 +456,11 @@
+@@ -464,12 +468,11 @@
  		  "%d file(s) skipped by receiver request\r\n", Skipcount);
  	}
  	if (endmsg[0]) {
@@ -79,27 +84,27 @@
 +		fprintf(stderr, "\r\n%s: %s\r\n", Progname, endmsg);
  		if (Verbose)
 -			fprintf(stderr, "%s\r\n", endmsg);
-+			fprintf(Logstream, "%s\r\n", endmsg);
++			fprintf(Logstream, "%s\r\n", endmsg); 
  	}
 -	printf("%s %s finished.\r\n", Progname, VERSION);
 -	fflush(stdout);
 +	fprintf(stderr, "%s %s finished.\r\n", Progname, VERSION);
- 	mode(0);
- 	if(errcnt || Exitcode)
- 		exit(1);
-@@ -465,9 +468,8 @@
- #ifndef REGISTERED
- 	/* Removing or disabling this code without registering is theft */
- 	if (!Usevhdrs)  {
+ 	if(errcnt || Exitcode) {
+ 		mode(0); exit(1);
+ 	}
+@@ -484,9 +487,8 @@
+ 		canit();
+ 		sleep(4);
+ 		printf("%s %s finished.\r\n", Progname, VERSION);
 -		printf("\n\n\n**** UNREGISTERED COPY *****\r\n");
--		printf("\n\n\nPlease read the License Agreement in sz.doc\n");
+-		printf("\n\n\nPlease read the License Agreement in sz.doc\r\n");
 -		fflush(stdout);
 +		fprintf(stderr, "\n\n\n**** UNREGISTERED COPY *****\r\n");
 +		fprintf(stderr, "\n\n\nPlease read the License Agreement in sz.doc\n");
- 		sleep(10);
  	}
  #endif
-@@ -502,8 +504,7 @@
+ 	fflush(stdout);
+@@ -522,8 +524,7 @@
  	bytcnt = maxbytcnt = -1;
  	vfile("wcsend: argc=%d", argc);
  	if (Nozmodem) {
@@ -109,7 +114,7 @@
  	}
  	for (n=0; n<argc; ++n) {
  		Totsecs = 0;
-@@ -597,7 +598,7 @@
+@@ -617,7 +618,7 @@
  	default:
  		return ERROR;
  	}
@@ -118,7 +123,7 @@
  		return ERROR;
  
  	if (Unlinkafter)
-@@ -623,11 +624,10 @@
+@@ -643,11 +644,10 @@
  	vfile("wctxpn: %s", name);
  	if (Modem2) {
  		if (*name && fstat(fileno(in), &f)!= -1) {
@@ -133,7 +138,7 @@
  		return OK;
  	}
  	zperr2("Awaiting pathname nak for %s", *name?name:"<END>");
-@@ -660,7 +660,7 @@
+@@ -680,7 +680,7 @@
  		*q++ = 0;
  	if (*name) {
  		if (fstat(fileno(in), &f)!= -1)
@@ -142,7 +147,7 @@
  			  f.st_mode, Filesleft, Totalleft);
  		Totalleft -= f.st_size;
  	}
-@@ -783,7 +783,7 @@
+@@ -805,7 +805,7 @@
  	firstch=0;	/* part of logic to detect CAN CAN */
  
  	if (Verbose>1)
@@ -151,7 +156,7 @@
  	for (attempts=0; attempts <= RETRYMAX; attempts++) {
  		Lastrx= firstch;
  		sendline(cseclen==1024?STX:SOH);
-@@ -901,7 +901,7 @@
+@@ -923,7 +923,7 @@
  {
  	long m, n;
  
@@ -160,7 +165,7 @@
  	/* Seek offset < current buffer */
  	if (pos < (vpos -TXBSIZE +1024)) {
  		BEofseen = 0;
-@@ -983,11 +983,13 @@
+@@ -1005,11 +1005,13 @@
  
  char *usinfo[] = {
  	"Send Files and Commands with ZMODEM/YMODEM/XMODEM Protocol\n",
@@ -169,7 +174,7 @@
 -	"\t	zcommandi [-egv] COMMAND",
 -	"\t	sb [-adfkuv] [-] file ...",
 -	"\t	sx [-akuv] [-] file",
-+	"Usage:",
++	"Usage:",  
 +	"    sz [-+abcdefgknNouvVxyYZ] [-lN] [-LN] [-wN] [-r[r]] [-] file ...",
 +	"    sz -T",
 +	"    zcommand [-egvV] COMMAND",
@@ -179,7 +184,7 @@
  	""
  };
  
-@@ -1364,9 +1366,9 @@
+@@ -1391,9 +1393,9 @@
  			}
  		signal(SIGINT, SIG_IGN); canit();
  		sleep(20); purgeline(); mode(0);
@@ -191,7 +196,7 @@
  			exit(1);
  		}
  		exit(0);
-@@ -1387,7 +1389,7 @@
+@@ -1414,7 +1416,7 @@
  		} else
  			e = ZCRCG;
  		if (Verbose>1)
@@ -200,7 +205,7 @@
  			  Txpos, Crc32t?" CRC-32":"");
  		zsdata(txbuf, n, e);
  		bytcnt = Txpos += n;
-@@ -1479,7 +1481,7 @@
+@@ -1506,7 +1508,7 @@
  
  	for (;;) {
  		if (Test) {
@@ -209,7 +214,7 @@
  			Rxpos = 0; c = ZRPOS;
  		} else
  			c = zgethdr(Rxhdr);
-@@ -1633,17 +1635,16 @@
+@@ -1660,17 +1662,16 @@
  	for (Totalleft = 0, Filesleft = 0; --argc >=0; ++argv) {
  		f.st_size = -1;
  		if (Verbose>2) {
@@ -228,9 +233,9 @@
 -		fprintf(stderr, "\ncountem: Total %d %ld\n",
 +		fprintf(Logstream, "\ncountem: Total %d %ld\n",
  		  Filesleft, Totalleft);
+ 	Totfiles = Filesleft;  Totbytes = Totalleft;
  }
- 
-@@ -1652,33 +1653,34 @@
+@@ -1680,33 +1681,34 @@
  	register n;
  
  	mode(m);
@@ -239,7 +244,7 @@
 -	printf("Hit Enter.\021");  fflush(stdout);
 +	fprintf(stderr, "\r\n\nCharacter Transparency Test Mode %d\r\n", m);
 +	fprintf(stderr, "If Pro-YAM/ZCOMM is not displaying ^M hit ALT-V NOW.\r\n");
-+	purgeline();
++	purgeline(); 
 +	fprintf(stderr, "Hit Enter.");
  	readline(500);
  
@@ -263,7 +268,7 @@
  	}
 -	printf("\021\r\nEnter Characters, echo is in hex.\r\n");
 -	printf("Hit SPACE or pause 40 seconds for exit.\r\n");
-+	purgeline();
++	purgeline(); 
 +	fprintf(stderr, "\r\nEnter Characters, echo is in hex.\r\n");
 +	fprintf(stderr, "Hit SPACE or pause 40 seconds for exit.\r\n");
  
@@ -271,7 +276,7 @@
  		n = readline(400);
 -		printf("%02x\r\n", n);
 -		fflush(stdout);
-+		fprintf(stderr, "%02x\r\n", n);
++		fprintf(stderr, "%02x\r\n", n); 
  	}
 -	printf("\r\nMode %d character transparency test ends.\r\n", m);
 -	fflush(stdout);

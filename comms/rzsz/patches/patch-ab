@@ -1,5 +1,5 @@
---- rbsb.c.orig	Wed Mar  3 10:28:10 1999
-+++ rbsb.c	Thu May 20 19:50:25 1999
+--- rbsb.c.orig	Tue Nov 30 14:28:16 1999
++++ rbsb.c	Tue Nov 30 14:47:42 1999
 @@ -17,8 +17,9 @@
  #ifdef LLITOUT
  long Locmode;		/* Saved "local mode" for 4.x BSD "new driver" */
@@ -34,7 +34,7 @@
  #endif
 +#ifdef TIOCFLUSH
 +		{ static int fread = 1;
-+		ioctl(Tty, TIOCFLUSH, &fread);	 /* Flush input	queue */
++		ioctl(Tty, TIOCFLUSH, &fread);   /* Flush input queue */
 +		}
 +#else
 +		lseek(Tty, 0L, 2);
@@ -66,9 +66,9 @@
 -	Ttystream = fdopen(Tty, "w");
 +	Tty = 0;
 +	Ttystream = stdout;
-+	Nametty	= ttyname(Tty);
-+	if (!Nametty ||	!*Nametty)
-+		Nametty	= "|pipe|";
++	Nametty = ttyname(Tty);
++	if (!Nametty || !*Nametty)
++		Nametty = "|pipe|";
 +	Logstream = stderr;
 +	setbuf(Ttystream, xXbuf);
  }
@@ -88,7 +88,7 @@
  		n = 2;
  	if (Verbose > 5)
 -		fprintf(stderr, "Calling read: alarm=%d  Readnum=%d ",
-+		fprintf(Logstream, "Calling read: alarm=%d  Readnum=%d ",
++		  fprintf(Logstream, "Calling read: alarm=%d  Readnum=%d ",
  		  n, Readnum);
  	if (setjmp(tohere)) {
 -#ifdef TIOCFLUSH
@@ -122,7 +122,7 @@
  	}
  	--Lleft;
  	return (*cdq++ & 0377);
-@@ -492,15 +494,45 @@
+@@ -492,13 +494,44 @@
  	Lleft = 0;
  #ifdef USG
  #ifdef POSIX
@@ -140,53 +140,42 @@
  	lseek(Tty, 0L, 2);
  #endif
 +#endif
- }
- 
++}
++
 +/*
 + * Purge the modem output queue of all characters
 + */
 +purgeout()
 +{
-+#ifdef __FreeBSD__
++#ifdef __FreeBSD__ 
 +	fpurge(Ttystream);
 +#else
 +	rewind(Ttystream);
 +#endif
-+#ifdef POSIX
++#ifdef  POSIX
 +	tcflush(Tty, TCOFLUSH);
 +#else
-+#ifdef TCFLSH
++#ifdef	TCFLSH
 +	ioctl(Tty, TCFLSH, 1);
 +#else
 +#ifdef TIOCFLUSH
-+	{ static int fwrite = 2;
-+	ioctl(Tty, TIOCFLUSH, &fwrite);
-+	}
++       {static int fwrite = 2; 
++       ioctl(Tty, TIOCFLUSH, &fwrite);
++       }
 +#endif
 +#endif
 +#endif
-+}
- 
- /* send cancel string to get the other end to shut up */
- canit()
-@@ -509,8 +541,8 @@
- 	 24,24,24,24,24,24,24,24,24,24,8,8,8,8,8,8,8,8,8,8,0
- 	};
- 
-+	purgeline();        /* Do read next time ... */
- 	zmputs(canistr);
--	Lleft=0;	/* Do read next time ... */
  }
  
  /*
-@@ -543,8 +575,8 @@
+@@ -531,8 +564,8 @@
  long a, b, c, d;
  {
  	if (Verbose > 2) {
 -		fprintf(stderr, f, a, b, c, d);
 -		fprintf(stderr, "\n");
 +		fprintf(Logstream, f, a, b, c, d);
-+		fprintf(Logstream, "\n");
++	        fprintf(Logstream, "\n");	
  	}
  }
  

@@ -1,36 +1,38 @@
---- rz.c.orig	Tue Mar 30 12:16:48 1999
-+++ rz.c	Thu May 20 19:50:26 1999
-@@ -1,5 +1,5 @@
--#define VERSION "3.50 03-30-99"
--#define PUBDIR "/usr/spool/uucppublic"
-+#define VERSION "3.50/ache 03-30-99"
-+#define PUBDIR "/var/spool/uucppublic"
+--- rz.c.orig	Tue Nov 30 14:44:57 1999
++++ rz.c	Tue Nov 30 15:48:37 1999
+@@ -132,9 +132,8 @@
+ 	static char canistr[] = {
+ 	 24,24,24,24,24,24,24,24,24,24,0
+ 	};
+-
++        purgeline();	/* Do read next time ... */
+ 	zmputs(canistr);
+-	Lleft=0;	/* Do read next time ... */
+ }
  
  /*
-  *
-@@ -174,6 +174,8 @@
+@@ -185,6 +184,7 @@
+ char ztrans;		/* ZMODEM file transport request */
  int Zctlesc;		/* Encode control characters */
  int Zrwindow = 1400;	/* RX window size (controls garbage count) */
- 
 +int log_to_screen = 0;  /* Don't make log file */
-+
+ 
  /*
   * Log an error
-  */
-@@ -205,9 +207,9 @@
+@@ -195,9 +195,9 @@
  {
  	if (Verbose <= 0)
  		return;
 -	fprintf(stderr, "Retry %d: ", errors);
--	fprintf(stderr, s, p, u);
+-	fprintf(stderr, s);
 -	fprintf(stderr, "\n");
 +	fprintf(Logstream, "Retry %d: ", errors);
-+	fprintf(Logstream, s, p, u);
-+	fprintf(Logstream, "\n");
++	fprintf(Logstream, s);
++	fprintf(Logstream, "\n"); 
  }
  
- #include "zm.c"
-@@ -222,7 +224,7 @@
+ void
+@@ -234,7 +234,7 @@
  	if (Zmodem)
  		zmputs(Attn);
  	canit(); mode(0);
@@ -39,7 +41,7 @@
  	exit(3);
  }
  
-@@ -285,6 +287,9 @@
+@@ -297,6 +297,9 @@
  						Zrwindow = atoi(*++argv);
  					}
  					break;
@@ -49,31 +51,28 @@
  				case 'v':
  					++Verbose; break;
  				case 'y':
-@@ -306,15 +311,15 @@
+@@ -318,14 +321,14 @@
  		usage();
  	if (Batch && npats)
  		usage();
 -	if (Verbose) {
 -		if (freopen(LOGFILE, "a", stderr)==NULL)
 -			if (freopen(LOGFILE2, "a", stderr)==NULL) {
+-				fprintf(stderr, "Can't open log file!\n");
 +	if (Verbose && !log_to_screen) {
-+		if ((Logstream = fopen(LOGFILE, "a"))==NULL)
++		if ((Logstream = fopen(LOGFILE, "a"))==NULL) 
 +			if ((Logstream = fopen(LOGFILE2, "a"))==NULL) {
- 				fprintf(stderr, "Can't open log file!\n");
--				exit(2);
--			}
++ 				fprintf(stderr, "Can't open log file!\n");
+ 				exit(2);
+ 			}
 -		setbuf(stderr, NULL);
 -		fprintf(stderr, "argv[0]=%s Progname=%s\n", virgin, Progname);
--	}
-+  				exit(2);
-+  			}
 +		setbuf(Logstream, NULL);
 +		fprintf(Logstream, "argv[0]=%s Progname=%s\n", virgin, Progname);
-+  	}
+ 	}
  	vfile("%s %s for %s tty=%s\n", Progname, VERSION, OS, Nametty);
  	mode(1);
- 	if (signal(SIGINT, bibi) == SIG_IGN) {
-@@ -330,8 +335,11 @@
+@@ -342,8 +345,11 @@
  	}
  	if (exitcode && !Zmodem)	/* bellow again with all thy might. */
  		canit();
@@ -85,8 +84,8 @@
 +	}
  	fprintf(stderr, "%s %s finished.\r\n", Progname, VERSION);
  	fflush(stderr);
- #ifndef REGISTERED
-@@ -355,10 +363,10 @@
+ 	if(exitcode) {
+@@ -374,10 +380,10 @@
  {
  	fprintf(stderr,
  	"Receive Files and Commands with ZMODEM/YMODEM/XMODEM Protocol\n\n");
@@ -94,18 +93,18 @@
 -	fprintf(stderr,"or	rb [-avy] [-tT]		(YMODEM)\n");
 -	fprintf(stderr,"or	rc [-avy] [-tT] file	(XMODEM-CRC)\n");
 -	fprintf(stderr,"or	rx [-avy] [-tT] file	(XMODEM)\n\n");
-+	fprintf(stderr,"Usage:  rz [-vV]   [-wN] [-tT]   (ZMODEM)\n");
++	fprintf(stderr,"Usage:  rz [-vV]   [-wN] [-tT]   (ZMODEM)\n"); 
 +	fprintf(stderr,"or      rb [-avVy] [-tT]         (YMODEM)\n");
 +	fprintf(stderr,"or      rc [-avVy] [-tT] file    (XMODEM-CRC)\n");
 +	fprintf(stderr,"or      rx [-avVy] [-tT] file    (XMODEM)\n\n");
  	fprintf(stderr,
  "Supports the following incoming ZMODEM options given to the sending program:\n\
  	compression (-Z), binary (-b), ASCII CR/LF>NL (-a), newer(-n),\n\
-@@ -451,13 +459,13 @@
+@@ -471,13 +477,13 @@
  
  et_tu:
  	Firstsec=TRUE;  Eofseen=FALSE;
-+	purgeline();    /* Do read next time ... */
++	purgeline(); 		/* Do read next time ... */
  	sendline(Crcflg?WANTCRC:NAK);  flushmo();
 -	Lleft=0;	/* Do read next time ... */
  	switch (c = wcgetsec(rpn, 100)) {
@@ -117,7 +116,7 @@
  		readline(1);
  		goto et_tu;
  	case 0:
-@@ -482,9 +490,9 @@
+@@ -502,9 +508,9 @@
  	sendchar=Crcflg?WANTCRC:NAK;
  
  	for (;;) {
@@ -128,17 +127,17 @@
  		sectcurr=wcgetsec(secbuf, (sectnum&0177)?50:130);
  		if (sectcurr==(sectnum+1 &0377)) {
  			sectnum++;
-@@ -502,8 +510,8 @@
+@@ -523,8 +529,8 @@
  		else if (sectcurr==WCEOT) {
  			if (closeit())
  				return ERROR;
 +			purgeline();    /* Do read next time ... */
  			sendline(ACK); flushmo();
 -			Lleft=0;	/* Do read next time ... */
+ 			++Totfiles;
  			return OK;
  		}
- 		else if (sectcurr==ERROR)
-@@ -602,11 +610,11 @@
+@@ -624,11 +630,11 @@
  		while(readline(1)!=TIMEOUT)
  			;
  		if (Firstsec) {
@@ -152,9 +151,9 @@
  		}
  	}
  	/* try to stop the bubble machine. */
-@@ -660,9 +668,9 @@
- 		if (Filemode & UNIXFILE)
+@@ -683,9 +689,9 @@
  			++Thisbinary;
+ 		++Totfiles;  Totbytes += Bytesleft;
  		if (Verbose) {
 -			fprintf(stderr,  "Incoming: %s %ld %lo %o\n",
 +			fprintf(Logstream,  "Incoming: %s %ld %lo %o\n",
@@ -164,7 +163,7 @@
  		}
  	}
  
-@@ -683,7 +691,7 @@
+@@ -706,7 +712,7 @@
  		zmanag &= ZMMASK;
  		if (zmanag==ZMPROT)
  			goto skipfile;
@@ -173,7 +172,7 @@
  		if (Thisbinary && zconv==ZCRESUM) {
  			rxbytes = f.st_size & ~511;
  			if (Bytesleft < rxbytes) {
-@@ -930,7 +938,7 @@
+@@ -953,7 +959,7 @@
  	if (Restricted) {
  		if (fopen(name, "r") != NULL) {
  			canit();
@@ -182,7 +181,7 @@
  			bibi(-1);
  		}
  		/* restrict pathnames to current tree or uucppublic */
-@@ -1049,6 +1057,10 @@
+@@ -1072,6 +1078,10 @@
  				return ERROR;
  			}
  #endif
@@ -193,7 +192,7 @@
  			cmdzack1flg = Rxhdr[ZF0];
  			if (zrdata(secbuf, 1024) == GOTCRCW) {
  				void exec2();
-@@ -1068,6 +1080,7 @@
+@@ -1091,6 +1101,7 @@
  				return ZCOMPL;
  			}
  			zshhdr(4,ZNAK, Txhdr); goto again;
@@ -201,7 +200,7 @@
  		case ZCOMPL:
  			goto again;
  		default:
-@@ -1222,7 +1235,7 @@
+@@ -1245,7 +1256,7 @@
  			}
  moredata:
  			if (Verbose>1)
