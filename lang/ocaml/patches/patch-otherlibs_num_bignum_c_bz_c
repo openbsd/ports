@@ -1,6 +1,6 @@
-$OpenBSD: patch-otherlibs_num_bignum_c_bz_c,v 1.1 2002/12/15 17:52:44 sturm Exp $
---- otherlibs/num/bignum/c/bz.c.orig	Sat Dec 14 04:01:25 2002
-+++ otherlibs/num/bignum/c/bz.c	Sat Dec 14 04:01:47 2002
+$OpenBSD: patch-otherlibs_num_bignum_c_bz_c,v 1.2 2003/12/31 17:05:28 sturm Exp $
+--- otherlibs/num/bignum/c/bz.c.orig	1995-11-06 11:33:29.000000000 +0100
++++ otherlibs/num/bignum/c/bz.c	2003-09-30 15:36:42.000000000 +0200
 @@ -23,6 +23,7 @@
  #include <malloc.h>
  #include <values.h>
@@ -9,11 +9,12 @@ $OpenBSD: patch-otherlibs_num_bignum_c_bz_c,v 1.1 2002/12/15 17:52:44 sturm Exp 
  
  #define NULL                    0
  #define max(a,b) 		(a<b ? b : a)
-@@ -43,6 +44,7 @@
+@@ -43,6 +44,8 @@
                                   0)
  
  extern char *malloc();
 +extern size_t strlen();
++extern void free();
  
                          /*** copyright ***/
  

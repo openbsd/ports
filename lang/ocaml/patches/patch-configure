@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.2 2002/09/12 17:02:47 pvalchev Exp $
---- configure.orig	Wed Aug  7 14:45:00 2002
-+++ configure	Wed Sep 11 08:46:17 2002
-@@ -528,6 +528,7 @@ case "$host" in
-   rs6000-*-aix*)                arch=power; model=rs6000; system=aix;;
+$OpenBSD: patch-configure,v 1.3 2003/12/31 17:05:28 sturm Exp $
+--- configure.orig	2003-09-29 23:08:30.000000000 +0200
++++ configure	2003-09-29 23:10:36.000000000 +0200
+@@ -555,6 +555,7 @@ case "$host" in
    powerpc-*-aix*)               arch=power; model=ppc; system=aix;;
    powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
-+  macppc-*-*bsd*)               arch=power; model=ppc; system=elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
++  macppc-*-openbsd*)            arch=power; model=ppc; system=bsd;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
-@@ -1325,7 +1326,7 @@ fi
+@@ -1411,7 +1412,7 @@ fi
  
  (
  cd ../../camlp4/config

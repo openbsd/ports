@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.25 2003/12/27 23:29:31 jose Exp $
+# $OpenBSD: Makefile,v 1.26 2003/12/31 17:05:28 sturm Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
-DISTNAME=	ocaml-3.06
+DISTNAME=	ocaml-3.07
+PKGNAME=	${DISTNAME}pl2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/
-DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
+DISTFILES=	${PKGNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
+# QPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,8 +30,8 @@ LIB_DEPENDS=	tcl84::lang/tcl/8.4 \
 		tk84::x11/tk/8.4
 
 # ocaml's configure script is too smart for its own good
-
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+
 USE_GMAKE=	Yes
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
@@ -47,8 +49,10 @@ DOCFILES=	${DISTNAME}-refman.html.tar.gz
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
-	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} ${PREFIX}/share/doc/ocaml/html
-	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* ${PREFIX}/share/doc/ocaml/html/libref
+	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} \
+		${PREFIX}/share/doc/ocaml/html
+	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* \
+		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_checkstack_c,v 1.1 2003/12/31 17:05:28 sturm Exp $
+--- tools/checkstack.c.orig	2003-09-30 15:41:37.000000000 +0200
++++ tools/checkstack.c	2003-09-30 15:42:58.000000000 +0200
+@@ -34,7 +34,8 @@ int main(int argc, char ** argv)
+              "Under sh, bash, zsh:  ulimit -s %lu\n"
+              "Under csh, tcsh:      limit stacksize %lu\n\n",
+              (unsigned long) (limit.rlim_cur / 1024),
+-             MINSTACKBYTES / 1024, MINSTACKBYTES / 1024);
++             (unsigned long) (MINSTACKBYTES / 1024),
++             (unsigned long) (MINSTACKBYTES / 1024));
+     exit (3);
+   }
+   exit (0);
