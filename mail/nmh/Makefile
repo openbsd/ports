@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/25 10:28:27 espie Exp $
 
 DISTNAME=		nmh-1.0.4
 CATEGORIES=     	mail
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES= 		ftp://ftp.mhost.com/pub/nmh/
 
 CONFIGURE_STYLE=	gnu dest
+SYSCONFDIR=		${PREFIX}/lib/nmh
 CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
-			--sysconfdir='$${prefix}/lib/nmh' \
 			--with-krb4=/usr \
 			--enable-nmh-pop
 
