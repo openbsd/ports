@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.35 2001/04/04 08:17:32 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.36 2001/04/17 16:48:07 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -85,7 +85,7 @@ _SUBDIRUSE: .USE
 	@echo "===> ${PKGPATH}${_SEP}$i skipped"
 .  endfor
 	@for dir in ${SUBDIR}; do \
-	    multi=''; flavor=''; toset=''; \
+	    multi=''; flavor=''; sawflavor=false; toset=''; \
 	    case "$$dir" in \
 	    *[,:]*) \
 		IFS=',:'; first=true; insert=''; for i in $$dir; do \
@@ -96,6 +96,7 @@ _SUBDIRUSE: .USE
 			X-*) \
 			    multi="$$i";; \
 			*) \
+			    sawflavor=true; \
 			    flavor="$$flavor$$insert$$i"; \
 			    insert=' ';; \
 			esac \
@@ -104,13 +105,13 @@ _SUBDIRUSE: .USE
 		case X$$multi in "X");; *) \
 		    toset="$$toset SUBPACKAGE=\"$$multi\"";; \
 		esac; \
-		case X"$$flavor" in "X");; *) \
-		    toset="$$toset FLAVOR=\"$$flavor\"";; \
-		esac; \
-		display=" ($$flavor)";; \
-	    *) \
-		display='';; \
 	    esac; \
+	    if $$sawflavor; then \
+		toset="$$toset FLAVOR=\"$$flavor\""; \
+		display=" ($$flavor)"; \
+	    else \
+	    	display=''; \
+	    fi; \
 	    if cd ${.CURDIR}/$${dir}.${MACHINE} 2>/dev/null; then \
 		edir=$${dir}.${MACHINE}; \
 	    elif cd ${.CURDIR}/$${dir} 2>/dev/null; then \
