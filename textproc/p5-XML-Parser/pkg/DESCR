@@ -9,3 +9,5 @@ These options are then passed on to the Expat object on each parse
 call. They can also be given as extra arguments to the parse methods,
 in which case they override options given at XML::Parser creation
 time.
+
+WWW: ${HOMEPAGE}
