@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.60 2004/10/17 09:20:06 espie Exp $
+# $OpenBSD: make-plist,v 1.61 2004/10/23 06:51:54 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -70,8 +70,8 @@ sub var_subst
 	return $_;
 }
 
-# Fragments are new PackingElement unique to make-plist, to handle
-# %%thingy%%.
+# Fragments are new PackingElement unique to make-plist and pkg_create, 
+# to handle %%thingy%%.
 # (and so, make-plist will use a special PLIST reader)
 
 
@@ -919,7 +919,7 @@ for my $plist (@l) {
 }
 
 my $default = $l[0];
-if ($default->{wantshared} && !$default->{hasshared}) {
+if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared}->{nonempty}) && !$default->{hasshared}) {
 	unshift(@{$default->{items}}, OpenBSD::PackingElement::Fragment->new("SHARED"));
 }
 
