@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/22 05:50:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/05 09:16:04 espie Exp $
 @option no-default-conflict
 @pkgcfl autoconf-2.0*
 @pkgcfl autoconf-2.1*
@@ -10,6 +10,7 @@ bin/autoscan${SUFFIX}
 bin/autoupdate${SUFFIX}
 bin/ifnames${SUFFIX}
 @info info/autoconf${SUFFIX}.info
+share/autoconf${SUFFIX}/
 share/autoconf${SUFFIX}/acconfig.h
 share/autoconf${SUFFIX}/acfunctions
 share/autoconf${SUFFIX}/acgeneral.m4
@@ -21,4 +22,3 @@ share/autoconf${SUFFIX}/acprograms
 share/autoconf${SUFFIX}/acspecific.m4
 share/autoconf${SUFFIX}/autoconf.m4
 share/autoconf${SUFFIX}/autoheader.m4
-@dirrm share/autoconf${SUFFIX}
