@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/05 19:17:43 sturm Exp $
+lib/python${MODPY_VERSION}/site-packages/msnp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/msnp/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/chat.py
+lib/python${MODPY_VERSION}/site-packages/msnp/chat.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/codec.py
+lib/python${MODPY_VERSION}/site-packages/msnp/codec.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/command.py
+lib/python${MODPY_VERSION}/site-packages/msnp/command.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/error.py
+lib/python${MODPY_VERSION}/site-packages/msnp/error.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/friend.py
+lib/python${MODPY_VERSION}/site-packages/msnp/friend.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/net.py
+lib/python${MODPY_VERSION}/site-packages/msnp/net.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/protocol.py
+lib/python${MODPY_VERSION}/site-packages/msnp/protocol.pyc
+lib/python${MODPY_VERSION}/site-packages/msnp/session.py
+lib/python${MODPY_VERSION}/site-packages/msnp/session.pyc
+share/doc/py-msnp/README
+share/doc/py-msnp/tutorial.html
+@dirrm share/doc/py-msnp
+@dirrm lib/python${MODPY_VERSION}/site-packages/msnp
