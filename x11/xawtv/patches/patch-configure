@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/11/16 16:17:58 sturm Exp $
+--- configure.orig	2003-04-15 14:37:07.000000000 +0200
++++ configure	2003-11-16 14:53:44.000000000 +0100
+@@ -3537,13 +3537,13 @@ else
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -3592,7 +3592,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+-  LIBPTHREAD="-lpthread"
++  LIBPTHREAD="-pthread"
+ fi
+ 
+ if test "$LIBPTHREAD" = ""; then
+@@ -5340,7 +5340,7 @@ if test $ac_cv_lib_zvbi_vbi_capture_fd =
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_ZVBI 1
+ _ACEOF
+- FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -lpthread -lm -lpng -lz"
++ FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -pthread -lm -lpng -lz"
+ fi
+ 
+ else
