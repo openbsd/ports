@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/24 23:48:48 todd Exp $
 # Original from: Yannick Cote
 
-DISTNAME=		lam-6.5.1
+DISTNAME=		lam-6.5.9
 CATEGORIES=     	devel math net comms
 COMMENT=		"great implementation of the message passing interface"
 

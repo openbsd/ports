@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.1 2001/04/13 20:29:16 todd Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/04/24 23:48:48 todd Exp $
 #
 # LAM de-installation
 
@@ -11,8 +11,7 @@ echo "+---------------"
 echo "| To completely deinstall the $1 package you need to perform"
 echo "| these steps as root:"
 echo "|"
-echo "|           cd /etc"
-echo "|           rm -f lam-*"
+echo "|           rm -f ${SYSCONFDIR}/lam-*"
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
 echo "| at some future time."
