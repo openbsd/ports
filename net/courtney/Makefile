@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 21:14:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"simple port scan detector"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courtney

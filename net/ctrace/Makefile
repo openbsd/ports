@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/03/31 01:39:24 margarida Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${PREFIX}/sbin

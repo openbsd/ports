@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/09/25 15:28:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"update your Snort 1.8+ rules"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP= 	Yes
 RUN_DEPENDS=		::net/wget
 
 NO_BUILD=Yes
+PKG_ARCH=*
 
 do-install:
 	sed -e 's;"/usr/local/etc/oinkmaster.conf";"${SYSCONFDIR}/oinkmaster.conf";g' \

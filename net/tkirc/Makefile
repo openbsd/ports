@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/27 23:39:34 jose Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"ircII internet relay chat client"
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	:ircII-*:net/ircII \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}/tkirc2
 

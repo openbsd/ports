@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/02 17:35:02 sturm Exp $
 
 COMMENT=	"format/convert text documents into compressed .pdb files"
 
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bibelot/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/${PROG}
 
 do-install:

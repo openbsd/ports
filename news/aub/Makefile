@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"assemble usenet binaries"
 
@@ -21,6 +21,7 @@ EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive . ;;
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}
 
 do-install:

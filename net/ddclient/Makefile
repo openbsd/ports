@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/20 22:04:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=		"Dynamic DNS service update client"
 
@@ -16,6 +16,7 @@ MASTER_SITES=   	http://members.rogers.com/ddclient/pub/
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 do-install:	
 	${INSTALL_SCRIPT} ${WRKSRC}/ddclient	${PREFIX}/sbin/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/28 01:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/02 17:35:02 sturm Exp $
 
 COMMENT=	"frontend to dejanews for searching usenet archives"
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 DOCS=	COPYING FAQ HISTORY README
 

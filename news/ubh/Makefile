@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/30 04:13:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/02 17:35:02 sturm Exp $
 
 COMMENT=	"download and decode binaries posted to Usenet"
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	::mail/p5-MIME-tools \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ubh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/04 18:02:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -27,6 +27,7 @@ BUILD_DEPENDS=  	${RUN_DEPENDS}
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
+PKG_ARCH=		*
 WRKDIST=		${WRKDIR}
 
 do-patch:

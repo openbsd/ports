@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/01 14:59:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/02 17:35:01 sturm Exp $
 
 COMMENT=	"latency logging and graphing system"
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::net/rrdtool \
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
+PKG_ARCH=	*
 
 LIBDIR=		lib/smokeping
 PMDIR=		libdata/perl5/site_perl
