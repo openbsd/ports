@@ -1,0 +1,2 @@
+This module uses the a modified version of the Porter Stemming Algorithm
+to return a stemmed word
