@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
---- sys/unix/Makefile.src.orig	Thu Mar 21 00:43:54 2002
-+++ sys/unix/Makefile.src	Sun Dec  1 18:13:55 2002
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.7 2003/02/25 00:05:07 espie Exp $
+--- sys/unix/Makefile.src.orig	Sun Feb 23 15:43:39 2003
++++ sys/unix/Makefile.src	Tue Feb 25 00:50:04 2003
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.4	2002/03/02
@@ -19,7 +19,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
  
  # The Qt and Be window systems are written in C++, while the rest of
  # NetHack is standard C.  If using Qt, uncomment the LD line here to get
-@@ -203,8 +203,6 @@ WINBEOBJ =
+@@ -204,8 +204,6 @@ WINBEOBJ =
  
  #
  #
@@ -28,7 +28,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -224,7 +222,7 @@ WINTTYLIB = -ltermlib
+@@ -225,7 +223,7 @@ WINTTYLIB = -ltermlib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -37,7 +37,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -244,8 +242,6 @@ WINGEMLIB = -le_gem -lgem
+@@ -245,8 +243,6 @@ WINGEMLIB = -le_gem -lgem
  # libraries for BeOS 
  WINBELIB = -lbe
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
  #
-@@ -381,7 +377,7 @@ $(GAME):	$(SYSTEM)
+@@ -382,7 +378,7 @@ $(GAME):	$(SYSTEM)
  
  Sysunix:	$(HOBJ) Makefile
  	@echo "Loading ..."
@@ -55,24 +55,23 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
  	@touch Sysunix
  
  Sys3B2:	$(HOBJ) Makefile
-@@ -448,15 +444,17 @@ objects.o:
+@@ -449,15 +445,16 @@ objects.o:
  	$(CC) $(CFLAGS) -c objects.c
  	@rm -f $(MAKEDEFS)
  
-+MOC = moc
-+
++MOC=moc
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
--	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
-+	${MOC} ../include/qt_kde0.h > qt_kde0.moc
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
  
  qt_win.moc: ../include/qt_win.h
--	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
-+	${MOC} ../include/qt_win.h > qt_win.moc
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
  
  qttableview.moc: ../include/qttableview.h
--	$(QTDIR)/bin/moc ../include/qttableview.h > qttableview.moc
-+	${MOC} ../include/qttableview.h > qttableview.moc
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
  
  $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
  		../include/objclass.h ../include/monsym.h \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_top,v 1.3 2002/03/23 14:51:46 espie Exp $
---- sys/unix/Makefile.top.orig	Wed Mar 20 18:43:54 2002
-+++ sys/unix/Makefile.top	Fri Mar 22 08:11:35 2002
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.4 2003/02/25 00:05:07 espie Exp $
+--- sys/unix/Makefile.top.orig	Sun Feb 23 15:43:39 2003
++++ sys/unix/Makefile.top	Tue Feb 25 00:47:43 2003
 @@ -13,19 +13,19 @@
  # execute things like 'data' and 'rumors')
  # MAKE = make
@@ -45,9 +45,9 @@ $OpenBSD: patch-sys_unix_Makefile_top,v 1.3 2002/03/23 14:51:46 espie Exp $
  # VARDATND = x11tiles pet_mark.xbm
  # VARDATND = x11tiles pet_mark.xbm rip.xpm
  # for Atari/Gem
-@@ -175,7 +176,7 @@ dofiles:
- 	$(MAKE) dofiles-$${target-nodlb}
+@@ -183,7 +184,7 @@ dofiles:
  	cp src/$(GAME) $(GAMEDIR)
+ 	cp util/recover $(GAMEDIR)
  	-rm -f $(SHELLDIR)/$(GAME)
 -	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
 +	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
