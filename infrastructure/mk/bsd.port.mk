@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.579 2003/08/11 18:42:07 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.580 2003/08/11 20:07:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -798,6 +798,8 @@ MASTER_SITES${_I}:=	${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 MASTER_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .    endif
 _SITE_SELECTOR+=*:${_I}) sites="${MASTER_SITES${_I}}";;
+.  else
+_SITE_SELECTOR+=*:${_I}) echo >&2 "Error: MASTER_SITES${_I} not defined";;
 .  endif
 .endfor
 _SITE_SELECTOR+=*) sites="${MASTER_SITES}";; esac
