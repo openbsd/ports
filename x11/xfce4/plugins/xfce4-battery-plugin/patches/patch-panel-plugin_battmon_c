@@ -1,6 +1,6 @@
-$OpenBSD: patch-panel-plugin_battmon_c,v 1.1.1.1 2004/01/14 05:50:05 jolan Exp $
+$OpenBSD: patch-panel-plugin_battmon_c,v 1.2 2004/02/19 02:59:01 jolan Exp $
 --- panel-plugin/battmon.c.orig	2003-09-09 08:49:35.000000000 -0500
-+++ panel-plugin/battmon.c	2004-01-13 23:28:02.000000000 -0600
++++ panel-plugin/battmon.c	2004-02-17 23:44:32.000000000 -0600
 @@ -34,8 +34,9 @@
  #ifdef __FreeBSD__
  #include <machine/apm_bios.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-panel-plugin_battmon_c,v 1.1.1.1 2004/01/14 05:50:05 jolan Exp $
  #elif __linux__
  #include <apm.h>
  #endif
-@@ -266,7 +267,7 @@ update_apm_status(t_battmon *battmon)
+@@ -266,11 +267,14 @@ update_apm_status(t_battmon *battmon)
    	battmon->method = BM_BROKEN;
    	fd = open(APMDEVICE, O_RDONLY);
    	if (fd == -1) return TRUE;
@@ -21,7 +21,14 @@ $OpenBSD: patch-panel-plugin_battmon_c,v 1.1.1.1 2004/01/14 05:50:05 jolan Exp $
      		return TRUE;
    	close(fd);
    	charge = apm.battery_life;
-@@ -402,8 +403,7 @@ battmon.c:241: for each function it appe
+   	time_remaining = apm.minutes_left;
++	if ((time_remaining / 60) > 99)
++	    time_remaining = 0;
++
+   	acline = apm.ac_state ? TRUE : FALSE;
+ 	
+ #else
+@@ -402,8 +406,7 @@ battmon.c:241: for each function it appe
  		     g_snprintf(buffer, sizeof(buffer), _("AC off-line"));
  	}
  	add_tooltip(battmon->ebox, buffer);
@@ -31,7 +38,7 @@ $OpenBSD: patch-panel-plugin_battmon_c,v 1.1.1.1 2004/01/14 05:50:05 jolan Exp $
  	  gtk_widget_show((GtkWidget *)battmon->acfan);
  	  gtk_widget_show((GtkWidget *)battmon->temp);
  	  fan=get_fan_status();
-@@ -1177,10 +1177,6 @@ battmon_create_options(Control *ctrl, Gt
+@@ -1177,10 +1180,6 @@ battmon_create_options(Control *ctrl, Gt
  	gtk_widget_show(dialog->cb_disp_tooltip_time);
  	gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_tooltip_time, FALSE, FALSE, 0);
  	
