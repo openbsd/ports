@@ -1,9 +1,0 @@
-bin/cxpm
-bin/sxpm
-lib/libXpm.a
-include/X11/xpm.h
-man/cat1/cxpm.0
-man/cat1/sxpm.0
-share/doc/xpm/FAQ.html
-share/doc/xpm/xpm.PS.gz
-@dirrm share/doc/xpm
