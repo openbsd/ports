@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/01/21 12:25:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/01/21 15:53:05 kevlo Exp $
 
 DISTNAME=	enlightenment-0.16.3
 CATEGORIES=     x11
-MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/
+MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/
 
 MAINTAINER=	op21@squish.org
