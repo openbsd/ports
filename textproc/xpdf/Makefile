@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/04 12:48:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/04 13:12:04 fgsch Exp $
 
 DISTNAME=	xpdf-0.90
 CATEGORIES=	textproc x11
@@ -22,5 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		--with-gzip
+
+post-install:
+	@cd ${PREFIX}/bin && \
+	  strip pdfimages pdfinfo pdftopbm pdftops pdftotext xpdf
 
 .include <bsd.port.mk>
