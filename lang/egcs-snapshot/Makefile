@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.8 1998/12/16 17:52:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 1998/12/17 05:13:23 marc Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -20,6 +20,7 @@
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
+MIRROR_DISTFILE=no
 
 # this will improve over time as more and more architectures are handled
 # with some help from Jason L. Wright for sparc...
