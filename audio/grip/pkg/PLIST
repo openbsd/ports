@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/16 15:31:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/05 03:21:18 espie Exp $
 bin/grip
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Multimedia/
 share/gnome/apps/Multimedia/grip.desktop
+share/gnome/help/
+share/gnome/help/grip/
+share/gnome/help/grip/C/
 share/gnome/help/grip/C/acknowledge.html
 share/gnome/help/grip/C/bugs.html
 share/gnome/help/grip/C/cdconfig.png
@@ -22,6 +28,7 @@ share/gnome/help/grip/C/grip.html
 share/gnome/help/grip/C/gripswitches.html
 share/gnome/help/grip/C/id3config.html
 share/gnome/help/grip/C/id3config.png
+share/gnome/help/grip/C/images/
 share/gnome/help/grip/C/intro.html
 share/gnome/help/grip/C/license.html
 share/gnome/help/grip/C/ln14.html
@@ -65,16 +72,15 @@ share/gnome/help/grip/C/smile5.png
 share/gnome/help/grip/C/smile7.png
 share/gnome/help/grip/C/smile8.png
 share/gnome/help/grip/C/stop.png
+share/gnome/help/grip/C/topic.dat
 share/gnome/help/grip/C/trkedit.png
 share/gnome/help/grip/C/volume.png
 share/gnome/help/grip/C/x131.html
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
 share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/grip.mo
+share/pixmaps/
 share/pixmaps/gripicon.png
-@dirrm share/locale/zh_CN
-@dirrm share/gnome/help/grip/C
-@dirrm share/gnome/help/grip
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps

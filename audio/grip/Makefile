@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 19:29:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/05 03:21:18 espie Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.nostatic.org/grip/
+
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
