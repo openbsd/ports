@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/07/08 18:36:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/13 21:26:45 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
 PKGNAME=	qt2-1.1
 CATEGORIES=	x11
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.1.1.tar.gz
 
@@ -16,7 +16,8 @@ SUBPACKAGE?=
 # for the qt image extension
 .if ${SUBPACKAGE} != "-html"
 BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg
-LIB_DEPENDS=	png.1.::graphics/png jpeg.62.::graphics/jpeg
+LIB_DEPENDS=	png.1.::graphics/png \
+		jpeg.62.::graphics/jpeg
 .endif
 
 MAINTAINER=	espie@openbsd.org
@@ -49,15 +50,15 @@ SUBST_VARS=	QT_LIBDIR QT_DOC
 QT_VER=		2.11
 
 post-patch:
-	cd ${WRKSRC}/configs; for i in openbsd-*; do \
+	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
 	    mv -f $$i $$i.bak && \
 		sed -e s,/usr/local,${LOCALBASE}, \
 		-e s,/usr/X11R6,${X11BASE}, <$$i.bak >$$i; \
 	done
 
 post-configure:
-	cd ${WRKSRC} && cp -R examples examples-src
-	cd ${WRKSRC} && cp -R tutorial tutorial-src
+	@cd ${WRKSRC} && cp -R examples examples-src
+	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR} ${QT_DOC}/html ${QT_LIBDIR}/bin \
@@ -71,14 +72,14 @@ do-install:
 		${INSTALL_DATA} libqt.so.2.11 ${PREFIX}/lib/qt2; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
-	ln -s ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
+	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/mergetr ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/msg2qm ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qtrename140 ${PREFIX}/bin
 	# avoid installing broken links
-	-rm ${WRKSRC}/include/qt_{mac,windows}.h
+	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
 	${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
 	@for i in ${WRKSRC}/doc/man/man3/*; do \
 	  j=$${i%qt}; \
