@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/23 09:34:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/23 13:24:34 itojun Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 #
 
-BROKEN=		"getpwnam error"
-
-DISTNAME=	totd-1.1p2
+DISTNAME=	totd-1.1p4
 CATEGORIES=	net
 NEED_VERSION=	1.191
 FAKE=No
@@ -18,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=         ${WRKDIR}/totd-1.1p2
+WRKDIST=         ${WRKDIR}/totd-1.1p4
 
 GNU_CONFIGURE=	YES
 
