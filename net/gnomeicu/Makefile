@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/20 19:01:47 naddy Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
@@ -27,6 +27,6 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnomeicu; \
-	cp -rp ${PREFIX}/../../etc/* ${PREFIX}/share/examples/gnomeicu/
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnomeicu/
 
 .include <bsd.port.mk>
