@@ -1,5 +1,6 @@
 Passive OS fingerprinting technique based on information coming
-from remote host when it establishes connection to our system.
-Captured packets contains enough information to determine OS - and,
-unlike active scanners (nmap, queSO) - without sending anything to
-this host.
+from a remote host when it establishes a connection to our system.
+Captured packets contain enough information to determine the remote
+OS. Unlike active scanners like Nmap or QueSO, p0f identifies the
+remote OS without sending anything to it.
+
