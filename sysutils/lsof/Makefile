@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/12/23 21:17:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.37 2001/12/24 06:56:52 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
@@ -10,6 +10,8 @@ NEED_VERSION=	1.502
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
+
+HOMEPAGE=	http://www-rcd.cc.purdue.edu/~abe/
 
 MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
 
