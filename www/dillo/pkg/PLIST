@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
+bin/dillo
+share/examples/dillo/dillorc
+@dirrm share/examples/dillo

@@ -1,0 +1,4 @@
+Dillo is a graphical web browser that's completely written in C,
+very fast, small in code and binary. It basically depends on GTK+,
+and renders a good subset of HTML, frames are managed same as lynx,
+no jvm, no javascript.

@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_dillo_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
+--- src/dillo.c.orig	Sun Jan 20 19:18:58 2002
++++ src/dillo.c	Thu Mar 14 16:09:56 2002
+@@ -45,6 +45,7 @@
+ #include "interface.h"
+ #include "dw.h"
+ #include "dw_widget.h"
++#include "debug.h"
+ 
+ 
+ /*
+@@ -67,7 +68,7 @@ gint main(int argc, char *argv[])
+     * todo: implement a cleaner mechanism (in file.c) */
+    signal(SIGPIPE, SIG_IGN);
+ 
+-   g_print("Setting locale to %s\n", gtk_set_locale());
++   DEBUG_MSG(3, "Setting locale to %s\n", gtk_set_locale());
+    gtk_init(&argc, &argv);
+    gdk_rgb_init();
+ 
+@@ -132,7 +133,7 @@ gint main(int argc, char *argv[])
+    a_Dw_freeall();
+    a_History_free();
+ 
+-   printf("Dillo: normal exit!\n");
++   DEBUG_MSG(3, "Dillo: normal exit!\n");
+    return 0;
+ }
+ 
+@@ -146,10 +147,10 @@ static void Dillo_check_home_dir(char *d
+ 
+    if ( stat(dir, &st) == -1 ) {
+       if ( errno == ENOENT && mkdir(dir, 0700) < 0 ) {
+-         g_print("Dillo: error creating directory %s: %s\n",
++         DEBUG_MSG(3, "Dillo: error creating directory %s: %s\n",
+                  dir, strerror(errno));
+       } else
+-         g_print("Dillo: error reading %s: %s\n", dir, strerror(errno));
++         DEBUG_MSG(3, "Dillo: error reading %s: %s\n", dir, strerror(errno));
+    }
+ }
+ 

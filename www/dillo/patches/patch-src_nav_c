@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_nav_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
+--- src/nav.c.orig	Thu Mar 14 15:19:54 2002
++++ src/nav.c	Thu Mar 14 15:22:08 2002
+@@ -82,7 +82,7 @@ static void Nav_open_url(BrowserWindow *
+       a_Interface_stop(bw);
+       a_Interface_clean(bw);
+ 
+-      g_print("Nav_open_url: Url=>%s<\n", URL_STR(url));
++      DEBUG_MSG(3, "Nav_open_url: Url=>%s<\n", URL_STR(url));
+ 
+       a_Menu_pagemarks_new(bw);
+ 
