@@ -1,10 +1,10 @@
---- xml2rfc.tcl.orig	Wed Jul  7 20:15:36 1999
-+++ xml2rfc.tcl	Sat Jul 17 19:38:59 1999
+--- xml2rfc.tcl.orig	Wed Mar 29 12:08:46 2000
++++ xml2rfc.tcl	Wed Mar 29 12:10:57 2000
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish8.0 "$0" "$0" "$@"
-+exec wish8.0 "$0" "$@"
++exec wish8.3 "$0" "$@"
  
  
  #
