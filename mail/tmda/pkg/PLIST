@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/12/06 17:48:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/12/12 01:25:36 naddy Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -34,7 +34,52 @@ lib/python${PYTHON_VER}/TMDA/Version.py
 lib/python${PYTHON_VER}/TMDA/Version.pyc
 lib/python${PYTHON_VER}/TMDA/__init__.py
 lib/python${PYTHON_VER}/TMDA/__init__.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Charset.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Charset.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Encoders.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Encoders.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Errors.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Errors.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Generator.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Generator.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Header.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Header.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Iterators.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Iterators.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEAudio.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEAudio.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEBase.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEBase.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEImage.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEImage.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEMessage.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEMessage.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEMultipart.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEMultipart.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMENonMultipart.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMENonMultipart.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEText.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/MIMEText.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Message.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Message.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Parser.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Parser.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Utils.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/Utils.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/__init__.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/__init__.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/_compat21.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/_compat21.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/_compat22.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/_parseaddr.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/_parseaddr.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/base64MIME.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/base64MIME.pyc
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/quopriMIME.py
+lib/python${PYTHON_VER}/TMDA/pythonlib/email/quopriMIME.pyc
+share/doc/tmda/CRYPTO
 share/doc/tmda/INSTALL
+share/doc/tmda/README
 share/doc/tmda/UPGRADE
 share/doc/tmda/bugs.html
 share/doc/tmda/config-client.html
@@ -43,6 +88,11 @@ share/doc/tmda/config-pre.html
 share/doc/tmda/config-server.html
 share/doc/tmda/config-vars.html
 share/doc/tmda/config.html
+share/doc/tmda/contrib/collectaddys
+share/doc/tmda/contrib/def2html
+share/doc/tmda/contrib/printcdb
+share/doc/tmda/contrib/printdbm
+share/doc/tmda/contrib/tmda.el
 share/doc/tmda/download.html
 share/doc/tmda/features.html
 share/doc/tmda/filter-sources.html
@@ -64,5 +114,8 @@ share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda
 @dirrm share/examples/tmda
+@dirrm share/doc/tmda/contrib
 @dirrm share/doc/tmda
+@dirrm lib/python${PYTHON_VER}/TMDA/pythonlib/email
+@dirrm lib/python${PYTHON_VER}/TMDA/pythonlib
 @dirrm lib/python${PYTHON_VER}/TMDA
