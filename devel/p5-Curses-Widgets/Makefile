@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/05 19:12:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:22 lebel Exp $
+
+COMMENT=	"curses(3) based terminal widgets"
 
 DISTNAME=	curses_widgets_1_2
 PKGNAME=	p5-Curses-Widgets-1.2
 
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Curses
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 15:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/06 00:12:53 lebel Exp $
+
+COMMENT=	"GNU parser generator"
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/01 17:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 00:12:59 lebel Exp $
+
+COMMENT=	"documentation system for C, C++, IDL and Java"
 
 DISTNAME=	doc++-3.4.7
 CATEGORIES=	devel
-NEED_VERSION=	1.341
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/22 15:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/06 00:13:03 lebel Exp $
+
+COMMENT=	"gid/lid tools for looking up variables in code"
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@OpenBSD.ORG
 

@@ -1,9 +1,11 @@
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
+COMMENT=	"garbage collection and memory leak detection for C and C++"
+
 DISTNAME=	gc4.12
 PKGNAME=	boehm-gc-4.12
 CATEGORIES=	devel
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/ \
 		http://reality.sgi.com/boehm_mti/gc_source/
 

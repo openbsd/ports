@@ -1,12 +1,14 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.10 2000/11/09 12:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 00:13:35 lebel Exp $
 #
+
+COMMENT=	"Tcl/C++ interface used by ns and nam"
 
 DISTNAME=	tclcl-src-1.0b9
 PKGNAME=	tclcl-1.0b9
 CATEGORIES=	devel
-NEED_VERSION=	1.314
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
 PERMIT_PACKAGE_CDROM=   Yes

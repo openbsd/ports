@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/26 09:26:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 00:13:19 lebel Exp $
+
+COMMENT=	"module for creating generic methods"
 
 DISTNAME=	Class-MethodMaker-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

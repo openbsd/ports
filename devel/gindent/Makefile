@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/01/13 12:47:26 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 00:13:00 lebel Exp $
+
+COMMENT=	"GNU utility to indent C source files"
 
 DISTNAME=	indent-2.2.6
 CATEGORIES=	devel
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= indent
 

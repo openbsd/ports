@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/19 20:19:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 00:12:48 lebel Exp $
+
+COMMENT=	"documentation for autoconf, automake, libtool"
 
 V=1.2
 SUBST_VARS=V
 DISTNAME=	autobook-${V}
 CATEGORIES=	devel
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

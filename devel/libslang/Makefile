@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2001/02/21 20:44:42 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/05/06 00:13:09 lebel Exp $
+
+COMMENT=	"stack-based interpreter for terminal applications"
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
@@ -7,7 +9,7 @@ BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
 DISTNAME=	slang-1.4.4
 PKGNAME=	libslang-1.4.4
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
 		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
 

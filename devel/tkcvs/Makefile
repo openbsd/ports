@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/26 15:58:18 todd Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 00:13:35 lebel Exp $
 
 COMMENT=	"graphical frontend to CVS"
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
-NEED_VERSION=	1.364
+NEED_VERSION=	1.402
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/01 17:38:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:26 lebel Exp $
+
+COMMENT=	"store multi-level hash structure in single-level tied hash"
 
 DISTNAME=	MLDBM-2.00
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= MLDBM

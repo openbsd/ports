@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/02/19 18:32:10 danh Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 00:13:33 lebel Exp $
+
+COMMENT=	"Simplified Wrapper and Interface Generator"
 
 DISTNAME=	swig1.3a5
 PKGNAME=	swig-1.3a5
 CATEGORIES=	devel
-NEED_VERSION=	1.338
+NEED_VERSION=	1.402
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= swig
 

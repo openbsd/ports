@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/26 04:51:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 00:12:58 lebel Exp $
+
+COMMENT=	"GNU automated testing framework"
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	devel
-NEED_VERSION=	1.324
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= dejagnu
 

@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 00:12:42 lebel Exp $
+
+COMMENT=	"library providing malloc debugging via VM protection"
 
 PKGNAME=	electricfence-2.0.5
 DISTNAME=	ElectricFence-2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
+NEED_VERSION=	1.402
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 

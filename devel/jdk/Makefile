@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/02 14:12:12 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 00:13:05 lebel Exp $
 #
 # See http://www.freebsd.org/java/ for software updates, etc.
 
+COMMENT=	"Sun's Java Developers Kit"
+
 DISTNAME=	jdk-${JDK_VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.341
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
 		http://ftp7.de.freebsd.org/pub/FreeBSD/JDK/
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2001/03/23 15:56:04 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2001/05/06 00:13:06 lebel Exp $
+
+COMMENT=	"advanced lint: statically check C programs"
 
 DISTNAME=	lclint-2.5q
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	http://lclint.cs.virginia.edu/
 MASTER_SITES0=	http://lclint.cs.virginia.edu/guide/
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/02 15:29:52 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 00:13:06 lebel Exp $
+
+COMMENT=	"java foundation classes (jfc)/swing"
 
 ONLY_FOR_ARCHS= i386
 
@@ -6,7 +8,7 @@ JDK_VERSION=    1.1.8
 DISTNAME=	swing1_1_1
 PKGNAME=	jfc-1.1.1
 CATEGORIES=	devel
-NEED_VERSION=	1.328
+NEED_VERSION=	1.402
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://java.sun.com/products/jfc/

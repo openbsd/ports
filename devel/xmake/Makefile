@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 00:13:36 lebel Exp $
+
+COMMENT=	"powerful make utility"
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

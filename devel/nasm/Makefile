@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 00:13:13 lebel Exp $
+
+COMMENT=	"general-purpose multi-platform x86 assembler"
 
 ONLY_FOR_ARCHS=	i386
 
 DISTNAME=	nasm-0.98
 CATEGORIES=	devel lang
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= devel/lang/assemblers
 

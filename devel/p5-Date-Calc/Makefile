@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/26 18:51:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 00:13:23 lebel Exp $
+
+COMMENT=	"date calculations for the Gregorian calendar"
 
 DISTNAME=	Date-Calc-4.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Date
 
