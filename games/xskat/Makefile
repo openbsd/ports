@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/12/27 03:08:25 kevlo Exp $
 
-DISTNAME=	xskat-3.3
+DISTNAME=	xskat-3.4
 CATEGORIES=	games
-NEED_VERSION=	1.305
-MASTER_SITES=	http://www.gulu.net/xskat/
+NEED_VERSION=	1.348
+MASTER_SITES=	${HOMEPAGE}
+
+HOMEPAGE=	http://www.gulu.net/xskat/ 
 
 MAINTAINER=	ports@openbsd.org
 
@@ -12,7 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=imake
-WRKDIST=	${WRKDIR}/xskat-3.3
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

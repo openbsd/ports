@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/12/27 03:08:31 kevlo Exp $
 bin/xskat
 man/cat1/xskat.0
