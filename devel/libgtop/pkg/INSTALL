@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
+#
+# libgtop, install .info correctly and set gid kmem for ligtop_server.
+
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_post() {
+    chown root.kmem ${PREFIX}/bin/libgtop_server
+    chmod 2755 ${PREFIX}/bin/libgtop_server
+    install-info --section="Programming \& development tools" \
+		 --entry="* libgtop: (libgtop).  libgtop programming manual" \
+		 ${PREFIX}/info/libgtop.info ${PREFIX}/info/dir
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        ;;
+    POST-INSTALL)
+	do_post
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

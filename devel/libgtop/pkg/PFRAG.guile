@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.guile,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
+lib/libgtop_guile.a
+lib/libgtop_guile.la
+lib/libgtop_guile_names.a
+lib/libgtop_guile_names.la
+lib/libgtop_guile.so.1.11
+lib/libgtop_guile_names.so.1.11
