@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2002/03/23 04:34:23 matt Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2002/04/19 12:19:31 matt Exp $
 @option no-default-conflict
 @pkgcfl python-tests-2.1*
 lib/python2.1/test/README
@@ -99,6 +99,7 @@ lib/python2.1/test/output/test_parser
 lib/python2.1/test/output/test_pickle
 lib/python2.1/test/output/test_pkg
 lib/python2.1/test/output/test_poll
+lib/python2.1/test/output/test_popen
 lib/python2.1/test/output/test_popen2
 lib/python2.1/test/output/test_posixpath
 lib/python2.1/test/output/test_pow
@@ -458,6 +459,9 @@ lib/python2.1/test/test_pkg.pyo
 lib/python2.1/test/test_poll.py
 lib/python2.1/test/test_poll.pyc
 lib/python2.1/test/test_poll.pyo
+lib/python2.1/test/test_popen.py
+lib/python2.1/test/test_popen.pyc
+lib/python2.1/test/test_popen.pyo
 lib/python2.1/test/test_popen2.py
 lib/python2.1/test/test_popen2.pyc
 lib/python2.1/test/test_popen2.pyo
