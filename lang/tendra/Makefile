@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/04 23:37:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/04 23:41:08 avsm Exp $
 
 COMMENT=	"TeNDRA: advanced BSD-licensed C compiler"
 
@@ -13,7 +13,8 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org> \
 ONLY_FOR_ARCHS=	i386
 # supports 68k, alpha, mips, sparc as well, but not ported yet
 
-MASTER_SITES=	ftp://ftp.recoil.org/pub/tendra/
+MASTER_SITES=	ftp://ftp.tendra.org/pub/snapshot/ \
+		ftp://ftp.recoil.org/pub/tendra/
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/tendra
 ALL_TARGET=
