@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/28 09:32:31 obecian Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/21 05:54:39 obecian Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -7,9 +7,13 @@ CATEGORIES=	print
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
+HOMEPAGE=	http://www.lyx.org/
+
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# quasi-GPL (linked to closed source library)
+# no limitation of license; considered GPL
+# see http://www.lyx.org/about/license.php3 for additional info
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
