@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 16:06:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:25:50 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Jcode/
 ${P5ARCH}/Jcode.pm
@@ -12,7 +12,6 @@ ${P5ARCH}/Jcode/Unicode/NoXS.pm
 ${P5ARCH}/Jcode/_test.pl
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Jcode/
-@comment ${P5ARCH}/auto/Jcode/.packlist
 ${P5ARCH}/auto/Jcode/Unicode/
 ${P5ARCH}/auto/Jcode/Unicode/Unicode.bs
 ${P5ARCH}/auto/Jcode/Unicode/Unicode.so

@@ -1,16 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:48 naddy Exp $
-bin/transtab
-bin/transiso
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:25:51 espie Exp $
 bin/checkiso
 bin/checkuni
 bin/transce8
 bin/transhtm
-man/cat1/transtab.0
-man/cat1/transiso.0
-man/cat1/checkiso.0
-man/cat1/checkuni.0
-man/cat1/transce8.0
-man/cat1/transhtm.0
+bin/transiso
+bin/transtab
+lib/trans/
+lib/trans/README
+lib/trans/bin/
+lib/trans/bin/one
+lib/trans/bin/trans.c
+lib/trans/bin/trans.h
+lib/trans/bin/trans.man
+lib/trans/bin/utf.c
+lib/trans/bin/utf.h
+lib/trans/bin/utimbuf.h
+lib/trans/cedf/
 lib/trans/cedf/adobeiso
 lib/trans/cedf/adobestd
 lib/trans/cedf/adobesym
@@ -93,6 +98,36 @@ lib/trans/cedf/tex-dcr.in
 lib/trans/cedf/tex-dcr.out
 lib/trans/cedf/wingding
 lib/trans/cedf/wingreek
+lib/trans/doc/
+lib/trans/doc/adobe.inf
+lib/trans/doc/apple.inf
+lib/trans/doc/atari.inf
+lib/trans/doc/cpdos.inf
+lib/trans/doc/cpwin.inf
+lib/trans/doc/credits
+lib/trans/doc/dec.inf
+lib/trans/doc/ebcdic.inf
+lib/trans/doc/format
+lib/trans/doc/history
+lib/trans/doc/hp.inf
+lib/trans/doc/iso10646.inf
+lib/trans/doc/iso6429.inf
+lib/trans/doc/iso646.inf
+lib/trans/doc/iso8859.inf
+lib/trans/doc/nextstep.inf
+lib/trans/doc/other.inf
+lib/trans/doc/sources
+lib/trans/doc/todo
+lib/trans/doc/winother.inf
+lib/trans/encoding.lis
+lib/trans/src/
+lib/trans/src/checkall
+lib/trans/src/chkuni
+lib/trans/src/datatype.h
+lib/trans/src/mkhtml
+lib/trans/src/mklist
+lib/trans/src/mkxlt
+lib/trans/xlt/
 lib/trans/xlt/adobeiso
 lib/trans/xlt/adobestd
 lib/trans/xlt/adobesym
@@ -172,38 +207,9 @@ lib/trans/xlt/tex-dcr.in
 lib/trans/xlt/tex-dcr.out
 lib/trans/xlt/wingding
 lib/trans/xlt/wingreek
-lib/trans/doc/adobe.inf
-lib/trans/doc/apple.inf
-lib/trans/doc/atari.inf
-lib/trans/doc/cpdos.inf
-lib/trans/doc/cpwin.inf
-lib/trans/doc/credits
-lib/trans/doc/dec.inf
-lib/trans/doc/ebcdic.inf
-lib/trans/doc/format
-lib/trans/doc/history
-lib/trans/doc/hp.inf
-lib/trans/doc/iso10646.inf
-lib/trans/doc/iso6429.inf
-lib/trans/doc/iso646.inf
-lib/trans/doc/iso8859.inf
-lib/trans/doc/nextstep.inf
-lib/trans/doc/other.inf
-lib/trans/doc/sources
-lib/trans/doc/todo
-lib/trans/doc/winother.inf
-lib/trans/bin/one
-lib/trans/bin/trans.c
-lib/trans/bin/trans.h
-lib/trans/bin/trans.man
-lib/trans/bin/utimbuf.h
-lib/trans/bin/utf.c
-lib/trans/bin/utf.h
-lib/trans/src/checkall
-lib/trans/src/chkuni
-lib/trans/src/mkhtml
-lib/trans/src/mklist
-lib/trans/src/mkxlt
-lib/trans/src/datatype.h
-lib/trans/README
-lib/trans/encoding.lis
+@man man/cat1/checkiso.0
+@man man/cat1/checkuni.0
+@man man/cat1/transce8.0
+@man man/cat1/transhtm.0
+@man man/cat1/transiso.0
+@man man/cat1/transtab.0

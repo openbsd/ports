@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/06 16:06:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:25:51 espie Exp $
 bin/umap
 ${P5ARCH}/Unicode/Map8/
 ${P5ARCH}/Unicode/Map8.pm
@@ -185,7 +185,6 @@ ${P5ARCH}/Unicode/Map8/maps/macintosh.bin
 ${P5ARCH}/Unicode/Map8/maps/us-dk.bin
 ${P5ARCH}/Unicode/Map8/maps/videotex-suppl.bin
 ${P5ARCH}/auto/Unicode/Map8/
-@comment ${P5ARCH}/auto/Unicode/Map8/.packlist
 ${P5ARCH}/auto/Unicode/Map8/Map8.bs
 ${P5ARCH}/auto/Unicode/Map8/Map8.so
 @man man/man1/umap.1

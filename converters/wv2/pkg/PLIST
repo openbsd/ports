@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/27 08:40:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:25:51 espie Exp $
 bin/wv2-config
+include/wv2/
 include/wv2/associatedstrings.h
 include/wv2/convert.h
 include/wv2/dllmagic.h
@@ -27,4 +28,3 @@ include/wv2/wvlog.h
 lib/libwv2.a
 lib/libwv2.la
 %%SHARED%%
-@dirrm include/wv2

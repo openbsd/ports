@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/07/15 04:00:40 shell Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:25:50 espie Exp $
 bin/html2wml
-man/man1/html2wml.1
+@man man/man1/html2wml.1
+share/doc/html2wml/
 share/doc/html2wml/COPYING
 share/doc/html2wml/ChangeLog
 share/doc/html2wml/INSTALL
@@ -11,7 +12,9 @@ share/doc/html2wml/TODO
 share/doc/html2wml/readme.html
 share/doc/html2wml/readme.pdf
 share/doc/html2wml/readme.pod
+share/doc/html2wml/t/
 share/doc/html2wml/t/form.html
+share/doc/html2wml/t/samples/
 share/doc/html2wml/t/samples/inc_para.wml
 share/doc/html2wml/t/samples/inc_prev.wml
 share/doc/html2wml/t/samples/mix1.html
@@ -31,6 +34,3 @@ share/doc/html2wml/t/samples/t-nest.html
 share/doc/html2wml/t/samples/t-no-tag.html
 share/doc/html2wml/t/samples/t-special-chars.html
 share/doc/html2wml/t/samples/t-urls.html
-@dirrm share/doc/html2wml/t/samples
-@dirrm share/doc/html2wml/t
-@dirrm share/doc/html2wml

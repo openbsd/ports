@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/08/09 16:27:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/14 23:24:39 espie Exp $
 bin/ascii-xfr
 @mode 555
 bin/minicom
@@ -63,13 +63,13 @@ share/examples/minicom/extras/terminfo/README
 share/examples/minicom/extras/terminfo/minicom
 share/examples/minicom/extras/unixlogin
 share/examples/minicom/minicom.users.sample
+@mode 0750
 @owner uucp
 @group dialer
-@mode 0750
 @sample ${SYSCONFDIR}/minicom/
+@mode 0644
 @owner
 @group
-@mode 0644
 @sample ${SYSCONFDIR}/minicom/minicom.users
 @mode
 share/locale/cs_CZ/

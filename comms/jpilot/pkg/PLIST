@@ -1,19 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/16 16:42:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:24:38 espie Exp $
 bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
 bin/jpilot-upgrade-99
-man/man1/jpilot-sync.1
-man/man1/jpilot-upgrade-99.1
-man/man1/jpilot.1
+lib/jpilot/
+lib/jpilot/plugins/
+lib/jpilot/plugins/libexpense.la
+lib/jpilot/plugins/libkeyring.la
+lib/jpilot/plugins/libsynctime.la
+@man man/man1/jpilot-sync.1
+@man man/man1/jpilot-upgrade-99.1
+@man man/man1/jpilot.1
+share/doc/jpilot/
+share/doc/jpilot/README
 share/doc/jpilot/manual.html
 share/doc/jpilot/plugin.html
+share/jpilot/
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
 share/jpilot/ExpenseDB.pdb
 share/jpilot/Memo32DB.pdb
 share/jpilot/MemoDB.pdb
 share/jpilot/ToDoDB.pdb
+share/jpilot/icons/
 share/jpilot/icons/README
 share/jpilot/icons/jpilot-icon1.xpm
 share/jpilot/icons/jpilot-icon2.xpm
@@ -24,6 +33,8 @@ share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
 share/jpilot/jpilotrc.purple
 share/jpilot/jpilotrc.steel
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/jpilot.mo
 share/locale/cs/LC_MESSAGES/jpilot.mo
 share/locale/da/LC_MESSAGES/jpilot.mo
@@ -36,31 +47,3 @@ share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/no/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 %%SHARED%%
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
-@dirrm share/jpilot/icons
-@dirrm share/jpilot
-@dirrm share/doc/jpilot
-@dirrm lib/jpilot/plugins
-@dirrm lib/jpilot

@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/01 05:41:32 shell Exp $
-bin/ppmtoTbmp
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:25:51 espie Exp $
 bin/Tbmptopnm
+bin/ppmtoTbmp

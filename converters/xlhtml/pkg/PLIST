@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/08 22:26:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:25:51 espie Exp $
 bin/nsopen
 bin/nspptview
 bin/nsxlview
 bin/pptHtml
 bin/xlHtml
+include/cole/
 include/cole/cole.h
 lib/libcole.a
 lib/libcole.la
-man/man1/pptHtml.1
-man/man1/xlHtml.1
+@man man/man1/pptHtml.1
+@man man/man1/xlHtml.1
+share/aclocal/
 share/aclocal/cole.m4
 %%SHARED%%
-@dirrm include/cole
