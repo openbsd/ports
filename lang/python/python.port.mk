@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.8 2004/05/15 09:24:12 xsa Exp $
+# $OpenBSD: python.port.mk,v 1.9 2004/06/21 23:25:07 xsa Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -23,6 +23,8 @@ MODPY_SETUP?=		setup.py
 # build or build_ext are commonly used
 MODPY_DISTUTILS_BUILD?=		build --build-base=${WRKSRC}
 MODPY_DISTUTILS_INSTALL?=	install --prefix=${PREFIX}
+
+MAKE_ENV+=	CC=${CC}
 
 _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
