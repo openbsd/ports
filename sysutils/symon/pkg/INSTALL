@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/02/04 22:59:48 naddy Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/08/01 15:52:16 pvalchev Exp $
 #
 # Pre/post-installation setup of symon monitor
 
@@ -9,7 +9,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/symon.conf
-SAMPLE_CONFIG_FILE=$PREFIX/share/symon/symon.conf
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/symon/symon.conf
 
 do_notice()
 {
