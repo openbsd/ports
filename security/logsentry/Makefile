@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/24 23:29:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/02 08:20:46 sturm Exp $
 
 COMMENT=	"logfile auditing tool"
 
 DISTNAME=	logsentry-1.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.psionic.com/products/logsentry.html
