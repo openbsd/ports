@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.426 2001/07/20 13:02:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.427 2001/07/20 13:13:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -369,16 +369,36 @@ ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .  endfor
 .endif
 
+# Support architecture and flavor dependent packing lists
+#
+SED_PLIST?=
+
 # Build FLAVOR_EXT, checking that no flavors are misspelled
 FLAVOR_EXT:=
+
+# Create the basic sed substitution pipeline for fragments
+# (applies only to PLIST for now)
 .if defined(FLAVORS)
-.  if defined(FLAVOR)
+.  for _i in ${FLAVORS:L}
+.    if empty(FLAVOR:L:M${_i})
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
+.    else
+FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
+.    endif
+.  endfor
+.endif
+
+.if !empty(FLAVOR)
+.  if defined(FLAVORS)
 .    for _i in ${FLAVOR:L}
 .      if empty(FLAVORS:L:M${_i})
 ERRORS+=	"Fatal: Unknown flavor: ${_i}"
 ERRORS+= "   (Possible flavors are: ${FLAVORS})."
 .      endif
 .    endfor
+.  else
+ERRORS+=	"Fatal: no flavors for this port."
 .  endif
 .endif
 
@@ -531,23 +551,6 @@ WRKBUILD?=		${WRKSRC}
 .endif
 
 WRKPKG?=		${WRKBUILD}/pkg
-
-# Support architecture and flavor dependent packing lists
-#
-SED_PLIST?=
-
-# Create the basic sed substitution pipeline for fragments
-# (applies only to PLIST for now)
-.if defined(FLAVORS)
-.  for _i in ${FLAVORS:L}
-.    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
-.    else
-FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
-.    endif
-.  endfor
-.endif
 
 _PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
 .  if ${FAKE:L} == "yes"
