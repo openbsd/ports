@@ -1,67 +1,100 @@
---- Makefile.orig	Sun May 21 06:47:39 2000
-+++ Makefile	Sun May 21 06:49:59 2000
-@@ -3,17 +3,19 @@
- # For conditions of distribution and use, see copyright notice in png.h
- 
- # where make install puts libpng.a and png.h
--prefix=/usr/local
-+prefix=${PREFIX}
- 
+--- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
++++ scripts/makefile.std	Thu Jun 22 04:04:46 2000
+@@ -8,8 +8,6 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
  #ZLIBINC=/usr/local/include
 -ZLIBLIB=../zlib
 -ZLIBINC=../zlib
-+#ZLIBLIB=../zlib
-+#ZLIBINC=../zlib
  
--CC=cc
--CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
--LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+VER=1.6
-+#CC=cc
-+#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
-+#LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+LDFLAGS=-L. -lpng -lz -lm
- 
+ CC=cc
+ CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
+@@ -18,34 +16,35 @@
  #RANLIB=echo
  RANLIB=ranlib
-@@ -22,12 +24,20 @@
- 	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
- 	pngwtran.o pngmem.o pngerror.o pngpread.o
  
--all: libpng.a pngtest
-+.SUFFIXES: .c .so .o
-+
-+.c.so:
-+	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-+
-+all: libpng.a libpng.so.${VER}
+-OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
+-	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+-	pngwtran.o pngmem.o pngerror.o pngpread.o
++OBJS = png.lo pngset.lo pngget.lo pngrutil.lo pngtrans.lo pngwutil.lo \
++	pngread.lo pngrio.lo pngwio.lo pngwrite.lo pngrtran.lo \
++	pngwtran.lo pngmem.lo pngerror.lo pngpread.lo
  
+ all: libpng.a pngtest
+ 
++.SUFFIXES: .c .lo
++
++.c.lo:
++	libtool $(CC) $(CFLAGS) -c $(.IMPSRC)
++
  libpng.a: $(OBJS)
- 	ar rc $@  $(OBJS)
- 	$(RANLIB) $@
+-	ar rc $@  $(OBJS)
+-	$(RANLIB) $@
++	libtool $(CC) $(CFLAGS) -o libpng.la $(OBJS) \
++	 -version-info 1:6:0 -rpath $(prefix)/lib
  
-+libpng.so.${VER}: $(OBJS:S/o$/so/g)
-+	ld -Bshareable -Bforcearchive -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
-+
- pngtest: pngtest.o libpng.a
- 	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
+-pngtest: pngtest.o libpng.a
+-	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
++pngtest: pngtest.lo libpng.a
++	libtool $(CC) -o pngtest $(CFLAGS) pngtest.lo $(LDFLAGS)
  
-@@ -37,12 +47,10 @@
+ test: pngtest
+ 	./pngtest
+ 
  install: libpng.a
- 	-@mkdir $(prefix)/include
- 	-@mkdir $(prefix)/lib
+-	-@mkdir $(prefix)/include
+-	-@mkdir $(prefix)/lib
 -	cp png.h $(prefix)/include
 -	cp pngconf.h $(prefix)/include
 -	chmod 644 $(prefix)/include/png.h
 -	chmod 644 $(prefix)/include/pngconf.h
 -	cp libpng.a $(prefix)/lib
 -	chmod 644 $(prefix)/lib/libpng.a
-+	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
-+	${BSD_INSTALL_DATA} libpng.a $(prefix)/lib
-+	${RANLIB} $(prefix)/lib/libpng.a
-+	${BSD_INSTALL_DATA} libpng.so.${VER} $(prefix)/lib
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/include
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib
++	${BSD_INSTALL_DATA} png.h pngconf.h $(DESTDIR)$(prefix)/include
++	libtool ${BSD_INSTALL_DATA} libpng.la $(DESTDIR)$(prefix)/lib
  
  clean:
- 	rm -f *.o libpng.a pngtest pngout.png
+-	rm -f *.o libpng.a pngtest pngout.png
++	rm -f *.o *.lo libpng.a pngtest pngout.png
+ 
+ DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
+ writelock:
+@@ -53,20 +52,19 @@
+ 
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
+ 
+-png.o: png.h pngconf.h
+-pngerror.o: png.h pngconf.h
+-pngrio.o: png.h pngconf.h
+-pngwio.o: png.h pngconf.h
+-pngmem.o: png.h pngconf.h
+-pngset.o: png.h pngconf.h
+-pngget.o: png.h pngconf.h
+-pngread.o: png.h pngconf.h
+-pngrtran.o: png.h pngconf.h
+-pngrutil.o: png.h pngconf.h
+-pngtest.o: png.h pngconf.h
+-pngtrans.o: png.h pngconf.h
+-pngwrite.o: png.h pngconf.h
+-pngwtran.o: png.h pngconf.h
+-pngwutil.o: png.h pngconf.h
+-pngpread.o: png.h pngconf.h
+-
++png.lo: png.h pngconf.h
++pngerror.lo: png.h pngconf.h
++pngrio.lo: png.h pngconf.h
++pngwio.lo: png.h pngconf.h
++pngmem.lo: png.h pngconf.h
++pngset.lo: png.h pngconf.h
++pngget.lo: png.h pngconf.h
++pngread.lo: png.h pngconf.h
++pngrtran.lo: png.h pngconf.h
++pngrutil.lo: png.h pngconf.h
++pngtest.lo: png.h pngconf.h
++pngtrans.lo: png.h pngconf.h
++pngwrite.lo: png.h pngconf.h
++pngwtran.lo: png.h pngconf.h
++pngwutil.lo: png.h pngconf.h
++pngpread.lo: png.h pngconf.h
