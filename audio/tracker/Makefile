@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/16 03:42:05 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/08/18 01:59:36 angelos Exp $
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio
 
 MAINTAINER=     espie@openbsd.org
 
-MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/beta/
 EXTRACT_SUFX=   .tgz
 
 WRKSRC=         ${WRKDIR}/tracker
