@@ -1,3 +1,4 @@
+$OpenBSD: patch-libcqcam-port_C,v 1.2 2001/08/28 00:06:29 jcs Exp $
 --- libcqcam/port.C.orig	Sun Apr 29 20:26:13 2001
 +++ libcqcam/port.C	Sun Apr 29 20:27:10 2001
 @@ -51,6 +51,8 @@
