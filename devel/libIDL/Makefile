@@ -1,14 +1,22 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/12 05:08:48 espie Exp $
 
 DISTNAME=	libIDL-0.6.5
 CATEGORIES=	devel
 NEED_VERSION=	1.223
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/libraries/source/
+MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/libraries/source/ \
+	http://atv.ne.mediaone.net/libIDL/
+
+# LGPL
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 
 MAINTAINER=	fgsch@openbsd.org
 
 LIB_DEPENDS=	glib.1.2:devel/glib
 
+FAKE=		Yes
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
 
