@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/24 07:35:13 pvalchev Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"Emacs Lisp-like runtime library"
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		A bug in GCC on powerpc
