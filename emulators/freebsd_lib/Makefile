@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/20 03:24:24 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/24 01:06:44 turan Exp $
+
+BROKEN=		checksum mismatch, port needs to be updated
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
