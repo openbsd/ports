@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/18 15:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/24 20:48:19 espie Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
@@ -22,10 +22,11 @@ FAKE=		Yes
 
 pre-configure:
 # Check if /usr/bin/m4 recognizes option -g, and has builtin __line__
-	@if [ `echo "__line__"|/usr/bin/m4 -g` \
-		!= "1" ]; then \
+	@if [ X`echo "__line__"|/usr/bin/m4 -g 2>/dev/null` \
+		== "X1" ]; then \
+		exit 0; \
+	fi; \
 		echo >&2 "Your m4 is not current enough, sorry"; \
-	    	exit 1; \
-	fi
+	    	exit 1
 
 .include <bsd.port.mk>
