@@ -1,37 +1,26 @@
 --- Makefile.orig	Fri Jun 23 16:34:47 2000
-+++ Makefile	Mon Aug  7 06:25:37 2000
-@@ -3,95 +3,85 @@
++++ Makefile	Thu Sep 14 05:10:49 2000
+@@ -3,6 +3,7 @@
  CC=gcc
  BIGFILES=-D_FILE_OFFSET_BITS=64
  CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +LIBTOOL=libtool --quiet
  
--OBJS= blocksort.o  \
--      huffman.o    \
--      crctable.o   \
--      randtable.o  \
--      compress.o   \
--      decompress.o \
--      bzlib.o
-+OBJS= blocksort.lo  \
-+      huffman.lo    \
-+      crctable.lo   \
-+      randtable.lo  \
-+      compress.lo   \
-+      decompress.lo \
-+      bzlib.lo
+ OBJS= blocksort.o  \
+       huffman.o    \
+@@ -12,86 +13,73 @@
+       decompress.o \
+       bzlib.o
  
 -all: libbz2.a bzip2 bzip2recover test
 +all: libbz2.a bzip2 bzip2recover
  
--bzip2: libbz2.a bzip2.o
+ bzip2: libbz2.a bzip2.o
 -	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
-+bzip2: libbz2.a bzip2.lo
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2 bzip2.lo libbz2.la
  
--bzip2recover: bzip2recover.o
+ bzip2recover: bzip2recover.o
 -	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.o
-+bzip2recover: bzip2recover.lo
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2recover bzip2recover.lo
  
  libbz2.a: $(OBJS)
@@ -42,8 +31,8 @@
 -		echo ranlib libbz2.a ; \
 -		ranlib libbz2.a ; \
 -	fi
-+	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libbz2.la $(OBJS) \
-+	 -version-info 10:1:0 -rpath $(PREFIX)/lib
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libbz2.la $(OBJS:.o=.lo) \
++		-version-info 10:1:0 -rpath $(PREFIX)/lib
  
  test: bzip2
 -	@cat words1
@@ -60,6 +49,8 @@
 -	cmp sample2.tst sample2.ref
 -	cmp sample3.tst sample3.ref
 -	@cat words3
+-
+-PREFIX=/usr
 +	./bzip2 -1  < sample1.ref > sample1.rb2 || exit 1
 +	./bzip2 -2  < sample2.ref > sample2.rb2 || exit 1
 +	./bzip2 -3  < sample3.ref > sample3.rb2 || exit 1
@@ -72,8 +63,6 @@
 +	cmp sample1.tst sample1.ref || exit 1
 +	cmp sample2.tst sample2.ref || exit 1
 +	cmp sample3.tst sample3.ref || exit 1
- 
- PREFIX=/usr
  
  install: bzip2 bzip2recover
 -	if ( test ! -d $(PREFIX)/bin ) ; then mkdir $(PREFIX)/bin ; fi
@@ -113,46 +102,37 @@
  
  clean: 
 -	rm -f *.o libbz2.a bzip2 bzip2recover \
-+	rm -f *.o *.lo libbz2.a bzip2 bzip2recover \
++	rm -f *.o *.lo libbz2.a libbz2.so.* bzip2 bzip2recover \
  	sample1.rb2 sample2.rb2 sample3.rb2 \
  	sample1.tst sample2.tst sample3.tst
  
--blocksort.o: blocksort.c
-+blocksort.lo: blocksort.c
+ blocksort.o: blocksort.c
  	@cat words0
 -	$(CC) $(CFLAGS) -c blocksort.c
--huffman.o: huffman.c
--	$(CC) $(CFLAGS) -c huffman.c
--crctable.o: crctable.c
--	$(CC) $(CFLAGS) -c crctable.c
--randtable.o: randtable.c
--	$(CC) $(CFLAGS) -c randtable.c
--compress.o: compress.c
--	$(CC) $(CFLAGS) -c compress.c
--decompress.o: decompress.c
--	$(CC) $(CFLAGS) -c decompress.c
--bzlib.o: bzlib.c
--	$(CC) $(CFLAGS) -c bzlib.c
--bzip2.o: bzip2.c
--	$(CC) $(CFLAGS) -c bzip2.c
--bzip2recover.o: bzip2recover.c
--	$(CC) $(CFLAGS) -c bzip2recover.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c blocksort.c
-+huffman.lo: huffman.c
+ huffman.o: huffman.c
+-	$(CC) $(CFLAGS) -c huffman.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c huffman.c
-+crctable.lo: crctable.c
+ crctable.o: crctable.c
+-	$(CC) $(CFLAGS) -c crctable.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c crctable.c
-+randtable.lo: randtable.c
+ randtable.o: randtable.c
+-	$(CC) $(CFLAGS) -c randtable.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c randtable.c
-+compress.lo: compress.c
+ compress.o: compress.c
+-	$(CC) $(CFLAGS) -c compress.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c compress.c
-+decompress.lo: decompress.c
+ decompress.o: decompress.c
+-	$(CC) $(CFLAGS) -c decompress.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c decompress.c
-+bzlib.lo: bzlib.c
+ bzlib.o: bzlib.c
+-	$(CC) $(CFLAGS) -c bzlib.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzlib.c
-+bzip2.lo: bzip2.c
+ bzip2.o: bzip2.c
+-	$(CC) $(CFLAGS) -c bzip2.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzip2.c
-+bzip2recover.lo: bzip2recover.c
+ bzip2recover.o: bzip2recover.c
+-	$(CC) $(CFLAGS) -c bzip2recover.c
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzip2recover.c
  
  DISTNAME=bzip2-1.0.1
