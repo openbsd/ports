@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/16 23:30:26 naddy Exp $
+${P5SITE}/Date/Tolkien/Shire.pm
+@comment ${P5ARCH}/auto/Date/Tolkien/Shire/.packlist
+man/man3p/Date::Tolkien::Shire.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Date/Tolkien/Shire
+@comment @dirrm ${P5ARCH}/auto/Date/Tolkien
+@comment @dirrm ${P5ARCH}/auto/Date
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Date/Tolkien
+@dirrm ${P5SITE}/Date
