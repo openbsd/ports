@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/25 23:09:11 mickey Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/25 23:57:03 mickey Exp $
 
 COMMENT=	"Creative Labs NOMAD II MG IO"
 DISTNAME=	nomadio-0.5
@@ -7,7 +7,7 @@ NEED_VERSION=	1.515
 
 MASTER_SITES=	ftp://ftp.lucifier.net/pub/nomadio/
 
-MAINTAINER=	Noma Dio <nomadio@lucifier.net>
+MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
