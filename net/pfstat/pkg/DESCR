@@ -1,0 +1,4 @@
+pfstat is a small utility that collects packet filter statistics and
+produces graphs.
+
+WWW: ${HOMEPAGE}
