@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/28 15:28:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/15 03:29:52 avsm Exp $
 
-DISTNAME=	Math-GMP-1.03
+DISTNAME=	Math-GMP-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
 NEED_VERSION=	1.351
