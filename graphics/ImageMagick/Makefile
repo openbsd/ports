@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 1999/05/09 07:23:25 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/05/20 23:25:55 brad Exp $
 
-DISTNAME=	ImageMagick-4.2.4
-CATEGORIES=     graphics x11
+DISTNAME=	ImageMagick-4.2.5
+CATEGORIES=     graphics
 MASTER_SITES=	ftp://204.183.81.131/pub/ImageMagick/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
