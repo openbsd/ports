@@ -1,6 +1,6 @@
 --- src/tools.c.orig	Wed Jan  3 23:11:51 2001
-+++ src/tools.c	Thu Jul 19 09:03:39 2001
-@@ -85,8 +85,9 @@
++++ src/tools.c	Fri Jul 20 10:58:33 2001
+@@ -85,8 +85,9 @@ mail_warranty(void)
      static char command[256];
  #if HAVE_MKSTEMP
      char filename[] = "/tmp/squid-XXXXXX";
@@ -8,7 +8,7 @@
 -    if (tfd < 0)
 +    int tfd = -1;
 +
-+    if (mkstemp(filename) == -1)
++    if ((tfd = mkstemp(filename)) == -1)
  	return;
      if ((fp = fdopen(tfd, "w")) == NULL)
  	return;
