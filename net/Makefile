@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/04/12 04:29:05 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/04/29 02:53:59 angelos Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -27,7 +27,7 @@
      SUBDIR += gated
 #    SUBDIR += gnu-finger
 #    SUBDIR += gopher
-#    SUBDIR += icmpinfo
+     SUBDIR += icmpinfo
      SUBDIR += irc
 #    SUBDIR += ircII
      SUBDIR += ircii-epic
