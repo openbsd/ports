@@ -1,11 +1,30 @@
 --- sn_data.h.orig	Fri Apr 18 05:33:58 1997
-+++ sn_data.h	Sat Mar 25 18:28:00 2000
-@@ -20,7 +20,7 @@
- char *ETH_DEV[]={"et"};
- #endif
- 
--#ifdef FREEBSD
-+#if defined(FREEBSD) || defined(OPENBSD)
- #define ETH_DEV_NR      1
++++ sn_data.h	Sat Mar 25 20:34:10 2000
+@@ -25,6 +25,27 @@
  char *ETH_DEV[]={"ed"};
  #endif
+ 
++#ifdef OPENBSD
++#ifdef __i386__
++#define ETH_DEV_NR     32
++char *ETH_DEV[]={"cnw","dc","de","ec","ef","eg","el","ep","ex","fea","fpa","fxp","ie","le","ne","ray","rl","sf","sis","sk","sm","ste","ti","tl","tx","vr","wb","we","wi","wx","xe","xl"};
++#elif defined(__sparc__)
++#define ETH_DEV_NR     5
++char *ETH_DEV[]={"be","hme","ie","le","qe"};
++#elif defined(__m68k__)
++#defined ETH_DEV_NR    8
++char *ETH_DEV[]={"ae","ed","es","le","mc","ne","qn","sn"};
++#elif defined(__mips__)
++#define ETH_DEV_NR     5
++char *ETH_DEV[]={"ec","ep","le","ne","we"};
++#elif defined(__powerpc__)
++#defined ETH_DEV_NR    3
++char *ETH_DEV[]={"bm","de","gm"};
++#else
++#error Unknown network devices for this OpenBSD architecture.
++#endif
++#endif
++
+ #ifdef BSDI
+ #define ETH_DEV_NR      1
+ char *ETH_DEV[]={"ef"};
