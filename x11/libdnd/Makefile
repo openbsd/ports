@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/19 12:40:39 wilfried Exp $
 
 COMMENT=		'drag and drop library'
 
@@ -9,13 +9,13 @@ NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# LPGL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://leb.net/OffiX/ \
-			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+MASTER_SITES=		http://leb.net/OffiX/
 EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes
