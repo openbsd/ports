@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-ltdl,v 1.1 2004/07/02 01:59:12 brad Exp $
-lib/libltdl.so.4.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared-ltdl,v 1.2 2004/08/07 21:55:26 brad Exp $
+@lib lib/libltdl.so.4.0

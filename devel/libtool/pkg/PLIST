@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/07/02 01:59:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/07 21:55:26 brad Exp $
 bin/libtool
 bin/libtoolize
-@unexec install-info --delete --info-dir=%D/info %D/info/libtool.info
-info/libtool.info
-@exec install-info --info-dir=%D/info %D/info/libtool.info
+@info info/libtool.info
+@comment share/aclocal/
 share/aclocal/libtool.m4
 share/libtool/config.guess
 share/libtool/config.sub
 share/libtool/ltmain.sh
-@dirrm share/libtool
-@dirrm share/aclocal

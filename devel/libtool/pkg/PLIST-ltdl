@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-ltdl,v 1.1 2004/07/02 01:59:12 brad Exp $
+@comment $OpenBSD: PLIST-ltdl,v 1.2 2004/08/07 21:55:26 brad Exp $
 include/ltdl.h
 lib/libltdl.a
 lib/libltdl.la
-%%SHARED%%
 share/aclocal/ltdl.m4
+share/libtool/
+share/libtool/libltdl/
 share/libtool/libltdl/COPYING.LIB
 share/libtool/libltdl/Makefile.am
 share/libtool/libltdl/Makefile.in
@@ -20,5 +21,4 @@ share/libtool/libltdl/ltdl.c
 share/libtool/libltdl/ltdl.h
 share/libtool/libltdl/ltmain.sh
 share/libtool/libltdl/missing
-@dirrm share/libtool/libltdl
-@dirrm share/libtool
+%%SHARED%%
