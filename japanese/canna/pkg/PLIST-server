@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST-server,v 1.1 2000/04/22 13:01:12 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2004/08/03 11:47:10 espie Exp $
 bin/addwords
 bin/canlisp
 bin/cannacheck
 bin/cannakill
+@group daemon
+@owner daemon
+@mode u+s,g+s
+bin/cannaserver
+@mode
+@owner
+@group
 bin/cannastat
 bin/catdic
 bin/cpdic
@@ -29,51 +36,47 @@ bin/rmdic
 bin/splitword
 bin/syncdic
 bin/wtoc
-man/cat1/addwords.0
-man/cat1/cannacheck.0
-man/cat1/cannakill.0
-man/cat1/cannaserver.0
-man/cat1/cannastat.0
-man/cat1/catdic.0
-man/cat1/cpdic.0
-man/cat1/cshost.0
-man/cat1/ctow.0
-man/cat1/delwords.0
-man/cat1/dicar.0
-man/cat1/dpbindic.0
-man/cat1/dpromdic.0
-man/cat1/lsdic.0
-man/cat1/mkbindic.0
-man/cat1/mkdic.0
-man/cat1/mkromdic.0
-man/cat1/mvdic.0
-man/cat1/rmdic.0
-man/cat1/splitword.0
-man/cat1/wtoc.0
-man/ja_JP.EUC/cat1/addwords.0
-man/ja_JP.EUC/cat1/cannacheck.0
-man/ja_JP.EUC/cat1/cannakill.0
-man/ja_JP.EUC/cat1/cannaserver.0
-man/ja_JP.EUC/cat1/cannastat.0
-man/ja_JP.EUC/cat1/catdic.0
-man/ja_JP.EUC/cat1/cpdic.0
-man/ja_JP.EUC/cat1/cshost.0
-man/ja_JP.EUC/cat1/ctow.0
-man/ja_JP.EUC/cat1/delwords.0
-man/ja_JP.EUC/cat1/dicar.0
-man/ja_JP.EUC/cat1/dpbindic.0
-man/ja_JP.EUC/cat1/dpromdic.0
-man/ja_JP.EUC/cat1/lsdic.0
-man/ja_JP.EUC/cat1/mkbindic.0
-man/ja_JP.EUC/cat1/mkdic.0
-man/ja_JP.EUC/cat1/mkromdic.0
-man/ja_JP.EUC/cat1/mvdic.0
-man/ja_JP.EUC/cat1/rmdic.0
-man/ja_JP.EUC/cat1/splitword.0
-man/ja_JP.EUC/cat1/wtoc.0
-@owner daemon
-@group daemon
-@mode u+s,g+s
-bin/cannaserver
+@man man/cat1/addwords.0
+@man man/cat1/cannacheck.0
+@man man/cat1/cannakill.0
+@man man/cat1/cannaserver.0
+@man man/cat1/cannastat.0
+@man man/cat1/catdic.0
+@man man/cat1/cpdic.0
+@man man/cat1/cshost.0
+@man man/cat1/ctow.0
+@man man/cat1/delwords.0
+@man man/cat1/dicar.0
+@man man/cat1/dpbindic.0
+@man man/cat1/dpromdic.0
+@man man/cat1/lsdic.0
+@man man/cat1/mkbindic.0
+@man man/cat1/mkdic.0
+@man man/cat1/mkromdic.0
+@man man/cat1/mvdic.0
+@man man/cat1/rmdic.0
+@man man/cat1/splitword.0
+@man man/cat1/wtoc.0
+@man man/ja_JP.EUC/cat1/addwords.0
+@man man/ja_JP.EUC/cat1/cannacheck.0
+@man man/ja_JP.EUC/cat1/cannakill.0
+@man man/ja_JP.EUC/cat1/cannaserver.0
+@man man/ja_JP.EUC/cat1/cannastat.0
+@man man/ja_JP.EUC/cat1/catdic.0
+@man man/ja_JP.EUC/cat1/cpdic.0
+@man man/ja_JP.EUC/cat1/cshost.0
+@man man/ja_JP.EUC/cat1/ctow.0
+@man man/ja_JP.EUC/cat1/delwords.0
+@man man/ja_JP.EUC/cat1/dicar.0
+@man man/ja_JP.EUC/cat1/dpbindic.0
+@man man/ja_JP.EUC/cat1/dpromdic.0
+@man man/ja_JP.EUC/cat1/lsdic.0
+@man man/ja_JP.EUC/cat1/mkbindic.0
+@man man/ja_JP.EUC/cat1/mkdic.0
+@man man/ja_JP.EUC/cat1/mkromdic.0
+@man man/ja_JP.EUC/cat1/mvdic.0
+@man man/ja_JP.EUC/cat1/rmdic.0
+@man man/ja_JP.EUC/cat1/splitword.0
+@man man/ja_JP.EUC/cat1/wtoc.0
 @exec install -d -m 0775 -o daemon -g daemon /var/spool/canna
 @unexec echo "Remove /var/spool/canna manually"

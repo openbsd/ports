@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/06/11 01:53:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/03 11:47:10 espie Exp $
+include/canna/
 include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h
 include/canna/mfdef.h
 lib/default.canna
+lib/dic/
 lib/dic/default.cbp
 lib/dic/english.cbp
 lib/dic/jdaemon.cbp
@@ -19,11 +21,11 @@ lib/dic/tut.cbp
 lib/dic/vje.cbp
 lib/dic/wx2+.cbp
 lib/engine.cf
-%%SHARED%%
 lib/libRKC.a
 lib/libRKC16.a
 lib/libcanna.a
 lib/libcanna16.a
+lib/sample/
 lib/sample/1.1.canna
 lib/sample/1.2.canna
 lib/sample/default.canna
@@ -35,6 +37,7 @@ lib/sample/matsu.canna
 lib/sample/modes.canna
 lib/sample/sample.canna
 lib/sample/skk.canna
+lib/sample/src/
 lib/sample/src/Makefile
 lib/sample/src/default.ctd
 lib/sample/src/english.ctd
@@ -55,93 +58,88 @@ lib/sample/tut.canna
 lib/sample/unix.canna
 lib/sample/vje.canna
 lib/sample/wx2+.canna
-man/cat3/RkCloseRoma.0
-man/cat3/RkCvtEuc.0
-man/cat3/RkCvtHan.0
-man/cat3/RkCvtHira.0
-man/cat3/RkCvtKana.0
-man/cat3/RkCvtRoma.0
-man/cat3/RkCvtZen.0
-man/cat3/RkDefineDic.0
-man/cat3/RkDeleteDic.0
-man/cat3/RkEndBun.0
-man/cat3/RkEnlarge.0
-man/cat3/RkFinalize.0
-man/cat3/RkGetDicList.0
-man/cat3/RkGetKanji.0
-man/cat3/RkGetLex.0
-man/cat3/RkGetStat.0
-man/cat3/RkGetYomi.0
-man/cat3/RkGoto.0
-man/cat3/RkInitialize.0
-man/cat3/RkIntro.0
-man/cat3/RkLeft.0
-man/cat3/RkMapPhonogram.0
-man/cat3/RkMapRoma.0
-man/cat3/RkMountD.0
-man/cat3/RkNext.0
-man/cat3/RkNfer.0
-man/cat3/RkOpenRoma.0
-man/cat3/RkPrev.0
-man/cat3/RkRemountDic.0
-man/cat3/RkResize.0
-man/cat3/RkRgnBun.0
-man/cat3/RkRight.0
-man/cat3/RkShorten.0
-man/cat3/RkStoreYomi.0
-man/cat3/RkUnmountDic.0
-man/cat3/RkXfer.0
-man/cat3/XKanjiControl.0
-man/cat3/XLookupKanjiString.0
-man/cat3/cannalib.0
-man/cat3/jrKanjiControl.0
-man/cat3/jrKanjiString.0
-man/cat3/uilib.0
-man/ja_JP.EUC/cat3/RkCloseRoma.0
-man/ja_JP.EUC/cat3/RkCvtEuc.0
-man/ja_JP.EUC/cat3/RkCvtHan.0
-man/ja_JP.EUC/cat3/RkCvtHira.0
-man/ja_JP.EUC/cat3/RkCvtKana.0
-man/ja_JP.EUC/cat3/RkCvtRoma.0
-man/ja_JP.EUC/cat3/RkCvtZen.0
-man/ja_JP.EUC/cat3/RkDefineDic.0
-man/ja_JP.EUC/cat3/RkDeleteDic.0
-man/ja_JP.EUC/cat3/RkEndBun.0
-man/ja_JP.EUC/cat3/RkEnlarge.0
-man/ja_JP.EUC/cat3/RkFinalize.0
-man/ja_JP.EUC/cat3/RkGetDicList.0
-man/ja_JP.EUC/cat3/RkGetKanji.0
-man/ja_JP.EUC/cat3/RkGetLex.0
-man/ja_JP.EUC/cat3/RkGetStat.0
-man/ja_JP.EUC/cat3/RkGetYomi.0
-man/ja_JP.EUC/cat3/RkGoto.0
-man/ja_JP.EUC/cat3/RkInitialize.0
-man/ja_JP.EUC/cat3/RkIntro.0
-man/ja_JP.EUC/cat3/RkLeft.0
-man/ja_JP.EUC/cat3/RkMapPhonogram.0
-man/ja_JP.EUC/cat3/RkMapRoma.0
-man/ja_JP.EUC/cat3/RkMountD.0
-man/ja_JP.EUC/cat3/RkNext.0
-man/ja_JP.EUC/cat3/RkNfer.0
-man/ja_JP.EUC/cat3/RkOpenRoma.0
-man/ja_JP.EUC/cat3/RkPrev.0
-man/ja_JP.EUC/cat3/RkRemountDic.0
-man/ja_JP.EUC/cat3/RkResize.0
-man/ja_JP.EUC/cat3/RkRgnBun.0
-man/ja_JP.EUC/cat3/RkRight.0
-man/ja_JP.EUC/cat3/RkShorten.0
-man/ja_JP.EUC/cat3/RkStoreYomi.0
-man/ja_JP.EUC/cat3/RkUnmountDic.0
-man/ja_JP.EUC/cat3/RkXfer.0
-man/ja_JP.EUC/cat3/XKanjiControl.0
-man/ja_JP.EUC/cat3/XLookupKanjiString.0
-man/ja_JP.EUC/cat3/cannalib.0
-man/ja_JP.EUC/cat3/jrKanjiControl.0
-man/ja_JP.EUC/cat3/jrKanjiString.0
-man/ja_JP.EUC/cat3/uilib.0
-@dirrm lib/sample/src
-@dirrm lib/sample
-@dirrm lib/dic
-@dirrm include/canna
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@man man/cat3/RkCloseRoma.0
+@man man/cat3/RkCvtEuc.0
+@man man/cat3/RkCvtHan.0
+@man man/cat3/RkCvtHira.0
+@man man/cat3/RkCvtKana.0
+@man man/cat3/RkCvtRoma.0
+@man man/cat3/RkCvtZen.0
+@man man/cat3/RkDefineDic.0
+@man man/cat3/RkDeleteDic.0
+@man man/cat3/RkEndBun.0
+@man man/cat3/RkEnlarge.0
+@man man/cat3/RkFinalize.0
+@man man/cat3/RkGetDicList.0
+@man man/cat3/RkGetKanji.0
+@man man/cat3/RkGetLex.0
+@man man/cat3/RkGetStat.0
+@man man/cat3/RkGetYomi.0
+@man man/cat3/RkGoto.0
+@man man/cat3/RkInitialize.0
+@man man/cat3/RkIntro.0
+@man man/cat3/RkLeft.0
+@man man/cat3/RkMapPhonogram.0
+@man man/cat3/RkMapRoma.0
+@man man/cat3/RkMountD.0
+@man man/cat3/RkNext.0
+@man man/cat3/RkNfer.0
+@man man/cat3/RkOpenRoma.0
+@man man/cat3/RkPrev.0
+@man man/cat3/RkRemountDic.0
+@man man/cat3/RkResize.0
+@man man/cat3/RkRgnBun.0
+@man man/cat3/RkRight.0
+@man man/cat3/RkShorten.0
+@man man/cat3/RkStoreYomi.0
+@man man/cat3/RkUnmountDic.0
+@man man/cat3/RkXfer.0
+@man man/cat3/XKanjiControl.0
+@man man/cat3/XLookupKanjiString.0
+@man man/cat3/cannalib.0
+@man man/cat3/jrKanjiControl.0
+@man man/cat3/jrKanjiString.0
+@man man/cat3/uilib.0
+@man man/ja_JP.EUC/cat3/RkCloseRoma.0
+@man man/ja_JP.EUC/cat3/RkCvtEuc.0
+@man man/ja_JP.EUC/cat3/RkCvtHan.0
+@man man/ja_JP.EUC/cat3/RkCvtHira.0
+@man man/ja_JP.EUC/cat3/RkCvtKana.0
+@man man/ja_JP.EUC/cat3/RkCvtRoma.0
+@man man/ja_JP.EUC/cat3/RkCvtZen.0
+@man man/ja_JP.EUC/cat3/RkDefineDic.0
+@man man/ja_JP.EUC/cat3/RkDeleteDic.0
+@man man/ja_JP.EUC/cat3/RkEndBun.0
+@man man/ja_JP.EUC/cat3/RkEnlarge.0
+@man man/ja_JP.EUC/cat3/RkFinalize.0
+@man man/ja_JP.EUC/cat3/RkGetDicList.0
+@man man/ja_JP.EUC/cat3/RkGetKanji.0
+@man man/ja_JP.EUC/cat3/RkGetLex.0
+@man man/ja_JP.EUC/cat3/RkGetStat.0
+@man man/ja_JP.EUC/cat3/RkGetYomi.0
+@man man/ja_JP.EUC/cat3/RkGoto.0
+@man man/ja_JP.EUC/cat3/RkInitialize.0
+@man man/ja_JP.EUC/cat3/RkIntro.0
+@man man/ja_JP.EUC/cat3/RkLeft.0
+@man man/ja_JP.EUC/cat3/RkMapPhonogram.0
+@man man/ja_JP.EUC/cat3/RkMapRoma.0
+@man man/ja_JP.EUC/cat3/RkMountD.0
+@man man/ja_JP.EUC/cat3/RkNext.0
+@man man/ja_JP.EUC/cat3/RkNfer.0
+@man man/ja_JP.EUC/cat3/RkOpenRoma.0
+@man man/ja_JP.EUC/cat3/RkPrev.0
+@man man/ja_JP.EUC/cat3/RkRemountDic.0
+@man man/ja_JP.EUC/cat3/RkResize.0
+@man man/ja_JP.EUC/cat3/RkRgnBun.0
+@man man/ja_JP.EUC/cat3/RkRight.0
+@man man/ja_JP.EUC/cat3/RkShorten.0
+@man man/ja_JP.EUC/cat3/RkStoreYomi.0
+@man man/ja_JP.EUC/cat3/RkUnmountDic.0
+@man man/ja_JP.EUC/cat3/RkXfer.0
+@man man/ja_JP.EUC/cat3/XKanjiControl.0
+@man man/ja_JP.EUC/cat3/XLookupKanjiString.0
+@man man/ja_JP.EUC/cat3/cannalib.0
+@man man/ja_JP.EUC/cat3/jrKanjiControl.0
+@man man/ja_JP.EUC/cat3/jrKanjiString.0
+@man man/ja_JP.EUC/cat3/uilib.0
+%%SHARED%%
