@@ -1,0 +1,8 @@
+
++---------------
+| To finish the install, you need to enable the FrontPage module
+| using the following command:
+|
+|       $PREFIX/sbin/frontpage-enable
++---------------
+
