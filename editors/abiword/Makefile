@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2003/03/06 00:49:08 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2003/08/16 16:32:58 couderc Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
-VERSION=	1.0.4
+VERSION=	1.0.6
 DISTNAME=	abiword-${VERSION}
 CATEGORIES=	editors
 
@@ -10,6 +10,11 @@ HOMEPAGE=	http://www.abisource.com/
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
+AUTOCONF_VERSION=	2.52
+
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
+		::devel/metaauto \
+		::devel/automake
 LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		gtk.1.2,gdk.1.2::x11/gtk+
@@ -36,7 +41,6 @@ FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
 MAKE_FILE=	GNUmakefile
 
-WRKDIST=	${WRKDIR}/abiword-${VERSION}
 WRKSRC=		${WRKDIST}/abi
 
 FLAVORS=	gnome
@@ -52,6 +56,9 @@ LIB_DEPENDS+=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
 CONFIGURE_ARGS+=	--disable-gnome --with-libxml2
 LIB_DEPENDS+=		xml2::textproc/libxml
 .endif
+
+pre-configure:
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh autogen.sh
 
 .if ${FLAVOR:L:Mgnome}
 post-install:

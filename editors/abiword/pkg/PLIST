@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/02/06 17:59:32 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/08/16 16:32:58 couderc Exp $
 %%gnome%%
 bin/AbiWord
 bin/AbiWord_d
-bin/abiword
+@comment bin/abiword
 bin/ttfadmin.sh
 bin/ttftool
 share/AbiSuite/AbiWord/help/en-US/aboutos.html

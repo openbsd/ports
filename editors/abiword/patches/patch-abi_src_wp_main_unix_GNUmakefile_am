@@ -1,0 +1,11 @@
+$OpenBSD: patch-abi_src_wp_main_unix_GNUmakefile_am,v 1.1 2003/08/16 16:32:58 couderc Exp $
+--- abi/src/wp/main/unix/GNUmakefile.am.orig	2003-08-16 14:53:59.000000000 +0200
++++ abi/src/wp/main/unix/GNUmakefile.am	2003-08-16 15:08:09.000000000 +0200
+@@ -68,4 +68,6 @@ install-exec-local:	install-wrapper
+ 	fi
+ 
+ install-wrapper:	
+-	@$(top_srcdir)/src/pkg/common/unix/scripts/makewrapper.sh AbiWord $(pkgdatadir) $(bindir) $(DESTDIR)
++	@$(top_srcdir)/src/pkg/common/unix/scripts/makewrapper.sh AbiWord \
++		$(LOCALBASE)/share/AbiSuite $(LOCALBASE)/bin \
++		`echo $(PREFIX) | sed -e s#$(LOCALBASE)##`
