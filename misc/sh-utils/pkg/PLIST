@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/03/16 00:43:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/04/15 21:10:59 lebel Exp $
 bin/gbasename
 bin/gchroot
 bin/gdate
@@ -11,7 +11,7 @@ bin/gfalse
 bin/ggroups
 bin/ghostid
 bin/ghostname
-bin/gid
+bin/ggid
 bin/glogname
 bin/gnice
 bin/gnohup
@@ -46,7 +46,7 @@ man/man1/gfalse.1
 man/man1/ggroups.1
 man/man1/ghostid.1
 man/man1/ghostname.1
-man/man1/gid.1
+man/man1/ggid.1
 man/man1/glogname.1
 man/man1/gnice.1
 man/man1/gnohup.1

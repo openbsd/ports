@@ -8,4 +8,5 @@ stty, tee, test, true, tty, uname, users, who, whoami, and yes.
 su is not installed with this package.
 
 All the binaries are prefixed by the letter g to differentiate them
-with the standard applications with the same name.
+with the standard applications with the same name.  `id' is prefixed
+by two g (ggid) in other to avoid a conflict with gid in id-utils.

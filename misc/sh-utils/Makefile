@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/10 13:35:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/15 21:10:59 lebel Exp $
 
 COMMENT=		"GNU command line utilities"
 
@@ -25,4 +25,12 @@ CONFIGURE_ARGS=		--program-prefix="g"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+# since we got a conflict with id-utils regarding the name gid, rename that
+# binary to ggid.
+
+post-install:
+	@[ -x ${PREFIX}/bin/gid ] && mv ${PREFIX}/bin/gid ${PREFIX}/bin/ggid
+	@[ -f ${PREFIX}/man/man1/gid.1 ] && mv ${PREFIX}/man/man1/gid.1 \
+					       ${PREFIX}/man/man1/ggid.1
+	
 .include <bsd.port.mk>
