@@ -1,7 +1,7 @@
-$OpenBSD: patch-readline_Make,v 1.1 2001/03/12 15:59:02 wilfried Exp $
---- readline/Make.orig	Fri Feb 24 22:19:59 1995
-+++ readline/Make	Mon Mar 12 16:55:33 2001
-@@ -34,8 +34,7 @@
+$OpenBSD: patch-readline_Make,v 1.2 2001/05/14 16:42:54 millert Exp $
+--- readline/Make.orig	Fri Feb 24 14:19:59 1995
++++ readline/Make	Mon May 14 10:33:07 2001
+@@ -34,8 +34,7 @@ INCDIR = ..
  READLINE_DEFINES = $(TYPES) -DVI_MODE
  
  DEBUG_FLAGS = -g

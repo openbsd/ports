@@ -1,6 +1,7 @@
---- tcl/tclCmdAH.c.orig	Sun Jan 16 05:55:47 2000
-+++ tcl/tclCmdAH.c	Sun Jan 16 06:01:42 2000
-@@ -38,9 +38,17 @@
+$OpenBSD: patch-tcl_tclCmdAH_c,v 1.1 2001/05/14 16:42:55 millert Exp $
+--- tcl/tclCmdAH.c.orig	Fri Feb 24 14:19:53 1995
++++ tcl/tclCmdAH.c	Mon May 14 10:33:02 2001
+@@ -38,9 +38,17 @@ static char rcsid[] = "$Header: /home/ag
  #include <sys/wait.h>
  #include "tclInt.h"
  
@@ -18,7 +19,7 @@
  
  /*
   *----------------------------------------------------------------------
-@@ -430,7 +438,7 @@
+@@ -430,7 +438,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
      int pid = -1;			/* -1 means child process doesn't
  					 * exist (yet).  Non-zero gives its
  					 * id (0 only in child). */
@@ -27,7 +28,7 @@
      char *cmdName, *execName;
  
      /*
-@@ -501,8 +509,13 @@
+@@ -501,8 +509,13 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
      } else {
  	char tmp[sizeof(TMP_FILE_NAME) + 1];
  	strcpy(tmp, TMP_FILE_NAME);
@@ -41,7 +42,7 @@
  	if (stdIn[0] < 0) {
  	    sprintf(interp->result,
  		    "couldn't create input file for \"%.50s\" command: %.50s",
-@@ -642,7 +655,7 @@
+@@ -642,7 +655,7 @@ Tcl_ExecCmd(dummy, interp, argc, argv)
  	    sprintf(interp->result, "command terminated abnormally");
  	    result = TCL_ERROR;
  	}

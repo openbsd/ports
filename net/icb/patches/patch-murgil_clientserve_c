@@ -1,0 +1,12 @@
+$OpenBSD: patch-murgil_clientserve_c,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- murgil/clientserve.c.orig	Fri Feb 24 14:19:39 1995
++++ murgil/clientserve.c	Mon May 14 10:33:02 2001
+@@ -41,7 +41,7 @@ clientserve()
+ 	/* look at tty fd */
+ 	FD_SET(0,&fdset); /**/
+ 
+-	signal(SIGALRM, gotalarm);
++	signal(SIGALRM, (void *)gotalarm);
+ 	timeisup = 0;
+ 
+ 	for (;;) {

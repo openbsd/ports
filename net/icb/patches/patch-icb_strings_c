@@ -1,0 +1,19 @@
+$OpenBSD: patch-icb_strings_c,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- icb/strings.c.orig	Fri Feb 24 14:20:30 1995
++++ icb/strings.c	Mon May 14 10:33:03 2001
+@@ -333,6 +333,7 @@ char *s;
+ /* cat multiple strings into one */
+ /* call with strscat(dest, src, src, ...) */
+ 
++#if 0
+ char *
+ strscat(va_alist)
+ va_dcl
+@@ -357,6 +358,7 @@ va_dcl
+ 	*dest = '\0';
+ 	return(dest);
+ }
++#endif
+ 
+ char *basename(path)
+ char *path;

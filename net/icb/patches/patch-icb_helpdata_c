@@ -1,0 +1,24 @@
+$OpenBSD: patch-icb_helpdata_c,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/helpdata.c.orig	Fri Feb 24 14:20:23 1995
++++ icb/helpdata.c	Mon May 14 10:33:05 2001
+@@ -573,7 +573,7 @@ char *ht_variables[] = 
+ "   into the logfile, if logging is active.  The value of this variable may",
+ "   be overridden for a single replay command by specifying -log or -nolog.",
+ "",
+-"pagesize        (integer)               default: -1   (see below)",
++"pagesize        (integer)               default: 0   (see below)",
+ "",
+ "    If this is nonzero, paging is in effect, and a more prompt will be",
+ "    displayed every pagesize lines. Hitting a space continues, hitting any",
+@@ -599,6 +599,11 @@ char *ht_variables[] = 
+ "    shell command is finished. Since a large amount of icb output may be",
+ "    waiting for your screen, this gives you a chance to see the output",
+ "    of your command.",
++"",
++"printtime       (boolean)               default: false",
++"",
++"    Print the current time in front of every line sent to the display",
++"    and log file.",
+ "",
+ "restricted      (boolean)               default: false",
+ "",

@@ -1,6 +1,7 @@
---- icb/c_shell.c.orig	Fri Feb 24 16:20:19 1995
-+++ icb/c_shell.c	Sun Jan 16 05:08:31 2000
-@@ -14,7 +14,7 @@
+$OpenBSD: patch-icb_c_shell_c,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/c_shell.c.orig	Fri Feb 24 14:20:19 1995
++++ icb/c_shell.c	Mon May 14 10:33:03 2001
+@@ -14,7 +14,7 @@ TARGDEFS
  	static char *usage = "usage: c_shell [command]";
  	int w, pid;
  	int shellout = 0;
@@ -9,7 +10,7 @@
  	char *shell, *getenv();
  	
  	/* disallow use if restricted mode set */
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ TARGDEFS
  	icbterm();
  
  	/* restore signal processing */

@@ -1,6 +1,7 @@
---- icb/protos.h.orig	Fri Feb 24 16:20:25 1995
-+++ icb/protos.h	Sun Jan 16 01:47:15 2000
-@@ -64,7 +64,7 @@
+$OpenBSD: patch-icb_protos_h,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- icb/protos.h.orig	Fri Feb 24 14:20:25 1995
++++ icb/protos.h	Mon May 14 10:33:03 2001
+@@ -64,7 +64,7 @@ int importantmsg(char *pkt);
  int inserttab(void);
  int ishushed(char *nick);
  int lcaseit(char *s);

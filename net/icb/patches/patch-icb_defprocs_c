@@ -1,0 +1,12 @@
+$OpenBSD: patch-icb_defprocs_c,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/defprocs.c.orig	Fri Feb 24 14:20:20 1995
++++ icb/defprocs.c	Mon May 14 10:33:06 2001
+@@ -30,7 +30,7 @@ char *defprocs[] = 
+ 		}\n\
+ 		eval s_personal $args\n\
+ 	}",
+-	"oset pagesize -1",
++	"oset pagesize 0",
+ 	"c_usage add tcl g \"tcl command\" \"pass command to tcl without quoting\"",
+ 	"c_usage add oset g \"\\[variable\\] \\[value\\]\" \"view or set an icb variable\"",
+ 	"c_usage add ounset g \"\\[variable\\]\" \"unset an icb variable\"",

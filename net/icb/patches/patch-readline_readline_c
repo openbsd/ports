@@ -1,6 +1,7 @@
---- readline/readline.c.orig	Fri Feb 24 16:20:03 1995
-+++ readline/readline.c	Sun Jan 16 01:43:01 2000
-@@ -610,22 +610,22 @@
+$OpenBSD: patch-readline_readline_c,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- readline/readline.c.orig	Fri Feb 24 14:20:03 1995
++++ readline/readline.c	Mon May 14 10:33:03 2001
+@@ -610,22 +610,22 @@ rl_signal_handler (sig)
  
  rl_set_signals ()
  {
@@ -28,7 +29,7 @@
  
    if (old_tstp == (SigHandler *)SIG_IGN)
      {
-@@ -635,26 +635,26 @@
+@@ -635,26 +635,26 @@ rl_set_signals ()
  #endif
  
  #if defined (SIGWINCH)

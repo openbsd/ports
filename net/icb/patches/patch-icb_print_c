@@ -1,5 +1,6 @@
---- icb/print.c.orig	Sun Jan 16 05:27:01 2000
-+++ icb/print.c	Sun Jan 16 05:32:24 2000
+$OpenBSD: patch-icb_print_c,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/print.c.orig	Fri Feb 24 14:20:25 1995
++++ icb/print.c	Mon May 14 10:33:06 2001
 @@ -5,6 +5,7 @@
  
  #include "icb.h"
@@ -8,7 +9,7 @@
  
  extern FILE *logfp;
  
-@@ -17,12 +18,22 @@
+@@ -17,12 +18,22 @@ int flags;
  	char printbuf[1024];
  	char *p = printbuf;
  	char *t = s;
@@ -31,7 +32,7 @@
  	if (flags & PL_SCR) {
  		/* if paging in effect, do paging */
  		if (gv.pagesize && (++linenumber >= gv.pagesize)) {
-@@ -35,6 +46,8 @@
+@@ -35,6 +46,8 @@ int flags;
  			*p++ = *t++;
  		*p++ = '\r';
  		*p++ = '\n';

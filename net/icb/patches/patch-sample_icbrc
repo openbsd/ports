@@ -1,6 +1,7 @@
---- sample.icbrc.orig	Sun Jan 16 05:42:58 2000
-+++ sample.icbrc	Sun Jan 16 05:46:28 2000
-@@ -15,6 +15,7 @@
+$OpenBSD: patch-sample_icbrc,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- sample.icbrc.orig	Fri Feb 24 14:19:29 1995
++++ sample.icbrc	Mon May 14 10:33:06 2001
+@@ -15,6 +15,7 @@ oset tabreply false	# set to "true" to p
  oset autodel false  # set to "true" to have nicks that generate an "error - 
  					# so-and-so not signed on" removed from tab history 
  #echoback on		# uncomment to see your own public messages

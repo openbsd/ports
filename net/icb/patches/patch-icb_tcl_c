@@ -1,6 +1,7 @@
---- icb/tcl.c.orig	Fri Feb 24 16:20:30 1995
-+++ icb/tcl.c	Sun Jan 16 01:59:09 2000
-@@ -145,7 +145,7 @@
+$OpenBSD: patch-icb_tcl_c,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- icb/tcl.c.orig	Fri Feb 24 14:20:30 1995
++++ icb/tcl.c	Mon May 14 10:33:05 2001
+@@ -145,7 +145,7 @@ getrcname()
  
  	if ((homedir = getenv("HOME")) == NULL) {
  		printf("icb: warning - $HOME not set.\r\n");
@@ -9,7 +10,7 @@
  	}
  
  	for (p=names; p && *p; ++p)
-@@ -153,12 +153,9 @@
+@@ -153,12 +153,9 @@ getrcname()
  		sprintf(rcpath, "%s/%s", homedir, *p);
  		rcfile = rcpath;
  		if (access(rcfile, R_OK)==0)

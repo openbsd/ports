@@ -1,6 +1,7 @@
---- icb/icb.h.orig	Sun Jan 16 05:21:47 2000
-+++ icb/icb.h	Sun Jan 16 05:22:47 2000
-@@ -38,6 +38,7 @@
+$OpenBSD: patch-icb_icb_h,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/icb.h.orig	Fri Feb 24 14:20:23 1995
++++ icb/icb.h	Mon May 14 10:33:06 2001
+@@ -38,6 +38,7 @@ typedef struct {
  	int beeps;		/* whether beeps are audible */
  	char *editmode;		/* input editing mode */
  	int tabreply;		/* should replies go into the tab history? */

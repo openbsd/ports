@@ -1,5 +1,6 @@
---- icb/c_log.c.orig	Fri Feb 24 16:20:18 1995
-+++ icb/c_log.c	Sat Aug 26 22:41:27 2000
+$OpenBSD: patch-icb_c_log_c,v 1.1 2001/05/14 16:42:53 millert Exp $
+--- icb/c_log.c.orig	Fri Feb 24 14:20:18 1995
++++ icb/c_log.c	Mon May 14 10:33:04 2001
 @@ -6,6 +6,7 @@
  #include "icb.h"
  #include "externs.h"
@@ -8,7 +9,7 @@
  
  FILE *logfp = NULL;
  
-@@ -45,8 +46,10 @@
+@@ -45,8 +46,10 @@ char *path;
  	time_t time();
  	struct tm *t, *localtime();
  	time_t clock;
@@ -19,7 +20,7 @@
  
  	/* determine pathname to use */
  	if (path == NULL || *path == '\0')
-@@ -97,8 +100,8 @@
+@@ -97,8 +100,8 @@ char *path;
  		aptr++;
  	
  	/* timestamp it */
@@ -30,7 +31,7 @@
  	putl(mbuf, PL_SCR | PL_LOG);
  
  	return(0);
-@@ -126,8 +129,8 @@
+@@ -126,8 +129,8 @@ closesessionlog()
  		aptr++;
  	
  	/* timestamp it */

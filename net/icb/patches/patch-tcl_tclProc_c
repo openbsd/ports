@@ -1,6 +1,7 @@
---- tcl/tclProc.c.orig	Fri Feb 24 22:19:56 1995
-+++ tcl/tclProc.c	Sun Feb 11 12:27:12 2001
-@@ -124,8 +124,8 @@
+$OpenBSD: patch-tcl_tclProc_c,v 1.1 2001/05/14 16:42:55 millert Exp $
+--- tcl/tclProc.c.orig	Fri Feb 24 14:19:56 1995
++++ tcl/tclProc.c	Mon May 14 10:33:04 2001
+@@ -124,8 +124,8 @@ Tcl_ProcCmd(dummy, interp, argc, argv)
  	    argPtr = (Var *) malloc(VAR_SIZE(nameLength, valueLength));
  	    procPtr->argPtr = argPtr;
  	} else {
@@ -11,7 +12,7 @@
  	}
  	strcpy(argPtr->name, fieldValues[0]);
  	if (fieldCount == 2) {
-@@ -136,6 +136,7 @@
+@@ -136,6 +136,7 @@ Tcl_ProcCmd(dummy, interp, argc, argv)
  	}
  	argPtr->valueLength = valueLength;
  	argPtr->flags = 0;
@@ -19,7 +20,7 @@
  	argPtr->nextPtr = NULL;
  	free((char *) fieldValues);
      }
-@@ -793,11 +794,13 @@
+@@ -793,11 +794,13 @@ InterpProc(procPtr, interp, argc, argv)
       */
  
      procDone:
@@ -35,7 +36,7 @@
      }
      iPtr->framePtr = frame.callerPtr;
      iPtr->varFramePtr = frame.callerVarPtr;
-@@ -826,13 +829,14 @@
+@@ -826,13 +829,14 @@ void
  ProcDeleteProc(procPtr)
      register Proc *procPtr;		/* Procedure to be deleted. */
  {

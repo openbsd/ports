@@ -1,0 +1,12 @@
+$OpenBSD: patch-murgil_serverserve_c,v 1.1 2001/05/14 16:42:54 millert Exp $
+--- murgil/serverserve.c.orig	Fri Feb 24 14:19:44 1995
++++ murgil/serverserve.c	Mon May 14 10:33:02 2001
+@@ -33,7 +33,7 @@ serverserve()
+ 	if (port_fd > highestfd)
+ 		highestfd = port_fd;
+ 
+-	signal(SIGALRM, gotalarm);
++	signal(SIGALRM, (void *)gotalarm);
+ 	timeisup = 0;
+ 
+ 	for (;;) {
