@@ -1,4 +1,2 @@
-+------------
-| The dillo plugin has been installed into
-| ${PREFIX}/lib/sylpheed-claws/plugins/
-+------------
+The dillo plugin has been installed into
+${PREFIX}/lib/sylpheed-claws/plugins/

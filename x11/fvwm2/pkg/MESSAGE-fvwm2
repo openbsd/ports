@@ -1,12 +1,10 @@
-+------------
-| In order to use fvwm2 as your window manager, you must change your
-| .xinitrc or .xsession appropriately and add a line similar to the
-| following:
-|
-| 	exec ${PREFIX}/bin/fvwm2
-|
-| System wide configuration has been put in
-| ${PREFIX}/share/fvwm/system.fvwm2rc.  To use your own
-| configuration, copy ${PREFIX}/share/fvwm/system.fvwm2rc to
-| ~/.fvwm2rc and edit it as appropriate.
-+------------
+In order to use fvwm2 as your window manager, you must change your
+.xinitrc or .xsession appropriately and add a line similar to the
+following:
+
+	exec ${PREFIX}/bin/fvwm2
+
+System wide configuration has been put in
+${PREFIX}/share/fvwm/system.fvwm2rc.  To use your own
+configuration, copy ${PREFIX}/share/fvwm/system.fvwm2rc to
+~/.fvwm2rc and edit it as appropriate.

@@ -1,5 +1,3 @@
-+---------------
-| Please see ${PREFIX}/rtty for setup instructions.
-| You will probably want to run ${PREFIX}/rtty/bin/Startup
-| from /etc/rc.local.
-+---------------
+Please see ${PREFIX}/rtty for setup instructions.
+You will probably want to run ${PREFIX}/rtty/bin/Startup
+from /etc/rc.local.

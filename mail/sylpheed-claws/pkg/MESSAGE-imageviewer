@@ -1,4 +1,2 @@
-+------------
-| The image viewer plugin has been installed into
-| ${PREFIX}/lib/sylpheed-claws/plugins/
-+------------
+The image viewer plugin has been installed into
+${PREFIX}/lib/sylpheed-claws/plugins/

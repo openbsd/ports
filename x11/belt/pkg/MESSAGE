@@ -1,8 +1,6 @@
-+---------------
-| A sample configuration file has been installed as
-|
-| ${PREFIX}/share/examples/belt/menu.conf.EXAMPLE
-|
-| You can copy it to ~/.beltconf/menu.conf and change it to suit your   
-| needs.                                                                
-+---------------
+A sample configuration file has been installed as
+
+${PREFIX}/share/examples/belt/menu.conf.EXAMPLE
+
+You can copy it to ~/.beltconf/menu.conf and change it to suit your   
+needs.                                                                

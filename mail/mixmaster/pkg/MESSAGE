@@ -1,14 +1,10 @@
+For using anonymous remailers, up-to-date public key rings are a necessity.
+You should fetch these at least daily and provide them to your users.
+${PREFIX}/share/examples/mixmaster/mixmaster-update.pl is a sample
+script facilitating this task.
 
-+-----------
-| For using anonymous remailers, up-to-date public key rings are a necessity.
-| You should fetch these at least daily and provide them to your users.
-| ${PREFIX}/share/examples/mixmaster/mixmaster-update.pl is a sample
-| script facilitating this task.
-|
-| All users have their own mixmaster configuration files and pools in
-| ~/.Mix, but global defaults can be specified in
-| ${SYSCONFDIR}/mixmaster/client.cfg. You might want to specify PUBRING and
-| TYPE2REL in this file to point to some sitewide files fetched, e.g. by the
-| above mentioned script.
-+-----------
-
+All users have their own mixmaster configuration files and pools in
+~/.Mix, but global defaults can be specified in
+${SYSCONFDIR}/mixmaster/client.cfg. You might want to specify PUBRING and
+TYPE2REL in this file to point to some sitewide files fetched, e.g. by the
+above mentioned script.

@@ -1,16 +1,14 @@
-+---------------
-| milter-regex has been installed as ${PREFIX}/libexec/milter-regex.
-| See milter-regex(8) for instructions on how to register the plugin.
-|
-| To start the plugin automatically on startup, one can use:
-|
-| /etc/rc.conf.local
-| milter_regex=YES
-|
-| /etc/rc.local
-| if [ X"${milter_regex}" == X"YES" -a \
-|      -x ${PREFIX}/libexec/milter-regex ]; then
-|         echo -n ' milter-regex'
-|         ${PREFIX}/libexec/milter-regex
-| fi
-+---------------
+milter-regex has been installed as ${PREFIX}/libexec/milter-regex.
+See milter-regex(8) for instructions on how to register the plugin.
+
+To start the plugin automatically on startup, one can use:
+
+/etc/rc.conf.local
+milter_regex=YES
+
+/etc/rc.local
+if [ X"${milter_regex}" == X"YES" -a \
+     -x ${PREFIX}/libexec/milter-regex ]; then
+        echo -n ' milter-regex'
+        ${PREFIX}/libexec/milter-regex
+fi

@@ -1,4 +1,2 @@
-+----------
-| This package requires the sysctl kern.emul.linux being set to 1 and
-| just did so. To make this change permanent, edit /etc/sysctl.conf.
-+----------
+This package requires the sysctl kern.emul.linux being set to 1 and
+just did so. To make this change permanent, edit /etc/sysctl.conf.

@@ -1,4 +1,2 @@
-+---------------
-| If you intend to use the Tk interface, you have to install the Python
-| tkinter subpackage (lang/python/${MODPY_VERSION},-tkinter).
-+---------------
+If you intend to use the Tk interface, you have to install the Python
+tkinter subpackage (lang/python/${MODPY_VERSION},-tkinter).

@@ -1,16 +1,14 @@
-+--------------- nut
-| Using the Nut package in an OpenBSD environment:
-|
-| Once you have the config files under /etc/nut set up properly, the
-| following block can be added to your /etc/rc.local file to start nut.
-|
-| # Start Nut
-| if [ -x ${PREFIX}/bin/upsdrvctl ]; then
-|     echo -n ' nut'
-|     ${PREFIX}/bin/upsdrvctl start > /dev/null 2>&1
-|     ${PREFIX}/sbin/upsd > /dev/null 2>&1
-|     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
-| fi
-|
-| You may also be interested in the "-i" flag to upsd, see upsd(8).
-+--------------- nut
+Using the Nut package in an OpenBSD environment:
+
+Once you have the config files under /etc/nut set up properly, the
+following block can be added to your /etc/rc.local file to start nut.
+
+# Start Nut
+if [ -x ${PREFIX}/bin/upsdrvctl ]; then
+    echo -n ' nut'
+    ${PREFIX}/bin/upsdrvctl start > /dev/null 2>&1
+    ${PREFIX}/sbin/upsd > /dev/null 2>&1
+    ${PREFIX}/sbin/upsmon > /dev/null 2>&1
+fi
+
+You may also be interested in the "-i" flag to upsd, see upsd(8).

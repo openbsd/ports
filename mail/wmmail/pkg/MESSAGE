@@ -1,6 +1,4 @@
-------------------------------------------------------------------------------
-===> Installing WMMail defaults in ${PREFIX}/GNUstep/Apps/WMMail.app/Defaults
-===> Modify to your config and copy to ~/GNUstep/Defaults/WMMail
+Installing WMMail defaults in ${PREFIX}/GNUstep/Apps/WMMail.app/Defaults
+Modify to your config and copy to ~/GNUstep/Defaults/WMMail
 
-===> Installing README in ${PREFIX}/GNUstep/Apps/WMMail.app
-------------------------------------------------------------------------------
+Installing README in ${PREFIX}/GNUstep/Apps/WMMail.app

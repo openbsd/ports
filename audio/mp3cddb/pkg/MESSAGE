@@ -1,4 +1,2 @@
-+-----
-| To use mp3cddb please consult readme.txt installed in
-| ${PREFIX}/share/doc/mp3cddb
-+-----
+To use mp3cddb please consult readme.txt installed in
+${PREFIX}/share/doc/mp3cddb

@@ -1,8 +1,4 @@
-+------------------------------------
-|
-| The README has been installed in
-| ${PREFIX}/share/doc/tempest/README
-| Please read it prior operating this
-| software.
-|
-+------------------------------------
+The README has been installed in
+${PREFIX}/share/doc/tempest/README
+Please read it prior operating this
+software.

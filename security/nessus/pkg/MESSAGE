@@ -1,7 +1,3 @@
-
-+---------------
-| If you have not already installed nmap 3.00 or a newer version
-| in ${PREFIX}/bin, you may wish to do so in order to enable some
-| checks which will otherwise return false negatives.
-+---------------
-
+If you have not already installed nmap 3.00 or a newer version
+in ${PREFIX}/bin, you may wish to do so in order to enable some
+checks which will otherwise return false negatives.

@@ -1,23 +1,18 @@
-+---------------
-|
-| You may want to put the following into your /etc/rc.local:
-|
-| # start wwwoffle
-| if [ -x ${PREFIX}/sbin/wwwoffled ]; then
-|         echo -n ' wwwoffled'
-|         ${PREFIX}/sbin/wwwoffled -c /var/spool/wwwoffle/wwwoffle.conf \
-|         -p > /var/run/wwwoffled.pid
-| fi
-|
-| in /etc/ppp/ppp.linkup:
-|
-|    !bg ${PREFIX}/bin/wwwoffle -online
-|
-| in /etc/ppp/ppp.linkdown:
-|
-|    !bg ${PREFIX}/bin/wwwoffle -offline
-|
-|
-| Read ${PREFIX}/share/doc/wwwoffle/* for further information.
-|
-+---------------
+You may want to put the following into your /etc/rc.local:
+
+# start wwwoffle
+if [ -x ${PREFIX}/sbin/wwwoffled ]; then
+        echo -n ' wwwoffled'
+        ${PREFIX}/sbin/wwwoffled -c /var/spool/wwwoffle/wwwoffle.conf \
+        -p > /var/run/wwwoffled.pid
+fi
+
+in /etc/ppp/ppp.linkup:
+
+   !bg ${PREFIX}/bin/wwwoffle -online
+
+in /etc/ppp/ppp.linkdown:
+
+   !bg ${PREFIX}/bin/wwwoffle -offline
+
+Read ${PREFIX}/share/doc/wwwoffle/* for further information.

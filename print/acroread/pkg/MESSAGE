@@ -1,9 +1,5 @@
+Be sure to read the license agreement in
+${PREFIX}/Acrobat5/Reader/license.txt
 
-+------------------------------------
-| Be sure to read the license agreement in
-| ${PREFIX}/Acrobat5/Reader/license.txt
-|
-| This package requires the sysctl kern.emul.linux being set to 1 and
-| just did so. To make this change permanent, edit /etc/sysctl.conf.
-+------------------------------------
-
+This package requires the sysctl kern.emul.linux being set to 1 and
+just did so. To make this change permanent, edit /etc/sysctl.conf.

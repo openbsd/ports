@@ -1,10 +1,8 @@
-+---------------
-| An example configuration for symux has been installed in
-| ${PREFIX}/share/examples/symon.
-|
-| RRD files can be obtained by running
-| ${PREFIX}/share/symon/c_smrrds.sh
-|
-| Read the LEGACY section of symux(8) for information about
-| migrating RRDs from a previous symux version.
-+---------------
+An example configuration for symux has been installed in
+${PREFIX}/share/examples/symon.
+
+RRD files can be obtained by running
+${PREFIX}/share/symon/c_smrrds.sh
+
+Read the LEGACY section of symux(8) for information about
+migrating RRDs from a previous symux version.

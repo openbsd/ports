@@ -1,11 +1,7 @@
+CFS is started automatically in /etc/rc.local. In order for it to work
+properly, you have to do these steps as root:
 
-+----------
-| CFS is started automatically in /etc/rc.local. In order for it to work
-| properly, you have to do these steps as root:
-|
-|    0) add this line to /etc/exports
-|       /null localhost
-|    1) set "nfs_server=YES" in /etc/rc.conf
-|    2) reboot or start mountd and cfsd by hand and mount /crypt
-+----------
-
+   0) add this line to /etc/exports
+      /null localhost
+   1) set "nfs_server=YES" in /etc/rc.conf
+   2) reboot or start mountd and cfsd by hand and mount /crypt
