@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.2 2004/01/18 00:12:29 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.3 2004/01/18 00:15:18 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -16,22 +16,6 @@
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
-
-/*
- * This code was written to link in with the gaim ssl plugin system.
- * It was written using the ssl-nss.c and ssl-gnutls.c files as documentation
- * as to how to use the gaim ssl plugin mechanism.  That code was written by
- * ChipX86.
- *
- * This code is not supported by the gaim team.  If you have SSL-related
- * problems with any service, disable this plugin and use one of the ssl
- * plugins that ships with gaim before contacting them for support.
- * 
- * The OpenSSL webpage at http://www.openssl.org/support/faq.html#LEGAL2
- * says that you may use this code on systems that normally include OpenSSL.
- * It is my judgement that FreeBSD, NetBSD, and OpenBSD fit into this
- * category, but I am not a lawyer.
  */
 
 #include "internal.h"
