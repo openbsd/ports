@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/06/04 06:04:55 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/06/23 04:37:25 shell Exp $
 bin/html2wml
-man/man1/html2wml.1
+share/doc/html2wml/ARTISTIC
+share/doc/html2wml/COPYING
+share/doc/html2wml/ChangeLog
+share/doc/html2wml/INSTALL
 share/doc/html2wml/NEWS
 share/doc/html2wml/NOTES
 share/doc/html2wml/README
 share/doc/html2wml/TODO
+share/doc/html2wml/readme.html
+share/doc/html2wml/readme.pdf
+share/doc/html2wml/readme.pod
 share/doc/html2wml/t/form.html
 share/doc/html2wml/t/samples/inc_para.wml
 share/doc/html2wml/t/samples/inc_prev.wml
@@ -12,13 +18,18 @@ share/doc/html2wml/t/samples/mix1.html
 share/doc/html2wml/t/samples/mix2.html
 share/doc/html2wml/t/samples/struct.html
 share/doc/html2wml/t/samples/t-a.html
+share/doc/html2wml/t/samples/t-anchor.html
 share/doc/html2wml/t/samples/t-br.html
+share/doc/html2wml/t/samples/t-double-tags.html
+share/doc/html2wml/t/samples/t-extcharset.html
+share/doc/html2wml/t/samples/t-frames.html
 share/doc/html2wml/t/samples/t-img.html
 share/doc/html2wml/t/samples/t-include.html
 share/doc/html2wml/t/samples/t-nest.html
-share/doc/html2wml/t/samples/t-non-ISO-chars.html
+share/doc/html2wml/t/samples/t-no-tag.html
+share/doc/html2wml/t/samples/t-special-chars.html
 share/doc/html2wml/t/samples/t-urls.html
-share/doc/html2wml/t/samples/xtreme.html
+share/man/man1/html2wml.1
 @dirrm share/doc/html2wml/t/samples
 @dirrm share/doc/html2wml/t
 @dirrm share/doc/html2wml
