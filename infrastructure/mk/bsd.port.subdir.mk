@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.64 2004/04/07 13:06:33 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.65 2004/09/26 09:59:14 sturm Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -93,7 +93,7 @@ _subdir_fragment= \
 		fi; \
 	done; set -e
 
-.for __target in all fetch package fake extract configure \
+.for __target in all fetch package fake extract patch configure \
 		 build describe distclean deinstall install \
 		 reinstall checksum show fetch-makefile \
 		 link-categories unlink-categories regress lib-depends-check \
