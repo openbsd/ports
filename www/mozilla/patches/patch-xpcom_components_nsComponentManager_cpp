@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.1 2003/05/17 16:58:35 wilfried Exp $
---- xpcom/components/nsComponentManager.cpp.orig	Sat May 10 21:22:40 2003
-+++ xpcom/components/nsComponentManager.cpp	Wed May 14 12:35:49 2003
-@@ -2403,9 +2403,12 @@
+$OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.2 2003/05/22 12:04:49 wilfried Exp $
+--- xpcom/components/nsComponentManager.cpp.orig	Wed May  7 20:39:47 2003
++++ xpcom/components/nsComponentManager.cpp	Thu May 22 13:17:40 2003
+@@ -2403,9 +2403,12 @@ nsComponentManagerImpl::GetServiceByCont
      }
  
  #ifdef XPCOM_CHECK_PENDING_CIDS  
@@ -17,7 +17,7 @@ $OpenBSD: patch-xpcom_components_nsComponentManager_cpp,v 1.1 2003/05/17 16:58:3
  #endif
      nsCOMPtr<nsISupports> service;
      // We need to not be holding the service manager's monitor while calling 
-@@ -2418,7 +2421,8 @@
+@@ -2418,7 +2421,8 @@ nsComponentManagerImpl::GetServiceByCont
      mon.Enter();
  
  #ifdef XPCOM_CHECK_PENDING_CIDS 
