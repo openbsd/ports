@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/12/22 14:35:25 shell Exp $
+# $OpenBSD: Makefile,v 1.33 2002/06/09 05:37:33 jsyn Exp $
 #
 
      SUBDIR += R
@@ -64,5 +64,5 @@
 #    SUBDIR += xplot
      SUBDIR += xspread
      SUBDIR += yorick
-#
+
 .include <bsd.port.subdir.mk>
