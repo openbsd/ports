@@ -1,5 +1,5 @@
---- ascendd/radipad.c.orig	Thu Jan 29 22:57:40 1998
-+++ ascendd/radipad.c	Thu Jan 29 23:00:19 1998
+--- radipad.c.orig	Thu Jan 29 22:57:40 1998
++++ radipad.c	Thu Jan 29 23:00:19 1998
 @@ -164,10 +164,10 @@
  void inform (); /* varargs */
  void debug (); /* varargs */
