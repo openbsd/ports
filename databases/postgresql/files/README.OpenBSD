@@ -1,10 +1,10 @@
-Using PostgreSQL package in OpenBSD environment:
-------------------------------------------------
+Using PostgreSQL in an OpenBSD environment:
+-------------------------------------------
 
 If you are installing PostgreSQL for the first time, the following
-steps required:
+steps are required:
 
-1. Create PostgreSQL user and group:
+1. Create the PostgreSQL user and group:
 
 	# useradd -c "PostgreSQL Admin User" -g =uid -m -d /var/postgresql \
 		-s /bin/sh postgresql
@@ -88,5 +88,3 @@ added for the postgresql user in the /etc/login.conf file:
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
-
-

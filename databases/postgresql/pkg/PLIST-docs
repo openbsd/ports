@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2001/04/21 18:25:57 peter Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2001/04/23 21:58:45 espie Exp $
 share/doc/postgresql/html/admin.html
 share/doc/postgresql/html/advanced.html
 share/doc/postgresql/html/altern-locations.html
@@ -488,5 +488,4 @@ share/doc/postgresql/html/xoper.html
 share/doc/postgresql/html/xplang.html
 share/doc/postgresql/html/xtypes.html
 share/doc/postgresql/html/y2k.html
-share/doc/postgresql/internals.ps
 @dirrm share/doc/postgresql/html

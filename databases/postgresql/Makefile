@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/04/21 18:25:42 peter Exp $
+# $OpenBSD: Makefile,v 1.48 2001/04/23 21:58:44 espie Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -6,6 +6,8 @@ COMMENT-docs=	"PostgreSQL RDBMS documentaion"
 
 VERSION=	7.1
 DISTNAME=	postgresql-${VERSION}
+PKGNAME-clients=postgresql-clients-${VERSION}
+PKGNAME-docs=	postgresql-docs-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.405
 
@@ -37,26 +39,19 @@ MASTER_SITES=	\
 		ftp://ftp.fr.postgresql.org/pub/v${VERSION}/ \
 		ftp://postgresql.matrix.fi/pub/v${VERSION}/
 
-
 FLAVORS=	tcl odbc no_locale no_ssl # perl
 FLAVOR?=
 
 MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
 
-.if ${SUBPACKAGE}	== "-clients"
-PKGNAME:=	postgresql-clients-${VERSION}
-.elif ${SUBPACKAGE}	== "-docs"
-PKGNAME:=	postgresql-docs-${VERSION}
-.endif
-
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}" LIBS=-lcurses
+CONFIGURE_ENV=	LIBS=-lcurses
 CONFIGURE_ARGS=	--enable-syslog \
 		--disable-rpath \
 		--with-CXX \
-		--datadir="${PREFIX}/share/examples/postgresql" \
+		--datadir="${PREFIX}/share/postgresql" \
 		--docdir="${PREFIX}/share/doc/postgresql"
 
 .if ${FLAVOR:L:Mtcl}
@@ -67,13 +62,11 @@ CONFIGURE_ENV+=	WISH="${LOCALBASE}/bin/wish8.3"
 CONFIGURE_ARGS+= --with-tcl \
 	--with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
 	--with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
-MAKE_ENV=	USE_TCL=true TCL_INCDIR="${TCL_INCDIR}" \
-		TK_INCDIR="${TK_INCDIR}"
 .endif
 
 .if ${FLAVOR:L:Modbc}
 LIB_DEPENDS+=	iodbc::databases/iodbc
-CONFIGURE_ARGS+=--enable-odbc --with-odbcinst=/etc
+CONFIGURE_ARGS+=--enable-odbc --with-odbcinst="${SYSCONFDIR}"
 .endif
 
 # This does not work yet. The Pg module Makefile do not follow the fake
@@ -84,22 +77,23 @@ CONFIGURE_ARGS+=--enable-odbc --with-odbcinst=/etc
 CONFIGURE_ARGS+= --with-perl
 .endif
 
-.if !${FLAVOR:L:Mno_ssl}
-CONFIGURE_ARGS+= --with-openssl=/etc
-.else
+.if ${FLAVOR:L:Mno_ssl}
 CONFIGURE_ARGS+= --without-openssl
+.else
+CONFIGURE_ARGS+= --with-openssl="/usr"
 .endif
 
 ## making
 MAKE_FILE=	GNUmakefile
-FAKE_FLAGS=	POSTGRESDIR="${WRKINST}${PREFIX}"
 
 DOCS=		${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 		${WRKSRC}/INSTALL ${WRKSRC}/README \
 		${WRKSRC}/register.txt \
 		${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
-.if !${FLAVOR:L:Mno_locale}
+.if ${FLAVOR:L:Mno_locale}
+CONFIGURE_ARGS+= --disable-locale --disable-recode
+.else
 CONFIGURE_ARGS+= --enable-locale --enable-recode
 DOCS+=		${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp
 .endif
@@ -118,13 +112,9 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
-	@rm -f ${WRKBUILD}/README.OpenBSD
 	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g ${FILESDIR}/README.OpenBSD > \
 		${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/postgresql
-	@cd ${WRKSRC}/doc && \
-		${MAKE_PROGRAM} PGDOCS="${PREFIX}/share/doc/postgresql" all
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ps* ${PREFIX}/share/doc/postgresql
 
 .include <bsd.port.mk>
 
