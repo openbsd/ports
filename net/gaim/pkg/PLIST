@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/08/27 15:40:44 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/09/15 14:51:51 jcs Exp $
 bin/gaim
 man/man1/gaim.1
 share/locale/bg/LC_MESSAGES/gaim.mo
