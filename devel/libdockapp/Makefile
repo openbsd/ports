@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/04 00:52:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/05 11:58:55 naddy Exp $
 
 DISTNAME=	libdockapp-0.4.0
 CATEGORIES=	devel
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+HOMEPAGE=	http://shadowmere.student.utwente.nl/
 
 MAINTAINER=	Peter Stromberg <home@wilfried.net>
 
@@ -13,8 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 
 SEPARATE_BUILD=	concurrent
 
