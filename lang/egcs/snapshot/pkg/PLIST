@@ -12,10 +12,10 @@ bin/@GCCARCH@-gcc
 @comment lib/gcc-lib/@GCCARCH@/@VERSION@/SYSCALLS.c.X
 lib/gcc-lib/@GCCARCH@/@VERSION@/cc1
 lib/gcc-lib/@GCCARCH@/@VERSION@/collect2
-lib/gcc-lib/@GCCARCH@/@VERSION@/cpp
+lib/gcc-lib/@GCCARCH@/@VERSION@/cpp0
 lib/gcc-lib/@GCCARCH@/@VERSION@/libgcc.a
 lib/gcc-lib/@GCCARCH@/@VERSION@/specs
-lib/gcc-lib/@GCCARCH@/@VERSION@/tradcpp
+lib/gcc-lib/@GCCARCH@/@VERSION@/tradcpp0
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/syslimits.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/limits.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/float.h

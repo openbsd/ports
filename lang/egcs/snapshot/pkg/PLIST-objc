@@ -3,6 +3,7 @@
 @pkgdep @COREPKG@
 lib/gcc-lib/@GCCARCH@/@VERSION@/cc1obj
 lib/gcc-lib/@GCCARCH@/@VERSION@/libobjc.a
+lib/gcc-lib/@GCCARCH@/@VERSION@/libobjc.la
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/objc/NXConstStr.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/objc/Object.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/objc/Protocol.h

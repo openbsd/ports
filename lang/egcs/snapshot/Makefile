@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2000/07/26 14:01:46 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2000/08/01 14:44:43 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -86,7 +86,7 @@ BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
 BUILD_DEPENDS+=bison::devel/bison
 .endif
 
-LATEST_DATE=2000-07-24
+LATEST_DATE=2000-07-31
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -220,34 +220,33 @@ CONFIGURE_STYLE=	gnu dest
 
 LANGS=c
 .if defined(MAKE_GXX)
-LANGS+=c++
+LANGS:=${LANGS},c++
 .endif
 .if defined(MAKE_FORTRAN)
-LANGS+=f77
+LANGS:=${LANGS},f77
 .endif
 .if defined(MAKE_CHILL)
-LANGS+=CHILL
+LANGS.=${LANGS},CHILL
 .endif
 .if defined(MAKE_OBJC)
-LANGS+=objc
+LANGS:=${LANGS},objc
 .endif
 .if defined(MAKE_JAVA)
-LANGS+=java
+LANGS:=${LANGS},java
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
 CFLAGS=-O2 -g
-CONFIGURE_ENV=LANGUAGES='${LANGS}'  
-
 
 
 CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
---disable-nls
+--disable-nls 
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
 CONFIGURE_ARGS+=--enable-cpp
+CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
 
 # if you wish to try your luck
@@ -280,7 +279,7 @@ SEPARATE_BUILD=concurrent
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
-ALL_TARGET=bootstrap 
+ALL_TARGET=bootstrap
 #ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
 
