@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.60 2003/03/27 07:51:42 pvalchev Exp $
+# $OpenBSD: network.conf.template,v 1.61 2003/04/14 13:15:28 avsm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -270,4 +270,4 @@ MASTER_SITE_HORDE+=		\
 	ftp://ftp.it.horde.org/pub/mirror/horde.org/pub/ \
 	ftp://ftp.pt.horde.org/pub/horde-ftp/pub/ \
 	ftp://ftp.br.horde.org/pub/mirrors/ftp.horde.org/pub/ \
-	ftp://ftp.my.horde.orgi/ftp.horde.org/pub/
+	ftp://ftp.my.horde.org/ftp.horde.org/pub/
