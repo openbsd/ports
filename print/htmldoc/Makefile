@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/15 17:24:34 espie Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
 DISTNAME=		htmldoc-1.8.11
 CATEGORIES=     	print www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 
 HOMEPAGE=		http://www.easysw.com/htmldoc
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -23,9 +23,9 @@ EXTRACT_SUFX=		.zip
 MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/1.8.11/ \ 
       			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/htmldoc/1.8.11/ 
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/fluid::x11/fltk
 LIB_DEPENDS=		png.2::graphics/png \
-			jpeg.62::graphics/jpeg
+			jpeg.62::graphics/jpeg \
+			fltk::x11/fltk
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
