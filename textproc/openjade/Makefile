@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/04/18 09:21:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/04/20 22:36:17 brad Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://openjade.sourceforge.net/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-# BSD-like
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,6 +29,14 @@ SGMLFILES= 	fot.dtd catalog dsssl.dtd style-sheet.dtd builtins.dsl \
 	
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
+
+.include <bsd.own.mk>
+
+USE_GCC3?=	No
+
+.if ${USE_GCC3:L} == "no"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/sp
