@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/26 16:14:47 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/08/18 19:01:12 jakob Exp $
 @pkgcfl cyrus-sasl-*
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -105,6 +105,6 @@ share/doc/sasl2/sysadmin.html
 share/doc/sasl2/testing.txt
 share/doc/sasl2/upgrading.html
 %%SHARED%%
-@dirrm share/doc/sasl
+@dirrm share/doc/sasl2
 @dirrm lib/sasl2
 @dirrm include/sasl
