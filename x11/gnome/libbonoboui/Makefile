@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/30 13:40:47 marcm Exp $
 
 COMMENT=		"user interface components for bonobo"
 
-DISTNAME=		libbonoboui-2.4.1
+DISTNAME=		libbonoboui-2.4.2
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -25,9 +25,6 @@ LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			popt.0.3::devel/popt
 
-# Note: needs an updated popt for POPT_TABLEEND
-
-SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
