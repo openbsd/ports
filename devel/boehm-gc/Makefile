@@ -9,8 +9,7 @@
 DISTNAME=	gc4.12
 PKGNAME=	boehm-gc-4.12
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.parc.xerox.com/pub/gc/ \
-		http://reality.sgi.com/employees/boehm_mti/gc_source/
+MASTER_SITES=	http://reality.sgi.com/employees/boehm_mti/gc_source/
 
 MAINTAINER=	niklas@openbsd.org
 
