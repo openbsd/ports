@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/28 22:00:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2003/01/14 16:37:58 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.99
+VERSION=	1.5.3
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
+MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/devel/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
+		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/devel/
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 
 HOMEPAGE=	http://www.mutt.org/

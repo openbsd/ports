@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/01/25 17:01:12 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/01/14 16:37:58 lebel Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
 bin/muttbug
 bin/pgpewrap
 bin/pgpring
+bin/smime_keys
 man/man1/flea.1
 man/man1/mutt.1
 man/man1/mutt_dotlock.1
@@ -13,6 +14,7 @@ man/man5/mbox.5
 man/man5/muttrc.5
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
+share/doc/mutt/ChangeLog.old
 share/doc/mutt/GPL
 share/doc/mutt/INSTALL
 share/doc/mutt/NEWS
@@ -33,10 +35,12 @@ share/doc/mutt/html/manual-7.html
 share/doc/mutt/html/manual.html
 share/doc/mutt/manual.txt
 share/doc/mutt/patch-notes.txt
+share/doc/mutt/smime-notes.txt
 share/examples/mutt/Mush.rc
 share/examples/mutt/Muttrc.sample
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
+share/examples/mutt/ca-bundle.crt
 share/examples/mutt/gpg.rc
 share/examples/mutt/iconv/iconv.aix-3.2.5.rc
 share/examples/mutt/iconv/iconv.aix-4.1.5.rc
@@ -63,6 +67,8 @@ share/examples/mutt/pgp6.rc
 share/examples/mutt/sample.mailcap
 share/examples/mutt/sample.muttrc
 share/examples/mutt/sample.muttrc-tlr
+share/examples/mutt/smime.rc
+share/examples/mutt/smime_keys_test.pl
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
