@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/04/19 10:04:17 shell Exp $
+# $OpenBSD: Makefile,v 1.11 2002/04/20 04:59:01 shell Exp $
 
 COMMENT=		"Tk 8.0 bindings for Perl"
 COMMENT-demo=		"demonstrate the features of ptk"
 
 VERSION=		800.024
-DISTNAME=		Tk${VERSION}
+DISTNAME=		Tk-${VERSION}
 PKGNAME=		p5-Tk-${VERSION}
 PKGNAME-demo=		p5-Tk-demo-${VERSION}
 CATEGORIES=		x11 devel perl5
