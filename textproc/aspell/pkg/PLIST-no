@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-no,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/no.multi
-lib/aspell/no.rws
-lib/aspell/norsk.alias
-lib/aspell/norwegian.alias
-share/aspell/no.dat

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-br,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/br.multi
-lib/aspell/br.rws
-lib/aspell/breton.alias
-lib/aspell/brezhoneg.alias
-share/aspell/br.dat
-share/aspell/br_phonet.dat

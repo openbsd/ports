@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-nl,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/nl.multi
-lib/aspell/nl.rws
-share/aspell/nl.dat

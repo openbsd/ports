@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-eo,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/eo.multi
-lib/aspell/eo.rws
-lib/aspell/esperanto.alias
-share/aspell/eo.dat

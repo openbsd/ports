@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-da,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/da.multi
-lib/aspell/da.rws
-lib/aspell/danish.alias
-lib/aspell/dansk.alias
-lib/aspell/dutch.alias
-share/aspell/da.dat
-share/aspell/da_phonet.dat

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-uk,v 1.1 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/uk.multi
-lib/aspell/uk.rws
-lib/aspell/ukrainian.alias
-share/aspell/uk.dat

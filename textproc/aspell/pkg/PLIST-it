@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-it,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/it.multi
-lib/aspell/it.rws
-lib/aspell/italian.alias
-share/aspell/it.dat

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-ca,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/ca.multi
-lib/aspell/ca.rws
-lib/aspell/catalan.alias
-share/aspell/ca.dat

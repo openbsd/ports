@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-sv,v 1.2 2003/08/12 04:39:27 jolan Exp $
-lib/aspell/sv.multi
-lib/aspell/sv.rws
-lib/aspell/svenska.alias
-lib/aspell/swedish.alias
-share/aspell/sv.dat
-share/aspell/sv_phonet.dat
