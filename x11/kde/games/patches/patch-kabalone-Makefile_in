@@ -1,0 +1,17 @@
+--- kabalone/Makefile.in.orig	Sun Apr 23 19:33:05 2000
++++ kabalone/Makefile.in	Sun Apr 23 19:37:59 2000
+@@ -538,10 +538,10 @@ tar: clean
+ 	(rm -f Makefile; cd ..; tar czvf kabalone-$(VERSION).tgz kabalone)
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kabalone.xpm $(kde_minidir)/kabalone.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kabalone.xpm $(kde_icondir)/large/kabalone.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kabalone.xpm $(DESTDIR)$(kde_minidir)/kabalone.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kabalone.xpm $(DESTDIR)$(kde_icondir)/large/kabalone.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_minidir)/kabalone.xpm

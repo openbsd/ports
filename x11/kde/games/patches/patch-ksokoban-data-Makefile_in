@@ -1,0 +1,17 @@
+--- ksokoban/data/Makefile.in.orig	Wed Apr 26 20:47:45 2000
++++ ksokoban/data/Makefile.in	Wed Apr 26 20:48:14 2000
+@@ -337,10 +337,10 @@ maintainer-clean-generic clean mostlycle
+ #	ksgml2html $< en
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-ksokoban.xpm $(kde_minidir)/ksokoban.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-ksokoban.xpm $(kde_icondir)/large/ksokoban.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-ksokoban.xpm $(DESTDIR)$(kde_minidir)/ksokoban.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-ksokoban.xpm $(DESTDIR)$(kde_icondir)/large/ksokoban.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/ksokoban.xpm

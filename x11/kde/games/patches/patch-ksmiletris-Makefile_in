@@ -1,0 +1,21 @@
+--- ksmiletris/Makefile.in.orig	Sun Apr 23 21:55:41 2000
++++ ksmiletris/Makefile.in	Sun Apr 23 21:58:11 2000
+@@ -515,12 +515,12 @@ messages:
+ 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(ksmiletris_SOURCES) && mv messages.po ../po/ksmiletris.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(APPSDIR)
+-	$(INSTALL_DATA) $(srcdir)/ksmiletris.kdelnk $(APPSDIR)
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-ksmiletris.xpm $(kde_minidir)/ksmiletris.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-ksmiletris.xpm $(kde_icondir)/large/ksmiletris.xpm
++	$(mkinstalldirs) $(DESTDIR)$(APPSDIR)
++	$(INSTALL_DATA) $(srcdir)/ksmiletris.kdelnk $(DESTDIR)$(APPSDIR)
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-ksmiletris.xpm $(DESTDIR)$(kde_minidir)/ksmiletris.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-ksmiletris.xpm $(DESTDIR)$(kde_icondir)/large/ksmiletris.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(APPSDIR)/ksmiletris.kdelnk

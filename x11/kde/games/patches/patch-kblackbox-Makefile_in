@@ -1,0 +1,21 @@
+--- kblackbox/Makefile.in.orig	Sun Apr 23 19:43:27 2000
++++ kblackbox/Makefile.in	Sun Apr 23 19:45:11 2000
+@@ -547,12 +547,12 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(APPSDIR)
+-	$(INSTALL_DATA) $(srcdir)/kblackbox.kdelnk $(APPSDIR)
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kblackbox.xpm $(kde_icondir)/large/kblackbox.xpm
++	$(mkinstalldirs) $(DESTDIR)$(APPSDIR)
++	$(INSTALL_DATA) $(srcdir)/kblackbox.kdelnk $(DESTDIR)$(APPSDIR)
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(DESTDIR)$(kde_minidir)/kblackbox.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kblackbox.xpm $(DESTDIR)$(kde_icondir)/large/kblackbox.xpm
+ 
+ # remove ALL you have installed in install-data-local or install-exec-local
+ uninstall-local:

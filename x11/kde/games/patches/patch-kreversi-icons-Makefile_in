@@ -1,0 +1,17 @@
+--- kreversi/icons/Makefile.in.orig	Sun Apr 23 21:48:05 2000
++++ kreversi/icons/Makefile.in	Sun Apr 23 21:48:39 2000
+@@ -284,10 +284,10 @@ mostlyclean distclean maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kreversi.xpm $(kde_minidir)/kreversi.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kreversi.xpm $(kde_icondir)/large/kreversi.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kreversi.xpm $(DESTDIR)$(kde_minidir)/kreversi.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kreversi.xpm $(DESTDIR)$(kde_icondir)/large/kreversi.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/kreversi.xpm

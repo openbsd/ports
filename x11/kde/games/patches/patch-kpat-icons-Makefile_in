@@ -1,0 +1,17 @@
+--- kpat/icons/Makefile.in.orig	Wed Apr 26 20:46:04 2000
++++ kpat/icons/Makefile.in	Wed Apr 26 20:46:55 2000
+@@ -284,10 +284,10 @@ mostlyclean distclean maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kpat.xpm $(kde_minidir)/kpat.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kpat.xpm $(kde_icondir)/large/kpat.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kpat.xpm $(DESTDIR)$(kde_minidir)/kpat.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kpat.xpm $(DESTDIR)$(kde_icondir)/large/kpat.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/kpat.xpm

@@ -1,0 +1,17 @@
+--- kmahjongg/Makefile.in.orig	Sun Apr 23 19:45:49 2000
++++ kmahjongg/Makefile.in	Sun Apr 23 21:31:59 2000
+@@ -504,10 +504,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: mini-kmahjongg.xpm
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kmahjongg.xpm $(kde_minidir)/kmahjongg.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kmahjongg.xpm $(kde_icondir)/large/kmahjongg.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kmahjongg.xpm $(DESTDIR)$(kde_minidir)/kmahjongg.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kmahjongg.xpm $(DESTDIR)$(kde_icondir)/large/kmahjongg.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_minidir)/kmahjongg.xpm

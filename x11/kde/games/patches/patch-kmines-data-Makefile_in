@@ -1,0 +1,17 @@
+--- kmines/data/Makefile.in.orig	Sun Apr 23 21:38:43 2000
++++ kmines/data/Makefile.in	Sun Apr 23 21:39:25 2000
+@@ -331,10 +331,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kmines.xpm $(minidir)/kmines.xpm
+-	$(mkinstalldirs) $(minidir)/../large
+-	$(INSTALL_DATA) $(srcdir)/large-kmines.xpm $(minidir)/../large/kmines.xpm
++	$(mkinstalldirs) $(DESTDIR)$(minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kmines.xpm $(DESTDIR)$(minidir)/kmines.xpm
++	$(mkinstalldirs) $(DESTDIR)$(minidir)/../large
++	$(INSTALL_DATA) $(srcdir)/large-kmines.xpm $(DESTDIR)$(minidir)/../large/kmines.xpm
+ 
+ uninstall-local:
+ 	rm -f $(minidir)/kmines.xpm

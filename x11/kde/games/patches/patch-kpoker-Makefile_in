@@ -1,0 +1,17 @@
+--- kpoker/Makefile.in.orig	Sun Apr 23 21:45:18 2000
++++ kpoker/Makefile.in	Sun Apr 23 21:45:57 2000
+@@ -531,10 +531,10 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kpoker.xpm $(kde_minidir)/kpoker.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kpoker.xpm $(kde_icondir)/large/kpoker.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kpoker.xpm $(DESTDIR)$(kde_minidir)/kpoker.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kpoker.xpm $(DESTDIR)$(kde_icondir)/large/kpoker.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/kpoker.xpm

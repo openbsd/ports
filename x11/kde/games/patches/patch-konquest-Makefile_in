@@ -1,0 +1,17 @@
+--- konquest/Makefile.in.orig	Sun Apr 23 21:40:28 2000
++++ konquest/Makefile.in	Sun Apr 23 21:40:58 2000
+@@ -546,10 +546,10 @@ messages:
+ 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(konquest_SOURCES) && mv messages.po ../po/konquest.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-konquest.xpm $(kde_minidir)/konquest.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-konquest.xpm $(kde_icondir)/large/konquest.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-konquest.xpm $(DESTDIR)$(kde_minidir)/konquest.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-konquest.xpm $(DESTDIR)$(kde_icondir)/large/konquest.xpm
+ 
+ # remove ALL you have installed in install-data-local or install-exec-local
+ uninstall-local:

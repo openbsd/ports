@@ -1,0 +1,11 @@
+--- kasteroids/sprites/Makefile.in.orig	Sun Apr 23 16:27:10 2000
++++ kasteroids/sprites/Makefile.in	Sun Apr 23 16:27:23 2000
+@@ -170,7 +170,7 @@ LDLIBS = -lpng -lz -lm
+ #	rm -f Makefile
+ 
+ FILES = `cd $(srcdir) && find . \( -name "*.ppm" -o -name "*.pbm" \) -print`
+-spritesdir = $(kde_datadir)/kasteroids/sprites
++spritesdir = $(DESTDIR)$(kde_datadir)/kasteroids/sprites
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 

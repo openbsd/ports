@@ -1,0 +1,11 @@
+--- po/mk/Makefile.in.orig	Thu Apr 13 11:10:14 2000
++++ po/mk/Makefile.in	Thu Apr 13 11:10:46 2000
+@@ -291,7 +291,7 @@ all-no:
+ install-yes: all
+ 	@catalogs='$(GMOFILES)'; \
+ 	for cat in $$catalogs; do \
+-	destdir=$(localedir); \
++	destdir=$(DESTDIR)$(localedir); \
+ 	name=`echo $$cat | sed -e 's/\.gmo/\.mo/'` \
+ 	dir=$$destdir/$(LANG)/LC_MESSAGES; \
+ 	$(mkinstalldirs) $$dir; \

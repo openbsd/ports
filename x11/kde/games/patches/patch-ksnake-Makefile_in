@@ -1,0 +1,17 @@
+--- ksnake/Makefile.in.orig	Sun Apr 23 21:58:29 2000
++++ ksnake/Makefile.in	Sun Apr 23 21:59:02 2000
+@@ -538,10 +538,10 @@ maintainer-clean
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-ksnake.xpm $(kde_minidir)/ksnake.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-ksnake.xpm $(kde_icondir)/large/ksnake.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-ksnake.xpm $(DESTDIR)$(kde_minidir)/ksnake.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-ksnake.xpm $(DESTDIR)$(kde_icondir)/large/ksnake.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_minidir)/ksnake.xpm

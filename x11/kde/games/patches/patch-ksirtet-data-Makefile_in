@@ -1,0 +1,17 @@
+--- ksirtet/data/Makefile.in.orig	Sun Apr 23 21:50:59 2000
++++ ksirtet/data/Makefile.in	Sun Apr 23 21:51:54 2000
+@@ -332,10 +332,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-ksirtet.xpm $(minidir)/ksirtet.xpm
+-	$(mkinstalldirs) $(minidir)/../large
+-	$(INSTALL_DATA) $(srcdir)/large-ksirtet.xpm $(minidir)/../large/ksirtet.xpm
++	$(mkinstalldirs) $(DESTDIR)$(minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-ksirtet.xpm $(DESTDIR)$(minidir)/ksirtet.xpm
++	$(mkinstalldirs) $(DESTDIR)$(minidir)/../large
++	$(INSTALL_DATA) $(srcdir)/large-ksirtet.xpm $(DESTDIR)$(minidir)/../large/ksirtet.xpm
+ 
+ uninstall-local:
+ 	rm -f $(minidir)/ksirtet.xpm

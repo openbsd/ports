@@ -1,0 +1,17 @@
+--- ksame/Makefile.in.orig	Sun Apr 23 21:48:54 2000
++++ ksame/Makefile.in	Sun Apr 23 21:49:33 2000
+@@ -552,10 +552,10 @@ maintainer-clean
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-ksame.xpm $(kde_minidir)/ksame.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-ksame.xpm $(kde_icondir)/large/ksame.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-ksame.xpm $(DESTDIR)$(kde_minidir)/ksame.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-ksame.xpm $(DESTDIR)$(kde_icondir)/large/ksame.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/ksame.xpm

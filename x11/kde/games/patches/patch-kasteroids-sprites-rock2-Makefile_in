@@ -1,0 +1,17 @@
+--- kasteroids/sprites/rock2/Makefile.in.orig	Sun Apr 23 13:40:57 2000
++++ kasteroids/sprites/rock2/Makefile.in	Sun Apr 23 13:42:23 2000
+@@ -204,11 +204,11 @@ distdir: $(DISTFILES)
+ 	@for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  if test -d $$d/$$file; then \
+-	    cp -pr $$/$$file $(distdir)/$$file; \
++	    cp -pr $$/$$file $(DESTDIR)$(distdir)/$$file; \
+ 	  else \
+ 	    test -f $(distdir)/$$file \
+-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
++	    || ln $$d/$$file $(DESTDIR)$(distdir)/$$file 2> /dev/null \
++	    || cp -p $$d/$$file $(DESTDIR)$(distdir)/$$file || :; \
+ 	  fi; \
+ 	done
+ info-am:
