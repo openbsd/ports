@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2003/10/26 23:49:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/10/09 15:10:34 sturm Exp $
 
 COMMENT=	"convert text into the Doc format used by PalmPilots"
 
 PKGNAME=	pilot_makedoc-0.7
 CATEGORIES=	textproc palm
 
-MASTER_SITES=	http://www.concentric.net/~rbram/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 DISTFILES=	makedoc7.cpp
 EXTRACT_ONLY=
 
