@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/08/16 02:50:03 marc Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/10/22 19:05:28 espie Exp $
 @pkgcfl emacs-*
 @unexec install-info --delete --info-dir=%D/info %D/info/cl.info
 @unexec install-info --delete --info-dir=%D/info %D/info/custom.info
@@ -7,7 +7,6 @@
 @unexec install-info --delete --info-dir=%D/info %D/info/internals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/lispref.info
 @unexec install-info --delete --info-dir=%D/info %D/info/new-users-guide.info
-@unexec install-info --delete --info-dir=%D/info %D/info/standards.info
 @unexec install-info --delete --info-dir=%D/info %D/info/term.info
 @unexec install-info --delete --info-dir=%D/info %D/info/termcap.info
 @unexec install-info --delete --info-dir=%D/info %D/info/texinfo.info
@@ -92,10 +91,6 @@ info/new-users-guide.info
 info/new-users-guide.info-1
 info/new-users-guide.info-2
 info/new-users-guide.info-3
-info/standards.info
-info/standards.info-1
-info/standards.info-2
-info/standards.info-3
 info/term.info
 info/termcap.info
 info/termcap.info-1
@@ -928,7 +923,6 @@ man/man1/xemacs.1
 @exec install-info --info-dir=%D/info %D/info/internals.info
 @exec install-info --info-dir=%D/info %D/info/lispref.info
 @exec install-info --info-dir=%D/info %D/info/new-users-guide.info
-@exec install-info --info-dir=%D/info %D/info/standards.info
 @exec install-info --info-dir=%D/info %D/info/term.info
 @exec install-info --info-dir=%D/info %D/info/termcap.info
 @exec install-info --info-dir=%D/info %D/info/texinfo.info

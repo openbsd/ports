@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/06/25 07:22:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/10/22 19:05:27 espie Exp $
 bin/autoconf
 bin/autoheader
 bin/autoreconf
@@ -6,11 +6,8 @@ bin/autoscan
 bin/autoupdate
 bin/ifnames
 @unexec install-info --delete --info-dir=%D/info %D/info/autoconf.info
-@unexec install-info --delete --info-dir=%D/info %D/info/standards.info
 info/autoconf.info
-info/standards.info
 @exec install-info --info-dir=%D/info %D/info/autoconf.info
-@exec install-info --info-dir=%D/info %D/info/standards.info
 share/autoconf/acconfig.h
 share/autoconf/acfunctions
 share/autoconf/acgeneral.m4
