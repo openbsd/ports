@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.276 2000/05/16 15:54:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.277 2000/05/16 17:06:46 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1497,31 +1497,31 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
 		exit 1; \
 	fi
-	@install -d -m 755 -o root -g wheel ${WRKINST}
-	@mtree -U -e -d -n -p ${WRKINST} \
+	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
+	@${SUDO} mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 .  if target(pre-fake)
 	@cd ${.CURDIR} && ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
-	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
+	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && ${MAKE} pre-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && ${SUDO} ${MAKE} pre-install ${_FAKE_SETUP}
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && ${MAKE} do-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && ${SUDO} ${MAKE} do-install ${_FAKE_SETUP}
 .  else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && ${SUDO} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && ${MAKE} post-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && ${SUDO} ${MAKE} post-install ${_FAKE_SETUP}
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${GUNZIP_CMD} ${manpage}.gz
+	@${SUDO} ${GUNZIP_CMD} ${manpage}.gz
 .      endfor
 .    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
@@ -1529,10 +1529,10 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@if [ -L ${manpage} ]; then \
 		set - `file ${manpage}`; \
 		shift `expr $$# - 1`; \
-		ln -sf $${1}.gz ${manpage}.gz; \
-		rm ${manpage}; \
+		${SUDO} ln -sf $${1}.gz ${manpage}.gz; \
+		${SUDO} rm ${manpage}; \
 	else \
-		${GZIP_CMD} ${manpage}; \
+		${SUDO} ${GZIP_CMD} ${manpage}; \
 	fi
 .      endfor
 .    endif
@@ -1541,20 +1541,20 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		echo >&2 "*** bad links in ${WRKINST}"; \
 		exit 1; \
 	fi
-	@${_MAKE_COOKIE} ${_FAKE_COOKIE}
+	@${SUDO} ${_MAKE_COOKIE} ${_FAKE_COOKIE}
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	@cd ${.CURDIR} && ${MAKE} run-depends lib-depends DEPENDS_TARGET=package
 	@${ECHO_MSG} "===>  Installing ${PKGNAME} from ${PKGFILE}"
 # Kludge
 .if defined(USE_IMAKE)
-	@mkdir -p /usr/local/lib/X11
+	@${SUDO} mkdir -p /usr/local/lib/X11
 	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
-		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .endif
-	@${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
-	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
+	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
 .else
 
@@ -1885,6 +1885,9 @@ clean: pre-clean
 .  if ${CLEANDEPENDS:L}=="yes"
 	@cd ${.CURDIR} && ${MAKE} clean-depends
 .  endif
+.if defined(WRKINST)
+	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
+.endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
