@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/06/23 03:26:12 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/08/01 06:12:42 marcm Exp $
 bin/gkb_xmmap
 bin/gnome-keyboard-layout
 bin/gswitchit-plugins-capplet
+include/libgswitchit/
 include/libgswitchit/gswitchit_plugin.h
 include/libgswitchit/gswitchit_xkb_config.h
 lib/bonobo/servers/GNOME_AccessxStatusApplet.server
@@ -15,6 +16,7 @@ lib/bonobo/servers/GNOME_MailcheckApplet_Factory.server
 lib/bonobo/servers/GNOME_MiniCommanderApplet.server
 lib/bonobo/servers/GNOME_MixerApplet.server
 lib/bonobo/servers/GNOME_ModemLightsApplet.server
+lib/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
 lib/bonobo/servers/GNOME_Panel_WirelessApplet.server
 lib/bonobo/servers/GNOME_StickyNotesApplet.server
 lib/pkgconfig/gswitchit.pc
@@ -22,6 +24,7 @@ libexec/accessx-status-applet
 libexec/charpick_applet2
 libexec/drivemount_applet2
 libexec/geyes_applet2
+libexec/gnome-applets/
 libexec/gnome-applets/mc-install-default-macros
 libexec/gnome-keyboard-applet
 libexec/gtik2_applet2
@@ -30,22 +33,30 @@ libexec/mailcheck-applet
 libexec/mini_commander_applet
 libexec/mixer_applet2
 libexec/modemlights_applet2
+libexec/multiload-applet-2
 libexec/stickynotes_applet
 libexec/wireless-applet
 share/examples/gnome-applets2/sound/events/mailcheck.soundlist
+share/gen_util/
 share/gen_util/mini-commander.glade
+share/geyes/
+share/geyes/Bizarre/
 share/geyes/Bizarre/Bizarre-eye.png
 share/geyes/Bizarre/Bizarre-pupil.png
 share/geyes/Bizarre/config
+share/geyes/Bloodshot/
 share/geyes/Bloodshot/Bloodshot-eye.png
 share/geyes/Bloodshot/Bloodshot-pupil.png
 share/geyes/Bloodshot/config
+share/geyes/Default/
+share/geyes/Default-tiny/
 share/geyes/Default-tiny/Default-tiny-eye.png
 share/geyes/Default-tiny/Default-tiny-pupil.png
 share/geyes/Default-tiny/config
 share/geyes/Default/Default-eye.png
 share/geyes/Default/Default-pupil.png
 share/geyes/Default/config
+share/geyes/Horrid/
 share/geyes/Horrid/config
 share/geyes/Horrid/horrid_eye.png
 share/geyes/Horrid/horrid_pupil.png
@@ -61,8 +72,10 @@ share/gnome-2.0/ui/GNOME_MailCheckApplet.xml
 share/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
 share/gnome-2.0/ui/GNOME_MixerApplet.xml
 share/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
+share/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 share/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 share/gnome-2.0/ui/GNOME_WirelessApplet.xml
+share/gnome/gkb/
 share/gnome/gkb/AM_Armenian.keyprop
 share/gnome/gkb/AR_Arabic.keyprop
 share/gnome/gkb/AR_Arabic_x.keyprop
@@ -195,408 +208,601 @@ share/gnome/gkb/YU_Serb_x.keyprop
 share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
 share/gnome/gkb/Yugoslav.keyprop
 share/gnome/gkb/presets.xml
+share/gnome/help/accessx-status/
+share/gnome/help/accessx-status/C/
 share/gnome/help/accessx-status/C/accessx-status.xml
+share/gnome/help/accessx-status/C/figures/
 share/gnome/help/accessx-status/C/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/C/legal.xml
+share/gnome/help/accessx-status/eu/
 share/gnome/help/accessx-status/eu/accessx-status.xml
+share/gnome/help/accessx-status/eu/figures/
 share/gnome/help/accessx-status/eu/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/eu/legal.xml
+share/gnome/help/char-palette/
+share/gnome/help/char-palette/C/
 share/gnome/help/char-palette/C/char-palette.xml
+share/gnome/help/char-palette/C/figures/
 share/gnome/help/char-palette/C/figures/charpalette_applet.png
 share/gnome/help/char-palette/C/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/C/figures/charpick_characters.png
 share/gnome/help/char-palette/C/legal.xml
+share/gnome/help/char-palette/de/
 share/gnome/help/char-palette/de/char-palette.xml
+share/gnome/help/char-palette/de/figures/
 share/gnome/help/char-palette/de/figures/charpalette_applet.png
 share/gnome/help/char-palette/de/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/de/figures/charpick_applet.png
 share/gnome/help/char-palette/de/figures/charpick_characters.png
 share/gnome/help/char-palette/de/figures/charpick_chargroup.png
 share/gnome/help/char-palette/de/legal.xml
+share/gnome/help/char-palette/es/
 share/gnome/help/char-palette/es/char-palette.xml
+share/gnome/help/char-palette/es/figures/
 share/gnome/help/char-palette/es/figures/charpalette_applet.png
 share/gnome/help/char-palette/es/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/es/figures/charpick_applet.png
 share/gnome/help/char-palette/es/figures/charpick_characters.png
 share/gnome/help/char-palette/es/figures/charpick_chargroup.png
 share/gnome/help/char-palette/es/legal.xml
+share/gnome/help/char-palette/eu/
 share/gnome/help/char-palette/eu/char-palette.xml
+share/gnome/help/char-palette/eu/figures/
 share/gnome/help/char-palette/eu/figures/charpalette_applet.png
 share/gnome/help/char-palette/eu/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/eu/figures/charpick_characters.png
 share/gnome/help/char-palette/eu/legal.xml
+share/gnome/help/char-palette/fr/
 share/gnome/help/char-palette/fr/char-palette.xml
+share/gnome/help/char-palette/fr/figures/
 share/gnome/help/char-palette/fr/figures/charpalette_applet.png
 share/gnome/help/char-palette/fr/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/fr/figures/charpick_applet.png
 share/gnome/help/char-palette/fr/figures/charpick_characters.png
 share/gnome/help/char-palette/fr/figures/charpick_chargroup.png
 share/gnome/help/char-palette/fr/legal.xml
+share/gnome/help/char-palette/it/
 share/gnome/help/char-palette/it/char-palette.xml
+share/gnome/help/char-palette/it/figures/
 share/gnome/help/char-palette/it/figures/charpalette_applet.png
 share/gnome/help/char-palette/it/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/it/figures/charpick_applet.png
 share/gnome/help/char-palette/it/figures/charpick_characters.png
 share/gnome/help/char-palette/it/figures/charpick_chargroup.png
 share/gnome/help/char-palette/it/legal.xml
+share/gnome/help/char-palette/ko/
 share/gnome/help/char-palette/ko/char-palette.xml
+share/gnome/help/char-palette/ko/figures/
 share/gnome/help/char-palette/ko/figures/charpalette_applet.png
 share/gnome/help/char-palette/ko/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/ko/figures/charpick_applet.png
 share/gnome/help/char-palette/ko/figures/charpick_characters.png
 share/gnome/help/char-palette/ko/figures/charpick_chargroup.png
 share/gnome/help/char-palette/ko/legal.xml
+share/gnome/help/char-palette/sv/
 share/gnome/help/char-palette/sv/char-palette.xml
+share/gnome/help/char-palette/sv/figures/
 share/gnome/help/char-palette/sv/figures/charpalette_applet.png
 share/gnome/help/char-palette/sv/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/sv/figures/charpick_applet.png
 share/gnome/help/char-palette/sv/figures/charpick_characters.png
 share/gnome/help/char-palette/sv/figures/charpick_chargroup.png
 share/gnome/help/char-palette/sv/legal.xml
+share/gnome/help/char-palette/zh_CN/
 share/gnome/help/char-palette/zh_CN/char-palette.xml
+share/gnome/help/char-palette/zh_CN/figures/
 share/gnome/help/char-palette/zh_CN/figures/charpalette_applet.png
 share/gnome/help/char-palette/zh_CN/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/zh_CN/figures/charpick_applet.png
 share/gnome/help/char-palette/zh_CN/figures/charpick_characters.png
 share/gnome/help/char-palette/zh_CN/figures/charpick_chargroup.png
 share/gnome/help/char-palette/zh_CN/legal.xml
+share/gnome/help/char-palette/zh_HK/
 share/gnome/help/char-palette/zh_HK/char-palette.xml
+share/gnome/help/char-palette/zh_HK/figures/
 share/gnome/help/char-palette/zh_HK/figures/charpalette_applet.png
 share/gnome/help/char-palette/zh_HK/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/zh_HK/legal.xml
+share/gnome/help/char-palette/zh_TW/
 share/gnome/help/char-palette/zh_TW/char-palette.xml
+share/gnome/help/char-palette/zh_TW/figures/
 share/gnome/help/char-palette/zh_TW/figures/charpalette_applet.png
 share/gnome/help/char-palette/zh_TW/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/zh_TW/figures/charpick_applet.png
 share/gnome/help/char-palette/zh_TW/figures/charpick_characters.png
 share/gnome/help/char-palette/zh_TW/figures/charpick_chargroup.png
 share/gnome/help/char-palette/zh_TW/legal.xml
+share/gnome/help/command-line/
+share/gnome/help/command-line/C/
 share/gnome/help/command-line/C/command-line.xml
+share/gnome/help/command-line/C/figures/
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/command-line/de/
 share/gnome/help/command-line/de/command-line.xml
+share/gnome/help/command-line/de/figures/
 share/gnome/help/command-line/de/figures/command-line.png
 share/gnome/help/command-line/de/legal.xml
+share/gnome/help/command-line/es/
 share/gnome/help/command-line/es/command-line.xml
+share/gnome/help/command-line/es/figures/
 share/gnome/help/command-line/es/figures/command-line.png
 share/gnome/help/command-line/es/legal.xml
+share/gnome/help/command-line/eu/
 share/gnome/help/command-line/eu/command-line.xml
+share/gnome/help/command-line/eu/figures/
 share/gnome/help/command-line/eu/figures/command-line.png
 share/gnome/help/command-line/eu/legal.xml
+share/gnome/help/command-line/fr/
 share/gnome/help/command-line/fr/command-line.xml
+share/gnome/help/command-line/fr/figures/
 share/gnome/help/command-line/fr/figures/command-line.png
 share/gnome/help/command-line/fr/legal.xml
+share/gnome/help/command-line/it/
 share/gnome/help/command-line/it/command-line.xml
+share/gnome/help/command-line/it/figures/
 share/gnome/help/command-line/it/figures/command-line.png
 share/gnome/help/command-line/it/legal.xml
+share/gnome/help/command-line/ja/
 share/gnome/help/command-line/ja/command-line.xml
+share/gnome/help/command-line/ja/figures/
 share/gnome/help/command-line/ja/figures/command-line.png
 share/gnome/help/command-line/ja/legal.xml
+share/gnome/help/command-line/ko/
 share/gnome/help/command-line/ko/command-line.xml
+share/gnome/help/command-line/ko/figures/
 share/gnome/help/command-line/ko/figures/command-line.png
 share/gnome/help/command-line/ko/legal.xml
+share/gnome/help/command-line/sv/
 share/gnome/help/command-line/sv/command-line.xml
+share/gnome/help/command-line/sv/figures/
 share/gnome/help/command-line/sv/figures/command-line.png
 share/gnome/help/command-line/sv/legal.xml
+share/gnome/help/command-line/zh_CN/
 share/gnome/help/command-line/zh_CN/command-line.xml
+share/gnome/help/command-line/zh_CN/figures/
 share/gnome/help/command-line/zh_CN/figures/command-line.png
 share/gnome/help/command-line/zh_CN/legal.xml
+share/gnome/help/command-line/zh_HK/
 share/gnome/help/command-line/zh_HK/command-line.xml
+share/gnome/help/command-line/zh_HK/figures/
 share/gnome/help/command-line/zh_HK/figures/command-line.png
 share/gnome/help/command-line/zh_HK/legal.xml
+share/gnome/help/command-line/zh_TW/
 share/gnome/help/command-line/zh_TW/command-line.xml
+share/gnome/help/command-line/zh_TW/figures/
 share/gnome/help/command-line/zh_TW/figures/command-line.png
 share/gnome/help/command-line/zh_TW/legal.xml
+share/gnome/help/drivemount/
+share/gnome/help/drivemount/C/
 share/gnome/help/drivemount/C/drivemount.xml
+share/gnome/help/drivemount/C/figures/
 share/gnome/help/drivemount/C/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/C/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/C/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/C/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/C/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/C/legal.xml
+share/gnome/help/drivemount/de/
 share/gnome/help/drivemount/de/drivemount.xml
+share/gnome/help/drivemount/de/figures/
 share/gnome/help/drivemount/de/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/de/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/de/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/de/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/de/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/de/legal.xml
+share/gnome/help/drivemount/es/
 share/gnome/help/drivemount/es/drivemount.xml
+share/gnome/help/drivemount/es/figures/
 share/gnome/help/drivemount/es/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/es/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/es/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/es/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/es/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/es/legal.xml
+share/gnome/help/drivemount/eu/
 share/gnome/help/drivemount/eu/drivemount.xml
+share/gnome/help/drivemount/eu/figures/
 share/gnome/help/drivemount/eu/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/eu/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/eu/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/eu/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/eu/legal.xml
+share/gnome/help/drivemount/fr/
 share/gnome/help/drivemount/fr/drivemount.xml
+share/gnome/help/drivemount/fr/figures/
 share/gnome/help/drivemount/fr/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/fr/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/fr/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/fr/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/fr/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/fr/legal.xml
+share/gnome/help/drivemount/it/
 share/gnome/help/drivemount/it/drivemount.xml
+share/gnome/help/drivemount/it/figures/
 share/gnome/help/drivemount/it/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/it/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/it/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/it/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/it/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/it/legal.xml
+share/gnome/help/drivemount/ja/
 share/gnome/help/drivemount/ja/drivemount.xml
+share/gnome/help/drivemount/ja/figures/
 share/gnome/help/drivemount/ja/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/ja/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/ja/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/ja/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/ja/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/ja/legal.xml
+share/gnome/help/drivemount/ko/
 share/gnome/help/drivemount/ko/drivemount.xml
+share/gnome/help/drivemount/ko/figures/
 share/gnome/help/drivemount/ko/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/ko/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/ko/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/ko/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/ko/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/ko/legal.xml
+share/gnome/help/drivemount/sv/
 share/gnome/help/drivemount/sv/drivemount.xml
+share/gnome/help/drivemount/sv/figures/
 share/gnome/help/drivemount/sv/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/sv/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/sv/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/sv/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/sv/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/sv/legal.xml
+share/gnome/help/drivemount/zh_CN/
 share/gnome/help/drivemount/zh_CN/drivemount.xml
+share/gnome/help/drivemount/zh_CN/figures/
 share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/zh_CN/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/zh_CN/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/zh_CN/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/zh_CN/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/zh_CN/legal.xml
+share/gnome/help/drivemount/zh_HK/
 share/gnome/help/drivemount/zh_HK/drivemount.xml
+share/gnome/help/drivemount/zh_HK/figures/
 share/gnome/help/drivemount/zh_HK/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/zh_HK/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/zh_HK/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/zh_HK/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/zh_HK/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/zh_HK/legal.xml
+share/gnome/help/drivemount/zh_TW/
 share/gnome/help/drivemount/zh_TW/drivemount.xml
+share/gnome/help/drivemount/zh_TW/figures/
 share/gnome/help/drivemount/zh_TW/figures/drivemount-applet_window.png
 share/gnome/help/drivemount/zh_TW/figures/drivemount_applet_all.png
 share/gnome/help/drivemount/zh_TW/figures/drivemount_applet_floppy.png
 share/gnome/help/drivemount/zh_TW/figures/drivemount_applet_settings.png
 share/gnome/help/drivemount/zh_TW/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount/zh_TW/legal.xml
+share/gnome/help/geyes/
+share/gnome/help/geyes/C/
+share/gnome/help/geyes/C/figures/
 share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
+share/gnome/help/geyes/de/
+share/gnome/help/geyes/de/figures/
 share/gnome/help/geyes/de/figures/geyes_applet.png
 share/gnome/help/geyes/de/figures/geyes_settings.png
 share/gnome/help/geyes/de/geyes.xml
 share/gnome/help/geyes/de/legal.xml
+share/gnome/help/geyes/es/
+share/gnome/help/geyes/es/figures/
 share/gnome/help/geyes/es/figures/geyes_applet.png
 share/gnome/help/geyes/es/figures/geyes_settings.png
 share/gnome/help/geyes/es/geyes.xml
 share/gnome/help/geyes/es/legal.xml
+share/gnome/help/geyes/eu/
+share/gnome/help/geyes/eu/figures/
 share/gnome/help/geyes/eu/figures/geyes_applet.png
 share/gnome/help/geyes/eu/geyes.xml
 share/gnome/help/geyes/eu/legal.xml
+share/gnome/help/geyes/fr/
+share/gnome/help/geyes/fr/figures/
 share/gnome/help/geyes/fr/figures/geyes_applet.png
 share/gnome/help/geyes/fr/figures/geyes_settings.png
 share/gnome/help/geyes/fr/geyes.xml
 share/gnome/help/geyes/fr/legal.xml
+share/gnome/help/geyes/it/
+share/gnome/help/geyes/it/figures/
 share/gnome/help/geyes/it/figures/geyes_applet.png
 share/gnome/help/geyes/it/figures/geyes_settings.png
 share/gnome/help/geyes/it/geyes.xml
 share/gnome/help/geyes/it/legal.xml
+share/gnome/help/geyes/ja/
+share/gnome/help/geyes/ja/figures/
 share/gnome/help/geyes/ja/figures/geyes_applet.png
 share/gnome/help/geyes/ja/figures/geyes_settings.png
 share/gnome/help/geyes/ja/geyes.xml
 share/gnome/help/geyes/ja/legal.xml
+share/gnome/help/geyes/ko/
+share/gnome/help/geyes/ko/figures/
 share/gnome/help/geyes/ko/figures/geyes_applet.png
 share/gnome/help/geyes/ko/figures/geyes_settings.png
 share/gnome/help/geyes/ko/geyes.xml
 share/gnome/help/geyes/ko/legal.xml
+share/gnome/help/geyes/sv/
+share/gnome/help/geyes/sv/figures/
 share/gnome/help/geyes/sv/figures/geyes_applet.png
 share/gnome/help/geyes/sv/figures/geyes_settings.png
 share/gnome/help/geyes/sv/geyes.xml
 share/gnome/help/geyes/sv/legal.xml
+share/gnome/help/geyes/zh_CN/
+share/gnome/help/geyes/zh_CN/figures/
 share/gnome/help/geyes/zh_CN/figures/geyes_applet.png
 share/gnome/help/geyes/zh_CN/figures/geyes_settings.png
 share/gnome/help/geyes/zh_CN/geyes.xml
 share/gnome/help/geyes/zh_CN/legal.xml
+share/gnome/help/geyes/zh_HK/
+share/gnome/help/geyes/zh_HK/figures/
 share/gnome/help/geyes/zh_HK/figures/geyes_applet.png
 share/gnome/help/geyes/zh_HK/geyes.xml
 share/gnome/help/geyes/zh_HK/legal.xml
+share/gnome/help/geyes/zh_TW/
+share/gnome/help/geyes/zh_TW/figures/
 share/gnome/help/geyes/zh_TW/figures/geyes_applet.png
 share/gnome/help/geyes/zh_TW/figures/geyes_settings.png
 share/gnome/help/geyes/zh_TW/geyes.xml
 share/gnome/help/geyes/zh_TW/legal.xml
+share/gnome/help/gkb/
+share/gnome/help/gkb/C/
+share/gnome/help/gkb/C/figures/
 share/gnome/help/gkb/C/figures/gkb_applet.png
 share/gnome/help/gkb/C/gkb.xml
 share/gnome/help/gkb/C/legal.xml
+share/gnome/help/gkb/de/
+share/gnome/help/gkb/de/figures/
 share/gnome/help/gkb/de/figures/gkb_applet.png
 share/gnome/help/gkb/de/gkb.xml
 share/gnome/help/gkb/de/legal.xml
+share/gnome/help/gkb/es/
+share/gnome/help/gkb/es/figures/
 share/gnome/help/gkb/es/figures/gkb_applet.png
 share/gnome/help/gkb/es/gkb.xml
 share/gnome/help/gkb/es/legal.xml
+share/gnome/help/gkb/eu/
+share/gnome/help/gkb/eu/figures/
 share/gnome/help/gkb/eu/figures/gkb_applet.png
 share/gnome/help/gkb/eu/gkb.xml
 share/gnome/help/gkb/eu/legal.xml
+share/gnome/help/gkb/fr/
+share/gnome/help/gkb/fr/figures/
 share/gnome/help/gkb/fr/figures/gkb_applet.png
 share/gnome/help/gkb/fr/gkb.xml
 share/gnome/help/gkb/fr/legal.xml
+share/gnome/help/gkb/it/
+share/gnome/help/gkb/it/figures/
 share/gnome/help/gkb/it/figures/gkb_applet.png
 share/gnome/help/gkb/it/gkb.xml
 share/gnome/help/gkb/it/legal.xml
+share/gnome/help/gkb/ja/
+share/gnome/help/gkb/ja/figures/
 share/gnome/help/gkb/ja/figures/gkb_applet.png
 share/gnome/help/gkb/ja/gkb.xml
 share/gnome/help/gkb/ja/legal.xml
+share/gnome/help/gkb/ko/
+share/gnome/help/gkb/ko/figures/
 share/gnome/help/gkb/ko/figures/gkb_applet.png
 share/gnome/help/gkb/ko/gkb.xml
 share/gnome/help/gkb/ko/legal.xml
+share/gnome/help/gkb/sv/
+share/gnome/help/gkb/sv/figures/
 share/gnome/help/gkb/sv/figures/gkb_applet.png
 share/gnome/help/gkb/sv/gkb.xml
 share/gnome/help/gkb/sv/legal.xml
+share/gnome/help/gkb/zh_CN/
+share/gnome/help/gkb/zh_CN/figures/
 share/gnome/help/gkb/zh_CN/figures/gkb_applet.png
 share/gnome/help/gkb/zh_CN/gkb.xml
 share/gnome/help/gkb/zh_CN/legal.xml
+share/gnome/help/gkb/zh_HK/
+share/gnome/help/gkb/zh_HK/figures/
 share/gnome/help/gkb/zh_HK/figures/gkb_applet.png
 share/gnome/help/gkb/zh_HK/gkb.xml
 share/gnome/help/gkb/zh_HK/legal.xml
+share/gnome/help/gkb/zh_TW/
+share/gnome/help/gkb/zh_TW/figures/
 share/gnome/help/gkb/zh_TW/figures/gkb_applet.png
 share/gnome/help/gkb/zh_TW/gkb.xml
 share/gnome/help/gkb/zh_TW/legal.xml
+share/gnome/help/gtik2_applet2/
+share/gnome/help/gtik2_applet2/C/
+share/gnome/help/gtik2_applet2/C/figures/
 share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/C/legal.xml
+share/gnome/help/gtik2_applet2/de/
+share/gnome/help/gtik2_applet2/de/figures/
 share/gnome/help/gtik2_applet2/de/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/de/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/de/legal.xml
+share/gnome/help/gtik2_applet2/es/
+share/gnome/help/gtik2_applet2/es/figures/
 share/gnome/help/gtik2_applet2/es/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/es/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/es/legal.xml
+share/gnome/help/gtik2_applet2/eu/
+share/gnome/help/gtik2_applet2/eu/figures/
 share/gnome/help/gtik2_applet2/eu/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/eu/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/eu/legal.xml
+share/gnome/help/gtik2_applet2/fr/
+share/gnome/help/gtik2_applet2/fr/figures/
 share/gnome/help/gtik2_applet2/fr/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/fr/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/fr/legal.xml
+share/gnome/help/gtik2_applet2/it/
+share/gnome/help/gtik2_applet2/it/figures/
 share/gnome/help/gtik2_applet2/it/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/it/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/it/legal.xml
+share/gnome/help/gtik2_applet2/ja/
+share/gnome/help/gtik2_applet2/ja/figures/
 share/gnome/help/gtik2_applet2/ja/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/ja/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/ja/legal.xml
+share/gnome/help/gtik2_applet2/ko/
+share/gnome/help/gtik2_applet2/ko/figures/
 share/gnome/help/gtik2_applet2/ko/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/ko/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/ko/legal.xml
+share/gnome/help/gtik2_applet2/sv/
+share/gnome/help/gtik2_applet2/sv/figures/
 share/gnome/help/gtik2_applet2/sv/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/sv/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/sv/legal.xml
+share/gnome/help/gtik2_applet2/zh_CN/
+share/gnome/help/gtik2_applet2/zh_CN/figures/
 share/gnome/help/gtik2_applet2/zh_CN/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/zh_CN/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/zh_CN/legal.xml
+share/gnome/help/gtik2_applet2/zh_HK/
+share/gnome/help/gtik2_applet2/zh_HK/figures/
 share/gnome/help/gtik2_applet2/zh_HK/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/zh_HK/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/zh_HK/legal.xml
+share/gnome/help/gtik2_applet2/zh_TW/
+share/gnome/help/gtik2_applet2/zh_TW/figures/
 share/gnome/help/gtik2_applet2/zh_TW/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/zh_TW/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/zh_TW/legal.xml
+share/gnome/help/gweather/
+share/gnome/help/gweather/C/
+share/gnome/help/gweather/C/figures/
 share/gnome/help/gweather/C/figures/gweather_applet.png
 share/gnome/help/gweather/C/figures/gweather_settings.png
 share/gnome/help/gweather/C/figures/gweather_weather.png
 share/gnome/help/gweather/C/gweather.xml
 share/gnome/help/gweather/C/legal.xml
+share/gnome/help/gweather/de/
+share/gnome/help/gweather/de/figures/
 share/gnome/help/gweather/de/figures/gweather_applet.png
 share/gnome/help/gweather/de/figures/gweather_settings.png
 share/gnome/help/gweather/de/figures/gweather_weather.png
 share/gnome/help/gweather/de/gweather.xml
 share/gnome/help/gweather/de/legal.xml
+share/gnome/help/gweather/es/
+share/gnome/help/gweather/es/figures/
 share/gnome/help/gweather/es/figures/gweather_applet.png
 share/gnome/help/gweather/es/figures/gweather_settings.png
 share/gnome/help/gweather/es/figures/gweather_weather.png
 share/gnome/help/gweather/es/gweather.xml
 share/gnome/help/gweather/es/legal.xml
+share/gnome/help/gweather/eu/
+share/gnome/help/gweather/eu/figures/
 share/gnome/help/gweather/eu/figures/gweather_applet.png
 share/gnome/help/gweather/eu/figures/gweather_settings.png
 share/gnome/help/gweather/eu/figures/gweather_weather.png
 share/gnome/help/gweather/eu/gweather.xml
 share/gnome/help/gweather/eu/legal.xml
+share/gnome/help/gweather/fr/
+share/gnome/help/gweather/fr/figures/
 share/gnome/help/gweather/fr/figures/gweather_applet.png
 share/gnome/help/gweather/fr/figures/gweather_settings.png
 share/gnome/help/gweather/fr/figures/gweather_weather.png
 share/gnome/help/gweather/fr/gweather.xml
 share/gnome/help/gweather/fr/legal.xml
+share/gnome/help/gweather/it/
+share/gnome/help/gweather/it/figures/
 share/gnome/help/gweather/it/figures/gweather_applet.png
 share/gnome/help/gweather/it/figures/gweather_settings.png
 share/gnome/help/gweather/it/figures/gweather_weather.png
 share/gnome/help/gweather/it/gweather.xml
 share/gnome/help/gweather/it/legal.xml
+share/gnome/help/gweather/ja/
+share/gnome/help/gweather/ja/figures/
 share/gnome/help/gweather/ja/figures/gweather_applet.png
 share/gnome/help/gweather/ja/figures/gweather_settings.png
 share/gnome/help/gweather/ja/figures/gweather_weather.png
 share/gnome/help/gweather/ja/gweather.xml
 share/gnome/help/gweather/ja/legal.xml
+share/gnome/help/gweather/ko/
+share/gnome/help/gweather/ko/figures/
 share/gnome/help/gweather/ko/figures/gweather_applet.png
 share/gnome/help/gweather/ko/figures/gweather_settings.png
 share/gnome/help/gweather/ko/figures/gweather_weather.png
 share/gnome/help/gweather/ko/gweather.xml
 share/gnome/help/gweather/ko/legal.xml
+share/gnome/help/gweather/sv/
+share/gnome/help/gweather/sv/figures/
 share/gnome/help/gweather/sv/figures/gweather_applet.png
 share/gnome/help/gweather/sv/figures/gweather_settings.png
 share/gnome/help/gweather/sv/figures/gweather_weather.png
 share/gnome/help/gweather/sv/gweather.xml
 share/gnome/help/gweather/sv/legal.xml
+share/gnome/help/gweather/zh_CN/
+share/gnome/help/gweather/zh_CN/figures/
 share/gnome/help/gweather/zh_CN/figures/gweather_applet.png
 share/gnome/help/gweather/zh_CN/figures/gweather_settings.png
 share/gnome/help/gweather/zh_CN/figures/gweather_weather.png
 share/gnome/help/gweather/zh_CN/gweather.xml
 share/gnome/help/gweather/zh_CN/legal.xml
+share/gnome/help/gweather/zh_HK/
+share/gnome/help/gweather/zh_HK/figures/
 share/gnome/help/gweather/zh_HK/figures/gweather_applet.png
 share/gnome/help/gweather/zh_HK/figures/gweather_settings.png
 share/gnome/help/gweather/zh_HK/figures/gweather_weather.png
 share/gnome/help/gweather/zh_HK/gweather.xml
 share/gnome/help/gweather/zh_HK/legal.xml
+share/gnome/help/gweather/zh_TW/
+share/gnome/help/gweather/zh_TW/figures/
 share/gnome/help/gweather/zh_TW/figures/gweather_applet.png
 share/gnome/help/gweather/zh_TW/figures/gweather_settings.png
 share/gnome/help/gweather/zh_TW/figures/gweather_weather.png
 share/gnome/help/gweather/zh_TW/gweather.xml
 share/gnome/help/gweather/zh_TW/legal.xml
+share/gnome/help/mailcheck/
+share/gnome/help/mailcheck/C/
+share/gnome/help/mailcheck/C/figures/
 share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
+share/gnome/help/mailcheck/de/
+share/gnome/help/mailcheck/de/figures/
 share/gnome/help/mailcheck/de/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/de/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/de/legal.xml
 share/gnome/help/mailcheck/de/mailcheck.xml
+share/gnome/help/mailcheck/es/
+share/gnome/help/mailcheck/es/figures/
 share/gnome/help/mailcheck/es/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/es/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/es/legal.xml
 share/gnome/help/mailcheck/es/mailcheck.xml
+share/gnome/help/mailcheck/eu/
+share/gnome/help/mailcheck/eu/figures/
 share/gnome/help/mailcheck/eu/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/eu/legal.xml
 share/gnome/help/mailcheck/eu/mailcheck.xml
+share/gnome/help/mailcheck/fr/
+share/gnome/help/mailcheck/fr/figures/
 share/gnome/help/mailcheck/fr/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/fr/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/fr/legal.xml
 share/gnome/help/mailcheck/fr/mailcheck.xml
+share/gnome/help/mailcheck/it/
+share/gnome/help/mailcheck/it/figures/
 share/gnome/help/mailcheck/it/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/it/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/it/legal.xml
 share/gnome/help/mailcheck/it/mailcheck.xml
+share/gnome/help/mailcheck/ja/
+share/gnome/help/mailcheck/ja/figures/
 share/gnome/help/mailcheck/ja/figures/charpalette_applet.png
 share/gnome/help/mailcheck/ja/figures/charpalette_chargroup.png
 share/gnome/help/mailcheck/ja/figures/charpick_applet.png
@@ -605,78 +811,116 @@ share/gnome/help/mailcheck/ja/figures/charpick_chargroup.png
 share/gnome/help/mailcheck/ja/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/ja/legal.xml
 share/gnome/help/mailcheck/ja/mailcheck.xml
+share/gnome/help/mailcheck/ko/
+share/gnome/help/mailcheck/ko/figures/
 share/gnome/help/mailcheck/ko/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/ko/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/ko/legal.xml
 share/gnome/help/mailcheck/ko/mailcheck.xml
+share/gnome/help/mailcheck/sv/
+share/gnome/help/mailcheck/sv/figures/
 share/gnome/help/mailcheck/sv/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/sv/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/sv/legal.xml
 share/gnome/help/mailcheck/sv/mailcheck.xml
+share/gnome/help/mailcheck/zh_CN/
+share/gnome/help/mailcheck/zh_CN/figures/
 share/gnome/help/mailcheck/zh_CN/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/zh_CN/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/zh_CN/legal.xml
 share/gnome/help/mailcheck/zh_CN/mailcheck.xml
+share/gnome/help/mailcheck/zh_HK/
+share/gnome/help/mailcheck/zh_HK/figures/
 share/gnome/help/mailcheck/zh_HK/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/zh_HK/legal.xml
 share/gnome/help/mailcheck/zh_HK/mailcheck.xml
+share/gnome/help/mailcheck/zh_TW/
+share/gnome/help/mailcheck/zh_TW/figures/
 share/gnome/help/mailcheck/zh_TW/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/zh_TW/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/zh_TW/legal.xml
 share/gnome/help/mailcheck/zh_TW/mailcheck.xml
+share/gnome/help/mixer_applet2/
+share/gnome/help/mixer_applet2/C/
+share/gnome/help/mixer_applet2/C/figures/
 share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/C/legal.xml
 share/gnome/help/mixer_applet2/C/mixer_applet2.xml
+share/gnome/help/mixer_applet2/de/
+share/gnome/help/mixer_applet2/de/figures/
 share/gnome/help/mixer_applet2/de/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/de/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/de/legal.xml
 share/gnome/help/mixer_applet2/de/mixer_applet2.xml
+share/gnome/help/mixer_applet2/es/
+share/gnome/help/mixer_applet2/es/figures/
 share/gnome/help/mixer_applet2/es/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/es/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/es/legal.xml
 share/gnome/help/mixer_applet2/es/mixer_applet2.xml
+share/gnome/help/mixer_applet2/eu/
+share/gnome/help/mixer_applet2/eu/figures/
 share/gnome/help/mixer_applet2/eu/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/eu/legal.xml
 share/gnome/help/mixer_applet2/eu/mixer_applet2.xml
+share/gnome/help/mixer_applet2/fr/
+share/gnome/help/mixer_applet2/fr/figures/
 share/gnome/help/mixer_applet2/fr/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/fr/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/fr/legal.xml
 share/gnome/help/mixer_applet2/fr/mixer_applet2.xml
+share/gnome/help/mixer_applet2/it/
+share/gnome/help/mixer_applet2/it/figures/
 share/gnome/help/mixer_applet2/it/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/it/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/it/legal.xml
 share/gnome/help/mixer_applet2/it/mixer_applet2.xml
+share/gnome/help/mixer_applet2/ja/
+share/gnome/help/mixer_applet2/ja/figures/
 share/gnome/help/mixer_applet2/ja/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/ja/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/ja/legal.xml
 share/gnome/help/mixer_applet2/ja/mixer_applet2.xml
+share/gnome/help/mixer_applet2/ko/
+share/gnome/help/mixer_applet2/ko/figures/
 share/gnome/help/mixer_applet2/ko/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/ko/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/ko/legal.xml
 share/gnome/help/mixer_applet2/ko/mixer_applet2.xml
+share/gnome/help/mixer_applet2/sv/
+share/gnome/help/mixer_applet2/sv/figures/
 share/gnome/help/mixer_applet2/sv/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/sv/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/sv/legal.xml
 share/gnome/help/mixer_applet2/sv/mixer_applet2.xml
+share/gnome/help/mixer_applet2/zh_CN/
+share/gnome/help/mixer_applet2/zh_CN/figures/
 share/gnome/help/mixer_applet2/zh_CN/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/zh_CN/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/zh_CN/legal.xml
 share/gnome/help/mixer_applet2/zh_CN/mixer_applet2.xml
+share/gnome/help/mixer_applet2/zh_HK/
+share/gnome/help/mixer_applet2/zh_HK/figures/
 share/gnome/help/mixer_applet2/zh_HK/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/zh_HK/legal.xml
 share/gnome/help/mixer_applet2/zh_HK/mixer_applet2.xml
+share/gnome/help/mixer_applet2/zh_TW/
+share/gnome/help/mixer_applet2/zh_TW/figures/
 share/gnome/help/mixer_applet2/zh_TW/figures/mixer_applet.png
 share/gnome/help/mixer_applet2/zh_TW/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/zh_TW/legal.xml
 share/gnome/help/mixer_applet2/zh_TW/mixer_applet2.xml
+share/gnome/help/modemlights/
+share/gnome/help/modemlights/C/
+share/gnome/help/modemlights/C/figures/
 share/gnome/help/modemlights/C/figures/modemlights-advanced.png
 share/gnome/help/modemlights/C/figures/modemlights-advpref.png
 share/gnome/help/modemlights/C/figures/modemlights-color.png
@@ -697,6 +941,8 @@ share/gnome/help/modemlights/C/figures/modemlights_applet_prefs_connecting.png
 share/gnome/help/modemlights/C/figures/modemlights_applet_prefs_display.png
 share/gnome/help/modemlights/C/legal.xml
 share/gnome/help/modemlights/C/modemlights.xml
+share/gnome/help/modemlights/eu/
+share/gnome/help/modemlights/eu/figures/
 share/gnome/help/modemlights/eu/figures/modemlights-advanced.png
 share/gnome/help/modemlights/eu/figures/modemlights-advpref.png
 share/gnome/help/modemlights/eu/figures/modemlights-color.png
@@ -717,87 +963,200 @@ share/gnome/help/modemlights/eu/figures/modemlights_applet_prefs_connecting.png
 share/gnome/help/modemlights/eu/figures/modemlights_applet_prefs_display.png
 share/gnome/help/modemlights/eu/legal.xml
 share/gnome/help/modemlights/eu/modemlights.xml
+share/gnome/help/multiload/
+share/gnome/help/multiload/C/
+share/gnome/help/multiload/C/figures/
+share/gnome/help/multiload/C/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/C/figures/system_monitor.png
+share/gnome/help/multiload/C/figures/system_monitor_prefs.png
+share/gnome/help/multiload/C/legal.xml
+share/gnome/help/multiload/C/multiload.xml
+share/gnome/help/multiload/de/
+share/gnome/help/multiload/de/figures/
+share/gnome/help/multiload/de/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/de/legal.xml
+share/gnome/help/multiload/de/multiload.xml
+share/gnome/help/multiload/es/
+share/gnome/help/multiload/es/figures/
+share/gnome/help/multiload/es/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/es/legal.xml
+share/gnome/help/multiload/es/multiload.xml
+share/gnome/help/multiload/eu/
+share/gnome/help/multiload/eu/figures/
+share/gnome/help/multiload/eu/figures/system_monitor.png
+share/gnome/help/multiload/eu/figures/system_monitor_prefs.png
+share/gnome/help/multiload/eu/legal.xml
+share/gnome/help/multiload/eu/multiload.xml
+share/gnome/help/multiload/fr/
+share/gnome/help/multiload/fr/figures/
+share/gnome/help/multiload/fr/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/fr/legal.xml
+share/gnome/help/multiload/fr/multiload.xml
+share/gnome/help/multiload/it/
+share/gnome/help/multiload/it/figures/
+share/gnome/help/multiload/it/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/it/legal.xml
+share/gnome/help/multiload/it/multiload.xml
+share/gnome/help/multiload/ja/
+share/gnome/help/multiload/ja/figures/
+share/gnome/help/multiload/ja/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/ja/legal.xml
+share/gnome/help/multiload/ja/multiload.xml
+share/gnome/help/multiload/ko/
+share/gnome/help/multiload/ko/figures/
+share/gnome/help/multiload/ko/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/ko/legal.xml
+share/gnome/help/multiload/ko/multiload.xml
+share/gnome/help/multiload/sv/
+share/gnome/help/multiload/sv/figures/
+share/gnome/help/multiload/sv/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/sv/legal.xml
+share/gnome/help/multiload/sv/multiload.xml
+share/gnome/help/multiload/zh_CN/
+share/gnome/help/multiload/zh_CN/figures/
+share/gnome/help/multiload/zh_CN/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/zh_CN/legal.xml
+share/gnome/help/multiload/zh_CN/multiload.xml
+share/gnome/help/multiload/zh_HK/
+share/gnome/help/multiload/zh_HK/figures/
+share/gnome/help/multiload/zh_HK/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/zh_HK/legal.xml
+share/gnome/help/multiload/zh_HK/multiload.xml
+share/gnome/help/multiload/zh_TW/
+share/gnome/help/multiload/zh_TW/figures/
+share/gnome/help/multiload/zh_TW/figures/system-monitor-applet_window.png
+share/gnome/help/multiload/zh_TW/legal.xml
+share/gnome/help/multiload/zh_TW/multiload.xml
+share/gnome/help/stickynotes_applet/
+share/gnome/help/stickynotes_applet/C/
 share/gnome/help/stickynotes_applet/C/legal.xml
 share/gnome/help/stickynotes_applet/C/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/de/
+share/gnome/help/stickynotes_applet/de/figures/
 share/gnome/help/stickynotes_applet/de/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/de/legal.xml
 share/gnome/help/stickynotes_applet/de/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/es/
+share/gnome/help/stickynotes_applet/es/figures/
 share/gnome/help/stickynotes_applet/es/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/es/legal.xml
 share/gnome/help/stickynotes_applet/es/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/eu/
+share/gnome/help/stickynotes_applet/eu/figures/
 share/gnome/help/stickynotes_applet/eu/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/eu/legal.xml
 share/gnome/help/stickynotes_applet/eu/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/fr/
+share/gnome/help/stickynotes_applet/fr/figures/
 share/gnome/help/stickynotes_applet/fr/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/fr/legal.xml
 share/gnome/help/stickynotes_applet/fr/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/it/
+share/gnome/help/stickynotes_applet/it/figures/
 share/gnome/help/stickynotes_applet/it/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/it/legal.xml
 share/gnome/help/stickynotes_applet/it/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/ja/
+share/gnome/help/stickynotes_applet/ja/figures/
 share/gnome/help/stickynotes_applet/ja/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/ja/legal.xml
 share/gnome/help/stickynotes_applet/ja/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/ko/
+share/gnome/help/stickynotes_applet/ko/figures/
 share/gnome/help/stickynotes_applet/ko/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/ko/legal.xml
 share/gnome/help/stickynotes_applet/ko/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/sv/
+share/gnome/help/stickynotes_applet/sv/figures/
 share/gnome/help/stickynotes_applet/sv/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/sv/legal.xml
 share/gnome/help/stickynotes_applet/sv/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_CN/
+share/gnome/help/stickynotes_applet/zh_CN/figures/
 share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/zh_CN/legal.xml
 share/gnome/help/stickynotes_applet/zh_CN/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_HK/
+share/gnome/help/stickynotes_applet/zh_HK/figures/
 share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/zh_HK/legal.xml
 share/gnome/help/stickynotes_applet/zh_HK/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_TW/
+share/gnome/help/stickynotes_applet/zh_TW/figures/
 share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/zh_TW/legal.xml
 share/gnome/help/stickynotes_applet/zh_TW/stickynotes_applet.xml
+share/gnome/help/wireless/
+share/gnome/help/wireless/C/
 share/gnome/help/wireless/C/legal.xml
 share/gnome/help/wireless/C/wireless.xml
+share/gnome/help/wireless/de/
+share/gnome/help/wireless/de/figures/
 share/gnome/help/wireless/de/figures/wireless_applet_conn.png
 share/gnome/help/wireless/de/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/de/legal.xml
 share/gnome/help/wireless/de/wireless.xml
+share/gnome/help/wireless/es/
+share/gnome/help/wireless/es/figures/
 share/gnome/help/wireless/es/figures/wireless_applet_conn.png
 share/gnome/help/wireless/es/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/es/legal.xml
 share/gnome/help/wireless/es/wireless.xml
+share/gnome/help/wireless/eu/
 share/gnome/help/wireless/eu/legal.xml
 share/gnome/help/wireless/eu/wireless.xml
+share/gnome/help/wireless/fr/
+share/gnome/help/wireless/fr/figures/
 share/gnome/help/wireless/fr/figures/wireless_applet_conn.png
 share/gnome/help/wireless/fr/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/fr/legal.xml
 share/gnome/help/wireless/fr/wireless.xml
+share/gnome/help/wireless/it/
+share/gnome/help/wireless/it/figures/
 share/gnome/help/wireless/it/figures/wireless_applet_conn.png
 share/gnome/help/wireless/it/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/it/legal.xml
 share/gnome/help/wireless/it/wireless.xml
+share/gnome/help/wireless/ja/
+share/gnome/help/wireless/ja/figures/
 share/gnome/help/wireless/ja/figures/wireless_applet_conn.png
 share/gnome/help/wireless/ja/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/ja/legal.xml
 share/gnome/help/wireless/ja/wireless.xml
+share/gnome/help/wireless/ko/
+share/gnome/help/wireless/ko/figures/
 share/gnome/help/wireless/ko/figures/wireless_applet_conn.png
 share/gnome/help/wireless/ko/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/ko/legal.xml
 share/gnome/help/wireless/ko/wireless.xml
+share/gnome/help/wireless/sv/
+share/gnome/help/wireless/sv/figures/
 share/gnome/help/wireless/sv/figures/wireless_applet_conn.png
 share/gnome/help/wireless/sv/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/sv/legal.xml
 share/gnome/help/wireless/sv/wireless.xml
+share/gnome/help/wireless/zh_CN/
+share/gnome/help/wireless/zh_CN/figures/
 share/gnome/help/wireless/zh_CN/figures/wireless_applet_conn.png
 share/gnome/help/wireless/zh_CN/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/zh_CN/legal.xml
 share/gnome/help/wireless/zh_CN/wireless.xml
+share/gnome/help/wireless/zh_HK/
+share/gnome/help/wireless/zh_HK/figures/
 share/gnome/help/wireless/zh_HK/figures/wireless_applet_conn.png
 share/gnome/help/wireless/zh_HK/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/zh_HK/legal.xml
 share/gnome/help/wireless/zh_HK/wireless.xml
+share/gnome/help/wireless/zh_TW/
+share/gnome/help/wireless/zh_TW/figures/
 share/gnome/help/wireless/zh_TW/figures/wireless_applet_conn.png
 share/gnome/help/wireless/zh_TW/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/zh_TW/legal.xml
 share/gnome/help/wireless/zh_TW/wireless.xml
+share/gswitchit/
 share/gswitchit/gswitchit-plugins.glade
 share/gswitchit/gswitchit-properties.glade
+share/gweather/
 share/gweather/Locations
 share/locale/am/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-applets-2.0.mo
@@ -832,6 +1191,7 @@ share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/mi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
@@ -859,6 +1219,7 @@ share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
+share/omf/gnome-applets/
 share/omf/gnome-applets/accessx-status-C.omf
 share/omf/gnome-applets/accessx-status-eu.omf
 share/omf/gnome-applets/char-palette-C.omf
@@ -970,6 +1331,18 @@ share/omf/gnome-applets/mixer_applet2-zh_HK.omf
 share/omf/gnome-applets/mixer_applet2-zh_TW.omf
 share/omf/gnome-applets/modemlights-C.omf
 share/omf/gnome-applets/modemlights-eu.omf
+share/omf/gnome-applets/multiload-C.omf
+share/omf/gnome-applets/multiload-de.omf
+share/omf/gnome-applets/multiload-es.omf
+share/omf/gnome-applets/multiload-eu.omf
+share/omf/gnome-applets/multiload-fr.omf
+share/omf/gnome-applets/multiload-it.omf
+share/omf/gnome-applets/multiload-ja.omf
+share/omf/gnome-applets/multiload-ko.omf
+share/omf/gnome-applets/multiload-sv.omf
+share/omf/gnome-applets/multiload-zh_CN.omf
+share/omf/gnome-applets/multiload-zh_HK.omf
+share/omf/gnome-applets/multiload-zh_TW.omf
 share/omf/gnome-applets/stickynotes_applet-C.omf
 share/omf/gnome-applets/stickynotes_applet-de.omf
 share/omf/gnome-applets/stickynotes_applet-es.omf
@@ -994,6 +1367,7 @@ share/omf/gnome-applets/wireless-sv.omf
 share/omf/gnome-applets/wireless-zh_CN.omf
 share/omf/gnome-applets/wireless-zh_HK.omf
 share/omf/gnome-applets/wireless-zh_TW.omf
+share/pixmaps/accessx-status-applet/
 share/pixmaps/accessx-status-applet/ax-applet.png
 share/pixmaps/accessx-status-applet/ax-bouncekeys.png
 share/pixmaps/accessx-status-applet/ax-key-base.png
@@ -1032,6 +1406,7 @@ share/pixmaps/accessx-status-applet/sticky-super-locked.png
 share/pixmaps/accessx-status-applet/sticky-super-none.png
 share/pixmaps/charpick.png
 share/pixmaps/drivemount-applet.png
+share/pixmaps/gkb/
 share/pixmaps/gkb-icon.png
 share/pixmaps/gkb.png
 share/pixmaps/gkb/ae.png
@@ -1110,24 +1485,29 @@ share/pixmaps/gkb/uy.png
 share/pixmaps/gkb/vn.png
 share/pixmaps/gkb/ye.png
 share/pixmaps/gkb/yu.png
+share/pixmaps/gnome-cpu.png
 share/pixmaps/gnome-eyes.png
 share/pixmaps/gnome-mini-commander.png
 share/pixmaps/gswitchit-applet.png
 share/pixmaps/gswitchit-properties-capplet.png
+share/pixmaps/mailcheck/
 share/pixmaps/mailcheck/eclouds.png
 share/pixmaps/mailcheck/email-e.png
 share/pixmaps/mailcheck/email-eclouds.png
 share/pixmaps/mailcheck/email-tiny.png
 share/pixmaps/mailcheck/email.png
 share/pixmaps/mailcheck/tux-anim.png
+share/pixmaps/mini-commander/
 share/pixmaps/mini-commander/browser-mini.xpm
 share/pixmaps/mini-commander/history-mini.xpm
+share/pixmaps/mixer/
 share/pixmaps/mixer/gnome-mixer-applet.png
 share/pixmaps/mixer/volume-max.png
 share/pixmaps/mixer/volume-medium.png
 share/pixmaps/mixer/volume-min.png
 share/pixmaps/mixer/volume-mute.png
 share/pixmaps/mixer/volume-zero.png
+share/pixmaps/stickynotes/
 share/pixmaps/stickynotes/close.png
 share/pixmaps/stickynotes/locked.png
 share/pixmaps/stickynotes/resize_se.png
@@ -1135,6 +1515,7 @@ share/pixmaps/stickynotes/resize_sw.png
 share/pixmaps/stickynotes/stickynotes.png
 share/pixmaps/stickynotes/stickynotes_prelight.png
 share/pixmaps/stickynotes/unlocked.png
+share/pixmaps/wireless-applet/
 share/pixmaps/wireless-applet/broken-0.png
 share/pixmaps/wireless-applet/no-link-0.png
 share/pixmaps/wireless-applet/signal-1-40.png
@@ -1142,6 +1523,7 @@ share/pixmaps/wireless-applet/signal-41-60.png
 share/pixmaps/wireless-applet/signal-61-80.png
 share/pixmaps/wireless-applet/signal-81-100.png
 share/pixmaps/wireless-applet/wireless-applet.png
+share/schemas/gnome-applets2/
 share/schemas/gnome-applets2/charpick.schemas
 share/schemas/gnome-applets2/drivemount.schemas
 share/schemas/gnome-applets2/geyes.schemas
@@ -1153,9 +1535,13 @@ share/schemas/gnome-applets2/mailcheck.schemas
 share/schemas/gnome-applets2/mini-commander.schemas
 share/schemas/gnome-applets2/mixer.schemas
 share/schemas/gnome-applets2/modemlights.schemas
+share/schemas/gnome-applets2/multiload.schemas
 share/schemas/gnome-applets2/stickynotes.schemas
+share/stickynotes/
 share/stickynotes/stickynotes.glade
+share/wireless-applet/
 share/wireless-applet/wireless-applet.glade
+share/xmodmap/
 share/xmodmap/xmodmap.am
 share/xmodmap/xmodmap.ar
 share/xmodmap/xmodmap.be
@@ -1241,310 +1627,6 @@ share/xmodmap/xmodmap.us.old
 share/xmodmap/xmodmap.us101A_x86
 share/xmodmap/xmodmap.us_intl
 share/xmodmap/xmodmap.yu
-@dirrm share/xmodmap
-@dirrm share/wireless-applet
-@dirrm share/stickynotes
-@dirrm share/schemas/gnome-applets2
-@dirrm share/pixmaps/wireless-applet
-@dirrm share/pixmaps/stickynotes
-@dirrm share/pixmaps/mixer
-@dirrm share/pixmaps/mini-commander
-@dirrm share/pixmaps/mailcheck
-@dirrm share/pixmaps/gkb
-@dirrm share/pixmaps/accessx-status-applet
-@dirrm share/omf/gnome-applets
-@dirrm share/gweather
-@dirrm share/gswitchit
-@dirrm share/gnome/help/wireless/zh_TW/figures
-@dirrm share/gnome/help/wireless/zh_TW
-@dirrm share/gnome/help/wireless/zh_HK/figures
-@dirrm share/gnome/help/wireless/zh_HK
-@dirrm share/gnome/help/wireless/zh_CN/figures
-@dirrm share/gnome/help/wireless/zh_CN
-@dirrm share/gnome/help/wireless/sv/figures
-@dirrm share/gnome/help/wireless/sv
-@dirrm share/gnome/help/wireless/ko/figures
-@dirrm share/gnome/help/wireless/ko
-@dirrm share/gnome/help/wireless/ja/figures
-@dirrm share/gnome/help/wireless/ja
-@dirrm share/gnome/help/wireless/it/figures
-@dirrm share/gnome/help/wireless/it
-@dirrm share/gnome/help/wireless/fr/figures
-@dirrm share/gnome/help/wireless/fr
-@dirrm share/gnome/help/wireless/eu
-@dirrm share/gnome/help/wireless/es/figures
-@dirrm share/gnome/help/wireless/es
-@dirrm share/gnome/help/wireless/de/figures
-@dirrm share/gnome/help/wireless/de
-@dirrm share/gnome/help/wireless/C
-@dirrm share/gnome/help/wireless
-@dirrm share/gnome/help/stickynotes_applet/zh_TW/figures
-@dirrm share/gnome/help/stickynotes_applet/zh_TW
-@dirrm share/gnome/help/stickynotes_applet/zh_HK/figures
-@dirrm share/gnome/help/stickynotes_applet/zh_HK
-@dirrm share/gnome/help/stickynotes_applet/zh_CN/figures
-@dirrm share/gnome/help/stickynotes_applet/zh_CN
-@dirrm share/gnome/help/stickynotes_applet/sv/figures
-@dirrm share/gnome/help/stickynotes_applet/sv
-@dirrm share/gnome/help/stickynotes_applet/ko/figures
-@dirrm share/gnome/help/stickynotes_applet/ko
-@dirrm share/gnome/help/stickynotes_applet/ja/figures
-@dirrm share/gnome/help/stickynotes_applet/ja
-@dirrm share/gnome/help/stickynotes_applet/it/figures
-@dirrm share/gnome/help/stickynotes_applet/it
-@dirrm share/gnome/help/stickynotes_applet/fr/figures
-@dirrm share/gnome/help/stickynotes_applet/fr
-@dirrm share/gnome/help/stickynotes_applet/eu/figures
-@dirrm share/gnome/help/stickynotes_applet/eu
-@dirrm share/gnome/help/stickynotes_applet/es/figures
-@dirrm share/gnome/help/stickynotes_applet/es
-@dirrm share/gnome/help/stickynotes_applet/de/figures
-@dirrm share/gnome/help/stickynotes_applet/de
-@dirrm share/gnome/help/stickynotes_applet/C
-@dirrm share/gnome/help/stickynotes_applet
-@dirrm share/gnome/help/modemlights/eu/figures
-@dirrm share/gnome/help/modemlights/eu
-@dirrm share/gnome/help/modemlights/C/figures
-@dirrm share/gnome/help/modemlights/C
-@dirrm share/gnome/help/modemlights
-@dirrm share/gnome/help/mixer_applet2/zh_TW/figures
-@dirrm share/gnome/help/mixer_applet2/zh_TW
-@dirrm share/gnome/help/mixer_applet2/zh_HK/figures
-@dirrm share/gnome/help/mixer_applet2/zh_HK
-@dirrm share/gnome/help/mixer_applet2/zh_CN/figures
-@dirrm share/gnome/help/mixer_applet2/zh_CN
-@dirrm share/gnome/help/mixer_applet2/sv/figures
-@dirrm share/gnome/help/mixer_applet2/sv
-@dirrm share/gnome/help/mixer_applet2/ko/figures
-@dirrm share/gnome/help/mixer_applet2/ko
-@dirrm share/gnome/help/mixer_applet2/ja/figures
-@dirrm share/gnome/help/mixer_applet2/ja
-@dirrm share/gnome/help/mixer_applet2/it/figures
-@dirrm share/gnome/help/mixer_applet2/it
-@dirrm share/gnome/help/mixer_applet2/fr/figures
-@dirrm share/gnome/help/mixer_applet2/fr
-@dirrm share/gnome/help/mixer_applet2/eu/figures
-@dirrm share/gnome/help/mixer_applet2/eu
-@dirrm share/gnome/help/mixer_applet2/es/figures
-@dirrm share/gnome/help/mixer_applet2/es
-@dirrm share/gnome/help/mixer_applet2/de/figures
-@dirrm share/gnome/help/mixer_applet2/de
-@dirrm share/gnome/help/mixer_applet2/C/figures
-@dirrm share/gnome/help/mixer_applet2/C
-@dirrm share/gnome/help/mixer_applet2
-@dirrm share/gnome/help/mailcheck/zh_TW/figures
-@dirrm share/gnome/help/mailcheck/zh_TW
-@dirrm share/gnome/help/mailcheck/zh_HK/figures
-@dirrm share/gnome/help/mailcheck/zh_HK
-@dirrm share/gnome/help/mailcheck/zh_CN/figures
-@dirrm share/gnome/help/mailcheck/zh_CN
-@dirrm share/gnome/help/mailcheck/sv/figures
-@dirrm share/gnome/help/mailcheck/sv
-@dirrm share/gnome/help/mailcheck/ko/figures
-@dirrm share/gnome/help/mailcheck/ko
-@dirrm share/gnome/help/mailcheck/ja/figures
-@dirrm share/gnome/help/mailcheck/ja
-@dirrm share/gnome/help/mailcheck/it/figures
-@dirrm share/gnome/help/mailcheck/it
-@dirrm share/gnome/help/mailcheck/fr/figures
-@dirrm share/gnome/help/mailcheck/fr
-@dirrm share/gnome/help/mailcheck/eu/figures
-@dirrm share/gnome/help/mailcheck/eu
-@dirrm share/gnome/help/mailcheck/es/figures
-@dirrm share/gnome/help/mailcheck/es
-@dirrm share/gnome/help/mailcheck/de/figures
-@dirrm share/gnome/help/mailcheck/de
-@dirrm share/gnome/help/mailcheck/C/figures
-@dirrm share/gnome/help/mailcheck/C
-@dirrm share/gnome/help/mailcheck
-@dirrm share/gnome/help/gweather/zh_TW/figures
-@dirrm share/gnome/help/gweather/zh_TW
-@dirrm share/gnome/help/gweather/zh_HK/figures
-@dirrm share/gnome/help/gweather/zh_HK
-@dirrm share/gnome/help/gweather/zh_CN/figures
-@dirrm share/gnome/help/gweather/zh_CN
-@dirrm share/gnome/help/gweather/sv/figures
-@dirrm share/gnome/help/gweather/sv
-@dirrm share/gnome/help/gweather/ko/figures
-@dirrm share/gnome/help/gweather/ko
-@dirrm share/gnome/help/gweather/ja/figures
-@dirrm share/gnome/help/gweather/ja
-@dirrm share/gnome/help/gweather/it/figures
-@dirrm share/gnome/help/gweather/it
-@dirrm share/gnome/help/gweather/fr/figures
-@dirrm share/gnome/help/gweather/fr
-@dirrm share/gnome/help/gweather/eu/figures
-@dirrm share/gnome/help/gweather/eu
-@dirrm share/gnome/help/gweather/es/figures
-@dirrm share/gnome/help/gweather/es
-@dirrm share/gnome/help/gweather/de/figures
-@dirrm share/gnome/help/gweather/de
-@dirrm share/gnome/help/gweather/C/figures
-@dirrm share/gnome/help/gweather/C
-@dirrm share/gnome/help/gweather
-@dirrm share/gnome/help/gtik2_applet2/zh_TW/figures
-@dirrm share/gnome/help/gtik2_applet2/zh_TW
-@dirrm share/gnome/help/gtik2_applet2/zh_HK/figures
-@dirrm share/gnome/help/gtik2_applet2/zh_HK
-@dirrm share/gnome/help/gtik2_applet2/zh_CN/figures
-@dirrm share/gnome/help/gtik2_applet2/zh_CN
-@dirrm share/gnome/help/gtik2_applet2/sv/figures
-@dirrm share/gnome/help/gtik2_applet2/sv
-@dirrm share/gnome/help/gtik2_applet2/ko/figures
-@dirrm share/gnome/help/gtik2_applet2/ko
-@dirrm share/gnome/help/gtik2_applet2/ja/figures
-@dirrm share/gnome/help/gtik2_applet2/ja
-@dirrm share/gnome/help/gtik2_applet2/it/figures
-@dirrm share/gnome/help/gtik2_applet2/it
-@dirrm share/gnome/help/gtik2_applet2/fr/figures
-@dirrm share/gnome/help/gtik2_applet2/fr
-@dirrm share/gnome/help/gtik2_applet2/eu/figures
-@dirrm share/gnome/help/gtik2_applet2/eu
-@dirrm share/gnome/help/gtik2_applet2/es/figures
-@dirrm share/gnome/help/gtik2_applet2/es
-@dirrm share/gnome/help/gtik2_applet2/de/figures
-@dirrm share/gnome/help/gtik2_applet2/de
-@dirrm share/gnome/help/gtik2_applet2/C/figures
-@dirrm share/gnome/help/gtik2_applet2/C
-@dirrm share/gnome/help/gtik2_applet2
-@dirrm share/gnome/help/gkb/zh_TW/figures
-@dirrm share/gnome/help/gkb/zh_TW
-@dirrm share/gnome/help/gkb/zh_HK/figures
-@dirrm share/gnome/help/gkb/zh_HK
-@dirrm share/gnome/help/gkb/zh_CN/figures
-@dirrm share/gnome/help/gkb/zh_CN
-@dirrm share/gnome/help/gkb/sv/figures
-@dirrm share/gnome/help/gkb/sv
-@dirrm share/gnome/help/gkb/ko/figures
-@dirrm share/gnome/help/gkb/ko
-@dirrm share/gnome/help/gkb/ja/figures
-@dirrm share/gnome/help/gkb/ja
-@dirrm share/gnome/help/gkb/it/figures
-@dirrm share/gnome/help/gkb/it
-@dirrm share/gnome/help/gkb/fr/figures
-@dirrm share/gnome/help/gkb/fr
-@dirrm share/gnome/help/gkb/eu/figures
-@dirrm share/gnome/help/gkb/eu
-@dirrm share/gnome/help/gkb/es/figures
-@dirrm share/gnome/help/gkb/es
-@dirrm share/gnome/help/gkb/de/figures
-@dirrm share/gnome/help/gkb/de
-@dirrm share/gnome/help/gkb/C/figures
-@dirrm share/gnome/help/gkb/C
-@dirrm share/gnome/help/gkb
-@dirrm share/gnome/help/geyes/zh_TW/figures
-@dirrm share/gnome/help/geyes/zh_TW
-@dirrm share/gnome/help/geyes/zh_HK/figures
-@dirrm share/gnome/help/geyes/zh_HK
-@dirrm share/gnome/help/geyes/zh_CN/figures
-@dirrm share/gnome/help/geyes/zh_CN
-@dirrm share/gnome/help/geyes/sv/figures
-@dirrm share/gnome/help/geyes/sv
-@dirrm share/gnome/help/geyes/ko/figures
-@dirrm share/gnome/help/geyes/ko
-@dirrm share/gnome/help/geyes/ja/figures
-@dirrm share/gnome/help/geyes/ja
-@dirrm share/gnome/help/geyes/it/figures
-@dirrm share/gnome/help/geyes/it
-@dirrm share/gnome/help/geyes/fr/figures
-@dirrm share/gnome/help/geyes/fr
-@dirrm share/gnome/help/geyes/eu/figures
-@dirrm share/gnome/help/geyes/eu
-@dirrm share/gnome/help/geyes/es/figures
-@dirrm share/gnome/help/geyes/es
-@dirrm share/gnome/help/geyes/de/figures
-@dirrm share/gnome/help/geyes/de
-@dirrm share/gnome/help/geyes/C/figures
-@dirrm share/gnome/help/geyes/C
-@dirrm share/gnome/help/geyes
-@dirrm share/gnome/help/drivemount/zh_TW/figures
-@dirrm share/gnome/help/drivemount/zh_TW
-@dirrm share/gnome/help/drivemount/zh_HK/figures
-@dirrm share/gnome/help/drivemount/zh_HK
-@dirrm share/gnome/help/drivemount/zh_CN/figures
-@dirrm share/gnome/help/drivemount/zh_CN
-@dirrm share/gnome/help/drivemount/sv/figures
-@dirrm share/gnome/help/drivemount/sv
-@dirrm share/gnome/help/drivemount/ko/figures
-@dirrm share/gnome/help/drivemount/ko
-@dirrm share/gnome/help/drivemount/ja/figures
-@dirrm share/gnome/help/drivemount/ja
-@dirrm share/gnome/help/drivemount/it/figures
-@dirrm share/gnome/help/drivemount/it
-@dirrm share/gnome/help/drivemount/fr/figures
-@dirrm share/gnome/help/drivemount/fr
-@dirrm share/gnome/help/drivemount/eu/figures
-@dirrm share/gnome/help/drivemount/eu
-@dirrm share/gnome/help/drivemount/es/figures
-@dirrm share/gnome/help/drivemount/es
-@dirrm share/gnome/help/drivemount/de/figures
-@dirrm share/gnome/help/drivemount/de
-@dirrm share/gnome/help/drivemount/C/figures
-@dirrm share/gnome/help/drivemount/C
-@dirrm share/gnome/help/drivemount
-@dirrm share/gnome/help/command-line/zh_TW/figures
-@dirrm share/gnome/help/command-line/zh_TW
-@dirrm share/gnome/help/command-line/zh_HK/figures
-@dirrm share/gnome/help/command-line/zh_HK
-@dirrm share/gnome/help/command-line/zh_CN/figures
-@dirrm share/gnome/help/command-line/zh_CN
-@dirrm share/gnome/help/command-line/sv/figures
-@dirrm share/gnome/help/command-line/sv
-@dirrm share/gnome/help/command-line/ko/figures
-@dirrm share/gnome/help/command-line/ko
-@dirrm share/gnome/help/command-line/ja/figures
-@dirrm share/gnome/help/command-line/ja
-@dirrm share/gnome/help/command-line/it/figures
-@dirrm share/gnome/help/command-line/it
-@dirrm share/gnome/help/command-line/fr/figures
-@dirrm share/gnome/help/command-line/fr
-@dirrm share/gnome/help/command-line/eu/figures
-@dirrm share/gnome/help/command-line/eu
-@dirrm share/gnome/help/command-line/es/figures
-@dirrm share/gnome/help/command-line/es
-@dirrm share/gnome/help/command-line/de/figures
-@dirrm share/gnome/help/command-line/de
-@dirrm share/gnome/help/command-line/C/figures
-@dirrm share/gnome/help/command-line/C
-@dirrm share/gnome/help/command-line
-@dirrm share/gnome/help/char-palette/zh_TW/figures
-@dirrm share/gnome/help/char-palette/zh_TW
-@dirrm share/gnome/help/char-palette/zh_HK/figures
-@dirrm share/gnome/help/char-palette/zh_HK
-@dirrm share/gnome/help/char-palette/zh_CN/figures
-@dirrm share/gnome/help/char-palette/zh_CN
-@dirrm share/gnome/help/char-palette/sv/figures
-@dirrm share/gnome/help/char-palette/sv
-@dirrm share/gnome/help/char-palette/ko/figures
-@dirrm share/gnome/help/char-palette/ko
-@dirrm share/gnome/help/char-palette/it/figures
-@dirrm share/gnome/help/char-palette/it
-@dirrm share/gnome/help/char-palette/fr/figures
-@dirrm share/gnome/help/char-palette/fr
-@dirrm share/gnome/help/char-palette/eu/figures
-@dirrm share/gnome/help/char-palette/eu
-@dirrm share/gnome/help/char-palette/es/figures
-@dirrm share/gnome/help/char-palette/es
-@dirrm share/gnome/help/char-palette/de/figures
-@dirrm share/gnome/help/char-palette/de
-@dirrm share/gnome/help/char-palette/C/figures
-@dirrm share/gnome/help/char-palette/C
-@dirrm share/gnome/help/char-palette
-@dirrm share/gnome/help/accessx-status/eu/figures
-@dirrm share/gnome/help/accessx-status/eu
-@dirrm share/gnome/help/accessx-status/C/figures
-@dirrm share/gnome/help/accessx-status/C
-@dirrm share/gnome/help/accessx-status
-@dirrm share/gnome/gkb
-@dirrm share/geyes/Horrid
-@dirrm share/geyes/Default-tiny
-@dirrm share/geyes/Default
-@dirrm share/geyes/Bloodshot
-@dirrm share/geyes/Bizarre
-@dirrm share/geyes
-@dirrm share/gen_util
-@dirrm libexec/gnome-applets
-@dirrm include/libgswitchit
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/*.schemas > /dev/null

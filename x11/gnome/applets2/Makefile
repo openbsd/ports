@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/07/08 17:09:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/01 06:12:42 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -23,13 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper->=0.3.12p1:textproc/scrollkeeper
+BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
+			:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
-			gailutil.17::x11/gnome/gail 
-
-#			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2
+			gailutil.17::x11/gnome/gail \
+			gtop-2.0.3.0::devel/libgtop2 \
+			xklavier::x11/gnome/libxklavier
 
 PSEUDO_FLAVORS=		no_battstat
 # Only i386 and macppc have the headers for the battstat applet
@@ -52,6 +52,7 @@ CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
 CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-applets2
+CONFIGURE_ARGS+=	--disable-gstreamer
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 SUBST_VARS=		CONFDIR
