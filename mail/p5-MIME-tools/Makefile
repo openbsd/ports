@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/19 19:12:55 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/19 20:17:03 avsm Exp $
 
 DISTNAME=		MIME-tools-5.410
 PKGNAME=		p5-${DISTNAME}
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= 	MIME
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/
+PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/Mail/Mailer.pm::mail/p5-Mail-Tools  \
 		${PERL_MODULES}/${ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64 \
 		${PERL_MODULES}/IO/Stringy.pm::devel/p5-IO-stringy
