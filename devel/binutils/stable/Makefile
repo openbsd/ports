@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/06/08 19:02:58 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/09 19:11:29 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -60,11 +60,11 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
-.if exists (${WRKSRC}/gprof/gprof)
-	cd ${WRKSRC} && \
-	   ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin && \
-	   ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1
-.endif
+	if [ -f ${WRKSRC}/gprof/gprof ]; then \
+	  cd ${WRKSRC};  \
+	     ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin; \
+	     ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1; \
+	fi
 	cd ${WRKSRC} && {						\
 	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
 	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
