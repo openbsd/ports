@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/16 15:03:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/18 23:04:17 jakob Exp $
 
 COMMENT=	"zone transfer program from BIND v8"
 
 VERSION=	8.4.1
-PKGNAME=	named-xfer-${VERSION}
+PKGNAME=	named-xfer-${VERSION}p1
+DISTNAME=	named-xfer-${VERSION}
 CATEGORIES=	net
 
 DIST_SUBDIR=	bind-${VERSION}
@@ -28,7 +29,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		simple
 WRKDIST=		${WRKDIR}/src
-PATCH_LIST=
+PATCH_LIST=		patch-bin_named-xfer_Makefile
+
+#MAKE_ENV+=		LDFLAGS+=-static
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} DST=${WRKBUILD}/obj SRC=${WRKSRC} links
