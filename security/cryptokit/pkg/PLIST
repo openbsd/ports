@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/21 02:39:46 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/22 20:11:47 sturm Exp $
+%%native%%
 lib/ocaml/cryptokit.cma
 lib/ocaml/cryptokit.cmi
 lib/ocaml/cryptokit.mli
@@ -89,3 +90,4 @@ share/doc/cryptokit/type_Cryptokit.hash.html
 share/doc/cryptokit/type_Cryptokit.html
 share/doc/cryptokit/type_Cryptokit.transform.html
 @dirrm share/doc/cryptokit
+@comment @dirrm lib/ocaml

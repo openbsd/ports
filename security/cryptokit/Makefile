@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/21 02:39:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/22 20:11:47 sturm Exp $
 
 COMMENT=	"cryptographic framework for the Objective-ML language"
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.2
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -15,21 +16,22 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS=	:ocaml-*:lang/ocaml
+MODULES=	ocaml
 
 OCAML_LIBDIR=	${PREFIX}/lib/ocaml
 DOC_DIR=	${PREFIX}/share/doc/cryptokit
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DHAVE_ZLIB"
 FAKE_FLAGS=	INSTALLDIR="${DESTDIR}${OCAML_LIBDIR}"
 
+ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
+
 REGRESS_TARGET=	test
 
-do-install:
+pre-install:
 	${INSTALL_DATA_DIR} ${OCAML_LIBDIR}
+
+post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-.for i in cryptokit.cmi cryptokit.cma cryptokit.mli libcryptokit.a
-	${INSTALL_DATA} ${WRKBUILD}/${i} ${OCAML_LIBDIR}
-.endfor
 	${LOCALBASE}/bin/ocamldoc -html -I ${WRKSRC} -d ${DOC_DIR} ${WRKSRC}/cryptokit.mli
 
 .include <bsd.port.mk>
