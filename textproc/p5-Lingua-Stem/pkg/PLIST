@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 04:20:34 msf Exp $
+${P5SITE}/Lingua/Stem.pm
+${P5SITE}/Lingua/Stem/AutoLoader.pm
+${P5SITE}/Lingua/Stem/Da.pm
+${P5SITE}/Lingua/Stem/De.pm
+${P5SITE}/Lingua/Stem/En.pm
+${P5SITE}/Lingua/Stem/EnBroken.pm
+${P5SITE}/Lingua/Stem/Gl.pm
+${P5SITE}/Lingua/Stem/No.pm
+${P5SITE}/Lingua/Stem/Pt.pm
+${P5SITE}/Lingua/Stem/Sv.pm
+@man man/man3p/Lingua::Stem.3p
+@man man/man3p/Lingua::Stem::AutoLoader.3p
+@man man/man3p/Lingua::Stem::Da.3p
+@man man/man3p/Lingua::Stem::De.3p
+@man man/man3p/Lingua::Stem::En.3p
+@man man/man3p/Lingua::Stem::EnBroken.3p
+@man man/man3p/Lingua::Stem::Gl.3p
+@man man/man3p/Lingua::Stem::No.3p
+@man man/man3p/Lingua::Stem::Pt.3p
+@man man/man3p/Lingua::Stem::Sv.3p

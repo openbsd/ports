@@ -1,0 +1,2 @@
+This routine applies stemming algorithms to its parameters, returning
+the stemmed words as appropriate to the selected locale.
