@@ -1,0 +1,9 @@
+In order to use the Parser by XML::LibXML, you may need to add the
+following lines :
+
+[XML::LibXML::SAX::Parser]
+http://xml.org/sax/features/namespaces = 1
+
+into the ParserDetails.ini which located at :
+
+${PREFIX}/libdata/perl5/site_perl/XML/SAX/

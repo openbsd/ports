@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/07 17:09:41 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2002/01/01 12:44:38 shell Exp $
 
 COMMENT=	"perl interface to the libxml2 library"
 
-VERSION=	1.00
+VERSION=	1.31
 DISTNAME=	XML-LibXML-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.427
+NEED_VERSION=	1.504
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	XML
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 LIB_DEPENDS=	xml2.6::textproc/libxml
+RUN_DEPENDS=	::textproc/p5-XML-SAX
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/08/07 17:09:41 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/01/01 12:44:38 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Attr.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Boolean.pm
@@ -15,6 +15,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/NodeList.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Number.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Builder.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Generator.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Parser.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Text.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.so
@@ -34,6 +35,7 @@ man/man3/XML::LibXML::NodeList.3p
 man/man3/XML::LibXML::Number.3p
 man/man3/XML::LibXML::SAX::Builder.3p
 man/man3/XML::LibXML::SAX::Generator.3p
+man/man3/XML::LibXML::SAX::Parser.3p
 man/man3/XML::LibXML::Text.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX
