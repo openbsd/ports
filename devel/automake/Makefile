@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2001/10/07 12:15:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/13 10:54:45 fgsch Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
 DISTNAME=	automake-1.4-p5
 CATEGORIES=	devel
-NEED_VERSION=	1.435
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= automake
+NEED_VERSION=	1.528
+MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
 
 HOMEPAGE=	http://www.gnu.org/software/automake/
 

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/06 22:57:48 drahn Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 10:54:45 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
 DISTNAME=		binutils-2.12
 CATEGORIES=		devel
-NEED_VERSION=		1.524
-MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	binutils
+NEED_VERSION=		1.528
+MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
