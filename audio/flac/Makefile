@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/03/09 00:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2005/03/09 14:41:18 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -29,8 +29,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	ac_cv_path_XMMS_CONFIG=no
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include" \
+		ac_cv_path_XMMS_CONFIG=no
 
 # "obj" is magic to our make(1)
 post-configure:
