@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/05/21 02:57:20 shell Exp $
+# $OpenBSD: Makefile,v 1.58 2001/05/23 16:42:12 lebel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += p5-sdf
      SUBDIR += par
      SUBDIR += pilot_makedoc
+     SUBDIR += pspell
      SUBDIR += py-xml
      SUBDIR += rman
      SUBDIR += rxp
