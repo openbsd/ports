@@ -1,11 +1,11 @@
---- src/user.c.orig	Sun Jan 16 01:19:51 2000
-+++ src/user.c	Sun Jan 16 01:20:08 2000
-@@ -497,7 +497,7 @@ void execute_menu_command (char *s)
-     int do_quote;
-     char prompt [80] = "";
-     int  col;
--    char *file_name = tmpnam (0);
-+    char *file_name = mkstemp (0);
+--- vfs/tcputil.c.orig	Mon May 25 07:16:04 1998
++++ vfs/tcputil.c	Tue Apr 25 14:15:27 2000
+@@ -240,7 +240,7 @@ void rpc_add_get_callback (int sock, voi
+     sock_callbacks = new;
+ }
  
- #ifdef OS2_NT
-     /* OS/2 and NT requires the command to end in .cmd */
+-#if defined(IS_AIX) || defined(linux) || defined(SCO_FLAVOR) || defined(__QNX__)
++#if defined(IS_AIX) || defined(linux) || defined(SCO_FLAVOR) || defined(__QNX__) || defined(__OpenBSD__)
+ static void sig_pipe (int unused)
+ #else
+ static void sig_pipe (void)

@@ -1,11 +1,28 @@
---- vfs/extfs.c.orig	Sun Jan 16 01:31:07 2000
-+++ vfs/extfs.c	Sun Jan 16 01:31:27 2000
-@@ -749,7 +749,7 @@ static void *extfs_open (char *file, int
-     if (entry->inode->local_filename == NULL) {
-         char *cmd, *archive_name;
-         
--        entry->inode->local_filename = strdup (tmpnam (NULL));
-+        entry->inode->local_filename = strdup (mkstemp (NULL));
- 	p = extfs_get_path_from_entry (entry);
- 	q = name_quote (p, 0);
- 	free (p);
+--- vfs/vfs.c.orig	Mon May 25 07:16:04 1998
++++ vfs/vfs.c	Thu Apr 27 11:20:45 2000
+@@ -1274,13 +1274,25 @@
+     fdin = mc_open (filename, O_RDONLY);
+     if (fdin == -1)
+         return NULL;
++#ifdef __OpenBSD__
++#define TEMPFILE	"/tmp/mcXXXXXXXXXX"
++    tmp = xmalloc (sizeof(TEMPFILE), TEMPFILE);
++    strcpy (tmp, TEMPFILE);
++    fdout = mkstemp (tmp);
++#else
+     tmp = tmpnam(NULL);
+     fdout = creat (tmp, 0600);
++#endif
+     if (fdout == -1) {
+         mc_close (fdin);
++#ifdef __OpenBSD__
++        free (tmp);
++#endif
+         return NULL;
+     }
++#ifndef __OpenBSD__
+     tmp = strdup (tmp);
++#endif
+     while ((i = mc_read (fdin, buffer, sizeof (buffer))) == sizeof (buffer)) {
+         write (fdout, buffer, i);
+     }

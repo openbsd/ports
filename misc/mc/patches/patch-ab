@@ -1,11 +1,19 @@
---- src/ext.c.orig	Sun Jan 16 01:20:19 2000
-+++ src/ext.c	Sun Jan 16 01:20:38 2000
-@@ -133,7 +133,7 @@ exec_extension (char *filename, char *da
+--- src/ext.c.orig	Mon May 25 07:16:07 1998
++++ src/ext.c	Tue Apr 25 19:26:36 2000
+@@ -133,9 +133,16 @@ exec_extension (char *filename, char *da
      /* Note: this has to be done after the getlocalcopy call,
       * since it uses tmpnam as well
       */
--    file_name = strdup (tmpnam (NULL));
-+    file_name = strdup (mkstemp (NULL));
++#ifdef __OpenBSD__
++#define TEMPFILE	"/tmp/mcXXXXXXXXXX"
++    file_name = xmalloc (sizeof(TEMPFILE), TEMPFILE);
++    strcpy (file_name, TEMPFILE);
++    if ((cmd_file_fd = mkstemp (file_name)) == -1) {
++#else
+     file_name = strdup (tmpnam (NULL));
  
      if ((cmd_file_fd = open (file_name, O_RDWR | O_CREAT | O_TRUNC | O_EXCL, 0600)) == -1){
++#endif
  	message (1, MSG_ERROR, _(" Can't create temporary command file \n %s "),
+ 		 unix_error_string (errno));
+ 	return;

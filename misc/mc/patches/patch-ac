@@ -1,11 +1,11 @@
---- vfs/vfs.c.orig	Sun Jan 16 01:26:28 2000
-+++ vfs/vfs.c	Sun Jan 16 01:26:50 2000
-@@ -1274,7 +1274,7 @@ char *mc_def_getlocalcopy (char *filenam
-     fdin = mc_open (filename, O_RDONLY);
-     if (fdin == -1)
-         return NULL;
--    tmp = tmpnam(NULL);
-+    tmp = mkstemp(NULL);
-     fdout = creat (tmp, 0600);
-     if (fdout == -1) {
-         mc_close (fdin);
+--- vfs/mcserv.c.orig	Mon Apr 24 13:39:16 2000
++++ vfs/mcserv.c	Mon Apr 24 13:39:59 2000
+@@ -912,7 +912,7 @@ do_auth (char *username, char *password)
+ #endif
+ #endif    
+ 
+-#ifndef BSD
++#if !defined(BSD) || defined(__OpenBSD__)
+     if (setuid (this->pw_uid))
+ #else
+     if (setreuid (this->pw_uid, this->pw_uid))
