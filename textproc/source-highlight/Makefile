@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/30 04:13:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/02 10:14:12 kevlo Exp $
 
 COMMENT=	"C/C++ and Java sources to HTML converter"
 
-DISTNAME=	source-highlight-1.0
+DISTNAME=	source-highlight-1.1
 CATEGORIES=	textproc
 NEED_VERSION=	1.427
 

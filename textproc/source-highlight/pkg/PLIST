@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/30 04:13:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/02 10:14:16 kevlo Exp $
 bin/cpp2html
 bin/java2html
 share/doc/source-highlight/COPYING
@@ -22,11 +22,7 @@ share/doc/source-highlight/TODO.txt
 share/doc/source-highlight/cmdline.c.html
 share/doc/source-highlight/cmdline.h.html
 share/doc/source-highlight/colors.html
-share/doc/source-highlight/cpp2html.cc.html
 share/doc/source-highlight/cpp2html.css
-share/doc/source-highlight/cpp2html.h.html
-share/doc/source-highlight/footer.html
-share/doc/source-highlight/header.html
 share/doc/source-highlight/mono-alt.css
 share/doc/source-highlight/mono.css
 share/doc/source-highlight/source-highlight.html
