@@ -1,0 +1,160 @@
+$OpenBSD: patch-README,v 1.1 2004/01/06 02:18:28 espie Exp $
+--- README.orig	2004-01-06 03:14:28.000000000 +0100
++++ README	2004-01-06 03:15:18.000000000 +0100
+@@ -1,79 +1,79 @@
+-/* dont remove this line */ #define README   "
+-THC-RUT, 2000-05-15, anonymous@segfault.net | http://www.thehackerschoice.com
+-
+-                                            'When your mind is going hither
+-                                            and thither, discrimiation will
+-                                            never be brought to a conclustion.
+-                                            With an intense, fresh and 
+-                                            underlaying spirit, one will make
+-                                            his judgments within the space of
+-                                            seven breaths.
+-                                            It is a matter of being determined
+-                                            and having the spirit to break
+-                                            right through to the other side.'
+-                                            ...Hagakure, the way of the samurai
+-                                            ...by Yamamoto Tsunetomo
+-
+-
+-[0x01] What is THC-RUT:
+-    RUT (pronouced as 'root') mean 'aRe yoU There'.
+-    It was developed to brute force its way into
+-    wvlan (IEEE 802.11b) access points which use 
+-    mac authentification.
+-    It offers a wide range of _local_ network discovery
+-    features like arp lookup on all hosts on a network
+-    with vendor-string, spoofed DHCP request, RARP, BOOTP,
+-    ICMP-ping and address mask request and some other features.
+-
+-This tool should be 'your first knife' on a foreign network.
+-
+-[0x02] How to compile:
+-
+-    # ./configure --help
+-    # ./configure
+-    # make
+-    optional
+-    # make install
+-
+-    that's it.
+-
+-    THC-RUT is known to compile on:
+-    - Linux 2.2.17 #19 SMP i686 unknown
+-    - Linux 2.4.3 #3 i686 unknown
+-    - SunOS 5.8 Generic_108528-05 sun4u sparc
+-    - NetBSD 1.5 (GENERIC) #1: Sun Nov 19 21:42:11 MET 2000 GENERIC i386
+-    - OpenBSD 2.8 GENERIC#399 i386
+-    - FreeBSD 4.2-RELEASE #0: Mon Nov 20 13:02:55 GMT 2000 GENERIC i386
+-    - HP-UX 11.00 A 9000/715 unknown
+-
+-[0x03] Examples:
+-
+-    - 192.168.66.66 is an unused ip on the network
+-      [try 255.255.255.255 or 0.0.0.0 for fun. Solaris loves it!]
+-    - sourceIP is 0.0.0.0 by default
+-    - source mac is 00:00:02:00:00:01 by default (lucent wvlan).
+-    - destination mac is always ff:ff:ff:ff:ff:ff.
+-      (Keep in mind: A few OSes [e.g. win2k] refuse to answer on ICMP packets
+-      with unicast-dst-ip but broadcast-dst-mac. Use arp-whohas first).
+-
+-    ARP-request the local network (-m):
+-    ./thc-rut -s 192.168.66.66 -m 192.168.0.1-192.168.255.254
+-    [some hosts do not answer on arp request from src ip 0.0.0.0, use -s]
+-
+-    DHCP-request (-d):
+-    ./thc-rut -d 255.255.255.255 (use ff:ff:ff:ff:ff:ff:255.255.255.255
+-    on networks with portsecurity enabled switches).
+-
+-    ICMP-mask request (-a):
+-    ./thc-rut -s 192.168.66.66 -a 192.168.1.2
+-
+-    ICMP-ping each /24 host with different source-mac-adresses (-p):
+-    ./thc-rut -s 192.168.66.66 -p \\ 
+-                00:00:02:00:00:01-00:00:02:00:ff:ff:192.168.0.1-192.168.0.255
+-    (this takes some time...)
+-
+-    DHCP-request with different source-mac-adresses and 50 packets /second (-d):
+-    ./thc-rut -l 50 -d 00:00:02:00:00:01-00:00:02:00:ff:ff:255.255.255.255
+-"   /* dont remove this line */
++/* dont remove this line */ #define README   \
++"THC-RUT, 2000-05-15, anonymous@segfault.net | http://www.thehackerschoice.com\n"\
++"\n"\
++"                                            'When your mind is going hither\n"\
++"                                            and thither, discrimiation will\n"\
++"                                            never be brought to a conclustion.\n"\
++"                                            With an intense, fresh and \n"\
++"                                            underlaying spirit, one will make\n"\
++"                                            his judgments within the space of\n"\
++"                                            seven breaths.\n"\
++"                                            It is a matter of being determined\n"\
++"                                            and having the spirit to break\n"\
++"                                            right through to the other side.'\n"\
++"                                            ...Hagakure, the way of the samurai\n"\
++"                                            ...by Yamamoto Tsunetomo\n"\
++"\n"\
++"\n"\
++"[0x01] What is THC-RUT:\n"\
++"    RUT (pronouced as 'root') mean 'aRe yoU There'.\n"\
++"    It was developed to brute force its way into\n"\
++"    wvlan (IEEE 802.11b) access points which use \n"\
++"    mac authentification.\n"\
++"    It offers a wide range of _local_ network discovery\n"\
++"    features like arp lookup on all hosts on a network\n"\
++"    with vendor-string, spoofed DHCP request, RARP, BOOTP,\n"\
++"    ICMP-ping and address mask request and some other features.\n"\
++"\n"\
++"This tool should be 'your first knife' on a foreign network.\n"\
++"\n"\
++"[0x02] How to compile:\n"\
++"\n"\
++"    # ./configure --help\n"\
++"    # ./configure\n"\
++"    # make\n"\
++"    optional\n"\
++"    # make install\n"\
++"\n"\
++"    that's it.\n"\
++"\n"\
++"    THC-RUT is known to compile on:\n"\
++"    - Linux 2.2.17 #19 SMP i686 unknown\n"\
++"    - Linux 2.4.3 #3 i686 unknown\n"\
++"    - SunOS 5.8 Generic_108528-05 sun4u sparc\n"\
++"    - NetBSD 1.5 (GENERIC) #1: Sun Nov 19 21:42:11 MET 2000 GENERIC i386\n"\
++"    - OpenBSD 2.8 GENERIC#399 i386\n"\
++"    - FreeBSD 4.2-RELEASE #0: Mon Nov 20 13:02:55 GMT 2000 GENERIC i386\n"\
++"    - HP-UX 11.00 A 9000/715 unknown\n"\
++"\n"\
++"[0x03] Examples:\n"\
++"\n"\
++"    - 192.168.66.66 is an unused ip on the network\n"\
++"      [try 255.255.255.255 or 0.0.0.0 for fun. Solaris loves it!]\n"\
++"    - sourceIP is 0.0.0.0 by default\n"\
++"    - source mac is 00:00:02:00:00:01 by default (lucent wvlan).\n"\
++"    - destination mac is always ff:ff:ff:ff:ff:ff.\n"\
++"      (Keep in mind: A few OSes [e.g. win2k] refuse to answer on ICMP packets\n"\
++"      with unicast-dst-ip but broadcast-dst-mac. Use arp-whohas first).\n"\
++"\n"\
++"    ARP-request the local network (-m):\n"\
++"    ./thc-rut -s 192.168.66.66 -m 192.168.0.1-192.168.255.254\n"\
++"    [some hosts do not answer on arp request from src ip 0.0.0.0, use -s]\n"\
++"\n"\
++"    DHCP-request (-d):\n"\
++"    ./thc-rut -d 255.255.255.255 (use ff:ff:ff:ff:ff:ff:255.255.255.255\n"\
++"    on networks with portsecurity enabled switches).\n"\
++"\n"\
++"    ICMP-mask request (-a):\n"\
++"    ./thc-rut -s 192.168.66.66 -a 192.168.1.2\n"\
++"\n"\
++"    ICMP-ping each /24 host with different source-mac-adresses (-p):\n"\
++"    ./thc-rut -s 192.168.66.66 -p \\ \n"\
++"                00:00:02:00:00:01-00:00:02:00:ff:ff:192.168.0.1-192.168.0.255\n"\
++"    (this takes some time...)\n"\
++"\n"\
++"    DHCP-request with different source-mac-adresses and 50 packets /second (-d):\n"\
++"    ./thc-rut -l 50 -d 00:00:02:00:00:01-00:00:02:00:ff:ff:255.255.255.255\n"\
++   /* dont remove this line */
+ 
+ 
