@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 04:41:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/30 01:56:04 kevlo Exp $
 
 COMMENT=	"tk extension"
 
@@ -6,9 +6,9 @@ DISTNAME=	Tktable2.6
 PKGNAME=	Tktable-2.6
 CATEGORIES=	x11
 NEED_VERSION=	1.402
-MASTER_SITES=   http://www.hobbs.wservice.com/tcl/capp/tkTable/
+MASTER_SITES= 	http://tcl.activestate.com/community/hobbs/tcl/capp/tkTable/
 
-HOMEPAGE=       http://www.hobbs.wservice.com/tcl/capp/main.html
+HOMEPAGE= 	http://tktable.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -23,7 +23,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=--with-tcl=${PREFIX}/lib/tcl8.3 \
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
 		--with-tk=${PREFIX}/lib/tk8.3
 
 post-install:
