@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_lib-imap_imap-envelope_c,v 1.1 2003/09/23 06:34:32 jolan Exp $
+--- src/lib-imap/imap-envelope.c.orig	2003-06-24 18:12:56.000000000 -0500
++++ src/lib-imap/imap-envelope.c	2003-09-23 00:45:51.000000000 -0500
+@@ -173,6 +173,14 @@ static void imap_write_address(string_t 
+ void imap_envelope_write_part_data(struct message_part_envelope_data *data,
+ 				   string_t *str)
+ {
++	static const char *empty_envelope =
++		"NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL";
++
++	if (data == NULL) {
++		str_append(str, empty_envelope);
++		return;
++	}
++
+ 	str_append(str, NVL(data->date, "NIL"));
+ 	str_append_c(str, ' ');
+ 	str_append(str, NVL(data->subject, "NIL"));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_auth_master-connection_c,v 1.1 2003/09/23 06:34:32 jolan Exp $
+--- src/auth/master-connection.c.orig	2003-05-26 10:27:13.000000000 -0500
++++ src/auth/master-connection.c	2003-09-23 00:45:29.000000000 -0500
+@@ -55,7 +55,7 @@ fill_reply(const struct user_data *user,
+ 	reply.virtual_user_idx = reply_add(buf, user->virtual_user);
+ 	reply.mail_idx = reply_add(buf, user->mail);
+ 
+-	p = strstr(user->home, "/./");
++	p = user->home != NULL ? strstr(user->home, "/./") : NULL;
+ 	if (p == NULL) {
+ 		reply.home_idx = reply_add(buf, user->home);
+ 		reply.chroot_idx = reply_add(buf, NULL);

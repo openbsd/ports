@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_lib-mail_message-address_c,v 1.1 2003/09/23 06:34:32 jolan Exp $
+--- src/lib-mail/message-address.c.orig	2003-03-20 09:46:34.000000000 -0600
++++ src/lib-mail/message-address.c	2003-09-23 00:45:01.000000000 -0500
+@@ -252,14 +252,14 @@ void message_address_write(string_t *str
+ 		} else if ((addr->name == NULL || *addr->name == '\0') &&
+ 			   addr->route == NULL) {
+ 			i_assert(addr->mailbox != NULL);
+-			i_assert(addr->domain != NULL);
+ 
+ 			str_append(str, addr->mailbox);
+-			str_append_c(str, '@');
+-			str_append(str, addr->domain);
++			if (addr->domain != NULL) {
++				str_append_c(str, '@');
++				str_append(str, addr->domain);
++			}
+ 		} else {
+ 			i_assert(addr->mailbox != NULL);
+-			i_assert(addr->domain != NULL);
+ 
+ 			if (addr->name != NULL) {
+ 				str_append(str, addr->name);
+@@ -272,8 +272,10 @@ void message_address_write(string_t *str
+ 				str_append_c(str, ':');
+ 			}
+ 			str_append(str, addr->mailbox);
+-			str_append_c(str, '@');
+-			str_append(str, addr->domain);
++			if (addr->domain != NULL) {
++				str_append_c(str, '@');
++				str_append(str, addr->domain);
++			}
+ 			str_append_c(str, '>');
+ 		}
+ 
