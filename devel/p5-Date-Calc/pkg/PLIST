@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/16 14:53:15 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:54:55 avsm Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/Date/Calc.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Calc/.packlist
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Calc/Calc.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Calc/Calc.so
 man/man3/Date::Calc.3p

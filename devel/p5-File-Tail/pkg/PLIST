@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/16 14:57:29 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:54:55 avsm Exp $
 libdata/perl5/site_perl/File/Tail.pm
 libdata/perl5/site_perl/auto/File/Tail/autosplit.ix
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/File/Tail/.packlist
 man/man3/File::Tail.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/File/Tail
 @dirrm libdata/perl5/site_perl/auto/File/Tail

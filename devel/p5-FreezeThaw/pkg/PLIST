@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/19 15:40:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/01/08 20:54:55 avsm Exp $
 libdata/perl5/site_perl/FreezeThaw.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/FreezeThaw/.packlist
 man/man3/FreezeThaw.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/FreezeThaw
