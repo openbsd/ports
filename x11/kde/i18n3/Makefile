@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/12/07 20:19:14 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2003/12/08 02:03:38 brad Exp $
 
-FLAVORS=af ar bg bs ca cs da de el en_GB eo es et eu fa fi fr he hu \
-    it ja lt mt nb nl nn nso pl pt pt_BR ro ru sk sl sr sv ta th tr uk \
-    ven vi xh zh_CN zh_TW zu
+FLAVORS=af ar bg bs ca cs da de el en_GB eo es et eu fa fi fr he hr hu \
+    is it ja lt mk mt nb nl nn nso pl pt pt_BR ro ru se sk sl sr ss sv \
+    ta th tr uk ven vi xh zh_CN zh_TW zu
 FLAVOR?=fr
 
 FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
