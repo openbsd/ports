@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.28 2004/10/18 06:48:20 biorn Exp $
---- configure.orig	Thu Jul 15 09:50:13 2004
-+++ configure	Thu Jul 15 09:51:27 2004
+$OpenBSD: patch-configure,v 1.29 2004/12/22 22:22:20 biorn Exp $
+--- configure.orig	Thu Jul 15 00:04:42 2004
++++ configure	Wed Dec 15 19:52:03 2004
 @@ -2001,7 +2001,7 @@ echores "$_setlocale"
  
  
@@ -19,3 +19,12 @@ $OpenBSD: patch-configure,v 1.28 2004/10/18 06:48:20 biorn Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
+@@ -6171,7 +6171,7 @@ CACA_LIB = $_ld_caca
+ # audio output
+ ALSA_LIB = $_ld_alsa
+ NAS_LIB = $_ld_nas
+-ARTS_LIB = $_ld_arts
++ARTS_LIB = $_ld_arts -lstdc++
+ ARTS_INC = $_inc_arts
+ ESD_LIB = $_ld_esd
+ ESD_INC = $_inc_esd
