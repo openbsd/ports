@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/02/23 10:26:14 camield Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/03/04 11:57:45 camield Exp $
 #
 # Written by Camiel Dobbelaar <cd@sentia.nl>, 2000
 # This file is in the public domain.
@@ -7,6 +7,9 @@
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 QMAILDIR=${PREFIX:-$PKG_PREFIX}
 NOSHELL=/sbin/nologin
+
+# These may clash with already installed uids/gids.
+# They MUST be fixed though, because qmail hardwires them.
 
 QMAILGID=2850
 NOFILESGID=32750
@@ -18,6 +21,22 @@ QMAILPUID=2852
 QMAILQUID=2853
 QMAILRUID=2854
 QMAILSUID=2855
+
+confirm() {
+	set -o noglob
+	echo -n "[Y] "
+	read resp
+	case "$resp" in
+		y*|Y*|"")
+			return
+			;;
+		*)
+			echo "Aborting"
+			exit 1
+			;;
+	esac
+	set +o noglob
+}
 
 # create_group and create_user work like this:
 # 1) if user or group already exist: return (success)
@@ -33,22 +52,24 @@ create_group()
         GROUP=$1
         GID=$2
 
-        echo -n "creating group '$GROUP' with gid '$GID': "
+        echo -n "Checking group '$GROUP' with gid '$GID': "
 
         if grep -q "^$GROUP:" /etc/group; then
-                echo "OK, group already exists" >&2
+                echo "OK, group already exists." >&2
                 return
         fi
         cut -f3 -d':' /etc/group | grep -qw $GID
         if [ $? == 0 ]; then
-                echo "ERR, gid taken" >&2
+                echo "ERR, gid taken." >&2
                 exit 1
         fi
+	echo -n "group does not exist. Create? "
+	confirm
         echo "$GROUP:*:$GID:" 2>/dev/null >>/etc/group || {
                 echo "ERR, cannot append to /etc/group" >&2
                 exit 1
 	}
-        echo "OK, created succesfully" >&2
+        echo "OK, created succesfully." >&2
         return
 }
 
@@ -57,22 +78,24 @@ create_user()
         NAME=$1;  UID=$2;  GID=$3
         GECOS=$4; HOME=$5; SHELL=$6
         
-        echo -n "creating user '$NAME' with uid '$UID': "
+        echo -n "Checking user '$NAME' with uid '$UID': "
         
         if grep -q "^$NAME:" /etc/passwd; then
-                echo "OK, user already exists" >&2
+                echo "OK, user already exists." >&2
                 return
         fi
         cut -f3 -d':' /etc/passwd | grep -qw $UID
         if [ $? == 0 ]; then
-                echo "ERR, uid taken" >&2
+                echo "ERR, uid taken." >&2
                 exit 1
         fi
+	echo -n "user does not exist. Create? "
+	confirm
         chpass -l -a "$NAME:*:$UID:$GID::::$GECOS:$HOME:$SHELL" 2>/dev/null || {
                 echo "ERR, cannot add user to database" >&2
                 exit 1
 	}
-        echo "OK, created successfully" >&2
+        echo "OK, created successfully." >&2
         return
 }
 
