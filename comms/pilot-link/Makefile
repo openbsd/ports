@@ -1,44 +1,51 @@
-# $OpenBSD: Makefile,v 1.35 2004/11/21 22:29:51 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2004/12/11 04:59:46 pvalchev Exp $
+# $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
-COMMENT=	"PalmPilot communication utilities"
+COMMENT=	"tools to connect your PalmOS® compatible handheld"
 
-VERSION=	0.9.5
-DISTNAME=	pilot-link.${VERSION}
-PKGNAME=	pilot-link-${VERSION}p1
-CATEGORIES=	comms palm
-EXTRACT_SUFX=	.tar.bz2
+DISTNAME=	pilot-link-0.11.8
+CATEGORIES=     comms
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/ \
+		http://mirror.astro.ufl.edu/pub/slackware/slackware-current/source/l/pilot-link/ \
+		http://gentoo.oregonstate.edu/distfiles/ \
+		http://oss.redundant.com/pub/gentoo/distfiles/ \
+		http://downloads.pilot-link.org/
 
+HOMEPAGE=	http://www.pilot-link.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+
+EXTRACT_SUFX=   .tar.bz2
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m stdc++
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+WANTLIB=		c m ncurses readline stdc++ z
 
-HOMEPAGE=	http://www.pilot-link.org
+MODULES=		converters/libiconv
+LIB_DEPENDS=		png.4::graphics/png
 
-MASTER_SITES=	${HOMEPAGE}/source/
-
-FLAVORS=	debug
-FLAVOR?=
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS= --enable-static \
-		--with-perl5="/usr/bin/perl" \
-		--without-itcl \
-		--without-python \
-		--without-java
-
-.if ${FLAVOR:L:Mdebug} 
-LIB_DEPENDS=	tk83::x11/tk/8.3
-WANTLIB+=	X11 Xext readline tcl83 termcap
-.else
-CONFIGURE_ARGS+= --without-tcl --without-tk
+.if exists(${LOCALBASE}/lib/libpisock.a)
+BROKEN=		"You must remove the existing pilot-link installation before compiling this version"
 .endif
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
+USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_lib_png_main=yes
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-libiconv=${LOCALBASE} \
+			--with-libpng=${LOCALBASE} \
+			--with-perl=/usr/bin/perl \
+			--without-efence \
+			--without-java \
+			--without-python \
+			--without-tcl
 
 .include <bsd.port.mk>

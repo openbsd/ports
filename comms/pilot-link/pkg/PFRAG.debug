@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.debug,v 1.2 2004/08/09 11:46:23 espie Exp $
-bin/pilot${FLAVOR_EXT}

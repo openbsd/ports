@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/08/09 11:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/12/11 04:59:46 pvalchev Exp $
 bin/addresses
 bin/ccexample
 bin/debugsh
 bin/dlpsh
-bin/getrom
 bin/hinotes
-bin/iambicexample
 bin/ietf2datebook
 bin/install-datebook
+bin/install-expenses
 bin/install-hinote
 bin/install-memo
+bin/install-netsync
+bin/install-todo
 bin/install-todos
 bin/install-user
 bin/memos
@@ -17,19 +18,23 @@ bin/money2qif
 bin/pi-csd
 bin/pi-getram
 bin/pi-getrom
+bin/pi-getromtoken
 bin/pi-nredir
-bin/pi-port
 bin/pilot-addresses
+bin/pilot-archive
 bin/pilot-clip
+bin/pilot-datebook
 bin/pilot-dedupe
 bin/pilot-file
-bin/pilot-mail
+bin/pilot-foto
 bin/pilot-prc
 bin/pilot-schlep
 bin/pilot-undelete
 bin/pilot-xfer
 bin/read-expenses
 bin/read-ical
+bin/read-notepad
+bin/read-palmpix
 bin/read-todos
 bin/reminders
 bin/sync-plan
@@ -39,61 +44,91 @@ include/pi-appinfo.h
 include/pi-appinfo.hxx
 include/pi-args.h
 include/pi-cmp.h
-include/pi-config-win32.h
-include/pi-config.h
 include/pi-datebook.h
 include/pi-datebook.hxx
+include/pi-debug.h
 include/pi-dlp.h
 include/pi-dlp.hxx
 include/pi-expense.h
 include/pi-file.h
 include/pi-header.h
 include/pi-hinote.h
-include/pi-iambicExpense.h
-include/pi-iambicExpense.hxx
 include/pi-inet.h
-include/pi-inetserial.h
 include/pi-macros.h
 include/pi-mail.h
+include/pi-md5.h
 include/pi-memo.h
 include/pi-memo.hxx
 include/pi-money.h
+include/pi-net.h
+include/pi-notepad.h
 include/pi-padp.h
+include/pi-palmpix.h
 include/pi-serial.h
 include/pi-slp.h
-include/pi-sockaddr-win32.h
 include/pi-sockaddr.h
 include/pi-socket.h
 include/pi-source.h
 include/pi-sync.h
+include/pi-sys.h
 include/pi-syspkt.h
 include/pi-todo.h
 include/pi-todo.hxx
+include/pi-usb.h
 include/pi-util.h
 include/pi-version.h
-lib/libpicc.a
+lib/libpisock++.a
+lib/libpisock++.la
 lib/libpisock.a
 lib/libpisock.la
-lib/pix/
-lib/pix/b1.gif
-lib/pix/b2.gif
-lib/pix/b3.gif
-lib/pix/b4.gif
-lib/pix/b5.gif
-lib/pix/b6.gif
-lib/pix/b7.gif
-lib/pix/case.gif
-lib/pix/case.xbm
-lib/pix/casemask.xbm
+lib/libpisync.a
+lib/libpisync.la
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/Pilot.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/dump.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
+@man man/man1/addresses.1
 @man man/man1/dlpsh.1
+@man man/man1/hinotes.1
 @man man/man1/ietf2datebook.1
 @man man/man1/install-datebook.1
+@man man/man1/install-expenses.1
 @man man/man1/install-hinote.1
 @man man/man1/install-memo.1
+@man man/man1/install-netsync.1
+@man man/man1/install-todo.1
 @man man/man1/install-user.1
+@man man/man1/memos.1
+@man man/man1/pi-getram.1
+@man man/man1/pi-getrom.1
 @man man/man1/pilot-addresses.1
+@man man/man1/pilot-foto.1
 @man man/man1/pilot-xfer.1
+@man man/man1/read-expenses.1
 @man man/man1/read-ical.1
+@man man/man1/read-notepad.1
+@man man/man1/read-palmpix.1
+@man man/man1/read-todos.1
 @man man/man7/pilot-link.7
-%%debug%%
+share/aclocal/
+share/aclocal/pilot-link.m4
+share/pilot-link/
+share/pilot-link/getrom.prc
+share/pilot-link/getrom2.prc
+share/pilot-link/pix/
+share/pilot-link/pix/b1.gif
+share/pilot-link/pix/b2.gif
+share/pilot-link/pix/b3.gif
+share/pilot-link/pix/b4.gif
+share/pilot-link/pix/b5.gif
+share/pilot-link/pix/b6.gif
+share/pilot-link/pix/b7.gif
+share/pilot-link/pix/case.gif
+share/pilot-link/pix/case.xbm
+share/pilot-link/pix/casemask.xbm
 %%SHARED%%
