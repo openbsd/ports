@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 16:43:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/23 23:09:02 turan Exp $
+
+BROKEN=	depend xview is broken
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils

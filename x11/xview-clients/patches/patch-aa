@@ -1,6 +1,5 @@
-diff -rc ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c olwm/cmdstream.c
-*** ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c	Tue Jun 29 01:11:43 1993
---- olwm/cmdstream.c	Sun Nov 20 13:38:56 1994
+*** olwm/cmdstream.c.orig	Tue Jun 29 01:11:43 1993
+--- olwm/cmdstream.c		Sun Nov 20 13:38:56 1994
 ***************
 *** 51,60 ****
    *      Local Forward Declarations

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/23 21:33:01 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.11 2000/03/23 23:09:03 turan Exp $
+
+BROKEN=		depend xview is broken
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2

@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 16:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/23 23:09:03 turan Exp $
+
+BROKEN=		this port is so wrong.
 
 DISTNAME=	xview-clients
 PKGNAME=	xview-clients-3.2.1
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTFILES=	xview3.2p1-X11R6.tar.gz
 CATEGORIES=	x11
 NEED_VERSION=	1.223
 
-DEPENDS=        x11/xview-lib
+#DEPENDS=        x11/xview-lib
 
-WRKDIST=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6/clients
+WRKDIST=	${WRKDIR}/xview3.2p1-X11R6/clients
 USE_X11=	Yes
-
-do-fetch:
-do-extract:	# don't use NO_EXTRACT, dependency won't work
 
 post-configure:
 	cd $(WRKSRC)/.. && make SUBDIRS=clients depend

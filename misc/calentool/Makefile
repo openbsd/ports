@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/19 16:43:41 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.5 2000/03/23 23:09:02 turan Exp $
+
+BROKEN=		depend xview is broken
 
 DISTNAME=	calentool-2.3
 PKGNAME=	calentool-2.3

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/16 22:32:35 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/23 23:09:02 turan Exp $
+
+BROKEN=	depend xview is broken
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0

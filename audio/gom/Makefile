@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/23 23:09:02 turan Exp $
+
+BROKEN=		depend xview is broken
 
 DISTNAME=	gom-0.29.103
 CATEGORIES=     audio

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 23:09:03 turan Exp $
+
+BROKEN=         this port is so wrong.
 
 DISTNAME=	xview-config-3.2.1
 CATEGORIES=	x11

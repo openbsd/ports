@@ -1,4 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/23 23:09:02 turan Exp $
+
+BROKEN=	bad packing lists and depend xview is broken
+#tar: Unable to access bin/workman <No such file or directory>
+#tar: Unable to access lib/help/workman.info <No such file or directory>
+#tar: Unable to access man/cat1/workman.0 <No such file or directory>
+#tar: Unable to access man/cat5/workmandb.5 <No such file or directory>
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	workman-1.3a
