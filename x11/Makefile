@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2003/11/16 16:19:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.177 2003/11/17 14:53:48 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -133,7 +133,6 @@
      SUBDIR += sawfish
      SUBDIR += sliderule
 #    SUBDIR += slingshot
-     SUBDIR += startup-notification
      SUBDIR += swisswatch
 #    SUBDIR += sxpc
      SUBDIR += terminus-font
