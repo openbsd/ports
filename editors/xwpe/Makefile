@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/05/07 16:50:58 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/29 09:46:41 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	xwpe-1.5.17a
 CATEGORIES=	editors
