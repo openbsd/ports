@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/12/28 22:26:18 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2004/04/18 17:21:13 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -82,9 +82,5 @@ USE_X11=	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 2:0:0"
-
-post-patch:
-	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-	@find ${WRKSRC} -name Makefile.in -exec touch {} \;
 
 .include <bsd.port.mk>

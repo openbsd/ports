@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/04/18 17:21:13 pvalchev Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
@@ -22,8 +22,5 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	LIBS="-lossaudio"
-
-post-extract:
-	@touch ${WRKSRC}/configure* ${WRKSRC}/*.in ${WRKSRC}/*.m4
 
 .include <bsd.port.mk>
