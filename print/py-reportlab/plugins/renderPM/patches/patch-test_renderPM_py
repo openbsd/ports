@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_renderPM_py,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+--- test_renderPM.py.orig	Tue Jul 13 17:11:02 2004
++++ test_renderPM.py	Tue Jul 13 17:11:22 2004
+@@ -24,7 +24,7 @@ if  __name__=='__main__':
+ 
+         for a in ('strokeColor','fillColor'):
+             try:
+-                setattr(g,a,(1,2,3))
++                setattr(g,a,{'red':1,'green':2,'blue':3})
+                 print 'Wrong handling of bad '+a
+             except ValueError:
+                 pass

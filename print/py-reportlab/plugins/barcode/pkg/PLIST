@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/__init__.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code128.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code128.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code39.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code39.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code93.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code93.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/common.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/common.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/fourstate.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/fourstate.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/test.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/test.pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/usps.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/usps.pyc
+@dirrm lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode

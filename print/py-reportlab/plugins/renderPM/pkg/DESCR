@@ -1,0 +1,4 @@
+The graphics subdirectory of the main toolkit already contains renderers for
+postscript and PDF. A stub renderer for the PIL extension (Python Imaging
+Library, available from pythonware) is included, but most of this renderer
+is available in this package.

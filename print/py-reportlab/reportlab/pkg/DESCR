@@ -1,0 +1,14 @@
+The ReportLab Toolkit is Open Source PDF library. This library
+implements a flexible layout engine named Platypus that builds documents
+from components like headlines, paragraphs, fonts, tables, bitmap
+images, vector graphics, etc. These flowable elements are placed in a
+document "story" following a set of templates for frames, pages and the
+entire document itself. In addition to the standard 14 PostScript fonts
+there is full support for custom embedded Type-1 as well as for Asian
+fonts. The included graphics subpackage provides a set of primitive
+shapes as well as reusable widgets building on them. Among the sample
+collections is a very useful set of business chart diagrams, including
+bar charts, line charts and pie charts.  Different renderers can be used
+to create vector graphics (in fact, even full document pages) as
+individual components not only in PDF, but also in EPS and in a variety
+of bitmap formats including JPEG, PNG, GIF, BMP and PICT.

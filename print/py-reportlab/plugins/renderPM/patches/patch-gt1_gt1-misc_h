@@ -1,0 +1,12 @@
+$OpenBSD: patch-gt1_gt1-misc_h,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+--- gt1/gt1-misc.h.orig	Thu May  3 17:44:48 2001
++++ gt1/gt1-misc.h	Mon Jul 26 21:58:20 2004
+@@ -4,7 +4,7 @@
+ #define __GT1_MISC_H__
+ 
+ #include <stdlib.h> /* for malloc, etc. */
+-#ifdef macintosh
++#if defined(macintosh) || defined(__OpenBSD__)
+ #include <string.h> /* for memcpy() */
+ #endif
+ 

@@ -1,0 +1,57 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+--- setup.py.orig	Sun Aug 25 10:31:36 2002
++++ setup.py	Tue Jul 13 20:01:41 2004
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env python
+ import os, sys, string
+ def libart_version():
+-	K = ('LIBART_MAJOR_VERSION','LIBART_MINOR_VERSION','LIBART_MICRO_VERSION')
+-	D = {}
+-	for l in open('libart_lgpl/configure.in','r').readlines():
++	K = ('version', 'age','revision')
++	D = {'version': '2'}
++	for l in open('!!LOCALBASE!!/lib/libart_lgpl_2.la','r').readlines():
+ 		l = string.split(string.strip(l),'=')
+ 		if len(l)>1 and string.strip(l[0]) in K:
+ 			D[string.strip(l[0])] = string.strip(l[1])
+@@ -31,11 +31,11 @@ if __name__=='__main__': #NO RUNTESTS
+ 	LIBART_VERSION = libart_version()
+ 	SOURCES=['_renderPM.c']
+ 	DEVEL_DIR=os.curdir
+-	LIBART_DIR=pJoin(DEVEL_DIR,'libart_lgpl')
++	LIBART_DIR=pJoin('!!LOCALBASE!!/include/libart-2.0/libart_lgpl')
+ 	LIBART_SRCS=glob(pJoin(LIBART_DIR, 'art_*.c'))
+ 	GT1_DIR=pJoin(DEVEL_DIR,'gt1')
+ 	GLIB_DIR=pJoin(DEVEL_DIR,'glib')
+-	if sys.platform in ['darwin', 'win32', 'sunos5', 'freebsd4', 'mac', 'linux2','aix4']:
++	if sys.platform in ['openbsd3', 'darwin', 'win32', 'sunos5', 'freebsd4', 'mac', 'linux2','aix4']:
+ 		LIBS=[]
+ 	else:
+ 		raise ValueError, "Don't know about other systems"
+@@ -47,16 +47,8 @@ if __name__=='__main__': #NO RUNTESTS
+ 			author_email = "robin@reportlab.com",
+ 			url = "http://www.reportlab.com",
+ 			packages = [],
+-			libraries=[('_renderPM_libart',
++			libraries=[('_renderPM_gt1',
+ 						{
+-						'sources':	LIBART_SRCS,
+-						'include_dirs': [DEVEL_DIR,LIBART_DIR,],
+-						'macros': [('LIBART_COMPILATION',None),]+BIGENDIAN('WORDS_BIGENDIAN')+ROBIN_DEBUG,
+-						#'extra_compile_args':['/Z7'],
+-						}
+-						),
+-						('_renderPM_gt1',
+-						{
+ 						'sources':	pfxJoin(GT1_DIR,'gt1-dict.c','gt1-namecontext.c','gt1-parset1.c','gt1-region.c','parseAFM.c'),
+ 						'include_dirs': [DEVEL_DIR,GT1_DIR,GLIB_DIR,],
+ 						'macros': ROBIN_DEBUG,
+@@ -68,7 +60,7 @@ if __name__=='__main__': #NO RUNTESTS
+ 										SOURCES,
+ 										include_dirs=[DEVEL_DIR,LIBART_DIR,GT1_DIR],
+ 										define_macros=[('LIBART_COMPILATION',None)]+ROBIN_DEBUG+[('LIBART_VERSION',LIBART_VERSION)],
+-										library_dirs=[],
++										library_dirs=['!!LOCALBASE!!/lib'],
+ 
+ 										# libraries to link against
+ 										libraries=LIBS,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-reportlab_setup_py,v 1.1.1.1 2004/07/27 08:55:21 xsa Exp $
+--- reportlab/setup.py.orig	2004-01-21 17:45:46.000000000 +0100
++++ reportlab/setup.py	2004-02-12 22:51:20.000000000 +0100
+@@ -17,7 +17,7 @@ def package_home(globals_dict):
+     return r
+ 
+ pjoin = os.path.join
+-package_path = pjoin(package_home(distutils.__dict__), 'reportlab')
++package_path = pjoin(os.environ['PREFIX']+package_home(distutils.__dict__).replace(os.environ['LOCALBASE'], ''), 'site-packages', 'reportlab')
+ 
+ def get_version():
+     #determine Version
