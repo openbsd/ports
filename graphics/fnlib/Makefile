@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/25 17:14:02 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2002/01/13 04:56:18 brad Exp $
 
 COMMENT=	"color font rendering library for X"
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=	graphics
-NEED_VERSION=	1.363
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.squish.org/pub/enlightenment/enlightenment/libs/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/fnlib/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/libs/
@@ -25,5 +25,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fnlib
+	mv -f ${WRKINST}${SYSCONFDIR}/* ${PREFIX}/share/examples/fnlib
 
 .include <bsd.port.mk>
