@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2002/12/16 03:51:04 brad Exp $
+# $OpenBSD: Makefile,v 1.246 2002/12/22 09:48:23 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -202,6 +202,7 @@
      SUBDIR += ucd-snmp
      SUBDIR += ucspi-unix
      SUBDIR += udptunnel
+     SUBDIR += unison
      SUBDIR += uucp
      SUBDIR += vicq
      SUBDIR += vtun
