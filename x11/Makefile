@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2001/04/05 12:15:59 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2001/04/10 20:16:45 lebel Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -95,6 +95,7 @@
 #    SUBDIR += tkgoodstuff
 #    SUBDIR += tkstep80
      SUBDIR += tktable
+     SUBDIR += ttmkfdir
      SUBDIR += tvtwm
 #    SUBDIR += tycoon
      SUBDIR += viewfax
