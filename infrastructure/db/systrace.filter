@@ -18,7 +18,7 @@
 	native-connect: sockaddr match "/tmp" then permit
 	native-dup2: permit
 	native-dup: permit
-	native-execve: permit
+	native-execve: true then permit
 	native-exit: permit
 	native-fchdir: permit
 	native-fchflags: permit
