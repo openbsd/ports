@@ -1,12 +1,15 @@
---- tosha.c-distr	Wed May 21 02:11:49 1997
-+++ tosha.c	Sun Jun  7 21:45:16 1998
-@@ -536,7 +536,8 @@
- 	}
- 	else
- 	if (!strncmp(vendor, "SONY", 4) ||
--	    !strncmp(vendor, "PLEXTOR", 7)) {
-+	    !strncmp(vendor, "PLEXTOR", 7) ||
-+	    !strncmp(vendor, "YAMAHA", 6) && !strncmp(product, "CRW4260", 7)) {
- 		modechange = FALSE;
+--- tosha.c.orig	Wed May 21 02:11:49 1997
++++ tosha.c	Mon Jun  8 00:26:27 1998
+@@ -541,6 +541,12 @@
  		readcmd = 0xd8;
  	}
+ 	else
++	if (!strncmp(vendor, "YAMAHA", 6) && !strncmp(product, "CRW4260", 7)) {
++		modechange = FALSE;
++		readcmd = 0xd8;
++		byteswap = TRUE;
++	}
++	else
+ 	if (!strncmp(vendor, "YAMAHA", 6) ||
+ 	    !strncmp(vendor, "MATSHITA", 8)) {
+ 		;
