@@ -1,4 +1,4 @@
-# $OpenBSD: powerpc,v 1.14 2005/03/12 04:19:32 pvalchev Exp $
+# $OpenBSD: powerpc,v 1.15 2005/03/18 20:21:28 pvalchev Exp $
 # This is the master list of subdirs used to choose powerpc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -9,9 +9,9 @@ editors/vim,no_x11
 editors/emacs21
 archivers/unzip
 archivers/bzip2
-print/teTeX/base
+#print/teTeX/base
 net/nmap,no_x11
-net/pptp
+#net/pptp
 sysutils/cdrtools
 mail/procmail
 mail/fetchmail
@@ -21,24 +21,16 @@ graphics/gif2png
 shells/zsh
 shells/bash,static
 shells/tcsh,static
-devel/autoconf/2.59
-devel/automake
-books/autobook
-devel/bison
-sysutils/colorls
-archivers/gtar,static
 mail/mutt/stable
 audio/libao,-esd
-audio/vorbis-tools
 audio/mpg321
 net/curl
-net/wget
-print/ghostscript/gnu
-print/gv
+#net/wget
+#print/ghostscript/gnu
+#print/gv
 audio/cdparanoia
 net/ircII
 www/mozilla-firefox
-#lang/egcs/stable,-estdc
 devel/id-utils
 x11/openmotif
 x11/kde/base3
@@ -53,15 +45,15 @@ textproc/antiword
 textproc/xpdf
 #lang/python/2.3
 #lang/python/2.3,-tools
-sysutils/pftop
-archivers/zip
-net/snort
-x11/aterm
-net/ettercap
+#sysutils/pftop
+#archivers/zip
+#net/snort
+#x11/aterm
+#net/ettercap
 security/stunnel
 #net/silc-client
-#graphics/xfig
+graphics/xfig
 x11/xautolock
-devel/gmake
+#devel/gmake
 security/dsniff
 #security/gnupg

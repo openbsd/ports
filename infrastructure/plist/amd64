@@ -1,4 +1,4 @@
-# $OpenBSD: amd64,v 1.14 2005/03/18 07:28:30 pvalchev Exp $
+# $OpenBSD: amd64,v 1.15 2005/03/18 20:22:30 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -21,10 +21,10 @@ shells/tcsh,static
 devel/autoconf/2.59
 devel/automake
 #books/autobook
-devel/bison
+#devel/bison
 mail/mutt/stable
-audio/libao,-esd
-audio/vorbis-tools
+#audio/libao,-esd
+#audio/vorbis-tools
 audio/mpg321
 net/curl
 #print/ghostscript/gnu
@@ -32,33 +32,33 @@ net/curl
 x11/openmotif
 www/mozilla-firefox
 x11/kde/base3
-x11/kde/office3
+#x11/kde/office3
 #x11/kde/pim3
 #x11/kde/edu3
-x11/windowmaker
-x11/windowmaker-extra
+#x11/windowmaker
+#x11/windowmaker-extra
 x11/rxvt
 x11/xpostit
 x11/xdaliclock
 x11/xkeycaps
 textproc/antiword
 textproc/xpdf
-lang/python/2.3
-lang/python/2.3,-tools
+#lang/python/2.3
+#lang/python/2.3,-tools
 graphics/gqview
 sysutils/pftop
-net/snort
-security/stunnel
+#net/snort
+#security/stunnel
 #net/gaim
-devel/gmake
-www/squid
-www/transproxy
+#devel/gmake
+#www/squid
+#www/transproxy
 security/aide
 security/dsniff
 net/ntop
 #news/slrn
 #security/gnupg
-net/libdnet
-net/nsd
-audio/abcde
+#net/libdnet
+#net/nsd
+#audio/abcde
 #graphics/ImageMagick
