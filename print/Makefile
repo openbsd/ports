@@ -1,7 +1,8 @@
-#	$OpenBSD: Makefile,v 1.19 2000/04/14 16:40:21 turan Exp $
+#	$OpenBSD: Makefile,v 1.20 2000/04/22 14:04:03 turan Exp $
 #
 
-    SUBDIR += a2ps
+    SUBDIR += a2ps:a4
+    SUBDIR += a2ps:letter
 #   SUBDIR += a2ps43
     SUBDIR += acroread
     SUBDIR += afm
