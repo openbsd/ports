@@ -17,7 +17,6 @@ man/man5/libsocks5.conf.5
 man/man5/socks5.conf.5
 man/man5/socks5.passwd.5
 lib/libsocks5.a
-lib/libsocks5_sh.so
 lib/socks/README
 lib/socks/multiple_server.example
 lib/socks/server_2_multiple_server.example

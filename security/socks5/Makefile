@@ -1,15 +1,8 @@
-# New ports collection makefile for:	socks5
-# Version required:			v1.0r3
-# Date created:				21 Apr 1998
-# Whom:					form@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.9 1999/02/17 07:09:24 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.10 1999/03/14 01:40:24 brad Exp $
 
-DISTNAME=	socks5-v1.0r8
-PKGNAME=	socks5-1.0.8
-CATEGORIES=	net security
-#EXTRACT_SUFX=	.tar.gz
+DISTNAME=	socks5-v1.0r9
+PKGNAME=	socks5-1.0.9
+CATEGORIES=	security
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -34,6 +27,7 @@ CONFIGURE_ARGS=	--with-libconffile=${ETCDIR}/libsocks5.conf \
 		--with-srvpidfile=/var/run/socks5.pid \
 		--with-srvidtfile=/var/run/socks5.ident \
 		${EXTRA_CONFIGURE_ARGS}
+
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
 
@@ -49,6 +43,10 @@ do-fetch:
 	fi
 
 post-install:
+	${MKDIR} ${PREFIX}/lib/socks
+	${MKDIR} ${PREFIX}/share/doc/socks
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/lib/socks
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

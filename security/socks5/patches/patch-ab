@@ -1,36 +1,20 @@
-*** aclocal.m4.orig	Tue Apr 21 16:51:46 1998
---- aclocal.m4	Tue Apr 21 16:52:01 1998
-***************
-*** 91,97 ****
-  	UNIX_SV*|UNIX_System_V*)
-  		SHLIB_LFLAGS="-G"
-  		;;
-! 	FreeBSD*|NetBSD*)
-  		SHLIB_LFLAGS="-Bshareable"
-  		SHLIB_CFLAGS="-fpic"
-  		PRELOADS="LD_PRELOAD"
---- 91,97 ----
-  	UNIX_SV*|UNIX_System_V*)
-  		SHLIB_LFLAGS="-G"
-  		;;
-! 	FreeBSD*|NetBSD*|OpenBSD*)
-  		SHLIB_LFLAGS="-Bshareable"
-  		SHLIB_CFLAGS="-fpic"
-  		PRELOADS="LD_PRELOAD"
-***************
-*** 142,148 ****
-  		UNIX_SV*|UNIX_System_V*)
-  			SHLIB_CFLAGS=
-  			;;
-! 		FreeBSD*|NetBSD*)
-  			;;
-  		*)
-  			SHLIB_LD="gcc"
---- 142,148 ----
-  		UNIX_SV*|UNIX_System_V*)
-  			SHLIB_CFLAGS=
-  			;;
-! 		FreeBSD*|NetBSD*|OpenBSD*)
-  			;;
-  		*)
-  			SHLIB_LD="gcc"
+--- aclocal.m4.orig	Fri Mar 12 17:27:38 1999
++++ aclocal.m4	Fri Mar 12 17:28:08 1999
+@@ -113,7 +113,7 @@
+ 	UNIX_SV*|UNIX_System_V*)
+ 		SHLIB_LFLAGS="-G"
+ 		;;
+-	FreeBSD*|NetBSD*)
++	FreeBSD*|NetBSD*|OpenBSD*)
+ 		SHLIB_LFLAGS="-Bshareable"
+ 		SHLIB_CFLAGS="-fpic"
+ 		PRELOADS="LD_PRELOAD"
+@@ -164,7 +164,7 @@
+ 		UNIX_SV*|UNIX_System_V*)
+ 			SHLIB_CFLAGS=
+ 			;;
+-		FreeBSD*|NetBSD*)
++		FreeBSD*|NetBSD*|OpenBSD*)
+ 			;;
+ 		*)
+ 			SHLIB_LD="gcc"
