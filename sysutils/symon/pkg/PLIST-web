@@ -1,5 +1,5 @@
-@comment $Id: PLIST-web,v 1.3 2003/01/10 19:24:50 naddy Exp $
-@comment $OpenBSD: PLIST-web,v 1.3 2003/01/10 19:24:50 naddy Exp $
+@comment $OpenBSD: PLIST-web,v 1.4 2003/02/17 23:54:49 naddy Exp $
+@pkgcfl symon-[0-9]*
 share/symon/web/class_cpu.inc        
 share/symon/web/class_graph.inc      
 share/symon/web/class_if.inc         
