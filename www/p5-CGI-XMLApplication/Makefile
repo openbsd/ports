@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/25 11:10:24 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/29 22:32:29 shell Exp $
 
 
 COMMENT=		"object oriented interface for CGI script applications"
 
-DISTNAME=		CGI-XMLApplication-0.8.1
+VERSION=		0.9.3
+DISTNAME=		CGI-XMLApplication_${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=     	www
 NEED_VERSION=		1.427
@@ -21,6 +22,9 @@ MASTER_SITE_SUBDIR=	CGI
 PERL_MODULE=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=	${PERL_MODULE}/XML/LibXSLT.pm::textproc/p5-XML-LibXSLT
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+WRKDIST=	${WRKDIR}/CGI-XMLApplication-${VERSION}
+WRKSRC=		${WRKDIST}
 
 CONFIGURE_STYLE=	perl
 
