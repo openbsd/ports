@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 18:00:14 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/14 18:17:55 todd Exp $
 bin/email2page
 bin/sendmail2snpp
 bin/sendpage
@@ -24,20 +24,19 @@ ${P5SITE}/Sendpage/SNPPServer.pm
 @man man/man3p/Sendpage::PagingCentral.3p
 @man man/man3p/Sendpage::Queue.3p
 @man man/man3p/Sendpage::Recipient.3p
-share/docs/
-share/docs/sendpage/
-share/docs/sendpage/Changes
-share/docs/sendpage/FEATURES
-share/docs/sendpage/README
-share/docs/sendpage/THANKS
-share/docs/sendpage/docs/
-share/docs/sendpage/docs/PagingCentrals.txt
-share/docs/sendpage/docs/README
-share/docs/sendpage/docs/pc-testing.txt
-share/docs/sendpage/docs/postfix.txt
-share/docs/sendpage/docs/rfc1861.txt
-share/docs/sendpage/docs/sendmail.txt
-share/docs/sendpage/docs/sendpage.php
+share/doc/sendpage/
+share/doc/sendpage/Changes
+share/doc/sendpage/FEATURES
+share/doc/sendpage/README
+share/doc/sendpage/THANKS
+share/doc/sendpage/docs/
+share/doc/sendpage/docs/PagingCentrals.txt
+share/doc/sendpage/docs/README
+share/doc/sendpage/docs/pc-testing.txt
+share/doc/sendpage/docs/postfix.txt
+share/doc/sendpage/docs/rfc1861.txt
+share/doc/sendpage/docs/sendmail.txt
+share/doc/sendpage/docs/sendpage.php
 share/examples/sendpage/
 share/examples/sendpage/email2page.conf
 @sample ${SYSCONFDIR}/email2page.conf

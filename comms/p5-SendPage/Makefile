@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/14 18:00:14 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/14 18:17:55 todd Exp $
 
 
 COMMENT=		"SNPP, TAP, email notification application"
@@ -37,13 +37,13 @@ post-install:
 .for f in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/sendpage
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/docs/sendpage
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sendpage
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/docs/sendpage
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/sendpage
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/docs/sendpage/docs
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sendpage/docs
 .for f in ${DOCS2}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/docs/sendpage/docs
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/sendpage/docs
 .endfor
 
 .include <bsd.port.mk>
