@@ -1,24 +1,24 @@
-$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2002/05/29 13:22:11 espie Exp $
+$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.3 2002/06/03 18:33:33 espie Exp $
 --- gcc/config/alpha/openbsd.h.orig	Fri Nov  3 00:29:08 2000
-+++ gcc/config/alpha/openbsd.h	Wed May 29 15:04:18 2002
-@@ -22,15 +22,12 @@ Boston, MA 02111-1307, USA.  */
++++ gcc/config/alpha/openbsd.h	Mon Jun  3 17:18:12 2002
+@@ -21,28 +21,28 @@ Boston, MA 02111-1307, USA.  */
+ /* We settle for little endian for now.  */
  #define TARGET_ENDIAN_DEFAULT 0
  
- #include <alpha/alpha.h>
-+#include <alpha/elf.h>
- 
+-#include <alpha/alpha.h>
+-
 -#define OBSD_NO_DYNAMIC_LIBRARIES
- #define OBSD_HAS_DECLARE_FUNCTION_NAME
- #define OBSD_HAS_DECLARE_FUNCTION_SIZE
- #define OBSD_HAS_DECLARE_OBJECT
- 
+-#define OBSD_HAS_DECLARE_FUNCTION_NAME
+-#define OBSD_HAS_DECLARE_FUNCTION_SIZE
+-#define OBSD_HAS_DECLARE_OBJECT
+-
 -/* alpha ecoff supports only weak aliases, see below.  */
 -#define ASM_WEAKEN_LABEL(FILE,NAME) ASM_OUTPUT_WEAK_ALIAS (FILE,NAME,0)
 -
- #include <openbsd.h>
- 
+-#include <openbsd.h>
+-
  /* Controlling the compilation driver.  */
-@@ -38,11 +35,23 @@ Boston, MA 02111-1307, USA.  */
+ 
  /* alpha needs __start.  */
  #undef LINK_SPEC
  #define LINK_SPEC \
@@ -45,7 +45,7 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2002/05/29 13:22:11 espie Exp $
  
  /* Layout of source language data types.  */
  
-@@ -63,64 +72,19 @@ Boston, MA 02111-1307, USA.  */
+@@ -63,64 +63,19 @@ Boston, MA 02111-1307, USA.  */
  #undef PREFERRED_DEBUGGING_TYPE
  #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
  

@@ -1,7 +1,11 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.10 2002/05/30 21:15:28 espie Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.11 2002/06/03 18:33:33 espie Exp $
 --- gcc/config.gcc.orig	Thu May  2 23:28:49 2002
-+++ gcc/config.gcc	Thu May 30 23:12:01 2002
-@@ -579,6 +579,7 @@ alpha*-*-openbsd*)
++++ gcc/config.gcc	Mon Jun  3 17:17:34 2002
+@@ -576,9 +576,11 @@ alpha*-*-netbsd*)
+ 	;;
+ 
+ alpha*-*-openbsd*)
++	tm_file="alpha/alpha.h alpha/elf.h alpha/openbsd1.h openbsd.h ${tm_file}"
  	# default x-alpha is only appropriate for dec-osf.
  	target_cpu_default="MASK_GAS"
  	tmake_file="alpha/t-alpha alpha/t-ieee"
@@ -9,7 +13,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.10 2002/05/30 21:15:28 espie Exp $
  	;;
  
  alpha*-dec-osf*)
-@@ -2762,6 +2763,7 @@ romp-*-openbsd*)
+@@ -2762,6 +2764,7 @@ romp-*-openbsd*)
  	# Nothing special
  	;;
  powerpc-*-openbsd*)
@@ -17,13 +21,13 @@ $OpenBSD: patch-gcc_config_gcc,v 1.10 2002/05/30 21:15:28 espie Exp $
  	tmake_file="${tmake_file} rs6000/t-rs6000 rs6000/t-openbsd"
  	extra_headers=
  	;;
-@@ -3086,6 +3088,13 @@ sparc-*-openbsd*)
+@@ -3086,6 +3089,13 @@ sparc-*-openbsd*)
  	tmake_file="t-libc-ok t-openbsd sparc/t-openbsd"
  	# we need collect2 until our bug is fixed...
  	use_collect2=yes
 +	;;
 +sparc64-*-openbsd*)
-+	tm_file="sparc/openbsd1-64.h sparc/sparc.h elfos.h svr4.h sparc/sysv4.h sparc/sol2.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
++	tm_file="sparc/openbsd1-64.h sparc/sparc.h elfos.h svr4.h sparc/sysv4.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
 +	xm_file=sparc/xm-sp64.h
 +	gas=yes gnu_ld=yes
 +	with_cpu=ultrasparc
