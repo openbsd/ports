@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/22 20:22:21 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/28 20:35:16 avsm Exp $
 
 DISTNAME=	mailcrypt-3.5.5
 CATEGORIES=     mail
@@ -37,7 +37,7 @@ RUN_DEPENDS=	pgp::security/pgp
 .endif
 
 .if ${FLAVOR:L:Mpgp5}
-RUB_DEPENDS=	pgp5::security/pgp5
+RUN_DEPENDS=	pgp5::security/pgp5
 .endif
 
 .include <bsd.port.mk>
