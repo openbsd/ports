@@ -3,10 +3,10 @@
 # Date created:		19 December 1994
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/20 03:22:28 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/23 16:46:48 mickey Exp $
 #
 
-DISTNAME=	mpeg_play-2.3
+DISTNAME=	mpeg_play-2.4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-src.tar.gz
