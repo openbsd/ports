@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/05 22:37:09 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/04/05 23:51:17 brad Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
-MASTER_SITES=	$(MASTER_SITE_GNU)
+MASTER_SITES=	http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
+		$(MASTER_SITE_GNU)
 MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${PDFENCRYPT}
