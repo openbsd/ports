@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.4 1998/05/06 16:55:37 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/06/10 06:06:52 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -12,6 +12,8 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
 MAINTAINER=	form@vs.itam.nsc.ru
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
