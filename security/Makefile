@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2000/08/28 23:37:18 matt Exp $
+# $OpenBSD: Makefile,v 1.45 2000/08/30 00:37:41 turan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -43,8 +43,6 @@
      SUBDIR += sftp
      SUBDIR += smurflog
      SUBDIR += socks5
-     SUBDIR += ssh:intl
-     SUBDIR += ssh:usa
      SUBDIR += ssl26
      SUBDIR += sslintl
      SUBDIR += sslusa
