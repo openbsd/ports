@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/19 17:40:06 wilfried Exp $
+--- Makefile.orig	Wed May 19 23:05:31 1999
++++ Makefile	Mon Mar 19 17:56:07 2001
+@@ -1,5 +1,4 @@
+ PROGS = usbctl usbdebug usbstats usbgen 
+-CFLAGS = -Wall -s
+ 
+ all:	$(PROGS)
+ 
+@@ -7,16 +6,16 @@ man:	usbgen.8
+ 	nroff -mandoc usbgen.8 > usbgen.0
+ 
+ usbctl:		usbctl.c
+-	cc $(CFLAGS) usbctl.c -o usbctl
++	${CC} $(CFLAGS) usbctl.c -o usbctl
+ 
+ usbdebug:	usbdebug.c
+-	cc $(CFLAGS) usbdebug.c -o usbdebug
++	${CC} $(CFLAGS) usbdebug.c -o usbdebug
+ 
+ usbstats:	usbstats.c
+-	cc $(CFLAGS) usbstats.c -o usbstats
++	${CC} $(CFLAGS) usbstats.c -o usbstats
+ 
+ usbgen:		usbgen.c
+-	cc $(CFLAGS) usbgen.c -o usbgen
++	${CC} $(CFLAGS) usbgen.c -o usbgen
+ 
+ install: $(PROGS)
+ 	install usbctl usbdebug usbstats usbgen $(PREFIX)/sbin

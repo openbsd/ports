@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/19 17:41:49 wilfried Exp $
+--- Makefile.orig	Tue Nov 14 14:53:21 2000
++++ Makefile	Mon Mar 19 18:01:15 2001
+@@ -2,11 +2,7 @@ VERSION=	1.2.3
+ 
+ CHAR_SIZE=16
+ 
+-DEBUG=		-g
+-CC=		gcc
+-GCCFLAGS=	-Wall -ansi -pedantic
+-CFLAGS=		$(GCCFLAGS) $(DEBUG) -O -DCHAR_SIZE=$(CHAR_SIZE)
+-LDFLAGS=	$(DEBUG)
++CFLAGS+=	-DCHAR_SIZE=$(CHAR_SIZE)
+ 
+ # You may well have to change this line.  Just "LIBS=" will probably work.
+ LIBS:sh=	[ -f /usr/lib/libsocket.a ] && echo "-lnsl -lsocket -ldl" || echo ""
