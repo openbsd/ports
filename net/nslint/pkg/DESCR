@@ -1,0 +1,5 @@
+Nslint reads the (BIND) nameserver configuration files and performs a
+number of consistency checks on the dns records.  If any problems are
+discovered, error messages are displayed on stderr and nslint exits
+with a non-zero status.  Nslint is known to work with BIND versions 4,
+8, and 9.

@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/02/28 23:57:34 naddy Exp $
+--- configure.orig	Mon Jan  8 05:20:13 2001
++++ configure	Thu Mar  1 00:53:06 2001
+@@ -649,10 +649,10 @@ if test "${with_gcc+set}" = set; then
+   :
+ fi
+ 
+-    V_CCOPT="-O"
++    V_CCOPT=""
+     V_INCLS=""
+     if test "${srcdir}" != "." ; then
+-	    V_INCLS="-I\$\(srcdir\)"
++	    V_INCLS="-I\$(srcdir)"
+     fi
+     if test "${CFLAGS+set}" = set; then
+ 	    LBL_CFLAGS="$CFLAGS"

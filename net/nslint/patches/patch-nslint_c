@@ -1,0 +1,14 @@
+$OpenBSD: patch-nslint_c,v 1.1.1.1 2001/02/28 23:57:34 naddy Exp $
+--- nslint.c.orig	Mon Jan  8 05:19:57 2001
++++ nslint.c	Thu Mar  1 00:53:06 2001
+@@ -127,8 +127,8 @@ int	strsize;		/* size of space left in p
+ 
+ int	debug;
+ int	errors;
+-char	*bootfile = "/etc/named.boot";
+-char	*conffile = "/etc/named.conf";
++char	*bootfile = "/var/named/named.boot";
++char	*conffile = "/var/named/named.conf";
+ char	*nslintboot;
+ char	*nslintconf;
+ char	*prog;

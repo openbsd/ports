@@ -1,0 +1,38 @@
+$OpenBSD: patch-nslint_8,v 1.1.1.1 2001/02/28 23:57:34 naddy Exp $
+--- nslint.8.orig	Tue Feb 23 22:05:17 1999
++++ nslint.8	Thu Mar  1 00:53:06 2001
+@@ -101,14 +101,14 @@ Missing quotes.
+ Specify an alternate
+ .I named.boot
+ file. The default is
+-.IR /etc/named.boot .
++.IR /var/named/named.boot .
+ .TP
+ .TP
+ .B -c
+ Specify an alternate
+ .I named.conf
+ file. The default is
+-.IR /etc/named.conf .
++.IR /var/named/named.conf .
+ .TP
+ .B -B
+ Specify an alternate
+@@ -398,7 +398,7 @@ lines for new networks.
+ .na
+ .nh
+ .nf
+-/etc/named.boot - default named configuration file
++/var/named/named.boot - default named configuration file
+ nslint.boot - default nslint configuration file
+ .ad
+ .hy
+@@ -419,7 +419,7 @@ Lawrence Berkeley National Laboratory, U
+ The current version is available via anonymous ftp:
+ .LP
+ .RS
+-.I ftp://ftp.ee.lbl.gov/nslint.tar.Z
++.I ftp://ftp.ee.lbl.gov/nslint.tar.gz
+ .RE
+ .SH BUGS
+ Please send bug reports to nslint@ee.lbl.gov.
