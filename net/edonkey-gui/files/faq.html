@@ -1,0 +1,659 @@
+<html>
+
+<header> <title> eDonkey2000 Linux GUI - FAQ </title> </header>
+
+<body>
+
+<hr> <p align="center"> <b> THE EDONKEY2000 LINUX GUI FAQ </b> </p> <hr>
+
+<p> <b>
+by Tim-Philipp M&uuml;ller - <a href="mailto:tim@edonkey2000.com?subject=Linux GUI">tim@edonkey2000.com</a>
+<br><br>
+last updated: 3 May 2002 (recently changed: Q24).
+</b> </p>
+<p>Latest version of this FAQ should be available from <a href="http://users.aber.ac.uk/tpm01/faq.html">here</a> -
+dort gibt es auch die <a href="faq_german.html">FAQ auf Deutsch</a></p>
+<p><b>Screenshots and more recent development versions of the GUI are available <a href="http://users.aber.ac.uk/tpm01/guihome.html">here</a></b></p>
+
+<p>If you find any mistakes on this page, please let me know.</p>
+<p>Thanks to 'Sy.' for pointing out some severe typos, and everyone who suggested new questions.</p>
+
+<p><b>This FAQ does <u>not</u> apply to the Java GUI, only to the "C" linux GUI.</b><br>
+However, the first couple of questions might also help you solve connection problems with the JavaGUI.</p>
+
+<p>
+<lh><b>Frequently Asked Questions:<b></lh>
+<ul>
+<li><a href="faq.html#Q1">GUI? What's that?</a></li>
+<li><a href="faq.html#Q2">What is 'the core'?</a></li>
+<li><a href="faq.html#Q3">What's the difference between the 'core' and the 'GUI'?</a></li>
+<li><a href="faq.html#Q4"><b>What do I have to do before I can use the GUI for the first time?</b></a></li>
+<li><a href="faq.html#Q5"><b>Okay, the GUI starts and there is that 'connect to' dialog - what do I do?</b></a></li>
+<li><a href="faq.html#Q6"><b>I can connect to the core, but nothing seems to happen - what's wrong?</b></a></li>
+<li><a href="faq.html#Q7">Why does the linux GUI not show the nice progress bars etc like the windows version?</a></li>
+<li><a href="faq.html#Q8">How does the binary supplied with the GUI differ from the 'official' version?</a></li>
+<li><a href="faq.html#Q9">Why do you only supply the statically linked 'donkey_s' with the GUI?</a></li>
+<li><a href="faq.html#Q10">What's saved in the 'gui_options' file?</a></li>
+<li><a href="faq.html#Q11">What about the 'gui_lookuplist' file?</a></li>
+<li><a href="faq.html#Q12">What about filters?</a></li>
+<li><a href="faq.html#Q13">Will my downloads stop when I close the GUI / when the GUI crashes / when the X server crashes?</a></li>
+<li><a href="faq.html#Q14">Suddenly, for some reason, the 'connect to' dialog re-appers - what's wrong?</a></li>
+<li><a href="faq.html#Q15">Why didn't you write a proper KDE program?</a></li>
+<li><a href="faq.html#Q16">Why is the GUI not open source?</a></li>
+<li><a href="faq.html#Q17">Does the GUI have problems displaying German and other international characters?</a></li>
+<li><a href="faq.html#Q18">Can I run two GUIs controlling to different cores at the same time?</a></li>
+<li><a href="faq.html#Q19">Can two people control one and the same core at the same time?</a></li>
+<li><a href="faq.html#Q20">How reliable are the upload and download statistics (upcoming version)?</a></li>
+<li><a href="faq.html#Q21">What does the stuff in the statistics status line exactly mean?</a></li>
+<li><a href="faq.html#Q22">What exactly does the 'exec command on download complete' function do? (upcoming version)</a></li>
+<li><a href="faq.html#Q23">Does the linux version support ed2k-links? How does it work? Can I do this and that?</a></li>
+<li><a href="faq.html#Q24">How can I use ed2k-links from within galeon or other gnome programs? (upcoming version)</a></li>
+<li><a href="faq.html#Q25">Is it possible that the windows version downloads better/faster than the linux version?</a></li>
+<li><a href="faq.html#Q26">The GUI crashes immediately under Suse 7.x</a></li>
+<li><a href="faq.html#Q27">I've updated my core from v57 (bundled with the gui v0.1) to a newer one and now XYZ doesn't work</a></li>
+<li><a href="faq.html#Q98">I have found a bug - what do I do?</a></li>
+<li><a href="faq.html#Q99">This GUI really makes me happy - how can I reward you?</a></li>
+</ul>
+</p>
+<a id="Q1">
+<a name="Q1">
+<h2>(1) GUI? What's that?</h2></a>
+<p>
+GUI = Graphical User Interface<br>
+Translate that into: windows, buttons, etc.
+</p>
+
+<a id="Q2">
+<a name="Q2">
+<h2>(2) What is 'the core'?</h2></a>
+<p>
+'The core' is the actual edonkey program which does
+everything behind the scenes - connecting to servers,
+searching, downloading, uploading, all that stuff.
+</p>
+<p>
+Generally, the 'core' is simply the usual linux command
+line client. However, if it is started with a special
+command line option (ie. '-'), it is no longer the usual
+command line client, but listens on a specified 'admin port'
+(which you can set in the command line client via the 'aport'
+command - default is port 4663) for a GUI to tell it what to do.
+</p>
+<p>
+Usually, you can spawn (=start) the 'core' via the GUI. If, for
+some reason, this doesn't work or you want to do it manually, you'll
+have to start it like this in order to make it controllable via a GUI:
+'./donkey - !' or './donkey_s - !' (depending on which binary you use).
+The exclamation mark/bang is not really necessary, but it saves you from
+running into difficulties shutting down the core via the GUI.
+</p>
+
+<a id="Q3">
+<a name="Q3">
+<h2>(3) What's the difference between the 'core' and the 'GUI'?</h2></a>
+<p>
+The core simply does all the stuff. You need a user interface to tell
+it what to do (ie. connect to servers, do searches, download stuff).
+The core comes with a very simple text interface (=command line client),
+where you can tell it what to do by typing in commands like 'c' for
+"connect" and 'd 1' for "download search result number 1". Most people
+do not find this very convenient and rather have a window with lists and
+buttons to click. The 'GUI' is a separate program which connect to the
+core via a TCP connection and tells it what to do. Likewise, the core
+sends messages to the GUI when something happens (eg. a download has
+finished), so the GUI can present this to the user.
+</p>
+<p>
+The GUI and the core are two totally separate programs in linux. They talk
+to each other via an internet (TCP) connection and tell each other what
+they are currently doing.
+In Windows, the GUI and the core are one program with the core being hidden
+from the user.
+</p>
+
+<a id="Q4">
+<a name="Q4">
+<h2>(4) What do I have to do before I can use the GUI for the first time?</h2></a>
+<p>
+If you haven't done so, you'll have to unpack the archive with the GUI files. On the
+command line, enter <tt>'tar xzf linux_gui_alpha.tgz'</tt> (or whatever the archive is called).
+The extension can be '.tgz' or '.tar.gz', with the former being a shorter way for the latter.
+</p>
+<p>
+<b>Please note: You should not unpack the GUI archive on a windows vfat partition unless you know what
+you are doing.</b> Windows partitions in linux are often mounted in a way that prevents the system from
+executing binaries (=programs) which are on those windows partitions. If you unpack the archive somewhere
+in your home directory tree or so you should not have to worry about the this permissions business. You
+can still set your eDonkey temp or incoming folder to be on a windows partition if you want to, as
+long as you have read and write access to it.
+</p>
+<p>
+Before you can use the GUI, you'll have to set up an admin username and
+password. For security reasons, you have to do this manually, but you'll
+only have to do this once.
+</p>
+<p>
+You set up an admin username and a passwort by starting the edonkey binary
+supplied with the GUI manually from the command line [1], and then typing
+'pass username password' (and hitting ENTER). Then type 'q' ENTER
+and 'y' ENTER to quit and make the core save its preferences.
+</p>
+<p>
+After you've done this, you can start the GUI (ed2k_gui) by clicking on the
+filename in a file manager or invoking it on the command line. Hit the
+'spawn local donkey' button if you want to run the edonkey2000 core on the
+same machine as the GUI. You can also connect to a core that runs on a
+different computer, but then you have to start it manually and make it listen
+to a GUI connection via the '-' command line option (and better also add '!' as
+another command line option to make sure it can always be properly shutdown via
+the GUI).
+</p>
+<p>
+[1] How to start the command line client manually (without being accessible by the GUI):
+On a console (or x window command line window like xterm), type in './donkey_s'
+or './donkey' (depending on whether you use the statically compiled binary or not).
+NOTA BENE: If you have different edonkey binaries on your system, you have to use
+the one that is supplied with the GUI, and you have to run this from the command
+line (meaning: change into the appropriate folder first via 'cd /home/joe/myfolder/').
+</p>
+
+<a id="Q5">
+<a name="Q5">
+<h2>(5) Okay, the GUI starts and there is that 'connect to' dialog - what do I do?</h2></a>
+<p>
+First of all, you'll need an edonkey core running somewhere. Usually this will be
+the computer you're running the GUI on. There should be a status message above the
+buttons that tell you if there is already a core running locally or not. If not
+(which is usually the case), hit the 'spawn local donkey' button to start the
+edonkey2000 core program. Now the status message should change. If not, you'll have
+to start the core manually (see Question 2 above). Please report all problems with
+this to <a href="mailto:tim@edonkey2000.com?subject=linux GUI - spawning local donkey">me</a>,
+including what you did, what values the 'connect
+to' dialogue showed in all the fields, and the full path to the GUI and the donkey
+binary.
+</p>
+<p>
+Second, if you spawned the donkey core alright, you enter the admin username and
+password into the appropriate fields in the 'connect to' dialog and hit the 'connect'
+button. Now the 'connect to' dialog should disappear and the GUI should be connected
+to the core. If this does not happen, there could be the following problems (also check
+the statusbar of the GUI main window for messages):
+</p>
+<p>
+<ul>
+<b>(0)</b> If you have started the core manually, you forgot the '-' option. Start it with './donkey - !'
+</ul>
+<ul>
+<b>(a)</b> You're connecting to the wrong computer ('host'). This should be 'localhost' by
+    default.
+</ul>
+<ul>
+<b>(b)</b> You're connecting to the wrong port on your computer. The default GUI port can be
+    set in the command line client via the 'aport' command, but should be 4663 by
+    default.
+</ul>
+<ul>
+<b>(c)</b> You haven't set a username and/or password with the core manually (see Q4 above).
+</ul>
+<ul>
+<b>(d)</b> Your username/password are wrong (run the core manually and type the 'vo' command
+    to see what they are set to).
+</ul>
+<ul>
+<b>(e)</b> The 'connect to' dialog disappears, but nothing seems to happen. Most notably, the
+    options page shows 'pleasewait' as a nickname: This happens if you connect to the
+    core on the wrong port, namely on the port the core uses as its _data_ port. Start
+    the core manually and type 'vo' to see what the admin port is. Make sure the 'admin
+    port' is different from the 'door port' (=data port). If in doubt, type 'netstat -l'
+    on a console/bash to see on what ports the donkey is listening. It should be one of
+    those.
+</ul>
+<ul>
+<b>(f)</b> If you're trying to control a GUI on a remote host, chances are that there is a
+    firewall between you and the remote host that blocks all TCP connections on the admin
+    port. If this is the case, you have to check your firewall settings and allow these
+    connections or try a different port as an admin port.
+</ul>
+</p>
+<p>
+Third, you're connected, and the options page does NOT show 'pleasewait' as a nickname.
+This is a very good sign, meaning that the GUI and the core can actually talk to each
+other. Now you should be able to do whatever you want: Go to the servers page and connect
+to a server first. Then you can search and start to download things. If you right-click on
+the list-entries you'll get all the available actions. Don't forget to share.
+</p>
+
+<a id="Q6">
+<a name="Q6">
+<h2>(6) I can connect to the core, but nothing seems to happen - what's wrong?</h2></a>
+<p>
+Check if the options dialog shows 'pleasewait' as a nick. If yes, see Question 5e above.
+If no, I don't know what's wrong. Please mail me or post a report in the edonkey2000 bugs
+forum <b>in the appropriate bugs thread</b> (and only there please, otherwise I might miss it).
+</p>
+
+<a id="Q7">
+<a name="Q7">
+<h2>(7) Why does the linux GUI not show the nice progress bars etc like the windows version?</h2></a>
+<p>
+Because it's an alpha version. Please be patient, those features will be implemented over
+time, but first I'd like to make sure the basic functions work.
+</p>
+
+<a id="Q8">
+<a name="Q8">
+<h2>(8) How does the binary supplied with the GUI differ from the 'official' version?</h2></a>
+<p>
+It doesn't. Not very much anyway. If they differ, then the donkey binary supplied with
+the GUI is more up-to-date, possibly having some new functions that are needed by the
+GUI which are not yet in the last official linux command line client release.
+</p>
+
+<a id="Q9">
+<a name="Q9">
+<h2>(9) Why do you only supply the statically linked 'donkey_s' with the GUI?</h2></a>
+<p>
+Because it's easier and makes the downloadable archive smaller. Also, everyone who can
+run the dynamically linked binary can also run the statically linked one, but not vice
+versa. Simple as that.
+</p>
+<p>
+Some people have claimed that the dynamically linked binary 'donkey' runs faster than
+the statically linked binary 'donkey_s'. Personally, I think this is close to nonsense
+in practice, not only due to theoretical reasons, but also according to some runtime
+tests I made. Anyone who wants to convince me of the opposite is welcome to mail me
+reproducable runtime tests and results (on post-486 machines, please). :)
+</p>
+
+<a id="Q10">
+<a name="Q10">
+<h2>(10) What's saved in the 'gui_options' file?</h2></a>
+<p>
+The 'gui_options' file simply contains all your _GUI_ preferences (ie. last GUI window
+size, size of the columns in the different tables, your GUI options like 'shutdown core
+on exit'/ 'confirm cancel' etc. However, it also contains your default username/password
+to connect to the core, so this file should be made readable/writable only for the user
+who uses the GUI and not be readable to others and/or the users' group (use the chmod
+command to change this if necessary).
+</p>
+
+<a id="Q11">
+<a name="Q11">
+<h2>(11) What about the 'gui_lookuplist' file?</h2></a>
+<p>
+This file contains a list of names of edonkey2000 servers that are not on static (=fixed)
+IPs. When you start the GUI, it will read this file (one hostname per line) and resolve
+the hostnames specified there to the current server IP. These servers will be removed from
+the edonkey2000 serverlist when the GUI shuts down the core.
+</p>
+
+<a id="Q12">
+<a name="Q12">
+<h2>(12) What about filters?</h2></a>
+<p>
+Filters for search results (e.g. automatically filter out all search results which contain
+the word/substring 'do_it_to_me_baby') are not implemented yet, but will (hopefully) be
+implemented in one of the next releases.
+</p>
+
+<a id="Q13">
+<a name="Q13">
+<h2>(13) Will my downloads stop when I close the GUI / when the GUI crashes / when the X server crashes?</h2></a>
+<p>
+Usually, they won't. It all depends on how the core was started. If you started it manually
+from an xterm window withing X, chances are that it will stop when the X server crashes/ is
+shutdown. Ususally, however, the core will go on downloading until it is explicitely shut
+down by the GUI (either on exit if you have the 'always shutdown core on exit' box ticked) or
+it is manually killed from the commandline or you shutdown your computer or the core crashes
+(does happen from time to time ;)).
+</p>
+
+<a id="Q14">
+<a name="Q14">
+<h2>(14) Suddenly, for some reason, the 'connect to' dialog re-appers - what's wrong?</h2></a>
+<p>
+This happens if the connection between the core and the GUI is disrupted, which in most
+cases means that the core has crashed, or - if the core is running on a remote host - that
+your internet connection is broken/has been disrupted.
+</p>
+
+<a id="Q15">
+<a name="Q15">
+<h2>(15) Why didn't you write a proper KDE program?</h2></a>
+<p>
+There are a couple of reasons for this.
+</p>
+<p>
+First, one advantage of linux over windows is the fact that linux users have a choice as to
+what they prefer to run as their X window server, X window manager, desktop system, etc. You
+might think that KDE is simply the best (and, yes, I use KDE, too), but others might not. Now
+my aim was to produce something which runs on as many different installations as possible, and
+I found that the gtk+ toolkit was the best smallest common denominator if one wanted to avoid
+direct xlib programming. It is almost a standard on any system which installs X window. KDE is
+not. (what was the liberals' argument again? Something has value <i>because</i> one chose it... ;) )
+</p>
+<p>
+Secondly, I wanted to produce something which could more or less easily be ported to other
+systems (windows, BeOS, Mac OS X) and architectures. It is true that Qt exists for a variety
+of systems as well, at the moment, however, there seem to be licensing issues on non-linux
+systems which have to be taken into account.
+</p>
+<p>
+Thirdly, I don't know much C++, and as I was writing the program during my final uni exams, I
+figured that I'd rather come up with something usable if I do it in C, than if I start learning
+C++ first. Simple as that.
+</p>
+
+<a id="Q16">
+<a name="Q16">
+<h2>(16) Why is the GUI not open source?</h2></a>
+<p>
+There are a couple of reasons why the GUI is not open source (for the time being):
+</p>
+<p>
+(a) The source code looks like shit and is totally incomprehensible AND I'm very vain and don't want
+my name attached with badly written code ;) (bad reason)
+</p>
+<p>
+(b) The GUI-core protocol is probably fairly similar to the donkey protocol. Providing the GUI
+source code will therefore make the task of those people who want to find out the donkey protocol
+a lot easier. Having the donkey protocol in the open has two disadvantages from my perspective:
+Firstly, there will be readily-available clients without forced sharing and/or forced uploads. This
+I personally find undesirable, as it is one of the features which makes the edonkey community special.
+Secondly, once the protocol is in the open, it is harder to make changes to it and improve it.
+Probably at some point there will be someone who hacks the protocol and makes it public. However,
+I don't want to be the one responsible for this by making the GUI open source, as I regard the
+current arrangements necessary to keep the eDonkey community as it is - a file-<b>sharing</b> community.
+</p>
+<p>
+(c) An open-source GUI would not mean that the GUI's functionality could easily be enhanced due to
+a larger number of developers. Fact is, the GUI's functionality depends crucially on the core. As long
+as the core is <i>closed</i> source, only minor changes or bug fixes could be made anyway. In respect to point (b)
+above I regard the preservation of the community as more important.<br>
+Also, on another point, I would like Jed aka Swamp to continue adding new GUI features to the core. He is
+the only one who can do it with the donkey core being closed source and he has put a lot of time and work
+in making the GUI possibly in the first place. Swamp did not seem to me like he would very much want
+the GUI source to be in the open, and I respect that wish. Even if one did not agree with me on matters of
+principle here, one might be able to acknowledge the necessity of it in order to improve the GUI.
+</p>
+
+<a id="Q17">
+<a name="Q17">
+<h2>(17) German and other international characters...</h2></a>
+<p>
+are not shown correctly by the GUI?
+Symptom: When trying to display a string with an international character, the string is cut off at the
+point where the special character is supposed to be.
+</p>
+<p>
+If this happens, you are probably using KDE2. Do the following to fix this problem:<br>
+Go to the KDE Control Center / Look&Feel / Style, and untick the box 'Apply KDE fonts and colors to non-KDE apps'. Then
+click the 'Apply' button and restart the GUI. The problem should not occur any longer now. If it does, see if you have a file
+in your home directory called '.gtkrc' (it's usually hidden, so use 'ls -a ~' to see if it's there). If yes, open it in a
+text editor and uncomment the line 'fontset' (to '#fontest'), then save it and restart the GUI again. Now it should
+definitively work!
+</p>
+<p>
+<b>The same in German:</b> I'm very grateful to the <a href="http://sdb.suse.de/de/sdb/html/thallma_kde2_kcontrol.html">SuSe knowledge database</a> for this hint.
+</p>
+
+<a id="Q18">
+<a name="Q18">
+<h2>(18) Can I run two GUIs controlling two different cores at the same time?</h2></a>
+<p>
+Yes, you can, <b>but</b> you'll need to put both GUIs in <b>different</b> directories (e.g./home/joe/ed2k_gui1/
+and /home/joe/ed2k_gui2). Why you need to do this? Because the GUI regularly saves its options (into gui_options), the
+upload and download statistics (into gui_uploadstats), and possibly the status window output (into gui_statuslog). Of
+course you could start the same binary in the same directory twice, but then both would regularly overwrite the above
+mentioned files with their own values. Which doesn't really matter if you don't care about keeping your options settings
+or if you don't mind that the statuslog is confusing and mixed up. However, if you do, you should run both GUIs in different
+directories.
+</p>
+
+<a id="Q19">
+<a name="Q19">
+<h2>(19) Can two people controll a core a the same time?</h2></a>
+<p>
+Or: What happens, if I'm running the GUI and controlling the core, and my flatmate starts another GUI on his computer
+and wants to connect to and controll that same core (e.g. on a gateway/router) as well?
+</p>
+<p>
+This is not possible. Only one person can control a core at the same time. If your GUI is connected to the core, and
+someone else tries to connect to it as well, the core will send you a message 'Another control attempt'.
+</p>
+
+<a id="Q20">
+<a name="Q20">
+<h2>(20) How reliable are the upload and download statistics? (upcoming version)</h2></a>
+<p>
+They aren't reliable at all. They are there for the bored, the curious, and the control freaks ;)<br>
+A couple of things you should know about those statistics:
+</p>
+<p>
+First, they are produced by the GUI alone, in other words: if you close the GUI and keep the core running, the core will
+continue to download and upload. These downloads and uploads will never make it into the statistic! Only downloads and
+uploads that occur while the GUI is connected will make it into the statistics.
+</p>
+<p>
+Second, they are estimates. How does it work? The core regularly sends out the current upload/download speeds for all the
+up- and downloads. Currently, the GUI receives a speed value every three seconds. Now the GUI says: 25kB/s is the speed,
+let's take that as the average (which it isn't!) over the last three seconds, then we've transferred 75kB in 3 seconds.
+</p>
+<p>
+This is a very rough way of estimating, but very easy as well. It should work pretty fine with normal download and upload
+speeds, ie. for 95% of the people. It will not work fine on an internal LAN where you get download and upload speeds of up
+to 750kB/s. In short: The higher the speeds, and the shorter the downloads, the less accurate it gets.
+</p>
+<p><b>Addendum: What is the ul/size ratio supposed to tell me?</b></p>
+<p>
+Honestly, I don't know. I like to think about it this way:<br>
+What does the amount uploaded tell us? How popular a file is in comparison to others, right?
+(There are some assumptions about equal average chances and equal average slot sizes for all people who want a file made, but
+I think it's safe to assume that those are true over a longer period of time.) Let's also assume that we upload because we
+want to make other people 'happy' (happ<i>ier</i> that should be, but who cares). Then if we need to remove a shared file to
+free some space on our harddrive, we look at the upload stats and remove those which are least in demand.
+<b>But:</b> This would only serve our purpose (increase happiness of others) if we assume that happiness increases with the
+amount transfered (at least that's the implicit assumption).<br>
+Now one could take a different perspective and say that happiness is not dependent on the <i>amount</i> transfered, but on the
+<i>number</i> of items completed (or, in other words, marginal utility per MB transferred decreases with filesize). A single episode of "My 14 Days on an exchange program in Paris - a Diary" would therefore
+increase happiness exactly as much as your "Exploring the Louvre" which is ten-times the size of one your diary episodes.<br>
+If we go with this, then the ul/size factor is the indicator to consult
+</p>
+<p>Anyone have any other daring interpretations? ;)</p>
+
+<a id="Q21">
+<a name="Q21">
+<h2>(21) What does the stuff in the statistics status line exactly mean?</h2></a>
+<p>
+First of all, be advised that all this statistics stuff is totally unreliable, buggy, and experimental. If you notice
+weird stuff going on, please tell me about it, but don't be suprised.
+</p>
+<p>
+Lets take the line <tt><b>'Total upload: ~17.63G in 11.5 days (~1565.3M/day) - actual: ~220.2kB/s, uploading 8.4% of the time (23.3h)'</b></tt>
+- what does it mean (assuming it worked alright)?
+</p>
+<p>
+It means that the GUI has watched the core upload around 17GB since the statistics were last cleared 11.5 days ago.
+If the core runs in the background without the GUI being connected to it, it will still upload, but the GUI won't know about
+this, so it can't take it into account. The 11.5 days is the time since the stats have been cleared the last time. It does
+not mean that the core or the GUI have been running for 11.5 days. If you clear the stats, go on holiday for two weeks, come back
+and start the GUI with core, it will display '0 GB in 14 days', even though the computer was switched off during that time.
+</p>
+<p>
+Now, the '23.3h' should be the time when the GUI was connected to the core and has seen the core actually upload (total upload speed
+> 0kB/s). 23.3 hours is 8.4% of 11.5 days. And the 'actual speed' of 220.2kB/s means that the average upload speed should be around 220kB/s,
+taking into account only the times when it is actually uploading.
+</p>
+
+
+<a id="Q22">
+<a name="Q22">
+<h2>(22) What exactly does the 'exec command on download complete' function do? (upcoming version)</h2></a>
+<p>
+If you specify some command there, the GUI will invoke a shell via system() and execute the command(s) you specified.
+The GUI will export two environment variables: $ED2K_FN contains the name of the file that's just been completed, and
+$ED2K_IN contains the path to the incoming folder. The GUI will attach these exports in the form of
+'export ED2K_FN="filename" && export ED2K_IN="/mnt/daten/incoming" && [your string here]'.
+</p>
+<p>
+What you do with this function is up to you. You can do basically everything ;) But please note, that this function is
+<b>experimental</b>, so if you don't know <b>exactly</b> what you are doing and what the worst thing is that could happen
+to your system if something goes wrong, then please don't use it. Please send bug reports to me.
+</p>
+<p>
+<b>a simple example:</b> I've put in my 'exec on complete' entry field the following entry:<br>
+<font color=blue><tt>echo -e "$ED2K_FN\n~.\n" | mail -s "Download complete, dude" tim</tt></font><br>
+which sends me an e-mail on my local system every time a download is complete. If your mail system is set up properly,
+you can also use an external address like dude@wakeup.com. You might have to/want to use 'procmail' or 'sendmail' instead
+of mail. If you have any cool, sophisticated examples, please let me know :-)
+</p>
+<p>
+<b>another example:</b><br>
+<font color=blue><tt>echo "$ED2K_FN has been completed!" | smbclient -M JOHANNA</tt></font>
+sends a popup-message to the client on the internal network known as JOHANNA (//JOHANNA) on the Windows Network Neighborhood.
+</p>
+
+
+<a id="Q23">
+<a name="Q23">
+<h2>(23) ed2k-links in linux (upcoming version)</h2></a>
+<p>
+As you probably know, in Windows it's possible to add servers to eDonkey just by clicking on a
+'<a href="ed2k://|server|9.8.7.6|4661|">ed2k://|server|9.8.7.6|4661|</a>' link, and to automatically start downloading
+files without searching by clicking on a <a href="ed2k://|file|Drunk Baby Animation.avi|630116|3490b0765c3467f9e3c5ebcdfc33d251|">
+ed2k://|file|Drunk Baby Animation.avi|630116|3490b0765c3467f9e3c5ebcdfc33d251|</a> link.
+</p>
+<p>
+What do you need for ed2k-links to work in linux? You need a GUI that can handle ed2k-links (e.g. the linux 'C' GUI -
+currently any development version built Dec 16 2001 and later), and you need a core that supports starting downloads from
+ed2k-links (currently eg the special core versions that are linked to from my posts in the forum as well as from the
+<a href="http://users.aber.ac.uk/tpm01/guihome.html">gui home page</a>. Currently you can use ed2k-links only via the GUI
+(or phpdonkey, for that matter), but not simply with the command line client on its own.
+</p>
+<p>
+With the latest gui development versions (>17/12/01) you should be able to <b>simply drag'n'drop an ed2k-link from your browser into the GUI window</b>.
+Depending on your gui options, it will start to download right away or be added to the search list first.
+</p>
+<p>
+How does it work? The GUI listens on a named fifo pipe '/tmp/.ed2k_gui_socket' (like a file on your local file system), and
+you yourself or other programs can drop single ed2k-links or whole ed2k-link lists into that pipe. On the command line you
+can do that via a simpel 'echo "ed2k://|file|somefile|size|hash|" > /tmp/.ed2k_gui_socket' or a
+'cat linklist.html > /tmp/.ed2k_gui_socket'. Server and file links will be accepted. Depending on your options, the file
+links will either appear on the search page or be downloaded right away.
+</p>
+<p>
+<b>Now, the fancy stuff:</b> Koen Bailleul has written a ed2k://-protocol kioslave for kde2. That means that you will be able
+to click on an ed2k-link in konqueror and it's automatically passed on to the gui just like in windows! Currently (Dec 16),
+the kioslave is not available yet, as there are still some installation problems that need sorting out, but it's worth
+checking back to the gui development page regularly.
+</p>
+<b>Other fancy stuff:</b> 'exp' has written an ed2k://-protocol agent for windows. Many people have the linux core and GUI
+running at home or on their router in the basement, but they mainly work with their windows computers in the kitchen or at
+work. Using said agent for windows, and installing another small agent on the linux box, it is possible to click on an
+ed2k-link on your windows machine at work, and have it sent to the GUI/core running on the other side of town. As above,
+this is not available yet, but check on the gui development home page for updates.
+</p>
+
+<a id="Q24">
+<a name="Q24">
+<h2>(24) How can I use ed2k-links from within galeon or other gnome programs? (upcoming version)</h2></a>
+<p>
+Drag'n'drop should work from Galeon.
+</p>
+<p>
+If you don't like drag'n'drop, start the gnome control center, choose "URL Handlers" in the "Document Handlers" category.
+Then enter "ed2k" (without quotes) in the field left of "handler" and as the handler enter<br>
+<font color=blue><pre>sh -c 'echo $0 >/tmp/.ed2k_gui_socket' "%s"</pre></font><br>
+(exactly as shown here). Then press 'Set' and then the 'Ok' button.
+</p>
+<p>
+(many thanks to Friedrich Delgado Friedrichs for this tip. Note: what happens if the gui is not running, ie. the pipe
+does not exist? Maybe one should do a 'test' at the beginning?)
+</p>
+<p><b><a href=http://ircnet.de/home/cru/ed2k_urlslave/>Here's a more sophisticated version to provide GNOME-apps with ed2k-link handling.</a></b>
+<br>(Thanks to Veit Wahlich)
+</p>
+
+<a id="Q25">
+<a name="Q25">
+<h2>(25) Is it possible that the windows version downloads better/faster than the linux version?</h2></a>
+<p>
+Everything is <i>possible</i>. Fact is, it is very hard to make proper comparisons. Even if the settings are exactly the same,
+most donkey users will probably agree that downloadspeed can be a function of virtually anything, meaning it can be totally random.
+Maybe you just caught a good time with your windows client and a bad one with your linux client. I've heard the
+"people, get the linux client, it's so much faster" just as often as I've heard the opposite.
+</p>
+<p>
+Fact is also, that <b>the code that handles the downloading, uploading, and searching for sources is exactly the same for the
+windows and the linux client</b>. It's one and the same source code! The problem is that the source code is continually
+developed, experimented with, changes are made and other changes are reversed. Although the linux client might have the
+same version number as the windows client, it has usually not been compiled at the same time, so the actual routines can differ between
+the v58 linux client and the v58 windows client. Additionally, there are usually a couple of different
+'unofficial' linux client versions around which are also compiled at different times. You just have to try them and see
+which one works best for you (if there wasn't the problem that the newer ones usually have bugs fixed or new features ;).
+</p>
+
+<a id="Q26">
+<a name="Q26">
+<h2>(26) The GUI crashes immediately under Suse 7.x</h2></a>
+<p>
+I don't know what the reason for this is, but a Yast-upgrade (or Yast-update or whatever it's called)
+should get rid of this problem.
+</p>
+
+<a id="Q27">
+<a name="Q27">
+<h2>(27) I've updated my core from v57 (bundled with the gui v0.1) to a newer one and now XYZ doesn't work</h2></a>
+<p>
+The reason for this is probably that later versions (v59, not sure about v58) have a different pref.met format and thus
+do not read in the old v57 preferences correctly. This means that you might have to reset your gui admin username / password,
+the aport, the incoming and temp directories and other options manually from the command line. After you've done that,
+everything should work fine again.
+</p>
+
+
+<h2>(28-96) ... Nothing here yet :)</h2>
+<p></p>
+
+<a id="Q97">
+<a name="Q97">
+<h2>(97) I have some other problem - what do I do?</h2></a>
+<p>
+Post it to the eDonkey2000 forums (in the Bugs forum or in the Help forum) with the words
+'linux GUI' and a short description of your problem in the topic header
+(so I can easily find it). If that doesn't help, e-mail me <tim@edonkey2000.com>.
+</p>
+<p>
+Please keep in mind that not all problems are the GUI's fault. Some have to do with the core (ie. "I can't connect
+to any servers"). Some have to do with an incorrectly set up system (firewall, routers etc.) or bugs in system components
+(libraries,kernel. etc).<br>
+<b>So be polite when you report a bug.</b>. Please also use the forum's search function before you post any problems. A lot
+of problems have been answered there already. In principle, the linux core works just like
+the windows eDonkey program/core, so the solutions are quite similar, if not the same.
+</p>
+
+<a id="Q98">
+<a name="Q98">
+<h2>(98) I have found a bug - what do I do?</h2></a>
+<p>
+Either post it to the edonkey2000 bug forum <b>in the appropriate thread</b> or e-mail me at
+<a href="mailto:tim@edonkey2000.com?subject=Linux GUI">tim@edonkey2000.com</a> with as much detail as possible.
+</p>
+
+<a id="Q99">
+<a name="Q99">
+<h2>(99) This GUI really makes me happy - how can I reward you?</h2></a>
+<p>
+Write me an e-mail. Positive feedback always makes me happy :-)
+I do accept small cheques and transfers in pounds sterling or Euros as well ;-)
+</p>
+
+
+<p align="left" style="border-style: solid; border-width: 1; padding-left: 2; padding-right: 2; padding-top: 1; padding-bottom: 1"><font face="Arial, Helvetica, Verdana">
+&quot;The information provided on this and other pages by me, TP Muller, tpm01, is under my own personal responsibility and not that of the
+    University of Wales, Aberystwyth. Similarly, any opinions expressed are my own and are in
+    no way to be taken as those of UWA. &quot;</font> </p>
+
+
+</body>
+</html>

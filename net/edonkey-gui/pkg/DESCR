@@ -1,0 +1,14 @@
+eDonkey2000 allows you to share and trade any type of file.
+
+This is a gtk gui for edonkey. It can attach to a running edonkey
+session. For that, you will have to start edonkey with the "-"
+parameter to allow remote controlling the edonkey core.
+
+It is strongly recommended to only attach to a running donkey on a secure
+network, since the password is sent as clear text, and a donkey core can
+be used to transfer more or less any file on that machine.
+
+Due to a bug in the linux code, you will have to start the donkey client
+manually first.
+
+WWW: ${HOMEPAGE}
