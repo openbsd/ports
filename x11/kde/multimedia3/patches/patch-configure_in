@@ -1,6 +1,38 @@
-$OpenBSD: patch-configure_in,v 1.9 2003/06/12 19:16:16 espie Exp $
---- configure.in.orig	Wed May  7 14:04:39 2003
-+++ configure.in	Tue Jun 10 10:58:31 2003
+$OpenBSD: patch-configure_in,v 1.10 2004/01/27 00:55:24 naddy Exp $
+--- configure.in.orig	2003-09-11 13:13:32.000000000 -0600
++++ configure.in	2004-01-26 16:51:44.000000000 -0700
+@@ -183,11 +183,11 @@ AC_CHECK_HEADER(vorbis/vorbisfile.h,
+ 
+ AC_CHECK_LIB(vorbisfile, ov_open,
+ 	[USELESS_VAR=1],
+-	[HAVE_VORBIS=""], -lvorbis -logg)
++	[HAVE_VORBIS=""], -lvorbis -lm -logg)
+ 
+ AC_CHECK_LIB(vorbis, vorbis_info_init,
+ 	[USELESS_VAR=1],
+-	[HAVE_VORBIS=""])
++	[HAVE_VORBIS=""], -lm -logg)
+ 
+ AC_CHECK_LIB(ogg, ogg_page_version,
+ 	[USELESS_VAR=1],
+@@ -813,7 +813,7 @@ if test "x$with_vorbis" = "xCHECK" ; the
+           VORBIS_LIBS="-L$vorbis_libdir "
+           test "$USE_RPATH" = yes && VORBIS_RPATH="-R $vorbis_libdir"
+         fi
+-        VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm"
++        VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm -logg"
+         with_vorbis=FOUND
+         break
+       fi
+@@ -835,7 +835,7 @@ NOTFOUND) AC_MSG_RESULT(searched but not
+       VORBIS_LIBS="-L${VORBIS_ROOT}/lib "
+       test "$USE_RPATH" = yes && VORBIS_RPATH="-R ${VORBIS_ROOT}/lib"
+     fi
+-    VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm"
++    VORBIS_LIBS="${VORBIS_LIBS}-lvorbis -lm -logg"
+     codec_h="$VORBIS_ROOT/include/vorbis/codec.h"
+     # Hmm.  May be we should even disallow vorbis completely if there
+     # is no codec.h in the directory provided by the user
 @@ -1580,7 +1580,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
