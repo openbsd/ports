@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/06/07 01:15:35 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/08/09 10:45:08 wilfried Exp $
 ${P5SITE}/Net/DNS.pm
 ${P5SITE}/Net/DNS/Header.pm
 ${P5SITE}/Net/DNS/Nameserver.pm
@@ -10,6 +10,7 @@ ${P5SITE}/Net/DNS/RR/AAAA.pm
 ${P5SITE}/Net/DNS/RR/AFSDB.pm
 ${P5SITE}/Net/DNS/RR/CERT.pm
 ${P5SITE}/Net/DNS/RR/CNAME.pm
+${P5SITE}/Net/DNS/RR/DNAME.pm
 ${P5SITE}/Net/DNS/RR/EID.pm
 ${P5SITE}/Net/DNS/RR/HINFO.pm
 ${P5SITE}/Net/DNS/RR/ISDN.pm
@@ -48,6 +49,7 @@ man/man3p/Net::DNS::RR::AAAA.3p
 man/man3p/Net::DNS::RR::AFSDB.3p
 man/man3p/Net::DNS::RR::CERT.3p
 man/man3p/Net::DNS::RR::CNAME.3p
+man/man3p/Net::DNS::RR::DNAME.3p
 man/man3p/Net::DNS::RR::EID.3p
 man/man3p/Net::DNS::RR::HINFO.3p
 man/man3p/Net::DNS::RR::ISDN.3p
