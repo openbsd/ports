@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/08 13:24:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/20 23:40:18 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.363
-VERSION=		2.1.2
+VERSION=		2.2
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
 CONFIGURE_ARGS+=	--disable-debug
+#CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 
 #CONFIGURE_ARGS+=	--enable-static --disable-shared

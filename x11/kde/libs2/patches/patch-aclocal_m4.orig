@@ -1,12 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.3 2001/08/20 23:40:18 espie Exp $
+$OpenBSD: patch-aclocal_m4.orig,v 1.1 2001/08/20 23:40:18 espie Exp $
 --- aclocal.m4.orig	Mon Aug  6 03:26:32 2001
-+++ aclocal.m4	Mon Aug 20 01:09:01 2001
-@@ -1,4 +1,4 @@
--dnl aclocal.m4 generated automatically by aclocal 1.4
-+dnl aclocal.m4 generated automatically by aclocal 1.4-p4
- 
- dnl Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
- dnl This file is free software; the Free Software Foundation
++++ aclocal.m4	Fri Aug 17 00:02:40 2001
 @@ -4722,19 +4722,7 @@ netbsd*)
    ;;
  

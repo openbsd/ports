@@ -1,0 +1,28 @@
+$OpenBSD: patch-kssl_kopenssl_cc,v 1.1 2001/08/20 23:40:18 espie Exp $
+--- kssl/kopenssl.cc.orig	Mon Aug 20 01:49:42 2001
++++ kssl/kopenssl.cc	Mon Aug 20 01:50:16 2001
+@@ -135,21 +135,12 @@ KConfig *cfg;
+ 
+    delete cfg;
+ 
+-   libpaths << "/usr/lib/"
+-            << "/usr/local/lib/"
+-            << "/usr/local/openssl/lib/"
+-            << "/usr/local/ssl/lib/"
+-            << "/opt/openssl/lib/"
+-            << "";
++   libpaths << "/usr/lib/";
+ 
+ // FIXME: #define here for the various OS types to optimize
+-   libnamess << "libssl.so.0"
+-             << "libssl.so"
+-             << "libssl.sl";
++   libnamess << "libssl.so.5.1";
+ 
+-   libnamesc << "libcrypto.so.0"
+-             << "libcrypto.so"
+-             << "libcrypto.sl";
++   libnamesc << "libcrypto.so.5.1";
+ 
+    for (QStringList::Iterator it = libpaths.begin();
+                               it != libpaths.end();
