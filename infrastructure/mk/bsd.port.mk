@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.269 2000/04/18 20:13:48 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.270 2000/04/18 23:20:49 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1722,6 +1722,11 @@ mirror-distfiles:
 .endif
 
 all-package: ${PKGFILE}
+.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.  for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && make ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+.  endfor
+.endif
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 .if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
@@ -1729,12 +1734,22 @@ cdrom-packages: ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}
 .else
 cdrom-packages:
 .endif
+.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.  for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && make ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+.  endfor
+.endif
 
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
 .if defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
 ftp-packages: ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}
 .else
 ftp-packages:
+.endif
+.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.  for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && make ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+.  endfor
 .endif
 
 
@@ -2325,8 +2340,8 @@ describe:
 .   endif
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for SUBPACKAGE in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && make SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' describe
+.  for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && make SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' describe
 .  endfor
 .endif	
 
