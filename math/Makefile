@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/02/08 16:40:52 xsa Exp $
+# $OpenBSD: Makefile,v 1.43 2005/02/08 04:29:22 msf Exp $
 #
 
      SUBDIR += R
@@ -48,12 +48,13 @@
      SUBDIR += p5-Bit-Vector
      SUBDIR += p5-Math-FFT
      SUBDIR += p5-Math-GMP
+     SUBDIR += p5-Math-Pari
 #    SUBDIR += p5-MatrixReal
      SUBDIR += p5-Set-IntSpan
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
      SUBDIR += py-probstat
-#    SUBDIR += pari
+     SUBDIR += pari
 #    SUBDIR += plplot
 #    SUBDIR += r
      SUBDIR += sc
