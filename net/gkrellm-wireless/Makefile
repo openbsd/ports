@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/17 15:44:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/17 15:55:19 jcs Exp $
 
 DISTNAME=	gkrellmwireless-0.2.2
 PKGNAME=	gkrellm-wireless-0.2.2
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"gkrellm plugin to view wireless link stats"
-HOMEPAGE=	http://gkrellm.luon.net/gkrellmms.phtml
+HOMEPAGE=	http://gkrellm.luon.net/gkrellmwireless.phtml
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
