@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/11 06:03:08 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/03/10 07:27:07 marcm Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
-DISTNAME=		evolution-data-server-1.0.3
+DISTNAME=		evolution-data-server-1.0.4
 CATEGORIES=		databases
 
 HOMEPAGE=		http://www.gnome.org
