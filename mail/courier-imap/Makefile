@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/12/06 22:50:20 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.44 2005/01/02 11:55:10 alek Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -10,11 +10,11 @@ MAINTAINER=	David Gwynne <loki@animata.net>
 
 COURIERVER=	3.0.5
 DISTNAME=	courier-imap-${COURIERVER}
-FULLPKGNAME=	courier-imap-${COURIERVER}p1
-FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
-FULLPKGNAME-ldap= courier-ldap-${COURIERVER}
-FULLPKGNAME-mysql= courier-mysql-${COURIERVER}
-FULLPKGNAME-pgsql= courier-pgsql-${COURIERVER}
+FULLPKGNAME=	courier-imap-${COURIERVER}p2
+FULLPKGNAME-pop3= courier-pop3-${COURIERVER}p0
+FULLPKGNAME-ldap= courier-ldap-${COURIERVER}p0
+FULLPKGNAME-mysql= courier-mysql-${COURIERVER}p0
+FULLPKGNAME-pgsql= courier-pgsql-${COURIERVER}p0
 
 CATEGORIES=	mail
 
@@ -28,6 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MULTI_PACKAGES=	-pop3
 SUBPACKAGE?=
@@ -39,7 +40,9 @@ SUBST_VARS=	COURIERSTATE COURIERCONF COURIERVER
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 USE_GMAKE=	Yes
 
+.if $(SUBPACKAGE) != "-pop3"
 LIB_DEPENDS=	gdbm.2::databases/gdbm
+.endif
 
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
@@ -63,6 +66,7 @@ CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
 MYSQL_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+MYSQL_WANTLIB=		crypto ssl m z 
 .endif
 
 # openldap
@@ -82,14 +86,20 @@ MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql-libs=${LOCALBASE}/lib \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
 PGSQL_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
+PGSQL_WANTLIB=		m
 .endif
 
 # pop3 has no dependencies
 POP3_DEPENDS=
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-LIB_DEPENDS=            ${${SUBPACKAGE:U:S/-//g}_DEPENDS}
+.if defined(PACKAGING)
+.  if !empty(SUBPACKAGE)
+LIB_DEPENDS+=		${${SUBPACKAGE:U:S/-//g}_DEPENDS}
+WANTLIB+=		${${SUBPACKAGE:U:S/-//g}_WANTLIB}
 RUN_DEPENDS=		:courier-imap-${COURIERVER}:mail/courier-imap
+.  else
+WANTLIB+=		ssl crypto
+.  endif
 .else
 .for i in ${MULTI_PACKAGES}
 LIB_DEPENDS+=           ${${i:U:S/-//g}_DEPENDS}
