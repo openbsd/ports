@@ -1,14 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/20 13:06:27 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/curl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pycurl.so
-share/doc/pycurl/COPYING
-share/doc/pycurl/INSTALL
-share/doc/pycurl/README
-share/doc/pycurl/TODO
-share/examples/pycurl/basicfirst.py
-share/examples/pycurl/curl.py
-share/examples/pycurl/gtkhtml_demo.py
-share/examples/pycurl/retriever.py
-share/examples/pycurl/sfquery.py
-share/examples/pycurl/xmlrpc_curl.py
-@dirrm share/examples/pycurl
-@dirrm share/doc/pycurl
+share/doc/py-curl/callbacks.html
+share/doc/py-curl/curlmultiobject.html
+share/doc/py-curl/curlobject.html
+share/doc/py-curl/pycurl.html
+share/examples/py-curl/basicfirst.py
+share/examples/py-curl/gtkhtml_demo.py
+share/examples/py-curl/linksys.py
+share/examples/py-curl/retriever-multi.py
+share/examples/py-curl/retriever.py
+share/examples/py-curl/sfquery.py
+share/examples/py-curl/tests/test.py
+share/examples/py-curl/tests/test_cb.py
+share/examples/py-curl/tests/test_debug.py
+share/examples/py-curl/tests/test_getinfo.py
+share/examples/py-curl/tests/test_gtk.py
+share/examples/py-curl/tests/test_internals.py
+share/examples/py-curl/tests/test_memleak.py
+share/examples/py-curl/tests/test_multi.py
+share/examples/py-curl/tests/test_multi2.py
+share/examples/py-curl/tests/test_multi3.py
+share/examples/py-curl/tests/test_multi4.py
+share/examples/py-curl/tests/test_multi5.py
+share/examples/py-curl/tests/test_multi6.py
+share/examples/py-curl/tests/test_multi_vs_thread.py
+share/examples/py-curl/tests/test_post.py
+share/examples/py-curl/tests/test_post2.py
+share/examples/py-curl/tests/test_stringio.py
+share/examples/py-curl/tests/test_xmlrpc.py
+share/examples/py-curl/tests/util.py
+share/examples/py-curl/xmlrpc_curl.py
+@dirrm share/examples/py-curl/tests
+@dirrm share/examples/py-curl
+@dirrm share/doc/py-curl
+@dirrm lib/python${MODPY_VERSION}/site-packages/curl
