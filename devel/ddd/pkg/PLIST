@@ -1,5 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/08/17 05:47:34 kevlo Exp $
 bin/ddd
-man/man1/ddd.1
 @unexec install-info --delete %D/info/ddd.info %D/info/dir
 info/ddd.info
 info/ddd.info-1
@@ -13,6 +13,7 @@ info/ddd.info-7
 info/ddd.info-8
 info/ddd.info-9
 @exec install-info %D/info/ddd.info %D/info/dir
+man/man1/ddd.1
 share/doc/ddd/PROBLEMS
 share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
