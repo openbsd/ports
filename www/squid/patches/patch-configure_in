@@ -1,7 +1,25 @@
-$OpenBSD: patch-configure_in,v 1.8 2003/07/07 17:44:44 brad Exp $
---- configure.in.orig	Sun May 25 09:04:25 2003
-+++ configure.in	Fri May 30 10:17:30 2003
-@@ -1603,18 +1603,6 @@ dnl during compile.
+$OpenBSD: patch-configure_in,v 1.9 2004/04/06 05:35:59 miod Exp $
+--- configure.in.orig	2004-02-29 22:30:21.000000000 +0000
++++ configure.in	2004-04-05 19:34:26.000000000 +0000
+@@ -85,6 +85,8 @@ if test -z "$PRESET_CFLAGS"; then
+     	    # sunos has too many warnings for this to be useful
+ 	    # motorola too
+     	    ;;
++	*m88k*-openbsd*)
++	    ;;
+ 	*m88k*)
+ 	    # Motorola cc/ld does not like -02 but is ok on -O
+ 	    CFLAGS=`echo $CFLAGS | sed -e 's/-O[0-9]/-O/'`
+@@ -1591,6 +1593,8 @@ dnl during compile.
+ 			;;
+ 		esac
+ 		;;
++	*m88k*-openbsd*)
++		;;
+ 	*m88k*)
+ 		CFLAGS="$CFLAGS -D_SQUID_MOTOROLA_"
+ 		AC_DEFINE(GETTIMEOFDAY_NO_TZP)
+@@ -1603,18 +1607,6 @@ dnl during compile.
  		;;
  esac
  
