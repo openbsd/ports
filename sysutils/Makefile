@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/01/11 00:14:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2001/01/12 15:26:03 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += webmin
      SUBDIR += whowatch
      SUBDIR += wmapm
+     SUBDIR += wmcube
 #    SUBDIR += xcpustate
 #    SUBDIR += xdu
 #    SUBDIR += xloadface
