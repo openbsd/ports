@@ -1,14 +1,13 @@
+@unexec install-info --delete --info-dir=%D/info %D/info/remsync.info
+@unexec install-info --delete --info-dir=%D/info %D/info/sharutils.info
 bin/gmail-files
 bin/gmailshar
 bin/gremsync
 bin/gshar
 bin/gunshar
-@unexec install-info --delete %D/info/sharutils.info %D/info/dir
-@unexec install-info --delete %D/info/remsync.info %D/info/dir
-info/sharutils.info
 info/remsync.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/sharutils.info %D/info/dir
-@exec install-info %D/info/remsync.info %D/info/dir
+info/sharutils.info
 man/man1/gshar.1
 man/man1/gunshar.1
+@exec install-info --info-dir=%D/info %D/info/remsync.info
+@exec install-info --info-dir=%D/info %D/info/sharutils.info
