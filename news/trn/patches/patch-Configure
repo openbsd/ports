@@ -1,0 +1,22 @@
+$OpenBSD: patch-Configure,v 1.1.1.1 2000/12/23 12:11:39 espie Exp $
+--- Configure.orig	Mon Sep 21 06:50:59 1998
++++ Configure	Wed Dec 20 17:39:31 2000
+@@ -855,7 +855,7 @@ cat >extract <<'EOS'
+ CONFIG=true
+ echo "Doing variable substitutions on .SH files..."
+ if test -f $src/MANIFEST; then
+-	set x `awk '$1 ~ /.SH$/ {print $1}' $src/MANIFEST | fgrep -v newsnews`
++	set x `awk '$1 ~ /.SH$/ {print $1}' $src/MANIFEST | egrep -v '(newsnews|environment)'`
+ else
+ 	echo "(Looking for .SH files under the source directory.)"
+ 	set x `(cd $src; find . -name "*.SH" -print)`
+@@ -1574,6 +1574,9 @@ EOM
+ 			esac
+ 			;;
+ 		netbsd*) osname=netbsd 
++			osvers="$3"
++			;;
++		openbsd*) osname=openbsd 
+ 			osvers="$3"
+ 			;;
+ 		bsd386) osname=bsd386

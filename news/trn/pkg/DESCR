@@ -1,0 +1,7 @@
+Trn is a text-only newsreader with good threads support.
+
+The `beta' 4.x release has been beta long enough that it is stable
+for most uses.
+
+Due to configuration issues, this package only handles NNTP news access.
+Set the NNTPSERVER environment variable to your newsfeed to use it.

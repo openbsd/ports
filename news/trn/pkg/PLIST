@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/23 12:11:40 espie Exp $
+bin/Pnews
+bin/Rnmail
+bin/inews
+bin/nntplist
+bin/trn
+bin/trn-artchk
+lib/trn/HelpFiles/changelog
+lib/trn/HelpFiles/config/environment
+lib/trn/HelpFiles/config/index
+lib/trn/HelpFiles/config/macros
+lib/trn/HelpFiles/config/options
+lib/trn/HelpFiles/hints
+lib/trn/HelpFiles/quickstart
+lib/trn/HelpFiles/samples/access
+lib/trn/HelpFiles/samples/index
+lib/trn/HelpFiles/samples/trnrc
+lib/trn/HelpFiles/top
+lib/trn/INIT
+lib/trn/Pnews.header
+lib/trn/Speller
+lib/trn/access.def
+lib/trn/filexp
+lib/trn/makedir
+lib/trn/mbox.saver
+lib/trn/newsnews
+lib/trn/norm.saver
+man/man1/Pnews.1
+man/man1/Rnmail.1
+man/man1/trn.1
+@dirrm lib/trn/HelpFiles/samples
+@dirrm lib/trn/HelpFiles/config
+@dirrm lib/trn/HelpFiles
+@dirrm lib/trn

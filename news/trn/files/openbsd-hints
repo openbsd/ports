@@ -1,0 +1,9 @@
+# $OpenBSD: openbsd-hints,v 1.1.1.1 2000/12/23 12:11:39 espie Exp $
+orgname="/etc/organization"
+d_nntp='define'
+d_local='undef'
+d_portable='define'
+phost='.'
+# get ready to use ispell, don't depend on it being installed
+ispell_prg='ispell'
+ispell_options='x'
