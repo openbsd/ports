@@ -1,5 +1,5 @@
 --- client-src/patch-system.sh.in.orig	Mon May 14 20:20:09 2001
-+++ client-src/patch-system.sh.in	Wed May 16 06:38:28 2001
++++ client-src/patch-system.sh.in	Wed May 16 23:49:47 2001
 @@ -39,6 +39,7 @@
  esac
  
@@ -25,13 +25,15 @@
  	echo "--index-port=<num>: index server port number [$INDEX_PORT]"
  	echo "--tape-port=<num>: tape server port number [$TAPE_PORT]"
  	exec true;;
-@@ -102,9 +106,10 @@
+@@ -101,10 +105,11 @@
+ elif [ -f "$SERVICES" ]; then
  	TEMP="$SERVICES.new"
  	{
- 	    egrep < "$SERVICES" -v "^(amanda|amandaidx|amidxtape)${SERVICE_SUFFIX}[ 	]"
+-	    egrep < "$SERVICES" -v "^(amanda|amandaidx|amidxtape)${SERVICE_SUFFIX}[ 	]"
 -	    $ENABLE_AMANDAD && echo "amanda${SERVICE_SUFFIX} ${CLIENT_PORT}/udp"
 -	    $ENABLE_INDEX && echo "amandaidx${SERVICE_SUFFIX} ${INDEX_PORT}/tcp"
 -	    $ENABLE_TAPE && echo "amidxtape${SERVICE_SUFFIX} ${TAPE_PORT}/tcp"
++	    egrep < "$SERVICES" -v "^(amanda|kamanda|amandaidx|amidxtape)${SERVICE_SUFFIX}[ 	]"
 +	    echo "amanda${SERVICE_SUFFIX} ${CLIENT_PORT}/udp"
 +	    echo "kamanda${SERVICE_SUFFIX} ${KCLIENT_PORT}/udp"
 +	    echo "amandaidx${SERVICE_SUFFIX} ${INDEX_PORT}/tcp"
