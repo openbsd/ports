@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/06/22 08:13:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/08/05 12:29:30 espie Exp $
 bin/mencoder
 bin/mplayer
-man/man1/mencoder.1
-man/man1/mplayer.1
+@man man/man1/mencoder.1
+@man man/man1/mplayer.1
+share/doc/mplayer/
 share/doc/mplayer/amiga.html
 share/doc/mplayer/aspect.html
 share/doc/mplayer/bsd.html
@@ -71,14 +72,12 @@ share/doc/mplayer/usage.html
 share/doc/mplayer/users-vs-dev.html
 share/doc/mplayer/vcd.html
 share/doc/mplayer/windows.html
+share/examples/mplayer/
 share/examples/mplayer/codecs.conf
 share/examples/mplayer/input.conf
 share/examples/mplayer/menu.conf
 share/examples/mplayer/mplayer.conf
+@comment share/mplayer/
+@comment share/mplayer/font/
 !%%no_x11%%
-@comment @exec mkdir -p %D/share/mplayer/font
-@comment @dirrm share/mplayer/font
-@comment @dirrm share/mplayer
-@dirrm share/examples/mplayer
-@dirrm share/doc/mplayer
 @extraunexec rm -rf ${CONFDIR}
