@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2000/06/15 10:36:43 fgsch Exp $
+# $OpenBSD: Makefile,v 1.61 2000/06/23 00:03:21 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -64,10 +64,11 @@
 #    SUBDIR += neXtaw
      SUBDIR += olvwm
 #    SUBDIR += p5-Tcl-Tk
-#    SUBDIR += p5-Tk
+     SUBDIR += p5-Tk
      SUBDIR += piewm
 #    SUBDIR += pythonqt
      SUBDIR += qt
+     SUBDIR += qt2
 #    SUBDIR += qvwm
      SUBDIR += rclock
      SUBDIR += rxvt
