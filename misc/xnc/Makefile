@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/19 21:55:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/03 14:00:56 reinhard Exp $
 
 COMMENT=	"filemanager for X Window"
 
-DISTNAME=	xnc-4.4.6
+DISTNAME=	xnc-4.4.7
 DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
 CATEGORIES=	misc x11
 
@@ -41,7 +41,7 @@ post-install:
 	cd ${WRKSRC}/.xlaunch && \
 	${INSTALL_DATA} ${XNLAUNCHFILES} ${PREFIX}/share/examples/xnc
 	cd ${PREFIX}/bin && \
-	${STRIP} es ives vs xjpegroot xnc xnlaunch xncloader xncsetup
+	${STRIP} iedit ives iview xjpegroot xnc xnlaunch xncloader xncsetup
 	sed -e 's,^ ,,' <${PREFIX}/man/man1/xnlaunch.1 >${PREFIX}/man/cat1/xnlaunch.0
 	rm -f ${PREFIX}/man/man1/xnlaunch.1
 
