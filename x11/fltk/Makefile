@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/04/02 12:58:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.26 2003/08/28 10:56:02 sturm Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -33,5 +33,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+pre-build:
+	perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
+		${WRKSRC}/src/Fl_Preferences.cxx
 
 .include <bsd.port.mk>
