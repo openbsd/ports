@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs-elf,v 1.8 2004/11/21 11:18:37 espie Exp $
+# $OpenBSD: check-libs-elf,v 1.9 2004/11/23 11:13:20 espie Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -31,22 +31,24 @@
 use strict;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
+use OpenBSD::SharedLibs;
 
 sub find_library
 {
-	my $libname = shift;
-	my @list=();
-	for my $pkg (installed_packages()) {
-		my $plist = OpenBSD::PackingList->fromfile(installed_info($pkg).CONTENTS, \&OpenBSD::PackingList::LibraryOnly);
-		for my $file (@{$plist->{items}}) {
-			next unless $file->isa('OpenBSD::PackingElement::Lib');
-			if ($file->fullname() =~ m/\/lib\Q$libname\E\.so/) {
-				push(@list, $plist->{extrainfo}->{subdir});
-				last;
-			}
-		}
+	my $spec = shift;
+	my @r;
+	OpenBSD::SharedLibs::add_system_libs('/');
+	@r = OpenBSD::SharedLibs::lookup_libspec('/usr', $spec);
+	unless (@r) {
+		@r = OpenBSD::SharedLibs::lookup_libspec('/usr/X11R6', $spec);
 	}
-	return join(' ', @list);
+	unless (@r) {
+		for my $pkg (installed_packages()) {
+		    OpenBSD::SharedLibs::add_package_libs($pkg, 1);
+		}
+		@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $spec);
+	}
+	return join(',', @r);
 }
 
 my $error = 0;
@@ -100,7 +102,11 @@ while (<$libs>) {
 		next;
 	}
 	unless (exists $registered{$name}) {
-		print "lib-depends-check: no mention of $name (".find_library($name).")\n";
+		my $spec="$name.$major.$minor";
+		if (defined $path) {
+			$spec="$path/$spec";
+		}
+		print "lib-depends-check: no mention of $spec (".find_library($spec).")\n";
 		$error = 1;
 	}
 }
