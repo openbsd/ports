@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.13 2004/01/31 14:58:04 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.14 2004/02/12 17:58:43 sturm Exp $
 @pkgcfl egcs-*-core
 bin/ec++
 bin/eg++
@@ -191,15 +191,15 @@ include/c++/${V}/utility
 include/c++/${V}/valarray
 include/c++/${V}/vector
 IFPIC:lib/fpic/libestdc++.a
-IFPIC:lib/fpic/libestdc++.la
+@comment IFPIC:lib/fpic/libestdc++.la
 IFPIC:lib/fpic/libiberty.a
 IFPIC:lib/fpic/libsupc++.a
-IFPIC:lib/fpic/libsupc++.la
+@comment IFPIC:lib/fpic/libsupc++.la
 lib/gcc-lib/${CONFIG}/${V}/cc1plus
 lib/libestdc++.a
-lib/libestdc++.la
+@comment lib/libestdc++.la
 lib/libsupc++.a
-lib/libsupc++.la
+@comment lib/libsupc++.la
 man/man1/eg++.1
 @dirrm include/c++/${V}/${CONFIG}/bits
 @dirrm include/c++/${V}/${CONFIG}
