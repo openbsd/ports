@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/15 23:02:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/03 10:19:54 xsa Exp $
+lib/zope/lib/python/Products/CMFCalendar/
 lib/zope/lib/python/Products/CMFCalendar/CREDITS.txt
 lib/zope/lib/python/Products/CMFCalendar/CalendarTool.py
 lib/zope/lib/python/Products/CMFCalendar/CalendarTool.pyc
@@ -7,6 +8,7 @@ lib/zope/lib/python/Products/CMFCalendar/Event.py
 lib/zope/lib/python/Products/CMFCalendar/Event.pyc
 lib/zope/lib/python/Products/CMFCalendar/EventPermissions.py
 lib/zope/lib/python/Products/CMFCalendar/EventPermissions.pyc
+lib/zope/lib/python/Products/CMFCalendar/Extensions/
 lib/zope/lib/python/Products/CMFCalendar/Extensions/Install.py
 lib/zope/lib/python/Products/CMFCalendar/Extensions/Install.pyc
 lib/zope/lib/python/Products/CMFCalendar/Extensions/__init__.py
@@ -16,8 +18,12 @@ lib/zope/lib/python/Products/CMFCalendar/README.txt
 lib/zope/lib/python/Products/CMFCalendar/TODO.txt
 lib/zope/lib/python/Products/CMFCalendar/__init__.py
 lib/zope/lib/python/Products/CMFCalendar/__init__.pyc
+lib/zope/lib/python/Products/CMFCalendar/help/
 lib/zope/lib/python/Products/CMFCalendar/help/placeholder.txt
+lib/zope/lib/python/Products/CMFCalendar/image_sources/
 lib/zope/lib/python/Products/CMFCalendar/image_sources/event_info_tab.psd
+lib/zope/lib/python/Products/CMFCalendar/skins/
+lib/zope/lib/python/Products/CMFCalendar/skins/calendar/
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/calendar.gif
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/event_edit.py
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/event_edit.pyc
@@ -26,6 +32,7 @@ lib/zope/lib/python/Products/CMFCalendar/skins/calendar/event_icon.gif
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/event_info_tab.gif
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/event_view.dtml
 lib/zope/lib/python/Products/CMFCalendar/skins/calendar/space.gif
+lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/CalendarStyle.css
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/calendarBox.pt
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/calendar_day_view.pt
@@ -39,6 +46,7 @@ lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/getNextMonthLink.py
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/getPreviousDayLink.py
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/getPreviousMonthLink.py
 lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar/getStartAsString.py
+lib/zope/lib/python/Products/CMFCalendar/tests/
 lib/zope/lib/python/Products/CMFCalendar/tests/__init__.py
 lib/zope/lib/python/Products/CMFCalendar/tests/__init__.pyc
 lib/zope/lib/python/Products/CMFCalendar/tests/test_Calendar.py
@@ -49,8 +57,10 @@ lib/zope/lib/python/Products/CMFCalendar/tests/test_all.py
 lib/zope/lib/python/Products/CMFCalendar/tests/test_all.pyc
 lib/zope/lib/python/Products/CMFCalendar/tool.gif
 lib/zope/lib/python/Products/CMFCalendar/version.txt
+lib/zope/lib/python/Products/CMFCalendar/www/
 lib/zope/lib/python/Products/CMFCalendar/www/configureCalendarTool.zpt
 lib/zope/lib/python/Products/CMFCalendar/www/explainCalendarTool.zpt
+lib/zope/lib/python/Products/CMFCore/
 lib/zope/lib/python/Products/CMFCore/ActionInformation.py
 lib/zope/lib/python/Products/CMFCore/ActionInformation.pyc
 lib/zope/lib/python/Products/CMFCore/ActionProviderBase.py
@@ -79,8 +89,12 @@ lib/zope/lib/python/Products/CMFCore/Expression.py
 lib/zope/lib/python/Products/CMFCore/Expression.pyc
 lib/zope/lib/python/Products/CMFCore/FSDTMLMethod.py
 lib/zope/lib/python/Products/CMFCore/FSDTMLMethod.pyc
+lib/zope/lib/python/Products/CMFCore/FSFile.py
+lib/zope/lib/python/Products/CMFCore/FSFile.pyc
 lib/zope/lib/python/Products/CMFCore/FSImage.py
 lib/zope/lib/python/Products/CMFCore/FSImage.pyc
+lib/zope/lib/python/Products/CMFCore/FSMetadata.py
+lib/zope/lib/python/Products/CMFCore/FSMetadata.pyc
 lib/zope/lib/python/Products/CMFCore/FSObject.py
 lib/zope/lib/python/Products/CMFCore/FSObject.pyc
 lib/zope/lib/python/Products/CMFCore/FSPageTemplate.py
@@ -114,6 +128,8 @@ lib/zope/lib/python/Products/CMFCore/SkinsTool.py
 lib/zope/lib/python/Products/CMFCore/SkinsTool.pyc
 lib/zope/lib/python/Products/CMFCore/TypesTool.py
 lib/zope/lib/python/Products/CMFCore/TypesTool.pyc
+lib/zope/lib/python/Products/CMFCore/URLTool.py
+lib/zope/lib/python/Products/CMFCore/URLTool.pyc
 lib/zope/lib/python/Products/CMFCore/UndoTool.py
 lib/zope/lib/python/Products/CMFCore/UndoTool.pyc
 lib/zope/lib/python/Products/CMFCore/WorkflowCore.py
@@ -122,6 +138,7 @@ lib/zope/lib/python/Products/CMFCore/WorkflowTool.py
 lib/zope/lib/python/Products/CMFCore/WorkflowTool.pyc
 lib/zope/lib/python/Products/CMFCore/__init__.py
 lib/zope/lib/python/Products/CMFCore/__init__.pyc
+lib/zope/lib/python/Products/CMFCore/dtml/
 lib/zope/lib/python/Products/CMFCore/dtml/addCC.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/addFSDirView.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/addInstance.dtml
@@ -130,6 +147,7 @@ lib/zope/lib/python/Products/CMFCore/dtml/addWorkflow.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/cachingPolicies.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/catalogFind.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/custdtml.dtml
+lib/zope/lib/python/Products/CMFCore/dtml/custfile.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/custimage.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/custprops.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/custpt.dtml
@@ -147,6 +165,7 @@ lib/zope/lib/python/Products/CMFCore/dtml/explainMembershipTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/explainRegistrationTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/explainSkinsTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/explainTypesTool.dtml
+lib/zope/lib/python/Products/CMFCore/dtml/explainURLTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/explainUndoTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/explainWorkflowTool.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/extensionWidget.dtml
@@ -162,9 +181,11 @@ lib/zope/lib/python/Products/CMFCore/dtml/selectWorkflows.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/skinProps.dtml
 lib/zope/lib/python/Products/CMFCore/dtml/zmi_workflows.dtml
 lib/zope/lib/python/Products/CMFCore/folderAdd.dtml
+lib/zope/lib/python/Products/CMFCore/images/
 lib/zope/lib/python/Products/CMFCore/images/cookie.gif
 lib/zope/lib/python/Products/CMFCore/images/dirview.gif
 lib/zope/lib/python/Products/CMFCore/images/fsdtml.gif
+lib/zope/lib/python/Products/CMFCore/images/fsfile.gif
 lib/zope/lib/python/Products/CMFCore/images/fsimage.gif
 lib/zope/lib/python/Products/CMFCore/images/fsprops.gif
 lib/zope/lib/python/Products/CMFCore/images/fspt.gif
@@ -172,6 +193,7 @@ lib/zope/lib/python/Products/CMFCore/images/fspy.gif
 lib/zope/lib/python/Products/CMFCore/images/fssqlmethod.gif
 lib/zope/lib/python/Products/CMFCore/images/registry.gif
 lib/zope/lib/python/Products/CMFCore/images/typeinfo.gif
+lib/zope/lib/python/Products/CMFCore/interfaces/
 lib/zope/lib/python/Products/CMFCore/interfaces/CachingPolicyManager.py
 lib/zope/lib/python/Products/CMFCore/interfaces/CachingPolicyManager.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/ContentTypeRegistry.py
@@ -182,14 +204,8 @@ lib/zope/lib/python/Products/CMFCore/interfaces/Discussions.py
 lib/zope/lib/python/Products/CMFCore/interfaces/Discussions.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/DublinCore.py
 lib/zope/lib/python/Products/CMFCore/interfaces/DublinCore.pyc
-lib/zope/lib/python/Products/CMFCore/interfaces/IndexableContent.py
-lib/zope/lib/python/Products/CMFCore/interfaces/IndexableContent.pyc
-lib/zope/lib/python/Products/CMFCore/interfaces/Membership.py
-lib/zope/lib/python/Products/CMFCore/interfaces/Membership.pyc
-lib/zope/lib/python/Products/CMFCore/interfaces/PortalContentRegistration.py
-lib/zope/lib/python/Products/CMFCore/interfaces/PortalContentRegistration.pyc
-lib/zope/lib/python/Products/CMFCore/interfaces/ReviewableContent.py
-lib/zope/lib/python/Products/CMFCore/interfaces/ReviewableContent.pyc
+lib/zope/lib/python/Products/CMFCore/interfaces/Dynamic.py
+lib/zope/lib/python/Products/CMFCore/interfaces/Dynamic.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/Syndicatable.py
 lib/zope/lib/python/Products/CMFCore/interfaces/Syndicatable.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/__init__.py
@@ -206,6 +222,8 @@ lib/zope/lib/python/Products/CMFCore/interfaces/portal_membership.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_membership.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_metadata.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_metadata.pyc
+lib/zope/lib/python/Products/CMFCore/interfaces/portal_properties.py
+lib/zope/lib/python/Products/CMFCore/interfaces/portal_properties.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_registration.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_registration.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_skins.py
@@ -214,12 +232,14 @@ lib/zope/lib/python/Products/CMFCore/interfaces/portal_types.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_types.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_undo.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_undo.pyc
+lib/zope/lib/python/Products/CMFCore/interfaces/portal_url.py
+lib/zope/lib/python/Products/CMFCore/interfaces/portal_url.pyc
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_workflow.py
 lib/zope/lib/python/Products/CMFCore/interfaces/portal_workflow.pyc
-lib/zope/lib/python/Products/CMFCore/register.py
-lib/zope/lib/python/Products/CMFCore/register.pyc
+lib/zope/lib/python/Products/CMFCore/tests/
 lib/zope/lib/python/Products/CMFCore/tests/__init__.py
 lib/zope/lib/python/Products/CMFCore/tests/__init__.pyc
+lib/zope/lib/python/Products/CMFCore/tests/base/
 lib/zope/lib/python/Products/CMFCore/tests/base/__init__.py
 lib/zope/lib/python/Products/CMFCore/tests/base/__init__.pyc
 lib/zope/lib/python/Products/CMFCore/tests/base/content.py
@@ -230,17 +250,26 @@ lib/zope/lib/python/Products/CMFCore/tests/base/security.py
 lib/zope/lib/python/Products/CMFCore/tests/base/security.pyc
 lib/zope/lib/python/Products/CMFCore/tests/base/testcase.py
 lib/zope/lib/python/Products/CMFCore/tests/base/testcase.pyc
+lib/zope/lib/python/Products/CMFCore/tests/base/tidata.py
+lib/zope/lib/python/Products/CMFCore/tests/base/tidata.pyc
 lib/zope/lib/python/Products/CMFCore/tests/base/utils.py
 lib/zope/lib/python/Products/CMFCore/tests/base/utils.pyc
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test1.py
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test4.py
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test4.py.security
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test5.py
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test6.py
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test6.py.metadata
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/testPT.pt
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/testPT.pt.properties
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/testPT_utf8.pt
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/testPTbad.pt
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/testXMLPT.pt
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test_dtml.dtml
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test_dtml.dtml.metadata
+lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test_file.swf
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test_image.gif
 lib/zope/lib/python/Products/CMFCore/tests/test_ActionInformation.py
 lib/zope/lib/python/Products/CMFCore/tests/test_ActionInformation.pyc
@@ -256,20 +285,42 @@ lib/zope/lib/python/Products/CMFCore/tests/test_ContentTypeRegistry.py
 lib/zope/lib/python/Products/CMFCore/tests/test_ContentTypeRegistry.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_DirectoryView.py
 lib/zope/lib/python/Products/CMFCore/tests/test_DirectoryView.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_DiscussionTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_DiscussionTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_DynamicType.py
+lib/zope/lib/python/Products/CMFCore/tests/test_DynamicType.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_Expression.py
 lib/zope/lib/python/Products/CMFCore/tests/test_Expression.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_FSFile.py
+lib/zope/lib/python/Products/CMFCore/tests/test_FSFile.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_FSImage.py
 lib/zope/lib/python/Products/CMFCore/tests/test_FSImage.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_FSMetadata.py
+lib/zope/lib/python/Products/CMFCore/tests/test_FSMetadata.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_FSPageTemplate.py
 lib/zope/lib/python/Products/CMFCore/tests/test_FSPageTemplate.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_FSPythonScript.py
 lib/zope/lib/python/Products/CMFCore/tests/test_FSPythonScript.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_FSSecurity.py
 lib/zope/lib/python/Products/CMFCore/tests/test_FSSecurity.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_MemberDataTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_MemberDataTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_MembershipTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_MembershipTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_PortalContent.py
+lib/zope/lib/python/Products/CMFCore/tests/test_PortalContent.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_PortalFolder.py
 lib/zope/lib/python/Products/CMFCore/tests/test_PortalFolder.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_RegistrationTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_RegistrationTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_SkinsTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_SkinsTool.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_TypesTool.py
 lib/zope/lib/python/Products/CMFCore/tests/test_TypesTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_URLTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_URLTool.pyc
+lib/zope/lib/python/Products/CMFCore/tests/test_UndoTool.py
+lib/zope/lib/python/Products/CMFCore/tests/test_UndoTool.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_WorkflowTool.py
 lib/zope/lib/python/Products/CMFCore/tests/test_WorkflowTool.pyc
 lib/zope/lib/python/Products/CMFCore/tests/test_all.py
@@ -278,6 +329,7 @@ lib/zope/lib/python/Products/CMFCore/tool.gif
 lib/zope/lib/python/Products/CMFCore/utils.py
 lib/zope/lib/python/Products/CMFCore/utils.pyc
 lib/zope/lib/python/Products/CMFCore/version.txt
+lib/zope/lib/python/Products/CMFDefault/
 lib/zope/lib/python/Products/CMFDefault/DefaultWorkflow.py
 lib/zope/lib/python/Products/CMFDefault/DefaultWorkflow.pyc
 lib/zope/lib/python/Products/CMFDefault/DiscussionItem.py
@@ -288,6 +340,7 @@ lib/zope/lib/python/Products/CMFDefault/Document.py
 lib/zope/lib/python/Products/CMFDefault/Document.pyc
 lib/zope/lib/python/Products/CMFDefault/DublinCore.py
 lib/zope/lib/python/Products/CMFDefault/DublinCore.pyc
+lib/zope/lib/python/Products/CMFDefault/Extensions/
 lib/zope/lib/python/Products/CMFDefault/Extensions/Upgrade.py
 lib/zope/lib/python/Products/CMFDefault/Extensions/Upgrade.pyc
 lib/zope/lib/python/Products/CMFDefault/Extensions/fix_cmf_permissions.py
@@ -329,6 +382,7 @@ lib/zope/lib/python/Products/CMFDefault/URLTool.py
 lib/zope/lib/python/Products/CMFDefault/URLTool.pyc
 lib/zope/lib/python/Products/CMFDefault/__init__.py
 lib/zope/lib/python/Products/CMFDefault/__init__.pyc
+lib/zope/lib/python/Products/CMFDefault/dtml/
 lib/zope/lib/python/Products/CMFDefault/dtml/addPortal.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/discussionEdit.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/discussionView.dtml
@@ -337,7 +391,7 @@ lib/zope/lib/python/Products/CMFDefault/dtml/explainMembershipTool.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/explainMetadataTool.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/explainPropertiesTool.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/explainRegistrationTool.dtml
-lib/zope/lib/python/Products/CMFDefault/dtml/explainURLTool.dtml
+lib/zope/lib/python/Products/CMFDefault/dtml/membershipRolemapping.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/metadataElementPolicies.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/metadataProperties.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/synOverview.dtml
@@ -347,6 +401,7 @@ lib/zope/lib/python/Products/CMFDefault/dtml/synReports.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/zmi_editDocument.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/zmi_editLink.dtml
 lib/zope/lib/python/Products/CMFDefault/dtml/zmi_metadata.dtml
+lib/zope/lib/python/Products/CMFDefault/help/
 lib/zope/lib/python/Products/CMFDefault/help/ActorDefinitions.stx
 lib/zope/lib/python/Products/CMFDefault/help/Actor_ContentCreator.stx
 lib/zope/lib/python/Products/CMFDefault/help/Actor_MembershipManager.stx
@@ -383,14 +438,19 @@ lib/zope/lib/python/Products/CMFDefault/help/TODO.stx
 lib/zope/lib/python/Products/CMFDefault/help/UndoChanges.stx
 lib/zope/lib/python/Products/CMFDefault/help/UnpublishContent.stx
 lib/zope/lib/python/Products/CMFDefault/help/ViewMyContent.stx
+lib/zope/lib/python/Products/CMFDefault/images/
 lib/zope/lib/python/Products/CMFDefault/images/workflow.gif
-lib/zope/lib/python/Products/CMFDefault/interfaces/Syndicatable.py
-lib/zope/lib/python/Products/CMFDefault/interfaces/Syndicatable.pyc
+lib/zope/lib/python/Products/CMFDefault/interfaces/
 lib/zope/lib/python/Products/CMFDefault/interfaces/__init__.py
 lib/zope/lib/python/Products/CMFDefault/interfaces/__init__.pyc
+lib/zope/lib/python/Products/CMFDefault/interfaces/portal_membership.py
+lib/zope/lib/python/Products/CMFDefault/interfaces/portal_membership.pyc
 lib/zope/lib/python/Products/CMFDefault/portal.gif
+lib/zope/lib/python/Products/CMFDefault/scripts/
 lib/zope/lib/python/Products/CMFDefault/scripts/addImagesToSkinPaths.pys
 lib/zope/lib/python/Products/CMFDefault/scripts/convertCatalogGetIconColumn.pys
+lib/zope/lib/python/Products/CMFDefault/skins/
+lib/zope/lib/python/Products/CMFDefault/skins/Images/
 lib/zope/lib/python/Products/CMFDefault/skins/Images/UpFolder_icon.gif
 lib/zope/lib/python/Products/CMFDefault/skins/Images/Zope_logo.gif
 lib/zope/lib/python/Products/CMFDefault/skins/Images/c.gif
@@ -399,6 +459,7 @@ lib/zope/lib/python/Products/CMFDefault/skins/Images/logo.jpg
 lib/zope/lib/python/Products/CMFDefault/skins/Images/logo.png
 lib/zope/lib/python/Products/CMFDefault/skins/Images/spacer.gif
 lib/zope/lib/python/Products/CMFDefault/skins/Images/tinyzope.jpg
+lib/zope/lib/python/Products/CMFDefault/skins/content/
 lib/zope/lib/python/Products/CMFDefault/skins/content/aboveInThread.py
 lib/zope/lib/python/Products/CMFDefault/skins/content/content_hide_form.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/content/content_publish_form.dtml
@@ -446,6 +507,7 @@ lib/zope/lib/python/Products/CMFDefault/skins/content/newsitem_edit.pyc
 lib/zope/lib/python/Products/CMFDefault/skins/content/newsitem_edit_form.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/content/newsitem_icon.gif
 lib/zope/lib/python/Products/CMFDefault/skins/content/newsitem_view.dtml
+lib/zope/lib/python/Products/CMFDefault/skins/control/
 lib/zope/lib/python/Products/CMFDefault/skins/control/addtoFavorites.py
 lib/zope/lib/python/Products/CMFDefault/skins/control/change_password.py
 lib/zope/lib/python/Products/CMFDefault/skins/control/disableSyndication.py
@@ -473,6 +535,7 @@ lib/zope/lib/python/Products/CMFDefault/skins/control/setAuthCookie.py
 lib/zope/lib/python/Products/CMFDefault/skins/control/setAuthCookie.pyc
 lib/zope/lib/python/Products/CMFDefault/skins/control/synPropertiesForm.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/control/undo.py
+lib/zope/lib/python/Products/CMFDefault/skins/generic/
 lib/zope/lib/python/Products/CMFDefault/skins/generic/RSS.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/TitleOrId.py
 lib/zope/lib/python/Products/CMFDefault/skins/generic/actions_box.dtml
@@ -499,6 +562,7 @@ lib/zope/lib/python/Products/CMFDefault/skins/generic/iconHTML.py
 lib/zope/lib/python/Products/CMFDefault/skins/generic/index_html.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/itemRSS.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/join_form.dtml
+lib/zope/lib/python/Products/CMFDefault/skins/generic/listMetaTags.py
 lib/zope/lib/python/Products/CMFDefault/skins/generic/logged_in.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/logged_out.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/login_form.dtml
@@ -528,9 +592,12 @@ lib/zope/lib/python/Products/CMFDefault/skins/generic/stylesheet_properties.prop
 lib/zope/lib/python/Products/CMFDefault/skins/generic/truncID.py
 lib/zope/lib/python/Products/CMFDefault/skins/generic/undo_form.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/generic/viewThreadsAtBottom.dtml
+lib/zope/lib/python/Products/CMFDefault/skins/no_css/
 lib/zope/lib/python/Products/CMFDefault/skins/no_css/stylesheet_properties.props
+lib/zope/lib/python/Products/CMFDefault/skins/nouvelle/
 lib/zope/lib/python/Products/CMFDefault/skins/nouvelle/nouvelle_stylesheet.dtml
 lib/zope/lib/python/Products/CMFDefault/skins/nouvelle/stylesheet_properties.props
+lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/content_hide_form.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/content_publish_form.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/content_reject_form.pt
@@ -555,9 +622,12 @@ lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/metadata_edit_form.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/newsitem_edit_form.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/newsitem_view.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/subjectsList.py
+lib/zope/lib/python/Products/CMFDefault/skins/zpt_content/transition_form.pt
+lib/zope/lib/python/Products/CMFDefault/skins/zpt_control/
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_control/finish_portal_construction.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_control/reverseList.py
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_control/synPropertiesForm.pt
+lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/actions_box.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/breadcrumbs.py
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/content_byline.pt
@@ -604,25 +674,38 @@ lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/unauthRedirect.pyc
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/undo_form.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/viewThreadsAtBottom.pt
 lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic/zpt_stylesheet.css
+lib/zope/lib/python/Products/CMFDefault/tests/
 lib/zope/lib/python/Products/CMFDefault/tests/TestImage.jpg
 lib/zope/lib/python/Products/CMFDefault/tests/__init__.py
 lib/zope/lib/python/Products/CMFDefault/tests/__init__.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_DefaultWorkflow.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_DefaultWorkflow.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_DiscussionTool.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_DiscussionTool.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Discussions.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Discussions.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Document.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Document.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_DublinCore.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_DublinCore.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Favorite.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Favorite.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Image.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Image.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Link.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Link.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_MembershipTool.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_MembershipTool.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_MetadataTool.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_MetadataTool.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_NewsItem.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_NewsItem.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_Portal.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_Portal.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_PropertiesTool.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_PropertiesTool.pyc
+lib/zope/lib/python/Products/CMFDefault/tests/test_RegistrationTool.py
+lib/zope/lib/python/Products/CMFDefault/tests/test_RegistrationTool.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_all.py
 lib/zope/lib/python/Products/CMFDefault/tests/test_all.pyc
 lib/zope/lib/python/Products/CMFDefault/tests/test_join.py
@@ -633,10 +716,12 @@ lib/zope/lib/python/Products/CMFDefault/tool.gif
 lib/zope/lib/python/Products/CMFDefault/utils.py
 lib/zope/lib/python/Products/CMFDefault/utils.pyc
 lib/zope/lib/python/Products/CMFDefault/version.txt
+lib/zope/lib/python/Products/CMFTopic/
 lib/zope/lib/python/Products/CMFTopic/AbstractCriterion.py
 lib/zope/lib/python/Products/CMFTopic/AbstractCriterion.pyc
 lib/zope/lib/python/Products/CMFTopic/DateCriteria.py
 lib/zope/lib/python/Products/CMFTopic/DateCriteria.pyc
+lib/zope/lib/python/Products/CMFTopic/Extensions/
 lib/zope/lib/python/Products/CMFTopic/Extensions/Update.py
 lib/zope/lib/python/Products/CMFTopic/Extensions/Update.pyc
 lib/zope/lib/python/Products/CMFTopic/ListCriterion.py
@@ -654,12 +739,16 @@ lib/zope/lib/python/Products/CMFTopic/TopicPermissions.py
 lib/zope/lib/python/Products/CMFTopic/TopicPermissions.pyc
 lib/zope/lib/python/Products/CMFTopic/__init__.py
 lib/zope/lib/python/Products/CMFTopic/__init__.pyc
+lib/zope/lib/python/Products/CMFTopic/help/
 lib/zope/lib/python/Products/CMFTopic/help/Overview.stx
 lib/zope/lib/python/Products/CMFTopic/help/Topics.stx
+lib/zope/lib/python/Products/CMFTopic/interfaces/
 lib/zope/lib/python/Products/CMFTopic/interfaces/Criterion.py
 lib/zope/lib/python/Products/CMFTopic/interfaces/Criterion.pyc
 lib/zope/lib/python/Products/CMFTopic/interfaces/__init__.py
 lib/zope/lib/python/Products/CMFTopic/interfaces/__init__.pyc
+lib/zope/lib/python/Products/CMFTopic/skins/
+lib/zope/lib/python/Products/CMFTopic/skins/topic/
 lib/zope/lib/python/Products/CMFTopic/skins/topic/friendlydatec_editform.dtml
 lib/zope/lib/python/Products/CMFTopic/skins/topic/listc_edit.dtml
 lib/zope/lib/python/Products/CMFTopic/skins/topic/sic_edit.dtml
@@ -680,6 +769,7 @@ lib/zope/lib/python/Products/CMFTopic/skins/topic/topic_edit_form.dtml
 lib/zope/lib/python/Products/CMFTopic/skins/topic/topic_icon.gif
 lib/zope/lib/python/Products/CMFTopic/skins/topic/topic_subtopics_form.dtml
 lib/zope/lib/python/Products/CMFTopic/skins/topic/topic_view.dtml
+lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/friendlydatec_editform.pt
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/listc_edit.pt
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/sic_edit.pt
@@ -689,6 +779,7 @@ lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/topic_criteria_form.pt
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/topic_edit_form.pt
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/topic_subtopics_form.pt
 lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic/topic_view.pt
+lib/zope/lib/python/Products/CMFTopic/tests/
 lib/zope/lib/python/Products/CMFTopic/tests/__init__.py
 lib/zope/lib/python/Products/CMFTopic/tests/__init__.pyc
 lib/zope/lib/python/Products/CMFTopic/tests/test_DateC.py
@@ -706,6 +797,93 @@ lib/zope/lib/python/Products/CMFTopic/tests/test_Topic.pyc
 lib/zope/lib/python/Products/CMFTopic/tests/test_all.py
 lib/zope/lib/python/Products/CMFTopic/tests/test_all.pyc
 lib/zope/lib/python/Products/CMFTopic/version.txt
+lib/zope/lib/python/Products/DCWorkflow/
+lib/zope/lib/python/Products/DCWorkflow/CHANGES.txt
+lib/zope/lib/python/Products/DCWorkflow/ContainerTab.py
+lib/zope/lib/python/Products/DCWorkflow/ContainerTab.pyc
+lib/zope/lib/python/Products/DCWorkflow/DCWorkflow.py
+lib/zope/lib/python/Products/DCWorkflow/DCWorkflow.pyc
+lib/zope/lib/python/Products/DCWorkflow/Default.py
+lib/zope/lib/python/Products/DCWorkflow/Default.pyc
+lib/zope/lib/python/Products/DCWorkflow/Expression.py
+lib/zope/lib/python/Products/DCWorkflow/Expression.pyc
+lib/zope/lib/python/Products/DCWorkflow/Guard.py
+lib/zope/lib/python/Products/DCWorkflow/Guard.pyc
+lib/zope/lib/python/Products/DCWorkflow/README.txt
+lib/zope/lib/python/Products/DCWorkflow/Scripts.py
+lib/zope/lib/python/Products/DCWorkflow/Scripts.pyc
+lib/zope/lib/python/Products/DCWorkflow/States.py
+lib/zope/lib/python/Products/DCWorkflow/States.pyc
+lib/zope/lib/python/Products/DCWorkflow/Transitions.py
+lib/zope/lib/python/Products/DCWorkflow/Transitions.pyc
+lib/zope/lib/python/Products/DCWorkflow/Variables.py
+lib/zope/lib/python/Products/DCWorkflow/Variables.pyc
+lib/zope/lib/python/Products/DCWorkflow/WorkflowUIMixin.py
+lib/zope/lib/python/Products/DCWorkflow/WorkflowUIMixin.pyc
+lib/zope/lib/python/Products/DCWorkflow/Worklists.py
+lib/zope/lib/python/Products/DCWorkflow/Worklists.pyc
+lib/zope/lib/python/Products/DCWorkflow/__init__.py
+lib/zope/lib/python/Products/DCWorkflow/__init__.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/
+lib/zope/lib/python/Products/DCWorkflow/doc/actbox.stx
+lib/zope/lib/python/Products/DCWorkflow/doc/basics.stx
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/checkin.py
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/checkin.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/checkout.py
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/checkout.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/retractStages.py
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/retractStages.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/updateProductionStage.py
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/updateProductionStage.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/updateReviewStage.py
+lib/zope/lib/python/Products/DCWorkflow/doc/examples/staging/updateReviewStage.pyc
+lib/zope/lib/python/Products/DCWorkflow/doc/expressions.stx
+lib/zope/lib/python/Products/DCWorkflow/doc/howto.stx
+lib/zope/lib/python/Products/DCWorkflow/doc/worklists.stx
+lib/zope/lib/python/Products/DCWorkflow/dtml/
+lib/zope/lib/python/Products/DCWorkflow/dtml/guard.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/state_permissions.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/state_properties.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/state_variables.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/states.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/transition_properties.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/transition_variables.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/transitions.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/variable_properties.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/variables.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/workflow_permissions.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/workflow_properties.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/worklist_properties.dtml
+lib/zope/lib/python/Products/DCWorkflow/dtml/worklists.dtml
+lib/zope/lib/python/Products/DCWorkflow/help/
+lib/zope/lib/python/Products/DCWorkflow/help/001-overview.stx
+lib/zope/lib/python/Products/DCWorkflow/help/002-expressions.stx
+lib/zope/lib/python/Products/DCWorkflow/help/003-guards.stx
+lib/zope/lib/python/Products/DCWorkflow/help/004-actionbox.stx
+lib/zope/lib/python/Products/DCWorkflow/help/011-states.stx
+lib/zope/lib/python/Products/DCWorkflow/help/021-transition.stx
+lib/zope/lib/python/Products/DCWorkflow/help/031-variables.stx
+lib/zope/lib/python/Products/DCWorkflow/help/041-worklists.stx
+lib/zope/lib/python/Products/DCWorkflow/help/051-scripts.stx
+lib/zope/lib/python/Products/DCWorkflow/help/061-permissions.stx
+lib/zope/lib/python/Products/DCWorkflow/images/
+lib/zope/lib/python/Products/DCWorkflow/images/script.gif
+lib/zope/lib/python/Products/DCWorkflow/images/state.gif
+lib/zope/lib/python/Products/DCWorkflow/images/transition.gif
+lib/zope/lib/python/Products/DCWorkflow/images/variable.gif
+lib/zope/lib/python/Products/DCWorkflow/images/workflow.gif
+lib/zope/lib/python/Products/DCWorkflow/images/worklist.gif
+lib/zope/lib/python/Products/DCWorkflow/tests/
+lib/zope/lib/python/Products/DCWorkflow/tests/__init__.py
+lib/zope/lib/python/Products/DCWorkflow/tests/__init__.pyc
+lib/zope/lib/python/Products/DCWorkflow/tests/test_all.py
+lib/zope/lib/python/Products/DCWorkflow/tests/test_all.pyc
+lib/zope/lib/python/Products/DCWorkflow/utils.py
+lib/zope/lib/python/Products/DCWorkflow/utils.pyc
+lib/zope/lib/python/Products/DCWorkflow/version.txt
+share/doc/zope-cmf/
 share/doc/zope-cmf/Audiences.stx
 share/doc/zope-cmf/CMFDocumentation.stx
 share/doc/zope-cmf/Configuration.stx
@@ -716,6 +894,7 @@ share/doc/zope-cmf/Outline.stx
 share/doc/zope-cmf/Tour.stx
 share/doc/zope-cmf/Using.stx
 share/doc/zope-cmf/Versioning.txt
+share/doc/zope-cmf/imgs/
 share/doc/zope-cmf/imgs/category.png
 share/doc/zope-cmf/imgs/createcontent.png
 share/doc/zope-cmf/imgs/enternewsitem.png
@@ -726,48 +905,3 @@ share/doc/zope-cmf/imgs/searchpending.png
 share/doc/zope-cmf/imgs/searchresults.png
 share/doc/zope-cmf/imgs/submitnewsitem.png
 share/doc/zope-cmf/imgs/undo.png
-@dirrm share/doc/zope-cmf/imgs
-@dirrm share/doc/zope-cmf
-@dirrm lib/zope/lib/python/Products/CMFTopic/tests
-@dirrm lib/zope/lib/python/Products/CMFTopic/skins/zpt_topic
-@dirrm lib/zope/lib/python/Products/CMFTopic/skins/topic
-@dirrm lib/zope/lib/python/Products/CMFTopic/skins
-@dirrm lib/zope/lib/python/Products/CMFTopic/interfaces
-@dirrm lib/zope/lib/python/Products/CMFTopic/help
-@dirrm lib/zope/lib/python/Products/CMFTopic/Extensions
-@dirrm lib/zope/lib/python/Products/CMFTopic
-@dirrm lib/zope/lib/python/Products/CMFDefault/tests
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/zpt_generic
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/zpt_control
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/zpt_content
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/nouvelle
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/no_css
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/generic
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/control
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/content
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins/Images
-@dirrm lib/zope/lib/python/Products/CMFDefault/skins
-@dirrm lib/zope/lib/python/Products/CMFDefault/scripts
-@dirrm lib/zope/lib/python/Products/CMFDefault/interfaces
-@dirrm lib/zope/lib/python/Products/CMFDefault/images
-@dirrm lib/zope/lib/python/Products/CMFDefault/help
-@dirrm lib/zope/lib/python/Products/CMFDefault/dtml
-@dirrm lib/zope/lib/python/Products/CMFDefault/Extensions
-@dirrm lib/zope/lib/python/Products/CMFDefault
-@dirrm lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin
-@dirrm lib/zope/lib/python/Products/CMFCore/tests/fake_skins
-@dirrm lib/zope/lib/python/Products/CMFCore/tests/base
-@dirrm lib/zope/lib/python/Products/CMFCore/tests
-@dirrm lib/zope/lib/python/Products/CMFCore/interfaces
-@dirrm lib/zope/lib/python/Products/CMFCore/images
-@dirrm lib/zope/lib/python/Products/CMFCore/dtml
-@dirrm lib/zope/lib/python/Products/CMFCore
-@dirrm lib/zope/lib/python/Products/CMFCalendar/www
-@dirrm lib/zope/lib/python/Products/CMFCalendar/tests
-@dirrm lib/zope/lib/python/Products/CMFCalendar/skins/zpt_calendar
-@dirrm lib/zope/lib/python/Products/CMFCalendar/skins/calendar
-@dirrm lib/zope/lib/python/Products/CMFCalendar/skins
-@dirrm lib/zope/lib/python/Products/CMFCalendar/image_sources
-@dirrm lib/zope/lib/python/Products/CMFCalendar/help
-@dirrm lib/zope/lib/python/Products/CMFCalendar/Extensions
-@dirrm lib/zope/lib/python/Products/CMFCalendar

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/04 15:57:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/03 10:19:54 xsa Exp $
 
 COMMENT=	"Zope content management framework"
 
-DISTNAME=	CMF-1.3.3
+DISTNAME=	CMF-1.4.5
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
@@ -16,17 +16,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/${DISTNAME}/
+MASTER_SITES=	http://zope.org/Products/CMF/${DISTNAME}/
 
 MODULES=	zope
 
+CMFDIRS=	CMFCalendar CMFCore CMFDefault CMFTopic DCWorkflow
 DOCSDIR=	${PREFIX}/share/doc/zope-cmf
+
+do-build:
+.for i in ${CMFDIRS}
+	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/${i} || true
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}
-	for p in Calendar Core Default Topic; do \
-		cp -R ${WRKSRC}/CMF$$p ${MODZOPE_PRODUCTSDIR}; \
-	done
+.for p in ${CMFDIRS}
+	cd ${WRKSRC}; cp -R ${p} ${MODZOPE_PRODUCTSDIR}
+.endfor
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.{stx,txt} ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}/imgs
