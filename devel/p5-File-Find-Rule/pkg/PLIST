@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 07:22:19 jolan Exp $
+bin/findrule
+${P5SITE}/File/
+${P5SITE}/File/Find/
+${P5SITE}/File/Find/Rule/
+${P5SITE}/File/Find/Rule.pm
+${P5SITE}/File/Find/Rule/Extending.pod
+${P5SITE}/File/Find/Rule/Procedural.pod
+@man man/man1/findrule.1
+@man man/man3p/File::Find::Rule.3p
+@man man/man3p/File::Find::Rule::Extending.3p
+@man man/man3p/File::Find::Rule::Procedural.3p
