@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 19:09:10 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 20:22:04 marcm Exp $
 
 COMMENT=		"GNOME 2.0 help browser"
 
-VERSION=		1.0.7
+VERSION=		2.2.0
 DISTNAME=		yelp-${VERSION}
 CATEGORIES=		x11/gnome
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/yelp/1.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/yelp/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:09:10 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:22:04 marcm Exp $
+bin/gman
 bin/gnome-help
 bin/yelp
+bin/yelp-pregenerate
 lib/bonobo/servers/GNOME_Yelp.server
 libexec/yelp-db2html
 share/applications/yelp.desktop
@@ -19,14 +21,17 @@ share/locale/de/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
 share/locale/es/LC_MESSAGES/yelp.mo
 share/locale/et/LC_MESSAGES/yelp.mo
+share/locale/fi/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
 share/locale/he/LC_MESSAGES/yelp.mo
+share/locale/hi/LC_MESSAGES/yelp.mo
 share/locale/hu/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/lv/LC_MESSAGES/yelp.mo
+share/locale/mk/LC_MESSAGES/yelp.mo
 share/locale/ms/LC_MESSAGES/yelp.mo
 share/locale/nl/LC_MESSAGES/yelp.mo
 share/locale/nn/LC_MESSAGES/yelp.mo
@@ -175,6 +180,8 @@ share/sgml/docbook/yelp/yelp-custom.xsl
 share/sgml/docbook/yelp/yelp-customization.xsl
 share/yelp/catalog
 share/yelp/important_docs.xml
+share/yelp/ui/yelp.glade
+@dirrm share/yelp/ui
 @dirrm share/yelp
 @dirrm share/sgml/docbook/yelp/docbook/lib
 @dirrm share/sgml/docbook/yelp/docbook/images
@@ -226,6 +233,8 @@ share/yelp/important_docs.xml
 @comment @dirrm share/locale/nl
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/ko/LC_MESSAGES
@@ -236,12 +245,16 @@ share/yelp/important_docs.xml
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
 @comment @dirrm share/locale/et/LC_MESSAGES
 @comment @dirrm share/locale/et
 @comment @dirrm share/locale/es/LC_MESSAGES
