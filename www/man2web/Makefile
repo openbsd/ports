@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/10/18 19:44:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/04 16:12:14 naddy Exp $
 
 COMMENT=	"convert man pages to HTML"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=man2web/}
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-distro=openbsd-3
 CONFIGURE_ARGS+= --disable-lynx		# requires lynxcgi support
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/helpers
 
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
 		sysconfdir=${PREFIX}/share/examples/man2web

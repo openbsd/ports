@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/02/29 00:18:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/04 16:12:14 naddy Exp $
 
 COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 USE_GMAKE=	Yes
 AUTOCONF_VERSION= 2.57
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/autocfg
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autocfg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	SABLOT_GPL=1

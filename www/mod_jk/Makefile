@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/02 08:19:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 16:12:14 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=		--with-apxs=/usr/sbin/apxs
 CONFIGURE_ENV+=		CFLAGS='${CFLAGS} -DCHROOTED_APACHE'
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/jk/native
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts/build/unix
 
 EXAMPLES=		mod_jk.conf workers.properties
 DOCDIR=			${PREFIX}/share/doc/mod_jk
