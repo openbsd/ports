@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/08/11 16:25:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.49 2001/08/13 11:24:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -9,6 +9,7 @@
 #    SUBDIR += cal
      SUBDIR += calentool
      SUBDIR += cbb
+     SUBDIR += cdrchive
      SUBDIR += cdrdao
      SUBDIR += cdrecord
 #    SUBDIR += chord
