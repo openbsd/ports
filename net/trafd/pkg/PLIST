@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/15 05:17:41 form Exp $
+sbin/trafd
+sbin/trafdump
+sbin/traflog
+sbin/trafsave
+sbin/trafstat
+sbin/trafstatd
+sbin/trafstop
+share/doc/trafd/README
+share/doc/trafd/traflog.format.sample
+share/doc/trafd/trafstart
+@dirrm share/doc/trafd

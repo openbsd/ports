@@ -1,0 +1,27 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/09/15 05:17:41 form Exp $
+#
+# trafd de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/traflog.format
+LOG_FILE=/var/log/traffic.log
+STAT_DIR=/var/trafd
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you need to perform"
+echo "| this step as root:"
+echo "|"
+echo "|		rm -f ${CONFIG_FILE}"
+echo "|		rm -f ${LOG_FILE}"
+echo "|		rm -rf ${STAT_DIR}"
+echo "|"
+echo "| Do not do this if you plan on re-installing $1"
+echo "| at some future time."
+echo "+---------------"
+echo
+
+exit 0

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_addrtoname_c,v 1.1.1.1 2000/09/15 05:17:40 form Exp $
+--- lib/addrtoname.c.orig	Fri Sep 15 11:30:42 2000
++++ lib/addrtoname.c	Fri Sep 15 11:30:55 2000
+@@ -36,7 +36,6 @@ struct rtentry;
+ #include <net/if.h>
+ 
+ #include <netinet/in.h>
+-#include <net/ethernet.h>
+ 
+ #include <arpa/inet.h>
+ 

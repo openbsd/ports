@@ -1,0 +1,12 @@
+trafd is a superset of trafshow, and extends it by adding a daemon
+which collects data about network connections (src, dst, protocol
+and length). The resulting data can be dumped to a file for later
+processing.
+
+To use trafd, your kernel must be rebuilt with the following line
+added to your kernel config file (/sys/arch/<YourArch>/conf/<YourMachine>):
+
+pseudo-device	bpfilter	8       # Berkeley packet filter
+
+The number after bpfilter is the number of interfaces that can be
+examined simultaneously. See bpf(4) for details.

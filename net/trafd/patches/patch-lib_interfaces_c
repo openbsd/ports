@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_interfaces_c,v 1.1.1.1 2000/09/15 05:17:40 form Exp $
+--- lib/interfaces.c.orig	Fri Sep 15 11:31:00 2000
++++ lib/interfaces.c	Fri Sep 15 11:31:20 2000
+@@ -30,7 +30,6 @@ struct rtentry;
+ #include <net/if.h>
+ 
+ #include <netinet/in.h>
+-#include <net/ethernet.h>
+ #include <net/ppp_defs.h>
+ #include <net/slip.h>
+ #include <netinet/in_systm.h>
+@@ -40,6 +39,7 @@ struct rtentry;
+ #include <netinet/udp_var.h>
+ #include <netinet/tcp.h>
+ #include <netinet/tcpip.h>
++#include <netinet/if_ether.h>
+ 
+ #include <stdio.h>
+ #include <pcap.h>
