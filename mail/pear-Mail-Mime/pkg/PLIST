@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/02/15 16:19:29 mbalmer Exp $
 lib/
 lib/php/
 pear/data/Mail_Mime/
 pear/data/Mail_Mime/xmail.dtd
 pear/data/Mail_Mime/xmail.xsl
 pear/lib/.registry/mail_mime.reg
+pear/lib/Mail/
 pear/lib/Mail/mime.php
 pear/lib/Mail/mimeDecode.php
 pear/lib/Mail/mimePart.php

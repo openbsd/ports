@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/09 20:39:54 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/15 16:19:29 mbalmer Exp $
 
 COMMENT=	"classes to create and decode MIME messages in PHP"
 
-V=		1.2.1
-DISTNAME=	Mail_Mime-${V}
-PKGNAME=	pear-Mail-Mime-${V}
+DISTNAME=	Mail_Mime-1.2.1
+PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	mail pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-MODULES=	www/php4/pear
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
+MODULES=	www/php5/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
