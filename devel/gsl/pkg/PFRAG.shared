@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/10/08 07:38:04 kevlo Exp $
+lib/libgsl.so.0.0   
+lib/libgslblascblas.so.0.0
+lib/libgslblasnative.so.0.0
+NEWDYNLIBDIR(%B)

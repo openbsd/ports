@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2000/05/31 14:16:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/08 07:37:55 kevlo Exp $
 
-DISTNAME=	gsl-0.3b
+DISTNAME=	gsl-0.6
 CATEGORIES=	devel
-NEED_VERSION=	1.78
-FAKE=		Yes
-MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/
+NEED_VERSION=	1.338
+MASTER_SITES=	ftp://sources.redhat.com/pub/gsl/
 
+HOMEPAGE=	http://sources.redhat.com/gsl/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -13,3 +13,5 @@ together with "make check" at the top level.
 
 If you are interested in participating in GSL development, please send
 mail to Mark Galassi -- rosalia@cygnus.com           
+
+WWW: ${HOMEPAGE}
