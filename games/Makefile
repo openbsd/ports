@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2002/05/16 00:34:47 mark Exp $
+# $OpenBSD: Makefile,v 1.76 2002/06/08 12:06:31 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -14,6 +14,7 @@
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bnetd
+     SUBDIR += bombermaze
      SUBDIR += burgerspace
 #    SUBDIR += bs
      SUBDIR += castle-combat
