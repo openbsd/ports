@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/11/21 14:56:31 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/11/27 17:39:12 brad Exp $
 
 COMMENT=	"blackbox-derived window manager with Gnome and KDE support"
 
 VERSION=		0.1.13
 DISTNAME=		fluxbox-${VERSION}
-PKGNAME=		${DISTNAME} #p2
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}
@@ -29,7 +29,7 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 SUBST_VARS=		VERSION
 
-# Stupid GNU tools
+# Workaround to disable the use of automake.
 post-patch:
 	@cd ${WRKSRC}; touch aclocal.m4
 	@find ${WRKSRC} -name 'Makefile.in' -exec touch {} \;

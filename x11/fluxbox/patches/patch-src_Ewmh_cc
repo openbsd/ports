@@ -1,0 +1,14 @@
+This patch fixes font issues with OpenOffice 
+
+--- src/Ewmh.cc.orig	Thu Oct 17 01:31:55 2002
++++ src/Ewmh.cc	Sun Nov 24 07:21:51 2002
+@@ -329,6 +329,9 @@ void Ewmh::createAtoms() {
+ 	m_net_virtual_roots = XInternAtom(disp, "_NET_VIRTUAL_ROOTS", False);
+ 
+ 	m_net_close_window = XInternAtom(disp, "_NET_CLOSE_WINDOW", False);
++	m_net_moveresize_window = XInternAtom(disp, "_NET_MOVERESIZE_WINDOW", False);
++	
++	// TODO: implement this one
+ 	m_net_wm_moveresize = XInternAtom(disp, "_NET_WM_MOVERESIZE", False);
+ 
+ 	m_net_properties = XInternAtom(disp, "_NET_PROPERTIES", False);
