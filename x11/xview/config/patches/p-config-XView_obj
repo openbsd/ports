@@ -1,6 +1,23 @@
---- config/XView.obj.orig	Tue Jun 29 07:13:20 1993
-+++ config/XView.obj	Tue Apr  4 02:26:55 2000
-@@ -15,7 +15,7 @@
+--- config/XView.obj.orig	1993-06-29 07:13:20.000000000 +0200
++++ config/XView.obj	2003-12-30 02:25:28.000000000 +0100
+@@ -1,6 +1,6 @@
+-/**/###########################################################################
+-/**/# @(#)XView.obj	1.6 28 Jun 1993 SMI
+-/**/# XView.obj for XView release 3.0.  Common commands for all library objects.
++XCOMM ##########################################################################
++XCOMM  @(#)XView.obj	1.6 28 Jun 1993 SMI
++XCOMM  XView.obj for XView release 3.0.  Common commands for all library objects.
+ 
+ /*
+  *	If the library.tmpl file has already been included, then add its
+@@ -9,13 +9,13 @@
+  *	file.
+  *	
+  */
+-#if LibraryTmpl
++#ifdef LibraryDefines
+             STD_DEFINES = StandardDefines LibXViewDefines LibraryDefines 
+ #else
              STD_DEFINES = StandardDefines LibXViewDefines 
  #endif
  HEADERS= ${HDRSPUBLIC} ${HDRSPRIVATE}

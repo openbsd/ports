@@ -1,0 +1,9 @@
+$OpenBSD: p-lib_pixrect_traprop_h,v 1.1 2003/12/30 01:52:22 espie Exp $
+--- lib/pixrect/traprop.h.orig	2003-12-30 02:27:44.000000000 +0100
++++ lib/pixrect/traprop.h	2003-12-30 02:27:51.000000000 +0100
+@@ -23,4 +23,4 @@ struct pr_trap {
+ 	int y0, y1;			/* top+bottom boundaries */
+ };
+ 
+-#endif traprop_DEFINED
++#endif /* traprop_DEFINED */

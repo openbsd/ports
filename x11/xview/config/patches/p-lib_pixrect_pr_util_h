@@ -1,0 +1,38 @@
+$OpenBSD: p-lib_pixrect_pr_util_h,v 1.1 2003/12/30 01:52:22 espie Exp $
+--- lib/pixrect/pr_util.h.orig	2003-12-30 02:36:44.000000000 +0100
++++ lib/pixrect/pr_util.h	2003-12-30 02:37:17.000000000 +0100
+@@ -66,11 +66,11 @@
+ 		op;							\
+ 	};								\
+ 	asm("dbra	d6,label");
+-#else mc68000
++#else /* mc68000 */
+ #define	rop_slowloop(n, op) \
+ 	{ register int _loop = (n); \
+ 		while (--_loop >= 0) { op; } }
+-#endif mc68000
++#endif /* mc68000 */
+ 
+ #ifdef mc68010
+ #define cases8(n, op)							\
+@@ -88,9 +88,9 @@
+ 			cases8(0, op); \
+ 			case 0:	break; \
+ 		} }
+-#else mc68010
++#else /* mc68010 */
+ #define	rop_fastloop	rop_slowloop
+-#endif mc68010
++#endif /* mc68010 */
+ 
+ /*
+  * Alloctype(datatype) allocates a datatype structure using calloc
+@@ -133,6 +133,6 @@ struct pr_devdata {
+ 
+ #ifndef KERNEL
+ Pixrect *pr_makefromfd();
+-#endif !KERNEL
++#endif /* !KERNEL */
+ 
+-#endif pr_util_DEFINED
++#endif /* pr_util_DEFINED */

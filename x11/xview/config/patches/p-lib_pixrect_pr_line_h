@@ -1,0 +1,12 @@
+$OpenBSD: p-lib_pixrect_pr_line_h,v 1.1 2003/12/30 01:52:22 espie Exp $
+--- lib/pixrect/pr_line.h.orig	2003-12-30 02:35:53.000000000 +0100
++++ lib/pixrect/pr_line.h	2003-12-30 02:36:00.000000000 +0100
+@@ -47,7 +47,7 @@ typedef
+ 	int width;
+     } Pr_brush;
+ 
+-#endif pr_line_h_DEFINED 
++#endif /* pr_line_h_DEFINED */
+ 
+ 
+ 

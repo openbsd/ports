@@ -1,0 +1,18 @@
+$OpenBSD: p-lib_pixrect_pixfont_h,v 1.1 2003/12/30 01:52:22 espie Exp $
+--- lib/pixrect/pixfont.h.orig	2003-12-30 02:37:28.000000000 +0100
++++ lib/pixrect/pixfont.h	2003-12-30 02:37:38.000000000 +0100
+@@ -43,7 +43,7 @@ typedef struct pixfont {
+ 
+ #define	prs_ttext(prpos, op, pf, str) \
+ 	pr_ttext((prpos).pr, (prpos).pos.x, (prpos).pos.y, pf, str)
+-#endif lint
++#endif /* lint */
+ 
+ Pixfont	*pf_open();
+ Pixfont	*pf_open_private();
+@@ -53,4 +53,4 @@ struct	pr_size pf_textwidth();
+ 
+ #define	PIXFONT	Pixfont
+ 
+-#endif	pixfont_DEFINED
++#endif	/* pixfont_DEFINED */

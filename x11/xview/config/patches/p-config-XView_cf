@@ -1,5 +1,5 @@
 --- config/XView.cf.orig	1994-06-27 04:09:19.000000000 +0200
-+++ config/XView.cf	2003-12-30 01:49:06.000000000 +0100
++++ config/XView.cf	2003-12-30 02:23:14.000000000 +0100
 @@ -1,8 +1,8 @@
  #ifndef XViewCf
  #define XViewCf YES
@@ -30,7 +30,18 @@
  #endif 
  /*
   *	If you would like the XView man pages to be installed in 
-@@ -267,7 +267,7 @@
+@@ -219,8 +219,10 @@
+ #ifndef SharedLibXView
+ # if HasSharedLibraries && WantToCompileSharedLibs
+ #define SharedLibXView YES
++#define SharedLibX     YES
+ # else
+ #define SharedLibXView NO
++#define SharedLibX     NO
+ # endif
+ #endif
+ /*
+@@ -267,7 +269,7 @@
   *	to YES.
   */
  #ifndef RedefineTextExtrasMenu
@@ -39,7 +50,7 @@
  #endif
  /*
   *	DEC 3100 Config options
-@@ -305,7 +305,7 @@
+@@ -305,7 +307,7 @@
   *	malloc() and read() will be used instead.
   */
  #ifndef OsHasMmap
@@ -48,7 +59,7 @@
  #endif
  /*
   *	The implementation of internationalization support in XView depends
-@@ -315,7 +315,7 @@
+@@ -315,7 +317,7 @@
   *	features disabled.
   */
  #ifndef OsHasLocale
@@ -57,7 +68,7 @@
  #endif
  /*
   *	There are number of memory allocation macros in lib/libxview/base.h 
-@@ -360,7 +360,7 @@
+@@ -360,7 +362,7 @@
   *    	be defined as -PIC
   */
  #ifndef PositionIndependentCodeFlag
