@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/17 16:04:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/22 15:41:19 jcs Exp $
 
 PKGNAME=	wmwave-0.4
 DISTNAME=	wmwave-0-4
@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/wmwave
 
 do-install:
