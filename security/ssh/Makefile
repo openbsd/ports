@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1997/11/25 23:44:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1997/12/12 23:58:14 angelos Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -11,7 +11,8 @@
 
 DISTNAME=       ssh-1.2.21
 CATEGORIES=	security net
-MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
+MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
+		ftp://ftp.cs.hut.fi/pub/ssh
 
 MAINTAINER=	todd@OpenBSD.ORG
 
@@ -25,10 +26,7 @@ MASTER_SITES=	\
 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 	ftp://ftp.cs.hut.fi/pub/ssh/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
-	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
-	ftp://ftp.dsi.unimi.it/pub/security/crypt/math/ \
-	ftp://ftp.univie.ac.at/security/crypt/cryptography/asymmetric/rsa/ \
-	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
+	ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
 .endif
 
 RESTRICTED=	"Crypto; export-controlled"
