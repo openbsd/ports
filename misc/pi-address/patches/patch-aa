@@ -1,0 +1,64 @@
+*** Makefile.orig	Wed Mar 31 19:11:01 1999
+--- Makefile	Sat Jun 26 18:05:44 1999
+***************
+*** 2,18 ****
+  XINCLUDE= /usr/X11R6/include
+  # for Solaris use this instead
+  # XINCLUDE=/usr/openwin/include
+! INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include -I$(PILOT_LINK)/include
+  CFLAGS = -g -O2
+  
+  # uncommment the following line if you have linking errors on Solaris
+  # LFLAGS_ADD = /usr/lib/libnsl.so /usr/lib/libsocket.so 
+  # LFLAGS = $(LFLAGS_ADD) $(QTDIR)/lib/libqt.so $(PILOT_LINK)/lib/libpisock.a
+  
+! LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt $(PILOT_LINK)/lib/libpisock.a
+  
+  # try this one if you want to link against the shared library from pilot-link
+! # LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt -L$(PILOT_LINK)/lib -lpisock
+  
+  # uncomment the following line on HP-UX
+  # LFLAGS += -lX11 -lXext
+--- 2,18 ----
+  XINCLUDE= /usr/X11R6/include
+  # for Solaris use this instead
+  # XINCLUDE=/usr/openwin/include
+! INCDIRS= -I$(XINCLUDE) -I$(QTDIR)/include/X11/qt -I$(PILOT_LINK)/include
+  CFLAGS = -g -O2
+  
+  # uncommment the following line if you have linking errors on Solaris
+  # LFLAGS_ADD = /usr/lib/libnsl.so /usr/lib/libsocket.so 
+  # LFLAGS = $(LFLAGS_ADD) $(QTDIR)/lib/libqt.so $(PILOT_LINK)/lib/libpisock.a
+  
+! # LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt $(PILOT_LINK)/lib/libpisock.a
+  
+  # try this one if you want to link against the shared library from pilot-link
+! LFLAGS = $(LFLAGS_ADD) -L$(QTDIR)/lib -lqt -L$(PILOT_LINK)/lib -lpisock
+  
+  # uncomment the following line on HP-UX
+  # LFLAGS += -lX11 -lXext
+***************
+*** 31,41 ****
+  RM_OPT = -f
+  
+  # Edited for Debian GNU/Linux
+! DESTDIR = 
+  
+! prefix = $(DESTDIR)/usr/X11R6
+! doc_prefix = $(DESTDIR)/usr/doc
+! conf_prefix = $(DESTDIR)/etc
+  
+  ####### Files
+  
+--- 31,41 ----
+  RM_OPT = -f
+  
+  # Edited for Debian GNU/Linux
+! DESTDIR = $(LOCALBASE)
+  
+! prefix = $(DESTDIR)
+! doc_prefix = $(DESTDIR)/share/doc
+! conf_prefix = $(doc_prefix)/$(TARGET)
+  
+  ####### Files
+  

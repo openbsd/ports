@@ -1,0 +1,106 @@
+*** pia.cpp.orig	Mon Apr 26 20:10:54 1999
+--- pia.cpp	Sat Jun 26 17:27:43 1999
+***************
+*** 96,107 ****
+      fileMenu->insertSeparator();
+  
+      QPopupMenu *exportMenu = new QPopupMenu;
+!     idExport = exportMenu->insertItem( "Export as CSV...", this, SLOT(export()));
+      idExportLDIF = exportMenu->insertItem( "Export as LDIF...", this, SLOT(exportLDIF()));
+      fileMenu->insertItem("Export", exportMenu);
+  
+      QPopupMenu *importMenu = new QPopupMenu;
+!     importMenu->insertItem("Import as CSV...", this, SLOT(import()));
+      importMenu->insertItem("Import as PilotMgr CSV", this, SLOT(importPMgr()));
+      fileMenu->insertItem("Import", importMenu);
+  
+--- 96,107 ----
+      fileMenu->insertSeparator();
+  
+      QPopupMenu *exportMenu = new QPopupMenu;
+!     idExport = exportMenu->insertItem( "Export as CSV...", this, SLOT(exportCSV()));
+      idExportLDIF = exportMenu->insertItem( "Export as LDIF...", this, SLOT(exportLDIF()));
+      fileMenu->insertItem("Export", exportMenu);
+  
+      QPopupMenu *importMenu = new QPopupMenu;
+!     importMenu->insertItem("Import as CSV...", this, SLOT(importCSV()));
+      importMenu->insertItem("Import as PilotMgr CSV", this, SLOT(importPMgr()));
+      fileMenu->insertItem("Import", importMenu);
+  
+***************
+*** 2350,2356 ****
+  
+  
+  // export the current Address DB as CSV-file
+! void PiAddress::export()
+  {
+      QString msg;
+      int i, iCat = cat->currentItem();
+--- 2350,2356 ----
+  
+  
+  // export the current Address DB as CSV-file
+! void PiAddress::exportCSV()
+  {
+      QString msg;
+      int i, iCat = cat->currentItem();
+***************
+*** 2426,2432 ****
+  }
+  
+  // import CSF-file into Address DB
+! void PiAddress::import()
+  {
+    QString msg;
+  
+--- 2426,2432 ----
+  }
+  
+  // import CSF-file into Address DB
+! void PiAddress::importCSV()
+  {
+    QString msg;
+  
+***************
+*** 3448,3455 ****
+    toolBar.EnableItem(idToolbarWrite, FALSE);
+  
+    toolBar.InsertSeparator();
+!   toolBar.Insert(pImport, this, SLOT(import()), "Import as CSV");
+!   idToolbarExport = toolBar.Insert(pExport, this, SLOT(export()), 
+                      "Export as CSV");
+    toolBar.EnableItem(idToolbarExport, FALSE);
+    toolBar.InsertSeparator();
+--- 3448,3455 ----
+    toolBar.EnableItem(idToolbarWrite, FALSE);
+  
+    toolBar.InsertSeparator();
+!   toolBar.Insert(pImport, this, SLOT(importCSV()), "Import as CSV");
+!   idToolbarExport = toolBar.Insert(pExport, this, SLOT(exportCSV()), 
+                      "Export as CSV");
+    toolBar.EnableItem(idToolbarExport, FALSE);
+    toolBar.InsertSeparator();
+
+*** pia.h.orig	Mon Apr 26 19:29:18 1999
+--- pia.h	Sat Jun 26 17:28:48 1999
+***************
+*** 86,94 ****
+      void helpFAQ();
+      void info();
+      void aboutQt();
+!     void export();
+      void exportLDIF();
+!     void import();
+      void importPMgr();
+      void printer();
+      void readPilot();
+--- 86,94 ----
+      void helpFAQ();
+      void info();
+      void aboutQt();
+!     void exportCSV();
+      void exportLDIF();
+!     void importCSV();
+      void importPMgr();
+      void printer();
+      void readPilot();

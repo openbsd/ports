@@ -1,0 +1,13 @@
+*** pilot.cpp.orig	Wed Apr 28 21:36:46 1999
+--- pilot.cpp	Sat Jun 26 17:47:53 1999
+***************
+*** 27,32 ****
+--- 27,34 ----
+  
+  
+  #include <sys/time.h>
++ #include <sys/types.h>
++ #include <unistd.h>
+  
+  #include "pilot.h"
+  
