@@ -1,5 +1,5 @@
 --- Imakefile.orig	Fri Jan 13 12:24:01 1995
-+++ Imakefile	Fri Jul  3 17:49:00 1998
++++ Imakefile	Sat Aug 22 21:40:57 1998
 @@ -6,13 +6,22 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -70,7 +70,12 @@
  #ifdef HavePDS
  PDS = -DDOPDS
  #endif
-@@ -142,14 +179,14 @@
+@@ -138,18 +175,18 @@
+ SCO= -Dsco -DPOSIX -DNO_RANDOM 
+ SYS_LIBRARIES=        -lm -lc -lx 
+ #else
+-SYS_LIBRARIES=        -lm
++SYS_LIBRARIES=        -lm -lz
  #endif
  
  
