@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.36 2003/07/02 00:32:13 jolan Exp $
+# $OpenBSD: OpenBSD-markers,v 1.37 2003/10/24 15:54:24 todd Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -14,7 +14,7 @@
 39.96		-83		"Jackson"	# Eric
 40		-75.10		"Keromytis"	# Angelos D.
 40.033779  	-105.250051	"Miller"	# Todd
-35.660977	-97.468803	"Fries"		# Todd
+35.5635277	-97.5437221	"Fries"		# Todd
 39.66730	-86.17325	"Rahn"		# Dale
 40.7517		-73.9942	"Shalayeff"	# Michael
 40.85		-96.75		"Phillips"	# James, OpenBSD journal
