@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2002/05/24 02:21:46 form Exp $
+# $OpenBSD: Makefile,v 1.89 2002/05/31 11:52:40 nino Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += courier-imap,mysql
      SUBDIR += cucipop
      SUBDIR += elm
+     SUBDIR += evolution
      SUBDIR += exim
      SUBDIR += exim,mysql
      SUBDIR += exim,postgresql
