@@ -1,7 +1,3 @@
-
-Installing sixxs-heartbeatd on OpenBSD
---------------------------------------
-
 Go to www.sixxs.net and get a free account.
 Copy ${PREFIX}/share/examples/sixxs-heartbeatd/heartbeat.conf to
 ${SYSCONFDIR} and insert your account data.
