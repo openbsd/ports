@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2002/09/11 23:16:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/12 14:39:28 avsm Exp $
 
-PKGNAME=	php4-extensions-${V}
+FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
 
 MULTI_PACKAGES=
