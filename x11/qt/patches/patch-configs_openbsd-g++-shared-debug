@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared-debug.orig	Sat Sep  2 01:47:50 2000
-+++ configs/openbsd-g++-shared-debug	Sat Sep  2 01:55:31 2000
+--- configs/openbsd-g++-shared-debug.orig	Fri Sep 22 23:14:43 2000
++++ configs/openbsd-g++-shared-debug	Fri Sep 22 23:15:16 2000
 @@ -1,35 +1,35 @@
  # Compiling
 -SYSCONF_CXX		= g++
@@ -39,7 +39,7 @@
  
  # Link flags shared objects
 -SYSCONF_LFLAGS_SHOBJ	= -Bshareable
-+SYSCONF_LFLAGS_SHOBJ	= -Bshareable -Bforcearchive
++SYSCONF_LFLAGS_SHOBJ	= -shared
  
  # Meta-object compiler
  SYSCONF_MOC		= $(QTDIR)/bin/moc
