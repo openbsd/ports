@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/17 14:35:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/03 10:53:02 espie Exp $
 
 COMMENT=		'preferences program for wsoundserver'
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
-MODULES=		gettext
+MODULES=		devel/gettext
 RUN_DEPENDS=		:wsoundserver-*:audio/wsoundserver
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			wsound::audio/wsoundserver \
