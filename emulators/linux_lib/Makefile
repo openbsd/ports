@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/10/14 22:12:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/10 20:39:40 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -15,12 +15,9 @@ PREFIX=		/emul/linux
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_PATCH=	yes
-NO_WRKDIR=	yes
 NO_CONFIGURE=	yes
 NO_PACKAGE=	yes
-
-do-extract:
-	@: do nothing, we just want to make sure the port is fetched
+EXTRACT_ONLY=
 
 pre-install:
 	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
