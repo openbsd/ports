@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2002/03/03 14:02:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2002/03/22 13:40:00 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
-VERSION=	0.9.1
+VERSION=	0.9.2
 DISTNAME=	ethereal-${VERSION}
-PKGNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.500
+NEED_VERSION=	1.507
 
 MASTER_SITES=	http://www.ethereal.com/distribution/ \
 		http://ethereal.zing.org/distribution/ \
@@ -24,15 +23,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
-
 SYSCONFDIR=		${PREFIX}/share/ethereal
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 SUBST_VARS+=		VERSION
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		patch-*
+SEPARATE_BUILD=		yes
 
 FLAVORS=	no_x11 snmp
 FLAVOR?=
@@ -54,9 +50,8 @@ LIB_DEPENDS+=		snmp::net/ucd-snmp
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
 
-pre-build:
-.if defined(SEPARATE_BUILD)
-	cp -p ${WRKSRC}/packet-ncp2222.c ${WRKBUILD}
-.endif
+post-patch:
+	rm -f ${WRKSRC}/ltconfig ${WRKSRC}/ltmain.sh
+	ln -s ${LOCALBASE}/libtool ${WRKOBJ}/libtool
 
 .include <bsd.port.mk>
