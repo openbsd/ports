@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2001/09/13 21:38:39 todd Exp $
+# $OpenBSD: Makefile,v 1.108 2001/09/14 13:42:33 todd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += gettext
      SUBDIR += gindent
      SUBDIR += glade
+     SUBDIR += glade,gnome
      SUBDIR += glib
      SUBDIR += gmake
      SUBDIR += gmp
