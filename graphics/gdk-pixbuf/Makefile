@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/24 12:19:22 espie Exp $
 
 COMMENT=	"replacement library for Imlib"
 
 DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.455
+NEED_VERSION=	1.475
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= unstable/sources/gdk-pixbuf
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
 
 LIB_DEPENDS=	png.2::graphics/png \
 		tiff.35.::graphics/tiff \
-		gtk.1.2::x11/gtk+
+		gtk.1.2,gdk.1.2::x11/gtk+
 
 FLAVORS=	gnome
 FLAVOR?=	
@@ -31,7 +31,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	gnome.36::x11/gnome/libs
+LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 CONFIGURE_ARGS+= --with-gnome
 .else
 CONFIGURE_ARGS+= --without-gnome

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2001/09/02 04:09:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/24 12:19:22 espie Exp $
 # Uses pthreads
 
 COMMENT=	"Generic Graphics Library"
 DISTNAME=	libggi-2.0b3
 CATEGORIES=	graphics
-NEED_VERSION=	1.364
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://metalab.unc.edu/pub/ggi/ggi/2_0_beta_3/
 HOMEPAGE=	http://www.ggi-project.org/
 
-LIB_DEPENDS=	gii.0.7::graphics/gii
+LIB_DEPENDS=	gii.0.7,gg::graphics/gii
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 

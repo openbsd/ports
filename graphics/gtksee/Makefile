@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/10 19:11:49 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:19:22 espie Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.460
-
+NEED_VERSION=	1.474
 #HOMEPAGE=	http://hotaru.clinuxworld.com/gtksee/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
@@ -18,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1::x11/gtk+ \
+LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		png.2::graphics/png
-RUN_DEPENDS=	bzip::archivers/bzip \
-		bzip2::archivers/bzip2
+RUN_DEPENDS=	::archivers/bzip \
+		::archivers/bzip2
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
