@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/22 00:31:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/13 04:47:51 pvalchev Exp $
 
 COMMENT=	"module for generating and manipulating images"
 
@@ -24,11 +24,11 @@ FLAVORS=	libs
 FLAVOR?=
 
 .if ${FLAVOR:L} == "libs"
-LIB_DEPENDS=	t1.::devel/t1lib \
-		ttf.::print/freetype \
-		png.::graphics/png \
-		jpeg.::graphics/jpeg \
-		tiff.::graphics/tiff
+LIB_DEPENDS=	t1.2::devel/t1lib \
+		ttf.1.3::print/freetype \
+		png.2::graphics/png \
+		jpeg.62::graphics/jpeg \
+		tiff.35::graphics/tiff
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		IM_INCPATH="${LOCALBASE}/include:${X11BASE}/include"
 PATCH_LIST=	patch-no_gif
