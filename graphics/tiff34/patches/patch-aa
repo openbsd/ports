@@ -1,5 +1,5 @@
---- libtiff/Makefile.in.orig	Mon Apr 29 15:16:21 1996
-+++ libtiff/Makefile.in	Tue Jun  9 16:05:05 1998
+--- libtiff/Makefile.in.orig	Tue Apr 30 00:16:21 1996
++++ libtiff/Makefile.in	Wed Jun  2 00:09:04 1999
 @@ -62,7 +62,7 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -15,14 +15,18 @@
  	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
 -
 +FREEBSDdso: ${OBJS}
-+	${LD} -Bshareable -x /usr/lib/c++rt0.o -o libtiff.@DSOSUF_VERSION@ \
++	${LD} -Bshareable -Bforcearchive -x /usr/lib/c++rt0.o -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
 +	touch $@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
-@@ -309,7 +312,7 @@
- 	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+@@ -306,10 +309,10 @@
+ 	done
+ installDSO: @DSO@dso
+ 	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+-	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
++	    ${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F @DIR_LIB@		\
  		-O libtiff.@DSOSUF_VERSION@;				\
  	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
 -		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
