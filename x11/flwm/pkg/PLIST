@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/11/29 12:29:22 kevlo Exp $
 bin/flwm
 man/man1/flwm.1
