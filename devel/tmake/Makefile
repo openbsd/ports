@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/17 07:19:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/02/02 16:34:02 sturm Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
-DISTNAME=	tmake-1.8
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	tmake-1.10
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.trolltech.com/developer/download/tmake.html
@@ -22,6 +21,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 MODULES=	qt3
+MODQT_MT=	Yes
 
 do-install:
 	@perl -pi \

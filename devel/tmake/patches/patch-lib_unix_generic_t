@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_unix_generic_t,v 1.1 2002/04/09 15:32:13 naddy Exp $
---- lib/unix/generic.t.orig	Tue Apr  9 17:20:08 2002
-+++ lib/unix/generic.t	Tue Apr  9 17:21:32 2002
-@@ -65,6 +65,8 @@
+$OpenBSD: patch-lib_unix_generic_t,v 1.2 2003/02/02 16:34:02 sturm Exp $
+--- lib/unix/generic.t.orig	Fri Jan 31 14:23:22 2003
++++ lib/unix/generic.t	Fri Jan 31 14:25:09 2003
+@@ -71,6 +71,8 @@
                 Project("TMAKE_LIB_FLAG")) ) {
  	    Project("TMAKE_LIBDIR_QT") &&
  		Project('TMAKE_LIBDIR_FLAGS *= -L$$TMAKE_LIBDIR_QT');
