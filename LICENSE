@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.36 1999/10/06 08:42:49 ho Exp $
+$OpenBSD: LICENSE,v 1.37 1999/10/06 09:12:41 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -502,7 +502,7 @@ N	security/pgplib			PGPlib-1.1.tar.gz		CRYPTO
 Y	security/portscanner		PortScanner-1.0.tar.gz		COPY
 N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
 N	security/socks5			socks5-v1.0r9.tar.gz		LIC
-N	security/ssh			ssh-1.2.26.tar.gz		CRYPTO
+N	security/ssh			ssh-1.2.27.tar.gz		CRYPTO
 N	security/ssh			rsaref2.tar.gz			CRYPTO
 N	security/stel			stel.tar.gz			CRYPTO
 -	security/strobe			strobe-1.06.tar.gz
