@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2002/07/05 07:13:01 reinhard Exp $
+--- configure.ac.orig	Mon Apr 29 08:56:08 2002
++++ configure.ac	Fri Jun  7 08:33:51 2002
+@@ -325,7 +325,13 @@ AC_DEFINE_UNQUOTED(PRINTABLE_OS_NAME, "$
+ NAME_OF_DEV_RANDOM="/dev/random"
+ NAME_OF_DEV_URANDOM="/dev/urandom"
+ case "${target}" in
+-    *-openbsd* | *-netbsd*)
++    *-openbsd*)
++        NAME_OF_DEV_RANDOM="/dev/arandom"
++        NAME_OF_DEV_URANDOM="/dev/urandom"
++        DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
++        ;;
++
++    *-netbsd*)
+         NAME_OF_DEV_RANDOM="/dev/srandom"
+         NAME_OF_DEV_URANDOM="/dev/urandom"
+         DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"

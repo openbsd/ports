@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2001/12/09 12:51:40 reinhard Exp $
+# $OpenBSD: Makefile,v 1.34 2002/07/05 07:13:00 reinhard Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
-DISTNAME=	gnupg-1.0.6
+DISTNAME=	gnupg-1.0.7
 PKGNAME=	${DISTNAME}
 CATEGORIES=	security
-NEED_VERSION=	1.500
+NEED_VERSION=	1.531
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/gnupg/ \
@@ -35,9 +35,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+.include <bsd.own.mk>
+
+.if ${ELF_TOOLCHAIN} == "no"
+BUILD_DEPENDS=	::devel/binutils/stable
+MAKE_ENV= AS="${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as"
+.endif
+
+MODULES=	gettext
+
+CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
-CONFIGURE_ARGS=	--with-included-gettext
 
 REGRESS_TARGET=	check
 
@@ -52,7 +60,7 @@ PERMIT_DISTFILES_FTP=	"a patented algorithm"
 # NB: idea.c is found in ${MASTER_SITES0}
 DISTFILES+=	idea.c:0
 PATCH_LIST=	patch-*
-PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am 
+PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_in
 pre-patch:
 	@cp ${DISTDIR}/idea.c ${WRKSRC}/cipher
@@ -65,5 +73,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
 	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} \
 		${PREFIX}/share/doc/gnupg
+
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=-O0
+.endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cipher_Makefile_in,v 1.1 2001/03/03 17:20:26 reinhard Exp $
---- cipher/Makefile.in.orig	Tue Oct 17 15:40:21 2000
-+++ cipher/Makefile.in	Sun Feb  4 16:30:01 2001
-@@ -110,7 +110,7 @@ INCLUDES = -I$(top_srcdir)/include -I$(t
+$OpenBSD: patch-cipher_Makefile_in,v 1.2 2002/07/05 07:13:01 reinhard Exp $
+--- cipher/Makefile.in.orig	Mon Apr 29 17:06:11 2002
++++ cipher/Makefile.in	Fri May 31 17:31:50 2002
+@@ -136,7 +136,7 @@ INCLUDES = -I.. -I$(top_srcdir)/include 
  noinst_LIBRARIES = libcipher.a
  
  # The configure script greps the module names from the EXTRA_PROGRAMS line
@@ -10,44 +10,43 @@ $OpenBSD: patch-cipher_Makefile_in,v 1.1 2001/03/03 17:20:26 reinhard Exp $
  
  EXTRA_rndlinux_SOURCES = rndlinux.c
  EXTRA_rndunix_SOURCES = rndunix.c
-@@ -120,6 +120,7 @@ EXTRA_md5_SOURCES = md5.c
+@@ -146,6 +146,7 @@ EXTRA_md5_SOURCES = md5.c
  EXTRA_rmd160_SOURCES = rmd160.c
  EXTRA_sha1_SOURCES = sha1.c
  EXTRA_tiger_SOURCES = tiger.c
 +EXTRA_idea_SOURCES = idea.c
+ 
  @ENABLE_GNUPG_EXTENSIONS_TRUE@pkglib_PROGRAMS = @DYNAMIC_CIPHER_MODS@
  @ENABLE_GNUPG_EXTENSIONS_FALSE@pkglib_PROGRAMS = 
- 
-@@ -190,6 +191,11 @@ tiger_OBJECTS =  tiger.o
+@@ -247,6 +248,11 @@ tiger_OBJECTS = tiger.$(OBJEXT)
  tiger_LDADD = $(LDADD)
- tiger_DEPENDENCIES = 
- tiger_LDFLAGS = 
+ tiger_DEPENDENCIES =
+ tiger_LDFLAGS =
 +idea_SOURCES = idea.c
 +idea_OBJECTS =  idea.o
 +idea_LDADD = $(LDADD)
 +idea_DEPENDENCIES = 
-+idea_LDFLAGS = 
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
-@@ -201,8 +207,8 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(
++idea_LDFLAGS =
  
- TAR = tar
- GZIP_ENV = --best
--SOURCES = $(libcipher_a_SOURCES) rndlinux.c $(EXTRA_rndlinux_SOURCES) rndunix.c $(EXTRA_rndunix_SOURCES) rndegd.c $(EXTRA_rndegd_SOURCES) rndw32.c $(EXTRA_rndw32_SOURCES) sha1.c $(EXTRA_sha1_SOURCES) rmd160.c $(EXTRA_rmd160_SOURCES) md5.c $(EXTRA_md5_SOURCES) tiger.c $(EXTRA_tiger_SOURCES)
--OBJECTS = $(libcipher_a_OBJECTS) rndlinux.o rndunix.o rndegd.o rndw32.o sha1.o rmd160.o md5.o tiger.o
-+SOURCES = $(libcipher_a_SOURCES) rndlinux.c $(EXTRA_rndlinux_SOURCES) rndunix.c $(EXTRA_rndunix_SOURCES) rndegd.c $(EXTRA_rndegd_SOURCES) rndw32.c $(EXTRA_rndw32_SOURCES) sha1.c $(EXTRA_sha1_SOURCES) rmd160.c $(EXTRA_rmd160_SOURCES) md5.c $(EXTRA_md5_SOURCES) tiger.c $(EXTRA_tiger_SOURCES) idea.c $(EXTRA_idea_SOURCES)
-+OBJECTS = $(libcipher_a_OBJECTS) rndlinux.o rndunix.o rndegd.o rndw32.o sha1.o rmd160.o md5.o tiger.o idea.o
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+@@ -278,7 +284,7 @@ DIST_SOURCES = $(libcipher_a_SOURCES) $(
+ 	rndw32.c $(EXTRA_sha1_SOURCES) sha1.c $(EXTRA_tiger_SOURCES) \
+ 	tiger.c
+ DIST_COMMON = ChangeLog Makefile.am Makefile.in
+-SOURCES = $(libcipher_a_SOURCES) $(EXTRA_md5_SOURCES) md5.c $(EXTRA_rmd160_SOURCES) rmd160.c $(EXTRA_rndegd_SOURCES) rndegd.c $(EXTRA_rndlinux_SOURCES) rndlinux.c $(EXTRA_rndunix_SOURCES) rndunix.c $(EXTRA_rndw32_SOURCES) rndw32.c $(EXTRA_sha1_SOURCES) sha1.c $(EXTRA_tiger_SOURCES) tiger.c
++SOURCES = $(libcipher_a_SOURCES) $(EXTRA_md5_SOURCES) md5.c $(EXTRA_rmd160_SOURCES) rmd160.c $(EXTRA_rndegd_SOURCES) rndegd.c $(EXTRA_rndlinux_SOURCES) rndlinux.c $(EXTRA_rndunix_SOURCES) rndunix.c $(EXTRA_rndw32_SOURCES) rndw32.c $(EXTRA_sha1_SOURCES) sha1.c $(EXTRA_tiger_SOURCES) tiger.c idea.c $(EXTRA_idea_SOURCES)
  
- all: all-redirect
- .SUFFIXES:
-@@ -516,6 +522,9 @@ rndlinux: $(srcdir)/rndlinux.c
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+@@ -550,6 +556,10 @@ rndlinux$(EXEEXT): $(srcdir)/rndlinux.c
  
- rndegd: $(srcdir)/rndegd.c
+ rndegd$(EXEEXT): $(srcdir)/rndegd.c
  	$(COMPILE) $(DYNLINK_MOD_CFLAGS) -o rndegd $(srcdir)/rndegd.c
 +
-+idea: 	$(srcdir)/idea.c
++idea:   $(srcdir)/idea.c
 +	$(COMPILE) $(DYNLINK_MOD_CFLAGS) -o idea $(srcdir)/idea.c
- 
++
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
