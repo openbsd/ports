@@ -1,6 +1,6 @@
---- idiff.1.orig	Tue Sep 29 17:36:58 1998
-+++ idiff.1	Tue Sep 29 17:36:58 1998
-@@ -0,0 +1,76 @@
+--- idiff.1.orig	Wed Sep 20 13:25:31 2000
++++ idiff.1	Wed Sep 20 13:34:03 2000
+@@ -0,0 +1,79 @@
 +.TH IDIFF Local
 +.SH NAME
 +idiff \- interactive diff of two files
@@ -69,11 +69,14 @@
 +.I diff
 +through
 +.I idiff.
-+Giving a file and a directory for
-+.I diff
-+to search for the second file will fail in strange ways.
++Nor can you use `-' as a filename argument.
 +.SH HISTORY
 +.I Idiff
 +appears in the book
 +.I ``The UNIX Programming Environment''
 +by Brian Kernighan and Rob Pike.
++.SH SEE ALSO
++.I sdiff (1)
++(side-by-side diff), a GNU tool that is included in OpenBSD.
++.I mgdiff (1),
++an X11 tool for comparing two files visually.

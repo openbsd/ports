@@ -1,10 +1,7 @@
 --- idiff.c.orig	Wed Sep 16 15:58:16 1998
-+++ idiff.c	Tue Sep 29 18:06:05 1998
-@@ -1,45 +1,98 @@
--/* idiff:  interactive diff */
-+/*
-+ * idiff - interactive diff
-+ */
++++ idiff.c	Wed Sep 20 13:12:40 2000
+@@ -1,45 +1,109 @@
+ /* idiff:  interactive diff */
  
  #include <stdio.h>
 +#include <stdlib.h>
@@ -15,14 +12,9 @@
 -#define	HUGE	10000	/* large number of lines */
 +#include <signal.h>
 +#include <assert.h>
- 
--main(argc, argv)
--	int argc;
--	char *argv[];
--{
--	FILE *fin, *fout, *f1, *f2, *efopen();
--	char buf[BUFSIZ], *mktemp();
--	char *diffout = "idiff.XXXXXX";
++#include <sys/stat.h>
++#include <err.h>
++
 +#define HUGE 1000000L
 +
 +char *progname;		/* for error messages */
@@ -36,8 +28,14 @@
 +void parse(char *s, int* pfrom1, int* pto1, int* pcmd, int* pfrom2, int* pto2);
 +void nskip(FILE *fin, int n);
 +void ncopy(FILE *fin, int n, FILE *fout);
-+void die(char *fmt, char *arg);
-+
+ 
+-main(argc, argv)
+-	int argc;
+-	char *argv[];
+-{
+-	FILE *fin, *fout, *f1, *f2, *efopen();
+-	char buf[BUFSIZ], *mktemp();
+-	char *diffout = "idiff.XXXXXX";
 +int
 +main(int argc, char	*argv[])
 +{
@@ -47,6 +45,7 @@
 +	extern int optind;
 +	extern char *optarg;
 +	int use_b = 0;		/* true --> use diff -b */
++	struct stat sbuf;
  
  	progname = argv[0];
 -	if (argc != 3) {
@@ -77,13 +76,24 @@
 +	inname1 = argv[optind+0];
 +	inname2 = argv[optind+1];
 +	f1 = efopen(inname1, "r");
++	if (stat(inname2, &sbuf) == -1) {
++		err(1, "Can't open %s", inname2);
++	}
++	/* If arg2 is a directory, do what diff would do, but we do it
++	 * because we need to read the file back in, in bitsies, later on.
++	 */
++	if (S_ISDIR(sbuf.st_mode)) {
++		char*tmp = (char*)malloc(strlen(inname2)+1+strlen(inname1));
++		sprintf(tmp, "%s/%s", inname2, inname1);
++		inname2 = tmp;
++	}
 +	f2 = efopen(inname2, "r");
  	fout = efopen("idiff.out", "w");
 -	mktemp(diffout);
 -	sprintf(buf,"diff %s %s >%s",argv[1],argv[2],diffout);
 -	system(buf);
 +	if ((diffout = mktemp(strdup(DIFFOUT))) == NULL)
-+		die("Can't mktemp(%s)", diffout);
++		err(1, "Can't mktemp(%s)", diffout);
 +	(void) sprintf(cmdBuf, "diff %s %s %s >%s", 
 +		use_b ? "-b" : "",
 +		inname1, inname2, diffout);
@@ -116,14 +126,14 @@
 +	assert(fout != NULL);
 +
 +	if ((tempfile = mktemp(strdup(TEMPFILE))) == NULL)
-+		die("Can't mktemp(%s)", tempfile);
++		err(1, "Can't mktemp(%s)", tempfile);
 +	if ((ed=getenv("EDITOR")) == NULL)
 +		ed = "/bin/ed";
 +
  	nf1 = nf2 = 0;
  	while (fgets(buf, sizeof buf, fin) != NULL) {
  		parse(buf, &from1, &to1, &cmd, &from2, &to2);
-@@ -52,13 +105,13 @@
+@@ -52,13 +116,13 @@
  			from2++;
  		printf("%s", buf);
  		while (n-- > 0) {
@@ -140,7 +150,7 @@
  			switch (buf[0]) {
  			case '>':
  				nskip(f1, to1-nf1);
-@@ -75,34 +128,57 @@
+@@ -75,34 +139,57 @@
  				ncopy(f1, to1+1-from1, ft);
  				fprintf(ft, "---\n");
  				ncopy(f2, to2+1-from2, ft);
@@ -211,7 +221,7 @@
  
  	*pfrom1 = *pto1 = *pfrom2 = *pto2 = 0;
  	a2i(*pfrom1);
-@@ -120,20 +196,25 @@
+@@ -120,20 +207,25 @@
  		*pto2 = *pfrom2;
  }
  
@@ -242,7 +252,7 @@
  	while (n-- > 0) {
  		if (fgets(buf, sizeof buf, fin) == NULL)
  			return;
-@@ -141,4 +222,31 @@
+@@ -141,4 +233,24 @@
  	}
  }
  
@@ -258,12 +268,6 @@
 +	exit(1);
 +}
 +
-+void die(char *fmt, char *arg) {
-+	fprintf(stderr, "%s: ", progname);
-+	fprintf(stderr, fmt, arg);
-+	exit(1);
-+}
-+
 +FILE *
 +efopen(const char *file, const char *mode) /* fopen file, die if can't */
 +{
@@ -271,7 +275,6 @@
 +
 +	if ((fp = fopen(file, mode)) != NULL)
 +		return fp;
-+	fprintf(stderr, "%s: can't open file %s mode %s\n",
-+		progname, file, mode);
-+	exit(1);
++	err(1, "can't open file %s mode %s", file, mode);
++	/*NOTREACHED*/
 +}
