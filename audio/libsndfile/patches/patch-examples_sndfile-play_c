@@ -1,0 +1,41 @@
+$OpenBSD: patch-examples_sndfile-play_c,v 1.1 2002/11/20 01:15:50 naddy Exp $
+--- examples/sndfile-play.c.orig	Tue Aug  6 03:50:55 2002
++++ examples/sndfile-play.c	Wed Nov 20 02:06:10 2002
+@@ -29,7 +29,7 @@
+ 	#include <Carbon.h>
+ 	#include <CoreAudio/AudioHardware.h>
+ 
+-#elif (defined (sun) && defined (unix))
++#elif (defined (__OpenBSD__) || (defined (sun) && defined (unix)))
+ 	#include <fcntl.h>
+ 	#include <sys/ioctl.h>
+ 	#include <sys/audioio.h>
+@@ -468,7 +468,7 @@ win32_play (int argc, char *argv [])
+ **	Solaris.
+ */
+ 
+-#if (defined (sun) && defined (unix)) /* ie Solaris */
++#if (defined (__OpenBSD__) || (defined (sun) && defined (unix))) /* ie Solaris */
+ 
+ static void
+ solaris_play (int argc, char *argv [])
+@@ -505,8 +505,10 @@ solaris_play (int argc, char *argv [])
+ 		audio_info.play.channels = sfinfo.channels ;
+ 		audio_info.play.precision = 16 ;
+ 		audio_info.play.encoding = AUDIO_ENCODING_LINEAR ;
++#if !defined(__OpenBSD__)
+ 		audio_info.play.gain = AUDIO_MAX_GAIN ;
+ 		audio_info.play.balance = AUDIO_MID_BALANCE ;
++#endif
+ 		
+ 		if ((error = ioctl (audio_fd, AUDIO_SETINFO, &audio_info)))
+ 		{	perror ("ioctl (AUDIO_SETINFO) failed") ;
+@@ -566,7 +568,7 @@ main (int argc, char *argv [])
+ 	linux_play (argc, argv) ;
+ #elif (defined (__MACH__) && defined (__APPLE__))
+ 	macosx_play (argc, argv) ;
+-#elif (defined (sun) && defined (unix))
++#elif (defined (__OpenBSD__) || (defined (sun) && defined (unix)))
+ 	solaris_play (argc, argv) ;
+ #elif (defined (_WIN32) || defined (WIN32))
+ 	win32_play (argc, argv) ;
