@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/16 15:00:31 markus Exp $
+bin/mk
+doc/mk.pdf
+man/man1/mk.1
+@dirrm doc
