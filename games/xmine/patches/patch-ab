@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Jan  3 03:25:27 1997
-+++ Imakefile	Fri Jan  3 03:29:04 1997
+--- Imakefile.orig	Fri May 11 02:41:54 2001
++++ Imakefile	Fri May  4 11:00:38 2001
 @@ -1,5 +1,7 @@
 +MANSUFFIX=6
 +
@@ -9,3 +9,14 @@
  
  /* for debugging: */
  /*  CDEBUGFLAGS = -g -O2 */
+@@ -19,6 +21,10 @@
+ #else
+ # define WarnLevel
+ #endif
++
++# for FreeBSD package: do not compress man page, otherwise gzip will
++# complain when building the package target
++COMPRESSMANCMD = echo
+ 
+         DEPLIBS = XawClientDepLibs
+ LOCAL_LIBRARIES = XawClientLibs
