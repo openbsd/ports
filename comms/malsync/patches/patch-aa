@@ -1,0 +1,34 @@
+--- Makefile.orig	Sun May 30 22:58:37 1999
++++ Makefile	Fri Jun 11 14:41:41 1999
+@@ -2,15 +2,15 @@
+ TARGET = malsync
+ 
+ PLAT := $(shell uname)
+-	
+-ifeq ($(PLAT),SunOS)
+-LINKLIBS = -ldl -lnsl -lsocket
+-endif
+ 
+-TREETOP = ../../..
+-PILOT_LINK_DIR = $(TREETOP)/pilot-link.0.9.3
++#ifeq ($(PLAT),SunOS)
++#LINKLIBS = -ldl -lnsl -lsocket
++#endif
+ 
+-CFLAGS = -Wall -g -I$(TREETOP)/mal/common \
++TREETOP = .
++PILOT_LINK_DIR = ${PREFIX}
++
++CFLAGS += -Wall -I$(TREETOP)/mal/common \
+   -I$(TREETOP)/mal/client/common -I$(PILOT_LINK_DIR)/include -I.
+ 
+ 
+@@ -48,7 +48,7 @@
+ 
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) -L${PILOT_LINK_DIR}/libsock -lpisock $(LINKLIBS) -lm
++	$(CC) $(CFLAGS) -o $@ $(OBJS) -L${PILOT_LINK_DIR}/lib -lpisock $(LINKLIBS) -lm
+ 
+ clean:
+ 	rm -f $(OBJS) $(TARGET)

@@ -1,0 +1,11 @@
+--- mal/common/AGNet.h.orig	Fri Jun 11 13:18:08 1999
++++ mal/common/AGNet.h	Fri Jun 11 13:18:32 1999
+@@ -48,7 +48,7 @@
+ #           include <sys/filio.h>
+ #           include <arpa/inet.h>
+ #       else
+-#           ifdef __FreeBSD__
++#           if defined(BSD)
+ #               include <sys/ioctl.h>
+ #               include <arpa/inet.h>
+ #           else

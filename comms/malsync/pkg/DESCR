@@ -1,0 +1,21 @@
+
+malsync is built on the MAL (Mobile Application Link) protocol
+developed by/for AvantGo.com's site and customers.
+
+Generally, sites that are registered through avantgo provide formatted
+content to avantgo end users.  Any site may be synced to the palm
+through this library, though.
+
+You'll need a a personal AvantGo account from [2].
+
+This is the first release of the code, and is still considered
+"unsupported" by avantgo.  Please direct all questions to either
+the port maintainer, or email addresses in the src (and not to
+avantgo's help desk).
+
+[1] http://avantgo.com/
+[2] http://avantgo.com/setup/account_only.html
+
+Evan P Cordes
+evan.cordes@UMICH.EDU
+
