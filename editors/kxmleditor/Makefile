@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2004/04/26 04:50:11 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2004/08/02 07:32:08 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"XML editor for KDE"
 
-DISTNAME=	kxmleditor-1.0.0
+DISTNAME=	kxmleditor-1.1.0
 CATEGORIES=	editors x11 x11/kde
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts,kdeprint::x11/kde/libs3
+LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdesu,kdeui,kio,kparts,kdeprint::x11/kde/libs3
 
 MODULES=	kde
 MODKDE_VERSION=	3.1

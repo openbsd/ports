@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/04/11 07:48:27 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/02 07:32:09 kevlo Exp $
 bin/kxmleditor
 lib/libkxmleditorpart.la
+share/applnk/
+share/applnk/Applications/
 share/applnk/Applications/kxmleditor.desktop
+share/apps/kxmleditor/
+share/apps/kxmleditor/icons/
+share/apps/kxmleditor/icons/hicolor/
+share/apps/kxmleditor/icons/hicolor/16x16/
+share/apps/kxmleditor/icons/hicolor/16x16/actions/
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_prev.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/collapse_node.png
@@ -23,6 +30,8 @@ share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_move_item_up.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_text.png
+share/apps/kxmleditor/icons/hicolor/22x22/
+share/apps/kxmleditor/icons/hicolor/22x22/actions/
 share/apps/kxmleditor/icons/hicolor/22x22/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/22x22/actions/bookmark_prev.png
 share/apps/kxmleditor/icons/hicolor/22x22/actions/collapse_node.png
@@ -41,10 +50,15 @@ share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_element.png
 share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_move_item_up.png
+share/apps/kxmleditor/icons/hicolor/32x32/
+share/apps/kxmleditor/icons/hicolor/32x32/actions/
 share/apps/kxmleditor/icons/hicolor/32x32/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/32x32/actions/bookmark_prev.png
 share/apps/kxmleditor/icons/hicolor/32x32/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/hicolor/32x32/actions/xml_move_item_up.png
+share/apps/kxmleditor/icons/locolor/
+share/apps/kxmleditor/icons/locolor/16x16/
+share/apps/kxmleditor/icons/locolor/16x16/actions/
 share/apps/kxmleditor/icons/locolor/16x16/actions/bookmark_next.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/bookmark_prev.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/collapse_node.png
@@ -63,9 +77,11 @@ share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_element.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_up.png
+share/apps/kxmleditor/kxedocument.rc
 share/apps/kxmleditor/kxmleditorpartBrowseUI.rc
 share/apps/kxmleditor/kxmleditorpartEditUI.rc
 share/apps/kxmleditor/kxmleditorshell.rc
+share/apps/kxmleditor/pics/
 share/apps/kxmleditor/pics/xml_attribute.png
 share/apps/kxmleditor/pics/xml_cdata.png
 share/apps/kxmleditor/pics/xml_cdata_b.png
@@ -79,6 +95,7 @@ share/apps/kxmleditor/pics/xml_procinstr.png
 share/apps/kxmleditor/pics/xml_procinstr_b.png
 share/apps/kxmleditor/pics/xml_text.png
 share/apps/kxmleditor/pics/xml_text_b.png
+share/doc/HTML/en/kxmleditor/
 share/doc/HTML/en/kxmleditor/common
 share/doc/HTML/en/kxmleditor/index.cache.bz2
 share/doc/HTML/en/kxmleditor/index.docbook
@@ -86,41 +103,26 @@ share/doc/HTML/en/kxmleditor/kparts.png
 share/doc/HTML/en/kxmleditor/screenshot.png
 share/doc/HTML/en/kxmleditor/setupdefaults.png
 share/doc/HTML/en/kxmleditor/setupprintout.png
-share/doc/HTML/en/kxmleditor/setupspcchr.png
 share/doc/HTML/en/kxmleditor/setuptargz.png
 share/doc/HTML/en/kxmleditor/setuptexteditor.png
 share/doc/HTML/en/kxmleditor/setuptreeview.png
 share/doc/HTML/en/kxmleditor/specprocinstrdlg.png
 share/doc/HTML/en/kxmleditor/texteditor.png
 share/doc/HTML/en/kxmleditor/xml.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kxmleditor.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kxmleditor.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kxmleditor.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kxmleditor.png
+share/locale/de/LC_MESSAGES/kxmleditor.mo
+share/locale/pl/LC_MESSAGES/kxmleditor.mo
 share/services/kxmleditorpart.desktop
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/doc/HTML/en/kxmleditor
-@dirrm share/apps/kxmleditor/pics
-@dirrm share/apps/kxmleditor/icons/locolor/16x16/actions
-@dirrm share/apps/kxmleditor/icons/locolor/16x16
-@dirrm share/apps/kxmleditor/icons/locolor
-@dirrm share/apps/kxmleditor/icons/hicolor/32x32/actions
-@dirrm share/apps/kxmleditor/icons/hicolor/32x32
-@dirrm share/apps/kxmleditor/icons/hicolor/22x22/actions
-@dirrm share/apps/kxmleditor/icons/hicolor/22x22
-@dirrm share/apps/kxmleditor/icons/hicolor/16x16/actions
-@dirrm share/apps/kxmleditor/icons/hicolor/16x16
-@dirrm share/apps/kxmleditor/icons/hicolor
-@dirrm share/apps/kxmleditor/icons
-@dirrm share/apps/kxmleditor
-@dirrm share/applnk/Applications
-@dirrm share/applnk
