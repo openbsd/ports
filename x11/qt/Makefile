@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2001/10/28 19:05:23 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -21,10 +21,10 @@ BUILD_DEPENDS=	::graphics/jpeg \
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-PERMIT_PACKAGE_CDROM= "Restrictive licence"
-PERMIT_PACKAGE_FTP=
-PERMIT_DISTFILES_CDROM= "Restrictive licence"
-PERMIT_DISTFILES_FTP=
+PERMIT_PACKAGE_CDROM=	"Restrictive license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"Restrictive license"
+PERMIT_DISTFILES_FTP=	Yes
 
 VER_MAJ=	1
 VER_MIN=	45
@@ -37,9 +37,12 @@ MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
+
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	lib/qt/qt.1.::x11/qt
+LIB_DEPENDS+=	lib/qt/qt.1::x11/qt
 .endif
+
+NO_REGRESS=	Yes
 
 QT_INCDIR=	${PREFIX}/include/X11/qt
 QT_LIBDIR=	${PREFIX}/lib/qt
