@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/08/10 07:27:48 espie Exp $
-@lib lib/libFLAC++.so.3.2
-@lib lib/libFLAC.so.5.2
-@lib lib/libOggFLAC++.so.0.4
-@lib lib/libOggFLAC.so.1.2
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/03/09 00:15:14 naddy Exp $
+@lib lib/libFLAC++.so.5.0
+@lib lib/libFLAC.so.7.0
+@lib lib/libOggFLAC++.so.2.0
+@lib lib/libOggFLAC.so.3.0

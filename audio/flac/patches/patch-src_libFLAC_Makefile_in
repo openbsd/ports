@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libFLAC_Makefile_in,v 1.1 2005/03/09 00:15:14 naddy Exp $
+--- src/libFLAC/Makefile.in.orig	Tue Mar  8 00:03:42 2005
++++ src/libFLAC/Makefile.in	Tue Mar  8 00:03:49 2005
+@@ -316,7 +316,7 @@ EXTRA_DIST = \
+ 
+ 
+ # see 'http://www.gnu.org/software/libtool/manual.html#SEC35' for numbering convention
+-libFLAC_la_LDFLAGS = -version-info 7:0:0 -lm $(LOCAL_EXTRA_LDFLAGS)
++libFLAC_la_LDFLAGS = -version-info 7:0:0 $(LOCAL_EXTRA_LDFLAGS)
+ libFLAC_la_SOURCES = \
+ 	bitbuffer.c \
+ 	bitmath.c \

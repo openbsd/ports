@@ -1,37 +1,36 @@
-# $OpenBSD: Makefile,v 1.21 2005/02/19 21:48:47 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2005/03/09 00:15:13 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
-DISTNAME=	flac-1.1.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	flac-1.1.2
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# (L)GPL, GFDL
+# BSD, GPL, GFDL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
+WANTLIB=	c m
+
 MODULES=	converters/libiconv
-LIB_DEPENDS=	ogg.4::audio/libogg
+LIB_DEPENDS=	ogg.5::audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/nasm
 .endif
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include" \
-		XMMS_CONFIG=/usr/bin/false
+CONFIGURE_ENV=	ac_cv_path_XMMS_CONFIG=no
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
 
 # "obj" is magic to our make(1)
 post-configure:

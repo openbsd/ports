@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/21 17:51:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/03/09 00:15:14 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin for playing FLAC files"
 
-VERSION=	1.1.0
+VERSION=	1.1.2
 PKGNAME=	xmms-flac-${VERSION}
 DISTNAME=	flac-${VERSION}
 CATEGORIES=	audio
@@ -20,15 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
-MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/f/flac/ \
-		ftp://ftp.de.debian.org/debian/pool/main/f/flac/
-PATCHFILES=	flac_${VERSION}-11.diff.gz:0
-PATCH_DIST_STRIP= -p1
 
-LIB_DEPENDS=	xmms.3::audio/xmms \
-		FLAC.5::audio/flac
+LIB_DEPENDS=	xmms.4::audio/xmms \
+		FLAC.7::audio/flac
 
-CONFIGURE_STYLE= gnu
+USE_LIBTOOL=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${LOCALBASE}"

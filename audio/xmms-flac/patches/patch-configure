@@ -1,30 +1,24 @@
-$OpenBSD: patch-configure,v 1.5 2003/04/18 00:28:40 naddy Exp $
---- configure.orig	Mon Feb 24 01:42:48 2003
-+++ configure	Mon Feb 24 01:44:20 2003
-@@ -9818,6 +9818,8 @@ _ACEOF
-   fi
- 
- 
-+# Disable id3lib detection
-+if false; then
- 
- # Check whether --with-id3lib or --without-id3lib was given.
- if test "${with_id3lib+set}" = set; then
-@@ -10006,6 +10008,8 @@ echo "$as_me: WARNING: *** id3lib not fo
- 
- 	rm -f conf.id3libtest
- 
-+fi
-+have_id3lib=no
- 
- 
- if test x$have_id3lib = xyes; then
-@@ -11713,7 +11717,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
+$OpenBSD: patch-configure,v 1.6 2005/03/09 00:15:14 naddy Exp $
+--- configure.orig	Sat Feb  5 03:22:32 2005
++++ configure	Tue Mar  8 17:28:12 2005
+@@ -10541,9 +10541,9 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
  	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
  else
--	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -DNDEBUG"
+-	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O2 -DNDEBUG"
 +	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
  	if test x$GCC = xyes; then
- 		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
+-		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
++		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -DFLaC__INLINE=__inline__"
  	fi
+ fi
+ CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"
+@@ -11586,7 +11586,7 @@ s,@XMMS_GENERAL_PLUGIN_DIR@,$XMMS_GENERA
+ s,@XMMS_EFFECT_PLUGIN_DIR@,$XMMS_EFFECT_PLUGIN_DIR,;t t
+ s,@FLaC__HAS_XMMS_TRUE@,$FLaC__HAS_XMMS_TRUE,;t t
+ s,@FLaC__HAS_XMMS_FALSE@,$FLaC__HAS_XMMS_FALSE,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@DOXYGEN@,$DOXYGEN,;t t
+ s,@FLaC__HAS_DOXYGEN_TRUE@,$FLaC__HAS_DOXYGEN_TRUE,;t t

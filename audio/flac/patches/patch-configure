@@ -1,48 +1,24 @@
-$OpenBSD: patch-configure,v 1.9 2005/02/19 21:48:47 alek Exp $
---- configure.orig	Sat Jan 25 19:41:21 2003
-+++ configure	Sat Feb 19 22:35:25 2005
-@@ -7920,7 +7920,7 @@ else
- fi
- 
- case "$host" in
--	i[3-6]86-*-openbsd*) OBJ_FORMAT=aoutb ;;
-+	i386-*-openbsd3.[0-2]) OBJ_FORMAT=aoutb ;;
- 	*) OBJ_FORMAT=elf ;;
- esac
- 
-@@ -9361,6 +9361,8 @@ _ACEOF
-   fi
- 
- 
-+# Disable id3lib detection
-+if false; then
- 
- # Check whether --with-id3lib or --without-id3lib was given.
- if test "${with_id3lib+set}" = set; then
-@@ -9545,6 +9547,8 @@ echo "$as_me: WARNING: *** id3lib not fo
- 
- 	rm -f conf.id3libtest
- 
-+fi
-+have_id3lib=no
- 
- 
- if test x$have_id3lib = xyes; then
-@@ -11251,7 +11255,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
+$OpenBSD: patch-configure,v 1.10 2005/03/09 00:15:14 naddy Exp $
+--- configure.orig	Sat Feb  5 03:22:32 2005
++++ configure	Tue Mar  8 00:21:45 2005
+@@ -10541,9 +10541,9 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
  	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
  else
--	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -DNDEBUG"
+-	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O2 -DNDEBUG"
 +	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
  	if test x$GCC = xyes; then
- 		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
+-		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
++		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -DFLaC__INLINE=__inline__"
  	fi
-@@ -12134,7 +12138,7 @@ s,@XMMS_GENERAL_PLUGIN_DIR@,$XMMS_GENERA
+ fi
+ CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"
+@@ -11586,7 +11586,7 @@ s,@XMMS_GENERAL_PLUGIN_DIR@,$XMMS_GENERA
  s,@XMMS_EFFECT_PLUGIN_DIR@,$XMMS_EFFECT_PLUGIN_DIR,;t t
  s,@FLaC__HAS_XMMS_TRUE@,$FLaC__HAS_XMMS_TRUE,;t t
  s,@FLaC__HAS_XMMS_FALSE@,$FLaC__HAS_XMMS_FALSE,;t t
 -s,@LIBICONV@,$LIBICONV,;t t
 +s,@LIBICONV@,$LTLIBICONV,;t t
  s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@ID3LIB_CFLAGS@,$ID3LIB_CFLAGS,;t t
- s,@ID3LIB_LIBS@,$ID3LIB_LIBS,;t t
+ s,@DOXYGEN@,$DOXYGEN,;t t
+ s,@FLaC__HAS_DOXYGEN_TRUE@,$FLaC__HAS_DOXYGEN_TRUE,;t t
