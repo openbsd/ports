@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun May  6 16:10:49 2001
++++ Makefile.in	Sun May  6 16:12:13 2001
+@@ -100,7 +100,7 @@ EXTRA_DIST =  	CHANGES				autogen.sh			V
+ 
+ 
+ libSDL_net_la_LIBADD = @INETLIB@
+-libSDL_net_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_net_la_LDFLAGS =          -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ @HAVE_GUI_LIB_TRUE@EXAMPLES = chat chatd
+ @HAVE_GUI_LIB_FALSE@EXAMPLES = 
