@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Dec 14 04:36:31 1999
++++ configure.in	Tue Dec 14 04:37:43 1999
+@@ -39,7 +39,7 @@
+ 
+ AC_CHECK_LIB(c, gettext, CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po", AC_CHECK_LIB(intl, gettext, LIBS="$LIBS -lintl";CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po"))
+ 
+-AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(db, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb", AC_MSG_ERROR("Pavuk can\'t work withou clasical Berkeley DB libraries")))
++AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(c, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -lc", AC_MSG_ERROR("Pavuk can\'t work withou clasical Berkeley DB libraries")))
+ 
+ AC_CHECK_HEADER(db1/db.h, CFLAGS="$CFLAGS -DHAVE_DB1_H", AC_CHECK_HEADER(db.h, CFLAGS="$CFLAGS -DHAVE_DB_H"))
+ 

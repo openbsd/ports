@@ -1,0 +1,45 @@
+--- setup.c.orig	Tue Dec 14 04:38:32 1999
++++ setup.c	Tue Dec 14 04:46:01 1999
+@@ -2,7 +2,6 @@
+ #include <glib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <getopt.h>
+ 
+ #include "apassign.h"
+ #include "nls.h"
+@@ -207,9 +206,9 @@
+ char *prgname;
+ {
+ 	printf(gettext("Usage: %s [OPTION]\n"), prgname);
+-	printf(gettext("  -f,  --db_file=FILENAME  set cache file to FILENAME\n"));
+-	printf(gettext("  -v,  --version           display version information and exit\n"));
+-	printf(gettext("  -h,  --help              display this help and exit\n"));
++	printf(gettext("  -f,  set cache file to FILENAME\n"));
++	printf(gettext("  -v,  display version information and exit\n"));
++	printf(gettext("  -h,  display this help and exit\n"));
+ 	exit(0);
+ }
+ 
+@@ -218,19 +217,9 @@
+ char **argv;
+ {
+ 	int c;
+-	int index;
+-	struct option options[] =
++
++	while((c = getopt(argc, argv, "vhf:")) != EOF)
+ 	{
+-		{"db_file", 1, NULL, 'f'},
+-		{"help", 0, NULL, 'h'},
+-		{"version", 0, NULL, 'v'}
+-	};
+-
+-	while(1)
+-	{
+-		c = getopt_long(argc, argv, "vhf:", options, &index);
+-		if (c == -1) break;
+-		if (!c) c = options[index].val;
+ 		switch (c)
+ 		{
+ 			case 'v':
