@@ -1,8 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/15 18:32:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/16 16:30:01 espie Exp $
 
-DISTNAME=		fileutils-4.0
+COMMENT= 		"GNU versions of common file management utilities"
+COMMENT-ls=		"colorized GNU `ls'"
+
+V=			4.0
+DISTNAME=		fileutils-$V
 CATEGORIES=		misc
-NEED_VERSION=		1.340
+NEED_VERSION=		1.361
+
+PKGNAME-ls=		fileutils-ls-$V
 
 MAINTAINER=		David Lebel <lebel@lebel.org>
 
@@ -24,10 +30,6 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--program-prefix=g
 
-MULTI_PACKAGES=		-ls -info
-
-.if defined(SUBPACKAGE)
-PKGNAME=                ${DISTNAME:C/-[^-]*$//}${SUBPACKAGE}${DISTNAME:C/^[^-]*//}
-.endif
+MULTI_PACKAGES=		-ls
 
 .include <bsd.port.mk>
