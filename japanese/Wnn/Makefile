@@ -1,16 +1,10 @@
-# Imported from FreeBSD on jul 28 98
-# New ports collection makefile for:	Wnn for Japanese
-# Version required:	4.2
-# Date created:		20 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.15 2000/03/25 00:48:09 turan Exp $
-
-BROKEN=		compile problems.  bombs while trying to create accounts.
+# $OpenBSD: Makefile,v 1.16 2000/04/05 17:13:55 espie Exp $
 
 DISTNAME=	Wnn4.2
-PKGNAME?=	ja-Wnn-4.2
+PKGNAME=	ja-Wnn-4.2
 CATEGORIES?=	japanese
 NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
@@ -20,47 +14,23 @@ DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	Wnn4.2.tar.gz
-PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
-FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
-PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
-WRKDIST=		${WRKDIR}/Xsi
+WRKDIST=	${WRKDIR}/Xsi
 
-NO_PACKAGE=	interactive port
-
-.if (${PKGNAME} == ja-Wnn-4.2)
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
 DOC_FROM=	${WRKSRC}/Wnn
-.elif (${PKGNAME} == zh-Wnn-4.2)
-PORT_DOCDIR=	${PREFIX}/share/doc/zh-Wnn
-DOC_FROM=	${WRKSRC}/cWnn
-.endif  # kWnn has no manual.
 
-post-extract:
-	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	${FULLDISTDIR}/Wnn4.2.patch.tar.gz ${EXTRACT_AFTER_ARGS})
-	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
+do-distpatch:
+	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
+	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
 
-pre-patch:
-	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/Wnn4.2.patch
-
-# Applying a patch for depending on language
-post-patch:
-	case ${PKGNAME} in \
-	  ja-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-japanese;; \
-	  zh-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-chinese;; \
-	  ko-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-korean;; \
-	esac; \
-	(cd ${FULLDISTDIR}; \
-		${PATCH} ${PATCH_DIST_ARGS} < $${LANG_PATCH})
+do-configure:
+	cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
 
 # for PREFIX
 pre-build:
@@ -71,27 +41,23 @@ pre-build:
 		$$file.orig2 > $$file; \
 	done
 
-# These are necesary because this package uses a different Makefile for
-#  building and installing etc.
-do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f Makefile.inst World)
+MAKE_FLAGS=IMAKE='imake -DPorts' WNNOWNER_INDIRECT=wnn
+FAKE_FLAGS=DESTDIR=${WRKINST} WNNOWNER_INDIRECT=bin
 
-pre-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+MAKE_ENV=IMAKEINCLUDE=-I${WRKSRC}/config
+# These are necessary because this package uses a different Makefile for
+#  building and installing etc.
+
+do-build:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} make ${MAKE_FLAGS} -f Makefile.inst ${ALL_TARGET}
+ALL_TARGET=World
+INSTALL_TARGET=install install.man
+FAKE=Yes
 
 post-install:
-# This package uses imake's "install.man" target to install man pages but
-#  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} -f Makefile install.man)
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	mkdir -p ${PORT_DOCDIR}
-	@(cd ${DOC_FROM}; tar cvf - manual manual.en | \
+	${INSTALL_DATA_DIR} ${PORT_DOCDIR}
+	@(cd ${DOC_FROM}; tar cf - manual manual.en | \
 		(cd ${PORT_DOCDIR}; tar xf -))
-	@chown -R bin.bin ${PORT_DOCDIR}
-.endif
-.endif
+	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_DOCDIR}
 
 .include <bsd.port.mk>
