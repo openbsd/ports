@@ -1,0 +1,6 @@
+lib/proxy-suite/conf/ftp-proxy.conf
+man/man5/ftp-proxy.conf.5
+man/man8/ftp-proxy.8
+sbin/ftp-proxy
+@dirrm lib/proxy-suite/conf
+@dirrm lib/proxy-suite

@@ -1,0 +1,62 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/02/28 09:27:02 camield Exp $
+#
+# Pre/post-installation setup of proxy-suite
+# (based on the squid INSTALL file)
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PREFIX:-$PKG_PREFIX}
+SYSCONFDIR=${SYSCONFDIR:-/etc}
+SAMPLE_DIR=$PREFIX/lib/proxy-suite/conf
+
+do_notice_conf()
+{
+    # Copy configuration files so they can be packaged.
+    # Package builders: manually remove the configuration files,
+    # to be sure that vanilla ones get packaged.
+
+    if [ ! -f $SAMPLEDIR/ftp-proxy.conf ]; then
+	mkdir -p $SAMPLE_DIR
+	cp $SYSCONFDIR/ftp-proxy.conf $SAMPLE_DIR
+    fi
+    cat <<FMT | fmt
+The existing $1 configuration files in $SYSCONFDIR have NOT been changed.
+You may want to compare them to the samples in $SAMPLE_DIR, and update
+your configuration files as needed.
+FMT
+    echo
+}
+
+do_install_conf()
+{
+    cp $SAMPLE_DIR/ftp-proxy.conf $SYSCONFDIR
+    cat <<FMT | fmt
+Sample configuration files can be found in $SAMPLE_DIR. A fresh set of
+configuration files have been copied to $SYSCONFDIR. Please change those
+to meet your needs.
+FMT
+    echo
+}
+
+case $2 in
+    PRE-INSTALL)
+        ;;
+    POST-INSTALL)
+	echo "+----------------"
+	echo "| Finished installing $1"
+	echo "+----------------"
+	echo
+        if [ -f $SYSCONFDIR/ftp-proxy.conf ]; then
+            do_notice_conf $1
+        else
+            do_install_conf $1
+        fi
+        ;;
+    *)
+        echo "usage: `basename $0` distname <PRE-INSTALL|POST-INSTAL>" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
