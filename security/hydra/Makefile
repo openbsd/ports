@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2004/10/08 19:51:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/08 22:32:44 xsa Exp $
 
 COMMENT=		"parallelized login hacker"
 
 DISTNAME=		hydra-4.1-src
+PKGNAME=		${DISTNAME:S/-src//}
 CATEGORIES=    		security
 
 HOMEPAGE=		http://www.thc.org/
