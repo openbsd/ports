@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.4 1999/01/11 21:23:26 espie Exp $	*/
+/* $OpenBSD: openbsd.h,v 1.5 1999/01/12 00:19:49 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -150,3 +150,6 @@ do {									      \
       fprintf (FILE, "\n");						      \
     }									      \
 } while (0)
+
+
+/* We pick up ASM_OUTPUT_MI_THUNK from unix.h */

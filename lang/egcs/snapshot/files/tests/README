@@ -8,12 +8,13 @@ You will also find a `warnings' file in the work/egcs-* directory...
 the test results.
 
 OpenBSD notes:
-* we are trying to use BSD make instead of gnu-make. A large proportion
-of the patches are used for that. They have been reported to cygnus, and
-will probably be unnecessary soon.
 * you need an up-to-date bsd.port.mk.
 * an assembler bug that affects the sparc has been fixed post-2.4. It may
-affect other architectures.
+affect other architectures. Basically, the archs that use an old gas
+(m68k, sparc, i386,...) are liable to run into bugs that can be traced to
+the assembler, not the compiler.
+* the configuration files used are substantially cleaned up from gcc 2.8.1.
+This will be used for gcc 2.8.1 eventually.
 
 To run the same testsuites under native gcc 2.8.1:
 - move the site.exp file elsewhere, edit it to get the right paths.

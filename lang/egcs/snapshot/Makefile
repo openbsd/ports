@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.14 1999/01/10 02:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.15 1999/01/12 00:19:49 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -20,28 +20,29 @@ MAINTAINER=	Marc.Espie@openbsd.org
 MIRROR_DISTFILE=no
 
 # with some help from Jason L. Wright for sparc...
-ONLY_FOR_ARCHS = i386 sparc m68k sparc pa
+ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
 
 # user configuration section
 
 # see files/tests for precise testing procedure
 
 
-# as of 19981213, cygnus snapshot packaging scheme is still BROKEN.
-# YOU MUST USE THE MAMMOTH ARCHIVE !!!
+# cygnus packaging scheme is now working, though it is weird.
+# namely, testsuite holds all the tests. g++-tests no longer exists,
+# and g77-tests only holds duplicates from the main testsuite archive.
 MAKE_TESTS=yes
 MAKE_GXX=yes
-#MAKE_FORTRAN=yes
-#MAKE_CHILL=yes
-#MAKE_OBJC=yes
-#MAKE_JAVA=yes
+MAKE_FORTRAN=yes
+MAKE_CHILL=yes
+MAKE_OBJC=yes
+MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive
-ONE_ARCHIVE=yes
+#ONE_ARCHIVE=yes
 
 
 LATEST_DATE=1999-01-03
@@ -84,16 +85,10 @@ DISTFILES+=egcs-tests-${LATEST}${EXTRACT_SUFX}
 
 .if defined(MAKE_GXX)
 DISTFILES+=     egcs-g++-${LATEST}${EXTRACT_SUFX}
-.if defined(MAKE_TESTS)
-DISTFILES+=egcs-g++-tests-${LATEST}${EXTRACT_SUFX}
-.endif
 .endif
 
 .if defined(MAKE_FORTRAN)
 DISTFILES+=     egcs-g77-${LATEST}${EXTRACT_SUFX}
-.if defined(MAKE_TESTS)
-DISTFILES+=egcs-g77-testsuite-${LATEST}${EXTRACT_SUFX}
-.endif
 .endif
 
 .if defined(MAKE_JAVA)
