@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/11 11:48:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 20:17:44 wilfried Exp $
 
 COMMENT=	"module to bubble-babble fingerprints"
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	perl
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

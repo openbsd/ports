@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/01/28 18:20:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/01 20:17:43 wilfried Exp $
 
 COMMENT=		"Pure Perl MySQL driver for the Perl DBI"
 
@@ -23,5 +23,7 @@ RUN_DEPENDS=		:p5-DBI->=1.14:databases/p5-DBI \
 			:p5-Net-MySQL->=0.08:net/p5-Net-MySQL
 
 CONFIGURE_STYLE=	perl
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

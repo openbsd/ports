@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/17 14:46:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/01 20:17:44 wilfried Exp $
 
 COMMENT=		'print arrays of data in a nicely formatted listing'
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Data/}
 
 CONFIGURE_STYLE=	perl
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

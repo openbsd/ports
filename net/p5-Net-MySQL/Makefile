@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/28 18:18:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/01 20:17:44 wilfried Exp $
 
 COMMENT=		"Pure Perl MySQL network protocol interface"
 
@@ -18,5 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE=	perl
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>
