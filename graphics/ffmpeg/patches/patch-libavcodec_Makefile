@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavcodec_Makefile,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+--- libavcodec/Makefile.orig	Sun Jun 22 06:27:12 2003
++++ libavcodec/Makefile	Wed Jul 16 20:40:58 2003
+@@ -7,8 +7,8 @@ include ../config.mak
+ VPATH=$(SRC_PATH)/libavcodec
+ 
+ # NOTE: -I.. is needed to include config.h
+-CFLAGS= $(OPTFLAGS) -Wall -g -DHAVE_AV_CONFIG_H -I.. -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
+-LDFLAGS= -g
++CFLAGS= $(OPTFLAGS) -Wall -DHAVE_AV_CONFIG_H -I.. -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
++#LDFLAGS= -g
+ 
+ OBJS= common.o utils.o mem.o allcodecs.o \
+       mpegvideo.o jrevdct.o jfdctfst.o jfdctint.o\

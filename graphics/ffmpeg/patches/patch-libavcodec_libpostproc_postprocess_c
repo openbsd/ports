@@ -1,0 +1,15 @@
+$OpenBSD: patch-libavcodec_libpostproc_postprocess_c,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+--- libavcodec/libpostproc/postprocess.c.orig	Thu Jun 12 01:42:46 2003
++++ libavcodec/libpostproc/postprocess.c	Wed Jul 16 20:12:25 2003
+@@ -72,9 +72,9 @@ try to unroll inner for(x=0 ... loop to 
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#ifdef HAVE_MALLOC_H
++/*#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
+-#endif
++#endif*/
+ //#undef HAVE_MMX2
+ //#define HAVE_3DNOW
+ //#undef HAVE_MMX

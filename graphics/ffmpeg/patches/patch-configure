@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+--- configure.orig	Sun Jun 22 06:27:05 2003
++++ configure	Wed Jul 16 20:21:00 2003
+@@ -145,6 +145,14 @@ dv1394="no"
+ make="gmake"
+ LDFLAGS="$LDFLAGS -export-dynamic"
+ ;;
++OpenBSD)
++a52="no"
++audio_oss="no"
++dv1394="no"
++sdl="no"	# not respected
++v4l="no"
++vhook="no"
++;;
+ BSD/OS)
+ v4l="no"
+ audio_oss="yes"
+@@ -633,14 +641,14 @@ EOF
+ 
+ sdl_too_old=no
+ sdl=no
+-if $cc -o $TMPE `sdl-config --cflags` $TMPC `sdl-config --libs`  2> /dev/null  ; then
+-_sdlversion=`sdl-config --version | sed 's/[^0-9]//g'`
+-if test "$_sdlversion" -lt 121 ; then
+-sdl_too_old=yes
+-else
+-sdl=yes
+-fi
+-fi
++#if $cc -o $TMPE `sdl-config --cflags` $TMPC `sdl-config --libs`  2> /dev/null  ; then
++#_sdlversion=`sdl-config --version | sed 's/[^0-9]//g'`
++#if test "$_sdlversion" -lt 121 ; then
++#sdl_too_old=yes
++#else
++#sdl=yes
++#fi
++#fi
+ 
+ if test "$sdl" = "no" ; then
+    ffplay=no

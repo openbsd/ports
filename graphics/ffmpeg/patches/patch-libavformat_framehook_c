@@ -1,0 +1,11 @@
+$OpenBSD: patch-libavformat_framehook_c,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+--- libavformat/framehook.c.orig	Tue Feb 11 10:35:28 2003
++++ libavformat/framehook.c	Thu Jul  3 20:53:48 2003
+@@ -25,6 +25,7 @@
+ #include <dlfcn.h>
+ #endif
+ 
++#define RTLD_NOW 0
+ 
+ typedef struct _FrameHookEntry {
+     struct _FrameHookEntry *next;

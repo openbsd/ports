@@ -1,0 +1,12 @@
+$OpenBSD: patch-ffserver_c,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+--- ffserver.c.orig	Fri Apr 18 15:53:48 2003
++++ ffserver.c	Thu Jul  3 21:00:29 2003
+@@ -45,6 +45,8 @@
+ /* maximum number of simultaneous HTTP connections */
+ #define HTTP_MAX_CONNECTIONS 2000
+ 
++#define RTLD_NOW 0
++
+ enum HTTPState {
+     HTTPSTATE_WAIT_REQUEST,
+     HTTPSTATE_SEND_HEADER,
