@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/12/01 19:59:59 alek Exp $
+@newgroup _pdnsd:510
+@newuser _pdnsd:510:_pdnsd:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @man man/man8/pdnsd-ctl.8
 sbin/pdnsd
 sbin/pdnsd-ctl
@@ -9,6 +11,9 @@ share/doc/pdnsd/manual.txt
 share/examples/pdnsd/
 share/examples/pdnsd/pdnsd.conf
 @sample ${SYSCONFDIR}/pdnsd.conf
+@owner _pdnsd
+@group _pdnsd
+@sample /var/pdnsd/
+@exec dd if=/dev/zero of=/var/pdnsd/pdnsd.cache bs=1 count=4 2>/dev/null
+@exec chown _pdnsd:_pdnsd /var/pdnsd/pdnsd.cache
 @extraunexec rm -rf /var/pdnsd
-@extraunexec userdel _pdnsd
-@extraunexec groupdel _pdnsd
