@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.4 2001/01/22 01:35:15 avsm Exp $
+#	$OpenBSD: Makefile,v 1.5 2001/02/26 04:48:29 avsm Exp $
 
 DISTNAME=	GD-1.32
 PKGNAME=	p5-${DISTNAME}
@@ -7,7 +7,7 @@ NEED_VERSION=	1.348
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GD
 
-LIB_DEPENDS=	gd.18:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.18::graphics/gd
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/05 08:18:26 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/26 04:48:29 avsm Exp $
 
 DISTNAME=	libmcrypt-2.4.9
 CATEGORIES=	security
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 
 HOMEPAGE=	http://mcrypt.hellug.gr/lib/
 
-LIB_DEPENDS=	mhash.2:security/mhash
+LIB_DEPENDS=	mhash.2::security/mhash
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
