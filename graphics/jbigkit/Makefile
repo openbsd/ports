@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/12/27 06:12:08 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/12/28 22:50:29 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.1
@@ -15,7 +15,7 @@ post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 test:	build
-	cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC}/libjbig make test
+	@cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC}/libjbig make test
 
 .include <bsd.port.mk>
 
