@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/02 21:45:14 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/03 16:08:07 angelos Exp $
 
-DISTNAME=       nte-1.7.0
+DISTNAME=       nte
+DISTFILES=	nte-1.7.0.tar.gz
+PKGNAME=	nte
 CATEGORIES=	mbone
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 MAINTAINER=	angelos@openbsd.org
