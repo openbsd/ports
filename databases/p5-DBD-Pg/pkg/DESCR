@@ -1,4 +1,3 @@
-       DBD::Pg is an extension to Perl which allows access to
-       PostgreSQL databases. It is built on top of the standard
-       DBI extension and implements some of the methods that DBI
-       defines.
+DBD::Pg is a Perl module which allows access to PostgreSQL databases.
+It is built on top of the standard DBI extension and implements
+the DBI interface for PostgreSQL.
