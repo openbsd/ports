@@ -6,4 +6,23 @@ PHP also has support for talking to other services using protocols
 such as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open raw
 network sockets and interact using other protocols.
 
+PHP has a number of extra flavors available:
+
+ - gettext  GNU gettext support for internationalisation
+ - ftp      Functions to retrieve files via FTP
+ - imap     Mail and message access functions (IMAP, POP3, NTTP)
+ - ldap     Access to LDAP-compliant Directory Services
+ - mhash    Hashing functions such as MD5, SHA1, etc
+ - mm       Shared memory support for session storage
+ - recode   GNU Recode support for character set conversion
+ - snmp     Simple Network Management Protocol access functions
+ - gd       Generate PNG or JPEG images on the fly
+ - pdflib   Generate Adobe PDF documents dynamically
+
+In addition, the following database flavors are supported:
+
+   gdbm, dbase, filepro, mysql, postgresql, and iodbc
+
+If you wish to compile PHP without X, use the no_x11 flavor.
+
 WWW: ${HOMEPAGE}
