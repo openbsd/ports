@@ -1,11 +1,11 @@
-#   $OpenBSD: Makefile,v 1.2 2000/06/28 13:58:50 espie Exp $
+#   $OpenBSD: Makefile,v 1.3 2000/07/17 21:58:05 espie Exp $
 
 DISTNAME=	libnet-1.0703
 PKGNAME=	p5-libnet-1.0703
 CATEGORIES=	net perl5
 NEED_VERSION=	1.308
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	espie@openbsd.org
 
