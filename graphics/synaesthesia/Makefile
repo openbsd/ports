@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/08 07:43:52 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/30 08:22:46 pvalchev Exp $
 
 COMMENT=		"visual sound representation"
 
@@ -31,6 +31,7 @@ CONFIGURE_STYLE=	gnu
 .if ${FLAVOR:L:Mesd}
 LIB_DEPENDS+=	esd.2::audio/esound
 CONFIGURE_ARGS+=	--with-esound
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=	--disable-esound
 .endif
