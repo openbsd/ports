@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/09 13:18:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 14:12:30 espie Exp $
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
@@ -53,12 +53,12 @@ M_ARCH=		mips
 .else
 M_ARCH=		${MACHINE_ARCH}
 .endif
-GCCARCH=	${M_ARCH}-unknown-${OPSYS}${OSREV}
+GCCARCH=	${M_ARCH}-unknown-openbsd${OSREV}
 SED_PLIST=	|sed -e 's,@GCCARCH@,${GCCARCH},'
 
 # Note: x11 includes and libs need NOT be added to --site-{includes,libraries}
 CONFIGURE_ARGS+= ${GCCARCH} \
-		--prefix='${PREFIX}' \
+		--prefix='$${DESTDIR}${PREFIX}' \
 		--with-gnu-make \
 		--with-ncurses \
 		--with-dialogs="athena" \
