@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/05 08:44:58 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/27 22:48:26 naddy Exp $
 
 COMMENT=	"FTP listing and transfer tools"
 
 DISTNAME=	ftpcopy-0.3.9
-HOMEPAGE=	http://www.ohse.de/uwe/ftpcopy.html
-
 CATEGORIES=	net
-NEED_VERSION=	1.515
+HOMEPAGE=	http://www.ohse.de/uwe/ftpcopy.html
 
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/ \
 		ftp://rt.fm/pub/ftpcopy/
@@ -18,5 +16,7 @@ PERMIT_DISTFILES_FTP=	"inscrutable license mix"
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	prefix="${DESTDIR}/${PREFIX}"
+
+REGRESS_TARGET=	check
 
 .include <bsd.port.mk>
