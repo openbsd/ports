@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/01 17:08:55 jcs Exp $
+@mode 2755
+@group kmem
+bin/tpb
+@mode
+@group
+@man man/man1/tpb.1
+share/doc/tpb/
+share/doc/tpb/nvram.txt
+share/examples/tpb/
+share/examples/tpb/callback_example.sh
+share/examples/tpb/tpbrc
+share/locale/
+share/locale/da/
+share/locale/da/LC_MESSAGES/
+share/locale/da/LC_MESSAGES/tpb.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/tpb.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/tpb.mo

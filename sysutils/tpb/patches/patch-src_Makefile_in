@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/12/01 17:08:55 jcs Exp $
+--- src/Makefile.in.orig	Mon Aug 23 06:48:37 2004
++++ src/Makefile.in	Thu Nov 11 15:07:47 2004
+@@ -97,7 +97,7 @@ tpb_SOURCES = tpb.c cfg.c
+ 
+ localedir = $(datadir)/locale
+ 
+-INCLUDES = -I. -I$(srcdir) -I.. -I../intl
++INCLUDES = -I. -I$(srcdir) -I.. -I../intl -I${X11BASE}/include
+ DEFS = @DEFS@ -DLOCALEDIR=\"$(localedir)\" -DSYSCONFDIR=\"@sysconfdir@\"
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+@@ -118,7 +118,7 @@ tpb_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -lossaudio -lintl -liconv -lX11 -L${LOCALBASE}/lib -L${X11BASE}/lib -o $@
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+ 
