@@ -4,3 +4,5 @@ RMD160 (emacs-21.3.tar.gz) = 07171ac4c7085904da70ceb097c39dc21983d9ca
 RMD160 (leim-21.3.tar.gz) = d55d41e506a6a40b6990dd9435d69aaba14513ac
 SHA1 (emacs-21.3.tar.gz) = a8aae1b619e50ed6fed5b1351b54b38ed98c61b8
 SHA1 (leim-21.3.tar.gz) = a540ba0cb8be99f3dcef904110ac381b07add744
+SIZE (emacs-21.3.tar.gz) = 20399831
+SIZE (leim-21.3.tar.gz) = 3291224
