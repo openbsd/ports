@@ -1,6 +1,14 @@
-.linux_lib-version
+y.linux_lib-version
 bin/bash
 bin/sh
+@exec mkdir -p %D/dev
+@exec ln -sf /dev/console %D/dev/tty0
+@exec ln -sf /dev/ttyv0 %D/dev/tty1
+@exec ln -sf /dev/ttyv1 %D/dev/tty2
+@exec ln -sf /dev/ttyv2 %D/dev/tty3
+@exec ln -sf /dev/ttyv3 %D/dev/tty4
+@exec ln -sf /dev/dsp %D/dev/sound0
+@unexec rm -rf %D/dev
 dev/dsp
 etc/host.conf
 etc/ld.so.cache
@@ -43,8 +51,6 @@ lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libutil.so.1
 sbin/ldconfig
-usr/X11
-usr/X11R6/lib/X11
 usr/X11R6/lib/libICE.so.6
 usr/X11R6/lib/libICE.so.6.0
 usr/X11R6/lib/libPEX5.so.6
@@ -72,7 +78,10 @@ usr/X11R6/lib/libXt.so.6.0
 usr/X11R6/lib/libXtst.so.6
 usr/X11R6/lib/libXtst.so.6.0
 usr/X11R6/lib/libforms.so.0.81
-usr/X386
+@exec ln -sf X11R6 %D/usr/X11
+@unexec rm -f %D/usr/X11
+@exec ln -sf X11R6 %D/usr/X386
+@unexec rm -f %D/usr/X386
 usr/bin/gencat
 usr/bin/getconf
 usr/bin/glibcbug
@@ -112,7 +121,6 @@ usr/i486-linuxaout/lib/libtk.so.3
 usr/i486-linuxaout/lib/libtk.so.3.1.1
 usr/i486-linuxaout/lib/libvga.so.1
 usr/i486-linuxaout/lib/libvga.so.1.2.7
-usr/lib/X11
 usr/lib/libc.so
 usr/lib/libf2c.so
 usr/lib/libf2c.so.0
@@ -178,6 +186,8 @@ usr/lib/libz.so
 usr/lib/libz.so.1
 usr/lib/libz.so.1.0.4
 usr/lib/zoneinfo/localtime
+@exec ln -sf ../X11R6/lib/X11 %D/usr/lib/X11
+@unexec rm -f %D/usr/lib/X11
 usr/openwin/lib/libolgx.so.3
 usr/openwin/lib/libolgx.so.3.2.2
 usr/openwin/lib/libxview.so.3
@@ -766,7 +776,8 @@ var/X11R6/lib/nls/wr_WR.ct
 var/X11R6/lib/nls/zh_CN.ugb
 var/X11R6/lib/nls/zh_TW.big5
 var/X11R6/lib/rgb.txt
-@unexec rm -rf %D/dev
+@exec ln -sf ../../../var/X11R6/lib %D/usr/X11R6/lib/X11
+@unexec rm -f %D/usr/X11R6/lib/X11
 @dirrm bin
 @dirrm dev
 @dirrm etc

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 1999/05/03 04:49:42 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/05/13 01:49:05 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
 DISTNAME=	linux_lib-2.6.1
 CATEGORIES=	emulators
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"GPL: must distribute with source"
 
 MAINTAINER=	brad@openbsd.org
-
-MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 PREFIX=		/emul/linux
 NO_MTREE=	yes
@@ -38,7 +37,12 @@ post-install:
 	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
 	${LN} -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
 	${MKDIR} ${PREFIX}/dev
-	${LN} -sf /dev/sound0 ${PREFIX}/dev/dsp
+	${LN} -sf /dev/console ${PREFIX}/dev/tty0
+	${LN} -sf /dev/ttyv0 ${PREFIX}/dev/tty1
+	${LN} -sf /dev/ttyv1 ${PREFIX}/dev/tty2
+	${LN} -sf /dev/ttyv2 ${PREFIX}/dev/tty3
+	${LN} -sf /dev/ttyv3 ${PREFIX}/dev/tty4
+	${LN} -sf /dev/dsp ${PREFIX}/dev/sound0
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
