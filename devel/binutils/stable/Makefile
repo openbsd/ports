@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/06/27 02:47:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.21 2003/06/30 18:24:16 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 			--disable-nls --disable-commonbfdlib
 
 # cross-tools
-FLAVORS=		alpha arm hppa i386 m68k m88k mips powerpc \
+FLAVORS=		alpha hppa i386 m68k m88k mips powerpc \
 			sparc sparc64 vax x86_64
 FLAVOR?=
 
@@ -51,9 +51,12 @@ REGRESS_DEPENDS=	::devel/dejagnu
 
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
+EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh
+
 post-extract:
-	@cp -f ${FILESDIR}/{i386obsd.sh,sparcobsd.sh,m68kobsd.sh} \
-		${WRKSRC}/ld/emulparams
+.for f in ${EMULPARAMS}
+	cp -f ${FILESDIR}/${f} ${WRKSRC}/ld/emulparams
+.endfor
 	@cp -f ${FILESDIR}/te-obsd.h ${WRKSRC}/gas/config
 
 post-patch:

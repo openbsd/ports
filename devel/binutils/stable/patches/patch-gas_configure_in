@@ -1,18 +1,7 @@
-$OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
---- gas/configure.in.orig	Wed Oct 30 17:07:32 2002
-+++ gas/configure.in	Tue Jun 24 09:14:52 2003
-@@ -193,7 +193,9 @@
-       arm*-*-linux-gnu* | arm*-*-uclinux*)	
- 					fmt=elf  em=linux ;;
-       arm-*-netbsdelf*)                 fmt=elf  em=nbsd ;;
--      arm-*-netbsd* | arm-*-openbsd*)   fmt=aout em=nbsd ;;
-+      arm-*-openbsdelf*)                fmt=elf  em=obsd ;;
-+      arm-*-netbsd*)                    fmt=aout em=nbsd ;;
-+      arm-*-openbsd*)                   fmt=aout em=obsd ;;
-       arm-*-oabi | thumb-*-oabi)        fmt=elf ;;
-       arm-epoc-pe | thumb-epoc-pe)      fmt=coff em=epoc-pe ;;
-       arm-*-wince)			fmt=coff em=wince-pe ;;
-@@ -222,7 +224,7 @@
+$OpenBSD: patch-gas_configure_in,v 1.12 2003/06/30 18:24:16 brad Exp $
+--- gas/configure.in.orig	Wed Oct 30 12:07:32 2002
++++ gas/configure.in	Mon Jun 30 12:39:24 2003
+@@ -222,7 +222,7 @@ changequote([,])dnl
        hppa-*-*elf*)         fmt=elf em=hppa ;;
        hppa-*-lites*)        fmt=elf em=hppa ;;
        hppa-*-netbsd*)       fmt=elf em=nbsd ;;
@@ -21,7 +10,7 @@ $OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
        hppa-*-osf*)          fmt=som em=hppa ;;
        hppa-*-rtems*)        fmt=elf em=hppa ;;
        hppa-*-hpux11*)	    case ${cpu} in
-@@ -260,7 +262,19 @@
+@@ -260,7 +260,19 @@ changequote([,])dnl
  					;;
  			    esac
  			    ;;
@@ -42,7 +31,7 @@ $OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
        i386-*-linux*aout* | i386-*-linux*oldld)   fmt=aout em=linux ;;
        i386-*-linux*coff*)   fmt=coff em=linux ;;
        i386-*-linux-gnu*)    fmt=elf em=linux bfd_gas=yes ;;
-@@ -344,7 +358,7 @@
+@@ -344,7 +356,7 @@ changequote([,])dnl
        m68k-*-netbsdelf*)    fmt=elf em=nbsd bfd_gas=yes ;;
        m68k-*-netbsdaout* | m68k-*-netbsd*)
  			    fmt=aout em=nbsd bfd_gas=yes ;;
@@ -51,7 +40,7 @@ $OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
        m68k-apple-aux*)      fmt=coff em=aux ;;
        m68k-*-psos*)         fmt=elf em=psos;;
  
-@@ -355,7 +369,6 @@
+@@ -355,7 +367,6 @@ changequote([,])dnl
        mcore-*-pe)	    fmt=coff em=pe bfd_gas=yes ;;
  
        # don't change em like *-*-bsd does
@@ -59,7 +48,7 @@ $OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
        mips-dec-bsd*)        fmt=aout endian=little ;;
        mips-sony-bsd*)       fmt=ecoff ;;
        mips-*-bsd*)          AC_MSG_ERROR(Unknown vendor for mips-bsd configuration.) ;;
-@@ -434,7 +447,6 @@
+@@ -434,7 +445,6 @@ changequote([,])dnl
        sh64-*-elf*)	    fmt=elf ;;
        ns32k-pc532-mach* | ns32k-pc532-ux*)    fmt=aout em=pc532mach ;;
        ns32k-*-netbsd* | ns32k-pc532-lites*)  fmt=aout em=nbsd532 ;;
@@ -67,7 +56,7 @@ $OpenBSD: patch-gas_configure_in,v 1.11 2003/06/27 02:47:16 kevlo Exp $
  
        sparc-*-rtemsaout*)   fmt=aout ;;
        sparc-*-rtemself*)    fmt=elf ;;
-@@ -458,12 +470,17 @@
+@@ -458,12 +468,17 @@ changequote([,])dnl
                                  sparc64) fmt=elf ;;
                              esac
                              ;;
