@@ -1,7 +1,7 @@
-# $OpenBSD: patch-ioc,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
---- io.c.orig	Wed Dec 29 12:26:16 1999
-+++ io.c	Wed Dec 29 12:27:39 1999
-@@ -52,7 +52,7 @@
+# $OpenBSD: patch-ioc,v 1.2 2003/06/18 12:18:12 naddy Exp $
+--- io.c.orig	Thu Jun 19 11:06:28 1997
++++ io.c	Wed Jun 18 14:13:14 2003
+@@ -52,7 +52,7 @@ int readline(int filedes, char *line, in
  	
  	while (++count < maxlen && term_flag == FALSE) {
  	
@@ -10,7 +10,7 @@
  		deadline.tv_sec = maxwait;
  		deadline.tv_usec = 0;
  
-@@ -115,7 +115,7 @@
+@@ -115,7 +115,7 @@ int writen(int filedes, char *line, int 
  	nleft = nbytes;
  	
  	do {

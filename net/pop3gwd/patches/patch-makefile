@@ -1,6 +1,6 @@
-# $OpenBSD: patch-makefile,v 1.2 2001/03/16 10:34:43 wilfried Exp $
+# $OpenBSD: patch-makefile,v 1.3 2003/06/18 12:18:12 naddy Exp $
 --- Makefile.orig	Thu Jun 19 11:06:28 1997
-+++ Makefile	Thu Mar 15 22:16:16 2001
++++ Makefile	Wed Jun 18 14:13:30 2003
 @@ -2,23 +2,22 @@
  # -------------------
  
@@ -13,7 +13,7 @@
 +INSTALL_DIR=${PREFIX}/libexec
  VERSION=1.2
 -DOC_DIR=/usr/doc/pop3gwd-$(VERSION)
-+DOC_DIR=${PREFIX}/share/doc/pop3gwd-$(VERSION)
++DOC_DIR=${PREFIX}/share/doc/pop3gwd
  
  
  in.pop3gwd:	pop3-gw.h $(MODULES)
