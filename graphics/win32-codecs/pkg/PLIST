@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/21 07:16:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/26 16:52:18 espie Exp $
 lib/win32/CLRVIDDC.DLL
 lib/win32/CtWbJpg.DLL
 lib/win32/LCodcCMP.dll
@@ -73,4 +73,15 @@ lib/win32/wmv8ds32.ax
 lib/win32/wmv9dmod.dll
 lib/win32/wmvdmod.dll
 lib/win32/wmvds32.ax
+lib/win32/14_4.so.6.0
+lib/win32/28_8.so.6.0
+lib/win32/atrc.so.6.0
+lib/win32/cook.so.6.0
+lib/win32/ddnt.so.6.0
+lib/win32/dnet.so.6.0
+lib/win32/drv2.so.6.0
+lib/win32/drv3.so.6.0
+lib/win32/dspr.so.6.0
+lib/win32/sipr.so.6.0
+lib/win32/tokr.so.6.0
 @dirrm lib/win32
