@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_c-client_mail_c,v 1.1 2003/06/20 13:41:02 henning Exp $
+--- src/c-client/mail.c.orig	Fri Jan  3 02:28:20 2003
++++ src/c-client/mail.c	Fri Jun 20 15:31:10 2003
+@@ -2798,7 +2798,11 @@ void mail_dlog (char *string,long flag)
+ {
+   mm_dlog ((debugsensitive || !flag) ? string : "<suppressed>");
+ }
+-
++
++void mm_dlog (char *string)
++{
++}
++
+ /* Mail parse UID sequence
+  * Accepts: mail stream
+  *	    sequence to parse
