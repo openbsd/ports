@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/12 07:17:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/07/21 23:41:07 pvalchev Exp $
 
 COMMENT=	"9wm with automatic window tiling and virtual desktops"
 
-DISTNAME=	larswm-7.1
+DISTNAME=	larswm-7.1.2
 CATEGORIES=	plan9
 MASTER_SITES=	http://www.fnurt.net/larswm/ \
 		http://openbsd.rutgers.edu/
