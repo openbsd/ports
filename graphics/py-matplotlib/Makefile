@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/17 23:56:43 djm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/28 00:17:26 alek Exp $
 
 COMMENT=	"Python charting and plotting API"
 
 DISTNAME=	matplotlib-0.64
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		devel/gettext
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
 			freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-			gtk-x11-2.0.0.0 iconv intl m pango-1.0.0.0 \
+			gtk-x11-2.0.0.0 Xcursor m pango-1.0.0.0 \
 			pangox-1.0.0.0 pangoxft-1.0.0.0 stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matplotlib/}
@@ -30,9 +31,7 @@ RUN_DEPENDS=	::math/py-Numeric \
 		::devel/py-tz \
 		::devel/py-dateutil
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	tiff.35::graphics/tiff \
-		png.3::graphics/png \
-		jpeg.62::graphics/jpeg
+LIB_DEPENDS=	png.3::graphics/png
 
 MAKE_ENV+=      EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng"
 
