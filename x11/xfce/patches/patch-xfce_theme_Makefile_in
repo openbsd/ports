@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce_theme_Makefile_in,v 1.1 2002/03/30 01:27:41 brad Exp $
+--- xfce_theme/Makefile.in.orig	Thu Mar 28 13:55:37 2002
++++ xfce_theme/Makefile.in	Thu Mar 28 13:55:45 2002
+@@ -141,7 +141,7 @@ libxfce_la_SOURCES = \
+ 	xfce_theme_main.c
+ 
+ 
+-libxfce_la_LDFLAGS = -module -avoid-version
++libxfce_la_LDFLAGS = -avoid-version
+ libxfce_la_LIBADD = $(GTK_LIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

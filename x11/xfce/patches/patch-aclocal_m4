@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2002/03/24 01:20:39 brad Exp $
+$OpenBSD: patch-aclocal_m4,v 1.2 2002/03/30 01:27:41 brad Exp $
 --- aclocal.m4.orig	Sun Jan 20 14:16:51 2002
-+++ aclocal.m4	Sat Mar 23 20:11:55 2002
++++ aclocal.m4	Fri Mar 29 19:39:46 2002
 @@ -971,7 +971,14 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
@@ -42,7 +42,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2002/03/24 01:20:39 brad Exp $
 +       hardcode_libdir_flag_spec='-R$libdir'
 +      ;;
 +      *)
-+       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
 +       if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +	 export_dynamic_flag_spec='${wl}-E'

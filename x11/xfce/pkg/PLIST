@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/03/27 17:02:18 nino Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/03/30 01:27:41 brad Exp $
 bin/CDE2Xfcepal
 bin/glob
 bin/startxfce
@@ -30,6 +30,7 @@ bin/xfumed
 bin/xfwm
 lib/gtk/themes/engines/libxfce.a
 lib/gtk/themes/engines/libxfce.la
+%%SHARED%%
 lib/xfce/Xclients
 lib/xfce/fvwm2rc
 lib/xfce/fvwmrc
