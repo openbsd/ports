@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/22 04:35:35 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/05/11 01:20:57 brad Exp $
 
-DISTNAME=	audiofile-0.1.6
-PKGNAME=	lib${DISTNAME}
+DISTNAME=	audiofile-0.1.7
+PKGNAME=	libaudiofile-0.1.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITES=	ftp://ftp.68k.org/pub/michael/ \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR= gnome-1.0/sources
 
 NEED_VERSION=	1.73
 
-MAINTAINER=	rohee@OpenBSD.ORG
+MAINTAINER=	rohee@openbsd.org
 
 SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
