@@ -1,3 +1,4 @@
+# $OpenBSD: systrace.policy,v 1.2 2005/02/09 20:36:30 sturm Exp $
 Policy: ${WRKDIR}/fake-i386/usr/local/netscape/vreg, Emulation: linux
 	linux-brk: permit
 	linux-chdir: permit
