@@ -1,10 +1,10 @@
 ==============================================================
-IMP has been installed into ${INSTDIR}
+${HORDE_NAME} has been installed into ${INSTDIR}
 
 Proceed to complete the installation by reading:
 ${INSTDIR}/docs/INSTALL
 
-Before installing IMP, make sure that Horde is correctly
+Before installing ${HORDE_NAME}, make sure that Horde is correctly
 configured and working first!
 
 ==============================================================
