@@ -1,10 +1,32 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2004/07/24 12:47:15 espie Exp $
---- acinclude.m4.orig	Sun May 30 18:53:46 2004
-+++ acinclude.m4	Mon Jul 19 17:00:13 2004
-@@ -7618,11 +7618,7 @@ nto-qnx*)
+$OpenBSD: patch-acinclude_m4,v 1.2 2004/08/14 18:00:22 brad Exp $
+--- acinclude.m4.orig	Sun May 30 12:24:10 2004
++++ acinclude.m4	Thu Aug 12 16:57:18 2004
+@@ -6073,6 +6073,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
+     lt_cv_sys_max_cmd_len=8192;
+     ;;
+ 
++  netbsd* | freebsd* | openbsd* | darwin* )
++    # This has been around since 386BSD, at least.  Likely further.
++    if test -x /sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/sbin/sysctl -n kern.argmax`
++    elif test -x /usr/sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/usr/sbin/sysctl -n kern.argmax`
++    else
++      lt_cv_sys_max_cmd_len=65536 # usable default for *BSD
++    fi
++    # And add a safety zone
++    lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \/ 4`
++    ;;
++
+  *)
+     # If test is not a shell built-in, we'll probably end up computing a
+     # maximum length that is only half of the actual maximum length, but
+@@ -7609,13 +7622,7 @@ nto-qnx*)
+   ;;
+ 
  openbsd*)
-   lt_cv_file_magic_cmd=/usr/bin/file
-   lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+-  lt_cv_file_magic_cmd=/usr/bin/file
+-  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
 -  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 -    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
 -  else
@@ -14,3 +36,34 @@ $OpenBSD: patch-acinclude_m4,v 1.1 2004/07/24 12:47:15 espie Exp $
    ;;
  
  osf3* | osf4* | osf5*)
+@@ -8567,6 +8574,22 @@ case $host_os in
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd2*)
++      # C++ shared libraries are fairly broken
++      _LT_AC_TAGVAR(ld_shlibs, $1)=no
++      ;;
++  openbsd*)
++      _LT_AC_TAGVAR(hardcode_direct, $1)=yes
++      _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
++      _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++       _LT_AC_TAGVAR(archive_expsym_cmds, $1)='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-retain-symbols-file,$export_symbols -o $lib'
++       _LT_AC_TAGVAR(export_dynamic_flag_spec, $1)='${wl}-E'
++       _LT_AC_TAGVAR(whole_archive_flag_spec, $1)="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
++      fi
++      output_verbose_link_cmd='echo'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -10884,6 +10907,7 @@ EOF
+       _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
+       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+ 	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++	_LT_AC_TAGVAR(archive_expsym_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags ${wl}-retain-symbols-file,$export_symbols'
+ 	_LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
+ 	_LT_AC_TAGVAR(export_dynamic_flag_spec, $1)='${wl}-E'
+       else
