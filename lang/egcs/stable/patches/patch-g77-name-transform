@@ -6,7 +6,7 @@
  	  rm -f $(srcdir)/f/g77.info-*; \
 -	  $(MAKEINFO) -I$(srcdir)/f -o f/g77.info $(srcdir)/f/g77.texi; \
 +	  $(MAKEINFO) -I$(srcdir)/f -o f/${G77_INSTALL_NAME}.info $(srcdir)/f/g77.texi && touch $@; \
- 	fi
+ 	else true; fi
  
  f/g77.dvi: $(srcdir)/f/g77.texi $(srcdir)/f/bugs.texi \
 @@ -363,17 +363,17 @@

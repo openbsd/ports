@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.14 1999/03/02 04:41:04 marc Exp $
+# $OpenBSD: Makefile,v 1.15 1999/03/09 17:12:05 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release.
@@ -45,7 +45,7 @@ ONE_ARCHIVE=yes
 
 #### fetch section
 VERSION= 1.1.2-pre2
-#PREPATCH= 1.1.2-pre1
+PREPATCH= 1.1.2-pre3
 
 DIRECTORY=egcs/%SUBDIR%/
 
@@ -202,7 +202,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
-WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
+SEPARATE_BUILD=yes
 
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
