@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/24 07:04:06 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/20 14:05:22 brad Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
+
+COMES_WITH=	2.9
+
+COMMENT=	"graphics library similar to SGI's OpenGL"
 
 DISTNAME=	Mesa-3.2.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mesa3d
 DISTFILES=	MesaLib-3.2.1.tar.gz MesaDemos-3.2.1.tar.gz
