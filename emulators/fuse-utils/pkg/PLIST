@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/16 14:33:35 grange Exp $
+bin/rzxdump
+bin/rzxtool
+bin/tzxconv
+bin/tzxlist
+man/man1/rzxdump.1
+man/man1/rzxtool.1
+man/man1/tzxconv.1
+man/man1/tzxlist.1

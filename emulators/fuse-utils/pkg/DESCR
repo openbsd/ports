@@ -1,0 +1,6 @@
+fuse utilities are a few tools which may be of occasional use when
+dealing with ZX Spectrum emulator files. They were originally
+distributed with fuse, the Free Unix Spectrum Emulator, but are now
+independent of fuse and can be used on their own.
+
+WWW: ${HOMEPAGE}
