@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/29 01:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/13 06:54:58 fgsch Exp $
 
      SUBDIR += Wnn
      SUBDIR += Wnn-data
      SUBDIR += canna
+     SUBDIR += kbanner
      SUBDIR += kinput2,wnn
      SUBDIR += kinput2,canna
      SUBDIR += kinput2,canna,wnn
