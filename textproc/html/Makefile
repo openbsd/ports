@@ -1,17 +1,10 @@
-# OpenBSD makefile for:	html
-# Version required:	4.0
-# Date created:		December 1, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.16 2002/03/21 21:25:53 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.17 2002/04/25 01:51:46 naddy Exp $
 
-COMMENT=	"all W3C published SGML DTDs for HTML"
+COMMENT=	"all W3C-published SGML DTDs for HTML"
 
-DISTNAME=	html-4.0b
+DISTNAME=	html-4.01
 CATEGORIES=	textproc
 NEED_VERSION=	1.515
-MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -21,6 +14,8 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
+MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
 WRKDIST=	${WRKDIR}
