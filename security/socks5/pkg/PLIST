@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/16 06:00:15 form Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/30 22:38:33 espie Exp $
+@pkgcfl dante-*
 bin/rarchie
 bin/rfinger
 bin/rftp
