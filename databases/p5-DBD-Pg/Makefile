@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:24 espie Exp $
-
-BROKEN=		does not build, install target does not exist.
+# $OpenBSD: Makefile,v 1.12 2000/03/11 16:19:55 kevlo Exp $
 
 DISTNAME=	DBD-Pg-0.93
 PKGNAME=	p5-DBD-Pg-0.93
