@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.8 2004/10/20 20:15:20 xsa Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2004/11/30 08:57:55 xsa Exp $
 
 DISTNAME=	mutt-${VERSION}i
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.mutt.org/mutt/ \
@@ -57,13 +58,13 @@ RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Mhcache}
-PATCHFILES+=		patch-1.5.6.tg.hcache.9:1
+PATCHFILES+=		patch-1.5.6.tg.hcache.11:1
 PATCH_DIST_STRIP=	-p1
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	--enable-hcache
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
-SUPDISTFILES+=		patch-1.5.6.tg.hcache.9:1
+SUPDISTFILES+=		patch-1.5.6.tg.hcache.11:1
 .endif
 
 .if defined(HOMESPOOL)
