@@ -1,0 +1,11 @@
+--- kaudio/Makefile.in.orig	Tue Jun  1 11:02:42 1999
++++ kaudio/Makefile.in	Tue Jun  1 11:03:16 1999
+@@ -202,7 +202,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ maudio_OBJECTS =  io_oss.o maudio.o sample.o
+-maudio_LDADD = $(LDADD)
++maudio_LDADD = $(LDADD) -lossaudio
+ maudio_DEPENDENCIES = 
+ maudio_LDFLAGS = 
+ kaudioserver_OBJECTS =  kaudioserver.o
