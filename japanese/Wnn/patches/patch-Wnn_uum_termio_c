@@ -1,6 +1,6 @@
-$OpenBSD: patch-Wnn_uum_termio_c,v 1.1 2000/04/16 21:53:32 espie Exp $
+$OpenBSD: patch-Wnn_uum_termio_c,v 1.2 2000/04/20 22:59:22 espie Exp $
 --- Wnn/uum/termio.c.orig	Thu Jul  1 01:33:10 1993
-+++ Wnn/uum/termio.c	Sun Apr 16 00:24:11 2000
++++ Wnn/uum/termio.c	Sun Apr 16 14:02:18 2000
 @@ -93,7 +93,7 @@ openTermData()
          fprintf(stderr, "Cannot get terminal name.");
          return(-1);
@@ -24,3 +24,16 @@ $OpenBSD: patch-Wnn_uum_termio_c,v 1.1 2000/04/16 21:53:32 espie Exp $
  #if defined(uniosu)
      if(jterm < 2) {	/* kanji terminal */
          fprintf(stderr, "Not kanji terminal. Goodbye !\n");
+@@ -119,10 +121,12 @@ openTermData()
+          fprintf(stderr, "Your terminal is not strong enough. Goodbye !\n");
+          return(-1);
+     }
++#if 0
+     termchar[0] = 0;
+     strcat(termchar,cp);
+     strcat(termchar,"-j");
+     setenv("TERM", termchar);
++#endif
+ 
+     sprintf(lcode,"%d", lines - conv_lines);
+     setenv("LINES", lcode);
