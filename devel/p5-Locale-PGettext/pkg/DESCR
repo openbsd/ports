@@ -1,0 +1,2 @@
+It provides the same functionality as GNU gettext does,
+but it is written in pure perl.

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/13 07:32:38 kevlo Exp $
+bin/MsgFormat
+bin/XText
+libdata/perl5/site_perl/Locale/PGetText.pm
+man/man1/MsgFormat.1
+man/man1/XText.1
+man/man3/Locale::PGetText.3p
