@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/18 21:35:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 06:07:07 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
 VERSION=	0.13.0b
 DISTNAME=	mad-${VERSION}
-PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	audio devel
 NEED_VERSION=	1.425
 
