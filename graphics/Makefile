@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2002/11/24 13:16:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.102 2003/01/28 16:40:23 couderc Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -88,6 +88,7 @@
      SUBDIR += py-Imaging
      SUBDIR += qiv
 #    SUBDIR += qvplay
+     SUBDIR += ruby-gdk-pixbuf
      SUBDIR += s10sh
 #    SUBDIR += sced
      SUBDIR += smpeg-xmms
