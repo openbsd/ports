@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/01/05 16:36:00 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/02/26 03:28:03 brad Exp $
 
 DISTNAME=	firewalk-0.8
 CATEGORIES=     net
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
-BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
+LIB_DEPENDS=	net::net/libnet
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
