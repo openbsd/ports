@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/10/25 02:34:11 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2001/11/17 00:12:23 naddy Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -169,7 +169,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
 ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
 .endif

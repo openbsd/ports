@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2001/10/24 12:38:46 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2001/11/17 00:12:23 naddy Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--without-gd
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql 
-LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql 
 .endif

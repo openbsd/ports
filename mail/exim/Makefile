@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/10/24 12:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/11/17 00:12:23 naddy Exp $
 
 COMMENT=	"MTA for systems connected to the Internet"
 
@@ -49,7 +49,7 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
 
 .if ${FLAVOR:L:Mmysql}
 LIBS+=		${LOCALBASE}/lib/mysql
-LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 EXIM_MAKECAT+=	"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
