@@ -1,6 +1,6 @@
-$OpenBSD: patch-libtiff_tif_fax3_c,v 1.4 2004/10/20 20:37:48 brad Exp $
+$OpenBSD: patch-libtiff_tif_fax3_c,v 1.5 2005/03/27 03:57:26 brad Exp $
 --- libtiff/tif_fax3.c.orig	Thu Nov  6 03:22:13 2003
-+++ libtiff/tif_fax3.c	Wed Oct 20 15:05:53 2004
++++ libtiff/tif_fax3.c	Sat Mar 26 22:46:19 2005
 @@ -437,6 +437,21 @@ _TIFFFax3fillruns(u_char* buf, uint32* r
  #undef	ZERO
  #undef	FILL
@@ -11,7 +11,7 @@ $OpenBSD: patch-libtiff_tif_fax3_c,v 1.4 2004/10/20 20:37:48 brad Exp $
 +	char	*cp = NULL;
 +	tsize_t	bytes = nmemb * elem_size;
 +
-+	if (elem_size && bytes / elem_size == nmemb)
++	if (nmemb && elem_size && bytes / elem_size == nmemb)
 +		cp = (char*) _TIFFmalloc(bytes);
 +
 +	if (cp == NULL)

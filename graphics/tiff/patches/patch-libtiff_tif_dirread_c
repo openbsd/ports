@@ -1,6 +1,6 @@
-$OpenBSD: patch-libtiff_tif_dirread_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+$OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
 --- libtiff/tif_dirread.c.orig	Mon Dec 22 03:22:15 2003
-+++ libtiff/tif_dirread.c	Wed Oct 20 14:38:11 2004
++++ libtiff/tif_dirread.c	Sat Mar 26 22:45:43 2005
 @@ -62,11 +62,17 @@ static	int TIFFFetchShortPair(TIFF*, TIF
  static	void ChopUpSingleUncompressedStrip(TIFF*);
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.1 2004/10/20 20:37:48 brad Exp $
 +	char	*cp = NULL;
 +	tsize_t	bytes = nmemb * elem_size;
 +
-+	if (elem_size && bytes / elem_size == nmemb)
++	if (nmemb && elem_size && bytes / elem_size == nmemb)
 +		cp = (char*)_TIFFmalloc(bytes);
 +
  	if (cp == NULL)
