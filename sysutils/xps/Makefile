@@ -3,7 +3,7 @@
 # Date created:         28 April 2001
 # Whom:                 Angelos D. Keromytis (angelos@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.3 2001/05/08 02:47:22 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/09 04:31:18 angelos Exp $
 #
 
 DISTNAME=       xps-3.21
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+COMMENT=	"graphically display and update dynamically the process tree"
 
 HOMEPAGE=       http://www.netwinder.org/~rocky/xps-home/
 
