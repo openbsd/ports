@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.254 2003/03/29 02:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.255 2003/04/01 17:30:24 mpech Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += mrtd
      SUBDIR += mrtg
      SUBDIR += mtr
+     SUBDIR += mtr,no_x11
      SUBDIR += mudix
      SUBDIR += nam
      SUBDIR += named-xfer
