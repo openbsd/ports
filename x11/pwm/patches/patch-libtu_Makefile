@@ -1,27 +1,27 @@
-$OpenBSD: patch-libtu_Makefile,v 1.1 2002/02/20 12:47:55 naddy Exp $
---- libtu/Makefile.orig	Fri Mar  9 09:20:04 2001
-+++ libtu/Makefile	Mon Feb 18 20:15:03 2002
+$OpenBSD: patch-libtu_Makefile,v 1.2 2003/06/05 23:01:51 naddy Exp $
+--- libtu-20030528/Makefile.orig	Sun Jun  1 15:28:03 2003
++++ libtu-20030528/Makefile	Sun Jun  1 15:28:32 2003
 @@ -1,56 +1,4 @@
--LIBTU_NO_ERRMSG=1
 -##
 -## libtu Makefile
 -##
 -
--# System-specific configuration is in ../system.mk
--include ../system.mk
+-# System-specific configuration is in system.mk
+-TOPDIR=.
+-include system-inc.mk
 -
 -######################################
 -
 -INCLUDES += -I./include
 -CFLAGS += $(POSIX_SOURCE)
 -
--OBJS= misc.o output.o util.o optparser.o parser.o tokenizer.o
+-SOURCES=misc.c output.c util.c optparser.c parser.c tokenizer.c map.c
 -
 -ifdef LIBTU_NO_ERRMSG
 -DEFINES += -DLIBTU_NO_ERRMSG
 -else
 -ifndef HAS_SYSTEM_ASPRINTF
--OBJS += ../snprintf_2.2/snprintf.o
+-SOURCES += snprintf_2.2/snprintf.c
 -else
 -DEFINES += -DHAS_SYSTEM_ASPRINTF
 -endif
@@ -32,7 +32,7 @@ $OpenBSD: patch-libtu_Makefile,v 1.1 2002/02/20 12:47:55 naddy Exp $
 -
 -######################################
 -
--include ../rules.mk
+-include $(TOPDIR)/rules.mk
 -
 -######################################
 -

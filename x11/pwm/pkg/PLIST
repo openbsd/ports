@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/20 12:47:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/05 23:01:51 naddy Exp $
 bin/pwm
 man/man1/pwm.1
 share/doc/pwm/LICENSE
 share/doc/pwm/config.txt
-share/examples/pwm/buttons-default.conf-sample
-share/examples/pwm/keys-default.conf-sample
-share/examples/pwm/look-beoslike.conf-sample
-share/examples/pwm/look-brownsteel.conf-sample
-share/examples/pwm/menus-default.conf-sample
-share/examples/pwm/pwm.conf-sample
+share/examples/pwm/buttons-default.conf
+share/examples/pwm/keys-default.conf
+share/examples/pwm/look-beoslike.conf
+share/examples/pwm/look-brownsteel.conf
+share/examples/pwm/menus-default.conf
+share/examples/pwm/pwm.conf
 @dirrm share/examples/pwm
 @dirrm share/doc/pwm

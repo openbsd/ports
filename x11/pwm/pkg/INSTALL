@@ -1,6 +1,6 @@
 #!/bin/sh
 # 
-# $OpenBSD: INSTALL,v 1.2 2002/03/08 11:50:57 naddy Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/05 23:01:51 naddy Exp $
 # Pre/post-installation setup of pwm
 
 # exit on errors, use a sane path and install prefix
@@ -26,12 +26,12 @@ do_notice()
 do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/buttons-default.conf-sample $CONFIG_DIR/buttons-default.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/look-beoslike.conf-sample $CONFIG_DIR/look-beoslike.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/menus-default.conf-sample $CONFIG_DIR/menus-default.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/keys-default.conf-sample $CONFIG_DIR/keys-default.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/look-brownsteel.conf-sample $CONFIG_DIR/look-brownsteel.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/pwm.conf-sample $CONFIG_DIR/pwm.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/buttons-default.conf $CONFIG_DIR/buttons-default.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/look-beoslike.conf $CONFIG_DIR/look-beoslike.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/menus-default.conf $CONFIG_DIR/menus-default.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/keys-default.conf $CONFIG_DIR/keys-default.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/look-brownsteel.conf $CONFIG_DIR/look-brownsteel.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/pwm.conf $CONFIG_DIR/pwm.conf
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed into"

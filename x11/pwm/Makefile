@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/05 23:01:51 naddy Exp $
 
 COMMENT=		"lightweight window manager with emphasis on usability"
 
-DISTNAME=		pwm-20010309
+DISTNAME=		pwm-20030528
 CATEGORIES=		x11
 
 HOMEPAGE=		http://modeemi.cs.tut.fi/~tuomov/pwm/
 MASTER_SITES=		http://modeemi.cs.tut.fi/~tuomov/dl/
 
-MAINTAINER=             Andrey Smagin <andrey@smagin.com>
+MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
 
-# Artistic License
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
