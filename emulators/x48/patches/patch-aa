@@ -1,0 +1,178 @@
+diff -ru ./src/Imakefile.orig ./src/Imakefile
+--- ./src/Imakefile.orig	Thu Jan 12 05:17:01 1995
++++ ./src/Imakefile	Fri Nov 28 14:42:56 1997
+@@ -22,7 +22,6 @@
+ 
+ #include "../config.h"
+ 
+-            BIN = $(TOP)/bin
+           UTILS = $(TOP)/utils
+        READLINE = $(TOP)/readline
+     READLINELIB = $(READLINE)/libreadline.a
+@@ -86,31 +85,35 @@
+              CO = co -l
+        TARFILES = Imakefile X48.ad $(TARS1) $(SRCS2) $(SRCS3) $(SRCS4) $(HDRS)
+ 
+-all:: $(BIN)/x48 $(BIN)/dump2rom $(BIN)/checkrom $(BIN)/mkcard
+ 
+-       PROGRAMS = $(BIN)/x48 $(BIN)/dump2rom $(BIN)/checkrom $(BIN)/mkcard
++       PROGRAMS = x48 dump2rom checkrom mkcard
++
++all:: $(PROGRAMS)
+ 
+ depend:: version.c X48.ad.h
+ 
+ echo_tarfiles:
+ 	@echo $(TARFILES)
+ 
+-#ifndef ComplexProgramTarget_4
+-#define ComplexProgramTarget_4(program,locallib,syslib)                 @@\
+-program: $(OBJS4) $(DEPLIBS4)                                           @@\
+-	RemoveTargetProgram($@)                                         @@\
+-	$(CC) -o $@ $(LDOPTIONS) $(OBJS4) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+-                                                                        @@\
+-SaberProgramTarget(program,$(SRCS4),$(OBJS4),locallib,syslib)           @@\
+-                                                                        @@\
+-InstallProgram(program,$(BINDIR))                                       @@\
+-InstallManPage(program,$(MANDIR))
+-#endif /* ComplexProgramTarget_4 */
+-
+-ComplexProgramTarget_1($(BIN)/x48, $(X48LIBS),)
+-ComplexProgramTarget_2($(BIN)/dump2rom,,)
+-ComplexProgramTarget_3($(BIN)/checkrom,,)
+-ComplexProgramTarget_4($(BIN)/mkcard,,)
++#ifdef ProgramTargetHelper
++#undef ProgramTargetHelper
++#endif
++#define	ProgramTargetHelper(program,srcs,objs,deplib,locallib,syslib)	@@\
++ProgramTargetName(program): $(objs) $(deplib)				@@\
++	RemoveTargetProgram($@)						@@\
++	LinkRule($@,$(LDOPTIONS),$(objs),locallib $(LDLIBS) syslib)	@@\
++									@@\
++CenterProgramTarget(program,$(srcs),$(objs),locallib,syslib)		@@\
++SentinelProgramTarget(program,$(objs) $(deplib),$(objs) locallib $(LDLIBS) syslib) @@\
++PurifyProgramTarget(program,$(objs) $(deplib),$(objs) locallib $(LDLIBS) syslib) @@\
++ProofProgramTarget(program,$(objs) $(deplib),$(objs) locallib $(LDLIBS) syslib) @@\
++									@@\
++InstallProgram(program,$(BINDIR))
++
++ComplexProgramTarget_1(x48, $(X48LIBS),)
++ComplexProgramTarget_2(dump2rom,,)
++ComplexProgramTarget_3(checkrom,,)
++ComplexProgramTarget_4(mkcard,,)
+ 
+ InstallAppDefaults(X48)
+ 
+diff -ru ../../work/x48-0.4.0/src/serial.c ./src/serial.c
+--- ../../work/x48-0.4.0/src/serial.c	Wed Jan 11 12:24:04 1995
++++ ./src/serial.c	Wed Oct 23 10:59:25 1996
+@@ -77,6 +77,8 @@
+ #ifdef SOLARIS
+ #include <sys/stream.h>
+ #include <sys/stropts.h>
++#endif
++#if defined(SOLARIS) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+ #include <sys/termios.h>
+ #endif
+ 
+@@ -238,7 +240,7 @@
+ 
+   if (ttyp >= 0)
+     {
+-#if defined(SUNOS) || defined(HPUX)
++#if defined(SUNOS) || defined(HPUX) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+       if (tcgetattr(ttyp, &ttybuf) < 0)
+ #else
+       if (ioctl(ttyp, TCGETS, (char *)&ttybuf) < 0)
+@@ -263,7 +265,7 @@
+ 
+   if (ttyp >= 0)
+     {
+-#if defined(SUNOS) || defined (HPUX)
++#if defined(SUNOS) || defined (HPUX) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+       if (tcsetattr(ttyp, TCSANOW, &ttybuf) < 0)
+ #else
+       if (ioctl(ttyp, TCSETS, (char *)&ttybuf) < 0)
+@@ -291,7 +293,7 @@
+ 
+   if (ir_fd >= 0)
+     {
+-#if defined(SUNOS) || defined (HPUX)
++#if defined(SUNOS) || defined (HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+       if (tcgetattr(ir_fd, &ttybuf) < 0)
+ #else
+       if (ioctl(ir_fd, TCGETS, (char *)&ttybuf) < 0)
+@@ -315,7 +317,7 @@
+ 
+   if (ir_fd >= 0)
+     {
+-#if defined(SUNOS) || defined(HPUX)
++#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+       if (tcsetattr(ir_fd, TCSANOW, &ttybuf) < 0)
+ #else
+       if (ioctl(ir_fd, TCSETS, (char *)&ttybuf) < 0)
+@@ -344,7 +346,7 @@
+ 
+   if (ir_fd >= 0)
+     {
+-#if defined(SUNOS) || defined (HPUX)
++#if defined(SUNOS) || defined (HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
+       if (tcgetattr(ir_fd, &ttybuf) < 0)
+ #else
+       if (ioctl(ir_fd, TCGETS, (char *)&ttybuf) < 0)
+@@ -358,6 +360,10 @@
+         }
+     }
+ 
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
++  cfsetspeed(&ttybuf, baud);
++#else
++
+   ttybuf.c_cflag &= ~CBAUD;
+ 
+   baud &= 0x7;
+@@ -404,9 +410,11 @@
+       ttybuf.c_cflag |= B9600;
+     }
+ 
++#endif /* FreeBSD */
++
+   if (ir_fd >= 0)
+     {
+-#if defined(SUNOS) || defined(HPUX)
++#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+       if (tcsetattr(ir_fd, TCSANOW, &ttybuf) < 0)
+ #else
+       if (ioctl(ir_fd, TCSETS, (char *)&ttybuf) < 0)
+@@ -422,7 +430,7 @@
+ 
+   if (ttyp >= 0)
+     {
+-#if defined(SUNOS) || defined(HPUX)
++#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+       if (tcgetattr(ttyp, &ttybuf) < 0)
+ #else
+       if (ioctl(ttyp, TCGETS, (char *)&ttybuf) < 0)
+@@ -437,6 +445,9 @@
+         }
+     }
+ 
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
++  cfsetspeed(&ttybuf, baud);
++#else
+   ttybuf.c_cflag &= ~CBAUD;
+ 
+   baud &= 0x7;
+@@ -482,10 +493,11 @@
+         fprintf(stderr, "%s: can\'t set baud rate, using 9600\n", progname);
+       ttybuf.c_cflag |= B9600;
+     }
++#endif
+ 
+   if (ttyp >= 0)
+     {
+-#if defined(SUNOS) || defined(HPUX)
++#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+       if (tcsetattr(ttyp, TCSANOW, &ttybuf) < 0)
+ #else
+       if (ioctl(ttyp, TCSETS, (char *)&ttybuf) < 0)
