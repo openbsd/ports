@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/22 08:49:29 peter Exp $
+libdata/perl5/site_perl/Apache/ASP.pm
+libdata/perl5/site_perl/Bundle/Apache/ASP.pm
+libdata/perl5/site_perl/Bundle/Apache/ASP/Extra.pm
+man/man3/Apache::ASP.3p
+man/man3/Bundle::Apache::ASP.3p
+man/man3/Bundle::Apache::ASP::Extra.3p
+@dirrm libdata/perl5/site_perl/Bundle/Apache/ASP

@@ -1,0 +1,5 @@
+Apache::ASP provides an Active Server Pages port to the Apache Web
+Server with Perl scripting only, and enables developing of dynamic
+web applications with session management and embedded perl code.
+There are also many powerful extensions, including XML taglibs,
+XSLT rendering, and new events not originally part of the ASP API!
