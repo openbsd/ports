@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2003/10/07 05:47:57 marcm Exp $
---- aclocal.m4.orig	2003-08-24 12:00:16.000000000 -0700
-+++ aclocal.m4	2003-09-08 14:48:59.000000000 -0700
+$OpenBSD: patch-aclocal_m4,v 1.5 2003/12/01 04:08:56 marcm Exp $
+--- aclocal.m4.orig	2003-10-23 16:17:53.000000000 -0700
++++ aclocal.m4	2003-11-29 13:57:27.000000000 -0800
 @@ -712,12 +712,18 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
  	  fi
  	  libgtop_need_server=no
@@ -21,22 +21,13 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2003/10/07 05:47:57 marcm Exp $
  	solaris*)
  	  libgtop_sysdeps_dir=solaris
  	  libgtop_use_machine_h=yes
-@@ -3446,7 +3452,7 @@ if test -f "$ltmain"; then
-   # careful not to overquote the AC_SUBSTed values.  We take copies of the
-   # variables and quote the copies for generation of the libtool script.
-   for var in echo old_CC old_CFLAGS \
--    AR AR_FLAGS CC LD LN_S NM SHELL \
-+    AR AR_FLAGS EGREP CC LD LN_S NM SHELL \
-     reload_flag reload_cmds wl \
-     pic_flag link_static_flag no_builtin_flag export_dynamic_flag_spec \
-     thread_safe_flag_spec whole_archive_flag_spec libname_spec \
-@@ -3550,6 +3556,9 @@ CC=$lt_CC
- # Is the compiler the GNU C compiler?
- with_gcc=$GCC
+@@ -5046,6 +5052,9 @@ with_gcc=$_LT_AC_TAGVAR(GCC, $1)
+ # An ERE matcher.
+ EGREP=$lt_EGREP
  
 +# An ERE matcher.
 +EGREP=$lt_EGREP
 +
  # The linker used to build libraries.
- LD=$lt_LD
+ LD=$lt_[]_LT_AC_TAGVAR(LD, $1)
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/07 05:47:57 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/01 04:08:56 marcm Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
-V=			2.0.5
+V=			2.0.7
 DISTNAME=		libgtop-${V}
 PKGNAME=		libgtop2-${V}
 CATEGORIES=		devel
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	gettext
-LIB_DEPENDS=	glib-2.0.0.0::devel/glib2
+LIB_DEPENDS=	glib-2.0.0.0::devel/glib2 \
+		popt::devel/popt
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

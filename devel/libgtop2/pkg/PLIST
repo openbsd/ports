@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:47:57 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/01 04:08:56 marcm Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/libgtop2.info
 bin/libgtop_daemon2
 bin/libgtop_server2
+include/gnome/gnomesupport.h
 include/libgtop-2.0/glibtop.h
 include/libgtop-2.0/glibtop/close.h
 include/libgtop-2.0/glibtop/command.h
@@ -51,7 +52,6 @@ lib/libgnomesupport-2.0.a
 lib/libgnomesupport-2.0.la
 lib/libgtop-2.0.a
 lib/libgtop-2.0.la
-@comment lib/libgtop/include/gnomesupport.h
 lib/libgtop_common-2.0.a
 lib/libgtop_common-2.0.la
 lib/libgtop_names-2.0.a
@@ -62,6 +62,7 @@ lib/libgtop_sysdeps-2.0.a
 lib/libgtop_sysdeps-2.0.la
 lib/libgtop_sysdeps_suid-2.0.a
 lib/libgtop_sysdeps_suid-2.0.la
+lib/pkgconfig/gnome-support-2.0.pc
 lib/pkgconfig/libgtop-2.0.pc
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
@@ -76,7 +77,6 @@ share/locale/da/LC_MESSAGES/libgtop-2.0.mo
 share/locale/de/LC_MESSAGES/libgtop-2.0.mo
 share/locale/el/LC_MESSAGES/libgtop-2.0.mo
 share/locale/es/LC_MESSAGES/libgtop-2.0.mo
-share/locale/es_ES/LC_MESSAGES/libgtop-2.0.mo
 share/locale/et/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fi/LC_MESSAGES/libgtop-2.0.mo
@@ -105,9 +105,11 @@ share/locale/ro/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ru/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sl/LC_MESSAGES/libgtop-2.0.mo
+share/locale/sq/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
+share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
 share/locale/tr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/uk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/vi/LC_MESSAGES/libgtop-2.0.mo
@@ -124,12 +126,16 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
 @comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES
 @comment @dirrm share/locale/sr@Latn
 @comment @dirrm share/locale/sr/LC_MESSAGES
 @comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
 @comment @dirrm share/locale/sl
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -186,8 +192,6 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @comment @dirrm share/locale/fa
 @comment @dirrm share/locale/et/LC_MESSAGES
 @comment @dirrm share/locale/et
-@comment @dirrm share/locale/es_ES/LC_MESSAGES
-@comment @dirrm share/locale/es_ES
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale/el/LC_MESSAGES
@@ -216,8 +220,7 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @comment @dirrm lib/pkgconfig
-@comment @dirrm lib/libgtop/include
-@comment @dirrm lib/libgtop
 @dirrm include/libgtop-2.0/glibtop
 @dirrm include/libgtop-2.0
+@dirrm include/gnome
 @exec install-info --info-dir=%D/info %D/info/libgtop2.info
