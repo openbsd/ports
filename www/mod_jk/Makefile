@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/05 01:04:11 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2005/03/08 23:01:09 kurt Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
 COMMENT=		"Apache-Tomcat AJP Connector"
 
@@ -38,14 +38,11 @@ EXAMPLES=		workers.properties workers.properties.minimal
 DOCDIR=			${PREFIX}/share/doc/mod_jk
 SUBST_VARS=		DOCDIR
 
-post-build:
-	strip ${WRKBUILD}/apache-1.3/mod_jk.so.0.0
-
 do-install:
 	sed 's,/usr/local,${TRUEPREFIX},' \
 		< ${FILESDIR}/mod_jk-enable >${WRKSRC}/mod_jk-enable
 	${INSTALL_SCRIPT} ${WRKSRC}/mod_jk-enable ${PREFIX}/sbin/mod_jk-enable
-	${INSTALL_DATA} ${WRKBUILD}/apache-1.3/mod_jk.so.0.0 ${PREFIX}/lib/mod_jk.so
+	${INSTALL_PROGRAM} ${WRKBUILD}/apache-1.3/mod_jk.so.0.0 ${PREFIX}/lib/mod_jk.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_jk
 	${INSTALL_DATA} ${FILESDIR}/mod_jk.conf ${PREFIX}/share/examples/mod_jk
 .for file in ${EXAMPLES}
