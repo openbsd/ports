@@ -1,9 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.3 2002/12/22 03:45:52 naddy Exp $
---- Makefile.orig	Sun Jun 10 14:35:06 2001
-+++ Makefile	Sun Dec 22 02:29:45 2002
+--- Makefile.orig	Sat May 22 09:21:47 2004
++++ Makefile	Sat Feb  5 17:25:47 2005
 @@ -3,9 +3,6 @@
  # User Options
- ######################################################################
+ #######################################################################
  
 -# Directory where qiv will be installed under.
 -PREFIX = /usr/local
@@ -11,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.3 2002/12/22 03:45:52 naddy Exp $
  # Font to use for statusbar in fullscreen mode
  STATUSBAR_FONT = "fixed"
  
-@@ -53,11 +50,6 @@ SS_RANDOMIZE = -r
+@@ -57,11 +54,6 @@ SS_RANDOMIZE = -r
  # Do not edit below here!
  ######################################################################
  
@@ -23,15 +22,16 @@ $OpenBSD: patch-Makefile,v 1.3 2002/12/22 03:45:52 naddy Exp $
  INCLUDES  = `imlib-config --cflags-gdk`
  LIBS      = `imlib-config --libs-gdk`
  
-@@ -114,11 +106,6 @@ install: $(PROGRAM)
- 	@echo "Installing..."
+@@ -126,12 +118,6 @@ install: $(PROGRAM)
+ 	@echo "Installing QIV..."
  	install -s -m 0755 $(PROGRAM) $(PREFIX)/bin
  	install -m 0644 $(PROGRAM).1 $(PREFIX)/man/man1
 -	$(COMPRESS_PROG) $(PREFIX)/man/man1/$(PROGRAM).1
--	@if ./qiv -o white -f ./intro.jpg ; \
+-	@if ./qiv -f ./intro.jpg ; \
 -	then echo "-- Test Passed --" ; \
 -	else echo "-- Test Failed --" ; \
 -	fi
+-	@echo -ne "\nDont forget to look into the \"qiv-command\" file and install it!\n-> cp qiv-command.example /usr/local/bin/qiv-command\n\n" 
  
  install-xscreensaver: install
  	@echo "#!/bin/sh" > $(SS_PROG)

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/30 01:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/05 16:40:29 sturm Exp $
 
 COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
 
-DISTNAME=		qiv-1.8
+DISTNAME=		qiv-2.0
 CATEGORIES=		graphics
 
 EXTRACT_SUFX=		-src.tgz
