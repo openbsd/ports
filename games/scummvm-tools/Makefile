@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/01 06:18:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/09/30 01:34:52 jolan Exp $
 
 COMMENT=	"collection of various tools for scummvm"
-DISTNAME=	scummvm-tools-0.5.0
+# this tarball is horribly packaged
+VERSION=	0.6.1
+DISTNAME=	scummvm-tools-${VERSION}-src
+PKGNAME=	${DISTNAME:S/-src//}
+WRKDIST=	${WRKDIR}/scummvm-${VERSION}-tools
+EXTRACT_SUFX=   .tar.bz2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
 HOMEPAGE=	http://scummvm.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MAINTAINER=	Jonathan Gray <jsg@goblin.cx>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,13 +30,20 @@ CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
 .endif
 
 RUN_DEPENDS=	::audio/lame \
-		::audio/vorbis-tools
+		::audio/vorbis-tools \
+		::audio/flac
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
-	${INSTALL_PROGRAM} ${WRKBUILD}/descumm{,6} ${WRKBUILD}/extract \
-		${WRKBUILD}/rescumm ${WRKBUILD}/simon{1decr,2mp3} \
+	${INSTALL_PROGRAM} \
+		${WRKBUILD}/descumm \
+		${WRKBUILD}/extract \
+		${WRKBUILD}/simon{1decr,2mp3} \
+		${WRKBUILD}/desword2 \
+		${WRKBUILD}/rescumm \
+		${WRKBUILD}/compress_san \
+		${WRKBUILD}/convbdf \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
