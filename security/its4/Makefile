@@ -1,28 +1,19 @@
-# Makefile for:		its4
-# Version required:	1.0
-# Date created:		21 Feb 2000
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.10 2000/11/18 06:27:25 dugsong Exp $
+# $OpenBSD: Makefile,v 1.11 2001/01/05 16:36:01 brad Exp $
 
 DISTNAME=	its4-1.1.1
-
 CATEGORIES=	security
-NEED_VERSION=	1.305
+NEED_VERSION=	1.336
+MASTER_SITES=	see-do-fetch-target
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-PERMIT_PACKAGE_CDROM=	"commercial.  licensing restrictions."
-PERMIT_PACKAGE_FTP=	"commercial.  licensing restrictions."
-PERMIT_DISTFILES_CDROM=	"commercial.  licensing restrictions."
-PERMIT_DISTFILES_FTP=	"commercial.  licensing restrictions."
+PERMIT_PACKAGE_CDROM=	"commercial. licensing restrictions."
+PERMIT_PACKAGE_FTP=	"commercial. licensing restrictions."
+PERMIT_DISTFILES_CDROM=	"commercial. licensing restrictions."
+PERMIT_DISTFILES_FTP=	"commercial. licensing restrictions."
 
-MASTER_SITES=	see-do-fetch-target
-MIRROR_DISTFILE=no
-
-EXTRACT_SUFX=	.tgz
-
-CONFIGURE_STYLE=	gnu dest old
+CONFIGURE_STYLE= gnu dest old
 
 CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4'
 

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2000/11/02 15:19:34 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/01/05 16:35:59 brad Exp $
+
+ONLY_FOR_ARCHS=	i386
+
+FAKE=		No
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-NEED_VERSION=	1.230
-FAKE=		No
+NEED_VERSION=	1.336
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-LICENSE_TYPE=		COMM
 PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial
 PERMIT_DISTFILES_CDROM=	commercial
@@ -17,18 +19,14 @@ MASTER_SITES=	see_do-fetch_target
 
 DISTNAME=	WordPerfect
 
-NO_CDROM=	"LIC: redistribution not allowed"
-MIRROR_DISTFILE=no
-
 RUN_DEPENDS=    /emul/linux/lib/libc.so.5::emulators/linux_lib
-
-ONLY_FOR_ARCHS=	i386
 
 IS_INTERACTIVE=	yes
 
-WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
 NO_PACKAGE=	interactive port
+
+WRKDIST=	${WRKDIR}
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

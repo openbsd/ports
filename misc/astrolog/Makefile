@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/12/14 13:23:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/01/05 16:35:59 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
-NEED_VERSION=	1.330
-NO_CDROM=	"NOFEE:	Can not sell"
+NEED_VERSION=	1.336
 
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \

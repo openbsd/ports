@@ -1,38 +1,33 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 16:23:01 espie Exp $
-
-#
-# From:
+# $OpenBSD: Makefile,v 1.10 2001/01/05 16:36:01 brad Exp $
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
-#
 
 DISTNAME=	hotjava-3.0
 CATEGORIES=	www
-NEED_VERSION=	1.327
+NEED_VERSION=	1.336
 MASTER_SITES=
 DISTFILES=	hjb3_0-linux.sfx
 
 EXTRACT_CASES=*.sfx) uudecode ${FULLDISTDIR}/$$archive;;
 
+HOMEPAGE=	http://java.sun.com/products/hotjava/
+
+BUILD_DEPENDS=	${PREFIX}/${JAR}::devel/jdk
+RUN_DEPENDS=	${PREFIX}/${JAVA}::devel/jdk
+
 MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
 
 JDK=	jdk1.1.8
 JAR=	${JDK}/bin/jar
 JAVA=	${JDK}/bin/java
 
-BUILD_DEPENDS=	${PREFIX}/${JAR}::devel/jdk
-RUN_DEPENDS=	${PREFIX}/${JAVA}::devel/jdk
+NO_BUILD=	Yes
 
-# No Fee
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
-MIRROR_DISTFILE=	No
-
-WRKDIST=		${WRKDIR}
-NO_BUILD=		Yes
-
-HOMEPAGE= http://java.sun.com/products/hotjava/
+WRKDIST=	${WRKDIR}
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

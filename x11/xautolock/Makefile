@@ -1,20 +1,21 @@
-# OpenBSD makefile for:	xautolock
-# Version required:	pl-11
-# Date created:		16 March 1998	
-# Whom:			Thomas Graichen
-#
-# $OpenBSD: Makefile,v 1.7 2000/10/22 16:21:17 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.8 2001/01/05 16:36:01 brad Exp $
 
-NEED_VERSION=	1.293
 DISTNAME=	xautolock-pl11
 CATEGORIES=	x11
-COMES_WITH=	2.3
-COMMENT=-fire up programs in case of user inactivity under X
-MIRROR_DISTFILE=no
-
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.science.unitn.it/pub/unix/X11/utilities/
 
 MAINTAINER=	Thomas Graichen <graichen@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
+
+COMES_WITH=	2.3
+
+COMMENT=-fire up programs in case of user inactivity under X
+
+
 
 .include <bsd.port.mk>
