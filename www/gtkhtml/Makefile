@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/21 11:35:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/01/30 11:23:14 alek Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 DISTNAME=		gtkhtml-1.1.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		www
 HOMEPAGE=		http://www.gnome.org/
 
@@ -17,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
 			Xi art_lgpl audiofile c esd freetype gconf-1 \
 			gconf-gtk-1 gdk gdk_imlib gdk_pixbuf glib gmodule \
-			gnome gnomecanvaspixbuf gnomeprint gnomesupport \
-			gnomeui gnorba gtk jpeg m oaf png popt tiff ungif \
-			wrap xml z 
+			gnome wrap xml z gnomeprint gnomesupport \
+			gnomeui gnorba gtk jpeg m oaf png popt tiff ungif
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/1.1/}
 EXTRACT_SUFX=		.tar.bz2
@@ -30,7 +29,8 @@ LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 			capplet::x11/gnome/controlcenter \
 			gal.22::devel/gal \
 			ghttp.1::www/libghttp \
-			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome
+			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome \
+			gnomecanvaspixbuf.1::graphics/gdk-pixbuf,-gnome
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
