@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/12/19 12:12:36 camield Exp $
 
-DISTNAME=	arpwatch-2.1a4
+DISTNAME=	arpwatch-2.1a10
 CATEGORIES=	net
 NEED_VERSION=	1.305
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
@@ -20,15 +19,11 @@ CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 
 post-install:
-	@if [ ! -d ${PREFIX}/arpwatch ]; then \
-		mkdir -p ${PREFIX}/arpwatch; \
-		chmod 775 ${PREFIX}/arpwatch; \
-		chown root.operator ${PREFIX}/arpwatch;	\
-	fi
-	@touch ${PREFIX}/arpwatch/arp.dat
-	@chmod 644 ${PREFIX}/arpwatch/arp.dat
-	@for file in ethercodes.dat d.awk e.awk p.awk; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch; \
+	${STRIP} ${PREFIX}/sbin/arpwatch
+	${STRIP} ${PREFIX}/sbin/arpsnmp
+	${INSTALL_DATA_DIR} ${PREFIX}/arpwatch
+	@for i in arp.dat ethercodes.dat d.awk e.awk p.awk; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/arpwatch; \
 	done
 	@${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
 

@@ -1,17 +1,18 @@
-$OpenBSD: patch-no_ip,v 1.1 2000/10/12 09:37:35 camield Exp $
+$OpenBSD: patch-no_ip,v 1.2 2000/12/19 12:12:41 camield Exp $
 
 Do not bail if the interface does not have an IP assigned.
 
---- arpwatch.c.orig	Tue Feb 10 01:35:15 1998
-+++ arpwatch.c	Tue Oct 10 10:13:08 2000
-@@ -191,9 +193,10 @@
+--- arpwatch.c.orig	Sat Oct 14 04:07:35 2000
++++ arpwatch.c	Tue Dec 19 11:38:16 2000
+@@ -223,9 +223,11 @@
  
  		/* Determine network and netmask */
  		if (pcap_lookupnet(interface, &net, &netmask, errbuf) < 0) {
 -			(void)fprintf(stderr, "%s: bad interface %s: %s\n",
 -			    prog, interface, errbuf);
 -			exit(1);
-+			(void)fprintf(stderr, "%s: WARNING: %s\n",
++			(void)fprintf(stderr,
++			    "%s: WARNING: cannot determine net/mask: %s\n",
 +			    prog, errbuf);
 +			net = 0;
 +			netmask = 0;

@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/10/12 09:37:35 camield Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/12/19 12:12:43 camield Exp $
 sbin/arpwatch
 sbin/arpsnmp
 man/man8/arpwatch.8
 man/man8/arpsnmp.8
+@mode 0644
 arpwatch/arp.dat
+@mode
 arpwatch/arp2ethers
 arpwatch/ethercodes.dat
 arpwatch/d.awk
