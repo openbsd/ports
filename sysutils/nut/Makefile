@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 03:59:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/15 22:54:50 espie Exp $
 
 COMMENT=	"UPS monitoring program supporting many brands"
 
@@ -19,7 +19,7 @@ FLAVORS=	cgi
 FLAVOR?=
 
 .if ${FLAVOR:L} == "cgi"
-LIB_DEPENDS=	gd.1::graphics/gd
+LIB_DEPENDS=	gd.18::graphics/gd
 .endif
 
 CONFIGURE_STYLE= gnu old
