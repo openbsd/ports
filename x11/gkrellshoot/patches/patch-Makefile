@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/09/17 13:49:00 couderc Exp $
+--- Makefile.orig	Sat Aug 31 13:12:43 2002
++++ Makefile	Sat Aug 31 13:16:29 2002
+@@ -5,16 +5,14 @@ IMLIB_INCLUDE = `imlib-config --cflags-g
+ IMLIB_LIB = `imlib-config --libs-gdk`
+ 
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
++CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+ LFLAGS = -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
+-
+ OBJS = gkrellshoot.o
+ 
+ gkrellshoot.so: $(OBJS)
+-	$(CC) $(OBJS) -o gkrellshoot.so $(LFLAGS) $(LIBS)  -lpthread
++	$(CC) $(OBJS) -o gkrellshoot.so $(LFLAGS) $(LIBS)  -pthread
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~

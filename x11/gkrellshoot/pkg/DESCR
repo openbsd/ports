@@ -1,0 +1,16 @@
+gkrellshoot is a gkrellm plugin that gives easy access to Screen
+Lock and Screen Shoot facility.
+
+For Screen capture this uses ImageMagick.  Displays animations
+(Screen Saver like) along with 'Lock' and 'Shoot' button to be
+clicked on.
+
+With Screen Shoot one can either grab a window, selected area or
+whole screen, also one can delay the Screen Shoot by given number
+of seconds.
+
+One other feature is that grabbed image can be viewed by given image
+viewer. Pressing 'Lock' button will lock the screen and starts your
+screen saver.
+
+WWW: ${HOMEPAGE}
