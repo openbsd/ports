@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/09/03 17:20:34 espie Exp $
-@pkgcfl pine-*
-@pkgcfl pico-*
-bin/pico
+@comment $OpenBSD: PLIST-pine,v 1.1 2000/09/03 17:20:34 espie Exp $
+@pkgcfl pine+pico-*
 bin/pilot
 bin/pine
 bin/pgpencrypt
 bin/pgpdecode
 bin/pgpsign
-man/man1/pico.1
 man/man1/pilot.1
 man/man1/pine.1
 share/doc/pine/tech-notes.txt

@@ -1,11 +1,24 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/10 22:54:33 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/09/03 17:20:33 espie Exp $
 
-DISTNAME=	pine4.21
-PKGNAME=	pine-4.21
-CATEGORIES=	mail news
-NEED_VERSION=	1.310
+MULTI_PACKAGES=-pine -pico
+SUBPACKAGE?=
+
+VERSION=4.21
+DISTNAME=	pine${VERSION}
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
+
+.if ${SUBPACKAGE} == "-pine"
+PKGNAME=	pine-${VERSION}
+CATEGORIES=	mail news
+.elif ${SUBPACKAGE} == "-pico"
+PKGNAME=	pico-${VERSION}
+CATEGORIES=	editors
+.else
+PKGNAME=	pine+pico-${VERSION}
+CATEGORIES=	mail news editors
+.endif
+NEED_VERSION=	1.310
 
 HOMEPAGE=	http://www.washington.edu/pine/
 

@@ -1,0 +1,7 @@
++---------------
+| Some documentation for pine can be found in
+| ${PREFIX}/share/doc/pine as well as pine(1).
+|
+| Please read the documentation for instruction on how to make/update
+| the configuration files /etc/pine.conf and /etc/pine.conf.fixed
++---------------

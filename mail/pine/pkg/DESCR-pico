@@ -6,9 +6,8 @@ RFC-822, SMTP, MIME, IMAP, NNTP) and runs on Unix and PCs.  This
 package also includes the Pico editor, the IMAP daemon, a POP2 server, 
 and a POP3 server.
 
-If you want to use the spell checking feature of pine, install ispell
-and set the environment variable SPELL to 
-"${PREFIX}/ispell -l".
+If you want to use the spell checking feature of pine, set the
+environment variable SPELL to "/usr/local/bin/ispell -l".
 
 An optional configuration file "pine.conf" can be put into /etc 
 to set system wide defaults.  The format of this file is identical to the 

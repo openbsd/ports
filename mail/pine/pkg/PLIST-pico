@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pico,v 1.1 2000/09/03 17:20:34 espie Exp $
+@pkgcfl pine+pico-*
+bin/pico
+man/man1/pico.1
