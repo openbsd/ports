@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+
+perl -pi -e 's|%%X11BASE%%|$ENV{'X11BASE'}|g' $WRKSRC/giftrans.c
