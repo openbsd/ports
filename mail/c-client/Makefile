@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/02/09 20:50:53 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/11/25 17:15:34 brad Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
@@ -6,13 +6,10 @@ VERSION=	4.44
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
-NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/ \
 
 HOMEPAGE=	http://www.washington.edu/imap/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
