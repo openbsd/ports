@@ -1,10 +1,12 @@
---- configure.orig	Wed May 24 01:04:32 2000
-+++ configure	Wed May 24 01:12:19 2000
-@@ -5063,7 +5063,14 @@
+--- configure.orig	Wed Apr 26 16:50:57 2000
++++ configure	Tue Jul 18 04:04:05 2000
+@@ -5063,9 +5063,14 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
 -		# NetBSD/SPARC needs -fPIC, -fpic will not do.
+-		SHLIB_CFLAGS="-fPIC"
+-		SHLIB_LD="ld -Bshareable -x"
 +		# OpenBSD needs -fPIC, -fpic will not do.
 +		case `machine` in
 +		sparc)
@@ -13,10 +15,10 @@
 +		    SHLIB_CFLAGS="-fpic";;
 +	        esac
 +		SHLIB_LD="ld -Bshareable -Bforcearchive -x"
- 		SHLIB_CFLAGS="-fPIC"
- 		SHLIB_LD="ld -Bshareable -x"
  		SHLIB_LD_LIBS=""
-@@ -5091,7 +5098,7 @@
+ 		SHLIB_SUFFIX=".so"
+ 		DL_OBJS="tclLoadDl.o"
+@@ -5091,7 +5096,7 @@
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -25,7 +27,7 @@
  		
  fi
  rm -f conftest*
-@@ -5787,10 +5794,9 @@
+@@ -5787,10 +5792,9 @@
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
@@ -37,7 +39,7 @@
      fi
  else
      case $system in
-@@ -5874,7 +5880,7 @@
+@@ -5874,7 +5878,7 @@
  # Replace DBGX with TCL_DBGX
  eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
  
