@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/22 13:30:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/29 16:10:22 jcs Exp $
 # vim:ts=8
 
-PKGNAME=	p5-${DISTFILE}
 DISTNAME=	sybperl-2.13
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl
 NEED_VERSION=	1.435
 
