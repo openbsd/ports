@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/24 02:28:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/06 22:08:29 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
@@ -33,8 +33,6 @@ USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
 
 post-patch:
 	@chmod a+rx ${WRKSRC}/configure
@@ -52,6 +50,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${PREFIX}/man/man1/uufilter.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xloadimage
 	${INSTALL_DATA} ${WRKSRC}/xloadimagerc \
-	    ${PREFIX}/share/examples/xloadimagerc-sample
+	    ${PREFIX}/share/examples/xloadimage/xloadimagerc-sample
 
 .include <bsd.port.mk>
