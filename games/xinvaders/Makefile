@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/08 18:32:02 millert Exp $
-#
+# $OpenBSD: Makefile,v 1.16 2002/07/18 21:50:42 naddy Exp $
+
+NOT_FOR_ARCHS=	alpha sparc64
 
 COMMENT=	"shoot them nasty little bugs"
 
