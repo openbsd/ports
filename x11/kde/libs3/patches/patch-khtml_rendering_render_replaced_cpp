@@ -1,0 +1,11 @@
+$OpenBSD: patch-khtml_rendering_render_replaced_cpp,v 1.1 2003/01/05 22:13:31 espie Exp $
+--- khtml/rendering/render_replaced.cpp.orig	Sun Jan  5 23:08:11 2003
++++ khtml/rendering/render_replaced.cpp	Sun Jan  5 23:08:17 2003
+@@ -153,7 +153,6 @@ void RenderWidget::detach()
+ RenderWidget::~RenderWidget()
+ {
+     KHTMLAssert( refCount() <= 0 );
+-    assert(!m_view);
+ 
+     if(m_widget) {
+         m_widget->hide();
