@@ -1,0 +1,32 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/12/14 15:33:00 kevlo Exp $
+
+COMMENT=	"convert Big5 encoded files to PDF"
+
+DISTNAME=       bg5pdf-1.0.0
+PKGNAME=	zh-${DISTNAME}
+CATEGORIES=     chinese print
+NEED_VERSION=	1.501
+
+HOMEPAGE=	http://students.washington.edu/cschin/
+
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
+
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+
+MASTER_SITES=	${HOMEPAGE}/bg5ps/bg5pdf/
+
+BUILD_DEPENDS=	::lang/python
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		::chinese/taipeifonts
+LIB_DEPENDS=	pdf.2::print/pdflib
+
+WRKDIST=	${WRKDIR}/bg5pdf
+
+PYTHON_VER=	2.1
+SUBST_VARS=	PYTHON_VER
+MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
+
+.include <bsd.port.mk>
