@@ -1,7 +1,7 @@
 --- scripts/tkremind.orig	Tue Mar 28 22:43:44 2000
 +++ scripts/tkremind	Tue Mar 28 22:43:59 2000
 @@ -15,7 +15,7 @@
- # $Id: patch-aa,v 1.2 2000/03/28 06:55:38 kevlo Exp $
+ # $Id: patch-scripts-tkremind,v 1.1 2000/04/14 08:06:57 turan Exp $
  
  # the next line restarts using wish \
 -exec wish "$0" "$@"

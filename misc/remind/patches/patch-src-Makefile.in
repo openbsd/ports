@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Thu Mar 16 00:03:39 2000
-+++ src/Makefile.in	Tue Mar 28 23:54:04 2000
+--- src/Makefile.in.orig	Wed Mar 15 09:03:39 2000
++++ src/Makefile.in	Fri Apr 14 01:56:55 2000
 @@ -50,12 +50,12 @@
  
  install: all
@@ -9,8 +9,8 @@
  	done
 -	-strip $(bindir)/remind
 -	-strip $(bindir)/rem2ps
-+	strip $(bindir)/remind
-+	strip $(bindir)/rem2ps
++	strip $(DESTDIR)$(bindir)/remind
++	strip $(DESTDIR)$(bindir)/rem2ps
  	for man in $(MANS) ; do  \
 -		$(INSTALL_DATA) $$man $(mandir)/man1 ; \
 +		$(INSTALL_DATA) $$man $(DESTDIR)$(mandir)/man1 ; \
