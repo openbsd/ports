@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/04/16 20:42:10 espie Exp $
+lib/X11/fonts/hack/ibm.pcf.gz
+lib/X11/fonts/hack/nh10.pcf.gz
+@exec echo "Remember to add %B to your font path."
+@exec /usr/X11R6/bin/mkfontdir %B || true
+@unexec /usr/X11R6/bin/mkfontdir %B || true
+share/doc/nethack/Guidebook.txt
+@dirrm share/doc/nethack
