@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/01 19:29:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/26 11:26:51 fgsch Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
 
 VERSION=	3.89
 
 DISTNAME=	lame${VERSION}beta
-PKGNAME=	lame-${VERSION}beta
+PKGNAME=	lame-${VERSION}b
 CATEGORIES=	audio
 NEED_VERSION=	1.364
 
-MASTER_SITES=		ftp://lame.sourceforge.net/pub/lame/src/
+MASTER_SITES=	ftp://lame.sourceforge.net/pub/lame/src/
 
 HOMEPAGE=	http://www.sulaco.org/mp3/
 
@@ -36,14 +36,17 @@ LIB_DEPENDS+=		gtk.1.2::x11/gtk+
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/lame ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/mp3rtp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/lame \
+	  ${WRKBUILD}/frontend/mp3rtp ${PREFIX}/bin
 .if ${FLAVOR:L} != "no_x11"
 	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/mp3x ${PREFIX}/bin
 .endif
 	${INSTALL_MAN} ${WRKBUILD}/doc/man/lame.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lame
-	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/lame
-	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.css  ${PREFIX}/share/doc/lame
+	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html \
+	  ${WRKBUILD}/doc/html/*.css ${PREFIX}/share/doc/lame
+	${INSTALL_DATA} ${WRKBUILD}/include/lame.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKBUILD}/libmp3lame/.libs/libmp3lame.a \
+	  ${WRKBUILD}/libmp3lame/.libs/libmp3lame.la ${PREFIX}/lib
 
 .include <bsd.port.mk>
