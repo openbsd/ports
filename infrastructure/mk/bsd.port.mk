@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.336 2000/09/23 12:40:27 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.337 2000/09/23 22:03:21 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -634,7 +634,7 @@ PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST
 .endif
 
 PATCH_CHECK_ONLY?=No
-.if ${PATCH_CHECK_ONLY:L} != "yes"
+.if ${PATCH_CHECK_ONLY:L} == "yes"
 PATCH_ARGS+=	-C
 PATCH_DIST_ARGS+=	-C
 .endif
