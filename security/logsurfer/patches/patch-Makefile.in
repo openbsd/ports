@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon Nov 22 13:01:52 1999
-+++ Makefile.in	Mon Mar 20 23:41:17 2000
-@@ -8,12 +8,12 @@
+$Id: patch-Makefile.in,v 1.2 2002/08/02 17:34:30 jakob Exp $
+--- Makefile.in.orig	Fri Dec  1 12:50:33 2000
++++ Makefile.in	Fri Aug  2 19:30:42 2002
+@@ -8,12 +8,12 @@ version = 1.5a
  
  # Where is the default configuration file
  #
@@ -15,7 +16,7 @@
  
  # 
  # You can define CPPFLAGS on the command line.  Aside from system-specific
-@@ -44,11 +44,11 @@
+@@ -44,11 +44,11 @@ LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
  
  # Where to install the logsurfer executable
