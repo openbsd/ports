@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/12/07 19:45:42 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2003/12/28 22:26:18 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -35,8 +35,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-ltdl \
 		 --enable-pthread-sem
 
+.include <bsd.own.mk>
+USE_GCC3?=No
 # XXX gcc 3/nasm issue.
-.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")
+.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc" && ${USE_GCC3:L} != "yes")
 BUILD_DEPENDS=	nasm::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
