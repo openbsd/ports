@@ -1,6 +1,6 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
+$OpenBSD: patch-jenscript_jenscript_SH,v 1.4 2000/04/23 16:49:30 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
-+++ jenscript/jenscript.SH	Sun Apr 23 17:50:59 2000
++++ jenscript/jenscript.SH	Sun Apr 23 18:47:38 2000
 @@ -20,14 +20,12 @@ echo "Extracting jenscript (with variabl
  : Protect any dollar signs and backticks that you do not want interpreted
  : by putting a backslash in front.  You may delete these comments.
@@ -17,15 +17,39 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
  !GROK!THIS!
  
  : In the following dollars and backticks do not need the extra backslash.
-@@ -88,26 +86,27 @@ $xflag ? ("Courier", "Courier-Bold", "Co
+@@ -35,6 +33,7 @@ $spitshell >>jenscript <<'!NO!SUBS!'
+ ($program) = ($0 =~ m#([^/]+)$#);
+ 
+ $mflag = $gflag = $xflag = $nflag = $sflag = $dflag = $eflag = $kflag = 0;
++$tflag = 0;
+ $columns = 1;
+ $curcolumn = 0;
+ $printpage = 0;
+@@ -61,6 +60,7 @@ while($_ = $ARGV[0], /^-/){ # get option
+ 		elsif(s/^d//){ $dflag = 1; }
+ 		elsif(s/^E//){ $eflag = 1; }
+ 		elsif(s/^k//){ $kflag = 1; }
++		elsif(s/^t//){ $tflag = 1; }
+ 		elsif(s/^(\d)//){ $columns = $1; }
+ 		elsif(/^f$/){ $kfont = $ARGV[0]; shift; last; }
+ 		elsif(/^f(.+)/){ $kfont = $1; last; }
+@@ -87,27 +87,33 @@ $afont ne "" ? ($afont, $afont, $afont, 
+ $xflag ? ("Courier", "Courier-Bold", "Courier-Oblique", "Courier", "Courier") :
    ("Times-Roman", "Times-Bold", "Times-Italic", "Times-Roman", "Times-Roman");
  
- ($height, $width, $offsetx, $offsety) = 
+-($height, $width, $offsetx, $offsety) = 
 -	$sflag ? (650, 440, 120, 150) : # B5
 -#		 (730, 550, 60, 60);	# A4
-+	$sflag ? #(650, 440, 120, 150) : # B5
-+		 (730, 550, 60, 60):	# A4
- 		 (700, 550, 60, 40);	# letter
+-		 (700, 550, 60, 40);	# letter
++($PageHeight, $PageWidth, $PageOffset) =
++	$sflag ? (842, 596, 60):	# A4
++	         (792, 612, 40);	# letter
++$offsetx = $offsety = $PageOffset;
++$height = $PageHeight - 2 * $offsety;
++$width = $PageWidth - 2 * $offsetx;
++# LandScape turn
++($height, $width, $offsetx, $offsety) = ($width, $height, $offsety, $offsetx)
++	if ($tflag);
  $linepitch = $lines ? $height / $lines : $fontsize * 7.0 / 6.0;
  ($kfont, $jfontsize) = $kfont ne "" ? ($kfont, $fontsize) :
 -			$fontsize < 5 ? ("jis16", 3.84) :
@@ -55,7 +79,7 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
  if(! open(vdef,VGRINDEFS)){
  	$language = "";
  }
-@@ -132,6 +131,8 @@ if($language){
+@@ -132,6 +138,8 @@ if($language){
  		s/\\:/<COLON>/g;
  		split(/:/);
  		$pat = $_[0];
@@ -64,7 +88,15 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
  		shift(@_);
  		next if $language !~ /^($pat)$/;
  		$pb = $bb = $be = $cb = $ce = $sb =
-@@ -445,7 +446,7 @@ sub prologue {
+@@ -417,6 +425,7 @@ sub prologue {
+ 	print "%%Creator: jenscript\n" if ! $nflag;
+ 	print "%%Title: Jenscript\n" if ! $nflag;
+ 	print "%%CreationDate: $date\n" if ! $nflag;
++	print "%%BoundingBox: 0 0 $PageWidth $PageHeight\n";
+ 	print "%%EndComments\n" if ! $nflag;
+ 	print "%%DocumentFonts: $kfont",$afont ne "" ? " $afont" : "", "\n";
+ 	print "save/EnscriptJob exch def\n";
+@@ -445,7 +454,7 @@ sub prologue {
  		print "/FK { /$keywordfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
  		print "/FC { /$commentfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
  		print "/FS { /$stringfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
@@ -73,3 +105,11 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
  	}
  	print "/FJ { /$kfont findfont $jfontsize scalefont setfont } bind def\n";
  	print "/N { FN show } bind def\n";
+@@ -463,6 +472,7 @@ sub prologue {
+ 	print "/D { 0 -",$texfont ? 0 : $fontsize/10," rmoveto } bind def\n";
+ 	print "/M { moveto } bind def\n";
+ 	print "end\n";
++	print "[ 0 -1 1 0 0 $PageHeight ] concat\n" if $tflag;
+ 	print "StartEnscriptDoc % end fixed prolog\n";
+ 	print "SetStatus  SetStTime\n" if $mflag;
+ 	print "%%EndProlog\n" if !$nflag;

@@ -1,4 +1,4 @@
-.\"	$OpenBSD: jenscript.1,v 1.1 2000/04/23 15:43:17 espie Exp $
+.\"	$OpenBSD: jenscript.1,v 1.2 2000/04/23 16:49:30 espie Exp $
 .\"
 .\" Copyright (c) 2000 Marc Espie
 .\"
@@ -31,7 +31,7 @@
 .Nd convert japanese text to PostScript
 .Sh SYNOPSIS
 .Nm jenscript
-.Op Fl EGMdknsx
+.Op Fl EGMdknstx
 .Op Ar -columns
 .Op Fl F Ar afont
 .Op Fl L Ar lines
@@ -73,6 +73,8 @@ Encode character data as octal, for transmission on 7-bit lines.
 Suppress PS-Adobe-2.0 in header.
 .It Fl s
 Use A4 paper size instead of the default US letter size.
+.It Fl t
+Turn paper to Seascape orientation.
 .It Fl x
 Use fixed width fonts for roman characters.
 This replaces Times-Roman, Times-Bold, and Times-Italic with Courier,
