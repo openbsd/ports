@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep 14 17:36:02 2001
-+++ configure	Sat Sep 22 10:51:20 2001
-@@ -2958,7 +2958,14 @@
+--- configure.orig	Tue Mar 19 15:05:41 2002
++++ configure	Tue Mar 19 15:18:18 2002
+@@ -2964,7 +2964,14 @@
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -16,18 +16,18 @@
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -3455,7 +3462,9 @@
-     with_gnu_ld=no
+@@ -3462,6 +3469,10 @@
    fi
    ;;
--
+ 
 +openbsd*)
 +  with_gnu_ld=no
 +  ;;
++
  esac
  
  ld_shlibs=yes
-@@ -3859,10 +3868,21 @@
+@@ -3865,10 +3876,21 @@
      ;;
  
    openbsd*)
@@ -37,21 +37,21 @@
      hardcode_shlibpath_var=no
 +    case "$host_os" in
 +      openbsd[[01]].* | openbsd2.[[0-7]] | openbsd2.[[0-7]].*)
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='-R$libdir'
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++       hardcode_libdir_flag_spec='-R$libdir'
 +      ;;
 +      *)
-+	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+	  export_dynamic_flag_spec='${wl}-E'
-+	fi
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++       if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++	 export_dynamic_flag_spec='${wl}-E'
++       fi
 +      ;;
 +    esac
      ;;
  
    os2*)
-@@ -4339,9 +4359,23 @@
+@@ -4345,9 +4367,23 @@
  
  openbsd*)
    version_type=sunos
@@ -72,18 +72,18 @@
 +      shlibpath_overrides_runpath=yes
 +    ;;
 +    esac
-+  else                               
++  else
 +    deplibs_check_method='file_magic OpenBSD.* shared library'
 +    shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-@@ -7087,7 +7121,7 @@
+@@ -7098,7 +7134,7 @@
  
  
  XML_LIBDIR='-L${libdir}'
--XML_INCLUDEDIR='-I${includedir}/libxml2/libxml -I${includedir}/libxml2'
-+XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}'
+-XML_INCLUDEDIR='-I${includedir}/libxml2'
++XML_INCLUDEDIR='-I${includedir}/libxml'
  
  XML_CFLAGS=""
  RDL_LIBS=""
