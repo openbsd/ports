@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_command_Makefile_in,v 1.1 2002/09/11 23:12:55 avsm Exp $
+--- src/command/Makefile.in.orig	Wed Sep 11 23:28:44 2002
++++ src/command/Makefile.in	Wed Sep 11 23:30:36 2002
+@@ -105,7 +105,7 @@ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../../autocfg
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -L../engine/.libs @LDFLAGS@
+ sabcmd_OBJECTS =  sabcmd.$(OBJEXT)
+ sabcmd_DEPENDENCIES =  ../engine/libsablot.la
+ sabcmd_LDFLAGS = 

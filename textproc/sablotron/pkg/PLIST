@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/08/17 01:08:05 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/09/11 23:12:55 avsm Exp $
 bin/sabcmd
+include/sabcfg.h
+include/sabdbg.h
 include/sablot.h
 include/sdom.h
 include/shandler.h

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2002/08/17 01:08:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2002/09/11 23:12:55 avsm Exp $
 
-COMMENT=		"fast, compact and portable XSL/XSLT processor"
+COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
-V=			0.95
-DISTNAME=		Sablot-${V}
-PKGNAME=		sablotron-${V}
-CATEGORIES=     	textproc
+V=		0.96
+DISTNAME=	Sablot-${V}
+PKGNAME=	sablotron-${V}
+CATEGORIES=    	textproc
 
-HOMEPAGE=		http://www.gingerall.com/
-MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
+HOMEPAGE=	http://www.gingerall.com/
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # MPL or GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,17 +16,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download-2.gingerall.cz/download/sablot/
+MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 
-MODULES=		iconv
-LIB_DEPENDS=		expat.2::textproc/expat
+MODULES=	iconv
+LIB_DEPENDS=	expat.2::textproc/expat
 
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/tools
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ENV+=         CPPFLAGS="-I${LOCALBASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV+=		${CONFIGURE_ENV}
+
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
+		--enable-debugger --with-expat-prefix=${LOCALBASE} \
+		--with-iconv-prefix=${LOCALBASE}
 
 .include <bsd.port.mk>
