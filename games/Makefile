@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/03 02:16:22 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/07 04:31:17 angelos Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
-    SUBDIR += abuse
+     SUBDIR += abuse
 #    SUBDIR += acm
 #    SUBDIR += agm
 #    SUBDIR += an
@@ -93,7 +93,7 @@
 #    SUBDIR += xskat
 #    SUBDIR += xsokoban
 #    SUBDIR += xsol
-#    SUBDIR += xsoldier
+     SUBDIR += xsoldier
 #    SUBDIR += xspringies
 #    SUBDIR += xtic
 #    SUBDIR += xtriangles
