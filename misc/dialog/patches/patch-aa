@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Nov 12 18:02:34 1998
-+++ Makefile	Thu Nov 12 18:05:31 1998
-@@ -17,8 +17,8 @@
+--- Makefile.orig	Thu Jan  9 07:19:34 1997
++++ Makefile	Tue Mar 20 18:26:43 2001
+@@ -17,10 +17,10 @@
  # can be disabled to make dialog a bit smaller (could be done for more things)
  HAVE_GUAGE=true
  
@@ -9,8 +9,22 @@
 +BINDIR = ${PREFIX}/bin
 +MANDIR = ${PREFIX}/man/man1/
  
- CC = gcc
+-CC = gcc
++#CC = gcc
  CPP = gcc -E
+ OPTIM = -O2 -Wall -Wstrict-prototypes -fomit-frame-pointer -pipe
+ #OPTIM = -O -Wall -Wstrict-prototypes -g -pipe
+@@ -29,8 +29,8 @@
+ #----------------------------------------------------------------------------
+ # do not edit below this line
+ 
+-CFLAGS = $(OPTIM) -DLOCALE -DVERSION=\"0.6z\"
+-LDFLAGS = -L .
++CFLAGS += -DLOCALE -DVERSION=\"0.6z\"
++LDFLAGS += -L .
+ LDLIBS = -ldialog
+ 
+ OBJS = checklist.o inputbox.o menubox.o msgbox.o \
 @@ -42,8 +42,8 @@
  OBJS+=mouse.o
  endif
