@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2004/10/08 23:37:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.197 2004/10/15 18:52:58 fgsch Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -139,6 +139,7 @@
      SUBDIR += ruby-gtk
      SUBDIR += rxvt
      SUBDIR += sawfish
+     SUBDIR += skippy
      SUBDIR += sliderule
 #    SUBDIR += slingshot
      SUBDIR += swisswatch
