@@ -30,7 +30,7 @@ struct options_set *port_options=0;
 
 
 
-ID("$Id: audio.c,v 1.1 1998/10/02 17:19:44 espie Exp $")
+ID("$Id: audio.c,v 1.2 1999/03/05 16:24:55 espie Exp $")
 
 LOCAL unsigned long samples_max;
 LOCAL int audio;           	
@@ -59,7 +59,8 @@ unsigned long open_audio(unsigned long f, int s)
 			if (query.flags & AUDIO_ENCODINGFLAG_EMULATED)
 				continue;
 			if (query.precision == 16 && 
-				query.encoding == AUDIO_ENCODING_SLINEAR)
+				(query.encoding == AUDIO_ENCODING_SLINEAR_BE ||
+				query.encoding == AUDIO_ENCODING_SLINEAR_LE))
 				dsp_samplesize = 16;
 			if (!dsp_samplesize && query.precision == 8 &&
 				query.encoding == AUDIO_ENCODING_ULINEAR)
@@ -81,10 +82,12 @@ unsigned long open_audio(unsigned long f, int s)
 		case 8:
 			dsize = 1;
 			current.play.encoding = AUDIO_ENCODING_ULINEAR; 
+			current.play.precision= 8;
 			break;
 		case 16:
 			dsize = 2;
 			current.play.encoding = AUDIO_ENCODING_SLINEAR;
+			current.play.precision= 16;
 			break;
 		default:
 			end_all("Error: unknown dsp_samplesize");
