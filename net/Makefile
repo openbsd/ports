@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2001/04/16 21:33:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.135 2001/04/17 13:36:45 aaron Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -32,6 +32,7 @@
      SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += ettercap
+     SUBDIR += everybuddy
      SUBDIR += firewalk
      SUBDIR += flow-tools
      SUBDIR += fping
