@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2004/11/04 22:16:07 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2004/11/16 02:10:56 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -97,14 +97,14 @@ PKG_ARGS+=-Dtkinter=1
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-tkinter
 .  else
-LIB_DEPENDS+=		tk84::x11/tk/8.4
+LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
 .  endif
 .else
 PKG_ARGS+=-Dtkinter=0
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=		tk84::x11/tk/8.4
+LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
 .endif
 
 .if empty(FLAVOR:L:Mno_mpz)
