@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2003/09/23 21:24:52 marcm Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.4 2004/08/10 20:00:40 sturm Exp $
 --- src/Makefile.in.orig	2003-09-23 11:45:16.000000000 -0700
 +++ src/Makefile.in	2003-09-23 11:45:52.000000000 -0700
 @@ -67,7 +67,7 @@ GMSGFMT = @GMSGFMT@
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2003/09/23 21:24:52 marcm Exp $
  GNOME_APPLETS_LIBS = @GNOME_APPLETS_LIBS@
  GTOP_APPLETS_CFLAGS = @GTOP_APPLETS_CFLAGS@
 -GTOP_APPLETS_LIBS = @GTOP_APPLETS_LIBS@
-+GTOP_APPLETS_LIBS = @GTOP_APPLETS_LIBS@ -lgtop_suid_common-2.0
++GTOP_APPLETS_LIBS = @GTOP_APPLETS_LIBS@ -lXau
  INSTOBJEXT = @INSTOBJEXT@
  INTLDEPS = @INTLDEPS@
  INTLLIBS = @INTLLIBS@
