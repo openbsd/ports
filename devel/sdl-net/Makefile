@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/05 19:29:37 obecian Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/23 04:10:56 obecian Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
-VER=		1.2.2
+VER=		1.2.3
 PROJ=		SDL_net
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-net-${VER}
 CATEGORIES=	devel net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.500
 MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -29,8 +29,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
 .include <bsd.port.mk>
