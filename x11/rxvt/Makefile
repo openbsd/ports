@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/07 19:34:46 jasoni Exp $
+
+COMMENT=	"color, low memory usage, xterm replacement"
 
 DISTNAME=	rxvt-2.7.3
 CATEGORIES=	x11

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/07 19:34:49 jasoni Exp $
+
+COMMENT=	"ICQ clone for UNIX"
 
 DISTNAME=	licq-0.61
 CATEGORIES=	net
