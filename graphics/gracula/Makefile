@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/24 12:10:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/24 12:20:45 kevlo Exp $
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
 NEED_VERSION=	1.340
-MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
-		http://www.whizkidtech.net/gcl/
+MASTER_SITES=	${HOMEPAGE} \
+		ftp://ftp.whizkidtech.net/cgi/gcl/ 
 
 HOMEPAGE=	http://www.whizkidtech.net/gcl/
 
