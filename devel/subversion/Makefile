@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/21 20:29:10 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.1.1
+VERSION=	1.1.3
 DISTNAME=	subversion-${VERSION}
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
@@ -86,6 +86,9 @@ post-build:
 post-install:
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-py
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-pl
+
+post-regress:
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check-swig-pl
 .endif
 
 .include <bsd.port.mk>

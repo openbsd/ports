@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+@comment $OpenBSD: PLIST-perl,v 1.2 2005/01/21 20:29:11 alek Exp $
 %%SHARED%%
 lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la
@@ -32,7 +32,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.bs
 @man man/man3p/SVN::Client.3p
 @man man/man3p/SVN::Core.3p
 @man man/man3p/SVN::Delta.3p
-@comment man man/man3p/SVN::Fs.3p
+@comment @man man/man3p/SVN::Fs.3p
 @man man/man3p/SVN::Ra.3p
 @man man/man3p/SVN::Repos.3p
 @man man/man3p/SVN::Wc.3p

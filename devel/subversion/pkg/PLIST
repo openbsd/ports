@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/21 20:29:11 alek Exp $
 %%SHARED%%
 bin/svn
 bin/svnadmin
@@ -74,12 +74,31 @@ lib/libsvn_wc-1.la
 @man man/man1/svnversion.1
 @man man/man5/svnserve.conf.5
 @man man/man8/svnserve.8
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/subversion.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/subversion.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/subversion.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/subversion.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/subversion.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/subversion.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/subversion.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/subversion.mo
