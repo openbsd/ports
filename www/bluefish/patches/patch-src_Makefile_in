@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2003/03/29 15:22:14 couderc Exp $
---- src/Makefile.in.orig	Fri Feb  7 18:53:10 2003
-+++ src/Makefile.in	Thu Feb 20 23:13:22 2003
-@@ -89,8 +89,8 @@ distclean: patchclean
+$OpenBSD: patch-src_Makefile_in,v 1.3 2003/08/02 15:26:19 couderc Exp $
+--- src/Makefile.in.orig	2003-07-27 17:26:58.000000000 +0200
++++ src/Makefile.in	2003-08-02 16:40:23.000000000 +0200
+@@ -90,8 +90,8 @@ distclean: patchclean
  	rm -f config.h Makefile *~ *.bak core
  
  install: all
