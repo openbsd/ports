@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/11/19 01:38:58 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2002/02/27 16:31:59 brad Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -6,10 +6,11 @@ COMMENT=	"server-side HTML-embedded scripting language"
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-DISTNAME=	php-3.0.18
-PKGNAME=	php3-3.0.18
+VERSION=	3.0.18
+DISTNAME=	php-${VERSION}
+PKGNAME=	php3-${VERSION}p2
 CATEGORIES=	www lang
-NEED_VERSION=	1.489
+NEED_VERSION=	1.500
 
 HOMEPAGE=	http://www.php.net/
 
