@@ -1,37 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Net/DNS.pm
-libdata/perl5/site_perl/Net/DNS/Header.pm
-libdata/perl5/site_perl/Net/DNS/Packet.pm
-libdata/perl5/site_perl/Net/DNS/Question.pm
-libdata/perl5/site_perl/Net/DNS/RR.pm
-libdata/perl5/site_perl/Net/DNS/RR/A.pm
-libdata/perl5/site_perl/Net/DNS/RR/AAAA.pm
-libdata/perl5/site_perl/Net/DNS/RR/AFSDB.pm
-libdata/perl5/site_perl/Net/DNS/RR/CNAME.pm
-libdata/perl5/site_perl/Net/DNS/RR/EID.pm
-libdata/perl5/site_perl/Net/DNS/RR/HINFO.pm
-libdata/perl5/site_perl/Net/DNS/RR/ISDN.pm
-libdata/perl5/site_perl/Net/DNS/RR/LOC.pm
-libdata/perl5/site_perl/Net/DNS/RR/MB.pm
-libdata/perl5/site_perl/Net/DNS/RR/MG.pm
-libdata/perl5/site_perl/Net/DNS/RR/MINFO.pm
-libdata/perl5/site_perl/Net/DNS/RR/MR.pm
-libdata/perl5/site_perl/Net/DNS/RR/MX.pm
-libdata/perl5/site_perl/Net/DNS/RR/NAPTR.pm
-libdata/perl5/site_perl/Net/DNS/RR/NIMLOC.pm
-libdata/perl5/site_perl/Net/DNS/RR/NS.pm
-libdata/perl5/site_perl/Net/DNS/RR/NSAP.pm
-libdata/perl5/site_perl/Net/DNS/RR/NULL.pm
-libdata/perl5/site_perl/Net/DNS/RR/PTR.pm
-libdata/perl5/site_perl/Net/DNS/RR/PX.pm
-libdata/perl5/site_perl/Net/DNS/RR/RP.pm
-libdata/perl5/site_perl/Net/DNS/RR/RT.pm
-libdata/perl5/site_perl/Net/DNS/RR/SOA.pm
-libdata/perl5/site_perl/Net/DNS/RR/SRV.pm
-libdata/perl5/site_perl/Net/DNS/RR/TXT.pm
-libdata/perl5/site_perl/Net/DNS/RR/X25.pm
-libdata/perl5/site_perl/Net/DNS/Resolver.pm
-libdata/perl5/site_perl/Net/DNS/Update.pm
+@comment $OpenBSD: PLIST,v 1.5 2002/05/11 21:23:19 wilfried Exp $
+${P5SITE}/Net/DNS.pm
+${P5SITE}/Net/DNS/Header.pm
+${P5SITE}/Net/DNS/Packet.pm
+${P5SITE}/Net/DNS/Question.pm
+${P5SITE}/Net/DNS/RR.pm
+${P5SITE}/Net/DNS/RR/A.pm
+${P5SITE}/Net/DNS/RR/AAAA.pm
+${P5SITE}/Net/DNS/RR/AFSDB.pm
+${P5SITE}/Net/DNS/RR/CNAME.pm
+${P5SITE}/Net/DNS/RR/EID.pm
+${P5SITE}/Net/DNS/RR/HINFO.pm
+${P5SITE}/Net/DNS/RR/ISDN.pm
+${P5SITE}/Net/DNS/RR/LOC.pm
+${P5SITE}/Net/DNS/RR/MB.pm
+${P5SITE}/Net/DNS/RR/MG.pm
+${P5SITE}/Net/DNS/RR/MINFO.pm
+${P5SITE}/Net/DNS/RR/MR.pm
+${P5SITE}/Net/DNS/RR/MX.pm
+${P5SITE}/Net/DNS/RR/NAPTR.pm
+${P5SITE}/Net/DNS/RR/NIMLOC.pm
+${P5SITE}/Net/DNS/RR/NS.pm
+${P5SITE}/Net/DNS/RR/NSAP.pm
+${P5SITE}/Net/DNS/RR/NULL.pm
+${P5SITE}/Net/DNS/RR/PTR.pm
+${P5SITE}/Net/DNS/RR/PX.pm
+${P5SITE}/Net/DNS/RR/RP.pm
+${P5SITE}/Net/DNS/RR/RT.pm
+${P5SITE}/Net/DNS/RR/SOA.pm
+${P5SITE}/Net/DNS/RR/SRV.pm
+${P5SITE}/Net/DNS/RR/TXT.pm
+${P5SITE}/Net/DNS/RR/X25.pm
+${P5SITE}/Net/DNS/Resolver.pm
+${P5SITE}/Net/DNS/Update.pm
 man/man3p/Net::DNS.3p
 man/man3p/Net::DNS::Header.3p
 man/man3p/Net::DNS::Packet.3p
@@ -65,5 +65,5 @@ man/man3p/Net::DNS::RR::TXT.3p
 man/man3p/Net::DNS::RR::X25.3p
 man/man3p/Net::DNS::Resolver.3p
 man/man3p/Net::DNS::Update.3p
-@dirrm libdata/perl5/site_perl/Net/DNS/RR
-@dirrm libdata/perl5/site_perl/Net/DNS
+@dirrm ${P5SITE}/Net/DNS/RR
+@dirrm ${P5SITE}/Net/DNS
