@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/01/06 00:18:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2004/05/19 17:01:20 xsa Exp $
 
 COMMENT=	"classic BSD4.4 cat-and-mouse"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
-		DESTDIR="${WRKINST}" BINOWN="root" BINMODE="755"
+		DESTDIR="${WRKINST}" BINOWN=${BINOWN} BINMODE=${BINMODE}
 
 USE_X11=	Yes
 
