@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:50 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/11 04:24:20 flipk Exp $
 #
 
 DISTNAME=       screen-3.7.4
@@ -22,7 +22,7 @@ post-install:
 	 fi
 	@install-info ${PREFIX}/info/screen.info ${PREFIX}/info/dir
 	@if [ -f ${PREFIX}/etc/screenrc ]; then \
-	 @echo "Copying ${PREFIX}/etc/screenrc to ${PREFIX}/etc/screenrc.old.";\
+	 echo "Copying ${PREFIX}/etc/screenrc to ${PREFIX}/etc/screenrc.old.";\
 	 ${CP} ${PREFIX}/etc/screenrc ${PREFIX}/etc/screenrc.old; \
 	fi
 	@echo "Installing ${PREFIX}/etc/screenrc."
