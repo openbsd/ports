@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_flow-capture_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
---- src/flow-capture.c.orig	Sat Dec 28 14:49:14 2002
-+++ src/flow-capture.c	Sat Dec 28 14:49:27 2002
-@@ -1156,7 +1156,7 @@ skip_pdu_decode:
+$OpenBSD: patch-src_flow-capture_c,v 1.2 2003/04/01 16:35:37 jakob Exp $
+--- src/flow-capture.c.orig	Mon Feb 24 03:55:15 2003
++++ src/flow-capture.c	Tue Apr  1 18:24:41 2003
+@@ -1190,7 +1190,7 @@ skip_pdu_decode:
            } else if (!n) { /* child */
  
              n = execl(post_rotate_exec, post_rotate_exec, cap_file.nname,

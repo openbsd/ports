@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_flow-fanout_c,v 1.1 2003/04/01 16:35:37 jakob Exp $
+--- src/flow-fanout.c.orig	Mon Feb 24 03:55:15 2003
++++ src/flow-fanout.c	Tue Apr  1 18:29:01 2003
+@@ -873,7 +873,7 @@ void pdu_xmit(int npeers, int tx_delay, 
+ /* see Stevens Unix Network Programming Volume 1 2nd edition page 657 */
+ /* conditional from <simon@limmat.switch.ch> rawsend.c */
+ #if defined (__linux__) || (defined (__OpenBSD__) && (OpenBSD > 199702))
+-      ip_hdr->ip_len = htons(FT_ENC_IPHDR_LEN+fte.buf_size);
++      ip_hdr->ip_len = htons(FT_ENC_IPHDR_LEN+fte->buf_size);
+ #else
+       ip_hdr->ip_len = FT_ENC_IPHDR_LEN+fte->buf_size;
+ #endif
