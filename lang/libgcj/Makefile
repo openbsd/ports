@@ -1,4 +1,6 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 1999/08/02 21:50:23 niklas Exp $
+#	$OpenBSD: Makefile,v 1.2 1999/09/17 10:26:50 turan Exp $
+
+BROKEN=		"sources no longer exist"
 
 # This should probably be part of the egcs port eventually.
 
