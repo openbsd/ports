@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/30 10:58:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/09 19:06:58 naddy Exp $
 
 COMMENT=	"user-friendly ncurses-based hexeditor with many features"
 
-DISTNAME=	hexcurse-1.50.1
+DISTNAME=	hexcurse-1.54
 CATEGORIES=	editors
 NEED_VERSION=	1.504
 
