@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.zope,v 1.1 2001/09/19 01:05:56 shell Exp $
+@comment $OpenBSD: PFRAG.zope,v 1.2 2002/07/06 10:29:39 shell Exp $
 lib/zope/lib/python/Products/ZPsycopgDA/icons/bin.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/date.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/datetime.gif
@@ -20,5 +20,5 @@ lib/zope/lib/python/Products/ZPsycopgDA/connectionEdit.dtml
 lib/zope/lib/python/Products/ZPsycopgDA/db.py
 lib/zope/lib/python/Products/ZPsycopgDA/table_info.dtml
 @dirrm lib/zope/lib/python/Products/ZPsycopgDA/icons
-@dirrm lib/zope/lib/python/Products/ZPsycopgDA
-@unexec rm -f %D/lib/zope/lib/python/Products/ZPsycopgDA/*.pyc
+@unexec rm -f %D/lib/zope/lib/python/Products/ZPsycopgDA/*.pyo
+@unexec rmdir %D/lib/zope/lib/python/Products/ZPsycopgDA
