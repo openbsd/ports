@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/03/30 21:55:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.49 2001/03/30 22:31:12 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += openjade
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-Text-PDF
+     SUBDIR += p5-Text-Template
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-RSS
