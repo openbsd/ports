@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/28 21:19:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
 # $FreeBSD: ports/www/linux-flashplugin/Makefile,v 1.9 2001/07/21 14:27:22 okazaki Exp $
 
 ONLY_FOR_ARCHS=	i386
@@ -26,6 +26,7 @@ DIST_SUBDIR=	flashplugin-${VERSION}
 RUN_DEPENDS=	:redhat_base->=6.2p1:emulators/redhat/base
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ns-plugins

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/19 22:12:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"faster and improved version of dd"
 
@@ -24,6 +24,8 @@ do-configure:
 	@ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
 		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/sdd/OBJ/${MACHINE}-openbsd-${CC}/sdd \

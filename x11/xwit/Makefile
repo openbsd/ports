@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/14 02:07:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"X11 window interface tool"
 
@@ -18,5 +18,7 @@ MASTER_SITE_SUBDIR=	utilities
 
 USE_X11=	Yes
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/14 11:36:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"clone of the ex/vi text editor"
 
@@ -31,6 +31,8 @@ CONFIGURE_ARGS+= --with-x --x-includes=${X11BASE}/include \
 		 --x-libraries=${X11BASE}/lib
 USE_X11=	Yes
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 .for prog in elvis elvtags ref

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/14 02:07:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"simple logout button"
 
@@ -19,5 +19,7 @@ EXTRACT_SUFX=	.tar.Z
 WRKDIST=	${WRKDIR}/xlogout
 USE_X11=	Yes
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

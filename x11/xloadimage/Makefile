@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/10 21:11:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
@@ -33,6 +33,7 @@ USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
+NO_REGRESS=	Yes
 
 post-patch:
 	@chmod a+rx ${WRKSRC}/configure

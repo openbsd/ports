@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/12 20:45:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"lossy/lossless audio coder"
 
@@ -19,5 +19,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAKE_FLAGS=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' LIBS=-lossaudio
 FAKE_FLAGS=	PREFIX='${WRKINST}${PREFIX}' INSTALL='${INSTALL_PROGRAM}'
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/10/24 12:23:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2001/10/25 16:14:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -54,6 +54,8 @@ CONFIGURE_ENV=	use_nntp=y use_ssl_verify=y \
 		dmail=mail ded=vi dbrowser=lynx dcc="${CC}" \
 		dtermlib="${TERMLIB}" def_helpdir="${PREFIX}/share/w3m" \
 		def_libdir="${PREFIX}/libexec/w3m"
+
+NO_REGRESS=	Yes
 
 DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \

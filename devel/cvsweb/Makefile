@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/08/01 19:59:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/25 16:14:51 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
@@ -22,6 +22,7 @@ MASTER_SITES=	http://www.iDaemons.org/distfiles/ \
 MASTER_SITE_SUBDIR=	ports/local-distfiles/knu
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/cvsweb
 
 PREFIX=		/var/www

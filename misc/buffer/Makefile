@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/24 12:43:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"buffer sporadic I/O for faster tape and pipe throughput"
 
@@ -16,9 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_FREEBSD_LOCAL}
 MASTER_SITE_SUBDIR=	steve
-
 EXTRACT_SUFX=	.tar.bz2
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

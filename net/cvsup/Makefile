@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/18 21:26:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/25 16:14:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -44,6 +44,8 @@ BUILD_DEPENDS=	m3build::lang/pm3
 
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"
 FAKE_FLAGS=	PREFIX=${WRKINST}${TRUEPREFIX}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
 

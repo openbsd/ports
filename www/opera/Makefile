@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/14 23:27:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 16:14:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -24,7 +24,10 @@ EXTRACT_SUFX=	.x86.tar.gz
 RUN_DEPENDS=	/emul/linux/usr/lib/libpng.so.2:redhat_base->=6.2p1:emulators/redhat/base \
 		/emul/linux/usr/X11R6/lib/libXm.so.2::emulators/redhat/motif
 
-do-build:
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
+
+do-configure:
 	sed -e 's,@PREFIX@,${PREFIX},g' \
 	    -e 's,@LOCALBASE@,${LOCALBASE},g' \
 	    ${FILESDIR}/opera.sh >${WRKBUILD}/wrapper.sh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/14 11:36:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"binary visual display editor, based on vi"
 
@@ -21,5 +21,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 CONFIGURE_STYLE= gnu
 CFLAGS+=	-DANSI
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/10/24 12:13:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"newer version of xterm"
 
@@ -34,5 +34,7 @@ CONFIGURE_ARGS+=	--disable-tek4014
 LIB_DEPENDS+=		Xaw3d.6.1::x11/Xaw3d
 CONFIGURE_ARGS+=	--with-Xaw3d
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

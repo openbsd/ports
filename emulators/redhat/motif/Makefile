@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/04 21:56:05 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
@@ -14,6 +14,8 @@ RUN_DEPENDS=	/emul/linux/sbin/ldconfig::emulators/redhat/base
 EXTRACT_FILES=	usr/X11R6/lib/libMrm.so.2.1 \
 		usr/X11R6/lib/libUil.so.2.1 \
 		usr/X11R6/lib/libXm.so.2.1
+
+NO_REGRESS=	Yes
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}
