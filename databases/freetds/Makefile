@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/25 00:12:12 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/01 02:40:55 jcs Exp $
 
 DISTNAME=	freetds-0.52
 CATEGORIES=	databases
@@ -16,6 +16,10 @@ MASTER_SITE_SUBDIR= ALPHA/freetds
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+		patch-*
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
