@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.502 2001/12/15 18:10:36 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.503 2001/12/23 02:17:02 miod Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -226,7 +226,7 @@ ARCH!=	uname -m
 OPSYS=	OpenBSD
 OPSYS_VER=	${OSREV}
 
-NO_SHARED_ARCHS=hppa mvme88k vax
+NO_SHARED_ARCHS=hppa m88k vax
 
 # Define NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
