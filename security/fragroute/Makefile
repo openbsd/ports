@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/01/20 22:45:29 mjc Exp $
 			
 COMMENT=		"intercept, modify, and rewrite egress traffic"
 
 DISTNAME=		fragroute-1.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=    		security net
 
 HOMEPAGE=		http://www.monkey.org/~dugsong/fragroute/
@@ -24,5 +24,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		 --with-libevent=/usr
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.a::net/libdnet
+
+post-install:
+			${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fragroute/
+			${INSTALL_DATA} ${WRKDIST}/fragroute.conf \
+			  ${PREFIX}/share/examples/fragroute/
 
 .include <bsd.port.mk>
