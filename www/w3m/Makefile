@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2002/08/28 12:38:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2002/09/14 00:10:08 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -46,7 +46,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
-LIB_DEPENDS=	Imlib.19::graphics/imlib
+LIB_DEPENDS+=	Imlib.19::graphics/imlib
 CONFIGURE_ENV+=	use_image=y
 DOCS+=		README.img
 .endif
