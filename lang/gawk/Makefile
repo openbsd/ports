@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 09:14:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/22 08:59:47 wilfried Exp $
 
 COMMENT=		"GNU awk"
 
@@ -19,8 +19,12 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gawk/}
 
 MODULES=		devel/gettext
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-build:
+	@touch -r ${WRKSRC}/test/Makefile.am ${WRKSRC}/test/Maketests
 
 .include <bsd.port.mk>
