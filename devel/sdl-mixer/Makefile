@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/03 23:46:17 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/04 00:22:20 margarida Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 DISTNAME=	SDL_mixer-1.2.5
@@ -21,7 +21,8 @@ FLAVORS=	mikmod
 FLAVOR?=
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		smpeg.1::devel/smpeg
+		smpeg.1::devel/smpeg \
+	 	vorbis.0,vorbisfile.1::audio/libvorbis
 
 .if ${FLAVOR:L:Mmikmod}
 LIB_DEPENDS+=	mikmod.::audio/libmikmod
