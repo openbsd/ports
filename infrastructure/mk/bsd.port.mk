@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.224 2000/03/07 16:14:20 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.225 2000/03/08 00:07:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2241,7 +2241,7 @@ recurse-build-depends:
 	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null; then \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
 			if ! make _DEPEND_ECHO="echo $$pname" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
@@ -2261,7 +2261,7 @@ depends-list:
 .  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		if cd ${PORTSTDIR} && cd $$dir 2>/dev/null; then \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
 			if ! make recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
