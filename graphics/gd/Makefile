@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/12 17:25:48 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/22 03:48:45 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -10,8 +10,10 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 HOMEPAGE=	http://www.boutell.com/gd/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1.6::graphics/png \
-		ttf.1.3::print/freetype
+		png.1.6::graphics/png
+.if !defined(FLAVOR)
+LIB_DEPENDS+=	ttf.1.3::print/freetype
+.endif
 
 MAINTAINER=	brad@openbsd.org
 
@@ -21,6 +23,20 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	COMPILER="${CC}"
+
+FLAVORS=	no_x11
+
+.if defined(FLAVOR) && ${FLAVOR:L} == "no_x11"
+MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
+		LIBS="-lm -lgd -lpng -ljpeg -lz" \
+		INCLUDEDIRS="-I. -I/usr/local/include" \
+		LIBDIRS="-L. -L/usr/local/lib"
+.else
+MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
+		LIBS="-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11" \
+		INCLUDEDIRS="-I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11" \
+		LIBDIRS="-L. -L/usr/local/lib -L/usr/X11R6/lib"
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gd

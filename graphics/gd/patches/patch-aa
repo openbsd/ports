@@ -1,50 +1,7 @@
 --- Makefile.orig	Sat Jun  3 15:26:12 2000
-+++ Makefile	Mon Jun 12 13:10:45 2000
-@@ -11,10 +11,10 @@
- 
- #If you don't have FreeType, libjpeg and/or Xpm installed, including the
- #header files, uncomment this (default).
--CFLAGS=-O
-+#CFLAGS=-O
- #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
- #variation of this and comment out the line above. See also LIBS below.
--#CFLAGS=-O  -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
-+CFLAGS+=-DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
- 
- #If you don't have FreeType and/or Xpm fully installed, uncomment this
- #(default).
-@@ -23,7 +23,7 @@
- #Some systems are very picky about link order. They don't all agree
- #on the right order, either.
- 
--LIBS=-lm -lgd -lpng -lz
-+#LIBS=-lm -lgd -lpng -lz
- 
- #If you do have FreeType, JPEG and/or Xpm fully installed, uncomment a 
- #variation of this and comment out the line above. Note that
-@@ -33,14 +33,14 @@
- #Some systems are very picky about link order. They don't all agree
- #on the right order, either.
- 
--#LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
-+LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
- 
- #Typical install locations for freetype, zlib, xpm, libjpeg and libpng header files.
- #If yours are somewhere else, change this. 
- #-I. is important to ensure that the version of gd you are installing
- #is used, and not an older release in your directory tree somewhere.
- 
--INCLUDEDIRS=-I. -I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
-+INCLUDEDIRS=-I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11
- 
- #Typical install locations for freetype, zlib, xpm and libpng libraries.
- #If yours are somewhere else, other than a standard location
-@@ -48,16 +48,16 @@
- #-L. as this allows the gd library itself to be found.
- #Put -L. first so that old versions of the gd library elsewhere
- #on your system can't cause conflicts while building a new one.
--LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
-+LIBDIRS=-L. -L/usr/local/lib -L/usr/X11R6/lib
++++ Makefile	Wed Jun 21 23:09:24 2000
+@@ -51,13 +51,13 @@
+ LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib
