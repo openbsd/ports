@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/01 04:13:07 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/15 03:59:47 marcm Exp $
 
 COMMENT=		"themes collection for GNOME"
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:intltool->=0.23:textproc/intltool \
-			${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:gtk-engines2->=2.2.0:x11/gtk-engines2
 LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
 
