@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/07 08:25:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/05/03 07:44:56 jakob Exp $
 
-DISTNAME=	imap-4.7b
-PKGNAME=	imap-uw-4.7b
+DISTNAME=	imap-4.7c1
+PKGNAME=	imap-uw-4.7c1
 CATEGORIES=	mail
 
 MAINTAINER=     jakob@openbsd.org
@@ -17,8 +17,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
-FAKE=	yes
-
+FAKE=		yes
+WRKDIST=	${WRKDIR}/imap-4.7c
 ALL_TARGET=	bso
 
 do-install:
