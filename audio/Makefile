@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/06/08 01:53:25 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 1998/07/24 03:11:20 downsj Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -32,6 +32,7 @@
      SUBDIR += xmcd
      SUBDIR += xmix
      SUBDIR += xmmix
+     SUBDIR += xmp
 #    SUBDIR += xmpeg3
 
 .include <bsd.port.subdir.mk>

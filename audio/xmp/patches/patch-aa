@@ -1,0 +1,115 @@
+diff -cr xmp-1.1.5/configure xmp-1.1.5.mine/configure
+*** xmp-1.1.5/configure	Wed May 20 11:43:13 1998
+--- xmp-1.1.5.mine/configure	Thu Jul 23 18:11:16 1998
+***************
+*** 1317,1322 ****
+--- 1317,1329 ----
+  #define DRIVER_SUNOS 1
+  EOF
+  
++     ;;
++     openbsd*)
++ 	DRIVERS="${DRIVERS} solaris.o"
++ 	cat >> confdefs.h <<\EOF
++ #define DRIVER_SOLARIS 1
++ EOF
++     ;;
+      esac
+  fi 
+  
+diff -cr xmp-1.1.5/src/drivers/solaris.c xmp-1.1.5.mine/src/drivers/solaris.c
+*** xmp-1.1.5/src/drivers/solaris.c	Sun May 17 21:21:17 1998
+--- xmp-1.1.5.mine/src/drivers/solaris.c	Thu Jul 23 19:23:08 1998
+***************
+*** 55,61 ****
+--- 55,63 ----
+  
+  static char *help[] = {
+      "gain=val", "Audio output gain (0 to 255)",
++ #if !defined(__OpenBSD__)
+      "port={s|h|l}", "Audio port (s[peaker], h[eadphones], l[ineout])",
++ #endif
+      "buffer=val", "Audio buffer size (default is 32768)",
+      NULL
+  };
+***************
+*** 86,91 ****
+--- 88,134 ----
+      NULL
+  };
+  
++ #if defined(__OpenBSD__)
++ static int setaudio (struct drv_config *cfg)
++ {
++     audio_info_t ainfo;
++     int gain = 128;
++     int bsize = 32 * 1024;
++     char *token;
++     char **parm = cfg->parm;
++ 
++     parm_init ();
++     chkparm1 ("gain", gain = atoi (token));
++     chkparm1 ("buffer", bsize = atoi (token));
++     parm_end ();
++ 
++     if (gain < AUDIO_MIN_GAIN)
++ 	gain = AUDIO_MIN_GAIN;
++     if (gain > AUDIO_MAX_GAIN)
++ 	gain = AUDIO_MAX_GAIN;
++ 
++     AUDIO_INITINFO (&ainfo);
++ 
++     ainfo.play.sample_rate = cfg->rate;
++     ainfo.play.channels = cfg->mode + 1;
++     ainfo.play.precision = cfg->fmt & MIX_16BIT ? 16 : 8;
++     ainfo.play.encoding = cfg->fmt & MIX_16BIT ? AUDIO_ENCODING_SLINEAR : AUDIO_ENCODING_ULINEAR;
++     ainfo.play.gain = gain;
++     ainfo.play.buffer_size = bsize;
++ 
++     if (ioctl (audio_fd, AUDIO_SETINFO, &ainfo) == -1) {
++ 	close (audio_fd);
++ 	return 0;
++     }
++ 	
++     drv_solaris.description = "OpenBSD Generic Audio";
++ 
++     cfg->mode++;
++ 
++     return 1;
++ }
++ 
++ #else
+  
+  static int setaudio (struct drv_config *cfg)
+  {
+***************
+*** 150,159 ****
+--- 193,207 ----
+      return 1;
+  }
+  
++ #endif
+  
+  static int init (struct drv_config *cfg)
+  {
++ #if defined(__OpenBSD__)
++     audio_fd = open ("/dev/sound", O_WRONLY);
++ #else
+      audio_fd = open ("/dev/audio", O_WRONLY);
++ #endif
+  
+      if (audio_fd == -1)
+  	return 0;
+diff -cr xmp-1.1.5/src/main/xstuff.c xmp-1.1.5.mine/src/main/xstuff.c
+*** xmp-1.1.5/src/main/xstuff.c	Wed Jan 28 14:33:38 1998
+--- xmp-1.1.5.mine/src/main/xstuff.c	Thu Jul 23 18:13:02 1998
+***************
+*** 6,11 ****
+--- 6,12 ----
+   * for more information.
+   */
+  
++ #include <sys/types.h>
+  #include <sys/ipc.h>
+  #include <sys/shm.h>
+  

@@ -1,0 +1,8 @@
+XMP is a tracked music module player.
+
+The current version recognizes the following module formats:
+Fasttracker II (XM), 1 to 32 instruments Noise/Fast/Protracker and
+variants (MOD,NST,WOW), Scream Tracker 3 (S3M), Scream Tracker 2 (STM),
+Composer 669 (669), Poly Tracker (PTM), Oktalyzer, Multitracker (MTM),
+Aley's modules (ALM), Farandole Composer (FAR), Amusic Adlib Tracker (AMD)
+and Realty Adlib Tracker (RAD).
