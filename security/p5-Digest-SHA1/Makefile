@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/30 19:30:44 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/30 16:26:48 marcm Exp $
 
 COMMENT=	"module to calculate SHA1 digests"
 
-VERSION=	2.01
+VERSION=	2.02
 DISTNAME=	Digest-SHA1-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Digest/}
 
-MAINTAINER=	Marc Matteo <marcm@openbsd.org>
+MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
