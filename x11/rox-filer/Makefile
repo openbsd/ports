@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2003/05/14 11:59:36 couderc Exp $
+# $OpenBSD: Makefile,v 1.15 2003/06/02 12:33:10 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
-VERSION=		1.3.8
+VERSION=		2.0.0
 DISTNAME=		rox-${VERSION}
 PKGNAME=		rox-filer-${VERSION}
 CATEGORIES=		x11
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rox/}
 
 DISTFILES=		${DISTNAME}.tgz
 
-LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0.0.9,gdk_pixbuf-2.0.0.9,gdk-x11-2.0.0.9::x11/gtk+2 \
 		xml2::textproc/libxml
 RUN_DEPENDS=	::misc/shared-mime-info
 
