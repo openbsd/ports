@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/08/20 06:04:22 brad Exp $
+lib/librep.so.9.4
+DYNLIBDIR(%B)
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libgdbm.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libgettext.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libreadline.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/librecord-profile.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libsdbm.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libtables.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libtimers.so.0.0

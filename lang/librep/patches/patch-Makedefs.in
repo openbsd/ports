@@ -1,0 +1,11 @@
+--- Makedefs.in.orig	Sat Aug 19 23:35:09 2000
++++ Makedefs.in	Sat Aug 19 23:34:20 2000
+@@ -65,7 +65,7 @@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ INSTALL_SCRIPT=@INSTALL_SCRIPT@
+ 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ MAKEINFOFLAGS =
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips
