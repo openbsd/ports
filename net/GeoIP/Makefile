@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/16 10:40:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/11 19:32:56 naddy Exp $
 
 COMMENT=	"find the country where IP address/hostname originates from"
 
-DISTNAME=	GeoIP-1.2.0
+DISTNAME=	GeoIP-1.3.8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.maxmind.com/geoip/

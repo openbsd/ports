@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/11/11 19:32:57 naddy Exp $
 bin/geoipexport
+bin/geoipexportlocations
 bin/geoiplookup
 bin/geoipupdate
 include/GeoIP.h
