@@ -1,15 +1,9 @@
-# OpenBSD makefile for:	xtar
-# Version required:	1.4
-# Date created:		May 20 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.4 1999/11/03 05:18:21 kevlo Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/12/08 04:51:50 brad Exp $
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITE_SUBDIR= utilities
 
 MAINTAINER=	angelos@openbsd.org
 
