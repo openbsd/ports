@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/26 16:40:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/26 17:05:32 naddy Exp $
+
+# gross LP64 violations in tar file reader
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"mh-e like mail user agent"
 
