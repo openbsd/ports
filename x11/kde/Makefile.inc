@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.29 2004/08/03 11:37:52 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2004/09/18 09:30:06 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@unstable/${VERSION}/src/@}
 .elif defined(VERSION) && ${VERSION} == "3.2.0"
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.2/src/@}
+.elif defined(VERSION) && ${VERSION} == "3.3.0"
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.3/src/@}
 .else
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 .endif
@@ -13,13 +15,14 @@ EXTRACT_SUFX?=	.tar.bz2
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
 NOT_FOR_ARCHS?=	${NO_SHARED_ARCHS}
+SHARED_ONLY=Yes
 MODKDE_VERSION?=	3.1
 MODULES?=	x11/kde
 
 MODGNU_CONFIG_GUESS_DIRS?=	${MODKDE_CONFIG_GUESS_DIRS}
 
 CONFIGURE_STYLE?=	autoconf
-.if defined(MODKDE_VERSION) && ${MODKDE_VERSION} == "3.2.3"
+.if defined(MODKDE_VERSION) && (${MODKDE_VERSION} == "3.2.3" || ${MODKDE_VERSION} == "3.3.0")
 AUTOCONF_VERSION?=	2.59
 .endif
 AUTOCONF_VERSION?=	2.57
