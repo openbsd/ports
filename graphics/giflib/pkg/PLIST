@@ -30,5 +30,5 @@ bin/gifburst
 lib/libgif.a
 lib/libgif.la
 lib/libgif.so.4.1
+@exec /sbin/ldconfig -m %B
 include/gif_lib.h
-@exec /sbin/ldconfig -m /usr/local/lib
