@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cfg_c,v 1.1 2004/12/14 23:23:18 jcs Exp $
+--- src/cfg.c.orig	Thu Dec  2 12:20:06 2004
++++ src/cfg.c	Thu Dec  2 12:20:28 2004
+@@ -316,8 +316,10 @@
+     free(cfg->nvram);
+   }
+   cfg->nvram = NULL;
++#ifndef __OpenBSD__
+   /* find nvram device file */
+   find_nvram(cfg);
++#endif
+ 
+   /* cfg->polltime */
+   cfg->polltime = DEFAULT_POLLTIME;

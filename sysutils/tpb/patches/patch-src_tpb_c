@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tpb_c,v 1.1.1.1 2004/12/01 17:08:55 jcs Exp $
---- src/tpb.c.orig	Sun Oct  3 13:18:33 2004
-+++ src/tpb.c	Sun Oct  3 13:19:30 2004
+$OpenBSD: patch-src_tpb_c,v 1.2 2004/12/14 23:23:18 jcs Exp $
+--- src/tpb.c.orig	Sun Aug 22 08:45:11 2004
++++ src/tpb.c	Thu Dec  2 12:18:26 2004
 @@ -25,7 +25,11 @@
  #include <sys/wait.h>
  #include <locale.h>
@@ -13,3 +13,92 @@ $OpenBSD: patch-src_tpb_c,v 1.1.1.1 2004/12/01 17:08:55 jcs Exp $
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
+@@ -86,6 +90,8 @@
+ void sig_chld_handler(int signo);
+ /* }}} */
+ 
++int nfd = -1;
++
+ int main(int argc, char **argv) /* {{{ */
+ {
+   t_thinkpad_state thinkpad_state, last_thinkpad_state;
+@@ -103,6 +109,17 @@
+   Display *display = NULL;
+ #endif /* HAVE_LIBX11 */
+ 
++  /* open nvram */
++  if ((nfd = open(PATH_NVRAM, O_RDONLY|O_NONBLOCK, 0)) < 0) {
++    fprintf(stderr, _("Unable to open device %s: "), PATH_NVRAM);
++    perror(NULL);
++    return -1;
++  }
++
++  /* drop privileges */
++  setegid(getgid());
++  setgid(getgid());
++
+   /* zero thinkpad_state */
+   memset(&thinkpad_state, 0, sizeof(thinkpad_state));
+ 
+@@ -143,7 +160,7 @@
+ 
+   /* become a daemon if requested */
+   if(cfg.daemon == STATE_ON) {
+-    daemonize();
++    daemon(0, 0);
+   }
+ 
+   /* initialize osd */
+@@ -972,7 +989,6 @@
+ /* get the current state from the nvram */
+ int get_nvram_state(t_thinkpad_state *thinkpad_state) /* {{{ */
+ {
+-  static int fdsc = -1; /* -1 -> file not opened */
+   unsigned char buffer[114];
+   struct {
+     int pos;
+@@ -986,26 +1002,20 @@
+   };
+   int pos_len_idx = 0;
+ 
+-  /* open nvram for reading */
+-  if(fdsc == -1) { /* if not already opened, open nvram */
+-    if((fdsc=open(cfg.nvram, O_RDONLY|O_NONBLOCK)) == -1) {
+-      fprintf(stderr, _("Unable to open device %s: "), cfg.nvram);
+-      perror(NULL);
+-      return -1;
+-    }
+-  }
++  if (nfd < 0)
++     return -1;
+ 
+   /* Read only the interesting bytes from nvram to reduce the CPU consupmtion of tpb */
+   /* The kernel nvram driver reads byte-by-byte from nvram, so just reading interesting bytes reduces the amount of inb() calls */
+   while (pos_len[pos_len_idx].pos != 0x0) {
+-    if(lseek(fdsc, pos_len[pos_len_idx].pos, SEEK_SET) != pos_len[pos_len_idx].pos ) {
+-      fprintf(stderr, _("Unable to seek in device %s: "), cfg.nvram);
++    if(lseek(nfd, pos_len[pos_len_idx].pos, SEEK_SET) != pos_len[pos_len_idx].pos ) {
++      fprintf(stderr, _("Unable to seek in device %s: "), PATH_NVRAM);
+       perror(NULL);
+       return -1;
+     }
+-    if(read(fdsc, buffer+pos_len[pos_len_idx].pos, pos_len[pos_len_idx].len) != pos_len[pos_len_idx].len) {
++    if(read(nfd, buffer+pos_len[pos_len_idx].pos, pos_len[pos_len_idx].len) != pos_len[pos_len_idx].len) {
+ 
+-      fprintf(stderr, _("Unable to read from device %s: "), cfg.nvram);
++      fprintf(stderr, _("Unable to read from device %s: "), PATH_NVRAM);
+       perror(NULL);
+       return -1;
+     }
+@@ -1273,6 +1283,11 @@
+ {
+   int  fdsc;
+   char buffer;
++
++#ifdef __OpenBSD__
++  /* nvram writing not supported in OpenBSD */
++  return;
++#endif
+ 
+   /* only use writeback to nvram when cfg.mixersteps is different from DEFAULT_MIXERSTEPS */
+   if(cfg.mixersteps != DEFAULT_MIXERSTEPS) {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tpb_h,v 1.1 2004/12/14 23:23:18 jcs Exp $
+--- src/tpb.h.orig	Thu Dec  2 11:30:36 2004
++++ src/tpb.h	Thu Dec  2 11:30:58 2004
+@@ -28,6 +28,8 @@
+ #define _(String) (String)
+ #endif /* ENABLE_NLS */
+ 
++#define PATH_NVRAM "/dev/nvram"
++
+ #define MAX_VOLUME 100
+ #define CALLBACK_CMD_LENGTH 256
+ #define CALLBACK_CMD_ARGS 30
