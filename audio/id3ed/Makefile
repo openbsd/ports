@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/13 16:35:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/06 13:17:42 naddy Exp $
 
 COMMENT=		"interactive console id3 tag editor"
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.azstarnet.com/~donut/programs/id3ed/
 
-USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 
