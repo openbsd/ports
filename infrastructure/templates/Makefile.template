@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.1.1.1 1999/05/18 16:39:05 espie Exp $
+# $OpenBSD: Makefile.template,v 1.2 1999/05/18 16:46:39 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -68,11 +68,13 @@ MASTER_SITES=		???
 #USE_IMAKE=		yes
 #USE_X11=		yes (assumed if USE_IMAKE is yes)
 #USE_AUTOCONF=		yes
+#USE_LIBTOOL=		yes # require 1.89 or later
 #GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
 #HAS_CONFIGURE=		yes (assumed if GNU_CONFIGURE is yes)
 #CONFIGURE_SCRIPT=	??? (if other than configure)
 #CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???
+#LIBTOOL_FLAGS=		???
 
 # Things that we don't want to do for this port/package
 #
