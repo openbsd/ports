@@ -1,4 +1,4 @@
 Icecast is an Internet based broadcasting system based on the Mpeg Layer III
 streaming technology. It is, however, not limited to streaming mp3 files. 
 
-${HOMEPAGE}
+WWW: ${HOMEPAGE}
