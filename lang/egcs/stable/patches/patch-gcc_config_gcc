@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.5 2002/05/29 14:21:25 espie Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.6 2002/05/29 14:33:26 espie Exp $
 --- gcc/config.gcc.orig	Thu May  2 23:28:49 2002
 +++ gcc/config.gcc	Wed May 29 16:07:03 2002
 @@ -579,6 +579,7 @@ alpha*-*-openbsd*)
@@ -15,7 +15,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.5 2002/05/29 14:21:25 espie Exp $
  	use_collect2=yes
 +	;;
 +sparc64-*-openbsd*)
-+	tm_file="sparc/openbsd1-64.h svr4.h sparc/sparc.h sparc/sysv4.h sparc/sol2.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
++	tm_file="sparc/openbsd1-64.h sparc/sparc.h svr4.h sparc/sysv4.h sparc/sol2.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
 +	xm_file=sparc/xm-sp64.h
 +	gas=yes gnu_ld=yes
  	;;
