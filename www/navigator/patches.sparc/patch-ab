@@ -1,5 +1,5 @@
---- Fortify-1.4.1-unix-sparc/src/common/Makefile-orig	Mon May  3 08:53:57 1999
-+++ Fortify-1.4.1-unix-sparc/src/common/Makefile	Mon May  3 08:55:19 1999
+--- Fortify-1.4.2-unix-sparc/src/common/Makefile.orig	Thu May 20 12:04:40 1999
++++ Fortify-1.4.2-unix-sparc/src/common/Makefile	Thu May 20 12:05:20 1999
 @@ -1,9 +1,9 @@
  
 -CC	= gcc # -Wall -ansi

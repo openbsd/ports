@@ -7,66 +7,14 @@ netscape/XKeysymDB
 netscape/bookmark.htm
 netscape/nls/C
 netscape/nls/nls.dir
-netscape/java/classes/awt.properties
 netscape/java/classes/resource.jar
-netscape/java/classes/font.properties
-netscape/java/classes/font.properties.zh_TW_Big5
-netscape/java/classes/font.properties.zh_TW
-netscape/java/classes/font.properties.zh_GB2312
-netscape/java/classes/font.properties.zh
-netscape/java/classes/font.properties.tr
-netscape/java/classes/font.properties.ru
-netscape/java/classes/font.properties.pl
-netscape/java/classes/font.properties.lv
-netscape/java/classes/font.properties.lt
-netscape/java/classes/font.properties.ko
-netscape/java/classes/font.properties.ja
-netscape/java/classes/font.properties.hu
-netscape/java/classes/font.properties.el
-netscape/java/classes/font.properties.cs
-netscape/java/classes/aix/font.properties
-netscape/java/classes/aix/font.properties.cs
-netscape/java/classes/aix/font.properties.hu
-netscape/java/classes/aix/font.properties.ja
-netscape/java/classes/aix/font.properties.ko
-netscape/java/classes/aix/font.properties.pl
-netscape/java/classes/aix/font.properties.ru
-netscape/java/classes/aix/font.properties.zh
-netscape/java/classes/aix/font.properties.zh_TW
-netscape/java/classes/hpux/font.properties
-netscape/java/classes/hpux/font.properties.bg
-netscape/java/classes/hpux/font.properties.cs
-netscape/java/classes/hpux/font.properties.el
-netscape/java/classes/hpux/font.properties.hr
-netscape/java/classes/hpux/font.properties.hu
-netscape/java/classes/hpux/font.properties.ja
-netscape/java/classes/hpux/font.properties.ko
-netscape/java/classes/hpux/font.properties.pl
-netscape/java/classes/hpux/font.properties.ro
-netscape/java/classes/hpux/font.properties.ru
-netscape/java/classes/hpux/font.properties.sk
-netscape/java/classes/hpux/font.properties.sl
-netscape/java/classes/hpux/font.properties.tr
-netscape/java/classes/hpux/font.properties.zh_GB2312
-netscape/java/classes/hpux/font.properties.zh_TW_Big5
-netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
-netscape/java/classes/font.properties.zh_TW_CNS11643
-netscape/java/classes/irix/font.properties
-netscape/java/classes/irix/font.properties.cs
-netscape/java/classes/irix/font.properties.el
-netscape/java/classes/irix/font.properties.hu
-netscape/java/classes/irix/font.properties.ja
-netscape/java/classes/irix/font.properties.ko
-netscape/java/classes/irix/font.properties.zh_GB2312
-netscape/java/classes/irix/font.properties.zh_TW_Big5
-netscape/java/classes/irix/font.properties.zh_TW_CNS11643
 netscape/java/classes/ifc11.jar
 netscape/java/classes/iiop10.jar
 netscape/java/classes/jae40.jar
 netscape/java/classes/java40.jar
 netscape/java/classes/jio40.jar
 netscape/java/classes/jsd10.jar
-netscape/java/classes/ldap10.jar
+netscape/java/classes/ldap30.jar
 netscape/java/classes/scd10.jar
 netscape/nethelp/Back_dep.gif
 netscape/nethelp/Topic.js
@@ -142,9 +90,6 @@ bin/netscape
 @dirrm netscape/nethelp/netscape/home
 @dirrm netscape/nethelp/netscape
 @dirrm netscape/nethelp
-@dirrm netscape/java/classes/irix
-@dirrm netscape/java/classes/hpux
-@dirrm netscape/java/classes/aix
 @dirrm netscape/java/classes
 @dirrm netscape/java
 @dirrm netscape/nls
