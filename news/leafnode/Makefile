@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2002/09/24 00:24:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/21 16:49:06 marcm Exp $
 
 COMMENT=		"USENET software package designed for small sites"
 
-VERSION=		1.9.26
+VERSION=		1.9.27
 DISTNAME=		leafnode-${VERSION}.rel
 PKGNAME=		leafnode-${VERSION}
 CATEGORIES=		news
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--with-ipv6
 post-install:
 	@$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/leafnode && \
 	cd ${WRKSRC} && \
-	$(INSTALL_DATA) README README-FQDN TROUBLESHOOTING INSTALL FAQ \
+	$(INSTALL_DATA) README README-FQDN INSTALL FAQ.txt \
 		${PREFIX}/share/doc/leafnode
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/leafnode && \
 	mv ${WRKINST}/${SYSCONFDIR}/config.example \
