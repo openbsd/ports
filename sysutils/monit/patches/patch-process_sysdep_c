@@ -1,0 +1,65 @@
+$OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+--- process/sysdep.c.orig	Fri Sep 13 02:32:26 2002
++++ process/sysdep.c	Sun Sep 22 16:07:30 2002
+@@ -57,7 +57,7 @@
+ #include <procfs.h>
+ #endif
+ 
+-#ifdef FREEBSD
++#ifdef OPENBSD
+ #include <kvm.h>
+ #include <sys/param.h>
+ #include <sys/proc.h>
+@@ -65,14 +65,15 @@
+ #include <sys/resourcevar.h>
+ #include <sys/lock.h>
+ #include <sys/user.h>
+-#include <vm/vm.h>
+-#include <vm/vm_object.h>
+-#include <vm/pmap.h>
++#include <uvm/uvm.h>
++#include <uvm/uvm_object.h>
++#include <uvm/uvm_pmap.h>
+ #include <machine/pmap.h>
+ #include <machine/vmparam.h>
+-#include <vm/vm_map.h>
++#include <uvm/uvm_map.h>
+ #include <sys/vmmeter.h>
+ #include <sys/sysctl.h>
++ssize_t              kvm_uread(kvm_t *, const struct proc *, u_long, char *, size_t);
+ #endif
+ 
+ #ifdef LINUX
+@@ -279,7 +280,7 @@ int get_process_info_sysdep(ProcInfo_T p
+ 
+ #endif
+ 
+-#ifdef FREEBSD
++#ifdef OPENBSD
+ 
+ #define pagetok(size) ((size) << pageshift)
+ #define tv2sec(tv) (((u_int64_t) tv.tv_sec * 1000000) + (u_int64_t) tv.tv_usec)
+@@ -348,8 +349,8 @@ static void calcru(struct proc *p, struc
+ int init_process_info_sysdep(void) {
+ 
+   register int pagesize;
+-  struct vmmeter vmm;
+-  
++  struct uvmexp vmm;
++
+   struct nlist nlst [] = {
+       { "_bufspace"},
+       { "_cnt" },
+@@ -401,9 +402,9 @@ int init_process_info_sysdep(void) {
+ 
+   }
+ 
+-  mem_kbyte_max= vmm.v_pageout_free_min +
+-    vmm.v_free_count + vmm.v_wire_count +
+-    vmm.v_active_count + vmm.v_inactive_count;
++  mem_kbyte_max= vmm.freemin +
++    vmm.free + vmm.wired +
++    vmm.active + vmm.inactive;
+ 
+   return TRUE;
+ 

@@ -1,0 +1,64 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+#
+# Pre/post-installation setup of monit
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/monit
+
+do_notice()
+{
+	echo
+	echo "+------------"
+	echo "| The existing $1 configuration file in $CONFIG_DIR,"
+	echo "| has NOT been changed. You may want to compare them"
+	echo "| to the current sample file in $SAMPLE_CONFIG_DIR,"
+	echo "| and update your configuration as needed."
+	echo "+------------"
+}
+
+do_install()
+{
+	install -d -o root -g wheel -m 755 $CONFIG_DIR
+	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/monitrc $CONFIG_DIR/monitrc
+	echo
+	echo "+------------"
+	echo "| The $1 configuration file (monitrc) has been installed"
+	echo "| into $CONFIG_DIR. Please view this file and change the"
+	echo "| configuration to meet your needs."
+	echo "| You can also place it in ~/.monitrc."
+	echo "+------------"
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+	PRE-INSTALL)
+		: nothing to pre-install for this port
+		;;
+	POST-INSTALL)
+		if [ ! -f $CONFIG_DIR/monitrc ]; then
+			do_install $1
+		else
+			do_notice $1
+		fi
+		;;
+	*)
+		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+		exit 1
+	;;
+esac
+
+exit 0

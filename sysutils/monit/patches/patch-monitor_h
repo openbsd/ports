@@ -1,0 +1,12 @@
+$OpenBSD: patch-monitor_h,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+--- monitor.h.orig	Sun Sep 22 14:10:50 2002
++++ monitor.h	Sun Sep 22 14:11:41 2002
+@@ -276,7 +276,7 @@ int   exist_file(char *);
+ time_t file_changedtime(char *file);
+ char *get_ctime();
+ char *get_RFC1123date(long *);
+-char *get_uptime(long delta);
++char *get_uptime(time_t delta);
+ char *get_process_uptime(char *);
+ char *get_md5sum(char *);
+ int   check_md5(char *, char *);
