@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/02/15 21:06:06 danh Exp $
+# $OpenBSD: Makefile,v 1.16 2002/02/15 21:28:50 danh Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
@@ -30,6 +30,10 @@ FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 NO_REGRESS=	Yes
 
 post-install:
+	${INSTALL_MAN} ${WRKDIST}/doc/clients.5rad ${PREFIX}/man/man5/clients.5
+	${INSTALL_MAN} ${WRKDIST}/doc/naslist.5rad ${PREFIX}/man/man5/naslist.5
+	${INSTALL_MAN} ${WRKDIST}/doc/builddbm.8rad \
+		${PREFIX}/man/man8/builddbm.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/radiusd-cistron
 	@for file in ${WRKDIST}/doc/README* ; do \
 		${INSTALL_DATA} $$file ${PREFIX}/share/doc/radiusd-cistron; \
