@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2004/12/02 21:35:05 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2004/12/10 09:27:32 jakob Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -15,6 +15,7 @@
      SUBDIR += ocaml-postgresql
      SUBDIR += openldap
      SUBDIR += p5-AsciiDB-TagFile
+     SUBDIR += p5-BerkeleyDB
      SUBDIR += p5-Class-DBI
      SUBDIR += p5-Class-DBI-AbstractSearch
      SUBDIR += p5-Class-DBI-AsForm
