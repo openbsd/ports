@@ -1,0 +1,527 @@
+#!/usr/bin/perl -w
+#
+# Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE OPENBSD PROJECT AND CONTRIBUTORS
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OPENBSD
+# PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+use strict;
+use File::Temp;
+use Getopt::Std;
+
+our @FREE_HOSTS = ();
+our @DOWN_HOSTS = ();
+our $CHECK_HOSTS;
+our $check_host_ctr = 0;
+
+# indexed by child pid
+our $CHILD;
+use constant {
+	HOST => 0,
+	PORT => 1,
+	RETVAL => 2
+};
+
+# indexed by port
+our %childpid = ();
+
+# dependency lists
+our %depend_on = ();
+our %prereqs_of = ();
+
+chomp(my $ARCH = `/usr/bin/arch -s`);
+our %FIFO = ();
+our $MAKE = "/usr/bin/make";
+our $MAKEFLAGS = "BATCH=Yes BIN_PACKAGES=Yes BULK=Yes TRUST_PACKAGES=Yes";
+our $PORTSDIR = $ENV{'PORTSDIR'} || "/usr/ports";
+our $TMPDIR = $ENV{'PKG_TMPDIR'} || '/var/tmp';
+our $TIMEOUT = 10;
+our $SSH = "/usr/bin/ssh -n -o ConnectTimeout=$TIMEOUT";
+
+# -A <Arch>: specify architecture of build hosts
+# -b: build dependency file
+# -d: debug run, don't actually build any packages
+# -e: perform expensive operations to get full dependency information
+# -F <Hosts File>: one host per line
+# -L <Logdir>: use <Logdir> instead of $PORTSDIR/logs/$ARCH
+# -S <SUBDIRLIST>: use <SUBDIRLIST> instead of all ports
+# -T <Dependency File>: use <Dependency File> instead of a temporary one
+our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_T);
+getopts('A:bdeF:L:S:T:');
+
+$ARCH = $opt_A if defined $opt_A;
+
+$opt_F = "$PORTSDIR/infrastructure/db/hosts-$ARCH" unless defined $opt_F;
+
+$opt_L = "$PORTSDIR/logs/$ARCH" unless defined $opt_L;
+our $LOGGER = "$PORTSDIR/infrastructure/build/portslogger $opt_L";
+
+unless (defined $opt_T) {
+	$opt_T = new File::Temp( TEMPLATE => 'all-depends.XXXXXXXXXX',
+				 DIR => $TMPDIR,
+				 UNLINK => 0 );
+}
+
+our @dead_children = ();
+
+sub child_handler()
+{
+	while ((my $child = waitpid(-1,1)) > 0) {
+		if (defined $CHILD->{$child}) {
+			$CHILD->{$child}[RETVAL] = ($? >> 8);
+			push(@dead_children, $child);
+		} elsif (exists $CHECK_HOSTS->{$child}) {
+			$CHECK_HOSTS->{$child} = ($? >> 8);
+		}
+	}
+}
+
+sub reap_children()
+{
+	while (my $c = pop @dead_children) {
+		update_after_child($c);
+	}
+}
+
+sub mark_as_down($)
+{
+	push(@DOWN_HOSTS, shift);
+}
+
+sub mark_as_free($)
+{
+	push(@FREE_HOSTS, shift);
+}
+
+sub check_host($)
+{
+	my $host = shift;
+	my $pid = fork();
+	die "fork: $!" unless defined $pid;
+
+	if ($pid > 0) {
+		# parent
+		my $begin = time();
+		$CHECK_HOSTS->{$pid} = undef;
+		while (not defined $CHECK_HOSTS->{$pid}) {
+			# give ssh a chance to timeout by itself
+			if ($begin + $TIMEOUT + 2 > time()) {
+				sleep(1);
+			} else {
+				# ssh did not terminate in time, kill it
+				kill('TERM', $pid);
+				return -1;
+			}
+		}
+		return $CHECK_HOSTS->{$pid};
+	} else {
+		# child
+		$SIG{CHLD} = "DEFAULT";
+		$SIG{INT}  = "DEFAULT";
+		$SIG{TERM} = "DEFAULT";
+
+		exec("$SSH $host exit 0 > /dev/null 2>&1");
+		die("exec(): $!");
+	}
+}
+
+sub check_hosts()
+{
+	# don't check hosts in debug mode and only every so often
+	# in regular mode
+	return if defined $opt_d or ($check_host_ctr++ % 60 != 0);
+
+	# any host back up?
+	for (my $i = 0; $i <= $#DOWN_HOSTS; $i++) {
+		my $host = $DOWN_HOSTS[$i];
+		my $retval = check_host($host);
+		if ($retval == 0) {
+			print "*** $host is back\n";
+			mark_as_free($host);
+			splice(@DOWN_HOSTS, $i, 1);
+			$i--;
+		}
+	}
+
+	# free hosts still alive?
+	for (my $i = 0; $i <= $#FREE_HOSTS; $i++) {
+		my $host = $FREE_HOSTS[$i];
+		my $retval = check_host($host);
+		if ($retval != 0) {
+			print "*** lost $host\n";
+			mark_as_down($host);
+			splice(@FREE_HOSTS, $i, 1);
+			$i--;
+		}
+	}
+
+	# building hosts all still alive?
+	foreach my $pid (keys %{$CHILD}) {
+		my $host = $CHILD->{$pid}[HOST];
+		my $retval = check_host($host);
+
+		if ($retval != 0) {
+			my $port = $CHILD->{$pid}[PORT];
+			print "*** lost $host\n";
+			mark_as_down($host);
+			delete $childpid{$port};
+			delete $CHILD->{$pid};
+		}
+	}
+}
+
+sub update_after_child($)
+{
+	my $pid = shift;
+	my $host = $CHILD->{$pid}[HOST];
+	my $port = $CHILD->{$pid}[PORT];
+	my $retval = $CHILD->{$pid}[RETVAL];
+
+	delete $CHILD->{$pid};
+
+	if ($retval == 0) {
+		print "<== built $port\n";
+
+		update_prereqs_of($port);
+		delete $prereqs_of{$port};
+	} elsif ($retval == 1) {
+		print "<== failure building $port\n";
+
+		remove_port($port);
+	} elsif ($retval == 255) {
+		print "<== host $host is down\n";
+
+		delete $childpid{$port};
+		mark_as_down($host);
+
+		return;
+	} else {
+		print "*** Unexpected return code $retval from $host "
+		    . "for $port.\n";
+
+		remove_port($port);
+	}
+	delete $childpid{$port};
+	mark_as_free($host);
+}
+
+sub find_free_host()
+{
+	reap_children();
+	check_hosts();
+
+	while (@FREE_HOSTS == 0) {
+		sleep(1);
+		reap_children();
+		check_hosts();
+	}
+	return pop @FREE_HOSTS;
+}
+
+# we failed to build $port, thus no $dep can be build (recursive)
+# if $dep is not build, it no longer depends on $pre
+sub remove_port($);
+
+sub remove_port($)
+{
+	my $port = shift;
+	
+	for (my $i = 0; $i <= $#{$depend_on{$port}}; $i++) {
+		my $dep = ${$depend_on{$port}}[$i];
+		foreach my $pre (@{$prereqs_of{$dep}}) {
+			next if $pre eq $dep;
+			remove_from_list(\@{$depend_on{$pre}}, $dep);
+			$i-- if $pre eq $port;
+		}
+		remove_port($dep) unless $dep eq $port;
+	}
+	print "*** will not build $port\n";
+	delete $prereqs_of{$port};
+	delete $depend_on{$port};
+}
+
+# generate full dependency information
+# This is computational intensive!
+sub push_dep($$);
+
+sub push_dep($$)
+{
+	my ($a, $b) = @_;
+	
+	foreach my $depends_on_a (@{$depend_on{$a}}) {
+		foreach my $prereq_of_b (@{$prereqs_of{$b}}) {
+			my $gotcha = 0;
+
+			foreach my $p (@{$prereqs_of{$depends_on_a}}) {
+				if ($p eq $prereq_of_b) {
+					$gotcha = 1;
+					last;
+				}
+			}
+			next unless $gotcha == 0;
+			
+			push_dep($depends_on_a, $prereq_of_b)
+			  unless $depends_on_a eq $a and $prereq_of_b eq $b;
+		}
+	}
+	push(@{$prereqs_of{$a}}, $b);
+	push(@{$depend_on{$b}}, $a);
+}
+
+sub parse_dependency_file()
+{
+	open(my $fh, "sort -u $opt_T |") or die "Could not open $opt_T: $!";
+
+ 	while (<$fh>) {
+ 		chomp;
+ 		my ($a, $b) = split /\s+/;
+
+ 		# ensure every port depends on itself, needed by build logic
+ 		# ports depending on the key
+ 		$depend_on{$a} = [$a] unless defined $depend_on{$a};
+ 		$depend_on{$b} = [$b] unless defined $depend_on{$b};
+ 		# ports, the key depends on
+ 		$prereqs_of{$a} = [$a] unless defined $prereqs_of{$a};
+ 		$prereqs_of{$b} = [$b] unless defined $prereqs_of{$b};
+
+		if ($a ne $b) {
+			if (defined $opt_e) {
+				push_dep($a, $b);
+			} else {
+				push(@{$prereqs_of{$a}}, $b);
+				push(@{$depend_on{$b}}, $a);
+			}
+		}
+ 	}
+	close($fh);
+}
+
+sub parse_hosts_file()
+{
+	open(my $fh, "<", $opt_F) or die "Could not open $opt_F: $!";
+
+	while (<$fh>) {
+		chomp;
+		mark_as_free($_);
+		$FIFO{$_} = "$TMPDIR/dpg-$_.log";
+	}
+	close($fh);
+}
+
+sub build_package($$$$)
+{
+	my ($host, $port, $flavor, $fullport) = @_;
+
+	my $pid = fork();
+	die "fork: $!" unless defined $pid;
+	
+	if ($pid > 0) {
+		# parent
+		$CHILD->{$pid} = [];
+		$CHILD->{$pid}[HOST] = $host;
+		$CHILD->{$pid}[PORT] = $fullport;
+		$CHILD->{$pid}[RETVAL] = undef;
+		$childpid{$fullport} = $pid;
+
+		return;
+	} else {
+		# child
+		$SIG{CHLD} = "DEFAULT";
+		$SIG{INT}  = "DEFAULT";
+		$SIG{TERM} = "DEFAULT";
+		$0 = "dpb [slave] - $port";
+
+		print "==> building $port";
+		print ", FLAVOR \"$flavor\"" if defined $flavor;
+		print " on $host\n";
+
+		if (defined $opt_d) {
+			sleep(1);
+		} else {
+			my $arg = "$SSH $host 'cd $PORTSDIR/$port && ";
+			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
+			$arg .= "$MAKE $MAKEFLAGS package' > $FIFO{$host} 2>&1";
+
+			start_logger($host);
+
+			exec($arg);
+			die("exec(): $!");
+		}
+		exit 0;
+	}
+}
+
+sub update_prereqs_of($)
+{
+	my $port = shift;
+
+	return unless defined @{$depend_on{$port}};
+
+	# remove $port from lists of prerequisites
+	foreach my $depending (@{$depend_on{$port}}) {
+		next unless defined @{$prereqs_of{$depending}};
+		remove_from_list(\@{$prereqs_of{$depending}}, $port);
+	}
+}
+
+sub remove_from_list(\@$)
+{
+	my ($list, $entry) = @_;
+
+	for (my $i = 0; $i <= $#{$list}; $i++) {
+		if (${$list}[$i] eq $entry) {
+			splice(@{$list}, $i, 1);
+			$i--;
+		}
+	}
+}
+
+sub start_logger()
+{
+	my $host = shift;
+
+	unless (-p $FIFO{$host}) {
+		system("mkfifo $FIFO{$host}") and
+		  die("Cannot create $FIFO{$host}: $!");
+	}
+	
+	my $pid = fork();
+	die("fork: $!") unless defined $pid;
+
+	if ($pid > 0) {
+		# parent
+		
+		return;
+	} else {
+		# child
+		$SIG{CHLD} = "DEFAULT";
+		$SIG{INT}  = "DEFAULT";
+		$SIG{TERM} = "DEFAULT";
+
+		exec("$LOGGER < $FIFO{$host} > /dev/null 2>&1");
+		die("Failed to start logger: $!");
+	}
+}
+
+sub clean_up()
+{
+	$SIG{INT}  = "IGNORE";
+	$SIG{TERM} = "IGNORE";
+
+	kill('TERM', -$$);
+
+	# only remove self generated dependency file
+	unlink($opt_T) if ref $opt_T;
+	foreach my $h (keys %FIFO) {
+		unlink($FIFO{$h});
+	}
+
+	exit(0);
+}
+
+# MAIN
+# collect dependency data
+$SIG{INT}  = \&clean_up;
+$SIG{TERM} = \&clean_up;
+$0 = "dpb [master]";
+
+if (defined $opt_b) {
+	my $arg = "cd $PORTSDIR && $MAKE ";
+
+	if (defined $opt_S) {
+		die("SUBDIRLIST $opt_S not found!") unless (-f $opt_S);
+		$arg .= "SUBDIRLIST=$opt_S ";
+	}
+
+	$arg .= "ECHO_MSG=: all-dir-depends > $opt_T";
+	
+	print "==> creating dependency file\n";
+	system($arg) and die "$MAKE all-dir-depends: $!";
+} else {
+	print "==> using dependency file $opt_T\n";
+}
+
+parse_dependency_file();
+parse_hosts_file();
+
+$SIG{CHLD} = \&child_handler;	
+check_hosts();
+
+my @keys_prereqs = (keys %prereqs_of);
+my @keys_childpid = ();
+do {
+	# sort ports by their importance, i.e. by the number of other
+	# ports depending on them
+	foreach my $k (sort {$#{$depend_on{$b}} <=> $#{$depend_on{$a}}}
+	    @keys_prereqs) {
+		# only compile ports that don't have unbuilt dependencies
+		if ($#{$prereqs_of{$k}} == 0) {
+			my $host = find_free_host();
+			my ($port, $flavor);
+			my @spec = split(/,/, $k);
+
+			# do not try to build multiple SUBPACKAGEs of the same
+			# port in parallel
+			my $build_conflict = 0;
+			
+			$port = $spec[0];
+			# a build for a different subpackage might be running
+			foreach (keys %childpid) {
+				my @key_spec = split(/,/);
+				if ($port eq $key_spec[0]) {
+					$build_conflict = 1;
+				}
+			}
+			for (my $i = 1; $i <= $#spec; $i++) {
+				if (not $spec[$i] =~ /^-/ and defined $flavor) {
+					$flavor = join(" ", $flavor, $spec[$i]);
+				} elsif (not $spec[$i] =~ /^-/) {
+					$flavor = $spec[$i];
+				}
+			}
+
+			if ($build_conflict == 0) {
+				build_package($host, $port, $flavor, $k);
+			} else {
+				mark_as_free($host);
+			}
+
+			last;
+		}
+	}
+
+	reap_children();
+	check_hosts();
+
+	# create new key set, taking currently building ports into account
+	@keys_childpid = (keys %childpid);
+	@keys_prereqs = ();
+	foreach my $k (keys %prereqs_of) {
+		push(@keys_prereqs, $k) unless defined $childpid{$k};
+	}
+	
+	sleep(1);
+	
+} while ($#keys_prereqs >= 0 or $#keys_childpid >= 0);
+
+clean_up();
+
