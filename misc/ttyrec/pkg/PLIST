@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/27 15:17:30 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/15 11:15:02 reinhard Exp $
 bin/ttyplay
 bin/ttyrec
+bin/ttytime
 share/doc/ttyrec/README
 @dirrm share/doc/ttyrec
