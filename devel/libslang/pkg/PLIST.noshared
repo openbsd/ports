@@ -1,3 +1,14 @@
 lib/libslang.a
 include/slcurses.h
 include/slang.h
+share/doc/slang/COPYING
+share/doc/slang/COPYING.ART
+share/doc/slang/COPYING.GPL
+share/doc/slang/COPYRIGHT
+share/doc/slang/changes.txt
+share/doc/slang/cref.txt
+share/doc/slang/cslang.txt
+share/doc/slang/slang.txt
+share/doc/slang/slangdoc.html
+share/doc/slang/slangfun.txt
+@dirrm share/doc/slang
