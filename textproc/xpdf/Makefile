@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2001/06/27 13:23:22 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/28 00:54:46 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-0.92
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.413
+NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= support/xpdf
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
-LIB_DEPENDS=	t1x.2:t1lib-1.1.*:devel/t1lib \
+LIB_DEPENDS=	t1x.3::devel/t1lib \
 		ttf.1.3::print/freetype
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
