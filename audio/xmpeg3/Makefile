@@ -1,11 +1,4 @@
-# OpenBSD Makefile for:	xmpeg3
-# Version required:	1.0
-# Date created:		May 22, 1999
-# Whom:			Angelos D. Keromytis
-#
-# $Id: Makefile,v 1.1.1.1 1999/05/23 01:52:32 angelos Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/23 01:52:32 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/09/06 19:08:36 brad Exp $
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
