@@ -1,0 +1,12 @@
+$OpenBSD: patch-pstree_c,v 1.1 2002/06/29 14:25:53 naddy Exp $
+--- pstree.c.orig	Sat Jun 29 16:18:57 2002
++++ pstree.c	Sat Jun 29 16:19:12 2002
+@@ -180,7 +180,7 @@ extern getargs(struct ProcInfo *, int, c
+ #elif defined(__NetBSD__) || defined(__OpenBSD__)
+ /* NetBSD contributed by Gary D. Duzan <gary@wheel.tiac.net> */
+ #  define HAS_PGID
+-#  define PSCMD 	"ps -axwwo user,pid,ppid,pgid,command"
++#  define PSCMD 	"ps -kaxwwo user,pid,ppid,pgid,command"
+ #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
+ #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
+ #else			/* HP-UX, A/UX etc. */
