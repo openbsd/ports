@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/30 21:51:56 angelos Exp $
-
-BROKEN=		broken, waiting for turans@ to review
+# $OpenBSD: Makefile,v 1.9 1999/11/08 02:30:36 kevlo Exp $
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
