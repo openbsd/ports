@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.470 2001/10/04 22:43:45 naddy Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.471 2001/10/07 10:47:01 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -992,11 +992,11 @@ _SED_FIX_SHAR?=	sed -n -e '/^\#\![[:blank:]]*\/bin\/sh[[:space:]]*$$/,$$p'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
-BUILD_DEPENDS+=		::archivers/unzip
+BUILD_DEPENDS+=		:unzip-*:archivers/unzip
 EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
 .if ${_USE_BZIP2:L} != "no"
-BUILD_DEPENDS+=		::archivers/bzip2
+BUILD_DEPENDS+=		:bzip2-*:archivers/bzip2
 EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
