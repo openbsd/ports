@@ -1,6 +1,7 @@
---- pine/mailcmd.c.orig	Sun Dec 10 14:15:42 2000
-+++ pine/mailcmd.c	Sun Dec 10 14:16:04 2000
-@@ -51,7 +51,7 @@
+$OpenBSD: patch-pine_mailcmd.c,v 1.2 2001/09/27 16:52:40 brad Exp $
+--- pine/mailcmd.c.orig	Fri Aug 17 14:12:26 2001
++++ pine/mailcmd.c	Thu Sep 27 08:51:50 2001
+@@ -51,7 +51,7 @@ static char rcsid[] = "$Id: mailcmd.c,v 
    ====*/
  
  #include "headers.h"

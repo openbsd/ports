@@ -1,6 +1,7 @@
---- pine/headers.h.orig	Fri Sep 15 06:31:28 2000
-+++ pine/headers.h	Fri Sep 15 06:31:48 2000
-@@ -59,12 +59,12 @@
+$OpenBSD: patch-pine_headers.h,v 1.2 2001/09/27 16:52:40 brad Exp $
+--- pine/headers.h.orig	Mon Nov 13 15:40:18 2000
++++ pine/headers.h	Thu Sep 27 08:51:48 2001
+@@ -59,12 +59,12 @@ is os-xxx.h. (Don't edit osdep.h; edit o
  #include "../pico/headers.h"
  
  

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2001/08/14 19:21:00 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2001/09/27 16:52:40 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
 COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
-VERSION=	4.33
+VERSION=	4.40
 DISTNAME=	pine${VERSION}
 PKGNAME=	pine+pico-${VERSION}
 FULLPKGNAME-pico=pico-${VERSION}
 PKGNAME-pine=	pine-${VERSION}
-NEED_VERSION=	1.435
+NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
@@ -32,10 +32,10 @@ SUBPACKAGE?=
 CATEGORIES=	editors
 .elif ${SUBPACKAGE} == "-pine"
 CATEGORIES=	mail news
-LIB_DEPENDS=	c-client.2.1::mail/c-client
+LIB_DEPENDS=	c-client.2::mail/c-client
 .else
 CATEGORIES=	mail news editors
-LIB_DEPENDS=	c-client.2.1::mail/c-client
+LIB_DEPENDS=	c-client.2::mail/c-client
 .endif
 
 .if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
@@ -59,8 +59,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample ${PREFIX}/share/doc/pine
-	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} pico pilot pine ${PREFIX}/bin
+	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} pico pilot pine rpdump rpload \
+		${PREFIX}/bin
 	cd ${FILESDIR}; ${INSTALL_SCRIPT} pgpencrypt pgpdecode pgpsign ${PREFIX}/bin
-	cd ${WRKSRC}/doc; ${INSTALL_MAN} pico.1 pilot.1 pine.1 ${PREFIX}/man/man1
+	cd ${WRKSRC}/doc; ${INSTALL_MAN} pico.1 pilot.1 pine.1 rpdump.1 rpload.1 \
+		${PREFIX}/man/man1
 
 .include <bsd.port.mk>

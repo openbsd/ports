@@ -1,6 +1,7 @@
---- pine/pine.c.orig	Tue Nov 28 12:05:24 2000
-+++ pine/pine.c	Sun Dec 10 13:00:31 2000
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-pine_pine.c,v 1.3 2001/09/27 16:52:40 brad Exp $
+--- pine/pine.c.orig	Tue Aug  7 18:52:00 2001
++++ pine/pine.c	Thu Sep 27 08:53:23 2001
+@@ -40,7 +40,7 @@ static char rcsid[] = "$Id: pine.c,v 4.5
    ----------------------------------------------------------------------*/
  
  #include "headers.h"
@@ -9,12 +10,12 @@
  
  
  /*
-@@ -351,7 +351,7 @@
+@@ -361,7 +361,7 @@ main(argc, argv)
  #endif
  
      /*------- Set up c-client drivers -------*/ 
 -#include "../c-client/linkage.c"
 +#include "c-client/linkage.c"
- 
-     /*------- ... then tune the drivers just installed -------*/ 
- #ifdef	DOS
+     /*
+      * Lookups of long login names which don't exist are very slow in aix.
+      * This would normally get set in system-wide config if not needed.

@@ -1,6 +1,7 @@
---- pine/pine.hlp.orig	Thu Feb  1 12:32:21 2001
-+++ pine/pine.hlp	Fri Feb  2 09:58:49 2001
-@@ -611,9 +611,9 @@
+$OpenBSD: patch-pine_pine.hlp,v 1.5 2001/09/27 16:52:40 brad Exp $
+--- pine/pine.hlp.orig	Fri Aug 17 14:11:25 2001
++++ pine/pine.hlp	Thu Sep 27 08:51:54 2001
+@@ -528,9 +528,9 @@ Unix Pine:
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
   except cfg     ~/.pinercex
@@ -13,7 +14,7 @@
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -1084,9 +1084,9 @@
+@@ -1001,9 +1001,9 @@ contact email address may have been set 
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
@@ -25,7 +26,7 @@
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1174,7 +1174,7 @@
+@@ -1091,7 +1091,7 @@ To Exit this screen and continue your Pi
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
@@ -34,7 +35,7 @@
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1283,9 +1283,9 @@
+@@ -1201,9 +1201,9 @@ copy of Pine you are using has been prop
  at your site.)
  
  
@@ -46,7 +47,7 @@
  <!--chtml endif-->
  
  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
-@@ -1939,7 +1939,7 @@
+@@ -1857,7 +1857,7 @@ screen or standard output. To generate a
  file, execute
  
  <PRE><CODE>
@@ -55,7 +56,7 @@
  </CODE></PRE>
  <P>
  
-@@ -1947,7 +1947,7 @@
+@@ -1865,7 +1865,7 @@ To generate a system configuration file 
  system configuration file, execute
  
  <PRE><CODE>
@@ -64,7 +65,7 @@
  </CODE></PRE>
  <P>
  A system configuration file is not required.
-@@ -2098,7 +2098,7 @@
+@@ -2016,7 +2016,7 @@ Pinerc may be either a local file or a r
  <DT> -P <EM>pinerc</EM>
  
  <DD> Uses the named file as the system wide configuration file instead of
@@ -73,7 +74,7 @@
  Pinerc may be either a local file or a remote configuration folder.
  <P>
  
-@@ -2799,10 +2799,10 @@
+@@ -2717,10 +2717,10 @@ In increasing order of precedence they a
  </OL>
  <P>
  The fixed configuration file is normally
