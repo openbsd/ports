@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.155 2003/01/28 00:06:46 margarida Exp $
+# $OpenBSD: Makefile,v 1.156 2003/01/31 19:20:44 todd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
      SUBDIR += ORBit
+     SUBDIR += ORBit2
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
@@ -33,6 +34,7 @@
      SUBDIR += flawfinder
      SUBDIR += gal
      SUBDIR += gconf
+     SUBDIR += gconf2
      SUBDIR += gengameng
      SUBDIR += gettext
      SUBDIR += getxml
@@ -57,6 +59,7 @@
      SUBDIR += kdbg
      SUBDIR += lam
      SUBDIR += lib765
+     SUBDIR += libIDL
      SUBDIR += libaudiofile
      SUBDIR += libavl
      SUBDIR += libdockapp
@@ -64,8 +67,10 @@
      SUBDIR += libdvdread
      SUBDIR += libglade
      SUBDIR += libglade,gnome
+     SUBDIR += libglade2
      SUBDIR += libgtop
      SUBDIR += libgtop,gnome
+     SUBDIR += libgtop2
      SUBDIR += libicq2000
      SUBDIR += libproplist
      SUBDIR += libsigc++
@@ -75,6 +80,9 @@
      SUBDIR += libunicode
      SUBDIR += libusb
      SUBDIR += libuta
+     SUBDIR += libwnck
+     SUBDIR += libzvt
+     SUBDIR += linc
      SUBDIR += lincvs
      SUBDIR += m4
      SUBDIR += mico
@@ -106,14 +114,14 @@
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Error
-     SUBDIR += p5-Expect
      SUBDIR += p5-Exception-Class
+     SUBDIR += p5-Expect
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Tail
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-IO-String
-     SUBDIR += p5-IO-stringy
      SUBDIR += p5-IO-Tty
+     SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Locale-Maketext
      SUBDIR += p5-Locale-PGettext
