@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/01/12 05:19:49 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/01/12 05:26:01 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -29,12 +29,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt/tutorial
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qt
 	@if [ -f ${WRKSRC}/lib/libqt.a ]; then \
-	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${PREFIX}/lib; \
 	fi
 	@if [ -f ${WRKSRC}/lib/libqt.so.1.44 ]; then \
-	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${X11BASE}/lib; \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${PREFIX}/lib; \
 	fi
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${PREFIX}/man/man3
