@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2000/03/08 08:55:32 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/03/24 22:12:05 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
-
 NEED_VERSION=	1.218
+MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	brad@openbsd.org
 

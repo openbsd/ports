@@ -3,13 +3,13 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/22 19:58:12 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:50 espie Exp $
 #
 
-NEED_VERSION=	1.191
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
 

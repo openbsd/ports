@@ -3,16 +3,16 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/23 05:40:41 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:12:01 espie Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
 PKGNAME=	upsd-2.0
 CATEGORIES=	sysutils
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
 		http://www.cre8tivegroup.com/ \
 		ftp://ftp.sw.ru/pub/unix/upsd/
-NEED_VERSION=	1.191
 
 MAINTAINER=	kevlo@openbsd.org
 

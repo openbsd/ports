@@ -3,11 +3,12 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:57 espie Exp $
 
 DISTNAME=	john-1.6
 
 CATEGORIES=     security
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -20,7 +21,6 @@ PERMIT_DISTFILES_FTP=	YES
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 

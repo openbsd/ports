@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/24 09:45:43 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:34 espie Exp $
 
 DISTNAME=	gogo224b	
 CATEGORIES=	audio
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 EXTRACT_SUFX=	.tgz
 
-NEED_VERSION=	1.223
 
 ONLY_FOR_ARCHS= i386
 

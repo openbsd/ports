@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/15 23:05:35 rohee Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:48 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
+NEED_VERSION=		1.191
 
 MAINTAINER=		rohee@OpenBSD.ORG
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.nikhef.nl/pub/network/
 EXTRACT_SUFX=		.tar.Z
-NEED_VERSION=		1.191
 
 WRKDIST=		${WRKDIR}/
 

@@ -1,35 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:45 espie Exp $
-#
-# From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
-#	but modified to use lesstif 0.86.0...
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:12:03 espie Exp $
 
-BROKEN=		"extremely old, needs updating"
-
-DISTNAME=	mozilla-19980728
+DISTNAME=	mozilla-source-M14-no-crypto
 CATEGORIES=	www
 NEED_VERSION=	1.223
 
+HOME_PAGE=	http://www.mozilla.org/
 MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/source/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.mozilla.org/pub/mozilla/source/ \
-	ftp://mirror.aarnet.edu.au/pub/mozilla/mozilla/source/
+MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/m14/src/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.mozilla.org/pub/mozilla/releases/m14 \
+	ftp://mirror.aarnet.edu.au/pub/mozilla/releases/m14/
 
-LIB_DEPENDS=	Xm\\.1\\.:x11/lesstif
+#LIB_DEPENDS=	Xm.1.:x11/lesstif
 
-USE_X11=	Yes
+#USE_X11=	Yes
 USE_GMAKE=	Yes
 
 WRKDIST=	${WRKDIR}/mozilla
 
+GNU_CONFIGURE=	Yes
 RELEASE!=	uname -r
 MOZ_OBJDIR=	${OPSYS}${RELEASE}_OPT.OBJ
 MOZ_LIBDIR=	${PREFIX}/lib/mozilla
 
-MAKE_ENV+=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1
-MAKE_ENV+=	LIBRUNPATH=${MOZ_LIBDIR}
+#MAKE_ENV+=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1
+#MAKE_ENV+=	LIBRUNPATH=${MOZ_LIBDIR}
 #comment out for debugging
-MAKE_ENV+=	BUILD_OPT=1
+#MAKE_ENV+=	BUILD_OPT=1
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

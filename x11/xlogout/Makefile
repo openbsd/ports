@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/12 19:04:17 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:12:06 espie Exp $
 
 DISTNAME=	xlogout-1.1
 CATEGORIES=	x11
+NEED_VERSION=	1.213
 MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z
 
-NEED_VERSION=	1.213
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
 

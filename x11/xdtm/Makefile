@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/23 21:41:24 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:12:05 espie Exp $
 
 
 DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11
+NEED_VERSION=	1.191
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
-NEED_VERSION=	1.191
 
 MAINTAINER=		angelos@openbsd.org
 

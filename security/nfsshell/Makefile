@@ -3,18 +3,18 @@
 # Date created:		10 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 05:09:33 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:58 espie Exp $
 
 PKGNAME=	nfsshell-1.0
 
 DISTNAME=	nfsshell
 
 CATEGORIES=	security
+NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/nfs
 
 MASTER_SITES=	ftp://ftp.cs.vu.nl/pub/leendert/
-NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 

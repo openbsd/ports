@@ -4,12 +4,13 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.10 2000/03/23 03:43:41 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:55 espie Exp $
 #
 
 DISTNAME=		tinpre-1.4-19990216
 PKGNAME=		tin-1.4.19990216
 CATEGORIES=		news
+NEED_VERSION=	1.210
 
 NO_PACKAGE=		"too much compile time configuration"
 
@@ -25,7 +26,6 @@ MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 			ftp://ftp.nuxi.com/pub/tin/
 
 EXTRACT_SUFX=		.tgz
-NEED_VERSION=	1.210
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-spooldir=/var/news  \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/13 07:48:51 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:54 espie Exp $
 
 DISTNAME=	vtun-2.0
 CATEGORIES=	net
+NEED_VERSION=	1.223
 MASTER_SITES=	http://vtun.netpedia.net/ \
 		http://vtun.saol.com/
 
-NEED_VERSION=	1.223
 
 MAINTAINER=	kevlo@openbsd.org
 

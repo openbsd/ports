@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/06 01:48:43 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:32 espie Exp $
 
 DISTNAME=       arc521e.pl8
 PKGNAME=        arc-5.21e
 CATEGORIES=	archivers
+NEED_VERSION=	1.218
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/ \
 		ftp://ftp.quorus.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tar.Z
 
-NEED_VERSION=	1.218
 
 MAINTAINER=     ports@openbsd.org
 

@@ -4,9 +4,9 @@
 DISTNAME=	waveplay-19990123
 PKGNAME=	waveplay-1.0
 CATEGORIES=	audio
+NEED_VERSION=	1.114
 MASTER_SITES=	http://dontaku.csce.kyushu-u.ac.jp/~ysonoda/archives/program/FreeBSD/
 
-NEED_VERSION=	1.114
 
 MAINTAINER=	ports@openbsd.org
 

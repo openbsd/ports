@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/28 12:20:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/24 22:12:04 espie Exp $
 
 DISTNAME=		icewm-1.0.2	
 CATEGORIES=     	x11	
-
 NEED_VERSION=		1.89
+
 
 MAINTAINER=		seanc@cginfo.sk.ca	
 

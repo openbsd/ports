@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:27 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:43 espie Exp $
 #
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
-NEED_VERSION=	1.191
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

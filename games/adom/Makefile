@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/16 23:06:43 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:41 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g15
 CATEGORIES=	games
+NEED_VERSION=	1.191
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 DISTFILES=	adom-099g15-elf.tar.gz
-NEED_VERSION=	1.191
 
 ONLY_FOR_ARCHS=	i386
 

@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:35 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:06 espie Exp $
 #
 
 BROKEN=		port wants to open display during build.
@@ -11,10 +11,10 @@ BROKEN=		port wants to open display during build.
 DISTNAME=	xgrabsc.2_41
 PKGNAME=	xgrab-2.41
 CATEGORIES=	x11
+NEED_VERSION=	1.195
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.195
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:26 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:43 espie Exp $
 #
 
 DISTNAME=	xcubes-5.4.4
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/xcubes
 USE_IMAKE=	yes

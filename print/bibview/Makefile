@@ -3,14 +3,14 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/23 04:12:04 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:56 espie Exp $
 #
 
 DISTNAME=	bibview-2.2
 CATEGORIES=	databases print
+NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 

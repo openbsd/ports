@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:25 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:42 espie Exp $
 #
 
 DISTNAME=       xblast-2.6.beta
 PKGNAME=	xblast-2.6b
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -18,7 +19,6 @@ PERMIT_DISTFILES_FTP=	YES
 # MASTER_SITE_SUBDIR= games/multiplayer
 # but right now only available from:
 MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/XBlast-2.6.beta
 USE_IMAKE=      yes

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/06 13:34:09 camield Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/24 22:11:53 espie Exp $
 
 DISTNAME=	proxy-suite-1.7
 CATEGORIES=    	net security
+NEED_VERSION=	1.218
 MAINTAINER=	cd@sentia.nl
 HOMEPAGE=	http://proxy-suite.suse.de
 
@@ -16,7 +17,6 @@ MASTER_SITES= \
 	ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.suse.com/pub/projects/proxy-suite/
 
-NEED_VERSION=	1.218
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes

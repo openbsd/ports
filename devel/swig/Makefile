@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:15 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:40 espie Exp $
 
 BROKEN=		c++ syntax errors
 
 DISTNAME=	swig1.1
 PKGNAME=	swig-1.1
 CATEGORIES=	devel
+NEED_VERSION=	1.191
 
 #BROKEN=	"newer version available"
 
@@ -17,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/SWIG1.1
 GNU_CONFIGURE=	yes

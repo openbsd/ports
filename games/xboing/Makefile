@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/16 23:47:53 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:43 espie Exp $
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -13,7 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
-NEED_VERSION=	1.191
 
 USE_IMAKE=	yes
 WRKDIST= ${WRKDIR}/xboing

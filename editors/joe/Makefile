@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/15 05:04:17 turan Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:40 espie Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
 CATEGORIES=	editors
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 

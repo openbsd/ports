@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 15:54:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:44 espie Exp $
 
 DISTNAME=	xkobo-1.11
 CATEGORIES=	games
+NEED_VERSION=	1.218
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.uoknor.edu/mirrors/X/contrib/games/
 MASTER_SITE_SUBDIR= games
-NEED_VERSION=1.218
 
 .if defined(HARDER)
 PATCH_LIST=patch-* extra-hard

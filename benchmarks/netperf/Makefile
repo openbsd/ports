@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/20 22:00:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:36 espie Exp $
 
 DISTNAME=	netperf-2.1pl3
 CATEGORIES=	benchmarks net
+NEED_VERSION=	1.210
 
 MAINTAINER=     jakob@openbsd.org
-NEED_VERSION=	1.210
 
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/netperf/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/11 02:54:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:57 espie Exp $
 
 DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # For now, because OpenBSD make seems to have a weird bug in suffix handling
-USE_GMAKE=	Yes
+#USE_GMAKE=	Yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 FAKE=		Yes

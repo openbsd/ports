@@ -3,11 +3,12 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/22 19:58:12 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:49 espie Exp $
 
 PKGNAME=	figlet-2.2
 
 CATEGORIES=	misc
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -24,7 +25,6 @@ MASTER_SITES0=	http://www.internexus.net/pub/figlet/fonts/ \
 
 DISTFILES=	figlet22${EXTRACT_SUFX} \
 		contributed${EXTRACT_SUFX}:0
-NEED_VERSION=	1.191
 
 WRKDIST=		${WRKDIR}/figlet22
 

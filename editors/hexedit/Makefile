@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/24 05:14:58 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:40 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
 
 DISTNAME=	hexedit-1.1.0
 CATEGORIES=	editors
+NEED_VERSION=	1.213
 MASTER_SITES=	http://pixel.linuxave.net/
 EXTRACT_SUFX=	.src.tgz
 
-NEED_VERSION=	1.213
 
 MAINTAINER=	brad@openbsd.org
 

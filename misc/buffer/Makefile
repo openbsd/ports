@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/13 03:40:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:49 espie Exp $
 
 DISTNAME=	buffer-1.17.1
 CATEGORIES=	misc
+NEED_VERSION=	1.191
 MASTER_SITES=	http://www.freebsd.org/~steve/distfiles/
 
-NEED_VERSION=	1.191
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
 

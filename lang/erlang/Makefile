@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/17 02:07:28 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:46 espie Exp $
 #
 
 DISTNAME=		erlang-47.4.0
 CATEGORIES=     	lang
+NEED_VERSION=		1.210
 
 MAINTAINER=		ports@openbsd.org
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 			http://www.erlang.org/download/
 EXTRACT_SUFX=		.base.tar.gz
-NEED_VERSION=		1.210
 
 USE_GMAKE=		Yes
 USE_AUTOCONF=		Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:04:02 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:35 espie Exp $
 
 DISTNAME=		xmix-2.1
 CATEGORIES=		audio
+NEED_VERSION=		1.191
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
-NEED_VERSION=	1.191
 
 PATCHFILES=		xmix-2.1.mixers.patch
 

@@ -2,14 +2,14 @@
 # Date created:         28 Dec 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/23 05:40:41 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:00 espie Exp $
 #
 
 DISTNAME=       apc-upsd
 PKGNAME=        apc-upsd
 CATEGORIES=     sysutils
-MASTER_SITES=   http://www.knienieder.com/software/
 NEED_VERSION=	1.191
+MASTER_SITES=   http://www.knienieder.com/software/
 
 MAINTAINER=     kevlo@openbsd.org
 

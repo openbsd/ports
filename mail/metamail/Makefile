@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/01 10:08:07 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:47 espie Exp $
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
 CATEGORIES=	mail
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 

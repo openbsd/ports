@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:15 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:40 espie Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
 CATEGORIES=     devel pilot
+NEED_VERSION=	1.191
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
-NEED_VERSION=	1.191
 
 MAINTAINER=     angelos@openbsd.org
 

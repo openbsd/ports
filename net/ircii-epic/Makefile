@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/22 23:27:55 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:51 espie Exp $
 
 DISTNAME=	ircii2.8.2-EPIC3.004
 PKGNAME=	ircii-2.8.2-epic3.004
 CATEGORIES=	net
+NEED_VERSION=	1.191
 MASTER_SITES=	http://www.min.net/~douglas/ircii/
 DISTFILES=	ircii2.8.2-EPIC3.004.tar.gz ircii2.8.2-EPIC3.help.tar.gz
-NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 

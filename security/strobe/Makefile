@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:12 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:59 espie Exp $
 # $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 
 DISTNAME=	strobe-1.06
 CATEGORIES=	security
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.u-aizu.ac.jp/pub/net/misc/win.or.jp/ \
 		ftp://ftp.win.ne.jp/pub/network/misc/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/14 00:24:55 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:36 espie Exp $
 #
 
 DISTNAME=	cku192src
 PKGNAME=        kermit-6.0.192
 CATEGORIES=	comms
+NEED_VERSION=	1.191
 
 RESTRICTED=	"'No redistribution' copyright"
 
@@ -17,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:40 espie Exp $
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_FTP=	YES
 MASTER_SITES=	http://www.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}/xmake
 

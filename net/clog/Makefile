@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:52 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:51 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 DISTNAME=	clog-1.6
 CATEGORIES=	net security
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/clog/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/COAST/mirrors/ftp.saturn.net/clog/  \
 		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
 
-NEED_VERSION=	1.191
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/07 22:14:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:52 espie Exp $
 
 DISTNAME=	mtr-0.41
 CATEGORIES=	net
+NEED_VERSION=	1.175
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -10,7 +11,6 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-NEED_VERSION=	1.175
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.lysator.liu.se/mirror/unix/mtr/
 

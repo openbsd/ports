@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/15 19:51:45 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:12:04 espie Exp $
 
 DISTNAME=	gtkglarea-1.2.2
 CATEGORIES=	x11 graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
-NEED_VERSION=	1.223
 
 HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/07 07:51:32 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:38 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
+NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
-NEED_VERSION=	1.223
 
 MAINTAINER=	jasoni@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:17 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:00 espie Exp $
 #
 
 DISTNAME=       rtty-3.2
 CATEGORIES=	sysutils
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
@@ -13,7 +14,6 @@ PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=   ftp://ftp.vix.com/pub/vixie/
-NEED_VERSION=	1.191
 
 WRKDIST=	${WRKDIR}
 

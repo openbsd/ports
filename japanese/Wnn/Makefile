@@ -5,12 +5,12 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.13 2000/03/03 12:41:00 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/24 22:11:46 espie Exp $
 
-NEED_VERSION=	1.210
 DISTNAME=	Wnn4.2
 PKGNAME?=	ja-Wnn-4.2
 CATEGORIES?=	japanese
+NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
 DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz

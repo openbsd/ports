@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/23 21:59:58 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:35 espie Exp $
 
 BROKEN= compile errers
 #motif_i.c:53: Xm/Xm.h: No such file or directory
@@ -17,6 +17,7 @@ BROKEN= compile errers
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
+NEED_VERSION=	1.91
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
 		http://www.goice.co.jp/member/mo/timidity/dist/
 NO_CDROM=       "Uses copyrighted patches"
@@ -24,7 +25,6 @@ TIINS=          goemon.tgz
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 
-NEED_VERSION=	1.91
 
 MAINTAINER=     ports@openbsd.org
 

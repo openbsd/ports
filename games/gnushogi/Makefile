@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:42 espie Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
 PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
+NEED_VERSION=	1.210
 
 MAINTAINER=	angelos@openbsd.org
-NEED_VERSION=	1.210
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

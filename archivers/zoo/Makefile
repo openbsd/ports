@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/07 04:41:12 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:34 espie Exp $
 
 DISTNAME=       zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 NEED_VERSION=	1.210
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
 MAINTAINER=	angelos@openbsd.org
 

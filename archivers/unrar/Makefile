@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/12 14:47:04 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:33 espie Exp $
 
 DISTNAME=	unrar-2.50
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 NEED_VERSION=	1.191
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
 MAINTAINER=	ports@openbsd.org
 

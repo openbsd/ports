@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/07 01:57:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:49 espie Exp $
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
-
 NEED_VERSION=	1.64
+
 
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
@@ -24,11 +24,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-group=operator
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/amanda
-pre-install:
-	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
 post-install:
-	@(cd ${WRKSRC}; \
+	@cd ${WRKSRC}; \
 	  ${INSTALL_DATA_DIR} ${EXAMPLE_DIR}; \
 	  ${INSTALL_DATA} docs/* ${EXAMPLE_DIR}; \
 	  ${INSTALL_DATA} example/*.ps ${EXAMPLE_DIR}; \
@@ -36,8 +34,6 @@ post-install:
 	   for f in *.conf; do \
 	     sed -e 's,usr/adm,var,' \
 		 -e 's,/usr/local,,' $$f > ${EXAMPLE_DIR}/$$f; \
-	   done))
-	@PREFIX="${PREFIX}" EXAMPLE_DIR="${EXAMPLE_DIR}" \
-	 ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	   done)
 
 .include <bsd.port.mk>

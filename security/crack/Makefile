@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/23 04:28:18 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:57 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
+NEED_VERSION=	1.191
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
-NEED_VERSION=	1.191
 
 MAINTAINER=     ports@OpenBSD.ORG
 

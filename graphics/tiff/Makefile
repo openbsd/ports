@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/06 21:17:45 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:45 espie Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
 CATEGORIES=	graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.libtiff.org/
 
-NEED_VERSION=	1.223
 
 MAINTAINER=	brad@openbsd.org
 

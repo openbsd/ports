@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/24 22:11:50 espie Exp $
 
 DISTNAME=	arpcatch
 PKGNAME=	arpcatch
 CATEGORIES=	net
-MASTER_SITES=	http://www.enteract.com/~tqbf/
 NEED_VERSION=	1.191
+MASTER_SITES=	http://www.enteract.com/~tqbf/
 
 MAINTAINER=	ports@openbsd.org
 

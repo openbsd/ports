@@ -3,13 +3,13 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/23 03:43:40 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:55 espie Exp $
 #
 
-NEED_VERSION=	1.191
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
 CATEGORIES=	news
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/

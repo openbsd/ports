@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/04 08:23:53 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:55 espie Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
+NEED_VERSION=	1.216
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/
 
-NEED_VERSION=	1.216
 
 MAINTAINER=	espie@openbsd.org
 

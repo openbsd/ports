@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:27 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:43 espie Exp $
 #
 
 DISTNAME=	xevil1.5
 PKGNAME=	xevil-1.5
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xevil1.5
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 

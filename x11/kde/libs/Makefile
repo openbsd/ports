@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/08 03:47:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:05 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
@@ -7,8 +7,6 @@ NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 DIST_SUBDIR=	kde
-
-NEED_VERSION=	1.92
 
 BUILD_DEPENDS=	msgfmt:devel/gettext
 LIB_DEPENDS=	qt.1.45:x11/qt \

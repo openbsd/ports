@@ -3,12 +3,12 @@
 DISTNAME=	gc4.12
 PKGNAME=	boehm-gc-4.12
 CATEGORIES=	devel
+NEED_VERSION=	1.191
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/ \
 		http://reality.sgi.com/boehm_mti/gc_source/
 
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-NEED_VERSION=	1.191
 
 EXTRACT_AFTER_ARGS=	| tar -xf - || true
 

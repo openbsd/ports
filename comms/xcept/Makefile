@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/22 08:25:15 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:37 espie Exp $
 
 BROKEN=		"installs files into /usr/local/etc"
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
+NEED_VERSION=	1.191
 
 MAINTAINER=     ports@openbsd.org
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
-NEED_VERSION=	1.191
 
 WRKDIST=		${WRKDIR}/XCept-2.1.2
 

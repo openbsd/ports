@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:26 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:43 espie Exp $
 
 DISTNAME=	xchomp-pl1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BACKUP}
 NEED_VERSION=	1.191
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/23 07:04:34 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:51 espie Exp $
 
 DISTNAME=	curl-6.5.2
 CATEGORIES=	net
+NEED_VERSION=	1.213
 MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 
-NEED_VERSION=	1.213
 
 MAINTAINER=	markus@openbsd.org
 

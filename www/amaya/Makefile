@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:02 espie Exp $
 #
 # Amaya, the W3C http://www.w3.org browser
 #
@@ -8,13 +8,12 @@ DIST_SUBDIR	= amaya # I have a good reasons to do so, dictionaries will go
                         # in the same dir
 PKGNAME		= amaya-2.1
 CATEGORIES	= www
+NEED_VERSION=	1.191
 
 MAINTAINER	= rohee@OpenBSD.ORG
 
 MASTER_SITES	= ftp://ftp.w3.org/pub/amaya/ \
                   ftp://ftp-eu.w3.org/pub/amaya/
-
-NEED_VERSION=	1.191
 
 USE_MOTIF	= yes
 

@@ -3,11 +3,12 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.10 2000/03/23 05:40:40 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:12:00 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
+NEED_VERSION=		1.210
 
 MAINTAINER=		ports@openbsd.org
 
@@ -18,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=		.tgz
-NEED_VERSION=		1.210
 
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 

@@ -3,11 +3,12 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/24 22:11:57 espie Exp $
 
 PKGNAME=	l0phtcrack-2.52
 
 CATEGORIES=	security
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -15,7 +16,6 @@ DIST_SUBDIR=	l0phtcrack
 DISTFILES=	lcsrc${EXTRACT_SUFX} readsmb.c
 EXTRACT_ONLY=	lcsrc${EXTRACT_SUFX}
 USE_ZIP=	yes
-NEED_VERSION=	1.191
 
 MASTER_SITES=	http://www.l0pht.com/l0phtcrack/dist/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/01 10:08:07 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:51 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
 PKGNAME=        irc-2.10.1
 CATEGORIES=	net
+NEED_VERSION=	1.210
 
 MAINTAINER=	ports@openbsd.org
 
@@ -18,7 +19,6 @@ MASTER_SITES=   http://www.leo.org/pub/comp/general/networking/irc/daemon/ \
                 ftp://tau.ac.il/pub/unix/irc/server/ \
                 ftp://ftp.ut.ee/pub/unix/irc/server/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
-NEED_VERSION=	1.210
 
 # the NOTE command is disabled by default
 # ENABLE_NOTE=yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:04 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:36 espie Exp $
 
-NEED_VERSION=		1.191
 DISTNAME=		tcpblast
 PKGNAME=		tcpblast-1.0
 CATEGORIES=		net benchmarks
+NEED_VERSION=		1.191
 
 MAINTAINER=		ports@openbsd.org
 

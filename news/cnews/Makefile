@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/23 03:43:41 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:55 espie Exp $
 
 BROKEN=		does not install cleanly, major fixups required.
 
 DISTNAME=	cnews
 PKGNAME=	cnews-cr.g
 CATEGORIES=	news
+NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.210
 
 MAINTAINER=	ports@openbsd.org
 

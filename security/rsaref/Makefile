@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/02 07:55:09 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/24 22:11:58 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
 DISTNAME=	rsaref20.1996
 CATEGORIES=	security
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/ \
 		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
 		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
@@ -12,7 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto"
 
-NEED_VERSION=	1.191
 
 MAINTAINER=	niklas@openbsd.org
 

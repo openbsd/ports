@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/17 00:26:36 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:44 espie Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
 CATEGORIES=	games
+NEED_VERSION=	1.195
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.195
 
 MAINTAINER=	angelos@openbsd.org
 

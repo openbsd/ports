@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/04 18:39:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:45 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
-NEED_VERSION=1.121
 DISTNAME=xanim-2.80.1
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
+NEED_VERSION=	1.218
 
 MAINTAINER=espie@openbsd.org
 
@@ -13,7 +13,6 @@ MAINTAINER=espie@openbsd.org
 DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
-NEED_VERSION=	1.218
 
 LICENSE_TYPE=	NOFEE
 PERMIT_PACKAGE_CDROM=	No

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/16 23:47:53 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:44 espie Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
+NEED_VERSION=	1.114
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.z
 
-NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
 

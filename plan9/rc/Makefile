@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:04 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:55 espie Exp $
 
 WITH_EDITLINE=	yes
 DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells
+NEED_VERSION=	1.121
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
 MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
 
-NEED_VERSION=	1.121
 
 MAINTAINER=	markus@openbsd.org
 

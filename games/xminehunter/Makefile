@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/16 23:47:54 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:44 espie Exp $
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
+NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 

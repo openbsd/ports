@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:45 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
 PKGNAME=	gqview-0.7.0
 CATEGORIES=	graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
-NEED_VERSION=	1.223
 
 MAINTAINER=	brad@openbsd.org
 

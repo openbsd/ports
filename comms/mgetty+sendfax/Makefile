@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/03 12:07:03 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/24 22:11:36 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
 BROKEN=		installs files in /etc automatically
@@ -6,9 +6,9 @@ BROKEN=		installs files in /etc automatically
 DISTNAME=	mgetty1.1.21-Jul24
 PKGNAME=	mgetty-1.1.21
 CATEGORIES=	comms
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
-NEED_VERSION=	1.191
 
 HOMEPAGE=	http://alpha.greenie.net/mgetty/
 

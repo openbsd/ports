@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/15 05:04:20 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:41 espie Exp $
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
-MASTER_SITES=	http://www.bnetd.org/files/
 NEED_VERSION=	1.195
+MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	kevlo@openbsd.org
 

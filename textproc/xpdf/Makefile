@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:05:24 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:12:02 espie Exp $
 
 DISTNAME=	xpdf-0.90
 CATEGORIES=	textproc
+NEED_VERSION=	1.175
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.duke.edu/pub/X11/contrib/applications/ \
 		ftp://ftp.foolabs.com/pub/xpdf/
 MASTER_SITES0=	http://www.fefe.de/
 MASTER_SITE_SUBDIR= support/xpdf
-NEED_VERSION=	1.175
 EXTRACT_SUFX=	.tgz
 
 PATCH_DIST_STRIP=	-p1

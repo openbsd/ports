@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:23 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:12:02 espie Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
+NEED_VERSION=	1.191
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
-NEED_VERSION=	1.191
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	angelos@openbsd.org

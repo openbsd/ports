@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/15 05:04:08 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:38 espie Exp $
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
+NEED_VERSION=	1.73
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gdbm
 
-NEED_VERSION=	1.73
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/12 18:02:32 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:36 espie Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
 CATEGORIES=     	cad
+NEED_VERSION=		1.191
 
 MAINTAINER=		ports@openbsd.org
 
@@ -13,7 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
-NEED_VERSION=		1.191
 
 USE_X11=		yes
 WRKDIST=		${WRKDIR}

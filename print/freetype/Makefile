@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/04 23:07:20 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:56 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
 CATEGORIES=	print
+NEED_VERSION=	1.218
 MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
@@ -10,7 +11,6 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
 		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
 
-NEED_VERSION=	1.218
 
 MAINTAINER=	jasoni@openbsd.org
 

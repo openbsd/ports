@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/15 05:05:21 turan Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 22:12:02 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
-
-NEED_VERSION=	1.163
 
 FRENCH_DICT=	francais-IREQ-1.4
 GERMAN_DICT=	hk2-deutsch

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/03/22 03:24:12 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2000/03/24 22:12:03 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -38,9 +38,9 @@ SUBSUP=	communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
 
 PKGNAME=	navigator-${NAVIGATOR_V}
 CATEGORIES=     www
+NEED_VERSION=	1.218
 DIST_SUBDIR=	netscape
 
-NEED_VERSION=	1.218
 
 MASTER_SITES= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:47 espie Exp $
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 NEED_VERSION=	1.191
+MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	pjanzen@openbsd.org
 

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:17 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:40 espie Exp $
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
 CATEGORIES=	editors
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
 DISTFILES=	ue400dev.zip
 
 NO_CDROM=	"NOFEE: may not charge for distribution"
 
-NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 

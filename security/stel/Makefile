@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:58 espie Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
+NEED_VERSION=	1.210
 MASTER_SITES=	ftp://idea.sec.dsi.unimi.it/pub/security/cert-it/
 
-NEED_VERSION=	1.210
 
 MAINTAINER=	turan@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/14 00:24:56 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:38 espie Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
+NEED_VERSION=	1.210
 
 MAINTAINER=	ports@openbsd.org
 
@@ -13,7 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 		${MASTER_SITE_LOCAL}
-NEED_VERSION=	1.210
 # see also comp.unix.sources for version 1.0
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 EXTRACT_SUFX=	.shar.gz

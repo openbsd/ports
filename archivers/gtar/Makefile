@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/15 05:03:53 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:33 espie Exp $
 
 DISTNAME=	tar-1.13
 CATEGORIES=	archivers
+NEED_VERSION=	1.114
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= tar
 
-NEED_VERSION=	1.114
 
 MAINTAINER=	niklas@openbsd.org
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:04:22 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:42 espie Exp $
 
 DISTNAME=	gnuchess-4.0.pl80
 PKGNAME=	gnuchess-4.0.80
 CATEGORIES=	games
+NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnuchess
-NEED_VERSION=	1.191
 
 BROKEN=		"not available anymore"
 

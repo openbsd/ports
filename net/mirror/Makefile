@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/22 23:27:55 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:52 espie Exp $
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
+NEED_VERSION=	1.210
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/ \
 		ftp://ftp.nmt.edu/ \
 		ftp://ftp.plig.net/pub/OpenBSD/distfiles/
-NEED_VERSION=	1.210
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/21 20:17:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/24 22:11:46 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -22,6 +22,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 FAKE=		Yes
 FAKE_FLAGS=INSTALL_ROOT=${WRKINST}
+
+FAKE_FLAGS=INSTALL_ROOT=${WRKINST} \
+	MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TCL_LIBRARY)/man'
 
 .if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS+= --disable-load

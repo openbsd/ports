@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/21 23:45:38 jason Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:04 espie Exp $
 
 VER=		1.0.7
 PKGNAME=	fltk-${VER}
 DISTNAME=	${PKGNAME}-source
 CATEGORIES=	x11
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VER}/
 MAINTAINER=	jason@OpenBSD.ORG
-NEED_VERSION=	1.191
 
 GNU_CONFIGURE=	yes
 WRKDIST=	${WRKDIR}/${PKGNAME}

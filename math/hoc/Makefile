@@ -1,12 +1,12 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.9 2000/02/22 17:08:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:49 espie Exp $
 
 DISTNAME=	hoc
 PKGNAME=	hoc-1.1
 CATEGORIES=	math
+NEED_VERSION=	1.210
 MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
 EXTRACT_SUFX=	.sh
-NEED_VERSION=	1.210
 
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty

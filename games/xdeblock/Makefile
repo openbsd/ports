@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:26 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:43 espie Exp $
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.191
 
-NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
 

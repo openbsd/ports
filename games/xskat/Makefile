@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/17 00:26:38 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:44 espie Exp $
 
 DISTNAME=	xskat-3.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.gulu.net/xskat/
 NEED_VERSION=	1.191
+MASTER_SITES=	http://www.gulu.net/xskat/
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -3,15 +3,15 @@
 # Date created:         1999-Jun-23
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/22 23:27:55 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:52 espie Exp $
 
 DISTNAME=	ngrep-1.37
 
 CATEGORIES=     net
+NEED_VERSION=	1.191
 
 MASTER_SITES=	http://www.packetfactory.net/ngrep/
 
-NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 

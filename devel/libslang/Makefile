@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/04 19:12:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:39 espie Exp $
 
 DISTNAME=	slang-1.3.10
 PKGNAME=	libslang-1.3.10
 CATEGORIES=	devel
+NEED_VERSION=	1.218
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/ \
 		http://gd.tuwien.ac.at/editors/davis/slang/v1.3/
 
-NEED_VERSION=	1.218
 
 MAINTAINER=	todd@openbsd.org
 

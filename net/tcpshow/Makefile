@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/23 00:47:41 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:54 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
+NEED_VERSION=	1.191
 MASTER_SITES=	http://www.freebsd.org/~obrien/
 DISTFILES=	tcpshow.c tcpshow.1
-NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/04 17:58:29 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/24 22:11:33 espie Exp $
 
 DISTNAME=	rarbsd
 PKGNAME=	rar-2.02
 CATEGORIES=	archivers
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=	.sfx
@@ -11,7 +12,6 @@ EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
-NEED_VERSION=	1.114
 
 ONLY_FOR_ARCHS=	i386
 
@@ -25,7 +25,6 @@ PERMIT_PACKAGE_FTP=	"Shareware.  Requires registration."
 PERMIT_DISTFILES_CDROM=	"Shareware.  Requires registration."
 PERMIT_DISTFILES_FTP=	Yes
 
-NEED_VERSION=	1.191
 NO_BUILD=	yes
 WRKDIST=	${WRKDIR}
 

@@ -3,18 +3,18 @@
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:09 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:57 espie Exp $
 #
 
 PKGNAME=		bounix-1.21
 DISTNAME=		bo121unix
 
 CATEGORIES=     	security
+NEED_VERSION=	1.191
 
 MASTER_SITES=		http://www.ennui.net/~crioux/ \
 			http://orifice.rotten.com/cDc/ \
 			http://www.cultdeadcow.com/tools/
-NEED_VERSION=	1.191
 
 MAINTAINER=		dugsong@monkey.org
 

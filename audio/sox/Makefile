@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/09 07:48:40 todd Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:35 espie Exp $
 
 DISTNAME=	sox-12.15
 CATEGORIES=	audio
-MASTER_SITES=	http://home.sprynet.com/~cbagwell/
 NEED_VERSION=	1.210
+MASTER_SITES=	http://home.sprynet.com/~cbagwell/
 
 MAINTAINER=	angelos@openbsd.org
 

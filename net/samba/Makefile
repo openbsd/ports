@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2000/03/23 18:02:58 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/03/24 22:11:53 espie Exp $
 
 DISTNAME=	samba-2.0.6
 CATEGORIES=	net
+NEED_VERSION=	1.213
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		http://us1.samba.org/samba/ftp/ \
 		ftp://ca.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/
 
-NEED_VERSION=	1.213
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
 

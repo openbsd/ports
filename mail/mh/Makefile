@@ -3,16 +3,16 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/04 18:25:34 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:47 espie Exp $
 #
 
 DISTNAME=	mh-6.8.3
 PKGNAME=	mh-6.8.4
 CATEGORIES=	mail
+NEED_VERSION=	1.175
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 EXTRACT_SUFX=	.tar.Z
 
-NEED_VERSION=	1.175
 MASTER_SITES0= 	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z:0
 

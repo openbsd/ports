@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/23 20:14:18 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 22:12:03 espie Exp $
 
 DISTNAME=	Xaw3d-1.5
 CATEGORIES=	x11
+NEED_VERSION=	1.219
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= widgets/Xaw3d/R6.3
 
-NEED_VERSION=	1.219
 
 MAINTAINER=	angelos@openbsd.org
 

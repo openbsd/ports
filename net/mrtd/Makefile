@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:56 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:52 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: Christopher Turan <turan@openbsd.org>
 #
@@ -9,6 +9,7 @@
 DISTNAME=		mrt-1.6.0a-990430-src
 PKGNAME=		mrt-1.6.0a
 CATEGORIES=     	net
+NEED_VERSION=		1.191
 MAINTAINER=		turan@openbsd.org
 
 LICENSE_TYPE=		NONE
@@ -20,7 +21,6 @@ PERMIT_DISTFILES_FTP=	YES
 # where the source files and patches can be fetched
 #
 MASTER_SITES=		ftp://ftp.merit.edu/net-research/mrt/
-NEED_VERSION=	1.191
 
 GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
 
