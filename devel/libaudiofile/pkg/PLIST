@@ -7,4 +7,4 @@ lib/libaudiofile.a
 share/aclocal/audiofile.m4
 include/audiofile.h
 include/aupvlist.h
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec /sbin/ldconfig -m %B

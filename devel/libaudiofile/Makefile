@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/14 15:36:20 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/22 04:23:10 brad Exp $
 
-DISTNAME	=	audiofile-0.1.6
-PKGNAME		=	lib${DISTNAME}
-CATEGORIES	=	audio
+DISTNAME=	audiofile-0.1.6
+PKGNAME=	lib${DISTNAME}
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
-MAINTAINER	=	rohee@OpenBSD.ORG
+NEED_VERSION=	1.73
 
-MASTER_SITES	=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=     gnome-1.0/sources
+MAINTAINER=	rohee@OpenBSD.ORG
 
-NEED_VERSION	=	1.78
-
-GNU_CONFIGURE	=	yes
-
-CONFIGURE_ARGS	+=	${CONFIGURE_SHARED}
+BUILD_SEPARATE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
 post-install:
+	@${MKDIR} ${LOCALBASE}/share/aclocal/
+	@${INSTALL_DATA} ${WRKSRC}/audiofile.m4 ${LOCALBASE}/share/aclocal/
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
