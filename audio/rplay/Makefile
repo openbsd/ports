@@ -1,23 +1,17 @@
-# OpenBSD makefile for:	rplay - Network audio player   
-# Version required:     3.3.0
-# Date created:		December 4, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.3 1998/06/26 03:55:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/06 23:58:33 marc Exp $
 #
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
-MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	http://rplay.doit.org/dist/
 
 LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAN1=           rplay.1 xrplay.1 rplayd.1 rptp.1
-MAN5=		rplay.conf.5 rplay.hosts.5 rplay.servers.5
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/rplayd.sh ]; then \
