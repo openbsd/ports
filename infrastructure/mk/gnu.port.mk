@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.11 2003/02/15 16:38:48 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.12 2003/02/15 19:59:35 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -27,8 +27,6 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 AUTOCONF?=			autoconf
 AUTOUPDATE?=		autoupdate
 AUTOHEADER?=		autoheader
-MAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
-FAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION}
