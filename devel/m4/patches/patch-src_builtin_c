@@ -1,6 +1,7 @@
---- src/builtin.c.orig	Wed Aug 31 09:45:12 1994
-+++ src/builtin.c	Sat Jul 25 14:30:35 1998
-@@ -1076,9 +1076,13 @@
+$OpenBSD: patch-src_builtin_c,v 1.1 2001/07/10 23:55:17 brad Exp $
+--- src/builtin.c.orig	Wed Aug 31 12:45:12 1994
++++ src/builtin.c	Tue Jul 10 19:50:52 2001
+@@ -1076,9 +1076,13 @@ m4_sinclude (struct obstack *obs, int ar
  static void
  m4_maketemp (struct obstack *obs, int argc, token_data **argv)
  {
