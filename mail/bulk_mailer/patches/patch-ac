@@ -1,7 +1,0 @@
-*** patchlevel.h.original	Mon Feb 12 11:38:56 1996
---- patchlevel.h	Fri Mar 22 18:55:49 1996
-***************
-*** 1 ****
-! #define PATCHLEVEL 5
---- 1 ----
-! #define PATCHLEVEL 6

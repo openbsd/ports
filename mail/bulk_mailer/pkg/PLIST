@@ -1,2 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/30 14:20:39 kevlo Exp $
 bin/bulk_mailer
-share/doc/bulk_mailer.README
+man/man1/bulk_mailer.1
+share/doc/bulk_mailer/bulk_mailer.README
+share/doc/bulk_mailer/bulk_mailer.ps
+@dirrm share/doc/bulk_mailer
