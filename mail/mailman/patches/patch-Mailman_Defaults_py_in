@@ -1,12 +1,12 @@
-$OpenBSD: patch-Mailman_Defaults_py_in,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
---- Mailman/Defaults.py.in.orig	Thu Aug 23 09:12:30 2001
-+++ Mailman/Defaults.py.in	Thu Aug 23 09:13:09 2001
-@@ -176,7 +176,7 @@ SMTPPORT = 0                            
+$OpenBSD: patch-Mailman_Defaults_py_in,v 1.2 2003/01/18 16:52:17 sturm Exp $
+--- Mailman/Defaults.py.in.orig	Sat Dec 28 18:26:35 2002
++++ Mailman/Defaults.py.in	Sat Dec 28 18:26:52 2002
+@@ -391,7 +391,7 @@ SMTPPORT = 0                            
  
  # Command for direct command pipe delivery to sendmail compatible program,
  # when DELIVERY_MODULE is 'Sendmail'.
 -SENDMAIL_CMD = '/usr/lib/sendmail'
 +SENDMAIL_CMD = '/usr/sbin/sendmail'
  
- # Allow for handling of MTA-specific features (i.e. aliases).  Most MTAs use
- # "sendmail" (including Sendmail, Postfix, and Exim).  Qmail uses the "qmail"
+ # Set these variables if you need to authenticate to your NNTP server for
+ # Usenet posting or reading.  If no authentication is necessary, specify None

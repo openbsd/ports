@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/11/22 16:43:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2003/01/18 16:52:17 sturm Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
-DISTNAME=	mailman-2.0.12
-CATEGORIES=     mail
+DISTNAME=	mailman-2.1
+CATEGORIES=     mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/mailman.html
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 NO_REGRESS=		Yes
 
 MMDOC=			${PREFIX}/share/doc/mailman
-MMEXAMPLES=		${PREFIX}/share/examples/mailman
 MMHOME=			${PREFIX}/lib/mailman
 MMSPOOL=		/var/spool/mailman
 
@@ -34,11 +33,13 @@ FAKE_FLAGS=		DIRSETGID=":"
 CONFIGURE_STYLE=	simple
 # Adding DESTDIR by hand, because 'CONFIGURE_STYLE= gnu dest' overwrites
 # our prefix without touching var-prefix
-CONFIGURE_ARGS+=	--with-var-prefix='$${${DESTDIRNAME}}${MMSPOOL}' \
-			--prefix='$${${DESTDIRNAME}}${MMHOME}' \
-			--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
+CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${MMHOME}' \
+			--with-mailhost=localhost.my.domain \
+			--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
+			--with-urlhost=localhost.my.domain \
+			--with-var-prefix='$${${DESTDIRNAME}}${MMSPOOL}'
 
-FLAVORS=postfix
+FLAVORS=	postfix
 FLAVOR?=
 .if ${FLAVOR:L:Mpostfix}
 CONFIGURE_ARGS+=--with-mail-gid=nobody
@@ -48,18 +49,16 @@ CONFIGURE_ARGS+=--with-mail-gid=daemon
 
 post-configure:
 	@perl -i -pe 's#\$${${DESTDIRNAME}}##g' \
-		${WRKSRC}/misc/paths.py ${WRKSRC}/Mailman/Defaults.py \
-		${WRKSRC}/cron/crontab.in
+		${WRKSRC}/Mailman/Defaults.py \
+		${WRKSRC}/cron/crontab.in \
+		${WRKSRC}/misc/mailman \
+		${WRKSRC}/misc/paths.py
 
 post-install:
 	@${INSTALL_DATA_DIR} ${MMDOC}
-	@${INSTALL_DATA_DIR} ${MMEXAMPLES}
 	@for file in FAQ NEWS README* UPGRADING; do \
 	    ${INSTALL_DATA} ${WRKDIST}/$$file ${MMDOC}; \
 	done
 	@${INSTALL_DATA} files/README.OpenBSD ${MMDOC}
-	@for file in filters/bowa-strip misc/pending_subscriptions.db; do \
-	    ${INSTALL_DATA} ${WRKDIST}/$$file ${MMEXAMPLES}; \
-	done
 
 .include <bsd.port.mk>

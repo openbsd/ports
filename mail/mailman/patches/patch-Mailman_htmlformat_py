@@ -1,7 +1,7 @@
-$OpenBSD: patch-Mailman_htmlformat_py,v 1.2 2002/05/14 01:04:18 naddy Exp $
---- Mailman/htmlformat.py.orig	Wed Apr 24 12:04:47 2002
-+++ Mailman/htmlformat.py	Wed Apr 24 12:09:34 2002
-@@ -506,12 +506,14 @@ class DefinitionList(Container):
+$OpenBSD: patch-Mailman_htmlformat_py,v 1.3 2003/01/18 16:52:17 sturm Exp $
+--- Mailman/htmlformat.py.orig	Sat Dec 28 18:20:41 2002
++++ Mailman/htmlformat.py	Sat Dec 28 18:22:46 2002
+@@ -600,12 +600,14 @@ class DefinitionList(Container):
  from mm_cfg import MAILMAN_URL
  PYTHON_URL  = 'http://www.python.org/'
  GNU_URL     = 'http://www.gnu.org/'
@@ -16,7 +16,7 @@ $OpenBSD: patch-Mailman_htmlformat_py,v 1.2 2002/05/14 01:04:18 naddy Exp $
  
  
  def MailmanLogo():
-@@ -525,12 +527,15 @@ def MailmanLogo():
+@@ -619,7 +621,9 @@ def MailmanLogo():
                   logo(PYTHON_POWERED)
          gnulink = '<img src="%s" alt="GNU\'s Not Unix" border=0>' % \
                    logo(GNU_HEAD)
@@ -26,11 +26,14 @@ $OpenBSD: patch-Mailman_htmlformat_py,v 1.2 2002/05/14 01:04:18 naddy Exp $
 +        t.AddRow([mmlink, pylink, gnulink, obsdlink])
      else:
          # use only textual links
-         mmlink = Link(MAILMAN_URL,
-                       'Delivered by Mailman<br>version %s' % mm_cfg.VERSION)
-         pylink = Link(PYTHON_URL, 'Python Powered')
-         gnulink = Link(GNU_URL, "Gnu's Not Unix")
+         version = mm_cfg.VERSION
+@@ -627,7 +631,8 @@ def MailmanLogo():
+                       _('Delivered by Mailman<br>version %(version)s'))
+         pylink = Link(PYTHON_URL, _('Python Powered'))
+         gnulink = Link(GNU_URL, _("Gnu's Not Unix"))
 -        t.AddRow([mmlink, pylink, gnulink])
 +        obsdlink = Link(OBSD_URL, 'Powered by OpenBSD')
 +        t.AddRow([mmlink, pylink, gnulink, obsdlink])
      return t
+ 
+ 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/01/18 16:52:17 sturm Exp $
 #
 # Pre/post-installation setup of mailman
 
@@ -8,7 +8,6 @@
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 
-MMEXAMPLES=${PREFIX}/share/examples/mailman
 MMHOME=${PREFIX}/lib/mailman
 MMSPOOL=/var/spool/mailman
 
@@ -48,39 +47,18 @@ do_dirs()
 
 	cd $MMSPOOL
 	for dir in archives archives/private archives/public data \
-		   filters lists locks logs qfiles spam; do
+		   lists locks logs qfiles spam; do
 		if [ ! -d $dir ]; then
 			$INSTALL_DIR $dir
 		fi
 	done
 	chmod 0771 archives/private
-
-	cd $MMHOME
-	for dir in Mailman bin cgi-bin cron icons mail scripts \
-		   templates; do
-		if [ ! -d $dir ]; then
-			$INSTALL_DIR $dir
-		fi
-	done
-
-	cd Mailman
-	for dir in Archiver Bouncers Cgi Handlers Logging pythonlib; do
-		if [ ! -d $dir ]; then
-			$INSTALL_DIR $dir
-		fi
-	done
 }
 
 do_files()
 {
 	INSTALL="install -o mailman -g mailman -m 664"
 
-	if [ ! -f $MMSPOOL/filters/bowa-strip ]; then
-	    $INSTALL $MMEXAMPLES/bowa-strip $MMSPOOL/filters;
-	fi
-	if [ ! -f $MMSPOOL/data/pending_subscriptions.db ]; then
-	    $INSTALL $MMEXAMPLES/pending_subscriptions.db $MMSPOOL/data;
-	fi
 	if [ ! -f $MMHOME/Mailman/mm_cfg.py ]; then
 	    $INSTALL $MMHOME/Mailman/mm_cfg.py.dist $MMHOME/Mailman/mm_cfg.py;
 	fi
@@ -90,20 +68,10 @@ do_perms()
 {
 	cd ${MMHOME} 
 	chown -R mailman:mailman *
-        for file in mail/wrapper cgi-bin/*; do
-                chmod 2755 $file;
-        done
-}
-
-do_notice()
-{
-	echo ""
-	echo "+---------------"
-	echo "| The $1 package needs quite some configuration. Have"
-	echo "| a look at $PREFIX/share/doc/mailman/README.OpenBSD to find out"
-	echo "| what you have to do, to get mailman up and running."
-	echo "+---------------"
-	echo ""
+	find . -type d -exec chmod 0775 {} \;
+	for file in mail/mailman cgi-bin/*; do
+		chmod 2755 $file;
+	done
 }
 
 # verify proper execution
@@ -123,7 +91,6 @@ case $2 in
     POST-INSTALL)
 	do_files $1
 	do_perms $1
-	do_notice $1
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

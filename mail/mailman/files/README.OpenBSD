@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2001/11/12 13:29:21 wilfried Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2003/01/18 16:52:17 sturm Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -28,8 +28,8 @@ OpenBSD specific comments added. It's a good time to become root, now.
 
   IMAGE_LOGOS = '/images/'
 
-  The default value for IMAGE_LOGOS is '/icons/'.  Read the
-  comment in Defaults.py.in for details.
+  The default value for IMAGE_LOGOS is '/icons/'.  Read the comment in
+  Defaults.py.in for details.
 
 - Configure your web server to point to the Pipermail public
   mailing list archives:
@@ -38,36 +38,68 @@ OpenBSD specific comments added. It's a good time to become root, now.
 
   Alias /pipermail/ "/var/spool/mailman/archives/public/"
 
+  Be sure to configure your web server to follow symbolic links in
+  this directory, otherwise public Pipermail archives won't be
+  accessible.  For Apache users, consult the FollowSymLinks option.
+
+  Also, if you're going to be supporting internationalized public
+  archives, you will probably want to turn off any default charset
+  directive for the Pipermail directory, otherwise your
+  multilingual archive pages won't show up correctly.  Here's an
+  example for Apache, based on the standard installation
+  directories:
+
+  <Directory "/usr/local/mailman/archives/public/">
+      AddDefaultCharset Off
+  </Directory>
+
   Now restart your web server.
 
-- IMPERATIVE!  IMPORTANT!  DO THIS!  YOU'LL BE SORRY IF YOU DON'T!
-
-  Set up the crontab entries.  Mailman runs a number of cron jobs
+- Set up the crontab entries.  Mailman runs a number of cron jobs
   for its basic functionality. Add $mailmandir/cron/crontab.in as a 
   crontab entry by executing these commands:
 
   % cd $mailmandir/cron
   % crontab -u mailman crontab.in
 
+- Start the Mailman qrunner daemon, by executing the following
+  from the $mailmandir directory:
+
+  % bin/mailmanctl start
+
+  If you want to start Mailman every time you reboot your system,
+  add something like
+
+  if [ -x /usr/local/lib/mailman/bin/mailmanctl ]; then
+          echo -n ' mailman'
+          /usr/local/lib/mailman/bin/mailmanctl -s -q start
+  fi
+
+  to your /etc/rc.local
+
 - Look to see if there is special instructions about hooking your
   MTA up to Mailman.  If so, there will be a README.<yourMTA> file
   in $mailmandir/../../share/doc/mailman.
 
-- Add aliases for `mailman' and `mailman-owner' to the system's
-  mail alias database.  These aliases should point to whoever is
-  ultimately responsible for the Mailman installation.  Here are
-  instructions for those running sendmail:
+- Change the values for DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST.
+  These are set to 'locahost' in Defaults.py.  Make any necessary
+  changes in the mm_cfg.py file. Note that if you change either of
+  these two values, you'll want to add the following afterwards in
+  the mm_cfg.py file:
 
-  1. Assuming your email is fred@flintstone.com, add the following
-     lines to the file /etc/mail/aliases:
- 
-     mailman: fred@flintstone.com
-     mailman-owner: mailman
+      add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
 
-  2. Run the program 'newaliases'.
+- Create a "site-wide" mailing list.  This is the one that
+  password reminders will appear to come from.  Usually this
+  should be the "mailman" mailing list, but if you need to change
+  this, be sure to change the MAILMAN_SITE_LIST variable in
+  mm_cfg.py (see below).
 
-  If you don't run sendmail, consult the documentation of your
-  mail transport program for information on adding these aliases.
+     % bin/newlist mailman
+
+  Follow the prompts, and see the README file for more information.
+
+- You should then subscribe yourself to the mailman list.
 
 2) Customize Mailman
 
@@ -79,11 +111,11 @@ OpenBSD specific comments added. It's a good time to become root, now.
   (you need to configure your lists through the web admin
   interface or through the command line script bin/config_list).
 
-  Specifically check to make sure the variables DEFAULT_HOST_NAME
-  and DEFAULT_URL are correct.  The latter MUST end in a slash.
-
   The (un-)install process will not (delete/)overwrite an existing 
   mm_cfg.py file so you can freely make changes to it.
+
+  Note: Do *not* change HOME_DIR or MAILMAN_DIR.  These are set
+  automatically by the configure script.
 
 - Create the site password using:
 
@@ -94,30 +126,15 @@ OpenBSD specific comments added. It's a good time to become root, now.
   mailman site administrator the ability to adjust these things
   when necessary.
 
+  You may also want to create a password for the site-wide "list
+  creator" role (someone other than the site administrator who as
+  privileges to create and remove lists through the web).  Use the
+  -c option to mmsitepass to set this.
+
 3) Getting started
 
-- Create a list named `test'.  To do so, run the program
-  $mailmandir/bin/newlist.  You will be prompted for the name of the
-  list, as well as the email address of the person running the
-  list.  Put your own email address as the list administrator's
-  address.
-       
-- Running newlist will generate a list of aliases that must be
-  added to the system.  If you are running Sendmail, you may add
-  the lines output directly to the file /etc/mail/aliases.  You have
-  then to run the command 'newaliases' (all as root).  Now the
-  mailing address for your list as well as its administrative
-  addresses will be set up.  If you are not running Sendmail,
-  consult your MTA's documentation for information on adding
-  aliases.
-
-- You will receive email instructions on how to visit the list you
-  just created.  Using these instructions, subscribe to the
-  mailing list.  Once you have subscribed (which requires a
-  confirmation step!), send a message to the list, and see if you
-  get it.  If so, then you have successfully installed Mailman,
-  and set up your first list!
-
+  See the README file under the section "CREATE YOUR FIRST LIST" for
+  a quick introduction to creating an initial test list.
 
 4) Troubleshooting
   

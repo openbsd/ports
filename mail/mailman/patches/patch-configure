@@ -1,145 +1,141 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
---- configure.orig	Fri Sep 22 18:56:44 2000
-+++ configure	Tue Aug 21 19:08:08 2001
-@@ -1137,50 +1137,7 @@ then
- fi
+$OpenBSD: patch-configure,v 1.2 2003/01/18 16:52:17 sturm Exp $
+--- configure.orig	Thu Jan  2 18:30:06 2003
++++ configure	Thu Jan  2 18:32:42 2003
+@@ -1206,52 +1206,7 @@ fi
  USERNAME=$with_username
  echo "$ac_t""$USERNAME" 1>&6
--
+ 
 -# User `mailman' must exist
 -
--echo $ac_n "checking for $USERNAME UID""... $ac_c" 1>&6
--echo "configure:1145: checking for $USERNAME UID" >&5
+-echo $ac_n "checking for user name \"$USERNAME\"""... $ac_c" 1>&6
+-echo "configure:1213: checking for user name \"$USERNAME\"" >&5
 -
--# MAILMAN_UID == variable name
+-# MAILMAN_USER == variable name
 -# $USERNAME == user id to check for
 -
 -
--if test -z "$MAILMAN_UID"
+-if test -z "$MAILMAN_USER"
 -then
 -    cat > conftest.py <<EOF
--import pwd, string
+-import pwd
 -uid = ''
--for user in string.split("$USERNAME"):
+-for user in "$USERNAME".split():
 -    try:
 -        try:
--	    uid = pwd.getpwuid(int(user))[2]
--	    break
--	except ValueError:
--	    uid = pwd.getpwnam(user)[2]
--	    break
+-            uname = pwd.getpwuid(int(user))[0]
+-            break
+-        except ValueError:
+-            uname = pwd.getpwnam(user)[0]
+-            break
 -    except KeyError:
--        uid = ''
+-        uname = ''
 -fp = open("conftest.out", "w")
--fp.write("%s\n" % uid)
+-fp.write("%s\n" % uname)
 -fp.close()
 -EOF
 -    $PYTHON conftest.py
--    MAILMAN_UID=`cat conftest.out`
+-    MAILMAN_USER=`cat conftest.out`
 -fi
 -
--echo "$ac_t""$MAILMAN_UID" 1>&6
 -rm -f conftest.out conftest.py
--if test -z "$MAILMAN_UID"
+-if test -z "$MAILMAN_USER"
 -then
+-  if test "$with_permcheck" = "yes"
+-  then
 -    { echo "configure: error: 
 -***** No \"$USERNAME\" user found!
 -***** Your system must have a \"$USERNAME\" user defined
 -***** (usually in your /etc/passwd file).  Please see the INSTALL
 -***** file for details." 1>&2; exit 1; }
+-  fi
 -fi
+-echo "$ac_t""okay" 1>&6
 -
-+MAILMAN_UID=-1
++MAILMAN_USER=mailman
  
  # Check for some other gid to use than `mailman'
  echo $ac_n "checking for --with-groupname""... $ac_c" 1>&6
-@@ -1198,106 +1155,7 @@ then
- fi
+@@ -1270,104 +1225,7 @@ fi
  GROUPNAME=$with_groupname
  echo "$ac_t""$GROUPNAME" 1>&6
+ 
 -
+-# Target group must exist
 -
--# Group `mailman' must exist
+-echo $ac_n "checking for group name \"$GROUPNAME\"""... $ac_c" 1>&6
+-echo "configure:1278: checking for group name \"$GROUPNAME\"" >&5
 -
--echo $ac_n "checking for $GROUPNAME GID""... $ac_c" 1>&6
--echo "configure:1207: checking for $GROUPNAME GID" >&5
--
--# MAILMAN_GID == variable name
+-# MAILMAN_GROUP == variable name
 -# $GROUPNAME == user id to check for
 -
 -
--if test -z "$MAILMAN_GID"
+-if test -z "$MAILMAN_GROUP"
 -then
 -    cat > conftest.py <<EOF
--import grp, string
+-import grp
 -gid = ''
--for group in string.split("$GROUPNAME"):
+-for group in "$GROUPNAME".split():
 -    try:
 -        try:
--	    gid = grp.getgrgid(int(group))[2]
--	    break
--	except ValueError:
--	    gid = grp.getgrnam(group)[2]
--	    break
+-            gname = grp.getgrgid(int(group))[0]
+-            break
+-        except ValueError:
+-            gname = grp.getgrnam(group)[0]
+-            break
 -    except KeyError:
--        gid = ''
+-        gname = ''
 -fp = open("conftest.out", "w")
--fp.write("%s\n" % gid)
+-fp.write("%s\n" % gname)
 -fp.close()
 -EOF
 -    $PYTHON conftest.py
--    MAILMAN_GID=`cat conftest.out`
+-    MAILMAN_GROUP=`cat conftest.out`
 -fi
 -
--echo "$ac_t""$MAILMAN_GID" 1>&6
 -rm -f conftest.out conftest.py
--if test -z "$MAILMAN_GID"
+-if test -z "$MAILMAN_GROUP"
 -then
+-  if test "$with_permcheck" = "yes"
+-  then
 -    { echo "configure: error: 
 -***** No \"$GROUPNAME\" group found!
 -***** Your system must have a \"$GROUPNAME\" group defined
 -***** (usually in your /etc/group file).  Please see the INSTALL
 -***** file for details." 1>&2; exit 1; }
+-  fi
 -fi
+-echo "$ac_t""okay" 1>&6
 -
--
--# Now make sure that $prefix is set up correctly.  It must be group
--# owned by `mailman', it must have the group sticky bit set, and it
--# must be a+rx
--if test "$VAR_PREFIX" = "NONE"
--then
--    VAR_PREFIX=$ac_default_prefix
--    prefixcheck=$ac_default_prefix
--else
--    prefixcheck=$VAR_PREFIX
--fi
 -
 -echo $ac_n "checking permissions on $prefixcheck""... $ac_c" 1>&6
--echo "configure:1260: checking permissions on $prefixcheck" >&5
+-echo "configure:1323: checking permissions on $prefixcheck" >&5
 -
 -cat > conftest.py <<EOF
--import os, grp, string
+-import os, grp
 -from stat import *
 -prefix = "$prefixcheck"
--mailmangid = $MAILMAN_GID
+-groupname = "$GROUPNAME"
+-mailmangroup = "$MAILMAN_GROUP"
+-mailmangid = grp.getgrnam(mailmangroup)[2]
 -problems = []
 -try: statdata = os.stat(prefix)
--except os.error:
+-except OSError:
 -    problems.append("Directory doesn't exist: " + prefix)
--else:    
+-else:
 -    mode = statdata[ST_MODE]
 -    gid = statdata[ST_GID]
 -    if mailmangid <> gid:
--	problems.append("Directory must be owned by group mailman: " + prefix)
+-        problems.append("Directory must be owned by group " +
+-                        groupname + ": " + prefix)
 -    if (mode & S_ISGID) <> S_ISGID:
--	problems.append("Set-gid bit must be set for directory: " +prefix)
+-        problems.append("Set-gid bit must be set for directory: " + prefix)
 -    perms = S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH
 -    if (mode & perms) <> perms:
--	problems.append("Permissions should be at least 02775: " + prefix)
+-        problems.append("Permissions should be at least 02775: " + prefix)
 -if not problems:
 -    msg = "okay\n"
 -else:
--    msg = '***** ' + string.join(problems, '\n***** ') + '\n'
+-    msg = '***** ' + '\n***** '.join(problems) + '\n'
 -fp = open("conftest.out", "w")
 -fp.write(msg)
 -fp.close()
@@ -148,20 +144,24 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
 -$PYTHON conftest.py
 -status=`cat conftest.out`
 -rm -f conftest.out conftest.py
--if test "$status" != "okay"
+-if test "$with_permcheck" = "yes"
 -then
--    { echo "configure: error: 
+-    if test "$status" != "okay"
+-    then
+-        { echo "configure: error: 
 -***** Installation directory $prefixcheck is not configured properly!
 -$status" 1>&2; exit 1; }
+-    fi
+-else
+-    status="skipped"
 -fi
+-echo "$ac_t""$status" 1>&6
 -
--echo "$ac_t""okay" 1>&6
--
-+MAILMAN_GID=-1
++MAILMAN_GROUP=mailman
  
  # Now find the UIDs and GIDs
  # Support --with-mail-gid and --with-cgi-gid
-@@ -1496,7 +1354,7 @@ echo "$ac_t""$URL" 1>&6
+@@ -1576,7 +1434,7 @@ echo "$ac_t""$URLHOST" 1>&6
  rm -f conftest.out conftest.py
  
  # Checks for libraries.
@@ -169,4 +169,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
 +for ac_func in strerror syslog
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:1503: checking for $ac_func" >&5
+ echo "configure:1583: checking for $ac_func" >&5

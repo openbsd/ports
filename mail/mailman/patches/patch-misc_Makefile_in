@@ -1,0 +1,22 @@
+$OpenBSD: patch-misc_Makefile_in,v 1.1 2003/01/18 16:52:17 sturm Exp $
+--- misc/Makefile.in.orig	Thu Jan  2 18:49:57 2003
++++ misc/Makefile.in	Thu Jan  2 18:48:29 2003
+@@ -71,6 +71,10 @@ ICONS=		$(srcdir)/*.jpg $(srcdir)/*.png
+ # Rules
+ 
+ all:
++	for p in $(PACKAGES); \
++	do \
++	    gunzip -c $(srcdir)/$$p.tar.gz | tar xf -; \
++	done
+ 
+ install: install-other install-packages
+ 
+@@ -86,7 +90,6 @@ install-other:
+ install-packages:
+ 	for p in $(PACKAGES); \
+ 	do \
+-	    gunzip -c $(srcdir)/$$p.tar.gz | tar xf -; \
+ 	    (cd $$p ; umask 02 ; PYTHONPATH=$(PYTHONLIBDIR) $(PYTHON) $(SETUPCMD)); \
+ 	done
+ 
