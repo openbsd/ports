@@ -1,0 +1,19 @@
+$OpenBSD: patch-platform_h,v 1.1.1.1 2000/02/09 23:55:44 rohee Exp $
+
+Patch around ugly glibc workaround.
+
+--- platform.h.orig	Mon Feb  7 22:01:16 2000
++++ platform.h	Mon Feb  7 22:02:56 2000
+@@ -69,8 +69,12 @@
+ /* you may need to delete the #ifndef and #endif on your system */
+ 
+ #ifndef __USE_MISC
++/* This is already defined under OpenBSD, in <sys/types.h> */
++
++/*
+ typedef unsigned int uint;
+ typedef unsigned long ulong;
++*/
+ #endif /* __USE_MISC */
+ 
+ typedef unsigned char byte;
