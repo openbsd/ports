@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2003/04/06 02:59:48 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
 VERSION=	4.1
-REVISION=	10	# Debian
+REVISION=	11	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REVISION}
@@ -34,6 +34,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 NO_REGRESS=	Yes
 
+post-distpatch:
+	@for p in ${WRKDIST}/debian/patches/*.dpatch; do \
+		${PATCH} ${PATCH_DIST_ARGS} < $$p; \
+	done
+
 post-patch:
 	@chmod a+rx ${WRKSRC}/configure
 
@@ -44,6 +49,8 @@ do-install:
 	    ln -sf xloadimage xview
 	${INSTALL_PROGRAM} ${WRKBUILD}/uufilter ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${PREFIX}/man/man1/xloadimage.1
+	@perl -i -pe 's:%%SYSCONFDIR%%:${SYSCONFDIR}:' \
+	    ${PREFIX}/man/man1/xloadimage.1
 	@cd ${PREFIX}/man/man1 && \
 	    ln -sf xloadimage.1 xsetbg.1 && \
 	    ln -sf xloadimage.1 xview.1
