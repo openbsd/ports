@@ -1,0 +1,14 @@
+Params::CallbackRequest provides functional and object-oriented callbacks
+to method and function parameters. Callbacks may be either code references
+provided to the new() constructor, or methods defined in subclasses of
+Params::Callback. Callbacks are triggered either for every call to the
+Params::CallbackRequest execute() method, or by specially named keys in
+the parameters to execute().
+
+The idea behind this module is to provide a sort of plugin architecture
+for Perl templating systems. Callbacks are executed by the contents of a
+request to the Perl templating server, before the templating system itself
+executes. This approach allows you to carry out logical processing of data
+submitted from a form, to affect the contents of the request parameters
+before they're passed to the templating system for processing, and even to
+redirect or abort the request before the templating system handles it.
