@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/27 15:41:33 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/11/03 01:02:18 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4

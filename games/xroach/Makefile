@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/22 22:23:20 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/03 01:02:18 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	xroach
 PKGNAME=	xroach-4.4
