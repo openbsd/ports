@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/11/20 17:00:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/01 19:15:33 jakob Exp $
 
-DISTNAME=		skill-3.7@P8
-PKGNAME=		skill-3.7.9
+DISTNAME=		skill-4.0
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
@@ -11,10 +10,8 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
-
 MASTER_SITES=		ftp://jaguar.cs.utah.edu/pub/skill/
-EXTRACT_SUFX=		_tar.Z
+EXTRACT_SUFX=		.tgz
 
 do-configure:
 	@cd ${WRKDIST}; ./Config
