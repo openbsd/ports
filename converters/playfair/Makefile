@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/12 07:10:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/12 07:22:23 jolan Exp $
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS} sparc64
 
-COMMENT=	"strips DRM from iTMS protection aac audio files"
+COMMENT=	"strips DRM from iTMS protected AAC audio files"
 DISTNAME=	playfair-0.5.0
 CATEGORIES=	converters audio
 MASTER_SITES=	http://sarovar.org/download.php/270/
