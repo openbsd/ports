@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
+--- configure.orig	Sat Jul 27 13:48:21 2002
++++ configure	Sun Nov 24 23:53:28 2002
+@@ -922,9 +922,9 @@ fi
+ 
+ 
+ if test "x$prefix" != xNONE; then
+-  DOOMWADDIR="$prefix/share/games/doom"
++  DOOMWADDIR="$prefix/share/prboom"
+ else
+-  DOOMWADDIR="$ac_default_prefix/share/games/doom"
++  DOOMWADDIR="$ac_default_prefix/share/prboom"
+ fi
+ cat >> confdefs.h <<EOF
+ #define DOOMWADDIR "$DOOMWADDIR"

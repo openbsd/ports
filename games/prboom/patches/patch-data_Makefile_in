@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
+--- data/Makefile.in.orig	Sat Jul 27 13:49:11 2002
++++ data/Makefile.in	Sun Nov 24 23:51:00 2002
+@@ -91,7 +91,7 @@ SDL_LIBS = @SDL_LIBS@
+ VERSION = @VERSION@
+ ac_aux_dir = @ac_aux_dir@
+ 
+-waddir = $(datadir)/games/doom
++waddir = $(datadir)/prboom
+ wad_DATA = prboom.wad
+ EXTRA_DIST = prboom.wad
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs

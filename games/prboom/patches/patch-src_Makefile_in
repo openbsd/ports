@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
+--- src/Makefile.in.orig	Sat Jul 27 13:49:13 2002
++++ src/Makefile.in	Sun Nov 24 23:51:59 2002
+@@ -97,7 +97,7 @@ EXTRA_SUBDIRS = Posix SDL
+ 
+ SUBDIRS = SDL POSIX
+ 
+-gamesdir = $(prefix)/games
++gamesdir = $(prefix)/bin
+ EXTRA_PROGRAMS = prboom-game-server
+ games_PROGRAMS = prboom @BUILD_SERVER@
+ 
