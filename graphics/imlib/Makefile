@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/30 21:35:09 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/09 01:26:29 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.4
@@ -8,7 +8,8 @@ MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	brad@openbsd.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+		giftopnm:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \

@@ -28,4 +28,5 @@ lib/libimlib-tiff.a
 lib/libimlib-tiff.la
 lib/libimlib-xpm.a
 lib/libimlib-xpm.la
+share/aclocal/imlib.m4
 @dirrm lib/imlib

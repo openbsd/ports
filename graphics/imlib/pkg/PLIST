@@ -39,4 +39,5 @@ lib/libimlib-xpm.a
 lib/libimlib-xpm.la
 lib/libimlib-xpm.so.0.0
 @exec /sbin/ldconfig -m %B
+share/aclocal/imlib.m4
 @dirrm lib/imlib
