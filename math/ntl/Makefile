@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/16 08:56:16 reinhard Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/16 13:45:44 wilfried Exp $
 
 DISTNAME=	ntl-5.0c
 CATEGORIES=	math
@@ -18,6 +18,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/src
 MAKE_FILE=	makefile
 
 CONFIGURE_STYLE= simple
+CONFIGURE_ARGS= CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/NTL
