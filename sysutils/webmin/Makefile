@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/26 07:46:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2002/02/18 03:45:18 kevlo Exp $
 
 COMMENT=	"Web-based interface for system administration for Unix"
 
 DISTNAME=       webmin-0.81
 CATEGORIES=     sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.504
 FAKE=No
-MASTER_SITES=   http://www.webmin.com/webmin/download/
+MASTER_SITES=	${HOMEPAGE}/download/
 
-HOMEPAGE=	http://www.webmin.com/webmin/
+HOMEPAGE=	http://www.webmin.com/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
