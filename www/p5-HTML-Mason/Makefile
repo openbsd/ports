@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/01 17:53:51 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/01 17:56:00 avsm Exp $
 
 DISTNAME=	HTML-Mason-1.0
 PKGNAME=	p5-${DISTNAME}
@@ -7,6 +7,7 @@ NEED_VERSION=	1.351
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
+HOMEPAGE=	http://www.masonhq.com/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
