@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/10/05 00:44:10 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/10/11 07:41:22 wilfried Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
@@ -23,6 +23,10 @@ CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/acconfig
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+.if ${MACHINE_ARCH} == "sparc64"
+CONFIGURE_ARGS+= --enable-debug
+.endif
 
 post-patch:
 	@cd ${WRKSRC}/acconfig; \
