@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/08 13:32:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/15 13:19:56 naddy Exp $
 # vim:ts=8
 
 COMMENT=	"ARP level ping utility"
 
-DISTNAME=	arping-0.97
+DISTNAME=	arping-1.00
 HOMEPAGE=	http://synscan.nss.nu/programs.php
 
 CATEGORIES=	net
-NEED_VERSION=	1.414
+NEED_VERSION=	1.435
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://ftp.nss.nu/pub/synscan/ \
