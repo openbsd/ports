@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/11 17:18:50 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/13 10:19:59 xsa Exp $
 bin/angband
 share/angband/edit/artifact.txt
 share/angband/edit/cost_adj.txt
@@ -63,3 +63,4 @@ share/angband/pref/xtra-xxx.prf
 @dirrm share/angband/file
 @dirrm share/angband/edit
 @dirrm share/angband
+@extraunexec rm -rf /var/games/angband

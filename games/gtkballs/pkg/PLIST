@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/02/18 19:35:49 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/13 10:19:59 xsa Exp $
 bin/gtkballs
 man/man6/gtkballs.6x
 share/gtkballs/COPYING
@@ -324,3 +324,5 @@ share/locale/ru/LC_MESSAGES/gtkballs.mo
 @dirrm share/gtkballs/themes/Default
 @dirrm share/gtkballs/themes
 @dirrm share/gtkballs
+@cwd /var/games
+@extra gtkballs-scores

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 10:27:42 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/13 10:20:00 xsa Exp $
 @group games
 @mode 2555
 bin/wanderer
@@ -66,3 +66,5 @@ share/wanderer/screens/screen.60
 share/wanderer/screens/screen.61
 @dirrm share/wanderer/screens
 @dirrm share/wanderer
+@cwd /var/games
+@extra wandererscores

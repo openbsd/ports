@@ -1,14 +1,14 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/08/11 03:23:46 lebel Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/04/13 10:19:59 xsa Exp $
 #
-# dopewars de-installation
+# moria de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 SCORE_DIR=/var/games/moria
 
-if [ -f $SCORE_FILE ]; then
+if [ ${PKG_DELETE_EXTRA} != Yes -a -d $SCORE_DIR ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"

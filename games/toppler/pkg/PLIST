@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/28 05:22:52 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/13 10:20:00 xsa Exp $
 bin/toppler
 share/doc/toppler/README
 share/toppler/alarm.wav
@@ -23,3 +23,5 @@ share/toppler/toppler.dat
 share/toppler/water.wav
 @dirrm share/toppler
 @dirrm share/doc/toppler
+@cwd /var/games
+@extra toppler.hsc

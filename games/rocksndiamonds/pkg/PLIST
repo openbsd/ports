@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/25 20:30:41 biorn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/13 10:19:59 xsa Exp $
 @group games
 @mode 2555
 bin/rocksndiamonds
@@ -3491,3 +3491,4 @@ share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
 @dirrm share/rocksndiamonds/graphics/gfx_animal_kingdom
 @dirrm share/rocksndiamonds/graphics
 @dirrm share/rocksndiamonds
+@extraunexec rm -rf /var/games/rocksndiamonds

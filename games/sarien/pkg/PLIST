@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/24 23:03:54 aaron Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/13 10:20:00 xsa Exp $
 bin/sarien
 share/doc/sarien/Changelog
 share/doc/sarien/README.agi
 share/examples/sarien/sarien.cfg
 @dirrm share/examples/sarien
 @dirrm share/doc/sarien
+@cwd ${SYSCONFDIR}
+@extra sarien.cfg
