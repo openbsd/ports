@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/22 12:28:50 espie Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
 COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
-DISTNAME=	bmp-0.9.7
-PKGNAME-mp3=	bmp-mp3-0.9.7
-PKGNAME-vorbis=	bmp-vorbis-0.9.7
+V=		0.9.7
+DISTNAME=	bmp-$V
+PKGNAME=	bmp-$Vp0
+PKGNAME-mp3=	bmp-mp3-$Vp0
+PKGNAME-vorbis=	bmp-vorbis-$Vp0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
@@ -32,6 +34,8 @@ LIB_DEPENDS=	gdk_pixbuf-2.0.400.3,gdk-x11-2.0.400.3::x11/gtk+2 \
 		esd.2.34::audio/esound \
 		glade-2.0.0.4::devel/libglade2 \
 		xml2.9.0::textproc/libxml
+WANTLIB+=	gmodule-2.0.0.0 pangoxft-1.0.0.0 atk-1.0.0.0 gobject-2.0.0.0 \
+		audiofile pangox-1.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
 
 MULTI_PACKAGES=
 PSEUDO_FLAVORS=	no_mp3 no_vorbis
@@ -48,7 +52,9 @@ MULTI_PACKAGES+=-vorbis
 CONFIGURE_ARGS+=--disable-mp3
 .endif
 .if ${MULTI_PACKAGES:M-vorbis}
+.  if !defined(PACKAGING)
 LIB_DEPENDS+=	vorbisfile.4.0::audio/libvorbis
+.  endif
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
@@ -59,10 +65,11 @@ SUBPACKAGE?=
 . if ${SUBPACKAGE} == "-mp3"
 PERMIT_DISTFILES_CDROM=	"patent issues"
 PERMIT_DISTFILES_FTP=	"patent issues"
-RUN_DEPENDS=		::audio/bmp
-. endif
-. if ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS=	vorbisfile.4.0::audio/libvorbis
+LIB_DEPENDS+=		beep::audio/bmp
+. elif ${SUBPACKAGE} == "-vorbis"
+LIB_DEPENDS+=	vorbisfile.4.0,vorbis::audio/libvorbis
+WANTLIB+=	gthread-2.0.0.0 gtk-x11-2.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
+		ogg gdk_pixbuf-2.0.0.0
 RUN_DEPENDS=	::audio/bmp
 . endif
 .endif
