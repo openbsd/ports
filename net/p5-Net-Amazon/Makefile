@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/11 16:50:40 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/25 19:05:05 sturm Exp $
 
 COMMENT=		"Perl Interface to Amazon.{co.uk,com} Web Services"
 
-DISTNAME=		Net-Amazon-0.21
+DISTNAME=		Net-Amazon-0.32
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
 
-MAINTAINER=		Sam Smith <S@msmith.net>
+MAINTAINER=		Sam Smith <s@msmith.net>
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,10 +18,10 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE=	perl
 
-BUILD_DEPENDS=	:p5-XML-Simple->=2.08:textproc/p5-XML-Simple \
-		::devel/p5-Log-Log4perl
-
-REGRESS_DEPENDS=	:p5-libwww-*:www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:p5-XML-Simple->=2.08:textproc/p5-XML-Simple \
+		::devel/p5-Log-Log4perl \
+		:p5-libwww-*:www/p5-libwww
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Net-Amazon
