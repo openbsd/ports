@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/10/24 13:54:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.49 2001/11/10 11:13:49 heko Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.tar.bz2
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png \
-			gif.4.1::graphics/giflib
+			ungif.5::graphics/libungif
 
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent

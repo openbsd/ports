@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/11/01 21:16:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.36 2001/11/10 11:13:49 heko Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= stable/sources/imlib
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
-		gif.4.1::graphics/giflib \
+		ungif.5::graphics/libungif \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
 BUILD_DEPENDS=	::graphics/netpbm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/24 02:27:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/10 11:13:49 heko Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	libtool::devel/libtool
 # You must have the X11 client packages installed; no good way to DEPEND this
 # (if you don't, I think it will build a command-line-only Java--untested).
 LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
-		gif.4.::graphics/giflib \
+		ungif.5.::graphics/libungif \
 		png.2.::graphics/png \
 		gmp.4.::devel/gmp
 
