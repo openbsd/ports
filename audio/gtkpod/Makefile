@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/16 16:37:14 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/06 18:29:08 jcs Exp $
 
 COMMENT=	"GTK+2 program to synchronize an Apple iPod"
 
-DISTNAME=	gtkpod-0.85.0
+DISTNAME=	gtkpod-0.87.3
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -31,8 +31,9 @@ WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender c fontconfig freetype m \
 MODULES=	gettext
 
 CONFIGURE_STYLE= gnu
+# trampolines needed for display_playlists.c
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include -ftrampolines" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
