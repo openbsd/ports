@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2000/09/02 03:26:56 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2000/09/02 20:30:54 brad Exp $
 
-DISTNAME=	lsof_4.51_W
-PKGNAME=	lsof-4.51_W
+DISTNAME=	lsof_4.52A.n+obsd
+PKGNAME=	lsof-4.51.1
 CATEGORIES=	sysutils
 NEED_VERSION=	1.322
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
-		ftp://ftp.crc.doc.ca/packages/lsof/ \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 
 MAINTAINER=     angelos@openbsd.org
 
