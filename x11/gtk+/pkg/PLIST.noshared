@@ -153,10 +153,10 @@ info/gtk.info-5
 info/gtk.info-6
 share/themes/Default/gtk/gtkrc
 share/aclocal/gtk.m4
-etc/gtk/gtkrc.ja
-etc/gtk/gtkrc.ko
-etc/gtk/gtkrc.ru
-@dirrm etc/gtk
+lib/gtk/gtkrc.ja
+lib/gtk/gtkrc.ko
+lib/gtk/gtkrc.ru
+@dirrm lib/gtk
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir

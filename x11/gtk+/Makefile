@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 1999/03/16 22:59:32 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/03/17 00:57:45 brad Exp $
 
 DISTNAME=		gtk+-1.2.0
 CATEGORIES=     	x11
 
-NEED_VERSION=		1.73
+NEED_VERSION=		1.79
 
 MAINTAINER=		marc@openbsd.org
 
@@ -17,9 +17,10 @@ LIB_DEPENDS=    glib\\.1\\.2:${PORTSDIR}/devel/glib
 
 USE_X11=		yes
 USE_PERL5=		yes
+SYSCONFDIR=		${PREFIX}/lib/gtk
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ARGS+=	--enable-static --sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 
