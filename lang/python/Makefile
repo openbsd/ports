@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2000/11/20 21:57:35 jasoni Exp $
+# $OpenBSD: Makefile,v 1.24 2000/11/20 22:15:30 jasoni Exp $
 
-VERSION=	2.0
-DISTNAME=	python-${VERSION}
+DISTNAME=	Python-1.6
+PKGNAME=	python-1.6
 CATEGORIES=	lang
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	jasoni@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -33,17 +33,18 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
 
-WRKDIST=	${WRKDIR}/Python-${VERSION}
+WRKDIST=	${WRKDIR}/Python-1.6
 
-# If libc_r exists, thread support is compiled in by default.
+# If libc_r exists, thread support is compiled in by default unless this
+# is a SPARC system where threads are currently non functional.
 .if ${FLAVOR:L:Mthreads}
-.if !exists(/usr/lib/libc_r.a) 
+.if (${MACHINE_ARCH} == "sparc") 
+BROKEN="Support for ${MACHINE_ARCH} threads is currently broken"
+.elif !exists(/usr/lib/libc_r.a) 
 BROKEN="No thread support on this machine"
 .else
-CONFIGURE_ARGS+= --with-threads
+CONFIGURE_ARGS+= --with-thread
 .endif
-.else
-CONFIGURE_ARGS+= --without-threads
 .endif
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -63,15 +64,20 @@ pre-configure:
 post-configure:
 	cd ${.CURDIR} && make finish-setup
 
+post-build:
+	@cd ${WRKDIST} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${FAKE_FLAGS} -f ${MAKE_FILE} test
+
 post-install:
 	@strip ${PREFIX}/bin/python
-	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; tar -xf -)
+	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.6; tar -xf -)
 	
 .include <bsd.port.mk>
 
 # The tools package is not flavor dependent.
 .if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
-PKGNAME=python-tools-${VERSION}
+PKGNAME=python-tools-1.6
 .endif
 .if ${FLAVOR:L:Mno_tools}
 PKGNAME:=${PKGNAME:S/-no_tools//}
