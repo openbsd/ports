@@ -1,0 +1,15 @@
+==============================================================
+You may need to add these entries to your /etc/services file 
+to register the dhcp services:
+
+dhcps	67/udp    # dhcp server
+dhcpc	68/udp	  # dhcp client
+
+Also, ensure that BPF support is compiled into the kernel.
+
+Examples and documentation are in:
+ ${PREFIX}/share/doc/wide-dhcp , and
+ ${PREFIX}/share/examples/wide-dhcp
+
+==============================================================
+

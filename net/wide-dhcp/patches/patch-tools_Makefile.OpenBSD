@@ -1,0 +1,12 @@
+--- tools/Makefile.OpenBSD.orig	Mon Nov  6 22:43:51 2000
++++ tools/Makefile.OpenBSD	Mon Nov  6 22:48:39 2000
+@@ -0,0 +1,9 @@
++dhcpm: dhcpm.c ../server/dhcp.h
++	$(CC) $(CFLAGS) dhcpm.c -o dhcpm
++
++install: dhcpm
++	${INSTALL} -m 755 -s dhcpm ${SBIN}/dhcpm
++	cp dhcpm.8 ${MAN}/man8/dhcpm.8
++
++clean:
++	rm -rf *~ *.o *core* dhcpm
