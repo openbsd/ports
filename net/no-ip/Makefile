@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/07 08:33:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/06/27 11:37:23 wilfried Exp $
 
 COMMENT=		"No-IP.com Dynamic DNS client"
 
-V=			2.0.9
+V=			2.0.12
 DISTNAME=		noip-${V}
 PKGNAME=		no-ip-${V}
 CATEGORIES=		net
