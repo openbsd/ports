@@ -1,0 +1,16 @@
+$OpenBSD: patch-mail_importers_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- mail/importers/Makefile.in.orig	Mon May  6 13:32:20 2002
++++ mail/importers/Makefile.in	Thu May 16 15:50:23 2002
+@@ -204,10 +204,10 @@ INCLUDES = -I.. 	-I$(srcdir)/..					-I$(
+ 
+ liboutlook_la_SOURCES =  	evolution-outlook-importer.c
+ 
+-liboutlook_la_LDFLAGS = -version-info 0:0:0
++liboutlook_la_LDFLAGS = -version-info 0:0:0 -avoid-version
+ 
+ libmbox_la_SOURCES = evolution-mbox-importer.c
+-libmbox_la_LDFLAGS = -version-info 0:0:0
++libmbox_la_LDFLAGS = -version-info 0:0:0 -avoid-version
+ 
+ oafdir = $(datadir)/oaf
+ oaf_in_files = GNOME_Evolution_Mail_Mbox_Importer.oaf.in		GNOME_Evolution_Mail_Outlook_Importer.oaf.in

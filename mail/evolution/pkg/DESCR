@@ -1,0 +1,25 @@
+Ximian Evolution(TM) is the premier personal and workgroup information
+management solution for UNIX.  The software seamlessly integrates
+email, calendaring, meeting scheduling, contact management and
+online task lists into one powerful, fast, and easy to use application.
+Ximian Evolution also delivers a comprehensive set of features that
+help you keep your work organized and your projects on track.
+Automatic email indexing keeps your information at your fingertips.
+The unique Ximian vFolders(TM) are virtual folders you use to create
+and save powerful contextual views of your email messages.
+
+Ximian Evolution is also powerful collaboration software that
+connects UNIX users to popular corporate communications architectures.
+Ximian Evolution supports standard communications and data interchange
+standards, so you can collaborate with users on other platforms.
+For example, Ximian Evolution is compatible with SMTP, SMTP/Authorized,
+POP, IMAP and other standard messaging environments.  It can import
+mailboxes created with Netscape, Outlook Express, UNIX mbox, Eudora
+and other email managers. It supports peer-to-peer calendaring with
+users on products that support iCalendar, including Microsoft
+Exchange and Lotus Notes. Ximian Evolution uses corporate address
+books created using the popular LDAP protocol. And, Ximian Evolution
+supports the vCard protocol; so exchanging personal information
+with other users is easy.
+
+WWW: ${HOMEPAGE}

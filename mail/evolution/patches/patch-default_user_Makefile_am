@@ -1,0 +1,15 @@
+$OpenBSD: patch-default_user_Makefile_am,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- default_user/Makefile.am.orig	Sun May 26 19:32:26 2002
++++ default_user/Makefile.am	Sun May 26 19:34:00 2002
+@@ -6,8 +6,8 @@ default_DATA = addressbook-sources.xml s
+ EXTRA_DIST = $(default_DATA)
+ 
+ install-data-hook:
+-	-mkdir $(defaultdir)/private
++	-mkdir $(DESTDIR)$(defaultdir)/private
+ if ENABLE_NNTP
+-	-mkdir $(defaultdir)/news
+-	-mkdir $(defaultdir)/config
++	-mkdir $(DESTDIR)$(defaultdir)/news
++	-mkdir $(DESTDIR)$(defaultdir)/config
+ endif

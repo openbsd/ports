@@ -1,0 +1,83 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- configure.in.orig	Mon May  6 10:16:08 2002
++++ configure.in	Sun May 26 21:49:57 2002
+@@ -306,7 +306,7 @@ AC_SUBST(DB3_CFLAGS)
+ 
+ CPPFLAGS_save="$CPPFLAGS"
+ CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
+-AC_CHECK_HEADERS(db.h db3/db.h, break)
++AC_CHECK_HEADERS(db3.h db.h db3/db.h, break)
+ 
+ AC_CACHE_CHECK([db3 header version], ac_cv_db3_header_version,
+ [
+@@ -314,8 +314,12 @@ AC_CACHE_CHECK([db3 header version], ac_
+ 		#ifdef HAVE_DB3_DB_H
+ 		#include <db3/db.h>
+ 		#else
++		#ifdef HAVE_DB3_H
++		#include <db3.h>
++		#else
+ 		#include <db.h>
+ 		#endif
++		#endif
+ 	],[
+ 		#if DB_VERSION_MAJOR != $evolution_db_version_major || \
+ 		    DB_VERSION_MINOR != $evolution_db_version_minor || \
+@@ -338,8 +342,12 @@ AC_CACHE_CHECK([for db3 library name], a
+ 			#ifdef HAVE_DB3_DB_H
+ 			#include <db3/db.h>
+ 			#else
++			#ifdef HAVE_DB3_H
++			#include <db3.h>
++			#else
+ 			#include <db.h>
+ 			#endif
++			#endif
+ 		],[
+ 			DB *db;
+ 			db_create (&db, 0, 0);
+@@ -364,8 +372,12 @@ AC_CACHE_CHECK([that db3 library version
+ 		#ifdef HAVE_DB3_DB_H
+ 		#include <db3/db.h>
+ 		#else
++		#ifdef HAVE_DB3_H
++		#include <db3.h>
++		#else
+ 		#include <db.h>
+ 		#endif
++		#endif
+ 
+ 		int
+ 		main (void)
+@@ -723,20 +735,29 @@ if test ${with_krb5:=no} != no; then
+ 
+ 	mitlibs="-lkrb5 -lk5crypto -lcom_err"
+ 	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken"
++	altheimlibs="-lkrb5 -lcrypto -lasn1"
+ 	AC_CACHE_CHECK([for Kerberos 5], ac_cv_lib_kerberos5,
+ 	[
+ 		LDFLAGS="$LDFLAGS -L$with_krb5/lib $mitlibs"
+ 		AC_TRY_LINK_FUNC(krb5_init_context, ac_cv_lib_kerberos5="$mitlibs",
+ 		[
+ 			LDFLAGS="$LDFLAGS_save -L$with_krb5/lib $heimlibs"
+-			AC_TRY_LINK_FUNC(krb5_init_context, ac_cv_lib_kerberos5="$heimlibs", ac_cv_lib_kerberos5=no)
++			AC_TRY_LINK_FUNC(krb5_init_context, ac_cv_lib_kerberos5="$heimlibs",
++			[
++				LDFLAGS="$LDFLAGS_save -L$with_krb5/lib $altheimlibs"
++				AC_TRY_LINK_FUNC(krb5_init_context, ac_cv_lib_kerberos5="$altheimlibs", ac_cv_lib_kerberos5=no)
++			])
+ 		])
+ 		LDFLAGS="$LDFLAGS_save"
+ 	])
+ 	if test "$ac_cv_lib_kerberos5" != no; then
+ 		AC_DEFINE(HAVE_KRB5)
+ 		msg_krb5=yes
+-		KRB5_CFLAGS="-I$with_krb5/include/krb5"
++		if test "$ac_cv_lib_kerberos5" == "$altheimlibs"; then
++			KRB5_CFLAGS="-I$with_krb5/include/kerberosV"
++		else
++			KRB5_CFLAGS="-I$with_krb5/include/krb5"
++		fi
+ 		KRB5_LDFLAGS="-L$with_krb5/lib $ac_cv_lib_kerberos5"
+ 	fi
+ else

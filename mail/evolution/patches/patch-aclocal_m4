@@ -1,0 +1,45 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- aclocal.m4.orig	Mon May  6 11:29:34 2002
++++ aclocal.m4	Mon May 20 14:59:04 2002
+@@ -202,7 +202,7 @@ AC_DEFUN(AC_PROG_XML_I18N_TOOLS,
+   XML_I18N_MERGE_DESKTOP_RULE='%.desktop:   %.desktop.in   $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -d X18T_PFORG1'
+ XML_I18N_MERGE_DIRECTORY_RULE='%.directory: %.directory.in $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -d X18T_PFORG1'
+      XML_I18N_MERGE_KEYS_RULE='%.keys:      %.keys.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -k X18T_KEYS_KIND'
+-      XML_I18N_MERGE_OAF_RULE='%.oaf:       %.oaf.in       $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -o -p'
++      XML_I18N_MERGE_OAF_RULE='%.oaf:       %.oaf.in       $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; sed s/_value/value/ $< > [$]@'
+      XML_I18N_MERGE_PONG_RULE='%.pong:      %.pong.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -x X18T_PFORG1'
+    XML_I18N_MERGE_SERVER_RULE='%.server:    %.server.in    $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -o -u'
+     XML_I18N_MERGE_SHEET_RULE='%.sheet:     %.sheet.in     $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -x -u'
+@@ -1920,8 +1920,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -1930,8 +1930,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -4477,6 +4477,10 @@ AC_DEFUN([AM_GNOME_WITH_NLS],
+ 		  gt_cv_func_gettext_libintl=yes,
+ 		  gt_cv_func_gettext_libintl=no)],
+ 		 gt_cv_func_gettext_libintl=no)])
++	   fi
++
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	     LIBS="$LIBS -lintl";
+ 	   fi
+ 
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-camel_providers_pop3_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- camel/providers/pop3/Makefile.in.orig	Mon May  6 13:29:47 2002
++++ camel/providers/pop3/Makefile.in	Thu May 16 15:50:22 2002
+@@ -209,7 +209,7 @@ libcamelpop3_la_SOURCES =  	camel-pop3-f
+ libcamelpop3include_HEADERS =  	camel-pop3-folder.h				camel-pop3-store.h
+ 
+ 
+-libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -version-info 0:0:0
++libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -version-info 0:0:0 -avoid-version
+ 
+ libcamelpop3_la_LIBADD = $(top_builddir)/e-util/libeutil.la
+ 

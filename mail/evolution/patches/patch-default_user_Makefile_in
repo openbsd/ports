@@ -1,0 +1,16 @@
+$OpenBSD: patch-default_user_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- default_user/Makefile.in.orig	Sun May 26 19:32:37 2002
++++ default_user/Makefile.in	Sun May 26 19:33:28 2002
+@@ -430,9 +430,9 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-hook:
+-	-mkdir $(defaultdir)/private
+-@ENABLE_NNTP_TRUE@	-mkdir $(defaultdir)/news
+-@ENABLE_NNTP_TRUE@	-mkdir $(defaultdir)/config
++	-mkdir $(DESTDIR)$(defaultdir)/private
++@ENABLE_NNTP_TRUE@	-mkdir $(DESTDIR)$(defaultdir)/news
++@ENABLE_NNTP_TRUE@	-mkdir $(DESTDIR)$(defaultdir)/config
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

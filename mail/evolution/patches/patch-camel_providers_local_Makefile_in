@@ -1,0 +1,12 @@
+$OpenBSD: patch-camel_providers_local_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- camel/providers/local/Makefile.in.orig	Mon May  6 13:29:52 2002
++++ camel/providers/local/Makefile.in	Thu May 16 15:50:22 2002
+@@ -212,7 +212,7 @@ libcamellocalinclude_HEADERS =  	camel-l
+ noinst_HEADERS =  	camel-local-private.h
+ 
+ 
+-libcamellocal_la_LDFLAGS = -version-info 0:0:0
++libcamellocal_la_LDFLAGS = -version-info 0:0:0 -avoid-version
+ 
+ libcamellocal_la_LIBADD = $(top_builddir)/e-util/libeutil.la $(top_builddir)/libibex/libibex.la
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-camel_providers_sendmail_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- camel/providers/sendmail/Makefile.in.orig	Mon May  6 13:29:48 2002
++++ camel/providers/sendmail/Makefile.in	Thu May 16 15:50:22 2002
+@@ -209,7 +209,7 @@ libcamelsendmail_la_SOURCES =  	camel-se
+ libcamelsendmailinclude_HEADERS =  	camel-sendmail-transport.h
+ 
+ 
+-libcamelsendmail_la_LDFLAGS = -version-info 0:0:0
++libcamelsendmail_la_LDFLAGS = -version-info 0:0:0 -avoid-version
+ 
+ EXTRA_DIST = libcamelsendmail.urls
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

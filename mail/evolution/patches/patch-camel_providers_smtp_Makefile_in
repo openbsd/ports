@@ -1,0 +1,12 @@
+$OpenBSD: patch-camel_providers_smtp_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- camel/providers/smtp/Makefile.in.orig	Mon May  6 13:29:49 2002
++++ camel/providers/smtp/Makefile.in	Thu May 16 15:50:22 2002
+@@ -209,7 +209,7 @@ libcamelsmtp_la_SOURCES =  	camel-smtp-p
+ libcamelsmtpinclude_HEADERS =  	camel-smtp-transport.h
+ 
+ 
+-libcamelsmtp_la_LDFLAGS = -version-info 0:0:0
++libcamelsmtp_la_LDFLAGS = -version-info 0:0:0 -avoid-version
+ 
+ libcamelsmtp_la_LIBADD = $(top_builddir)/e-util/libeutil.la
+ 

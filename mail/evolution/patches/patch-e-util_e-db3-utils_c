@@ -1,0 +1,15 @@
+$OpenBSD: patch-e-util_e-db3-utils_c,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+--- e-util/e-db3-utils.c.orig	Thu May 31 18:02:11 2001
++++ e-util/e-db3-utils.c	Sun May 26 21:15:00 2002
+@@ -4,7 +4,11 @@
+ 
+ #include "e-db3-utils.h"
+ 
++#ifdef HAVE_DB3_H
++#include <db3.h>
++#else
+ #include <db.h>
++#endif
+ 
+ #include <errno.h>
+ #include <sys/stat.h>
