@@ -3,12 +3,12 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/27 04:02:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/27 18:17:30 espie Exp $
 #
 
 DISTNAME=	tkinfo-2.5
 CATEGORIES=	misc 
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	angelos@openbsd.org

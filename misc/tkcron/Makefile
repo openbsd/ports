@@ -3,12 +3,12 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/27 05:05:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/27 18:17:30 espie Exp $
 #
 
 DISTNAME=	tkcron-2.12
 CATEGORIES=	misc 
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/24 23:28:21 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/27 18:17:29 espie Exp $
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
 MAINTAINER=	angelos@openbsd.org
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl80.1.5::lang/tcl80 \
-		tk80.1.5::x11/tk80
+LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
+		tk80.1.5::x11/tk/8.0
 
 USE_X11=	Yes
 USE_AUTOCONF=	Yes

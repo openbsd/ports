@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/27 18:17:28 espie Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
 CATEGORIES=	mbone
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 EXTRACT_SUFX=	.tar.Z
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl80.1.5::lang/tcl80 \
-		tk80.1.5::x11/tk80
+LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
+		tk80.1.5::x11/tk/8.0
 
 USE_X11=	Yes
 

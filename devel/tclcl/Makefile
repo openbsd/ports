@@ -1,12 +1,12 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/27 18:17:27 espie Exp $
 #
 
 DISTNAME=	tclcl-src-1.0b8
 PKGNAME=	tclcl-1.0b8
 CATEGORIES=	devel
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
 MAINTAINER=	angelos@openbsd.org

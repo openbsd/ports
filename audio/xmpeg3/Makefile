@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/26 07:51:21 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/27 18:17:27 espie Exp $
 
 BROKEN=		unsupported and not working properly
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
 CATEGORIES=	audio tk80
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mpeg/amp/
 EXTRACT_SUFX=	.tgz
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	amp::audio/amp \
-		wish8.0::x11/tk80
+		wish8.0::x11/tk/8.0
 
 WRKDIST=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes

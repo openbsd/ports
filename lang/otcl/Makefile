@@ -1,11 +1,11 @@
 #
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
-# $OpenBSD: Makefile,v 1.4 2000/03/24 23:28:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/27 18:17:28 espie Exp $
 #
 
 DISTNAME=	otcl-1.0a4
 CATEGORIES=	lang
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
 MAINTAINER=	angelos@openbsd.org

@@ -1,12 +1,12 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/27 18:17:30 espie Exp $
 #
 
 DISTNAME=	ns-src-2.1b5
 PKGNAME=	ns-2.1b5
 CATEGORIES=	net
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
 
 MAINTAINER=	angelos@openbsd.org

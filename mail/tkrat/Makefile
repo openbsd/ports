@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/27 12:32:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/27 18:17:28 espie Exp $
 
 DISTNAME=	tkrat-2.0b9
 CATEGORIES=	mail x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www.dtek.chalmers.se/~maf/ratatosk/ \
 		ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/

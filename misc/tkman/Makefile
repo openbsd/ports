@@ -3,12 +3,12 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/27 06:46:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/27 18:17:30 espie Exp $
 #
 
 DISTNAME=	tkman-2.1b4
 CATEGORIES=	misc 
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 

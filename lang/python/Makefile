@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/27 18:17:28 espie Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
@@ -32,7 +32,7 @@ WRKDIST=	${WRKDIR}/Python-1.5.2
 # Support for Tk is compiled in by default.
 WITH_TK?=	Yes
 .if ${WITH_TK:U} == YES
-TK_DEPENDS=	tk80.1.5::x11/tk80
+TK_DEPENDS=	tk80.1.5::x11/tk/8.0
 SETUP_LOCAL+=	Setup.tk
 .endif
 

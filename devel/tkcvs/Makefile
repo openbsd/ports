@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/27 16:05:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/27 18:17:27 espie Exp $
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 
 MAINTAINER=	todd@OpenBSD.org
 
