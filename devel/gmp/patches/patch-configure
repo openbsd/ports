@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
---- configure.orig	Sat Dec 28 00:30:26 2002
-+++ configure	Fri Apr 18 03:19:09 2003
-@@ -8299,7 +8299,7 @@ if test -z "$aix_libpath"; then aix_libp
+$OpenBSD: patch-configure,v 1.5 2005/01/06 19:52:44 naddy Exp $
+--- configure.orig	Tue Sep 21 15:06:47 2004
++++ configure	Thu Jan  6 17:07:14 2005
+@@ -8374,7 +8374,7 @@ if test -z "$aix_libpath"; then aix_libp
        hardcode_shlibpath_var=no
  
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
  	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
  	export_dynamic_flag_spec='${wl}-E'
        else
-@@ -8309,7 +8309,7 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -8384,7 +8384,7 @@ if test -z "$aix_libpath"; then aix_libp
  	   hardcode_libdir_flag_spec='-R$libdir'
  	   ;;
  	 *)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
  	   hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
  	   ;;
         esac
-@@ -14098,7 +14098,7 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -14173,7 +14173,7 @@ if test -z "$aix_libpath"; then aix_libp
        hardcode_shlibpath_var_GCJ=no
  
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
  	hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
  	export_dynamic_flag_spec_GCJ='${wl}-E'
        else
-@@ -14108,7 +14108,7 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -14183,7 +14183,7 @@ if test -z "$aix_libpath"; then aix_libp
  	   hardcode_libdir_flag_spec_GCJ='-R$libdir'
  	   ;;
  	 *)
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
  	   hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
  	   ;;
         esac
-@@ -19970,13 +19970,6 @@ echo "$as_me:19969: result: determined" 
+@@ -20052,13 +20052,6 @@ echo "$as_me:20051: result: determined" 
  echo "${ECHO_T}determined" >&6
  
        fi

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/10 16:26:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2005/01/06 19:52:43 naddy Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
-DISTNAME=	gmp-4.1.3
+DISTNAME=	gmp-4.1.4
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/
@@ -17,13 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gmp/}
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # Don't try to optimize for the local CPU submodel
-CONFIGURE_ARGS+= --build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-
-post-extract:
-	@rm -f ${WRKSRC}/gmp.info*
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
+# For GCC4/Fortran95
+CONFIGURE_ARGS+=--enable-mpfr
 
 .include <bsd.port.mk>
