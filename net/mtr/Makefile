@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2002/07/07 10:50:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.24 2002/07/26 00:28:30 jakob Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
 DISTNAME=	mtr-0.49
 CATEGORIES=	net
-NEED_VERSION=	1.475
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -26,12 +25,13 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6
 USE_GMAKE=	yes
 
-FLAVORS=        curses
+FLAVORS=        no_x11
 
 FLAVOR?=
-.if ${FLAVOR:L} == "curses"
+.if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+=	--without-gtk
 .else
+USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 .endif
