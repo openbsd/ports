@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/10 22:07:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/03/08 10:03:05 alek Exp $
 
 COMMENT=		"fixed width fonts especially for long hacking sessions"
 
-DISTNAME=		terminus-font-4.11
+DISTNAME=		terminus-font-4.12
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.is-vn.bg/hamster/jimmy-en.html
+
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.is-vn.bg/hamster/
+MASTER_SITES=		http://www.is-vn.bg/hamster/ \
+			http://legonet.org/~salan/distfiles/
 
 CONFIGURE_STYLE=	simple
 NO_REGRESS=		Yes
