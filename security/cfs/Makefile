@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/29 11:14:01 naddy Exp $
 
 COMMENT=	"cryptographic file system (user-space NFS server)"
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
-MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
-		ftp://utopia.hacktic.nl/pub/crypto/disk/ \
+MASTER_SITES=	ftp://utopia.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/ \
       		ftp://ftp.funet.fi/pub/mirrors/utopia.hacktic.nl/disk/
 
