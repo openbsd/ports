@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/09/25 06:25:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2003/12/30 18:49:04 espie Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
@@ -25,5 +25,11 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+.include <bsd.own.mk>
+USE_GCC3?=No
+.if ${USE_GCC3:L} == "yes"
+MAKE_FLAGS+=libGUI_la_LIBADD=-lsupc++
+.endif
 
 .include <bsd.port.mk>
