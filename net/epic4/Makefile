@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2000/07/07 20:58:18 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/07/12 05:20:18 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-VERSION=	2.600
+VERSION=	2.700
 DISTNAME=	epic4pre${VERSION}
 PKGNAME=	epic4-pre${VERSION}
 CATEGORIES=	net
@@ -14,13 +14,6 @@ MASTER_SITES1=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
 DISTFILES=	epic4pre${VERSION}.tar.gz epic4pre2-help.tar.gz:1
 EXTRACT_ONLY=	epic4pre${VERSION}.tar.gz
-
-PATCHFILES=	epic4pre2.600-patch1
-.if defined(PATCH_DEBUG) && ${PATCH_DEBUG:U} == YES
-PATCH_DIST_ARGS=-d ${WRKDIST}/source -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=-d ${WRKDIST}/source --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 HOMEPAGE=	http://www.epicsol.org/
 
