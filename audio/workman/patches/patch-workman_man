@@ -1,0 +1,20 @@
+$OpenBSD: patch-workman_man,v 1.1 2003/09/01 03:08:52 krw Exp $
+--- workman.man.orig	1995-06-16 02:52:13.000000000 -0400
++++ workman.man	2003-08-31 15:29:23.000000000 -0400
+@@ -151,7 +151,7 @@ Exit automatically when the CD is ejecte
+ .TP
+ .I \-p file
+ Write the program's process ID to a different \fIfile\fP.  By default, the
+-PID is written to "/tmp/.wm_pid" to allow signals to be sent more easily
++PID is written to "/var/run/workman.pid" to allow signals to be sent more easily
+ (see the SIGNALS section below.)
+ .TP
+ .I \-n
+@@ -510,6 +510,7 @@ BSD/386 port by John T. Kohl <jtk@kolvir
+ SVR4 port by Baruch Cochavy <bcochavy@iil.intel.com>.
+ .LP
+ FreeBSD port by Todd Pfaff <todd@flex.eng.mcmaster.ca>.
++Modified to work under FreeBSD 2.x by Donald Burr <d_burr@ix.netcom.com>.
+ .LP
+ OSF/1 port by R.J. Edwards <rje@escact.ksc.nasa.gov>.
+ .LP
