@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/19 17:40:42 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/20 00:57:18 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
@@ -55,7 +55,7 @@ MAKE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		GLGENDIR=./objects \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
-		DEVICE_DEVS=`cat ${FILESDIR}/devices`
+		DEVICE_DEVS="`cat ${FILESDIR}/devices`"
 
 
 MAKEFILE=	unixansi.mak
