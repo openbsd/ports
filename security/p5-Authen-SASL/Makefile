@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/20 17:42:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/20 17:45:07 avsm Exp $
 
 COMMENT=	"perl interface to the SASL auth framework"
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Tom Cosgrove <tom@openbsd.org>
 
 CONFIGURE_STYLE= perl
 
