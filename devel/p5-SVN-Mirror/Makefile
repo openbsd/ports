@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/10 03:21:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/10 07:43:12 kevlo Exp $
 
 COMMENT=	"subversion repository mirroring tool"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-SVN->=1.1.1:devel/subversion,-perl \
-		:p5-SVN-Simple->=0.26:devel/p5-SVN-Simple \
+RUN_DEPENDS=	:p5-SVN-Simple->=0.26:devel/p5-SVN-Simple \
 		:p5-Data-UUID->=0.11:devel/p5-Data-UUID \
 		:p5-Term-ReadKey->=2.21:devel/p5-Term-ReadKey \
 		:p5-VCP-autrijus->=0.9:devel/p5-VCP-autrijus \
