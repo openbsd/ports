@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	ssh
-# Version required:     1.2.25
-# Date created:		16 Nov 1997
-# Whom:			todd@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.28 1998/11/22 23:51:26 todd Exp $
+# $OpenBSD: Makefile,v 1.29 1998/12/03 18:24:35 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -11,31 +6,29 @@
 
 DISTNAME=       ssh-1.2.26
 CATEGORIES=	security net
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
-MASTER_SITES= 	\
-		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
-		ftp://ftp.cs.hut.fi/pub/ssh/
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	todd@OpenBSD.ORG
 
-ETCDIR?=	/etc
+MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
+		ftp://ftp.cs.hut.fi/pub/ssh/
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
-MASTER_SITES=	\
-	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
-	ftp://ftp.cs.hut.fi/pub/ssh/ \
+MASTER_SITES+=	\
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://idea.dsi.unimi.it/pub/security/crypt/math/
 .endif
 
-RESTRICTED=	"Crypto; export-controlled"
+ETCDIR?=	/etc
+RSHPROG?=	/usr/bin/rsh
+
 IS_INTERACTIVE=	YES
 USE_PERL=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	${SETENV}
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR}
+CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR} --with-rsh=${RSHPROG}
 
 .if defined(X11) && ${X11} == NO
 CONFIGURE_ARGS= --without-x
@@ -43,11 +36,13 @@ CONFIGURE_ARGS= --without-x
 
 #Uncomment if all your users are in their own group and their homedir
 #is writeable by that group.  Beware the security implications!
+#
 #CONFIGURE_ARGS+= --enable-group-writeability
 
 #Uncomment if you want to allow ssh to emulate an unencrypted rsh connection
 #over a secure medium.  This is normally dangerous since it can lead to the
 #disclosure keys and passwords.
+#
 #CONFIGURE_ARGS+= --with-none
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
@@ -63,14 +58,10 @@ CONFIGURE_ARGS+= --with-secureid
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
 # commercial use may require a licence in a number of countries
 # Warning: untested !
+#
 .if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
 CONFIGURE_ARGS+= --without-idea
 .endif
-
-MAN1=		scp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
-		make-ssh-known-hosts.1
-MAN8=		sshd.8
-
 
 pre-patch:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
