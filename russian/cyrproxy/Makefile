@@ -1,5 +1,5 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/12 13:23:01 form Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/15 05:31:52 form Exp $
 
 DISTNAME=	cyrproxy-1.4.2
 CATEGORIES=	russian net www
@@ -11,8 +11,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=	form@openbsd.org
-
-FAKE=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cyrproxy
