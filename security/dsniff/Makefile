@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/07 03:57:05 pvalchev Exp $
 
 COMMENT=	"sniffing tools for penetration testing"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 
 FLAVORS=	no_x11
 FLAVOR?=

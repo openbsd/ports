@@ -1,0 +1,13 @@
+$OpenBSD: patch-sshcrypto_c,v 1.1 2002/06/07 03:57:05 pvalchev Exp $
+--- sshcrypto.c.orig	Tue Nov 28 14:23:28 2000
++++ sshcrypto.c	Tue May 28 16:25:30 2002
+@@ -15,7 +15,9 @@
+ #include <sys/types.h>
+ #include <openssl/ssl.h>
+ 
++#include <des.h>
+ #include <err.h>
++#include <ssl/blowfish.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 

@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/06/07 03:57:05 pvalchev Exp $
+--- configure.in.orig	Tue May 28 16:18:35 2002
++++ configure.in	Tue May 28 16:18:44 2002
+@@ -307,7 +307,7 @@ AC_ARG_WITH(openssl,
+ 	owd=`pwd`
+ 	if cd $withval; then withval=`pwd`; cd $owd; fi
+ 	SSLINC="-I$withval/include"
+-	SSLLIB="-L$withval/lib -lssl -lcrypto"
++	SSLLIB="-L$withval/lib -lssl -lcrypto -ldes"
+      else
+         AC_ERROR(ssl.h or libssl.a not found in $withval)
+      fi
+@@ -316,12 +316,12 @@ AC_ARG_WITH(openssl,
+   esac ],
+ [ if test -f ${prefix}/include/openssl/ssl.h; then
+      SSLINC="-I${prefix}/include"
+-     SSLLIB="-L${prefix}/lib -lssl -lcrypto"
++     SSLLIB="-L${prefix}/lib -lssl -lcrypto -ldes"
+   elif test -f ${prefix}/ssl/include/openssl/ssl.h; then
+      SSLINC="-I${prefix}/ssl/include"
+-     SSLLIB="-L${prefix}/ssl/lib -lssl -lcrypto"
++     SSLLIB="-L${prefix}/ssl/lib -lssl -lcrypto -ldes"
+   elif test -f /usr/include/openssl/ssl.h; then
+-     SSLLIB="-lssl -lcrypto"
++     SSLLIB="-lssl -lcrypto -ldes"
+   else
+      AC_MSG_RESULT(no)
+      AC_ERROR(OpenSSL not found)
