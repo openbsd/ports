@@ -27,32 +27,31 @@ MAN_FILES=	LICENSE TODO bind.html cgi_path.html content-negotiation.html \
 		upgrading_to_1_3.html windows.html
 
 IMG_DIR=	$(SERVERROOT)/www/docs/manual/images
-IMG_FILES=	home.gif index.gif sub.gif 
+IMG_FILES=	custom_errordocs.gif home.gif index.gif sub.gif 
 
 MISC_DIR=	$(SERVERROOT)/www/docs/manual/misc
 MISC_FILES=	API.html FAQ.html client_block_api.html compat_notes.html \
-		descriptors.html fin_wait_2.html footer.html \
-		header.html howto.html index.html known_bugs.html \
+		custom_errordocs.html descriptors.html fin_wait_2.html \
+		footer.html header.html howto.html index.html known_bugs.html \
 		known_client_problems.html nopgp.html perf-bsd44.html \
 		perf-dec.html perf-hp.html perf-tuning.html perf.html \
-		security_tips.html vif-info.html windoz_keepalive.html 
+		security_tips.html vif-info.html windoz_keepalive.html
 
 MOD_DIR=	$(SERVERROOT)/www/docs/manual/mod
-MOD_FILES=	core.html directive-dict.html directives.html \
-		footer.html header.html index.html mod_access.html \
-		mod_actions.html mod_alias.html mod_asis.html mod_auth.html \
-		mod_auth_anon.html mod_auth_db.html mod_auth_dbm.html \
-		mod_autoindex.html mod_browser.html \
-		mod_cern_meta.html mod_cgi.html mod_cookies.html \
-		mod_digest.html mod_dir.html mod_dld.html mod_dll.html \
-		mod_env.html mod_example.html mod_expires.html \
+MOD_FILES=	core.html directive-dict.html directives.html footer.html \
+		header.html index.html mod_access.html mod_actions.html \
+		mod_alias.html mod_asis.html mod_auth.html mod_auth_anon.html \
+		mod_auth_db.html mod_auth_dbm.html mod_autoindex.html \
+		mod_browser.html mod_cern_meta.html mod_cgi.html \
+		mod_cookies.html mod_digest.html mod_dir.html mod_dld.html \
+		mod_dll.html mod_env.html mod_example.html mod_expires.html \
 		mod_headers.html mod_imap.html mod_include.html mod_info.html \
 		mod_isapi.html mod_log_agent.html mod_log_common.html \
 		mod_log_config.html mod_log_referer.html mod_mime.html \
 		mod_mime_magic.html mod_negotiation.html mod_proxy.html \
-		mod_rewrite.html mod_setenvif.html mod_speling.html \
-		mod_status.html mod_unique_id.html mod_userdir.html \
-		mod_usertrack.html
+		mod_rewrite.html mod_setenvif.html mod_so.html \
+		mod_speling.html mod_status.html mod_unique_id.html \
+		mod_userdir.html mod_usertrack.html
 
 VHOST_DIR=	$(SERVERROOT)/www/docs/manual/vhosts
 VHOST_FILES=	details.html details_1_2.html examples.html fd-limits.html \
