@@ -1,5 +1,14 @@
---- sshconnect.c.orig	Wed Jul  8 09:40:38 1998
-+++ sshconnect.c	Sun Jul 12 17:48:14 1998
+--- sshconnect.c.orig	Wed Jul  8 11:40:38 1998
++++ sshconnect.c	Mon Dec  7 23:30:11 1998
+@@ -282,7 +282,7 @@
+ 
+       /* Child.  Permanently give up superuser privileges. */
+       if (setuid(getuid()) < 0)
+-	fatal("setuid: %s", strerror(errno));
++	fatal("setuid: %.100s", strerror(errno));
+ 
+       /* Redirect stdin and stdout. */
+       close(pin[1]);
 @@ -339,6 +339,12 @@
      {
        struct sockaddr_in sin;
@@ -21,3 +30,145 @@
        debug("Allocated local port %d.", p);
      }
    else
+@@ -944,7 +951,7 @@
+   if (!ssh_context)
+     {
+       if ((r = krb5_init_context(&ssh_context)))
+-	fatal("Kerberos V5: %s while initializing krb5.", error_message(r));
++	fatal("Kerberos V5: %.100s while initializing krb5.", error_message(r));
+       krb5_init_ets(ssh_context);
+     }
+   
+@@ -959,14 +966,14 @@
+ 				   "host", KRB5_NT_SRV_HST,
+ 				   &creds.server)))
+     {
+-      debug("Kerberos V5: error while constructing service name: %s.",
++      debug("Kerberos V5: error while constructing service name: %.100s.",
+ 	    error_message(r));
+       goto cleanup;
+     }
+   if ((r = krb5_cc_get_principal(ssh_context, ccache,
+ 				 &creds.client)))
+     {
+-      debug("Kerberos V5: failure on principal (%s).",
++      debug("Kerberos V5: failure on principal (%.100s).",
+ 	    error_message(r));
+       goto cleanup;
+     }
+@@ -975,7 +982,7 @@
+   if ((r = krb5_get_credentials(ssh_context, 0,
+ 				ccache, &creds, &new_creds)))
+     {
+-      debug("Kerberos V5: failure on credentials(%s).",
++      debug("Kerberos V5: failure on credentials(%.100s).",
+ 	    error_message(r));
+       goto cleanup;
+     }
+@@ -987,7 +994,7 @@
+     {
+       if ((r = krb5_auth_con_init(ssh_context, &auth_context)))
+ 	{
+-	  debug("Kerberos V5: failed to init auth_context (%s)",
++	  debug("Kerberos V5: failed to init auth_context (%.100s)",
+ 		error_message(r));
+ 	  goto cleanup;
+         }
+@@ -998,7 +1005,7 @@
+   if ((r = krb5_mk_req_extended(ssh_context, &auth_context, ap_opts,
+ 				0, new_creds, &auth)))
+     {
+-      debug("Kerberos V5: failed krb5_mk_req_extended (%s)",
++      debug("Kerberos V5: failed krb5_mk_req_extended (%.100s)",
+ 	    error_message(r));
+       goto cleanup;
+     }
+@@ -1046,7 +1053,7 @@
+       
+       if (r = krb5_rd_rep(ssh_context, auth_context, &auth, &repl))
+ 	{
+-	  packet_disconnect("Kerberos V5 Authentication failed: %s",
++	  packet_disconnect("Kerberos V5 Authentication failed: %.100s",
+ 			    error_message(r));
+ 	  goto cleanup;
+ 	}
+@@ -1090,7 +1097,7 @@
+   krb5_data outbuf;
+   krb5_error_code r;
+   int type;
+-  char server_name[128];
++  char server_name[512];
+   
+   remotehost = (char *) get_canonical_hostname();
+   memset(&outbuf, 0 , sizeof(outbuf));
+@@ -1100,14 +1107,14 @@
+   if (!ssh_context)
+     {
+       if ((r = krb5_init_context(&ssh_context)))
+-	fatal("Kerberos V5: %s while initializing krb5.", error_message(r));
++	fatal("Kerberos V5: %.100s while initializing krb5.", error_message(r));
+       krb5_init_ets(ssh_context);
+     }
+   if (!auth_context)
+     {
+       if ((r = krb5_auth_con_init(ssh_context, &auth_context)))
+ 	{
+-	  debug("Kerberos V5: failed to init auth_context (%s)",
++	  debug("Kerberos V5: failed to init auth_context (%.100s)",
+ 		error_message(r));
+ 	  return 0 ;
+         }
+@@ -1124,7 +1131,7 @@
+     if ((r = krb5_cc_get_principal(ssh_context, ccache,
+                                    &client)))
+       {
+-        debug("Kerberos V5: failure on principal (%s)",
++        debug("Kerberos V5: failure on principal (%.100s)",
+ 	      error_message(r));
+         return 0 ;
+       }
+@@ -1136,7 +1143,7 @@
+        principal and point it to clients realm. This way
+        we pass over a TGT of the clients realm. */
+     
+-    sprintf(server_name,"host/%s@", remotehost);
++    sprintf(server_name,"host/%.100s@", remotehost);
+     strncat(server_name,client->realm.data,client->realm.length);
+     krb5_parse_name(ssh_context,server_name, &server);
+     server->type = KRB5_NT_SRV_HST;
+@@ -1145,7 +1152,7 @@
+     if ((r = krb5_fwd_tgt_creds(ssh_context, auth_context, 0, client, 
+  			        server, ccache, 1, &outbuf)))
+       {
+-	debug("Kerberos V5 krb5_fwd_tgt_creds failure (%s)",
++	debug("Kerberos V5 krb5_fwd_tgt_creds failure (%.100s)",
+ 	      error_message(r));
+ 	krb5_free_principal(ssh_context, client);
+         krb5_free_principal(ssh_context, server);
+@@ -1416,7 +1423,7 @@
+       error("Someone could be eavesdropping on you right now (man-in-the-middle attack)!");
+       error("It is also possible that the host key has just been changed.");
+       error("Please contact your system administrator.");
+-      error("Add correct host key in %s to get rid of this message.", 
++      error("Add correct host key in %.100s to get rid of this message.", 
+ 	    options->user_hostfile);
+       
+       /* If strict host key checking is in use, the user will have to edit
+@@ -1589,7 +1596,7 @@
+   if (!ssh_context)
+     {
+       if ((problem = krb5_init_context(&ssh_context)))
+-	fatal("Kerberos V5: %s while initializing krb5.",
++	fatal("Kerberos V5: %.100s while initializing krb5.",
+ 	      error_message(problem));
+       krb5_init_ets(ssh_context);
+     }
+@@ -1605,7 +1612,7 @@
+ 	  if ((problem = krb5_cc_get_principal(ssh_context, ccache,
+ 					       &client)))
+ 	    {
+-	      debug("Kerberos V5: failure on principal (%s).",
++	      debug("Kerberos V5: failure on principal (%.100s).",
+                     error_message(problem));
+ 	    }
+ 	  else {
