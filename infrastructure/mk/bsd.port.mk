@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.161 1999/12/20 00:07:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.162 1999/12/20 19:02:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -764,16 +764,13 @@ FALSE?=		false
 FILE?=		/usr/bin/file
 DIRNAME?=	/usr/bin/dirname
 GREP?=		/usr/bin/grep
+DO_NADA?=		true
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		echo
 
 # XXX
 _DEPEND_ECHO?=		echo
-
-# How to do nothing.  Override if you, for some strange reason, would rather
-# do something.
-DO_NADA?=		true
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -1080,44 +1077,21 @@ IGNORE= "-- ${PKGNAME:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_W
 .endif
 .endif
 
-.if defined(IGNORE)
-.if defined(IGNORE_SILENT)
-IGNORECMD=	${DO_NADA}
-.else
-IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
-.endif
-.endif
 .endif		# NO_IGNORE
 
-.if defined(IGNORECMD)
-fetch:
-	@${IGNORECMD}
-checksum:
-	@${IGNORECMD}
-extract:
-	@${IGNORECMD}
-patch:
-	@${IGNORECMD}
-configure:
-	@${IGNORECMD}
-all:
-	@${IGNORECMD}
-build:
-	@${IGNORECMD}
-install:
-	@${IGNORECMD}
-uninstall deinstall:
-	@${IGNORECMD}
-package:
-	@${IGNORECMD}
-.else # IGNORECMD
+.if defined(IGNORE) && !defined(NO_IGNORE)
+fetch checksum extract patch configure all build install \
+uninstall deinstall package:
+.if !defined(IGNORE_SILENT)
+	@${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
+.endif
+
+.else 
 
 fetch: real-fetch
 
 checksum: fetch
-.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
-	${DO_NADA}
-.else
+.if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
@@ -1210,9 +1184,7 @@ DEPENDS_TARGET=	install
 
 # Disable checksum
 makesum: fetch-all
-.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
-	@${DO_NADA}
-.else
+.if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for cipher in ${_CIPHERS}; do \
@@ -1225,9 +1197,7 @@ makesum: fetch-all
 .endif
 
 addsum: fetch-all
-.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
-	@${DO_NADA}
-.else
+.if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
@@ -1721,12 +1691,10 @@ real-package: _PORT_USE
 
 .if !target(pre-${name})
 pre-${name}:
-	@${DO_NADA}
 .endif
 
 .if !target(post-${name})
 post-${name}:
-	@${DO_NADA}
 .endif
 
 .endfor
@@ -1770,7 +1738,6 @@ uninstall deinstall:
 
 .if !target(pre-clean)
 pre-clean:
-	@${DO_NADA}
 .endif
 
 .if !target(clean)
@@ -1799,7 +1766,6 @@ clean: pre-clean
 
 .if !target(pre-distclean)
 pre-distclean:
-	@${DO_NADA}
 .endif
 
 .if !target(distclean)
@@ -2004,8 +1970,6 @@ ${_DEP}-depends:
 		fi; \
 	done
 .endif
-.else
-	@${DO_NADA}
 .endif
 .endfor
 
@@ -2068,8 +2032,6 @@ lib-depends:
 	done
 .endif
 .endif
-.else
-	@${DO_NADA}
 .endif
 
 misc-depends:
@@ -2094,8 +2056,6 @@ misc-depends:
 		fi \
 	done
 .endif
-.else
-	@${DO_NADA}
 .endif
 
 .endif
@@ -2141,9 +2101,7 @@ clean-depends:
 #  description-file|maintainer|categories|build deps|run deps|for arch
 #
 describe:
-.if defined(NO_DESCRIBE) 
-	@${DO_NADA}
-.else
+.if !defined(NO_DESCRIBE) 
 	@echo -n "${PKGNAME}|${.CURDIR}|"; \
 	echo -n "${PREFIX}|"; \
 	if [ -f ${COMMENT} ]; then \
