@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/22 05:33:53 marcm Exp $
 
 COMMENT=		"GNOME component and compound document system" 
 
-DISTNAME=		libbonobo-2.4.2
+DISTNAME=		libbonobo-2.4.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/

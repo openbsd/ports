@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2003/10/19 06:43:06 marcm Exp $
---- configure.orig	2003-09-22 16:20:12.000000000 -0700
-+++ configure	2003-10-18 21:48:55.000000000 -0700
-@@ -22330,7 +22330,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2004/02/22 05:33:53 marcm Exp $
+--- configure.orig	2004-01-15 07:44:50.000000000 -0800
++++ configure	2004-02-20 22:26:32.000000000 -0800
+@@ -23453,7 +23453,7 @@ fi
  
  	;;
    # list of supported OS cores
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2003/10/19 06:43:06 marcm Exp $
  	echo "$as_me:$LINENO: checking for apm_read in -lapm" >&5
  echo $ECHO_N "checking for apm_read in -lapm... $ECHO_C" >&6
  if test "${ac_cv_lib_apm_apm_read+set}" = set; then
-@@ -22402,6 +22402,16 @@ else
+@@ -23535,6 +23535,16 @@ else
  fi
  
  	;;

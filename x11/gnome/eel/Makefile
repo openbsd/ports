@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/22 05:33:53 marcm Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
-DISTNAME=		eel-2.4.1
+DISTNAME=		eel-2.4.2
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -23,7 +23,6 @@ BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2.0::x11/gnome/libgnomeui \
 			gailutil.17::x11/gnome/gail
 
-SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu

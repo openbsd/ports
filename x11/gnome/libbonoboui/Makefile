@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/30 13:40:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/22 05:33:53 marcm Exp $
 
 COMMENT=		"user interface components for bonobo"
 
-DISTNAME=		libbonoboui-2.4.2
+DISTNAME=		libbonoboui-2.4.3
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/

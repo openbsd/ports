@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/22 05:33:54 marcm Exp $
 
 COMMENT=		"GNOME terminal"
 
-DISTNAME=		gnome-terminal-2.4.1
+DISTNAME=		gnome-terminal-2.4.2
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
