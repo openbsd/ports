@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: mod_perl-enable,v 1.1.1.1 2000/09/06 07:52:46 brad Exp $
+# $OpenBSD: mod_perl-enable,v 1.2 2001/02/09 19:19:40 brad Exp $
 
 MODULE=!!PREFIX!!/lib/mod_perl.so
 
 if [ ! -f ${MODULE} ]; then
-    echo "can't find mod_perl module (${MODULE})"
+    echo "Can not find mod_perl module (${MODULE})"
     exit 1
 else
-    echo "enabling perl module..."
+    echo "Enabling Perl module..."
     /usr/sbin/apxs -i -a -n perl ${MODULE}
 fi

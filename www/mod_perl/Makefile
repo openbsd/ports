@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 18:46:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/09 19:19:39 brad Exp $
 
+# This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-DISTNAME=	mod_perl-1.24
+DISTNAME=	mod_perl-1.25
 CATEGORIES=	www perl5
 NEED_VERSION=	1.337
 MASTER_SITES=	http://perl.apache.org/dist/ \
