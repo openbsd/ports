@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- ltconfig.orig	Tue Apr 27 08:14:30 2004
-+++ ltconfig	Tue Sep 14 01:24:29 2004
+$OpenBSD: patch-ltconfig,v 1.2 2005/02/27 21:27:12 espie Exp $
+--- ltconfig.orig	Sat Oct  2 18:33:06 2004
++++ ltconfig	Sun Feb 27 19:13:08 2005
 @@ -625,7 +625,12 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
@@ -15,9 +15,12 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
  fi
  
  # Source the script associated with the $tagname tag configuration.
-@@ -1307,6 +1312,9 @@ openbsd*)
+@@ -1305,8 +1310,11 @@ openbsd*)
+     need_version=no
+   fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
 +  shlibpath_overrides_runpath=yes
 +  deplib_check_method=pass_all
