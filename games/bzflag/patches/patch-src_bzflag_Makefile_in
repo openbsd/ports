@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bzflag_Makefile_in,v 1.1 2004/02/20 06:49:11 jolan Exp $
---- src/bzflag/Makefile.in.orig	2004-01-24 19:15:53.000000000 -0600
-+++ src/bzflag/Makefile.in	2004-02-19 23:47:17.000000000 -0600
-@@ -265,7 +265,7 @@ bzflag_SOURCES = \
+$OpenBSD: patch-src_bzflag_Makefile_in,v 1.2 2004/10/21 06:10:45 jolan Exp $
+--- src/bzflag/Makefile.in.orig	Thu Oct  7 12:38:46 2004
++++ src/bzflag/Makefile.in	Thu Oct 21 00:13:06 2004
+@@ -278,7 +278,7 @@ bzflag_SOURCES = \
  #	$(ALIBS)
  AM_CPPFLAGS = $(X_CFLAGS)
  

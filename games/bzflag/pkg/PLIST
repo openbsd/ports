@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/02/20 06:49:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/21 06:10:45 jolan Exp $
 bin/bzadmin
 bin/bzflag
 bin/bzfrelay
 bin/bzfs
-man/man6/bzadmin.6
-man/man6/bzflag.6
-man/man6/bzfls.6
-man/man6/bzfquery.6
-man/man6/bzfrelay.6
-man/man6/bzfs.6
+@man man/man6/bzadmin.6
+@man man/man6/bzflag.6
+@man man/man6/bzfls.6
+@man man/man6/bzfquery.6
+@man man/man6/bzfrelay.6
+@man man/man6/bzfs.6
+share/bzflag/
 share/bzflag/blue_basetop.png
 share/bzflag/blue_basewall.png
 share/bzflag/blue_bolt.png
@@ -44,6 +45,8 @@ share/bzflag/hunt_select.wav
 share/bzflag/hunter_tank.png
 share/bzflag/jump.wav
 share/bzflag/killteam.wav
+share/bzflag/l10n/
+share/bzflag/l10n/ISO-639-2_values_8bits.txt
 share/bzflag/l10n/bzflag_cs_CZ.po
 share/bzflag/l10n/bzflag_da.po
 share/bzflag/l10n/bzflag_de.po
@@ -61,6 +64,7 @@ share/bzflag/land.wav
 share/bzflag/laser.wav
 share/bzflag/lock.wav
 share/bzflag/menu_arrow.png
+share/bzflag/message_admin.wav
 share/bzflag/message_private.wav
 share/bzflag/message_team.wav
 share/bzflag/missile.png
@@ -68,6 +72,9 @@ share/bzflag/missile.wav
 share/bzflag/mountain1.png
 share/bzflag/mountain2.png
 share/bzflag/mountain3.png
+share/bzflag/mountain4.png
+share/bzflag/mountain5.png
+share/bzflag/mountain6.png
 share/bzflag/phantom.wav
 share/bzflag/pop.wav
 share/bzflag/purple_basetop.png
@@ -105,5 +112,3 @@ share/bzflag/timesbr.png
 share/bzflag/title.png
 share/bzflag/wall.png
 share/bzflag/zone_ground.png
-@dirrm share/bzflag/l10n
-@dirrm share/bzflag

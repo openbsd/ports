@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2004/02/20 06:49:11 jolan Exp $
---- configure.orig	2004-01-24 19:15:57.000000000 -0600
-+++ configure	2004-02-19 23:36:38.000000000 -0600
-@@ -6065,7 +6065,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2004/10/21 06:10:45 jolan Exp $
+--- configure.orig	Thu Oct  7 12:38:48 2004
++++ configure	Thu Oct 21 00:13:06 2004
+@@ -6223,7 +6223,7 @@ fi
  
  # avoid using X11 in BeOS
  if test $host_os != beos; then
