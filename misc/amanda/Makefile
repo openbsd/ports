@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/09/24 08:43:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/29 09:53:46 alek Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -7,7 +7,7 @@ DISTVERSION=	2.4.2p2
 
 # 2.4.2p2 is problematical as a package name, because we have been
 # marking OpenBSD package revisions with a "pX" suffix.
-PKGVERSION=	${DISTVERSION:S/p/./}
+PKGVERSION=	${DISTVERSION:S/p/./}p0
 
 DISTNAME=	amanda-${DISTVERSION}
 
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m readline termcap
 
 MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/ \
 		${MASTER_SITE_SOURCEFORGE:=amanda/}

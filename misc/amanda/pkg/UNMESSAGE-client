@@ -1,0 +1,2 @@
+Remove Amanda entries (amanda, amandaidx, amidxtape) from
+/etc/inetd.conf.
