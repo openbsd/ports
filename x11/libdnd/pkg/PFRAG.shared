@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/07 15:43:33 wilfried Exp $
+lib/libDnd++.so.0.0
+lib/libDnd.so.0.0
+DYNLIBDIR(%B)
