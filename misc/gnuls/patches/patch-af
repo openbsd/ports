@@ -1,0 +1,36 @@
+*** lib/mountlist.c.orig	Thu Apr 16 18:27:16 1998
+--- lib/mountlist.c	Thu Apr 16 18:27:54 1998
+***************
+*** 127,133 ****
+  }
+  #endif /* MOUNTED_GETMNTENT1.  */
+  
+! #if defined (MOUNTED_GETMNTINFO) && !defined (__NetBSD__)
+  static char *
+  fstype_to_string (t)
+       short t;
+--- 127,133 ----
+  }
+  #endif /* MOUNTED_GETMNTENT1.  */
+  
+! #if defined (MOUNTED_GETMNTINFO) && !defined (__NetBSD__) && !defined(__OpenBSD__)
+  static char *
+  fstype_to_string (t)
+       short t;
+***************
+*** 345,351 ****
+  	me = (struct mount_entry *) xmalloc (sizeof (struct mount_entry));
+  	me->me_devname = xstrdup (fsp->f_mntfromname);
+  	me->me_mountdir = xstrdup (fsp->f_mntonname);
+! #ifdef __NetBSD__
+  	me->me_type = xstrdup (fsp->f_fstypename);
+  #else
+  	me->me_type = fstype_to_string (fsp->f_type);
+--- 345,351 ----
+  	me = (struct mount_entry *) xmalloc (sizeof (struct mount_entry));
+  	me->me_devname = xstrdup (fsp->f_mntfromname);
+  	me->me_mountdir = xstrdup (fsp->f_mntonname);
+! #if defined(__NetBSD__) || defined(__OpenBSD__)
+  	me->me_type = xstrdup (fsp->f_fstypename);
+  #else
+  	me->me_type = fstype_to_string (fsp->f_type);

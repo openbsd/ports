@@ -1,0 +1,20 @@
+*** Makefile.in.orig	Sun Aug 10 17:06:15 1997
+--- Makefile.in	Sun Aug 10 17:07:03 1997
+***************
+*** 49,55 ****
+  
+  AUTOMAKE_OPTIONS = gnits 1.1k
+  
+! SUBDIRS = lib intl src doc man m4 po
+  
+  acdir = m4
+  ACLOCAL = $(top_srcdir)/aclocal.m4
+--- 49,56 ----
+  
+  AUTOMAKE_OPTIONS = gnits 1.1k
+  
+! #SUBDIRS = lib intl src doc man m4 po
+! SUBDIRS = lib intl src man 
+  
+  acdir = m4
+  ACLOCAL = $(top_srcdir)/aclocal.m4
