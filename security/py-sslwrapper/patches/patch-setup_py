@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2001/09/10 06:08:03 shell Exp $
+--- setup.py.orig	Mon Sep 10 13:51:13 2001
++++ setup.py	Mon Sep 10 13:51:48 2001
+@@ -7,6 +7,8 @@
+       author_email='shannon@freewire.net',
+       licence='BSD',
+       url='http://pow.sourceforge.net',
+-      ext_modules=[Extension('POW', ['POW.c'], libraries=['ssl', 'crypto'])]
++      ext_modules=[Extension('POW', ['POW.c'],
++		   libraries=['ssl', 'crypto'],
++		   include_dirs=['/usr/local/include', '/usr/include'])]
+          )
+ 
