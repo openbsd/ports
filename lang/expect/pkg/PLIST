@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/12/15 00:22:03 brad Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/02/27 12:49:16 naddy Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
@@ -10,7 +10,7 @@ bin/kibitz
 bin/lpunlock
 @comment bin/mkpasswd
 bin/passmass
-bin/rftp
+@comment bin/rftp
 bin/rlogin-cwd
 bin/timed-read
 bin/timed-run
