@@ -1,0 +1,15 @@
+bin/RunCache
+bin/RunAccel
+bin/squid
+bin/client
+libexec/dnsserver
+libexec/ftpget
+libexec/unlinkd
+libexec/cachemgr.cgi
+/etc/squid.conf.default
+@exec	mkdir -p /var/squid/logs;	chown www:www /var/squid/logs
+@exec	mkdir -p /var/squid/cache;	chown www:www /var/squid/cache
+@unexec rm -rf /var/squid/logs /var/squid/cache; rmdir /var/squid
+@exec	ln -s /var/squid/logs/squid.pid /var/run/squid.pid
+@unexec	rm -f 				/var/run/squid.pid
+@exec	echo 'Please wait while cache is initialised...'; %f/bin/squid -z

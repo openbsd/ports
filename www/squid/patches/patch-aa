@@ -1,0 +1,14 @@
+
+Suggest that the user/group www:www be used to run the cache.
+
+--- src/squid.conf.pre.in.orig	Sat Aug  8 13:49:34 1998
++++ src/squid.conf.pre.in	Sat Aug  8 13:49:54 1998
+@@ -879,7 +879,7 @@
+ #	UID/GID to the UID/GID specified below.  The default is not to
+ #	change UID/GID.
+ #
+-#cache_effective_user nobody nogroup
++cache_effective_user www www
+ 
+ #  TAG: visible_hostname
+ #	If you want to present a special hostname in error messages, etc,

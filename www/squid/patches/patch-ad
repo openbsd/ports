@@ -1,0 +1,11 @@
+--- scripts/RunCache.in.orig	Sat Aug  8 14:33:49 1998
++++ scripts/RunCache.in	Sat Aug  8 14:34:00 1998
+@@ -4,7 +4,7 @@
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-logdir=@localstatedir@
++logdir=@localstatedir@/logs
+ PATH=@bindir@:/bin:/usr/bin
+ export PATH
+ 
