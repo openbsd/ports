@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.5 2004/11/11 15:38:02 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.6 2005/02/26 13:21:58 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -71,6 +71,11 @@ sub check_common_dirs
 {
 	my ($item, $t) = @_;
 	$t->{deps}->{$item->{def}} = 1;
+}
+
+package OpenBSD::PackingElement::Wantlib;
+sub check_common_dirs
+{
 }
 
 package main;
@@ -180,7 +185,6 @@ for my $pkgname (@ARGV) {
 	$true_package->close();
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	rmtree($dir);
-	$plist->forget();
 	analyze($plist, $db);
 }
 
