@@ -1,28 +1,173 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Mail/Box.pm
-libdata/perl5/site_perl/Mail/Box/Index.pm
-libdata/perl5/site_perl/Mail/Box/Locker.pm
-libdata/perl5/site_perl/Mail/Box/MH.pm
-libdata/perl5/site_perl/Mail/Box/MH/Message.pm
-libdata/perl5/site_perl/Mail/Box/Manager.pm
-libdata/perl5/site_perl/Mail/Box/Mbox.pm
-libdata/perl5/site_perl/Mail/Box/Mbox/Message.pm
-libdata/perl5/site_perl/Mail/Box/Message.pm
-libdata/perl5/site_perl/Mail/Box/Thread.pm
-libdata/perl5/site_perl/Mail/Box/Threads.pm
-libdata/perl5/site_perl/Mail/Box/Tie.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/07/11 09:36:46 shell Exp $
+${P5SITE}/Mail/Box-Cookbook.pod
+${P5SITE}/Mail/Box-Overview.pod
+${P5SITE}/Mail/Box.pm
+${P5SITE}/Mail/Box/Dir.pm
+${P5SITE}/Mail/Box/Dir/Message.pm
+${P5SITE}/Mail/Box/Locker.pm
+${P5SITE}/Mail/Box/Locker/DotLock.pm
+${P5SITE}/Mail/Box/Locker/Flock.pm
+${P5SITE}/Mail/Box/Locker/Multi.pm
+${P5SITE}/Mail/Box/Locker/NFS.pm
+${P5SITE}/Mail/Box/Locker/POSIX.pm
+${P5SITE}/Mail/Box/MH.pm
+${P5SITE}/Mail/Box/MH/Index.pm
+${P5SITE}/Mail/Box/MH/Labels.pm
+${P5SITE}/Mail/Box/MH/Message.pm
+${P5SITE}/Mail/Box/Maildir.pm
+${P5SITE}/Mail/Box/Maildir/Message.pm
+${P5SITE}/Mail/Box/Manager.pm
+${P5SITE}/Mail/Box/Mbox.pm
+${P5SITE}/Mail/Box/Mbox/Message.pm
+${P5SITE}/Mail/Box/Message.pm
+${P5SITE}/Mail/Box/Message/Dummy.pm
+${P5SITE}/Mail/Box/Net.pm
+${P5SITE}/Mail/Box/Net/Message.pm
+${P5SITE}/Mail/Box/POP3.pm
+${P5SITE}/Mail/Box/POP3/Message.pm
+${P5SITE}/Mail/Box/Parser.pm
+${P5SITE}/Mail/Box/Parser/Perl.pm
+${P5SITE}/Mail/Box/Search.pm
+${P5SITE}/Mail/Box/Search/Grep.pm
+${P5SITE}/Mail/Box/Thread/Manager.pm
+${P5SITE}/Mail/Box/Thread/Node.pm
+${P5SITE}/Mail/Box/Tie.pm
+${P5SITE}/Mail/Box/Tie/ARRAY.pm
+${P5SITE}/Mail/Box/Tie/HASH.pm
+${P5SITE}/Mail/Message.pm
+${P5SITE}/Mail/Message/Body.pm
+${P5SITE}/Mail/Message/Body/Construct.pm
+${P5SITE}/Mail/Message/Body/Delayed.pm
+${P5SITE}/Mail/Message/Body/Encode.pm
+${P5SITE}/Mail/Message/Body/File.pm
+${P5SITE}/Mail/Message/Body/Lines.pm
+${P5SITE}/Mail/Message/Body/Multipart.pm
+${P5SITE}/Mail/Message/Body/Nested.pm
+${P5SITE}/Mail/Message/Body/String.pm
+${P5SITE}/Mail/Message/Construct.pm
+${P5SITE}/Mail/Message/Convert.pm
+${P5SITE}/Mail/Message/Convert/Html.pm
+${P5SITE}/Mail/Message/Convert/HtmlFormatPS.pm
+${P5SITE}/Mail/Message/Convert/HtmlFormatText.pm
+${P5SITE}/Mail/Message/Convert/MailInternet.pm
+${P5SITE}/Mail/Message/Convert/MimeEntity.pm
+${P5SITE}/Mail/Message/Convert/TextAutoformat.pm
+${P5SITE}/Mail/Message/Field.pm
+${P5SITE}/Mail/Message/Field/Fast.pm
+${P5SITE}/Mail/Message/Field/Flex.pm
+${P5SITE}/Mail/Message/Head.pm
+${P5SITE}/Mail/Message/Head/Complete.pm
+${P5SITE}/Mail/Message/Head/Delayed.pm
+${P5SITE}/Mail/Message/Head/Subset.pm
+${P5SITE}/Mail/Message/Part.pm
+${P5SITE}/Mail/Message/TransferEnc.pm
+${P5SITE}/Mail/Message/TransferEnc/Base64.pm
+${P5SITE}/Mail/Message/TransferEnc/Binary.pm
+${P5SITE}/Mail/Message/TransferEnc/EightBit.pm
+${P5SITE}/Mail/Message/TransferEnc/QuotedPrint.pm
+${P5SITE}/Mail/Message/TransferEnc/SevenBit.pm
+${P5SITE}/Mail/Reporter.pm
+${P5SITE}/Mail/Transport.pm
+${P5SITE}/Mail/Transport/Mailx.pm
+${P5SITE}/Mail/Transport/POP3.pm
+${P5SITE}/Mail/Transport/Qmail.pm
+${P5SITE}/Mail/Transport/Receive.pm
+${P5SITE}/Mail/Transport/SMTP.pm
+${P5SITE}/Mail/Transport/Send.pm
+${P5SITE}/Mail/Transport/Sendmail.pm
+man/man3p/Mail::Box-Cookbook.3p
+man/man3p/Mail::Box-Overview.3p
 man/man3p/Mail::Box.3p
-man/man3p/Mail::Box::Index.3p
+man/man3p/Mail::Box::Dir.3p
+man/man3p/Mail::Box::Dir::Message.3p
 man/man3p/Mail::Box::Locker.3p
+man/man3p/Mail::Box::Locker::DotLock.3p
+man/man3p/Mail::Box::Locker::Flock.3p
+man/man3p/Mail::Box::Locker::Multi.3p
+man/man3p/Mail::Box::Locker::NFS.3p
+man/man3p/Mail::Box::Locker::POSIX.3p
 man/man3p/Mail::Box::MH.3p
+man/man3p/Mail::Box::MH::Index.3p
+man/man3p/Mail::Box::MH::Labels.3p
 man/man3p/Mail::Box::MH::Message.3p
+man/man3p/Mail::Box::Maildir.3p
+man/man3p/Mail::Box::Maildir::Message.3p
 man/man3p/Mail::Box::Manager.3p
 man/man3p/Mail::Box::Mbox.3p
 man/man3p/Mail::Box::Mbox::Message.3p
 man/man3p/Mail::Box::Message.3p
-man/man3p/Mail::Box::Thread.3p
-man/man3p/Mail::Box::Threads.3p
+man/man3p/Mail::Box::Message::Dummy.3p
+man/man3p/Mail::Box::Net.3p
+man/man3p/Mail::Box::Net::Message.3p
+man/man3p/Mail::Box::POP3.3p
+man/man3p/Mail::Box::POP3::Message.3p
+man/man3p/Mail::Box::Parser.3p
+man/man3p/Mail::Box::Parser::Perl.3p
+man/man3p/Mail::Box::Search.3p
+man/man3p/Mail::Box::Search::Grep.3p
+man/man3p/Mail::Box::Thread::Manager.3p
+man/man3p/Mail::Box::Thread::Node.3p
 man/man3p/Mail::Box::Tie.3p
-@dirrm libdata/perl5/site_perl/Mail/Box/Mbox
-@dirrm libdata/perl5/site_perl/Mail/Box/MH
-@dirrm libdata/perl5/site_perl/Mail/Box
+man/man3p/Mail::Box::Tie::ARRAY.3p
+man/man3p/Mail::Box::Tie::HASH.3p
+man/man3p/Mail::Message.3p
+man/man3p/Mail::Message::Body.3p
+man/man3p/Mail::Message::Body::Construct.3p
+man/man3p/Mail::Message::Body::Delayed.3p
+man/man3p/Mail::Message::Body::Encode.3p
+man/man3p/Mail::Message::Body::File.3p
+man/man3p/Mail::Message::Body::Lines.3p
+man/man3p/Mail::Message::Body::Multipart.3p
+man/man3p/Mail::Message::Body::Nested.3p
+man/man3p/Mail::Message::Body::String.3p
+man/man3p/Mail::Message::Construct.3p
+man/man3p/Mail::Message::Convert.3p
+man/man3p/Mail::Message::Convert::Html.3p
+man/man3p/Mail::Message::Convert::HtmlFormatPS.3p
+man/man3p/Mail::Message::Convert::HtmlFormatText.3p
+man/man3p/Mail::Message::Convert::MailInternet.3p
+man/man3p/Mail::Message::Convert::MimeEntity.3p
+man/man3p/Mail::Message::Convert::TextAutoformat.3p
+man/man3p/Mail::Message::Field.3p
+man/man3p/Mail::Message::Field::Fast.3p
+man/man3p/Mail::Message::Field::Flex.3p
+man/man3p/Mail::Message::Head.3p
+man/man3p/Mail::Message::Head::Complete.3p
+man/man3p/Mail::Message::Head::Delayed.3p
+man/man3p/Mail::Message::Head::Subset.3p
+man/man3p/Mail::Message::Part.3p
+man/man3p/Mail::Message::TransferEnc.3p
+man/man3p/Mail::Message::TransferEnc::Base64.3p
+man/man3p/Mail::Message::TransferEnc::Binary.3p
+man/man3p/Mail::Message::TransferEnc::EightBit.3p
+man/man3p/Mail::Message::TransferEnc::QuotedPrint.3p
+man/man3p/Mail::Message::TransferEnc::SevenBit.3p
+man/man3p/Mail::Reporter.3p
+man/man3p/Mail::Transport.3p
+man/man3p/Mail::Transport::Mailx.3p
+man/man3p/Mail::Transport::POP3.3p
+man/man3p/Mail::Transport::Qmail.3p
+man/man3p/Mail::Transport::Receive.3p
+man/man3p/Mail::Transport::SMTP.3p
+man/man3p/Mail::Transport::Send.3p
+man/man3p/Mail::Transport::Sendmail.3p
+@dirrm ${P5SITE}/Mail/Transport
+@dirrm ${P5SITE}/Mail/Message/TransferEnc
+@dirrm ${P5SITE}/Mail/Message/Head
+@dirrm ${P5SITE}/Mail/Message/Field
+@dirrm ${P5SITE}/Mail/Message/Convert
+@dirrm ${P5SITE}/Mail/Message/Body
+@dirrm ${P5SITE}/Mail/Message
+@dirrm ${P5SITE}/Mail/Box/Tie
+@dirrm ${P5SITE}/Mail/Box/Thread
+@dirrm ${P5SITE}/Mail/Box/Search
+@dirrm ${P5SITE}/Mail/Box/Parser
+@dirrm ${P5SITE}/Mail/Box/POP3
+@dirrm ${P5SITE}/Mail/Box/Net
+@dirrm ${P5SITE}/Mail/Box/Message
+@dirrm ${P5SITE}/Mail/Box/Mbox
+@dirrm ${P5SITE}/Mail/Box/Maildir
+@dirrm ${P5SITE}/Mail/Box/MH
+@dirrm ${P5SITE}/Mail/Box/Locker
+@dirrm ${P5SITE}/Mail/Box/Dir
+@dirrm ${P5SITE}/Mail/Box
