@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/03 10:19:54 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/03 12:12:40 xsa Exp $
 
 COMMENT=	"Zope content management framework"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://zope.org/Products/CMF/${DISTNAME}/
 
-MODULES=	zope
+MODULES=	www/zope
 
 CMFDIRS=	CMFCalendar CMFCore CMFDefault CMFTopic DCWorkflow
 DOCSDIR=	${PREFIX}/share/doc/zope-cmf

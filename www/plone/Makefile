@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/03 10:22:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/03 12:13:33 xsa Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plone/}
 
-MODULES=	zope
+MODULES=	www/zope
 
 RUN_DEPENDS=	::www/zope-cmf
 

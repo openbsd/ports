@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/11 20:02:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/03 12:12:41 xsa Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}releases/
 EXTRACT_SUFX=	.tgz
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/ZWiki
 

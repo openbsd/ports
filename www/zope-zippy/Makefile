@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/03 12:12:41 xsa Exp $
 
 COMMENT=	"insert random 'Zippy the Pinhead' quotes in your documents"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/lib/python/Products/Zippy
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/03 12:12:41 xsa Exp $
 
 COMMENT=	"Zope product to display RSS files"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}${V:S/-/./}/
 EXTRACT_SUFX=	.tgz
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/RDFSummary
 

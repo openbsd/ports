@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/12 21:25:58 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 12:12:41 xsa Exp $
 
 COMMENT=	"framework that eases the creation and validation of web forms"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/Formulator
 
