@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2004/12/27 21:45:34 alek Exp $
+--- configure.orig	Mon Dec 27 10:02:33 2004
++++ configure	Mon Dec 27 10:02:40 2004
+@@ -1691,7 +1691,7 @@ SHLIBSONAME='$(SHLIBFORLINK).$(MAJOR)'
+ SHLIBFILE='$(SHLIBSONAME).$(MINOR)'
+ 
+ SHLIBCC='$(CC) $(CFLAGS) -fpic'
+-MKSHLIB_1='$(CC) $(LDFLAGS) -shared -Wl,-soname=$(SHLIBSONAME) -o'
++MKSHLIB_1='$(CC) $(LDFLAGS) -shared -o'
+ MKSHLIB_2=''
+ MKSHLIB_3='-lc'
+ 
