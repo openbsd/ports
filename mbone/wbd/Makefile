@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/21 12:57:20 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/30 11:40:26 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
