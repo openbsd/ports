@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/06/23 00:02:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2003/07/09 07:17:15 pvalchev Exp $
 
 COMMENT=	"manage remote serial consoles via TCP/IP"
 
@@ -19,7 +19,8 @@ MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 
 AUTOCONF_NEW=	Yes
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--with-64bit
+CONFIGURE_ARGS=	--with-64bit \
+		--with-master=localhost
 
 REGRESS_TARGET=	test
 
