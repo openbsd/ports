@@ -8,8 +8,7 @@ bin/munchlist
 bin/icombine
 bin/unsq
 @unexec install-info --delete %D/info/ispell %D/info/dir
-info/ispell
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+info/ispell.info
 @exec install-info %D/%F %D/info/dir
 lib/americanmed+.hash
 lib/english.aff
@@ -24,4 +23,3 @@ man/man1/tryaffix.1
 man/man1/unsq.1
 man/man4/ispell.4
 man/man4/english.4
-share/emacs/site-lisp/ispell.el
