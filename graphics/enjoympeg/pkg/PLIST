@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/07 03:04:01 pvalchev Exp $
+bin/enjoympeg
+share/doc/enjoympeg/README
+share/enjoympeg/folder.bmp
+share/enjoympeg/font.bmp
+share/enjoympeg/full.bmp
+share/enjoympeg/info.bmp
+share/enjoympeg/pause.bmp
+share/enjoympeg/play.bmp
+share/enjoympeg/pref.bmp
+share/enjoympeg/quit.bmp
+share/enjoympeg/stop.bmp
+share/enjoympeg/win.bmp
+@dirrm share/enjoympeg
+@dirrm share/doc/enjoympeg
