@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2003/02/16 14:31:19 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2003/02/23 14:09:21 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -8,12 +8,12 @@ EXTRACT_SUFX?=	.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS?=	${NO_SHARED_ARCHS}
 MODKDE_VERSION?=	3.1
-MODULES=	kde
+MODULES?=	kde
 
 MODGNU_CONFIG_GUESS_DIRS?=	${MODKDE_CONFIG_GUESS_DIRS}
 
 CONFIGURE_STYLE?=	autoconf
-AUTOCONF_NEW=		Yes
+AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 
