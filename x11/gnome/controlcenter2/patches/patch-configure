@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:45:49 todd Exp $
+--- configure.orig	Sat Nov 23 10:04:49 2002
++++ configure	Thu Dec 12 23:44:25 2002
+@@ -3957,7 +3957,7 @@ else
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -3967,7 +3967,7 @@ else
+         ;;
+       *)
+         archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -8292,7 +8292,7 @@ done
+ 
+ 
+ 
+-COMMON_MODULES="gtk+-2.0 gconf-2.0 libgnomeui-2.0 libglade-2.0 >= 1.99.12 libbonobo-2.0 libbonoboui-2.0 libglade-2.0 gconf-2.0 gnome-desktop-2.0"
++COMMON_MODULES="gnome-desktop-2.0 gtk+-2.0 gconf-2.0 libgnomeui-2.0 libglade-2.0 >= 1.99.12 libbonobo-2.0 libbonoboui-2.0 libglade-2.0 gconf-2.0"
+ 
+   succeeded=no
+ 
+@@ -8530,7 +8530,7 @@ echo "configure:8526: checking for gtk+-
+ 
+             echo $ac_n "checking GNOME_SETTINGS_DAEMON_CFLAGS""... $ac_c" 1>&6
+ echo "configure:8533: checking GNOME_SETTINGS_DAEMON_CFLAGS" >&5
+-            GNOME_SETTINGS_DAEMON_CFLAGS=`$PKG_CONFIG --cflags "gtk+-2.0 gconf-2.0 libgnomeui-2.0 esound"`
++            GNOME_SETTINGS_DAEMON_CFLAGS=`$PKG_CONFIG --cflags "esound gtk+-2.0 gconf-2.0 libgnomeui-2.0"`
+             echo "$ac_t""$GNOME_SETTINGS_DAEMON_CFLAGS" 1>&6
+ 
+             echo $ac_n "checking GNOME_SETTINGS_DAEMON_LIBS""... $ac_c" 1>&6
