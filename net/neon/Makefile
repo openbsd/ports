@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/28 15:52:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/28 12:56:27 lebel Exp $
 
 COMMENT=		"HTTP and WebDAV client library, with C interface"
 
-VERSION=		0.19.4
+VERSION=		0.21.0
 DISTNAME=		neon-${VERSION}
 CATEGORIES=     	net www devel
 NEED_VERSION=		1.513
@@ -29,14 +29,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-ssl --with-xml2
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neon/macros
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/neon
-	${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/*.3 ${PREFIX}/man/man3
 .for i in README NEWS BUGS TODO THANKS
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/neon
 .endfor
 	cd ${WRKSRC}/macros && \
 		tar cf - . | (cd ${PREFIX}/share/neon/macros; tar xf -)
-	cd ${WRKSRC}/doc    && \
-		tar cf - html | (cd ${PREFIX}/share/doc/neon; tar xf -)
 
 .include <bsd.port.mk>
