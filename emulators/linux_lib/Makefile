@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/14 05:53:38 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/14 18:15:02 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 #
@@ -12,7 +12,7 @@ MIRROR_DISTFILE=	no
 
 MAINTAINER=		form@OpenBSD.ORG
 
-MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			ftp://relay.nuxi.com/pub/FreeBSD/
 
 PREFIX=			/emul/linux
