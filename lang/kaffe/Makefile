@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2001/02/12 13:02:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/12 19:19:19 ian Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
 #     Undefined symbol `_PtrClass' referenced from text segment
 # please read the file pkg/COMPILATION
 
-DISTNAME=	kaffe-1.0.5
+DISTNAME=	kaffe-1.0.6
 CATEGORIES=	lang
 NEED_VERSION=	1.319
-BROKEN=		"Does not build with the libgmp in ports (mpz_add -> gmpz_add)"
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
@@ -44,6 +43,6 @@ CONFIGURE_ENV=	${SETENV} CPPFLAGS=-I/usr/local/include \
 			LDFLAGS=-L/usr/local/lib
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/kaffe
+	@${INSTALL_DATA} ${WRKSRC}/FAQ/FAQ.* ${PREFIX}/share/kaffe
 
 .include <bsd.port.mk>
