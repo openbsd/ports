@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_codec_ffmpeg_ffmpeg_c,v 1.1 2003/11/04 07:48:26 jolan Exp $
+--- modules/codec/ffmpeg/ffmpeg.c.orig	2003-08-08 12:08:32.000000000 -0500
++++ modules/codec/ffmpeg/ffmpeg.c	2003-11-03 23:03:42.000000000 -0600
+@@ -297,7 +297,7 @@ static int InitThread( generic_thread_t 
+         b_ffmpeginit = 1;
+ 
+         msg_Dbg( p_decoder->p_fifo, "libavcodec initialized (interface "
+-                                    LIBAVCODEC_BUILD_STR ")" );
++                                    "LIBAVCODEC_BUILD" ")" );
+     }
+     else
+     {

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/18 01:13:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2003/11/04 07:48:26 jolan Exp $
 
 COMMENT=	"videolan client; multimedia player"
 
 VER=		0.6.2
 DISTNAME=	vlc-${VER}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/ \
 		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
