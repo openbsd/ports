@@ -1,0 +1,15 @@
+--- src/util/inet_addr_list.h.orig	Fri Nov 19 20:00:59 2004
++++ src/util/inet_addr_list.h	Fri Nov 19 20:01:44 2004
+@@ -58,12 +58,10 @@
+  * Only on KAME? Use without implementation will result in EAI_BADFLAGS.
+  */
+ #ifdef INET6
+-# ifndef INET6_KAME
+ #  ifdef NI_WITHSCOPEID
+ #   undef NI_WITHSCOPEID
+ #  endif
+ #  define NI_WITHSCOPEID 0
+-# endif
+ #endif
+ 
+ /* LICENSE
