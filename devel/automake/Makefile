@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/26 18:10:46 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/08/27 13:57:51 espie Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
-DISTNAME=	automake-1.5
+DISTNAME=	automake-1.4-p5
 CATEGORIES=	devel
 NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -10,9 +10,8 @@ MASTER_SITE_SUBDIR= automake
 
 HOMEPAGE=	http://www.gnu.org/software/automake/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
-# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
