@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/04 08:58:24 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/12/08 09:17:32 grange Exp $
 bin/mips64emul
 share/doc/mips64emul/
+share/doc/mips64emul/20041024-netbsd-arc-installed.gif
+share/doc/mips64emul/20041024-netbsd-arc-installed_small.gif
+share/doc/mips64emul/20041024-openbsd-arc-installed.gif
+share/doc/mips64emul/20041024-openbsd-arc-installed_small.gif
+share/doc/mips64emul/20041129-redhat_mips.png
+share/doc/mips64emul/20041129-redhat_mips_small.png
 share/doc/mips64emul/hello.c
 share/doc/mips64emul/index.html
-share/doc/mips64emul/mips64emul.1
 share/doc/mips64emul/netbsd-pmax-20040630.png
 share/doc/mips64emul/netbsd-pmax-20040630_small.png
 share/doc/mips64emul/openbsd-pmax-20040710.png

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/27 10:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/08 09:17:32 grange Exp $
 
 COMMENT=		"MIPS machine emulator"
-DISTNAME=		mips64emul-0.2.2
+DISTNAME=		mips64emul-0.2.3
 CATEGORIES=		emulators
 HOMEPAGE=		http://www.mdstud.chalmers.se/~md1gavan/mips64emul/
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
