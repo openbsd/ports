@@ -1,0 +1,11 @@
+--- tkirc2.orig	Sat Dec 16 15:38:36 2000
++++ tkirc2	Sat Dec 16 15:39:28 2000
+@@ -840,7 +840,7 @@
+ set history_max        20
+ set lines_max          256
+ set lines_all          0
+-set ircpath            "irc"
++set ircpath            "ircII"
+ 
+ set leavetext_limit    80
+ set topic_limit        80
