@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 00:32:48 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/05/18 17:58:33 dugsong Exp $
 
-PKGNAME=	firewalk-0.7c
-DISTNAME=	firewalk-final-0.7c
+DISTNAME=	firewalk-0.8
 CATEGORIES=     net
-MASTER_SITES=	ftp://ftp.technotronic.com/unix/security-tools/
-# Due to 0.7c is named as .gz, but really was uncompressed!
-EXTRACT_ARGS=	-xf
+MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 MIRROR_DISTFILE=no
 
@@ -16,8 +13,6 @@ WRKSRC=		${WRKDIR}/Firewalk
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/lib"
 
 ALL_TARGET=	firewalk
 
