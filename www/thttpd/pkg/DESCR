@@ -3,3 +3,5 @@ lot of special features, but it suffices for most uses of the web, it's
 about as fast as the best full-featured servers (Apache, NCSA, Netscape),
 and it has one extremely useful feature (URL-traffic-based throttling)
 that no other server currently has.
+
+WWW: ${HOMEPAGE}
