@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.10 2000/09/21 15:32:23 jakob Exp $
 sbin/postalias
 sbin/postcat
 sbin/postconf
