@@ -1,5 +1,5 @@
 +------------
 | The icon set coming with fvwm2 has been installed into
-| ${PREFIX}/fvicons.  Make sure to set your ImagePath
-| appropriately.
+| ${PREFIX}/share/fvwm/icons.  Make sure to set your
+| ImagePath appropriately.
 +------------
