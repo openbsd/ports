@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
+$OpenBSD: patch-configure_in,v 1.2 2002/07/09 20:40:51 avsm Exp $
 --- configure.in.orig	Sun May 12 22:23:57 2002
-+++ configure.in	Sun Jun 23 18:52:12 2002
++++ configure.in	Tue Jul  9 21:12:31 2002
 @@ -792,7 +792,7 @@ unset with_pic
  
  case $php_build_target in
@@ -19,3 +19,12 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version"
  ;;
  esac
+@@ -921,7 +921,7 @@ EXPANDED_LIBDIR=$libdir
+ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:$libdir
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
