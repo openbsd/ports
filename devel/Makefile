@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2005/03/22 13:16:03 xsa Exp $
+# $OpenBSD: Makefile,v 1.310 2005/03/30 07:30:23 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -191,6 +191,8 @@
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-ExtUtils-CBuilder
      SUBDIR += p5-ExtUtils-ParseXS
+     SUBDIR += p5-File-Find-Rule
+     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
