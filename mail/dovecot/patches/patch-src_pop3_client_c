@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pop3_client_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
---- src/pop3/client.c.orig	Mon May 26 10:27:13 2003
-+++ src/pop3/client.c	Tue Jul 15 15:18:28 2003
-@@ -106,6 +106,7 @@ static int init_mailbox(struct client *c
+$OpenBSD: patch-src_pop3_client_c,v 1.2 2004/05/27 16:38:30 brad Exp $
+--- src/pop3/client.c.orig	2004-05-25 14:26:20.000000000 -0400
++++ src/pop3/client.c	2004-05-27 01:24:18.000000000 -0400
+@@ -108,6 +108,7 @@ static int init_mailbox(struct client *c
  struct client *client_create(int hin, int hout, struct mail_storage *storage)
  {
  	struct client *client;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_pop3_client_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
  
  	client = i_new(struct client, 1);
  	client->input = i_stream_create_file(hin, default_pool,
-@@ -122,7 +123,9 @@ struct client *client_create(int hin, in
+@@ -124,7 +125,9 @@ struct client *client_create(int hin, in
  
  	storage->set_callbacks(storage, &mail_storage_callbacks, client);
  

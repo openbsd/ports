@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.4 2004/05/10 00:06:47 brad Exp $
---- dovecot-example.conf.orig	2003-11-08 10:21:22.000000000 -0500
-+++ dovecot-example.conf	2004-05-07 21:23:23.000000000 -0400
+$OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
+--- dovecot-example.conf.orig	2003-12-19 23:14:19.000000000 -0500
++++ dovecot-example.conf	2004-05-27 01:27:45.000000000 -0400
 @@ -1,13 +1,12 @@
  ## Dovecot 1.0 configuration file
  
@@ -142,17 +142,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.4 2004/05/10 00:06:47 brad Exp $
  
  ##
  ## Authentication processes
-@@ -380,8 +387,7 @@ auth_mechanisms = plain
- #   vpopmail: vpopmail library
- #   ldap <config path>: LDAP, see doc/dovecot-ldap.conf
- #   pgsql <config path>: a PostgreSQL database, see doc/dovecot-pgsql.conf
--#auth_userdb = passwd
--auth_userdb = pgsql /usr/local/etc/dovecot-pgsql.conf
-+auth_userdb = passwd
- 
- # Where password database is kept:
- #   passwd: /etc/passwd or similiar, using getpwnam()
-@@ -391,7 +397,7 @@ auth_userdb = pgsql /usr/local/etc/dovec
+@@ -390,7 +397,7 @@ auth_userdb = passwd
  #   vpopmail: vpopmail authentication
  #   ldap <config path>: LDAP, see doc/dovecot-ldap.conf
  #   pgsql <config path>: a PostgreSQL database, see doc/dovecot-pgsql.conf

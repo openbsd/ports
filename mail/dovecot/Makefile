@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/10 00:06:47 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2004/05/27 16:38:30 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
-DISTNAME=	dovecot-0.99.10.4
+
+DISTNAME=	dovecot-0.99.10.5
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=	http://dovecot.procontrol.fi/
+HOMEPAGE=	http://dovecot.org/
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	iconv
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.58
+AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+=--without-pam --without-shadow --without-vpopmail \
 		--localstatedir=/var --with-ssldir=/etc/ssl --with-ssl=openssl
 
