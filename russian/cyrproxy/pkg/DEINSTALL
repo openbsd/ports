@@ -1,4 +1,5 @@
-# $OpenBSD: 
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 08:01:01 brad Exp $
 #
 # cyrproxy de-installation
 
