@@ -3,12 +3,14 @@
 # Date created:				April 27 1998
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:11:51 lebel Exp $
 #
+
+COMMENT=	"convert text into the Doc format used by PalmPilots"
 
 PKGNAME=	pilot_makedoc-0.7
 CATEGORIES=	textproc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 EXTRACT_ONLY=

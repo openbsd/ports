@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/23 13:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:11:41 lebel Exp $
 #
+
+COMMENT=	"text search engine"
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 

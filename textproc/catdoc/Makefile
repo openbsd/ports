@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 04:11:40 lebel Exp $
+
+COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

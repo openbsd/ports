@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/27 12:56:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:11:55 lebel Exp $
+
+COMMENT=	"curses-based URL ripper"
 
 DISTNAME=	urlview-0.9
 CATEGORIES=	textproc
-NEED_VERSION=	1.324
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/contrib/ \
 		ftp://ftp.cs.hmc.edu/pub/me/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/mutt/ \

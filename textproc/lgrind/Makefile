@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/05 12:10:15 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:11:47 lebel Exp $
+
+COMMENT=	"LaTeX vgrind(1) look-alike"
 
 CATEGORIES=	textproc devel print
 VERSION=3.64
@@ -7,6 +9,7 @@ DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
 	source/retest.c source/lgrind.1 source/lgrindef.5 source/Makefile \
 	lgrindef lgrind.dtx lgrind.ins lgrind.gls
+NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

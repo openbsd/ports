@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/01/23 03:27:11 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 04:11:41 lebel Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
+
+COMMENT=	"XML 1.0 parser written in C"
 
 DISTNAME=	expat-1.95.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= expat
 

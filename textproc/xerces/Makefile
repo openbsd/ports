@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/19 05:27:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 04:11:57 lebel Exp $
+
+COMMENT=	"xml parser for Java"
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +8,7 @@ JDK_VERSION=	1.1.8
 DISTNAME=	Xerces-J-bin.1.3.1
 PKGNAME=	xerces-1.3.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://xml.apache.org/xerces-j/index.html
 

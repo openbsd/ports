@@ -3,13 +3,15 @@
 # Date created:         May 17 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/10/05 09:28:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 04:11:51 lebel Exp $
 #
+
+COMMENT=	"paragraph reflow for email"
 
 DISTNAME=       Par151
 PKGNAME=        par-1.51
 CATEGORIES=	textproc
-NEED_VERSION=	1.338
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

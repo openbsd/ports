@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 04:11:46 lebel Exp $
+
+COMMENT=	"LaTeX to HTML converter"
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/29 01:58:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:52 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"reverse compile man pages from formatted form"
 
 DISTNAME=	rman
 PKGNAME=        rman-3.0.9
 CATEGORIES=	textproc
-NEED_VERSION=	1.309
+NEED_VERSION=	1.402
 MASTER_SITES=   ftp://polyglot.sourceforge.net/pub/polyglotman/
 
 MAINTAINER=	ports@OpenBSD.ORG

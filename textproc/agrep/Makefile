@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/05 16:36:00 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:11:39 lebel Exp $
+
+COMMENT=	"approximate grep (fast approximate pattern-matching tool)"
 
 DISTNAME=	agrep-2.04
 CATEGORIES=	textproc
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 

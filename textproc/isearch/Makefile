@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:42 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 04:11:44 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
+
+COMMENT=	"text search engine by CNIDR"
 
 #BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	isearch-1.14	
 CATEGORIES=	textproc databases
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 
 MAINTAINER=	ports@OpenBSD.ORG

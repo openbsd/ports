@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/01 05:47:34 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:11:51 lebel Exp $
+
+COMMENT=	"simple document format"
 
 PKGNAME=	p5-sdf-2.001
 DISTNAME=	sdf-2.001
-
 CATEGORIES=	textproc perl5
+NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Pod

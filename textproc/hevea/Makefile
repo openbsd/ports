@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/10 00:40:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:11:42 lebel Exp $
+
+COMMENT=	"LaTeX to html translator"
 
 CATEGORIES=	textproc print
-NEED_VERSION=	1.281
+NEED_VERSION=	1.402
 
 
 V=1.05

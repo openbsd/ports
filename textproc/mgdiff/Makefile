@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/18 15:01:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:11:48 lebel Exp $
+
+COMMENT=	"graphical front end to Unix diff"
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
 CATEGORIES=	textproc
-NEED_VERSION=	1.400
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 

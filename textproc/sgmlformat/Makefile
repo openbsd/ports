@@ -4,12 +4,14 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.9 2000/10/07 16:54:14 matthieu Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:11:53 lebel Exp $
 #
+
+COMMENT=	"generate groff/HTML from linuxdoc/docbook SGML documents"
 
 DISTNAME=	sgmlformat-1.7
 CATEGORIES=	textproc print
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>

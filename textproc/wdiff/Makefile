@@ -3,12 +3,14 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2000/10/31 09:49:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:55 lebel Exp $
 #
+
+COMMENT=	"word differences between text files"
 
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= wdiff
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/14 13:23:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:54 lebel Exp $
+
+COMMENT=	"texinfo to HTML converter"
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
-NEED_VERSION=	1.342
+NEED_VERSION=	1.402
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
 EXTRACT_SUFX=	.shar.Z

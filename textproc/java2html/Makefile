@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:16:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:11:46 lebel Exp $
+
+COMMENT=	"Java sources to HTML converter"
 
 DISTNAME=	java2html-1.7
 CATEGORIES=	textproc
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.gnu.org/software/java2html/
 

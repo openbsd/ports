@@ -3,12 +3,14 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:11:39 lebel Exp $
 #
+
+COMMENT=		"C-language sources to HTML converter"
 
 DISTNAME=		c2html-0.9.2
 CATEGORIES=		textproc www
-NEED_VERSION=		1.307
+NEED_VERSION=		1.402
 
 # Old versions seem to stay there...
 MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
