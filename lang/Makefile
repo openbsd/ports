@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2005/02/20 01:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2005/02/23 19:26:58 alek Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -41,7 +41,6 @@
      SUBDIR += kaffe
      SUBDIR += klone
 #    SUBDIR += lcc
-     SUBDIR += libgcj
      SUBDIR += librep
 #    SUBDIR += logo
      SUBDIR += lua
