@@ -1,17 +1,18 @@
-$OpenBSD: patch-ltmain.sh,v 1.2 2001/08/16 16:49:46 brad Exp $
+$OpenBSD: patch-ltmain.sh,v 1.3 2001/08/31 22:31:17 brad Exp $
 --- ltmain.sh.orig	Mon Aug 13 18:44:40 2001
-+++ ltmain.sh	Thu Aug 16 11:51:30 2001
-@@ -1031,12 +1031,27 @@ compiler."
++++ ltmain.sh	Fri Aug 31 16:54:26 2001
+@@ -1031,12 +1031,28 @@ compiler."
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
  	    ;;
-+          *-*-openbsd*)
++	  *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
-+	    continue
++	    test "X$arg" = "X-lc" && continue
 +            ;;
 +          esac
-+        elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
++	fi
++        if test "X$arg" = "X-lc_r"; then
++	  case $host in
 +	  *-*-openbsd*) 
 +            # Do not include libc_r directly, use -pthread flag. 
 +	    continue
@@ -29,7 +30,7 @@ $OpenBSD: patch-ltmain.sh,v 1.2 2001/08/16 16:49:46 brad Exp $
        -module)
  	module=yes
  	continue
-@@ -3354,6 +3369,9 @@ static const void *lt_preloaded_setup() 
+@@ -3354,6 +3370,9 @@ static const void *lt_preloaded_setup() 
  	  compile_command=`$echo "X$compile_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
  	  finalize_command=`$echo "X$finalize_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
  	  ;;
@@ -39,7 +40,7 @@ $OpenBSD: patch-ltmain.sh,v 1.2 2001/08/16 16:49:46 brad Exp $
  	*)
  	  $echo "$modename: unknown suffix for \`$dlsyms'" 1>&2
  	  exit 1
-@@ -4412,40 +4430,6 @@ relink_command=\"$relink_command\""
+@@ -4412,40 +4431,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
