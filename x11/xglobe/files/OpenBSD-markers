@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.23 2002/03/16 22:42:09 jsyn Exp $
+# $OpenBSD: OpenBSD-markers,v 1.24 2002/03/17 18:47:25 couderc Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -27,6 +27,7 @@
 43.633          -79.500         "Smith"         # Brad
 43.70		-79.42		"Westerback"	# Ken
 43.9183		-78.6838	"Bertrand" 	# Louis
+44.83		0.52		"Couderc"	# Damien
 45.29		-73.34		"Lebel"		# David
 45.5		-73.5		"Cote"		# Yannick
 45.78 		3.08		"Vallat"	# Miodrag
