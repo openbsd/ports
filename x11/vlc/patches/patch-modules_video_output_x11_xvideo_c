@@ -1,0 +1,29 @@
+$OpenBSD: patch-modules_video_output_x11_xvideo_c,v 1.1 2003/08/22 20:51:49 espie Exp $
+--- modules/video_output/x11/xvideo.c.orig	2003-08-22 22:23:17.000000000 +0200
++++ modules/video_output/x11/xvideo.c	2003-08-22 22:27:14.000000000 +0200
+@@ -35,8 +35,13 @@
+ /*****************************************************************************
+  * Exported prototypes
+  *****************************************************************************/
++#ifdef MODULE_NAME_IS_xvideo
++extern int  E_(XVActivate)   ( vlc_object_t * );
++extern void E_(XVDeactivate) ( vlc_object_t * );
++#else
+ extern int  E_(Activate)   ( vlc_object_t * );
+ extern void E_(Deactivate) ( vlc_object_t * );
++#endif
+ 
+ /*****************************************************************************
+  * Module descriptor
+@@ -89,7 +94,11 @@ vlc_module_begin();
+ 
+     set_description( _("XVideo extension video output") );
+     set_capability( "video output", 150 );
++#ifdef MODULE_NAME_IS_xvideo
++    set_callbacks( E_(XVActivate), E_(XVDeactivate) );
++#else
+     set_callbacks( E_(Activate), E_(Deactivate) );
++#endif
+ vlc_module_end();
+ 
+ /* following functions are local */

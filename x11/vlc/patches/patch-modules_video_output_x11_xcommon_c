@@ -1,0 +1,53 @@
+$OpenBSD: patch-modules_video_output_x11_xcommon_c,v 1.1 2003/08/22 20:51:49 espie Exp $
+--- modules/video_output/x11/xcommon.c.orig	2003-08-13 20:39:52.000000000 +0200
++++ modules/video_output/x11/xcommon.c	2003-08-22 22:38:41.000000000 +0200
+@@ -75,8 +75,13 @@
+ /*****************************************************************************
+  * Local prototypes
+  *****************************************************************************/
++#ifdef MODULE_NAME_IS_xvideo
++int  E_(XVActivate)   ( vlc_object_t * );
++void E_(XVDeactivate) ( vlc_object_t * );
++#else
+ int  E_(Activate)   ( vlc_object_t * );
+ void E_(Deactivate) ( vlc_object_t * );
++#endif
+ 
+ static int  InitVideo      ( vout_thread_t * );
+ static void EndVideo       ( vout_thread_t * );
+@@ -126,7 +131,11 @@ static void TestNetWMSupport( vout_threa
+  * vout properties to choose the window size, and change them according to the
+  * actual properties of the display.
+  *****************************************************************************/
++#ifdef MODULE_NAME_IS_xvideo
++int E_(XVActivate) ( vlc_object_t *p_this )
++#else
+ int E_(Activate) ( vlc_object_t *p_this )
++#endif
+ {
+     vout_thread_t *p_vout = (vout_thread_t *)p_this;
+     char *       psz_display;
+@@ -136,6 +145,11 @@ int E_(Activate) ( vlc_object_t *p_this 
+     vlc_bool_t   b_chroma = 0;
+ #endif
+ 
++#ifdef MODULE_NAME_IS_xvideo
++    printf("I am xvideo\n");
++#endif
++	
++    printf("Very early message\n");
+     p_vout->pf_init = InitVideo;
+     p_vout->pf_end = EndVideo;
+     p_vout->pf_manage = ManageVideo;
+@@ -281,7 +295,11 @@ int E_(Activate) ( vlc_object_t *p_this 
+  *****************************************************************************
+  * Terminate an output method created by Open
+  *****************************************************************************/
++#ifdef MODULE_NAME_IS_xvideo
++void E_(XVDeactivate) ( vlc_object_t *p_this )
++#else
+ void E_(Deactivate) ( vlc_object_t *p_this )
++#endif
+ {
+     vout_thread_t *p_vout = (vout_thread_t *)p_this;
+ 
