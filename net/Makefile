@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2000/09/06 04:53:39 brad Exp $
+# $OpenBSD: Makefile,v 1.89 2000/09/13 08:42:23 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += archie
      SUBDIR += arpcatch
+     SUBDIR += arping
      SUBDIR += arpwatch
      SUBDIR += axyftp
      SUBDIR += bind8
