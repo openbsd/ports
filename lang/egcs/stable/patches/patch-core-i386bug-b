@@ -1,0 +1,11 @@
+--- gcc/configure.in.orig	Wed Mar 24 03:29:16 1999
++++ gcc/configure.in	Wed Mar 24 03:29:54 1999
+@@ -896,8 +896,6 @@
+ 		tmake_file=t-netbsd
+ 		;;
+  	i[[34567]]86-*-openbsd*)
+- 		# Remove when the math emulator is fixed
+- 		target_cpu_default="MASK_NO_FANCY_MATH_387"
+  		# we need collect2 until our bug is fixed...
+  		use_collect2=yes
+  		;;
