@@ -1,0 +1,11 @@
+--- ui-grabber.tcl.orig	Wed Jun  9 13:29:24 1999
++++ ui-grabber.tcl	Wed Jul 28 14:42:30 1999
+@@ -454,6 +454,8 @@
+ #	pack  $w.f.cl.glabel $w.f.cl.label $w.f.cl.slabel \
+ #			     -side left -fill x -expand 1
+        
++        frame $w.f.c -relief flat
++
+ 	scale $w.f.c.gscale \
+ -orient horizontal -width 12 -length 100 -relief groove \
+                              -showvalue 1 -from 0 -to 255 \
