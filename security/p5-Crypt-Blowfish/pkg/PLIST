@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/06 15:57:15 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/Blowfish.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/Blowfish/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/Blowfish/Blowfish.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/Blowfish/Blowfish.so
+man/man3/Crypt::Blowfish.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/Blowfish
