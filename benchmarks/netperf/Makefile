@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/20 20:03:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/11 08:10:54 jakob Exp $
 
 DISTNAME=	netperf-2.1pl3
 CATEGORIES=	benchmarks net
@@ -8,6 +8,8 @@ MAINTAINER=     jakob@openbsd.org
 
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/netperf/
+
+HOMEPAGE=	http://www.netperf.org/
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

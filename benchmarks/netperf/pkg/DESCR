@@ -4,4 +4,4 @@ and request/response performance using either TCP or UDP, and the
 Berkeley Sockets interface. In addition, tests for DLPI, the Fore ATM API,
 Unix Domain Sockets, and HP HiPPI LLA may be conditionally compiled-in.
 
-More information are availible at http://www.netperf.org/
+WWW: ${HOMEPAGE}
