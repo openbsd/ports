@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/29 23:25:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/30 17:44:12 jolan Exp $
 
 COMMENT=	"logging product for Zope"
 
 VERSION=	1.0.3
-PKGNAME=	logger-${VERSION}
 DISTNAME=	Logger-${VERSION:S/./-/g}
+PKGNAME=	zope-logger-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/Zen/Logger/
