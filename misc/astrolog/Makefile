@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/22 19:58:12 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 NEED_VERSION=	1.191
@@ -15,6 +15,11 @@ EPHEM=          LRZ5_24 CHI_24 CPJV_24
 DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
 
 MAINTAINER=     ports@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CMD=    ${SH}
 EXTRACT_BEFORE_ARGS=

@@ -3,7 +3,7 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/22 19:58:12 turan Exp $
 #
 
 NEED_VERSION=	1.191
@@ -18,8 +18,11 @@ PATCHFILES=	mmv.pch.Z:0
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_CDROM=	"No redistribution for charge"
-NO_PACKAGE=	"No modification"
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
+
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}
 PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
