@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/11/08 10:52:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"John Horton Conway's Game of Life"
 
 DISTNAME=	xlife-5.3
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/
 HOMEPAGE=	http://tuxedo.org/~esr/software.html
 

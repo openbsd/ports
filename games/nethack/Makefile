@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/10/28 12:30:13 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/03/21 20:57:07 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
 DISTNAME=	nethack-3.3.1
 CATEGORIES=	games
-NEED_VERSION=	1.483
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}

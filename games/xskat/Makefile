@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"skat card game"
 
 DISTNAME=	xskat-3.4
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.gulu.net/xskat/ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"classic space-age stock trading game"
 
@@ -6,7 +6,7 @@ DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= games/strategy
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

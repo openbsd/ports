@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 20:57:08 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp $
 
 COMMENT=	"handle GIF89a transparent option and interlace mode"
@@ -7,7 +7,7 @@ DISTNAME=	giftrans
 PKGNAME=        giftrans-1.12
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

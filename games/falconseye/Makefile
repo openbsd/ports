@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 20:57:06 espie Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -6,7 +6,7 @@ VERSION=	1.9.3
 DISTNAME=	nethack_source_331_jtp_${VERSION:S/.//g}
 PKGNAME=	falconseye-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.458
+NEED_VERSION=	1.515
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://falconseye.sourceforge.net/

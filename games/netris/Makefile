@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"network head-to-head version of T*tris"
 
 DISTNAME=	netris-0.5
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

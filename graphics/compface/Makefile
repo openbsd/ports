@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 05:05:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"programs and library for the 'X-face' mail and news header"
 
@@ -6,7 +6,7 @@ DISTNAME=	compface
 PKGNAME=	compface-1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

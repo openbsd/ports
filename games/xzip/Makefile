@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 01:06:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 20:57:08 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
@@ -7,7 +7,7 @@ COMMENT=	"z-code interpreter for X11 (Infocom game format)"
 DISTNAME=	xzip182
 PKGNAME=	xzip-1.8.2
 CATEGORIES=     games x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.eblong.com/zarf/xzip.html
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"challenging double decked solitaire game"
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 PERMIT_PACKAGE_CDROM=	Yes

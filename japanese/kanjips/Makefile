@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/19 16:03:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=	"converts Japanese fonts in PostScript documents"
 
 CATEGORIES=japanese print
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 DISTNAME=kanjips
 PKGNAME=${DISTNAME}-19900310

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/02 01:44:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
 DISTNAME=	se006e4f6
 CATEGORIES=	games
-NEED_VERSION=	1.458
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://slashem.sourceforge.net
 MASTER_SITES=	http://avrc.city.ac.uk/nethack/slashem/

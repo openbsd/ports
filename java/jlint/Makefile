@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/11 16:21:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=	"Java program analyzer and checker"
 
@@ -6,7 +6,7 @@ VERSION=	2.3
 DISTNAME=	jlint
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	java
-NEED_VERSION=	1.434
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://artho.com/jlint/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"image and webcam display plugin for gkrellm"
 
 DISTNAME=	gkrellkam-0.2.3b
 CATEGORIES=	graphics
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

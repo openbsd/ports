@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/15 00:29:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"jezzball-style, penguin puzzle game"
 
 DISTNAME=	icebreaker-1.2.1
 CATEGORIES=	games
-NEED_VERSION=	1.435
+NEED_VERSION=	1.515
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mattdm.org/icebreaker/

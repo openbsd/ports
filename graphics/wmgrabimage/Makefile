@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=		'wm-dockapp; WWW image monitor'
 
 DISTNAME=		wmGrabImage-0.72
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		graphics x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 EXTRACT_SUFX=		.tgz
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml

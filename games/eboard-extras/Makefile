@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/21 20:56:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:06 espie Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
 DISTNAME=	eboard-extras-1pl2
 CATEGORIES=	games
-NEED_VERSION=	1.480
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://eboard.sourceforge.net
 

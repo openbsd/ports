@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/20 09:41:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
 
 DISTNAME=		qiv-1.7
 CATEGORIES=		graphics
-NEED_VERSION=		1.364
+NEED_VERSION=		1.515
 
 EXTRACT_SUFX=		-src.tgz
 

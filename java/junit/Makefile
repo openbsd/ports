@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
 
@@ -9,7 +9,7 @@ VERSION=	3.7
 DISTNAME=	junit${VERSION}
 PKGNAME=	junit-${VERSION}
 CATEGORIES=	java
-NEED_VERSION=	1.496
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.junit.org/
 

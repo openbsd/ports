@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 05:05:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"mpeg video player"
 
 DISTNAME=	mtv-1.0.6.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/unsupported/x86-bsdi-bsdos/
 
 HOMEPAGE=	http://www.mpegtv.com/

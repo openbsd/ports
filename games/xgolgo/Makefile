@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:07 espie Exp $
 #
 
 COMMENT=	"watch what you are doing -- are you hostile"
@@ -6,7 +6,7 @@ COMMENT=	"watch what you are doing -- are you hostile"
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

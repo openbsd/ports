@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/29 00:07:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=		"Rich city simulation game for X"
 
 DISTNAME=		lincity-1.11
 CATEGORIES=		games
-NEED_VERSION=		1.427
+NEED_VERSION=		1.515
 HOMEPAGE=		http://www.floot.demon.co.uk/lincity.html
 
 MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>

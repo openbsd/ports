@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"dropping jewels game for X11"
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 20:57:07 espie Exp $
 #
 
 COMMENT=	"side-view, fast-action, kill everything type of game"
@@ -6,7 +6,7 @@ COMMENT=	"side-view, fast-action, kill everything type of game"
 DISTNAME=	xevil1.5
 PKGNAME=	xevil-1.5
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xevil1.5

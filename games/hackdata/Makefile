@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/17 02:38:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	'common data for the nethack/slash ports'
 DISTNAME=	nethack-3.3.1
 PKGNAME=	hackdata-3.3.1
 CATEGORIES=	games
-NEED_VERSION=	1.363
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}

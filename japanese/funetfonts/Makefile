@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:11:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 20:57:09 espie Exp $
 
 COMMENT=	"extra japanese fonts, marumoji"
 
 CATEGORIES=	japanese x11
 DIST_SUBDIR=	ja-fonts
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 DISTNAME=		ja-fonts-funet
 PKGNAME=		${DISTNAME}-19911117

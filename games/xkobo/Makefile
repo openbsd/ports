@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"multi-way scrolling shoot'em up for X11, addictive"
 
 DISTNAME=	xkobo-1.11
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.uoknor.edu/mirrors/X/contrib/games/
 MASTER_SITE_SUBDIR= games

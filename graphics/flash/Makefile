@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/09 23:26:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"open source standalone flash(tm) player"
 
 DISTNAME=	flash-0.4.10
 CATEGORIES=	graphics	
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.363
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.swift-tools.com/Flash/
 

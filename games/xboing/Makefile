@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:07 espie Exp $
 
 COMMENT=	"X11 arcade"
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

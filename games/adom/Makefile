@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:06 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT=	"Ancient Domains of Mystery - roguelike"
 
 DISTNAME=	adom-g15
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 DISTFILES=	adom-099g15-elf.tar.gz
 

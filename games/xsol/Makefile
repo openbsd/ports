@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"solitaire"
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # License: BSD

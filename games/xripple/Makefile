@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 01:06:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"screen bottom ripples like a pool of water"
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.cin.nihon-u.ac.jp/pub/X11/enlightenment/misc/ \
 		ftp://ftp.dataplus.se/pub/linux/enlightenment/misc/ \

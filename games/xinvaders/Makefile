@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/05 20:46:50 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:07 espie Exp $
 #
 
 COMMENT=	"shoot them nasty little bugs"
@@ -7,7 +7,7 @@ DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 

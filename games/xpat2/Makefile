@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 20:57:08 espie Exp $
 
 COMMENT=	"X11 solitaire with 14 variations"
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 
