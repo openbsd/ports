@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/28 21:40:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/08 15:06:23 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
-DISTNAME=	R-1.9.0
+DISTNAME=	R-1.9.1
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
 

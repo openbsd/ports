@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_main_platform_c,v 1.1 2004/04/28 21:40:31 naddy Exp $
---- src/main/platform.c.orig	2004-04-14 14:54:25.000000000 -0600
-+++ src/main/platform.c	2004-04-14 14:54:50.000000000 -0600
+$OpenBSD: patch-src_main_platform_c,v 1.2 2004/08/08 15:06:24 naddy Exp $
+--- src/main/platform.c.orig	Mon May 17 23:04:54 2004
++++ src/main/platform.c	Mon Jul 26 19:13:19 2004
 @@ -915,7 +915,8 @@ SEXP do_getlocale(SEXP call, SEXP op, SE
      else  SET_STRING_ELT(ans, 0, mkChar(""));
      UNPROTECT(1);
- #ifdef HAVE_NL_LANGINFO
+ #ifdef HAVE_LANGINFO_CODESET
 -    utf8locale = strcmp(nl_langinfo(CODESET), "UTF-8") == 0;
-+    // utf8locale = strcmp(nl_langinfo(CODESET), "UTF-8") == 0;
++    /* utf8locale = strcmp(nl_langinfo(CODESET), "UTF-8") == 0; */
 +    utf8locale = 0;
  #endif    
      return ans;
