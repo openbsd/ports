@@ -7,7 +7,7 @@ Shift-JIS (as known as Microsoft JIS) is a variant of JIS that use
 8 bit characters instead of sequences to encode state-shift. It's a
 broken scheme, as was to be expected.
 
-All of this does NOT incorporate seemlessly into grander schemes such
+All of this does NOT incorporate seamlessly into grander schemes such
 as unicode yet...
 
 Nkf is a tool to convert between all the commonest japanese encodings.

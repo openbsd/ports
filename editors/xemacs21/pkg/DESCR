@@ -10,7 +10,7 @@ The XEmacs web page can be browsed, using any WWW browser at
 
 NOTE:
 	This package contains the XEmacs engine.
-	Every major functionnality of XEmacs is a separate module.
+	Every major functionality of XEmacs is a separate module.
 	A complete set of theses modules is bundled in the
 	"xemacs21-sumo" package.
 

@@ -1,7 +1,7 @@
 xcursorgen  - create an X cursor file from a collection of PNG images
 
 The package comes with three cursor themes : 'redglass', 'whiteglass'
-and 'handhelds'. Additionnaly selecting the 'core' theme switches back
+and 'handhelds'. Additionally selecting the 'core' theme switches back
 to the traditional X server "core" cursors. 
 
 To use the new cursors 

@@ -5,6 +5,6 @@ cess resource minimizing manner.
 
 strobe approximates a parallel finite state machine inter-
 nally. In non-linear multi-host mode it attempts to appor-
-tion bandwidth and sockets amoung  the  hosts  very  effi-
+tion bandwidth and sockets among  the  hosts  very  effi-
 ciently.   This  can  reap  appreciable gains in speed for
 multiple distinct hosts/routes.

@@ -8,5 +8,5 @@ o user-friendly, intuitive interface (both GTK+ and Motif)
 o passive and non-passive data transfers 
 o convenient session manager window 
 o on-line help system 
-o recursive downloads and uploads ith resume option 
+o recursive downloads and uploads with resume option 
 o multiple delete with option to recurse 

@@ -2,7 +2,7 @@ The dvd+rw-tools package is used to master DVD media, both +RW/+R and
 -R[W].  The principal burning utility is called growisofs.  Although
 it may be possible to with some operating systems to put arbitrary
 file systems on DVD+RW, it's probably not very practical, because
-it is likely desirable to acess the data on an arbitrary computer.
+it is likely desirable to access the data on an arbitrary computer.
 In other words, ISO9660 filesystems are most likely desired.  It may
 also be desirable to add data now and then, but DVD+RW has no notion of
 multiple sessions.  Growisofs provides a way to both lay down and

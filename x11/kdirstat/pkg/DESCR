@@ -1,4 +1,4 @@
 KDirStat (KDE Directory Statistics) is a small utility program that sums
-up disk usage for direcory trees, very much like the Unix 'du' command.
+up disk usage for directory trees, very much like the Unix 'du' command.
 It displays the disk space used up by a directory tree, both numerically 
 and graphically. 

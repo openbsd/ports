@@ -16,4 +16,4 @@ Wonder why you should use it instead of BIND?
 * better control over the cache
 * better run-time control
 * strict RFC 2181 matching
-* negative cacheing
+* negative caching

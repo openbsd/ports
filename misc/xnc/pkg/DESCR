@@ -9,7 +9,7 @@ formats as easy as files on normal Disk FS
 Editing and Viewing System (IVES) edit text files and view
 ASCII/HEX and many image formats ; built in xterminal (rxvt
 2.20) shows output from applications; configurable User menu
-do quick execute for usefull commands; exention association
+do quick execute for useful commands; extension association
 and execution list allow execute application by associated
 extension; processes information shows list of processes and
 can send signal to its; disk and memory summary information;

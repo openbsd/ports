@@ -1,5 +1,5 @@
 The project stands for Medical Image Conversion. 
-Released under the GPL licence, it comes with the full
+Released under the GPL license, it comes with the full
 C-source code of the library, a flexible command-line utility and a
 neat graphical front-end using the Gtk+ toolkit. The supported 
 formats are:

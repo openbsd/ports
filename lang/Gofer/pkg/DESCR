@@ -43,7 +43,7 @@ are involved.  Gofer extends the Haskell type class system in several ways:
 
   o  Basic approach to dictionary construction is different, based on the
      approach I described in a posting to the Haskell mailing list early in
-     Feburary 1991.  The resulting system ensures that all dictionaries are
+     February 1991.  The resulting system ensures that all dictionaries are
      constructed before evaluation begins, avoiding repeated construction
      and enabling the shared evaluation of overloaded constants in
      dictionaries.

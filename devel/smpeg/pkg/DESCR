@@ -8,6 +8,6 @@ plaympeg and gtv are simple video players provided to test
 the library.
 
 This is a work in progress. Only 16 bit colour depth is
-supported.  The player will dynamically conver to other
+supported.  The player will dynamically convert to other
 colour depths, but playback will be much faster if your
 display is already set to 16 bit colour depth.

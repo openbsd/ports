@@ -17,7 +17,7 @@ should feel at home with Zile. Zile features
       register features of Emacs are available under Zile.
     * Minibuffer completion. Zile can complete the user written text.
       This is very useful for M-x commands and for selecting files.
-    * Colors. Zile makes use of the color capatibilities of the terminal
+    * Colors. Zile makes use of the color capabilities of the terminal
       if available.
     * Source highlighting (``C'', ``C++'', and shell scripts). Zile can
       highlight ``C'', ``C++'' source files and shell scripts for

@@ -12,7 +12,7 @@ If you're a Berkeley mail person, you can set scanCommand to:
 	echo x | mail | grep "^.[NU]"
 
 Or use the ``frm'' utility that is part of the Elm port as your
-scanCommand.  A simular utility is the ``fromwho'' package, posted to
+scanCommand.  A similar utility is the ``fromwho'' package, posted to
 comp.sources.unix volume 25.
 
 -- David	(obrien@cs.ucdavis.edu)

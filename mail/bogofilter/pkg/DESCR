@@ -5,7 +5,7 @@ This package implements a fast Bayesian spam filter along the lines suggested
 by Paul Graham in his article "A Plan For Spam".
 
 This version substantially improves on Paul's proposal by doing smarter
-lexical analysis.  In particular, hostames and IP addresses are retained
+lexical analysis.  In particular, hostnames and IP addresses are retained
 as recognition features rather than broken up. Various kinds of MTA 
 cruft such as dates and message-IDs are discarded so as not to bloat
 the word lists.

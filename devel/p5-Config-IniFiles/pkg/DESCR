@@ -4,7 +4,7 @@ receipt of a signal. Configurations can be imported (inherited,
 stacked,...), sections can be grouped, and settings can be accessed from
 a tied hash.
 
-Ini files consist of a number of sections, each preceeded with the
+Ini files consist of a number of sections, each preceded with the
 section name in square brackets. Parameters are specified in each section
 as Name=Value. Any spaces around the equals sign will be ignored, and the
 value extends to the end of the line.

@@ -1,7 +1,7 @@
 xsol plays a solitaire game similar to Klondike.  The playing field is
 made up of seven slots, where stacks are built in descending value with
 alternating suits.  Aces are built on at the top, and ascending order in the
-same suit.   Kings can be moved to any empty space in the play-ing field.
+same suit.   Kings can be moved to any empty space in the playing field.
 The deck is gone through only once, card by card.
 
 The cards are moved using the Left mouse button (Button1).

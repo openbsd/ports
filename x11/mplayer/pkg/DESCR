@@ -30,7 +30,7 @@ entering
 
 sysctl machdep.userldt=1
 
-Both sysctl settings can also be achived via /etc/sysctl.conf.
+Both sysctl settings can also be achieved via /etc/sysctl.conf.
 
 Flavors:
 

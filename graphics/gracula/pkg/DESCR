@@ -1,7 +1,7 @@
 Graphic Counter Language is a powerful programming language for the creation of
 graphic and textual counters and timers. These can be used on the web, as well
 as in graphic application programs (such as XWindow applications) which can
-call the GCL interpeter internally and have it create a counter or a timer.
+call the GCL interpreter internally and have it create a counter or a timer.
 
 Gracula is the compiler/interpreter for Graphic Counter Language, developed
 under FreeBSD, though usable on any Unix system.

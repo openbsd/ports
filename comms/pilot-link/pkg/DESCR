@@ -3,7 +3,7 @@ handheld with Unix, Linux, and any other POSIX-compatible machine. pilot-link
 works with all PalmOS® handhelds, including those made by Handspring, Sony, and
 Palm, as well as others.
 
-pilot-link includes userspace "conduits" that allow you to syncronize
+pilot-link includes userspace "conduits" that allow you to synchronize
 information to and from your Palm device, as well as libraries of
 Palm-compatible functions that allow other applications to take advantage of the
 code included in pilot-link.

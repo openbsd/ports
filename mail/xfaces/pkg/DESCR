@@ -20,7 +20,7 @@ What is XFaces?
         from one user, list or whatever the image will only show up once.
 
       - You can use regular expressions to search any headers to choose
-        images and sounds or ignore that mail message compleatly. This
+        images and sounds or ignore that mail message completely. This
         lets you specify an image/sound for mail that comes from a
         mailing list or ignore mail that you have already seen but
         left in your system mailbox.

@@ -2,7 +2,7 @@ Essentially, robomoderators, moderation support programs, and mail
 to news gateways are all the same thing.  They take an incoming
 message, from either an MTA or from a user filtering program like
 procmail, or perhaps even directly from a user's MUA, perform a
-variety of rewrites quired to turn an RFC 822 message into an RFC
+variety of rewrites required to turn an RFC 822 message into an RFC
 1036 message, possibly perform a variety of checks and additional
 rewrites suited to the particular application, and then hand the
 message off to a news server.  News to mail gateways just do exactly

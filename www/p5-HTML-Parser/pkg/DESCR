@@ -16,7 +16,7 @@ The modules present in this collection are:
   with embedded HTML &gt;entities&gt;.
 
   HTML::HeadParser - A lightweight HTML::Parser subclass that
-  extractsinformation from the <HEAD> section of an HTML document.
+  extracts information from the <HEAD> section of an HTML document.
 
   HTML::LinkExtor - An HTML::Parser subclass that extracts links
   from an HTML document.

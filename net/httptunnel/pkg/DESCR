@@ -1,4 +1,4 @@
-httptunnel creates a bidirectional virtual data path tunnelled in HTTP
+httptunnel creates a bidirectional virtual data path tunneled in HTTP
 requests. The requests can be sent via an HTTP proxy if so desired.
 
 This can be useful for users behind restrictive firewalls.  If WWW

@@ -1,6 +1,6 @@
 Darcs is a revision control system, along the lines of CVS or arch.
 That means that it keeps track of various revisions and branches
-of your project, allows for changes to propogate from one branch
+of your project, allows for changes to propagate from one branch
 to another.  Darcs is intended to be an ``advanced'' revision control
 system.
 

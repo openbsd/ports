@@ -1,5 +1,5 @@
 The Unix Benchmark Utility "ubench" provides a single measure of
-perfomance for machines running various flavors of Unix operating system.
+performance for machines running various flavors of Unix operating system.
 
 Ubench is executing rather senseless mathematical integer and
 floating-point calculations for 3 mins concurrently using several

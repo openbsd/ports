@@ -3,7 +3,7 @@ packets forwarded through your network in real time.  It is really useful
 for network hackers in the following applications:
 
   * black-box protocol auditing - whenever there are two or more
-    propertiary boxes communicating over an undocumented protocol (by 
+    proprietary boxes communicating over an undocumented protocol (by 
     enforcing changes in ongoing transmissions, you will be able to test 
     whether the tested application is secure)
 

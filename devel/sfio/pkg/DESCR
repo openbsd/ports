@@ -3,7 +3,7 @@ via a distinct interface that is more powerful, robust and efficient.
 
 o Separate thread-safe I/O library.
 o Correct sharing of file descriptors across streams and/or processes.
-o An adaptive buffering algorithm enhaces overall I/O performance.
+o An adaptive buffering algorithm enhances overall I/O performance.
 o Efficient and customizable data formatting functions.
 o I/O disciplines can be used to pre/post-process R/W data from/to streams.
 o Streams can be stacked for recursive processing of nested streams.
