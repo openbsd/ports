@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/21 04:02:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/11 00:31:23 espie Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -10,7 +10,7 @@ NEED_VERSION=	1.524
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
-MAINTAINER=	Nikolay Sturm <Nikolay.Sturm@desy.de>
+MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

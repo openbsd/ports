@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/11 00:31:22 espie Exp $
 
 COMMENT=	"remote identd fingerprinting tool"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.515
 HOMEPAGE=	http://www.team-teso.net/
 MASTER_SITES=	${HOMEPAGE}releases/
 
-MAINTAINER=	Patroklos Argyroudis <argp@bsd.gr>
+MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 PERMIT_PACKAGE_CDROM=   "no license"
 PERMIT_PACKAGE_FTP=     "no license"

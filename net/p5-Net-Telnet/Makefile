@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/11 00:31:22 espie Exp $
 
 COMMENT=		"perl5 module for interactive network functions"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=		Nick Nauwelaerts <nick@be.wanadoo.com>
+MAINTAINER=		Nick Nauwelaerts <nick@wanadoo.be>
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/13 23:38:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/11 00:31:23 espie Exp $
 
 ONLY_FOR_ARCHS=		alpha i386
 
@@ -10,7 +10,7 @@ CATEGORIES=		net devel
 NEED_VERSION=		1.504
 HOMEPAGE=		http://state-threads.sourceforge.net/
 
-MAINTAINER=		Patroklos Argyroudis <argp@bsd.gr>
+MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
 
 # MPL or GPL
 PERMIT_PACKAGE_CDROM=	Yes

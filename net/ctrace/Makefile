@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/11 00:31:22 espie Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
@@ -7,7 +7,7 @@ CATEGORIES=	net
 NEED_VERSION=	1.515
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
-MAINTAINER=	Patroklos Argyroudis <argp@bsd.gr>
+MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

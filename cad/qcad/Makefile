@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/07 15:32:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/11 00:31:22 espie Exp $
 
 NOT_FOR_ARCHS=	alpha
 
@@ -11,7 +11,7 @@ NEED_VERSION=		1.497
 
 HOMEPAGE=		http://www.qcad.org/
 
-MAINTAINER=		Jacob Meuser <jakemsr@clipper.net>
+MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
