@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/15 23:04:37 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/10 00:26:21 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 COMMENT=	"ascii art library"
@@ -6,8 +6,7 @@ COMMENT=	"ascii art library"
 DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
 NEED_VERSION=	1.384
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= libs/graphics
+MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
