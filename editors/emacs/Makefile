@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/12/27 20:18:57 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/01/31 21:40:05 marc Exp $
 #
 
 VER=		20.3
@@ -9,6 +9,7 @@ MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 
+#USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -37,10 +38,14 @@ STRIP_PROGS+=	${DISTNAME}
 STRIP_EXECS=	cvtmail digest-doc emacsserver fakemail hexl movemail \
 		profile sorted-doc yow
 
+# Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
+#
+PLIST=		${WRKDIR}/PLIST
+
 pre-install pre-package:
-	@${RM} -f ${PKGDIR}/PLIST
+	@${RM} -f ${WRKDIR}/PLIST
 	@${SED} -e 's/||CONFIG||/${GCCARCH}/' \
-		${FILESDIR}/PLIST.template >${PKGDIR}/PLIST
+		${FILESDIR}/PLIST.template >${WRKDIR}/PLIST
 
 post-install:
 .for file in ${STRIP_PROGS}
