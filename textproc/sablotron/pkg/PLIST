@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/09/11 23:12:55 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/19 00:50:10 avsm Exp $
 bin/sabcmd
+bin/sablot-config
 include/sabcfg.h
 include/sabdbg.h
 include/sablot.h
