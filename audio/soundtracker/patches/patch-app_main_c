@@ -1,0 +1,37 @@
+$OpenBSD: patch-app_main_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+--- app/main.c.orig	Sun Aug 12 06:52:17 2001
++++ app/main.c	Mon Feb  4 22:04:53 2002
+@@ -79,6 +79,9 @@ main (int argc,
+ #ifdef DRIVER_SGI
+ 	driver_out_irix,
+ #endif
++#ifdef DRIVER_SUN
++	driver_out_sun, driver_in_sun,
++#endif
+ #ifndef NO_AUDIOFILE
+ //	driver_out_file,
+ #endif
+@@ -91,7 +94,9 @@ main (int argc,
+ 	mixer_kbfloat,
+ 	mixer_integer32;
+ 
++#ifndef __OpenBSD__
+     g_thread_init(NULL);
++#endif
+ 
+     if(pipe(pipea) || pipe(pipeb)) {
+ 	fprintf(stderr, "Cränk. Can't pipe().\n");
+@@ -168,6 +173,13 @@ main (int argc,
+ #ifdef DRIVER_SGI
+     drivers[DRIVER_OUTPUT] = g_list_append(drivers[DRIVER_OUTPUT],
+ 					   &driver_out_irix);
++#endif
++
++#ifdef DRIVER_SUN
++    drivers[DRIVER_OUTPUT] = g_list_append(drivers[DRIVER_OUTPUT],
++					   &driver_out_sun);
++    drivers[DRIVER_INPUT] = g_list_append(drivers[DRIVER_INPUT],
++					  &driver_in_sun);
+ #endif
+ 
+ #ifdef _WIN32

@@ -1,0 +1,71 @@
+--- configure.in.orig	Wed Jul 25 11:07:33 2001
++++ configure.in	Tue Feb  5 05:54:53 2002
+@@ -61,10 +61,17 @@
+ dnl Test for GTK+ / GNOME
+ dnl -----------------------------------------------------------------------
+ 
++gtk_threads="gthreads"
++case `uname` in
++  OpenBSD*)
++    gtk_threads=""
++    LIBS="$LIBS -pthread -lintl"
++  ;;
++esac
+ AM_PATH_GTK(1.2.2,
+ 	    ,
+             AC_MSG_ERROR(Cannot find GTK: Is gtk-config in path?),
+-	    "gthread")
++	    $gtk_threads)
+ 
+ gnome=yes
+ AC_ARG_ENABLE(gnome,
+@@ -76,7 +83,7 @@
+   AC_MSG_CHECKING(for Gnome compile flags)
+   GNOME_CFLAGS=`$gnomepath gnomeui --cflags 2>/dev/null`
+   GNOME_VER=`$gnomepath --version |$sedpath 's/gnome-libs //'`
+-  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([[0-9]*]*\).\([[0-9]*]*\).\([[0-9]*]*\)/\1/'`
++  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+   if test "_$GNOME_MAJOR" = "_0"; then
+     gnome=no
+     AC_MSG_RESULT([old Gnome found, building without it.])
+@@ -133,9 +140,15 @@
+ oss_support=no)
+ 
+ if test x$oss_support != xno; then
+-  AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h)
++  AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h soundcard.h)
+   if test "${ac_cv_header_sys_soundcard_h}" = "yes" || \
+-      test "${ac_cv_header_machine_soundcard_h}" = "yes"; then
++      test "${ac_cv_header_machine_soundcard_h}" = "yes" || \
++      test "${ac_cv_header_soundcard_h}" = "yes"; then
++    case `uname` in
++      OpenBSD*)
++        LIBS="$LIBS -lossaudio"
++      ;;
++    esac
+     AC_DEFINE(DRIVER_OSS)
+   fi
+ fi
+@@ -204,6 +217,22 @@
+   fi
+   ;;
+ esac
++
++dnl -----------------------------------------------------------------------
++dnl Test for Sun audio
++dnl -----------------------------------------------------------------------
++
++AC_ARG_ENABLE(sun,
++[  --disable-sun           Disable Sun driver (default = try)],
++sun_support=no)
++
++if test x$sun_support != xno; then
++  AC_CHECK_HEADERS(sys/audioio.h)
++  if test "${ac_cv_header_sys_audioio_h}" = "yes"; then
++    AC_DEFINE(DRIVER_SUN)
++  fi
++fi
++
+ 
+ dnl -----------------------------------------------------------------------
+ dnl Other tests

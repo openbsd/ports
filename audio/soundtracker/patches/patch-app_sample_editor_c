@@ -1,0 +1,30 @@
+$OpenBSD: patch-app_sample_editor_c,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+--- app/sample-editor.c.orig	Wed Jul 25 11:46:45 2001
++++ app/sample-editor.c	Mon Feb  4 04:38:32 2002
+@@ -183,7 +183,7 @@ static void sample_editor_reverse_clicke
+ static void
+ sample_editor_lock_sample (void)
+ {
+-    g_mutex_lock(current_sample->sample.lock);
++    pthread_mutex_lock(current_sample->sample.lock);
+ }
+ 
+ static void
+@@ -192,7 +192,7 @@ sample_editor_unlock_sample (void)
+     if(gui_playing_mode) {
+ 	mixer->updatesample(&current_sample->sample);
+     }
+-    g_mutex_unlock(current_sample->sample.lock);
++    pthread_mutex_unlock(current_sample->sample.lock);
+ }
+ 
+ void
+@@ -462,7 +462,7 @@ sample_editor_page_create (GtkNotebook *
+ #if !defined(NO_AUDIOFILE) && HAVE_DLFCN_H
+     { // hack, hack
+ 	void *handle, *function;
+-	handle = dlopen(NULL, RTLD_NOW);
++	handle = dlopen(NULL, DL_LAZY);
+ 	function = dlsym(handle, "afSetVirtualPCMMapping");
+ 	if(function == NULL) {
+ 	    libaf2 = FALSE;

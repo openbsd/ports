@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+bin/soundtracker
+share/doc/soundtracker/FAQ
+share/doc/soundtracker/NEWS
+share/doc/soundtracker/README
+share/doc/soundtracker/hacking.txt
+share/doc/soundtracker/xi.txt
+share/doc/soundtracker/xm.txt
+share/locale/de/LC_MESSAGES/soundtracker.mo
+share/locale/es/LC_MESSAGES/soundtracker.mo
+share/locale/fr/LC_MESSAGES/soundtracker.mo
+share/locale/gl/LC_MESSAGES/soundtracker.mo
+share/locale/it/LC_MESSAGES/soundtracker.mo
+share/locale/pl/LC_MESSAGES/soundtracker.mo
+share/locale/ja/LC_MESSAGES/soundtracker.mo
+share/locale/ru/LC_MESSAGES/soundtracker.mo
+share/locale/sl/LC_MESSAGES/soundtracker.mo
+%%gnome%%
+@dirrm share/doc/soundtracker

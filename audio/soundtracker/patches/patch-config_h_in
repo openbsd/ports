@@ -1,0 +1,133 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+--- config.h.in.orig	Mon Feb  4 12:36:39 2002
++++ config.h.in	Mon Feb  4 12:37:24 2002
+@@ -25,9 +25,6 @@
+ /* Define to `long' if <sys/types.h> doesn't define.  */
+ #undef off_t
+ 
+-/* Define if you need to in order for stat and other things to work.  */
+-#undef _POSIX_SOURCE
+-
+ /* Define to `unsigned' if <sys/types.h> doesn't define.  */
+ #undef size_t
+ 
+@@ -52,17 +49,12 @@
+ #undef DRIVER_ALSA_050
+ #undef DRIVER_ESD
+ #undef DRIVER_SGI
++#undef DRIVER_SUN
+ #undef USE_GNOME
+ #undef NO_AUDIOFILE
+ #undef NO_GASP
+ #undef NO_ASM
+ 
+-#undef ENABLE_NLS
+-#undef HAVE_CATGETS
+-#undef HAVE_GETTEXT
+-#undef HAVE_LC_MESSAGES
+-#undef HAVE_STPCPY
+-
+ /* Define if you have the __argz_count function.  */
+ #undef HAVE___ARGZ_COUNT
+ 
+@@ -78,12 +70,33 @@
+ /* Define if you have the esd_play_stream function.  */
+ #undef HAVE_ESD_PLAY_STREAM
+ 
++/* Define if you have the feof_unlocked function.  */
++#undef HAVE_FEOF_UNLOCKED
++
++/* Define if you have the fgets_unlocked function.  */
++#undef HAVE_FGETS_UNLOCKED
++
+ /* Define if you have the getcwd function.  */
+ #undef HAVE_GETCWD
+ 
++/* Define if you have the getegid function.  */
++#undef HAVE_GETEGID
++
++/* Define if you have the geteuid function.  */
++#undef HAVE_GETEUID
++
++/* Define if you have the getgid function.  */
++#undef HAVE_GETGID
++
+ /* Define if you have the getpagesize function.  */
+ #undef HAVE_GETPAGESIZE
+ 
++/* Define if you have the getuid function.  */
++#undef HAVE_GETUID
++
++/* Define if you have the mempcpy function.  */
++#undef HAVE_MEMPCPY
++
+ /* Define if you have the munmap function.  */
+ #undef HAVE_MUNMAP
+ 
+@@ -117,6 +130,12 @@
+ /* Define if you have the strdup function.  */
+ #undef HAVE_STRDUP
+ 
++/* Define if you have the strtoul function.  */
++#undef HAVE_STRTOUL
++
++/* Define if you have the tsearch function.  */
++#undef HAVE_TSEARCH
++
+ /* Define if you have the <argz.h> header file.  */
+ #undef HAVE_ARGZ_H
+ 
+@@ -138,9 +157,21 @@
+ /* Define if you have the <nl_types.h> header file.  */
+ #undef HAVE_NL_TYPES_H
+ 
++/* Define if you have the <soundcard.h> header file.  */
++#undef HAVE_SOUNDCARD_H
++
++/* Define if you have the <stddef.h> header file.  */
++#undef HAVE_STDDEF_H
++
++/* Define if you have the <stdlib.h> header file.  */
++#undef HAVE_STDLIB_H
++
+ /* Define if you have the <string.h> header file.  */
+ #undef HAVE_STRING_H
+ 
++/* Define if you have the <sys/audioio.h> header file.  */
++#undef HAVE_SYS_AUDIOIO_H
++
+ /* Define if you have the <sys/param.h> header file.  */
+ #undef HAVE_SYS_PARAM_H
+ 
+@@ -153,12 +184,28 @@
+ /* Define if you have the <unistd.h> header file.  */
+ #undef HAVE_UNISTD_H
+ 
+-/* Define if you have the i library (-li).  */
+-#undef HAVE_LIBI
+-
+ /* Name of package */
+ #undef PACKAGE
+ 
+ /* Version number of package */
+ #undef VERSION
++
++/* Define if you have the iconv() function. */
++#undef HAVE_ICONV
++
++/* Define as const if the declaration of iconv() needs const. */
++#undef ICONV_CONST
++
++/* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
++#undef HAVE_LANGINFO_CODESET
++
++/* Define if your <locale.h> file defines LC_MESSAGES. */
++#undef HAVE_LC_MESSAGES
++
++/* Define to 1 if translation of program messages to the user's native language
++   is requested. */
++#undef ENABLE_NLS
++
++/* Define if the GNU gettext() function is already present or preinstalled. */
++#undef HAVE_GETTEXT
+ 
