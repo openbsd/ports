@@ -1,0 +1,8 @@
+Jcode.pm is a Perl module that handles various Japanese charsets. It has all
+features available on jcode.pl-2.10 PLUS
+
+- Object-oriented approach on Japanese text handling 
+- mime header handling 
+- Unicode feature (UCS2 and UTF8) 
+
+WWW: ${HOMEPAGE}

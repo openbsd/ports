@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/30 15:33:21 lebel Exp $
+${P5ARCH}/Jcode.pm
+${P5ARCH}/Jcode/Constants.pm
+${P5ARCH}/Jcode/H2Z.pm
+${P5ARCH}/Jcode/Tr.pm
+${P5ARCH}/Jcode/Unicode.pm
+${P5ARCH}/Jcode/Unicode/Constants.pm
+${P5ARCH}/Jcode/Unicode/NoXS.pm
+${P5ARCH}/Jcode/_test.pl
+${P5ARCH}/auto/Jcode/.packlist
+${P5ARCH}/auto/Jcode/Unicode/Unicode.bs
+${P5ARCH}/auto/Jcode/Unicode/Unicode.so
+man/man3p/Jcode.3p
+man/man3p/Jcode::Unicode.3p
+man/man3p/Jcode::Unicode::Constants.3p
+man/man3p/Jcode::Unicode::NoXS.3p
+@dirrm ${P5ARCH}/auto/Jcode/Unicode
+@dirrm ${P5ARCH}/auto/Jcode
+@dirrm ${P5ARCH}/Jcode/Unicode
+@dirrm ${P5ARCH}/Jcode
