@@ -16,8 +16,6 @@ libexec/authenticate_pgp
 libexec/setupauth
 lib/liblpr.a
 @exec ranlib %D/%F
-lib/liblpr.so.3.21
-@exec /sbin/ldconfig -m %B
 man/man1/cancel.1
 man/man1/lp.1
 man/man1/lpbanner.1
