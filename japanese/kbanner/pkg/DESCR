@@ -2,4 +2,4 @@ Kbanner reads each filename in sequence and displays it
 in large letters on the standard output.  JIS, EUC, and
 Shifted-JIS codes are available for kanji code.
 
-Homepage: ${HOMEPAGE}
+WWW: ${HOMEPAGE}
