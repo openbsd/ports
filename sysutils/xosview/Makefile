@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2002/03/18 06:51:24 form Exp $
+# $OpenBSD: Makefile,v 1.26 2002/05/13 02:56:50 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
 
 DISTNAME=	xosview-1.8.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xosview
+NEED_VERSION=	1.528
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xosview/}
 
 HOMEPAGE=	http://xosview.sourceforge.net/
 
