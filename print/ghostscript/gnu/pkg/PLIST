@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/12/03 13:17:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/13 09:43:48 espie Exp $
 %%gtk%%
 bin/bdftops
 bin/dvipdf
@@ -36,10 +36,6 @@ man/de/man1/ansi2knr.1
 man/de/man1/dvipdf.1
 man/de/man1/eps2eps.1
 man/de/man1/font2c.1
-man/de/man1/gsbj.1
-man/de/man1/gsdj.1
-man/de/man1/gsdj500.1
-man/de/man1/gslj.1
 man/de/man1/gsnd.1
 man/de/man1/pdf2dsc.1
 man/de/man1/pdf2ps.1
