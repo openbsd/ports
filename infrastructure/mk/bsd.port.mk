@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.284 2000/05/29 16:43:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.285 2000/05/30 14:44:23 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -406,9 +406,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .endif
 
 FAKE?=No
-.if ${FAKE:U} == "YES"
 WRKINST?=${WRKDIR}/fake-${ARCH}${_FEXT}
-.endif
 
 # Get the architecture
 ARCH!=	uname -m
@@ -523,7 +521,7 @@ _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
-.if defined(WRKINST)
+.if ${FAKE:U} == "YES"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
 .elif defined(SEPARATE_BUILD)
@@ -1014,7 +1012,7 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
-.if defined(WRKINST) && !defined(TRUEPREFIX)
+.if ${FAKE:U} == "YES" && !defined(TRUEPREFIX)
 MANPREFIX?=  ${WRKINST}${PREFIX}
 CATPREFIX?=  ${WRKINST}${PREFIX}
 .else
@@ -1915,9 +1913,7 @@ clean: pre-clean
 .  if ${CLEANDEPENDS:L}=="yes"
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
-.if defined(WRKINST)
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
-.endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
