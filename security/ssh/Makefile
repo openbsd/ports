@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 1999/09/02 18:59:31 brad Exp $
+# $OpenBSD: Makefile,v 1.35 1999/09/26 21:15:32 espie Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -14,7 +14,7 @@ MAINTAINER=	todd@openbsd.org
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
-.if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
+.if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES)
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
 MASTER_SITES+=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 		ftp://idea.dsi.unimi.it/pub/security/crypt/math/
@@ -46,43 +46,43 @@ CONFIGURE_ARGS= --without-x
 #
 #CONFIGURE_ARGS+= --with-none
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 CONFIGURE_ARGS+= --with-rsaref
 .endif
 
 # Include SOCKS firewall support
-.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
+.if defined(USE_SOCKS) && ${USE_SOCKS:U} == YES
 CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
 # Include support for the SecureID card
 # Warning: untested !
-.if defined(USE_SECUREID) && ${USE_SECUREID} == YES
+.if defined(USE_SECUREID) && ${USE_SECUREID:U} == YES
 CONFIGURE_ARGS+= --with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
 # commercial use may require a licence in a number of countries
 #
-.if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
+.if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA:U} == YES
 CONFIGURE_ARGS+= --without-idea
 .endif
 
 pre-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 	@${CP} ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
 .endif
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
 
 post-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 	@${RM} ${PATCHDIR}/patch-rsaref2
 .endif
 
 fetch-depends:
 .if !defined(NO_WARNINGS)
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT:U} != YES && ${USA_RESIDENT:U} != NO
 	@${ECHO}
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
 	@${ECHO} resident or NO otherwise.  USA residents must obtain the
@@ -98,7 +98,7 @@ fetch-depends:
 .endif
 
 post-extract:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 	@${MV} ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
 .endif
 
