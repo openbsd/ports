@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/14 19:16:46 espie Exp $
 
 COMMENT=	"full-screen ncurses or GTK-based audio mixer"
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+= --without-gtk
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
 USE_X11=	Yes
-WANTLIB+=	X11 Xext Xft Xinerama Xrender
+WANTLIB+=	X11 Xext Xft Xinerama Xrender Xcursor
 WANTLIB+=	fontconfig freetype.13
 WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0
 WANTLIB+=	pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 atk-1.0.0.0
