@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/08/15 18:51:28 mark Exp $
+# $OpenBSD: Makefile,v 1.11 2002/08/19 17:06:17 mark Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -pedantic -DNDEBUG" \
 		LD="${CC}"
-
-#WRKDIST=	${WRKDIR}/antiword.0.32
 
 DOCS=	ChangeLog FAQ History Netscape QandA ReadMe
 
