@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2003/05/30 14:42:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.71 2003/07/06 17:16:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -12,6 +12,7 @@
      SUBDIR += colorls
      SUBDIR += contool
      SUBDIR += freedt
+     SUBDIR += ggrep
      SUBDIR += gkrellm
      SUBDIR += idled
      SUBDIR += knutclient
