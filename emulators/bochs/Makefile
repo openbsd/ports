@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/26 15:58:18 todd Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/26 05:52:55 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
-COMMENT=	"x86 CPU emulator"
-DISTNAME=	bochs-2000_0325a
+COMMENT=	"x86 machine simulator"
+DISTNAME=	bochs-1.2.pre1
 CATEGORIES=	emulators
 NEED_VERSION=	1.364
-MASTER_SITES=	ftp://ftp.bochs.com/bochs/
+MASTER_SITES=	http://prdownloads.sourceforge.net/bochs/
 
-HOMEPAGE=	http://www.bochs.com/
+HOMEPAGE=	http://bochs.sourceforge.net/
 
 MAINTAINER=	Todd T. Fries <todd@OpenBSD.org>
 
@@ -20,7 +20,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-vga \
 		--enable-fpu --enable-cdrom
 
-FLAVORS=	debug i386 i486 pci smp net no_x11 term
+FLAVORS=	debug i386 i486 i686 pci smp net no_x11 term
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
@@ -39,6 +39,8 @@ CONFIGURE_ARGS+= --with-x11
 CONFIGURE_ARGS+= --enable-cpu-level="3"
 .elif ${FLAVOR:L:Mi486}
 CONFIGURE_ARGS+= --enable-cpu-level="4"
+.elif ${FLAVOR:L:Mi686}
+CONFIGURE_ARGS+= --enable-cpu-leve="6"
 .else
 CONFIGURE_ARGS+= --enable-cpu-level="5"
 .endif
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+= --enable-pci
 .endif
 
 .if ${FLAVOR:L:Msmp}
-CONFIGURE_ARGS+= --enable-num-sim=2
+CONFIGURE_ARGS+= --enable-processors=2
 .endif
 
 .if ${FLAVOR:L:Mnet}
@@ -62,18 +64,22 @@ post-configure:
 	@sed -e 's@!!PREFIX!!@${PREFIX}@' \
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
 
+BIOS  = BIOS-bochs-4-processors BIOS-bochs-2-processors
+BIOS += BIOS-bochs-2001_0524 BIOS-bochs-2001_0517
+BIOS += VGABIOS-elpin-2.40
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/bios
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bochs
 	${INSTALL_PROGRAM} ${WRKBUILD}/bochs ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bios/BIOS-bochs-990925a ${PREFIX}/share/bochs/bios
-	${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-elpin-2.20 ${PREFIX}/share/bochs/bios
+	cd ${WRKSRC}/bios; ${INSTALL_DATA} ${BIOS} ${PREFIX}/share/bochs/bios
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/font/hercules.bdf ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA} ${WRKSRC}/font/vga.bdf ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA} ${WRKSRC}/font/vga.pcf ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA} ${WRKSRC}/bochsrc ${PREFIX}/share/bochs
+	mkfontdir ${PREFIX}/share/bochs/fonts
 
 .include <bsd.port.mk>
