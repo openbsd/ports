@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/20 03:08:59 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/01 23:38:22 brad Exp $
 
 DISTNAME=	lzo-1.04
 CATEGORIES=	archivers devel
@@ -13,10 +13,13 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+post-extract:
+	@chmod +x ${WRKSRC}/acconfig/*
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/lzo
