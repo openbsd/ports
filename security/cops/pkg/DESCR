@@ -1,5 +1,5 @@
 Cops is a set of programs to check how secure your
-system is.  It checks file and directory privledges,
+system is.  It checks file and directory privileges,
 SUID programs, etc.  It has support for checking
 passwords, but this port doesn't include it as it
 is DES based.  This port installs cops in a single
@@ -7,8 +7,3 @@ directory area.  The directory has no non-user
 privledges and cops is meant to be run locally to
 that directory.  The perl version of cops is also
 included in a subdirectory.
-
-This is version 1.04
-
-- Oly
-oly@world.std.com
