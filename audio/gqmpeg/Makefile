@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/27 20:48:24 rohee Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/28 07:48:19 obecian Exp $
 
 COMMENT=	"mpg123 front-end with skin support"
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=		png.1::graphics/png
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LIBPNG="-lpng -lz"
 
-DOCS=			COPYING ChangeLog FAQ README SKIN-SPECS SKIN-SPECS-V1 \
+DOCS=			COPYING ChangeLog FAQ README SKIN-SPECS-V1 \
 	plugin/README.plugin
 
 pre-install:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/03/28 07:34:57 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/03/28 07:48:19 obecian Exp $
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 man/man1/gqmpeg.1
@@ -7,6 +7,7 @@ share/doc/gqmpeg/ChangeLog
 share/doc/gqmpeg/FAQ
 share/doc/gqmpeg/README
 share/doc/gqmpeg/README.plugin
+share/doc/gqmpeg/SKIN-SPECS-V1
 share/gqmpeg/skins/SKIN-SPECS
 @dirrm share/gqmpeg/skins
 @dirrm share/gqmpeg
