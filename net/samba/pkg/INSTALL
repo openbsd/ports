@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/05/30 23:03:00 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/03/23 08:11:15 brad Exp $
 #
 # Pre/post-installation setup of samba
 
@@ -12,8 +12,7 @@ CONFIG_DIR=/etc/samba
 CONFIG_FILE=/etc/samba/smb.conf
 SAMBA_SPOOL=/var/spool/samba
 
-mkdir -p ${SAMBA_SPOOL}
-chmod 1777 ${SAMBA_SPOOL}
+install -d -o root -g wheel -m 1777 ${SAMBA_SPOOL}
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -33,10 +32,10 @@ do_notice()
 #
 do_install()
 {
-    mkdir -p ${CONFIG_DIR}
+    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
     cat /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > ${CONFIG_DIR}/smbpasswd; \
     chmod 600 ${CONFIG_DIR}/smbpasswd
-    cp ${PREFIX}/lib/samba/smb.conf.sample ${CONFIG_FILE}
+    install -o root -g wheel -m 644 ${PREFIX}/lib/samba/smb.conf.sample ${CONFIG_FILE}
     echo
     echo "+---------------"
     echo "| The $1 configuration files in ${CONFIG_DIR},"
@@ -61,7 +60,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -d $CONFIG_DIR ]; then
+	if [ -f $CONFIG_FILE ]; then
 	    do_notice $1
 	else
 	    do_install $1
