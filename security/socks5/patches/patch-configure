@@ -1,6 +1,8 @@
---- aclocal.m4.orig	Fri Mar 12 17:27:38 1999
-+++ aclocal.m4	Fri Mar 12 17:28:08 1999
-@@ -113,7 +113,7 @@
+# $OpenBSD: patch-configure,v 1.1 2000/03/27 23:02:47 form Exp $
+
+--- configure.orig	Fri Mar 12 17:23:42 1999
++++ configure	Fri Mar 12 17:26:20 1999
+@@ -4732,7 +4732,7 @@
  	UNIX_SV*|UNIX_System_V*)
  		SHLIB_LFLAGS="-G"
  		;;
@@ -9,7 +11,7 @@
  		SHLIB_LFLAGS="-Bshareable"
  		SHLIB_CFLAGS="-fpic"
  		PRELOADS="LD_PRELOAD"
-@@ -164,7 +164,7 @@
+@@ -4783,7 +4783,7 @@
  		UNIX_SV*|UNIX_System_V*)
  			SHLIB_CFLAGS=
  			;;

@@ -1,0 +1,24 @@
+# $OpenBSD: patch-rld-c,v 1.1 2000/03/27 23:02:47 form Exp $
+
+--- lib/rld.c.orig	Tue Mar 28 04:56:16 2000
++++ lib/rld.c	Tue Mar 28 04:56:49 2000
+@@ -118,8 +118,10 @@
+     /* Synchronize access to func and lib opening functions if we can...     */
+ 
+ #if __FreeBSD__ != 2
++#ifndef __OpenBSD__
+     name++;
+ #endif
++#endif
+ 
+     if (*fptr) return;
+ 
+@@ -143,7 +145,7 @@
+ static void DGetOriginalFunc(void **fptr, char *name, int libmask) {
+     /* Synchronize access to func and lib opening functions if we can...     */
+ 
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     name++;
+ #endif
+ 

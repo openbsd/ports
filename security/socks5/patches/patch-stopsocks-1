@@ -1,0 +1,19 @@
+# $OpenBSD: patch-stopsocks-1,v 1.1 2000/03/27 23:02:48 form Exp $
+
+--- man/man1/stopsocks.1.orig	Tue Mar 28 06:19:44 2000
++++ man/man1/stopsocks.1	Tue Mar 28 06:20:06 2000
+@@ -1,4 +1,4 @@
+-.TH stopsocks 1 "1 Oct 1998"
++.TH stopsocks 8 "1 Oct 1998"
+ .SH NAME
+ stopsocks \- A script to manage standalone socks5 daemons
+ .SH SYNOPSIS
+@@ -41,7 +41,7 @@
+ Specifies the process that receives \fIsignal\fP
+ .PP
+ .SH SEE ALSO
+-socks5(1)
++socks5(8)
+ .PP
+ .SH AUTHOR
+ NWSL SOCKS5 Development Team
