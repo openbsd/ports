@@ -1,0 +1,20 @@
+$OpenBSD: patch-todo_gui_c,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- todo_gui.c.orig	Mon Feb  5 14:33:52 2001
++++ todo_gui.c	Sun May 27 17:12:01 2001
+@@ -425,12 +425,16 @@ int todo_get_details(struct ToDo *new_to
+    /*it will show it though.  I allow it. */
+    new_todo->description = gtk_editable_get_chars
+      (GTK_EDITABLE(todo_text), 0, -1);
++/*   charset_j2p(new_todo->description, 65536); */
+    new_todo->note = gtk_editable_get_chars
+      (GTK_EDITABLE(todo_text_note), 0, -1);
+    if (new_todo->note[0]=='\0') {
+       free(new_todo->note);
+       new_todo->note=NULL;
+    }
++/* else {
++	   charset_j2p(new_todo->note, 65536);
++   }*/
+ 
+    for (i=0; i<NUM_TODO_CAT_ITEMS; i++) {
+       if (GTK_IS_WIDGET(todo_cat_menu_item2[i])) {

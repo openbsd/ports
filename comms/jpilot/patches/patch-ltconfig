@@ -1,0 +1,52 @@
+$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- ltconfig.orig	Sat Jul 17 23:11:50 1999
++++ ltconfig	Sun May 27 17:28:52 2001
+@@ -1061,6 +1061,9 @@ cygwin* | mingw*)
+     with_gnu_ld=no
+   fi
+   ;;
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ 
+ esac
+ 
+@@ -1317,10 +1320,21 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	 if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++	   export_dynamic_flag_spec='${wl}-E'
++	 fi
++      ;;
++    esac
+     ;;
+ 
+   os2*)
+@@ -1857,13 +1871,10 @@ netbsd*)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
+   ;;
+ 
+ os2*)

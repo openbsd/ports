@@ -1,0 +1,28 @@
+$OpenBSD: patch-todo_c,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- todo.c.orig	Mon Feb  5 14:33:42 2001
++++ todo.c	Sun May 27 17:12:01 2001
+@@ -30,10 +30,6 @@
+ #include "libplugin.h"
+ #include "password.h"
+ 
+-#include "japanese.h"
+-#include "cp1250.h"
+-#include "russian.h"
+-
+ #define TODO_EOF 7
+ 
+ static struct ToDoAppInfo *glob_Ptodo_app_info;
+@@ -240,6 +236,13 @@ int pc_todo_write(struct ToDo *todo, PCR
+    char record[65536];
+    int rec_len;
+    buf_rec br;
++   long char_set;
++
++   get_pref(PREF_CHAR_SET, &char_set, NULL);
++   if (char_set != CHAR_SET_ENGLISH) {
++      if (todo->description) charset_j2p(todo->description, strlen(todo->description)+1, char_set);
++      if (todo->note) charset_j2p(todo->note, strlen(todo->note)+1, char_set);
++   }
+ 
+    rec_len = pack_ToDo(todo, record, 65535);
+    if (!rec_len) {

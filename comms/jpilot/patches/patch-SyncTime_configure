@@ -1,0 +1,123 @@
+$OpenBSD: patch-SyncTime_configure,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- SyncTime/configure.orig	Sun May 27 17:20:39 2001
++++ SyncTime/configure	Sun May 27 17:20:58 2001
+@@ -782,8 +782,41 @@ fi
+ cflags=$CFLAGS
+ 
+ 
++pilot_prefix=""
++# Check whether --with-pilot_prefix or --without-pilot_prefix was given.
++if test "${with_pilot_prefix+set}" = set; then
++  withval="$with_pilot_prefix"
++  :
++fi
++
++
++if test "x$with_pilot_prefix" != "x"; then
++   pilot_prefix=$with_pilot_prefix
++fi
++
++echo $ac_n "checking for pilot-link header files""... $ac_c" 1>&6
++echo "configure:799: checking for pilot-link header files" >&5
++pilotinclude=${FORCE_PILOT_INCLUDES:-no}
++if test $pilotinclude = no ; then
++for pilot_incl in $pilot_prefix/include /usr/include /usr/local/include \
++    /usr/extra/pilot/include /usr/include/libpisock; do
++   if test -r "$pilot_incl/pi-config.h" ; then
++      pilotinclude=yes
++      PILOT_FLAGS="$PILOT_FLAGS -I$pilot_incl"
++      break
++   fi
++done
++fi
++
++if test $pilotinclude = no ; then
++   echo "$ac_t""no" 1>&6
++   { echo "configure: error: Could not find the pilot-link header files" 1>&2; exit 1; }
++else
++   echo "$ac_t""found at $pilot_incl" 1>&6
++fi
++
+ echo $ac_n "checking for main in -lsocket""... $ac_c" 1>&6
+-echo "configure:787: checking for main in -lsocket" >&5
++echo "configure:820: checking for main in -lsocket" >&5
+ ac_lib_var=`echo socket'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -791,14 +824,14 @@ else
+   ac_save_LIBS="$LIBS"
+ LIBS="-lsocket  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 795 "configure"
++#line 828 "configure"
+ #include "confdefs.h"
+ 
+ int main() {
+ main()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:802: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:835: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -819,39 +852,6 @@ else
+ fi
+ 
+ 
+-pilot_prefix=""
+-# Check whether --with-pilot_prefix or --without-pilot_prefix was given.
+-if test "${with_pilot_prefix+set}" = set; then
+-  withval="$with_pilot_prefix"
+-  :
+-fi
+-
+-
+-if test "x$with_pilot_prefix" != "x"; then
+-   pilot_prefix=$with_pilot_prefix
+-fi
+-
+-echo $ac_n "checking for pilot-link header files""... $ac_c" 1>&6
+-echo "configure:836: checking for pilot-link header files" >&5
+-pilotinclude=${FORCE_PILOT_INCLUDES:-no}
+-if test $pilotinclude = no ; then
+-for pilot_incl in $pilot_prefix/include /usr/include /usr/local/include \
+-    /usr/extra/pilot/include /usr/include/libpisock; do
+-   if test -r "$pilot_incl/pi-config.h" ; then
+-      pilotinclude=yes
+-      PILOT_FLAGS="$PILOT_FLAGS -I$pilot_incl"
+-      break
+-   fi
+-done
+-fi
+-
+-if test $pilotinclude = no ; then
+-   echo "$ac_t""no" 1>&6
+-   { echo "configure: error: Could not find the pilot-link header files" 1>&2; exit 1; }
+-else
+-   echo "$ac_t""found at $pilot_incl" 1>&6
+-fi
+-
+ echo $ac_n "checking for pilot library files""... $ac_c" 1>&6
+ echo "configure:857: checking for pilot library files" >&5
+ pilotlibs=${FORCE_PILOT_LIBS:-no}
+@@ -860,7 +860,7 @@ PILOT_LIBS="-lpisock"
+ if test $pilotlibs = no ; then
+ for pilot_libs in $pilot_prefix/lib /usr/lib /usr/local/lib/ \
+   /usr/extra/pilot/lib ; do
+-   if test -r "$pilot_libs/libpisock.so" ; then
++   if test -r "$pilot_libs/libpisock.a" ; then
+       pilotlibs=yes
+       PILOT_LIBS="-L$pilot_libs $PILOT_LIBS"
+       break
+@@ -934,8 +934,8 @@ echo "configure:927: checking to see if 
+    cat > conftest.$ac_ext <<EOF
+ #line 936 "configure"
+ #include "confdefs.h"
+-#include "pi-config.h"
+-   #include "pi-socket.h"
++#include "pi-config.h" 
++#include "pi-socket.h"
+ int main() {
+ pi_close (0); 
+ ; return 0; }

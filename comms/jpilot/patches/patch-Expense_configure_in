@@ -1,0 +1,12 @@
+$OpenBSD: patch-Expense_configure_in,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- Expense/configure.in.orig	Sun May 27 17:22:02 2001
++++ Expense/configure.in	Sun May 27 17:22:19 2001
+@@ -65,7 +65,7 @@ PILOT_LIBS="-lpisock"
+ if test $pilotlibs = no ; then
+ for pilot_libs in $pilot_prefix/lib /usr/lib /usr/local/lib/ \
+   /usr/extra/pilot/lib ; do
+-   if test -r "$pilot_libs/libpisock.so" ; then
++   if test -r "$pilot_libs/libpisock.a" ; then
+       pilotlibs=yes
+       PILOT_LIBS="-L$pilot_libs $PILOT_LIBS"
+       break

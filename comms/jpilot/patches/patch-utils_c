@@ -1,0 +1,69 @@
+$OpenBSD: patch-utils_c,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
+--- utils.c.orig	Mon Feb  5 14:34:06 2001
++++ utils.c	Sun May 27 17:12:01 2001
+@@ -39,6 +39,9 @@
+ #include "plugins.h"
+ #include "libplugin.h"
+ 
++#include "japanese.h"
++#include "cp1250.h"
++#include "russian.h"
+ 
+ #include <pi-source.h>
+ #include <pi-socket.h>
+@@ -1972,7 +1975,7 @@ void multibyte_safe_strncpy(char *dst, c
+        char *p, *q;
+        int n = 0;
+        p = src; q = dst;
+-       while ((*p) && n < (max_len-1)) {
++       while ((*p) && n < (max_len-2)) {
+ 	   if ((*p) & 0x80) {
+ 	       *q++ = *p++;
+ 	       n++;
+@@ -1985,11 +1988,10 @@ void multibyte_safe_strncpy(char *dst, c
+ 	       n++;
+ 	   }
+        }
+-       if ((*p & 0x80 ) && (n < max_len)) {
+-	   *q = *p;
+-       } else {
+-	   *q = '\0';
+-       }
++       if (!(*p & 0x80 ) && (n < max_len-1))
++	       *q++ = *p++;
++
++       *q = '\0';
+    } else {
+       strncpy(dst, src, max_len);
+    }
+@@ -2013,7 +2015,7 @@ char *multibyte_safe_memccpy(char *dst, 
+       int n = 0;
+ 
+       p = (char *)src; q = dst;
+-      while ((*p) && (n < (len -1))) {
++      while ((*p) && (n < (len -2))) {
+         if ((*p) & 0x80) {
+ 	   *q++ = *p++;
+ 	   n++;
+@@ -2024,15 +2026,15 @@ char *multibyte_safe_memccpy(char *dst, 
+         } else {
+ 	   *q++ = *p++;
+ 	   n++;
++	   if (*(p-1) == (char)(c & 0xff)) return q;
+ 	}
+-        if (*(p-1) == (char)(c & 0xff)) return q;
+-      }
+-      if ((*p & 0x80) && (n < len)) {
+-         *q = *p;
+-      } else {
+- 	 *q = '\0';
+       }
++      if (!(*p & 0x80) && (n < len-1)) 
++	      *q++ = *p++;
++
++      *q = '\0';
+       return NULL; 
+    } else
+       return memccpy(dst, src, c, len);
+ }
++
