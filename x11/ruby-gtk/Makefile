@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 16:51:56 couderc Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/29 13:03:53 couderc Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
-VERSION=		0.26
+VERSION=		0.28
 DISTNAME=		ruby-gtk-${VERSION}
-CATEGORIES=		x11
-NEED_VERSION=		1.504
+CATEGORIES=		x11 devel
+NEED_VERSION=		1.531
 
 HOMEPAGE=		http://ruby-gnome.sourceforge.net
 
@@ -21,13 +21,19 @@ SUBST_VARS=	OPSYS_VER
 
 MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
-RUN_DEPENDS=		::lang/ruby
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			ruby.1.66::lang/ruby
+MODULES=ruby
+
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
+
+INST_DIR=	${PREFIX}/share/ruby-gtk
+
+post-install:
+	${INSTALL_DATA_DIR} ${INST_DIR}
+	@cp -R ${WRKSRC}/doc ${INST_DIR}
+	@cp -R ${WRKSRC}/sample ${INST_DIR}
 
 .include <bsd.port.mk>
