@@ -1,6 +1,6 @@
 --- ltmain.sh.orig	Fri Apr  9 02:12:58 1999
-+++ ltmain.sh	Sun Feb 18 10:46:24 2001
-@@ -1010,6 +1010,25 @@
++++ ltmain.sh	Thu Oct 11 12:46:12 2001
+@@ -1010,9 +1010,35 @@ compiler."
  	;;
  
        -l*)
@@ -19,14 +19,24 @@
 +	    ;;
 +	  esac
 +	fi
-+	deplibs="$deplibs $arg"
-+	;;
-+
-+      -?thread)
  	deplibs="$deplibs $arg"
  	;;
  
-@@ -1702,6 +1721,9 @@
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
++
+       -module)
+ 	if test "$module" != yes; then
+ 	  module=yes
+@@ -1702,6 +1728,9 @@ compiler."
  	*-*-cygwin* | *-*-mingw* | *-*-os2*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
@@ -36,7 +46,7 @@
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3326,40 +3348,6 @@
+@@ -3326,40 +3355,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
