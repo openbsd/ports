@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Wed Jan 12 15:06:30 2000
-+++ scripts/mysql_install_db.sh	Thu Nov  2 09:11:00 2000
+--- scripts/mysql_install_db.sh.orig	Sun Sep 19 07:16:46 1999
++++ scripts/mysql_install_db.sh	Mon Jan  3 14:23:05 2000
 @@ -15,10 +15,6 @@
  force=0
  IN_RPM=0
@@ -33,15 +33,6 @@
  
  # Check if hostname is valid
  if test "$IN_RPM" -eq 0 -a $force -eq 0
-@@ -89,7 +77,7 @@
- # Create database directories mysql & test
- if test "$IN_RPM" -eq 0
- then
--  if test ! -d $ldata; then mkdir $ldata; chmod 700 $ldata ; fi
-+  if test ! -d $ldata; then mkdir $ldata; chmod 711 $ldata ; fi
-   if test ! -d $ldata/mysql; then mkdir $ldata/mysql;  chmod 700 $ldata/mysql ; fi
-   if test ! -d $ldata/test; then mkdir $ldata/test;  chmod 700 $ldata/test ; fi
-   if test -w / -a ! -z "$user"; then
 @@ -255,12 +243,6 @@
  END_OF_DATA
  then

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.10 2000/11/02 14:42:45 brad Exp $
+# $OpenBSD: INSTALL,v 1.11 2000/11/02 15:15:24 espie Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -47,7 +47,7 @@ do_pre_install()
 
 do_post_install()
 {
-install -d -o mysql -g mysql -m 711 $DB_DIR
+install -d -o mysql -g mysql -m 700 $DB_DIR
 
 # The shell is switched back to /bin/sh to ensure that the database
 # creation can proceed successfully
