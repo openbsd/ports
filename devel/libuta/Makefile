@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/28 22:40:09 pvalchev Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -24,7 +24,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 		patch-*
 
 LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg \
-		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer \
+		SDL_mixer::devel/sdl-mixer \
 		png.2:png-*:graphics/png \
 		sigc.0.0:libsigc++-*:devel/libsigc++ \
 		ttf.1.3:freetype-*:print/freetype

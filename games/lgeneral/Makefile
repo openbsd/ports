@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/28 22:40:09 pvalchev Exp $
 
 COMMENT=	"turn-based strategy engine"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= lgeneral
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer
+		SDL_mixer::devel/sdl-mixer
 
 USE_X11=	Yes
 

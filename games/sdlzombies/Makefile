@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/29 01:43:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/28 22:40:09 pvalchev Exp $
 
 COMMENT=	"zombies clone"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://hocwp.free.fr/
 
-LIB_DEPENDS=	SDL_image.0.0:sdl-image-*:devel/sdl-image \
-		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer
+LIB_DEPENDS=	SDL_image::devel/sdl-image \
+		SDL_mixer::devel/sdl-mixer
 
 USE_X11=	Yes
 

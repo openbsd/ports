@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/28 22:40:09 pvalchev Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -46,7 +46,7 @@ ERRORS+=	"Fatal: Choose only one flavor: sdl or ggi"
 
 .if ${FLAVOR:L:Msdl}
 LIB_DEPENDS+=	SDL::devel/sdl \
-		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer
+		SDL_mixer::devel/sdl-mixer
 
 CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
 .else
