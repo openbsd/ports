@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/16 23:47:53 turan Exp $
 #
 
 DISTNAME=       xinvaders
@@ -7,9 +7,12 @@ PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
 NEED_VERSION=	1.223
 
-NO_CDROM=	"don't sell for profit"
-
 MAINTAINER=	pjanzen@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.x/volume19/xinvaders/ \
 		ftp://unix.hensa.ac.uk/archive/usenet/comp.sources.x/volume19/xinvaders/

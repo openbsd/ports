@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/16 23:47:53 turan Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
@@ -8,6 +8,11 @@ EXTRACT_SUFX=	.tar.z
 NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	yes
 
