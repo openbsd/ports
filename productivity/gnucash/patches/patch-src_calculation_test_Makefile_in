@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_calculation_test_Makefile_in,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
+--- src/calculation/test/Makefile.in.orig	Sun Feb  6 15:50:39 2005
++++ src/calculation/test/Makefile.in	Thu Feb 17 07:05:14 2005
+@@ -247,11 +247,11 @@ PROGRAMS =  $(noinst_PROGRAMS)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -lm
+ LIBS = @LIBS@
+ test_link_OBJECTS =  test-link.$(OBJEXT)
+ test_link_DEPENDENCIES =  ../libgncmod-calculation.la
+-test_link_LDFLAGS = 
++test_link_LDFLAGS = -lm
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
