@@ -1,20 +1,21 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/07/22 08:53:38 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/02/27 14:05:08 brad Exp $
 #
 # jftpgw de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-CONFIG_FILE=/etc/jftpgw.conf
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
 
-if [ -f ${CONFIG_FILE} ]; then
+if [ -f $CONFIG_DIR/jftpgw.conf ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -f ${CONFIG_FILE}"
-    echo "|           rm -f /etc/jftpgw.access"
+    echo "|           rm -f $CONFIG_DIR/jftpgw.conf"
+    echo "|           rm -f $CONFIG_DIR/jftpgw.access"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

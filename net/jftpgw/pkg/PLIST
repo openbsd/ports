@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/22 08:53:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/27 14:05:08 brad Exp $
 bin/jftpgw
-lib/jftpgw/jftpgw.conf.sample
-lib/jftpgw/jftpgw.access.sample
-@dirrm lib/jftpgw
+share/examples/jftpgw/jftpgw.conf.sample
+share/examples/jftpgw/jftpgw.access.sample
+@dirrm share/examples/jftpgw

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/13 00:34:20 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/27 14:05:07 brad Exp $
 
-DISTNAME=	jftpgw-0.0.11
+DISTNAME=	jftpgw-0.0.11f
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--enable-crypt \
 		--with-logpath="/var/log" --with-confpath="${SYSCONFDIR}"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/jftpgw
-	${INSTALL_DATA} ${WRKBUILD}/jftpgw.conf.sample ${PREFIX}/lib/jftpgw
-	${INSTALL_DATA} ${WRKBUILD}/jftpgw.access.sample ${PREFIX}/lib/jftpgw
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jftpgw
+	cd ${WRKBUILD}; ${INSTALL_DATA} jftpgw.conf.sample jftpgw.access.sample \
+		${PREFIX}/share/examples/jftpgw
 
 .include <bsd.port.mk>
