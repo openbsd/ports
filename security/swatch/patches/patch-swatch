@@ -1,0 +1,60 @@
+--- swatch.orig	Tue Mar 28 16:37:35 2000
++++ swatch	Fri Sep 15 00:59:09 2000
+@@ -1,7 +1,4 @@
+-# #!/bin/sh -
+-eval 'exec perl $0 ${1+"$@"}'
+-if 0;
+-
++#!/usr/bin/perl -w
+ #
+ #    swatch: The Simple WATCHdog
+ #    Copyright (C) 1993-2000 E. Todd Atkins
+@@ -316,13 +313,9 @@ my $Me = $0; $Me =~ s%.*/%%;	      # Str
+ $SIG{'CHLD'} = 'IGNORE';
+ 
+ my $DEF_CONFIG_FILE = "$ENV{'HOME'}/.swatchrc";
+-my $PERL            = 'perl';
+-my @uname           = split(/\s+/,`/bin/uname -a`);
+-my $DEF_INPUT       = "/var/log/syslog";
++my $PERL            = '/usr/bin/perl';
++my $DEF_INPUT       = "/var/log/messages";
+ my $Config_File     = '';
+-if ($uname[0] eq 'Linux') {
+-    $DEF_INPUT = "/var/log/messages";
+-}
+ my $Now = 0;  # The current time in Unix seconds. Gets set when set_restart_time is called
+ 
+ my $USAGE = qq/
+@@ -393,7 +386,7 @@ sub parse_command_line {
+ sub dprint {
+     my $msg_lev = shift;
+     my $msg = shift;
+-    print STDERR "DEBUG($msg_lev): $msg\n" if ($msg_lev & $opt_debug_level);
++    print STDERR "DEBUG($msg_lev): $msg\n" if ($msg_lev && $opt_debug_level);
+ }
+ 
+ #
+@@ -718,14 +711,11 @@ sub ring_bell {
+ 	      'RINGS' => 1,
+ 	      @_
+ 	     );
+-  my $sun_terminal = (`uname -s` eq 'SunOS\n');
+-  
+   return if exists($args{'WHEN'}) and not inside_time_window($args{'WHEN'});
+   
+   my $bells = $args{'RINGS'};
+   for ( ; $bells > 0 ; $bells-- ) {
+     print $BELL;
+-    sleep 1 if $sun_terminal; # SunOS needed this. Not sure about Solaris though
+   }
+ }
+ 
+@@ -1047,7 +1037,7 @@ LOOP: while (<SW_PIPE>) {
+     $code = qq[
+ use File::Tail;
+ my \$Filename = '$filename';
+-my \$File = File::Tail->new(name=>\$Filename);
++my \$File = File::Tail->new(name=>\$Filename,interval=>1,maxinterval=>5,adjustafter=>20);
+ if (not defined \$File) {
+     die "$0: cannot read input \\"\$Filename\\": \$!\\n";
+ }

@@ -1,5 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/09/17 20:01:43 avsm Exp $
 bin/swatch
-lib/sw_actions.pl
-lib/sw_history.pl
-man/man5/swatch.conf.5
-man/man8/swatch.8
+bin/swatch_oldrc2newrc
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/swatch/.packlist
+man/man1/swatch.1
+man/man1/swatch_oldrc2newrc.1
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/swatch
