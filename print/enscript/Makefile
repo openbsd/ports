@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/01 10:08:08 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2000/03/03 11:28:48 turan Exp $
+
+BROKEN=			installs files automatically in /etc
 
 DISTNAME=		enscript-1.6.1
 CATEGORIES=     	print

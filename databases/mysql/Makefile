@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/16 19:01:20 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/03 11:32:22 turan Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=	mysql-3.22.32
 CATEGORIES=	databases

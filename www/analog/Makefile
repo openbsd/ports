@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/16 20:10:32 form Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/03 11:26:00 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=	analog4.02
 PKGNAME=	analog-4.02

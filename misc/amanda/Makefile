@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/01 10:08:07 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2000/03/03 11:25:05 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
