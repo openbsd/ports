@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 00:28:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/08/18 22:13:51 naddy Exp $
+
+BROKEN=			"does not build with XFree86-4"
 
 COMMENT=		"simple to use text editor for X11"
 
