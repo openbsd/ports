@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2000/12/26 12:37:01 reinhard Exp $
+# $OpenBSD: Makefile,v 1.50 2001/01/02 12:17:39 reinhard Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -12,6 +12,7 @@
 #    SUBDIR += dc3play
      SUBDIR += dia
 #    SUBDIR += dore
+     SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += fxtv
      SUBDIR += gd
