@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/18 14:44:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/15 12:15:13 jakob Exp $
 
 DISTNAME=		ssldump-0.9b1
+PKGNAME=		ssldump-0.9b1p1
 CATEGORIES=     	net
 NEED_VERSION=		1.319
 

@@ -1,0 +1,272 @@
+Index: Makefile.in
+===================================================================
+RCS file: /usr/local/CVS/ssldump/Makefile.in,v
+retrieving revision 1.4
+diff -c -r1.4 Makefile.in
+*** Makefile.in	2000/11/03 06:38:04	1.4
+--- Makefile.in	2000/11/13 06:01:40
+***************
+*** 83,88 ****
+--- 83,89 ----
+  	$(INSTALL) -m 444 ssldump.1 $(MANDIR)/man1/ssldump.1
+  
+  dist:	
++ 	perl "./version-check.pl"
+  	- name=ssldump-`cat VERSION`; \
+  	rm -rf ../$$name; \
+  	mkdir ../$$name; \
+***************
+*** 104,106 ****
+--- 105,109 ----
+  	rm -f ssl/a.out all; \
+  	cd ..; \
+  	tar cf - $$name | gzip > $$name.tar.gz
++ 
++ 
+Index: configure.in
+===================================================================
+RCS file: /usr/local/CVS/ssldump/configure.in,v
+retrieving revision 1.3
+diff -c -r1.3 configure.in
+*** configure.in	2000/11/03 06:38:05	1.3
+--- configure.in	2000/11/13 15:51:10
+***************
+*** 62,68 ****
+  AC_ARG_WITH(pcap-inc,[--with-pcap-inc           PCAP include files],
+  	ac_pcap_inc_dir=$withval
+  )
+! AC_ARG_WITH(pcap-lib,[--with-openssl-lib        PCAP library files],
+  	ac_pcap_lib_dir=$withval
+  )
+  
+--- 62,68 ----
+  AC_ARG_WITH(pcap-inc,[--with-pcap-inc           PCAP include files],
+  	ac_pcap_inc_dir=$withval
+  )
+! AC_ARG_WITH(pcap-lib,[--with-pcap-lib        PCAP library files],
+  	ac_pcap_lib_dir=$withval
+  )
+  
+Index: base/pcap-snoop.c
+===================================================================
+RCS file: /usr/local/CVS/ssldump/base/pcap-snoop.c,v
+retrieving revision 1.4
+diff -c -r1.4 pcap-snoop.c
+*** base/pcap-snoop.c	2000/11/09 18:52:23	1.4
+--- base/pcap-snoop.c	2000/12/21 03:03:45
+***************
+*** 76,92 ****
+  
+  int usage()
+    {
+!     fprintf(stderr,"Usage: ssldump [-f dumpfile] [-i interface] \n");
+!     fprintf(stderr,"               [-k keyfile] [-p password] [-vtaTnsAxVNd]\n");
+      fprintf(stderr,"               [filter]\n");
+      exit(0);
+    }
+  
+  int print_version()
+    {
+!     printf("ssldump 0.9a1\n");
+      printf("Copyright (C) 1998-2000 RTFM, Inc.\n");
+      printf("All rights reserved.\n");
+      exit(0);
+    }
+  
+--- 76,95 ----
+  
+  int usage()
+    {
+!     fprintf(stderr,"Usage: ssldump [-r dumpfile] [-i interface] \n");
+!     fprintf(stderr,"               [-k keyfile] [-p password] [-vtaTnsAxVNde]\n");
+      fprintf(stderr,"               [filter]\n");
+      exit(0);
+    }
+  
+  int print_version()
+    {
+!     printf("ssldump 0.9b1 patchlevel 1\n");
+      printf("Copyright (C) 1998-2000 RTFM, Inc.\n");
+      printf("All rights reserved.\n");
++ #ifdef OPENSSL    
++     printf("Compiled with OpenSSL: decryption enabled\n");
++ #endif    
+      exit(0);
+    }
+  
+***************
+*** 150,156 ****
+  
+      signal(SIGINT,sig_handler);
+      
+!     while((c=getopt(argc,argv,"vr:f:S:Ttai:k:p:nsAxXhHVNdq"))!=EOF){
+        switch(c){
+          case 'v':
+            print_version();
+--- 153,159 ----
+  
+      signal(SIGINT,sig_handler);
+      
+!     while((c=getopt(argc,argv,"vr:f:S:Ttai:k:p:nsAxXhHVNdqe"))!=EOF){
+        switch(c){
+          case 'v':
+            print_version();
+Index: base/tcpconn.h
+===================================================================
+RCS file: /usr/local/CVS/ssldump/base/tcpconn.h,v
+retrieving revision 1.2
+diff -c -r1.2 tcpconn.h
+*** base/tcpconn.h	2000/10/17 16:09:58	1.2
+--- base/tcpconn.h	2000/12/06 07:40:49
+***************
+*** 49,55 ****
+  
+  typedef struct segment_ {
+       u_char *data;
+!      int len;
+       tcp_seq s_seq;
+       packet *p;
+       struct segment_ *next;
+--- 49,55 ----
+  
+  typedef struct segment_ {
+       u_char *data;
+!      u_int len;
+       tcp_seq s_seq;
+       packet *p;
+       struct segment_ *next;
+Index: base/tcppack.c
+===================================================================
+RCS file: /usr/local/CVS/ssldump/base/tcppack.c,v
+retrieving revision 1.3
+diff -c -r1.3 tcppack.c
+*** base/tcppack.c	2000/11/03 06:38:06	1.3
+--- base/tcppack.c	2000/12/21 02:16:51
+***************
+*** 49,54 ****
+--- 49,55 ----
+  #include "network.h"
+  #include <sys/socket.h>
+  #include <arpa/inet.h>
++ #include <netinet/tcp_seq.h>
+  #include <ctype.h>
+  #include "debug.h"
+  #include "tcpconn.h"
+***************
+*** 90,96 ****
+        DBG((0,"SYN1\n"));
+        if(r=new_connection(handler,p,&conn))
+  	ABORT(r);
+!       conn->i2r.seq=ntohl(p->tcp->th_seq);
+        return(0);
+      }
+  
+--- 91,97 ----
+        DBG((0,"SYN1\n"));
+        if(r=new_connection(handler,p,&conn))
+  	ABORT(r);
+!       conn->i2r.seq=ntohl(p->tcp->th_seq)+1;
+        return(0);
+      }
+  
+***************
+*** 102,109 ****
+  	  break;
+  	if(p->tcp->th_flags != (TH_SYN | TH_ACK))
+  	  break;
+! 	conn->r2i.seq=ntohl(p->tcp->th_seq);
+! 	conn->r2i.ack=ntohl(p->tcp->th_ack);
+  	conn->state=TCP_STATE_SYN2;
+  	DBG((0,"SYN2\n"));	
+  	break;
+--- 103,110 ----
+  	  break;
+  	if(p->tcp->th_flags != (TH_SYN | TH_ACK))
+  	  break;
+! 	conn->r2i.seq=ntohl(p->tcp->th_seq)+1;
+! 	conn->r2i.ack=ntohl(p->tcp->th_ack)+1;
+  	conn->state=TCP_STATE_SYN2;
+  	DBG((0,"SYN2\n"));	
+  	break;
+***************
+*** 113,119 ****
+  	if(direction != DIR_I2R)
+  	  break;
+  	DBG((0,"ACK\n"));
+! 	conn->i2r.ack=ntohl(p->tcp->th_ack);
+          lookuphostname(&conn->i_addr,&sn);
+          lookuphostname(&conn->r_addr,&dn);
+          if(NET_print_flags & NET_PRINT_TYPESET)
+--- 114,120 ----
+  	if(direction != DIR_I2R)
+  	  break;
+  	DBG((0,"ACK\n"));
+! 	conn->i2r.ack=ntohl(p->tcp->th_ack)+1;
+          lookuphostname(&conn->i_addr,&sn);
+          lookuphostname(&conn->r_addr,&dn);
+          if(NET_print_flags & NET_PRINT_TYPESET)
+***************
+*** 180,188 ****
+  
+  #define STRIM(_seq,s) { \
+      int l;\
+!     l=(s)->s_seq - _seq; \
+!     (s)->data=(s)->p->data + ((s)->p->tcp->th_off*4)  + (l-1) ; \
+!     (s)->len=(s)->p->len - (((s)->p->tcp->th_off * 4) + (l-1)); \
+      (s)->s_seq += (l-1); \
+      if((s)->next) { \
+        if((s)->s_seq >= (s)->next->s_seq) {\
+--- 181,192 ----
+  
+  #define STRIM(_seq,s) { \
+      int l;\
+!     int off;\
+!     l=(s)->s_seq - _seq + 1; \
+!     off=(s)->p->tcp->th_off*4; \
+!     if(l>((s)->p->len-off)) ERETURN(R_BAD_DATA);\
+!     (s)->data=(s)->p->data + off  + (l-1) ; \
+!     (s)->len=(s)->p->len - off + (l-1); \
+      (s)->s_seq += (l-1); \
+      if((s)->next) { \
+        if((s)->s_seq >= (s)->next->s_seq) {\
+***************
+*** 250,259 ****
+      DBG((0,"Stream Seq %u ",stream->seq));
+  
+      /* Check to see if this packet has been processed already */
+!     if(!(p->tcp->th_flags & (TH_FIN | TH_RST)) &&(seq+l)<=(stream->seq+1))
+        return(0);
+      
+!     if((stream->seq + 1) < seq){
+        tcp_seq left_edge;
+  
+        for(seg=0;seg;seg=seg?seg->next:stream->oo_queue){
+--- 254,264 ----
+      DBG((0,"Stream Seq %u ",stream->seq));
+  
+      /* Check to see if this packet has been processed already */
+!     if(!(p->tcp->th_flags & (TH_FIN | TH_RST)) && SEQ_LT(seq,stream->seq))
+        return(0);
+      
+!     if(SEQ_LT(stream->seq,seq)){
+!       /* Out of order segment */
+        tcp_seq left_edge;
+  
+        for(seg=0;seg;seg=seg?seg->next:stream->oo_queue){
+***************
+*** 318,324 ****
+        
+        stream->oo_queue=seg->next;
+        seg->next=0;
+!       stream->seq=seg->s_seq + seg->len - 1;
+  
+  #if 0
+        for(seg=&_seg;seg;seg=seg->next){
+--- 323,329 ----
+        
+        stream->oo_queue=seg->next;
+        seg->next=0;
+!       stream->seq=seg->s_seq + seg->len;
+  
+  #if 0
+        for(seg=&_seg;seg;seg=seg->next){
