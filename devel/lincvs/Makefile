@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/09 11:00:21 reinhard Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/13 18:01:48 naddy Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
 # pthread
-NOT_FOR_ARCHS=sparc
+NOT_FOR_ARCHS=	sparc
 
-V=		0.4.90
-DISTNAME=	lincvs-${V}-0-generic-src
-PKGNAME=	lincvs-${V}
+DISTNAME=	lincvs-0.4.90
 CATEGORIES=	devel
 NEED_VERSION=	1.500
 
@@ -21,23 +19,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://lincvs.sunsite.dk/download/${PKGNAME}/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://lincvs.sunsite.dk/download/${DISTNAME}/
+EXTRACT_SUFX=	-0-generic-src.tgz
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
 MODULES=	qt2
-LIB_DEPENDS=	png.2::graphics/png \
-		jpeg.62::graphics/jpeg \
-		mng.1::graphics/libmng
 BUILD_DEPENDS=	::x11/qt2-designer
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+=--datadir=${LOCALBASE}/share/doc
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
+CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
+		--datadir=${LOCALBASE}/share/doc
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
