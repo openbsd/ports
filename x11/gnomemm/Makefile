@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/17 15:22:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/17 09:45:44 wilfried Exp $
 
 COMMENT=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
 
-VERSION=		1.2.2
+VERSION=		1.2.3
 DISTNAME=		gnomemm-${VERSION}
 PKGNAME-docs=		gnomemm-docs-${VERSION}
 CATEGORIES=		devel x11
@@ -38,13 +38,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-docs
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-
-post-patch:
-	@cd ${WRKSRC}/scripts; \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnomemm
