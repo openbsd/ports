@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2001/02/22 20:03:43 danh Exp $
+# $OpenBSD: Makefile,v 1.20 2001/02/23 11:30:02 peter Exp $
 
-DISTNAME=	exim-3.20
+DISTNAME=	exim-3.22
 CATEGORIES=	mail
 NEED_VERSION=	1.324
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
-DISTFILES=	exim-3.20.tar.gz exim-texinfo-3.20.tar.gz
+DISTFILES=	exim-3.22.tar.gz exim-texinfo-3.20.tar.gz
 
 HOMEPAGE=	http://www.exim.org/
 
