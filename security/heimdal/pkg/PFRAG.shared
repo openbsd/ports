@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/02/17 11:57:18 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/03/01 07:51:24 jakob Exp $
 lib/libasn1.so.4.0
 lib/libcom_err.so.1.1
-lib/libdes.so.3.0
 lib/libgssapi.so.3.0
 lib/libhdb.so.7.0
 lib/libkadm5clnt.so.6.1

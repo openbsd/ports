@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/17 11:57:18 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/01 07:51:24 jakob Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/heimdal.info
 bin/afslog
 bin/compile_et
-bin/des
 bin/ftp
 bin/kauth
 bin/kdestroy
@@ -35,7 +34,6 @@ include/base64.h
 include/com_err.h
 include/com_right.h
 include/der.h
-include/des.h
 include/editline.h
 include/getarg.h
 include/gssapi.h
@@ -56,18 +54,14 @@ include/krb5-protos.h
 include/krb5-types.h
 include/krb5.h
 include/krb5_err.h
-include/md4.h
-include/md5.h
 include/otp.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
-include/rc4.h
 include/resolve.h
 include/roken-common.h
 include/roken.h
 include/rtbl.h
-include/sha.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
@@ -77,8 +71,6 @@ lib/libasn1.a
 lib/libasn1.la
 lib/libcom_err.a
 lib/libcom_err.la
-lib/libdes.a
-lib/libdes.la
 lib/libeditline.a
 lib/libeditline.la
 lib/libgssapi.a
@@ -185,4 +177,5 @@ sbin/truncate_log
 @dirrm include/kadm5
 @dirrm include
 @dirrm bin
+@dirrm %D/heimdal
 @exec install-info --info-dir=%D/info %D/info/heimdal.info
