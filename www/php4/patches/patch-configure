@@ -1,188 +1,12 @@
-$OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
---- configure.orig	Thu Jun 21 02:28:57 2001
-+++ configure	Sun Nov 18 17:12:35 2001
-@@ -6577,6 +6577,7 @@ for ac_func in asctime_r \
- chroot \
- ctime_r \
- cuserid \
-+crypt \
- flock \
- gai_strerror \
- gcvt \
-@@ -8517,10 +8518,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
-   esac
- 
-  cat >> confdefs.h <<\EOF
--#define HAVE_LIBCRYPT 1
--EOF
-- 
-- cat >> confdefs.h <<\EOF
- #define HAVE_CRYPT 1
- EOF
-  
-@@ -22424,8 +22421,37 @@ EOF
-       fi
-     done
- 
-+    old_CPPFLAGS=$CPPFLAGS
-+    CPPFLAGS=-I$IMAP_INC_DIR
-+    cat > conftest.$ac_ext <<EOF
-+#line 22431 "configure"
-+#include "confdefs.h"
-+
-+      #include "imap4r1.h"
-+      #if defined(IMAPSSLPORT)
-+      this_is_true
-+      #endif
-+    
-+EOF
-+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-+  egrep "this_is_true" >/dev/null 2>&1; then
-+  rm -rf conftest*
-+  
-+      cat >> confdefs.h <<\EOF
-+#define HAVE_IMAP2001 1
-+EOF
-+
-+    
-+else
-+  rm -rf conftest*
-+   
-+fi
-+rm -f conftest*
-+
-+    CPPFLAGS=$old_CPPFLAGS
-+
-     echo $ac_n "checking for pam_start in -lpam""... $ac_c" 1>&6
--echo "configure:22429: checking for pam_start in -lpam" >&5
-+echo "configure:22458: checking for pam_start in -lpam" >&5
- ac_lib_var=`echo pam'_'pam_start | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
-@@ -22471,7 +22497,54 @@ else
-   echo "$ac_t""no" 1>&6
- fi
-  
--    
-+    echo $ac_n "checking for crypt in -lcrypt""... $ac_c" 1>&6
-+echo "configure:22505: checking for crypt in -lcrypt" >&5
-+ac_lib_var=`echo crypt'_'crypt | sed 'y%./+-%__p_%'`
-+if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-+  echo $ac_n "(cached) $ac_c" 1>&6
-+else
-+  ac_save_LIBS="$LIBS"
-+LIBS="-lcrypt  $LIBS"
-+cat > conftest.$ac_ext <<EOF
-+#line 22513 "configure"
-+#include "confdefs.h"
-+/* Override any gcc2 internal prototype to avoid an error.  */
-+/* We use char because int might match the return type of a gcc2
-+    builtin and then its argument prototype would still apply.  */
-+char crypt();
-+
-+int main() {
-+crypt()
-+; return 0; }
-+EOF
-+if { (eval echo configure:22524: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-+  rm -rf conftest*
-+  eval "ac_cv_lib_$ac_lib_var=yes"
-+else
-+  echo "configure: failed program was:" >&5
-+  cat conftest.$ac_ext >&5
-+  rm -rf conftest*
-+  eval "ac_cv_lib_$ac_lib_var=no"
-+fi
-+rm -f conftest*
-+LIBS="$ac_save_LIBS"
-+
-+fi
-+if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-+  echo "$ac_t""yes" 1>&6
-+    ac_tr_lib=HAVE_LIB`echo crypt | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-+    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-+  cat >> confdefs.h <<EOF
-+#define $ac_tr_lib 1
-+EOF
-+
-+  LIBS="-lcrypt $LIBS"
-+
-+else
-+  echo "$ac_t""no" 1>&6
-+fi
-+
-+	    
-     
-   if test -z "$IMAP_DIR" || echo "$IMAP_DIR" | grep '^/' >/dev/null ; then
-     IMAP_DIR="$IMAP_DIR"
-@@ -22585,53 +22658,21 @@ fi
+$OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
+--- configure.orig	Sat Dec  8 19:40:35 2001
++++ configure	Mon Dec 17 21:35:09 2001
+@@ -24893,22 +24893,22 @@ EOF
    fi
  
      
--  DLIBS="-l$IMAP_LIB $DLIBS"
-+  DLIBS="$DLIBS -l$IMAP_LIB"
- 
-     
--  
--
--echo $ac_n "checking for Kerberos support in IMAP""... $ac_c" 1>&6
--echo "configure:22595: checking for Kerberos support in IMAP" >&5
--# Check whether --with-kerberos or --without-kerberos was given.
-+  # Check whether --with-kerberos or --without-kerberos was given.
- if test "${with_kerberos+set}" = set; then
-   withval="$with_kerberos"
--  PHP_KERBEROS=$withval
-+  
-+    PHP_KERBEROS=$withval
-+  
- else
--  PHP_KERBEROS=no
--fi
--
--
--case "$PHP_KERBEROS" in
--shared,*)
--  ext_output="yes, shared"
--  ext_shared=yes
--  PHP_KERBEROS=`echo "$PHP_KERBEROS"|sed 's/^shared,//'`
--  ;;
--shared)
--  ext_output="yes, shared"
--  ext_shared=yes
--  PHP_KERBEROS=yes
--  ;;
--no)
--  ext_output="no"
--  ext_shared=no
--  ;;
--*)
--  ext_output="yes"
--  ext_shared=no
--  ;;
--esac
--
--if test "$php_always_shared" = "yes"; then
--  ext_output="yes, shared"
--  ext_shared=yes
--  test "$PHP_KERBEROS" = "no" && PHP_KERBEROS=yes
-+  
-+    PHP_KERBEROS=no
-+  
- fi
- 
--echo "$ac_t""$ext_output" 1>&6
--
--
--
- 
-   if test "$PHP_KERBEROS" = "yes"; then
-     test -d /usr/kerberos && PHP_KERBEROS=/usr/kerberos
-@@ -22676,22 +22717,22 @@ EOF
-   fi
- 
-     
-- case "gssapi_krb5" in
-+ case "gssapi" in
+- case gssapi_krb5 in
++ case gssapi in
   c|c_r|pthread*) ;;
   *)
  
@@ -193,8 +17,8 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
     else
       
-- case "gssapi_krb5" in
-+ case "gssapi" in
+- case gssapi_krb5 in
++ case gssapi in
   c|c_r|pthread*) ;;
   *)
  
@@ -204,12 +28,12 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
  
    ;;
-@@ -22730,22 +22771,22 @@ EOF
+@@ -24947,22 +24947,22 @@ EOF
    esac
  
      
-- case "k5crypto" in
-+ case "asn1" in
+- case k5crypto in
++ case asn1 in
   c|c_r|pthread*) ;;
   *)
  
@@ -220,8 +44,8 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
     else
       
-- case "k5crypto" in
-+ case "asn1" in
+- case k5crypto in
++ case asn1 in
   c|c_r|pthread*) ;;
   *)
  
@@ -231,12 +55,12 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
  
    ;;
-@@ -22757,22 +22798,22 @@ EOF
+@@ -24974,22 +24974,22 @@ EOF
    esac
  
      
-- case "com_err" in
-+ case "com_err_pic" in
+- case com_err in
++ case com_err_pic in
   c|c_r|pthread*) ;;
   *)
  
@@ -247,8 +71,8 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
     else
       
-- case "com_err" in
-+ case "com_err_pic" in
+- case com_err in
++ case com_err_pic in
   c|c_r|pthread*) ;;
   *)
  
@@ -258,157 +82,113 @@ $OpenBSD: patch-configure,v 1.7 2001/11/19 01:50:34 brad Exp $
  
  
    ;;
-@@ -22783,59 +22824,49 @@ EOF
-   ;;
-   esac
- 
--  fi
--
--    
-+  else
-+    cat > conftest.$ac_ext <<EOF
-+#line 22833 "configure"
-+#include "confdefs.h"
-+#include <$IMAP_INC_DIR/linkage.h>
-+EOF
-+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-+  egrep "auth_gss" >/dev/null 2>&1; then
-+  rm -rf conftest*
-   
-+      { echo "configure: error: This c-client library is build with Kerberos support. 
- 
--echo $ac_n "checking for SSL support in IMAP""... $ac_c" 1>&6
--echo "configure:22793: checking for SSL support in IMAP" >&5
--# Check whether --with-imap-ssl or --without-imap-ssl was given.
--if test "${with_imap_ssl+set}" = set; then
--  withval="$with_imap_ssl"
--  PHP_IMAP_SSL=$withval
--else
--  PHP_IMAP_SSL=no
-+      Add --with-kerberos<=DIR> to your configure line. Check config.log for details." 1>&2; exit 1; }
-+    
- fi
-+rm -f conftest*
- 
-+  fi
- 
--case "$PHP_IMAP_SSL" in
--shared,*)
--  ext_output="yes, shared"
--  ext_shared=yes
--  PHP_IMAP_SSL=`echo "$PHP_IMAP_SSL"|sed 's/^shared,//'`
--  ;;
--shared)
--  ext_output="yes, shared"
--  ext_shared=yes
--  PHP_IMAP_SSL=yes
--  ;;
--no)
--  ext_output="no"
--  ext_shared=no
--  ;;
--*)
--  ext_output="yes"
--  ext_shared=no
--  ;;
--esac
- 
--if test "$php_always_shared" = "yes"; then
--  ext_output="yes, shared"
--  ext_shared=yes
--  test "$PHP_IMAP_SSL" = "no" && PHP_IMAP_SSL=yes
-+    
-+  # Check whether --with-imap-ssl or --without-imap-ssl was given.
-+if test "${with_imap_ssl+set}" = set; then
-+  withval="$with_imap_ssl"
-+  
-+    PHP_IMAP_SSL=$withval
-+  
-+else
-+  
-+    PHP_IMAP_SSL=no
-+  
- fi
- 
--echo "$ac_t""$ext_output" 1>&6
--
--
--
- 
-   if test "$PHP_IMAP_SSL" = "yes"; then
-     PHP_IMAP_SSL=/usr
-   fi
- 
-   if test "$PHP_IMAP_SSL" != "no"; then
-+    cat >> confdefs.h <<\EOF
-+#define HAVE_IMAP_SSL 1
-+EOF
-+
-     
-   if test "$PHP_IMAP_SSL/lib" != "/usr/lib"; then
-     
-@@ -22870,22 +22901,23 @@ echo "$ac_t""$ext_output" 1>&6
-   fi
- 
-     
--  DLIBS="-lcrypto $DLIBS"
-+  DLIBS="$DLIBS -lssl"
- 
-     
--  DLIBS="-lssl $DLIBS"
--
-+  DLIBS="$DLIBS -lcrypto"
- 
-+  else
+@@ -25134,7 +25134,7 @@ EOF
      old_LIBS=$LIBS
--    LIBS="$LIBS -lc-client"
-+    LIBS="$LIBS -L$IMAP_LIBDIR -l$IMAP_LIB"
+     LIBS="$LIBS -L$IMAP_LIBDIR -l$IMAP_LIB"
      if test $PHP_KERBEROS != "no"; then
--      LIBS="$LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+-      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
 +      LIBS="$LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb5 -lasn1 -lcom_err_pic"
      fi
-+
-     if test "$cross_compiling" = yes; then
-     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
- else
-   cat > conftest.$ac_ext <<EOF
--#line 22889 "configure"
-+#line 22924 "configure"
- #include "confdefs.h"
  
-       void mm_log(void){}
-@@ -22903,27 +22935,24 @@ else
-       void mm_exists(void){}
-       void mm_searched(void){}
-       void mm_expunged(void){}
--      char ssl_onceonlyinit();
-+      char mail_open();
-       int main() {
--        ssl_onceonlyinit();
-+        mail_open(0,"",0);
-         return 0;
-       }
-     
- EOF
--if { (eval echo configure:22914: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:22949: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
- then
--  
--      cat >> confdefs.h <<\EOF
--#define HAVE_IMAP_SSL 1
--EOF
--
--    
-+  :
- else
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
-   rm -fr conftest*
-   
--      { echo "configure: error: This c-client library does not support SSL. Recompile or remove --with-imap-ssl from configure line." 1>&2; exit 1; }
-+      { echo "configure: error: This c-client library is build with SSL support. 
-+      
-+      Add --with-imap-ssl<=DIR> to your configure line. Check config.log for details." 1>&2; exit 1; }
-     
+     if test "$cross_compiling" = yes; then
+@@ -57538,7 +57538,7 @@ unset with_pic
+ 
+ case $php_build_target in
+ program|static)
+-    standard_libtool_flag='-prefer-non-pic -static'
++    standard_libtool_flag='-static'
+     if test "$lib_build_shared" != "yes"; then
+         enable_shared=no
+     fi
+@@ -57547,7 +57547,7 @@ program|static)
+ ;;
+ shared)
+     enable_static=no
+-    standard_libtool_flag=-prefer-pic
++    standard_libtool_flag=
+     EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version"
+ ;;
+ esac
+@@ -60620,7 +60620,14 @@ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case "$host_os" in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++  ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  ;;
++  esac
  fi
- rm -fr conftest*
+ 
+ # Allow CC to be a program name with arguments.
+@@ -61117,7 +61124,9 @@ cygwin* | mingw* | pw32* )
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -61521,10 +61530,24 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
++      export_dynamic_flag_spec='${wl}-E'
++    else
++      case "$host_os" in
++      openbsd01.* | openbsd2.0-7 | openbsd2.0-7.*)
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='-R$libdir'
++       ;;
++      *)
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='${wl}-R$libdir'
++       ;;
++      esac
++    fi
+     ;;
+ 
+   os2*)
+@@ -62001,9 +62024,25 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
++  need_lib_prefix=no
++  need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF 0-90-9*-bit LMSB shared object'
++    case "$host_os" in
++    openbsd2.89 | openbsd2.89.*)
++      shlibpath_overrides_runpath=no
++    ;;
++    *)
++      shlibpath_overrides_runpath=yes
++    ;;
++    esac
++  else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
++    shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'

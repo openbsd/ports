@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/11/19 01:50:34 brad Exp $
+# $OpenBSD: Makefile,v 1.60 2001/12/18 01:40:48 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -10,19 +10,19 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-V=		4.0.6
+V=		4.1.0
 DISTNAME=	php-${V}
-PKGNAME=	php4-${V}p1
-FULLPKGNAME-pear= php4-pear-${V}p1
+PKGNAME=	php4-${V}
+FULLPKGNAME-pear= php4-pear-${V}
 
 CATEGORIES=	www lang
-NEED_VERSION=	1.489
+NEED_VERSION=	1.502
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
 
 HOMEPAGE=	http://www.php.net/
 
-MASTER_SITES=	http://www.php.net:8000/distributions/ \
+MASTER_SITES=	http://www.php.net/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/ \
 		http://uk.php.net/distributions/
@@ -205,7 +205,7 @@ do-install:
 		${PREFIX}/lib/libphp4.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
 	${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/share/doc/php4
-	${INSTALL_DATA} ${WRKSRC}/php.ini-optimized ${PREFIX}/share/doc/php4
+	${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/share/doc/php4
 	@sed 's,y0y0y0,${TRUEPREFIX},' \
 		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
