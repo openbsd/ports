@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/05 21:11:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/18 04:44:40 kevlo Exp $
 
 COMMENT=	"quota manipulation module"
 
-DISTNAME=	Quota-1.4.6
+DISTNAME=	Quota-1.4.8
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Quota/}
