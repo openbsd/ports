@@ -1,0 +1,12 @@
+$OpenBSD: patch-nntpd_c,v 1.1 2002/09/24 10:17:47 naddy Exp $
+--- nntpd.c.orig	Tue Sep 24 01:20:12 2002
++++ nntpd.c	Tue Sep 24 01:20:53 2002
+@@ -828,7 +828,7 @@ list(struct newsgroup *g, int what, cons
+ 		    printf("%s\t%s\r\n", g->name, g->desc ? g->desc : "-x-");
+ 		    break;
+ 		case 2:
+-		    printf("%s %lu news@%s\r\n", g->name, g->age, fqdn);
++		    printf("%s %lu news@%s\r\n", g->name, (unsigned long)g->age, fqdn);
+ 		    break;
+ 		default:
+ 		    break;
