@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.3 2002/06/03 01:33:54 pvalchev Exp $
+
 COMMENT=	"graphical networked AD&D style game"
 
 VERSION=	1.2.1
