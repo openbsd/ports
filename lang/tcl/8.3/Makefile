@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/08/30 02:12:26 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/06 17:45:06 espie Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -40,8 +40,6 @@ CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 INSTALL_TARGET=	install-strip
-
-test:	build
-	@cd ${WRKSRC}; make test
+REGRESS_TARGET=	test
 
 .include <bsd.port.mk>

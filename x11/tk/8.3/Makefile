@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/11 05:50:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/06 17:46:42 espie Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -37,8 +37,7 @@ CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
-test:	build
-	@cd ${WRKSRC} && make test
+REGRESS_TARGET=test
 
 post-install:
 	@strip ${PREFIX}/bin/wish8.3

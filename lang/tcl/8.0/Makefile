@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/05 23:07:48 jsyn Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/06 17:46:42 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 COMMENT=	"Tool Command Language"
@@ -38,9 +38,7 @@ CONFIGURE_ARGS+= --disable-load
 CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
-
-test:	build
-	@cd ${WRKSRC}; make test
+REGRESS_TARGET=	test
 
 post-install:
 	@strip ${PREFIX}/bin/tclsh8.0
