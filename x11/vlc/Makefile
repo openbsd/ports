@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/09/15 19:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/05 20:49:08 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -37,7 +37,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		fribidi::devel/fribidi \
 		faad::audio/faad
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-logg" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
