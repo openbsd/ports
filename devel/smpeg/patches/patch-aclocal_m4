@@ -1,0 +1,21 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
+--- aclocal.m4.orig	Tue Apr 24 13:25:43 2001
++++ aclocal.m4	Wed Jun 27 18:30:04 2001
+@@ -1,4 +1,4 @@
+-dnl aclocal.m4 generated automatically by aclocal 1.4
++dnl aclocal.m4 generated automatically by aclocal 1.4-p1
+ 
+ dnl Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+ dnl This file is free software; the Free Software Foundation
+@@ -594,8 +594,9 @@ AC_DEFUN(AC_TYPE_SOCKLEN_T,
+ [AC_CACHE_CHECK([for socklen_t], ac_cv_type_socklen_t,
+ [
+   AC_TRY_COMPILE(
+-  [#include <sys/socket.h>],
+-  [socklen_t len = 42; return len;],
++  [#include <sys/types.h>
++  #include <sys/socket.h>],
++  [socklen_t x;],
+   ac_cv_type_socklen_t=yes,
+   ac_cv_type_socklen_t=no)
+ ])

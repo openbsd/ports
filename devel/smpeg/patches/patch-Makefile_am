@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2001/04/19 19:21:20 obecian Exp $
---- Makefile.am.orig	Sun Apr  1 00:23:30 2001
-+++ Makefile.am	Sun Apr  1 00:23:51 2001
+$OpenBSD: patch-Makefile_am,v 1.2 2001/06/28 00:56:58 pvalchev Exp $
+--- Makefile.am.orig	Wed Jun 27 17:22:58 2001
++++ Makefile.am	Wed Jun 27 17:23:23 2001
 @@ -33,7 +33,6 @@ libsmpeginclude_HEADERS =	\
  	smpeg.h
  

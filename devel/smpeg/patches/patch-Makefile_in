@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/04/19 19:21:20 obecian Exp $
---- Makefile.in.orig	Sun Apr  1 00:23:34 2001
-+++ Makefile.in	Sun Apr  1 00:24:14 2001
+$OpenBSD: patch-Makefile_in,v 1.2 2001/06/28 00:56:58 pvalchev Exp $
+--- Makefile.in.orig	Wed Jun 27 17:23:04 2001
++++ Makefile.in	Wed Jun 27 17:23:17 2001
 @@ -105,7 +105,7 @@ libsmpegincludedir = $(includedir)/smpeg
  libsmpeginclude_HEADERS =  	MPEG.h				MPEGaction.h			MPEGaudio.h			MPEGerror.h			MPEGfilter.h			MPEGring.h			MPEGlist.h			MPEGstream.h			MPEGsystem.h			MPEGvideo.h			smpeg.h
  

@@ -1,0 +1,15 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
+--- acinclude.m4.orig	Wed Apr 18 18:06:08 2001
++++ acinclude.m4	Wed Jun 27 18:29:43 2001
+@@ -614,8 +614,9 @@ AC_DEFUN(AC_TYPE_SOCKLEN_T,
+ [AC_CACHE_CHECK([for socklen_t], ac_cv_type_socklen_t,
+ [
+   AC_TRY_COMPILE(
+-  [#include <sys/socket.h>],
+-  [socklen_t len = 42; return len;],
++  [#include <sys/types.h>
++  #include <sys/socket.h>],
++  [socklen_t x;],
+   ac_cv_type_socklen_t=yes,
+   ac_cv_type_socklen_t=no)
+ ])
