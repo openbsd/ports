@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.1 2000/04/23 15:35:48 kevlo Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:22 brad Exp $
 #
 # trafshow de-installation
 

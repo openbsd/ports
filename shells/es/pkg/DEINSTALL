@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.1 2000/03/26 00:36:15 espie Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:24 brad Exp $
 #
 # zsh de-installation
 

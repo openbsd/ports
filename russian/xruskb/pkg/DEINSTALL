@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.1 2000/03/12 13:20:41 form Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:23 brad Exp $
 #
 # xruskb de-installation
 

@@ -1,6 +1,7 @@
-# $OpenBSD: DEINSTALL,v 1.1 1999/04/08 23:13:53 marc Exp $
+#!/bin/bin
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:20 brad Exp $
 #
-# xtnpd de-installation
+# cucipop de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin

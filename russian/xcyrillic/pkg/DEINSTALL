@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.2 2000/03/29 20:23:04 form Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.3 2000/07/19 09:31:23 brad Exp $
 #
 # xcyrillic de-installation
 

@@ -1,6 +1,7 @@
-# $OpenBSD: DEINSTALL,v 1.1 1999/04/08 22:41:17 marc Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:20 brad Exp $
 #
-# mm de-installation
+# metamail de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin

@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/06/23 18:44:42 form Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:21 brad Exp $
 #
 # ipfm de-installation
 

@@ -1,6 +1,7 @@
-# $OpenBSD: DEINSTALL,v 1.1 2000/05/18 04:41:32 form Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:17 brad Exp $
 #
-# joe de-installation
+# minicom de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
