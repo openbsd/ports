@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/08 23:36:32 naddy Exp $
+bin/numlockx
+share/doc/numlockx/
+share/doc/numlockx/README
