@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/26 03:28:02 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/16 01:36:50 naddy Exp $
 
-DISTNAME=	arping-0.94
+DISTNAME=	arping-0.96
 HOMEPAGE=	http://synscan.nss.nu/programs.php
 
 CATEGORIES=	net
-NEED_VERSION=	1.313
+NEED_VERSION=	1.358
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://ftp.nss.nu/pub/synscan/ \
@@ -18,8 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	net::net/libnet
 
 ALL_TARGET=	openbsd
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arping ${PREFIX}/bin/arping
 
 .include <bsd.port.mk>

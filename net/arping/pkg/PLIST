@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/13 08:41:44 camield Exp $
-bin/arping
+@comment $OpenBSD: PLIST,v 1.2 2001/03/16 01:36:51 naddy Exp $
+sbin/arping
+man/man8/arping.8
