@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2001/01/28 00:47:17 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/04/10 16:18:02 bmc Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
+
+COMMENT=	"internet relay chat (irc) server"
 
 DISTNAME=       irc2.10.3p1
 PKGNAME=        irc-2.10.3p1
 CATEGORIES=	net
-NEED_VERSION=	1.351
+NEED_VERSION=	1.387
 MASTER_SITES=   ftp://ftp.irc.org/irc/server/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 SYSCONFDIR=	/etc/ircd
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--logdir="/var/log/ircd" \
-		--localstatedir="/var/run"
+		--localstatedir="/var/run" \
+		--enable-ip6
 
 # syslog facility to use for logging
 SYSLOG_FACILITY=	LOG_LOCAL5
