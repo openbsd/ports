@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: ispell-config,v 1.2 2004/11/11 18:50:01 millert Exp $
+# $Id: ispell-config,v 1.3 2004/11/17 01:19:28 alek Exp $
 #
 # Script to change the default language for ispell.
 # Parts borrowed from a similar script for Debian Linux.
@@ -13,7 +13,11 @@ DICT_DIR=/usr/local/lib/ispell
 choose_default()
 {
 	echo -n "Select the number of the new default dictionary [0] "
-	read num
+	if [ "x$1" = "x" ]; then
+		read num
+	else
+		num=$1
+	fi
 	selected_num=${num:-1}
 	selected=`echo -e $dictionaries | grep "\[$selected_num\]" | awk '{print $2}'`
 
@@ -67,7 +71,7 @@ echo "Current default dictionary: $default_dict"
 dictionaries="\t[0] Current\n"${dictionaries}
 echo -e $dictionaries
 
-choose_default
+choose_default $1
 
 # Set the default dictionary
 if [ $selected_num = 0 ]; then

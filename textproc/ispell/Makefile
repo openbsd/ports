@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/01/14 17:09:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.38 2004/11/17 01:19:28 alek Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -12,6 +12,7 @@ COMMENT-swedish=	"ispell dictionary for Swedish"
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
