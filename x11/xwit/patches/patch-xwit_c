@@ -1,0 +1,12 @@
+$OpenBSD: patch-xwit_c,v 1.1.1.1 2001/01/25 17:03:05 naddy Exp $
+--- xwit.c.orig	Tue Oct 21 03:32:54 1997
++++ xwit.c	Mon Jan 22 22:21:10 2001
+@@ -134,7 +134,7 @@ int ms;
+     struct timeval tv;
+     tv.tv_sec = ms/1000;
+     tv.tv_usec = (ms%1000)*1000;
+-    select(0,(int*)0,(int*)0,(int*)0,&tv);
++    select(0,NULL,NULL,NULL,&tv);
+ }
+ 
+ /*
