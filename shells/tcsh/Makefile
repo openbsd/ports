@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/04 22:36:46 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/07/31 03:37:21 kevlo Exp $
 
 DISTNAME=	tcsh-6.09
 PKGNAME=	tcsh-6.09.00
 CATEGORIES=	shells
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
+MASTER_SITES=	ftp://ftp.gw.com/pub/unix/tcsh/
 
 MAINTAINER=	brad@openbsd.org
 
