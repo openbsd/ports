@@ -1,0 +1,13 @@
+$OpenBSD: gcc-psys_src_Makefile,v 1.1 2003/11/21 14:50:41 sturm Exp $
+--- psys/src/Makefile.orig	2003-03-12 15:47:36.000000000 -0700
++++ psys/src/Makefile	2003-11-21 05:53:03.000000000 -0700
+@@ -190,6 +190,9 @@ libp2c.a: $(OBJS)
+ p2clib.o: p2clib.c
+ 	$(CC) -c $(CFLAGS) $(P2CFLAGS) p2clib.c
+ 
++newasmlib.o:
++	${CC} ${CFLAGS} -O0 -c newasmlib.c
++
+ clean:
+ 	-rm -f *.o libp2c.a ../libp2c.a
+  
