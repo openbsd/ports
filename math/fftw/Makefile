@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2003/01/22 15:45:35 sturm Exp $
 # $FreeBSD: ports/math/fftw/Makefile,v 1.11 2000/06/16 21:51:38 asami Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
-		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/ \
 		ftp://ftp.kusastro.kyoto-u.ac.jp/pub/src/GNU/fftw/
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
