@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.17 2002/05/15 06:20:04 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2002/09/07 19:09:05 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
 CATEGORIES=	mail
-NEED_VERSION=	1.528
 
 MASTER_SITE_POSTFIX=\
 		ftp://ftp.porcupine.org/mirrors/postfix-release/ \
