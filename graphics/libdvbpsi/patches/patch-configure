@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/09/23 23:39:08 jolan Exp $
+--- configure.orig	2003-07-28 18:34:48.000000000 -0500
++++ configure	2003-09-06 04:07:47.000000000 -0500
+@@ -7840,7 +7840,7 @@ if test x$release = xtrue
+ then
+   CFLAGS="${CFLAGS} -O6"
+ else
+-  CFLAGS="${CFLAGS} -O2"
++  CFLAGS="${CFLAGS} ${ac_save_CFLAGS}"
+ fi
+ 
+ 
