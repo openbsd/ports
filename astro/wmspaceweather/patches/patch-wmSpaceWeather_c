@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmSpaceWeather_c,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
---- wmSpaceWeather/wmSpaceWeather.c.orig	Thu Feb 18 18:57:45 1999
-+++ wmSpaceWeather/wmSpaceWeather.c	Wed Jan 10 14:48:34 2001
+$OpenBSD: patch-wmSpaceWeather_c,v 1.2 2003/06/18 14:07:14 avsm Exp $
+--- wmSpaceWeather/wmSpaceWeather.c.orig	Thu Feb 18 17:57:45 1999
++++ wmSpaceWeather/wmSpaceWeather.c	Wed Jun 18 03:08:57 2003
 @@ -115,7 +115,7 @@ XEvent		event;
  int			i, n, s, k, m, dt1, dt2;
  int 		Year, Month, Day, DayOfMonth, OldDayOfMonth;
@@ -50,6 +50,15 @@ $OpenBSD: patch-wmSpaceWeather_c,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
  
      	        for (i=0; i<8; ++i){
  	    	    fscanf(fp, "%ld %d", &TimeTag[i], &Kp[i]);
+@@ -289,7 +290,7 @@ FILE		*fp;
+ 	    	fscanf(fp, "%lf", &P3);
+ 	    	fscanf(fp, "%lf", &E1);
+ 	    	fscanf(fp, "%lf", &E2);
+-	    	fscanf(fp, "%10s",  Xray);
++	    	fscanf(fp, "%9s",  Xray);
+     	        fclose(fp);
+ 
+ 	    } else {
 @@ -318,7 +319,7 @@ FILE		*fp;
  	    LatestAvailJD = jd(Year, Month, Day, UT);
  
