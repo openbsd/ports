@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/03 02:21:54 ho Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/11 01:09:01 espie Exp $
 
 DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
@@ -32,11 +32,13 @@ ALL_TARGET=	openbsd-i386
 MAKE_ENV+=     USE_INET6=YES
 .endif
 
+FAKE=Yes
+FAKE_FLAGS=PREFIX=${WRKINST}${PREFIX}
 post-patch:
 	@cp ${FILESDIR}/{audio_openbsd.c,term.c} ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA_DIR} ${LOCALBASE}/share/mpg123
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${LOCALBASE}/share/mpg123
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mpg123
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/mpg123
 
 .include <bsd.port.mk>
