@@ -1,0 +1,25 @@
+$OpenBSD: patch-image_image_xwd_c,v 1.1 2002/12/26 01:58:39 margarida Exp $
+--- image/image_xwd.c.orig	Tue Dec 24 04:17:11 2002
++++ image/image_xwd.c	Tue Dec 24 04:19:02 2002
+@@ -81,6 +81,7 @@ typedef union
+ }
+ tLong;
+ 
++#ifndef swap32
+ static CARD32
+ swap32(CARD32 in)
+ {
+@@ -97,10 +98,11 @@ swap32(CARD32 in)
+ 
+     return t.l;
+ }
++#endif
+ 
++#ifndef swap16
+ #define swap16(a)  ((((a)&0xff)<<8)|(((a)>>8)&0xff))
+-
+-
++#endif
+ 
+ static void
+ swap_header(XWDFileHeader * h)
