@@ -22,7 +22,7 @@
  cat >> $CONFIG_STATUS <<EOF
  
 -CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/zebra.8"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/vtysh.1 doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/zebra.8"}
  EOF
  cat >> $CONFIG_STATUS <<\EOF
  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
