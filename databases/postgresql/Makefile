@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2005/01/02 00:23:28 alek Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -6,9 +6,9 @@ COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
 VERSION=	7.4.3
 DISTNAME=	postgresql-${VERSION}
-FULLPKGNAME=	postgresql-client-${VERSION}
-PKGNAME-server=	postgresql-server-${VERSION}
-PKGNAME-docs=	postgresql-docs-${VERSION}
+FULLPKGNAME=	postgresql-client-${VERSION}p0
+PKGNAME-server=	postgresql-server-${VERSION}p0
+PKGNAME-docs=	postgresql-docs-${VERSION}p0
 
 CATEGORIES=	databases
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	"without fee clause"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"without fee clause"
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto curses m perl readline ssl util z
+WANTLIB=		c crypto curses m readline ssl util z
 
 MASTER_SITES= ftp://ftp3.us.postgresql.org/pub/postgresql/source/v${VERSION}/ \
 	      ftp://ftp.postgresql.org/pub/source/v${VERSION}/
@@ -69,8 +69,17 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 INSTALL_TARGET=	install install-all-headers
 
-.if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=    :postgresql-client-${VERSION}:databases/postgresql
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-server"
+WANTLIB+=	perl
+.endif
+
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-server"
+LIB_DEPENDS=	pq.3:postgresql-client-${VERSION}:databases/postgresql
+.  elif ${SUBPACKAGE} == "-docs"
+WANTLIB=
+PKG_ARCH=	*
+.  endif
 .endif
 
 # Regression tests must be done manually and not as root. Successful
