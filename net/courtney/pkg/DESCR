@@ -1,0 +1,6 @@
+Monitors the network and identifies the source machines of SATAN
+probes/attacks. Courtney receives input from tcpdump counting the
+number of new services a machine originates within a certain time
+window. If one machine connects to numerous services within that
+time window, courtney identifies that machine as a potential SATAN
+host.

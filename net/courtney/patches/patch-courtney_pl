@@ -1,0 +1,33 @@
+$OpenBSD: patch-courtney_pl,v 1.1.1.1 2001/01/12 04:27:46 danh Exp $
+--- courtney.pl.orig	Thu Jan 11 19:48:03 2001
++++ courtney.pl	Thu Jan 11 19:49:53 2001
+@@ -1,4 +1,4 @@
+-#!/bin/perl 
++#!/usr/bin/perl 
+ #
+ #
+ # COURTNEY: program to detect SATAN scans.
+@@ -52,11 +52,11 @@
+ require 5; # This won't run on Perl 4.
+ 
+ # Let's make sure we're OK
+-$ENV{'PATH'} = '/bin:/usr/bin:/usr/ucb:/usr/bsd:/usr/sbin:/usr/etc:/usr/local/bin';
+-$ENV{'SHELL'} = '/bin/sh' if $ENV{'SHELL'} ne '';
+-$ENV{'IFS'} = '' if $ENV{'IFS'} ne '';
++$ENV{'PATH'} = '/usr/sbin';
++$ENV{'SHELL'} = '/bin/sh';
++$ENV{'IFS'} = '';
+ 
+-@assoc_list  = (  'sunrpc',  'icmp',    'ttime',   'telnet',   'smtp', 
++@assoc_list  = (  'sunrpc',  'icmp',    'ttime',   'telnet',   'smtp', 'ssh', 
+                   'ftp',     'whois',   'domain',  'gopher',   'www',
+                   'finger',  'exec',    'login',   'shell',    'printer',
+                   'uucp',    'tcpmux',  'echo',    'discard',  'systat',
+@@ -137,6 +137,7 @@ open (TCPDUMP, "$tcpdump '\
+ 	   ftp or \
+ 	   telnet or \
+ 	   smtp or \
++	   ssh or \
+ 	   time or \
+ 	   whois or \
+ 	   domain or\

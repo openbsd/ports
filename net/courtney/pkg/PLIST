@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 04:27:46 danh Exp $
+sbin/courtney
+share/doc/courtney/README
+@dirrm share/doc/courtney
