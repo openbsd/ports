@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/05 18:14:09 avsm Exp $
+libdata/perl5/site_perl/XML/Writer.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Writer/.packlist
+man/man3/XML::Writer.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Writer
