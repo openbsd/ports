@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.17 1999/01/12 11:28:44 espie Exp $
+# $OpenBSD: Makefile,v 1.18 1999/01/13 00:09:03 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -35,7 +35,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
 MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-#MAKE_CHILL=yes
+MAKE_CHILL=yes
 MAKE_OBJC=yes
 MAKE_JAVA=yes
 
@@ -44,10 +44,10 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive
-#ONE_ARCHIVE=yes
+ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-01-03
+LATEST_DATE=1999-01-12
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,

@@ -1,20 +1,31 @@
-Results for 1998-12-20 snapshot:
+Native configuration is i386-unknown-openbsd2.4.
+
+		=== libio tests ===
+
+
+Running target unix
 
 		=== libio Summary ===
 
 # of expected passes		40
+		=== libstdc++ tests ===
+
+
+Running target unix
 
 		=== libstdc++ Summary ===
 
 # of expected passes		30
+		=== gcc tests ===
 
-		=== gcc Summary ===
 
-# of expected passes		7816
-# of unexpected failures	22
-# of expected failures		13
-# of unsupported tests		12
-
+Running target unix
+FAIL: gcc.c-torture/compile/981223-1.c,  -O0  
+FAIL: gcc.c-torture/compile/981223-1.c,  -O1  
+FAIL: gcc.c-torture/compile/981223-1.c,  -O2  
+FAIL: gcc.c-torture/compile/981223-1.c,  -O2 -fomit-frame-pointer -finline-functions  
+FAIL: gcc.c-torture/compile/981223-1.c,  -O2 -g  
+FAIL: gcc.c-torture/compile/981223-1.c,  -Os  
 FAIL: gcc.c-torture/execute/980526-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 
@@ -37,16 +48,21 @@ FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 FAIL: gcc.dg/980414-1.c (test for excess errors)
-		=== g++ Summary ===
 
-# of expected passes		4774
-# of unexpected failures	16
-# of unexpected successes	1
-# of expected failures		86
-# of untested testcases		7
+		=== gcc Summary ===
 
+# of expected passes		7816
+# of unexpected failures	28
+# of expected failures		13
+# of unsupported tests		12
+/vbig/ports/lang/egcs-snapshot/egcs-19990103/gcc/xgcc version egcs-2.92.34 19990103 (gcc2 ss-980609 experimental)
+
+		=== g++ tests ===
+
+
+Running target unix
 FAIL: g++.law/profile1.C (test for excess errors)
-XPASS: g++.other/conv5.C discarding const - (test for errors, line 6)
+FAIL: g++.mike/p6610a.C  Execution test
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -63,12 +79,29 @@ FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warni
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
 FAIL: g++.pt/instantiate4.C (test for excess errors)
 
+		=== g++ Summary ===
+
+# of expected passes		4775
+# of unexpected failures	17
+# of expected failures		88
+# of untested testcases		7
+/vbig/ports/lang/egcs-snapshot/egcs-19990103/gcc/testsuite/../xgcc version egcs-2.92.34 19990103 (gcc2 ss-980609 experimental)
+
+		=== g77 tests ===
+
+
+Running target unix
 
 		=== g77 Summary ===
 
-# of expected passes		465
+# of expected passes		93
+# of unresolved testcases	186
+		=== objc tests ===
+
+
+Running target unix
 
 		=== objc Summary ===
 
 # of expected passes		38
-
+/vbig/ports/lang/egcs-snapshot/egcs-19990103/gcc/xgcc version egcs-2.92.34 19990103 (gcc2 ss-980609 experimental)
