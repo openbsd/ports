@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/12 13:16:39 naddy Exp $
+bin/wy60
+man/man1/wy60.1
+share/examples/wy60/wy60.rc
+@dirrm share/examples/wy60
