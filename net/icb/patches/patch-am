@@ -1,0 +1,251 @@
+*** icb/unix.c.orig	Wed Jul 15 20:39:27 1998
+--- icb/unix.c	Wed Jul 15 20:44:24 1998
+***************
+*** 13,19 ****
+  #undef stty
+  #undef gtty
+  
+! #ifndef SYSV
+  
+  #ifdef linux
+  #include <bsd/sgtty.h>
+--- 13,40 ----
+  #undef stty
+  #undef gtty
+  
+! #ifdef SYSV
+! 
+! #define USE_TERMIO
+! #include <termio.h>
+! #define TTYSTRUCT termio
+! #define stty(fd,buf) ioctl((fd),TCSETA,(buf))
+! #define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
+! 
+! #else /* SYSV */
+! 
+! # ifdef BSD4_4
+! # define USE_TERMIO
+! # include <termios.h>
+! # define TTYSTRUCT termios
+! # define stty(fd,buf) ioctl((fd),TIOCSETA,(buf))
+! # define gtty(fd,buf) ioctl((fd),TIOCGETA,(buf))
+! 
+! # endif /* BSD4_4 */
+! 
+! #endif /* SYSV */
+! 
+! #ifndef USE_TERMIO /* neither case above (SYSV or BSD4_4) */
+  
+  #ifdef linux
+  #include <bsd/sgtty.h>
+***************
+*** 22,35 ****
+  #endif
+  
+  #define TTYSTRUCT sgttyb
+! #define stty(fd,buf) ioctl((fd),TIOCSETN,(buf))
+  #define gtty(fd,buf) ioctl((fd),TIOCGETP,(buf))
+! #else /* SYSV */
+! #include <termio.h>
+! #define TTYSTRUCT termio
+! #define stty(fd,buf) ioctl((fd),TCSETA,(buf))
+! #define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
+! #endif /* SYSV */
+  
+  char *getlogin();
+  
+--- 43,51 ----
+  #endif
+  
+  #define TTYSTRUCT sgttyb
+! #define stty(fd,buf) ioctl((fd),TIOCSETP,(buf))
+  #define gtty(fd,buf) ioctl((fd),TIOCGETP,(buf))
+! #endif
+  
+  char *getlogin();
+  
+***************
+*** 79,91 ****
+  pushback(c)
+  char c;
+  {
+! #ifndef SYSV
+  	if (ioctl(0, TIOCSTI, &c) < 0)
+  		perror("TIOCSTI ioctl failed");
+! #else /* SYSV */
+  	if (ungetc(c,stdin) == EOF)
+  		perror("ungetc() failed");
+! #endif /* SYSV */
+  }
+  
+  
+--- 95,107 ----
+  pushback(c)
+  char c;
+  {
+! #ifndef USE_TERMIO
+  	if (ioctl(0, TIOCSTI, &c) < 0)
+  		perror("TIOCSTI ioctl failed");
+! #else /* USE_TERMIO */
+  	if (ungetc(c,stdin) == EOF)
+  		perror("ungetc() failed");
+! #endif /* USE_TERMIO */
+  }
+  
+  
+***************
+*** 94,118 ****
+  
+  getterm()
+  {
+! #ifndef SYSV
+  	struct ltchars lt;
+! #endif /* SYSV */
+  	/* get tty settings */
+  	if (gtty(0,&origtty) < 0) {
+  		badttyinfo++;
+  		ttyinfo.erase = '\b';	/* ^H */
+  		ttyinfo.kill = '\025';	/* ^U */
+  	} else {
+! #ifndef SYSV
+  		ttyinfo.erase = origtty.sg_erase;
+  		ttyinfo.kill = origtty.sg_kill;
+! #else /* SYSV */
+  		ttyinfo.erase = origtty.c_cc[VERASE];
+  		ttyinfo.kill = origtty.c_cc[VKILL];
+! #endif /* SYSV */
+  	}
+  
+! #ifndef SYSV
+  	/* get local special chars */
+   	if (ioctl(0, TIOCGLTC, &lt) < 0) {
+  		ttyinfo.redraw = '\022'; /* ^R */
+--- 110,134 ----
+  
+  getterm()
+  {
+! #ifndef USE_TERMIO
+  	struct ltchars lt;
+! #endif /* USE_TERMIO */
+  	/* get tty settings */
+  	if (gtty(0,&origtty) < 0) {
+  		badttyinfo++;
+  		ttyinfo.erase = '\b';	/* ^H */
+  		ttyinfo.kill = '\025';	/* ^U */
+  	} else {
+! #ifndef USE_TERMIO
+  		ttyinfo.erase = origtty.sg_erase;
+  		ttyinfo.kill = origtty.sg_kill;
+! #else /* USE_TERMIO */
+  		ttyinfo.erase = origtty.c_cc[VERASE];
+  		ttyinfo.kill = origtty.c_cc[VKILL];
+! #endif /* USE_TERMIO */
+  	}
+  
+! #ifndef USE_TERMIO
+  	/* get local special chars */
+   	if (ioctl(0, TIOCGLTC, &lt) < 0) {
+  		ttyinfo.redraw = '\022'; /* ^R */
+***************
+*** 121,130 ****
+  		ttyinfo.redraw = lt.t_rprntc;
+  		ttyinfo.werase = lt.t_werasc;
+  	}
+! #else /* SYSV */
+  	ttyinfo.redraw = '\022'; /* ^R */
+  	ttyinfo.werase = '\027'; /* ^W */
+! #endif /* SYSV */
+  
+  	/* get the current window size */
+  	getwinsize();
+--- 137,146 ----
+  		ttyinfo.redraw = lt.t_rprntc;
+  		ttyinfo.werase = lt.t_werasc;
+  	}
+! #else /* USE_TERMIO */
+  	ttyinfo.redraw = '\022'; /* ^R */
+  	ttyinfo.werase = '\027'; /* ^W */
+! #endif /* USE_TERMIO */
+  
+  	/* get the current window size */
+  	getwinsize();
+***************
+*** 145,158 ****
+  	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
+  
+  	/* turn on cbreak - turn off echo */
+! #ifndef SYSV
+  	tty.sg_flags |= CBREAK;
+  	tty.sg_flags &= ~ECHO;
+! #else /* SYSV */
+  	tty.c_lflag  &= ~ICANON;
+  	tty.c_cc[VEOF] = 1;
+  	tty.c_lflag &= ~ECHO;
+! #endif /* SYSV */
+  
+  	echomode = 0;
+  	/* set the new flags */
+--- 161,174 ----
+  	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
+  
+  	/* turn on cbreak - turn off echo */
+! #ifndef USE_TERMIO
+  	tty.sg_flags |= CBREAK;
+  	tty.sg_flags &= ~ECHO;
+! #else /* USE_TERMIO */
+  	tty.c_lflag  &= ~ICANON;
+  	tty.c_cc[VEOF] = 1;
+  	tty.c_lflag &= ~ECHO;
+! #endif /* USE_TERMIO */
+  
+  	echomode = 0;
+  	/* set the new flags */
+***************
+*** 258,268 ****
+  	}
+  
+  	/* turn on echo */
+! #ifndef SYSV
+  	tty.sg_flags |= ECHO;
+! #else /* SYSV */
+  	tty.c_lflag  |= ECHO;
+! #endif /* SYSV */
+  
+  	echomode = 1;
+  
+--- 274,284 ----
+  	}
+  
+  	/* turn on echo */
+! #ifndef USE_TERMIO
+  	tty.sg_flags |= ECHO;
+! #else /* USE_TERMIO */
+  	tty.c_lflag  |= ECHO;
+! #endif /* USE_TERMIO */
+  
+  	echomode = 1;
+  
+***************
+*** 287,297 ****
+  	}
+  
+  	/* turn off echo */
+! #ifndef SYSV
+  	tty.sg_flags &= ~ECHO;
+! #else /* SYSV */
+  	tty.c_lflag  &= ~ECHO;
+! #endif /* SYSV */
+  
+  	echomode = 0;
+  
+--- 303,313 ----
+  	}
+  
+  	/* turn off echo */
+! #ifndef USE_TERMIO
+  	tty.sg_flags &= ~ECHO;
+! #else /* USE_TERMIO */
+  	tty.c_lflag  &= ~ECHO;
+! #endif /* USE_TERMIO */
+  
+  	echomode = 0;
