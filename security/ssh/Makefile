@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.27 1998/08/28 23:00:47 deraadt Exp $
+# $OpenBSD: Makefile,v 1.28 1998/11/22 23:51:26 todd Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -19,7 +19,7 @@ MASTER_SITES= 	\
 
 MAINTAINER=	todd@OpenBSD.ORG
 
-ETCDIR=		/etc
+ETCDIR?=	/etc
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
@@ -36,6 +36,10 @@ USE_PERL=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	${SETENV}
 CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR}
+
+.if defined(X11) && ${X11} == NO
+CONFIGURE_ARGS= --without-x
+.endif
 
 #Uncomment if all your users are in their own group and their homedir
 #is writeable by that group.  Beware the security implications!
