@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_cil_in,v 1.1 2004/06/21 18:53:12 avsm Exp $
+--- Makefile.cil.in.orig	2004-06-20 18:38:15.000000000 +0100
++++ Makefile.cil.in	2004-06-20 18:38:36.000000000 +0100
+@@ -56,7 +56,7 @@ CILLY_LIBRARY_MODULES = pretty inthash e
+               cabs cabsvisit cprint lexerhack machdep cparser clexer  \
+               cilversion cil formatparse formatlex formatcil cabs2cil \
+               patch frontc check mergecil logcalls logwrites rmtmps \
+-	      callgraph epicenter heapify \
++	      callgraph epicenter heapify nullint \
+               setp uref steensgaard olf dummy ptranal \
+               canonicalize heap oneret partial simplemem simplify \
+               testcil \
+@@ -328,7 +328,7 @@ DISTRIB_SRC_FRONTC = cabs.ml cprint.ml c
+ 
+ DISTRIB_SRC_EXT = logcalls.ml logcalls.mli \
+                   astslicer.ml simplemem.ml heap.ml partial.ml \
+-                  logwrites.ml heapify.ml callgraph.ml callgraph.mli \
++                  logwrites.ml heapify.ml nullint.ml callgraph.ml callgraph.mli \
+                   epicenter.ml \
+ 	          stackoverflow.mli stackoverflow.ml \
+ 	          canonicalize.ml canonicalize.mli \

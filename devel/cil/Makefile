@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/21 18:53:12 avsm Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64
@@ -29,6 +29,9 @@ P5SITE= libdata/perl5/site_perl
 P5INST= ${PREFIX}/${P5SITE}
 SUBST_VARS+= P5SITE
 GCC=/usr/bin/gcc  # cant use CC in case it's set to cilly
+
+post-extract:
+	@cp ${FILESDIR}/nullint.ml ${WRKSRC}/src/ext
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil

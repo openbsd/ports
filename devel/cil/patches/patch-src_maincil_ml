@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_maincil_ml,v 1.1 2004/06/21 18:53:12 avsm Exp $
+--- src/maincil.ml.orig	2004-06-20 18:35:17.000000000 +0100
++++ src/maincil.ml	2004-06-20 18:35:48.000000000 +0100
+@@ -104,6 +104,7 @@ let features : C.featureDescr list = 
+     Partial.feature;
+     Simplemem.feature;
+     Simplify.feature;
++    Nullint.feature;
+   ] 
+   @ Feature_config.features 
+ 
