@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/22 04:52:22 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/10 21:48:24 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 DISTNAME=		bochs-990219a
@@ -21,7 +21,7 @@ post-configure:
 do-install:
 	${MKDIR} ${PREFIX}/share/bochs/bios
 	${MKDIR} ${PREFIX}/share/bochs/fonts
-	${INSTALL_DATA} ${WRKSRC}/bios/BIOS-bochs-990219a ${PREFIX}/share/bochs/bios
+	${INSTALL_DATA} ${WRKSRC}/bios/BIOS-bochs-990218a ${PREFIX}/share/bochs/bios
 	${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-elpin-2.20 ${PREFIX}/share/bochs/bios
 	${MKDIR} ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/docs-html/* ${PREFIX}/share/doc/bochs
