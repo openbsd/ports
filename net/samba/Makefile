@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2001/09/01 20:13:28 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/10/24 15:33:57 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-2.2.1a
+DISTNAME=	samba-2.2.2
 CATEGORIES=	net
-NEED_VERSION=	1.435
+NEED_VERSION=	1.481
 
 HOMEPAGE=	http://www.samba.org/
 
@@ -21,6 +21,8 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.samba.org/pub/samba/old-versions/
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS+=	prefix="${WRKINST}${PREFIX}" \
 		BASEDIR="${WRKINST}${PREFIX}" \
@@ -58,7 +60,7 @@ SAMBA_DOCS=${WRKSRC}/../README \
 	${WRKSRC}/../docs/THANKS \
 	${WRKSRC}/../docs/history \
 	${WRKSRC}/../docs/announce \
-	${WRKSRC}/../docs/*.reg
+	${WRKSRC}/../docs/Registry/*.reg
 SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
 
 post-install:

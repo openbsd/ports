@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2001/08/29 13:26:15 dhartmei Exp $
+@comment $OpenBSD: PLIST,v 1.17 2001/10/24 15:33:57 dhartmei Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -137,7 +137,6 @@ share/doc/samba/textdocs/Recent-FAQs.txt
 share/doc/samba/textdocs/RoutedNetworks.txt
 share/doc/samba/textdocs/SCO.txt
 share/doc/samba/textdocs/SMBTAR.notes
-share/doc/samba/textdocs/SSLeay.txt
 share/doc/samba/textdocs/Speed.txt
 share/doc/samba/textdocs/Speed2.txt
 share/doc/samba/textdocs/Tracing.txt
