@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/14 12:15:38 sturm Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Radius/
+${P5SITE}/Net/Radius/Dictionary.pm
+${P5SITE}/Net/Radius/Packet.pm
+@man man/man3p/Net::Radius::Dictionary.3p
+@man man/man3p/Net::Radius::Packet.3p
+share/doc/p5-Net-Radius/
+share/doc/p5-Net-Radius/README
+share/doc/p5-Net-Radius/README.3COM
+share/doc/p5-Net-Radius/README.VSA
+share/examples/p5-Net-Radius/
+share/examples/p5-Net-Radius/example-client.pl
+share/examples/p5-Net-Radius/example-menu.pl
+share/examples/p5-Net-Radius/example-unix.pl
+share/examples/p5-Net-Radius/example-yes.pl
+share/examples/p5-Net-Radius/radius2ldap.pl
+share/examples/p5-Net-Radius/tutorial.pl
+share/p5-Net-Radius/
+share/p5-Net-Radius/dictionary
+share/p5-Net-Radius/dictionary.3com

@@ -1,0 +1,10 @@
+This package contains the Net::Radius::Dictionary and
+Net::Radius::Packet modules.
+
+Net::Radius::Dictionary is a simple module that reads a RADIUS
+dictionary file and parses it, allowing conversion between dictionary
+names and numbers. Vendor-Specific attributes are supported in a
+way consistent to the standards.
+
+Net::Radius::Packet provides an interface to turn RADIUS packets
+into Perl data structures and vice-versa.
