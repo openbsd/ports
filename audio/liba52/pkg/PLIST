@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/29 14:43:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/16 16:52:09 jolan Exp $
 bin/a52dec
 bin/extract_a52
 include/a52dec/a52.h
@@ -9,4 +9,5 @@ lib/liba52.a
 lib/liba52.la
 man/man1/a52dec.1
 man/man1/extract_a52.1
+%%SHARED%%
 @dirrm include/a52dec
