@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/29 17:21:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/18 08:32:53 shell Exp $
 
 COMMENT=		"convert ASP code to PHP code"
 
-DISTNAME=		asp2php-0.75.12
+DISTNAME=		asp2php-0.75.13
 CATEGORIES=		devel www
-NEED_VERSION=		1.364
+NEED_VERSION=		1.399
 
-MAINTAINER=		Shell Hung <i@shellhung.org>
+MAINTAINER=		Shell Hung <shell@openbsd.org>
 
 HOMEPAGE=		http://asp2php.naken.cc/
 MASTER_SITES=		http://home.i1.net/~naken/asp2php/
