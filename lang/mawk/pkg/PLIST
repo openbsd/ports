@@ -1,1 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/12/31 05:28:35 brad Exp $
 bin/mawk
+man/man1/mawk.1
