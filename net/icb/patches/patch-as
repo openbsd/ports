@@ -1,0 +1,10 @@
+--- icb/oset.c.orig	Sun Jan 16 05:24:09 2000
++++ icb/oset.c	Sun Jan 16 05:25:55 2000
+@@ -39,6 +39,7 @@
+ 	{ "pagesize",	V_INT,		(char *)&gv.pagesize },
+ 	{ "pauseonshell",	V_BOOLEAN,	(char *)&gv.pauseonshell },
+ 	{ "personalto", V_STRING,	(char *)&gv.personalto },
++	{ "printtime",  V_BOOLEAN,	(char *)&gv.printtime },
+ 	{ "restricted",	V_BOOLEAN,	(char *)&gv.restricted },
+ 	{ "tabreply",	V_BOOLEAN,	(char *)&gv.tabreply },
+ 	{ "timedisplay",	V_STRING,	(char *)&gv.timedisplay },

@@ -1,0 +1,10 @@
+--- icb/globals.c.orig	Sun Jan 16 05:13:12 2000
++++ icb/globals.c	Sun Jan 16 05:13:51 2000
+@@ -59,6 +59,7 @@
+ 	1,		/* beeps */
+ 	"vi",		/* editmode */
+ 	0,		/* tabreply */
++	0,		/* printtime */
+ 	1, 		/* cute */
+ 	0,		/* autodel */
+ 	"",		/* personalto */

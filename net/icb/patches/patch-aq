@@ -1,0 +1,14 @@
+--- icb/helpdata.c.orig	Sun Jan 16 05:17:17 2000
++++ icb/helpdata.c	Sun Jan 16 05:20:39 2000
+@@ -600,6 +600,11 @@
+ "    waiting for your screen, this gives you a chance to see the output",
+ "    of your command.",
+ "",
++"printtime       (boolean)               default: false",
++"",
++"    Print the current time in front of every line sent to the display",
++"    and log file.",
++"",
+ "restricted      (boolean)               default: false",
+ "",
+ "    Restricted shuts off the ability to run subshell commands or to",

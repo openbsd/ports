@@ -1,0 +1,10 @@
+--- icb/icb.h.orig	Sun Jan 16 05:21:47 2000
++++ icb/icb.h	Sun Jan 16 05:22:47 2000
+@@ -38,6 +38,7 @@
+ 	int beeps;		/* whether beeps are audible */
+ 	char *editmode;		/* input editing mode */
+ 	int tabreply;		/* should replies go into the tab history? */
++	int printtime;		/* print timestamp in front of every msg? */
+ 	int cute;		/* cute messages when a blank line is entered */
+ 	int autodel;		/* automatically delete nicks from the tab
+ 			        history that produce a "not logged on" error */
