@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/06/23 04:37:25 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/08/02 06:36:46 shell Exp $
 bin/html2wml
 share/doc/html2wml/ARTISTIC
 share/doc/html2wml/COPYING
@@ -19,9 +19,11 @@ share/doc/html2wml/t/samples/mix2.html
 share/doc/html2wml/t/samples/struct.html
 share/doc/html2wml/t/samples/t-a.html
 share/doc/html2wml/t/samples/t-anchor.html
+share/doc/html2wml/t/samples/t-bad-entities.html
 share/doc/html2wml/t/samples/t-br.html
 share/doc/html2wml/t/samples/t-double-tags.html
 share/doc/html2wml/t/samples/t-extcharset.html
+share/doc/html2wml/t/samples/t-fake-tags.html
 share/doc/html2wml/t/samples/t-frames.html
 share/doc/html2wml/t/samples/t-img.html
 share/doc/html2wml/t/samples/t-include.html
