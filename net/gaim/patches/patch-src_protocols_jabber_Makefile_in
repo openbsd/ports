@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_protocols_jabber_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
---- src/protocols/jabber/Makefile.in.orig	Sat Sep 22 00:21:20 2001
-+++ src/protocols/jabber/Makefile.in	Sat Sep 22 00:21:31 2001
-@@ -183,7 +183,7 @@
- AR = ar
- LTLIBRARIES =  $(pkg_LTLIBRARIES)
+$OpenBSD: patch-src_protocols_jabber_Makefile_in,v 1.2 2001/10/06 08:11:15 jcs Exp $
+--- src/protocols/jabber/Makefile.in.orig	Sat Oct  6 02:28:18 2001
++++ src/protocols/jabber/Makefile.in	Sat Oct  6 02:28:26 2001
+@@ -154,7 +154,7 @@
+ EXTRA_DIST = xmltok_impl.c xmltok_ns.c
  
--libjabber_la_LDFLAGS = 
+ pkgdir = $(libdir)/gaim
+-libjabber_la_LDFLAGS = -avoid-version
 +libjabber_la_LDFLAGS = -export-dynamic -avoid-version
- libjabber_la_LIBADD = 
- @STATIC_JABBER_FALSE@libjabber_la_OBJECTS =  expat.lo genhash.lo \
- @STATIC_JABBER_FALSE@hashtable.lo pool.lo sha.lo snprintf.lo socket.lo \
+ 
+ @STATIC_JABBER_TRUE@st = -DSTATIC
+ @STATIC_JABBER_FALSE@st = 

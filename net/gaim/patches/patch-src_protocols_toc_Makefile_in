@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_protocols_toc_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
---- src/protocols/toc/Makefile.in.orig	Sat Sep 22 00:24:17 2001
-+++ src/protocols/toc/Makefile.in	Sat Sep 22 00:24:24 2001
-@@ -175,7 +175,7 @@
- AR = ar
- LTLIBRARIES =  $(pkg_LTLIBRARIES)
+$OpenBSD: patch-src_protocols_toc_Makefile_in,v 1.2 2001/10/06 08:11:15 jcs Exp $
+--- src/protocols/toc/Makefile.in.orig	Sat Oct  6 02:29:35 2001
++++ src/protocols/toc/Makefile.in	Sat Oct  6 02:29:43 2001
+@@ -154,7 +154,7 @@
+ EXTRA_DIST = PROTOCOL
  
--libtoc_la_LDFLAGS = 
+ pkgdir = $(libdir)/gaim
+-libtoc_la_LDFLAGS = -avoid-version
 +libtoc_la_LDFLAGS = -export-dynamic -avoid-version
- libtoc_la_LIBADD = 
- @STATIC_TOC_FALSE@libtoc_la_OBJECTS =  toc.lo
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ 
+ @STATIC_TOC_TRUE@st = -DSTATIC
+ @STATIC_TOC_FALSE@st = 

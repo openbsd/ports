@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_protocols_icq_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
---- src/protocols/icq/Makefile.in.orig	Sat Sep 22 00:18:46 2001
-+++ src/protocols/icq/Makefile.in	Sat Sep 22 00:19:21 2001
-@@ -186,7 +186,7 @@
- AR = ar
- LTLIBRARIES =  $(pkg_LTLIBRARIES)
+$OpenBSD: patch-src_protocols_icq_Makefile_in,v 1.2 2001/10/06 08:11:15 jcs Exp $
+--- src/protocols/icq/Makefile.in.orig	Sat Oct  6 02:27:50 2001
++++ src/protocols/icq/Makefile.in	Sat Oct  6 02:28:04 2001
+@@ -160,7 +160,7 @@
  
--libicq_la_LDFLAGS = 
+ 
+ pkgdir = $(libdir)/gaim
+-libicq_la_LDFLAGS = -avoid-version
 +libicq_la_LDFLAGS = -export-dynamic -avoid-version
- libicq_la_LIBADD = 
- @STATIC_ICQ_FALSE@libicq_la_OBJECTS =  chatsession.lo contacts.lo \
- @STATIC_ICQ_FALSE@cyrillic.lo eventhandle.lo filesession.lo \
+ 
+ @STATIC_ICQ_TRUE@st = -DSTATIC
+ @STATIC_ICQ_FALSE@st = 

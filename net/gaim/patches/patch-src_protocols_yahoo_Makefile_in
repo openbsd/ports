@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_protocols_yahoo_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
---- src/protocols/yahoo/Makefile.in.orig	Sat Sep 22 00:24:52 2001
-+++ src/protocols/yahoo/Makefile.in	Sat Sep 22 00:24:59 2001
-@@ -177,7 +177,7 @@
- AR = ar
- LTLIBRARIES =  $(pkg_LTLIBRARIES)
+$OpenBSD: patch-src_protocols_yahoo_Makefile_in,v 1.2 2001/10/06 08:11:15 jcs Exp $
+--- src/protocols/yahoo/Makefile.in.orig	Sat Oct  6 02:29:53 2001
++++ src/protocols/yahoo/Makefile.in	Sat Oct  6 02:30:02 2001
+@@ -154,7 +154,7 @@
+ EXTRA_DIST = AUTHORS
  
--libyahoo_la_LDFLAGS = 
+ pkgdir = $(libdir)/gaim
+-libyahoo_la_LDFLAGS = -avoid-version
 +libyahoo_la_LDFLAGS = -export-dynamic -avoid-version
- libyahoo_la_LIBADD = 
- @STATIC_YAHOO_FALSE@libyahoo_la_OBJECTS =  buddy.lo conn.lo login.lo \
- @STATIC_YAHOO_FALSE@misc.lo outgoing.lo rxhandlers.lo yay.lo
+ 
+ @STATIC_YAHOO_TRUE@st = -DSTATIC
+ @STATIC_YAHOO_FALSE@st = 

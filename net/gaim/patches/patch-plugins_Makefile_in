@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1 2001/10/06 08:11:15 jcs Exp $
+--- plugins/Makefile.in.orig	Sat Oct  6 02:50:50 2001
++++ plugins/Makefile.in	Sat Oct  6 02:51:23 2001
+@@ -311,7 +311,7 @@
+ 	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $< -o tmp$@.lo $(PLUGIN_CFLAGS)
+ 	$(LIBTOOL) --mode=link    $(CC) $(CFLAGS) -o libtmp$@.la -rpath $(plugindir) tmp$@.lo $(LIBS) $(LDFLAGS) $(PLUGIN_LIBS)
+ 	@rm -f tmp$@.lo tmp$@.o libtmp$@.la
+-	@cp .libs/libtmp$@.so $@
++	@cp .libs/libtmp$@.so.0.0 $@
+ 	@rm -f .libs/libtmp$@.*
+ 
+ @PLUGINS_TRUE@$(plugin_DATA): $(top_srcdir)/src/gaim.h

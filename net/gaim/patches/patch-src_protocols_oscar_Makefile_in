@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_protocols_oscar_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
---- src/protocols/oscar/Makefile.in.orig	Sat Sep 22 00:23:42 2001
-+++ src/protocols/oscar/Makefile.in	Sat Sep 22 00:23:50 2001
-@@ -185,7 +185,7 @@
- AR = ar
- LTLIBRARIES =  $(pkg_LTLIBRARIES)
+$OpenBSD: patch-src_protocols_oscar_Makefile_in,v 1.2 2001/10/06 08:11:15 jcs Exp $
+--- src/protocols/oscar/Makefile.in.orig	Sat Oct  6 02:29:17 2001
++++ src/protocols/oscar/Makefile.in	Sat Oct  6 02:29:25 2001
+@@ -156,7 +156,7 @@
  
--liboscar_la_LDFLAGS = 
+ 
+ pkgdir = $(libdir)/gaim
+-liboscar_la_LDFLAGS = -avoid-version
 +liboscar_la_LDFLAGS = -export-dynamic -avoid-version
- liboscar_la_LIBADD = 
- @STATIC_OSCAR_FALSE@liboscar_la_OBJECTS =  admin.lo adverts.lo auth.lo \
- @STATIC_OSCAR_FALSE@bos.lo buddylist.lo chat.lo chatnav.lo conn.lo \
+ 
+ @STATIC_OSCAR_TRUE@st = -DSTATIC
+ @STATIC_OSCAR_FALSE@st = 
