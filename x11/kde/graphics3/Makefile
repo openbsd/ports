@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/12/30 15:55:14 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2005/01/31 10:16:45 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -11,7 +11,7 @@ MODKDE_VERSION=		3.3.0
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}p1
 FULLPKGNAME-kamera=kamera-${VERSION}p0
 FULLPKGNAME-kpov=kpovmodeller-${VERSION}p0
 SUBPACKAGE?=
@@ -32,10 +32,10 @@ WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi
 .  elif ${SUBPACKAGE} == ""
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+=	Imlib::graphics/imlib \
-		ungif::graphics/libungif
+		ungif::graphics/libungif \
+		Iex,Half,Imath,IlmImf::graphics/openexr
 WANTLIB+=	tiff fontconfig lcms Xrender ICE c \
-		freetype stdc++ pcreposix pcre Xxf86vm SM Xext \
-		
+		freetype stdc++ pcreposix pcre Xxf86vm SM Xext
 .  endif
 .else
 LIB_DEPENDS+=Imlib::graphics/imlib \
