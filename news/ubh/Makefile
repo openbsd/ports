@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 02:59:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/11 15:56:32 kevlo Exp $
 
 COMMENT=	"download and decode binaries posted to Usenet"
 
-DISTNAME=	ubh-1.5
+DISTNAME=	ubh-2.1
 CATEGORIES=	news
-NEED_VERSION=	1.402
+NEED_VERSION=	1.434
 
 HOMEPAGE=	http://ubh.sourceforge.net/
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-RUN_DEPENDS=	${PERL_MODULES}/Net/NNTP.pm::net/p5-libnet \
+RUN_DEPENDS=	${PERL_MODULES}/MIME/Tools.pm::mail/p5-MIME-tools \
+		${PERL_MODULES}/Net/NNTP.pm::net/p5-libnet \
 		${PERL_MODULES}/News/Newsrc.pm::news/p5-News-Newsrc
 
 NO_BUILD=	Yes
@@ -27,7 +28,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ubh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ubh
 	${INSTALL_PROGRAM} ${WRKSRC}/ubh ${PREFIX}/bin
-	cp -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/ubh
+	${INSTALL_DATA} ${WRKSRC}/doc/ubh.html ${PREFIX}/share/doc/ubh
 	cp ${WRKSRC}/examples/* ${PREFIX}/share/examples/ubh
 
 .include <bsd.port.mk>
