@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.288 2000/05/31 22:37:42 marc Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.289 2000/06/01 17:33:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -730,10 +730,10 @@ _FEXT:=
 .  endif
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=|sed -e '/!%%${_i}%%/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/%%${_i}%%/d'
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
 .    else
 _FEXT:=${_FEXT}-${_i}
-SED_PLIST+=|sed -e '/!%%${_i}%%/d' -e '/%%${_i}%%/r${PKGDIR}/PFRAG.${_i}' -e '//d'
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
 .    endif
 .  endfor
 .endif
@@ -744,10 +744,10 @@ PLIST=${WRKBUILD}/PLIST${SUBPACKAGE}
 
 ${PLIST}: ${PKGDIR}/PLIST.sed${SUBPACKAGE}
 .  if defined(NO_SHARED_LIBS)
-	@sed -e '/%%SHARED%%/d' <$? \
+	@sed -e '/^%%SHARED%%$$/d' <$? \
 		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
 .  else
-	@sed -e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
+	@sed -e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
 		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
 .  endif
 .endif
@@ -2289,7 +2289,7 @@ clean-depends:
 	@for dir in \
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null ; then \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null ; then \
 			${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 		fi \
 	done
