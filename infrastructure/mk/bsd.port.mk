@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.449 2001/09/05 09:10:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.450 2001/09/05 09:13:18 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -459,6 +459,7 @@ PKGFILE${_s} = ${PKGREPOSITORY}/${FULLPKGNAME${_s}}${PKG_SUFX}
 .  endfor
 .endif
 
+_WRKDIR_COOKIE=		${WRKDIR}/.extract_started
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
@@ -484,7 +485,9 @@ _BUILD_COOKIE=		${WRKDIR}/.build_done
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIES} \
-${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE}
+${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
+${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+${_DEPfetch_COOKIES} ${_DEPbuild_COOKIES} ${_DEPrun_COOKIES}
 
 _MAKE_COOKIE=touch -f
 
@@ -1250,9 +1253,10 @@ _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 
 .for _DEP in fetch build run lib misc
-${_DEP}-depends:
+_DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
+${WRKDIR}/.${_DEP}${_i:C,[:./=],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
@@ -1299,9 +1303,13 @@ ${_DEP}-depends:
 			fi; \
 		done; \
 	}
+	@${_MAKE_COOKIE} $@
+_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[:./],-,g}
 .    endfor
 .  endif
+${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
+
 
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
@@ -1429,10 +1437,14 @@ refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 extract: ${_EXTRACT_COOKIE}
-patch: ${_PATCH_COOKIE}
-distpatch: ${_DISTPATCH_COOKIE}
-configure: ${_CONFIGURE_COOKIE}
-all build: ${_BUILD_COOKIE}
+patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+	${_PATCH_COOKIE}
+distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+	${_DISTPATCH_COOKIE}
+configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+	${_CONFIGURE_COOKIE}
+all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+	${_BUILD_COOKIE}
 .if defined(ALWAYS_PACKAGE)
 install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 .else
@@ -1456,7 +1468,16 @@ _create_wrkobjdir =	\
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
 
-${_EXTRACT_COOKIE}:
+${_WRKDIR_COOKIE}:
+.  if defined(WRKOBJDIR)
+	@${_create_wrkobjdir}
+.  else
+	@rm -rf ${WRKDIR}
+	@mkdir -p ${WRKDIR}
+.  endif
+	@${_MAKE_COOKIE} $@
+
+${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} 
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}"
 .if target(pre-extract)
@@ -1466,12 +1487,6 @@ ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} do-extract
 .else
 # What EXTRACT normally does:
-.  if defined(WRKOBJDIR)
-	@${_create_wrkobjdir}
-.  else
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}
-.  endif
 	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
 	for archive in ${EXTRACT_ONLY}; do \
 		case $$archive in \
