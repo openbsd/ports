@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kpilot,v 1.5 2004/09/18 09:36:45 espie Exp $
+@comment $OpenBSD: PLIST-kpilot,v 1.6 2005/03/17 01:34:52 espie Exp $
 bin/kpilot
 bin/kpilotDaemon
 include/kpilot/
@@ -12,6 +12,10 @@ include/kpilot/syncAction.h
 include/kpilot/uiDialog.h
 ${KDE}/conduit_vcal.la
 ${KDE}/conduit_vcal.so
+${KDE}/libkontact_kpilotplugin.la
+${KDE}/libkontact_kpilotplugin.so
+${KDE}/kfile_palm.la
+${KDE}/kfile_palm.so
 lib/libkpilot.la
 @lib lib/libkpilot.so.0.0
 share/apps/kpilot/

@@ -1,27 +1,42 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/07 11:30:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/03/17 01:34:52 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.3.2
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.3.0
 
-LIB_DEPENDS= 		kdecore.6,DCOP,kabc,kabc_file,kdefx,kdeprint,kdesasl,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
+LIB_DEPENDS+= 		kdecore.6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kdefx,kdeprint,kdesasl,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
+WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
+		vorbisfile gmodule-2.0.0.0 gthread-2.0.0.0 \
+		pcreposix intl vorbisenc qui-mt SM pthread \
+		c artsflow ogg ncurses mcop png iconv Xext \
+		artsflow_idl art_lgpl_2.0.0 mad qtmcop glib-2.0.0.0 \
+		glib-2.0.0.0 ICE readline soundserver_idl Xrender \
+		gpg-error vorbis pcre esd z
 
-MULTI_PACKAGES=-kpilot
-FULLPKGNAME-kpilot = kpilot-${VERSION}
+LIB_DEPENDS+=	pisock::comms/pilot-link
+RUN_DEPENDS+=	::x11/kde/base3
+LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme
+
+#MULTI_PACKAGES=-kpilot
+FULLPKGNAME-kpilot = kpilot-${VERSION}p0
 SUBPACKAGE?=
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-kpilot"
-LIB_DEPENDS+=	pisock::comms/pilot-link
-.endif
-# for kaddressbook
-.if defined(PACKAGING) && ${SUBPACKAGE} == ""
-RUN_DEPENDS+=	::x11/kde/base3
-.endif
+#.if !defined(PACKAGING) || ${SUBPACKAGE} == "-kpilot"
+#LIB_DEPENDS+=	pisock::comms/pilot-link
+#LIB_DEPENDS+=	kcal::x11/kde/pim3
+#.endif
+## for kaddressbook
+#.if defined(PACKAGING) && ${SUBPACKAGE} == ""
+#RUN_DEPENDS+=	::x11/kde/base3
+#.endif
+#.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
+#LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme
+#.endif
 
 SEPARATE_BUILD=	flavored
 .include <bsd.port.mk>
