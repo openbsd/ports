@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2001/09/06 03:49:55 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2001/12/07 13:52:36 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
 VERSION=	3.9.10
 DISTNAME=	screen-${VERSION}
 CATEGORIES=	misc
-NEED_VERSION=	1.435
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
 HOMEPAGE=	http://www.gnu.org/software/screen/
@@ -21,6 +21,13 @@ SUBST_VARS=	VERSION
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
+
+FLAVORS=	static
+FLAVOR?=
+
+.if ${FLAVOR:L} == "static"
+CONFIGURE_ENV=	LDFLAGS="-static"
+.endif
 
 ALL_TARGET=	screen screen.info
 

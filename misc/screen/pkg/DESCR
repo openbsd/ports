@@ -7,4 +7,7 @@ multiple character sets). There is a scrollback history buffer for each
 virtual terminal and a copy-and-paste mechanism that allows moving text
 regions between windows.
 
+Flavors:
+	static - Build with statically linked binaries.
+
 WWW: ${HOMEPAGE}
