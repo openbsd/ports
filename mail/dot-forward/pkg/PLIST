@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/15 12:21:25 camield Exp $
 bin/dot-forward
 man/cat1/dot-forward.0
 man/man1/dot-forward.1

@@ -1,1 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/15 12:21:24 camield Exp $
 bin/checkpassword

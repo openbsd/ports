@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/15 12:21:25 camield Exp $
 bin/columnt
 bin/ddist
 bin/deferrals
