@@ -1,10 +1,10 @@
-$OpenBSD: patch-input_hpp,v 1.1 2000/07/26 20:57:21 rohee Exp $
+$OpenBSD: patch-input_hpp,v 1.2 2004/01/14 17:18:12 naddy Exp $
 
 "foobar" is now a const char *, so adjust the proto.
 
---- imlib/include/input.hpp.orig	Wed Jul 26 22:08:49 2000
-+++ imlib/include/input.hpp	Wed Jul 26 22:09:31 2000
-@@ -64,7 +64,7 @@
+--- imlib/include/input.hpp.orig	1996-04-12 02:08:02.000000000 +0200
++++ imlib/include/input.hpp	2004-01-14 18:14:33.000000000 +0100
+@@ -64,7 +64,7 @@ class text_field : public ifield
    }
  public : 
    text_field(int X, int Y, int ID, char *Prompt, char *Format, 

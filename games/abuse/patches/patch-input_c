@@ -1,10 +1,10 @@
-$OpenBSD: patch-input_c,v 1.1 2000/07/26 20:57:20 rohee Exp $
+$OpenBSD: patch-input_c,v 1.2 2004/01/14 17:18:12 naddy Exp $
 
 Match patch-input_hpp
 
---- imlib/input.c.orig	Wed Jul 26 22:10:46 2000
-+++ imlib/input.c	Wed Jul 26 22:11:41 2000
-@@ -318,7 +318,7 @@
+--- imlib/input.c.orig	1996-04-12 02:06:11.000000000 +0200
++++ imlib/input.c	2004-01-14 18:14:33.000000000 +0100
+@@ -318,7 +318,7 @@ void text_field::area(int &x1, int &y1, 
  }
  
  text_field::text_field(int X, int Y, int ID, char *Prompt, char *Format, 

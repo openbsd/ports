@@ -1,6 +1,7 @@
---- configure.old	Mon Jul  7 11:23:01 1997
-+++ configure	Tue Jun  9 22:24:33 1998
-@@ -988,10 +988,10 @@
+$OpenBSD: patch-configure,v 1.1 2004/01/14 17:18:12 naddy Exp $
+--- configure.orig	1997-07-07 20:23:01.000000000 +0200
++++ configure	2004-01-14 18:14:33.000000000 +0100
+@@ -988,10 +988,10 @@ for ac_file in .. $CONFIG_FILES; do if t
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
    esac
  
@@ -15,7 +16,7 @@
  
    echo creating "$ac_file"
    rm -f "$ac_file"
-@@ -1103,10 +1103,10 @@
+@@ -1103,10 +1103,10 @@ if test "$no_recursion" != yes; then
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

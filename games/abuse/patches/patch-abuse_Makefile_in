@@ -1,6 +1,7 @@
---- abuse/Makefile.in.orig	Wed Jul  9 09:55:21 1997
-+++ abuse/Makefile.in	Fri Mar 16 18:53:26 2001
-@@ -37,10 +37,10 @@
+$OpenBSD: patch-abuse_Makefile_in,v 1.1 2004/01/14 17:18:12 naddy Exp $
+--- abuse/Makefile.in.orig	1997-07-09 09:55:21.000000000 +0200
++++ abuse/Makefile.in	2004-01-14 18:14:33.000000000 +0100
+@@ -37,10 +37,10 @@ AUTOCONF = @AUTOCONF@
  AUTOMAKE = @AUTOMAKE@
  AUTOHEADER = @AUTOHEADER@
  
@@ -15,7 +16,7 @@
  transform = @program_transform_name@
  
  NORMAL_INSTALL = true
-@@ -103,7 +103,7 @@
+@@ -103,7 +103,7 @@ INCLUDES = -I$(srcdir)/inc -I$(srcdir)/.
  	   -I$(srcdir)/src/net/inc -I$(srcdir)/src/net/unix
  
  MYDEFS = -DMANAGE_MEM -DNO_CHECK
@@ -24,7 +25,7 @@
  
  COMPILE = $(CXX) $(DEFS) $(MYDEFS) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS) $(ADDCXXFLAGS) -o $@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -239,11 +239,11 @@
+@@ -239,11 +239,11 @@ maintainer-clean-pkglibPROGRAMS:
  
  install-pkglibPROGRAMS: $(pkglib_PROGRAMS)
  	@$(NORMAL_INSTALL)
