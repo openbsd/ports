@@ -1,28 +1,26 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:58 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/02 22:24:54 brad Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
-
-MAINTAINER=	angelos@openbsd.org
-
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.z
+
+NEED_VERSION=	1.114
+
+MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
 
 pre-install:
-	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/xjewel.font
-	@${MKDIR} ${PREFIX}/man/man6
-	@(cd ${WRKSRC}/bitmaps/; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
+	@(cd ${WRKSRC}/bitmaps; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
 		${PREFIX}/lib/xjewel.font)
 
 post-install:
-	@(mv ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
-	  echo "#!/bin/sh" >${PREFIX}/bin/xjewel; \
-	  echo "xset +fp ${PREFIX}/lib/xjewel.font" >>${PREFIX}/bin/xjewel; \
-	  echo "xjewel_" >>${PREFIX}/bin/xjewel; \
-	  chmod ugo+x ${PREFIX}/bin/xjewel)
+	@(${MV} ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
+	  ${ECHO} "#!/bin/sh"				>  ${PREFIX}/bin/xjewel; \
+	  ${ECHO} "xset +fp ${PREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
+	  ${ECHO} "xjewel_"				>> ${PREFIX}/bin/xjewel; \
+	  ${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
 
 .include <bsd.port.mk>

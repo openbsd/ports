@@ -10,7 +10,7 @@ cat >> Imakefile <<END
 HSCORE_FILE = $PREFIX/lib/xjewel.scores
 USERDEFS = -DICON_WINDOW -DUSE_SELECT -DGETPWENT
 BINDIR = $PREFIX/bin
-MANDIR = $PREFIX/man/man6
+MANDIR = $PREFIX/man/cat6
 MANSUFFIX = 6
 END
 
