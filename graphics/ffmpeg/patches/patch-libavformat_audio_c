@@ -1,0 +1,24 @@
+$OpenBSD: patch-libavformat_audio_c,v 1.1 2004/04/18 00:36:22 jolan Exp $
+--- libavformat/audio.c.orig	2003-09-28 10:26:40.000000000 -0500
++++ libavformat/audio.c	2004-02-24 22:02:33.000000000 -0600
+@@ -21,7 +21,11 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#if defined(__OpenBSD__)
++#include <soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+@@ -49,7 +53,7 @@ static int audio_open(AudioData *s, int 
+ 
+     /* open linux audio device */
+     if (!audio_device)
+-        audio_device = "/dev/dsp";
++        audio_device = "/dev/audio";
+ 
+     if (is_output)
+         audio_fd = open(audio_device, O_WRONLY);

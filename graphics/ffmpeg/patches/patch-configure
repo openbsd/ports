@@ -1,42 +1,28 @@
-$OpenBSD: patch-configure,v 1.5 2003/11/04 07:50:19 jolan Exp $
+$OpenBSD: patch-configure,v 1.6 2004/04/18 00:36:22 jolan Exp $
 --- configure.orig	2003-09-28 10:26:39.000000000 -0500
-+++ configure	2003-11-03 22:20:14.000000000 -0600
-@@ -155,6 +155,15 @@ dv1394="no"
++++ configure	2004-02-26 21:20:18.000000000 -0600
+@@ -155,6 +155,12 @@ dv1394="no"
  make="gmake"
  LDFLAGS="$LDFLAGS -export-dynamic"
  ;;
 +OpenBSD)
-+a52="no"
-+audio_oss="no"
-+dv1394="no"
-+sdl="no"	# not respected
-+v4l="no"
-+vhook="no"
-+SLIBSUF=.so._SV_
++strip="echo"
++extralibs="$extralibs -lossaudio"
++source_path="`echo $0 | sed -e 's#/configure##'`"
++SLIBSUF=.so`grep '#define FFMPEG_VERSION ' $source_path/libavcodec/avcodec.h | cut -d '"' -f 2 | cut -d '0' -f 2`
 +;;
  BSD/OS)
  v4l="no"
  audio_oss="yes"
-@@ -714,14 +723,14 @@ EOF
- 
- sdl_too_old=no
- sdl=no
--if $cc -o $TMPE `sdl-config --cflags` $TMPC `sdl-config --libs`  2> /dev/null  ; then
--_sdlversion=`sdl-config --version | sed 's/[^0-9]//g'`
--if test "$_sdlversion" -lt 121 ; then
--sdl_too_old=yes
--else
--sdl=yes
--fi
--fi
-+#if $cc -o $TMPE `sdl-config --cflags` $TMPC `sdl-config --libs`  2> /dev/null  ; then
-+#_sdlversion=`sdl-config --version | sed 's/[^0-9]//g'`
-+#if test "$_sdlversion" -lt 121 ; then
-+#sdl_too_old=yes
-+#else
-+#sdl=yes
-+#fi
-+#fi
- 
- if test "$sdl" = "no" ; then
-    ffplay=no
+@@ -276,9 +282,9 @@ for opt do
+   ;;
+   --make=*) make=`echo $opt | cut -d '=' -f 2`
+   ;;
+-  --extra-cflags=*) CFLAGS="${opt#--extra-cflags=}"
++  --extra-cflags=*) CFLAGS="$CFLAGS ${opt#--extra-cflags=}"
+   ;;
+-  --extra-ldflags=*) LDFLAGS=${opt#--extra-ldflags=}
++  --extra-ldflags=*) LDFLAGS="$LDFLAGS ${opt#--extra-ldflags=}"
+   ;;
+   --extra-libs=*) extralibs=${opt#--extra-libs=}
+   ;;
