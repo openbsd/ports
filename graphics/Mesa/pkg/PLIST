@@ -1,0 +1,29 @@
+include/GL/dosmesa.h
+include/GL/foomesa.h
+include/GL/fxmesa.h
+include/GL/ggimesa.h
+include/GL/gl.h
+include/GL/gl_mangle.h
+include/GL/glu.h
+include/GL/glu_mangle.h
+include/GL/glut.h
+include/GL/glx.h
+include/GL/glx_mangle.h
+include/GL/mglmesa.h
+include/GL/osmesa.h
+include/GL/osmesa3.h
+include/GL/svgamesa.h
+include/GL/wmesa.h
+include/GL/xmesa.h
+lib/libGL.a
+lib/libGL.so.3.0
+lib/libGLU.a
+lib/libGLU.so.3.0
+lib/libMesaGL.a
+lib/libMesaGL.so.3.0
+lib/libMesaGLU.a
+lib/libMesaGLU.so.3.0
+lib/libglut.a
+lib/libglut.so.3.7
+@exec /sbin/ldconfig -m %B
+@dirrm include/GL

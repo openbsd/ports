@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Make a standard Unix .a library file with 'ar cq'
+
+#--common--------------------------------------------------------------
+
+# Usage:  mklib libname major minor file.o ...
+#
+# First argument is name of output library (LIBRARY)
+# Second arg is major version number (MAJOR)
+# Third arg is minor version number (MINOR)
+# Rest of arguments are object files (OBJECTS)
+
+LIBRARY=$1
+shift 1
+
+MAJOR=$1
+shift 1
+
+MINOR=$1
+shift 1
+
+OBJECTS=$*
+
+#--platform-------------------------------------------------------------
+
+set -x
+
+rm -f ${LIBRARY}
+ar cq ${LIBRARY} ${OBJECTS}
+ranlib ${LIBRARY}
+
+cp ${LIBRARY} ../lib
