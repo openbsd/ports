@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.372 2001/03/28 12:15:26 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.373 2001/03/28 14:33:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -310,6 +310,7 @@ LIB_DEPENDS+=		Xm.::x11/lesstif
 .endif
 
 SUBPACKAGE?=
+FLAVOR?=
 
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
@@ -479,7 +480,6 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 #
 SED_PLIST?=
 
-FLAVOR?=
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
 FLAVOR_EXT:=
@@ -744,7 +744,7 @@ EXTRACT_SUFX?=		.tar.gz
 
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-.if ${SUBPACKAGE} != '' 
+.if ${SUBPACKAGE} != "" 
 .  if defined(FULLPKGNAME${SUBPACKAGE})
 FULLPKGNAME:=	${FULLPKGNAME${SUBPACKAGE}}
 .  elif defined(PKGNAME${SUBPACKAGE})
@@ -1148,6 +1148,31 @@ addsum: fetch-all
 ################################################################
 # Dependency checking
 ################################################################
+_flavor_fragment= \
+		multi=''; flavor=''; \
+		case "$$dir" in \
+		*,*) \
+			IFS=,; first=true; for i in $$dir; do \
+				if $$first; then \
+					dir=$$i; first=false; \
+				else \
+					case X"$$i" in \
+						X-*) \
+							multi="$$i";; \
+						*) \
+							flavor="$$flavor $$i";; \
+					esac \
+				fi; \
+			done;; \
+		esac; \
+		toset="PKGPATH=$$dir"; \
+		case X$$multi in "X");; *) \
+			toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+		esac; \
+		case X"$$flavor" in "X");; *) \
+			toset="$$toset FLAVOR=\"$$flavor\"";; \
+		esac
+
 
 _fetch_depends_fragment= \
 	case $$dep in \
@@ -1193,13 +1218,14 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
-	@unset DEPENDS_TARGET || true; \
+	@unset DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
 		echo $$i|{ \
 			IFS=:; read dep pkg dir target; \
 			case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+			${_flavor_fragment}; \
 			case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-				${MAKE} ${_DEPEND_THRU} show VARNAME=FULLPKGNAME`;; esac; \
+				eval $$toset ${MAKE} show VARNAME=FULLPKGNAME`;; esac; \
 			for abort in false false true; do \
 				if $$abort; then \
 					${ECHO_MSG} "Dependency check failed"; \
@@ -1226,7 +1252,7 @@ ${_DEP}-depends:
 					fi;; \
 				esac; \
 				${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
-				if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
+				if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
 					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
 				else \
 					exit 1; \
@@ -1572,7 +1598,7 @@ ${_PACKAGE_COOKIE}${_sub}: ${_FAKE_COOKIE}
 .    else
 ${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
 .    endif
-	@cd ${.CURDIR} && exec ${MAKE} package SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} package
 
 .  endfor
 .endif
@@ -1654,7 +1680,7 @@ ${_F}:
 all-packages: ${PKGFILE}
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
 .  endfor
 .endif
 
@@ -1666,7 +1692,7 @@ cdrom-packages:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
 .  endfor
 .endif
 
@@ -1678,7 +1704,7 @@ ftp-packages:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
 .  endfor
 .endif
 
@@ -1940,7 +1966,7 @@ _fetch-makefile-helper:
 FULL_PACKAGE_NAME?=No
 
 # Make variables to pass along on recursive builds
-_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR='' SUBPACKAGE=''
+_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 
 # XXX
 package-name:
@@ -1993,11 +2019,13 @@ _RUN_DEP =
 .if !target(clean-depends)
 clean-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@for dir in \
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in \
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
+		${_flavor_fragment}; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null ; then \
-			PKGPATH="$$dir" ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
+			eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 		fi \
 	done
 .  endif
@@ -2093,7 +2121,7 @@ describe:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && exec ${MAKE} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' describe
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} describe
 .  endfor
 .endif	
 
@@ -2136,7 +2164,8 @@ README.html:
 print-depends-list:
 .  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
 	@echo '" to build.'
 .  endif
 .endif
@@ -2145,7 +2174,8 @@ print-depends-list:
 print-package-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
 	@echo '" to run.'
 .  endif
 .endif
@@ -2155,10 +2185,12 @@ print-package-depends:
 recurse-build-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
+		 ${_flavor_fragment}; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! PKGPATH="$$dir" ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
@@ -2175,10 +2207,12 @@ recurse-build-depends:
 .if !target(depends-list)
 depends-list:
 .  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
-	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
+		${_flavor_fragment}; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! PKGPATH="$$dir" ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
@@ -2195,10 +2229,12 @@ depends-list:
 recurse-package-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
+		${_flavor_fragment}; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! PKGPATH="$$dir" ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
 			fi; \
@@ -2215,10 +2251,12 @@ recurse-package-depends:
 .if !target(package-depends)
 package-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
+		${_flavor_fragment}; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! PKGPATH="$$dir" ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
 			fi; \
