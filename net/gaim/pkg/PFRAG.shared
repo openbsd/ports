@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/07/30 10:41:39 naddy Exp $
+lib/gaim/autorecon.so
+lib/gaim/iconaway.so
+lib/gaim/irc.so
+lib/gaim/lagmeter.so
+lib/gaim/libgaimicq.so
+lib/gaim/libjabber.so
+lib/gaim/libmsn.so
+lib/gaim/libyahoo.so
+lib/gaim/libzephyr.so
+lib/gaim/napster.so
+lib/gaim/notify.so
+lib/gaim/spellchk.so
+@dirrm lib/gaim

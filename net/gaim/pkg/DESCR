@@ -1,5 +1,8 @@
-Gaim is a smaller, faster, commercial-free clone of America
-Online's own Instant Messenger client. Supports chat, multiple
-groups, and other keen features.
+GAIM is a GTK+-based AOL Instant Messenger (AIM) application using
+the tik/toc service from AOL.  It is actively being developed and
+supports many common AOL features and should have an interface
+familiar to anyone who has used AOL's AIM client before.  It also
+has multiple protocol support for such things as ICQ, IRC, Yahoo!,
+MSN Messenger, Jabber, and Napster.
 
 WWW: ${HOMEPAGE}
