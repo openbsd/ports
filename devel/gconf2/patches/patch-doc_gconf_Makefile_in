@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_gconf_Makefile_in,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
+--- doc/gconf/Makefile.in.orig	Tue Jul 23 09:48:05 2002
++++ doc/gconf/Makefile.in	Tue Jul 23 09:48:26 2002
+@@ -312,6 +312,7 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ @ENABLE_GTK_DOC_TRUE@all-local: html-build.stamp
++@ENABLE_GTK_DOC_FALSE@all-local:
+ 
+ #### scan ####
+ 

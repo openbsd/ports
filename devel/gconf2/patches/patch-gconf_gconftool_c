@@ -1,0 +1,12 @@
+$OpenBSD: patch-gconf_gconftool_c,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
+--- gconf/gconftool.c.orig	Wed Jun 12 13:32:24 2002
++++ gconf/gconftool.c	Sun Aug 18 20:38:39 2002
+@@ -2683,7 +2683,7 @@ do_get_default_source (const gchar** arg
+     }
+ 
+   /* Use default database */
+-  source = g_strconcat("xml::", GCONF_ETCDIR, "/gconf.xml.defaults", NULL);
++  source = g_strconcat(GCONF_CONFIG_SOURCE, NULL);
+   printf("%s\n", source);
+   g_free(source);
+ 

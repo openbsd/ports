@@ -1,0 +1,76 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
+--- configure.orig	Sun Aug  4 11:18:52 2002
++++ configure	Thu Dec 12 16:07:27 2002
+@@ -1068,7 +1068,11 @@ esac
+ # Don't blindly perform a `cd "$ac_dir"/$ac_foo && pwd` since $ac_foo can be
+ # absolute.
+ ac_abs_builddir=`cd "$ac_dir" && cd $ac_builddir && pwd`
+-ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++if test -z "$ac_top_builddir"; then
++    ac_abs_top_builddir=`cd "$ac_dir" && pwd`
++else
++    ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++fi
+ ac_abs_srcdir=`cd "$ac_dir" && cd $ac_srcdir && pwd`
+ ac_abs_top_srcdir=`cd "$ac_dir" && cd $ac_top_srcdir && pwd`
+ 
+@@ -5653,8 +5657,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5663,8 +5667,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -7861,9 +7865,9 @@ fi
+ 
+ 
+ PKGCONFIG_MODULES='gmodule-2.0 >= 2.0.1 gobject-2.0 >= 2.0.1 ORBit-2.0 >= 2.4.0 linc >= 0.5.0'
+-PKGCONFIG_MODULES_WITH_XML="$PKGCONFIG_MODULES libxml-2.0"
++PKGCONFIG_MODULES_WITH_XML=" libxml-2.0 $PKGCONFIG_MODULES"
+ PKGCONFIG_MODULES_WITH_GTK=" $PKGCONFIG_MODULES gtk+-2.0 >= 2.0.0"
+-PKGCONFIG_MODULES_WITH_XML_AND_GTK=" $PKGCONFIG_MODULES gtk+-2.0 libxml-2.0"
++PKGCONFIG_MODULES_WITH_XML_AND_GTK=" libxml-2.0 $PKGCONFIG_MODULES gtk+-2.0"
+ 
+ 
+   succeeded=no
+@@ -12217,7 +12221,11 @@ esac
+ # Don't blindly perform a `cd "$ac_dir"/$ac_foo && pwd` since $ac_foo can be
+ # absolute.
+ ac_abs_builddir=`cd "$ac_dir" && cd $ac_builddir && pwd`
+-ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++if test -z "$ac_top_builddir"; then
++    ac_abs_top_builddir=`cd "$ac_dir" && pwd`
++else
++    ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++fi
+ ac_abs_srcdir=`cd "$ac_dir" && cd $ac_srcdir && pwd`
+ ac_abs_top_srcdir=`cd "$ac_dir" && cd $ac_top_srcdir && pwd`
+ 
+@@ -12564,7 +12572,11 @@ esac
+ # Don't blindly perform a `cd "$ac_dir"/$ac_foo && pwd` since $ac_foo can be
+ # absolute.
+ ac_abs_builddir=`cd "$ac_dir" && cd $ac_builddir && pwd`
+-ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++if test -z "$ac_top_builddir"; then
++    ac_abs_top_builddir=`cd "$ac_dir" && pwd`
++else
++    ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
++fi
+ ac_abs_srcdir=`cd "$ac_dir" && cd $ac_srcdir && pwd`
+ ac_abs_top_srcdir=`cd "$ac_dir" && cd $ac_top_srcdir && pwd`
+ 

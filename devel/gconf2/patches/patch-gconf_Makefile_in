@@ -1,0 +1,11 @@
+$OpenBSD: patch-gconf_Makefile_in,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
+--- gconf/Makefile.in.orig	Sun Aug 18 20:38:08 2002
++++ gconf/Makefile.in	Sun Aug 18 20:38:12 2002
+@@ -150,6 +150,7 @@ INCLUDES = \
+ 	-DVERSION=\""$(VERSION)"\"					\
+ 	-DGCONF_ENABLE_INTERNALS=1					\
+ 	-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"				\
++	-DGCONF_CONFIG_SOURCE=\""$(GCONF_CONFIG_SOURCE)"\"		\
+ 	$(NULL)
+ 
+ 
