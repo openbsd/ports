@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 19:32:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2003/02/16 21:24:52 margarida Exp $
 
 COMMENT=	"receive/send files via X/Y/ZMODEM protocol"
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
 
-MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
-		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/ \
-		http://www.nrw.net/uwe/archive/ \
-		http://194.245.36.15/uwe/archive/ \
-		ftp://ftp.ihg.uni-duisburg.de/uwe/ \
-		ftp://ftp.kddlabs.co.jp/pub/Linux/packages/stampedelinux/stampedelinux/unstable/pre-0.90/source/comm/lrzsz/source/
+HOMEPAGE=	http://www.ohse.de/uwe/software/lrzsz.html	
+
+MASTER_SITES=	http://www.ohse.de/uwe/releases/	
 
 PERMIT_PACKAGE_CDROM=	"possible copyright issue with rzsz"
 PERMIT_PACKAGE_FTP=	Yes
