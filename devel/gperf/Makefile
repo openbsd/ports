@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/23 03:14:31 espie Exp $
 
 COMMENT=	"perfect hash functions, to help write parsers"
 
-DISTNAME=	gperf-2.7.2
+DISTNAME=	gperf-3.0.1
 CATEGORIES=   	devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -12,12 +12,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gperf/}
+
+post-extract:
+	rm ${WRKDIST}/doc/gperf.info
 
 # Don't use SEPARATE_BUILD, the doc doesn't like it
 CONFIGURE_STYLE=	gnu
 # and it also insists upon installing under $(prefix)/doc...
-FAKE_FLAGS=docdir='$$(prefix)/share/doc/gperf'
+FAKE_FLAGS=docdir='$$(prefix)/share/doc/gperf' mandir='$$(prefix)/man'
 
 .include <bsd.port.mk>
