@@ -1,0 +1,11 @@
+--- configure.orig	Tue Feb 20 20:26:15 2001
++++ configure	Tue Feb 20 20:27:30 2001
+@@ -9,7 +9,7 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=$prefix
+ # Any additions from configure.in:
+ 
+ # Initialize some variables set by options.
