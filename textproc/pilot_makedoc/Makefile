@@ -3,7 +3,7 @@
 # Date created:				April 27 1998
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/06/14 06:26:24 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:53 espie Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 EXTRACT_ONLY=
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	YES

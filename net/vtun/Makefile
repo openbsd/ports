@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/18 14:52:42 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:37 espie Exp $
 
 DISTNAME=	vtun-2.3
 CATEGORIES=	net
@@ -10,7 +10,7 @@ HOMEPAGE=	http://vtun.sourceforge.net/
 
 LIB_DEPENDS=	lzo.1.0::archivers/lzo
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

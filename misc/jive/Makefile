@@ -3,7 +3,7 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/04/20 03:26:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:31 espie Exp $
 #
 
 DISTNAME=	jive-1.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/
 
 MASTER_SITE_SUBDIR= games/amusements
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

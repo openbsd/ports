@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.9 2000/07/14 06:51:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:35 espie Exp $
 #
 
 DISTNAME=	nam-src-1.0a8
@@ -10,7 +10,7 @@ NEED_VERSION=	1.314
 MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/mash.cs.berkeley.edu/dist/vint/ \
 		http://www-mash.cs.berkeley.edu/dist/vint/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

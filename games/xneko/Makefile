@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/31 21:29:08 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:16 espie Exp $
 
 # The source code for xneko is the same under both directories
 # (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite2/usr/src/ga
 EXTRACT_SUFX=	.tar
 IGNOREFILES=	xneko.tar
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

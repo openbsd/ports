@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/28 13:44:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:04 espie Exp $
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
 CATEGORIES=     converters russian
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.13 2000/06/06 23:14:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:28 espie Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
@@ -7,7 +7,7 @@ CATEGORIES=	mbone
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

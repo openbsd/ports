@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/06 22:41:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:27 espie Exp $
 
 DISTNAME=       relate
 DISTFILES=	relate-2.0.tar.gz
 CATEGORIES=	mbone
 NEED_VERSION=	1.230
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

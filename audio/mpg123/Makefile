@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/08/02 10:33:24 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/22 14:02:53 espie Exp $
 
 DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
@@ -16,7 +16,7 @@ PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.mpg123.de/
 
-MAINTAINER=	ho@openbsd.org
+MAINTAINER=	Hakan Olsson <ho@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/22 13:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:10 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/09/08 07:55:54 jasoni Exp $
+# $OpenBSD: Makefile,v 1.22 2000/10/22 14:03:22 espie Exp $
 
 DISTNAME=	Python-1.6
 PKGNAME=	python-1.6
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/15 14:54:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:13 espie Exp $
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
@@ -9,7 +9,7 @@ EXTRACT_SUFX=		# empty
 
 EXTRACT_CASES=	connect4) gunshar ${FULLDISTDIR}/$$archive ;;
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

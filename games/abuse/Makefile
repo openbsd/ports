@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/05/31 16:52:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:12 espie Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.gz abuse_data.tar.gz:0
 
 HOMEPAGE=	http://www.crack.com/games/abuse/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 LICENSE_TYPE=		PD
 PERMIT_PACKAGE_CDROM=	YES

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/12 15:37:34 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:45 espie Exp $
 
 PKGNAME=	l0phtcrack-2.52
 CATEGORIES=	security
@@ -8,7 +8,7 @@ DISTFILES=	lcsrc.zip readsmb.c
 EXTRACT_ONLY=	lcsrc.zip
 DIST_SUBDIR=	l0phtcrack
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.9 2000/09/15 03:58:22 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:36 espie Exp $
 #
 
 BROKEN=		compile errors.
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 HOMEPAGE=	http://www-mash.cs.berkeley.edu/ns/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a::devel/tclcl
 RUN_DEPENDS=	${PREFIX}/bin/tclsh8.3::lang/tcl/8.3

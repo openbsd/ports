@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/08/05 00:34:49 rohee Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:20 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
@@ -25,7 +25,7 @@ LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		png.1.::graphics/png
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Must buy license"
 PERMIT_PACKAGE_FTP=	Yes

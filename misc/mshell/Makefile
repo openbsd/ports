@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/20 10:17:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:31 espie Exp $
 # Original from: Angelos D. Keromytis
 
 DISTNAME=	mshell
@@ -10,7 +10,7 @@ DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no explict license"
 PERMIT_PACKAGE_FTP=	Yes

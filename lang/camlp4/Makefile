@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/04 21:29:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:20 espie Exp $
 
 DISTNAME=	camlp4-3.00
 PKGNAME=	camlp4-3.00
@@ -6,7 +6,7 @@ CATEGORIES=	lang
 NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/Daniel.de_Rauglaudre/Camlp4/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BUILD_DEPENDS=	ocamlc::lang/ocaml
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/08/16 15:34:43 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/10/22 14:03:55 espie Exp $
 
 DISTNAME=	blackbox-0.61.0
 CATEGORIES=	x11
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
 
 HOMEPAGE=	http://blackbox.alug.org/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

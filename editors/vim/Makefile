@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/08/15 07:57:46 jasoni Exp $
+# $OpenBSD: Makefile,v 1.31 2000/10/22 14:03:10 espie Exp $
 
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
@@ -25,7 +25,7 @@ PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP
 .endif
 
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/18 22:19:52 mickey Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:31 espie Exp $
 
 DISTNAME=	cdrecord-1.9
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/12 10:38:51 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:44 espie Exp $
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

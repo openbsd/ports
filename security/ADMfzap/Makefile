@@ -3,13 +3,13 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/06/16 23:06:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 14:03:42 espie Exp $
 
 PKGNAME=	ADMfzap-0.1
 
 CATEGORIES=	security
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 DISTNAME=	ADMfzap
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/10 01:56:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:15 espie Exp $
 
 DISTNAME=	xbreaky-0.0.4
 CATEGORIES=	games
 NEED_VERSION=	1.313
 MASTER_SITES=	http://xbreaky.sourceforge.net/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 
 PERMIT_PACKAGE_CDROM=   Yes

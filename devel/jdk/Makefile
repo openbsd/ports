@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/06/16 23:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:06 espie Exp $
 #
 # See http://www.freebsd.org/java/ for software updates, etc.
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.freebsd.org/java/
 JDK_VERSION=	1.1.8
 JDK_PATH=	${PREFIX}/jdk${JDK_VERSION}
 
-MAINTAINER=	chris@OpenBSD.org
+MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
 
 RUN_DEPENDS=	/emul/freebsd/usr/lib/libc.so.3.1::emulators/freebsd_lib
 

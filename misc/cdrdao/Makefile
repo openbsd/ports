@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/15 08:45:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:30 espie Exp $
 
 DISTNAME= 	cdrdao-1.1.3
 CATEGORIES=	audio misc
@@ -6,7 +6,7 @@ NEED_VERSION=	1.302
 MASTER_SITES=	http://www.ping.de/sites/daneb/
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
-MAINTAINER=	fgsch@openbsd.org
+MAINTAINER=	Federico G. Schwindt <fgsch@openbsd.org>
 
 # Only tested on i386
 ONLY_FOR_ARCH=	i386

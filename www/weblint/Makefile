@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/17 17:37:21 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:55 espie Exp $
 
 DISTNAME=	weblint-1.020	
 CATEGORIES=	www
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.weblint.org/pub/weblint/ \
 
 HOMEPAGE=	http://www.weblint.org/
 
-MAINTAINER=	seanc@cginfo.sk.ca
+MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

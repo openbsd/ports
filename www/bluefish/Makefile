@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/13 21:36:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:54 espie Exp $
 
 DISTNAME=	bluefish-0.4
 CATEGORIES=	www 
@@ -6,7 +6,7 @@ NEED_VERSION=	1.312
 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
-MAINTAINER=	seanc@cginfo.sk.ca	
+MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		http://www.student.wau.nl/~olivier/bluefish/download/

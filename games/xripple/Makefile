@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/04 13:11:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:17 espie Exp $
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.gwdg.de/pub/linux/tux/x/enlightenment/enlightenment/misc/ \
 		ftp://ftp.pconline.com/users/gjerde/enlightenment/
 
-MAINTAINER=	mickey@openbsd.org
+MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/03 06:27:05 itojun Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:38 espie Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

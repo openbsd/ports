@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/08/07 04:34:05 obecian Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:48 espie Exp $
 
 DISTNAME=	whisker
 PKGNAME=	whisker-1.4
@@ -6,7 +6,7 @@ CATEGORIES=	security
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

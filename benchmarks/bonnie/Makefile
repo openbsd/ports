@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/08 20:01:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:02:58 espie Exp $
 
 DISTNAME=       Bonnie
 PKGNAME=	bonnie-1.0
 CATEGORIES=	benchmarks
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

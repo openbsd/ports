@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/06 05:07:24 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:05 espie Exp $
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	devel
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
 BUILD_DEPENDS=	expect::lang/expect
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

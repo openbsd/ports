@@ -3,13 +3,13 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/04/30 10:07:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:44 espie Exp $
 
 DISTNAME=	its4-1.0.1
 
 CATEGORIES=	security
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial.  licensing restrictions."
 PERMIT_PACKAGE_FTP=	"commercial.  licensing restrictions."

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/25 02:24:10 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:54 espie Exp $
 
 DISTNAME=	w3m-0.1.10
 CATEGORIES=	www
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.firedrake.org/w3m/ \
 
 HOMEPAGE=	http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

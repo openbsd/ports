@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/10 17:39:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:02:53 espie Exp $
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/ \
 		${MASTER_SITE_SUNSITE}/
 MASTER_SITE_SUBDIR= apps/sound/players
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

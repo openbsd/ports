@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/10 20:22:16 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:02:47 espie Exp $
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
@@ -7,7 +7,7 @@ NEED_VERSION=	1.301
 MASTER_SITES=	http://people.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"May not sell"
 PERMIT_PACKAGE_FTP=	Yes

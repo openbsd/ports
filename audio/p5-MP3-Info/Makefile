@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/21 01:52:01 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 14:02:53 espie Exp $
 
 DISTNAME=	MP3-Info-0.80
 PKGNAME=	p5-MP3-Info-0.80
@@ -7,7 +7,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= MP3
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

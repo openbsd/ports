@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/07/11 05:59:42 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:34 espie Exp $
 
 DISTNAME=	libnet-1.0.1b
 CATEGORIES=	net
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.packetfactory.net/Projects/libnet/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/Projects/libnet/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

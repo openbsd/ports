@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/06/09 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:42 espie Exp $
 
 PKGNAME=	ADMsmb-0.2
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	ftp://ADM.isp.at/ADM/ \
 		http://ADM.isp.at/ADM/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

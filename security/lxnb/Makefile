@@ -3,7 +3,7 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.9 2000/07/14 03:02:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:45 espie Exp $
 
 DISTNAME=       linux-netbus-client-v0.4
 PKGNAME=	lxnb-0.4
@@ -11,7 +11,7 @@ PKGNAME=	lxnb-0.4
 CATEGORIES=	security
 NEED_VERSION=	1.314
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

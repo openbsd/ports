@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/05 14:35:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:13 espie Exp $
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
 NEED_VERSION=	1.195
 MASTER_SITES=	http://www.bnetd.org/files/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/14 22:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:23 espie Exp $
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
 NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
-MAINTAINER=	pjanzen@openbsd.org
+MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,6 +1,6 @@
 # Makefile for "remind" port.
 
-# $OpenBSD: Makefile,v 1.10 2000/07/20 05:27:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:32 espie Exp $
 
 DISTNAME=	remind-03.00.22
 PKGNAME=        remind-3.0.22
@@ -8,7 +8,7 @@ CATEGORIES=	misc
 NEED_VERSION=	1.301
 MASTER_SITES = 	http://www.roaringpenguin.com/
 
-MAINTAINER = 	kevlo@openbsd.org
+MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

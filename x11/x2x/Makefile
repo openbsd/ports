@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/01 01:26:02 todd Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:59 espie Exp $
 #
 
 # 
@@ -7,7 +7,7 @@
 DISTNAME=		x2x-1.27
 CATEGORIES=     	x11
 
-MAINTAINER=		todd@openbsd.org
+MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

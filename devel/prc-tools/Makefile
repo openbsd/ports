@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:09 espie Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
@@ -10,7 +10,7 @@ MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/21 01:58:39 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:02:55 espie Exp $
 
 DISTNAME=	CDDB-1.03
 PKGNAME=	p5-CDDB-1.03
@@ -6,7 +6,7 @@ CATEGORIES=	audio perl5
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.perl.com/CPAN-local/authors/id/R/RC/RCAPUTO/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

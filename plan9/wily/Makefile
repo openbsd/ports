@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/08/19 02:20:39 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:39 espie Exp $
 
 DISTNAME=	wily-0.13.41
 CATEGORIES=	plan9 editors
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

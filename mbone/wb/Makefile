@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/07 12:44:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:29 espie Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -8,7 +8,7 @@ MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

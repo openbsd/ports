@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/05/31 13:36:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:00 espie Exp $
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
 FAKE=		Yes
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"license only grants use"
 PERMIT_PACKAGE_FTP=	"license only grants use"

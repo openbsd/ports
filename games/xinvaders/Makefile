@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/15 14:54:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:16 espie Exp $
 #
 
 DISTNAME=       xinvaders
@@ -7,7 +7,7 @@ PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
 NEED_VERSION=	1.330
 
-MAINTAINER=	pjanzen@openbsd.org
+MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

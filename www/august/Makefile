@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/16 02:01:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:53 espie Exp $
 
 DISTNAME=	august0.61b.src
 PKGNAME=	august-0.61b
@@ -7,7 +7,7 @@ NEED_VERSION=	1.319
 
 HOMEPAGE=	http://www.lls.se/~johanb/august/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/08/11 04:00:14 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:21 espie Exp $
 
 DISTNAME=	guile-1.4
 CATEGORIES=	lang
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= guile
 
 HOMEPAGE=	http://www.gnu.org/software/guile/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

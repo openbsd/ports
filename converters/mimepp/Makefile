@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/28 13:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:03 espie Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
 NEED_VERSION=		1.210
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"restrictive non-commercial license"
 PERMIT_PACKAGE_FTP=	"restrictive non-commercial license"

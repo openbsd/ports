@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/03 07:47:14 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:02:51 espie Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
@@ -13,7 +13,7 @@ RUN_DEPENDS=	mpg123::audio/mpg123
 
 HOMEPAGE=	http://www.netpedia.net/hosting/gqview/mpeg-index.html
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

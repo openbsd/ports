@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/12 00:25:21 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:05 espie Exp $
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
 
-MAINTAINER=	d@openbsd.org
+MAINTAINER=	David Leonard <d@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -4,7 +4,7 @@
 # Whom:                 gpalmer
 #
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.7 2000/03/27 01:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:58 espie Exp $
 
 DISTNAME=	tvtwm.pl11
 PKGNAME=	tvtwm-pl11
@@ -12,7 +12,7 @@ PKGNAME=	tvtwm-pl11
 CATEGORIES=	x11
 NEED_VERSION=	1.191
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/27 14:48:57 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:50 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 DISTNAME=	expat
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.jclark.com/xml/expat.html
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/19 08:24:53 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/22 14:03:06 espie Exp $
 
 DISTNAME=	make-3.79.1
 PKGNAME=	gmake-3.79.1
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.gnu.org/software/make/
 
 LIB_DEPENDS=	intl.1::devel/gettext
 
-MAINTAINER=	todd@openbsd.org
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,13 +3,13 @@
 # Date created:         12 Jan 2000
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/06/10 00:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:58 espie Exp $
 
 DISTNAME=	x2vnc-1.0
 
 CATEGORIES=     x11
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,7 +3,7 @@
 # Date created:			  Thu Dec 16, 1999
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/06/06 02:34:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:36 espie Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 #
 
@@ -11,7 +11,7 @@ DISTNAME=	pchar-1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

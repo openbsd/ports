@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/02 19:41:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:16 espie Exp $
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
@@ -6,7 +6,7 @@ NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

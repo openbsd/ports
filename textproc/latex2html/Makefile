@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:51 espie Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
 NEED_VERSION=	 1.230
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/15 13:42:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:02:59 espie Exp $
 
 PKGNAME=	conserver-5.21
 DISTFILES=	conserver-5.21-Beta.shar.gz
 CATEGORIES=	comms
 NEED_VERSION=	1.330
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

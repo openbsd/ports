@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/04/09 17:36:06 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/10/22 14:02:59 espie Exp $
 
 BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
 
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	-tar.gz
 PATCHFILES=	gcc-2.8.x.patch:0
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	d@openbsd.org
+MAINTAINER=	David Leonard <d@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

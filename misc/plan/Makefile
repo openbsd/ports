@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/06/06 22:31:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:31 espie Exp $
 #
 
 DISTNAME=	plan-1.6.1
 CATEGORIES=	misc
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"license requests a copy of the cd"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/10 10:31:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:54 espie Exp $
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6
@@ -7,7 +7,7 @@ NEED_VERSION=	1.319
 
 MASTER_SITES=   http://www.pigdog.org/decss/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

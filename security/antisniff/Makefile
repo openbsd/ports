@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:11 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:42 espie Exp $
 
 PKGNAME=	antisniff-1.1
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.l0pht.com/antisniff/dist/
 
 DISTNAME=	anti_sniff_researchv1-1
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/28 06:43:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:15 espie Exp $
 
 DISTNAME=       xboard-4.0.7
 CATEGORIES=	games
@@ -6,7 +6,7 @@ NEED_VERSION=	1.308
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/04/09 17:36:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:11 espie Exp $
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
@@ -10,7 +10,7 @@ FAKE=No
 
 ONLY_FOR_ARCHS= i386
 
-MAINTAINER=	rohee@OpenBSD.ORG
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

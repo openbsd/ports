@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/13 08:42:52 jasoni Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:59 espie Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
@@ -8,7 +8,7 @@ NEED_VERSION=   1.223
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= X11/fonts
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

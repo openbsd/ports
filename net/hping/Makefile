@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/20 06:08:01 obecian Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:33 espie Exp $
 
 DISTNAME=	hping2-beta54
 PKGNAME=	hping-2.0b54
@@ -6,7 +6,7 @@ CATEGORIES=	net
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

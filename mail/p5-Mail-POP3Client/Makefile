@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.9 2000/08/21 02:17:43 brad Exp $
+#   $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:24 espie Exp $
 
 DISTNAME=	POP3Client-2.6
 PKGNAME=	p5-Mail-POP3Client-2.6
@@ -7,7 +7,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Mail
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

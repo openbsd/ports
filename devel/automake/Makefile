@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/25 07:31:11 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:05 espie Exp $
 
 DISTNAME=	automake-1.4
 CATEGORIES=	devel
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= automake
 
 HOMEPAGE=	http://www.gnu.org/software/automake/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

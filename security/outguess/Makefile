@@ -3,7 +3,7 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/30 10:21:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:47 espie Exp $
 
 DISTNAME=	outguess-0.13b
 
@@ -13,7 +13,7 @@ NEED_VERSION=	1.191
 MASTER_SITES=	http://www.physnet.uni-hamburg.de/provos/ \
 		http://munitions.vipul.net/software/steganography/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 GNU_CONFIGURE=	Yes
 FAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/21 07:35:06 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:58 espie Exp $
 
 DISTNAME=	rxvt-2.7.3
 CATEGORIES=	x11
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 
 HOMEPAGE=	http://www.rxvt.org/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

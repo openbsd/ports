@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.2 2000/04/11 20:47:22 rohee Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2000/10/22 14:03:53 espie Exp $
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
 
 EXTRACT_SUFX?=			.tgz
 
-MAINTAINER?=			rohee@openbsd.org
+MAINTAINER?=			Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM?=		Yes
 PERMIT_PACKAGE_FTP?=		Yes

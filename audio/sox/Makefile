@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/10 16:05:01 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 14:02:56 espie Exp $
 
 DISTNAME=	sox-12.17
 CATEGORIES=	audio
@@ -7,7 +7,7 @@ MASTER_SITES=	http://home.sprynet.com/~cbagwell/
 
 HOMEPAGE=	http://home.sprynet.com/~cbagwell/sox.html
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

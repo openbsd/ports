@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/05/31 16:52:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:14 espie Exp $
 
 DISTNAME=	netris-0.5
 CATEGORIES=	games
 FAKE=		Yes
 MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

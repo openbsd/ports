@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/10 20:22:14 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:02:46 espie Exp $
 
 DISTNAME=	ha0999
 PKGNAME=	ha-0.999b
@@ -7,7 +7,7 @@ NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/23 04:12:04 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:40 espie Exp $
 
 DISTNAME=	afm
 PKGNAME=	afm-1.0
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.Z
 
 FAKE=Yes
-MAINTAINER=	d@openbsd.org
+MAINTAINER=	David Leonard <d@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/12 15:37:33 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:06 espie Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://java.sun.com/products/jfc/
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java::devel/jdk
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/05 00:42:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:24 espie Exp $
 
 DISTNAME=	pwserve-4
 PKGNAME=	poppassd-4.0
@@ -6,7 +6,7 @@ CATEGORIES=	mail
 NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/14 16:49:08 form Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:10 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.1.1
 CATEGORIES=	editors x11
 NEED_VERSION=	1.230
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

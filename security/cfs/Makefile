@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/30 09:20:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:43 espie Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -9,7 +9,7 @@ MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"contains crypto code"
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # Note that this port contains crypto and is subject to US crypto laws.
 PERMIT_PACKAGE_CDROM=	Yes

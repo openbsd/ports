@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/04 08:19:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:20 espie Exp $
 
 DISTNAME=	mtv-1.0.6.0
 CATEGORIES=	graphics
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/unsupported/x86-bsdi-b
 
 HOMEPAGE=	http://www.mpegtv.com/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Commercial
 PERMIT_PACKAGE_FTP=     Commercial

@@ -3,7 +3,7 @@
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.8 2000/09/05 15:06:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:43 espie Exp $
 #
 
 PKGNAME=	bounix-1.21
@@ -15,7 +15,7 @@ NEED_VERSION=	1.322
 MASTER_SITES=	http://orifice.rotten.com/cDc/ \
 		http://www.cultdeadcow.com/tools/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

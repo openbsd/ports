@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/07/04 00:20:51 krw Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:23 espie Exp $
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
 NEED_VERSION=	1.310
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

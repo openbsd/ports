@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/14 07:59:55 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:41 espie Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
@@ -6,7 +6,7 @@ NEED_VERSION=	 1.230
 FAKE=No
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

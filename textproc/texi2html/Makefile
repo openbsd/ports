@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/21 19:15:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:53 espie Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
@@ -9,7 +9,7 @@ MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
 EXTRACT_SUFX=	.shar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

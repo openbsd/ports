@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/27 06:44:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:56 espie Exp $
 
 DISTNAME=	fsv-0.9
 CATEGORIES=     x11
@@ -11,7 +11,7 @@ LIB_DEPENDS=	GL.3::graphics/Mesa \
 		gtk.1::x11/gtk+ \
 		gtkgl.1::x11/gtkglarea
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

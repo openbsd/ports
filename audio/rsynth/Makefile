@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/10 17:39:22 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:02:56 espie Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

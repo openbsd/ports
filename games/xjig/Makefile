@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/04 12:04:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:16 espie Exp $
 
 DISTNAME=	xjig-2.4
 CATEGORIES=	games
@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

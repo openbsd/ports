@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS=	i386 m68k sparc
 
 EXTRACT_CASES= gc4.12.tar.gz) tar zxf ${FULLDISTDIR}/$$archive || true;;
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

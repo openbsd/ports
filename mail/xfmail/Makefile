@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/13 08:43:40 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:25 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
@@ -14,7 +14,7 @@ HOMEPAGE=	http://xfmail.slappy.org/
 LIB_DEPENDS=	forms::x11/xforms \
 		glib.1.2::devel/glib
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

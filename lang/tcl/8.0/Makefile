@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/07/18 08:25:56 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:22 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= tcl8_0
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

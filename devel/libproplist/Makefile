@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/20 05:40:43 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:07 espie Exp $
 
 DISTNAME=	libPropList-0.10.1
 PKGNAME=	libproplist-0.10.1
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= libs
 
 HOMEPAGE=	http://www.windowmaker.org/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

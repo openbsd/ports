@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/06 23:38:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:13 espie Exp $
 
 DISTNAME=	gnuchess-4.0.pl80
 PKGNAME=	gnuchess-4.0.80
@@ -7,7 +7,7 @@ NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnuchess
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

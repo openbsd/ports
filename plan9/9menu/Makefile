@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/08/19 01:27:25 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:39 espie Exp $
 
 DISTNAME=	9menu-1.5
 CATEGORIES=	plan9
@@ -10,7 +10,7 @@ EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | ${SH}
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

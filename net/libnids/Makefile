@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/31 07:38:53 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:34 espie Exp $
 
 DISTNAME=	libnids-1.14
 CATEGORIES=	net
@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.packetfactory.net/Projects/Libnids/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/09/09 22:35:37 angelos Exp $
+# $OpenBSD: Makefile,v 1.32 2000/10/22 14:03:48 espie Exp $
 
 DISTNAME=	lsof_4.52A.n+obsd
 PKGNAME=	lsof-4.51.1
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

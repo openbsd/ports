@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/08 07:50:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:25 espie Exp $
 
 DISTNAME=       procmail-3.15
 CATEGORIES=	mail
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ 
 
-MAINTAINER=     rohee@OpenBSD.ORG
+MAINTAINER=     Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/12 13:13:15 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:02:48 espie Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
 NEED_VERSION=	1.320
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   "May not be bundled, according to copyright."
 PERMIT_PACKAGE_FTP=     Yes

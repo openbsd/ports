@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/06 23:14:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:27 espie Exp $
 
 DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	YES

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/08 07:20:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:28 espie Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
 NEED_VERSION=	1.230
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"generally restrictive license"
 PERMIT_PACKAGE_FTP=	Yes

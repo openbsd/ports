@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/10 20:22:14 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:02:47 espie Exp $
 
 DISTNAME=	lha-114f
 PKGNAME=	lha-1.14f
@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
 		ftp://ftp.win.ne.jp/pub/misc/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

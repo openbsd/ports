@@ -3,7 +3,7 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:23 espie Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -13,7 +13,7 @@ FAKE=No
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

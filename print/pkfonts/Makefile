@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/06/16 23:06:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:42 espie Exp $
 #
 
 DISTNAME=	pkfonts
@@ -16,7 +16,7 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 EXTRACT_ONLY=	
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/28 13:44:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:03 espie Exp $
 
 DISTNAME=       mpack-1.5-src
 PKGNAME=        mpack-1.5
 CATEGORIES=     converters mail news
 NEED_VERSION=	1.191
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

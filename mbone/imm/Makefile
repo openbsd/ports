@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/06 14:31:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:26 espie Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -7,7 +7,7 @@ NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes

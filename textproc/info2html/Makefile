@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/21 23:24:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:50 espie Exp $
 
 DISTNAME=	info2html-1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

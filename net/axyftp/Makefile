@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/23 16:15:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:33 espie Exp $
 
 DISTNAME=	axyftp-0.5.1
 CATEGORIES=	net
@@ -6,7 +6,7 @@ NEED_VERSION=   1.319
 MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.5.1/
 HOMEPAGE=	http://www.wxftp.seul.org/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   "no fee"
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/05 00:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:24 espie Exp $
 
 DISTNAME=	movemail-1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

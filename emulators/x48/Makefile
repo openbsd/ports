@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/14 21:39:02 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:11 espie Exp $
 #
 
 DISTNAME=		x48-0.4.0
 CATEGORIES=		emulators
 
-MAINTAINER=		todd@OpenBSD.org
+MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

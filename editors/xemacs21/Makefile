@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/15 21:41:28 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:11 espie Exp $
 # Supported FLAVORS : mule | compface | no_x11 | clashdetect
 # TODO : add flavours for Wnn, Canna, XFontSet and maybe kerberos
 # Tested on : i386 sparc (thanks to Free&ALter Soft for the sparc)
@@ -8,7 +8,7 @@ DISTNAME=	xemacs-${VER}
 CATEGORIES=	editors
 NEED_VERSION=	1.218
 
-MAINTAINER=	jean-yves@burlett.org
+MAINTAINER=	Jean-Yves Burlett <jean-yves@burlett.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

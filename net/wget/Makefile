@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/10/04 23:33:59 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/10/22 14:03:38 espie Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.gnu.org/software/wget/
 
 LIB_DEPENDS=	intl.1::devel/gettext
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

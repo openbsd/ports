@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/30 23:21:34 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/22 14:03:20 espie Exp $
 
 DISTNAME=	jpegsrc.v6b
 PKGNAME=	jpeg-6b
@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

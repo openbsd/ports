@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/21 14:52:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:36 espie Exp $
 # Original from: Zach Smith <key@aye.net>
 
 DISTNAME=	nmapfe-0.9.5
@@ -7,7 +7,7 @@ NEED_VERSION=	1.223
 MASTER_SITES=	http://codebox.net/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	seanc@cginfo.sk.ca
+MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

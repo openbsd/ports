@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/05/31 16:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:12 espie Exp $
 #
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
 FAKE=			Yes
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"

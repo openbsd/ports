@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/05/21 19:51:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:19 espie Exp $
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/07 12:43:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:26 espie Exp $
 
 DISTNAME=       common-1.0.6
 CATEGORIES=	mbone
 NEED_VERSION=	1.230
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

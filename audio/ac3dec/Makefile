@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/17 19:40:44 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:02:49 espie Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
 
 ONLY_FOR_ARCHS=	i386
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://ess.engr.uvic.ca/%7Eaholtzma/ac3/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -3,7 +3,7 @@
 # Date created:		18 March 1998
 # Whom:			Todd Fries
 #
-# $OpenBSD: Makefile,v 1.5 2000/06/09 17:13:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:59 espie Exp $
 #
 
 DISTNAME=       xlockmore-4.08.2
@@ -15,7 +15,7 @@ NEED_VERSION=	1.293
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	todd@OpenBSD.ORG
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

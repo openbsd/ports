@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/08 20:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:02:58 espie Exp $
 
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks
 NEED_VERSION=	1.250
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/30 10:07:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:44 espie Exp $
 
 DISTNAME=	fragrouter-1.6
 
@@ -6,7 +6,7 @@ CATEGORIES=	security
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

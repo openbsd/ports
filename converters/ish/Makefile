@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/28 13:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:02 espie Exp $
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 NEED_VERSION=	1.210
 
 LICENSE_TYPE=		PD

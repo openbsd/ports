@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/05 15:54:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 14:03:04 espie Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
@@ -16,7 +16,7 @@ PKGNAME=	openldap-${VERSION}
 
 HOMEPAGE=	http://www.openldap.org/
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

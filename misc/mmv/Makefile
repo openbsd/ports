@@ -3,7 +3,7 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/04/20 05:03:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:31 espie Exp $
 #
 
 DISTNAME=	mmv
@@ -16,7 +16,7 @@ DISTFILES=	part01.Z part02.Z
 MASTER_SITES0=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
 PATCHFILES=	mmv.pch.Z:0
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

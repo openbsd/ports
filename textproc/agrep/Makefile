@@ -3,7 +3,7 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/12 01:07:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:49 espie Exp $
 #
 
 DISTNAME=	agrep-2.04
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 #DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 ALL_TARGET=
 MAN1=		agrep.1

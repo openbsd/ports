@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/14 19:11:32 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:34 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: Christopher Turan <turan@openbsd.org>
 #
@@ -11,7 +11,7 @@ PKGNAME=		mrtd-1.6.0a
 CATEGORIES=     	net
 NEED_VERSION=		1.191
 FAKE=No
-MAINTAINER=		turan@openbsd.org
+MAINTAINER=		Christopher Turan <turan@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	YES

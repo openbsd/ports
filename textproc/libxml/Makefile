@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/03 17:29:46 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:51 espie Exp $
 
 DISTNAME=	libxml2-2.2.4
 PKGNAME=	libxml-2.2.4
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= stable/sources/libxml
 
 HOMEPAGE=	http://xmlsoft.org/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

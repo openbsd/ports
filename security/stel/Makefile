@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/05 01:42:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:48 espie Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
@@ -6,7 +6,7 @@ NEED_VERSION=	1.210
 MASTER_SITES=	ftp://idea.sec.dsi.unimi.it/pub/security/cert-it/
 
 
-MAINTAINER=	turan@openbsd.org
+MAINTAINER=	Christopher Turan <turan@openbsd.org>
 
 LICENSE_TYPE=		"GPL CRYPTO"
 PERMIT_PACKAGE_CDROM=	No

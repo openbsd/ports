@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/28 03:28:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:09 espie Exp $
 
 DISTNAME=	beav_1.40-13
 PKGNAME=	beav-1.40-13
@@ -7,7 +7,7 @@ NEED_VERSION=	1.319
 
 MASTER_SITES=   ftp://ftp.debian.org/debian/dists/stable/main/source/editors/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/02 20:06:07 dugsong Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:44 espie Exp $
 
 DISTNAME=	dsniff-2.2
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet \
 		${LOCALBASE}/lib/libnids.a::net/libnids
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

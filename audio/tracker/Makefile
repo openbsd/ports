@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/10 00:40:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 14:02:57 espie Exp $
 
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
@@ -6,7 +6,7 @@ NEED_VERSION=	1.195
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Marc Espei <espie@openbsd.org>
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 USE_GMAKE=		Yes
 

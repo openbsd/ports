@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/08/31 00:40:30 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/10/22 14:03:00 espie Exp $
 
 DISTNAME=	${PKGNAME}.src
 PKGNAME=	minicom-1.83.1
@@ -11,7 +11,7 @@ BUILD_DEPENDS=	msgfmt::devel/gettext
 RUN_DEPENDS=	kermit::comms/kermit \
 		lrz::comms/lrzsz
 
-MAINTAINER=     form@openbsd.org
+MAINTAINER=     Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

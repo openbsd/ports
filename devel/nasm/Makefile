@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/08 04:27:08 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:08 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= devel/lang/assemblers
 
 HOMEPAGE=	http://www.web-sites.co.uk/nasm/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # The license is basically NOFEE but requires permission for inclusion
 # in a commercial procuct.  See License file for info.

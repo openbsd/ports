@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/16 23:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:09 espie Exp $
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
 NEED_VERSION=	1.230
 
-MAINTAINER=	todd@OpenBSD.org
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

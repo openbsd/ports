@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/04 10:56:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:15 espie Exp $
 #
 
 DISTNAME=	xevil1.5
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xevil1.5
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/10/21 19:59:17 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/10/22 14:03:07 espie Exp $
 
 DISTNAME=	slang-1.4.2
 PKGNAME=	libslang-1.4.2
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
 
 HOMEPAGE=	http://www.s-lang.org/
 
-MAINTAINER=	todd@openbsd.org
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

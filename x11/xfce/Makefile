@@ -3,7 +3,7 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.8 2000/08/16 03:41:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:59 espie Exp $
 #
 
 DISTNAME=	xfce-3.4.4
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.301
 MASTER_SITES=	http://www.xfce.org/archive/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,14 +3,14 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/06/16 23:06:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:47 espie Exp $
 
 PKGNAME=	rdp-1.0
 
 CATEGORIES=	security
 NEED_VERSION=	 1.230
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes

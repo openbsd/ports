@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/08/16 16:42:01 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:02:52 espie Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
@@ -6,7 +6,7 @@ CATEGORIES=	audio
 NEED_VERSION=	1.300
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html 

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.8 2000/04/09 17:36:50 espie Exp $
+#	$OpenBSD: Makefile,v 1.9 2000/10/22 14:03:21 espie Exp $
 
 BROKEN=		"sources no longer exist"
 
@@ -13,7 +13,7 @@ BROKEN=		"sources no longer exist"
 CATEGORIES=	lang
 NEED_VERSION=	 1.230
 FAKE=No
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

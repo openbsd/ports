@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:25 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 DISTNAME=		vrfy_990522
@@ -6,7 +6,7 @@ PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
 NEED_VERSION=		1.191
 
-MAINTAINER=		rohee@OpenBSD.ORG
+MAINTAINER=		Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

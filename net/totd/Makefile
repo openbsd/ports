@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/11 01:22:05 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:37 espie Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 
 DISTNAME=	totd-1.1p4
@@ -6,7 +6,7 @@ CATEGORIES=	net
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
 HOMEPAGE=	http://www.vermicelli.cs.uit.no/ipv6/software.html
 
 PERMIT_PACKAGE_CDROM=	Yes

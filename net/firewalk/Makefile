@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/08 20:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:33 espie Exp $
 
 DISTNAME=	firewalk-0.8
 CATEGORIES=     net
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 MIRROR_DISTFILE=No
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/27 21:26:45 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:09 espie Exp $
 
 VERSION=	0.7.10
 PKGNAME=	abiword-${VERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	expat.1::textproc/expat \
 		gtk.1.2::x11/gtk+
 RUN_DEPENDS=	ispell::textproc/ispell
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

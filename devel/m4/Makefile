@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/04 01:44:45 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:07 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 DISTNAME=	m4-1.4
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= m4
 
 HOMEPAGE=	http://www.gnu.org/software/m4/
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

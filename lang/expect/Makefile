@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/09/06 03:46:15 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/10/22 14:03:21 espie Exp $
 
 DISTNAME=	expect-5.32.1
 CATEGORIES=	lang
@@ -9,7 +9,7 @@ HOMEPAGE=	http://expect.nist.gov/
 
 LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/07 23:49:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:03 espie Exp $
 
 DISTNAME=	recode-3.5
 CATEGORIES=	converters textproc
 NEED_VERSION=	1.218
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

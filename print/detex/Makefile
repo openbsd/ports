@@ -3,7 +3,7 @@
 # Date created:			  May 17 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/06/05 01:49:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:40 espie Exp $
 #
 
 DISTNAME=		detex-2.6
@@ -12,7 +12,7 @@ NEED_VERSION=		1.191
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
 
-MAINTAINER=     	angelos@openbsd.org
+MAINTAINER=     	Angelos D. Keromytis <angelos@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

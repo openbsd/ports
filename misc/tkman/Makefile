@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/06/29 02:20:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:32 espie Exp $
 #
 
 DISTNAME=	tkman
@@ -12,7 +12,7 @@ CATEGORIES=	misc
 NEED_VERSION=	1.309
 MASTER_SITES=	ftp://tkman.sourceforge.net/pub/tkman/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 HOMEPAGE=	http://tkman.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/08 22:16:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:26 espie Exp $
 #
 
 ONLY_FOR_ARCHS=	i386
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"shareware"
 PERMIT_PACKAGE_FTP=	"shareware"

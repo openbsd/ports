@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/08/18 16:19:03 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2000/10/22 14:03:58 espie Exp $
 
 DISTNAME=	WindowMaker-0.62.1
 PKGNAME=	windowmaker-0.62.1
@@ -17,7 +17,7 @@ LIB_DEPENDS=	PropList.2::devel/libproplist \
 		png.1::graphics/png \
 		gif.4.1::graphics/giflib
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

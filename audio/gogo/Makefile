@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/10 17:39:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 14:02:50 espie Exp $
 
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS= i386
 
 BUILD_DEPENDS=	nasm::devel/nasm
 
-MAINTAINER=	beck@openbsd.org
+MAINTAINER=	Bob Beck <beck@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	MP3 patent, mp3licensing.com/details/software.html
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/24 00:01:03 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:18 espie Exp $
 
 DISTNAME=	libggi-2.0b2.1
 CATEGORIES=	graphics
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
 
 LIB_DEPENDS=	gii.0.::graphics/gii
 
-MAINTAINER=	Todd Fries <todd@openbsd.org>
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

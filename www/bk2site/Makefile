@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/30 03:40:49 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:54 espie Exp $
 
 DISTNAME=	bk2site-1.1.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.sourceforge.net/bk2site/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

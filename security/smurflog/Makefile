@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/05/06 07:15:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:47 espie Exp $
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.nectar.com/distfiles/
 #		http://www.sy.net/security/ \
 #		http://www.bitchx.com/~humble/files/
 
-MAINTAINER=	todd@OpenBSD.ORG
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

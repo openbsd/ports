@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/21 08:40:59 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 14:02:56 espie Exp $
 
 DISTNAME=	rplay-3.3.0
 CATEGORIES=	audio
@@ -9,7 +9,7 @@ HOMEPAGE=	http://rplay.doit.org/
 
 LIB_DEPENDS=	gsm.1.0::audio/gsm
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

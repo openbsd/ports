@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/10 12:58:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 14:02:59 espie Exp $
 
 DISTNAME=	jpilot-0.98.1
 CATEGORIES=	comms
@@ -8,7 +8,7 @@ MASTER_SITES=	http://jpilot.linuxave.net/
 
 HOMEPAGE=	http://jpilot.linuxave.net/
 
-MAINTAINER=	ho@openbsd.org
+MAINTAINER=	Hakan Olsson <ho@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

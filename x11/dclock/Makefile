@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:55 espie Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 PKGNAME=	dclock-pl4
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.shar.Z
 
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,7 +3,7 @@
 # Date created:		7 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:18 espie Exp $
 
 DISTNAME=	gphoto-0.4.1
 CATEGORIES=	graphics
@@ -12,7 +12,7 @@ FAKE=No
 
 MASTER_SITES=	ftp://ftp.gphoto.org/projects/gphoto/pub/tar/0.4/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

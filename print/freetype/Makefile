@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/22 05:47:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:40 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
 		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
