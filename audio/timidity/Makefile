@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2003/10/26 23:49:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/10/09 16:51:44 jolan Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
 CATEGORIES=	audio
 
-MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+MASTER_SITES=	http://sca.uwaterloo.ca/www.cgs.fi/tt/timidity/
 MASTER_SITES0=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/
 TIINS=	goemon.tgz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
