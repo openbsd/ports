@@ -1,0 +1,4 @@
+hgrep is a trivial, but cute, front-end for grep. It takes the results of
+the grep search and highlights the word that was searched for.
+
+WWW: ${HOMEPAGE}
