@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/27 00:26:17 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/21 19:02:16 espie Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -35,8 +35,10 @@ SUBST_VARS=	CONFDIR
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --disable-perl --disable-print
+CONFIGURE_ARGS+= --disable-perl --disable-print --disable-gtkdoc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GNOME_CONFIG=/dev/null \
+		EMACS=/dev/null
 
 .include <bsd.port.mk>
