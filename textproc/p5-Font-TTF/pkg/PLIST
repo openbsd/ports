@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/04/13 19:58:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/08/07 05:51:53 shell Exp $
+bin/check_attach.plx
 bin/eurofix.plx
 bin/hackos2.plx
 bin/psfix.plx
+bin/ttfbuilder.plx
 bin/ttfname.plx
+bin/ttfremap.plx
 libdata/perl5/site_perl/Font/TTF/AATKern.pm
 libdata/perl5/site_perl/Font/TTF/AATutils.pm
 libdata/perl5/site_perl/Font/TTF/Anchor.pm
@@ -49,6 +52,7 @@ libdata/perl5/site_perl/Font/TTF/OS_2.pm
 libdata/perl5/site_perl/Font/TTF/OldCmap.pm
 libdata/perl5/site_perl/Font/TTF/OldMort.pm
 libdata/perl5/site_perl/Font/TTF/PCLT.pm
+libdata/perl5/site_perl/Font/TTF/PSNames.pm
 libdata/perl5/site_perl/Font/TTF/Post.pm
 libdata/perl5/site_perl/Font/TTF/Prep.pm
 libdata/perl5/site_perl/Font/TTF/Prop.pm
@@ -60,7 +64,7 @@ libdata/perl5/site_perl/Font/TTF/Utils.pm
 libdata/perl5/site_perl/Font/TTF/Vhea.pm
 libdata/perl5/site_perl/Font/TTF/Vmtx.pm
 libdata/perl5/site_perl/Font/TTF/XMLparse.pm
-libdata/perl5/site_perl/Font/tounix.pm
+man/man1/ttfbuilder.plx.1
 man/man3/Font::TTF::AATKern.3p
 man/man3/Font::TTF::Anchor.3p
 man/man3/Font::TTF::Bsln.3p
@@ -119,6 +123,7 @@ man/man3/Font::TTF::XMLparse.3p
 share/examples/p5-Font-TTF/StripCmap.plx
 share/examples/p5-Font-TTF/addpclt.plx
 share/examples/p5-Font-TTF/makemono.plx
+share/examples/p5-Font-TTF/symbol.rmp
 share/examples/p5-Font-TTF/ttfdeltable.plx
 share/examples/p5-Font-TTF/ttfenc.plx
 share/examples/p5-Font-TTF/ttfwidth.plx

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/21 06:16:35 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/07 05:51:53 shell Exp $
 
 COMMENT=	"perl module for TrueType font hacking"
 
-DISTNAME=	Font-TTF-0.23
+DISTNAME=	Font-TTF-0.24
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.414
+NEED_VERSION=	1.433
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Font
@@ -21,13 +21,9 @@ CONFIGURE_STYLE= perl
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Font-TTF
 EG_DIR=		${WRKSRC}/Examples
-EG_FILES=	StripCmap addpclt makemono ttfdeltable ttfenc \
-		ttfwidth xmldump zerohyph
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-.for i in ${EG_FILES}
-	${INSTALL_SCRIPT} ${EG_DIR}/$i.plx ${EXAMPLE_DIR}/$i.plx
-.endfor
+	${INSTALL_SCRIPT} ${EG_DIR}/* ${EXAMPLE_DIR}/
 	
 .include <bsd.port.mk>
