@@ -1,0 +1,51 @@
+$OpenBSD: patch-contool_c,v 1.1 2002/02/23 23:45:18 pvalchev Exp $
+--- contool.c.orig	Thu Feb 24 10:55:30 1994
++++ contool.c	Sat Feb 23 16:39:06 2002
+@@ -284,6 +284,9 @@ PRIVATE	end_command()
+ EXPORT	acquire_console()
+ 
+ {	int	console;
++#if (defined(BSD) && (BSD >= 199306))
++	int	i;
++#endif
+ 
+ #ifdef	SVR4
+ 	if (slave > 0) {
+@@ -293,8 +296,15 @@ EXPORT	acquire_console()
+ 	      abend("%s: could not attach to /dev/console: %s", program, sys_errlist[errno]);
+ 	   }
+ #else
++#if (defined(BSD) && (BSD >= 199306))
++	i=1;
++#endif
+ 	if (slave > 0)
++#if (defined(BSD) && (BSD >= 199306))
++	   if (ioctl(slave, TIOCCONS, &i) == -1)
++#else
+ 	   if (ioctl(slave, TIOCCONS, NULL) == -1)
++#endif
+ 	      abend("%s: could not attach to /dev/console: %s", program, sys_errlist[errno]);
+ #endif
+ }
+@@ -346,10 +356,11 @@ PRIVATE	parse_options(argc, argv)
+ int	*argc;
+ char	**argv;
+ 
+-{	char	*s, c, path[1024], *log_file = NULL, *p;
++{	char	*s, path[1024], *log_file = NULL, *p;
+ 	int	log = FALSE;
+ 	static	char	cmdline[MAXPATHLEN + 10];
+ 	struct	stat	sb;
++	int	c;
+ 
+ 	if (p = getenv(CONTOOL_FILTERS))
+ 	   filter_file = strsave(p);
+@@ -360,7 +371,7 @@ char	**argv;
+ 
+ 	cmdline[0] = '\0';
+ 
+-	while ((c = get_option(argc, argv, "c:fi:lL:n?", &s)) != EOF)
++	while ((c = get_option(argc, argv, "c:fi:lL:n?", &s)) != -1)
+ 	   switch (c) {
+ 	      case 'c' : filter_file = expand_tilde(s);
+ 	      		 explicit_filters = TRUE;

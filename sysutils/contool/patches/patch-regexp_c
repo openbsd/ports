@@ -1,5 +1,6 @@
---- regexp.c.orig	Thu Feb 24 09:55:47 1994
-+++ regexp.c	Sun Jan  5 12:25:10 1997
+$OpenBSD: patch-regexp_c,v 1.1 2002/02/23 23:45:18 pvalchev Exp $
+--- regexp.c.orig	Thu Feb 24 10:55:47 1994
++++ regexp.c	Sat Feb 23 16:38:21 2002
 @@ -17,22 +17,14 @@
  /*	without prior permission from Harris Corporation. 		*/
  /************************************************************************/
@@ -25,7 +26,7 @@
  
  PRIVATE	char	error_message[512];
  
-@@ -49,37 +41,10 @@
+@@ -49,37 +41,10 @@ char	*str;
  	p = str + strlen(str) - 1;
  	if (p >= str && *p == '\n')
  	   *p = '\0';
@@ -65,7 +66,7 @@
  }
  
  /************************************************************************/
-@@ -109,34 +74,40 @@
+@@ -109,34 +74,40 @@ Filter	*filter;
  char	*start;
  char	*stop;
  

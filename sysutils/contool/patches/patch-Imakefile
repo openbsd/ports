@@ -1,5 +1,6 @@
---- Imakefile.orig	Thu Feb 24 18:55:24 1994
-+++ Imakefile	Tue Apr  4 23:33:50 2000
+$OpenBSD: patch-Imakefile,v 1.1 2002/02/23 23:45:18 pvalchev Exp $
+--- Imakefile.orig	Thu Feb 24 10:55:24 1994
++++ Imakefile	Sat Feb 23 16:38:21 2002
 @@ -1,19 +1,19 @@
  # Mailer you use.  Solaris 2.x users, change this to /usr/bin/mailx
 -MAILER		= /usr/ucb/mail
