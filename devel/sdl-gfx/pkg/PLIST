@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/09 03:22:50 jolan Exp $
+include/SDL_framerate.h
+include/SDL_gfxPrimitives.h
+include/SDL_gfxPrimitives_font.h
+include/SDL_imageFilter.h
+include/SDL_rotozoom.h
+lib/libSDL_gfx.a
+lib/libSDL_gfx.la
+%%SHARED%%
