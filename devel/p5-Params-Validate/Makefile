@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/30 04:48:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2003/04/30 19:18:07 wilfried Exp $
 
 COMMENT=	"perl module to validate function/method parameters"
 
-DISTNAME=	Params-Validate-0.24
+DISTNAME=	Params-Validate-0.58
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
