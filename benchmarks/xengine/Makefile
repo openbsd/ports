@@ -1,29 +1,25 @@
-# OpenBSD makefile for:	xengine
-# Version required:	pl1
-# Date created:		Nov 27 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.3 1998/04/10 05:33:57 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/07 04:51:19 marc Exp $
 #
 
-PKGNAME=	xengine-1.0.1
+DISTNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
+
 NO_CDROM=	"NOFEE:	Can not sell"
+
+MAINTAINER=	marc@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
-
-MAINTAINER=	joey@OpenBSD.ORG
-
-BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
-
 DIST_SUBDIR=	xengine
-NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
-
-EXTRACT_CMD=		zcat
+EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS= 
 EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
+
+BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 
 pre-patch:
 	@cd $(WRKSRC) ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1
