@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/02/07 09:14:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2001/02/07 09:15:42 jakob Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 
 LIB_DEPENDS+=		expat.2::textproc/expat
 
-FLAVORS=	imap mysql postgresql
+FLAVORS=	imap gd mysql postgresql
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mimap}
@@ -38,6 +38,14 @@ CONFIGURE_ARGS+=	--with-imap=${PREFIX}
 LIB_DEPENDS+=		c-client.2::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
+.endif
+
+.if ${FLAVOR:L:Mgd}
+CONFIGURE_ARGS+=	--with-gd  --with-jpegdir=/usr/local/lib
+LIB_DEPENDS+=		gd.18::graphics/gd
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
+.else
+CONFIGURE_ARGS+=	--without-gd
 .endif
 
 .if ${FLAVOR:L:Mmysql}
