@@ -1,0 +1,12 @@
+$OpenBSD: patch-sinstall_sh,v 1.1 2000/12/08 15:18:40 naddy Exp $
+--- sinstall.sh.orig	Fri Dec  8 15:53:29 2000
++++ sinstall.sh	Fri Dec  8 15:54:03 2000
+@@ -63,7 +63,7 @@ if test -f "$REF_PROG" ; then
+ 	$trace "... see if mode \"$cf_mode\" has s-bit set"
+ 	case ".$cf_mode" in #(vi
+ 	.???s*) #(vi
+-		PROG_MODE=4711
++		PROG_MODE=4755
+ 		PROG_GRP=
+ 		;;
+ 	.??????s*)

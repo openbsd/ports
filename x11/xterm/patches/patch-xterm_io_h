@@ -1,0 +1,12 @@
+$OpenBSD: patch-xterm_io_h,v 1.1 2000/12/08 15:18:40 naddy Exp $
+--- xterm_io.h.orig	Fri Dec  8 13:37:59 2000
++++ xterm_io.h	Fri Dec  8 13:38:59 2000
+@@ -63,7 +63,7 @@
+ #define USE_SYSV_TERMIO
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #define USE_POSIX_TERMIOS
+ #endif
+ 

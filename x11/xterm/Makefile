@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/11/18 13:29:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/08 15:18:39 naddy Exp $
 
-DISTNAME=	xterm-148
+DISTNAME=	xterm-149
 CATEGORIES=	x11
-NEED_VERSION=	1.340
+NEED_VERSION=	1.341
 
 HOMEPAGE=	http://dickey.his.com/xterm/xterm.html
 
@@ -22,7 +22,6 @@ EXTRACT_SUFX=	.tgz
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-wide-chars
-CFLAGS+=		-DUSE_POSIX_TERMIOS=1
 
 .if ${FLAVOR:L:Mcol256}
 CONFIGURE_ARGS+=	--enable-256-color
