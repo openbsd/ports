@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2003/06/27 19:45:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.285 2003/06/30 17:20:10 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += dxpc
      SUBDIR += echoping
      SUBDIR += epic4
+     SUBDIR += etherape
      SUBDIR += ethereal
      SUBDIR += ethereal,no_x11
      SUBDIR += ettercap
