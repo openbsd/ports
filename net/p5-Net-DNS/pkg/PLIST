@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/11/23 14:10:21 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/01/28 18:43:27 wilfried Exp $
 ${P5SITE}/Net/DNS.pm
+${P5SITE}/Net/DNS/FAQ.pod
 ${P5SITE}/Net/DNS/Header.pm
 ${P5SITE}/Net/DNS/Nameserver.pm
 ${P5SITE}/Net/DNS/Packet.pm
@@ -37,8 +38,11 @@ ${P5SITE}/Net/DNS/RR/TSIG.pm
 ${P5SITE}/Net/DNS/RR/TXT.pm
 ${P5SITE}/Net/DNS/RR/X25.pm
 ${P5SITE}/Net/DNS/Resolver.pm
+${P5SITE}/Net/DNS/Resolver/Recurse.pm
 ${P5SITE}/Net/DNS/Select.pm
 ${P5SITE}/Net/DNS/Update.pm
+@comment ${P5ARCH}/auto/Net/DNS/.packlist
+@comment ${P5ARCH}/perllocal.pod
 man/man3p/Net::DNS.3p
 man/man3p/Net::DNS::FAQ.3p
 man/man3p/Net::DNS::Header.3p
@@ -78,6 +82,14 @@ man/man3p/Net::DNS::RR::TSIG.3p
 man/man3p/Net::DNS::RR::TXT.3p
 man/man3p/Net::DNS::RR::X25.3p
 man/man3p/Net::DNS::Resolver.3p
+man/man3p/Net::DNS::Resolver::Recurse.3p
 man/man3p/Net::DNS::Update.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Net/DNS
+@comment @dirrm ${P5ARCH}/auto/Net
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Net/DNS/Resolver
 @dirrm ${P5SITE}/Net/DNS/RR
 @dirrm ${P5SITE}/Net/DNS
+@comment @dirrm ${P5SITE}/Net
