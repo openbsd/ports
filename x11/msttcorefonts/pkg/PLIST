@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/07 06:16:26 marcm Exp $
+lib/X11/fonts/mscorefonts/andalemo.ttf
+lib/X11/fonts/mscorefonts/arial.ttf
+lib/X11/fonts/mscorefonts/arialbd.ttf
+lib/X11/fonts/mscorefonts/arialbi.ttf
+lib/X11/fonts/mscorefonts/ariali.ttf
+lib/X11/fonts/mscorefonts/ariblk.ttf
+lib/X11/fonts/mscorefonts/comic.ttf
+lib/X11/fonts/mscorefonts/comicbd.ttf
+lib/X11/fonts/mscorefonts/cour.ttf
+lib/X11/fonts/mscorefonts/courbd.ttf
+lib/X11/fonts/mscorefonts/courbi.ttf
+lib/X11/fonts/mscorefonts/couri.ttf
+lib/X11/fonts/mscorefonts/eula.txt
+lib/X11/fonts/mscorefonts/fonts.dir
+lib/X11/fonts/mscorefonts/fonts.scale
+lib/X11/fonts/mscorefonts/georgia.ttf
+lib/X11/fonts/mscorefonts/georgiab.ttf
+lib/X11/fonts/mscorefonts/georgiai.ttf
+lib/X11/fonts/mscorefonts/georgiaz.ttf
+lib/X11/fonts/mscorefonts/impact.ttf
+lib/X11/fonts/mscorefonts/times.ttf
+lib/X11/fonts/mscorefonts/timesbd.ttf
+lib/X11/fonts/mscorefonts/timesbi.ttf
+lib/X11/fonts/mscorefonts/timesi.ttf
+lib/X11/fonts/mscorefonts/trebuc.ttf
+lib/X11/fonts/mscorefonts/trebucbd.ttf
+lib/X11/fonts/mscorefonts/trebucbi.ttf
+lib/X11/fonts/mscorefonts/trebucit.ttf
+lib/X11/fonts/mscorefonts/verdana.ttf
+lib/X11/fonts/mscorefonts/verdanab.ttf
+lib/X11/fonts/mscorefonts/verdanai.ttf
+lib/X11/fonts/mscorefonts/verdanaz.ttf
+lib/X11/fonts/mscorefonts/webdings.ttf
+@dirrm lib/X11/fonts/mscorefonts

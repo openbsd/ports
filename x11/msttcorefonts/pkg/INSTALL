@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/12/07 06:16:26 marcm Exp $
+#
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+INST_DIR=${INST_DIR:-lib/X11/fonts}
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| After installing, you'll need to do one of the following:"
+    echo "| "
+    echo "| If you are the only user on the system who wants to use these"
+    echo "| fonts, create ~/.xftconfig with this line:"
+    echo "| "
+    echo "| 	dir \"${PREFIX}/${INST_DIR}\""
+    echo "| "
+    echo "| To enable the fonts systemwide, you have to edit"
+    echo "| /usr/X11R6/lib/X11/XftConfig and add:"
+    echo "| "
+    echo "| 	dir \"${PREFIX}/${INST_DIR}\""
+    echo "| "
+    echo "| right after dir \"/usr/X11R6/lib/X11/fonts/Type1\". "
+    echo "| "
+    echo "| See http://www.openbsd.org/faq/truetype.html for more details."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
