@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/18 15:08:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/25 22:45:42 espie Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://frantica.lly.org/~rcw/abcde/page/
 
 MAINTAINER=	Han Boetes <han@mijncomputer.nl>
 
-# GPL
+# Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
