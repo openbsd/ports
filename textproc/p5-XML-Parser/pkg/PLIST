@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/21 19:22:42 avsm Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/Japanese_Encodings.msg
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/README
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/big5.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/euc-kr.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-2.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-3.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-4.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-5.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-7.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-8.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/iso-8859-9.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/windows-1250.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-euc-jp-unicode.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-sjis-cp932.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-sjis-jdk117.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-sjis-jisx0221.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings/x-sjis-unicode.enc
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Expat.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/LWPExternEnt.pl
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Parser/Expat/Expat.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Parser/Expat/Expat.so
+man/man3/XML::Parser.3p
+man/man3/XML::Parser::Expat.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Parser/Expat
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Parser
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser/Encodings
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/XML/Parser
