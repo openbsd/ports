@@ -1,5 +1,5 @@
---- rw/libpnmrw.c.orig	Wed Jun 13 11:51:28 2001
-+++ rw/libpnmrw.c	Wed Jun 13 11:56:10 2001
+--- rw/libpnmrw.c.orig	Mon Oct  2 14:53:30 2000
++++ rw/libpnmrw.c	Wed Feb 20 15:51:29 2002
 @@ -46,7 +46,7 @@
  
  void *malloc(int);
@@ -9,7 +9,7 @@
  #include <errno.h>
  #endif
  
-@@ -131,6 +131,7 @@
+@@ -131,6 +131,7 @@ pm_freearray(char **its, int rows)
  static void
  pm_perror(char *reason)
  {
@@ -17,11 +17,20 @@
  #if defined(BSD4_4)
      __const extern char *__const sys_errlist[];
  #else
-@@ -146,6 +147,7 @@
- #endif
+@@ -147,6 +148,7 @@ pm_perror(char *reason)
  #if !defined(__EMX__) || defined(__CYGWIN__)
      extern int errno;
-+#endif
  #endif
++#endif
      char *e;
  
+     e = sys_errlist[errno];
+@@ -286,7 +288,7 @@ pbm_readmagicnumber(FILE * file)
+ static int
+ pbm_getint(FILE * file)
+ {
+-    register char ich;
++    register int ich;
+     register int i;
+ 
+     do {
