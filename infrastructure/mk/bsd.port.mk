@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.486 2001/10/28 12:31:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.487 2001/10/28 12:34:57 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1282,9 +1282,10 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		case "X$$target" in Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage) early_exit=true;; \
 		*) early_exit=true; dep="/nonexistent";; esac; \
-		${_flavor_fragment}; \
+		${_flavor_fragment}; defaulted=false; \
 		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-			eval $$toset ${MAKE} _print-packagename`;; esac; \
+			eval $$toset ${MAKE} _print-packagename`; \
+			defaulted=true;; esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
