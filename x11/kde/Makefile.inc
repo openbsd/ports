@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2002/12/02 16:27:21 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2002/12/29 16:40:03 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -35,7 +35,7 @@ USE_GMAKE?=		Yes
 
 PORTHOME?=${WRKDIR}
 
-CONFIGURE_ENV+=		UIC_PATH=${LOCALBASE}/bin/uic3
+CONFIGURE_ENV+=		UIC_PATH="${LOCALBASE}/bin/uic3 -L${LOCALBASE}/${KDE}/plugins"
 CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
