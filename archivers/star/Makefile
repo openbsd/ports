@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/12 15:44:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/12 15:48:27 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
 
 DISTNAME=	star-1.4.2
 CATEGORIES=	archivers sysutils
+HOMEPAGE=	http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/star.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

@@ -22,3 +22,5 @@ Main advantages over other tar implementations:
 
 Available flavors:
 	static  - link statically
+
+WWW: ${HOMEPAGE}
