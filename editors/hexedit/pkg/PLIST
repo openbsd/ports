@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2001/10/02 15:45:52 brad Exp $
 bin/hexedit
 man/man1/hexedit.1
 share/doc/hexedit/COPYING
