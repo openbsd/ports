@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/07/31 14:16:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/08/10 09:26:14 xsa Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.cwru.edu/pub/bash/ \
 		${MASTER_SITE_GNU:=bash/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 FLAVORS=	static
 FLAVOR?=

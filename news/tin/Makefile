@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/03/09 05:31:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2004/08/10 09:26:13 xsa Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.tin.org/
 
 MAINTAINER=     Federico G. Schwindt <fgsch@openbsd.org>
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/04/25 15:34:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2004/08/10 09:26:13 xsa Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS+=	:teTeX_base-*:print/teTeX/base
 RUN_DEPENDS+=	:teTeX_base-*:print/teTeX/base \

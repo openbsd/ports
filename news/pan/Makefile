@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/10 09:26:13 xsa Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://pan.rebelbase.com/
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

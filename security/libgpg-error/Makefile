@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/07 20:26:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 09:26:14 xsa Exp $
 
 COMMENT=	"error codes for GnuPG related software"
 
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/libgpg-error/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/libgpg-error/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/libgpg-error/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 SEPARATE_BUILD=	concurrent
 

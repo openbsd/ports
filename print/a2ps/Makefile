@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/12/14 14:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/08/10 09:26:13 xsa Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir

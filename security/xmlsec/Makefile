@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/05/08 06:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 09:26:14 xsa Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
@@ -31,7 +31,7 @@ PKG_ARCH=		*
 .endif
 
 .if ${SUBPACKAGE} != "-docs"
-MODULES=		iconv
+MODULES=		converters/libiconv
 BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		xslt.2::textproc/libxslt \
 			gnutls.12::security/gnutls

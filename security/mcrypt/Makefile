@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 09:26:14 xsa Exp $
 
 COMMENT=	"extendable encryption program that supports many ciphers"
 
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-MODULES=		gettext
+MODULES=		devel/gettext
 LIB_DEPENDS=		mcrypt.6::security/libmcrypt \
 			ltdl.1::devel/libtool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/08/04 14:51:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2004/08/10 09:26:14 xsa Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES= gettext
+MODULES= devel/gettext
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.52
