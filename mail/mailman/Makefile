@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/23 16:17:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/20 20:18:02 naddy Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
-DISTNAME=	mailman-2.0.11
+DISTNAME=	mailman-2.0.12
 CATEGORIES=     mail
-NEED_VERSION=	1.527
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/mailman.html
 
@@ -19,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
 
-PYTHON_VER=		2.1
-BUILD_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=		${BUILD_DEPENDS}
+PYTHON_VER=		2.2
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 NO_REGRESS=		Yes
 
@@ -30,15 +29,13 @@ MMEXAMPLES=		${PREFIX}/share/examples/mailman
 MMHOME=			${PREFIX}/lib/mailman
 MMSPOOL=		/var/spool/mailman
 
-FAKE_FLAGS=		prefix="${WRKINST}${MMHOME}" \
-			var_prefix="${WRKINST}${MMSPOOL}" \
-			MAKE="make prefix=${WRKINST}${MMHOME} \
-				   var_prefix=${WRKINST}${MMSPOOL}" \
-			DIRSETGID=":"
+FAKE_FLAGS=		DIRSETGID=":"
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--with-var-prefix="${MMSPOOL}" \
-			--prefix="${MMHOME}" \
+# Adding DESTDIR by hand, because 'CONFIGURE_STYLE= gnu dest' overwrites
+# our prefix without touching var-prefix
+CONFIGURE_ARGS+=	--with-var-prefix='$${${DESTDIRNAME}}${MMSPOOL}' \
+			--prefix='$${${DESTDIRNAME}}${MMHOME}' \
 			--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 
 FLAVORS=postfix
