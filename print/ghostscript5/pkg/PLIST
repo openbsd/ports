@@ -47,6 +47,7 @@ share/ghostscript/5.10/cdj550.upp
 share/ghostscript/5.10/decrypt.ps
 share/ghostscript/5.10/doc/COPYING
 share/ghostscript/5.10/doc/NEWS
+share/ghostscript/5.10/doc/PUBLIC
 share/ghostscript/5.10/doc/README
 share/ghostscript/5.10/doc/bug-form.txt
 share/ghostscript/5.10/doc/c-style.txt

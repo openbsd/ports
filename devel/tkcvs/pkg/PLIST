@@ -1,5 +1,6 @@
 bin/tkcvs
 bin/tkdiff
+bin/cvscheck
 man/mann/tkcvs.n
 man/mann/tkdiff.n
 libdata/tkcvs/bindings.tcl
