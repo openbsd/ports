@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/01 08:27:14 wilfried Exp $ 
+# $OpenBSD: Makefile,v 1.9 2001/12/09 06:05:24 pvalchev Exp $ 
 
 COMMENT=	"c++ graph data template library based on the stl"
 
@@ -24,6 +24,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/aux
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
