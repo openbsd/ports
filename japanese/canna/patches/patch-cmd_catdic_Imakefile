@@ -1,0 +1,45 @@
+$OpenBSD: patch-cmd_catdic_Imakefile,v 1.1.1.1 2000/04/22 11:50:30 espie Exp $
+--- cmd/catdic/Imakefile.orig	Mon Dec  2 12:38:14 1996
++++ cmd/catdic/Imakefile	Sat Apr 22 03:10:08 2000
+@@ -76,22 +76,22 @@ install::
+ #else
+ install::
+-	$(RM) $(cannaBinDir)/cpdic
+-	$(RM) $(cannaBinDir)/lsdic
+-	$(RM) $(cannaBinDir)/mkdic
+-	$(RM) $(cannaBinDir)/mvdic
+-	$(RM) $(cannaBinDir)/rmdic
+-	$(RM) $(cannaBinDir)/syncdic
+-	$(RM) $(cannaBinDir)/chmoddic
+-	$(RM) $(cannaBinDir)/addwords
+-	$(RM) $(cannaBinDir)/delwords
+-	$(RM) $(cannaBinDir)/cannakill
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/cpdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/lsdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/mkdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/mvdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/rmdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/syncdic
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/addwords
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/delwords
+-	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/cannakill
++	$(RM) $(DESTDIR)$(cannaBinDir)/cpdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/lsdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/mkdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/mvdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/rmdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/syncdic
++	$(RM) $(DESTDIR)$(cannaBinDir)/chmoddic
++	$(RM) $(DESTDIR)$(cannaBinDir)/addwords
++	$(RM) $(DESTDIR)$(cannaBinDir)/delwords
++	$(RM) $(DESTDIR)$(cannaBinDir)/cannakill
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic cpdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic lsdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic mkdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic mvdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic rmdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic syncdic
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic addwords
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic delwords
++	cd $(DESTDIR)$(cannaBinDir) && $(LN) catdic cannakill
+ #endif

@@ -1,0 +1,22 @@
+$OpenBSD: patch-dic_ideo_words_Imakefile,v 1.1.1.1 2000/04/22 11:50:37 espie Exp $
+--- dic/ideo/words/Imakefile.orig	Sat Apr 22 03:10:06 2000
++++ dic/ideo/words/Imakefile	Sat Apr 22 03:10:08 2000
+@@ -70,11 +70,11 @@ InstallNonExec(dics.dir,$(CANNADICDIR))
+ 
+ install::
+-	$(CHGRP) $(cannaGroup) $(CANNADICDIR)
+-	$(CHOWN) $(cannaOwner) $(CANNADICDIR)
+-	$(CHMOD) ug+w $(CANNADICDIR)
+-	$(CHGRP) $(cannaGroup) $(DicDir)
+-	$(CHOWN) $(cannaOwner) $(DicDir)
+-	$(CHMOD) ug+w $(DicDir)
+-	$(CHMOD) -w $(CANNADICDIR)/dics.dir
++	$(CHGRP) $(cannaGroup) $(DESTDIR)$(CANNADICDIR)
++	$(CHOWN) $(cannaOwner) $(DESTDIR)$(CANNADICDIR)
++	$(CHMOD) ug+w $(DESTDIR)$(CANNADICDIR)
++	$(CHGRP) $(cannaGroup) $(DESTDIR)$(DicDir)
++	$(CHOWN) $(cannaOwner) $(DESTDIR)$(DicDir)
++	$(CHMOD) ug+w $(DESTDIR)$(DicDir)
++	$(CHMOD) -w $(DESTDIR)$(CANNADICDIR)/dics.dir
+ 
+ #ifndef USE_OBSOLETE_STYLE_FILENAME

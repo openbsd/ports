@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-dict,v 1.1.1.1 2000/04/22 11:50:38 espie Exp $
+@group daemon
+canna/canna/chimei.ctd
+canna/canna/dics.dir
+canna/canna/hojomwd.ctd
+canna/canna/hojoswd.ctd
+canna/canna/kanasmpl.ctd
+canna/canna/katakana.ctd
+canna/canna/keishiki.ctd
+canna/canna/necgaiji.ctd
+canna/canna/number.ctd
+canna/canna/software.ctd
+canna/canna/suffix.ctd
+@owner daemon
+@mode u+w,g+w
+canna/canna/fuzokugo.cbd
+canna/canna/fuzokugo.cld
+canna/canna/iroha.cbd
+canna/canna/iroha.cld
+canna/canna/bushu.cld
+@dirrm canna/canna
+@dirrm canna

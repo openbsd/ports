@@ -1,0 +1,23 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2000/04/22 11:50:37 espie Exp $
+--- Imakefile.orig	Wed Nov 27 08:01:34 1996
++++ Imakefile	Sat Apr 22 03:10:07 2000
+@@ -61,5 +61,5 @@ instserver::
+ 	do \
+ 		(cd $$i ; echo "installing" "in $(CURRENT_DIR)/$$i..."; \
+-		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install); \
++		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install install.man); \
+ 	done
+ 
+@@ -69,5 +69,5 @@ instclient::
+ 	do \
+ 		(cd $$i ; echo "installing" "in $(CURRENT_DIR)/$$i..."; \
+-		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install); \
++		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install install.man); \
+ 	done
+ 
+@@ -77,4 +77,4 @@ instsgs::
+ 	do \
+ 		(cd $$i ; echo "installing" "in $(CURRENT_DIR)/$$i..."; \
+-		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install); \
++		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install install.man); \
+ 	done
