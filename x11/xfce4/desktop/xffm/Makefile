@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/22 07:20:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/28 01:23:01 jolan Exp $
 
 COMMENT=	"xfce4 file manager"
 DISTNAME=	xffm-${V}
 
-# XXX workaround gcc bugs on ppc/sparc64
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mpowerpc} || \
-	${MACHINE_ARCH:Msparc64}
+# XXX workaround gcc bugs on alpha/powerpc
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mpowerpc}
 PATCH_LIST=	patch-* gcc-*
 .endif
 
