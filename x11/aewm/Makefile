@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 17:21:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
 # vim:ts=8
 
 DISTNAME=	aewm-1.1.2
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-COMMENT=	"a minimalistic window manager for X11"
+COMMENT=	"minimalistic window manager for X11"
 HOMEPAGE=	http://www.red-bean.com/~decklin/aewm/
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://rt.fm/pub/aewm/

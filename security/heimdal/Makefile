@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/08 10:06:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/09 17:56:59 naddy Exp $
 
 COMES_WITH=	3.0
 
-COMMENT=	a Kerberos 5 implementation
+COMMENT=	"Kerberos 5 implementation"
 
 DISTNAME=	heimdal-0.4e
 CATEGORIES=    	security

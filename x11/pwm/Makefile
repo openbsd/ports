@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/09 10:49:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/09 17:56:59 naddy Exp $
 
-COMMENT=	"a lightweight window manager with emphasis on usability"
+COMMENT=	"lightweight window manager with emphasis on usability"
 
 DISTNAME=	pwm-1.0
 CATEGORIES=	x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/16 21:43:57 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
 
-COMMENT=	a tool for measuring maximum TCP and UDP bandwidth
+COMMENT=	"tool for measuring maximum TCP and UDP bandwidth"
 
 DISTNAME=	iperf-1.1.1
 CATEGORIES=    	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/06 19:34:03 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
 
-COMMENT=	a PGP packet visualizer
+COMMENT=	"PGP packet visualizer"
 
 DISTNAME=	pgpdump-0.11
 CATEGORIES=    	security

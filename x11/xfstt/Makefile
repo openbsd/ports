@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2001/07/09 17:11:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/09 17:56:59 naddy Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
-COMMENT=	"a TrueType font server for X11"
+COMMENT=	"TrueType font server for X11"
 
 DISTNAME=	xfstt-1.1
 CATEGORIES=	x11

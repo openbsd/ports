@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:46:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/09 17:56:59 naddy Exp $
 
-COMMENT=	"a once-popular mail user agent"
+COMMENT=	"once-popular mail user agent"
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail

@@ -1,9 +1,9 @@
 # vim:ts=8
-# $OpenBSD: Makefile,v 1.7 2001/08/24 01:58:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/09 17:56:59 naddy Exp $
 
 DISTNAME=	gkrellm-1.2.2
 HOMEPAGE=	http://www.gkrellm.net/
-COMMENT=	"a single process stack of system monitors"
+COMMENT=	"single process stack of system monitors"
 
 CATEGORIES=	sysutils
 NEED_VERSION=	1.439

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/28 00:06:29 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
 
 DISTNAME=	cqcam-0.91
 CATEGORIES=	graphics
@@ -9,7 +9,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-COMMENT=	"a color QuickCam control program"
+COMMENT=	"color QuickCam control program"
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://rt.fm/pub/cqcam/
