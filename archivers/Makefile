@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/07/03 23:46:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2005/02/19 11:31:52 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -37,6 +37,7 @@
      SUBDIR += unzip
 #    SUBDIR += unzip.with_encryption
      SUBDIR += zip
+     SUBDIR += zipios
 #    SUBDIR += zip.with_encryption
      SUBDIR += zoo
 
