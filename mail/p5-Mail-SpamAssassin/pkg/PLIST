@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/06/17 22:08:59 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/09/02 21:16:16 lebel Exp $
 bin/spamassassin
 bin/spamc
 bin/spamd
-bin/spamproxyd
 ${P5SITE}/Mail/SpamAssassin.pm
 ${P5SITE}/Mail/SpamAssassin/AuditMessage.pm
 ${P5SITE}/Mail/SpamAssassin/AutoWhitelist.pm
@@ -10,10 +9,13 @@ ${P5SITE}/Mail/SpamAssassin/Conf.pm
 ${P5SITE}/Mail/SpamAssassin/ConfSourceSQL.pm
 ${P5SITE}/Mail/SpamAssassin/DBBasedAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/Dns.pm
+${P5SITE}/Mail/SpamAssassin/EncappedMIME.pm
 ${P5SITE}/Mail/SpamAssassin/EncappedMessage.pm
 ${P5SITE}/Mail/SpamAssassin/EvalTests.pm
 ${P5SITE}/Mail/SpamAssassin/ExposedMessage.pm
+${P5SITE}/Mail/SpamAssassin/HTML.pm
 ${P5SITE}/Mail/SpamAssassin/Locales.pm
+${P5SITE}/Mail/SpamAssassin/MailingList.pm
 ${P5SITE}/Mail/SpamAssassin/Message.pm
 ${P5SITE}/Mail/SpamAssassin/NoMailAudit.pm
 ${P5SITE}/Mail/SpamAssassin/PerMsgStatus.pm
@@ -21,26 +23,28 @@ ${P5SITE}/Mail/SpamAssassin/PersistentAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/PhraseFreqs.pm
 ${P5SITE}/Mail/SpamAssassin/Replier.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
-${P5SITE}/Mail/SpamAssassin/SMTP/SmartHost.pm
+${P5SITE}/Mail/SpamAssassin/SHA1.pm
 ${P5SITE}/Mail/SpamAssassin/TextCat.pm
-${P5SITE}/auto/Mail/SpamAssassin/SMTP/SmartHost/autosplit.ix
+${P5ARCH}/auto/Mail/SpamAssassin/.packlist
 man/man1/spamassassin.1
 man/man1/spamc.1
 man/man1/spamd.1
-man/man1/spamproxyd.1
 man/man3p/Mail::SpamAssassin.3p
 man/man3p/Mail::SpamAssassin::Conf.3p
 man/man3p/Mail::SpamAssassin::PerMsgStatus.3p
 man/man3p/Mail::SpamAssassin::PersistentAddrList.3p
-man/man3p/Mail::SpamAssassin::SMTP::SmartHost.3p
 share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
 share/doc/SpamAssassin/README
 share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
 share/spamassassin/10_misc.cf
+share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
+share/spamassassin/20_compensate.cf
 share/spamassassin/20_head_tests.cf
+share/spamassassin/20_meta_tests.cf
+share/spamassassin/20_ratware.cf
 share/spamassassin/20_uri_tests.cf
 share/spamassassin/25_body_tests_es.cf
 share/spamassassin/25_body_tests_pl.cf
@@ -58,8 +62,6 @@ share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
 @dirrm share/spamassassin
 @dirrm share/doc/SpamAssassin
-@dirrm ${P5SITE}/auto/Mail/SpamAssassin/SMTP/SmartHost
-@dirrm ${P5SITE}/auto/Mail/SpamAssassin/SMTP
-@dirrm ${P5SITE}/auto/Mail/SpamAssassin
-@dirrm ${P5SITE}/Mail/SpamAssassin/SMTP
+@dirrm ${P5ARCH}/auto/Mail/SpamAssassin
 @dirrm ${P5SITE}/Mail/SpamAssassin
+

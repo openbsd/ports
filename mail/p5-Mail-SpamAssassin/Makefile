@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/07 15:07:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/02 21:16:16 lebel Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.31
+DISTNAME=		Mail-SpamAssassin-2.40
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -20,7 +20,8 @@ MASTER_SITES=		${HOMEPAGE}/released/ \
 			${MASTER_SITE_PERL_CPAN:=Mail/}
 
 RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
-			:p5-Time-HiRes-*:devel/p5-Time-HiRes
+			:p5-Time-HiRes-*:devel/p5-Time-HiRes \
+			:procmail-*:mail/procmail
 
 CONFIGURE_STYLE=	perl
 
