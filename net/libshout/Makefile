@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/26 11:38:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/25 19:08:53 sturm Exp $
 
 COMMENT=	"library for communicating with an icecast server"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://icecast.org/files/libshout/
+MASTER_SITES=	http://downloads.us.xiph.org/releases/libshout/
 
 LIB_DEPENDS=	vorbis.2,vorbisenc.2,vorbisfile.3::audio/libvorbis
 
