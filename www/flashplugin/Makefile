@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/08/09 23:45:35 naddy Exp $
 # $FreeBSD: ports/www/linux-flashplugin/Makefile,v 1.9 2001/07/21 14:27:22 okazaki Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Macromedia Flash Player, Netscape plugin"
 
-VERSION=	5.0r47
+VERSION=	5.0r50
 PKGNAME=	flashplugin-${VERSION}
 DISTNAME=	flash_linux
 CATEGORIES=	www
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.macromedia.com/
 
