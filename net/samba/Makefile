@@ -1,80 +1,72 @@
-# OpenBSD makefile for:	samba
-# Version required:			1.9.18p2
-# Date created:				16 Nov 1997
-# Whom:					ejovi
+# New ports collection makefile for:	samba
+# Version required:			1.9.18
+# Date created:				22 Apr 1998
+# Whom:					form
 #
-# $OpenBSD: Makefile,v 1.6 1998/03/30 16:51:35 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/05/06 02:21:19 form Exp $
+#
 
-DISTNAME=	samba-1.9.18p3
+DISTNAME=	samba-1.9.18p4
+PKGNAME=	samba-1.9.18.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
+
+MAINTAINER=	form@vs.itam.nsc.ru
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
-
-MAINTAINER=	joey@OpenBSD.ORG
-
-MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1
+MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1 make_smbcodepage.1
 MAN5=		smb.conf.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8
 
-MAKE_FLAGS=	BASEDIR=$(PREFIX)
-MAKE_FLAGS+=	SBINDIR=$(PREFIX)/sbin
-MAKE_FLAGS+=	MANDIR=$(PREFIX)/man
-MAKE_FLAGS+=	CONFIGFILE=/etc/smb.conf 
-MAKE_FLAGS+=	LMHOSTSFILE=/etc/lmhosts
-MAKE_FLAGS+=	SMB_PASSWD_FILE=/etc/smbpasswd
-MAKE_FLAGS+=	VARDIR=/var/log
-MAKE_FLAGS+=	SMBLOGFILE=/var/log/smb
-MAKE_FLAGS+=	NMBLOGFILE=/var/log/nmb
-MAKE_FLAGS+=	LOCKDIR=/var/spool/lock 
+SAMPLE_CONFIG=	/etc/samba/smb.conf.default
+SAMBA_SPOOL=	/var/spool/samba
+XSAMBA_SPOOL=	\/var\/spool\/samba
+SAMBA_LOGDIR=	/var/log
+XSAMBA_LOGDIR=	\/var\/log
 
-DOC=		Application_Serving.txt BROWSING.txt BUGS.txt CVS_ACCESS.txt \
-		DIAGNOSIS.txt DNIX.txt DOMAIN.txt DOMAIN_CONTROL.txt \
-		ENCRYPTION.txt Faxing.txt GOTCHAS.txt HINTS.txt \
-		INSTALL.sambatar MIRRORS.txt NT4_PlainPassword.reg \
-		NTDOMAIN.txt NetBIOS.txt OS2-Client-HOWTO.txt \
-		PRINTER_DRIVER.txt PROJECTS Passwords.txt Printing.txt \
-		README.DCEDFS README.jis README.sambatar SCO.txt SMBTAR.notes \
-		Speed.txt Support.txt THANKS Tracing.txt UNIX-SMB.txt \
-		UNIX_INSTALL.txt Win95.txt Win95_PlainPassword.reg WinNT.txt \
-		announce cifsntdomain.txt history samba.lsm security_level.txt \
-		wfw_slip.htm faq/sambafaq.txt
-
-
-HTML=		Samba-Server-FAQ-1.html Samba-Server-FAQ-2.html \
-		Samba-Server-FAQ.html Samba-Server-FAQ.sgml \
-		Samba-meta-FAQ-1.html Samba-meta-FAQ-2.html \
-		Samba-meta-FAQ-3.html Samba-meta-FAQ-4.html \
-		Samba-meta-FAQ-5.html Samba-meta-FAQ-6.html \
-		Samba-meta-FAQ.html Samba-meta-FAQ.sgml Samba-meta-FAQ.txt \
-		sambafaq-1.html sambafaq-2.html sambafaq-3.html \
-		sambafaq-4.html sambafaq-5.html sambafaq.html sambafaq.sgml \
+SAMBA_DOCS=${WRKDIR}/${DISTNAME}/docs/INSTALL.sambatar \
+	${WRKDIR}/${DISTNAME}/docs/THANKS \
+	${WRKDIR}/${DISTNAME}/docs/history \
+	${WRKDIR}/${DISTNAME}/docs/announce \
+	${WRKDIR}/${DISTNAME}/docs/PROJECTS \
 
 post-install:
-	@if [ ! -e /etc/smb.conf ]; then \
-	    ${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/smb.conf.default \
-		/etc/smb.conf; \
+	${MKDIR} ${PREFIX}/share/examples/samba
+	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/samba/faq
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/samba
+	for i in ${SAMBA_DOCS} ${WRKDIR}/${DISTNAME}/docs/*.txt		\
+			${WRKDIR}/${DISTNAME}/docs/*.reg		\
+			${WRKDIR}/${DISTNAME}/docs/*.htm		\
+			${WRKDIR}/${DISTNAME}/*.txt			\
+			${WRKDIR}/${DISTNAME}/README			\
+			${WRKDIR}/${DISTNAME}/docs/README.* ; do	\
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
+	done
+	for i in ${WRKDIR}/${DISTNAME}/docs/faq/* ; do			\
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/faq ;	\
+	done
+.endif
+	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && chmod 1777 ${SAMBA_SPOOL}
+	@if [ ! -f ${SAMPLE_CONFIG} ]; then				\
+		${SED} -e 's/__SAMBA_SPOOL__/${XSAMBA_SPOOL}/'		\
+		    -e 's/__LOGDIR__/${XSAMBA_LOGDIR}/' 		\
+			${FILESDIR}/smb.conf.default			\
+			> ${SAMPLE_CONFIG} ;				\
 	fi
-	@${MKDIR} ${PREFIX}/share/doc/samba
-	@echo "Installing samba docs in ${PREFIX}/share/doc/samba"
-.for doc in ${DOC}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/${doc} \
-		${PREFIX}/share/doc/samba
-.endfor
-	@${MKDIR} ${PREFIX}/share/doc/html/samba
-	@echo "Installing samba FAQ in ${PREFIX}/share/doc/html/samba"
-.for html in ${HTML}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/faq/${html} \
-		${PREFIX}/share/doc/html/samba
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/mksmbpasswd.sh ${PREFIX}/bin
+	if [ ! -d /etc/samba ] ; then				\
+		${MKDIR} /etc/samba;				\
+		chown root.wheel /etc/samba ;			\
+	fi
+	if [ ! -f /etc/samba/smbpasswd ] ; then			\
+		${CAT} /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > /etc/samba/smbpasswd ; \
+		chmod 600 /etc/samba/smbpasswd ;			\
+	fi
+	chown root.wheel ${PREFIX}/bin/smbpasswd
+	chmod 4111 ${PREFIX}/bin/smbpasswd
+	more ${FILESDIR}/README.OpenBSD
 
 .include <bsd.port.mk>
-
-.if ${OPSYS} == "FreeBSD"
-MAKE_FLAGS+= LIBSM=-lcrypt FLAGSM="-DFreeBSD -DBSD44"
-.elif (${OPSYS} == "OpenBSD")
-MAKE_FLAGS+= FLAGSM="-DBSD44 -DFAST_SHARE_MODES" LIBSM=
-.endif
-
-MAKE_FLAGS+=	-f
-
