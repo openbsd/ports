@@ -1,10 +1,9 @@
-bin/screen-3.7.6
+bin/screen-3.9.5
 @exec ln -sf %f %B/screen
 @unexec rm -f %B/screen
 man/man1/screen.1
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/screen.info %D/info/dir
 lib/screen/screencap
 lib/screen/screenrc

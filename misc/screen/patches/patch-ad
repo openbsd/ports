@@ -1,16 +1,14 @@
-*** process.c.orig	Sat Sep 27 17:55:26 1997
---- process.c	Sat Sep 27 17:57:12 1997
-***************
-*** 3031,3036 ****
---- 3031,3041 ----
-  {
-    struct win **pp, *p;
-  
-+ #if defined(__OpenBSD__)
-+   /* First try killing off the window's process group... */
-+   killpg(wi->w_pid, SIGKILL);
-+ #endif
-+ 
-    display = wi->w_display;
-    if (display)
-      {
+--- process.c.orig	Tue Nov  9 21:30:23 1999
++++ process.c	Tue Nov  9 21:50:11 1999
+@@ -3615,6 +3615,11 @@
+   struct canvas *cv;
+   int gotone;
+ 
++#if defined(__OpenBSD__)
++  /* First try killing off the window's process group... */
++  killpg(wi->w_pid, SIGKILL);
++#endif
++
+   /*
+    * Remove window from linked list.
+    */

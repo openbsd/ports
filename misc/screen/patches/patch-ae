@@ -1,33 +1,11 @@
---- configure.orig	Fri Feb 19 17:04:35 1999
-+++ configure	Fri Feb 19 17:10:11 1999
-@@ -2706,8 +2706,10 @@
- cat > conftest.${ac_ext} <<EOF
- #include "confdefs.h"
+--- configure.orig	Tue Nov  9 21:52:13 1999
++++ configure	Tue Nov  9 21:59:36 1999
+@@ -3524,7 +3524,7 @@
  
-+#include <machine/ansi.h>
-+#include <machine/stdarg.h>
- int main() { return 0; }
--int t() { vsprintf(0,0,0);; return 0; }
-+int t() { va_list valist; vsprintf(0,0,valist);; return 0; }
+ if test -n "$prefix"; then
+ cat >> confdefs.h <<EOF
+-#define ETCSCREENRC "$prefix/etc/screenrc"
++#define ETCSCREENRC "$sysconfdir/screenrc"
  EOF
- if eval $ac_compile; then
-   rm -rf conftest*
-@@ -3114,12 +3116,12 @@
  
- {
- test -n "$verbose" && \
--echo "	defining" ETCSCREENRC to be "\"$prefix/etc/screenrc\""
--echo "#define" ETCSCREENRC "\"$prefix/etc/screenrc\"" >> confdefs.h
--DEFS="$DEFS -DETCSCREENRC=\"$prefix/etc/screenrc\""
--ac_sed_defs="${ac_sed_defs}\${ac_dA}ETCSCREENRC\${ac_dB}ETCSCREENRC\${ac_dC}\"$prefix/etc/screenrc\"\${ac_dD}
--\${ac_uA}ETCSCREENRC\${ac_uB}ETCSCREENRC\${ac_uC}\"$prefix/etc/screenrc\"\${ac_uD}
--\${ac_eA}ETCSCREENRC\${ac_eB}ETCSCREENRC\${ac_eC}\"$prefix/etc/screenrc\"\${ac_eD}
-+echo "	defining" ETCSCREENRC to be "\"/etc/screenrc\""
-+echo "#define" ETCSCREENRC "\"/etc/screenrc\"" >> confdefs.h
-+DEFS="$DEFS -DETCSCREENRC=\"/etc/screenrc\""
-+ac_sed_defs="${ac_sed_defs}\${ac_dA}ETCSCREENRC\${ac_dB}ETCSCREENRC\${ac_dC}\"/etc/screenrc\"\${ac_dD}
-+\${ac_uA}ETCSCREENRC\${ac_uB}ETCSCREENRC\${ac_uC}\"/etc/screenrc\"\${ac_uD}
-+\${ac_eA}ETCSCREENRC\${ac_eB}ETCSCREENRC\${ac_eC}\"/etc/screenrc\"\${ac_eD}
- "
- }
- 
+ fi
