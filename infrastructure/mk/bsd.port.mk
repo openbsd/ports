@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.466 2001/10/03 08:36:25 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.467 2001/10/03 08:41:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -273,9 +273,6 @@ clean+=-f
 NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
 
-NO_DEPENDS?= No
-NO_BUILD?= No
-
 .if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
 .else
@@ -283,6 +280,9 @@ NO_BUILD?= No
 .include "${.CURDIR}/Makefile.${MACHINE_ARCH}"
 .endif
 .endif
+
+NO_DEPENDS?= No
+NO_BUILD?= No
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
@@ -1063,16 +1063,6 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .    endif
 .  endfor
 .endfor
-
-.if defined(ERRORS)
-.BEGIN:
-.  for _m in ${ERRORS}
-	@echo 1>&2 ${_m}
-.  endfor
-.  if !empty(ERRORS:M"Fatal\:*")
-	@exit 1
-.  endif
-.endif
 
 ################################################################
 # Many ways to disable a port.
@@ -2583,6 +2573,16 @@ unlink-categories:
     
 .if ${FAKE:L} == "no"
 .  include "${PORTSDIR}/infrastructure/mk/old-install.mk"
+.endif
+
+.if defined(ERRORS)
+.BEGIN:
+.  for _m in ${ERRORS}
+	@echo 1>&2 ${_m}
+.  endfor
+.  if !empty(ERRORS:M"Fatal\:*")
+	@exit 1
+.  endif
 .endif
 
 .PHONY: \
