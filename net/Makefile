@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2004/11/20 08:00:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.339 2004/11/28 19:58:22 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -76,7 +76,6 @@
      SUBDIR += ifstat
      SUBDIR += ike-scan
      SUBDIR += ipaudit
-#    SUBDIR += ipband
      SUBDIR += ipcad
      SUBDIR += ipcheck
      SUBDIR += iperf
