@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2001/09/20 14:25:51 heko Exp $
+# $OpenBSD: Makefile,v 1.174 2001/10/06 03:44:07 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -90,6 +90,7 @@
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += oproute
+     SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-Daemon
      SUBDIR += p5-Net-IRC
