@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/26 15:58:21 todd Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/09 17:11:31 pvalchev Exp $
 #
 
 COMMENT=		"one keyboard/mouse to multiple X displays"
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.digital.de/Digital/SRC/x2x/ \
 		ftp://ftp.europe.digital.com/pub/DEC/SRC/x2x/
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 pre-build:

@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/06/27 20:56:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/07/09 17:11:32 pvalchev Exp $
 #
 
 COMMENT=	"animate your root-cursor"
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 post-extract:

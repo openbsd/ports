@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/09 17:11:13 pvalchev Exp $
 
 COMMENT=	"interactive X11 proxy with selective X request replacement"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 USE_MOTIF=	any
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-optim "${CFLAGS}"

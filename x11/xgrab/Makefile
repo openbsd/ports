@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/07/09 17:11:46 pvalchev Exp $
 #
 
 COMMENT=	"X11 image grabber"
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:17 pvalchev Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=     OPSYS_VER VERSION
 
+USE_X11=	Yes
 USE_GMAKE=      Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

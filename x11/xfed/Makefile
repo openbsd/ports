@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/07/09 17:11:41 pvalchev Exp $
 
 COMMENT=	"X11 fonts (.bdf files) editor"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 # As the xfed tarball is created on the fly the checksum will always

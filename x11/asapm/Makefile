@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:41:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/09 17:10:51 pvalchev Exp $
 
 COMMENT=	"an Advanced Power Management monitor utility for X Windows"
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		jpeg.62::graphics/jpeg
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

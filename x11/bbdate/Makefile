@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/07 04:28:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:10:53 pvalchev Exp $
 
 COMMENT=	"displays the date and resembles the toolbar"
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+USE_X11=	Yes
 
 RUN_DEPENDS=	blackbox::x11/blackbox
 

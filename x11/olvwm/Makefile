@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/06 04:41:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2001/07/09 17:11:14 pvalchev Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
@@ -24,6 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	xview.3.::x11/xview/lib
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config

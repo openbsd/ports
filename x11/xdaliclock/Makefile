@@ -3,7 +3,7 @@
 # Date created:		21 December, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:38 pvalchev Exp $
 #
 
 COMMENT=	"rather neat animated clock"
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

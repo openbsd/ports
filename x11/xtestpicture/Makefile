@@ -3,7 +3,7 @@
 # Date created:		11 March 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/09 17:11:59 pvalchev Exp $
 #
 
 COMMENT=	"full-screen image to adjust your monitor"
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

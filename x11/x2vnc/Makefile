@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/06 15:01:57 nate Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/09 17:11:30 pvalchev Exp $
 
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 ALL_TARGET=	x2vnc x2vnc.0

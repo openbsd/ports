@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:16 pvalchev Exp $
 
 COMMENT=	"qt-based window manager"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIBDIR=${PREFIX}/lib/qlwm
 DOCDIR=${PREFIX}/share/doc/qlwm
+
+USE_X11=	Yes
 
 LIB_DEPENDS=qt.2.::x11/qt2
 

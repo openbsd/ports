@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/09 17:11:19 pvalchev Exp $
 #
 
 COMMENT=	"the part of X11R3's xcalc featuring a slide rule"
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	imake
 

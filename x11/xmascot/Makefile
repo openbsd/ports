@@ -3,7 +3,7 @@
 # Date created:        25 January 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:49 pvalchev Exp $
 #
 
 COMMENT=	"moving mascot on your X11 screen"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no explicit license"
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

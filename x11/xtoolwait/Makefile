@@ -2,7 +2,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 2001/06/08 06:52:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/09 17:12:00 pvalchev Exp $
 #
 
 COMMENT=	"tool startup utility for X11"
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

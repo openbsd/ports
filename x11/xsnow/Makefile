@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:41:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/09 17:11:56 pvalchev Exp $
 
 COMMENT=	"snowy and Santa-y desktop"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"vague license"
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

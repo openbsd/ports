@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:58 pvalchev Exp $
 
 COMMENT=	"dynamically change some settings of an xterm"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= clts
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

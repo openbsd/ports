@@ -4,7 +4,7 @@
 # Whom:                 gpalmer
 #
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:24 pvalchev Exp $
 
 COMMENT=	"twm with a virtual desktop"
 
@@ -25,6 +25,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers
 
 WRKDIST=	${WRKDIR}/tvtwm
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	imake
 

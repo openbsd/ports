@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/07 02:28:23 matt Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/09 17:11:03 pvalchev Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VER}/
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

@@ -3,7 +3,7 @@
 # Date created:        December 21, 1997
 # Whom:                Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/09 17:11:50 pvalchev Exp $
 #
 
 COMMENT=	"mold spreading over your X11 screen"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/28 10:08:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:27 pvalchev Exp $
 
 COMMENT=		'themes and icons for Window Maker'
 
@@ -20,6 +20,8 @@ MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
 
 RUN_DEPENDS=		wmaker::x11/windowmaker
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--prefix="${PREFIX}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/09 17:11:37 pvalchev Exp $
 
 COMMENT=	"display all (ok, most of) the colors in the universe"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 WRKDIST=	${WRKDIR}/xcolors
 CONFIGURE_STYLE=imake
 MAKE_FLAGS=	RGBDBFILE=${X11BASE}/lib/X11/rgb

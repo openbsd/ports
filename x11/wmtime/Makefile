@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:29 pvalchev Exp $
 
 COMMENT=	"time/date applet for WindowMaker"
 
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WRKDIST=        ${WRKDIR}/wmtime.app/
 WRKSRC=		${WRKDIST}/wmtime/
-USE_XPM=	yes
+USE_X11=	yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/06/07 04:45:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:34 pvalchev Exp $
 
 COMMENT=	"tool for managing X11 cut-buffers"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 04:41:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/07/09 17:12:01 pvalchev Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	"graphical version of traceroute"
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:40 pvalchev Exp $
 
 COMMENT=	"graphic disk usage viewer"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.arl.mil/pub/
 EXTRACT_SUFX=		.tar.Z
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 WRKDIST=		${WRKDIR}
 

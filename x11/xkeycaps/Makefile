@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:41:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:48 pvalchev Exp $
 
 COMMENT=	"keymap editor for the X window system"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

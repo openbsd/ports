@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/23 13:20:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/09 17:11:29 pvalchev Exp $
 
 COMMENT=	minimal window manager
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	gnu
 
 do-install:

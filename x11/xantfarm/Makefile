@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.9 2001/06/20 01:43:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/09 17:11:33 pvalchev Exp $
 #
 
 COMMENT=	"ant hill simulation on X11 root window"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

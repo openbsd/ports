@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/06/08 07:45:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:15 pvalchev Exp $
 #
 
 COMMENT=	"tvtwm with pie (circular) menus"
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE= imake
 

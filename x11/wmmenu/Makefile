@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/09 17:11:28 pvalchev Exp $
 
 COMMENT=		'wm-dockapp; A popup menu of icons that launch programs'
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.fcoutant.freesurf.fr/download/
+
+USE_X11=		Yes
 
 LIB_DEPENDS=		dockapp::devel/libdockapp
 

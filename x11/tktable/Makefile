@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/30 01:56:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/09 17:11:23 pvalchev Exp $
 
 COMMENT=	"tk extension"
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	wish8.3::x11/tk/8.3
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \

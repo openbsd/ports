@@ -3,7 +3,7 @@
 # Date created:		December 21, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:41:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/09 17:12:02 pvalchev Exp $
 #
 
 COMMENT=	"magnify, rotate, mirror the image on the X11 screen"
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

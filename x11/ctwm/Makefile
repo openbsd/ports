@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/09 17:10:59 pvalchev Exp $
 
 COMMENT=	"twm, plus support for multiple virtual screens, etc"
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	imake
 
