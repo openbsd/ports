@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/12/03 14:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/12/09 00:14:09 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
@@ -14,7 +14,7 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		gif.4.1:${PORTSDIR}/graphics/giflib \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		png.1.3:${PORTSDIR}/graphics/png \
-		tiff.3.4:${PORTSDIR}/graphics/tiff34
+		tiff.35:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
