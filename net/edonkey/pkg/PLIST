@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/27 12:34:43 espie Exp $
-bin/edonkey
-bin/donkey
