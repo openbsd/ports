@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gtk_gtkstext_h,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/gtk/gtkstext.h.orig	Sat Mar 22 00:55:38 2003
++++ src/gtk/gtkstext.h	Sat Mar 22 00:59:37 2003
+@@ -40,6 +40,7 @@
+ #  include <wctype.h>
+ #endif
+ 
++#include <stddef.h>
+ #include <gdk/gdk.h>
+ #include <gtk/gtkadjustment.h>
+ #include <gtk/gtkeditable.h>

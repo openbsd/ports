@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_plugin_c,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/common/plugin.c.orig	Sun Apr 13 22:29:24 2003
++++ src/common/plugin.c	Sun Apr 13 22:35:05 2003
+@@ -114,8 +114,8 @@ gint plugin_load(const gchar *filename, 
+ 		return ok;
+ 	}
+ 
+-	plugin->name = plugin_name;
+-	plugin->desc = plugin_desc;
++	(gint *)plugin->name = plugin_name;
++	(gint *)plugin->desc = plugin_desc;
+ 	plugin->filename = g_strdup(filename);
+ 
+ 	plugins = g_slist_append(plugins, plugin);

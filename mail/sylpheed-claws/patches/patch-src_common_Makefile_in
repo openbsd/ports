@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_common_Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/common/Makefile.in.orig	Wed Mar 12 18:17:59 2003
++++ src/common/Makefile.in	Sat Mar 22 01:11:14 2003
+@@ -63,6 +63,7 @@ CFLAGS = @CFLAGS@
+ CPP = @CPP@
+ 
+ CPPFLAGS = \
++	@CPPFLAGS@ \
+ 	$(GLIB_CFLAGS) \
+ 	$(OPENSSL_CFLAGS) \
+ 	-DLOCALEDIR=\""$(localedir)"\"
+@@ -230,7 +231,7 @@ libsylpheedcommon_la_SOURCES = \
+ 
+ libsylpheedcommon_la_LIBADD = \
+ 	$(GLIB_LIBS) \
+-	$(OPENSSL_LIBS) \
++	$(OPENSSL_LIBS) #\
+ 	-lcrypt
+ 
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_smtp_h,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/common/smtp.h.orig	Sat Mar 22 01:02:48 2003
++++ src/common/smtp.h	Sat Mar 22 01:03:09 2003
+@@ -36,7 +36,9 @@ typedef struct _SMTPSession	SMTPSession;
+ 
+ #define SMTP_SESSION(obj)	((SMTPSession *)obj)
+ 
+-#define MSGBUFSIZE		8192
++#ifndef MSGBUFSIZE
++#  define MSGBUFSIZE		8192
++#endif
+ 
+ #define	SM_OK			0
+ #define	SM_ERROR		128

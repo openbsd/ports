@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- configure.orig	Sat Mar 22 01:20:21 2003
++++ configure	Sat Mar 22 01:22:25 2003
+@@ -1503,7 +1503,7 @@ ac_config_sub="$SHELL $ac_aux_dir/config
+ ac_configure="$SHELL $ac_aux_dir/configure" # This should be Cygnus configure.
+ 
+ 
+-PACKAGE=sylpheed
++PACKAGE=sylpheed-claws
+ 
+ MAJOR_VERSION=0
+ MINOR_VERSION=8
+@@ -12107,9 +12107,9 @@ _ACEOF
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ 
+ 
+-manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
++manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
+ 
+-faqdir='${prefix}/${DATADIRNAME}/${PACKAGE}/faq'
++faqdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/faq'
+ 
+ 
+ if test "x${datadir}" = 'x${prefix}/share'; then

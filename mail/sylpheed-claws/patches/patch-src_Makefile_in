@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/Makefile.in.orig	Sun Apr 13 22:26:56 2003
++++ src/Makefile.in	Sun Apr 13 22:27:07 2003
+@@ -403,7 +403,7 @@ EXTRA_DIST = \
+ INCLUDES = \
+ 	-Icommon \
+ 	-Igtk \
+-	-DG_LOG_DOMAIN=\"Sylpheed\" \
++	-DG_LOG_DOMAIN=\"Sylpheed-claws\" \
+ 	-I$(top_srcdir)/intl \
+         $(ASPELL_CFLAGS)    \
+ 	$(GTK_CFLAGS) \

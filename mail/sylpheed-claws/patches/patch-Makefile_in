@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- Makefile.in.orig	Wed Mar 12 18:17:53 2003
++++ Makefile.in	Mon Apr 14 00:05:38 2003
+@@ -192,7 +192,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = ac po intl src man manual faq tools config
++SUBDIRS = ac po src man manual faq tools config
+ 
+ EXTRA_DIST = \
+ 	ChangeLog.jp \
+@@ -213,11 +213,11 @@ EXTRA_DIST = \
+ 
+ @SYLPHEED_GNOME_TRUE@pixmapdir = $(gnomedatadir)/pixmaps
+ @SYLPHEED_GNOME_FALSE@pixmapdir = 
+-@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed.png
++@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed-claws.png
+ @SYLPHEED_GNOME_FALSE@pixmap_DATA = 
+ @SYLPHEED_GNOME_TRUE@gnomapdir = $(gnomedatadir)/gnome/apps/Internet
+ @SYLPHEED_GNOME_FALSE@gnomapdir = 
+-@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed.desktop
++@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed-claws.desktop
+ @SYLPHEED_GNOME_FALSE@gnomap_DATA = 
+ 
+ BZIP2_ENV = 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mbox_folder_c,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/mbox_folder.c.orig	Sun Apr 13 22:35:31 2003
++++ src/mbox_folder.c	Sun Apr 13 22:36:14 2003
+@@ -33,7 +33,9 @@
+ #include "utils.h"
+ #include "intl.h"
+ 
+-#define MSGBUFSIZE	8192
++#ifndef MSGBUFSIZE
++#  define MSGBUFSIZE	8192
++#endif
+ 
+ static void	mbox_folder_init		(Folder		*folder,
+ 						 const gchar	*name,

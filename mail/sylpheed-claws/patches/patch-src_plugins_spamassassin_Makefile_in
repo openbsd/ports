@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+--- src/plugins/spamassassin/Makefile.in.orig	Sun Apr 13 04:25:54 2003
++++ src/plugins/spamassassin/Makefile.in	Sun Apr 13 04:26:10 2003
+@@ -63,6 +63,7 @@ CFLAGS = @CFLAGS@
+ CPP = @CPP@
+ 
+ CPPFLAGS = \
++	@CPPFLAGS@ \
+ 	$(ASPELL_CFLAGS) \
+ 	$(GLIB_CFLAGS) \
+ 	$(GTK_CFLAGS) \
