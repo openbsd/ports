@@ -1,4 +1,4 @@
-man/man1/lsof.1
+man/cat8/lsof.8
 sbin/lsof
 share/lsof/00MANIFEST
 share/lsof/00README

@@ -1,0 +1,21 @@
+--- Configure.orig	Sat Apr 22 16:16:09 2000
++++ Configure	Sat Apr 22 16:16:11 2000
+@@ -1981,6 +1981,9 @@
+       2.6*)
+ 	LSOF_VERS=2060
+ 	;;
++      2.7*)
++	LSOF_VERS=2070
++	;;
+       *)
+ 	echo Unknown OpenBSD release: `uname -r`
+ 	echo Assuming OpenBSD 1.2
+@@ -1992,7 +1995,7 @@
+     # Test for legal OpenBSD version.
+ 
+     case $LSOF_VERS in	# {
+-    1020|2000|2010|2020|2030|2040|2050|2060)
++    1020|2000|2010|2020|2030|2040|2050|2060|2070)
+       ;;
+     *)
+       echo "Unsupported OpenBSD version: $LSOF_VERS"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/04/09 18:01:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.27 2000/04/22 20:32:13 angelos Exp $
 
 DISTNAME=	lsof_4.49_W
 PKGNAME=	lsof-4.49_W
@@ -67,7 +67,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} -o ${BINOWN} -g ${BINGRP} -m 0755 \
 	    ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
+	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.8
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
