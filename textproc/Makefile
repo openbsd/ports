@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/02/27 01:45:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.45 2001/03/10 17:23:27 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -52,6 +52,5 @@
      SUBDIR += xerces
      SUBDIR += xml2rfc
      SUBDIR += xpdf
-     SUBDIR += xpdf:freetype
 
 .include <bsd.port.subdir.mk>

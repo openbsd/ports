@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/07 19:10:01 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/10 17:23:28 brad Exp $
 
 DISTNAME=	xpdf-0.92
 CATEGORIES=	textproc x11
@@ -9,9 +9,10 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
-LIB_DEPENDS=	t1x.1::devel/t1lib
+LIB_DEPENDS=	t1x.2::devel/t1lib \
+		ttf.1.3::print/freetype
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,18 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gzip \
 		--with-t1-library="${LOCALBASE}/lib" \
-		--with-t1-includes="${LOCALBASE}/include"
-
-FLAVORS=	freetype
-FLAVOR=
-
-.if ${FLAVOR:L:Mfreetype}
-LIB_DEPENDS+=	ttf.1.3::print/freetype
-CONFIGURE_ARGS+= --with-freetype-library="${LOCALBASE}/lib" \
-		 --with-freetype-includes="${LOCALBASE}/include/freetype"
-.else
-CONFIGURE_ARGS+= --without-freetype-library
-.endif
+		--with-t1-includes="${LOCALBASE}/include" \
+		--with-freetype-library="${LOCALBASE}/lib" \
+		--with-freetype-includes="${LOCALBASE}/include/freetype"
 
 post-install:
 	@cd ${PREFIX}/bin && \
