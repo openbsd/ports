@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 06:30:06 kevlo Exp $
+${P5SITE}/IPC/
+${P5SITE}/IPC/Run3/
+${P5SITE}/IPC/Run3.pm
+${P5SITE}/IPC/Run3/ProfArrayBuffer.pm
+${P5SITE}/IPC/Run3/ProfLogReader.pm
+${P5SITE}/IPC/Run3/ProfLogger.pm
+${P5SITE}/IPC/Run3/ProfPP.pm
+${P5SITE}/IPC/Run3/ProfReporter.pm
+@man man/man3p/IPC::Run3.3p
+@man man/man3p/IPC::Run3::ProfArrayBuffer.3p
+@man man/man3p/IPC::Run3::ProfLogReader.3p
+@man man/man3p/IPC::Run3::ProfLogger.3p
+@man man/man3p/IPC::Run3::ProfPP.3p
+@man man/man3p/IPC::Run3::ProfReporter.3p

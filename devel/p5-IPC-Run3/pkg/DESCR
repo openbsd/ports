@@ -1,0 +1,2 @@
+This module allows you to run a subprocess and redirect stdin, stdout,
+and/or stderr to files and perl data structures.
