@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.47 2004/05/25 09:32:02 dtucker Exp $
+# $OpenBSD: OpenBSD-markers,v 1.48 2004/10/06 13:27:42 henning Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -43,7 +43,7 @@
 45.78 		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
-47,53		21,63		"Nagy"		# Robert
+47.53		21.63		"Nagy"		# Robert
 48.3		15.7		"Sammer"	# Reinhard J.
 48.87		2.33		"Espie"		# Marc
 48.137970	11.542279	"Friedl"	# Markus
