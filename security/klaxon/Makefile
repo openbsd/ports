@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 03:45:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/02 16:08:00 lebel Exp $
 
 COMMENT=	"small service wedge to do ident lookup on connecting party"
 
@@ -22,5 +22,6 @@ ALL_TARGET=		target
 
 do-install:
 	${INSTALL} ${WRKBUILD}/klaxon.5x.ident ${PREFIX}/sbin/klaxon
+	@${STRIP} ${PREFIX}/sbin/klaxon
 
 .include <bsd.port.mk>
