@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+#	$OpenBSD: INSTALL,v 1.1 2000/08/15 17:12:37 jakob Exp $
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_post_install_gii()
+{
+    echo
+    echo "+---------------"
+    echo "| You may wish to add the next line into /etc/services:"
+    echo "| gii           616/tcp         gii    # gated interactive interface"
+    echo "|"
+    echo "| To be able use gated interactive interface your must"
+    echo "| create user 'gii' and set his password:"
+    echo "|	useradd -d / -p '*' -s /sbin/nologin -c 'gii pseudo user' gii"
+    echo "|	passwd gii"
+    echo "+---------------"
+}
+
+if [ $# -ne 2 ]; then
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	if echo $1 |grep gii >/dev/null ; then
+		do_post_install_gii
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

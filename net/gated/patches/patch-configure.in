@@ -1,0 +1,77 @@
+        $OpenBSD: patch-configure.in,v 1.1 2000/08/15 17:12:36 jakob Exp $
+1. Make configure detect mkdep properly.
+2. Avoid compiler warnings "CMSG_XXX previosly defined at sys/socket.h"
+   CMSG_SPACE is macros so we must use AC_EGREP_CPP to properly detect it's
+   presence. 
+--- configure.in.orig	Tue Mar 28 23:56:08 2000
++++ configure.in	Wed Aug  9 20:12:27 2000
+@@ -413,35 +413,33 @@
+ dnl Check for a way to calculate dependencies.
+ dnl
+ MKDEP_FILE="$srcdir/util/make-depend"
+-AC_MSG_CHECKING(how to calculate deps)
+-if test $ac_cv_prog_CC = gcc; then
+-	dnl
+-	dnl use gcc if it's there
+-	dnl
+-	MKDEP="\$(top_srcdir)/util/mkdep"
+-elif $CC -V 2>&1 | grep WorkShop > /dev/null; then
+-	dnl 
+-	dnl checking for sunworkshop
+-	dnl
+-	MKDEP="\$(top_srcdir)/util/mkdep -flag -xM"
+-else
+-	dnl
+-	dnl use makedepend, mkdep, or canned
+-	dnl
+-	AC_CHECK_FILE(makedepend,has_makedepend=yes,has_makedepend=no)
+-	if test $has_makedepend = yes; then
+-		MKDEP="makedepend"
++AC_CHECK_PROG(MKDEP, mkdep, mkdep, notfound)
++if test $MKDEP = notfound; then 
++	AC_CHECK_PROG(have_makedepend, makedepend, yes, no)
++	AC_MSG_CHECKING(how to calculate deps)
++	if test $ac_cv_prog_gcc = yes; then
++		dnl
++		dnl use gcc if it's there
++		dnl
++		MKDEP="\$(top_srcdir)/util/mkdep"
++	elif $CC -V 2>&1 | grep WorkShop > /dev/null; then
++		dnl 
++		dnl checking for sunworkshop
++		dnl
++		MKDEP="\$(top_srcdir)/util/mkdep -flag -xM"
+ 	else
+-		AC_CHECK_FILE(mkdep, has_mkdep=yes,has_mkdep=no)
+-		if test $has_mkdep = yes; then
+-			MKDEP="mkdep"
++		dnl
++		dnl use makedepend, mkdep, or canned
++		dnl
++		if test $have_makedepend = yes; then
++			MKDEP="makedepend"
+ 		else
+ 			MKDEP=""
+ 			MKDEP_FILE="/dev/null"
+ 		fi
+ 	fi
++	AC_MSG_RESULT($MKDEP)
+ fi
+-AC_MSG_RESULT($MKDEP)
+ AC_SUBST(MKDEP)
+ AC_SUBST_FILE(MKDEP_FILE)
+ 
+@@ -651,7 +649,12 @@
+ AC_EGREP_HEADER(if_multiaddrs, net/if_var.h, AC_DEFINE(MULTIADDRS_ON_IFNET))
+ AC_EGREP_HEADER(ia_subnetmask, netinet/in_var.h, AC_DEFINE(USE_IA_SUBNETMASK))
+ AC_EGREP_HEADER(icmp6_mld, netinet/icmp6.h, AC_DEFINE(HAVE_ICMP6_MLD))
+-AC_EGREP_HEADER(CMSG_SPACE, sys/socket.h, AC_DEFINE(HAVE_CMSG_SPACE))
++AC_EGREP_CPP(yes,
++[#include <sys/socket.h>
++#ifdef CMSG_SPACE
++yes
++#endif
++], AC_DEFINE(HAVE_CMSG_SPACE))
+ AC_EGREP_HEADER(ICMPV6_PACKET_TOOBIG, netinet/icmp6.h, AC_DEFINE(HAVE_ICMPV6_DEST_UNREACH))
+ AC_EGREP_HEADER(redirect_destination, netinet/icmp6.h, AC_DEFINE(HAVE_REDIRECT_DESTINATION))
+ AC_EGREP_HEADER(ifm_data, net/if.h, AC_DEFINE(HAVE_IFM_DATA))

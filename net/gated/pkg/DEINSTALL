@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+#	$OpenBSD: DEINSTALL,v 1.1 2000/08/15 17:12:37 jakob Exp $
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+if id gii >/dev/null 2>&1 ; then
+	HAVE_USER=YES
+fi
+GII_LINE=`grep ^gii /etc/services`
+
+if [ -n "$GII_LINE" -o -f /etc/gated.conf -o "x$HAVE_USER" = "xYES" ]; then
+
+     echo
+     echo "+---------------"
+     echo "| To completely deinstall the $1 package you need to perform"
+     echo "| these steps:"
+     echo "|"
+     if [ "x$HAVE_USER" = "xYES" ] ; then
+          echo "| - delete user gii"
+          echo "|		userdel gii"
+          echo "|"
+     fi
+     if [ -n "$GII_LINE" ]; then
+          echo "| - remove from /etc/services line:"
+          echo "| $GII_LINE"
+          echo "|"
+     fi
+     if [ -f /etc/gated.conf ]; then
+          echo "| - remove gated configuration file"
+          echo "|		rm /etc/gated.conf"
+          echo "|"
+     fi
+     echo "| Do not do this if you plan on re-installing $1"
+     echo "| at some future time."
+     echo "+---------------"
+     echo
+fi
+
+exit 0

@@ -1,4 +1,5 @@
-bin/ripquery
-bin/ospf_monitor
+@comment $OpenBSD: PLIST,v 1.5 2000/08/15 17:12:37 jakob Exp $
 bin/gdc
+bin/ospf_monitor
+bin/ripquery
 sbin/gated
