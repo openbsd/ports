@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/02 16:59:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/23 17:49:20 espie Exp $
 #
 
-DISTNAME= rsync-2.2.1
+DISTNAME= rsync-2.3.0
 CATEGORIES=net
 
 NEED_VERSION=1.60
@@ -18,7 +18,7 @@ GNU_CONFIGURE=		yes
 
 # not MESSAGE, explains the build warning
 post-build:
-	@echo "this use of mktemp is actually correct"
+	@echo "(this use of mktemp is actually correct)"
 
 DOCDIR=${PREFIX}/share/doc/rsync
 
