@@ -1,9 +1,9 @@
 # $FreeBSD: ports/net/ipfm/Makefile,v 1.2 2000/04/09 18:11:44 cpiazza Exp $
-# $OpenBSD: Makefile,v 1.4 2001/03/29 10:14:28 form Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/01 09:52:16 form Exp $
 
 COMMENT=	"IP bandwidth analysis tool"
 
-DISTNAME=	ipfm-0.10.4
+DISTNAME=	ipfm-0.11.4
 CATEGORIES=     net
 NEED_VERSION=	1.305
 EXTRACT_SUFX=	.tgz
@@ -13,9 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.via.ecp.fr/~tibob/ipfm/archive/
+MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 
-HOMEPAGE=	http://www.via.ecp.fr/~tibob/ipfm/
+HOMEPAGE=	http://robert.cheramy.net/ipfm/
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
@@ -28,5 +28,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ipfm
 	${INSTALL_DATA} ${WRKBUILD}/ipfm.conf.sample \
 		${PREFIX}/share/examples/ipfm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ipfm
+	${INSTALL_DATA} ${WRKDIST}/HISTORY ${PREFIX}/share/doc/ipfm
+	${INSTALL_DATA} ${WRKDIST}/LICENSE ${PREFIX}/share/doc/ipfm
+	${INSTALL_DATA} ${WRKDIST}/TODO ${PREFIX}/share/doc/ipfm
 
 .include <bsd.port.mk>
