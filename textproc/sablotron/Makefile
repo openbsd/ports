@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/14 14:04:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 16:16:27 espie Exp $
 
 DISTNAME=		Sablot-0.44
 PKGNAME=		sablotron-0.44
@@ -6,7 +6,7 @@ CATEGORIES=     	textproc
 NEED_VERSION=		1.330
 
 HOMEPAGE=		http://www.gingerall.com/
-MAINTAINER=		avsm@openbsd.org
+MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 # MPL or GPL
 PERMIT_PACKAGE_CDROM=	Yes

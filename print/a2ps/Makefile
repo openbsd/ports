@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2000/07/04 01:33:56 krw Exp $
+# $OpenBSD: Makefile,v 1.25 2000/10/22 16:16:29 espie Exp $
 
 DISTNAME=	a2ps-4.13b
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 NEED_VERSION=	1.310
 
-MAINTAINER=	weingart@OpenBSD.org
+MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/13 15:05:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 16:16:27 espie Exp $
 
 DISTNAME=		jadetex-2.20
 CATEGORIES=     	print
 NEED_VERSION=		1.330
 
 HOMEPAGE=		http://www.tug.org/applications/jadetex/
-MAINTAINER=		avsm@openbsd.org
+MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

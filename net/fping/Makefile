@@ -1,5 +1,5 @@
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
-# $OpenBSD: Makefile,v 1.2 2000/06/15 05:25:15 form Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 16:16:28 espie Exp $
 
 DISTNAME=	part01
 PKGNAME=	fping-1.20
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Olef Safiullin <form@openbsd.org>
 
 DIST_SUBDIR=	fping
 WRKDIST=	${WRKDIR}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 16:16:30 espie Exp $
 #
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
 NEED_VERSION=	1.305
 
-MAINTAINER=	weingart@openbsd.org
+MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

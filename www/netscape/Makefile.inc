@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2000/09/01 04:24:37 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2000/10/22 16:16:26 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -26,7 +26,7 @@ DIST_SUBDIR=	netscape
 
 HOMEPAGE=	http://www.netscape.com/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
