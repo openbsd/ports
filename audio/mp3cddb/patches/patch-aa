@@ -1,0 +1,11 @@
+--- mp3cddbtag.orig	Tue Feb 29 21:37:26 2000
++++ mp3cddbtag	Tue Feb 29 21:37:33 2000
+@@ -29,7 +29,7 @@
+     
+ echo tagging $files tracks...
+     
+-for i in `seq 1 $files`; do
++for i in `jot $files`; do
+     file=$(egrep "^$i.FILE: " $1 | cut -d' ' -f2-)
+     title=$(uppercase `egrep "^$i.TITLE: " $1 | cut -d' ' -f2-`)
+     artist=$(uppercase `egrep "^$i.ARTIST: " $1 | cut -d' ' -f2-`)
