@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/21 22:09:56 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/06 14:48:13 xsa Exp $
 
 COMMENT=	"compile and link C code for Perl modules" 
 
 DISTNAME=	ExtUtils-CBuilder-0.02
-PKG_NAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
