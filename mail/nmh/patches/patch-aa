@@ -1,5 +1,5 @@
---- config.h.in.orig	Mon May 18 14:12:57 1998
-+++ config.h.in	Thu May 28 11:31:43 1998
+--- config.h.in.orig	Sun May 31 17:46:56 1998
++++ config.h.in	Sat Jul 25 21:02:17 1998
 @@ -37,9 +37,9 @@
   *  OpenBSD 2.x
   *  BSD/OS 2.x
@@ -32,4 +32,4 @@
 +#define DEFAULT_MESSAGE_MODE "0600"
  
  /*
-  * The prefix to use when messages are "removed" by rmm.
+  * The prefix which is prepended to the name of messages when they
