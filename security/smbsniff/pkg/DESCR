@@ -1,0 +1,8 @@
+Smbsniff is a LanManager packet sniffer that will write to your
+disk all the files shared and the documents printed in a LanManager
+environnement (all the Microsoft and Samba machines using LanManager
+protocol to share data).  
+This is a proof of concept to show that LanManager (CIFS) is an 
+extremely insecure protocol.
+
+WWW: ${HOMEPAGE}

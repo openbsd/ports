@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/04 19:30:07 reinhard Exp $
+bin/smbsniff
+man/man1/smbsniff.1
+share/doc/smbsniff/README
+@dirrm share/doc/smbsniff
