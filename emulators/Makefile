@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/02 16:59:05 todd Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/16 18:28:50 espie Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs:debug
     SUBDIR += frodo
     SUBDIR += freebsd_lib
     SUBDIR += linux_lib
+    SUBDIR += redhat_base
     SUBDIR += simh
     SUBDIR += wine
     SUBDIR += x48
