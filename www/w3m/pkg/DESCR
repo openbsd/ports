@@ -26,7 +26,7 @@ used as a text-mode WWW browser.
 * You can change URL description like 'http://hogege.net' in plain text
   into link to that URL.
 
-Current (beta-990323) problems are: 
+Current problems are: 
 
 * Resize behaviour is imcomplete.
 * It can't show images inline. (It seems to be impossible as far as using

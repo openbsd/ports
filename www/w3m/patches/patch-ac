@@ -1,6 +1,6 @@
---- main.c.orig	Fri Jan 21 17:18:58 2000
-+++ main.c	Fri Jan 28 22:34:23 2000
-@@ -73,10 +73,21 @@
+--- gcmain.c.orig	Sat Apr  8 09:07:11 2000
++++ gcmain.c	Sat Apr  8 09:07:54 2000
+@@ -13,10 +13,21 @@
  #endif
  int real_main(int,char**,char**);
  

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/08 03:10:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/10 20:03:20 dugsong Exp $
 
-DISTNAME=	w3m-0.1.6
+DISTNAME=	w3m-0.1.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.firedrake.org/w3m/ \
 		ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \

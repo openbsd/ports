@@ -1,14 +1,15 @@
 bin/w3m
 lib/w3m/dirlist.cgi
-lib/w3m/dirlist2.cgi
 lib/w3m/w3mbookmark
 lib/w3m/w3mhelperpanel
+man/man1/w3m.1
 share/doc/w3m/FAQ.html
 share/doc/w3m/HISTORY
 share/doc/w3m/MANUAL.html
 share/doc/w3m/README
 share/doc/w3m/README.cygwin
 share/doc/w3m/README.dict
+share/doc/w3m/README.dj
 share/doc/w3m/README.func
 share/doc/w3m/STORY.html
 share/doc/w3m/keymap.default
@@ -17,9 +18,8 @@ share/doc/w3m/menu.default
 share/doc/w3m/menu.submenu
 share/w3m/w3mhelp-lynx_en.html
 share/w3m/w3mhelp-lynx_ja.html
-share/w3m/w3mhelp.html
-share/w3m/w3mhelp_en.html
-share/w3m/w3mhelp_ja.html
+share/w3m/w3mhelp-w3m_en.html
+share/w3m/w3mhelp-w3m_ja.html
 @dirrm lib/w3m
 @dirrm share/doc/w3m
 @dirrm share/w3m
