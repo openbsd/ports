@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:30 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/03 01:15:36 miod Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g15
@@ -28,8 +28,10 @@ ADOMOWN?=	games
 # can't be changed except by patching the binary
 HISCORE_DIR=	/var/lib/adom
 
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
+.endif
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}
