@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/12/31 12:30:54 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2002/03/02 23:59:52 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -31,7 +31,7 @@ LIB_DEPENDS=	kdecore.3,kdeui,DCOP,artskde,kab,kdefakes,kdeprint,kdeprint_managem
 		vorbis,vorbisenc::audio/libvorbis \
 		cdda_paranoia,cdda_interface::audio/cdparanoia
 
-BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable ::audio/lame
+BUILD_DEPENDS=	::x11/qt2-designer ::audio/lame
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
@@ -64,14 +64,11 @@ post-patch:
 	cp ${FILESDIR}/lame.c ${LAMEDIR}
 
 pre-build:
-	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 	cd ${LAMEDIR} && ${CC} -I${LOCALBASE}/include -o libmp3lame.so.0.0 -shared -fpic -O2 lame.c
 
 
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 MAKE_FLAGS+=LAMEDIR='${LAMEDIR}'
 
 # GPL

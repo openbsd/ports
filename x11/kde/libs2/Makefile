@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2002/01/21 08:13:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.34 2002/03/02 23:59:52 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -26,7 +26,7 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		xslt.1.6::textproc/libxslt \
 		bz2::archivers/bzip2
 
-BUILD_DEPENDS=	:zsh-*:shells/zsh/stable :qt2-html-*:x11/qt2,-html
+BUILD_DEPENDS=	:qt2-html-*:x11/qt2,-html
 
 # glib2.0 
 # qt docs
@@ -60,7 +60,6 @@ CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 	@if pkg dependencies check kdelibs-\*; then \
 		if pkg dependencies check ${DISTNAME}; then \
 			:; \
@@ -70,14 +69,8 @@ pre-build:
 		fi; \
     	fi
 
-	# Let zsh act as an sh replacement
-
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
-
-#CONFIGURE_SCRIPT=	${WRKBUILD}/sh ${WRKSRC}/configure
-#CONFIGURE_ENV=CONFIG_SHELL=${WRKBUILD}/sh
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
