@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: out-of-date,v 1.4 2001/03/07 03:41:10 form Exp $
+# $OpenBSD: out-of-date,v 1.5 2001/07/19 02:49:56 espie Exp $
 # Copyright (c) 1999
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -26,13 +26,14 @@
 # Check for simple discrepancies between installed packages and the
 # /usr/ports INDEX
 
-FILE=/usr/ports/INDEX
+: ${PORTSDIR:=/usr/ports}
 
-cat <<EOF
->>> Is /usr/ports/INDEX up-to-date ?
->>> Otherwise, this script will find out outdated flavors of packages
->>> compared to your installed packages...
-EOF
+FILE=${PORTSDIR}/INDEX
+
+echo ">>> Is ${PORTSDIR}/INDEX up-to-date ?"
+echo ">>> Otherwise, this script will find out outdated flavors of packages"
+echo ">>> compared to your installed packages..."
+
 pkg_info |while read fullname rest
 do
 	grep "^$fullname" $FILE >/dev/null || {
