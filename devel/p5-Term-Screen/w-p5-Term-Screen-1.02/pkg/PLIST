@@ -1,4 +1,0 @@
-@comment subdir=devel/p5-Term-Screen cdrom=yes ftp=yes
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 23:34:38 margarida Exp $
-libdata/perl5/site_perl/Term/Screen.pm
-man/man3p/Term::Screen.3p
