@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/02/21 23:30:13 wcobb Exp $
+# $OpenBSD: Makefile,v 1.29 2003/08/04 12:33:33 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	:sox->=12.12:audio/sox \
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 # BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	"Runtime dependencies have patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
