@@ -1,0 +1,18 @@
+$OpenBSD: patch-game_c,v 1.1 2004/03/03 22:51:00 xsa Exp $
+--- game.c.orig	2003-08-13 03:33:02.000000000 +0200
++++ game.c	2004-03-03 15:53:32.000000000 +0100
+@@ -58,11 +58,11 @@ ExtFunc void MapKeys(char *newKeys)
+ 		ch = (unsigned char) keyTable[k];
+ 		if (used[ch]) {
+ 			if (iscntrl(ch) && ch < ' ')
+-				sprintf(scratch, "Ctrl-%c", ch + ('A' - 1));
++				snprintf(scratch, sizeof scratch, "Ctrl-%c", ch + ('A' - 1));
+ 			else if (isprint(ch))
+-				sprintf(scratch, "\"%c\"", ch);
++				snprintf(scratch, sizeof scratch, "\"%c\"", ch);
+ 			else
+-				sprintf(scratch, "0x%X", ch);
++				snprintf(scratch, sizeof scratch, "0x%X", ch);
+ 			if (!errs)
+ 				fprintf(stderr, "Duplicate key mappings:\n");
+ 			errs++;

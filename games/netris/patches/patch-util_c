@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_c,v 1.1 2004/03/03 22:51:00 xsa Exp $
+--- util.c.orig	2003-08-13 03:33:02.000000000 +0200
++++ util.c	2004-03-03 15:56:01.000000000 +0100
+@@ -35,7 +35,7 @@ static EventGenRec alarmGen =
+ 		{ &alarmGen, 0, FT_read, -1, AlarmGenFunc, EM_alarm };
+ static EventGenRec *nextGen = &alarmGen;
+ 
+-static myRandSeed = 1;
++static int myRandSeed = 1;
+ 
+ static struct timeval baseTimeval;
+ 
+@@ -319,7 +319,7 @@ ExtFunc void AddEventGen(EventGenRec *ge
+ 
+ ExtFunc void RemoveEventGen(EventGenRec *gen)
+ {
+-	/* assert(gen->next != NULL);	/* Be more forgiving, for SIGINTs */
++	/* assert(gen->next != NULL); */	/* Be more forgiving, for SIGINTs */
+ 	if (gen->next) {
+ 		while (nextGen->next != gen)
+ 			nextGen = nextGen->next;
