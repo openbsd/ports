@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/13 10:12:07 shell Exp $
 
 
 COMMENT=	"python codes checker"
 
-VERSION=	0.8.8
+VERSION=	0.8.9
 DISTNAME=	pychecker-${VERSION}
 PKGNAME=	py-Checker-${VERSION}
 CATEGORIES=    	devel
-NEED_VERSION=	1.500
+NEED_VERSION=	1.509
 
 HOMEPAGE=	http://pychecker.sourceforge.net/
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pychecker
 
-PYTHON_VER=	2.1
+PYTHON_VER=	2.2
 
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=	${RUN_DEPENDS}
