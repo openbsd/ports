@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/06 06:23:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/04 20:39:41 naddy Exp $
 
 DISTNAME=	sylpheed-0.4.61
 CATEGORIES=    	mail news x11
@@ -14,11 +14,24 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
-
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS= --disable-gpgme
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
+
+FLAVORS=	imlib pixbuf
+FLAVOR?=	pixbuf
+
+.if ${FLAVOR:L:Mimlib}
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		gdk_imlib.19::graphics/imlib
+CONFIGURE_ARGS+=	--disable-gdk-pixbuf
+.endif
+.if ${FLAVOR:L:Mpixbuf}
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		gdk_pixbuf::graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--disable-imlib
+.endif
 
 .include <bsd.port.mk>
