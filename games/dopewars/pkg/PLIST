@@ -1,0 +1,11 @@
+@owner root
+@group games
+@mode 2755
+bin/dopewars
+@exec touch /var/games/dopewars.sco
+@exec chown root.games /var/games/dopewars.sco
+@exec chmod 664 /var/games/dopewars.sco
+@unexec echo "+---------------
+@unexec echo "| Please remove /var/games/dopewars.sco to fully
+@unexec echo "| un-install dopewars."
+@unexec echo "+---------------
