@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2003/07/22 17:45:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.101 2003/08/12 04:42:49 jolan Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -76,7 +76,7 @@
      SUBDIR += pear-XML-Tree
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
-     SUBDIR += pspell
+#    SUBDIR += pspell
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
      SUBDIR += py-xml
