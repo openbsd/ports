@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/07/28 04:48:16 brad Exp $
 
 COMMENT=	visio-like technical drawing
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/dia/}
 HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
-		art_lgpl.5::graphics/libart \
+		art_lgpl_2.5::graphics/libart \
 		popt::devel/popt \
 		xml2.6::textproc/libxml
 

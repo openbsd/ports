@@ -1,5 +1,5 @@
---- configure.orig	Sat May 19 00:04:17 2001
-+++ configure	Fri Sep 28 23:00:43 2001
+--- configure.orig	Fri May 18 23:04:17 2001
++++ configure	Fri Jul 19 10:44:18 2002
 @@ -885,7 +885,7 @@ else
    echo "configure: warning: ${am_backtick}missing' script is too old or missing" 1>&2
  fi
@@ -532,9 +532,25 @@
  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
  if test -z "$ac_err"; then
    rm -rf conftest*
-@@ -6370,7 +6366,7 @@ fi
+@@ -6357,20 +6353,20 @@ fi
+   if test x$libart_exec_prefix != x ; then
+      libart_args="$libart_args --exec-prefix=$libart_exec_prefix"
+      if test x${LIBART_CONFIG+set} != xset ; then
+-        LIBART_CONFIG=$libart_exec_prefix/bin/libart-config
++        LIBART_CONFIG=$libart_exec_prefix/bin/libart2-config
+      fi
+   fi
+   if test x$libart_prefix != x ; then
+      libart_args="$libart_args --prefix=$libart_prefix"
+      if test x${LIBART_CONFIG+set} != xset ; then
+-        LIBART_CONFIG=$libart_prefix/bin/libart-config
++        LIBART_CONFIG=$libart_prefix/bin/libart2-config
+      fi
+   fi
+ 
    # Extract the first word of "libart-config", so it can be a program name with args.
- set dummy libart-config; ac_word=$2
+-set dummy libart-config; ac_word=$2
++set dummy libart2-config; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
 -echo "configure:6374: checking for $ac_word" >&5
 +echo "configure:6370: checking for $ac_word" >&5
