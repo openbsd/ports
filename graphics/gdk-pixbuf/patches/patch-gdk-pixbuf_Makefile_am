@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdk-pixbuf_Makefile_am,v 1.1 2001/04/01 20:18:07 naddy Exp $
+--- gdk-pixbuf/Makefile.am.orig	Thu Mar  1 00:05:34 2001
++++ gdk-pixbuf/Makefile.am	Sat Mar 31 21:39:32 2001
+@@ -220,7 +220,7 @@ libgdk_pixbuf_xlib_la_SOURCES =		\
+ 	gdk-pixbuf-parse-color.c	\
+ 	$(extra_sources)
+ 
+-libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS)
++libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
+ libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la
+ 
+ 

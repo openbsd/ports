@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/27 11:45:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/01 20:18:06 naddy Exp $
+
+COMMENT=	"replacement library for imlib"
 
 DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.346
+NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gdk-pixbuf/
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
@@ -21,8 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static 
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static --disable-modules
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
