@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/05/23 02:58:53 form Exp $
+--- Makefile.in.orig	Wed May 23 09:17:09 2001
++++ Makefile.in	Wed May 23 09:17:15 2001
+@@ -32,7 +32,7 @@ CFLAGS=@CFLAGS@ @INCLUDES@ $(WARNINGS)
+ LIBS=@LIBS@
+ LDFLAGS=@LDFLAGS@
+ 
+-all:   hypermail support 
++all:   hypermail #support 
+ 
+ hypermail:
+ 	@cd src; $(MAKE) all CC="$(CC)" CFLAGS="$(CFLAGS)" \

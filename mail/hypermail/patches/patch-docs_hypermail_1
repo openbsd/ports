@@ -1,8 +1,7 @@
-# $OpenBSD: patch-docs-hypermail.1,v 1.1.1.1 2000/05/24 09:27:55 form Exp $
-
---- docs/hypermail.1.orig	Wed May 24 15:39:56 2000
-+++ docs/hypermail.1	Wed May 24 15:39:58 2000
-@@ -156,7 +156,7 @@
+$OpenBSD: patch-docs_hypermail_1,v 1.1 2001/05/23 02:58:53 form Exp $
+--- docs/hypermail.1.orig	Wed May 23 09:21:26 2001
++++ docs/hypermail.1	Wed May 23 09:21:38 2001
+@@ -156,7 +156,7 @@ sign, such as:
  Settings are read in this order: from the program's hard-wired internal defaults, from environment variables, from command-line options, from the configuration file.
  .LP
  See 

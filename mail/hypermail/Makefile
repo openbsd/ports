@@ -1,10 +1,10 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.6 2001/03/29 10:05:40 form Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/23 02:58:52 form Exp $
 
 COMMENT=	"generate a cross-referenced HTML mail archive"
 
-DISTNAME=	hypermail-2b30
+DISTNAME=	hypermail-2.1.1
 CATEGORIES=	mail www
 NEED_VERSION=	1.305
 MASTER_SITES=	http://www.landfield.com/hypermail/dist/ \
@@ -23,7 +23,22 @@ MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
 
-pre-install:
+FLAVORS=	gdbm
+FLAVOR?=
+
+.if ${FLAVOR:L} == "gdbm"
+CONFIGURE_ARGS+=--with-gdbm
+LIB_DEPENDS=	gdbm.::databases/gdbm
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hypermail
+.for f in hr.yellow.gif hypermail.gif hypermail-faq.html customizing.html \
+	hmrc.html
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/hypermail
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/docs/hypermail.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/hmrc.4 ${PREFIX}/man/man5/hmrc.5
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+$OpenBSD: patch-docs_hmrc_4,v 1.1 2001/05/23 02:58:53 form Exp $
+--- docs/hmrc.4.orig	Wed May 23 09:21:48 2001
++++ docs/hmrc.4	Wed May 23 09:22:00 2001
+@@ -1,4 +1,4 @@
+-.TH hmrc 4 "October 27, 1999"
++.TH hmrc 5 "October 27, 1999"
+ .SH NAME
+ hmrc \- Hypermail configuration file 
+ .SH DESCRIPTION
