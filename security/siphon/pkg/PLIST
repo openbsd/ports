@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/16 14:56:26 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 09:27:52 xsa Exp $
 bin/siphon
 share/doc/siphon/LICENSE
 share/doc/siphon/README
 share/examples/siphon/osprints.conf
 @dirrm share/examples/siphon
 @dirrm share/doc/siphon
+@cwd ${SYSCONFDIR}
+@extra osprints.conf

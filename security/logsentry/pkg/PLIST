@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/20 17:36:40 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/14 09:27:52 xsa Exp $
 @pkgcfl logcheck-1.1.1
 bin/logtail
 share/doc/logsentry/CREDITS
@@ -13,3 +13,5 @@ share/examples/logsentry/logsentry.violations
 share/examples/logsentry/logsentry.violations.ignore
 @dirrm share/examples/logsentry
 @dirrm share/doc/logsentry
+@extraunexec rm -rf ${SYSCONFDIR}/logsentry
+@extraunexec rm -rf /var/tmp/logsentry

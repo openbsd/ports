@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.1 2003/07/19 17:02:06 jose Exp $
+@comment $OpenBSD: PFRAG.mysql,v 1.2 2004/04/14 09:27:52 xsa Exp $
 share/examples/p0f/mysql/p0f-mysql.conf
 share/examples/p0f/mysql/db.sql
 @dirrm share/examples/p0f/mysql
+@cwd ${SYSCONFDIR}
+@extra p0f-mysql.conf

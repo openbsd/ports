@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 09:27:52 xsa Exp $
 bin/aide
 man/man1/aide.1
 man/man5/aide.conf.5
 share/examples/aide/aide.conf
 @dirrm share/examples/aide
+@cwd ${SYSCONFDIR}
+@extra aide.conf

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/07/19 17:02:06 jose Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/04/14 09:27:52 xsa Exp $
 bin/p0f
 bin/p0frep
 share/doc/p0f/README
@@ -6,3 +6,5 @@ share/examples/p0f/p0f.fp
 %%mysql%%
 @dirrm share/examples/p0f
 @dirrm share/doc/p0f
+@cwd ${SYSCONFDIR}
+@extra p0f.fp
