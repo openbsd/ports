@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/24 12:16:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/06 23:27:19 naddy Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.6.3
+DISTNAME=	sylpheed-0.6.4
 CATEGORIES=    	mail news x11
 NEED_VERSION=	1.440
 HOMEPAGE=	http://sylpheed.good-day.net
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= --disable-compface
 .endif
 
 .if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS=	gpgme::security/gpgme
+LIB_DEPENDS=	gpgme.4::security/gpgme
 CONFIGURE_ARGS+= --enable-gpgme
 .else
 CONFIGURE_ARGS+= --disable-gpgme
