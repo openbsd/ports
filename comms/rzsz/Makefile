@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:56 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/05/21 00:07:58 brad Exp $
 
 DISTNAME=       rzsz
-PKGNAME=        rzsz-3.48
+PKGNAME=        rzsz-3.50
 CATEGORIES=	comms
+MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/zmodem/
+
+NEED_VERSION=	1.91
 
 NO_CDROM=	"COMM: commercial software"
 RESTRICTED=	"This port is shareware"
 
-MAINTAINER=     gene@OpenBSD.ORG
-
-MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/zmodem/
-EXTRACT_SUFX=   .zip
-EXTRACT_CMD=    ${SETENV} unzip
-EXTRACT_ARGS=   -q
-
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+MAINTAINER=	ports@openbsd.org
 
 NO_WRKSUBDIR=	yes
+USE_ZIP=	yes
 
 .include <bsd.port.mk>
