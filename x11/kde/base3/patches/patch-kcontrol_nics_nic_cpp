@@ -1,0 +1,218 @@
+$OpenBSD: patch-kcontrol_nics_nic_cpp,v 1.1 2003/01/09 02:49:04 espie Exp $
+--- kcontrol/nics/nic.cpp.orig	Mon Jun 24 13:56:11 2002
++++ kcontrol/nics/nic.cpp	Thu Jan  9 01:16:01 2003
+@@ -37,6 +37,7 @@
+ #endif
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdio.h>
+@@ -55,8 +56,13 @@
+ 
+ #include <sys/ioctl.h>
+ 
+-typedef KGenericFactory<KCMNic, QWidget > KCMNicFactory;
+-K_EXPORT_COMPONENT_FACTORY (kcm_nic, KCMNicFactory("kcmnic") );
++#include <ifaddrs.h>
++#include <netdb.h>
++
++QString flags_tos (unsigned int flags);
++
++typedef KGenericFactory<KCMNic, QWidget> KCMNicFactory;
++K_EXPORT_COMPONENT_FACTORY (kcm_nic, KCMNicFactory("kcmnic"));
+ 
+ struct MyNIC
+ {
+@@ -71,6 +77,21 @@ typedef QPtrList<MyNIC> NICList;
+ 
+ NICList* findNICs();
+ 
++
++const KAboutData* KCMNic::aboutData() const
++{
++    KAboutData *about =
++    new KAboutData(I18N_NOOP("kcminfo"),
++		I18N_NOOP("KDE Panel System Information Control Module"),
++		0, 0, KAboutData::License_GPL,
++		I18N_NOOP("(c) 2001 - 2002 Alexander Neundorf"));
++
++    about->addAuthor("Alexander Neundorf", 0, "neundorf@kde.org");
++
++    return about;
++}
++
++
+ KCMNic::KCMNic(QWidget *parent, const char * name, const QStringList &)
+    :KCModule(KCMNicFactory::instance(), parent,name)
+ {
+@@ -80,15 +101,15 @@ KCMNic::KCMNic(QWidget *parent, const ch
+    m_list=new QListView(this);
+    box->addWidget(m_list);
+    m_list->addColumn(i18n("Name"));
+-   m_list->addColumn(i18n("IP address"));
+-   m_list->addColumn(i18n("Network mask"));
++   m_list->addColumn(i18n("IP Address"));
++   m_list->addColumn(i18n("Network Mask"));
+    m_list->addColumn(i18n("Type"));
+    m_list->addColumn(i18n("State"));
+-   QHBoxLayout *hbox=new QHBoxLayout(this);
++   m_list->setAllColumnsShowFocus(true);
++   QHBoxLayout *hbox=new QHBoxLayout(box);
+    m_updateButton=new QPushButton(i18n("&Update"),this);
+    hbox->addWidget(m_updateButton);
+    hbox->addStretch(1);
+-   box->addLayout(hbox);
+    QTimer* timer=new QTimer(this);
+    timer->start(60000);
+    connect(m_updateButton,SIGNAL(clicked()),this,SLOT(update()));
+@@ -112,76 +133,81 @@ NICList* findNICs()
+    NICList* nl=new NICList;
+    nl->setAutoDelete(true);
+ 
+-	int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+-
+-   char buf[8*1024];
+-   struct ifconf ifc;
+-	ifc.ifc_len = sizeof(buf);
+-	ifc.ifc_req = (struct ifreq *) buf;
+-	int result=ioctl(sockfd, SIOCGIFCONF, &ifc);
+-
+-   for (char* ptr = buf; ptr < buf + ifc.ifc_len; )
+-   {
+-      struct ifreq *ifr =(struct ifreq *) ptr;
+-      int len = sizeof(struct sockaddr);
+-#ifdef	HAVE_SOCKADDR_SA_LEN
+-      if (ifr->ifr_addr.sa_len > len)
+-         len = ifr->ifr_addr.sa_len;		/* length > 16 */
+-#endif
+-      ptr += sizeof(ifr->ifr_name) + len;	/* for next one in buffer */
++  struct ifaddrs *ifap, *ifa;
++  if (getifaddrs(&ifap) != 0) {
++    return nl;
++  }
++
++  MyNIC *tmp=0;
++  for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
++    switch (ifa->ifa_addr->sa_family) {
++    case AF_INET6:
++    case AF_INET: {
++      tmp = new MyNIC;
++      tmp->name = ifa->ifa_name;
++
++      char buf[128];
++
++      bzero(buf, 128);
++      getnameinfo(ifa->ifa_addr, ifa->ifa_addr->sa_len, buf, 127, 0, 0, NI_NUMERICHOST);
++      tmp->addr = buf;
++
++      if (ifa->ifa_netmask != NULL) {
++      	if (ifa->ifa_netmask->sa_family == 0)
++		ifa->ifa_netmask->sa_family = AF_INET;
++	bzero(buf, 128);
++	int result = getnameinfo(ifa->ifa_netmask, ifa->ifa_netmask->sa_len, buf, 127, 0, 0, NI_NUMERICHOST);
++	tmp->netmask = buf;
++      }
+ 
+-      int flags;
+-      struct sockaddr_in *sinptr;
+-      MyNIC *tmp=0;
+-      switch (ifr->ifr_addr.sa_family)
+-      {
+-      case AF_INET:
+-         sinptr = (struct sockaddr_in *) &ifr->ifr_addr;
+-         flags=0;
+-
+-         struct ifreq ifcopy;
+-         ifcopy=*ifr;
+-         result=ioctl(sockfd,SIOCGIFFLAGS,&ifcopy);
+-         flags=ifcopy.ifr_flags;
+-
+-         tmp=new MyNIC;
+-         tmp->name=ifr->ifr_name;
+-         if ((flags & IFF_UP) == IFF_UP)
+-            tmp->state=i18n("Up");
+-         else
+-            tmp->state=i18n("Down");
+-
+-         if ((flags & IFF_BROADCAST) == IFF_BROADCAST)
+-            tmp->type=i18n("Broadcast");
+-         else if ((flags & IFF_POINTOPOINT) == IFF_POINTOPOINT)
+-            tmp->type=i18n("Point to Point");
+-         else if ((flags & IFF_MULTICAST) == IFF_MULTICAST)
+-            tmp->type=i18n("Multicast");
+-         else if ((flags & IFF_LOOPBACK) == IFF_LOOPBACK)
+-            tmp->type=i18n("Loopback");
+-         else
+-            tmp->type=i18n("Unknown");
+-
+-         tmp->addr=inet_ntoa(sinptr->sin_addr);
+-
+-         ifcopy=*ifr;
+-         result=ioctl(sockfd,SIOCGIFNETMASK,&ifcopy);
+-         if (result==0)
+-         {
+-            sinptr = (struct sockaddr_in *) &ifcopy.ifr_addr;
+-            tmp->netmask=inet_ntoa(sinptr->sin_addr);
+-         }
+-         else
+-            tmp->netmask=i18n("Unknown");
+-         nl->append(tmp);
+-         break;
++      if (ifa->ifa_flags & IFF_UP)
++	tmp->state=i18n("Up");
++      else
++	tmp->state=i18n("Down");
++
++      tmp->type = flags_tos(ifa->ifa_flags);
++
++      nl->append(tmp);
++      break;
++    }
++    default:
++      break;
++    }
++  }
+ 
+-      default:
+-         break;
+-      }
+-   }
++  freeifaddrs(ifap);
+    return nl;
+ };
+ 
+-#include "nic.moc"
+ 
++QString flags_tos (unsigned int flags)
++{
++  QString tmp;
++  if (flags & IFF_POINTOPOINT) {
++    tmp +=  i18n("Point to Point");
++  }
++
++  if (flags & IFF_BROADCAST) {
++    if (tmp.length()) {
++      tmp += QString::fromLatin1(", ");
++    }
++    tmp += i18n("Broadcast");
++  }
++  
++  if (flags & IFF_MULTICAST) {
++    if (tmp.length()) {
++      tmp += QString::fromLatin1(", ");
++    }
++    tmp += i18n("Multicast");
++  }
++  
++  if (flags & IFF_LOOPBACK) {
++    if (tmp.length()) {
++      tmp += QString::fromLatin1(", ");
++    }
++    tmp += i18n("Loopback");
++  }
++  return tmp;
++}
++
++#include "nic.moc"

@@ -1,0 +1,19 @@
+$OpenBSD: patch-kcontrol_nics_nic_h,v 1.1 2003/01/09 02:49:04 espie Exp $
+--- kcontrol/nics/nic.h.orig	Thu Jan  3 20:29:30 2002
++++ kcontrol/nics/nic.h	Wed Jan  8 20:38:31 2003
+@@ -28,6 +28,7 @@
+ #include <qlistview.h>
+ 
+ #include <kcmodule.h>
++#include <kaboutdata.h>
+ 
+ class KCMNic:public KCModule
+ {
+@@ -35,6 +36,7 @@ class KCMNic:public KCModule
+    public:
+       KCMNic(QWidget *parent=0, const char * name=0, const QStringList &list = QStringList( ));
+       virtual ~KCMNic() {};
++      const KAboutData* aboutData() const;
+ 
+    protected slots:
+       void update();
