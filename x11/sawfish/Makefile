@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/21 18:34:50 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/23 14:09:13 danh Exp $
 
 VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
@@ -10,6 +10,7 @@ MASTER_SITE_SUBDIR= sawmill
 HOMEPAGE=       http://sawmill.sourceforge.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a::x11/rep-gtk
+RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a::x11/rep-gtk
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		rep.10::lang/librep \
