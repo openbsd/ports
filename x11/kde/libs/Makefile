@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/16 01:10:47 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/16 01:15:01 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+DIST_SUBDIR=	kde
 
 NEED_VERSION=	1.92
 
