@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.42 2003/03/30 06:13:33 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
@@ -14,8 +14,6 @@ MASTER_SITES=	http://xchat.org/files/source/${MAJOR}/ \
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
