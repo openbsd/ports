@@ -6,4 +6,7 @@ system, operating system, C compiler, and C runtime library.  It
 produces a measurement which is the number of bytes per second that
 your system can read or write to a file.
 
+Flavors:
+	threads - build with threads support
+
 WWW: ${HOMEPAGE}

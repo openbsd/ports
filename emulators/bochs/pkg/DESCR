@@ -2,4 +2,14 @@ Bochs is a portable x86 CPU emulation software that emulates
 enough of the x86 CPU, related AT hardware, and BIOS to run DOS,
 Windows 95/98, Minix 2.0, and other OS's, all on your workstation.
 
+Flavors:
+	debug  - build with Bochs' internal debugging support
+	i386   - emulate 386 instruction set
+	i586   - emulate 586 instruction set
+	pci    - build with support for i440FX PCI chipset
+	smp    - build with support for SMP (2 CPUs)
+	net    - build with support for NE2000 NIC chipset
+	no_x11 - do not build with X support
+	term   - build with support for textmode terminal environment
+
 WWW: ${HOMEPAGE}
