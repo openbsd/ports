@@ -1,19 +1,16 @@
-# OpenBSD makefile for:    bzip2
-# Version required:     0.1pl2
-# Date created:         24 Nov 1997
-# Whom:                 angelos@openbsd.org
-#
-# $OpenBSD: Makefile,v 1.4 1998/09/11 05:22:54 mickey Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/14 05:41:17 marc Exp $
 #
 
-DISTNAME=	bzip2-0.9.0
-PKGNAME=	bzip2-0.9.0
+DISTNAME=	bzip2-0.9.0b
+PKGNAME=	bzip2-0.9.0b
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.muraroa.demon.co.uk/
 
 MAINTAINER=	angelos@openbsd.org
 
-MAN1=		bzip2.1 bunzip2.1
+MASTER_SITES=	http://www.digistar.com/bzip2/ \
+		http://www.muraroa.demon.co.uk/
+
+USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin

@@ -1,34 +1,10 @@
---- Makefile.orig	Mon Sep  7 18:31:14 1998
-+++ Makefile	Mon Sep  7 18:36:22 1998
-@@ -5,19 +5,19 @@
- OBJS= blocksort.o  \
-       huffman.o    \
-       crctable.o   \
-       randtable.o  \
-       compress.o   \
-       decompress.o \
-       bzlib.o
- 
--all: lib bzip2 test
-+all: bzip2 test
- 
--bzip2: lib
-+bzip2: libbz2.a
- 	$(CC) $(CFLAGS) -c bzip2.c
- 	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
- 	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.c
- 
--lib: $(OBJS)
-+libbz2.a: $(OBJS)
+--- Makefile.~1~	Wed Sep  9 04:30:41 1998
++++ Makefile	Sun Sep 13 22:31:15 1998
+@@ -20,6 +20,7 @@
+ lib: $(OBJS)
  	rm -f libbz2.a
  	ar clq libbz2.a $(OBJS)
- 	ranlib libbz2.a
-@@ -39,7 +38,7 @@
- clean: 
- 	rm -f *.o libbz2.a bzip2 bzip2recover sample1.rb2 sample2.rb2 sample1.tst sample2.tst
++	ranlib libbz2.a
  
--.c.o: $*.o bslib.h bslib_private.h
-+.c.o: bzlib.h bzlib_private.h
- 	$(CC) $(CFLAGS) -c $*.c -o $*.o
- 
- tarfile:
+ test: bzip2
+ 	@cat words1
