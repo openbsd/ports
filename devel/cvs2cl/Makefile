@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/07/10 20:48:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/14 11:35:03 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 COMMENT=	"generate GNU-style ChangeLogs from CVS repositories"
 
-DISTNAME=	cvs2cl-2.30
+V=		2.38
+DISTNAME=	cvs2cl-${V}
 CATEGORIES=     devel
-NEED_VERSION=	1.515
 HOMEPAGE=	http://www.red-bean.com/cvs2cl/
 
 # GPL
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/get-rev.cgi?revision=
 FETCH_BEFORE_ARGS= -o ${FULLDISTDIR}/${DISTFILES}
-DISTFILES=	2.30
+DISTFILES=	${V}
 DIST_SUBDIR=	cvs2cl
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive cvs2cl ;;
 
