@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/01/21 22:58:03 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/05/14 04:35:42 sturm Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/heroes.info
 bin/heroes
 bin/heroeslvl
@@ -7,7 +7,7 @@ info/heroes.info-1
 info/heroes.info-2
 man/man6/heroes.6
 man/man6/heroeslvl.6
-share/heroes${SYSCONFDIR}/heroesrc
+share/heroes/etc/heroesrc
 @comment share/heroes/levels/Makefile.inc
 share/heroes/levels/level.lst
 share/heroes/levels/niv010.lvl
@@ -236,6 +236,6 @@ share/locale/pt_BR/LC_MESSAGES/heroes.mo
 @dirrm share/heroes/pics
 @dirrm share/heroes/mod
 @dirrm share/heroes/levels
-@dirrm share/heroes${SYSCONFDIR}
+@dirrm share/heroes/etc
 @dirrm share/heroes
 @exec install-info --info-dir=%D/info %D/info/heroes.info

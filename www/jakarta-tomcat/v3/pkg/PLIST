@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/12 12:57:28 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/05/14 04:35:43 sturm Exp $
 tomcat/LICENSE
 tomcat/bin/ant
 tomcat/bin/antRun
@@ -402,7 +402,7 @@ tomcat/webapps/test.war
 @dirrm tomcat/doc/appdev/sample/web/images
 @dirrm tomcat/doc/appdev/sample/web
 @dirrm tomcat/doc/appdev/sample/src
-@dirrm tomcat/doc/appdev/sample${SYSCONFDIR}
+@dirrm tomcat/doc/appdev/sample/etc
 @dirrm tomcat/doc/appdev/sample
 @dirrm tomcat/doc/appdev
 @dirrm tomcat/doc
