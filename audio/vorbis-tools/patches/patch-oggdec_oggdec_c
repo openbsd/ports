@@ -1,0 +1,11 @@
+$OpenBSD: patch-oggdec_oggdec_c,v 1.1 2002/09/23 11:17:26 naddy Exp $
+--- oggdec/oggdec.c.orig	Mon Sep 23 13:17:18 2002
++++ oggdec/oggdec.c	Mon Sep 23 13:17:31 2002
+@@ -99,6 +99,7 @@ static void parse_options(int argc, char
+                 break;
+             case 'o':
+                 outfilename = strdup(optarg);
++                break;
+             case 'R':
+                 raw = atoi(optarg);
+                 break;
