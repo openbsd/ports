@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2002/07/26 11:38:35 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.226 2002/07/28 19:51:44 couderc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += oidentd
+     SUBDIR += openh323
      SUBDIR += oproute
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-IO-Interface
