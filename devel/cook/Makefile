@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/20 01:35:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/19 22:38:03 naddy Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	"like make(1), but more powerful and clean"
 
-DISTNAME=	cook-2.19
+DISTNAME=	cook-2.21
 CATEGORIES=	devel
-NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
