@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 15:04:03 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 09:31:02 espie Exp $
 lib/kde3/libchildpanel_panelextension.so.1.0
 lib/kde3/libclock_panelapplet.so.1.0
 lib/kde3/libdockbar_panelextension.so.1.0
@@ -8,6 +8,7 @@ lib/kde3/libimagethumbnail.so.0.0
 lib/kde3/libkasbar_panelextension.so.1.0
 lib/kde3/libkcm_access.so.0.0
 lib/kde3/libkcm_arts.so.0.0
+lib/kde3/libkcm_audiocd.so.0.0
 lib/kde3/libkcm_background.so.0.0
 lib/kde3/libkcm_bell.so.0.0
 lib/kde3/libkcm_clock.so.0.0
@@ -40,7 +41,6 @@ lib/kde3/libkcm_launch.so.0.0
 lib/kde3/libkcm_locale.so.0.0
 lib/kde3/libkcm_midi.so.0.0
 lib/kde3/libkcm_nic.so.0.0
-lib/kde3/libkcm_nsplugin.so.0.0
 lib/kde3/libkcm_passwords.so.0.0
 lib/kde3/libkcm_printmgr.so.0.0
 lib/kde3/libkcm_samba.so.0.0
@@ -57,6 +57,7 @@ lib/kde3/libkdeprint_part.so.0.0
 lib/kde3/libkhelpcenter.so.0.0
 lib/kde3/libkhelpcenterpart.so.0.0
 lib/kde3/libkickermenu_kdeprint.so.0.0
+lib/kde3/libkio_audiocd.so.0.0
 lib/kde3/libkio_filter.so.0.0
 lib/kde3/libkio_finger.so.0.0
 lib/kde3/libkio_floppy.so.0.0
@@ -146,9 +147,8 @@ lib/libkwrite.so.0.0
 lib/libkwrited.so.0.0
 lib/libkxkb.so.0.0
 lib/libmp3lame.so.0.0
-lib/libnsplugin.so.1.1
 lib/libsensordisplays.so.0.0
 lib/libtaskbar.so.1.0
 lib/libtaskmanager.so.1.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/kde3)
+DYNLIBDIR(%D/lib/kde3)

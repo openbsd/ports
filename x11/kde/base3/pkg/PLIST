@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/02 16:55:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/04 09:31:02 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -58,8 +58,6 @@ bin/kwmtheme
 bin/kwrite
 bin/kwrited
 bin/kxkb
-bin/nspluginscan
-bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -168,6 +166,7 @@ lib/kde3/kcm_usb.la
 lib/kde3/kded_favicons.la
 lib/kde3/khelpcenter.la
 lib/kde3/kickermenu_kdeprint.la
+lib/kde3/kio_audiocd.la
 lib/kde3/kio_filter.la
 lib/kde3/kio_finger.la
 lib/kde3/kio_floppy.la
@@ -214,7 +213,7 @@ lib/kde3/kwin_riscos.la
 lib/kde3/kwin_system.la
 lib/kde3/kwin_web.la
 lib/kde3/launcher_panelapplet.la
-lib/kde3/libkcm_nsplugin.la
+lib/kde3/libkcm_audiocd.la
 lib/kde3/libkdeprint_part.la
 lib/kde3/libkhelpcenterpart.la
 lib/kde3/libkshorturifilter.la
@@ -253,7 +252,6 @@ lib/libkonq_sidebar_tree.la
 lib/libkonqsidebarplugin.la
 lib/libkonsolepart.la
 lib/libksgrd.la
-lib/libnsplugin.la
 lib/libsensordisplays.la
 lib/libtaskbar.la
 lib/libtaskmanager.la
@@ -350,6 +348,7 @@ share/applnk/Settings/PowerControl/.directory
 share/applnk/Settings/PowerControl/energy.desktop
 share/applnk/Settings/Sound/.directory
 share/applnk/Settings/Sound/arts.desktop
+share/applnk/Settings/Sound/audiocd.desktop
 share/applnk/Settings/Sound/bell.desktop
 share/applnk/Settings/Sound/kcmnotify.desktop
 share/applnk/Settings/Sound/midi.desktop
@@ -364,7 +363,6 @@ share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/kcmcss.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
-share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
@@ -1574,6 +1572,7 @@ share/icons/hicolor/16x16/apps/arts.png
 share/icons/hicolor/16x16/apps/background.png
 share/icons/hicolor/16x16/apps/bell.png
 share/icons/hicolor/16x16/apps/blender.png
+share/icons/hicolor/16x16/apps/cache.png
 share/icons/hicolor/16x16/apps/clock.png
 share/icons/hicolor/16x16/apps/colors.png
 share/icons/hicolor/16x16/apps/cookie.png
@@ -1596,6 +1595,7 @@ share/icons/hicolor/16x16/apps/hwinfo.png
 share/icons/hicolor/16x16/apps/icons.png
 share/icons/hicolor/16x16/apps/iconthemes.png
 share/icons/hicolor/16x16/apps/input_devices_settings.png
+share/icons/hicolor/16x16/apps/kaddressbook.png
 share/icons/hicolor/16x16/apps/kappfinder.png
 share/icons/hicolor/16x16/apps/kate.png
 share/icons/hicolor/16x16/apps/kcmdevices.png
@@ -1727,6 +1727,7 @@ share/icons/hicolor/32x32/apps/applixware.png
 share/icons/hicolor/32x32/apps/background.png
 share/icons/hicolor/32x32/apps/bell.png
 share/icons/hicolor/32x32/apps/blender.png
+share/icons/hicolor/32x32/apps/cache.png
 share/icons/hicolor/32x32/apps/clanbomber.png
 share/icons/hicolor/32x32/apps/clock.png
 share/icons/hicolor/32x32/apps/colors.png
@@ -1751,6 +1752,7 @@ share/icons/hicolor/32x32/apps/hwinfo.png
 share/icons/hicolor/32x32/apps/icons.png
 share/icons/hicolor/32x32/apps/iconthemes.png
 share/icons/hicolor/32x32/apps/input_devices_settings.png
+share/icons/hicolor/32x32/apps/kaddressbook.png
 share/icons/hicolor/32x32/apps/kappfinder.png
 share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/32x32/apps/kcmdevices.png
@@ -1887,6 +1889,7 @@ share/icons/hicolor/48x48/apps/hwinfo.png
 share/icons/hicolor/48x48/apps/icons.png
 share/icons/hicolor/48x48/apps/iconthemes.png
 share/icons/hicolor/48x48/apps/input_devices_settings.png
+share/icons/hicolor/48x48/apps/kaddressbook.png
 share/icons/hicolor/48x48/apps/kappfinder.png
 share/icons/hicolor/48x48/apps/kate.png
 share/icons/hicolor/48x48/apps/kcmdevices.png
@@ -2154,6 +2157,7 @@ share/mimelnk/print/class.desktop
 share/mimelnk/print/folder.desktop
 share/mimelnk/print/manager.desktop
 share/mimelnk/print/printer.desktop
+share/services/audiocd.protocol
 share/services/bzip.protocol
 share/services/bzip2.protocol
 share/services/finger.protocol
@@ -2341,7 +2345,14 @@ share/wallpapers/only_k.jpg
 share/wallpapers/triplegears.jpg
 %%SHARED%%
 @dirrm share/wallpapers
+@exec mkdir -p %D/share/templates/.source/emptydir
+@dirrm share/templates/.source/emptydir
+@dirrm share/templates/.source
+@dirrm share/templates
 @dirrm share/sounds
+@dirrm share/services/useragentstrings
+@dirrm share/services/searchproviders
+@dirrm share/mimelnk/print
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/vn
 @dirrm share/locale/l10n/ve
@@ -2426,11 +2437,15 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/ag
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
+@dirrm share/locale/en_US
+@dirrm share/locale
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2456,12 +2471,14 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kaddressbook
-@dirrm share/autostart
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
+@dirrm share/apps/kwrite
 @dirrm share/apps/kwin/pics
 @dirrm share/apps/kwin/icewm-themes
 @dirrm share/apps/kwin
+@dirrm share/apps/kthememgr/Themes
+@dirrm share/apps/kthememgr
 @dirrm share/apps/ksysguard/pics
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics/locolor
@@ -2508,6 +2525,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kmenuedit
 @dirrm share/apps/klipper/pics
 @dirrm share/apps/klipper
+@dirrm share/apps/kjobviewer
 @dirrm share/apps/kioslave
 @dirrm share/apps/kio_info
 @dirrm share/apps/kio_finger
@@ -2534,18 +2552,126 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kfindpart/icons
 @dirrm share/apps/kfindpart
 @dirrm share/apps/keditbookmarks
+@dirrm share/apps/kdm/pics/users
+@dirrm share/apps/kdm/pics
+@dirrm share/apps/kdm
+@dirrm share/apps/kdisplay/color-schemes
+@dirrm share/apps/kdisplay/app-defaults
+@dirrm share/apps/kdisplay
 @dirrm share/apps/kdewizard/pics
 @dirrm share/apps/kdewizard
+@dirrm share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop/pics
+@dirrm share/apps/kdesktop/patterns
+@dirrm share/apps/kdesktop/DesktopLinks
+@dirrm share/apps/kdesktop
+@dirrm share/apps/kdeprintfax/icons/hicolor/16x16/actions
+@dirrm share/apps/kdeprintfax/icons/hicolor/16x16
+@dirrm share/apps/kdeprintfax/icons/hicolor
+@dirrm share/apps/kdeprintfax/icons
+@dirrm share/apps/kdeprintfax
+@dirrm share/apps/kdeprint_part
+@dirrm share/apps/kdeprint/template
+@dirrm share/apps/kdcop
 @dirrm share/apps/kcontrol/pics
+@dirrm share/apps/kcontrol
+@dirrm share/apps/kcmusb
+@dirrm share/apps/kcmlocale/pics
+@dirrm share/apps/kcmlocale
+@dirrm share/apps/kcmkeys
+@dirrm share/apps/kcminput/pics
+@dirrm share/apps/kcminput
+@dirrm share/apps/kcmfontinst/pics
+@dirrm share/apps/kcmfontinst/StarOffice
+@dirrm share/apps/kcmfontinst
+@dirrm share/apps/kcmcss
+@dirrm share/apps/kbookmark
+@dirrm share/apps/kate/scripts
+@dirrm share/apps/kate/pics
+@dirrm share/apps/kate/icons/locolor/22x22/actions
+@dirrm share/apps/kate/icons/locolor/22x22
+@dirrm share/apps/kate/icons/locolor/16x16/actions
+@dirrm share/apps/kate/icons/locolor/16x16
+@dirrm share/apps/kate/icons/locolor
+@dirrm share/apps/kate/icons/hicolor/48x48/actions
+@dirrm share/apps/kate/icons/hicolor/48x48
+@dirrm share/apps/kate/icons/hicolor/32x32/actions
+@dirrm share/apps/kate/icons/hicolor/32x32
+@dirrm share/apps/kate/icons/hicolor/22x22/actions
+@dirrm share/apps/kate/icons/hicolor/22x22
+@dirrm share/apps/kate/icons/hicolor/16x16/actions
+@dirrm share/apps/kate/icons/hicolor/16x16
+@dirrm share/apps/kate/icons/hicolor
+@dirrm share/apps/kate/icons
+@dirrm share/apps/kappfinder/apps/WordProcessing
+@dirrm share/apps/kappfinder/apps/Utilities/XUtilities
+@dirrm share/apps/kappfinder/apps/Utilities
+@dirrm share/apps/kappfinder/apps/Toys
+@dirrm share/apps/kappfinder/apps/System/Terminal
+@dirrm share/apps/kappfinder/apps/System/ScreenSavers
+@dirrm share/apps/kappfinder/apps/System
+@dirrm share/apps/kappfinder/apps/Office
+@dirrm share/apps/kappfinder/apps/Multimedia
+@dirrm share/apps/kappfinder/apps/Internet/Terminal
+@dirrm share/apps/kappfinder/apps/Internet
+@dirrm share/apps/kappfinder/apps/Graphics
+@dirrm share/apps/kappfinder/apps/Games/TacticStrategy
+@dirrm share/apps/kappfinder/apps/Games/Roguelikes
+@dirrm share/apps/kappfinder/apps/Games/Emulators
+@dirrm share/apps/kappfinder/apps/Games/Card
+@dirrm share/apps/kappfinder/apps/Games/Board
+@dirrm share/apps/kappfinder/apps/Games/Arcade
+@dirrm share/apps/kappfinder/apps/Games
+@dirrm share/apps/kappfinder/apps/Editors
+@dirrm share/apps/kappfinder/apps/Development
+@dirrm share/apps/kappfinder/apps
+@dirrm share/apps/kappfinder
+@dirrm share/apps/kaddressbook/pics
+@dirrm share/apps/kaddressbook
+@dirrm share/apps/drkonqi/presets
+@dirrm share/apps/drkonqi/pics
+@dirrm share/apps/drkonqi/debuggers
+@dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
+@dirrm share/applnk/WordProcessing
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Toys
+@dirrm share/applnk/System/Terminal
 @dirrm share/applnk/System/ScreenSavers
+@dirrm share/applnk/System
 @dirrm share/applnk/Settings/WebBrowsing
+@dirrm share/applnk/Settings/System
+@dirrm share/applnk/Settings/Sound
+@dirrm share/applnk/Settings/PowerControl
 @dirrm share/applnk/Settings/Personalization
 @dirrm share/applnk/Settings/Peripherals
+@dirrm share/applnk/Settings/Network
 @dirrm share/applnk/Settings/LookNFeel/Windows
+@dirrm share/applnk/Settings/LookNFeel/Themes
+@dirrm share/applnk/Settings/LookNFeel/Desktop
+@dirrm share/applnk/Settings/LookNFeel
+@dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Settings/Help
+@dirrm share/applnk/Settings/FileBrowsing
+@dirrm share/applnk/Settings/Databases
+@dirrm share/applnk/Settings
+@dirrm share/applnk/Office
+@dirrm share/applnk/Multimedia
+@dirrm share/applnk/Internet/Terminal
+@dirrm share/applnk/Internet
+@dirrm share/applnk/Graphics
+@dirrm share/applnk/Games/TacticStrategy
+@dirrm share/applnk/Games/Roguelikes
+@dirrm share/applnk/Games/Card
+@dirrm share/applnk/Games/Board
+@dirrm share/applnk/Games/Arcade
+@dirrm share/applnk/Games
+@dirrm share/applnk/Edutainment
+@dirrm share/applnk/Editors
+@dirrm share/applnk/Development
+@dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
+@dirrm share/applnk
 @dirrm include/kwin
 @dirrm include/ksgrd

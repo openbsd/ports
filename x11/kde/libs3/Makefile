@@ -1,20 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/02 17:06:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/04 09:31:01 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
-VERSION=		3.0rc3
+VERSION=		3.0
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
-MASTER_SITES= http://gd.tuwien.ac.at/pub/kde/%SUBDIR%/
-MASTER_SITE_SUBDIR=	unstable/kde-${VERSION}/src
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/kde-${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
+
+# our linker is insane, at least on some arches
+VMEM_WARNING=Yes
 
 MODULES=	qt3
 LIB_DEPENDS= 	png.2::graphics/png \
@@ -23,7 +26,7 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		audiofile::devel/libaudiofile \
 		pcreposix,pcre::devel/pcre \
 		xml2.6:libxml->=2.4.8:textproc/libxml \
-		xslt.1.6::textproc/libxslt \
+		xslt.1.10:libxsl->=1.0.10:textproc/libxslt \
 		bz2::archivers/bzip2 \
 		artsflow.1.0,artsflow_idl.1.0,kmedia2_idl.1.0,mcop.1.0,qtmcop.1.0,soundserver_idl.1.0::x11/kde/arts3
 
@@ -59,16 +62,6 @@ CONFIGURE_ENV=		QTDOCDIR=${LOCALBASE}/share/doc/qt2/html
 CONFIGURE_ENV+=		ac_aux_files=''
 
 MAKE_ENV=		${CONFIGURE_ENV}
-
-pre-build:
-	@if pkg dependencies check kdelibs-\*; then \
-		if pkg dependencies check ${DISTNAME}; then \
-			:; \
-		else \
-			echo 1>&2 "Error: you must remove your old kdelibs first"; \
-			exit 1; \
-		fi; \
-    	fi
 
 # Ensure qt will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
