@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/12 08:23:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2003/06/20 10:03:49 jolan Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
-DISTNAME=		xcdroast-0.98alpha13
-PKGNAME=		xcdroast-0.98a13
+DISTNAME=		xcdroast-0.98alpha14
+PKGNAME=		xcdroast-0.98a14
 CATEGORIES=		misc x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE=gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/xpms/xcdricon.xpm \
+	${INSTALL_DATA} ${WRKSRC}/xpms/xcdricon.xpm \
 		${PREFIX}/share/pixmaps/xcdricon.xpm
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/17 18:10:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/20 10:03:50 jolan Exp $
 bin/xcdroast
 lib/xcdroast-0.98/bin/cddbtool
 lib/xcdroast-0.98/bin/rmtool
@@ -22,6 +22,7 @@ share/locale/ca/LC_MESSAGES/xcdroast.mo
 share/locale/cs/LC_MESSAGES/xcdroast.mo
 share/locale/da/LC_MESSAGES/xcdroast.mo
 share/locale/de/LC_MESSAGES/xcdroast.mo
+share/locale/el_GR/LC_MESSAGES/xcdroast.mo
 share/locale/es/LC_MESSAGES/xcdroast.mo
 share/locale/et/LC_MESSAGES/xcdroast.mo
 share/locale/fi/LC_MESSAGES/xcdroast.mo
@@ -40,6 +41,7 @@ share/locale/ru/LC_MESSAGES/xcdroast.mo
 share/locale/sk/LC_MESSAGES/xcdroast.mo
 share/locale/sv/LC_MESSAGES/xcdroast.mo
 share/locale/tr/LC_MESSAGES/xcdroast.mo
+share/locale/uk/LC_MESSAGES/xcdroast.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 share/pixmaps/xcdricon.xpm
@@ -48,6 +50,8 @@ share/pixmaps/xcdricon.xpm
 @comment @dirrm share/locale/zh_TW.Big5
 @comment @dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN.GB2312
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/sv/LC_MESSAGES
@@ -84,6 +88,8 @@ share/pixmaps/xcdricon.xpm
 @comment @dirrm share/locale/et
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
+@comment @dirrm share/locale/el_GR/LC_MESSAGES
+@comment @dirrm share/locale/el_GR
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES

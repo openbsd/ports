@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_io_c,v 1.1 2003/06/20 10:03:50 jolan Exp $
+--- src/io.c.orig	Thu May 29 08:14:42 2003
++++ src/io.c	Fri Jun 20 03:36:07 2003
+@@ -6605,7 +6605,7 @@ gchar *p;
+ 				read_output_ctrl = 4;
+ 			} 
+ 			/* check Medium error/buffer underrun */
+-			if (strncmp(tmp2,"Input/output error",18)) {
++			if (strncmp(tmp2,"Input/output error",18) == 0) {
+ 				read_output_ctrl = 5;
+ 			}
+ 		}
