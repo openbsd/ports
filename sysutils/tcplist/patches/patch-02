@@ -1,19 +1,12 @@
-*** lsof.c.orig	Tue Nov 25 19:07:17 1997
---- lsof.c	Tue Nov 25 19:04:03 1997
-***************
-*** 27,33 ****
-  #define LSOFCMD  "lsof -HPsli TCP | awk '{print $3,$NF}' | sort | uniq"
-  #else /* !OLDLSOF */
-  /* These use the current (as of 3.62W, at least) parameters for lsof */
-! #define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$NF}' | sort | uniq"
-  #endif /* !OLDLSOF */
-  #endif /* LSOFCMD */
-  
---- 27,33 ----
-  #define LSOFCMD  "lsof -HPsli TCP | awk '{print $3,$NF}' | sort | uniq"
-  #else /* !OLDLSOF */
-  /* These use the current (as of 3.62W, at least) parameters for lsof */
-! #define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$(NF - 1)}' | sort | uniq"
-  #endif /* !OLDLSOF */
-  #endif /* LSOFCMD */
-  
+$OpenBSD: patch-02,v 1.2 2001/03/12 15:02:26 wilfried Exp $
+--- lsof.c.orig	Mon Mar 12 16:01:00 2001
++++ lsof.c	Mon Mar 12 16:01:00 2001
+@@ -27,7 +27,7 @@
+ #define LSOFCMD  "lsof -HPsli TCP | awk '{print $3,$NF}' | sort | uniq"
+ #else /* !OLDLSOF */
+ /* These use the current (as of 3.62W, at least) parameters for lsof */
+-#define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$NF}' | sort | uniq"
++#define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$(NF - 1)}' | sort | uniq"
+ #endif /* !OLDLSOF */
+ #endif /* LSOFCMD */
+ 
