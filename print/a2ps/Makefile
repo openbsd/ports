@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 1999/10/29 09:40:16 turan Exp $
+# $OpenBSD: Makefile,v 1.13 1999/11/27 13:33:50 kevlo Exp $
 #
 
-BROKEN=		bad packing lists
-
-DISTNAME=	a2ps-4.10.4
+DISTNAME=	a2ps-4.12g
 PKGNAME=	a2ps
 CATEGORIES=	print
 
@@ -11,7 +9,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	weingart@OpenBSD.org
 
-MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
+MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
 # Note: You can get by without these
 #
