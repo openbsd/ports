@@ -3,7 +3,7 @@
 # Date created:		10 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:05 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/30 10:21:48 kevlo Exp $
 
 PKGNAME=	nfsshell-1.0
 
@@ -11,7 +11,6 @@ DISTNAME=	nfsshell
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
 
 WRKDIST=	${WRKDIR}/nfs
 
@@ -24,7 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
+FAKE=		Yes
 
 ALL_TARGET=	nfs
 
