@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2002/07/22 16:47:33 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2002/07/24 14:49:03 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -17,6 +17,9 @@ MASTER_SITES=	http://www.php.net/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/ \
 		http://uk.php.net/distributions/
+
+# UPGRADERS: please read BOTH the PHP and Zend licenses
+# and make sure they are safe before an upgrade
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
