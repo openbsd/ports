@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2003/07/16 08:42:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2004/04/12 10:17:00 xsa Exp $
 
 COMMENT=	"perl interface to tar archives"
-VERSION=	1.03
+VERSION=	1.08
 DISTNAME=	Archive-Tar-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
