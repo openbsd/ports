@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/10/17 03:36:14 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/17 11:55:52 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 DISTNAME=	aterm-0.4.0
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
 		--with-xpm --enable-transparency \
-		--enable-xgetdefault --enable-ttygid \ 
+		--enable-xgetdefault --enable-ttygid \
 		--enable-background-image --enable-fading \
 		--with-jpeg --with-png
 
