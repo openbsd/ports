@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2001/01/07 00:02:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2001/01/09 22:17:30 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += windowmaker
      SUBDIR += wmcalclock
      SUBDIR += wmtime
+     SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += wterm
 #    SUBDIR += x3270
