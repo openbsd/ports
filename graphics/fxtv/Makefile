@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/05/28 23:41:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 2000/05/29 00:40:39 angelos Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
 DISTNAME=	fxtv-1.02
@@ -31,5 +31,8 @@ LIB_DEPENDS=	tiff.35::graphics/tiff \
 USE_X11=	Yes
 USE_GMAKE=      Yes
 MAKE_FLAGS=	-e
+
+pre-build:
+	(cd $(WRKSRC)/videolib/; gmake clean; gmake)
 
 .include <bsd.port.mk>
