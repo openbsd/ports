@@ -2,8 +2,6 @@
 .
     etc
     ..
-    tmp             mode=01777
-    ..
     usr
 	local
 	    bin
@@ -209,12 +207,8 @@
     var
 	db
 	..
-	games            uname=root gname=games mode=0775
-	..
 	log
 	..
 	spool
-	..
-	tmp        mode=01777
 	..
 	www type=dir uname=root gname=daemon mode=755
