@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/06/23 03:26:12 marcm Exp $
-lib/libgnome-desktop-2.so.3.12
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/15 21:48:23 espie Exp $
+@lib lib/libgnome-desktop-2.so.3.12

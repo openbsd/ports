@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/06/22 03:26:03 marcm Exp $
-lib/libgnome-keyring.so.0.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 21:48:23 espie Exp $
+@lib lib/libgnome-keyring.so.0.0

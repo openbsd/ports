@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/10/07 17:06:28 marcm Exp $
-lib/libgnomeprintui-2-2.so.1.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 21:48:23 espie Exp $
+@lib lib/libgnomeprintui-2-2.so.1.0

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/10/21 05:55:16 marcm Exp $
-lib/libgnomevfs.so.0.2
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 21:48:24 espie Exp $
+@lib lib/libgnomevfs.so.0.2
 lib/libgnomevfs-pthread.so
 lib/vfs/modules/libnntp.so
 lib/vfs/modules/libbzip2.so
@@ -12,4 +12,3 @@ lib/vfs/modules/libhttp.so
 lib/vfs/modules/libvfs-pipe.so
 lib/vfs/modules/libvfs-test.so
 lib/vfs/modules/libvfs-translate.so
-DYNLIBDIR(%D/lib)

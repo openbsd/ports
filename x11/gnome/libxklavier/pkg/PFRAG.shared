@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/06/22 03:27:12 marcm Exp $
-lib/libxklavier.so.8.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 21:48:23 espie Exp $
+@lib lib/libxklavier.so.8.0
