@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:50:16 mbalmer Exp $
+lib/
+lib/php/
+pear/lib/.registry/net_socket.reg
+pear/lib/Net/
+pear/lib/Net/Socket.php
