@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/03/30 14:08:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.56 2001/04/05 12:12:13 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -10,27 +10,27 @@
      SUBDIR += checkpassword
      SUBDIR += cmail
      SUBDIR += courier-imap
-     SUBDIR += courier-imap:ldap
-     SUBDIR += courier-imap:ldap,pop3
-     SUBDIR += courier-imap:mysql
-     SUBDIR += courier-imap:mysql,pop3
-     SUBDIR += courier-imap:pop3
+     SUBDIR += courier-imap,ldap
+     SUBDIR += courier-imap,ldap,pop3
+     SUBDIR += courier-imap,mysql
+     SUBDIR += courier-imap,mysql,pop3
+     SUBDIR += courier-imap,pop3
      SUBDIR += cucipop
      SUBDIR += dot-forward
      SUBDIR += elm
      SUBDIR += exim
-     SUBDIR += exim:mysql
-     SUBDIR += exim:pgsql
-     SUBDIR += exim:ldap
-     SUBDIR += exim:no_x11
+     SUBDIR += exim,mysql
+     SUBDIR += exim,pgsql
+     SUBDIR += exim,ldap
+     SUBDIR += exim,no_x11
      SUBDIR += exmh
      SUBDIR += exmh2
      SUBDIR += ezmlm
-     SUBDIR += ezmlm:idx
+     SUBDIR += ezmlm,idx
      SUBDIR += faces
      SUBDIR += fastforward
      SUBDIR += fetchmail
-     SUBDIR += fetchmail:kerberos
+     SUBDIR += fetchmail,kerberos
      SUBDIR += hypermail
      SUBDIR += imap-uw
      SUBDIR += imaputils-uw
@@ -42,15 +42,16 @@
      SUBDIR += metamail
      SUBDIR += mh
      SUBDIR += movemail
-     SUBDIR += mutt:slang
-     SUBDIR += mutt:curses
-     SUBDIR += mutt:slang,imap,pop
+     SUBDIR += mutt,slang
+     SUBDIR += mutt,curses
+     SUBDIR += mutt,slang,imap,pop
      SUBDIR += nmh
      SUBDIR += p5-Mail-Alias
      SUBDIR += p5-Mail-Box
      SUBDIR += p5-Mail-IMAPClient
      SUBDIR += p5-Mail-POP3Client
      SUBDIR += p5-Mail-Tools
+     SUBDIR += p5-MIME-Tools
      SUBDIR += pgpsendmail
      SUBDIR += pine
      SUBDIR += popclient
@@ -61,7 +62,7 @@
      SUBDIR += qmailanalog
      SUBDIR += serialmail
      SUBDIR += solid-pop3d
-     SUBDIR += solid-pop3d:apop
+     SUBDIR += solid-pop3d,apop
      SUBDIR += sylpheed
      SUBDIR += tkrat
      SUBDIR += vmailmgr

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/03/30 22:48:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.51 2001/04/05 12:13:30 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Template
+     SUBDIR += p5-WML-Card
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-RSS
@@ -54,7 +55,7 @@
      SUBDIR += wdiff
      SUBDIR += xerces
      SUBDIR += xml2rfc
-     SUBDIR += xml2rfc:no_x11
+     SUBDIR += xml2rfc,no_x11
      SUBDIR += xpdf
      SUBDIR += xxdiff
 
