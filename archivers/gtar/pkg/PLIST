@@ -1,6 +1,14 @@
 bin/gtar
 @unexec install-info --delete --info-dir=%D/info %D/info/tar.info
 info/tar.info
+info/tar.info-1
+info/tar.info-2
+info/tar.info-3
+info/tar.info-4
+info/tar.info-5
+info/tar.info-6
+info/tar.info-7
+info/tar.info-8
 @exec install-info --info-dir=%D/info %D/info/tar.info
 libexec/grmt
 share/locale/cs/LC_MESSAGES/tar.mo
