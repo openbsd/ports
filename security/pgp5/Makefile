@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/09 03:50:57 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/12/12 22:26:59 dugsong Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -17,9 +17,6 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
-MASTER_SITES0=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
-		ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
-		ftp://ftp.it.net.au/mirrors/crypto/misc/
 
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
@@ -28,11 +25,7 @@ NEED_VERSION=	1.121
 
 MAINTAINER=	fgsch@openbsd.org
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} rsaref2.tar.gz:0
-.endif
-
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 NO_PACKAGE=	yes
 WRKSRC=	${WRKDIR}/pgp50i/src
@@ -53,25 +46,12 @@ pre-fetch:
 .endif
 .endif
 
-pre-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@cp ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
-	@cp ${FILESDIR}/patch-rsaref2-2 ${PATCHDIR}
-	@ln -fs ${WRKDIR}/rsaref2 ${WRKDIR}/pgp50i/rsaref
-.endif
-
 post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@rm -f ${PATCHDIR}/patch-rsaref2
-	@rm -f ${PATCHDIR}/patch-rsaref2-2
-.endif
 
-pre-configure:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@(cd ${WRKDIR}/rsaref2/install/unix && \
-	  env ${MAKE_ENV} make -f makefile rsaref.a)
-	@mv ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c \
+pre-configure:
+	@${MV} ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c \
 	       ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c-
 .endif
 
