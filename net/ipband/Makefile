@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/22 16:04:03 pvalchev Exp $
 BROKEN=		"bogus code"
 
 COMMENT=	"pcap based IP traffic monitor"
@@ -7,8 +7,6 @@ DISTNAME=	ipband-0.7.2
 CATEGORIES=	net
 
 HOMEPAGE=	http://ipband.sourceforge.net/
-
-MAINTAINER=	Vincent Derrien <vincent.derrien@free.fr>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

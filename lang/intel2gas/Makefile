@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:41:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/22 16:04:03 pvalchev Exp $
 
 COMMENT=	"convert Intel assembly language (nasm) to AT&T syntax (gas)"
 
@@ -8,8 +8,6 @@ CATEGORIES=	lang
 
 HOMEPAGE=	http://www.niksula.cs.hut.fi/~mtiihone/intel2gas/
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Vincent Derrien <vincent.derrien@free.fr>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
