@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.17 2004/03/03 01:17:39 brad Exp $
+# $OpenBSD: gnu.port.mk,v 1.18 2004/05/05 11:17:22 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -25,6 +25,9 @@ AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION}
 MAKE_ENV+=AUTOCONF_VERSION=${AUTOCONF_VERSION}
+.  if !${CONFIGURE_STYLE:L:Mno-autoheader}
+CONFIGURE_STYLE+=autoheader
+.  endif
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}
