@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
---- ltmain.sh.orig	Sun Jul  7 04:12:28 2002
-+++ ltmain.sh	Fri Jul 12 00:53:08 2002
+$OpenBSD: patch-ltmain.sh,v 1.7 2003/06/28 15:54:26 sturm Exp $
+--- ltmain.sh.orig	Fri Oct 18 13:44:01 2002
++++ ltmain.sh	Sat Jun 28 17:46:24 2003
 @@ -745,6 +745,7 @@ compiler."
      linker_flags=
      dllsearchpath=
@@ -50,7 +50,17 @@ $OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
        -release)
  	prev=release
  	continue
-@@ -1845,6 +1866,7 @@ compiler."
+@@ -1473,6 +1494,9 @@ compiler."
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  continue
++	  ;;
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
+@@ -1845,6 +1869,7 @@ compiler."
  
  	  if test "$linkmode" = prog || test "$mode" = relink; then
  	    add_shlibpath=
@@ -58,7 +68,7 @@ $OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
-@@ -1865,10 +1887,20 @@ compiler."
+@@ -1865,10 +1890,20 @@ compiler."
  	      add="-l$name"
  	    fi
  
@@ -79,7 +89,7 @@ $OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
  	      test -n "$add_dir" && deplibs="$add_dir $deplibs"
  	      test -n "$add" && deplibs="$add $deplibs"
  	    fi
-@@ -3823,7 +3855,7 @@ fi\
+@@ -3823,7 +3858,7 @@ fi\
  	fi
        done
        # Quote the link command for shipping.
@@ -88,7 +98,7 @@ $OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
        relink_command=`$echo "X$relink_command" | $Xsed -e "$sed_quote_subst"`
  
        # Only create the output if not a dry run.
-@@ -4124,6 +4156,23 @@ relink_command=\"$relink_command\""
+@@ -4124,6 +4159,23 @@ relink_command=\"$relink_command\""
  	dir="$dir$objdir"
  
  	if test -n "$relink_command"; then
@@ -112,7 +122,7 @@ $OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
  	  $echo "$modename: warning: relinking \`$file'" 1>&2
  	  $show "$relink_command"
  	  if $run eval "$relink_command"; then :
-@@ -4412,40 +4461,6 @@ relink_command=\"$relink_command\""
+@@ -4412,40 +4464,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
