@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/15 13:57:57 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/01/02 09:23:11 sturm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
 DISTNAME=		gnome-vfs-1.0.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -32,6 +33,9 @@ WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil X11 Xext Xi gdk \
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread"
+
+# writes to $HOME and other brokenness
+NO_REGRESS=		Yes
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs; \
