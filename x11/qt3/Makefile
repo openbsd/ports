@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/18 05:19:45 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 16:13:28 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
 
-VERSION=	1.0
+VERSION=	1.1
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -152,8 +152,8 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
-	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.10 ${PREFIX}/lib/qt3
-	ln -sf qt3/libqt-mt.so.3.10 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.11 ${PREFIX}/lib/qt3
+	ln -sf qt3/libqt-mt.so.3.11 ${PREFIX}/lib
 .else
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
@@ -165,7 +165,7 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
-LIBRARIES=qt.so.3.10 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
@@ -219,7 +219,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/lrelease.1 ${QT_MANDIR}/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/lupdate.1 ${QT_MANDIR}/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/moc.1 ${QT_MANDIR}/man1/moc3.1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/uic.1 ${QT_MANDIR}/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/uic.1 ${QT_MANDIR}/man1/uic3.1
 	@for i in ${WRKSRC}/doc/man/man3/*; do \
 	  j=$${i%qt}; \
 	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \

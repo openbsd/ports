@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.6 2002/11/23 18:52:23 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.7 2002/12/29 16:13:28 espie Exp $
 share/doc/qt3/html/aboutqt.html
 share/doc/qt3/html/abstract-connections.png
 share/doc/qt3/html/abstractwidgets.html
@@ -29,12 +29,10 @@ share/doc/qt3/html/book-dialog.png
 share/doc/qt3/html/book-main.png
 share/doc/qt3/html/brush-styles.png
 share/doc/qt3/html/bughowto.html
-share/doc/qt3/html/buttongroup-m.png
 share/doc/qt3/html/buttongroup-w.png
 share/doc/qt3/html/buttongroups-example.html
 share/doc/qt3/html/buttons.png
 share/doc/qt3/html/buyhowto.html
-share/doc/qt3/html/callbacks.png
 share/doc/qt3/html/canvas-chart-example.html
 share/doc/qt3/html/canvas-example.html
 share/doc/qt3/html/canvas.html
@@ -84,6 +82,7 @@ share/doc/qt3/html/datetimewidgets.png
 share/doc/qt3/html/dclock-example.html
 share/doc/qt3/html/debug.html
 share/doc/qt3/html/demo-example.html
+share/doc/qt3/html/dependencies.png
 share/doc/qt3/html/designer-manual-1.html
 share/doc/qt3/html/designer-manual-10.html
 share/doc/qt3/html/designer-manual-11.html
@@ -101,13 +100,11 @@ share/doc/qt3/html/designer-manual-7.html
 share/doc/qt3/html/designer-manual-8.html
 share/doc/qt3/html/designer-manual-9.html
 share/doc/qt3/html/designer-manual.html
-share/doc/qt3/html/designer.png
 share/doc/qt3/html/designer.xml
 share/doc/qt3/html/designer1.jpg
 share/doc/qt3/html/designer2.jpg
 share/doc/qt3/html/designer3.jpg
 share/doc/qt3/html/desktop-example.html
-share/doc/qt3/html/despreface.png
 share/doc/qt3/html/dialog1addwidg.png
 share/doc/qt3/html/dialog1layout1.png
 share/doc/qt3/html/dialog1layout2.png
@@ -128,7 +125,6 @@ share/doc/qt3/html/dirview-example.html
 share/doc/qt3/html/display.png
 share/doc/qt3/html/distributingqt.html
 share/doc/qt3/html/dnd.html
-share/doc/qt3/html/doc.png
 share/doc/qt3/html/doneandnext.png
 share/doc/qt3/html/dragaction.png
 share/doc/qt3/html/draganddrop.html
@@ -169,7 +165,6 @@ share/doc/qt3/html/events.html
 share/doc/qt3/html/eventsandfilters.html
 share/doc/qt3/html/examples.html
 share/doc/qt3/html/extension-dialog-example.html
-share/doc/qt3/html/face.jpg
 share/doc/qt3/html/filechooser.png
 share/doc/qt3/html/fileiconview-example.html
 share/doc/qt3/html/fileopen.png
@@ -189,7 +184,6 @@ share/doc/qt3/html/geometry.png
 share/doc/qt3/html/gpl.html
 share/doc/qt3/html/graphics.html
 share/doc/qt3/html/gridlayout.png
-share/doc/qt3/html/groupbox-m.png
 share/doc/qt3/html/groupbox-w.png
 share/doc/qt3/html/groups.html
 share/doc/qt3/html/guibooks.html
@@ -245,7 +239,6 @@ share/doc/qt3/html/mac-differences.html
 share/doc/qt3/html/mail-example.html
 share/doc/qt3/html/mailinglists.html
 share/doc/qt3/html/mainclasses.html
-share/doc/qt3/html/mainwindow-m.png
 share/doc/qt3/html/mainwindow-w.png
 share/doc/qt3/html/makeqpf.html
 share/doc/qt3/html/mdi-example.html
@@ -298,7 +291,6 @@ share/doc/qt3/html/picture-example.html
 share/doc/qt3/html/pictures.html
 share/doc/qt3/html/plugins-howto.html
 share/doc/qt3/html/plugins.html
-share/doc/qt3/html/pnglogo.png
 share/doc/qt3/html/popup-example.html
 share/doc/qt3/html/porting.html
 share/doc/qt3/html/porting2.html
@@ -434,9 +426,7 @@ share/doc/qt3/html/qchar.html
 share/doc/qt3/html/qcharref-members.html
 share/doc/qt3/html/qcharref.html
 share/doc/qt3/html/qcheckbox-h.html
-share/doc/qt3/html/qcheckbox-m.png
 share/doc/qt3/html/qcheckbox-members.html
-share/doc/qt3/html/qcheckbox-w.png
 share/doc/qt3/html/qcheckbox.html
 share/doc/qt3/html/qchecklistitem-members.html
 share/doc/qt3/html/qchecklistitem.html
@@ -458,7 +448,6 @@ share/doc/qt3/html/qcolor.html
 share/doc/qt3/html/qcolordialog-h.html
 share/doc/qt3/html/qcolordialog-members.html
 share/doc/qt3/html/qcolordialog.html
-share/doc/qt3/html/qcolordlg-m.png
 share/doc/qt3/html/qcolordlg-w.png
 share/doc/qt3/html/qcolordrag-members.html
 share/doc/qt3/html/qcolordrag.html
@@ -467,9 +456,7 @@ share/doc/qt3/html/qcolorgroup.html
 share/doc/qt3/html/qcombo1-m.png
 share/doc/qt3/html/qcombo1-w.png
 share/doc/qt3/html/qcombo2-m.png
-share/doc/qt3/html/qcombo2-w.png
 share/doc/qt3/html/qcombo3-m.png
-share/doc/qt3/html/qcombo3-w.png
 share/doc/qt3/html/qcombobox-h.html
 share/doc/qt3/html/qcombobox-members.html
 share/doc/qt3/html/qcombobox.html
@@ -753,7 +740,6 @@ share/doc/qt3/html/qfontdatabase.html
 share/doc/qt3/html/qfontdialog-h.html
 share/doc/qt3/html/qfontdialog-members.html
 share/doc/qt3/html/qfontdialog.html
-share/doc/qt3/html/qfontdlg-m.png
 share/doc/qt3/html/qfontdlg-w.png
 share/doc/qt3/html/qfontinfo-h.html
 share/doc/qt3/html/qfontinfo-members.html
@@ -802,9 +788,7 @@ share/doc/qt3/html/qglwidget.html
 share/doc/qt3/html/qgrid-h.html
 share/doc/qt3/html/qgrid-m.png
 share/doc/qt3/html/qgrid-members.html
-share/doc/qt3/html/qgrid-w.png
 share/doc/qt3/html/qgrid.html
-share/doc/qt3/html/qgrid.png
 share/doc/qt3/html/qgridlayout-members.html
 share/doc/qt3/html/qgridlayout.html
 share/doc/qt3/html/qgridview-h.html
@@ -814,7 +798,6 @@ share/doc/qt3/html/qgroupbox-h.html
 share/doc/qt3/html/qgroupbox-members.html
 share/doc/qt3/html/qgroupbox.html
 share/doc/qt3/html/qgroupboxes.png
-share/doc/qt3/html/qgrpbox-m.png
 share/doc/qt3/html/qgrpbox-w.png
 share/doc/qt3/html/qguardedptr-h.html
 share/doc/qt3/html/qguardedptr-members.html
@@ -822,9 +805,7 @@ share/doc/qt3/html/qguardedptr.html
 share/doc/qt3/html/qhbox-h.html
 share/doc/qt3/html/qhbox-m.png
 share/doc/qt3/html/qhbox-members.html
-share/doc/qt3/html/qhbox-w.png
 share/doc/qt3/html/qhbox.html
-share/doc/qt3/html/qhbox.png
 share/doc/qt3/html/qhboxlayout-members.html
 share/doc/qt3/html/qhboxlayout.html
 share/doc/qt3/html/qhboxlayout.png
@@ -977,8 +958,6 @@ share/doc/qt3/html/qlistviewitems.png
 share/doc/qt3/html/qlocalfs-h.html
 share/doc/qt3/html/qlocalfs-members.html
 share/doc/qt3/html/qlocalfs.html
-share/doc/qt3/html/qlock-members.html
-share/doc/qt3/html/qlock.html
 share/doc/qt3/html/qmacstyle-members.html
 share/doc/qt3/html/qmacstyle.html
 share/doc/qt3/html/qmacstyle_mac-h.html
@@ -1138,7 +1117,6 @@ share/doc/qt3/html/qpopupmenu-h.html
 share/doc/qt3/html/qpopupmenu-members.html
 share/doc/qt3/html/qpopupmenu.html
 share/doc/qt3/html/qprintdlg-m.png
-share/doc/qt3/html/qprintdlg-w.png
 share/doc/qt3/html/qprinter-h.html
 share/doc/qt3/html/qprinter-members.html
 share/doc/qt3/html/qprinter.html
@@ -1206,13 +1184,6 @@ share/doc/qt3/html/qregion.html
 share/doc/qt3/html/qresizeevent-members.html
 share/doc/qt3/html/qresizeevent.html
 share/doc/qt3/html/qrtlcodec-h.html
-share/doc/qt3/html/qsaddlab.png
-share/doc/qt3/html/qsaddline.png
-share/doc/qt3/html/qsaddpush.png
-share/doc/qt3/html/qsaddspace.png
-share/doc/qt3/html/qsconnect1.png
-share/doc/qt3/html/qsconnect2.png
-share/doc/qt3/html/qsconnect3.png
 share/doc/qt3/html/qscrbar-m.png
 share/doc/qt3/html/qscrbar-w.png
 share/doc/qt3/html/qscreen-members.html
@@ -1228,8 +1199,6 @@ share/doc/qt3/html/qscrollview-vp.png
 share/doc/qt3/html/qscrollview-vp2.png
 share/doc/qt3/html/qscrollview-w.png
 share/doc/qt3/html/qscrollview.html
-share/doc/qt3/html/qsdialog.png
-share/doc/qt3/html/qseditwid.png
 share/doc/qt3/html/qsemaphore-h.html
 share/doc/qt3/html/qsemaphore-members.html
 share/doc/qt3/html/qsemaphore.html
@@ -1270,15 +1239,11 @@ share/doc/qt3/html/qsizepolicy.html
 share/doc/qt3/html/qsjiscodec-h.html
 share/doc/qt3/html/qsjiscodec-members.html
 share/doc/qt3/html/qsjiscodec.html
-share/doc/qt3/html/qslayout1.png
-share/doc/qt3/html/qslayout2.png
-share/doc/qt3/html/qslayout3.png
 share/doc/qt3/html/qslider-h.html
 share/doc/qt3/html/qslider-m.png
 share/doc/qt3/html/qslider-members.html
 share/doc/qt3/html/qslider-w.png
 share/doc/qt3/html/qslider.html
-share/doc/qt3/html/qsmetric.png
 share/doc/qt3/html/qsocket-h.html
 share/doc/qt3/html/qsocket-members.html
 share/doc/qt3/html/qsocket.html
@@ -1301,14 +1266,11 @@ share/doc/qt3/html/qspinbox-m.png
 share/doc/qt3/html/qspinbox-members.html
 share/doc/qt3/html/qspinbox-w.png
 share/doc/qt3/html/qspinbox.html
-share/doc/qt3/html/qspinbox2-m.png
-share/doc/qt3/html/qspinbox2-w.png
 share/doc/qt3/html/qsplitter-h.html
 share/doc/qt3/html/qsplitter-m.png
 share/doc/qt3/html/qsplitter-members.html
 share/doc/qt3/html/qsplitter-w.png
 share/doc/qt3/html/qsplitter.html
-share/doc/qt3/html/qsprojset.png
 share/doc/qt3/html/qsql-h.html
 share/doc/qt3/html/qsql-members.html
 share/doc/qt3/html/qsql.html
@@ -1355,7 +1317,6 @@ share/doc/qt3/html/qsqlrecordinfo.html
 share/doc/qt3/html/qsqlresult-h.html
 share/doc/qt3/html/qsqlresult-members.html
 share/doc/qt3/html/qsqlresult.html
-share/doc/qt3/html/qstab.png
 share/doc/qt3/html/qstack.html
 share/doc/qt3/html/qstatusbar-h.html
 share/doc/qt3/html/qstatusbar-m.png
@@ -1401,7 +1362,6 @@ share/doc/qt3/html/qt-members.html
 share/doc/qt3/html/qt-template-lib.html
 share/doc/qt3/html/qt.html
 share/doc/qt3/html/qt.xml
-share/doc/qt3/html/qt30-class-chart.png
 share/doc/qt3/html/qt31-class-chart.png
 share/doc/qt3/html/qtab-members.html
 share/doc/qt3/html/qtab.html
@@ -1477,10 +1437,6 @@ share/doc/qt3/html/qtimerevent-members.html
 share/doc/qt3/html/qtimerevent.html
 share/doc/qt3/html/qtl-qvaluelist-example.html
 share/doc/qt3/html/qtl.html
-share/doc/qt3/html/qtlogo.png
-share/doc/qt3/html/qtmultilineedit-h.html
-share/doc/qt3/html/qtmultilineedit-members.html
-share/doc/qt3/html/qtmultilineedit.html
 share/doc/qt3/html/qtoolbar-h.html
 share/doc/qt3/html/qtoolbar-members.html
 share/doc/qt3/html/qtoolbar.html
@@ -1500,9 +1456,6 @@ share/doc/qt3/html/qtranslatormessage.html
 share/doc/qt3/html/qtsciicodec-h.html
 share/doc/qt3/html/qtsciicodec-members.html
 share/doc/qt3/html/qtsciicodec.html
-share/doc/qt3/html/qttableview-h.html
-share/doc/qt3/html/qttableview-members.html
-share/doc/qt3/html/qttableview.html
 share/doc/qt3/html/quridrag-members.html
 share/doc/qt3/html/quridrag.html
 share/doc/qt3/html/qurl-h.html
@@ -1536,9 +1489,7 @@ share/doc/qt3/html/qvariant.html
 share/doc/qt3/html/qvbox-h.html
 share/doc/qt3/html/qvbox-m.png
 share/doc/qt3/html/qvbox-members.html
-share/doc/qt3/html/qvbox-w.png
 share/doc/qt3/html/qvbox.html
-share/doc/qt3/html/qvbox.png
 share/doc/qt3/html/qvboxlayout-members.html
 share/doc/qt3/html/qvboxlayout.html
 share/doc/qt3/html/qvboxlayout.png
@@ -1652,7 +1603,6 @@ share/doc/qt3/html/session.png
 share/doc/qt3/html/shared.html
 share/doc/qt3/html/shclass.html
 share/doc/qt3/html/showimg-example.html
-share/doc/qt3/html/signals-and-slots.png
 share/doc/qt3/html/signalsandslots.html
 share/doc/qt3/html/simple-application-example.html
 share/doc/qt3/html/simple-application.html
@@ -1662,7 +1612,6 @@ share/doc/qt3/html/small-table-example-example.html
 share/doc/qt3/html/smooth.png
 share/doc/qt3/html/sound-example.html
 share/doc/qt3/html/splitter-example.html
-share/doc/qt3/html/splitter-views-m.png
 share/doc/qt3/html/splitter-views-w.png
 share/doc/qt3/html/sql-driver.html
 share/doc/qt3/html/sql-examples.html
@@ -1771,7 +1720,6 @@ share/doc/qt3/html/tablet-example.html
 share/doc/qt3/html/tagreader-example.html
 share/doc/qt3/html/tagreader-with-features-example.html
 share/doc/qt3/html/templates.html
-share/doc/qt3/html/test.png
 share/doc/qt3/html/tetrix-example.html
 share/doc/qt3/html/text.html
 share/doc/qt3/html/textedit-example.html
@@ -1802,7 +1750,6 @@ share/doc/qt3/html/tt3_11_about_pt.png
 share/doc/qt3/html/tt3_11_en.png
 share/doc/qt3/html/tt3_11_pt.png
 share/doc/qt3/html/tutorial.html
-share/doc/qt3/html/tutorial.png
 share/doc/qt3/html/tutorial1-01.html
 share/doc/qt3/html/tutorial1-02.html
 share/doc/qt3/html/tutorial1-03.html

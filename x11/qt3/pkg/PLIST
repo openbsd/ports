@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/11/23 22:00:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/12/29 16:13:28 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -350,14 +350,12 @@ include/X11/qt3/qtextview.h
 include/X11/qt3/qthread.h
 include/X11/qt3/qtimer.h
 include/X11/qt3/qtl.h
-include/X11/qt3/qtmultilineedit.h
 include/X11/qt3/qtoolbar.h
 include/X11/qt3/qtoolbutton.h
 include/X11/qt3/qtooltip.h
 include/X11/qt3/qtranslator.h
 include/X11/qt3/qtsciicodec.h
 include/X11/qt3/qtstream.h
-include/X11/qt3/qttableview.h
 include/X11/qt3/qurl.h
 include/X11/qt3/qurlinfo.h
 include/X11/qt3/qurloperator.h
@@ -402,7 +400,7 @@ lib/qt3/libeditor.a
 lib/qt3/man/man1/lrelease.1
 lib/qt3/man/man1/lupdate.1
 lib/qt3/man/man1/moc3.1
-lib/qt3/man/man1/uic.1
+lib/qt3/man/man1/uic3.1
 lib/qt3/man/man3/QAccel.3
 lib/qt3/man/man3/QAccessible.3
 lib/qt3/man/man3/QAccessibleInterface.3
@@ -598,7 +596,6 @@ lib/qt3/man/man3/QListView.3
 lib/qt3/man/man3/QListViewItem.3
 lib/qt3/man/man3/QListViewItemIterator.3
 lib/qt3/man/man3/QLocalFs.3
-lib/qt3/man/man3/QLock.3
 lib/qt3/man/man3/QMacStyle.3
 lib/qt3/man/man3/QMainWindow.3
 lib/qt3/man/man3/QMap.3
@@ -993,7 +990,6 @@ lib/qt3/man/man3/qlistview.3
 lib/qt3/man/man3/qlistviewitem.3
 lib/qt3/man/man3/qlistviewitemiterator.3
 lib/qt3/man/man3/qlocalfs.3
-lib/qt3/man/man3/qlock.3
 lib/qt3/man/man3/qmacstyle.3
 lib/qt3/man/man3/qmainwindow.3
 lib/qt3/man/man3/qmap.3
@@ -1315,10 +1311,7 @@ share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README.QT
 share/doc/qt3/changes-3.${VERSION}
-share/doc/qt3/changes-3.${VERSION}-b1
-share/doc/qt3/changes-3.${VERSION}-b2
 %%SHARED%%
-@unexec rmdir 2>/dev/null %D/share/doc/qt3 || true
 @exec mkdir -p %D/lib/qt3/plugins/styles
 @exec mkdir -p %D/lib/qt3/plugins/sqldrivers
 @dirrm lib/qt3/plugins/styles
