@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2001/08/24 15:08:54 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2001/09/01 15:27:15 jcs Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += mhonarc
      SUBDIR += mindterm
 #    SUBDIR += mmm
+     SUBDIR += mod_auth_radius
      SUBDIR += mod_frontpage
      SUBDIR += mod_gzip
      SUBDIR += mod_perl
