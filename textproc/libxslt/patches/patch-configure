@@ -1,7 +1,83 @@
-$OpenBSD: patch-configure,v 1.1 2001/09/21 17:31:55 shell Exp $
---- configure.orig	Sat Sep 22 00:59:09 2001
-+++ configure	Sat Sep 22 01:00:25 2001
-@@ -6359,7 +6359,7 @@
+$OpenBSD: patch-configure,v 1.2 2001/09/22 03:17:19 shell Exp $
+--- configure.orig	Thu Sep 13 05:06:53 2001
++++ configure	Sat Sep 22 11:10:05 2001
+@@ -2942,6 +2942,14 @@
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+   old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case "$host_os" in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++  ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  ;;
++  esac
+ fi
+ 
+ # Allow CC to be a program name with arguments.
+@@ -3439,6 +3447,9 @@
+   fi
+   ;;
+ 
++openbsd*)
++  with_gnu_id=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -3842,10 +3853,21 @@
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd[[01]].* | openbsd2.[[0-7]] | openbsd2.[[0-7]].*)
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++       hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++       if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++         export_dynamic_flag_spec='${wl}-E'
++       fi
++      ;;
++    esac
+     ;;
+ 
+   os2*)
+@@ -4322,9 +4344,23 @@
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
++  need_lib_prefix=no
++  need_version=no
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    case "$host_os" in
++    openbsd2.[89] | openbsd2.[89].*)
++      shlibpath_overrides_runpath=no
++    ;;
++    *)
++      shlibpath_overrides_runpath=yes
++    ;;
++    esac
++  else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
++    shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+@@ -6359,7 +6395,7 @@
  # Check whether --with-libxml-include-prefix or --without-libxml-include-prefix was given.
  if test "${with_libxml_include_prefix+set}" = set; then
    withval="$with_libxml_include_prefix"
@@ -10,7 +86,7 @@ $OpenBSD: patch-configure,v 1.1 2001/09/21 17:31:55 shell Exp $
  
  fi
  
-@@ -6400,7 +6400,7 @@
+@@ -6400,7 +6436,7 @@
  	if test "$vers" -ge `echo $LIBXML_REQUIRED_VERSION | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
  	then
  		LIBXML_LIBS="`$XML_CONFIG --libs`"
