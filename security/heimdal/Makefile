@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/08 09:04:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/08 10:06:41 jakob Exp $
 
 COMES_WITH=	3.0
 
@@ -6,7 +6,7 @@ COMMENT=	a Kerberos 5 implementation
 
 DISTNAME=	heimdal-0.4e
 CATEGORIES=    	security
-NEED_VERSION=	1.363
+NEED_VERSION=	1.405
 
 HOMEPAGE=	http://www.pdc.kth.se/heimdal/
 
