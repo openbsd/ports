@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/05/14 05:33:57 brad Exp $
-lib/libjasper.so.1.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/10 14:01:02 espie Exp $
+@lib lib/libjasper.so.1.0

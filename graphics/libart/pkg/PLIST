@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:17:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/10 14:01:02 espie Exp $
 bin/libart2-config
+include/libart-2.0/
+include/libart-2.0/libart_lgpl/
 include/libart-2.0/libart_lgpl/art_affine.h
 include/libart-2.0/libart_lgpl/art_alphagamma.h
 include/libart-2.0/libart_lgpl/art_bpath.h
@@ -46,8 +48,6 @@ include/libart-2.0/libart_lgpl/libart-features.h
 include/libart-2.0/libart_lgpl/libart.h
 lib/libart_lgpl_2.a
 lib/libart_lgpl_2.la
+lib/pkgconfig/
 lib/pkgconfig/libart-2.0.pc
 %%SHARED%%
-@dirrm lib/pkgconfig
-@dirrm include/libart-2.0/libart_lgpl
-@dirrm include/libart-2.0
