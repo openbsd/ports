@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/26 18:56:24 espie Exp $
 bin/xfdesktop
 lib/xfce4/
 lib/xfce4/mcs-plugins/
@@ -7,7 +7,9 @@ lib/xfce4/mcs-plugins/backdrop_settings.la
 lib/xfce4/mcs-plugins/workspaces_settings.a
 lib/xfce4/mcs-plugins/workspaces_settings.la
 share/examples/xfdesktop/
+@sample ${SYSCONFDIR}/xfce4/
 share/examples/xfdesktop/menu.xml
+@sample ${SYSCONFDIR}/xfce4/menu.xml
 share/examples/xfdesktop/menu.xml.az
 share/examples/xfdesktop/menu.xml.ca
 share/examples/xfdesktop/menu.xml.de
