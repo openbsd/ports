@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.1 2001/10/06 12:37:38 espie Exp $
+--- kdm/kfrontend/Makefile.in.orig	Sat Oct  6 14:14:27 2001
++++ kdm/kfrontend/Makefile.in	Sat Oct  6 14:15:44 2001
+@@ -683,7 +683,8 @@ installdirs mostlyclean-generic distclea
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-install-data-local:
++install-data-local:;
++unused:
+ 	@if test ! -d $(DESTDIR)$(kde_confdir)/kdm; then \
+ 	    $(mkinstalldirs) $(DESTDIR)$(kde_confdir)/kdm; \
+ 	    ./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm; \
