@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/03 17:10:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/11/25 12:20:23 naddy Exp $
+bin/sndfile-convert
 bin/sndfile-info
 bin/sndfile-play
 include/sndfile.h
 lib/libsndfile.a
 lib/libsndfile.la
 lib/pkgconfig/sndfile.pc
+man/man1/sndfile-convert.1
 man/man1/sndfile-info.1
 man/man1/sndfile-play.1
 share/octave/site/m/sndfile_load.m
