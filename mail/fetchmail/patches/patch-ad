@@ -1,0 +1,19 @@
+*** config.sub.orig	Sun Nov 23 22:20:43 1997
+--- config.sub	Sun Nov 23 22:21:19 1997
+***************
+*** 641,647 ****
+  	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+  	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+  	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+! 	      | -udi* | -eabi* | -lites* )
+  	# Remember, each alternative MUST END IN *, to match a version number.
+  		;;
+  	-sunos5*)
+--- 641,647 ----
+  	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+  	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+  	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+! 	      | -udi* | -eabi* | -lites* | -openbsd* )
+  	# Remember, each alternative MUST END IN *, to match a version number.
+  		;;
+  	-sunos5*)

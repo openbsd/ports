@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Wed Oct  1 19:10:58 1997
---- Makefile.in	Tue Oct  7 15:48:12 1997
+*** Makefile.in.orig	Wed Oct  1 11:10:58 1997
+--- Makefile.in	Sun Nov 23 19:20:52 1997
 ***************
 *** 35,41 ****
   defines =  -DRELEASE_ID=\"$(VERS)\" $(DEFS)
@@ -13,7 +13,7 @@
   defines =  -DRELEASE_ID=\"$(VERS)\" $(DEFS)
   
   # If your system needs extra libraries loaded in, define them here.
-! LOADLIBS = @LIBS@ @LEXLIB@ -lmd
+! LOADLIBS = @LIBS@ @LEXLIB@ # -lmd
   # LOADLIBS = -lsocket3r -lunix3r	# QNX
   
   # Any extra object files your system needs.
