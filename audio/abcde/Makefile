@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/03/02 14:14:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/14 22:08:54 naddy Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -8,8 +8,6 @@ PKGNAME=	abcde-$V
 CATEGORIES=	audio
 
 HOMEPAGE=	http://frantica.lly.org/~rcw/abcde/page/
-
-MAINTAINER=	Han Boetes <han@mijncomputer.nl>
 
 # Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes
