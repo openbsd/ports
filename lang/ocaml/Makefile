@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/09/12 17:01:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2002/09/14 03:21:29 pvalchev Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
 
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
