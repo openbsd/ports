@@ -1,0 +1,24 @@
+$OpenBSD: patch-vncviewer_zbd,v 1.1.1.1 2001/10/31 18:04:54 lebel Exp $
+--- vncviewer.zbd.orig	Thu Apr 12 14:07:44 2001
++++ vncviewer.zbd	Wed Oct 31 10:44:58 2001
+@@ -7,16 +7,18 @@
+ verbosity 1	# Basic messages only
+ 
+ server false	# It's a client
++# If you use VNC, you may have to turn 'detached' off
++# so it can read the password form the terminal.
+ detached true	# Detach from terminal
+ 
+ message "Starting VNC viewer"
+ 
+ # On Windows systems you might use the following:
+ 
+-command '"c:\Program Files\ORL\VNC\vncviewer.exe" localhost:%d'
++# command '"c:\Program Files\ORL\VNC\vncviewer.exe" localhost:%d'
+ 
+ # On UNIX systems you might use the following:
+ 
+-# command 'vncviewer localhost:%d'
++command 'vncviewer localhost:%d'
+ 
+ compression zlib:6	# Request normal Zlib compression
