@@ -1,0 +1,24 @@
+--- ethereal.c.~1~	Wed Sep 16 20:12:38 1998
++++ ethereal.c	Tue Sep 22 12:25:51 1998
+@@ -122,8 +122,21 @@
+     /* reload so it goes in effect. Also we set data_out_file which 
+        tells the tcp code to output the data */
+     close_cap_file( &cf, info_bar, file_ctx);
++#if defined(__OpenBSD__)
++    {
++      int tmp_fd;
++
++      snprintf( "%sXXXXXXXXXX", sizeof filename1, P_tmpdir );
++      tmp_fd = mkstemp( filename1 );
++      if ( tmp_fd == -1 ) {
++	err( 1, "can't create temp file %s", filename1 );
++      }
++      data_out_file = fdopen( tmp_fd, "a" );
++    }
++#else
+     strcpy( filename1, tmpnam(NULL) );
+     data_out_file = fopen( filename1, "a" );
++#endif
+     if( data_out_file == NULL ) {
+       fprintf( stderr, "Could not open tmp file %s\n", filename1 );
+     }
