@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
---- src/Makefile.orig	2003-10-27 11:13:35.000000000 -0800
-+++ src/Makefile	2003-10-27 11:15:08.000000000 -0800
-@@ -28,7 +28,7 @@ PKG_INCLUDE = `$(PKG_CONFIG) --cflags gt
+$OpenBSD: patch-src_Makefile,v 1.2 2003/12/16 10:04:37 sturm Exp $
+--- src/Makefile.orig	2003-12-11 10:31:04.000000000 -0800
++++ src/Makefile	2003-12-14 11:02:29.000000000 -0800
+@@ -44,7 +44,7 @@ PKG_INCLUDE = `$(PKG_CONFIG) --cflags gt
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
 +FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
  FLAGS+= $(PTHREAD_INC)
  
- LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS)
-@@ -49,7 +49,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS)
+@@ -72,7 +72,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
  endif
  
  
