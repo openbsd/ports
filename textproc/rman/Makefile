@@ -3,7 +3,7 @@
 # Date created:         18 Nov 1997
 # Whom:                 ejovi
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/19 00:08:17 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/19 00:25:30 joey Exp $
 #
 
 DISTNAME=       rman-3.0.3a12
