@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/08 02:36:00 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/30 02:57:44 marc Exp $
 #
 
 DISTNAME=	acroread_linux_301
@@ -11,6 +11,7 @@ PKGNAME=	acroread-3.01
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
+ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
 
