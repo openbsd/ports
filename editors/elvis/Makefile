@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/04/08 13:28:59 naddy Exp $
 
 COMMENT=	"clone of the ex/vi text editor"
 
@@ -6,8 +6,6 @@ DISTNAME=	elvis-2.1_4
 PKGNAME=	${DISTNAME:S/_/./}
 CATEGORIES=	editors
 HOMEPAGE=	http://www.fh-wedel.de/elvis/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
