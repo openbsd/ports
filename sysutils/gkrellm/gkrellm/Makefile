@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/10/16 16:33:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/16 10:16:29 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,6 +19,11 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		ICE SM X11 Xext Xft Xinerama Xrender atk-1.0.0.0 c \
+			crypto fontconfig freetype glib-2.0.0.0 \
+			gmodule-2.0.0.0 gobject-2.0.0.0 iconv intl kvm m \
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			pthread ssl Xcursor
 
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/
 EXTRACT_SUFX=	.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2004/08/11 21:35:37 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2004/12/16 10:16:29 alek Exp $
 
 MAINTAINER?=		Peter Hessler <spambox@theapt.org>
 
@@ -7,6 +7,14 @@ PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
+WANTLIB?=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
+			freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
+			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+			gthread-2.0.0.0 gtk-x11-2.0.0.0 iconv intl m \
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 Xcursor
+.if defined(EXTRA_WANTLIB)
+WANTLIB+=	${EXTRA_WANTLIB}
+.endif
 
 BUILD_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client \
 		:pkgconfig-*:devel/pkgconfig
