@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-vorbis,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
+lib/bmp/Input/libvorbis.so
