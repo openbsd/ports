@@ -1,6 +1,6 @@
---- uip/rcvtty.c.~1~	Wed Jan 14 18:16:11 1998
-+++ uip/rcvtty.c	Wed Apr 29 11:36:32 1998
-@@ -188,8 +188,9 @@
+--- uip/rcvtty.c.orig	Sat May 16 14:32:08 1998
++++ uip/rcvtty.c	Thu May 28 11:31:44 1998
+@@ -192,8 +192,9 @@
      char tmpfil[BUFSIZ];
      struct stat st;
  

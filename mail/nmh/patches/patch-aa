@@ -1,5 +1,5 @@
---- config.h.in.~1~	Tue Feb 10 22:46:45 1998
-+++ config.h.in	Tue Apr 28 22:32:25 1998
+--- config.h.in.orig	Mon May 18 14:12:57 1998
++++ config.h.in	Thu May 28 11:31:43 1998
 @@ -37,9 +37,9 @@
   *  OpenBSD 2.x
   *  BSD/OS 2.x
@@ -24,7 +24,7 @@
  /* #define LOCKF_LOCKING 1 */
  /* #define FLOCK_LOCKING 1 */
  
-@@ -139,7 +139,7 @@
+@@ -146,7 +146,7 @@
   * Define the default creation modes for folders and messages.
   */
  #define DEFAULT_FOLDER_MODE "0700"

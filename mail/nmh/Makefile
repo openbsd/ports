@@ -1,19 +1,19 @@
 # OpenBSD makefile for:	nmh
-# Version required:	0.24
+# Version required:	0.26
 # Date created:		1998-Apr-28
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/30 04:24:30 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/28 21:53:50 marc Exp $
 #
 
 # What port/package will be created
 #
-DISTNAME=		nmh-0.24
+DISTNAME=		nmh-0.26
 CATEGORIES=     	mail
 
 # where to send bitches about this port
 #
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=		marc@openbsd.org
 
 # where the source files and patches can be fetched
 #
