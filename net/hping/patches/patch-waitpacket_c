@@ -1,0 +1,12 @@
+$OpenBSD: patch-waitpacket_c,v 1.1 2004/04/21 00:16:12 naddy Exp $
+--- waitpacket.c.orig	2004-04-20 22:20:56.000000000 +0200
++++ waitpacket.c	2004-04-20 22:21:06.000000000 +0200
+@@ -179,7 +179,7 @@ void log_icmp_ts(void *ts)
+ 		(unsigned int) ntohl(icmp_tstamp.orig),
+ 		(unsigned int) ntohl(icmp_tstamp.recv),
+ 		(unsigned int) ntohl(icmp_tstamp.tran));
+-	printf("ICMP timestamp RTT tsrtt=%lu\n\n",
++	printf("ICMP timestamp RTT tsrtt=%u\n\n",
+ 		(get_midnight_ut_ms() - ntohl(icmp_tstamp.orig)));
+ }
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/01 16:23:36 jose Exp $
+# $OpenBSD: Makefile,v 1.17 2004/04/21 00:16:12 naddy Exp $
 
 COMMENT=	"TCP/UDP ping/traceroute tool"
 
-DISTNAME=	hping2.0.0-rc1
-PKGNAME=	hping-2.0.0rc1
+DISTNAME=	hping2.0.0-rc2
+PKGNAME=	hping-2.0.0rc2
 CATEGORIES=	net
 HOMEPAGE=	http://www.hping.org/
 
@@ -17,13 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WRKDIST=	${WRKDIR}/hping2
+WRKDIST=	${WRKDIR}/hping2-rc2
 
 MAKE_FLAGS=	CC="${CC}" CCOPT="${CFLAGS} -Wall"
 
 CONFIGURE_STYLE= simple
 
 post-extract:
+	@rm -f ${WRKSRC}/*.orig
 	@sed -e s#hping2#hping# -e s#HPING2#HPING# \
 		${WRKSRC}/docs/hping2.8 > ${WRKSRC}/docs/hping.8
 
