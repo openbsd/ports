@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 01:36:18 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/21 02:51:21 msf Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT= 	"tools to test taintedness"
 
-DISTNAME=	Test-Taint-1.02
+DISTNAME=	Test-Taint-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
