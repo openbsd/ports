@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2004/04/20 01:45:30 jolan Exp $
---- Makefile.orig	2004-04-19 11:15:33.000000000 -0500
-+++ Makefile	2004-04-19 11:17:03.000000000 -0500
+$OpenBSD: patch-Makefile,v 1.5 2004/09/15 20:35:59 brad Exp $
+--- Makefile.orig	Wed Sep 15 16:22:34 2004
++++ Makefile	Wed Sep 15 16:22:34 2004
 @@ -4,7 +4,7 @@
  
  # Where to install binary and manpage on "make install":
@@ -18,10 +18,11 @@ $OpenBSD: patch-Makefile,v 1.4 2004/04/20 01:45:30 jolan Exp $
  	@echo "make bsdos          BSDI BSD/OS"
  	@echo "make bsdos4         BSDI BSD/OS 4.0"
  	@echo "make bsdos-nas      BSDI BSD/OS with NAS support"
-@@ -510,6 +511,30 @@ netbsd-i386:
+@@ -509,6 +510,30 @@ netbsd-i386:
+ 			-funroll-all-loops -ffast-math -DROT_I386 \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DNETBSD' \
  		mpg123-make
- 
++
 +.if ${MACHINE_ARCH} == "i386"
 +ARCHOPTS=	-DROT_I386 -DI386_ASSEM -DPENTIUM_OPT
 +ARCHOBJS=	decode_i386.o decode_i586.o dct64_i386.o
@@ -45,7 +46,6 @@ $OpenBSD: patch-Makefile,v 1.4 2004/04/20 01:45:30 jolan Exp $
 +			${ARCHOPTS} -I${LOCALBASE}/include \
 +			-DREAL_IS_FLOAT -DTERM_CONTROL \
 +			-DINET6 -DUSE_MMAP -DOPENBSD' mpg123-make
-+
+ 
  bsdos:
  	$(MAKE) CC=shlicc2 LDFLAGS= \
- 		OBJECTS='decode_i386.o dct64_i386.o \

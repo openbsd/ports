@@ -1,6 +1,6 @@
-$OpenBSD: patch-audio.c,v 1.2 2001/04/24 00:48:12 naddy Exp $
---- audio.c.orig	Tue Apr  6 17:53:05 1999
-+++ audio.c	Sat Apr 14 22:58:42 2001
+$OpenBSD: patch-audio.c,v 1.3 2004/09/15 20:35:59 brad Exp $
+--- audio.c.orig	Tue Apr  6 11:53:05 1999
++++ audio.c	Wed Sep 15 16:22:34 2004
 @@ -68,41 +68,42 @@ void audio_capabilities(struct audio_inf
  {
  	int fmts;
@@ -56,9 +56,9 @@ $OpenBSD: patch-audio.c,v 1.2 2001/04/24 00:48:12 naddy Exp $
  			}
  		}
 -	}
--
--	audio_close(&ai1);
  
+-	audio_close(&ai1);
+-
 -	if(param.verbose > 1) {
 +		audio_close(&ai1);
  		fprintf(stderr,"\nAudio capabilities:\n        |");
