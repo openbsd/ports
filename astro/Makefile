@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/02 01:37:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2002/08/18 14:50:49 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += dgpsip
@@ -7,7 +7,7 @@
      SUBDIR += luna
      SUBDIR += sattrack
 #    SUBDIR += stars
-#    SUBDIR += sunclock
+     SUBDIR += sunclock
      SUBDIR += wmglobe
      SUBDIR += wmmoonclock
      SUBDIR += wmspaceweather
