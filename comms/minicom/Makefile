@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/06/23 06:39:12 form Exp $
+# $OpenBSD: Makefile,v 1.13 1999/10/01 17:01:52 espie Exp $
 
 PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
@@ -32,11 +32,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/minicom.users /etc/minicom
 .endif
 
+RUN_DEPENDS=	kermit:${PORTSDIR}/comms/kermit
 .include <bsd.port.mk>
 
 .if exists(${WRKDIR}/.with_lrzsz)
-RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz lsz:${PORTSDIR}/comms/lrzsz
+RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz lsz:${PORTSDIR}/comms/lrzsz
 .else
-RUN_DEPENDS=	rz:${PORTSDIR}/comms/rzsz sz:${PORTSDIR}/comms/rzsz
+RUN_DEPENDS+=	rz:${PORTSDIR}/comms/rzsz sz:${PORTSDIR}/comms/rzsz
 .endif
-RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit
