@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/04/20 17:35:36 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/08/14 18:57:29 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -7,13 +7,12 @@ DISTNAME=	zip23
 PKGNAME=	zip-2.3
 CATEGORIES=	archivers
 NEED_VERSION=	1.384
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/ \
-		ftp://ftp.info-zip.org/pub/infozip/src/ \
-		ftp://ftp.uu.net/pub/archiving/zip/src/
+MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
+		ftp://ftp.icce.rug.nl/infozip/src/
 
 DISTFILES=	zip23.tar.gz zcrypt29.zip
 
-HOMEPAGE=	http://www.freesoftware.com/pub/infozip/
+HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/Zip.html
 
 MAINTAINER=	ports@openbsd.org
 
