@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.51 2004/08/09 10:24:26 espie Exp $
+# $OpenBSD: make-plist,v 1.52 2004/08/09 12:35:45 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -617,7 +617,7 @@ sub handle_file
 				
 	if (!defined $p) {
 		print "Bogus element outside of base: $i\n";
-		next;
+		return;
 	}
 	$short = var_backsubst($short);
 	# If the resulting name is arch-dependent, we warn.
