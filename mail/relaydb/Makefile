@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/20 18:52:14 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/18 12:25:47 dhartmei Exp $
 
 COMMENT=	"spam relay database"
 
-DISTNAME=	relaydb-1.6
+DISTNAME=	relaydb-1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
