@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/06/09 07:49:47 downsj Exp $
+# $OpenBSD: Makefile,v 1.6 1998/06/10 06:51:40 downsj Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -17,7 +17,7 @@
 #    SUBDIR += nvi
 #    SUBDIR += staroffice
 #    SUBDIR += thoteditor
-#    SUBDIR += uemacs
+     SUBDIR += uemacs
 #    SUBDIR += uzap
 #    SUBDIR += vile
      SUBDIR += vim
