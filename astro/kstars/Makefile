@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/18 06:18:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/07 12:24:40 naddy Exp $
 
 COMMENT=	"desktop planetarium"
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kstars
 
-BUILD_DEPENDS=	::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer \
+		:zsh-*:shells/zsh/stable
 
 LIB_DEPENDS=	kdecore.3,DCOP,kio,kfile,kdeui,kdesu,kssl,ksycoca::x11/kde/libs2
 
@@ -31,12 +32,17 @@ MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
+CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
+		--with-extra-libs=${LOCALBASE}/lib \
+		--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ENV=	KDEDIR=${LOCALBASE} \
+		CONFIG_SHELL=${WRKBUILD}/sh
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
 WRKDIST=	${WRKDIR}/kstars-0.8
+
+pre-configure:
+	# Let zsh act as an sh replacement
+	ln -sf ${LOCALBASE}/bin/zsh ${WRKBUILD}/sh
 
 .include <bsd.port.mk>
