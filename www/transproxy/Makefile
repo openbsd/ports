@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/29 01:30:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/04/01 22:11:12 jakob Exp $
 
 COMMENT=	"transparent www proxy driver for pf"
 
 DISTNAME=	transproxy-1.4
 CATEGORIES=	www net
 
-MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
+MASTER_SITES=	http://www.transproxy.nlc.net.au/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
