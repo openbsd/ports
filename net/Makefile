@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2001/07/30 05:20:18 jsyn Exp $
+# $OpenBSD: Makefile,v 1.157 2001/07/30 07:25:34 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
+     SUBDIR += rain
      SUBDIR += roxirc
      SUBDIR += rrdtool
      SUBDIR += rrdtool,tcl
