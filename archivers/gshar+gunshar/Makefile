@@ -2,6 +2,9 @@
 # Version required:     4.2
 # Date created:         06 November 1997
 # Whom:                 ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 18:41:45 joey Exp $
+#
 
 DISTNAME=       sharutils-4.2
 CATEGORIES=	archivers
