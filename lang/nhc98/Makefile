@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/10 04:39:03 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/16 23:37:58 pvalchev Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	"portable Haskell compiler"
 
 # not for 64 bits
-NOT_FOR_ARCHS=	alpha sparc64 amd64
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 V=		1.16
 DISTNAME=	nhc98-${V}
