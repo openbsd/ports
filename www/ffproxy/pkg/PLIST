@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/11/26 16:37:10 alek Exp $
+@newgroup _ffproxy:523
+@newuser _ffproxy:523:_ffproxy:daemon:ffproxy Account:/nonexistent:/sbin/nologin
 bin/ffproxy
 @man man/man5/ffproxy.conf.5
 @man man/man7/ffproxy.quick.7
@@ -6,28 +8,45 @@ bin/ffproxy
 share/doc/ffproxy/
 share/doc/ffproxy/README
 share/examples/ffproxy/
+@sample /var/ffproxy/
 share/examples/ffproxy/db/
+@sample /var/ffproxy/db/
 share/examples/ffproxy/db/access.dyndns
+@sample /var/ffproxy/db/access.dyndns
 share/examples/ffproxy/db/access.host
+@sample /var/ffproxy/db/access.host
 share/examples/ffproxy/db/access.ip
+@sample /var/ffproxy/db/access.ip
 share/examples/ffproxy/db/filter.header.add
+@sample /var/ffproxy/db/filter.header.add
 share/examples/ffproxy/db/filter.header.drop
+@sample /var/ffproxy/db/filter.header.drop
 share/examples/ffproxy/db/filter.header.entry
+@sample /var/ffproxy/db/filter.header.entry
 share/examples/ffproxy/db/filter.header.match
+@sample /var/ffproxy/db/filter.header.match
 share/examples/ffproxy/db/filter.host.match
+@sample /var/ffproxy/db/filter.host.match
 share/examples/ffproxy/db/filter.rheader.drop
+@sample /var/ffproxy/db/filter.rheader.drop
 share/examples/ffproxy/db/filter.rheader.entry
+@sample /var/ffproxy/db/filter.rheader.entry
 share/examples/ffproxy/db/filter.rheader.match
+@sample /var/ffproxy/db/filter.rheader.match
 share/examples/ffproxy/db/filter.url.match
+@sample /var/ffproxy/db/filter.url.match
 share/examples/ffproxy/ffproxy.conf
+@sample ${SYSCONFDIR}/ffproxy.conf
 share/examples/ffproxy/html/
+@sample /var/ffproxy/html/
 share/examples/ffproxy/html/connect
+@sample /var/ffproxy/html/connect
 share/examples/ffproxy/html/filtered
+@sample /var/ffproxy/html/filtered
 share/examples/ffproxy/html/invalid
+@sample /var/ffproxy/html/invalid
 share/examples/ffproxy/html/post
+@sample /var/ffproxy/html/post
 share/examples/ffproxy/html/resolve
-@cwd ${SYSCONFDIR}
-@extra ffproxy.conf
+@sample /var/ffproxy/html/resolve
 @extraunexec rm -rf /var/ffproxy
-@extraunexec userdel _ffproxy
-@extraunexec groupdel _ffproxy
