@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.117 1999/09/22 11:49:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.118 1999/09/26 10:45:35 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -178,7 +178,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_WRKDIR		- There's no work directory at all; port does this someplace
 #				  else.
 # NO_DEPENDS	- Don't verify build of dependencies.
-# NOCLEANDEPENDS - Don't nuke dependent dirs on make clean (Default: yes)
+# CLEANDEPENDS  - Nuke dependent dirs on make clean (Default: no)
 # BROKEN		- Port is broken.  Set this string to the reason why.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
 # USE_BZIP2		- Port distfiles use bzip2 instead of gzip for compression.
@@ -406,7 +406,16 @@ OPSYS_VER!=	uname -r
 NO_SHARED_LIBS=	yes
 .endif
 
-NOCLEANDEPENDS=	yes
+# Compatibility kludge for old scripts
+.if defined(NOCLEANDEPENDS)
+.if ${NOCLEANDEPENDS}=="no"
+CLEANDEPENDS?=yes
+.else
+CLEANDEPENDS?=no
+.endif
+.else
+CLEANDEPENDS?=yes
+.endif
 NOMANCOMPRESS?=	yes
 DEF_UMASK?=		022
 
@@ -1828,7 +1837,7 @@ pre-clean:
 
 .if !target(clean)
 clean: pre-clean
-.if !defined(NOCLEANDEPENDS)
+.if ${CLEANDEPENDS}=="yes"
 	@${MAKE} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
@@ -2258,7 +2267,7 @@ clean-depends:
 	   `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` \
 	   `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		if cd $$dir 2>/dev/null ; then \
-			${MAKE} NOCLEANDEPENDS=yes clean clean-depends; \
+			${MAKE} CLEANDEPENDS=no clean clean-depends; \
 		fi \
 	done
 .endif
