@@ -1,0 +1,2 @@
+The Net::Pcap module is a Perl binding to the LBL pcap(3) packet
+capture library.

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/08 10:23:10 danh Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Net/Pcap.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/Pcap/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/Pcap/Pcap.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/Pcap/Pcap.so
+man/man3/Net::Pcap.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/Pcap
