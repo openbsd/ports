@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkmmproc_Makefile_in,v 1.1 2001/03/12 14:28:39 wilfried Exp $
+--- src/gtkmmproc/Makefile.in.orig	Sat May 20 20:51:29 2000
++++ src/gtkmmproc/Makefile.in	Mon Mar 12 15:21:26 2001
+@@ -106,7 +106,7 @@ m4include_HEADERS = doc1.m4 stage1.m4 co
+ 
+ YFLAGS = -d
+ CFLAGS =  
+-CXXFLAGS =  -D MACRO_DIR=\"$(bindir)\" -D M4=\"@M4@\"
++CXXFLAGS = @CXXFLAGS@ -D MACRO_DIR=\"$(bindir)\" -D M4=\"@M4@\"
+ mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
+ CONFIG_HEADER = ../../config.h ../../gdk--config.h ../../gtk--config.h
+ CONFIG_CLEAN_FILES = 
