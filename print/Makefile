@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.7 1998/03/18 03:14:42 mickey Exp $
+#	$OpenBSD: Makefile,v 1.8 1998/04/28 04:16:53 angelos Exp $
 #
 
     SUBDIR += a2ps
@@ -34,7 +34,7 @@
 #   SUBDIR += pkfonts
     SUBDIR += psutils
 #   SUBDIR += rtf2latex
-#   SUBDIR += teTeX
+    SUBDIR += teTeX
 #   SUBDIR += tex
 #   SUBDIR += texinfo
 #   SUBDIR += tr2latex
