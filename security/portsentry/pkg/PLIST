@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/06 07:26:59 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/11/26 16:07:12 kevlo Exp $
 bin/portsentry
-lib/portsentry/portsentry.conf
 lib/portsentry/portsentry.ignore
+share/doc/portsentry/README.install
+share/doc/portsentry/README.methods
+share/doc/portsentry/README.stealth
+share/examples/portsentry/portsentry.conf-sample
+@dirrm share/examples/portsentry
+@dirrm share/doc/portsentry
 @dirrm lib/portsentry
