@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/14 04:21:59 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/28 13:44:31 espie Exp $
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	Convert-UU-0.40
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
+FAKE=			Yes
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \

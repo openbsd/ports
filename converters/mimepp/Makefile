@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/14 04:21:59 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/28 13:44:30 espie Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 
 MAKE_FILE=		makefile.unx
 ALL_TARGET=		lib
+FAKE=			Yes
 
 INCLUDE=	address.h addrlist.h binhex.h body.h bodypart.h boyermor.h \
 		config.h datetime.h debug.h disptype.h entity.h enum.h \
@@ -33,16 +34,16 @@ EXAMPLES=	attach.cpp attach.h basicmsg.cpp basicmsg.h exampl01.cpp \
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libmimepp.a ${PREFIX}/lib
-	@ mkdir -p ${PREFIX}/include/mimepp
+	@ ${INSTALL_DATA_DIR} ${PREFIX}/include/mimepp
 .for file in ${INCLUDE}
 	@ ${INSTALL_DATA} ${WRKSRC}/mimepp/${file} ${PREFIX}/include/mimepp
 .endfor
-	@ mkdir -p ${PREFIX}/share/doc/mimepp
+	@ ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mimepp
 .for file in ${DOC}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mimepp
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/mimepp
-	@ mkdir -p ${PREFIX}/share/examples/mimepp
+	@ ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mimepp
 	@ ${INSTALL_DATA} ${FILESDIR}/Makefile ${PREFIX}/share/examples/mimepp
 .for file in ${EXAMPLES}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mimepp
