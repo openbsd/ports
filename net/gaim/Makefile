@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2003/09/26 23:57:57 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2003/09/30 01:04:15 brad Exp $
 
-DISTNAME=	gaim-0.69
+DISTNAME=	gaim-0.70
 CATEGORIES=	net
 
 # GPL
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+= --disable-nas --disable-perl --disable-tcl --disable-tk
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	audio gtkspell
+FLAVORS=	audio debug gtkspell
 FLAVOR?=	
 
 .if ${FLAVOR:L:Maudio}
@@ -41,6 +41,13 @@ CONFIGURE_ARGS+= --disable-audio
 LIB_DEPENDS+=	gtkspell::textproc/gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
+.endif
+
+.if ${FLAVOR:L:Mdebug}
+CFLAGS=	-O1
+CONFIGURE_ARGS+=--enable-debug
+
+INSTALL_STRIP=
 .endif
 
 .include <bsd.port.mk>
