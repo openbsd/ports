@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/06 09:23:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/01 20:32:08 naddy Exp $
 
 COMMENT=		"front-end to ssh-agent"
 
-DISTNAME=		keychain-1.9
+DISTNAME=		keychain-2.0.2
 CATEGORIES=		security
-NEED_VERSION=		1.504
 
 HOMEPAGE=		http://www.gentoo.org/projects/keychain/
 

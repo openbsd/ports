@@ -1,16 +1,16 @@
-$OpenBSD: patch-keychain,v 1.1.1.1 2002/03/07 17:37:38 espie Exp $
---- keychain.orig	Wed Feb  6 14:04:15 2002
-+++ keychain	Wed Feb  6 14:10:02 2002
-@@ -122,7 +122,7 @@ cat <<EOHELP
+$OpenBSD: patch-keychain,v 1.2 2002/09/01 20:32:08 naddy Exp $
+--- keychain.orig	Tue Aug 27 03:23:19 2002
++++ keychain	Tue Aug 27 09:16:00 2002
+@@ -67,7 +67,7 @@ then
  
  Description:
  
 - Keychain is an OpenSSH key manager, typically run from ~/.bash_profile.  When
 + Keychain is an OpenSSH key manager, typically run from ~/.profile.  When
   run, it will make sure ssh-agent is running; if not, it will start ssh-agent.
-  It will redirect ssh-agent's output to ~/.ssh-agent-[hostname], so that cron
+  It will redirect ssh-agent's output to ~/.keychain/[hostname]-sh, so that cron
   jobs that need to use ssh-agent keys can simply source this file and make the
-@@ -133,7 +133,7 @@ Description:
+@@ -78,7 +78,7 @@ Description:
   added by keychain.
  
   Typically, one uses keychain by adding the following to the top of their
@@ -18,10 +18,10 @@ $OpenBSD: patch-keychain,v 1.1.1.1 2002/03/07 17:37:38 espie Exp $
 + ~/.profile (or ~/.zlogin, in case of zsh):
  
  EOHELP
- echo $E "  ${CYAN}keychain ~/.ssh/id_rsa ~/.ssh/id_dsa"
-@@ -171,7 +171,7 @@ echo $E " ${GREEN}--clear${OFF}"
- echo
- cat <<EOHELP
+ 	echo $E "  ${CYAN}keychain ~/.ssh/id_rsa ~/.ssh/id_dsa"
+@@ -109,7 +109,7 @@ EOHELP
+ 	echo
+ 	cat <<EOHELP
   Tells keychain to delete all of ssh-agent's host keys.  Typically, This is
 - used in the ~/.bash_profile.  The theory behind this is that keychain should
 + used in the ~/.profile.  The theory behind this is that keychain should
