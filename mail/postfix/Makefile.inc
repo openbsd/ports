@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2003/05/01 15:46:38 sturm Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -99,10 +99,12 @@ post-patch:
 	rm ${WRKDIST}/conf/*.orig
 .endif
 
+MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
+
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
 		CC="${CC}" OPT="${CFLAGS}" DEBUG="${MAKE_DEBUG}" \
-		CCARGS="${MAKE_CCARGS}" AUXLIBS="${MAKE_AUXLIBS}"
+		CCARGS='${MAKE_CCARGS}' AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
 	(cd ${WRKSRC}; sh postfix-install \
@@ -121,7 +123,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
-	mv ${WRKINST}/etc/postfix/* ${PREFIX}/share/examples/postfix
+	mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/html
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/postfix/html
 	${INSTALL_DATA} ${WRKSRC}/html/*.gif ${PREFIX}/share/doc/postfix/html

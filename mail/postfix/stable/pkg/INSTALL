@@ -1,11 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.7 2003/01/13 15:44:09 jakob Exp $
+# $OpenBSD: INSTALL,v 1.8 2003/05/01 15:46:38 sturm Exp $
 #
 # Pre/post-installation setup of postfix
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc/postfix
+CONFIG_DIR=${SYSCONFDIR}/postfix
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
 SPOOL_DIR=/var/spool/postfix
 
