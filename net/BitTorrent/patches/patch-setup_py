@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2003/08/21 03:39:57 jolan Exp $
+--- setup.py.orig	2003-03-17 13:34:41.000000000 -0600
++++ setup.py	2003-08-18 15:31:15.000000000 -0500
+@@ -18,9 +18,9 @@ setup(
+     
+     packages = ["BitTorrent"],
+ 
+-    scripts = ["btdownloadgui.py", "btdownloadheadless.py", "btdownloadlibrary.py", 
++    scripts = ["btdownloadheadless.py", "btdownloadlibrary.py", 
+         "bttrack.py", "btmakemetafile.py", "btlaunchmany.py", "btcompletedir.py",
+-        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
++        "btdownloadcurses.py", "btlaunchmanycurses.py", 
+         "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
+         "bttest.py"]
+     )
