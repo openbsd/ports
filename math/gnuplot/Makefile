@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"command-driven interactive function plotting program"
 
@@ -28,6 +28,7 @@ FLAVOR?=
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--without-linux-vga --without-gd \
 		--with-png --with-gnu-readline --with-lasergnu
+NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x

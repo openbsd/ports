@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/16 16:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"win95-like window manager based on fvwm 2.x"
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu dest
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/fvwm/fvwm95.man ${PREFIX}/man/man1/fvwm95.1

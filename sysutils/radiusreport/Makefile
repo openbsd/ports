@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/04 17:23:08 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"RADIUS log file analysis tool"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/radiusreport-0.3b6 \

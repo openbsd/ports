@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/28 19:35:31 danh Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"flexible POP3 server"
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+= --localstatedir="/var/spool/spop3d" \
 		 --enable-last --enable-bulletins --enable-nonip \
 		 --enable-ipv6 --enable-resolve --enable-connect \
 		 --enable-logextend --enable-statistics 
+NO_REGRESS=	Yes
 
 # enable support for APOP authentication.
 .if ${FLAVOR:L:Mapop}

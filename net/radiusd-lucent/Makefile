@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/15 19:16:20 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"Lucent remote access RADIUS server"
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIST}/radius/src
 MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS} -DNOSHADOW -DNDBM" LIBS=""
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/builddbm ${PREFIX}/bin

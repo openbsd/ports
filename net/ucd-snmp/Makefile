@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/11 19:16:19 danh Exp $
+# $OpenBSD: Makefile,v 1.32 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"extendable SNMP implementation"
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-sys-contact='default@' \
 		 --with-sys-location='Default Location'
 CONFIGURE_ENV=	VERSION_INFO='42:2:0'
+NO_REGRESS=	Yes
 
 SNMP_BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
 		snmpdf snmpget snmpgetnext snmpnetstat snmpset snmpstatus \

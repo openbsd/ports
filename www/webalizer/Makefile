@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/29 17:09:28 danh Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"web server log file analysis program"
 
@@ -24,6 +24,7 @@ WRKDIST=	${WRKDIR}/webalizer-2.01-09
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns --with-png=${LOCALBASE}/lib
+NO_REGRESS=	Yes
 
 post-install:
 	cd ${PREFIX}/bin && ln -s webalizer webazolver

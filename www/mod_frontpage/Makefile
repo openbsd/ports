@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/21 20:44:12 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"Microsoft FrontPage 2000 Server extensions for Apache"
 
@@ -27,6 +27,7 @@ PERMIT_DISTFILES_FTP=	"licensing restrictions"
 APACHEDIST=	${WRKDIR}/apache_${APVERSION}
 FP_PATCH=	${WRKDIR}/${DISTNAME}/patch-${VERSION}-${APVERSION}
 WRKSRC=		${WRKDIR}/apache_${APVERSION}/src/modules/frontpage
+NO_REGRESS=	Yes
 
 post-extract:
 	@mkdir -p ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"cryptographic cipher block chaining mode"
 
@@ -21,5 +21,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE= perl
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>	

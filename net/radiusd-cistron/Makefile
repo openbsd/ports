@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/28 19:35:32 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/13 20:14:39 danh Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
@@ -24,6 +24,7 @@ MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS} -DNOSHADOW -DNDBM" LCRYPT=""
 FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 		SBINDIR='${WRKINST}${PREFIX}/sbin' \
 		RADIUS_DIR='${WRKINST}${PREFIX}/share/examples/radiusd-cistron'
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKDIST}/doc/naslist.5rad ${PREFIX}/man/man5/naslist.5
