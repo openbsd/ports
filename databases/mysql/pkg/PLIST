@@ -110,5 +110,4 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/swedish
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
-@exec /usr/bin/killall mysqld
 @exec /sbin/ldconfig -m %D/lib/mysql

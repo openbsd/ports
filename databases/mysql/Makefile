@@ -1,44 +1,39 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:05 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/05/11 21:25:17 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.22.19b
-PKGNAME=	mysql-3.22.19
+DISTNAME=	mysql-3.22.22
+PKGNAME=	mysql-3.22.22
 CATEGORIES=	databases
+MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
+		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
+		http://mysql.he.net/Downloads/MySQL-3.22/ \
+		http://www.buoy.com/mysql/Downloads/MySQL-3.22/ \
+		ftp://ftp.netcasting.net/pub/mysql/Downloads/MySQL-3.22/ \
+		http://www.mysql.net/Downloads/MySQL-3.22/ \
+		http://www.gina.net/mysql/Downloads/MySQL-3.22/ \
+		http://mysql.pingzero.net/Downloads/MySQL-3.22/ \
+		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/
 
 MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=	ftp://mirror.aarnet.edu.au/mysql/Downloads/MySQL-3.22/ \
-		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.bse.bg/pub/Unix/database/MySQL/ \
-		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
-
 PERL?=		perl
 
-USE_EGCC=	YES
-GNU_CONFIGURE=	YES
+USE_EGCC=	yes
+USE_EGXX=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-perl \
 		--without-debug \
 		--without-readline \
 		--without-bench
+
 CONFIGURE_ENV+=	PERL=${PERL} \
-		PERL5=${PERL} \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		CXXFLAGS="${CFLAGS} -pthread" \
-		CFLAGS="${CFLAGS} -pthread"
+		PERL5=${PERL}
 
-CONFIGURE_ARGS+=	--with-mit-threads=no
-
-.if !defined(NO_WARNINGS)
-.if (${MACHINE_ARCH} != "i386")
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "*** WARNING: this port has only been tested on i386"
-	@${ECHO} "*** and may not work on other architectures"
-	@${ECHO} ""
-.endif
+.if defined(NATIVE_THREADS)
+CONFIGURE_ARGS+= --without-mit-threads
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -pthread" \
+		CXXFLAGS="${CFLAGS} -pthread"
 .endif
 
 pre-install:
@@ -62,7 +57,6 @@ post-install:
 	@ ${ECHO} "fi" >> ${PREFIX}/lib/mysql/startup.sh
 	@ /bin/chmod 750 ${PREFIX}/lib/mysql/startup.sh
 
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mysql
 .for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
 	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
@@ -72,8 +66,6 @@ post-install:
 	fi
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
-.endif
-
 	${LDCONFIG} -m ${PREFIX}/lib/mysql
 
 .include <bsd.port.mk>
