@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/19 17:07:46 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -26,7 +26,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PATCH_DIST_STRIP=-p1
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
-GNU_CONFIGURE=	Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+FAKE=		Yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/etc/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 
@@ -75,9 +77,9 @@ post-install:
 .for encoding in ${ENCODING}
 	@${INSTALL_SCRIPT} ${WRKDIR}/nvi-${encoding} ${PREFIX}/bin
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/../docs.m17n/README.english \
+	@${INSTALL_DATA} ${WRKDIST}/docs.m17n/README.english \
 		${PREFIX}/share/vi/
-	@${INSTALL_DATA} ${WRKSRC}/../docs.m17n/README.japanese \
+	@${INSTALL_DATA} ${WRKDIST}/docs.m17n/README.japanese \
 		${PREFIX}/share/vi/
 
 .include <bsd.port.mk>
