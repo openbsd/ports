@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2002/11/14 21:03:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/01/18 23:15:43 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
 VERSION=	0.21.0
 DISTNAME=	gdk-pixbuf-${VERSION}
+PKGNAME=	${DISTNAME}p1
 PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
 CATEGORIES=	graphics
 
@@ -32,7 +33,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" 
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PSEUDO_FLAVORS=	no_gnome
-FLAVOR?=	
+FLAVOR?=
 
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_gnome}

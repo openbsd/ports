@@ -1,15 +1,6 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.9 2002/11/14 21:03:41 marcm Exp $
---- gdk-pixbuf/Makefile.in.orig	Sat Sep 28 01:10:27 2002
-+++ gdk-pixbuf/Makefile.in	Mon Oct  7 17:41:44 2002
-@@ -271,7 +271,7 @@ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIB
- # The GdkPixBuf library
- #
- 
--libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf-1.0/gdk-pixbuf
-+libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf
- 
- libgdk_pixbuf_la_SOURCES = \
- 	gdk-pixbuf.c			\
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.10 2003/01/18 23:15:43 brad Exp $
+--- gdk-pixbuf/Makefile.in.orig	Thu Oct 17 12:20:28 2002
++++ gdk-pixbuf/Makefile.in	Sat Jan 18 16:31:10 2003
 @@ -287,7 +287,7 @@ libgdk_pixbuf_la_SOURCES = \
  	$(extra_sources)
  

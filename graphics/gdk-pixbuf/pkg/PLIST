@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/11/14 21:03:41 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/01/18 23:15:43 brad Exp $
 bin/gdk-pixbuf-config
-include/gdk-pixbuf/gdk-pixbuf-features.h
-include/gdk-pixbuf/gdk-pixbuf-loader.h
-include/gdk-pixbuf/gdk-pixbuf-xlib.h
-include/gdk-pixbuf/gdk-pixbuf-xlibrgb.h
-include/gdk-pixbuf/gdk-pixbuf.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-features.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-loader.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-xlib.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-xlibrgb.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf.h
 lib/gdk_pixbufConf.sh
 lib/gdk_pixbuf_xlibConf.sh
 lib/libgdk_pixbuf.a
@@ -40,4 +40,5 @@ share/doc/gdk-pixbuf/x3767.html
 @exec mkdir -p %D/lib/gdk-pixbuf/loaders
 @unexec rmdir %D/lib/gdk-pixbuf/loaders 2>/dev/null || true
 @unexec rmdir %D/lib/gdk-pixbuf 2>/dev/null || true
-@dirrm include/gdk-pixbuf
+@dirrm include/gdk-pixbuf-1.0/gdk-pixbuf
+@dirrm include/gdk-pixbuf-1.0
