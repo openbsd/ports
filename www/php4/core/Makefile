@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/05/02 19:49:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/07 14:13:01 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 PKGNAME=	php4-core-${V}
@@ -6,6 +6,7 @@ PKGNAME=	php4-core-${V}
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
 		--enable-xml \
+		--enable-wddx \
 		--enable-cli \
 		--with-iconv=${LOCALBASE} \
 		--with-gettext=${LOCALBASE} \
