@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_snmp_config_m4,v 1.3 2003/04/03 14:04:48 avsm Exp $
+--- ext/snmp/config.m4.orig	Tue Feb 18 23:45:54 2003
++++ ext/snmp/config.m4	Tue Feb 18 23:46:22 2003
+@@ -79,6 +79,7 @@ if test "$PHP_SNMP" != "no"; then
+       if test "$PHP_OPENSSL" != "no"; then
+         PHP_ADD_LIBRARY(ssl,   1, SNMP_SHARED_LIBADD)
+         PHP_ADD_LIBRARY(crypto,1, SNMP_SHARED_LIBADD)
++        PHP_ADD_LIBRARY(des   ,1, SNMP_SHARED_LIBADD)
+       else
+         AC_MSG_ERROR(The UCD-SNMP in this system is built with SSL support. 
+ 

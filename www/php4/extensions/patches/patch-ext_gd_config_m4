@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_gd_config_m4,v 1.4 2003/04/03 14:04:48 avsm Exp $
+--- ext/gd/config.m4.orig	Sat Jan 25 18:05:54 2003
++++ ext/gd/config.m4	Sat Jan 25 18:06:32 2003
+@@ -86,7 +86,7 @@ AC_DEFUN(PHP_GD_PNG,[
+     
+     PHP_CHECK_LIBRARY(png,png_write_image,
+     [
+-      PHP_ADD_INCLUDE($GD_PNG_DIR/include)
++      PHP_ADD_INCLUDE($GD_PNG_DIR/include/libpng)
+       PHP_ADD_LIBRARY_WITH_PATH(z, $PHP_ZLIB_DIR/lib, GD_SHARED_LIBADD)
+       PHP_ADD_LIBRARY_WITH_PATH(png, $GD_PNG_DIR/lib, GD_SHARED_LIBADD)
+     ],[

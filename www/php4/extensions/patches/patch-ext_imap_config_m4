@@ -1,0 +1,29 @@
+$OpenBSD: patch-ext_imap_config_m4,v 1.5 2003/04/03 14:04:48 avsm Exp $
+--- ext/imap/config.m4.orig	Fri Nov  1 16:45:59 2002
++++ ext/imap/config.m4	Wed Jan 22 19:26:03 2003
+@@ -86,10 +86,13 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
+     fi
+     AC_DEFINE(HAVE_IMAP_KRB,1,[ ])
+     PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/lib, IMAP_SHARED_LIBADD)
+-    PHP_ADD_LIBRARY(gssapi_krb5, 1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(gssapi, 1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(krb, 1, IMAP_SHARED_LIBADD)
+     PHP_ADD_LIBRARY(krb5, 1, IMAP_SHARED_LIBADD)
+-    PHP_ADD_LIBRARY(k5crypto, 1, IMAP_SHARED_LIBADD)
+-    PHP_ADD_LIBRARY(com_err,  1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(asn1, 1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(des,  1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(kafs, 1, IMAP_SHARED_LIBADD)
++
+   else
+     AC_EGREP_HEADER(auth_gss, $IMAP_INC_DIR/linkage.h, [
+       AC_MSG_ERROR([This c-client library is built with Kerberos support. 
+@@ -124,7 +127,7 @@ AC_DEFUN(PHP_IMAP_SSL_CHK, [
+   else
+     TST_LIBS="-L$IMAP_LIBDIR -l$IMAP_LIB"
+     if test $PHP_KERBEROS != "no"; then
+-      TST_LIBS="$TST_LIBS -L$PHP_KERBEROS/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
++      TST_LIBS="$TST_LIBS -L$PHP_KERBEROS/lib -lgssapi -lkrb5 -lkrb -lcom_err_pic -lasn1 -ldes"
+     fi
+ 
+     PHP_IMAP_TEST_BUILD([
