@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/09/02 20:30:54 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/09 22:35:37 angelos Exp $
 
 DISTNAME=	lsof_4.52A.n+obsd
 PKGNAME=	lsof-4.51.1
@@ -62,7 +62,7 @@ post-extract:
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
 	${INSTALL_PROGRAM} ${WRKBUILD}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.8
+	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.0
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@chmod 444 ${PREFIX}/share/lsof/00*
 
