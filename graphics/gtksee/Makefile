@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/01 02:34:33 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/14 00:08:52 jcs Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.487
+NEED_VERSION=	1.497
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://rt.fm/pub/gtksee/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
