@@ -5,13 +5,13 @@ Post-Install Notes for Majordomo
 Before you can use Majordomo, you will need to complete a few steps
 manually:
 
-	- add user daemon to group majordom (edit /etc/group)
+	- add user daemon to group _majordomo (edit /etc/group)
 
 	- read README, FAQ and NEWLIST in /usr/local/share/doc/majordomo
 
 	- review %%SYSCONFDIR%%/majordomo/majordomo.cf
 
-	- make 'majordom' a trusted sendmail user so it can use 
+	- make '_majordomo' a trusted sendmail user so it can use 
 	  parameter -f (changing the from address) without causing
 	  a warning header. Read the documentation of the features
 	  'confTRUSTED_USERS' and 'use_ct_file' in
