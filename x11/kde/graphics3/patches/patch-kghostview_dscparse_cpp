@@ -1,0 +1,19 @@
+$OpenBSD: patch-kghostview_dscparse_cpp,v 1.1 2002/09/28 22:50:30 brad Exp $
+--- kghostview/dscparse.cpp.orig	Sun Feb 17 12:38:24 2002
++++ kghostview/dscparse.cpp	Sat Sep 28 18:15:56 2002
+@@ -973,9 +973,13 @@ dsc_read_line(CDSC *dsc)
+ 	     */
+ 	    char begindata[MAXSTR+1];
+ 	    int cnt;
++	    unsigned int num;
+ 	    const char *numberof, *bytesorlines;
+-	    memcpy(begindata, dsc->line, dsc->line_length);
+-	    begindata[dsc->line_length] = '\0';
++	    if ((num = dsc->line_length) >= sizeof(begindata)-1)
++		num = sizeof(begindata)-1;
++
++	    memcpy(begindata, dsc->line, num);
++	    begindata[num] = '\0';
+ 	    numberof = strtok(begindata+12, " \r\n");
+ 	    strtok(NULL, " \r\n");	/* dump type */
+ 	    bytesorlines = strtok(NULL, " \r\n");
