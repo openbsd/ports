@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2001/02/13 21:03:42 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2001/02/14 00:55:40 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.23.33
@@ -44,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .else
 . if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
-#BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
+BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
 . endif
 .endif
 
