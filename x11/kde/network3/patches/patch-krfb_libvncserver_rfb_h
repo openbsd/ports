@@ -1,0 +1,12 @@
+$OpenBSD: patch-krfb_libvncserver_rfb_h,v 1.1 2003/01/28 12:23:17 espie Exp $
+--- krfb/libvncserver/rfb.h.orig	Thu Dec  5 21:49:32 2002
++++ krfb/libvncserver/rfb.h	Mon Jan 13 22:34:37 2003
+@@ -62,7 +62,7 @@ typedef unsigned long KeySym;
+ 
+ #ifdef __linux__
+ #include <endian.h>
+-#elif defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #include <machine/endian.h>
+ #ifndef _BYTE_ORDER

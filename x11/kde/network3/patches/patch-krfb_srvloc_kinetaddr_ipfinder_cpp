@@ -1,0 +1,59 @@
+$OpenBSD: patch-krfb_srvloc_kinetaddr_ipfinder_cpp,v 1.1 2003/01/28 12:23:17 espie Exp $
+--- krfb/srvloc/kinetaddr_ipfinder.cpp.orig	Tue Jan 14 02:52:23 2003
++++ krfb/srvloc/kinetaddr_ipfinder.cpp	Tue Jan 14 03:04:58 2003
+@@ -109,17 +109,20 @@ char *getdefaultdev()
+ }
+ 
+ 
++#define MAX_IF2		50
+ static void findAddresses( void )
+ {
+ 	int sock, err, if_count, i, j = 0;
+ 	struct ifconf netconf;
+-	char buffer[32*MAX_IF];
++	struct ifreq *ifrp;
++	size_t siz;
++	char buffer[128*MAX_IF];
+ 
+-	char if_name[10][21];
+-	char if_addr[10][21];
++	char if_name[MAX_IF2][21];
++	char if_addr[MAX_IF2][21];
+ 	char *default_ifName;
+ 
+-	netconf.ifc_len = 32 * MAX_IF;
++	netconf.ifc_len = 128 * MAX_IF;
+ 	netconf.ifc_buf = buffer;
+ 	sock=socket( PF_INET, SOCK_DGRAM, 0 );
+ 	err=ioctl( sock, SIOCGIFCONF, &netconf );
+@@ -127,13 +130,23 @@ static void findAddresses( void )
+ 		kdDebug() << "KInetAddress: Error in ioctl: "<<errno<<"." << endl;
+ 	close( sock );
+ 
+-	if_count = netconf.ifc_len / 32;
+-	for( i = 0; i < if_count; i++ ) {
+-		if( strcmp( netconf.ifc_req[i].ifr_name, "lo" ) != 0 ) {
+-			strncpy( if_name[j], netconf.ifc_req[i].ifr_name, 20 );
+-			strncpy( if_addr[j], inet_ntoa(((struct sockaddr_in*)(&netconf.ifc_req[i].ifr_addr))->sin_addr), 20 );
+-			j++;
+-		}
++	for (i = 0; i < netconf.ifc_len; ) {
++		ifrp = (struct ifreq *)((char *)netconf.ifc_req + i);
++		siz = ifrp->ifr_addr.sa_len;
++		if (siz < sizeof(ifrp->ifr_addr))
++			siz = sizeof(ifrp->ifr_addr);
++		siz += sizeof(ifrp->ifr_name);
++		i += siz;
++		if (ifrp->ifr_addr.sa_family == AF_LINK)
++			continue;
++		if (strcmp(ifrp->ifr_name, "lo0" ) == 0 ||
++			strcmp(ifrp->ifr_name, "lo1" ) == 0)
++			continue;
++		strncpy( if_name[j], ifrp->ifr_name, 20 );
++		strncpy( if_addr[j], inet_ntoa(((struct sockaddr_in*)(&ifrp->ifr_addr))->sin_addr), 20 );
++		j++;
++		if (j == MAX_IF2)
++		    break;
+ 	}
+ 
+ 	if(j == 0) {

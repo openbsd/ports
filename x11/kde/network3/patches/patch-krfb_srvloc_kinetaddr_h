@@ -1,0 +1,13 @@
+$OpenBSD: patch-krfb_srvloc_kinetaddr_h,v 1.1 2003/01/28 12:23:17 espie Exp $
+--- krfb/srvloc/kinetaddr.h.orig	Mon Dec 30 01:58:32 2002
++++ krfb/srvloc/kinetaddr.h	Mon Dec 30 01:58:39 2002
+@@ -29,9 +29,7 @@
+ 
+ #include <arpa/inet.h>
+ 
+-#if defined(__FreeBSD__)
+ #include <sys/socket.h>
+-#endif
+ 
+ #include <qobject.h>
+ #include <qcstring.h>
