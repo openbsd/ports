@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.1 2005/01/07 03:30:41 espie Exp $
+--- gcc/ada/adaint.c.orig	Fri Jan  7 04:27:01 2005
++++ gcc/ada/adaint.c	Fri Jan  7 04:27:29 2005
+@@ -685,7 +685,7 @@ __gnat_open_new_temp (char *path, int fm
+ 
+   strcpy (path, "GNAT-XXXXXX");
+ 
+-#if (defined (__FreeBSD__) || defined (linux)) && !defined (__vxworks)
++#if (defined (__FreeBSD__) || defined (__OpenBSD__) || defined (linux)) && !defined (__vxworks)
+   return mkstemp (path);
+ #elif defined (__Lynx__)
+   mktemp (path);
