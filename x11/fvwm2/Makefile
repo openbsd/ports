@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/04 04:57:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/08/09 06:05:35 pvalchev Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -35,8 +35,7 @@ FLAVORS=	rplay debug i18n
 FLAVOR?=
 
 .if ${FLAVOR:L:Mrplay} && !${SUBPACKAGE} == "-fvicons"
-BUILD_DEPENDS=	rplay::audio/rplay
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rplay:rplay-*:audio/rplay
 .elif ${FLAVOR:L:Mrplay}
 CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
 		 --with-rplay-library="${LOCALBASE}/lib"
