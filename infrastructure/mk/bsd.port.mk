@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.169 2000/01/26 23:11:08 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.170 2000/01/27 00:09:44 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -376,10 +376,10 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # Default sequence for "all" is:  fetch checksum extract patch configure build
 #
 # Please read the comments in the targets section below, you
-# should be able to use the pre-* or post-* targets/scripts
-# (which are available for every stage except checksum) or
-# provide an overriding do-* target to do pretty much anything 
-# you want.
+# should be able to use the pre-* or post-* targets (which
+# are available for every stage except checksum) or provide
+# an overriding do-* target to do pretty much anything you
+# want.
 #
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
