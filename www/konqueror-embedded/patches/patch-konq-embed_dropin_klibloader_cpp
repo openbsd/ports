@@ -1,0 +1,41 @@
+$OpenBSD: patch-konq-embed_dropin_klibloader_cpp,v 1.1 2002/03/17 00:57:53 espie Exp $
+--- konq-embed/dropin/klibloader.cpp.orig	Sat Mar 16 13:19:40 2002
++++ konq-embed/dropin/klibloader.cpp	Sat Mar 16 19:58:28 2002
+@@ -25,6 +25,8 @@
+ 
+ #include "klibloader.h"
+ 
++#include <stdlib.h>
++#include <string.h>
+ #include <assert.h>
+ 
+ #if defined(HAVE_DLFCN)
+@@ -85,6 +87,17 @@ KDLOpenLibrary::~KDLOpenLibrary()
+ void *KDLOpenLibrary::symbol( const char *name )
+ {
+     void *res = dlsym( m_handle, name );
++#ifdef __OpenBSD__
++    if ( !res ) {
++    	name2 = malloc(strlen(name)+2);
++	if (name2) {
++	    name2[0] = '_';
++	    strcpy(name2+1, name);
++	    res = dlsym( m_handle, name2);
++	    free(name2);
++	}
++    }
++#endif
+     if ( !res )
+         res = KLibrary::symbol( name );
+     return res;
+@@ -121,8 +134,10 @@ KLibrary *KLibLoader::globalLibrary( con
+ {
+ #if defined(HAVE_DLFCN)
+     void *handle = dlopen( name, RTLD_LAZY | RTLD_GLOBAL );
++    kdDebug(7029) << "Essai d'ouverture" << endl;
+     if ( !handle )
+         return 0;
++    kdDebug(7029) << "Reussi" << endl;
+  
+     KLibrary *lib = new KDLOpenLibrary( name, handle );
+     m_libs.insert( name, lib );
