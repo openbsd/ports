@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2001/07/22 00:18:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.24 2001/07/22 00:20:06 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
 VERSION=		0.9.7.1
-DISTNAME=		slrn-${VERSION}p1
+DISTNAME=		slrn-${VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		news
 NEED_VERSION=		1.364
 
