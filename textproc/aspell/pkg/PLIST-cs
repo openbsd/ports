@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-cs,v 1.1 2003/08/12 04:39:27 jolan Exp $
+lib/aspell/cs.multi
+lib/aspell/cs.rws
+lib/aspell/czech.alias
+share/aspell/cs.dat
+share/aspell/cy.dat
