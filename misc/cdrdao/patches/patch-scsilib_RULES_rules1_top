@@ -1,0 +1,12 @@
+$OpenBSD: patch-scsilib_RULES_rules1_top,v 1.1 2001/10/03 16:08:48 naddy Exp $
+--- scsilib/RULES/rules1.top.orig	Sun Apr 29 10:44:46 2001
++++ scsilib/RULES/rules1.top	Mon Oct  1 20:04:22 2001
+@@ -186,7 +186,7 @@ __PARCH=	$(_PARCH:$(_UNIQ)=$(PARCH_DEF))
+ PARCH=		$(__PARCH:$(_UNIQ)%=%)
+ 
+ #OARCH=		$(MARCH)$(-O_ARCH)-$(C_ARCH)
+-OARCH=		$(PARCH)$(-O_ARCH)-$(C_ARCH)
++OARCH=		$(K_ARCH)$(-O_ARCH)-$(C_ARCH)
+ XARCH=		$(K_ARCH)$(-O_ARCH)-$(C_ARCH)
+ .print:
+ 	echo $(XP_ARCH) $(P_ARCH)

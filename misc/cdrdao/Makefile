@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/03 16:08:48 naddy Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -24,6 +24,13 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib
 CONFIGURE_ARGS+=	--with-posix-threads=no
+MAKE_ENV=		CCOM="${CC}"
+
+.if ${MACHINE} != "i386" || ${CC} != "cc"
+pre-configure:
+	@ln -sf ${WRKSRC}/scsilib/RULES/i386-openbsd-cc.rul \
+		${WRKSRC}/scsilib/RULES/${MACHINE}-openbsd-${CC}.rul
+.endif
 
 post-install:
 	@strip ${PREFIX}/bin/cdrdao
