@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2004/05/17 05:13:14 robert Exp $
+# $OpenBSD: Makefile,v 1.120 2004/06/18 18:59:58 sturm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += dia
 #    SUBDIR += dore
      SUBDIR += dumpmpeg
+     SUBDIR += dvdrip
      SUBDIR += enjoympeg
      SUBDIR += ffmpeg
      SUBDIR += flash
@@ -114,6 +115,7 @@
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
+     SUBDIR += transcode
 #    SUBDIR += txtmerge
 #    SUBDIR += urt
      SUBDIR += vcdimager
