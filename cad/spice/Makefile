@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/07/14 16:13:43 jason Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/21 21:41:23 espie Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xaw Xext Xmu Xt c m termlib
 
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTFILES=		sp3f4.kit.tar.gz sp3f4.patch.tar.gz
