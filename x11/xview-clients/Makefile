@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	xview-clients
-# Version required:     3.2p1-X11R6
-# Date created:         June 7 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/08 01:21:06 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/07/18 09:27:18 brad Exp $
 
 DISTNAME=	xview-clients
 PKGNAME=	xview-clients-3.2.1

@@ -285,3 +285,9 @@ include/xview_private/xv_color.h
 include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
+@dirrm lib/help
+@dirrm include/images
+@dirrm include/olgx
+@dirrm include/pixrect
+@dirrm include/xview
+@dirrm include/xview_private

@@ -1,10 +1,4 @@
-# OpenBSD makefile for: xview-config
-# Version required:     3.2p1-X11R6
-# Date created:         29 April 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/29 17:22:46 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/07/18 09:27:19 brad Exp $
 
 DISTNAME=	xview-config-3.2.1
 CATEGORIES=	x11

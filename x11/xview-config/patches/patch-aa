@@ -102,7 +102,7 @@ diff -rc ../old/xview3.2p1-X11R6/config/XView.cf XView.cf
    *    	be defined as -PIC
    */
   #ifndef PositionIndependentCodeFlag
-! #define PositionIndependentCodeFlag -fpic
+! #define PositionIndependentCodeFlag -fPIC
   #endif
   
   /*

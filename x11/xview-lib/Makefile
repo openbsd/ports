@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/21 04:26:17 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/07/18 09:27:19 brad Exp $
 
 DISTNAME=	xview-lib
 PKGNAME=	xview-lib-3.2.1
