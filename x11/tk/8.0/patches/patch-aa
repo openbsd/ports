@@ -1,0 +1,44 @@
+--- configure.orig	Tue Mar  9 01:53:50 1999
++++ configure	Thu Jan 13 20:27:11 2000
+@@ -880,8 +880,8 @@
+ if test ! -d $TCL_BIN_DIR; then
+     { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
+ fi
+-if test ! -f $TCL_BIN_DIR/Makefile; then
+-    { echo "configure: error: There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
++if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
++    { echo "configure: error: There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
+ fi
+ 
+ #--------------------------------------------------------------------
+@@ -922,6 +922,8 @@
+ CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
+ EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
+ 
++TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
++
+ LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
+ 
+ # If Tcl and Tk are installed in different places, adjust the library
+@@ -2389,12 +2391,11 @@
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+     TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
+     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
+-    RANLIB=":"
+ else
+     TK_SHARED_BUILD=0
+     TK_SHLIB_CFLAGS=""
+     TK_LIB_FILE=libtk${TCL_UNSHARED_LIB_SUFFIX}
+-    MAKE_LIB="ar cr \${TK_LIB_FILE} \${OBJS}"
++    MAKE_LIB="ar cr \${TK_LIB_FILE} \${OBJS}; \${RANLIB} \${TK_LIB_FILE}"
+ fi
+ 
+ DBGX='${TK_DBGX}'
+@@ -2600,6 +2601,7 @@
+ s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
+ s%@TCL_DBGX@%$TCL_DBGX%g
+ s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g
++s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
+ s%@TCL_VERSION@%$TCL_VERSION%g
+ s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g

@@ -1,0 +1,114 @@
+--- Makefile.in.orig	Wed Mar 22 21:54:25 2000
++++ Makefile.in	Wed Mar 22 22:43:38 2000
+@@ -56,7 +56,10 @@
+ BIN_DIR =		$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file tk.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++BASE_INSTALL_DIR =     $(prefix)/include/tk$(VERSION)
++INCLUDE_INSTALL_DIR =  $(INSTALL_ROOT)$(BASE_INSTALL_DIR)
++GENERIC_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/unix
+ 
+ # Top-level directory for manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -99,7 +102,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		@CFLAGS@
++#CFLAGS = 		@CFLAGS@
+ 
+ # A "-I" switch that can be used when compiling to make all of the
+ # X11 include files accessible (the configure script will try to
+@@ -153,7 +156,7 @@
+ # "install" around;  better to use the install-sh script that comes
+ # with the distribution, which is slower but guaranteed to work.
+ 
+-INSTALL = @srcdir@/install-sh -c
++INSTALL = install -c
+ INSTALL_PROGRAM =	${INSTALL}
+ INSTALL_DATA =		${INSTALL} -m 644
+ 
+@@ -190,7 +193,7 @@
+ # Libraries to use when linking.  This definition is determined by the
+ # configure script.
+ LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+-WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++WISH_LIBS = -L${PREFIX}/lib -ltcl83 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+ 
+ # The symbol below provides support for dynamic loading and shared
+ # libraries.  See configure.in for a description of what it means.
+@@ -346,7 +349,7 @@
+ 
+ all: binaries libraries doc
+ 
+-binaries: ${TK_LIB_FILE} ${STUB_LIB_FILE} wish
++binaries: ${TK_LIB_FILE} ${STUB_LIB_FILE} libtk83.a wish
+ 
+ libraries:
+ 
+@@ -361,12 +364,15 @@
+ ${TK_LIB_FILE}: ${OBJS}
+ 	rm -f ${TK_LIB_FILE}
+ 	@MAKE_LIB@
+-	$(RANLIB) ${TK_LIB_FILE}
+ 
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f ${STUB_LIB_FILE}
+ 	@MAKE_STUB_LIB@
+-	$(RANLIB) ${STUB_LIB_FILE}
++
++libtk83.a: ${OBJS}
++	rm -f libtk83.a
++	ar cr libtk83.a ${OBJS}
++	$(RANLIB) libtk83.a
+ 
+ # Make target which outputs the list of the .o contained in the Tk lib
+ # usefull to build a single big shared library containing Tcl/Tk and other
+@@ -442,12 +448,15 @@
+ 	    fi
+ 	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
+-	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@echo "Installing libtk83.a"
++	@$(INSTALL_DATA) libtk83.a $(LIB_INSTALL_DIR)/libtk83.a
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk83.a
+ 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
+ 	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
+ 	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
++	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
++	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
+ 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
+@@ -461,6 +470,7 @@
+ 
+ install-libraries:
+ 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
++		$(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR) $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR) \
+ 		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -474,10 +484,17 @@
+ 	    chmod +x $(UNIX_DIR)/install-sh; \
+ 	    fi
+ 	@echo "Installing header files";
+-	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h ; \
++	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR); \
+ 	    done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkDecls.h $(INCLUDE_INSTALL_DIR)/tkDecls.h
+ 	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
+ 	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
+ 	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
