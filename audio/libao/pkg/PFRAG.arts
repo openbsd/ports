@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.arts,v 1.1 2001/03/16 11:58:46 naddy Exp $
-lib/ao/libarts.so.1.0
+@comment $OpenBSD: PFRAG.arts,v 1.2 2001/06/30 13:16:43 naddy Exp $
+lib/ao/libarts.so.1.1
