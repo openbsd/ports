@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2001/09/02 05:02:47 shell Exp $
+# $OpenBSD: Makefile,v 1.34 2001/10/08 04:48:19 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 # Uses pthreads
 
 COMMENT=	"X-Chat is an X11 IRC client"
 
 MAJOR=		1.8
-VERSION=	${MAJOR}.3
+VERSION=	${MAJOR}.4
 DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.448
@@ -29,7 +29,7 @@ CONFIGURE_STYLE= gnu
 FLAVORS=	no_ssl
 FLAVOR?=
 
-CONFIGURE_ARGS+= --disable-imlib --disable-python --disable-gnome
+CONFIGURE_ARGS+= --disable-imlib --disable-python
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
