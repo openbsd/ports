@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/15 21:41:29 marc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/08/16 02:50:03 marc Exp $
+@pkgcfl emacs-*
 @unexec install-info --delete --info-dir=%D/info %D/info/cl.info
 @unexec install-info --delete --info-dir=%D/info %D/info/custom.info
 @unexec install-info --delete --info-dir=%D/info %D/info/external-widget.info
