@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/27 17:21:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/02/22 00:44:26 rohee Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.nikhef.nl/pub/network/
-EXTRACT_SUFX=		.tar.Z
+MASTER_SITES=		http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/
 
 WRKDIST=		${WRKDIR}/
 
