@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/01 18:00:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 17:01:05 espie Exp $
 
 DISTNAME=	xkeycaps-2.46
 CATEGORIES=	x11 sysutils
@@ -6,7 +6,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER= 	hin@stacken.kth.se
+MAINTAINER= 	Hans Insulander <hin@stacken.kth.se>
 HOMEPAGE=http://www.jwz.org/xkeycaps/
 
 PERMIT_PACKAGE_CDROM=   Yes
