@@ -1,0 +1,5 @@
+Colortail works like standard tail(1) but it can optionally read
+one or more configuration files that specify which patterns result
+in which colors.  It can be used to quickly get an overview of
+interesting activity, e.g. by colorizing keywords bright red or
+some other color of your choice.

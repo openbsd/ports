@@ -1,0 +1,93 @@
+.\" $OpenBSD: colortail.1,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
+.\" $NetBSD: patch-ac,v 1.1 2002/12/13 23:01:43 jschauma Exp $
+.TH COLORTAIL 1 "August 02, 2001" "System Utilities" colortail
+.SH NAME
+colortail \- output the last part of files, optionally with color
+
+.SH SYNOPSIS
+.B colortail
+[\fIOPTION\fR]... [\fIFILE\fR]...
+
+.SH DESCRIPTION
+Print last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+\fBcolortail\fR works like tail but can optionally read one or more config files
+where it's specified which patterns results in which colors.
+
+\fBcolortail\fR uses regular expressions (see \fIre_format(7)\fR) to determine
+which lines and parts of lines to print in which colors.
+
+.SH USAGE
+Most options are easily understandood. The only somewhat strange option is the
+\fI-k\fR option that specifies the config files so \fBcolortail\fR knows what
+should be printed in which color.
+
+If only one config file and one or more tail files is given the config file
+is treated as a global one, i.e.
+
+\fBcolortail\fR \fI-k\fR conf.global file1 file2 file3
+
+Multiple config files are separated with a , and if one tail file shouldn't
+have a config file just leave it blank, i.e.
+
+\fBcolortail\fR \fI-k\fR conf.file1,,conf.file3 file1 file2 file3
+
+.SH OPTIONS
+This program follow the usual GNU command line syntax, with long options
+starting with two dashes (`--'). A summary of options is included below.
+
+.TP
+.B \-f, \-\-follow
+output appended data as the file grows
+
+.TP
+.B \-h, \-\-help
+Show summary of options.
+.TP
+.B \-k, \-\-config=file, \-\-config=file1,file2,...
+color config files for the tail files. If only one config file it's global
+otherwise one config file for each tail file
+.TP
+\fB\-n, \-\-lines=\fR\fIN\fR
+output the last \fIN\fR lines, instead of last 10
+.TP
+.TP
+.B \-v, \-\-version
+output version information and exit
+
+.SH FILE FORMAT
+The file specified by the \fI-k\fR option tells colortail how to display the
+output according to regular expressions.  The file mapps one or more regular
+expressions to one of the following colors: brightblue, brightred,
+brightwhite, blue, cyan, green, magenta, yellow.  Comments start with a "#":
+
+COLOR brightred
+.br
+{
+.br
+# matches the word "root"
+.br
+^.*(root).*$
+.br
+}
+.br
+
+.SH VERSION
+0.3.0
+
+.SH BUGS
+
+Under certain circumstances \fBcolortail\fR may miss some characters when
+tailing forever.  This bug also exists in \fItail(1)\fR.  If you have found a
+bug, please send a mail to pt98jan@student.hk-r.se
+
+.SH SEE ALSO
+.BR re_format (7),
+.BR tail (1)
+
+.SH AUTHOR
+.nr
+Joakim Andersson <pt98jan@student.hk-r.se> - colortail
+.br
+Jan Schaumann <jschauma@netmeister.org> - this man page

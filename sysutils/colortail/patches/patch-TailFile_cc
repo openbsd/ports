@@ -1,0 +1,22 @@
+$OpenBSD: patch-TailFile_cc,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
+--- TailFile.cc.orig	2004-01-11 16:19:14.000000000 -0500
++++ TailFile.cc	2004-01-11 16:20:33.000000000 -0500
+@@ -375,7 +375,7 @@
+    // check if there isn't a follow buffer
+    if (m_follow_buffer == NULL)
+    {
+-      m_follow_buffer = new ostrstream();
++      m_follow_buffer = new std::ostrstream();
+    }
+ 
+    // make buffer
+@@ -417,6 +417,9 @@
+       int ch = fgetc(m_file);
+ 
+       // add the character to the string
++      if (ch == EOF)
++          clearerr(m_file);     // required by POSIX and ANSI
++      else
+       m_follow_buffer->put(ch);
+       
+       // check if return
