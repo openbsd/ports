@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"Cubic Circle's POP3 daemon"
 
 DISTNAME=	cucipop-1.31
 CATEGORIES=	mail
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -23,6 +23,8 @@ post-patch:
 	@cd ${WRKSRC} && sed -e s#!!PREFIX!!#${PREFIX}#g ${f} > ${f}.new && \
 		mv ${f}.new ${f}
 .endfor
+
+NO_REGRESS=	Yes
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} cucipop makevpopdb ${PREFIX}/libexec

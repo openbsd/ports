@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/09/30 00:48:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"new MH mail handling program"
 
@@ -18,5 +18,7 @@ SYSCONFDIR=		${PREFIX}/lib/nmh
 CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
 			--with-krb4=/usr \
 			--enable-nmh-pop
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

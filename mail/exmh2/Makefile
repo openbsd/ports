@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2002/06/14 20:29:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=		"Tcl/Tk-based interface to the MH mail system"
 DISTNAME=		exmh-2.5
 CATEGORIES=     	mail
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.beedub.com/exmh/
 MAINTAINER=		Michael Paddon <michael@paddon.org>
@@ -22,6 +21,7 @@ RUN_DEPENDS=		:expect-*:lang/expect\
 			:tk-8.3.*:x11/tk/8.3
 USE_X11=		Yes
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/exmh ${PREFIX}/bin/exmh

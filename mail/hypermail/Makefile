@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/09/03 23:22:50 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/27 17:21:39 naddy Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
 
@@ -37,6 +37,8 @@ LIB_DEPENDS=	gdbm.::databases/gdbm
 .else
 CONFIGURE_ARGS+=--without-gdbm
 .endif
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/27 17:21:40 naddy Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 
@@ -7,7 +7,6 @@ COMMENT=		"verify email addresses and mailing lists"
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
-NEED_VERSION=		1.515
 
 MAINTAINER=		Bruno Rohee <rohee@openbsd.org>
 
@@ -20,6 +19,8 @@ MASTER_SITES=		ftp://ftp.nikhef.nl/pub/network/
 EXTRACT_SUFX=		.tar.Z
 
 WRKDIST=		${WRKDIR}/
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vrfy ${PREFIX}/bin

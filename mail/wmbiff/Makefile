@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 17:21:40 naddy Exp $
 
 COMMENT=	"xbiff-like Window Maker dock app"
 DISTNAME=	wmbiff-0.2p
 CATEGORIES=	mail x11 x11/windowmaker
-NEED_VERSION=	1.515
+
 HOMEPAGE=	http://tinuviel.mizi.com/~tolkien/wmaker/
 
 MAINTAINER=	Cameron Lerch <opcode@skylab.saturn5.yi.org>
@@ -17,6 +17,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 WRKDIST=	${WRKDIR}/wmbiff
 WRKBUILD=	${WRKDIST}/wmbiff
+
+NO_REGRESS=	Yes
 
 post-build:
 	@mv ${WRKBUILD}/wmbiff.1 ${WRKBUILD}/wmbiff.1.orig

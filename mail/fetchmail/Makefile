@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2002/10/18 20:31:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.89 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--disable-nls --enable-inet6 --with-ssl \
 		--with-kerberos --with-kerberos5 --enable-NTLM
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 
 DOCS=	FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 	fetchmail-features.html design-notes.html todo.html

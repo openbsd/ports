@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/27 17:10:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=		"easy to use bayesonian spam filter"
 DISTNAME=		bmf-0.9.4
@@ -23,6 +23,8 @@ INSTALL_TARGET=		MANDIR=${PREFIX}/man \
 
 MAKE_ENV=		CC="${CC}"
 DOCS=			README
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bmf

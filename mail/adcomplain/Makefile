@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"complain about SPAM"
 
 DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.rdrop.com/users/billmc/
 DISTFILES=	adcomplain.pl.uu
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/20 17:49:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:40 naddy Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
 VERSION=		0.61
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
-NEED_VERSION=   	1.503
+
 HOMEPAGE=		http://tmda.sourceforge.net/
 
 # BSD-style
@@ -24,6 +24,7 @@ BUILD_DEPENDS=  ${RUN_DEPENDS}
 PYTHON_VER=     2.1
 PYTHON_LIBDIR=	lib/python${PYTHON_VER}
 SUBST_VARS=	PYTHON_VER
+NO_REGRESS=	Yes
 
 do-build:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/python${PYTHON_VER} -c \

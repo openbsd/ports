@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2002/09/07 19:09:05 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -28,6 +28,8 @@ MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
+
+NO_REGRESS=	Yes
 
 FLAVORS+=	pcre sasl ldap mysql
 .if defined(TLSVERSION)

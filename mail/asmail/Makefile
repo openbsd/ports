@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"biff-type program, designed to match AfterStep"
 
 DISTNAME=	asmail-0.56
 CATEGORIES=	mail
-NEED_VERSION=	1.402
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/} \
 		ftp://gates.enemy.at/pub/
 
@@ -26,6 +26,8 @@ post-patch:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 	 ${WRKSRC}/sample.asmailrc > ${WRKSRC}/sample.asmailrc.new
 	@mv ${WRKSRC}/sample.asmailrc.new ${WRKSRC}/sample.asmailrc
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/pixmaps/cloud-e

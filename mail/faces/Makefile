@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"visual mail, user and print face server"
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
-NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -23,5 +22,7 @@ MAN3=		compface.3
 
 post-extract:
 	@cd ${WRKSRC} && cp Makefile.dist Makefile
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

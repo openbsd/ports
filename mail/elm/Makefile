@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"once-popular mail user agent"
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
@@ -32,6 +32,9 @@ post-configure:
 	@perl -pi.bak -e 's,\$${DESTDIR},,g;' \
 		${WRKBUILD}/config.h ${WRKBUILD}/hdrs/sysdefs.h \
 		${WRKBUILD}/utils/{checkalias,listalias,messages,printmail}
+
+NO_REGRESS=	Yes
+
 post-install:
 	@cd ${WRKSRC}/nls; make install
 	if [ -f ${PREFIX}/lib/elm.mimetypes ]; then \

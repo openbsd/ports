@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/27 17:21:40 naddy Exp $
 
 COMMENT=	"mail image display for X11"
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
-NEED_VERSION=	1.515
 
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
@@ -24,6 +23,8 @@ CONFIGURE_STYLE=imake
 
 post-extract:
 	@ln -sf ../sounds ${WRKSRC}
+
+NO_REGRESS=	Yes
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/sounds

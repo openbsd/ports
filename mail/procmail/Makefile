@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2002/01/04 00:54:36 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"filtering local mail delivery agent"
 
 DISTNAME=	procmail-3.22
 CATEGORIES=	mail
-NEED_VERSION=	1.500
+
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
 		ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
@@ -37,6 +37,8 @@ CFLAGS+=	-DLMTP
 .endif
 
 MAKE_FLAGS=	BASENAME="${PREFIX}" CFLAGS0="${CFLAGS}" LOCKINGTEST="110"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/procmail

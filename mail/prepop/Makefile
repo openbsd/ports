@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/11 00:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"simple interactive POP3 client"
 
 DISTNAME=	prepop-0.1b7
 CATEGORIES=	mail
-NEED_VERSION=	1.515
+
 HOMEPAGE=	http://www.rundegren.com/software/prepop/
 
 MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
@@ -23,6 +23,8 @@ MAKE_FLAGS= \
 	LDFLAGS='-lreadline -ltermcap'
 
 ALL_TARGET=	compile link
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/prepop ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/10/25 07:43:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -37,6 +37,8 @@ MAKE_FLAGS+=	SSLTYPE="nopwd"
 .else
 MAKE_FLAGS+=	SSLTYPE="unix"
 .endif
+
+NO_REGRESS=	Yes
 
 DOCDIR=		share/doc/imap-uw
 DOCFILES=	FAQ.txt FAQ.html commndmt.txt drivers.txt formats.txt \

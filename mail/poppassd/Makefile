@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/08 18:32:02 millert Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=	"server: allow users to change password from within Eudora"
 
 DISTNAME=	poppassd-4.0
 DISTFILES=	pwserve-4
 CATEGORIES=	mail
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -20,7 +20,9 @@ EXTRACT_CASES= pwserve-4) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 WRKDIST=	${WRKDIR}/poppassd
 
-ALL_TARGET= poppassd
+ALL_TARGET=	poppassd
+
+NO_REGRESS=	Yes
 
 post-install:
 	@strip ${PREFIX}/libexec/poppassd

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/20 01:54:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 17:21:40 naddy Exp $
 
 COMMENT=		"POP3-server virtual domain support"
 
@@ -20,5 +20,7 @@ MASTER_SITES=		ftp://www.toontown.org/pub/teapop/
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-flock
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=		Yes
 			
 .include <bsd.port.mk>

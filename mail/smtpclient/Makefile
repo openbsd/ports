@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/11 00:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 17:21:39 naddy Exp $
 
 COMMENT=		"simple SMTP client"
 
 DISTNAME=		smtpclient-1.0.0
 CATEGORIES=		mail
-NEED_VERSION=		1.402
+
 HOMEPAGE=		http://www.engelschall.com/sw/smtpclient/
 
 MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}distrib/
 
 CONFIGURE_STYLE=	gnu dest
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
