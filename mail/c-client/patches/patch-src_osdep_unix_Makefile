@@ -1,5 +1,5 @@
 --- src/osdep/unix/Makefile.orig	Tue Nov 16 21:05:48 1999
-+++ src/osdep/unix/Makefile	Fri Sep 15 04:26:14 2000
++++ src/osdep/unix/Makefile	Sun Sep 17 08:22:35 2000
 @@ -96,6 +96,7 @@
  DEFAULTAUTHENTICATORS=md5 $(SPECIALAUTHENTICATORS) log
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
@@ -16,6 +16,15 @@
  CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
  MAKE=make
  MV=mv
+@@ -209,7 +211,7 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-O2 -pipe -DNFSKLUDGE"
++	 BASECFLAGS="-O2 -pipe -DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS=1"
+ 
+ cvx:	# Convex
+ 	$(BUILD) `cat EXTRASPECIALS` OS=$@ \
 @@ -627,20 +629,27 @@
  
  # Build it!
