@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1998/11/19 00:47:17 yanick Exp $
+# $OpenBSD: Makefile,v 1.17 1999/01/31 00:42:58 marc Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -67,7 +67,6 @@
 #    SUBDIR += xmorph
 #    SUBDIR += xmountains
      SUBDIR += xpaint
-     SUBDIR += xpdf
      SUBDIR += xpm
      SUBDIR += xv
 
