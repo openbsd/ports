@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.37 2003/10/18 18:20:40 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -13,9 +13,11 @@ DISTNAME=rar-2.0x
 .if ${MACHINE_ARCH} == "i386"
 DISTFILES=	rarbsd.sfx
 PKGNAME=	rar-2.02
+EMUL=		bsdos
 .elif ${MACHINE_ARCH} == "sparc"
 DISTFILES=	rarsparc.sfx
 PKGNAME=	rar-2.01
+EMUL=		svr4
 .endif
 
 SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
@@ -38,25 +40,12 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=	Yes
 
 WRKDIST=	${WRKDIR}
+SUBST_VARS+=	EMUL
+SYSCTL=		${SUDO} sysctl -w kern.emul.${EMUL}
 
-.if !defined(NO_WARNINGS)
-pre-fetch:
-.if ${MACHINE_ARCH} == "i386"
-	@echo
-	@echo "WARNING:	This application requires a kernel compiled with"
-	@echo "		'option COMPAT_BSDOS' for proper operation.  The"
-	@echo "		GENERIC kernel contains this option."
-	@echo
-.elif ${MACHINE_ARCH} == "sparc"
-	@echo
-	@echo "WARNING:	This application requires a kernel compiled with"
-	@echo "		'option COMPAT_SVR4' and Solaris shared libraries"
-	@echo "		for proper operation; see compat_svr4(8) for"
-	@echo "		further details.  The GENERIC kernel contains this"
-	@echo "		option."
-	@echo
-.endif
-.endif
+pre-extract:
+	@sysctl -n kern.emul.${EMUL} > ${WRKDIR}/.emul_${EMUL}
+	@${SYSCTL}=1
 
 post-extract:
 .if ${MACHINE_ARCH} == "sparc"
@@ -64,6 +53,7 @@ post-extract:
 	mv RAR rar && mv UNRAR unrar && \
 	mv DEFAULT.SFX default.sfx && mv Rar_FAQ.Txt Rar_FAQ.txt
 .endif
+	@${SYSCTL}=`cat ${WRKDIR}/.emul_${EMUL}`
 
 DOCS=	Rar_FAQ.txt TechNote.Txt License.Txt Internet.Txt Rar.Txt
 

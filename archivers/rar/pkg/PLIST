@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/11/12 16:22:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/10/18 18:20:40 sturm Exp $
 bin/rar
 share/rar/dos.sfx
 share/rar/default.sfx
@@ -10,3 +10,4 @@ share/doc/rar/License.Txt
 share/doc/rar/Internet.Txt
 @dirrm share/doc/rar
 @dirrm share/rar
+@exec sysctl -w kern.emul.${EMUL}=1
