@@ -1,0 +1,27 @@
+#!/bin/sh
+PREFIX=${PREFIX:-/usr/local}
+LOCALBASE=${LOCALBASE:-/usr/local}
+DIR=$PREFIX/lib/id-utils
+edone=false
+xdone=false
+
+if [ -x $LOCALBASE/bin/emacs  -a -d $LOCALBASE/share/emacs/site-lisp ]
+then
+	echo "Compiling emacs mode"
+	cd $LOCALBASE/share/emacs/site-lisp && \
+	cp $DIR/id-utils.el . && \
+	EMACS=$LOCALBASE/bin/emacs /bin/sh $DIR/elisp-comp id-utils.el && \
+	edone=true
+fi
+
+if [ -x $LOCALBASE/bin/xemacs -a -d $LOCALBASE/lib/xemacs/site-lisp ]
+then
+	echo "Compiling xemacs mode"
+	cd $LOCALBASE/lib/xemacs/site-lisp && \
+	cp $DIR/id-utils.el . && \
+	EMACS=$LOCALBASE/bin/xemacs /bin/sh $DIR/elisp-comp id-utils.el && \
+	xdone=true
+fi
+
+{ $edone && $xdone;  } || \
+echo "Rerun $DIR/recompile if you install emacs or xemacs later"
