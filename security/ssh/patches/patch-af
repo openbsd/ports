@@ -1,6 +1,6 @@
---- sshd.8.in.orig	Mon May 11 15:37:57 1998
-+++ sshd.8.in	Sun May 31 12:52:10 1998
-@@ -378,7 +378,7 @@
+--- sshd.8.in.orig	Thu Jun 11 07:00:44 1998
++++ sshd.8.in	Thu Jun 11 19:52:42 1998
+@@ -406,7 +406,7 @@
  should print information whether you have new mail or not
  when a user logs in interactively.  (On some systems it is also
  printed by the shell, /etc/profile, or equivalent.)  The default is

@@ -1,6 +1,6 @@
---- configure.~1~	Mon May 11 15:38:33 1998
-+++ configure	Sun May 31 12:41:39 1998
-@@ -1764,13 +1764,6 @@
+--- configure.orig	Thu Jun 11 07:01:48 1998
++++ configure	Thu Jun 11 19:52:41 1998
+@@ -1911,13 +1911,6 @@
  
  export CFLAGS CC
  
@@ -12,9 +12,9 @@
 -
 -
  echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
- echo "configure:1776: checking that the compiler works" >&5
+ echo "configure:1923: checking that the compiler works" >&5
  if test "$cross_compiling" = yes; then
-@@ -7218,7 +7211,7 @@
+@@ -7435,7 +7428,7 @@
  
  cat >> $CONFIG_STATUS <<EOF
  
@@ -23,7 +23,7 @@
  EOF
  cat >> $CONFIG_STATUS <<\EOF
  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
-@@ -7422,6 +7415,8 @@
+@@ -7639,6 +7632,8 @@
    done
  
    for ac_config_dir in gmp-2.0.2-ssh-2; do
