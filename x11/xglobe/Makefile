@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/01/07 05:33:05 mark Exp $
 
 COMMENT=	"display the Earth on X11"
 
-CATEGORIES=x11
-HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
-#MASTER_SITES=${HOMEPAGE}
+CATEGORIES=	x11
+HOMEPAGE=	http://www.cs.unc.edu/~scheuerm/xglobe/
+#MASTER_SITES=	${HOMEPAGE}
 # Temporary release
-MASTER_SITES=ftp://quatramaran.ens.fr/pub/espie/
-DISTNAME=xglobe-0.5p2
-NEED_VERSION=1.483
+MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
+DISTNAME=	xglobe-0.5p2
+NEED_VERSION=	1.500
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -21,12 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 MODULES=		qt2
 
-MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
+MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}
 
-FLAVORS=no_map
+FLAVORS=	no_map
 FLAVOR?=
 .if ${FLAVOR:L:Mno_map}
-DISTFILES=${DISTNAME}-no-map${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-no-map${EXTRACT_SUFX}
 
 # Kludge install for no map around
 pre-install:
@@ -37,12 +37,12 @@ post-install::
 .endif
 
 
-MAKE_FLAGS+=QT_INCLUDE_DIR=${MODQT_INCDIR}
-MAKE_FLAGS+=QT_LIB_DIR=${MODQT_LIBDIR}
+MAKE_FLAGS+=	QT_INCLUDE_DIR=${MODQT_INCDIR}
+MAKE_FLAGS+=	QT_LIB_DIR=${MODQT_LIBDIR}
 
 # for linking against libpng
-MAKE_FLAGS+='LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
-MAKE_FLAGS+=COPTS='${COPTS}'
+MAKE_FLAGS+=	'LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
+MAKE_FLAGS+=	COPTS='${COPTS}'
 
 post-install::
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xglobe
@@ -51,8 +51,8 @@ post-install::
 	${INSTALL_SCRIPT} ${FILESDIR}/getcloudmap ${PREFIX}/bin
 	${INSTALL_DATA} ${FILESDIR}/OpenBSD-markers ${PREFIX}/lib/xglobe
 
-SUPDISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-no-map${EXTRACT_SUFX}
+SUPDISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-no-map${EXTRACT_SUFX}
 
-FAKE_FLAGS=XGLOBE_DIR=${WRKINST}${PREFIX}
+FAKE_FLAGS=	XGLOBE_DIR=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>
