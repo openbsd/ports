@@ -1,20 +1,14 @@
-# New ports collection makefile for:    unzip
-# Version required:     5.3.2
-# Date created:         22 Jun 1998
-# Whom:                 form
-#
-# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:43 form Exp $
-# FreeBSD: Makefile,v 1.18 1998/01/24 07:11:16 jkh Exp
+# $OpenBSD: Makefile,v 1.6 1999/03/24 04:35:24 fgsch Exp $
 #
 
-DISTNAME=	unzip532
-PKGNAME=	unzip-5.3.2
+DISTNAME=	unzip540
+PKGNAME=	unzip-5.40
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 
 MAINTAINER=     form@OpenBSD.ORG
 
-WRKSRC=		${WRKDIR}/unzip-5.32
+WRKSRC=		${WRKDIR}/${PKGNAME}
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
