@@ -1,0 +1,15 @@
+$OpenBSD: patch-makeinclude_in,v 1.1 2001/03/26 09:14:43 wilfried Exp $
+--- makeinclude.in.orig	Sat Jan  9 20:48:33 1999
++++ makeinclude.in	Fri Mar 16 17:43:44 2001
+@@ -15,9 +15,9 @@ CC	=@CC@
+ MAKEDEPEND =@MAKEDEPEND@
+ 
+ # flags for C++ compiler:
+-CFLAGS		=@CFLAGS@
++CFLAGS		=@CFLAGS@ @X_CFLAGS@
+ CFLAGS_D	=@CFLAGS_D@
+-CXXFLAGS	=@CXXFLAGS@
++CXXFLAGS	=@CXXFLAGS@ @X_CFLAGS@
+ CXXFLAGS_D	=@CXXFLAGS_D@
+ 
+ # libraries to link with:

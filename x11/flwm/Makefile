@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/11/29 12:29:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/26 09:14:41 wilfried Exp $
 
 DISTNAME=	flwm-1.00
 PKGNAME=	flwm-1.0.0
@@ -12,7 +12,7 @@ MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 NO_SHARED_LIBS= Yes

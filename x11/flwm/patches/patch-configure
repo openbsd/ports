@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure,v 1.3 2001/03/26 09:14:42 wilfried Exp $
+--- configure.orig	Wed Jan  5 11:14:02 2000
++++ configure	Fri Mar 16 17:42:11 2001
+@@ -1802,43 +1802,6 @@ LIBS="$LIBS$X_LIBS"
+ 
+ MAKEDEPEND="\$(CXX) -M"
+ 
+-if test -n "$GXX"; then
+-    # GNU C compiler
+-    # -Wno-return-type is necessary for Xlib header files on many systems:
+-    CFLAGS="$CFLAGS -Wall -Wno-return-type -O2 $X_CFLAGS"
+-    CFLAGS_D="$CFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS -Wall -Wno-return-type -O2 $X_CFLAGS"
+-    CXXFLAGS_D="$CXXFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-else
+-if test "`(uname) 2>/dev/null`" = IRIX; then
+-  if expr "`(uname -r)`" \>= 6.2; then
+-    # turn on new "n32" Irix compiler:
+-    CXX="CC -n32"
+-    CC="cc -n32"
+-    LD="ld -n32"
+-    # but -M is broken so use old compiler:
+-    MAKEDEPEND="CC -M"
+-    # -woff 3322 is necessary due to errors in Xlib headers on IRIX
+-    CFLAGS="$CFLAGS -fullwarn -O2 $X_CFLAGS"
+-    CFLAGS_D="$CFLAGS -fullwarn -gslim -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS -fullwarn -woff 3322 -O2 $X_CFLAGS"
+-    CXXFLAGS_D="$CXXFLAGS -fullwarn -woff 3322 -gslim -DDEBUG $X_CFLAGS"
+-  else
+-    # old Irix compiler:
+-    CFLAGS="$CFLAGS -O2 $X_CFLAGS"
+-    CFLAGS_D="$CFLAGS -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS +w +pp -O2 $X_CFLAGS"
+-    CXXFLAGS_D="$CXXFLAGS +w +pp -g -DDEBUG $X_CFLAGS"
+-  fi
+-else
+-    # generic C compiler:
+-    CFLAGS="$CFLAGS -O $X_CFLAGS"
+-    CFLAGS_D="$CFLAGS -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS -O $X_CFLAGS"
+-    CXXFLAGS_D="$CXXFLAGS -g -DDEBUG $X_CFLAGS"
+-fi
+-fi
+-
+ 
+ 
+ trap '' 1 2 15
