@@ -1,10 +1,5 @@
-# OpenBSD makefile for:	egcs
-# Version required:	recent enough snapshot, check below
-# Date created:		25 sep 98
-# Whom:			Marc Espie
-#
-# $OpenBSD: Makefile,v 1.33 1999/02/21 01:04:59 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.34 1999/02/23 09:28:23 espie Exp $
+
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
@@ -23,7 +18,10 @@ MIRROR_DISTFILE=no
 # Testers for the new configurations:
 # Jason L.Wright & Marco S.Hyman for sparc,
 # Michael Shalayeff for hppa,
-# Wim Van Deputte for alpha.
+# Wim Van Deputte for alpha,
+# Steve Murphee for m88k,
+# Per Fogelstrom and Todd Millert for mips,
+# Dale Rahn for rs6000.
 
 # user configuration section
 
@@ -48,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-02-14
+LATEST_DATE=1999-02-21
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
