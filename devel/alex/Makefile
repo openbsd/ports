@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/14 02:17:34 dons Exp $
 
 COMMENT=	"lexical analyser generator for Haskell"
 
@@ -13,7 +13,7 @@ MODULES=	lang/ghc
 
 MASTER_SITES=	http://www.haskell.org/alex/dist/
 MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/alex/
-DISTFILES=	${DISTNAME}-src.tar.bz2 alex-regress-${V}.tgz:0
+DISTFILES=	${DISTNAME}-src.tar.gz alex-regress-${V}.tgz:0
 
 BUILD_DEPENDS+=	::textproc/docbook	::textproc/docbook-dsssl \
 		::textproc/sgmlformat	::textproc/openjade      \
