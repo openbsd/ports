@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 21:13:47 danh Exp $
+bin/perltidy
+man/man1/perl2web.1
+man/man1/perltidy.1
