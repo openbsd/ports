@@ -1,16 +1,7 @@
 --- pnm/Makefile.orig	Mon Jan 31 11:47:32 1994
-+++ pnm/Makefile	Tue Jun  1 09:28:32 1999
-@@ -10,27 +10,29 @@
- # implied warranty.
- 
- # Default values, usually overridden by top-level Makefile.
--#CC =		cc
--CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
-+#CC =		gcc
-+#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
- #CFLAGS =	-O
--CFLAGS =	-g
-+#CFLAGS =	-O2
++++ pnm/Makefile	Mon Jan  8 16:22:43 2001
+@@ -16,21 +16,23 @@
+ CFLAGS =	-g
  #CFLAGS =	-g -O
  TIFFDEF =	-DLIBTIFF
 -TIFFINC =       -I../libtiff
@@ -42,14 +33,7 @@
  
  PPMDIR =	../ppm
  INCLUDEPPM =	-I$(PPMDIR)
-@@ -54,48 +56,52 @@
- INCLUDE =	-I.. $(INCLUDEPPM) $(INCLUDEPGM) $(INCLUDEPBM)
- ALLCFLAGS =	$(CFLAGS) $(INCLUDE) $(TIFFDEF) $(TIFFINC)
- LIBPNM =	libpnm.a
-+DEFPNM =	pnm.h
- 
- PORTBINARIES =	fitstopnm giftopnm \
- 		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
+@@ -60,41 +62,45 @@
  		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhistmap \
  		pnminvert pnmnoraw pnmpad pnmpaste \
  		pnmtile pnmtoddif pnmtofits pnmtops pnmtorast \
@@ -102,60 +86,29 @@
  	cd $(INSTALLSCRIPTS) ; rm -f $(SCRIPTS)
 -	cp $(SCRIPTS) $(INSTALLSCRIPTS)
 -	cd $(INSTALLSCRIPTS) ; chmod +x $(SCRIPTS)
--
 +	install -c -m 0755 $(SCRIPTS) $(INSTALLSCRIPTS)
 +	install -c -m 0644 $(LIBPNM) $(INSTALLLIBS)
-+	install -c -m 0644 $(DEFPNM) $(INSTALLDEFS)
++	install -c -m 0644 pnm.h $(INSTALLDEFS)
+ 
  
  merge:		pnmmerge
- pnmmerge:	pnmmerge.c $(OBJECTS) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
-@@ -128,16 +134,22 @@
+@@ -128,8 +134,14 @@
  
  
  # Rules for plain programs.
 -$(PORTBINARIES) $(TIFFBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
 -	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
-+$(PORTBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++$(PORTBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
 +	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
 +
-+$(PNGBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++$(PNGBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
 +	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) -L${LOCALBASE}/lib -lpng -lz -lm
 +
-+$(TIFFBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++$(TIFFBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
 +	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB) -lm -lz
  
  # Rule for math-dependent programs.
--$(MATHBINARIES):        pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) \
-+$(MATHBINARIES):        $(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) \
- 			$(LIBPPM) $(LIBPGM) $(LIBPBM)
- 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c -lm $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
- 
- # Rule for objects.
--$(OBJECTS):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM)
-+$(OBJECTS):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM)
- 	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
- 
- # And libraries.
-@@ -153,15 +165,15 @@
- 	ar rc $(LIBPNM) libpnm1.o libpnm2.o libpnm3.o libpnm4.o
- 	-ranlib $(LIBPNM)
- 
--libpnm1.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm1.c
-+libpnm1.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm1.c
- 	$(CC) $(ALLCFLAGS) -c libpnm1.c
--libpnm2.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm2.c $(DEFLIBPPM) \
-+libpnm2.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm2.c $(DEFLIBPPM) \
- 		$(DEFLIBPGM) $(DEFLIBPBM)
- 	$(CC) $(ALLCFLAGS) -c libpnm2.c
--libpnm3.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm3.c $(DEFLIBPPM) \
-+libpnm3.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm3.c $(DEFLIBPPM) \
- 		$(DEFLIBPGM) $(DEFLIBPBM)
- 	$(CC) $(ALLCFLAGS) -c libpnm3.c
--libpnm4.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) rast.h libpnm4.c
-+libpnm4.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) rast.h libpnm4.c
- 	$(CC) $(ALLCFLAGS) -c libpnm4.c
- 
- # Other dependencies.
+ $(MATHBINARIES):        pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) \
 @@ -202,6 +214,8 @@
  tifftopnm tifftopnm.o:		tifftopnm.c
  xwdtopnm xwdtopnm.o:		xwdtopnm.c x10wd.h x11wd.h

@@ -1,16 +1,6 @@
 --- pbm/Makefile.orig	Sat Nov 20 09:59:20 1993
-+++ pbm/Makefile	Tue Jun  1 09:26:48 1999
-@@ -10,28 +10,31 @@
- # implied warranty.
- 
- # Default values, usually overridden by top-level Makefile.
--CC =		cc
-+#CC =		gcc
- #CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
- #CFLAGS =	-O
--CFLAGS =	-g
-+#CFLAGS =	-O2
- #CFLAGS =	-g -O
++++ pbm/Makefile	Mon Jan  8 15:24:26 2001
+@@ -18,14 +18,16 @@
  TIFFDEF =       -DLIBTIFF
  #LDFLAGS =	-s
  LDFLAGS =	
@@ -32,15 +22,7 @@
  
  SHELL =		/bin/sh
  INCLUDE =	-I..
- ALLCFLAGS =	$(CFLAGS) $(TIFFDEF) $(INCLUDE)
- LIBPBM =	libpbm.a
--DEFPBM =	pbm.h ../pbmplus.h
-+DEFPBM =	pbm.h
-+DEFPBMPLUS =	../pbmplus.h
- 
- PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
- 		icontopbm gemtopbm macptopbm mgrtopbm \
-@@ -67,18 +70,19 @@
+@@ -67,17 +69,19 @@
  MANUALS5 =	pbm
  
  
@@ -59,53 +41,12 @@
  install.bin:	binaries
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
 -	cp $(BINARIES) $(INSTALLBINARIES)
--
 +	install -c -s -m 0755 $(BINARIES) $(INSTALLBINARIES)
 +	install -c -m 0644 $(LIBPBM) $(INSTALLLIBS)
 +	install -c -m 0644 $(DEFPBM) $(INSTALLDEFS)
  
+ 
  merge:		pbmmerge
- pbmmerge:	pbmmerge.c $(OBJECTS) $(LIBPBM)
-@@ -107,15 +111,15 @@
- 	done
- 
- # Rule for plain programs.
--$(PORTBINARIES):	$(DEFPBM) $(LIBPBM)
-+$(PORTBINARIES):	$(DEFPBM) $(DEFPBMPLUS) $(LIBPBM)
- 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPBM)
- 
- # Rule for math-dependent programs.
--$(MATHBINARIES):	$(DEFPBM) $(LIBPBM)
-+$(MATHBINARIES):	$(DEFPBM) $(DEFPBMPLUS) $(LIBPBM)
- 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c -lm $(LIBPBM)
- 
- # Rule for objects.
--$(OBJECTS):	$(DEFPBM)
-+$(OBJECTS):	$(DEFPBM) $(DEFPBMPLUS)
- 	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
- 
- # And library.
-@@ -125,15 +129,15 @@
- 	ar rc $(LIBPBM) libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o
- 	-ranlib $(LIBPBM)
- 
--libpbm1.o:	$(DEFPBM) ../version.h ../compile.h libpbm.h libpbm1.c
-+libpbm1.o:	$(DEFPBM) $(DEFPBMPLUS) ../version.h ../compile.h libpbm.h libpbm1.c
- 	$(CC) $(ALLCFLAGS) -c libpbm1.c
--libpbm2.o:	$(DEFPBM) libpbm.h libpbm2.c
-+libpbm2.o:	$(DEFPBM) $(DEFPBMPLUS) libpbm.h libpbm2.c
- 	$(CC) $(ALLCFLAGS) -c libpbm2.c
--libpbm3.o:	$(DEFPBM) libpbm.h libpbm3.c
-+libpbm3.o:	$(DEFPBM) $(DEFPBMPLUS) libpbm.h libpbm3.c
- 	$(CC) $(ALLCFLAGS) -c libpbm3.c
--libpbm4.o:	$(DEFPBM) libpbm.h libpbm4.c
-+libpbm4.o:	$(DEFPBM) $(DEFPBMPLUS) libpbm.h libpbm4.c
- 	$(CC) $(ALLCFLAGS) -c libpbm4.c
--libpbm5.o:	$(DEFPBM) pbmfont.h libpbm5.c
-+libpbm5.o:	$(DEFPBM) $(DEFPBMPLUS) pbmfont.h libpbm5.c
- 	$(CC) $(ALLCFLAGS) -c libpbm5.c
- 
- # Other dependencies.
 @@ -184,4 +188,4 @@
  pbmtoepsi pbmtoepsi.o:		pbmtoepsi.c
  

@@ -1,16 +1,8 @@
 --- ppm/Makefile.orig	Mon Jan 31 11:44:34 1994
-+++ ppm/Makefile	Tue Jun  1 09:29:54 1999
-@@ -10,22 +10,23 @@
- # implied warranty.
- 
- # Default values, usually overridden by top-level Makefile.
--#CC =		cc
--CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
--#CFLAGS =	-O
--CFLAGS =	-g
-+#CC =		gcc
-+#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
-+#CFLAGS =	-O2
++++ ppm/Makefile	Mon Jan  8 16:32:47 2001
+@@ -15,17 +15,19 @@
+ #CFLAGS =	-O
+ CFLAGS =	-g
  #CFLAGS =	-g -O
 -#LDFLAGS =	-s
 -LDFLAGS =	
@@ -35,15 +27,7 @@
  
  PGMDIR =	../pgm
  INCLUDEPGM =	-I$(PGMDIR)
-@@ -43,6 +44,7 @@
- INCLUDE =	-I.. $(INCLUDEPGM) $(INCLUDEPBM)
- ALLCFLAGS =	$(CFLAGS) $(INCLUDE)
- LIBPPM =	libppm.a
-+DEFPPM =	ppm.h
- 
- PORTBINARIES =	bmptoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
- 		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
-@@ -85,21 +87,21 @@
+@@ -85,20 +87,21 @@
  MANUALS5 =	ppm
  
  
@@ -66,55 +50,13 @@
  	cd $(INSTALLSCRIPTS) ; rm -f $(SCRIPTS)
 -	cp $(SCRIPTS) $(INSTALLSCRIPTS)
 -	cd $(INSTALLSCRIPTS) ; chmod +x $(SCRIPTS)
--
 +	install -c -m 0755 $(SCRIPTS) $(INSTALLSCRIPTS)
 +	install -c -m 0644 $(LIBPPM) $(INSTALLLIBS)
-+	install -c -m 0644 $(DEFPPM) $(INSTALLDEFS)
++	install -c -m 0644 ppm.h $(INSTALLDEFS)
+ 
  
  merge:		ppmmerge
- ppmmerge:	ppmmerge.c $(OBJECTS) $(LIBPPM) $(LIBPGM) $(LIBPBM)
-@@ -132,15 +134,15 @@
- 
- 
- # Rule for plain programs.
--$(PORTBINARIES):	ppm.h $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
-+$(PORTBINARIES):	$(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
- 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPPM) $(LIBPGM) $(LIBPBM)
- 
- # Rule for math-dependent programs.
--$(MATHBINARIES):	ppm.h $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
-+$(MATHBINARIES):	$(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
- 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c -lm $(LIBPPM) $(LIBPGM) $(LIBPBM)
- 
- # Rule for objects.
--$(OBJECTS):	ppm.h $(DEFPGM) $(DEFPBM)
-+$(OBJECTS):	$(DEFPPM) $(DEFPGM) $(DEFPBM)
- 	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
- 
- # And libraries.
-@@ -155,16 +157,16 @@
- 	libppm5.o bitio.o
- 	-ranlib $(LIBPPM)
- 
--libppm1.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm.h libppm1.c
-+libppm1.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm.h libppm1.c
- 	$(CC) $(ALLCFLAGS) -c libppm1.c
--libppm2.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm.h libppm2.c $(DEFLIBPGM) \
-+libppm2.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm.h libppm2.c $(DEFLIBPGM) \
- 		$(DEFLIBPBM)
- 	$(CC) $(ALLCFLAGS) -c libppm2.c
--libppm3.o:	ppm.h $(DEFPGM) $(DEFPBM) ppmcmap.h libppm.h libppm3.c
-+libppm3.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) ppmcmap.h libppm.h libppm3.c
- 	$(CC) $(ALLCFLAGS) -c libppm3.c
--libppm4.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm4.c
-+libppm4.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm4.c
- 	$(CC) $(ALLCFLAGS) -c libppm4.c
--libppm5.o:	ppm.h $(DEFPGM) $(DEFPBM) ppmdraw.h libppm5.c
-+libppm5.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) ppmdraw.h libppm5.c
- 	$(CC) $(ALLCFLAGS) -c libppm5.c
- bitio.o:	../pbmplus.h bitio.c
- 	$(CC) $(ALLCFLAGS) -c bitio.c
-@@ -235,4 +237,4 @@
+@@ -235,4 +238,4 @@
  yuvsplittoppm yuvsplittoppm.o:	yuvsplittoppm.c
  
  clean:

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 22:12:31 brad Exp $
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
@@ -179,6 +180,7 @@ bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
 include/pbm.h
+include/pbmplus.h
 include/pgm.h
 include/pnm.h
 include/ppm.h
