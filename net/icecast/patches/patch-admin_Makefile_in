@@ -1,0 +1,12 @@
+$OpenBSD: patch-admin_Makefile_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
+--- admin/Makefile.in.orig	2004-01-07 22:52:09.000000000 +0100
++++ admin/Makefile.in	2004-01-08 15:53:04.000000000 +0100
+@@ -33,7 +33,7 @@ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/examples/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..

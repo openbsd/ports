@@ -1,34 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/03 01:37:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/02/02 19:32:37 fgsch Exp $
 bin/icecast
 share/doc/icecast/AUTHORS
-share/doc/icecast/BUGS
-share/doc/icecast/CHANGES
-share/doc/icecast/COPYING
-share/doc/icecast/FAQ
-share/doc/icecast/README
-share/doc/icecast/manual.html
-share/examples/icecast/groups.aut.dist
-share/examples/icecast/icecast.conf.dist
-share/examples/icecast/mounts.aut.dist
-share/examples/icecast/users.aut.dist
-share/icecast/templates/306.html
-share/icecast/templates/400.html
-share/icecast/templates/403.html
-share/icecast/templates/404.html
-share/icecast/templates/504.html
-share/icecast/templates/admin.html
-share/icecast/templates/admin_change.html
-share/icecast/templates/admin_describe.html
-share/icecast/templates/alias_add.html
-share/icecast/templates/alias_del.html
-share/icecast/templates/bodytag.html
-share/icecast/templates/footer.html
-share/icecast/templates/header.html
-share/icecast/templates/info.html
-share/icecast/templates/list_directory.html
-share/icecast/templates/mountlist.html
-share/icecast/templates/statistics.html
-@dirrm share/icecast/templates
-@dirrm share/icecast
+share/doc/icecast/NEWS
+share/doc/icecast/README.OpenBSD
+share/doc/icecast/icecast2_admin.html
+share/doc/icecast/icecast2_basicsetup.html
+share/doc/icecast/icecast2_config_file.html
+share/doc/icecast/icecast2_faq.html
+share/doc/icecast/icecast2_glossary.html
+share/doc/icecast/icecast2_introduction.html
+share/doc/icecast/icecast2_relay.html
+share/doc/icecast/icecast2_stats.html
+share/doc/icecast/icecast2_win32.html
+share/doc/icecast/icecast2_yp.html
+share/doc/icecast/index.html
+share/examples/icecast/admin/listclients.xsl
+share/examples/icecast/admin/listmounts.xsl
+share/examples/icecast/admin/moveclients.xsl
+share/examples/icecast/admin/response.xsl
+share/examples/icecast/admin/stats.xsl
+share/examples/icecast/icecast.xml.dist
+share/examples/icecast/web/status.xsl
+share/examples/icecast/web/status2.xsl
+@dirrm share/examples/icecast/web
+@dirrm share/examples/icecast/admin
 @dirrm share/examples/icecast
 @dirrm share/doc/icecast

@@ -1,0 +1,21 @@
+$OpenBSD: patch-conf_icecast_xml_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
+--- conf/icecast.xml.in.orig	2004-01-08 15:13:21.000000000 +0100
++++ conf/icecast.xml.in	2004-01-26 08:33:24.000000000 +0100
+@@ -78,7 +78,7 @@
+     </mount>
+     -->
+ 
+-    <fileserve>1</fileserve>
++    <fileserve>0</fileserve>
+ 
+     <paths>
+ 		<!-- basedir is only used if chroot is enabled -->
+@@ -89,7 +89,7 @@
+         <logdir>@localstatedir@/log/@PACKAGE@</logdir>
+         <webroot>@pkgdatadir@/web</webroot>
+         <adminroot>@pkgdatadir@/admin</adminroot>
+-        <!-- <pidfile>@pkgdatadir@/icecast.pid</pidfile> -->
++        <!-- <pidfile>@localstatedir@/run/icecast.pid</pidfile> -->
+ 
+         <!-- Aliases: treat requests for 'source' path as being for 'dest' path
+              May be made specific to a port or bound address using the "port"

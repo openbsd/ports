@@ -1,27 +1,39 @@
-# $OpenBSD: Makefile,v 1.22 2002/11/24 10:04:59 brad Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.23 2004/02/02 19:32:36 fgsch Exp $
 
-COMMENT=	"Internet based broadcasting system"
+COMMENT=	"server for streaming Ogg Vorbis and MP3"
 
-DISTNAME=	icecast-1.3.12
+DISTNAME=	icecast-2.0.0
 CATEGORIES=	net audio
-MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/
 
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+MAINTAINER=	Moritz Grimm <gtgbr@gmx.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-crypt --with-libwrap
+MASTER_SITES=	http://icecast.org/files/
 
-DOCS=	AUTHORS BUGS CHANGES COPYING FAQ README
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --localstatedir=/var
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS=	curl.2::net/curl \
+		xslt.1::textproc/libxslt \
+		vorbis.2,vorbisenc.2::audio/libvorbis
+
+SEPARATE_BUILD=	simple
+
+post-build:
+	@sed -e 's,##PREFIX##,${TRUEPREFIX},g' < ${FILESDIR}/README.OpenBSD > \
+		${WRKBUILD}/README.OpenBSD
 
 post-install:
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/icecast
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
+		${PREFIX}/share/doc/icecast/README.OpenBSD
 
 .include <bsd.port.mk>

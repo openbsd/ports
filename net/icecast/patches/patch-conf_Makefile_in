@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_Makefile_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
+--- conf/Makefile.in.orig	2004-01-07 22:52:09.000000000 +0100
++++ conf/Makefile.in	2004-01-08 15:49:28.000000000 +0100
+@@ -114,7 +114,7 @@ AUTOMAKE_OPTIONS = foreign
+ EXTRA_DIST = icecast.xml.in
+ DISTCLEANFILES = icecast.xml.dist
+ 
+-docdir = $(datadir)/$(PACKAGE)/doc
++docdir = $(datadir)/examples/$(PACKAGE)
+ doc_DATA = icecast.xml.dist
+ 
+ edit = sed -e 's,@pkgdatadir\@,$(pkgdatadir),g' \

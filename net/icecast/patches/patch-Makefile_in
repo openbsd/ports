@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
+--- Makefile.in.orig	2004-01-07 22:52:09.000000000 +0100
++++ Makefile.in	2004-01-08 15:49:28.000000000 +0100
+@@ -120,7 +120,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m
+ 
+ 
+ docdir = $(datadir)/doc/$(PACKAGE)
+-doc_DATA = README AUTHORS COPYING NEWS TODO
++doc_DATA = AUTHORS NEWS
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
