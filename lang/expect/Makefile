@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2003/12/27 23:24:26 jose Exp $
+# $OpenBSD: Makefile,v 1.42 2004/04/18 19:55:47 jolan Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
@@ -38,10 +38,5 @@ REGRESS_TARGET=	test
 DESTDIRNAME=	INSTALL_ROOT
 
 WRKDIST=${WRKDIR}/expect-5.39
-
-# make sure configure is newer than Makefile.in, since we patch Makefile.in
-# as well.
-post-patch:
-	@touch ${WRKSRC}/configure
 
 .include <bsd.port.mk>
