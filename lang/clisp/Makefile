@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/08/10 09:14:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.22 2004/09/18 16:06:55 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -29,15 +29,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/src/autoconf \
 MAKE_FLAGS=	INSTALL='install -c' \
 		INSTALL_PROGRAM='install -c -s -m 555' \
 		INSTALL_DATA='install -c -m 644'
-
-# configure can't handle multiple blanks
-CONFIGURE_SCRIPT=${WRKSRC}/configure.wrapper
-
-pre-configure:
-	@(echo '#!/bin/sh'; \
-	  echo 'CFLAGS=`echo "$$CFLAGS" | tr -s "[:space:]"`'; \
-	  echo '${WRKSRC}/configure $$@') >${CONFIGURE_SCRIPT}; \
-	chmod u+rx ${CONFIGURE_SCRIPT}
 
 post-configure:
 	@cd ${WRKBUILD} && \
