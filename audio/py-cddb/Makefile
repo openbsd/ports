@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/28 18:32:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/21 11:32:47 sturm Exp $
 
 COMMENT=	"CDDB audio CD track info access in Python"
 
-DISTNAME=	CDDB-1.3
+DISTNAME=	CDDB-1.4
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	audio
 
 HOMEPAGE=	http://cddb-py.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cddb-py/}
-
-# avoid possible conflict with the audio/p5-cddb distfile
-DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
 
@@ -20,7 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cddb-py/}
+# avoid possible conflict with the audio/p5-cddb distfile
+DIST_SUBDIR=	${PKGNAME}
+
 MODULES=	python
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-cddb
