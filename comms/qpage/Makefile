@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/14 00:24:56 turan Exp $
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"license only grants use"
+PERMIT_PACKAGE_FTP=	"license only grants use"
+PERMIT_DISTFILES_CDROM=	"license only grants use"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z

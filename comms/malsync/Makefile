@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/14 00:24:56 turan Exp $
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
@@ -10,6 +10,11 @@ DISTFILES=	malsync_1_6.source.tar.gz \
 		mal-0_7_tar.gz:0
 
 MAINTAINER=	evan.cordes@UMICH.EDU
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/AvantGo/ 
 MASTER_SITES0=	http://corp.avantgo.com/mal/source/
