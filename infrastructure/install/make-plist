@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.59 2004/09/18 11:03:45 espie Exp $
+# $OpenBSD: make-plist,v 1.60 2004/10/17 09:20:06 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -229,7 +229,7 @@ sub register
 	}
 }
 
-package OpenBSD::PackingElement::Exec;
+package OpenBSD::PackingElement::ExeclikeAction;
 sub register
 {
 	my ($self, $plist, $files, $comments, $existing) = @_;
@@ -252,12 +252,6 @@ sub register
 	}
 }
 
-package OpenBSD::PackingElement::Unexec;
-sub register
-{
-	&OpenBSD::PackingElement::Exec::register;
-}
-
 package OpenBSD::PackingElement::Sampledir;
 sub register
 {
@@ -269,18 +263,12 @@ sub register
 	}
 }
 
-package OpenBSD::PackingElement::DirBase;
+package OpenBSD::PackingElement::DirlikeObject;
 sub add_to_mtree
 {
 	my ($self, $mtree) = @_;
 
 	$mtree->{$self->fullname()} = 1;
-}
-
-package OpenBSD::PackingElement::DirRm;
-sub add_to_mtree
-{
-	&OpenBSD::PackingElement::DirBase::add_to_mtree;
 }
 
 package OpenBSD::PackingElement::Comment;
@@ -322,6 +310,10 @@ sub copy_extra
 	# don't try to deal with cwd issues
 	$self->clone()->add_object($plist);
 	$plist->{nonempty} = 1;
+}
+
+sub register
+{
 }
 
 package main;
@@ -895,16 +887,12 @@ for my $plist (@l) {
 			OpenBSD::PackingElement::NoDefaultConflict->add($plist);
 			$plist->{nonempty} = 1;
 		}
-		if (defined $orig->{pkgcfl}) {
-			for my $cfl (@{$orig->{pkgcfl}}) {
-				$cfl->clone()->add_object($plist);
-				$plist->{nonempty} = 1;
-			}
-		}
-		if (defined $orig->{conflict}) {
-			for my $cfl (@{$orig->{conflict}}) {
-				$cfl->clone()->add_object($plist);
-				$plist->{nonempty} = 1;
+		for my $listname (qw(pkgcfl conflict groups users)) {
+			if (defined $orig->{$listname}) {
+				for my $o (@{$orig->{$listname}}) {
+					$o->clone()->add_object($plist);
+					$plist->{nonempty} = 1;
+				}
 			}
 		}
 	}
