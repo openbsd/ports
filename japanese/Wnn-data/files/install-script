@@ -65,7 +65,6 @@ korean)
 	usr_dirs=/var/dict/ko_KR/usr
 	wnntouch=/usr/local/bin/kwnntouch
 	wnnserver=/usr/local/bin/kserver;;
-	;;
 esac
 
 # installation not yet complete, bail out
