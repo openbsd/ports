@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/08/06 08:42:10 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/02/18 20:48:38 brad Exp $
 #
 # Pre/post-installation setup of esound
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/esd.conf
+CONFIG_FILE=${SYSCONFDIR}/esd.conf
 SAMPLE_CONFIG_FILE=$PREFIX/share/examples/esound/esd.conf-sample
 
 do_notice()
