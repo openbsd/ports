@@ -1,0 +1,11 @@
+$OpenBSD: patch-uml_classparser_tokenizer_l,v 1.1.1.1 2003/01/27 20:27:13 espie Exp $
+--- uml/classparser/tokenizer.l.orig	Mon Jan 27 17:48:52 2003
++++ uml/classparser/tokenizer.l	Mon Jan 27 17:49:03 2003
+@@ -23,6 +23,7 @@
+   #include <qstring.h>
+   #include "tokenizer.h"
+   #include "FlexLexer.h"
++  extern int errno;
+ 
+   /* Line where a comment starts. */
+   int comment_start = -1;

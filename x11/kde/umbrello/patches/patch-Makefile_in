@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/01/27 20:27:13 espie Exp $
+--- Makefile.in.orig	Mon Jan 27 17:18:57 2003
++++ Makefile.in	Mon Jan 27 17:19:28 2003
+@@ -278,11 +278,11 @@ $(srcdir)/Makefile.in:  Makefile.am  $(t
+ #>- 	cd $(top_srcdir) && \
+ #>- $(AUTOMAKE) --foreign  ./Makefile
+ #>+ 3
+-	cd $(top_srcdir) && \
+-	$(AUTOMAKE) --foreign  ./Makefile
++#	cd $(top_srcdir) && \
++#	$(AUTOMAKE) --foreign  ./Makefile
+ 	cd $(top_srcdir) && perl admin/am_edit Makefile.in
+ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
++	cd $(top_builddir) && $(SHELL) ./config.status ./$@ $(am__depfiles_maybe)
+ 
+ $(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck

@@ -1,0 +1,15 @@
+$OpenBSD: patch-uml_codegenerators_Makefile_in,v 1.1.1.1 2003/01/27 20:27:13 espie Exp $
+--- uml/codegenerators/Makefile.in.orig	Mon Jan 27 17:36:41 2003
++++ uml/codegenerators/Makefile.in	Mon Jan 27 17:37:13 2003
+@@ -541,9 +541,9 @@ install-data-local:
+ #>- 	$(mkinstalldirs) $(kde_datadir)/umbrello/codegenerators/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_datadir)/umbrello/codegenerators/
+-#>- 	$(INSTALL_DATA) $(srcdir)/libcodegenerator.la $(kde_datadir)/umbrello/codegenerators/libcodegenerator.la
++#>- 	$(INSTALL_DATA) libcodegenerator.la $(kde_datadir)/umbrello/codegenerators/libcodegenerator.la
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/libcodegenerator.la $(DESTDIR)$(kde_datadir)/umbrello/codegenerators/libcodegenerator.la
++	$(INSTALL_DATA) libcodegenerator.la $(DESTDIR)$(kde_datadir)/umbrello/codegenerators/libcodegenerator.la
+ 
+ uninstall-local:
+ #>- 	-rm -f $(kde_datadir)/umbrello/codegenerators/libcodegenerator.la
