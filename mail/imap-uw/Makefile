@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2002/10/05 15:22:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2002/10/25 07:43:35 jakob Exp $
 
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
 
-VERSION=		2002.328rc7
-DISTNAME=		imap-2002.RC7
+VERSION=		2002.329rc8
+DISTNAME=		imap-2002.RC8
 PKGNAME=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
 CATEGORIES=		mail
@@ -33,7 +33,7 @@ FLAVORS=	noplain
 FLAVOR?=
 
 .if ${FLAVOR:L:Mnoplain}
-MAKE_FLAGS+=	SSLTYPE="unix.nopwd"
+MAKE_FLAGS+=	SSLTYPE="nopwd"
 .else
 MAKE_FLAGS+=	SSLTYPE="unix"
 .endif
