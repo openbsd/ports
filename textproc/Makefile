@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2003/05/15 06:15:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2003/05/23 21:20:27 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -67,6 +67,8 @@
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-sdf
      SUBDIR += par
+     SUBDIR += pear-XML-RSS
+     SUBDIR += pear-XML-Tree
      SUBDIR += pilot_makedoc
      SUBDIR += pspell
      SUBDIR += py-Chart
