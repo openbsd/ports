@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/25 14:00:04 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
@@ -15,11 +15,18 @@ LIB_DEPENDS=	qt.1.45::x11/qt \
 		png.1.3::graphics/png \
 		tiff.35::graphics/tiff
 
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+
 USE_BZIP2=	Yes
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static \
+                 --with-qt-includes=${LOCALBASE}/include/X11/qt \
+                 --with-qt-libraries=${LOCALBASE}/lib
 
 pre-build:      
 	@echo ""

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/24 23:28:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/25 13:59:50 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.2
@@ -15,7 +15,6 @@ LIB_DEPENDS=	qt.1.45::x11/qt \
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -24,6 +23,11 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_BZIP2=	Yes
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}' \
+                 --enable-static \
+                 --with-qt-includes=${LOCALBASE}/include/X11/qt \
+                 --with-qt-libraries=${LOCALBASE}/lib
 
 pre-build:
 	@echo ""
@@ -36,8 +40,8 @@ pre-build:
 
 KSS= kattraction.kss kbanner.kss kbat.kss kblankscrn.kss kblob.kss \
 kbouboule.kss kbsod.kss kflame.kss kforest.kss khop.kss klaser.kss \
-klines.kss klissie.kss kmorph3d.kss kpipes.kss kpolygon.kss kpyro.kss \
-krock.kss kscience.kss kslidescreen.kss kslip.kss kspace.kss kswarm.kss
+klines.kss klissie.kss kpolygon.kss kpyro.kss krock.kss kscience.kss \
+kslidescreen.kss kslip.kss kswarm.kss
 
 post-install:
 	@cd ${PREFIX}/bin && chmod u+s ${KSS}
