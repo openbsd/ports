@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/21 19:56:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/02/21 20:00:39 avsm Exp $
 
 DISTNAME=		Sablot-0.51
 PKGNAME=		sablotron-0.51
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.gingerall.cz/download/
+
+LIB_DEPENDS=		expat.2::textproc/expat
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
