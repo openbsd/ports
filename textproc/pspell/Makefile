@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 13:28:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=		"generic interface to spell checker libraries"
 
@@ -7,7 +7,6 @@ SV=			.12.2
 PKGNAME=		pspell-${V}${SV}
 DISTNAME=		pspell-${SV}
 CATEGORIES=		textproc devel
-NEED_VERSION=		1.528
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 

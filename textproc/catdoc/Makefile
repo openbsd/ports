@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/11/27 07:50:28 ish Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
 DISTNAME=	catdoc-0.91.4
 CATEGORIES=	textproc
-NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 
 HOMEPAGE=	http://www.fe.msk.ru/~vitus/catdoc/index.html	

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/20 16:22:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"command line parser generator"
 
 DISTNAME=	clo++-0.3.0
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 

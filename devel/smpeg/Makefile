@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/25 02:09:03 wcobb Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/29 20:19:12 fgsch Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
 VERSION=	0.4.4
 DISTNAME=	smpeg-${VERSION}
 CATEGORIES=	devel graphics
-NEED_VERSION=	1.417
 
 HOMEPAGE=       http://www.lokigames.com/development/smpeg.php3
 

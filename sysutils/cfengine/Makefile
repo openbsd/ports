@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:10 fgsch Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
@@ -6,7 +6,6 @@ COMMENT=	"GNU system administration tool for networks"
 
 DISTNAME=       cfengine-1.4.12
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

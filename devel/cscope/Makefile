@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:10 fgsch Exp $
 
 COMMENT=		"code browsing program"
 
 DISTNAME=		cscope-15.3
 CATEGORIES=     	devel
-NEED_VERSION=		1.468
 
 HOMEPAGE=		http://cscope.sourceforge.net/
 

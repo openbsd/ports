@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/10 20:48:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"terminal screen handling and optimisation"
 
@@ -6,7 +6,6 @@ DISTNAME=	Curses-1.06
 PKGNAME=	p5-${DISTNAME}
 
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 PERMIT_PACKAGE_CDROM=	Yes

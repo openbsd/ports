@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"Provide regular expressions for some XML tokens"
 
@@ -6,7 +6,6 @@ VERSION=	0.03
 DISTNAME=	XML-RegExp-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 PERMIT_PACKAGE_CDROM=	Yes

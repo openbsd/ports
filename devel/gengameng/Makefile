@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/28 23:25:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:10 fgsch Exp $
 
 COMMENT=	"X11 game engine library"
 
 VERSION=	4.0
 DISTNAME=	gengameng-${VERSION}
 CATEGORIES=	devel x11
-NEED_VERSION=	1.502
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/10 06:14:23 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	'perl module to create WML cards'
 
 DISTNAME=	WML-Card-0.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc www
-NEED_VERSION=	1.531
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=WML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>

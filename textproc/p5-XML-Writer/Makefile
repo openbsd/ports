@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/10 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"perl extension for writing XML documents"
 
 DISTNAME=	XML-Writer-0.4
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 PERMIT_PACKAGE_CDROM=	Yes

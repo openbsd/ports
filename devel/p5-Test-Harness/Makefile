@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/30 00:03:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:11 fgsch Exp $
 
 IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
@@ -8,7 +8,6 @@ VERSION=	2.26
 DISTNAME=	Test-Harness-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.531
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 

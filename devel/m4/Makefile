@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/29 20:19:11 fgsch Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 COMMENT=	"GNU m4"
 
 DISTNAME=	m4-1.4
 CATEGORIES=	devel
-NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU:=m4/}
 
 HOMEPAGE=	http://www.gnu.org/software/m4/

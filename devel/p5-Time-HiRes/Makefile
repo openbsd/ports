@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/30 06:35:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 20:19:11 fgsch Exp $
 
 IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
@@ -7,7 +7,6 @@ COMMENT=	"high resolution ualarm, sleep, and gettimeofday module"
 DISTNAME=	Time-HiRes-01.20
 PKGNAME=	p5-Time-HiRes-1.20
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Time/}
 
 PERMIT_PACKAGE_CDROM=	Yes

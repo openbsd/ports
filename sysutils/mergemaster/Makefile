@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/12 16:22:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 20:19:10 fgsch Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
 DISTNAME=	mergemaster-1.26
 CATEGORIES=	sysutils
-NEED_VERSION=	1.504
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/27 05:52:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"perl module for parsing XML documents"
 
 DISTNAME=	XML-Parser-2.31
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://wwwx.netheaven.com/~coopercc/xmlparser/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:10 fgsch Exp $
 
 COMMENT=	"perfect hash functions, to help write parsers"
 
 DISTNAME=	gperf-2.7.2
 CATEGORIES=   	devel
-NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

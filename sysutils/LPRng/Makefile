@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/09/28 01:20:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 20:19:10 fgsch Exp $
 
 BROKEN=		"outdated and with possible security holes"
 
@@ -6,7 +6,6 @@ COMMENT=	"enhanced printer spooler"
 
 DISTNAME=	LPRng-3.7.4
 CATEGORIES=	sysutils print
-NEED_VERSION=	1.403
 MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=	.tgz
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/11 22:20:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=		"grep wrapper with search highlighting"
 
 DISTNAME=		hgrep-19991004
 CATEGORIES=		textproc
-NEED_VERSION=		1.504
 
 HOMEPAGE=		http://www.acme.com/software/hgrep/
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"module to create Markov chains and output based on them"
 
 DISTNAME=	Algorithm-MarkovChain-0.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

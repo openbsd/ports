@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/11/29 05:27:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
 VERSION=	0.3.40
 DISTNAME=	libuta-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://libuta.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/26 00:08:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 20:19:10 fgsch Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,7 +8,6 @@ VERSION=	1.3.1_04
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
 CATEGORIES=	devel java
-NEED_VERSION=	1.499
 
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Edward Gruber <cgruber@israfil.net>

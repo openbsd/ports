@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/04/01 22:14:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2002/12/29 20:19:12 fgsch Exp $
 
 BROKEN=		"attempts to install during build"
 ONLY_FOR_ARCHS=	i386
@@ -9,7 +9,6 @@ VERSION=	0.5.0
 DISTNAME=       prc-tools.${VERSION}
 PKGNAME=	prc-tools-${VERSION}
 CATEGORIES=     devel palm
-NEED_VERSION=	1.515
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 MASTER_SITES0=	${MASTER_SITE_GNU:S@%SUBDIR%@binutils@}
 MASTER_SITES1=	${MASTER_SITE_GNU:S@%SUBDIR%@gdb@}

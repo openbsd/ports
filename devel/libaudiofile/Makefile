@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2002/03/13 16:37:50 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"SGI audiofile library clone"
 
 DISTNAME=	audiofile-0.2.3
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel audio
-NEED_VERSION=	1.500
 MASTER_SITES=	ftp://oss.sgi.com/projects/audiofile/download/
 
 HOMEPAGE=	http://oss.sgi.com/projects/audiofile/

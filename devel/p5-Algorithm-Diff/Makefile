@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/30 01:52:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"interface to compute differences between two objects"
 
 DISTNAME=	Algorithm-Diff-1.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

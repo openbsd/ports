@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/09 05:24:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"interface for cyclic redundency check generation"
 
 DISTNAME=	String-CRC32-1.2
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.508
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

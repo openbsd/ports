@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:12 fgsch Exp $
 
 COMMENT=	"GNU portable threads"
 
 DISTNAME=	pth-1.4.1
 CATEGORIES=	devel
-NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
 
 HOMEPAGE=	http://www.gnu.org/software/pth/

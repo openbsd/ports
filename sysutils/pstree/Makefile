@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/21 20:44:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:10 fgsch Exp $
 
 COMMENT=		"list processes as a tree"
 DISTNAME=		pstree-2.17
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	sysutils
-NEED_VERSION=		1.515
 
 MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2002/11/27 07:50:28 ish Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=	"GNUstep/OPENSTEP property lists compatibility library"
 
 DISTNAME=	libPropList-0.10.1
 PKGNAME=	libproplist-0.10.1
 CATEGORIES=	devel
-NEED_VERSION=	1.475
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER:=libs/}
 
 HOMEPAGE=	http://www.windowmaker.org/

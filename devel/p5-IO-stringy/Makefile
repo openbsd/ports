@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:11 fgsch Exp $
 
 COMMENT=		"in-core objects like strings and arrays for I/O"
 
@@ -6,7 +6,6 @@ VERSION=		2.108
 DISTNAME=		IO-stringy-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.515
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 

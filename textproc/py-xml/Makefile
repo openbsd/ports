@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/27 05:25:03 shell Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:09 fgsch Exp $
 
 COMMENT=	"python module for writing basic XML applications"
 
@@ -6,7 +6,6 @@ VERSION=	0.7.1
 DISTNAME=	PyXML-${VERSION}
 PKGNAME=	py-xml-${VERSION}
 CATEGORIES=	textproc devel
-NEED_VERSION=	1.531
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
 

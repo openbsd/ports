@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 20:19:12 fgsch Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -7,7 +7,6 @@ VERSION=		1.4.1
 DISTNAME=		pyunit-${VERSION}
 PKGNAME=		py-unit-${VERSION}
 CATEGORIES=     	devel
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://pyunit.sourceforge.net/
 
