@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/08/22 09:03:04 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2001/09/10 23:55:13 miod Exp $
 
 # This is a configuration file for egcs
 
@@ -40,8 +40,8 @@ PERMIT_DISTFILES_CDROM=Yes
 # Jason L.Wright & Marco S.Hyman for sparc,
 # Michael Shalayeff for hppa,
 # Wim Van Deputte for alpha,
-# Steve Murphee for m88k,
-# Per Fogelstrom and Todd Millert for mips,
+# Steve Murphree for m88k,
+# Per Fogelstrom and Todd Miller for mips,
 # Dale Rahn for rs6000.
 
 # user configuration section

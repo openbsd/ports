@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2001/03/21 14:44:01 wilfried Exp $
+# $OpenBSD: Makefile,v 1.85 2001/09/10 23:55:11 miod Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
@@ -37,8 +37,8 @@ PERMIT_DISTFILES_CDROM="Probably meaningless"
 # Jason L.Wright & Marco S.Hyman for sparc,
 # Michael Shalayeff for hppa,
 # Wim Van Deputte for alpha,
-# Steve Murphee for m88k,
-# Per Fogelstrom and Todd Millert for mips,
+# Steve Murphree for m88k,
+# Per Fogelstrom and Todd Miller for mips,
 # Dale Rahn for rs6000.
 
 # user configuration section
