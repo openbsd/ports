@@ -1,4 +1,4 @@
-$OpenBSD: patch-POW_c,v 1.3 2004/01/05 03:54:02 espie Exp $
+$OpenBSD: patch-POW_c,v 1.4 2004/01/18 13:23:06 sturm Exp $
 --- POW.c.orig	2001-11-23 02:03:09.000000000 +0100
 +++ POW.c	2004-01-05 04:51:20.000000000 +0100
 @@ -34,7 +34,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-POW_c,v 1.3 2004/01/05 03:54:02 espie Exp $
  /*****************************************************************************/
  
 -#include <python2.1/Python.h>
-+#include <python2.2/Python.h>
++#include <python%%MODPY_VERSION%%/Python.h>
  
  #include <openssl/crypto.h>
  #include <openssl/rand.h>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/07/31 19:12:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/18 13:23:06 sturm Exp $
 
 COMMENT=	"OpenSSL Wrappers for Python"
 
@@ -7,10 +7,11 @@ DISTNAME=	POW-${VERSION}
 PKGNAME=	py-sslwrapper-${VERSION}
 CATEGORIES=    	security devel
 
-HOMEPAGE=	http://www.sf.net/projects/pow/
+HOMEPAGE=	http://www.sourceforge.net/projects/pow/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,7 +23,8 @@ MODULES=	python
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-build:
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
+	@perl -pi -e 's,%%MODPY_VERSION%%,${MODPY_VERSION},g' ${WRKSRC}/POW.c
 
 .include <bsd.port.mk>
