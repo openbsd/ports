@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/20 16:27:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/07/01 16:11:59 naddy Exp $
 
 COMMENT=	"IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo"
 
-DISTNAME=		bitlbee-0.90
+DISTNAME=		bitlbee-0.90a
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org
@@ -29,6 +29,7 @@ ID=			509
 SUBST_VARS=		DB_DIR ETCDIR EXAMPLEDIR DOCDIR \
 			BITLBEEUSER BITLBEEGROUP ID
 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.0::devel/glib2
 
 # I am told gnutls does not build on all arches

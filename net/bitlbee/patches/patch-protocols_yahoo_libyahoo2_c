@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/yahoo/libyahoo2.c.orig	2004-03-26 10:11:09.000000000 +1100
-+++ protocols/yahoo/libyahoo2.c	2004-06-09 21:14:22.000000000 +1000
+$OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.2 2004/07/01 16:11:59 naddy Exp $
+--- protocols/yahoo/libyahoo2.c.orig	Sun Jun 27 16:50:35 2004
++++ protocols/yahoo/libyahoo2.c	Sun Jun 27 16:50:36 2004
 @@ -626,7 +626,7 @@ static void yahoo_packet_read(struct yah
  	}
  }
@@ -95,7 +95,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  			"%c%s%s%s", checksum, crypt_hash, seed, yd->user);
  		break;
  	}
-@@ -1931,29 +1933,29 @@ static void yahoo_process_auth_0x0b(stru
+@@ -1933,29 +1935,29 @@ static void yahoo_process_auth_0x0b(stru
  		lookup &= 0x1f;
  		if (lookup >= strlen(alphabet1))
  			break;
@@ -134,7 +134,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  	}
  
  	/* Our second authentication response is based off 
-@@ -2020,29 +2022,29 @@ static void yahoo_process_auth_0x0b(stru
+@@ -2024,29 +2026,29 @@ static void yahoo_process_auth_0x0b(stru
  		lookup &= 0x1f;
  		if (lookup >= strlen(alphabet1))
  			break;
@@ -173,7 +173,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  	}
  
  	pack = yahoo_packet_new(YAHOO_SERVICE_AUTHRESP, yd->initial_status, yd->session_id);
-@@ -3063,11 +3065,9 @@ static void yahoo_process_yab_connection
+@@ -3067,11 +3069,9 @@ static void yahoo_process_yab_connection
  				if(yab->nname) {
  					bud->real_name = strdup(yab->nname);
  				} else if(yab->fname && yab->lname) {
@@ -188,7 +188,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  							yab->fname, yab->lname);
  				} else if(yab->fname) {
  					bud->real_name = strdup(yab->fname);
-@@ -3666,7 +3666,7 @@ void yahoo_get_yab(int id)
+@@ -3670,7 +3670,7 @@ void yahoo_get_yab(int id)
  	yid->yd = yd;
  	yid->type = YAHOO_CONNECTION_YAB;
  
@@ -197,7 +197,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  
  	snprintf(buff, sizeof(buff), "Y=%s; T=%s",
  			yd->cookie_y, yd->cookie_t);
-@@ -3693,63 +3693,63 @@ void yahoo_set_yab(int id, struct yab * 
+@@ -3697,63 +3697,63 @@ void yahoo_set_yab(int id, struct yab * 
  	yid->type = YAHOO_CONNECTION_YAB;
  	yid->yd = yd;
  
@@ -281,7 +281,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  
  	snprintf(buff, sizeof(buff), "Y=%s; T=%s",
  			yd->cookie_y, yd->cookie_t);
-@@ -4120,9 +4120,9 @@ void yahoo_get_chatrooms(int id, int cha
+@@ -4124,9 +4124,9 @@ void yahoo_get_chatrooms(int id, int cha
  	yid->type = YAHOO_CONNECTION_CHATCAT;
  
  	if (chatroomid == 0) {
@@ -293,7 +293,7 @@ $OpenBSD: patch-protocols_yahoo_libyahoo2_c,v 1.1 2004/06/20 16:27:49 naddy Exp 
  	}
  
  	snprintf(buff, sizeof(buff), "Y=%s; T=%s", yd->cookie_y, yd->cookie_t);
-@@ -4357,7 +4357,7 @@ static void yahoo_search_internal(int id
+@@ -4361,7 +4361,7 @@ static void yahoo_search_internal(int id
  	while((p = strchr(ctext, ' ')))
  		*p = '+';
  
