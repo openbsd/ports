@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/07 04:50:55 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/19 02:20:31 espie Exp $
 
 DISTNAME=	xphoon
 PKGNAME=	xphoon-91.9.18
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MAINTAINER=	angelos@openbsd.org
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/07 04:44:09 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/19 02:20:31 espie Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
 NEED_VERSION=	1.191
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 NO_CDROM=	"COPY: may not be bundled"
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "May not be bundled, according to copyright."
 PERMIT_DISTFILES_FTP=   Yes
 
+FAKE=			Yes
+FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 MAINTAINER=	angelos@openbsd.org
 
 WRKDIST=		${WRKDIR}/SatTrack-3.1.6/src
