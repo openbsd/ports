@@ -1,12 +1,29 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.1 2004/04/13 00:50:46 brad Exp $
---- PerlMagick/Makefile.PL.orig	2004-04-07 11:53:27.000000000 -0400
-+++ PerlMagick/Makefile.PL	2004-04-07 11:53:44.000000000 -0400
-@@ -6,7 +6,7 @@ use Config;
- WriteMakefile(
-     'NAME'	=> 'Image::Magick',
-     'VERSION_FROM' => 'Magick.pm', # finds $VERSION
--    'LIBS'	=> ['-L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib -L/home/cristy/ImageMagick/magick -lMagick    -ltiff -lfreetype -ljpeg -lpng -lfpx  -lXext -lXt  -lSM -lICE -lX11  -lbz2  -lz -lpthread  -lm'],
-+    'LIBS'	=> ['-L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib -L/home/cristy/ImageMagick/magick -lMagick    -ltiff -lfreetype -ljpeg -lpng -lfpx  -lXext -lXt  -lSM -lICE -lX11  -lbz2  -lz -lm'],
-     'DEFINE'	=> '-DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
-     'INC'	=> '-I../ -I.. -I/usr/include/freetype2 -I/usr/include/freetype2 -D_REENTRANT -D_FILE_OFFSET_BITS=64 -I/usr/local/include -I/usr/X11R6/include',
-     ($Config{'archname'} =~ /-object$/i ? ('CAPI' => 'TRUE') : ()),
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.2 2004/07/09 19:44:14 brad Exp $
+--- PerlMagick/Makefile.PL.orig	Wed Apr 14 22:14:18 2004
++++ PerlMagick/Makefile.PL	Fri Jul  9 15:17:29 2004
+@@ -32,13 +32,13 @@ WriteMakefile
+    'DEFINE'	=> ' -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
+ 
+    # Header search specfication and preprocessor flags
+-   'INC'	=> '-I../ -I.. -I/usr/include/freetype2 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/libxml2',
++   'INC'	=> '-I../ -I.. -I/usr/X11R6/include -I/usr/X11R6/include/X11',
+ 
+    # C pre-processor flags (e.g. -I & -D options)
+-   # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/include/freetype2 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/libxml2",
++   # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/X11R6/include -I/usr/X11R6/include/X11",
+ 
+    # C compiler flags (e.g. -O -g)
+-   'CCFLAGS'     => "$Config{'ccflags'} -g -O2 -Wall -pthread",
++   'CCFLAGS'     => "$Config{'ccflags'} -O2 -Wall",
+ 
+    # Linker flags for building an executable
+    'LDFLAGS'    =>  "-L/usr/local/lib $Config{'ldflags'}",
+@@ -50,7 +50,7 @@ WriteMakefile
+    'INSTALLBIN'	=> '/usr/local/bin',
+ 
+    # Library specification
+-   'LIBS'	=> ['-L/usr/local/lib -L../magick/.libs -lMagick -L/usr/X11R6/lib -L/usr/lib -L/usr/lib -llcms -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
++   'LIBS'	=> ['-L/usr/local/lib -lMagick -L/usr/X11R6/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -liconv -lz -lm'],
+ 
+    # Perl binary name (if a Perl binary is built)
+    'MAP_TARGET'	=> 'PerlMagick',
