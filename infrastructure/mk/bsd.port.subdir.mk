@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.32 2001/03/28 10:55:52 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.33 2001/03/28 11:19:33 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -84,31 +84,47 @@ _SUBDIRUSE: .USE
 .  for i in ${SKIPPED}
 	@echo "===> ${PKGPATH}${_SEP}$i skipped"
 .  endfor
-	@for entry in ${SUBDIR}; do \
-		if expr "$$entry" : '.*[,:]' >/dev/null; then \
-			flavor=`echo $$entry | sed -e 's/[^,:]*[,:]//' -e 's/,/ /g'`; \
-			entry=`echo $$entry | sed -e 's/[:,].*//'`; \
-			display=" ($$flavor)"; \
-			varname=FLAVOR; \
-		else \
-			flavor=''; \
-			display=''; \
-			varname=DUMMY; \
-		fi; \
-		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
-			edir=$${entry}.${MACHINE}; \
-		elif cd ${.CURDIR}/$${entry} 2>/dev/null; then \
-			edir=$${entry}; \
-		else \
-			${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${entry} non-existent"; \
-			continue; \
-		fi; \
-		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
-		if env  $$varname="$$flavor" \
-			PKGPATH=${PKGPATH}${_SEP}$$edir \
-			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
-			${MAKE} ${.TARGET:realinstall=install}; \
-		then :; else ${REPORT_PROBLEM}; fi; \
+	@for dir in ${SUBDIR}; do \
+	    multi=''; flavor=''; toset=''; \
+	    case "$$dir" in \
+	    *[,:]*) \
+		IFS=',:'; first=true; insert=''; for i in $$dir; do \
+		    if $$first; then \
+			dir=$$i; first=false; \
+		    else \
+			case X"$$i" in \
+			X-*) \
+			    multi="$$i";; \
+			*) \
+			    flavor="$$flavor$$insert$$i"; \
+			    insert=' ';; \
+			esac \
+		    fi; \
+		done; \
+		case X$$multi in "X");; *) \
+		    toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+		esac; \
+		case X"$$flavor" in "X");; *) \
+		    toset="$$toset FLAVOR=\"$$flavor\"";; \
+		esac; \
+		display=" ($$flavor)";; \
+	    *) \
+		display='';; \
+	    esac; \
+	    if cd ${.CURDIR}/$${dir}.${MACHINE} 2>/dev/null; then \
+		edir=$${dir}.${MACHINE}; \
+	    elif cd ${.CURDIR}/$${dir} 2>/dev/null; then \
+		edir=$${dir}; \
+	    else \
+		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${entry} non-existent"; \
+		continue; \
+	    fi; \
+	    ${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
+	    if eval  $$toset \
+		PKGPATH=${PKGPATH}${_SEP}$$edir \
+		RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
+		${MAKE} ${.TARGET:realinstall=install}; \
+	    then :; else ${REPORT_PROBLEM}; fi; \
 	done
 
 ${SUBDIR}::
