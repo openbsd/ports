@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/23 21:41:24 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/05 01:30:21 espie Exp $
 #
 
 DISTNAME=	sliderule
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
