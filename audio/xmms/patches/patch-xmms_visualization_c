@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmms_visualization_c,v 1.1 2002/09/03 01:19:07 wcobb Exp $
+--- xmms/visualization.c.orig	Mon Sep  2 22:13:40 2002
++++ xmms/visualization.c	Mon Sep  2 22:14:22 2002
+@@ -260,7 +260,7 @@ void vis_send_data(gint16 pcm_data[2][51
+ 	gboolean mono_freq_calced = FALSE, stereo_freq_calced = FALSE;
+ 	gint16 mono_pcm[2][512], stereo_pcm[2][512];
+ 	gboolean mono_pcm_calced = FALSE, stereo_pcm_calced = FALSE;
+-	gchar intern_vis_data[512];
++	signed char intern_vis_data[512];
+ 	gint i;
+ 
+ 	if (!pcm_data || nch < 1)
