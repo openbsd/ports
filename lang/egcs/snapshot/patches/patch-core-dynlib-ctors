@@ -1,65 +1,11 @@
-Wed May 12 16:51:50 CEST 1999	Niklas Hallqvist <niklas@appli.se>
-				Marc Espie <espie@cvs.openbsd.org>
-	* collect2.c (scan_prog_file):  Add COLLECT_SHARED_LIB_CTORS_DTORS
-	capability.
-	* tm.texi:  Document COLLECT_SHARED_LIB_CTORS_DTORS.
-	* config/openbsd.h:  Support for scanning shared libraries for
-	cdtors.
-
---- gcc/collect2.c.orig	Sat Apr 10 06:27:03 1999
-+++ gcc/collect2.c	Wed May 12 16:38:29 1999
-@@ -2344,12 +2344,16 @@ scan_prog_file (prog_name, which_pass)
-       switch (is_ctor_dtor (name))
- 	{
- 	case 1:
-+#ifndef COLLECT_SHARED_LIB_CTORS_DTORS
- 	  if (which_pass != PASS_LIB)
-+#endif
- 	    add_to_list (&constructors, name);
- 	  break;
- 
- 	case 2:
-+#ifndef COLLECT_SHARED_LIB_CTORS_DTORS
- 	  if (which_pass != PASS_LIB)
-+#endif
- 	    add_to_list (&destructors, name);
- 	  break;
- 
---- gcc/config/openbsd.h.orig	Mon Mar  8 21:40:03 1999
-+++ gcc/config/openbsd.h	Wed May 12 16:50:37 1999
-@@ -287,6 +287,21 @@
-        fputc ('\n', FILE); } while(0)
+--- gcc/config/openbsd.h.orig	Thu Apr 27 22:12:07 2000
++++ gcc/config/openbsd.h	Thu Apr 27 22:13:17 2000
+@@ -119,7 +119,7 @@ Boston, MA 02111-1307, USA.  */
+   "%{!nostdlib:%{!r*:%{!e*:-e start}}} -dc -dp %{assert*}"
+ #else
+ #define LINK_SPEC \
+-  "%{!nostdlib:%{!r*:%{!e*:-e start}}} -dc -dp %{R*} %{static:-Bstatic} %{assert*}"
++  "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e start}}}} %{shared:-Bshareable -x} -dc -dp %{R*} %{static:-Bstatic} %{assert*}"
  #endif
  
-+/* Assembler format: macros for initialization.  */
-+
-+/* If we use collect2 we want it to scan the linked shared libraries too.  */
-+#define COLLECT_SHARED_LIB_CTORS_DTORS
-+#define LDD_SUFFIX "ldd"
-+#define PARSE_LDD_OUTPUT(PTR)					\
-+do {								\
-+  char mark[] = " => ";						\
-+  const int len = sizeof(mark)-1;				\
-+  while (*PTR && strncmp (PTR, mark, len) != 0) PTR++;		\
-+  if (*PTR)							\
-+    PTR += len;							\
-+  else								\
-+    PTR = 0;							\
-+} while (0)
- 
- /* Storage layout.  */
- 
---- gcc/tm.texi.orig	Wed May 12 16:40:15 1999
-+++ gcc/tm.texi	Wed May 12 16:47:00 1999
-@@ -6067,6 +6067,11 @@
- code must advance @var{PTR} to the beginning of the filename on that
- line.  Otherwise, it must set @var{PTR} to @code{NULL}.
- 
-+@findex COLLECT_SHARED_LIB_CTORS_DTORS
-+@item COLLECT_SHARED_LIB_CTORS_DTORS
-+Define this macro if @code{collect2} needs to scan libraries for
-+constructors and destructors as well.  Currently, this macro only affects
-+@code{OBJECT_FORMAT_NONE} behavior.
- @end table
- 
- @node Instruction Output
+ #undef LIB_SPEC
