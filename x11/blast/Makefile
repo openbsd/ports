@@ -3,12 +3,13 @@
 # Date created:		6 January 1998
 # Whom:			don
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/22 20:27:34 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/31 21:25:12 espie Exp $
 #
 
 DISTNAME=	blast-1.0-ss-9.03
 PKGNAME=	blast-1.0
 CATEGORIES=	x11
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://ftp.univie.ac.at/systems/hpux/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
@@ -16,19 +17,19 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+FAKE=			Yes
 
-USE_X11=	yes
+USE_X11=	Yes
 MAN1=		blast.1
 
-pre-configure:
-	mv $(WRKDIR)/blast-1.0 $(WRKSRC)
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 do-build:
-	${CC} $(WRKSRC)/blast.c -I${X11BASE}/include -O2 -L$(PREFIX)/lib -lX11 -lXext -o $(WRKSRC)/blast
+	cd ${WRKSRC} && ${CC} blast.c -I${X11BASE}/include ${CFLAGS} -L$(X11BASE)/lib -lX11 -lXext -o blast
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/blast $(PREFIX)/bin/blast
