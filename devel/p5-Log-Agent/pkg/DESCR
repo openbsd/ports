@@ -1,0 +1,6 @@
+Log::Agent is a general logging framework aimed at reusable modules.
+
+Instead of having modules insist on using their own logging reporting
+(by hardwiring calls to warn() or syslog()) which can conflict with
+the final application's choice, one may use logwarn() for instance to
+emit a warning.

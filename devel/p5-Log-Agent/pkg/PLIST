@@ -1,0 +1,91 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 16:20:20 sturm Exp $
+${P5SITE}/Log/Agent.pm
+${P5SITE}/Log/Agent/Channel.pm
+${P5SITE}/Log/Agent/Channel/File.pm
+${P5SITE}/Log/Agent/Channel/Handle.pm
+${P5SITE}/Log/Agent/Channel/Syslog.pm
+${P5SITE}/Log/Agent/Driver.pm
+${P5SITE}/Log/Agent/Driver/Datum.pm
+${P5SITE}/Log/Agent/Driver/Default.pm
+${P5SITE}/Log/Agent/Driver/File.pm
+${P5SITE}/Log/Agent/Driver/Fork.pm
+${P5SITE}/Log/Agent/Driver/Mail.pm
+${P5SITE}/Log/Agent/Driver/Silent.pm
+${P5SITE}/Log/Agent/Driver/Syslog.pm
+${P5SITE}/Log/Agent/File/Native.pm
+${P5SITE}/Log/Agent/File_Pool.pm
+${P5SITE}/Log/Agent/Formatting.pm
+${P5SITE}/Log/Agent/Message.pm
+${P5SITE}/Log/Agent/Prefixer.pm
+${P5SITE}/Log/Agent/Priorities.pm
+${P5SITE}/Log/Agent/Stamping.pm
+${P5SITE}/Log/Agent/Tag.pm
+${P5SITE}/Log/Agent/Tag/Callback.pm
+${P5SITE}/Log/Agent/Tag/Caller.pm
+${P5SITE}/Log/Agent/Tag/Priority.pm
+${P5SITE}/Log/Agent/Tag/String.pm
+${P5SITE}/Log/Agent/Tag_List.pm
+${P5SITE}/auto/Log/Agent/DATUM_is_here.al
+${P5SITE}/auto/Log/Agent/Priorities/autosplit.ix
+${P5SITE}/auto/Log/Agent/Priorities/level_from_prio.al
+${P5SITE}/auto/Log/Agent/Priorities/prio_from_level.al
+${P5SITE}/auto/Log/Agent/Priorities/priority_level.al
+${P5SITE}/auto/Log/Agent/autosplit.ix
+${P5SITE}/auto/Log/Agent/bug.al
+${P5SITE}/auto/Log/Agent/inited.al
+${P5SITE}/auto/Log/Agent/log_default.al
+${P5SITE}/auto/Log/Agent/logcarp.al
+${P5SITE}/auto/Log/Agent/logconfess.al
+${P5SITE}/auto/Log/Agent/logconfig.al
+${P5SITE}/auto/Log/Agent/logcroak.al
+${P5SITE}/auto/Log/Agent/logdbg.al
+${P5SITE}/auto/Log/Agent/logdie.al
+${P5SITE}/auto/Log/Agent/logerr.al
+${P5SITE}/auto/Log/Agent/logsay.al
+${P5SITE}/auto/Log/Agent/logtags.al
+${P5SITE}/auto/Log/Agent/logtrc.al
+${P5SITE}/auto/Log/Agent/logwarn.al
+${P5SITE}/auto/Log/Agent/logwrite.al
+${P5SITE}/auto/Log/Agent/logxcarp.al
+${P5SITE}/auto/Log/Agent/logxcroak.al
+${P5SITE}/auto/Log/Agent/prio_tag.al
+@comment ${P5ARCH}/auto/Log/Agent/.packlist
+@comment ${P5ARCH}/perllocal.pod
+man/man3p/Log::Agent.3p
+man/man3p/Log::Agent::Channel.3p
+man/man3p/Log::Agent::Channel::File.3p
+man/man3p/Log::Agent::Channel::Handle.3p
+man/man3p/Log::Agent::Channel::Syslog.3p
+man/man3p/Log::Agent::Driver.3p
+man/man3p/Log::Agent::Driver::Datum.3p
+man/man3p/Log::Agent::Driver::Default.3p
+man/man3p/Log::Agent::Driver::File.3p
+man/man3p/Log::Agent::Driver::Fork.3p
+man/man3p/Log::Agent::Driver::Mail.3p
+man/man3p/Log::Agent::Driver::Silent.3p
+man/man3p/Log::Agent::Driver::Syslog.3p
+man/man3p/Log::Agent::File::Native.3p
+man/man3p/Log::Agent::Message.3p
+man/man3p/Log::Agent::Priorities.3p
+man/man3p/Log::Agent::Stamping.3p
+man/man3p/Log::Agent::Tag.3p
+man/man3p/Log::Agent::Tag::Callback.3p
+man/man3p/Log::Agent::Tag::Caller.3p
+man/man3p/Log::Agent::Tag::Priority.3p
+man/man3p/Log::Agent::Tag::String.3p
+man/man3p/Log::Agent::Tag_List.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Log/Agent
+@comment @dirrm ${P5ARCH}/auto/Log
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/auto/Log/Agent/Priorities
+@dirrm ${P5SITE}/auto/Log/Agent
+@dirrm ${P5SITE}/auto/Log
+@comment @dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/Log/Agent/Tag
+@dirrm ${P5SITE}/Log/Agent/File
+@dirrm ${P5SITE}/Log/Agent/Driver
+@dirrm ${P5SITE}/Log/Agent/Channel
+@dirrm ${P5SITE}/Log/Agent
+@dirrm ${P5SITE}/Log
