@@ -1,18 +1,19 @@
---- args.c.orig	Wed Nov 26 10:14:22 1997
-+++ args.c	Mon Dec 13 19:32:26 1999
-@@ -45,6 +45,7 @@
+$OpenBSD: patch-args_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
+--- args.c.orig	Sun May 19 00:35:16 2002
++++ args.c	Sun May 19 00:38:18 2002
+@@ -35,6 +35,7 @@ do_args(int argc, char **argv, int envfl
      int consumed;
      int currarg;
      int opterrors;
-+    size_t	len;
++    size_t len;
  
- #define OPTARG()  \
-     { consumed = 1; if(*++optstr == '\0') optstr = argv[++currarg]; }
-@@ -146,18 +147,17 @@
+     int i;
+ 
+@@ -142,18 +143,17 @@ do_args(int argc, char **argv, int envfl
                          break;
                  case 'C':    /* select character definitions */
                          consumed = 1;
-+			len = (strlen(libdir) + strlen(optstr) + 2);
++                        len = (strlen(libdir) + strlen(optstr) + 2);
                          if (*++optstr) { /* did we get a encoding name ? */
 -                            if ((charvec_file = (char *) malloc(strlen(libdir) +
 -                                                                strlen(optstr) +
@@ -32,25 +33,12 @@
                                  opt_encoding = 1;
                              }
                          }
-@@ -341,10 +341,10 @@
-                 case 'P':    /* Printer */
-                         consumed = 1;
-                         doprint = 1;
--                        if (*++optstr)
-+                        if (*++optstr) {
-                             if (!strcmp(optstr, "-"))
-                                 doprint = 0; /* kill MPAGE envvar que setting*/
--                            else {
-+                           } else {
-                                 printque = optstr;
-                             }
-                         break;
-@@ -429,7 +429,7 @@
+@@ -442,7 +442,7 @@ do_env()
          libdir = env;
  
      if ((env = getenv("MPAGE")) != NULL) {
 -        strcpy(copy, env);
 +        (void)strlcpy(copy, env, sizeof(copy));
-         argv = slice(copy, &argc);
-         if (do_args(argc, argv, 1) < 0) {
-             fprintf(stderr, "%s: error in environment \"%s\"\n", MPAGE, env);
+         if ((copy = strdup(env)) == NULL) {
+             fprintf(stderr, "%s: Unable to alloc memory for environment args\n",
+                     MPAGE);

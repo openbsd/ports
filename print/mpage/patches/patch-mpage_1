@@ -1,0 +1,15 @@
+$OpenBSD: patch-mpage_1,v 1.1 2002/07/07 17:03:37 naddy Exp $
+--- mpage.1.orig	Tue Nov 13 17:48:34 2001
++++ mpage.1	Sun May 19 01:20:08 2002
+@@ -527,9 +527,9 @@ and 
+ environment variables.
+ 
+ .SH FILES
+-/usr/tmp/mpageXXXXXX
++/tmp/mpageXXXXXX
+ .br
+-/usr/local/share/mpage
++%%PREFIX%%/share/mpage
+ 
+ .SH BUGS
+ .PP

@@ -1,15 +1,15 @@
---- file.c.orig	Wed Nov 26 10:14:31 1997
-+++ file.c	Mon Dec 13 19:30:33 1999
-@@ -24,7 +24,7 @@
-  *
+$OpenBSD: patch-file_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
+--- file.c.orig	Sun May 19 00:38:56 2002
++++ file.c	Sun May 19 00:45:04 2002
+@@ -18,6 +18,7 @@
   */
  
--
+ 
 +#include <string.h>
  #include "mpage.h"
  
  
-@@ -108,10 +108,10 @@
+@@ -101,10 +102,10 @@ do_pr_file(fname, asheet, outfd)
       * header or not
       */
      if (opt_header != NULL)
@@ -22,24 +22,18 @@
                    asheet->sh_plength, asheet->sh_cwidth, fname);
      /*
       * open a pipe to the proper pr(1) command, and pr provides
-@@ -145,6 +145,7 @@
-     char tmpfile[LINESIZE];
-     char buffer[LINESIZE];
-     int incnt, outcnt;
-+    int fdd;
- 
-     if (opt_pr) {
-         Debug(DB_STDIN, "%%do_stdin: pr option selects text\n", 0);
-@@ -154,14 +155,16 @@
+@@ -148,7 +149,7 @@ do_stdin(asheet, outfd)
           * a temporary file; this temporary file will then
           * be used as input to the do_doc routine
           */
 -        (void)strcpy(tmpfile, "/usr/tmp/mpageXXXXXX");
--        (void)mktemp(tmpfile);
-+        (void)strlcpy(tmpfile, "/tmp/mpage.XXXXXX", sizeof(tmpfile));
-+
-+           fdd = mkstemp(tmpfile); 
-+
++        (void)strlcpy(tmpfile, "/tmp/mpageXXXXXX", sizeof(tmpfile));
+         if ( (tmpfd = mkstemp(tmpfile)) == -1) {
+             fprintf(stderr, "%s: cannot create temporary file", MPAGE);
+             perror(MPAGE);
+@@ -156,11 +157,11 @@ do_stdin(asheet, outfd)
+ 	}
+         close(tmpfd);
          if (opt_header != NULL)
 -            (void)sprintf(command, "pr -l%d -w%d -h \"%s\"> %s",
 +            (void)snprintf(command, sizeof(command), "pr -l%d -w%d -h \"%s\"> %s",
@@ -51,24 +45,3 @@
                        asheet->sh_plength, asheet->sh_cwidth, tmpfile);
          /*
           * open a pipe to the pr(1) command which will create a
-@@ -194,8 +197,11 @@
-          * now open the temporary file and use do_doc to
-          * convert it to PS
-          */
--        if ((fd = fopen(tmpfile, "r")) == NULL) {
-+
-+        if ((fd = fdopen(fdd, "r")) == NULL) {
-             fprintf(stderr, "%s: cannot open %s\n", MPAGE, tmpfile);
-+		unlink(tmpfile);
-+		close(fdd);
-             perror(MPAGE);
-         } else {
-             Debug(DB_STDIN, "%% got tmpfile, now do_doc\n", 0);
-@@ -207,6 +213,7 @@
-          */
-         Debug(DB_STDIN, "%% now remove '%s'\n", tmpfile);
-         (void)unlink(tmpfile);
-+	close(fdd);
-     }
-     else {
-         /*

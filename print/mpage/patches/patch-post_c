@@ -1,31 +1,22 @@
---- post.c.orig	Wed Nov 26 10:20:43 1997
-+++ post.c	Mon Dec 13 19:36:58 1999
-@@ -56,7 +56,7 @@
- /*
-  * number of output lines on current logical page
-  */
--static plcnt;
-+static int plcnt;
- 
- 
- int have_showsheet = 0;
-@@ -356,6 +356,8 @@
+$OpenBSD: patch-post_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
+--- post.c.orig	Wed Nov 14 19:59:55 2001
++++ post.c	Sun May 19 01:01:41 2002
+@@ -353,6 +353,7 @@ ps_copyprolog(fd, outfd)
+  FILE *fd;
   FILE *outfd;
  {
++    size_t len;
  
-+	size_t	len;
-+
      Debug(DB_PSDOC, "%%ps_copyprolog: adding mpage prolog\n", 0);
      if (!have_showsheet) {
-         fprintf(outfd, "/showsheet { showpage } bind def\n");
-@@ -396,15 +398,17 @@
+@@ -395,15 +396,17 @@ ps_copyprolog(fd, outfd)
                   */
                  if (tex1)
                      free(tex1);
 -                tex1 = malloc(strlen(currline)+1);
 -                strcpy(tex1, currline);
-+                len = (strlen(currline)+1);
-+		tex1 = malloc(len);
++                len = strlen(currline)+1;
++                tex1 = malloc(len);
 +                (void)strlcpy(tex1, currline, len);
                  fprintf(outfd, "%s", currline);
  
@@ -34,13 +25,13 @@
                      free(tex2);
 -                tex2 = malloc(strlen(currline)+1);
 -                strcpy(tex2, currline);
-+		len = (strlen(currline)+1);
++                len = strlen(currline)+1;
 +                tex2 = malloc(len);
 +                (void)strlcpy(tex2, currline, len);
              }
          }
          fprintf(outfd, "%s", currline);
-@@ -429,7 +433,7 @@
+@@ -428,7 +431,7 @@ ps_roff_copyprolog(fd, outfd)
   /*       if (strcmp(currline, "xi\n") == 0) */
          if (strstr(currline, "xi\n")) {
              fprintf(outfd, "%%%s", currline); 
@@ -49,33 +40,34 @@
          }
          else if (strncmp(currline, "%%Page:", 7) == 0) {
              fprintf(outfd, "/p { } def\n");
-@@ -702,6 +706,7 @@
-  FILE *outfd;
+@@ -1009,6 +1012,8 @@ post_one_line(line, fd, outfd, indoc, fl
+  int * indoc;
+  int flush_page;
  {
- 
-+	size_t	len;
-     Debug(DB_PSROFF, "%%post_onepage: Begin page\n", 0);
-     if (ps_at_trailer) {
-         Debug(DB_PSROFF, "%%post_onepage: still at trailer\n", 0);
-@@ -754,15 +759,17 @@
++        size_t len;
++
+         if (strncmp(line, "%%BeginDocument", 15) == 0) {
+             *indoc = 1;
+         }
+@@ -1058,15 +1063,17 @@ post_one_line(line, fd, outfd, indoc, fl
                   */
                  if (tex1)
                      free(tex1);
--                tex1 = malloc(strlen(currline)+1);
--                strcpy(tex1, currline);
-+                len = (strlen(currline)+1);
-+		tex1 = malloc(len);
-+                (void)strlcpy(tex1, currline, len);
-                 fprintf(outfd, "%s", currline);
- 
-                 fgets(currline, LINESIZE-1, fd);
+-                tex1 = malloc(strlen(line)+1);
+-                strcpy(tex1, line);
++                len = strlen(line)+1;
++                tex1 = malloc(len);
++                (void)strlcpy(tex1, line, len);
+                 fprintf(outfd, "%s", line);
+                 flush_page ?  memgets(line, LINESIZE-1) :
+                               fgets(line, LINESIZE-1, fd);
                  if (tex2)
                      free(tex2);
--                tex2 = malloc(strlen(currline)+1);
--                strcpy(tex2, currline);
-+		len = (strlen(currline)+1);
+-                tex2 = malloc(strlen(line)+1);
+-                strcpy(tex2, line);
++                len = strlen(line)+1;
 +                tex2 = malloc(len);
-+                (void)strlcpy(tex2, currline, len);
-             }
++                (void)strlcpy(tex2, line, len);
+             } 
          }
-         fprintf(outfd, "%s", currline);
+         fprintf(outfd, "%s", line);
