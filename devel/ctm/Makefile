@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/27 22:57:32 d Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/19 16:05:42 espie Exp $
 # Poul-Henning Kamp <phk@FreeBSD.org>
 
 DISTNAME=		ctmkit
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+FAKE=			Yes
+FAKE_FLAGS=		PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
 MASTER_SITES=		http://www.nemeton.com.au/src/
 
