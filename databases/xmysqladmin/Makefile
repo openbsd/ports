@@ -1,5 +1,5 @@
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
-# $OpenBSD: Makefile,v 1.11 2001/05/05 23:25:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/03 05:19:01 brad Exp $
 
 COMMENT=	"X11 front end to the mysqladmin command"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/
 
 LIB_DEPENDS=	xforms.0::x11/xforms \
-		mysqlclient::databases/mysql
+		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/20 09:40:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/03 05:19:00 brad Exp $
 
-COMMENT=		'graphical sql client for MySQL'
+COMMENT=		"graphical sql client for MySQL"
 
 DISTNAME=		mysqlgui-1.7.5
 CATEGORIES=		databases
-NEED_VERSION=		1.380
+NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.mysql.com/downloads/gui-clients.html
 
@@ -24,11 +24,11 @@ DIST_SUBDIR=		mysqlgui
 PATCHFILES=		single.cc:0
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libflvw.a::x11/flvw
-LIB_DEPENDS=		intl::devel/gettext \
-			jpeg::graphics/jpeg \
+LIB_DEPENDS=		intl.1::devel/gettext \
+			jpeg.62::graphics/jpeg \
 			fltk::x11/fltk \
 			fleditor::x11/fleditor \
-			mysqlclient::databases/mysql \
+			mysqlclient.10:mysql-client-3.23.*:databases/mysql \
 			sqlplus::devel/mysql++
 
 USE_X11=		Yes

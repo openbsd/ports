@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/05 23:25:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/03 05:19:01 brad Exp $
 # $FreeBSD: ports/databases/xmysql/Makefile,v 1.22 1999/08/31 06:41:26 mharo Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/
 
 LIB_DEPENDS=	xforms.0::x11/xforms \
-		mysqlclient::databases/mysql
+		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 MAINTAINER=	ports@openbsd.org
 
