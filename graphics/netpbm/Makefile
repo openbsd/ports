@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2003/03/29 04:13:54 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2003/09/23 00:12:51 naddy Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
+COMMENT-hpcd=	"convert photo CD images into ppm format"
 
-DISTNAME=	netpbm-9.24
+VERSION=	9.24
+DISTNAME=	netpbm-${VERSION}
 PKGNAME=	${DISTNAME}p1
+PKGNAME-hpcd=	hpcdtoppm-${VERSION}p1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
@@ -17,10 +20,17 @@ LIB_DEPENDS=	tiff.35::graphics/tiff \
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+MULTI_PACKAGES=	-hpcd
+SUBPACKAGE?=
+
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+.if ${SUBPACKAGE} == "-hpcd"
+PERMIT_PACKAGE_CDROM=	"no fee"
+.else
 PERMIT_PACKAGE_CDROM=	Yes
+.endif
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${WRKINST}${TRUEPREFIX}"
@@ -41,6 +51,10 @@ pre-build:
 	@cd ${WRKSRC}/shhopt; ln -sf shhopt.h pm_shhopt.h
 
 NO_REGRESS=	Yes
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-hpcd"
+LIB_DEPENDS=	pbm.1,pgm.1,ppm.1::graphics/netpbm
+.endif
 
 .include <bsd.port.mk>
 
