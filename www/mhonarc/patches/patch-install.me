@@ -1,0 +1,27 @@
+$OpenBSD: patch-install.me,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
+--- install.me.orig	Fri Sep 29 23:00:12 2000
++++ install.me	Fri Sep 29 23:04:09 2000
+@@ -397,9 +397,6 @@
+     ## Install files
+     ## -------------
+     print STDERR "($OptValues{'perl'})\n";
+-    my $plprefix  = "#!$OptValues{'perl'}\n";
+-       $plprefix .= "use lib qw($OptValues{'libpath'});\n"
+-		    if $OptValues{'libpath'};
+     my($file, $destfile);
+     if ($dobin) {
+ 	print STDOUT qq(Installing programs to "$OptValues{'binpath'}":\n);
+@@ -409,11 +406,11 @@
+ 	    ($file = $_) =~ s%.*/%%o;
+ 	    $destfile = join('', $OptValues{'binpath'}, $DIRSEP, $file);
+ 	    print STDOUT $destfile, "\n";
+-	    cp($_, $destfile, $plprefix, $WINDOWS);
++	    cp($_, $destfile, '', $WINDOWS);
+ 	    eval q{chmod 0755, $destfile;};
+ 	    if ($WINDOWS && $file !~ /\.pl$/i) {
+ 		$destfile .= ".pl";
+-		cp($_, $destfile, $plprefix);
++		cp($_, $destfile, '');
+ 		eval q{chmod 0755, $destfile;};
+ 	    }
+ 	}

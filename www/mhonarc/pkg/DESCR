@@ -1,0 +1,6 @@
+MHonArc is a Perl mail-to-HTML converter. MHonArc provides HTML
+mail archiving with index, mail thread linking, etc; plus other
+capabilities including support for MIME and powerful user customization
+features.
+
+WWW: ${HOMEPAGE}
