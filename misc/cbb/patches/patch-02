@@ -1,0 +1,21 @@
+--- install.pl.orig	Tue May  6 18:17:45 1997
++++ install.pl	Fri Oct 10 21:05:30 1997
+@@ -500,12 +500,12 @@
+ 
+ print "    Installing to $dest_bindir\n";
+ print "    Installing to $dest_libdir\n";
+-print "    Installing to $dest_libdir" . "reports/\n";
+-print "    Installing to $dest_libdir" . "graphs/\n";
+-print "    Installing to $dest_libdir" . "images/\n";
+-print "    Installing to $dest_libdir" . "contrib/\n";
+-print "    Installing to $dest_libdir" . "docs/cbb-man/\n";
+-print "    Installing to $dest_libdir" . "docs/cbb-man/icons/\n";
++print "    Installing to $dest_libdir" . "/reports/\n";
++print "    Installing to $dest_libdir" . "/graphs/\n";
++print "    Installing to $dest_libdir" . "/images/\n";
++print "    Installing to $dest_libdir" . "/contrib/\n";
++print "    Installing to $dest_libdir" . "/docs/cbb-man/\n";
++print "    Installing to $dest_libdir" . "/docs/cbb-man/icons/\n";
+ print "\n";
+ 
+ 
