@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/21 23:59:21 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/13 19:42:47 naddy Exp $
 libdata/perl5/site_perl/XML/RSS.pm
+man/man3/XML::RSS.3
 man/man3/XML::RSS.3p
 share/examples/p5-XML-RSS/0.9/create_rss.pl
 share/examples/p5-XML-RSS/0.9/linuxtoday.rdf
