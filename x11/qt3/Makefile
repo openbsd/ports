@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/30 18:13:31 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/27 14:49:30 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -16,10 +16,11 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-FLAVORS=	no_mysql no_postgresql
 
+FLAVORS=	no_mysql no_postgresql
 # Adjust for arches where MySQL/PostgreSQL don't work.
-.if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc}
+.if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc} && \
+!${MACHINE_ARCH:Mpowerpc}
 FLAVOR+=	no_mysql
 .else
 FLAVOR?=
@@ -47,6 +48,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-system-zlib -no-thread -sm -no-g++-exceptions \
 		-v -stl -xrender \
 		-no-sql-odbc \
+		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \
