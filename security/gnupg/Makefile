@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/03/03 17:17:28 reinhard Exp $
+# $OpenBSD: Makefile,v 1.25 2001/03/05 18:54:06 brad Exp $
 
 DISTNAME=	gnupg-1.0.4
 PKGNAME=	${DISTNAME}p1
@@ -31,18 +31,14 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-included-gettext
 
-GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
-GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
-		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
-
 FLAVORS=	idea
 FLAVOR?=
 
 .if ${FLAVOR:L} == "idea"
-PERMIT_PACKAGE_CDROM=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
-PERMIT_PACKAGE_FTP=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
-PERMIT_DISTFILES_CDROM=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
-PERMIT_DISTFILES_FTP=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
+PERMIT_PACKAGE_CDROM=	"a patented algorithm"
+PERMIT_PACKAGE_FTP=	"a patented algorithm"
+PERMIT_DISTFILES_CDROM=	"a patented algorithm"
+PERMIT_DISTFILES_FTP=	"a patented algorithm"
 # NB: idea.c is found in ${MASTER_SITES0}
 DISTFILES+=	idea.c
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am 
@@ -52,8 +48,12 @@ pre-patch:
 	@cp ${DISTDIR}/idea.c ${WRKSRC}/cipher
 .endif
 
+GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
+		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
+
 post-install:
-	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} ${GNUPGDOCDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
+	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} \
+		${PREFIX}/share/doc/gnupg
 
 .include <bsd.port.mk>
