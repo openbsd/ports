@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:05:18 lebel Exp $
+
+COMMENT=	"clone of the Plan9 editor `acme'"
 
 DISTNAME=	wily-0.13.41
 CATEGORIES=	plan9 editors
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz

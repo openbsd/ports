@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/14 22:54:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 03:05:09 lebel Exp $
+
+COMMENT=	"X11 version of Rob Pike's editor, sam"
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3.19980506
 CATEGORIES=	plan9
-NEED_VERSION=	1.342
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
 		http://netlib.bell-labs.com/netlib/research/
 EXTRACT_SUFX=	.shar.gz

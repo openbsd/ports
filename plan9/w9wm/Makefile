@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/02 20:14:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 03:05:15 lebel Exp $
+
+COMMENT=	"hacked 9wm, with support for virtual screens"
 
 DISTNAME=	w9wm-0.2
 CATEGORIES=	plan9
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= w9wm
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 17:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 03:05:06 lebel Exp $
+
+COMMENT=	"shell (clone of plan9 shell)"
 
 DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
 MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
