@@ -1,7 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2003/07/04 13:06:12 wilfried Exp $
---- Makefile.in.orig	Thu May 29 04:02:41 2003
-+++ Makefile.in	Thu May 29 04:03:49 2003
-@@ -142,18 +142,14 @@ gnomedatadir = @gnomedatadir@
+$OpenBSD: patch-Makefile_in,v 1.4 2004/01/11 14:13:35 sturm Exp $
+--- Makefile.in.orig	2003-05-24 15:41:05.000000000 +0200
++++ Makefile.in	2004-01-11 14:58:48.000000000 +0100
+@@ -138,22 +138,18 @@ VERSION = @VERSION@
+ YACC = @YACC@
+ ac_cv_enable_crash_dialog = @ac_cv_enable_crash_dialog@
+ faqdir = @faqdir@
+-gnomedatadir = @gnomedatadir@
++gnomedatadir = ${LOCALBASE}/share
  localedir = @localedir@
  manualdir = @manualdir@
  

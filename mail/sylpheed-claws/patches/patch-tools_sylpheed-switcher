@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_sylpheed-switcher,v 1.2 2003/07/04 13:06:13 wilfried Exp $
---- tools/sylpheed-switcher.orig	Fri Dec  7 19:25:01 2001
-+++ tools/sylpheed-switcher	Thu May 29 04:20:27 2003
+$OpenBSD: patch-tools_sylpheed-switcher,v 1.3 2004/01/11 14:13:35 sturm Exp $
+--- tools/sylpheed-switcher.orig	2001-12-07 13:25:01.000000000 +0100
++++ tools/sylpheed-switcher	2004-01-11 14:58:27.000000000 +0100
 @@ -73,7 +73,7 @@ if ($sylphpath && $clawspath) {  ## this
  	if ($DIR_CHECK == 1) {
  		print "\nNow you can run either the main branch or the claws\n";
