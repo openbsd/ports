@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2000/06/21 17:14:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2000/07/12 17:55:59 brad Exp $
 bin/gtk-config
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
@@ -176,6 +176,8 @@ share/themes/Default/gtk/gtkrc.eo
 share/themes/Default/gtk/gtkrc.et
 share/themes/Default/gtk/gtkrc.ga
 share/themes/Default/gtk/gtkrc.he
+share/themes/Default/gtk/gtkrc.he_IL.cp1255
+share/themes/Default/gtk/gtkrc.he_IL.microsoftcp1255
 share/themes/Default/gtk/gtkrc.hr
 share/themes/Default/gtk/gtkrc.hu
 share/themes/Default/gtk/gtkrc.hy
@@ -190,6 +192,7 @@ share/themes/Default/gtk/gtkrc.ka_GE.georgianacademy
 share/themes/Default/gtk/gtkrc.ka_GE.georgianps
 share/themes/Default/gtk/gtkrc.ko
 share/themes/Default/gtk/gtkrc.lt
+share/themes/Default/gtk/gtkrc.lv
 share/themes/Default/gtk/gtkrc.mk
 share/themes/Default/gtk/gtkrc.pl
 share/themes/Default/gtk/gtkrc.ro
@@ -197,6 +200,7 @@ share/themes/Default/gtk/gtkrc.ru
 share/themes/Default/gtk/gtkrc.ru_RU.iso88595
 share/themes/Default/gtk/gtkrc.sk
 share/themes/Default/gtk/gtkrc.sl
+share/themes/Default/gtk/gtkrc.sp
 share/themes/Default/gtk/gtkrc.sq
 share/themes/Default/gtk/gtkrc.sr
 share/themes/Default/gtk/gtkrc.th
@@ -207,6 +211,7 @@ share/themes/Default/gtk/gtkrc.vi_VN.tcvn
 share/themes/Default/gtk/gtkrc.vi_VN.tcvn5712
 share/themes/Default/gtk/gtkrc.vi_VN.viscii
 share/themes/Default/gtk/gtkrc.vi_VN.viscii111
+share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @dirrm include/gdk
