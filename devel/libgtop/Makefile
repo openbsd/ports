@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 13:44:46 todd Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
@@ -28,7 +28,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -DUVM" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=   	gnome.36::x11/gnome-libs
+LIB_DEPENDS+=   	gnome.36::x11/gnome/libs
 .else
 CONFIGURE_ARGS+= 	--without-gnome
 .endif
