@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/13 05:15:02 kevlo Exp $
 
 DISTNAME=	  	weblint-1.020	
 CATEGORIES=     	www
@@ -7,6 +7,14 @@ MAINTAINER=		seanc@cginfo.sk.ca
 
 MASTER_SITES=		ftp://ftp.weblint.org/pub/weblint/ \
 			http://www.perl.com/CPAN/authors/id/NEILB/ 
+
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+
+FAKE=                   Yes
+FAKE_FLAGS=             prefix=${DESTDIR}${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)

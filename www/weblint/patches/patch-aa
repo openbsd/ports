@@ -1,0 +1,13 @@
+--- Makefile.orig	Sat Aug 16 02:10:21 1997
++++ Makefile	Sun Mar 12 21:15:24 2000
+@@ -5,8 +5,8 @@ VERSION	= 1.020
+ 
+ SHELL	= /bin/sh
+ 
+-BINDIR	= /usr/local/bin
+-MANDIR	= /usr/local/man/man1
++BINDIR  = $(PREFIX)/bin
++MANDIR  = $(PREFIX)/man/man1
+ PSROFF	= groff -Tps
+ PSVIEW	= ghostview
+ RM	= /bin/rm -f
