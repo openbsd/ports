@@ -4,6 +4,6 @@ under the terms of the GNU General Public Licence. In overall style it is
 similar to Smail 3, but its facilities are more extensive. It contains
 facilities for verifying incoming sender and recipient addresses, for refusing
 mail from specified hosts, networks, or senders, and for controlling mail
-relaying.
+relaying. This version also supports the STARTTLS extension.
 
 WWW: ${HOMEPAGE}

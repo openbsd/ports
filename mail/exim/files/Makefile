@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/08/02 15:44:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2000/12/07 15:27:10 peter Exp $
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
@@ -241,16 +241,15 @@ EXICYCLOG_MAX=10
 # locations of various X11 directories for libraries and include files
 # are defaulted in the OS/Makefile-Default file, and can be overridden
 # in local OS-specific make files.
-.if !${FLAVOR:L:Mno_x11}
-EXIM_MONITOR=eximon.bin
-.endif
+
+# EXIM_MONITOR=eximon.bin
 
 
 # Compiling in support for embedded Perl: If you want to be able to
 # use Perl code in Exim's string manipulation language and you have Perl
 # (version 5.004 or later) installed, set EXIM_PERL to perl.o.
 
-EXIM_PERL=perl.o
+# EXIM_PERL=perl.o
 
 
 # There are also three options which are used when compiling the Perl interface
@@ -335,12 +334,11 @@ EXIM_PERL=perl.o
 
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
-
 LOOKUP_CDB=yes
 # LOOKUP_DNSDB=yes
+LOOKUP_NIS=yes
 # LOOKUP_LDAP=yes
 # LOOKUP_MYSQL=yes
-LOOKUP_NIS=yes
 # LOOKUP_NISPLUS=yes
 # LOOKUP_PGSQL=yes
 
@@ -355,18 +353,19 @@ LOOKUP_NIS=yes
 
 # If you have set LDAP=yes, you should set LDAP_LIB_TYPE to indicate which LDAP
 # library you have. Unfortunately, though most of their functions are the
-# same, there is a difference in error handling. Currently Exim knows about
-# three LDAP libraries: the one from the University of Michigan, the Netscape
-# SDK library, and the library that comes with Solaris 7. Uncomment whichever
-# of these you are using.
+# same, there are minor differences. Currently Exim knows about four LDAP
+# libraries: the one from the University of Michigan (also known as OpenLDAP 1),
+# OpenLDAP 2, the Netscape SDK library, and the library that comes with Solaris
+# 7 onwards. Uncomment whichever of these you are using. 
 
 # LDAP_LIB_TYPE=UMICHIGAN
+# LDAP_LIB_TYPE=OPENLDAP1
+# LDAP_LIB_TYPE=OPENLDAP2
 # LDAP_LIB_TYPE=NETSCAPE
-# LDAP_LIB_TYPE=SOLARIS7
+# LDAP_LIB_TYPE=SOLARIS
 
-# If you don't set any of these, Exim applies a heuristic to distinguish the
-# University of Michigan library, but it cannot distinguish between the other
-# two.
+# If you don't set any of these, Exim assumes the original University of
+# Michigan (OpenLDAP 1) library.
 
 # The TESTDB lookup is for performing tests on the handling of lookup
 # results, and is not useful for general running. It should be included
@@ -516,6 +515,39 @@ SUPPORT_MOVE_FROZEN_MESSAGES=yes
 # GNU/Linux -ldl is also needed.
 
 
+# Exim can be built to support the SMTP STARTTLS command, which implements
+# Transport Layer Security using SSL (Secure Sockets Layer). To do this, you
+# must install the OpenSSL library package. Exim contains no cryptographic
+# code of its own. Uncomment the following lines if you want to build Exim
+# with TLS support.
+
+# SUPPORT_TLS=yes
+# TLS_LIBS=-lssl -lcrypto
+
+# If you are running Exim as a server, note that just building it with TLS
+# support is not usually all you need to do. You normally need to set up a
+# suitable certificate, and tell Exim about it by means of the tls_certificate
+# and tls_privatekey runtime options. You also need to set tls_advertise_hosts
+# to specify which hosts TLS support is advertised to. On the other hand,
+# if you are running Exim only as a client, building it with TLS support
+# is all you need to do.
+
+# Additional libraries and include files are required for OpenSSL. The TLS_LIBS
+# setting above assumes that the libraries are installed with all your other
+# libraries. If they are in a special directory, you may need something like
+
+# TLS_LIBS=-L/usr/local/openssl/lib -lssl -lcrypto
+
+# TLS_LIBS is included only on the command for linking Exim itself, not on any
+# auxiliary programs. If the include files are not in a standard place, you can
+# set TLS_INCLUDE to specify where they are:
+
+# TLS_INCLUDE=-I/usr/local/openssl/include/
+
+# You don't need to set TLS_INCLUDE if the relevant directories are already
+# specified in INCLUDE.
+
+
 # Included transports: These variables determine which individual transport
 # drivers are included in the Exim binary. There are no defaults; those that
 # are wanted must be defined here by setting the appropriate variables to the
@@ -528,6 +560,11 @@ TRANSPORT_APPENDFILE=yes
 TRANSPORT_AUTOREPLY=yes
 TRANSPORT_PIPE=yes
 TRANSPORT_SMTP=yes
+
+# This one is special-purpose, and commonly not required, so do not include
+# it by default.
+
+# TRANSPORT_LMTP=yes
 
 
 # TCP wrappers: If you want to use tcpwrappers from within Exim, uncomment
