@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/01/05 21:52:50 naddy Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -87,6 +87,8 @@ PATCH_DIST_STRIP= -p1
 PATCHFILES=	patch-libsd1.2.6-libcaca0.9.diff:0
 LIB_DEPENDS+=	caca::graphics/libcaca
 CONFIGURE_ARGS+= --enable-video-caca
+.else
+SUPDISTFILES+=	patch-libsd1.2.6-libcaca0.9.diff:0
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
