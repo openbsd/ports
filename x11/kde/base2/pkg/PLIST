@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2001/03/26 13:29:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2001/03/30 12:32:07 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
@@ -1504,6 +1504,7 @@ share/fonts/console8x16.pcf.gz
 share/fonts/console8x8.pcf.gz
 share/fonts/fonts.dir
 share/fonts/override/fonts.dir
+share/icons/hicolor/16x16/apps/access.png
 share/icons/hicolor/16x16/apps/background.png
 share/icons/hicolor/16x16/apps/bell.png
 share/icons/hicolor/16x16/apps/cookie.png
@@ -1519,6 +1520,7 @@ share/icons/hicolor/16x16/apps/kcmsystem.png
 share/icons/hicolor/16x16/apps/kcontrol.png
 share/icons/hicolor/16x16/apps/kdisknav.png
 share/icons/hicolor/16x16/apps/keditbookmarks.png
+share/icons/hicolor/16x16/apps/key_bindings.png
 share/icons/hicolor/16x16/apps/kfm.png
 share/icons/hicolor/16x16/apps/kfm_home.png
 share/icons/hicolor/16x16/apps/khelpcenter.png
@@ -2461,6 +2463,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/16x16/filesystems
 @dirrm share/icons/hicolor/16x16/devices
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/fonts/override

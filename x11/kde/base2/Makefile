@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/26 13:29:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/30 12:32:05 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.363
-VERSION=		2.1
+VERSION=		2.1.1
 DISTNAME=		kdebase-${VERSION}
 DIST_SUBDIR=		kde
 
-MASTER_SITES=	${MASTER_SITE_KDE}
+HOMEPAGE=		http://www.kde.org
+MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
