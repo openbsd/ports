@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/06/06 21:09:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2002/06/12 13:17:36 naddy Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += seyon
 #    SUBDIR += snooper
      SUBDIR += tkhylafax
+     SUBDIR += wy60
      SUBDIR += xcept
      SUBDIR += zmtx-zmrx
 
