@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/07/12 13:32:12 danh Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/24 20:43:19 danh Exp $
 @pkgcfl radiusd-lucent-*
 bin/builddbm
 bin/radclient
@@ -42,6 +42,7 @@ share/examples/radiusd-cistron/dictionary.erx
 share/examples/radiusd-cistron/dictionary.livingston
 share/examples/radiusd-cistron/dictionary.redback
 share/examples/radiusd-cistron/dictionary.shiva
+share/examples/radiusd-cistron/dictionary.standard
 share/examples/radiusd-cistron/dictionary.tunnel
 share/examples/radiusd-cistron/dictionary.usr
 share/examples/radiusd-cistron/dictionary.versanet
