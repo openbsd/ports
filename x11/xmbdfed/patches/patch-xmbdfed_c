@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmbdfed_c,v 1.1 2002/07/26 19:31:36 naddy Exp $
+--- xmbdfed.c.orig	Wed Sep 19 23:00:44 2001
++++ xmbdfed.c	Fri Jul 26 21:24:20 2002
+@@ -101,7 +101,7 @@ static Boolean exiting = False;
+ #define HGINFO "\"%s\" %04lX (%02X,%02X)\nascent %d descent %d right %d left %d"
+ 
+ static String fallback_resources[] = {
+-    "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1",
++/*    "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1", */
+     (String) NULL,
+ };
+ 

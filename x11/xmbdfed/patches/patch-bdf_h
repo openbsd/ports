@@ -1,5 +1,6 @@
---- bdf.h.orig	Thu Mar 16 15:08:51 2000
-+++ bdf.h	Wed Mar  7 16:47:07 2001
+$OpenBSD: patch-bdf_h,v 1.1 2002/07/26 19:31:36 naddy Exp $
+--- bdf.h.orig	Wed Sep 19 23:00:42 2001
++++ bdf.h	Fri Jul 26 21:24:20 2002
 @@ -41,7 +41,7 @@
  
  #ifdef HAVE_FREETYPE
