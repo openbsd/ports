@@ -1,0 +1,40 @@
+--- admin/ltcf-cxx.sh.orig	Sat Sep  9 18:59:52 2000
++++ admin/ltcf-cxx.sh	Thu Oct 26 23:26:15 2000
+@@ -107,13 +107,13 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
+     # linker, instead of GNU ld.  If possible, this setting should
+     # overridden to take advantage of the native linker features on
+     # the platform it is being used on.
+-    archive_cmds='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++    archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
+   fi
+ 
+   # Commands to make compiler produce verbose output that lists
+   # what "hidden" libraries, object files and flags are used when
+   # linking a shared library.
+-  output_verbose_link_cmds='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
++  output_verbose_link_cmds='$CC $ac_cv_prog_cc_pic -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
+ 
+ else
+   with_gcc=no
+@@ -339,6 +339,12 @@ case "$host_os" in
+       ld_shlibs=no
+     fi
+     ;;
++  openbsd*)
++      ld_shlibs=yes
++      hardcode_libdir_flag_spec='-R$libdir'
++      hardcode_direct=yes
++      hardcode_shlibpath_var=no
++    ;;
+   osf3*)
+     if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
+       allow_undefined_flag=' ${wl}-expect_unresolved ${wl}\*'
+@@ -549,7 +555,7 @@ case "$host_os" in
+             # Commands to make compiler produce verbose output that lists
+             # what "hidden" libraries, object files and flags are used when
+             # linking a shared library.
+-            output_verbose_link_cmds="$CC -shared $CFLAGS -v conftest.$objext 2>&1 | egrep \"\-L\""
++            output_verbose_link_cmds="$CC -shared $pic_flag $CFLAGS -v conftest.$objext 2>&1 | egrep \"\-L\""
+           else
+             # g++ 2.7 appears to require `-G' NOT `-shared' on this
+             # platform.
