@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/15 12:58:11 todd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/07/14 19:36:58 todd Exp $
 include/gc.h
 include/gc/gc.h
 include/gc/gc_alloc.h
@@ -66,6 +66,6 @@ share/gc/leak.html
 share/gc/scale.html
 share/gc/tree.html
 %%SHARED%%
-@dirrm share/gc
-@dirrm include/private
-@dirrm include/gc
+@dir share/gc
+@dir include/private
+@dir include/gc
