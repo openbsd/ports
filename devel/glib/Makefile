@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2001/04/03 14:12:47 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2001/04/03 14:42:47 brad Exp $
 
 COMMENT=	"useful routines for C programming"
 
-DISTNAME=	glib-1.2.9
+DISTNAME=	glib-1.2.10
 CATEGORIES=	devel
 NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
