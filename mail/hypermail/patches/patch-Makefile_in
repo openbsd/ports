@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2003/03/06 05:21:12 brad Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2003/03/06 20:51:39 brad Exp $
 --- Makefile.in.orig	Wed Mar  5 23:31:52 2003
 +++ Makefile.in	Wed Mar  5 23:32:23 2003
 @@ -28,9 +28,9 @@ INSTALL_PROG=@INSTALL@
   
  # Compiler to use
  CC=@CC@ 
--CFLAGS=@CFLAGS@ @INCLUDES@ -Ipcre $(WARNINGS)
-+CFLAGS=@CFLAGS@ @INCLUDES@ $(WARNINGS)
+-CFLAGS=@CFLAGS@ @INCLUDES@ -Ipcre -DTRIO_MINIMAL $(WARNINGS)
++CFLAGS=@CFLAGS@ @INCLUDES@ -DTRIO_MINIMAL $(WARNINGS)
  LIBS=@LIBS@
 -LDFLAGS=@LDFLAGS@ -Lpcre
 +LDFLAGS=@LDFLAGS@

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2003/03/06 05:21:12 brad Exp $
---- src/Makefile.in.orig	Fri Jan 24 15:04:57 2003
-+++ src/Makefile.in	Wed Mar  5 23:46:16 2003
+$OpenBSD: patch-src_Makefile_in,v 1.4 2003/03/06 20:51:39 brad Exp $
+--- src/Makefile.in.orig	Fri Feb 14 01:35:14 2003
++++ src/Makefile.in	Thu Mar  6 21:11:34 2003
 @@ -27,10 +27,10 @@ INSTALL_PROG=@INSTALL@ 
  #WNOERROR=-Werror
  #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
  
--CFLAGS=@CFLAGS@ @INCLUDES@ -Ipcre $(WARNINGS)
-+CFLAGS=@CFLAGS@ @INCLUDES@ $(WARNINGS)
+-CFLAGS=@CFLAGS@ @INCLUDES@ -Ipcre -DTRIO_MINIMAL $(WARNINGS)
++CFLAGS=@CFLAGS@ @INCLUDES@ -DTRIO_MINIMAL $(WARNINGS)
  YACC=@YACC@
  NETLIBS=@LIBS@
 -LDFLAGS=@LDFLAGS@ -Lpcre
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2003/03/06 05:21:12 brad Exp $
  MISC_LIBS= -lm -lpcre
  OPT_LIBS=@EXTRA_LIBS@
  
-@@ -56,7 +56,7 @@ MAILOBJS=	mail.o ../libcgi/libcgi.a trio
+@@ -56,7 +56,7 @@ MAILOBJS=	mail.o ../libcgi/libcgi.a
  .c.o:
  	$(CC) -c $(CFLAGS) $<
  
@@ -28,6 +28,6 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2003/03/06 05:21:12 brad Exp $
  	rm -f .inslog tca.map lint.out
  	rm -f getdate.c
 -	@cd pcre; $(MAKE) clean
- 	@(if test $(FNV_DEP) != "" ; then cd fnv; $(MAKE) clobber; fi)
+ 	@(if test "$(FNV_DEP)" != "" ; then cd fnv; $(MAKE) clean; fi)
  	@cd ../libcgi; $(MAKE) clean
  
