@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.300 2000/06/10 17:15:06 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.301 2000/06/10 17:21:33 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1518,7 +1518,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} post-patch
 .  endif
 .endif
-.if !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
+.if !defined(PATCH_CHECK_ONLY) && ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
 	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
