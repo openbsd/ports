@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/24 09:24:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/31 20:29:32 alek Exp $
 @newgroup _majordomo:520
 @newuser _majordomo:520:_majordomo::Majordomo:/root:/sbin/nologin
 @mode 755
@@ -64,3 +64,4 @@ share/doc/majordomo/post-install-notes
 @sample /var/spool/majordomo/lists/
 @sample /var/spool/majordomo/digests/
 @sample /var/spool/majordomo/tmp/
+@extraunexec rm -rf /var/spool/majordomo/
