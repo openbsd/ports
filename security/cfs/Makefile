@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/16 23:15:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/23 04:22:20 turan Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -10,6 +10,12 @@ NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"contains crypto code"
 
 MAINTAINER=	angelos@openbsd.org
+
+# Note that this port contains crypto and is subject to US crypto laws.
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	cfs
 
