@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/03/01 09:12:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2004/03/01 23:52:32 drahn Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64
+ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/
 DISTFILES=	firefox-source-${VER}.tar.bz2
 
 MODULES=	gcc3
-MODGCC3_ARCHES=	alpha
+MODGCC3_ARCHES=	alpha powerpc
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig

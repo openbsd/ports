@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.2 2004/03/01 07:14:48 pvalchev Exp $
---- nsprpub/pr/include/md/_openbsd.h.orig	2000-06-20 15:23:18.000000000 -0600
-+++ nsprpub/pr/include/md/_openbsd.h	2004-02-29 19:51:25.000000000 -0700
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.3 2004/03/01 23:52:32 drahn Exp $
+--- nsprpub/pr/include/md/_openbsd.h.orig	2004-03-01 16:15:11.000000000 -0500
++++ nsprpub/pr/include/md/_openbsd.h	2004-03-01 16:16:17.000000000 -0500
 @@ -43,6 +43,8 @@
  #define _PR_SI_ARCHITECTURE "x86"
  #elif defined(__alpha__)
@@ -23,8 +23,15 @@ $OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.2 2004/03/01 07:14:48 pvalc
  #define USE_SETJMP
  
  #ifndef _PR_PTHREADS
-@@ -84,6 +92,8 @@
+@@ -80,10 +88,14 @@
+ 
+ #define CONTEXT(_th) ((_th)->md.context)
+ 
+-#if defined(__i386__) || defined(__sparc__) || defined(__m68k__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__sparc__) || defined(__m68k__)
  #define JB_SP_INDEX 2
++#elif defined(__powerpc__)
++#define JB_SP_INDEX 1
  #elif defined(__alpha__)
  #define JB_SP_INDEX 34
 +#elif defined(__amd64__)
