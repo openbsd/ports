@@ -1,0 +1,105 @@
+--- pty.c.orig	Wed Nov 18 21:19:14 1998
++++ pty.c	Sat Aug 21 13:12:06 1999
+@@ -32,6 +32,24 @@
+ #include "config.h"
+ #include "screen.h"
+ 
++#if DIRENT
++# include <dirent.h>
++# define NAMLEN(dirent) strlen((dirent)->d_name)
++#else
++# define dirent direct
++# define NAMLEN(dirent) (dirent)->d_namlen
++# if SYSNDIR
++#  include <sys/ndir.h>
++# endif
++# if SYSDIR
++#  include <sys/dir.h>
++# endif
++# if NDIR
++#  include <ndir.h>
++# endif
++#endif
++
++
+ #ifndef sun
+ #include <sys/ioctl.h>
+ #endif
+@@ -292,26 +310,26 @@
+ OpenPTY(ttyn)
+ char **ttyn;
+ {
+-  register char *p, *q, *l, *d;
+-  register int f;
++  DIR *devdir;
++  struct dirent *candidate;
++  int f;
++
++  debug("OpenPTY: Using BSD style ptys, dynamic range.\n");
+ 
+-  debug("OpenPTY: Using BSD style ptys.\n");
+-  strcpy(PtyName, PtyProto);
+-  strcpy(TtyName, TtyProto);
+-  for (p = PtyName; *p != 'X'; p++)
+-    ;
+-  for (q = TtyName; *q != 'X'; q++)
+-    ;
+-  for (l = PTYRANGE0; (*p = *l) != '\0'; l++)
++  devdir = opendir("/dev");
++  if (!devdir)
++    return -1;
++  while (candidate = readdir(devdir))
+     {
+-      for (d = PTYRANGE1; (p[1] = *d) != '\0'; d++)
+-	{
+-	  debug1("OpenPTY tries '%s'\n", PtyName);
+-	  if ((f = open(PtyName, O_RDWR | O_NOCTTY)) == -1)
++      if (NAMLEN(candidate) == 5 && strncmp(candidate->d_name, "pty", 3) == 0)
++        {
++          sprintf(PtyName, "/dev/%s", candidate->d_name);
++          debug1("OpenPTY tries '%s'\n", PtyName);
++          if ((f = open(PtyName, O_RDWR | O_NOCTTY)) == -1)
+ 	    continue;
+-	  q[0] = *l;
+-	  q[1] = *d;
+-	  if (eff_uid && access(TtyName, R_OK | W_OK))
++          strcpy(TtyName, PtyName);
++	  TtyName[5] = 't';
++          if (eff_uid && access(TtyName, R_OK | W_OK))
+ 	    {
+ 	      close(f);
+ 	      continue;
+@@ -320,22 +338,24 @@
+ 	  /* Hack to ensure that the slave side of the pty is
+ 	   * unused. May not work in anything other than SunOS4.1
+ 	   */
+-	    {
+-	      int pgrp;
++	  {
++	    int pgrp;
+ 
+-	      /* tcgetpgrp does not work (uses TIOCGETPGRP)! */
+-	      if (ioctl(f, TIOCGPGRP, (char *)&pgrp) != -1 || errno != EIO)
+-		{
+-		  close(f);
+-		  continue;
+-		}
+-	    }
++	    /* tcgetpgrp does not work (uses TIOCGETPGRP)! */
++	    if (ioctl(f, TIOCGPGRP, (char *)&pgrp) != -1 || errno != EIO)
++              {	
++	        close(f);
++	        continue;
++	      }
++	  }
+ #endif
+ 	  initpty(f);
+ 	  *ttyn = TtyName;
++	  closedir(devdir);
+ 	  return f;
+ 	}
+     }
++  closedir(devdir);
+   return -1;
+ }
+ #endif

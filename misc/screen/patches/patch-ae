@@ -1,6 +1,6 @@
---- configure.orig	Fri Feb 19 17:04:35 1999
-+++ configure	Fri Feb 19 17:10:11 1999
-@@ -2706,8 +2706,10 @@
+--- configure.orig	Sat Aug 21 12:40:49 1999
++++ configure	Sat Aug 21 12:40:56 1999
+@@ -2706,8 +2832,10 @@
  cat > conftest.${ac_ext} <<EOF
  #include "confdefs.h"
  
@@ -12,7 +12,7 @@
  EOF
  if eval $ac_compile; then
    rm -rf conftest*
-@@ -3114,12 +3116,12 @@
+@@ -3114,12 +3242,12 @@
  
  {
  test -n "$verbose" && \
