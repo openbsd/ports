@@ -1,7 +1,14 @@
-$OpenBSD: patch-configure,v 1.2 2003/06/02 02:02:36 margarida Exp $
---- configure.orig	Wed May 28 03:56:16 2003
-+++ configure	Thu May 29 08:54:22 2003
-@@ -3893,7 +3893,7 @@ else
+$OpenBSD: patch-configure,v 1.3 2005/02/09 00:41:20 alek Exp $
+--- configure.orig	Wed May 28 11:56:16 2003
++++ configure	Tue Feb  8 23:08:13 2005
+@@ -3887,13 +3887,13 @@ else
+   gt_save_CPPFLAGS="$CPPFLAGS"
+             CPPFLAGS="$CPPFLAGS $INCINTL"
+             gt_save_LIBS="$LIBS"
+-            LIBS="$LIBS $LIBINTL"
++            LIBS="$LIBS $LIBINTL $LIBICONV"
+                         cat > conftest.$ac_ext <<EOF
+ #line 3893 "configure"
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -19,3 +26,12 @@ $OpenBSD: patch-configure,v 1.2 2003/06/02 02:02:36 margarida Exp $
  ; return 0; }
  EOF
  if { (eval echo configure:3908: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -4380,7 +4380,7 @@ s%@DATADIRNAME@%$DATADIRNAME%g
+ s%@INSTOBJEXT@%$INSTOBJEXT%g
+ s%@GENCAT@%$GENCAT%g
+ s%@INTL_LIBTOOL_SUFFIX_PREFIX@%$INTL_LIBTOOL_SUFFIX_PREFIX%g
+-s%@INTLLIBS@%$INTLLIBS%g
++s%@INTLLIBS@%$LTLIBINTL $LTLIBICONV%g
+ s%@LIBINTL@%$LIBINTL%g
+ s%@LTLIBINTL@%$LTLIBINTL%g
+ s%@POSUB@%$POSUB%g

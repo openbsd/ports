@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.3 2005/02/09 00:41:20 alek Exp $
+--- lib/Makefile.in.orig	Tue Feb  8 23:10:18 2005
++++ lib/Makefile.in	Tue Feb  8 23:10:28 2005
+@@ -104,7 +104,7 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIB
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+-INCLUDES = -I../intl
++INCLUDES = 
+ noinst_LIBRARIES = libap.a
+ libap_a_SOURCES = ap-utils.h reset.c snmp.c
+ EXTRA_libap_a_SOURCES = ber.c

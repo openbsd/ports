@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/09 00:41:19 alek Exp $
 
 COMMENT=	"wireless access point configuration tools"
 
 DISTNAME=	ap-utils-1.3.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.bz2
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/02/09 00:41:20 alek Exp $
+--- src/Makefile.in.orig	Tue Feb  8 23:05:44 2005
++++ src/Makefile.in	Tue Feb  8 23:06:00 2005
+@@ -108,7 +108,7 @@ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+ DEFS = -DLOCALEDIR=\"$(datadir)/locale\" -DHAVE_CONFIG_H
+-INCLUDES = -I../lib -I../intl -I..
++INCLUDES = -I../lib -I..
+ LIBS = @INTLLIBS@ @LIBS@
+ 
+ bin_PROGRAMS = ap-config ap-mrtg
