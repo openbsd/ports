@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/02/22 20:03:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.30 2001/02/27 20:01:07 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${FLAVOR:L:Mmcrypt}
 CONFIGURE_ARGS+=	--with-mcrypt
-LIB_DEPENDS+=		mcrypt.4::security/libmcrypt
+LIB_DEPENDS+=		mcrypt::security/libmcrypt
 .else
 CONFIGURE_ARGS+=	--without-mcrypt
 .endif
