@@ -1,16 +1,63 @@
-$OpenBSD: patch-autoconf_ltmain_sh,v 1.1.1.1 2001/02/08 20:05:22 todd Exp $
---- autoconf/ltmain.sh.orig	Thu Feb  1 11:50:04 2001
-+++ autoconf/ltmain.sh	Thu Feb  1 11:55:51 2001
-@@ -1004,7 +1004,7 @@ if test -z "$show_help"; then
+$OpenBSD: patch-autoconf_ltmain_sh,v 1.2 2001/02/20 18:40:33 danh Exp $
+--- autoconf/ltmain.sh.orig	Mon Dec 21 19:28:47 1998
++++ autoconf/ltmain.sh	Tue Feb 20 13:38:20 2001
+@@ -507,7 +507,28 @@ if test -z "$show_help"; then
+         deplibs="$deplibs $arg"
+         ;;
  
-       # Add libc to deplibs on all systems.
+-      -l*) deplibs="$deplibs $arg" ;;
++      -l*)
++        if test "$arg" = "-lc"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
++          esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
++        fi
++        deplibs="$deplibs $arg"
++        ;;
++ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
+ 
+       -no-undefined)
+ 	allow_undefined=no
+@@ -1002,9 +1023,23 @@ if test -z "$show_help"; then
+         allow_undefined_flag="$no_undefined_flag"
+       fi
+ 
+-      # Add libc to deplibs on all systems.
        dependency_libs="$deplibs"
 -      deplibs="$deplibs -lc"
-+      deplibs="$deplibs"
++      case "$host" in
++      *-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
++        # these systems don't actually have a c library (as such)!
++        ;;
++      *-*-openbsd*)
++        # Do not include libc due to us having libc/libc_r.
++        ;;
++      *-*-rhapsody*)
++        # rhapsody is a little odd...
++        deplibs="$deplibs -framework System"
++        ;;
++      *)
++        # Add libc to deplibs on all other systems.
++        deplibs="$deplibs -lc"
++        ;;
++      esac
  
        if test "$build_libtool_libs" = yes; then
          # Get the real and link names of the library.
-@@ -2025,37 +2025,6 @@ libdir='$install_libdir'\
+@@ -2025,37 +2060,6 @@ libdir='$install_libdir'\
        done
      fi
  
