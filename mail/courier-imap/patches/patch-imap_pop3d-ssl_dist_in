@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.1 2000/12/29 18:51:57 avsm Exp $
+--- imap/pop3d-ssl.dist.in.orig	Fri Dec 29 14:55:59 2000
++++ imap/pop3d-ssl.dist.in	Fri Dec 29 14:56:19 2000
+@@ -131,7 +131,7 @@ TLS_PROTOCOL=SSL3
+ # servers, and is optional for SSL/TLS clients.  TLS_CERTFILE is usually
+ # treated as confidential, and must not be world-readable.
+ #
+-TLS_CERTFILE=@datadir@/pop3d.pem
++TLS_CERTFILE=/etc/ssl/private/pop3d.pem
+ 
+ ##NAME: TLS_CERTINFO
+ #

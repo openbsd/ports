@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Nov 18 23:06:22 2000
-+++ Makefile.in	Sat Nov 18 23:06:53 2000
-@@ -805,9 +805,6 @@ install-exec-local:
+--- Makefile.in.orig	Fri Dec 29 14:57:58 2000
++++ Makefile.in	Fri Dec 29 14:58:29 2000
+@@ -821,9 +821,6 @@ install-exec-local:
  	test ! -x tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
  		tcpd/couriertls $(DESTDIR)$(bindir)/couriertls
  	$(mkinstalldirs) $(DESTDIR)$(sbindir)

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.pop3,v 1.1 2000/11/22 11:42:33 avsm Exp $
+@comment $OpenBSD: PFRAG.pop3,v 1.2 2000/12/29 18:51:57 avsm Exp $
 bin/pop3d
 libexec/pop3d-ssl.rc
 libexec/pop3d.rc
 man/man8/mkpop3dcert.8
 sbin/mkpop3dcert
 sbin/pop3login
-share/examples/courier-imap/pop3d-ssl.config
+share/examples/courier-imap/pop3d-ssl
 share/examples/courier-imap/pop3d.cnf
-share/examples/courier-imap/pop3d.config
+share/examples/courier-imap/pop3d

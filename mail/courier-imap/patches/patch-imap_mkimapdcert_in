@@ -1,45 +1,46 @@
-$OpenBSD: patch-imap_mkimapdcert_in,v 1.2 2000/10/01 13:27:14 avsm Exp $
---- imap/mkimapdcert.in.orig	Sun Oct  1 13:49:22 2000
-+++ imap/mkimapdcert.in	Sun Oct  1 14:00:26 2000
-@@ -9,29 +9,25 @@
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.3 2000/12/29 18:51:57 avsm Exp $
+--- imap/mkimapdcert.in.orig	Mon Sep 18 11:14:24 2000
++++ imap/mkimapdcert.in	Fri Dec 29 15:14:10 2000
+@@ -9,29 +9,27 @@
  # IMAP over SSL.  Normally this script would get called by an automatic
  # package installation routine.
  
 -test -x @OPENSSL@ || exit 0
--
++SSLDIR=/etc/ssl/private
+ 
 -prefix="@prefix@"
 -
 -if test -f @datadir@/imapd.pem
-+if test -f @sysconfdir@/ssl/private/imapd.pem
++if test -f ${SSLDIR}/imapd.pem
  then
 -	echo "@datadir@/imapd.pem already exists."
-+	echo "@sysconfdir@/ssl/private/imapd.pem already exists."
++	echo "${SSLDIR}/imapd.pem already exists."
  	exit 1
  fi
  
 -cp /dev/null @datadir@/imapd.pem
 -chmod 600 @datadir@/imapd.pem
 -chown @mailuser@ @datadir@/imapd.pem
-+cp /dev/null @sysconfdir@/ssl/private/imapd.pem
-+chmod 600 @sysconfdir@/ssl/private/imapd.pem
-+chown @mailuser@ @sysconfdir@/ssl/private/imapd.pem
++cp /dev/null ${SSLDIR}/imapd.pem
++chmod 600 ${SSLDIR}/imapd.pem
++chown @mailuser@ ${SSLDIR}/imapd.pem
  
  cleanup() {
 -	rm -f @datadir@/imapd.pem
 -	rm -f @datadir@/imapd.rand
-+	rm -f @sysconfdir@/ssl/private/imapd.pem
-+	rm -f @sysconfdir@/ssl/private/imapd.rand
++	rm -f ${SSLDIR}/imapd.pem
++	rm -f ${SSLDIR}/imapd.rand
  	exit 1
  }
  
 -dd if=@RANDOMV@ of=@datadir@/imapd.rand count=1 2>/dev/null
-+dd if=@RANDOMV@ of=@sysconfdir@/ssl/private/imapd.rand count=1 2>/dev/null
++dd if=@RANDOMV@ of=${SSLDIR}/imapd.rand count=1 2>/dev/null
  @OPENSSL@ req -new -x509 -days 365 -nodes \
 -	-config @sysconfdir@/imapd.cnf -out @datadir@/imapd.pem -keyout @datadir@/imapd.pem || cleanup
 -@OPENSSL@ gendh -rand @datadir@/imapd.rand 512 >>@datadir@/imapd.pem || cleanup
 -@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @datadir@/imapd.pem || cleanup
 -rm -f @datadir@/imapd.rand
-+	-config @sysconfdir@/imapd.cnf -out @sysconfdir@/ssl/private/imapd.pem -keyout @sysconfdir@/ssl/private/imapd.pem || cleanup
-+@OPENSSL@ gendh -rand @sysconfdir@/ssl/private/imapd.rand 512 >>@sysconfdir@/ssl/private/imapd.pem || cleanup
-+@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @sysconfdir@/ssl/private/imapd.pem || cleanup
-+rm -f @sysconfdir@/ssl/private/imapd.rand
++	-config @sysconfdir@/imapd.cnf -out ${SSLDIR}/imapd.pem -keyout ${SSLDIR}/imapd.pem || cleanup
++@OPENSSL@ gendh -rand ${SSLDIR}/imapd.rand 512 >> ${SSLDIR}/imapd.pem || cleanup
++@OPENSSL@ x509 -subject -dates -fingerprint -noout -in ${SSLDIR}/imapd.pem || cleanup
++rm -f ${SSLDIR}/imapd.rand

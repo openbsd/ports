@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/11/22 11:42:34 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/12/29 18:51:57 avsm Exp $
 bin/couriertls
 bin/imapd
 bin/maildirmake
@@ -40,8 +40,8 @@ sbin/pw2userdb
 sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
-share/examples/courier-imap/imapd-ssl.config
+share/examples/courier-imap/imapd-ssl
 share/examples/courier-imap/imapd.cnf
-share/examples/courier-imap/imapd.config
+share/examples/courier-imap/imapd
 %%pop3%%
 @dirrm share/examples/courier-imap
