@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/13 23:53:27 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/10 19:28:50 brad Exp $
 
 COMMENT=	"Tools and library routines for working with TIFF images"
 
 DISTNAME=	tiff-v3.5.5
 PKGNAME=	tiff-3.5.5
 CATEGORIES=	graphics
-NEED_VERSION=	1.384
+NEED_VERSION=	1.460
 MASTER_SITES=	http://www.libtiff.org/
 
 HOMEPAGE=	http://www.libtiff.org/
@@ -34,6 +34,9 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--noninteractive
 
 DOCDIR=	${PREFIX}/share/doc/tiff
+
+post-extract:
+	@cp -f ${PORTSDIR}/infrastructure/db/config.guess ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/images
