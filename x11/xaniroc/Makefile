@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/08 20:31:37 sturm Exp $
 
 COMMENT=	"animate your root-cursor"
 
@@ -6,8 +6,7 @@ DISTNAME=	xaniroc
 PKGNAME=	xaniroc-1.02
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.freebird.org/unixware/freebird/x11/utils/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/novell/freebird/x11/utils/
+MASTER_SITES=	ftp://ftp.42.org/pub/orphan/
 EXTRACT_SUFX=	.src.tar.Z
 
 # License: NONE
