@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/05 17:50:01 couderc Exp $
+bin/beaver
+man/man1/beaver.1
+share/beaver/beaver.png
+share/beaver/bl/example1.bl
+share/beaver/bl/example2.bl
+share/beaver/bl/glib.bl
+@dirrm share/beaver/bl
+@dirrm share/beaver
