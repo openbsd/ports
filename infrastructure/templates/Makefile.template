@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.19 2000/03/03 14:23:11 turan Exp $
+# $OpenBSD: Makefile.template,v 1.20 2000/03/04 18:08:32 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -13,7 +13,7 @@ DISTNAME=		???
 #PKGNAME=		???
 CATEGORIES=     	???
 
-# HOMEPAGE=		???		Url
+#HOMEPAGE=		???		Url
 
 # Reasons why the port/package shouldn't be built
 #
@@ -35,10 +35,10 @@ MAINTAINER=		ports@openbsd.org
 # that are in conflict, set PERMIT_* based on the most restrictive one.
 # Make SURE you get these values right.
 
-PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
-PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
-PERMIT_DISTFILES_CDROM=	Yes | "Reason if No"
-PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
+#PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
+#PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
+#PERMIT_DISTFILES_CDROM=	Yes | "Reason if No"
+#PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
 
 # where the source files and patches can be fetched
 #
