@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 1999/08/04 22:41:02 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/04 21:54:06 brad Exp $
 
-DISTNAME=	gnupg-0.9.10
+DISTNAME=	gnupg-0.9.11
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/ \
+MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
+		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/ \
-		ftp://sunsite.auc.dk/pub/security/gcrypt/ \
-		ftp://ftp.linux.it/pub/mirrors/gnupg/ \
-		ftp://pgp.iijlab.net/pub/gnupg/ \
-		ftp://ring.aist.go.jp/pub/net/gnupg/ \
-		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/ \
-		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/ \
-		ftp://ftp.net.lut.ac.uk/gcrypt/
+		ftp://sunsite.auc.dk/pub/security/gcrypt/gnupg/ \
+		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
+		ftp://pgp.iijlab.net/pub/gnupg/gnupg/ \
+		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/ \
+		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/gnupg/ \
+		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
+		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
@@ -28,7 +28,7 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 
 post-install:
 	@${MKDIR} ${GNUPGDOCDIR}
-	@set -e; for f in ${GNUPGDOCFILES}; do \
+	@for f in ${GNUPGDOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}/; \
 	done
 
