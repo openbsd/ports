@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 03:45:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/11 13:14:39 dugsong Exp $
 
 COMMENT=	"IP stack integrity checker"
 
 DISTNAME=	isic-0.05
 CATEGORIES=	security
 NEED_VERSION=	1.402
-MASTER_SITES=	http://expert.cc.purdue.edu/~frantzen/
+MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	net::net/libnet
