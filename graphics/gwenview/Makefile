@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/05 05:02:55 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/05 20:32:51 brad Exp $
 
 COMMENT=	"image viewer for KDE"
 
@@ -24,7 +24,7 @@ MODULES=        qt3
 PORTHOME=       ${WRKDIR}
 
 MAKE_ENV=       KDEDIR="${LOCALBASE}"
-# Ensure qt2 will always be at the front
+# Ensure Qt3 will always be at the front
 MAKE_FLAGS=     CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=        Yes
@@ -34,8 +34,8 @@ CONFIGURE_ARGS=  ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --disable-debug --enable-final
 CONFIGURE_ARGS+= --disable-threading --disable-mt
 CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include"
+CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 CONFIGURE_ARGS+= --with-xinerama
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/libpng" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
 
 .include <bsd.port.mk>
