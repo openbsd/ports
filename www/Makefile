@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/09/05 11:40:54 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2000/09/06 08:07:49 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -29,11 +29,12 @@
 #    SUBDIR += mapedit
 #    SUBDIR += mhonarc
 #    SUBDIR += mmm
+     SUBDIR += mod_perl
 #    SUBDIR += momspider
      SUBDIR += mozilla
      SUBDIR += netscape
      SUBDIR += nscache
-#    SUBDIR += p5-Apache
+     SUBDIR += p5-Apache-DBI
 #    SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
 #    SUBDIR += p5-HTML
