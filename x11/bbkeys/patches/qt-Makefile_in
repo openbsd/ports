@@ -1,0 +1,12 @@
+$OpenBSD: qt-Makefile_in,v 1.1.1.1 2001/01/06 23:58:06 naddy Exp $
+--- Makefile.in.orig	Thu Sep 28 22:31:09 2000
++++ Makefile.in	Tue Jan  2 19:50:56 2001
+@@ -68,7 +68,7 @@ regex_cmd = @regex_cmd@
+ CPPFLAGS = @CPPFLAGS@  @INTERLACE@ 		-DGLOBAL_BB=\"$(datadir)/bbtools/bbkeys.bb\" 		-DGLOBAL_NOBB=\"$(datadir)/bbtools/bbkeys.nobb\"
+ 
+ 
+-SUBDIRS = data
++SUBDIRS = data bbkeysconf-1.2
+ bin_PROGRAMS = bbkeys bbkeysConfigC
+ bbkeys_SOURCES = bbkeys.cc Image.cc LinkedList.cc   		  bbkeys.hh Image.hh LinkedList.hh 		  Timer.hh Timer.cc 		  main.cc main.hh 		  resource.cc resource.hh 		  Baseresource.cc Baseresource.hh 		  Basewindow.cc Basewindow.hh 		  BaseDisplay.cc BaseDisplay.hh 		  wminterface.cc wminterface.hh 		  NETInterface.cc NETInterface.hh 		  blackboxstyle.hh
+ 
