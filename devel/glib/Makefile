@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2002/01/07 14:32:07 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2002/01/09 17:26:22 brad Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
@@ -31,10 +31,5 @@ NO_REGRESS=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
-
-post-patch:
-	@mv -f ${WRKSRC}/glib-config.in ${WRKSRC}/glib-config.in.bak
-	@sed -e s#!!PTHREAD_LIBDIR!!#${LOCALBASE}/lib/pth#g \
-		${WRKSRC}/glib-config.in.bak > ${WRKSRC}/glib-config.in
 
 .include <bsd.port.mk>
