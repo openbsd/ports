@@ -3,23 +3,21 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/07/10 02:06:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/12 01:48:11 kevlo Exp $
 #
 
-DISTNAME=	xtimer-8087
-PKGNAME=	xtimer-0.8087
+DISTNAME=	xtimer-8089
+PKGNAME=	xtimer-0.8089
 CATEGORIES=	misc
-MASTER_SITES=	http://spock.vector.co.jp/authors/VA004959/xtimer/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xtimer/
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>
