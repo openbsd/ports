@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2003/07/26 11:48:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.290 2003/08/02 15:38:51 couderc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -163,6 +163,7 @@
      SUBDIR += pdnsd
      SUBDIR += pen
      SUBDIR += pfstat
+     SUBDIR += pktstat
      SUBDIR += plushs
      SUBDIR += poink
      SUBDIR += pop3gwd
