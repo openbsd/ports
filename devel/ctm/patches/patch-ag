@@ -1,0 +1,11 @@
+--- ctm/ctm/ctm.h.orig	Sun Jul  9 20:43:45 2000
++++ ctm/ctm/ctm.h	Sun Jul  9 20:44:00 2000
+@@ -26,7 +26,7 @@
+ #include <sys/time.h>
+ 
+ #define VERSION "2.0"
+-#define MAXSIZE (1024*1024*10)
++#define MAXSIZE (1024*1024*100)
+ 
+ #define SUBSUFF ".ctm"
+ #define TMPSUFF ".ctmtmp"
