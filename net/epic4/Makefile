@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2000/09/24 07:04:10 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2000/10/01 05:30:41 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-VERSION=	0.9.7
+VERSION=	0.9.9
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.330
