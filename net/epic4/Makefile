@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/07/04 13:07:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2000/07/04 19:27:19 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 VERSION=	2.511
@@ -28,11 +28,11 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 
 FAKE_FLAGS=	IP="${WRKINST}" \
-		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:
 	@cd ${PREFIX}/bin && ln -sf epic-EPIC4pre${VERSION} epic
-	strip ${PREFIX}/bin/epic
 	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/share/epic && tar -zxf ${FULLDISTDIR}/epic4pre2-help.tar.gz
 
