@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2002/03/21 15:05:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.44 2002/03/22 17:13:16 brad Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -19,28 +19,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::devel/pkgconfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	::devel/pkgconfig
+RUN_DEPENDS+=	::devel/pkgconfig
+
+MODULES=	iconv
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ARGS+= --with-html-dir="${PREFIX}/share"
-CONFIGURE_ARGS+= --with-iconv=${PREFIX}
+CONFIGURE_ARGS+= --with-iconv="${LOCALBASE}"
 
 FLAVORS=	python
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
 BUILD_DEPENDS+=	:python-2.2*:lang/python/2.2
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	:python-2.2*:lang/python/2.2
 CONFIGURE_ARGS+= --with-pyton
 .else
 CONFIGURE_ARGS+= --without-python
 .endif
 
-MODULES=	iconv
 REGRESS_TARGET=	tests
 
 .include <bsd.port.mk>
