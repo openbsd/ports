@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2003/04/10 15:52:33 marcm Exp $
---- configure.orig	Fri Mar 14 09:42:34 2003
-+++ configure	Wed Apr  9 08:11:46 2003
+$OpenBSD: patch-configure,v 1.5 2004/10/11 21:07:50 naddy Exp $
+--- configure.orig	Fri Mar 14 18:42:34 2003
++++ configure	Sat Oct  9 20:28:53 2004
 @@ -6150,8 +6150,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
@@ -32,12 +32,30 @@ $OpenBSD: patch-configure,v 1.4 2003/04/10 15:52:33 marcm Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
+@@ -11308,7 +11310,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -11369,7 +11371,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
 @@ -11431,6 +11433,10 @@ fi
  
  	   fi
  
 +	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+	     LIBS="$LIBS -lintl";
++	     LIBS="$LIBS -lintl -liconv";
 +	   fi
 +
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
