@@ -1,0 +1,11 @@
+--- src/checksum.c.orig	Fri Sep 10 09:43:37 1999
++++ src/checksum.c	Thu Nov  4 12:19:30 1999
+@@ -222,7 +222,7 @@
+ 
+ unsigned short ip_compute_csum(unsigned short * addr,int len)
+ {
+-return ip_check_ext(adr,len,0);
++return ip_check_ext(addr,len,0);
+ }
+ 
+ struct psuedo_hdr

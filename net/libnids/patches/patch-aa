@@ -1,0 +1,8 @@
+--- Makefile.orig	Thu Nov  4 12:04:33 1999
++++ Makefile	Thu Nov  4 12:04:45 1999
+@@ -1,4 +1,4 @@
+-all: libpcap libnet libnids
++all: libnids
+ 
+ libpcap:
+ 	(cd libpcap-0.4; ./configure; make)

@@ -1,0 +1,32 @@
+--- src/Makefile.orig	Thu Nov  4 12:06:14 1999
++++ src/Makefile	Thu Nov  4 12:18:24 1999
+@@ -1,23 +1,14 @@
+-PCAP_INCLUDE_DIR=../libpcap-0.4
+-LIBNET_INCLUDE_DIR=../Libnet-0.99/include
+-PCAP_LIB_DIR=../libpcap-0.4
+-LIBNET_LIB_DIR=../Libnet-0.99/lib
+-LIBNET_DIR=../Libnet-0.99
++PREFIX?=/usr/local
+ CC=gcc
+-CFLAGS= -I$(PCAP_INCLUDE_DIR) -I$(LIBNET_INCLUDE_DIR) -g -D_BSD_SOURCE -O2 -Wall -DCOMPILING_LIBNIDS
++CFLAGS+= -I$(PREFIX)/include -D_BSD_SOURCE -DCOMPILING_LIBNIDS `libnet-config --defines`
+ SRCS= util.c libnids.c tcp.c killtcp.c ip_fragment.c ip_options.c checksum.c scan.c
+ OBJS = util.o libnids.o tcp.o killtcp.o ip_fragment.o ip_options.o checksum.o scan.o
+ 
+-all: libnids.so libnids.a
+-libnids.so: $(OBJS)
+-	gcc -shared -g -L$(PCAP_LIB_DIR) -L$(LIBNET_LIB_DIR) -o libnids.so $(OBJS) -lpcap -lnet
+-#	strip -x libnids.so
++all: libnids.a
++
+ libnids.a: $(OBJS)
+ 	ar -cr $@ $(OBJS)
+ 	ranlib $@	
+-#*bsd's make lacks $(shell ...)
+-killtcp.o: killtcp.c
+-	sh -c '$(CC) `$(LIBNET_DIR)/libnet-config --cflags --defines|tr -d "\n"` \
+-$(CFLAGS) -c killtcp.c'
++
+ clean:
+-	rm -f *.o libnids.a libnids.so *~ 
++	rm -f *.o libnids.a libnids.so *~ 
