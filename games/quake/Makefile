@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/04 00:37:12 naddy Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -8,12 +8,12 @@ NEED_VERSION=		1.405
 FULLPKGNAME-server=	quakeworld-server-20000101
 PKGNAME=		quake-20000101
 DISTNAME=		quake-v6-bsd-kame
-PATCHFILES=		quake6-00-v6-20000202b.diff.gz
+PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
 HOMEPAGE=		http://www.viagenie.qc.ca/en/ipv6-quake.shtml
-MASTER_SITES=		http://www.viagenie.qc.ca/quake/  \
-			ftp://ftp.kame.net/pub/kame/misc/
+MASTER_SITES=		http://www.viagenie.qc.ca/quake/
+MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
 
 MAINTAINER=		Maurice Nonnekes <maurice@amaze.nl>
 
