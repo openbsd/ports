@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/30 08:30:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/01/06 10:50:11 jakob Exp $
 
-DISTNAME=	dante-1.1.0
+DISTNAME=	dante-1.1.1
 CATEGORIES=	security
 
 MAINTAINER=     jakob@openbsd.org
