@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/21 16:58:03 shell Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	'alpha-release readers for reading SOUP and QWK packets'
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
-NEED_VERSION=	1.305
+NEED_VERSION=	1.405
 
 MAINTAINER=	ports@OpenBSD.ORG
 
@@ -13,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/utils/
+MASTER_SITES=	ftp://linux.psy.unipd.it/pub/pluto/developers/utils/
 
 CONFIGURE_STYLE=	gnu
 
