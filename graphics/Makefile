@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/04/18 05:55:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.60 2001/05/08 22:23:46 markus Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -69,6 +69,7 @@
 #    SUBDIR += povray
      SUBDIR += qiv
 #    SUBDIR += qvplay
+     SUBDIR += s10sh
 #    SUBDIR += sced
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
