@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/16 10:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/12 00:25:21 espie Exp $
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
@@ -6,18 +6,19 @@ CATEGORIES=	devel
 MAINTAINER=	d@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bison
 
+FAKE=		Yes
 SEPARATE_BUILD=concurrent
-HAS_CONFIGURE=	yes
-GNU_CONFIGURE=	yes
-INFO_FILES=bison.info
+HAS_CONFIGURE=	Yes
+GNU_CONFIGURE=	Yes
+INFO_FILES=	bison.info
 
 # bison installs bison.info*... remove our patch original before installing
 #

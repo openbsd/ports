@@ -1,3 +1,6 @@
+@unexec install-info --delete --info-dir=%D/info %D/info/gperf.info
+bin/gperf
 info/gperf.info
 man/man1/gperf.1
-bin/gperf
+@exec install-info --info-dir=%D/info %D/info/gperf.info
+
