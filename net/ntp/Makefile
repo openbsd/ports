@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/12/20 21:07:21 danh Exp $
+# $OpenBSD: Makefile,v 1.20 2002/05/11 20:58:14 danh Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -26,9 +26,10 @@ MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+AUTOCONF_NEW=	Yes
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
-		 --enable-accurate-adjtime --disable-IRIG \
+	 	--enable-accurate-adjtime --disable-IRIG \
 		--with-openssl-libdir=/usr/lib \
 		--with-openssl-incdir=/usr/include \
 		--with-crypto=openssl
