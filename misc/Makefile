@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2002/10/12 17:33:01 shell Exp $
+# $OpenBSD: Makefile,v 1.66 2002/11/15 20:31:35 couderc Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -70,6 +70,7 @@
      SUBDIR += screen
      SUBDIR += screen,static
      SUBDIR += sh-utils
+     SUBDIR += shared-mime-info
      SUBDIR += splitvt
 #    SUBDIR += team
      SUBDIR += tkcron
