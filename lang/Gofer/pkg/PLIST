@@ -1,17 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:16:07 espie Exp $
 bin/gofer
 bin/goferc
-man/man1/gofer.1
+lib/Gofer/
 lib/Gofer/cc.prelude
-lib/Gofer/min.prelude
-lib/Gofer/nofloat.prelude
-lib/Gofer/simple.prelude
-lib/Gofer/standard.prelude
-lib/Gofer/prelude.h
-lib/Gofer/gofc.h
-lib/Gofer/runtime.o
-lib/Gofer/gofer
-lib/Gofer/gofc
+lib/Gofer/docs/
 lib/Gofer/docs/Readme
 lib/Gofer/docs/appx_a
 lib/Gofer/docs/appx_b
@@ -46,5 +38,13 @@ lib/Gofer/docs/rel228.tex
 lib/Gofer/docs/release.221
 lib/Gofer/docs/release.228
 lib/Gofer/docs/release.230
-@dirrm lib/Gofer/docs
-@dirrm lib/Gofer
+lib/Gofer/gofc
+lib/Gofer/gofc.h
+lib/Gofer/gofer
+lib/Gofer/min.prelude
+lib/Gofer/nofloat.prelude
+lib/Gofer/prelude.h
+lib/Gofer/runtime.o
+lib/Gofer/simple.prelude
+lib/Gofer/standard.prelude
+@man man/man1/gofer.1

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-doc,v 1.5 2004/04/26 23:48:50 dons Exp $
+@comment $OpenBSD: PLIST-doc,v 1.6 2004/09/15 19:16:08 espie Exp $
+share/doc/ghc/
+share/doc/ghc/building/
 share/doc/ghc/building/building-docs.html
 share/doc/ghc/building/building-guide.html
 share/doc/ghc/building/docbook.css
@@ -11,6 +13,7 @@ share/doc/ghc/building/sec-makefile-arch.html
 share/doc/ghc/building/sec-port-info.html
 share/doc/ghc/building/sec-porting-ghc.html
 share/doc/ghc/building/sec-pre-supposed.html
+share/doc/ghc/building/stylesheet-images/
 share/doc/ghc/building/stylesheet-images/caution.gif
 share/doc/ghc/building/stylesheet-images/home.gif
 share/doc/ghc/building/stylesheet-images/important.gif
@@ -24,6 +27,7 @@ share/doc/ghc/building/stylesheet-images/toc-plus.gif
 share/doc/ghc/building/stylesheet-images/up.gif
 share/doc/ghc/building/stylesheet-images/warning.gif
 share/doc/ghc/building/winbuild.html
+share/doc/ghc/haskell98-report-html/
 share/doc/ghc/haskell98-report-html/array.html
 share/doc/ghc/haskell98-report-html/basic.html
 share/doc/ghc/haskell98-report-html/char.html
@@ -60,6 +64,7 @@ share/doc/ghc/haskell98-report-html/standard-prelude.html
 share/doc/ghc/haskell98-report-html/syntax-iso.html
 share/doc/ghc/haskell98-report-html/system.html
 share/doc/ghc/haskell98-report-html/time.html
+share/doc/ghc/hslibs/
 share/doc/ghc/hslibs/book-hslibs.html
 share/doc/ghc/hslibs/device-specific-functions.html
 share/doc/ghc/hslibs/docbook.css
@@ -125,6 +130,7 @@ share/doc/ghc/hslibs/select.html
 share/doc/ghc/hslibs/set.html
 share/doc/ghc/hslibs/socket.html
 share/doc/ghc/hslibs/socketprim.html
+share/doc/ghc/hslibs/stylesheet-images/
 share/doc/ghc/hslibs/stylesheet-images/caution.gif
 share/doc/ghc/hslibs/stylesheet-images/home.gif
 share/doc/ghc/hslibs/stylesheet-images/important.gif
@@ -138,6 +144,8 @@ share/doc/ghc/hslibs/stylesheet-images/toc-plus.gif
 share/doc/ghc/hslibs/stylesheet-images/up.gif
 share/doc/ghc/hslibs/stylesheet-images/warning.gif
 share/doc/ghc/hslibs/system-database.html
+share/doc/ghc/libraries/
+share/doc/ghc/libraries/QuickCheck/
 share/doc/ghc/libraries/QuickCheck/Debug.QuickCheck.Batch.html
 share/doc/ghc/libraries/QuickCheck/Debug.QuickCheck.Poly.html
 share/doc/ghc/libraries/QuickCheck/Debug.QuickCheck.Utils.html
@@ -145,6 +153,7 @@ share/doc/ghc/libraries/QuickCheck/Debug.QuickCheck.html
 share/doc/ghc/libraries/QuickCheck/QuickCheck.haddock
 share/doc/ghc/libraries/QuickCheck/haddock.css
 share/doc/ghc/libraries/QuickCheck/haskell_icon.gif
+share/doc/ghc/libraries/base/
 share/doc/ghc/libraries/base/Control.Arrow.html
 share/doc/ghc/libraries/base/Control.Concurrent.Chan.html
 share/doc/ghc/libraries/base/Control.Concurrent.MVar.html
@@ -334,6 +343,7 @@ share/doc/ghc/libraries/doc-index-Y.html
 share/doc/ghc/libraries/doc-index-Z.html
 share/doc/ghc/libraries/doc-index.html
 share/doc/ghc/libraries/haddock.css
+share/doc/ghc/libraries/haskell-src/
 share/doc/ghc/libraries/haskell-src/Language.Haskell.Parser.html
 share/doc/ghc/libraries/haskell-src/Language.Haskell.Pretty.html
 share/doc/ghc/libraries/haskell-src/Language.Haskell.Syntax.html
@@ -341,6 +351,7 @@ share/doc/ghc/libraries/haskell-src/Language.Haskell.THSyntax.html
 share/doc/ghc/libraries/haskell-src/haddock.css
 share/doc/ghc/libraries/haskell-src/haskell-src.haddock
 share/doc/ghc/libraries/haskell-src/haskell_icon.gif
+share/doc/ghc/libraries/haskell98/
 share/doc/ghc/libraries/haskell98/Array.html
 share/doc/ghc/libraries/haskell98/Bits.html
 share/doc/ghc/libraries/haskell98/CError.html
@@ -376,6 +387,7 @@ share/doc/ghc/libraries/haskell98/haskell98.haddock
 share/doc/ghc/libraries/haskell98/haskell_icon.gif
 share/doc/ghc/libraries/haskell_icon.gif
 share/doc/ghc/libraries/index.html
+share/doc/ghc/libraries/network/
 share/doc/ghc/libraries/network/Network.BSD.html
 share/doc/ghc/libraries/network/Network.CGI.html
 share/doc/ghc/libraries/network/Network.Socket.html
@@ -384,6 +396,7 @@ share/doc/ghc/libraries/network/Network.html
 share/doc/ghc/libraries/network/haddock.css
 share/doc/ghc/libraries/network/haskell_icon.gif
 share/doc/ghc/libraries/network/network.haddock
+share/doc/ghc/libraries/parsec/
 share/doc/ghc/libraries/parsec/Text.ParserCombinators.Parsec.Char.html
 share/doc/ghc/libraries/parsec/Text.ParserCombinators.Parsec.Combinator.html
 share/doc/ghc/libraries/parsec/Text.ParserCombinators.Parsec.Error.html
@@ -397,11 +410,13 @@ share/doc/ghc/libraries/parsec/Text.ParserCombinators.Parsec.html
 share/doc/ghc/libraries/parsec/haddock.css
 share/doc/ghc/libraries/parsec/haskell_icon.gif
 share/doc/ghc/libraries/parsec/parsec.haddock
+share/doc/ghc/libraries/readline/
 share/doc/ghc/libraries/readline/System.Console.Readline.html
 share/doc/ghc/libraries/readline/System.Console.SimpleLineEditor.html
 share/doc/ghc/libraries/readline/haddock.css
 share/doc/ghc/libraries/readline/haskell_icon.gif
 share/doc/ghc/libraries/readline/readline.haddock
+share/doc/ghc/libraries/unix/
 share/doc/ghc/libraries/unix/System.Posix.Directory.html
 share/doc/ghc/libraries/unix/System.Posix.DynamicLinker.Module.html
 share/doc/ghc/libraries/unix/System.Posix.DynamicLinker.Prim.html
@@ -420,6 +435,7 @@ share/doc/ghc/libraries/unix/System.Posix.html
 share/doc/ghc/libraries/unix/haddock.css
 share/doc/ghc/libraries/unix/haskell_icon.gif
 share/doc/ghc/libraries/unix/unix.haddock
+share/doc/ghc/users_guide/
 share/doc/ghc/users_guide/arrow-notation.html
 share/doc/ghc/users_guide/bug-reporting.html
 share/doc/ghc/users_guide/bugs-and-infelicities.html
@@ -474,6 +490,7 @@ share/doc/ghc/users_guide/separate-compilation.html
 share/doc/ghc/users_guide/smaller.html
 share/doc/ghc/users_guide/sooner-faster-quicker.html
 share/doc/ghc/users_guide/static-dynamic-flags.html
+share/doc/ghc/users_guide/stylesheet-images/
 share/doc/ghc/users_guide/stylesheet-images/caution.gif
 share/doc/ghc/users_guide/stylesheet-images/home.gif
 share/doc/ghc/users_guide/stylesheet-images/important.gif
@@ -505,20 +522,3 @@ share/doc/ghc/users_guide/x11083.html
 share/doc/ghc/users_guide/x11094.html
 share/doc/ghc/users_guide/x1712.html
 share/doc/ghc/users_guide/x956.html
-@dirrm share/doc/ghc/users_guide/stylesheet-images
-@dirrm share/doc/ghc/users_guide
-@dirrm share/doc/ghc/libraries/unix
-@dirrm share/doc/ghc/libraries/readline
-@dirrm share/doc/ghc/libraries/parsec
-@dirrm share/doc/ghc/libraries/network
-@dirrm share/doc/ghc/libraries/haskell98
-@dirrm share/doc/ghc/libraries/haskell-src
-@dirrm share/doc/ghc/libraries/base
-@dirrm share/doc/ghc/libraries/QuickCheck
-@dirrm share/doc/ghc/libraries
-@dirrm share/doc/ghc/hslibs/stylesheet-images
-@dirrm share/doc/ghc/hslibs
-@dirrm share/doc/ghc/haskell98-report-html
-@dirrm share/doc/ghc/building/stylesheet-images
-@dirrm share/doc/ghc/building
-@dirrm share/doc/ghc

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/07/03 13:22:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:08 espie Exp $
 @pkgcfl unicon-*
+share/ipl/bin/
 share/ipl/bin/adlcheck
 share/ipl/bin/adlcount
 share/ipl/bin/adlfiltr
@@ -275,6 +276,7 @@ share/ipl/bin/xtable
 share/ipl/bin/yahtz
 share/ipl/bin/yescr
 share/ipl/bin/zipsort
+share/ipl/incl/
 share/ipl/incl/invkdefs.icn
 share/ipl/incl/lshade.icn
 share/ipl/incl/opdefs.icn
@@ -769,7 +771,3 @@ share/ipl/ucode/xrotate.u2
 share/ipl/ucode/zipread.u1
 share/ipl/ucode/zipread.u2
 !%%no_x11%%
-@dirrm share/ipl/ucode
-@dirrm share/ipl/incl
-@dirrm share/ipl/bin
-@dirrm share/ipl

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/02/12 18:21:25 ian Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:16:08 espie Exp $
 bin/appletviewer
 bin/install-jar
 bin/jar
@@ -16,6 +16,7 @@ bin/native2ascii
 bin/rmic
 bin/rmiregistry
 bin/serialver
+include/kaffe/
 include/kaffe/Arrays.h
 include/kaffe/errors.h
 include/kaffe/java_lang_Object.h
@@ -29,24 +30,34 @@ include/kaffe/jni_cpp.h
 include/kaffe/jsyscall.h
 include/kaffe/jtypes.h
 include/kaffe/native.h
+lib/kaffe/
 lib/kaffe/libawt.a
 lib/kaffe/libawt.la
+lib/kaffe/libio.a
 lib/kaffe/libio.la
+lib/kaffe/libmanagement.a
 lib/kaffe/libmanagement.la
 lib/kaffe/libmath.a
 lib/kaffe/libmath.la
+lib/kaffe/libmicrosoft.a
 lib/kaffe/libmicrosoft.la
 lib/kaffe/libnative.a
 lib/kaffe/libnative.la
+lib/kaffe/libnet.a
 lib/kaffe/libnet.la
+lib/kaffe/libsecurity.a
 lib/kaffe/libsecurity.la
 lib/kaffe/libzip.a
 lib/kaffe/libzip.la
+lib/kaffe/security/
 lib/kaffe/security/java.security
+lib/libkaffevm.a
 lib/libkaffevm.la
+lib/libkaffexprof.a
 lib/libkaffexprof.la
 libexec/Kaffe
-man/man1/kaffe.1
+@man man/man1/kaffe.1
+share/kaffe/
 share/kaffe/FAQ.BeOS
 share/kaffe/FAQ.Known-Bugs
 share/kaffe/FAQ.amigaos
@@ -86,7 +97,3 @@ share/kaffe/rmi.jar
 share/kaffe/servlet.jar
 share/kaffe/tools.jar
 %%SHARED%%
-@dirrm share/kaffe
-@dirrm lib/kaffe/security
-@dirrm lib/kaffe
-@dirrm include/kaffe

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/05/10 19:46:46 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:16:09 espie Exp $
 bin/erb
 bin/irb
 bin/rdoc
@@ -7,32 +7,40 @@ bin/ruby
 bin/testrb
 lib/libruby-static.a
 lib/libruby.so
+lib/ruby/
+lib/ruby/${REV}/
 lib/ruby/${REV}/English.rb
 lib/ruby/${REV}/Env.rb
 lib/ruby/${REV}/abbrev.rb
 lib/ruby/${REV}/base64.rb
 lib/ruby/${REV}/benchmark.rb
+lib/ruby/${REV}/bigdecimal/
 lib/ruby/${REV}/bigdecimal/jacobian.rb
 lib/ruby/${REV}/bigdecimal/ludcmp.rb
 lib/ruby/${REV}/bigdecimal/math.rb
 lib/ruby/${REV}/bigdecimal/newton.rb
 lib/ruby/${REV}/bigdecimal/nlsolve.rb
 lib/ruby/${REV}/bigdecimal/util.rb
+lib/ruby/${REV}/cgi/
 lib/ruby/${REV}/cgi-lib.rb
 lib/ruby/${REV}/cgi.rb
+lib/ruby/${REV}/cgi/session/
 lib/ruby/${REV}/cgi/session.rb
 lib/ruby/${REV}/cgi/session/pstore.rb
 lib/ruby/${REV}/complex.rb
 lib/ruby/${REV}/csv.rb
+lib/ruby/${REV}/date/
 lib/ruby/${REV}/date.rb
 lib/ruby/${REV}/date/format.rb
 lib/ruby/${REV}/date2.rb
 lib/ruby/${REV}/debug.rb
 lib/ruby/${REV}/delegate.rb
+lib/ruby/${REV}/dl/
 lib/ruby/${REV}/dl/import.rb
 lib/ruby/${REV}/dl/struct.rb
 lib/ruby/${REV}/dl/types.rb
 lib/ruby/${REV}/dl/win32.rb
+lib/ruby/${REV}/drb/
 lib/ruby/${REV}/drb.rb
 lib/ruby/${REV}/drb/acl.rb
 lib/ruby/${REV}/drb/drb.rb
@@ -58,11 +66,13 @@ lib/ruby/${REV}/generator.rb
 lib/ruby/${REV}/getoptlong.rb
 lib/ruby/${REV}/getopts.rb
 lib/ruby/${REV}/gserver.rb
+lib/ruby/${REV}/${SUB}/
 lib/ruby/${REV}/${SUB}/bigdecimal.so
 lib/ruby/${REV}/${SUB}/config.h
 lib/ruby/${REV}/${SUB}/curses.so
 lib/ruby/${REV}/${SUB}/dbm.so
 lib/ruby/${REV}/${SUB}/defines.h
+lib/ruby/${REV}/${SUB}/digest/
 lib/ruby/${REV}/${SUB}/digest.so
 lib/ruby/${REV}/${SUB}/digest/md5.so
 lib/ruby/${REV}/${SUB}/digest/rmd160.so
@@ -77,12 +87,14 @@ lib/ruby/${REV}/${SUB}/env.h
 lib/ruby/${REV}/${SUB}/etc.so
 lib/ruby/${REV}/${SUB}/fcntl.so
 lib/ruby/${REV}/${SUB}/intern.h
+lib/ruby/${REV}/${SUB}/io/
 lib/ruby/${REV}/${SUB}/io/wait.so
 lib/ruby/${REV}/${SUB}/missing.h
 lib/ruby/${REV}/${SUB}/nkf.so
 lib/ruby/${REV}/${SUB}/node.h
 lib/ruby/${REV}/${SUB}/openssl.so
 lib/ruby/${REV}/${SUB}/pty.so
+lib/ruby/${REV}/${SUB}/racc/
 lib/ruby/${REV}/${SUB}/racc/cparse.so
 lib/ruby/${REV}/${SUB}/rbconfig.rb
 lib/ruby/${REV}/${SUB}/re.h
@@ -103,9 +115,12 @@ lib/ruby/${REV}/${SUB}/util.h
 lib/ruby/${REV}/${SUB}/version.h
 lib/ruby/${REV}/${SUB}/zlib.so
 lib/ruby/${REV}/importenv.rb
+lib/ruby/${REV}/io/
 lib/ruby/${REV}/io/nonblock.rb
 lib/ruby/${REV}/ipaddr.rb
+lib/ruby/${REV}/irb/
 lib/ruby/${REV}/irb.rb
+lib/ruby/${REV}/irb/cmd/
 lib/ruby/${REV}/irb/cmd/chws.rb
 lib/ruby/${REV}/irb/cmd/fork.rb
 lib/ruby/${REV}/irb/cmd/load.rb
@@ -114,6 +129,7 @@ lib/ruby/${REV}/irb/cmd/pushws.rb
 lib/ruby/${REV}/irb/cmd/subirb.rb
 lib/ruby/${REV}/irb/completion.rb
 lib/ruby/${REV}/irb/context.rb
+lib/ruby/${REV}/irb/ext/
 lib/ruby/${REV}/irb/ext/change-ws.rb
 lib/ruby/${REV}/irb/ext/history.rb
 lib/ruby/${REV}/irb/ext/loader.rb
@@ -127,8 +143,10 @@ lib/ruby/${REV}/irb/frame.rb
 lib/ruby/${REV}/irb/help.rb
 lib/ruby/${REV}/irb/init.rb
 lib/ruby/${REV}/irb/input-method.rb
+lib/ruby/${REV}/irb/lc/
 lib/ruby/${REV}/irb/lc/error.rb
 lib/ruby/${REV}/irb/lc/help-message
+lib/ruby/${REV}/irb/lc/ja/
 lib/ruby/${REV}/irb/lc/ja/error.rb
 lib/ruby/${REV}/irb/lc/ja/help-message
 lib/ruby/${REV}/irb/locale.rb
@@ -150,6 +168,7 @@ lib/ruby/${REV}/mkmf.rb
 lib/ruby/${REV}/monitor.rb
 lib/ruby/${REV}/multi-tk.rb
 lib/ruby/${REV}/mutex_m.rb
+lib/ruby/${REV}/net/
 lib/ruby/${REV}/net/ftp.rb
 lib/ruby/${REV}/net/ftptls.rb
 lib/ruby/${REV}/net/http.rb
@@ -164,6 +183,7 @@ lib/ruby/${REV}/net/telnets.rb
 lib/ruby/${REV}/observer.rb
 lib/ruby/${REV}/open-uri.rb
 lib/ruby/${REV}/open3.rb
+lib/ruby/${REV}/openssl/
 lib/ruby/${REV}/openssl.rb
 lib/ruby/${REV}/openssl/bn.rb
 lib/ruby/${REV}/openssl/buffering.rb
@@ -171,6 +191,7 @@ lib/ruby/${REV}/openssl/cipher.rb
 lib/ruby/${REV}/openssl/digest.rb
 lib/ruby/${REV}/openssl/ssl.rb
 lib/ruby/${REV}/openssl/x509.rb
+lib/ruby/${REV}/optparse/
 lib/ruby/${REV}/optparse.rb
 lib/ruby/${REV}/optparse/date.rb
 lib/ruby/${REV}/optparse/shellwords.rb
@@ -187,24 +208,35 @@ lib/ruby/${REV}/prettyprint.rb
 lib/ruby/${REV}/profile.rb
 lib/ruby/${REV}/profiler.rb
 lib/ruby/${REV}/pstore.rb
+lib/ruby/${REV}/racc/
 lib/ruby/${REV}/racc/parser.rb
 lib/ruby/${REV}/rational.rb
+lib/ruby/${REV}/rdoc/
 lib/ruby/${REV}/rdoc/code_objects.rb
 lib/ruby/${REV}/rdoc/diagram.rb
+lib/ruby/${REV}/rdoc/dot/
 lib/ruby/${REV}/rdoc/dot/dot.rb
+lib/ruby/${REV}/rdoc/generators/
 lib/ruby/${REV}/rdoc/generators/chm_generator.rb
 lib/ruby/${REV}/rdoc/generators/html_generator.rb
 lib/ruby/${REV}/rdoc/generators/ri_generator.rb
+lib/ruby/${REV}/rdoc/generators/template/
+lib/ruby/${REV}/rdoc/generators/template/chm/
 lib/ruby/${REV}/rdoc/generators/template/chm/chm.rb
+lib/ruby/${REV}/rdoc/generators/template/html/
 lib/ruby/${REV}/rdoc/generators/template/html/hefss.rb
 lib/ruby/${REV}/rdoc/generators/template/html/html.rb
 lib/ruby/${REV}/rdoc/generators/template/html/kilmer.rb
 lib/ruby/${REV}/rdoc/generators/template/html/old_html.rb
+lib/ruby/${REV}/rdoc/generators/template/xml/
 lib/ruby/${REV}/rdoc/generators/template/xml/rdf.rb
 lib/ruby/${REV}/rdoc/generators/template/xml/xml.rb
 lib/ruby/${REV}/rdoc/generators/xml_generator.rb
+lib/ruby/${REV}/rdoc/markup/
+lib/ruby/${REV}/rdoc/markup/sample/
 lib/ruby/${REV}/rdoc/markup/sample/rdoc2latex.rb
 lib/ruby/${REV}/rdoc/markup/sample/sample.rb
+lib/ruby/${REV}/rdoc/markup/simple_markup/
 lib/ruby/${REV}/rdoc/markup/simple_markup.rb
 lib/ruby/${REV}/rdoc/markup/simple_markup/fragments.rb
 lib/ruby/${REV}/rdoc/markup/simple_markup/inline.rb
@@ -213,16 +245,19 @@ lib/ruby/${REV}/rdoc/markup/simple_markup/preprocess.rb
 lib/ruby/${REV}/rdoc/markup/simple_markup/to_flow.rb
 lib/ruby/${REV}/rdoc/markup/simple_markup/to_html.rb
 lib/ruby/${REV}/rdoc/markup/simple_markup/to_latex.rb
+lib/ruby/${REV}/rdoc/markup/test/
 lib/ruby/${REV}/rdoc/markup/test/AllTests.rb
 lib/ruby/${REV}/rdoc/markup/test/TestInline.rb
 lib/ruby/${REV}/rdoc/markup/test/TestParse.rb
 lib/ruby/${REV}/rdoc/options.rb
+lib/ruby/${REV}/rdoc/parsers/
 lib/ruby/${REV}/rdoc/parsers/parse_c.rb
 lib/ruby/${REV}/rdoc/parsers/parse_f95.rb
 lib/ruby/${REV}/rdoc/parsers/parse_rb.rb
 lib/ruby/${REV}/rdoc/parsers/parse_simple.rb
 lib/ruby/${REV}/rdoc/parsers/parserfactory.rb
 lib/ruby/${REV}/rdoc/rdoc.rb
+lib/ruby/${REV}/rdoc/ri/
 lib/ruby/${REV}/rdoc/ri/ri_cache.rb
 lib/ruby/${REV}/rdoc/ri/ri_descriptions.rb
 lib/ruby/${REV}/rdoc/ri/ri_formatter.rb
@@ -236,6 +271,7 @@ lib/ruby/${REV}/rdoc/tokenstream.rb
 lib/ruby/${REV}/readbytes.rb
 lib/ruby/${REV}/resolv-replace.rb
 lib/ruby/${REV}/resolv.rb
+lib/ruby/${REV}/rexml/
 lib/ruby/${REV}/rexml/attlistdecl.rb
 lib/ruby/${REV}/rexml/attribute.rb
 lib/ruby/${REV}/rexml/cdata.rb
@@ -243,6 +279,7 @@ lib/ruby/${REV}/rexml/child.rb
 lib/ruby/${REV}/rexml/comment.rb
 lib/ruby/${REV}/rexml/doctype.rb
 lib/ruby/${REV}/rexml/document.rb
+lib/ruby/${REV}/rexml/dtd/
 lib/ruby/${REV}/rexml/dtd/attlistdecl.rb
 lib/ruby/${REV}/rexml/dtd/dtd.rb
 lib/ruby/${REV}/rexml/dtd/elementdecl.rb
@@ -250,6 +287,7 @@ lib/ruby/${REV}/rexml/dtd/entitydecl.rb
 lib/ruby/${REV}/rexml/dtd/notationdecl.rb
 lib/ruby/${REV}/rexml/element.rb
 lib/ruby/${REV}/rexml/encoding.rb
+lib/ruby/${REV}/rexml/encodings/
 lib/ruby/${REV}/rexml/encodings/EUC-JP.rb
 lib/ruby/${REV}/rexml/encodings/ICONV.rb
 lib/ruby/${REV}/rexml/encodings/ISO-8859-1.rb
@@ -262,12 +300,14 @@ lib/ruby/${REV}/rexml/encodings/UTF-8.rb
 lib/ruby/${REV}/rexml/entity.rb
 lib/ruby/${REV}/rexml/functions.rb
 lib/ruby/${REV}/rexml/instruction.rb
+lib/ruby/${REV}/rexml/light/
 lib/ruby/${REV}/rexml/light/node.rb
 lib/ruby/${REV}/rexml/namespace.rb
 lib/ruby/${REV}/rexml/node.rb
 lib/ruby/${REV}/rexml/output.rb
 lib/ruby/${REV}/rexml/parent.rb
 lib/ruby/${REV}/rexml/parseexception.rb
+lib/ruby/${REV}/rexml/parsers/
 lib/ruby/${REV}/rexml/parsers/baseparser.rb
 lib/ruby/${REV}/rexml/parsers/lightparser.rb
 lib/ruby/${REV}/rexml/parsers/pullparser.rb
@@ -285,11 +325,14 @@ lib/ruby/${REV}/rexml/xmldecl.rb
 lib/ruby/${REV}/rexml/xmltokens.rb
 lib/ruby/${REV}/rexml/xpath.rb
 lib/ruby/${REV}/rexml/xpath_parser.rb
+lib/ruby/${REV}/rinda/
 lib/ruby/${REV}/rinda/rinda.rb
 lib/ruby/${REV}/rinda/ring.rb
 lib/ruby/${REV}/rinda/tuplespace.rb
 lib/ruby/${REV}/rubyunit.rb
+lib/ruby/${REV}/runit/
 lib/ruby/${REV}/runit/assert.rb
+lib/ruby/${REV}/runit/cui/
 lib/ruby/${REV}/runit/cui/testrunner.rb
 lib/ruby/${REV}/runit/error.rb
 lib/ruby/${REV}/runit/testcase.rb
@@ -299,6 +342,7 @@ lib/ruby/${REV}/runit/topublic.rb
 lib/ruby/${REV}/scanf.rb
 lib/ruby/${REV}/set.rb
 lib/ruby/${REV}/sha1.rb
+lib/ruby/${REV}/shell/
 lib/ruby/${REV}/shell.rb
 lib/ruby/${REV}/shell/builtin-command.rb
 lib/ruby/${REV}/shell/command-processor.rb
@@ -309,13 +353,16 @@ lib/ruby/${REV}/shell/system-command.rb
 lib/ruby/${REV}/shell/version.rb
 lib/ruby/${REV}/shellwords.rb
 lib/ruby/${REV}/singleton.rb
+lib/ruby/${REV}/soap/
 lib/ruby/${REV}/soap/baseData.rb
 lib/ruby/${REV}/soap/element.rb
+lib/ruby/${REV}/soap/encodingstyle/
 lib/ruby/${REV}/soap/encodingstyle/aspDotNetHandler.rb
 lib/ruby/${REV}/soap/encodingstyle/handler.rb
 lib/ruby/${REV}/soap/encodingstyle/literalHandler.rb
 lib/ruby/${REV}/soap/encodingstyle/soapHandler.rb
 lib/ruby/${REV}/soap/generator.rb
+lib/ruby/${REV}/soap/mapping/
 lib/ruby/${REV}/soap/mapping.rb
 lib/ruby/${REV}/soap/mapping/factory.rb
 lib/ruby/${REV}/soap/mapping/mapping.rb
@@ -328,6 +375,7 @@ lib/ruby/${REV}/soap/netHttpClient.rb
 lib/ruby/${REV}/soap/parser.rb
 lib/ruby/${REV}/soap/processor.rb
 lib/ruby/${REV}/soap/property.rb
+lib/ruby/${REV}/soap/rpc/
 lib/ruby/${REV}/soap/rpc/cgistub.rb
 lib/ruby/${REV}/soap/rpc/driver.rb
 lib/ruby/${REV}/soap/rpc/element.rb
@@ -341,10 +389,13 @@ lib/ruby/${REV}/soap/streamHandler.rb
 lib/ruby/${REV}/soap/wsdlDriver.rb
 lib/ruby/${REV}/sync.rb
 lib/ruby/${REV}/tempfile.rb
+lib/ruby/${REV}/test/
+lib/ruby/${REV}/test/unit/
 lib/ruby/${REV}/test/unit.rb
 lib/ruby/${REV}/test/unit/assertionfailederror.rb
 lib/ruby/${REV}/test/unit/assertions.rb
 lib/ruby/${REV}/test/unit/autorunner.rb
+lib/ruby/${REV}/test/unit/collector/
 lib/ruby/${REV}/test/unit/collector.rb
 lib/ruby/${REV}/test/unit/collector/dir.rb
 lib/ruby/${REV}/test/unit/collector/objectspace.rb
@@ -353,13 +404,20 @@ lib/ruby/${REV}/test/unit/failure.rb
 lib/ruby/${REV}/test/unit/testcase.rb
 lib/ruby/${REV}/test/unit/testresult.rb
 lib/ruby/${REV}/test/unit/testsuite.rb
+lib/ruby/${REV}/test/unit/ui/
+lib/ruby/${REV}/test/unit/ui/console/
 lib/ruby/${REV}/test/unit/ui/console/testrunner.rb
+lib/ruby/${REV}/test/unit/ui/fox/
 lib/ruby/${REV}/test/unit/ui/fox/testrunner.rb
+lib/ruby/${REV}/test/unit/ui/gtk/
 lib/ruby/${REV}/test/unit/ui/gtk/testrunner.rb
+lib/ruby/${REV}/test/unit/ui/gtk2/
 lib/ruby/${REV}/test/unit/ui/gtk2/testrunner.rb
 lib/ruby/${REV}/test/unit/ui/testrunnermediator.rb
 lib/ruby/${REV}/test/unit/ui/testrunnerutilities.rb
+lib/ruby/${REV}/test/unit/ui/tk/
 lib/ruby/${REV}/test/unit/ui/tk/testrunner.rb
+lib/ruby/${REV}/test/unit/util/
 lib/ruby/${REV}/test/unit/util/backtracefilter.rb
 lib/ruby/${REV}/test/unit/util/observable.rb
 lib/ruby/${REV}/test/unit/util/procwrapper.rb
@@ -388,6 +446,7 @@ lib/ruby/${REV}/tmpdir.rb
 lib/ruby/${REV}/tracer.rb
 lib/ruby/${REV}/tsort.rb
 lib/ruby/${REV}/un.rb
+lib/ruby/${REV}/uri/
 lib/ruby/${REV}/uri.rb
 lib/ruby/${REV}/uri/common.rb
 lib/ruby/${REV}/uri/ftp.rb
@@ -397,6 +456,7 @@ lib/ruby/${REV}/uri/https.rb
 lib/ruby/${REV}/uri/ldap.rb
 lib/ruby/${REV}/uri/mailto.rb
 lib/ruby/${REV}/weakref.rb
+lib/ruby/${REV}/webrick/
 lib/ruby/${REV}/webrick.rb
 lib/ruby/${REV}/webrick/accesslog.rb
 lib/ruby/${REV}/webrick/cgi.rb
@@ -404,6 +464,7 @@ lib/ruby/${REV}/webrick/compat.rb
 lib/ruby/${REV}/webrick/config.rb
 lib/ruby/${REV}/webrick/cookie.rb
 lib/ruby/${REV}/webrick/htmlutils.rb
+lib/ruby/${REV}/webrick/httpauth/
 lib/ruby/${REV}/webrick/httpauth.rb
 lib/ruby/${REV}/webrick/httpauth/authenticator.rb
 lib/ruby/${REV}/webrick/httpauth/basicauth.rb
@@ -417,6 +478,7 @@ lib/ruby/${REV}/webrick/httprequest.rb
 lib/ruby/${REV}/webrick/httpresponse.rb
 lib/ruby/${REV}/webrick/https.rb
 lib/ruby/${REV}/webrick/httpserver.rb
+lib/ruby/${REV}/webrick/httpservlet/
 lib/ruby/${REV}/webrick/httpservlet.rb
 lib/ruby/${REV}/webrick/httpservlet/abstract.rb
 lib/ruby/${REV}/webrick/httpservlet/cgi_runner.rb
@@ -432,6 +494,7 @@ lib/ruby/${REV}/webrick/server.rb
 lib/ruby/${REV}/webrick/ssl.rb
 lib/ruby/${REV}/webrick/utils.rb
 lib/ruby/${REV}/webrick/version.rb
+lib/ruby/${REV}/wsdl/
 lib/ruby/${REV}/wsdl/binding.rb
 lib/ruby/${REV}/wsdl/data.rb
 lib/ruby/${REV}/wsdl/definitions.rb
@@ -448,6 +511,7 @@ lib/ruby/${REV}/wsdl/part.rb
 lib/ruby/${REV}/wsdl/port.rb
 lib/ruby/${REV}/wsdl/portType.rb
 lib/ruby/${REV}/wsdl/service.rb
+lib/ruby/${REV}/wsdl/soap/
 lib/ruby/${REV}/wsdl/soap/address.rb
 lib/ruby/${REV}/wsdl/soap/binding.rb
 lib/ruby/${REV}/wsdl/soap/body.rb
@@ -460,6 +524,7 @@ lib/ruby/${REV}/wsdl/soap/headerfault.rb
 lib/ruby/${REV}/wsdl/soap/operation.rb
 lib/ruby/${REV}/wsdl/types.rb
 lib/ruby/${REV}/wsdl/wsdl.rb
+lib/ruby/${REV}/wsdl/xmlSchema/
 lib/ruby/${REV}/wsdl/xmlSchema/all.rb
 lib/ruby/${REV}/wsdl/xmlSchema/any.rb
 lib/ruby/${REV}/wsdl/xmlSchema/attribute.rb
@@ -474,6 +539,7 @@ lib/ruby/${REV}/wsdl/xmlSchema/parser.rb
 lib/ruby/${REV}/wsdl/xmlSchema/schema.rb
 lib/ruby/${REV}/wsdl/xmlSchema/sequence.rb
 lib/ruby/${REV}/wsdl/xmlSchema/unique.rb
+lib/ruby/${REV}/xmlrpc/
 lib/ruby/${REV}/xmlrpc/base64.rb
 lib/ruby/${REV}/xmlrpc/client.rb
 lib/ruby/${REV}/xmlrpc/config.rb
@@ -484,6 +550,7 @@ lib/ruby/${REV}/xmlrpc/marshal.rb
 lib/ruby/${REV}/xmlrpc/parser.rb
 lib/ruby/${REV}/xmlrpc/server.rb
 lib/ruby/${REV}/xmlrpc/utils.rb
+lib/ruby/${REV}/xsd/
 lib/ruby/${REV}/xsd/charset.rb
 lib/ruby/${REV}/xsd/datatypes.rb
 lib/ruby/${REV}/xsd/datatypes1999.rb
@@ -491,11 +558,13 @@ lib/ruby/${REV}/xsd/iconvcharset.rb
 lib/ruby/${REV}/xsd/namedelements.rb
 lib/ruby/${REV}/xsd/ns.rb
 lib/ruby/${REV}/xsd/qname.rb
+lib/ruby/${REV}/xsd/xmlparser/
 lib/ruby/${REV}/xsd/xmlparser.rb
 lib/ruby/${REV}/xsd/xmlparser/parser.rb
 lib/ruby/${REV}/xsd/xmlparser/rexmlparser.rb
 lib/ruby/${REV}/xsd/xmlparser/xmlparser.rb
 lib/ruby/${REV}/xsd/xmlparser/xmlscanner.rb
+lib/ruby/${REV}/yaml/
 lib/ruby/${REV}/yaml.rb
 lib/ruby/${REV}/yaml/baseemitter.rb
 lib/ruby/${REV}/yaml/basenode.rb
@@ -513,78 +582,9 @@ lib/ruby/${REV}/yaml/syck.rb
 lib/ruby/${REV}/yaml/types.rb
 lib/ruby/${REV}/yaml/yamlnode.rb
 lib/ruby/${REV}/yaml/ypath.rb
-man/man1/ruby.1
-%%SHARED%%
+lib/ruby/site_ruby/
+lib/ruby/site_ruby/${REV}/
+lib/ruby/site_ruby/${REV}/${SUB}/
+@man man/man1/ruby.1
 @exec mkdir -p %D/lib/ruby/site_ruby/${REV}/${SUB}
-@dirrm lib/ruby/site_ruby/${REV}/${SUB}
-@dirrm lib/ruby/site_ruby/${REV}
-@dirrm lib/ruby/site_ruby
-@dirrm lib/ruby/${REV}/yaml
-@dirrm lib/ruby/${REV}/xsd/xmlparser
-@dirrm lib/ruby/${REV}/xsd
-@dirrm lib/ruby/${REV}/xmlrpc
-@dirrm lib/ruby/${REV}/wsdl/xmlSchema
-@dirrm lib/ruby/${REV}/wsdl/soap
-@dirrm lib/ruby/${REV}/wsdl
-@dirrm lib/ruby/${REV}/webrick/httpservlet
-@dirrm lib/ruby/${REV}/webrick/httpauth
-@dirrm lib/ruby/${REV}/webrick
-@dirrm lib/ruby/${REV}/uri
-@dirrm lib/ruby/${REV}/test/unit/util
-@dirrm lib/ruby/${REV}/test/unit/ui/tk
-@dirrm lib/ruby/${REV}/test/unit/ui/gtk2
-@dirrm lib/ruby/${REV}/test/unit/ui/gtk
-@dirrm lib/ruby/${REV}/test/unit/ui/fox
-@dirrm lib/ruby/${REV}/test/unit/ui/console
-@dirrm lib/ruby/${REV}/test/unit/ui
-@dirrm lib/ruby/${REV}/test/unit/collector
-@dirrm lib/ruby/${REV}/test/unit
-@dirrm lib/ruby/${REV}/test
-@dirrm lib/ruby/${REV}/soap/rpc
-@dirrm lib/ruby/${REV}/soap/mapping
-@dirrm lib/ruby/${REV}/soap/encodingstyle
-@dirrm lib/ruby/${REV}/soap
-@dirrm lib/ruby/${REV}/shell
-@dirrm lib/ruby/${REV}/runit/cui
-@dirrm lib/ruby/${REV}/runit
-@dirrm lib/ruby/${REV}/rinda
-@dirrm lib/ruby/${REV}/rexml/parsers
-@dirrm lib/ruby/${REV}/rexml/light
-@dirrm lib/ruby/${REV}/rexml/encodings
-@dirrm lib/ruby/${REV}/rexml/dtd
-@dirrm lib/ruby/${REV}/rexml
-@dirrm lib/ruby/${REV}/rdoc/ri
-@dirrm lib/ruby/${REV}/rdoc/parsers
-@dirrm lib/ruby/${REV}/rdoc/markup/test
-@dirrm lib/ruby/${REV}/rdoc/markup/simple_markup
-@dirrm lib/ruby/${REV}/rdoc/markup/sample
-@dirrm lib/ruby/${REV}/rdoc/markup
-@dirrm lib/ruby/${REV}/rdoc/generators/template/xml
-@dirrm lib/ruby/${REV}/rdoc/generators/template/html
-@dirrm lib/ruby/${REV}/rdoc/generators/template/chm
-@dirrm lib/ruby/${REV}/rdoc/generators/template
-@dirrm lib/ruby/${REV}/rdoc/generators
-@dirrm lib/ruby/${REV}/rdoc/dot
-@dirrm lib/ruby/${REV}/rdoc
-@dirrm lib/ruby/${REV}/racc
-@dirrm lib/ruby/${REV}/optparse
-@dirrm lib/ruby/${REV}/openssl
-@dirrm lib/ruby/${REV}/net
-@dirrm lib/ruby/${REV}/irb/lc/ja
-@dirrm lib/ruby/${REV}/irb/lc
-@dirrm lib/ruby/${REV}/irb/ext
-@dirrm lib/ruby/${REV}/irb/cmd
-@dirrm lib/ruby/${REV}/irb
-@dirrm lib/ruby/${REV}/io
-@dirrm lib/ruby/${REV}/${SUB}/racc
-@dirrm lib/ruby/${REV}/${SUB}/io
-@dirrm lib/ruby/${REV}/${SUB}/digest
-@dirrm lib/ruby/${REV}/${SUB}
-@dirrm lib/ruby/${REV}/drb
-@dirrm lib/ruby/${REV}/dl
-@dirrm lib/ruby/${REV}/date
-@dirrm lib/ruby/${REV}/cgi/session
-@dirrm lib/ruby/${REV}/cgi
-@dirrm lib/ruby/${REV}/bigdecimal
-@dirrm lib/ruby/${REV}
-@dirrm lib/ruby
+%%SHARED%%

@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/02 19:24:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:08 espie Exp $
 bin/intel2gas
+share/doc/intel2gas/
 share/doc/intel2gas/BUGS
 share/doc/intel2gas/DATAFILES
 share/doc/intel2gas/README
+share/intel2gas/
+share/intel2gas/g2i/
 share/intel2gas/g2i/+-.01.list
 share/intel2gas/g2i/+-.02.list
 share/intel2gas/g2i/addr.syntax
@@ -36,6 +39,7 @@ share/intel2gas/g2i/size.08.list
 share/intel2gas/g2i/size.10.list
 share/intel2gas/g2i/strings.syntax
 share/intel2gas/g2i/textlist.syntax
+share/intel2gas/i2g/
 share/intel2gas/i2g/+-.01.list
 share/intel2gas/i2g/+-.02.list
 share/intel2gas/i2g/address.syntax
@@ -68,6 +72,7 @@ share/intel2gas/i2g/size.04.list
 share/intel2gas/i2g/size.08.list
 share/intel2gas/i2g/size.10.list
 share/intel2gas/i2g/textlist.syntax
+share/intel2gas/m2g/
 share/intel2gas/m2g/+-.01.list
 share/intel2gas/m2g/+-.02.list
 share/intel2gas/m2g/address.syntax
@@ -101,8 +106,3 @@ share/intel2gas/m2g/size.04.list
 share/intel2gas/m2g/size.08.list
 share/intel2gas/m2g/size.10.list
 share/intel2gas/m2g/textlist.syntax
-@dirrm share/intel2gas/m2g
-@dirrm share/intel2gas/i2g
-@dirrm share/intel2gas/g2i
-@dirrm share/intel2gas
-@dirrm share/doc/intel2gas

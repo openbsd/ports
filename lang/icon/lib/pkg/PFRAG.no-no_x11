@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2003/05/14 23:34:09 naddy Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2004/09/15 19:16:08 espie Exp $
 bin/vib
 bin/xtiles
-man/man6/xtiles.6
+@man man/man6/xtiles.6
 share/ipl/bin/autotile
 share/ipl/bin/binpack
 share/ipl/bin/bitdemo
@@ -157,6 +157,7 @@ share/ipl/bin/xformpat
 share/ipl/bin/xgamma
 share/ipl/bin/xpmtoims
 share/ipl/bin/zoomtile
+share/ipl/gincl/
 share/ipl/gincl/keysyms.icn
 share/ipl/gincl/maccolor.icn
 share/ipl/gincl/vdefns.icn
@@ -436,4 +437,3 @@ share/ipl/ucode/xqueue.u1
 share/ipl/ucode/xqueue.u2
 share/ipl/ucode/xutils.u1
 share/ipl/ucode/xutils.u2
-@dirrm share/ipl/gincl

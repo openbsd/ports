@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/20 23:15:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:07 espie Exp $
 bin/clisp
+lib/clisp/
+lib/clisp/base/
 lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
 lib/clisp/base/libcharset.a
@@ -11,8 +13,10 @@ lib/clisp/base/makevars
 lib/clisp/base/modules.h
 lib/clisp/base/modules.o
 lib/clisp/clisp-link
+lib/clisp/data/
 lib/clisp/data/UnicodeDataFull.txt
 lib/clisp/data/clhs.txt
+lib/clisp/full/
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
 lib/clisp/full/libcharset.a
@@ -23,11 +27,13 @@ lib/clisp/full/lispinit.mem
 lib/clisp/full/makevars
 lib/clisp/full/modules.h
 lib/clisp/full/modules.o
+lib/clisp/linkkit/
 lib/clisp/linkkit/clisp.h
 lib/clisp/linkkit/exporting.lisp
 lib/clisp/linkkit/modprep.lisp
 lib/clisp/linkkit/modules.c
 lib/clisp/linkkit/modules.d
+share/doc/clisp/
 share/doc/clisp/ANNOUNCE
 share/doc/clisp/CLOS-guide.txt
 share/doc/clisp/COPYRIGHT
@@ -59,14 +65,6 @@ share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
 share/locale/ru/LC_MESSAGES/clisp.mo
 share/locale/ru/LC_MESSAGES/clisplow.mo
-share/man/man1/clisp.1
-@dirrm share/man/man1
-@dirrm share/man
-@dirrm share/locale/en/LC_MESSAGES
-@dirrm share/locale/en
-@dirrm share/doc/clisp
-@dirrm lib/clisp/linkkit
-@dirrm lib/clisp/full
-@dirrm lib/clisp/data
-@dirrm lib/clisp/base
-@dirrm lib/clisp
+share/man/
+share/man/man1/
+@man share/man/man1/clisp.1

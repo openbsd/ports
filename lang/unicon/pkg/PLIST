@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/20 14:26:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:09 espie Exp $
 @pkgcfl icon_interp-*
 @pkgcfl icon-interp-*
 @pkgcfl icon_lib-*
@@ -11,8 +11,10 @@ bin/rtt
 bin/unicon
 include/rt.h
 lib/icont
-man/man1/icont.1
-man/man1/iconx.1
+@man man/man1/icont.1
+@man man/man1/iconx.1
+share/ipl/
+share/ipl/include/
 share/ipl/include/invkdefs.icn
 share/ipl/include/keysyms.icn
 share/ipl/include/lshade.icn
@@ -22,6 +24,7 @@ share/ipl/include/posix.icn
 share/ipl/include/vdefns.icn
 share/ipl/include/xcolors.icn
 share/ipl/include/xnames.icn
+share/ipl/lib/
 share/ipl/lib/abkform.u
 share/ipl/lib/adjuncts.u
 share/ipl/lib/adlutils.u
@@ -395,6 +398,3 @@ share/ipl/lib/xputpixl.u
 share/ipl/lib/xqueue.u
 share/ipl/lib/xrotate.u
 share/ipl/lib/xutils.u
-@dirrm share/ipl/lib
-@dirrm share/ipl/include
-@dirrm share/ipl

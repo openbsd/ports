@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/10 04:39:03 dons Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:08 espie Exp $
 @pkgcfl hmake-*
 bin/greencard-nhc98
 bin/harch
@@ -9,6 +9,7 @@ bin/hood
 bin/hp2graph
 bin/nhc98
 bin/tprofprel
+include/nhc98/
 include/nhc98/Array.hi
 include/nhc98/CPUTime.hi
 include/nhc98/Char.hi
@@ -26,6 +27,7 @@ include/nhc98/List.hi
 include/nhc98/Locale.hi
 include/nhc98/Maybe.hi
 include/nhc98/Monad.hi
+include/nhc98/NHC/
 include/nhc98/NHC/BinArray.hi
 include/nhc98/NHC/Binary.hi
 include/nhc98/NHC/Bit.hi
@@ -51,10 +53,14 @@ include/nhc98/Ratio.hi
 include/nhc98/System.hi
 include/nhc98/Time.hi
 include/nhc98/Warning.hi
+include/nhc98/base/
+include/nhc98/base/Control/
 include/nhc98/base/Control/Arrow.hi
+include/nhc98/base/Control/Monad/
 include/nhc98/base/Control/Monad.hi
 include/nhc98/base/Control/Monad/Fix.hi
 include/nhc98/base/Control/Monad/Trans.hi
+include/nhc98/base/Data/
 include/nhc98/base/Data/Array.hi
 include/nhc98/base/Data/Bits.hi
 include/nhc98/base/Data/Bool.hi
@@ -73,14 +79,18 @@ include/nhc98/base/Data/Ratio.hi
 include/nhc98/base/Data/Set.hi
 include/nhc98/base/Data/Tuple.hi
 include/nhc98/base/Data/Word.hi
+include/nhc98/base/Debug/
 include/nhc98/base/Debug/Trace.hi
+include/nhc98/base/Foreign/
 include/nhc98/base/Foreign.hi
+include/nhc98/base/Foreign/C/
 include/nhc98/base/Foreign/C.hi
 include/nhc98/base/Foreign/C/Error.hi
 include/nhc98/base/Foreign/C/String.hi
 include/nhc98/base/Foreign/C/Types.hi
 include/nhc98/base/Foreign/C/TypesISO.hi
 include/nhc98/base/Foreign/ForeignPtr.hi
+include/nhc98/base/Foreign/Marshal/
 include/nhc98/base/Foreign/Marshal.hi
 include/nhc98/base/Foreign/Marshal/Alloc.hi
 include/nhc98/base/Foreign/Marshal/Array.hi
@@ -90,11 +100,14 @@ include/nhc98/base/Foreign/Marshal/Utils.hi
 include/nhc98/base/Foreign/Ptr.hi
 include/nhc98/base/Foreign/StablePtr.hi
 include/nhc98/base/Foreign/Storable.hi
+include/nhc98/base/System/
 include/nhc98/base/System/Cmd.hi
+include/nhc98/base/System/Console/
 include/nhc98/base/System/Console/GetOpt.hi
 include/nhc98/base/System/Directory.hi
 include/nhc98/base/System/Environment.hi
 include/nhc98/base/System/Exit.hi
+include/nhc98/base/System/IO/
 include/nhc98/base/System/IO.hi
 include/nhc98/base/System/IO/Error.hi
 include/nhc98/base/System/IO/Unsafe.hi
@@ -102,8 +115,12 @@ include/nhc98/base/System/Info.hi
 include/nhc98/base/System/Locale.hi
 include/nhc98/base/System/Mem.hi
 include/nhc98/base/System/Random.hi
+include/nhc98/base/Text/
+include/nhc98/base/Text/Html/
 include/nhc98/base/Text/Html.hi
 include/nhc98/base/Text/Html/BlockTable.hi
+include/nhc98/base/Text/ParserCombinators/
+include/nhc98/base/Text/ParserCombinators/Parsec/
 include/nhc98/base/Text/ParserCombinators/Parsec.hi
 include/nhc98/base/Text/ParserCombinators/Parsec/Char.hi
 include/nhc98/base/Text/ParserCombinators/Parsec/Combinator.hi
@@ -112,9 +129,11 @@ include/nhc98/base/Text/ParserCombinators/Parsec/Expr.hi
 include/nhc98/base/Text/ParserCombinators/Parsec/Perm.hi
 include/nhc98/base/Text/ParserCombinators/Parsec/Pos.hi
 include/nhc98/base/Text/ParserCombinators/Parsec/Prim.hi
+include/nhc98/base/Text/PrettyPrint/
 include/nhc98/base/Text/PrettyPrint.hi
 include/nhc98/base/Text/PrettyPrint/HughesPJ.hi
 include/nhc98/base/Text/Read.hi
+include/nhc98/base/Text/Show/
 include/nhc98/base/Text/Show.hi
 include/nhc98/base/Text/Show/Functions.hi
 include/nhc98/bytecode.h
@@ -136,12 +155,16 @@ include/nhc98/node.h
 include/nhc98/runtime.h
 include/nhc98/stableptr.h
 include/nhc98/twopass.h
+lib/hmake/
+lib/hmake/${MACHINE_ARCH}-OpenBSD/
 lib/hmake/${MACHINE_ARCH}-OpenBSD/HInteractive
 lib/hmake/${MACHINE_ARCH}-OpenBSD/MkConfig
 lib/hmake/${MACHINE_ARCH}-OpenBSD/MkProg
 lib/hmake/${MACHINE_ARCH}-OpenBSD/Older
 lib/hmake/${MACHINE_ARCH}-OpenBSD/hmakerc
+lib/nhc98/
 lib/nhc98/hood.jar
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/Array.z.a
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/BinArray.z.a
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/Binary.z.a
@@ -203,30 +226,7 @@ lib/nhc98/${MACHINE_ARCH}-OpenBSD/nhc98heap
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel1.z.o
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel2.z.o
 lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel3.z.o
-man/man1/harch.1
-man/man1/hmake.1
-man/man1/hp2graph.1
-man/man1/nhc98.1
-@dirrm lib/nhc98/${MACHINE_ARCH}-OpenBSD
-@dirrm lib/nhc98
-@dirrm lib/hmake/${MACHINE_ARCH}-OpenBSD
-@dirrm lib/hmake
-@dirrm include/nhc98/base/Text/Show
-@dirrm include/nhc98/base/Text/PrettyPrint
-@dirrm include/nhc98/base/Text/ParserCombinators/Parsec
-@dirrm include/nhc98/base/Text/ParserCombinators
-@dirrm include/nhc98/base/Text/Html
-@dirrm include/nhc98/base/Text
-@dirrm include/nhc98/base/System/IO
-@dirrm include/nhc98/base/System/Console
-@dirrm include/nhc98/base/System
-@dirrm include/nhc98/base/Foreign/Marshal
-@dirrm include/nhc98/base/Foreign/C
-@dirrm include/nhc98/base/Foreign
-@dirrm include/nhc98/base/Debug
-@dirrm include/nhc98/base/Data
-@dirrm include/nhc98/base/Control/Monad
-@dirrm include/nhc98/base/Control
-@dirrm include/nhc98/base
-@dirrm include/nhc98/NHC
-@dirrm include/nhc98
+@man man/man1/harch.1
+@man man/man1/hmake.1
+@man man/man1/hp2graph.1
+@man man/man1/nhc98.1

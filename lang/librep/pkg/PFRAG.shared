@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/06/25 00:16:36 naddy Exp $
-lib/librep.so.12.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 19:16:08 espie Exp $
+@lib lib/librep.so.12.0
 libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.so
 libexec/rep/${VERSION}/${GNU_ARCH}/gettext.so
 libexec/rep/${VERSION}/${GNU_ARCH}/readline.so

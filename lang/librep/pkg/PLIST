@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/25 00:16:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:16:08 espie Exp $
 bin/rep
 bin/rep-config
 bin/rep-remote
@@ -8,11 +8,12 @@ include/rep.h
 include/rep_lisp.h
 include/rep_regexp.h
 include/rep_subrs.h
-@unexec install-info --delete --info-dir=%D/info %D/info/librep.info
-info/librep.info
-@exec install-info --info-dir=%D/info %D/info/librep.info
+@info info/librep.info
 lib/librep.a
 lib/librep.la
+libexec/rep/
+libexec/rep/${VERSION}/
+libexec/rep/${VERSION}/${GNU_ARCH}/
 libexec/rep/${VERSION}/${GNU_ARCH}/DOC
 libexec/rep/${VERSION}/${GNU_ARCH}/emulate-gnu-tar
 libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.a
@@ -21,10 +22,15 @@ libexec/rep/${VERSION}/${GNU_ARCH}/gettext.a
 libexec/rep/${VERSION}/${GNU_ARCH}/gettext.la
 libexec/rep/${VERSION}/${GNU_ARCH}/readline.a
 libexec/rep/${VERSION}/${GNU_ARCH}/readline.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.la
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.a
@@ -35,10 +41,13 @@ libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.la
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.la
 libexec/rep/${VERSION}/${GNU_ARCH}/sdbm.a
@@ -47,11 +56,18 @@ libexec/rep/${VERSION}/${GNU_ARCH}/tables.a
 libexec/rep/${VERSION}/${GNU_ARCH}/tables.la
 libexec/rep/${VERSION}/${GNU_ARCH}/timers.a
 libexec/rep/${VERSION}/${GNU_ARCH}/timers.la
+libexec/rep/${GNU_ARCH}/
 libexec/rep/${GNU_ARCH}/install-aliases
 libexec/rep/${GNU_ARCH}/libtool
 libexec/rep/${GNU_ARCH}/rep_config.h
 libexec/rep/${GNU_ARCH}/rules.mk
 share/aclocal/rep.m4
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/rep-debugger.el
+share/rep/
+share/rep/${VERSION}/
+share/rep/${VERSION}/lisp/
 share/rep/${VERSION}/lisp/cgi-get.jl
 share/rep/${VERSION}/lisp/cgi-get.jlc
 share/rep/${VERSION}/lisp/compiler.jl
@@ -78,8 +94,10 @@ share/rep/${VERSION}/lisp/remote-ftp.jl
 share/rep/${VERSION}/lisp/remote-ftp.jlc
 share/rep/${VERSION}/lisp/remote-rep.jl
 share/rep/${VERSION}/lisp/remote-rep.jlc
+share/rep/${VERSION}/lisp/rep/
 share/rep/${VERSION}/lisp/rep.jl
 share/rep/${VERSION}/lisp/rep.jlc
+share/rep/${VERSION}/lisp/rep/data/
 share/rep/${VERSION}/lisp/rep/data.jl
 share/rep/${VERSION}/lisp/rep/data.jlc
 share/rep/${VERSION}/lisp/rep/data/objects.jl
@@ -98,10 +116,14 @@ share/rep/${VERSION}/lisp/rep/data/symbol-table.jl
 share/rep/${VERSION}/lisp/rep/data/symbol-table.jlc
 share/rep/${VERSION}/lisp/rep/data/trie.jl
 share/rep/${VERSION}/lisp/rep/data/trie.jlc
+share/rep/${VERSION}/lisp/rep/i18n/
 share/rep/${VERSION}/lisp/rep/i18n/xgettext.jl
 share/rep/${VERSION}/lisp/rep/i18n/xgettext.jlc
+share/rep/${VERSION}/lisp/rep/io/
+share/rep/${VERSION}/lisp/rep/io/file-handlers/
 share/rep/${VERSION}/lisp/rep/io/file-handlers.jl
 share/rep/${VERSION}/lisp/rep/io/file-handlers.jlc
+share/rep/${VERSION}/lisp/rep/io/file-handlers/remote/
 share/rep/${VERSION}/lisp/rep/io/file-handlers/remote.jl
 share/rep/${VERSION}/lisp/rep/io/file-handlers/remote.jlc
 share/rep/${VERSION}/lisp/rep/io/file-handlers/remote/ftp.jl
@@ -120,6 +142,7 @@ share/rep/${VERSION}/lisp/rep/io/files.jl
 share/rep/${VERSION}/lisp/rep/io/files.jlc
 share/rep/${VERSION}/lisp/rep/io/streams.jl
 share/rep/${VERSION}/lisp/rep/io/streams.jlc
+share/rep/${VERSION}/lisp/rep/lang/
 share/rep/${VERSION}/lisp/rep/lang/backquote.jl
 share/rep/${VERSION}/lisp/rep/lang/backquote.jlc
 share/rep/${VERSION}/lisp/rep/lang/compat-doc.jl
@@ -138,10 +161,12 @@ share/rep/${VERSION}/lisp/rep/lang/math.jl
 share/rep/${VERSION}/lisp/rep/lang/math.jlc
 share/rep/${VERSION}/lisp/rep/lang/profiler.jl
 share/rep/${VERSION}/lisp/rep/lang/profiler.jlc
+share/rep/${VERSION}/lisp/rep/mail/
 share/rep/${VERSION}/lisp/rep/mail/addr.jl
 share/rep/${VERSION}/lisp/rep/mail/addr.jlc
 share/rep/${VERSION}/lisp/rep/module-system.jl
 share/rep/${VERSION}/lisp/rep/module-system.jlc
+share/rep/${VERSION}/lisp/rep/net/
 share/rep/${VERSION}/lisp/rep/net/domain-name.jl
 share/rep/${VERSION}/lisp/rep/net/domain-name.jlc
 share/rep/${VERSION}/lisp/rep/net/rpc.jl
@@ -150,17 +175,20 @@ share/rep/${VERSION}/lisp/rep/regexp.jl
 share/rep/${VERSION}/lisp/rep/regexp.jlc
 share/rep/${VERSION}/lisp/rep/structures.jl
 share/rep/${VERSION}/lisp/rep/structures.jlc
+share/rep/${VERSION}/lisp/rep/system/
 share/rep/${VERSION}/lisp/rep/system.jl
 share/rep/${VERSION}/lisp/rep/system.jlc
 share/rep/${VERSION}/lisp/rep/system/environ.jl
 share/rep/${VERSION}/lisp/rep/system/environ.jlc
 share/rep/${VERSION}/lisp/rep/system/pwd-prompt.jl
 share/rep/${VERSION}/lisp/rep/system/pwd-prompt.jlc
+share/rep/${VERSION}/lisp/rep/test/
 share/rep/${VERSION}/lisp/rep/test/autoload.jl
 share/rep/${VERSION}/lisp/rep/test/data.jl
 share/rep/${VERSION}/lisp/rep/test/data.jlc
 share/rep/${VERSION}/lisp/rep/test/framework.jl
 share/rep/${VERSION}/lisp/rep/test/framework.jlc
+share/rep/${VERSION}/lisp/rep/threads/
 share/rep/${VERSION}/lisp/rep/threads/condition-variable.jl
 share/rep/${VERSION}/lisp/rep/threads/condition-variable.jlc
 share/rep/${VERSION}/lisp/rep/threads/message-port.jl
@@ -173,6 +201,7 @@ share/rep/${VERSION}/lisp/rep/threads/utils.jl
 share/rep/${VERSION}/lisp/rep/threads/utils.jlc
 share/rep/${VERSION}/lisp/rep/user.jl
 share/rep/${VERSION}/lisp/rep/user.jlc
+share/rep/${VERSION}/lisp/rep/util/
 share/rep/${VERSION}/lisp/rep/util/autoloader.jl
 share/rep/${VERSION}/lisp/rep/util/autoloader.jlc
 share/rep/${VERSION}/lisp/rep/util/base64.jl
@@ -189,12 +218,14 @@ share/rep/${VERSION}/lisp/rep/util/repl.jl
 share/rep/${VERSION}/lisp/rep/util/repl.jlc
 share/rep/${VERSION}/lisp/rep/util/time.jl
 share/rep/${VERSION}/lisp/rep/util/time.jlc
+share/rep/${VERSION}/lisp/rep/vm/
 share/rep/${VERSION}/lisp/rep/vm/assembler.jl
 share/rep/${VERSION}/lisp/rep/vm/assembler.jlc
 share/rep/${VERSION}/lisp/rep/vm/bytecode-defs.jl
 share/rep/${VERSION}/lisp/rep/vm/bytecode-defs.jlc
 share/rep/${VERSION}/lisp/rep/vm/bytecodes.jl
 share/rep/${VERSION}/lisp/rep/vm/bytecodes.jlc
+share/rep/${VERSION}/lisp/rep/vm/compiler/
 share/rep/${VERSION}/lisp/rep/vm/compiler.jl
 share/rep/${VERSION}/lisp/rep/vm/compiler.jlc
 share/rep/${VERSION}/lisp/rep/vm/compiler/basic.jl
@@ -223,18 +254,21 @@ share/rep/${VERSION}/lisp/rep/vm/disassembler.jl
 share/rep/${VERSION}/lisp/rep/vm/disassembler.jlc
 share/rep/${VERSION}/lisp/rep/vm/peephole.jl
 share/rep/${VERSION}/lisp/rep/vm/peephole.jlc
+share/rep/${VERSION}/lisp/rep/www/
 share/rep/${VERSION}/lisp/rep/www/cgi-get.jl
 share/rep/${VERSION}/lisp/rep/www/cgi-get.jlc
 share/rep/${VERSION}/lisp/rep/www/fetch-url.jl
 share/rep/${VERSION}/lisp/rep/www/fetch-url.jlc
 share/rep/${VERSION}/lisp/rep/www/quote-url.jl
 share/rep/${VERSION}/lisp/rep/www/quote-url.jlc
+share/rep/${VERSION}/lisp/rep/xml/
 share/rep/${VERSION}/lisp/rep/xml/printer.jl
 share/rep/${VERSION}/lisp/rep/xml/printer.jlc
 share/rep/${VERSION}/lisp/rep/xml/reader.jl
 share/rep/${VERSION}/lisp/rep/xml/reader.jlc
 share/rep/${VERSION}/lisp/ring.jl
 share/rep/${VERSION}/lisp/ring.jlc
+share/rep/${VERSION}/lisp/scheme/
 share/rep/${VERSION}/lisp/scheme.jl
 share/rep/${VERSION}/lisp/scheme.jlc
 share/rep/${VERSION}/lisp/scheme/data.jl
@@ -249,6 +283,7 @@ share/rep/${VERSION}/lisp/scheme/utils.jl
 share/rep/${VERSION}/lisp/scheme/utils.jlc
 share/rep/${VERSION}/lisp/symbol-table.jl
 share/rep/${VERSION}/lisp/symbol-table.jlc
+share/rep/${VERSION}/lisp/unscheme/
 share/rep/${VERSION}/lisp/unscheme.jl
 share/rep/${VERSION}/lisp/unscheme.jlc
 share/rep/${VERSION}/lisp/unscheme/data.jl
@@ -260,37 +295,3 @@ share/rep/${VERSION}/lisp/unscheme/syntax-funs.jlc
 share/rep/${VERSION}/lisp/unscheme/syntax.jl
 share/rep/${VERSION}/lisp/unscheme/syntax.jlc
 %%SHARED%%
-@dirrm share/rep/${VERSION}/lisp/unscheme
-@dirrm share/rep/${VERSION}/lisp/scheme
-@dirrm share/rep/${VERSION}/lisp/rep/xml
-@dirrm share/rep/${VERSION}/lisp/rep/www
-@dirrm share/rep/${VERSION}/lisp/rep/vm/compiler
-@dirrm share/rep/${VERSION}/lisp/rep/vm
-@dirrm share/rep/${VERSION}/lisp/rep/util
-@dirrm share/rep/${VERSION}/lisp/rep/threads
-@dirrm share/rep/${VERSION}/lisp/rep/test
-@dirrm share/rep/${VERSION}/lisp/rep/system
-@dirrm share/rep/${VERSION}/lisp/rep/net
-@dirrm share/rep/${VERSION}/lisp/rep/mail
-@dirrm share/rep/${VERSION}/lisp/rep/lang
-@dirrm share/rep/${VERSION}/lisp/rep/io/file-handlers/remote
-@dirrm share/rep/${VERSION}/lisp/rep/io/file-handlers
-@dirrm share/rep/${VERSION}/lisp/rep/io
-@dirrm share/rep/${VERSION}/lisp/rep/i18n
-@dirrm share/rep/${VERSION}/lisp/rep/data
-@dirrm share/rep/${VERSION}/lisp/rep
-@dirrm share/rep/${VERSION}/lisp
-@dirrm share/rep/${VERSION}
-@dirrm share/rep
-@dirrm libexec/rep/${GNU_ARCH}
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/util
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/io
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep/data
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}/rep
-@dirrm libexec/rep/${VERSION}/${GNU_ARCH}
-@dirrm libexec/rep/${VERSION}
-@dirrm libexec/rep

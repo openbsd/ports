@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/26 23:48:50 dons Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:08 espie Exp $
 bin/ghc
 bin/ghc-6.2.1
 bin/ghc-pkg
@@ -10,6 +10,7 @@ bin/hasktags
 bin/hp2ps
 bin/hsc2hs
 bin/stat2resid
+lib/ghc-6.2.1/
 lib/ghc-6.2.1/HSQuickCheck.o
 lib/ghc-6.2.1/HSbase.o
 lib/ghc-6.2.1/HSbase_cbits.o
@@ -40,6 +41,8 @@ lib/ghc-6.2.1/ghc-split
 lib/ghc-6.2.1/ghc-usage.txt
 lib/ghc-6.2.1/ghci-usage.txt
 lib/ghc-6.2.1/hsc2hs-bin
+lib/ghc-6.2.1/hslibs-imports/
+lib/ghc-6.2.1/hslibs-imports/concurrent/
 lib/ghc-6.2.1/hslibs-imports/concurrent/CVar.hi
 lib/ghc-6.2.1/hslibs-imports/concurrent/CVar.p_hi
 lib/ghc-6.2.1/hslibs-imports/concurrent/Chan.hi
@@ -66,6 +69,7 @@ lib/ghc-6.2.1/hslibs-imports/concurrent/Semaphore.hi
 lib/ghc-6.2.1/hslibs-imports/concurrent/Semaphore.p_hi
 lib/ghc-6.2.1/hslibs-imports/concurrent/Strategies.hi
 lib/ghc-6.2.1/hslibs-imports/concurrent/Strategies.p_hi
+lib/ghc-6.2.1/hslibs-imports/data/
 lib/ghc-6.2.1/hslibs-imports/data/Assoc.hi
 lib/ghc-6.2.1/hslibs-imports/data/Assoc.p_hi
 lib/ghc-6.2.1/hslibs-imports/data/AssocDefaults.hi
@@ -128,6 +132,7 @@ lib/ghc-6.2.1/hslibs-imports/data/TestSeq.hi
 lib/ghc-6.2.1/hslibs-imports/data/TestSeq.p_hi
 lib/ghc-6.2.1/hslibs-imports/data/UnbalancedSet.hi
 lib/ghc-6.2.1/hslibs-imports/data/UnbalancedSet.p_hi
+lib/ghc-6.2.1/hslibs-imports/hssource/
 lib/ghc-6.2.1/hslibs-imports/hssource/HsLexer.hi
 lib/ghc-6.2.1/hslibs-imports/hssource/HsLexer.p_hi
 lib/ghc-6.2.1/hslibs-imports/hssource/HsParseMonad.hi
@@ -140,6 +145,7 @@ lib/ghc-6.2.1/hslibs-imports/hssource/HsPretty.hi
 lib/ghc-6.2.1/hslibs-imports/hssource/HsPretty.p_hi
 lib/ghc-6.2.1/hslibs-imports/hssource/HsSyn.hi
 lib/ghc-6.2.1/hslibs-imports/hssource/HsSyn.p_hi
+lib/ghc-6.2.1/hslibs-imports/lang/
 lib/ghc-6.2.1/hslibs-imports/lang/Addr.hi
 lib/ghc-6.2.1/hslibs-imports/lang/Addr.p_hi
 lib/ghc-6.2.1/hslibs-imports/lang/ArrayBase.hi
@@ -224,6 +230,7 @@ lib/ghc-6.2.1/hslibs-imports/lang/TimeExts.hi
 lib/ghc-6.2.1/hslibs-imports/lang/TimeExts.p_hi
 lib/ghc-6.2.1/hslibs-imports/lang/Weak.hi
 lib/ghc-6.2.1/hslibs-imports/lang/Weak.p_hi
+lib/ghc-6.2.1/hslibs-imports/net/
 lib/ghc-6.2.1/hslibs-imports/net/BSD.hi
 lib/ghc-6.2.1/hslibs-imports/net/BSD.p_hi
 lib/ghc-6.2.1/hslibs-imports/net/CGI.hi
@@ -234,6 +241,7 @@ lib/ghc-6.2.1/hslibs-imports/net/SocketPrim.hi
 lib/ghc-6.2.1/hslibs-imports/net/SocketPrim.p_hi
 lib/ghc-6.2.1/hslibs-imports/net/URI.hi
 lib/ghc-6.2.1/hslibs-imports/net/URI.p_hi
+lib/ghc-6.2.1/hslibs-imports/posix/
 lib/ghc-6.2.1/hslibs-imports/posix/DL.hi
 lib/ghc-6.2.1/hslibs-imports/posix/DL.p_hi
 lib/ghc-6.2.1/hslibs-imports/posix/DLPrim.hi
@@ -258,6 +266,7 @@ lib/ghc-6.2.1/hslibs-imports/posix/PosixTTY.hi
 lib/ghc-6.2.1/hslibs-imports/posix/PosixTTY.p_hi
 lib/ghc-6.2.1/hslibs-imports/posix/PosixUtil.hi
 lib/ghc-6.2.1/hslibs-imports/posix/PosixUtil.p_hi
+lib/ghc-6.2.1/hslibs-imports/text/
 lib/ghc-6.2.1/hslibs-imports/text/Html.hi
 lib/ghc-6.2.1/hslibs-imports/text/Html.p_hi
 lib/ghc-6.2.1/hslibs-imports/text/HtmlBlockTable.hi
@@ -286,6 +295,7 @@ lib/ghc-6.2.1/hslibs-imports/text/Pretty.hi
 lib/ghc-6.2.1/hslibs-imports/text/Pretty.p_hi
 lib/ghc-6.2.1/hslibs-imports/text/RegexString.hi
 lib/ghc-6.2.1/hslibs-imports/text/RegexString.p_hi
+lib/ghc-6.2.1/hslibs-imports/util/
 lib/ghc-6.2.1/hslibs-imports/util/GetOpt.hi
 lib/ghc-6.2.1/hslibs-imports/util/GetOpt.p_hi
 lib/ghc-6.2.1/hslibs-imports/util/Memo.hi
@@ -306,6 +316,7 @@ lib/ghc-6.2.1/hslibs-imports/util/Select.hi
 lib/ghc-6.2.1/hslibs-imports/util/Select.p_hi
 lib/ghc-6.2.1/hslibs-imports/util/Unique.hi
 lib/ghc-6.2.1/hslibs-imports/util/Unique.p_hi
+lib/ghc-6.2.1/icons/
 lib/ghc-6.2.1/icons/absdelta.xbm
 lib/ghc-6.2.1/icons/absolute.xbm
 lib/ghc-6.2.1/icons/comm.xbm
@@ -329,6 +340,7 @@ lib/ghc-6.2.1/icons/uncompress.xbm
 lib/ghc-6.2.1/icons/undo.xbm
 lib/ghc-6.2.1/icons/wait.xbm
 lib/ghc-6.2.1/icons/weightdelta.xbm
+lib/ghc-6.2.1/imports/
 lib/ghc-6.2.1/imports/Array.hi
 lib/ghc-6.2.1/imports/Array.p_hi
 lib/ghc-6.2.1/imports/Bits.hi
@@ -347,8 +359,10 @@ lib/ghc-6.2.1/imports/Char.hi
 lib/ghc-6.2.1/imports/Char.p_hi
 lib/ghc-6.2.1/imports/Complex.hi
 lib/ghc-6.2.1/imports/Complex.p_hi
+lib/ghc-6.2.1/imports/Control/
 lib/ghc-6.2.1/imports/Control/Arrow.hi
 lib/ghc-6.2.1/imports/Control/Arrow.p_hi
+lib/ghc-6.2.1/imports/Control/Concurrent/
 lib/ghc-6.2.1/imports/Control/Concurrent.hi
 lib/ghc-6.2.1/imports/Control/Concurrent.p_hi
 lib/ghc-6.2.1/imports/Control/Concurrent/Chan.hi
@@ -363,6 +377,7 @@ lib/ghc-6.2.1/imports/Control/Concurrent/SampleVar.hi
 lib/ghc-6.2.1/imports/Control/Concurrent/SampleVar.p_hi
 lib/ghc-6.2.1/imports/Control/Exception.hi
 lib/ghc-6.2.1/imports/Control/Exception.p_hi
+lib/ghc-6.2.1/imports/Control/Monad/
 lib/ghc-6.2.1/imports/Control/Monad.hi
 lib/ghc-6.2.1/imports/Control/Monad.p_hi
 lib/ghc-6.2.1/imports/Control/Monad/Cont.hi
@@ -379,6 +394,7 @@ lib/ghc-6.2.1/imports/Control/Monad/RWS.hi
 lib/ghc-6.2.1/imports/Control/Monad/RWS.p_hi
 lib/ghc-6.2.1/imports/Control/Monad/Reader.hi
 lib/ghc-6.2.1/imports/Control/Monad/Reader.p_hi
+lib/ghc-6.2.1/imports/Control/Monad/ST/
 lib/ghc-6.2.1/imports/Control/Monad/ST.hi
 lib/ghc-6.2.1/imports/Control/Monad/ST.p_hi
 lib/ghc-6.2.1/imports/Control/Monad/ST/Lazy.hi
@@ -393,6 +409,8 @@ lib/ghc-6.2.1/imports/Control/Monad/Writer.hi
 lib/ghc-6.2.1/imports/Control/Monad/Writer.p_hi
 lib/ghc-6.2.1/imports/Control/Parallel.hi
 lib/ghc-6.2.1/imports/Control/Parallel.p_hi
+lib/ghc-6.2.1/imports/Data/
+lib/ghc-6.2.1/imports/Data/Array/
 lib/ghc-6.2.1/imports/Data/Array.hi
 lib/ghc-6.2.1/imports/Data/Array.p_hi
 lib/ghc-6.2.1/imports/Data/Array/Base.hi
@@ -401,6 +419,7 @@ lib/ghc-6.2.1/imports/Data/Array/Diff.hi
 lib/ghc-6.2.1/imports/Data/Array/Diff.p_hi
 lib/ghc-6.2.1/imports/Data/Array/IArray.hi
 lib/ghc-6.2.1/imports/Data/Array/IArray.p_hi
+lib/ghc-6.2.1/imports/Data/Array/IO/
 lib/ghc-6.2.1/imports/Data/Array/IO.hi
 lib/ghc-6.2.1/imports/Data/Array/IO.p_hi
 lib/ghc-6.2.1/imports/Data/Array/IO/Internals.hi
@@ -427,6 +446,7 @@ lib/ghc-6.2.1/imports/Data/Either.hi
 lib/ghc-6.2.1/imports/Data/Either.p_hi
 lib/ghc-6.2.1/imports/Data/FiniteMap.hi
 lib/ghc-6.2.1/imports/Data/FiniteMap.p_hi
+lib/ghc-6.2.1/imports/Data/Generics/
 lib/ghc-6.2.1/imports/Data/Generics.hi
 lib/ghc-6.2.1/imports/Data/Generics.p_hi
 lib/ghc-6.2.1/imports/Data/Generics/Aliases.hi
@@ -461,6 +481,7 @@ lib/ghc-6.2.1/imports/Data/PackedString.hi
 lib/ghc-6.2.1/imports/Data/PackedString.p_hi
 lib/ghc-6.2.1/imports/Data/Ratio.hi
 lib/ghc-6.2.1/imports/Data/Ratio.p_hi
+lib/ghc-6.2.1/imports/Data/STRef/
 lib/ghc-6.2.1/imports/Data/STRef.hi
 lib/ghc-6.2.1/imports/Data/STRef.p_hi
 lib/ghc-6.2.1/imports/Data/STRef/Lazy.hi
@@ -479,6 +500,8 @@ lib/ghc-6.2.1/imports/Data/Unique.hi
 lib/ghc-6.2.1/imports/Data/Unique.p_hi
 lib/ghc-6.2.1/imports/Data/Word.hi
 lib/ghc-6.2.1/imports/Data/Word.p_hi
+lib/ghc-6.2.1/imports/Debug/
+lib/ghc-6.2.1/imports/Debug/QuickCheck/
 lib/ghc-6.2.1/imports/Debug/QuickCheck.hi
 lib/ghc-6.2.1/imports/Debug/QuickCheck.p_hi
 lib/ghc-6.2.1/imports/Debug/QuickCheck/Batch.hi
@@ -491,8 +514,10 @@ lib/ghc-6.2.1/imports/Debug/Trace.hi
 lib/ghc-6.2.1/imports/Debug/Trace.p_hi
 lib/ghc-6.2.1/imports/Directory.hi
 lib/ghc-6.2.1/imports/Directory.p_hi
+lib/ghc-6.2.1/imports/Foreign/
 lib/ghc-6.2.1/imports/Foreign.hi
 lib/ghc-6.2.1/imports/Foreign.p_hi
+lib/ghc-6.2.1/imports/Foreign/C/
 lib/ghc-6.2.1/imports/Foreign/C.hi
 lib/ghc-6.2.1/imports/Foreign/C.p_hi
 lib/ghc-6.2.1/imports/Foreign/C/Error.hi
@@ -505,6 +530,7 @@ lib/ghc-6.2.1/imports/Foreign/Concurrent.hi
 lib/ghc-6.2.1/imports/Foreign/Concurrent.p_hi
 lib/ghc-6.2.1/imports/Foreign/ForeignPtr.hi
 lib/ghc-6.2.1/imports/Foreign/ForeignPtr.p_hi
+lib/ghc-6.2.1/imports/Foreign/Marshal/
 lib/ghc-6.2.1/imports/Foreign/Marshal.hi
 lib/ghc-6.2.1/imports/Foreign/Marshal.p_hi
 lib/ghc-6.2.1/imports/Foreign/Marshal/Alloc.hi
@@ -525,6 +551,7 @@ lib/ghc-6.2.1/imports/Foreign/Storable.hi
 lib/ghc-6.2.1/imports/Foreign/Storable.p_hi
 lib/ghc-6.2.1/imports/ForeignPtr.hi
 lib/ghc-6.2.1/imports/ForeignPtr.p_hi
+lib/ghc-6.2.1/imports/GHC/
 lib/ghc-6.2.1/imports/GHC/Arr.hi
 lib/ghc-6.2.1/imports/GHC/Arr.p_hi
 lib/ghc-6.2.1/imports/GHC/Base.hi
@@ -593,6 +620,8 @@ lib/ghc-6.2.1/imports/Int.hi
 lib/ghc-6.2.1/imports/Int.p_hi
 lib/ghc-6.2.1/imports/Ix.hi
 lib/ghc-6.2.1/imports/Ix.p_hi
+lib/ghc-6.2.1/imports/Language/
+lib/ghc-6.2.1/imports/Language/Haskell/
 lib/ghc-6.2.1/imports/Language/Haskell/Lexer.hi
 lib/ghc-6.2.1/imports/Language/Haskell/Lexer.p_hi
 lib/ghc-6.2.1/imports/Language/Haskell/ParseMonad.hi
@@ -623,6 +652,7 @@ lib/ghc-6.2.1/imports/Maybe.hi
 lib/ghc-6.2.1/imports/Maybe.p_hi
 lib/ghc-6.2.1/imports/Monad.hi
 lib/ghc-6.2.1/imports/Monad.p_hi
+lib/ghc-6.2.1/imports/Network/
 lib/ghc-6.2.1/imports/Network.hi
 lib/ghc-6.2.1/imports/Network.p_hi
 lib/ghc-6.2.1/imports/Network/BSD.hi
@@ -647,12 +677,14 @@ lib/ghc-6.2.1/imports/StablePtr.hi
 lib/ghc-6.2.1/imports/StablePtr.p_hi
 lib/ghc-6.2.1/imports/Storable.hi
 lib/ghc-6.2.1/imports/Storable.p_hi
+lib/ghc-6.2.1/imports/System/
 lib/ghc-6.2.1/imports/System.hi
 lib/ghc-6.2.1/imports/System.p_hi
 lib/ghc-6.2.1/imports/System/CPUTime.hi
 lib/ghc-6.2.1/imports/System/CPUTime.p_hi
 lib/ghc-6.2.1/imports/System/Cmd.hi
 lib/ghc-6.2.1/imports/System/Cmd.p_hi
+lib/ghc-6.2.1/imports/System/Console/
 lib/ghc-6.2.1/imports/System/Console/GetOpt.hi
 lib/ghc-6.2.1/imports/System/Console/GetOpt.p_hi
 lib/ghc-6.2.1/imports/System/Console/Readline.hi
@@ -665,6 +697,7 @@ lib/ghc-6.2.1/imports/System/Environment.hi
 lib/ghc-6.2.1/imports/System/Environment.p_hi
 lib/ghc-6.2.1/imports/System/Exit.hi
 lib/ghc-6.2.1/imports/System/Exit.p_hi
+lib/ghc-6.2.1/imports/System/IO/
 lib/ghc-6.2.1/imports/System/IO.hi
 lib/ghc-6.2.1/imports/System/IO.p_hi
 lib/ghc-6.2.1/imports/System/IO/Error.hi
@@ -675,16 +708,19 @@ lib/ghc-6.2.1/imports/System/Info.hi
 lib/ghc-6.2.1/imports/System/Info.p_hi
 lib/ghc-6.2.1/imports/System/Locale.hi
 lib/ghc-6.2.1/imports/System/Locale.p_hi
+lib/ghc-6.2.1/imports/System/Mem/
 lib/ghc-6.2.1/imports/System/Mem.hi
 lib/ghc-6.2.1/imports/System/Mem.p_hi
 lib/ghc-6.2.1/imports/System/Mem/StableName.hi
 lib/ghc-6.2.1/imports/System/Mem/StableName.p_hi
 lib/ghc-6.2.1/imports/System/Mem/Weak.hi
 lib/ghc-6.2.1/imports/System/Mem/Weak.p_hi
+lib/ghc-6.2.1/imports/System/Posix/
 lib/ghc-6.2.1/imports/System/Posix.hi
 lib/ghc-6.2.1/imports/System/Posix.p_hi
 lib/ghc-6.2.1/imports/System/Posix/Directory.hi
 lib/ghc-6.2.1/imports/System/Posix/Directory.p_hi
+lib/ghc-6.2.1/imports/System/Posix/DynamicLinker/
 lib/ghc-6.2.1/imports/System/Posix/DynamicLinker.hi
 lib/ghc-6.2.1/imports/System/Posix/DynamicLinker.p_hi
 lib/ghc-6.2.1/imports/System/Posix/DynamicLinker/Module.hi
@@ -721,10 +757,14 @@ lib/ghc-6.2.1/imports/System/Random.hi
 lib/ghc-6.2.1/imports/System/Random.p_hi
 lib/ghc-6.2.1/imports/System/Time.hi
 lib/ghc-6.2.1/imports/System/Time.p_hi
+lib/ghc-6.2.1/imports/Text/
+lib/ghc-6.2.1/imports/Text/Html/
 lib/ghc-6.2.1/imports/Text/Html.hi
 lib/ghc-6.2.1/imports/Text/Html.p_hi
 lib/ghc-6.2.1/imports/Text/Html/BlockTable.hi
 lib/ghc-6.2.1/imports/Text/Html/BlockTable.p_hi
+lib/ghc-6.2.1/imports/Text/ParserCombinators/
+lib/ghc-6.2.1/imports/Text/ParserCombinators/Parsec/
 lib/ghc-6.2.1/imports/Text/ParserCombinators/Parsec.hi
 lib/ghc-6.2.1/imports/Text/ParserCombinators/Parsec.p_hi
 lib/ghc-6.2.1/imports/Text/ParserCombinators/Parsec/Char.hi
@@ -749,18 +789,22 @@ lib/ghc-6.2.1/imports/Text/ParserCombinators/ReadP.hi
 lib/ghc-6.2.1/imports/Text/ParserCombinators/ReadP.p_hi
 lib/ghc-6.2.1/imports/Text/ParserCombinators/ReadPrec.hi
 lib/ghc-6.2.1/imports/Text/ParserCombinators/ReadPrec.p_hi
+lib/ghc-6.2.1/imports/Text/PrettyPrint/
 lib/ghc-6.2.1/imports/Text/PrettyPrint.hi
 lib/ghc-6.2.1/imports/Text/PrettyPrint.p_hi
 lib/ghc-6.2.1/imports/Text/PrettyPrint/HughesPJ.hi
 lib/ghc-6.2.1/imports/Text/PrettyPrint/HughesPJ.p_hi
+lib/ghc-6.2.1/imports/Text/Read/
 lib/ghc-6.2.1/imports/Text/Read.hi
 lib/ghc-6.2.1/imports/Text/Read.p_hi
 lib/ghc-6.2.1/imports/Text/Read/Lex.hi
 lib/ghc-6.2.1/imports/Text/Read/Lex.p_hi
+lib/ghc-6.2.1/imports/Text/Regex/
 lib/ghc-6.2.1/imports/Text/Regex.hi
 lib/ghc-6.2.1/imports/Text/Regex.p_hi
 lib/ghc-6.2.1/imports/Text/Regex/Posix.hi
 lib/ghc-6.2.1/imports/Text/Regex/Posix.p_hi
+lib/ghc-6.2.1/imports/Text/Show/
 lib/ghc-6.2.1/imports/Text/Show.hi
 lib/ghc-6.2.1/imports/Text/Show.p_hi
 lib/ghc-6.2.1/imports/Text/Show/Functions.hi
@@ -769,6 +813,7 @@ lib/ghc-6.2.1/imports/Time.hi
 lib/ghc-6.2.1/imports/Time.p_hi
 lib/ghc-6.2.1/imports/Word.hi
 lib/ghc-6.2.1/imports/Word.p_hi
+lib/ghc-6.2.1/include/
 lib/ghc-6.2.1/include/Block.h
 lib/ghc-6.2.1/include/Bytecodes.h
 lib/ghc-6.2.1/include/CCall.h
@@ -878,48 +923,3 @@ lib/ghc-6.2.1/parse-gcstats.prl
 lib/ghc-6.2.1/process-gcstats.prl
 lib/ghc-6.2.1/template-hsc.h
 lib/ghc-6.2.1/unlit
-@dirrm lib/ghc-6.2.1/include
-@dirrm lib/ghc-6.2.1/imports/Text/Show
-@dirrm lib/ghc-6.2.1/imports/Text/Regex
-@dirrm lib/ghc-6.2.1/imports/Text/Read
-@dirrm lib/ghc-6.2.1/imports/Text/PrettyPrint
-@dirrm lib/ghc-6.2.1/imports/Text/ParserCombinators/Parsec
-@dirrm lib/ghc-6.2.1/imports/Text/ParserCombinators
-@dirrm lib/ghc-6.2.1/imports/Text/Html
-@dirrm lib/ghc-6.2.1/imports/Text
-@dirrm lib/ghc-6.2.1/imports/System/Posix/DynamicLinker
-@dirrm lib/ghc-6.2.1/imports/System/Posix
-@dirrm lib/ghc-6.2.1/imports/System/Mem
-@dirrm lib/ghc-6.2.1/imports/System/IO
-@dirrm lib/ghc-6.2.1/imports/System/Console
-@dirrm lib/ghc-6.2.1/imports/System
-@dirrm lib/ghc-6.2.1/imports/Network
-@dirrm lib/ghc-6.2.1/imports/Language/Haskell
-@dirrm lib/ghc-6.2.1/imports/Language
-@dirrm lib/ghc-6.2.1/imports/GHC
-@dirrm lib/ghc-6.2.1/imports/Foreign/Marshal
-@dirrm lib/ghc-6.2.1/imports/Foreign/C
-@dirrm lib/ghc-6.2.1/imports/Foreign
-@dirrm lib/ghc-6.2.1/imports/Debug/QuickCheck
-@dirrm lib/ghc-6.2.1/imports/Debug
-@dirrm lib/ghc-6.2.1/imports/Data/STRef
-@dirrm lib/ghc-6.2.1/imports/Data/Generics
-@dirrm lib/ghc-6.2.1/imports/Data/Array/IO
-@dirrm lib/ghc-6.2.1/imports/Data/Array
-@dirrm lib/ghc-6.2.1/imports/Data
-@dirrm lib/ghc-6.2.1/imports/Control/Monad/ST
-@dirrm lib/ghc-6.2.1/imports/Control/Monad
-@dirrm lib/ghc-6.2.1/imports/Control/Concurrent
-@dirrm lib/ghc-6.2.1/imports/Control
-@dirrm lib/ghc-6.2.1/imports
-@dirrm lib/ghc-6.2.1/icons
-@dirrm lib/ghc-6.2.1/hslibs-imports/util
-@dirrm lib/ghc-6.2.1/hslibs-imports/text
-@dirrm lib/ghc-6.2.1/hslibs-imports/posix
-@dirrm lib/ghc-6.2.1/hslibs-imports/net
-@dirrm lib/ghc-6.2.1/hslibs-imports/lang
-@dirrm lib/ghc-6.2.1/hslibs-imports/hssource
-@dirrm lib/ghc-6.2.1/hslibs-imports/data
-@dirrm lib/ghc-6.2.1/hslibs-imports/concurrent
-@dirrm lib/ghc-6.2.1/hslibs-imports
-@dirrm lib/ghc-6.2.1

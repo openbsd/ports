@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/07 17:20:49 ian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:16:08 espie Exp $
 bin/jikes
 include/jikesapi.h
-man/man1/jikes.1
+@man man/man1/jikes.1
+share/doc/jikes/
 share/doc/jikes/license.htm
-@dirrm share/doc/jikes

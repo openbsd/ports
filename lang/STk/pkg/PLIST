@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/14 14:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:07 espie Exp $
 bin/snow
 bin/snow-${STK_VERSION}
 bin/stk
 bin/stk-${STK_VERSION}
-@dir lib/stk
-@dir lib/stk/${STK_VERSION}
-@dir lib/stk/${STK_VERSION}/Demos
-@dir lib/stk/${STK_VERSION}/Demos/Html-Demos
-@dir lib/stk/${STK_VERSION}/Demos/Html-Demos/Images
+lib/stk/
+lib/stk/${STK_VERSION}/
+lib/stk/${STK_VERSION}/Demos/
+lib/stk/${STK_VERSION}/Demos/Html-Demos/
+lib/stk/${STK_VERSION}/Demos/Html-Demos/Images/
 lib/stk/${STK_VERSION}/Demos/Html-Demos/Images/STk-tiny.gif
 lib/stk/${STK_VERSION}/Demos/Html-Demos/Images/amib-tiny.gif
 lib/stk/${STK_VERSION}/Demos/Html-Demos/Images/amib.gif
@@ -108,7 +108,7 @@ lib/stk/${STK_VERSION}/Demos/hanoi.stk
 lib/stk/${STK_VERSION}/Demos/hello.stk
 lib/stk/${STK_VERSION}/Demos/hello.stklos
 lib/stk/${STK_VERSION}/Demos/inspector.stk
-@dir lib/stk/${STK_VERSION}/Demos/lessons
+lib/stk/${STK_VERSION}/Demos/lessons/
 lib/stk/${STK_VERSION}/Demos/lessons/bind1.stk
 lib/stk/${STK_VERSION}/Demos/lessons/bind2.stk
 lib/stk/${STK_VERSION}/Demos/lessons/bind3.stk
@@ -158,7 +158,7 @@ lib/stk/${STK_VERSION}/Demos/lessons/text3.stk
 lib/stk/${STK_VERSION}/Demos/lessons/text4.stk
 lib/stk/${STK_VERSION}/Demos/lessons/text5.stk
 lib/stk/${STK_VERSION}/Demos/lessons/tkwait.stk
-@dir lib/stk/${STK_VERSION}/Demos/lib
+lib/stk/${STK_VERSION}/Demos/lib/
 lib/stk/${STK_VERSION}/Demos/lib/iu.ridge.xbm
 lib/stk/${STK_VERSION}/Demos/lib/iu.seal.small.xbm
 lib/stk/${STK_VERSION}/Demos/mc-server.stk
@@ -177,10 +177,10 @@ lib/stk/${STK_VERSION}/Demos/ttt.stk
 lib/stk/${STK_VERSION}/Demos/turtle.stk
 lib/stk/${STK_VERSION}/Demos/widget.stk
 lib/stk/${STK_VERSION}/Demos/wtour.stk
-@dir lib/stk/${STK_VERSION}/Help
+lib/stk/${STK_VERSION}/Help/
 lib/stk/${STK_VERSION}/Help/BlueIndex.html
 lib/stk/${STK_VERSION}/Help/GreenIndex.html
-@dir lib/stk/${STK_VERSION}/Help/Img
+lib/stk/${STK_VERSION}/Help/Img/
 lib/stk/${STK_VERSION}/Help/Img/BlueBall.gif
 lib/stk/${STK_VERSION}/Help/Img/GreenBall.gif
 lib/stk/${STK_VERSION}/Help/Img/ManPageBlue.gif
@@ -274,7 +274,7 @@ lib/stk/${STK_VERSION}/Help/toplevel.n.html
 lib/stk/${STK_VERSION}/Help/update.n.html
 lib/stk/${STK_VERSION}/Help/winfo.n.html
 lib/stk/${STK_VERSION}/Help/wm.n.html
-@dir lib/stk/${STK_VERSION}/Images
+lib/stk/${STK_VERSION}/Images/
 lib/stk/${STK_VERSION}/Images/Cancel.gif
 lib/stk/${STK_VERSION}/Images/Help.gif
 lib/stk/${STK_VERSION}/Images/LineLeft.gif
@@ -356,10 +356,10 @@ lib/stk/${STK_VERSION}/Images/vlines2
 lib/stk/${STK_VERSION}/Images/vlines3
 lib/stk/${STK_VERSION}/Images/warning
 lib/stk/${STK_VERSION}/Images/warning.gif
-@dir lib/stk/${STK_VERSION}/${STK_ARCH}
+lib/stk/${STK_VERSION}/${STK_ARCH}/
 lib/stk/${STK_VERSION}/${STK_ARCH}/snow
 lib/stk/${STK_VERSION}/${STK_ARCH}/stk
-@dir lib/stk/${STK_VERSION}/STk
+lib/stk/${STK_VERSION}/STk/
 lib/stk/${STK_VERSION}/STk/Balloon.stklos
 lib/stk/${STK_VERSION}/STk/Basics.stklos
 lib/stk/${STK_VERSION}/STk/Button.stklos
@@ -379,7 +379,7 @@ lib/stk/${STK_VERSION}/STk/Image.stklos
 lib/stk/${STK_VERSION}/STk/Lentry.stklos
 lib/stk/${STK_VERSION}/STk/Lframe.stklos
 lib/stk/${STK_VERSION}/STk/Listbox.stklos
-@dir lib/stk/${STK_VERSION}/STk/Match
+lib/stk/${STK_VERSION}/STk/Match/
 lib/stk/${STK_VERSION}/STk/Match/compiler.scm
 lib/stk/${STK_VERSION}/STk/Match/descr.scm
 lib/stk/${STK_VERSION}/STk/Match/mexpand.scm
@@ -484,79 +484,77 @@ lib/stk/${STK_VERSION}/STk/www-snd.stk
 lib/stk/${STK_VERSION}/STk/www-txt.stk
 lib/stk/${STK_VERSION}/STk/www-url.stk
 lib/stk/${STK_VERSION}/STk/www.stk
-@dir lib/stk/${STK_VERSION}/man
-@dir lib/stk/${STK_VERSION}/man/man1
+@mandir lib/stk/${STK_VERSION}/man/
+lib/stk/${STK_VERSION}/man/man1/
 lib/stk/${STK_VERSION}/man/man1/STk-man.macros
-lib/stk/${STK_VERSION}/man/man1/snow.1
-lib/stk/${STK_VERSION}/man/man1/stk.1
-@dir lib/stk/${STK_VERSION}/man/mann
+@man lib/stk/${STK_VERSION}/man/man1/snow.1
+@man lib/stk/${STK_VERSION}/man/man1/stk.1
+lib/stk/${STK_VERSION}/man/mann/
 lib/stk/${STK_VERSION}/man/mann/STk-man.macros
-lib/stk/${STK_VERSION}/man/mann/stk_after.n
-lib/stk/${STK_VERSION}/man/mann/stk_bell.n
-lib/stk/${STK_VERSION}/man/mann/stk_bind.n
-lib/stk/${STK_VERSION}/man/mann/stk_bindtags.n
-lib/stk/${STK_VERSION}/man/mann/stk_bitmap.n
-lib/stk/${STK_VERSION}/man/mann/stk_button.n
-lib/stk/${STK_VERSION}/man/mann/stk_canvas.n
-lib/stk/${STK_VERSION}/man/mann/stk_change-image.n
-lib/stk/${STK_VERSION}/man/mann/stk_checkbutton.n
-lib/stk/${STK_VERSION}/man/mann/stk_choose-color.n
-lib/stk/${STK_VERSION}/man/mann/stk_clipboard.n
-lib/stk/${STK_VERSION}/man/mann/stk_destroy.n
-lib/stk/${STK_VERSION}/man/mann/stk_ed.n
-lib/stk/${STK_VERSION}/man/mann/stk_entry.n
-lib/stk/${STK_VERSION}/man/mann/stk_event.n
-lib/stk/${STK_VERSION}/man/mann/stk_find-image.n
-lib/stk/${STK_VERSION}/man/mann/stk_focus-next.n
-lib/stk/${STK_VERSION}/man/mann/stk_focus.n
-lib/stk/${STK_VERSION}/man/mann/stk_font.n
-lib/stk/${STK_VERSION}/man/mann/stk_frame.n
-lib/stk/${STK_VERSION}/man/mann/stk_free-image.n
-lib/stk/${STK_VERSION}/man/mann/stk_ftp.n
-lib/stk/${STK_VERSION}/man/mann/stk_grab.n
-lib/stk/${STK_VERSION}/man/mann/stk_grid.n
-lib/stk/${STK_VERSION}/man/mann/stk_image.n
-lib/stk/${STK_VERSION}/man/mann/stk_jpeg.n
-lib/stk/${STK_VERSION}/man/mann/stk_label.n
-lib/stk/${STK_VERSION}/man/mann/stk_listbox.n
-lib/stk/${STK_VERSION}/man/mann/stk_listener.n
-lib/stk/${STK_VERSION}/man/mann/stk_lower.n
-lib/stk/${STK_VERSION}/man/mann/stk_make-console.n
-lib/stk/${STK_VERSION}/man/mann/stk_make-dialog.n
-lib/stk/${STK_VERSION}/man/mann/stk_make-image.n
-lib/stk/${STK_VERSION}/man/mann/stk_menu.n
-lib/stk/${STK_VERSION}/man/mann/stk_menubutton.n
-lib/stk/${STK_VERSION}/man/mann/stk_message-box.n
-lib/stk/${STK_VERSION}/man/mann/stk_message.n
-lib/stk/${STK_VERSION}/man/mann/stk_option-menu.n
-lib/stk/${STK_VERSION}/man/mann/stk_option.n
-lib/stk/${STK_VERSION}/man/mann/stk_options.n
-lib/stk/${STK_VERSION}/man/mann/stk_pack.n
-lib/stk/${STK_VERSION}/man/mann/stk_palette.n
-lib/stk/${STK_VERSION}/man/mann/stk_photo.n
-lib/stk/${STK_VERSION}/man/mann/stk_pixmap.n
-lib/stk/${STK_VERSION}/man/mann/stk_place.n
-lib/stk/${STK_VERSION}/man/mann/stk_popup.n
-lib/stk/${STK_VERSION}/man/mann/stk_posix.n
-lib/stk/${STK_VERSION}/man/mann/stk_radiobutton.n
-lib/stk/${STK_VERSION}/man/mann/stk_raise.n
-lib/stk/${STK_VERSION}/man/mann/stk_repl-display-prompt.n
-lib/stk/${STK_VERSION}/man/mann/stk_repl-display-result.n
-lib/stk/${STK_VERSION}/man/mann/stk_report-error.n
-lib/stk/${STK_VERSION}/man/mann/stk_scale.n
-lib/stk/${STK_VERSION}/man/mann/stk_scrollbar.n
-lib/stk/${STK_VERSION}/man/mann/stk_selection.n
-lib/stk/${STK_VERSION}/man/mann/stk_send.n
-lib/stk/${STK_VERSION}/man/mann/stk_text.n
-lib/stk/${STK_VERSION}/man/mann/stk_tk.n
-lib/stk/${STK_VERSION}/man/mann/stk_tkvars.n
-lib/stk/${STK_VERSION}/man/mann/stk_tkwait.n
-lib/stk/${STK_VERSION}/man/mann/stk_toplevel.n
-lib/stk/${STK_VERSION}/man/mann/stk_update.n
-lib/stk/${STK_VERSION}/man/mann/stk_winfo.n
-lib/stk/${STK_VERSION}/man/mann/stk_wm.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_after.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_bell.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_bind.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_bindtags.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_bitmap.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_button.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_canvas.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_change-image.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_checkbutton.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_choose-color.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_clipboard.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_destroy.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_ed.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_entry.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_event.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_find-image.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_focus-next.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_focus.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_font.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_frame.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_free-image.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_ftp.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_grab.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_grid.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_image.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_jpeg.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_label.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_listbox.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_listener.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_lower.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_make-console.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_make-dialog.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_make-image.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_menu.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_menubutton.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_message-box.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_message.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_option-menu.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_option.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_options.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_pack.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_palette.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_photo.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_pixmap.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_place.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_popup.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_posix.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_radiobutton.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_raise.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_repl-display-prompt.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_repl-display-result.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_report-error.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_scale.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_scrollbar.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_selection.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_send.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_text.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_tk.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_tkvars.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_tkwait.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_toplevel.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_update.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_winfo.n
+@man lib/stk/${STK_VERSION}/man/mann/stk_wm.n
 lib/stk/man
-@dir lib/stk/site-scheme
+lib/stk/site-scheme/
 %%SHARED%%
-@exec echo "STk-${STK_VERSION} man pages are in %D/lib/stk/${STK_VERSION}/man; you may wish to add this directory to /etc/man.conf"
-@unexec echo "Please remove %D/lib/stk/${STK_VERSION}/man from /etc/man.conf manually if needed"

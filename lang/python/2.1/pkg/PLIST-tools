@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST-tools,v 1.3 2003/12/13 15:03:08 sturm Exp $
+@comment $OpenBSD: PLIST-tools,v 1.4 2004/09/15 19:16:08 espie Exp $
 @option no-default-conflict
 @pkgcfl python-tools-2.1*
+lib/python2.1/Tools/
 lib/python2.1/Tools/README
+lib/python2.1/Tools/audiopy/
 lib/python2.1/Tools/audiopy/README
 lib/python2.1/Tools/audiopy/audiopy
+lib/python2.1/Tools/bgen/
 lib/python2.1/Tools/bgen/README
+lib/python2.1/Tools/bgen/bgen/
 lib/python2.1/Tools/bgen/bgen/bgen.py
 lib/python2.1/Tools/bgen/bgen/bgenBuffer.py
 lib/python2.1/Tools/bgen/bgen/bgenGenerator.py
@@ -20,9 +24,11 @@ lib/python2.1/Tools/bgen/bgen/bgenVariable.py
 lib/python2.1/Tools/bgen/bgen/bgenlocations.py
 lib/python2.1/Tools/bgen/bgen/macsupport.py
 lib/python2.1/Tools/bgen/bgen/scantools.py
+lib/python2.1/Tools/compiler/
 lib/python2.1/Tools/compiler/ast.txt
 lib/python2.1/Tools/compiler/astgen.py
 lib/python2.1/Tools/compiler/compile.py
+lib/python2.1/Tools/compiler/compiler/
 lib/python2.1/Tools/compiler/compiler/__init__.py
 lib/python2.1/Tools/compiler/compiler/ast.py
 lib/python2.1/Tools/compiler/compiler/ast.txt
@@ -39,11 +45,13 @@ lib/python2.1/Tools/compiler/demo.py
 lib/python2.1/Tools/compiler/dumppyc.py
 lib/python2.1/Tools/compiler/regrtest.py
 lib/python2.1/Tools/compiler/setup.py
+lib/python2.1/Tools/faqwiz/
 lib/python2.1/Tools/faqwiz/README
 lib/python2.1/Tools/faqwiz/faqconf.py
 lib/python2.1/Tools/faqwiz/faqcust.py
 lib/python2.1/Tools/faqwiz/faqw.py
 lib/python2.1/Tools/faqwiz/faqwiz.py
+lib/python2.1/Tools/freeze/
 lib/python2.1/Tools/freeze/.cvsignore
 lib/python2.1/Tools/freeze/README
 lib/python2.1/Tools/freeze/bkfile.py
@@ -59,11 +67,14 @@ lib/python2.1/Tools/freeze/modulefinder.py
 lib/python2.1/Tools/freeze/parsesetup.py
 lib/python2.1/Tools/freeze/win32.html
 lib/python2.1/Tools/freeze/winmakemakefile.py
+lib/python2.1/Tools/i18n/
 lib/python2.1/Tools/i18n/msgfmt.py
 lib/python2.1/Tools/i18n/pygettext.py
+lib/python2.1/Tools/modulator/
 lib/python2.1/Tools/modulator/EXAMPLE.py
 lib/python2.1/Tools/modulator/README
 lib/python2.1/Tools/modulator/ScrolledListbox.py
+lib/python2.1/Tools/modulator/Templates/
 lib/python2.1/Tools/modulator/Templates/copyright
 lib/python2.1/Tools/modulator/Templates/module_head
 lib/python2.1/Tools/modulator/Templates/module_method
@@ -90,6 +101,7 @@ lib/python2.1/Tools/modulator/Tkextra.py
 lib/python2.1/Tools/modulator/genmodule.py
 lib/python2.1/Tools/modulator/modulator.py
 lib/python2.1/Tools/modulator/varsubst.py
+lib/python2.1/Tools/pynche/
 lib/python2.1/Tools/pynche/ChipViewer.py
 lib/python2.1/Tools/pynche/ColorDB.py
 lib/python2.1/Tools/pynche/DetailsViewer.py
@@ -101,6 +113,7 @@ lib/python2.1/Tools/pynche/StripViewer.py
 lib/python2.1/Tools/pynche/Switchboard.py
 lib/python2.1/Tools/pynche/TextViewer.py
 lib/python2.1/Tools/pynche/TypeinViewer.py
+lib/python2.1/Tools/pynche/X/
 lib/python2.1/Tools/pynche/X/rgb.txt
 lib/python2.1/Tools/pynche/X/xlicense.txt
 lib/python2.1/Tools/pynche/__init__.py
@@ -111,6 +124,7 @@ lib/python2.1/Tools/pynche/pynche
 lib/python2.1/Tools/pynche/pynche.pyw
 lib/python2.1/Tools/pynche/webcolors.txt
 lib/python2.1/Tools/pynche/websafe.txt
+lib/python2.1/Tools/scripts/
 lib/python2.1/Tools/scripts/README
 lib/python2.1/Tools/scripts/byteyears.py
 lib/python2.1/Tools/scripts/checkappend.py
@@ -159,11 +173,14 @@ lib/python2.1/Tools/scripts/treesync.py
 lib/python2.1/Tools/scripts/untabify.py
 lib/python2.1/Tools/scripts/which.py
 lib/python2.1/Tools/scripts/xxci.py
+lib/python2.1/Tools/unicode/
 lib/python2.1/Tools/unicode/makeunicodedata.py
+lib/python2.1/Tools/versioncheck/
 lib/python2.1/Tools/versioncheck/README
 lib/python2.1/Tools/versioncheck/_checkversion.py
 lib/python2.1/Tools/versioncheck/checkversions.py
 lib/python2.1/Tools/versioncheck/pyversioncheck.py
+lib/python2.1/Tools/webchecker/
 lib/python2.1/Tools/webchecker/README
 lib/python2.1/Tools/webchecker/tktools.py
 lib/python2.1/Tools/webchecker/wcgui.py
@@ -171,23 +188,6 @@ lib/python2.1/Tools/webchecker/wcmac.py
 lib/python2.1/Tools/webchecker/webchecker.py
 lib/python2.1/Tools/webchecker/websucker.py
 lib/python2.1/Tools/webchecker/wsgui.py
+lib/python2.1/Tools/world/
 lib/python2.1/Tools/world/README
 lib/python2.1/Tools/world/world
-@dirrm lib/python2.1/Tools/world
-@dirrm lib/python2.1/Tools/webchecker
-@dirrm lib/python2.1/Tools/versioncheck
-@dirrm lib/python2.1/Tools/unicode
-@dirrm lib/python2.1/Tools/scripts
-@dirrm lib/python2.1/Tools/pynche/X
-@dirrm lib/python2.1/Tools/pynche
-@dirrm lib/python2.1/Tools/modulator/Templates
-@dirrm lib/python2.1/Tools/modulator
-@dirrm lib/python2.1/Tools/i18n
-@dirrm lib/python2.1/Tools/freeze
-@dirrm lib/python2.1/Tools/faqwiz
-@dirrm lib/python2.1/Tools/compiler/compiler
-@dirrm lib/python2.1/Tools/compiler
-@dirrm lib/python2.1/Tools/bgen/bgen
-@dirrm lib/python2.1/Tools/bgen
-@dirrm lib/python2.1/Tools/audiopy
-@dirrm lib/python2.1/Tools

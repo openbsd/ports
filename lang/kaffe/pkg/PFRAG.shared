@@ -1,17 +1,23 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2001/02/12 18:21:25 ian Exp $
-lib/kaffe/libio-1.0.6.so.0.0
-lib/kaffe/libio.so.0.0
-lib/kaffe/libmanagement-1.0.6.so.0.0
-lib/kaffe/libmanagement.so.0.0
-lib/kaffe/libmicrosoft-1.0.6.so.0.0
-lib/kaffe/libmicrosoft.so.0.0
-lib/kaffe/libnet-1.0.6.so.0.0
-lib/kaffe/libnet.so.0.0
-lib/kaffe/libsecurity-1.0.6.so.0.0
-lib/kaffe/libsecurity.so.0.0
-NEWDYNLIBDIR(%D/lib/kaffe)
-lib/libkaffevm-1.0.6.so.0.0
-lib/libkaffevm.so.0.0
-lib/libkaffexprof-1.0.6.so.0.0
-lib/libkaffexprof.so.0.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 19:16:08 espie Exp $
+@lib lib/kaffe/libawt-1.0.6.so.0.0
+@lib lib/kaffe/libawt.so.0.0
+@lib lib/kaffe/libio-1.0.6.so.0.0
+@lib lib/kaffe/libio.so.0.0
+@lib lib/kaffe/libmanagement-1.0.6.so.0.0
+@lib lib/kaffe/libmanagement.so.0.0
+@lib lib/kaffe/libmath-1.0.6.so.0.0
+@lib lib/kaffe/libmath.so.0.0
+@lib lib/kaffe/libmicrosoft-1.0.6.so.0.0
+@lib lib/kaffe/libmicrosoft.so.0.0
+@lib lib/kaffe/libnative-1.0.6.so.0.0
+@lib lib/kaffe/libnative.so.0.0
+@lib lib/kaffe/libnet-1.0.6.so.0.0
+@lib lib/kaffe/libnet.so.0.0
+@lib lib/kaffe/libsecurity-1.0.6.so.0.0
+@lib lib/kaffe/libsecurity.so.0.0
+@lib lib/kaffe/libzip-1.0.6.so.0.0
+@lib lib/kaffe/libzip.so.0.0
+@lib lib/libkaffevm-1.0.6.so.0.0
+@lib lib/libkaffevm.so.0.0
+@lib lib/libkaffexprof-1.0.6.so.0.0
+@lib lib/libkaffexprof.so.0.0

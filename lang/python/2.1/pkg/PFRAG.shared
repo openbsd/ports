@@ -1,8 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/02/25 21:25:37 matt Exp $
-%%mm%%
-lib/libpython2.1.so.0.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/15 19:16:08 espie Exp $
+@lib lib/libpython2.1.so.0.0
 lib/python2.1/config/libpython2.1.so.0.0
+lib/python2.1/lib-dynload/
 lib/python2.1/lib-dynload/_codecsmodule.so
 lib/python2.1/lib-dynload/_curses_panel.so
 lib/python2.1/lib-dynload/_cursesmodule.so
@@ -48,4 +47,4 @@ lib/python2.1/lib-dynload/timingmodule.so
 lib/python2.1/lib-dynload/unicodedata.so
 lib/python2.1/lib-dynload/xreadlines.so
 lib/python2.1/lib-dynload/zlibmodule.so
-@dirrm lib/python2.1/lib-dynload
+%%mm%%

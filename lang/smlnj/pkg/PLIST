@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
-bin/sml
-bin/sml-cm
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:09 espie Exp $
 bin/ml-burg
 bin/ml-lex
 bin/ml-yacc
+bin/sml
+bin/sml-cm
+smlnj/
+smlnj/bin/
 smlnj/bin/.arch-n-opsys
+smlnj/bin/.heap/
 smlnj/bin/.heap/ml-burg.x86-bsd
 smlnj/bin/.heap/ml-lex.x86-bsd
 smlnj/bin/.heap/ml-yacc.x86-bsd
 smlnj/bin/.heap/sml-cm.x86-bsd
 smlnj/bin/.heap/sml.x86-bsd
+smlnj/bin/.run/
 smlnj/bin/.run-sml
 smlnj/bin/.run/run.x86-openbsd
 smlnj/bin/ml-burg
@@ -17,6 +21,7 @@ smlnj/bin/ml-lex
 smlnj/bin/ml-yacc
 smlnj/bin/sml
 smlnj/bin/sml-cm
+smlnj/lib/
 smlnj/lib/cml-lib.cm
 smlnj/lib/cml.cm
 smlnj/lib/eXene.cm
@@ -28,6 +33,11 @@ smlnj/lib/reactive-lib.cm
 smlnj/lib/regexp-lib.cm
 smlnj/lib/smlnj-lib.cm
 smlnj/lib/unix-lib.cm
+smlnj/src/
+smlnj/src/cml/
+smlnj/src/cml/cml-lib/
+smlnj/src/cml/cml-lib/CM/
+smlnj/src/cml/cml-lib/CM/x86-unix/
 smlnj/src/cml/cml-lib/CM/x86-unix/multicast-sig.sml.bin
 smlnj/src/cml/cml-lib/CM/x86-unix/multicast.sml.bin
 smlnj/src/cml/cml-lib/CM/x86-unix/simple-rpc-sig.sml.bin
@@ -36,9 +46,15 @@ smlnj/src/cml/cml-lib/CM/x86-unix/sources.cm.stable
 smlnj/src/cml/cml-lib/CM/x86-unix/trace-cml-sig.sml.bin
 smlnj/src/cml/cml-lib/CM/x86-unix/trace-cml.cm.stable
 smlnj/src/cml/cml-lib/CM/x86-unix/trace-cml.sml.bin
+smlnj/src/cml/cml-lib/SMLNJ-INet/
+smlnj/src/cml/cml-lib/SMLNJ-INet/CM/
+smlnj/src/cml/cml-lib/SMLNJ-INet/CM/x86-unix/
 smlnj/src/cml/cml-lib/SMLNJ-INet/CM/x86-unix/sock-util-sig.sml.bin
 smlnj/src/cml/cml-lib/SMLNJ-INet/CM/x86-unix/sock-util.sml.bin
 smlnj/src/cml/cml-lib/SMLNJ-INet/CM/x86-unix/unix-sock-util.sml.bin
+smlnj/src/cml/cml-lib/SMLNJ-Util/
+smlnj/src/cml/cml-lib/SMLNJ-Util/CM/
+smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/
 smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/atom-binary-map.sml.bin
 smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/atom-binary-set.sml.bin
 smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/atom-map.sml.bin
@@ -52,7 +68,13 @@ smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/io-util-sig.sml.bin
 smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix/io-util.sml.bin
 smlnj/src/cml/cml-lib/sources.cm
 smlnj/src/cml/cml-lib/trace-cml.cm
+smlnj/src/cml/src/
+smlnj/src/cml/src/CM/
+smlnj/src/cml/src/CM/x86-unix/
 smlnj/src/cml/src/CM/x86-unix/sources.cm.stable
+smlnj/src/cml/src/IO/
+smlnj/src/cml/src/IO/CM/
+smlnj/src/cml/src/IO/CM/x86-unix/
 smlnj/src/cml/src/IO/CM/x86-unix/bin-io-fn.sml.bin
 smlnj/src/cml/src/IO/CM/x86-unix/bin-prim-io.sml.bin
 smlnj/src/cml/src/IO/CM/x86-unix/chan-io-fn.sml.bin
@@ -69,12 +91,18 @@ smlnj/src/cml/src/IO/CM/x86-unix/sources.cm.stable
 smlnj/src/cml/src/IO/CM/x86-unix/text-io-fn.sml.bin
 smlnj/src/cml/src/IO/CM/x86-unix/text-prim-io.sml.bin
 smlnj/src/cml/src/IO/sources.cm
+smlnj/src/cml/src/OS/
+smlnj/src/cml/src/OS/CM/
+smlnj/src/cml/src/OS/CM/x86-unix/
 smlnj/src/cml/src/OS/CM/x86-unix/os-io-sig.sml.bin
 smlnj/src/cml/src/OS/CM/x86-unix/os-process-sig.sml.bin
 smlnj/src/cml/src/OS/CM/x86-unix/os-sig.sml.bin
 smlnj/src/cml/src/OS/CM/x86-unix/os-signatures.sml.bin
 smlnj/src/cml/src/OS/CM/x86-unix/sources.cm.stable
 smlnj/src/cml/src/OS/sources.cm
+smlnj/src/cml/src/Sockets/
+smlnj/src/cml/src/Sockets/CM/
+smlnj/src/cml/src/Sockets/CM/x86-unix/
 smlnj/src/cml/src/Sockets/CM/x86-unix/cml-generic-sock.sml.bin
 smlnj/src/cml/src/Sockets/CM/x86-unix/cml-inet-sock.sml.bin
 smlnj/src/cml/src/Sockets/CM/x86-unix/cml-socket-sig.sml.bin
@@ -95,6 +123,9 @@ smlnj/src/cml/src/Sockets/layer1.cm
 smlnj/src/cml/src/Sockets/layer2.cm
 smlnj/src/cml/src/Sockets/layer3.cm
 smlnj/src/cml/src/Sockets/sources.cm
+smlnj/src/cml/src/Unix/
+smlnj/src/cml/src/Unix/CM/
+smlnj/src/cml/src/Unix/CM/x86-unix/
 smlnj/src/cml/src/Unix/CM/x86-unix/os-io.sml.bin
 smlnj/src/cml/src/Unix/CM/x86-unix/os-process.sml.bin
 smlnj/src/cml/src/Unix/CM/x86-unix/os.cm.stable
@@ -112,6 +143,9 @@ smlnj/src/cml/src/Unix/CM/x86-unix/unix-sig.sml.bin
 smlnj/src/cml/src/Unix/CM/x86-unix/unix.sml.bin
 smlnj/src/cml/src/Unix/os.cm
 smlnj/src/cml/src/Unix/sources.cm
+smlnj/src/cml/src/core-cml/
+smlnj/src/cml/src/core-cml/CM/
+smlnj/src/cml/src/core-cml/CM/x86-unix/
 smlnj/src/cml/src/core-cml/CM/x86-unix/channel-sig.sml.bin
 smlnj/src/cml/src/core-cml/CM/x86-unix/channel.sml.bin
 smlnj/src/cml/src/core-cml/CM/x86-unix/cleanup.sml.bin
@@ -137,16 +171,28 @@ smlnj/src/cml/src/core-cml/CM/x86-unix/timeout-sig.sml.bin
 smlnj/src/cml/src/core-cml/CM/x86-unix/timeout.sml.bin
 smlnj/src/cml/src/core-cml/CM/x86-unix/version.sml.bin
 smlnj/src/cml/src/core-cml/sources.cm
+smlnj/src/cml/src/glue/
+smlnj/src/cml/src/glue/CM/
+smlnj/src/cml/src/glue/CM/x86-unix/
 smlnj/src/cml/src/glue/CM/x86-unix/export-fn-fn.sml.bin
 smlnj/src/cml/src/glue/CM/x86-unix/os-glue-sig.sml.bin
 smlnj/src/cml/src/glue/CM/x86-unix/run-cml-fn.sml.bin
 smlnj/src/cml/src/glue/CM/x86-unix/sources.cm.stable
 smlnj/src/cml/src/glue/sources.cm
 smlnj/src/cml/src/sources.cm
+smlnj/src/cml/src/util/
+smlnj/src/cml/src/util/CM/
+smlnj/src/cml/src/util/CM/x86-unix/
 smlnj/src/cml/src/util/CM/x86-unix/result.sml.bin
 smlnj/src/cml/src/util/CM/x86-unix/sources.cm.stable
 smlnj/src/cml/src/util/sources.cm
+smlnj/src/eXene/
+smlnj/src/eXene/CM/
+smlnj/src/eXene/CM/x86-unix/
 smlnj/src/eXene/CM/x86-unix/sources.cm.stable
+smlnj/src/eXene/graph-util/
+smlnj/src/eXene/graph-util/CM/
+smlnj/src/eXene/graph-util/CM/x86-unix/
 smlnj/src/eXene/graph-util/CM/x86-unix/band.sml.bin
 smlnj/src/eXene/graph-util/CM/x86-unix/bitmap-io-sig.sml.bin
 smlnj/src/eXene/graph-util/CM/x86-unix/bitmap-io.sml.bin
@@ -168,10 +214,19 @@ smlnj/src/eXene/graph-util/CM/x86-unix/spline.sml.bin
 smlnj/src/eXene/graph-util/CM/x86-unix/xauth-sig.sml.bin
 smlnj/src/eXene/graph-util/CM/x86-unix/xauth.sml.bin
 smlnj/src/eXene/graph-util/sources.cm
+smlnj/src/eXene/lib/
+smlnj/src/eXene/lib/CM/
+smlnj/src/eXene/lib/CM/x86-unix/
 smlnj/src/eXene/lib/CM/x86-unix/base.cm.stable
 smlnj/src/eXene/lib/CM/x86-unix/sources.cm.stable
 smlnj/src/eXene/lib/base.cm
+smlnj/src/eXene/lib/basics/
+smlnj/src/eXene/lib/basics/CM/
+smlnj/src/eXene/lib/basics/CM/x86-unix/
 smlnj/src/eXene/lib/basics/CM/x86-unix/geom.sml.bin
+smlnj/src/eXene/lib/iccc/
+smlnj/src/eXene/lib/iccc/CM/
+smlnj/src/eXene/lib/iccc/CM/x86-unix/
 smlnj/src/eXene/lib/iccc/CM/x86-unix/atom-server.sml.bin
 smlnj/src/eXene/lib/iccc/CM/x86-unix/property-sig.sml.bin
 smlnj/src/eXene/lib/iccc/CM/x86-unix/property.sml.bin
@@ -179,11 +234,17 @@ smlnj/src/eXene/lib/iccc/CM/x86-unix/std-atoms.sml.bin
 smlnj/src/eXene/lib/iccc/CM/x86-unix/xatom-tbl.sml.bin
 smlnj/src/eXene/lib/iccc/CM/x86-unix/xatoms.sml.bin
 smlnj/src/eXene/lib/iccc/CM/x86-unix/xprops.sml.bin
+smlnj/src/eXene/lib/misc/
+smlnj/src/eXene/lib/misc/CM/
+smlnj/src/eXene/lib/misc/CM/x86-unix/
 smlnj/src/eXene/lib/misc/CM/x86-unix/exene-version.sml.bin
 smlnj/src/eXene/lib/misc/CM/x86-unix/mlx-err.sml.bin
 smlnj/src/eXene/lib/misc/CM/x86-unix/xdebug.sml.bin
 smlnj/src/eXene/lib/misc/CM/x86-unix/xprint.sml.bin
 smlnj/src/eXene/lib/misc/CM/x86-unix/xvalid.sml.bin
+smlnj/src/eXene/lib/protocol/
+smlnj/src/eXene/lib/protocol/CM/
+smlnj/src/eXene/lib/protocol/CM/x86-unix/
 smlnj/src/eXene/lib/protocol/CM/x86-unix/keybut.sml.bin
 smlnj/src/eXene/lib/protocol/CM/x86-unix/xcvtfns.sml.bin
 smlnj/src/eXene/lib/protocol/CM/x86-unix/xdisplay.sml.bin
@@ -199,6 +260,9 @@ smlnj/src/eXene/lib/protocol/CM/x86-unix/xshutdown.sml.bin
 smlnj/src/eXene/lib/protocol/CM/x86-unix/xtime.sml.bin
 smlnj/src/eXene/lib/protocol/CM/x86-unix/xwin.sml.bin
 smlnj/src/eXene/lib/sources.cm
+smlnj/src/eXene/lib/user/
+smlnj/src/eXene/lib/user/CM/
+smlnj/src/eXene/lib/user/CM/x86-unix/
 smlnj/src/eXene/lib/user/CM/x86-unix/abstract.sml.bin
 smlnj/src/eXene/lib/user/CM/x86-unix/build.sml.bin
 smlnj/src/eXene/lib/user/CM/x86-unix/drawing-sig.sml.bin
@@ -209,7 +273,13 @@ smlnj/src/eXene/lib/user/CM/x86-unix/geometry-sig.sml.bin
 smlnj/src/eXene/lib/user/CM/x86-unix/iccc-sig.sml.bin
 smlnj/src/eXene/lib/user/CM/x86-unix/interact-sig.sml.bin
 smlnj/src/eXene/lib/user/CM/x86-unix/std-cursor-sig.sml.bin
+smlnj/src/eXene/lib/util/
+smlnj/src/eXene/lib/util/CM/
+smlnj/src/eXene/lib/util/CM/x86-unix/
 smlnj/src/eXene/lib/util/CM/x86-unix/hash-xid.sml.bin
+smlnj/src/eXene/lib/window/
+smlnj/src/eXene/lib/window/CM/
+smlnj/src/eXene/lib/window/CM/x86-unix/
 smlnj/src/eXene/lib/window/CM/x86-unix/color-server-sig.sml.bin
 smlnj/src/eXene/lib/window/CM/x86-unix/color-server.sml.bin
 smlnj/src/eXene/lib/window/CM/x86-unix/cursor.sml.bin
@@ -240,19 +310,31 @@ smlnj/src/eXene/lib/window/CM/x86-unix/window-sig.sml.bin
 smlnj/src/eXene/lib/window/CM/x86-unix/window.sml.bin
 smlnj/src/eXene/lib/window/CM/x86-unix/winreg.sml.bin
 smlnj/src/eXene/sources.cm
+smlnj/src/eXene/styles/
+smlnj/src/eXene/styles/CM/
+smlnj/src/eXene/styles/CM/x86-unix/
 smlnj/src/eXene/styles/CM/x86-unix/parse-resource-specs.sml.bin
 smlnj/src/eXene/styles/CM/x86-unix/quark-sig.sml.bin
 smlnj/src/eXene/styles/CM/x86-unix/quark.sml.bin
 smlnj/src/eXene/styles/CM/x86-unix/sources.cm.stable
 smlnj/src/eXene/styles/CM/x86-unix/styles-func.sml.bin
 smlnj/src/eXene/styles/sources.cm
+smlnj/src/eXene/widgets/
+smlnj/src/eXene/widgets/CM/
+smlnj/src/eXene/widgets/CM/x86-unix/
 smlnj/src/eXene/widgets/CM/x86-unix/sources.cm.stable
+smlnj/src/eXene/widgets/basics/
+smlnj/src/eXene/widgets/basics/CM/
+smlnj/src/eXene/widgets/basics/CM/x86-unix/
 smlnj/src/eXene/widgets/basics/CM/x86-unix/root.sml.bin
 smlnj/src/eXene/widgets/basics/CM/x86-unix/router.sml.bin
 smlnj/src/eXene/widgets/basics/CM/x86-unix/shell.sml.bin
 smlnj/src/eXene/widgets/basics/CM/x86-unix/widget-attrs.sml.bin
 smlnj/src/eXene/widgets/basics/CM/x86-unix/widget-base.sml.bin
 smlnj/src/eXene/widgets/basics/CM/x86-unix/widget.sml.bin
+smlnj/src/eXene/widgets/composite/
+smlnj/src/eXene/widgets/composite/CM/
+smlnj/src/eXene/widgets/composite/CM/x86-unix/
 smlnj/src/eXene/widgets/composite/CM/x86-unix/background.sml.bin
 smlnj/src/eXene/widgets/composite/CM/x86-unix/box-layout.sml.bin
 smlnj/src/eXene/widgets/composite/CM/x86-unix/box.sml.bin
@@ -269,6 +351,9 @@ smlnj/src/eXene/widgets/composite/CM/x86-unix/simple-menu.sml.bin
 smlnj/src/eXene/widgets/composite/CM/x86-unix/viewport-sig.sml.bin
 smlnj/src/eXene/widgets/composite/CM/x86-unix/viewport.sml.bin
 smlnj/src/eXene/widgets/composite/CM/x86-unix/widget-set.sml.bin
+smlnj/src/eXene/widgets/simple/
+smlnj/src/eXene/widgets/simple/CM/
+smlnj/src/eXene/widgets/simple/CM/x86-unix/
 smlnj/src/eXene/widgets/simple/CM/x86-unix/arrow-view.sml.bin
 smlnj/src/eXene/widgets/simple/CM/x86-unix/button-base.sml.bin
 smlnj/src/eXene/widgets/simple/CM/x86-unix/button-ctrl.sml.bin
@@ -300,6 +385,9 @@ smlnj/src/eXene/widgets/simple/CM/x86-unix/toggle-ctrl.sml.bin
 smlnj/src/eXene/widgets/simple/CM/x86-unix/toggle-type.sml.bin
 smlnj/src/eXene/widgets/simple/CM/x86-unix/toggle.sml.bin
 smlnj/src/eXene/widgets/sources.cm
+smlnj/src/eXene/widgets/text/
+smlnj/src/eXene/widgets/text/CM/
+smlnj/src/eXene/widgets/text/CM/x86-unix/
 smlnj/src/eXene/widgets/text/CM/x86-unix/extstr.sml.bin
 smlnj/src/eXene/widgets/text/CM/x86-unix/field-edit.sml.bin
 smlnj/src/eXene/widgets/text/CM/x86-unix/str-edit.sml.bin
@@ -308,6 +396,9 @@ smlnj/src/eXene/widgets/text/CM/x86-unix/text-widget.sml.bin
 smlnj/src/eXene/widgets/text/CM/x86-unix/txtwin.sml.bin
 smlnj/src/eXene/widgets/text/CM/x86-unix/vtty-sig.sml.bin
 smlnj/src/eXene/widgets/text/CM/x86-unix/vtty.sml.bin
+smlnj/src/eXene/widgets/util/
+smlnj/src/eXene/widgets/util/CM/
+smlnj/src/eXene/widgets/util/CM/x86-unix/
 smlnj/src/eXene/widgets/util/CM/x86-unix/3d-sig.sml.bin
 smlnj/src/eXene/widgets/util/CM/x86-unix/3d.sml.bin
 smlnj/src/eXene/widgets/util/CM/x86-unix/attrs-sig.sml.bin
@@ -318,6 +409,9 @@ smlnj/src/eXene/widgets/util/CM/x86-unix/run-exene.sml.bin
 smlnj/src/eXene/widgets/util/CM/x86-unix/shade-server.sml.bin
 smlnj/src/eXene/widgets/util/CM/x86-unix/styles.sml.bin
 smlnj/src/eXene/widgets/util/CM/x86-unix/tile-server.sml.bin
+smlnj/src/ml-burg/
+smlnj/src/ml-burg/CM/
+smlnj/src/ml-burg/CM/x86-unix/
 smlnj/src/ml-burg/CM/x86-unix/burg-ast.sml.bin
 smlnj/src/ml-burg/CM/x86-unix/burg-gram.sig.bin
 smlnj/src/ml-burg/CM/x86-unix/burg-gram.sml.bin
@@ -326,6 +420,10 @@ smlnj/src/ml-burg/CM/x86-unix/burg.sml.bin
 smlnj/src/ml-burg/CM/x86-unix/errormsg.sml.bin
 smlnj/src/ml-burg/CM/x86-unix/main.sml.bin
 smlnj/src/ml-burg/CM/x86-unix/parse.sml.bin
+smlnj/src/ml-yacc/
+smlnj/src/ml-yacc/lib/
+smlnj/src/ml-yacc/lib/CM/
+smlnj/src/ml-yacc/lib/CM/x86-unix/
 smlnj/src/ml-yacc/lib/CM/x86-unix/base.sig.bin
 smlnj/src/ml-yacc/lib/CM/x86-unix/join.sml.bin
 smlnj/src/ml-yacc/lib/CM/x86-unix/lrtable.sml.bin
@@ -333,6 +431,10 @@ smlnj/src/ml-yacc/lib/CM/x86-unix/parser2.sml.bin
 smlnj/src/ml-yacc/lib/CM/x86-unix/sources.cm.stable
 smlnj/src/ml-yacc/lib/CM/x86-unix/stream.sml.bin
 smlnj/src/ml-yacc/lib/sources.cm
+smlnj/src/smlnj-lib/
+smlnj/src/smlnj-lib/HTML/
+smlnj/src/smlnj-lib/HTML/CM/
+smlnj/src/smlnj-lib/HTML/CM/x86-unix/
 smlnj/src/smlnj-lib/HTML/CM/x86-unix/check-html-fn.sml.bin
 smlnj/src/smlnj-lib/HTML/CM/x86-unix/html-attr-vals.sml.bin
 smlnj/src/smlnj-lib/HTML/CM/x86-unix/html-attrs-fn.sml.bin
@@ -350,12 +452,21 @@ smlnj/src/smlnj-lib/HTML/CM/x86-unix/html.sml.bin
 smlnj/src/smlnj-lib/HTML/CM/x86-unix/make-html.sml.bin
 smlnj/src/smlnj-lib/HTML/CM/x86-unix/pr-html.sml.bin
 smlnj/src/smlnj-lib/HTML/html-lib.cm
+smlnj/src/smlnj-lib/INet/
+smlnj/src/smlnj-lib/INet/CM/
+smlnj/src/smlnj-lib/INet/CM/x86-unix/
 smlnj/src/smlnj-lib/INet/CM/x86-unix/inet-lib.cm.stable
 smlnj/src/smlnj-lib/INet/CM/x86-unix/sock-util-sig.sml.bin
 smlnj/src/smlnj-lib/INet/CM/x86-unix/sock-util.sml.bin
 smlnj/src/smlnj-lib/INet/CM/x86-unix/unix-sock-util.sml.bin
 smlnj/src/smlnj-lib/INet/inet-lib.cm
+smlnj/src/smlnj-lib/PP/
+smlnj/src/smlnj-lib/PP/CM/
+smlnj/src/smlnj-lib/PP/CM/x86-unix/
 smlnj/src/smlnj-lib/PP/CM/x86-unix/pp-lib.cm.stable
+smlnj/src/smlnj-lib/PP/devices/
+smlnj/src/smlnj-lib/PP/devices/CM/
+smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/
 smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/html-dev.sml.bin
 smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/simple-textio-dev.sml.bin
 smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/sources.cm.stable
@@ -363,6 +474,9 @@ smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/string-token.sml.bin
 smlnj/src/smlnj-lib/PP/devices/CM/x86-unix/textio-pp.sml.bin
 smlnj/src/smlnj-lib/PP/devices/sources.cm
 smlnj/src/smlnj-lib/PP/pp-lib.cm
+smlnj/src/smlnj-lib/PP/src/
+smlnj/src/smlnj-lib/PP/src/CM/
+smlnj/src/smlnj-lib/PP/src/CM/x86-unix/
 smlnj/src/smlnj-lib/PP/src/CM/x86-unix/pp-debug-fn.sml.bin
 smlnj/src/smlnj-lib/PP/src/CM/x86-unix/pp-desc.sml.bin
 smlnj/src/smlnj-lib/PP/src/CM/x86-unix/pp-device-sig.sml.bin
@@ -371,29 +485,50 @@ smlnj/src/smlnj-lib/PP/src/CM/x86-unix/pp-stream-sig.sml.bin
 smlnj/src/smlnj-lib/PP/src/CM/x86-unix/pp-token-sig.sml.bin
 smlnj/src/smlnj-lib/PP/src/CM/x86-unix/sources.cm.stable
 smlnj/src/smlnj-lib/PP/src/sources.cm
+smlnj/src/smlnj-lib/Reactive/
+smlnj/src/smlnj-lib/Reactive/CM/
+smlnj/src/smlnj-lib/Reactive/CM/x86-unix/
 smlnj/src/smlnj-lib/Reactive/CM/x86-unix/instruction.sml.bin
 smlnj/src/smlnj-lib/Reactive/CM/x86-unix/machine.sml.bin
 smlnj/src/smlnj-lib/Reactive/CM/x86-unix/reactive-lib.cm.stable
 smlnj/src/smlnj-lib/Reactive/CM/x86-unix/reactive-sig.sml.bin
 smlnj/src/smlnj-lib/Reactive/CM/x86-unix/reactive.sml.bin
 smlnj/src/smlnj-lib/Reactive/reactive-lib.cm
+smlnj/src/smlnj-lib/RegExp/
+smlnj/src/smlnj-lib/RegExp/BackEnd/
+smlnj/src/smlnj-lib/RegExp/BackEnd/CM/
+smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix/
 smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix/bt-engine.sml.bin
 smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix/dfa-engine.sml.bin
 smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix/engine-sig.sml.bin
 smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix/fsm.sml.bin
+smlnj/src/smlnj-lib/RegExp/CM/
+smlnj/src/smlnj-lib/RegExp/CM/x86-unix/
 smlnj/src/smlnj-lib/RegExp/CM/x86-unix/regexp-lib.cm.stable
+smlnj/src/smlnj-lib/RegExp/FrontEnd/
+smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/
+smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix/
 smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix/awk-syntax.sml.bin
 smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix/parser-sig.sml.bin
 smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix/syntax-sig.sml.bin
 smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix/syntax.sml.bin
+smlnj/src/smlnj-lib/RegExp/Glue/
+smlnj/src/smlnj-lib/RegExp/Glue/CM/
+smlnj/src/smlnj-lib/RegExp/Glue/CM/x86-unix/
 smlnj/src/smlnj-lib/RegExp/Glue/CM/x86-unix/match-tree.sml.bin
 smlnj/src/smlnj-lib/RegExp/Glue/CM/x86-unix/regexp-fn.sml.bin
 smlnj/src/smlnj-lib/RegExp/Glue/CM/x86-unix/regexp-sig.sml.bin
 smlnj/src/smlnj-lib/RegExp/regexp-lib.cm
+smlnj/src/smlnj-lib/Unix/
+smlnj/src/smlnj-lib/Unix/CM/
+smlnj/src/smlnj-lib/Unix/CM/x86-unix/
 smlnj/src/smlnj-lib/Unix/CM/x86-unix/unix-env-sig.sml.bin
 smlnj/src/smlnj-lib/Unix/CM/x86-unix/unix-env.sml.bin
 smlnj/src/smlnj-lib/Unix/CM/x86-unix/unix-lib.cm.stable
 smlnj/src/smlnj-lib/Unix/unix-lib.cm
+smlnj/src/smlnj-lib/Util/
+smlnj/src/smlnj-lib/Util/CM/
+smlnj/src/smlnj-lib/Util/CM/x86-unix/
 smlnj/src/smlnj-lib/Util/CM/x86-unix/array-qsort-fn.sml.bin
 smlnj/src/smlnj-lib/Util/CM/x86-unix/array-qsort.sml.bin
 smlnj/src/smlnj-lib/Util/CM/x86-unix/array-sort-sig.sml.bin
@@ -493,138 +628,3 @@ smlnj/src/smlnj-lib/Util/CM/x86-unix/word-hash-table.sml.bin
 smlnj/src/smlnj-lib/Util/CM/x86-unix/word-redblack-map.sml.bin
 smlnj/src/smlnj-lib/Util/CM/x86-unix/word-redblack-set.sml.bin
 smlnj/src/smlnj-lib/Util/smlnj-lib.cm
-@dirrm smlnj/src/smlnj-lib/Util/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/Util/CM
-@dirrm smlnj/src/smlnj-lib/Util
-@dirrm smlnj/src/smlnj-lib/Unix/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/Unix/CM
-@dirrm smlnj/src/smlnj-lib/Unix
-@dirrm smlnj/src/smlnj-lib/RegExp/Glue/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/RegExp/Glue/CM
-@dirrm smlnj/src/smlnj-lib/RegExp/Glue
-@dirrm smlnj/src/smlnj-lib/RegExp/FrontEnd/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/RegExp/FrontEnd/CM
-@dirrm smlnj/src/smlnj-lib/RegExp/FrontEnd
-@dirrm smlnj/src/smlnj-lib/RegExp/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/RegExp/CM
-@dirrm smlnj/src/smlnj-lib/RegExp/BackEnd/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/RegExp/BackEnd/CM
-@dirrm smlnj/src/smlnj-lib/RegExp/BackEnd
-@dirrm smlnj/src/smlnj-lib/RegExp
-@dirrm smlnj/src/smlnj-lib/Reactive/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/Reactive/CM
-@dirrm smlnj/src/smlnj-lib/Reactive
-@dirrm smlnj/src/smlnj-lib/PP/src/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/PP/src/CM
-@dirrm smlnj/src/smlnj-lib/PP/src
-@dirrm smlnj/src/smlnj-lib/PP/devices/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/PP/devices/CM
-@dirrm smlnj/src/smlnj-lib/PP/devices
-@dirrm smlnj/src/smlnj-lib/PP/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/PP/CM
-@dirrm smlnj/src/smlnj-lib/PP
-@dirrm smlnj/src/smlnj-lib/INet/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/INet/CM
-@dirrm smlnj/src/smlnj-lib/INet
-@dirrm smlnj/src/smlnj-lib/HTML/CM/x86-unix
-@dirrm smlnj/src/smlnj-lib/HTML/CM
-@dirrm smlnj/src/smlnj-lib/HTML
-@dirrm smlnj/src/smlnj-lib
-@dirrm smlnj/src/ml-yacc/lib/CM/x86-unix
-@dirrm smlnj/src/ml-yacc/lib/CM
-@dirrm smlnj/src/ml-yacc/lib
-@dirrm smlnj/src/ml-yacc
-@dirrm smlnj/src/ml-burg/CM/x86-unix
-@dirrm smlnj/src/ml-burg/CM
-@dirrm smlnj/src/ml-burg
-@dirrm smlnj/src/eXene/widgets/util/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/util/CM
-@dirrm smlnj/src/eXene/widgets/util
-@dirrm smlnj/src/eXene/widgets/text/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/text/CM
-@dirrm smlnj/src/eXene/widgets/text
-@dirrm smlnj/src/eXene/widgets/simple/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/simple/CM
-@dirrm smlnj/src/eXene/widgets/simple
-@dirrm smlnj/src/eXene/widgets/composite/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/composite/CM
-@dirrm smlnj/src/eXene/widgets/composite
-@dirrm smlnj/src/eXene/widgets/basics/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/basics/CM
-@dirrm smlnj/src/eXene/widgets/basics
-@dirrm smlnj/src/eXene/widgets/CM/x86-unix
-@dirrm smlnj/src/eXene/widgets/CM
-@dirrm smlnj/src/eXene/widgets
-@dirrm smlnj/src/eXene/styles/CM/x86-unix
-@dirrm smlnj/src/eXene/styles/CM
-@dirrm smlnj/src/eXene/styles
-@dirrm smlnj/src/eXene/lib/window/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/window/CM
-@dirrm smlnj/src/eXene/lib/window
-@dirrm smlnj/src/eXene/lib/util/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/util/CM
-@dirrm smlnj/src/eXene/lib/util
-@dirrm smlnj/src/eXene/lib/user/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/user/CM
-@dirrm smlnj/src/eXene/lib/user
-@dirrm smlnj/src/eXene/lib/protocol/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/protocol/CM
-@dirrm smlnj/src/eXene/lib/protocol
-@dirrm smlnj/src/eXene/lib/misc/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/misc/CM
-@dirrm smlnj/src/eXene/lib/misc
-@dirrm smlnj/src/eXene/lib/iccc/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/iccc/CM
-@dirrm smlnj/src/eXene/lib/iccc
-@dirrm smlnj/src/eXene/lib/basics/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/basics/CM
-@dirrm smlnj/src/eXene/lib/basics
-@dirrm smlnj/src/eXene/lib/CM/x86-unix
-@dirrm smlnj/src/eXene/lib/CM
-@dirrm smlnj/src/eXene/lib
-@dirrm smlnj/src/eXene/graph-util/CM/x86-unix
-@dirrm smlnj/src/eXene/graph-util/CM
-@dirrm smlnj/src/eXene/graph-util
-@dirrm smlnj/src/eXene/CM/x86-unix
-@dirrm smlnj/src/eXene/CM
-@dirrm smlnj/src/eXene
-@dirrm smlnj/src/cml/src/util/CM/x86-unix
-@dirrm smlnj/src/cml/src/util/CM
-@dirrm smlnj/src/cml/src/util
-@dirrm smlnj/src/cml/src/glue/CM/x86-unix
-@dirrm smlnj/src/cml/src/glue/CM
-@dirrm smlnj/src/cml/src/glue
-@dirrm smlnj/src/cml/src/core-cml/CM/x86-unix
-@dirrm smlnj/src/cml/src/core-cml/CM
-@dirrm smlnj/src/cml/src/core-cml
-@dirrm smlnj/src/cml/src/Unix/CM/x86-unix
-@dirrm smlnj/src/cml/src/Unix/CM
-@dirrm smlnj/src/cml/src/Unix
-@dirrm smlnj/src/cml/src/Sockets/CM/x86-unix
-@dirrm smlnj/src/cml/src/Sockets/CM
-@dirrm smlnj/src/cml/src/Sockets
-@dirrm smlnj/src/cml/src/OS/CM/x86-unix
-@dirrm smlnj/src/cml/src/OS/CM
-@dirrm smlnj/src/cml/src/OS
-@dirrm smlnj/src/cml/src/IO/CM/x86-unix
-@dirrm smlnj/src/cml/src/IO/CM
-@dirrm smlnj/src/cml/src/IO
-@dirrm smlnj/src/cml/src/CM/x86-unix
-@dirrm smlnj/src/cml/src/CM
-@dirrm smlnj/src/cml/src
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-Util/CM/x86-unix
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-Util/CM
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-Util
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-INet/CM/x86-unix
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-INet/CM
-@dirrm smlnj/src/cml/cml-lib/SMLNJ-INet
-@dirrm smlnj/src/cml/cml-lib/CM/x86-unix
-@dirrm smlnj/src/cml/cml-lib/CM
-@dirrm smlnj/src/cml/cml-lib
-@dirrm smlnj/src/cml
-@dirrm smlnj/src
-@dirrm smlnj/lib
-@dirrm smlnj/bin/.run
-@dirrm smlnj/bin/.heap
-@dirrm smlnj/bin
-@dirrm smlnj

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/22 01:34:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:08 espie Exp $
 @option no-default-conflict
+share/doc/icon/
 share/doc/icon/implementation-of-icon${FLAVOR_EXT}.pdf
-@dirrm share/doc/icon

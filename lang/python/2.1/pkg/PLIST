@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/02/03 07:39:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:16:08 espie Exp $
 @option no-default-conflict
 @pkgcfl python-2.1*
-%%tkinter%%
-bin/python2.1
 bin/pydoc2.1
+bin/python2.1
+include/python2.1/
 include/python2.1/Python.h
 include/python2.1/abstract.h
 include/python2.1/bitset.h
@@ -66,6 +66,7 @@ include/python2.1/traceback.h
 include/python2.1/tupleobject.h
 include/python2.1/ucnhash.h
 include/python2.1/unicodeobject.h
+lib/python2.1/
 lib/python2.1/BaseHTTPServer.py
 lib/python2.1/BaseHTTPServer.pyc
 lib/python2.1/BaseHTTPServer.pyo
@@ -172,6 +173,7 @@ lib/python2.1/commands.pyo
 lib/python2.1/compileall.py
 lib/python2.1/compileall.pyc
 lib/python2.1/compileall.pyo
+lib/python2.1/config/
 lib/python2.1/config/Makefile
 lib/python2.1/config/Makefile.pre.in
 lib/python2.1/config/Setup
@@ -189,6 +191,7 @@ lib/python2.1/copy.pyo
 lib/python2.1/copy_reg.py
 lib/python2.1/copy_reg.pyc
 lib/python2.1/copy_reg.pyo
+lib/python2.1/curses/
 lib/python2.1/curses/__init__.py
 lib/python2.1/curses/__init__.pyc
 lib/python2.1/curses/__init__.pyo
@@ -219,6 +222,7 @@ lib/python2.1/dircache.pyo
 lib/python2.1/dis.py
 lib/python2.1/dis.pyc
 lib/python2.1/dis.pyo
+lib/python2.1/distutils/
 lib/python2.1/distutils/README
 lib/python2.1/distutils/__init__.py
 lib/python2.1/distutils/__init__.pyc
@@ -235,6 +239,7 @@ lib/python2.1/distutils/ccompiler.pyo
 lib/python2.1/distutils/cmd.py
 lib/python2.1/distutils/cmd.pyc
 lib/python2.1/distutils/cmd.pyo
+lib/python2.1/distutils/command/
 lib/python2.1/distutils/command/__init__.py
 lib/python2.1/distutils/command/__init__.pyc
 lib/python2.1/distutils/command/__init__.pyo
@@ -353,6 +358,7 @@ lib/python2.1/dospath.pyo
 lib/python2.1/dumbdbm.py
 lib/python2.1/dumbdbm.pyc
 lib/python2.1/dumbdbm.pyo
+lib/python2.1/encodings/
 lib/python2.1/encodings/__init__.py
 lib/python2.1/encodings/__init__.pyc
 lib/python2.1/encodings/__init__.pyo
@@ -617,6 +623,7 @@ lib/python2.1/keyword.pyo
 lib/python2.1/knee.py
 lib/python2.1/knee.pyc
 lib/python2.1/knee.pyo
+lib/python2.1/lib-old/
 lib/python2.1/lib-old/Para.py
 lib/python2.1/lib-old/Para.pyc
 lib/python2.1/lib-old/Para.pyo
@@ -677,7 +684,6 @@ lib/python2.1/lib-old/whatsound.pyo
 lib/python2.1/lib-old/zmod.py
 lib/python2.1/lib-old/zmod.pyc
 lib/python2.1/lib-old/zmod.pyo
-%%SHARED%%
 lib/python2.1/linecache.py
 lib/python2.1/linecache.pyc
 lib/python2.1/linecache.pyo
@@ -739,6 +745,7 @@ lib/python2.1/pickle.pyo
 lib/python2.1/pipes.py
 lib/python2.1/pipes.pyc
 lib/python2.1/pipes.pyo
+lib/python2.1/plat-openbsd3/
 lib/python2.1/plat-openbsd3/FCNTL.py
 lib/python2.1/plat-openbsd3/FCNTL.pyc
 lib/python2.1/plat-openbsd3/FCNTL.pyo
@@ -837,6 +844,7 @@ lib/python2.1/shlex.pyo
 lib/python2.1/shutil.py
 lib/python2.1/shutil.pyc
 lib/python2.1/shutil.pyo
+lib/python2.1/site-packages/
 lib/python2.1/site-packages/README
 lib/python2.1/site.py
 lib/python2.1/site.pyc
@@ -967,9 +975,11 @@ lib/python2.1/whrandom.pyo
 lib/python2.1/xdrlib.py
 lib/python2.1/xdrlib.pyc
 lib/python2.1/xdrlib.pyo
+lib/python2.1/xml/
 lib/python2.1/xml/__init__.py
 lib/python2.1/xml/__init__.pyc
 lib/python2.1/xml/__init__.pyo
+lib/python2.1/xml/dom/
 lib/python2.1/xml/dom/__init__.py
 lib/python2.1/xml/dom/__init__.pyc
 lib/python2.1/xml/dom/__init__.pyo
@@ -982,12 +992,14 @@ lib/python2.1/xml/dom/minidom.pyo
 lib/python2.1/xml/dom/pulldom.py
 lib/python2.1/xml/dom/pulldom.pyc
 lib/python2.1/xml/dom/pulldom.pyo
+lib/python2.1/xml/parsers/
 lib/python2.1/xml/parsers/__init__.py
 lib/python2.1/xml/parsers/__init__.pyc
 lib/python2.1/xml/parsers/__init__.pyo
 lib/python2.1/xml/parsers/expat.py
 lib/python2.1/xml/parsers/expat.pyc
 lib/python2.1/xml/parsers/expat.pyo
+lib/python2.1/xml/sax/
 lib/python2.1/xml/sax/__init__.py
 lib/python2.1/xml/sax/__init__.pyc
 lib/python2.1/xml/sax/__init__.pyo
@@ -1012,20 +1024,8 @@ lib/python2.1/xmllib.pyo
 lib/python2.1/zipfile.py
 lib/python2.1/zipfile.pyc
 lib/python2.1/zipfile.pyo
-man/man1/python2.1.1
+@man man/man1/python2.1.1
+share/doc/python2.1/
 share/doc/python2.1/CHANGES.OpenBSD
-@dirrm lib/python2.1/xml/sax
-@dirrm lib/python2.1/xml/parsers
-@dirrm lib/python2.1/xml/dom
-@dirrm lib/python2.1/xml
-@dirrm lib/python2.1/site-packages
-@dirrm lib/python2.1/plat-openbsd3
-@dirrm lib/python2.1/lib-old
-@dirrm lib/python2.1/encodings
-@dirrm lib/python2.1/distutils/command
-@dirrm lib/python2.1/distutils
-@dirrm lib/python2.1/curses
-@dirrm lib/python2.1/config
-@dirrm lib/python2.1
-@dirrm include/python2.1
-@dirrm share/doc/python2.1
+%%tkinter%%
+%%SHARED%%
