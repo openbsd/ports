@@ -3,7 +3,7 @@
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 1998/07/25 21:21:20 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/08/05 22:33:35 marc Exp $
 #
 
 DISTNAME=	lsof_4.34_W
@@ -25,6 +25,7 @@ NO_PACKAGE=	compile from source to set proper options
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
 .if ( ${MACHINE_ARCH} == "sparc" )
+IS_INTERACTIVE=	yes
 .if defined( SUN4 )
 CDEF=-DSUN4
 .endif
