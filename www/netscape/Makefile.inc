@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2000/04/09 15:50:14 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2000/04/16 21:06:26 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -6,7 +6,6 @@
 CATEGORIES=     www
 NEED_VERSION=	1.258
 DIST_SUBDIR=	netscape
-
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
@@ -39,11 +38,11 @@ DISTFILES=	${DISTNAME}.tar.gz \
 
 MASTER_SITE_SUBDIR=communicator/english/${PROGRAM_V}/unix/unsupported/${LOCATION}
 
-OBJMACHINE=	"yes"
-NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-NO_CONFIGURE=	"No configure scripts"
+FAKE=	Yes
+
+OBJMACHINE=	Yes
+NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
-FAKE=		Yes
 
 MAINTAINER=	brad@openbsd.org
 
@@ -67,7 +66,8 @@ pre-fetch:
 .endif
 .endif
 
-MAKE_FLAGS=YACC=yacc
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -I../common" \
+		LDFLAGS="" YACC="yacc"
 
 do-build:
 	@cd ${WRKDIR}/${FORTIFY}/src/common && \
