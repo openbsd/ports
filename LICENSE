@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.13 1999/09/16 08:31:04 turan Exp $
+$OpenBSD: LICENSE,v 1.14 1999/09/16 09:05:01 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -407,10 +407,10 @@ N	net/nfr				-none-				LIC
 Y	net/nmap			nmap-2.3BETA5.tar.gz		GPL
 Y	net/ntop			ntop-1.1-src.tar.gz		GPL
 Y	net/proftpd			proftpd-1.2.0pre3.tar.gz	GPL
--	net/queso			queso-980922.tar.gz
--	net/rsync			rsync-2.3.0.tar.gz
+Y	net/queso			queso-980922.tar.gz		GPL
+Y	net/rsync			rsync-2.3.1.tar.gz		GPL
 Y	net/samba			samba-2.0.3.tar.gz		GPL
--	net/sharity-light		Sharity-Light.1.2.tar.gz
+Y	net/sharity-light		Sharity-Light.1.2.tar.gz	GPL
 Y	net/slirp			slirp-1.0c.tar.gz		BSD
 Y	net/sniffit			sniffit.0.3.5.tar.gz		COPY
 Y	net/tcpshow			tcpshow.1			COPY
@@ -468,7 +468,7 @@ N	security/cops			cops_104.tar.Z			NOFEE
 N	security/crack			crack5.0.tar.gz			CRYPTO
 Y	security/libident		libident-0.22.tar.gz		PD
 Y	security/nbaudit		nat10.tar.gz			GPL
--	security/nessus			nessus-990201.tgz
+Y	security/nessus			nessus-990201.tgz		GPL
 N	security/pgp			pgp263is.tar.gz			CRYPTO
 N	security/pgp			pgp263i.patch			CRYPTO
 N	security/pgp			rsaref2.tar.gz			CRYPTO
@@ -479,7 +479,7 @@ N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
 N	security/socks5			socks5-v1.0r9.tar.gz		LIC
 N	security/ssh			ssh-1.2.26.tar.gz		CRYPTO
 N	security/ssh			rsaref2.tar.gz			CRYPTO
--	security/stel			stel.tar.gz
+N	security/stel			stel.tar.gz			CRYPTO
 -	security/strobe			strobe-1.05.tar.gz
 N	security/swatch			swatch-2.2.tar.gz		NOFEE
 Y	shells/bash			bash-1.14.7.tar.gz		GPL
@@ -534,8 +534,8 @@ Y	textproc/sp			sp-1.2.1.tar.gz			BSD
 N	textproc/spiff			spiff-1.0.tar.gz		NOFEE
 Y	textproc/texi2html		texi2html.shar.Z		GPL
 Y	textproc/wdiff			wdiff-0.5.tar.gz		GPL
--	textproc/xpdf			xpdf-0.80.tgz
--	textproc/xpdf			xpdf-0.80-decrypt.patch
+Y	textproc/xpdf			xpdf-0.80.tgz			GPL
+N	textproc/xpdf			xpdf-0.80-decrypt.patch		CRYPTO
 -	www/amaya			amaya/amaya-src-1.4a.tar.gz
 -	www/amaya-english-dict		amaya/English.tar.gz
 -	www/amaya-french-dict		amaya/French.tar.gz
