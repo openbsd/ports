@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/10 04:52:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/16 11:08:46 kevlo Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -17,9 +17,6 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-#SEPARATE_BUILD=		concurrent
-
-USE_LIBTOOL=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/saslauthd/config
 
 CONFIGURE_STYLE=	gnu
@@ -28,14 +25,27 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
 			--with-staticsasl \
-			--with-dblib=ndbm \
-			--without-bdb-libdir \
-			--without-bdb-incdir \
+			--with-dblib=berkeley \
+			--with-bdb-libdir="${LOCALBASE}/lib/db4" \
+			--with-bdb-incdir="${LOCALBASE}/include/db4" \
 			--enable-login \
 			--enable-gssapi="/usr" \
 			--disable-sample
 CFLAGS+=		-I/usr/include/kerberosV
 
+FLAVORS=	db4
+FLAVOR?=
+
+.if ${FLAVOR:L} == "db4"
+CONFIGURE_ARGS+=	--with-dblib=berkeley \
+			--with-bdb-libdir="${LOCALBASE}/lib/db4" \
+			--with-bdb-incdir="${LOCALBASE}/include/db4"
+LIB_DEPENDS=		lib/db4/db.4::databases/db/v4
+.else
+CONFIGURE_ARGS+=	--with-dblib=ndbm \
+			--without-bdb-libdir \
+			--without-bdb-incdir
+.endif
 
 post-build:
 	(cd ${WRKBUILD}/saslauthd; \
@@ -45,7 +55,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/sasl2
-	${INSTALL_DATA} ${WRKBUILD}/lib/.libs/libsasl2.a ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
 
 .include <bsd.port.mk>
