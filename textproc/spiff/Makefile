@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/05 01:35:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/07/05 06:22:02 kevlo Exp $
 #
 
-PKGNAME=	spiff-1.0
 DISTNAME=	spiff-1.0
 CATEGORIES=	textproc
+NEED_VERSION=	1.310
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	ian@openbsd.org
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
-
-MAN1=spiff.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spiff ${PREFIX}/bin
