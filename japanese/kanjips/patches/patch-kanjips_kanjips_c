@@ -1,0 +1,40 @@
+$OpenBSD: patch-kanjips_kanjips_c,v 1.1 2000/04/23 17:06:39 espie Exp $
+--- kanjips/kanjips.c.orig	Sun Apr 23 18:59:29 2000
++++ kanjips/kanjips.c	Sun Apr 23 19:05:04 2000
+@@ -18,6 +18,7 @@ unsigned char *zs;	/* for state machine 
+ FILE *infile = stdin,*outfile = stdout;
+ 
+ extern Font *openfont();
++int header_done = 0;
+ 
+ main(argc,argv) char **argv;
+ {
+@@ -39,17 +40,22 @@ main(argc,argv) char **argv;
+ 	}
+ 	zzinit(0);	/* reset the state machine */
+ 	for(line = 0; fgets(linebuf,BUFMAX,infile); line++){
+-		if(line == 1){
+-			outheader();
++		if (line == 0 && strmatch(linebuf, "%!")){
++			fprintf(outfile,"%s",linebuf);
++			continue;
+ 		}
+ 		if(strmatch(linebuf,CDSTR)){
+ 			fprintf(outfile,"%s",linebuf);
+ 			conform(linebuf);
++			continue;
+ 		}
+-		else { /* normal line */
+-			for(zs=linebuf; *zs; zs++){
+-				zztrans(*zs,0); /* process 1 line */
+-			}
++		if (!header_done){
++			outheader();
++			header_done = 1;
++		}
++		/* normal line */
++		for(zs=linebuf; *zs; zs++){
++			zztrans(*zs,0); /* process 1 line */
+ 		}
+ 	}
+ }
