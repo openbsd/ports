@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2001/10/29 03:35:20 jcs Exp $
+# $OpenBSD: Makefile,v 1.90 2001/10/31 18:05:47 lebel Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -94,5 +94,6 @@
      SUBDIR += uvscan
      SUBDIR += uvscan_dat
      SUBDIR += whisker
+     SUBDIR += zebedee
 
 .include <bsd.port.subdir.mk>
