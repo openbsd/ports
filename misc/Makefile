@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/10/24 14:15:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.57 2001/10/31 19:41:11 marc Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += fileutils
      SUBDIR += findutils
      SUBDIR += gacc
+     SUBDIR += garmin-utils
 #    SUBDIR += git
      SUBDIR += gkrellaclock
      SUBDIR += gkrellm-reminder
