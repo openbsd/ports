@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/07 16:22:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/18 11:55:40 naddy Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -6,7 +6,6 @@ VERSION=	4.0
 DISTNAME=	sdk40
 PKGNAME=	palmos-sdk-${VERSION}
 CATEGORIES=	palm devel
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.palmos.com/dev/tools/
 
@@ -22,8 +21,8 @@ FETCH_CMD=	${LOCALBASE}/bin/curl -O -b sdk40_license=I-agree
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		sdk40upd1${EXTRACT_SUFX}
 
-FETCH_DEPENDS=	curl:curl-*:net/curl
-BUILD_DEPENDS=	rpm2cpio:rpm2cpio-*:converters/rpm2cpio
+FETCH_DEPENDS=	:curl-*:net/curl
+BUILD_DEPENDS=	:rpm2cpio-*|rpm-*:converters/rpm2cpio
 
 PALMDEV=	${PREFIX}/palm
 NO_BUILD=	Yes
