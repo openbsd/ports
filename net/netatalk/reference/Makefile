@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/14 14:32:37 naddy Exp $
 
 NOT_FOR_ARCHS=	powerpc		# char is unsigned
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/terminator.rs.itd.umich.edu/unix/netatalk/
 
 HOMEPAGE=	http://www.umich.edu/~rsug/netatalk/
-
-MAINTAINER=	Ian McWilliam <i.mcwilliam@uws.edu.au>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
