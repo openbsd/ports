@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2000/08/23 02:36:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2000/08/27 04:01:54 brad Exp $
 bin/gimp
 bin/gimp-config
 bin/gimp-remote
@@ -1336,8 +1336,8 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm share/gimp/1.1/help/C/file
 @dirrm share/gimp/1.1/help/C/filters
 @dirrm share/gimp/1.1/help/C/image/edit
-@dirrm share/gimp/1.1/help/C/image/image/colors
 @dirrm share/gimp/1.1/help/C/image/image/colors/auto
+@dirrm share/gimp/1.1/help/C/image/image/colors
 @dirrm share/gimp/1.1/help/C/image/image/mode
 @dirrm share/gimp/1.1/help/C/image/image/transforms
 @dirrm share/gimp/1.1/help/C/image/image
