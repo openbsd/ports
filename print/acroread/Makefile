@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.17 2002/06/19 14:11:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/06/22 13:45:36 espie Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
@@ -21,7 +21,7 @@ MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	"Adobe are control freaks"
 
 RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
