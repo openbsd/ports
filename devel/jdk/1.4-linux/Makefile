@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/01 05:56:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/09/19 06:09:39 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.4"
-VERSION=	1.4.0_01
+VERSION=	1.4.1
 
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
@@ -30,7 +30,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/j2sdk1.4.0_01
+WRKDIST=	${WRKDIR}/j2sdk1.4.1
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
@@ -38,15 +38,15 @@ do-fetch:
 	   echo " You must fetch the distfile for this port manually" ; \
 	   echo " after agreeing to the license agreement at" ; \
 	   echo "" ; \
-	   echo "     http://java.sun.com/j2se/1.4/download.html" ; \
+	   echo "     http://java.sun.com/j2se/1.4.1/download.html" ; \
 	   echo "" ; \
-	   echo " Choose the 'Linux GNUZIP Tar shell script' option and place" ; \
+	   echo " Choose the 'Linux self-extracting file' option and place" ; \
 	   echo " ${DISTFILES} into ${DISTDIR}." ; \
 	   echo "" ; \
            exit 1 ; \
 	fi
 
-JDK_HOME=	${PREFIX}/jdk1.4.0-linux
+JDK_HOME=	${PREFIX}/jdk1.4.1-linux
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${JDK_HOME}
@@ -55,4 +55,3 @@ do-install:
 	@cp -Rp ${WRKSRC}/* ${JDK_HOME}
 	
 .include <bsd.port.mk>
-
