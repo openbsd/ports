@@ -1,16 +1,14 @@
 Snort is a fairly intelligent sniffer/NIDS, with a very strong rule set.
 
-Snort can perform protocol analysis, content searching/matching and can be 
-used to detect a variety of attacks and probes, such as buffer overflows, 
-stealth port scans, CGI attacks, SMB probes, OS fingerprinting attempts,
-and much more. 
+Snort can perform protocol analysis, content searching/matching and can be used
+to detect a variety of attacks and probes, such as buffer overflows, stealth
+port scans, CGI attacks, SMB probes, OS fingerprinting attempts, and much more. 
 
-Snort uses a flexible rules language to describe traffic that it should 
-collect or pass, as well as a detection engine that utilizes a modular 
-plugin architecture.  Snort has a real-time alerting capability as well, 
-incorporating alerting mechanisms for syslog, a user specified file, a 
-UNIX socket, or WinPopup messages to Windows clients using Samba's 
-smbclient. 
+Snort uses a flexible rules language to describe traffic that it should collect
+or pass, as well as a detection engine that utilizes a modular plugin
+architecture.  Snort has a real-time alerting capability as well, incorporating
+alerting mechanisms for syslog, a user specified file, a UNIX socket, or
+WinPopup messages to Windows clients using Samba's smbclient. 
 
 Available flavors:
 	postgresql - enable postgresql database logging support

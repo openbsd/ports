@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2004/01/02 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2004/04/12 14:56:31 sturm Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
-DISTNAME=	snort-2.0.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	snort-2.1.2
+PKGNAME=	${DISTNAME}
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/
 
-HOMEPAGE=       http://www.snort.org
+HOMEPAGE=       http://www.snort.org/
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_FTP= 	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+
+LIB_DEPENDS=     pcre::devel/pcre
 
 FLAVORS=	postgresql mysql smbalert flexresp
 FLAVOR?=	
@@ -48,6 +50,8 @@ CONFIGURE_ARGS+= --enable-smbalerts
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/etc/snort.conf ${PREFIX}/share/examples/snort
+	${INSTALL_DATA} ${WRKSRC}/etc/threshold.conf ${PREFIX}/share/examples/snort
+	${INSTALL_DATA} ${WRKSRC}/etc/unicode.map ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/etc/sid-msg.map ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
 		 ${PREFIX}/share/examples/snort
