@@ -1,19 +1,19 @@
-$OpenBSD: patch-ltmain.sh,v 1.3 2001/08/18 13:13:31 shell Exp $
---- ltmain.sh.orig	Wed Aug 15 21:03:30 2001
-+++ ltmain.sh	Sat Aug 18 16:20:50 2001
+$OpenBSD: patch-ltmain.sh,v 1.4 2001/09/21 17:31:55 shell Exp $
+--- ltmain.sh.orig	Sat Sep 22 00:01:04 2001
++++ ltmain.sh	Sat Sep 22 00:04:54 2001
 @@ -1031,12 +1031,28 @@
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
  	    ;;
-+          *-*-openbsd*)
++	  *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
 +	    continue
-+            ;;
-+          esac
-+        elif test "$arg" = "-lc_r"; then
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
 +	  case "$host" in
-+	  *-*-openbsd*) 
-+	    # Do not include libc_r directly, use -pthread flag. 
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
 +	    ;;
  	  esac
@@ -22,7 +22,7 @@ $OpenBSD: patch-ltmain.sh,v 1.3 2001/08/18 13:13:31 shell Exp $
  	continue
  	;;
  
-+	-?thread)
++      -?thread)
 +	deplibs="$deplibs $arg"
 +	continue
 +	;;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2001/09/21 17:31:55 shell Exp $
+--- configure.orig	Sat Sep 22 00:59:09 2001
++++ configure	Sat Sep 22 01:00:25 2001
+@@ -6359,7 +6359,7 @@
+ # Check whether --with-libxml-include-prefix or --without-libxml-include-prefix was given.
+ if test "${with_libxml_include_prefix+set}" = set; then
+   withval="$with_libxml_include_prefix"
+-  LIBXML_CFLAGS="-I$withval"
++  LIBXML_CFLAGS_ORIG="-I$withval"
+ 
+ fi
+ 
+@@ -6400,7 +6400,7 @@
+ 	if test "$vers" -ge `echo $LIBXML_REQUIRED_VERSION | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+ 	then
+ 		LIBXML_LIBS="`$XML_CONFIG --libs`"
+-		LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
++		LIBXML_CFLAGS="`$XML_CONFIG --cflags` $LIBXML_CFLAGS_ORIG"
+ 		echo "$ac_t""found" 1>&6
+ 	else
+ 		{ echo "configure: error: You need at least libxml2 $LIBXML_REQUIRED_VERSION for this version of libxslt" 1>&2; exit 1; }
