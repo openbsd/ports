@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2002/12/13 14:54:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.65 2002/12/14 08:21:56 couderc Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -81,7 +81,7 @@ LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON
 
 .if ${FLAVOR:L:Mruby}
 CONFIGURE_ARGS+=--enable-rubyinterp
-MAKE_ENV+=	RUBY="${LOCABASE}/bin/ruby"
+MAKE_ENV+=	RUBY="${LOCALBASE}/bin/ruby"
 LIB_DEPENDS+=	ruby::lang/ruby
 .endif
 
