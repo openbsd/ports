@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/05/18 15:22:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.41 2003/05/18 17:06:05 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -67,7 +67,7 @@ do-install:
 .endfor
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/mozilla ${MOB}/mozilla-config ${MOB}/run-mozilla.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${MOB}/mozilla ${MOB}/run-mozilla.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${MOB}/LICENSE ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/mozilla-bin ${MOZ}
 

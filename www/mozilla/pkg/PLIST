@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/05/18 15:32:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/05/18 17:06:05 wilfried Exp $
 bin/mozilla
-bin/mozilla-config
 bin/run-mozilla.sh
 mozilla/LICENSE
 mozilla/chrome/US.jar
