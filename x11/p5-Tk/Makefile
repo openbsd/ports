@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/06/09 01:36:54 wilfried Exp $
 
 COMMENT=	"Tk 8.0 bindings for Perl"
 COMMENT-demo=	"demonstrate the features of ptk"
@@ -30,5 +30,13 @@ MULTI_PACKAGES=		-demo
 SUBPACKAGE?=
 
 WRKDIST=	${WRKDIR}/Tk${VERSION}
+
+REGRESS_IS_INTERACTIVE=	Yes
+MAKE_ENV=	XAUTHORITY=${HOME}/.Xauthority
+
+pre-regress:
+.ifndef DISPLAY
+	@echo requires access to X; exit 1
+.endif
 
 .include <bsd.port.mk>
