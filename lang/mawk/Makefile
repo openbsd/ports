@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2000/12/31 05:28:35 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:28:01 lebel Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
+
+COMMENT=	"new/posix awk"
 
 DISTNAME=	mawk1.3.3
 PKGNAME=	mawk-1.3.3
 CATEGORIES=	lang
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

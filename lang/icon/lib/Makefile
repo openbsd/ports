@@ -1,12 +1,14 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.12 2001/04/15 17:39:39 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:27:57 lebel Exp $
+
+COMMENT=	"useful and interesting programs for Icon"
 
 VERSION=9.3.3
 DISTNAME=icon-lib-${VERSION}
 DIST_SUBDIR=icon/${VERSION}
 
 CATEGORIES=lang
-NEED_VERSION=	 1.317
+NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 # PD

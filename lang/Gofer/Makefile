@@ -3,13 +3,15 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:27:52 lebel Exp $
 #
+
+COMMENT=	"lazy functional language"
 
 DISTNAME=	gofer230a
 PKGNAME=	gofer-2.30a
 CATEGORIES=	lang
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 

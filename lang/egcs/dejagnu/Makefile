@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/27 07:56:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 01:27:54 lebel Exp $
+
+COMMENT=	"dejagnu snapshot, needed for gcc"
 
 DISTNAME=       dejagnu-19990614
 CATEGORIES=	devel lang/egcs
-NEED_VERSION=	 1.305
+NEED_VERSION=	1.402
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

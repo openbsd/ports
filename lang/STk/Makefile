@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/02 14:54:32 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 01:27:52 lebel Exp $
+
+COMMENT=	"scheme interpreter with Tk interface"
 
 STK_VERSION=		3.1.1
 STK_ARCH=		$(OPSYS)-$(OPSYS_VER)-$(MACHINE)
 DISTNAME=       STk-${STK_VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.319
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
 
 MAINTAINER=	ports@openbsd.org

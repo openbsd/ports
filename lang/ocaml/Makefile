@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:29 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 01:28:01 lebel Exp $
+
+COMMENT=	"ML language based on complete class-based objective system"
 
 DISTNAME=	ocaml-3.00
 CATEGORIES=	lang
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 01:27:53 lebel Exp $
+
+COMMENT=	"Pre-Processor-Pretty-Printer for Objective Caml"
 
 DISTNAME=	camlp4-3.00
 PKGNAME=	camlp4-3.00
 CATEGORIES=	lang
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/Daniel.de_Rauglaudre/Camlp4/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

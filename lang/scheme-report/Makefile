@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/19 10:41:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 01:28:02 lebel Exp $
+
+COMMENT=	"revised^5 report on scheme"
 
 CATEGORIES=	lang
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 
 DISTNAME=	r5rs
 PKGNAME=	${DISTNAME}-19980421

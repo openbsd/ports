@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:27:55 lebel Exp $
 #
+
+COMMENT=	"Ericsson's high-level functional programming language"
 
 DISTNAME=		erlang-47.4.0
 CATEGORIES=     	lang
-NEED_VERSION=		1.305
+NEED_VERSION=		1.402
 FAKE=No
 
 MAINTAINER=		ports@openbsd.org

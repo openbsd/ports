@@ -1,4 +1,6 @@
-#	$OpenBSD: Makefile,v 1.11 2001/01/05 16:36:00 brad Exp $
+#	$OpenBSD: Makefile,v 1.12 2001/05/06 01:27:59 lebel Exp $
+
+COMMENT=	"Java(tm) runtime library, mainly for egcs"
 
 BROKEN=		"sources no longer exist"
 
@@ -11,7 +13,7 @@ BROKEN=		"sources no longer exist"
 #BUILD_DEPENDS+=	autoconf::devel/autoconf
 
 CATEGORIES=	lang
-NEED_VERSION=	 1.305
+NEED_VERSION=	1.402
 FAKE=No
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 

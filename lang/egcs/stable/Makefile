@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2000/10/22 15:42:27 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2001/05/06 01:27:55 lebel Exp $
+
+COMMENT=	"experimental GNU C, C++, f77..., release flavor"
 
 # This is a configuration file for egcs, stable release.
 
@@ -7,7 +9,7 @@
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	 1.328
+NEED_VERSION=	1.402
 FAKE=No
 EXTRACT_SUFX=	.tar.bz2
 

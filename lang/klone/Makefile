@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/30 17:42:18 chris Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 01:27:58 lebel Exp $
+
+COMMENT=	"small, Lisp-like interpreted language"
 
 DISTNAME=	Klone349
 PKGNAME=	klone-2.1
 CATEGORIES=	lang
-NEED_VERSION=	1.319
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://koala.inria.fr/pub/Klone/
 
 MAINTAINER=	ports@openbsd.org

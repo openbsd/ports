@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2001/02/25 06:51:04 obecian Exp $
+# $OpenBSD: Makefile,v 1.34 2001/05/06 01:27:56 lebel Exp $
+
+COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
 DISTNAME=	expect-5.32.1
 CATEGORIES=	lang
-NEED_VERSION=	1.324
+NEED_VERSION=	1.402
 MASTER_SITES=	http://expect.nist.gov/old/
 
 HOMEPAGE=	http://expect.nist.gov/

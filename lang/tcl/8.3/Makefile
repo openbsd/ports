@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/12 12:41:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 01:28:04 lebel Exp $
+
+COMMENT=	"Tool Command Language"
 
 DISTNAME=	tcl8.3.2
 PKGNAME=	tcl-8.3.2
 CATEGORIES=	lang
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_3
 

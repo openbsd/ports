@@ -1,11 +1,13 @@
 #
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:28:02 lebel Exp $
 #
+
+COMMENT=	"MIT Object Tcl"
 
 DISTNAME=	otcl-1.0a5
 CATEGORIES=	lang
-NEED_VERSION=	1.314
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 HOMEPAGE=	ftp://ftp.tns.lcs.mit.edu/pub/otcl/README.html
 

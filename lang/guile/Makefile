@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:21 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 01:27:57 lebel Exp $
+
+COMMENT=	"GNU's Ubiquitous Intelligent Language for Extension"
 
 DISTNAME=	guile-1.4
 CATEGORIES=	lang
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= guile
 

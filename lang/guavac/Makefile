@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/26 15:58:20 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:27:56 lebel Exp $
 #
 
 COMMENT=		"Java compiler and decompiler developed under GPL"
+
 DISTNAME=		guavac-1.2
 CATEGORIES=		lang
-NEED_VERSION=		1.364
+NEED_VERSION=		1.402
 MASTER_SITES=		ftp://sunsite.doc.ic.ac.uk/packages/guavac/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>

@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/22 23:20:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 01:27:59 lebel Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
+
+COMMENT=	"Emacs Lisp-like runtime library"
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		A bug in GCC on powerpc
@@ -8,7 +10,7 @@ BROKEN=		A bug in GCC on powerpc
 VERSION=	0.13.4
 DISTNAME=	librep-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.356
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= librep
 
