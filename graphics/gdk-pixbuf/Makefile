@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/12/19 19:22:58 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2003/12/19 19:48:32 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -24,8 +24,7 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static \
-		 --disable-modules \
+CONFIGURE_ARGS+= --disable-modules \
 		 --disable-mmx \
 		 --disable-gtk-doc \
 		 --with-html-dir="${PREFIX}/share/doc"
