@@ -4,11 +4,11 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.4 1998/08/16 23:36:05 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/08 05:43:35 marc Exp $
 #
 
-DISTNAME=		tinpre-1.4-980730
-PKGNAME=		tin-1.4.980730
+DISTNAME=		tinpre-1.4-980818
+PKGNAME=		tin-1.4.980818
 CATEGORIES=		news
 
 NO_CDROM=		"NOFEE:	Can not sell"

@@ -1,5 +1,5 @@
---- configure.~1~	Thu Jul 23 04:22:48 1998
-+++ configure	Sat Aug 15 16:58:32 1998
+--- configure.~1~	Fri Aug  7 12:28:32 1998
++++ configure	Mon Sep  7 21:51:20 1998
 @@ -3355,9 +3355,9 @@
    echo "$ac_t""no" 1>&6
  
@@ -26,14 +26,14 @@
  				cat > conftest.$ac_ext <<EOF
  #line 3400 "configure"
  #include "confdefs.h"
-@@ -5834,14 +5834,14 @@
+@@ -5919,14 +5919,14 @@
  else
  	found_tcap=no
  	if test $found_ncurses = yes ; then
 -		echo $ac_n "checking for tgoto in -lncurses""... $ac_c" 1>&6
--echo "configure:5839: checking for tgoto in -lncurses" >&5
+-echo "configure:5924: checking for tgoto in -lncurses" >&5
 +		echo $ac_n "checking for tgoto in -lcurses""... $ac_c" 1>&6
-+echo "configure:5839: checking for tgoto in -lcurses" >&5
++echo "configure:5924: checking for tgoto in -lcurses" >&5
  ac_lib_var=`echo ncurses'_'tgoto | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -42,5 +42,5 @@
 -LIBS="-lncurses  $LIBS"
 +LIBS="-lcurses  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5847 "configure"
+ #line 5932 "configure"
  #include "confdefs.h"

@@ -1,6 +1,6 @@
---- src/open.c.~1~	Mon Jul 27 12:05:01 1998
-+++ src/open.c	Sat Aug 15 17:25:05 1998
-@@ -629,11 +629,12 @@
+--- src/open.c.orig	Fri Aug 14 11:34:01 1998
++++ src/open.c	Mon Sep  7 21:55:05 1998
+@@ -630,11 +630,12 @@
  	char tempfile[PATH_LEN];
  	int count = 0;
  	struct stat sb;
