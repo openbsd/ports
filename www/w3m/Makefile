@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2002/12/12 01:10:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2002/12/12 01:18:54 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -75,7 +75,6 @@ DOCS+=		README.m17n
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m
-	${INSTALL_MAN} ${DOCSRC}/w3m.1 ${PREFIX}/man/man1
 	cd ${DOCSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/w3m
 
 .include <bsd.port.mk>
