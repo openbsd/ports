@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/Net/ParseWhois.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/BulkRegister.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/DomainBank.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Dotster.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Netsol.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Register.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Registrars.pm
-libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Unknown.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/11/21 01:16:58 naddy Exp $
+${P5SITE}/Net/ParseWhois.pm
+${P5SITE}/Net/ParseWhois/Domain.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/BulkRegister.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/CoreNic.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/DomainBank.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Dotster.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Easyspace.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/INameWW.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Netsol.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Register.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Registrars.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Unknown.pm
 man/man3p/Net::ParseWhois.3p
-@dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar
-@dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain
-@dirrm libdata/perl5/site_perl/Net/ParseWhois
+@dirrm ${P5SITE}/Net/ParseWhois/Domain/Registrar
+@dirrm ${P5SITE}/Net/ParseWhois/Domain
+@dirrm ${P5SITE}/Net/ParseWhois
