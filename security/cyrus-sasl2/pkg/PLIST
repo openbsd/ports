@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/10 08:37:42 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/06/26 18:20:20 jakob Exp $
 @pkgcfl cyrus-sasl-*
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -17,8 +17,6 @@ lib/sasl2/libdigestmd5.a
 lib/sasl2/libdigestmd5.la
 lib/sasl2/libgssapiv2.a
 lib/sasl2/libgssapiv2.la
-lib/sasl2/libkerberos4.a
-lib/sasl2/libkerberos4.la
 lib/sasl2/liblogin.a
 lib/sasl2/liblogin.la
 lib/sasl2/libotp.a
@@ -78,13 +76,13 @@ share/doc/sasl2/advanced.html
 share/doc/sasl2/appconvert.html
 share/doc/sasl2/draft-burdis-cat-srp-sasl-06.txt
 share/doc/sasl2/draft-ietf-cat-sasl-gssapi-05.txt
-share/doc/sasl2/draft-melnikov-rfc2831bis-02.txt
+share/doc/sasl2/draft-ietf-sasl-anon-00.txt
+share/doc/sasl2/draft-ietf-sasl-plain-00.txt
+share/doc/sasl2/draft-ietf-sasl-rfc2831bis-00.txt
 share/doc/sasl2/draft-myers-saslrev-02.txt
 share/doc/sasl2/draft-nerenberg-sasl-crammd5-03.txt
-share/doc/sasl2/draft-newman-sasl-c-api-00.txt
+share/doc/sasl2/draft-newman-sasl-c-api-01.txt
 share/doc/sasl2/draft-sasl-login.txt
-share/doc/sasl2/draft-zeilenga-sasl-anon-01.txt
-share/doc/sasl2/draft-zeilenga-sasl-plain-01.txt
 share/doc/sasl2/gssapi.html
 share/doc/sasl2/index.html
 share/doc/sasl2/install.html
@@ -110,6 +108,7 @@ share/doc/sasl2/rfc3174.txt
 share/doc/sasl2/sysadmin.html
 share/doc/sasl2/testing.txt
 share/doc/sasl2/upgrading.html
+share/doc/sasl2/windows.html
 %%SHARED%%
 @dirrm share/doc/sasl2
 @dirrm lib/sasl2

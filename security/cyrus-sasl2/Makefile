@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/02/03 08:54:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2003/06/26 18:20:20 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
-DISTNAME=	cyrus-sasl-2.1.11
+DISTNAME=	cyrus-sasl-2.1.13
 CATEGORIES=     security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-SEPARATE_BUILD=		concurrent
+#SEPARATE_BUILD=		concurrent
 
 USE_LIBTOOL=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/saslauthd/config

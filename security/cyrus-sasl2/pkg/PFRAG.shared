@@ -1,12 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/02/27 17:33:01 jakob Exp $
-lib/libsasl2.so.2.11
-lib/sasl2/libanonymous.so.2.11
-lib/sasl2/libcrammd5.so.2.11
-lib/sasl2/libdigestmd5.so.2.11
-lib/sasl2/libgssapiv2.so.2.11
-lib/sasl2/libkerberos4.so.2.11
-lib/sasl2/liblogin.so.2.11
-lib/sasl2/libotp.so.2.11
-lib/sasl2/libplain.so.2.11
-lib/sasl2/libsasldb.so.2.11
+@comment $OpenBSD: PFRAG.shared,v 1.7 2003/06/26 18:20:20 jakob Exp $
+lib/libsasl2.so.2.13
+lib/sasl2/libanonymous.so.2.13
+lib/sasl2/libcrammd5.so.2.13
+lib/sasl2/libdigestmd5.so.2.13
+lib/sasl2/libgssapiv2.so.2.13
+lib/sasl2/liblogin.so.2.13
+lib/sasl2/libotp.so.2.13
+lib/sasl2/libplain.so.2.13
+lib/sasl2/libsasldb.so.2.13
 DYNLIBDIR(%D/lib)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
---- configure.orig	Fri Jan 31 12:55:38 2003
-+++ configure	Thu Feb 27 07:41:06 2003
+$OpenBSD: patch-configure,v 1.5 2003/06/26 18:20:20 jakob Exp $
+--- configure.orig	Mon Apr 14 20:07:48 2003
++++ configure	Wed Jun 25 23:50:09 2003
 @@ -2442,7 +2442,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
  cat > conftest.$ac_ext <<EOF
  #line 2448 "configure"
  #include "confdefs.h"
-@@ -4782,7 +4782,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -4797,7 +4797,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lresolv  $LIBS"
 +#LIBS="-lresolv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 4788 "configure"
+ #line 4803 "configure"
  #include "confdefs.h"
-@@ -4816,7 +4816,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -4831,7 +4831,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
  
  else
    echo "$ac_t""no" 1>&6
-@@ -5134,7 +5134,7 @@ EOF
+@@ -5149,7 +5149,7 @@ EOF
  #define HAVE_KRB 1
  EOF
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
    else
      echo "$ac_t""disabled" 1>&6
    fi
-@@ -5152,7 +5152,7 @@ fi
+@@ -5261,7 +5261,7 @@ fi
  
   if test "$gssapi" != no; then
      if test -d ${gssapi}; then
@@ -46,16 +46,16 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
         LDFLAGS="$LDFLAGS -L$gssapi/lib"
      fi
      ac_safe=`echo "gssapi.h" | sed 'y%./+-%__p_%'`
-@@ -5285,7 +5285,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -5394,7 +5394,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lresolv  $LIBS"
 +#LIBS="-lresolv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5291 "configure"
+ #line 5400 "configure"
  #include "confdefs.h"
-@@ -5319,7 +5319,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -5428,7 +5428,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
@@ -64,36 +64,36 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
  
  else
    echo "$ac_t""no" 1>&6
-@@ -5347,7 +5347,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -5456,7 +5456,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lkrb -lkafs -lcrypto -ldes -lasn1 ${LIB_CRYPT} -lcom_err $LIBS"
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
++LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} -lcom_err $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5353 "configure"
+ #line 5462 "configure"
  #include "confdefs.h"
-@@ -5385,8 +5385,8 @@ fi
+@@ -5494,8 +5494,8 @@ fi
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
--     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
--     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libdes.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lkrb -lkafs -lcrypto ${LIB_CRYPT}"
-+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libdes.a $gssapi_dir/libasn1.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+-     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
+-     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
++     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 ${LIB_CRYPT} -lcom_err"
++     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    else
       gssapi="no"
       echo "configure: warning: Disabling GSSAPI" 1>&2
-@@ -5439,7 +5439,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -5548,7 +5548,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lresolv  $LIBS"
 +#LIBS="-lresolv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5445 "configure"
+ #line 5554 "configure"
  #include "confdefs.h"
-@@ -5467,7 +5467,7 @@ LIBS="$ac_save_LIBS"
+@@ -5576,7 +5576,7 @@ LIBS="$ac_save_LIBS"
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -102,16 +102,16 @@ $OpenBSD: patch-configure,v 1.4 2003/02/27 17:33:01 jakob Exp $
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -6240,7 +6240,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -6256,7 +6256,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lresolv  $LIBS"
 +#LIBS="-lresolv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 6246 "configure"
+ #line 6262 "configure"
  #include "confdefs.h"
-@@ -6274,7 +6274,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -6290,7 +6290,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
