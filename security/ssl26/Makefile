@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/27 18:10:00 beck Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/27 18:14:32 beck Exp $
 
 DISTNAME=	ssl26	
 CATEGORIES=	security
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Local/People/beck/
+NO_CDROM=	"CRYPTO: Patent Issues until Sep 21 2000"
+RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	beck@openbsd.org
 
