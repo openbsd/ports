@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 20:46:23 espie Exp $	
+# $OpenBSD: Makefile,v 1.18 2002/10/24 23:52:29 naddy Exp $	
 
 COMMENT=	"translate GB/Big5 encoding to tone pinyin"
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
-NEED_VERSION=	1.515
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -19,6 +18,8 @@ DISTFILES=	c2t.tar.gz TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/chinese/gb

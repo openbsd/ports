@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2002/04/19 07:13:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/24 23:52:30 naddy Exp $
 
 COMMENT=	"chinese input utility for X"
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
 CATEGORIES=	chinese
-NEED_VERSION=   1.496
+
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/old/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
@@ -22,6 +22,8 @@ RUN_DEPENDS=	::chinese/taipeifonts
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu
+
+NO_REGRESS=	Yes
 
 CINS=	cj.cin cj.tab cj.tab.rev phone.tab phone.cin phone.tab phone.tab.rev \
 	pinyin.cin pinyin.tab pinyin.tab.rev array30.cin array30.tab \

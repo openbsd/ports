@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/25 23:26:02 espie Exp $	
+# $OpenBSD: Makefile,v 1.3 2002/10/24 23:52:29 naddy Exp $	
 
 COMMENT=	"convert between GB and BIG-5 codes"
 
 DISTNAME=	zh-hc-3.0
 CATEGORIES=	chinese
-NEED_VERSION=	1.504
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -21,6 +20,8 @@ EXTRACT_ONLY=	hc-30.tar.gz
 WRKDIST=	${WRKDIR}/hc3
 
 ALL_TARGET=	hc b2g g2b
+
+NO_REGRESS=	Yes
 
 pre-patch:
 	perl -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c

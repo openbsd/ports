@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/04/07 22:30:23 matt Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/24 23:52:29 naddy Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
 DISTNAME=       bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.515
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -21,6 +20,8 @@ PYTHON_VER=	2.1
 RUN_DEPENDS=	::chinese/arphicttf \
 		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 LIB_DEPENDS=	ttf.1::print/freetype
+
+NO_REGRESS=	Yes
 
 post-patch:
 	perl -pi -e \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/24 23:52:29 naddy Exp $
 
 COMMENT=	"extra chinese fonts"
 
 DISTNAME=       zh-fonts-taipei-1.01
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.515
+
 DIST_SUBDIR=    zh-fonts
 
 MASTER_SITES=	ftp://ftp.nsysu.edu.tw/Linux/packages/chinese/fonts/taipeifont/ \
@@ -23,6 +23,7 @@ FONTS=		taipei16.pcf.gz taipeik20.pcf.gz taipeim20.pcf.gz \
 
 DISTFILES=	${FONTS}
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 EXTRACT_ONLY=
 
 CONFIGURE_STYLE=	imake
