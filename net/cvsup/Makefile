@@ -1,25 +1,33 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/05 22:15:17 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 19:39:44 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
 COMMENT-server=	"network file distribution server"
-V=16.1
-DISTNAME=	cvsup-$V
+
+VERSION=	16.1a
+DISTNAME=	cvsup-snap-${VERSION}
+PKGNAME=	cvsup-${VERSION}
+PKGNAME-server=	cvsupd-${VERSION}
 CATEGORIES=	net devel
 NEED_VERSION=	1.405
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
-		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/sources/
+HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
 
-PKGNAME-server=cvsupd-$V
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_FTP=Yes
-PERMIT_PACKAGE_CDROM=Yes
-PERMIT_DISTFILES_CDROM=Yes
+# BSD
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 
-MULTI_PACKAGES=-server
+MASTER_SITES= \
+	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+	ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
 
-FLAVORS=no_x11 static
+MULTI_PACKAGES=	-server
+
+FLAVORS=	no_x11 static
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -29,16 +37,14 @@ M3FLAGS+=	-DNOGUI
 M3FLAGS+=	-DSTATIC
 .else
 # XXX this is a false depend, but we can't depend on lib in a weird path now
-RUN_DEPENDS=m3build::lang/pm3
+RUN_DEPENDS=	m3build::lang/pm3
 .endif
 
-BUILD_DEPENDS=m3build::lang/pm3
+BUILD_DEPENDS=	m3build::lang/pm3
 
-MAKE_FLAGS=M3FLAGS=${M3FLAGS}
-FAKE_FLAGS=PREFIX=${WRKINST}${TRUEPREFIX}
-
-HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
+MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"
+FAKE_FLAGS=	PREFIX=${WRKINST}${TRUEPREFIX}
 
 .include <bsd.port.mk>
 
-PORTPATH:=${LOCALBASE}/pm3/bin:${PORTPATH}
+PORTPATH:=	${LOCALBASE}/pm3/bin:${PORTPATH}
