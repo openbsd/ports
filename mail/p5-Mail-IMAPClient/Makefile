@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/22 00:28:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/18 21:57:53 avsm Exp $
 
-DISTNAME=	Mail-IMAPClient-2.1.0
+COMMENT=	"perl module for an IMAP Client API"
+
+DISTNAME=	Mail-IMAPClient-2.1.2
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.399
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Mail
 
