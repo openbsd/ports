@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/27 17:21:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/10/08 20:58:17 sturm Exp $
 
 COMMENT=	"mail image display for X11"
 
@@ -7,8 +7,7 @@ CATEGORIES=	mail
 
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
-		ftp://odie.physik2.uni-rostock.de/pub/ \
-		${MASTER_SITE_LOCAL}
+		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 # License: "BSD NO"
