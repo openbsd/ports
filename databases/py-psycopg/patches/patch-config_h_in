@@ -1,3 +1,4 @@
+$OpenBSD: patch-config_h_in,v 1.2 2001/09/19 01:05:18 shell Exp $
 --- config.h.in.orig	Mon Jun 18 23:53:16 2001
 +++ config.h.in	Mon Jun 18 23:53:27 2001
 @@ -1,7 +1,7 @@

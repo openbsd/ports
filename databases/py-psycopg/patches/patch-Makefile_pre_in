@@ -1,3 +1,4 @@
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2001/09/19 01:05:18 shell Exp $
 --- Makefile.pre.in.orig	Tue Apr  3 09:23:30 2001
 +++ Makefile.pre.in	Mon Jun 18 22:14:19 2001
 @@ -130,7 +130,7 @@
