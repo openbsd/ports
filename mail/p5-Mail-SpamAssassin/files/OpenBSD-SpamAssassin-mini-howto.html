@@ -5,9 +5,9 @@
 You can use spamassassin in many ways. But the lightest for the machine is by
 making use of the spamc/spamd combination.
 
-<p>First let's add a user for the spamd.
+<p>First let's add a user and group for the spamd.
 
-<pre><b># useradd -s /usr/bin/false -b /nonexistent -u 506 _spamdaemon</b></pre>
+<pre><b># useradd -s /usr/bin/false -b /nonexistent -u 506 -g =uid _spamdaemon</b></pre>
 
 <p>Add this line to <b><code>/etc/rc.local</b></code>:
 <pre><b># /usr/local/bin/spamd -u _spamdaemon -d -L -p 4321 -x</b></pre>
