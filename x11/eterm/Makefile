@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/02 17:13:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/17 19:57:41 espie Exp $
 
 PKGNAME=	eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
@@ -44,4 +44,7 @@ post-install:
 # XXX Tweak PKGNAME
 .if ${FLAVOR:L:Mkanji}
 PKGNAME:=ja-${PKGNAME:S/-kanji//}
+PKG_ARGS+=-C 'eterm-*'
+.else
+PKG_ARGS+=-C 'ja-eterm-*'
 .endif
