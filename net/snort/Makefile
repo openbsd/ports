@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/24 15:16:15 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/07/29 19:56:52 bmc Exp $
 
 COMMENT=	"highly flexible sniffer/basic NIDS"
 
-DISTNAME=	snort-1.7
+DISTNAME=	snort-1.8.1-beta5
+PKGNAME=	snort-1.8.1b5
 CATEGORIES=	net security
-NEED_VERSION=	1.413
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= snort
+NEED_VERSION=	1.421
+MASTER_SITES=	${HOMEPAGE}/files/
+MASTER_SITE_SUBDIR= files
 
-HOMEPAGE=       http://www.snort.org/
+HOMEPAGE=       http://www.snort.org
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
@@ -52,6 +53,8 @@ CONFIGURE_ARGS+= --enable-smbalerts
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/snort.conf ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/*-lib ${PREFIX}/share/examples/snort
+	${INSTALL_DATA} ${WRKSRC}/classification.config \
+		 ${PREFIX}/share/examples/snort
+	${INSTALL_DATA} ${WRKSRC}/*.rules ${PREFIX}/share/examples/snort
 
 .include <bsd.port.mk>
