@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2004/11/08 21:58:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.129 2004/11/17 11:10:55 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -88,6 +88,7 @@
      SUBDIR += relaydb
      SUBDIR += signify
      SUBDIR += sma
+     SUBDIR += smtp-vilter
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
