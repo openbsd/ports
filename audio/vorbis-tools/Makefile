@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/01/16 03:10:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/01/21 15:53:13 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 DISTNAME=	vorbis-tools-1.0rc3
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
-		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.vorbis.com/files/rc3/unix/ \
 		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 LIB_DEPENDS=	ao.3::audio/libao \

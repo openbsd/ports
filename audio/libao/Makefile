@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/01/16 03:10:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/01/21 15:53:12 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
-		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.vorbis.com/files/rc3/unix/ \
 		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 FLAVORS=	no_arts no_esd
