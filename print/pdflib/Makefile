@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/04 04:06:37 pvalchev Exp $
 
 COMMENT=		"C library to produce PDF files"
 
@@ -33,7 +33,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-tcl
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LIBS="-lm"
 MAKE_ENV=		${CONFIGURE_ENV}
 
 post-install:
