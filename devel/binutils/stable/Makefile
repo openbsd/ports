@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/01/19 01:56:05 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/10 22:49:36 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -24,10 +24,8 @@ BUILD_DEPENDS=		::devel/automake \
 
 SUBST_VARS=		TARGET_ARCH OSREV
 
-MODULES=		gnu
-CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
-			--disable-nls --disable-commonbfdlib
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-nls --disable-commonbfdlib
 
 # cross-tools
 FLAVORS=		alpha arm armeb hppa i386 m68k m88k mips powerpc \
@@ -66,7 +64,7 @@ PLIST_ARCH?=
 
 SED_PLIST+=		|sed -e '/^%%arch%%$$/r${PKGDIR}/PFRAG.${PLIST_ARCH}' -e '//d'
 
-FILES=			addr2line ar nm-new objdump ranlib readelf size strings strip-new 
+FILES=			addr2line ar nm-new objdump objcopy ranlib readelf size strings strip-new 
 
 EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh \
 			elf32_sparc_obsd.sh elf32ppc_obsd.sh \

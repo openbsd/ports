@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/11 00:52:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/02/10 22:49:36 brad Exp $
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/addr2line
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ar
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/as
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ld
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/nm
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/objcopy
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/objdump
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ranlib
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/readelf
@@ -15,6 +16,7 @@ ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ar.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/as.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ld.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/nm.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/objcopy.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/objdump.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ranlib.1
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/readelf.1
