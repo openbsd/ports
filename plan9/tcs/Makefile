@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/07 00:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/08/19 02:16:52 brad Exp $
 
 DISTNAME=	tcs
 PKGNAME=	tcs-19950325
 CATEGORIES=	plan9
-NEED_VERSION=	1.191
+NEED_VERSION=	1.310
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z
@@ -14,18 +14,19 @@ EXTRACT_AFTER_ARGS= | sh
 
 MAINTAINER=	markus@openbsd.org
 
-LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
+
+ALL_TARGET=	tcs
 
 WRKDIST=	${WRKDIR}
 
-ALL_TARGET= tcs
-
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/tcs.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/tcs ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tcs.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
