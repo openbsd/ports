@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2001/08/23 09:12:13 dhartmei Exp $
---- configure.in.orig	Tue Apr 17 08:44:30 2001
-+++ configure.in	Mon Aug 13 10:49:39 2001
-@@ -18,7 +18,7 @@ AC_ARG_WITH(fhs, [  --with-fhs          
+--- configure.in.orig	Tue Aug 28 14:20:33 2001
++++ configure.in	Tue Aug 28 14:31:55 2001
+@@ -18,7 +18,7 @@
      codepagedir="\$(LIBDIR)/codepages"
      configdir="\$(LIBDIR)"
      lockdir="\$(VARDIR)/locks"
@@ -10,17 +9,7 @@ $OpenBSD: patch-configure_in,v 1.3 2001/08/23 09:12:13 dhartmei Exp $
      privatedir="\${prefix}/private"
      swatdir="\${prefix}/swat")
  
-@@ -123,9 +123,6 @@ AC_SUBST(WRAP32)
- AC_SUBST(PICFLAG)
- AC_SUBST(SHLIBEXT)
- 
--# compile with optimization and without debugging by default
--CFLAGS="-O ${CFLAGS}"
--
- AC_ARG_ENABLE(debug, [  --enable-debug        turn on debugging [default=no]],
-     [if eval "test x$enable_debug = xyes"; then
- 	CFLAGS="${CFLAGS} -g"
-@@ -1707,45 +1704,47 @@ AC_MSG_CHECKING(whether to use SSL)
+@@ -1771,45 +1771,47 @@
  AC_ARG_WITH(ssl,
  [  --with-ssl     Include SSL support
    --without-ssl  Don't include SSL support (default)
@@ -32,8 +21,8 @@ $OpenBSD: patch-configure_in,v 1.3 2001/08/23 09:12:13 dhartmei Exp $
      AC_MSG_RESULT(yes)
      AC_DEFINE(WITH_SSL)
 -    withval="/usr/local/ssl"     # default
-+    sslinc="/usr/local/ssl/include"	#default
-+    ssllib="/usr/local/ssl/lib"		#default
++    sslinc="/usr/local/ssl/include" #default
++    ssllib="/usr/local/ssl/lib"     #default
  
      if test "${with_sslinc+set}" = set; then
 -
@@ -44,13 +33,13 @@ $OpenBSD: patch-configure_in,v 1.3 2001/08/23 09:12:13 dhartmei Exp $
 -	  CFLAGS="-I/usr/local/ssl/include $CFLAGS"
 -	  LIBS="-lssl -lcrypto $LIBS"
 -	  LDFLAGS="=L/usr/local/ssl/lib $LDFLAGS"
-+	  AC_MSG_WARN(--with-sslinc called without argument - will use default)
++          AC_MSG_WARN(--with-sslinc called without argument - will use default)
  	;;
          * )
--          CFLAGS="-I${withval}/include $CFLAGS"
+-          CFLAGS="-I${withval} $CFLAGS"
 -	  LIBS="-lssl -lcrypto $LIBS"
 -  	  LDFLAGS="-L${withval}/lib $LDFLAGS"
-+	  sslinc="${withval}"
++          sslinc="${withval}"
  	;;
  	esac
 +    fi
@@ -62,15 +51,15 @@ $OpenBSD: patch-configure_in,v 1.3 2001/08/23 09:12:13 dhartmei Exp $
 -	LDFLAGS="-L/usr/local/ssl/lib $LDFLAGS"
 -
 +    if test "${with_ssllib+set}" = set; then
-+	withval="$with_ssllib"
-+	case "$withval" in
-+	yes|no)
-+	  AC_MSG_WARN(--with-ssllib called without argument - will use default)
-+	;;
-+	* )
-+	  ssllib="${withval}"
-+	;;
-+	esac
++       withval="$with_ssllib"
++       case "$withval" in
++       yes|no)
++         AC_MSG_WARN(--with-ssllib called without argument - will use default)
++       ;;
++       * )
++         ssllib="${withval}"
++       ;;
++       esac
      fi
  
 -    if test ! -d ${withval}; then

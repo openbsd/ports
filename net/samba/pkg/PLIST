@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2001/05/16 00:59:48 matt Exp $
+@comment $OpenBSD: PLIST,v 1.16 2001/08/29 13:26:15 dhartmei Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -117,23 +117,17 @@ share/doc/samba/textdocs/Application_Serving.txt
 share/doc/samba/textdocs/BROWSING-Config.txt
 share/doc/samba/textdocs/BROWSING.txt
 share/doc/samba/textdocs/BUGS.txt
-share/doc/samba/textdocs/CVS_ACCESS.txt
 share/doc/samba/textdocs/DHCP-Server-Configuration.txt
 share/doc/samba/textdocs/DIAGNOSIS.txt
 share/doc/samba/textdocs/DNIX.txt
-share/doc/samba/textdocs/DOMAIN.txt
 share/doc/samba/textdocs/Faxing.txt
 share/doc/samba/textdocs/GOTCHAS.txt
 share/doc/samba/textdocs/HINTS.txt
 share/doc/samba/textdocs/INSTALL.sambatar
 share/doc/samba/textdocs/Imprints.txt
-share/doc/samba/textdocs/MIRRORS.txt
 share/doc/samba/textdocs/Macintosh_Clients.txt
-share/doc/samba/textdocs/NTDOMAIN.txt
 share/doc/samba/textdocs/NetBIOS.txt
-share/doc/samba/textdocs/PRINTER_DRIVER.txt
 share/doc/samba/textdocs/PROFILES.txt
-share/doc/samba/textdocs/PROJECTS
 share/doc/samba/textdocs/Passwords.txt
 share/doc/samba/textdocs/Printing.txt
 share/doc/samba/textdocs/README.DCEDFS
@@ -146,7 +140,6 @@ share/doc/samba/textdocs/SMBTAR.notes
 share/doc/samba/textdocs/SSLeay.txt
 share/doc/samba/textdocs/Speed.txt
 share/doc/samba/textdocs/Speed2.txt
-share/doc/samba/textdocs/Support.txt
 share/doc/samba/textdocs/Tracing.txt
 share/doc/samba/textdocs/UNIX-SMB.txt
 share/doc/samba/textdocs/UNIX_SECURITY.txt
@@ -156,8 +149,6 @@ share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/kurs.pdf
 share/doc/samba/textdocs/kurs.tex
 share/doc/samba/textdocs/logo.ps
-share/doc/samba/textdocs/samba-pdc-faq.txt
-share/doc/samba/textdocs/samba-pdc-howto.txt
 share/doc/samba/textdocs/security_level.txt
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore

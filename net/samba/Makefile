@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2001/07/13 11:24:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2001/08/29 13:26:15 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-2.2.0a
+DISTNAME=	samba-2.2.1a
 CATEGORIES=	net
 NEED_VERSION=	1.396
 
@@ -76,12 +76,15 @@ post-install:
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/faq ; \
 	done
 	@for i in ${WRKSRC}/../docs/textdocs/* ; do \
-	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/textdocs ;\
+	 if [ -f $$i ]; then \
+	  ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/textdocs ;\
+	 fi \
 	done
 	@sed -e 's:/usr/spool/samba:${SAMBA_SPOOL}:g' \
 	 -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
 	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/script/convert_smbpasswd ${PREFIX}/bin
 	@chown root.bin ${PREFIX}/bin/smbpasswd
 	@chmod 111 ${PREFIX}/bin/smbpasswd
 
