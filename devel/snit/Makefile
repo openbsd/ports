@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/17 00:26:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/25 13:30:36 naddy Exp $
 
 COMMENT=		"simple object oriented framework for Tcl"
 
-VERSION=		0.6
+VERSION=		0.7
 PKGNAME=		snit-${VERSION}
 DISTNAME=		snit${VERSION}
 CATEGORIES=		devel
