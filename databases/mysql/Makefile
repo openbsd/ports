@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/06/02 20:18:43 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2001/06/03 01:20:02 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -9,7 +9,7 @@ DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 FULLPKGNAME-server=	mysql-server-${VERSION}${FLAVOR_EXT}
 CATEGORIES=	databases
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
