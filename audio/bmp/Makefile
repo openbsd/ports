@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/22 12:28:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/02 18:57:26 alek Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
 COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME=	bmp-$Vp0
-PKGNAME-mp3=	bmp-mp3-$Vp0
-PKGNAME-vorbis=	bmp-vorbis-$Vp0
+PKGNAME=	bmp-$Vp1
+PKGNAME-mp3=	bmp-mp3-$Vp1
+PKGNAME-vorbis=	bmp-vorbis-$Vp1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
@@ -24,18 +24,14 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender c fontconfig \
-		freetype m pthread z
+WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender fontconfig freetype m
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.400.3,gdk-x11-2.0.400.3::x11/gtk+2 \
 		gtk-x11-2.0.0.5::x11/gtk+2 \
-		glib-2.0.400.2,gthread-2.0.400.2::devel/glib2 \
-		esd.2.34::audio/esound \
-		glade-2.0.0.4::devel/libglade2 \
-		xml2.9.0::textproc/libxml
+		glib-2.0.400.2,gthread-2.0.400.2::devel/glib2
 WANTLIB+=	gmodule-2.0.0.0 pangoxft-1.0.0.0 atk-1.0.0.0 gobject-2.0.0.0 \
-		audiofile pangox-1.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
+		pangox-1.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0
 
 MULTI_PACKAGES=
 PSEUDO_FLAVORS=	no_mp3 no_vorbis
@@ -61,16 +57,24 @@ CONFIGURE_ARGS+=--disable-vorbis
 
 SUBPACKAGE?=
 
+.if $(SUBPACKAGE) != "-mp3"
+LIB_DEPENDS+=	esd.2.34::audio/esound \
+		glade-2.0.0.4::devel/libglade2 \
+		xml2.9.0::textproc/libxml
+.endif
+
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-mp3"
 PERMIT_DISTFILES_CDROM=	"patent issues"
 PERMIT_DISTFILES_FTP=	"patent issues"
 LIB_DEPENDS+=		beep::audio/bmp
 . elif ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS+=	vorbisfile.4.0,vorbis::audio/libvorbis
+LIB_DEPENDS=	vorbisfile.4.0,vorbis::audio/libvorbis
 WANTLIB+=	gthread-2.0.0.0 gtk-x11-2.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
 		ogg gdk_pixbuf-2.0.0.0
 RUN_DEPENDS=	::audio/bmp
+. else
+WANTLIB+=	pthread ICE audiofile c SM z
 . endif
 .endif
 
