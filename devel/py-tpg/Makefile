@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/06 08:01:26 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/03 14:27:33 xsa Exp $
 
 COMMENT=	"parser generator in Python"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 
-MODULES=	python
+MODULES=	lang/python
 
 DOCDIR=		${PREFIX}/share/doc/py-tpg
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tpg

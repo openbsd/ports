@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/03/02 07:41:32 ish Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/03 14:27:33 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -30,7 +30,7 @@ MODPY_VERSION=	${FLAVOR:S/py//}
 ERRORS+=	"Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

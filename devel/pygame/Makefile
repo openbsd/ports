@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/10 23:08:11 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/03 14:27:33 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.23 2004/08/03 14:27:33 xsa Exp $
 
 
 COMMENT=	"Python codes checker"
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
-MODULES=	python
+MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	-O1
 

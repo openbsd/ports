@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/23 08:39:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/03 14:27:33 xsa Exp $
 
 COMMENT=	"Python parsing module"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyparsing/}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

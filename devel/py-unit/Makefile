@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/03 14:27:33 xsa Exp $
 
 
 COMMENT=		"unit testing framework for Python"
@@ -23,7 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyunit/}
 FLAVORS=		no_x11
 FLAVOR?=
 
-MODULES=	python
+MODULES=	lang/python
 
 .if !${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/07/31 19:12:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/03 14:27:33 xsa Exp $
 
 COMMENT=	"command line parsing library for Python"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=optik/}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

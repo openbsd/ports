@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/05/28 15:38:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/08/03 14:27:33 xsa Exp $
 
 COMMENT=		"C/C++ source code auditing tool"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE} \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
-MODULES=		python
+MODULES=		lang/python
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
