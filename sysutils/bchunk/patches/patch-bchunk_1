@@ -1,6 +1,6 @@
-$OpenBSD: patch-bchunk_1,v 1.1.1.1 2001/12/14 01:38:08 naddy Exp $
+$OpenBSD: patch-bchunk_1,v 1.2 2004/10/31 14:09:46 alek Exp $
 --- bchunk.1.orig	Tue Aug  7 13:20:31 2001
-+++ bchunk.1	Wed Dec 12 18:03:28 2001
++++ bchunk.1	Sun Oct 31 13:56:09 2004
 @@ -25,6 +25,12 @@ The .cdr tracks are in the native CD aud
  be either written on a CD-R using cdrecord -audio, or converted
  to WAV (or any other sound format for that matter) using
@@ -23,3 +23,12 @@ $OpenBSD: patch-bchunk_1,v 1.1.1.1 2001/12/14 01:38:08 naddy Exp $
  CD-R using cdrecord, or mounted (on Linux platforms at least)
  through a loop device ('mount track.iso /mnt/cdrom -o loop=/dev/loop0,blocksize=1024').
  .TP 5
+@@ -64,7 +70,7 @@ format for that matter) using sox ('sox 
+ Audio tracks in WAV format.
+ .SH "SEE ALSO"
+ .BR cdrecord (1),
+-.BR mkisofs (8),
++.BR mkhybrid (8),
+ .BR sox (1),
+ .BR cdrdao (1)
+ .SH AUTHORS
