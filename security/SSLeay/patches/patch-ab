@@ -1,12 +1,10 @@
-*** crypto/bn/Makefile.ssl-orig	Tue Jun 30 09:38:55 1998
---- crypto/bn/Makefile.ssl	Thu Jul  9 23:10:53 1998
-***************
-*** 52,57 ****
---- 52,58 ----
-  
-  
-  lib:	$(LIBOBJ)
-+ 	cp `basename $(BN_MULW)` asm/
-  	$(AR) $(LIB) $(LIBOBJ)
-  	sh $(TOP)/util/ranlib.sh $(LIB)
-  	@touch lib
+--- crypto/bn/Makefile.ssl.orig	Thu Apr  9 11:47:18 1998
++++ crypto/bn/Makefile.ssl	Fri Mar 12 13:14:55 1999
+@@ -57,6 +57,7 @@
+ 
+ 
+ lib:	$(LIBOBJ)
++	cp `basename $(BN_MULW)` asm/
+ 	$(AR) $(LIB) $(LIBOBJ)
+ 	sh $(TOP)/util/ranlib.sh $(LIB)
+ 	@touch lib

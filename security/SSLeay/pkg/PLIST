@@ -1,6 +1,3 @@
-@cwd /usr/local
-@name SSLeay-0.8.1b
-@pkgdep rsaref-2.0
 ssl/bin/ssleay
 ssl/bin/CA.sh
 ssl/bin/der_chop
@@ -12,7 +9,6 @@ ssl/bin/dgst
 ssl/bin/dh
 ssl/bin/enc
 ssl/bin/gendh
-ssl/bin/gendsa
 ssl/bin/errstr
 ssl/bin/ca
 ssl/bin/crl
@@ -43,6 +39,8 @@ ssl/bin/idea
 ssl/bin/rc4
 ssl/bin/rc2
 ssl/bin/bf
+ssl/bin/cast
+ssl/bin/rc5
 ssl/bin/des-ecb
 ssl/bin/des-ede
 ssl/bin/des-ede3
@@ -67,6 +65,15 @@ ssl/bin/bf-cbc
 ssl/bin/bf-ecb
 ssl/bin/bf-cfb
 ssl/bin/bf-ofb
+ssl/bin/cast5-cbc
+ssl/bin/cast5-ecb
+ssl/bin/cast5-cfb
+ssl/bin/cast5-ofb
+ssl/bin/cast-cbc
+ssl/bin/rc5-cbc
+ssl/bin/rc5-ecb
+ssl/bin/rc5-cfb
+ssl/bin/rc5-ofb
 ssl/bin/c_info
 ssl/bin/c_issuer
 ssl/bin/c_name
@@ -80,17 +87,22 @@ ssl/include/md2.h
 ssl/include/md5.h
 ssl/include/sha.h
 ssl/include/mdc2.h
+ssl/include/hmac.h
+ssl/include/ripemd.h
 ssl/include/des.h
-ssl/include/rc4.h
 ssl/include/rc2.h
+ssl/include/rc4.h
+ssl/include/rc5.h
 ssl/include/idea.h
 ssl/include/blowfish.h
+ssl/include/cast.h
 ssl/include/bn.h
 ssl/include/rsa.h
 ssl/include/dsa.h
 ssl/include/dh.h
 ssl/include/buffer.h
 ssl/include/bio.h
+ssl/include/bss_file.c
 ssl/include/stack.h
 ssl/include/lhash.h
 ssl/include/rand.h
@@ -109,6 +121,7 @@ ssl/include/ssl.h
 ssl/include/ssl2.h
 ssl/include/ssl3.h
 ssl/include/ssl23.h
+ssl/include/tls1.h
 ssl/COPYRIGHT
 @dirrm ssl/private
 @dirrm ssl/certs

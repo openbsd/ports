@@ -1,42 +1,27 @@
-*** Configure-orig	Tue Jun 30 09:31:35 1998
---- Configure	Thu Jul  9 23:21:35 1998
-***************
-*** 123,128 ****
---- 123,130 ----
-  "NetBSD-sparc",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -mv8 -Wall::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
-  "NetBSD-x86",	"gcc:-DTERMIOS -D_ANSI_SOURCE -O3 -fomit-frame-pointer -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:asm/x86-lnxa.o:asm/dx86-out.o asm/cx86-out.o:asm/bx86-out.o",
-  "FreeBSD",   "gcc:-DTERMIOS -D_ANSI_SOURCE -fomit-frame-pointer -O3 -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:asm/x86-lnxa.o:asm/dx86-out.o asm/cx86-out.o:asm/bx86-out.o",
-+ "OpenBSD-sparc",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -mv8 -Wall::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
-+ "OpenBSD-x86",	"gcc:-DTERMIOS -D_ANSI_SOURCE -O3 -fomit-frame-pointer -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:asm/x86-lnxa.o:asm/dx86-out.o asm/cx86-out.o:asm/bx86-out.o",
-  #"bsdi-gcc",	"shlicc2:-O3 -ffast-math-m486::RSA_LLONG $x86_gcc_des $x86_gcc_opts:::",
-  #"bsdi-gcc",     "gcc:-O3 -ffast-math -DPERL5 -m486::RSA_LLONG $x86_gc_des $x86_gcc_opts:asm/x86-bsdi.o:asm/dx86bsdi.o asm/cx86bsdi.o:asm/bx86bsdi.o",
-  "bsdi-gcc",     "gcc:-O3 -ffast-math -DPERL5 -m486::RSA_LLONG $x86_gc_des $x86_gcc_opts:::",
-***************
-*** 192,204 ****
-  			{
-  			$libs.=$_." ";
-  			}
-! 		elsif ($_ =~ /^-D(.*)$/)
-  			{
-  			$flags.=$_." ";
-  			}
-  		else
-  			{
-! 			die "unknown options, only -Dxxx, -Lxxx -lxxx supported\n";
-  			}
-  		}
-  	else
---- 194,206 ----
-  			{
-  			$libs.=$_." ";
-  			}
-! 		elsif ($_ =~ /^-[DI](.*)$/)
-  			{
-  			$flags.=$_." ";
-  			}
-  		else
-  			{
-! 			die "unknown options, only -Dxxx, -Ixxx, -Lxxx -lxxx supported\n";
-  			}
-  		}
-  	else
+--- Configure.orig	Fri Jun 26 04:25:25 1998
++++ Configure	Fri Mar 12 13:10:01 1999
+@@ -133,6 +133,8 @@
+ "NetBSD-m86",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -Wall -DB_ENDIAN::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
+ "NetBSD-x86",	"gcc:-DTERMIOS -DBN_ASM -D_ANSI_SOURCE -O3 -fomit-frame-pointer -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:",
+ "FreeBSD",   "gcc:-DTERMIOS -DBN_ASM -DL_ENDIAN -D_ANSI_SOURCE -fomit-frame-pointer -O3 -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_out_asm",
++"OpenBSD-sparc",      "gcc:-DTERMIOS -O3 -fomit-frame-pointer -mv8 -Wall::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
++"OpenBSD-x86",        "gcc:-DTERMIOS -D_ANSI_SOURCE -O3 -fomit-frame-pointer -m486 -Wall::BN_LLONG $x86_gcc_des $x86_gcc_opts:asm/x86-lnxa.o:asm/dx86-out.o  asm/cx86-out.o:asm/bx86-out.o",
+ #"bsdi-gcc",     "gcc:-O3 -ffast-math -DBN_ASM -DL_ENDIAN -DPERL5 -m486::RSA_LLONG $x86_gc_des $x86_gcc_opts:$x86_bsdi_asm",
+ "nextstep",	"cc:-O3 -Wall -DBN_ASM::BN_LLONG $x86_gcc_des $x86_gcc_opts:::",
+ # NCR MP-RAS UNIX ver 02.03.01
+@@ -221,13 +223,13 @@
+ 			{
+ 			$libs.=$_." ";
+ 			}
+-		elsif ($_ =~ /^-D(.*)$/)
++		elsif ($_ =~ /^-[DI](.*)$/)
+ 			{
+ 			$flags.=$_." ";
+ 			}
+ 		else
+ 			{
+-			die "unknown options, only -Dxxx, -Lxxx -lxxx supported\n";
++			die "unknown options, only -Dxxx, -Ixxx, -Lxxx -lxxx supported\n";
+ 			}
+ 		}
+ 	else

@@ -1,12 +1,6 @@
-# OpenBSD makefile for:	SSLeay
-# Version required:	0.8.1b
-# Date created:		1998-Jul-4
-# Whom:			dugsong@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.3 1998/12/16 20:27:58 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/03/12 20:45:09 brad Exp $
 
-DISTNAME=	SSLeay-0.8.1b
+DISTNAME=	SSLeay-0.9.0b
 CATEGORIES=     security
 
 MAINTAINER=	dugsong@monkey.org
@@ -14,7 +8,10 @@ MAINTAINER=	dugsong@monkey.org
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
-MASTER_SITES=	ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL/
+MASTER_SITES=	ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/SSL/ \
+		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.psy.uq.oz.au/pub/Crypto/SSL/ \
+		ftp://ftp.internat.freebsd.org/pub/Crypto/SSL/
 
 .if !defined(NO_WARNINGS)
 fetch-depends:
