@@ -1,0 +1,14 @@
+$OpenBSD: patch-fragroute_c,v 1.1 2002/07/16 00:33:29 naddy Exp $
+--- fragroute.c.orig	Tue Jul 16 02:20:24 2002
++++ fragroute.c	Tue Jul 16 02:21:31 2002
+@@ -69,8 +69,8 @@ static void
+ _resend_outgoing(struct pkt *pkt)
+ {
+ 	if (timerisset(&pkt->pkt_ts)) {
+-		timeout_set(&pkt->pkt_ev, _timed_outgoing, pkt);
+-		timeout_add(&pkt->pkt_ev, &pkt->pkt_ts);
++		evtimer_set(&pkt->pkt_ev, _timed_outgoing, pkt);
++		evtimer_add(&pkt->pkt_ev, &pkt->pkt_ts);
+ 	} else {
+ 		eth_pack_hdr(pkt->pkt_eth, ctx.dmac.addr_eth,
+ 		    ctx.smac.addr_eth, ETH_TYPE_IP);
