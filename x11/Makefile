@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2005/03/07 21:48:45 niallo Exp $
+# $OpenBSD: Makefile,v 1.205 2005/04/01 08:08:53 markus Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -229,6 +229,7 @@
      SUBDIR += xmbdfed
      SUBDIR += xmold
      SUBDIR += xosd
+     SUBDIR += xplot
      SUBDIR += xpostit
      SUBDIR += xpostitPlus
      SUBDIR += xprompt
