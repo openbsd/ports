@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 1999/10/08 20:04:33 brad Exp $
+# $OpenBSD: Makefile,v 1.39 1999/10/09 04:28:16 turan Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -20,7 +20,6 @@ MAINTAINER=	todd@openbsd.org
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES)
 MASTER_SITES0=	ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
 		ftp://ftp.it.net.au/mirrors/crypto/misc/ \
-		ftp://ftp.visi.com/disk3/unix/crypto/
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz:0
 .endif
 
