@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/27 12:10:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/21 11:36:43 espie Exp $
 
 
 COMMENT=	"graph drawing software"
 
 DISTNAME=	graphviz-1.16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	math devel graphics
 
 HOMEPAGE=	http://www.graphviz.org/
@@ -22,7 +23,7 @@ MODULES=	gettext
 LIB_DEPENDS=	expat.4::textproc/expat \
 		jpeg.62::graphics/jpeg \
                 png.2::graphics/png \
-		tk84.1::x11/tk/8.4
+		tk84.1:tk-8.4.*:x11/tk/8.4
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
