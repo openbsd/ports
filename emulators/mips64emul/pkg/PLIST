@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/04 08:58:24 grange Exp $
+bin/mips64emul
+share/doc/mips64emul/
+share/doc/mips64emul/hello.c
+share/doc/mips64emul/index.html
+share/doc/mips64emul/mips64emul.1
+share/doc/mips64emul/netbsd-pmax-20040630.png
+share/doc/mips64emul/netbsd-pmax-20040630_small.png
+share/doc/mips64emul/openbsd-pmax-20040710.png
+share/doc/mips64emul/openbsd-pmax-20040710_small.png
+share/doc/mips64emul/sprite-20040711.png
+share/doc/mips64emul/sprite-20040711_small.png
+share/doc/mips64emul/technical.html
+share/doc/mips64emul/ultrix4.5-20040706.png
+share/doc/mips64emul/ultrix4.5-20040706_small.gif
