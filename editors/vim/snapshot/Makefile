@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2001/06/25 01:27:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2001/07/03 16:10:14 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
-V=		al
+V=		am
 DISTNAME=	vim-6.0${V}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	editors
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unreleased/unix/ \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unreleased/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/unreleased/unix/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unreleased/unix/ 
-DISTFILES=	${DISTNAME}-src.tar.bz2 ${DISTNAME}-rt.tar.bz2
+DISTFILES=	${DISTNAME}.tar.bz2
 
 HOMEPAGE=	http://www.vim.org/
 
