@@ -1,4 +1,5 @@
-# $NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/23 04:52:54 itojun Exp $
+# NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
 DISTNAME=	nvi-1.79
@@ -6,8 +7,9 @@ PKGNAME=	nvi-m17n-1.79.19991117
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCHFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
 MAINTAINER=	itojun@itojun.org
@@ -18,19 +20,16 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	YES
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p1 -f
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
-CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n
-
-.include "../../mk/bsd.prefs.mk"
+CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=i386--openbsd
 
 PATCH_FUZZ_FACTOR=	-F1
 
-.if !defined(USE_CANNA) || ${USE_CANNA} == YES
-DEPENDS+=	Canna-lib-3.5b2:../../japanese/canna-lib
-CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
-.endif
+#.if defined(USE_CANNA) && ${USE_CANNA} == YES
+#DEPENDS+=	Canna-lib-3.5b2:../../japanese/canna-lib
+#CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
+#.endif
 
-PLIST_TMP=	${WRKDIR}/PLIST
-PLIST_SRC+=	${PKGDIR}/PLIST ${PLIST_TMP}
+PLIST=	${WRKDIR}/PLIST
 
 REQ_TMP=	${PKGDIR}/REQ
 REQ_FILE=	${WRKDIR}/REQ
@@ -57,13 +56,14 @@ ENCODING+=	iso-2022-cn iso-2022-jp iso-2022-kr
 ENCODING+=	euc-jp euc-cn euc-kr sjis big5 euc-tw hz
 
 post-build:
+	@${CP} ${PKGDIR}/PLIST ${PLIST}
 .for encoding in ${ENCODING}
 	@${SED} -e 's|$${CANNA_OPT}|${CANNA_OPT.${encoding}}|'		\
 		-e 's|$${AUTODETECT}|${AUTODETECT.${encoding}}|'	\
 		-e 's|$${ENCODING}|${encoding}|g'			\
 		-e 's|$${PREFIX}|${PREFIX}|'				\
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
-	@${ECHO} "bin/nvi-${encoding}" >> ${PLIST_TMP}
+	@${ECHO} "bin/nvi-${encoding}" >> ${PLIST}
 .endfor
 	@${SED} -e 's|$${PREFIX}|${PREFIX}|' ${REQ_TMP} > ${REQ_FILE}
 
@@ -76,4 +76,4 @@ post-install:
 	@${CP} ${WRKSRC}/../docs.m17n/README.japanese \
 		${PREFIX}/share/vi/
 
-.include "../../mk/bsd.pkg.mk"
+.include <bsd.port.mk>
