@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/27 23:02:44 form Exp $
+# $OpenBSD: Makefile,v 1.20 2000/03/31 05:58:41 brad Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
 CATEGORIES=	security net
-NEED_VERSION=	1.191
+NEED_VERSION=	1.234
+
+MIRROR_DISTFILE=No
 
 MAINTAINER=	ports@openbsd.org
 
@@ -11,13 +13,6 @@ PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial
 PERMIT_DISTFILES_CDROM=	commercial
 PERMIT_DISTFILES_FTP=	commercial
-
-NO_CDROM=	"NEC has a funky license for this software"
-RESTRICTED=	"no commercial use"
-MIRROR_DISTFILE=No
-IS_INTERACTIVE=	Yes
-NO_PACKAGE=	interactive port
-MAKE_ENV=	INSTALL_RUNSOCKS=${INSTALL_RUNSOCKS}
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
@@ -27,12 +22,16 @@ MAKE_ENV=	INSTALL_RUNSOCKS=${INSTALL_RUNSOCKS}
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
+FAKE=	Yes
+
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-libconffile="/etc/libsocks5.conf" \
 		--with-srvconffile="/etc/socks5.conf" \
 		--with-srvpidfile="/var/run/socks5.pid" \
 		--with-srvidtfile="/var/run/socks5.ident" \
 		${EXTRA_CONFIGURE_ARGS}
+
+MAKE_ENV=	INSTALL_RUNSOCKS="${INSTALL_RUNSOCKS}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}
 
@@ -54,18 +53,18 @@ post-build:
 	fi
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/server/socks5 ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/server/stopsocks ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/clients/pt/rping ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/clients/pt/rtraceroute ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/clients/archie/archie \
-		${PREFIX}/bin/rarchie
-	${INSTALL_PROGRAM} ${WRKBUILD}/clients/archie/archie \
-		${PREFIX}/bin/rarchie
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/socks
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/socks
+	cd ${WRKBUILD}/server; ${INSTALL_PROGRAM} socks5 stopsocks \
+		${PREFIX}/sbin
+	cd ${WRKBUILD}/clients/pt; ${INSTALL_PROGRAM} rping rtraceroute \
+		${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKBUILD}/clients/finger/finger \
 		${PREFIX}/bin/rfinger
 	${INSTALL_PROGRAM} ${WRKBUILD}/clients/finger/whois \
 		${PREFIX}/bin/rwhois
+	${INSTALL_PROGRAM} ${WRKBUILD}/clients/archie/archie \
+		${PREFIX}/bin/rarchie
 	${INSTALL_PROGRAM} ${WRKBUILD}/clients/ftp/ftp \
 		${PREFIX}/bin/rftp
 	${INSTALL_PROGRAM} ${WRKBUILD}/clients/telnet/telnet \
@@ -77,9 +76,7 @@ do-install:
 		${PREFIX}/man/man8/stopsocks.8
 	${INSTALL_MAN} ${WRKBUILD}/man/man1/socks5_clients.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKBUILD}/man/man5/* ${PREFIX}/man/man5
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/socks
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/lib/socks
-	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/socks
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks
 	@if [ ! x"$INSTALL_RUNSOCKS" = "x" ]; then \
 		${INSTALL_DATA} ${WRKBUILD}/shlib/libsocks5_sh.so \
