@@ -1,6 +1,6 @@
---- ctags/entry.c.orig	Tue Jul 27 18:41:33 1999
-+++ ctags/entry.c	Tue Jul 27 18:42:04 1999
-@@ -359,7 +359,7 @@
+--- ctags/entry.c.orig	Fri Sep 17 03:00:10 1999
++++ ctags/entry.c	Thu Dec  9 13:20:15 1999
+@@ -408,7 +408,7 @@
       */
      if (TagsToStdout)
      {
@@ -9,16 +9,16 @@
  	TagFile.fp = fopen(TagFile.name, "w");
      }
      else
-@@ -466,7 +466,7 @@
+@@ -472,7 +472,7 @@
+ {
      char tempName[L_tmpnam];
-     int result = -1;
  
 -    if (tmpnam(tempName) != NULL)
 +    if (mkstemp(tempName) != NULL)
      {
- 	result = copyFile(name, tempName, size);
- 	if (result == 0)
-@@ -556,7 +556,7 @@
+ 	copyFile(name, tempName, size);
+ 	copyFile(tempName, name, WHOLE_FILE);
+@@ -564,7 +564,7 @@
  
  extern void beginEtagsFile()
  {
