@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/07/18 10:59:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2001/08/17 19:34:51 brad Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -6,7 +6,8 @@ SUBPACKAGE?=
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"collection of base classes for common PHP tasks"
 
-# This port current only works with archs supporting dynamic loading
+# This port currently only works with archs supporting dynamic loading
+# and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
 V=		4.0.6
@@ -15,7 +16,7 @@ PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
 
 CATEGORIES=	www lang
-NEED_VERSION=	1.422
+NEED_VERSION=	1.435
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
 

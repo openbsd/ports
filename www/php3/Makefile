@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.34 2001/06/03 05:32:16 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2001/08/17 19:34:51 brad Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
-# This port current only works with archs supporting dynamic loading
+# This port currently only works with archs supporting dynamic loading
+# and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
 DISTNAME=	php-3.0.18
 PKGNAME=	php3-3.0.18
 CATEGORIES=	www lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.php.net/
 
