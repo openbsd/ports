@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2005/02/08 04:29:22 msf Exp $
+# $OpenBSD: Makefile,v 1.44 2005/04/06 00:03:57 alek Exp $
 #
 
      SUBDIR += R
 #    SUBDIR += Scilab
+     SUBDIR += aamath
      SUBDIR += abs
 #    SUBDIR += apc
 #    SUBDIR += blas
