@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/11/30 04:51:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/03 19:01:13 nino Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 
@@ -6,13 +6,13 @@ DISTNAME=		gnome-applets-1.4.0.5
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Jim Geovedi <negative@magnesium.net>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/1.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
 			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/11/30 04:51:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/03 19:01:13 nino Exp $
 
 COMMENT=		"core GNOME system"
 
@@ -6,7 +6,7 @@ DISTNAME=		gnome-core-1.4.0.6
 CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Jim Geovedi <negative@magnesium.net>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-core/1.4/}
 EXTRACT_SUFX=		.tar.bz2
@@ -19,7 +19,7 @@ LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			capplet::x11/gnome/controlcenter
 
 BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
