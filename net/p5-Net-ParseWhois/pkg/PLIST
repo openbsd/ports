@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/13 18:06:20 peter Exp $
+libdata/perl5/site_perl/Net/ParseWhois.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/BulkRegister.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/DomainBank.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Dotster.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Netsol.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Register.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Registrars.pm
+libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Unknown.pm
+man/man3/Net::ParseWhois.3p
+@dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar
+@dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain
+@dirrm libdata/perl5/site_perl/Net/ParseWhois
