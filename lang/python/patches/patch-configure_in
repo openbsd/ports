@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/10/18 18:52:52 naddy Exp $
+--- configure.in.orig	Mon Jul 16 11:07:26 2001
++++ configure.in	Tue Oct 16 13:51:30 2001
+@@ -599,7 +599,8 @@ then
+ 	Linux*) LDSHARED="gcc -shared";;
+ 	dgux*) LDSHARED="ld -G";;
+ 	BSD/OS*/4*) LDSHARED="gcc -shared";;
+-	OpenBSD*) LDSHARED="ld -Bshareable";;
++        OpenBSD*/2.[0-7]*) LDSHARED="ld -Bshareable";;
++	OpenBSD*) LDSHARED="cc -shared";;
+ 	NetBSD*)
+ 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+ 		then
+@@ -681,7 +682,7 @@ then
+ 	UnixWare*) LINKFORSHARED="-dy -Bdynamic -Wl,-Bexport";;
+ 	SCO_SV*) LINKFORSHARED="-Bdynamic -dy -Wl,-Bexport";;
+ 	ReliantUNIX*) LINKFORSHARED="-W1 -Blargedynsym";;
+-	FreeBSD*|NetBSD*) 
++	FreeBSD*|NetBSD*|OpenBSD*) 
+ 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+ 		then
+ 			LINKFORSHARED="-Wl,--export-dynamic"
