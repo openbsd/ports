@@ -1,0 +1,19 @@
+*** unsq.c.orig	Mon Apr 27 21:50:58 1998
+--- unsq.c	Mon Apr 27 21:52:20 1998
+***************
+*** 116,122 ****
+      wordp = word;
+      while (same_count--)
+  	*wordp++ = (*prevp++);
+!     if (gets (wordp) == NULL)
+  	{
+  	(void) fprintf (stderr, UNSQ_C_SURPRISE_EOF);
+  	exit (1);
+--- 116,122 ----
+      wordp = word;
+      while (same_count--)
+  	*wordp++ = (*prevp++);
+!     if (fgets (wordp, strlen(wordp), stdin) == NULL)
+  	{
+  	(void) fprintf (stderr, UNSQ_C_SURPRISE_EOF);
+  	exit (1);

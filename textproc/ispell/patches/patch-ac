@@ -1,0 +1,21 @@
+*** ispell.c.orig	Mon Apr 27 21:46:38 1998
+--- ispell.c	Mon Apr 27 21:48:33 1998
+***************
+*** 835,842 ****
+  
+      (void) fstat (fileno (infile), &statbuf);
+      (void) strcpy (tempfile, TEMPNAME);
+!     if (mktemp (tempfile) == NULL  ||  tempfile[0] == '\0'
+!       ||  (outfile = fopen (tempfile, "w")) == NULL)
+  	{
+  	(void) fprintf (stderr, CANT_CREATE,
+  	  (tempfile == NULL  ||  tempfile[0] == '\0')
+--- 835,842 ----
+  
+      (void) fstat (fileno (infile), &statbuf);
+      (void) strcpy (tempfile, TEMPNAME);
+!     if (((outfile = fdopen (mkstemp(tempfile), "w")) == NULL) ||
+!         (tempfile[0] == '\0'))
+  	{
+  	(void) fprintf (stderr, CANT_CREATE,
+  	  (tempfile == NULL  ||  tempfile[0] == '\0')
