@@ -1,9 +1,9 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/08/10 19:09:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/12/01 15:32:57 espie Exp $
 
 PKGNAME=	teTeX_base-1.0.6
-CATEGORIES=	print
+CATEGORIES=	print/teTeX
 DIST_SUBDIR=	teTeX
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
