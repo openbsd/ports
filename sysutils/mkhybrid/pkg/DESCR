@@ -1,6 +1,0 @@
-mkhybrid is a pre-mastering program to create iso9660 cd images with
-optional Rockridge, Joliet, or HFS support.  It is based on mkisofs
-and generates a binary image which can be written onto a block device
-such as a CDR drive.
-
-Alpha version based on mkisofs 1.12 beta.

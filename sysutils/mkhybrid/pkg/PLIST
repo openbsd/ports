@@ -1,6 +1,0 @@
-bin/mkhybrid
-bin/isodump
-bin/isoinfo
-bin/isovfy
-share/mkhybrid/macmaping.tbl
-@dirrm share/mkhybrid

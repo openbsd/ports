@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:29 espie Exp $
-#
-# Based on FreeBSD port by Murray Stokely <murray@cdrom.com>
+# $OpenBSD: Makefile,v 1.9 2001/02/24 17:47:28 danh Exp $
 
 DISTNAME=	mkhybrid-1.12b5.1
 CATEGORIES=	sysutils
@@ -8,24 +6,15 @@ NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.ge.ucl.ac.uk/pub/linux/misc/ \
 	ftp://ftp.gwdg.de/pub/linux/misc/mkhybrid/attic/
 
-MAINTAINER=	retrev@csh.rit.edu
+MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
 
-CONFIGURE_STYLE=	gnu dest
-ALL_TARGET=	World
-MAN8=		mkhybrid.8 isoinfo.8
+COMES_WITH=	2.8
 
-post-build:
-	cd ${WRKSRC}/diag && make
-
-post-install:
-	cd ${WRKSRC}/diag && make prefix=${PREFIX} install
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mkhybrid
-	${INSTALL_DATA} ${FILESDIR}/macmaping.tbl ${PREFIX}/share/mkhybrid
+COMMENT=-create a hybrid ISO9660/JOLIET/HFS/Rock Ridge filesystem
 
 .include <bsd.port.mk>
