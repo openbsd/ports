@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/02/21 18:34:51 danh Exp $
+libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gradient.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/selection.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/x.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/flippers.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/gradient.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/play-sample.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/selection.so
+libexec/sawfish/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util/x.so
