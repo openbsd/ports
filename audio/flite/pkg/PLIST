@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/05 03:28:12 espie Exp $
 bin/flite
 bin/flite_time
+include/flite/
 include/flite/cst_alloc.h
 include/flite/cst_args.h
 include/flite/cst_audio.h
@@ -45,4 +46,3 @@ lib/libflite_cmu_us_kal16.a
 lib/libflite_cmulex.a
 lib/libflite_usenglish.a
 %%SHARED%%
-@dirrm include/flite

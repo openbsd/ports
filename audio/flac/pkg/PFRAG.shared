@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/04/18 00:28:40 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/08/05 03:28:12 espie Exp $
 lib/libFLAC++.so.3.2
 lib/libFLAC.so.5.2
 lib/libOggFLAC++.so.0.4
 lib/libOggFLAC.so.1.2
-DYNLIBDIR(%B)
+DYNLIBDIR(%D/lib)

@@ -1,22 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/02/08 02:48:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/05 03:28:12 espie Exp $
 bin/easytag
-man/man1/easytag.1
+@man man/man1/easytag.1
+share/doc/easytag/
 share/doc/easytag/README
 share/doc/easytag/USERS-GUIDE
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Multimedia/
 share/gnome/apps/Multimedia/easytag.desktop
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
 share/locale/fr/LC_MESSAGES/easytag.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/easytag.mo
 share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
+share/pixmaps/
 share/pixmaps/EasyTAG.xpm
 share/pixmaps/EasyTAG_logo.xpm
-@dirrm share/doc/easytag

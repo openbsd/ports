@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/04 19:52:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/05 03:28:12 espie Exp $
 bin/tcat
 bin/toast
 bin/untoast
-man/man1/tcat.1
-man/man1/toast.1
-man/man1/untoast.1
-lib/libgsm.a
-%%SHARED%%
-man/man3/gsm.3
-man/man3/gsm_explode.3
-man/man3/gsm_option.3
-man/man3/gsm_print.3
 include/gsm.h
+lib/libgsm.a
+@man man/man1/tcat.1
+@man man/man1/toast.1
+@man man/man1/untoast.1
+@man man/man3/gsm.3
+@man man/man3/gsm_explode.3
+@man man/man3/gsm_option.3
+@man man/man3/gsm_print.3
+%%SHARED%%

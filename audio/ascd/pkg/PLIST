@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/05 03:28:11 espie Exp $
 bin/ascd
 man/man1/ascd.0
+share/AScd/
+share/AScd/Default/
 share/AScd/Default/back.xpm
 share/AScd/Default/back_bar.xpm
 share/AScd/Default/back_counter.xpm
@@ -12,6 +14,8 @@ share/AScd/Default/digits.xpm
 share/AScd/Default/digits2.xpm
 share/AScd/Default/help.xpm
 share/AScd/Default/panel.xpm
+share/AScd/Themes/
+share/AScd/Themes/big/
 share/AScd/Themes/big/Theme
 share/AScd/Themes/big/ascd.xpm
 share/AScd/Themes/big/autoplay.xpm
@@ -54,6 +58,7 @@ share/AScd/Themes/big/theme_on.xpm
 share/AScd/Themes/big/upper.xpm
 share/AScd/Themes/big/upper_on.xpm
 share/AScd/Themes/big/wings.xpm
+share/AScd/Themes/classic/
 share/AScd/Themes/classic/Theme
 share/AScd/Themes/classic/back.xpm
 share/AScd/Themes/classic/back_counter.xpm
@@ -64,6 +69,7 @@ share/AScd/Themes/classic/pause.xpm
 share/AScd/Themes/classic/play.xpm
 share/AScd/Themes/classic/stop.xpm
 share/AScd/Themes/classic/up.xpm
+share/AScd/Themes/clean/
 share/AScd/Themes/clean/Theme
 share/AScd/Themes/clean/background.xpm
 share/AScd/Themes/clean/bar.xpm
@@ -86,6 +92,7 @@ share/AScd/Themes/clean/quit.xpm
 share/AScd/Themes/clean/rdigits.xpm
 share/AScd/Themes/clean/rew.xpm
 share/AScd/Themes/clean/stop.xpm
+share/AScd/Themes/default/
 share/AScd/Themes/default/Theme
 share/AScd/Themes/default/autoplay.xpm
 share/AScd/Themes/default/autoplay_on.xpm
@@ -112,6 +119,7 @@ share/AScd/Themes/default/pause.xpm
 share/AScd/Themes/default/pause_on.xpm
 share/AScd/Themes/default/play.xpm
 share/AScd/Themes/default/play_on.xpm
+share/AScd/Themes/default/quick/
 share/AScd/Themes/default/quick/quick1.gif
 share/AScd/Themes/default/quick/quick2.gif
 share/AScd/Themes/default/rew.xpm
@@ -122,6 +130,7 @@ share/AScd/Themes/default/theme_on.xpm
 share/AScd/Themes/default/upper.xpm
 share/AScd/Themes/default/upper_on.xpm
 share/AScd/Themes/default/wings.xpm
+share/AScd/Themes/orb/
 share/AScd/Themes/orb/Theme
 share/AScd/Themes/orb/back.xpm
 share/AScd/Themes/orb/back_counter.xpm
@@ -132,6 +141,7 @@ share/AScd/Themes/orb/play.xpm
 share/AScd/Themes/orb/play_on.xpm
 share/AScd/Themes/orb/stop.xpm
 share/AScd/Themes/orb/up.xpm
+share/AScd/Themes/sands/
 share/AScd/Themes/sands/Theme
 share/AScd/Themes/sands/background.xpm
 share/AScd/Themes/sands/bar.xpm
@@ -153,6 +163,7 @@ share/AScd/Themes/sands/play_on.xpm
 share/AScd/Themes/sands/quit.xpm
 share/AScd/Themes/sands/rew.xpm
 share/AScd/Themes/sands/stop.xpm
+share/AScd/Themes/tortured/
 share/AScd/Themes/tortured/Theme
 share/AScd/Themes/tortured/ascd.xpm
 share/AScd/Themes/tortured/back.xpm
@@ -181,6 +192,7 @@ share/AScd/Themes/tortured/stop.xpm
 share/AScd/Themes/tortured/stop_on.xpm
 share/AScd/Themes/tortured/volume.xpm
 share/AScd/Themes/tortured/volume_back.xpm
+share/AScd/Themes/vintage/
 share/AScd/Themes/vintage/Theme
 share/AScd/Themes/vintage/back.xpm
 share/AScd/Themes/vintage/bar.xpm
@@ -200,8 +212,10 @@ share/AScd/Themes/vintage/play_on.xpm
 share/AScd/Themes/vintage/quit.xpm
 share/AScd/Themes/vintage/rew.xpm
 share/AScd/Themes/vintage/stop.xpm
+share/AScd/Themes/vintage/zob/
 share/AScd/Themes/vintage/zob/digits.xpm
 share/AScd/Themes/vintage/zob/digits2.xpm
+share/AScd/Themes/wmcdplay/
 share/AScd/Themes/wmcdplay/Theme
 share/AScd/Themes/wmcdplay/back.xpm
 share/AScd/Themes/wmcdplay/back_counter.xpm
@@ -218,6 +232,7 @@ share/AScd/Themes/wmcdplay/previous.xpm
 share/AScd/Themes/wmcdplay/repeat.xpm
 share/AScd/Themes/wmcdplay/rew.xpm
 share/AScd/Themes/wmcdplay/stop.xpm
+share/AScd/Themes/zinamp/
 share/AScd/Themes/zinamp/Theme
 share/AScd/Themes/zinamp/ascd.xpm
 share/AScd/Themes/zinamp/autoplay.xpm
@@ -264,18 +279,3 @@ share/AScd/Themes/zinamp/stop_on.xpm
 share/AScd/Themes/zinamp/volume.xpm
 share/AScd/Themes/zinamp/zob.gif
 share/AScd/themes-manual.ps.gz
-@dirrm share/AScd/Themes/zinamp
-@dirrm share/AScd/Themes/wmcdplay
-@dirrm share/AScd/Themes/vintage/zob
-@dirrm share/AScd/Themes/vintage
-@dirrm share/AScd/Themes/tortured
-@dirrm share/AScd/Themes/sands
-@dirrm share/AScd/Themes/orb
-@dirrm share/AScd/Themes/default/quick
-@dirrm share/AScd/Themes/default
-@dirrm share/AScd/Themes/clean
-@dirrm share/AScd/Themes/classic
-@dirrm share/AScd/Themes/big
-@dirrm share/AScd/Themes
-@dirrm share/AScd/Default
-@dirrm share/AScd

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/15 15:54:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/05 03:28:12 espie Exp $
 bin/flac
 bin/metaflac
+include/FLAC/
+include/FLAC++/
 include/FLAC++/all.h
 include/FLAC++/decoder.h
 include/FLAC++/encoder.h
@@ -18,6 +20,8 @@ include/FLAC/seekable_stream_decoder.h
 include/FLAC/seekable_stream_encoder.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
+include/OggFLAC/
+include/OggFLAC++/
 include/OggFLAC++/all.h
 include/OggFLAC++/decoder.h
 include/OggFLAC++/encoder.h
@@ -34,13 +38,17 @@ lib/libOggFLAC++.a
 lib/libOggFLAC++.la
 lib/libOggFLAC.a
 lib/libOggFLAC.la
-man/man1/flac.1
-man/man1/metaflac.1
+@man man/man1/flac.1
+@man man/man1/metaflac.1
+share/aclocal/
 share/aclocal/libFLAC++.m4
 share/aclocal/libFLAC.m4
 share/aclocal/libOggFLAC++.m4
 share/aclocal/libOggFLAC.m4
+share/doc/flac/
 share/doc/flac/FLAC.tag
+share/doc/flac/html/
+share/doc/flac/html/api/
 share/doc/flac/html/api/+_2metadata_8h-source.html
 share/doc/flac/html/api/+_2metadata_8h.html
 share/doc/flac/html/api/FLAC++_2all_8h-source.html
@@ -250,11 +258,13 @@ share/doc/flac/html/features.html
 share/doc/flac/html/format.html
 share/doc/flac/html/goals.html
 share/doc/flac/html/id.html
+share/doc/flac/html/images/
 share/doc/flac/html/images/1x1.gif
 share/doc/flac/html/images/cafebug.gif
 share/doc/flac/html/images/logo.jpg
 share/doc/flac/html/index.html
 share/doc/flac/html/news.html
+share/doc/flac/html/ru/
 share/doc/flac/html/ru/authors.html
 share/doc/flac/html/ru/comparison.html
 share/doc/flac/html/ru/developers.html
@@ -268,13 +278,3 @@ share/doc/flac/html/ru/index.html
 share/doc/flac/html/ru/links.html
 share/doc/flac/html/ru/news.html
 %%SHARED%%
-@dirrm share/doc/flac/html/ru
-@dirrm share/doc/flac/html/images
-@dirrm share/doc/flac/html/api
-@dirrm share/doc/flac/html
-@dirrm share/doc/flac
-@dirrm share/aclocal
-@dirrm include/OggFLAC++
-@dirrm include/OggFLAC
-@dirrm include/FLAC++
-@dirrm include/FLAC

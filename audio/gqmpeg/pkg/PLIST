@@ -1,13 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/16 15:31:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/08/05 03:28:12 espie Exp $
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
-man/man1/gqmpeg.1
+@man man/man1/gqmpeg.1
+share/doc/gqmpeg/
 share/doc/gqmpeg/FAQ
 share/doc/gqmpeg/README
 share/doc/gqmpeg/README.plugin
 share/doc/gqmpeg/SKIN-SPECS-V1
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Multimedia/
+share/gnome/apps/Multimedia/gqmpeg.desktop
+share/gqmpeg/
+share/gqmpeg/skins/
 share/gqmpeg/skins/README
 share/gqmpeg/skins/SKIN-SPECS
+share/gqmpeg/skins/mrclean/
 share/gqmpeg/skins/mrclean/blue-handle-24.png
 share/gqmpeg/skins/mrclean/blue2-about.png
 share/gqmpeg/skins/mrclean/blue2-round-shadowed.png
@@ -79,23 +87,8 @@ share/locale/fi/LC_MESSAGES/gqmpeg.mo
 share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/gqmpeg/skins/mrclean
-@dirrm share/gqmpeg/skins
-@dirrm share/gqmpeg
-@dirrm share/doc/gqmpeg
+share/pixmaps/
+share/pixmaps/gqmpeg.png
