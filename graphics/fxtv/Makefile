@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/08 07:51:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2001/03/07 07:06:07 fgsch Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
 BROKEN=		"security issues with tempnam(), to fix"
-DISTNAME=	fxtv-1.02
+DISTNAME=	fxtv-1.03
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.358
 MASTER_SITES=	http://people.freebsd.org/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 
