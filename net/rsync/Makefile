@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/05/11 22:20:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2003/06/04 12:21:49 jolan Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
@@ -24,6 +24,9 @@ CONFIGURE_ARGS=		--with-included-popt \
 			--with-rsh=ssh
 
 DOCDIR=	${PREFIX}/share/doc/rsync
+
+post-patch:
+	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/rsync.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
