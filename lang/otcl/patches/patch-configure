@@ -1,6 +1,6 @@
---- configure.orig	Thu Feb 28 13:05:46 2002
-+++ configure	Thu Feb 28 13:06:42 2002
-@@ -2865,16 +2865,16 @@
+--- configure.orig	Wed May 30 20:31:31 2001
++++ configure	Wed Mar 27 14:11:51 2002
+@@ -2865,16 +2865,16 @@ case $system in
          DL_LIBS="-ldl"
          SHLD_FLAGS="-Wl,-Bexport"
          ;;
@@ -9,9 +9,10 @@
          # Not available on all versions:  check for include file.
          if test -e /usr/include/dlfcn.h; then
              SHLIB_CFLAGS="-fpic"
-             SHLIB_LD="ld -Bshareable"
+-            SHLIB_LD="ld -Bshareable"
 -            SHLIB_SUFFIX=".so"
-+            SHLIB_SUFFIX=".so.1"
++            SHLIB_LD="cc -shared"
++            SHLIB_SUFFIX=".so.1.0"
              DL_LIBS=""
              SHLD_FLAGS=""
          else

@@ -1,7 +1,13 @@
---- Makefile.in.orig	Fri Jun  8 21:34:11 2001
-+++ Makefile.in	Fri Jun  8 21:34:21 2001
-@@ -33,7 +33,7 @@
- SONAME = lib$(LIB).so.$(MAJOR)
+--- Makefile.in.orig	Sun Sep 24 20:32:11 2000
++++ Makefile.in	Wed Mar 27 13:30:29 2002
+@@ -29,11 +29,12 @@ LIBS+= @LIBS@
+ AFLAGS = -Wall -I. -I$(srcdir) $(CPPFLAGS) $(DEBUG) $(OPT) $(LIBOPTS) $(CFLAGS)
+ 
+ MAJOR=1
++MINOR=0
+ ARNAME = lib$(LIB).a
+-SONAME = lib$(LIB).so.$(MAJOR)
++SONAME = lib$(LIB).so.$(MAJOR).$(MINOR)
  PANAME = lib$(LIB)_p.a
  
 -prefix = @prefix@
