@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/01 17:57:00 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/09/23 20:48:57 jakob Exp $
 
 DISTNAME=	ethereal-0.7.3
 CATEGORIES=	net x11
@@ -7,7 +7,7 @@ MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.zing.org/distribution/old-versions/ \
 		http://ethereal.boehm.org/distribution/old-versions/
 
-MAINTAINER=     jakob@crt.se
+MAINTAINER=     jakob@openbsd.org
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+
