@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/28 11:53:03 camield Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/26 15:18:32 camield Exp $
 
 DISTNAME=	serialmail-0.75
 HOMEPAGE=	http://cr.yp.to/serialmail.html
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 QMAILDIR=	/var/qmail
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
@@ -35,5 +35,8 @@ pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 	@echo ${QMAILDIR} > ${WRKSRC}/conf-qmail
+
+pre-install:
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

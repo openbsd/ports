@@ -1,15 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.1 2000/03/13 11:27:33 camield Exp $
+$OpenBSD: patch-Makefile,v 1.2 2000/04/26 15:18:31 camield Exp $
 
-Needed for fake installation.
+Needed for fake installation. This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
 
---- Makefile.orig	Mon Mar 13 12:23:11 2000
-+++ Makefile	Mon Mar 13 12:23:24 2000
-@@ -33,7 +33,7 @@
+--- Makefile.orig	Tue May 19 18:25:42 1998
++++ Makefile	Wed Apr 26 16:59:30 2000
+@@ -102,7 +102,7 @@
+ 	./compile cdbmss.c
  
- auto_qmail.c: \
- auto-str conf-qmail
--	./auto-str auto_qmail `head -1 conf-qmail` > auto_qmail.c
-+	./auto-str auto_qmail ${WRKINST}`head -1 conf-qmail` > auto_qmail.c
+ check: \
+-it instcheck
++instcheck
+ 	./instcheck
  
- auto_qmail.o: \
- compile auto_qmail.c
+ coe.o: \
+@@ -411,7 +411,7 @@
+ 	./compile setmaillist.c
+ 
+ setup: \
+-it install
++install
+ 	./install
+ 
+ sgetopt.o: \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/28 07:22:31 camield Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/26 15:18:31 camield Exp $
 
 DISTNAME=	ezmlm-0.53
 HOMEPAGE=	http://cr.yp.to/ezmlm.html
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 QMAILDIR=	/var/qmail
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default man
-INSTALL_TARGET=	setup WRKINST=${WRKINST}
+ALL_TARGET=	it man
+INSTALL_TARGET=	setup
 
 FAKE=	Yes
 
@@ -35,5 +35,9 @@ pre-build:
 	@echo ${PREFIX}/bin > ${WRKSRC}/conf-bin
 	@echo ${PREFIX}/man > ${WRKSRC}/conf-man
 	@echo ${QMAILDIR} > ${WRKSRC}/conf-qmail
+
+pre-install:
+	@echo ${PREFIX}/bin > ${WRKSRC}/conf-bin
+	@echo ${PREFIX}/man > ${WRKSRC}/conf-man
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/28 07:43:13 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/26 15:18:32 camield Exp $
 
 DISTNAME=	qmailanalog-0.70
 HOMEPAGE=	http://cr.yp.to/qmailanalog.html
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 QMAILDIR=	/var/qmail
 
 NO_CONFIGURE=	Yes
-ALL_TARGET=	it install WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
@@ -34,6 +34,9 @@ RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
+
+pre-install:
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

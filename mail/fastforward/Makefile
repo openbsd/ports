@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/04 15:37:11 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/26 15:18:31 camield Exp $
 
 DISTNAME=	fastforward-0.51
 HOMEPAGE=	http://cr.yp.to/fastforward.html
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX=		/var/qmail
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=   Yes
@@ -32,6 +32,9 @@ RUN_DEPENDS=	${PREFIX}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
+
+pre-install:
 	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
 
 .include <bsd.port.mk>
