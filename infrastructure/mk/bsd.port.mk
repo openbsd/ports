@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.424 2001/07/18 16:19:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.425 2001/07/18 18:23:04 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -369,6 +369,34 @@ ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .  endfor
 .endif
 
+# Build FLAVOR_EXT, checking that no flavors are misspelled
+FLAVOR_EXT:=
+.if defined(FLAVORS)
+.  if defined(FLAVOR)
+.    for _i in ${FLAVOR:L}
+.      if empty(FLAVORS:L:M${_i})
+ERRORS+=	"Fatal: Unknown flavor: ${_i}"
+ERRORS+= "   (Possible flavors are: ${FLAVORS})."
+.      endif
+.    endfor
+.  endif
+.endif
+
+.if ${SUBPACKAGE} != "" 
+.  if defined(FULLPKGNAME${SUBPACKAGE})
+FULLPKGNAME:=	${FULLPKGNAME${SUBPACKAGE}}
+.  elif defined(PKGNAME${SUBPACKAGE})
+PKGNAME:=		${PKGNAME${SUBPACKAGE}}
+.  endif
+.endif
+PKGNAME?=		${DISTNAME}${SUBPACKAGE}
+FULLPKGNAME?=	${PKGNAME}${FLAVOR_EXT}
+
+PKGREPOSITORYSUBDIR?=	All
+PKG_SUFX?=		.tgz
+PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
+PKGFILE?=		${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
+
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
@@ -508,20 +536,9 @@ WRKPKG?=		${WRKBUILD}/pkg
 #
 SED_PLIST?=
 
-
-# Build FLAVOR_EXT, checking that no flavors are misspelled
-FLAVOR_EXT:=
-.if defined(FLAVORS)
-.  if defined(FLAVOR)
-.    for _i in ${FLAVOR:L}
-.      if empty(FLAVORS:L:M${_i})
-ERRORS+=	"Fatal: Unknown flavor: ${_i}"
-ERRORS+= "   (Possible flavors are: ${FLAVORS})."
-.      endif
-.    endfor
-.  endif
 # Create the basic sed substitution pipeline for fragments
 # (applies only to PLIST for now)
+.if defined(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
 SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
@@ -736,9 +753,6 @@ ${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
 PKG_ARGS+=		-s ${WRKINST}${PREFIX}
 .endif
 
-PKG_SUFX?=		.tgz
-
-
 CHMOD?=		/bin/chmod
 CHOWN?=		/usr/sbin/chown
 GUNZIP_CMD?=	/usr/bin/gunzip -f
@@ -844,17 +858,7 @@ EXTRACT_SUFX?=.tar.bz2
 
 EXTRACT_SUFX?=		.tar.gz
 
-# Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-.if ${SUBPACKAGE} != "" 
-.  if defined(FULLPKGNAME${SUBPACKAGE})
-FULLPKGNAME:=	${FULLPKGNAME${SUBPACKAGE}}
-.  elif defined(PKGNAME${SUBPACKAGE})
-PKGNAME:=		${PKGNAME${SUBPACKAGE}}
-.  endif
-.endif
-PKGNAME?=		${DISTNAME}${SUBPACKAGE}
-FULLPKGNAME?=	${PKGNAME}${FLAVOR_EXT}
 
 _EVERYTHING=${DISTFILES}
 _DISTFILES=	${DISTFILES:C/:[0-9]$//}
@@ -942,10 +946,6 @@ MAINTAINER?=	ports@openbsd.org
 .if !defined(CATEGORIES)
 ERRORS+=	"Fatal: CATEGORIES is mandatory."
 .endif
-
-PKGREPOSITORYSUBDIR?=	All
-PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
-PKGFILE?=		${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
 
 
 CONFIGURE_SCRIPT?=	configure
