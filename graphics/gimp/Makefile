@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2001/10/24 12:19:22 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2001/10/29 02:06:52 brad Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
 VERSION=	1.2.2
 DISTNAME=	gimp-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.474
+NEED_VERSION=	1.486
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR= gimp/v1.2/v${VERSION}
 
 HOMEPAGE=	http://www.gimp.org/
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		aa.1.3::graphics/aalib \
+MODULES=	gtk
+LIB_DEPENDS=	aa.1.3::graphics/aalib \
 		mpeg.13::graphics/mpeg-lib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
 BUILD_DEPENDS=	wget:wget-*:net/wget
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	wget:wget-*:net/wget
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
