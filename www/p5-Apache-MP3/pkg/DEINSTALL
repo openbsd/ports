@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/08/08 19:02:03 pvalchev Exp $
+#
+# apache_mp3 de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you"
+echo "| need to perform these steps as root:"
+echo "|"
+echo "|   delete the directory apache_mp3 in your webserver's DirectoryRoot;"
+echo "|   edit ${CONF}"
+echo "|   and remove the <Location> entries dealing with your mp3 files."
+echo "|"
+echo "| Do not do this if you plan on re-installing the $1"
+echo "| package at some future time."
+echo "+---------------"
+echo
+
+exit 0

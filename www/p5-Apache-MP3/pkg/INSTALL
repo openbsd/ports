@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/08/08 19:02:03 pvalchev Exp $
+#
+# apache_mp3 installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To finish the installation of $1, you need to copy the"
+    echo "| directory ${PREFIX}/share/examples/apache_mp3 to your webserver's"
+    echo "| DocumentRoot and read the documentation by issuing"
+    echo "|"
+    echo "|    perldoc Apache::MP3"
+    echo "|"
+    echo "| to find out how to setup your ${CONF}."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
