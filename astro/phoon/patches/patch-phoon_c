@@ -1,40 +1,12 @@
-$OpenBSD: patch-phoon_c,v 1.1.1.1 2003/01/13 23:34:18 naddy Exp $
---- phoon.c.orig	Sat Nov 11 21:14:36 1995
-+++ phoon.c	Mon Jan 13 20:53:12 2003
-@@ -46,6 +46,7 @@
- 
- 
- #include <stdio.h>
-+#include <string.h>
- #include <math.h>
- #include <time.h>
- 
-@@ -360,10 +361,10 @@ putmoon( t, numlines, atfiller )
+$OpenBSD: patch-phoon_c,v 1.2 2004/03/02 23:15:30 naddy Exp $
+--- phoon.c.orig	2004-02-23 18:45:07.000000000 +0100
++++ phoon.c	2004-02-23 18:45:26.000000000 +0100
+@@ -354,7 +354,7 @@ putmoon( time_t t, int numlines, char* a
      struct tm* tmP;
-     double jd, angphase, cphase, aom, cdist, cangdia, csund, csuang;
+     double jd, pctphase, angphase, cphase, aom, cdist, cangdia, csund, csuang;
      double phases[2], which[2];
--    long secphase, clocknow;
+-    long clocknow;
 +    time_t clocknow;
      int atflrlen, atflridx, numcols, lin, col, midlin;
      double mcap, yrad, xrad, y, xright, xleft;
--    int colright, colleft, i;
-+    int colright, colleft;
-     char c;
- 
-     /* This is just for Halloween. */
-@@ -499,13 +500,13 @@ putmoon( t, numlines, atfiller )
- 
- /* Main program. */
- 
--main( argc, argv )
-+int main( argc, argv )
-     int argc;
-     char* argv[];
-     {
-     time_t t;
-     char buf[100];
--    int numlines, argi, i;
-+    int numlines, argi;
-     char* usage = "usage:  %s  [-l <lines>]  [<date/time>]\n";
- 
-     /* Parge args. */
+     int colright, colleft;
