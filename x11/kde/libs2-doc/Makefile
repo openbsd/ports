@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/30 13:45:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/21 14:03:34 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries documentation"
 CATEGORIES=		x11 x11/kde devel
@@ -20,11 +20,8 @@ DDIR=		${PREFIX}/share/doc/html/kdelibs
 
 KSRC=`cd ${PORTSDIR} && cd x11/kde/libs2 && make show VARNAME=WRKSRC`
 
-post-extract:
-	mkdir -p ${IDIR}
-
 do-build:
-	qt2kdoc -u "file:/${LOCALBASE}/share/doc/qt2/html" \
+	qt2kdoc -u "file:${LOCALBASE}/share/doc/qt2/html" \
 	    -o ${WRKDIST} ${LOCALBASE}/share/doc/qt2/html
 
 do-install:
