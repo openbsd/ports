@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 20:11:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/23 06:17:41 pvalchev Exp $
 
 COMMENT=	"graphically improved game of yore"
 
-VERSION=	0.11
-DATAVERSION=	1.1
+VERSION=	0.12
+DATAVERSION=	1.3
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
