@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/17 16:56:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/18 22:47:57 brad Exp $
 
 CATEGORIES=		editors
 MASTER_SITES=		${HOMEPAGE}
@@ -19,7 +19,8 @@ CONFIGURE_ENV+=NOPYTHON=Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		XTERM_CMD=xterm
-CONFIGURE_ARGS+=	--disable-mail-author
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--enable-static --disable-mail-author
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
