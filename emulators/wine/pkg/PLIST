@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/03/30 12:27:58 miod Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/05/12 22:19:11 sturm Exp $
 @exec echo "This package may need further setup. Be sure to read the package description"
 @exec echo "carefully."
 bin/wine
@@ -10,4 +10,7 @@ include/wine/winuser.h
 lib/libwine.a
 lib/wine.sym
 man/man1/wine.1
+share/examples/wine/wine.conf
+@exec if [ ! -f ${SYSCONFDIR}/wine.conf ]; then cp %D/%F ${SYSCONFDIR}; fi
+@dirrm share/examples/wine
 @dirrm include/wine

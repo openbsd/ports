@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/03/30 12:27:55 miod Exp $
+# $OpenBSD: Makefile,v 1.27 2003/05/12 22:19:11 sturm Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -27,6 +27,8 @@ post-configure:
 	cd ${WRKSRC} && make depend
 
 post-install:
-	[ -f /etc/wine.conf ] || cp ${WRKSRC}/wine.ini /etc/wine.conf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wine
+	${INSTALL_DATA} ${WRKSRC}/wine.ini \
+		${PREFIX}/share/examples/wine/wine.conf
 
 .include <bsd.port.mk>
