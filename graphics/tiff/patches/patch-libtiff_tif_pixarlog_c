@@ -1,0 +1,67 @@
+$OpenBSD: patch-libtiff_tif_pixarlog_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tif_pixarlog.c.orig	Tue Jul  8 02:50:09 2003
++++ libtiff/tif_pixarlog.c	Wed Oct 20 14:38:11 2004
+@@ -630,11 +630,23 @@ PixarLogGuessDataFmt(TIFFDirectory *td)
+ 	return guess;
+ }
+ 
++static uint32
++multiply(size_t m1, size_t m2)
++{
++	uint32	bytes = m1 * m2;
++
++	if (m1 && bytes / m1 != m2)
++		bytes = 0;
++
++	return bytes;
++}
++
+ static int
+ PixarLogSetupDecode(TIFF* tif)
+ {
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	PixarLogState* sp = DecoderState(tif);
++	tsize_t tbuf_size;
+ 	static const char module[] = "PixarLogSetupDecode";
+ 
+ 	assert(sp != NULL);
+@@ -647,8 +659,13 @@ PixarLogSetupDecode(TIFF* tif)
+ 
+ 	sp->stride = (td->td_planarconfig == PLANARCONFIG_CONTIG ?
+ 	    td->td_samplesperpixel : 1);
+-	sp->tbuf = (uint16 *) _TIFFmalloc(sp->stride * 
+-		td->td_imagewidth * td->td_rowsperstrip * sizeof(uint16));
++	tbuf_size = multiply(multiply(multiply(sp->stride, td->td_imagewidth),
++				      td->td_rowsperstrip), sizeof(uint16));
++	if (tbuf_size == 0)
++		return (0);
++	sp->tbuf = (uint16 *) _TIFFmalloc(tbuf_size);
++	if (sp->tbuf == NULL)
++		return (0);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN)
+ 		sp->user_datafmt = PixarLogGuessDataFmt(td);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN) {
+@@ -798,6 +815,7 @@ PixarLogSetupEncode(TIFF* tif)
+ {
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	PixarLogState* sp = EncoderState(tif);
++	tsize_t tbuf_size;
+ 	static const char module[] = "PixarLogSetupEncode";
+ 
+ 	assert(sp != NULL);
+@@ -806,8 +824,13 @@ PixarLogSetupEncode(TIFF* tif)
+ 
+ 	sp->stride = (td->td_planarconfig == PLANARCONFIG_CONTIG ?
+ 	    td->td_samplesperpixel : 1);
+-	sp->tbuf = (uint16 *) _TIFFmalloc(sp->stride * 
+-		td->td_imagewidth * td->td_rowsperstrip * sizeof(uint16));
++	tbuf_size = multiply(multiply(multiply(sp->stride, td->td_imagewidth),
++				      td->td_rowsperstrip), sizeof(uint16));
++	if (tbuf_size == 0)
++		return (0);
++	sp->tbuf = (uint16 *) _TIFFmalloc(tbuf_size);
++	if (sp->tbuf == NULL)
++		return (0);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN)
+ 		sp->user_datafmt = PixarLogGuessDataFmt(td);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN) {

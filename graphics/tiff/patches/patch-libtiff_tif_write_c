@@ -1,0 +1,56 @@
+$OpenBSD: patch-libtiff_tif_write_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tif_write.c.orig	Tue Aug  5 04:49:13 2003
++++ libtiff/tif_write.c	Wed Oct 20 14:38:50 2004
+@@ -542,7 +542,11 @@ TIFFWriteCheck(TIFF* tif, int tiles, con
+ 		    tif->tif_name, isTiled(tif) ? "tile" : "strip");
+ 		return (0);
+ 	}
+-	tif->tif_tilesize = TIFFTileSize(tif);
++	if (isTiled(tif)) 
++		tif->tif_tilesize = TIFFTileSize(tif);
++	else
++		tif->tif_tilesize = (tsize_t) -1;
++		
+ 	tif->tif_scanlinesize = TIFFScanlineSize(tif);
+ 	tif->tif_flags |= TIFF_BEENWRITING;
+ 	return (1);
+@@ -597,21 +601,30 @@ TIFFWriteBufferSetup(TIFF* tif, tdata_t 
+ static int
+ TIFFGrowStrips(TIFF* tif, int delta, const char* module)
+ {
+-	TIFFDirectory *td = &tif->tif_dir;
++	TIFFDirectory	*td = &tif->tif_dir;
++	uint32		*new_stripoffset, *new_stripbytecount;
+ 
+ 	assert(td->td_planarconfig == PLANARCONFIG_CONTIG);
+-	td->td_stripoffset = (uint32*)_TIFFrealloc(td->td_stripoffset,
+-	    (td->td_nstrips + delta) * sizeof (uint32));
+-	td->td_stripbytecount = (uint32*)_TIFFrealloc(td->td_stripbytecount,
+-	    (td->td_nstrips + delta) * sizeof (uint32));
+-	if (td->td_stripoffset == NULL || td->td_stripbytecount == NULL) {
++	new_stripoffset = (uint32*)_TIFFrealloc(td->td_stripoffset,
++		(td->td_nstrips + delta) * sizeof (uint32));
++	new_stripbytecount = (uint32*)_TIFFrealloc(td->td_stripbytecount,
++		(td->td_nstrips + delta) * sizeof (uint32));
++	if (new_stripoffset == NULL || new_stripbytecount == NULL) {
++		if (new_stripoffset)
++			_TIFFfree(new_stripoffset);
++		if (new_stripbytecount)
++			_TIFFfree(new_stripbytecount);
+ 		td->td_nstrips = 0;
+ 		TIFFError(module, "%s: No space to expand strip arrays",
+-		    tif->tif_name);
++			  tif->tif_name);
+ 		return (0);
+ 	}
+-	_TIFFmemset(td->td_stripoffset+td->td_nstrips, 0, delta*sizeof (uint32));
+-	_TIFFmemset(td->td_stripbytecount+td->td_nstrips, 0, delta*sizeof (uint32));
++	td->td_stripoffset = new_stripoffset;
++	td->td_stripbytecount = new_stripbytecount;
++	_TIFFmemset(td->td_stripoffset + td->td_nstrips,
++		    0, delta*sizeof (uint32));
++	_TIFFmemset(td->td_stripbytecount + td->td_nstrips,
++		    0, delta*sizeof (uint32));
+ 	td->td_nstrips += delta;
+ 	return (1);
+ }

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libtiff_tif_compress_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tif_compress.c.orig	Tue Apr  9 13:51:29 2002
++++ libtiff/tif_compress.c	Wed Oct 20 14:38:11 2004
+@@ -210,9 +210,11 @@ TIFFRegisterCODEC(uint16 scheme, const c
+ 		cd->info->init = init;
+ 		cd->next = registeredCODECS;
+ 		registeredCODECS = cd;
+-	} else
++	} else {
+ 		TIFFError("TIFFRegisterCODEC",
+ 		    "No space to register compression scheme %s", name);
++		return NULL;
++	}
+ 	return (cd->info);
+ }
+ 

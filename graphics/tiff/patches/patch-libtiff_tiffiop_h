@@ -1,0 +1,15 @@
+$OpenBSD: patch-libtiff_tiffiop_h,v 1.1 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tiffiop.h.orig	Fri Dec 26 06:56:25 2003
++++ libtiff/tiffiop.h	Wed Oct 20 14:38:11 2004
+@@ -198,8 +198,9 @@ struct tiff {
+ #endif
+ 
+ /* NB: the uint32 casts are to silence certain ANSI-C compilers */
+-#define	TIFFhowmany(x, y) ((((uint32)(x))+(((uint32)(y))-1))/((uint32)(y)))
+-#define	TIFFroundup(x, y) (TIFFhowmany(x,y)*((uint32)(y)))
++#define TIFFhowmany(x, y) ((((uint32)(x))+(((uint32)(y))-1))/((uint32)(y)))
++#define TIFFhowmany8(x) (((x)&0x07)?((uint32)(x)>>3)+1:(uint32)(x)>>3)
++#define	TIFFroundup(x, y) (TIFFhowmany(x,y)*(y))
+ 
+ #define TIFFmax(A,B) ((A)>(B)?(A):(B))
+ #define TIFFmin(A,B) ((A)<(B)?(A):(B))

@@ -1,7 +1,29 @@
-$OpenBSD: patch-libtiff_tif_fax3_c,v 1.3 2004/05/18 23:35:35 brad Exp $
---- libtiff/tif_fax3.c.orig	2004-05-18 18:32:41.000000000 -0400
-+++ libtiff/tif_fax3.c	2004-05-18 18:41:06.000000000 -0400
-@@ -451,7 +451,7 @@ Fax3SetupState(TIFF* tif)
+$OpenBSD: patch-libtiff_tif_fax3_c,v 1.4 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tif_fax3.c.orig	Thu Nov  6 03:22:13 2003
++++ libtiff/tif_fax3.c	Wed Oct 20 15:05:53 2004
+@@ -437,6 +437,21 @@ _TIFFFax3fillruns(u_char* buf, uint32* r
+ #undef	ZERO
+ #undef	FILL
+ 
++static char *
++CheckMalloc(TIFF* tif, size_t nmemb, size_t elem_size, const char* what)
++{
++	char	*cp = NULL;
++	tsize_t	bytes = nmemb * elem_size;
++
++	if (elem_size && bytes / elem_size == nmemb)
++		cp = (char*) _TIFFmalloc(bytes);
++
++	if (cp == NULL)
++		TIFFError(tif->tif_name, "No space %s", what);
++	
++	return (cp);
++}
++
+ /*
+  * Setup G3/G4-related compression/decompression state
+  * before data is processed.  This routine is called once
+@@ -451,7 +466,7 @@ Fax3SetupState(TIFF* tif)
  	Fax3BaseState* sp = Fax3State(tif);
  	long rowbytes, rowpixels;
  	int needsRefLine;
@@ -10,7 +32,24 @@ $OpenBSD: patch-libtiff_tif_fax3_c,v 1.3 2004/05/18 23:35:35 brad Exp $
  	uint32 nruns;
  
  	if (td->td_bitspersample != 1) {
-@@ -1284,7 +1284,8 @@ InitCCITTFax3(TIFF* tif)
+@@ -481,13 +496,10 @@ Fax3SetupState(TIFF* tif)
+ 
+ 	nruns = needsRefLine ? 2*TIFFroundup(rowpixels,32) : rowpixels;
+ 
+-	dsp->runs = (uint32*) _TIFFmalloc((2*nruns+3)*sizeof (uint32));
+-	if (dsp->runs == NULL) {
+-		TIFFError("Fax3SetupState",
+-		    "%s: No space for Group 3/4 run arrays",
+-		    tif->tif_name);
++	dsp->runs = (uint32*) CheckMalloc(tif, 2*nruns+3, sizeof (uint32),
++					  "for Group 3/4 run arrays");
++	if (dsp->runs == NULL)
+ 		return (0);
+-	}
+ 	dsp->curruns = dsp->runs;
+ 	if (needsRefLine)
+ 		dsp->refruns = dsp->runs + (nruns>>1);
+@@ -1284,7 +1296,8 @@ InitCCITTFax3(TIFF* tif)
  	sp->recvparams = 0;
  	sp->subaddress = NULL;
  

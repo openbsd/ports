@@ -1,0 +1,16 @@
+$OpenBSD: patch-libtiff_tif_thunder_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+--- libtiff/tif_thunder.c.orig	Fri Jul 11 02:25:25 2003
++++ libtiff/tif_thunder.c	Wed Oct 20 14:36:37 2004
+@@ -91,8 +91,10 @@ ThunderDecode(TIFF* tif, tidata_t op, ts
+ 			} else
+ 				lastpixel |= lastpixel << 4;
+ 			npixels += n;
+-			for (; n > 0; n -= 2)
+-				*op++ = (tidataval_t) lastpixel;
++			if (npixels < maxpixels) {
++				for (; n > 0; n -= 2)
++					*op++ = (tidataval_t) lastpixel;
++			}
+ 			if (n == -1)
+ 				*--op &= 0xf0;
+ 			lastpixel &= 0xf;
