@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-no_gnome,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
-lib/libgnomesupport.so.0.0
-lib/libgtop.so.1.11
-lib/libgtop_common.so.1.11
-lib/libgtop_names.so.1.11
-lib/libgtop_suid_common.so.1.11
-lib/libgtop_sysdeps.so.1.11
-lib/libgtop_sysdeps_suid.so.1.11
-DYNLIBDIR(%D/lib)
