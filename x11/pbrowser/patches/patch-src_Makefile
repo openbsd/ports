@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2004/11/08 16:10:14 espie Exp $
+--- src/Makefile.orig	Mon Nov  8 08:58:11 2004
++++ src/Makefile	Mon Nov  8 08:58:25 2004
+@@ -10,13 +10,12 @@ SRCS+= main.c
+ 
+ CFLAGS+= -DPBVERSION=\"\"
+ CFLAGS+= -D__ARCH__=\"${MACHINE_ARCH}\" -D__OSREV__=\"$(OSREV)\"
+-CFLAGS+= -DIMAGEDIR=\"${.CURDIR}/../pixmaps/\"
+ CFLAGS+= -I${.CURDIR} `pkg-config --cflags glib-2.0 gtk+-2.0 gdk-2.0`
+ CFLAGS+= -Wall -W -Wmissing-prototypes -Wbad-function-cast
+ CFLAGS+= -Wmissing-declarations -Wpointer-arith
+ CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual -Wsign-compare 
+ #CFLAGS+= -DDEBUG=0
+-LDADD= `pkg-config --libs glib-2.0 gthread-2.0 gtk+-2.0 gdk-2.0` -lutil 
++LDADD= `pkg-config --libs glib-2.0 gthread-2.0 gtk+-2.0 gdk-2.0` -lutil -lpthread 
+ YFLAGS+= -d
+ MAN= pbrowser.1
+ CLEANFILES+= gram.c scan.c y.tab.h pbrowser.cat1 

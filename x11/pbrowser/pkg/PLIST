@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/08 16:10:14 espie Exp $
+bin/pbrowser
+@man man/cat1/pbrowser.0
+share/icons/
+share/icons/pbrowser/
+share/icons/pbrowser/pb-install_pkg.png
+share/icons/pbrowser/pb-install_port.png
+share/icons/pbrowser/pb-uninstall.png
+share/icons/pbrowser/pb-uninstall_force.png
