@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.208 2000/02/22 09:27:52 turan Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.209 2000/02/22 14:07:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -847,13 +847,20 @@ ALLFILES+= ${SUPDISTFILES:C/:[0-9]$//}
 .  endif
 .endif
 
-# Build CKSUMFILES incrementally from ALLFILES, avoiding duplicates
 CKSUMFILES=
-.for __file in ${ALLFILES}
-.  if empty(CKSUMFILES:M${__file}) && (!defined(IGNOREFILES) || empty(IGNOREFILES:M${__file}))
-CKSUMFILES+= ${__file}
+# First, remove duplicates
+.for _file in ${ALLFILES}
+.  if empty(CKSUMFILES:M${_file})
+CKSUMFILES+=${_file}
 .  endif
 .endfor
+ALLFILES:=${CKSUMFILES}
+
+.if defined(IGNOREFILES)
+.  for _file in ${IGNOREFILES}
+CKSUMFILES:=${CKSUMFILES:N${_file}}
+.  endfor
+.endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
