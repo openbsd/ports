@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2004/01/02 05:11:08 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2004/01/02 11:26:19 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -12,6 +12,7 @@ MASTER_SITE_POSTFIX=\
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
 DIST_SUBDIR=	postfix
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://www.postfix.org/
 
@@ -25,6 +26,7 @@ PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=
 MAKE_CCARGS?=	-DFD_SETSIZE=2048
+MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
 MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
@@ -75,22 +77,20 @@ TLSDISTNAME=	pfixtls-${TLSVERSION}-${TLSPFIXVERSION}-${TLSSSLVERSION}
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${TLSDISTNAME}${EXTRACT_SUFX}:0
+DISTFILES+=	${TLSDISTNAME}${EXTRACT_SUFX}:0
 
 MAKE_CCARGS+=	-DHAS_SSL
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
-post-patch:
+post-patch-tls:
 	mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
 	cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
 	cd ${WRKDIST} && patch -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
 	mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
 	rm ${WRKDIST}/conf/master.cf.orig
 	cd ${WRKDIST} && patch -p0 < ${FILESDIR}/patch-tls-master.cf
-	rm ${WRKDIST}/conf/*.orig
 
-post-install:
+post-install-tls:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
 	${INSTALL_DATA} ${WRKDIR}/${TLSDISTNAME}/doc/* \
 		${PREFIX}/share/doc/postfix/tls
@@ -98,11 +98,14 @@ post-install:
 BROKEN=         "TLS patches not yet available for this version"
 .endif
 .else
-post-patch:
-	rm ${WRKDIST}/conf/*.orig
+post-patch-tls:
+post-install-tls:
 .endif
 
-MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
+post-patch: post-patch-tls
+	rm ${WRKDIST}/conf/*.orig
+
+post-install: post-install-tls
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
