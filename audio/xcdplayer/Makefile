@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/31 21:48:47 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/08 18:20:22 espie Exp $
 
 DISTNAME=	xcdplayer-2.2
 CATEGORIES=	audio
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	Yes
+FAKE=		Yes
 
 pre-patch:
 	@cp ${FILESDIR}/cdrom_freebsd.{c,h} ${WRKSRC}
