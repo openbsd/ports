@@ -1,11 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu/XS.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu/euc_jp.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Term/ReadLine/Gnu/Gnu.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Term/ReadLine/Gnu/Gnu.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Term/ReadLine/Gnu/XS/autosplit.ix
+@comment $OpenBSD: PLIST,v 1.5 2003/04/02 09:19:07 wilfried Exp $
+${P5ARCH}/Term/ReadLine/Gnu.pm
+${P5ARCH}/Term/ReadLine/Gnu/XS.pm
+${P5ARCH}/Term/ReadLine/Gnu/euc_jp.pm
+@comment ${P5ARCH}/auto/Term/ReadLine/Gnu/.packlist
+${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.bs
+${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/autosplit.ix
+@comment ${P5ARCH}/perllocal.pod
 man/man3p/Term::ReadLine::Gnu.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Term/ReadLine/Gnu/XS
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Term/ReadLine/Gnu
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu/XS
+@dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu
+@comment @dirrm ${P5ARCH}/auto/Term/ReadLine
+@comment @dirrm ${P5ARCH}/auto/Term
+@comment @dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Term/ReadLine/Gnu
+@dirrm ${P5ARCH}/Term/ReadLine
+@comment @dirrm ${P5ARCH}/Term
+@comment @dirrm ${P5ARCH}
