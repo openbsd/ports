@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/31 20:45:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/18 00:58:31 jolan Exp $
 
 COMMENT=	"library to create Disk Based Hashtables on POSIX systems"
-DISTNAME=	dbh_1.0-17
+DISTNAME=	dbh_1.0-18
 PKGNAME=	${DISTNAME:L:S/-/./:S/_/-/}
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dbh/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://dbh.sourceforge.net/
 
