@@ -1,15 +1,14 @@
-diff -u ../mpg123-0.59o/Makefile ./Makefile
---- ../mpg123-0.59o/Makefile	Tue Apr 28 12:06:58 1998
-+++ ./Makefile	Tue Apr 28 12:07:47 1998
-@@ -32,6 +32,7 @@
+--- Makefile.orig	Fri Mar  5 09:15:38 1999
++++ Makefile	Fri Mar  5 09:16:43 1999
+@@ -34,6 +34,7 @@
  	@echo "make aix            IBM AIX (tested: 4.2)"
  	@echo "make os2            IBM OS/2"
  	@echo "make netbsd         NetBSD"
 +	@echo "make openbsd        OpenBSD"
  	@echo "make bsdos          BSDI BSD/OS"
- 	@echo "make generic        try this one if your system isn't listed above"
- 	@echo ""
-@@ -208,7 +209,7 @@
+ 	@echo "make bsdos-nas      BSDI BSD/OS with NAS support"
+ 	@echo "make mint           MiNT on Atari"
+@@ -350,7 +351,7 @@
  		LIBS='-los2me -lsocket' \
  		mpg123.exe
  
@@ -18,7 +17,7 @@ diff -u ../mpg123-0.59o/Makefile ./Makefile
  	$(MAKE) CC=cc LDFLAGS= \
  		OBJECTS='decode.o dct64.o audio_sun.o' \
  		CFLAGS='-Wall -ansi -pedantic -O3 -fomit-frame-pointer \
-@@ -216,7 +217,7 @@
+@@ -358,7 +359,7 @@
  			-DREAL_IS_FLOAT -DUSE_MMAP -DNETBSD' \
  		mpg123-make
  
@@ -27,25 +26,3 @@ diff -u ../mpg123-0.59o/Makefile ./Makefile
  	$(MAKE) CC=cc LDFLAGS= \
  		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_sun.o' \
  		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
-diff -u ../mpg123-0.59o/audio.h ./audio.h
---- ../mpg123-0.59o/audio.h	Tue Apr 28 12:06:59 1998
-+++ ./audio.h	Tue Mar 31 10:51:11 1998
-@@ -19,7 +19,7 @@
- /* 3% rate tolerance */
- #define AUDIO_RATE_TOLERANCE	  3
- 
--#if defined(HPUX) || defined(SUNOS) || defined(SOLARIS) || defined(OSS) || defined(__NetBSD__)
-+#if defined(HPUX) || defined(SUNOS) || defined(SOLARIS) || defined(OSS) || defined(__NetBSD__) || defined(__OpenBSD__)
- #define AUDIO_USES_FD
- #endif
- 
-@@ -68,6 +68,6 @@
- extern int audio_write_sample(struct audio_info_struct *,short *,int);
- extern int audio_close(struct audio_info_struct *);
- extern void audio_info_struct_init(struct audio_info_struct *);
--#if defined(SOLARIS) || defined(__NetBSD__)
-+#if defined(SOLARIS) || defined(__NetBSD__) || defined(__OpenBSD__)
- extern void audio_queueflush(struct audio_info_struct *ai);
- #endif
-Common subdirectories: ../mpg123-0.59o/jukebox and ./jukebox
-Common subdirectories: ../mpg123-0.59o/plugin and ./plugin
