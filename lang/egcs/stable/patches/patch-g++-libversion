@@ -6,7 +6,7 @@
 +# Base shared lib for OpenBSD 
 +# This interface schmuck isn't present before after 1.1.2
 +INTERFACE=2
-+MAJOR_OFFSET=27
++MAJOR_OFFSET=28
 +MSHLINK = libstdc++.so.`expr $(INTERFACE) + $(MAJOR_OFFSET)`.0
  LIBS    = $(ARLIB) $(SHLIB) $(SHLINK) mshlink
  SHFLAGS = -nostdlib -Wl,-Bshareable,-Bforcearchive
