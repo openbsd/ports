@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/18 15:08:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/26 04:58:55 naddy Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-10.5
+DISTNAME=		nail-10.7
 CATEGORIES=		mail
 HOMEPAGE=		http://nail.sourceforge.net/
 
@@ -15,10 +15,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nail/}
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		iconv
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-rcfile="${SYSCONFDIR}/nail.rc" --with-openssl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
