@@ -1,21 +1,23 @@
---- Makefile.in.orig	Thu Nov 12 14:57:13 1998
-+++ Makefile.in	Fri Mar 24 12:17:54 2000
-@@ -14,7 +14,7 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2003/07/18 15:03:53 naddy Exp $
+--- Makefile.in.orig	Wed Jul  9 21:55:09 2003
++++ Makefile.in	Fri Jul 18 16:54:31 2003
+@@ -14,8 +14,7 @@
  USE_SETGID=-DUSE_SETGID
  
- # group owner of games file
--GROUP_GID=2
+ # group owner of games file.
+-GROUP_GID=5
+-@GROUP_GID@
 +GROUP_GID=13
  
  ###########################################################################
  # You don't need to read below if you have xmkmf or imake
-@@ -29,27 +29,23 @@
+@@ -30,27 +29,23 @@ IMAKE_OPTIONS=-DTOP=/ -DUseInstalled
  # Directory who contain X Resource Database
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -RESOURCEDIR=/usr/lib/X11/app-defaults
 -@XAPPLOADDIR@
-+RESOURCEDIR=$(X11BASE)/lib/X11/app-defaults
++RESOURCEDIR=$(PREFIX)/lib/X11/app-defaults
  
  # Directory where install binary
  # The default value if overrided by configure if xmkmf or imake exists.
@@ -41,7 +43,7 @@
  
  ###########################################################################
  # Some values defined in imakefiles
-@@ -82,9 +78,9 @@
+@@ -83,9 +78,9 @@ LINTFLAGS=-Zf1000 -Zn4096 -Zt10000
  
  # For linking (configure script will modify this line)
  # xmkmf et imake informations are take into account.
@@ -51,19 +53,9 @@
 -all:demo
 +all:bl
  
- XBLVERSION=1.0j
+ XBLVERSION=1.1.1
  XBL=xbl-$(XBLVERSION)
-@@ -93,7 +89,8 @@
- 	 -DRESOURCEDIR=\"$(RESOURCEDIR)\" \
- 	 -DXBLVERSION=\"$(XBLVERSION)\" \
- 	 -DGROUP_GID=$(GROUP_GID) \
--	  $(USE_SETGID) @DEFS@ -g
-+	 -I${X11BASE}/include \
-+	  $(USE_SETGID) @DEFS@ @CFLAGS@
- # For link edit options
- LDOPTIONS=$(CFLAGS)
- LDOPTIONS=@LDOPTIONS@
-@@ -123,29 +120,24 @@
+@@ -124,29 +119,24 @@ install:bl
  	@echo "Executable go in $(BINDIR)"
  	@echo "Scores     go in $(SCOREDIR)"
  	@echo "Defaults   go in $(RESOURCEDIR)/Xbl"
@@ -99,7 +91,7 @@
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
-@@ -172,17 +164,11 @@
+@@ -173,17 +163,11 @@ install:bl
  	#
  	# Install manual pages
  	#
