@@ -1,0 +1,27 @@
+$OpenBSD: patch-test-gnome_Makefile_in,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
+--- test-gnome/Makefile.in.orig	Tue Jun 11 14:02:33 2002
++++ test-gnome/Makefile.in	Mon Aug  5 19:51:47 2002
+@@ -259,19 +259,19 @@ maintainer-clean-libtool:
+ 
+ test-gnome$(EXEEXT): $(test_gnome_OBJECTS) $(test_gnome_DEPENDENCIES)
+ 	@rm -f test-gnome$(EXEEXT)
+-	$(LINK) $(test_gnome_LDFLAGS) $(test_gnome_OBJECTS) $(test_gnome_LDADD) $(LIBS)
++	$(LINK) $(test_gnome_LDFLAGS) $(test_gnome_OBJECTS) $(test_gnome_LDADD) $(LIBGNOMEUI_LIBS) $(LIBS)
+ 
+ test-druid$(EXEEXT): $(test_druid_OBJECTS) $(test_druid_DEPENDENCIES)
+ 	@rm -f test-druid$(EXEEXT)
+-	$(LINK) $(test_druid_LDFLAGS) $(test_druid_OBJECTS) $(test_druid_LDADD) $(LIBS)
++	$(LINK) $(test_druid_LDFLAGS) $(test_druid_OBJECTS) $(test_druid_LDADD) $(LIBGNOMEUI_LIBS) $(LIBS)
+ 
+ test-entry$(EXEEXT): $(test_entry_OBJECTS) $(test_entry_DEPENDENCIES)
+ 	@rm -f test-entry$(EXEEXT)
+-	$(LINK) $(test_entry_LDFLAGS) $(test_entry_OBJECTS) $(test_entry_LDADD) $(LIBS)
++	$(LINK) $(test_entry_LDFLAGS) $(test_entry_OBJECTS) $(test_entry_LDADD) $(LIBGNOMEUI_LIBS) $(LIBS)
+ 
+ test-iconlist$(EXEEXT): $(test_iconlist_OBJECTS) $(test_iconlist_DEPENDENCIES)
+ 	@rm -f test-iconlist$(EXEEXT)
+-	$(LINK) $(test_iconlist_LDFLAGS) $(test_iconlist_OBJECTS) $(test_iconlist_LDADD) $(LIBS)
++	$(LINK) $(test_iconlist_LDFLAGS) $(test_iconlist_OBJECTS) $(test_iconlist_LDADD) $(LIBGNOMEUI_LIBS) $(LIBS)
+ 
+ tags: TAGS
+ 

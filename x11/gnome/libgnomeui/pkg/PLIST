@@ -1,0 +1,230 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
+include/libgnomeui-2.0/gnome.h
+include/libgnomeui-2.0/libgnomeui/gnome-about.h
+include/libgnomeui-2.0/libgnomeui/gnome-app-helper.h
+include/libgnomeui-2.0/libgnomeui/gnome-app-util.h
+include/libgnomeui-2.0/libgnomeui/gnome-app.h
+include/libgnomeui-2.0/libgnomeui/gnome-appbar.h
+include/libgnomeui-2.0/libgnomeui/gnome-client.h
+include/libgnomeui-2.0/libgnomeui/gnome-color-picker.h
+include/libgnomeui-2.0/libgnomeui/gnome-dateedit.h
+include/libgnomeui-2.0/libgnomeui/gnome-dialog-util.h
+include/libgnomeui-2.0/libgnomeui/gnome-dialog.h
+include/libgnomeui-2.0/libgnomeui/gnome-druid-page-edge.h
+include/libgnomeui-2.0/libgnomeui/gnome-druid-page-standard.h
+include/libgnomeui-2.0/libgnomeui/gnome-druid-page.h
+include/libgnomeui-2.0/libgnomeui/gnome-druid.h
+include/libgnomeui-2.0/libgnomeui/gnome-entry.h
+include/libgnomeui-2.0/libgnomeui/gnome-file-entry.h
+include/libgnomeui-2.0/libgnomeui/gnome-font-picker.h
+include/libgnomeui-2.0/libgnomeui/gnome-href.h
+include/libgnomeui-2.0/libgnomeui/gnome-ice.h
+include/libgnomeui-2.0/libgnomeui/gnome-icon-entry.h
+include/libgnomeui-2.0/libgnomeui/gnome-icon-item.h
+include/libgnomeui-2.0/libgnomeui/gnome-icon-list.h
+include/libgnomeui-2.0/libgnomeui/gnome-icon-sel.h
+include/libgnomeui-2.0/libgnomeui/gnome-mdi-child.h
+include/libgnomeui-2.0/libgnomeui/gnome-mdi-generic-child.h
+include/libgnomeui-2.0/libgnomeui/gnome-mdi-session.h
+include/libgnomeui-2.0/libgnomeui/gnome-mdi.h
+include/libgnomeui-2.0/libgnomeui/gnome-messagebox.h
+include/libgnomeui-2.0/libgnomeui/gnome-pixmap-entry.h
+include/libgnomeui-2.0/libgnomeui/gnome-pixmap.h
+include/libgnomeui-2.0/libgnomeui/gnome-popup-menu.h
+include/libgnomeui-2.0/libgnomeui/gnome-propertybox.h
+include/libgnomeui-2.0/libgnomeui/gnome-scores.h
+include/libgnomeui-2.0/libgnomeui/gnome-stock-icons.h
+include/libgnomeui-2.0/libgnomeui/gnome-types.h
+include/libgnomeui-2.0/libgnomeui/gnome-ui-init.h
+include/libgnomeui-2.0/libgnomeui/gnome-uidefs.h
+include/libgnomeui-2.0/libgnomeui/gnome-vfs-util.h
+include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
+include/libgnomeui-2.0/libgnomeui/gnome-window.h
+include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
+include/libgnomeui-2.0/libgnomeui/libgnomeui.h
+lib/libglade/2.0/libgnome.a
+lib/libglade/2.0/libgnome.la
+lib/libgnomeui-2.a
+lib/libgnomeui-2.la
+lib/pkgconfig/libgnomeui-2.0.pc
+libexec/gnome_segv2
+share/gtk-doc/html/libgnomeui/c4.html
+share/gtk-doc/html/libgnomeui/gnomeabout.html
+share/gtk-doc/html/libgnomeui/gnomeapp.html
+share/gtk-doc/html/libgnomeui/gnomeappbar.html
+share/gtk-doc/html/libgnomeui/gnomeclient.html
+share/gtk-doc/html/libgnomeui/gnomecolorpicker.html
+share/gtk-doc/html/libgnomeui/gnomedateedit.html
+share/gtk-doc/html/libgnomeui/gnomedialog.html
+share/gtk-doc/html/libgnomeui/gnomedruid.html
+share/gtk-doc/html/libgnomeui/gnomedruidpage.html
+share/gtk-doc/html/libgnomeui/gnomedruidpageedge.html
+share/gtk-doc/html/libgnomeui/gnomedruidpagestandard.html
+share/gtk-doc/html/libgnomeui/gnomeentry.html
+share/gtk-doc/html/libgnomeui/gnomefileentry.html
+share/gtk-doc/html/libgnomeui/gnomefontpicker.html
+share/gtk-doc/html/libgnomeui/gnomehref.html
+share/gtk-doc/html/libgnomeui/gnomeiconentry.html
+share/gtk-doc/html/libgnomeui/gnomeiconlist.html
+share/gtk-doc/html/libgnomeui/gnomeiconselection.html
+share/gtk-doc/html/libgnomeui/gnomemdi.html
+share/gtk-doc/html/libgnomeui/gnomemdichild.html
+share/gtk-doc/html/libgnomeui/gnomemdigenericchild.html
+share/gtk-doc/html/libgnomeui/gnomemessagebox.html
+share/gtk-doc/html/libgnomeui/gnomepixmap.html
+share/gtk-doc/html/libgnomeui/gnomepixmapentry.html
+share/gtk-doc/html/libgnomeui/gnomepropertybox.html
+share/gtk-doc/html/libgnomeui/gnomescores.html
+share/gtk-doc/html/libgnomeui/index.html
+share/gtk-doc/html/libgnomeui/index.sgml
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-helper.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-app-util.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-dialog-util.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-mdi-session.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-popup-menu.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-stock-icons.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-types.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-ui-init.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-uidefs.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-vfs-util.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnome-window.html
+share/gtk-doc/html/libgnomeui/libgnomeui-gnometypebuiltins.html
+share/gtk-doc/html/libgnomeui/libgnomeui-objects.html
+share/gtk-doc/html/libgnomeui/x1495.html
+share/gtk-doc/html/libgnomeui/x15980.html
+share/gtk-doc/html/libgnomeui/x18473.html
+share/gtk-doc/html/libgnomeui/x6263.html
+share/gtk-doc/html/libgnomeui/x8080.html
+share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/bg/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/da/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/de/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/el/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/es/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/et/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/fi/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/fr/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/hi/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/hu/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/it/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ja/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/lt/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/lv/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ms/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/nn/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/no/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/pl/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/pt/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ro/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ru/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sk/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sl/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sv/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ta/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/tr/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/wa/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/libgnomeui-2.0.mo
+share/pixmaps/gnome-about-logo.png
+@comment (conflicts w/gnome-libs) share/pixmaps/gnome-default-dlg.png
+@comment (conflicts w/gnome-libs) share/pixmaps/gnome-error.png
+@comment (conflicts w/gnome-libs) share/pixmaps/gnome-info.png
+@comment (conflicts w/gnome-libs) share/pixmaps/gnome-question.png
+@comment (conflicts w/gnome-libs) share/pixmaps/gnome-warning.png
+%%SHARED%%
+@comment @dirrm share/pixmaps
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/gtk-doc/html/libgnomeui
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
+@comment @dirrm lib/pkgconfig
+@comment @dirrm lib/libglade
+@dirrm include/libgnomeui-2.0/libgnomeui
+@dirrm include/libgnomeui-2.0

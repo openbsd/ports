@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 19:43:47 todd Exp $
+lib/libgnomeui-2.so.0.0
+lib/libglade/2.0/libgnome.so
+DYNLIBDIR(%D/lib)
