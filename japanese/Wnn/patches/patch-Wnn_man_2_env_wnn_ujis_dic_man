@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_man_2_env_wnn_ujis_dic_man,v 1.1 2004/12/26 11:34:58 sturm Exp $
+--- Wnn/man/2.env/wnn/ujis_dic.man.orig	Sat Dec 25 11:57:03 2004
++++ Wnn/man/2.env/wnn/ujis_dic.man	Sat Dec 25 11:58:18 2004
+@@ -6,7 +6,7 @@
+ .sv 1
+ .nf
+ .ta 0.1i 2i
+-£Õ£Ê£É£Ó·Á¼°¼­½ñ¥Õ¥¡¥¤¥ë  ¡½  £Õ£Ê£É£Ó·Á¼°¼­½ñ¥Õ¥¡¥¤¥ë¤Î·Á¼°
++ujis_dic 	£Õ£Ê£É£Ó·Á¼°¼­½ñ¥Õ¥¡¥¤¥ë  ¡½  £Õ£Ê£É£Ó·Á¼°¼­½ñ¥Õ¥¡¥¤¥ë¤Î·Á¼°
+ .fi
+ .SH µ¡Ç½
+ .HP 0

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_man_3_libwnn_js_lib_hd_cr_cl_man,v 1.1 2004/12/26 11:34:58 sturm Exp $
+--- Wnn/man/3.libwnn/js_lib/hd_cr_cl.man.orig	Sat Dec 25 12:29:20 2004
++++ Wnn/man/3.libwnn/js_lib/hd_cr_cl.man	Sat Dec 25 12:29:49 2004
+@@ -6,7 +6,7 @@
+ .sv 1
+ .nf
+ .ta 0.1i 2.5i
+-js_hindo_file_create_client()	クライアント・サイトに辞書ファイルの
++js_hindo_file_create_client() 	クライアント・サイトに辞書ファイルの
+                              	頻度ファイルを作る。
+ .fi
+ .SH 形式
