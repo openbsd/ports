@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/21 04:01:13 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/01 07:08:58 shell Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
-VERSION=	1.02
+VERSION=	1.03
 DISTNAME=	XML-LibXSLT-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
