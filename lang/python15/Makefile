@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/07 19:09:19 jasoni Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/19 10:30:42 wilfried Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 
@@ -31,7 +31,7 @@ MULTI_PACKAGES=	-tools
 .endif
 
 # The tools package is not flavor dependent.
-FULLPKGNAME-tools=python-tools-${VERSION}
+FULLPKGNAME-tools=python-tools-1.5.2
 FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_tools//}
 
 .if ${FLAVOR:L:Mtk}
