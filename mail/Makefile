@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2004/05/27 20:33:35 xsa Exp $
+# $OpenBSD: Makefile,v 1.124 2004/07/05 13:20:03 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -7,6 +7,8 @@
      SUBDIR += amavisd-new
      SUBDIR += asmail
      SUBDIR += bmf
+     SUBDIR += bogofilter
+     SUBDIR += bogofilter,db4
      SUBDIR += bulk_mailer
      SUBDIR += c-client
      SUBDIR += cmail
