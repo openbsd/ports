@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Aug 31 23:06:42 1998
-+++ Makefile.in	Tue Nov  3 18:41:52 1998
+--- Makefile.in.orig	Tue Mar  9 01:53:50 1999
++++ Makefile.in	Wed Jan  5 23:13:40 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,6 +11,15 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -97,7 +99,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		$(@CFLAGS_DEFAULT@)
++#CFLAGS = 		$(@CFLAGS_DEFAULT@)
+ 
+ # A "-I" switch that can be used when compiling to make all of the
+ # X11 include files accessible (the configure script will try to
 @@ -112,7 +114,7 @@
  
  # Libraries to use when linking.  This definition is determined by the
@@ -36,7 +45,7 @@
 +libtk80.a: ${OBJS}
 +	rm -f libtk80.a
 +	ar cr libtk80.a ${OBJS}
-+	ranlib libtk80.a
++	$(RANLIB) libtk80.a
 +
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
