@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.105 1999/07/29 15:41:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.106 1999/08/10 19:50:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1467,7 +1467,7 @@ do-patch:
 		esac; \
 	  done
 .endif
-	@if cd ${PATCHDIR} >/dev/null; then \
+	@if cd ${PATCHDIR} 2>/dev/null; then \
 		error=0; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
@@ -1858,7 +1858,7 @@ pre-distclean:
 .if !target(distclean)
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
-	@if cd ${_DISTDIR} >/dev/null; then \
+	@if cd ${_DISTDIR} 2>/dev/null; then \
 		${RM} -f ${DISTFILES} ${PATCHFILES}; \
 	fi
 .if defined(DIST_SUBDIR)
@@ -2275,7 +2275,7 @@ clean-depends:
 	@for dir in \
 	   `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` \
 	   `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		if cd $$dir >/dev/null ; then \
+		if cd $$dir 2>/dev/null ; then \
 			${MAKE} NOCLEANDEPENDS=yes clean clean-depends; \
 		fi \
 	done
