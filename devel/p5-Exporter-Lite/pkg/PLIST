@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1 2004/04/24 16:09:30 peter Exp $
+${P5SITE}/Exporter/Lite.pm
+@comment ${P5ARCH}/auto/Exporter/Lite/.packlist
+man/man3p/Exporter::Lite.3p
+@comment @dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Exporter/Lite
+@comment @dirrm ${P5ARCH}/auto/Exporter
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@comment @dirrm ${P5SITE}/Exporter

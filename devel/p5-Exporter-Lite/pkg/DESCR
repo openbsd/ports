@@ -1,0 +1,7 @@
+This is an alternative to Exporter intended to provide a lightweight
+subset of its functionality. It supports import(), @EXPORT and
+@EXPORT_OK and not a whole lot else.
+
+Unlike Exporter, it is not necessary to inherit from Exporter::Lite
+(ie. no @ISA = qw(Exporter::Lite) mantra). Exporter::Lite simply
+exports its import() function. This might be called a "mix-in".
