@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2003/12/09 18:42:36 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2003/12/12 05:11:47 margarida Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -30,6 +30,7 @@ LIB_DEPENDS+=	pcre::devel/pcre
 
 .if ${FLAVOR:L:Mno_x11}
 ALL_TARGET=	nmap
+CONFIGURE_ARGS+=--without-nmapfe
 .else
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 USE_X11=	Yes
