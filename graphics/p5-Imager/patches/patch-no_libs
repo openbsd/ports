@@ -1,0 +1,108 @@
+$OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
+--- Makefile.PL.orig	Thu Apr  5 22:14:10 2001
++++ Makefile.PL	Thu Apr  5 22:15:05 2001
+@@ -194,103 +194,9 @@ sub pathcheck {
+ sub init {
+ 
+   @definc{'/usr/include'}=();
+-  @incs=(qw(/usr/include /usr/local/include /usr/include/freetype /usr/local/include/freetype), split /:/, $INCPATH );
++  @incs=(qw(/usr/include /usr/local/include), split /:/, $INCPATH );
+   @libs=(split(/ /, $Config{'libpth'}), split(/:/, $LIBPATH) );
+ 
+-  $formats{'jpeg'}={
+-		    order=>'21',
+-		    def=>'HAVE_LIBJPEG',
+-		    inccheck=>sub { $_[0] eq 'jpeglib.h' },
+-		    libcheck=>sub { $_[0] eq 'libjpeg.a' or $_ eq "libjpeg.$lext" },
+-		    libfiles=>'-ljpeg',
+-		    objfiles=>'jpeg.o',
+-		    docs=>q{
+-			    In order to use jpeg with this module you need to have libjpeg
+-			    installed on your computer}
+-		   };
+-
+-  $formats{'tiff'}={
+-		    order=>'23',
+-		    def=>'HAVE_LIBTIFF',
+-		    inccheck=>sub { $_[0] eq 'tiffio.h' },
+-		    libcheck=>sub { $_[0] eq 'libtiff.a' or $_ eq "libtiff.$lext" },
+-		    libfiles=>'-ltiff',
+-		    objfiles=>'tiff.o',
+-		    docs=>q{
+-			    In order to use tiff with this module you need to have libtiff
+-			    installed on your computer}
+-		   };
+-
+-  $formats{'png'}={
+-		   order=>'22',
+-		   def=>'HAVE_LIBPNG',
+-		   inccheck=>sub { $_[0] eq 'png.h' },
+-		   libcheck=>sub { $_[0] eq 'libpng.a' or $_[0] eq "libpng.$lext" },
+-		   libfiles=>'-lpng -lz',
+-		   objfiles=>'png.o',
+-		   docs=>q{
+-			   Png stands for Portable Network Graphics and is intended as
+-			   a replacement for gif on the web. It is patent free and
+-			   is recommended by the w3c, you need libpng to use these formats}
+-		  };
+-
+-  $formats{'gif'}={
+-		   order=>'20',
+-		   def=>'HAVE_LIBGIF',
+-		   inccheck=>sub { $_[0] eq 'gif_lib.h' },
+-		   libcheck=>sub { $_[0] eq 'libgif.a' or $_[0] eq "libgif.$lext" },
+-		   libfiles=>'-lgif',
+-		   objfiles=>'gif.o',
+-		   docs=>q{
+-			   gif is the de facto standard for webgraphics at the moment,
+-			   it does have some patent problems. If you have giflib and
+-			   are not in violation with the unisys patent you should use
+-			   this instead of the 'ungif' option.  Note that they cannot
+-			   be in use at the same time}
+-		  };
+-
+-  $formats{'ungif'}={
+-		     order=>'21',
+-		     def=>'HAVE_LIBGIF',
+-		     inccheck=>sub { $_[0] eq 'gif_lib.h' },
+-		     libcheck=>sub { $_[0] eq 'libungif.a' or $_[0] eq "libungif.$lext" },
+-		     libfiles=>'-lungif',
+-		     objfiles=>'gif.o',
+-		     docs=>q{
+-			     gif is the de facto standard for webgraphics at the moment,
+-			     it does have some patent problems. If you have libungif and
+-			     want to create images free from LZW patented compression you
+-			     should use this option instead of the 'gif' option}
+-		    };
+-
+-  $formats{'T1-fonts'}={
+-			order=>'30',
+-			def=>'HAVE_LIBT1',
+-			inccheck=>sub { $_[0] eq 't1lib.h' },
+-			libcheck=>sub { $_[0] eq 'libt1.a' or $_[0] eq "libt1.$lext" },
+-			libfiles=>'-lt1',
+-			objfiles=>'',
+-			docs=>q{
+-				postscript t1 fonts are scalable fonts. They can include 
+-				ligatures and kerning information and generally yield good
+-				visual quality. We depend on libt1 to rasterize the fonts
+-				for use in images.}
+-		       };
+-
+-  $formats{'TT-fonts'}={
+-			order=>'31',
+-			def=>'HAVE_LIBTT',
+-			inccheck=>sub { $_[0] eq 'freetype.h' },
+-			libcheck=>sub { $_[0] eq 'libttf.a' or $_[0] eq "libttf.$lext" },
+-			libfiles=>'-lttf',
+-			objfiles=>'',
+-			docs=>q{
+-				Truetype fonts are scalable fonts. They can include 
+-				kerning and hinting information and generally yield good
+-				visual quality esp on low resultions. The freetype library is
+-				used to rasterize for us. The only drawback is that there
+-				are alot of badly designed fonts out there.}
+-		       };
+   # Make fix indent
+   for (keys %formats) { $formats{$_}->{docs} =~ s/^\s+/  /mg; }
+ }
