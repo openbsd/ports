@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2004/10/21 05:05:49 jolan Exp $
+# $OpenBSD: Makefile,v 1.114 2004/12/16 16:38:12 jcs Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -25,6 +25,7 @@
      SUBDIR += gqmpeg
      SUBDIR += grip
      SUBDIR += gsm
+     SUBDIR += gtkpod
      SUBDIR += id3ed
      SUBDIR += id3lib
      SUBDIR += ksmp3play
