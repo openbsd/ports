@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2002/04/28 20:36:02 bmc Exp $
+# $OpenBSD: Makefile,v 1.41 2002/05/23 01:02:09 pvalchev Exp $
 
 COMMENT=	"port scanning large networks"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--with-libpcap=/usr
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nbase ${WRKSRC}/libpcap-possiblymodified
 
 FLAVORS=	no_x11
