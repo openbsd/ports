@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:50:00 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/27 20:38:52 brad Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
 CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR= games
+EXTRACT_SUFX=	.tgz
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
-EXTRACT_SUFX=	.tgz
 
 USE_GMAKE=	yes
 USE_IMAKE=      yes
