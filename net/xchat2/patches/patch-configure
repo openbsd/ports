@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
---- configure.orig	Tue Apr 22 17:11:23 2003
-+++ configure	Tue Apr 22 17:11:37 2003
-@@ -1718,7 +1718,7 @@ echo "$as_me: error: source directory al
- fi
+$OpenBSD: patch-configure,v 1.2 2003/08/08 05:47:38 marcm Exp $
+--- configure.orig	2003-07-30 22:24:30.000000000 -0700
++++ configure	2003-08-07 22:37:15.000000000 -0700
+@@ -1760,7 +1760,7 @@ fi
+ 
  
  # Define the identity of the package.
 - PACKAGE=xchat
 + PACKAGE=xchat2
-  VERSION=2.0.2
+  VERSION=2.0.4
  
  

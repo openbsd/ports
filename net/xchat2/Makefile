@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/08 05:47:38 marcm Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
 MAJOR=		2.0
-VERSION=	${MAJOR}.2
+VERSION=	${MAJOR}.4
 DISTNAME=	xchat-${VERSION}
 PKGNAME=	xchat2-${VERSION}
 CATEGORIES=	net x11
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2
 
-MODULES=	iconv gettext
+MODULES=	gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-python --disable-gnome \
+CONFIGURE_ARGS+= --disable-python \
 		 --disable-perl --disable-mmx \
 		 --enable-ipv6 --enable-openssl="/usr"
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \

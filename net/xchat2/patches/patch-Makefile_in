@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
---- Makefile.in.orig	Mon Apr 21 19:10:10 2003
-+++ Makefile.in	Tue Apr 22 18:13:38 2003
-@@ -222,8 +222,8 @@ install-iconDATA: $(icon_DATA)
+$OpenBSD: patch-Makefile_in,v 1.2 2003/08/08 05:47:38 marcm Exp $
+--- Makefile.in.orig	2003-07-30 22:24:26.000000000 -0700
++++ Makefile.in	2003-08-07 22:36:14.000000000 -0700
+@@ -287,8 +287,8 @@ install-iconDATA: $(icon_DATA)
  	@list='$(icon_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
  	done
  
  uninstall-iconDATA:
-@@ -240,8 +240,8 @@ install-utilDATA: $(util_DATA)
+@@ -305,8 +305,8 @@ install-utilDATA: $(util_DATA)
  	@list='$(util_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \

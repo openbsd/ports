@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fe-text_Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
---- src/fe-text/Makefile.in.orig	Mon Apr 21 19:12:15 2003
-+++ src/fe-text/Makefile.in	Tue Apr 22 17:44:22 2003
-@@ -136,7 +136,7 @@ sedpath = @sedpath@
+$OpenBSD: patch-src_fe-text_Makefile_in,v 1.2 2003/08/08 05:47:38 marcm Exp $
+--- src/fe-text/Makefile.in.orig	2003-07-30 22:24:28.000000000 -0700
++++ src/fe-text/Makefile.in	2003-08-07 22:36:14.000000000 -0700
+@@ -200,7 +200,7 @@ target_alias = @target_alias@
  unamepath = @unamepath@
  xchatlibdir = @xchatlibdir@
  xchatsharedir = @xchatsharedir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_fe-text_Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Ex
  
  EXTRA_DIST = README 
  
-@@ -148,7 +148,7 @@ subdir = src/fe-text
+@@ -213,7 +213,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_fe-text_Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Ex
  PROGRAMS = $(bin_PROGRAMS)
  
  am_xchat_text_OBJECTS = fe-text.$(OBJEXT)
-@@ -214,7 +214,7 @@ clean-binPROGRAMS:
+@@ -274,7 +274,7 @@ clean-binPROGRAMS:
  	  echo " rm -f $$p $$f"; \
  	  rm -f $$p $$f ; \
  	done

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/08 05:47:38 marcm Exp $
 bin/xchat2
-bin/xchat2-text
 share/applications/xchat2.desktop
 share/locale/am/LC_MESSAGES/xchat2.mo
 share/locale/ca/LC_MESSAGES/xchat2.mo
@@ -8,6 +7,8 @@ share/locale/de/LC_MESSAGES/xchat2.mo
 share/locale/el/LC_MESSAGES/xchat2.mo
 share/locale/es/LC_MESSAGES/xchat2.mo
 share/locale/et/LC_MESSAGES/xchat2.mo
+share/locale/fr/LC_MESSAGES/xchat2.mo
+share/locale/ja/LC_MESSAGES/xchat2.mo
 share/locale/lt/LC_MESSAGES/xchat2.mo
 share/locale/lv/LC_MESSAGES/xchat2.mo
 share/locale/ms/LC_MESSAGES/xchat2.mo
@@ -40,6 +41,10 @@ share/pixmaps/xchat2.png
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
 @comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
 @comment @dirrm share/locale/et/LC_MESSAGES
 @comment @dirrm share/locale/et
 @comment @dirrm share/locale/es/LC_MESSAGES
