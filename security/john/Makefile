@@ -1,63 +1,55 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/12 08:23:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2003/09/26 17:57:38 marcm Exp $
 
-COMMENT=	"extremely fast password cracker"
+COMMENT=		"extremely fast password cracker"
 
-DISTNAME=	john-1.6
-PKGNAME=	${DISTNAME}p1
-CATEGORIES=     security
-MASTER_SITES=	http://www.openwall.com/john/
+DISTNAME=		john-1.6.36
+CATEGORIES=     	security
 
-HOMEPAGE=	http://www.openwall.com/john/
+HOMEPAGE=		http://www.openwall.com/john/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
+# GPL & Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_REGRESS=	Yes
+MASTER_SITES=		http://www.openwall.com/john/dl/
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
+DISTFILES=		${DISTNAME}.tar.gz \
+			john-1.6.tar.gz:0
 
-MAKE_FLAGS=	CC="${CC}" LD="${CC}" \
-		CFLAGS="-c -Wall ${CFLAGS} -fomit-frame-pointer"
+NO_REGRESS=		Yes
 
-FLAVORS=	k6
-FLAVOR?=
-
-.if ${FLAVOR:L} == "k6"
-ONLY_FOR_ARCHS=	i386
-.endif
+WRKDIST=		${WRKDIR}/${DISTNAME}
+WRKSRC=			${WRKDIST}/src
+OLDJOHN=		${WRKDIR}/john-1.6
 
 .if ${MACHINE_ARCH} == "i386"
-.  if ${FLAVOR:L} == "k6"
-ALL_TARGET=	openbsd-x86-k6
-.  else
-ALL_TARGET=	openbsd-x86-any
-.  endif
+ALL_TARGET=		openbsd-x86-any
+.elif ${MACHINE_ARCH} == "sparc"
+ALL_TARGET=		openbsd-sparc
+.elif ${MACHINE_ARCH} == "vax"
+ALL_TARGET=		openbsd-vax
 .elif ${MACHINE_ARCH} == "alpha"
-ALL_TARGET=	linux-alpha
+ALL_TARGET=		linux-alpha
+.elif ${MACHINE_ARCH} == "powerpc"
+ALL_TARGET=		linux-ppc
 .else
-ALL_TARGET=	generic
+ALL_TARGET=		generic
 .endif
-
-do-configure:
-	@cd ${WRKDIST} && \
-	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' < params.h > \
-		params.h.new && mv -f params.h.new params.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/john
-	${INSTALL_PROGRAM} ${WRKBUILD}/../run/john ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/../run/mailer ${PREFIX}/bin
-	@cd ${PREFIX}/bin && ln -sf john unshadow && \
+	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer ${PREFIX}/bin
+	@cd ${PREFIX}/bin && \
+		ln -sf john unshadow && \
 		ln -sf john unafs && \
 		ln -sf john unique
-	${INSTALL_DATA} ${WRKSRC}/../run/* ${PREFIX}/share/john
-	@sed -e s#~/#${TRUEPREFIX}/share/john/#g ${WRKSRC}/../run/john.ini > \
-		${PREFIX}/share/john/john.ini
-	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/john
+	${INSTALL_DATA} ${OLDJOHN}/run/* ${PREFIX}/share/john
+	${INSTALL_DATA} ${WRKDIST}/run/* ${PREFIX}/share/john
+	${INSTALL_DATA} ${OLDJOHN}/doc/* ${PREFIX}/share/doc/john
+	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 
 .include <bsd.port.mk>

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_params_h,v 1.1 2003/09/26 17:57:38 marcm Exp $
+--- src/params.h.orig	2003-06-29 06:05:05.000000000 -0700
++++ src/params.h	2003-07-28 01:01:23.000000000 -0700
+@@ -22,12 +22,12 @@
+  * will probably want to set this to 1 for their builds of John.
+  */
+ #ifndef JOHN_SYSTEMWIDE
+-#define JOHN_SYSTEMWIDE			0
++#define JOHN_SYSTEMWIDE			1
+ #endif
+ 
+ #if JOHN_SYSTEMWIDE
+-#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
+-#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
++#define JOHN_SYSTEMWIDE_EXEC		"/usr/local/bin/john"
++#define JOHN_SYSTEMWIDE_HOME		"/usr/local/share/john"
+ #define JOHN_PRIVATE_HOME		"~/.john"
+ #endif
+ 

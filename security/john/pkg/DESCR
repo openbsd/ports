@@ -8,7 +8,7 @@ built-in compiler supporting a subset of C).
 
 Out of the box, John supports (and autodetects) the following ciphertext
 formats: standard and double-length DES-based, BSDI's extended DES-based,
-FreeBSD's (and not only) MD5-based, and OpenBSD's Blowfish-based.
+FreeBSD's (and not only) MD5-based and OpenBSD's Blowfish-based.
 
 With just one extra command (required to extract the passwords), John can
 crack AFS passwords and WinNT LM hashes.
@@ -20,5 +20,3 @@ a crypt(3)-style routine: they require a more powerful interface (bitslice
 DES is an example). Additionally, there're assembly routines for several
 processors and architectures (special Intel Pentium version, x86 with MMX,
 generic x86, Alpha EV4, SPARC V8).
-
-WWW: ${HOMEPAGE}

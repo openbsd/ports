@@ -1,0 +1,12 @@
+$OpenBSD: patch-run_john_conf,v 1.1 2003/09/26 17:57:38 marcm Exp $
+--- run/john.conf.orig	2003-08-20 14:56:16.000000000 -0700
++++ run/john.conf	2003-09-25 23:31:27.000000000 -0700
+@@ -5,7 +5,7 @@
+ 
+ [Options]
+ # Wordlist file name, to be used in batch mode
+-Wordlist = $JOHN/password.lst
++Wordlist = /usr/share/dict/words
+ # Use idle cycles only
+ Idle = N
+ # Crash recovery file saving delay in seconds
