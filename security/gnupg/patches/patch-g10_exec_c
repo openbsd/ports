@@ -1,0 +1,20 @@
+$OpenBSD: patch-g10_exec_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
+--- g10/exec.c.orig	Sat Dec 28 14:54:42 2002
++++ g10/exec.c	Sat Dec 28 14:54:58 2002
+@@ -414,14 +414,14 @@ int exec_write(struct exec_info **info,c
+ 	      if(DBG_EXTPROG)
+ 		log_debug("execlp: %s\n",program);
+ 
+-	      execlp(program,program,NULL);
++	      execlp(program,program,(void *)NULL);
+ 	    }
+ 	  else
+ 	    {
+ 	      if(DBG_EXTPROG)
+ 		log_debug("execlp: %s -c %s\n",shell,(*info)->command);
+ 
+-	      execlp(shell,shell,"-c",(*info)->command,NULL);
++	      execlp(shell,shell,"-c",(*info)->command,(void *)NULL);
+ 	    }
+ 
+ 	  /* If we get this far the exec failed.  Clean up and return. */
