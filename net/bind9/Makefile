@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2003/01/25 14:14:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.40 2003/02/03 13:36:24 jakob Exp $
 
 COMMENT=	ISC BIND 9 libraries
 COMMENT-server=	ISC BIND 9 server
@@ -47,7 +47,7 @@ FLAVORS=		static threads
 FLAVOR?=
 
 .if ${SUBPACKAGE} == "-server" && ${FLAVOR} != "static"
-RUN_DEPENDS=		:bind-libs-*:net/bind9
+RUN_DEPENDS=		:bind-lib-*:net/bind9
 .endif
 
 .if ${FLAVOR:L:Mstatic}
