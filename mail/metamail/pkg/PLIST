@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/22 22:54:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/27 13:34:39 naddy Exp $
 bin/audiocompose
 bin/audiosend
 bin/extcompose
@@ -29,7 +29,6 @@ lib/metamail/
 @fontdir lib/metamail/fonts/
 @comment lib/metamail/fonts/fonts.alias
 @comment lib/metamail/fonts/fonts.dir
-@fontdir lib/metamail/fonts/
 lib/metamail/fonts/heb6x13.pcf
 lib/metamail/fonts/heb8x13.pcf
 lib/metamail/fonts/heb8x13B.pcf
