@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/24 12:52:42 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -42,7 +42,7 @@ EXTRACT_SUFX=		.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-LIB_DEPENDS=	kdecore.3::x11/kde/libs2
+LIB_DEPENDS= kdecore.3,DCOP,artsflow,artsflow_idl,kdeprint,kdesu,kdeui,kfile,kio,kmedia2_idl,kparts,kssl,ksycoca,mcop,qtmcop,soundserver_idl::x11/kde/libs2
 BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/18 14:02:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/24 12:52:42 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -18,7 +18,7 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 MODULES=qt2
 
-LIB_DEPENDS=	kdecore.3::x11/kde/libs2
+LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2
 
 BUILD_DEPENDS+=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
 

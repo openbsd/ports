@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/09/28 19:06:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2001/10/24 12:52:42 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -26,10 +26,10 @@ SUBPACKAGE?=
 USE_MOTIF=	any
 .endif
 
-LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2 \
-		ldap.2:openldap-client-2.*:databases/openldap \
-		vorbis.::audio/libvorbis \
-		cdda_paranoia.::audio/cdparanoia
+LIB_DEPENDS=	kdecore.3,kdeui,DCOP,artskde,kab,kdefakes,kdeprint,kdeprint_management,kdesu,kfile,khtml,kio,kjava,kmid,kparts,kscreensaver,kspell,kssl,ksycoca,ktexteditor,soundserver_idl::x11/kde/libs2 \
+		ldap.2,lber:openldap-client-2.*:databases/openldap \
+		vorbis,vorbisenc::audio/libvorbis \
+		cdda_paranoia,cdda_interface::audio/cdparanoia
 
 BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable ::audio/lame
 

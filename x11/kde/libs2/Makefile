@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2001/10/24 12:52:42 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -21,7 +21,7 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		audiofile::devel/libaudiofile \
-		pcreposix::devel/pcre \
+		pcreposix,pcre::devel/pcre \
 		xml2:libxml->=2.3.13:textproc/libxml \
 		bz2::archivers/bzip2
 
