@@ -1,0 +1,77 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+We also need libjpeg to be able to compile this program.
+
+--- configure.orig	Fri Dec 22 13:46:51 2000
++++ configure	Thu Feb  1 00:16:00 2001
+@@ -1819,7 +1819,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgd -lm -lpng -lz $LIBS"
++LIBS="-lgd -lm -ljpeg -lpng -lz $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1825 "configure"
+ #include "confdefs.h"
+@@ -1848,7 +1848,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-	GFXLIBS="-lgd -lpng -lz"
++	GFXLIBS="-lgd -ljpeg -lpng -lz"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1863,7 +1863,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgd -lm -lpng -lz $LIBS"
++LIBS="-lgd -lm -ljpeg -lpng -lz $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1869 "configure"
+ #include "confdefs.h"
+@@ -1892,7 +1892,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-		GFXLIBS="-lgd -lpng -lz -L/usr/local/lib -I/usr/local/include"
++		GFXLIBS="-lgd -ljpeg -lpng -lz -L/usr/local/lib -I/usr/local/include"
+ 	
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1914,7 +1914,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgd -lm -lpng -lz $LIBTTF $LIBS"
++LIBS="-lgd -lm -ljpeg -lpng -lz $LIBTTF $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1920 "configure"
+ #include "confdefs.h"
+@@ -1943,7 +1943,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-                GFXLIBS="-lgd -lpng -lz $LIBTTF"
++                GFXLIBS="-lgd -ljpeg -lpng -lz $LIBTTF"
+         
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1963,7 +1963,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgd -lm -lpng -lz $LIBTTF $LIBXPM $LIBS"
++LIBS="-lgd -lm -ljpeg -lpng -lz $LIBTTF $LIBXPM $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1969 "configure"
+ #include "confdefs.h"
+@@ -1992,7 +1992,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-                GFXLIBS="-lgd -lpng -lz $LIBTTF $LIBXPM"
++                GFXLIBS="-lgd -ljpeg -lpng -lz $LIBTTF $LIBXPM"
+         
+ else
+   echo "$ac_t""no" 1>&6

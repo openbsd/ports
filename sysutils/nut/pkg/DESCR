@@ -1,0 +1,14 @@
+Network UPS Tools is a suite of programs that can be used to monitor
+the status of an Uninterruptable Power Supply.  Nut tries tp support
+"every kind of UPS with sufficient interest behind it."  Most decent
+UPS have a serial port for access to status information.  The primary
+use of Nut is to notify the machine in the event of a power failure so
+that scripts may be run to properly shutdown your machine.  Nut also
+has a network communications layer that allows other machines to
+coordinate shutdowns with the machine that is physically attached to
+the UPS.
+
+The 'cgi' flavor adds CGI support so that one may put up web
+statistics about the power status.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile.in,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+Don't install the CGI directory unless we're actually installing the CGIs
+
+--- Makefile.in.orig	Fri Dec 22 13:40:24 2000
++++ Makefile.in	Wed Jan 31 23:33:44 2001
+@@ -5,7 +5,7 @@
+ BASEPATH    = $(INSTALLROOT)@prefix@
+ CONFPATH    = $(INSTALLROOT)@sysconfdir@
+ CGIPATH     = $(INSTALLROOT)@CGIPATH@
+-INSTALLDIRS = $(CONFPATH) $(CGIPATH) $(MODELPATH) $(BASEPATH)/@bindir@  $(BASEPATH)/@sbindir@ $(BASEPATH)/misc
++INSTALLDIRS = $(CONFPATH) $(MODELPATH) $(BASEPATH)/@bindir@  $(BASEPATH)/@sbindir@
+ STATEPATH   = $(INSTALLROOT)@STATEPATH@
+ 
+ SUBDIRS	= common models server clients man
+@@ -62,6 +62,9 @@
+ 	@cd clients; $(MAKE) cgi; cd ..;
+ 
+ install-cgi: install-dirs 
++	@if (test ! -d $(CGIPATH)) then \
++		$(INSTALLCMD) -d $(CGIPATH) || exit 1; \
++	fi
+ 	@cd conf; $(MAKE) install; cd ..;
+ 	@cd clients; $(MAKE) install-cgi; cd ..;
+ 

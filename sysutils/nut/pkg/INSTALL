@@ -1,0 +1,89 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+#
+# Pre/post-installation setup of nut
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}/nut
+CONFIG_FILES="hosts.conf multimon.conf"
+PRIVATE_FILES="upsd.conf upsmon.conf upsset.passwd"
+SAMPLE_DIR=$PREFIX/share/examples/nut
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files in ${SAMPLE_DIR}"
+    echo "| and update your configuration as needed."
+    echo "|"
+    echo "| Also see $PREFIX/share/doc/nut/README.OpenBSD"
+    echo "| for startup configuration."
+    echo "|"
+    echo "| If you have built nut with CGIs, they can be found in:"
+    echo "| $PREFIX/libexec/nut"
+    echo "+---------------"
+    echo
+}
+
+# Function: install the nut configuration files from the samples
+#
+do_install()
+{
+    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
+    for each in ${CONFIG_FILES}; do
+	install -o root -g wheel -m 644 ${SAMPLE_DIR}/$each.sample ${CONFIG_DIR}/$each
+    done
+    for each in ${PRIVATE_FILES}; do
+	install -o root -g wheel -m 600 ${SAMPLE_DIR}/$each.sample ${CONFIG_DIR}/$each
+    done
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files in ${CONFIG_DIR},"
+    echo "| have been installed.  Please view these files and change"
+    echo "|"
+    echo "| Also see $PREFIX/share/doc/nut/README.OpenBSD"
+    echo "| for startup configuration."
+    echo "| the configuration to meet your needs before running the daemons"
+    echo "|"
+    echo "| If you have built nut with CGIs, they can be found in:"
+    echo "| $PREFIX/libexec/nut"
+    echo "+---------------"
+    echo
+
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -d $CONFIG_DIR ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

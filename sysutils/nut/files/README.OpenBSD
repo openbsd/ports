@@ -1,0 +1,39 @@
+Using nut package in OpenBSD environment:
+
+1. Edit /etc/rc.conf.local file:
+   ...
+   nut_upshost="localhost"	# name of host to connect to for ups status
+   nut_upstype="bestpower"	# name of your ups (corresponds to progname)
+   nut_upsflags=""		# flags for your ups
+   nut_upsdev="/dev/cua01"	# device ups is attached to
+   nut_log="/var/log/ups.log"	# logfile name if logging
+   nut_loginterval="300"	# logging interval if logging
+   ...
+   nut_upsd=NO		# run the nut upsd
+   nut_upsmon=NO	# run ups monitoring
+   nut_upslog=NO	# run ups logging
+   ...
+
+2. Edit /etc/rc.local file:
+   echo -n 'starting local daemons:'
+   ...
+   if [ X"${nut_upsd}" = X"YES" -a -f /etc/nut/upsd.conf \
+        -a -x /usr/local/sbin/$nut_upstype -a -x /usr/local/sbin/upsd ]; then
+       echo -n ' upsd'
+       /usr/local/sbin/$nut_upstype $nut_upsflags $nut_upsdev
+       /usr/local/sbin/upsd
+   fi
+   if [ X"${nut_upsmon}" = X"YES" -a -f /etc/nut/upsmon.conf \
+        -a -x /usr/local/sbin/upsmon ]; then
+       echo -n ' upsmon'
+       /usr/local/sbin/upsmon $nut_upshost
+   fi
+   if [ X"${nut_upslog}" = X"YES" -a -x /usr/local/sbin/upslog ]; then
+       echo -n ' upslog'
+       /usr/local/sbin/upslog $nut_upshost $nut_log $nut_loginterval
+   fi
+   ...
+   echo '.'
+
+
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $

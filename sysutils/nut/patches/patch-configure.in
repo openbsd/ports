@@ -1,0 +1,59 @@
+$OpenBSD: patch-configure.in,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+We also need libjpeg to be able to compile this program.
+
+--- configure.in.orig	Thu Feb  1 00:14:21 2001
++++ configure.in	Thu Feb  1 00:15:31 2001
+@@ -129,7 +129,7 @@
+ 
+ AC_CHECK_LIB(gd, gdImagePng,
+ [
+-	GFXLIBS="-lgd -lpng -lz"
++	GFXLIBS="-lgd -ljpeg -lpng -lz"
+ ],
+ [
+ 	echo "Trying again - using -L/usr/local/lib -I/usr/local/include..."
+@@ -137,13 +137,13 @@
+ 	CPPFLAGS="$CPPFLAGS -L/usr/local/lib -I/usr/local/include"
+ 	AC_CHECK_LIB(gd, gdImagePng,
+ 	[
+-		GFXLIBS="-lgd -lpng -lz -L/usr/local/lib -I/usr/local/include"
++		GFXLIBS="-lgd -ljpeg -lpng -lz -L/usr/local/lib -I/usr/local/include"
+ 	],
+ 	[
+ 	],
+-	[-lm -lpng -lz])
++	[-lm -ljpeg -lpng -lz])
+ ],
+-[-lm -lpng -lz],
++[-lm -ljpeg -lpng -lz],
+ )
+ 
+ if test "$GFXLIBS" = "" ; then
+@@ -151,11 +151,11 @@
+         unset ac_cv_lib_gd_gdImagePng
+         AC_CHECK_LIB(gd, gdImagePng,
+         [
+-                GFXLIBS="-lgd -lpng -lz $LIBTTF"
++                GFXLIBS="-lgd -ljpeg -lpng -lz $LIBTTF"
+         ],
+         [
+         ],
+-        [-lm -lpng -lz $LIBTTF])
++        [-lm -ljpeg -lpng -lz $LIBTTF])
+ fi
+ 
+ if test "$GFXLIBS" = "" ; then
+@@ -163,11 +163,11 @@
+         unset ac_cv_lib_gd_gdImagePng
+         AC_CHECK_LIB(gd, gdImagePng,
+         [
+-                GFXLIBS="-lgd -lpng -lz $LIBTTF $LIBXPM"
++                GFXLIBS="-lgd -ljpeg -lpng -lz $LIBTTF $LIBXPM"
+         ],
+         [
+         ],
+-        [-lm -lpng -lz $LIBTTF $LIBXPM])
++        [-lm -ljpeg -lpng -lz $LIBTTF $LIBXPM])
+ fi
+ 
+ test "$GFXLIBS" = ""  && echo "** You will not be able to build the CGI programs without gd."

@@ -1,0 +1,36 @@
+$OpenBSD: patch-conf-Makefile.in,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+Fix up makefile so that config files go where we need them.
+
+--- conf/Makefile.in.orig	Sun May  7 17:17:20 2000
++++ conf/Makefile.in	Sun Jan  7 01:03:34 2001
+@@ -2,7 +2,7 @@
+  
+ prefix = @prefix@
+ BASEPATH = $(INSTALLROOT)@prefix@
+-CONFPATH = $(INSTALLROOT)@sysconfdir@
++CONFPATH = $(INSTALLROOT)@prefix@/share/examples/nut
+ INSTALLCMD = @INSTALL@
+ 
+ SECFILES = upsmon.conf upsd.conf upsset.passwd
+@@ -12,18 +12,7 @@ all:
+ clean:
+ 
+ install:
+-	@for f in $(SECFILES) ; do \
+-		if [ -f $(CONFPATH)/$$f ]; then \
+-			echo "Preserving existing config file: $$f"; \
+-		else \
+-			$(INSTALLCMD) -m 0600 $$f $(CONFPATH); \
+-		fi; \
+-	done
+-
+-	@for f in $(PUBFILES) ; do \
+-		if [ -f $(CONFPATH)/$$f ]; then \
+-			echo "Preserving existing config file: $$f"; \
+-		else \
+-			$(INSTALLCMD) -m 0644 $$f $(CONFPATH); \
+-		fi; \
++	$(INSTALLCMD) -d -m 0755 $(CONFPATH)
++	@for f in $(SECFILES) $(PUBFILES) ; do \
++		$(INSTALLCMD) -m 0644 $$f $(CONFPATH)/$$f.sample; \
+ 	done
