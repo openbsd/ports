@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.151 1999/12/03 14:24:39 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.152 1999/12/03 14:57:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -508,52 +508,23 @@ INSTALL_COOKIE?=	${WRKDIR}/.install_done
 BUILD_COOKIE?=		${WRKDIR}/.build_done
 PACKAGE_COOKIE?=	${WRKDIR}/.package_done
 .endif
+_MAKE_COOKIE=touch -f
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
 XMKMF?=			xmkmf -a
 
-# be paranoid about which ciphers we trust
-.if exists(/sbin/md5)
-MD5?=			/sbin/md5
-.elif exists(/bin/md5)
-MD5?=			/bin/md5
-.elif exists(/usr/bin/md5)
-MD5?=			/usr/bin/md5
-.else
-MD5?=			md5
-.endif
-
-.if exists(/sbin/sha1)
-SHA1?=			/sbin/sha1
-.elif exists(/bin/sha1)
-SHA1?=			/bin/sha1
-.elif exists(/usr/bin/sha1)
-SHA1?=			/usr/bin/sha1
-.else
-SHA1?=			sha1
-.endif
-
-.if exists(/sbin/rmd160)
-RMD160?=		/sbin/rmd160
-.elif exists(/bin/rmd160)
-RMD160?=		/bin/rmd160
-.elif exists(/usr/bin/rmd160)
-RMD160?=		/usr/bin/rmd160
-.else
-RMD160?=		rmd160
-.endif
 
 # Compatibility game
 MD5_FILE?=		${FILESDIR}/md5
 CHECKSUM_FILE?=	${MD5_FILE}
 
 # Don't touch !!! Used for generating checksums.
-CIPHERS=		${SHA1}.SHA1 ${RMD160}.RMD160 ${MD5}.MD5 
+_CIPHERS=		sha1 rmd160 md5 
 
 # This is the one you can override
-PREFERRED_CIPHERS?= ${CIPHERS}
+PREFERRED_CIPHERS?= ${_CIPHERS}
 
 PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 
@@ -571,8 +542,6 @@ FETCH_CMD?=		/usr/bin/ftp
 # By default, distfiles have no restrictions placed on them
 MIRROR_DISTFILE?=	Yes
 
-TOUCH?=			/usr/bin/touch
-TOUCH_FLAGS?=	-f
 
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
@@ -752,40 +721,47 @@ MOTIFLIB?=	-L${X11BASE}/lib -lXm
 .endif
 .endif
 
-AWK?=		/usr/bin/awk
-BASENAME?=	/usr/bin/basename
-CAT?=		/bin/cat
 CHMOD?=		/bin/chmod
 CHOWN?=		/usr/sbin/chown
-CP?=		/bin/cp
-DIRNAME?=	/usr/bin/dirname
-ECHO?=		echo
-EXPR?=		/bin/expr
-FALSE?=		false
-FILE?=		/usr/bin/file
-GREP?=		/usr/bin/grep
 GUNZIP_CMD?=	/usr/bin/gunzip -f
 GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
 LDCONFIG?=	[ ! -x /sbin/ldconfig ] || /sbin/ldconfig
-LN?=		/bin/ln
 M4?=		/usr/bin/m4
-MKDIR?=		/bin/mkdir -p
-MV?=		/bin/mv
-READLINK?=	/usr/bin/readlink
-RM?=		/bin/rm
-RMDIR?=		/bin/rmdir
-SED?=		/usr/bin/sed
 STRIP?=		/usr/bin/strip
-FIND?=		/usr/bin/find
 
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
 SETENV?=	/usr/bin/env
 SH?=		/bin/sh
+
+# Deprecated:
+MD5?=			md5
+SHA1?=			sha1
+RMD160?=		rmd160
+TOUCH?=			/usr/bin/touch
+TOUCH_FLAGS?=	-f
+RM?=		/bin/rm
+RMDIR?=		/bin/rmdir
+SED?=		/usr/bin/sed
+FIND?=		/usr/bin/find
+MKDIR?=		/bin/mkdir -p
+MV?=		/bin/mv
+READLINK?=	/usr/bin/readlink
+LN?=		/bin/ln
 TR?=		/usr/bin/tr
 TRUE?=		true
+AWK?=		/usr/bin/awk
+BASENAME?=	/usr/bin/basename
+CAT?=		/bin/cat
+CP?=		/bin/cp
+ECHO?=		echo
+EXPR?=		/bin/expr
+FALSE?=		false
+FILE?=		/usr/bin/file
+DIRNAME?=	/usr/bin/dirname
+GREP?=		/usr/bin/grep
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		echo
@@ -795,7 +771,7 @@ _DEPEND_ECHO?=		echo
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
-DO_NADA?=		${TRUE}
+DO_NADA?=		true
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -919,10 +895,10 @@ PATCH_SITES9:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES9}
 .if exists(/cdrom/distfiles)
 CDROM_SITE:=	/cdrom/distfiles/${DIST_SUBDIR}
 .if defined(FETCH_SYMLINK_DISTFILES)
-CDROM_COPY:=	${LN}
+CDROM_COPY:=	ln
 CDROM_OPT=		-s
 .else
-CDROM_COPY:=	${CP}
+CDROM_COPY:=	cp
 CDROM_OPT=		-f
 .endif
 .endif
@@ -1192,7 +1168,7 @@ checksum: fetch
 # Disable extract
 .if defined(NO_EXTRACT) && !target(extract)
 extract: 
-	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
+	@${_MAKE_COOKIE} ${EXTRACT_COOKIE}
 checksum: fetch 
 	@${DO_NADA}
 makesum addsum: fetch-all
@@ -1202,25 +1178,25 @@ makesum addsum: fetch-all
 # Disable patch
 .if defined(NO_PATCH) && !target(patch)
 patch: extract
-	@${TOUCH} ${TOUCH_FLAGS} ${PATCH_COOKIE}
+	@${_MAKE_COOKIE} ${PATCH_COOKIE}
 .endif
 
 # Disable configure
 .if defined(NO_CONFIGURE) && !target(configure)
 configure: patch
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
+	@${_MAKE_COOKIE} ${CONFIGURE_COOKIE}
 .endif
 
 # Disable build
 .if defined(NO_BUILD) && !target(build)
 build: configure
-	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
+	@${_MAKE_COOKIE} ${BUILD_COOKIE}
 .endif
 
 # Disable install
 .if defined(NO_INSTALL) && !target(install)
 install: build
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+	@${_MAKE_COOKIE} ${INSTALL_COOKIE}
 .endif
 
 # Disable package
@@ -1251,12 +1227,12 @@ describe:
 
 .if !target(do-fetch)
 do-fetch:
-	@${MKDIR} ${FULLDISTDIR}
+	@mkdir -p ${FULLDISTDIR}
 	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${DISTFILES}; do \
-	 	file=`echo $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
+	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
+		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
+			if [ -L $$file -o -L `basename $$file` ]; then \
 				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
 				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				echo ">> Please correct this problem and try again."; \
@@ -1299,9 +1275,9 @@ do-fetch:
 .if defined(PATCHFILES)
 	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${PATCHFILES}; do \
-	 	file=`echo $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
+	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
+		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
+			if [ -L $$file -o -L `basename $$file` ]; then \
 				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
 				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				echo ">> Please correct this problem and try again."; \
@@ -1365,13 +1341,13 @@ list-distfiles:
 obj:
 .if !defined(NO_WRKDIR)
 .if defined(WRKOBJDIR)
-	@${RM} -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@${MKDIR} -p ${WRKOBJDIR}/${PORTSUBDIR}
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
+	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`${READLINK} ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
 		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
-		${RM} -f ${WRKDIR}; \
-		${LN} -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
+		rm -f ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
 .else
 	@echo ">>"
@@ -1388,17 +1364,17 @@ obj:
 do-extract:
 .if !defined(NO_WRKDIR)
 .if defined(WRKOBJDIR)
-	@${RM} -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@${MKDIR} -p ${WRKOBJDIR}/${PORTSUBDIR}
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
+	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`${READLINK} ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
 		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
-		${RM} -f ${WRKDIR}; \
-		${LN} -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
+		rm -f ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
 .else
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
+	@rm -rf ${WRKDIR}
+	@mkdir -p ${WRKDIR}
 .endif
 .endif
 	@PATH=${PORTPATH}; \
@@ -1483,7 +1459,7 @@ do-configure: ${WRKBUILD}
 .endif
 
 ${WRKBUILD}:
-	${MKDIR} ${WRKBUILD}
+	mkdir -p ${WRKBUILD}
 
 # Build
 
@@ -1507,7 +1483,7 @@ do-package:
 		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
 		if [ -d ${PACKAGES} ]; then \
 			if [ ! -d ${PKGREPOSITORY} ]; then \
-				if ! ${MKDIR} ${PKGREPOSITORY}; then \
+				if ! mkdir -p ${PKGREPOSITORY}; then \
 					echo ">> Can't create directory ${PKGREPOSITORY}."; \
 					exit 1; \
 				fi; \
@@ -1515,10 +1491,10 @@ do-package:
 		fi; \
 		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 			if [ -d ${PACKAGES} ]; then \
-				${MAKE} package-links; \
+				make package-links; \
 			fi; \
 		else \
-			${MAKE} delete-package; \
+			make delete-package; \
 			exit 1; \
 		fi; \
 	fi
@@ -1528,10 +1504,10 @@ do-package:
 
 .if !target(package-links)
 package-links:
-	@${MAKE} delete-package-links
+	@make delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
-			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
+			if ! mkdir -p ${PACKAGES}/$$cat; then \
 				echo ">> Can't create directory ${PACKAGES}/$$cat."; \
 				exit 1; \
 			fi; \
@@ -1542,13 +1518,13 @@ package-links:
 
 .if !target(delete-package-links)
 delete-package-links:
-	@cd ${PACKAGES} && ${FIND} . -type l -name ${PKGNAME}${PKG_SUFX}|xargs ${RM} -f
+	@cd ${PACKAGES} && find . -type l -name ${PKGNAME}${PKG_SUFX}|xargs rm -f
 .endif
 
 .if !target(delete-package)
 delete-package:
-	@${MAKE} delete-package-links
-	@${RM} -f ${PKGFILE}
+	@make delete-package-links
+	@rm -f ${PKGFILE}
 .endif
 
 ################################################################
@@ -1593,15 +1569,15 @@ _PORT_USE: .USE
 		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
 	fi
 .endif
-	@touch ${INSTALL_PRE_COOKIE}
+	@${_MAKE_COOKIE} ${INSTALL_PRE_COOKIE}
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/pre-/}
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/do-/}
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET:S/^real-/post-/}
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/do-/}
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/post-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
@@ -1616,10 +1592,10 @@ _PORT_USE: .USE
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
 .for manpage in ${_MANPAGES} ${_CATPAGES}
 	@if [ -L ${manpage} ]; then \
-		set - `${FILE} ${manpage}`; \
-		shift `${EXPR} $$# - 1`; \
-		${LN} -sf $${1}.gz ${manpage}.gz; \
-		${RM} ${manpage}; \
+		set - `file ${manpage}`; \
+		shift `expr $$# - 1`; \
+		ln -sf $${1}.gz ${manpage}.gz; \
+		rm ${manpage}; \
 	else \
 		${GZIP_CMD} ${manpage}; \
 	fi
@@ -1627,31 +1603,31 @@ _PORT_USE: .USE
 .endif
 .endif
 .if make(real-install) && exists(${PKGDIR}/MESSAGE)
-	@${CAT}	${PKGDIR}/MESSAGE
+	@cat	${PKGDIR}/MESSAGE
 .endif
 .if make(real-install) && !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && ${MAKE} fake-pkg
+	@cd ${.CURDIR} && make fake-pkg
 .endif
 .if make(real-extract)
-	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
+	@${_MAKE_COOKIE} ${EXTRACT_COOKIE}
 .endif
 .if make(real-patch) && !defined(PATCH_CHECK_ONLY)
 .if defined(USE_AUTOCONF)
 	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
-	@${TOUCH} ${TOUCH_FLAGS} ${PATCH_COOKIE}
+	@${_MAKE_COOKIE} ${PATCH_COOKIE}
 .endif
 .if make(real-configure)
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
+	@${_MAKE_COOKIE} ${CONFIGURE_COOKIE}
 .endif
 .if make(real-install)
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+	@${_MAKE_COOKIE} ${INSTALL_COOKIE}
 .endif
 .if make(real-build)
-	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
+	@${_MAKE_COOKIE} ${BUILD_COOKIE}
 .endif
 .if make(real-package) && !defined(PACKAGE_NOINSTALL)
-	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
+	@${_MAKE_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
 ################################################################
@@ -1665,11 +1641,11 @@ _PORT_USE: .USE
 
 .if !target(fetch)
 fetch:
-	@cd ${.CURDIR} && ${MAKE} real-fetch
+	@cd ${.CURDIR} && make real-fetch
 .endif
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && ${MAKE} __FETCH_ALL=Yes real-fetch
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
 .endif
 
 
@@ -1698,17 +1674,17 @@ package: install ${PACKAGE_COOKIE}
 .endif
 
 ${EXTRACT_COOKIE}: 
-	@cd ${.CURDIR} && ${MAKE} checksum real-extract
+	@cd ${.CURDIR} && make checksum real-extract
 ${PATCH_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} real-patch
+	@cd ${.CURDIR} && make real-patch
 ${CONFIGURE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} real-configure
+	@cd ${.CURDIR} && make real-configure
 ${BUILD_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} real-build
+	@cd ${.CURDIR} && make real-build
 ${INSTALL_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} real-install
+	@cd ${.CURDIR} && make real-install
 ${PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} real-package
+	@cd ${.CURDIR} && make real-package
 
 # And call the macros
 
@@ -1748,7 +1724,7 @@ post-${name}:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=Yes patch
+	@cd ${.CURDIR} && make PATCH_CHECK_ONLY=Yes patch
 .endif
 
 # Reinstall
@@ -1757,8 +1733,8 @@ checkpatch:
 
 .if !target(reinstall)
 reinstall:
-	@${RM} -f ${INSTALL_PRE_COOKIE} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@DEPENDS_TARGET=${DEPENDS_TARGET} ${MAKE} install
+	@rm -f ${INSTALL_PRE_COOKIE} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+	@DEPENDS_TARGET=${DEPENDS_TARGET} make install
 .endif
 
 # Deinstall
@@ -1769,7 +1745,7 @@ reinstall:
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
 	@${PKG_DELETE} -f ${PKGNAME}
-	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+	@rm -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
 
@@ -1787,24 +1763,24 @@ pre-clean:
 .if !target(clean)
 clean: pre-clean
 .if ${CLEANDEPENDS:L}=="yes"
-	@${MAKE} clean-depends
+	@make clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if !defined(NO_WRKDIR)
 .if  defined(WRKOBJDIR)
-	@${RM} -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@${RM} -f ${WRKDIR}
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
+	@rm -f ${WRKDIR}
 .else
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
-			${RM} -rf ${WRKDIR}; \
+			rm -rf ${WRKDIR}; \
 		else \
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
 .endif
 .else
-	@${RM} -f ${WRKDIR}/.*_started ${WRKDIR}/.*_done
+	@rm -f ${WRKDIR}/.*_started ${WRKDIR}/.*_done
 .endif
 .endif
 
@@ -1817,10 +1793,10 @@ pre-distclean:
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
-		${RM} -f ${_DISTFILES} ${_PATCHFILES}; \
+		rm -f ${_DISTFILES} ${_PATCHFILES}; \
 	fi
 .if defined(DIST_SUBDIR)
-	-@${RMDIR} ${FULLDISTDIR}  
+	-@rmdir ${FULLDISTDIR}  
 .endif
 .endif
 
@@ -1909,11 +1885,11 @@ fetch-list-one-pkg:
 
 .if !target(makesum)
 makesum: fetch-all
-	@${MKDIR} ${FILESDIR}
-	@if [ -f ${CHECKSUM_FILE} ]; then ${RM} -f ${CHECKSUM_FILE}; fi
+	@mkdir -p ${FILESDIR}
+	@if [ -f ${CHECKSUM_FILE} ]; then rm -f ${CHECKSUM_FILE}; fi
 	@cd ${DISTDIR} && \
 	 for file in ${_CKSUMFILES}; do \
-	 	for cipher in ${CIPHERS:R}; do \
+	 	for cipher in ${_CIPHERS}; do \
 			$$cipher $$file >> ${CHECKSUM_FILE}; \
 		done; \
 	 done
@@ -1925,7 +1901,7 @@ makesum: fetch-all
 
 .if !target(addsum)
 addsum: fetch-all
-	@${MKDIR} ${FILESDIR}
+	@mkdir -p ${FILESDIR}
 	@touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 for file in ${_CKSUMFILES}; do \
@@ -1937,7 +1913,7 @@ addsum: fetch-all
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
-	@if [ `${SED} -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
+	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
 		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
 		exit 1; \
 	else \
@@ -1952,13 +1928,11 @@ checksum: fetch
 	else \
 		cd ${DISTDIR}; OK="true"; \
 		  for file in ${_CKSUMFILES}; do \
-			for cipher_sig in ${PREFERRED_CIPHERS}; do \
-				sig=`${EXPR} $$cipher_sig : '.*\.\(.*\)'`; \
-				CKSUM2=`${GREP} "^$$sig ($$file)" ${CHECKSUM_FILE} | ${AWK} '{print $$4}'`; \
+			for cipher in ${PREFERRED_CIPHERS}; do \
+				CKSUM2=`grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE} | awk'{print $$4}'`; \
 				if [ "$$CKSUM2" = "" ]; then \
-					${ECHO_MSG} ">> No $$sig checksum recorded for $$file."; \
+					${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
 				else \
-					cipher=`${EXPR} $$cipher_sig : '\(.*\)\.'`; \
 					break; \
 				fi; \
 			done; \
@@ -1972,15 +1946,15 @@ checksum: fetch
 			else \
 				CKSUM=`$$cipher < $$file`; \
 				if [ "$$CKSUM" = "$$CKSUM2" ]; then \
-					${ECHO_MSG} ">> Checksum OK for $$file. ($$sig)"; \
+					${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)"; \
 				else \
-					echo ">> Checksum mismatch for $$file. ($$sig)"; \
+					echo ">> Checksum mismatch for $$file. ($$cipher)"; \
 					OK="false"; \
 				fi; \
 			fi; \
 		  done; \
 		  for file in ${_IGNOREFILES}; do \
-			CKSUM2=`${GREP} "($$file)" ${CHECKSUM_FILE} | ${AWK} '{print $$4}'`; \
+			CKSUM2=`grep "($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
 			if [ "$$CKSUM2" = "" ]; then \
 				echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
@@ -2009,7 +1983,7 @@ checksum: fetch
 plist: install
 	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
 	INSTALL_PRE_COOKIE=${INSTALL_PRE_COOKIE} \
-	${PERL} ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
+	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
 .endif
 
 ################################################################
@@ -2033,7 +2007,7 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 .if !target(package-name)
 package-name:
 .if (${FULL_PACKAGE_NAME:L} == "yes")
-	@${_DEPEND_ECHO} `${MAKE} package-path`/${PKGNAME}
+	@${_DEPEND_ECHO} `make package-path`/${PKGNAME}
 .else
 	@${_DEPEND_ECHO} '${PKGNAME}'
 .endif 
@@ -2041,7 +2015,7 @@ package-name:
 
 .if !target(package-path)
 package-path:
-	@pwd | ${SED} s@`cd ${PORTSDIR} ; pwd`/@@g
+	@pwd | sed s@`cd ${PORTSDIR} ; pwd`/@@g
 .endif
 # Build a package but don't check the package cookie
 
@@ -2049,7 +2023,7 @@ package-path:
 repackage: pre-repackage package
 
 pre-repackage:
-	@${RM} -f ${PACKAGE_COOKIE}
+	@rm -f ${PACKAGE_COOKIE}
 .endif
 
 # Build a package but don't check the cookie for installation, also don't
@@ -2057,7 +2031,7 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
-	@cd ${.CURDIR} && ${MAKE} PACKAGE_NOINSTALL=Yes real-package
+	@cd ${.CURDIR} && make PACKAGE_NOINSTALL=Yes real-package
 .endif
 
 ################################################################
@@ -2073,16 +2047,16 @@ ${_DEP}-depends:
 .if !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
-		prog=`echo $$i | ${SED} -e 's/:.*//'`; \
-		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | ${SED} -e 's/.*://'`; \
-			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
+		prog=`echo $$i | sed -e 's/:.*//'`; \
+		dir=`echo $$i | sed -e 's/[^:]*://'`; \
+		if expr "$$dir" : '.*:' > /dev/null; then \
+			target=`echo $$dir | sed -e 's/.*://'`; \
+			dir=`echo $$dir | sed -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
 		found=not; \
-		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
+		if expr "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
 				${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - found"; \
 				found=""; \
@@ -2100,7 +2074,7 @@ ${_DEP}-depends:
 		fi; \
 		if [ X"$$found" = Xnot ]; then \
 			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
-			if cd $$dir && ${MAKE} $$target; then \
+			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
 			else \
 				if [ ! -d $$dir ]; then \
@@ -2121,11 +2095,11 @@ lib-depends:
 .if !defined(NO_DEPENDS)
 .if defined(NO_SHARED_LIBS)
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`echo $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | ${SED} -e 's/.*://'`; \
-			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
+		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+		dir=`echo $$i | sed -e 's/[^:]*://'`; \
+		if expr "$$dir" : '.*:' > /dev/null; then \
+			target=`echo $$dir | sed -e 's/.*://'`; \
+			dir=`echo $$dir | sed -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
@@ -2135,7 +2109,7 @@ lib-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$lib in $$dir"; \
-			if cd $$dir && ${MAKE} $$target; then \
+			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				if [ ! -d "$$dir" ]; then \
@@ -2144,24 +2118,24 @@ lib-depends:
 				exit 1; \
 			fi; \
 		fi; \
-		${RM} -f $$tmp; \
+		rm -f $$tmp; \
 	done
 .else
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`echo $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | ${SED} -e 's/.*://'`; \
-			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
+		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
+		dir=`echo $$i | sed -e 's/[^:]*://'`; \
+		if expr "$$dir" : '.*:' > /dev/null; then \
+			target=`echo $$dir | sed -e 's/.*://'`; \
+			dir=`echo $$dir | sed -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
-		libname=`echo $$lib | ${SED} -e 's|\\\\||g'`; \
-		reallib=`${LDCONFIG} -r | ${GREP} -e "-l$$lib" | awk '{ print $$3 }'`; \
+		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
+		reallib=`${LDCONFIG} -r | grep -e "-l$$lib" | awk '{ print $$3 }'`; \
 		if [ "X$$reallib" = X"" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
-			if cd $$dir && ${MAKE} $$target; then \
+			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				if [ ! -d "$$dir" ]; then \
@@ -2183,15 +2157,15 @@ misc-depends:
 .if defined(DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | ${SED} -e 's/.*://'`; \
-			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
+		if expr "$$dir" : '.*:' > /dev/null; then \
+			target=`echo $$dir | sed -e 's/.*://'`; \
+			dir=`echo $$dir | sed -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
-		if cd $$dir && ${MAKE} $$target; then \
+		if cd $$dir && make $$target; then \
 			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 		else \
 			if [ ! -d $$dir ]; then \
@@ -2252,7 +2226,7 @@ describe:
 	@echo -n "${PKGNAME}|${.CURDIR}|"; \
 	echo -n "${PREFIX}|"; \
 	if [ -f ${COMMENT} ]; then \
-		echo -n "`${CAT} ${COMMENT}`|"; \
+		echo -n "`cat ${COMMENT}`|"; \
 	else \
 		echo -n "** No Description|"; \
 	fi; \
@@ -2287,7 +2261,7 @@ README.html:
 .endif
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
-		{ ${CAT} $@.tmp$I | while read n; do \
+		{ cat $@.tmp$I | while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
 			echo "<A HREF=\"${PKGDEPTH}/$$j/README.html\">$$k</A>"; \
 		 done; } >$@.tmp$Ia; \
@@ -2295,8 +2269,8 @@ README.html:
     echo "(none)" > $@.tmp$Ia; \
 	fi
 .endfor
-	@${CAT} ${README_NAME} | \
-		${SED} -e 's|%%PORT%%|'"`${MAKE} package-path | ${HTMLIFY}`"'|g' \
+	@cat ${README_NAME} | \
+		sed -e 's|%%PORT%%|'"`make package-path | ${HTMLIFY}`"'|g' \
 			-e '/%%PKG%%/r$@.tmp3' \
 			-e '/%%PKG%%/d' \
 			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
@@ -2421,15 +2395,15 @@ readme:
 .endif
 
 
-HTMLIFY=	${SED} -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 .if make(README.html) || make(readme) || make(readmes)
-PKGDEPTH!=${MAKE} package-path|${SED} -e 's|[^./][^/]*|..|g'
+PKGDEPTH!=make package-path|sed -e 's|[^./][^/]*|..|g'
 .endif
 
 .if !target(print-depends)
 print-depends: 
-	@${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
+	@make FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 .endif
 
 # Fake installation of package so that user can pkg_delete it later.
@@ -2439,35 +2413,35 @@ print-depends:
 .if !target(fake-pkg)
 fake-pkg:
 	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then echo "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
-	@if [ `/bin/ls -l ${COMMENT} | ${AWK} '{print $$5}'` -gt 60 ]; then \
+	@if [ `/bin/ls -l ${COMMENT} | awk '{print $$5}'` -gt 60 ]; then \
 	    echo "** ${COMMENT} too large - installation not recorded."; \
 	    exit 1; \
 	 fi
-	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
+	@if [ ! -d ${PKG_DBDIR} ]; then rm -f ${PKG_DBDIR}; mkdir -p ${PKG_DBDIR}; fi
 .if defined(FORCE_PKG_REGISTER)
-	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
+	@rm -rf ${PKG_DBDIR}/${PKGNAME}
 .endif
 	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 		${ECHO_MSG} "===>  Registering installation for ${PKGNAME}"; \
-		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
+		mkdir -p ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		${CP} ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		cp ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
+		cp ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
 		if [ -f ${PKGDIR}/INSTALL ]; then \
-			${CP} ${PKGDIR}/INSTALL ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
+			cp ${PKGDIR}/INSTALL ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
 		if [ -f ${PKGDIR}/DEINSTALL ]; then \
-			${CP} ${PKGDIR}/DEINSTALL ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
+			cp ${PKGDIR}/DEINSTALL ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
 		fi; \
 		if [ -f ${PKGDIR}/REQ ]; then \
-			${CP} ${PKGDIR}/REQ ${PKG_DBDIR}/${PKGNAME}/+REQ; \
+			cp ${PKGDIR}/REQ ${PKG_DBDIR}/${PKGNAME}/+REQ; \
 		fi; \
 		if [ -f ${PKGDIR}/MESSAGE ]; then \
-			${CP} ${PKGDIR}/MESSAGE ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+			cp ${PKGDIR}/MESSAGE ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `make package-depends ECHO_MSG=${TRUE} | ${_SORT_DEPENDS}`; do \
+		for dep in `make package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
-				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
+				if ! grep ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
 					echo ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
