@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/01 01:27:55 brad Exp $
 
 COMMENT=	"getopt(3)-like library with a number of enhancements"
 
 DISTNAME=	popt-1.5.1
 CATEGORIES=	devel
-NEED_VERSION=	1.474
+NEED_VERSION=	1.475
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MODULES=	gettext
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/popt-1.5
-
 MAKE_FLAGS=	libpopt_la_LDFLAGS="-version-info 0:1:0"
+
+WRKDIST=	${WRKDIR}/popt-1.5
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
@@ -24,5 +24,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 .include <bsd.port.mk>
