@@ -1,2 +1,5 @@
 distfiles
 packages
+logs
+ftp-packages
+cdrom-packages
