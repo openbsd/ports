@@ -1,5 +1,38 @@
 --- aclocal.m4.orig	Mon Mar  4 17:56:49 2002
 +++ aclocal.m4	Thu Mar  7 01:23:56 2002
+@@ -1082,7 +1082,7 @@
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++
+ AC_SUBST(LIBTOOL)dnl
+ 
+ # Prevent multiple expansion
+@@ -3211,9 +3211,14 @@
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
+     case "$host_os" in
+-    openbsd2.[[89]] | openbsd2.[[89]].*)
++    openbsd2.[89] | openbsd2.[89].*)
+       shlibpath_overrides_runpath=no
+       ;;
+     *)
+@@ -3221,6 +3226,7 @@
+       ;;
+     esac
+   else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
 @@ -5131,10 +5137,9 @@
  
  	   if test "$gt_cv_func_gettext_libc" != "yes"; then
