@@ -1,0 +1,28 @@
+# OpenBSD makefile for:  lunar
+# Version required:     	  2.1
+# Date created:			  Nov 26 1997
+# Whom:				  ejovi
+#
+# $OpenBSD: Makefile,v 1.1.1.1 1997/11/26 22:13:06 joey Exp $
+#
+
+DISTNAME=	lunar-2.1
+PKGNAME=	zh-lunar-2.1
+CATEGORIES=	chinese
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
+
+MAINTAINER=     joey@OpenBSD.ORG
+
+ALL_TARGET=
+MAN1=		lunar.1
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/chinese
+	${INSTALL_PROGRAM} ${WRKSRC}/lunar ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lunar.bitmap ${PREFIX}/share/chinese
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+
+
+.include <bsd.port.mk>
