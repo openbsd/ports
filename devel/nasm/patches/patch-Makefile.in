@@ -1,10 +1,11 @@
---- Makefile.in.orig	Thu Jun  3 16:24:33 1999
-+++ Makefile.in	Sat Oct  7 23:38:23 2000
-@@ -50,6 +50,7 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2002/11/21 17:38:39 naddy Exp $
+--- Makefile.in.orig	Fri Sep 13 02:25:44 2002
++++ Makefile.in	Thu Nov 14 00:04:09 2002
+@@ -58,6 +58,7 @@ NDISASM = ndisasm.$(O) disasm.$(O) sync.
  
- all: nasm ndisasm nasm.man ndisasm.man
- 	cd rdoff; $(MAKE) all
+ all: nasm$(X) ndisasm$(X) nasm.man ndisasm.man
+ 	cd rdoff && $(MAKE) all
 +	cd doc; $(MAKE) all
  
- nasm: $(NASM)
- 	$(CC) $(LDFLAGS) -o nasm $(NASM)
+ nasm$(X): $(NASM)
+ 	$(CC) $(LDFLAGS) -o nasm$(X) $(NASM) $(LIBS)

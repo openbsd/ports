@@ -1,28 +1,51 @@
---- doc/Makefile.in.orig	Thu Jun  3 16:24:51 1999
-+++ doc/Makefile.in	Sat Oct  7 23:48:26 2000
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-doc_Makefile.in,v 1.2 2002/11/21 17:38:39 naddy Exp $
+--- doc/Makefile.in.orig	Sun May 19 00:17:28 2002
++++ doc/Makefile.in	Thu Nov 21 18:23:44 2002
+@@ -17,12 +17,12 @@ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
  INSTALL_DATA	= @INSTALL_DATA@
  
  PERL		= perl
 -MAKEINFO	= makeinfo
 +MAKEINFO	= makeinfo --no-split
+ TEXI2DVI        = texi2dvi
+ PS2PDF          = ps2pdf -dOptimize=true	# Part of GhostScript
  
  SRCS		= nasmdoc.src
- OUT		= nasm.info
-@@ -29,13 +29,13 @@
- # Consider html, txt and src output a side effect
- .src.texi:
+-OUT		= nasm.info nasmdoc.ps nasmdoc.pdf
++OUT		= nasm.info # nasmdoc.ps nasmdoc.pdf # don't build ps and pdf
+ 
+ all: $(OUT)
+ 
+@@ -31,7 +31,7 @@ os2: nasm.inf
+ # Consider html, txt and ps output a side effect
+ nasmdoc.dip: nasmdoc.src rdsrc.pl
  	mkdir -p html
--	$(PERL) ./rdsrc.pl < $<
-+	$(PERL) ${srcdir}/rdsrc.pl < $<
+-	$(PERL) $(srcdir)/rdsrc.pl < $<
++	$(PERL) $(srcdir)/rdsrc.pl < $(srcdir)/nasmdoc.src
  	mv -f *.html html
  
- nasm.info: nasmdoc.texi
+ nasmdoc.texi: nasmdoc.dip
+@@ -48,8 +48,8 @@ nasm.info: info/nasm.info
+ 
+ info/nasm.info: nasmdoc.texi
  	mkdir -p info
 -	$(MAKEINFO) $<
 -	mv -f *.info *.info-* info
-+	$(MAKEINFO) $>
-+	mv -f *.info* info
++	$(MAKEINFO) $?
++	mv -f *.info info
+ 
+ # DVI output from texinfo (optional)
+ nasmdoc.dvi: nasmdoc.texi
+@@ -57,10 +57,10 @@ nasmdoc.dvi: nasmdoc.texi
+ 
+ # Rules for building an OS/2 book
+ nasmdoc.ipf: nasmdoc.texi
+-	texi2ipf $< >$@
++	texi2ipf $? >$@
+ 
+ nasm.inf: nasmdoc.ipf
+-	ipfc -i -s $< $@
++	ipfc -i -s $? $@
  
  clean:
- 	-rm -f *.rtf *.hpj *.texi *.ph *.gid
+ 	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip

@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/11/21 17:38:39 naddy Exp $
 
 COMMENT=	"general-purpose multi-platform x86 assembler"
 
 ONLY_FOR_ARCHS=	i386
 
-DISTNAME=	nasm-0.98
+DISTNAME=	nasm-0.98.35
 CATEGORIES=	devel lang
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=devel/lang/assemblers/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
 
-HOMEPAGE=	http://www.web-sites.co.uk/nasm/
+HOMEPAGE=	http://nasm.sourceforge.net/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-# The license is basically NOFEE but requires permission for inclusion
-# in a commercial procuct.  See License file for info.
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,11 +28,7 @@ FAKE_FLAGS=	INSTALLROOT="${WRKINST}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nasm
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/rdsrc.pl ${PREFIX}/share/doc/nasm
-	${INSTALL_MAN} ${WRKSRC}/*.doc ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKSRC}/doc/nasmdoc.src ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKBUILD}/doc/nasmdoc.ps ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKBUILD}/doc/nasmdoc.txt ${PREFIX}/share/doc/nasm
+	${INSTALL_MAN} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/info/* $(PREFIX)/info
 
