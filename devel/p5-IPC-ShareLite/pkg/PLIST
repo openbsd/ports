@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 13:02:03 wilfried Exp $
+${P5ARCH}/IPC/ShareLite.pm
+${P5ARCH}/auto/IPC/ShareLite/ShareLite.bs
+${P5ARCH}/auto/IPC/ShareLite/ShareLite.so
+${P5ARCH}/auto/IPC/ShareLite/autosplit.ix
+man/man3p/IPC::ShareLite.3p
+@dirrm ${P5ARCH}/auto/IPC/ShareLite
