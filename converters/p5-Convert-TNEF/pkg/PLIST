@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/25 03:04:33 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/24 00:36:55 naddy Exp $
 ${P5SITE}/Convert/TNEF.pm
+@comment ${P5ARCH}/auto/Convert/TNEF/.packlist
 man/man3p/Convert::TNEF.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Convert/TNEF
+@comment @dirrm ${P5ARCH}/auto/Convert
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Convert
