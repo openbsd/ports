@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/20 13:30:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/23 12:38:21 naddy Exp $
 
 DISTNAME=	elvis-2.1_4
 PKGNAME=	${DISTNAME:S/_/./}
@@ -7,7 +7,7 @@ NEED_VERSION=	1.303
 
 HOMEPAGE=	http://www.fh-wedel.de/elvis/
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

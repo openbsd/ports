@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/21 15:10:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/23 12:38:21 naddy Exp $
 
 DISTNAME=	nano-0.9.18
 CATEGORIES=	editors
 NEED_VERSION=	1.333
 HOMEPAGE=	http://www.asty.org/nano/
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.asty.org/pub/nano/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/08/29 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/23 12:38:22 naddy Exp $
 
 VER=		16.0
 DISTNAME=	cvsup-bin-${VER}
@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
 
 ONLY_FOR_ARCHS=	sparc
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

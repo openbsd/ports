@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/06 11:51:34 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/09/23 12:38:23 naddy Exp $
 
 DISTNAME=	xloadimage.4.1
 PKGNAME=	xloadimage-4.1
@@ -15,7 +15,7 @@ PATCH_DIST_STRIP= -p1
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

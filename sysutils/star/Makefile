@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/07/10 22:33:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/23 12:38:22 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 DISTNAME=	star-1.2
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/compress
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/07/23 11:24:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/23 12:38:22 naddy Exp $
 
 DISTNAME=	sdd-1.22
 CATEGORIES=	sysutils
 NEED_VERSION=	1.319
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

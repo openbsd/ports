@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/06 05:48:49 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/23 12:38:22 naddy Exp $
 
 DISTNAME=	surfraw-1.0.1
 CATEGORIES=	www
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= surfraw
 
 HOMEPAGE=	http://surfraw.sourceforge.net/
 
-MAINTAINER=	naddy@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
