@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.3 1997/11/19 01:07:52 joey Exp $
+# $OpenBSD: Makefile,v 1.4 1997/12/13 00:07:24 gene Exp $
 #
 
 DISTNAME=       bash-2.01
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	Yes
 MAN1=		bash.1 bashbug.1
 
 post-patch:
-	cp /usr/include/fnmatch.h ${WRKSRC}/lib/glob/fnmatch.h
+	$(CP) /usr/include/fnmatch.h ${WRKSRC}/lib/glob/fnmatch.h
 
 pre-install:
 	if [ ! -s ${PREFIX}/info/dir ]; then \
@@ -28,9 +28,6 @@ pre-install:
 	fi
 
 post-install:
-	${CP} /etc/shells /etc/shells.bak
-	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; echo ${PREFIX}/bin/bash) >/etc/shells
-	${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
@@ -47,5 +44,11 @@ post-install:
 		${PREFIX}/share/doc/bash
 	${GZIP_CMD} ${PREFIX}/share/doc/bash/*.ps
 .endif
+	@$(ECHO) "Finished installing $(DISTNAME)"
+	@$(ECHO) "To complete the install, you should notify the system"
+	@$(ECHO) "that $(PREFIX)/bin/bash is a valid shell by adding it to"
+	@$(ECHO) "/etc/shells."
+	@$(ECHO) "If you are unfamiliar with this file, consult the shells(5)"
+	@$(ECHO) "manual page."
 
 .include <bsd.port.mk>
