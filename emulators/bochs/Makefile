@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/08 17:19:36 todd Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/09 16:24:57 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
-DISTNAME=	bochs-1.2.1
+
+DISTNAME=	bochs-1.4
 CATEGORIES=	emulators
-NEED_VERSION=	1.413
-MASTER_SITES=	http://prdownloads.sourceforge.net/bochs/
+NEED_VERSION=	1.525
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 
@@ -16,11 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--enable-vga \
-		--enable-fpu --enable-cdrom
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--enable-cdrom \
+		--enable-fpu \
+		--enable-ne2000 \
+		--enable-vga
 
-FLAVORS=	debug i386 i486 i686 pci smp net no_x11 term
+FLAVORS=	debug i386 i486 i686 pci smp no_x11 term
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
@@ -54,13 +57,6 @@ CONFIGURE_ARGS+= --enable-pci
 CONFIGURE_ARGS+= --enable-processors=2
 .endif
 
-.if ${FLAVOR:L:Mnet}
-CONFIGURE_ARGS+= --enable-ne2000
-.endif
-
-post-extract:
-	@rm -f ${WRKSRC}/debug/lexer.c
-
 post-configure:
 	@sed -e 's@!!PREFIX!!@${PREFIX}@' \
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
@@ -73,8 +69,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/bios
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bochs
-	${INSTALL_PROGRAM} ${WRKBUILD}/bochs ${PREFIX}/bin
+	cd ${WRKBUILD}; ${INSTALL_PROGRAM} bochs bximage ${PREFIX}/bin
 	cd ${WRKSRC}/bios; ${INSTALL_DATA} ${BIOS} ${PREFIX}/share/bochs/bios
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/font/hercules.bdf ${PREFIX}/share/bochs/fonts

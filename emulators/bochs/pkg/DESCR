@@ -10,7 +10,6 @@ Flavors:
 	i686   - emulate 486 instruction set
 	pci    - build with support for i440FX PCI chipset
 	smp    - build with support for SMP (2 CPUs)
-	net    - build with support for NE2000 NIC chipset
 	no_x11 - do not build with X support
 	term   - build with support for textmode terminal environment
 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-gui_Makefile_in,v 1.3 2002/06/09 16:24:57 brad Exp $
+--- gui/Makefile.in.orig	Sun Apr  7 15:35:49 2002
++++ gui/Makefile.in	Sun Apr  7 15:36:23 2002
+@@ -82,6 +82,9 @@ $(BX_GUI_OBJS) : $(BX_INCLUDES)
+ beos.o: beos.@CPP_SUFFIX@
+ 	$(CXX) -c $(CXXFLAGS) $(LOCAL_CXXFLAGS) $(BX_INCDIRS) $(BEOS_CFLAGS) $<
+ 
++gui.o: gui.@CPP_SUFFIX@
++	$(CXX) -c $(CXXFLAGS) $(LOCAL_CXXFLAGS) $(BX_INCDIRS) $(X_CFLAGS) $<
++
+ x.o: x.@CPP_SUFFIX@
+ 	$(CXX) -c $(CXXFLAGS) $(LOCAL_CXXFLAGS) $(BX_INCDIRS) $(X_CFLAGS) $<
+ 

@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/06/13 16:12:50 todd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/06/09 16:24:57 brad Exp $
 bin/bochs
+bin/bximage
+man/man1/bochs-dlx.1
+man/man1/bochs.1
+man/man1/bochsrc.1
+man/man1/bximage.1
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
 share/bochs/bios/BIOS-bochs-latest
@@ -29,6 +34,7 @@ share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/install.html
 share/doc/bochs/instrumentation.html
+share/doc/bochs/iodebug.html
 share/doc/bochs/mtools.html
 share/doc/bochs/smp-simulation.html
 share/doc/bochs/sound.html
