@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2004/08/10 08:10:19 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2005/01/20 07:55:21 kevlo Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		'change terminal modes, and perform non-blocking reads'
 
-V=			2.21
+V=			2.30
 DISTNAME=		TermReadKey-${V}
 PKGNAME=		p5-Term-ReadKey-${V}
 CATEGORIES=		devel perl5
