@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.569 2003/07/30 19:59:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.570 2003/08/01 08:07:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -117,15 +117,20 @@ NO_SHARED_LIBS=	Yes
 
 CLEANDEPENDS?=No
 
-clean?=work
+# need to go through an extra var because clean is set in stone, 
+# on the cmdline.
+_clean=${clean}
+.if empty(_clean) || ${_clean:L} == "depends"
+_clean+=work
+.endif
 .if ${CLEANDEPENDS:L} == "yes"
-clean+=depends
+_clean+=depends
 .endif
-.if ${clean:L:Mwork}
-clean+=fake
+.if ${_clean:L:Mwork}
+_clean+=fake
 .endif
-.if ${clean:L:Mforce}
-clean+=-f
+.if ${_clean:L:Mforce}
+_clean+=-f
 .endif
 
 NOMANCOMPRESS?=	Yes
@@ -1827,7 +1832,7 @@ _delete-package-links:
 _CLEANDEPENDS?=Yes
 
 clean:
-.if ${clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
+.if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@unset FLAVOR SUBPACKAGE || true; \
 	${MAKE} all-dir-depends|tsort -r|while read dir; do \
 		${_flavor_fragment}; \
@@ -1835,11 +1840,11 @@ clean:
 	done
 .else
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-.  if ${clean:L:Mfake}
+.  if ${_clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 .  endif
-.  if ${clean:L:Mwork}
-.    if ${clean:L:Mflavors}
+.  if ${_clean:L:Mwork}
+.    if ${_clean:L:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
 		${SUDO} rm -rf $$i; \
@@ -1849,7 +1854,7 @@ clean:
 	@rm -rf ${WRKDIR}
 .    endif
 .  endif
-.  if ${clean:L:Mdist}
+.  if ${_clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
@@ -1860,8 +1865,8 @@ clean:
 	-@rmdir ${FULLDISTDIR}
 .    endif
 .  endif
-.  if ${clean:L:Minstall}
-.    if ${clean:L:Msub}
+.  if ${_clean:L:Minstall}
+.    if ${_clean:L:Msub}
 .      for _s in ${MULTI_PACKAGES}
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${_s}}
 .      endfor
@@ -1869,18 +1874,18 @@ clean:
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
 .    endif
 .  endif
-.  if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
+.  if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
 	rm -f ${_PACKAGE_COOKIES}
 .    if defined(MULTI_PACKAGES)
 .      for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _delete-package-links
 .      endfor
 .    endif
-.  elif ${clean:L:Mpackage}
+.  elif ${_clean:L:Mpackage}
 	@cd ${.CURDIR} && exec ${MAKE} _delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
 .  endif
-.  if ${clean:L:Mbulk}
+.  if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
 .  endif
 .endif
