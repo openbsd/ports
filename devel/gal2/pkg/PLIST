@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 04:19:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/26 03:50:02 marcm Exp $
 include/gal-${API_VERSION}/
 include/gal-${API_VERSION}/gal/
 include/gal-${API_VERSION}/gal/a11y/
@@ -209,15 +209,22 @@ share/gtk-doc/html/gal-${API_VERSION}/gal.types
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/bg/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gal-${API_VERSION}.mo
@@ -245,8 +252,12 @@ share/locale/gl/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/hr/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/hu/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/id/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gal-${API_VERSION}.mo
@@ -287,6 +298,9 @@ share/locale/sv/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/vi/

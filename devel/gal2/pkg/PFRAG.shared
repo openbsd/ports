@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 04:19:24 marcm Exp $
-@lib lib/libgal-${API_VERSION}.so.1.1
-@lib lib/libgal-a11y-${API_VERSION}.so.1.1
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/10/26 03:50:02 marcm Exp $
+@lib lib/libgal-${API_VERSION}.so.1.2
+@lib lib/libgal-a11y-${API_VERSION}.so.1.2

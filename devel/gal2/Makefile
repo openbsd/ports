@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/10 16:46:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/26 03:50:02 marcm Exp $
 
 COMMENT=		"GNOME Application Libs"
 
-VERSION=		2.2.0
+VERSION=		2.2.3
 DISTNAME=		gal-${VERSION}
 PKGNAME=		gal2-${VERSION}
 CATEGORIES=    		devel x11/gnome
