@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:23 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:44 espie Exp $
 #
 
 DISTNAME=	xml2rfc
 CATEGORIES=	textproc
+NEED_VERSION=	1.223
 MASTER_SITES=	http://memory.palace.org/authoring/
 
 MAINTAINER=	jakob@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80 \
-		${PREFIX}/lib/tcl8.0/TclXML:${PORTSDIR}/textproc/TclXML \
+RUN_DEPENDS=	wish8.0:x11/tk80 \
+		${PREFIX}/lib/tcl8.0/TclXML:textproc/TclXML \
 
-NO_BUILD=       yes
-NO_CONFIGURE=	yes
+NO_BUILD=       Yes
+NO_CONFIGURE=	Yes
 
 DOCS=		README.xml README.txt \
 		rfc2629-author.xml rfc2629-author.txt \

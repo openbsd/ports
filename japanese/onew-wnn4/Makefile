@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:30 espie Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME?=	ja-onew-wnn4-2.2.10
 CATEGORIES=	japanese
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
-NEED_VERSION=	1.191
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
@@ -27,17 +27,17 @@ WNN4=			yes
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna\\.1\\.:japanese/Canna
 JPLIB+=			-lcanna
 .endif
 .if defined(WNN4)
 INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
 JPLIB+=			-ljd 
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
 JPLIB+=			-ljd 
 .endif

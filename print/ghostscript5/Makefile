@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/22 17:08:45 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/05 18:30:40 espie Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
+NEED_VERSION=	1.223
 MASTER_SITES= $(MASTER_SITE_GNU)
-NEED_VERSION=	1.210
 
 MASTER_SITES0=	http://www.ozemail.com.au/~geoffk/pdfencrypt/ 
 MASTER_SITES1= http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
@@ -15,10 +15,10 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 
 MAINTAINER=	ports@openbsd.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
-		/nonexistent:${PORTSDIR}/graphics/png:extract \
-		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.1.3:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	/nonexistent:graphics/jpeg:extract \
+		/nonexistent:graphics/png:extract \
+		unzip:archivers/unzip
+LIB_DEPENDS=	png.1.3:graphics/png
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}

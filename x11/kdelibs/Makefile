@@ -1,31 +1,30 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 05:05:30 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/05 18:30:47 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.1
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
-NEED_VERSION=	1.92
-
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
-		gif.4.1:${PORTSDIR}/graphics/giflib \
-		jpeg.62:${PORTSDIR}/graphics/jpeg \
-		png.1.3:${PORTSDIR}/graphics/png \
-		tiff.35:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	msgfmt:devel/gettext
+LIB_DEPENDS=	qt.1.44:x11/qt \
+		gif.4.1:graphics/giflib \
+		jpeg.62:graphics/jpeg \
+		png.1.3:graphics/png \
+		tiff.35:graphics/tiff
 
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_BZIP2=	Yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:03:56 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:22 espie Exp $
 
 DISTNAME=	gom-0.29.103
 CATEGORIES=     audio
+NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/mixers
 
-NEED_VERSION=	1.73
 
 MAINTAINER=	scott@tranzoa.com
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-LIB_DEPENDS=	xview:${PORTSDIR}/x11/xview-lib \
-		olgx:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview:x11/xview-lib \
+		olgx:x11/xview-lib
 
 SEPARATE_BUILD=	concurrent
 USE_AUTOCONF=	yes

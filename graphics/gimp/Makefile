@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2000/02/16 05:19:59 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2000/03/05 18:30:28 espie Exp $
 
 DISTNAME=	gimp-1.1.17
 CATEGORIES=	graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.17/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/v1.1.17/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/unstable/v1.1.17/
@@ -14,12 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		aa.1.3:${PORTSDIR}/graphics/aalib \
-		jpeg.62:${PORTSDIR}/graphics/jpeg \
-		mpeg.13:${PORTSDIR}/graphics/mpeg-lib \
-		png.1.3:${PORTSDIR}/graphics/png \
-		tiff.35:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
+		aa.1.3:graphics/aalib \
+		jpeg.62:graphics/jpeg \
+		mpeg.13:graphics/mpeg-lib \
+		png.1.3:graphics/png \
+		tiff.35:graphics/tiff
 
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes

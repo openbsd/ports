@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/01 19:20:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:30 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
 DIST_SUBDIR=	xv
 CATEGORIES=     graphics x11
+NEED_VERSION=	1.223
 NO_CDROM=	"NOFEE: can not sell"
-NEED_VERSION=	1.175
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,9 +33,9 @@ MAINTAINER=	rohee@OpenBSD.ORG
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
-LIB_DEPENDS=    jpeg.62.:${PORTSDIR}/graphics/jpeg \
-		tiff.35.:${PORTSDIR}/graphics/tiff \
-		png.1.:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    jpeg.62.:graphics/jpeg \
+		tiff.35.:graphics/tiff \
+		png.1.:graphics/png
 
 USE_IMAKE=	Yes
 

@@ -3,19 +3,20 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/10 17:40:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:40 espie Exp $
 #
 
 DISTNAME=	linux-ar-40
 PKGNAME=	acroread-4.0
 CATEGORIES=	print
+NEED_VERSION=	1.223
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/emul/linux/lib/libc.so.5:emulators/linux_lib
 
 WRKDIST=	${WRKDIR}/ILINXR.install
 

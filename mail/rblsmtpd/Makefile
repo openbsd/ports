@@ -1,7 +1,8 @@
-# OpenBSD $
+# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:33 espie Exp $
 
 DISTNAME=	rblsmtpd-0.70
 CATEGORIES=	mail
+NEED_VERSION=	1.223
 MAINTAINER=	cd@sentia.nl
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
@@ -13,12 +14,12 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		http://koobera.math.uic.edu/www/software/ \
 		http://pobox.com/~djb/software/ 
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-NO_MTREE=	yes
+NO_MTREE=	Yes
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/net/ucspi-tcp
+RUN_DEPENDS=	tcpserver:net/ucspi-tcp
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

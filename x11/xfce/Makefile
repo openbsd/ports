@@ -3,23 +3,24 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/28 14:21:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/05 18:30:48 espie Exp $
 #
 
 DISTNAME=	xfce-3.2.5
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	kevlo@openbsd.org
 
-LIB_DEPENDS=	Imlib.19:${PORTSDIR}/graphics/imlib \
-		gtk.1:${PORTSDIR}/x11/gtk+
-RUN_DEPENDS=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
+LIB_DEPENDS=	Imlib.19:graphics/imlib \
+		gtk.1:x11/gtk+
+RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
 GTK_CONFIG=	${X11BASE}/bin/gtk-config
 
-USE_X11=  	yes
-GNU_CONFIGURE=	yes
+USE_X11=  	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -3,30 +3,31 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:28 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:46 espie Exp $
 #
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
 
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
+LIB_DEPENDS=	qt\\.1\\.:x11/qt
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	${SETENV}
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib/X11/explorer \
 			--with-qt-include=${PREFIX}/include/X11/qt
 
 ALL_TARGET=	explorer
-USE_X11=	yes
+USE_X11=	Yes
 
 post-install:
 	@/usr/bin/strip ${PREFIX}/bin/explorer

@@ -3,24 +3,23 @@
 # Date created:		24 Jan 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/23 22:56:02 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:41 espie Exp $
 
 DISTNAME=	isic-0.05
 
 CATEGORIES=	security
+NEED_VERSION=	1.223
 
 MASTER_SITES=	http://expert.cc.purdue.edu/~frantzen/
-
-NEED_VERSION=	1.191
 
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dugsong@monkey.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:net/libnet
 
-NO_PATCH=	yes
+NO_PATCH=	Yes
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 
 .include <bsd.port.mk>

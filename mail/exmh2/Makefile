@@ -3,18 +3,19 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/29 23:02:37 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:32 espie Exp $
 #
 
 DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
+RUN_DEPENDS=	wish8.0:x11/tk80
+BUILD_DEPENDS=	tclsh8.0:lang/tcl80
 WISH=		wish8.0
 TCLSH=		tclsh8.0
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:00 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:22 espie Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	workman-1.3a
 CATEGORIES=	audio
+NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-LIB_DEPENDS=	xview.3.2:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview.3.2:x11/xview-lib
 
 USE_IMAKE=	yes
 

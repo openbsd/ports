@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:35 espie Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	gsm.1.0:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	gsm.1.0:audio/gsm
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 

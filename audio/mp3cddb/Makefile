@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/01 01:50:31 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:22 espie Exp $
 
 DISTNAME=	mp3cddb
 CATEGORIES=	audio
+NEED_VERSION=	1.223
 MASTER_SITES=	http://alpha.rulez.org/~drewie/mp3cddb/
-RUN_DEPENDS=	${PREFIX}/libdata/perl5/site_perl/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MPEG-MP3Info \
-		${PREFIX}/libdata/perl5/site_perl/CDDB.pm:${PORTSDIR}/audio/p5-cddb \
-		mp3info:${PORTSDIR}/audio/mp3info
+RUN_DEPENDS=	${PREFIX}/libdata/perl5/site_perl/MPEG/MP3Info.pm:audio/p5-MPEG-MP3Info \
+		${PREFIX}/libdata/perl5/site_perl/CDDB.pm:audio/p5-cddb \
+		mp3info:audio/mp3info
 
 MAINTAINER=	angelos@openbsd.org
 

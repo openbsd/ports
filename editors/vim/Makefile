@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/03/04 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/03/05 18:30:26 espie Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
 CATEGORIES=	editors
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.oce.nl/pub/vim/unix/  \
@@ -11,8 +12,6 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
 MASTER_SITES0=	${MASTER_SITES:S/unix/patches/}
 DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
-
-NEED_VERSION=	1.175
 
 .for p in 01 02 03 05 06 10 11 12
 PATCHFILES+=	5.6.0${p}:0
@@ -54,7 +53,7 @@ CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 .elif defined(USE_ATHENA) && ${USE_ATHENA:U} == YES
 CONFIGURE_ARGS+=--enable-gui="athena"
 .else
-LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
+LIB_DEPENDS=	gtk.1.2:x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" 
 .endif
 .endif

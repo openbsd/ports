@@ -1,30 +1,29 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:46 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:35 espie Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
-
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GSM_DIR=	${PORTSDIR}/audio/gsm
-GSM_WORK=       ${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10
+GSM_DIR=	audio/gsm
+GSM_WORK!=	cd ${PORTSDIR} && cd ${GSM_DIR} && make show VARNAME=WRKDIST
 
 # If configure is changed to look for libgsm.a in ${PREFIX}/lib, then
 # we can use this first BUILD_DEPENDS and save some work.
 #BUILD_DEPENDS= ${GSM_WORK}/inc/private.h:${GSM_DIR}:patch
 BUILD_DEPENDS=  ${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
-LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
-		tk80.1.5:${PORTSDIR}/x11/tk80 \
+LIB_DEPENDS=	tcl80.1.5:lang/tcl80 \
+		tk80.1.5:x11/tk80 \
 		gsm.1:${GSM_DIR}
 
 USE_X11=	yes

@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:06 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:41 espie Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX/base
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX/base \
-		ispell:${PORTSDIR}/textproc/ispell
-LIB_DEPENDS=	xforms:${PORTSDIR}/x11/xforms
+BUILD_DEPENDS=	latex:print/teTeX/base
+RUN_DEPENDS=	latex:print/teTeX/base \
+		ispell:textproc/ispell
+LIB_DEPENDS=	xforms:x11/xforms
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 STRIP=
 CONFIGURE_ARGS+=--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
 

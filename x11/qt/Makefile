@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.28 2000/01/12 05:38:55 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/03/05 18:30:47 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-NEED_VERSION=	1.96
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa
+LIB_DEPENDS=	MesaGL.3.0:graphics/Mesa
 
-USE_GMAKE=	yes
-USE_X11=	yes
+USE_GMAKE=	Yes
+USE_X11=	Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \

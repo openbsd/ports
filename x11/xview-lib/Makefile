@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/12 01:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:48 espie Exp $
 
 DISTNAME=	xview-lib
 PKGNAME=	xview-lib-3.2.1
 CATEGORIES=	x11
-
-NEED_VERSION=	1.191
+NEED_VERSION=	1.223
 
 MAINTAINER=	angelos@openbsd.org
 
 DEPENDS=        ${PORTSDIR}/x11/xview-config
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 WRKDIST=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6
 
 do-fetch:

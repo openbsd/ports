@@ -1,9 +1,10 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/10 20:16:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:41 espie Exp $
 
 PKGNAME=	teTeX_base-1.0.6
 CATEGORIES=	print/teTeX
+NEED_VERSION=	1.223
 DIST_SUBDIR=	teTeX
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
@@ -16,8 +17,8 @@ RUN_DEPENDS=${PREFIX}/share/texmf/ls-R:${PORTSDIR}/print/teTeX/texmf
 
 BUILD_DEPENDS=${PREFIX}/share/texmf/ls-R:${PORTSDIR}/print/teTeX/texmf
 
-LIB_DEPENDS=png.1.3:${PORTSDIR}/graphics/png \
-	Xaw3d.6.1:${PORTSDIR}/x11/Xaw3d
+LIB_DEPENDS=png.1.3:graphics/png \
+	Xaw3d.6.1:x11/Xaw3d
 
 PNGDIR=${PREFIX}
 

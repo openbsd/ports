@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/03 11:43:05 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:28 espie Exp $
 
 BROKEN=		installs files automatically in /etc
 
 DISTNAME=       libggi-2.0b1
 CATEGORIES=     graphics
-
-NEED_VERSION=	1.73
+NEED_VERSION=	1.223
 
 MAINTAINER=     todd@openbsd.org
 
@@ -18,10 +17,10 @@ MASTER_SITES=   ftp://sunsite.unc.edu:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.unina.it:/pub/linux/ggi/ggi/2_0_beta_1/ \
 		ftp://sunsite.icm.edu.pl:/pub/unix/gui/ggi/ggi/2_0_beta_1/
 
-LIB_DEPENDS=	gii\\.0\\.:${PORTSDIR}/graphics/gii
+LIB_DEPENDS=	gii\\.0\\.:graphics/gii
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-gii=${PREFIX}/
 

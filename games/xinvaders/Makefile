@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:27 espie Exp $
 #
 
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.223
 
 NO_CDROM=	"don't sell for profit"
 
@@ -18,9 +18,9 @@ EXTRACT_CMD=            zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 
-BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+BUILD_DEPENDS=	gunshar:archivers/gshar+gunshar
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 WRKDIST=	${WRKDIR}
 

@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:04:38 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:31 espie Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.195
 
 MAINTAINER=	jasoni@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
@@ -29,8 +29,8 @@ WRKDIST=	${WRKDIR}/Python-1.5.2
 
 # Support for Tk is compiled in by default.
 WITH_TK?=	Yes
-.if defined(WITH_TK) && ${WITH_TK:U} == YES
-TK_DEPENDS=	tk80.1.5:${PORTSDIR}/x11/tk80
+.if ${WITH_TK:U} == YES
+TK_DEPENDS=	tk80.1.5:x11/tk80
 SETUP_LOCAL+=	Setup.tk
 .endif
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/15 05:03:58 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/05 18:30:22 espie Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
+NEED_VERSION=	1.223
 MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	angelos@openbsd.org
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-LIB_DEPENDS=    gsm.1.0:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=    gsm.1.0:audio/gsm
 
 USE_GMAKE=	yes
 SYSCONFDIR=	/etc/rplay

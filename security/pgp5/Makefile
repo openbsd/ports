@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:42 espie Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -17,18 +18,17 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
-NEED_VERSION=	1.191
 
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	fgsch@openbsd.org
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF=	Yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=	rsaref.2:security/rsaref
 CONFIGURE_ARGS=	--with-rsaref
 .endif
 

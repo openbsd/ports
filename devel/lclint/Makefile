@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/15 05:04:13 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/05 18:30:25 espie Exp $
 
-NEED_VERSION=	1.116
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.sds.lcs.mit.edu/pub/lclint/
 
 DIST_SUBDIR=	lclint
@@ -13,18 +13,18 @@ DISTFILES=	${EXTRACT_ONLY} ${GUIDE}
 MAINTAINER=	espie@cvs.openbsd.org
 
 LICENSE_TYPE=		"GPL NONE"
-PERMIT_PACKAGE_CDROM=	NO
-PERMIT_PACKAGE_FTP=	NO
-PERMIT_DISTFILES_CDROM=	NO
-PERMIT_DISTFILES_FTP=	NO
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
 AUTHOR=		evs@sds.lcs.mit.edu # David Evans
 BUGS=		lclint-bug@sds.lcs.mit.edu
 
 # Has to use bison because lclint uses pure parsers
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS=	bison:devel/bison
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 
 DOCDIR=	${PREFIX}/share/doc/${DISTNAME}
 
@@ -32,7 +32,7 @@ post-patch:
 	@cd ${WRKSRC}/src && gmake up
 
 LIBSRC=${WRKSRC}/lib
-LCLINT=${WRKSRC}/bin/lclint
+LCLINT=${WRKBUILD}/bin/lclint
 
 post-build:
 	-cd ${LIBSRC} && rm *.orig

@@ -3,24 +3,25 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:04:50 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:37 espie Exp $
 #
 
 DISTNAME=	tkinfo-1.8
 CATEGORIES=	misc tk80
+NEED_VERSION=	1.223
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:x11/tk80
 
-NO_BUILD=	yes
+NO_BUILD=	Yes
 MAN1=		tkinfo.1
 
 do-install:

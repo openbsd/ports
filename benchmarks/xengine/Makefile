@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:03 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:23 espie Exp $
 
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
-NEED_VERSION=	1.191
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
@@ -16,7 +16,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
-BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+BUILD_DEPENDS=	gunshar:archivers/gshar+gunshar
 
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	yes

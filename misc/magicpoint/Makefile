@@ -3,36 +3,37 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.6 2000/02/15 05:04:49 turan Exp $
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:49 turan Exp $
+# $Id: Makefile,v 1.7 2000/03/05 18:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:36 espie Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
 # question is for localized (i.e. Japanese) version
 PKGNAME?=	magicpoint-1.05a
 CATEGORIES=	misc
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	ttf.1:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	ttf.1:print/freetype
 
-USE_IMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_IMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--disable-vflib
 
 post-configure:
-	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
+	cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX}
 
 post-build:
-	(cd ${WRKSRC}/contrib/xmindpath; make)
+	cd ${WRKSRC}/contrib/xmindpath; make
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/25 22:17:28 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:33 espie Exp $
 
 DISTNAME=	qmailanalog-0.70
 CATEGORIES=	mail
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/ \
@@ -17,12 +18,11 @@ MAINTAINER=	cd@sentia.nl
 # only used for RUN_DEPENDS, below
 QMAILDIR=	/var/qmail
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-NO_MTREE=	yes
 
-RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail
+RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

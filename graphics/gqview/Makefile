@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:33 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:29 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -6,21 +6,21 @@ PKGNAME=	gqview-0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
-NEED_VERSION=	1.191
+NEED_VERSION=	1.223
 
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
-		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		gdk_imlib.19:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	glib.1.2:devel/glib \
+		gtk.1.2:x11/gtk+ \
+		gdk_imlib.19:graphics/imlib
 
-USE_X11=	yes
+USE_X11=	Yes
 
 ALL_TARGET=	gqview
 WRKDIST=	${WRKDIR}/${PKGNAME}

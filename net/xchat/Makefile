@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/15 05:05:02 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/05 18:30:39 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 DISTNAME=	xchat-1.2.1
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	http://xchat.org/files/source/1.2/ \
 		http://xchat.linuxpower.org/files/source/1.2/
 
 MAINTAINER=	chris@dqc.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
-		gtk.1.2:${PORTSDIR}/x11/gtk+
+LIB_DEPENDS=	intl:devel/gettext \
+		gtk.1.2:x11/gtk+
 
-USE_X11=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_X11=	Yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= --disable-gnome --disable-imlib --disable-panel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

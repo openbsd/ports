@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:44 espie Exp $
 #
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
+NEED_VERSION=	1.223
 
 MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
 
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
-		pnmtopng:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/print/ghostscript5
+RUN_DEPENDS=	ppmtogif:graphics/netpbm \
+		pnmtopng:graphics/netpbm \
+		gs:print/ghostscript5
 
-NO_CONFIGURE=	YES
-NO_BUILD=	YES
-IS_INTERACTIVE=	YES
+NO_CONFIGURE=	Yes
+NO_BUILD=	Yes
+IS_INTERACTIVE=	Yes
 NO_PACKAGE=	interactive port
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \

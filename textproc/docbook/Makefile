@@ -3,24 +3,24 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:44 espie Exp $
 #
 
 DISTNAME=	docbook-3.0
 CATEGORIES=	textproc
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk241.tar.Z docbk30.tar.Z
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
+RUN_DEPENDS=	${ISOCAT}:textproc/iso8879
 
-NO_MTREE=       yes
+NO_MTREE=       Yes
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
+NO_BUILD=       Yes
+NO_PATCH=	Yes
+NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 
 INSTDIR=	${PREFIX}/share/sgml/docbook

@@ -1,14 +1,19 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.4 2000/02/14 16:42:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:31 espie Exp $
 
 VERSION=9.3.2
 DISTNAME=icon_lib-${VERSION}
 DIST_SUBDIR=icon/${VERSION}
 
 CATEGORIES=lang
+NEED_VERSION=	1.223
 
 MAINTAINER=espie@openbsd.org
 LICENSE_TYPE=PD
+PERMIT_DISTFILES_CDROM=Yes
+PERMIT_DISTFILES_FTP=Yes
+PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE_FTP=Yes
 
 # if you really want, the ipl.tgz file holds precompiled u1/u2 files
 # however, you will still have to grab the source for the necessary
@@ -22,8 +27,8 @@ WRKDIST=	${WRKDIR}
 
 
 
-BUILD_DEPENDS=${PREFIX}/bin/icont:${PORTSDIR}/lang/icon/interp
-RUN_DEPENDS=${PREFIX}/bin/iconx:${PORTSDIR}/lang/icon/interp
+BUILD_DEPENDS=${PREFIX}/bin/icont:lang/icon/interp
+RUN_DEPENDS=${PREFIX}/bin/iconx:lang/icon/interp
 
 # temporary values for building programs
 IPATH=${WRKSRC}/gprocs ${WRKSRC}/procs

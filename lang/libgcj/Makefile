@@ -1,24 +1,24 @@
-#	$OpenBSD: Makefile,v 1.5 2000/02/15 05:04:38 turan Exp $
+#	$OpenBSD: Makefile,v 1.6 2000/03/05 18:30:31 espie Exp $
 
 BROKEN=		"sources no longer exist"
 
 # This should probably be part of the egcs port eventually.
 
-NEED_VERSION=1.195
 
 # If you want to be built with egcs-snapshot instead of in-tree, depend on that
-#BUILD_DEPENDS=	egcj:${PORTSDIR}/lang/egcs-snapshot
+#BUILD_DEPENDS=	egcj:lang/egcs/snapshot
 # In the end we want to use autoconf to regen configure after patching
-#BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
+#BUILD_DEPENDS+=	autoconf:devel/autoconf
 
 CATEGORIES=	lang
+NEED_VERSION=	1.223
 MAINTAINER=	niklas@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 # These are for snapshot trackers
 #LATEST_DATE=	1999-07-08

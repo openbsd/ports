@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/03 19:36:12 form Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/05 18:30:41 espie Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	form@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
-GNU_CONFIGURE=	yes
+USE_X11=	Yes
+GNU_CONFIGURE=	Yes
 
 .if defined(USE_MOTIF) && ${USE_MOTIF:U} == YES
 CONFIGURE_ARGS=	--with-motif --without-Xaw
-LIB_DEPENDS=	Xm:${PORTSDIR}/x11/lesstif
+LIB_DEPENDS=	Xm:x11/lesstif
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:26 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
 CATEGORIES=	editors x11
+NEED_VERSION=	1.223
 
 NO_CDROM=	"NOFEE: can not charge for distribution"
 
@@ -12,12 +13,11 @@ MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
 DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 EXTRACT_ONLY=	nedit_source.tar.gz
-NEED_VERSION=	1.191
 WRKDIST=	${WRKDIR}
 
-LIB_DEPENDS=	Xm.1.:${PORTSDIR}/x11/lesstif
+LIB_DEPENDS=	Xm.1.:x11/lesstif
 
-USE_X11=	yes
+USE_X11=	Yes
 
 ALL_TARGET=	openbsd_nedit
 

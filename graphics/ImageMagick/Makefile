@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2000/02/15 05:04:30 turan Exp $
+# $OpenBSD: Makefile,v 1.28 2000/03/05 18:30:27 espie Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
@@ -11,32 +12,30 @@ MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 
 HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
 
-NEED_VERSION=	1.73
-
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	bz2.9.5:${PORTSDIR}/archivers/bzip2 \
-		jbig.1.1:${PORTSDIR}/graphics/jbigkit \
-		jpeg.62:${PORTSDIR}/graphics/jpeg \
-		mpeg.13:${PORTSDIR}/graphics/mpeg-lib \
-		png.1.3:${PORTSDIR}/graphics/png \
-		tiff.35:${PORTSDIR}/graphics/tiff \
-		ttf.1.3:${PORTSDIR}/print/freetype
-BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
-		gs:${PORTSDIR}/print/ghostscript5 \
-		picttoppm:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
-		gs:${PORTSDIR}/print/ghostscript5 \
-		picttoppm:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	bz2.9.5:archivers/bzip2 \
+		jbig.1.1:graphics/jbigkit \
+		jpeg.62:graphics/jpeg \
+		mpeg.13:graphics/mpeg-lib \
+		png.1.3:graphics/png \
+		tiff.35:graphics/tiff \
+		ttf.1.3:print/freetype
+BUILD_DEPENDS=	fig2dev:print/transfig \
+		gs:print/ghostscript5 \
+		picttoppm:graphics/netpbm
+RUN_DEPENDS=	fig2dev:print/transfig \
+		gs:print/ghostscript5 \
+		picttoppm:graphics/netpbm
 
-USE_X11=	yes
-GNU_CONFIGURE=	yes
+USE_X11=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--enable-lzw \

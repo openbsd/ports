@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/16 10:56:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:37 espie Exp $
 
 VERSION=	3.8.0
 DISTNAME=	dxpc-${VERSION}
 CATEGORIES=	net x11
+NEED_VERSION=	1.223
 
 MAINTAINER=	espie@openbsd.org
 
@@ -16,10 +17,8 @@ MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/ \
 		ftp://ftp.x.org/contrib/utilities/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/xutils/
 
-LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS=	lzo:archivers/lzo
 HOMEPAGE=	http://www.vigor.nu/dxpc/
-
-NEED_VERSION=1.47
 
 GNU_CONFIGURE=Yes
 CONFIGURE_ARGS=--with-lzo-lib=${PREFIX}

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 00:44:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:28 espie Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.7.3
 CATEGORIES=	graphics
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 HOMEPAGE=	http://www.boutell.com/gd/
 
-NEED_VERSION=	1.218
-
-LIB_DEPENDS=	png.1.3:${PORTSDIR}/graphics/png \
-		ttf.1.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	png.1.3:graphics/png \
+		ttf.1.3:print/freetype
 
 MAINTAINER=	brad@openbsd.org
 

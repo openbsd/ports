@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/22 17:08:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:40 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
 CATEGORIES=	print
+NEED_VERSION=	1.223
 
 DIR=		gnu/gs550
 
@@ -26,16 +27,14 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-NEED_VERSION=	1.210
-
 MAINTAINER=	ports@openbsd.org
 
-JPEGDIR=${PORTSDIR}/graphics/jpeg
-PNGDIR=${PORTSDIR}/graphics/png
+JPEGDIR=graphics/jpeg
+PNGDIR=graphics/png
 
 BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:extract \
 		/nonexistent:${PNGDIR}:extract \
-		unzip:${PORTSDIR}/archivers/unzip \
+		unzip:archivers/unzip \
 
 LIB_DEPENDS=	png.1.3:${PNGDIR}
 
@@ -87,8 +86,8 @@ pre-fetch:
 .endif
 
 post-extract:
-	ln -s `cd ${JPEGDIR} && make show VARNAME=WRKDIST` ${WRKSRC}/jpeg
-	ln -s `cd ${PNGDIR} && make show VARNAME=WRKDIST` ${WRKSRC}/libpng
+	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && make show VARNAME=WRKDIST` ${WRKSRC}/jpeg
+	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && make show VARNAME=WRKDIST` ${WRKSRC}/libpng
 	cd ${WRKSRC} && unzip -Lao ${FULLDISTDIR}/${HP850_DRV} -x devs.mak
 
 pre-build:

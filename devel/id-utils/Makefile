@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/15 05:04:13 turan Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:25 espie Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
+NEED_VERSION=	1.223
 
 MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/
@@ -20,12 +21,12 @@ PKGNAME=${DISTNAME}
 .if defined(WITHOUT_EMACS)
 PKGNAME:=${PKGNAME}-noemacs
 .else
-BUILD_DEPENDS+=	emacs:${PORTSDIR}/editors/emacs
+BUILD_DEPENDS+=	emacs:editors/emacs
 .endif
 .if defined(WITHOUT_XEMACS)
 PKGNAME:=${PKGNAME}-noxemacs
 .else
-BUILD_DEPENDS+=	xemacs:${PORTSDIR}/editors/xemacs20
+BUILD_DEPENDS+=	xemacs:editors/xemacs20
 .endif
 PLIST=${WRKBUILD}/PLIST
 

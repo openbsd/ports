@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.67 2000/02/22 17:08:41 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2000/03/05 18:30:30 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.210
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf:devel/autoconf
 
 CATEGORIES=	lang 
+NEED_VERSION=	1.223
 MAINTAINER=	Marc.Espie@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MIRROR_DISTFILE=no
 
@@ -47,7 +47,7 @@ MAKE_OBJC=yes
 MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
+BUILD_DEPENDS+=	runtest:devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive

@@ -3,19 +3,20 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 20:02:06 dugsong Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:38 espie Exp $
 
 DISTNAME=	libnids-1.13
 
 CATEGORIES=	net
+NEED_VERSION=	1.223
 
 MASTER_SITES=	http://www.packetfactory.net/libnids/dist/
 
 MAINTAINER=	dugsong@monkey.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:net/libnet
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libnids.3.mdoc \

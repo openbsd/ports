@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2000/02/15 18:42:43 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/05 18:30:47 espie Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
 CATEGORIES=	x11
+NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= beta/srcs
 DATAFILES=	WindowMaker-extra-0.1.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DATAFILES}
-
-NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -18,11 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libproplist \
-		jpeg.62:${PORTSDIR}/graphics/jpeg \
-		tiff.35:${PORTSDIR}/graphics/tiff \
-		png.1.3:${PORTSDIR}/graphics/png \
-		gif.4.1:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	PropList.2:devel/libproplist \
+		jpeg.62:graphics/jpeg \
+		tiff.35:graphics/tiff \
+		png.1.3:graphics/png \
+		gif.4.1:graphics/giflib
 
 # The files placed in $SYSCONFDIR are better placed in $PREFIX/share/WindowMaker
 SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults

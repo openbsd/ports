@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/23 11:08:42 itojun Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:26 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
 CATEGORIES=	editors
+NEED_VERSION=	1.223
 MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		${MASTER_SITES0}
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
-NEED_VERSION=	1.210
 
 MAINTAINER=	itojun@itojun.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 # NetBSD stuff, no support in Open yet.
 #CONFLICTS=	vigor-*
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-net
 PATCH_FUZZ_FACTOR=	-F1
 
 #.if defined(USE_CANNA) && ${USE_CANNA} == YES
-#DEPENDS+=	Canna-lib-3.5b2:../../japanese/canna-lib
+#DEPENDS+=	Canna-lib-3.5b2:japanese/canna-lib
 #CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
 #.endif
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2000/02/15 05:05:12 turan Exp $
+# $OpenBSD: Makefile,v 1.52 2000/03/05 18:30:42 espie Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
-NEED_VERSION=	1.175
+NEED_VERSION=	1.223
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
@@ -19,13 +19,13 @@ RESTRICTED=	"Crypto; export-controlled"
 MAINTAINER=	todd@openbsd.org
 
 LICENSE_TYPE=		"CRYPTO NONE"
-PERMIT_PACKAGE_CDROM=	NO
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	NO
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=	rsaref.2:security/rsaref
 CONFIGURE_ARGS+= --with-rsaref="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif

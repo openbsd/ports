@@ -3,11 +3,12 @@
 # Date created:		14 Dec 1999
 # Whom:			dugsong@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/14 17:12:34 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/05 18:30:45 espie Exp $
 
 PKGNAME=	nscache-0.2p1
 
 CATEGORIES=	www
+NEED_VERSION=	1.223
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -17,9 +18,9 @@ DISTNAME=	nscache-0.2pl1
 
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
+LIB_DEPENDS=	gtk.1.2:x11/gtk+
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF=	Yes
 
 
 .include <bsd.port.mk>

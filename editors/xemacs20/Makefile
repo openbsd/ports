@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/10 13:55:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:27 espie Exp $
 
 # If MULE extensions are desired use
 # make USE_MULE=YES
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
                 ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
@@ -13,12 +14,12 @@ MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 
 MAINTAINER=	hgweigand@wiesbaden.netsurf.de
 
-BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:${PORTSDIR}/graphics/compface
-LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
-		png.1.3:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:graphics/compface
+LIB_DEPENDS=	jpeg.62:graphics/jpeg \
+		png.1.3:graphics/png
 
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+USE_GMAKE=	Yes
+HAS_CONFIGURE=	Yes
 
 # Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
 PLIST=		${WRKDIR}/PLIST

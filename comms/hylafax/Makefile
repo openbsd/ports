@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/02/15 05:04:05 turan Exp $
+# $OpenBSD: Makefile,v 1.20 2000/03/05 18:30:23 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -9,8 +9,8 @@ PKGNAME=	hylafax-4.0.2-A4
 PKGNAME=	hylafax-4.0.2-letter
 .endif
 
-NEED_VERSION=	1.175
 CATEGORIES=	comms
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
 		ftp://ftp.sisis.de/pub/hylafax/source/
@@ -28,9 +28,9 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
-LIB_DEPENDS=	tiff.35:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:print/afm
+RUN_DEPENDS=	gs:print/ghostscript5
+LIB_DEPENDS=	tiff.35:graphics/tiff
 
 USE_GMAKE=	Yes
 

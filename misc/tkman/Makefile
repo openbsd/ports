@@ -3,19 +3,20 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:37 espie Exp $
 #
 
 DISTNAME=	tkman-2.0.6
 CATEGORIES=	misc tk80
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
-RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
-		glimpse:${PORTSDIR}/textproc/glimpse
+LIB_DEPENDS=	tk80\\.1\\.:x11/tk80
+RUN_DEPENDS=	rman:textproc/rman \
+		glimpse:textproc/glimpse
 
 .if !defined(NOPORTDOCS)
 post-install:

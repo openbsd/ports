@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:05:39 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:48 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
 CATEGORIES=	net x11
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}.tar.gz \
 		ndg_files.tar.gz
@@ -12,19 +13,19 @@ HOMEPAGE=	http://www.dtek.chalmers.se/~d3august/xt/index.html
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
-		MesaGL.3:${PORTSDIR}/graphics/Mesa \
-		MesaGLU.3:${PORTSDIR}/graphics/Mesa \
-		gtkgl.1.2:${PORTSDIR}/x11/gtkglarea \
-		tiff.35:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	intl:devel/gettext \
+		MesaGL.3:graphics/Mesa \
+		MesaGLU.3:graphics/Mesa \
+		gtkgl.1.2:x11/gtkglarea \
+		tiff.35:graphics/tiff
 
-USE_X11=	yes
-GNU_CONFIGURE=	yes
+USE_X11=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTK_CONFIG="${X11BASE}/bin/gtk-config"

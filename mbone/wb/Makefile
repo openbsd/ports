@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:47 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:35 espie Exp $
 #
 
 DISTNAME=       wb-1.59
 CATEGORIES=	mbone
+NEED_VERSION=	1.223
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
-NO_BUILD=	yes
-USE_X11=	yes
+NO_BUILD=	Yes
+USE_X11=	Yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
+RUN_DEPENDS=	gs:print/ghostscript5
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:37 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:47 espie Exp $
 #
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11-wm
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
-NEED_VERSION=	1.191
 
 MAINTAINER= ian@openbsd.org
 
@@ -16,10 +16,10 @@ MAINTAINER= ian@openbsd.org
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview\\.3\\.:x11/xview-lib
 
 WRKDIST=	${WRKDIR}
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/olvwm ${PREFIX}/bin

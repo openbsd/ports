@@ -1,22 +1,22 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.3 2000/02/16 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:25 espie Exp $
 #
 
 DISTNAME=	tclcl-src-1.0b8
 PKGNAME=	tclcl-1.0b8
 CATEGORIES=	devel
+NEED_VERSION=	1.223
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
-NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11/tk82 \
-		otcl.1:${PORTSDIR}/lang/otcl
+LIB_DEPENDS=    tk82.1:x11/tk82 \
+		otcl.1:lang/otcl
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2
 
 do-install:

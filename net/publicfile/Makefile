@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/28 09:32:22 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/05 18:30:39 espie Exp $
 
 DISTNAME=	publicfile-0.52
 CATEGORIES=	net
+NEED_VERSION=	1.223
 MAINTAINER=	cd@sentia.nl
 HOMEPAGE=	http://cr.yp.to/publicfile.html
 
@@ -15,12 +16,12 @@ PERMIT_PACKAGE_FTP=	'be conservative'
 PERMIT_DISTFILES_CDROM=	'be conservative'
 PERMIT_DISTFILES_FTP=	'be conservative'
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
-RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/net/ucspi-tcp
+RUN_DEPENDS=	supervise:sysutils/daemontools \
+		tcpserver:net/ucspi-tcp
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

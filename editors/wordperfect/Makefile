@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/25 21:17:15 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:26 espie Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
+NEED_VERSION=	1.223
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -15,19 +16,18 @@ MASTER_SITES=	see_do-fetch_target
 
 DISTNAME=	WordPerfect
 
-NEED_VERSION=	1.191
 NO_CDROM=	"LIC: redistribution not allowed"
 MIRROR_DISTFILE=no
 
-RUN_DEPENDS=    /emul/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /emul/linux/lib/libc.so.5:emulators/linux_lib
 
 ONLY_FOR_ARCHS=	i386
 
 IS_INTERACTIVE=	yes
 
 WRKBUILD=	${WRKDIR}
-NO_CONFIGURE=	yes
-NO_BUILD=	yes
+NO_CONFIGURE=	Yes
+NO_BUILD=	Yes
 NO_PACKAGE=	interactive port
 
 do-fetch:

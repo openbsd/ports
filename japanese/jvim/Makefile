@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:30 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME?=	ja-jvim-2.0r
 CATEGORIES=	japanese editors
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
-NEED_VERSION=	1.191
 
 MAINTAINER=	espie@openbsd.org
 
@@ -25,17 +25,17 @@ WRKDIST=	${WRKDIR}/jvim2.0r
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna\\.1\\.:japanese/Canna
 JPLIB+=			-lcanna
 .endif
 .if defined(WNN4)
 INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
 JPLIB+=			-ljd 
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
 JPLIB+=			-ljd -lcrypt
 .endif
@@ -47,7 +47,7 @@ INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 #
 # For ONEW library
 .if defined(INPUT_METHOD)
-BUILD_INPUT_METHOD+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+BUILD_INPUT_METHOD+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:japanese/onew${INPUT_METHOD}
 JPDEF+=		-DONEW
 # If we use ONEW libray, then -lonew*.a should appear
 # before the other libraries.

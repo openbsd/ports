@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2000/03/04 23:01:21 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2000/03/05 18:30:33 espie Exp $
 
 DISTNAME=	mutt-1.0.1i
 CATEGORIES=     mail
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
@@ -18,9 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 TTY_LIB?=slang
 
-NEED_VERSION=1.218
 FAKE=		Yes
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext 
+LIB_DEPENDS=	intl.1:devel/gettext 
 
 GNU_CONFIGURE=	Yes
 SYSCONFDIR=	${PREFIX}/share/mutt
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 PKGNAME=${DISTNAME}-${TTY_LIB}
 
 .if ${TTY_LIB:L} == "slang"
-LIB_DEPENDS+=	slang.13:${PORTSDIR}/devel/libslang
+LIB_DEPENDS+=	slang.13:devel/libslang
 CONFIGURE_ARGS+=--with-slang=${PREFIX}
 
 .elif ${TTY_LIB:L} == "curses"
