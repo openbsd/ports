@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/12 19:27:25 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/06/22 03:18:43 marcm Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.10,gdk_pixbuf-2.0.0.10,gtk-x11-2.0.0.10::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0.400.0,gdk_pixbuf-2.0.400.0,gtk-x11-2.0.400.0::x11/gtk+2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
