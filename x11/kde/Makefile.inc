@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2002/07/19 20:29:18 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2002/08/07 16:53:58 brad Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -22,8 +22,8 @@ MODGNU_CONFIG_GUESS_DIRS?=	${WRKSRC} ${WRKSRC}/admin
 CONFIGURE_STYLE?=	autoconf
 AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
@@ -39,7 +39,7 @@ USE_GMAKE?=		Yes
 
 PORTHOME?=${WRKDIR}
 
-CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE} CPPFLAGS="-I${LOCALBASE}/include/libpng"
+CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 SUBST_VARS+=	KDE
