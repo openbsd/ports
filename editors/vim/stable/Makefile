@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/29 00:28:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/30 20:17:43 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
 DISTNAME=	vim-6.0
-PKGNAME=	${DISTNAME}.31
+PKGNAME=	${DISTNAME}.40
 CATEGORIES=	editors
 NEED_VERSION=	1.487
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -13,7 +13,10 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
 MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
-DISTFILES=	${DISTNAME}.tar.bz2
+MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
+DISTFILES=	${DISTNAME}.tar.bz2 \
+	        ${DISTNAME}-extra.tar.gz:1
+#	   	${DISTNAME}-lang.tar.gz:1 
 DIST_SUBDIR=	vim6
 
 HOMEPAGE=	http://www.vim.org/
@@ -21,7 +24,7 @@ HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 .for p in 01 02 03 04 05 06 07 08 09 10 11 13 14 15 16 17 18 19 20 21 22 23 \
-	  24 25 26 28 29 30 31
+	  24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
 PATCHFILES+=   6.0.0${p}:0
 .endfor
 
