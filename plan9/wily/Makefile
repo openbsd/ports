@@ -1,42 +1,32 @@
-# $OpenBSD: Makefile,v 1.15 2003/03/31 14:36:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2003/05/13 03:06:41 cannings Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
-DISTNAME=	wily-0.13.41
+VERSION=	0.13.41
+DISTNAME=	wily-9libs
+PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	plan9 editors
-MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
-		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 
 HOMEPAGE=	http://www.cs.yorku.ca/~oz/wily/
 
+MAINTAINER= 	rich cannings <cannings@cvs.openbsd.org>
+
+# BSD licence
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	simple
-USE_X11=	Yes
-CONFIGURE_STYLE= autoconf
+LIB_DEPENDS=		Xg.0.0,frame.0.0,plan9c.0.0::plan9/9libs
 
-NO_REGRESS=	Yes
+SEPARATE_BUILD=		simple
+USE_X11=		Yes
+CONFIGURE_STYLE= 	gnu
 
-WILYDOCDIR=	${PREFIX}/share/doc/wily
-WILYTUTEDIR=	${WILYDOCDIR}/tute
-WILYDOCFILES=	index.html intro.html download.html credits.html FAQ.html \
-		onepage.html user.html idioms.html C.html python.html \
-		hack.html AcmeVsWily.html Tcl.html pythonpaper.html \
-		winmanager.html auug.html one.html example.gif thumb.gif \
-		cartoon.gif FAQ.txt Tcl.txt changes.txt perl.txt Credits \
-		fonts mouse tute/findword tute/script tute/start tute/hello.c \
-		tute/send_to_gary
+NO_REGRESS=		Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${WILYDOCDIR}
-	${INSTALL_DATA_DIR} ${WILYTUTEDIR}
-	${INSTALL_PROGRAM} ${WRKBUILD}/wily/wily ${PREFIX}/bin
-	@set -e; for f in ${WILYDOCFILES}; do \
-	 ${INSTALL_DATA} ${WRKSRC}/Doc/$$f ${WILYDOCDIR}/$$f; \
-	done
+post-install:
+	${INSTALL_MAN} ${FILESDIR}/wily.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
