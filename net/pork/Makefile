@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/16 00:41:32 jolan Exp $
 
 COMMENT=	"programmable ncurses-based AIM client"
 DISTNAME=	pork-0.99.7
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses perl util 
 
 WANTLIB=	c m ncurses perl util
 
