@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 02:26:54 turan Exp $
 #
 # Based on FreeBSD port by Murray Stokely <murray@cdrom.com>
+
+BROKEN=		sources moved
 
 DISTNAME=	mkhybrid-1.12b5.1
 CATEGORIES=	sysutils
