@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/20 01:08:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/02/13 12:40:19 nino Exp $
 share/themes/Metal/ICON.png
 share/themes/Metal/README.html
 share/themes/Metal/gtk/gtkrc
@@ -94,4 +94,3 @@ share/themes/Redmond95/gtk/gtkrc
 @dirrm share/themes/Notif
 @dirrm share/themes/Metal/gtk
 @dirrm share/themes/Metal
-@dirrm share/themes
