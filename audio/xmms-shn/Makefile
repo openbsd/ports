@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/04 19:22:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/05 16:15:44 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	"XMMS input plugin for playing shorten files"
 
 DISTNAME=	xmms-shn-2.2.6
 CATEGORIES=	audio
-HOMEPAGE=	http://shnutils.etree.org/xmms-shn/
+HOMEPAGE=	http://shnutils.freeshell.org/xmms-shn/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
