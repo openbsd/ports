@@ -1,5 +1,5 @@
---- configure.orig	Tue Aug  8 14:19:32 2000
-+++ configure	Thu Nov  2 10:42:54 2000
+--- configure.orig	Fri Apr  6 02:03:05 2001
++++ configure	Sat May 12 15:09:32 2001
 @@ -1868,13 +1868,23 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -10,9 +10,9 @@
 +		# OpenBSD/SPARC needs -fPIC, -fpic will not do.
 +		case `machine` in
 +		sparc)
-+		    SHLIB_CFLAGS="-fPIC";;
-+		 *)
-+		    SHLIB_CFLAGS="-fpic";;
++			SHLIB_CFLAGS="-fPIC";;
++		*)
++		    	SHLIB_CFLAGS="-fpic";;
 +		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
@@ -48,7 +48,7 @@
 @@ -4089,14 +4100,13 @@
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
-     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${LIBS}"
+     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
 -    RANLIB=":"
  
  #    TCL_STUB_FLAGS="-DUSE_TCL_STUBS"

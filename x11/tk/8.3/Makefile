@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/12 09:07:19 kevlo Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
-DISTNAME=	tk8.3.2
-PKGNAME=	tk-8.3.2
+DISTNAME=	tk8.3.3
+PKGNAME=	tk-8.3.3
 CATEGORIES=	x11 tk83
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_TCLTK}
@@ -29,6 +29,7 @@ FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 		MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TK_LIBRARY)/man'
 
 SEPARATE_BUILD=	concurrent
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-tcl="${PREFIX}/lib/tcl8.3"

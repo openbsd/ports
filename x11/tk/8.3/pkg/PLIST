@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/08/12 06:21:13 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/05/12 09:07:28 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tk-8.3.*
 bin/wish8.3
@@ -269,7 +269,6 @@ lib/tk8.3/man/man3/Tk_Fill3DPolygon.3
 lib/tk8.3/man/man3/Tk_Fill3DRectangle.3
 lib/tk8.3/man/man3/Tk_FindPhoto.3
 lib/tk8.3/man/man3/Tk_FontId.3
-lib/tk8.3/man/man3/Tk_FontMetrics.3
 lib/tk8.3/man/man3/Tk_Free3DBorder.3
 lib/tk8.3/man/man3/Tk_Free3DBorderFromObj.3
 lib/tk8.3/man/man3/Tk_FreeBitmap.3
@@ -311,6 +310,7 @@ lib/tk8.3/man/man3/Tk_GetCursorFromObj.3
 lib/tk8.3/man/man3/Tk_GetDash.3
 lib/tk8.3/man/man3/Tk_GetFont.3
 lib/tk8.3/man/man3/Tk_GetFontFromObj.3
+lib/tk8.3/man/man3/Tk_GetFontMetrics.3
 lib/tk8.3/man/man3/Tk_GetGC.3
 lib/tk8.3/man/man3/Tk_GetHINSTANCE.3
 lib/tk8.3/man/man3/Tk_GetHWND.3
@@ -401,6 +401,7 @@ lib/tk8.3/man/man3/Tk_ResizeWindow.3
 lib/tk8.3/man/man3/Tk_RestackWindow.3
 lib/tk8.3/man/man3/Tk_RestoreSavedOptions.3
 lib/tk8.3/man/man3/Tk_RestrictEvents.3
+lib/tk8.3/man/man3/Tk_SafeInit.3
 lib/tk8.3/man/man3/Tk_Screen.3
 lib/tk8.3/man/man3/Tk_ScreenNumber.3
 lib/tk8.3/man/man3/Tk_SetAppName.3
