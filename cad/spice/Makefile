@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/06/19 20:17:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/07/14 16:13:43 jason Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
-DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
+DISTFILES=		sp3f4.kit.tar.gz sp3f4.patch.tar.gz
 
 USE_X11=		Yes
 WRKDIST=		${WRKDIR}
