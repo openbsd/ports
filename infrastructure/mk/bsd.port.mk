@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.384 2001/04/02 21:08:49 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.385 2001/04/04 08:03:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1308,7 +1308,7 @@ refetch:
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
 	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE} ${_SUBPACKAGE_COOKIES}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
