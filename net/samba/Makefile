@@ -1,11 +1,11 @@
 # OpenBSD makefile for:	samba
-# Version required:			1.9.17p4
+# Version required:			1.9.18p2
 # Date created:				16 Nov 1997
 # Whom:					ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1997/11/17 21:47:37 joey Exp $
+# $OpenBSD: Makefile,v 1.4 1998/01/29 15:10:01 niklas Exp $
 
-DISTNAME=	samba-1.9.17p4
+DISTNAME=	samba-1.9.18p2
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
