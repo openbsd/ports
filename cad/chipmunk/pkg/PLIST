@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/11/18 00:20:31 pvalchev Exp $
+@pkgcfl analog-*
 bin/analog
 bin/cview
 bin/diglog
