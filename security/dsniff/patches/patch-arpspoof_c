@@ -1,0 +1,12 @@
+$OpenBSD: patch-arpspoof_c,v 1.1 2005/03/15 02:40:30 mjc Exp $
+--- arpspoof.c.orig	Mon Mar 14 11:37:32 2005
++++ arpspoof.c	Mon Mar 14 11:37:45 2005
+@@ -42,7 +42,7 @@ int
+ arp_send(struct libnet_link_int *llif, char *dev,
+ 	 int op, u_char *sha, in_addr_t spa, u_char *tha, in_addr_t tpa)
+ {
+-	char ebuf[128];
++	char ebuf[LIBNET_ERRBUF_SIZE];
+ 	u_char pkt[60];
+ 	
+ 	if (sha == NULL &&
