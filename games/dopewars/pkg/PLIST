@@ -1,4 +1,3 @@
-@owner root
 @group games
 @mode 2755
 bin/dopewars
