@@ -1,0 +1,43 @@
+#!/bin/sh
+# $OpenBSD: distfiles-update-locatedb,v 1.1 2000/04/09 12:45:55 espie Exp $
+#
+# Copyright (c) 2000 Marc Espie.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE OPENBSD PROJECT AND CONTRIBUTORS
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OPENBSD
+# PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# build a locate-style database of all distfiles we can.
+
+PORTSDIR=${PORTSDIR:-/usr/ports}
+DISTDIR=${DISTDIR:-$PORTSDIR/distfiles}
+OUTFILE=${1:-$PORTSDIR/infrastructure/db/locate.database}
+set -e
+{ cd $DISTDIR
+find . -type f | sed -e s,^\./,,| while read i; do
+	echo >&2 "Scanning $i"
+	case $i in
+		*.tar.gz|*.tgz) tar ztf $i|sed -e s,^,$i/, ;;
+		*.tar.Z) tar Ztf $i|sed -e s,^,$i/, ;;
+		*.tar) tar tf $i|sed -e s,^,$i/, ;;
+		*);;
+	esac
+done; } | /usr/libexec/locate.mklocatedb >$OUTFILE.tmp
+mv -f $OUTFILE.tmp $OUTFILE

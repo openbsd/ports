@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/04 18:16:02 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/04/09 12:45:55 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -75,3 +75,11 @@ mirror-maker:
 	@make fetch-makefile \
 		ECHO_MSG='echo >&2' \
 		FULL_PACKAGE_NAME=Yes >>${MIRROR_MK}
+
+DISTFILES_DB?=${.CURDIR}/infrastructure/db/locate.database
+
+distfiles-update-locatedb:
+	@PORTSDIR=${.CURDIR} /bin/sh ${.CURDIR}/infrastructure/fetch/distfiles-update-locatedb ${DISTFILES_DB}
+
+.PHONY: mirror-maker index search distfiles-update-locatedb \
+	print-licenses print-index
