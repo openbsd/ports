@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/30 01:27:12 rohee Exp $
+# $OpenBSD: Makefile,v 1.9 1999/11/01 07:12:00 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       procmail-3.13.1
@@ -31,5 +31,6 @@ HOMEPAGE=	http://www.procmail.org
 .if !defined(PACKAGE_BUILDING) # handled in patch-aa
 IS_INTERACTIVE=	yes
 .endif
+NO_PACKAGE=	interactive port when target is package
 
 .include <bsd.port.mk>
