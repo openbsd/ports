@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.17 2002/08/27 13:23:53 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2002/08/28 15:54:01 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 # Subdirectory MUST define DIRNAME, LOCATION and PROGRAM_V.
 # EMUL_TYPE
-
 
 .if ${EMUL_TYPE} == "linux"
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -27,9 +26,7 @@ NEEDS_FORTIFY=	Yes
 ONLY_FOR_ARCHS= i386
 .endif
 
-MAINTAINER?=	Brad Smith <brad@openbsd.org>
 SUPPORTED?=	unsupported
-
 
 CATEGORIES=     www
 MASTER_SITES= \
@@ -57,7 +54,6 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 WRKDIST=	${WRKDIR}
-
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
