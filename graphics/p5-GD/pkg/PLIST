@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/09/21 11:52:08 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/11/30 05:28:40 brad Exp $
 ${P5ARCH}/GD.pm
 ${P5ARCH}/auto/GD/GD.bs
 ${P5ARCH}/auto/GD/GD.so
 ${P5ARCH}/auto/GD/autosplit.ix
-${P5ARCH}/patch_gd.pl
 ${P5ARCH}/qd.pl
 man/man3p/GD.3p
 @dirrm ${P5ARCH}/auto/GD

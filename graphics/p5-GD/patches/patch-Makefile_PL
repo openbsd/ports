@@ -1,7 +1,18 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2002/11/21 15:45:57 brad Exp $
---- Makefile.PL.orig	Wed Jun 19 08:02:59 2002
-+++ Makefile.PL	Wed Oct 23 12:06:35 2002
-@@ -10,10 +10,10 @@ my @LIBS    = qw(-lgd -lpng -lz);
+$OpenBSD: patch-Makefile_PL,v 1.2 2002/11/30 05:28:40 brad Exp $
+--- Makefile.PL.orig	Wed Jun 19 19:02:59 2002
++++ Makefile.PL	Sun Nov 24 14:31:44 2002
+@@ -1,35 +1,25 @@
+ use ExtUtils::MakeMaker qw(prompt WriteMakefile);
+ 
+-warn "NOTICE: This module requires libgd 1.8.4 or higher (shared library version 4.X).\n";
+-
+ # =====> PATHS: CHECK AND ADJUST <=====
+-my @INC     = qw(-I/usr/local/include -I/usr/local/include/gd); 
+-my @LIBPATH = qw(-L/usr/lib/X11 -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib );
++my @INC     = qw(-I/usr/local/include);
++my @LIBPATH = qw(-L/usr/local/lib);
+ my @LIBS    = qw(-lgd -lpng -lz);
+ 
  # FEATURE FLAGS
  warn "\nPlease choose the features that match how libgd was built:\n";
  
@@ -16,3 +27,20 @@ $OpenBSD: patch-Makefile_PL,v 1.1 2002/11/21 15:45:57 brad Exp $
  
  my $FCGI    = 0;   # set to 1 to build compatability with fastCGI
  
+-warn "\nIf you experience compile problems, please check the \@INC, \@LIBPATH and \@LIBS\n",
+-     "arrays defined in Makefile.PL and manually adjust, if necessary.\n\n";
+-
+ #### no user-serviceable parts below #####
+ 
+-push @LIBS,'-lfreetype' if $TTF;
++push @LIBS,'-lttf' if $TTF;
+ push @LIBS,'-ljpeg' if $JPEG;
+ push @LIBS, '-lm' unless $^O eq 'MSWin32';
+-
+-# FreeBSD 3.3 with libgd built from ports croaks if -lXpm is specified 
+-if ($^O ne 'freebsd' && $^O ne 'MSWin32') { 
+-  push @LIBS,'-lX11','-lXpm' if $XPM; 
+-} 
+ 
+ my $CAPI = defined $ExtUtils::MakeMaker::CAPI_support ? 'TRUE' : 'FALSE';
+ my $DEFINES = '';
