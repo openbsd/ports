@@ -1,3 +1,6 @@
 MD5 (squid/squid-2.3.STABLE4-src.tar.gz) = c38c083f44c222a8d026fa129c30b98f
+MD5 (squid/squid-2.3.stable4-ftp_icon_not_found.patch) = f1383b24672f9a8317c2c16302a94eaa
 RMD160 (squid/squid-2.3.STABLE4-src.tar.gz) = 0719f8e916b7f4cd011abcd17faf3ec68339c9b2
+RMD160 (squid/squid-2.3.stable4-ftp_icon_not_found.patch) = 8e01afa8a06e54a2ac6f4ac28a3c79d03d69ffd7
 SHA1 (squid/squid-2.3.STABLE4-src.tar.gz) = 69fba1c0c14ff7b40837ab6357eed706ad55b3ae
+SHA1 (squid/squid-2.3.stable4-ftp_icon_not_found.patch) = 59fca251f4250d7a4580aeb40190abe144575285
