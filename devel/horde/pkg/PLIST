@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/03 10:37:40 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/03 09:38:21 avsm Exp $
 horde/COPYING
 horde/README
 horde/config/.htaccess
@@ -88,6 +88,8 @@ horde/lib/Auth/imap.php
 horde/lib/Auth/krb5.php
 horde/lib/Auth/ldap.php
 horde/lib/Auth/mcal.php
+horde/lib/Auth/radius.php
+horde/lib/Auth/smb.php
 horde/lib/Auth/sql.php
 horde/lib/Browser.php
 horde/lib/Cache.php
@@ -109,6 +111,7 @@ horde/lib/Group.php
 horde/lib/Help.php
 horde/lib/Horde.php
 horde/lib/Identity.php
+horde/lib/Image.php
 horde/lib/Lang.php
 horde/lib/MIME.php
 horde/lib/MIME/Magic.php
@@ -167,6 +170,7 @@ horde/lib/base.php
 horde/lib/version.php
 horde/locale/.htaccess
 horde/locale/bg_BG/LC_MESSAGES/horde.mo
+horde/locale/ca_ES/LC_MESSAGES/horde.mo
 horde/locale/cs_CZ/LC_MESSAGES/horde.mo
 horde/locale/da_DK/LC_MESSAGES/horde.mo
 horde/locale/de_DE/LC_MESSAGES/horde.mo
@@ -187,6 +191,7 @@ horde/locale/nb_NO/LC_MESSAGES/horde.mo
 horde/locale/nl_NL/LC_MESSAGES/horde.mo
 horde/locale/nn_NO/LC_MESSAGES/horde.mo
 horde/locale/pl_PL/LC_MESSAGES/horde.mo
+horde/locale/pl_PL/help.xml
 horde/locale/pt_BR/LC_MESSAGES/horde.mo
 horde/locale/pt_PT/LC_MESSAGES/horde.mo
 horde/locale/ro_RO/LC_MESSAGES/horde.mo
@@ -201,10 +206,12 @@ horde/locale/zh_TW/LC_MESSAGES/horde.mo
 horde/login.php
 horde/maintenance.php
 horde/menu.php
+horde/navbar.php
 horde/po/.htaccess
 horde/po/Makefile
 horde/po/README
 horde/po/bg_BG.po
+horde/po/ca_ES.po
 horde/po/cs_CZ.po
 horde/po/da_DK.po
 horde/po/de_DE.po
@@ -255,6 +262,7 @@ horde/scripts/db/pgsql_drop.sql
 horde/scripts/db/prefs.sql
 horde/scripts/db/sessionhandler.sql
 horde/scripts/db/sessionhandler_sapdb.sql
+horde/scripts/db/vfs.sql
 horde/scripts/horde-rsync.sh
 horde/scripts/ldap/horde.schema
 horde/scripts/mime_mapping/Makefile
@@ -288,6 +296,7 @@ horde/templates/maintenance/confirm_bottom.inc
 horde/templates/maintenance/confirm_middle.inc
 horde/templates/maintenance/confirm_top.inc
 horde/templates/maintenance/javascript.inc
+horde/templates/navbar/menu.inc
 horde/templates/prefs/begin.inc
 horde/templates/prefs/checkbox.inc
 horde/templates/prefs/end.inc
@@ -313,6 +322,7 @@ horde/util/special_characters.php
 @dirrm horde/templates/wml
 @dirrm horde/templates/problem
 @dirrm horde/templates/prefs
+@dirrm horde/templates/navbar
 @dirrm horde/templates/maintenance
 @dirrm horde/templates/login
 @dirrm horde/templates/javascript
@@ -386,6 +396,8 @@ horde/util/special_characters.php
 @dirrm horde/locale/da_DK
 @dirrm horde/locale/cs_CZ/LC_MESSAGES
 @dirrm horde/locale/cs_CZ
+@dirrm horde/locale/ca_ES/LC_MESSAGES
+@dirrm horde/locale/ca_ES
 @dirrm horde/locale/bg_BG/LC_MESSAGES
 @dirrm horde/locale/bg_BG
 @dirrm horde/locale
