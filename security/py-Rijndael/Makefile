@@ -1,38 +1,35 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/06/14 09:44:20 shell Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
 VERSION=	1.1
-DISTNAME=	pyRijndael-${VERSION}.py
+DISTNAME=	pyrijndael-snapshot
 PKGNAME=	py-Rijndael-${VERSION}
 CATEGORIES=     security devel
-EXTRACT_SUFX=	.gz
-EXTRACT_ONLY=
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.bluesine.com/Projects/mods-python/pyrijndael
-MASTER_SITES=	http://ftp.bluesine.com/pub/bluesine.com/python-mods/rijndael/
+HOMEPAGE=	http://jclement.ca/Projects/pyrijndael.xml
+MASTER_SITES=	http://mecca.bluesine.com/dl/pyrijndael/ \
+		http://ftp.bluesine.com/pyrijndael/
 
 BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PYTHON_VER=	2.1
+WRKDIST=	${WRKDIR}/pyrijndael
+
+PYTHON_VER=	2.2
 PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER}
 PY_SITEPKG=	${PREFIX}/lib/python${PYTHON_VER}/site-packages/
 PY_MODNAME=	pyRijndael.py
 
 SUBST_VARS=	PYTHON_VER
-
-post-extract:
-	@mkdir ${WRKDIST}
-	@${GZIP_CMD} -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} >	\
-		${WRKSRC}/${PY_MODNAME}
 
 do-build:
 	${PY_CMD} -c 'import pyRijndael'
