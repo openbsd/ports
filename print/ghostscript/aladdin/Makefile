@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2001/01/11 00:21:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/13 16:35:29 espie Exp $
 
-DISTNAME=	ghostscript-6.01
+COMMENT="AFPL PostScript interpreter"
+
+VERSION=	6.50
+DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 NEED_VERSION=	1.241
 
-DIR=		aladdin/gs601
+DIR=		aladdin/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
 
-HOMEPAGE=	http://www.cs.wisc.edu/%7Eghost/
-
-MASTER_SITES0=  http://www.erdw.ethz.ch/%7Ebonk/ftp/gs-driver-distrib/
+HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
 MASTER_SITE_SUBDIR=     ghostscript
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} \
-		${HP850_DRV}:0 
+DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} 
 
-SUBST_VARS=		OSREV
+SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
 
 # Aladdin license 
@@ -33,13 +33,15 @@ JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
 BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
-		/nonexistent::${PNGDIR}:patch \
-		unzip::archivers/unzip \
+		/nonexistent::${PNGDIR}:patch
 
 LIB_DEPENDS=	png.1::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
-WRKDIST=	${WRKDIR}/gs6.01
+
+WRKDIST=	${WRKDIR}/gs${VERSION}
+WRKSRC=		${WRKDIST}/src
+WRKBUILD=	${WRKDIST}
 BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
 		SHARE_LIBPNG=1 \
@@ -78,8 +80,8 @@ $$(DD)psmono.dev $$(DD)psgray.dev $$(DD)psrgb.dev $$(DD)tiff12nc.dev \
 $$(DD)tiff24nc.dev $$(DD)tifflzw.dev $$(DD)tiffpack.dev $$(DD)ap3250.dev \
 $$(DD)appledmp.dev $$(DD)bj10e.dev $$(DD)bj200.dev $$(DD)bjc600.dev \
 $$(DD)bjc800.dev $$(DD)ccr.dev $$(DD)cdeskjet.dev $$(DD)cdjcolor.dev \
-$$(DD)cdjmono.dev $$(DD)cdj500.dev $$(DD)cdj550.dev $$(DD)cdj850.dev \
-$$(DD)cdj670.dev $$(DD)cdj890.dev $$(DD)cdj1600.dev $$(DD)cp50.dev \
+$$(DD)cdjmono.dev $$(DD)cdj500.dev $$(DD)cdj550.dev \
+$$(DD)cp50.dev \
 $$(DD)declj250.dev $$(DD)djet500c.dev $$(DD)dnj650c.dev $$(DD)epson.dev \
 $$(DD)eps9mid.dev $$(DD)eps9high.dev $$(DD)epsonc.dev $$(DD)hl7x0.dev \
 $$(DD)ibmpro.dev $$(DD)imagen.dev $$(DD)iwhi.dev $$(DD)iwlo.dev \
@@ -103,7 +105,7 @@ MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 
 MAKE_FILE=	src/unixansi.mak
 
-GS_SOURCES=	ghostscript-6.01.tar.gz
+GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -127,11 +129,10 @@ FAKE_FLAGS=${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
 post-extract:
 	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/jpeg
 	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/libpng
-	cd ${WRKDIST} && unzip -Lao ${FULLDISTDIR}/${HP850_DRV} -x devs.mak
 
 pre-build:
-	mkdir -p ${WRKSRC}/objects
-	mkdir -p ${WRKSRC}/bin
+	mkdir -p ${WRKBUILD}/objects
+	mkdir -p ${WRKBUILD}/bin
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
@@ -140,12 +141,7 @@ pre-install:
 	cd ${PREFIX}/share/ghostscript  && \
 			tar xzf ${FULLDISTDIR}/${GS_FONTS_STD}
 
-# install the readme and license file of the hp8xxx driver as well
 post-install:
 	strip ${PREFIX}/bin/gs
-	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
-		${PREFIX}/share/ghostscript/6.01/doc
-	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
-		${PREFIX}/share/ghostscript/6.01/doc
 
 .include <bsd.port.mk>
