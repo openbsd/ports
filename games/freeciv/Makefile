@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/07/22 18:56:22 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/07/23 01:55:49 brad Exp $
 
 DISTNAME=	freeciv-1.11.4
 CATEGORIES=	games
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
 
 HOMEPAGE=	http://www.freeciv.org/
 
-MAINTAINER=	israfil@gmx.net
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
