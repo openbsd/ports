@@ -1,19 +1,11 @@
---- ../conf/bnetd.conf.orig	Sun Mar 28 20:25:09 1999
-+++ ../conf/bnetd.conf	Sun Mar 28 20:26:55 1999
-@@ -9,11 +9,11 @@
- # Do NOT use quotes around directories.
- #
+--- include/setup.h.orig	Tue Nov  9 10:12:05 1999
++++ include/setup.h	Tue Nov  9 10:12:43 1999
+@@ -63,7 +63,7 @@
+ #define FILE_TIME_MAXLEN 32
  
--filedir = files/
--userdir = users/
--logfile = conf/bnetd.log
--defacct = conf/bnetd_default_user
--motdfile = conf/motd
-+filedir = /etc/bnetd/files/
-+userdir = /etc/bnetd/users/
-+logfile = /etc/bnetd/bnetd.log
-+defacct = /etc/bnetd/bnetd_default_user
-+motdfile = /etc/bnetd/motd
- adfile = ad0512b.pcx
- adlink = http://bnetd.unleashed.org/
- 
+ #ifndef BNETD_DEFAULT_CONF_FILE
+-#define BNETD_DEFAULT_CONF_FILE "conf/bnetd.conf"
++#define BNETD_DEFAULT_CONF_FILE "/usr/local/bnetd/bnetd.conf"
+ #endif
+ #define BNETD_FILE_DIR          "files"
+ #define BNETD_USER_DIR          "users"

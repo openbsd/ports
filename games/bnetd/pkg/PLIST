@@ -1,20 +1,16 @@
 bin/bnbot
-bin/bnclient
+bin/bnchat
+bin/bnftp
 bin/bnpass
+bin/bnstat
 sbin/bnetd
-@exec if [ ! -d /etc/bnetd ]; then mkdir /etc/bnetd ; fi
-@exec if [ ! -d /etc/bnetd/files ]; then mkdir /etc/bnetd/files ; fi
-@exec if [ ! -d /etc/bnetd/users ]; then mkdir /etc/bnetd/users ; fi
-lib/bnetd/bnetd.conf.sample
-@exec if [ ! -f /etc/bnetd/bnetd.conf ]; then cp %D/%F /etc/bnetd/bnetd.conf; fi
-lib/bnetd/bnetd_default_user.sample
-@exec if [ ! -f /etc/bnetd/bnetd_default_user ]; then cp %D/%F /etc/bnetd/bnetd_default_user; fi
-lib/bnetd/files/ad0512b.pcx.sample
-@exec if [ ! -f /etc/bnetd/files/ad0512b.pcx ]; then cp %D/%F /etc/bnetd/files/ad0512b.pcx; fi
-share/doc/bnetd/CHANGELOG
-share/doc/bnetd/README
-share/doc/bnetd/TODO
-@dirrm lib/bnetd/files
-@dirrm lib/bnetd/users
-@dirrm lib/bnetd
-@dirrm share/doc/bnetd
+sbin/bnproxy
+man/man1/bnchat.1
+man/man1/bnetd.1
+man/man1/bnftp.1
+man/man1/bnpass.1
+man/man4/bnetd.conf.4
+man/man4/bnmotd.txt.4
+man/man4/bnnews.txt.4
+man/man4/bntext.4
+@unexec rm -rf %D/bnetd 2>/dev/null || true

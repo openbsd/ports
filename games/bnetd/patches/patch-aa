@@ -1,44 +1,11 @@
---- Makefile.orig	Tue Mar 30 22:11:26 1999
-+++ Makefile	Tue Mar 30 22:12:30 1999
-@@ -23,8 +23,8 @@
- 
- # GCC
- #CC	= gcc -pipe -s -O2
--CC	= gcc -pipe -g -O2
--#CC	= gcc -pipe -g -O2 -Wall -Wshadow -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-declarations -Wnested-externs
-+#CC	= gcc -pipe -g -O2
-+CC	= gcc -pipe -g -O2 -Wall -Wshadow -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-declarations -Wnested-externs
- #CC	= gcc -pipe -g -O2 -ansi -pedantic -Wall -Wshadow -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-declarations -Wnested-externs
- 
- # Generic
-@@ -45,14 +45,13 @@
- #LIBS	= -L${HOME}/lib/.linux-2.0.36 -lefence
- #LIBS	= -L${HOME}/lib/.linux-2.0.36 -lmem_test -lefence
- 
--BNETDBIN	= ../sbin/bnetd
--BNPROXYBIN	= ../sbin/bnproxy
--BNCLIENTBIN	= ../bin/bnclient
--BNPASSBIN	= ../bin/bnpass
--BNBOTBIN	= ../bin/bnbot
--
--BINS		= ${BNETDBIN} ${BNCLIENTBIN} ${BNPASSBIN}
-+BNETDBIN	= bnetd
-+BNPROXYBIN	= bnproxy
-+BNCLIENTBIN	= bnclient
-+BNPASSBIN	= bnpass
-+BNBOTBIN	= bnbot
- 
-+BINS		= ${BNETDBIN} ${BNCLIENTBIN} ${BNPASSBIN} ${BNBOTBIN}
- 
- BNETOBJS	= main.o server.o connection.o message.o hexdump.o bnetd.o channel.o game.o command.o account.o account_wrap.o convert.o packet.o queue.o util.o network.o prefs.o timestamp.o list.o eventlog.o bnettime.o filetransfer.o bnethash.o bnethashconv.o
- BNCLIENTOBJS	= bnclient.o packet.o queue.o convert.o hexdump.o network.o eventlog.o bnethash.o bnethashconv.o
-@@ -60,9 +59,7 @@
- BNBOTOBJS	= bnbot.o
- BNPASSOBJS	= bnpass.o bnethash.o eventlog.o
- 
--
- all:		${BINS}
--
- 
- ${BNPASSBIN}:	${BNPASSOBJS}
- 		${CC} ${BNPASSOBJS} -o $@ ${LIBS}
+--- src/configure.orig	Tue Nov  9 14:31:58 1999
++++ src/configure	Tue Nov  9 14:32:21 1999
+@@ -49,7 +49,7 @@
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+ datadir='${prefix}/share'
+-sysconfdir='${prefix}/etc'
++sysconfdir='${prefix}/bnetd/conf'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+ libdir='${exec_prefix}/lib'

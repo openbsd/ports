@@ -1,11 +1,27 @@
---- prefs.h.orig	Sun Mar 28 19:23:28 1999
-+++ prefs.h	Sun Mar 28 19:23:36 1999
-@@ -21,7 +21,7 @@
- #ifndef INCLUDED_PREFS_PROTOS
- #define INCLUDED_PREFS_PROTOS
+--- conf/bnetd.conf.orig	Tue Nov  9 10:07:56 1999
++++ conf/bnetd.conf	Tue Nov  9 10:09:56 1999
+@@ -15,15 +15,15 @@
+ # Use absolute paths in these lines to avoid problems!                       #
+ #----------------------------------------------------------------------------#
  
--#define DEFAULT_CONF_FILE "conf/bnetd.conf"
-+#define DEFAULT_CONF_FILE "/etc/bnetd/bnetd.conf"
+-filedir     = /home/bnetd/files/
+-userdir     = /home/bnetd/users/
+-reportdir   = /home/bnetd/reports/
+-defacct     = /home/bnetd/conf/bnetd_default_user
+-motdfile    = /home/bnetd/conf/bnmotd.txt
+-channelfile = /home/bnetd/conf/channel.list
+-newsfile    = /home/bnetd/conf/news.txt
+-adfile      = /home/bnetd/conf/ad.list
+-logfile     = /home/bnetd/bnetd.log
++filedir     = /usr/local/bnetd/files/
++userdir     = /usr/local/bnetd/users/
++reportdir   = /usr/local/bnetd/reports/
++defacct     = /usr/local/bnetd/conf/bnetd_default_user
++motdfile    = /usr/local/bnetd/conf/bnmotd.txt
++channelfile = /usr/local/bnetd/conf/channel.list
++newsfile    = /usr/local/bnetd/conf/news.txt
++adfile      = /user/local/bnetd/conf/ad.list
++logfile     = /usr/local/bnetd/bnetd.log
+ #pidfile     = /home/bnetd/bnetd.pid
  
- extern char const * preffile;
- 
+ #                                                                            #
