@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/22 03:21:39 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/04 16:32:54 sturm Exp $
 
 COMMENT=		"high-color icon theme shell for GNOME and KDE"
 
@@ -8,7 +8,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.freedesktop.org/Standards/icon-theme-spec
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		http://www.freedesktop.org/Software/icon-theme/releases/
+MASTER_SITES=		http://www.freedesktop.org/software/icon-theme/releases/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
