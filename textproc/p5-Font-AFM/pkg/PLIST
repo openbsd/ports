@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/11 09:30:09 shell Exp $
+${P5SITE}/Font/AFM.pm
+${P5SITE}/Font/Metrics/Courier.pm
+${P5SITE}/Font/Metrics/CourierBold.pm
+${P5SITE}/Font/Metrics/CourierBoldOblique.pm
+${P5SITE}/Font/Metrics/CourierOblique.pm
+${P5SITE}/Font/Metrics/Helvetica.pm
+${P5SITE}/Font/Metrics/HelveticaBold.pm
+${P5SITE}/Font/Metrics/HelveticaBoldOblique.pm
+${P5SITE}/Font/Metrics/HelveticaOblique.pm
+${P5SITE}/Font/Metrics/TimesBold.pm
+${P5SITE}/Font/Metrics/TimesBoldItalic.pm
+${P5SITE}/Font/Metrics/TimesItalic.pm
+${P5SITE}/Font/Metrics/TimesRoman.pm
+man/man3p/Font::AFM.3p
+@dirrm ${P5SITE}/Font/Metrics
