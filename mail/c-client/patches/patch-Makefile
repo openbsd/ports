@@ -1,0 +1,20 @@
+--- Makefile.orig	Tue Sep 19 16:14:10 2000
++++ Makefile	Tue Sep 19 16:14:51 2000
+@@ -283,7 +283,7 @@
+ 
+ # Make the IMAP Toolkit
+ 
+-all:	c-client rebuild bundled
++all:	c-client rebuild
+ 
+ c-client:
+ 	@echo Not processed yet.  In a first-time build, you must specify
+@@ -394,7 +394,7 @@
+ 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+ 	$(LN) $(TOOLS)/$@ .
+ 
+-build:	OSTYPE rebuild rebuildclean bundled
++build:	OSTYPE rebuild rebuildclean
+ 
+ OSTYPE:
+ 	@echo Building c-client for $(OS)...
