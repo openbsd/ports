@@ -1,0 +1,12 @@
+$OpenBSD: patch-CTlib_Makefile_PL,v 1.1.1.1 2001/08/22 13:30:40 naddy Exp $
+--- CTlib/Makefile.PL.orig	Thu Aug  9 19:27:48 2001
++++ CTlib/Makefile.PL	Thu Aug  9 19:29:12 2001
+@@ -51,7 +51,7 @@
+ } else {
+     $inc_string = "-I$SYBASE/include";
+     $def_string = "-DCTLIBVS=$CTLIBVS -DSYBPLVER='\"\${VERSION}\"' $$sattr{EXTRA_DEFS}";
+-    $lib_string = "-L$SYBASE/lib -lct -lcs -ltcl -lcomn -lintl";
++    $lib_string = "-L$SYBASE/lib -lct -ltds -lintl";
+ 
+     # Linux uses libsybtcl instead of libtcl to avoid conflicts with tcl/tk
+     if(-e "$SYBASE/lib/libsybtcl$Config{lib_ext}" || 
