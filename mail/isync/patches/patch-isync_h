@@ -1,0 +1,12 @@
+$OpenBSD: patch-isync_h,v 1.1 2002/04/24 17:43:34 danh Exp $
+--- isync.h.orig	Wed Apr 24 13:31:44 2002
++++ isync.h	Wed Apr 24 13:32:49 2002
+@@ -25,7 +25,7 @@
+ #if HAVE_LIBSSL
+ #include <openssl/ssl.h>
+ #endif
+-#include <db.h>
++#include <ndbm.h>
+ #include "debug.h"
+ 
+ typedef struct
