@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2004/02/11 19:19:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/11 19:27:41 sturm Exp $
 
 COMMENT=	"tty-based e-mail client"
 
 VERSION=	1.4.1
-DISTNAME=	mutt-${VERSION}ip0
+DISTNAME=	mutt-${VERSION}i
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
