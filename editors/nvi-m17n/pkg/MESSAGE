@@ -1,4 +1,4 @@
 
-Read /usr/local/share/vi/README.* for
+Read ${PREFIX}/share/vi/README.* for
 using multilingual facilities.
 

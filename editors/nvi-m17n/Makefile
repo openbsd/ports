@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/11 22:36:34 heko Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
-MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
-
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -32,8 +30,6 @@ WRKSRC=	${WRKDIR}/${DISTNAME}/build
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/etc/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
-
-PATCH_FUZZ_FACTOR=	-F1
 
 .if ${FLAVOR:L} == "canna"
 LIB_DEPENDS+=	canna.1.::japanese/canna
@@ -78,6 +74,8 @@ post-build:
 .endfor
 
 post-install:
+	@mv ${PREFIX}/share/vi/catalog/ru_SU.KOI8-R \
+		${PREFIX}/share/vi/catalog/ru_RU.KOI8-R
 .for encoding in ${ENCODING}
 	@${INSTALL_SCRIPT} ${WRKDIR}/nvi-${encoding} ${PREFIX}/bin
 .endfor
