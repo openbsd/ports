@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.448 2001/08/28 08:09:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.449 2001/09/05 09:10:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1218,16 +1218,20 @@ _run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
 
 .  if defined(NO_SHARED_LIBS)
 _lib_depends_fragment = \
-	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
-	if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
-		found=true; \
-	fi
+	IFS=,; bad=false; for d in $$dep; do \
+		lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
+		if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then :; else\
+			bad=true; msg="$$msg $$lib missing..."; \
+		fi; \
+	done; $$bad || found=true
 .  else
 _lib_depends_fragment = \
-	lib=`echo $$dep | sed -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-	check=`${LDCONFIG} -r | awk "/-l$$lib/"'{ print $$3 }'`; \
-	case "X$$check" in "X") ;; *) found=true;; esac 
+	IFS=,; bad=false; for d in $$dep; do \
+		lib=`echo $$d | sed -e 's|\.$$||' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
+		check=`${LDCONFIG} -r | awk "/:-l$$lib[ .]/"'{ print $$3 }'`; \
+		case "X$$check" in "X") bad=true; msg="$$msg $$lib missing...";; esac; \
+	done; $$bad || found=true
 .  endif
 .endif
 
@@ -1274,13 +1278,14 @@ ${_DEP}-depends:
 			found=false; \
 			case "$$dep" in \
 			"/nonexistent") ;; \
-			*) \
+			*)  \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - found"; \
 					break; \
 				else \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - not found"; \
+					: $${msg:= not found}; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep -$$msg"; \
 				fi;; \
 			esac; \
 			${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
