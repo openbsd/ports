@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2001/11/15 07:36:35 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2001/11/28 09:35:14 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
 DIST_SUBDIR=	postfix
 
 HOMEPAGE=	http://www.postfix.org/
+
+TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
+SUBST_VARS+=	TLSHOMEPAGE
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
@@ -55,8 +58,6 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .if ${FLAVOR:L:Mtls}
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
-
-TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TLSDISTNAME}${EXTRACT_SUFX}:0

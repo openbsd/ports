@@ -78,7 +78,8 @@ Flavors
 
 * sasl - Add support for authenticated SMTP.
 
-* tls - Add support for TLS.
+* tls - Add support for SSL/TLS using patches from
+  ${TLSHOMEPAGE}.
 
 * ldap - Add support for doing table lookups using LDAP.
 
