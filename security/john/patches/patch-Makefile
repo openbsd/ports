@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1 2003/04/17 07:50:05 pvalchev Exp $
+--- Makefile.orig	Mon Apr  7 18:01:41 2003
++++ Makefile	Mon Apr  7 18:01:58 2003
+@@ -194,13 +194,13 @@ openbsd-x86-any:
+ 	$(MAKE) $(PROJ) \
+ 		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
+ 		CFLAGS="$(CFLAGS) -m486" \
+-		ASFLAGS="$(ASFLAGS) -DUNDERSCORES -DALIGN_LOG -DBSD"
++		ASFLAGS="$(ASFLAGS) -DBSD"
+ 
+ openbsd-x86-k6:
+ 	$(LN) x86-k6.h arch.h
+ 	$(MAKE) $(PROJ) \
+ 		JOHN_OBJS="$(BITSLICE_OBJS) $(JOHN_OBJS) x86.o" \
+-		ASFLAGS="$(ASFLAGS) -DUNDERSCORES -DALIGN_LOG -DBSD"
++		ASFLAGS="$(ASFLAGS) -DBSD"
+ 
+ solaris-sparc-any:
+ 	$(MAKE) $(HAMMER) NAIL=sparc.h
