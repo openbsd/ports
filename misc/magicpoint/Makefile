@@ -3,8 +3,8 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.12 2000/07/10 02:08:29 angelos Exp $
-# $OpenBSD: Makefile,v 1.12 2000/07/10 02:08:29 angelos Exp $
+# $Id: Makefile,v 1.13 2000/07/10 02:09:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 02:09:50 angelos Exp $
 #
 
 DISTNAME=	magicpoint-1.07a
@@ -14,7 +14,7 @@ CATEGORIES=	misc
 NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
