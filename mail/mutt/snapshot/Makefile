@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/01/08 03:54:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/01/08 15:46:21 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -94,6 +94,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/mime.types \
 		${PREFIX}/share/examples/mutt/mime.types.sample
 	mv ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
-	rmdir ${PREFIX}/share/doc/mutt/samples
 
 .include <bsd.port.mk>
