@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/06 19:56:14 rohee Exp $
+# $OpenBSD: Makefile,v 1.4 1999/08/10 19:38:34 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
@@ -16,7 +16,8 @@ DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
 MAINTAINER=     ports@OpenBSD.ORG
 
 EXTRACT_CMD=    ${SH}
-EXTRACT_ARGS=
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog
 NO_WRKSUBDIR=   Yes
