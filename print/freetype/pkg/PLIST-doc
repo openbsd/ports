@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST-doc,v 1.1 2001/08/30 17:12:36 shell Exp $
+share/doc/freetype/FAQ
+share/doc/freetype/TODO
+share/doc/freetype/apiref.txt
+share/doc/freetype/apirefx.txt
+share/doc/freetype/bitmaps.txt
+share/doc/freetype/changes.txt
+share/doc/freetype/convntns.txt
+share/doc/freetype/credits
+share/doc/freetype/freetype.lsm
+share/doc/freetype/glyphs.htm
+share/doc/freetype/glyphs.txt
+share/doc/freetype/i18n.txt
+share/doc/freetype/image/baselin2.gif
+share/doc/freetype/image/baseline.gif
+share/doc/freetype/image/emsquare.gif
+share/doc/freetype/image/freetype.gif
+share/doc/freetype/image/freetype.png
+share/doc/freetype/image/grid1.gif
+share/doc/freetype/image/grid2.gif
+share/doc/freetype/image/grid3.gif
+share/doc/freetype/image/metrics.gif
+share/doc/freetype/image/metrics2.gif
+share/doc/freetype/image/small2.gif
+share/doc/freetype/image/tfp-back.png
+share/doc/freetype/optimize.txt
+share/doc/freetype/porting.txt
+share/doc/freetype/raster.txt
+share/doc/freetype/readme.txt
+share/doc/freetype/threads.txt
+share/doc/freetype/user.txt
+@dirrm share/doc/freetype/image
+@dirrm share/doc/freetype
