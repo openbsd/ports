@@ -1,6 +1,7 @@
---- wmmultipop3/Makefile.orig	Sat Sep 22 17:29:50 2001
-+++ wmmultipop3/Makefile	Tue Apr 30 09:26:54 2002
-@@ -1,16 +1,16 @@
+$OpenBSD: patch-wmmultipop3_Makefile,v 1.2 2002/07/15 07:00:32 wilfried Exp $
+--- wmmultipop3/Makefile.orig	Sun May 26 12:43:33 2002
++++ wmmultipop3/Makefile	Sun Jul 14 00:00:02 2002
+@@ -1,14 +1,14 @@
 -LIBDIR = -L/usr/X11R6/lib
 +LIBDIR = -L${X11BASE}/lib
  LIBS   = -lXpm -lXext -lX11
@@ -16,8 +17,5 @@
 -	cc $(FLAGS) -o wmmultipop3 $^ -lXext $(LIBDIR) $(LIBS)
 +	${CC} -o wmmultipop3 ${OBJS} ${LIBDIR} ${LIBS}
  
--all:: wmpop3
-+all:: wmmultipop3
+ all:: wmmultipop3
  
- clean::
- 	for i in $(OBJS) ; do \

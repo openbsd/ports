@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/07 18:47:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/15 07:00:31 wilfried Exp $
 
 COMMENT=		"wm-dockapp; multiple pop3 mailbox checker"
 
-DISTNAME=		wmMultiPop3-0.7
+DISTNAME=		wmMultiPop3-0.8
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		mail x11/windowmaker
-NEED_VERSION=		1.515
 
-HOMEPAGE=		http://sumpan.campus.luth.se/software/wmmultipop3/
+HOMEPAGE=		http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 
 MAINTAINER=		Jolan Luff <jolan@enteract.com>
 
