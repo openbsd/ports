@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:29:56 fgsch Exp $
 
 DISTNAME=	gkrellmms-0.5.5
 CATEGORIES=	audio
-NEED_VERSION=	1.506
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

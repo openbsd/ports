@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/22 22:44:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 19:29:57 fgsch Exp $
 
 COMMENT=	"Commodore 64 music player and SID chip emulator"
 
 DISTNAME=	sidplay-base-1.0.8
 PKGNAME=	${DISTNAME:S/-base//}
 CATEGORIES=	audio
-NEED_VERSION=	1.530
 
 HOMEPAGE=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 18:50:36 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 19:29:56 fgsch Exp $
 
 BROKEN=	"check out gomconfig..."
 COMMENT=	"generic audio mixer"
 DISTNAME=	gom-0.29.103
 CATEGORIES=     audio
-NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mixers/}
 
 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 19:29:56 fgsch Exp $
 
 DISTNAME=	volume-0.8
 PKGNAME=	gkrellm-${DISTNAME}
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

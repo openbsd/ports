@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/09 16:34:47 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:29:56 fgsch Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
 V=			3.0.0
 DISTNAME=		grip-${V}
 CATEGORIES=		audio
-NEED_VERSION=		1.515
 EXTRACT_SUFX=		.tar.gz
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>

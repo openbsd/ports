@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/29 19:29:57 fgsch Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
 DISTNAME=	sox-12.17.3
 CATEGORIES=	audio
-NEED_VERSION=	1.504
 HOMEPAGE=	http://sox.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

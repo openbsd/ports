@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 19:29:56 fgsch Exp $
 
 COMMENT=	"mikmod sound library"
 
@@ -6,7 +6,6 @@ VERSION=	3.1.10
 DISTNAME=	libmikmod-${VERSION}
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	audio devel
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.mikmod.org
 

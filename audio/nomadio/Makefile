@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/03 20:12:23 mickey Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 19:29:57 fgsch Exp $
 
 COMMENT=	"Creative Labs NOMAD II MG IO"
 DISTNAME=	nomadio-0.7
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 
 MASTER_SITES=	ftp://ftp.lucifier.net/pub/nomadio/
 HOMEPAGE=	http://nomadio.lucifier.net/

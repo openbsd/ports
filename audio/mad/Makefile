@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 19:29:56 fgsch Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
 VERSION=	0.14.2b
 DISTNAME=	mad-${VERSION}
 CATEGORIES=	audio devel
-NEED_VERSION=	1.498
 
 HOMEPAGE=	http://mad.sourceforge.net/
 

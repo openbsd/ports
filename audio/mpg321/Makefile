@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 18:50:36 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 19:29:56 fgsch Exp $
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
 DISTNAME=	mpg321-0.2.10
 CATEGORIES=	audio
-NEED_VERSION=	1.435
 HOMEPAGE=	http://mpg321.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
