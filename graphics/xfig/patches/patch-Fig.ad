@@ -1,6 +1,6 @@
---- Fig.ad.orig	Wed Jan 19 13:48:58 2000
-+++ Fig.ad	Wed Feb  2 01:48:27 2000
-@@ -16,7 +16,7 @@
+--- Fig.ad.orig	Thu May 17 14:59:29 2001
++++ Fig.ad	Tue Jun 19 14:38:48 2001
+@@ -16,7 +16,7 @@ Fig.browser:	netscape -remote 'openFile(
  
  ! pdfviewer - put your favorite pdf viewer here.  
  !		This is for viewing the xfig how-to guide and man pages

@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/05/17 13:29:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/06/20 18:10:33 brad Exp $
 bin/xfig
 lib/X11/app-defaults/Fig
 lib/X11/app-defaults/Fig-color
 lib/X11/xfig/CompKeyDB
+lib/X11/xfig/Libraries/Buildings/README
 lib/X11/xfig/Libraries/Buildings/barrack.fig
 lib/X11/xfig/Libraries/Buildings/highrise1.fig
 lib/X11/xfig/Libraries/Buildings/highrise2.fig
 lib/X11/xfig/Libraries/Buildings/office.fig
+lib/X11/xfig/Libraries/Buildings/office2.fig
 lib/X11/xfig/Libraries/Buildings/twostory.fig
 lib/X11/xfig/Libraries/Buildings/twostory_front.fig
+lib/X11/xfig/Libraries/Computers/README
+lib/X11/xfig/Libraries/Computers/cd-rom.fig
 lib/X11/xfig/Libraries/Computers/dat-drive.fig
 lib/X11/xfig/Libraries/Computers/dat-drive2.fig
 lib/X11/xfig/Libraries/Computers/desktop1.fig
@@ -17,16 +21,18 @@ lib/X11/xfig/Libraries/Computers/desktop3.fig
 lib/X11/xfig/Libraries/Computers/desktop4.fig
 lib/X11/xfig/Libraries/Computers/desktop5.fig
 lib/X11/xfig/Libraries/Computers/film_digitizer.fig
-lib/X11/xfig/Libraries/Computers/film_digitizer.fig.orig
-lib/X11/xfig/Libraries/Computers/floppy.fig
+lib/X11/xfig/Libraries/Computers/floppy_lg.fig
+lib/X11/xfig/Libraries/Computers/floppy_sm.fig
 lib/X11/xfig/Libraries/Computers/generic_hardware.fig
 lib/X11/xfig/Libraries/Computers/high_speed_disk.fig
 lib/X11/xfig/Libraries/Computers/laptop.fig
+lib/X11/xfig/Libraries/Computers/laptop2.fig
 lib/X11/xfig/Libraries/Computers/minitower.fig
 lib/X11/xfig/Libraries/Computers/printer.fig
 lib/X11/xfig/Libraries/Computers/printer2.fig
 lib/X11/xfig/Libraries/Computers/printer3.fig
 lib/X11/xfig/Libraries/Computers/qic-drive.fig
+lib/X11/xfig/Libraries/Computers/r320.fig
 lib/X11/xfig/Libraries/Computers/scanner.fig
 lib/X11/xfig/Libraries/Computers/server.fig
 lib/X11/xfig/Libraries/Computers/sparc5.fig
@@ -38,6 +44,17 @@ lib/X11/xfig/Libraries/Computers/tower2.fig
 lib/X11/xfig/Libraries/Computers/tower3.fig
 lib/X11/xfig/Libraries/Computers/ultra2.fig
 lib/X11/xfig/Libraries/Computers/ultra30.fig
+lib/X11/xfig/Libraries/Computers/va-jbot.fig
+lib/X11/xfig/Libraries/Computers/va-server-11xx.fig
+lib/X11/xfig/Libraries/Computers/va-server-1hd.fig
+lib/X11/xfig/Libraries/Computers/va-server-2hd.fig
+lib/X11/xfig/Libraries/Computers/va-server-2xxx-face.fig
+lib/X11/xfig/Libraries/Computers/va-server-3500.fig
+lib/X11/xfig/Libraries/Computers/va-server-3hd.fig
+lib/X11/xfig/Libraries/Computers/va-server-4450.fig
+lib/X11/xfig/Libraries/Computers/va-server-4hd.fig
+lib/X11/xfig/Libraries/Computers/va-server-5df.fig
+lib/X11/xfig/Libraries/Computers/va-server-nhs.fig
 lib/X11/xfig/Libraries/Computers/xterminal.fig
 lib/X11/xfig/Libraries/ERD/AUTHOR
 lib/X11/xfig/Libraries/ERD/Entity.fig
@@ -56,6 +73,7 @@ lib/X11/xfig/Libraries/ERD/REL_specialization_r.fig
 lib/X11/xfig/Libraries/ERD/REL_specialization_u.fig
 lib/X11/xfig/Libraries/ERD/stick_h.fig
 lib/X11/xfig/Libraries/ERD/stick_v.fig
+lib/X11/xfig/Libraries/Electrical/Physical/README
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db15.fig
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db25.fig
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db9.fig
@@ -72,10 +90,13 @@ lib/X11/xfig/Libraries/Electrical/Physical/dip_28pin.fig
 lib/X11/xfig/Libraries/Electrical/Physical/dip_40pin.fig
 lib/X11/xfig/Libraries/Electrical/Physical/fuse_holder.fig
 lib/X11/xfig/Libraries/Electrical/Physical/led_digit.fig
+lib/X11/xfig/Libraries/Electrical/Physical/receptacle2.fig
 lib/X11/xfig/Libraries/Electrical/Physical/receptacle_female.fig
 lib/X11/xfig/Libraries/Electrical/Physical/receptacle_male.fig
 lib/X11/xfig/Libraries/Electrical/Physical/reed_relay.fig
 lib/X11/xfig/Libraries/Electrical/Physical/terminal_block.fig
+lib/X11/xfig/Libraries/Electrical/README
+lib/X11/xfig/Libraries/Electrical/Schematic/README
 lib/X11/xfig/Libraries/Electrical/Schematic/battery.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/capacitor.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/circle_large.fig
@@ -97,6 +118,11 @@ lib/X11/xfig/Libraries/Electrical/Schematic/dot_med.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/dot_small.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/fet1.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/fet2.fig
+lib/X11/xfig/Libraries/Electrical/Schematic/fet_j_n.fig
+lib/X11/xfig/Libraries/Electrical/Schematic/fet_j_p.fig
+lib/X11/xfig/Libraries/Electrical/Schematic/fet_mos.fig
+lib/X11/xfig/Libraries/Electrical/Schematic/fet_nmos.fig
+lib/X11/xfig/Libraries/Electrical/Schematic/fet_pmos.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/frame_ground.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/fuse.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/fuse2.fig
@@ -106,7 +132,6 @@ lib/X11/xfig/Libraries/Electrical/Schematic/heater.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/inductor.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/led.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/logic_ground.fig
-lib/X11/xfig/Libraries/Electrical/Schematic/mosfet.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/mov.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/npn.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/opamp.fig
@@ -128,8 +153,10 @@ lib/X11/xfig/Libraries/Electrical/Schematic/var_resistor.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/var_resistor2.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/zener.fig
 lib/X11/xfig/Libraries/Electrical/Schematic/zener2.fig
+lib/X11/xfig/Libraries/Flags/README
 lib/X11/xfig/Libraries/Flags/austria.fig
 lib/X11/xfig/Libraries/Flags/belgium.fig
+lib/X11/xfig/Libraries/Flags/catalan.fig
 lib/X11/xfig/Libraries/Flags/finland.fig
 lib/X11/xfig/Libraries/Flags/france.fig
 lib/X11/xfig/Libraries/Flags/germany.fig
@@ -140,7 +167,7 @@ lib/X11/xfig/Libraries/Flags/ireland.fig
 lib/X11/xfig/Libraries/Flags/italy.fig
 lib/X11/xfig/Libraries/Flags/japan.fig
 lib/X11/xfig/Libraries/Flags/luxemburg.fig
-lib/X11/xfig/Libraries/Flags/nederlands.fig
+lib/X11/xfig/Libraries/Flags/netherlands.fig
 lib/X11/xfig/Libraries/Flags/norway.fig
 lib/X11/xfig/Libraries/Flags/poland.fig
 lib/X11/xfig/Libraries/Flags/portugal.fig
@@ -148,6 +175,7 @@ lib/X11/xfig/Libraries/Flags/spain.fig
 lib/X11/xfig/Libraries/Flags/sweden.fig
 lib/X11/xfig/Libraries/Flags/switzerland.fig
 lib/X11/xfig/Libraries/Flags/usa.fig
+lib/X11/xfig/Libraries/Flowchart/README
 lib/X11/xfig/Libraries/Flowchart/arrow_down.fig
 lib/X11/xfig/Libraries/Flowchart/arrow_left.fig
 lib/X11/xfig/Libraries/Flowchart/arrow_open_left.fig
@@ -178,6 +206,70 @@ lib/X11/xfig/Libraries/Flowchart/process.fig
 lib/X11/xfig/Libraries/Flowchart/punched_card.fig
 lib/X11/xfig/Libraries/Flowchart/sort.fig
 lib/X11/xfig/Libraries/Flowchart/terminal_interrupt.fig
+lib/X11/xfig/Libraries/Furniture/README
+lib/X11/xfig/Libraries/Furniture/bed.fig
+lib/X11/xfig/Libraries/Furniture/coffee_table.fig
+lib/X11/xfig/Libraries/Furniture/couch.fig
+lib/X11/xfig/Libraries/Furniture/dining_table.fig
+lib/X11/xfig/Libraries/Furniture/end_table.fig
+lib/X11/xfig/Libraries/Furniture/grand_piano.fig
+lib/X11/xfig/Libraries/Furniture/rolltop_desk.fig
+lib/X11/xfig/Libraries/Furniture/upright_piano.fig
+lib/X11/xfig/Libraries/GUI/AUTHOR
+lib/X11/xfig/Libraries/GUI/LICENSE
+lib/X11/xfig/Libraries/GUI/README
+lib/X11/xfig/Libraries/GUI/button.fig
+lib/X11/xfig/Libraries/GUI/button3d.fig
+lib/X11/xfig/Libraries/GUI/button3d_p.fig
+lib/X11/xfig/Libraries/GUI/button_p.fig
+lib/X11/xfig/Libraries/GUI/check3d2_t.fig
+lib/X11/xfig/Libraries/GUI/check3d_f.fig
+lib/X11/xfig/Libraries/GUI/check3d_p.fig
+lib/X11/xfig/Libraries/GUI/check3d_t.fig
+lib/X11/xfig/Libraries/GUI/check_f.fig
+lib/X11/xfig/Libraries/GUI/check_p.fig
+lib/X11/xfig/Libraries/GUI/check_t.fig
+lib/X11/xfig/Libraries/GUI/combo_l.fig
+lib/X11/xfig/Libraries/GUI/combo_m.fig
+lib/X11/xfig/Libraries/GUI/combo_s.fig
+lib/X11/xfig/Libraries/GUI/dialog_l.fig
+lib/X11/xfig/Libraries/GUI/dialog_m.fig
+lib/X11/xfig/Libraries/GUI/dialog_s.fig
+lib/X11/xfig/Libraries/GUI/edit_l.fig
+lib/X11/xfig/Libraries/GUI/edit_m.fig
+lib/X11/xfig/Libraries/GUI/edit_s.fig
+lib/X11/xfig/Libraries/GUI/editlck_l.fig
+lib/X11/xfig/Libraries/GUI/editlck_m.fig
+lib/X11/xfig/Libraries/GUI/editlck_s.fig
+lib/X11/xfig/Libraries/GUI/form_l.fig
+lib/X11/xfig/Libraries/GUI/form_m.fig
+lib/X11/xfig/Libraries/GUI/form_s.fig
+lib/X11/xfig/Libraries/GUI/gauge.fig
+lib/X11/xfig/Libraries/GUI/grid_l.fig
+lib/X11/xfig/Libraries/GUI/grid_m.fig
+lib/X11/xfig/Libraries/GUI/grid_s.fig
+lib/X11/xfig/Libraries/GUI/pbar_l.fig
+lib/X11/xfig/Libraries/GUI/pbar_m.fig
+lib/X11/xfig/Libraries/GUI/pbar_s.fig
+lib/X11/xfig/Libraries/GUI/rbuton3d_f.fig
+lib/X11/xfig/Libraries/GUI/rbuton3d_p.fig
+lib/X11/xfig/Libraries/GUI/rbuton3d_t.fig
+lib/X11/xfig/Libraries/GUI/rbuton_f.fig
+lib/X11/xfig/Libraries/GUI/rbuton_p.fig
+lib/X11/xfig/Libraries/GUI/rbuton_t.fig
+lib/X11/xfig/Libraries/GUI/sbar2h_l.fig
+lib/X11/xfig/Libraries/GUI/sbar2h_m.fig
+lib/X11/xfig/Libraries/GUI/sbar2h_s.fig
+lib/X11/xfig/Libraries/GUI/sbar2v_l.fig
+lib/X11/xfig/Libraries/GUI/sbar2v_m.fig
+lib/X11/xfig/Libraries/GUI/sbar2v_s.fig
+lib/X11/xfig/Libraries/GUI/sbarh_l.fig
+lib/X11/xfig/Libraries/GUI/sbarh_m.fig
+lib/X11/xfig/Libraries/GUI/sbarh_s.fig
+lib/X11/xfig/Libraries/GUI/sbarv_l.fig
+lib/X11/xfig/Libraries/GUI/sbarv_m.fig
+lib/X11/xfig/Libraries/GUI/sbarv_s.fig
+lib/X11/xfig/Libraries/Hospital/README
 lib/X11/xfig/Libraries/Hospital/centrifuge.fig
 lib/X11/xfig/Libraries/Hospital/display.fig
 lib/X11/xfig/Libraries/Hospital/dual_display.fig
@@ -195,9 +287,17 @@ lib/X11/xfig/Libraries/Knitting/Cables/left-2x2-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-2x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-2x2x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-3x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-3x3-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-3x3.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x1.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-4x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x3-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x3.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-4x4-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/left-4x4.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-1x1-purl.fig
@@ -208,19 +308,53 @@ lib/X11/xfig/Libraries/Knitting/Cables/right-2x2-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-2x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-2x2x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-3x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x2.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-3x3-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-3x3.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x1.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-4x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x3-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x3.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-4x4-purl.fig
 lib/X11/xfig/Libraries/Knitting/Cables/right-4x4.fig
+lib/X11/xfig/Libraries/Knitting/Colors/LtBlue.fig
 lib/X11/xfig/Libraries/Knitting/Colors/black.fig
 lib/X11/xfig/Libraries/Knitting/Colors/blue.fig
+lib/X11/xfig/Libraries/Knitting/Colors/blue2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/blue3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/blue4.fig
+lib/X11/xfig/Libraries/Knitting/Colors/brown2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/brown3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/brown4.fig
 lib/X11/xfig/Libraries/Knitting/Colors/cyan.fig
+lib/X11/xfig/Libraries/Knitting/Colors/cyan2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/cyan3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/cyan4.fig
 lib/X11/xfig/Libraries/Knitting/Colors/gold.fig
 lib/X11/xfig/Libraries/Knitting/Colors/green.fig
+lib/X11/xfig/Libraries/Knitting/Colors/green2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/green3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/green4.fig
 lib/X11/xfig/Libraries/Knitting/Colors/grey.fig
 lib/X11/xfig/Libraries/Knitting/Colors/magenta.fig
+lib/X11/xfig/Libraries/Knitting/Colors/magenta2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/magenta3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/magenta4.fig
+lib/X11/xfig/Libraries/Knitting/Colors/peach.fig
+lib/X11/xfig/Libraries/Knitting/Colors/peach2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/peach3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/pink.fig
+lib/X11/xfig/Libraries/Knitting/Colors/pink2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/pink3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/pink4.fig
 lib/X11/xfig/Libraries/Knitting/Colors/red.fig
+lib/X11/xfig/Libraries/Knitting/Colors/red2.fig
+lib/X11/xfig/Libraries/Knitting/Colors/red3.fig
+lib/X11/xfig/Libraries/Knitting/Colors/red4.fig
 lib/X11/xfig/Libraries/Knitting/Colors/white.fig
 lib/X11/xfig/Libraries/Knitting/Colors/yellow.fig
 lib/X11/xfig/Libraries/Knitting/Estonian/braid-one-color.fig
@@ -230,12 +364,17 @@ lib/X11/xfig/Libraries/Knitting/Estonian/three-color-twist.fig
 lib/X11/xfig/Libraries/Knitting/Grids/grid-big.fig
 lib/X11/xfig/Libraries/Knitting/Grids/grid-small.fig
 lib/X11/xfig/Libraries/Knitting/Grids/grid-squashed.fig
+lib/X11/xfig/Libraries/Knitting/README
 lib/X11/xfig/Libraries/Knitting/Symbols/bobble.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/cast-off.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/decrease-left.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/decrease-right.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-center.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-left.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-ll.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-rr.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/empty.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/increase-left.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/increase-m1.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/increase-right.fig
@@ -249,7 +388,18 @@ lib/X11/xfig/Libraries/Knitting/Symbols/slip-bar.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/slip-v.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/twist-left.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/twist-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/x.fig
 lib/X11/xfig/Libraries/Knitting/Symbols/yarn-over.fig
+lib/X11/xfig/Libraries/Labels/Avery_5164.fig
+lib/X11/xfig/Libraries/Labels/Avery_5196.fig
+lib/X11/xfig/Libraries/Labels/Avery_5260.fig
+lib/X11/xfig/Libraries/Labels/Avery_5660.fig
+lib/X11/xfig/Libraries/Labels/Avery_5661.fig
+lib/X11/xfig/Libraries/Labels/Avery_5662.fig
+lib/X11/xfig/Libraries/Labels/Avery_5663.fig
+lib/X11/xfig/Libraries/Labels/Avery_5664.fig
+lib/X11/xfig/Libraries/Labels/README
+lib/X11/xfig/Libraries/Logic/README
 lib/X11/xfig/Libraries/Logic/circle_large.fig
 lib/X11/xfig/Libraries/Logic/circle_med.fig
 lib/X11/xfig/Libraries/Logic/circle_small.fig
@@ -290,66 +440,300 @@ lib/X11/xfig/Libraries/Logic/ic_DAC0800LCN.fig
 lib/X11/xfig/Libraries/Logic/ic_HC595.fig
 lib/X11/xfig/Libraries/Logic/logic_ground.fig
 lib/X11/xfig/Libraries/Logic/oneshot.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch/DIN66-8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-12.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN1207-8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-12.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk/DIN66-8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Oberflaeche/oberfl_1.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Oberflaeche/oberfl_2.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Oberflaeche/oberfl_3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Oberflaeche/oberfl_4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen/DIN_a3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen/DIN_a3_quer.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen/DIN_a4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen/DIN_a4_quer.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen/schriftfeld.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M1.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M2.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht/M8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M10.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M12.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M3.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M4.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M5.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M6.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch/M8.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M10_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M12_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M3_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M4_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M5_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M6_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack/M8_sack.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/mitte.fig
-lib/X11/xfig/Libraries/Mechanical_DIN/smile.fig
+lib/X11/xfig/Libraries/Maps/Africa/africa.fig
+lib/X11/xfig/Libraries/Maps/Africa/algeria.fig
+lib/X11/xfig/Libraries/Maps/Africa/angola.fig
+lib/X11/xfig/Libraries/Maps/Africa/benin.fig
+lib/X11/xfig/Libraries/Maps/Africa/botswana.fig
+lib/X11/xfig/Libraries/Maps/Africa/burkina_faso.fig
+lib/X11/xfig/Libraries/Maps/Africa/burundi.fig
+lib/X11/xfig/Libraries/Maps/Africa/cabinda.fig
+lib/X11/xfig/Libraries/Maps/Africa/cameroon.fig
+lib/X11/xfig/Libraries/Maps/Africa/central_african_republic.fig
+lib/X11/xfig/Libraries/Maps/Africa/chad.fig
+lib/X11/xfig/Libraries/Maps/Africa/congo.fig
+lib/X11/xfig/Libraries/Maps/Africa/democratic_republic_of_congo.fig
+lib/X11/xfig/Libraries/Maps/Africa/djibouti.fig
+lib/X11/xfig/Libraries/Maps/Africa/egypt.fig
+lib/X11/xfig/Libraries/Maps/Africa/equatorial_guinea.fig
+lib/X11/xfig/Libraries/Maps/Africa/ethiopia.fig
+lib/X11/xfig/Libraries/Maps/Africa/gabon.fig
+lib/X11/xfig/Libraries/Maps/Africa/ghana.fig
+lib/X11/xfig/Libraries/Maps/Africa/guinea.fig
+lib/X11/xfig/Libraries/Maps/Africa/ivory_coast.fig
+lib/X11/xfig/Libraries/Maps/Africa/kenya.fig
+lib/X11/xfig/Libraries/Maps/Africa/lesotho.fig
+lib/X11/xfig/Libraries/Maps/Africa/liberia.fig
+lib/X11/xfig/Libraries/Maps/Africa/libya.fig
+lib/X11/xfig/Libraries/Maps/Africa/madagasgar.fig
+lib/X11/xfig/Libraries/Maps/Africa/malawi.fig
+lib/X11/xfig/Libraries/Maps/Africa/mali.fig
+lib/X11/xfig/Libraries/Maps/Africa/mauritania.fig
+lib/X11/xfig/Libraries/Maps/Africa/mozambique.fig
+lib/X11/xfig/Libraries/Maps/Africa/namibia.fig
+lib/X11/xfig/Libraries/Maps/Africa/niger.fig
+lib/X11/xfig/Libraries/Maps/Africa/nigeria.fig
+lib/X11/xfig/Libraries/Maps/Africa/rwanda.fig
+lib/X11/xfig/Libraries/Maps/Africa/senegal.fig
+lib/X11/xfig/Libraries/Maps/Africa/sierra_leone.fig
+lib/X11/xfig/Libraries/Maps/Africa/somalia.fig
+lib/X11/xfig/Libraries/Maps/Africa/south_africa.fig
+lib/X11/xfig/Libraries/Maps/Africa/sudan.fig
+lib/X11/xfig/Libraries/Maps/Africa/swaziland.fig
+lib/X11/xfig/Libraries/Maps/Africa/tanzania.fig
+lib/X11/xfig/Libraries/Maps/Africa/togo.fig
+lib/X11/xfig/Libraries/Maps/Africa/tunisia.fig
+lib/X11/xfig/Libraries/Maps/Africa/uganda.fig
+lib/X11/xfig/Libraries/Maps/Africa/western_sahara.fig
+lib/X11/xfig/Libraries/Maps/Africa/zambia.fig
+lib/X11/xfig/Libraries/Maps/Africa/zimbabwe.fig
+lib/X11/xfig/Libraries/Maps/Asia/afghanistan.fig
+lib/X11/xfig/Libraries/Maps/Asia/bangladesh.fig
+lib/X11/xfig/Libraries/Maps/Asia/bhutan.fig
+lib/X11/xfig/Libraries/Maps/Asia/burma.fig
+lib/X11/xfig/Libraries/Maps/Asia/cambodia.fig
+lib/X11/xfig/Libraries/Maps/Asia/china.fig
+lib/X11/xfig/Libraries/Maps/Asia/india.fig
+lib/X11/xfig/Libraries/Maps/Asia/japan.fig
+lib/X11/xfig/Libraries/Maps/Asia/korea.fig
+lib/X11/xfig/Libraries/Maps/Asia/laos.fig
+lib/X11/xfig/Libraries/Maps/Asia/malaysia.fig
+lib/X11/xfig/Libraries/Maps/Asia/mongolia.fig
+lib/X11/xfig/Libraries/Maps/Asia/nepal.fig
+lib/X11/xfig/Libraries/Maps/Asia/pakistan.fig
+lib/X11/xfig/Libraries/Maps/Asia/philippines.fig
+lib/X11/xfig/Libraries/Maps/Asia/sri_lanka.fig
+lib/X11/xfig/Libraries/Maps/Asia/taiwan.fig
+lib/X11/xfig/Libraries/Maps/Asia/thailand.fig
+lib/X11/xfig/Libraries/Maps/Asia/vietnam.fig
+lib/X11/xfig/Libraries/Maps/Canada/alberta.fig
+lib/X11/xfig/Libraries/Maps/Canada/assemble
+lib/X11/xfig/Libraries/Maps/Canada/bc.fig
+lib/X11/xfig/Libraries/Maps/Canada/canada.fig
+lib/X11/xfig/Libraries/Maps/Canada/manitoba.fig
+lib/X11/xfig/Libraries/Maps/Canada/newbrunswick.fig
+lib/X11/xfig/Libraries/Maps/Canada/newfoundland.fig
+lib/X11/xfig/Libraries/Maps/Canada/novascotia.fig
+lib/X11/xfig/Libraries/Maps/Canada/ontario.fig
+lib/X11/xfig/Libraries/Maps/Canada/quebec.fig
+lib/X11/xfig/Libraries/Maps/Canada/saskatchewan.fig
+lib/X11/xfig/Libraries/Maps/Canada/yukon.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/belize.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/central_america.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/costa_rica.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/el_salvador.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/guatemala.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/honduras.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/nicaragua.fig
+lib/X11/xfig/Libraries/Maps/CentralAmerica/panama.fig
+lib/X11/xfig/Libraries/Maps/Europe/albania.fig
+lib/X11/xfig/Libraries/Maps/Europe/austria.fig
+lib/X11/xfig/Libraries/Maps/Europe/belgium.fig
+lib/X11/xfig/Libraries/Maps/Europe/bulgaria.fig
+lib/X11/xfig/Libraries/Maps/Europe/corsica.fig
+lib/X11/xfig/Libraries/Maps/Europe/czechrepublic.fig
+lib/X11/xfig/Libraries/Maps/Europe/denmark.fig
+lib/X11/xfig/Libraries/Maps/Europe/europe.fig
+lib/X11/xfig/Libraries/Maps/Europe/finland.fig
+lib/X11/xfig/Libraries/Maps/Europe/france.fig
+lib/X11/xfig/Libraries/Maps/Europe/germany.fig
+lib/X11/xfig/Libraries/Maps/Europe/greece.fig
+lib/X11/xfig/Libraries/Maps/Europe/hungary.fig
+lib/X11/xfig/Libraries/Maps/Europe/iceland.fig
+lib/X11/xfig/Libraries/Maps/Europe/ireland.fig
+lib/X11/xfig/Libraries/Maps/Europe/italy.fig
+lib/X11/xfig/Libraries/Maps/Europe/luxembourg.fig
+lib/X11/xfig/Libraries/Maps/Europe/netherlands.fig
+lib/X11/xfig/Libraries/Maps/Europe/northireland.fig
+lib/X11/xfig/Libraries/Maps/Europe/norway.fig
+lib/X11/xfig/Libraries/Maps/Europe/poland.fig
+lib/X11/xfig/Libraries/Maps/Europe/portugal.fig
+lib/X11/xfig/Libraries/Maps/Europe/romania.fig
+lib/X11/xfig/Libraries/Maps/Europe/sardinia.fig
+lib/X11/xfig/Libraries/Maps/Europe/sicily.fig
+lib/X11/xfig/Libraries/Maps/Europe/spain.fig
+lib/X11/xfig/Libraries/Maps/Europe/sweden.fig
+lib/X11/xfig/Libraries/Maps/Europe/switzerland.fig
+lib/X11/xfig/Libraries/Maps/Europe/unitedkingdom.fig
+lib/X11/xfig/Libraries/Maps/Europe/yugoslavia.fig
+lib/X11/xfig/Libraries/Maps/Mexico/aguascalientes.fig
+lib/X11/xfig/Libraries/Maps/Mexico/baja_california.fig
+lib/X11/xfig/Libraries/Maps/Mexico/baja_california_norte.fig
+lib/X11/xfig/Libraries/Maps/Mexico/baja_california_sur.fig
+lib/X11/xfig/Libraries/Maps/Mexico/campeche.fig
+lib/X11/xfig/Libraries/Maps/Mexico/chiapas.fig
+lib/X11/xfig/Libraries/Maps/Mexico/chihuahaua.fig
+lib/X11/xfig/Libraries/Maps/Mexico/coahuila.fig
+lib/X11/xfig/Libraries/Maps/Mexico/colima.fig
+lib/X11/xfig/Libraries/Maps/Mexico/durango.fig
+lib/X11/xfig/Libraries/Maps/Mexico/guanajuato.fig
+lib/X11/xfig/Libraries/Maps/Mexico/guerrero.fig
+lib/X11/xfig/Libraries/Maps/Mexico/hidalgo.fig
+lib/X11/xfig/Libraries/Maps/Mexico/jalisco.fig
+lib/X11/xfig/Libraries/Maps/Mexico/mexico.fig
+lib/X11/xfig/Libraries/Maps/Mexico/mexico_city.fig
+lib/X11/xfig/Libraries/Maps/Mexico/mexico_state.fig
+lib/X11/xfig/Libraries/Maps/Mexico/michoacan.fig
+lib/X11/xfig/Libraries/Maps/Mexico/morelos.fig
+lib/X11/xfig/Libraries/Maps/Mexico/nayarit.fig
+lib/X11/xfig/Libraries/Maps/Mexico/nuevo_leon.fig
+lib/X11/xfig/Libraries/Maps/Mexico/oaxaca.fig
+lib/X11/xfig/Libraries/Maps/Mexico/puebla.fig
+lib/X11/xfig/Libraries/Maps/Mexico/queretaro.fig
+lib/X11/xfig/Libraries/Maps/Mexico/quintana_roo.fig
+lib/X11/xfig/Libraries/Maps/Mexico/san_luis_potosi.fig
+lib/X11/xfig/Libraries/Maps/Mexico/sinaloa.fig
+lib/X11/xfig/Libraries/Maps/Mexico/sonora.fig
+lib/X11/xfig/Libraries/Maps/Mexico/tabasco.fig
+lib/X11/xfig/Libraries/Maps/Mexico/tamaulipas.fig
+lib/X11/xfig/Libraries/Maps/Mexico/tlaxcala.fig
+lib/X11/xfig/Libraries/Maps/Mexico/veracruz.fig
+lib/X11/xfig/Libraries/Maps/Mexico/yucatan.fig
+lib/X11/xfig/Libraries/Maps/Mexico/zacatecas.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/iran.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/iraq.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/israel.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/jordan.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/lebanon.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/middle_east.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/oman.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/qatar.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/saudi_arabia.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/syria.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/turkey.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/united_arab_emirates.fig
+lib/X11/xfig/Libraries/Maps/MiddleEast/yemen.fig
+lib/X11/xfig/Libraries/Maps/README
+lib/X11/xfig/Libraries/Maps/SouthAmerica/argentinia.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/bolivia.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/brazil.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/chile.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/colombia.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/ecuador.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/french_guiana.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/guyana.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/paraguay.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/peru.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/southamerica.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/suriname.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/uruguay.fig
+lib/X11/xfig/Libraries/Maps/SouthAmerica/venezuela.fig
+lib/X11/xfig/Libraries/Maps/USA/alabama.fig
+lib/X11/xfig/Libraries/Maps/USA/alaska.fig
+lib/X11/xfig/Libraries/Maps/USA/arizona.fig
+lib/X11/xfig/Libraries/Maps/USA/arkansas.fig
+lib/X11/xfig/Libraries/Maps/USA/assemble
+lib/X11/xfig/Libraries/Maps/USA/california.fig
+lib/X11/xfig/Libraries/Maps/USA/colorado.fig
+lib/X11/xfig/Libraries/Maps/USA/connecticut.fig
+lib/X11/xfig/Libraries/Maps/USA/delaware.fig
+lib/X11/xfig/Libraries/Maps/USA/florida.fig
+lib/X11/xfig/Libraries/Maps/USA/georgia.fig
+lib/X11/xfig/Libraries/Maps/USA/hawaii.fig
+lib/X11/xfig/Libraries/Maps/USA/idaho.fig
+lib/X11/xfig/Libraries/Maps/USA/illinois.fig
+lib/X11/xfig/Libraries/Maps/USA/indiana.fig
+lib/X11/xfig/Libraries/Maps/USA/iowa.fig
+lib/X11/xfig/Libraries/Maps/USA/kansas.fig
+lib/X11/xfig/Libraries/Maps/USA/kentucky.fig
+lib/X11/xfig/Libraries/Maps/USA/louisiana.fig
+lib/X11/xfig/Libraries/Maps/USA/maine.fig
+lib/X11/xfig/Libraries/Maps/USA/maryland.fig
+lib/X11/xfig/Libraries/Maps/USA/massachusetts.fig
+lib/X11/xfig/Libraries/Maps/USA/michigan.fig
+lib/X11/xfig/Libraries/Maps/USA/minnesota.fig
+lib/X11/xfig/Libraries/Maps/USA/mississippi.fig
+lib/X11/xfig/Libraries/Maps/USA/missouri.fig
+lib/X11/xfig/Libraries/Maps/USA/montana.fig
+lib/X11/xfig/Libraries/Maps/USA/nebraska.fig
+lib/X11/xfig/Libraries/Maps/USA/nevada.fig
+lib/X11/xfig/Libraries/Maps/USA/newhampshire.fig
+lib/X11/xfig/Libraries/Maps/USA/newjersey.fig
+lib/X11/xfig/Libraries/Maps/USA/newmexico.fig
+lib/X11/xfig/Libraries/Maps/USA/newyork.fig
+lib/X11/xfig/Libraries/Maps/USA/northcarolina.fig
+lib/X11/xfig/Libraries/Maps/USA/northdakota.fig
+lib/X11/xfig/Libraries/Maps/USA/ohio.fig
+lib/X11/xfig/Libraries/Maps/USA/oklahoma.fig
+lib/X11/xfig/Libraries/Maps/USA/oregon.fig
+lib/X11/xfig/Libraries/Maps/USA/pennsylvania.fig
+lib/X11/xfig/Libraries/Maps/USA/rhodeisland.fig
+lib/X11/xfig/Libraries/Maps/USA/southcarolina.fig
+lib/X11/xfig/Libraries/Maps/USA/southdakota.fig
+lib/X11/xfig/Libraries/Maps/USA/tennessee.fig
+lib/X11/xfig/Libraries/Maps/USA/texas.fig
+lib/X11/xfig/Libraries/Maps/USA/usa.fig
+lib/X11/xfig/Libraries/Maps/USA/utah.fig
+lib/X11/xfig/Libraries/Maps/USA/vermont.fig
+lib/X11/xfig/Libraries/Maps/USA/virginia.fig
+lib/X11/xfig/Libraries/Maps/USA/washington.fig
+lib/X11/xfig/Libraries/Maps/USA/westvirginia.fig
+lib/X11/xfig/Libraries/Maps/USA/wisconsin.fig
+lib/X11/xfig/Libraries/Maps/USA/wyoming.fig
+lib/X11/xfig/Libraries/Maps/australia.fig
+lib/X11/xfig/Libraries/Maps/newzealand.fig
+lib/X11/xfig/Libraries/Maps/world.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets/DIN_a3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets/DIN_a3_landscape.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets/DIN_a4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets/DIN_a4_landscape.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets/information_box.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-12.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN1207-8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-12.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk/DIN66-8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through/DIN66-8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/README
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M12.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind/M8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M12.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through/M8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M1.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M10.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M2.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M5.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M6.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top/M8.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/SurfaceQuality/surfacequal1.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/SurfaceQuality/surfacequal2.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/SurfaceQuality/surfacequal3.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/SurfaceQuality/surfacequal4.fig
+lib/X11/xfig/Libraries/Mechanical_DIN/center.fig
 lib/X11/xfig/Libraries/Mechanical_DIN/zigzag.fig
+lib/X11/xfig/Libraries/Music/README
 lib/X11/xfig/Libraries/Music/base_clef.fig
 lib/X11/xfig/Libraries/Music/base_staff.fig
 lib/X11/xfig/Libraries/Music/eighth-tie.fig
@@ -374,7 +758,9 @@ lib/X11/xfig/Libraries/Music/treble_staff.fig
 lib/X11/xfig/Libraries/Music/whole-dotted.fig
 lib/X11/xfig/Libraries/Music/whole.fig
 lib/X11/xfig/Libraries/Networks/3Com_CB5000.fig
+lib/X11/xfig/Libraries/Networks/README
 lib/X11/xfig/Libraries/Networks/at+t_emmi.fig
+lib/X11/xfig/Libraries/Networks/atmswitch.fig
 lib/X11/xfig/Libraries/Networks/bridge.fig
 lib/X11/xfig/Libraries/Networks/cisco_7010.fig
 lib/X11/xfig/Libraries/Networks/cisco_7513.fig
@@ -384,6 +770,7 @@ lib/X11/xfig/Libraries/Networks/cisco_catalyst6509.fig
 lib/X11/xfig/Libraries/Networks/concentrator1.fig
 lib/X11/xfig/Libraries/Networks/concentrator2.fig
 lib/X11/xfig/Libraries/Networks/concentrator3.fig
+lib/X11/xfig/Libraries/Networks/dsu-csu.fig
 lib/X11/xfig/Libraries/Networks/ether10-100hub.fig
 lib/X11/xfig/Libraries/Networks/ether_switch.fig
 lib/X11/xfig/Libraries/Networks/firewall.fig
@@ -399,9 +786,9 @@ lib/X11/xfig/Libraries/Networks/mmedia_explorer.fig
 lib/X11/xfig/Libraries/Networks/rack.fig
 lib/X11/xfig/Libraries/Networks/rack2.fig
 lib/X11/xfig/Libraries/Networks/router.fig
+lib/X11/xfig/Libraries/Networks/smartbit.fig
 lib/X11/xfig/Libraries/Networks/smux6000.fig
 lib/X11/xfig/Libraries/Networks/switching_hub.fig
-lib/X11/xfig/Libraries/Networks/synoptics_latticell.fig
 lib/X11/xfig/Libraries/Networks/transceiver-10base2.fig
 lib/X11/xfig/Libraries/Networks/transceiver-10baseT.fig
 lib/X11/xfig/Libraries/Networks/transceiver1.fig
@@ -428,11 +815,57 @@ lib/X11/xfig/Libraries/Optics/Mirror/concave_medium.fig
 lib/X11/xfig/Libraries/Optics/Mirror/concave_strong.fig
 lib/X11/xfig/Libraries/Optics/Mirror/flat.fig
 lib/X11/xfig/Libraries/Optics/Mirror/flat_piezo.fig
+lib/X11/xfig/Libraries/Optics/README
 lib/X11/xfig/Libraries/Optics/beam.fig
 lib/X11/xfig/Libraries/Optics/beamsplitter_cube.fig
 lib/X11/xfig/Libraries/Optics/detector.fig
 lib/X11/xfig/Libraries/Optics/faraday_isolator.fig
 lib/X11/xfig/Libraries/Optics/grating.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Absorbtion.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Blower.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/CentrifugalPump.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Column.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Compressor.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Conv_down.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Conv_horizontal.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Conv_up.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/CoolingTower.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/DI.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/FI.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/FI_Number.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Flame.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Flash.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Down.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Down2.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Horizontal.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Left.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Right.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Right2.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_U-form.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Up.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HE_Vertical.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/HorizontalVessel.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/In-Outlet.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Kompressor.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/MainFlow_In-Outlet.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/MainStream.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Named_In-Outlet.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/PI.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/PI_Number.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Pump.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/QI.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/README
+lib/X11/xfig/Libraries/ProcessFlowsheet/Ship.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Stack.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/StirredVessel.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Stream.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/TI.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Tank.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Truck.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Turbine.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Valve_horizontal.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/Valve_vertical.fig
+lib/X11/xfig/Libraries/ProcessFlowsheet/VerticalVessel.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Beams/beam_cantilever.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Beams/beam_fixed.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Beams/beam_simply_supported.fig
@@ -456,6 +889,7 @@ lib/X11/xfig/Libraries/Structural_Analysis/Loads/uniform_short.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Plates/plate_fixed.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Plates/plate_fixed_hinge.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Plates/plate_hinge.fig
+lib/X11/xfig/Libraries/Structural_Analysis/README
 lib/X11/xfig/Libraries/Structural_Analysis/Supports/elastic_H_free_down.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Supports/elastic_H_free_up.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Supports/elastic_V_free_left.fig
@@ -491,7 +925,6 @@ lib/X11/xfig/Libraries/Structural_Analysis/Trusses/howe_triangle.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Trusses/pratt_trap.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Trusses/pratt_triangle.fig
 lib/X11/xfig/Libraries/Structural_Analysis/Trusses/warren.fig
-lib/X11/xfig/Libraries/Structural_Analysis/readme.fig
 lib/X11/xfig/Libraries/UML/Actor.fig
 lib/X11/xfig/Libraries/UML/Aggregations.fig
 lib/X11/xfig/Libraries/UML/Arrows.fig
@@ -510,6 +943,7 @@ lib/X11/xfig/Libraries/UML/Object_Multi.fig
 lib/X11/xfig/Libraries/UML/Object_Small.fig
 lib/X11/xfig/Libraries/UML/Package_Large.fig
 lib/X11/xfig/Libraries/UML/Package_Small.fig
+lib/X11/xfig/Libraries/UML/README
 lib/X11/xfig/Libraries/UML/Sequences.fig
 lib/X11/xfig/Libraries/UML/State_Large.fig
 lib/X11/xfig/Libraries/UML/State_Medium.fig
@@ -591,7 +1025,6 @@ lib/X11/xfig/html/images/edit-button.gif
 lib/X11/xfig/html/images/edit-figure-comments.gif
 lib/X11/xfig/html/images/edit-menu-button.gif
 lib/X11/xfig/html/images/edit-panel-picture.gif
-lib/X11/xfig/html/images/edit-panel-picture.large.gif
 lib/X11/xfig/html/images/edit-panel-polyline.gif
 lib/X11/xfig/html/images/edit-panel-text.gif
 lib/X11/xfig/html/images/edit-point-panel.gif
@@ -615,7 +1048,6 @@ lib/X11/xfig/html/images/font-menu-korean.gif
 lib/X11/xfig/html/images/frame_background.gif
 lib/X11/xfig/html/images/global-settings.gif
 lib/X11/xfig/html/images/glue-compound-button.gif
-lib/X11/xfig/html/images/goldline.gif
 lib/X11/xfig/html/images/greenball.gif
 lib/X11/xfig/html/images/greenpig.gif
 lib/X11/xfig/html/images/greenpig_sm.gif
@@ -787,24 +1219,36 @@ man/cat1/xfig.0
 @dirrm lib/X11/xfig/Libraries/Structural_Analysis/CoordSystems
 @dirrm lib/X11/xfig/Libraries/Structural_Analysis/Beams
 @dirrm lib/X11/xfig/Libraries/Structural_Analysis
+@dirrm lib/X11/xfig/Libraries/ProcessFlowsheet
 @dirrm lib/X11/xfig/Libraries/Optics/Mirror
 @dirrm lib/X11/xfig/Libraries/Optics/Lens
 @dirrm lib/X11/xfig/Libraries/Optics/Fiber
 @dirrm lib/X11/xfig/Libraries/Optics
 @dirrm lib/X11/xfig/Libraries/Networks
 @dirrm lib/X11/xfig/Libraries/Music
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Sack
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit/Durch
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Seit
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Schraube/Aufsicht
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Schraube
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Rahmen
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Oberflaeche
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Senk
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Loch/Durch
-@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Loch
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/SurfaceQuality
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Top
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Through
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side/Blind
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Screws/Side
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Screws
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Through
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Holes/Countersunk
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Holes
+@dirrm lib/X11/xfig/Libraries/Mechanical_DIN/DrawingSheets
 @dirrm lib/X11/xfig/Libraries/Mechanical_DIN
+@dirrm lib/X11/xfig/Libraries/Maps/USA
+@dirrm lib/X11/xfig/Libraries/Maps/SouthAmerica
+@dirrm lib/X11/xfig/Libraries/Maps/MiddleEast
+@dirrm lib/X11/xfig/Libraries/Maps/Mexico
+@dirrm lib/X11/xfig/Libraries/Maps/Europe
+@dirrm lib/X11/xfig/Libraries/Maps/CentralAmerica
+@dirrm lib/X11/xfig/Libraries/Maps/Canada
+@dirrm lib/X11/xfig/Libraries/Maps/Asia
+@dirrm lib/X11/xfig/Libraries/Maps/Africa
+@dirrm lib/X11/xfig/Libraries/Maps
 @dirrm lib/X11/xfig/Libraries/Logic
+@dirrm lib/X11/xfig/Libraries/Labels
 @dirrm lib/X11/xfig/Libraries/Knitting/Symbols
 @dirrm lib/X11/xfig/Libraries/Knitting/Grids
 @dirrm lib/X11/xfig/Libraries/Knitting/Estonian
@@ -812,6 +1256,8 @@ man/cat1/xfig.0
 @dirrm lib/X11/xfig/Libraries/Knitting/Cables
 @dirrm lib/X11/xfig/Libraries/Knitting
 @dirrm lib/X11/xfig/Libraries/Hospital
+@dirrm lib/X11/xfig/Libraries/GUI
+@dirrm lib/X11/xfig/Libraries/Furniture
 @dirrm lib/X11/xfig/Libraries/Flowchart
 @dirrm lib/X11/xfig/Libraries/Flags
 @dirrm lib/X11/xfig/Libraries/Electrical/Schematic
@@ -821,4 +1267,3 @@ man/cat1/xfig.0
 @dirrm lib/X11/xfig/Libraries/Computers
 @dirrm lib/X11/xfig/Libraries/Buildings
 @dirrm lib/X11/xfig/Libraries
-@dirrm lib/X11/xfig
