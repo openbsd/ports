@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2002/04/07 01:54:49 naddy Exp $
 bin/bnbot
 bin/bnchat
 bin/bnftp

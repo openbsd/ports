@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:49 naddy Exp $
 bin/adom
 share/doc/adom/adomfaq.txt
 share/doc/adom/manual.doc

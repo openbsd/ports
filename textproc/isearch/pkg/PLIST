@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:53 naddy Exp $
 bin/Iindex
 bin/Isearch
 bin/Iutil

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:50 naddy Exp $
 bin/xanim
 man/cat1/xanim.0
 share/doc/xanim/Audio_Checklist.doc

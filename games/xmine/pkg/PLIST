@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:49 naddy Exp $
 bin/xmine
 lib/X11/app-defaults/Xmine
 man/cat6/xmine.0

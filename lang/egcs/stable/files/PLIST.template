@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST.template,v 1.8 2002/04/07 01:54:50 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/egcc.info
 bin/egcc

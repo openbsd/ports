@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:52 naddy Exp $
 bin/psbook
 bin/psselect
 bin/pstops

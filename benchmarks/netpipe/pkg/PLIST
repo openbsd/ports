@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:47 naddy Exp $
 bin/NPtcp
 bin/netpipe
 man/man1/netpipe.1

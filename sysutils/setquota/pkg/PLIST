@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:53 naddy Exp $
 man/man8/getquota.0
 man/man8/setquota.0
 sbin/getquota

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:50 naddy Exp $
 lib/X11/app-defaults/KTerm
 man/cat1/kterm.0
 @mode u+s

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:52 naddy Exp $
 cops/extra_src/uucp_1.shar
 cops/extra_src/mail.chk
 cops/extra_src/trust.pl

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:52 naddy Exp $
 bin/tcptrace
 man/man1/tcptrace.1
 share/doc/tcptrace/ARGS

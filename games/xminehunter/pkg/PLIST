@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:49 naddy Exp $
 bin/xminehunter
 @exec mkdir %D/lib/X11/xminehunter
 @exec chmod  666 %D/lib/X11/xminehunter

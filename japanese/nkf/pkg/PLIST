@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:50 naddy Exp $
 bin/nkf
 man/man1/nkf.1
 man/ja_JP.EUC/cat1/nkf.0

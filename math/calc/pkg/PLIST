@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:51 naddy Exp $
 bin/calc
 bin/cscript/mersenne
 bin/cscript/piforever

@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:51 naddy Exp $
 sbin/firewalk
 man/man1/firewalk.1

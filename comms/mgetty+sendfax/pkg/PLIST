@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:48 naddy Exp $
 bin/newslock
 bin/pbm2g3
 bin/g3cat

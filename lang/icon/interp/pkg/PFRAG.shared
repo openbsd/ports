@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/07 01:54:50 naddy Exp $
 share/ipl/ucode/cfunc.u1
 share/ipl/ucode/cfunc.u2
 lib/libcfunc.so

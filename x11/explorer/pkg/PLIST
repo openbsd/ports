@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:53 naddy Exp $
 lib/X11/explorer/icons/about.bmp
 lib/X11/explorer/icons/expl_01.bmp
 lib/X11/explorer/icons/expl_02.bmp

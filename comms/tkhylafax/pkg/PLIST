@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:48 naddy Exp $
 bin/tkhylafax
 lib/tkhylafax-3.0/entryDialog.t
 lib/tkhylafax-3.0/extract.t

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:54 naddy Exp $
 bin/xcolors
 lib/X11/app-defaults/Xcolors
 man/cat1/xcolors.0

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:53 naddy Exp $
 lib/apc-upsd/apc-upsd.conf
 sbin/apc-upsd
 share/doc/apc-upsd/smart-protocol

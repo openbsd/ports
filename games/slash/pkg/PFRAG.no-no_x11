@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2002/04/07 01:54:49 naddy Exp $
 lib/X11/app-defaults/Slash
 lib/slashdir/pet_mark.xbm
 lib/slashdir/x11tiles

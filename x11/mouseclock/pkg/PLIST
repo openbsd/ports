@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:54 naddy Exp $
 bin/mouseclock
 share/doc/mouseclock/README
 @dirrm share/doc/mouseclock

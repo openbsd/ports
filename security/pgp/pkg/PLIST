@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:53 naddy Exp $
 @option no-default-conflict
 @pkgcfl pgp-2.*
 bin/pgp

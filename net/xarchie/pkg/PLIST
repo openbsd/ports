@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:52 naddy Exp $
 bin/xarchie
 lib/X11/app-defaults/Xarchie
 man/cat1/xarchie.0

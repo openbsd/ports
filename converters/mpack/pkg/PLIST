@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:48 naddy Exp $
 bin/mpack
 bin/munpack
 man/man1/mpack.1
