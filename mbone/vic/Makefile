@@ -3,14 +3,14 @@
 # Date created:		July 14 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/15 14:02:44 angelos Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/07/15 14:02:44 angelos Exp $
+# $Id: Makefile,v 1.2 1999/07/15 16:04:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/07/15 16:04:28 angelos Exp $
 #
 
-DISTNAME=	vic-2.8
+DISTNAME=	vic
 CATEGORIES=	mbone tk80
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
-DISTFILES=	vicsrc-2.8.tar.gz
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
+DISTFILES=	vic-2.8ucl4.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
