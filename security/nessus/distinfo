@@ -10,3 +10,7 @@ SHA1 (nessus/libnasl-2.2.2a.tar.gz) = 8e4ba1d57f9c00a29e6dde47a4ee68fdcfa4f4a5
 SHA1 (nessus/nessus-core-2.2.2a.tar.gz) = 704fca39d9c5f67d844b73fc5d7f1bf5ab4137f9
 SHA1 (nessus/nessus-libraries-2.2.2a.tar.gz) = 761920d04547e870d0eaaa453331a2ab2b1c2953
 SHA1 (nessus/nessus-plugins-2.2.2a.tar.gz) = ef2884c2f6d03c02b18d00fe987e7d9719251ae2
+SIZE (nessus/libnasl-2.2.2a.tar.gz) = 366669
+SIZE (nessus/nessus-core-2.2.2a.tar.gz) = 676390
+SIZE (nessus/nessus-libraries-2.2.2a.tar.gz) = 423965
+SIZE (nessus/nessus-plugins-2.2.2a.tar.gz) = 2758380
