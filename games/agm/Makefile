@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:07 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/01/14 01:44:39 angelos Exp $
 #
 
-DISTNAME=		agm-1.1
+DISTNAME=		agm-1.3.1
 CATEGORIES=		games
 
 #BROKEN=		"newer version available"
@@ -11,8 +11,6 @@ MAINTAINER=		angelos@openbsd.org
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/amusements
-
-WRKSRC=			${WRKDIR}
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/agm ${PREFIX}/bin
