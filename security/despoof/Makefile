@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/05 23:25:06 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 04:02:35 brad Exp $
 
 DISTNAME=	despoof-0.9
 CATEGORIES=	security
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet
+LIB_DEPENDS=	net::net/libnet
 
 MAKE_FLAGS+=	CC='${CC}' CFLAGS='${CFLAGS}' \
 		DEFS='-I${LOCALBASE}/include `libnet-config --defines`' \
