@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/07 14:39:59 reinhard Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/20 15:43:07 reinhard Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
-DISTNAME=	irssi-0.7.98.2
+DISTNAME=	irssi-0.7.98.3
 CATEGORIES=	net
-NEED_VERSION=	1.358
+NEED_VERSION=	1.401
 MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://nl.irssi.org/files/ \
 		http://fi.irssi.org/files/ \
@@ -28,7 +28,7 @@ SEPARATE_BUILD=		Concurrent
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc
-CONFIGURE_ARGS+=	--enable-ipv6 
+CONFIGURE_ARGS+=	--enable-ipv6 --with-bot
 CONFIGURE_ARGS+=	--with-proxy --with-socks 
 CONFIGURE_ARGS+=	--with-textui --enable-curses-windows
 CONFIGURE_ARGS+=	--enable-perl=no
@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=	--with-included-gettext
 .endif
 
 SAMPLE=		config default.theme colorless.theme
+
+pre-configure:
+	@perl -pi -e 's,-lcrypt,-crypt,g' ${WRKSRC}/src/irc/bot/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi
