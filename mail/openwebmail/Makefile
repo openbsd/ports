@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/01/27 06:01:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2005/02/05 02:50:26 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	::textproc/ispell \
 		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI \
 		:p5-Compress-Zlib->=1.22:archivers/p5-Compress-Zlib \
 		:p5-Quota->=1.4.6:sysutils/p5-Quota \
+		:p5-Authen-SASL->=2.08:security/p5-Authen-SASL \
 		:p5-IO-Socket-SSL->=0.96:security/p5-IO-Socket-SSL
 
 NO_BUILD=	Yes
