@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 20:49:00 espie Exp $
---- include/unixconf.h.orig	Sat Dec 11 06:20:51 1999
-+++ include/unixconf.h	Fri Apr 14 14:13:19 2000
+$OpenBSD: patch-include_unixconf_h,v 1.2 2001/03/23 16:11:11 espie Exp $
+--- include/unixconf.h.orig	Mon Jul 17 03:03:51 2000
++++ include/unixconf.h	Fri Mar 23 03:04:26 2001
 @@ -19,7 +19,12 @@
   */
  
@@ -24,15 +24,15 @@ $OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  			/* including Solaris 2+ */
  #define NETWORK		/* if running on a networked system */
  			/* e.g. Suns sharing a playground through NFS */
-@@ -45,6 +50,7 @@
- /* #define AIX_31 */	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
+@@ -47,6 +52,7 @@
  			 * job control (note that AIX is SYSV otherwise)
  			 * Also define this for AIX 3.2 */
+ 
 +#define TERMLIB
  #define TERMINFO	/* uses terminfo rather than termcap */
  			/* Should be defined for most SYSV, SVR4 (including
  			 * Solaris 2+), HPUX, and Linux systems.  In
-@@ -124,7 +130,7 @@
+@@ -132,7 +138,7 @@
   * "extra output" method is used, but not all systems provide access to
   * a fine-grained timer.
   */
@@ -41,7 +41,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  #endif
  
  /*
-@@ -135,7 +141,7 @@
+@@ -143,7 +149,7 @@
   * A stat system call is done on the mailbox every MAILCKFREQ moves.
   */
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  
  /* The Andrew Message System does mail a little differently from normal
   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
-@@ -296,7 +302,7 @@
+@@ -304,7 +310,7 @@
  #endif
  
  #ifdef TIMED_DELAY

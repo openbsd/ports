@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_config_h,v 1.1 2000/04/16 20:49:00 espie Exp $
---- include/config.h.orig	Sat Dec 11 06:20:49 1999
-+++ include/config.h	Fri Apr 14 14:13:19 2000
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-include_config_h,v 1.2 2001/03/23 16:11:11 espie Exp $
+--- include/config.h.orig	Sat Jul 22 03:13:51 2000
++++ include/config.h	Fri Mar 23 03:03:25 2001
+@@ -110,7 +110,7 @@
   * would allow:
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
   */
@@ -10,7 +10,7 @@ $OpenBSD: patch-include_config_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  # ifdef USE_XPM
  #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
  # endif
-@@ -106,6 +106,7 @@
+@@ -124,6 +124,7 @@
   *		LOGFILE and NEWS refer to files in the playground.
   */
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-include_config_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  #ifndef WIZARD		/* allow for compile-time or Makefile changes */
  # ifndef KR1ED
  #  define WIZARD  "wizard" /* the person allowed to use the -D option */
-@@ -133,11 +134,13 @@
+@@ -151,11 +152,13 @@
  
  #ifdef UNIX
  /* path and file name extension for compression program */
@@ -34,7 +34,7 @@ $OpenBSD: patch-include_config_h,v 1.1 2000/04/16 20:49:00 espie Exp $
  #endif
  
  #ifndef COMPRESS
-@@ -264,7 +267,7 @@ typedef unsigned char	uchar;
+@@ -282,7 +285,7 @@ typedef unsigned char	uchar;
   * functions that have been macroized.
   */
  

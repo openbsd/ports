@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1 2000/04/16 20:49:00 espie Exp $
---- sys/unix/Makefile.src.orig	Sat Dec 11 06:21:05 1999
-+++ sys/unix/Makefile.src	Fri Apr 14 14:13:19 2000
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2001/03/23 16:11:11 espie Exp $
+--- sys/unix/Makefile.src.orig	Sat Aug  5 12:52:57 2000
++++ sys/unix/Makefile.src	Fri Mar 23 03:06:08 2001
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
@@ -9,31 +9,26 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1 2000/04/16 20:49:00 espie Exp $
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
  # recursive make calls if $(MAKE) is used
  # these makes allow $(MAKE) to be overridden by the environment if someone
-@@ -132,11 +133,10 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
+@@ -144,8 +145,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/
  # flags for debugging:
  # CFLAGS = -g -I../include
  
 -CFLAGS = -O -I../include
--LFLAGS = 
+-LFLAGS =
 +CFLAGS += -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H -I../include 
  
- # Only used for Qt interface (other interfaces are standard C)
--CXXFLAGS = -g $(CFLAGS) -I. -I$(QTDIR)/include
-+CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
- # Qt is C++, so define the compiler and linker thus required:
- #CXX=g++
- #LD=g++
-@@ -165,9 +165,6 @@ WINQTOBJ = qt_win.o qt_clust.o tile.o
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LD line here to get
+@@ -203,8 +203,6 @@ WINBEOBJ =
  
  #
- # 
+ #
 -WINSRC = $(WINTTYSRC)
 -WINOBJ = $(WINTTYOBJ)
--
+ 
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
- # Sysatt uses shared library in lieu of this option
-@@ -186,7 +183,7 @@ WINTTYLIB = -ltermlib
+@@ -224,7 +222,7 @@ WINTTYLIB = -ltermlib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -42,25 +37,12 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1 2000/04/16 20:49:00 espie Exp $
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -199,8 +196,6 @@ WINKDELIB = -lkdecore -lkdeui -lXext
+@@ -243,8 +241,6 @@ WINGEMLIB = -le_gem -lgem
  #
- #
- 
--WINLIB = $(WINTTYLIB)
+ # libraries for BeOS 
+ WINBELIB = -lbe
 -
+-WINLIB = $(WINTTYLIB)
+ 
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
- #
-@@ -394,10 +389,10 @@ objects.o:
- 
- # Qt windowport meta-object-compiler output
- qt_kde0.moc: ../include/qt_kde0.h
--	moc $< >$@
-+	moc $> >$@
- 
- qt_win.moc: ../include/qt_win.h
--	moc $< >$@
-+	moc $> >$@
- 
- $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
- 		../include/objclass.h ../include/monsym.h \

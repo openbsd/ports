@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_unix_Makefile_top,v 1.1 2000/04/16 20:49:00 espie Exp $
---- sys/unix/Makefile.top.orig	Sat Dec 11 06:21:05 1999
-+++ sys/unix/Makefile.top	Fri Apr 14 14:13:19 2000
-@@ -13,18 +13,19 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.2 2001/03/23 16:11:11 espie Exp $
+--- sys/unix/Makefile.top.orig	Tue Jul  4 02:42:05 2000
++++ sys/unix/Makefile.top	Fri Mar 23 03:09:00 2001
+@@ -13,19 +13,19 @@
  # execute things like 'data' and 'rumors')
  # MAKE = make
  
@@ -10,6 +10,7 @@ $OpenBSD: patch-sys_unix_Makefile_top,v 1.1 2000/04/16 20:49:00 espie Exp $
  # make NetHack
 -PREFIX	 = /usr
  GAME     = nethack
+-# GAME     = nethack.prg
 -GAMEUID  = games
 -GAMEGRP  = bin
 +GAMEUID  = bin
@@ -26,24 +27,25 @@ $OpenBSD: patch-sys_unix_Makefile_top,v 1.1 2000/04/16 20:49:00 espie Exp $
 +DIRPERM  = 0775
  
  # GAMEDIR also appears in config.h as "HACKDIR".
- #
-@@ -33,11 +34,12 @@ DIRPERM  = 0755
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -35,12 +35,13 @@ DIRPERM  = 0755
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
++REALGAMEDIR  = $(PREFIX)/lib/$(GAME)dir
++GAMEDIR  = $(DESTDIR)${REALGAMEDIR}
+ VARDIR  = $(GAMEDIR)
 -SHELLDIR = $(PREFIX)/games
-+REALGAMEDIR = ${PREFIX}/lib/$(GAME)dir
-+GAMEDIR = ${DESTDIR}${REALGAMEDIR}
-+SHELLDIR = $(DESTDIR)$(PREFIX)/bin
++SHELLDIR = ${DESTDIR}$(PREFIX)/bin
  
  # per discussion in Install.X11 and Install.Qt
 -VARDATND = 
 +# VARDATND = 
  # VARDATND = x11tiles pet_mark.xbm
  # VARDATND = x11tiles pet_mark.xbm rip.xpm
- 
-@@ -139,7 +141,7 @@ dofiles:
+ # for Atari/Gem
+@@ -167,7 +168,7 @@ dofiles:
  	$(MAKE) dofiles-$${target-nodlb}
  	cp src/$(GAME) $(GAMEDIR)
  	-rm -f $(SHELLDIR)/$(GAME)
