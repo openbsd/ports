@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/19 21:39:09 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/12/22 00:20:32 jakob Exp $
 bin/xml2rfc
+share/doc/xml2rfc/README.html
 share/doc/xml2rfc/README.txt
 share/doc/xml2rfc/README.xml
-share/doc/xml2rfc/rfc2629-author.html
-share/doc/xml2rfc/rfc2629-author.txt
-share/doc/xml2rfc/rfc2629-author.xml
-share/doc/xml2rfc/rfc2629-bis.html
-share/doc/xml2rfc/rfc2629-bis.txt
-share/doc/xml2rfc/rfc2629-bis.xml
+share/doc/xml2rfc/draft-mrose-writing-rfcs.html
+share/doc/xml2rfc/draft-mrose-writing-rfcs.txt
+share/doc/xml2rfc/draft-mrose-writing-rfcs.xml
+share/doc/xml2rfc/front.WRITING-RFCS.xml
+share/doc/xml2rfc/reference.WRITING-RFCS.xml
+share/doc/xml2rfc/rfc2629-bis.dtd
 share/doc/xml2rfc/rfc2629.dtd
+share/doc/xml2rfc/rfc2629.html
 share/doc/xml2rfc/rfc2629.txt
+share/doc/xml2rfc/rfc2629.xml
+share/doc/xml2rfc/rfc2629.xslt
 share/xml2rfc/xml2rfc.tcl
 @dirrm share/xml2rfc
 @dirrm share/doc/xml2rfc
