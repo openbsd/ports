@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/28 06:24:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/29 02:44:52 kevlo Exp $
 
 DISTNAME=	swing1_1_1
 PKGNAME=	jfc-1.1.1
@@ -28,9 +28,15 @@ FAKE=		Yes
 
 WRKSRC=		${WRKDIR}/swing-1.1.1fcs
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='You must manually fetch the standard zip format distribution from http://www.javasoft.com/products/jfc/download.html and place it in ${DISTDIR} then run make again.'
-.endif
+do-fetch:
+	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
+	   echo "" ; \
+	   echo " You must manually fetch the standard zip format distribution" ; \
+           echo " from http:///www.javasoft.com/products/jfc/download.html" ; \
+           echo " and place it in ${DISTDIR} then run make again." ; \
+	   echo "" ; \
+           exit 1 ; \
+	fi
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/swing1_1_1
