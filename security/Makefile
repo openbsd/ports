@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2001/09/28 21:46:24 jcs Exp $
+# $OpenBSD: Makefile,v 1.87 2001/10/03 03:49:04 obecian Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += heimdal
      SUBDIR += heimdal,no_x11
      SUBDIR += hlfl
+     SUBDIR += hydra
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
