@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2004/07/16 21:06:02 todd Exp $
+# $OpenBSD: Makefile,v 1.194 2004/07/28 04:54:59 marcm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -69,6 +69,7 @@
      SUBDIR += gtk-thinice-engine
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
+     SUBDIR += gtksourceview
      SUBDIR += gtop
 #    SUBDIR += gwm
      SUBDIR += hicolor-icon-theme
