@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/23 07:32:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/23 10:02:00 jakob Exp $
 
 DISTNAME=	cyrus-sasl-1.5.24
 CATEGORIES=     security
@@ -20,6 +20,7 @@ CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/sasl \
 			--enable-krb4=/usr \
 			--enable-static \
 			--enable-shared \
+			--enable-login \
 			--with-pwcheck=/var/pwcheck
 SEPARATE_BUILD=		concurrent
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/08/23 07:32:04 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/08/23 10:02:00 jakob Exp $
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -20,6 +20,9 @@ lib/sasl/libdigestmd5.so.0.17
 lib/sasl/libkerberos4.a
 lib/sasl/libkerberos4.la
 lib/sasl/libkerberos4.so.1.15
+lib/sasl/liblogin.a
+lib/sasl/liblogin.la
+lib/sasl/liblogin.so.0.5
 lib/sasl/libplain.a
 lib/sasl/libplain.la
 lib/sasl/libplain.so.1.14
