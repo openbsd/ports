@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/02/10 14:59:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2003/06/21 08:15:52 pvalchev Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
-VERSION=	1.0.14
+VERSION=	1.1.4
 DISTNAME=	psycopg-${VERSION}
 PKGNAME=	py-psycopg-${VERSION}
 CATEGORIES=	databases
