@@ -1,6 +1,17 @@
-$OpenBSD: patch-src_icq_response_c,v 1.1 2001/05/26 05:13:47 form Exp $
---- src/icq_response.c.orig	Sat May 26 11:20:57 2001
-+++ src/icq_response.c	Sat May 26 11:21:14 2001
+$OpenBSD: patch-src_icq_response_c,v 1.2 2001/05/28 06:15:50 form Exp $
+--- src/icq_response.c.orig	Thu Apr 19 05:38:54 2001
++++ src/icq_response.c	Mon May 28 13:12:51 2001
+@@ -278,8 +278,8 @@ void Meta_User (SOK_T sok, UBYTE * data,
+             newline = "";
+             if ((*(data + 1) > 0) && (*(data + 1) <= 12))
+             {
+-                M_print ("%s%02d.%s. %4d \t", i18n (532, "Born         : "),
+-                         *(data + 2), i18n (-1, TableGetMonth (*(data + 1))), *(data) + 1900);
++                M_print ("%s%02d.%s.%4d \t", i18n (532, "Born         : "),
++                         *(data + 2), TableGetMonth (*(data + 1)), *(data) + 1900);
+                 newline = "\n";
+             }
+             data += 3;
 @@ -509,7 +509,7 @@ void User_Offline (int sok, UBYTE * pak)
      Time_Stamp ();
      M_print (" ");
