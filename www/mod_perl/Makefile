@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/06 07:52:45 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/23 23:43:36 brad Exp $
 
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
 DISTNAME=	mod_perl-1.24
 CATEGORIES=	www perl5
-NEED_VERSION=	1.324
+NEED_VERSION=	1.337
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
@@ -18,22 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-INSTALL_TARGET=	pure_install doc_install
+CONFIGURE_STYLE= perl
+CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs"
 
-do-configure:
-	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	/usr/bin/perl Makefile.PL \
-	USE_APXS=1 EVERYTHING=1 WITH_APXS=/usr/sbin/apxs \
-	PREFIX='$${DESTDIR}${PREFIX}' \
-	INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
-	INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
-	INSTALLPRIVLIB='$${DESTDIR}/usr/libdata/perl5' \
-	INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
-	INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
-	INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
-	INSTALLBIN='$${PREFIX}/bin' \
-	INSTALLSCRIPT='$${INSTALLBIN}'
+INSTALL_TARGET=	pure_install doc_install
 
 post-build:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
