@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/21 19:04:56 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.12 2001/02/28 04:55:03 avsm Exp $ 
 
-DISTNAME=	courier-imap-1.3.4
+DISTNAME=	courier-imap-1.3.5
 CATEGORIES=	mail
 NEED_VERSION=	1.351
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
@@ -24,10 +24,14 @@ SUBST_VARS=	COURIERCONF
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 
 CONFIGURE_STYLE= gnu old
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
-		--with-userdb=/etc/userdb --with-authuserdb \
+		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
 		--without-authmysql --without-authldap \
-		--sysconfdir=${COURIERCONF}
+		--sysconfdir=${COURIERCONF} \
+		--enable-workarounds-for-imap-client-bugs
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
