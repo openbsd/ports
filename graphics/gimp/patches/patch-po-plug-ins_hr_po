@@ -1,0 +1,12 @@
+$OpenBSD: patch-po-plug-ins_hr_po,v 1.1 2001/05/21 18:07:50 brad Exp $
+--- po-plug-ins/hr.po.orig	Tue May 15 00:14:09 2001
++++ po-plug-ins/hr.po	Tue May 15 00:14:17 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: ®eljan Rikalo <zeljko@linuxfreak.com>\n"
+ "Language-Team: Croatian <lokalizacija@linux.hr>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso8859-2\n"
++"Content-Type: text/plain; charset=iso-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: plug-ins/FractalExplorer/Dialogs.c:282
