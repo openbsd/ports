@@ -1,0 +1,147 @@
+$OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
+--- src/SciTEBase.cxx.orig	2003-08-14 01:31:52.000000000 +1000
++++ src/SciTEBase.cxx	2003-08-14 01:31:52.000000000 +1000
+@@ -1874,7 +1874,7 @@ bool SciTEBase::StartInsertAbbreviation(
+ 	}
+ 
+ 	char *expbuf = new char[dataLength + 1];
+-	strcpy(expbuf, data.c_str());
++	strlcpy(expbuf, data.c_str(), dataLength + 1);
+ 	UnSlash(expbuf);
+ 	size_t expbuflen = strlen(expbuf);
+ 	int caret_pos = SendEditor(SCI_GETSELECTIONEND);
+@@ -1966,7 +1966,7 @@ bool SciTEBase::StartExpandAbbreviation(
+ 	}
+ 
+ 	char *expbuf = new char[dataLength + 1];
+-	strcpy(expbuf, data.c_str());
++	strlcpy(expbuf, data.c_str(), dataLength + 1);
+ 	UnSlash(expbuf);
+ 	size_t expbuflen = strlen(expbuf);
+ 	int caret_pos = -1; // caret position
+@@ -2361,17 +2361,17 @@ void SciTEBase::SetTextProperties(
+ 	int eolMode = SendEditor(SCI_GETEOLMODE);
+ 	ps.Set("EOLMode", eolMode == SC_EOL_CRLF ? "CR+LF" : (eolMode == SC_EOL_LF ? "LF" : "CR"));
+ 
+-	sprintf(temp, "%d", LengthDocument());
++	snprintf(temp, sizeof(temp), "%d", LengthDocument());
+ 	ps.Set("BufferLength", temp);
+ 
+ 	ps.SetInteger("NbOfLines", SendEditor(SCI_GETLINECOUNT));
+ 
+ 	CharacterRange crange = GetSelection();
+-	sprintf(temp, "%ld", crange.cpMax - crange.cpMin);
++	snprintf(temp, sizeof(temp), "%ld", crange.cpMax - crange.cpMin);
+ 	ps.Set("SelLength", temp);
+ 	int selFirstLine = SendEditor(SCI_LINEFROMPOSITION, crange.cpMin);
+ 	int selLastLine = SendEditor(SCI_LINEFROMPOSITION, crange.cpMax);
+-	sprintf(temp, "%d", selLastLine - selFirstLine + 1);
++	snprintf(temp, sizeof(temp), "%d", selLastLine - selFirstLine + 1);
+ 	ps.Set("SelHeight", temp);
+ }
+ 
+@@ -2389,7 +2389,7 @@ void SciTEBase::UpdateStatusBar(bool bUp
+ 		propsStatus.Set("OverType", SendEditor(SCI_GETOVERTYPE) ? "OVR" : "INS");
+ 
+ 		char sbKey[32];
+-		sprintf(sbKey, "statusbar.text.%d", sbNum);
++		snprintf(sbKey, sizeof(sbKey), "statusbar.text.%d", sbNum);
+ 		SString msg = propsStatus.GetExpanded(sbKey);
+ 		if (msg.size() && sbValue != msg) {	// To avoid flickering, update only if needed
+ 			SetStatusBarText(msg.c_str());
+@@ -3754,7 +3754,7 @@ void SciTEBase::Notify(SCNotification *n
+ 	case SCN_DWELLSTART: {
+ 			char message[200];
+ 			if (INVALID_POSITION == notification->position) {
+-				sprintf(message, "%0d (%0d,%0d)", notification->position, notification->x, notification->y);
++				snprintf(message, sizeof(message), "%0d (%0d,%0d)", notification->position, notification->x, notification->y);
+ 			} else {
+ 				int lengthDoc = SendEditor(SCI_GETLENGTH);
+ 				RangeExtendAndGrab(wEditor, message, sizeof(message),
+@@ -4040,11 +4040,11 @@ void SciTEBase::SendOneProperty(const ch
+ 	size_t keysize = strlen(kind) + 1 + strlen(key) + 1 + strlen(val) + 1;
+ 	char *m = new char[keysize];
+ 	if (m) {
+-		strcpy(m, kind);
+-		strcat(m, ":");
+-		strcat(m, key);
+-		strcat(m, "=");
+-		strcat(m, val);
++		strlcpy(m, kind, keysize);
++		strlcat(m, ":", keysize);
++		strlcat(m, key, keysize);
++		strlcat(m, "=", keysize);
++		strlcat(m, val, keysize);
+ 		extender->SendProperty(m);
+ 		delete []m;
+ 	}
+@@ -4082,12 +4082,14 @@ bool SciTEBase::RecordMacroCommand(SCNot
+ 		t = (char*)(notification->lParam);
+ 		if (t != NULL) {
+ 			//format : "<message>;<wParam>;1;<text>"
+-			szMessage = new char[50 + strlen(t) + 4];
+-			sprintf(szMessage, "%d;%ld;1;%s", notification->message, notification->wParam, t);
++			size_t szMessage_size = 50 + strlen(t) + 4;
++			szMessage = new char[szMessage_size];
++			snprintf(szMessage, szMessage_size, "%d;%ld;1;%s", notification->message, notification->wParam, t);
+ 		} else {
+ 			//format : "<message>;<wParam>;0;"
+-			szMessage = new char[50];
+-			sprintf(szMessage, "%d;%ld;0;", notification->message, notification->wParam);
++			size_t szMessage_size = 50;
++			szMessage = new char[szMessage_size];
++			snprintf(szMessage, szMessage_size, "%d;%ld;0;", notification->message, notification->wParam);
+ 		}
+ 		handled = extender->OnMacro("macro:record", szMessage);
+ 		delete []szMessage;
+@@ -4177,7 +4179,7 @@ void SciTEBase::ExecuteMacroCommand(cons
+ 	//extract message,wParam ,lParam
+ 
+ 	uptr_t message = ReadNum(nextarg);
+-	strncpy(params, nextarg, 3);
++	strlcpy(params, nextarg, sizeof(params));
+ 	nextarg += 4;
+ 	if (*(params + 1) == 'R') {
+ 		// in one function wParam is a string  : void SetProperty(string key,string name)
+@@ -4187,7 +4189,7 @@ void SciTEBase::ExecuteMacroCommand(cons
+ 		int lstring1 = nextarg - s1;
+ 		string1 = new char[lstring1 + 1];
+ 		if (lstring1 > 0)
+-			strncpy(string1, s1, lstring1);
++			strlcpy(string1, s1, lstring1+1);
+ 		*(string1 + lstring1) = '\0';
+ 		wParam = reinterpret_cast<uptr_t>(string1);
+ 		nextarg++;
+@@ -4234,15 +4236,16 @@ void SciTEBase::ExecuteMacroCommand(cons
+ 	}
+ 
+ 	size_t alen = strlen(answercmd);
+-	char *tbuff = new char[l + alen + 1];
+-	strcpy(tbuff, answercmd);
++	size_t tbuff_size = l + alen + 1;
++	char *tbuff = new char[tbuff_size];
++	strlcpy(tbuff, answercmd, tbuff_size);
+ 	if (*params == 'S')
+ 		lParam = reinterpret_cast<sptr_t>(tbuff + alen);
+ 
+ 	if (l > 0)
+ 		rep = SendEditor(message, wParam, lParam);
+ 	if (*params == 'I')
+-		sprintf(tbuff + alen, "%0d", rep);
++		snprintf(tbuff + alen, tbuff_size, "%0d", rep);
+ 	extender->OnMacro("macro", tbuff);
+ 	delete []tbuff;
+ }
+@@ -4361,9 +4364,10 @@ void SciTEBase::Trace(const char *s) {
+ 
+ char *SciTEBase::Property(const char *key) {
+ 	SString value = props.GetExpanded(key);
+-	char *retval = new char[value.length() + 1];
++	size_t retval_size = value.length() + 1;
++	char *retval = new char[retval_size];
+ 	if (retval)
+-		strcpy(retval, value.c_str());
++		strlcpy(retval, value.c_str(), retval_size);
+ 	return retval;
+ }
+ 

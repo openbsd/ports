@@ -1,0 +1,247 @@
+$OpenBSD: patch-src_SciTEBuffers_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
+--- src/SciTEBuffers.cxx.orig	2003-08-14 01:31:52.000000000 +1000
++++ src/SciTEBuffers.cxx	2003-08-14 01:31:52.000000000 +1000
+@@ -273,14 +273,14 @@ void SciTEBase::InitialiseBuffers() {
+ 	}
+ }
+ 
+-static void EnsureEndsWithPathSeparator(char *path) {
++static void EnsureEndsWithPathSeparator(char *path, size_t path_size) {
+ 	size_t pathLen = strlen(path);
+ 	if ((pathLen > 0) && path[pathLen - 1] != pathSepChar) {
+-		strcat(path, pathSepString);
++		strlcat(path, pathSepString, path_size);
+ 	}
+ }
+ 
+-static void RecentFilePath(char *path, const char *name) {
++static void RecentFilePath(char *path, size_t path_size, const char *name) {
+ 	char *where = getenv("SciTE_HOME");
+ 	if (!where)
+ 		where = getenv("HOME");
+@@ -296,16 +296,16 @@ static void RecentFilePath(char *path, c
+ #endif
+ 
+ 	} else {
+-		strcpy(path, where);
+-		EnsureEndsWithPathSeparator(path);
++		strlcpy(path, where, path_size);
++		EnsureEndsWithPathSeparator(path, path_size);
+ 	}
+-	strcat(path, configFileVisibilityString);
+-	strcat(path, name);
++	strlcat(path, configFileVisibilityString, path_size);
++	strlcat(path, name, path_size);
+ }
+ 
+ void SciTEBase::LoadRecentMenu() {
+ 	char recentPathName[MAX_PATH + 1];
+-	RecentFilePath(recentPathName, recentFileName);
++	RecentFilePath(recentPathName, sizeof(recentPathName), recentFileName);
+ 	FILE *recentFile = fopen(recentPathName, fileRead);
+ 	if (!recentFile) {
+ 		DeleteFileStackMenu();
+@@ -325,7 +325,7 @@ void SciTEBase::LoadRecentMenu() {
+ 
+ void SciTEBase::SaveRecentStack() {
+ 	char recentPathName[MAX_PATH + 1];
+-	RecentFilePath(recentPathName, recentFileName);
++	RecentFilePath(recentPathName, sizeof(recentPathName), recentFileName);
+ 	FILE *recentFile = fopen(recentPathName, fileWrite);
+ 	if (!recentFile)
+ 		return;
+@@ -346,9 +346,9 @@ void SciTEBase::SaveRecentStack() {
+ void SciTEBase::LoadSession(const char *sessionName) {
+ 	char sessionPathName[MAX_PATH + 1];
+ 	if (sessionName[0] == '\0') {
+-		RecentFilePath(sessionPathName, defaultSessionFileName);
++		RecentFilePath(sessionPathName, sizeof(sessionPathName), defaultSessionFileName);
+ 	} else {
+-		strcpy(sessionPathName, sessionName);
++		strlcpy(sessionPathName, sessionName, sizeof(sessionPathName));
+ 	}
+ 	FILE *sessionFile = fopen(sessionPathName, fileRead);
+ 	if (!sessionFile)
+@@ -379,9 +379,9 @@ void SciTEBase::LoadSession(const char *
+ void SciTEBase::SaveSession(const char *sessionName) {
+ 	char sessionPathName[MAX_PATH + 1];
+ 	if (sessionName[0] == '\0') {
+-		RecentFilePath(sessionPathName, defaultSessionFileName);
++		RecentFilePath(sessionPathName, sizeof(sessionPathName), defaultSessionFileName);
+ 	} else {
+-		strcpy(sessionPathName, sessionName);
++		strlcpy(sessionPathName, sessionName, sizeof(sessionPathName));
+ 	}
+ 	FILE *sessionFile = fopen(sessionPathName, fileWrite);
+ 	if (!sessionFile)
+@@ -615,15 +615,15 @@ void SciTEBase::BuffersMenu() {
+ #if PLAT_WIN
+ 
+ 			if (pos < 10) {
+-				sprintf(entry, "&%d ", (pos + 1) % 10 ); // hotkey 1..0
+-				sprintf(titleTab, "&%d ", (pos + 1) % 10); // add hotkey to the tabbar
++				snprintf(entry, sizeof(entry), "&%d ", (pos + 1) % 10 ); // hotkey 1..0
++				snprintf(titleTab, sizeof(entry), "&%d ", (pos + 1) % 10); // add hotkey to the tabbar
+ 			}
+ #endif
+ 
+ 			if (buffers.buffers[pos].IsUntitled()) {
+ 				SString untitled = LocaliseString("Untitled");
+-				strcat(entry, untitled.c_str());
+-				strcat(titleTab, untitled.c_str());
++				strlcat(entry, untitled.c_str(), sizeof(entry));
++				strlcat(titleTab, untitled.c_str(), sizeof(titleTab));
+ 			} else {
+ 				SString path = buffers.buffers[pos].FullPath();
+ #if PLAT_WIN
+@@ -635,13 +635,13 @@ void SciTEBase::BuffersMenu() {
+ 					amp += 2;
+ 				}
+ #endif
+-				strcat(entry, path.c_str());
++				strlcat(entry, path.c_str(), sizeof(entry));
+ 
+ 				char *cpDirEnd = strrchr(entry, pathSepChar);
+ 				if (cpDirEnd) {
+-					strcat(titleTab, cpDirEnd + 1);
++					strlcat(titleTab, cpDirEnd + 1, sizeof(titleTab));
+ 				} else {
+-					strcat(titleTab, entry);
++					strlcat(titleTab, entry, sizeof(titleTab));
+ 				}
+ 			}
+ 			// For short file names:
+@@ -649,8 +649,8 @@ void SciTEBase::BuffersMenu() {
+ 			//strcat(entry, cpDirEnd + 1);
+ 
+ 			if (buffers.buffers[pos].isDirty) {
+-				strcat(entry, " *");
+-				strcat(titleTab, " *");
++				strlcat(entry, " *", sizeof(entry));
++				strlcat(titleTab, " *", sizeof(titleTab));
+ 			}
+ 
+ 			SetMenuItem(menuBuffers, menuStart + pos + 1, itemID, entry);
+@@ -712,10 +712,10 @@ void SciTEBase::SetFileStackMenu() {
+ 				entry[0] = '\0';
+ #if PLAT_WIN
+ 
+-				sprintf(entry, "&%d ", (stackPos + 1) % 10);
++				snprintf(entry, sizeof(entry), "&%d ", (stackPos + 1) % 10);
+ #endif
+ 
+-				strcat(entry, recentFileStack[stackPos].FullPath());
++				strlcat(entry, recentFileStack[stackPos].FullPath(), sizeof(entry));
+ 				SetMenuItem(menuFile, MRU_START + stackPos + 1, itemID, entry);
+ 			}
+ 		}
+@@ -1015,8 +1015,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 			char *endPath = strchr(startPath, '\"');
+ 			int length = endPath - startPath;
+ 			if (length > 0) {
+-				strncpy(sourcePath, startPath, length);
+-				sourcePath[length] = 0;
++				strlcpy(sourcePath, startPath, length);
+ 			}
+ 			endPath++;
+ 			while (*endPath && !isdigit(*endPath)) {
+@@ -1036,8 +1035,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 					}
+ 					int sourceNumber = atoi(cdoc + j) - 1;
+ 					if (j > 0) {
+-						strncpy(sourcePath, cdoc, j - 1);
+-						sourcePath[j - 1] = 0;
++						strlcpy(sourcePath, cdoc, j - 1);
+ 					}
+ 					return sourceNumber;
+ 				}
+@@ -1049,8 +1047,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 			char *endPath = strchr(cdoc, '(');
+ 			int length = endPath - cdoc;
+ 			if ((length > 0) && (length < MAX_PATH)) {
+-				strncpy(sourcePath, cdoc, length);
+-				sourcePath[length] = 0;
++				strlcpy(sourcePath, cdoc, length);
+ 			}
+ 			endPath++;
+ 			return atoi(endPath) - 1;
+@@ -1071,8 +1068,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 				char *space2 = strchr(space, ' ');
+ 				if (space2) {
+ 					unsigned int length = space2 - space;
+-					strncpy(sourcePath, space, length);
+-					sourcePath[length] = '\0';
++					strlcpy(sourcePath, space, length);
+ 					return atoi(space2) - 1;
+ 				}
+ 			}
+@@ -1084,8 +1080,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 			char *line = strstr(cdoc, " line ");
+ 			int length = line - (at + 4);
+ 			if (at && line && length > 0) {
+-				strncpy(sourcePath, at + 4, length);
+-				sourcePath[length] = 0;
++				strlcpy(sourcePath, at + 4, length);
+ 				line += 6;
+ 				return atoi(line) - 1;
+ 			}
+@@ -1097,8 +1092,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 			char *line = strstr(cdoc, ":line ");
+ 			if (in && line && (line > in)) {
+ 				in += 4;
+-				strncpy(sourcePath, in, line - in);
+-				sourcePath[line - in] = 0;
++				strlcpy(sourcePath, in, line - in);
+ 				line += 6;
+ 				return atoi(line) - 1;
+ 			}
+@@ -1115,8 +1109,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 				char *quote = strstr(file, "'");
+ 				size_t length = quote - (file + lenFile + 1);
+ 				if (quote && length > 0) {
+-					strncpy(sourcePath, file + lenFile + 1, length);
+-					sourcePath[length] = '\0';
++					strlcpy(sourcePath, file + lenFile + 1, length);
+ 				}
+ 				line += lenLine;
+ 				return atoi(line) - 1;
+@@ -1140,8 +1133,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 					if (strchr("\t\n\r \"$%'*,;<>?[]^`{|}", cdoc[j])) {
+ 						j++;
+ 					}
+-					strncpy(sourcePath, &cdoc[j], i - j);
+-					sourcePath[i - j] = 0;
++					strlcpy(sourcePath, &cdoc[j], i - j);
+ 					// Because usually the address is a searchPattern, lineNumber has to be evaluated later
+ 					return 0;
+ 				}
+@@ -1158,8 +1150,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 			if (line && file && (line > file)) {
+ 				file += lenFile;
+ 				size_t length = line - file;
+-				strncpy(sourcePath, file, length);
+-				sourcePath[length] = '\0';
++				strlcpy(sourcePath, file, length);
+ 				line += lenLine;
+ 				return atoi(line) - 1;
+ 			}
+@@ -1182,8 +1173,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 						file++;
+ 					}
+ 					size_t length = strlen(file);
+-					strncpy(sourcePath, file, length);
+-					sourcePath[length] = '\0';
++					strlcpy(sourcePath, file, length);
+ 					return atoi(line)-1;
+ 				}
+ 			}
+@@ -1206,8 +1196,7 @@ int DecodeMessage(char *cdoc, char *sour
+ 				file++;
+ 				char *endfile = strchr(file, ')');
+ 				size_t length = endfile - file;
+-				strncpy(sourcePath, file, length);
+-				sourcePath[length] = '\0';
++				strlcpy(sourcePath, file, length);
+ 				line++;
+ 				return atoi(line) - 1;
+ 			}
