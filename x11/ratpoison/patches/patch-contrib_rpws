@@ -1,13 +1,13 @@
-$OpenBSD: patch-contrib_rpws,v 1.1 2004/09/28 14:28:55 jcs Exp $
+$OpenBSD: patch-contrib_rpws,v 1.2 2004/09/30 21:39:58 jcs Exp $
 --- contrib/rpws.orig	Sat Aug 23 02:01:51 2003
-+++ contrib/rpws	Mon Sep 27 20:17:37 2004
++++ contrib/rpws	Thu Sep 30 16:38:48 2004
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # Workspaces for ratpoison
  # Copyright (C) 2003 Shawn Betts
-@@ -22,9 +22,6 @@
+@@ -22,16 +22,13 @@
  # You want more workspaces? Edit this script.
  #
  
@@ -17,12 +17,20 @@ $OpenBSD: patch-contrib_rpws,v 1.1 2004/09/28 14:28:55 jcs Exp $
  #
  # Code:
  #
+ 
+ # This allows outside scripts to tell this script where to find
+ # ratpoison.
+-if [ -z $RATPOISON ]; then
++if [ -z "$RATPOISON" ]; then
+     RATPOISON=ratpoison
+ fi
+ 
 @@ -50,6 +47,9 @@
  {
      # Backup the frames
      FS=`rp_call fdump`
-+    if [ -z $FS ]; then
-+        exit;
++    if [ -z "$FS" ]; then
++        exit
 +    fi
      rp_call select -
      rp_call only
@@ -33,37 +41,41 @@ $OpenBSD: patch-contrib_rpws,v 1.1 2004/09/28 14:28:55 jcs Exp $
      rp_call gselect default
 -    rp_call setenv fs1 `rp_call fdump`
 +    FDUMP=`rp_call fdump`
-+    if [ -z $FDUMP ]; then
-+        exit;
++    if [ -z "$FDUMP" ]; then
++        exit
 +    fi
 +    rp_call setenv fs1 $FDUMP
      rp_call setenv ws 1
  
      # restore the frames
-@@ -74,7 +78,14 @@
+@@ -74,19 +78,31 @@
  ws_save ()
  {
      WS=`rp_call getenv ws`
 -    rp_call setenv fs$WS `rp_call fdump`
-+    if [ -z $WS ]; then
-+        exit;
++    if [ -z "$WS" ]; then
++        exit
 +    fi
 +    FDUMP=`rp_call fdump`
-+    if [ -z $FDUMP ]; then
-+        exit;
++    if [ -z "$FDUMP" ]; then
++        exit
 +    fi
 +    rp_call setenv fs$WS $FDUMP
  }
  
  ws_restore ()
-@@ -85,8 +96,13 @@
+ {
+     ws_save
+-    if [ $1 == 1 ]; then
++    if [ "X${1}" = X"1" ]; then
+ 	rp_call gselect default
      else
  	rp_call gselect ws$1
      fi
 +
 +    FS=`rp_call getenv fs$1`
-+    if [ -z $FS ]; then
-+	exit;
++    if [ -z "$FS" ]; then
++	exit
 +    fi
      rp_call echo Workspace $1
 -    rp_call frestore `rp_call getenv fs$1`
@@ -71,12 +83,24 @@ $OpenBSD: patch-contrib_rpws,v 1.1 2004/09/28 14:28:55 jcs Exp $
      rp_call setenv ws $1
  }
  
-@@ -101,8 +117,6 @@
-     rp_call bind M-6 exec $0 6
+@@ -102,17 +118,15 @@
      rp_call bind M-7 exec $0 7
  }
--
--echo boom >/tmp/boom
  
- if [ -z $@ ]; then
+-echo boom >/tmp/boom
+-
+-if [ -z $@ ]; then
++if [ -z "$@" ]; then
      echo "Usage:"
+     echo "$0 -i      -- initialize the workspaces"
+     echo "$0 -b      -- setup some key bindings"
+     echo "$0 <n>     -- Switch to workspace n"
+ else
+-    if [ $1 == -i ]; then
++    if [ "X${1}" = X"-i" ]; then
+ 	ws_init
+-    elif [ $1 == -b ]; then
++    elif [ "X$1" = X"-b" ]; then
+ 	ws_bindings
+     else
+ 	ws_restore $1
