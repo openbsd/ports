@@ -1,68 +1,99 @@
 
 -------------------------------------------------------------------------
 
-                           XKOBO Version 1.3
+                           XKOBO Version 1.11
 
-              Sun Jun 25 08:37:35 JST 1995   Akira Higuchi
+              Fri Jan 10 11:17:50 JST 1997   Akira Higuchi
                       a-higuti@math.hokudai.ac.jp
  
 -------------------------------------------------------------------------
 
- XKOBO is a game for X. The play is quite simple. Your object is to
- destroy all the fortresses. You can control your ship by pressing
- the cursor keys, and shot beams by pressing the SHIFT key or the 
- left mouse button.
+* DESCRIPTION
+       Xkobo  is  a  single player action game. The play is quite
+       simple. Your object is to destroy all the fortresses.  You
+       can control your ship by pressing the cursor keys (or mov-
+       ing the mouse cursor), and  shot  beams  by  pressing  the
+       SHIFT  key  (or  the  left  mouse button). The game can be
+       paused by pressing 's' (or the right mouse button).
 
- XKOBO requires:
- 
-   1) Unix (BSD, Linux, etc.)
-   2) X window system (256 colors or greater)
-   3) C++ compiler
+-------------------------------------------------------------------------
 
- This program has been tested on the following systems:
+* REQUIREMENT
+       Xkobo requires:
+         1) Unix (BSD, Linux, etc.)
+         2) X window system (256 colors or greater)
+         3) C++ compiler
 
-   *  Linux           + gcc
-   *  Sun-OS (4.1.4)  + gcc
-   *  BSD/OS          + gcc
+       Xkobo is known to compile and run under the following systems:
+         *  Linux
+         *  Sun-OS 4.1.4
+         *  BSD/OS
+         *  Solaris 2.4 (Sparc)
+         *  HP-UX 9.05
 
 -------------------------------------------------------------------------
 
 * INSTALLING
+       Edit Imakefile (if you need) and run
 
- Edit Imakefile and type
-
-     % xmkmf -a
-     % make
-     % su
-     # make install
-     # make install.man
-
--------------------------------------------------------------------------
-
-* PLAYING
-
- You can control your ship by pressing the cursor keys, and shot beams
- by pressing the SHIFT key or the left mouse button. The game can be 
- paused by pressing 's'. Pressing 'q' will cause xkobo to quit the game.
+           % xmkmf -a
+           % make
+           % su
+           # make install
+           # make install.man
 
 -------------------------------------------------------------------------
   
 * OPTIONS
+       -display displayname
+          This option specifies the name of the X server to  use.
 
-    -doublesize    The window of xkobo is enlarged. But memory usage
-                   is also enlarged.
+       -fit
+          This  option  causes xkobo to use the default colormap.
+          Without this option, xkobo uses a private colormap.
 
-    -memory        It causes xkobo to reduce memory usage, but slow
-                   down (a little). 
+       -wait value
+          This option specifies  the  speed  of  the  game.   The
+          default value is 30(msec).
 
-    -fit           Use the default colormap. Normally xkobo uses a
-                   private colormap. 
+       -doublesize
+          This option causes xkobo  to  enlarge  the  size  of  the
+          window. But it costs HUGE memory.
 
+       -fast
+          This option causes xkobo to use a faster algorithm.   But
+          it costs much memory.
+
+       -cheat
+          Cheat  mode. It allows any level to be played, does not
+          update score table.
+
+       -hiscores
+          Print the high score table to standard out, and exit.
+
+-------------------------------------------------------------------------
+
+* THANKS TO ...
+
+       Bruce Cheng 
+       Christoph Lameter 
+       Davide Rossi 
+       Eduard Martinescu
+       Elan Feingold 
+       Helmut Hoenig
+       Jeff Epler
+       Joe Ramey
+       Joey Hess
+       Michael Sterrett
+       Mihail Iotov 
+       Shoichi Nakayama
+       Thomas Marsh 
+       Torsten Wolnik
 
 =========================================================================
 
  XKOBO, a video-oriented game
- Copyright (C) 1995  Akira Higuchi
+ Copyright (C) 1995,1996  Akira Higuchi
      a-higuti@math.hokudai.ac.jp
 
  This program is free software; you can redistribute it and/or modify it

@@ -1,4 +1,7 @@
-bin/xkobo
 man/man1/xkobo.1
-@exec mkdir %D/lib/X11/xkobo-scores && chmod 575 %D/lib/X11/xkobo-scores
-@unexec rm -r %D/lib/X11/xkobo-scores
+@owner games
+@group games
+@mode 2755
+bin/xkobo
+@exec install -d -g games -m 575 /var/games/xkobo.scores 
+@unexec echo "remove /var/games/xkobo.scores manually"

@@ -1,44 +1,28 @@
-*** Imakefile.orig	Fri Jan 10 03:29:36 1997
---- Imakefile	Sun Jul 19 03:30:53 1998
-***************
-*** 6,12 ****
-  SHIPS       = 5
-  
-  /*  RECORDS  */
-! HSCORE_DIR  = /usr/local/games/xkobo-scores
-  
-  /*  C++ COMPILER  */
-  /*  CXX         = g++  */
---- 6,12 ----
-  SHIPS       = 5
-  
-  /*  RECORDS  */
-! HSCORE_DIR  = $(LIBDIR)/xkobo-scores
-  
-  /*  C++ COMPILER  */
-  /*  CXX         = g++  */
-***************
-*** 69,79 ****
-  
-  #ifdef SECURE_SCOREFILES
-  install::
-! 	if [ -d $(HSCORE_DIR) ]; then chmod 755 $(HSCORE_DIR); \
-! 	else mkdirhier $(HSCORE_DIR); chmod 755 $(HSCORE_DIR); fi
-! 	chown $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
-! 	chown -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
-! 	chmod 4755 $(BINDIR)/xkobo
-  #else /* SECURE_SCOREFILES */
-  install::
-  	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
---- 69,79 ----
-  
-  #ifdef SECURE_SCOREFILES
-  install::
-! 	if [ -d $(HSCORE_DIR) ]; then chmod 575 $(HSCORE_DIR); \
-! 	else mkdirhier $(HSCORE_DIR); chmod 575 $(HSCORE_DIR); fi
-! 	chgrp $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
-! 	chgrp -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
-! 	chmod 2755 $(BINDIR)/xkobo
-  #else /* SECURE_SCOREFILES */
-  install::
-  	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
+--- Imakefile.orig	Fri Jan 10 03:29:36 1997
++++ Imakefile	Tue Mar 23 13:48:15 1999
+@@ -6,7 +6,7 @@
+ SHIPS       = 5
+ 
+ /*  RECORDS  */
+-HSCORE_DIR  = /usr/local/games/xkobo-scores
++HSCORE_DIR  = /var/games/xkobo.scores
+ 
+ /*  C++ COMPILER  */
+ /*  CXX         = g++  */
+@@ -69,11 +69,11 @@
+ 
+ #ifdef SECURE_SCOREFILES
+ install::
+-	if [ -d $(HSCORE_DIR) ]; then chmod 755 $(HSCORE_DIR); \
+-	else mkdirhier $(HSCORE_DIR); chmod 755 $(HSCORE_DIR); fi
+-	chown $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
+-	chown -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
+-	chmod 4755 $(BINDIR)/xkobo
++	if [ -d $(HSCORE_DIR) ]; then chmod 575 $(HSCORE_DIR); \
++	else mkdirhier $(HSCORE_DIR); chmod 575 $(HSCORE_DIR); fi
++	chgrp $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
++	chgrp -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
++	chmod 2755 $(BINDIR)/xkobo
+ #else /* SECURE_SCOREFILES */
+ install::
+ 	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
