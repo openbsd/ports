@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/27 01:34:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/28 00:48:38 brad Exp $
 
 COMMENT=	"graphical disk usage utility"
 
 DISTNAME=	kdirstat-2.2.0
 CATEGORIES=	x11
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://kdirstat.sourceforge.net/
 
@@ -40,6 +39,5 @@ CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include"
 CONFIGURE_ARGS+= --with-xinerama
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" KDEDIR="${LOCALBASE}"
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/admin
 
 .include <bsd.port.mk>
