@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/15 20:19:32 brad Exp $
-@pkgcfl maradns-1.0.*
+@comment $OpenBSD: PLIST,v 1.2 2003/05/04 17:29:57 margarida Exp $
 bin/askmara
+bin/duende
 bin/getzone
 man/man1/askmara.1
 man/man1/getzone.1
 man/man5/csv1.5
 man/man5/mararc.5
+man/man8/duende.8
 man/man8/maradns.8
 man/man8/zoneserver.8
 sbin/maradns
@@ -28,6 +29,7 @@ share/doc/maradns-devel/files.txt
 share/doc/maradns-devel/logfile
 share/doc/maradns-devel/man/askmara.1
 share/doc/maradns-devel/man/csv1.5
+share/doc/maradns-devel/man/duende.8
 share/doc/maradns-devel/man/getzone.1
 share/doc/maradns-devel/man/make.postscript
 share/doc/maradns-devel/man/maradns.8
@@ -95,7 +97,6 @@ share/doc/maradns-devel/misc/man_macros/example_manpage.1
 share/doc/maradns-devel/misc/man_macros/man.macros
 share/doc/maradns-devel/misc/man_macros/man.macros.7
 share/doc/maradns-devel/misc/multiple.qdcount
-share/doc/maradns-devel/misc/old.changelog
 share/doc/maradns-devel/misc/private_rrs.abw
 share/doc/maradns-devel/misc/private_rrs.html
 share/doc/maradns-devel/misc/propagation.txt
@@ -127,6 +128,7 @@ share/doc/maradns-devel/source/credits.embed
 share/doc/maradns-devel/source/csv1.ej
 share/doc/maradns-devel/source/data_structures.ej
 share/doc/maradns-devel/source/download.ej
+share/doc/maradns-devel/source/duende.ej
 share/doc/maradns-devel/source/ej.doc.format
 share/doc/maradns-devel/source/ej.template
 share/doc/maradns-devel/source/example_auth_mararc
