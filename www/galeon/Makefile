@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/24 11:08:17 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=galeon/}
 MODULE=			iconv \
 	  		gettext
 BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
-			:mozilla-devel-${MOZ}:www/mozilla \
+			:mozilla-devel-${MOZ}:www/mozilla,-devel \
 			:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:mozilla-${MOZ}:www/mozilla
 LIB_DEPENDS=		audiofile::devel/libaudiofile \
