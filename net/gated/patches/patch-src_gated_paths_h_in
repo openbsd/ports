@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gated_paths_h_in,v 1.1 2003/04/26 15:02:31 sturm Exp $
+--- src/gated/paths.h.in.orig	Sat Apr 26 16:23:52 2003
++++ src/gated/paths.h.in	Sat Apr 26 16:24:03 2003
+@@ -35,7 +35,7 @@
+  * __END_OF_COPYRIGHT__
+  */
+ 
+-#define	_PATH_CONFIG	"/etc/%s.conf"
++#define	_PATH_CONFIG	"@sysconfdir@/%s.conf"
+ #define	_PATH_DEFS	"/usr/include/isode"
+ #define	_PATH_DUMP	"@DUMPDIR@/%s_dump"
+ #define	_PATH_DUMPDIR	"@DUMPDIR@"

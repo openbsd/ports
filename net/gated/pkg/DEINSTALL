@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: DEINSTALL,v 1.1 2000/08/15 17:12:37 jakob Exp $
+#	$OpenBSD: DEINSTALL,v 1.2 2003/04/26 15:02:31 sturm Exp $
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
@@ -10,7 +10,7 @@ if id gii >/dev/null 2>&1 ; then
 fi
 GII_LINE=`grep ^gii /etc/services`
 
-if [ -n "$GII_LINE" -o -f /etc/gated.conf -o "x$HAVE_USER" = "xYES" ]; then
+if [ -n "$GII_LINE" -o -f ${SYSCONFDIR}/gated.conf -o "x$HAVE_USER" = "xYES" ]; then
 
      echo
      echo "+---------------"
@@ -27,9 +27,9 @@ if [ -n "$GII_LINE" -o -f /etc/gated.conf -o "x$HAVE_USER" = "xYES" ]; then
           echo "| $GII_LINE"
           echo "|"
      fi
-     if [ -f /etc/gated.conf ]; then
+     if [ -f ${SYSCONFDIR}/gated.conf ]; then
           echo "| - remove gated configuration file"
-          echo "|		rm /etc/gated.conf"
+          echo "|		rm ${SYSCONFDIR}/gated.conf"
           echo "|"
      fi
      echo "| Do not do this if you plan on re-installing $1"
