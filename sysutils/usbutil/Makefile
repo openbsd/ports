@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:19 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/05 23:00:33 jakob Exp $
 
 DISTNAME=	usbutil-0.3
 CATEGORIES=	sysutils
@@ -7,7 +7,6 @@ MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/
 
 MAINTAINER=	jakob@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

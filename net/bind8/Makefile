@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/17 14:28:48 ho Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/05 23:00:31 jakob Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
@@ -15,8 +15,8 @@ NO_MTREE=	yes
 NO_CONFIGURE=	yes
 SAMPLEDIR=	${DESTDIR}/usr/local/share/examples/bind8
 
-LICENSE_TYPE=		CRYPTO
 RESTRICTED=		"Unclear status of crypto components."
+
 PERMIT_PACKAGE_CDROM=   "Unclear status of crypto components."
 PERMIT_PACKAGE_FTP=     "Unclear status of crypto components."
 PERMIT_DISTFILES_CDROM= "Unclear status of crypto components."

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/05 18:30:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/05 23:00:33 jakob Exp $
 
 DISTNAME=	TclXML-1.1.1
 CATEGORIES=	textproc
@@ -6,6 +6,11 @@ NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
 
 MAINTAINER=	jakob@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	no
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	no
+PERMIT_DISTFILES_FTP=	yes
 
 RUN_DEPENDS=	tclsh8.0:lang/tcl80
 

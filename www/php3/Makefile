@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/28 10:36:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/05 23:00:34 jakob Exp $
 
 DISTNAME=	php-3.0.15
 PKGNAME=	php3-3.0.15
@@ -11,7 +11,6 @@ MASTER_SITES=	http://www.php.net/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/
 
-LICENSE_TYPE=           GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

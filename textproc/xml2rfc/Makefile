@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/05 23:00:34 jakob Exp $
 #
 
 DISTNAME=	xml2rfc
@@ -8,7 +8,6 @@ MASTER_SITES=	http://memory.palace.org/authoring/
 
 MAINTAINER=	jakob@openbsd.org
 
-LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/03 11:54:44 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/05 23:00:30 jakob Exp $
 
 BROKEN=		auto installs files in /etc
 
@@ -10,6 +10,11 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/official/
 
 MAINTAINER=	jakob@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
 
 NO_CONFIGURE=	yes
 

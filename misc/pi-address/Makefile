@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/05 23:00:31 jakob Exp $
 
 DISTNAME=	pi-address-0.3.3
 CATEGORIES=	misc x11
@@ -6,11 +6,10 @@ NEED_VERSION=	1.223
 
 MAINTAINER=	jakob@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://linux.in-berlin.de/pub/pilot/ \
 		ftp://pv915.pv.reshsg.uci.edu/pub/pilot/
