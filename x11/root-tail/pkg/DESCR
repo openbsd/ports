@@ -1,0 +1,5 @@
+Tails a given file anywhere on your X11 root window with a transparent
+background.  It does this using little resources.  A nice way to monitor
+your system logs.
+
+WWW: ${HOMEPAGE}
