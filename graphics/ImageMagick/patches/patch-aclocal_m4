@@ -1,7 +1,27 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2004/07/02 01:53:09 brad Exp $
---- aclocal.m4.orig	Wed Jun 30 20:11:29 2004
-+++ aclocal.m4	Wed Jun 30 20:15:47 2004
-@@ -2500,7 +2500,7 @@ nto-qnx*)
+$OpenBSD: patch-aclocal_m4,v 1.2 2004/08/13 06:16:38 brad Exp $
+--- aclocal.m4.orig	Sat Apr  3 14:37:34 2004
++++ aclocal.m4	Thu Aug 12 22:49:17 2004
+@@ -1670,6 +1670,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
+     lt_cv_sys_max_cmd_len=8192;
+     ;;
+ 
++  netbsd* | freebsd* | openbsd* | darwin* )
++    # This has been around since 386BSD, at least.  Likely further.
++    if test -x /sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/sbin/sysctl -n kern.argmax`
++    elif test -x /usr/sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/usr/sbin/sysctl -n kern.argmax`
++    else
++      lt_cv_sys_max_cmd_len=65536 # usable default for *BSD
++    fi
++    # And add a safety zone
++    lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \/ 4`
++    ;;
++
+  *)
+     # If test is not a shell built-in, we'll probably end up computing a
+     # maximum length that is only half of the actual maximum length, but
+@@ -2500,7 +2513,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,7 +30,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2004/07/02 01:53:09 brad Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -3208,12 +3208,10 @@ nto-qnx*)
+@@ -3208,12 +3221,10 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -25,7 +45,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2004/07/02 01:53:09 brad Exp $
    fi
    ;;
  
-@@ -4194,6 +4192,20 @@ case $host_os in
+@@ -4194,6 +4205,22 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -34,6 +54,8 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2004/07/02 01:53:09 brad Exp $
 +      _LT_AC_TAGVAR(ld_shlibs, $1)=no
 +      ;;
 +  openbsd*)
++      _LT_AC_TAGVAR(hardcode_direct, $1)=yes
++      _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
 +      _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
 +      _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
 +      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -46,7 +68,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2004/07/02 01:53:09 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -6554,6 +6566,7 @@ $echo "local: *; };" >> $output_objdir/$
+@@ -6554,6 +6581,7 @@ $echo "local: *; };" >> $output_objdir/$
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'

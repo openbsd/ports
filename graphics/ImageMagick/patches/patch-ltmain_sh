@@ -1,15 +1,38 @@
-$OpenBSD: patch-ltmain_sh,v 1.8 2004/06/24 07:44:58 brad Exp $
---- ltmain.sh.orig	2004-06-21 22:56:47.000000000 -0600
-+++ ltmain.sh	2004-06-21 22:57:08.000000000 -0600
-@@ -2273,7 +2273,6 @@ EOF
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
- 	  if test "$installed" = no; then
- 	    notinst_deplibs="$notinst_deplibs $lib"
--	    need_relink=yes
+$OpenBSD: patch-ltmain_sh,v 1.9 2004/08/13 06:16:38 brad Exp $
+--- ltmain.sh.orig	Fri May 21 10:59:35 2004
++++ ltmain.sh	Tue Aug 10 13:42:50 2004
+@@ -2151,10 +2151,17 @@ EOF
+ 	    absdir="$libdir"
  	  fi
- 	  # This is a shared library
+ 	else
+-	  dir="$ladir/$objdir"
+-	  absdir="$abs_ladir/$objdir"
+-	  # Remove this search path later
+-	  notinst_path="$notinst_path $abs_ladir"
++	  if test ! -f "$ladir/$objdir/$linklib" && test -f "$abs_ladir/$linklib"; then
++	    dir="$ladir"
++	    absdir="$abs_ladir"
++	    # Remove this search path later
++	    notinst_path="$notinst_path $abs_ladir"
++	  else
++	    dir="$ladir/$objdir"
++	    absdir="$abs_ladir/$objdir"
++	    # Remove this search path later
++	    notinst_path="$notinst_path $abs_ladir"
++	  fi
+ 	fi # $installed = yes
+ 	name=`$echo "X$laname" | $Xsed -e 's/\.la$//' -e 's/^lib//'`
  
-@@ -5824,40 +5823,6 @@ relink_command=\"$relink_command\""
+@@ -2468,7 +2475,7 @@ EOF
+ 	    add_dir=
+ 	    add=
+ 	    # Finalize command for both is simple: just hardcode it.
+-	    if test "$hardcode_direct" = yes; then
++	    if test "$hardcode_direct" = yes && test -f $libdir/$linklib; then
+ 	      add="$libdir/$linklib"
+ 	    elif test "$hardcode_minus_L" = yes; then
+ 	      add_dir="-L$libdir"
+@@ -5824,40 +5831,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
