@@ -2,6 +2,9 @@
 # Version required:	3.2.3
 # Date created:		2 Apr 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:41 joey Exp $
+#
 
 DISTNAME=	LPRng-3.2.3
 CATEGORIES=	sysutils print

@@ -3,14 +3,14 @@
 # Date created:				16 Nov 1997
 # Whom:					ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/16 22:01:36 todd Exp $
+# $OpenBSD: Makefile,v 1.3 1997/11/17 21:47:37 joey Exp $
 
 DISTNAME=	samba-1.9.17p4
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1
 MAN5=		smb.conf.5

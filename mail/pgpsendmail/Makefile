@@ -2,13 +2,16 @@
 # Version required:     1.4
 # Date created:         10 Nov 1997
 # Whom:                 ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:30 joey Exp $
+#
 
 DISTNAME=       PGPsendmail-v1.4
 PKGNAME=	pgpsendmail-1.4
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 
-MAINTAINER=     ejovi@OpenBSD.ORG
+MAINTAINER=     joey@OpenBSD.ORG
 
 BUILD_DEPENDS += pgp:${PORTSDIR}/security/pgp
 

@@ -2,6 +2,9 @@
 # Version required:			970424 (v1.16)
 # Date created:				10 Nov 1997
 # Whom:	      				ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:35 joey Exp $
+#
 
 #DISTNAME=	radius-970424
 PKGNAME=	ascend-radius-970424
@@ -17,7 +20,7 @@ DISTFILES=	radius-970424.tar.gz \
 		rradius.pdf
 EXTRACT_ONLY=	radius-970424.tar.gz
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 WRKPREFIX=	radius-970424/radius-ascend/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd

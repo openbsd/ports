@@ -3,7 +3,7 @@
 # Date created:		17 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/17 15:29:55 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:39 joey Exp $
 #
 
 DISTNAME=	ytalk-v3pl2
@@ -11,7 +11,7 @@ PKGNAME=	ytalk-3.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://knot.queensu.ca/pub/unix/software/
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/ytalk-3.2
 USE_IMAKE=	yes

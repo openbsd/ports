@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/17 05:58:40 todd Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:40 joey Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -13,7 +13,7 @@ DISTNAME=       ssh-1.2.21
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	todd@OpenBSD.ORG
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 

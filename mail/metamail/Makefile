@@ -2,6 +2,9 @@
 # Version required:	2.7
 # Date created:		10 Nov 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:30 joey Exp $
+#
 
 DISTNAME=	mm2.7
 PKGNAME=	mm-2.7
@@ -9,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1= 		audiocompose.1 audiosend.1 extcompose.1 \

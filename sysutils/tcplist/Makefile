@@ -2,6 +2,9 @@
 # Version required:     	  2.1
 # Date created:			  06 Nov 1997
 # Whom:				  ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:46 joey Exp $
+#
 
 DISTNAME=	tcplist-2.2
 CATEGORIES=	sysutils net

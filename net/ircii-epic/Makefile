@@ -2,6 +2,9 @@
 # Version required:	2.8.2-EPIC3.004
 # Date created:		10 Nov 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:37 joey Exp $
+#
 
 DISTNAME=	ircii2.8.2-EPIC3.004
 PKGNAME=	ircii-2.8.2-epic3.004
@@ -9,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.min.net/~douglas/ircii/
 DISTFILES=	ircii2.8.2-EPIC3.004.tar.gz ircii2.8.2-EPIC3.help.tar.gz
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 EXTRACT_ONLY=	ircii2.8.2-EPIC3.004.tar.gz
 GNU_CONFIGURE=	yes

@@ -2,13 +2,16 @@
 # Version required:	2.8.21
 # Date created:		10 Nov 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:36 joey Exp $
+#
 
 DISTNAME=	irc2.9.2p3
 PKGNAME=	irc-2.9.2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 # the NOTE command is disabled by default
 # ENABLE_NOTE=yes

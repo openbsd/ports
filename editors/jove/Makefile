@@ -2,6 +2,9 @@
 # Version required:	4.16
 # Date created:		05 November 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:27 joey Exp $
+#
 
 DISTNAME=	jove-4.16
 CATEGORIES=	editors

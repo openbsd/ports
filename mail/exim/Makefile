@@ -2,13 +2,16 @@
 # Version required: 	1.71 
 # Date created: 	10 Nov 1997
 # Whom: 		ejovi  
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:28 joey Exp $
+#
 
 DISTNAME=	exim-1.71
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
 DISTFILES=	exim-1.71.tar.gz exim-texinfo-1.71.tar.gz
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local

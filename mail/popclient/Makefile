@@ -2,6 +2,9 @@
 # Version required:	3.0b6
 # Date created:		10 Nov 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:32 joey Exp $
+#
 
 DISTNAME=	popclient-3.0b6
 CATEGORIES=	mail
