@@ -1,0 +1,15 @@
+$OpenBSD: patch-tircproxy_h,v 1.1 2001/12/19 22:31:55 naddy Exp $
+--- tircproxy.h.orig	Thu May  4 19:23:18 2000
++++ tircproxy.h	Wed Dec 19 23:23:56 2001
+@@ -37,9 +37,9 @@
+ #define BROADCAST_FILE		"/tmp/ircbroadcast"
+ #define IRC_MOTD_FILE		"/etc/motd.irc"
+ 
+-/* Enable this if you want to use the IPF code for tranparency.
++/* Enable this if you want to use the PF code for transparency.
+ */
+-#define IPF 1
++#define PF 1
+ 
+ /* Enable this if you want to use the Linux code for tranparency.
+ */

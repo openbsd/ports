@@ -1,0 +1,80 @@
+$OpenBSD: patch-tircproxy_c,v 1.1 2001/12/19 22:31:55 naddy Exp $
+--- tircproxy.c.orig	Thu May  4 22:53:30 2000
++++ tircproxy.c	Wed Dec 19 23:23:56 2001
+@@ -142,6 +142,13 @@ char *Version = 
+ # endif
+ #endif
+ 
++#ifdef PF
++#include <sys/ioctl.h>
++#include <sys/fcntl.h>
++#include <net/if.h>
++#include <net/pfvar.h>
++#endif
++
+ #ifndef LINUX
+ # define LINUX 0
+ #endif
+@@ -1070,6 +1077,11 @@ static void trans_proxy(int sock, struct
+ 	natlookup_t     			natlook;
+ 	int					fd;
+ #endif
++#ifdef PF
++	struct sockaddr_in			ext, gwy;
++	struct pfioc_natlook			natlook;
++	int					fd;
++#endif
+    
+    	/* Give this thing 10 minutes to get started (paranoia).
+ 	*/
+@@ -1166,6 +1178,50 @@ static void trans_proxy(int sock, struct
+                 to_addr.sin_family = AF_INET;
+                 to_addr.sin_port = htons(ntohs(natlook.nl_realport));
+                 to_addr.sin_addr.s_addr = get_ip_addr(inet_ntoa(natlook.nl_realip));
++# else
++#  ifdef PF
++                to_len = sizeof(ext);
++                if (getpeername(sock, (struct sockaddr *)&ext, &to_len) == -1)
++	     	{
++                	perror("getpeername");
++                	exit(-1);
++                }
++
++                to_len = sizeof(gwy);
++                if (getsockname(sock, (struct sockaddr *)&gwy, &to_len) == -1) 
++	     	{
++                	perror("getsockname");
++                	exit(-1);
++                }
++
++		if ((fd = open("/dev/pf", O_RDWR)) == -1) {
++			perror("open(\"/dev/pf\")");
++			exit(-1);
++		}
++
++		memset(&natlook, 0, sizeof(struct pfioc_natlook));
++		natlook.af		= AF_INET;
++		natlook.proto		= IPPROTO_TCP;
++		natlook.direction	= PF_IN;	/* s = ext, d = gwy, r = lan */
++		natlook.saddr.v4.s_addr	= ext.sin_addr.s_addr;
++		natlook.sport		= ext.sin_port;
++		natlook.daddr.v4.s_addr	= gwy.sin_addr.s_addr;
++		natlook.dport		= gwy.sin_port;
++
++                if (ioctl(fd, DIOCNATLOOK, &natlook) == -1)
++	     	{
++                	perror("ioctl");
++			close(fd);
++                	exit(-1);
++                }
++
++                close(fd);
++ 
++		memset(&to_addr, 0, sizeof(to_addr));
++		to_addr.sin_family	= AF_INET;
++		to_addr.sin_port	= natlook.rsport;
++		to_addr.sin_addr.s_addr	= natlook.rsaddr.v4.s_addr;
++#  endif /* PF */
+ # endif /* IFP */
+ #endif /* LINUX */
+ 	}
