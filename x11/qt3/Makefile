@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/10/30 09:12:35 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2004/10/31 08:49:40 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -265,6 +265,7 @@ do-install:
 	cd ${PREFIX}/lib/qt3 && ln -sf . lib
 	cd ${PREFIX}/lib/qt3 && ln -sf ../../include/X11/qt3 include
 # fix for qmake
-	${INSTALL_DATA} ${WRKBUILD}/.qmake.cache ${PREFIX}/lib/qt3
+	sed -e  s,${WRKDIST},${PREFIX}/lib/qt3, <${WRKBUILD}/.qmake.cache >${WRKBUILD}/mogrified.cache
+	${INSTALL_DATA} ${WRKBUILD}/mogrified.cache ${PREFIX}/lib/qt3/.qmake.cache
 
 .include <bsd.port.mk>
