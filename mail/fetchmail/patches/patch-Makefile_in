@@ -1,0 +1,61 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/04/13 20:35:51 brad Exp $
+--- Makefile.in.orig	Fri Apr 13 01:15:43 2001
++++ Makefile.in	Fri Apr 13 01:20:48 2001
+@@ -127,16 +127,16 @@ fetchmail: $(objs) @INTLDEPS@
+ 
+ intl:
+ @INTLDEPS@:	dummy
+-	$(MAKE) -C intl
++	cd intl && $(MAKE)
+ 
+ po:	dummy
+-	$(MAKE) -C po
++	cd po && $(MAKE)
+ 
+ dummy:
+ 
+ # Tester for address parsing
+ rfc822: rfc822.c
+-	gcc -DTESTMAIN -g rfc822.c -o rfc822
++	$(CC) -DTESTMAIN -g rfc822.c -o rfc822
+ 
+ # Stand-alone MIME decoder
+ unmime: unmime.c base64.c rfc822.c xmalloc.c error.c
+@@ -173,29 +173,29 @@ install:
+ 	rm -f $(DESTDIR)$(mandir)/fetchmailconf.$(manext)
+ 	cd $(DESTDIR)$(mandir) && ln -s fetchmail.$(manext) fetchmailconf.$(manext)
+ 	@echo "Installing language catalogs..."
+-	-$(MAKE) -C intl install
+-	$(MAKE) -C po install
++	-cd intl && $(MAKE) install
++	cd po && $(MAKE) install
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(bindir)/fetchmail $(DESTDIR)$(bindir)/fetchmailconf
+ 	rm -f $(DESTDIR)$(mandir)/fetchmail.$(manext) $(DESTDIR)$(mandir)/fetchmailconf.$(manext)
+-	-$(MAKE) -C intl uninstall
+-	$(MAKE) -C po uninstall
++	-cd intl && $(MAKE) uninstall
++	cd po && $(MAKE) uninstall
+ 
+ .PHONY: clean realclean distclean mostlyclean
+ clean: 
+-	-$(MAKE) -C intl clean
++	-cd intl && $(MAKE) clean
+ 	#work around braindamage in GNU gettext
+ 	-rm -f intl/libintl.h
+-	-$(MAKE) -C po clean
++	-cd po && $(MAKE) clean
+ 	-rm -f fetchmail *.o core fetchmail.dvi \
+ 	       rcfile_l.c rcfile_y.h rcfile_y.c \
+ 	       fetchmail.tar fetchmail.tar.gz \
+ 	       netrc rfc822 unmime fetchmail-man.html
+ 
+ distclean: clean 
+-	-$(MAKE) -C intl distclean
+-	-$(MAKE) -C po distclean
++	-cd intl && $(MAKE) distclean
++	-cd po && $(MAKE) distclean
+ 	-rm -f TAGS tags
+ 	# Can't do these, it messes up RPM build
+ 	#-rm -f config.h config.cache config.status config.log stamp-config
