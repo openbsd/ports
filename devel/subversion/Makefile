@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/21 20:29:10 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/13 22:46:18 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -6,8 +6,9 @@ COMMENT-python=	"python interface to subversion"
 
 VERSION=	1.1.3
 DISTNAME=	subversion-${VERSION}
-PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}
+PKGNAME=	${DISTNAME}p0
+PKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://subversion.tigris.org/
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		apr-1 c crypto db expat m pthread ssl xml2 z
+WANTLIB=		apr-1 db z
 
 MASTER_SITES=	${HOMEPAGE}/tarballs/
 
@@ -33,24 +34,34 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	neon.24:neon->=0.24.7:net/neon \
 		aprutil-1.0::devel/apr-util \
+		expat.4::textproc/expat
 
 .if !${FLAVOR:L:Mno_bindings}
-LIB_DEPENDS+=	swigpy.0,swigpl.0::devel/swig
-BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
-
 MULTI_PACKAGES=	-perl -python
 SUBPACKAGE?=
 
 .  if defined(PACKAGING) && !empty(SUBPACKAGE)
 SHARED_ONLY=	Yes
-RUN_DEPENDS=	::devel/subversion
-LIB_DEPENDS=
-MODULES=
+LIB_DEPENDS=	svn_diff-1,svn_ra-1,svn_delta-1,svn_subr-1,svn_fs-1,svn_repos-1,svn_wc-1,svn_client-1::devel/subversion \
+		expat.4::textproc/expat
+WANTLIB+=	aprutil-1
 
 .    if ${SUBPACKAGE} == "-python"
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS+=	swigpy.0::devel/swig
+.    else
+LIB_DEPENDS+=	swigpl.0::devel/swig
 .    endif
 .  endif
+
+.  if !defined(PACKAGING)
+LIB_DEPENDS+=	swigpy.0,swigpl.0::devel/swig
+BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
+.  endif
+.endif
+
+.if defined(PACKAGING) && empty(SUBPACKAGE)
+WANTLIB+=	crypto m ssl xml2 c
 .endif
 
 SEPARATE_BUILD=	simple
