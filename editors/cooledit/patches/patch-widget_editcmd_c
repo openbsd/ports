@@ -1,0 +1,15 @@
+$OpenBSD: patch-widget_editcmd_c,v 1.1 2003/01/18 08:12:23 pvalchev Exp $
+--- widget/editcmd.c.orig	Mon Nov 25 23:36:22 2002
++++ widget/editcmd.c	Mon Nov 25 23:40:34 2002
+@@ -217,7 +217,11 @@ int my_open (const char *pathname, int f
+     if (file < 0 && (flags & O_CREAT)) {	/* must it be created ? */
+ 	mode_t mode;
+ 	va_start(ap, flags);
++#if 0	/* not allowed by ANSI */
+ 	mode = va_arg(ap, mode_t);
++#else
++	mode = va_arg(ap, u_int);
++#endif
+ 	va_end(ap);
+ 	return creat ((char *) pathname, mode);
+     }
