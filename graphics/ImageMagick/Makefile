@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2004/07/02 01:53:09 brad Exp $
+# $OpenBSD: Makefile,v 1.67 2004/07/09 04:45:36 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -45,6 +45,7 @@ CONFIGURE_ARGS+= --enable-lzw \
 		 --without-fpx \
 		 --without-hdf \
 		 --without-modules \
+		 --without-threads \
 		 --without-perl \
 		 --without-wmf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
