@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2004/04/08 06:25:17 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2004/10/26 19:52:32 pvalchev Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -24,10 +24,6 @@ UNZIP=			unzip -a -o
 COPTS+=			-DUSE_SOCKLEN_T \
 			-DPATH_KA655_BIN=\"${PREFIX}/lib/simh/vax/ka655.bin\"
 MAKE_FILE=		makefile
-
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
-COPTS+=			-O0
-.endif
 
 NO_REGRESS=		Yes
 VMEM_WARNING=		Yes
