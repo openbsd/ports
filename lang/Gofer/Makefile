@@ -3,30 +3,31 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/05/26 04:21:15 kevlo Exp $
 #
 
 DISTNAME=	gofer230a
 PKGNAME=	gofer-2.30a
 CATEGORIES=	lang
-NEED_VERSION=	1.191
-FAKE=No
-MASTER_SITES=	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
+NEED_VERSION=	1.230
+
+MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=		${WRKDIR}/src
+WRKDIST=	${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
-MAN1=		gofer.1
+
+FAKE=		Yes
 
 do-install:
-	mkdir -p ${LIBDIR}
+	${INSTALL_DATA_DIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
@@ -37,7 +38,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofer ${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
 	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
-	mkdir -p ${LIBDIR}/docs
+	${INSTALL_DATA_DIR} ${LIBDIR}/docs
 	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
 
 .include <bsd.port.mk>
