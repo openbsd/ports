@@ -3,11 +3,11 @@
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1998/03/24 18:39:37 mickey Exp $
+#   $Id: Makefile,v 1.2 1998/03/24 21:22:04 mickey Exp $
 #
 
-DISTNAME=	DBD-Pg-0.62
-PKGNAME=	p5-DBD-Pg-0.62
+DISTNAME=	DBD-Pg-0.69
+PKGNAME=	p5-DBD-Pg-0.69
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -20,7 +20,7 @@ CONFIGURE_ENV+=	"POSTGRES_HOME=${PREFIX}"
 
 USE_PERL5=	YES
 
-MAN3=		DBD::Pg.3
+MAN=		DBD::Pg.3
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} /usr/bin/perl Makefile.PL
