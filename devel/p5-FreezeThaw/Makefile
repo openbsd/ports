@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/19 15:40:41 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/09 00:09:00 avsm Exp $
 
-DISTNAME=	FreezeThaw-0.3
+DISTNAME=	FreezeThaw-0.41
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.330
+NEED_VERSION=	1.348
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= FreezeThaw
 
