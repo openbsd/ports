@@ -1,0 +1,6 @@
+*** /dev/null	Thu Nov  4 11:02:02 1999
+--- config/i386/openbsd2/jit3-md.h	Thu Nov  4 12:10:20 1999
+***************
+*** 0 ****
+--- 1 ----
++ #include "i386/openbsd2/jit-md.h"
