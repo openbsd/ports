@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/06/15 09:49:33 fgsch Exp $
 bin/gm4
 @unexec install-info --delete --info-dir=%D/info %D/info/m4.info
 info/m4.info
