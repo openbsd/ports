@@ -1,0 +1,47 @@
+This is the reference book for the Icon programming language.
+It is a pdf document, so get a pdf viewer to use it.
+ 
+ Foreword
+ Introduction
+ Acknowledgments
+
+ Chapters
+ 1  Getting Started
+ 2  Expressions
+ 3  String Scanning
+ 4  Characters, Csets, and Strings
+ 5  Numerical Computation and Bit Operations
+ 6  Structures
+ 7  Expression Evaluation
+ 8  Procedures
+ 9  Co-Expressions
+ 10 Data Types
+ 11 Input and Output
+ 12 An Overview of Graphics
+ 13 Other Features
+ 14 Running an Icon Program
+ 15 Libraries
+ 16 Errors and Diagnostic Facilities
+ 17 Programming with Generators
+ 18 String Scanning and Pattern Matching
+ 19 Using Structures
+ 20 Mappings and Labeling
+
+ Appendixes
+ A  Syntax
+ B  Characters
+ C  Preprocessing
+ D  Language Reference Manual
+ E  Command-Line Options
+ F  Environment Variables
+ G  Error Messages
+ H  Platform-Specific Differences
+ I  Sample Programs
+ J  Icon Resources
+
+ Glossary
+ References
+ Index
+
+Flavor:
+    two-sided: reduced version of the book (two pages per physical page)
